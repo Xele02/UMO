@@ -85,5 +85,5 @@ public interface IHIFCPDDDKN_IJsonWrapper : IList, IOrderedDictionary
 	string EJCOJCGIBNG_ToJson();
 
 	// // RVA: -1 Offset: -1 Slot: 20
-	//void EJCOJCGIBNG_ToJson(KIJECNFNNDB_JsonWriter OMLLGAKPMAN_writer);
+	void EJCOJCGIBNG_ToJson(KIJECNFNNDB_JsonWriter OMLLGAKPMAN_writer);
 }

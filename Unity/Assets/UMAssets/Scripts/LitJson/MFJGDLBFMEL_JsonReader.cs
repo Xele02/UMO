@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
 // Namespace: 
 public enum LIMGNGJNDAK_JsonToken
@@ -17,7 +21,7 @@ public enum LIMGNGJNDAK_JsonToken
 	GMKPJPDCMJM_Null = 11
 }
 
-// https://github.com/LitJSON/litjson/blob/litjson-0.5.0/src/LitJson/JsonReader.cs 0.5.0
+// https://github.com/LitJSON/litjson/blob/cd646def20af4aff19a02f8e7bcdd28b54fc850f/src/LitJson/JsonReader.cs
 
 // Namespace: 
 public class MFJGDLBFMEL_JsonReader
@@ -45,16 +49,16 @@ public class MFJGDLBFMEL_JsonReader
 	// RVA: 0x13136C8 Offset: 0x13136C8 VA: 0x13136C8
 	//public void EBLEFGNMNAK(bool NANNGLGOFKH) { }
 	public bool KCAALEDBLEN_AllowComments {
-		get { return IMIGLMKHEMM_lexer.AllowComments; }
-		set { IMIGLMKHEMM_lexer.AllowComments = value; }
+		get { return IMIGLMKHEMM_lexer.KCAALEDBLEN_AllowComments; }
+		set { IMIGLMKHEMM_lexer.KCAALEDBLEN_AllowComments = value; }
 	}
 	// RVA: 0x13136FC Offset: 0x13136FC VA: 0x13136FC
 	//public bool IOHEILNOGLK() { }
 	// RVA: 0x1313728 Offset: 0x1313728 VA: 0x1313728
 	//public void NJIGIFMIGLB(bool NANNGLGOFKH) { }
 	public bool MOGFDBHPGMG_AllowSingleQuotedStrings {
-		get { return lexer.AllowSingleQuotedStrings; }
-		set { lexer.AllowSingleQuotedStrings = value; }
+		get { return IMIGLMKHEMM_lexer.MOGFDBHPGMG_AllowSingleQuotedStrings; }
+		set { IMIGLMKHEMM_lexer.MOGFDBHPGMG_AllowSingleQuotedStrings = value; }
 	}
 	// RVA: 0x131375C Offset: 0x131375C VA: 0x131375C
 	//public bool PHDFMENIOFF() { }
@@ -85,7 +89,7 @@ public class MFJGDLBFMEL_JsonReader
 
 	// RVA: 0x1314330 Offset: 0x1314330 VA: 0x1314330
 	public MFJGDLBFMEL_JsonReader(TextReader CLJIOLIEPNA_reader) :
-		this (reader, false)
+		this (CLJIOLIEPNA_reader, false)
 	{
 	}
 
@@ -100,8 +104,8 @@ public class MFJGDLBFMEL_JsonReader
 
 		EOJDFDKGCME_read_started = false;
 		MPOFLJNAOEA_automaton_stack = new Stack<int> ();
-		MPOFLJNAOEA_automaton_stack.Push ((int) HEEFEJINJEG_ParserToken.End);
-		MPOFLJNAOEA_automaton_stack.Push ((int) HEEFEJINJEG_ParserToken.Text);
+		MPOFLJNAOEA_automaton_stack.Push ((int) HEEFEJINJEG_ParserToken.OLCLJKOKJCD_End);
+		MPOFLJNAOEA_automaton_stack.Push ((int) HEEFEJINJEG_ParserToken.LNEGGPJJDLF_Text);
 
 		IMIGLMKHEMM_lexer = new OFIGBFBNKKK_Lexer (CLJIOLIEPNA_reader);
 
@@ -119,111 +123,111 @@ public class MFJGDLBFMEL_JsonReader
 	{
 		IECLGGPCKDD_parse_table = new Dictionary<int, IDictionary<int, int[]>> ();
 
-		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.Array);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Array, '[',
+		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.BDHGEFMCJDF_Array);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.BDHGEFMCJDF_Array, '[',
 					 '[',
-					 (int) HEEFEJINJEG_ParserToken.ArrayPrime);
+					 (int) HEEFEJINJEG_ParserToken.OBGLMJBOILP_ArrayPrime);
 
-		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.ArrayPrime);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ArrayPrime, '"',
-					 (int) HEEFEJINJEG_ParserToken.Value,
+		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.OBGLMJBOILP_ArrayPrime);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.OBGLMJBOILP_ArrayPrime, '"',
+					 (int) HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value,
 
-					 (int) HEEFEJINJEG_ParserToken.ValueRest,
+					 (int) HEEFEJINJEG_ParserToken.AFFKPGEIBOE_ValueRest,
 					 ']');
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ArrayPrime, '[',
-					 (int) HEEFEJINJEG_ParserToken.Value,
-					 (int) HEEFEJINJEG_ParserToken.ValueRest,
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.OBGLMJBOILP_ArrayPrime, '[',
+					 (int) HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value,
+					 (int) HEEFEJINJEG_ParserToken.AFFKPGEIBOE_ValueRest,
 					 ']');
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ArrayPrime, ']',
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.OBGLMJBOILP_ArrayPrime, ']',
 					 ']');
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ArrayPrime, '{',
-					 (int) HEEFEJINJEG_ParserToken.Value,
-					 (int) HEEFEJINJEG_ParserToken.ValueRest,
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.OBGLMJBOILP_ArrayPrime, '{',
+					 (int) HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value,
+					 (int) HEEFEJINJEG_ParserToken.AFFKPGEIBOE_ValueRest,
 					 ']');
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ArrayPrime, (int) HEEFEJINJEG_ParserToken.Number,
-					 (int) HEEFEJINJEG_ParserToken.Value,
-					 (int) HEEFEJINJEG_ParserToken.ValueRest,
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.OBGLMJBOILP_ArrayPrime, (int) HEEFEJINJEG_ParserToken.EFKGLALIBLD_Number,
+					 (int) HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value,
+					 (int) HEEFEJINJEG_ParserToken.AFFKPGEIBOE_ValueRest,
 					 ']');
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ArrayPrime, (int) HEEFEJINJEG_ParserToken.True,
-					 (int) HEEFEJINJEG_ParserToken.Value,
-					 (int) HEEFEJINJEG_ParserToken.ValueRest,
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.OBGLMJBOILP_ArrayPrime, (int) HEEFEJINJEG_ParserToken.HGMKODAJIDB_True,
+					 (int) HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value,
+					 (int) HEEFEJINJEG_ParserToken.AFFKPGEIBOE_ValueRest,
 					 ']');
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ArrayPrime, (int) HEEFEJINJEG_ParserToken.False,
-					 (int) HEEFEJINJEG_ParserToken.Value,
-					 (int) HEEFEJINJEG_ParserToken.ValueRest,
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.OBGLMJBOILP_ArrayPrime, (int) HEEFEJINJEG_ParserToken.PJBFBJHFIGK_False,
+					 (int) HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value,
+					 (int) HEEFEJINJEG_ParserToken.AFFKPGEIBOE_ValueRest,
 					 ']');
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ArrayPrime, (int) HEEFEJINJEG_ParserToken.Null,
-					 (int) HEEFEJINJEG_ParserToken.Value,
-					 (int) HEEFEJINJEG_ParserToken.ValueRest,
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.OBGLMJBOILP_ArrayPrime, (int) HEEFEJINJEG_ParserToken.GMKPJPDCMJM_Null,
+					 (int) HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value,
+					 (int) HEEFEJINJEG_ParserToken.AFFKPGEIBOE_ValueRest,
 					 ']');
 
-		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.Object);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Object, '{',
+		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.JKMLKAMHJIF_Object);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.JKMLKAMHJIF_Object, '{',
 					 '{',
-					 (int) HEEFEJINJEG_ParserToken.ObjectPrime);
+					 (int) HEEFEJINJEG_ParserToken.PMCPHBPMPDE_ObjectPrime);
 
-		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.ObjectPrime);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ObjectPrime, '"',
-					 (int) HEEFEJINJEG_ParserToken.Pair,
-					 (int) HEEFEJINJEG_ParserToken.PairRest,
+		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.PMCPHBPMPDE_ObjectPrime);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.PMCPHBPMPDE_ObjectPrime, '"',
+					 (int) HEEFEJINJEG_ParserToken.ABMFPJDCCFJ_Pair,
+					 (int) HEEFEJINJEG_ParserToken.GAPFJMMAJHD_PairRest,
 					 '}');
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ObjectPrime, '}',
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.PMCPHBPMPDE_ObjectPrime, '}',
 					 '}');
 
-		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.Pair);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Pair, '"',
-					 (int) HEEFEJINJEG_ParserToken.String,
+		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.ABMFPJDCCFJ_Pair);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ABMFPJDCCFJ_Pair, '"',
+					 (int) HEEFEJINJEG_ParserToken.IAAHPCHFCFB_String,
 					 ':',
-					 (int) HEEFEJINJEG_ParserToken.Value);
+					 (int) HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value);
 
-		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.PairRest);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.PairRest, ',',
+		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.GAPFJMMAJHD_PairRest);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.GAPFJMMAJHD_PairRest, ',',
 					 ',',
-					 (int) HEEFEJINJEG_ParserToken.Pair,
-					 (int) HEEFEJINJEG_ParserToken.PairRest);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.PairRest, '}',
-					 (int) HEEFEJINJEG_ParserToken.Epsilon);
+					 (int) HEEFEJINJEG_ParserToken.ABMFPJDCCFJ_Pair,
+					 (int) HEEFEJINJEG_ParserToken.GAPFJMMAJHD_PairRest);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.GAPFJMMAJHD_PairRest, '}',
+					 (int) HEEFEJINJEG_ParserToken.HMBHHJPKNKI_Epsilon);
 
-		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.String);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.String, '"',
+		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.IAAHPCHFCFB_String);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.IAAHPCHFCFB_String, '"',
 					 '"',
-					 (int) HEEFEJINJEG_ParserToken.CharSeq,
+					 (int) HEEFEJINJEG_ParserToken.KJCGALJGLNF_CharSeq,
 					 '"');
 
-		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.Text);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Text, '[',
-					 (int) HEEFEJINJEG_ParserToken.Array);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Text, '{',
-					 (int) HEEFEJINJEG_ParserToken.Object);
+		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.LNEGGPJJDLF_Text);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.LNEGGPJJDLF_Text, '[',
+					 (int) HEEFEJINJEG_ParserToken.BDHGEFMCJDF_Array);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.LNEGGPJJDLF_Text, '{',
+					 (int) HEEFEJINJEG_ParserToken.JKMLKAMHJIF_Object);
 
-		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.Value);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Value, '"',
-					 (int) HEEFEJINJEG_ParserToken.String);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Value, '[',
-					 (int) HEEFEJINJEG_ParserToken.Array);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Value, '{',
-					 (int) HEEFEJINJEG_ParserToken.Object);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Value, (int) HEEFEJINJEG_ParserToken.Number,
-					 (int) HEEFEJINJEG_ParserToken.Number);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Value, (int) HEEFEJINJEG_ParserToken.True,
-					 (int) HEEFEJINJEG_ParserToken.True);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Value, (int) HEEFEJINJEG_ParserToken.False,
-					 (int) HEEFEJINJEG_ParserToken.False);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.Value, (int) HEEFEJINJEG_ParserToken.Null,
-					 (int) HEEFEJINJEG_ParserToken.Null);
+		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value, '"',
+					 (int) HEEFEJINJEG_ParserToken.IAAHPCHFCFB_String);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value, '[',
+					 (int) HEEFEJINJEG_ParserToken.BDHGEFMCJDF_Array);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value, '{',
+					 (int) HEEFEJINJEG_ParserToken.JKMLKAMHJIF_Object);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value, (int) HEEFEJINJEG_ParserToken.EFKGLALIBLD_Number,
+					 (int) HEEFEJINJEG_ParserToken.EFKGLALIBLD_Number);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value, (int) HEEFEJINJEG_ParserToken.HGMKODAJIDB_True,
+					 (int) HEEFEJINJEG_ParserToken.HGMKODAJIDB_True);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value, (int) HEEFEJINJEG_ParserToken.PJBFBJHFIGK_False,
+					 (int) HEEFEJINJEG_ParserToken.PJBFBJHFIGK_False);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value, (int) HEEFEJINJEG_ParserToken.GMKPJPDCMJM_Null,
+					 (int) HEEFEJINJEG_ParserToken.GMKPJPDCMJM_Null);
 
-		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.ValueRest);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ValueRest, ',',
+		PKNJHMHGKOC_TableAddRow (HEEFEJINJEG_ParserToken.AFFKPGEIBOE_ValueRest);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.AFFKPGEIBOE_ValueRest, ',',
 					 ',',
-					 (int) HEEFEJINJEG_ParserToken.Value,
-					 (int) HEEFEJINJEG_ParserToken.ValueRest);
-		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.ValueRest, ']',
-					 (int) HEEFEJINJEG_ParserToken.Epsilon);
+					 (int) HEEFEJINJEG_ParserToken.BLNDFNMPILA_Value,
+					 (int) HEEFEJINJEG_ParserToken.AFFKPGEIBOE_ValueRest);
+		KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken.AFFKPGEIBOE_ValueRest, ']',
+					 (int) HEEFEJINJEG_ParserToken.HMBHHJPKNKI_Epsilon);
 	}
 
 
 	// RVA: 0x1314488 Offset: 0x1314488 VA: 0x1314488
-	private static void KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken LGOIONKNCIO_row, int IJMAKKFPAJP_col, int[] JEOOFBDDEEI_symbols)
+	private static void KAEEEGFJHPK_TableAddCol (HEEFEJINJEG_ParserToken LGOIONKNCIO_row, int IJMAKKFPAJP_col, params int[] JEOOFBDDEEI_symbols)
 	{
 		IECLGGPCKDD_parse_table[(int) LGOIONKNCIO_row].Add (IJMAKKFPAJP_col, JEOOFBDDEEI_symbols);
 	}
@@ -245,7 +249,7 @@ public class MFJGDLBFMEL_JsonReader
 
 			double n_double;
 			if (Double.TryParse (AMFBGBPJEEC_number, out n_double)) {
-				JCOGNKFNDEB_token = JsonToken.Double;
+				JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.PFOFBNKFKCA_Double;
 				PADBJIMKLDG_token_value = n_double;
 
 				return;
@@ -254,7 +258,7 @@ public class MFJGDLBFMEL_JsonReader
 
 		int n_int32;
 		if (Int32.TryParse (AMFBGBPJEEC_number, out n_int32)) {
-			JCOGNKFNDEB_token = JsonToken.Int;
+			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.CEIBAFOCNCA_Int;
 			PADBJIMKLDG_token_value = n_int32;
 
 			return;
@@ -262,14 +266,14 @@ public class MFJGDLBFMEL_JsonReader
 
 		long n_int64;
 		if (Int64.TryParse (AMFBGBPJEEC_number, out n_int64)) {
-			JCOGNKFNDEB_token = JsonToken.Long;
+			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.HJBKGEBNJMP_Long;
 			PADBJIMKLDG_token_value = n_int64;
 
 			return;
 		}
 
 		// Shouldn't happen, but just in case, return something
-		JCOGNKFNDEB_token = JsonToken.Int;
+		JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.CEIBAFOCNCA_Int;
 		PADBJIMKLDG_token_value = 0;
 	}
 
@@ -277,19 +281,19 @@ public class MFJGDLBFMEL_JsonReader
 	private void DDCNOPIBJDM_ProcessSymbol ()
 	{
 		if (KFKNLCDJAAB_current_symbol == '[')  {
-			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.ArrayStart;
+			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.LNNBLGKFCCA_ArrayStart;
 			HENOKDJPHKL_parser_return = true;
 
 		} else if (KFKNLCDJAAB_current_symbol == ']')  {
-			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.ArrayEnd;
+			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.HCCMCHLILCI_ArrayEnd;
 			HENOKDJPHKL_parser_return = true;
 
 		} else if (KFKNLCDJAAB_current_symbol == '{')  {
-			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.ObjectStart;
+			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.EKHMLPGOKGB_ObjectStart;
 			HENOKDJPHKL_parser_return = true;
 
 		} else if (KFKNLCDJAAB_current_symbol == '}')  {
-			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.ObjectEnd;
+			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.EANBLFODAJI_ObjectEnd;
 			HENOKDJPHKL_parser_return = true;
 
 		} else if (KFKNLCDJAAB_current_symbol == '"')  {
@@ -299,34 +303,34 @@ public class MFJGDLBFMEL_JsonReader
 				HENOKDJPHKL_parser_return = true;
 
 			} else {
-				if (JCOGNKFNDEB_token == LIMGNGJNDAK_JsonToken.None)
-					JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.String;
+				if (JCOGNKFNDEB_token == LIMGNGJNDAK_JsonToken.HJNNKCMLGFL_None)
+					JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.IAAHPCHFCFB_String;
 
 				NKPNFFJBDEG_parser_in_string = true;
 			}
 
-		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.CharSeq) {
-			PADBJIMKLDG_token_value = IMIGLMKHEMM_lexer.StringValue;
+		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.KJCGALJGLNF_CharSeq) {
+			PADBJIMKLDG_token_value = IMIGLMKHEMM_lexer.OHCPHCODKPN_StringValue;
 
-		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.False)  {
-			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.Boolean;
+		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.PJBFBJHFIGK_False)  {
+			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.JIJLIKNGOOH_Boolean;
 			PADBJIMKLDG_token_value = false;
 			HENOKDJPHKL_parser_return = true;
 
-		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.Null)  {
-			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.Null;
+		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.GMKPJPDCMJM_Null)  {
+			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.GMKPJPDCMJM_Null;
 			HENOKDJPHKL_parser_return = true;
 
-		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.Number)  {
-			NHLLGPEEFGE_ProcessNumber (IMIGLMKHEMM_lexer.StringValue);
+		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.EFKGLALIBLD_Number)  {
+			NHLLGPEEFGE_ProcessNumber (IMIGLMKHEMM_lexer.OHCPHCODKPN_StringValue);
 
 			HENOKDJPHKL_parser_return = true;
 
-		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.Pair)  {
-			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.PropertyName;
+		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.ABMFPJDCCFJ_Pair)  {
+			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.LPHOANHJJNH_PropertyName;
 
-		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.True)  {
-			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.Boolean;
+		} else if (KFKNLCDJAAB_current_symbol == (int) HEEFEJINJEG_ParserToken.HGMKODAJIDB_True)  {
+			JCOGNKFNDEB_token = LIMGNGJNDAK_JsonToken.JIJLIKNGOOH_Boolean;
 			PADBJIMKLDG_token_value = true;
 			HENOKDJPHKL_parser_return = true;
 
@@ -339,15 +343,15 @@ public class MFJGDLBFMEL_JsonReader
 		if (HMHNDKEOIPF_end_of_input)
 			return false;
 
-		IMIGLMKHEMM_lexer.NextToken ();
+		IMIGLMKHEMM_lexer.IMFJMDAHLEJ_NextToken ();
 
-		if (IMIGLMKHEMM_lexer.EndOfInput) {
+		if (IMIGLMKHEMM_lexer.BADOHMHEOHN_EndOfInput) {
 			MDFLPFDFDAO_Close ();
 
 			return false;
 		}
 
-		current_input = IMIGLMKHEMM_lexer.Token;
+		JBCHENGIGOP_current_input = IMIGLMKHEMM_lexer.FDPPJPGNCMK_Token;
 
 		return true;
 	}
@@ -363,7 +367,7 @@ public class MFJGDLBFMEL_JsonReader
 		NPNHFHOJLCC_end_of_json  = true;
 
 		if (KDJKICGGOOD_reader_is_owned)
-			reader.Close ();
+			CLJIOLIEPNA_reader.Close ();
 
 		CLJIOLIEPNA_reader = null;
 	}
@@ -377,8 +381,8 @@ public class MFJGDLBFMEL_JsonReader
 		if (NPNHFHOJLCC_end_of_json) {
 			NPNHFHOJLCC_end_of_json = false;
 			MPOFLJNAOEA_automaton_stack.Clear ();
-			MPOFLJNAOEA_automaton_stack.Push ((int) HEEFEJINJEG_ParserToken.End);
-			MPOFLJNAOEA_automaton_stack.Push ((int) HEEFEJINJEG_ParserToken.Text);
+			MPOFLJNAOEA_automaton_stack.Push ((int) HEEFEJINJEG_ParserToken.OLCLJKOKJCD_End);
+			MPOFLJNAOEA_automaton_stack.Push ((int) HEEFEJINJEG_ParserToken.LNEGGPJJDLF_Text);
 		}
 
 		NKPNFFJBDEG_parser_in_string = false;
@@ -399,20 +403,20 @@ public class MFJGDLBFMEL_JsonReader
 
 		while (true) {
 			if (HENOKDJPHKL_parser_return) {
-				if (MPOFLJNAOEA_automaton_stack.Peek () == (int) HEEFEJINJEG_ParserToken.End)
+				if (MPOFLJNAOEA_automaton_stack.Peek () == (int) HEEFEJINJEG_ParserToken.OLCLJKOKJCD_End)
 					NPNHFHOJLCC_end_of_json = true;
 
 				return true;
 			}
 
-			current_symbol = MPOFLJNAOEA_automaton_stack.Pop ();
+			KFKNLCDJAAB_current_symbol = MPOFLJNAOEA_automaton_stack.Pop ();
 
 			DDCNOPIBJDM_ProcessSymbol ();
 
 			if (KFKNLCDJAAB_current_symbol == JBCHENGIGOP_current_input) {
 				if (! AEDKONGFAAH_ReadToken ()) {
-					if (MPOFLJNAOEA_automaton_stack.Peek () != (int) HEEFEJINJEG_ParserToken.End)
-						throw new JsonException (
+					if (MPOFLJNAOEA_automaton_stack.Peek () != (int) HEEFEJINJEG_ParserToken.OLCLJKOKJCD_End)
+						throw new IKFDGFEAJPL_JsonException (
 							"Input doesn't evaluate to proper JSON text");
 
 					if (HENOKDJPHKL_parser_return)
@@ -430,10 +434,10 @@ public class MFJGDLBFMEL_JsonReader
 					IECLGGPCKDD_parse_table[KFKNLCDJAAB_current_symbol][JBCHENGIGOP_current_input];
 
 			} catch (KeyNotFoundException e) {
-				throw new JsonException ((HEEFEJINJEG_ParserToken) JBCHENGIGOP_current_input, e);
+				throw new IKFDGFEAJPL_JsonException ((HEEFEJINJEG_ParserToken) JBCHENGIGOP_current_input, e);
 			}
 
-			if (entry_symbols[0] == (int) HEEFEJINJEG_ParserToken.Epsilon)
+			if (entry_symbols[0] == (int) HEEFEJINJEG_ParserToken.HMBHHJPKNKI_Epsilon)
 				continue;
 
 			for (int i = entry_symbols.Length - 1; i >= 0; i--)
