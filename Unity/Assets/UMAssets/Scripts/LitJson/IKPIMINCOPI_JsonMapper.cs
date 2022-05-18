@@ -105,9 +105,9 @@ internal struct OBDHMJIBHIP_ObjectMetadata // TypeDefIndex: 18699
 }
 
 internal delegate void OGIPFNLOCBD_ExporterFunc    (object LMNBBOIJBBL_obj, KIJECNFNNDB_JsonWriter OMLLGAKPMAN_writer);
-public   delegate void OGIPFNLOCBD_ExporterFunc<T> (T LMNBBOIJBBL_obj, KIJECNFNNDB_JsonWriter OMLLGAKPMAN_writer);
+public   delegate void FMJNNJIAOIG_ExporterFunc<T> (T LMNBBOIJBBL_obj, KIJECNFNNDB_JsonWriter OMLLGAKPMAN_writer);
 internal delegate object EFECLNPDNLP_ImporterFunc                (object BJKEOACPMHB_input);
-public   delegate TValue EFECLNPDNLP_ImporterFunc<TJson, TValue> (TJson BJKEOACPMHB_input);
+public   delegate TValue MAIGGGACCCE_ImporterFunc<TJson, TValue> (TJson BJKEOACPMHB_input);
 
 public delegate IHIFCPDDDKN_IJsonWrapper OEIBKOCANDB_WrapperFactory();
 
@@ -237,7 +237,7 @@ public class IKPIMINCOPI_JsonMapper // TypeDefIndex: 18705
 			data.GJENOLNPNAC_Properties.Add(p_info.Name, p_data);
 		}
 
-		foreach (FieldInfo f_info in type.GetFields())
+		foreach (FieldInfo f_info in INDDJNMPONH_type.GetFields())
 		{
 			HNPAFOGPHIM_PropertyMetadata p_data = new HNPAFOGPHIM_PropertyMetadata();
 			p_data.HHKBDDNBEAA_Info = f_info;
@@ -306,25 +306,25 @@ public class IKPIMINCOPI_JsonMapper // TypeDefIndex: 18705
 	{
 		lock (ODDJPNEIIHM_conv_ops_lock)
 		{
-			if (!GGNJEAOKFFO_conv_ops.ContainsKey(t1))
-				GGNJEAOKFFO_conv_ops.Add(t1, new Dictionary<Type, MethodInfo>());
+			if (!GGNJEAOKFFO_conv_ops.ContainsKey(ECHKGBBOLFM_t1))
+				GGNJEAOKFFO_conv_ops.Add(ECHKGBBOLFM_t1, new Dictionary<Type, MethodInfo>());
 		}
 
-		if (GGNJEAOKFFO_conv_ops[t1].ContainsKey(t2))
-			return conv_ops[t1][t2];
+		if (GGNJEAOKFFO_conv_ops[ECHKGBBOLFM_t1].ContainsKey(KAMKECFBELN_t2))
+			return GGNJEAOKFFO_conv_ops[ECHKGBBOLFM_t1][KAMKECFBELN_t2];
 
-		MethodInfo op = t1.GetMethod(
-			"op_Implicit", new Type[] { t2 });
+		MethodInfo op = ECHKGBBOLFM_t1.GetMethod(
+			"op_Implicit", new Type[] { KAMKECFBELN_t2 });
 
 		lock (ODDJPNEIIHM_conv_ops_lock)
 		{
 			try
 			{
-				GGNJEAOKFFO_conv_ops[t1].Add(t2, op);
+				GGNJEAOKFFO_conv_ops[ECHKGBBOLFM_t1].Add(KAMKECFBELN_t2, op);
 			}
 			catch (ArgumentException)
 			{
-				return GGNJEAOKFFO_conv_ops[t1][t2];
+				return GGNJEAOKFFO_conv_ops[ECHKGBBOLFM_t1][KAMKECFBELN_t2];
 			}
 		}
 
@@ -334,7 +334,7 @@ public class IKPIMINCOPI_JsonMapper // TypeDefIndex: 18705
 	// RVA: 0x8EDA54 Offset: 0x8EDA54 VA: 0x8EDA54
 	private static object GAPADDGOKOC_ReadValue(Type OGHDELCOELF_inst_type, MFJGDLBFMEL_JsonReader CLJIOLIEPNA_reader)
 	{
-		CLJIOLIEPNA_reader.Read();
+		CLJIOLIEPNA_reader.FKGBNKPHCJL_Read();
 
 		if (CLJIOLIEPNA_reader.FDPPJPGNCMK_Token == LIMGNGJNDAK_JsonToken.HCCMCHLILCI_ArrayEnd)
 			return null;
@@ -345,7 +345,7 @@ public class IKPIMINCOPI_JsonMapper // TypeDefIndex: 18705
 			if (!OGHDELCOELF_inst_type.IsClass)
 				throw new IKFDGFEAJPL_JsonException(String.Format(
 						"Can't assign null to an instance of type {0}",
-						inst_type));
+						OGHDELCOELF_inst_type));
 
 			return null;
 		}
@@ -432,7 +432,7 @@ public class IKPIMINCOPI_JsonMapper // TypeDefIndex: 18705
 
 			while (true)
 			{
-				object item = ReadValue(elem_type, CLJIOLIEPNA_reader);
+				object item = GAPADDGOKOC_ReadValue(elem_type, CLJIOLIEPNA_reader);
 				if (CLJIOLIEPNA_reader.FDPPJPGNCMK_Token == LIMGNGJNDAK_JsonToken.HCCMCHLILCI_ArrayEnd)
 					break;
 
@@ -646,74 +646,74 @@ public class IKPIMINCOPI_JsonMapper // TypeDefIndex: 18705
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToByte((int)BJKEOACPMHB_input);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(int),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(int),
 						  typeof(byte), importer);
 
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToUInt64((int)BJKEOACPMHB_input);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(int),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(int),
 						  typeof(ulong), importer);
 
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToSByte((int)BJKEOACPMHB_input);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(int),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(int),
 						  typeof(sbyte), importer);
 
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToInt16((int)BJKEOACPMHB_input);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(int),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(int),
 						  typeof(short), importer);
 
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToUInt16((int)BJKEOACPMHB_input);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(int),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(int),
 						  typeof(ushort), importer);
 
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToUInt32((int)BJKEOACPMHB_input);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(int),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(int),
 						  typeof(uint), importer);
 
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToSingle((int)BJKEOACPMHB_input);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(int),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(int),
 						  typeof(float), importer);
 
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToDouble((int)BJKEOACPMHB_input);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(int),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(int),
 						  typeof(double), importer);
 
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToDecimal((double)BJKEOACPMHB_input);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(double),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(double),
 						  typeof(decimal), importer);
 
 
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToUInt32((long)BJKEOACPMHB_input);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(long),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(long),
 						  typeof(uint), importer);
 
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToChar((string)BJKEOACPMHB_input);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(string),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(string),
 						  typeof(char), importer);
 
 		importer = delegate (object BJKEOACPMHB_input) {
 			return Convert.ToDateTime((string)BJKEOACPMHB_input, NPCBCMOLMJK_datetime_format);
 		};
-		BLKCGAADNBI_RegisterBaseImporters(IFENDAFEPNC_base_importers_table, typeof(string),
+		MJBPPCBFPFG_RegisterImporter(IFENDAFEPNC_base_importers_table, typeof(string),
 						  typeof(DateTime), importer);
 	}
 
@@ -744,9 +744,9 @@ public class IKPIMINCOPI_JsonMapper // TypeDefIndex: 18705
 		if (LMNBBOIJBBL_obj is IHIFCPDDDKN_IJsonWrapper)
 		{
 			if (AHCEFLAMCNH_writer_is_private)
-				OMLLGAKPMAN_writer.CJNPADFBBBB_TextOMLLGAKPMAN_writer.FPEKCEGADMG_Write(((IHIFCPDDDKN_IJsonWrapper)obj).ToJson());
+				OMLLGAKPMAN_writer.FPEKCEGADMG_Write(((IHIFCPDDDKN_IJsonWrapper)LMNBBOIJBBL_obj).EJCOJCGIBNG_ToJson());
 			else
-				((IHIFCPDDDKN_IJsonWrapper)obj).ToJson(OMLLGAKPMAN_writer);
+				((IHIFCPDDDKN_IJsonWrapper)LMNBBOIJBBL_obj).EJCOJCGIBNG_ToJson(OMLLGAKPMAN_writer);
 
 			return;
 		}
@@ -898,7 +898,7 @@ public class IKPIMINCOPI_JsonMapper // TypeDefIndex: 18705
 	// RVA: 0x8F1CD4 Offset: 0x8F1CD4 VA: 0x8F1CD4
 	public static void EJCOJCGIBNG_ToJson(object LMNBBOIJBBL_obj, KIJECNFNNDB_JsonWriter OMLLGAKPMAN_writer)
 	{
-		MDNHFHCGIMC_WriteValue(obj, OMLLGAKPMAN_writer, false, 0);
+		MDNHFHCGIMC_WriteValue(LMNBBOIJBBL_obj, OMLLGAKPMAN_writer, false, 0);
 	}
 
 	// RVA: 0x8F1D6C Offset: 0x8F1D6C VA: 0x8F1D6C

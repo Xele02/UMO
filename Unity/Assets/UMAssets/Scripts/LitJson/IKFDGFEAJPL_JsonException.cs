@@ -24,7 +24,7 @@ public class IKFDGFEAJPL_JsonException : ApplicationException // TypeDefIndex: 1
 	// // RVA: 0x8E466C Offset: 0x8E466C VA: 0x8E466C
 	internal IKFDGFEAJPL_JsonException(int CKHEDJODNIP_c) :
 			base(String.Format(
-					"Invalid character '{0}' in input string", (char)CKHEDJODNIP_cc))
+					"Invalid character '{0}' in input string", (char)CKHEDJODNIP_c))
 	{ }
 
 	// // RVA: 0x8E470C Offset: 0x8E470C VA: 0x8E470C

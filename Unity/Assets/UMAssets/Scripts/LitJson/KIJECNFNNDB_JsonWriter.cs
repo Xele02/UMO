@@ -126,7 +126,7 @@ public class KIJECNFNNDB_JsonWriter // TypeDefIndex: 18713
 
 	#region Private Methods
 	// // RVA: 0x1A004D4 Offset: 0x1A004D4 VA: 0x1A004D4
-	private void BOCEOALMNDO_DoValidation(KLCFANODNFB OAFPGJLCNFM_cond)
+	private void BOCEOALMNDO_DoValidation(KLCFANODNFB_Condition OAFPGJLCNFM_cond)
 	{
 		if (!PHKJOMLDNOB_context.PDGOJNHEABE_ExpectingValue)
 			PHKJOMLDNOB_context.HNBFOAJIIAL_Count++;
@@ -201,7 +201,7 @@ public class KIJECNFNNDB_JsonWriter // TypeDefIndex: 18713
 			if (num < 10)
 				GCKIGOGMJIF_hex[3 - i] = (char)('0' + num);
 			else
-				GCKIGOGMJIF_hexhex[3 - i] = (char)('A' + (num - 10));
+				GCKIGOGMJIF_hex[3 - i] = (char)('A' + (num - 10));
 
 			LAJNCHHNLBI_n >>= 4;
 		}
@@ -221,7 +221,7 @@ public class KIJECNFNNDB_JsonWriter // TypeDefIndex: 18713
 			for (int i = 0; i < JOKMGOGDNDP_indentation; i++)
 				OMLLGAKPMAN_writer.Write(' ');
 
-		OMLLGAKPMAN_writer.Write(str);
+		OMLLGAKPMAN_writer.Write(JEHFDJPOEFF_str);
 	}
 
 	// // RVA: 0x1A00684 Offset: 0x1A00684 VA: 0x1A00684
@@ -496,7 +496,7 @@ public class KIJECNFNNDB_JsonWriter // TypeDefIndex: 18713
 			if (AJDIJOOFOFF_property_name.Length > PHKJOMLDNOB_context.HPCFOIINKJI_Padding)
 				PHKJOMLDNOB_context.HPCFOIINKJI_Padding = AJDIJOOFOFF_property_name.Length;
 
-			for (int i = PHKJOMLDNOB_context.Padding - AJDIJOOFOFF_property_name.Length;
+			for (int i = PHKJOMLDNOB_context.HPCFOIINKJI_Padding - AJDIJOOFOFF_property_name.Length;
 				 i >= 0; i--)
 				OMLLGAKPMAN_writer.Write(' ');
 
