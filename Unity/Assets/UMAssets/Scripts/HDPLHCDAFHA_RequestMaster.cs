@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public delegate bool FAPJEIOBPDG(List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
 
 // Namespace:
-public class HDPLHCDAFHA_RequestGetKey : CACGCMBKHDI_Request // TypeDefIndex: 10308
+public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request // TypeDefIndex: 10308
 {
         // Fields
         public List<string> DFDLAIGFDAH; // 0x7C
@@ -48,7 +48,7 @@ public class HDPLHCDAFHA_RequestGetKey : CACGCMBKHDI_Request // TypeDefIndex: 10
                 EBPLLJGPFDA = true;
         }
 
-        public HDPLHCDAFHA_RequestGetKey() 
+        public HDPLHCDAFHA_RequestMaster() 
         { 
                 // hack, directly add result
                 {

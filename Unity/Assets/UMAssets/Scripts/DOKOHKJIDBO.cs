@@ -36,8 +36,8 @@ public class DOKOHKJIDBO // TypeDefIndex: 8685
             NKGJPJPHLIF a = NKGJPJPHLIF.HHCJCDFCLOB;
 
             //PJKLMCGEJMK b = a.IBLPICFDGOF;
-            HDPLHCDAFHA_RequestGetKey request = new HDPLHCDAFHA_RequestGetKey();
-            //request = b.IFFNCAFNEAG_AddRequest(request) as HDPLHCDAFHA_RequestGetKey;
+            HDPLHCDAFHA_RequestMaster request = new HDPLHCDAFHA_RequestMaster();
+            //request = b.IFFNCAFNEAG_AddRequest(request) as HDPLHCDAFHA_RequestMaster;
             // c.AILPHBMCCGP = !LFIEDDHNLBE;
             // MMACCEADALH dgt = (/*SakashoErrorId*/ LJJGBICGLLF) => 
             // {
