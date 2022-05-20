@@ -1,4 +1,10 @@
-Python script require Python 3.
+Python script require Python 3 with requests module.
+
+To install request module : 
+
+```
+python3 -m pip install requests
+```
 
 # Download files from server
 
