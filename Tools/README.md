@@ -1,6 +1,6 @@
 Python script require Python 3 with requests module.
 
-To install request module : 
+To install requests module : 
 
 ```
 python3 -m pip install requests
