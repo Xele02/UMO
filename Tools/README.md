@@ -8,7 +8,7 @@ python3 -m pip install requests
 
 # Download files from server
 
-Download files using Data/RequestGetFiles.json data. 
+The tools will download files using info from Data/RequestGetFiles.json file. 
 
 Directory by default is Data/, can be changed with -o argument. 
 
@@ -32,7 +32,7 @@ optional arguments:
 
 # Decrypt downloaded files
 
-Decrypt files given as argument, either direct name or directory. By default, it scan Data/android/ directory. 
+The tool will decrypt files given as argument, either direct name or directory. By default, it scan Data/android/ directory. 
 
 IT will create a new file with .decrypted extension on success. Use -d flag to remove orginal file once decrypted.
 
