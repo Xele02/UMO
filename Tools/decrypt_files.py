@@ -85,6 +85,7 @@ def decrypt_file(path, outfile):
 						return
 					logging.info("Using key for pattern "+key_data["f"])
 					key = key_data["key"]
+					break;
 			if key == None:
 				logging.warning("No pattern found for file "+path)
 				return
