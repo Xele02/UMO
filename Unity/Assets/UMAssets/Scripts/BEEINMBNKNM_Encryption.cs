@@ -118,12 +118,12 @@ public class BEEINMBNKNM_Encryption
                 if(size > 0)
                 {
                         // TODO
-                        /*uint q = Math.DivRem(size, PLNOOFNMHAL);
+                        uint q = (uint)(size % PLNOOFNMHAL);
                         for(int i = 0; i < size; i++)
                         {
-                                q = q * GELENHPBKFA + DLDLDGJEOJG;
-                                DBBGALAPFGC[i] = GPGMEAPLJAI_Key[q & 0x3ff] ^ DBBGALAPFGC[i];
-                        }*/
+                                q = (uint)(q * GELENHPBKFA + DLDLDGJEOJG);
+                                DBBGALAPFGC[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ DBBGALAPFGC[i]);
+                        }
                 }
         }
 
