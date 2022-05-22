@@ -1,0 +1,3 @@
+table Test {
+	a:int;
+}
