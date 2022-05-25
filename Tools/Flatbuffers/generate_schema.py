@@ -68,6 +68,10 @@ name_replace = {
     "FlatBufferBuilder":"EJJNJDFCICC_FlatBufferBuilder"
 }
 
+viewer_data = {
+
+}
+
 def add_name_replace(map, func_name, replace_name):
     if func_name not in map:
         map[func_name] = replace_name
@@ -82,6 +86,8 @@ with open("database.fbs","w") as fs:
         property_counter = 0
         func_counter = 0
         start_getter_func = 0
+
+        viewer_info = {"vars":[]}
         
         while func_counter < len(classe["function"]):
             func = classe["function"][func_counter]
@@ -118,6 +124,8 @@ with open("database.fbs","w") as fs:
                         real_type = "string"
                     
                     fs.write("\t"+prop["name"]+":["+real_type+"];\n")
+
+                    viewer_info["vars"].append({"name":prop["name"], "type":"list", "inner_type":real_type})
 
                     gfunc = classe["function"][func_counter + 1]
                     add_name_replace(name_replace, "Create"+prop["name"]+"Vector", gfunc["name"]+"_CreateVector"+prop["name"])
@@ -165,6 +173,8 @@ with open("database.fbs","w") as fs:
                     assert prop["type"] == "string"
                     fs.write("\t"+prop["name"]+":"+prop["type"]+";\n")
                     
+                    viewer_info["vars"].append({"name":prop["name"], "type":"string"})
+
                     gfunc = classe["function"][start_getter_func]
                     assert gfunc["return_type"] == prop["type"], gfunc["return_type"]+" == "+prop["type"]
                     
@@ -178,6 +188,8 @@ with open("database.fbs","w") as fs:
                     real_type = members[member_counter][0].replace("AAABLJBBNJH<","").replace(">","")
                     assert real_type == prop["type"]
                     fs.write("\t"+prop["name"]+":"+prop["type"]+";\n")
+
+                    viewer_info["vars"].append({"name":prop["name"], "type":prop["type"]})
                     
                     gfunc = classe["function"][start_getter_func]
                     assert gfunc["return_type"] == prop["type"], gfunc["return_type"]+" == "+prop["type"]
@@ -191,6 +203,8 @@ with open("database.fbs","w") as fs:
                     assert members[member_counter][0] == "int" or members[member_counter][0] == "uint"
                     assert members[member_counter][0] == prop["type"], members[member_counter][0]+" != "+prop["type"]
                     fs.write("\t"+prop["name"]+":"+prop["type"]+";\n")
+
+                    viewer_info["vars"].append({"name":prop["name"], "type":prop["type"]})
                     
                     gfunc = classe["function"][start_getter_func]
                     assert gfunc["return_type"] == prop["type"], gfunc["return_type"]+" == "+prop["type"]
@@ -208,5 +222,10 @@ with open("database.fbs","w") as fs:
             func_counter = func_counter + 1
         fs.write("}\n\n\n")
 
+        viewer_data[classe["name"]] = viewer_info
+
 with open("name_replace.json","w") as fs:
     fs.write(json.dumps(name_replace))
+
+with open("viewer_data.json", "w") as fs:
+    fs.write(json.dumps(viewer_data))
