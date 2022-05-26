@@ -8,7 +8,7 @@ function_pattern = re.compile(r"public (static )?([^ ]+) ([A-Z]+)\(([^)]*)\) { }
 
 classes = []
 
-with open("dump.cs","r", encoding="utf8") as f:
+with open("../../Data/CSharp/dump.cs","r", encoding="utf8") as f:
     file_text = f.read();
     start_pos = 0;
     while True:

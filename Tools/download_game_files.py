@@ -54,7 +54,7 @@ output_dir = options.output
 if output_dir is None:
 	output_dir = default_config["download_path"]
 
-with open("Data/RequestGetFiles.json", "r") as f:
+with open("../Data/RequestGetFiles.json", "r") as f:
 	files_info = json.load(f)
 
 file_list = files_info["files"]

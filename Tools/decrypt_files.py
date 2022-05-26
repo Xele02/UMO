@@ -110,7 +110,7 @@ def decrypt_file(path, outfile):
 
 print("Generating keys")
 
-with open('Data/RequestMaster.json', 'r') as f:
+with open('../Data/RequestMaster.json', 'r') as f:
 	data_json = json.load(f)
 
 keys = data_json["master"]["s_ak"]["data"]

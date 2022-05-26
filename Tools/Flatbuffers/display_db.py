@@ -13,7 +13,10 @@ for name in os.listdir("outputpy"):
          module = name[:-3]
          importlib.import_module("outputpy" + "." + module)
 
-tarFile = tarfile.open(name="../../Unity/Assets/UMAssets/Database/cwc_1950939.bytes", mode="r")
+if os.path.isfile("../../Data/Database/cwc_1950939.bytes"):
+	tarFile = tarfile.open(name="../../Data/Database/cwc_1950939.bytes", mode="r")
+else:
+	tarFile = tarfile.open(name="cwc_1950939.bytes", mode="r")
 allFiles = tarFile.getmembers();
 
 file_bufs = {}
