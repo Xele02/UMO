@@ -1,3 +1,5 @@
+using FlatBuffers;
+
 
 // Namespace: 
 public class IAIDGBJGDBH // TypeDefIndex: 6777
@@ -87,8 +89,8 @@ public class IAIDGBJGDBH // TypeDefIndex: 6777
 	// // RVA: 0x120DA20 Offset: 0x120DA20 VA: 0x120DA20
 	public static IAIDGBJGDBH HEGEKFMJNCC(byte[] NIODCJLINJN)
     {
-        JMPAJDKFFGL_ByteBuffer reader = new JMPAJDKFFGL_ByteBuffer(NIODCJLINJN); // this
-        DHFKAKFHFOL d = DHFKAKFHFOL.NFNJFMLGPDN(reader); // this00
+        ByteBuffer reader = new ByteBuffer(NIODCJLINJN); // this
+        DHFKAKFHFOL d = DHFKAKFHFOL.GetRootAsDHFKAKFHFOL(reader); // this00
         IAIDGBJGDBH self = new IAIDGBJGDBH(); // this01
         //CCNNJMCKOGH c = new CCNNJMCKOGH(); // pcVar1
         //!!!

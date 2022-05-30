@@ -18,13 +18,14 @@ public class CBBJHPBGBAJ // TypeDefIndex: 6357
 	// Fields
 	// private const int HMJJCPMKDEI = 512;
 	// public List<CBBJHPBGBAJ.JBCFNCNGLPM> KGHAJGGMPKL; // 0x8
-
+	public byte[] tmp;
 	// // Methods
 
 	// // RVA: 0x18F7E78 Offset: 0x18F7E78 VA: 0x18F7E78
 	public bool KHEKNNFCAOI(byte[] GANPCOAGBBK)
     {
         // GANPCOAGBBK = decypted DB
+		tmp = GANPCOAGBBK;
         //!!!
         return true;
     }

@@ -16,7 +16,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ // TypeDefIndex: 8687
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BA26C Offset: 0x6BA26C VA: 0x6BA26C
 	// // RVA: 0x12043D8 Offset: 0x12043D8 VA: 0x12043D8
-	private IEnumerator ODDEPBIJHOE_Load(string CJEKGLGBIHF_filePath)
+	public IEnumerator ODDEPBIJHOE_Load(string CJEKGLGBIHF_filePath)
     {
         // Namespace: 
         // [CompilerGeneratedAttribute] // RVA: 0x63B14C Offset: 0x63B14C VA: 0x63B14C

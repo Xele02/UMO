@@ -28,10 +28,13 @@ public abstract class DIHHCBACKGG // TypeDefIndex: 9969
     }
 
 	// // RVA: 0x198AB70 Offset: 0x198AB70 VA: 0x198AB70
-	// public void LHPDDGIJKNB() { }
+	public void LHPDDGIJKNB()
+	{
+		KMBPACJNEOF();
+	}
 
 	// // RVA: -1 Offset: -1 Slot: 8
-	// protected abstract void KMBPACJNEOF();
+	protected abstract void KMBPACJNEOF();
 
 	// // RVA: 0x198ABEC Offset: 0x198ABEC VA: 0x198ABEC Slot: 9
 	public virtual bool IIEMACPEEBJ(byte[] DBBGALAPFGC) 

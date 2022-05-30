@@ -71,11 +71,16 @@ def generate_key(seed):
 	logging.debug(key)
 	return key
 
+sound_key = {
+	88:1, 89:2, 119:3, 138:4, 158:6, 159:7
+}
+
 def decrypt_file(path, outfile):
 	filesize = os.path.getsize(path)
 	with open(path, "rb") as f:
 		with open("tmp"+decrypt_ext, "wb") as outf:
 
+			algo_type = 0
 			key = None
 			for key_data in keys:
 				found = re.search(key_data["f"], path.replace("\\","/"))
@@ -87,6 +92,14 @@ def decrypt_file(path, outfile):
 					key = key_data["key"]
 					break;
 			if key == None:
+				match_sound = re.search(r"cs_w_([0-9]+)_d.*\.awb", path)
+				if match_sound:
+					sound_id = int(match_sound.group(1))
+					if sound_id in sound_key and sound_key[sound_id] in sound_keys:
+						key = sound_keys[sound_key[sound_id]]
+						logging.info("Using sound key w"+str(sound_key[sound_id]))
+						algo_type = 1
+			if key == None:
 				logging.warning("No pattern found for file "+path)
 				return
 
@@ -94,11 +107,20 @@ def decrypt_file(path, outfile):
 			cnt = 0
 			ip = filesize
 			first = True
+			filesize = os.path.getsize(path)
+			if algo_type == 1:
+				q = filesize // key["a2"]
+				print(str(filesize)+"//"+str(key["a2"])+"="+str(q))
+
 			while byte:
-				r4 = (ip << 3)&0xffffffff;
-				ip = r4 - ip
-				ip = ip + 1
-				r4 = int.from_bytes(byte,  byteorder='little') ^ key[ip%1024]
+				if algo_type == 0:
+					r4 = (ip << 3)&0xffffffff;
+					ip = r4 - ip
+					ip = ip + 1
+					r4 = int.from_bytes(byte,  byteorder='little') ^ key[ip%1024]
+				else:
+					q = (q * key["a0"] + key["a1"]) & 0xFFFFFFFF
+					r4 = int.from_bytes(byte,  byteorder='little') ^ key["key"][q & 0x3ff]
 				outf.write(r4.to_bytes(1, byteorder='little', signed=False))
 				byte = f.read(1)
 				cnt = cnt + 1
@@ -117,6 +139,16 @@ keys = data_json["master"]["s_ak"]["data"]
 for obj in keys:
 	if obj["k"] != 0:
 		obj["key"] = generate_key(obj["k"])
+
+sounds_keys_data = data_json["master"]["s_sys_int"]["data"]
+sound_keys = {}
+for i in range(1,8):
+	name = "w"+str(i)
+	sound_keys[i] = { "key":generate_key(next((val["v"] for val in sounds_keys_data if val["k"] == name+"_3"), 0) + 7),
+			"a0":next((val["v"] for val in sounds_keys_data if val["k"] == name+"_0"), 0),
+			"a1":next((val["v"] for val in sounds_keys_data if val["k"] == name+"_1"), 0),
+			"a2":next((val["v"] for val in sounds_keys_data if val["k"] == name+"_2"), 0)
+			}
 
 allfileslist = []
 

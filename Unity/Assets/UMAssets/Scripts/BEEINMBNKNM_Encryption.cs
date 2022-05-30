@@ -118,7 +118,7 @@ public class BEEINMBNKNM_Encryption
                 if(size > 0)
                 {
                         // TODO
-                        uint q = (uint)(size % PLNOOFNMHAL);
+                        uint q = (uint)(size / PLNOOFNMHAL);
                         for(int i = 0; i < size; i++)
                         {
                                 q = (uint)(q * GELENHPBKFA + DLDLDGJEOJG);

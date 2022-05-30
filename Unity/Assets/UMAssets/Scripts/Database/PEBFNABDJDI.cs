@@ -107,7 +107,10 @@ public class PEBFNABDJDI : DIHHCBACKGG // TypeDefIndex: 10057
     }
 
 	// // RVA: 0xCC50C8 Offset: 0xCC50C8 VA: 0xCC50C8 Slot: 8
-	// protected override void KMBPACJNEOF() { }
+	protected override void KMBPACJNEOF()
+	{
+		///!!!
+	}
 
 	// // RVA: 0xCC5308 Offset: 0xCC5308 VA: 0xCC5308 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
