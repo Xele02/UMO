@@ -1,0 +1,571 @@
+
+namespace XeApp.Game
+{
+	public class GameManager : MonoBehaviour
+	{
+		private static GameManager mInstance; // 0x0
+		private static GameObject mMyObject; // 0x4
+		// [SerializeField] // RVA: 0x6623D4 Offset: 0x6623D4 VA: 0x6623D4
+		// private FontManager fontManagerPrefab; // 0xC
+		// [SpaceAttribute] // RVA: 0x6623E4 Offset: 0x6623E4 VA: 0x6623E4
+		// [SerializeField] // RVA: 0x6623E4 Offset: 0x6623E4 VA: 0x6623E4
+		// private UGUILetterBoxController letterboxPrefab; // 0x10
+		// [SerializeField] // RVA: 0x66241C Offset: 0x66241C VA: 0x66241C
+		// private UGUIFader faderPrefab; // 0x14
+		[SerializeField]
+		private GameObject popupPrefab; // 0x18
+		[SerializeField]
+		private GameObject transmissionIconPrefab; // 0x1C
+		[SerializeField]
+		private GameObject downloadBarPrefab; // 0x20
+		[SerializeField]
+		private GameObject progressBarPrefab; // 0x24
+		[SerializeField]
+		private GameObject nowloadingPrefab; // 0x28
+		[SerializeField]
+		private GameObject touchEffectPrefab; // 0x2C
+		[SerializeField]
+		private Camera systemCanvasCamera; // 0x30
+		[SerializeField]
+		private GameObject cbtWindowPrefab; // 0x34
+		// [SerializeField] // RVA: 0x6624AC Offset: 0x6624AC VA: 0x6624AC
+		// private DebugCheatMenu debugCheatMenuPrefab; // 0x38
+		// [SerializeField] // RVA: 0x6624BC Offset: 0x6624BC VA: 0x6624BC
+		// private DebugNetworkPause debugNetworkPausePrefab; // 0x3C
+		// [SerializeField] // RVA: 0x6624CC Offset: 0x6624CC VA: 0x6624CC
+		// private NotesSpeedSetting notesSpeedSetting; // 0x40
+		[SerializeField]
+		private GameObject longScreenFramePrefab; // 0x44
+		// [SerializeField] // RVA: 0x6624EC Offset: 0x6624EC VA: 0x6624EC
+		// private EnableOnGUIObjects m_enableOnGUIObjects; // 0x48
+		[HideInInspector]
+		public float ResolutionWidth;
+		[HideInInspector]
+		public float ResolutionHeight; // 0x64
+		[HideInInspector]
+		public float AppResolutionWidth; // 0x68
+		[HideInInspector]
+		public float AppResolutionHeight; // 0x6C
+		private const int PopupWindowCount = 4;
+		private bool isDirtyFontUpdate; // 0x72
+		private bool isBootInitialized; // 0x73
+		// [HideInInspector] // RVA: 0x6625AC Offset: 0x6625AC VA: 0x6625AC
+		// public CriAtom criAtom; // 0x74
+		public string ar_session_id; // 0x78
+		// private DFKGGBMFFGB m_viewPlayerData; // 0x7C
+		// private GameManager.FadeYielder m_fadeYielder; // 0x88
+		private Canvas popupCanvas; // 0x90
+		private Canvas fadeCanvas; // 0x94
+		private Canvas systemLayoutCanvas; // 0x98
+		public GameObject transmissionIcon; // 0x9C
+		// private UILoadWait nowloading; // 0xA8
+		// private TouchParticle m_touchParticle; // 0xB0
+		public const int g_SubDivaMax = 4;
+		public DivaResource[] subDivaResource; // 0xB8
+		// private LayoutCommonTextureManager unionTextureManager; // 0xBC
+		// private UGUICommonManager uguiCommonManager; // 0xC0
+		// private LayoutPoolManager iconDecorationCache; // 0xC4
+		// private SceneIconTextureCache sceneIconTextureCache; // 0xC8
+		// private MenuResidentTextureCache menuResidentTextureCache; // 0xCC
+		private DivaIconTextureCache divaIconTextureCache; // 0xD0
+		// private BgTextureCache bgTextureCache; // 0xD4
+		// private ItemTextureCache itemTextureCache; // 0xD8
+		private MusicJacketTextureCache musicJacketTextureCache; // 0xDC
+		private ValkyrieIconTextureCache valkyrieIconTextureCache; // 0xE0
+		private CostumeTextureCache costumeTextureCache; // 0xE4
+		// private EventBannerTextureCache eventBannerTextureCache; // 0xE8
+		// private PilotTextureCache pilotTextureCache; // 0xEC
+		// private QuestEventTextureCache questEventTextureCache; // 0xF0
+		// private SNSTextureCache snsIconCache; // 0xF4
+		// private EpisodeTextuteCache episodeIconCache; // 0xF8
+		// private GachaProductTextureCache gachaProductIconCache; // 0xFC
+		// private EventSystemControl eventSystemController; // 0x100
+		// private DenomIconTextureCache denomIconCache; // 0x104
+		// private MenuLayoutGameObjectCahce m_layoutObjectCache; // 0x108
+		// private StoryImageTextureCache m_storyImageCache; // 0x10C
+		// private MusicRatioTextureCache musicRatioTextureCache; // 0x110
+		// private GameObject LongScreenFrameInstance; // 0x118
+		// private SubPlateIconTextureCache m_subPlateIconCache; // 0x120
+		// private LobbyTextureCache m_lobbyTextureCache; // 0x124
+		// private DecorationItemTextureCache m_decorationItemTextureCache; // 0x128
+		// private RaidBossTextureCache m_raidBossTextureCache; // 0x12C
+		// private KiraDivaTextureCache m_kiraDivaTextureCache; // 0x130
+		// private HomeBgIconBgTextureCache m_homeBgIconTextureCache; // 0x134
+		// [CompilerGeneratedAttribute] // RVA: 0x66266C Offset: 0x66266C VA: 0x66266C
+		
+		// private UnityAction<float> UpdateAction; // 0x140
+		// [CompilerGeneratedAttribute] // RVA: 0x6AD9A0 Offset: 0x6AD9A0 VA: 0x6AD9A0
+		// // RVA: 0x99A05C Offset: 0x99A05C VA: 0x99A05C
+		// public void add_UpdateAction(UnityAction<float> value) { }
+		// [CompilerGeneratedAttribute] // RVA: 0x6AD9B0 Offset: 0x6AD9B0 VA: 0x6AD9B0
+		// // RVA: 0x99A168 Offset: 0x99A168 VA: 0x99A168
+		// public void remove_UpdateAction(UnityAction<float> value) { }
+
+		private float m_sceneIconAnimeTime; // 0x144
+		// private SnsNotification m_snsNotification; // 0x148
+		// private GameUIIntro m_intro; // 0x14C
+		// private List<GameManager.PushBackButtonHandler> m_pushBackButtonHandlerList; // 0x150
+		private static float[] bx; // 0x8
+		private static float[] by; // 0xC
+		private int screenSizeType; // 0x154
+		private const float DEFAULT_FADE_TIME = 0,4;
+		private const int multipleOverridePrimeId = 2;
+
+		public static GameManager Instance { get { return mInstance; } } // get_Instance() 0x984FB8
+		// public EnableOnGUIObjects EnableInGUI { get; set; }  get_EnableInGUI 0x999DF4  set_EnableInGUI 0x999DF0 
+		// public AppBootTimeManager appBootTime { get; set; } // 0x4C
+		// public FontManager font { get; set; } // 0x50
+		// public UGUIFader fullscreenFader { get; set; } // 0x54
+		public int screenWidth { get; set; } // 0x58
+		public int screenHeight { get; set; } // 0x5C
+		public bool IsSystemInitialized { get; set; } // 0x70
+		public bool IsUnionDataInitialized { get; set; } // 0x71
+		// public DFKGGBMFFGB ViewPlayerData { get; } // get_ViewPlayerData 0x989990
+		// public EAJCBFGKKFA SelectedGuestData { get; set; } // 0x80
+		public bool IsTutorial { get; set; } // 0x84
+		// public GameManager.FadeYielder WaitFadeYielder { get; } // get_WaitFadeYielder 0x999E7C 
+		public Canvas PopupCanvas { get { return popupCanvas; } } // get_PopupCanvas 0x999E84 
+		// public ILDKBCLAFPB localSave { get; set; } // 0x8C
+		// public UIDownloadWait DownloadBar { get; set; } // 0xA0
+		// public UILoadProgress ProgressBar { get; set; } // 0xA4
+		// public UILoadWait NowLoading { get; } // get_NowLoading 0x999EB4 
+		// public CbtWindow CbtWindow { get; set; } // 0xAC
+		public DivaResource divaResource { get; set; } // 0xB4
+		// public UGUILetterBoxController LetterBox { get; set; } // 0x114
+		// public LongScreenFrame LongScreenFrame { get; set; } // 0x11C
+		public UnityAction onDownLoadFinish { get; set; }	// 0x138
+		public bool InputEnabled { get { Debug.LogError("TODO"); return false; }; set { Debug.LogError("TODO"); }; } // get_InputEnabled 0x999F0C set_InputEnabled 0x999F38 
+		// public EventSystemControl EventSystemControl { get; } // get_EventSystemControl 0x999F6C 
+		// public LayoutCommonTextureManager UnionTextureManager { get; } // get_UnionTextureManager 0x999F74 
+		// public UGUICommonManager UguiCommonManager { get; } // get_UguiCommonManager 0x999F7C 
+		public bool IsCacheActive { get; set; } // IsCacheActive // 0x13C
+		// public LayoutPoolManager IconDecorationCache { get; } // get_IconDecorationCache 0x999F94 
+		// public SceneIconTextureCache SceneIconCache { get; } // get_SceneIconCache 0x999F9C 
+		// public MenuResidentTextureCache MenuResidentTextureCache { get; } // get_MenuResidentTextureCache 0x999FA4 
+		public DivaIconTextureCache DivaIconCache { get { return divaIconTextureCache; } } // get_DivaIconCache 0x999FAC 
+		// public BgTextureCache BgTextureCache { get; } // get_BgTextureCache 0x999FB4 
+		// public ItemTextureCache ItemTextureCache { get; } // get_ItemTextureCache 0x98F864 
+		public MusicJacketTextureCache MusicJacketTextureCache { get { return musicJacketTextureCache; } } // get_MusicJacketTextureCache 0x999FBC 
+		public ValkyrieIconTextureCache ValkyrieIconCache { get { return valkyrieIconTextureCache; } } // get_ValkyrieIconCache 0x999FC4 
+		public CostumeTextureCache CostumeIconCache { get { return costumeTextureCache; } } // get_CostumeIconCache 0x999FCC 
+		// public EventBannerTextureCache EventBannerTextureCache { get; } // get_EventBannerTextureCache 0x999FD4 
+		// public PilotTextureCache PilotTextureCache { get; } // get_PilotTextureCache 0x999FDC 
+		// public QuestEventTextureCache QuestEventTextureCache { get; } // get_QuestEventTextureCache 0x999FE4 
+		// public SNSTextureCache SnsIconCache { get; } //  get_SnsIconCache 0x999FEC 
+		// public GachaProductTextureCache GachaProductIconCache { get; } // get_GachaProductIconCache 0x999FF4 
+		// public EpisodeTextuteCache EpisodeIconCache { get; } // get_EpisodeIconCache 0x999FFC 
+		// public DenomIconTextureCache DenomIconCache { get; } // get_DenomIconCache 0x99A004 
+		// public MenuLayoutGameObjectCahce LayoutObjectCache { get; } // get_LayoutObjectCache 0x99A00C 
+		// public StoryImageTextureCache storyImageCache { get; } // get_storyImageCache 0x99A014 
+		// public MusicRatioTextureCache MusicRatioTextureCache { get; } // get_MusicRatioTextureCache 0x99A01C 
+		// public NotesSpeedSetting rhythmNotesSpeedSetting { get; } // get_rhythmNotesSpeedSetting 0x99A024 
+		// public SubPlateIconTextureCache subPlateIconCache { get; } // get_subPlateIconCache 0x99A02C 
+		// public LobbyTextureCache LobbyTextureCache { get; } // get_LobbyTextureCache 0x99A034 
+		// public DecorationItemTextureCache decorationItemTextureCache { get; } // get_decorationItemTextureCache 0x99A03C 
+		// public RaidBossTextureCache RaidBossTextureCache { get; } // get_RaidBossTextureCache 0x99A044 
+		// public KiraDivaTextureCache KiraDivaTextureCache { get; } //  get_KiraDivaTextureCache 0x99A04C 
+		// public HomeBgIconBgTextureCache HomeBgIconTextureCache { get; } // get_HomeBgIconTextureCache 0x99A054 
+		// public SnsNotification snsNotification { get; } // get_snsNotification 0x99A274 
+		// public GameUIIntro GameUIIntro { get; } // get_GameUIIntro 0x99A27C 
+
+		// // RVA: 0x99A284 Offset: 0x99A284 VA: 0x99A284
+		// public void DeleteIntro() { }
+
+		// // RVA: 0x9888B0 Offset: 0x9888B0 VA: 0x9888B0
+		// public void AddPushBackButtonHandler(GameManager.PushBackButtonHandler handler) { }
+
+		// // RVA: 0x99A334 Offset: 0x99A334 VA: 0x99A334
+		// public void AddLastBackButtonHandler(GameManager.PushBackButtonHandler handler) { }
+
+		// // RVA: 0x988E80 Offset: 0x988E80 VA: 0x988E80
+		// public void RemovePushBackButtonHandler(GameManager.PushBackButtonHandler handler) { }
+
+		// // RVA: 0x98B534 Offset: 0x98B534 VA: 0x98B534
+		// public void ClearPushBackButtonHandler() { }
+
+		// // RVA: 0x99A3B4 Offset: 0x99A3B4 VA: 0x99A3B4
+		// public static void Create(GameObject prefab) { }
+
+		// // RVA: 0x99A63C Offset: 0x99A63C VA: 0x99A63C
+		// public static void Release() { }
+
+		// [IteratorStateMachineAttribute] // RVA: 0x6AD9C0 Offset: 0x6AD9C0 VA: 0x6AD9C0
+		// // RVA: 0x99A7A4 Offset: 0x99A7A4 VA: 0x99A7A4
+		// public IEnumerator UnloadAllAssets() { }
+
+		// // RVA: 0x99A82C Offset: 0x99A82C VA: 0x99A82C
+		private void Awake()
+		{
+			DontDestroyOnLoad(this);
+			mInstance = this;
+			Initialize();
+			// !!! // m_enableOnGUIObjects
+		}
+
+		// [IteratorStateMachineAttribute] // RVA: 0x6ADA38 Offset: 0x6ADA38 VA: 0x6ADA38
+		// // RVA: 0x99AC08 Offset: 0x99AC08 VA: 0x99AC08
+		// private IEnumerator Co_InitScreen() { }
+
+		// [IteratorStateMachineAttribute] // RVA: 0x6ADAB0 Offset: 0x6ADAB0 VA: 0x6ADAB0
+		// // RVA: 0x99AC90 Offset: 0x99AC90 VA: 0x99AC90
+		// private IEnumerator Co_ReInitScreen() { }
+
+		// // RVA: 0x99AD18 Offset: 0x99AD18 VA: 0x99AD18
+		private void Start()
+		{
+			// Start_Coroutine(Co_InitScreen);
+			
+			// Hack
+			InitializeSystem();
+		}
+
+		// // RVA: 0x99AD3C Offset: 0x99AD3C VA: 0x99AD3C
+		private void OnDestroy()
+		{
+			// !!!
+		}
+
+		// // RVA: 0x99ADD8 Offset: 0x99ADD8 VA: 0x99ADD8
+		private void Update()
+		{
+			//sceneIconTextureCache.Update();
+			//menuResidentTextureCache.Update();
+			divaIconTextureCache.Update();
+			//bgTextureCache.Update();
+			//itemTextureCache.Update();
+			musicJacketTextureCache.Update();
+			valkyrieIconTextureCache.Update();
+			costumeTextureCache.Update();
+			//eventBannerTextureCache.Update();
+			//pilotTextureCache.Update();
+			//questEventTextureCache.Update();
+			//snsIconCache.Update();
+			//episodeIconCache.Update();
+			//gachaProductIconCache.Update();
+			//denomIconCache.Update();
+			//m_storyImageCache.Update();
+			//musicRatioTextureCache.Update();
+			//m_subPlateIconCache.Update();
+			//m_lobbyTextureCache.Update();
+			//m_decorationItemTextureCache.Update();
+			//m_raidBossTextureCache.Update();
+			//m_kiraDivaTextureCache.Update();
+			//m_homeBgIconTextureCache.Update();
+		}
+
+		// // RVA: 0x99B0D4 Offset: 0x99B0D4 VA: 0x99B0D4
+		// private void OnFontTextureRebuilt(Font font) { }
+
+		// // RVA: 0x99B194 Offset: 0x99B194 VA: 0x99B194
+		private void LateUpdate()
+		{
+			// Update font
+			// isDirtyFontUpdate / UpdateAction / m_sceneIconAnimeTime
+			// !!!
+		}
+
+		// // RVA: 0x99B250 Offset: 0x99B250 VA: 0x99B250
+		// public void OnPushBackButton() { }
+
+		// // RVA: 0x99A938 Offset: 0x99A938 VA: 0x99A938
+		private void Initialize()
+		{
+			// Unitylogger.setlogenabled
+			GameObject go = new GameObject("AppBootTimeManager");
+			// appBootTime = go.AddComponent<AppBootTimeManager>();
+			go.transform.SetParent(transform, false);
+			//UnityEngine.Screen.set_sleepTimeout = -2;
+			//criAtom = GetComponentInChildren<CriAtom>();
+			//??XeSys.SingletonMonoBehaviour<ResourcesManager>$$get_Instance
+			//XeApp.Core.Q.A();
+			//P.A();
+			SetupAssetBundleBasePath();
+			//XeSys.Singleton<MessageManager>$$Create()
+			//gameObject.AddComponent<FCMTokenReceiver>();
+		}
+
+		// // RVA: 0x99B46C Offset: 0x99B46C VA: 0x99B46C
+		// private void Initialize_ScreenAndSystemLayout() { }
+
+		// // RVA: 0x99DBFC Offset: 0x99DBFC VA: 0x99DBFC
+		public void InitializeSystem()
+		{
+			if(IsSystemInitialized)
+				return;
+			
+			OnBootInitialize();
+			StartCoroutine(InitializeSystemCoroutine());
+		}
+
+		// // RVA: 0x99DC34 Offset: 0x99DC34 VA: 0x99DC34
+		private void OnBootInitialize()
+		{
+			SoundManager.Instance.Initialize();
+			//NKGJPJPHLIF a = NKGJPJPHLIF.NKACBOEHELJ();
+			//a.ODLGKIJCHGH(null);
+		}
+
+		// [IteratorStateMachineAttribute] // RVA: 0x6ADB28 Offset: 0x6ADB28 VA: 0x6ADB28
+		// // RVA: 0x99DCFC Offset: 0x99DCFC VA: 0x99DCFC
+		private IEnumerator InitializeSystemCoroutine()
+		{			
+			//private int <>1__state; // 0x8
+			//private object <>2__current; // 0xC
+			//public GameManager <>4__this; // 0x10
+			//0x142484C
+			yield return null;
+			
+			//b = XeSys.SingletonBehaviour<TutorialManager>
+			//GameSetupData a = b.??
+			// a.OnAppBoot();
+			///XeSys.Singleton<MessageManager>$$Create();
+			//XeSys.Singleton<MessageManager>.Request(0, 0)
+			// yield return XeSys.Singleton<MessageManager>.WaitForDone(this);
+			
+			//XeSys.Singleton<MessageManager>.Request(2, 0)
+			// yield return XeSys.Singleton<MessageManager>.WaitForDone(this);
+			
+			//NKGJPJPHLIF c = NKGJPJPHLIF$$NKACBOEHELJ();
+			//if(!c.FNMKBDKDJMO())
+			//	yield break;
+			//KDLPEDBKMID d = KDLPEDBKMID$$NKACBOEHELJ();
+			// //delegate int INDDJNMPONH, float LNAHJANMJNM, AsyncCallback KBCBGIGOLHP, object LFJDOALODOI
+			//OMIFMMJPMDJ e = new OMIFMMJPMDJ(this, InstallEvent);
+			//if(d != null)
+			//{
+			//	d.NPJJMDFAIII(e);
+			//	NDABOOOOENC f = NDABOOOOENC$$NKACBOEHELJ();
+			//	if(f != null)
+			//	{
+			//		f.NCDLCIPGPNC();
+					IsSystemInitialized = true;
+			//	}
+			//}
+			
+			// !!!
+		}
+
+		// // RVA: 0x99DD84 Offset: 0x99DD84 VA: 0x99DD84
+		// public void InitializeUnionData() { }
+
+		// [IteratorStateMachineAttribute] // RVA: 0x6ADBA0 Offset: 0x6ADBA0 VA: 0x6ADBA0
+		// // RVA: 0x99DDB8 Offset: 0x99DDB8 VA: 0x99DDB8
+		// private IEnumerator UnionDataCoroutine() { }
+
+		// // RVA: 0x99CDA8 Offset: 0x99CDA8 VA: 0x99CDA8
+		private void AppSpecial()
+		{
+			// !!!
+		}
+
+		// // RVA: 0x99E7FC Offset: 0x99E7FC VA: 0x99E7FC
+		// public void SetDispLongScreenFrame(bool isShow) { }
+
+		// // RVA: 0x99E908 Offset: 0x99E908 VA: 0x99E908
+		// public void SetLongScreenFrameColor(int colorNo) { }
+
+		// // RVA: 0x99EA40 Offset: 0x99EA40 VA: 0x99EA40
+		// public void ResetResetLetterBox() { }
+
+		// // RVA: 0x99EB70 Offset: 0x99EB70 VA: 0x99EB70
+		// private void ReInitScreen() { }
+
+		// // RVA: 0x99F2B4 Offset: 0x99F2B4 VA: 0x99F2B4
+		// public void UpdateInputArea(bool isAr) { }
+
+		// [IteratorStateMachineAttribute] // RVA: 0x6ADC18 Offset: 0x6ADC18 VA: 0x6ADC18
+		// // RVA: 0x99F6C8 Offset: 0x99F6C8 VA: 0x99F6C8
+		// public IEnumerator Co_CacheAppResources() { }
+
+		// // RVA: 0x99B318 Offset: 0x99B318 VA: 0x99B318
+		private void SetupAssetBundleBasePath()
+		{
+			// !!!
+		}
+
+		// // RVA: 0x99DE40 Offset: 0x99DE40 VA: 0x99DE40
+		// public void SetupResolution(float baseWidth, float baseHeight) { }
+
+		// // RVA: 0x99F750 Offset: 0x99F750 VA: 0x99F750
+		// public void ReSetupResolution(float baseWidth, float baseHeight) { }
+
+		// // RVA: 0x99FB5C Offset: 0x99FB5C VA: 0x99FB5C
+		// public void RevertResolution() { }
+
+		// // RVA: 0x99FF14 Offset: 0x99FF14 VA: 0x99FF14
+		// public void SetupResolutionDefault() { }
+
+		// // RVA: 0x9A0068 Offset: 0x9A0068 VA: 0x9A0068
+		// public void SetupResolutionInGame() { }
+
+		// // RVA: 0x99E7D4 Offset: 0x99E7D4 VA: 0x99E7D4
+		public void SetFPS(int fps)
+		{
+			// !!!
+		}
+
+		// // RVA: 0x9A01BC Offset: 0x9A01BC VA: 0x9A01BC
+		// public void SetRunInBackground(bool permit) { }
+
+		// // RVA: 0x9A01C8 Offset: 0x9A01C8 VA: 0x9A01C8
+		// public void SetNeverSleep(bool enable) { }
+
+		// // RVA: 0x9A01DC Offset: 0x9A01DC VA: 0x9A01DC
+		// public void SetTimeScale(float time) { }
+
+		// // RVA: 0x99B6C4 Offset: 0x99B6C4 VA: 0x99B6C4
+		// private void CreateSystemObject() { }
+
+		// // RVA: 0x99B84C Offset: 0x99B84C VA: 0x99B84C
+		// private void CreateUGUI() { }
+
+		// // RVA: 0x9A0628 Offset: 0x9A0628 VA: 0x9A0628
+		// public bool IsInitializedSystemLayout() { }
+
+		// // RVA: 0x9A0758 Offset: 0x9A0758 VA: 0x9A0758
+		// public void ResetSystemCanvasCamera() { }
+
+		// // RVA: 0x99B4B0 Offset: 0x99B4B0 VA: 0x99B4B0
+		// private void CreateFont() { }
+
+		// // RVA: 0x98060C Offset: 0x98060C VA: 0x98060C
+		// public static void FadeIn(float time = 0,4) { }
+
+		// // RVA: 0x9809CC Offset: 0x9809CC VA: 0x9809CC
+		// public static void FadeOut(float time = 0,4) { }
+
+		// // RVA: 0x97FDB0 Offset: 0x97FDB0 VA: 0x97FDB0
+		// public static bool IsFading() { }
+
+		// // RVA: 0x9A0808 Offset: 0x9A0808 VA: 0x9A0808
+		// public static void FadeReset() { }
+
+		// // RVA: 0x9A08E0 Offset: 0x9A08E0 VA: 0x9A08E0
+		// public void ShowSnsNotice(int snsId, UnityAction pushAction, bool isButtonEnable = True) { }
+
+		// // RVA: 0x9A09FC Offset: 0x9A09FC VA: 0x9A09FC
+		// public void CloseSnsNotice() { }
+
+		// // RVA: 0x9A0AB0 Offset: 0x9A0AB0 VA: 0x9A0AB0
+		// public void ShowOfferNotice(UnityAction pushAction, bool isButtonEnable = True) { }
+
+		// // RVA: 0x9A0BB8 Offset: 0x9A0BB8 VA: 0x9A0BB8
+		// public void CloseOfferNotice() { }
+
+		// // RVA: 0x9A040C Offset: 0x9A040C VA: 0x9A040C
+		// public void ChangePopupPriority(bool popupTop) { }
+
+		// // RVA: 0x9A0314 Offset: 0x9A0314 VA: 0x9A0314
+		// private void ChangeLayerWithChild(GameObject go, int layer) { }
+
+		// // RVA: 0x9A0294 Offset: 0x9A0294 VA: 0x9A0294
+		// public void SetTouchEffectVisible(bool isVisible) { }
+
+		// // RVA: 0x9A0C6C Offset: 0x9A0C6C VA: 0x9A0C6C
+		// public void SetTouchEffectMode(bool isRhythmGame) { }
+
+		// // RVA: 0x9A0CA0 Offset: 0x9A0CA0 VA: 0x9A0CA0
+		// public void SetSystemCanvasRenderMode(RenderMode mode) { }
+
+		// // RVA: 0x9A0CA4 Offset: 0x9A0CA4 VA: 0x9A0CA4
+		// public void SetSystemCanvasResolution(Vector2 resolution) { }
+
+		// // RVA: 0x99B14C Offset: 0x99B14C VA: 0x99B14C
+		// public Font GetSystemFont() { }
+
+		// // RVA: 0x9A0D4C Offset: 0x9A0D4C VA: 0x9A0D4C
+		// public void CreateViewPlayerData() { }
+
+		// // RVA: 0x98874C Offset: 0x98874C VA: 0x98874C
+		// public void ResetViewPlayerData() { }
+
+		// // RVA: 0x9A0DF8 Offset: 0x9A0DF8 VA: 0x9A0DF8
+		// public void DeleteViewPlayerData() { }
+
+		// // RVA: 0x9A0E04 Offset: 0x9A0E04 VA: 0x9A0E04
+		// public FFHPBEPOMAK GetHomeDiva() { }
+
+		// // RVA: 0x9A0F5C Offset: 0x9A0F5C VA: 0x9A0F5C
+		// public Camera GetSystemCanvasCamera() { }
+
+		// // RVA: 0x9A0F64 Offset: 0x9A0F64 VA: 0x9A0F64
+		// public void InstantiateCbtWindow() { }
+
+		// [IteratorStateMachineAttribute] // RVA: 0x6ADC90 Offset: 0x6ADC90 VA: 0x6ADC90
+		// // RVA: 0x9A1004 Offset: 0x9A1004 VA: 0x9A1004
+		// public IEnumerator InstantiateCbtWindowCoroutine() { }
+
+		// [SkipAttribute] // RVA: 0x6ADD08 Offset: 0x6ADD08 VA: 0x6ADD08
+		// // RVA: 0x9A108C Offset: 0x9A108C VA: 0x9A108C
+		// public void OnSetLaunchURL(string url) { }
+
+		// [SkipAttribute] // RVA: 0x6ADD18 Offset: 0x6ADD18 VA: 0x6ADD18
+		// // RVA: 0x9A111C Offset: 0x9A111C VA: 0x9A111C
+		// public void OnSetLaunchURLWithFOX(string url) { }
+
+		// [SkipAttribute] // RVA: 0x6ADD28 Offset: 0x6ADD28 VA: 0x6ADD28
+		// // RVA: 0x9A11AC Offset: 0x9A11AC VA: 0x9A11AC
+		// public void OnSetDecoURL(string url) { }
+
+		// [IteratorStateMachineAttribute] // RVA: 0x6ADD38 Offset: 0x6ADD38 VA: 0x6ADD38
+		// // RVA: 0x9A1230 Offset: 0x9A1230 VA: 0x9A1230
+		// private IEnumerator LoadGameIntroCoroutine() { }
+
+		// [IteratorStateMachineAttribute] // RVA: 0x6ADDB0 Offset: 0x6ADDB0 VA: 0x6ADDB0
+		// // RVA: 0x9A12B8 Offset: 0x9A12B8 VA: 0x9A12B8
+		// public IEnumerator ShowGameIntroCoroutine() { }
+
+		// // RVA: 0x9A1340 Offset: 0x9A1340 VA: 0x9A1340
+		// public void CleanCacheAssetBundle() { }
+
+		// // RVA: 0x9A1348 Offset: 0x9A1348 VA: 0x9A1348
+		// public bool InstallEvent(int type, float per) { }
+
+		// [IteratorStateMachineAttribute] // RVA: 0x6ADE28 Offset: 0x6ADE28 VA: 0x6ADE28
+		// // RVA: 0x9A1478 Offset: 0x9A1478 VA: 0x9A1478
+		// public IEnumerator TryInstallRhythmGameResource(GameSetupData gameSetupData) { }
+
+		// [IteratorStateMachineAttribute] // RVA: 0x6ADEA0 Offset: 0x6ADEA0 VA: 0x6ADEA0
+		// // RVA: 0x9A1500 Offset: 0x9A1500 VA: 0x9A1500
+		// public IEnumerator ListupRhythmGameResourceFileList(int divaId, int divaModelId, int valkyrieId, int valkyrieFormType, int freeMusicId, int storyMusicId, Difficulty.Type difficulty, List<string> list, int stageDivaNum) { }
+
+		// // RVA: 0x9A165C Offset: 0x9A165C VA: 0x9A165C
+		public string GetWavDirectoryName(int wavId, string format, int stageDivaNum, int primeId = 1, int assetId = -1, bool isNoFindSoloChange = True)
+		{
+			// !!!
+		}
+
+		// // RVA: 0x9A17B4 Offset: 0x9A17B4 VA: 0x9A17B4
+		public int GetMultipleDanceOverridePrimeId(List<int> primeIdList)
+		{
+			// !!!
+		}
+
+		// // RVA: 0x9A1948 Offset: 0x9A1948 VA: 0x9A1948
+		// public bool IsMultipleOverridePrimeId(int primeId) { }
+
+		// // RVA: 0x9A1958 Offset: 0x9A1958 VA: 0x9A1958
+		// public void SetTransmissionIconPosition(bool isARMode) { }
+
+		// // RVA: 0x9A1B00 Offset: 0x9A1B00 VA: 0x9A1B00
+		public GameManager()
+		{
+			//!!!
+			subDivaResource = new DivaResource[4];
+			//!!!
+		}
+
+		// // RVA: 0x9A1C14 Offset: 0x9A1C14 VA: 0x9A1C14
+		static GameManager()
+		{
+			mInstance = null;
+			mMyObject = null;
+			// init bx & by
+			//!!!
+		}
+
+		// [CompilerGeneratedAttribute] // RVA: 0x6ADF18 Offset: 0x6ADF18 VA: 0x6ADF18
+		// // RVA: 0x9A1D00 Offset: 0x9A1D00 VA: 0x9A1D00
+		// private void <LoadGameIntroCoroutine>b__299_0(GameObject instance) { }
+	}
+}
