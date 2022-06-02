@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class N : MonoBehaviour
 {       // Fields
-        //[SerializeField]
-        //public GameObject c; // 0xC
-        //[SerializeField]
-        //public D d; // 0x10
+        [SerializeField]
+        public GameObject c; // 0xC
+        [SerializeField]
+        public D d; // 0x10
         public S e; // 0x14
 
         // Properties

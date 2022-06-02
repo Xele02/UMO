@@ -1,7 +1,7 @@
 using System.Collections;
 
 // Namespace: 
-public class IIEDOGCMCIE : CBBJHPBGBAJ // TypeDefIndex: 8687
+public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive // TypeDefIndex: 8687
 {
 	// Fields
 	// private const int NNBHLPECAHJ = 1;
@@ -91,7 +91,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ // TypeDefIndex: 8687
                 encryption.FAEFDAJAMCE(result);
                 encryption.AAGCKDHEMFD_GenerateKey();
             }
-            BIOFMLDLNKD = KHEKNNFCAOI(request.Result);
+            BIOFMLDLNKD = KHEKNNFCAOI_Load(request.Result);
             PLOOEECNHFB = true;
             if(!BIOFMLDLNKD)
             {
