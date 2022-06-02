@@ -1,0 +1,3 @@
+public class SakashoUserToken : SakashoAPIBase
+{
+}

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2012c0e54635645b499aab06abbc01, type: 3}
+  m_Name: use_stone_pack_uvlist
+  m_EditorClassIdentifier:
+  m_name: use_stone_pack
+  m_width: 256
+  m_height: 256
+  m_uScale: 1
+  m_vScale: 1
+  m_serializeDatas:
+  - name: u_s_frm_count_03
+    u: 0.4375
+    v: 0.3007813
+    width: 0.078125
+    height: 0.109375
+  - name: u_s_frm_count_02
+    u: 0.3984375
+    v: 0.3007813
+    width: 0.0390625
+    height: 0.109375
+  - name: u_s_frm_count_01
+    u: 0.3203125
+    v: 0.3007813
+    width: 0.078125
+    height: 0.109375
+  - name: use_stone_btn_fnt
+    u: 0.00390625
+    v: 0.1796875
+    width: 0.9765625
+    height: 0.1171875
+  - name: use_stone_btn_03
+    u: 0.1914063
+    v: 0.3007813
+    width: 0.125
+    height: 0.1875
+  - name: use_stone_btn_02
+    u: 0.1289063
+    v: 0.3007813
+    width: 0.0625
+    height: 0.1875
+  - name: use_stone_btn_01
+    u: 0.00390625
+    v: 0.3007813
+    width: 0.125
+    height: 0.1875
+  - name: use_stone_btn_eff
+    u: 0.00390625
+    v: 0.00390625
+    width: 0.9921875
+    height: 0.171875

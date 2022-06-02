@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2012c0e54635645b499aab06abbc01, type: 3}
+  m_Name: contract_pack_uvlist
+  m_EditorClassIdentifier:
+  m_name: contract_pack
+  m_width: 256
+  m_height: 256
+  m_uScale: 1
+  m_vScale: 1
+  m_serializeDatas:
+  - name: contract_font_icon
+    u: 0.6757813
+    v: 0.2734375
+    width: 0.1171875
+    height: 0.1171875
+  - name: contract_font_01
+    u: 0.21875
+    v: 0.2734375
+    width: 0.453125
+    height: 0.125
+  - name: contract_button_eff
+    u: 0.00390625
+    v: 0.00390625
+    width: 0.921875
+    height: 0.265625
+  - name: contract_button_03
+    u: 0.1445313
+    v: 0.2734375
+    width: 0.0703125
+    height: 0.2890625
+  - name: contract_button_02
+    u: 0.07421875
+    v: 0.2734375
+    width: 0.0703125
+    height: 0.2890625
+  - name: contract_button_01
+    u: 0.00390625
+    v: 0.2734375
+    width: 0.0703125
+    height: 0.2890625

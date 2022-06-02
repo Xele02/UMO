@@ -1,0 +1,3254 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc60f5e01fd78314c88b61209b7bc3f4, type: 3}
+  m_Name: cmn_load_root_cmn_cnct_layout
+  m_EditorClassIdentifier:
+  serializableViews:
+  - index: 0
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: -1
+    id: root_cmn_cnct_layout_root
+    exId: root_cmn_cnct_layout_root
+    animId: root_cmn_cnct_layout_root
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 1
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 0
+    id: cmn_tusin
+    exId: root_cmn_cnct_cmn_tusin
+    animId: root_cmn_cnct_cmn_tusin
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 1050.2, y: 132.4}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 2
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 1
+    id: cmn_tusin_anim
+    exId: sw_cmn_cnct_cmn_tusin_anim
+    animId: sw_cmn_cnct_cmn_tusin_anim
+    transformData:
+      m:
+        Pos: {x: -136, y: 132}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 3
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 63
+          Time: 2.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: logo_
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: loen_
+          FrameIdx: 63
+          Time: 2.1
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 354
+        m_Id:
+        m_FrameNum: 63
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: cmn_load_tusn_circle
+    exId: sw_cnct_grain_light_anim_cmn_load_tusn_circle
+    animId: sw_cnct_grain_light_anim_cmn_load_tusn_circle
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 0.4980392}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 0.4980392}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 4
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 3
+    id: cmn_load_tusn_circle
+    exId: cmn_load_cnct_circle_cmn_load_tusn_circle
+    animId: cmn_load_cnct_circle_cmn_load_tusn_circle
+    transformData:
+      m:
+        Pos: {x: -52, y: -52}
+        Move: {x: 0, y: 0}
+        Size: {x: 104, y: 104}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_circle
+  - index: 5
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0.3}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 63
+          Time: 2.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0.3}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: logo_
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: loen_
+          FrameIdx: 63
+          Time: 2.1
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 354
+        m_Id:
+        m_FrameNum: 63
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: cmn_load_tusn_grain_base
+    exId: sw_cnct_grain_light_anim_cmn_load_tusn_grain_base
+    animId: sw_cnct_grain_light_anim_cmn_load_tusn_grain_base
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 0.2980392}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 0.2980392}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.2980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 6
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 5
+    id: cmn_load_tusn_grain_base
+    exId: cmn_load_cnct_grain_base_cmn_load_tusn_grain_base
+    animId: cmn_load_cnct_grain_base_cmn_load_tusn_grain_base
+    transformData:
+      m:
+        Pos: {x: -56, y: -56}
+        Move: {x: 0, y: 0}
+        Size: {x: 112, y: 112}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.2980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_base
+  - index: 7
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 0
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 12
+          Time: 0.4
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: -0.00367073, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 0
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 41
+          Time: 1.366667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 0
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 63
+          Time: 2.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 0
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: logo_
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: loen_
+          FrameIdx: 63
+          Time: 2.1
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 482
+        m_Id:
+        m_FrameNum: 63
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: sw_tusn_grain_light_01
+    exId: sw_cnct_grain_light_anim_sw_tusn_grain_light_01
+    animId: sw_cnct_grain_light_anim_sw_tusn_grain_light_01
+    transformData:
+      m:
+        Pos: {x: -1, y: -41}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: -1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 0.4980392}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 0.4980392}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 8
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 7
+    id: cmn_load_tusn_grain_light_03
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 0.509804, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 0.509804, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 9
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 8
+    id: cmn_load_tusn_grain_light_03
+    exId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    animId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_03
+  - index: 10
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 7
+    id: cmn_load_tusn_grain_light_02
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 11
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 10
+    id: cmn_load_cnct_grain_light_02
+    exId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    animId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_02
+  - index: 12
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 7
+          Time: 0.2333333
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 8
+          Time: 0.2666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 20
+          Time: 0.6666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0.0170634, y: -0.0231646}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 49
+          Time: 1.633333
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 63
+          Time: 2.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: logo_
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: loen_
+          FrameIdx: 63
+          Time: 2.1
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 482
+        m_Id:
+        m_FrameNum: 63
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: sw_tusn_grain_light_02
+    exId: sw_cnct_grain_light_anim_sw_tusn_grain_light_02
+    animId: sw_cnct_grain_light_anim_sw_tusn_grain_light_02
+    transformData:
+      m:
+        Pos: {x: 28, y: -29}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1.000001, y: 1.000001}
+        Rot: 0.7853961
+        Color: {r: 1, g: 1, b: 1, a: 0}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 0}
+    currentColor: {r: 1, g: 1, b: 1, a: 0}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 13
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 12
+    id: cmn_load_tusn_grain_light_03
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 0.509804, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 0.509804, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 14
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 13
+    id: cmn_load_tusn_grain_light_03
+    exId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    animId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_03
+  - index: 15
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 12
+    id: cmn_load_tusn_grain_light_02
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 16
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 15
+    id: cmn_load_cnct_grain_light_02
+    exId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    animId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_02
+  - index: 17
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 15
+          Time: 0.5
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 16
+          Time: 0.5333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 28
+          Time: 0.9333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: -0.146329}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 57
+          Time: 1.9
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 63
+          Time: 2.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: logo_
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: loen_
+          FrameIdx: 63
+          Time: 2.1
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 482
+        m_Id:
+        m_FrameNum: 63
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: sw_tusn_grain_light_03
+    exId: sw_cnct_grain_light_anim_sw_tusn_grain_light_03
+    animId: sw_cnct_grain_light_anim_sw_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: 41, y: -1}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 1.570796
+        Color: {r: 1, g: 1, b: 1, a: 0}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 0}
+    currentColor: {r: 1, g: 1, b: 1, a: 0}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 18
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 17
+    id: cmn_load_tusn_grain_light_03
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 0.509804, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 0.509804, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 19
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 18
+    id: cmn_load_tusn_grain_light_03
+    exId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    animId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_03
+  - index: 20
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 17
+    id: cmn_load_tusn_grain_light_02
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 21
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 20
+    id: cmn_load_cnct_grain_light_02
+    exId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    animId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_02
+  - index: 22
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0.0172414}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 1
+          Time: 0.03333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 23
+          Time: 0.7666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0.3}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 24
+          Time: 0.8000001
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 36
+          Time: 1.2
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 63
+          Time: 2.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0.0344828}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: logo_
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: loen_
+          FrameIdx: 63
+          Time: 2.1
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 482
+        m_Id:
+        m_FrameNum: 63
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: sw_tusn_grain_light_04
+    exId: sw_cnct_grain_light_anim_sw_tusn_grain_light_04
+    animId: sw_cnct_grain_light_anim_sw_tusn_grain_light_04
+    transformData:
+      m:
+        Pos: {x: 29, y: 28}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1.000001, y: 1.000001}
+        Rot: 2.356197
+        Color: {r: 1, g: 1, b: 1, a: 0.007843138}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 0.007843138}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.007843138}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 23
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 22
+    id: cmn_load_tusn_grain_light_03
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 0.509804, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 0.509804, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.007843138}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 24
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 23
+    id: cmn_load_tusn_grain_light_03
+    exId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    animId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.007843138}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_03
+  - index: 25
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 22
+    id: cmn_load_tusn_grain_light_02
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.007843138}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 26
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 25
+    id: cmn_load_cnct_grain_light_02
+    exId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    animId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.007843138}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_02
+  - index: 27
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 3.141593
+              Color: {r: 1, g: 1, b: 1, a: 0.155172}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 9
+          Time: 0.3
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 3.141593
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 31
+          Time: 1.033333
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 3.141593
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 32
+          Time: 1.066667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 3.141593
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 44
+          Time: 1.466667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: -2.77556E-17, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 3.141593
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 63
+          Time: 2.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: 3.141593
+              Color: {r: 1, g: 1, b: 1, a: 0.172414}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: logo_
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: loen_
+          FrameIdx: 63
+          Time: 2.1
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 482
+        m_Id:
+        m_FrameNum: 63
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: sw_tusn_grain_light_05
+    exId: sw_cnct_grain_light_anim_sw_tusn_grain_light_05
+    animId: sw_cnct_grain_light_anim_sw_tusn_grain_light_05
+    transformData:
+      m:
+        Pos: {x: 0, y: 41}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: -1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 0.1372549}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 0.1372549}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.1372549}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 28
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 27
+    id: cmn_load_tusn_grain_light_03
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 0.509804, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 0.509804, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.1372549}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 29
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 28
+    id: cmn_load_tusn_grain_light_03
+    exId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    animId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.1372549}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_03
+  - index: 30
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 27
+    id: cmn_load_tusn_grain_light_02
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.1372549}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 31
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 30
+    id: cmn_load_cnct_grain_light_02
+    exId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    animId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.1372549}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_02
+  - index: 32
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0.293103}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 17
+          Time: 0.5666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 39
+          Time: 1.3
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 40
+          Time: 1.333333
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 52
+          Time: 1.733333
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 63
+          Time: 2.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -2.356194
+              Color: {r: 1, g: 1, b: 1, a: 0.310345}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: logo_
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: loen_
+          FrameIdx: 63
+          Time: 2.1
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 482
+        m_Id:
+        m_FrameNum: 63
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: sw_tusn_grain_light_06
+    exId: sw_cnct_grain_light_anim_sw_tusn_grain_light_06
+    animId: sw_cnct_grain_light_anim_sw_tusn_grain_light_06
+    transformData:
+      m:
+        Pos: {x: -28, y: 29}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1.000001, y: 1.000001}
+        Rot: -2.356197
+        Color: {r: 1, g: 1, b: 1, a: 0.2784314}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 0.2784314}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.2784314}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 33
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 32
+    id: cmn_load_tusn_grain_light_03
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 0.509804, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 0.509804, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.2784314}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 34
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 33
+    id: cmn_load_tusn_grain_light_03
+    exId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    animId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.2784314}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_03
+  - index: 35
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 32
+    id: cmn_load_tusn_grain_light_02
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.2784314}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 36
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 35
+    id: cmn_load_cnct_grain_light_02
+    exId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    animId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.2784314}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_02
+  - index: 37
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0.431034}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 25
+          Time: 0.8333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 47
+          Time: 1.566667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 48
+          Time: 1.6
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 60
+          Time: 2
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 63
+          Time: 2.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -1.570796
+              Color: {r: 1, g: 1, b: 1, a: 0.448276}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: logo_
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: loen_
+          FrameIdx: 63
+          Time: 2.1
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 482
+        m_Id:
+        m_FrameNum: 63
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: sw_tusn_grain_light_07
+    exId: sw_cnct_grain_light_anim_sw_tusn_grain_light_07
+    animId: sw_cnct_grain_light_anim_sw_tusn_grain_light_07
+    transformData:
+      m:
+        Pos: {x: -41, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: -1.570796
+        Color: {r: 1, g: 1, b: 1, a: 0.4196078}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 0.4196078}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.4196078}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 38
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 37
+    id: cmn_load_tusn_grain_light_03
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 0.509804, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 0.509804, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.4196078}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 39
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 38
+    id: cmn_load_tusn_grain_light_03
+    exId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    animId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.4196078}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_03
+  - index: 40
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 37
+    id: cmn_load_tusn_grain_light_02
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.4196078}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 41
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 40
+    id: cmn_load_cnct_grain_light_02
+    exId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    animId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.4196078}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_02
+  - index: 42
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 4
+          Time: 0.1333333
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 33
+          Time: 1.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 55
+          Time: 1.833333
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 56
+          Time: 1.866667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 63
+          Time: 2.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: -1}
+              Rot: -0.7853982
+              Color: {r: 1, g: 1, b: 1, a: 0.5}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: logo_
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: loen_
+          FrameIdx: 63
+          Time: 2.1
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 482
+        m_Id:
+        m_FrameNum: 63
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: sw_tusn_grain_light_08
+    exId: sw_cnct_grain_light_anim_sw_tusn_grain_light_08
+    animId: sw_cnct_grain_light_anim_sw_tusn_grain_light_08
+    transformData:
+      m:
+        Pos: {x: -29, y: -28}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1.000001, y: 1.000001}
+        Rot: -0.7853961
+        Color: {r: 1, g: 1, b: 1, a: 0.4980392}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 0.4980392}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 43
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 42
+    id: cmn_load_tusn_grain_light_03
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 0.509804, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 0.509804, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 44
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 43
+    id: cmn_load_tusn_grain_light_03
+    exId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    animId: cmn_load_cnct_grain_light_03_cmn_load_tusn_grain_light_03
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 0.509804, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_03
+  - index: 45
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 42
+    id: cmn_load_tusn_grain_light_02
+    exId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    animId: sw_cnct_grain_light_cmn_load_tusn_grain_light_02
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 46
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 45
+    id: cmn_load_cnct_grain_light_02
+    exId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    animId: cmn_load_cnct_grain_light_02_cmn_load_cnct_grain_light_02
+    transformData:
+      m:
+        Pos: {x: -14, y: -19}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 38}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 1
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 0.4980392}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_grain_light_02
+  - index: 47
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 63
+          Time: 2.1
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: logo_
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: loen_
+          FrameIdx: 63
+          Time: 2.1
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 98
+        m_Id:
+        m_FrameNum: 63
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: cmn_load_tusn_fnt_01
+    exId: sw_cnct_grain_light_anim_cmn_load_tusn_fnt_01
+    animId: sw_cnct_grain_light_anim_cmn_load_tusn_fnt_01
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 48
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 47
+    id: cmn_load_tusn_fnt_01
+    exId: cmn_load_cnct_fnt_01_cmn_load_tusn_fnt_01
+    animId: cmn_load_cnct_fnt_01_cmn_load_tusn_fnt_01
+    transformData:
+      m:
+        Pos: {x: -36, y: -16}
+        Move: {x: 0, y: 0}
+        Size: {x: 72, y: 32}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_load_cnct_fnt_01

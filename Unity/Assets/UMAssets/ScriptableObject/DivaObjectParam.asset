@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46fd3b06117b87246b10c86d410badb7, type: 3}
+  m_Name: DivaObjectParam
+  m_EditorClassIdentifier:
+  m_hipScaleFactor:
+  - 0.9671
+  - 1.0433
+  - 1.0539
+  - 0.9951
+  - 0.9149
+  - 0.98
+  - 1.0642
+  - 0.964
+  - 1
+  - 1
+  m_eyeMeshUvRate:
+  - {x: 1.1, y: 1}
+  - {x: 1.15, y: 1}
+  - {x: 1.1, y: 1}
+  - {x: 1, y: 1}
+  - {x: 1, y: 1}
+  - {x: 1.1, y: 1}
+  - {x: 1.2, y: 1}
+  - {x: 1.2, y: 1}
+  - {x: 1, y: 1}
+  - {x: 1, y: 1}

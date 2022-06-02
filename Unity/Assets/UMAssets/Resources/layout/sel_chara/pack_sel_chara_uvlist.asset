@@ -1,0 +1,544 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2012c0e54635645b499aab06abbc01, type: 3}
+  m_Name: pack_sel_chara_uvlist
+  m_EditorClassIdentifier:
+  m_name: pack_sel_chara
+  m_width: 512
+  m_height: 512
+  m_uScale: 1
+  m_vScale: 1
+  m_serializeDatas:
+  - name: sel_chara_win_06_09
+    u: 0.5996094
+    v: 0.71875
+    width: 0.04882813
+    height: 0.04882813
+  - name: sel_chara_win_06_08
+    u: 0.5800781
+    v: 0.71875
+    width: 0.01953125
+    height: 0.04882813
+  - name: sel_chara_win_06_07
+    u: 0.53125
+    v: 0.71875
+    width: 0.04882813
+    height: 0.04882813
+  - name: sel_chara_win_06_06
+    u: 0.5996094
+    v: 0.6992188
+    width: 0.04882813
+    height: 0.01953125
+  - name: sel_chara_win_06_05
+    u: 0.5800781
+    v: 0.6992188
+    width: 0.01953125
+    height: 0.01953125
+  - name: sel_chara_win_06_04
+    u: 0.53125
+    v: 0.6992188
+    width: 0.04882813
+    height: 0.01953125
+  - name: sel_chara_win_06_03
+    u: 0.5996094
+    v: 0.6503906
+    width: 0.04882813
+    height: 0.04882813
+  - name: sel_chara_win_06_02
+    u: 0.5800781
+    v: 0.6503906
+    width: 0.01953125
+    height: 0.04882813
+  - name: sel_chara_win_06_01
+    u: 0.53125
+    v: 0.6503906
+    width: 0.04882813
+    height: 0.04882813
+  - name: sel_chara_check_btn_base_03
+    u: 0.7285156
+    v: 0.7148438
+    width: 0.05859375
+    height: 0.05859375
+  - name: sel_chara_check_btn_base_02
+    u: 0.7089844
+    v: 0.7148438
+    width: 0.01953125
+    height: 0.05859375
+  - name: sel_chara_check_btn_base_01
+    u: 0.6503906
+    v: 0.7148438
+    width: 0.05859375
+    height: 0.05859375
+  - name: sel_chara_check_btn_03
+    u: 0.2148438
+    v: 0.7167969
+    width: 0.05859375
+    height: 0.2773438
+  - name: sel_chara_check_btn_02
+    u: 0.1953125
+    v: 0.7167969
+    width: 0.01953125
+    height: 0.2773438
+  - name: sel_chara_check_btn_01
+    u: 0.1367188
+    v: 0.7167969
+    width: 0.05859375
+    height: 0.2773438
+  - name: sel_chara_check_fnt_02
+    u: 0.6503906
+    v: 0.6503906
+    width: 0.34375
+    height: 0.0625
+  - name: sel_chara_check_fnt_01
+    u: 0.5742188
+    v: 0.7949219
+    width: 0.2539063
+    height: 0.0625
+  - name: sel_chara_cursor_eff
+    u: 0.5136719
+    v: 0.8730469
+    width: 0.1171875
+    height: 0.1171875
+  - name: sel_chara_down_num_9
+    u: 0.546875
+    v: 0.4648438
+    width: 0.05859375
+    height: 0.0625
+  - name: sel_chara_down_num_8
+    u: 0.4863281
+    v: 0.4648438
+    width: 0.05859375
+    height: 0.0625
+  - name: sel_chara_down_num_7
+    u: 0.4257813
+    v: 0.4648438
+    width: 0.05859375
+    height: 0.0625
+  - name: sel_chara_down_num_6
+    u: 0.3652344
+    v: 0.4648438
+    width: 0.05859375
+    height: 0.0625
+  - name: sel_chara_down_num_5
+    u: 0.3046875
+    v: 0.4648438
+    width: 0.05859375
+    height: 0.0625
+  - name: sel_chara_down_num_4
+    u: 0.2441406
+    v: 0.4648438
+    width: 0.05859375
+    height: 0.0625
+  - name: sel_chara_down_num_3
+    u: 0.1835938
+    v: 0.4648438
+    width: 0.05859375
+    height: 0.0625
+  - name: sel_chara_down_num_2
+    u: 0.1230469
+    v: 0.4648438
+    width: 0.05859375
+    height: 0.0625
+  - name: sel_chara_down_num_1
+    u: 0.0625
+    v: 0.4648438
+    width: 0.05859375
+    height: 0.0625
+  - name: sel_chara_down_num_0
+    u: 0.001953125
+    v: 0.4648438
+    width: 0.05859375
+    height: 0.0625
+  - name: sel_chara_down_font_05
+    u: 0.6074219
+    v: 0.4667969
+    width: 0.1953125
+    height: 0.05859375
+  - name: sel_chara_down_font_04
+    u: 0.001953125
+    v: 0.4160156
+    width: 0.4960938
+    height: 0.046875
+  - name: sel_chara_down_font_03
+    u: 0.001953125
+    v: 0.3671875
+    width: 0.9101563
+    height: 0.046875
+  - name: sel_chara_bar_frm_03
+    u: 0.9628906
+    v: 0.4648438
+    width: 0.01953125
+    height: 0.03515625
+  - name: sel_chara_bar_frm_02
+    u: 0.9433594
+    v: 0.4648438
+    width: 0.01953125
+    height: 0.03515625
+  - name: sel_chara_bar_frm_01
+    u: 0.9238281
+    v: 0.4648438
+    width: 0.01953125
+    height: 0.03515625
+  - name: sel_chara_down_wind_sha
+    u: 0.001953125
+    v: 0.2050781
+    width: 0.9101563
+    height: 0.1601563
+  - name: sel_chara_down_wind_03
+    u: 0.07617188
+    v: 0.6894531
+    width: 0.05859375
+    height: 0.3007813
+  - name: sel_chara_down_wind_02
+    u: 0.06054688
+    v: 0.6894531
+    width: 0.015625
+    height: 0.3007813
+  - name: sel_chara_down_wind_01
+    u: 0.001953125
+    v: 0.6894531
+    width: 0.05859375
+    height: 0.3007813
+  - name: sel_chara_down_font_02
+    u: 0.3945313
+    v: 0.5292969
+    width: 0.390625
+    height: 0.05859375
+  - name: sel_chara_down_font_01
+    u: 0.001953125
+    v: 0.5292969
+    width: 0.390625
+    height: 0.05859375
+  - name: sel_chara_down_bar_03
+    u: 0.734375
+    v: 0.1035156
+    width: 0.09375
+    height: 0.07421875
+  - name: sel_chara_down_bar_02_r
+    u: 0.7246094
+    v: 0.1738281
+    width: 0.00390625
+    height: 0.02734375
+  - name: sel_chara_down_bar_02_l
+    u: 0.7050781
+    v: 0.1738281
+    width: 0.00390625
+    height: 0.02734375
+  - name: sel_chara_down_bar_02
+    u: 0.7089844
+    v: 0.1738281
+    width: 0.015625
+    height: 0.02734375
+  - name: sel_chara_win_line_01_r
+    u: 0.6953125
+    v: 0.1757813
+    width: 0.00390625
+    height: 0.01953125
+  - name: sel_chara_win_line_01_l
+    u: 0.671875
+    v: 0.1757813
+    width: 0.00390625
+    height: 0.01953125
+  - name: sel_chara_win_line_01
+    u: 0.6757813
+    v: 0.1757813
+    width: 0.01953125
+    height: 0.01953125
+  - name: sel_chara_win_grad_u
+    u: 0.9667969
+    v: 0.4199219
+    width: 0.02734375
+    height: 0.00390625
+  - name: sel_chara_win_grad_r
+    u: 0.9902344
+    v: 0.1269531
+    width: 0.00390625
+    height: 0.2929688
+  - name: sel_chara_win_grad_l
+    u: 0.9667969
+    v: 0.1269531
+    width: 0.00390625
+    height: 0.2929688
+  - name: sel_chara_win_grad
+    u: 0.9707031
+    v: 0.1269531
+    width: 0.01953125
+    height: 0.2929688
+  - name: sel_chara_win_shadow_t
+    u: 0.703125
+    v: 0.1425781
+    width: 0.02734375
+    height: 0.00390625
+  - name: sel_chara_win_shadow_u
+    u: 0.703125
+    v: 0.1660156
+    width: 0.02734375
+    height: 0.00390625
+  - name: sel_chara_win_shadow_r
+    u: 0.7265625
+    v: 0.1464844
+    width: 0.00390625
+    height: 0.01953125
+  - name: sel_chara_win_shadow_l
+    u: 0.703125
+    v: 0.1464844
+    width: 0.00390625
+    height: 0.01953125
+  - name: sel_chara_win_shadow
+    u: 0.7070313
+    v: 0.1464844
+    width: 0.01953125
+    height: 0.01953125
+  - name: sel_chara_win_base_t
+    u: 0.671875
+    v: 0.1425781
+    width: 0.02734375
+    height: 0.00390625
+  - name: sel_chara_win_base_u
+    u: 0.671875
+    v: 0.1660156
+    width: 0.02734375
+    height: 0.00390625
+  - name: sel_chara_win_base_r
+    u: 0.6953125
+    v: 0.1464844
+    width: 0.00390625
+    height: 0.01953125
+  - name: sel_chara_win_base_l
+    u: 0.671875
+    v: 0.1464844
+    width: 0.00390625
+    height: 0.01953125
+  - name: sel_chara_win_base
+    u: 0.6757813
+    v: 0.1464844
+    width: 0.01953125
+    height: 0.01953125
+  - name: sel_chara_win_01
+    u: 0.5917969
+    v: 0.001953125
+    width: 0.05859375
+    height: 0.05859375
+  - name: sel_chara_win_02
+    u: 0.6503906
+    v: 0.001953125
+    width: 0.01953125
+    height: 0.05859375
+  - name: sel_chara_win_03
+    u: 0.6699219
+    v: 0.001953125
+    width: 0.05859375
+    height: 0.05859375
+  - name: sel_chara_win_04
+    u: 0.5917969
+    v: 0.06054688
+    width: 0.05859375
+    height: 0.01953125
+  - name: sel_chara_win_05
+    u: 0.6699219
+    v: 0.06054688
+    width: 0.05859375
+    height: 0.01953125
+  - name: sel_chara_win_06
+    u: 0.5917969
+    v: 0.08007813
+    width: 0.05859375
+    height: 0.05859375
+  - name: sel_chara_win_07
+    u: 0.6503906
+    v: 0.08007813
+    width: 0.01953125
+    height: 0.05859375
+  - name: sel_chara_win_08
+    u: 0.6699219
+    v: 0.08007813
+    width: 0.05859375
+    height: 0.05859375
+  - name: sel_chara_title_frm_03
+    u: 0.08007813
+    v: 0.5898438
+    width: 0.05859375
+    height: 0.09765625
+  - name: sel_chara_title_frm_02
+    u: 0.06054688
+    v: 0.5898438
+    width: 0.01953125
+    height: 0.09765625
+  - name: sel_chara_title_frm_01
+    u: 0.001953125
+    v: 0.5898438
+    width: 0.05859375
+    height: 0.09765625
+  - name: sel_chara_btn_p_03
+    u: 0.53125
+    v: 0.001953125
+    width: 0.05859375
+    height: 0.1445313
+  - name: sel_chara_btn_p_02
+    u: 0.4726563
+    v: 0.001953125
+    width: 0.05859375
+    height: 0.1445313
+  - name: sel_chara_btn_p_01
+    u: 0.4140625
+    v: 0.001953125
+    width: 0.05859375
+    height: 0.1445313
+  - name: sel_chara_btn_l_eff
+    u: 0.001953125
+    v: 0.001953125
+    width: 0.4101563
+    height: 0.1445313
+  - name: sel_chara_btn_ok_fnt
+    u: 0.8046875
+    v: 0.4648438
+    width: 0.1171875
+    height: 0.0625
+  - name: sel_chara_btn_base_09
+    u: 0.7890625
+    v: 0.06054688
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_chara_btn_base_08
+    u: 0.7695313
+    v: 0.06054688
+    width: 0.01953125
+    height: 0.0390625
+  - name: sel_chara_btn_base_07
+    u: 0.7304688
+    v: 0.06054688
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_chara_btn_base_06
+    u: 0.7890625
+    v: 0.04101563
+    width: 0.0390625
+    height: 0.01953125
+  - name: sel_chara_btn_base_05
+    u: 0.7695313
+    v: 0.04101563
+    width: 0.01953125
+    height: 0.01953125
+  - name: sel_chara_btn_base_04
+    u: 0.7304688
+    v: 0.04101563
+    width: 0.0390625
+    height: 0.01953125
+  - name: sel_chara_btn_base_03
+    u: 0.7890625
+    v: 0.001953125
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_chara_btn_base_02
+    u: 0.7695313
+    v: 0.001953125
+    width: 0.01953125
+    height: 0.0390625
+  - name: sel_chara_btn_base_01
+    u: 0.7304688
+    v: 0.001953125
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_chara_arr_r_01
+    u: 0.8984375
+    v: 0.001953125
+    width: 0.06640625
+    height: 0.1796875
+  - name: sel_chara_arr_l_01
+    u: 0.8300781
+    v: 0.001953125
+    width: 0.06640625
+    height: 0.1796875
+  - name: sel_chara_line_r
+    u: 0.9921875
+    v: 0.001953125
+    width: 0.001953125
+    height: 0.1132813
+  - name: sel_chara_line_l
+    u: 0.9707031
+    v: 0.001953125
+    width: 0.001953125
+    height: 0.1132813
+  - name: sel_chara_line_01
+    u: 0.9726563
+    v: 0.001953125
+    width: 0.01953125
+    height: 0.1132813
+  - name: sel_chara_frm_03
+    u: 0.359375
+    v: 0.6621094
+    width: 0.05859375
+    height: 0.08984375
+  - name: sel_chara_frm_02
+    u: 0.3398438
+    v: 0.6621094
+    width: 0.01953125
+    height: 0.08984375
+  - name: sel_chara_frm_01
+    u: 0.28125
+    v: 0.6621094
+    width: 0.05859375
+    height: 0.08984375
+  - name: sel_chara_pop_fnt_06
+    u: 0.4628906
+    v: 0.5898438
+    width: 0.484375
+    height: 0.05859375
+  - name: sel_chara_pop_fnt_05
+    u: 0.001953125
+    v: 0.1484375
+    width: 0.234375
+    height: 0.0546875
+  - name: sel_chara_pop_fnt_04
+    u: 0.515625
+    v: 0.1484375
+    width: 0.1523438
+    height: 0.0546875
+  - name: sel_chara_pop_fnt_03
+    u: 0.3574219
+    v: 0.1484375
+    width: 0.15625
+    height: 0.0546875
+  - name: sel_chara_pop_fnt_02
+    u: 0.2382813
+    v: 0.1484375
+    width: 0.1171875
+    height: 0.0546875
+  - name: sel_chara_pop_fnt_01
+    u: 0.140625
+    v: 0.5898438
+    width: 0.3203125
+    height: 0.0703125
+  - name: sel_chara_btn_fnt_01
+    u: 0.7851563
+    v: 0.5292969
+    width: 0.1210938
+    height: 0.0546875
+  - name: sel_chara_cursor
+    u: 0.2773438
+    v: 0.7558594
+    width: 0.234375
+    height: 0.234375
+  - name: sel_chara_voice_btn_eff
+    u: 0.6914063
+    v: 0.859375
+    width: 0.1367188
+    height: 0.1328125
+  - name: sel_chara_voice_btn_base
+    u: 0.8300781
+    v: 0.90625
+    width: 0.1640625
+    height: 0.0859375
+  - name: sel_chara_voice_btn_on
+    u: 0.8300781
+    v: 0.7363281
+    width: 0.1640625
+    height: 0.1679688

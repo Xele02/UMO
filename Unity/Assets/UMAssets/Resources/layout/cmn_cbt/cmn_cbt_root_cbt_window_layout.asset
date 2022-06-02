@@ -1,0 +1,2396 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc60f5e01fd78314c88b61209b7bc3f4, type: 3}
+  m_Name: cmn_cbt_root_cbt_window_layout
+  m_EditorClassIdentifier:
+  serializableViews:
+  - index: 0
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: -1
+    id: root_cbt_window_layout_root
+    exId: root_cbt_window_layout_root
+    animId: root_cbt_window_layout_root
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 1
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 0
+    id: sw_pickup_win_anim
+    exId: root_cbt_window_sw_pickup_win_anim
+    animId: root_cbt_window_sw_pickup_win_anim
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: -44}
+        BasePos: {x: 0, y: 0}
+    alignH: 1
+    alignV: 1
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 2
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 1
+          Time: 0.03333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 0.5, y: 0.5}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 11
+          Time: 0.3666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 12
+          Time: 0.4
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 13
+          Time: 0.4333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 22
+          Time: 0.7333333
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 0.5, y: 0.5}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 23
+          Time: 0.7666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 0.5, y: 0.5}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 23
+          Time: 0.7666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 0.5, y: 0.5}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: st_wait
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: go_in
+          FrameIdx: 1
+          Time: 0.03333334
+          IsKey: 0
+        - Id: st_in
+          FrameIdx: 11
+          Time: 0.3666667
+          IsKey: 0
+        - Id: st_stop
+          FrameIdx: 12
+          Time: 0.4
+          IsKey: 0
+        - Id: go_out
+          FrameIdx: 13
+          Time: 0.4333334
+          IsKey: 0
+        - Id: st_out
+          FrameIdx: 23
+          Time: 0.7666667
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 354
+        m_Id:
+        m_FrameNum: 23
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 1
+    id: sw_cbt_win_all
+    exId: sw_cbt_win_anim_sw_cbt_win_all
+    animId: sw_cbt_win_anim_sw_cbt_win_all
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 3
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: cbt_window
+    exId: sw_cbt_win_all_cbt_window
+    animId: sw_cbt_win_all_cbt_window
+    transformData:
+      m:
+        Pos: {x: -414, y: -229}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 4
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 3
+    id: cbt_win_01
+    exId: cbt_window_cbt_win_01
+    animId: cbt_window_cbt_win_01
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 28}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cbt_win_01
+  - index: 5
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 3
+    id: cbt_win_02
+    exId: cbt_window_cbt_win_02
+    animId: cbt_window_cbt_win_02
+    transformData:
+      m:
+        Pos: {x: 26, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 10, y: 28}
+        Scale: {x: 77.60011, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cbt_win_02
+  - index: 6
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 3
+    id: cbt_win_03
+    exId: cbt_window_cbt_win_03
+    animId: cbt_window_cbt_win_03
+    transformData:
+      m:
+        Pos: {x: 800, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 28}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cbt_win_03
+  - index: 7
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 3
+    id: cbt_win_04
+    exId: cbt_window_cbt_win_04
+    animId: cbt_window_cbt_win_04
+    transformData:
+      m:
+        Pos: {x: 0, y: 26}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 10}
+        Scale: {x: 1, y: 41.59999}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cbt_win_04
+  - index: 8
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 3
+    id: cbt_win_05
+    exId: cbt_window_cbt_win_05
+    animId: cbt_window_cbt_win_05
+    transformData:
+      m:
+        Pos: {x: 26, y: 26}
+        Move: {x: 0, y: 0}
+        Size: {x: 10, y: 10}
+        Scale: {x: 77.60011, y: 41.4021}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cbt_win_05
+  - index: 9
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 3
+    id: cbt_win_06
+    exId: cbt_window_cbt_win_06
+    animId: cbt_window_cbt_win_06
+    transformData:
+      m:
+        Pos: {x: 800, y: 26}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 10}
+        Scale: {x: 1, y: 41.60023}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cbt_win_06
+  - index: 10
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 3
+    id: cbt_win_07
+    exId: cbt_window_cbt_win_07
+    animId: cbt_window_cbt_win_07
+    transformData:
+      m:
+        Pos: {x: 0, y: 440}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 28}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cbt_win_07
+  - index: 11
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 3
+    id: cbt_win_08
+    exId: cbt_window_cbt_win_08
+    animId: cbt_window_cbt_win_08
+    transformData:
+      m:
+        Pos: {x: 26, y: 440}
+        Move: {x: 0, y: 0}
+        Size: {x: 10, y: 28}
+        Scale: {x: 77.59958, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cbt_win_08
+  - index: 12
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 3
+    id: cbt_win_09
+    exId: cbt_window_cbt_win_09
+    animId: cbt_window_cbt_win_09
+    transformData:
+      m:
+        Pos: {x: 800, y: 440}
+        Move: {x: 0, y: 0}
+        Size: {x: 28, y: 28}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cbt_win_09
+  - index: 13
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: cmn_bnr_pickup
+    exId: sw_cbt_win_all_cmn_bnr_pickup
+    animId: sw_cbt_win_all_cmn_bnr_pickup
+    transformData:
+      m:
+        Pos: {x: -512, y: -556}
+        Move: {x: 0, y: 0}
+        Size: {x: 1024, y: 1024}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 1
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_bnr_pickup_001
+  - index: 14
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: sw_cbt_btn_anim
+    exId: sw_cbt_win_all_sw_cbt_btn_anim
+    animId: sw_cbt_win_all_sw_cbt_btn_anim
+    transformData:
+      m:
+        Pos: {x: -105, y: 140}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 145, y: 38}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 15
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 1
+          Time: 0.03333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 8
+          Time: 0.2666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 9
+          Time: 0.3
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 16
+          Time: 0.5333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 17
+          Time: 0.5666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 24
+          Time: 0.8000001
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 25
+          Time: 0.8333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 26
+          Time: 0.8666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 26
+          Time: 0.8666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: st_wait
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: go_bot_on
+          FrameIdx: 1
+          Time: 0.03333334
+          IsKey: 0
+        - Id: st_bot_on
+          FrameIdx: 8
+          Time: 0.2666667
+          IsKey: 0
+        - Id: go_bot_decide
+          FrameIdx: 9
+          Time: 0.3
+          IsKey: 0
+        - Id: st_bot_decide
+          FrameIdx: 16
+          Time: 0.5333334
+          IsKey: 0
+        - Id: go_bot_off
+          FrameIdx: 17
+          Time: 0.5666667
+          IsKey: 0
+        - Id: st_bot_off
+          FrameIdx: 24
+          Time: 0.8000001
+          IsKey: 0
+        - Id: st_bot_imp
+          FrameIdx: 25
+          Time: 0.8333334
+          IsKey: 0
+        - Id: st_non
+          FrameIdx: 26
+          Time: 0.8666667
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 354
+        m_Id:
+        m_FrameNum: 26
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 14
+    id: cbt_btn_base
+    exId: sw_cbt_btn_anim_cbt_btn_base
+    animId: sw_cbt_btn_anim_cbt_btn_base
+    transformData:
+      m:
+        Pos: {x: 0, y: 13}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 16
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 15
+    id: cmn_btn_base_01
+    exId: cbt_btn_base_cmn_btn_base_01
+    animId: cbt_btn_base_cmn_btn_base_01
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 20, y: 20}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_base_01
+  - index: 17
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 15
+    id: cmn_btn_base_02
+    exId: cbt_btn_base_cmn_btn_base_02
+    animId: cbt_btn_base_cmn_btn_base_02
+    transformData:
+      m:
+        Pos: {x: 19, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 10, y: 20}
+        Scale: {x: 17.20012, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_base_02
+  - index: 18
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 15
+    id: cmn_btn_base_03
+    exId: cbt_btn_base_cmn_btn_base_03
+    animId: cbt_btn_base_cmn_btn_base_03
+    transformData:
+      m:
+        Pos: {x: 190, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 20, y: 20}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_base_03
+  - index: 19
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 15
+    id: cmn_btn_base_04
+    exId: cbt_btn_base_cmn_btn_base_04
+    animId: cbt_btn_base_cmn_btn_base_04
+    transformData:
+      m:
+        Pos: {x: 0, y: 19}
+        Move: {x: 0, y: 0}
+        Size: {x: 20, y: 10}
+        Scale: {x: 1, y: 2.400055}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_base_04
+  - index: 20
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 15
+    id: cmn_btn_base_05
+    exId: cbt_btn_base_cmn_btn_base_05
+    animId: cbt_btn_base_cmn_btn_base_05
+    transformData:
+      m:
+        Pos: {x: 19, y: 19}
+        Move: {x: 0, y: 0}
+        Size: {x: 10, y: 10}
+        Scale: {x: 17.20001, y: 2.400009}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_base_05
+  - index: 21
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 15
+    id: cmn_btn_base_06
+    exId: cbt_btn_base_cmn_btn_base_06
+    animId: cbt_btn_base_cmn_btn_base_06
+    transformData:
+      m:
+        Pos: {x: 190, y: 19}
+        Move: {x: 0, y: 0}
+        Size: {x: 20, y: 10}
+        Scale: {x: 1, y: 2.400009}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_base_06
+  - index: 22
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 15
+    id: cmn_btn_base_07
+    exId: cbt_btn_base_cmn_btn_base_07
+    animId: cbt_btn_base_cmn_btn_base_07
+    transformData:
+      m:
+        Pos: {x: 0, y: 42}
+        Move: {x: 0, y: 0}
+        Size: {x: 20, y: 20}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_base_07
+  - index: 23
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 15
+    id: cmn_btn_base_08
+    exId: cbt_btn_base_cmn_btn_base_08
+    animId: cbt_btn_base_cmn_btn_base_08
+    transformData:
+      m:
+        Pos: {x: 19, y: 42}
+        Move: {x: 0, y: 0}
+        Size: {x: 10, y: 20}
+        Scale: {x: 17.19873, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_base_08
+  - index: 24
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 15
+    id: cmn_btn_base_09
+    exId: cbt_btn_base_cmn_btn_base_09
+    animId: cbt_btn_base_cmn_btn_base_09
+    transformData:
+      m:
+        Pos: {x: 190, y: 42}
+        Move: {x: 0, y: 0}
+        Size: {x: 20, y: 20}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_base_09
+  - index: 25
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 1
+          Time: 0.03333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 8
+          Time: 0.2666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 2}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 9
+          Time: 0.3
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 2}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 16
+          Time: 0.5333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 17
+          Time: 0.5666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 2}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 24
+          Time: 0.8000001
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 25
+          Time: 0.8333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 1}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 26
+          Time: 0.8666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 26
+          Time: 0.8666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: st_wait
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: go_bot_on
+          FrameIdx: 1
+          Time: 0.03333334
+          IsKey: 0
+        - Id: st_bot_on
+          FrameIdx: 8
+          Time: 0.2666667
+          IsKey: 0
+        - Id: go_bot_decide
+          FrameIdx: 9
+          Time: 0.3
+          IsKey: 0
+        - Id: st_bot_decide
+          FrameIdx: 16
+          Time: 0.5333334
+          IsKey: 0
+        - Id: go_bot_off
+          FrameIdx: 17
+          Time: 0.5666667
+          IsKey: 0
+        - Id: st_bot_off
+          FrameIdx: 24
+          Time: 0.8000001
+          IsKey: 0
+        - Id: st_bot_imp
+          FrameIdx: 25
+          Time: 0.8333334
+          IsKey: 0
+        - Id: st_non
+          FrameIdx: 26
+          Time: 0.8666667
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 354
+        m_Id:
+        m_FrameNum: 26
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 14
+    id: cbt_btn_01
+    exId: sw_cbt_btn_anim_cbt_btn_01
+    animId: sw_cbt_btn_anim_cbt_btn_01
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 26
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 25
+    id: cmn_btn_p_01
+    exId: cbt_btn_01_cmn_btn_p_01
+    animId: cbt_btn_01_cmn_btn_p_01
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 30, y: 74}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_p_01
+  - index: 27
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 25
+    id: cmn_btn_p_02
+    exId: cbt_btn_01_cmn_btn_p_02
+    animId: cbt_btn_01_cmn_btn_p_02
+    transformData:
+      m:
+        Pos: {x: 28, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 30, y: 74}
+        Scale: {x: 5.133331, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_p_02
+  - index: 28
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 25
+    id: cmn_btn_p_03
+    exId: cbt_btn_01_cmn_btn_p_03
+    animId: cbt_btn_01_cmn_btn_p_03
+    transformData:
+      m:
+        Pos: {x: 180, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 30, y: 74}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_p_03
+  - index: 29
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 25
+    id: cbt_btn_01_fnt
+    exId: cbt_btn_01_cbt_btn_01_fnt
+    animId: cbt_btn_01_cbt_btn_01_fnt
+    transformData:
+      m:
+        Pos: {x: 105, y: 36}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: -69, y: -16}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 30
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 29
+    id: cbt_button_fnt_01
+    exId: cbt_btn_01_fnt_cbt_button_fnt_01
+    animId: cbt_btn_01_fnt_cbt_button_fnt_01
+    transformData:
+      m:
+        Pos: {x: -69, y: -16}
+        Move: {x: 0, y: 0}
+        Size: {x: 138, y: 32}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cbt_button_fnt_01
+  - index: 31
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList:
+        - FrameIdx: 0
+          Time: 0
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 24
+          Time: 0.8000001
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 25
+          Time: 0.8333334
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0.4}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 26
+          Time: 0.8666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        - FrameIdx: 26
+          Time: 0.8666667
+          TexName:
+          Label:
+          TransFormData:
+            m:
+              Pos: {x: 0, y: 0}
+              Move: {x: 0, y: 0}
+              Size: {x: 0, y: 0}
+              Scale: {x: 1, y: 1}
+              Rot: 0
+              Color: {r: 0, g: 0, b: 0, a: 0}
+              Center: {x: 0, y: 0}
+              BasePos: {x: 0, y: 0}
+            s:
+              MoveBezierNext: {x: 0, y: 0}
+              MoveBezierPrev: {x: 0, y: 0}
+          Action: 0
+          JumpFrame: 0
+        m_LabelList:
+        - Id: st_wait
+          FrameIdx: 0
+          Time: 0
+          IsKey: 0
+        - Id: go_bot_on
+          FrameIdx: 1
+          Time: 0.03333334
+          IsKey: 0
+        - Id: st_bot_on
+          FrameIdx: 8
+          Time: 0.2666667
+          IsKey: 0
+        - Id: go_bot_decide
+          FrameIdx: 9
+          Time: 0.3
+          IsKey: 0
+        - Id: st_bot_decide
+          FrameIdx: 16
+          Time: 0.5333334
+          IsKey: 0
+        - Id: go_bot_off
+          FrameIdx: 17
+          Time: 0.5666667
+          IsKey: 0
+        - Id: st_bot_off
+          FrameIdx: 24
+          Time: 0.8000001
+          IsKey: 0
+        - Id: st_bot_imp
+          FrameIdx: 25
+          Time: 0.8333334
+          IsKey: 0
+        - Id: st_non
+          FrameIdx: 26
+          Time: 0.8666667
+          IsKey: 0
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 482
+        m_Id:
+        m_FrameNum: 26
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 14
+    id: cbt_btn_eff
+    exId: sw_cbt_btn_anim_cbt_btn_eff
+    animId: sw_cbt_btn_anim_cbt_btn_eff
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        Center: {x: 141, y: 31}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+    currentColor: {r: 0, g: 0, b: 0, a: 0}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 32
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 31
+    id: cmn_btn_l_eff
+    exId: cbt_btn_eff_cmn_btn_l_eff
+    animId: cbt_btn_eff_cmn_btn_l_eff
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 210, y: 74}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cmn_btn_l_eff
+  - index: 33
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 14
+    id: hit_check
+    exId: sw_cbt_btn_anim_hit_check
+    animId: sw_cbt_btn_anim_hit_check
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 210, y: 76}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 0.4, g: 1, b: 0, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 103, y: 142}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 0.4, g: 1, b: 0, a: 1}
+    currentColor: {r: 0.4, g: 1, b: 0, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 34
+    viewType: 0
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 2
+    id: cbt_line
+    exId: sw_cbt_win_all_cbt_line
+    animId: sw_cbt_win_all_cbt_line
+    transformData:
+      m:
+        Pos: {x: -395, y: 129}
+        Move: {x: 0, y: 0}
+        Size: {x: 0, y: 0}
+        Scale: {x: 26.33305, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger:
+    exFloat: []
+    exString: []
+  - index: 35
+    viewType: 1
+    animType: 1
+    viewFrameAnim:
+      data:
+        m_FrameDataList: []
+        m_LabelList: []
+        m_AnimTimeMap:
+          m_DataList: []
+        m_AnimFlag: 0
+        m_Id:
+        m_FrameNum: 0
+      m_FrameSec: 0.03333334
+      m_BaseX: 0
+      m_BaseY: 0
+    parentIndex: 34
+    id: cbt_line
+    exId: cbt_line_cbt_line
+    animId: cbt_line_cbt_line
+    transformData:
+      m:
+        Pos: {x: 0, y: 0}
+        Move: {x: 0, y: 0}
+        Size: {x: 30, y: 3}
+        Scale: {x: 1, y: 1}
+        Rot: 0
+        Color: {r: 1, g: 1, b: 1, a: 1}
+        Center: {x: 0, y: 0}
+        BasePos: {x: 0, y: 0}
+    alignH: 0
+    alignV: 0
+    blendType: 0
+    label:
+    tag: 0
+    color: {r: 1, g: 1, b: 1, a: 1}
+    currentColor: {r: 1, g: 1, b: 1, a: 1}
+    enabled: 1
+    isOutScreenUpdate: 0
+    isTouchCheck: 0
+    drawLayer: 0
+    exInteger: 0100000000000000000000000100000000000000
+    exFloat:
+    - 0
+    - 0
+    exString:
+    - cbt_line

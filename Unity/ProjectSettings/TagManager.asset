@@ -13,31 +13,40 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - Sprite
+  - Fade
+  - GUI
+  - MeshSprite
+  - CardBack
+  - CardEffect
+  - UserGUI2
+  - UserGUI3
+  - TouchEffect
+  - Valkyrie
+  - Singer
+  - RhythmNote
+  - StageFloor
+  - DivaMode
+  - UIBg
+  - LoadingEffect
+  - TempRenTex
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Debug
   m_SortingLayers:
+  - name: Back
+    uniqueID: 2062127131
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Forward
+    uniqueID: 1769494667
+    locked: 0
+  - name: SystemUI
+    uniqueID: 1472345675
     locked: 0

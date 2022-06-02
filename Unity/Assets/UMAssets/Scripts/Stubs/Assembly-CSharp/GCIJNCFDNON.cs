@@ -1,0 +1,56 @@
+using XeApp.Game.Common;
+using System.Collections.Generic;
+
+public class GCIJNCFDNON
+{
+	public int BCCHOBPJJKE;
+	public byte EKLIPGELKCL;
+	public byte JKGFBFPIMGA;
+	public bool JOKJBMJBLBB;
+	public sbyte JGJFIJOCPAG;
+	public SeriesAttr.Type AIHCEGFANAM;
+	public SeriesLogoId.Type EMIKBGHIOMN;
+	public int HCHBCMGPMNC;
+	public int HGONFBDIBPM;
+	public int PLDALOJIFBE;
+	public string OPFGFINHFCE;
+	public string PFHJFIHGCKP;
+	public string EFELCLMJEOL;
+	public string ILCLGGPHHJO;
+	public string NDPPEMCHKHA;
+	public string LNLECENGMKK;
+	public string MCKOOLDJEPG;
+	public string GFLEJDKGJDN;
+	public string FKFEJGKILJO;
+	public string AGJBLOKLMED;
+	public string ODICCEOHOPH;
+	public int DDEDANKHHPN;
+	public int PNHJPCPFNFI;
+	public int AADFFCIDJCB;
+	public int DHEFMEGKKDN;
+	public int FFDCGHDNDFJ;
+	public int BEKGEAMJGEN;
+	public int OAHMFMJIENM;
+	public int ELNJADBILOM;
+	public int BJJNCCGPBGN;
+	public int FAIKFGHEGEM;
+	public int KELFCMEOPPM;
+	public bool MCCIFLKCNKO;
+	public int IGPMJPPAILL;
+	public int KMFADKEKPOM;
+	public int FPDIMAEOMPL;
+	public byte[] KBOLNIBLIND;
+	public byte[] ODKMKEHJOCK;
+	public int JPIPENJGGDD;
+	public int IELENGDJPHF;
+	public int MJBODMOLOBC;
+	public int CIEOBFIIPLD;
+	public int MKHFCGPJPFI;
+	public int MCOMAOELHOG;
+	public bool CADENLBDAEB;
+	public long NPHOIEOPIJO;
+	public List<short> GDHGEECAJGI;
+	public int AOLIJKMIJJE;
+	public int IJIKIPDKCPP;
+	public int ILABPFOMEAG;
+}

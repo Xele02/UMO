@@ -1,0 +1,89 @@
+{
+   "EventTracks" : [
+      {
+         "keys" : [],
+         "trackID" : 10
+      },
+      {
+         "keys" : [],
+         "trackID" : 11
+      }
+   ],
+   "InputTrack" : [
+      {
+         "flick" : 0,
+         "groupID" : 0,
+         "longTouch" : 0,
+         "next" : 0,
+         "prev" : 0,
+         "swipe" : 0,
+         "sync" : 0,
+         "syncIndex" : 0,
+         "time" : 0,
+         "trackID" : -1,
+         "value" : 0
+      },
+      {
+         "flick" : 0,
+         "groupID" : 0,
+         "longTouch" : 0,
+         "next" : 0,
+         "prev" : 0,
+         "swipe" : 0,
+         "sync" : 0,
+         "syncIndex" : 0,
+         "time" : 5002,
+         "trackID" : 0,
+         "value" : 0
+      },
+      {
+         "flick" : 0,
+         "groupID" : 0,
+         "longTouch" : 0,
+         "next" : 0,
+         "prev" : 0,
+         "swipe" : 0,
+         "sync" : 0,
+         "syncIndex" : 0,
+         "time" : 7002,
+         "trackID" : 0,
+         "value" : 0
+      },
+      {
+         "flick" : 0,
+         "groupID" : 0,
+         "longTouch" : 0,
+         "next" : 0,
+         "prev" : 0,
+         "swipe" : 0,
+         "sync" : 0,
+         "syncIndex" : 0,
+         "time" : 9002,
+         "trackID" : 0,
+         "value" : 0
+      },
+      {
+         "flick" : 0,
+         "groupID" : 0,
+         "longTouch" : 0,
+         "next" : 0,
+         "prev" : 0,
+         "swipe" : 0,
+         "sync" : 0,
+         "syncIndex" : 0,
+         "time" : 11002,
+         "trackID" : 0,
+         "value" : 0
+      }
+   ],
+   "TenpoTrack" : [
+      {
+         "bpm" : 60.0,
+         "length" : 12000,
+         "meter" : 4,
+         "offset" : 0.0020,
+         "tacet" : 0,
+         "time" : 0
+      }
+   ]
+}

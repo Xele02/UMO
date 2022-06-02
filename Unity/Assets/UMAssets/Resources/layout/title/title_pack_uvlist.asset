@@ -1,0 +1,264 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2012c0e54635645b499aab06abbc01, type: 3}
+  m_Name: title_pack_uvlist
+  m_EditorClassIdentifier:
+  m_name: title_pack
+  m_width: 1024
+  m_height: 1024
+  m_uScale: 1
+  m_vScale: 1
+  m_serializeDatas:
+  - name: title_ar_btn_fnt
+    u: 0.8251953
+    v: 0.765625
+    width: 0.1035156
+    height: 0.04101563
+  - name: title_ar_btn_ef_03
+    u: 0.8251953
+    v: 0.6884766
+    width: 0.08007813
+    height: 0.07617188
+  - name: title_ar_btn_ef_02
+    u: 0.90625
+    v: 0.6884766
+    width: 0.08007813
+    height: 0.07617188
+  - name: title_ar_btn_ef_01_bg
+    u: 0.8466797
+    v: 0.8144531
+    width: 0.06640625
+    height: 0.125
+  - name: title_ar_btn_ef_01
+    u: 0.7578125
+    v: 0.6884766
+    width: 0.06640625
+    height: 0.125
+  - name: title_ar_btn
+    u: 0.7578125
+    v: 0.8144531
+    width: 0.08789063
+    height: 0.08984375
+  - name: title_right_fnt_03
+    u: 0.2734375
+    v: 0.890625
+    width: 0.4433594
+    height: 0.04492188
+  - name: title_right_fnt_02
+    u: 0.0009765625
+    v: 0.02539063
+    width: 0.4140625
+    height: 0.02148438
+  - name: title_right_fnt_01
+    u: 0.0009765625
+    v: 0.0009765625
+    width: 0.6582031
+    height: 0.0234375
+  - name: title_pop_btn_fnt_icon_04
+    u: 0.7890625
+    v: 0.07421875
+    width: 0.2099609
+    height: 0.04882813
+  - name: title_pop_btn_fnt_icon_03
+    u: 0.7890625
+    v: 0.2236328
+    width: 0.2099609
+    height: 0.04882813
+  - name: title_pop_btn_fnt_icon_02
+    u: 0.7890625
+    v: 0.1240234
+    width: 0.2099609
+    height: 0.04882813
+  - name: title_pop_btn_fnt_icon_01
+    u: 0.7890625
+    v: 0.1738281
+    width: 0.2099609
+    height: 0.04882813
+  - name: title_logo_particle
+    u: 0.3632813
+    v: 0.6884766
+    width: 0.3027344
+    height: 0.2011719
+  - name: title_logo_ef_01
+    u: 0.8857422
+    v: 0.4130859
+    width: 0.1132813
+    height: 0.1425781
+  - name: title_logo_all_mask
+    u: 0.0009765625
+    v: 0.04785156
+    width: 0.5039063
+    height: 0.2910156
+  - name: title_logo_03
+    u: 0.0009765625
+    v: 0.9179688
+    width: 0.2519531
+    height: 0.0390625
+  - name: title_logo_02_b
+    u: 0.375
+    v: 0.3398438
+    width: 0.3339844
+    height: 0.3476563
+  - name: title_logo_02_a
+    u: 0.0009765625
+    v: 0.4990234
+    width: 0.3613281
+    height: 0.328125
+  - name: title_logo_01_ef
+    u: 0.9365234
+    v: 0.0009765625
+    width: 0.05078125
+    height: 0.03320313
+  - name: title_logo_01_d_ef
+    u: 0.8857422
+    v: 0.5566406
+    width: 0.09570313
+    height: 0.07226563
+  - name: title_logo_01_c_ef
+    u: 0.9365234
+    v: 0.03515625
+    width: 0.0625
+    height: 0.02929688
+  - name: title_logo_01_b_ef
+    u: 0.9160156
+    v: 0.3398438
+    width: 0.07226563
+    height: 0.0546875
+  - name: title_logo_01_b
+    u: 0.0009765625
+    v: 0.3398438
+    width: 0.3730469
+    height: 0.1582031
+  - name: title_logo_01_a_ef
+    u: 0.8857422
+    v: 0.6298828
+    width: 0.09179688
+    height: 0.05273438
+  - name: title_logo_01
+    u: 0.5058594
+    v: 0.02539063
+    width: 0.2480469
+    height: 0.3125
+  - name: title_fnt_01_ef
+    u: 0.0009765625
+    v: 0.8896484
+    width: 0.2714844
+    height: 0.02734375
+  - name: title_fnt_01
+    u: 0.0009765625
+    v: 0.828125
+    width: 0.3027344
+    height: 0.06054688
+  - name: title_btn_w_03
+    u: 0.8564453
+    v: 0.0009765625
+    width: 0.02929688
+    height: 0.07226563
+  - name: title_btn_w_02
+    u: 0.8271484
+    v: 0.0009765625
+    width: 0.02929688
+    height: 0.07226563
+  - name: title_btn_w_01
+    u: 0.7978516
+    v: 0.0009765625
+    width: 0.02929688
+    height: 0.07226563
+  - name: title_btn_fnt_02
+    u: 0.7099609
+    v: 0.5546875
+    width: 0.1367188
+    height: 0.03710938
+  - name: title_btn_fnt_01
+    u: 0.7099609
+    v: 0.5166016
+    width: 0.140625
+    height: 0.03710938
+  - name: title_ar_btn_ef_04
+    u: 0.9296875
+    v: 0.765625
+    width: 0.03710938
+    height: 0.03710938
+  - name: title_btn_eff
+    u: 0.7099609
+    v: 0.3398438
+    width: 0.2050781
+    height: 0.07226563
+  - name: title_btn_base_09
+    u: 0.9160156
+    v: 0.03027344
+    width: 0.01953125
+    height: 0.01953125
+  - name: title_btn_base_08
+    u: 0.90625
+    v: 0.03027344
+    width: 0.009765625
+    height: 0.01953125
+  - name: title_btn_base_07
+    u: 0.8867188
+    v: 0.03027344
+    width: 0.01953125
+    height: 0.01953125
+  - name: title_btn_base_06
+    u: 0.9160156
+    v: 0.02050781
+    width: 0.01953125
+    height: 0.009765625
+  - name: title_btn_base_05
+    u: 0.90625
+    v: 0.02050781
+    width: 0.009765625
+    height: 0.009765625
+  - name: title_btn_base_04
+    u: 0.8867188
+    v: 0.02050781
+    width: 0.01953125
+    height: 0.009765625
+  - name: title_btn_base_03
+    u: 0.9160156
+    v: 0.0009765625
+    width: 0.01953125
+    height: 0.01953125
+  - name: title_btn_base_02
+    u: 0.90625
+    v: 0.0009765625
+    width: 0.009765625
+    height: 0.01953125
+  - name: title_btn_base_01
+    u: 0.8867188
+    v: 0.0009765625
+    width: 0.01953125
+    height: 0.01953125
+  - name: title_btn_02
+    u: 0.7099609
+    v: 0.4648438
+    width: 0.1679688
+    height: 0.05078125
+  - name: title_btn_01
+    u: 0.7099609
+    v: 0.4130859
+    width: 0.1679688
+    height: 0.05078125
+  - name: title_google_btn_02
+    u: 0.6669922
+    v: 0.7539063
+    width: 0.08984375
+    height: 0.06835938
+  - name: title_google_btn_01
+    u: 0.6669922
+    v: 0.6884766
+    width: 0.0859375
+    height: 0.06445313
+  - name: title_cri_icon
+    u: 0.6669922
+    v: 0.8232422
+    width: 0.06054688
+    height: 0.06054688

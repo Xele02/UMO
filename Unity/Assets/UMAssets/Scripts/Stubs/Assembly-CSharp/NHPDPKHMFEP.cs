@@ -1,0 +1,21 @@
+public class NHPDPKHMFEP
+{
+	public enum CJDLIFEENBF
+	{
+		GDMHELGCMHC = 0,
+		KPFIEBIKDFN = 1,
+		GGCDANOKPMB = 2,
+		EANGJBHNNHF = 3,
+		HHEAABDHNAE = 4,
+		NGBOABGLAMM = 5,
+	}
+
+	public enum GGNEBJEIFCP
+	{
+		CCAPCGPIIPF = 0,
+		AJAHGGBMOJE = 1,
+	}
+
+	public CJDLIFEENBF KCKKCNPGMDC;
+	public int DMFNALAGLHH;
+}

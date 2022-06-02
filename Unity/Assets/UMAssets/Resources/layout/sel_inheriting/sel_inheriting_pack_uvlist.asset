@@ -1,0 +1,359 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2012c0e54635645b499aab06abbc01, type: 3}
+  m_Name: sel_inheriting_pack_uvlist
+  m_EditorClassIdentifier:
+  m_name: sel_inheriting_pack
+  m_width: 512
+  m_height: 512
+  m_uScale: 1
+  m_vScale: 1
+  m_serializeDatas:
+  - name: sel_inh_link_icon
+    u: 0.484375
+    v: 0.001953125
+    width: 0.21875
+    height: 0.0625
+  - name: sel_inh_win_03_09
+    u: 0.3984375
+    v: 0.6914063
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_inh_win_03_08
+    u: 0.3789063
+    v: 0.6914063
+    width: 0.01953125
+    height: 0.0390625
+  - name: sel_inh_win_03_07
+    u: 0.3398438
+    v: 0.6914063
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_inh_win_03_06
+    u: 0.3984375
+    v: 0.671875
+    width: 0.0390625
+    height: 0.01953125
+  - name: sel_inh_win_03_05
+    u: 0.3789063
+    v: 0.671875
+    width: 0.01953125
+    height: 0.01953125
+  - name: sel_inh_win_03_04
+    u: 0.3398438
+    v: 0.671875
+    width: 0.0390625
+    height: 0.01953125
+  - name: sel_inh_win_03_03
+    u: 0.3984375
+    v: 0.6328125
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_inh_win_03_02
+    u: 0.3789063
+    v: 0.6328125
+    width: 0.01953125
+    height: 0.0390625
+  - name: sel_inh_win_03_01
+    u: 0.3398438
+    v: 0.6328125
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_inh_btn_b_tb01_03
+    u: 0.08007813
+    v: 0.1054688
+    width: 0.05859375
+    height: 0.125
+  - name: sel_inh_btn_b_tb01_02
+    u: 0.06054688
+    v: 0.1054688
+    width: 0.01953125
+    height: 0.125
+  - name: sel_inh_btn_b_tb01_01
+    u: 0.001953125
+    v: 0.1054688
+    width: 0.05859375
+    height: 0.125
+  - name: sel_inh_btn_eff
+    u: 0.001953125
+    v: 0.6328125
+    width: 0.3359375
+    height: 0.1054688
+  - name: sel_inh_btn_law_eff
+    u: 0.001953125
+    v: 0.4160156
+    width: 0.59375
+    height: 0.08984375
+  - name: sel_inh_btn_law_03
+    u: 0.7011719
+    v: 0.5
+    width: 0.05859375
+    height: 0.09375
+  - name: sel_inh_btn_law_02
+    u: 0.6816406
+    v: 0.5
+    width: 0.01953125
+    height: 0.09375
+  - name: sel_inh_btn_law_01
+    u: 0.6230469
+    v: 0.5
+    width: 0.05859375
+    height: 0.09375
+  - name: sel_inh_btn_coop_05
+    u: 0.9179688
+    v: 0.5585938
+    width: 0.078125
+    height: 0.078125
+  - name: sel_inh_btn_coop_04
+    u: 0.8398438
+    v: 0.5585938
+    width: 0.078125
+    height: 0.078125
+  - name: sel_inh_btn_fnt_pop_13
+    u: 0.2792969
+    v: 0.1777344
+    width: 0.171875
+    height: 0.06640625
+  - name: sel_inh_btn_fnt_pop_12
+    u: 0.5625
+    v: 0.1054688
+    width: 0.2226563
+    height: 0.06640625
+  - name: sel_inh_btn_fnt_pop_11
+    u: 0.2792969
+    v: 0.1054688
+    width: 0.28125
+    height: 0.0703125
+  - name: sel_inh_win_02_09
+    u: 0.0703125
+    v: 0.3027344
+    width: 0.04882813
+    height: 0.04882813
+  - name: sel_inh_win_02_08
+    u: 0.05078125
+    v: 0.3027344
+    width: 0.01953125
+    height: 0.04882813
+  - name: sel_inh_win_02_07
+    u: 0.001953125
+    v: 0.3027344
+    width: 0.04882813
+    height: 0.04882813
+  - name: sel_inh_win_02_06
+    u: 0.0703125
+    v: 0.2832031
+    width: 0.04882813
+    height: 0.01953125
+  - name: sel_inh_win_02_05
+    u: 0.05078125
+    v: 0.2832031
+    width: 0.01953125
+    height: 0.01953125
+  - name: sel_inh_win_02_04
+    u: 0.001953125
+    v: 0.2832031
+    width: 0.04882813
+    height: 0.01953125
+  - name: sel_inh_win_02_03
+    u: 0.0703125
+    v: 0.234375
+    width: 0.04882813
+    height: 0.04882813
+  - name: sel_inh_win_02_02
+    u: 0.05078125
+    v: 0.234375
+    width: 0.01953125
+    height: 0.04882813
+  - name: sel_inh_win_02_01
+    u: 0.001953125
+    v: 0.234375
+    width: 0.04882813
+    height: 0.04882813
+  - name: sel_pass_btn_03
+    u: 0.21875
+    v: 0.1054688
+    width: 0.05859375
+    height: 0.2773438
+  - name: sel_pass_btn_02
+    u: 0.1992188
+    v: 0.1054688
+    width: 0.01953125
+    height: 0.2773438
+  - name: sel_pass_btn_01
+    u: 0.140625
+    v: 0.1054688
+    width: 0.05859375
+    height: 0.2773438
+  - name: sel_inh_btn_coop_03
+    u: 0.9335938
+    v: 0.3496094
+    width: 0.05859375
+    height: 0.2070313
+  - name: sel_inh_btn_coop_02
+    u: 0.9140625
+    v: 0.3496094
+    width: 0.01953125
+    height: 0.2070313
+  - name: sel_inh_btn_coop_01
+    u: 0.8554688
+    v: 0.3496094
+    width: 0.05859375
+    height: 0.2070313
+  - name: sel_inh_btn_base_01
+    u: 0.5234375
+    v: 0.5078125
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_inh_btn_base_02
+    u: 0.5625
+    v: 0.5078125
+    width: 0.01953125
+    height: 0.0390625
+  - name: sel_inh_btn_base_03
+    u: 0.5820313
+    v: 0.5078125
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_inh_btn_base_04
+    u: 0.5234375
+    v: 0.546875
+    width: 0.0390625
+    height: 0.01953125
+  - name: sel_inh_btn_base_05
+    u: 0.5625
+    v: 0.546875
+    width: 0.01953125
+    height: 0.01953125
+  - name: sel_inh_btn_base_06
+    u: 0.5820313
+    v: 0.546875
+    width: 0.0390625
+    height: 0.01953125
+  - name: sel_inh_btn_base_07
+    u: 0.5234375
+    v: 0.5664063
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_inh_btn_base_08
+    u: 0.5625
+    v: 0.5664063
+    width: 0.01953125
+    height: 0.0390625
+  - name: sel_inh_btn_base_09
+    u: 0.5820313
+    v: 0.5664063
+    width: 0.0390625
+    height: 0.0390625
+  - name: sel_inh_btn_check_off
+    u: 0.5976563
+    v: 0.3925781
+    width: 0.1054688
+    height: 0.1054688
+  - name: sel_inh_btn_check_on
+    u: 0.7050781
+    v: 0.3925781
+    width: 0.1054688
+    height: 0.1054688
+  - name: sel_inh_btn_fnt_icon_01
+    u: 0.3574219
+    v: 0.2695313
+    width: 0.375
+    height: 0.1210938
+  - name: sel_inh_btn_fnt_icon_02
+    u: 0.001953125
+    v: 0.5683594
+    width: 0.375
+    height: 0.0625
+  - name: sel_inh_btn_fnt_icon_03
+    u: 0.8144531
+    v: 0.001953125
+    width: 0.1796875
+    height: 0.171875
+  - name: sel_inh_btn_fnt_icon_04
+    u: 0.8144531
+    v: 0.1757813
+    width: 0.1796875
+    height: 0.171875
+  - name: sel_inh_btn_fnt_pop_01
+    u: 0.4394531
+    v: 0.6074219
+    width: 0.2460938
+    height: 0.05859375
+  - name: sel_inh_btn_fnt_pop_02
+    u: 0.4394531
+    v: 0.6679688
+    width: 0.2460938
+    height: 0.05859375
+  - name: sel_inh_btn_ap_08
+    u: 0.7363281
+    v: 0.05273438
+    width: 0.01953125
+    height: 0.03125
+  - name: sel_inh_btn_ap_07
+    u: 0.7050781
+    v: 0.05273438
+    width: 0.03125
+    height: 0.03125
+  - name: sel_inh_btn_ap_06
+    u: 0.7558594
+    v: 0.03320313
+    width: 0.03125
+    height: 0.01953125
+  - name: sel_inh_btn_ap_05
+    u: 0.7363281
+    v: 0.03320313
+    width: 0.01953125
+    height: 0.01953125
+  - name: sel_inh_btn_ap_04
+    u: 0.7050781
+    v: 0.03320313
+    width: 0.03125
+    height: 0.01953125
+  - name: sel_inh_btn_ap_03
+    u: 0.7558594
+    v: 0.001953125
+    width: 0.03125
+    height: 0.03125
+  - name: sel_inh_btn_ap_02
+    u: 0.7363281
+    v: 0.001953125
+    width: 0.01953125
+    height: 0.03125
+  - name: sel_inh_btn_ap_01
+    u: 0.7050781
+    v: 0.001953125
+    width: 0.03125
+    height: 0.03125
+  - name: sel_inh_btn_fnt_pop_14
+    u: 0.001953125
+    v: 0.7402344
+    width: 0.4453125
+    height: 0.0703125
+  - name: sel_inh_btn_ap_09
+    u: 0.7558594
+    v: 0.05273438
+    width: 0.03125
+    height: 0.03125
+  - name: sel_inh_btn_fnt_pop_03
+    u: 0.453125
+    v: 0.1777344
+    width: 0.2460938
+    height: 0.05859375
+  - name: sel_inh_btn_fnt_pop_07
+    u: 0.001953125
+    v: 0.5078125
+    width: 0.5195313
+    height: 0.05859375
+  - name: sel_inh_btn_l_eff
+    u: 0.001953125
+    v: 0.001953125
+    width: 0.4804688
+    height: 0.1015625
