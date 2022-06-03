@@ -30,5 +30,9 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x104BA94 Offset: 0x104BA94 VA: 0x104BA94
 		// public static void TryInstall(int jacketId) { }
+		
+		public MusicJacketTextureCache() : base(default(int))
+		{
+		}
 	// }
 }

@@ -1,10 +1,14 @@
+using UnityEngine;
+using System;
+using XeApp.Game.Common;
+using System.Collections.Generic;
 
 namespace XeApp.Game.Menu
 {
-	public class MenuDivaVoiceTableCos : ScriptableObject // TypeDefIndex: 10765
+	public class MenuDivaVoiceTableCos : ScriptableObject
 	{
 		[Serializable]
-		public class MenuDivaVoiceTableCos.Data
+		public class Data
 		{
 			[SerializeField]
 			private int m_voiceId; // 0x8

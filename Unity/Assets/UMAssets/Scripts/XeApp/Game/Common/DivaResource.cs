@@ -1,3 +1,7 @@
+using UnityEngine;
+using XeApp.Game;
+using System.Collections.Generic;
+using XeApp.Game.Menu;
 
 namespace XeApp.Game.Common
 {

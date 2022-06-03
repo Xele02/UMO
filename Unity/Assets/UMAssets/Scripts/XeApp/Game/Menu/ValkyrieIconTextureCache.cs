@@ -25,5 +25,9 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x1655A8C Offset: 0x1655A8C VA: 0x1655A8C
 		// public static string MakePortraitIconBundleName(int valkyrie, int form) { }
+		
+		public ValkyrieIconTextureCache() : base(default(int))
+		{
+		}
 	}
 }

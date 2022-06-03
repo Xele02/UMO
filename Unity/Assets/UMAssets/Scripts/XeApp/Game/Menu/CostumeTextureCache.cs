@@ -4,6 +4,9 @@ namespace XeApp.Game.Menu
 	public class CostumeTextureCache : IconTextureCache
 	{
 		// Methods
+		public CostumeTextureCache() : base(default(int))
+		{
+		}
 
 		// // RVA: 0x16E8DAC Offset: 0x16E8DAC VA: 0x16E8DAC Slot: 5
 		// public override void Terminated() { }

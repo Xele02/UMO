@@ -28,7 +28,7 @@ namespace XeApp.Game.Menu
 		// public static string GetIconPath(DivaIconTextureCache.IconType type, int divaId, int modelId, int colorId) { }
 
 		// // RVA: 0x17E3694 Offset: 0x17E3694 VA: 0x17E3694
-		public DivaIconTextureCache()
+		public DivaIconTextureCache() : base(default(int))
 		{
 			m_strBuilder = new StringBuilder();
 		}

@@ -1,8 +1,24 @@
+using UnityEngine;
+using System;
+using XeApp.Game.Common;
+using System.Collections.Generic;
 
 namespace XeApp.Game.Menu
 {
 	public class MenuDivaVoiceTable : ScriptableObject // TypeDefIndex: 10763
 	{
+		[Serializable]
+		public class Data
+		{
+			[SerializeField]
+			private int m_voiceId; // 0x8
+			[SerializeField]
+			private DivaMenuMotion.Type m_motionType; // 0xC
+
+			public int VoiceId { get { return m_voiceId; } } // get_VoiceId 0xED0C00 
+			public DivaMenuMotion.Type MotionType { get { return m_motionType; } } // get_MotionType 0xED0C08 
+		}
+
 		// Fields
 		[SerializeField]
 		[Header("- m_home_[Voice Id]")]

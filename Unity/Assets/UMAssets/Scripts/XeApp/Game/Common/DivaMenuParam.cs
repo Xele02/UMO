@@ -1,3 +1,5 @@
+using UnityEngine;
+using System.Collections.Generic;
 
 namespace XeApp.Game.Common
 {

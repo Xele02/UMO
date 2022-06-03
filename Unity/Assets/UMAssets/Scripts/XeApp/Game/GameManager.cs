@@ -1,3 +1,8 @@
+using UnityEngine;
+using XeSys;
+using XeSys.uGUI;
+using XeApp.Game.RhythmGame;
+using XeApp.Game.Common;
 
 namespace XeApp.Game
 {
@@ -5,13 +10,13 @@ namespace XeApp.Game
 	{
 		private static GameManager mInstance; // 0x0
 		private static GameObject mMyObject; // 0x4
-		// [SerializeField] // RVA: 0x6623D4 Offset: 0x6623D4 VA: 0x6623D4
-		// private FontManager fontManagerPrefab; // 0xC
-		// [SpaceAttribute] // RVA: 0x6623E4 Offset: 0x6623E4 VA: 0x6623E4
-		// [SerializeField] // RVA: 0x6623E4 Offset: 0x6623E4 VA: 0x6623E4
-		// private UGUILetterBoxController letterboxPrefab; // 0x10
-		// [SerializeField] // RVA: 0x66241C Offset: 0x66241C VA: 0x66241C
-		// private UGUIFader faderPrefab; // 0x14
+		[SerializeField]
+		private FontManager fontManagerPrefab; // 0xC
+		//[SpaceAttribute] // RVA: 0x6623E4 Offset: 0x6623E4 VA: 0x6623E4
+		[SerializeField]
+		private UGUILetterBoxController letterboxPrefab; // 0x10
+		[SerializeField]
+		private UGUIFader faderPrefab; // 0x14
 		[SerializeField]
 		private GameObject popupPrefab; // 0x18
 		[SerializeField]
@@ -28,16 +33,16 @@ namespace XeApp.Game
 		private Camera systemCanvasCamera; // 0x30
 		[SerializeField]
 		private GameObject cbtWindowPrefab; // 0x34
-		// [SerializeField] // RVA: 0x6624AC Offset: 0x6624AC VA: 0x6624AC
-		// private DebugCheatMenu debugCheatMenuPrefab; // 0x38
-		// [SerializeField] // RVA: 0x6624BC Offset: 0x6624BC VA: 0x6624BC
-		// private DebugNetworkPause debugNetworkPausePrefab; // 0x3C
-		// [SerializeField] // RVA: 0x6624CC Offset: 0x6624CC VA: 0x6624CC
-		// private NotesSpeedSetting notesSpeedSetting; // 0x40
+		[SerializeField]
+		private DebugCheatMenu debugCheatMenuPrefab; // 0x38
+		[SerializeField]
+		private DebugNetworkPause debugNetworkPausePrefab; // 0x3C
+		[SerializeField]
+		private NotesSpeedSetting notesSpeedSetting; // 0x40
 		[SerializeField]
 		private GameObject longScreenFramePrefab; // 0x44
-		// [SerializeField] // RVA: 0x6624EC Offset: 0x6624EC VA: 0x6624EC
-		// private EnableOnGUIObjects m_enableOnGUIObjects; // 0x48
+		[SerializeField]
+		private EnableOnGUIObjects m_enableOnGUIObjects; // 0x48
 		[HideInInspector]
 		public float ResolutionWidth;
 		[HideInInspector]
@@ -49,8 +54,8 @@ namespace XeApp.Game
 		private const int PopupWindowCount = 4;
 		private bool isDirtyFontUpdate; // 0x72
 		private bool isBootInitialized; // 0x73
-		// [HideInInspector] // RVA: 0x6625AC Offset: 0x6625AC VA: 0x6625AC
-		// public CriAtom criAtom; // 0x74
+		[HideInInspector]
+		public CriAtom criAtom; // 0x74
 		public string ar_session_id; // 0x78
 		// private DFKGGBMFFGB m_viewPlayerData; // 0x7C
 		// private GameManager.FadeYielder m_fadeYielder; // 0x88
