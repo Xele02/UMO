@@ -1,7 +1,11 @@
 using UnityEngine;
 using XeApp.Game;
 using System.Collections.Generic;
+using System.Collections;
 using XeApp.Game.Menu;
+using System;
+using System.Text;
+using XeApp.Core;
 
 namespace XeApp.Game.Common
 {
@@ -200,7 +204,7 @@ namespace XeApp.Game.Common
 		public bool IsSimpleLoaded { get { return isLoadedBasicResource && isLoadedSimpleResource; } } // get_IsSimpleLoaded 0x1BF9F84 
 		public bool isLoadedSubCostumeResource { get; set; } // 0x157
 		public bool isLoadedRivalResultAnimationResource { get; set; } // 0x158
-		public bool isRivalResultAllLoaded { get { isLoadedBasicResource && isLoadedRivalResultAnimationResource; } set {} } //  get_isRivalResultAllLoaded 0x1BFA218 set_isRivalResultAllLoaded 0x1BFA238
+		public bool isRivalResultAllLoaded { get { return isLoadedBasicResource && isLoadedRivalResultAnimationResource; } set {} } //  get_isRivalResultAllLoaded 0x1BFA218 set_isRivalResultAllLoaded 0x1BFA238
 		public bool isLoadedARAnimationResource { get; set; } // 0x159
 		public bool isARAllLoaded { get { return isLoadedBasicResource && isLoadedARAnimationResource; } set {} } //  get_isARAllLoaded 0x1BFA598 set_isARAllLoaded 0x1BFA5B8 
 
@@ -238,14 +242,14 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF82D8 Offset: 0x1BF82D8 VA: 0x1BF82D8
 		public void ReleaseMusicResource()
 		{
-			musicMotionOverrideResource.idle.bodyClip = null;
-			musicMotionOverrideResource.idle.faceBlendClip = null;
-			musicMotionOverrideResource.idle.mouthBlendClip = null;
-			for(int i = 0; i < commonFacialResource.Count(); i++)
-				commonFacialResource[i].overrideClip = null;
+			musicMotionOverrideResource.bodyClip = null;
+			musicMotionOverrideResource.faceBlendClip = null;
+			musicMotionOverrideResource.mouthBlendClip = null;
+			//for(int i = 0; i < commonFacialResource.Count; i++)
+			//	commonFacialResource[i].overrideClip = null;
 			commonFacialResource.Clear();
-			for(int i = 0; i < specialFacialResource.Count(); i++)
-				specialFacialResource[i].overrideClip = null;
+			//for(int i = 0; i < specialFacialResource.Count; i++)
+			//	specialFacialResource[i].overrideClip = null;
 			specialFacialResource.Clear();
 			mikeStandAnimationOverrideClip = null;
 			isLoadedMusicFacialResource = false;
@@ -259,11 +263,11 @@ namespace XeApp.Game.Common
 			//menuMotionOverride
 			menuVoiceTable = null;
 			menuVoiceTableCos = null;
-			for(int i = 0; i < commonFacialResource.Count(); i++)
-				commonFacialResource[i].overrideClip = null;
+			//for(int i = 0; i < commonFacialResource.Count; i++)
+			//	commonFacialResource[i].overrideClip = null;
 			commonFacialResource.Clear();
-			for(int i = 0; i < specialFacialResource.Count(); i++)
-				specialFacialResource[i].overrideClip = null;
+			//for(int i = 0; i < specialFacialResource.Count; i++)
+			//	specialFacialResource[i].overrideClip = null;
 			specialFacialResource.Clear();
 			//resultMotionOverride
 			//loginMotionOverride
@@ -294,7 +298,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF87F0 Offset: 0x1BF87F0 VA: 0x1BF87F0
 		public void LoadBasicResource(int divaId, int modelId, int colorId)
 		{
-			if(_isLoadedBasicResource)
+			if(isLoadedBasicResource)
 			{
 				if(m_loadedDivaId == divaId && m_loadedModelId == modelId && m_loadedColorId == colorId)
 				{
@@ -305,9 +309,9 @@ namespace XeApp.Game.Common
 			m_loadedDivaId = divaId;
 			m_loadedModelId = modelId;
 			m_loadedColorId = colorId;
-			if(_isLoadedBasicResource)
+			if(isLoadedBasicResource)
 				return;
-			StartCoroutine(Co_LoadBasicResource());
+			StartCoroutine(Co_LoadBasicResource(divaId, modelId, colorId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73666C Offset: 0x73666C VA: 0x73666C
@@ -333,18 +337,18 @@ namespace XeApp.Game.Common
 			StringBuilder assetName = new StringBuilder();
 			AssetBundleLoadAllAssetOperationBase operation = null;
 			
-			IMMAOANGPNK a = IMMAOANGPNK.NKACBOEHELJ();
-			OKGLGHCBCJP o = a.GBGACEBEHKM();
-			LCLCCHLDNHJ l = o.BHOKMJJHOOK();
+			IMMAOANGPNK a = IMMAOANGPNK.HHCJCDFCLOB;
+			OKGLGHCBCJP_Database o = a.NKEBMCIMJND;
+			LCLCCHLDNHJ l = o.MFPNGNMFEAL;
 			LCLCCHLDNHJ.ILODJKFJJDO cos_master = l.NLIBHNJNJAN(divaId, modelId);
 			XeSys.StringExtension.SetFormat(bundleName, "dv/ca/cmn.xab", "");
 			
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
-			divaAnimatorController = op.GetAsset<RuntimeAnimatorController>("diva_cmn_animator");
-			facialAnimatorController = op.GetAsset<RuntimeAnimatorController>("med_cmn_animator");
-			divaMenuParam = op.GetAsset<DivaMenuParam>("menu_diva_param");
+			divaAnimatorController = operation.GetAsset<RuntimeAnimatorController>("diva_cmn_animator");
+			facialAnimatorController = operation.GetAsset<RuntimeAnimatorController>("med_cmn_animator");
+			divaMenuParam = operation.GetAsset<DivaMenuParam>("menu_diva_param");
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
@@ -362,17 +366,17 @@ namespace XeApp.Game.Common
 			yield return operation;
 			
 			XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_cos_{1:D3}_prefab", divaId, modelId);
-			divaPrefab = operation.GetAsset<DivaParam>(assetName.ToString());
+			divaPrefab = operation.GetAsset<GameObject>(assetName.ToString());
 			XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_cos_{1:D3}_mike_prefab", divaId, modelId);
-			mikePrefab = operation.GetAsset<DivaParam>(assetName.ToString());
+			mikePrefab = operation.GetAsset<GameObject>(assetName.ToString());
 			
 			List<Material> matList = new List<Material>(16);
 			if(cos_master.PFAFGGBOFBG())
 			{
-				operation.ForEach(o => {
-					if(o is Material)
+				operation.ForEach(mat => {
+					if(mat is Material)
 					{
-						matList.Add(o as Material);
+						matList.Add(mat as Material);
 					}
 				});
 			}
@@ -386,20 +390,20 @@ namespace XeApp.Game.Common
 				
 				List<Texture> texList = new List<Texture>();
 				
-				operation.ForEach(o => {
-					if(o is Texture)
+				operation.ForEach(tex => {
+					if(tex is Texture)
 					{
-						texList.Add(o as Texture);
+						texList.Add(tex as Texture);
 					}
-				})
+				});
 				
 				SetCostumeColorTexture(matList, texList);
 				XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);	
 			}
 			
-			yield return Co_LoadComponent(divaId, modelId, (lo, l) => {prefabEffect = lo; prefabWind = l});
+			yield return Co_LoadComponent(divaId, modelId, (pe, pw) => {prefabEffect = pe; prefabWind = pw;});
 			
-			yield return Co_LoadBoneSpringSuppress(divaId, modelId, (a) => {boneSpringResource.suppress.presets = a;});
+			yield return Co_LoadBoneSpringSuppress(divaId, modelId, (p) => {boneSpringResource.suppress.presets = p;});
 			
 			isLoadedBasicResource = true;
 		}
@@ -424,7 +428,7 @@ namespace XeApp.Game.Common
 			Dictionary<BoneSpringSuppressor.Preset, BoneSpringSuppressParam> pressets = new Dictionary<BoneSpringSuppressor.Preset, BoneSpringSuppressParam>();
 			
 			XeSys.StringExtension.SetFormat(bundleName, "dv/bs/{0:D3}_{1:D3}.xab", divaId, modelId);
-			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundlaName.ToString());
+			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
 			if(!operation.IsError())
@@ -441,7 +445,7 @@ namespace XeApp.Game.Common
 			}
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
-			a_func(preset);
+			a_func(pressets);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73675C Offset: 0x73675C VA: 0x73675C
@@ -461,9 +465,9 @@ namespace XeApp.Game.Common
 			//0x1C00ED4
 			List<GameObject> list_effect = new List<GameObject>();
 			GameObject wind = null;
-			IMMAOANGPNK i = IMMAOANGPNK.NKACBOEHELJ();
-			OKGLGHCBCJP o = i.GBGACEBEHKM();
-			LCLCCHLDNHJ l = o.BHOKMJJHOOK();
+			IMMAOANGPNK im = IMMAOANGPNK.HHCJCDFCLOB;
+			OKGLGHCBCJP_Database o = im.NKEBMCIMJND;
+			LCLCCHLDNHJ l = o.MFPNGNMFEAL;
 			LCLCCHLDNHJ.ILODJKFJJDO a = l.NLIBHNJNJAN(divaId, modelId);
 			int e = a.JACADMEJOAH();
 			if(e == 0)
@@ -473,7 +477,7 @@ namespace XeApp.Game.Common
 			StringBuilder assetName = new StringBuilder();
 			
 			XeSys.StringExtension.SetFormat(bundleName, "dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
-			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
 			for(int i = 0; i < 3; i++)
@@ -538,24 +542,24 @@ namespace XeApp.Game.Common
 				Texture colTex = null;
 				if(m.HasProperty("_AlphaTex"))
 				{
-					System.Text.StringBuilder.Append(texName, "_mask");
+					texName.Append("_mask");
 					Texture t = texList.Find(o => texName.ToString() == o.name);
 					m.SetTexture("_AlphaTex", t);
 					
-					XeSys.StringExtension$$Set(texName, buildStr.ToString());
-					System.Text.StringBuilder.Append(texName, "_base");
+					XeSys.StringExtension.Set(texName, buildStr.ToString());
+					texName.Append("_base");
 					colTex = texList.Find(o => texName.ToString() == o.name);
 				}
 				else
 				{
-					System.Text.StringBuilder.Append(texName, "_col");
+					texName.Append("_col");
 					colTex = texList.Find(o => texName.ToString() == o.name);
 				}
 				m.SetTexture("_MainTex", colTex);
 				if(m.HasProperty("_RimLightSampler"))
 				{
 					XeSys.StringExtension.Set(texName, buildStr.ToString());
-					System.Text.StringBuilder.Append(texName, "_sp");
+					texName.Append("_sp");
 					Texture t = texList.Find(o => texName.ToString() == o.name);
 					m.SetTexture("_RimLightSampler", t);
 				}
@@ -628,7 +632,7 @@ namespace XeApp.Game.Common
 			string wavPath = XeApp.Game.GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/bt{1:D3}.xab", divaNum, primeId, -1, true);
 			
 			XeSys.StringExtension.SetFormat(bundleName, "mc/{0}/bt{1:D3}.xab", wavPath, primeId);
-			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
 			if(divaNum > 1 && divaId == 9)
@@ -650,11 +654,11 @@ namespace XeApp.Game.Common
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			if(mikeStandAnimationOverrideClip != null)
 			{
-				IMMAOANGPNK i = IMMAOANGPNK.NKACBOEHELJ();
-				OKGLGHCBCJP o = i.GBGACEBEHKM();
-				HPBPIOPPDCB h = o.ODGINDHEIBJ();
+				IMMAOANGPNK i = IMMAOANGPNK.HHCJCDFCLOB;
+				OKGLGHCBCJP_Database o = i.NKEBMCIMJND;
+				HPBPIOPPDCB h = o.MGFMPKLLGHE;
 				BJPLLEBHAGO b = h.GCINIJEMHFK(divaId);
-				int ms = b.ADCMNNJMGKO();
+				int ms = b.IDDHKOEFJFB;
 				yield return StartCoroutine(Co_LoadMikeStandResource(ms));
 			}
 			isLoadedMusicAnimationResource = true;
@@ -683,10 +687,10 @@ namespace XeApp.Game.Common
 			StringBuilder assetName = new StringBuilder();
 			
 			XeSys.StringExtension.SetFormat(bundleName, "dv/mk/bt/cmn.xab", "");
-			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
-			XeSys.StringExtension.SetFormat(assetName, "stand_mike_animator");
+			XeSys.StringExtension.SetFormat(assetName, "stand_mike_animator", "");
 			mikeStandAnimatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
@@ -744,16 +748,16 @@ namespace XeApp.Game.Common
 			string wavPath = XeApp.Game.GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/ft.xab", stageDivaNum, 1, -1, true);
 			
 			XeSys.StringExtension.SetFormat(bundleName, "mc/{0}/ft.xab", wavPath);
-			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
-			XeSys.StringExtension.SetFormat(assetName, "facial_table");
+			XeSys.StringExtension.SetFormat(assetName, "facial_table", "");
 			TextAsset facialTableAsset = operation.GetAsset<TextAsset>(assetName.ToString());
 			
 			List<string> originalFacialNames = new List<string>();
 			List<int> overrideFacesId = new List<int>();
 			
-			XeApp.Game.Common.FacialNameDatabase.CreateFacialOverrideList(facialTableAsset, divaId, originalFacialNames, overrideFacesId);
+			XeApp.Game.Common.FacialNameDatabase.CreateFacialOverrideList(facialTableAsset, divaId, ref originalFacialNames, ref overrideFacesId);
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
@@ -800,7 +804,7 @@ namespace XeApp.Game.Common
 		// private void set_isLoadedMenuAnimationResource(bool value) { }
 
 		// // RVA: 0x1BF984C Offset: 0x1BF984C VA: 0x1BF984C
-		public void LoadMenuResource(int divaId, int modelId, DivaResource.MenuFacialType facialType, ResultScoreRank.Type scoreRank = 6)
+		public void LoadMenuResource(int divaId, int modelId, DivaResource.MenuFacialType facialType, ResultScoreRank.Type scoreRank = ResultScoreRank.Type.Illegal)
 		{
 			if(!isLoadedMenuAnimationResource)
 			{
@@ -855,19 +859,19 @@ namespace XeApp.Game.Common
 			menuMotionOverride.present = new List<MenuMotionOverrideResource.Reaction>(MAX_PRESENT);
 			menuMotionOverride.simpletalk = new List<MenuMotionOverrideResource.Reaction>(MAX_SIMPLE_TALK);
 			
-			IMMAOANGPNK i = IMMAOANGPNK.NKACBOEHELJ();
-			OKGLGHCBCJP o = i.GBGACEBEHKM();
-			HPBPIOPPDCB h = o.ODGINDHEIBJ();
+			IMMAOANGPNK im = IMMAOANGPNK.HHCJCDFCLOB;
+			OKGLGHCBCJP_Database o = im.NKEBMCIMJND;
+			HPBPIOPPDCB h = o.MGFMPKLLGHE;
 			BJPLLEBHAGO b = h.GCINIJEMHFK(divaId);
-			int personalityId = b.ALJDJOFDKDJ();
+			int personalityId = b.FPMGHDKACOF;
 			
 			XeSys.StringExtension.SetFormat(bundleName, "dv/ty/{0:D3}.xab", personalityId);
-			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
 			for(int i = 1; i <= MAX_TALK; i++)
 			{
-				MenuMotionOverrideResource.Talk talk;
+				MenuMotionOverrideResource.Talk talk = new MenuMotionOverrideResource.Talk();
 				
 				XeSys.StringExtension.SetFormat(assetName, "type_{0:D3}_menu_talk{1:D2}_start_body", personalityId, i);
 				talk.begin.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
@@ -885,13 +889,13 @@ namespace XeApp.Game.Common
 			}
 			for(int i = 1; i <= MAX_PRESENT; i++)
 			{
-				MenuMotionOverrideResource.Reaction reaction;
+				MenuMotionOverrideResource.Reaction reaction = new MenuMotionOverrideResource.Reaction();
 				
 				XeSys.StringExtension.SetFormat(assetName, "type_{0:D3}_menu_present{1:D2}_body", personalityId, i);
-				reaction.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				reaction.main.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				XeSys.StringExtension.SetFormat(assetName, "type_{0:D3}_menu_present{1:D2}_face", personalityId, i);
-				reaction.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				reaction.main.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				menuMotionOverride.present.Add(reaction);
 			}
@@ -911,23 +915,23 @@ namespace XeApp.Game.Common
 			
 			for(int i = 1; i <= MAX_REACTION; i++)
 			{
-				MenuMotionOverrideResource.Reaction reaction;
+				MenuMotionOverrideResource.Reaction reaction = new MenuMotionOverrideResource.Reaction();
 				
 				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_reaction{1:D2}_body", divaId, i);
-				reaction.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				reaction.main.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_reaction{1:D2}_face", divaId, i);
-				reaction.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				reaction.main.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_reaction{1:D2}_mouth", divaId, i);
-				reaction.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				reaction.main.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				menuMotionOverride.reactions.Add(reaction);
 			}
 			
 			for(int i = 1; i < 6; i++)
 			{
-				MenuMotionOverrideResource.TimeZone timezone;
+				MenuMotionOverrideResource.Timezone timezone = new MenuMotionOverrideResource.Timezone();
 				
 				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_timezone{1:D2}_body", divaId, i);
 				timezone.main.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
@@ -938,21 +942,21 @@ namespace XeApp.Game.Common
 				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_timezone{1:D2}_mouth", divaId, i);
 				timezone.main.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
-				menuMotionOverride.timezones.Add(timezone);
+				menuMotionOverride.timezone.Add(timezone);
 			}
 			
 			for(int i = 1; i <= MAX_SIMPLE_TALK; i++)
 			{
-				MenuMotionOverrideResource.Reaction reaction;
+				MenuMotionOverrideResource.Reaction reaction = new MenuMotionOverrideResource.Reaction();
 				
 				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_simple_talk{1:D2}_body", divaId, i);
-				reaction.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				reaction.main.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_simple_talk{1:D2}_face", divaId, i);
-				reaction.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				reaction.main.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_simple_talk{1:D2}_mouth", divaId, i);
-				reaction.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				reaction.main.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				menuMotionOverride.simpletalk.Add(reaction);
 			}
@@ -961,9 +965,9 @@ namespace XeApp.Game.Common
 			menuVoiceTable = operation.GetAsset<MenuDivaVoiceTable>(assetName.ToString());
 			menuVoiceTableCos = null;
 			
-			CIOECGOMILE c = CIOECGOMILE.NKACBOEHELJ();
-			BBHNACPENDM b = c.GNMGJMDJEGI();
-			MMPBPOIFDAF m = b.HEDHDEBCDHK();
+			CIOECGOMILE c = CIOECGOMILE.HHCJCDFCLOB;
+			BBHNACPENDM b2 = c.AHEFHIMGIBI;
+			MMPBPOIFDAF m = b2.PNLOINMCCKH;
 			bool f = m.GOFAPKBNNCL(divaId);
 			if(f)
 			{
@@ -1062,7 +1066,7 @@ namespace XeApp.Game.Common
 		// public virtual void ChangeCostumeTexture() { }
 
 		// // RVA: 0x1BFA5C0 Offset: 0x1BFA5C0 VA: 0x1BFA5C0
-		void DivaResource()
+		public DivaResource()
 		{
 			commonFacialResource = new List<FacialOverrideResouece>();
 			specialFacialResource = new List<FacialOverrideResouece>();
@@ -1100,4 +1104,5 @@ namespace XeApp.Game.Common
 			MAX_PRESENT = 1;
 			MAX_SIMPLE_TALK = 1;
 		}
+	}
 }

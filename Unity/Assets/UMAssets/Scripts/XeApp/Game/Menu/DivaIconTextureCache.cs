@@ -1,11 +1,12 @@
+using System.Text;
 
 namespace XeApp.Game.Menu
 {
 	public class DivaIconTextureCache : IconTextureCache
 	{
 		// Fields
-		private DivaIconTexture m_loadingDivaIcon; // 0x20
-		private DivaIconTexture m_loadingStatusDivaIcon; // 0x24
+		//private DivaIconTexture m_loadingDivaIcon; // 0x20
+		//private DivaIconTexture m_loadingStatusDivaIcon; // 0x24
 		private const string DivaSSizeIconPath = "ct/dv/me/01/{0:D2}_{1:D2}.xab";
 		private const string DivaMSizeIconPath = "ct/dv/me/02/{0:D2}_{1:D2}.xab";
 		private const string DivaLSizeIconPath = "ct/dv/me/03/{0:D2}_{1:D2}.xab";

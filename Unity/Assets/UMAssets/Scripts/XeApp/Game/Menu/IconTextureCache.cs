@@ -4,16 +4,16 @@ namespace XeApp.Game.Menu
 	public abstract class IconTextureCache
 	{
 		// Fields
-		private IndexableDictionary<string, IiconTexture> m_iconTextureCache; // 0x8
-		private IndexableDictionary<string, IconTextureLodingInfo> m_loadingAssetBundle; // 0xC
+		//private IndexableDictionary<string, IiconTexture> m_iconTextureCache; // 0x8
+		//private IndexableDictionary<string, IconTextureLodingInfo> m_loadingAssetBundle; // 0xC
 		private int m_capacity; // 0x10
 		private ulong m_createCount; // 0x18
 
 		// RVA: 0x13DBD3C Offset: 0x13DBD3C VA: 0x13DBD3C
 		public IconTextureCache(int capacity = 0)
 		{
-			m_loadingAssetBundle = new IndexableDictionary<string, IconTextureLodingInfo>();
-			m_iconTextureCache = new IndexableDictionary<string, IiconTexture>(capacity);
+			//m_loadingAssetBundle = new IndexableDictionary<string, IconTextureLodingInfo>();
+			//m_iconTextureCache = new IndexableDictionary<string, IiconTexture>(capacity);
 			m_capacity = capacity;
 			m_createCount = 0;
 		}
@@ -31,7 +31,10 @@ namespace XeApp.Game.Menu
 		// protected void Load(string path, IconTextureType iconTextureType, Action<IiconTexture> callBack) { }
 
 		// // RVA: 0x13DC6D0 Offset: 0x13DC6D0 VA: 0x13DC6D0
-		public void Update() { //!!! }
+		public void Update()
+		{
+			//!!!
+		}
 
 		// // RVA: 0x13DC9B4 Offset: 0x13DC9B4 VA: 0x13DC9B4
 		// public bool IsLoading() { }

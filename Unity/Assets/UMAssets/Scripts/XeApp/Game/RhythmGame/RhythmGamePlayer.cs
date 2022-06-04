@@ -2,6 +2,10 @@ using UnityEngine;
 using XeApp.Game.Common;
 using XeApp.Game;
 using XeSys.uGUI;
+using System.Collections;
+using System.Collections.Generic;
+using System;
+using XeApp.Game.Tutorial;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -113,8 +117,8 @@ namespace XeApp.Game.RhythmGame
 		public static readonly Color IntroEndFadeColor; // 0x0
 		public static readonly Color ValkyrieStartFadeColor; // 0x10
 		public static readonly Color DivaModeEndFadeColor; // 0x20
-		public const float DivaModeEndFadeOutSec = 0,5;
-		public const float DivaModeEndFadeInSec = 0,5;
+		public const float DivaModeEndFadeOutSec = 0.5f;
+		public const float DivaModeEndFadeInSec = 0.5f;
 		[SerializeField]
 		private GameDivaObject gameDivaObject; // 0x18
 		[SerializeField]
@@ -247,17 +251,17 @@ namespace XeApp.Game.RhythmGame
 		private void Start()
 		{
 			InitializeSetting();
-			Action endAction = XeApp.Game.RhythmGame.RhythmGamePlayer.ClearEndRhythmGame;
+			Action endAction = this.ClearEndRhythmGame;
 			if(XeApp.Game.GameManager.Instance.IsTutorial)
 			{
-				endAction = XeApp.Game.RhythmGame.RhythmGamePlayer.TutorialClearEndRhythmGame;
+				endAction = this.TutorialClearEndRhythmGame;
 			}
-			int difficulty = XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo.difficultyType;
-			Action loadedAction = XeApp.Game.RhythmGame.RhythmGamePlayer.LoadedRhythmGame;
-			Action beginAction = XeApp.Game.RhythmGame.RhythmGamePlayer.StartRhythmGame;
-			Action errorAction = XeApp.Game.RhythmGame.RhythmGamePlayer.GameStartErrorToTitleAction;
+			Difficulty.Type difficulty = XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.difficultyType;
+			Action loadedAction = this.LoadedRhythmGame;
+			Action beginAction = this.StartRhythmGame;
+			Action errorAction = this.GameStartErrorToTitleAction;
 			gameFlow = new RhythmGameFlow(resource, loadedAction, difficulty, beginAction, this, uiController, endAction, errorAction);
-			scene.onChangeScene = XeApp.Game.RhythmGame.RhythmGamePlayer.OnChangeScene;
+			scene.onChangeScene = this.OnChangeScene;
 			uiController.OnStart();
 			updater = InitializeTask;
 		}
@@ -284,7 +288,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(!XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.MNJOLLGPMPI())
 			{
-				XeApp.Game.GameManager.Instance.PopupCanvas.worldCamera.clearFlags(4);
+				XeApp.Game.GameManager.Instance.PopupCanvas.worldCamera.clearFlags = UnityEngine.CameraClearFlags.Nothing;
 			}
 			RestoreSave();
 		}
@@ -321,7 +325,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B0A08 Offset: 0x9B0A08 VA: 0x9B0A08
 		private void Initialize()
 		{
-			battleEventResultVoice = new BattleEventResultVoice(XeApp.Game.Common.SoundManager.Instance.voDiva.get_source());
+			battleEventResultVoice = new BattleEventResultVoice(XeApp.Game.Common.SoundManager.Instance.voDiva.source);
 			InitializeCheatOption();
 			InitializeMusicData();
 			InitializeGameData();
@@ -339,23 +343,23 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B3FFC Offset: 0x9B3FFC VA: 0x9B3FFC
 		private void InitializeMusicData()
 		{
-			totalComboNum = resource.musicData.musicScoreData;
-			bgmPlayer.RequestChangeCueSheet(resource.musicData.musicBase.ENODDPDBIPA(), null);
-			bgmPlayer.ChangeMusicCue(resource.musicData.musicBase.ENODDPDBIPA());
+			totalComboNum = resource.musicData.musicScoreData.CalcComboLimit();
+			bgmPlayer.RequestChangeCueSheet(resource.musicData.musicBase.KKPAHLMJKIH, null);
+			bgmPlayer.ChangeMusicCue(resource.musicData.musicBase.KKPAHLMJKIH);
 			musicMillisecLength = bgmPlayer.millisecLength;
 			InitializeMusicScoreEvent();
 			
-			TeamInfo t = XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.teamInfo;
-			StatusData s = XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.teamStatus;
+			GameSetupData.TeamInfo t = XeSys.SingletonBehaviour<Database>.Instance.gameSetup.teamInfo;
+			StatusData s = t.teamStatus;
 			RhythmGameStatus.InitializeData initData;
 			initData.musicData = resource.musicData;
 			initData.teamScoreValue = s.soul + s.vocal + s.charm;
 			initData.teamEnergyValue = s.support;
-			initData.supportRate = s.support / (IMMAOANGPNK.NKACBOEHELJ().GBGACEBEHKM().NNKOOANMMJN().MPAMBMKFCKK) + 1;
+			initData.supportRate = s.support / (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.HNMMJINNHII.MPAMBMKFCKK) + 1;
 			initData.valkyrieId = t.valkyrieId;
-			initData.maxLife = t.life;
+			initData.maxLife = s.life;
 			initData.isLiveSkip = false;
-			status = new RhythmGameStatus(initData, OnPlayPilotVoice);
+			status = new RhythmGameStatus(initData, this.OnPlayPilotVoice);
 			
 			if(!setting_mv.m_enable)
 			{
@@ -368,8 +372,8 @@ namespace XeApp.Game.RhythmGame
 			{
 				status.energy.DisableCallbackPilotVoice();
 				AOJGDNFAIJL.AMIECPBIALP a = new AOJGDNFAIJL.AMIECPBIALP();				
-				a.OBKGEDCKHHE(XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo.prismMusicId, 1 < XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo.onStageDivaNum);
-				/*int[] difficulties = a.CEMKPBIBOCG(XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo.IsLine6Mode);
+				a.OBKGEDCKHHE(XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.prismMusicId, 1 < XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.onStageDivaNum);
+				/*int[] difficulties = a.CEMKPBIBOCG(XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.IsLine6Mode);
 				XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo.difficultyType
 				int a = a.FGCCCMAFCNH();
 				float b = aGPGPOBJCMFB();
@@ -393,8 +397,8 @@ namespace XeApp.Game.RhythmGame
 		{
 			backupSaveData = new BackupSaveData();
 			setting_mv = new SettingMV();
-			GameSetupData d = XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo;
-			if(d.IsMvMode)
+			GameSetupData d = XeSys.SingletonBehaviour<Database>.Instance.gameSetup;
+			if(d.musicInfo.IsMvMode)
 			{
 				BackupSave();
 				ILDKBCLAFPB.MPHNGGECENI saveInfo = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB;
@@ -422,29 +426,29 @@ namespace XeApp.Game.RhythmGame
 				saveInfo.NFMEIILKACN = backupSaveData.m_option.NFMEIILKACN;
 				saveInfo.KDNKCOAJGCM = backupSaveData.m_option.KDNKCOAJGCM;
 				saveInfo.MJHEPGIEDDL = backupSaveData.m_option.MJHEPGIEDDL;
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(5, saveInfo.ICGAOAFIHFD, true);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(3, ??, true);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(6, saveInfo.IBEINHHMHAC, true);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(4, saveInfo.FCKEDCKCEFC, true);
-				setting_mv.enable = true;
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_BGM, saveInfo.ICGAOAFIHFD, true);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_SE, saveInfo.LMDACNNJDOE, true);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_NOTES, saveInfo.IBEINHHMHAC, true);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_VOICE, saveInfo.FCKEDCKCEFC, true);
+				setting_mv.m_enable = true;
 				setting_mv.m_mode_diva = d.mvInfo.isModeDiva;
 				setting_mv.m_mode_valkyrie = d.mvInfo.isModeValkyrie;
 				setting_mv.m_show_notes = d.mvInfo.isShowNotes;
 			}
 			else
 			{
-				isIgnorePlayNotesSE = XeApp.Game.Common.SoundManager.Instance.GetCategoryVolume(6) <= 0.0f;
+				isIgnorePlayNotesSE = XeApp.Game.Common.SoundManager.Instance.GetCategoryVolume(SoundManager.CategoryId.GAME_NOTES) <= 0.0f;
 			}
 			
 			if(d.ForceCutin() > 0)
 			{
 				BackupSave();
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.DADIPGPHLDD = d.ForceCutin() != 1;
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.DADIPGPHLDD = d.ForceCutin() != 1 ? 1 : 0;
 			}
 			if(d.ForceDivaMode() > 0)
 			{
 				BackupSave();
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.PMGMMMGCEEI = d.ForceDivaMode() != 1;
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.PMGMMMGCEEI = d.ForceDivaMode() != 1 ? 1 : 0;
 			}
 			if(d.ForceValkyrieMode() > 0)
 			{
@@ -457,13 +461,13 @@ namespace XeApp.Game.RhythmGame
 			setting.m_visible_diva = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CJKKALFPMLA;
 			if(setting_mv.m_enable)
 			{
-				int a = 1;
+				Setting.DMode a = Setting.DMode.Normal;
 				if(setting_mv.m_mode_diva)
-					a = 3;
+					a = Setting.DMode.DivaAwake;
 				setting.m_mode_dv = a;
-				int b = 1;
+				Setting.VMode b = Setting.VMode.Normal;
 				if(setting_mv.m_mode_valkyrie)
-					b = 2;
+					b = Setting.VMode.Valkyrie;
 				setting.m_mode_vl = b;
 			}
 		}
@@ -472,7 +476,10 @@ namespace XeApp.Game.RhythmGame
 		// private void FinalizeSetting() { }
 
 		// // RVA: 0x9BAE64 Offset: 0x9BAE64 VA: 0x9BAE64
-		// private void BackupSave() { }
+		private void BackupSave()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x9BAFE8 Offset: 0x9BAFE8 VA: 0x9BAFE8
 		private void RestoreSave()
@@ -480,10 +487,10 @@ namespace XeApp.Game.RhythmGame
 			if(backupSaveData.m_enable)
 			{
 				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB = backupSaveData.m_option;
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(5, backupSaveData.m_option.ICGAOAFIHFD, false);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(3, backupSaveData.m_option.LMDACNNJDOE, false);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(6, backupSaveData.m_option.IBEINHHMHAC, false);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(4, backupSaveData.m_option.FCKEDCKCEFC, false);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_BGM, backupSaveData.m_option.ICGAOAFIHFD, false);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_SE, backupSaveData.m_option.LMDACNNJDOE, false);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_NOTES, backupSaveData.m_option.IBEINHHMHAC, false);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_VOICE, backupSaveData.m_option.FCKEDCKCEFC, false);
 				backupSaveData.m_enable = false;
 				backupSaveData.m_option = null;
 			}
@@ -493,7 +500,10 @@ namespace XeApp.Game.RhythmGame
 		// private void ApplyDimmer() { }
 
 		// // RVA: 0x9B7A9C Offset: 0x9B7A9C VA: 0x9B7A9C
-		// private void InitializeMusicScoreEvent() { }
+		private void InitializeMusicScoreEvent()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x9BAA40 Offset: 0x9BAA40 VA: 0x9BAA40
 		// private void InitializeSkill() { }
@@ -506,7 +516,10 @@ namespace XeApp.Game.RhythmGame
 		// private IEnumerator WaitIntroFade() { }
 
 		// // RVA: 0x9BB3AC Offset: 0x9BB3AC VA: 0x9BB3AC
-		// private void OnPlayPilotVoice(int playVoiceId) { }
+		private void OnPlayPilotVoice(int playVoiceId)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x9BB5F0 Offset: 0x9BB5F0 VA: 0x9BB5F0
 		// private void OnPlayPilotVoice0_FromMV() { }
@@ -573,34 +586,34 @@ namespace XeApp.Game.RhythmGame
 			if(!setting.m_enable_cutin)
 				return;
 			
-			int res = voicePlayer.ChangePlayVoice(0);
-			if(res == 2)
+			RhythmGameVoicePlayer.Result res = voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.TakeOff);
+			if(RhythmGameVoicePlayer.Result.Diva == res)
 			{
 				uiController.Hud.ShowDivaCutin();
 			}
-			else if(res == 1)
+			else if(RhythmGameVoicePlayer.Result.Pilot == res)
 			{
 				Debug.LogError("TODO");
 			}
-			else if(res == 0)
+			else if(RhythmGameVoicePlayer.Result.None == res)
 			{
 				if(resource.isTakeoffDivaVoice)
 				{
-					XeApp.Game.Common.SoundManager.Instance.voDiva.Play(9, resource.takeoffVoiceId);
-					uiController.Hud.uiController.Hud.ShowDivaCutin();
+					XeApp.Game.Common.SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.GameSpecial, resource.takeoffVoiceId);
+					uiController.Hud.ShowDivaCutin();
 				}
 				else
 				{
 					int voiceId = resource.takeoffVoiceId;
-					int categoryId = 0;
+					PilotVoicePlayer.VoiceCategory categoryId = PilotVoicePlayer.VoiceCategory.Start;
 					if(voiceId < 0)
 					{
-						categoryId = 0;
+						categoryId = PilotVoicePlayer.VoiceCategory.Start;
 						voiceId = 0;
 					}
 					else
 					{
-						categoryId = 3;
+						categoryId = PilotVoicePlayer.VoiceCategory.Special;
 					}
 					XeApp.Game.Common.SoundManager.Instance.voPilot.Play(categoryId, voiceId);
 					uiController.Hud.ShowPilotCutin();
@@ -684,7 +697,7 @@ namespace XeApp.Game.RhythmGame
 			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.MNJOLLGPMPI())
 			{
 				musicIntroObject.Begin();
-				Color col = resource.musicIntroResource.paramColor;
+				ValkyrieColorParam col = resource.musicIntroResource.paramColor;
 				valkyrieObject.SetIBLColor(col);
 			}
 			else
@@ -762,19 +775,19 @@ namespace XeApp.Game.RhythmGame
 			// }
 			
 			//__this00 = c__DisplayClass276_0
-			if(XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo.isTutorialOne)
+			if(XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.isTutorialOne)
 			{
 				//__this_03 = c__DisplayClass276_1
 				Debug.LogError("TODO tuto");
 			}
-			else if(XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo.isTutorialTwo)
+			else if(XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.isTutorialTwo)
 			{
 				Debug.LogError("TODO tuto");
 			}
 			else
 			{
-				bool IsLine6Mode = XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo.IsLine6Mode;
-				bool IsMvMode = XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo.IsMvMode;
+				bool IsLine6Mode = XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.IsLine6Mode;
+				bool IsMvMode = XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.IsMvMode;
 				if(IsLine6Mode && !IsMvMode)
 				{
 					Debug.LogError("TODO tuto");
@@ -893,7 +906,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C46DC Offset: 0x9C46DC VA: 0x9C46DC
 		private void OnChangeScene()
 		{
-			if(!XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo.isTutorialTwo)
+			if(!XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.isTutorialTwo)
 				return;
 			XeSys.SingletonBehaviour<BasicTutorialManager>.Instance.HideCursor();
 		}
@@ -1053,27 +1066,29 @@ namespace XeApp.Game.RhythmGame
 		private IEnumerator WaitMusicPlayCoroutine(float a_sec_wait)
 		{
 			//!!!
+			yield return null;
 		}
 
 		// // RVA: 0x9C3750 Offset: 0x9C3750 VA: 0x9C3750
 		public void Play()
 		{
 			//??XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.MNJOLLGPMPI()
-			if(bgmPlayer.get_source().get_status() == 0)
+			if(bgmPlayer.source.status == CriAtomSource.Status.Stop)
 			{
-				resource.musicIntroResource.OverrideMusicStartTime(resource.musicData.musicParam.stateOffsetSec);
-				if(resource.musicData.musicParam.stateOffsetSec < 0.0f)
+				float val = resource.musicData.musicParam.stateOffsetSec;
+				resource.musicIntroResource.OverrideMusicStartTime(ref val);
+				if(val < 0.0f)
 				{
 					StartPlayMusic((int)(resource.musicData.musicParam.stateOffsetSec * -1000));
 				}
 				else
 				{
-					StartCoroutine(WaitMusicPlayCoroutine(resource.musicData.musicParam.stateOffsetSec));
+					StartCoroutine(WaitMusicPlayCoroutine(val));
 				}
 			}
 			else
 			{
-				if(bgmPlayer.get_source().IsPaused())
+				if(bgmPlayer.source.IsPaused())
 					Resume();
 				else
 					Pause();
@@ -1102,6 +1117,7 @@ namespace XeApp.Game.RhythmGame
 		private bool ApplyChangeMusicSequenceTime()
 		{
 			///!!!
+			return false;
 		}
 
 		// // RVA: 0x9B2AC4 Offset: 0x9B2AC4 VA: 0x9B2AC4
@@ -1170,7 +1186,7 @@ namespace XeApp.Game.RhythmGame
 			preJudgeValkyrieNotes = new List<RNoteObject>();
 			liveSkillActivateCountList = new List<int>(XeApp.Game.Common.TeamConst.TeamSceneNum);
 			logger = new RhythmGamePlayLogger();
-			noteTouchSEIndex = new int[8] {}; // Field$<PrivateImplementationDetails>.B97719DD67FEBE5083885CEEA340284B07BE6023
+			noteTouchSEIndex = new int[8] {4, 5, 3, 2, 1, 0, 7, 6}; // Field$<PrivateImplementationDetails>.B97719DD67FEBE5083885CEEA340284B07BE6023
 			activeSkillRestartTimer = new ActiveSkillRestartTimer();
 		}
 

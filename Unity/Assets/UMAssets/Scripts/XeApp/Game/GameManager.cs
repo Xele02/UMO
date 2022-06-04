@@ -3,6 +3,11 @@ using XeSys;
 using XeSys.uGUI;
 using XeApp.Game.RhythmGame;
 using XeApp.Game.Common;
+using XeApp.Game.Menu;
+using UnityEngine.Events;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 
 namespace XeApp.Game
 {
@@ -113,7 +118,7 @@ namespace XeApp.Game
 		private static float[] bx; // 0x8
 		private static float[] by; // 0xC
 		private int screenSizeType; // 0x154
-		private const float DEFAULT_FADE_TIME = 0,4;
+		private const float DEFAULT_FADE_TIME = 0.4f;
 		private const int multipleOverridePrimeId = 2;
 
 		public static GameManager Instance { get { return mInstance; } } // get_Instance() 0x984FB8
@@ -130,7 +135,7 @@ namespace XeApp.Game
 		public bool IsTutorial { get; set; } // 0x84
 		// public GameManager.FadeYielder WaitFadeYielder { get; } // get_WaitFadeYielder 0x999E7C 
 		public Canvas PopupCanvas { get { return popupCanvas; } } // get_PopupCanvas 0x999E84 
-		// public ILDKBCLAFPB localSave { get; set; } // 0x8C
+		public ILDKBCLAFPB localSave { get; set; } // 0x8C
 		// public UIDownloadWait DownloadBar { get; set; } // 0xA0
 		// public UILoadProgress ProgressBar { get; set; } // 0xA4
 		// public UILoadWait NowLoading { get; } // get_NowLoading 0x999EB4 
@@ -139,7 +144,7 @@ namespace XeApp.Game
 		// public UGUILetterBoxController LetterBox { get; set; } // 0x114
 		// public LongScreenFrame LongScreenFrame { get; set; } // 0x11C
 		public UnityAction onDownLoadFinish { get; set; }	// 0x138
-		public bool InputEnabled { get { Debug.LogError("TODO"); return false; }; set { Debug.LogError("TODO"); }; } // get_InputEnabled 0x999F0C set_InputEnabled 0x999F38 
+		public bool InputEnabled { get { Debug.LogError("TODO"); return false; } set { Debug.LogError("TODO"); } } // get_InputEnabled 0x999F0C set_InputEnabled 0x999F38 
 		// public EventSystemControl EventSystemControl { get; } // get_EventSystemControl 0x999F6C 
 		// public LayoutCommonTextureManager UnionTextureManager { get; } // get_UnionTextureManager 0x999F74 
 		// public UGUICommonManager UguiCommonManager { get; } // get_UguiCommonManager 0x999F7C 
@@ -278,7 +283,7 @@ namespace XeApp.Game
 		// // RVA: 0x99AD18 Offset: 0x99AD18 VA: 0x99AD18
 		private void Start()
 		{
-			Start_Coroutine(Co_InitScreen);
+			StartCoroutine(Co_InitScreen());
 			
 			// Hack
 			//InitializeSystem();
@@ -440,11 +445,11 @@ namespace XeApp.Game
 			UnityEngine.QualitySettings.vSyncCount = 0;
 			UnityEngine.Application.targetFrameRate = 60;
 			// GHNFIINGIGM.HKICMNAACDA()
-			//localSave = new ILDKBCLAFPB(AFEHLCGHAEE.IEGHKKJJMHI, AFEHLCGHAEE.HBMPOOCGNEN);
-			// localSave.PCODDPDFLHK();
+			localSave = new ILDKBCLAFPB(AFEHLCGHAEE.IEGHKKJJMHI, AFEHLCGHAEE.HBMPOOCGNEN);
+			localSave.PCODDPDFLHK();
 			if(!divaResource)
 			{
-				GameObject d = new GameObject<DivaResource>("DivaResource");
+				GameObject d = new GameObject("DivaResource", typeof(DivaResource));
 				d.transform.SetParent(this.transform);
 				divaResource = d.GetComponent<DivaResource>();
 			}
@@ -452,7 +457,7 @@ namespace XeApp.Game
 			{
 				if(subDivaResource[i] == null)
 				{
-					GameObject sd = new GameObject<DivaResource>("SubDivaResource_"+i);
+					GameObject sd = new GameObject("SubDivaResource_"+i, typeof(DivaResource));
 					sd.transform.SetParent(this.transform);
 					subDivaResource[i] = sd.GetComponent<DivaResource>();
 				}
@@ -586,10 +591,17 @@ namespace XeApp.Game
 		// public static void FadeIn(float time = 0,4) { }
 
 		// // RVA: 0x9809CC Offset: 0x9809CC VA: 0x9809CC
-		// public static void FadeOut(float time = 0,4) { }
+		public static void FadeOut(float time = 0.4f)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x97FDB0 Offset: 0x97FDB0 VA: 0x97FDB0
-		// public static bool IsFading() { }
+		public static bool IsFading()
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return false;
+		}
 
 		// // RVA: 0x9A0808 Offset: 0x9A0808 VA: 0x9A0808
 		// public static void FadeReset() { }
@@ -684,7 +696,7 @@ namespace XeApp.Game
 		// public IEnumerator ListupRhythmGameResourceFileList(int divaId, int divaModelId, int valkyrieId, int valkyrieFormType, int freeMusicId, int storyMusicId, Difficulty.Type difficulty, List<string> list, int stageDivaNum) { }
 
 		// // RVA: 0x9A165C Offset: 0x9A165C VA: 0x9A165C
-		public string GetWavDirectoryName(int wavId, string format, int stageDivaNum, int primeId = 1, int assetId = -1, bool isNoFindSoloChange = True)
+		public string GetWavDirectoryName(int wavId, string format, int stageDivaNum, int primeId = 1, int assetId = -1, bool isNoFindSoloChange = true)
 		{
 			//? format
 			StringBuilder sb = new StringBuilder();

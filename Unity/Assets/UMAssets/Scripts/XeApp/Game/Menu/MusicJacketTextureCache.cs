@@ -34,5 +34,5 @@ namespace XeApp.Game.Menu
 		public MusicJacketTextureCache() : base(default(int))
 		{
 		}
-	// }
+	}
 }
