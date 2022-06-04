@@ -275,10 +275,16 @@ public class CriAtomSource : CriMonoBehaviour
 	// private IEnumerator PlayAsync(string cueName) { }
 
 	// // RVA: 0x28B69A4 Offset: 0x28B69A4 VA: 0x28B69A4
-	// public void Stop() { }
+	public void Stop()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x28B69B4 Offset: 0x28B69B4 VA: 0x28B69B4
-	// public void Pause(bool sw) { }
+	public void Pause(bool sw)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x28B69DC Offset: 0x28B69DC VA: 0x28B69DC
 	public bool IsPaused()

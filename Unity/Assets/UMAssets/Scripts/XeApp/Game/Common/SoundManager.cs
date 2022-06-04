@@ -70,7 +70,7 @@ namespace XeApp.Game.Common
 		public const float MAX_VOLUME_NOTES = 1.35f;
 
 		public static SoundManager Instance { get; set; }
-		// public BgmPlayer bgmPlayer { get; set; }
+		public BgmPlayer bgmPlayer { get; set; }
 		public DivaVoicePlayer voDiva { get; set; }
 		// public DivaCosVoicePlayer voDivaCos { get; set; }
 		// public DivaVoicePlayer voOtherDiva { get; set; }

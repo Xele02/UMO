@@ -2,33 +2,61 @@ using XeApp.Core;
 using UnityEngine.UI;
 using UnityEngine;
 using System;
+using XeApp.Game.Menu;
+using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.RhythmGame
 {
 	public class RhythmGameScene : MainSceneBase
 	{
-		[SerializeField] // RVA: 0x68E4B8 Offset: 0x68E4B8 VA: 0x68E4B8
+		[SerializeField]
 		private Button prevSceneButton; // 0x28
 		public bool isReady; // 0x2C
-		// private DenominationManager denomControl; // 0x30
+		private DenominationManager denomControl; // 0x30
 		public Action onChangeScene; // 0x34
 
-		// Properties
-		// public DenominationManager DenomControl { get; }
-
-		// Methods
-
-		// RVA: 0xBFD62C Offset: 0xBFD62C VA: 0xBFD62C
-		// public DenominationManager get_DenomControl() { }
+		public DenominationManager DenomControl { get { return denomControl; } } // get_DenomControl 0xBFD62C
 
 		// // RVA: 0xBFD634 Offset: 0xBFD634 VA: 0xBFD634 Slot: 9
-		// protected override void DoAwake() { }
+		protected override void DoAwake()
+		{
+			CNGFKOJANNP c = CNGFKOJANNP.HHCJCDFCLOB;
+			if(c != null)
+				c.IKHJJMKLAEP();
+
+			GameManager.Instance.SetFPS(60);
+			enableFade = false;
+			isReady = false;
+			if(prevSceneButton != null)
+			{
+				prevSceneButton.transform.parent.gameObject.SetActive(false);
+			}
+			SoundManager.Instance.Initialize();
+			denomControl = DenominationManager.Create(transform);
+		}
 
 		// // RVA: 0xBFD848 Offset: 0xBFD848 VA: 0xBFD848 Slot: 12
-		// protected override bool DoUpdateEnter() { }
+		protected override bool DoUpdateEnter()
+		{
+			if(isReady && !enableFade)
+			{
+				GameManager.Instance.NowLoading.Hide();
+				enableFade = true;
+				return true;
+			}
+			return false;
+		}
 
 		// // RVA: 0xBFD978 Offset: 0xBFD978 VA: 0xBFD978 Slot: 14
-		// protected override bool DoUpdateLeave() { }
+		protected override bool DoUpdateLeave()
+		{
+			SoundManager.Instance.bgmPlayer.source.Stop();
+			SoundManager.Instance.bgmPlayer.source.Pause(false);
+			SoundManager.Instance.bgmPlayer.requestDecCacheClear = true;
+			DebugFPS.Instance.StopMeasureAvg();
+			return true;
+		}
 
 		// // RVA: 0xBFDB40 Offset: 0xBFDB40 VA: 0xBFDB40
 		// public void GotoPrevScene() { }
@@ -45,11 +73,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBFDEA0 Offset: 0xBFDEA0 VA: 0xBFDEA0
 		public bool IsEnableTransionResult()
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return false;
+			return true;
 		}
-
-		// // RVA: 0xBFDEA8 Offset: 0xBFDEA8 VA: 0xBFDEA8
-		// public void .ctor() { }
 	}
 }

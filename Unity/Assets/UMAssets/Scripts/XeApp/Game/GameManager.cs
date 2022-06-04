@@ -68,7 +68,7 @@ namespace XeApp.Game
 		private Canvas fadeCanvas; // 0x94
 		private Canvas systemLayoutCanvas; // 0x98
 		public GameObject transmissionIcon; // 0x9C
-		// private UILoadWait nowloading; // 0xA8
+		private UILoadWait nowloading; // 0xA8
 		// private TouchParticle m_touchParticle; // 0xB0
 		public const int g_SubDivaMax = 4;
 		public DivaResource[] subDivaResource; // 0xB8
@@ -138,7 +138,7 @@ namespace XeApp.Game
 		public ILDKBCLAFPB localSave { get; set; } // 0x8C
 		// public UIDownloadWait DownloadBar { get; set; } // 0xA0
 		// public UILoadProgress ProgressBar { get; set; } // 0xA4
-		// public UILoadWait NowLoading { get; } // get_NowLoading 0x999EB4 
+		public UILoadWait NowLoading { get { return nowloading; } } // get_NowLoading 0x999EB4 
 		// public CbtWindow CbtWindow { get; set; } // 0xAC
 		public DivaResource divaResource { get; set; } // 0xB4
 		// public UGUILetterBoxController LetterBox { get; set; } // 0x114
