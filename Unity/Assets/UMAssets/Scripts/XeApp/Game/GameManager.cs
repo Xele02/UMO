@@ -194,7 +194,10 @@ namespace XeApp.Game
 		// public void ClearPushBackButtonHandler() { }
 
 		// // RVA: 0x99A3B4 Offset: 0x99A3B4 VA: 0x99A3B4
-		// public static void Create(GameObject prefab) { }
+		public static void Create(GameObject prefab)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x99A63C Offset: 0x99A63C VA: 0x99A63C
 		// public static void Release() { }
@@ -588,7 +591,10 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x98060C Offset: 0x98060C VA: 0x98060C
-		// public static void FadeIn(float time = 0,4) { }
+		public static void FadeIn(float time = 0.4f)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x9809CC Offset: 0x9809CC VA: 0x9809CC
 		public static void FadeOut(float time = 0.4f)
