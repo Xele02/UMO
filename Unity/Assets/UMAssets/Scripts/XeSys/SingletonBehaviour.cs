@@ -2,17 +2,20 @@ using UnityEngine;
 
 namespace XeSys
 {
-	public class SingletonBehaviour<T> : MonoBehaviour
+	public class SingletonBehaviour<T> : MonoBehaviour where T : class
 	{
 		// Fields
 		private static T mInstance; // 0x0
 
 		// Properties
-		public static T Instance { get; }
-		public static bool HasInstanced { get; }
-
-		// // Methods
-
+		public static T Instance { get
+		{
+			if(mInstance == null)
+			{
+				mInstance = Object.FindObjectOfType(typeof(T)) as T;
+			}
+			return mInstance;
+		} }
 		// // RVA: -1 Offset: -1
 		// public static T get_Instance() { }
 		// /* GenericInstMethod :
@@ -26,6 +29,9 @@ namespace XeSys
 		// |-SingletonBehaviour<TutorialManager>.get_Instance
 		// */
 
+		public static bool HasInstanced{ get{
+			return mInstance != null;
+		} }
 		// // RVA: -1 Offset: -1
 		// public static bool get_HasInstanced() { }
 		// /* GenericInstMethod :
@@ -37,7 +43,10 @@ namespace XeSys
 		// */
 
 		// // RVA: -1 Offset: -1 Slot: 4
-		// protected virtual void Awake() { }
+		protected virtual void Awake()
+		{
+			CheckInstance();
+		}
 		// /* GenericInstMethod :
 		// |
 		// |-RVA: 0x30A7204 Offset: 0x30A7204 VA: 0x30A7204
@@ -54,7 +63,22 @@ namespace XeSys
 		// */
 
 		// // RVA: -1 Offset: -1
-		// protected bool CheckInstance() { }
+		protected bool CheckInstance()
+		{
+			if(mInstance != this)
+			{
+				if(mInstance == null)
+				{
+					mInstance = this as T;
+				}
+				else
+				{
+					Destroy(gameObject);
+					return false;
+				}
+			}
+			return true;
+		}
 		// /* GenericInstMethod :
 		// |
 		// |-RVA: 0x30A7240 Offset: 0x30A7240 VA: 0x30A7240
@@ -62,7 +86,11 @@ namespace XeSys
 		// */
 
 		// // RVA: -1 Offset: -1 Slot: 5
-		// protected virtual void OnDestroy() { }
+		protected virtual void OnDestroy()
+		{
+			if(mInstance != null)
+				mInstance = null;
+		}
 		// /* GenericInstMethod :
 		// |
 		// |-RVA: 0x30A74A0 Offset: 0x30A74A0 VA: 0x30A74A0
@@ -78,21 +106,5 @@ namespace XeSys
 		// |-SingletonBehaviour<RenderManager>.OnDestroy
 		// */
 
-		// // RVA: -1 Offset: -1
-		// protected void .ctor() { }
-		// /* GenericInstMethod :
-		// |
-		// |-RVA: 0x30A7584 Offset: 0x30A7584 VA: 0x30A7584
-		// |-SingletonBehaviour<object>..ctor
-		// |-SingletonBehaviour<AssetBundleManager>..ctor
-		// |-SingletonBehaviour<SoundController>..ctor
-		// |-SingletonBehaviour<Database>..ctor
-		// |-SingletonBehaviour<DebugCheatMenu>..ctor
-		// |-SingletonBehaviour<DebugTouchScreenArea>..ctor
-		// |-SingletonBehaviour<CheatFunction>..ctor
-		// |-SingletonBehaviour<BasicTutorialManager>..ctor
-		// |-SingletonBehaviour<TutorialManager>..ctor
-		// |-SingletonBehaviour<RenderManager>..ctor
-		// */
 	}
 }
