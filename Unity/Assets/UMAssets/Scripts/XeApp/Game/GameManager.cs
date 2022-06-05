@@ -4,15 +4,24 @@ using XeSys.uGUI;
 using XeApp.Game.RhythmGame;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
+using XeApp.Core;
 using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using XeApp.Game.UI;
 
 namespace XeApp.Game
 {
 	public class GameManager : MonoBehaviour
 	{
+		public delegate void PushBackButtonHandler();
+
+		public class FadeYielder : CustomYieldInstruction
+		{
+			public override bool keepWaiting { get { return GameManager.Instance.fullscreenFader.isFading; } } // get_keepWaiting 0x1429B28 
+		}
+
 		private static GameManager mInstance; // 0x0
 		private static GameObject mMyObject; // 0x4
 		[SerializeField]
@@ -62,47 +71,46 @@ namespace XeApp.Game
 		[HideInInspector]
 		public CriAtom criAtom; // 0x74
 		public string ar_session_id; // 0x78
-		// private DFKGGBMFFGB m_viewPlayerData; // 0x7C
-		// private GameManager.FadeYielder m_fadeYielder; // 0x88
+		private DFKGGBMFFGB m_viewPlayerData; // 0x7C
+		private FadeYielder m_fadeYielder = new FadeYielder(); // 0x88
 		private Canvas popupCanvas; // 0x90
 		private Canvas fadeCanvas; // 0x94
 		private Canvas systemLayoutCanvas; // 0x98
 		public GameObject transmissionIcon; // 0x9C
 		private UILoadWait nowloading; // 0xA8
-		// private TouchParticle m_touchParticle; // 0xB0
+		private TouchParticle m_touchParticle; // 0xB0
 		public const int g_SubDivaMax = 4;
-		public DivaResource[] subDivaResource; // 0xB8
-		// private LayoutCommonTextureManager unionTextureManager; // 0xBC
-		// private UGUICommonManager uguiCommonManager; // 0xC0
-		// private LayoutPoolManager iconDecorationCache; // 0xC4
-		// private SceneIconTextureCache sceneIconTextureCache; // 0xC8
-		// private MenuResidentTextureCache menuResidentTextureCache; // 0xCC
+		public DivaResource[] subDivaResource = new DivaResource[4]; // 0xB8
+		private LayoutCommonTextureManager unionTextureManager = new LayoutCommonTextureManager(); // 0xBC
+		private UGUICommonManager uguiCommonManager = new UGUICommonManager(); // 0xC0
+		private LayoutPoolManager iconDecorationCache; // 0xC4
+		private SceneIconTextureCache sceneIconTextureCache; // 0xC8
+		private MenuResidentTextureCache menuResidentTextureCache; // 0xCC
 		private DivaIconTextureCache divaIconTextureCache; // 0xD0
-		// private BgTextureCache bgTextureCache; // 0xD4
-		// private ItemTextureCache itemTextureCache; // 0xD8
+		private BgTextureCache bgTextureCache; // 0xD4
+		private ItemTextureCache itemTextureCache; // 0xD8
 		private MusicJacketTextureCache musicJacketTextureCache; // 0xDC
 		private ValkyrieIconTextureCache valkyrieIconTextureCache; // 0xE0
 		private CostumeTextureCache costumeTextureCache; // 0xE4
-		// private EventBannerTextureCache eventBannerTextureCache; // 0xE8
-		// private PilotTextureCache pilotTextureCache; // 0xEC
-		// private QuestEventTextureCache questEventTextureCache; // 0xF0
-		// private SNSTextureCache snsIconCache; // 0xF4
-		// private EpisodeTextuteCache episodeIconCache; // 0xF8
-		// private GachaProductTextureCache gachaProductIconCache; // 0xFC
-		// private EventSystemControl eventSystemController; // 0x100
-		// private DenomIconTextureCache denomIconCache; // 0x104
-		// private MenuLayoutGameObjectCahce m_layoutObjectCache; // 0x108
-		// private StoryImageTextureCache m_storyImageCache; // 0x10C
-		// private MusicRatioTextureCache musicRatioTextureCache; // 0x110
-		// private GameObject LongScreenFrameInstance; // 0x118
-		// private SubPlateIconTextureCache m_subPlateIconCache; // 0x120
-		// private LobbyTextureCache m_lobbyTextureCache; // 0x124
-		// private DecorationItemTextureCache m_decorationItemTextureCache; // 0x128
-		// private RaidBossTextureCache m_raidBossTextureCache; // 0x12C
-		// private KiraDivaTextureCache m_kiraDivaTextureCache; // 0x130
-		// private HomeBgIconBgTextureCache m_homeBgIconTextureCache; // 0x134
+		private EventBannerTextureCache eventBannerTextureCache; // 0xE8
+		private PilotTextureCache pilotTextureCache; // 0xEC
+		private QuestEventTextureCache questEventTextureCache; // 0xF0
+		private SNSTextureCache snsIconCache; // 0xF4
+		private EpisodeTextuteCache episodeIconCache; // 0xF8
+		private GachaProductTextureCache gachaProductIconCache; // 0xFC
+		private EventSystemControl eventSystemController; // 0x100
+		private DenomIconTextureCache denomIconCache; // 0x104
+		private MenuLayoutGameObjectCahce m_layoutObjectCache; // 0x108
+		private StoryImageTextureCache m_storyImageCache; // 0x10C
+		private MusicRatioTextureCache musicRatioTextureCache; // 0x110
+		private GameObject LongScreenFrameInstance; // 0x118
+		private SubPlateIconTextureCache m_subPlateIconCache; // 0x120
+		private LobbyTextureCache m_lobbyTextureCache; // 0x124
+		private DecorationItemTextureCache m_decorationItemTextureCache; // 0x128
+		private RaidBossTextureCache m_raidBossTextureCache; // 0x12C
+		private KiraDivaTextureCache m_kiraDivaTextureCache; // 0x130
+		private HomeBgIconBgTextureCache m_homeBgIconTextureCache; // 0x134
 		// [CompilerGeneratedAttribute] // RVA: 0x66266C Offset: 0x66266C VA: 0x66266C
-		
 		// private UnityAction<float> UpdateAction; // 0x140
 		// [CompilerGeneratedAttribute] // RVA: 0x6AD9A0 Offset: 0x6AD9A0 VA: 0x6AD9A0
 		// // RVA: 0x99A05C Offset: 0x99A05C VA: 0x99A05C
@@ -112,9 +120,9 @@ namespace XeApp.Game
 		// public void remove_UpdateAction(UnityAction<float> value) { }
 
 		private float m_sceneIconAnimeTime; // 0x144
-		// private SnsNotification m_snsNotification; // 0x148
-		// private GameUIIntro m_intro; // 0x14C
-		// private List<GameManager.PushBackButtonHandler> m_pushBackButtonHandlerList; // 0x150
+		private SnsNotification m_snsNotification; // 0x148
+		private GameUIIntro m_intro; // 0x14C
+		private List<PushBackButtonHandler> m_pushBackButtonHandlerList = new List<PushBackButtonHandler>(); // 0x150
 		private static float[] bx; // 0x8
 		private static float[] by; // 0xC
 		private int screenSizeType; // 0x154
@@ -122,61 +130,61 @@ namespace XeApp.Game
 		private const int multipleOverridePrimeId = 2;
 
 		public static GameManager Instance { get { return mInstance; } } // get_Instance() 0x984FB8
-		// public EnableOnGUIObjects EnableInGUI { get; set; }  get_EnableInGUI 0x999DF4  set_EnableInGUI 0x999DF0 
-		// public AppBootTimeManager appBootTime { get; set; } // 0x4C
-		// public FontManager font { get; set; } // 0x50
-		// public UGUIFader fullscreenFader { get; set; } // 0x54
+		public EnableOnGUIObjects EnableInGUI { get { return m_enableOnGUIObjects; } set {} }  // get_EnableInGUI 0x999DF4  set_EnableInGUI 0x999DF0 
+		public AppBootTimeManager appBootTime { get; set; } // 0x4C
+		public FontManager font { get; set; } // 0x50
+		public UGUIFader fullscreenFader { get; set; } // 0x54
 		public int screenWidth { get; set; } // 0x58
 		public int screenHeight { get; set; } // 0x5C
 		public bool IsSystemInitialized { get; set; } // 0x70
 		public bool IsUnionDataInitialized { get; set; } // 0x71
-		// public DFKGGBMFFGB ViewPlayerData { get; } // get_ViewPlayerData 0x989990
-		// public EAJCBFGKKFA SelectedGuestData { get; set; } // 0x80
+		public DFKGGBMFFGB ViewPlayerData { get { return m_viewPlayerData; } } // get_ViewPlayerData 0x989990
+		public EAJCBFGKKFA SelectedGuestData { get; set; } // 0x80
 		public bool IsTutorial { get; set; } // 0x84
-		// public GameManager.FadeYielder WaitFadeYielder { get; } // get_WaitFadeYielder 0x999E7C 
+		public FadeYielder WaitFadeYielder { get { return m_fadeYielder; } } // get_WaitFadeYielder 0x999E7C 
 		public Canvas PopupCanvas { get { return popupCanvas; } } // get_PopupCanvas 0x999E84 
 		public ILDKBCLAFPB localSave { get; set; } // 0x8C
-		// public UIDownloadWait DownloadBar { get; set; } // 0xA0
-		// public UILoadProgress ProgressBar { get; set; } // 0xA4
+		public UIDownloadWait DownloadBar { get; set; } // 0xA0
+		public UILoadProgress ProgressBar { get; set; } // 0xA4
 		public UILoadWait NowLoading { get { return nowloading; } } // get_NowLoading 0x999EB4 
-		// public CbtWindow CbtWindow { get; set; } // 0xAC
+		public CbtWindow CbtWindow { get; set; } // 0xAC
 		public DivaResource divaResource { get; set; } // 0xB4
-		// public UGUILetterBoxController LetterBox { get; set; } // 0x114
-		// public LongScreenFrame LongScreenFrame { get; set; } // 0x11C
+		public UGUILetterBoxController LetterBox { get; set; } // 0x114
+		public LongScreenFrame LongScreenFrame { get; set; } // 0x11C
 		public UnityAction onDownLoadFinish { get; set; }	// 0x138
 		public bool InputEnabled { get { Debug.LogError("TODO"); return false; } set { Debug.LogError("TODO"); } } // get_InputEnabled 0x999F0C set_InputEnabled 0x999F38 
-		// public EventSystemControl EventSystemControl { get; } // get_EventSystemControl 0x999F6C 
-		// public LayoutCommonTextureManager UnionTextureManager { get; } // get_UnionTextureManager 0x999F74 
-		// public UGUICommonManager UguiCommonManager { get; } // get_UguiCommonManager 0x999F7C 
-		public bool IsCacheActive { get; set; } // IsCacheActive // 0x13C
-		// public LayoutPoolManager IconDecorationCache { get; } // get_IconDecorationCache 0x999F94 
-		// public SceneIconTextureCache SceneIconCache { get; } // get_SceneIconCache 0x999F9C 
-		// public MenuResidentTextureCache MenuResidentTextureCache { get; } // get_MenuResidentTextureCache 0x999FA4 
+		public EventSystemControl EventSystemControl { get { return eventSystemController; } } // get_EventSystemControl 0x999F6C 
+		public LayoutCommonTextureManager UnionTextureManager { get { return unionTextureManager; } } // get_UnionTextureManager 0x999F74 
+		public UGUICommonManager UguiCommonManager { get { return uguiCommonManager; } } // get_UguiCommonManager 0x999F7C 
+		public bool IsCacheActive { get; set; } // 0x13C
+		public LayoutPoolManager IconDecorationCache { get { return iconDecorationCache; } } // get_IconDecorationCache 0x999F94 
+		public SceneIconTextureCache SceneIconCache { get { return sceneIconTextureCache; } } // get_SceneIconCache 0x999F9C 
+		public MenuResidentTextureCache MenuResidentTextureCache { get { return menuResidentTextureCache; } } // get_MenuResidentTextureCache 0x999FA4 
 		public DivaIconTextureCache DivaIconCache { get { return divaIconTextureCache; } } // get_DivaIconCache 0x999FAC 
-		// public BgTextureCache BgTextureCache { get; } // get_BgTextureCache 0x999FB4 
-		// public ItemTextureCache ItemTextureCache { get; } // get_ItemTextureCache 0x98F864 
+		public BgTextureCache BgTextureCache { get { return bgTextureCache; } } // get_BgTextureCache 0x999FB4 
+		public ItemTextureCache ItemTextureCache { get { return itemTextureCache; } } // get_ItemTextureCache 0x98F864 
 		public MusicJacketTextureCache MusicJacketTextureCache { get { return musicJacketTextureCache; } } // get_MusicJacketTextureCache 0x999FBC 
 		public ValkyrieIconTextureCache ValkyrieIconCache { get { return valkyrieIconTextureCache; } } // get_ValkyrieIconCache 0x999FC4 
 		public CostumeTextureCache CostumeIconCache { get { return costumeTextureCache; } } // get_CostumeIconCache 0x999FCC 
-		// public EventBannerTextureCache EventBannerTextureCache { get; } // get_EventBannerTextureCache 0x999FD4 
-		// public PilotTextureCache PilotTextureCache { get; } // get_PilotTextureCache 0x999FDC 
-		// public QuestEventTextureCache QuestEventTextureCache { get; } // get_QuestEventTextureCache 0x999FE4 
-		// public SNSTextureCache SnsIconCache { get; } //  get_SnsIconCache 0x999FEC 
-		// public GachaProductTextureCache GachaProductIconCache { get; } // get_GachaProductIconCache 0x999FF4 
-		// public EpisodeTextuteCache EpisodeIconCache { get; } // get_EpisodeIconCache 0x999FFC 
-		// public DenomIconTextureCache DenomIconCache { get; } // get_DenomIconCache 0x99A004 
-		// public MenuLayoutGameObjectCahce LayoutObjectCache { get; } // get_LayoutObjectCache 0x99A00C 
-		// public StoryImageTextureCache storyImageCache { get; } // get_storyImageCache 0x99A014 
-		// public MusicRatioTextureCache MusicRatioTextureCache { get; } // get_MusicRatioTextureCache 0x99A01C 
-		// public NotesSpeedSetting rhythmNotesSpeedSetting { get; } // get_rhythmNotesSpeedSetting 0x99A024 
-		// public SubPlateIconTextureCache subPlateIconCache { get; } // get_subPlateIconCache 0x99A02C 
-		// public LobbyTextureCache LobbyTextureCache { get; } // get_LobbyTextureCache 0x99A034 
-		// public DecorationItemTextureCache decorationItemTextureCache { get; } // get_decorationItemTextureCache 0x99A03C 
-		// public RaidBossTextureCache RaidBossTextureCache { get; } // get_RaidBossTextureCache 0x99A044 
-		// public KiraDivaTextureCache KiraDivaTextureCache { get; } //  get_KiraDivaTextureCache 0x99A04C 
-		// public HomeBgIconBgTextureCache HomeBgIconTextureCache { get; } // get_HomeBgIconTextureCache 0x99A054 
-		// public SnsNotification snsNotification { get; } // get_snsNotification 0x99A274 
-		// public GameUIIntro GameUIIntro { get; } // get_GameUIIntro 0x99A27C 
+		public EventBannerTextureCache EventBannerTextureCache { get { return eventBannerTextureCache; } } // get_EventBannerTextureCache 0x999FD4 
+		public PilotTextureCache PilotTextureCache { get { return pilotTextureCache; } } // get_PilotTextureCache 0x999FDC 
+		public QuestEventTextureCache QuestEventTextureCache { get { return questEventTextureCache; } } // get_QuestEventTextureCache 0x999FE4 
+		public SNSTextureCache SnsIconCache { get { return snsIconCache; } } //  get_SnsIconCache 0x999FEC 
+		public GachaProductTextureCache GachaProductIconCache { get { return gachaProductIconCache; } } // get_GachaProductIconCache 0x999FF4 
+		public EpisodeTextuteCache EpisodeIconCache { get { return episodeIconCache; } } // get_EpisodeIconCache 0x999FFC 
+		public DenomIconTextureCache DenomIconCache { get { return denomIconCache; } } // get_DenomIconCache 0x99A004 
+		public MenuLayoutGameObjectCahce LayoutObjectCache { get { return m_layoutObjectCache; } } // get_LayoutObjectCache 0x99A00C 
+		public StoryImageTextureCache storyImageCache { get { return m_storyImageCache; } } // get_storyImageCache 0x99A014 
+		public MusicRatioTextureCache MusicRatioTextureCache { get { return musicRatioTextureCache; } } // get_MusicRatioTextureCache 0x99A01C 
+		public NotesSpeedSetting rhythmNotesSpeedSetting { get { return notesSpeedSetting; } } // get_rhythmNotesSpeedSetting 0x99A024 
+		public SubPlateIconTextureCache subPlateIconCache { get { return m_subPlateIconCache; } } // get_subPlateIconCache 0x99A02C 
+		public LobbyTextureCache LobbyTextureCache { get { return m_lobbyTextureCache; } } // get_LobbyTextureCache 0x99A034 
+		public DecorationItemTextureCache decorationItemTextureCache { get { return m_decorationItemTextureCache; } } // get_decorationItemTextureCache 0x99A03C 
+		public RaidBossTextureCache RaidBossTextureCache { get { return m_raidBossTextureCache; } } // get_RaidBossTextureCache 0x99A044 
+		public KiraDivaTextureCache KiraDivaTextureCache { get { return m_kiraDivaTextureCache; } } //  get_KiraDivaTextureCache 0x99A04C 
+		public HomeBgIconBgTextureCache HomeBgIconTextureCache { get { return m_homeBgIconTextureCache; } } // get_HomeBgIconTextureCache 0x99A054 
+		public SnsNotification snsNotification { get { return m_snsNotification; } } // get_snsNotification 0x99A274 
+		public GameUIIntro GameUIIntro { get { return m_intro; } } // get_GameUIIntro 0x99A27C 
 
 		// // RVA: 0x99A284 Offset: 0x99A284 VA: 0x99A284
 		// public void DeleteIntro() { }
@@ -222,7 +230,8 @@ namespace XeApp.Game
 			DontDestroyOnLoad(this);
 			mInstance = this;
 			Initialize();
-			// !!! // m_enableOnGUIObjects
+			if(m_enableOnGUIObjects != null)
+				m_enableOnGUIObjects.enabled = false;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADA38 Offset: 0x6ADA38 VA: 0x6ADA38
@@ -297,9 +306,6 @@ namespace XeApp.Game
 		private void Start()
 		{
 			StartCoroutine(Co_InitScreen());
-			
-			// Hack
-			//InitializeSystem();
 		}
 
 		// // RVA: 0x99AD3C Offset: 0x99AD3C VA: 0x99AD3C
@@ -311,29 +317,31 @@ namespace XeApp.Game
 		// // RVA: 0x99ADD8 Offset: 0x99ADD8 VA: 0x99ADD8
 		private void Update()
 		{
-			//sceneIconTextureCache.Update();
-			//menuResidentTextureCache.Update();
+			if(!isBootInitialized)
+				return;
+			sceneIconTextureCache.Update();
+			menuResidentTextureCache.Update();
 			divaIconTextureCache.Update();
-			//bgTextureCache.Update();
-			//itemTextureCache.Update();
+			bgTextureCache.Update();
+			itemTextureCache.Update();
 			musicJacketTextureCache.Update();
 			valkyrieIconTextureCache.Update();
 			costumeTextureCache.Update();
-			//eventBannerTextureCache.Update();
-			//pilotTextureCache.Update();
-			//questEventTextureCache.Update();
-			//snsIconCache.Update();
-			//episodeIconCache.Update();
-			//gachaProductIconCache.Update();
-			//denomIconCache.Update();
-			//m_storyImageCache.Update();
-			//musicRatioTextureCache.Update();
-			//m_subPlateIconCache.Update();
-			//m_lobbyTextureCache.Update();
-			//m_decorationItemTextureCache.Update();
-			//m_raidBossTextureCache.Update();
-			//m_kiraDivaTextureCache.Update();
-			//m_homeBgIconTextureCache.Update();
+			eventBannerTextureCache.Update();
+			pilotTextureCache.Update();
+			questEventTextureCache.Update();
+			snsIconCache.Update();
+			episodeIconCache.Update();
+			gachaProductIconCache.Update();
+			denomIconCache.Update();
+			m_storyImageCache.Update();
+			musicRatioTextureCache.Update();
+			m_subPlateIconCache.Update();
+			m_lobbyTextureCache.Update();
+			m_decorationItemTextureCache.Update();
+			m_raidBossTextureCache.Update();
+			m_kiraDivaTextureCache.Update();
+			m_homeBgIconTextureCache.Update();
 		}
 
 		// // RVA: 0x99B0D4 Offset: 0x99B0D4 VA: 0x99B0D4
@@ -342,7 +350,8 @@ namespace XeApp.Game
 		// // RVA: 0x99B194 Offset: 0x99B194 VA: 0x99B194
 		private void LateUpdate()
 		{
-			// Update font
+			if(isDirtyFontUpdate)
+				isDirtyFontUpdate = false;
 			// isDirtyFontUpdate / UpdateAction / m_sceneIconAnimeTime
 			// !!!
 		}
@@ -480,29 +489,29 @@ namespace XeApp.Game
 				//!!!
 				//font
 			//}
-			//sceneIconTextureCache = new SceneIconTextureCache();
-			//menuResidentTextureCache = new MenuResidentTextureCache();
+			sceneIconTextureCache = new SceneIconTextureCache();
+			menuResidentTextureCache = new MenuResidentTextureCache();
 			divaIconTextureCache = new DivaIconTextureCache();
-			//bgTextureCache = new BgTextureCache();
-			//itemTextureCache = new ItemTextureCache();
+			bgTextureCache = new BgTextureCache();
+			itemTextureCache = new ItemTextureCache();
 			musicJacketTextureCache = new MusicJacketTextureCache();
 			valkyrieIconTextureCache = new ValkyrieIconTextureCache();
 			costumeTextureCache = new CostumeTextureCache();
-			//eventBannerTextureCache = new EventBannerTextureCache();
-			//pilotTextureCache = new PilotTextureCache();
-			//questEventTextureCache = new QuestEventTextureCache();
-			//snsIconCache = new SNSTextureCache();
-			//episodeIconCache = new EpisodeTextuteCache();
-			//gachaProductIconCache = new GachaProductTextureCache();
-			//denomIconCache = new DenomIconTextureCache();
-			//m_storyImageCache = new StoryImageTextureCache();
-			//musicRatioTextureCache = new MusicRatioTextureCache();
-			//m_subPlateIconCache = new SubPlateIconTextureCache();
-			//m_lobbyTextureCache = new LobbyTextureCache();
-			//m_decorationItemTextureCache = new DecorationItemTextureCache();
-			//m_raidBossTextureCache = new RaidBossTextureCache();
-			//m_kiraDivaTextureCache = new KiraDivaTextureCache();
-			//m_homeBgIconTextureCache = new HomeBgIconBgTextureCache();
+			eventBannerTextureCache = new EventBannerTextureCache();
+			pilotTextureCache = new PilotTextureCache();
+			questEventTextureCache = new QuestEventTextureCache();
+			snsIconCache = new SNSTextureCache();
+			episodeIconCache = new EpisodeTextuteCache();
+			gachaProductIconCache = new GachaProductTextureCache();
+			denomIconCache = new DenomIconTextureCache();
+			m_storyImageCache = new StoryImageTextureCache();
+			musicRatioTextureCache = new MusicRatioTextureCache();
+			m_subPlateIconCache = new SubPlateIconTextureCache();
+			m_lobbyTextureCache = new LobbyTextureCache();
+			m_decorationItemTextureCache = new DecorationItemTextureCache();
+			m_raidBossTextureCache = new RaidBossTextureCache();
+			m_kiraDivaTextureCache = new KiraDivaTextureCache();
+			m_homeBgIconTextureCache = new HomeBgIconBgTextureCache();
 			//LongScreenFrameInstance = new Object<>(longScreenFramePrefab);??
 			//systemLayoutCanvas
 			//LetterBox
@@ -747,16 +756,6 @@ namespace XeApp.Game
 
 		// // RVA: 0x9A1958 Offset: 0x9A1958 VA: 0x9A1958
 		// public void SetTransmissionIconPosition(bool isARMode) { }
-
-		// // RVA: 0x9A1B00 Offset: 0x9A1B00 VA: 0x9A1B00
-		public GameManager()
-		{
-			//m_fadeYielder
-			subDivaResource = new DivaResource[4];
-			//unionTextureManager
-			//uguiCommonManager
-			//m_pushBackButtonHandlerList
-		}
 
 		// // RVA: 0x9A1C14 Offset: 0x9A1C14 VA: 0x9A1C14
 		static GameManager()

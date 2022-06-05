@@ -2,14 +2,14 @@
 public class BEJIKEOAJHN
 {
 	public const int CDFANKJIPJL = 8;
-	public int LMDACNNJDOE; // 0x8
-	public int ICGAOAFIHFD; // 0xC
-	public int FCKEDCKCEFC; // 0x10
-	public int IBEINHHMHAC; // 0x14
-	public int DDHCLNFPNGK; // 0x18
+	public int LMDACNNJDOE = 15; // 0x8
+	public int ICGAOAFIHFD = 15; // 0xC
+	public int FCKEDCKCEFC = 15; // 0x10 // init 0x80000000f;
+	public int IBEINHHMHAC = 8; // 0x14
+	public int DDHCLNFPNGK = 1; // 0x18
 	public int HHMCIGLCBNG; // 0x1C
 	public int AHLFOHJMGAI; // 0x20
-	public int DADIPGPHLDD; // 0x24
+	public int DADIPGPHLDD = 1; // 0x24
 
 	// Methods
 
@@ -28,6 +28,4 @@ public class BEJIKEOAJHN
 	// // RVA: 0xC75BB0 Offset: 0xC75BB0 VA: 0xC75BB0
 	// public void ODDIHGPONFL(BEJIKEOAJHN FMKAONAMGCN) { }
 
-	// // RVA: 0xC75CA8 Offset: 0xC75CA8 VA: 0xC75CA8
-	// public void .ctor() { }
 }

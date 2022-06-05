@@ -193,7 +193,7 @@ namespace XeApp.Game.Common
 		public TeamInfo teamInfo { get { return m_teamInfo; } set {} } // get_teamInfo 0xE9C9EC  set_teamInfo 0xE9C9F4
 		public MusicInfo musicInfo { get { return m_musicInfo; } set {} } // get_musicInfo 0xE9C9F8 set_musicInfo 0xE9CA00
 		public MvInfo mvInfo { get { return m_mvInfo; } set {} } // get_mvInfo 0xE9CA04 set_mvInfo 0xE9CA0C
-		// public AIPEHINPIHC forcePrism { get; set; } // 0x14
+		public AIPEHINPIHC forcePrism { get; set; } // 0x14
 		public bool EnableLiveSkip { get; set; } // 0x19
 		public int LiveSkipTicketCount { get; set; } // 0x1C
 		public bool IsNotUpdateProfile { get; set; } // 0x20
@@ -238,21 +238,39 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE9D328 Offset: 0xE9D328 VA: 0xE9D328
 		public int ForceDivaMode()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			if(forcePrism != null)
+			{
+				int res = forcePrism.EGMIILFFHMI;
+				if(res < 1)
+					res = 0;
+				return res;
+			}
 			return 0;
 		}
 
 		// // RVA: 0xE9D348 Offset: 0xE9D348 VA: 0xE9D348
 		public int ForceValkyrieMode()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			if(forcePrism != null)
+			{
+				int res = forcePrism.HFMFGFHPBNB;
+				if(res < 1)
+					res = 0;
+				return res;
+			}
 			return 0;
 		}
 
 		// // RVA: 0xE9D368 Offset: 0xE9D368 VA: 0xE9D368
 		public int ForceCutin()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			if(forcePrism != null)
+			{
+				int res = forcePrism.ENAAKPKFBGN;
+				if(res < 1)
+					res = 0;
+				return res;
+			}
 			return 0;
 		}
 
