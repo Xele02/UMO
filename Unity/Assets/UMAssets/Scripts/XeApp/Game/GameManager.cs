@@ -196,7 +196,17 @@ namespace XeApp.Game
 		// // RVA: 0x99A3B4 Offset: 0x99A3B4 VA: 0x99A3B4
 		public static void Create(GameObject prefab)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			if(mInstance == null)
+			{
+				if(prefab != null)
+				{
+					mMyObject = GameObject.Find("GameManager");
+					if(mMyObject != null)
+						return;
+					mMyObject = Instantiate<GameObject>(prefab);
+					mMyObject.name = "GameManager";
+				}
+			}
 		}
 
 		// // RVA: 0x99A63C Offset: 0x99A63C VA: 0x99A63C

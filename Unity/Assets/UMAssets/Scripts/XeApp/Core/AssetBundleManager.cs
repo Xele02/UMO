@@ -1,5 +1,6 @@
 using XeSys;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace XeApp.Core
 {
@@ -42,8 +43,13 @@ namespace XeApp.Core
 		// // RVA: 0xE12174 Offset: 0xE12174 VA: 0xE12174
 		public static string GetPlatformName()
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return "";
+			RuntimePlatform platform = Application.platform;
+			if(platform == RuntimePlatform.Android)
+				return "android";
+			else if(platform == RuntimePlatform.IPhonePlayer)
+				return "ios";
+			//return "unknown";
+			return "android"; // Hack for editor play
 		}
 
 		// // RVA: 0xE121F4 Offset: 0xE121F4 VA: 0xE121F4

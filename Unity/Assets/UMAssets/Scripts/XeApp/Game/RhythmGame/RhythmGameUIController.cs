@@ -67,7 +67,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0CC90 Offset: 0xC0CC90 VA: 0xC0CC90
 		public void OnAwake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO");
 		}
 
 		// // RVA: 0xC0CC94 Offset: 0xC0CC94 VA: 0xC0CC94

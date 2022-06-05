@@ -107,8 +107,14 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE7EB1C Offset: 0xE7EB1C VA: 0xE7EB1C
 	public static string FHOCCNDOAPJ()
     {
-        UnityEngine.Debug.LogError("TODO");
-        return "";
+		if(JCMJBMBMJAK == null)
+		{
+			string path = CJMOKHDNBNB.FIPFFELDIOG;
+			if(string.IsNullOrEmpty(path))
+				UnityEngine.Debug.LogError("Install.InstallPathManager.CriWare_installTargetPath is null");
+			JCMJBMBMJAK = path + "/data";
+		}
+        return JCMJBMBMJAK;
     }
 
 	// // RVA: 0xE7DF14 Offset: 0xE7DF14 VA: 0xE7DF14

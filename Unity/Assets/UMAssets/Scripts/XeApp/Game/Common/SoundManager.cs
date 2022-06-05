@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 namespace XeApp.Game.Common
 {
@@ -72,27 +73,27 @@ namespace XeApp.Game.Common
 		public static SoundManager Instance { get; set; }
 		public BgmPlayer bgmPlayer { get; set; }
 		public DivaVoicePlayer voDiva { get; set; }
-		// public DivaCosVoicePlayer voDivaCos { get; set; }
-		// public DivaVoicePlayer voOtherDiva { get; set; }
-		// public TitlecallVoicePlayer voTitlecall { get; set; }
-		// public GreetingVoicePlayer voGreeting { get; set; }
+		public DivaCosVoicePlayer voDivaCos { get; set; }
+		public DivaVoicePlayer voOtherDiva { get; set; }
+		public TitlecallVoicePlayer voTitlecall { get; set; }
+		public GreetingVoicePlayer voGreeting { get; set; }
 		public PilotVoicePlayer voPilot { get; set; }
-		// public SeasonEventVoicePlayer voSeasonEvent { get; set; }
-		// public AdvVoicePlayer voAdv { get; set; }
-		// public CheerPlayer sePlayerCheer { get; set; }
-		// public ARDivaVoicePlayer voARDiva { get; set; }
-		// public CriAtomSource sePlayerBoot { get; set; }
-		// public CriAtomSource sePlayerMenu { get; set; }
-		// public CriAtomSource sePlayerGacha { get; set; }
-		// public CriAtomSource sePlayerGame { get; set; }
-		// public CriAtomSource sePlayerNotes { get; set; }
-		// public CriAtomSource sePlayerLongNotes { get; set; }
-		// public CriAtomSource sePlayerResult { get; set; }
-		// public CriAtomSource sePlayerResultLoop { get; set; }
-		// public CriAtomSource sePlayerAdv { get; set; }
-		// public CriAtomSource sePlayerRaid { get; set; }
-		// public CriAtomSource sePlayerRaidLoop { get; set; }
-		// public CriAtomSource sePlayerMiniGame { get; set; }
+		public SeasonEventVoicePlayer voSeasonEvent { get; set; }
+		public AdvVoicePlayer voAdv { get; set; }
+		public CheerPlayer sePlayerCheer { get; set; }
+		public ARDivaVoicePlayer voARDiva { get; set; }
+		public CriAtomSource sePlayerBoot { get; set; }
+		public CriAtomSource sePlayerMenu { get; set; }
+		public CriAtomSource sePlayerGacha { get; set; }
+		public CriAtomSource sePlayerGame { get; set; }
+		public CriAtomSource sePlayerNotes { get; set; }
+		public CriAtomSource sePlayerLongNotes { get; set; }
+		public CriAtomSource sePlayerResult { get; set; }
+		public CriAtomSource sePlayerResultLoop { get; set; }
+		public CriAtomSource sePlayerAdv { get; set; }
+		public CriAtomSource sePlayerRaid { get; set; }
+		public CriAtomSource sePlayerRaidLoop { get; set; }
+		public CriAtomSource sePlayerMiniGame { get; set; }
 		public bool isInitialized { get; set; }
 		public bool isEestimatorInitialized { get; set; }
 		public int estimatedLatencyMillisec { get; set; }
@@ -312,16 +313,76 @@ namespace XeApp.Game.Common
 		// private void set_estimatedLatencyMillisec(int value) { }
 
 		// // RVA: 0x1395A10 Offset: 0x1395A10 VA: 0x1395A10
-		// private void Awake() { }
+		private void Awake()
+		{
+			Instance = this;
+			isInitialized = false;
+			StartCoroutine(SurveyLatencyEstimator());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73AFB8 Offset: 0x73AFB8 VA: 0x73AFB8
 		// // RVA: 0x1395A94 Offset: 0x1395A94 VA: 0x1395A94
-		// private IEnumerator SurveyLatencyEstimator() { }
+		private IEnumerator SurveyLatencyEstimator()
+		{
+			UnityEngine.Debug.LogWarning("TODO");
+			yield break;
+		}
 
 		// // RVA: 0x1395B40 Offset: 0x1395B40 VA: 0x1395B40
 		public void Initialize()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			isInitialized = true;
+			SoundResource.AddCueSheet("cs_se_boot");
+
+			bgmPlayer = gameObject.AddComponent<BgmPlayer>();
+			voDiva = gameObject.AddComponent<DivaVoicePlayer>();
+			voDivaCos = gameObject.AddComponent<DivaCosVoicePlayer>();
+			voOtherDiva = gameObject.AddComponent<DivaVoicePlayer>();
+			voTitlecall = gameObject.AddComponent<TitlecallVoicePlayer>();
+			voGreeting = gameObject.AddComponent<GreetingVoicePlayer>();
+			voPilot = gameObject.AddComponent<PilotVoicePlayer>();
+			voSeasonEvent = gameObject.AddComponent<SeasonEventVoicePlayer>();
+			voAdv = gameObject.AddComponent<AdvVoicePlayer>();
+			voARDiva = gameObject.AddComponent<ARDivaVoicePlayer>();
+
+			sePlayerCheer = new CheerPlayer();
+			sePlayerCheer.Create(gameObject);
+			sePlayerBoot = gameObject.AddComponent<CriAtomSource>();
+			sePlayerBoot.cueSheet = "cs_se_boot";
+			sePlayerBoot.androidUseLowLatencyVoicePool = true;
+			sePlayerMenu = gameObject.AddComponent<CriAtomSource>();
+			sePlayerMenu.cueSheet = "cs_se_menu";
+			sePlayerMenu.androidUseLowLatencyVoicePool = true;
+			sePlayerGacha = gameObject.AddComponent<CriAtomSource>();
+			sePlayerGacha.cueSheet = "cs_se_gacha";
+			sePlayerGacha.androidUseLowLatencyVoicePool = true;
+			sePlayerGame = gameObject.AddComponent<CriAtomSource>();
+			sePlayerGame.cueSheet = "cs_se_game";
+			sePlayerGame.androidUseLowLatencyVoicePool = true;
+			sePlayerNotes = gameObject.AddComponent<CriAtomSource>();
+			sePlayerNotes.cueSheet = "cs_se_notes";
+			sePlayerNotes.androidUseLowLatencyVoicePool = true;
+			sePlayerLongNotes = gameObject.AddComponent<CriAtomSource>();
+			sePlayerLongNotes.cueSheet = "cs_se_notes";
+			sePlayerLongNotes.androidUseLowLatencyVoicePool = true;
+			sePlayerResult = gameObject.AddComponent<CriAtomSource>();
+			sePlayerResult.cueSheet = "cs_se_result";
+			sePlayerResult.androidUseLowLatencyVoicePool = true;
+			sePlayerResultLoop = gameObject.AddComponent<CriAtomSource>();
+			sePlayerResultLoop.cueSheet = "cs_se_result";
+			sePlayerResultLoop.androidUseLowLatencyVoicePool = true;
+			sePlayerAdv = gameObject.AddComponent<CriAtomSource>();
+			sePlayerAdv.cueSheet = "cs_se_adv";
+			sePlayerAdv.androidUseLowLatencyVoicePool = true;
+			sePlayerRaid = gameObject.AddComponent<CriAtomSource>();
+			sePlayerRaid.cueSheet = "cs_se_raid";
+			sePlayerRaid.androidUseLowLatencyVoicePool = true;
+			sePlayerRaidLoop = gameObject.AddComponent<CriAtomSource>();
+			sePlayerRaidLoop.cueSheet = "cs_se_raid";
+			sePlayerRaidLoop.androidUseLowLatencyVoicePool = true;
+			sePlayerMiniGame = gameObject.AddComponent<CriAtomSource>();
+			sePlayerMiniGame.cueSheet = "cs_se_minigame";
+			sePlayerMiniGame.androidUseLowLatencyVoicePool = true;
 		}
 
 		// // RVA: 0x139654C Offset: 0x139654C VA: 0x139654C
@@ -367,8 +428,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0x1394B14 Offset: 0x1394B14 VA: 0x1394B14
 		// public bool IsUingCueSheetByVoicePlayer(string cueSheetName) { }
-
-		// // RVA: 0x139752C Offset: 0x139752C VA: 0x139752C
-		// public void .ctor() { }
 	}
 }
