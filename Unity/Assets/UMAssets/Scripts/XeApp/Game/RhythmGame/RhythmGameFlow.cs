@@ -5,8 +5,25 @@ namespace XeApp.Game.RhythmGame
 {
 	public class RhythmGameFlow
 	{
-		// // Fields
-		// private RhythmGameFlow.Status currentStatus; // 0x8
+		public enum Status
+		{
+			Default = 0,
+			SetupGameData = 1,
+			WaitDownloadingMaster = 2,
+			WaitLoadingResource = 3,
+			WaitDownloadingSpecial = 4,
+			WaitLoadingSpecialResource = 5,
+			WaitDownloadingData = 6,
+			WaitLoadingData = 7,
+			SetTexture = 8,
+			Warmup = 9,
+			Game = 10,
+			EndGame = 11,
+			NextScene = 12,
+			ErrorToTitle = 13,
+		}
+
+		private Status currentStatus; // 0x8
 		private RhythmGameResource rhythmGameResource; // 0xC
 		private RhythmGameUIController uiController; // 0x10
 		private Action rhythmGameLoadedAction; // 0x14
@@ -22,29 +39,10 @@ namespace XeApp.Game.RhythmGame
 		private bool isGameSaveEnd; // 0x30
 		private bool isGameSaveError; // 0x31
 		private Action updater; // 0x34
-		// [CompilerGeneratedAttribute] // RVA: 0x68DE38 Offset: 0x68DE38 VA: 0x68DE38
-		// private bool <IsRareBreak>k__BackingField; // 0x38
 		private bool isDivaCosSoundLoaded; // 0x39
 
-		// // Properties
-		// public RhythmGameFlow.Status status { get; set; }
-		public bool IsRareBreak { get; set; }
-
-		// // Methods
-
-		// // RVA: 0xDC6788 Offset: 0xDC6788 VA: 0xDC6788
-		// public RhythmGameFlow.Status get_status() { }
-
-		// // RVA: 0xDC6790 Offset: 0xDC6790 VA: 0xDC6790
-		// private void set_status(RhythmGameFlow.Status value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7440DC Offset: 0x7440DC VA: 0x7440DC
-		// // RVA: 0xDC6798 Offset: 0xDC6798 VA: 0xDC6798
-		// public bool get_IsRareBreak() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7440EC Offset: 0x7440EC VA: 0x7440EC
-		// // RVA: 0xDC67A0 Offset: 0xDC67A0 VA: 0xDC67A0
-		// private void set_IsRareBreak(bool value) { }
+		public Status status { get { return currentStatus; } set { currentStatus = value; } }
+		public bool IsRareBreak { get; set; }  // 0x38
 
 		// // RVA: 0xDC67A8 Offset: 0xDC67A8 VA: 0xDC67A8
 		public RhythmGameFlow(RhythmGameResource resouce, Action rhythmGameLoadedAction, Difficulty.Type difficluty, Action rhythmGameBeginedAction, RhythmGamePlayer gamePlayer, RhythmGameUIController uiController, Action rhythmGameEndedAction, Action errorToTitleAction)

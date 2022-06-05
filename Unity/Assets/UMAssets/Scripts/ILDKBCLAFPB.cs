@@ -112,8 +112,7 @@ public class ILDKBCLAFPB
         // // RVA: 0x2035D7C Offset: 0x2035D7C VA: 0x2035D7C
         public bool GLKGAOFHLPN()
         {
-            UnityEngine.Debug.LogError("TODO");
-            return false;
+            return DADIPGPHLDD == 0;
         }
 
         // // RVA: 0x2035D90 Offset: 0x2035D90 VA: 0x2035D90
@@ -352,8 +351,7 @@ public class ILDKBCLAFPB
 	// // RVA: 0x201A168 Offset: 0x201A168 VA: 0x201A168
 	public ILDKBCLAFPB.IPHAEFKCNMN EPJOACOONAC()
     {
-        UnityEngine.Debug.LogError("TODO");
-        return null;
+        return GLANNFOPMDO;
     }
 
 	// // RVA: 0x201A170 Offset: 0x201A170 VA: 0x201A170

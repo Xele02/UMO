@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 using System.Collections;
 using XeSys;
@@ -182,7 +183,11 @@ namespace XeApp.Core
 		// protected virtual void DoOnApplicationQuit() { }
 
 		// // RVA: 0x1D73E4C Offset: 0x1D73E4C VA: 0x1D73E4C
-		// protected void NextScene(string nextSceneName) { }
+		protected void NextScene(string nextSceneName)
+		{
+			mPrevSceneName = SceneManager.GetActiveScene().ToString();
+			mNextSceneName = nextSceneName;
+		}
 
 		// // RVA: 0x1D73F08 Offset: 0x1D73F08 VA: 0x1D73F08
 		// protected void ReturnMainScene() { }

@@ -598,7 +598,24 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x9A0628 Offset: 0x9A0628 VA: 0x9A0628
-		// public bool IsInitializedSystemLayout() { }
+		public bool IsInitializedSystemLayout()
+		{
+			if(isBootInitialized)
+			{
+				if(PopupWindowManager.IsReady())
+				{
+					return true; // Hack
+					if(nowloading.IsInitialized)
+					{
+						if(!DownloadBar.gameObject.activeSelf)
+						{
+							return !transmissionIcon.activeSelf;
+						}
+					}
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0x9A0758 Offset: 0x9A0758 VA: 0x9A0758
 		// public void ResetSystemCanvasCamera() { }

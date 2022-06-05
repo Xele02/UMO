@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
 public class DFKGGBMFFGB
 {
