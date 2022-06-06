@@ -6,6 +6,7 @@ using XeApp.Game.Menu;
 using System;
 using System.Text;
 using XeApp.Core;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -341,7 +342,7 @@ namespace XeApp.Game.Common
 			OKGLGHCBCJP_Database o = a.NKEBMCIMJND;
 			LCLCCHLDNHJ l = o.MFPNGNMFEAL;
 			LCLCCHLDNHJ.ILODJKFJJDO cos_master = l.NLIBHNJNJAN(divaId, modelId);
-			XeSys.StringExtension.SetFormat(bundleName, "dv/ca/cmn.xab", "");
+			bundleName.SetFormat("dv/ca/cmn.xab", "");
 			
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
@@ -352,22 +353,22 @@ namespace XeApp.Game.Common
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
-			XeSys.StringExtension.SetFormat(bundleName, "dv/ca/{0:D3}.xab", divaId);
+			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
-			XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_param", divaId);
+			assetName.SetFormat("diva_{0:D3}_param", divaId);
 			divaParam = operation.GetAsset<DivaParam>(assetName.ToString());
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
-			XeSys.StringExtension.SetFormat(bundleName, "dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
+			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
-			XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_cos_{1:D3}_prefab", divaId, modelId);
+			assetName.SetFormat("diva_{0:D3}_cos_{1:D3}_prefab", divaId, modelId);
 			divaPrefab = operation.GetAsset<GameObject>(assetName.ToString());
-			XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_cos_{1:D3}_mike_prefab", divaId, modelId);
+			assetName.SetFormat("diva_{0:D3}_cos_{1:D3}_mike_prefab", divaId, modelId);
 			mikePrefab = operation.GetAsset<GameObject>(assetName.ToString());
 			
 			List<Material> matList = new List<Material>(16);
@@ -384,7 +385,7 @@ namespace XeApp.Game.Common
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			if(cos_master.PFAFGGBOFBG())
 			{
-				XeSys.StringExtension.SetFormat(bundleName, "dv/cs/{0:D3}_{1:D3}_{2:D2}.xab", divaId, modelId, colorId);
+				bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}_{2:D2}.xab", divaId, modelId, colorId);
 				operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 				yield return operation;
 				
@@ -427,7 +428,7 @@ namespace XeApp.Game.Common
 			AssetBundleLoadAllAssetOperationBase operation = null;
 			Dictionary<BoneSpringSuppressor.Preset, BoneSpringSuppressParam> pressets = new Dictionary<BoneSpringSuppressor.Preset, BoneSpringSuppressParam>();
 			
-			XeSys.StringExtension.SetFormat(bundleName, "dv/bs/{0:D3}_{1:D3}.xab", divaId, modelId);
+			bundleName.SetFormat("dv/bs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
@@ -435,7 +436,7 @@ namespace XeApp.Game.Common
 			{
 				for(int i = 0; i < (int)BoneSpringSuppressor.Preset._Num; i++)
 				{
-					XeSys.StringExtension.SetFormat(assetName, "bs_{0:D3}_{1:D3}_suppress_{2}", divaId, modelId, i);
+					assetName.SetFormat("bs_{0:D3}_{1:D3}_suppress_{2}", divaId, modelId, i);
 					BoneSpringSuppressParam p = operation.GetAsset<BoneSpringSuppressParam>(assetName.ToString());
 					if(p != null)
 					{
@@ -476,13 +477,13 @@ namespace XeApp.Game.Common
 			StringBuilder bundleName = new StringBuilder();
 			StringBuilder assetName = new StringBuilder();
 			
-			XeSys.StringExtension.SetFormat(bundleName, "dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
+			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
 			for(int i = 0; i < 3; i++)
 			{
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_cos_{1:D3}_sp_effect_{2:D2}", divaId, modelId, i);
+				assetName.SetFormat("diva_{0:D3}_cos_{1:D3}_sp_effect_{2:D2}", divaId, modelId, i);
 				GameObject g = operation.GetAsset<GameObject>(assetName.ToString());
 				if(g != null)
 				{
@@ -490,12 +491,12 @@ namespace XeApp.Game.Common
 				}
 			}
 				
-			XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_cos_{1:D3}_wind", divaId, modelId);
+			assetName.SetFormat("diva_{0:D3}_cos_{1:D3}_wind", divaId, modelId);
 			wind = operation.GetAsset<GameObject>(assetName.ToString());
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
-			XeSys.StringExtension.SetFormat(bundleName, "dv/ca/cmn.xab", "");
+			bundleName.SetFormat("dv/ca/cmn.xab", "");
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
@@ -503,7 +504,7 @@ namespace XeApp.Game.Common
 			{
 				for(int i = 0; i < 3; i++)
 				{
-					XeSys.StringExtension.SetFormat(assetName, "diva_cmn_sp_effect_{0:D2}", i);
+					assetName.SetFormat("diva_cmn_sp_effect_{0:D2}", i);
 					GameObject g = operation.GetAsset<GameObject>(assetName.ToString());
 					if(g != null)
 					{
@@ -514,7 +515,7 @@ namespace XeApp.Game.Common
 			
 			if(wind == null)
 			{
-				XeSys.StringExtension.SetFormat(assetName, "diva_cmn_wind", "");
+				assetName.SetFormat("diva_cmn_wind", "");
 				wind = operation.GetAsset<GameObject>(assetName.ToString());
 			}
 			
@@ -535,10 +536,10 @@ namespace XeApp.Game.Common
 				if(m == null)
 					break;
 				int idx = m.name.IndexOf("_mat");
-				XeSys.StringExtension.Set(buildStr, m.name);
+				buildStr.Set(m.name);
 				buildStr.Length = idx;
 				buildStr.Append("_tex");
-				XeSys.StringExtension.Set(texName, buildStr.ToString());
+				texName.Set(buildStr.ToString());
 				Texture colTex = null;
 				if(m.HasProperty("_AlphaTex"))
 				{
@@ -546,7 +547,7 @@ namespace XeApp.Game.Common
 					Texture t = texList.Find(o => texName.ToString() == o.name);
 					m.SetTexture("_AlphaTex", t);
 					
-					XeSys.StringExtension.Set(texName, buildStr.ToString());
+					texName.Set(buildStr.ToString());
 					texName.Append("_base");
 					colTex = texList.Find(o => texName.ToString() == o.name);
 				}
@@ -558,7 +559,7 @@ namespace XeApp.Game.Common
 				m.SetTexture("_MainTex", colTex);
 				if(m.HasProperty("_RimLightSampler"))
 				{
-					XeSys.StringExtension.Set(texName, buildStr.ToString());
+					texName.Set(buildStr.ToString());
 					texName.Append("_sp");
 					Texture t = texList.Find(o => texName.ToString() == o.name);
 					m.SetTexture("_RimLightSampler", t);
@@ -631,7 +632,7 @@ namespace XeApp.Game.Common
 			
 			string wavPath = XeApp.Game.GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/bt{1:D3}.xab", divaNum, primeId, -1, true);
 			
-			XeSys.StringExtension.SetFormat(bundleName, "mc/{0}/bt{1:D3}.xab", wavPath, primeId);
+			bundleName.SetFormat("mc/{0}/bt{1:D3}.xab", wavPath, primeId);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
@@ -639,16 +640,16 @@ namespace XeApp.Game.Common
 			{
 				attachPositionId = "_"+positionId;
 			}
-			XeSys.StringExtension.SetFormat(assetName, "music_{0}_prime_{1:D3}{2}_body", wavPath, primeId, attachPositionId);
+			assetName.SetFormat("music_{0}_prime_{1:D3}{2}_body", wavPath, primeId, attachPositionId);
 			musicMotionOverrideResource.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 			
-			XeSys.StringExtension.SetFormat(assetName, "music_{0}_prime_{1:D3}{2}_face", wavPath, primeId, attachPositionId);
+			assetName.SetFormat("music_{0}_prime_{1:D3}{2}_face", wavPath, primeId, attachPositionId);
 			musicMotionOverrideResource.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 			
-			XeSys.StringExtension.SetFormat(assetName, "music_{0}_prime_{1:D3}{2}_mouth", wavPath, primeId, attachPositionId);
+			assetName.SetFormat("music_{0}_prime_{1:D3}{2}_mouth", wavPath, primeId, attachPositionId);
 			musicMotionOverrideResource.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 			
-			XeSys.StringExtension.SetFormat(assetName, "music_{0}_prime_{1:D3}{2}_mike", wavPath, primeId, attachPositionId);
+			assetName.SetFormat("music_{0}_prime_{1:D3}{2}_mike", wavPath, primeId, attachPositionId);
 			mikeStandAnimationOverrideClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
@@ -686,23 +687,23 @@ namespace XeApp.Game.Common
 			StringBuilder bundleName = new StringBuilder();
 			StringBuilder assetName = new StringBuilder();
 			
-			XeSys.StringExtension.SetFormat(bundleName, "dv/mk/bt/cmn.xab", "");
+			bundleName.SetFormat("dv/mk/bt/cmn.xab", "");
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
-			XeSys.StringExtension.SetFormat(assetName, "stand_mike_animator", "");
+			assetName.SetFormat("stand_mike_animator", "");
 			mikeStandAnimatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
-			XeSys.StringExtension.SetFormat(bundleName, "dv/mk/bt/{0:D3}.xab", primeId);
+			bundleName.SetFormat("dv/mk/bt/{0:D3}.xab", primeId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
-			XeSys.StringExtension.SetFormat(assetName, "stand_mike_prefab", "");
+			assetName.SetFormat("stand_mike_prefab", "");
 			mikeStandPrefab = operation.GetAsset<GameObject>(assetName.ToString());
 			
-			XeSys.StringExtension.SetFormat(assetName, "hand_mike_prefab", "");
+			assetName.SetFormat("hand_mike_prefab", "");
 			mikeCommonPrefab = operation.GetAsset<GameObject>(assetName.ToString());
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
@@ -747,11 +748,11 @@ namespace XeApp.Game.Common
 			
 			string wavPath = XeApp.Game.GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/ft.xab", stageDivaNum, 1, -1, true);
 			
-			XeSys.StringExtension.SetFormat(bundleName, "mc/{0}/ft.xab", wavPath);
+			bundleName.SetFormat("mc/{0}/ft.xab", wavPath);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
-			XeSys.StringExtension.SetFormat(assetName, "facial_table", "");
+			assetName.SetFormat("facial_table", "");
 			TextAsset facialTableAsset = operation.GetAsset<TextAsset>(assetName.ToString());
 			
 			List<string> originalFacialNames = new List<string>();
@@ -761,7 +762,7 @@ namespace XeApp.Game.Common
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
-			XeSys.StringExtension.SetFormat(bundleName, "dv/ca/{0:D3}.xab", divaId);
+			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
@@ -769,7 +770,7 @@ namespace XeApp.Game.Common
 			
 			for(int i = 0; i < divaCommonFacialAnimName.Length; i++)
 			{
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_{1}", divaId, divaCommonFacialAnimName[i]);
+				assetName.SetFormat("diva_{0:D3}_{1}", divaId, divaCommonFacialAnimName[i]);
 				FacialOverrideResouece resource;
 				resource.originalName = divaCommonFacialAnimName[i];
 				resource.overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString());
@@ -782,7 +783,7 @@ namespace XeApp.Game.Common
 				if(overrideFacesId[i] > 0)
 				{
 					string s = XeApp.Game.Common.FacialNameDatabase.ToString(overrideFacesId[i]);
-					XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_{1}", divaId, s);
+					assetName.SetFormat("diva_{0:D3}_{1}", divaId, s);
 					FacialOverrideResouece resource;
 					resource.originalName = originalFacialNames[i];
 					resource.overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString());
@@ -865,7 +866,7 @@ namespace XeApp.Game.Common
 			BJPLLEBHAGO b = h.GCINIJEMHFK(divaId);
 			int personalityId = b.FPMGHDKACOF;
 			
-			XeSys.StringExtension.SetFormat(bundleName, "dv/ty/{0:D3}.xab", personalityId);
+			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
@@ -873,16 +874,16 @@ namespace XeApp.Game.Common
 			{
 				MenuMotionOverrideResource.Talk talk = new MenuMotionOverrideResource.Talk();
 				
-				XeSys.StringExtension.SetFormat(assetName, "type_{0:D3}_menu_talk{1:D2}_start_body", personalityId, i);
+				assetName.SetFormat("type_{0:D3}_menu_talk{1:D2}_start_body", personalityId, i);
 				talk.begin.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
-				XeSys.StringExtension.SetFormat(assetName, "type_{0:D3}_menu_talk{1:D2}_body", personalityId, i);
+				assetName.SetFormat("type_{0:D3}_menu_talk{1:D2}_body", personalityId, i);
 				talk.main.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
-				XeSys.StringExtension.SetFormat(assetName, "type_{0:D3}_menu_talk{1:D2}_face", personalityId, i);
+				assetName.SetFormat("type_{0:D3}_menu_talk{1:D2}_face", personalityId, i);
 				talk.main.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
-				XeSys.StringExtension.SetFormat(assetName, "type_{0:D3}_menu_talk{1:D2}_end_body", personalityId, i);
+				assetName.SetFormat("type_{0:D3}_menu_talk{1:D2}_end_body", personalityId, i);
 				talk.end.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				menuMotionOverride.talk.Add(talk);
@@ -891,10 +892,10 @@ namespace XeApp.Game.Common
 			{
 				MenuMotionOverrideResource.Reaction reaction = new MenuMotionOverrideResource.Reaction();
 				
-				XeSys.StringExtension.SetFormat(assetName, "type_{0:D3}_menu_present{1:D2}_body", personalityId, i);
+				assetName.SetFormat("type_{0:D3}_menu_present{1:D2}_body", personalityId, i);
 				reaction.main.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
-				XeSys.StringExtension.SetFormat(assetName, "type_{0:D3}_menu_present{1:D2}_face", personalityId, i);
+				assetName.SetFormat("type_{0:D3}_menu_present{1:D2}_face", personalityId, i);
 				reaction.main.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				menuMotionOverride.present.Add(reaction);
@@ -902,28 +903,28 @@ namespace XeApp.Game.Common
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
-			XeSys.StringExtension.SetFormat(bundleName, "dv/ca/{0:D3}.xab", divaId);
+			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			
-			XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_idle_body", divaId);
+			assetName.SetFormat("diva_{0:D3}_menu_idle_body", divaId);
 			menuMotionOverride.idle.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
-			XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_idle_face", divaId);
+			assetName.SetFormat("diva_{0:D3}_menu_idle_face", divaId);
 			menuMotionOverride.idle.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
-			XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_idle_mouth", divaId);
+			assetName.SetFormat("diva_{0:D3}_menu_idle_mouth", divaId);
 			menuMotionOverride.idle.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 			
 			for(int i = 1; i <= MAX_REACTION; i++)
 			{
 				MenuMotionOverrideResource.Reaction reaction = new MenuMotionOverrideResource.Reaction();
 				
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_reaction{1:D2}_body", divaId, i);
+				assetName.SetFormat("diva_{0:D3}_menu_reaction{1:D2}_body", divaId, i);
 				reaction.main.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_reaction{1:D2}_face", divaId, i);
+				assetName.SetFormat("diva_{0:D3}_menu_reaction{1:D2}_face", divaId, i);
 				reaction.main.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_reaction{1:D2}_mouth", divaId, i);
+				assetName.SetFormat("diva_{0:D3}_menu_reaction{1:D2}_mouth", divaId, i);
 				reaction.main.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				menuMotionOverride.reactions.Add(reaction);
@@ -933,13 +934,13 @@ namespace XeApp.Game.Common
 			{
 				MenuMotionOverrideResource.Timezone timezone = new MenuMotionOverrideResource.Timezone();
 				
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_timezone{1:D2}_body", divaId, i);
+				assetName.SetFormat("diva_{0:D3}_menu_timezone{1:D2}_body", divaId, i);
 				timezone.main.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_timezone{1:D2}_face", divaId, i);
+				assetName.SetFormat("diva_{0:D3}_menu_timezone{1:D2}_face", divaId, i);
 				timezone.main.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_timezone{1:D2}_mouth", divaId, i);
+				assetName.SetFormat("diva_{0:D3}_menu_timezone{1:D2}_mouth", divaId, i);
 				timezone.main.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				menuMotionOverride.timezone.Add(timezone);
@@ -949,19 +950,19 @@ namespace XeApp.Game.Common
 			{
 				MenuMotionOverrideResource.Reaction reaction = new MenuMotionOverrideResource.Reaction();
 				
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_simple_talk{1:D2}_body", divaId, i);
+				assetName.SetFormat("diva_{0:D3}_menu_simple_talk{1:D2}_body", divaId, i);
 				reaction.main.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_simple_talk{1:D2}_face", divaId, i);
+				assetName.SetFormat("diva_{0:D3}_menu_simple_talk{1:D2}_face", divaId, i);
 				reaction.main.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_simple_talk{1:D2}_mouth", divaId, i);
+				assetName.SetFormat("diva_{0:D3}_menu_simple_talk{1:D2}_mouth", divaId, i);
 				reaction.main.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				
 				menuMotionOverride.simpletalk.Add(reaction);
 			}
 			
-			XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_voicetable", divaId);
+			assetName.SetFormat("diva_{0:D3}_menu_voicetable", divaId);
 			menuVoiceTable = operation.GetAsset<MenuDivaVoiceTable>(assetName.ToString());
 			menuVoiceTableCos = null;
 			
@@ -971,7 +972,7 @@ namespace XeApp.Game.Common
 			bool f = m.GOFAPKBNNCL(divaId);
 			if(f)
 			{
-				XeSys.StringExtension.SetFormat(assetName, "diva_{0:D3}_menu_voicetable_cos", divaId);
+				assetName.SetFormat("diva_{0:D3}_menu_voicetable_cos", divaId);
 				menuVoiceTableCos = operation.GetAsset<MenuDivaVoiceTableCos>(assetName.ToString());
 			}
 			

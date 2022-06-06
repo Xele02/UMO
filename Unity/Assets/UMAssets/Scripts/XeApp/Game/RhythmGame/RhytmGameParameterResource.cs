@@ -43,31 +43,31 @@ namespace XeApp.Game.RhythmGame
 			StringBuilder name_bundle = new StringBuilder();
 			StringBuilder name_asset = new StringBuilder();
 
-			StringExtension.Set(name_bundle, "vl/param_vl.xab");
+			name_bundle.Set("vl/param_vl.xab");
 			AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(name_bundle.ToString());
 			yield return operation;
 
-			StringExtension.Set(name_asset, "param_vl_awake");
+			name_asset.Set("param_vl_awake");
 			m_paramValkyrieAwake = new ParameterData_ValkyrieAwake();
 			TextAsset text_asset = operation.GetAsset<TextAsset>(name_asset.ToString());
 			m_paramValkyrieAwake.Create(text_asset);
 
-			StringExtension.Set(name_asset, "param_vl_change_explosion");
+			name_asset.Set("param_vl_change_explosion");
 			m_paramValkyrieChangeExplosion = new ParameterData_ValkyrieChangeExplosion();
 			text_asset = operation.GetAsset<TextAsset>(name_asset.ToString());
 			m_paramValkyrieChangeExplosion.Create(text_asset);
 
-			StringExtension.Set(name_asset, "param_vl_change_intro");
+			name_asset.Set("param_vl_change_intro");
 			m_paramIntro = new ParameterData_ValkyrieChangeIntro();
 			text_asset = operation.GetAsset<TextAsset>(name_asset.ToString());
 			m_paramIntro.Create(text_asset);
 
-			StringExtension.Set(name_asset, "param_vl_change_battle");
+			name_asset.Set("param_vl_change_battle");
 			m_paramBattle = new ParameterData_ValkyrieChangeBattle();
 			text_asset = operation.GetAsset<TextAsset>(name_asset.ToString());
 			m_paramBattle.Create(text_asset);
 
-			StringExtension.Set(name_asset, "param_vl_change_enemy");
+			name_asset.Set("param_vl_change_enemy");
 			m_paramEnemy = new ParameterData_ValkyrieChangeEnemy();
 			text_asset = operation.GetAsset<TextAsset>(name_asset.ToString());
 			m_paramEnemy.Create(text_asset);

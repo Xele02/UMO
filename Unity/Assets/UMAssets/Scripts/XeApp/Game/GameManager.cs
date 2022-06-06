@@ -744,11 +744,11 @@ namespace XeApp.Game
 			StringBuilder sb = new StringBuilder();
 			if(stageDivaNum == 1)
 			{
-				XeSys.StringExtension.SetFormat(sb, "{0:D4}",wavId);
+				sb.SetFormat("{0:D4}",wavId);
 			}
 			else
 			{
-				XeSys.StringExtension.SetFormat(sb, "{0:D4}_{1}",wavId, stageDivaNum);
+				sb.SetFormat("{0:D4}_{1}",wavId, stageDivaNum);
 			}
 			return sb.ToString();
 		}
