@@ -305,7 +305,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B0AE4 Offset: 0x9B0AE4 VA: 0x9B0AE4
 		private void UpdateTask()
 		{
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x9B06DC Offset: 0x9B06DC VA: 0x9B06DC
@@ -380,13 +380,13 @@ namespace XeApp.Game.RhythmGame
 				status.enemy.SetFixDamageParamter();*/
 				Debug.LogError("TODO");
 			}
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x9B4D20 Offset: 0x9B4D20 VA: 0x9B4D20
 		private void InitializeGameData()
 		{
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x9B9258 Offset: 0x9B9258 VA: 0x9B9258
@@ -938,7 +938,7 @@ namespace XeApp.Game.RhythmGame
 		private void TutorialClearEndRhythmGame()
 		{
 			Debug.LogError("TODO");
-			///!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x9C4A70 Offset: 0x9C4A70 VA: 0x9C4A70
@@ -961,7 +961,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			yield return null;
 			Debug.LogError("TODO");
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x9C4B8C Offset: 0x9C4B8C VA: 0x9C4B8C
@@ -977,7 +977,7 @@ namespace XeApp.Game.RhythmGame
 		private void GotoTitleSceneInError()
 		{
 			Debug.LogError("TODO");
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x9C5F68 Offset: 0x9C5F68 VA: 0x9C5F68
@@ -1058,14 +1058,14 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9CA6EC Offset: 0x9CA6EC VA: 0x9CA6EC
 		private void StartPlayMusic(int startTime)
 		{
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744E94 Offset: 0x744E94 VA: 0x744E94
 		// // RVA: 0x9CB194 Offset: 0x9CB194 VA: 0x9CB194
 		private IEnumerator WaitMusicPlayCoroutine(float a_sec_wait)
 		{
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 			yield return null;
 		}
 
@@ -1098,13 +1098,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B1FE8 Offset: 0x9B1FE8 VA: 0x9B1FE8
 		public void Pause()
 		{
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x9B351C Offset: 0x9B351C VA: 0x9B351C
 		public void Resume()
 		{
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x9CB244 Offset: 0x9CB244 VA: 0x9CB244
@@ -1116,7 +1116,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B30C4 Offset: 0x9B30C4 VA: 0x9B30C4
 		private bool ApplyChangeMusicSequenceTime()
 		{
-			///!!!
+			UnityEngine.Debug.LogError("TODO");
 			return false;
 		}
 

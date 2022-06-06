@@ -149,7 +149,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 			
 			EPMMNEFADAP_Musics.Add(data);
 		}
-		//!!!
+		UnityEngine.Debug.LogError("TODO");
 		return true;
 	}
 
@@ -159,7 +159,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D104C Offset: 0x10D104C VA: 0x10D104C
 	private bool NOGICBBHLNK_LoadFreeReward(BMHPFEELLNP FCLGPOPLDFL)
 	{
-		//!!!
+		UnityEngine.Debug.LogError("TODO");
 		return true;
 	}
 
@@ -185,7 +185,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D1FCC Offset: 0x10D1FCC VA: 0x10D1FCC
 	private bool ANKANPOHJNM(BMHPFEELLNP FCLGPOPLDFL)
 	{
-		//!!!
+		UnityEngine.Debug.LogError("TODO");
 		return true;
 	}
 
@@ -195,7 +195,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D3D78 Offset: 0x10D3D78 VA: 0x10D3D78
 	private bool AHNNMALAMFF(BMHPFEELLNP FCLGPOPLDFL)
 	{
-		// !!!
+		UnityEngine.Debug.LogError("TODO");
 		return true;
 	}
 
@@ -205,7 +205,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D46D8 Offset: 0x10D46D8 VA: 0x10D46D8
 	private bool CNCEJAKLNBL(BMHPFEELLNP FCLGPOPLDFL)
 	{
-		//!!!
+		UnityEngine.Debug.LogError("TODO");
 		return true;
 	}
 
@@ -215,7 +215,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D4950 Offset: 0x10D4950 VA: 0x10D4950
 	private bool FKLPBNIFBNF(BMHPFEELLNP FCLGPOPLDFL)
 	{
-		// !!!
+		UnityEngine.Debug.LogError("TODO");
 		return true;
 	}
 
@@ -225,14 +225,14 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D4B28 Offset: 0x10D4B28 VA: 0x10D4B28
 	private bool DNCNGDFMMPI(BMHPFEELLNP FCLGPOPLDFL)
 	{
-		// !!!
+		UnityEngine.Debug.LogError("TODO");
 		return true;
 	}
 
 	// // RVA: 0x10D4FA0 Offset: 0x10D4FA0 VA: 0x10D4FA0
 	private bool ALLLNNDHGLA(BMHPFEELLNP FCLGPOPLDFL)
 	{
-		//!!!
+		UnityEngine.Debug.LogError("TODO");
 		return true;
 	}
 

@@ -47,17 +47,33 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC67A8 Offset: 0xDC67A8 VA: 0xDC67A8
 		public RhythmGameFlow(RhythmGameResource resouce, Action rhythmGameLoadedAction, Difficulty.Type difficluty, Action rhythmGameBeginedAction, RhythmGamePlayer gamePlayer, RhythmGameUIController uiController, Action rhythmGameEndedAction, Action errorToTitleAction)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			currentStatus = Status.Default;
+			rhythmGameResource = resouce;
+			this.uiController = uiController;
+			this.rhythmGameLoadedAction = rhythmGameLoadedAction;
+			this.gamePlayer = gamePlayer;
+			this.rhythmGameBeginedAction = rhythmGameBeginedAction;
+			this.rhythmGameEndedAction = rhythmGameEndedAction;
+			this.errorToTitleAction = errorToTitleAction;
+			this.difficluty = difficluty;
+			ChangeSetupGameDataStatus();
 		}
 
 		// // RVA: 0xDC6804 Offset: 0xDC6804 VA: 0xDC6804
-		// public void ChangeSetupGameDataStatus() { }
+		public void ChangeSetupGameDataStatus()
+		{
+			currentStatus = Status.SetupGameData;
+			updater = this.SetupGameData;
+		}
 
 		// // RVA: 0xDC6894 Offset: 0xDC6894 VA: 0xDC6894
 		// public void ChangeWaitDownloadingMasterStatus() { }
 
 		// // RVA: 0xDC6924 Offset: 0xDC6924 VA: 0xDC6924
-		// public void ChangeWaitLoadingStatus() { }
+		public void ChangeWaitLoadingStatus()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xDC69B4 Offset: 0xDC69B4 VA: 0xDC69B4
 		// public void ChangeWaitDownloadingSpecialResourceStatus() { }
@@ -90,10 +106,24 @@ namespace XeApp.Game.RhythmGame
 		// public void ChangeErrorToTilteStatus() { }
 
 		// // RVA: 0xDC6E9C Offset: 0xDC6E9C VA: 0xDC6E9C
-		// private void SetupGameData() { }
+		private void SetupGameData()
+		{
+			currentStatus = Status.WaitDownloadingMaster;
+			updater = this.WaitDownloadingMaster;
+		}
 
 		// // RVA: 0xDC6EA0 Offset: 0xDC6EA0 VA: 0xDC6EA0
-		// private void WaitDownloadingMaster() { }
+		private void WaitDownloadingMaster()
+		{
+			GameSetupData gameSetup = XeSys.SingletonBehaviour<Database>.Instance.gameSetup;
+			int stageDivaNum = gameSetup.musicInfo.onStageDivaNum;
+			int musicId = gameSetup.musicInfo.prismMusicId;
+			Difficulty.Type difficulty = gameSetup.musicInfo.difficultyType;
+			bool line6Mode = gameSetup.musicInfo.IsLine6Mode;
+			rhythmGameResource.paramResource.LoadResource();
+			rhythmGameResource.musicData.LoadData(musicId, (int)difficulty, stageDivaNum, line6Mode);
+			ChangeWaitLoadingStatus();
+		}
 
 		// // RVA: 0xDC7128 Offset: 0xDC7128 VA: 0xDC7128
 		// private void WaitLoadingResource() { }
@@ -134,7 +164,8 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCA4A8 Offset: 0xDCA4A8 VA: 0xDCA4A8
 		public void OnUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			if(updater != null)
+				updater();
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x7440FC Offset: 0x7440FC VA: 0x7440FC

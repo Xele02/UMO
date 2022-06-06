@@ -1,46 +1,59 @@
 using UnityEngine;
 using XeApp.Game.Common;
 using System.Collections.Generic;
+using XeApp.Game.RhythmGame.UI;
 
 namespace XeApp.Game.RhythmGame
 {
 	public class RhythmGameResource : MonoBehaviour
 	{
+		public class UITextureResource
+		{
+			// Fields
+			public Texture centerCardTexture; // 0x8
+			public List<Material> divaSkillCutinMaterials = new List<Material>(); // 0xC
+			public Dictionary<int, Material> skillEffectMaterials = new Dictionary<int, Material>(); // 0x10
+			public Material activeSkillIconMaterial; // 0x14
+			public Material activeSkillEffectMaterial; // 0x18
+
+			// // RVA: 0xBF4EDC Offset: 0xBF4EDC VA: 0xBF4EDC
+			// public void Release() { }
+		}
+
 		public MusicData musicData; // 0xC
-		// public DivaResource divaResource; // 0x10
-		// public List<DivaResource> subDivaResource; // 0x14
-		// public MusicCameraResource cameraResource; // 0x18
-		// public StageResource stageResources; // 0x1C
-		// public ValkyrieResource valkyrieResource; // 0x20
+		public DivaResource divaResource; // 0x10
+		public List<DivaResource> subDivaResource = new List<DivaResource>(); // 0x14
+		public MusicCameraResource cameraResource; // 0x18
+		public StageResource stageResources; // 0x1C
+		public ValkyrieResource valkyrieResource; // 0x20
 		public MusicIntroResource musicIntroResource; // 0x24
-		// public ValkyrieModeResource valkyrieModeResource; // 0x28
-		// public DivaModeResource divaModeResource; // 0x2C
-		// public LowModeBackgroundResource lowModeBackgroundResource; // 0x30
-		// public RhytmGameParameterResource paramResource; // 0x34
+		public ValkyrieModeResource valkyrieModeResource; // 0x28
+		public DivaModeResource divaModeResource; // 0x2C
+		public LowModeBackgroundResource lowModeBackgroundResource; // 0x30
+		public RhytmGameParameterResource paramResource; // 0x34
 		private bool isSpecialDirectionResourceLoaded_; // 0x38
-		// public List<DivaExtensionResource> divaExtensionResource; // 0x3C
-		// public List<DivaCutinResource> divaCutinResource; // 0x40
-		// public List<MusicCameraCutinResource> musicCameraCutinResource; // 0x44
-		// public List<StageLightingResource> stageLightingResource; // 0x48
-		// public List<StageExtensionResource> stageExtensionResource; // 0x4C
-		// public MusicVoiceChangerResource musicVoiceChangerResource; // 0x50
-		// public MusicStageChangerResource musicStageChangerResource; // 0x54
-		// public MusicBoneSpringResource[] musicBoneSpringResource; // 0x58
-		public int specialDirectionMovieId_; // 0x5C
+		public List<DivaExtensionResource> divaExtensionResource = new List<DivaExtensionResource>(); // 0x3C
+		public List<DivaCutinResource> divaCutinResource = new List<DivaCutinResource>(); // 0x40
+		public List<MusicCameraCutinResource> musicCameraCutinResource = new List<MusicCameraCutinResource>(); // 0x44
+		public List<StageLightingResource> stageLightingResource = new List<StageLightingResource>(); // 0x48
+		public List<StageExtensionResource> stageExtensionResource = new List<StageExtensionResource>(); // 0x4C
+		public MusicVoiceChangerResource musicVoiceChangerResource; // 0x50
+		public MusicStageChangerResource musicStageChangerResource; // 0x54
+		public MusicBoneSpringResource[] musicBoneSpringResource = new MusicBoneSpringResource[5]; // 0x58
+		public int specialDirectionMovieId_ = -1; // 0x5C
 		private bool isInitializedSpecialStageResource; // 0x60
 		private bool throwedVoiceParamChangerParamException; // 0x61
-		// public RhythmGameResource.UITextureResource uiTextureResources; // 0x64
+		public UITextureResource uiTextureResources; // 0x64
 		private bool isUITextureResoucesLoaded_; // 0x68
-		// public UiPilotTexture m_pilotTexture; // 0x6C
-		// public UiDivaTexture m_divaTexture; // 0x70
-		// public UiEnemyPilotTexture m_enemyPilotTexture; // 0x74
-		// public UiEnemyRobotTexture m_enemyRobotTexture; // 0x78
+		public UiPilotTexture m_pilotTexture; // 0x6C
+		public UiDivaTexture m_divaTexture; // 0x70
+		public UiEnemyPilotTexture m_enemyPilotTexture; // 0x74
+		public UiEnemyRobotTexture m_enemyRobotTexture; // 0x78
 		public GameObject uiPrefab; // 0x7C
 		public GameObject enemySkillPrefab; // 0x80
 		public GameObject faildUiPrefab; // 0x84
 		public GameObject completeUiPrefab; // 0x88
 
-		// Properties
 		public bool isSpecialDirectionResourceLoaded { get; set; }
 		public bool isTakeoffDivaVoice { get; set; }
 		public int takeoffVoiceId { get; set; }
@@ -165,7 +178,10 @@ namespace XeApp.Game.RhythmGame
 		// private void set_is2DModeAllResoucesLoaded(bool value) { }
 
 		// // RVA: 0xBF6748 Offset: 0xBF6748 VA: 0xBF6748
-		// private void Awake() { }
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xBF6B7C Offset: 0xBF6B7C VA: 0xBF6B7C
 		// public void LoadSpecialDirectionResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
@@ -255,9 +271,6 @@ namespace XeApp.Game.RhythmGame
 		// [IteratorStateMachineAttribute] // RVA: 0x74569C Offset: 0x74569C VA: 0x74569C
 		// // RVA: 0xBF9110 Offset: 0xBF9110 VA: 0xBF9110
 		// private IEnumerator Co_LoadAllResourceFor2DMode(int introEnviromentId, int valkyrieModeId) { }
-
-		// // RVA: 0xBF91F0 Offset: 0xBF91F0 VA: 0xBF91F0
-		// public void .ctor() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x745714 Offset: 0x745714 VA: 0x745714
 		// // RVA: 0xBF93A4 Offset: 0xBF93A4 VA: 0xBF93A4

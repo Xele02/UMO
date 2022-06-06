@@ -111,7 +111,10 @@ namespace XeApp.Game.Common
 		// public bool get_isARLoaded() { }
 
 		// // RVA: 0xAE62A8 Offset: 0xAE62A8 VA: 0xAE62A8
-		// public void LoadData(int musicId, int difficultyId, int stageDivaNum, bool line6Mode) { }
+		public void LoadData(int musicId, int difficultyId, int stageDivaNum, bool line6Mode)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A424 Offset: 0x73A424 VA: 0x73A424
 		// // RVA: 0xAE62E0 Offset: 0xAE62E0 VA: 0xAE62E0

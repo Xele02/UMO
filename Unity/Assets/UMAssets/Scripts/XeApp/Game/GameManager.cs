@@ -484,11 +484,11 @@ namespace XeApp.Game
 					subDivaResource[i] = sd.GetComponent<DivaResource>();
 				}
 			}
-			//if(iconDecorationCache == null)
-			//{
-				//!!!
+			if(iconDecorationCache == null)
+			{
+				UnityEngine.Debug.LogError("TODO");
 				//font
-			//}
+			}
 			sceneIconTextureCache = new SceneIconTextureCache();
 			menuResidentTextureCache = new MenuResidentTextureCache();
 			divaIconTextureCache = new DivaIconTextureCache();
@@ -529,7 +529,7 @@ namespace XeApp.Game
 		// // RVA: 0x99EB70 Offset: 0x99EB70 VA: 0x99EB70
 		private void ReInitScreen()
 		{
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x99F2B4 Offset: 0x99F2B4 VA: 0x99F2B4
@@ -588,13 +588,13 @@ namespace XeApp.Game
 			//m_touchParticle
 			//systemCanvasCamera
 			//m_layoutObjectCache
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x99B84C Offset: 0x99B84C VA: 0x99B84C
 		private void CreateUGUI()
 		{
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x9A0628 Offset: 0x9A0628 VA: 0x9A0628
@@ -623,7 +623,7 @@ namespace XeApp.Game
 		// // RVA: 0x99B4B0 Offset: 0x99B4B0 VA: 0x99B4B0
 		private void CreateFont()
 		{
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x98060C Offset: 0x98060C VA: 0x98060C

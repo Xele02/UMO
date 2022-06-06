@@ -93,7 +93,7 @@ public class IAIDGBJGDBH // TypeDefIndex: 6777
         DHFKAKFHFOL d = DHFKAKFHFOL.GetRootAsDHFKAKFHFOL(reader); // this00
         IAIDGBJGDBH self = new IAIDGBJGDBH(); // this01
         //CCNNJMCKOGH c = new CCNNJMCKOGH(); // pcVar1
-        //!!!
+        UnityEngine.Debug.LogError("TODO");
 		return null;
 
 #region code

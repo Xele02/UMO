@@ -833,7 +833,7 @@ namespace XeApp.Game.Common
 			//yield return StartCoroutine(Co_LoadUnlockCostumeDivaAction(divaId));
 			isLoadedMenuAnimationResource = true;
 			
-			//!!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736B00 Offset: 0x736B00 VA: 0x736B00
