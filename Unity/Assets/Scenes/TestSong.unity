@@ -30,7 +30,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c37ef788ced5847d87840e237ed35dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  systemManagerPrefab: {fileID: 0}
+  systemManagerPrefab: {fileID: 1609509110315235, guid: 046ae94e3d6a1304db6c8c5cf0f36841,
+    type: 3}
   gameManagerPrefab: {fileID: 1494699028942217, guid: beeee627ffa6017458f8fcbb71b177fc,
     type: 3}
 --- !u!4 &3

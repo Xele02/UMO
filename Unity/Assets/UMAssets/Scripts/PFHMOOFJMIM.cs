@@ -1,12 +1,8 @@
 using UnityEngine;
 
-// Namespace:
 public class PFHMOOFJMIM : LBHFILLFAGA
 {
-        // Fields
         private WWW IEJJKNOEKLM; // 0x4C
-
-        // Methods
 
         // RVA: 0x16C23AC Offset: 0x16C23AC VA: 0x16C23AC
         //public void PFHMOOFJMIM() { }
@@ -26,21 +22,21 @@ public class PFHMOOFJMIM : LBHFILLFAGA
         // RVA: 0x16C268C Offset: 0x16C268C VA: 0x16C268C Slot: 9
         public override bool MLMEOLAEJEL()
         {
-            bool a = LGCBNNBFLLC();
+            bool a = FHHAFJMELMD;
             if(!a)
             {
                 byte[] DBBGALAPFGC = null;//IEJJKNOEKLM.get_bytes(); // TODO
                 a = BBGDFKAPJHN(DBBGALAPFGC);
                 if(!a)
                 {
-                    BEEINMBNKNM_Encryption b = LIMGNMMPKGF();
+                    BEEINMBNKNM_Encryption b = DMKAFCEJFDG;
                     if(b == null)
                     {
                         Debug.LogError("decryptor is null");
                     }
                     b.CLNHGLGOKPF_Decrypt(DBBGALAPFGC);
                 }
-                // TODO
+                UnityEngine.Debug.LogError("TODO");
                 //XeSys.FileResultObject obj = LNDGEDHIEAF();
                 //obj.set_bytes(DBBGALAPFGC);
             }

@@ -321,7 +321,7 @@ public abstract class CACGCMBKHDI_Request // TypeDefIndex: 10353
         // RVA: 0x18F2D04 Offset: 0x18F2D04 VA: 0x18F2D04
         protected CACGCMBKHDI_Request() 
         { 
-            // TODO
+            UnityEngine.Debug.LogError("TODO");
             // CFICLNJACCD
             // GJAEJFLLKGC
             // ICDEFIIADDO

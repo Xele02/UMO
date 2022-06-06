@@ -86,7 +86,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D07EC Offset: 0x10D07EC VA: 0x10D07EC Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		// TODO LOAD !!!
+		UnityEngine.Debug.LogError("TODO");
 	}
 
 	// // RVA: 0x10D0B00 Offset: 0x10D0B00 VA: 0x10D0B00 Slot: 9

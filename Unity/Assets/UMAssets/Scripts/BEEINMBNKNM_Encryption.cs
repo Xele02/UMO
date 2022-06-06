@@ -101,7 +101,7 @@ public class BEEINMBNKNM_Encryption
                 PMBEODGMMBB = KNEFBLHBDBG;
                 if(size > 0)
                 {
-                        // TODO
+                        UnityEngine.Debug.LogError("TODO");
                         uint q = 0;//Math.DivRem(size, PLNOOFNMHAL);
                         /*for(int i = 0; i < size; i++)
                         {
@@ -117,7 +117,6 @@ public class BEEINMBNKNM_Encryption
                 PMBEODGMMBB = KNEFBLHBDBG;
                 if(size > 0)
                 {
-                        // TODO
                         uint q = (uint)(size / PLNOOFNMHAL);
                         for(int i = 0; i < size; i++)
                         {
@@ -129,7 +128,6 @@ public class BEEINMBNKNM_Encryption
 
         public BEEINMBNKNM_Encryption()
         { 
-                // TODO
                 KNEFBLHBDBG = 0x15ab17a1;
                 PMBEODGMMBB = 0x15ab17a1;
                 GELENHPBKFA = 0x1;

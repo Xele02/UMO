@@ -104,7 +104,7 @@ public class PJKLMCGEJMK // TypeDefIndex: 10326
         {
             //CLCJNFNMNBH
             //LCIGLIDJILJ
-            // TODO
+            UnityEngine.Debug.LogWarning("TODO PJKLMCGEJMK.IJBGPAENLJA");
             BNJPAKLNOPA_WorkerThreadQueue = new XeApp.Core.WorkerThread.WorkerThreadQueue();
             BNJPAKLNOPA_WorkerThreadQueue.Start();
         }

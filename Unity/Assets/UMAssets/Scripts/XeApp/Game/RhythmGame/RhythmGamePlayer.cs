@@ -256,7 +256,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				endAction = this.TutorialClearEndRhythmGame;
 			}
-			Difficulty.Type difficulty = XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.difficultyType;
+			Difficulty.Type difficulty = Database.Instance.gameSetup.musicInfo.difficultyType;
 			Action loadedAction = this.LoadedRhythmGame;
 			Action beginAction = this.StartRhythmGame;
 			Action errorAction = this.GameStartErrorToTitleAction;
@@ -334,7 +334,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B3F80 Offset: 0x9B3F80 VA: 0x9B3F80
 		private void InitializeCheatOption()
 		{
-			XeSys.SingletonBehaviour<CheatFunction>.Instance.Disable();
+			CheatFunction.Instance.Disable();
 		}
 
 		// // RVA: 0x9B7A4C Offset: 0x9B7A4C VA: 0x9B7A4C
@@ -349,7 +349,7 @@ namespace XeApp.Game.RhythmGame
 			musicMillisecLength = bgmPlayer.millisecLength;
 			InitializeMusicScoreEvent();
 			
-			GameSetupData.TeamInfo t = XeSys.SingletonBehaviour<Database>.Instance.gameSetup.teamInfo;
+			GameSetupData.TeamInfo t = Database.Instance.gameSetup.teamInfo;
 			StatusData s = t.teamStatus;
 			RhythmGameStatus.InitializeData initData;
 			initData.musicData = resource.musicData;
@@ -372,9 +372,9 @@ namespace XeApp.Game.RhythmGame
 			{
 				status.energy.DisableCallbackPilotVoice();
 				AOJGDNFAIJL.AMIECPBIALP a = new AOJGDNFAIJL.AMIECPBIALP();				
-				a.OBKGEDCKHHE(XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.prismMusicId, 1 < XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.onStageDivaNum);
-				/*int[] difficulties = a.CEMKPBIBOCG(XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.IsLine6Mode);
-				XeSys.SingletonBehaviour<Database>.Instance.m_tutorialSetInstance.musicInfo.difficultyType
+				a.OBKGEDCKHHE(Database.Instance.gameSetup.musicInfo.prismMusicId, 1 < Database.Instance.gameSetup.musicInfo.onStageDivaNum);
+				/*int[] difficulties = a.CEMKPBIBOCG(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
+				Database.Instance.m_tutorialSetInstance.musicInfo.difficultyType
 				int a = a.FGCCCMAFCNH();
 				float b = aGPGPOBJCMFB();
 				status.enemy.SetFixDamageParamter();*/
@@ -397,7 +397,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			backupSaveData = new BackupSaveData();
 			setting_mv = new SettingMV();
-			GameSetupData d = XeSys.SingletonBehaviour<Database>.Instance.gameSetup;
+			GameSetupData d = Database.Instance.gameSetup;
 			if(d.musicInfo.IsMvMode)
 			{
 				BackupSave();
@@ -775,19 +775,19 @@ namespace XeApp.Game.RhythmGame
 			// }
 			
 			//__this00 = c__DisplayClass276_0
-			if(XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.isTutorialOne)
+			if(Database.Instance.gameSetup.musicInfo.isTutorialOne)
 			{
 				//__this_03 = c__DisplayClass276_1
 				Debug.LogError("TODO tuto");
 			}
-			else if(XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.isTutorialTwo)
+			else if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
 			{
 				Debug.LogError("TODO tuto");
 			}
 			else
 			{
-				bool IsLine6Mode = XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.IsLine6Mode;
-				bool IsMvMode = XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.IsMvMode;
+				bool IsLine6Mode = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
+				bool IsMvMode = Database.Instance.gameSetup.musicInfo.IsMvMode;
 				if(IsLine6Mode && !IsMvMode)
 				{
 					Debug.LogError("TODO tuto");
@@ -906,9 +906,9 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C46DC Offset: 0x9C46DC VA: 0x9C46DC
 		private void OnChangeScene()
 		{
-			if(!XeSys.SingletonBehaviour<Database>.Instance.gameSetup.musicInfo.isTutorialTwo)
+			if(!Database.Instance.gameSetup.musicInfo.isTutorialTwo)
 				return;
-			XeSys.SingletonBehaviour<BasicTutorialManager>.Instance.HideCursor();
+			BasicTutorialManager.Instance.HideCursor();
 		}
 
 		// // RVA: 0x9C47C8 Offset: 0x9C47C8 VA: 0x9C47C8

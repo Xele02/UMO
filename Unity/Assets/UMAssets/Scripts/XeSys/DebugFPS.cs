@@ -36,7 +36,11 @@ namespace XeSys
 		// public float get_fps() { }
 
 		// // RVA: 0x1931770 Offset: 0x1931770 VA: 0x1931770
-		// public static GameObject Create(DebugFPS prefab) { }
+		public static GameObject Create(DebugFPS prefab)
+		{
+			UnityEngine.Debug.LogWarning("TODO DebugFPS.Create");
+			return null;
+		}
 
 		// // RVA: 0x1931994 Offset: 0x1931994 VA: 0x1931994
 		// public void .ctor() { }

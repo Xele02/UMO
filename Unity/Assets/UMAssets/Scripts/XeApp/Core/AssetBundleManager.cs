@@ -1,44 +1,23 @@
 using XeSys;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 namespace XeApp.Core
 {
 	public class AssetBundleManager : SingletonBehaviour<AssetBundleManager>
 	{
-		// private static AssetBundleManifest m_AssetBundleManifest; // 0x0
-		// private static Dictionary<string, LoadedAssetBundle> m_LoadedAssetBundles; // 0x4
-		private static Dictionary<string, int> m_lodingAssetBundle; // 0x8
-		private static Dictionary<string, string> m_lodingErrors; // 0xC
-		// private static List<AssetBundleLoadOperation> m_InProgressOperations; // 0x10
-		private static Dictionary<string, string[]> m_Dependencies; // 0x14
+		private static AssetBundleManifest m_AssetBundleManifest = null; // 0x0
+		private static Dictionary<string, LoadedAssetBundle> m_LoadedAssetBundles = new Dictionary<string, LoadedAssetBundle>(); // 0x4
+		private static Dictionary<string, int> m_lodingAssetBundle = new Dictionary<string, int>(); // 0x8
+		private static Dictionary<string, string> m_lodingErrors = new Dictionary<string, string>(); // 0xC
+		private static List<AssetBundleLoadOperation> m_InProgressOperations = new List<AssetBundleLoadOperation>(); // 0x10
+		private static Dictionary<string, string[]> m_Dependencies = new Dictionary<string, string[]>(); // 0x14
 		public static bool isTutorialNow; // 0x18
-		public static Dictionary<string, int> m_tutorialAssetMap; // 0x1C
-		// [CompilerGeneratedAttribute] // RVA: 0x68F3E4 Offset: 0x68F3E4 VA: 0x68F3E4
-		// private static string <BaseAssetBundleInstallPath>k__BackingField; // 0x20
-		// [CompilerGeneratedAttribute] // RVA: 0x68F3F4 Offset: 0x68F3F4 VA: 0x68F3F4
-		// private static string <StreamingAssetBundlePath>k__BackingField; // 0x24
+		public static Dictionary<string, int> m_tutorialAssetMap = new Dictionary<string, int>(); // 0x1C
 
-		public static string BaseAssetBundleInstallPath { get; set; }
-		public static string StreamingAssetBundlePath { get; set; }
-
-		// // Methods
-
-		// [CompilerGeneratedAttribute] // RVA: 0x747BE0 Offset: 0x747BE0 VA: 0x747BE0
-		// // RVA: 0xE11F3C Offset: 0xE11F3C VA: 0xE11F3C
-		// public static string get_BaseAssetBundleInstallPath() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x747BF0 Offset: 0x747BF0 VA: 0x747BF0
-		// // RVA: 0xE11FC8 Offset: 0xE11FC8 VA: 0xE11FC8
-		// public static void set_BaseAssetBundleInstallPath(string value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x747C00 Offset: 0x747C00 VA: 0x747C00
-		// // RVA: 0xE12058 Offset: 0xE12058 VA: 0xE12058
-		// public static string get_StreamingAssetBundlePath() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x747C10 Offset: 0x747C10 VA: 0x747C10
-		// // RVA: 0xE120E4 Offset: 0xE120E4 VA: 0xE120E4
-		// public static void set_StreamingAssetBundlePath(string value) { }
+		public static string BaseAssetBundleInstallPath { get; set; } // 0x20
+		public static string StreamingAssetBundlePath { get; set; } // 0x24
 
 		// // RVA: 0xE12174 Offset: 0xE12174 VA: 0xE12174
 		public static string GetPlatformName()
@@ -53,14 +32,71 @@ namespace XeApp.Core
 		}
 
 		// // RVA: 0xE121F4 Offset: 0xE121F4 VA: 0xE121F4
-		// protected static bool LoadAssetBundleInternal(string assetBundleName) { }
+		protected static bool LoadAssetBundleInternal(string assetBundleName)
+		{
+			LoadedAssetBundle loadedBundle = null;
+			if(m_LoadedAssetBundles.TryGetValue(assetBundleName, out loadedBundle))
+			{
+				loadedBundle.m_ReferencedCount++;
+				return true;
+			}
+			else
+			{
+				int loadingCount = -1;
+				string path = null;
+				if(m_lodingAssetBundle.TryGetValue(assetBundleName, out loadingCount))
+				{
+					m_lodingAssetBundle[assetBundleName] = loadingCount++;
+					return true;
+				}
+				else
+				{
+					m_lodingErrors.Remove(assetBundleName);
+					if(m_tutorialAssetMap.ContainsKey(assetBundleName))
+					{
+						path = Path.Combine(StreamingAssetBundlePath, assetBundleName);
+					}
+				}
+				if(string.IsNullOrEmpty(path))
+				{
+					path = Path.Combine(BaseAssetBundleInstallPath, assetBundleName);
+				}
+				FileLoader.Instance.Request(path, assetBundleName, 
+					(FileResultObject fo) => {
+						//0x1D6AC7C
+						LoadedAssetBundle res = new LoadedAssetBundle(fo.assetBundle);
+						m_LoadedAssetBundles.Add(assetBundleName, res);
+						if(m_lodingAssetBundle.TryGetValue(assetBundleName, out loadingCount))
+						{
+							res.m_ReferencedCount += loadingCount;
+						}
+						m_lodingAssetBundle.Remove(assetBundleName);
+						fo.dispose = true;
+						return true;
+					}, 
+					(FileResultObject fo) => {
+						//0x1D6AEDC
+						m_lodingErrors[assetBundleName] = "Load Assetbundle Failed:"+assetBundleName;
+						m_lodingAssetBundle.Remove(assetBundleName);
+						fo.dispose = true;
+						return true;
+					}, null, 0, true);
+
+				FileLoader.Instance.Load();
+				m_lodingAssetBundle.Add(assetBundleName, 0);
+				return false;
+			}
+		}
 
 		// [ConditionalAttribute] // RVA: 0x747C20 Offset: 0x747C20 VA: 0x747C20
 		// // RVA: 0xE127E8 Offset: 0xE127E8 VA: 0xE127E8
 		// protected static void LoadDependencies(string assetBundleName) { }
 
 		// // RVA: 0xE12A28 Offset: 0xE12A28 VA: 0xE12A28
-		// protected static void LoadAssetBundle(string assetBundleName, bool isLoadingAssetBundleManifest = False) { }
+		protected static void LoadAssetBundle(string assetBundleName, bool isLoadingAssetBundleManifest = false)
+		{
+			LoadAssetBundleInternal(assetBundleName);
+		}
 
 		// // RVA: 0xE12AA8 Offset: 0xE12AA8 VA: 0xE12AA8
 		// public static AssetBundleLoadAssetOperation LoadAssetAsync(string assetBundleName, string assetName, Type type) { }
@@ -74,8 +110,10 @@ namespace XeApp.Core
 		// // RVA: 0xE12D88 Offset: 0xE12D88 VA: 0xE12D88
 		public static AssetBundleLoadAllAssetOperationBase LoadAllAssetAsync(string assetBundleName)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return null;
+			LoadAssetBundle(assetBundleName, false);
+			AssetBundleLoadAllAssetOperation operation = new AssetBundleLoadAllAssetOperation(assetBundleName);
+			m_InProgressOperations.Add(operation);
+			return operation;
 		}
 
 		// // RVA: 0xE12E78 Offset: 0xE12E78 VA: 0xE12E78
@@ -111,15 +149,20 @@ namespace XeApp.Core
 		// protected static void UnloadAssetBundleInternal(string assetBundleName, bool unloadAllLoadedObject = False) { }
 
 		// // RVA: 0xE135EC Offset: 0xE135EC VA: 0xE135EC
-		// private void Update() { }
+		private void Update()
+		{
+			for(int i = 0; i < m_InProgressOperations.Count; )
+			{
+				if(!m_InProgressOperations[i].Update())
+				{
+					m_InProgressOperations.RemoveAt(i);
+				}
+				else
+					i++;
+			}
+		}
 
 		// // RVA: 0xE137F0 Offset: 0xE137F0 VA: 0xE137F0
 		// public static void LoadTutorialAssetsList() { }
-
-		// // RVA: 0xE13AEC Offset: 0xE13AEC VA: 0xE13AEC
-		// public void .ctor() { }
-
-		// // RVA: 0xE13B50 Offset: 0xE13B50 VA: 0xE13B50
-		// private static void .cctor() { }
 	}
 }

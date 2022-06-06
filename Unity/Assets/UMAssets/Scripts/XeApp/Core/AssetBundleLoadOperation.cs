@@ -2,15 +2,9 @@ using System.Collections;
 
 namespace XeApp.Core
 {
-    public abstract class AssetBundleLoadOperation : IEnumerator // TypeDefIndex: 18439
+    public abstract class AssetBundleLoadOperation : IEnumerator
     {
-        // Properties
-        public object Current { get; }
-
-        // Methods
-
-        // // RVA: 0xE11720 Offset: 0xE11720 VA: 0xE11720 Slot: 5
-        // public object get_Current() { }
+        public object Current { get { return null; } } // get_Current 0xE11720
 
         // // RVA: 0xE11728 Offset: 0xE11728 VA: 0xE11728 Slot: 4
         public bool MoveNext()
@@ -26,15 +20,12 @@ namespace XeApp.Core
         }
 
         // // RVA: -1 Offset: -1 Slot: 7
-        // public abstract bool Update();
+        public abstract bool Update();
 
         // // RVA: -1 Offset: -1 Slot: 8
         public abstract bool IsError();
 
         // // RVA: -1 Offset: -1 Slot: 9
-        // public abstract bool IsDone();
-
-        // // RVA: 0xE0F788 Offset: 0xE0F788 VA: 0xE0F788
-        // protected void .ctor() { }
+        public abstract bool IsDone();
     }
 }

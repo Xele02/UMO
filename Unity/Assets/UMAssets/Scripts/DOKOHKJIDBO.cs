@@ -26,7 +26,7 @@ public class DOKOHKJIDBO // TypeDefIndex: 8685
         // LFIEDDHNLBE : GameStart : true, Initialize : false
         public void DBEPFLFHAFH(bool LFIEDDHNLBE, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
         {
-            // TODO
+            UnityEngine.Debug.LogError("TODO");
             KCOIDGJOJHC_EncryptionMap.Clear();
             LNAHEIEIBOI = false;
 
@@ -102,7 +102,7 @@ public class DOKOHKJIDBO // TypeDefIndex: 8685
         // RVA: 0x1232CF4 Offset: 0x1232CF4 VA: 0x1232CF4
         private void ANDDAABHGIP()
         {
-            // TODO map
+            UnityEngine.Debug.LogError("TODO");
             
         }
 

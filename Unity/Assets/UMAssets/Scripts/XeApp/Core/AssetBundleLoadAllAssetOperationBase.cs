@@ -1,11 +1,10 @@
 using System;
+using UnityEngine;
 
 namespace XeApp.Core
 {
-    public abstract class AssetBundleLoadAllAssetOperationBase : AssetBundleLoadOperation // TypeDefIndex: 18444
+    public abstract class AssetBundleLoadAllAssetOperationBase : AssetBundleLoadOperation
     {
-        // Methods
-
         // RVA: -1 Offset: -1 Slot: 10
         public abstract T GetAsset<T>(string assetName);
         // /* GenericInstMethod :
@@ -48,12 +47,9 @@ namespace XeApp.Core
         }
 
         // // RVA: 0xE0F784 Offset: 0xE0F784 VA: 0xE0F784 Slot: 11
-        public virtual void ForEach(Action<Object> action)
+        public virtual void ForEach(Action<UnityEngine.Object> action)
         {
             UnityEngine.Debug.LogError("TODO");
         }
-
-        // // RVA: 0xE0F1CC Offset: 0xE0F1CC VA: 0xE0F1CC
-        // protected void .ctor() { }
     }
 }

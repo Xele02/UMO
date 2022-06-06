@@ -42,7 +42,7 @@ public class WorkerThreadQueue // TypeDefIndex: 18501
 	// // RVA: 0x1D79FAC Offset: 0x1D79FAC VA: 0x1D79FAC
 	public WorkerThreadQueue() 
 	{
-		// todo
+		UnityEngine.Debug.LogWarning("TODO WorkerThreadQueue");
 		//jobs
 		//sync
 		//resetEvent
@@ -51,7 +51,7 @@ public class WorkerThreadQueue // TypeDefIndex: 18501
 	// // RVA: 0x1D7A088 Offset: 0x1D7A088 VA: 0x1D7A088
 	public void Start() 
     { 
-        // TODO
+        UnityEngine.Debug.LogWarning("TODO WorkerThreadQueue.Start");
 		//thread
     }
 

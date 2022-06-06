@@ -115,7 +115,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC6EA0 Offset: 0xDC6EA0 VA: 0xDC6EA0
 		private void WaitDownloadingMaster()
 		{
-			GameSetupData gameSetup = XeSys.SingletonBehaviour<Database>.Instance.gameSetup;
+			GameSetupData gameSetup = Database.Instance.gameSetup;
 			int stageDivaNum = gameSetup.musicInfo.onStageDivaNum;
 			int musicId = gameSetup.musicInfo.prismMusicId;
 			Difficulty.Type difficulty = gameSetup.musicInfo.difficultyType;

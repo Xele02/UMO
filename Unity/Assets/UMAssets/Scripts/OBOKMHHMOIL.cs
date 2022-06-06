@@ -19,7 +19,7 @@ public class OBOKMHHMOIL // TypeDefIndex: 10358
 	// // RVA: 0x1B2B94C Offset: 0x1B2B94C VA: 0x1B2B94C
 	public void KHEKNNFCAOI(string HGAMEAPCKJL)
     {
-        // todo
+        UnityEngine.Debug.LogError("TODO");
     }
 
 	// // RVA: 0x1B2BD60 Offset: 0x1B2BD60 VA: 0x1B2BD60
