@@ -101,7 +101,8 @@ namespace XeSys
 		// // RVA: 0x203B904 Offset: 0x203B904 VA: 0x203B904
 		public void Load()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			isLoading = true;
+			CriFileRequestManager.HHCJCDFCLOB.LFBFKKKCMNM();
 		}
 
 		// // RVA: 0x203B980 Offset: 0x203B980 VA: 0x203B980
@@ -128,16 +129,53 @@ namespace XeSys
 		// public void Cancel() { }
 
 		// // RVA: 0x203BB00 Offset: 0x203BB00 VA: 0x203BB00
-		// private bool FailedCallback(FileResultObject fro) { }
+		private bool FailedCallback(FileResultObject fro)
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return false;
+		}
 
 		// // RVA: 0x203BC10 Offset: 0x203BC10 VA: 0x203BC10
-		// private bool FileLoadedCallback(FileResultObject fro) { }
+		private bool FileLoadedCallback(FileResultObject fro)
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return false;
+		}
 
 		// // RVA: 0x203B3F0 Offset: 0x203B3F0 VA: 0x203B3F0
 		private LBHFILLFAGA CreateFileRequest(string path, string withoutPlarformPath, Dictionary<string, string> args, int argValue, FileLoadInfo fi, bool loadedDispose)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return null;
+			CriFsBinder binder_ = null;
+			LBHFILLFAGA request = null;
+			if(path.Contains(textureExtention))
+			{
+				request = new HMHBDNGJIGL(path, withoutPlarformPath, this.FileLoadedCallback, this.FailedCallback, args, argValue, fi, loadedDispose);
+			}
+			else if(path.Contains(cpkExtention))
+			{
+				request = new PLKCJJECNCK(path, withoutPlarformPath, this.FileLoadedCallback, this.FailedCallback, args, argValue, fi, loadedDispose);
+				if(binder == null)
+					binder = new CriFsBinder();
+				binder_ = binder;
+			}
+			else if(path.Contains(assetBundleExtention))
+			{
+				request = new BDFPCPHIJCN(path, withoutPlarformPath, this.FileLoadedCallback, this.FailedCallback, args, argValue, fi, loadedDispose);
+			}
+			else if(path.Contains(secureExtention))
+			{
+				request = new IPGPAGNBBIK(path, withoutPlarformPath, this.FileLoadedCallback, this.FailedCallback, args, argValue, fi, loadedDispose);
+			}
+			else
+			{
+				request = new PFHMOOFJMIM(path, withoutPlarformPath, this.FileLoadedCallback, this.FailedCallback, args, argValue, fi, loadedDispose);
+			}
+			request.COIBJNACMFK = binder_;
+			if(findDecryptor != null)
+			{
+				request.DMKAFCEJFDG = findDecryptor(path);
+			}
+			return request;
 		}
 
 		// // RVA: 0x203C61C Offset: 0x203C61C VA: 0x203C61C

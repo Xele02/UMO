@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace XeSys.File
@@ -86,7 +87,9 @@ namespace XeSys.File
 		// // RVA: 0x20385AC Offset: 0x20385AC VA: 0x20385AC
 		public void ELFMKCOKNHK(LBHFILLFAGA COJNCNGHIJC)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			if(JPNMBNEHBOC != null)
+				JPNMBNEHBOC(COJNCNGHIJC.BOPDLODALFD);
+			CEKHMLAEKIK.Add(COJNCNGHIJC);
 		}
 
 		// // RVA: 0x2038664 Offset: 0x2038664 VA: 0x2038664
@@ -99,7 +102,25 @@ namespace XeSys.File
 		// public void IPGGCCPIMMI() { }
 
 		// // RVA: 0x2038694 Offset: 0x2038694 VA: 0x2038694
-		// public void LFBFKKKCMNM() { }
+		public void LFBFKKKCMNM()
+		{
+			if(CEKHMLAEKIK.Count != 0)
+			{
+				if(NFABHMNAODN == IFDILJEGCLD.IADCGKMLFFE)
+					OALKCHOADBI = true;
+				else
+				{
+					MEDMPJHJNBJ.Clear();
+					for(int i = 0; i < CEKHMLAEKIK.Count; i++)
+					{
+						MEDMPJHJNBJ.Add(CEKHMLAEKIK[i]);
+					}
+					CEKHMLAEKIK.Clear();
+					NFABHMNAODN = IFDILJEGCLD.IADCGKMLFFE;
+					StartCoroutine(IALIHGPHLPH());
+				}
+			}
+		}
 
 		// // RVA: 0x2038954 Offset: 0x2038954 VA: 0x2038954
 		// private bool BNOGEKDDEIB(string CJEKGLGBIHF) { }
@@ -109,7 +130,118 @@ namespace XeSys.File
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6937B0 Offset: 0x6937B0 VA: 0x6937B0
 		// // RVA: 0x20388C8 Offset: 0x20388C8 VA: 0x20388C8
-		// private IEnumerator IALIHGPHLPH() { }
+		private IEnumerator IALIHGPHLPH()
+		{
+			// private int GGPNEJDOELB; // 0x8
+			// private object GMEFKDIEHCA; // 0xC
+			// public CriFileRequestManager KIGBLACMODG; // 0x10
+			// private CriFileRequestManager.IFDILJEGCLD IKCDCEKDGHP; // 0x14
+			// private int BAGKENPNLJA; // 0x18
+			// private LBHFILLFAGA BPOJOBICBAC; // 0x1C
+			// private bool HAPBOLOABJI; // 0x20
+			//0x2038B0C
+			int BAGKENPNLJA = 0;
+			IFDILJEGCLD IKCDCEKDGHP = IFDILJEGCLD.NFFGMBBNNPH;
+			for(int i = 0; i < MEDMPJHJNBJ.Count; i++)
+			{
+				LBHFILLFAGA BPOJOBICBAC = MEDMPJHJNBJ[BAGKENPNLJA];
+				if(LEDAPFHKIMD)
+				{
+					BPOJOBICBAC.NHJKENJIEME = 6;
+					break;
+				}
+				if(MFPBFPMEGLH != null)
+				{
+					while(MFPBFPMEGLH())
+					{
+						yield return null;
+					}
+				}
+				BPOJOBICBAC.EBKOJBFMABH = 0.0f;
+				bool HAPBOLOABJI = false;
+				while(!BPOJOBICBAC.GDEMPLAOGKK())
+				{
+					BPOJOBICBAC.EBKOJBFMABH += KCEEKGLBNOI;
+					if(BPOJOBICBAC.EBKOJBFMABH < ICDEFIIADDO)
+					{
+						yield return null;
+					}
+					else
+					{
+						BPOJOBICBAC.IPGGCCPIMMI();
+						BPOJOBICBAC.JKONMHNBGLL();
+						HAPBOLOABJI = true;
+						break;
+					}
+				}
+				if(!HAPBOLOABJI)
+				{
+					if(BPOJOBICBAC.LKPOPGJLPAJ() == null)
+					{
+						BPOJOBICBAC.EBKOJBFMABH = 0;
+						BPOJOBICBAC.GFCMEKDCCME();
+
+						while(!BPOJOBICBAC.KIDJFNEGAHO())
+						{
+							if(BPOJOBICBAC.EBKOJBFMABH < ICDEFIIADDO)
+							{
+								yield return null;
+							}
+							else
+							{
+								BPOJOBICBAC.JKONMHNBGLL();
+								HAPBOLOABJI = true;
+								break;
+							}
+						}
+						BPOJOBICBAC.GMHKEJMLDDJ();
+					}
+					else
+					{
+						BPOJOBICBAC.NHJKENJIEME = 4;
+					}
+				}
+				if(BPOJOBICBAC.GCPOIANJEOC())
+				{
+					if(PKEPDCMJKGF != null)
+						PKEPDCMJKGF();
+					IKCDCEKDGHP = IFDILJEGCLD.JKONMHNBGLL;
+					break;
+				}
+				else
+				{
+					if(BPOJOBICBAC.INODGGFPKOE())
+					{
+						BPOJOBICBAC.PEFNBFCMIBL();
+						BAGKENPNLJA = BAGKENPNLJA + 1;
+					}
+					if(!EKAEAKACODC(BPOJOBICBAC))
+					{
+						if(HMACMKFKHFG != null)
+							HMACMKFKHFG(BPOJOBICBAC);
+						BPOJOBICBAC.HICEMOLOKKF();
+						BPOJOBICBAC.JOCCKKMCPAC();
+						IKCDCEKDGHP = IFDILJEGCLD.MKEJFPFGLCF;
+						BAGKENPNLJA = BAGKENPNLJA + 1;
+					}
+					else
+					{
+						BPOJOBICBAC.EAABKFGHKBG = BPOJOBICBAC.EAABKFGHKBG + 1;
+						if(CCGJIEMDFAI != null)
+							CCGJIEMDFAI(BPOJOBICBAC);
+						break;
+					}
+				}
+			}
+			NFABHMNAODN = IKCDCEKDGHP;
+			MEDMPJHJNBJ.Clear();
+			LEDAPFHKIMD = false;
+			if(OALKCHOADBI)
+			{
+				OALKCHOADBI = false;
+				LFBFKKKCMNM();
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x693828 Offset: 0x693828 VA: 0x693828
 		// // RVA: 0x2038984 Offset: 0x2038984 VA: 0x2038984
