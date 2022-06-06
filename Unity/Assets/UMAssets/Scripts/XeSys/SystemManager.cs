@@ -237,7 +237,7 @@ namespace XeSys
 		// // RVA: 0x23A524C Offset: 0x23A524C VA: 0x23A524C
 		public static void Create(GameObject prefab)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO SystemManager.Create");
 		}
 
 		// // RVA: 0x23A54A0 Offset: 0x23A54A0 VA: 0x23A54A0

@@ -486,7 +486,7 @@ namespace XeApp.Game
 			}
 			if(iconDecorationCache == null)
 			{
-				UnityEngine.Debug.LogError("TODO");
+				UnityEngine.Debug.LogWarning("TODO GameManager.AppSpecial iconDecorationCache");
 				//font
 			}
 			sceneIconTextureCache = new SceneIconTextureCache();
@@ -529,7 +529,7 @@ namespace XeApp.Game
 		// // RVA: 0x99EB70 Offset: 0x99EB70 VA: 0x99EB70
 		private void ReInitScreen()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO GameManager.ReInitScreen");
 		}
 
 		// // RVA: 0x99F2B4 Offset: 0x99F2B4 VA: 0x99F2B4
@@ -588,13 +588,13 @@ namespace XeApp.Game
 			//m_touchParticle
 			//systemCanvasCamera
 			//m_layoutObjectCache
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO GameManager.CreateSystemObject");
 		}
 
 		// // RVA: 0x99B84C Offset: 0x99B84C VA: 0x99B84C
 		private void CreateUGUI()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO GameManager.CreateUGUI");
 		}
 
 		// // RVA: 0x9A0628 Offset: 0x9A0628 VA: 0x9A0628
@@ -623,25 +623,25 @@ namespace XeApp.Game
 		// // RVA: 0x99B4B0 Offset: 0x99B4B0 VA: 0x99B4B0
 		private void CreateFont()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO GameManager.CreateFont");
 		}
 
 		// // RVA: 0x98060C Offset: 0x98060C VA: 0x98060C
 		public static void FadeIn(float time = 0.4f)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO GameManager.FadeIn");
 		}
 
 		// // RVA: 0x9809CC Offset: 0x9809CC VA: 0x9809CC
 		public static void FadeOut(float time = 0.4f)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO GameManager.FadeOut");
 		}
 
 		// // RVA: 0x97FDB0 Offset: 0x97FDB0 VA: 0x97FDB0
 		public static bool IsFading()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO GameManager.IsFading");
 			return false;
 		}
 

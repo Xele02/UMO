@@ -56,7 +56,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1394924 Offset: 0x1394924 VA: 0x1394924
 		public static bool AddCueSheet(string cueSheetName)
 		{
-			UnityEngine.Debug.LogWarning("TODO");
+			UnityEngine.Debug.LogWarning("TODO SoundResource.AddCueSheet");
 			return false;
 		}
 

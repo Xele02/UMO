@@ -324,7 +324,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1395A94 Offset: 0x1395A94 VA: 0x1395A94
 		private IEnumerator SurveyLatencyEstimator()
 		{
-			UnityEngine.Debug.LogWarning("TODO");
+			UnityEngine.Debug.LogWarning("TODO SoundManager.SurveyLatencyEstimator");
 			yield break;
 		}
 
@@ -419,7 +419,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x139729C Offset: 0x139729C VA: 0x139729C
 		public float GetCategoryVolume(SoundManager.CategoryId id)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO SoundManager.GetCategoryVolume");
 			return 0;
 		}
 

@@ -24,7 +24,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC031C Offset: 0x1BC031C VA: 0x1BC031C
 		public static bool IsReady()
 		{
-			UnityEngine.Debug.LogWarning("TODO");
+			UnityEngine.Debug.LogWarning("TODO PopupWindowManager.IsReady");
 			return true;
 		}
 

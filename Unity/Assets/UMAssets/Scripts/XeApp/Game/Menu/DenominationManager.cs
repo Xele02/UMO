@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17CF4F0 Offset: 0x17CF4F0 VA: 0x17CF4F0
 		public static DenominationManager Create(Transform parent)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO DenominationManager.Create");
 			return null;
 		}
 

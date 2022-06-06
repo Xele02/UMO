@@ -38,7 +38,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE653D0 Offset: 0xE653D0 VA: 0xE653D0
 		public void Create(GameObject a_sound_manager)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO CheerPlayer.Create");
 		}
 
 		// // RVA: 0xE654CC Offset: 0xE654CC VA: 0xE654CC

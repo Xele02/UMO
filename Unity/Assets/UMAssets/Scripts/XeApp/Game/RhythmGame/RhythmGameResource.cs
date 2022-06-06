@@ -180,7 +180,24 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF6748 Offset: 0xBF6748 VA: 0xBF6748
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			musicData = gameObject.AddComponent<MusicData>();
+			divaResource = GameManager.Instance.divaResource;
+			cameraResource = gameObject.AddComponent<MusicCameraResource>();
+			stageResources = gameObject.AddComponent<StageResource>();
+			valkyrieResource = gameObject.AddComponent<ValkyrieResource>();
+			musicIntroResource = gameObject.AddComponent<MusicIntroResource>();
+			valkyrieModeResource = gameObject.AddComponent<ValkyrieModeResource>();
+			divaModeResource = gameObject.AddComponent<DivaModeResource>();
+			lowModeBackgroundResource = gameObject.AddComponent<LowModeBackgroundResource>();
+			for(int i = 0; i < 5; i++)
+			{
+				musicBoneSpringResource[i] = gameObject.AddComponent<MusicBoneSpringResource>();
+			}
+			paramResource = gameObject.AddComponent<RhytmGameParameterResource>();
+			for(int i = 0; i < 4; i++)
+			{
+				subDivaResource.Add(GameManager.Instance.subDivaResource[i]);
+			}
 		}
 
 		// // RVA: 0xBF6B7C Offset: 0xBF6B7C VA: 0xBF6B7C

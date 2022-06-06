@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13DC6D0 Offset: 0x13DC6D0 VA: 0x13DC6D0
 		public void Update()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO IconTextureCache.Update()");
 		}
 
 		// // RVA: 0x13DC9B4 Offset: 0x13DC9B4 VA: 0x13DC9B4

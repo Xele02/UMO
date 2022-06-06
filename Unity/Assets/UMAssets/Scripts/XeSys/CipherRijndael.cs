@@ -24,7 +24,7 @@ namespace XeSys
 		// // RVA: 0x193005C Offset: 0x193005C VA: 0x193005C
 		public CipherRijndael(string password, string salt)
 		{
-			UnityEngine.Debug.LogWarning("TODO");
+			UnityEngine.Debug.LogWarning("TODO CipherRijndael()");
 		}
 
 		// // RVA: 0x1930390 Offset: 0x1930390 VA: 0x1930390

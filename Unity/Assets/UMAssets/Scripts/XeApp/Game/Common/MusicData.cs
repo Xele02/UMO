@@ -14,36 +14,26 @@ namespace XeApp.Game.Common
 		}
 
 		// // Fields
-		private static readonly int INTRO_FADE_DEFAULT_MILLISEC; // 0x0
-		private static readonly int VALKYRIE_MODE_JUDGE_OFFSET; // 0x4
-		private static readonly int VALKYRIE_MODE_HUD_OFFSET; // 0x8
-		private static readonly int VALKYRIE_MODE_FADE_OFFSET; // 0xC
-		private static readonly int DIVA_MODE_JUDGE_OFFSET; // 0x10
-		private static readonly int TUTORIAL_MODE_DESCRIPTION_OFFSET; // 0x14
-		// [CompilerGeneratedAttribute] // RVA: 0x6879A0 Offset: 0x6879A0 VA: 0x6879A0
-		// private EONOEHOKBEB <musicBase>k__BackingField; // 0xC
-		// [CompilerGeneratedAttribute] // RVA: 0x6879B0 Offset: 0x6879B0 VA: 0x6879B0
-		// private MusicScoreData <commonData>k__BackingField; // 0x10
-		// [CompilerGeneratedAttribute] // RVA: 0x6879C0 Offset: 0x6879C0 VA: 0x6879C0
-		// private MusicScoreData <musicScoreData>k__BackingField; // 0x14
-		// [CompilerGeneratedAttribute] // RVA: 0x6879D0 Offset: 0x6879D0 VA: 0x6879D0
-		// private MusicScoreData <cheerScoreData>k__BackingField; // 0x18
-		// [CompilerGeneratedAttribute] // RVA: 0x6879E0 Offset: 0x6879E0 VA: 0x6879E0
-		// private MusicDirectionParamBase <musicParam>k__BackingField; // 0x1C
+		private static readonly int INTRO_FADE_DEFAULT_MILLISEC = 4000; // 0x0
+		private static readonly int VALKYRIE_MODE_JUDGE_OFFSET = -1200; // 0x4
+		private static readonly int VALKYRIE_MODE_HUD_OFFSET = -600; // 0x8
+		private static readonly int VALKYRIE_MODE_FADE_OFFSET = -100; // 0xC
+		private static readonly int DIVA_MODE_JUDGE_OFFSET = -600; // 0x10
+		private static readonly int TUTORIAL_MODE_DESCRIPTION_OFFSET = -700; // 0x14
 		public int noteDisplayMillisec; // 0x20
-		public int introFadeMillisec; // 0x24
-		public int valkyrieModeJudgeMillisec; // 0x28
-		public int valkyrieModeStartHUDMillisec; // 0x2C
-		public int valkyrieModeStartFadeMillisec; // 0x30
-		public int valkyrieModeStartMillisec; // 0x34
-		public int valkyrieModeLeaveMillisec; // 0x38
-		public int divaModeJudgeMillisec; // 0x3C
-		public int divaModeStartMillisec; // 0x40
-		public int rhythmGameResultStartMillisec; // 0x44
-		public int tutorialOneEndGameStartMillisec; // 0x48
-		public int tutorialTwoForceFwaveMaxStartMillisec; // 0x4C
-		public int tutorialTwoForceDefeatEnemyStartMillisec; // 0x50
-		public int tutorialTwoModeDescriptionlStartMillisec; // 0x54
+		public int introFadeMillisec = INTRO_FADE_DEFAULT_MILLISEC; // 0x24
+		public int valkyrieModeJudgeMillisec = 255; // 0x28
+		public int valkyrieModeStartHUDMillisec = 255; // 0x2C
+		public int valkyrieModeStartFadeMillisec = 255; // 0x30
+		public int valkyrieModeStartMillisec = 255; // 0x34
+		public int valkyrieModeLeaveMillisec = 255; // 0x38
+		public int divaModeJudgeMillisec = 255; // 0x3C
+		public int divaModeStartMillisec = 255; // 0x40
+		public int rhythmGameResultStartMillisec = 255; // 0x44
+		public int tutorialOneEndGameStartMillisec = 255; // 0x48
+		public int tutorialTwoForceFwaveMaxStartMillisec = 255; // 0x4C
+		public int tutorialTwoForceDefeatEnemyStartMillisec = 255; // 0x50
+		public int tutorialTwoModeDescriptionlStartMillisec = 255; // 0x54
 		private bool isLoadedCommonData; // 0x58
 		private bool isLoadedScoreData; // 0x59
 		private bool isLoadedCheerData; // 0x5A
@@ -51,64 +41,13 @@ namespace XeApp.Game.Common
 		// private CBBJHPBGBAJ tarFile; // 0x5C
 
 		// // Properties
-		public EONOEHOKBEB_Music musicBase { get; set; }
-		public MusicScoreData commonData { get; set; }
-		public MusicScoreData musicScoreData { get; set; }
-		public MusicScoreData cheerScoreData { get; set; }
-		public MusicDirectionParamBase musicParam { get; set; }
-		public bool isAllLoaded { get; set; }
-		public bool isARLoaded { get; }
-
-		// // Methods
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73A384 Offset: 0x73A384 VA: 0x73A384
-		// // RVA: 0xAE6214 Offset: 0xAE6214 VA: 0xAE6214
-		// public EONOEHOKBEB get_musicBase() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73A394 Offset: 0x73A394 VA: 0x73A394
-		// // RVA: 0xAE621C Offset: 0xAE621C VA: 0xAE621C
-		// private void set_musicBase(EONOEHOKBEB value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73A3A4 Offset: 0x73A3A4 VA: 0x73A3A4
-		// // RVA: 0xAE6224 Offset: 0xAE6224 VA: 0xAE6224
-		// public MusicScoreData get_commonData() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73A3B4 Offset: 0x73A3B4 VA: 0x73A3B4
-		// // RVA: 0xAE622C Offset: 0xAE622C VA: 0xAE622C
-		// private void set_commonData(MusicScoreData value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73A3C4 Offset: 0x73A3C4 VA: 0x73A3C4
-		// // RVA: 0xAE6234 Offset: 0xAE6234 VA: 0xAE6234
-		// public MusicScoreData get_musicScoreData() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73A3D4 Offset: 0x73A3D4 VA: 0x73A3D4
-		// // RVA: 0xAE623C Offset: 0xAE623C VA: 0xAE623C
-		// private void set_musicScoreData(MusicScoreData value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73A3E4 Offset: 0x73A3E4 VA: 0x73A3E4
-		// // RVA: 0xAE6244 Offset: 0xAE6244 VA: 0xAE6244
-		// public MusicScoreData get_cheerScoreData() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73A3F4 Offset: 0x73A3F4 VA: 0x73A3F4
-		// // RVA: 0xAE624C Offset: 0xAE624C VA: 0xAE624C
-		// private void set_cheerScoreData(MusicScoreData value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73A404 Offset: 0x73A404 VA: 0x73A404
-		// // RVA: 0xAE6254 Offset: 0xAE6254 VA: 0xAE6254
-		// public MusicDirectionParamBase get_musicParam() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73A414 Offset: 0x73A414 VA: 0x73A414
-		// // RVA: 0xAE625C Offset: 0xAE625C VA: 0xAE625C
-		// private void set_musicParam(MusicDirectionParamBase value) { }
-
-		// // RVA: 0xAE6264 Offset: 0xAE6264 VA: 0xAE6264
-		// public bool get_isAllLoaded() { }
-
-		// // RVA: 0xAE629C Offset: 0xAE629C VA: 0xAE629C
-		// private void set_isAllLoaded(bool value) { }
-
-		// // RVA: 0xAE62A0 Offset: 0xAE62A0 VA: 0xAE62A0
-		// public bool get_isARLoaded() { }
+		public EONOEHOKBEB_Music musicBase { get; set; } // 0xC
+		public MusicScoreData commonData { get; set; } // 0x10
+		public MusicScoreData musicScoreData { get; set; } // 0x14
+		public MusicScoreData cheerScoreData { get; set; } // 0x18
+		public MusicDirectionParamBase musicParam { get; set; } // 0x1C
+		public bool isAllLoaded { get { return isLoadedCommonData && isLoadedScoreData && isLoadedCheerData && isLoadedParam; } set {} } // get_isAllLoaded 0xAE6264 set_isAllLoaded 0xAE629C
+		public bool isARLoaded { get  { return isLoadedParam; } } // get_isARLoaded 0xAE62A0
 
 		// // RVA: 0xAE62A8 Offset: 0xAE62A8 VA: 0xAE62A8
 		public void LoadData(int musicId, int difficultyId, int stageDivaNum, bool line6Mode)
@@ -153,11 +92,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0xAE6CDC Offset: 0xAE6CDC VA: 0xAE6CDC
 		// public MusicData.NoteModeType GetNotesModeType(MusicScoreData.InputNoteInfo noteInfo) { }
-
-		// // RVA: 0xAE6DD8 Offset: 0xAE6DD8 VA: 0xAE6DD8
-		// public void .ctor() { }
-
-		// // RVA: 0xAE6E88 Offset: 0xAE6E88 VA: 0xAE6E88
-		// private static void .cctor() { }
 	}
 }
