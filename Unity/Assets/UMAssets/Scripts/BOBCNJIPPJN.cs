@@ -15,7 +15,11 @@ public class BOBCNJIPPJN
 	// public static int JAIEEHOPAFD(byte[] DBBGALAPFGC) { }
 
 	// // RVA: 0x19CC1E4 Offset: 0x19CC1E4 VA: 0x19CC1E4
-	// public static byte[] JCBCBNFPJDH(byte[] DBBGALAPFGC) { }
+	public static byte[] JCBCBNFPJDH(byte[] DBBGALAPFGC)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return DBBGALAPFGC;
+	}
 
 	// // RVA: 0x19CC338 Offset: 0x19CC338 VA: 0x19CC338
 	// private static extern int KEHJJDKPDLL(IntPtr DBKCFHELMEP, int HDJAJHOCHBP, IntPtr BNJOAGGFLMJ, int DFCCLFJFGED) { }

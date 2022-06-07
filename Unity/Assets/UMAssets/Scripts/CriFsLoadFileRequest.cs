@@ -32,7 +32,10 @@ public class CriFsLoadFileRequest : CriFsRequest
 	// protected override void Dispose(bool disposing) { }
 
 	// // RVA: 0x2947F98 Offset: 0x2947F98 VA: 0x2947F98 Slot: 6
-	// public override void Stop() { }
+	public override void Stop()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x2948024 Offset: 0x2948024 VA: 0x2948024 Slot: 8
 	// public override void Update() { }

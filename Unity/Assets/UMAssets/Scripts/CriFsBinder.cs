@@ -33,7 +33,10 @@ public class CriFsBinder : CriDisposable
 	// public uint BindFileSection(CriFsBinder srcBinder, string path, ulong offset, int size, string sectionName) { }
 
 	// // RVA: 0x29450E8 Offset: 0x29450E8 VA: 0x29450E8
-	// public static void Unbind(uint bindId) { }
+	public static void Unbind(uint bindId)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x2944400 Offset: 0x2944400 VA: 0x2944400
 	// public static CriFsBinder.Status GetStatus(uint bindId) { }

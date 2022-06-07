@@ -21,7 +21,10 @@ public class CriFsRequest : CriDisposable
 	// public override void Dispose() { }
 
 	// // RVA: 0x294AFA8 Offset: 0x294AFA8 VA: 0x294AFA8 Slot: 6
-	// public virtual void Stop() { }
+	public virtual void Stop()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x294AFAC Offset: 0x294AFAC VA: 0x294AFAC
 	// public YieldInstruction WaitForDone(MonoBehaviour mb) { }

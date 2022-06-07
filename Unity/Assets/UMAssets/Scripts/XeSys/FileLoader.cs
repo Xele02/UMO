@@ -47,7 +47,7 @@ namespace XeSys
 			if(!isLoading)
 				return;
 			
-			isLoading = CriFileRequestManager.HHCJCDFCLOB.NFABHMNAODN = IFDILJEGCLD.IADCGKMLFFE_Execute;
+			isLoading = CriFileRequestManager.HHCJCDFCLOB.NFABHMNAODN == CriFileRequestManager.IFDILJEGCLD.IADCGKMLFFE_Execute;
 		}
 
 		// // RVA: 0x203ADA0 Offset: 0x203ADA0 VA: 0x203ADA0

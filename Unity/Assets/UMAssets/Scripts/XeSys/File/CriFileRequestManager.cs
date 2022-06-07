@@ -222,7 +222,7 @@ namespace XeSys.File
 				{
 					if(BPOJOBICBAC.INODGGFPKOE_IsSuccess())
 					{
-						BPOJOBICBAC.PEFNBFCMIBL_End();
+						BPOJOBICBAC.PEFNBFCMIBL();
 						i = i + 1;
 					}
 					else

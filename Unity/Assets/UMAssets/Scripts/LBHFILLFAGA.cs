@@ -1,5 +1,6 @@
 using XeSys;
 using System.Collections.Generic;
+using UnityEngine;
 
 public abstract class LBHFILLFAGA
 {
@@ -38,7 +39,7 @@ public abstract class LBHFILLFAGA
 	public PLINNKMECEF LHMDABPNDDH { get; set; } // 0x38 JNOFANKGNGJ HMMFHMFLNAJ PBNPKEFIPKI
 	public bool KCIDANFAFPP { get; set; } // 0x3C PJOGIHCDNCE KMEELELCBJJ HNDBDCPGMOM
 	public float AJOAGOLGLAI { get; set; }  // 0x40 NEMPFIPLCMK IMNPGDHJKEN HODDHFFBNIL
-	public bool PHOPDCNFFEI { get { return LHMDABPNDDH == PLINNKMECEF.PNGOBECOOJM; } } // NPFACLDLOCJ 0xD98588
+	public bool PHOPDCNFFEI { get { return LHMDABPNDDH == PLINNKMECEF.PNGOBECOOJM_Error; } } // NPFACLDLOCJ 0xD98588
 	public bool OJOLGGKILFL { get; set; } // 0x44 CLJDDDODKCD KKEOAGANMNA HHPCOOAPJJN
 
 	// // RVA: 0xD985AC Offset: 0xD985AC VA: 0xD985AC
@@ -53,7 +54,7 @@ public abstract class LBHFILLFAGA
 		JMHHKKFPPOL_time = 0.0f;
 		EBKOJBFMABH_elapsedTime = 0.0f;
 		NHJKENJIEME = 0;
-		EAABKFGHKBG = 0;
+		EAABKFGHKBG_TryCount = 0;
 	}
 
 	// // RVA: 0xD985F4 Offset: 0xD985F4 VA: 0xD985F4
@@ -64,7 +65,7 @@ public abstract class LBHFILLFAGA
 		OJOLGGKILFL = false;
 		AJOAGOLGLAI = 1.0f;
 		LHMDABPNDDH = 0;
-		EAABKFGHKBG = 0;
+		EAABKFGHKBG_TryCount = 0;
 		this.BOPDLODALFD_withoutPlarformPath = BOPDLODALFD_withoutPlarformPath;
 		HHHEFALNMJO_mPath = CJEKGLGBIHF_path;
 		DAPCDNJBKBK_mSuccess = OGLMMENAJFL_onSuccess;
@@ -80,7 +81,7 @@ public abstract class LBHFILLFAGA
 			FHHAFJMELMD_alreadyLoading = true;
 		}
 		IIMBNNKHGOM = CJEKGLGBIHF_path.GetHashCode();
-		EAABKFGHKBG = 0;
+		EAABKFGHKBG_TryCount = 0;
 		JMHHKKFPPOL_time = 0.0f;
 		NHJKENJIEME = 0;
 		EBKOJBFMABH_elapsedTime = 0.0f;
@@ -231,6 +232,6 @@ public abstract class LBHFILLFAGA
 	// // RVA: 0xD98EE4 Offset: 0xD98EE4 VA: 0xD98EE4
 	static LBHFILLFAGA()
 	{
-		UnityEngine.Debug.LogError("TODO LBHFILLFAGA static");
+		UnityEngine.Debug.LogWarning("TODO LBHFILLFAGA static");
 	}
 }

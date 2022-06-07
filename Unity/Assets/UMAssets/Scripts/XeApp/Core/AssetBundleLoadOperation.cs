@@ -9,14 +9,13 @@ namespace XeApp.Core
         // // RVA: 0xE11728 Offset: 0xE11728 VA: 0xE11728 Slot: 4
         public bool MoveNext()
         {
-            UnityEngine.Debug.LogError("TODO");
-            return false;
+            return !IsDone();
         }
 
         // // RVA: 0xE11748 Offset: 0xE11748 VA: 0xE11748 Slot: 6
         public void Reset()
         {
-            UnityEngine.Debug.LogError("TODO");
+            return;
         }
 
         // // RVA: -1 Offset: -1 Slot: 7

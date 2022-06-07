@@ -1,6 +1,7 @@
 using UnityEngine;
 using XeSys;
 using System.Collections.Generic;
+using CriWare;
 
 public class PFHMOOFJMIM : LBHFILLFAGA
 {
@@ -20,7 +21,7 @@ public class PFHMOOFJMIM : LBHFILLFAGA
     // RVA: 0x16C24F8 Offset: 0x16C24F8 VA: 0x16C24F8 Slot: 4
     public override void BDALHEMDIDC_DoStart()
 	{
-		if(CriWare.Common.IsStreamingAssetPath(HHHEFALNMJO_mPath))
+		if(Common.IsStreamingAssetsPath(HHHEFALNMJO_mPath))
 		{
 			IEJJKNOEKLM = new WWW(Application.streamingAssetsPath + HHHEFALNMJO_mPath);
 		}
@@ -28,7 +29,6 @@ public class PFHMOOFJMIM : LBHFILLFAGA
 		{
 			IEJJKNOEKLM = new WWW("file://"+HHHEFALNMJO_mPath);
 		}
-		LGADCGFMLLD = 0;
 	}
 
     // RVA: 0x16C2630 Offset: 0x16C2630 VA: 0x16C2630 Slot: 5
@@ -61,7 +61,7 @@ public class PFHMOOFJMIM : LBHFILLFAGA
                 {
                     Debug.LogError("decryptor is null");
                 }
-                b.CLNHGLGOKPF_Decrypt(data);
+                DMKAFCEJFDG_decryptor.CLNHGLGOKPF_Decrypt(data);
             }
 			IMGIFJHHEED_fro.bytes = data;
         }

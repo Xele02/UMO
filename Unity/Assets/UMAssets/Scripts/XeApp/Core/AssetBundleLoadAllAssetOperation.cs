@@ -28,7 +28,10 @@ namespace XeApp.Core
         // // RVA: 0xE0F64C Offset: 0xE0F64C VA: 0xE0F64C Slot: 9
         public override bool IsDone()
         {
-			UnityEngine.Debug.LogError("TODO");
+			if(IsError())
+                return true;
+            if(m_request != null)
+                return m_request.isDone;
             return false;
         }
 
@@ -47,8 +50,7 @@ namespace XeApp.Core
         // // RVA: 0xE0F69C Offset: 0xE0F69C VA: 0xE0F69C Slot: 8
         public override bool IsError()
         {
-			UnityEngine.Debug.LogError("TODO");
-            return false;
+            return !string.IsNullOrEmpty(m_loadingError);
         }
 
         // // RVA: 0xE0F6B8 Offset: 0xE0F6B8 VA: 0xE0F6B8 Slot: 11

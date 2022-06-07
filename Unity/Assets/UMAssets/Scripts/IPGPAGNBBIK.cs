@@ -47,11 +47,12 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 	{
 		if(!FHHAFJMELMD_alreadyLoading)
 		{
-			if(BOBCNJIPPJN.AGJJGJCIMKI(COJNCNGHIJC.Result))
+			byte[] data = COJNCNGHIJC.Result;
+			if(BOBCNJIPPJN.AGJJGJCIMKI(data))
 			{
-				COJNCNGHIJC.Result = BOBCNJIPPJN.JCBCBNFPJDH(COJNCNGHIJC.Result);
+				data = BOBCNJIPPJN.JCBCBNFPJDH(data);
 			}
-			IMGIFJHHEED_fro.bytes = COJNCNGHIJC.Result;
+			IMGIFJHHEED_fro.bytes = data;
 		}
 		return base.MLMEOLAEJEL_DoLoadData();
 	}

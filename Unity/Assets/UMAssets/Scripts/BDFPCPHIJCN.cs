@@ -1,6 +1,7 @@
 using UnityEngine;
 using XeSys;
 using System.Collections.Generic;
+using CriWare;
 
 public class BDFPCPHIJCN : LBHFILLFAGA
 {
@@ -22,7 +23,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 	// RVA: 0xC70630 Offset: 0xC70630 VA: 0xC70630 Slot: 4
 	public override void BDALHEMDIDC_DoStart()
 	{
-		if(CriWare.Common.IsStreamingAssetPath(HHHEFALNMJO_mPath))
+		if(Common.IsStreamingAssetsPath(HHHEFALNMJO_mPath))
 		{
 			IEJJKNOEKLM = new WWW(Application.streamingAssetsPath + HHHEFALNMJO_mPath);
 		}
@@ -74,7 +75,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 						Debug.LogError("decryptor is null");
 					}
 					DMKAFCEJFDG_decryptor.CLNHGLGOKPF_Decrypt(data);
-					if(!DMKAFCEJFDG_decryptor.BBGDFKAPJHN(data))
+					if(!BBGDFKAPJHN(data))
 					{
 						Debug.LogError("decrypt failed");
 					}

@@ -42,14 +42,13 @@ namespace XeApp.Core
         // // RVA: 0xE0F77C Offset: 0xE0F77C VA: 0xE0F77C Slot: 8
         public override bool IsError()
         {
-            UnityEngine.Debug.LogError("TODO");
             return false;
         }
 
         // // RVA: 0xE0F784 Offset: 0xE0F784 VA: 0xE0F784 Slot: 11
         public virtual void ForEach(Action<UnityEngine.Object> action)
         {
-            UnityEngine.Debug.LogError("TODO");
+            return;
         }
     }
 }

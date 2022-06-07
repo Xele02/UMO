@@ -1,5 +1,6 @@
 using XeSys;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class HMHBDNGJIGL : LBHFILLFAGA
 {
@@ -98,18 +99,19 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 	{
 		if(IMGIFJHHEED_fro.texture == null)
 			return;
-		Destroy(IMGIFJHHEED_fro.texture);
+		Object.Destroy(IMGIFJHHEED_fro.texture);
 		IMGIFJHHEED_fro.texture = null;
 	}
 
 	// // RVA: 0x15F521C Offset: 0x15F521C VA: 0x15F521C
 	private static bool KGDPFAPANIH(byte[] GKBDHBJDGAH)
 	{
+        UnityEngine.Debug.LogError("TODO static HMHBDNGJIGL");
 		if(GKBDHBJDGAH.Length > 20)
 		{
 			for(int i = 0; i < 7; i++)
 			{
-				if(JIEHGOCHDGB[i] != GKBDHBJDGAH[i]
+				if(JIEHGOCHDGB[i] != GKBDHBJDGAH[i])
 					return false;
 			}
 		}
@@ -120,15 +122,17 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 	// private static uint LDOAOKFCOEE(byte[] IDLHJIOMJBK, int MMENOGLLOKL) { }
 
 	// // RVA: 0x15F5344 Offset: 0x15F5344 VA: 0x15F5344
-	private static HMHBDNGJIGL.BIIAHJNILEE BNPBLFMLECC(byte[] GKBDHBJDGAH)
+	private static BIIAHJNILEE BNPBLFMLECC(byte[] GKBDHBJDGAH)
 	{
 		Debug.LogError("TODO");
+		return new BIIAHJNILEE(0, 0);
 	}
 
 	// // RVA: 0x15F542C Offset: 0x15F542C VA: 0x15F542C
-	private static HMHBDNGJIGL.BIIAHJNILEE BAGLLAKJMPO(byte[] FLOEPENHMCO)
+	private static BIIAHJNILEE BAGLLAKJMPO(byte[] FLOEPENHMCO)
 	{
 		Debug.LogError("TODO");
+		return new BIIAHJNILEE(0, 0);
 	}
 
 	// // RVA: 0x15F5C3C Offset: 0x15F5C3C VA: 0x15F5C3C
