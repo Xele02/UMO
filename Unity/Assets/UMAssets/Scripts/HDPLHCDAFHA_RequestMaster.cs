@@ -9,11 +9,11 @@ public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request // TypeDefIndex: 10
         // Fields
         public List<string> DFDLAIGFDAH; // 0x7C
         //[CompilerGeneratedAttribute] // RVA: 0x6691D4 Offset: 0x6691D4 VA: 0x6691D4
-        //private bool OGLMMENAJFL; // 0x84
+        //private bool OGLMMENAJFL_onSuccess; // 0x84
 
         // Properties
         public FAPJEIOBPDG MKGLJLCMGIB { get; set; } // JJMNHPMPMEN 0x80 //  CJEOCNPHGNM // MGABGLAGKCL
-        public override bool EBPLLJGPFDA { get; set; } // OGLMMENAJFL 0x84
+        public override bool EBPLLJGPFDA { get; set; } // OGLMMENAJFL_onSuccess 0x84
 
 	// RVA: 0x174328C Offset: 0x174328C VA: 0x174328C Slot: 12
 	//public override void DHLDNIEELHO() { } // Prepare request

@@ -47,7 +47,7 @@ namespace XeSys
 			if(!isLoading)
 				return;
 			
-			isLoading = CriFileRequestManager.HHCJCDFCLOB.NFABHMNAODN != null;
+			isLoading = CriFileRequestManager.HHCJCDFCLOB.NFABHMNAODN = IFDILJEGCLD.IADCGKMLFFE_Execute;
 		}
 
 		// // RVA: 0x203ADA0 Offset: 0x203ADA0 VA: 0x203ADA0
@@ -89,7 +89,7 @@ namespace XeSys
 				}
 			}
 			LBHFILLFAGA request = CreateFileRequest(path, withoutPlarformPath, args, argValue, item, loadedDispose);
-			CriFileRequestManager.HHCJCDFCLOB.ELFMKCOKNHK(request);
+			CriFileRequestManager.HHCJCDFCLOB.ELFMKCOKNHK_AddRequest(request);
 			if(item == null)
 			{
 				item = new FileLoadInfo(path, succeeded, failed, request);
@@ -102,7 +102,7 @@ namespace XeSys
 		public void Load()
 		{
 			isLoading = true;
-			CriFileRequestManager.HHCJCDFCLOB.LFBFKKKCMNM();
+			CriFileRequestManager.HHCJCDFCLOB.LFBFKKKCMNM_TryExecute();
 		}
 
 		// // RVA: 0x203B980 Offset: 0x203B980 VA: 0x203B980
@@ -173,7 +173,7 @@ namespace XeSys
 			request.COIBJNACMFK = binder_;
 			if(findDecryptor != null)
 			{
-				request.DMKAFCEJFDG = findDecryptor(path);
+				request.DMKAFCEJFDG_decryptor = findDecryptor(path);
 			}
 			return request;
 		}

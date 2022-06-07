@@ -12,11 +12,11 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive // TypeDefIndex: 8687
 	// // Methods
 
 	// // RVA: 0x120437C Offset: 0x120437C VA: 0x120437C
-	// public void MCDJJPAKBLH(string CJEKGLGBIHF) { }
+	// public void MCDJJPAKBLH(string CJEKGLGBIHF_path) { }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BA26C Offset: 0x6BA26C VA: 0x6BA26C
 	// // RVA: 0x12043D8 Offset: 0x12043D8 VA: 0x12043D8
-	public IEnumerator ODDEPBIJHOE_Load(string CJEKGLGBIHF_filePath)
+	public IEnumerator ODDEPBIJHOE_Load(string CJEKGLGBIHF_path)
     {
         // Namespace: 
         // [CompilerGeneratedAttribute] // RVA: 0x63B14C Offset: 0x63B14C VA: 0x63B14C
@@ -25,7 +25,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive // TypeDefIndex: 8687
         // 	// Fields
         // 	private int GGPNEJDOELB; // 0x8
         // 	private object GMEFKDIEHCA; // 0xC
-        // 	public string CJEKGLGBIHF; // 0x10
+        // 	public string CJEKGLGBIHF_path; // 0x10
         // 	public IIEDOGCMCIE KIGBLACMODG; // 0x14
         // 	private DsfdLoader.ILoadRequest OCJDGDAJMFC; // 0x18
 
@@ -59,7 +59,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive // TypeDefIndex: 8687
         // 	private object System.Collections.IEnumerator.get_Current() { }
         // }
 
-        Cryptor.DsfdLoader.ILoadRequest request = Cryptor.DsfdLoader.LoadFile(CJEKGLGBIHF_filePath);
+        Cryptor.DsfdLoader.ILoadRequest request = Cryptor.DsfdLoader.LoadFile(CJEKGLGBIHF_path);
         if(request == null)
         {
             PLOOEECNHFB = true;

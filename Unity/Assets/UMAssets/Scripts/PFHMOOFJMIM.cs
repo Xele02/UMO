@@ -9,52 +9,81 @@ public class PFHMOOFJMIM : LBHFILLFAGA
     // RVA: 0x16C23AC Offset: 0x16C23AC VA: 0x16C23AC
     public PFHMOOFJMIM()
     {
-		UnityEngine.Debug.LogError("TODO");
     }
 
     // RVA: 0x16C2430 Offset: 0x16C2430 VA: 0x16C2430
-    public PFHMOOFJMIM(string CJEKGLGBIHF, string BOPDLODALFD, FileLoadedPostProcess OGLMMENAJFL, FileLoadedPostProcess GOIHDOPGPCE, Dictionary<string, string> JBKMAPLCBMO, int HNKPENAFDKA, FileLoadInfo LAMFBMFNOFP, bool ALJGNAPELAH)
+    public PFHMOOFJMIM(string CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
+		: base(CJEKGLGBIHF_path,BOPDLODALFD_withoutPlarformPath,OGLMMENAJFL_onSuccess,GOIHDOPGPCE_onFail,JBKMAPLCBMO_arg,HNKPENAFDKA_argValue,LAMFBMFNOFP_fi)
     {
-		UnityEngine.Debug.LogError("TODO");
     }
 
     // RVA: 0x16C24F8 Offset: 0x16C24F8 VA: 0x16C24F8 Slot: 4
-    //public override void BDALHEMDIDC() { }
+    public override void BDALHEMDIDC_DoStart()
+	{
+		if(CriWare.Common.IsStreamingAssetPath(HHHEFALNMJO_mPath))
+		{
+			IEJJKNOEKLM = new WWW(Application.streamingAssetsPath + HHHEFALNMJO_mPath);
+		}
+		else
+		{
+			IEJJKNOEKLM = new WWW("file://"+HHHEFALNMJO_mPath);
+		}
+		LGADCGFMLLD = 0;
+	}
 
     // RVA: 0x16C2630 Offset: 0x16C2630 VA: 0x16C2630 Slot: 5
-    //public override bool GDEMPLAOGKK() { }
+    public override bool GDEMPLAOGKK_IsDone()
+	{
+		if(FHHAFJMELMD_alreadyLoading)
+		{
+			return true;
+		}
+		return IEJJKNOEKLM.isDone;
+	}
 
     // RVA: 0x16C2674 Offset: 0x16C2674 VA: 0x16C2674 Slot: 6
-    //public override string LKPOPGJLPAJ() { }
+    public override string LKPOPGJLPAJ_GetErrorStr()
+	{
+		if(IEJJKNOEKLM != null)
+			return IEJJKNOEKLM.error;
+		return null;
+	}
 
     // RVA: 0x16C268C Offset: 0x16C268C VA: 0x16C268C Slot: 9
-    public override bool MLMEOLAEJEL()
+    public override bool MLMEOLAEJEL_DoLoadData()
     {
-        bool a = FHHAFJMELMD;
-        if(!a)
+        if(!FHHAFJMELMD_alreadyLoading)
         {
-            byte[] DBBGALAPFGC = null;//IEJJKNOEKLM.get_bytes(); // TODO
-            a = BBGDFKAPJHN(DBBGALAPFGC);
-            if(!a)
+            byte[] data = IEJJKNOEKLM.bytes;
+            if(!BBGDFKAPJHN(data))
             {
-                BEEINMBNKNM_Encryption b = DMKAFCEJFDG;
-                if(b == null)
+                if(DMKAFCEJFDG_decryptor == null)
                 {
                     Debug.LogError("decryptor is null");
                 }
-                b.CLNHGLGOKPF_Decrypt(DBBGALAPFGC);
+                b.CLNHGLGOKPF_Decrypt(data);
             }
-            UnityEngine.Debug.LogError("TODO");
-            //XeSys.FileResultObject obj = LNDGEDHIEAF();
-            //obj.set_bytes(DBBGALAPFGC);
+			IMGIFJHHEED_fro.bytes = data;
         }
-        a = MLMEOLAEJEL();
-        return a;
+        return base.MLMEOLAEJEL_DoLoadData();
     }
 
     // RVA: 0x16C27EC Offset: 0x16C27EC VA: 0x16C27EC Slot: 11
-    //public override void PAHHAMPDBFP() { }
+    public override void PAHHAMPDBFP()
+	{
+		if(FHHAFJMELMD_alreadyLoading)
+			return;
+		if(IEJJKNOEKLM != null)
+		{
+			IEJJKNOEKLM.Dispose();
+			IEJJKNOEKLM = null;
+		}
+		base.PAHHAMPDBFP();
+	}
 
     // RVA: 0x16C2834 Offset: 0x16C2834 VA: 0x16C2834 Slot: 13
-    //public override void JNDNHPEIMEI() { }
+    public override void JNDNHPEIMEI()
+	{
+		IMGIFJHHEED_fro.bytes = null;
+	}
 }

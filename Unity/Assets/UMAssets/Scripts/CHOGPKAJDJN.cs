@@ -25,7 +25,7 @@ public class CHOGPKAJDJN
 	public int FNEIADJMHHO { get; set; }
 	public int KOMKKBDABJP { get; set; }
 	public string LLNDMKBBNIJ { get; set; }
-	public string CJEKGLGBIHF { get; set; }
+	public string CJEKGLGBIHF_path { get; set; }
 	public string KOHNLDKIKPC { get; set; }
 	public string BPFBAHCDJFJ { get; set; }
 

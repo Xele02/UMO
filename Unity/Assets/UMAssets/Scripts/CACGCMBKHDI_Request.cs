@@ -8,7 +8,7 @@ public abstract class CACGCMBKHDI_Request // TypeDefIndex: 10353
         // public long CKOOCBJGHBI; // 0x8
         // public int CFICLNJACCD; // 0x10
         // public float GJAEJFLLKGC; // 0x14
-        // public float ICDEFIIADDO; // 0x18
+        // public float ICDEFIIADDO_Timeout; // 0x18
         // [CompilerGeneratedAttribute] // RVA: 0x669244 Offset: 0x669244 VA: 0x669244
         // private CACGCMBKHDI.HDHIKGLMOGF <FJNKDKOKOMD>k__BackingField; // 0x1C
         // [CompilerGeneratedAttribute] // RVA: 0x669254 Offset: 0x669254 VA: 0x669254
@@ -324,6 +324,6 @@ public abstract class CACGCMBKHDI_Request // TypeDefIndex: 10353
             UnityEngine.Debug.LogError("TODO");
             // CFICLNJACCD
             // GJAEJFLLKGC
-            // ICDEFIIADDO
+            // ICDEFIIADDO_Timeout
         }
 }

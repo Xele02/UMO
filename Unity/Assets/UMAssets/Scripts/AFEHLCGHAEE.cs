@@ -117,7 +117,7 @@ public class AFEHLCGHAEE // TypeDefIndex: 8663
 	public static string LOLLNDMKPPH; // 0x1BC
 	public static string KOHMHBGOFFI; // 0x1C0
 	public static string ILLPEMPBDJG; // 0x1C4
-	public static string JBKMAPLCBMO; // 0x1C8
+	public static string JBKMAPLCBMO_arg; // 0x1C8
 	public static string BCANABIAIIP; // 0x1CC
 	public static string PKLIPLFIDED; // 0x1D0
 	public static string CFJKNAIOEAN; // 0x1D4
@@ -537,7 +537,7 @@ public class AFEHLCGHAEE // TypeDefIndex: 8663
 	public static string ALDCIBEHAAG; // 0x84C
 	public static string KLMIFEKNBLL; // 0x850
 	public static string BGBKGFDLCME; // 0x854
-	public static string CJEKGLGBIHF; // 0x858
+	public static string CJEKGLGBIHF_path; // 0x858
 	public static string JMAGFEENOED; // 0x85C
 	public static string LNADEEECINK; // 0x860
 	public static string KOHNLDKIKPC; // 0x864
@@ -868,7 +868,7 @@ public class AFEHLCGHAEE // TypeDefIndex: 8663
 		LOLLNDMKPPH = "flg"; // 0x1BC
 		KOHMHBGOFFI = "free_music"; // 0x1C0
 		ILLPEMPBDJG = "can_receive_next"; // 0x1C4
-		JBKMAPLCBMO = "arg"; // 0x1C8
+		JBKMAPLCBMO_arg = "arg"; // 0x1C8
 		BCANABIAIIP = "ch_exp"; // 0x1CC
 		PKLIPLFIDED = "sco"; // 0x1D0
 		CFJKNAIOEAN = "spn"; // 0x1D4
@@ -1288,7 +1288,7 @@ public class AFEHLCGHAEE // TypeDefIndex: 8663
 		ALDCIBEHAAG = "have_free_vc"; // 0x84C
 		KLMIFEKNBLL = "m_id"; // 0x850
 		BGBKGFDLCME = "sclr"; // 0x854
-		CJEKGLGBIHF = "path"; // 0x858
+		CJEKGLGBIHF_path = "path"; // 0x858
 		JMAGFEENOED = "dv2"; // 0x85C
 		LNADEEECINK = "pexp"; // 0x860
 		KOHNLDKIKPC = "sb"; // 0x864

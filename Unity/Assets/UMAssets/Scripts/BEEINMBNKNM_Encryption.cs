@@ -86,7 +86,7 @@ public class BEEINMBNKNM_Encryption
         //private static extern uint ANMDMMBEJPB(uint IOIMHJAOKOO, IntPtr DBBGALAPFGC, int NFHFALDMGGC) { }
 
         // RVA: 0xC740D4 Offset: 0xC740D4 VA: 0xC740D4
-        //public static uint DIKDKNIKPNJ(uint IOIMHJAOKOO, string CJEKGLGBIHF) { }
+        //public static uint DIKDKNIKPNJ(uint IOIMHJAOKOO, string CJEKGLGBIHF_path) { }
 
         public void DGBPHDMEDNP(int DHIPGHBJLIL, int POMLAOPLMNA, int DFIDIEENJAE)
         {

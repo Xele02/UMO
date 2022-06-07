@@ -8,7 +8,7 @@ public class OAFCKDDEBFN // TypeDefIndex: 8823
     public class AACCPKIGMED // TypeDefIndex: 8824
     {
         // Fields
-        public BEEINMBNKNM_Encryption DMKAFCEJFDG; // 0x8
+        public BEEINMBNKNM_Encryption DMKAFCEJFDG_decryptor; // 0x8
         public Regex JHOONHIHJNJ_MatchKey; // 0xC
         private int KNEFBLHBDBG; // 0x10
 
@@ -16,15 +16,15 @@ public class OAFCKDDEBFN // TypeDefIndex: 8823
 
         public void KHEKNNFCAOI(string MKANHLNEEGL, int KNEFBLHBDBG)
         {
-            DMKAFCEJFDG = null;
+            DMKAFCEJFDG_decryptor = null;
             JHOONHIHJNJ_MatchKey = null;
             this.KNEFBLHBDBG = KNEFBLHBDBG;
 
             JHOONHIHJNJ_MatchKey = new Regex(MKANHLNEEGL);
             if(KNEFBLHBDBG == 0)
                 return;
-            DMKAFCEJFDG = new BEEINMBNKNM_Encryption();
-            DMKAFCEJFDG.KHEKNNFCAOI((uint)KNEFBLHBDBG);
+            DMKAFCEJFDG_decryptor = new BEEINMBNKNM_Encryption();
+            DMKAFCEJFDG_decryptor.KHEKNNFCAOI((uint)KNEFBLHBDBG);
         }
 
         public AACCPKIGMED() { }
@@ -63,10 +63,10 @@ public class OAFCKDDEBFN // TypeDefIndex: 8823
             }
         }
 
-        public BEEINMBNKNM_Encryption MFHAOMELJKJ_FindDecryptor(string CJEKGLGBIHF_Key)
+        public BEEINMBNKNM_Encryption MFHAOMELJKJ_FindDecryptor(string CJEKGLGBIHF_path)
         {
             int index = 0;
-            string input = CJEKGLGBIHF_Key.Replace('\\','/');
+            string input = CJEKGLGBIHF_path.Replace('\\','/');
             while(true)
             {
                 if(MGJKEJHEBPO.Count <= index)
@@ -77,7 +77,7 @@ public class OAFCKDDEBFN // TypeDefIndex: 8823
                 bool match = a.JHOONHIHJNJ_MatchKey.IsMatch(input);
                 if(match)
                 {
-                    return a.DMKAFCEJFDG;
+                    return a.DMKAFCEJFDG_decryptor;
                 }
                 index++;
             }
