@@ -39,7 +39,11 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// private void CHBJKIFMECH(List<DJNPIGEFPMF> NANNGLGOFKH) { }
 
 	// // RVA: 0x10CF794 Offset: 0x10CF794 VA: 0x10CF794
-	// public EONOEHOKBEB IAJLOELFHKC(int DLAEJOBELBH) { }
+	public EONOEHOKBEB_Music IAJLOELFHKC(int DLAEJOBELBH)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 
 	// // RVA: 0x10CF824 Offset: 0x10CF824 VA: 0x10CF824
 	// public KEODKEGFDLD NOBCLJIAMLC(int GHBPLHBNMBK) { }

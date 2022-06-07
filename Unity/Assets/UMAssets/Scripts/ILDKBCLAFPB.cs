@@ -2,6 +2,7 @@ using System;
 using XeSys;
 using System.IO;
 using UnityEngine;
+using XeApp.Game.Common;
 
 public class ILDKBCLAFPB
 {
@@ -165,7 +166,11 @@ public class ILDKBCLAFPB
         // public bool DCJKPJFIJKH() { }
 
         // // RVA: 0x2035F3C Offset: 0x2035F3C VA: 0x2035F3C
-        // public int HBCHGGNOOCD(Difficulty.Type FEOKKEPAIBB, bool JCOJKAHFADL) { }
+        public int HBCHGGNOOCD(Difficulty.Type FEOKKEPAIBB, bool JCOJKAHFADL)
+        {
+            UnityEngine.Debug.LogError("TODO");
+            return 0;
+        }
 
         // // RVA: 0x203607C Offset: 0x203607C VA: 0x203607C
         // public void GMHKLEMBLOF(int INDDJNMPONH, int DOKKMMFKLJI) { }

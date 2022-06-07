@@ -1,4 +1,5 @@
 using UnityEngine;
+using Cryptor;
 
 public class NKGJPJPHLIF // TypeDefIndex: 8610
 {
@@ -16,12 +17,12 @@ public class NKGJPJPHLIF // TypeDefIndex: 8610
         public static bool GKHEAEAPEGB; // 0x4
 	// public IKIIAFKHDFP DHEFMDMGPMG; // 0x1C
 	// private CIOECGOMILE NLGFEPAJBOJ; // 0x20
-	// private IMMAOANGPNK EJDOEBLBGIO; // 0x24
+	private IMMAOANGPNK EJDOEBLBGIO; // 0x24
 	// private JGEOBNENMAH FDOODGBBKEE; // 0x28
 	// private KDHGBOOECKC BOLHOKKOBFG; // 0x2C
 	// private GNGMCIAIKMA KOECOMOAFJM; // 0x30
 	// private KEHOJEJMGLJ AFKDJPJOPBH; // 0x34
-	// private BBGDKLLEPIB AOHJJKHIAMF; // 0x38
+	private BBGDKLLEPIB AOHJJKHIAMF; // 0x38
 	// private KDLPEDBKMID BJAONAJFHFA; // 0x3C
 	// private OEGIPPCADNA AJPPBBAOPIP; // 0x40
 	// private LAMCONGFONF GOKEBIILKIO; // 0x44
@@ -126,23 +127,31 @@ public class NKGJPJPHLIF // TypeDefIndex: 8610
         // RVA: 0xC16A5C Offset: 0xC16A5C VA: 0xC16A5C
         public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
         {
-            UnityEngine.Debug.LogWarning("TODO NKGJPJPHLIF.IJBGPAENLJA");
-                EHIIDBEMILF = new DOKOHKJIDBO();
+                UnityEngine.Debug.LogWarning("TODO NKGJPJPHLIF.IJBGPAENLJA");
+                EHIIDBEMILF = new DOKOHKJIDBO(); //117
                 EHIIDBEMILF.KIDFJDNOGDG();
 
-                IBLPICFDGOF = new PJKLMCGEJMK();
+                IBLPICFDGOF = new PJKLMCGEJMK(); // 133
                 IBLPICFDGOF.IJBGPAENLJA(DANMJLOBLIE);
+
+                EJDOEBLBGIO = new IMMAOANGPNK(); //155
+                EJDOEBLBGIO.IJBGPAENLJA(DANMJLOBLIE);
+
+                AOHJJKHIAMF = new BBGDKLLEPIB(); //204
+                AOHJJKHIAMF.IJBGPAENLJA(DANMJLOBLIE);
         }
 
         // RVA: 0xC179B0 Offset: 0xC179B0 VA: 0xC179B0
         public void BAGMHFKPFIF()
         {
             UnityEngine.Debug.LogWarning("TODO NKGJPJPHLIF.BAGMHFKPFIF");
+            DsfdLoader.Update();
             //BJAONAJFHFA
             // BHLNCEJLGII
             //KFENGIGCDMF
             //.NLGFEPAJBOJ
             //EJDOEBLBGIO
+            EJDOEBLBGIO.BAGMHFKPFIF();
             //OLKNOPIDFJG
             //BHEDLCLHGPB
             CADNBFCHAKM();

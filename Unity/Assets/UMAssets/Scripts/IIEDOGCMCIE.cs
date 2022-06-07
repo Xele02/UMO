@@ -12,7 +12,10 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive // TypeDefIndex: 8687
 	// // Methods
 
 	// // RVA: 0x120437C Offset: 0x120437C VA: 0x120437C
-	// public void MCDJJPAKBLH(string CJEKGLGBIHF_path) { }
+	public void MCDJJPAKBLH(string CJEKGLGBIHF_path)
+    {
+		UnityEngine.Debug.LogError("TODO");
+    }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BA26C Offset: 0x6BA26C VA: 0x6BA26C
 	// // RVA: 0x12043D8 Offset: 0x12043D8 VA: 0x12043D8

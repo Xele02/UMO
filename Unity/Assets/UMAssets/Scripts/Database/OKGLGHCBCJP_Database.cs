@@ -330,7 +330,7 @@ public class OKGLGHCBCJP_Database
 	// public EGLOKAEIHCB IHPFCIJKFIC { get; set; }
 	// public HHFFOACILKG ICICKEBMEFA { get; set; }
 	// public KBCCGHLCFNO MEGJDBJCEOC { get; set; }
-	// public LPPGENBEECK IBPAFKKEKNK { get; set; }
+	public LPPGENBEECK_musicMaster IBPAFKKEKNK { get; set; } // AHENIIKNNJF 0x1490B04
 	// public GJAEGCMKMEK NEGKEEAFKHP { get; set; }
 	// public LGHIPHEDCNC LBCMJGOOHLJ { get; set; }
 	// public MPOEMCEBBJH OBGGLAKOHKP { get; set; }
@@ -728,10 +728,6 @@ public class OKGLGHCBCJP_Database
 	// [CompilerGeneratedAttribute] // RVA: 0x6C1C80 Offset: 0x6C1C80 VA: 0x6C1C80
 	// // RVA: 0x1490AFC Offset: 0x1490AFC VA: 0x1490AFC
 	// private void NABHFEAEHFH(KBCCGHLCFNO NANNGLGOFKH) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6C1C90 Offset: 0x6C1C90 VA: 0x6C1C90
-	// // RVA: 0x1490B04 Offset: 0x1490B04 VA: 0x1490B04
-	// public LPPGENBEECK AHENIIKNNJF() { }
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6C1CA0 Offset: 0x6C1CA0 VA: 0x6C1CA0
 	// // RVA: 0x1490B0C Offset: 0x1490B0C VA: 0x1490B0C
