@@ -77,6 +77,7 @@ public class PJKLMCGEJMK // TypeDefIndex: 10326
         public KPKEOIJHIMN JACGBOGNFKM()
 		{
 			UnityEngine.Debug.LogError("TODO");
+            return null;
 		}
 
         // // RVA: 0x9310A8 Offset: 0x9310A8 VA: 0x9310A8
@@ -92,6 +93,7 @@ public class PJKLMCGEJMK // TypeDefIndex: 10326
         public IIDJLAEDMPI FIIMIGEKDCM()
 		{
 			UnityEngine.Debug.LogError("TODO");
+            return null;
 		}
 
         // // RVA: 0x9310C0 Offset: 0x9310C0 VA: 0x9310C0

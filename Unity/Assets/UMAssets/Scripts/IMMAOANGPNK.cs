@@ -1,9 +1,22 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using XeApp.Game.Common;
+using SecureLib;
 
 public class IMMAOANGPNK
 {
+	public class MPFFINOMILP
+	{
+		public int IJEKNCDIIAE; // 0x8
+		public string OPFGFINHFCE; // 0xC
+		public long PDBPFJJCADD; // 0x10
+
+		// // RVA: 0x9FD928 Offset: 0x9FD928 VA: 0x9FD928
+		// public void .ctor() { }
+	}
+
 	private static bool NAANHMNAHGI; // 0x4
 	public int ENEBEGGOHFP; // 0x14
 	public int HMHKGLENIOP; // 0x18
@@ -37,7 +50,10 @@ public class IMMAOANGPNK
 	// public GDIPLANPCEI ACEFBFLFKFD(string FJMNHCBPKCJ, long JHNMKKNEENE) { }
 
 	// // RVA: 0x9FB9FC Offset: 0x9FB9FC VA: 0x9FB9FC
-	// public void BAHKPIADOBI(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
+	public void BAHKPIADOBI(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
+	{
+		N.a.StartCoroutine(MHEKMICKGDM_LoadFromStorage(BHFHGFKBOHH, MOBEEPPKFLG));
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B75F8 Offset: 0x6B75F8 VA: 0x6B75F8
 	// // RVA: 0x9FBB1C Offset: 0x9FBB1C VA: 0x9FBB1C
@@ -95,10 +111,10 @@ public class IMMAOANGPNK
 					GBEGLNMFLIE = null;
 					yield break;
 				}
-				long val = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FIIMIGEKDCM.KMEFBNBFJHI;
+				long val = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FIIMIGEKDCM().KMEFBNBFJHI();
 				CMFCGGAKLFN(GBEGLNMFLIE, val);
 				BBHOKHCDBFI(GBEGLNMFLIE);
-				List<OKGLGHCBCJP.BEOKNKGHFFE> list = NKEBMCIMJND.BPCKOIDILDK(JOBKIDDLCPL, val);
+				List<OKGLGHCBCJP_Database.BEOKNKGHFFE> list = NKEBMCIMJND.BPCKOIDILDK(JOBKIDDLCPL, val);
 				NKEBMCIMJND.LNAKMLCCEJG(list, OKGLGHCBCJP_Database.GAAEFILMAED);
 				NKEBMCIMJND.KHEKNNFCAOI(list);
 				bool HBODCMLFDOB = false;
@@ -138,7 +154,7 @@ public class IMMAOANGPNK
 					yield break;
 				}
 				
-				if(MessageLoader.Instance)
+				if(MessageLoader.Instance != null)
 				{
 					UnityEngine.Debug.LogError("TODO");
 				}
@@ -146,9 +162,8 @@ public class IMMAOANGPNK
 				AMAFAKNIHFO();
 				NKEBMCIMJND.IDBDAPPJOND();
 				KPKEOIJHIMN f = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.JACGBOGNFKM();
-				string str = BBGDKLLEPIB.LHJNPJFNDNA;
-				KPKEOIJHIMN.FFEJIGPPHOA(str);
-				string BLOMMALFLCM = BBGDKLLEPIB.FHOCCNDOAPJ;
+				f.FFEJIGPPHOA(BBGDKLLEPIB.LHJNPJFNDNA);
+				string BLOMMALFLCM = BBGDKLLEPIB.OGCDNCDMLCA;
 				BLOMMALFLCM = BLOMMALFLCM + BBGDKLLEPIB.JNPHAJICDPN;
 				//new XeApp.Game.Net.Security.SecureGZFile
 				GNMBAOKGJDO HCNDEJCCIMA = new GNMBAOKGJDO();
@@ -212,7 +227,7 @@ public class IMMAOANGPNK
 									}
 									else // a.QTHZDMBR()
 									{
-										NAANHMNAHGI = 1;
+										NAANHMNAHGI = true;
 										LAB_00a0006c = true;
 									}
 								}
@@ -240,7 +255,7 @@ public class IMMAOANGPNK
 					}
 					if(LAB_00a0006c)
 					{
-						if(SecureLib.SecureLibAPI.isDebuggerAttachedJava())
+						if(SecureLibAPI.isDebuggerAttachedJava())
 						{
 							BEKAMBBOLBO = false;
 							JHHBAFKMBDL.HHCJCDFCLOB.GKMAHMLNMEK(() => {//0x9FE2FC
@@ -251,7 +266,7 @@ public class IMMAOANGPNK
 								yield return null;
 							}
 						}
-						else if(SecureLib.SecureLibAPI.isDebuggerAttachedNative())
+						else if(SecureLibAPI.isDebuggerAttachedNative())
 						{
 							BEKAMBBOLBO = false;
 							JHHBAFKMBDL.HHCJCDFCLOB.GKMAHMLNMEK(() => {//0x9FE308
@@ -264,7 +279,7 @@ public class IMMAOANGPNK
 						}
 						else 
 						{
-							if(!SecureLib.SecureLibAPI.isEmulator())
+							if(!SecureLibAPI.isEmulator())
 							{
 								if(BHFHGFKBOHH != null)
 								{
@@ -330,7 +345,7 @@ public class IMMAOANGPNK
 	// public void PFAKPFKJJKA() { }
 
 	// // RVA: 0x9FC518 Offset: 0x9FC518 VA: 0x9FC518
-	private void BBHOKHCDBFI(CBBJHPBGBAJ GBEGLNMFLIE)
+	private void BBHOKHCDBFI(CBBJHPBGBAJ_Archive GBEGLNMFLIE)
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}
@@ -339,7 +354,7 @@ public class IMMAOANGPNK
 	// public bool JMAMHEJDNNN(long JHNMKKNEENE) { }
 
 	// // RVA: 0x9FCF88 Offset: 0x9FCF88 VA: 0x9FCF88
-	private void CMFCGGAKLFN(CBBJHPBGBAJ GBEGLNMFLIE, long JHNMKKNEENE)
+	private void CMFCGGAKLFN(CBBJHPBGBAJ_Archive GBEGLNMFLIE, long JHNMKKNEENE)
 	{
 		
 	// public static readonly IMMAOANGPNK.<>c <>9; // 0x0
@@ -348,11 +363,11 @@ public class IMMAOANGPNK
 	// public static Comparison<IMMAOANGPNK.MPFFINOMILP> <>9__44_1; // 0xC
 		MGFBEKNMJOA.Clear();
 		
-		CBBJHPBGBAJ.JBCFNCNGLPM res = GBEGLNMFLIE.KGHAJGGMPKL.Find((CBBJHPBGBAJ.JBCFNCNGLPM GHPLINIACBB) => return GHPLINIACBB.OPFGFINHFCE.Contains("version.bytes")); // 0x9FDDD8
+		CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File res = GBEGLNMFLIE.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) => { return GHPLINIACBB.OPFGFINHFCE_Name.Contains("version.bytes"); }); // 0x9FDDD8
 		if(res != null)
 		{
-			IDEELDJLDBN a = IDEELDJLDBN.HEGEKFMJNCC(IDEELDJLDBN$$HEGEKFMJNCC(res.DBBGALAPFGC);
-			JGIHJPPECBB[] b = a.LKEHBKLHHMP();
+			IDEELDJLDBN a = IDEELDJLDBN.HEGEKFMJNCC(res.DBBGALAPFGC_Data);
+			JGIHJPPECBB[] b = a.MLOPDBGPLFI;
 			for(int i = 0; i < b.Length; i++)
 			{
 				int val = b[i].BEBJKJKBOGH;

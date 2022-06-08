@@ -1,4 +1,5 @@
-
+using System.Collections.Generic;
+using XeApp.Game.Common;
 
 public class MLIBEPGADJH : DIHHCBACKGG
 {
@@ -516,7 +517,10 @@ public class MLIBEPGADJH : DIHHCBACKGG
 	// public void .ctor() { }
 
 	// // RVA: 0x195D90C Offset: 0x195D90C VA: 0x195D90C Slot: 8
-	// protected override void KMBPACJNEOF() { }
+	protected override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x195DA6C Offset: 0x195DA6C VA: 0x195DA6C Slot: 9
 	// public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC) { }

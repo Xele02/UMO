@@ -1,4 +1,5 @@
- 
+using System.Diagnostics;
+
 public class IIDJLAEDMPI
 {
 	// Fields
@@ -28,6 +29,7 @@ public class IIDJLAEDMPI
 	public long KMEFBNBFJHI()
 	{
 		UnityEngine.Debug.LogError("TODO");
+		return 0;
 	}
 
 	// // RVA: 0x1203BE8 Offset: 0x1203BE8 VA: 0x1203BE8

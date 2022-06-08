@@ -128,6 +128,9 @@ public class NKGJPJPHLIF // TypeDefIndex: 8610
         public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
         {
                 UnityEngine.Debug.LogWarning("TODO NKGJPJPHLIF.IJBGPAENLJA");
+
+                MNNCBFONAOL.KHEKNNFCAOI();
+
                 EHIIDBEMILF = new DOKOHKJIDBO(); //117
                 EHIIDBEMILF.KIDFJDNOGDG();
 

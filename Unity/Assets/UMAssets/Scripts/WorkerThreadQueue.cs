@@ -1,3 +1,4 @@
+using System;
 
 namespace XeApp
 {
@@ -59,7 +60,10 @@ public class WorkerThreadQueue // TypeDefIndex: 18501
 	// public void Abort() { }
 
 	// // RVA: 0x1D7A28C Offset: 0x1D7A28C VA: 0x1D7A28C
-	// public void Add(Action job) { }
+	public void Add(Action job)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x1D7A3C4 Offset: 0x1D7A3C4 VA: 0x1D7A3C4
 	// private void ThreadUpdate() { }
