@@ -74,7 +74,10 @@ public class PJKLMCGEJMK // TypeDefIndex: 10326
         // private void PFABEFOBEMC(KPKEOIJHIMN.GIDACIOHFNN NANNGLGOFKH) { }
 
         // // RVA: 0x9310A0 Offset: 0x9310A0 VA: 0x9310A0
-        // public KPKEOIJHIMN JACGBOGNFKM() { }
+        public KPKEOIJHIMN JACGBOGNFKM()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
         // // RVA: 0x9310A8 Offset: 0x9310A8 VA: 0x9310A8
         // public OBOKMHHMOIL MFLBDBHHKMP() { }
@@ -86,7 +89,10 @@ public class PJKLMCGEJMK // TypeDefIndex: 10326
         // public void GOFGBIANJGF(bool NANNGLGOFKH) { }
 
         // // RVA: 0x925074 Offset: 0x925074 VA: 0x925074
-        // public IIDJLAEDMPI FIIMIGEKDCM() { }
+        public IIDJLAEDMPI FIIMIGEKDCM()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
         // // RVA: 0x9310C0 Offset: 0x9310C0 VA: 0x9310C0
         // public LGNBLDHKLJK LEFKJNJCAPO() { }
