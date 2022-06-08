@@ -36,7 +36,7 @@ public class NKGJPJPHLIF // TypeDefIndex: 8610
 	// private HDEEBKIFLNI GNLBDCOIDMJ; // 0x64
 	// private EJGJAFBLHHM KGJGLOEIOHJ; // 0x68
 	// private NDABOOOOENC LEJDPOCMFPL; // 0x6C
-	// private JDDGPJDKHNE OLKNOPIDFJG; // 0x70
+	private JDDGPJDKHNE OLKNOPIDFJG; // 0x70
 	// private EJHPIMANJFP HHAKOEMAOID; // 0x74
 	// private AGLHPOOPOCG NKFPAJGGAFF; // 0x78
 	// public LAPFLEEAACL[] HECNGABHNDJ; // 0x7C
@@ -129,7 +129,10 @@ public class NKGJPJPHLIF // TypeDefIndex: 8610
         {
                 UnityEngine.Debug.LogWarning("TODO NKGJPJPHLIF.IJBGPAENLJA");
 
-                MNNCBFONAOL.KHEKNNFCAOI();
+                MNNCBFONAOL.KHEKNNFCAOI();//101
+
+                OLKNOPIDFJG = new JDDGPJDKHNE(); //108
+                OLKNOPIDFJG.IJBGPAENLJA();
 
                 EHIIDBEMILF = new DOKOHKJIDBO(); //117
                 EHIIDBEMILF.KIDFJDNOGDG();
@@ -155,7 +158,7 @@ public class NKGJPJPHLIF // TypeDefIndex: 8610
             //.NLGFEPAJBOJ
             //EJDOEBLBGIO
             EJDOEBLBGIO.BAGMHFKPFIF();
-            //OLKNOPIDFJG
+            OLKNOPIDFJG.BAGMHFKPFIF();
             //BHEDLCLHGPB
             CADNBFCHAKM();
         }

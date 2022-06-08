@@ -152,15 +152,20 @@ namespace XeApp.Core
 		// // RVA: 0x1D73E28 Offset: 0x1D73E28 VA: 0x1D73E28 Slot: 9
 		protected virtual void DoAwake()
 		{
+			return;
 		}
 
 		// // RVA: 0x1D73E2C Offset: 0x1D73E2C VA: 0x1D73E2C Slot: 10
 		protected virtual void DoStart()
 		{
+			return;
 		}
 
 		// // RVA: 0x1D73E30 Offset: 0x1D73E30 VA: 0x1D73E30 Slot: 11
-		// protected virtual void DoOnGUI() { }
+		protected virtual void DoOnGUI()
+		{
+			return;
+		}
 
 		// // RVA: 0x1D73E34 Offset: 0x1D73E34 VA: 0x1D73E34 Slot: 12
 		protected virtual bool DoUpdateEnter()
@@ -171,6 +176,7 @@ namespace XeApp.Core
 		// // RVA: 0x1D73E3C Offset: 0x1D73E3C VA: 0x1D73E3C Slot: 13
 		protected virtual void DoUpdateMain()
 		{
+			return;
 		}
 
 		// // RVA: 0x1D73E40 Offset: 0x1D73E40 VA: 0x1D73E40 Slot: 14

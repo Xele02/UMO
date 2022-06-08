@@ -199,7 +199,10 @@ namespace XeApp.Game
 		// public void RemovePushBackButtonHandler(GameManager.PushBackButtonHandler handler) { }
 
 		// // RVA: 0x98B534 Offset: 0x98B534 VA: 0x98B534
-		// public void ClearPushBackButtonHandler() { }
+		public void ClearPushBackButtonHandler()
+		{
+			UnityEngine.Debug.LogWarning("TODO GameManager.ClearPushBackButtonHandler()");
+		}
 
 		// // RVA: 0x99A3B4 Offset: 0x99A3B4 VA: 0x99A3B4
 		public static void Create(GameObject prefab)
@@ -518,7 +521,10 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x99E7FC Offset: 0x99E7FC VA: 0x99E7FC
-		// public void SetDispLongScreenFrame(bool isShow) { }
+		public void SetDispLongScreenFrame(bool isShow)
+		{
+			UnityEngine.Debug.LogWarning("TODO GameManager.SetDispLongScreenFrame");
+		}
 
 		// // RVA: 0x99E908 Offset: 0x99E908 VA: 0x99E908
 		// public void SetLongScreenFrameColor(int colorNo) { }
@@ -533,7 +539,10 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x99F2B4 Offset: 0x99F2B4 VA: 0x99F2B4
-		// public void UpdateInputArea(bool isAr) { }
+		public void UpdateInputArea(bool isAr)
+		{
+			UnityEngine.Debug.LogWarning("TODO GameManager.UpdateInputArea");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADC18 Offset: 0x6ADC18 VA: 0x6ADC18
 		// // RVA: 0x99F6C8 Offset: 0x99F6C8 VA: 0x99F6C8
@@ -557,7 +566,10 @@ namespace XeApp.Game
 		// public void ReSetupResolution(float baseWidth, float baseHeight) { }
 
 		// // RVA: 0x99FB5C Offset: 0x99FB5C VA: 0x99FB5C
-		// public void RevertResolution() { }
+		public void RevertResolution()
+		{
+			UnityEngine.Debug.LogWarning("TODO GameMAnager.RevertResolution()");
+		}
 
 		// // RVA: 0x99FF14 Offset: 0x99FF14 VA: 0x99FF14
 		// public void SetupResolutionDefault() { }
@@ -661,7 +673,10 @@ namespace XeApp.Game
 		// public void CloseOfferNotice() { }
 
 		// // RVA: 0x9A040C Offset: 0x9A040C VA: 0x9A040C
-		// public void ChangePopupPriority(bool popupTop) { }
+		public void ChangePopupPriority(bool popupTop)
+		{
+			UnityEngine.Debug.LogWarning("TODO GameManager.ChangePopupPriority()");
+		}
 
 		// // RVA: 0x9A0314 Offset: 0x9A0314 VA: 0x9A0314
 		// private void ChangeLayerWithChild(GameObject go, int layer) { }
@@ -772,7 +787,10 @@ namespace XeApp.Game
 		// public bool IsMultipleOverridePrimeId(int primeId) { }
 
 		// // RVA: 0x9A1958 Offset: 0x9A1958 VA: 0x9A1958
-		// public void SetTransmissionIconPosition(bool isARMode) { }
+		public void SetTransmissionIconPosition(bool isARMode)
+		{
+			UnityEngine.Debug.LogWarning("TODO GameManager.SetTransmissionIconPosition()");
+		}
 
 		// // RVA: 0x9A1C14 Offset: 0x9A1C14 VA: 0x9A1C14
 		static GameManager()
