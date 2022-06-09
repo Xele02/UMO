@@ -33,7 +33,11 @@ namespace SecureLib
         // private static void .cctor() { }
 
         // // RVA: 0x2E71EF8 Offset: 0x2E71EF8 VA: 0x2E71EF8
-        // public static bool isRooted() { }
+        public static bool isRooted()
+        {
+            UnityEngine.Debug.LogError("TODO");
+            return false;
+        }
 
         // // RVA: 0x2E71F70 Offset: 0x2E71F70 VA: 0x2E71F70
         public static bool isDebuggerAttachedJava()

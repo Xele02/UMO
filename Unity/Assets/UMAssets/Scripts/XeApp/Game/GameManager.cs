@@ -196,7 +196,10 @@ namespace XeApp.Game
 		// public void AddLastBackButtonHandler(GameManager.PushBackButtonHandler handler) { }
 
 		// // RVA: 0x988E80 Offset: 0x988E80 VA: 0x988E80
-		// public void RemovePushBackButtonHandler(GameManager.PushBackButtonHandler handler) { }
+		public void RemovePushBackButtonHandler(GameManager.PushBackButtonHandler handler)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x98B534 Offset: 0x98B534 VA: 0x98B534
 		public void ClearPushBackButtonHandler()
@@ -225,7 +228,11 @@ namespace XeApp.Game
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AD9C0 Offset: 0x6AD9C0 VA: 0x6AD9C0
 		// // RVA: 0x99A7A4 Offset: 0x99A7A4 VA: 0x99A7A4
-		// public IEnumerator UnloadAllAssets() { }
+		public IEnumerator UnloadAllAssets()
+		{
+			UnityEngine.Debug.LogError("TODO");
+			yield break;
+		}
 
 		// // RVA: 0x99A82C Offset: 0x99A82C VA: 0x99A82C
 		private void Awake()
@@ -572,7 +579,10 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x99FF14 Offset: 0x99FF14 VA: 0x99FF14
-		// public void SetupResolutionDefault() { }
+		public void SetupResolutionDefault()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x9A0068 Offset: 0x9A0068 VA: 0x9A0068
 		// public void SetupResolutionInGame() { }
@@ -630,7 +640,10 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x9A0758 Offset: 0x9A0758 VA: 0x9A0758
-		// public void ResetSystemCanvasCamera() { }
+		public void ResetSystemCanvasCamera()
+		{
+			UnityEngine.Debug.LogWarning("TODO GameManager.ResetSystemCanvasCamera");
+		}
 
 		// // RVA: 0x99B4B0 Offset: 0x99B4B0 VA: 0x99B4B0
 		private void CreateFont()
@@ -682,16 +695,28 @@ namespace XeApp.Game
 		// private void ChangeLayerWithChild(GameObject go, int layer) { }
 
 		// // RVA: 0x9A0294 Offset: 0x9A0294 VA: 0x9A0294
-		// public void SetTouchEffectVisible(bool isVisible) { }
+		public void SetTouchEffectVisible(bool isVisible)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x9A0C6C Offset: 0x9A0C6C VA: 0x9A0C6C
-		// public void SetTouchEffectMode(bool isRhythmGame) { }
+		public void SetTouchEffectMode(bool isRhythmGame)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x9A0CA0 Offset: 0x9A0CA0 VA: 0x9A0CA0
-		// public void SetSystemCanvasRenderMode(RenderMode mode) { }
+		public void SetSystemCanvasRenderMode(RenderMode mode)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x9A0CA4 Offset: 0x9A0CA4 VA: 0x9A0CA4
-		// public void SetSystemCanvasResolution(Vector2 resolution) { }
+		public void SetSystemCanvasResolution(Vector2 resolution)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x99B14C Offset: 0x99B14C VA: 0x99B14C
 		// public Font GetSystemFont() { }

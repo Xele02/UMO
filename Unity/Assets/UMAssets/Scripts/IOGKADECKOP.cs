@@ -7,6 +7,11 @@ using UnityEngine.UI;
 using System.Collections;
 using XeApp;
 using UdonLib;
+using XeApp.Game.Common;
+using Mana.Service.Ad;
+using XeSys;
+using XeApp.Core;
+using SecureLib;
 
 public class IOGKADECKOP
 {
@@ -71,15 +76,15 @@ public class IOGKADECKOP
 	// // RVA: 0xA066E0 Offset: 0xA066E0 VA: 0xA066E0
 	public void FGBKOJCFMKM()
     {
-		if(MCJHELIEHMC.IsOpen())
+		if(MCJHELIEHMC.IsOpen)
 			return;
 		
-		if(NOFPJPHIPBD.IsSupportPopupOpen())
+		if(NOFPJPHIPBD.IsSupportPopupOpen)
 			return;
 		
 		NOFPJPHIPBD.Buttons.CallbackClear();
 		NOFPJPHIPBD.LbButtons.CallbackClear();
-		SoundManager.sePlayerBoot.Play(8);
+		SoundManager.Instance.sePlayerBoot.Play(8);
 		NOFPJPHIPBD.ScreenTap.ClearCallback();
 		NOFPJPHIPBD.Screen.TapAnim();
 		DANMJLOBLIE.StartCoroutine(PFEKBBONCJJ_Coroutine_GameStart());
@@ -130,15 +135,15 @@ public class IOGKADECKOP
 		GameManager.Instance.fullscreenFader.Fade(0.0f, Color.black);
 		GameManager.Instance.SetupResolutionDefault();
 		
-		if(GameManager.Instance.IsSystemInitialized())
+		if(GameManager.Instance.IsSystemInitialized)
 		{
 			SoundResource.DecCacheClear();
 			ConfigManager.SetUserData();
 			GameManager.Instance.ChangePopupPriority(true);
-			GameManager.Instance.SetSystemCanvasRenderMode(1);
+			GameManager.Instance.SetSystemCanvasRenderMode(RenderMode.ScreenSpaceCamera);
 			GameManager.Instance.SetTouchEffectVisible(true);
 			DANMJLOBLIE.StartCoroutine(BLJICEOFNMM_LoadLayoutTitle());
-			DANMJLOBLIE.StartCoroutine(IMDAHCEDGFK_TitleLogo());
+			DANMJLOBLIE.StartCoroutine(IMDAHCEDGFK_Coroutine_TitleLogo());
 			if(AppEnv.IsCBT())
 			{
 				UnityEngine.Debug.LogError("TODO");
@@ -201,14 +206,14 @@ public class IOGKADECKOP
 		//0xA0A82C
 		ConfigManager.SetUserData();
 		GameManager.Instance.fullscreenFader.Fade(0, Color.black);
-		GameManager.Instance.SetResolutionDefault();
-		GameManager.Instance.SetSystemCanvasRendreMode(1);
+		GameManager.Instance.SetupResolutionDefault();
+		GameManager.Instance.SetSystemCanvasRenderMode(RenderMode.ScreenSpaceCamera);
 		GameManager.Instance.SetTouchEffectVisible(true);
 		GameManager.Instance.SetTouchEffectMode(false);
 		Vector2 screenSize;
 		if(!SystemManager.isLongScreenDevice)
 		{
-			screenSize = GameManager.Instance.BaseScreenSize;
+			screenSize = SystemManager.BaseScreenSize;
 		}
 		else
 		{
@@ -225,10 +230,10 @@ public class IOGKADECKOP
 	{
         //0xA0F2C4
 		bool BEKAMBBOLBO = false;
+		bool CNAIDEAFAAM = false;
 		AssetBundleManager.isTutorialNow = false;
 		if(!OKDMEMPECDO)
 		{
-			bool CNAIDEAFAAM = false;
 			NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN(() => {
 				//0xA08F90
 				BEKAMBBOLBO = true;
@@ -270,7 +275,7 @@ public class IOGKADECKOP
 			// 0xA08FCC
 			BEKAMBBOLBO = true;
 			CNAIDEAFAAM = true;
-		});
+		}, false);
 		while(!BEKAMBBOLBO)
 		{
 			yield return null;
@@ -293,7 +298,7 @@ public class IOGKADECKOP
 				yield return null;
 			}
 			IJCPLBPLJLJ.SetMenu();
-			IJCPLBPLJLJ.ChangeColor(2);
+			IJCPLBPLJLJ.ChangeColor(BgBehaviour.ColorType.Setting);
 			IJCPLBPLJLJ.gameObject.SetActive(false);
 			IJCPLBPLJLJ.transform.SetSiblingIndex(1);
 		}
@@ -310,7 +315,6 @@ public class IOGKADECKOP
 			bool IHDCDHLLAJN = false;
 			bool LOAFINDJGMC = false;
 			bool OPLHMBBOCCH = false;
-			Method$IOGKADECKOP.<>c__DisplayClass30_0.AAKKDFHKLMG()
 			DANMJLOBLIE.StartCoroutine(NOFPJPHIPBD.LoadLayoutTitleLogo(() => {
 				// 0xA08FE0
 				CJFHNONJGIP = true;
@@ -376,7 +380,7 @@ public class IOGKADECKOP
 		NOFPJPHIPBD.TitleLogo.SetStatus();
 		NOFPJPHIPBD.TitleLogo.Show();
 		
-		while(!NOFPJPHIPBD.TitleLogo.IsClose())
+		while(!NOFPJPHIPBD.TitleLogo.IsClose)
 		{
 			NOFPJPHIPBD.TitleLogo.Hide();
 			LKFGMDGFKDP = false;
@@ -410,32 +414,32 @@ public class IOGKADECKOP
 		PGIGNJDPCAH.NNOBACMJHDM(0);
 		PGIGNJDPCAH.FLHLJFHILPO(true);
 		PGIGNJDPCAH.OGAIOKGEMDE = false;
-		CNGFKOJANNP a = CNGFKOJANNP$$NKACBOEHELJ();
+		CNGFKOJANNP a = CNGFKOJANNP.HHCJCDFCLOB;
 		if(a != null)
 		{
 			a.EGDJHGIAFGO();
 		}
 		GameManager.Instance.fullscreenFader.Fade(1, Color.black);
-		GameManager.Instance.RemovePushBackButtonHandler(new PushBackButtonHandler());
-		KEHOJEJMGLJ.NKACBOEHELJ().OFLDICKPNFD(true, () => {
+		GameManager.Instance.RemovePushBackButtonHandler(this.GJLDMJFMIOD);
+		KEHOJEJMGLJ.HHCJCDFCLOB.OFLDICKPNFD(true, () => {
 			//0xA08CA4
 			MenuScene.Instance.GotoTitle();
 		});
-		KDLPEDBKMID.NKACBOEHELJ().OFLDICKPNFD(true, () => {
+		KDLPEDBKMID.HHCJCDFCLOB.OFLDICKPNFD(true, () => {
 			//0xA08D40
 			MenuScene.Instance.GotoTitle();
 		});
-		TipsControl.SetSituationValue(2,1);
-		yield return GameManager.Instance.WaitFadeYielder();
+		TipsControl.SetSituationValue(TipsControl.SituationId.Boot1stInformation,1);
+		yield return GameManager.Instance.WaitFadeYielder;
 		
-		CIOECGOMILE NLJKCDHIPEG = CIOECGOMILE.NKACBOEHELJ();
-		IMMAOANGPNK MPHCKPBAKMO = IMMAOANGPNK.NKACBOEHELJ();
-		NKGJPJPHLIF.NKACBOEHELJ().OIFEGPGEFEI().GOFGBIANJGF(false);
+		CIOECGOMILE NLJKCDHIPEG = CIOECGOMILE.HHCJCDFCLOB;
+		IMMAOANGPNK MPHCKPBAKMO = IMMAOANGPNK.HHCJCDFCLOB;
+		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.GOFGBIANJGF(false);
 		
-		BEKAMBBOLBO = false;
-		CNAIDEAFAAM = false;
-		OOICHDNLLJG = false;
-		NKGJPJPHLIF.NKACBOEHELJ().HGJKAEOLMJN(() => {
+		bool BEKAMBBOLBO = false;
+		bool CNAIDEAFAAM = false;
+		bool OOICHDNLLJG = false;
+		NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN(() => {
 			//0xA09290
 			BEKAMBBOLBO = true;
 		}, () => {
@@ -470,7 +474,7 @@ public class IOGKADECKOP
 		BEKAMBBOLBO = false;
 		CNAIDEAFAAM = false;
 		
-		DOKOHKJIDBO.NKACBOEHELJ().DBEPFLFHAFH(true, () => {
+		DOKOHKJIDBO.HHCJCDFCLOB.DBEPFLFHAFH(true, () => {
 			//0xA092A8
 			BEKAMBBOLBO = true;
 		}, () => {
@@ -512,7 +516,7 @@ public class IOGKADECKOP
 		}
 		BEKAMBBOLBO = false;
 		CNAIDEAFAAM = false;
-		JGEOBNENMAH.NKACBOEHELJ.EMDLPEGOEJB(() => {
+		JGEOBNENMAH.HHCJCDFCLOB.EMDLPEGOEJB(() => {
 			//0xA092D8
 			BEKAMBBOLBO = true;
 		}, () => {
@@ -535,10 +539,10 @@ public class IOGKADECKOP
 		
 		BEKAMBBOLBO = false;
 		CNAIDEAFAAM = false;
-		KEHOJEJMGLJ.NKACBOEHELJ.PAHGEEOFEPM(2, () => {
+		KEHOJEJMGLJ.HHCJCDFCLOB.PAHGEEOFEPM(KEHOJEJMGLJ.ACGGHEIMPHC.DEKNOKPEIHO, () => {
 			//0xA092F0
 			BEKAMBBOLBO = true;
-		}, 0, () => {
+		}, () => {
 			//0xA092FC
 			BEKAMBBOLBO = true;
 			CNAIDEAFAAM = true;
@@ -582,7 +586,11 @@ public class IOGKADECKOP
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B4258 Offset: 0x6B4258 VA: 0x6B4258
 	// // RVA: 0xA074C8 Offset: 0xA074C8 VA: 0xA074C8
-	// private IEnumerator HBBDEHKOFKN_DownloadTitleBannerTexture() { }
+	private IEnumerator HBBDEHKOFKN_DownloadTitleBannerTexture()
+	{
+        UnityEngine.Debug.LogError("TODO");
+		yield break;
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B42D0 Offset: 0x6B42D0 VA: 0x6B42D0
 	// // RVA: 0xA06AEC Offset: 0xA06AEC VA: 0xA06AEC
@@ -590,7 +598,11 @@ public class IOGKADECKOP
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B4348 Offset: 0x6B4348 VA: 0x6B4348
 	// // RVA: 0xA07574 Offset: 0xA07574 VA: 0xA07574
-	// private IEnumerator NNPDJBJGBFA_ReturnToTitle() { }
+	private IEnumerator NNPDJBJGBFA_ReturnToTitle()
+	{
+        UnityEngine.Debug.LogError("TODO");
+		yield break;
+	}
 
 	// // RVA: 0xA075FC Offset: 0xA075FC VA: 0xA075FC
 	// private void EECGCFAKEPF() { }
@@ -602,13 +614,22 @@ public class IOGKADECKOP
 	// private void CFGABDOEHBI() { }
 
 	// // RVA: 0xA07A3C Offset: 0xA07A3C VA: 0xA07A3C
-	// private void GJLDMJFMIOD() { }
+	private void GJLDMJFMIOD()
+	{
+        UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xA07B88 Offset: 0xA07B88 VA: 0xA07B88
-	// public void NIFKNMFALEM() { }
+	public void NIFKNMFALEM()
+	{
+        UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xA07D9C Offset: 0xA07D9C VA: 0xA07D9C
-	// public void FHBJNLFHGPB(int LNAHJANMJNM) { }
+	public void FHBJNLFHGPB(int LNAHJANMJNM)
+	{
+        UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xA07E70 Offset: 0xA07E70 VA: 0xA07E70
 	// public void HFIBEEMGOND() { }

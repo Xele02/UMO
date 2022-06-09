@@ -293,7 +293,10 @@ namespace XeApp.Game.Menu
 		// private IEnumerator GotoTitleCoroutine() { }
 
 		// // RVA: 0xB2B4A8 Offset: 0xB2B4A8 VA: 0xB2B4A8
-		// public void GotoTitle() { }
+		public void GotoTitle()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xB2B620 Offset: 0xB2B620 VA: 0xB2B620
 		// public void GotoLoginBonus() { }

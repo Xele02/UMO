@@ -45,7 +45,10 @@ namespace XeApp.Game.Common
 		// public static string GetAwbPath(string cueSheetName) { }
 
 		// // RVA: 0x1398490 Offset: 0x1398490 VA: 0x1398490
-		// public static void DecCacheClear() { }
+		public static void DecCacheClear()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x139A8E0 Offset: 0x139A8E0 VA: 0x139A8E0
 		// public static void ChooseDecFileBase() { }

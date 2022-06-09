@@ -87,7 +87,10 @@ public class PJKLMCGEJMK // TypeDefIndex: 10326
         // public bool NPCNCBJAJNO() { }
 
         // // RVA: 0x9310B8 Offset: 0x9310B8 VA: 0x9310B8
-        // public void GOFGBIANJGF(bool NANNGLGOFKH) { }
+        public void GOFGBIANJGF(bool NANNGLGOFKH)
+        {
+			UnityEngine.Debug.LogError("TODO");
+        }
 
         // // RVA: 0x925074 Offset: 0x925074 VA: 0x925074
         public IIDJLAEDMPI FIIMIGEKDCM()

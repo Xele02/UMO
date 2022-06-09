@@ -43,7 +43,10 @@ public class CNGFKOJANNP
 	// public void EGALFIJGJOH(bool NANNGLGOFKH) { }
 
 	// // RVA: 0x175B6FC Offset: 0x175B6FC VA: 0x175B6FC
-	// public void EGDJHGIAFGO() { }
+	public void EGDJHGIAFGO()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0x175B720 Offset: 0x175B720 VA: 0x175B720
 	public void IKHJJMKLAEP()
