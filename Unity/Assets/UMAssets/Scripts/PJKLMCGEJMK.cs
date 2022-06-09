@@ -6,23 +6,23 @@ using UnityEngine;
 public class PJKLMCGEJMK // TypeDefIndex: 10326
 {
         // // Fields
-        // private int NLGJBBGAOLH; // 0x8
-        // private float BLKIMNAILKK; // 0xC
+        // private int NLGJBBGAOLH = 3; // 0x8
+        // private float BLKIMNAILKK = 3.0f; // 0xC
         // private const double IACPOAJPMNO = 1;
         // private int MFNENCLNGKF; // 0x10
         // private int OANLLFOHEPJ; // 0x14
-        // private long NNODMPKKCJH; // 0x18
-        // private long JDIBBDGNFKH; // 0x20
+        // private long NNODMPKKCJH = 1; // 0x18
+        // private long JDIBBDGNFKH = 1; // 0x20
         // public static long DALFMJFKCGJ; // 0x0
         // public static bool KCEDAACIBFG; // 0x8
-        // private KPKEOIJHIMN OPFEFKOOMED; // 0x2C
-        // private OBOKMHHMOIL IEBFCJACLPN; // 0x30
+        // private KPKEOIJHIMN OPFEFKOOMED = new KPKEOIJHIMN(); // 0x2C
+        // private OBOKMHHMOIL IEBFCJACLPN = new OBOKMHHMOIL(); // 0x30
         // public bool IEFOIIAEBBJ; // 0x34
         // public bool NFECEPJEMHG; // 0x35
         // public bool LMBLIFCNKCJ; // 0x36
         // private bool NAJENHKNJLN; // 0x37
-        // private IIDJLAEDMPI HFMOEKIBNKA; // 0x38
-        // private LGNBLDHKLJK DNMDKBFINPG; // 0x3C
+        // private IIDJLAEDMPI HFMOEKIBNKA = new IIDJLAEDMPI(); // 0x38
+        // private LGNBLDHKLJK DNMDKBFINPG = new LGNBLDHKLJK(); // 0x3C
         // public bool BEBMDHKKNDA; // 0x40
         // public bool KAEMPHIPDFN; // 0x41
         // public bool BLFILNOBHMM; // 0x42
@@ -34,8 +34,8 @@ public class PJKLMCGEJMK // TypeDefIndex: 10326
         // public IHABJNEGMEA EGAOFAHEPME; // 0x58
         // public DLMJDDACNLA OMAGHCDMBBI; // 0x5C
         // public OEEHODIFBIG DMPHNPAFHEG; // 0x60
-        // public bool OLBAIKLLIFE; // 0x64
-        private List<CACGCMBKHDI_Request> FCICFIAOLAM_RequestList; // 0x68
+        public bool OLBAIKLLIFE; // 0x64
+        private List<CACGCMBKHDI_Request> FCICFIAOLAM_RequestList = new List<CACGCMBKHDI_Request>(); // 0x68
         // private bool DMGPJMPINFJ; // 0x6C
         // [CompilerGeneratedAttribute] // RVA: 0x669224 Offset: 0x669224 VA: 0x669224
         // private PJKLMCGEJMK.AHADNLCOPOL <CLCJNFNMNBH>k__BackingField; // 0x70
@@ -207,17 +207,4 @@ public class PJKLMCGEJMK // TypeDefIndex: 10326
         // // RVA: 0x932FF4 Offset: 0x932FF4 VA: 0x932FF4
         // private IEnumerator GGOECCJJPFN(CACGCMBKHDI ADKIDBJCAJA) { }
 
-        // RVA: 0x9330A0 Offset: 0x9330A0 VA: 0x9330A0
-        public PJKLMCGEJMK()
-        {
-            // NLGJBBGAOL=3
-            // BLKIMNAILKK = 3.0
-            // NNODMPKKCJH = 1
-            // JDIBBDGNFKH = 1
-            // OPFEFKOOMED
-            // IEBFCJACLPN
-            // HFMOEKIBNKA
-            // DNMDKBFINPG
-            FCICFIAOLAM_RequestList = new List<CACGCMBKHDI_Request>();
-        }
 }
