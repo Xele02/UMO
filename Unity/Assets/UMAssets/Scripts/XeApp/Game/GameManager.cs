@@ -190,7 +190,10 @@ namespace XeApp.Game
 		// public void DeleteIntro() { }
 
 		// // RVA: 0x9888B0 Offset: 0x9888B0 VA: 0x9888B0
-		// public void AddPushBackButtonHandler(GameManager.PushBackButtonHandler handler) { }
+		public void AddPushBackButtonHandler(GameManager.PushBackButtonHandler handler)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x99A334 Offset: 0x99A334 VA: 0x99A334
 		// public void AddLastBackButtonHandler(GameManager.PushBackButtonHandler handler) { }

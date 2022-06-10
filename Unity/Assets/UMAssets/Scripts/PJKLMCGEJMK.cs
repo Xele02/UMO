@@ -100,7 +100,11 @@ public class PJKLMCGEJMK // TypeDefIndex: 10326
 		}
 
         // // RVA: 0x9310C0 Offset: 0x9310C0 VA: 0x9310C0
-        // public LGNBLDHKLJK LEFKJNJCAPO() { }
+        public LGNBLDHKLJK LEFKJNJCAPO()
+		{
+			UnityEngine.Debug.LogError("TODO");
+            return null;
+		}
 
         // [CompilerGeneratedAttribute] // RVA: 0x6C3558 Offset: 0x6C3558 VA: 0x6C3558
         // // RVA: 0x9310C8 Offset: 0x9310C8 VA: 0x9310C8

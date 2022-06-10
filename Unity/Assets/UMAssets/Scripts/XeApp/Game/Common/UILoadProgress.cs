@@ -6,13 +6,19 @@ namespace XeApp.Game.Common
 {
 	public class UILoadProgress : LayoutUGUIScriptBase
 	{
+		public enum Type
+		{
+			Normal = 0,
+			Event = 1,
+		}
+
 		private AbsoluteLayout m_layoutType; // 0x14
 		private AbsoluteLayout[] m_layoutBar; // 0x18
 		private const float DELAY_VALUE = 0.7f;
 		private float m_ratio; // 0x1C
 		[SerializeField] // RVA: 0x687930 Offset: 0x687930 VA: 0x687930
 		private int m_per; // 0x20
-		// private UILoadProgress.Type m_type; // 0x24
+		private UILoadProgress.Type m_type; // 0x24
 		private Action m_updater; // 0x28
 		private Transform m_parent; // 0x2C
 		private WaitForEndOfFrame m_frameYilder; // 0x30
@@ -34,16 +40,28 @@ namespace XeApp.Game.Common
 		// private void UpdateIdle() { }
 
 		// // RVA: 0x1CDDFA4 Offset: 0x1CDDFA4 VA: 0x1CDDFA4
-		// public void Begin(Transform parent) { }
+		public void Begin(Transform parent)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1CDE13C Offset: 0x1CDE13C VA: 0x1CDE13C
-		// public void End() { }
+		public void End()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1CDE1B8 Offset: 0x1CDE1B8 VA: 0x1CDE1B8
-		// public void SetType(UILoadProgress.Type type) { }
+		public void SetType(UILoadProgress.Type type)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1CDE270 Offset: 0x1CDE270 VA: 0x1CDE270
-		// public void SetPer(int per) { }
+		public void SetPer(int per)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1CDDEE0 Offset: 0x1CDDEE0 VA: 0x1CDDEE0
 		// private void ChangeProgress(int per) { }

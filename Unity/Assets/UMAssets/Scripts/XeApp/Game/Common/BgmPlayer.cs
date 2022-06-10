@@ -68,7 +68,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE615C0 Offset: 0xE615C0 VA: 0xE615C0
-		// public void Play(int bgmId, float volume = 1) { }
+		public void Play(int bgmId, float volume = 1)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xE61848 Offset: 0xE61848 VA: 0xE61848
 		// public void ContinuousPlay(int bgmId, float volume = 1) { }

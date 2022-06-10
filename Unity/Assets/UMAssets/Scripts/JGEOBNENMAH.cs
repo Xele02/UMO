@@ -2,6 +2,79 @@ using System.Collections.Generic;
 
 public class JGEOBNENMAH
 {
+	public class PDNNOFFFDAG
+	{
+		public int GHBPLHBNMBK; // 0x8
+		public int KLCIIHKFPPO; // 0xC
+		public int AKNELONELJK; // 0x10
+		public int MNNHHJBBICA; // 0x14
+		public int MFJKNCACBDG; // 0x18
+		public int OEILJHENAHN; // 0x1C
+		public int JPJMALBLKDI; // 0x20
+		public bool LFGNLKKFOCD; // 0x24
+		public bool OBOPMHBPCFE; // 0x25
+		public long FMBLKADNICN; // 0x28
+		public int IEMFPDGIAHG; // 0x30
+		// public JGEOBNENMAH.NEDILFPPCJF ENMGODCHGAC; // 0x34
+		public bool PMCGHPOGLGM; // 0x38
+		public int KAIPAEILJHO; // 0x3C
+		public bool CEPCBJHNMJA; // 0x40
+
+		// // RVA: 0xB162E8 Offset: 0xB162E8 VA: 0xB162E8
+		// public void .ctor() { }
+	}
+
+	public class HAJIFNABIFF : PDNNOFFFDAG
+	{
+		// Fields
+		public const int ICHDNOBHIKG = 268435456;
+		public const int HFGMKEIHLJL = 536870912;
+		public const int PNBIOIMJDCG = 1073741824;
+		public long NFFDIGEJHGL; // 0x48
+		public int KNIFCANOHOC; // 0x50
+		public int EACPIDGGPPO; // 0x54
+		public int NLKEBAOBJCM; // 0x58
+		public int MJBODMOLOBC; // 0x5C
+		public int LCOHGOIDMDF; // 0x60
+		public List<int> DGMPBPMDBEC; // 0x64
+		public List<int> HNHCIGMKPDC; // 0x68
+		public List<int> OJFNDOIFOOE; // 0x6C
+		public int FEGLNPOFDJC; // 0x70
+		public int OOPEJLMNIAH; // 0x74
+		public int FDNEPIEMMFN; // 0x78
+		public int HJIECNDECNO; // 0x7C
+		public List<int> JBCKLEMCEBD; // 0x80
+		public int JEKDIEFPEON; // 0x84
+		public bool OOOGNIPJMDE; // 0x88
+		public bool HGEKDNNJAAC; // 0x89
+		public bool KNCBNGCDMII; // 0x8A
+		public int BCGBODDEFKP; // 0x8C
+		public int JNNDFGPMEDA; // 0x90
+		public int JKPPKAHPPKH; // 0x94
+		public int EHCFOHAABDA; // 0x98
+		public int OJDDNGGBJOG; // 0x9C
+		public int BIIGPMLBOOD; // 0xA0
+		public int DEAHHPAPDNC; // 0xA4
+		public int GLGLFDAPNIF; // 0xA8
+		public int IHDIJODHCGD; // 0xAC
+		public int IPEKDLNEOFI; // 0xB0
+		public int HBKBKHACHHI; // 0xB4
+		public int GMECIBOJCFF; // 0xB8
+		public int MIMLMJGGNJH; // 0xBC
+		public int BFHPKJEKJNN; // 0xC0
+		public int DDBEJNGJIPF; // 0xC4
+		// public List<RhythmGamePlayLog.SkillData> CPNOKMINILL; // 0xC8
+		public string FJCIPNCOBNA; // 0xCC
+		// public FENCAJJBLBH NMNHBJIAPGG; // 0xD0
+		public bool OPEBKHLLMPH; // 0xD4
+
+		// // RVA: 0xB16360 Offset: 0xB16360 VA: 0xB16360
+		// public int HCFGMNPMIHL() { }
+
+		// // RVA: 0xB13094 Offset: 0xB13094 VA: 0xB13094
+		// public void .ctor() { }
+	}
+
 	// Fields
 	// [CompilerGeneratedAttribute] // RVA: 0x666574 Offset: 0x666574 VA: 0x666574
 	// private static JGEOBNENMAH <LGMPACEDIJF>k__BackingField; // 0x0

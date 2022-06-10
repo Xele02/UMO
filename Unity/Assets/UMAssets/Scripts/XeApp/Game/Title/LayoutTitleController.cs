@@ -157,10 +157,16 @@ namespace XeApp.Game.Title
 		}
 
 		// // RVA: 0xE36478 Offset: 0xE36478 VA: 0xE36478
-		// public void Show() { }
+		public void Show()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xE367F4 Offset: 0xE367F4 VA: 0xE367F4
-		// public void ShowArButton() { }
+		public void ShowArButton()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xE368A4 Offset: 0xE368A4 VA: 0xE368A4
 		public void SetVisible(bool isVisible)

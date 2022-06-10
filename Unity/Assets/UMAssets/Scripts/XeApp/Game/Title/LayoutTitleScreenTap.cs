@@ -23,7 +23,10 @@ namespace XeApp.Game.Title
 		// public void set_ButtonCallbackTap(Action value) { }
 
 		// // RVA: 0xE3AE0C Offset: 0xE3AE0C VA: 0xE3AE0C
-		// public void SetCallback() { }
+		public void SetCallback()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xE3AF1C Offset: 0xE3AF1C VA: 0xE3AF1C
 		public void ClearCallback()

@@ -234,7 +234,7 @@ public class BBHNACPENDM
 	private static int[] MABKCDEOOMC; // 0x18
 
 	// Properties
-	// public JBMPOAAMGNB JHFIPCIHJNL { get; set; }
+	public JBMPOAAMGNB JHFIPCIHJNL { get; set; }
 	// public EGOLBAPFHHD KCCLEHLLOFG { get; set; }
 	// public JNMFKOHFAFB MHEAEGMIKIE { get; set; }
 	// public DEKKMGAFJCG DGCJCAHIAPP { get; set; }
@@ -268,7 +268,7 @@ public class BBHNACPENDM
 	// public GGHPEFNADEN CNCBDLFALLD { get; set; }
 	// public KDLBHAKPLPH LCLPLFCBDBB { get; set; }
 	// public FMFBNHLMHPL ILINBDKMAPM { get; set; }
-	// public OCMJNBIFJNM DAEJHMCMFJD { get; set; }
+	public OCMJNBIFJNM DAEJHMCMFJD { get; set; }
 	// public LGIDLHLBFFJ HMMNDKHKEBC { get; set; }
 	// public LGIOGDIPNGI DPNKPPBEAGJ { get; set; }
 	// public LIFGJMIHHKM AFHFIPLOKMN { get; set; }
@@ -813,7 +813,10 @@ public class BBHNACPENDM
 	// private void HCOOGOCNNML() { }
 
 	// // RVA: 0xF257B4 Offset: 0xF257B4 VA: 0xF257B4
-	// public void JAIGHAGMLCJ() { }
+	public void JAIGHAGMLCJ()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xF23C3C Offset: 0xF23C3C VA: 0xF23C3C
 	// private void CEFEHMFEDBK(int IMJIADPJJMM, int AHHJLDLAPAN, int JPIDIENBGKH, int EKFONBFDAAP, int AFBMEMCHJCL, int JBLIIHOAIJB, int HAPFNHPFBGD, long BEBJKJKBOGH) { }

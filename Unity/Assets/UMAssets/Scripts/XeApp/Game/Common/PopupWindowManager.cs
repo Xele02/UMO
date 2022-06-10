@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 namespace XeApp.Game.Common
 {
@@ -131,7 +132,10 @@ namespace XeApp.Game.Common
 		// private static IEnumerator CacheClearPopupShow(Action callback) { }
 
 		// // RVA: 0x1BC5C10 Offset: 0x1BC5C10 VA: 0x1BC5C10
-		// public static void ApplicationQuitPopupShow(Action cancelAction) { }
+		public static void ApplicationQuitPopupShow(Action cancelAction)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1BC5E74 Offset: 0x1BC5E74 VA: 0x1BC5E74
 		// public static void ReviewStarPopupShow(MonoBehaviour mb, Action closeWaitCallback, int divaId = 1, int voiceId = 0) { }

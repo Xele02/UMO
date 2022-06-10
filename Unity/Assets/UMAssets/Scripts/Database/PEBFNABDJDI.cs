@@ -67,7 +67,11 @@ public class PEBFNABDJDI : DIHHCBACKGG // TypeDefIndex: 10057
 	// public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }
 
 	// // RVA: 0xCC453C Offset: 0xCC453C VA: 0xCC453C
-	// public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }
+	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return 0;
+	}
 
 	// // RVA: 0xCC4620 Offset: 0xCC4620 VA: 0xCC4620
 	// public int HEDDDBDAMGO(string LJNAKDMILMC, string KKMJBMKHGNH) { }

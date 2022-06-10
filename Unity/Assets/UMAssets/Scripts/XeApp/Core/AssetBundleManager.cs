@@ -2,6 +2,7 @@ using XeSys;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System;
 
 namespace XeApp.Core
 {
@@ -99,7 +100,11 @@ namespace XeApp.Core
 		}
 
 		// // RVA: 0xE12AA8 Offset: 0xE12AA8 VA: 0xE12AA8
-		// public static AssetBundleLoadAssetOperation LoadAssetAsync(string assetBundleName, string assetName, Type type) { }
+		public static AssetBundleLoadAssetOperation LoadAssetAsync(string assetBundleName, string assetName, Type type)
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return null;
+		}
 
 		// // RVA: 0xE12BA8 Offset: 0xE12BA8 VA: 0xE12BA8
 		// public static UnionAssetBundleLoadOperation LoadUnionAssetBundle(string assetBundleName) { }

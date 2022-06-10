@@ -48,7 +48,10 @@ namespace XeSys.uGUI
 		// private void UpdateFade() { }
 
 		// // RVA: 0x274B1D0 Offset: 0x274B1D0 VA: 0x274B1D0
-		// public void Fade(float time, float targetAlpha) { }
+		public void Fade(float time, float targetAlpha)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x274B210 Offset: 0x274B210 VA: 0x274B210
 		public void Fade(float time, Color end)
