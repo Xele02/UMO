@@ -93,7 +93,7 @@ public class NKGJPJPHLIF
                 // HHAKOEMAOID.IJBGPAENLJA();
 
                 IBLPICFDGOF = new PJKLMCGEJMK(); // 133
-                IBLPICFDGOF.IJBGPAENLJA(DANMJLOBLIE);
+                IBLPICFDGOF.IJBGPAENLJA_Start(DANMJLOBLIE);
 
                 // HKDHHMHHJOJ = new OPKDHAODJOA();
                 // HKDHHMHHJOJ.IJBGPAENLJA(DANMJLOBLIE);
@@ -194,7 +194,7 @@ public class NKGJPJPHLIF
         {
             DsfdLoader.Update();
         //     BJAONAJFHFA.BAGMHFKPFIF();
-            IBLPICFDGOF.BAGMHFKPFIF();
+            IBLPICFDGOF.BAGMHFKPFIF_Update();
             //HKDHHMHHJOJ.BAGMHFKPFIF();
             //NLGFEPAJBOJ.BAGMHFKPFIF();
             EJDOEBLBGIO.BAGMHFKPFIF();
