@@ -5,7 +5,7 @@ namespace XeApp.Core
         // // RVA: 0x1D74BD0 Offset: 0x1D74BD0 VA: 0x1D74BD0
         public static void A()
         {
-            UnityEngine.Debug.LogError("TODO");
+            AppQualitySetting.Modify();
         }
 
         // // RVA: 0x1D74C4C Offset: 0x1D74C4C VA: 0x1D74C4C

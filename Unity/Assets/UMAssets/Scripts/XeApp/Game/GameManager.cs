@@ -12,6 +12,7 @@ using System.Text;
 using XeApp.Game.UI;
 using Mana.Service.Ad;
 using System.IO;
+using CriWare;
 
 namespace XeApp.Game
 {

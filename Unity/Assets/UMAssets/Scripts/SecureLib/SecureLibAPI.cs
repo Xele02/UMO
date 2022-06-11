@@ -54,7 +54,10 @@ namespace SecureLib
         }
 
         // // RVA: 0x2E71FF0 Offset: 0x2E71FF0 VA: 0x2E71FF0
-        // public static void denyDebuggerAttach() { }
+        public static void denyDebuggerAttach()
+        {
+            return;
+        }
 
         // // RVA: 0x2E71FF4 Offset: 0x2E71FF4 VA: 0x2E71FF4
         public static bool isEmulator()

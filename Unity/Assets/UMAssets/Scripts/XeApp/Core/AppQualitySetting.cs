@@ -1,21 +1,49 @@
+using UnityEngine;
+
 namespace XeApp.Core
 {
 	public class AppQualitySetting
 	{
+		public enum DeviceSpec
+		{
+			Low = 0,
+			Middle = 1,
+			High = 2,
+			Default = 3,
+		}
+
 		private const int ANDROID_LOWSPEC_MEMSIZE = 1400;
 		private static string[] recommendedAndroidDevice_High; // 0x0
 		private static string[] recommendedAndroidDevice_Middle; // 0x4
-		// public static AppQualitySetting.DeviceSpec spec; // 0x8
+		public static AppQualitySetting.DeviceSpec spec; // 0x8
 
 		// // RVA: 0xE0D960 Offset: 0xE0D960 VA: 0xE0D960
-		// public static void Modify() { }
+		public static void Modify()
+		{
+			spec = GetDeviceSpec();
+			int qualLevel = 1;
+			if(spec != AppQualitySetting.DeviceSpec.High)
+			{
+				qualLevel = 0;
+				if(spec != AppQualitySetting.DeviceSpec.Middle)
+				{
+					if(spec != AppQualitySetting.DeviceSpec.Low)
+						spec = AppQualitySetting.DeviceSpec.Low;
+				}
+			}
+			QualitySettings.SetQualityLevel(qualLevel);
+		}
 
 		// [ConditionalAttribute] // RVA: 0x747BAC Offset: 0x747BAC VA: 0x747BAC
 		// // RVA: 0xE0DD40 Offset: 0xE0DD40 VA: 0xE0DD40
 		// private static void RepostQulityLevel(int index) { }
 
 		// // RVA: 0xE0DAC8 Offset: 0xE0DAC8 VA: 0xE0DAC8
-		// public static AppQualitySetting.DeviceSpec GetDeviceSpec() { }
+		public static AppQualitySetting.DeviceSpec GetDeviceSpec()
+		{
+			UnityEngine.Debug.LogWarning("TODO GetDeviceSpec");
+			return AppQualitySetting.DeviceSpec.High;
+		}
 
 		// // RVA: 0xE0E27C Offset: 0xE0E27C VA: 0xE0E27C
 		// private static int GetModelNumber(string name, string filter) { }

@@ -16,17 +16,33 @@ namespace CriWare
         private static GameObject _managerObject; // 0x0
 
         // Properties
-        public static string streamingAssetsPath { get; }
-        public static string installTargetPath { get; }
-        public static GameObject managerObject { get; }
+        public static string streamingAssetsPath { get {
+            if(Application.platform == RuntimePlatform.Android)
+            {
+                return "";
+            }
+            return Application.streamingAssetsPath;
+        } } // 0x2BA8AE0
+        public static string installTargetPath { get {
+            if(Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                return Application.temporaryCachePath;
+            }
+            return Application.persistentDataPath;
+        } } // 0x2BA8B54
+        public static GameObject managerObject { get {
+            if(_managerObject = null)
+            {
+                _managerObject = GameObject.Find("/CRIWARE");
+                if(_managerObject == null)
+                {
+                    _managerObject = new GameObject("CRIWARE");
+                }
+            }
+            return _managerObject;
+        } } // 0x2BA8C3C
 
         // Methods
-
-        // // RVA: 0x2BA8AE0 Offset: 0x2BA8AE0 VA: 0x2BA8AE0
-        // public static string get_streamingAssetsPath() { }
-
-        // // RVA: 0x2BA8B54 Offset: 0x2BA8B54 VA: 0x2BA8B54
-        // public static string get_installTargetPath() { }
 
         // // RVA: 0x2BA8B84 Offset: 0x2BA8B84 VA: 0x2BA8B84
         public static bool IsStreamingAssetsPath(string path)
@@ -37,9 +53,6 @@ namespace CriWare
             }
             return false;
         }
-
-        // // RVA: 0x2BA8C3C Offset: 0x2BA8C3C VA: 0x2BA8C3C
-        // public static GameObject get_managerObject() { }
 
         // // RVA: 0x2BA8E84 Offset: 0x2BA8E84 VA: 0x2BA8E84
         // public static string GetScriptVersionString() { }
@@ -73,11 +86,5 @@ namespace CriWare
 
         // // RVA: 0x2BA9338 Offset: 0x2BA9338 VA: 0x2BA9338
         // public static extern void criWareUnity_SetRenderingEventOffsetForMana(int offset) { }
-
-        // // RVA: 0x2BA9424 Offset: 0x2BA9424 VA: 0x2BA9424
-        // public void .ctor() { }
-
-        // // RVA: 0x2BA942C Offset: 0x2BA942C VA: 0x2BA942C
-        // private static void .cctor() { }
     }
 }
