@@ -254,7 +254,11 @@ public abstract class CACGCMBKHDI_Request // TypeDefIndex: 10353
         // public virtual bool NPLNAJFJPEE() { }
 
         // // RVA: 0x18F2584 Offset: 0x18F2584 VA: 0x18F2584
-        // public bool JFOKBBLFMLD() { }
+        public bool JFOKBBLFMLD()
+        {
+            UnityEngine.Debug.LogError("TODO");
+            return false;
+        }
 
         // // RVA: 0x18F258C Offset: 0x18F258C VA: 0x18F258C
         public void EDBGNGILAKA(bool NANNGLGOFKH) 
