@@ -10,6 +10,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using XeApp.Game.UI;
+using Mana.Service.Ad;
+using System.IO;
 
 namespace XeApp.Game
 {
@@ -22,8 +24,8 @@ namespace XeApp.Game
 			public override bool keepWaiting { get { return GameManager.Instance.fullscreenFader.isFading; } } // get_keepWaiting 0x1429B28 
 		}
 
-		private static GameManager mInstance; // 0x0
-		private static GameObject mMyObject; // 0x4
+		private static GameManager mInstance = null; // 0x0
+		private static GameObject mMyObject = null; // 0x4
 		[SerializeField]
 		private FontManager fontManagerPrefab; // 0xC
 		//[SpaceAttribute] // RVA: 0x6623E4 Offset: 0x6623E4 VA: 0x6623E4
@@ -111,7 +113,7 @@ namespace XeApp.Game
 		private KiraDivaTextureCache m_kiraDivaTextureCache; // 0x130
 		private HomeBgIconBgTextureCache m_homeBgIconTextureCache; // 0x134
 		// [CompilerGeneratedAttribute] // RVA: 0x66266C Offset: 0x66266C VA: 0x66266C
-		// private UnityAction<float> UpdateAction; // 0x140
+		private UnityAction<float> UpdateAction; // 0x140
 		// [CompilerGeneratedAttribute] // RVA: 0x6AD9A0 Offset: 0x6AD9A0 VA: 0x6AD9A0
 		// // RVA: 0x99A05C Offset: 0x99A05C VA: 0x99A05C
 		// public void add_UpdateAction(UnityAction<float> value) { }
@@ -123,8 +125,8 @@ namespace XeApp.Game
 		private SnsNotification m_snsNotification; // 0x148
 		private GameUIIntro m_intro; // 0x14C
 		private List<PushBackButtonHandler> m_pushBackButtonHandlerList = new List<PushBackButtonHandler>(); // 0x150
-		private static float[] bx; // 0x8
-		private static float[] by; // 0xC
+		private static float[] bx = new float[4] { 1024, 960, 800, 720}; // 0x8
+		private static float[] by = new float[4] { 768, 720, 600, 540}; // 0xC
 		private int screenSizeType; // 0x154
 		private const float DEFAULT_FADE_TIME = 0.4f;
 		private const int multipleOverridePrimeId = 2;
@@ -251,7 +253,6 @@ namespace XeApp.Game
 		// // RVA: 0x99AC08 Offset: 0x99AC08 VA: 0x99AC08
 		private IEnumerator Co_InitScreen()
 		{
-			UnityEngine.Debug.LogWarning("TODO finish GameManager.Co_InitScreen");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public GameManager <>4__this; // 0x10
@@ -260,52 +261,48 @@ namespace XeApp.Game
 			// private bool <needUpdateScreen>5__4; // 0x1C
 			// private bool <loop>5__5; // 0x1D
 			// 0x1424340
-			//int w = UnityEngine.Screen.width;
-			//int h = UnityEngine.Screen.height;
-			//needUpdateScreen = false;
-			//if(w < h)
-			//{
-			//	needUpdateScreen = true;
-			//	w = UnityEngine.Screen.height;
-			//	h = UnityEngine.Screen.width;
-			//}
-			//loop = true;
-			//while(true)
-			//{
-				//int orientation = UnityEngine.Screen.orientation;
-				//if(orientation == 1)
-				//{
-				//	UnityEngine.Screen.orientation = 3;
-				//	UnityEngine.Screen.autorotateToLandscapeLeft = true;
-				//	UnityEngine.Screen.autorotateToLandscapeRight = true;
-				//	UnityEngine.Screen.autorotateToPortrait = false;
-				//	UnityEngine.Screen.autorotateToPortraitUpsideDown = false;
-				//	needUpdateScreen = true;
-				//	yield return null;
-				//	if(!loop)
-				//		break;
-				//}
-				//orientation = UnityEngine.Screen.orientation;
-				//if(orientation == 4)
-				//{
-				//	if(!needUpdateScreen)
-				//	{
-				//		UnityEngine.Screen.SetResolution(w, h);
-				//	}
-				//}
-				//else
-				//{
-				//	if(!needUpdateScreen)
-				//	{
-				//		UnityEngine.Screen.SetResolution(w, h);
-				//	}
-				//	UnityEngine.Screen.orientation = 3;
-				//	loop = false;
-				//}
-			//}
+
+			UnityEngine.Debug.LogWarning("TODO finish GameManager.Co_InitScreen");
+
+			int w = UnityEngine.Screen.width;
+			int h = UnityEngine.Screen.height;
+			bool needUpdateScreen = false;
+			if(w < h)
+			{
+				needUpdateScreen = true;
+				w = UnityEngine.Screen.height;
+				h = UnityEngine.Screen.width;
+			}
+			
+			while(UnityEngine.Screen.orientation == ScreenOrientation.Portrait)
+			{
+				UnityEngine.Screen.orientation = ScreenOrientation.LandscapeLeft;
+				UnityEngine.Screen.autorotateToLandscapeLeft = true;
+				UnityEngine.Screen.autorotateToLandscapeRight = true;
+				UnityEngine.Screen.autorotateToPortrait = false;
+				UnityEngine.Screen.autorotateToPortraitUpsideDown = false;
+				needUpdateScreen = true;
+				yield return null;
+			}
+
+			if(UnityEngine.Screen.orientation == ScreenOrientation.LandscapeRight)
+			{
+				if(needUpdateScreen)
+				{
+					UnityEngine.Screen.SetResolution(w, h, true);
+				}
+			}
+			else
+			{
+				if(needUpdateScreen)
+				{
+					UnityEngine.Screen.SetResolution(w, h, true);
+				}
+				UnityEngine.Screen.orientation = ScreenOrientation.LandscapeLeft;
+			}
 			yield return null;
 			Initialize_ScreenAndSystemLayout();
-			//UnityEngine.Font.textureRebuilt += ?
+			UnityEngine.Font.textureRebuilt += this.OnFontTextureRebuilt;
 			yield return null;
 			ReInitScreen();
 			yield return null;
@@ -359,15 +356,21 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x99B0D4 Offset: 0x99B0D4 VA: 0x99B0D4
-		// private void OnFontTextureRebuilt(Font font) { }
+		private void OnFontTextureRebuilt(Font font)
+		{
+			UnityEngine.Debug.LogWarning("TODO GameManager.OnFontTextureRebuilt");
+		}
 
 		// // RVA: 0x99B194 Offset: 0x99B194 VA: 0x99B194
 		private void LateUpdate()
 		{
 			if(isDirtyFontUpdate)
 				isDirtyFontUpdate = false;
-			// isDirtyFontUpdate / UpdateAction / m_sceneIconAnimeTime
-			// !!!
+			if(UpdateAction != null)
+			{
+				m_sceneIconAnimeTime = m_sceneIconAnimeTime + TimeWrapper.deltaTime;
+				UpdateAction(TimeWrapper.deltaTime);
+			}
 		}
 
 		// // RVA: 0x99B250 Offset: 0x99B250 VA: 0x99B250
@@ -376,19 +379,18 @@ namespace XeApp.Game
 		// // RVA: 0x99A938 Offset: 0x99A938 VA: 0x99A938
 		private void Initialize()
 		{
-			UnityEngine.Debug.LogWarning("TODO finish GameManager.Initialize");
-			// Unitylogger.setlogenabled
+			//Debug.unityLogger.setlogenabled(false);
 			GameObject go = new GameObject("AppBootTimeManager");
-			// appBootTime = go.AddComponent<AppBootTimeManager>();
+			appBootTime = go.AddComponent<AppBootTimeManager>();
 			go.transform.SetParent(transform, false);
-			//UnityEngine.Screen.set_sleepTimeout = -2;
-			//criAtom = GetComponentInChildren<CriAtom>();
-			//??XeSys.SingletonMonoBehaviour<ResourcesManager>$$get_Instance
-			//XeApp.Core.Q.A();
-			//P.A();
+			UnityEngine.Screen.sleepTimeout = -2;
+			criAtom = GetComponentInChildren<CriAtom>();
+			//ManaAdAPIHelper.Instance;
+			XeApp.Core.Q.A();
+			P.A();
 			SetupAssetBundleBasePath();
-			//XeSys.Singleton<MessageManager>$$Create()
-			//gameObject.AddComponent<FCMTokenReceiver>();
+			MessageManager.Create();
+			gameObject.AddComponent<FCMTokenReceiver>();
 		}
 
 		// // RVA: 0x99B46C Offset: 0x99B46C VA: 0x99B46C
@@ -416,8 +418,7 @@ namespace XeApp.Game
 		private void OnBootInitialize()
 		{
 			SoundManager.Instance.Initialize();
-			//NKGJPJPHLIF a = NKGJPJPHLIF.NKACBOEHELJ();
-			//a.ODLGKIJCHGH(null);
+			NKGJPJPHLIF.HHCJCDFCLOB.ODLGKIJCHGH(null);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADB28 Offset: 0x6ADB28 VA: 0x6ADB28
@@ -429,36 +430,23 @@ namespace XeApp.Game
 			//private object <>2__current; // 0xC
 			//public GameManager <>4__this; // 0x10
 			//0x142484C
+
 			yield return null;
 			
-			//b = XeSys.SingletonBehaviour<TutorialManager>
-			//GameSetupData a = b.??
-			// a.OnAppBoot();
-			///XeSys.Singleton<MessageManager>$$Create();
-			//XeSys.Singleton<MessageManager>.Request(0, 0)
-			// yield return XeSys.Singleton<MessageManager>.WaitForDone(this);
+			Database.Instance.gameSetup.OnAppBoot();
+			MessageLoader.Create();
+			MessageLoader.Instance.Request(MessageLoader.eSheet.common, 0);
+			yield return MessageLoader.Instance.WaitForDone(this);
 			
-			//XeSys.Singleton<MessageManager>.Request(2, 0)
-			// yield return XeSys.Singleton<MessageManager>.WaitForDone(this);
+			MessageLoader.Instance.Request(MessageLoader.eSheet.menu, 0);
+			yield return MessageLoader.Instance.WaitForDone(this);
 			
-			//NKGJPJPHLIF c = NKGJPJPHLIF$$NKACBOEHELJ();
-			//if(!c.FNMKBDKDJMO())
-			//	yield break;
-			//KDLPEDBKMID d = KDLPEDBKMID$$NKACBOEHELJ();
-			// //delegate int INDDJNMPONH, float LNAHJANMJNM, AsyncCallback KBCBGIGOLHP, object LFJDOALODOI
-			//OMIFMMJPMDJ e = new OMIFMMJPMDJ(this, InstallEvent);
-			//if(d != null)
-			//{
-			//	d.NPJJMDFAIII(e);
-			//	NDABOOOOENC f = NDABOOOOENC$$NKACBOEHELJ();
-			//	if(f != null)
-			//	{
-			//		f.NCDLCIPGPNC();
-					IsSystemInitialized = true;
-			//	}
-			//}
-			
-			// !!!
+			while(!NKGJPJPHLIF.HHCJCDFCLOB.CGMMHFHHLID)
+				yield return null;
+
+			KDLPEDBKMID.HHCJCDFCLOB.OEPPEGHGNNO = this.InstallEvent;
+			NDABOOOOENC.HHCJCDFCLOB.NCDLCIPGPNC();
+			IsSystemInitialized = true;
 		}
 
 		// // RVA: 0x99DD84 Offset: 0x99DD84 VA: 0x99DD84
@@ -471,20 +459,45 @@ namespace XeApp.Game
 		// // RVA: 0x99CDA8 Offset: 0x99CDA8 VA: 0x99CDA8
 		private void AppSpecial()
 		{
-			// screenSizeType = XeApp.Core.Q.B();
-			// UnityEngine.Debug.Log("SetupResolution:screenSizeType="+screenSizeType);
-			// Stuff with rez
-			// XeApp.Game.GameManager.SetupResolution();
-			// UnityEngine.Screen.set_autorotateToLandscapeLeft(true);
-			// UnityEngine.Screen.set_autorotateToLandscapeRight(true);
-			// UnityEngine.Screen.set_autorotateToPortrait(false);
-			// UnityEngine.Screen.set_autorotateToPortraitUpsideDown(false);
-			// UnityEngine.Screen.set_orientation(5);
+			screenSizeType = XeApp.Core.Q.B();
+			UnityEngine.Debug.Log("SetupResolution:screenSizeType="+screenSizeType);
+			float w = 0;
+			float h = 0;
+			if(screenSizeType == 0)
+			{
+				if(!SystemManager.isLongScreenDevice)
+				{
+					UnityEngine.Debug.Log("SetupResolution:AppEnv");
+					w = 1184; // 0x44940000
+					h = 792;// 0x44460000
+				}
+				else
+				{
+					UnityEngine.Debug.Log("SetupResolution:AppEnv");
+					w = 1184; // 0x44940000
+					h = 664;// 0x44260000
+				}
+			}
+			else
+			{
+				UnityEngine.Debug.Log("SetupResolution:XGA");
+				w = bx[screenSizeType - 1];
+				h = by[screenSizeType - 1];
+			}
+			SetupResolution(w, h);
+			UnityEngine.Screen.autorotateToLandscapeLeft = true;
+			UnityEngine.Screen.autorotateToLandscapeRight = true;
+			UnityEngine.Screen.autorotateToPortrait = false;
+			UnityEngine.Screen.autorotateToPortraitUpsideDown = false;
+			UnityEngine.Screen.orientation = ScreenOrientation.AutoRotation;
 			UnityEngine.QualitySettings.vSyncCount = 0;
 			UnityEngine.Application.targetFrameRate = 60;
-			// GHNFIINGIGM.HKICMNAACDA()
-			localSave = new ILDKBCLAFPB(AFEHLCGHAEE.IEGHKKJJMHI, AFEHLCGHAEE.HBMPOOCGNEN);
-			localSave.PCODDPDFLHK();
+			GHNFIINGIGM.HKICMNAACDA();
+			if(localSave == null)
+			{
+				localSave = new ILDKBCLAFPB(AFEHLCGHAEE.IEGHKKJJMHI, AFEHLCGHAEE.HBMPOOCGNEN);
+				localSave.PCODDPDFLHK();
+			}
 			if(!divaResource)
 			{
 				GameObject d = new GameObject("DivaResource", typeof(DivaResource));
@@ -502,8 +515,8 @@ namespace XeApp.Game
 			}
 			if(iconDecorationCache == null)
 			{
-				UnityEngine.Debug.LogWarning("TODO GameManager.AppSpecial iconDecorationCache");
-				//font
+				iconDecorationCache = new LayoutPoolManager(gameObject);
+				iconDecorationCache.Initialize(this, GetSystemFont());
 			}
 			sceneIconTextureCache = new SceneIconTextureCache();
 			menuResidentTextureCache = new MenuResidentTextureCache();
@@ -528,9 +541,14 @@ namespace XeApp.Game
 			m_raidBossTextureCache = new RaidBossTextureCache();
 			m_kiraDivaTextureCache = new KiraDivaTextureCache();
 			m_homeBgIconTextureCache = new HomeBgIconBgTextureCache();
-			//LongScreenFrameInstance = new Object<>(longScreenFramePrefab);??
-			//systemLayoutCanvas
-			//LetterBox
+			if(SystemManager.isLongScreenDevice)
+			{
+				LongScreenFrameInstance = UnityEngine.Object.Instantiate<GameObject>(longScreenFramePrefab);
+				LongScreenFrameInstance.transform.SetParent(systemLayoutCanvas.transform.GetChild(0), false);
+				LongScreenFrameInstance.transform.SetAsLastSibling();
+				LongScreenFrame = LongScreenFrameInstance.GetComponent<LongScreenFrame>();
+				LetterBox.gameObject.SetActive(false);
+			}
 		}
 
 		// // RVA: 0x99E7FC Offset: 0x99E7FC VA: 0x99E7FC
@@ -565,15 +583,18 @@ namespace XeApp.Game
 		private void SetupAssetBundleBasePath()
 		{
 			string k = KEHOJEJMGLJ.FHOCCNDOAPJ();
-			string platform = XeApp.Core.AssetBundleManager.GetPlatformName();
-			string path = k+platform;
-			XeApp.Core.AssetBundleManager.BaseAssetBundleInstallPath = path;
-			// string cp = CriWare.Common.streamingAssetsPath;
-			//XeApp.Core.AssetBundleManager.StreamingAssetBundlePath = cp+platform;
+			string platform = AssetBundleManager.GetPlatformName();
+			string path = Path.Combine(k, platform);
+			AssetBundleManager.BaseAssetBundleInstallPath = path;
+			string cp = CriWare.Common.streamingAssetsPath;
+			AssetBundleManager.StreamingAssetBundlePath = Path.Combine(cp, platform);
 		}
 
 		// // RVA: 0x99DE40 Offset: 0x99DE40 VA: 0x99DE40
-		// public void SetupResolution(float baseWidth, float baseHeight) { }
+		public void SetupResolution(float baseWidth, float baseHeight)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x99F750 Offset: 0x99F750 VA: 0x99F750
 		// public void ReSetupResolution(float baseWidth, float baseHeight) { }
@@ -612,11 +633,12 @@ namespace XeApp.Game
 		// // RVA: 0x99B6C4 Offset: 0x99B6C4 VA: 0x99B6C4
 		private void CreateSystemObject()
 		{
-			//touchEffectPrefab
-			//m_touchParticle
-			//systemCanvasCamera
-			//m_layoutObjectCache
-			UnityEngine.Debug.LogWarning("TODO GameManager.CreateSystemObject");
+			GameObject go = UnityEngine.Object.Instantiate<GameObject>(touchEffectPrefab);
+			m_touchParticle = go.GetComponent<TouchParticle>();
+			m_touchParticle.Camera = systemCanvasCamera;
+			go.transform.SetParent(transform, false);
+			m_layoutObjectCache = go.AddComponent<MenuLayoutGameObjectCahce>();
+			SetTouchEffectVisible(false);
 		}
 
 		// // RVA: 0x99B84C Offset: 0x99B84C VA: 0x99B84C
@@ -725,7 +747,11 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x99B14C Offset: 0x99B14C VA: 0x99B14C
-		// public Font GetSystemFont() { }
+		public Font GetSystemFont()
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return null;
+		}
 
 		// // RVA: 0x9A0D4C Offset: 0x9A0D4C VA: 0x9A0D4C
 		// public void CreateViewPlayerData() { }
@@ -773,7 +799,11 @@ namespace XeApp.Game
 		// public void CleanCacheAssetBundle() { }
 
 		// // RVA: 0x9A1348 Offset: 0x9A1348 VA: 0x9A1348
-		// public bool InstallEvent(int type, float per) { }
+		public bool InstallEvent(int type, float per)
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return false;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADE28 Offset: 0x6ADE28 VA: 0x6ADE28
 		// // RVA: 0x9A1478 Offset: 0x9A1478 VA: 0x9A1478
@@ -821,14 +851,6 @@ namespace XeApp.Game
 		public void SetTransmissionIconPosition(bool isARMode)
 		{
 			UnityEngine.Debug.LogWarning("TODO GameManager.SetTransmissionIconPosition()");
-		}
-
-		// // RVA: 0x9A1C14 Offset: 0x9A1C14 VA: 0x9A1C14
-		static GameManager()
-		{
-			mInstance = null;
-			mMyObject = null;
-			// init bx & by
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6ADF18 Offset: 0x6ADF18 VA: 0x6ADF18

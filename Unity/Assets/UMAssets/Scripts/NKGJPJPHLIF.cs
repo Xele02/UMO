@@ -225,7 +225,10 @@ public class NKGJPJPHLIF
         // public void FGDBKOCCKOE(bool CKLGHFBPFPJ) { }
 
         // // RVA: 0xC17E9C Offset: 0xC17E9C VA: 0xC17E9C
-        // public void ODLGKIJCHGH(IMCBBOAFION KLMFJJCNBIP) { }
+        public void ODLGKIJCHGH(IMCBBOAFION KLMFJJCNBIP)
+        {
+                UnityEngine.Debug.LogError("TODO");
+        }
 
         // [IteratorStateMachineAttribute] // RVA: 0x6B9838 Offset: 0x6B9838 VA: 0x6B9838
         // // RVA: 0xC17EEC Offset: 0xC17EEC VA: 0xC17EEC

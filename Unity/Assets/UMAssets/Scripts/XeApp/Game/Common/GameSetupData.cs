@@ -22,7 +22,10 @@ namespace XeApp.Game.Common
 				public int intimacyLv { get; set; } // 0x38
 
 				// // RVA: 0xE9E780 Offset: 0xE9E780 VA: 0xE9E780
-				// public void OnAppBoot() { }
+				public void OnAppBoot()
+				{
+					UnityEngine.Debug.LogError("TODO");
+				}
 
 				// // RVA: 0xEA02C8 Offset: 0xEA02C8 VA: 0xEA02C8
 				// private void Initialize() { }
@@ -200,7 +203,10 @@ namespace XeApp.Game.Common
 		public int SelectedDashIndex { get; set; } // 0x24
 
 		// // RVA: 0xE9CA60 Offset: 0xE9CA60 VA: 0xE9CA60
-		// public void OnAppBoot() { }
+		public void OnAppBoot()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xE9CBC8 Offset: 0xE9CBC8 VA: 0xE9CBC8
 		// public void SetMvMode(StatusData teamStatus, AOJGDNFAIJL.AMIECPBIALP prismData) { }

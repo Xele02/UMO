@@ -36,13 +36,19 @@ namespace XeApp.Game.Common
         // // Methods
 
         // // RVA: 0x11068B4 Offset: 0x11068B4 VA: 0x11068B4
-        // public void .ctor(GameObject parent) { }
+        public LayoutPoolManager(GameObject parent)
+        {
+            UnityEngine.Debug.LogError("TODO");
+        }
 
         // // RVA: 0x1106AE0 Offset: 0x1106AE0 VA: 0x1106AE0
         // public void Release() { }
 
         // // RVA: 0x1106B6C Offset: 0x1106B6C VA: 0x1106B6C
-        // public void Initialize(MonoBehaviour mb, Font font) { }
+        public void Initialize(MonoBehaviour mb, Font font)
+        {
+            UnityEngine.Debug.LogError("TODO");
+        }
 
         // // RVA: 0x1106B78 Offset: 0x1106B78 VA: 0x1106B78
         // public void Reserve() { }
