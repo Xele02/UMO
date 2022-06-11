@@ -2,7 +2,6 @@ using System.Diagnostics;
 
 public class IIDJLAEDMPI
 {
-	// Fields
 	private const long OMCDGIKLEDM = 20;
 	private long NNBNNPOEJLK; // 0x8
 	private long FLMCOGBDCCF; // 0x10
@@ -14,16 +13,16 @@ public class IIDJLAEDMPI
 	private string NILMMFMIBMF; // 0x38
 	private static string[] ECLAOLBGCDD; // 0x0
 
-	// Properties
 	public bool BIOFMLDLNKD { get; }
-
-	// Methods
 
 	// // RVA: 0x12038BC Offset: 0x12038BC VA: 0x12038BC
 	// public bool LEAPLHLPGDB() { }
 
 	// // RVA: 0x12038CC Offset: 0x12038CC VA: 0x12038CC
-	// public void .ctor() { }
+	public IIDJLAEDMPI()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x11EDDAC Offset: 0x11EDDAC VA: 0x11EDDAC
 	public long KMEFBNBFJHI()
@@ -39,7 +38,10 @@ public class IIDJLAEDMPI
 	// public string MAFDCGIIMOE() { }
 
 	// // RVA: 0x1203D5C Offset: 0x1203D5C VA: 0x1203D5C
-	// public void EAJMLOKKOOK(long NCNFAEKLJGA) { }
+	public void EAJMLOKKOOK(long NCNFAEKLJGA)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x1203F04 Offset: 0x1203F04 VA: 0x1203F04
 	// private long OPALLHDEOAL() { }

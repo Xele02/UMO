@@ -1,21 +1,25 @@
 using System;
+using UnityEngine;
 
 public class JHHBAFKMBDL
 {
-	// Fields
-	private static readonly string LGNLCJIKOEO; // 0x0
-	private static bool KKOBJLMKOJH; // 0x4
+	private static readonly string LGNLCJIKOEO = "common"; // 0x0
+	private static bool KKOBJLMKOJH = false; // 0x4
 	public static JHHBAFKMBDL HHCJCDFCLOB; // 0x8
 	private Func<bool> HDGDDJDCNGE; // 0x8
-	private static string[] ECLAOLBGCDD; // 0xC
-
-	// // Methods
+	private static string[] ECLAOLBGCDD = new string[6] {"<color=red>\n(", ")</color>", "saka_error", "0000", "update_error", "StringLiteral_11992"}; // 0xC
 
 	// // RVA: 0xB1DEA0 Offset: 0xB1DEA0 VA: 0xB1DEA0
-	// public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA_Start(MonoBehaviour DANMJLOBLIE)
+	{
+		HHCJCDFCLOB = this;
+	}
 
 	// // RVA: 0xB1DF30 Offset: 0xB1DF30 VA: 0xB1DF30
-	// public void NIGGABHIFEE(bool JKDJCFEBDHC) { }
+	public void NIGGABHIFEE(bool JKDJCFEBDHC)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xB1E078 Offset: 0xB1E078 VA: 0xB1E078
 	// private static string LNPJBOPAJGP(int PPFNGGCBJKC) { }
@@ -181,10 +185,4 @@ public class JHHBAFKMBDL
 
 	// // RVA: 0xB2657C Offset: 0xB2657C VA: 0xB2657C
 	// public void AEGFNBHBJEM(IMCBBOAFION HIDFAIBOHCC) { }
-
-	// // RVA: 0xB26580 Offset: 0xB26580 VA: 0xB26580
-	// public void .ctor() { }
-
-	// // RVA: 0xB26588 Offset: 0xB26588 VA: 0xB26588
-	// private static void .cctor() { }
 }

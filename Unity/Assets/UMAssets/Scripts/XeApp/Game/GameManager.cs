@@ -251,6 +251,7 @@ namespace XeApp.Game
 		// // RVA: 0x99AC08 Offset: 0x99AC08 VA: 0x99AC08
 		private IEnumerator Co_InitScreen()
 		{
+			UnityEngine.Debug.LogWarning("TODO finish GameManager.Co_InitScreen");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public GameManager <>4__this; // 0x10
@@ -375,6 +376,7 @@ namespace XeApp.Game
 		// // RVA: 0x99A938 Offset: 0x99A938 VA: 0x99A938
 		private void Initialize()
 		{
+			UnityEngine.Debug.LogWarning("TODO finish GameManager.Initialize");
 			// Unitylogger.setlogenabled
 			GameObject go = new GameObject("AppBootTimeManager");
 			// appBootTime = go.AddComponent<AppBootTimeManager>();
@@ -422,6 +424,7 @@ namespace XeApp.Game
 		// // RVA: 0x99DCFC Offset: 0x99DCFC VA: 0x99DCFC
 		private IEnumerator InitializeSystemCoroutine()
 		{			
+			UnityEngine.Debug.LogWarning("TODO finish GameManager.InitializeSystemCoroutine");
 			//private int <>1__state; // 0x8
 			//private object <>2__current; // 0xC
 			//public GameManager <>4__this; // 0x10

@@ -1,14 +1,10 @@
 
-// Namespace: 
-public class OBOKMHHMOIL // TypeDefIndex: 10358
+public class OBOKMHHMOIL
 {
-	// Fields
-	// public string EBCFHFIOHBN; // 0x8
-	// public string AJBPBEALBOB; // 0xC
-	// public long LCAINKFINEI; // 0x10
-	// public string ABFADMDAAKJ; // 0x18
-
-	// // Methods
+	public string EBCFHFIOHBN; // 0x8
+	public string AJBPBEALBOB; // 0xC
+	public long LCAINKFINEI; // 0x10
+	public string ABFADMDAAKJ; // 0x18
 
 	// // RVA: 0x1B2B8E4 Offset: 0x1B2B8E4 VA: 0x1B2B8E4
 	// public void LHPDDGIJKNB() { }

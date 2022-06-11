@@ -3,6 +3,8 @@ using XeApp.Core.WorkerThread;
 using UnityEngine;
 using System.Collections;
 
+public delegate void OEEHODIFBIG(bool JKDJCFEBDHC);
+
 public class PJKLMCGEJMK
 {
     public enum AHADNLCOPOL
@@ -42,7 +44,7 @@ public class PJKLMCGEJMK
     // public DIDEKBFMOBM NIJMLFNDAJP; // 0x54  > NKGJPJPHLIF.IJBGPAENLJA_Start
     // public IHABJNEGMEA EGAOFAHEPME; // 0x58  > NKGJPJPHLIF.IJBGPAENLJA_Start
     // public DLMJDDACNLA OMAGHCDMBBI; // 0x5C  > NKGJPJPHLIF.IJBGPAENLJA_Start
-    // public OEEHODIFBIG DMPHNPAFHEG; // 0x60  > NKGJPJPHLIF.IJBGPAENLJA_Start
+    public OEEHODIFBIG DMPHNPAFHEG; // 0x60  > NKGJPJPHLIF.IJBGPAENLJA_Start
     public bool OLBAIKLLIFE; // 0x64
     private List<CACGCMBKHDI_Request> FCICFIAOLAM_RequestList = new List<CACGCMBKHDI_Request>(); // 0x68
     private bool DMGPJMPINFJ; // 0x6C
@@ -236,7 +238,15 @@ public class PJKLMCGEJMK
     // // RVA: 0x9316EC Offset: 0x9316EC VA: 0x9316EC
     private void DDBHLHBJEGP(PJKLMCGEJMK.AHADNLCOPOL HOENAFAJMGI)
     {
-        UnityEngine.Debug.LogError("TODO");
+        if(DMPHNPAFHEG == null || CMCKNKKCNDK_Status == HOENAFAJMGI)
+            return;
+        if(HOENAFAJMGI != PJKLMCGEJMK.AHADNLCOPOL.HIHKPNBDNJC_Running)
+        {
+            DMPHNPAFHEG(false);
+            return;
+        }
+        if(!OLBAIKLLIFE)
+            DMPHNPAFHEG(true);
     }
 
     // // RVA: 0x932144 Offset: 0x932144 VA: 0x932144

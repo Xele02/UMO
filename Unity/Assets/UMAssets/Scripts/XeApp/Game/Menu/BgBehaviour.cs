@@ -122,19 +122,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x14365F0 Offset: 0x14365F0 VA: 0x14365F0
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO BgBehaviour.Awake");
 		}
 
 		// // RVA: 0x1436BB4 Offset: 0x1436BB4 VA: 0x1436BB4
 		private void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO BgBehaviour.Awake");
 		}
 
 		// // RVA: 0x1436C34 Offset: 0x1436C34 VA: 0x1436C34
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO BgBehaviour.Update");
 		}
 
 		// // RVA: 0x1436D4C Offset: 0x1436D4C VA: 0x1436D4C
