@@ -2,6 +2,7 @@ using XeApp.Core.WorkerThread;
 using UnityEngine;
 
 // Namespace:
+public abstract class CACGCMBKHDI {}
 public abstract class CACGCMBKHDI_Request // TypeDefIndex: 10353
 {
         // Fields

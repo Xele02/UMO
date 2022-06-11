@@ -5,7 +5,7 @@ namespace XeSys
 	public class Utility
 	{
 		// Fields
-		private static DateTime UNIX_EPOCH; // 0x0
+		private static DateTime UNIX_EPOCH = new DateTime(1970, 1, 1, 0, 0, 0, 1, 0); // 0x0
 
 		// Methods
 
@@ -50,7 +50,10 @@ namespace XeSys
 		// public static long GetTargetUnixTime(int year, int month, int day, int hour, int minute, int second) { }
 
 		// // RVA: 0x23A9268 Offset: 0x23A9268 VA: 0x23A9268
-		// public static long GetCurrentUnixTime() { }
+		public static long GetCurrentUnixTime()
+		{
+			return (long)(DateTime.UtcNow - UNIX_EPOCH).TotalSeconds;
+		}
 
 		// // RVA: 0x23A9378 Offset: 0x23A9378 VA: 0x23A9378
 		// public static bool IsWithinPeriod(long current, long start, long end) { }
@@ -157,11 +160,5 @@ namespace XeSys
 
 		// // RVA: 0x23AAC90 Offset: 0x23AAC90 VA: 0x23AAC90
 		// public static long RoundDownDayUnixTime(long unixtime, int offset = 0) { }
-
-		// // RVA: 0x23AAD98 Offset: 0x23AAD98 VA: 0x23AAD98
-		// public void .ctor() { }
-
-		// // RVA: 0x23AADA0 Offset: 0x23AADA0 VA: 0x23AADA0
-		// private static void .cctor() { }
 	}
 }

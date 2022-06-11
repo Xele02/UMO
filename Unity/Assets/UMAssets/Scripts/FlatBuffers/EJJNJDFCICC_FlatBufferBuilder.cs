@@ -8,8 +8,8 @@
 // /// Responsible for building up and accessing a FlatBuffer formatted byte
 // /// array (via ByteBuffer).
 // /// </summary>
-// public class EJJNJDFCICC_FlatBufferBuilder
-// {
+public class EJJNJDFCICC//_FlatBufferBuilder
+{}
 // 	private int JIOGLBHBGHD__space; // 0x8
 // 	private JMPAJDKFFGL_ByteBuffer HJGJPEFJAEH__bb; // 0xC
 // 	private int MLLCLLGLFIM__minAlign = 1; // 0x10

@@ -1,5 +1,6 @@
 using System;
 // Namespace:
+public class BEEINMBNKNM {}
 public class BEEINMBNKNM_Encryption
 {
         // Fields

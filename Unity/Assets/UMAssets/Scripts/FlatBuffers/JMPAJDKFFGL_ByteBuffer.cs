@@ -6,8 +6,8 @@
 // /// unsafe code in your project and #define UNSAFE_BYTEBUFFER to use a
 // /// MUCH faster version of ByteBuffer.
 // /// </summary>
-// public class JMPAJDKFFGL_ByteBuffer
-// {
+public class JMPAJDKFFGL//_ByteBuffer
+{}
 // 	private readonly byte[] LDALAFIJKKM__buffer; // 0x8
 // 	private int LGEDAJAFHGG__pos; // 0xC   // Must track start of the buffer.
     

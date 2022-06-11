@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public delegate bool FAPJEIOBPDG(List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
 
 // Namespace:
+public class HDPLHCDAFHA{}
 public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request // TypeDefIndex: 10308
 {
         // Fields

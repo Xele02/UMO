@@ -5,8 +5,8 @@
 // /// <summary>
 // /// All tables in the generated code derive from this class, and add their own accessors.
 // /// </summary>
-// public abstract class FGDIPIOKOBP_Table
-// {
+public abstract class FGDIPIOKOBP//_Table
+{}
 // 	protected int LAOPOAKCOGK_bb_pos; // 0x8
 // 	protected JMPAJDKFFGL_ByteBuffer CELAFKLADCP_bb; // 0xC
 

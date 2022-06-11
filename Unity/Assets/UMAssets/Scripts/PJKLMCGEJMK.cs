@@ -26,14 +26,14 @@ public class PJKLMCGEJMK // TypeDefIndex: 10326
         // public bool BEBMDHKKNDA; // 0x40
         // public bool KAEMPHIPDFN; // 0x41
         // public bool BLFILNOBHMM; // 0x42
-        // public DMADPGMDPHC LJPJJHGIEAO; // 0x44
-        // public MFKJNKIKBOP IGAMFDCEGFC; // 0x48
-        // public DIDEKBFMOBM LLFDDHIIPBK; // 0x4C
-        // public DIDEKBFMOBM CCBAMLACFCF; // 0x50
-        // public DIDEKBFMOBM NIJMLFNDAJP; // 0x54
-        // public IHABJNEGMEA EGAOFAHEPME; // 0x58
-        // public DLMJDDACNLA OMAGHCDMBBI; // 0x5C
-        // public OEEHODIFBIG DMPHNPAFHEG; // 0x60
+        // public DMADPGMDPHC LJPJJHGIEAO; // 0x44  > NKGJPJPHLIF.IJBGPAENLJA
+        // public MFKJNKIKBOP IGAMFDCEGFC; // 0x48  > NKGJPJPHLIF.IJBGPAENLJA
+        // public DIDEKBFMOBM LLFDDHIIPBK; // 0x4C  > NKGJPJPHLIF.IJBGPAENLJA
+        // public DIDEKBFMOBM CCBAMLACFCF; // 0x50  > NKGJPJPHLIF.IJBGPAENLJA
+        // public DIDEKBFMOBM NIJMLFNDAJP; // 0x54  > NKGJPJPHLIF.IJBGPAENLJA
+        // public IHABJNEGMEA EGAOFAHEPME; // 0x58  > NKGJPJPHLIF.IJBGPAENLJA
+        // public DLMJDDACNLA OMAGHCDMBBI; // 0x5C  > NKGJPJPHLIF.IJBGPAENLJA
+        // public OEEHODIFBIG DMPHNPAFHEG; // 0x60  > NKGJPJPHLIF.IJBGPAENLJA
         public bool OLBAIKLLIFE; // 0x64
         private List<CACGCMBKHDI_Request> FCICFIAOLAM_RequestList = new List<CACGCMBKHDI_Request>(); // 0x68
         // private bool DMGPJMPINFJ; // 0x6C
@@ -125,10 +125,16 @@ public class PJKLMCGEJMK // TypeDefIndex: 10326
         }
 
         // // RVA: 0x931278 Offset: 0x931278 VA: 0x931278
-        // public void BAGMHFKPFIF() { }
+        public void BAGMHFKPFIF()
+        {
+            UnityEngine.Debug.LogError("TODO");
+        }
 
         // // RVA: 0x931734 Offset: 0x931734 VA: 0x931734
-        // public void FFBCKMFKFME() { }
+        public void FFBCKMFKFME()
+        {
+            UnityEngine.Debug.LogError("TODO");
+        }
 
         // // RVA: 0x931760 Offset: 0x931760 VA: 0x931760
         // private void LFKLIOKFGLP() { }
