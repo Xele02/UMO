@@ -1242,9 +1242,6 @@ public class IOGKADECKOP
 		
 	}
 
-	// // RVA: 0xA084F8 Offset: 0xA084F8 VA: 0xA084F8
-	// public void .ctor() { }
-
 	// [CompilerGeneratedAttribute] // RVA: 0x6B4438 Offset: 0x6B4438 VA: 0x6B4438
 	// // RVA: 0xA085A0 Offset: 0xA085A0 VA: 0xA085A0
 	// private void <SetLayoutButtonCallback>b__31_0() { }

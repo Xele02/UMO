@@ -94,7 +94,11 @@ namespace XeApp
         // public static string GetActionRootUrl() { }
 
         // // RVA: 0xE0C898 Offset: 0xE0C898 VA: 0xE0C898
-        // public static AppEnv.SakashoConnectTargetType GetSakashoConnectTarget() { }
+        public static AppEnv.SakashoConnectTargetType GetSakashoConnectTarget()
+        {
+            UnityEngine.Debug.LogError("TODO");
+            return AppEnv.SakashoConnectTargetType.release;
+        }
 
         // // RVA: 0xE0C8A0 Offset: 0xE0C8A0 VA: 0xE0C8A0
         // public static AppEnv.ExtraRomType GetExtraRomType() { }

@@ -58,7 +58,11 @@ namespace XeApp.Core
 		// private static AppQualitySetting.DeviceSpec ClassifyMali(string name) { }
 
 		// // RVA: 0xE0E3F8 Offset: 0xE0E3F8 VA: 0xE0E3F8
-		// public static int GetScreenSizeType() { }
+		public static int GetScreenSizeType()
+		{
+			SystemInfo.deviceModel.Contains("htc Nexus 9");
+			return 0;
+		}
 
 		// // RVA: 0xE0E47C Offset: 0xE0E47C VA: 0xE0E47C
 		// public static int GetInGameScreenSizeType() { }

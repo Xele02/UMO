@@ -20,7 +20,11 @@ public class N : MonoBehaviour
 		}
 
         // RVA: 0x17BED40 Offset: 0x17BED40 VA: 0x17BED40
-        //public GameObject A() { }
+        public GameObject A()
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return null;
+		}
 
         private void Update() 
 		{ 

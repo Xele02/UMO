@@ -4,3 +4,4 @@ public class IKFDGFEAJPL {}
 public class KIJECNFNNDB {}
 public class MFJGDLBFMEL {}
 public enum LIMGNGJNDAK {}
+public class IKPIMINCOPI {}

@@ -13,6 +13,8 @@ using XeApp.Game.UI;
 using Mana.Service.Ad;
 using System.IO;
 using CriWare;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace XeApp.Game
 {
@@ -263,8 +265,6 @@ namespace XeApp.Game
 			// private bool <loop>5__5; // 0x1D
 			// 0x1424340
 
-			UnityEngine.Debug.LogWarning("TODO finish GameManager.Co_InitScreen");
-
 			int w = UnityEngine.Screen.width;
 			int h = UnityEngine.Screen.height;
 			bool needUpdateScreen = false;
@@ -274,7 +274,7 @@ namespace XeApp.Game
 				w = UnityEngine.Screen.height;
 				h = UnityEngine.Screen.width;
 			}
-			
+#if !UNITY_EDITOR
 			while(UnityEngine.Screen.orientation == ScreenOrientation.Portrait)
 			{
 				UnityEngine.Screen.orientation = ScreenOrientation.LandscapeLeft;
@@ -301,6 +301,7 @@ namespace XeApp.Game
 				}
 				UnityEngine.Screen.orientation = ScreenOrientation.LandscapeLeft;
 			}
+#endif
 			yield return null;
 			Initialize_ScreenAndSystemLayout();
 			UnityEngine.Font.textureRebuilt += this.OnFontTextureRebuilt;
@@ -594,7 +595,7 @@ namespace XeApp.Game
 		// // RVA: 0x99DE40 Offset: 0x99DE40 VA: 0x99DE40
 		public void SetupResolution(float baseWidth, float baseHeight)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO SetupResolution");
 		}
 
 		// // RVA: 0x99F750 Offset: 0x99F750 VA: 0x99F750
@@ -645,7 +646,145 @@ namespace XeApp.Game
 		// // RVA: 0x99B84C Offset: 0x99B84C VA: 0x99B84C
 		private void CreateUGUI()
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.CreateUGUI");
+			GameObject eventGo = new GameObject("EventSystem");
+			UnityEngine.Object.DontDestroyOnLoad(eventGo);
+			EventSystem es = eventGo.AddComponent<EventSystem>();
+			eventGo.AddComponent<StandaloneInputModule>();
+
+			eventSystemController = new EventSystemControl();
+			eventSystemController.Init(es);
+			
+			GameObject fade = new GameObject("Canvas-Fade");
+			fade.transform.SetParent(transform, false);
+			fadeCanvas = fade.AddComponent<Canvas>();
+			fadeCanvas.pixelPerfect = false;
+			fadeCanvas.sortingOrder = 0;
+			fadeCanvas.planeDistance = 5.0f;
+			CanvasScaler fcs = fade.AddComponent<CanvasScaler>();
+			fcs.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+			fcs.referenceResolution = SystemManager.BaseScreenSize;
+			fcs.screenMatchMode = CanvasScaler.ScreenMatchMode.Expand;
+			fcs.referencePixelsPerUnit = 100;
+			GraphicRaycaster gr = fade.AddComponent<GraphicRaycaster>();
+			gr.ignoreReversedGraphics = true;
+			gr.blockingObjects = 0;
+			fadeCanvas.worldCamera = systemCanvasCamera;
+			fadeCanvas.renderMode = RenderMode.ScreenSpaceCamera;
+			fadeCanvas.sortingLayerName = "SystemUI";
+
+			UGUIFader fader = UnityEngine.Object.Instantiate<UGUIFader>(faderPrefab);
+			fader.transform.SetParent(fadeCanvas.transform, false);
+			fader.Fade(0, Color.black);
+			fullscreenFader = fader;
+
+			ChangeLayerWithChild(fade, LayerMask.NameToLayer("Fade"));
+			fade.SetActive(true);
+
+			GameObject popup = new GameObject("Canvas-Popup");
+			popup.transform.SetParent(transform, false);
+			GameObject root = new GameObject("Root");
+			root.transform.SetParent(popup.transform, false);
+			popupCanvas = popup.AddComponent<Canvas>();
+			popup.AddComponent<FlexibleCanvasLayoutChanger>();
+
+			LayoutElement le = popup.GetComponent<LayoutElement>();
+			CanvasScaler pcs = popup.GetComponent<CanvasScaler>();
+
+			RectTransform rt = root.AddComponent<RectTransform>();
+			GraphicRaycaster pgrc = popup.AddComponent<GraphicRaycaster>();
+			
+			popupCanvas.pixelPerfect = false;
+			popupCanvas.sortingOrder = 1;
+			popupCanvas.worldCamera = systemCanvasCamera;
+			popupCanvas.renderMode = RenderMode.ScreenSpaceCamera;
+			popupCanvas.sortingLayerName = "SystemUI";
+			popupCanvas.planeDistance = 5;
+
+			rt.sizeDelta = SystemManager.BaseScreenSize;
+			le.minWidth = SystemManager.BaseScreenSize.x;
+			le.minHeight = SystemManager.BaseScreenSize.y;
+
+			pcs.referenceResolution = SystemManager.BaseScreenSize;
+			pcs.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+			pcs.referenceResolution = SystemManager.BaseScreenSize;
+			pcs.screenMatchMode = CanvasScaler.ScreenMatchMode.Shrink;
+			pcs.referencePixelsPerUnit = 100;
+
+			for(int i = 0; i < 4; i++)
+			{
+				GameObject popupGo = UnityEngine.Object.Instantiate<GameObject>(popupPrefab);
+				popupGo.transform.SetParent(root.transform, false);
+			}
+			ChangeLayerWithChild(popup, LayerMask.NameToLayer("Fade"));
+
+			GameObject canvasSystemGo = new GameObject("Canvas-System");
+			canvasSystemGo.transform.SetParent(transform, false);
+			systemLayoutCanvas = canvasSystemGo.AddComponent<Canvas>();
+			systemLayoutCanvas.pixelPerfect = false;
+			systemLayoutCanvas.sortingOrder = 2;
+			systemLayoutCanvas.sortingLayerName = "SystemUI";
+			systemLayoutCanvas.planeDistance = 5;
+
+			root = new GameObject("Root");
+			root.AddComponent<FlexibleCanvasLayoutChanger>();
+			le = root.AddComponent<LayoutElement>();
+			CanvasScaler cs = root.AddComponent<CanvasScaler>();
+
+			rt = root.AddComponent<RectTransform>();
+			rt.SetParent(systemLayoutCanvas.transform,false);
+			cs.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+			cs.referenceResolution = SystemManager.BaseScreenSize;
+			cs.screenMatchMode = CanvasScaler.ScreenMatchMode.Expand;
+			cs.referencePixelsPerUnit = 100;
+			le.minWidth = SystemManager.BaseScreenSize.x;
+			le.minHeight = SystemManager.BaseScreenSize.y;
+			gr = canvasSystemGo.AddComponent<GraphicRaycaster>();
+			gr.ignoreReversedGraphics = true;
+			gr.blockingObjects = 0;
+			systemLayoutCanvas.worldCamera = systemCanvasCamera;
+			systemLayoutCanvas.renderMode = RenderMode.ScreenSpaceCamera;
+			
+			transmissionIcon = UnityEngine.Object.Instantiate<GameObject>(transmissionIconPrefab);
+			transmissionIcon.transform.SetParent(root.transform, false);
+			transmissionIcon.SetActive(true);
+
+			GameObject dlbar = UnityEngine.Object.Instantiate<GameObject>(downloadBarPrefab);
+			DownloadBar = dlbar.AddComponent<UIDownloadWait>();
+			dlbar.transform.SetParent(rt, false);
+
+			GameObject progressBar = UnityEngine.Object.Instantiate<GameObject>(progressBarPrefab);
+			ProgressBar = progressBar.AddComponent<UILoadProgress>();
+			progressBar.transform.SetParent(rt, false);
+
+			GameObject nowLoadingGo = UnityEngine.Object.Instantiate<GameObject>(nowloadingPrefab);
+			nowLoadingGo.transform.SetParent(rt, false);
+			nowloading = nowLoadingGo.AddComponent<UILoadWait>();
+
+			LetterBox = UnityEngine.Object.Instantiate<UGUILetterBoxController>(letterboxPrefab);
+			DontDestroyOnLoad(LetterBox);
+
+			LetterBox.transform.SetParent(systemLayoutCanvas.transform, false);
+
+			if(SystemManager.IsForceWideScreen)
+			{
+				Vector3 scale = nowloading.transform.localScale;
+				scale.x *= 0.8409091f;
+				scale.y *= 0.8409091f;
+				nowloading.transform.localScale = scale;
+
+				scale = DownloadBar.transform.localScale;
+				scale.x *= 0.8409091f;
+				scale.y *= 0.8409091f;
+				DownloadBar.transform.localScale = scale;
+
+				scale = transmissionIcon.transform.localScale;
+				scale.x *= 0.8409091f;
+				scale.y *= 0.8409091f;
+				transmissionIcon.transform.localScale = scale;
+			}
+
+			ChangeLayerWithChild(canvasSystemGo, LayerMask.NameToLayer("Fade"));
+			ChangePopupPriority(false);
 		}
 
 		// // RVA: 0x9A0628 Offset: 0x9A0628 VA: 0x9A0628
@@ -721,12 +860,15 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x9A0314 Offset: 0x9A0314 VA: 0x9A0314
-		// private void ChangeLayerWithChild(GameObject go, int layer) { }
+		private void ChangeLayerWithChild(GameObject go, int layer)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x9A0294 Offset: 0x9A0294 VA: 0x9A0294
 		public void SetTouchEffectVisible(bool isVisible)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO SetTouchEffectVisible");
 		}
 
 		// // RVA: 0x9A0C6C Offset: 0x9A0C6C VA: 0x9A0C6C
@@ -750,7 +892,7 @@ namespace XeApp.Game
 		// // RVA: 0x99B14C Offset: 0x99B14C VA: 0x99B14C
 		public Font GetSystemFont()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO GetSystemFont");
 			return null;
 		}
 

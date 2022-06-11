@@ -11,8 +11,7 @@ namespace XeApp.Core
         // // RVA: 0x1D74C4C Offset: 0x1D74C4C VA: 0x1D74C4C
         public static int B()
         {
-            UnityEngine.Debug.LogError("TODO");
-            return 0;
+            return AppQualitySetting.GetScreenSizeType();
         }
 
         // // RVA: 0x1D74CC8 Offset: 0x1D74CC8 VA: 0x1D74CC8
