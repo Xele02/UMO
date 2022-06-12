@@ -9,13 +9,10 @@ public class NKCNFFPLIAN
 	private CEBFFLDKAEC CKDHEFMLDIG = new CEBFFLDKAEC(); // 0x10
 	private NNJFKLBPBNK FINCFIGKHPA = new NNJFKLBPBNK(); // 0x14
 
-	public string LJNAKDMILMC { get { UnityEngine.Debug.Log("TODO"); return ""; } } // LIIHHICIBKM 0x18AEE50
-	public int CNDDKMJAIBG { get { UnityEngine.Debug.Log("TODO"); return 0; } } // HIGNHAEJKAH 0x18AEE7C
-	public int DMJGDDEACMD { get { UnityEngine.Debug.Log("TODO"); return 0; } } // FPNFJECMBAG 0x18AEEA8
-	public string OPFGFINHFCE { get // DKJOHDGOIJE 0x18AEED4
-    {
-        return FINCFIGKHPA.DNJEJEANJGL;
-    } }
+	public string LJNAKDMILMC { get { return MLCELGHBCLK.DNJEJEANJGL; } } // LIIHHICIBKM 0x18AEE50
+	public int CNDDKMJAIBG { get { return PJHFOFGOPDA.DNJEJEANJGL; } } // HIGNHAEJKAH 0x18AEE7C
+	public int DMJGDDEACMD { get { return CKDHEFMLDIG.DNJEJEANJGL; } } // FPNFJECMBAG 0x18AEEA8
+	public string OPFGFINHFCE { get { return FINCFIGKHPA.DNJEJEANJGL; } } // DKJOHDGOIJE 0x18AEED4
  
 	// // RVA: 0x18AEF00 Offset: 0x18AEF00 VA: 0x18AEF00
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
