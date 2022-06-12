@@ -2,23 +2,17 @@
 public class CriFsRequest : CriDisposable
 {
     public delegate void DoneDelegate(CriFsRequest request);
-    
-	// [CompilerGeneratedAttribute] // RVA: 0x634A64 Offset: 0x634A64 VA: 0x634A64
-	// private CriFsRequest.DoneDelegate <doneDelegate>k__BackingField; // 0x18
-	// [CompilerGeneratedAttribute] // RVA: 0x634A74 Offset: 0x634A74 VA: 0x634A74
-	// private bool <isDone>k__BackingField; // 0x1C
-	// [CompilerGeneratedAttribute] // RVA: 0x634A84 Offset: 0x634A84 VA: 0x634A84
-	// private string <error>k__BackingField; // 0x20
-	// [CompilerGeneratedAttribute] // RVA: 0x634A94 Offset: 0x634A94 VA: 0x634A94
-	// private bool <isDisposed>k__BackingField; // 0x24
 
-	public CriFsRequest.DoneDelegate doneDelegate { get; set; }
-	public bool isDone { get; set; }
-	public string error { get; set; }
-	public bool isDisposed { get; set; }
+	public CriFsRequest.DoneDelegate doneDelegate { get; set; } // 0x18
+	public bool isDone { get; set; } // 0x1C
+	public string error { get; set; } // 0x20
+	public bool isDisposed { get; set; } // 0x24
 
 	// // RVA: 0x294AEF8 Offset: 0x294AEF8 VA: 0x294AEF8 Slot: 5
-	// public override void Dispose() { }
+	public override void Dispose()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x294AFA8 Offset: 0x294AFA8 VA: 0x294AFA8 Slot: 6
 	public virtual void Stop()
@@ -30,10 +24,16 @@ public class CriFsRequest : CriDisposable
 	// public YieldInstruction WaitForDone(MonoBehaviour mb) { }
 
 	// // RVA: 0x294B070 Offset: 0x294B070 VA: 0x294B070 Slot: 7
-	// protected virtual void Dispose(bool disposing) { }
+	protected virtual void Dispose(bool disposing)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x294B074 Offset: 0x294B074 VA: 0x294B074 Slot: 8
-	// public virtual void Update() { }
+	public virtual void Update()
+	{
+		return;
+	}
 
 	// // RVA: 0x29444B0 Offset: 0x29444B0 VA: 0x29444B0
 	// protected void Done() { }
@@ -44,7 +44,4 @@ public class CriFsRequest : CriDisposable
 
 	// // RVA: 0x294B8C0 Offset: 0x294B8C0 VA: 0x294B8C0 Slot: 1
 	// protected override void Finalize() { }
-
-	// // RVA: 0x2944168 Offset: 0x2944168 VA: 0x2944168
-	// public void .ctor() { }
 }

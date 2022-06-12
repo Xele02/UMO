@@ -1,8 +1,6 @@
 
-// Namespace: 
-public class CEBFFLDKAEC // TypeDefIndex: 8690
+public class CEBFFLDKAEC
 {
-	// Fields
 	private int IPKONDLIDHC; // 0x8
 	private int ENOBDCFHELD; // 0xC
 	private int DLHDPLPLCAC; // 0x10
@@ -10,24 +8,15 @@ public class CEBFFLDKAEC // TypeDefIndex: 8690
 	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF; // 0x18
 	public FENCAJJBLBH NMNHBJIAPGG; // 0x1C
 
-	// // Properties
-	// public int DNJEJEANJGL { get; set; }
-
-	// // Methods
-
-	// // RVA: 0x12B124C Offset: 0x12B124C VA: 0x12B124C
-	public int JADLONAJDAK() 
-    { 
+	public int DNJEJEANJGL { get{
+		// JADLONAJDAK 0x12B124C
         return ENOBDCFHELD ^ DLHDPLPLCAC;
-    }
-
-	// // RVA: 0x12B125C Offset: 0x12B125C VA: 0x12B125C
-	public void JFNEHIGOBHH(int NANNGLGOFKH)
-    {
+	} set {
+		// JFNEHIGOBHH 0x12B125C
         KPOCKNCJBPN();
-		DLHDPLPLCAC = ENOBDCFHELD ^ NANNGLGOFKH;
-		IPKONDLIDHC = FCEJCHGLFGN ^ NANNGLGOFKH;
-    }
+		DLHDPLPLCAC = ENOBDCFHELD ^ value;
+		IPKONDLIDHC = FCEJCHGLFGN ^ value;
+	} }   
 
 	// // RVA: 0x12B1360 Offset: 0x12B1360 VA: 0x12B1360
 	public CEBFFLDKAEC() 

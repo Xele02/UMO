@@ -10,7 +10,7 @@ public class CriFsLoader : CriDisposable
         Error = 3,
     }
 
-	// private IntPtr handle; // 0x18
+	//private IntPtr handle; // 0x18
 	// private GCHandle dstGch; // 0x1C
 	// private GCHandle srcGch; // 0x20
 
@@ -18,13 +18,27 @@ public class CriFsLoader : CriDisposable
 	// public void .ctor() { }
 
 	// // RVA: 0x2948884 Offset: 0x2948884 VA: 0x2948884 Slot: 5
-	// public override void Dispose() { }
+	public override void Dispose()
+	{
+		Dispose(true);
+		GC.SuppressFinalize(this);
+	}
 
 	// // RVA: 0x2948914 Offset: 0x2948914 VA: 0x2948914
-	// private void Dispose(bool disposing) { }
+	private void Dispose(bool disposing)
+	{
+		CriDisposableObjectManager.Unregister(this);
+		//if(handle != IntPtr.Zero)
+		{
+			criFsLoader_Destroy(this);
+		}
+	}
 
 	// // RVA: 0x29485BC Offset: 0x29485BC VA: 0x29485BC
-	// public void Load(CriFsBinder binder, string path, long fileOffset, long loadSize, byte[] buffer) { }
+	public void Load(CriFsBinder binder, string path, long fileOffset, long loadSize, byte[] buffer)
+	{
+		criFsLoader_Load(this, binder, path, fileOffset, loadSize, buffer, buffer.Length);
+	}
 
 	// // RVA: 0x2948C94 Offset: 0x2948C94 VA: 0x2948C94
 	// public void LoadById(CriFsBinder binder, int id, long fileOffset, long loadSize, byte[] buffer) { }
@@ -42,10 +56,18 @@ public class CriFsLoader : CriDisposable
 	// public void Stop() { }
 
 	// // RVA: 0x29486A0 Offset: 0x29486A0 VA: 0x29486A0
-	// public CriFsLoader.Status GetStatus() { }
+	public CriFsLoader.Status GetStatus()
+	{
+		CriFsLoader.Status status;
+		criFsLoader_GetStatus(this, out status);
+		return status;
+	}
 
 	// // RVA: 0x294853C Offset: 0x294853C VA: 0x294853C
-	// public void SetReadUnitSize(int unit_size) { }
+	public void SetReadUnitSize(int unit_size)
+	{
+		UnityEngine.Debug.LogWarning("TODO SetReadUnitSize");
+	}
 
 	// // RVA: 0x29497CC Offset: 0x29497CC VA: 0x29497CC Slot: 1
 	// protected override void Finalize() { }
@@ -54,10 +76,16 @@ public class CriFsLoader : CriDisposable
 	// private static extern int criFsLoader_Create(out IntPtr loader) { }
 
 	// // RVA: 0x2948A18 Offset: 0x2948A18 VA: 0x2948A18
-	// private static extern int criFsLoader_Destroy(IntPtr loader) { }
+	private static /*extern*/ int criFsLoader_Destroy(/*IntPtr*/CriFsLoader loader)
+	{
+		return ExternLib.LibCriWare.criFsLoader_Destroy(loader);
+	}
 
 	// // RVA: 0x2948B28 Offset: 0x2948B28 VA: 0x2948B28
-	// private static extern int criFsLoader_Load(IntPtr loader, IntPtr binder, string path, long offset, long load_size, IntPtr buffer, long buffer_size) { }
+	private static /*extern*/ int criFsLoader_Load(/*IntPtr*/CriFsLoader loader, /*IntPtr*/CriFsBinder binder, string path, long offset, long load_size, /*IntPtr*/byte[] buffer, long buffer_size)
+	{
+		return ExternLib.LibCriWare.criFsLoader_Load(loader, binder, path, offset, load_size, buffer, buffer_size);
+	}
 
 	// // RVA: 0x2948D78 Offset: 0x2948D78 VA: 0x2948D78
 	// private static extern int criFsLoader_LoadById(IntPtr loader, IntPtr binder, int id, long offset, long load_size, IntPtr buffer, long buffer_size) { }
@@ -66,7 +94,10 @@ public class CriFsLoader : CriDisposable
 	// private static extern int criFsLoader_Stop(IntPtr loader) { }
 
 	// // RVA: 0x29495C8 Offset: 0x29495C8 VA: 0x29495C8
-	// private static extern int criFsLoader_GetStatus(IntPtr loader, out CriFsLoader.Status status) { }
+	private static /*extern*/ int criFsLoader_GetStatus(/*IntPtr*/CriFsLoader loader, out CriFsLoader.Status status)
+	{
+		return ExternLib.LibCriWare.criFsLoader_GetStatus(loader, out status);
+	}
 
 	// // RVA: 0x29496E0 Offset: 0x29496E0 VA: 0x29496E0
 	// private static extern int criFsLoader_SetReadUnitSize(IntPtr loader, long unit_size) { }

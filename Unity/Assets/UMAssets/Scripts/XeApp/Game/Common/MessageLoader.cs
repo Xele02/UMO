@@ -1,6 +1,7 @@
 using XeSys;
 using System;
 using UnityEngine;
+using System.Collections;
 
 namespace XeApp.Game.Common
 {
@@ -43,7 +44,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1115A7C Offset: 0x1115A7C VA: 0x1115A7C
 		public void Request(MessageLoader.eSheet sheet, int version)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO MessageLoader Request");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x739A3C Offset: 0x739A3C VA: 0x739A3C
@@ -77,13 +78,16 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1117058 Offset: 0x1117058 VA: 0x1117058
 		public YieldInstruction WaitForDone(MonoBehaviour mb)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return null;
+			return mb.StartCoroutine(CheckDone());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x739AB4 Offset: 0x739AB4 VA: 0x739AB4
 		// // RVA: 0x1117090 Offset: 0x1117090 VA: 0x1117090
-		// private IEnumerator CheckDone() { }
+		private IEnumerator CheckDone()
+		{
+			UnityEngine.Debug.LogWarning("TODO MessageLoader CheckDone");
+			yield break;
+		}
 
 		// // RVA: 0x111713C Offset: 0x111713C VA: 0x111713C
 		// public static MessageLoader.eSheet DivaIdToSheet(int divaId) { }

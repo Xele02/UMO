@@ -53,7 +53,7 @@ public class CriAtomSource : CriMonoBehaviour
 	private CriAtomEx.Randomize3dConfig randomize3dConfig; // 0x68
 
 	// Properties
-	// public CriAtomExPlayer player { get; set; }
+	public CriAtomExPlayer player { get; set; }
 	// public CriAtomEx3dSource source { get; set; }
 	protected virtual bool enable_audio_synced_timer { get; set; }
 	public bool playOnStart { get; set; }
@@ -247,16 +247,32 @@ public class CriAtomSource : CriMonoBehaviour
 	// protected virtual void SetInitialParameters() { }
 
 	// // RVA: 0x28B60C4 Offset: 0x28B60C4 VA: 0x28B60C4 Slot: 12
-	// protected virtual void UpdatePosition() { }
+	protected virtual void UpdatePosition()
+	{
+		UnityEngine.Debug.LogWarning("TODO CriAtomSource.UpdatePosition");
+	}
 
 	// // RVA: 0x28B632C Offset: 0x28B632C VA: 0x28B632C
 	// private void Start() { }
 
 	// // RVA: 0x28B6490 Offset: 0x28B6490 VA: 0x28B6490 Slot: 6
-	// public override void CriInternalUpdate() { }
+	public override void CriInternalUpdate()
+	{
+		return;
+	}
 
 	// // RVA: 0x28B6494 Offset: 0x28B6494 VA: 0x28B6494 Slot: 7
-	// public override void CriInternalLateUpdate() { }
+	public override void CriInternalLateUpdate()
+	{
+		if(use3dPositioning)
+		{
+			UpdatePosition();
+		}
+		if(!need_to_player_update_all)
+			return;
+		player.UpdateAll();
+		need_to_player_update_all = false;
+	}
 
 	// // RVA: 0x28B64F4 Offset: 0x28B64F4 VA: 0x28B64F4
 	// public CriAtomExPlayback Play() { }

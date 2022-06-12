@@ -4,6 +4,11 @@ using XeSys;
 using System.Collections;
 using System.Collections.Generic;
 using XeApp;
+using System.Security.Cryptography;
+using System.Text;
+using XeApp.Native;
+using System.IO;
+using System;
 
 public class NKGJPJPHLIF
 {
@@ -248,7 +253,7 @@ public class NKGJPJPHLIF
                 if(s == null)
                 {
                         List<NKCNFFPLIAN> NCAAFGHKNAN = NKCNFFPLIAN.PCODDPDFLHK();
-                        yield return N.a.StartCoroutine(EEOJBAHJAIN());
+                        yield return N.a.StartCoroutine(EEOJBAHJAIN_Coroutine_Nil());
 
                         string LNOLGFLNAAI = AppEnv.sakashoConnectTargetType[(int)AppEnv.GetSakashoConnectTarget()];
                         if(NMMCABJNNLH < CNAINDDMPDL.Length)
@@ -395,23 +400,90 @@ public class NKGJPJPHLIF
         }
 
         // // RVA: 0xC193B4 Offset: 0xC193B4 VA: 0xC193B4
-        // private string PKIKNNOAKMI(byte[] NIODCJLINJN) { }
+        private string PKIKNNOAKMI(byte[] NIODCJLINJN)
+        {
+                MD5 md5 = MD5.Create();
+                byte[] hash = md5.ComputeHash(NIODCJLINJN);
+                md5.Clear();
+                StringBuilder str = new StringBuilder();
+                for(int i = 0; i < hash.Length; i++)
+                {
+                        str.Append(hash[i].ToString("x2"));
+                }
+                return str.ToString();
+        }
 
         // [IteratorStateMachineAttribute] // RVA: 0x6B9B08 Offset: 0x6B9B08 VA: 0x6B9B08
         // // RVA: 0xC19528 Offset: 0xC19528 VA: 0xC19528
-        private IEnumerator EEOJBAHJAIN()
+        private IEnumerator EEOJBAHJAIN_Coroutine_Nil()
         {
-                UnityEngine.Debug.LogError("TODO");
-                yield break;
+	        // private CriFsLoadFileRequest PNLGHFCFPPK; // 0x14
+                // 0xC1C344
+                UnityEngine.Debug.Log("buildOption="+AppInfo.buildOption);
+                NMMCABJNNLH = 0;
+                CriFsLoadFileRequest PNLGHFCFPPK = CriFsUtility.LoadFile(Path.Combine(CriWare.Common.streamingAssetsPath, "img/nil.png"), 0x100000);
+                while(!PNLGHFCFPPK.isDone)
+                {
+                        yield return null;
+                }
+                if(PNLGHFCFPPK.error == null)
+                {
+                        if(NHNHGIJCGFG())
+                        {
+                                byte[] b = PNLGHFCFPPK.bytes;
+                                string str = PKIKNNOAKMI(b);
+                                int a = GNECFAGJEOI(str);
+                                NMMCABJNNLH = a;
+                                UnityEngine.Debug.LogError("EEOJBAHJAIN_Coroutine_Nil key found : "+a);
+                                if(a > -1)
+                                {
+                                        if(a < CNAINDDMPDL.Length)
+                                                yield break;
+                                }
+                                NMMCABJNNLH = 0;
+                        }
+                }
         }
         // // RVA: 0xC195D4 Offset: 0xC195D4 VA: 0xC195D4
-        // private bool NHNHGIJCGFG() { }
+        private bool NHNHGIJCGFG()
+        {
+                int version;
+                Int32.TryParse(AppInfo.buildVersion, out version);
+                version *= 0xd;
+                string key = "z3b7Ps5DJk9D"+version+"MSxK7XD3khiD";
+                MD5 md5 = MD5.Create();
+                byte[] hash = md5.ComputeHash(Encoding.UTF8.GetBytes(key));
+                UnityEngine.Debug.LogError("hash : "+BitConverter.ToString(hash));
+                md5.Clear();
+                StringBuilder str = new StringBuilder();
+                str.Append("h");
+                for(int i = 0; i < hash.Length; i++)
+                {
+                        str.Append(hash[i].ToString("x2"));
+                }
+                UnityEngine.Debug.LogError("NHNHGIJCGFG : "+AppInfo.buildOption+" "+str.ToString()+" "+key);
+                return AppInfo.buildOption == str.ToString();
+        }
 
         // // RVA: 0xC19898 Offset: 0xC19898 VA: 0xC19898
         // private bool HLHBMMKKPKB() { }
 
         // // RVA: 0xC19C0C Offset: 0xC19C0C VA: 0xC19C0C
-        // private int GNECFAGJEOI(string IOIMHJAOKOO) { }
+        private int GNECFAGJEOI(string IOIMHJAOKOO)
+        {
+                StringBuilder str = new StringBuilder();
+                for(int i = 0; i < HPEBFGPLMBP.GetLength(0); i++)
+                {
+                        str.Clear();
+                        for(int j = 0; j < HPEBFGPLMBP.GetLength(1); j++)
+                        {
+                                str.Append((HPEBFGPLMBP[i, j] ^ 0x5f).ToString("x2"));
+                        }
+                        if(str.ToString() == IOIMHJAOKOO)
+                                return i + 1;
+                }
+                return 0;
+        }
 
         // // RVA: 0xC19EEC Offset: 0xC19EEC VA: 0xC19EEC
         // public void CADNBFCHAKM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG) { }

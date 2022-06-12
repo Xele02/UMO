@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1436C34 Offset: 0x1436C34 VA: 0x1436C34
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO BgBehaviour.Update");
+			UnityEngine.Debug.LogWarning("TODO BgBehaviour.Update");
 		}
 
 		// // RVA: 0x1436D4C Offset: 0x1436D4C VA: 0x1436D4C

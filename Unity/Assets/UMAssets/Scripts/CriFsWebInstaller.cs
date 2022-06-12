@@ -95,7 +95,10 @@ public class CriFsWebInstaller : CriDisposable
 	// protected override void Finalize() { }
 
 	// // RVA: 0x294E0CC Offset: 0x294E0CC VA: 0x294E0CC Slot: 5
-	// public override void Dispose() { }
+	public override void Dispose()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x294D8BC Offset: 0x294D8BC VA: 0x294D8BC
 	// public void Copy(string url, string dstPath) { }
@@ -133,7 +136,10 @@ public class CriFsWebInstaller : CriDisposable
 	// public static void FinalizeModule() { }
 
 	// // RVA: 0x294C460 Offset: 0x294C460 VA: 0x294C460
-	// public static void ExecuteMain() { }
+	public static void ExecuteMain()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0x294EC08 Offset: 0x294EC08 VA: 0x294EC08
 	// public static bool SetRequestHeader(string field, string value) { }

@@ -57,29 +57,29 @@ namespace XeApp
             Count = 4,
         }
 
-        public static bool isForceCBT; // 0x0
-        public static bool isForcePresentation; // 0x1
+        public static bool isForceCBT = false; // 0x0
+        public static bool isForcePresentation = false; // 0x1
         public const long BuildTime = 1492080904;
         public const float BaseWidth = 1184;
         public const float BaseHeight = 792;
-        public static AppEnv.LetterBoxDirection letterBoxDirection; // 0x4
-        private static AppEnv.RegionType mRegion; // 0x8
-        private static AppEnv.BuildType mBuild; // 0xC
-        private static AppEnv.ActionServerType mActionServerType; // 0x10
-        public static string[] actionServerUrl; // 0x14
-        private static AppEnv.FileServerType mFileServerType; // 0x18
-        public static string[] fileServerUrl; // 0x1C
-        private static AppEnv.PaymentServerType mPaymentServerType; // 0x20
-        public static string[] paymentServerUrl; // 0x24
-        private static AppEnv.SakashoConnectTargetType mSakashoConnectTargetType; // 0x28
-        public static readonly string[] sakashoConnectTargetType; // 0x2C
+        public static AppEnv.LetterBoxDirection letterBoxDirection = LetterBoxDirection.TopBottom; // 0x4
+        private static AppEnv.RegionType mRegion = RegionType.Japan; // 0x8
+        private static AppEnv.BuildType mBuild = BuildType.Develop; // 0xC
+        private static AppEnv.ActionServerType mActionServerType = ActionServerType.name; // 0x10
+        public static string[] actionServerUrl = new string[1] { "url" }; // 0x14
+        private static AppEnv.FileServerType mFileServerType = FileServerType.name; // 0x18
+        public static string[] fileServerUrl = new string[1] { "url" }; // 0x1C
+        private static AppEnv.PaymentServerType mPaymentServerType = PaymentServerType.name; // 0x20
+        public static string[] paymentServerUrl = new string[1] { "url" }; // 0x24
+        private static AppEnv.SakashoConnectTargetType mSakashoConnectTargetType = SakashoConnectTargetType.develop; // 0x28
+        public static readonly string[] sakashoConnectTargetType = new string[4] { "develop", "preview", "server_private", "release" }; // 0x2C
 
-        public static AppEnv.RegionType Region { get; set; }
-        public static AppEnv.BuildType Build { get; set; }
-        public static AppEnv.ActionServerType actionServerType { get; set; }
-        public static AppEnv.FileServerType fileServerType { get; set; }
-        public static AppEnv.PaymentServerType paymentServerType { get; set; }
-        public static AppEnv.SakashoConnectTargetType SakashoConnectTarget { get; set; }
+        // public static AppEnv.RegionType Region { get; set; }
+        // public static AppEnv.BuildType Build { get; set; }
+        // public static AppEnv.ActionServerType actionServerType { get; set; }
+        // public static AppEnv.FileServerType fileServerType { get; set; }
+        // public static AppEnv.PaymentServerType paymentServerType { get; set; }
+        // public static AppEnv.SakashoConnectTargetType SakashoConnectTarget { get; set; }
 
         // // RVA: 0xE0C4E0 Offset: 0xE0C4E0 VA: 0xE0C4E0
         // public static string GetStreamingAssetFilePath(string filename) { }
@@ -96,7 +96,6 @@ namespace XeApp
         // // RVA: 0xE0C898 Offset: 0xE0C898 VA: 0xE0C898
         public static AppEnv.SakashoConnectTargetType GetSakashoConnectTarget()
         {
-            UnityEngine.Debug.LogError("TODO");
             return AppEnv.SakashoConnectTargetType.release;
         }
 
@@ -148,9 +147,6 @@ namespace XeApp
 
         // // RVA: 0xE0CE98 Offset: 0xE0CE98 VA: 0xE0CE98
         // public static void set_SakashoConnectTarget(AppEnv.SakashoConnectTargetType value) { }
-
-        // // RVA: 0xE0CF28 Offset: 0xE0CF28 VA: 0xE0CF28
-        // public void .ctor() { }
 
         // // RVA: 0xE0CF30 Offset: 0xE0CF30 VA: 0xE0CF30
         // private static void .cctor() { }

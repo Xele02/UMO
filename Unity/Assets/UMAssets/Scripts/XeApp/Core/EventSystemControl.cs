@@ -12,7 +12,7 @@ namespace XeApp.Core
 		// // RVA: 0x1D6EC40 Offset: 0x1D6EC40 VA: 0x1D6EC40
 		public void Init(EventSystem es)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO EventSystemControl.Init");
 		}
 
 		// // RVA: 0x1D6ECA4 Offset: 0x1D6ECA4 VA: 0x1D6ECA4

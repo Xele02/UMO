@@ -2,7 +2,6 @@ namespace XeApp.Game.Common
 {
 	public class StatusData
 	{
-		// Fields
 		public int life; // 0x8
 		public int soul; // 0xC
 		public int vocal; // 0x10
@@ -10,18 +9,25 @@ namespace XeApp.Game.Common
 		public int sceneBonus; // 0x18
 		public int support; // 0x1C
 		public int fold; // 0x20
-		public int[] spNoteExpected; // 0x24
+		public int[] spNoteExpected = new int[6]; // 0x24
 
-		// Properties
-		public int Total { get; }
-
-		// // Methods
-
-		// // RVA: 0x1CC9DBC Offset: 0x1CC9DBC VA: 0x1CC9DBC
-		// public int get_Total() { }
+		public int Total { get { return vocal + soul + charm; } } // 0x1CC9DBC
 
 		// // RVA: 0x1CC9DD4 Offset: 0x1CC9DD4 VA: 0x1CC9DD4
-		// public void Clear() { }
+		public void Clear()
+		{
+			charm = 0;
+			sceneBonus = 0;
+			support = 0;
+			fold = 0;
+			life = 0;
+			soul = 0;
+			vocal = 0;
+			for(int i = 0; i < 6; i++)
+			{
+				spNoteExpected[i] = 0;
+			}
+		}
 
 		// // RVA: 0x1CC9E44 Offset: 0x1CC9E44 VA: 0x1CC9E44
 		// public void Copy(StatusData src) { }
@@ -34,8 +40,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0x1CCA1F0 Offset: 0x1CCA1F0 VA: 0x1CCA1F0
 		// public void Div(int div) { }
-
-		// // RVA: 0x1CCA2D8 Offset: 0x1CCA2D8 VA: 0x1CCA2D8
-		// public void .ctor() { }
 	}
 }

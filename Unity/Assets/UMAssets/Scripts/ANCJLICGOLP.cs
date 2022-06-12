@@ -29,7 +29,7 @@ public class ANCJLICGOLP // TypeDefIndex: 8681
             {
                 return KKMJBMKHGNH;
             }
-            return OHJFBLFELNK[LJNAKDMILMC].JADLONAJDAK();
+            return OHJFBLFELNK[LJNAKDMILMC].DNJEJEANJGL;
         }
 
         // RVA: 0xD52D00 Offset: 0xD52D00 VA: 0xD52D00
@@ -142,7 +142,7 @@ public class ANCJLICGOLP // TypeDefIndex: 8681
                     EDOHBJAPLPF_JsonData subData = data["v"];
                     int val = (int)subData;
                     CEBFFLDKAEC elem = new CEBFFLDKAEC();
-                    elem.JFNEHIGOBHH(val);
+                    elem.DNJEJEANJGL = val;
                     subData = data["k"];
                     string key = (string)subData;
                     OHJFBLFELNK.Add(key, elem);

@@ -238,7 +238,8 @@ namespace XeApp.Game
 		// // RVA: 0x99A7A4 Offset: 0x99A7A4 VA: 0x99A7A4
 		public IEnumerator UnloadAllAssets()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			//0x1428C74
+			UnityEngine.Debug.LogWarning("TODO GameManager.UnloadAllAssets");
 			yield break;
 		}
 
@@ -610,7 +611,7 @@ namespace XeApp.Game
 		// // RVA: 0x99FF14 Offset: 0x99FF14 VA: 0x99FF14
 		public void SetupResolutionDefault()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO SetupResolutionDefault");
 		}
 
 		// // RVA: 0x9A0068 Offset: 0x9A0068 VA: 0x9A0068
@@ -726,9 +727,9 @@ namespace XeApp.Game
 			systemLayoutCanvas.planeDistance = 5;
 
 			root = new GameObject("Root");
-			root.AddComponent<FlexibleCanvasLayoutChanger>();
-			le = root.AddComponent<LayoutElement>();
-			CanvasScaler cs = root.AddComponent<CanvasScaler>();
+			canvasSystemGo.AddComponent<FlexibleCanvasLayoutChanger>();
+			le = canvasSystemGo.AddComponent<LayoutElement>();
+			CanvasScaler cs = canvasSystemGo.AddComponent<CanvasScaler>();
 
 			rt = root.AddComponent<RectTransform>();
 			rt.SetParent(systemLayoutCanvas.transform,false);
@@ -862,7 +863,7 @@ namespace XeApp.Game
 		// // RVA: 0x9A0314 Offset: 0x9A0314 VA: 0x9A0314
 		private void ChangeLayerWithChild(GameObject go, int layer)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO ChangeLayerWithChild");
 		}
 
 		// // RVA: 0x9A0294 Offset: 0x9A0294 VA: 0x9A0294

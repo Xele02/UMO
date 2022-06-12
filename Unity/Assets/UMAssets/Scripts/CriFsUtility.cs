@@ -9,8 +9,7 @@ public static class CriFsUtility
 	// // RVA: 0x294CB34 Offset: 0x294CB34 VA: 0x294CB34
 	public static CriFsLoadFileRequest LoadFile(string path, int readUnitSize = 1048576)
     {
-        UnityEngine.Debug.LogError("TODO");
-        return null;
+        return CriFsServer.instance.LoadFile(null, path, null, readUnitSize);
     }
 
 	// // RVA: 0x294CBE8 Offset: 0x294CBE8 VA: 0x294CBE8
@@ -67,7 +66,10 @@ public static class CriFsUtility
 	// public static CriFsBindRequest BindFile(CriFsBinder targetBinder, CriFsBinder srcBinder, string srcPath) { }
 
 	// // RVA: 0x294D368 Offset: 0x294D368 VA: 0x294D368
-	// public static void SetUserAgentString(string userAgentString) { }
+	public static void SetUserAgentString(string userAgentString)
+	{
+        UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x294D4A0 Offset: 0x294D4A0 VA: 0x294D4A0
 	// public static void SetProxyServer(string proxyPath, ushort proxyPort) { }

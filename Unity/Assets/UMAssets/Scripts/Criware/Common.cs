@@ -4,9 +4,15 @@ using System.IO;
 
 namespace CriWare
 {
-    public class Common // TypeDefIndex: 5842
+    public class Common
     {
-        // Fields
+        public struct CpuUsage
+        {
+            public float last; // 0x0
+            public float average; // 0x4
+            public float peak; // 0x8
+        }
+
         private const string scriptVersionString = "2.37.13";
         private const int scriptVersionNumber = 37163776;
         public const bool supportsCriFsInstaller = true;
@@ -15,7 +21,6 @@ namespace CriWare
         public const CallingConvention pluginCallingConvention = CallingConvention.Winapi;
         private static GameObject _managerObject; // 0x0
 
-        // Properties
         public static string streamingAssetsPath { get {
             if(Application.platform == RuntimePlatform.Android)
             {
@@ -31,7 +36,7 @@ namespace CriWare
             return Application.persistentDataPath;
         } } // 0x2BA8B54
         public static GameObject managerObject { get {
-            if(_managerObject = null)
+            if(_managerObject == null)
             {
                 _managerObject = GameObject.Find("/CRIWARE");
                 if(_managerObject == null)
@@ -41,8 +46,6 @@ namespace CriWare
             }
             return _managerObject;
         } } // 0x2BA8C3C
-
-        // Methods
 
         // // RVA: 0x2BA8B84 Offset: 0x2BA8B84 VA: 0x2BA8B84
         public static bool IsStreamingAssetsPath(string path)
@@ -67,7 +70,11 @@ namespace CriWare
         // public static int GetRequiredBinaryVersionNumber() { }
 
         // // RVA: 0x2BA9068 Offset: 0x2BA9068 VA: 0x2BA9068
-        // public static bool CheckBinaryVersionCompatibility() { }
+        public static bool CheckBinaryVersionCompatibility()
+        {
+            UnityEngine.Debug.LogWarning("CheckBinaryVersionCompatibility");
+            return true;
+        }
 
         // // RVA: 0x2BA9140 Offset: 0x2BA9140 VA: 0x2BA9140
         // public static uint GetFsMemoryUsage() { }

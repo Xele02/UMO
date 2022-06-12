@@ -24,11 +24,21 @@ namespace XeApp.Game.Common
 				// // RVA: 0xE9E780 Offset: 0xE9E780 VA: 0xE9E780
 				public void OnAppBoot()
 				{
-					UnityEngine.Debug.LogError("TODO");
+					Initialize();
 				}
 
 				// // RVA: 0xEA02C8 Offset: 0xEA02C8 VA: 0xEA02C8
-				// private void Initialize() { }
+				private void Initialize()
+				{
+					costumeModelId = 0;
+					divaId = 0;
+					positionId = 0;
+					sceneIdList = new int[9];
+					liveSkillIdList = new int[9];
+					liveSkillLevelList = new int[9];
+					activeSkillId = 0;
+					activeSkillLevel = 0;
+				}
 
 				// // RVA: 0xE9F6C0 Offset: 0xE9F6C0 VA: 0xE9F6C0
 				// public void SetupInfo(FFHPBEPOMAK viewDivaData, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, AOJGDNFAIJL.AMIECPBIALP prismData, int index, int positionId = 1) { }
@@ -75,10 +85,41 @@ namespace XeApp.Game.Common
 			public int centerLiveSkillRate { get { return centerLiveSkillRate_ ^ 0x768078; } set { centerLiveSkillRate_= value  ^ 0x768078; } } // get_centerLiveSkillRate 0xE9E428 set_centerLiveSkillRate 0xE9E43C
 
 			// // RVA: 0xE9CAD4 Offset: 0xE9CAD4 VA: 0xE9CAD4
-			// public void OnAppBoot() { }
+			public void OnAppBoot()
+			{
+				Initialize();
+			}
 
 			// // RVA: 0xE9E450 Offset: 0xE9E450 VA: 0xE9E450
-			// private void Initialize() { }
+			private void Initialize()
+			{
+				for(int i = 0; i < 3; i++)
+				{
+					divaList[i] = new DivaInfo();
+					divaList[i].OnAppBoot();
+				}
+				for(int i = 0; i < 5; i++)
+				{
+					if(i < 3)
+					{
+						danceDivaList_[i] = divaList[i];
+					}
+					else
+					{
+						danceDivaList_[i] = new DivaInfo();
+						danceDivaList_[i].OnAppBoot();
+					}
+				}
+				valkyrieForm = 0;
+				valkyrieId = 0;
+				teamStatus = new StatusData();
+				teamStatus.Clear();
+				isPrismEnable = false;
+				teamLuck_ = 0x4e8bf5d; // 0
+				excellentRate_ = 0xda76a15; // 0
+				excellentScoreAdd_ = 0xc0ae7; // 0
+				centerLiveSkillRate_ = 0x768078; // 0
+			}
 
 			// // RVA: 0xE9E784 Offset: 0xE9E784 VA: 0xE9E784
 			// public void SetupInfo(StatusData teamStateus, DFKGGBMFFGB playerData, int teamNo, EEDKAACNBBG musicData, EAJCBFGKKFA friendData, LimitOverStatusData limitOverStatus, AOJGDNFAIJL.AMIECPBIALP prismData, bool isGoDiva = False) { }
@@ -205,7 +246,16 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE9CA60 Offset: 0xE9CA60 VA: 0xE9CA60
 		public void OnAppBoot()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			if(initialized)
+				return;
+
+			initialized = true;
+			m_teamInfo.OnAppBoot();
+			m_musicInfo.OnAppBoot();
+			LiveSkipTicketCount = 0;
+			EnableLiveSkip = false;
+			IsNotUpdateProfile = false;
+			SelectedDashIndex = -1;
 		}
 
 		// // RVA: 0xE9CBC8 Offset: 0xE9CBC8 VA: 0xE9CBC8
