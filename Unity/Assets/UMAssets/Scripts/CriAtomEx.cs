@@ -77,7 +77,7 @@ public class CriAtomEx
 																							{
 																								{Randomize3dCalcType.None, new CriAtomEx.Randomize3dParamType[3]},
 																								{Randomize3dCalcType.Rectangle, new CriAtomEx.Randomize3dParamType[3]},
-																								{Randomize3dCalcType.Cuboid, new CriAtomEx.Randomize3dParamType[3] {E429CCA3F703A39CC5954A6572FEC9086135B34E}},
+																								{Randomize3dCalcType.Cuboid, new CriAtomEx.Randomize3dParamType[3] {CriAtomEx.Randomize3dParamType.Width, CriAtomEx.Randomize3dParamType.Depth, CriAtomEx.Randomize3dParamType.Height}},
 																								{Randomize3dCalcType.Circle, new CriAtomEx.Randomize3dParamType[3]},
 																								{Randomize3dCalcType.Cylinder, new CriAtomEx.Randomize3dParamType[3]},
 																								{Randomize3dCalcType.Sphere, new CriAtomEx.Randomize3dParamType[3]},

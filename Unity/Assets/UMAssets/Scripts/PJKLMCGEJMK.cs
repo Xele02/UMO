@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using XeApp.Core.WorkerThread;
 using UnityEngine;
 using System.Collections;
+using XeSys;
 
 public delegate void OEEHODIFBIG(bool JKDJCFEBDHC);
 
@@ -31,8 +32,8 @@ public class PJKLMCGEJMK
     public bool NFECEPJEMHG; // 0x35
     public bool LMBLIFCNKCJ; // 0x36
     private bool NAJENHKNJLN; // 0x37
-    // private IIDJLAEDMPI HFMOEKIBNKA = new IIDJLAEDMPI(); // 0x38
-    // private LGNBLDHKLJK DNMDKBFINPG = new LGNBLDHKLJK(); // 0x3C
+    private IIDJLAEDMPI HFMOEKIBNKA = new IIDJLAEDMPI(); // 0x38
+    private LGNBLDHKLJK DNMDKBFINPG = new LGNBLDHKLJK(); // 0x3C
     public bool BEBMDHKKNDA; // 0x40
     public bool KAEMPHIPDFN; // 0x41
     public bool BLFILNOBHMM; // 0x42
@@ -119,8 +120,8 @@ public class PJKLMCGEJMK
     {
         CMCKNKKCNDK_Status = PJKLMCGEJMK.AHADNLCOPOL.NFFGMBBNNPH_None;
         LCIGLIDJILJ_updater = this.LFKLIOKFGLP_TryStartRequest;
-        //HFMOEKIBNKA.EAJMLOKKOOK(Utility.GetCurrentUnixTime());
-        //DNMDKBFINPG.JOJFKIIHMOJ(HFMOEKIBNKA.KMEFBNBFJHI());
+        HFMOEKIBNKA.EAJMLOKKOOK(Utility.GetCurrentUnixTime());
+        DNMDKBFINPG.JOJFKIIHMOJ(HFMOEKIBNKA.KMEFBNBFJHI());
         UnityEngine.Debug.LogError("TODO");
         BNJPAKLNOPA_WorkerThreadQueue = new XeApp.Core.WorkerThread.WorkerThreadQueue();
         BNJPAKLNOPA_WorkerThreadQueue.Start();

@@ -45,7 +45,7 @@ public abstract class CACGCMBKHDI_Request
     // public virtual bool OIDCBBGLPHL { get; } // GINMIBJOABO 0x18F256C
     // public virtual bool ICFMKEFJOIE { get; } // HOPDAAAEBBG 0x18F2574 
     // public virtual bool BNCFONNOHFO { get; } // NPLNAJFJPEE 0x18F257C
-    // public bool PLOOEECNHFB { get; set; } // JFOKBBLFMLD 0x18F2584 EDBGNGILAKA 0x18F258C
+    public bool PLOOEECNHFB { get { return NAEDHHPPFCK; } set { NAEDHHPPFCK = value; } } // JFOKBBLFMLD 0x18F2584 EDBGNGILAKA 0x18F258C
     // public SakashoAPICallContext EBGACDGNCAA { get; set; }  // 0x78 NKPCDAJOMEO EEMOCCMAONH IGIDINIFHDJ
     public virtual bool EBPLLJGPFDA { get { UnityEngine.Debug.Log("TODO"); return false; } set {UnityEngine.Debug.Log("TODO");} } // ??
 

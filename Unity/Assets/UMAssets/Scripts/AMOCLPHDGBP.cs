@@ -40,7 +40,7 @@ public class AMOCLPHDGBP
 	public Action PBJINBCLFBB; // 0x20
 	private bool ENDJKKHKMNP; // 0x24
 	private bool PPKOLFEBLCF = true; // 0x25
-	private SakashoErrorId OHBJPKPCIEB = 0x5c; // 0x28
+	private SakashoErrorId OHBJPKPCIEB = SakashoErrorId.PRODUCT_TRANSACTION_EXISTS; // 0x28
 	private bool LNHFLJBGGJB; // 0x2C
 	private bool OCNNKKPBDLL; // 0x2D
 	private bool PBCJCAOLLKI; // 0x2E

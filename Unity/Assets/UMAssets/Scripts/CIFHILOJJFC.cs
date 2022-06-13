@@ -13,7 +13,7 @@ public class CIFHILOJJFC
 	public static string CBELJGBFLGA = "StringLiteral_9767"; // 0x0 
 
 	// // RVA: 0xFF5340 Offset: 0xFF5340 VA: 0xFF5340
-	public OJPDCIGOLMA()
+	public CIFHILOJJFC()
 	{ 
 		UnityEngine.Debug.LogError("TODO");
 	}
