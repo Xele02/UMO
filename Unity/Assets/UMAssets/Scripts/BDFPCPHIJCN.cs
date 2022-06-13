@@ -9,15 +9,11 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 	private int LGADCGFMLLD; // 0x50
 	private AssetBundleCreateRequest NMNCMNNPNCI; // 0x54
 
-	// RVA: 0xC704E4 Offset: 0xC704E4 VA: 0xC704E4
-	public BDFPCPHIJCN()
-    {
-    }
-
 	// RVA: 0xC70568 Offset: 0xC70568 VA: 0xC70568
 	public BDFPCPHIJCN(string CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
         : base(CJEKGLGBIHF_path,BOPDLODALFD_withoutPlarformPath,OGLMMENAJFL_onSuccess,GOIHDOPGPCE_onFail,JBKMAPLCBMO_arg,HNKPENAFDKA_argValue,LAMFBMFNOFP_fi)
     {
+		return;
     }
 
 	// RVA: 0xC70630 Offset: 0xC70630 VA: 0xC70630 Slot: 4

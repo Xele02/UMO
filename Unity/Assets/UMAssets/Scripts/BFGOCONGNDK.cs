@@ -1,7 +1,6 @@
 
 public class BFGOCONGNDK
 {
-	// Fields
 	private const int NEBFFKCGIMK = 741042;
 	private const int OBHOPEGFNGN = 16;
 	public string IOIMHJAOKOO; // 0x8
@@ -35,7 +34,4 @@ public class BFGOCONGNDK
         UnityEngine.Debug.LogError("TODO");
         return false;
     }
-
-	// // RVA: 0xC7B55C Offset: 0xC7B55C VA: 0xC7B55C
-	// public void .ctor() { }
 }

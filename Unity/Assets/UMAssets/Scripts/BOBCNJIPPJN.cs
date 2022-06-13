@@ -4,8 +4,6 @@ using System.IO;
 
 public class BOBCNJIPPJN
 {
-	// Methods
-
 	// RVA: 0x19CC098 Offset: 0x19CC098 VA: 0x19CC098
 	public static bool AGJJGJCIMKI(byte[] DBBGALAPFGC)
     {

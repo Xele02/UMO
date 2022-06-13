@@ -1,8 +1,6 @@
 
 public class CNGFKOJANNP
 {
-	// [CompilerGeneratedAttribute] // RVA: 0x666994 Offset: 0x666994 VA: 0x666994
-	// private static CNGFKOJANNP <LGMPACEDIJF>k__BackingField; // 0x0
 	private CEBFFLDKAEC IKBKLPNADJM; // 0x8
 	private LINJMMGGDKL OCCEOHOFGNE; // 0xC
 	private const int DFLLFGDDFFG = 750;
@@ -11,15 +9,9 @@ public class CNGFKOJANNP
 	private int FBGGEFFJJHB; // 0x18
 	public PJADOKMABLA IBJEFPCNMAL; // 0x1C
 
-	public static CNGFKOJANNP HHCJCDFCLOB { get; set; } // NKACBOEHELJ 0x175B3A8
-	public bool MGALHAHPADF { get; set; }
-	public bool AKPCMLEPPGC { get; set; }
-
-	// Methods
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BA174 Offset: 0x6BA174 VA: 0x6BA174
-	// // RVA: 0x175B40C Offset: 0x175B40C VA: 0x175B40C
-	// private static void OKPMHKNCNAL(CNGFKOJANNP NANNGLGOFKH) { }
+	public static CNGFKOJANNP HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF // NKACBOEHELJ OKPMHKNCNAL
+	// public bool MGALHAHPADF { get; set; } // ??
+	// public bool AKPCMLEPPGC { get; set; } // ??
 
 	// // RVA: 0x175B470 Offset: 0x175B470 VA: 0x175B470
 	public void NOIKNDALDAC(byte[] PFJBBHAMAKM)
@@ -65,7 +57,4 @@ public class CNGFKOJANNP
 
 	// // RVA: 0x175BB70 Offset: 0x175BB70 VA: 0x175BB70
 	// public void BNGIDMBNILP() { }
-
-	// // RVA: 0x175BE5C Offset: 0x175BE5C VA: 0x175BE5C
-	// public void .ctor() { }
 }

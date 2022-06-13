@@ -2,14 +2,13 @@ using XeApp.Core.WorkerThread;
 using UnityEngine;
 using System.Collections;
 
-// Namespace:
 public abstract class CACGCMBKHDI {}
 public abstract class CACGCMBKHDI_Request
 {
     public long CKOOCBJGHBI; // 0x8
-    public int CFICLNJACCD; // 0x10
-    public float GJAEJFLLKGC; // 0x14
-    public float ICDEFIIADDO_Timeout; // 0x18
+    public int CFICLNJACCD = 3; // 0x10
+    public float GJAEJFLLKGC = 3.0f; // 0x14
+    public float ICDEFIIADDO_Timeout = 120.0f; // 0x18
     protected string ECGDADGLAMM; // 0x28
     // public MMACCEADALH NBFDEFGFLPJ; // 0x50
     public bool DLKLLHPLANH; // 0x54
@@ -32,9 +31,9 @@ public abstract class CACGCMBKHDI_Request
     public bool LEBKCAEHLPC { get; set; } // 0x36 DMGEAJAAHAO FHBJIBDPBLI ODMPKGGKPAN
     public bool PDAPLCPOCMA { get; set; } // 0x37 MIEDINFMHKL EBANJNNPMCM GNKHADMLLGA
     public bool EFGFPCBGDDK { get; set; } // 0x38 FMBCHNLOAHF  // EEEPONHOKCJ // EHJOEBHMHLB
-    public string NGCAIEGPLKD_result { get; set; }  // JCIJAABGKKM; // 0x3C // ALHHGGDPGEH // GLHKPBHJAPP
+    public string NGCAIEGPLKD_result { get; set; }  // 0x3C // JCIJAABGKKM; // ALHHGGDPGEH // GLHKPBHJAPP
 
-    public OBOKMHHMOIL HOHOBEOJPBK { get; set; } // POMCKJFOMGJ // 0x40 // PEMKJFHLBIA // FINMAPHMLHA
+    public OBOKMHHMOIL HOHOBEOJPBK { get; set; }  // 0x40 // POMCKJFOMGJ // PEMKJFHLBIA // FINMAPHMLHA
     // public IDNNDIHDLGA HIBMKLEJEDP { get; set; } // 0x44 DFEGGDEPMMB PLKKKJIEJNE IPHOHNBDMOE
     public string GEKKKPIIOAF { get; set; } // 0x48 AOCPFCELECC EFJKDEPPKJL EOIEFLFHAFI
     public string JNDJDDBAIAJ { get; set; } // 0x4C APGMLBJEHPH NHPMIODGLEJ NJGFHKKAKEM
@@ -43,10 +42,10 @@ public abstract class CACGCMBKHDI_Request
     public double DMOBOIOFPCM { get; set; } // 0x60 GJKEKJMCFLB IBBPAJGOFFA FNIKLDHAPEG
     public double LHGPAJGIAME { get; set; }  // 0x68 FOFFKBHGEPC OJCLNCIEHLL BPAIAMDPKBJ
     // public double MOCNPGKAPKE { get; } // FLDLAOCPFCP 0x18F23E0
-    public virtual bool OIDCBBGLPHL { get; } // GINMIBJOABO 0x18F256C
-    public virtual bool ICFMKEFJOIE { get; } // HOPDAAAEBBG 0x18F2574 
-    public virtual bool BNCFONNOHFO { get; } // NPLNAJFJPEE 0x18F257C
-    public bool PLOOEECNHFB { get; set; } // JFOKBBLFMLD 0x18F2584 EDBGNGILAKA 0x18F258C
+    // public virtual bool OIDCBBGLPHL { get; } // GINMIBJOABO 0x18F256C
+    // public virtual bool ICFMKEFJOIE { get; } // HOPDAAAEBBG 0x18F2574 
+    // public virtual bool BNCFONNOHFO { get; } // NPLNAJFJPEE 0x18F257C
+    // public bool PLOOEECNHFB { get; set; } // JFOKBBLFMLD 0x18F2584 EDBGNGILAKA 0x18F258C
     // public SakashoAPICallContext EBGACDGNCAA { get; set; }  // 0x78 NKPCDAJOMEO EEMOCCMAONH IGIDINIFHDJ
     public virtual bool EBPLLJGPFDA { get { UnityEngine.Debug.Log("TODO"); return false; } set {UnityEngine.Debug.Log("TODO");} } // ??
 
@@ -118,12 +117,4 @@ public abstract class CACGCMBKHDI_Request
     // // RVA: 0x18F2CC8 Offset: 0x18F2CC8 VA: 0x18F2CC8 Slot: 16
     // public virtual string GHAIKECGKKO() { }
 
-    // RVA: 0x18F2D04 Offset: 0x18F2D04 VA: 0x18F2D04
-    protected CACGCMBKHDI_Request() 
-    { 
-        UnityEngine.Debug.LogError("TODO");
-        // CFICLNJACCD
-        // GJAEJFLLKGC
-        // ICDEFIIADDO_Timeout
-    }
 }

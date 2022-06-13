@@ -1,13 +1,9 @@
 using System.Collections.Generic;
 
-// Namespace: 
-public class CEDHHAGBIBA // TypeDefIndex: 8656
+public class CEDHHAGBIBA
 {
-	// Fields
 	public static uint LBLGDJJGFIO; // 0x0
 	private const int PMLANIPJEFO = 3;
-
-	// Methods
 
 	// // RVA: 0x12B1884 Offset: 0x12B1884 VA: 0x12B1884
 	// public static string KJFAGPBALNO(string BJKEOACPMHB) { }

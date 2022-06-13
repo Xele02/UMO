@@ -2,7 +2,6 @@ using System;
 
 public class CriAtomExPlayer : CriDisposable
 {
-	// Fields
 	// [CompilerGeneratedAttribute] // RVA: 0x634A04 Offset: 0x634A04 VA: 0x634A04
 	// private CriAtomExBeatSync.CbFunc _onBeatSyncCallback; // 0x18
 	// [CompilerGeneratedAttribute] // RVA: 0x634A14 Offset: 0x634A14 VA: 0x634A14
@@ -13,18 +12,9 @@ public class CriAtomExPlayer : CriDisposable
 	private int max_path; // 0x2C
 	private IntPtr handle; // 0x30
 
-	// Properties
-	public IntPtr nativeHandle { get; }
-	public bool isAvailable { get; }
-	public int entryPoolCapacity { get; }
-
-	// Methods
-
-	// // RVA: 0x289FA10 Offset: 0x289FA10 VA: 0x289FA10
-	// public IntPtr get_nativeHandle() { }
-
-	// // RVA: 0x289F9AC Offset: 0x289F9AC VA: 0x289F9AC
-	// public bool get_isAvailable() { }
+	// public IntPtr nativeHandle { get; } // 0x289FA10
+	// public bool isAvailable { get; } // 0x289F9AC
+	// public int entryPoolCapacity { get; } // 0x28A51E4
 
 	// [CompilerGeneratedAttribute] // RVA: 0x635F28 Offset: 0x635F28 VA: 0x635F28
 	// // RVA: 0x28A30AC Offset: 0x28A30AC VA: 0x28A30AC
@@ -113,9 +103,6 @@ public class CriAtomExPlayer : CriDisposable
 
 	// // RVA: 0x28A506C Offset: 0x28A506C VA: 0x28A506C
 	// public int GetNumEntries() { }
-
-	// // RVA: 0x28A51E4 Offset: 0x28A51E4 VA: 0x28A51E4
-	// public int get_entryPoolCapacity() { }
 
 	// // RVA: 0x28A51EC Offset: 0x28A51EC VA: 0x28A51EC
 	// public bool EntryFile(CriFsBinder binder, string path, bool repeat) { }

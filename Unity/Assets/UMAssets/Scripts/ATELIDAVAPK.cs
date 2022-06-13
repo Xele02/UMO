@@ -32,7 +32,4 @@ public class ATELIDAVAPK
 
 	// // RVA: 0xD62050 Offset: 0xD62050 VA: 0xD62050
 	// public bool QTHZDMBR_A() { }
-
-	// // RVA: 0xD62908 Offset: 0xD62908 VA: 0xD62908
-	// public void .ctor() { }
 }

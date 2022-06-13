@@ -15,26 +15,11 @@ public class CriAtomEx
 		[SerializeField]
 		private float[] calculationParameters; // 0x8
 
-		public bool FollowsOriginalSource { get; }
-		public CriAtomEx.Randomize3dCalcType CalculationType { get; }
-		public float CalculationParameter1 { get; }
-		public float CalculationParameter2 { get; }
-		public float CalculationParameter3 { get; }
-
-		// // RVA: 0x81C634 Offset: 0x81C634 VA: 0x81C634
-		// public bool get_FollowsOriginalSource() { }
-
-		// // RVA: 0x81C63C Offset: 0x81C63C VA: 0x81C63C
-		// public CriAtomEx.Randomize3dCalcType get_CalculationType() { }
-
-		// // RVA: 0x81C644 Offset: 0x81C644 VA: 0x81C644
-		// public float get_CalculationParameter1() { }
-
-		// // RVA: 0x81C64C Offset: 0x81C64C VA: 0x81C64C
-		// public float get_CalculationParameter2() { }
-
-		// // RVA: 0x81C654 Offset: 0x81C654 VA: 0x81C654
-		// public float get_CalculationParameter3() { }
+		// public bool FollowsOriginalSource { get; } // 0x81C634
+		// public CriAtomEx.Randomize3dCalcType CalculationType { get; } // 0x81C63C
+		// public float CalculationParameter1 { get; } // 0x81C644
+		// public float CalculationParameter2 { get; } // 0x81C64C
+		// public float CalculationParameter3 { get; } // 0x81C654
 
 		// // RVA: 0x81C65C Offset: 0x81C65C VA: 0x81C65C
 		// internal void .ctor(byte[] data, int startIndex) { }
@@ -88,8 +73,17 @@ public class CriAtomEx
 	}
 
 	public const uint InvalidAisacControlId = 65535;
-	public static readonly Dictionary<CriAtomEx.Randomize3dCalcType, CriAtomEx.Randomize3dParamType[]> randomize3dParamTable; // 0x0
-	public static CriAtomEx.SoundRendererType androidDefaultSoundRendererType; // 0x4
+	public static readonly Dictionary<CriAtomEx.Randomize3dCalcType, CriAtomEx.Randomize3dParamType[]> randomize3dParamTable = new Dictionary<CriAtomEx.Randomize3dCalcType, CriAtomEx.Randomize3dParamType[]>
+																							{
+																								{Randomize3dCalcType.None, new CriAtomEx.Randomize3dParamType[3]},
+																								{Randomize3dCalcType.Rectangle, new CriAtomEx.Randomize3dParamType[3]},
+																								{Randomize3dCalcType.Cuboid, new CriAtomEx.Randomize3dParamType[3] {E429CCA3F703A39CC5954A6572FEC9086135B34E}},
+																								{Randomize3dCalcType.Circle, new CriAtomEx.Randomize3dParamType[3]},
+																								{Randomize3dCalcType.Cylinder, new CriAtomEx.Randomize3dParamType[3]},
+																								{Randomize3dCalcType.Sphere, new CriAtomEx.Randomize3dParamType[3]},
+																								{Randomize3dCalcType.List, new CriAtomEx.Randomize3dParamType[3]}
+																							}; // 0x0
+	public static CriAtomEx.SoundRendererType androidDefaultSoundRendererType = SoundRendererType.Default; // 0x4
 
 	// // RVA: 0x28801D4 Offset: 0x28801D4 VA: 0x28801D4
 	// public static void SetSpeakerAngle(CriAtomEx.SpeakerAngles6ch speakerAngle) { }
@@ -292,7 +286,4 @@ public class CriAtomEx
 
 	// // RVA: 0x2882C58 Offset: 0x2882C58 VA: 0x2882C58
 	// public static extern int criAtom_GetSlBufferConsumptionLatency_ANDROID() { }
-
-	// // RVA: 0x2882D40 Offset: 0x2882D40 VA: 0x2882D40
-	// private static void .cctor() { }
 }

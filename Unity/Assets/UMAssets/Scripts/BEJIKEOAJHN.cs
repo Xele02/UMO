@@ -4,14 +4,12 @@ public class BEJIKEOAJHN
 	public const int CDFANKJIPJL = 8;
 	public int LMDACNNJDOE = 15; // 0x8
 	public int ICGAOAFIHFD = 15; // 0xC
-	public int FCKEDCKCEFC = 15; // 0x10 // init 0x80000000f;
+	public int FCKEDCKCEFC = 15; // 0x10 // init 0x80000000f; inversed?
 	public int IBEINHHMHAC = 8; // 0x14
 	public int DDHCLNFPNGK = 1; // 0x18
 	public int HHMCIGLCBNG; // 0x1C
 	public int AHLFOHJMGAI; // 0x20
 	public int DADIPGPHLDD = 1; // 0x24
-
-	// Methods
 
 	// // RVA: 0xC756D8 Offset: 0xC756D8 VA: 0xC756D8
 	// public void KHEKNNFCAOI(EDOHBJAPLPF OBHAFLMHAKG) { }

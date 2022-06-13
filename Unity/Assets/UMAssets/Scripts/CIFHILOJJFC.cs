@@ -5,17 +5,18 @@ public class CIFHILOJJFC
     public delegate bool OJPDCIGOLMA(int AHHJLDLAPAN, int BCCHOBPJJKE);
     
 	public int GIDKKHFHALL; // 0x8
-	public string OPFGFINHFCE; // 0xC
+	public string OPFGFINHFCE = ""; // 0xC
 	public List<AMCGONHBGGF> FDBOPFEOENF; // 0x10
 	public List<DKDMLOBCPFC> KAKGHFFOAEJ; // 0x14
 	public int FODKKJIDDKN; // 0x18
 	public int GCCNMFHELCB; // 0x1C
-	public static string CBELJGBFLGA; // 0x0
-
-	// // Methods
+	public static string CBELJGBFLGA = "StringLiteral_9767"; // 0x0 
 
 	// // RVA: 0xFF5340 Offset: 0xFF5340 VA: 0xFF5340
-	// public void .ctor() { }
+	public OJPDCIGOLMA()
+	{ 
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xFF54D4 Offset: 0xFF54D4 VA: 0xFF54D4
 	// public bool DFIGPDCBAPB() { }
@@ -37,7 +38,4 @@ public class CIFHILOJJFC
 
 	// // RVA: 0xFF6258 Offset: 0xFF6258 VA: 0xFF6258
 	// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, CIFHILOJJFC OHMCIEMIKCE, bool EFOEPDLNLJG) { }
-
-	// // RVA: 0xFF7390 Offset: 0xFF7390 VA: 0xFF7390
-	// private static void .cctor() { }
 }

@@ -39,15 +39,16 @@ public class AMOCLPHDGBP
 	private DJBHIFLHJLK MOBEEPPKFLG; // 0x1C
 	public Action PBJINBCLFBB; // 0x20
 	private bool ENDJKKHKMNP; // 0x24
-	private bool PPKOLFEBLCF; // 0x25
-	private SakashoErrorId OHBJPKPCIEB; // 0x28
+	private bool PPKOLFEBLCF = true; // 0x25
+	private SakashoErrorId OHBJPKPCIEB = 0x5c; // 0x28
 	private bool LNHFLJBGGJB; // 0x2C
 	private bool OCNNKKPBDLL; // 0x2D
 	private bool PBCJCAOLLKI; // 0x2E
 	private bool NHOAJCLAEJD; // 0x2F
 	public bool CLFGEAPFFMA; // 0x30
 	private EMAGIFONJLD GDGBDFEGLKK; // 0x34
-	private static string[] CMPEKADFEEO; // 0x0
+	private static string[] CMPEKADFEEO = new string[11] {"paidvc start ", "get_products_success ", "purchase_start ", "purchase_action ", "error_emultaion ", "purchase_success ",
+															"purchase_cancel ", "purchase_error_special ", "purchase_error_permanent ", "purchase_error_purchase ", "processing now "}; // 0x0
 	private int LBEBFEIHPOO; // 0x38
 	private int KLCMKLPIDDJ; // 0x3C
 	private bool LPEJBOIONDP; // 0x40
@@ -57,13 +58,7 @@ public class AMOCLPHDGBP
 	private bool KMABBBKJFCB; // 0x44
 	private int FJIKAAOMOKE; // 0x48
 
-	// Properties
-	public EJHPIMANJFP HFCNOINEPLB { get; }
-
-	// Methods
-
-	// // RVA: 0xCE9480 Offset: 0xCE9480 VA: 0xCE9480
-	// public EJHPIMANJFP IHHPFGILBNE() { }
+	// public EJHPIMANJFP HFCNOINEPLB { get; } // IHHPFGILBNE 0xCE9480
 
 	// // RVA: 0xCE9488 Offset: 0xCE9488 VA: 0xCE9488
 	// private void FCPBCDOKOPD(AMOCLPHDGBP.FINNDKJENCG PPFNGGCBJKC, string IBDJFHFIIHN = "") { }
@@ -174,10 +169,4 @@ public class AMOCLPHDGBP
 
 	// // RVA: 0xCEA6D0 Offset: 0xCEA6D0 VA: 0xCEA6D0
 	// public static void HIBOGALOHHO() { }
-
-	// // RVA: 0xCEA6D4 Offset: 0xCEA6D4 VA: 0xCEA6D4
-	// public void .ctor() { }
-
-	// // RVA: 0xCEA6EC Offset: 0xCEA6EC VA: 0xCEA6EC
-	// private static void .cctor() { }
 }

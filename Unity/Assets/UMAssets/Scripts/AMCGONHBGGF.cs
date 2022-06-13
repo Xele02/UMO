@@ -1,13 +1,10 @@
 
 public class AMCGONHBGGF
 {
-	// Fields
 	public int DIPKCALNIII; // 0x8
 	public int BEEAIAAJOHD; // 0xC
 	public int AFNIOJHODAG; // 0x10
-	public int[] EBDNICPAFLB; // 0x14
-
-	// Methods
+	public int[] EBDNICPAFLB = new int[3]; // 0x14
 
 	// // RVA: 0xCE0D98 Offset: 0xCE0D98 VA: 0xCE0D98
 	// public void LHPDDGIJKNB() { }
@@ -20,7 +17,4 @@ public class AMCGONHBGGF
 
 	// // RVA: 0xCE101C Offset: 0xCE101C VA: 0xCE101C
 	// public EDOHBJAPLPF NOJCMGAFAAC() { }
-
-	// // RVA: 0xCE1318 Offset: 0xCE1318 VA: 0xCE1318
-	// public void .ctor() { }
 }

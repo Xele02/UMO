@@ -6,7 +6,6 @@ public class CJMOKHDNBNB
 	private static string OAFCIACBJNN; // 0x4
 	private static string HMGCLBLBMKN; // 0x8
 
-	// Properties
 	public static string FIPFFELDIOG { get { // MIGEKMKBPFM 0x107CD20
         if(!PCIIJLFIEFH)
         {
@@ -17,8 +16,6 @@ public class CJMOKHDNBNB
         return OAFCIACBJNN;
     } } 
 	public static string NPDKPLJENOJ { get; }
-
-	// Methods
 
 	// // RVA: 0x107CFDC Offset: 0x107CFDC VA: 0x107CFDC
 	// public static string KEPPNAKFDIF() { }
