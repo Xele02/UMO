@@ -10,14 +10,10 @@ public class KDLPEDBKMID
 {
     public class EMEKAOMPFNC
     {
-        // Fields
         public string CJEKGLGBIHF; // 0x8
         public string BLHCFFOHBNF; // 0xC
         public string NOCCPNGFFPF; // 0x10
         public int LGADCGFMLLD; // 0x14
-
-        // // RVA: 0xE7E4A0 Offset: 0xE7E4A0 VA: 0xE7E4A0
-        // public void .ctor() { }
     }
 
     public enum PHKOILLPHGG
@@ -27,14 +23,8 @@ public class KDLPEDBKMID
         ODFDIFNIFPC = 2,
     }
 
-	// [CompilerGeneratedAttribute] // RVA: 0x666A94 Offset: 0x666A94 VA: 0x666A94
-	// private static KDLPEDBKMID <LGMPACEDIJF>k__BackingField; // 0x0
-	private StringBuilder JBBHNIACMFJ; // 0x8
-	private List<KDLPEDBKMID.EMEKAOMPFNC> JFEKDMEMKHE; // 0xC
-	// [CompilerGeneratedAttribute] // RVA: 0x666AA4 Offset: 0x666AA4 VA: 0x666AA4
-	// private OMIFMMJPMDJ <KPEKONPJHCL>k__BackingField; // 0x10
-	// [CompilerGeneratedAttribute] // RVA: 0x666AB4 Offset: 0x666AB4 VA: 0x666AB4
-	// private OBHIGCFPKJN <EAIFOAGPGGH>k__BackingField; // 0x14
+	private StringBuilder JBBHNIACMFJ = new StringBuilder(256); // 0x8
+	private List<KDLPEDBKMID.EMEKAOMPFNC> JFEKDMEMKHE = new List<KDLPEDBKMID.EMEKAOMPFNC>(30); // 0xC
 	public DJBHIFLHJLK FGGJNGCAFGK; // 0x18
 	private Action LCIGLIDJILJ; // 0x1C
 	private bool KOIGPANFBKP; // 0x20
@@ -42,65 +32,55 @@ public class KDLPEDBKMID
 	public float HANBBBBLLGP; // 0x24
 	private bool PICLIFPDEOF; // 0x28
 	private JEHIAIPJNJF PMDNNKAPIKJ; // 0x2C
-	// [CompilerGeneratedAttribute] // RVA: 0x666AC4 Offset: 0x666AC4 VA: 0x666AC4
-	// private KDLPEDBKMID.PHKOILLPHGG <HMCLOEGDNBA>k__BackingField; // 0x30
 	private float FGCMHIPPDFL; // 0x34
-	private float LPHLENALMBE; // 0x38
-	private WaitForEndOfFrame CGHFIPJFFKD; // 0x3C
-	private static readonly string[] NFKOAFFBHOL; // 0x4
-	private static readonly string[] FJFFOIHEDID; // 0x8
-	private static readonly string[] KJAAFBDBDOM; // 0xC
-	private static readonly string MFDEFIILPGM; // 0x10
-	private static readonly string JOLFLDNELHO; // 0x14
-	private static readonly string NMFLPJMFPFN; // 0x18
-	private static readonly string EMLADNPGDOG; // 0x1C
-	private static readonly string[] ABNBIJGFNBA; // 0x20
-	private static readonly string[] MOMNOGAGKHP; // 0x24
-	private static readonly string[] BPKOEOEOBLD; // 0x28
-	private static readonly string[] EALKAGJANPD; // 0x2C
-	private static readonly string[] ILINMFJBKAL; // 0x30
-	private static readonly string[] KPBAICAFLPC; // 0x34
+	private float LPHLENALMBE = 1.0f; // 0x38
+	private WaitForEndOfFrame CGHFIPJFFKD = new WaitForEndOfFrame(); // 0x3C
+	private static readonly string[] NFKOAFFBHOL = new string[13] {"snd/bgm/cs_bgm_tutorial.acb", 
+																	"snd/bgm/cs_bgm_tutorial.awb",
+																	"ct/dv/me/01/01_01.xab",
+																	"ct/dv/me/01/02_01.xab",
+																	"ct/dv/me/01/03_01.xab",
+																	"ct/dv/me/01/04_01.xab",
+																	"ct/dv/me/01/05_01.xab",
+																	"ct/dv/me/01/06_01.xab",
+																	"ct/dv/me/01/07_01.xab",
+																	"ct/dv/me/01/10_01.xab",
+																	"ly/083.xab",
+																	"handmade/shader.xab",
+																	"handmade/cmnparam.xab"}; // 0x4
+	private static readonly string[] FJFFOIHEDID = new string[6] {"mc/{0}/bt001.xab",
+																	"mc/{0}/ft.xab",
+																	"mc/{0}/sc.xab",
+																	"sc/{0:D4}.dat",
+																	"snd/bgm/cs_w_{0:D4}.acb",
+																	"snd/bgm/cs_w_{0:D4}.awb"}; // 0x8
+	private static readonly string[] KJAAFBDBDOM = new string[6] {"mc/{0}/bt001.xab",
+																	"mc/{0}/ft.xab",
+																	"mc/{0}/sc.xab",
+																	"sc/{0:D4}.dat",
+																	"snd/bgm/cs_w_{0:D4}.acb",
+																	"snd/bgm/cs_w_{0:D4}_d.awb"}; // 0xC
+	private static readonly string MFDEFIILPGM = "st/{0:D4}.xab"; // 0x10
+	private static readonly string JOLFLDNELHO = "mov/gm/dv/game_dv_{0:D4}_mv_{1}q{2:D1}.usm"; // 0x14
+	private static readonly string NMFLPJMFPFN = "mc/{0}/bt002.xab"; // 0x18
+	private static readonly string EMLADNPGDOG = "mov/gm/dv/game_dv_{0:D4}_mv_{1}q{2:D1}.usm"; // 0x1C
+	private static readonly string[] ABNBIJGFNBA = new string[6] {"mc/{0}/dr/cc/{1:D3}.xab",
+																	"mc/{0}/dr/dc/{1:D3}.xab",
+																	"mc/{0}/dr/dv/{1:D3}.xab",
+																	"mc/{0}/dr/li/{1:D3}.xab",
+																	"mc/{0}/dr/st/{1:D3}.xab",
+																	"mc/{0}/dr/sc/{1:D3}.xab"}; // 0x20
+	private static readonly string[] MOMNOGAGKHP = new string[2] {"snd/vo/diva/cs_diva_{0:D3}.acb", "snd/vo/diva/cs_diva_{0:D3}.awb"}; // 0x24
+	private static readonly string[] BPKOEOEOBLD = new string[3] {"dv/cs/{0:D3}_{1:D3}.xab", "dv/bs/{0:D3}_{1:D3}.xab", "ct/dv/ps/{0:D2}_{1:D2}.xab"}; // 0x28
+	private static readonly string[] EALKAGJANPD = new string[3] {"ct/dv/me/01/{0:D2}_{1:D2}.xab", "ct/dv/me/02/{0:D2}_{1:D2}.xab", "ct/dv/me/03/{0:D2}_{1:D2}.xab"}; // 0x2C
+	private static readonly string[] ILINMFJBKAL = new string[3] {"vl/{0:D4}.xab", "ct/vl/01/{0:D2}_01.xab", "ct/vl/02/{0:D2}_01.xab"}; // 0x30
+	private static readonly string[] KPBAICAFLPC = new string[3] {"snd/vo/pilot/cs_pilot_{0:D3}.acb", "snd/vo/pilot/cs_pilot_{0:D3}.awb", "ct/pl/{0:D3}.xab"}; // 0x34
 
-	public static KDLPEDBKMID HHCJCDFCLOB { get; set; }
-	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; }
-	public OBHIGCFPKJN MAIHLKPEHJN { get; set; }
-	public bool LNHFLJBGGJB { get; }
-	public KDLPEDBKMID.PHKOILLPHGG CNDDKMJAIBG { get; set; }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BB304 Offset: 0x6BB304 VA: 0x6BB304
-	// // RVA: 0xE7D54C Offset: 0xE7D54C VA: 0xE7D54C
-	// public static KDLPEDBKMID NKACBOEHELJ() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BB314 Offset: 0x6BB314 VA: 0x6BB314
-	// // RVA: 0xE7D5D8 Offset: 0xE7D5D8 VA: 0xE7D5D8
-	// private static void OKPMHKNCNAL(KDLPEDBKMID NANNGLGOFKH) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BB324 Offset: 0x6BB324 VA: 0x6BB324
-	// // RVA: 0xE7D668 Offset: 0xE7D668 VA: 0xE7D668
-	// public OMIFMMJPMDJ LKCDOGAFPNM() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BB334 Offset: 0x6BB334 VA: 0x6BB334
-	// // RVA: 0xE7D670 Offset: 0xE7D670 VA: 0xE7D670
-	// public void NPJJMDFAIII(OMIFMMJPMDJ NANNGLGOFKH) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BB344 Offset: 0x6BB344 VA: 0x6BB344
-	// // RVA: 0xE7D678 Offset: 0xE7D678 VA: 0xE7D678
-	// public OBHIGCFPKJN KCLBNOKEPIG() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BB354 Offset: 0x6BB354 VA: 0x6BB354
-	// // RVA: 0xE7D680 Offset: 0xE7D680 VA: 0xE7D680
-	// public void OCIMGEFKKLM(OBHIGCFPKJN NANNGLGOFKH) { }
-
-	// // RVA: 0xE7D688 Offset: 0xE7D688 VA: 0xE7D688
-	// public bool KOIPHFOBLOD() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BB364 Offset: 0x6BB364 VA: 0x6BB364
-	// // RVA: 0xE7D720 Offset: 0xE7D720 VA: 0xE7D720
-	// public KDLPEDBKMID.PHKOILLPHGG HIGNHAEJKAH() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BB374 Offset: 0x6BB374 VA: 0x6BB374
-	// // RVA: 0xE7D728 Offset: 0xE7D728 VA: 0xE7D728
-	// public void DFJLAMPMCMP(KDLPEDBKMID.PHKOILLPHGG NANNGLGOFKH) { }
+	public static KDLPEDBKMID HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
+	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x10 KPEKONPJHCL LKCDOGAFPNM NPJJMDFAIII
+	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x14 EAIFOAGPGGH KCLBNOKEPIG OCIMGEFKKLM
+	// public bool LNHFLJBGGJB { get; } // KOIPHFOBLOD 0xE7D688
+	public KDLPEDBKMID.PHKOILLPHGG CNDDKMJAIBG { get; set; } // 0x30 HMCLOEGDNBA HIGNHAEJKAH DFJLAMPMCMP
 
 	// // RVA: 0xE7D730 Offset: 0xE7D730 VA: 0xE7D730
 	// public void OIKLOJMPBGA(int COGJONKKALB) { }
@@ -195,12 +175,6 @@ public class KDLPEDBKMID
 
 	// // RVA: 0xE82944 Offset: 0xE82944 VA: 0xE82944
 	// public void HEBLFJFCCLF(int JCNLIANKPAA, List<string> NNDGIAEFMOG) { }
-
-	// // RVA: 0xE82AF8 Offset: 0xE82AF8 VA: 0xE82AF8
-	// public void .ctor() { }
-
-	// // RVA: 0xE82BDC Offset: 0xE82BDC VA: 0xE82BDC
-	// private static void .cctor() { }
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6BB3FC Offset: 0x6BB3FC VA: 0x6BB3FC
 	// // RVA: 0xE841D8 Offset: 0xE841D8 VA: 0xE841D8

@@ -47,8 +47,5 @@ namespace UdonLib
             UnityEngine.Debug.LogError("TODO");
             return 0;
         }
-
-        // // RVA: 0xE0B930 Offset: 0xE0B930 VA: 0xE0B930
-        // public void .ctor() { }
 	}
 }

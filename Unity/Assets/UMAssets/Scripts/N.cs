@@ -1,17 +1,15 @@
 using UnityEngine;
 
 public class N : MonoBehaviour
-{       // Fields
+{
         [SerializeField]
         public GameObject c; // 0xC
         [SerializeField]
         public D d; // 0x10
         public S e; // 0x14
 
-        // Properties
         public static N a { get; set; } // 0x0 / get_a / set_a
 
-        // Methods
         private void Awake() 
 		{ 
 			a = this;
@@ -40,11 +38,6 @@ public class N : MonoBehaviour
 				e.G();
 				e = null;
 			}
-		}
-
-        public N() 
-		{ 
-
 		}
 
 }

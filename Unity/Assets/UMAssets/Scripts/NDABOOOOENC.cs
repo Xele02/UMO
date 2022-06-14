@@ -1,33 +1,18 @@
 
 public class NDABOOOOENC
 {
-	// Fields
-	// [CompilerGeneratedAttribute] // RVA: 0x666944 Offset: 0x666944 VA: 0x666944
-	// private static NDABOOOOENC <LGMPACEDIJF>k__BackingField; // 0x0
-	private static string[] JIMKNDJMCID; // 0x4
+	private static string[] JIMKNDJMCID = new string[31] {"", "CgkIt5LD99oYEAIQAQ", "CgkIt5LD99oYEAIQAg", "CgkIt5LD99oYEAIQAw", "CgkIt5LD99oYEAIQBA", "CgkIt5LD99oYEAIQBQ", 
+														"CgkIt5LD99oYEAIQBg", "CgkIt5LD99oYEAIQBw", "CgkIt5LD99oYEAIQCA", "CgkIt5LD99oYEAIQCQ", "CgkIt5LD99oYEAIQCg",
+														"CgkIt5LD99oYEAIQCw", "CgkIt5LD99oYEAIQDA", "CgkIt5LD99oYEAIQDQ", "CgkIt5LD99oYEAIQDg", "CgkIt5LD99oYEAIQDw",
+														"CgkIt5LD99oYEAIQEA", "CgkIt5LD99oYEAIQEQ", "CgkIt5LD99oYEAIQEg", "CgkIt5LD99oYEAIQEw", "CgkIt5LD99oYEAIQFA",
+														"CgkIt5LD99oYEAIQFQ", "CgkIt5LD99oYEAIQFg", "CgkIt5LD99oYEAIQFw", "CgkIt5LD99oYEAIQGA", "CgkIt5LD99oYEAIQGQ",
+														"CgkIt5LD99oYEAIQGg", "CgkIt5LD99oYEAIQHA", "CgkIt5LD99oYEAIQHQ", "CgkIt5LD99oYEAIQHg", "CgkIt5LD99oYEAIQHw"}; // 0x4
 	private bool GKDLPKNOGCK; // 0x8
 	private bool APEIJNFMEFG; // 0x9
 	private int FAGBLGODELF; // 0xC
 
-	// Properties
-	public static NDABOOOOENC HHCJCDFCLOB { get; set; }
-	public bool LHGFPPIEKPJ { get; set; }
-
-	// Methods
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6B9F60 Offset: 0x6B9F60 VA: 0x6B9F60
-	// // RVA: 0x1ADB644 Offset: 0x1ADB644 VA: 0x1ADB644
-	// public static NDABOOOOENC NKACBOEHELJ() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6B9F70 Offset: 0x6B9F70 VA: 0x6B9F70
-	// // RVA: 0x1ADB6D0 Offset: 0x1ADB6D0 VA: 0x1ADB6D0
-	// private static void OKPMHKNCNAL(NDABOOOOENC NANNGLGOFKH) { }
-
-	// // RVA: 0x1ADB760 Offset: 0x1ADB760 VA: 0x1ADB760
-	// public bool PFHHNKMGPGJ() { }
-
-	// // RVA: 0x1ADB768 Offset: 0x1ADB768 VA: 0x1ADB768
-	// private void DNPOLCNDBKH(bool NANNGLGOFKH) { }
+	public static NDABOOOOENC HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
+	// public bool LHGFPPIEKPJ { get; set; } // PFHHNKMGPGJ 0x1ADB760 DNPOLCNDBKH 0x1ADB768
 
 	// // RVA: 0x1ADB76C Offset: 0x1ADB76C VA: 0x1ADB76C
 	// public void IJBGPAENLJA() { }
@@ -76,10 +61,4 @@ public class NDABOOOOENC
 
 	// // RVA: 0x1ADCF50 Offset: 0x1ADCF50 VA: 0x1ADCF50
 	// public void FBHNMIHJGCO() { }
-
-	// // RVA: 0x1ADCF58 Offset: 0x1ADCF58 VA: 0x1ADCF58
-	// public void .ctor() { }
-
-	// // RVA: 0x1ADCF60 Offset: 0x1ADCF60 VA: 0x1ADCF60
-	// private static void .cctor() { }
 }

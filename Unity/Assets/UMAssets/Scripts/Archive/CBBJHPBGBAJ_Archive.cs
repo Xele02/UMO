@@ -3,33 +3,22 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 
-// Namespace:
 // Represent a TAR file 
 public class CBBJHPBGBAJ_Archive
 {
 	public class JBCFNCNGLPM_File
 	{
-		// Fields
 		public string OPFGFINHFCE_Name; // 0x8
 		public byte[] DBBGALAPFGC_Data; // 0xC
-
-		// Methods
-		public JBCFNCNGLPM_File()
-		{
-		}
 	}
 
-	// Fields
 	private const int HMJJCPMKDEI_BlockSize = 512; // 0x0
-	public List<JBCFNCNGLPM_File> KGHAJGGMPKL_Files; // 0x8
+	public List<JBCFNCNGLPM_File> KGHAJGGMPKL_Files = new List<JBCFNCNGLPM_File>(10); // 0x8
 
-	// Methods
-	public CBBJHPBGBAJ_Archive()
-	{
-		KGHAJGGMPKL_Files = new List<JBCFNCNGLPM_File>(10);
-	}
+	// RVA: 0x18F7E78 Offset: 0x18F7E78 VA: 0x18F7E78
 	public bool KHEKNNFCAOI_Load(byte[] GANPCOAGBBK_db)
 	{
+		UnityEngine.Debug.LogError("TODO");
 		//if(BOBCNJIPPJN.AGJJGJCIMKI_IsCompressed(GANPCOAGBBK_db))
 		//{
 		//	GANPCOAGBBK_db = BOBCNJIPPJN.JCBCBNFPJDH_Decompress(GANPCOAGBBK_db);
@@ -65,12 +54,16 @@ public class CBBJHPBGBAJ_Archive
 		}
 		return true;
 	}
+	
+	// RVA: 0x18F80A0 Offset: 0x18F80A0 VA: 0x18F80A0
 	private bool DLBCLCKFDJP_GetFlag(byte[] IAKPCFDLMKP_db, int POMLAOPLMNA_offset)
 	{
 		int A = POMLAOPLMNA_offset + 156; // ou 148 ??
 		byte b = IAKPCFDLMKP_db[A];
 		return b == '0'; // Flag is standard file
 	}
+	
+	// RVA: 0x18F8100 Offset: 0x18F8100 VA: 0x18F8100
 	private string GIFPJBKOFAB_GetFilename(byte[] IAKPCFDLMKP_db, int POMLAOPLMNA_offset)
 	{
 		int i = 0;
@@ -84,6 +77,8 @@ public class CBBJHPBGBAJ_Archive
 		string str = enc.GetString(IAKPCFDLMKP_db, POMLAOPLMNA_offset + 2, i - 2);
 		return str;
 	}
+	
+	// RVA: 0x18F81E8 Offset: 0x18F81E8 VA: 0x18F81E8
 	private int CBOIHFIPHGN_GetSize(byte[] IAKPCFDLMKP_db, int POMLAOPLMNA_offset)
 	{
 		Encoding enc = Encoding.UTF8;
@@ -99,6 +94,10 @@ public class CBBJHPBGBAJ_Archive
 		}
 		return b;
 	}
+	
+	// RVA: 0x18F82E8 Offset: 0x18F82E8 VA: 0x18F82E8
 	// private int JNJODIPMKFJ(byte[] IAKPCFDLMKP, int POMLAOPLMNA); // RVA: 0x18F82E8 Offset: 0x18F82E8
+	
+	// RVA: 0x18F830C Offset: 0x18F830C VA: 0x18F830C
     // public string MNNKOKNBJNC(); // RVA: 0x18F830C Offset: 0x18F830C
 }

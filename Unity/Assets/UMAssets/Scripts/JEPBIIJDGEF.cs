@@ -2,20 +2,10 @@ using System.Collections.Generic;
 
 public class JEPBIIJDGEF
 {
-	// [CompilerGeneratedAttribute] // RVA: 0x666BF4 Offset: 0x666BF4 VA: 0x666BF4
-	// private static JEPBIIJDGEF <LGMPACEDIJF>k__BackingField; // 0x0
-	public List<IKDICBBFBMI> MPEOOINCGEN; // 0x8
+	public List<IKDICBBFBMI> MPEOOINCGEN = new List<IKDICBBFBMI>(); // 0x8
 	// private static JEPBIIJDGEF.IKAFJHHHJDN[] OGCFJIIBLEO; // 0x4
 
-	public static JEPBIIJDGEF HHCJCDFCLOB { get; set; }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BCAB4 Offset: 0x6BCAB4 VA: 0x6BCAB4
-	// // RVA: 0x1C333FC Offset: 0x1C333FC VA: 0x1C333FC
-	// public static JEPBIIJDGEF NKACBOEHELJ() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BCAC4 Offset: 0x6BCAC4 VA: 0x6BCAC4
-	// // RVA: 0x1C394EC Offset: 0x1C394EC VA: 0x1C394EC
-	// private static void OKPMHKNCNAL(JEPBIIJDGEF NANNGLGOFKH) { }
+	public static JEPBIIJDGEF HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF JEPBIIJDGEF OKPMHKNCNAL
 
 	// // RVA: 0x1C3957C Offset: 0x1C3957C VA: 0x1C3957C
 	// public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
@@ -123,9 +113,9 @@ public class JEPBIIJDGEF
 	// // RVA: 0x1C3D1CC Offset: 0x1C3D1CC VA: 0x1C3D1CC
 	// public void HEFIKPAHCIA(GBNDFCEDNMG.CJDGJFINBFH HDAMBOOCIAA) { }
 
-	// // RVA: 0x1C3D2F4 Offset: 0x1C3D2F4 VA: 0x1C3D2F4
-	// public void .ctor() { }
-
 	// // RVA: 0x1C3D380 Offset: 0x1C3D380 VA: 0x1C3D380
-	// private static void .cctor() { }
+	static JEPBIIJDGEF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 }

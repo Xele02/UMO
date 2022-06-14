@@ -8,12 +8,12 @@ namespace com.adjust.sdk
 		private const string errorMsgEditor = "[Adjust]: SDK can not be used in Editor.";
 		private const string errorMsgStart = "[Adjust]: SDK not started. Start it manually using the \'start\' method.";
 		private const string errorMsgPlatform = "[Adjust]: SDK can only be used in Android, iOS, Windows Phone 8.1, Windows Store or Universal Windows apps.";
-		public bool startManually; // 0xC
+		public bool startManually = true; // 0xC
 		public bool eventBuffering; // 0xD
 		public bool sendInBackground; // 0xE
-		public bool launchDeferredDeeplink; // 0xF
-		public string appToken; // 0x10
-		public AdjustLogLevel logLevel; // 0x14
+		public bool launchDeferredDeeplink = true; // 0xF
+		public string appToken = "{Your App Token}"; // 0x10
+		public AdjustLogLevel logLevel = 3; // 0x14
 		public AdjustEnvironment environment; // 0x18
 
 		// // RVA: 0x274CC30 Offset: 0x274CC30 VA: 0x274CC30
@@ -133,8 +133,5 @@ namespace com.adjust.sdk
 
 		// // RVA: 0x2754BE4 Offset: 0x2754BE4 VA: 0x2754BE4
 		// public static void SetTestOptions(Dictionary<string, string> testOptions) { }
-
-		// // RVA: 0x2754DF4 Offset: 0x2754DF4 VA: 0x2754DF4
-		// public void .ctor() { }
 	}
 }

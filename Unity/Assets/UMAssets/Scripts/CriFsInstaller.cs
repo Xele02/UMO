@@ -20,7 +20,10 @@ public class CriFsInstaller : CriDisposable
 	private IntPtr handle; // 0x20
 
 	// // RVA: 0x2946AC0 Offset: 0x2946AC0 VA: 0x2946AC0
-	// public void .ctor() { }
+	public CriFsInstaller()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x29471D0 Offset: 0x29471D0 VA: 0x29471D0 Slot: 5
 	public override void Dispose()

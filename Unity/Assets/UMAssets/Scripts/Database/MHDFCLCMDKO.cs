@@ -1,8 +1,6 @@
 
 public class MHDFCLCMDKO : DIHHCBACKGG
 {
-
-    // Namespace: 
     public class CJLENGHPIDH
     {
         public int EJNIMIAPJFJ; // 0x8
@@ -22,28 +20,16 @@ public class MHDFCLCMDKO : DIHHCBACKGG
         // public void ODDIHGPONFL(MHDFCLCMDKO.CJLENGHPIDH GPBJHKLFCEP) { }
     }
 
-	// // Fields
-	// [CompilerGeneratedAttribute] // RVA: 0x667AA4 Offset: 0x667AA4 VA: 0x667AA4
-	// private List<MHDFCLCMDKO.CJLENGHPIDH> <LKHMPJNEEHH>k__BackingField; // 0x20
-
-	// // Properties
-	// public List<MHDFCLCMDKO.CJLENGHPIDH> CKADCLJDCJK { get; set; }
-
-	// // Methods
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6C0080 Offset: 0x6C0080 VA: 0x6C0080
-	// // RVA: 0x132AC94 Offset: 0x132AC94 VA: 0x132AC94
-	// public List<MHDFCLCMDKO.CJLENGHPIDH> NOIMCFANIGL() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6C0090 Offset: 0x6C0090 VA: 0x6C0090
-	// // RVA: 0x132AC9C Offset: 0x132AC9C VA: 0x132AC9C
-	// private void KFNHNMPHCGM(List<MHDFCLCMDKO.CJLENGHPIDH> NANNGLGOFKH) { }
+	// public List<MHDFCLCMDKO.CJLENGHPIDH> CKADCLJDCJK { get; private set; } // 0x20 LKHMPJNEEHH NOIMCFANIGL KFNHNMPHCGM
 
 	// // RVA: 0x132ACA4 Offset: 0x132ACA4 VA: 0x132ACA4
 	// public MHDFCLCMDKO.CJLENGHPIDH INONDJKKOKG(int EJNIMIAPJFJ) { }
 
 	// // RVA: 0x132ADA4 Offset: 0x132ADA4 VA: 0x132ADA4
-	// public void .ctor() { }
+	public MHDFCLCMDKO()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0x132AE98 Offset: 0x132AE98 VA: 0x132AE98 Slot: 8
 	protected override void KMBPACJNEOF()

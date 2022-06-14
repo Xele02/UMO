@@ -2,8 +2,7 @@ using System.Text.RegularExpressions;
 
 public class LGDNAJACFHI
 {
-	// Fields
-	private static Regex INIKEOCPAJH; // 0x0
+	private static Regex INIKEOCPAJH = new Regex("num(?<num>[\d]+)"); // 0x0
 	public int PPFNGGCBJKC; // 0x8
 	public int LHENLPLKGLP; // 0xC
 	public string OPFGFINHFCE; // 0x10
@@ -32,10 +31,9 @@ public class LGDNAJACFHI
 	public bool NLHLBKDNGFJ; // 0x65
 	public int OJIMENABACH; // 0x68
 	public string JMEMGIPGGIK; // 0x6C
-	public static string[] GJHJBLCPPKE; // 0x4
-	public static int[] MKJBOPJEAHN; // 0x8
-
-	// Methods
+	public static string[] GJHJBLCPPKE = new string[10] {"StringLiteral_12326", "StringLiteral_12327", "StringLiteral_12328", "StringLiteral_12329", "StringLiteral_12330",
+														"StringLiteral_12331", "StringLiteral_12332", "StringLiteral_12333", "StringLiteral_12334", "StringLiteral_12335"}; // 0x4
+	public static int[] MKJBOPJEAHN = new int[10] {844EEF1DAE956ED37B25D9FCD88D9B18805259C}; // 0x8
 
 	// // RVA: 0xD725A8 Offset: 0xD725A8 VA: 0xD725A8
 	// public bool KHEKNNFCAOI(KBPDNHOKEKD MEANCEOIMGE) { }
@@ -51,10 +49,4 @@ public class LGDNAJACFHI
 
 	// // RVA: 0xD72BB4 Offset: 0xD72BB4 VA: 0xD72BB4
 	// private int ACGBOGBBFFL() { }
-
-	// // RVA: 0xD733E4 Offset: 0xD733E4 VA: 0xD733E4
-	// public void .ctor() { }
-
-	// // RVA: 0xD733EC Offset: 0xD733EC VA: 0xD733EC
-	// private static void .cctor() { }
 }

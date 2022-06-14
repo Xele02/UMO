@@ -48,47 +48,21 @@ public class CriFsWebInstaller : CriDisposable
     {
         public byte reserved; // 0x0
 
-        public static CriFsWebInstaller.ModulePlatformConfig defaultConfig { get; }
-
-        // RVA: 0x294DE24 Offset: 0x294DE24 VA: 0x294DE24
-        // public static CriFsWebInstaller.ModulePlatformConfig get_defaultConfig() { }
+        // public static CriFsWebInstaller.ModulePlatformConfig defaultConfig { get; } 0x294DE24
     }
 
-	// [CompilerGeneratedAttribute] // RVA: 0x634B44 Offset: 0x634B44 VA: 0x634B44
-	// private static bool <isInitialized>k__BackingField; // 0x0
-	// [CompilerGeneratedAttribute] // RVA: 0x634B54 Offset: 0x634B54 VA: 0x634B54
-	// private static bool <isCrcEnabled>k__BackingField; // 0x1
 	public const int InvalidHttpStatusCode = -1;
 	public const long InvalidContentsSize = -1;
 	private IntPtr handle; // 0x18
 
-	public static bool isInitialized { get; set; }
-	public static bool isCrcEnabled { get; set; }
-	public static CriFsWebInstaller.ModuleConfig defaultModuleConfig { get; }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x636318 Offset: 0x636318 VA: 0x636318
-	// // RVA: 0x294C3FC Offset: 0x294C3FC VA: 0x294C3FC
-	// public static bool get_isInitialized() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x636328 Offset: 0x636328 VA: 0x636328
-	// // RVA: 0x294DD34 Offset: 0x294DD34 VA: 0x294DD34
-	// private static void set_isInitialized(bool value) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x636338 Offset: 0x636338 VA: 0x636338
-	// // RVA: 0x294DC04 Offset: 0x294DC04 VA: 0x294DC04
-	// public static bool get_isCrcEnabled() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x636348 Offset: 0x636348 VA: 0x636348
-	// // RVA: 0x294DD98 Offset: 0x294DD98 VA: 0x294DD98
-	// private static void set_isCrcEnabled(bool value) { }
-
-	// // RVA: 0x294DDFC Offset: 0x294DDFC VA: 0x294DDFC
-	// public static CriFsWebInstaller.ModuleConfig get_defaultModuleConfig() { }
+	public static bool isInitialized { get; private set; } // 0x0
+	public static bool isCrcEnabled { get; private set; } // 0x1
+	// public static CriFsWebInstaller.ModuleConfig defaultModuleConfig { get; } 0x294DDFC
 
 	// // RVA: 0x294D7A4 Offset: 0x294D7A4 VA: 0x294D7A4
 	public CriFsWebInstaller()
     {
-        UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller()");
+        UnityEngine.Debug.LogError("TODO CriFsWebInstaller()");
     }
 
 	// // RVA: 0x294DF48 Offset: 0x294DF48 VA: 0x294DF48 Slot: 1

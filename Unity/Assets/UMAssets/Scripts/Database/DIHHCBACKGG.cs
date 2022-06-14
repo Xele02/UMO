@@ -1,25 +1,16 @@
 
-// Namespace: 
-public abstract class DIHHCBACKGG // TypeDefIndex: 9969
+public abstract class DIHHCBACKGG
 {
-	// Fields
-	public static int IEFOPDOOLOK; // 0x0
+	public static int IEFOPDOOLOK = 1; // 0x0
 	public int LMHMIIKCGPE; // 0xC
-	// [CompilerGeneratedAttribute] // RVA: 0x668924 Offset: 0x668924 VA: 0x668924
-	// private int <FKLFBFJJHPF>k__BackingField; // 0x10
-	// [CompilerGeneratedAttribute] // RVA: 0x668944 Offset: 0x668944 VA: 0x668944
-	// private string <AEDHAENECGN>k__BackingField; // 0x18
-	// [CompilerGeneratedAttribute] // RVA: 0x668954 Offset: 0x668954 VA: 0x668954
-	// private uint <LGLBKNBFCIO>k__BackingField; // 0x1C
 
 	// // Properties
-	public virtual string JIKKNHIAEKG { get; set; } // HIPHMHKCJOI  0x8 // KLGJBKFAOGN // FEENLLLIMHM
-	// public virtual int GLOLECOPKDM { get; set; } // FPNGGOKOJHF // PMJJHGPMLBN
-	public bool LNIMEIMBCMF { get; set; } // FELOLNHPBOI  // 0x14 // JCGFCHCLKAH // HNHIPLGADIF
-	// public string HDIDJNCGICK { get; set; } // BILFANLLKPJ // CELPMALCAHG
-	// public uint HHPOFCILDGN { get; set; } // ACELOLOGDLM // MNDHNBBFJIB
+	public virtual string JIKKNHIAEKG { get; set; } // 0x8 HIPHMHKCJOI  // KLGJBKFAOGN // FEENLLLIMHM
+	// public virtual int GLOLECOPKDM { get; set; } // 0x10 FKLFBFJJHPF // FPNGGOKOJHF // PMJJHGPMLBN
+	public bool LNIMEIMBCMF { get; set; } // 0x14 FELOLNHPBOI  // // JCGFCHCLKAH // HNHIPLGADIF
+	// public string HDIDJNCGICK { get; set; } // 0x18 AEDHAENECGN // BILFANLLKPJ // CELPMALCAHG
+	// public uint HHPOFCILDGN { get; set; } // 0x1C LGLBKNBFCIO // ACELOLOGDLM // MNDHNBBFJIB
 
-	// // Methods
 	// // RVA: 0x1984404 Offset: 0x1984404 VA: 0x1984404
 	public DIHHCBACKGG()
     {
@@ -62,10 +53,4 @@ public abstract class DIHHCBACKGG // TypeDefIndex: 9969
 
 	// // RVA: 0x1989E1C Offset: 0x1989E1C VA: 0x1989E1C
 	// public int JKAECBCNHAN(int IJEKNCDIIAE, int PLALNIIBLOF, int DBHPPMPNCKF = 0) { }
-
-	// // RVA: 0x198B6F8 Offset: 0x198B6F8 VA: 0x198B6F8
-	static DIHHCBACKGG()
-    {
-        IEFOPDOOLOK = 1;
-    }
 }

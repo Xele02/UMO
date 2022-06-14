@@ -1,15 +1,12 @@
 
 public class HPBPIOPPDCB : DIHHCBACKGG
 {
-	// Fields
 	public static bool DINNDBNPNFK; // 0x0
 	public const int NLPCOAKLBAN = 0;
 	public const int AGBLDFIFLBJ = 10;
 	public const int DNLFNEFLNED = 200;
 	public int AGNCAAFGLBE; // 0x20
 	// public List<BJPLLEBHAGO> CDENCMNHNGA; // 0x24
-
-	// // Methods
 
 	// // RVA: 0x160846C Offset: 0x160846C VA: 0x160846C
 	// public bool BEEGJHCDHJB(int AHHJLDLAPAN) { }
@@ -22,7 +19,10 @@ public class HPBPIOPPDCB : DIHHCBACKGG
     }
 
 	// // RVA: 0x16085F0 Offset: 0x16085F0 VA: 0x16085F0
-	// public void .ctor() { }
+	public HPBPIOPPDCB()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0x16086E8 Offset: 0x16086E8 VA: 0x16086E8 Slot: 8
 	protected override void KMBPACJNEOF()
@@ -38,7 +38,4 @@ public class HPBPIOPPDCB : DIHHCBACKGG
 
 	// // RVA: 0x16093A8 Offset: 0x16093A8 VA: 0x16093A8 Slot: 11
 	// public override uint CAOGDCBPBAN() { }
-
-	// // RVA: 0x1609490 Offset: 0x1609490 VA: 0x1609490
-	// private static void .cctor() { }
 }

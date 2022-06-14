@@ -1,15 +1,12 @@
 
 public class IAPDFOPPGND
 {
-	// Fields
 	public string ADCMNODJBGJ; // 0x8
 	public string FEMMDNIELFC; // 0xC
 	public int EAHPLCJMPHD; // 0x10
 	public int HMFFHLPNMPH; // 0x14
 	public int MDPKLNFFDBO; // 0x18
 	private int EILKGEADKGH; // 0x1C
-
-	// Methods
 
 	// // RVA: 0x120EB38 Offset: 0x120EB38 VA: 0x120EB38
 	// public void KHEKNNFCAOI(int ABLOIBMGLFD, int HMFFHLPNMPH) { }
@@ -28,7 +25,4 @@ public class IAPDFOPPGND
 
 	// // RVA: 0x120FB74 Offset: 0x120FB74 VA: 0x120FB74
 	// public static int EPDPFMFIKFE(int MDPKLNFFDBO) { }
-
-	// // RVA: 0x120F5D4 Offset: 0x120F5D4 VA: 0x120F5D4
-	// public void .ctor() { }
 }

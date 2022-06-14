@@ -28,25 +28,25 @@ public class KOGHKIODHPA : DIHHCBACKGG
         private int LGPJBMDMLJH; // 0x5C
         private int PKCPMLCGAPG; // 0x60
 
-        public int AOPBAOJIOGO { get; set; }
-        public int ILABPFOMEAG { get; set; }
-        public int JGJFIJOCPAG { get; set; }
-        public int JPIPENJGGDD { get; set; }
-        public int JPJNKNOJBMM { get; set; }
-        public int CHCLMPKHHEP { get; set; }
-        public int NGBNKKJNCMO { get; set; }
-        public int NEDFDMNEOKO { get; set; }
-        public int PAMLNGINDDA { get; set; }
-        public int NHLHNOPEHEI { get; set; }
-        public int BCEOCNGPPMN { get; set; }
-        public int NFLPEKNOEFH { get; set; }
-        public int HDDBOHKFEIF { get; set; }
-        public int PFNNOEANAHE { get; set; }
-        public int PFGFNIHOOHE { get; set; }
-        public int HGNGPAFOFNG { get; set; }
-        public int PLNJOOPGGIG { get; set; }
-        public int JFFEGBIODOJ { get; set; }
-        public int AEBEPGKIOFM { get; set; }
+        // public int AOPBAOJIOGO { get; set; }
+        // public int ILABPFOMEAG { get; set; }
+        // public int JGJFIJOCPAG { get; set; }
+        // public int JPIPENJGGDD { get; set; }
+        // public int JPJNKNOJBMM { get; set; }
+        // public int CHCLMPKHHEP { get; set; }
+        // public int NGBNKKJNCMO { get; set; }
+        // public int NEDFDMNEOKO { get; set; }
+        // public int PAMLNGINDDA { get; set; }
+        // public int NHLHNOPEHEI { get; set; }
+        // public int BCEOCNGPPMN { get; set; }
+        // public int NFLPEKNOEFH { get; set; }
+        // public int HDDBOHKFEIF { get; set; }
+        // public int PFNNOEANAHE { get; set; }
+        // public int PFGFNIHOOHE { get; set; }
+        // public int HGNGPAFOFNG { get; set; }
+        // public int PLNJOOPGGIG { get; set; }
+        // public int JFFEGBIODOJ { get; set; }
+        // public int AEBEPGKIOFM { get; set; }
 
         // // RVA: 0x11317C0 Offset: 0x11317C0 VA: 0x11317C0
         // public int HDLCEEHNBKN() { }
@@ -178,62 +178,11 @@ public class KOGHKIODHPA : DIHHCBACKGG
         // public void OMKKILODDIC(byte[] ODKMKEHJOCK, int MBLGJDKKLPO = 0) { }
     }
 
-	// [CompilerGeneratedAttribute] // RVA: 0x667814 Offset: 0x667814 VA: 0x667814
-	// private List<AFIFDLOAKGI> <PPFNCNJKAPF>k__BackingField; // 0x20
-	// [CompilerGeneratedAttribute] // RVA: 0x667824 Offset: 0x667824 VA: 0x667824
-	// private List<DMPDJFAGCPN> <DMCGOAHMECN>k__BackingField; // 0x24
-	// [CompilerGeneratedAttribute] // RVA: 0x667834 Offset: 0x667834 VA: 0x667834
-	// private List<DMPDJFAGCPN> <MLDNBLDHOLH>k__BackingField; // 0x28
-	// [CompilerGeneratedAttribute] // RVA: 0x667844 Offset: 0x667844 VA: 0x667844
-	// private List<DMPDJFAGCPN> <JJOCGMGGFCH>k__BackingField; // 0x2C
-	// [CompilerGeneratedAttribute] // RVA: 0x667854 Offset: 0x667854 VA: 0x667854
-	// private List<NHINPDLLFIO> <LLHGFEAEMNA>k__BackingField; // 0x30
-
-	// public List<AFIFDLOAKGI> PJADHDHKOEJ { get; set; }
-	// public List<DMPDJFAGCPN> KLEBDKALPBD { get; set; }
-	// public List<DMPDJFAGCPN> OONHJNINFAD { get; set; }
-	// public List<DMPDJFAGCPN> GLEOCPPMAKK { get; set; }
-	// public List<NHINPDLLFIO> GJLBMELKHEM { get; set; }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFB10 Offset: 0x6BFB10 VA: 0x6BFB10
-	// // RVA: 0x112F650 Offset: 0x112F650 VA: 0x112F650
-	// public List<AFIFDLOAKGI> APNMMPMNLML() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFB20 Offset: 0x6BFB20 VA: 0x6BFB20
-	// // RVA: 0x112F658 Offset: 0x112F658 VA: 0x112F658
-	// private void NDIACKACKOI(List<AFIFDLOAKGI> NANNGLGOFKH) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFB30 Offset: 0x6BFB30 VA: 0x6BFB30
-	// // RVA: 0x112F660 Offset: 0x112F660 VA: 0x112F660
-	// public List<DMPDJFAGCPN> DJAFNIBLLLC() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFB40 Offset: 0x6BFB40 VA: 0x6BFB40
-	// // RVA: 0x112F668 Offset: 0x112F668 VA: 0x112F668
-	// private void EHCJBJLFBFF(List<DMPDJFAGCPN> NANNGLGOFKH) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFB50 Offset: 0x6BFB50 VA: 0x6BFB50
-	// // RVA: 0x112F670 Offset: 0x112F670 VA: 0x112F670
-	// public List<DMPDJFAGCPN> KGCKKJIENOE() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFB60 Offset: 0x6BFB60 VA: 0x6BFB60
-	// // RVA: 0x112F678 Offset: 0x112F678 VA: 0x112F678
-	// private void OGIACBCKLFI(List<DMPDJFAGCPN> NANNGLGOFKH) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFB70 Offset: 0x6BFB70 VA: 0x6BFB70
-	// // RVA: 0x112F680 Offset: 0x112F680 VA: 0x112F680
-	// public List<DMPDJFAGCPN> KGIGLDBCCJK() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFB80 Offset: 0x6BFB80 VA: 0x6BFB80
-	// // RVA: 0x112F688 Offset: 0x112F688 VA: 0x112F688
-	// private void IDBJLNPNOKK(List<DMPDJFAGCPN> NANNGLGOFKH) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFB90 Offset: 0x6BFB90 VA: 0x6BFB90
-	// // RVA: 0x112F690 Offset: 0x112F690 VA: 0x112F690
-	// public List<NHINPDLLFIO> EPGHPHEGHIN() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFBA0 Offset: 0x6BFBA0 VA: 0x6BFBA0
-	// // RVA: 0x112F698 Offset: 0x112F698 VA: 0x112F698
-	// private void HCFHCAJOHMJ(List<NHINPDLLFIO> NANNGLGOFKH) { }
+	// public List<AFIFDLOAKGI> PJADHDHKOEJ { get; private set; } // 0x20 PPFNCNJKAPF APNMMPMNLML NDIACKACKOI
+	// public List<DMPDJFAGCPN> KLEBDKALPBD { get; private set; } // 0x24 DMCGOAHMECN DJAFNIBLLLC EHCJBJLFBFF
+	// public List<DMPDJFAGCPN> OONHJNINFAD { get; private set; } // 0x28 MLDNBLDHOLH KGCKKJIENOE OGIACBCKLFI
+	// public List<DMPDJFAGCPN> GLEOCPPMAKK { get; private set; } // 0x2C JJOCGMGGFCH KGIGLDBCCJK IDBJLNPNOKK
+	// public List<NHINPDLLFIO> GJLBMELKHEM { get; private set; } // 0x30 LLHGFEAEMNA EPGHPHEGHIN HCFHCAJOHMJ
 
 	// // RVA: 0x112F6A0 Offset: 0x112F6A0 VA: 0x112F6A0
 	// public AFIFDLOAKGI DDGNLCJGFJF(int KIJAPOFAGPN) { }
@@ -257,7 +206,10 @@ public class KOGHKIODHPA : DIHHCBACKGG
 	// public int NENHCPMDAGM(int JPIPENJGGDD, int AOPBAOJIOGO, int ILABPFOMEAG) { }
 
 	// // RVA: 0x1130188 Offset: 0x1130188 VA: 0x1130188
-	// public void .ctor() { }
+	public KOGHKIODHPA()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0x1130328 Offset: 0x1130328 VA: 0x1130328 Slot: 8
 	protected override void KMBPACJNEOF()

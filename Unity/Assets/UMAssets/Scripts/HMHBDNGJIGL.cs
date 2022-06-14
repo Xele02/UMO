@@ -6,7 +6,6 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 {
 	public struct BIIAHJNILEE
 	{
-		// Fields
 		public int PHHAMBAEGPI; // 0x0
 		public int MABJPACAAPI; // 0x4
 
@@ -18,13 +17,8 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 		}
 	}
 
-	private static byte[] JIEHGOCHDGB; // 0x0
+	private static byte[] JIEHGOCHDGB = new byte[8] {4CAECE539B039B16E16206EA2478F8C5FFB2CA05}; // 0x0
 	private CriFsLoadFileRequest CHPPDDBBEFF; // 0x4C
-
-	// // RVA: 0x15F4D68 Offset: 0x15F4D68 VA: 0x15F4D68
-	public HMHBDNGJIGL()
-    {
-    }
 
 	// // RVA: 0x15F4DEC Offset: 0x15F4DEC VA: 0x15F4DEC
 	public HMHBDNGJIGL(string CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
@@ -134,11 +128,4 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 		Debug.LogError("TODO");
 		return new BIIAHJNILEE(0, 0);
 	}
-
-	// // RVA: 0x15F5C3C Offset: 0x15F5C3C VA: 0x15F5C3C
-	static HMHBDNGJIGL()
-    {
-        UnityEngine.Debug.LogWarning("TODO static HMHBDNGJIGL");
-        //Field$<PrivateImplementationDetails>.4CAECE539B039B16E16206EA2478F8C5FFB2CA05
-    }
 }

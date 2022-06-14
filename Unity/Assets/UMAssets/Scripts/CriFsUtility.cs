@@ -1,10 +1,7 @@
 
 public static class CriFsUtility
 {
-	// Fields
 	public const int DefaultReadUnitSize = 1048576;
-
-	// Methods
 
 	// // RVA: 0x294CB34 Offset: 0x294CB34 VA: 0x294CB34
 	public static CriFsLoadFileRequest LoadFile(string path, int readUnitSize = 1048576)

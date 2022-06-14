@@ -61,7 +61,10 @@ public class NDBFKHKMMCE : DIHHCBACKGG
 	}
 
 	// // RVA: 0x1ADEE2C Offset: 0x1ADEE2C VA: 0x1ADEE2C
-	// public void .ctor() { }
+	public NDBFKHKMMCE()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0x1ADF0C0 Offset: 0x1ADF0C0 VA: 0x1ADF0C0 Slot: 8
 	protected override void KMBPACJNEOF()

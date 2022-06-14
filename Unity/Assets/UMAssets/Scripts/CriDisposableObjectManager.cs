@@ -108,7 +108,4 @@ public static class CriDisposableObjectManager
 
 	// // RVA: 0x28BAF88 Offset: 0x28BAF88 VA: 0x28BAF88
 	// public static void DisposeAll(CriDisposableObjectManager.ModuleType type) { }
-
-	// // RVA: 0x28BB514 Offset: 0x28BB514 VA: 0x28BB514
-	// private static void .cctor() { }
 }

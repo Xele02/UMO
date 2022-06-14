@@ -7,11 +7,6 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 {
 	private DsfdLoader.ILoadRequest COJNCNGHIJC; // 0x4C
 
-	// RVA: 0x140F520 Offset: 0x140F520 VA: 0x140F520
-	public IPGPAGNBBIK()
-    {
-    }
-
 	// RVA: 0x140F5A4 Offset: 0x140F5A4 VA: 0x140F5A4
 	public IPGPAGNBBIK(string CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
 		: base(CJEKGLGBIHF_path,BOPDLODALFD_withoutPlarformPath,OGLMMENAJFL_onSuccess,GOIHDOPGPCE_onFail,JBKMAPLCBMO_arg,HNKPENAFDKA_argValue,LAMFBMFNOFP_fi)

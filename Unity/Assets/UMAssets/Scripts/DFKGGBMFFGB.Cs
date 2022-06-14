@@ -3,7 +3,6 @@ using XeApp.Game.Common;
 
 public class DFKGGBMFFGB
 {
-	// Fields
 	private BBHNACPENDM LDEGEHAEALK; // 0x8
 	private OKGLGHCBCJP_Database LKMHPJKIFDN; // 0xC
 	private bool BNFDBPPOAOE; // 0x10
@@ -18,17 +17,14 @@ public class DFKGGBMFFGB
 	public int BJGOPOEAAIC; // 0x34
 	public HighScoreRatingRank.Type AGJIIKKOKFJ; // 0x38
 
-	// Properties
-	public BBHNACPENDM AHEFHIMGIBI { get; }
-	public int NLMELNHPIID { get; set; }
-
-	// Methods
-
-	// // RVA: 0x197E7F0 Offset: 0x197E7F0 VA: 0x197E7F0
-	// public BBHNACPENDM GNMGJMDJEGI() { }
+	// public BBHNACPENDM AHEFHIMGIBI { get; } // GNMGJMDJEGI 0x197E7F0
+	// public int NLMELNHPIID { get; set; }//???
 
 	// // RVA: 0x197E7F8 Offset: 0x197E7F8 VA: 0x197E7F8
-	// public void .ctor() { }
+	public DFKGGBMFFGB()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x197E8C0 Offset: 0x197E8C0 VA: 0x197E8C0
 	// public int DBEFCECMFMG() { }

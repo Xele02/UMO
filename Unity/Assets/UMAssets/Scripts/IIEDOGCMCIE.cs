@@ -1,15 +1,11 @@
 using System.Collections;
 
-// Namespace: 
-public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive // TypeDefIndex: 8687
+public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
 {
-	// Fields
-	// private const int NNBHLPECAHJ = 1;
+	private const int NNBHLPECAHJ = 1;
 	public bool BIOFMLDLNKD; // 0xC
 	public bool NPNNPNAIONN; // 0xD
 	public bool PLOOEECNHFB; // 0xE
-
-	// // Methods
 
 	// // RVA: 0x120437C Offset: 0x120437C VA: 0x120437C
 	public void MCDJJPAKBLH(string CJEKGLGBIHF_path)

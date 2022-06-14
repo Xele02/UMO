@@ -9,10 +9,10 @@ public class KPKEOIJHIMN
         DNKAABNOOBF = 3,
     }
 
-	// private OBOKMHHMOIL IBLKLEMGCCG; // 0x8
-	// private OBOKMHHMOIL CINGFPEPPED; // 0xC
+	// private OBOKMHHMOIL IBLKLEMGCCG = new OBOKMHHMOIL(); // 0x8
+	// private OBOKMHHMOIL CINGFPEPPED = new OBOKMHHMOIL(); // 0xC
 
-	// public OBOKMHHMOIL LKCCMBEOLLA { get; }
+	// public OBOKMHHMOIL LKCCMBEOLLA { get; } // ?
 
 	// // RVA: 0xD8E910 Offset: 0xD8E910 VA: 0xD8E910
 	// public OBOKMHHMOIL JMKNKBNCKFB() { }
@@ -34,7 +34,4 @@ public class KPKEOIJHIMN
 
 	// // RVA: 0xD8E9D0 Offset: 0xD8E9D0 VA: 0xD8E9D0
 	// public KPKEOIJHIMN.GIDACIOHFNN PGBOFGNOBLD() { }
-
-	// // RVA: 0xD8EA4C Offset: 0xD8EA4C VA: 0xD8EA4C
-	// public void .ctor() { }
 }

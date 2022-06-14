@@ -27,7 +27,4 @@ public class StorageSupport
 
 	// // RVA: 0x2E726BC Offset: 0x2E726BC VA: 0x2E726BC
 	// public static string[] GetFilesAllDirectory(string path) { }
-
-	// // RVA: 0x2E72990 Offset: 0x2E72990 VA: 0x2E72990
-	// public void .ctor() { }
 }

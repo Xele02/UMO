@@ -1,12 +1,8 @@
 using System.Collections.Generic;
 
+public class LPPGENBEECK {}
 public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 {
-	// Fields
-	// [CompilerGeneratedAttribute] // RVA: 0x668474 Offset: 0x668474 VA: 0x668474
-	// private List<KEODKEGFDLD> <BJHOBLKDBKK>k__BackingField; // 0x24
-	// [CompilerGeneratedAttribute] // RVA: 0x668484 Offset: 0x668484 VA: 0x668484
-	// private List<DJNPIGEFPMF> <LECLIAKPOBM>k__BackingField; // 0x28
 	// private List<HMJHLLPBCLD> OHLOHGGCCMD; // 0x30
 	// private List<JPCKBFBCJKD> MGBKDJLEICI; // 0x34
 	// private List<HDNKOFNBCEO> MGDLFOAKGGF; // 0x38
@@ -15,28 +11,10 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// public List<AOJCMPIBFHD> DBBLKLCCHFC; // 0x44
 
 	// // Properties
-	public List<EONOEHOKBEB_Music> EPMMNEFADAP_Musics { get; set; } // EONBIDEIFIA  // 0x20 HPBDACIJFEM DCLKBPALLLD
-	// public List<KEODKEGFDLD> GEAANLPDJBP { get; set; }
-	// public List<DJNPIGEFPMF> CLHIABAKKJM { get; set; }
-	public List<KLBKPANJCPL_Score> CMPPNEFNGMK_Scores { get; set; } // OLPOIIEPELN // 0x2C MPLAPBEGBOA PFDIMNJEMFF
-
-	// // Methods
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6C1670 Offset: 0x6C1670 VA: 0x6C1670
-	// // RVA: 0x10CF764 Offset: 0x10CF764 VA: 0x10CF764
-	// public List<KEODKEGFDLD> ONBBLMFKDMA() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6C1680 Offset: 0x6C1680 VA: 0x6C1680
-	// // RVA: 0x10CF76C Offset: 0x10CF76C VA: 0x10CF76C
-	// private void IIGCCMELFCO(List<KEODKEGFDLD> NANNGLGOFKH) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6C1690 Offset: 0x6C1690 VA: 0x6C1690
-	// // RVA: 0x10CF774 Offset: 0x10CF774 VA: 0x10CF774
-	// public List<DJNPIGEFPMF> PNNMFKPPDBI() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6C16A0 Offset: 0x6C16A0 VA: 0x6C16A0
-	// // RVA: 0x10CF77C Offset: 0x10CF77C VA: 0x10CF77C
-	// private void CHBJKIFMECH(List<DJNPIGEFPMF> NANNGLGOFKH) { }
+	public List<EONOEHOKBEB_Music> EPMMNEFADAP_Musics { get; private set; }// 0x20 // EONBIDEIFIA   HPBDACIJFEM DCLKBPALLLD
+	// public List<KEODKEGFDLD> GEAANLPDJBP { get; private set; } // 0x24 BJHOBLKDBKK ONBBLMFKDMA IIGCCMELFCO
+	// public List<DJNPIGEFPMF> CLHIABAKKJM { get; private set; } // 0x28 LECLIAKPOBM  PNNMFKPPDBI CHBJKIFMECH
+	public List<KLBKPANJCPL_Score> CMPPNEFNGMK_Scores { get; private set; } // 0x2C // OLPOIIEPELN MPLAPBEGBOA PFDIMNJEMFF
 
 	// // RVA: 0x10CF794 Offset: 0x10CF794 VA: 0x10CF794
 	public EONOEHOKBEB_Music IAJLOELFHKC(int DLAEJOBELBH)
@@ -85,7 +63,10 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// public int DCMGLKDJAKL(int JHNCAFBGOKA, int HKOHGJAIJMA, List<int> JFCDMNPDIGP) { }
 
 	// // RVA: 0x10D050C Offset: 0x10D050C VA: 0x10D050C
-	// public void .ctor() { }
+	public void LPPGENBEECK_musicMaster()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x10D07EC Offset: 0x10D07EC VA: 0x10D07EC Slot: 8
 	protected override void KMBPACJNEOF()
@@ -245,6 +226,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 }
 
 
+public class KLBKPANJCPL{}
 public class KLBKPANJCPL_Score
 {
 	public int OIPCCBHIKIA; // 0x8
@@ -267,6 +249,7 @@ public class KLBKPANJCPL_Score
 	//public uint CAOGDCBPBAN() { }
 }
 
+public class EONOEHOKBEB{}
 public class EONOEHOKBEB_Music
 {
 	public short DLAEJOBELBH { get; set; } // CKJALIDGGOH // 0x8 MPGNHBOBFBD EPEMOAEGPLI

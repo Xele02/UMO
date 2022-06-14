@@ -24,8 +24,8 @@ public abstract class CriMonoBehaviour : MonoBehaviour
     }
 
 	// // RVA: -1 Offset: -1 Slot: 6
-	public virtual/*abstract */void CriInternalUpdate() {} // TODO remake abstract once all implemented
+	public abstract void CriInternalUpdate();
 
 	// // RVA: -1 Offset: -1 Slot: 7
-	public virtual/*abstract */void CriInternalLateUpdate() {} // TODO remake abstract once all implemented
+	public abstract void CriInternalLateUpdate();
 }

@@ -10,29 +10,9 @@ public class SakashoCallbackRegistry
 	private static IDictionary<int, int> callIdFromCallbackId = new Dictionary<int, int>(); // 0xC
 	private static IDictionary<int, int> callbackIdFromCallId = new Dictionary<int, int>(); // 0x10
 	private static object lockObject = new object(); // 0x14
-	// [CompilerGeneratedAttribute] // RVA: 0x62A114 Offset: 0x62A114 VA: 0x62A114
-	// private static string <GameObjectName>k__BackingField; // 0x18
-	// [CompilerGeneratedAttribute] // RVA: 0x62A124 Offset: 0x62A124 VA: 0x62A124
-	// private static ISakashoQueueHolder <MainThreadQueueHolder>k__BackingField; // 0x1C
 
-	public static string GameObjectName { get; set; }
-	public static ISakashoQueueHolder MainThreadQueueHolder { get; set; }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x62A924 Offset: 0x62A924 VA: 0x62A924
-	// // RVA: 0x30794DC Offset: 0x30794DC VA: 0x30794DC
-	// public static string get_GameObjectName() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x62A934 Offset: 0x62A934 VA: 0x62A934
-	// // RVA: 0x3079568 Offset: 0x3079568 VA: 0x3079568
-	// public static void set_GameObjectName(string value) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x62A944 Offset: 0x62A944 VA: 0x62A944
-	// // RVA: 0x30795F8 Offset: 0x30795F8 VA: 0x30795F8
-	// public static ISakashoQueueHolder get_MainThreadQueueHolder() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x62A954 Offset: 0x62A954 VA: 0x62A954
-	// // RVA: 0x3079684 Offset: 0x3079684 VA: 0x3079684
-	// public static void set_MainThreadQueueHolder(ISakashoQueueHolder value) { }
+	public static string GameObjectName { get; set; } // 0x18
+	public static ISakashoQueueHolder MainThreadQueueHolder { get; set; } // 0x1C
 
 	// // RVA: 0x3079714 Offset: 0x3079714 VA: 0x3079714
 	// private static void ParseMessage(string message, out int callbackId, out string json) { }

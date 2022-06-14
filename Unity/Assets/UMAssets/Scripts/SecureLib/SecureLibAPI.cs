@@ -3,8 +3,6 @@ namespace SecureLib
 {
     public class SecureLibAPI
     {
-        // Methods
-
         // // RVA: 0x2E71710 Offset: 0x2E71710 VA: 0x2E71710
         // private static extern void __sl_sau() { }
 
@@ -80,8 +78,5 @@ namespace SecureLib
 
         // // RVA: 0x2E72254 Offset: 0x2E72254 VA: 0x2E72254
         // public static bool isHooked() { }
-
-        // // RVA: 0x2E7225C Offset: 0x2E7225C VA: 0x2E7225C
-        // public void .ctor() { }
     }
 }

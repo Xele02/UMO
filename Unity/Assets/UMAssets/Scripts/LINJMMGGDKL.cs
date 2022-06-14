@@ -1,27 +1,24 @@
 
 public class LINJMMGGDKL
 {
-	// Fields
 	private int IPKONDLIDHC; // 0x8
 	private int ENOBDCFHELD; // 0xC
 	private int DLHDPLPLCAC; // 0x10
 	private int FCEJCHGLFGN; // 0x14
-	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF; // 0x18
+	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF = 4; // 0x18
 	public FENCAJJBLBH NMNHBJIAPGG; // 0x1C
 
-	// Properties
-	public int DNJEJEANJGL { get; set; }
-
-	// Methods
-
-	// // RVA: 0x1805374 Offset: 0x1805374 VA: 0x1805374
-	// public int JADLONAJDAK() { }
-
-	// // RVA: 0x1805384 Offset: 0x1805384 VA: 0x1805384
-	// public void JFNEHIGOBHH(int NANNGLGOFKH) { }
+	// public int DNJEJEANJGL { get; set; } //  JADLONAJDAK 0x1805374  JFNEHIGOBHH 0x1805384
 
 	// // RVA: 0x1805488 Offset: 0x1805488 VA: 0x1805488
-	// public void .ctor() { }
+	public LINJMMGGDKL()
+	{
+		IPKONDLIDHC = 0x3842df11; // Inversed ?
+		ENOBDCFHELD = 0x17458e77;
+		DLHDPLPLCAC = 0x17458e77; // Inversed ?
+		FCEJCHGLFGN = 0x3842df11;
+		NMNHBJIAPGG = null;
+	}
 
 	// // RVA: 0x18054D8 Offset: 0x18054D8 VA: 0x18054D8
 	// public void LHPDDGIJKNB(int HBDLKOBJHFP, int LMJDJEACHBC) { }

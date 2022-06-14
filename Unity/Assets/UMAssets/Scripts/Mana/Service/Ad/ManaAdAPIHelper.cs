@@ -4,10 +4,9 @@ namespace Mana.Service.Ad
 {
     public class ManaAdAPIHelper : SingletonMonoBehaviour<ManaAdAPIHelper>
     {
-        // Fields
         private bool _hasSendLaunchEvent; // 0xC
-        public static string iOSLounchURL; // 0x0
-        public string lastSetLaunchURL; // 0x10
+        public static string iOSLounchURL = ""; // 0x0
+        public string lastSetLaunchURL = ""; // 0x10
         private bool _sendResumeEventRequest; // 0x14
 
         // // RVA: 0x17BD040 Offset: 0x17BD040 VA: 0x17BD040
@@ -37,11 +36,5 @@ namespace Mana.Service.Ad
         // [ConditionalAttribute] // RVA: 0x6AA488 Offset: 0x6AA488 VA: 0x6AA488
         // // RVA: 0x17BD860 Offset: 0x17BD860 VA: 0x17BD860
         // private void ShowDebugMessage(string log, object[] addparams) { }
-
-        // // RVA: 0x17BD870 Offset: 0x17BD870 VA: 0x17BD870
-        // public void .ctor() { }
-
-        // // RVA: 0x17BD914 Offset: 0x17BD914 VA: 0x17BD914
-        // private static void .cctor() { }
     }
 }

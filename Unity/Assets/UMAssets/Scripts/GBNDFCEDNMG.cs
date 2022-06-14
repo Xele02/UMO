@@ -95,7 +95,7 @@ public class GBNDFCEDNMG
         JNPNFMCPJJN = 49,
     }
 
-	public static OHCAABOMEOF.KGOGMKMBCPP[] JIMACAGJJKP; // 0x0
+	public static OHCAABOMEOF.KGOGMKMBCPP[] JIMACAGJJKP = new OHCAABOMEOF.KGOGMKMBCPP[2] { 7, 8 }; // 0x0
 
 	// // RVA: 0x16A2D88 Offset: 0x16A2D88 VA: 0x16A2D88
 	// public static bool LLNJFONIECK(OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE) { }
@@ -160,9 +160,4 @@ public class GBNDFCEDNMG
 	// // RVA: 0x16A8240 Offset: 0x16A8240 VA: 0x16A8240
 	// public static int BJHFBOMILHG(AKIIJBEJOEP NDFIEMPPMLF, IKDICBBFBMI LIKDEHHKFEH, long LPEKHFOMCAH) { }
 
-	// // RVA: 0x16A8E18 Offset: 0x16A8E18 VA: 0x16A8E18
-	// public void .ctor() { }
-
-	// // RVA: 0x16A8E20 Offset: 0x16A8E20 VA: 0x16A8E20
-	// private static void .cctor() { }
 }

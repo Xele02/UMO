@@ -25,7 +25,6 @@ public abstract class LBHFILLFAGA
 	private static readonly byte[] BGLBMKIKKKP; // 0x18
 	private static readonly byte[] LEAAJEJAMMH; // 0x1C
 
-	// // Properties
 	public FileLoadedPostProcess DAPCDNJBKBK_mSuccess { get; set; }  // 0x8 OGPIDJJJPDA ONKPBECIMIE JJHJMLAJLIL
 	public FileLoadedPostProcess HAANPNDACPE_mFail { get; set; } // 0xC HEBMELACEOE OMFPAIIEMEF KKNOOFCBHGN
 	protected FileResultObject IMGIFJHHEED_fro { get; set; } // 0x10 BJCPEOGAOCP LNDGEDHIEAF KDNEHECLIDH

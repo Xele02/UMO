@@ -32,12 +32,9 @@ public class HHJHIFJIKAC : DIHHCBACKGG
 
         // // RVA: 0x18319B4 Offset: 0x18319B4 VA: 0x18319B4
         // public bool EHKLFIBLHPI(long JHNMKKNEENE) { }
-
-        // // RVA: 0x1831830 Offset: 0x1831830 VA: 0x1831830
-        // public void .ctor() { }
     }
 
-	public static int FBGGEFFJJHB; // 0x0
+	public static int FBGGEFFJJHB = 0xb516d; // 0x0
 	public List<HHJHIFJIKAC.MNGJPJBCMBH> CDENCMNHNGA; // 0x20
 
 	// // RVA: 0x1830F38 Offset: 0x1830F38 VA: 0x1830F38
@@ -53,7 +50,10 @@ public class HHJHIFJIKAC : DIHHCBACKGG
 	// public HHJHIFJIKAC.MNGJPJBCMBH EKENMIDOHPL(long EOLFJGMAJAB, HHJHIFJIKAC.IJFKAIHFJLF CHOIMHCMAHG = 2) { }
 
 	// // RVA: 0x18313A8 Offset: 0x18313A8 VA: 0x18313A8
-	// public void .ctor() { }
+	public HHJHIFJIKAC()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x183149C Offset: 0x183149C VA: 0x183149C Slot: 8
 	protected override void KMBPACJNEOF()
@@ -69,7 +69,4 @@ public class HHJHIFJIKAC : DIHHCBACKGG
 
 	// // RVA: 0x1831840 Offset: 0x1831840 VA: 0x1831840 Slot: 11
 	// public override uint CAOGDCBPBAN() { }
-
-	// // RVA: 0x1831948 Offset: 0x1831948 VA: 0x1831948
-	// private static void .cctor() { }
 }

@@ -13,16 +13,16 @@ public class CriFsBinder : CriDisposable
 		Invalid = 5,
 		Error = 6,
 	}
-	// Fields
+	
 	private IntPtr handle; // 0x18
 
-	// Properties
 	public IntPtr nativeHandle { get; }
 
-	// Methods
-
 	// // RVA: 0x2944550 Offset: 0x2944550 VA: 0x2944550
-	// public void .ctor() { }
+	public CriFsBinder()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x294486C Offset: 0x294486C VA: 0x294486C Slot: 5
 	public override void Dispose()

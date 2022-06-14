@@ -26,19 +26,20 @@ public class PGIGNJDPCAH
 	private static bool LANLFCFBOHI = false; // 0x6
 	private static int OANIGHDIKJH; // 0x8
 
-	public static bool IPJMPBANBPP { get; set; }
-	private static int HIJBIPLMNEA { get; set; }
-
-	// // RVA: 0x16C982C Offset: 0x16C982C VA: 0x16C982C
-	// public static bool IJMCHOOIMBB() { }
-
-	// // RVA: 0x16C98B8 Offset: 0x16C98B8 VA: 0x16C98B8
-	public static void FLHLJFHILPO(bool NANNGLGOFKH)
-    {
-		if(NANNGLGOFKH == LMGGIBJPGLE)
-			return;
-		LMGGIBJPGLE = NANNGLGOFKH;
-    }
+	public static bool IPJMPBANBPP { 
+		get {
+			// IJMCHOOIMBB 0x16C982C 
+			UnityEngine.Debug.LogError("TODO");
+			return false;
+		}
+		set{
+			//FLHLJFHILPO 0x16C98B8 
+			if(value == LMGGIBJPGLE)
+				return;
+			LMGGIBJPGLE = value;
+		}
+	} 
+	// private static int HIJBIPLMNEA { get; set; } // IDLMAHADDKO 0x16CA0EC  PPDOPFGBPAM 0x16CA184
 
 	// // RVA: 0x16C998C Offset: 0x16C998C VA: 0x16C998C
 	public static void MLPMNKKNFCJ()
@@ -58,12 +59,6 @@ public class PGIGNJDPCAH
 
 	// // RVA: 0x16C9D9C Offset: 0x16C9D9C VA: 0x16C9D9C
 	// public static PGIGNJDPCAH.IMOIPBMGIPN AIMFCMCMOIH() { }
-
-	// // RVA: 0x16CA0EC Offset: 0x16CA0EC VA: 0x16CA0EC
-	// private static int IDLMAHADDKO() { }
-
-	// // RVA: 0x16CA184 Offset: 0x16CA184 VA: 0x16CA184
-	// private static void PPDOPFGBPAM(int NANNGLGOFKH) { }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B8B48 Offset: 0x6B8B48 VA: 0x6B8B48
 	// // RVA: 0x16CA220 Offset: 0x16CA220 VA: 0x16CA220

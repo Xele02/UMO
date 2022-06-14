@@ -17,6 +17,4 @@ public class GNMBAOKGJDO
 	// // RVA: 0x1E59448 Offset: 0x1E59448 VA: 0x1E59448
 	// private IEnumerator ODDEPBIJHOE_Load(string CJEKGLGBIHF) { }
 
-	// // RVA: 0x1E59510 Offset: 0x1E59510 VA: 0x1E59510
-	// public void .ctor() { }
 }

@@ -5,7 +5,6 @@ public class MLIBEPGADJH : DIHHCBACKGG
 {
 	public class KKLDOOJBJMN
 	{
-		// Fields
 		// [CompilerGeneratedAttribute] // RVA: 0x6689D4 Offset: 0x6689D4 VA: 0x6689D4
 		// private int <BNOLCKHMAAH>k__BackingField; // 0x8
 		// [CompilerGeneratedAttribute] // RVA: 0x6689E4 Offset: 0x6689E4 VA: 0x6689E4
@@ -121,8 +120,6 @@ public class MLIBEPGADJH : DIHHCBACKGG
 		public int FPHOPBNPCML { get; set; }
 		public int GCLAAGFKPPJ { get; set; }
 		public List<short> GDHGEECAJGI { get; set; }
-
-		// Methods
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6C2130 Offset: 0x6C2130 VA: 0x6C2130
 		// // RVA: 0x1962254 Offset: 0x1962254 VA: 0x1962254

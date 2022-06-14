@@ -62,20 +62,20 @@ public abstract class IKDICBBFBMI
 	protected bool GFHKFKHBIGM; // 0xE2
 	protected bool OIMGJLOLPHK; // 0xE3
 	public int OGPMLMDPGJA; // 0xE4
-	public static string HOEKCEJINNA; // 0x0
-	public static string FOKNMOMNHHD; // 0x4
+	public static string HOEKCEJINNA = "new_episode_mver"; // 0x0
+	public static string FOKNMOMNHHD = "new_episode_help_pict_id"; // 0x4
 	public const string IKCKAAKLNPL = "main_ranking_index";
 	public const string HNBFGNJGNDP = "event_prologue_achv_key";
 	public const string ELJKLANPBIF = "event_epilogue_achv_key";
 	public const string PKCHABKLDOC = "event_prologue_achv_item_id";
 	public const string HMEFMAPKOBF = "event_epilogue_achv_item_id";
 
-	// public virtual OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get; }
-	public int OENLHLCKMDI { get; }
-	public bool NBCFEEFEDHH { get; }
-	public bool BEGOPNADOJL { get; }
-	public bool JHPNNEOLHGH { get; }
-	public bool DLPIPAGONIN { get; }
+	// public virtual OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get; } // ?
+	// public int OENLHLCKMDI { get; } // ?
+	// public bool NBCFEEFEDHH { get; } // ?
+	// public bool BEGOPNADOJL { get; } // ?
+	// public bool JHPNNEOLHGH { get; } // ?
+	// public bool DLPIPAGONIN { get; } // ?
 
 	// // RVA: 0x8DCDBC Offset: 0x8DCDBC VA: 0x8DCDBC
 	// public void .ctor(string OPFGFINHFCE) { }
@@ -413,7 +413,4 @@ public abstract class IKDICBBFBMI
 
 	// // RVA: 0x8E2668 Offset: 0x8E2668 VA: 0x8E2668 Slot: 80
 	// public virtual bool PDDKJENPOBL() { }
-
-	// // RVA: 0x8E2670 Offset: 0x8E2670 VA: 0x8E2670
-	// private static void .cctor() { }
 }

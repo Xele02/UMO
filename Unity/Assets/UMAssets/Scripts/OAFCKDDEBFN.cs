@@ -1,19 +1,15 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-// Namespace:
-public class OAFCKDDEBFN // TypeDefIndex: 8823
+public class OAFCKDDEBFN
 {
-    // Namespace:
-    public class AACCPKIGMED // TypeDefIndex: 8824
+    public class AACCPKIGMED
     {
-        // Fields
         public BEEINMBNKNM_Encryption DMKAFCEJFDG_decryptor; // 0x8
         public Regex JHOONHIHJNJ_MatchKey; // 0xC
         private int KNEFBLHBDBG; // 0x10
 
-        // Methods
-
+		// RVA: 0x1CBED14 Offset: 0x1CBED14 VA: 0x1CBED14
         public void KHEKNNFCAOI(string MKANHLNEEGL, int KNEFBLHBDBG)
         {
             DMKAFCEJFDG_decryptor = null;
@@ -26,96 +22,64 @@ public class OAFCKDDEBFN // TypeDefIndex: 8823
             DMKAFCEJFDG_decryptor = new BEEINMBNKNM_Encryption();
             DMKAFCEJFDG_decryptor.KHEKNNFCAOI((uint)KNEFBLHBDBG);
         }
-
-        public AACCPKIGMED() { }
     }
 
-        // Fields
-        private List<AACCPKIGMED> MGJKEJHEBPO; // 0x8
-        private static string[] GEGMOOLADID_Filters; // 0x0
+	private List<AACCPKIGMED> MGJKEJHEBPO = new List<AACCPKIGMED>(); // 0x8
+	private static string[] GEGMOOLADID_Filters = new string[0x16] {
+		".usm$", "/ct/ba/.+", "/ct/bg/.+", "/ct/im/.+",
+		"/ct/lo/.+", "/ct/mc/.+", "/ct/rk/.+", "/ct/sc/.+",
+		"/ct/sk/.+", "/ct/.+", "/dv/.+", "/ev/.+",
+		"/gc/.+", "/gm/.+", "/handmode/.+", "/ly/.+",
+		"/mc/.+", "/mn/.+", "/msg/.+", "/st/.+", "/vl/.+", ".xab$" }; // 0x0
 
-        // Methods
-/*
-        // RVA: 0x1CBEC0C Offset: 0x1CBEC0C VA: 0x1CBEC0C
-        private int KGIIIIOHIDJ(int OIPCCBHIKIA) { }
+	// // RVA: 0x1CBEC0C Offset: 0x1CBEC0C VA: 0x1CBEC0C
+	// private int KGIIIIOHIDJ(int OIPCCBHIKIA) { }
 
-        // RVA: 0x1CBEC14 Offset: 0x1CBEC14 VA: 0x1CBEC14
-        public void ALLGKHCNKDN() { } // <<
-*/
-        public void PGLANLKJBLI_Init() //> GameStart >  KEHOJEJMGLJ.PAHGEEOFEPM
-        {
-            MGJKEJHEBPO.Clear();
-            DOKOHKJIDBO a = DOKOHKJIDBO.HHCJCDFCLOB;
-            ANCJLICGOLP IKCAJDOKNOM = a.IKCAJDOKNOM;
-            int index = 0;
-            List<MFJONNINDCJ> JGJJIBPPEPD = IKCAJDOKNOM.JGJJIBPPEPD_List;
-            while(true)
-            {
-                if(JGJJIBPPEPD.Count <= index)
-                    return;
-                AACCPKIGMED newData = new AACCPKIGMED();
-                MFJONNINDCJ data = JGJJIBPPEPD[index];
-                string MKANHLNEEGL = data.MKANHLNEEGL;
-                int value = data.OLOCMINKGON();
-                newData.KHEKNNFCAOI(MKANHLNEEGL, value);
-                MGJKEJHEBPO.Add(newData);
-                index = index + 1;
-            }
-        }
+	// // RVA: 0x1CBEC14 Offset: 0x1CBEC14 VA: 0x1CBEC14
+	// public void ALLGKHCNKDN() { } // <<
 
-        public BEEINMBNKNM_Encryption MFHAOMELJKJ_FindDecryptor(string CJEKGLGBIHF_path)
-        {
-            int index = 0;
-            string input = CJEKGLGBIHF_path.Replace('\\','/');
-            while(true)
-            {
-                if(MGJKEJHEBPO.Count <= index)
-                    return null;
-                AACCPKIGMED a = MGJKEJHEBPO[index];
-                if(a == null)
-                    break;
-                bool match = a.JHOONHIHJNJ_MatchKey.IsMatch(input);
-                if(match)
-                {
-                    return a.DMKAFCEJFDG_decryptor;
-                }
-                index++;
-            }
-            UnityEngine.Debug.LogError("TODO");
-            return null; // TODO
-        }
+	// RVA: 0x1CBEDF4 Offset: 0x1CBEDF4 VA: 0x1CBEDF4
+	public void PGLANLKJBLI_Init() //> GameStart >  KEHOJEJMGLJ.PAHGEEOFEPM
+	{
+		MGJKEJHEBPO.Clear();
+		DOKOHKJIDBO a = DOKOHKJIDBO.HHCJCDFCLOB;
+		ANCJLICGOLP IKCAJDOKNOM = a.IKCAJDOKNOM;
+		int index = 0;
+		List<MFJONNINDCJ> JGJJIBPPEPD = IKCAJDOKNOM.JGJJIBPPEPD_List;
+		while(true)
+		{
+			if(JGJJIBPPEPD.Count <= index)
+				return;
+			AACCPKIGMED newData = new AACCPKIGMED();
+			MFJONNINDCJ data = JGJJIBPPEPD[index];
+			string MKANHLNEEGL = data.MKANHLNEEGL;
+			int value = data.OLOCMINKGON();
+			newData.KHEKNNFCAOI(MKANHLNEEGL, value);
+			MGJKEJHEBPO.Add(newData);
+			index = index + 1;
+		}
+	}
 
-        // RVA: 0x1CBF180 Offset: 0x1CBF180 VA: 0x1CBF180
-        public OAFCKDDEBFN() 
-        { 
-            MGJKEJHEBPO = new List<AACCPKIGMED>();
-        }
-
-        static OAFCKDDEBFN()
-        {
-            GEGMOOLADID_Filters = new string[0x16];
-            int i = 0;
-            GEGMOOLADID_Filters[i++] = ".usm$";
-            GEGMOOLADID_Filters[i++] = "/ct/ba/.+";
-            GEGMOOLADID_Filters[i++] = "/ct/bg/.+";
-            GEGMOOLADID_Filters[i++] = "/ct/im/.+";
-            GEGMOOLADID_Filters[i++] = "/ct/lo/.+";
-            GEGMOOLADID_Filters[i++] = "/ct/mc/.+";
-            GEGMOOLADID_Filters[i++] = "/ct/rk/.+";
-            GEGMOOLADID_Filters[i++] = "/ct/sc/.+";
-            GEGMOOLADID_Filters[i++] = "/ct/sk/.+";
-            GEGMOOLADID_Filters[i++] = "/ct/.+";
-            GEGMOOLADID_Filters[i++] = "/dv/.+";
-            GEGMOOLADID_Filters[i++] = "/ev/.+";
-            GEGMOOLADID_Filters[i++] = "/gc/.+";
-            GEGMOOLADID_Filters[i++] = "/gm/.+";
-            GEGMOOLADID_Filters[i++] = "/handmode/.+";
-            GEGMOOLADID_Filters[i++] = "/ly/.+";
-            GEGMOOLADID_Filters[i++] = "/mc/.+";
-            GEGMOOLADID_Filters[i++] = "/mn/.+";
-            GEGMOOLADID_Filters[i++] = "/msg/.+";
-            GEGMOOLADID_Filters[i++] = "/st/.+";
-            GEGMOOLADID_Filters[i++] = "/vl/.+";
-            GEGMOOLADID_Filters[i++] = ".xab$";
-        }
+	// RVA: 0x1CBF008 Offset: 0x1CBF008 VA: 0x1CBF008
+	public BEEINMBNKNM_Encryption MFHAOMELJKJ_FindDecryptor(string CJEKGLGBIHF_path)
+	{
+		int index = 0;
+		string input = CJEKGLGBIHF_path.Replace('\\','/');
+		while(true)
+		{
+			if(MGJKEJHEBPO.Count <= index)
+				return null;
+			AACCPKIGMED a = MGJKEJHEBPO[index];
+			if(a == null)
+				break;
+			bool match = a.JHOONHIHJNJ_MatchKey.IsMatch(input);
+			if(match)
+			{
+				return a.DMKAFCEJFDG_decryptor;
+			}
+			index++;
+		}
+		UnityEngine.Debug.LogError("TODO");
+		return null; // TODO
+	}
 }

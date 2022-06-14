@@ -1,13 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-// Namespace:
 public class OKGLGHCBCJP_Database
 {
-	// Namespace:
 	public enum BEOKNKGHFFE
 	{
-		// Fields
 		LIIJEGOIKDP = 0,
 		MLNHHIIDJAO = 1,
 		PICOGHJNOJA = 2,
@@ -131,7 +128,6 @@ public class OKGLGHCBCJP_Database
 
 	public delegate void BIFFPAKDHJJ();
 
-	// Fields
 	public static BEOKNKGHFFE[] GAAEFILMAED; // 0x0
 	public static readonly string[] IJBLEJOKEFH; // 0x4
 	public List<OKGLGHCBCJP_Database.BEOKNKGHFFE> NDLAAACJOLP = new List<OKGLGHCBCJP_Database.BEOKNKGHFFE>(); // 0x8

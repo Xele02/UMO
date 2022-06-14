@@ -1,7 +1,6 @@
 
 public class GBAMMLEAIOF
 {
-	// Fields
 	private const int FBGGEFFJJHB = 23;
 	public byte[] EJJEHEHFMGO; // 0x8
 	public int PGEDKFOIPIP; // 0xC

@@ -6,8 +6,6 @@ using System.Globalization;
 
 public class MNNCBFONAOL
 {
-	// Methods
-
 	// // RVA: 0x17B1624 Offset: 0x17B1624 VA: 0x17B1624
 	public static void KHEKNNFCAOI()
     {

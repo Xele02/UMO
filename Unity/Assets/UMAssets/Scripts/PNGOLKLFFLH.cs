@@ -1,9 +1,8 @@
 
 public class PNGOLKLFFLH
 {
-	// Fields
 	public int GPPEFLKGGGJ; // 0x8
-	public string[] GJHJBLCPPKE; // 0xC
+	public string[] GJHJBLCPPKE = new string[3]; // 0xC
 	public string IJBLEJOKEFH; // 0x10
 	public string MJJCKMPICIK; // 0x14
 	public string KLMPFGOCBHC; // 0x18
@@ -19,12 +18,9 @@ public class PNGOLKLFFLH
 	public int ENMAEBJGEKL; // 0x40
 	public int CNLIAMIIJID; // 0x44
 	public int AKDKFIPNAOL; // 0x48
-	public IEIGOPLPJGI OPBPKNHIPPE; // 0x4C
+	public IEIGOPLPJGI OPBPKNHIPPE = new IEIGOPLPJGI(); // 0x4C
 
-	// Properties
 	public string COCGOFFMFCO { get; }
-
-	// // Methods
 
 	// // RVA: 0xFF1A68 Offset: 0xFF1A68 VA: 0xFF1A68
 	// public string GMJIKEHEPPA() { }
@@ -40,7 +36,4 @@ public class PNGOLKLFFLH
 
 	// // RVA: 0xFF290C Offset: 0xFF290C VA: 0xFF290C
 	// public static List<PNGOLKLFFLH> NEOMKKIEMJJ(BBHNACPENDM KPMOBPNENCD, bool OJEBNBLHPNP = False) { }
-
-	// // RVA: 0xFF2874 Offset: 0xFF2874 VA: 0xFF2874
-	// public void .ctor() { }
 }

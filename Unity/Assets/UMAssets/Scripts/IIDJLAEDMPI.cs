@@ -17,7 +17,7 @@ public class IIDJLAEDMPI
 	private string NILMMFMIBMF; // 0x38
 	private static string[] ECLAOLBGCDD = new string[8] {"yyyy/MM/dd HH:mm:ss", "(+", "(-", "day", "h", "m", ")", "serverTime="}; // 0x0
 
-	public bool BIOFMLDLNKD { get; }
+	// public bool BIOFMLDLNKD { get; } // ??
 
 	// // RVA: 0x12038BC Offset: 0x12038BC VA: 0x12038BC
 	// public bool LEAPLHLPGDB() { }

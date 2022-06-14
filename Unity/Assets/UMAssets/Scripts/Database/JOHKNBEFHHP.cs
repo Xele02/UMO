@@ -12,14 +12,14 @@ public class JOHKNBEFHHP : DIHHCBACKGG
 
         // // RVA: 0x1BA4288 Offset: 0x1BA4288 VA: 0x1BA4288
         // public uint CAOGDCBPBAN() { }
-
-        // // RVA: 0x1BA4178 Offset: 0x1BA4178 VA: 0x1BA4178
-        // public void .ctor() { }
     }
 	public List<JOHKNBEFHHP.NGKJHBDEELB> CDENCMNHNGA; // 0x20
 
 	// // RVA: 0x1BA3D84 Offset: 0x1BA3D84 VA: 0x1BA3D84
-	// public void .ctor() { }
+	public void .ctor()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0x1BA3E78 Offset: 0x1BA3E78 VA: 0x1BA3E78 Slot: 8
 	protected override void KMBPACJNEOF()
