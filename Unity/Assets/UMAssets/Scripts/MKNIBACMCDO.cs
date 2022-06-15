@@ -23,7 +23,10 @@ public class MKNIBACMCDO : KLFDBFMNLBL
 	// public void LAGDPCMEBOD(int NANNGLGOFKH) { }
 
 	// // RVA: 0x195AB28 Offset: 0x195AB28 VA: 0x195AB28 Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x195AC68 Offset: 0x195AC68 VA: 0x195AC68 Slot: 7
 	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }

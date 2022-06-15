@@ -16,7 +16,7 @@ public class JOHKNBEFHHP : DIHHCBACKGG
 	public List<JOHKNBEFHHP.NGKJHBDEELB> CDENCMNHNGA; // 0x20
 
 	// // RVA: 0x1BA3D84 Offset: 0x1BA3D84 VA: 0x1BA3D84
-	public void .ctor()
+	public JOHKNBEFHHP()
     {
         UnityEngine.Debug.LogError("TODO");
     }

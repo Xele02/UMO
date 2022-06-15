@@ -86,7 +86,7 @@ public class DOKOHKJIDBO
 		// c.AHNDFJKKLDJ = dgt4;
 
 		// Hack
-		request.DIAMDBHBKBH();
+		//request.DIAMDBHBKBH();
 	}
 
 	// RVA: 0x1232C34 Offset: 0x1232C34 VA: 0x1232C34

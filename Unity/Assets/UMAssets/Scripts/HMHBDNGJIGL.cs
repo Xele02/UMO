@@ -17,7 +17,7 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 		}
 	}
 
-	private static byte[] JIEHGOCHDGB = new byte[8] {4CAECE539B039B16E16206EA2478F8C5FFB2CA05}; // 0x0
+	private static byte[] JIEHGOCHDGB = new byte[8] {0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a}; // 0x0
 	private CriFsLoadFileRequest CHPPDDBBEFF; // 0x4C
 
 	// // RVA: 0x15F4DEC Offset: 0x15F4DEC VA: 0x15F4DEC

@@ -281,7 +281,10 @@ public class JNMFKOHFAFB : KLFDBFMNLBL
 	// public void .ctor() { }
 
 	// // RVA: 0x1B98538 Offset: 0x1B98538 VA: 0x1B98538 Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x1B98D3C Offset: 0x1B98D3C VA: 0x1B98D3C
 	// private EDOHBJAPLPF BJIJBKEABPO(JNMFKOHFAFB.LBGEDDJKOKF IDJJCEGLONI) { }

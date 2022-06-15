@@ -2,6 +2,15 @@ using System;
 
 public class CriAtomExPlayer : CriDisposable
 {
+	public enum Status
+	{
+		Stop = 0,
+		Prep = 1,
+		Playing = 2,
+		PlayEnd = 3,
+		Error = 4,
+	}
+
 	// [CompilerGeneratedAttribute] // RVA: 0x634A04 Offset: 0x634A04 VA: 0x634A04
 	// private CriAtomExBeatSync.CbFunc _onBeatSyncCallback; // 0x18
 	// [CompilerGeneratedAttribute] // RVA: 0x634A14 Offset: 0x634A14 VA: 0x634A14
@@ -211,7 +220,10 @@ public class CriAtomExPlayer : CriDisposable
 	// public bool GetAttachedAisacInfo(int aisacAttachedIndex, out CriAtomEx.AisacInfo aisacInfo) { }
 
 	// // RVA: 0x28A7CB8 Offset: 0x28A7CB8 VA: 0x28A7CB8
-	// public void Set3dSource(CriAtomEx3dSource source) { }
+	public void Set3dSource(CriAtomEx3dSource source)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x28A7E20 Offset: 0x28A7E20 VA: 0x28A7E20
 	// public void Set3dListener(CriAtomEx3dListener listener) { }
@@ -310,7 +322,11 @@ public class CriAtomExPlayer : CriDisposable
 	// public long GetTime() { }
 
 	// // RVA: 0x289FA08 Offset: 0x289FA08 VA: 0x289FA08
-	// public CriAtomExPlayer.Status GetStatus() { }
+	public CriAtomExPlayer.Status GetStatus()
+    {
+        UnityEngine.Debug.LogError("TODO");
+		return CriAtomExPlayer.Status.Error;
+    }
 
 	// // RVA: 0x28A9EF8 Offset: 0x28A9EF8 VA: 0x28A9EF8
 	// public float GetParameterFloat32(CriAtomEx.Parameter id) { }

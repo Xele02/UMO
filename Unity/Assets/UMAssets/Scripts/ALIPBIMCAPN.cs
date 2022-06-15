@@ -16,7 +16,10 @@ public class ALIPBIMCAPN : KLFDBFMNLBL
 	// public void .ctor() { }
 
 	// // RVA: 0xCD9F98 Offset: 0xCD9F98 VA: 0xCD9F98 Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xCDA2C4 Offset: 0xCDA2C4 VA: 0xCDA2C4 Slot: 5
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH) { }

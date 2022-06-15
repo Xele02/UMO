@@ -31,7 +31,10 @@ public class NPOOPJIOMHF : KLFDBFMNLBL
 	// public void .ctor() { }
 
 	// // RVA: 0x1CB6ACC Offset: 0x1CB6ACC VA: 0x1CB6ACC Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x1CB6E60 Offset: 0x1CB6E60 VA: 0x1CB6E60 Slot: 5
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH) { }

@@ -3,7 +3,8 @@ public class EOHDAOAJOHH
 {
 	private const int DDPKGMOPGCF = 100;
 	public static bool FKOBPENIMGM; // 0x0
-	private static sbyte[] AKCBIJHIOGH = new sbyte[0x18] {38A7A09F52235B1158E95BBC83F520BAF645F8E0}; // 0x4
+	private static sbyte[] AKCBIJHIOGH = new sbyte[0x18] {0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x01, 0x01, 0x02, 0x02, 0x02, 0x02,
+  0x03, 0x03, 0x03, 0x03, 0x04, 0x04, 0x04, 0x04, 0x05, 0x05, 0x05, 0x05}; // 0x4
 	// private OJIHOFLJOMK KGCCNEBMHMM; // 0x8
 	private static string[] OBAFHIJBOJP = new string[3] {"StringLiteral_10309", "StringLiteral_10309", "StringLiteral_10310"}; // 0xC
 	private const long KMBNMDMFDMB = 5;

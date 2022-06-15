@@ -21,7 +21,10 @@ public class FKNOCGCODBK : KLFDBFMNLBL
 	// public void .ctor() { }
 
 	// // RVA: 0x118F56C Offset: 0x118F56C VA: 0x118F56C Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x118F6B0 Offset: 0x118F6B0 VA: 0x118F6B0 Slot: 5
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH) { }

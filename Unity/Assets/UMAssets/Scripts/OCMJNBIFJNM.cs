@@ -11,10 +11,10 @@ public class OCMJNBIFJNM : KLFDBFMNLBL
 	public long KKMOKKKBJPH = 0x715a9543; // 0x38
 	private long DGDMMLKHKGB = 0x7549a513; // 0x40
 	public long NNKEKAIINKG = 0x715a9543; // 0x48
-	private int KCIMAFPMDFF = 0x715a9543; // 0x50 // Inversed ?
-	public int PKDHAGEKMFJ = 0x7549a513; // 0x54
-	private int PHMINEDNKIA = 0x715a9543; // 0x58 // Inversed ?
-	public int JMEMKJIPNIM = 0x7549a513; // 0x5C
+	private int KCIMAFPMDFF = 0x7549a513; // 0x50
+	public int PKDHAGEKMFJ = 0x715a9543; // 0x54
+	private int PHMINEDNKIA = 0x7549a513; // 0x58
+	public int JMEMKJIPNIM = 0x715a9543; // 0x5C
 	private int FJJIEMHHCEB = 0x7549a513; // 0x60
 	public int OBIBODJDAAH = 0x715a9543; // 0x64
 	private int HIOJLJHFHJI; // 0x68
@@ -37,7 +37,7 @@ public class OCMJNBIFJNM : KLFDBFMNLBL
 	// public int DFCFJMOLIOC { get; set; } // EIINPPOFNOK 0x1B31000 LCHDFMFJNKI 0x1B31014
 	// public int GHKKEFGDIBC { get; set; } // EDBPDAJBLKA 0x1B31944 IAGFEICDNLP 0x1B31958
 	// public int CHFMCFNEFEO { get; set; } // IEPJFBCMFFB 0x1B3196C GJAMHFABMPF 0x1B31980
-	// public int KNIKMMKNOFA { get; set; } // LKJJIINADLD 0x1B31A4C IHOKNBIAPLL 0x1B31A60
+	public int KNIKMMKNOFA { get { return PGHGOOFMDMI ^ 0x7549a513; } set { PGHGOOFMDMI = value ^ 0x7549a513; } } // LKJJIINADLD 0x1B31A4C IHOKNBIAPLL 0x1B31A60
 	// public override bool DMICHEJIAJL { get; } // ??
 
 	// // RVA: 0x1B30F5C Offset: 0x1B30F5C VA: 0x1B30F5C
@@ -80,7 +80,10 @@ public class OCMJNBIFJNM : KLFDBFMNLBL
 	}
 
 	// // RVA: 0x1B31BD0 Offset: 0x1B31BD0 VA: 0x1B31BD0 Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x1B320C0 Offset: 0x1B320C0 VA: 0x1B320C0 Slot: 5
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH) { }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
+using XeApp.Game.Common;
 
 public class LCLCCHLDNHJ : DIHHCBACKGG
 {
@@ -12,8 +13,6 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
 
         // public LCLCCHLDNHJ.ILODJKFJJDO.FBKPFMKPMAF[] BJGNGNPHCBA; // 0x2C
 
-        // [CompilerGeneratedAttribute] // RVA: 0x667944 Offset: 0x667944 VA: 0x667944
-        // private int <DBDGBOGOJOJ>k__BackingField; // 0x30
         private byte MEDNOBOLCEL; // 0x34
         private static StringBuilder FAEDHJHCEFJ = new StringBuilder(); // 0x4
         private int GEJGMGDAKAM; // 0x38
@@ -29,8 +28,12 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
         public int HMCOGDICFNB { get; set; } // 0x20 JGFCPGCGANG IIIBNFKOKFK KBGHKPPMEPD
         // public int LLLCMHENKKN { get; set; } // NEBKEFLJPDI 0xD9DDD4 AOCHKIMBJPE 0xD9CE34
         public int HGBJODBCJDA { get; set; } // 0x28 BIOFHCKLKMD EEEJDDFGNGP IBPCBFIDHPH
-        // public int EGLDFPILJLG { get; set; } // JACADMEJOAH 0xD9DE74 MMDBFGAFINM 0xD9CED8
-        // public bool GLEEPAFMPLO { get; } // PFAFGGBOFBG 0xD9DE7C
+        public int EGLDFPILJLG { get; set; } // 0x30 DBDGBOGOJOJ // JACADMEJOAH 0xD9DE74 MMDBFGAFINM 0xD9CED8
+        public bool GLEEPAFMPLO { get { 
+            if(MEDNOBOLCEL == 0)
+                ILBDHNHFJHL();
+            return MEDNOBOLCEL == 2;
+         } } // PFAFGGBOFBG 0xD9DE7C
         // public bool IPJMPBANBPP { get; } // IJMCHOOIMBB 0xD9E064
         // public int IIELLEPEEFH { get; set; } // NCOENDMPNPL 0xD9D88C ADBAAPIBKKL 0xD9CD88
 
@@ -62,12 +65,15 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
         // public void LEFFFKJFCFH(int ANAJIAENLNB, int[,] LAEAKOHKNHO) { }
 
         // // RVA: 0xD9DEB0 Offset: 0xD9DEB0 VA: 0xD9DEB0
-        // private void ILBDHNHFJHL() { }
+        private void ILBDHNHFJHL()
+        {
+            UnityEngine.Debug.LogError("TODO");
+        }
     }
 
 	public const int DJGNIDBKLCE = 500;
 	public const int KHHGMLNMHBN = 3;
-	public static readonly int GFIKOEEBIJP = GameAttribbute.ArrayNum - 1; // 0x0
+	public static readonly int GFIKOEEBIJP = GameAttribute.ArrayNum - 1; // 0x0
 	public string HDIDJNCGICK; // 0x34
 
 	// public List<LCLCCHLDNHJ.ILODJKFJJDO> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB

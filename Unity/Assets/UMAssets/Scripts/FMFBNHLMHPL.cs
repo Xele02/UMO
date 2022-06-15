@@ -17,7 +17,10 @@ public class FMFBNHLMHPL : KLFDBFMNLBL
 	// public void .ctor() { }
 
 	// // RVA: 0x11985C4 Offset: 0x11985C4 VA: 0x11985C4 Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x11989F0 Offset: 0x11989F0 VA: 0x11989F0 Slot: 5
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH) { }

@@ -31,7 +31,21 @@ public class NHPDPKHMFEP
 	public int DMFNALAGLHH; // 0x2C
 
 	public static NHPDPKHMFEP HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
-	// public bool DLGMLAJMLOP { get; set; } JOMOJIMDBDO 0x18977BC LDODJDMAEHG 0x1897910
+	public bool DLGMLAJMLOP { 
+		get
+		{//JOMOJIMDBDO 0x18977BC
+			if(!BHGMFDECGPG)
+			{
+				if(IMMAOANGPNK.HHCJCDFCLOB == null)
+					return false;
+				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.MEGJDBJCEOC.LPJLEHAJADA("always_get_subscription", 0) != 0;
+			}
+			return true;
+		} 
+		set
+		{ // LDODJDMAEHG 0x1897910
+			BHGMFDECGPG = value;
+		} }
 
 	// // RVA: 0x1897918 Offset: 0x1897918 VA: 0x1897918
 	// public void IJBGPAENLJA() { }

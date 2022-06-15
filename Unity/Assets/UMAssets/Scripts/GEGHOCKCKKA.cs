@@ -39,7 +39,10 @@ public class GEGHOCKCKKA : KLFDBFMNLBL
 	// public void .ctor() { }
 
 	// // RVA: 0x16BAB98 Offset: 0x16BAB98 VA: 0x16BAB98 Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x16BAF38 Offset: 0x16BAF38 VA: 0x16BAF38 Slot: 5
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH) { }

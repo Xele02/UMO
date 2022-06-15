@@ -34,10 +34,16 @@ public class CriAtomServer : CriMonoBehaviour
 	}
 
 	// // RVA: 0x28B5454 Offset: 0x28B5454 VA: 0x28B5454 Slot: 6
-	// public override void CriInternalUpdate() { }
+	public override void CriInternalUpdate()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x28B5458 Offset: 0x28B5458 VA: 0x28B5458 Slot: 7
-	// public override void CriInternalLateUpdate() { }
+	public override void CriInternalLateUpdate()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x28B545C Offset: 0x28B545C VA: 0x28B545C
 	// private void OnApplicationPause(bool appPause) { }

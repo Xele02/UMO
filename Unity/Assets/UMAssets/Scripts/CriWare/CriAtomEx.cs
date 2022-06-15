@@ -25,7 +25,15 @@ public class CriAtomEx
 		// internal void .ctor(byte[] data, int startIndex) { }
 
 		// // RVA: 0x81C664 Offset: 0x81C664 VA: 0x81C664
-		// public void .ctor(bool followsOriginalSource, CriAtomEx.Randomize3dCalcType calculationType, float param1 = 0, float param2 = 0, float param3 = 0) { }
+		public Randomize3dConfig(bool followsOriginalSource, CriAtomEx.Randomize3dCalcType calculationType, float param1 = 0, float param2 = 0, float param3 = 0)
+		{
+			this.followsOriginalSource = followsOriginalSource;
+			this.calculationType = calculationType;
+			calculationParameters = new float[3];
+			calculationParameters[0] = param1;
+			calculationParameters[1] = param2;
+			calculationParameters[2] = param3;
+		}
 
 		// // RVA: 0x81C690 Offset: 0x81C690 VA: 0x81C690
 		public Randomize3dConfig(int dummy) : this()

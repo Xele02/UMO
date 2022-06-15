@@ -23,7 +23,10 @@ public class LGGPBMPINDL : KLFDBFMNLBL
 	// public void .ctor() { }
 
 	// // RVA: 0xD739BC Offset: 0xD739BC VA: 0xD739BC Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xD739C0 Offset: 0xD739C0 VA: 0xD739C0 Slot: 5
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH) { }

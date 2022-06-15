@@ -23,7 +23,10 @@ public class DAJBODHMLAB : KLFDBFMNLBL
 	// public void .ctor() { }
 
 	// // RVA: 0x176981C Offset: 0x176981C VA: 0x176981C Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x1769AD4 Offset: 0x1769AD4 VA: 0x1769AD4 Slot: 5
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH) { }

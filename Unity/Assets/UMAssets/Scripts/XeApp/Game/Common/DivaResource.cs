@@ -372,7 +372,7 @@ namespace XeApp.Game.Common
 			mikePrefab = operation.GetAsset<GameObject>(assetName.ToString());
 			
 			List<Material> matList = new List<Material>(16);
-			if(cos_master.PFAFGGBOFBG())
+			if(cos_master.GLEEPAFMPLO)
 			{
 				operation.ForEach(mat => {
 					if(mat is Material)
@@ -383,7 +383,7 @@ namespace XeApp.Game.Common
 			}
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
-			if(cos_master.PFAFGGBOFBG())
+			if(cos_master.GLEEPAFMPLO)
 			{
 				bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}_{2:D2}.xab", divaId, modelId, colorId);
 				operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
@@ -470,7 +470,7 @@ namespace XeApp.Game.Common
 			OKGLGHCBCJP_Database o = im.NKEBMCIMJND;
 			LCLCCHLDNHJ l = o.MFPNGNMFEAL;
 			LCLCCHLDNHJ.ILODJKFJJDO a = l.NLIBHNJNJAN(divaId, modelId);
-			int e = a.JACADMEJOAH();
+			int e = a.EGLDFPILJLG;
 			if(e == 0)
 				yield break;
 			

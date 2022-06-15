@@ -50,7 +50,10 @@ public class BCGFHLIEKLJ : KLFDBFMNLBL
 	// public void .ctor() { }
 
 	// // RVA: 0xF2E988 Offset: 0xF2E988 VA: 0xF2E988 Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6BEDD4 Offset: 0x6BEDD4 VA: 0x6BEDD4
 	// // RVA: 0xF2EE38 Offset: 0xF2EE38 VA: 0xF2EE38

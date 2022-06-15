@@ -56,12 +56,7 @@ public class NKGJPJPHLIF
 	public static bool DPCCNOCAHGC = false; // 0x5
 	private long LJBHLFGDBHA; // 0xC8
 	public bool ECPEIINJLFL; // 0xD0
-	private readonly string[] CNAINDDMPDL = new string[5];
-			s[0] = "";
-			s[1] = "_sb";
-			s[2] = "_upd";
-			s[3] = "_qa";
-			s[4] = "_test"; // 0xD4
+	private readonly string[] CNAINDDMPDL = new string[5] {"", "_sb", "_upd", "_qa", "_test" }; // 0xD4
 	private static readonly byte[,] HPEBFGPLMBP = new byte[4, 0x10] {
 			{0xBD, 0xd4, 0x1d, 0xc7, 0x66, 0x73, 0xa8, 0x47, 0xd5, 0x51, 0x6d, 0x94, 0x4c, 0x31, 0x50, 0xdf},
 			{0xb8, 0xa7, 0x4e, 0x09, 0x66, 0x66, 0x25, 0xd9, 0x23, 0xb9, 0x23, 0x3a, 0xe1, 0x2e, 0x17, 0x48},
@@ -399,7 +394,7 @@ public class NKGJPJPHLIF
 															//0xC1A424
 															OBOKMHHMOIL o = new OBOKMHHMOIL();
 															o.KHEKNNFCAOI(IDLHJIOMJBK);
-															NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FIIMIGEKDCM().EAJMLOKKOOK(o.LCAINKFINEI);
+															NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.EAJMLOKKOOK(o.LCAINKFINEI);
 															KEJNOIJMBLP = null;
 															DPJBHHIHJJK = false;
 															PECPLBANLBN = false; // ?   strh r5,[r4,#0xbc]

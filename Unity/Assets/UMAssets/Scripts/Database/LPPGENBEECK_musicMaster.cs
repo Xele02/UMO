@@ -63,7 +63,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// public int DCMGLKDJAKL(int JHNCAFBGOKA, int HKOHGJAIJMA, List<int> JFCDMNPDIGP) { }
 
 	// // RVA: 0x10D050C Offset: 0x10D050C VA: 0x10D050C
-	public void LPPGENBEECK_musicMaster()
+	public LPPGENBEECK_musicMaster()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

@@ -13,7 +13,7 @@ namespace com.adjust.sdk
 		public bool sendInBackground; // 0xE
 		public bool launchDeferredDeeplink = true; // 0xF
 		public string appToken = "{Your App Token}"; // 0x10
-		public AdjustLogLevel logLevel = 3; // 0x14
+		public AdjustLogLevel logLevel = AdjustLogLevel.Info/*3*/; // 0x14
 		public AdjustEnvironment environment; // 0x18
 
 		// // RVA: 0x274CC30 Offset: 0x274CC30 VA: 0x274CC30

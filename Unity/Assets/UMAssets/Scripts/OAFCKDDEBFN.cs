@@ -53,7 +53,7 @@ public class OAFCKDDEBFN
 			AACCPKIGMED newData = new AACCPKIGMED();
 			MFJONNINDCJ data = JGJJIBPPEPD[index];
 			string MKANHLNEEGL = data.MKANHLNEEGL;
-			int value = data.OLOCMINKGON();
+			int value = data.JBGEEPFKIGG;
 			newData.KHEKNNFCAOI(MKANHLNEEGL, value);
 			MGJKEJHEBPO.Add(newData);
 			index = index + 1;

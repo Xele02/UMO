@@ -116,7 +116,7 @@ public class ANCJLICGOLP
 				b.MKANHLNEEGL = s;
 				EDOHBJAPLPF_JsonData c = a["k"];
 				int NANNGLGOFKH = (int)c;
-				b.ABAFHIBFKCE(NANNGLGOFKH);
+				b.JBGEEPFKIGG = NANNGLGOFKH;
 				JGJJIBPPEPD_List.Add(b);
 				OIPCCBHIKIA++;
 			} while(OIPCCBHIKIA != size);
@@ -157,7 +157,7 @@ public class ANCJLICGOLP
 			{
 				EDOHBJAPLPF_JsonData data = IMKIBKOICBF[OIPCCBHIKIA];
 				JDEFIJBCJLC elem = new JDEFIJBCJLC();
-				elem.JFNEHIGOBHH((string)data["v"]);
+				elem.DNJEJEANJGL = (string)data["v"];
 				FJOEBCMGDMI.Add((string)data["k"], elem);
 				OIPCCBHIKIA++;
 			} while(OIPCCBHIKIA != size);

@@ -46,15 +46,29 @@ public class CriAtomSource : CriMonoBehaviour
 	[SerializeField]
 	private uint _randomPositionListMaxLength; // 0x64
 	[SerializeField]
-	private CriAtomEx.Randomize3dConfig randomize3dConfig = new CriAtomEx.Randomize3dConfig { followsOriginalSource = false; calculationType = CriAtomEx.Randomize3dCalcType.Rectangle, calculationParameters = null}; // 0x68
+	private CriAtomEx.Randomize3dConfig randomize3dConfig = new CriAtomEx.Randomize3dConfig (false, CriAtomEx.Randomize3dCalcType.Rectangle, 0, 0, 0); // 0x68
 
 	public CriAtomExPlayer player { get; protected set; } // 0x1C
-	// public CriAtomEx3dSource source { get; protected set; } // 0x20
+	public CriAtomEx3dSource source { get; protected set; } // 0x20
 	// protected virtual bool enable_audio_synced_timer { get; protected set; } 0x28B55CC 0x28B55D4
 	// public bool playOnStart { get; set; } 0x28B55D8 0x28B55E0
 	// public string cueName { get; set; } 0x28B55E8 0x28B55F0
-	// public string cueSheet { get; set; } 0x28B55F8 0x28B5600
-	// public bool use3dPositioning { get; set; } 0x28B5608 0x28B5644
+	public string cueSheet { get { return _cueSheet; } set { _cueSheet = value; } } //0x28B55F8 0x28B5600
+	public bool use3dPositioning { 
+		get
+		{
+			// 0x28B5644
+			return _use3dPositioning;
+		} 
+		set
+		{
+			// 0x28B5608
+			_use3dPositioning = value;
+			if(player == null)
+				return;
+			player.Set3dSource(value ? source : null);
+			need_to_player_update_all = true;
+		} } 
 	// public bool freezeOrientation { get; set; } 0x28B5658 0x28B5660
 	// public bool use3dRandomization { get; set; } 0x28B5668 0x28B5740
 	// public uint randomPositionListMaxLength { get; set; } 0x28B5748 0x28B57F0
@@ -69,9 +83,9 @@ public class CriAtomSource : CriMonoBehaviour
 	// public float pan3dDistance { get; set; } 0x28B5B9C 0x28B5BC8
 	// public int startTime { get; set; } 0x28B5BE4 0x28B5C20
 	// public long time { get; } 0x28B5C3C
-	// public Status status { get; } 0x28B5C58
+	public Status status { get { if(player != null) return (Status)player.GetStatus(); else return Status.Error; } } //0x28B5C58
 	// public bool attenuationDistanceSetting { get; set; } 0x28B5C70 0x28B5CB4
-	// public bool androidUseLowLatencyVoicePool { get; set; } 0x28B5CCC 0x28B5CD4
+	public bool androidUseLowLatencyVoicePool { get { return _androidUseLowLatencyVoicePool; } set { _androidUseLowLatencyVoicePool = value;} } //0x28B5CCC 0x28B5CD4
 
 	// // RVA: 0x28B564C Offset: 0x28B564C VA: 0x28B564C
 	// protected void SetNeedToPlayerUpdateAll() { }

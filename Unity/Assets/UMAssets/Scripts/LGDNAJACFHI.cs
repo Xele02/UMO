@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 public class LGDNAJACFHI
 {
-	private static Regex INIKEOCPAJH = new Regex("num(?<num>[\d]+)"); // 0x0
+	private static Regex INIKEOCPAJH = new Regex("num(?<num>[\\d]+)"); // 0x0
 	public int PPFNGGCBJKC; // 0x8
 	public int LHENLPLKGLP; // 0xC
 	public string OPFGFINHFCE; // 0x10
@@ -33,7 +33,7 @@ public class LGDNAJACFHI
 	public string JMEMGIPGGIK; // 0x6C
 	public static string[] GJHJBLCPPKE = new string[10] {"StringLiteral_12326", "StringLiteral_12327", "StringLiteral_12328", "StringLiteral_12329", "StringLiteral_12330",
 														"StringLiteral_12331", "StringLiteral_12332", "StringLiteral_12333", "StringLiteral_12334", "StringLiteral_12335"}; // 0x4
-	public static int[] MKJBOPJEAHN = new int[10] {844EEF1DAE956ED37B25D9FCD88D9B18805259C}; // 0x8
+	public static int[] MKJBOPJEAHN = new int[10] {1, 2, 2, 3, 3, 3, 3, 3, 3, 3}; // 0x8
 
 	// // RVA: 0xD725A8 Offset: 0xD725A8 VA: 0xD725A8
 	// public bool KHEKNNFCAOI(KBPDNHOKEKD MEANCEOIMGE) { }

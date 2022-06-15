@@ -25,7 +25,7 @@ public abstract class KLFDBFMNLBL
 	// public void LHPDDGIJKNB() { }
 
 	// // RVA: -1 Offset: -1 Slot: 4
-	// public abstract void KMBPACJNEOF();
+	public abstract void KMBPACJNEOF();
 
 	// // RVA: -1 Offset: -1 Slot: 5
 	// public abstract void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH);

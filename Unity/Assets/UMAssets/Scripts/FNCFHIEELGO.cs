@@ -107,5 +107,8 @@ public class FNCFHIEELGO : KLFDBFMNLBL
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }
 
 	// // RVA: 0x13E707C Offset: 0x13E707C VA: 0x13E707C Slot: 4
-	// public override void KMBPACJNEOF() { }
+	public override void KMBPACJNEOF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 }

@@ -14,7 +14,7 @@ public class JBMPOAAMGNB : KLFDBFMNLBL
 	public long AFPONJEJKCO { get; set; } // 0x38 CIHJOFPCAFP LIOJMOEDFAN JJGOCLFAPMD
 	public bool FNLNIKFNHAM { get; set; } // 0x40 GAJKNOHAOMB KDLCLJKPMOF JLBBKAMOCNK
 	public int PBEKKMOPENN { get; set; } // 0x44 NJIKBJEECJP CBEOCBNKLFO OKJEOMMBCKA
-	public override bool DMICHEJIAJL { get { UnityEngine.Debug.LogError("TODO"); } } 
+	// public override bool DMICHEJIAJL { get { UnityEngine.Debug.LogError("TODO"); } } 
 
 	// // RVA: 0x142163C Offset: 0x142163C VA: 0x142163C
 	public JBMPOAAMGNB()

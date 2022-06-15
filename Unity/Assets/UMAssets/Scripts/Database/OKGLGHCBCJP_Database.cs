@@ -323,7 +323,7 @@ public class OKGLGHCBCJP_Database
 	// public LLKLAKGKNLD HDGOHBFKKDM { get; set; }
 	// public EGLOKAEIHCB IHPFCIJKFIC { get; set; }
 	// public HHFFOACILKG ICICKEBMEFA { get; set; }
-	// public KBCCGHLCFNO MEGJDBJCEOC { get; set; }
+	public KBCCGHLCFNO MEGJDBJCEOC { get; set; }
 	public LPPGENBEECK_musicMaster IBPAFKKEKNK { get; set; } // 0xCC CKFEJCIKLAE // AHENIIKNNJF 0x1490B04 HMKLOBHNMMI 0x1490B0C
 	// public GJAEGCMKMEK NEGKEEAFKHP { get; set; }
 	// public LGHIPHEDCNC LBCMJGOOHLJ { get; set; }
