@@ -59,7 +59,7 @@ namespace XeApp.Game.RhythmGame
 		// public bool CalcPossiblityNextMode() { }
 
 		// // RVA: 0xDC6314 Offset: 0xDC6314 VA: 0xDC6314
-		public RhythGameEnergy()
+		public RhythmGameEnergy()
 		{
 			UnityEngine.Debug.LogError("TODO");
 		}

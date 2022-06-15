@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 		public const float NOTES_SPEED_BASIC = 10;
 		private int m_optionHomeDiva; // 0x18
 		private bool m_notesSpeedDiffSelection; // 0x1C
-		private int[,] s_QualityValueTbl = new int[2,4] {BE65193B3F3FB05846EEBEBE875ED0B71E3AF6EB}; // 0x20 // 2/4 or 4/2 ?
+		private int[,] s_QualityValueTbl = new int[2,4] {{0, 1, 2, 3}, {0, 1, 3, 0}}; // 0x20
 
 		public ILDKBCLAFPB.MPHNGGECENI Option { get; private set; } // 0x8
 		public ILDKBCLAFPB.JDBOPCADICO Notification { get; private set; } // 0xC

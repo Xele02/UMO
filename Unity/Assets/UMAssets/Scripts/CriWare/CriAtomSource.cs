@@ -52,7 +52,7 @@ public class CriAtomSource : CriMonoBehaviour
 	public CriAtomEx3dSource source { get; protected set; } // 0x20
 	// protected virtual bool enable_audio_synced_timer { get; protected set; } 0x28B55CC 0x28B55D4
 	// public bool playOnStart { get; set; } 0x28B55D8 0x28B55E0
-	// public string cueName { get; set; } 0x28B55E8 0x28B55F0
+	public string cueName { get { return _cueName; } set { _cueName = value; } } //0x28B55E8 0x28B55F0
 	public string cueSheet { get { return _cueSheet; } set { _cueSheet = value; } } //0x28B55F8 0x28B5600
 	public bool use3dPositioning { 
 		get

@@ -80,7 +80,7 @@ namespace XeApp.Core
 		}
 
 		// // RVA: 0xE0EB40 Offset: 0xE0EB40 VA: 0xE0EB40
-		static AppQualitySettings()
+		static AppQualitySetting()
 		{
 			UnityEngine.Debug.LogError("TODO");
 		}

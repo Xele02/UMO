@@ -3,7 +3,7 @@ public class CriAtom : CriMonoBehaviour
 {
 	public string acfFile = ""; // 0x1C
 	// private bool acfIsLoading; // 0x20
-	public CriAtomCueSheet[] cueSheets = new CriAtomCueSheet[0](); // 0x24
+	public CriAtomCueSheet[] cueSheets = new CriAtomCueSheet[0]; // 0x24
 	public string dspBusSetting = ""; // 0x28
 	public bool dontDestroyOnLoad; // 0x2C
 	// private static CriAtomExSequencer.EventCallback eventUserCallback; // 0x0
@@ -155,7 +155,11 @@ public class CriAtom : CriMonoBehaviour
 	}
 
 	// // RVA: 0x287B40C Offset: 0x287B40C VA: 0x287B40C
-	// public CriAtomCueSheet GetCueSheetInternal(string name) { }
+	public CriAtomCueSheet GetCueSheetInternal(string name)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 
 	// // RVA: 0x287B5EC Offset: 0x287B5EC VA: 0x287B5EC
 	// public CriAtomCueSheet AddCueSheetInternal(string name, string acbFile, string awbFile, CriFsBinder binder) { }

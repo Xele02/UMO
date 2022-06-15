@@ -23,11 +23,8 @@ namespace XeSys
 		public double avgFPS; // 0x38
 		public double minFPS; // 0x40
 
-		// public static DebugFPS Instance { get; }
+		public static DebugFPS Instance { get { return mInstance; } } // 0x19316DC
 		// public float fps { get; }
-
-		// // RVA: 0x19316DC Offset: 0x19316DC VA: 0x19316DC
-		// public static DebugFPS get_Instance() { }
 
 		// // RVA: 0x1931768 Offset: 0x1931768 VA: 0x1931768
 		// public float get_fps() { }

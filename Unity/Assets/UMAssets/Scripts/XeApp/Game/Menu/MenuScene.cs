@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 		public static MenuScene Instance { get; private set; } // 0x0
 		public static bool IsAlreadyHome { get; set; } // 0x4
 		public static bool IsFirstTitleFlow { get; set; } // 0x5
-		private static bool ComebackByRestart { get; private set; } // 0x6
+		public static bool ComebackByRestart { get; private set; } // 0x6
 		// public MenuDivaManager divaManager { get; set; } // 0x2C
 		// public SceneIconTextureCache SceneIconCache { get; } 0xB2DCF8
 		// public DivaIconTextureCache DivaIconCache { get; } 0xB2DD94

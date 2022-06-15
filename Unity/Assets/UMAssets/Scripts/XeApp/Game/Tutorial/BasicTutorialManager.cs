@@ -110,7 +110,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE42630 Offset: 0xE42630 VA: 0xE42630
 		public BasicTutorialManager()
 		{
-			UnityEngine.Degub.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6AE5B8 Offset: 0x6AE5B8 VA: 0x6AE5B8

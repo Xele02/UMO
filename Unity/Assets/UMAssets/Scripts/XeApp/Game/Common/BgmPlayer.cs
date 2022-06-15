@@ -10,9 +10,9 @@ namespace XeApp.Game.Common
 		public static readonly int PROLOGUE_BGM = 4000; // 0xC
 		public static readonly int AR_BGM_ID_BASE = 5000; // 0x10
 		public static readonly int MINIGAME_BGM_ID_BASE = 6000; // 0x14
-		// private CriAtomBgmSource bgmSource; // 0x1C
+		private CriAtomBgmSource bgmSource; // 0x1C
 
-		// public override CriAtomSource source { get; set; } 0xE61334 0xE6133C
+		public override CriAtomSource source { get { return bgmSource; } set { return; } } //0xE61334 0xE6133C
 		public int currentBgmId { get; private set; } // 0x20
 		// public long timeSyncedWithAudio { get; private set; } 0xE61350 0xE6137C
 
@@ -23,10 +23,10 @@ namespace XeApp.Game.Common
 		// public static void ConvertBgmIdToCueName(int bgmId, ref string cueName) { }
 
 		// // RVA: 0xE61380 Offset: 0xE61380 VA: 0xE61380 Slot: 6
-		protected override void OnAwake()
+		/*protected override void OnAwake()
 		{
 			UnityEngine.Debug.LogError("TODO");
-		}
+		}*/
 
 		// // RVA: 0xE61410 Offset: 0xE61410 VA: 0xE61410
 		public bool RequestChangeCueSheet(int wavId, UnityAction onEndCallback)

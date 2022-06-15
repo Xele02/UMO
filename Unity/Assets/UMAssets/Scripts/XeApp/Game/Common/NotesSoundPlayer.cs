@@ -17,7 +17,7 @@ namespace XeApp.Game.Common
 		// private CriAtomExPlayback loopSEPlayback; // 0x14
 		// private CriAtomSource sePlayerLongNotes; // 0x18
 		public static bool isNewNoteSoundEnable; // 0x0
-		private static int[] noteTouchSEIndex = new int[18] {991B4AA294B603012C2FE81FB07438DB965792D3}; // 0x4
+		private static int[] noteTouchSEIndex = new int[18] { 4, 5, 3, 2, 1, 0, 7, 8, 0xe, 0xf, 0xd, 0x11, 0x12, 0x13, 0x15, 0x16, 0x14, 0x10 }; // 0x4
 		// private static NotesSoundPlayer.NoteSEType[] mixTable = new NotesSoundPlayer.NoteSEType[25] {90F02A84C31F5632D4095B6046021D892411CBCC}; // 0x8
 		private float[] loopSeVoumeTable = new float[2] { 1.0f, 2.0f }; // 0x1C
 

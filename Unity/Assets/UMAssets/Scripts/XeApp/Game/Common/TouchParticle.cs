@@ -28,7 +28,7 @@ namespace XeApp.Game.Common
 		[SerializeField]
 		private float MAGNITUDE_MIN = 0.0125f; // 0x48
 
-		// public Camera Camera { get; set; } 0x1CCFAC4 0x1CCFACC
+		public Camera Camera { get { return m_camera; } set { m_camera = value; } } //0x1CCFAC4 0x1CCFACC
 
 		// // RVA: 0x1CCFAD4 Offset: 0x1CCFAD4 VA: 0x1CCFAD4
 		private void Awake()

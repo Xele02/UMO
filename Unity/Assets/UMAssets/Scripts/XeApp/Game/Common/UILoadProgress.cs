@@ -25,7 +25,7 @@ namespace XeApp.Game.Common
 		private bool m_isReady; // 0x34
 		private Transform m_oldParent; // 0x38
 
-		// public bool IsReady { get; } 0x1CDDEB8
+		public bool IsReady { get { return m_isReady; } } //0x1CDDEB8
 
 		// // RVA: 0x1CDDEC0 Offset: 0x1CDDEC0 VA: 0x1CDDEC0
 		private void Start()

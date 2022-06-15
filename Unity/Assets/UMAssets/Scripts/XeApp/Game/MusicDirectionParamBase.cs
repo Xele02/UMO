@@ -31,12 +31,12 @@ namespace XeApp.Game
 		protected bool m_psylliumOverride; // 0x10
 		//[TooltipAttribute] // RVA: 0x6615A8 Offset: 0x6615A8 VA: 0x6615A8
 		[SerializeField] // RVA: 0x6615A8 Offset: 0x6615A8 VA: 0x6615A8
-		protected Color m_psylliumColor = Color(0x3f800000,0x3f800000,0x3f800000,0x3f800000,0); // 0x14
+		protected Color m_psylliumColor = new Color(1.0f, 1.0f, 1.0f, 1.0f); // 0x14
 		//[TooltipAttribute] // RVA: 0x661608 Offset: 0x661608 VA: 0x661608
 		[SerializeField] // RVA: 0x661608 Offset: 0x661608 VA: 0x661608
 		protected float m_mikeStandOffsetRate = 1.0f; // 0x24
 
-		// public float stateOffsetSec { get; } 0xC95320
+		public float stateOffsetSec { get { return m_startOffsetSec; } } //0xC95320
 		// public bool psylliumOverride { get; } 0xC95328
 		// public Color psylliumColor { get; } 0xC95330
 		// public float mikeStandOffsetRate { get; } 0xC95340

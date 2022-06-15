@@ -4,6 +4,30 @@ using System.Collections.Generic;
 
 public class CriAtomEx
 {
+	public struct CueInfo
+	{
+		public int id; // 0x0
+		// public CriAtomEx.CueType type; // 0x4
+		public readonly string name; // 0x8
+		public readonly string userData; // 0xC
+		public long length; // 0x10
+		public ushort[] categories; // 0x18
+		public short numLimits; // 0x1C
+		public ushort numBlocks; // 0x1E
+		public ushort numTracks; // 0x20
+		public ushort numRelatedWaveForms; // 0x22
+		public byte priority; // 0x24
+		public byte headerVisibility; // 0x25
+		public byte ignore_player_parameter; // 0x26
+		public byte probability; // 0x27
+		// public CriAtomEx.PanType panType; // 0x28
+		// public CriAtomEx.CuePos3dInfo pos3dInfo; // 0x2C
+		// public CriAtomEx.GameVariableInfo gameVariableInfo; // 0x64
+
+		// RVA: 0x81C4A4 Offset: 0x81C4A4 VA: 0x81C4A4
+		//public void .ctor(byte[] data, int startIndex) { }
+	}
+
 	[Serializable]
 	public struct Randomize3dConfig
 	{

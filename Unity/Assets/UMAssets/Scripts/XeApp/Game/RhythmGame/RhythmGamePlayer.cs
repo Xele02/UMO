@@ -207,7 +207,7 @@ namespace XeApp.Game.RhythmGame
 		public SettingMV setting_mv { get; private set; } // 0x10
 		public BackupSaveData backupSaveData { get; private set; } // 0x14
 		// public MusicData musicData { get; private set; } // get_musicData 0x9AF428 // set_musicData 0x9AF44C 
-		// public BgmPlayer bgmPlayer { get; private set; } // get_bgmPlayer 0x9AF450 // set_bgmPlayer 0x9AF484 
+		public BgmPlayer bgmPlayer { get { return SoundManager.Instance.bgmPlayer; } private set { return; } } // get_bgmPlayer 0x9AF450 // set_bgmPlayer 0x9AF484 
 		public int musicMillisecLength { get; private set; } // 0x30
 		public int notesMillisec { get; private set; } // 0x34
 		public int deviceMillisec { get; private set; } // 0x38

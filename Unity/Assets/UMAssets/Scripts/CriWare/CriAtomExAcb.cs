@@ -37,7 +37,12 @@ public class CriAtomExAcb : CriDisposable
 	// public bool Exists(int cueId) { }
 
 	// // RVA: 0x288A3A8 Offset: 0x288A3A8 VA: 0x288A3A8
-	// public bool GetCueInfo(string cueName, out CriAtomEx.CueInfo info) { }
+	public bool GetCueInfo(string cueName, out CriAtomEx.CueInfo info)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		info = new CriAtomEx.CueInfo();
+		return false;
+	}
 
 	// // RVA: 0x288A6DC Offset: 0x288A6DC VA: 0x288A6DC
 	// public bool GetCueInfo(int cueId, out CriAtomEx.CueInfo info) { }

@@ -12,7 +12,19 @@ namespace XeApp.Game.Common
 
 		public abstract CriAtomSource source { get; set; } // get Slot: 4 set  Slot: 5
 		// protected CriAtomExPlayback playBack { get; private set; } // 0x14
-		// public int millisecLength { get; private set; } 0x1397E00 0x1397FE0
+		public int millisecLength { get {
+			//0x1397E00
+			int res = 0;
+			if(source != null)
+			{
+				CriAtomEx.CueInfo info;
+				GameManager.Instance.criAtom.GetCueSheetInternal(source.cueSheet).acb.GetCueInfo(source.cueName, out info);
+				res = (int)info.length;
+			}
+			return res;
+		} private set {
+			//0x1397FE0
+		} }  
 		// public float secLength { get; private set; } 0x1397FE4 0x139800C
 		// public int millisecTime { get; private set; } 0x1398010 0x139804C
 		// public float secTime { get; private set; } 0x1398050 0x1398078

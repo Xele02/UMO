@@ -7,7 +7,7 @@ namespace XeApp.Game.Common
 		private AbsoluteLayout m_anim; // 0x14
 		private LayoutUGUIRuntime m_runtime; // 0x18
 
-		// public bool IsInitialized { get; } 0x1CDE8D8
+		public bool IsInitialized { get { return m_runtime.IsReady; } }// 0x1CDE8D8
 
 		// // RVA: 0x1CDE904 Offset: 0x1CDE904 VA: 0x1CDE904
 		private void Start()

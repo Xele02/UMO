@@ -28,7 +28,7 @@ namespace XeApp.Game.Common
 		private Coroutine m_coWaitForAnimationEnd; // 0x34
 		private bool isInitialized; // 0x3F
 
-		private Action onEndAnimationCallback { get; public set; } // 0x38
+		public Action onEndAnimationCallback { private get;  set; } // 0x38
 		// public Action onPlayerCutInStart { set {} } // 0xAE9020
 		public bool isRunning { get; private set; } // 0x3C
 		public bool isTakeoff { get; private set; } // 0x3D

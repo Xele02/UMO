@@ -19,7 +19,15 @@ namespace XeApp.Game.AR
 		private long m_arStartTime; // 0x28
 		private long m_arEndTime; // 0x30
 
-		// public static AREventMasterData Instance { get; } 0xBB6C40
+		public static AREventMasterData Instance { get {
+			//0xBB6C40
+			if(sm_instance == null)
+			{
+				sm_instance = new AREventMasterData();
+				sm_instance.name = "ar_event";
+			}
+			return sm_instance;
+		} } 
 		// public Dictionary<string, NNJFKLBPBNK> m_stringParam { get; set; } // 0x38
 		// public Dictionary<string, CEBFFLDKAEC> m_intParam { get; set; } // 0x3C
 

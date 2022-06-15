@@ -94,7 +94,7 @@ namespace XeApp.Game.Common
 		// public static void DeployDecFile(string srcPath, string rawAwbPath, string cueSheetName) { }
 
 		// // RVA: 0x139B794 Offset: 0x139B794 VA: 0x139B794
-		static Soundresource()
+		static SoundResource()
 		{
 			UnityEngine.Debug.LogError("TODO");
 		}

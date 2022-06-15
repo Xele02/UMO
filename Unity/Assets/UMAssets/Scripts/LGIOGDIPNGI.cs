@@ -6,7 +6,7 @@ public class LGIOGDIPNGI : NKFJNAANPNP
 	// private const int MJFAFEOOEFF = 90;
 
 	// // RVA: 0x17F4078 Offset: 0x17F4078 VA: 0x17F4078
-	public void LGIOGDIPNGI()
+	public LGIOGDIPNGI()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

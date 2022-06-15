@@ -10,7 +10,7 @@ namespace XeApp.Game.AR
 		public float timeoutTime = 6.0f; // 0x14
 		private const int RETRY_LIMIT = 1;
 
-		// public string name { get; set; } 0xBBA77C 0xBB6E94
+		public string name { get { return m_name; } set { m_name = value; } } //0xBBA77C 0xBB6E94
 
 		// // RVA: -1 Offset: -1 Slot: 4
 		// protected abstract void Initialize(byte[] bytes);

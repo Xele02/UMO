@@ -31,6 +31,12 @@ public class AOJGDNFAIJL
         public bool HGEKDNNJAAC { get; private set; } // 0x22 DPIFLIMIDPI ABKLDEHPOJH IFAFHCOMMHJ
         public bool DNLCLAOPFPF { get; private set; } // 0x23 JPEAMBLKJEF KINDNNEJNOL GOIIKFBHFLD
 
+        // RVA: 0xD599FC Offset: 0xD599FC VA: 0xD599FC
+	    public AMIECPBIALP()
+        {
+            return;
+        }
+
         // // RVA: 0xD59A94 Offset: 0xD59A94 VA: 0xD59A94
         public AMIECPBIALP(int DLAEJOBELBH, bool HJNAMIDGAJB)
 		{
