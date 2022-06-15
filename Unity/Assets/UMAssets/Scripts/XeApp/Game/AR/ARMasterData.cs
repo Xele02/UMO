@@ -5,18 +5,12 @@ namespace XeApp.Game.AR
 		private const string LIST_NAME = "db";
 		private const string DATA_PATH = "/db/{0}.dat";
 		private bool m_isReady; // 0x8
-		private string m_name; // 0xC
+		private string m_name = "ar"; // 0xC
 		public bool ignoreError; // 0x10
-		public float timeoutTime; // 0x14
+		public float timeoutTime = 6.0f; // 0x14
 		private const int RETRY_LIMIT = 1;
 
-		public string name { get; set; }
-
-		// // RVA: 0xBBA77C Offset: 0xBBA77C VA: 0xBBA77C
-		// public string get_name() { }
-
-		// // RVA: 0xBB6E94 Offset: 0xBB6E94 VA: 0xBB6E94
-		// protected void set_name(string value) { }
+		// public string name { get; set; } 0xBBA77C 0xBB6E94
 
 		// // RVA: -1 Offset: -1 Slot: 4
 		// protected abstract void Initialize(byte[] bytes);
@@ -51,9 +45,6 @@ namespace XeApp.Game.AR
 
 		// // RVA: 0xBBADA4 Offset: 0xBBADA4 VA: 0xBBADA4
 		// private bool ValidateSchemaHash(byte[] hashBytes, string name) { }
-
-		// // RVA: 0xBB6E9C Offset: 0xBB6E9C VA: 0xBB6E9C
-		// protected void .ctor() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x741C2C Offset: 0x741C2C VA: 0x741C2C
 		// // RVA: 0xBBB100 Offset: 0xBBB100 VA: 0xBBB100

@@ -18,7 +18,6 @@ namespace XeApp.Game.Common
 			Num = 4,
 		}
 
-		// // Fields
 		private static readonly int INTRO_FADE_DEFAULT_MILLISEC = 4000; // 0x0
 		private static readonly int VALKYRIE_MODE_JUDGE_OFFSET = -1200; // 0x4
 		private static readonly int VALKYRIE_MODE_HUD_OFFSET = -600; // 0x8
@@ -45,7 +44,6 @@ namespace XeApp.Game.Common
 		private bool isLoadedParam; // 0x5B
 		// private CBBJHPBGBAJ tarFile; // 0x5C
 
-		// // Properties
 		public EONOEHOKBEB_Music musicBase { get; set; } // 0xC
 		public MusicScoreData commonData { get; set; } // 0x10
 		public MusicScoreData musicScoreData { get; set; } // 0x14

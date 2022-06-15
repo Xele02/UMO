@@ -23,9 +23,7 @@ namespace XeApp.Game.Menu
 		private ProductListFilter m_productListFilter; // 0x14
 		private bool m_IsChangeDate; // 0x18
 		private AMOCLPHDGBP m_paidVCPurchase; // 0x1C
-		private List<ResponseHandler> m_responceHandlerList; // 0x20
-
-		// Methods
+		private List<ResponseHandler> m_responceHandlerList = new List<ResponseHandler>(); // 0x20
 
 		// // RVA: 0x17CF4F0 Offset: 0x17CF4F0 VA: 0x17CF4F0
 		public static DenominationManager Create(Transform parent)
@@ -60,11 +58,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x17D0860 Offset: 0x17D0860 VA: 0x17D0860
 		// private void OnOpenBirthdayRegistrationConfirm(int year, int mon, IMCBBOAFION onEnter, JFDNPFFOACP onCancel, DJBHIFLHJLK onError) { }
-
-		// // RVA: 0x17D0C60 Offset: 0x17D0C60 VA: 0x17D0C60
-		// public void .ctor() { }
-
-		// // RVA: 0x17D0CEC Offset: 0x17D0CEC VA: 0x17D0CEC
-		// private static void .cctor() { }
 	}
 }

@@ -23,11 +23,8 @@ namespace XeSys
 		public double avgFPS; // 0x38
 		public double minFPS; // 0x40
 
-		// Properties
-		public static DebugFPS Instance { get; }
-		public float fps { get; }
-
-		// Methods
+		// public static DebugFPS Instance { get; }
+		// public float fps { get; }
 
 		// // RVA: 0x19316DC Offset: 0x19316DC VA: 0x19316DC
 		// public static DebugFPS get_Instance() { }
@@ -43,16 +40,28 @@ namespace XeSys
 		}
 
 		// // RVA: 0x1931994 Offset: 0x1931994 VA: 0x1931994
-		// public void .ctor() { }
+		public DebugFPS()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1931A48 Offset: 0x1931A48 VA: 0x1931A48
-		// private void Awake() { }
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1931ACC Offset: 0x1931ACC VA: 0x1931ACC
-		// private void Start() { }
+		private void Start()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1931B64 Offset: 0x1931B64 VA: 0x1931B64
-		// private void Update() { }
+		private void Update()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1931C18 Offset: 0x1931C18 VA: 0x1931C18
 		// public void StartMeasureAvg() { }
@@ -86,8 +95,5 @@ namespace XeSys
 		// [ConditionalAttribute] // RVA: 0x690794 Offset: 0x690794 VA: 0x690794
 		// // RVA: 0x1931C90 Offset: 0x1931C90 VA: 0x1931C90
 		// private void SetAnchor(float x, float y) { }
-
-		// // RVA: 0x1931D38 Offset: 0x1931D38 VA: 0x1931D38
-		// private static void .cctor() { }
 	}
 }

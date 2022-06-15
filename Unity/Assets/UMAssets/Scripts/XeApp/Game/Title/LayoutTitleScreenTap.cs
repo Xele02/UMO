@@ -37,9 +37,6 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE3AFD0 Offset: 0xE3AFD0 VA: 0xE3AFD0 Slot: 5
 		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
 
-		// // RVA: 0xE3AFE8 Offset: 0xE3AFE8 VA: 0xE3AFE8
-		// public void .ctor() { }
-
 		// [CompilerGeneratedAttribute] // RVA: 0x6B3BA0 Offset: 0x6B3BA0 VA: 0x6B3BA0
 		// // RVA: 0xE3AFF0 Offset: 0xE3AFF0 VA: 0xE3AFF0
 		// private void <SetCallback>b__5_0() { }

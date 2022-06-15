@@ -1,25 +1,11 @@
 
 public class OCLHKHAMDHF : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
-	// public static string POFDDFCGEGP; // 0x0
-	// [CompilerGeneratedAttribute] // RVA: 0x667344 Offset: 0x667344 VA: 0x667344
-	// private List<OCLHKHAMDHF.JEHNEEBBDBO> <LOGMEMCACAC>k__BackingField; // 0x24
+	// public static string POFDDFCGEGP = "_"; // 0x0
 
-	// // Properties
-	// public List<OCLHKHAMDHF.JEHNEEBBDBO> BBAJKJPKOHD { get; set; }
+	// public List<OCLHKHAMDHF.JEHNEEBBDBO> BBAJKJPKOHD { get; private set; } // 0x24 NNNEPHIJAKK HIAFHIDDPEJ
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BF100 Offset: 0x6BF100 VA: 0x6BF100
-	// // RVA: 0x1B2C680 Offset: 0x1B2C680 VA: 0x1B2C680
-	// public List<OCLHKHAMDHF.JEHNEEBBDBO> NNNEPHIJAKK() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BF110 Offset: 0x6BF110 VA: 0x6BF110
-	// // RVA: 0x1B2C688 Offset: 0x1B2C688 VA: 0x1B2C688
-	// private void HIAFHIDDPEJ(List<OCLHKHAMDHF.JEHNEEBBDBO> NANNGLGOFKH) { }
 
 	// // RVA: 0x1B2C690 Offset: 0x1B2C690 VA: 0x1B2C690
 	// public int GGKOLJCPNKO(KMOGDEOKHPG MOLEPBNJAGE) { }
@@ -31,7 +17,10 @@ public class OCLHKHAMDHF : KLFDBFMNLBL
 	// public void BOAIINJHENE() { }
 
 	// // RVA: 0x1B2CDD4 Offset: 0x1B2CDD4 VA: 0x1B2CDD4
-	// public void .ctor() { }
+	public OCLHKHAMDHF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x1B2CE78 Offset: 0x1B2CE78 VA: 0x1B2CE78 Slot: 4
 	public override void KMBPACJNEOF()
@@ -59,7 +48,4 @@ public class OCLHKHAMDHF : KLFDBFMNLBL
 
 	// // RVA: 0x1B304E4 Offset: 0x1B304E4 VA: 0x1B304E4 Slot: 11
 	// public override FENCAJJBLBH PFAKPFKJJKA() { }
-
-	// // RVA: 0x1B307AC Offset: 0x1B307AC VA: 0x1B307AC
-	// private static void .cctor() { }
 }

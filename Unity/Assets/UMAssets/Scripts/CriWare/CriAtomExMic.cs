@@ -202,7 +202,4 @@ public class CriAtomExMic : CriDisposable
 
 	// // RVA: 0x289ECB0 Offset: 0x289ECB0 VA: 0x289ECB0
 	// private static extern void criAtomMic_UpdateEffectParameters(IntPtr mic, IntPtr effect) { }
-
-	// // RVA: 0x289EFD0 Offset: 0x289EFD0 VA: 0x289EFD0
-	// private static void .cctor() { }
 }

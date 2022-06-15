@@ -12,10 +12,5 @@ namespace XeApp.Game.Common
 			Num = 5,
 			Illegal = 6,
 		}
-
-		// Methods
-
-		// RVA: 0x138B160 Offset: 0x138B160 VA: 0x138B160
-		//public void .ctor() { }
 	}
 }

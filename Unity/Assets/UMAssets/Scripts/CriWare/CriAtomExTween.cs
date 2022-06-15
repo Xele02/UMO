@@ -10,7 +10,10 @@ public class CriAtomExTween : CriDisposable
 	// internal IntPtr get_nativeHandle() { }
 
 	// // RVA: 0x28ACF40 Offset: 0x28ACF40 VA: 0x28ACF40
-	// public void .ctor() { }
+	public CriAtomExTween()
+	{ 
+        UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x28ACF4C Offset: 0x28ACF4C VA: 0x28ACF4C
 	// public void .ctor(CriAtomEx.Parameter parameterId) { }

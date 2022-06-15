@@ -6,12 +6,9 @@ namespace XeApp.Game.Common
 {
 	public class PopupWindowManager : MonoBehaviour
 	{
-		// Fields
 		private static PopupWindowControl[] s_controls; // 0x0
-		private static List<int> s_popupIndexStack; // 0x4
-		public static int starRank; // 0x8
-
-		// Methods
+		private static List<int> s_popupIndexStack = new List<int>(); // 0x4
+		public static int starRank = 0; // 0x8
 
 		// // RVA: 0x1BACEE4 Offset: 0x1BACEE4 VA: 0x1BACEE4
 		// public static PopupWindowControl Show(PopupSetting setting, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack, Action<IPopupContent, PopupTabButton.ButtonLabel> cotentUpdateCallBack, Action openStartCallBack, Action openEndCallBack, bool isButtonEnable = True, bool isShowBlack = True, bool isUnderFadePlane = False, Func<bool> closeWaitCallBack, Action endCallBaack, Func<PopupWindowControl.SeType, bool> playSeEvent, Func<PopupButton.ButtonLabel, PopupButton.ButtonType, bool> buttonSeEvent, Func<PopupButton.ButtonType, PopupButton.ButtonLabel, bool> closeStartWaitCallBack) { }
@@ -179,11 +176,5 @@ namespace XeApp.Game.Common
 		// [IteratorStateMachineAttribute] // RVA: 0x73F684 Offset: 0x73F684 VA: 0x73F684
 		// // RVA: 0x1BC7778 Offset: 0x1BC7778 VA: 0x1BC7778
 		// private static IEnumerator TabContentsLoader(PopupTabSetting tabSetting, Action<PopupTabContents> callback) { }
-
-		// // RVA: 0x1BC781C Offset: 0x1BC781C VA: 0x1BC781C
-		// public void .ctor() { }
-
-		// // RVA: 0x1BC7824 Offset: 0x1BC7824 VA: 0x1BC7824
-		// private static void .cctor() { }
 	}
 }

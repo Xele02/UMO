@@ -16,8 +16,5 @@ namespace XeApp.Core
 
         // // RVA: 0x1D74CC8 Offset: 0x1D74CC8 VA: 0x1D74CC8
         // public static int C() { }
-
-        // // RVA: 0x1D74D44 Offset: 0x1D74D44 VA: 0x1D74D44
-        // public void .ctor() { }
     }
 }

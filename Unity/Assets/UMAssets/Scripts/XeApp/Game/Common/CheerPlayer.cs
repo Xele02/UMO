@@ -6,8 +6,6 @@ namespace XeApp.Game.Common
 	{
 		public class PlayerEx : VoicePlayerBase
 		{
-			// // Methods
-
 			// // RVA: 0xE6591C Offset: 0xE6591C VA: 0xE6591C
 			// public void Play(string a_name) { }
 
@@ -19,18 +17,13 @@ namespace XeApp.Game.Common
 
 			// // RVA: 0xE65C38 Offset: 0xE65C38 VA: 0xE65C38
 			// public void FadeOut(float sec, Action onStop) { }
-
-			// // RVA: 0xE65CC4 Offset: 0xE65CC4 VA: 0xE65CC4
-			// public void .ctor() { }
 		}
 
 		public const int MAX = 3;
-		private PlayerEx[] m_player; // 0x8
+		private PlayerEx[] m_player = new PlayerEx[3]; // 0x8
 		private bool m_create; // 0xC
 		private bool m_load_request; // 0xD
 		private int m_load_cnt; // 0x10
-
-		// // Methods
 
 		// // RVA: 0xE653C0 Offset: 0xE653C0 VA: 0xE653C0
 		// private bool InvalidIndex(int a_index) { }
@@ -73,9 +66,6 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0xE65BAC Offset: 0xE65BAC VA: 0xE65BAC
 		// public void FadeOut(float sec) { }
-
-		// // RVA: 0xE65C40 Offset: 0xE65C40 VA: 0xE65C40
-		// public void .ctor() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x73AA94 Offset: 0x73AA94 VA: 0x73AA94
 		// // RVA: 0xE65CB4 Offset: 0xE65CB4 VA: 0xE65CB4

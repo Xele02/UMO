@@ -37,25 +37,23 @@ namespace XeApp.Game.Menu
 		private TipsWindow m_window; // 0x10
 		private bool m_isShow; // 0x14
 		private bool m_isLoding; // 0x15
-		private List<int> m_firstPageTipsIdList; // 0x18
-		private List<int> m_graphicTipsIdList; // 0x1C
-		private List<int> m_otherPageTipsIdList; // 0x20
-		private List<int> m_notPriorityTipsIdList; // 0x24
-		private List<TipsControl.ListupInfo> m_listUpList; // 0x28
-		private List<int> m_historyList; // 0x2C
-		// private List<TipsData> m_tipsList; // 0x30
-		// private TipsTextureCache m_tipsTextureCache; // 0x34
+		private List<int> m_firstPageTipsIdList = new List<int>(); // 0x18
+		private List<int> m_graphicTipsIdList = new List<int>(); // 0x1C
+		private List<int> m_otherPageTipsIdList = new List<int>(); // 0x20
+		private List<int> m_notPriorityTipsIdList = new List<int>(); // 0x24
+		private List<TipsControl.ListupInfo> m_listUpList = new List<TipsControl.ListupInfo>(); // 0x28
+		private List<int> m_historyList = new List<int>(); // 0x2C
+		// private List<TipsData> m_tipsList = new List<TipsData>(); // 0x30
+		// private TipsTextureCache m_tipsTextureCache = new TipsTextureCache(0); // 0x34
 		private WaitWhile m_waitLoading; // 0x38
 		private int m_totalWeight; // 0x3C
 		public const int TipsMax = 3;
 		private const int HistoryMax = 10;
-		private static int[] m_situationValues; // 0x0
-		// [CompilerGeneratedAttribute] // RVA: 0x685E6C Offset: 0x685E6C VA: 0x685E6C
-		// private bool <IsInitialized>k__BackingField; // 0x40
+		private static int[] m_situationValues = new int[7]; // 0x0
 
-		public bool IsInitialized { get; set; }
-		public WaitWhile WaitLoadingYield { get; }
-		public bool IsLoading { get; }
+		public bool IsInitialized { get; private set; } // 0x40
+		// public WaitWhile WaitLoadingYield { get; } 0xA974F4
+		// public bool IsLoading { get; } 0xA974FC
 
 		// // RVA: 0xA97284 Offset: 0xA97284 VA: 0xA97284
 		public static void SetSituationValue(TipsControl.SituationId id, int val)
@@ -68,20 +66,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xA97410 Offset: 0xA97410 VA: 0xA97410
 		// public static void ResetSituationValues() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73557C Offset: 0x73557C VA: 0x73557C
-		// // RVA: 0xA974E4 Offset: 0xA974E4 VA: 0xA974E4
-		// public bool get_IsInitialized() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73558C Offset: 0x73558C VA: 0x73558C
-		// // RVA: 0xA974EC Offset: 0xA974EC VA: 0xA974EC
-		// private void set_IsInitialized(bool value) { }
-
-		// // RVA: 0xA974F4 Offset: 0xA974F4 VA: 0xA974F4
-		// public WaitWhile get_WaitLoadingYield() { }
-
-		// // RVA: 0xA974FC Offset: 0xA974FC VA: 0xA974FC
-		// public bool get_IsLoading() { }
 
 		// // RVA: 0xA97504 Offset: 0xA97504 VA: 0xA97504
 		private void Start()
@@ -156,12 +140,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xA98584 Offset: 0xA98584 VA: 0xA98584
 		// private long GetServerUnixTime() { }
-
-		// // RVA: 0xA99DF8 Offset: 0xA99DF8 VA: 0xA99DF8
-		// public void .ctor() { }
-
-		// // RVA: 0xA99FB8 Offset: 0xA99FB8 VA: 0xA99FB8
-		// private static void .cctor() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x73568C Offset: 0x73568C VA: 0x73568C
 		// // RVA: 0xA9A030 Offset: 0xA9A030 VA: 0xA9A030

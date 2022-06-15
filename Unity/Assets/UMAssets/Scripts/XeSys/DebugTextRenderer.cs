@@ -26,10 +26,8 @@ namespace XeSys
 		private GameObject mDebugTextObject; // 0x20
 		private ArrayList mStringList; // 0x24
 
-		public Vector2 BasePosition { get; set; }
-		public static DebugTextRenderer Instance { get; }
-
-		// Methods
+		// public Vector2 BasePosition { get; set; }
+		// public static DebugTextRenderer Instance { get; }
 
 		// // RVA: 0x2036788 Offset: 0x2036788 VA: 0x2036788
 		// public Vector2 get_BasePosition() { }
@@ -74,10 +72,10 @@ namespace XeSys
 		// // RVA: 0x20374A0 Offset: 0x20374A0 VA: 0x20374A0
 		// public void Print(string str, Color[] color) { }
 
-		// // RVA: 0x2037700 Offset: 0x2037700 VA: 0x2037700
-		// public void .ctor() { }
-
 		// // RVA: 0x2037708 Offset: 0x2037708 VA: 0x2037708
-		// private static void .cctor() { }
+		static DebugTextRenderer()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }

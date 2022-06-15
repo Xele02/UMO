@@ -149,6 +149,9 @@ namespace XeApp
         // public static void set_SakashoConnectTarget(AppEnv.SakashoConnectTargetType value) { }
 
         // // RVA: 0xE0CF30 Offset: 0xE0CF30 VA: 0xE0CF30
-        // private static void .cctor() { }
+        static AppEnv()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
     }
 }

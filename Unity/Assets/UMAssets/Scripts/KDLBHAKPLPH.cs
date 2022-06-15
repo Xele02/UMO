@@ -1,29 +1,18 @@
 
 public class KDLBHAKPLPH : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// private const int KDNHEMPAGIE = 100;
-	// public static string POFDDFCGEGP; // 0x0
-	// [CompilerGeneratedAttribute] // RVA: 0x6670A4 Offset: 0x6670A4 VA: 0x6670A4
-	// private List<KDLBHAKPLPH.KGFJLMLOFED> <PKCJOFJIEEA>k__BackingField; // 0x24
+	// public static string POFDDFCGEGP = "_"; // 0x0
 
-	// // Properties
-	// public List<KDLBHAKPLPH.KGFJLMLOFED> DNKNFFPLGNM { get; set; }
+	// public List<KDLBHAKPLPH.KGFJLMLOFED> DNKNFFPLGNM { get; private set; } // 0x24 MJGPHKECNEO KGHIIDAKJOI
 	// public override bool DMICHEJIAJL { get; }
 
-	// // Methods
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BEA84 Offset: 0x6BEA84 VA: 0x6BEA84
-	// // RVA: 0xE7B874 Offset: 0xE7B874 VA: 0xE7B874
-	// public List<KDLBHAKPLPH.KGFJLMLOFED> MJGPHKECNEO() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BEA94 Offset: 0x6BEA94 VA: 0x6BEA94
-	// // RVA: 0xE7B87C Offset: 0xE7B87C VA: 0xE7B87C
-	// private void KGHIIDAKJOI(List<KDLBHAKPLPH.KGFJLMLOFED> NANNGLGOFKH) { }
-
 	// // RVA: 0xE7B884 Offset: 0xE7B884 VA: 0xE7B884
-	// public void .ctor() { }
+	public KDLBHAKPLPH()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xE7B928 Offset: 0xE7B928 VA: 0xE7B928 Slot: 4
 	public override void KMBPACJNEOF()
@@ -48,7 +37,4 @@ public class KDLBHAKPLPH : KLFDBFMNLBL
 
 	// // RVA: 0xE7D4A0 Offset: 0xE7D4A0 VA: 0xE7D4A0 Slot: 9
 	// public override bool NFKFOODCJJB() { }
-
-	// // RVA: 0xE7D4A8 Offset: 0xE7D4A8 VA: 0xE7D4A8
-	// private static void .cctor() { }
 }

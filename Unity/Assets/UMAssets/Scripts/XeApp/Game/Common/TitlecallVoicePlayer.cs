@@ -27,9 +27,6 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CCEF80 Offset: 0x1CCEF80 VA: 0x1CCEF80
 		// private IEnumerator Co_RemoveCueSheet() { }
 
-		// // RVA: 0x1CCF02C Offset: 0x1CCF02C VA: 0x1CCF02C
-		// public void .ctor() { }
-
 		// [CompilerGeneratedAttribute] // RVA: 0x73B500 Offset: 0x73B500 VA: 0x73B500
 		// // RVA: 0x1CCF034 Offset: 0x1CCF034 VA: 0x1CCF034
 		// private bool <Co_RemoveCueSheet>b__4_0() { }

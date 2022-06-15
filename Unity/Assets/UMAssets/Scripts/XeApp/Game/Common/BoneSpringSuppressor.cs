@@ -61,7 +61,6 @@ namespace XeApp.Game.Common
 			// public override void ApplyValue(float suppressValue) { }
 		}
 
-		// Fields
 		public const int PresetNum = 30;
 		private const float SUPPRESS_VALUE_EPSILON = 0.001f;
 		private bool m_isReady; // 0x8
@@ -69,9 +68,7 @@ namespace XeApp.Game.Common
 		private List<BindData> m_bindDatas; // 0x10
 		private float m_suppressValue; // 0x14
 		private bool m_isSuppressing; // 0x18
-		private Preset m_preset; // 0x1C
-
-		// Methods
+		private Preset m_preset = Preset._Num; // 0x1C
 
 		// // RVA: 0xE627A0 Offset: 0xE627A0 VA: 0xE627A0
 		// public void Load(GameObject root, BoneSpringSuppressParam param, BoneSpringSuppressor.Preset preset) { }
@@ -87,8 +84,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0xE63644 Offset: 0xE63644 VA: 0xE63644
 		// private static bool CheckEquivalent(float checkValue, float baseValue, float epsilon) { }
-
-		// // RVA: 0xE62790 Offset: 0xE62790 VA: 0xE62790
-		// public void .ctor() { }
 	}
 }

@@ -26,10 +26,7 @@ namespace XeApp.Game.RhythmGame
 			Diva = 2,
 		}
 
-		// // Fields
 		// private MusicVoiceChangerParam m_param; // 0x8
-
-		// // Methods
 
 		// // RVA: 0x15518BC Offset: 0x15518BC VA: 0x15518BC
 		// public void Initialize(MusicVoiceChangerParam a_param) { }
@@ -43,8 +40,5 @@ namespace XeApp.Game.RhythmGame
 
 		// // RVA: 0x1551A68 Offset: 0x1551A68 VA: 0x1551A68
 		// public int GetChangeVoiceId(RhythmGameVoicePlayer.Voice a_voice, MusicVoiceChangerParam.VoiceList a_list) { }
-
-		// // RVA: 0x1551C04 Offset: 0x1551C04 VA: 0x1551C04
-		// public void .ctor() { }
 	}
 }

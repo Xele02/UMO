@@ -9,5 +9,8 @@ public class BOS3LLS6G79 : Exception
     }
 
 	// // RVA: 0x18EDCB8 Offset: 0x18EDCB8 VA: 0x18EDCB8
-	// public void .ctor(string message, Exception inner) { }
+	public BOS3LLS6G79(string message, Exception inner)
+	{
+        UnityEngine.Debug.LogError("TODO");
+	}
 }

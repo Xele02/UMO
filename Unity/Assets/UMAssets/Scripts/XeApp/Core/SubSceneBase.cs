@@ -4,69 +4,20 @@ namespace XeApp.Core
 {
 	public abstract class SubSceneBase
 	{
-		// Fields
-		// [CompilerGeneratedAttribute] // RVA: 0x68F69C Offset: 0x68F69C VA: 0x68F69C
-		// private Action <update>k__BackingField; // 0x8
-		// [CompilerGeneratedAttribute] // RVA: 0x68F6AC Offset: 0x68F6AC VA: 0x68F6AC
-		// private SubSceneBase <nextScene>k__BackingField; // 0xC
-		// [CompilerGeneratedAttribute] // RVA: 0x68F6BC Offset: 0x68F6BC VA: 0x68F6BC
-		// private MainSceneBase <mainScene>k__BackingField; // 0x10
-		// [CompilerGeneratedAttribute] // RVA: 0x68F6CC Offset: 0x68F6CC VA: 0x68F6CC
-		// private bool <isEnd>k__BackingField; // 0x14
-
-		// Properties
-		protected abstract bool useFadeIn { get; }
-		protected abstract bool useFadeOut { get; }
-		public Action update { get; set; }
-		public SubSceneBase nextScene { get; set; }
-		protected MainSceneBase mainScene { get; set; }
-		public bool isEnd { get; set; }
-
-		// Methods
-
-		// // RVA: -1 Offset: -1 Slot: 9
-		// protected abstract bool get_useFadeIn();
-
-		// // RVA: -1 Offset: -1 Slot: 10
-		// protected abstract bool get_useFadeOut();
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7487A0 Offset: 0x7487A0 VA: 0x7487A0
-		// // RVA: 0x1D7676C Offset: 0x1D7676C VA: 0x1D7676C
-		// public Action get_update() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7487B0 Offset: 0x7487B0 VA: 0x7487B0
-		// // RVA: 0x1D76774 Offset: 0x1D76774 VA: 0x1D76774
-		// private void set_update(Action value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7487C0 Offset: 0x7487C0 VA: 0x7487C0
-		// // RVA: 0x1D73B28 Offset: 0x1D73B28 VA: 0x1D73B28
-		// public SubSceneBase get_nextScene() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7487D0 Offset: 0x7487D0 VA: 0x7487D0
-		// // RVA: 0x1D7677C Offset: 0x1D7677C VA: 0x1D7677C
-		// private void set_nextScene(SubSceneBase value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7487E0 Offset: 0x7487E0 VA: 0x7487E0
-		// // RVA: 0x1D76784 Offset: 0x1D76784 VA: 0x1D76784
-		// protected MainSceneBase get_mainScene() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7487F0 Offset: 0x7487F0 VA: 0x7487F0
-		// // RVA: 0x1D7678C Offset: 0x1D7678C VA: 0x1D7678C
-		// private void set_mainScene(MainSceneBase value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x748800 Offset: 0x748800 VA: 0x748800
-		// // RVA: 0x1D73B20 Offset: 0x1D73B20 VA: 0x1D73B20
-		// public bool get_isEnd() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x748810 Offset: 0x748810 VA: 0x748810
-		// // RVA: 0x1D76794 Offset: 0x1D76794 VA: 0x1D76794
-		// private void set_isEnd(bool value) { }
+		protected abstract bool useFadeIn { get; } //Slot: 9
+		protected abstract bool useFadeOut { get; }  //Slot: 10
+		public Action update { get; private set; } // 0x8
+		public SubSceneBase nextScene { get; private set; } // 0xC
+		protected MainSceneBase mainScene { get; private set; } // 0x10
+		public bool isEnd { get; private set; } // 0x14
 
 		// // RVA: 0x1D7679C Offset: 0x1D7679C VA: 0x1D7679C
-		// private void .ctor() { }
+		private SubSceneBase()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1D767C0 Offset: 0x1D767C0 VA: 0x1D767C0
-		// public void .ctor(MainSceneBase mainScene) { }
 		public SubSceneBase(MainSceneBase mainScene)
 		{
 			UnityEngine.Debug.LogError("TODO");

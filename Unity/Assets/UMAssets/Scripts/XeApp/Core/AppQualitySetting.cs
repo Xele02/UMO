@@ -79,10 +79,10 @@ namespace XeApp.Core
 			UnityEngine.Debug.LogError("TODO");
 		}
 
-		// // RVA: 0xE0EB38 Offset: 0xE0EB38 VA: 0xE0EB38
-		// public void .ctor() { }
-
 		// // RVA: 0xE0EB40 Offset: 0xE0EB40 VA: 0xE0EB40
-		// private static void .cctor() { }
+		static AppQualitySettings()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }

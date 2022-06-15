@@ -6,7 +6,6 @@ namespace XeApp.Game
 		{
 		}
 
-		// // Fields
 		public const int CURRENT_VERSION = 1;
 		public static readonly int INTRO_FADE; // 0x0
 		public static readonly int START_VALKYRIE_MODE; // 0x4
@@ -32,8 +31,6 @@ namespace XeApp.Game
 		private const uint CHUNK_ID_EVNT = 1414420037;
 		private static string[] tbl; // 0x24
 		private static string[] tbl2; // 0x28
-
-		// // Methods
 
 		// // RVA: 0xC978C0 Offset: 0xC978C0 VA: 0xC978C0
 		// public static bool IsWingNote(MusicScoreData.FlickType flick) { }
@@ -78,10 +75,10 @@ namespace XeApp.Game
 		// // RVA: 0xC9A894 Offset: 0xC9A894 VA: 0xC9A894
 		// private string ILSpyTrap(int n) { }
 
-		// // RVA: 0xC9A29C Offset: 0xC9A29C VA: 0xC9A29C
-		// public void .ctor() { }
-
 		// // RVA: 0xC9A910 Offset: 0xC9A910 VA: 0xC9A910
-		// private static void .cctor() { }
+		static MusicScoreData()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }

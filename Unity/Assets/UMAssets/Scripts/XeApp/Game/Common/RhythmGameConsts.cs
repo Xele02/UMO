@@ -78,54 +78,31 @@ namespace XeApp.Game.Common
 
 			// // RVA: 0x138B4AC Offset: 0x138B4AC VA: 0x138B4AC
 			// public void Copy(RhythmGameConsts.NoteResultEx dest) { }
-
-			// // RVA: 0x138B4F8 Offset: 0x138B4F8 VA: 0x138B4F8
-			// public void .ctor() { }
 		}
 
 		public class NoteResultParam_Excellent
 		{
 			public float m_note_judge_rate; // 0x8
-			public float m_score_rate; // 0xC
-
-			// RVA: 0x138B500 Offset: 0x138B500 VA: 0x138B500
-			// public void .ctor() { }
+			public float m_score_rate = 1.0f; // 0xC
 		}
 
 		public class NoteParam_CenterLiveSkill
 		{
 			public float m_assign_rate; // 0x8
-			public int m_assign_index; // 0xC
-
-			// RVA: 0x138B47C Offset: 0x138B47C VA: 0x138B47C
-			//public void .ctor() { }
+			public int m_assign_index = -1; // 0xC
 		}
 
 		public class NoteParam_EventItem
 		{
 			public bool m_enable; // 0x8
-			public int m_index; // 0xC
-
-			// RVA: 0x138B48C Offset: 0x138B48C VA: 0x138B48C
-			//public void .ctor() { }
+			public int m_index = -1; // 0xC
 		}
 
-
-
-		private static int s_lineNum; // 0x0
+		private static int s_lineNum = 4; // 0x0
 		public const int LineWideNum = 6;
 		public const int LineNumMax = 6;
 
-		// // Properties
-		// public static int LineNum { get; set; }
-
-		// // Methods
-
-		// // RVA: 0x138B168 Offset: 0x138B168 VA: 0x138B168
-		// public static int get_LineNum() { }
-
-		// // RVA: 0x138B1F4 Offset: 0x138B1F4 VA: 0x138B1F4
-		// private static void set_LineNum(int value) { }
+		// public static int LineNum { get; private set; } 0x138B168 0x138B1F4
 
 		// // RVA: 0x138B284 Offset: 0x138B284 VA: 0x138B284
 		// public static void SetWide(bool on) { }
@@ -141,12 +118,6 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0x138B3E4 Offset: 0x138B3E4 VA: 0x138B3E4
 		// public static bool IsLeftLine(int lineNo) { }
-
-		// // RVA: 0x138B40C Offset: 0x138B40C VA: 0x138B40C
-		// public void .ctor() { }
-
-		// // RVA: 0x138B414 Offset: 0x138B414 VA: 0x138B414
-		// private static void .cctor() { }
 
 	}
 }

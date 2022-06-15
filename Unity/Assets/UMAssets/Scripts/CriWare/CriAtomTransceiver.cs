@@ -4,14 +4,6 @@ using UnityEngine;
 // [DisallowMultipleComponent] // RVA: 0x6327DC Offset: 0x6327DC VA: 0x6327DC
 public class CriAtomTransceiver : CriMonoBehaviour
 {
-	// [CompilerGeneratedAttribute] // RVA: 0x6347AC Offset: 0x6347AC VA: 0x6347AC
-	// private CriAtomEx3dTransceiver <transceiverHn>k__BackingField; // 0x1C
-	// [CompilerGeneratedAttribute] // RVA: 0x6347BC Offset: 0x6347BC VA: 0x6347BC
-	// private Vector3 <inputPos>k__BackingField; // 0x20
-	// [CompilerGeneratedAttribute] // RVA: 0x6347CC Offset: 0x6347CC VA: 0x6347CC
-	// private Vector3 <inputFront>k__BackingField; // 0x2C
-	// [CompilerGeneratedAttribute] // RVA: 0x6347DC Offset: 0x6347DC VA: 0x6347DC
-	// private Vector3 <inputUp>k__BackingField; // 0x38
 	[SerializeField] // RVA: 0x6347EC Offset: 0x6347EC VA: 0x6347EC
 	private CriAtomRegion regionOnStart; // 0x44
 	[SerializeField] // RVA: 0x6347FC Offset: 0x6347FC VA: 0x6347FC
@@ -61,49 +53,11 @@ public class CriAtomTransceiver : CriMonoBehaviour
 	// private bool dedicatedInputNotSetWarned; // 0x96
 	// private CriAtomRegion currentRegion; // 0x98
 
-	// public CriAtomEx3dTransceiver transceiverHn { get; set; }
-	// public Vector3 inputPos { get; set; }
-	// public Vector3 inputFront { get; set; }
-	// public Vector3 inputUp { get; set; }
-	// public CriAtomRegion region3d { get; set; }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x635A98 Offset: 0x635A98 VA: 0x635A98
-	// // RVA: 0x28B6F70 Offset: 0x28B6F70 VA: 0x28B6F70
-	// public CriAtomEx3dTransceiver get_transceiverHn() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x635AA8 Offset: 0x635AA8 VA: 0x635AA8
-	// // RVA: 0x28B6F78 Offset: 0x28B6F78 VA: 0x28B6F78
-	// protected void set_transceiverHn(CriAtomEx3dTransceiver value) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x635AB8 Offset: 0x635AB8 VA: 0x635AB8
-	// // RVA: 0x28B6F80 Offset: 0x28B6F80 VA: 0x28B6F80
-	// public Vector3 get_inputPos() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x635AC8 Offset: 0x635AC8 VA: 0x635AC8
-	// // RVA: 0x28B6F94 Offset: 0x28B6F94 VA: 0x28B6F94
-	// private void set_inputPos(Vector3 value) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x635AD8 Offset: 0x635AD8 VA: 0x635AD8
-	// // RVA: 0x28B6FA0 Offset: 0x28B6FA0 VA: 0x28B6FA0
-	// public Vector3 get_inputFront() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x635AE8 Offset: 0x635AE8 VA: 0x635AE8
-	// // RVA: 0x28B6FB4 Offset: 0x28B6FB4 VA: 0x28B6FB4
-	// private void set_inputFront(Vector3 value) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x635AF8 Offset: 0x635AF8 VA: 0x635AF8
-	// // RVA: 0x28B6FC0 Offset: 0x28B6FC0 VA: 0x28B6FC0
-	// public Vector3 get_inputUp() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x635B08 Offset: 0x635B08 VA: 0x635B08
-	// // RVA: 0x28B6FD4 Offset: 0x28B6FD4 VA: 0x28B6FD4
-	// private void set_inputUp(Vector3 value) { }
-
-	// // RVA: 0x28B6FE0 Offset: 0x28B6FE0 VA: 0x28B6FE0
-	// public CriAtomRegion get_region3d() { }
-
-	// // RVA: 0x28B6FE8 Offset: 0x28B6FE8 VA: 0x28B6FE8
-	// public void set_region3d(CriAtomRegion value) { }
+	// public CriAtomEx3dTransceiver transceiverHn { get; protected set; } // 0x1C
+	// public Vector3 inputPos { get; private set; } // 0x20
+	// public Vector3 inputFront { get; private set; } // 0x2C
+	// public Vector3 inputUp { get; private set; } // 0x38
+	// public CriAtomRegion region3d { get; set; } 0x28B6FE0 0x28B6FE8
 
 	// // RVA: 0x28B711C Offset: 0x28B711C VA: 0x28B711C
 	private void Awake()
@@ -160,5 +114,8 @@ public class CriAtomTransceiver : CriMonoBehaviour
 	// private void TrySetAisacControlId(string strId, CriAtomTransceiver.SetControlIdMethod callback) { }
 
 	// // RVA: 0x28B81C0 Offset: 0x28B81C0 VA: 0x28B81C0
-	// public void .ctor() { }
+	public CriAtomTransceiver()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 }

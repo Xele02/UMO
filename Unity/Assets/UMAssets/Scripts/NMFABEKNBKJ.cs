@@ -99,7 +99,4 @@ public class NMFABEKNBKJ
 
 	// // RVA: 0x1CACB5C Offset: 0x1CACB5C VA: 0x1CACB5C
 	// private void PPHJLDPNKFO() { }
-
-	// // RVA: 0x1CACC20 Offset: 0x1CACC20 VA: 0x1CACC20
-	// public void .ctor() { }
 }

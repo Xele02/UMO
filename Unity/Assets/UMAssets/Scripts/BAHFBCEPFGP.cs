@@ -1,19 +1,15 @@
 
 public class BAHFBCEPFGP : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 1;
 	// private const int JDOFFDAJGBO = 300;
 	// private const int DKKOEGALOPA = 38;
-	// private byte[] BJFCIFJLJJI; // 0x24
-	// private byte[] IEGFCNMOCNE; // 0x28
-	// private byte[] FALFJCGGDHB; // 0x2C
-	// private byte[] KKPKAMANKOH; // 0x30
+	// private byte[] BJFCIFJLJJI = new byte[38]; // 0x24
+	// private byte[] IEGFCNMOCNE = new byte[38]; // 0x28
+	// private byte[] FALFJCGGDHB = new byte[38]; // 0x2C
+	// private byte[] KKPKAMANKOH = new byte[38]; // 0x30
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
 
 	// // RVA: 0xF14400 Offset: 0xF14400 VA: 0xF14400
 	// public void DDCBGCODHHN(int DLAEJOBELBH, int HPNLNIFICNI) { }
@@ -47,7 +43,4 @@ public class BAHFBCEPFGP : KLFDBFMNLBL
 
 	// // RVA: 0xF15DE4 Offset: 0xF15DE4 VA: 0xF15DE4 Slot: 9
 	// public override bool NFKFOODCJJB() { }
-
-	// // RVA: 0xF15DEC Offset: 0xF15DEC VA: 0xF15DEC
-	// public void .ctor() { }
 }

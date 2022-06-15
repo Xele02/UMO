@@ -23,11 +23,11 @@ public class CriAtomExOutputAnalyzer : CriDisposable
 	// protected float[] dataL; // 0x30
 	// protected float[] dataR; // 0x34
 	// protected const int pcmCapturerNumMaxData = 512;
-	// protected static IntPtr InternalCallbackFunctionPointer; // 0x0
+	// protected static IntPtr InternalCallbackFunctionPointer = IntPtr.Zero; // 0x0
 	// protected static CriAtomExOutputAnalyzer.InternalPcmCaptureCallback DelegateObject; // 0x4
 	// protected static float[] DataL; // 0x8
 	// protected static float[] DataR; // 0xC
-	// protected static CriAtomExOutputAnalyzer.PcmCaptureCallback UserPcmCaptureCallback; // 0x10
+	// protected static CriAtomExOutputAnalyzer.PcmCaptureCallback UserPcmCaptureCallback = null; // 0x10
 
 	// public IntPtr nativeHandle { get; }
 
@@ -81,7 +81,10 @@ public class CriAtomExOutputAnalyzer : CriDisposable
 	// public void ExecutePcmCaptureCallback(CriAtomExOutputAnalyzer.PcmCaptureCallback callback) { }
 
 	// // RVA: 0x28A08DC Offset: 0x28A08DC VA: 0x28A08DC
-	// protected void .ctor() { }
+	protected CriAtomExOutputAnalyzer()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x28A0980 Offset: 0x28A0980 VA: 0x28A0980 Slot: 1
 	// protected override void Finalize() { }
@@ -122,7 +125,4 @@ public class CriAtomExOutputAnalyzer : CriDisposable
 
 	// // RVA: 0x28A07D0 Offset: 0x28A07D0 VA: 0x28A07D0
 	// protected static extern void criAtomExOutputAnalyzer_ExecuteQueuedPcmCapturerCallbacks(IntPtr analyzer, IntPtr callback) { }
-
-	// // RVA: 0x28A12E8 Offset: 0x28A12E8 VA: 0x28A12E8
-	// private static void .cctor() { }
 }

@@ -5,7 +5,10 @@ public class CriAtomEx3dListener : CriDisposable
 	// public IntPtr nativeHandle { get; }
 
 	// // RVA: 0x2884CEC Offset: 0x2884CEC VA: 0x2884CEC
-	// public void .ctor() { }
+	public CriAtomEx3dListener()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x2884E94 Offset: 0x2884E94 VA: 0x2884E94 Slot: 5
 	public override void Dispose()

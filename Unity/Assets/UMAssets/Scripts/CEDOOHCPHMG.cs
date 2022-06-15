@@ -1,15 +1,11 @@
 
 public class CEDOOHCPHMG : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// private List<MPBEHHIAGOI> GFPFBJDPHLJ; // 0x24
 	// public List<CIFHILOJJFC> PKMMBKHODDM; // 0x28
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
 
 	// // RVA: 0x12B2A3C Offset: 0x12B2A3C VA: 0x12B2A3C
 	// public CIFHILOJJFC ALDOJAEAMCJ(int AHHJLDLAPAN, int PPFNGGCBJKC) { }
@@ -18,7 +14,10 @@ public class CEDOOHCPHMG : KLFDBFMNLBL
 	// public CIFHILOJJFC IGKLKPIEEEH(int AHHJLDLAPAN) { }
 
 	// // RVA: 0x12B2B90 Offset: 0x12B2B90 VA: 0x12B2B90
-	// public void .ctor() { }
+	public CEDOOHCPHMG()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x12B2C68 Offset: 0x12B2C68 VA: 0x12B2C68 Slot: 4
 	public override void KMBPACJNEOF()

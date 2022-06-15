@@ -2,14 +2,11 @@ namespace XeApp.Game.Common
 {
 	public class SoundResource
 	{
-		// Fields
 		private static readonly string[] CueSheetSubDirectoryName; // 0x0
 		private static readonly string[] BuiltinSheetName; // 0x4
 		private static readonly string[] TutorialBuiltinSheetName; // 0x8
 		public static string[] decryptDirs; // 0xC
 		private static int selectDecIndex; // 0x10
-
-		// Methods
 
 		// // RVA: 0x1399740 Offset: 0x1399740 VA: 0x1399740
 		// public static bool IsBuiltinSheet(string cueSheetName) { }
@@ -96,10 +93,10 @@ namespace XeApp.Game.Common
 		// // RVA: 0x139AC70 Offset: 0x139AC70 VA: 0x139AC70
 		// public static void DeployDecFile(string srcPath, string rawAwbPath, string cueSheetName) { }
 
-		// // RVA: 0x139B78C Offset: 0x139B78C VA: 0x139B78C
-		// public void .ctor() { }
-
 		// // RVA: 0x139B794 Offset: 0x139B794 VA: 0x139B794
-		// private static void .cctor() { }
+		static Soundresource()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }

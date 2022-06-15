@@ -13,9 +13,7 @@ namespace XeApp.Game.Common
 		public GameObject battle; // 0x18
 		private bool isInitialized; // 0x1C
 		private Material mipmapBiasMaterialInstance; // 0x20
-		private readonly byte[,] DimmerTbl; // 0x24
-
-		// Methods
+		private readonly byte[,] DimmerTbl = new byte[2, 11] { 51A1182A5DD5F6479421A815D7089E4D90BAA07F }; // 0x24
 
 		// // RVA: 0x1109E08 Offset: 0x1109E08 VA: 0x1109E08
 		// public void Initialize(LowModeBackgroundResource resource) { }
@@ -40,8 +38,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0x110A924 Offset: 0x110A924 VA: 0x110A924
 		// public void ChangeBattleBg() { }
-
-		// // RVA: 0x110A9AC Offset: 0x110A9AC VA: 0x110A9AC
-		// public void .ctor() { }
 	}
 }

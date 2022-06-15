@@ -2,12 +2,9 @@ using UnityEngine;
 
 namespace XeApp.Game.RhythmGame.UI
 {
-    public class UiEnemyRobotTexture : UiReplaceTexture // TypeDefIndex: 18414
+    public class UiEnemyRobotTexture : UiReplaceTexture
     {
-        // Fields
         private Texture2D mainTexture; // 0x10
-
-        // // Methods
 
         // [IteratorStateMachineAttribute] // RVA: 0x747A84 Offset: 0x747A84 VA: 0x747A84
         // // RVA: 0x1568DFC Offset: 0x1568DFC VA: 0x1568DFC
@@ -20,7 +17,10 @@ namespace XeApp.Game.RhythmGame.UI
         // public override void OnDestory() { }
 
         // // RVA: 0x1568F54 Offset: 0x1568F54 VA: 0x1568F54
-        // public void .ctor() { }
+        public UiEnemyRobotTexture()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
         // [CompilerGeneratedAttribute] // RVA: 0x747AFC Offset: 0x747AFC VA: 0x747AFC
         // // RVA: 0x1568F58 Offset: 0x1568F58 VA: 0x1568F58

@@ -3,8 +3,6 @@ namespace XeApp.Core
 {
     public abstract class AssetBundleLoadAssetOperation : AssetBundleLoadOperation
     {
-        // Methods
-
         // RVA: -1 Offset: -1 Slot: 10
         public abstract T GetAsset<T>();
         /* GenericInstMethod :
@@ -26,8 +24,5 @@ namespace XeApp.Core
         |-AssetBundleLoadAssetOperation.GetAsset<MusicDirectionBoolParam>
         |-AssetBundleLoadAssetOperation.GetAsset<MusicDirectionParamBase>
         */
-
-        // RVA: 0xE0F7B0 Offset: 0xE0F7B0 VA: 0xE0F7B0
-        // protected void .ctor() { }
     }
 }

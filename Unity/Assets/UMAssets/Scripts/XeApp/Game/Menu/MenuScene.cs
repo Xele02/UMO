@@ -5,20 +5,10 @@ namespace XeApp.Game.Menu
 {
 	public class MenuScene : MainSceneBase
 	{
-		// [CompilerGeneratedAttribute] // RVA: 0x669FA0 Offset: 0x669FA0 VA: 0x669FA0
-		// private static MenuScene <Instance>k__BackingField; // 0x0
 		public const float FADE_TIME = 0.4f;
 		[SerializeField]
 		private TransitionTreeObject treeObject; // 0x28
-		// [CompilerGeneratedAttribute] // RVA: 0x669FC0 Offset: 0x669FC0 VA: 0x669FC0
-		// private static bool <IsAlreadyHome>k__BackingField; // 0x4
-		// [CompilerGeneratedAttribute] // RVA: 0x669FD0 Offset: 0x669FD0 VA: 0x669FD0
-		// private static bool <IsFirstTitleFlow>k__BackingField; // 0x5
-		// [CompilerGeneratedAttribute] // RVA: 0x669FE0 Offset: 0x669FE0 VA: 0x669FE0
-		// private static bool <ComebackByRestart>k__BackingField; // 0x6
-		// [CompilerGeneratedAttribute] // RVA: 0x669FF0 Offset: 0x669FF0 VA: 0x669FF0
-		// private MenuDivaManager <divaManager>k__BackingField; // 0x2C
-		// private static SceneStack m_menuSceneStack; // 0x8
+		// private static SceneStack m_menuSceneStack = new SceneStack(); // 0x8
 		public const string titleSceneName = "Title";
 		public const string gameSceneName = "RhythmGame";
 		public const string gameSkipSceneName = "RhythmGameSkip";
@@ -51,10 +41,10 @@ namespace XeApp.Game.Menu
 		// private HelpPopupWindowControl m_helpPopupWindowControl; // 0x68
 		// private LimitOverControl m_limitOverControl; // 0x6C
 		// private IntimacyController m_intimacyControl; // 0x70
-		// private PopupItemList.PopupItemListSetting m_popupItemListSetting; // 0x74
-		// private PopupItemDetail.PopupItemDetailSetting m_popupItemDetailSettinig; // 0x78
+		// private PopupItemList.PopupItemListSetting m_popupItemListSetting = new PopupItemList.PopupItemListSetting(); // 0x74
+		// private PopupItemDetail.PopupItemDetailSetting m_popupItemDetailSettinig = new PopupItemDetail.PopupItemDetailSetting(); // 0x78
 		// private PopupUseItemWindow m_popupUseItemWindow; // 0x7C
-		// private PopupDetailCostumeSetting m_popupDetailCostumeSetting; // 0x80
+		// private PopupDetailCostumeSetting m_popupDetailCostumeSetting = new PopupDetailCostumeSetting(); // 0x80
 		// private HomeLobbyButtonController m_lobbyButtonControl; // 0x84
 		// private FlexibleLayoutCamera _flexibleLayoutCamera; // 0x88
 		// private DenominationManager m_denomControl; // 0x8C
@@ -62,135 +52,42 @@ namespace XeApp.Game.Menu
 		// private MenuSceneUpdater MenuUpdater; // 0x98
 		// private MenuScene.MenuSceneCamebackInfo m_sceneCamebackInfo; // 0x9C
 
-		public static MenuScene Instance { get; set; }
-		public static bool IsAlreadyHome { get; set; }
-		public static bool IsFirstTitleFlow { get; set; }
-		private static bool ComebackByRestart { get; set; }
-		// public MenuDivaManager divaManager { get; set; }
-		// public SceneIconTextureCache SceneIconCache { get; }
-		// public DivaIconTextureCache DivaIconCache { get; }
-		// public BgTextureCache BgTextureCache { get; }
-		// public ItemTextureCache ItemTextureCache { get; }
-		// public MenuResidentTextureCache MenuResidentTextureCache { get; }
-		// public MusicJacketTextureCache MusicJacketTextureCache { get; }
-		// public UnitPopupWindowControl UnitSaveWindowControl { get; }
-		// public StatusWindowControl StatusWindowControl { get; }
-		// public MusicPopupWindowControl MusicPopupWindowControl { get; }
-		// public HelpPopupWindowControl HelpPopupWindowControl { get; }
-		// public LimitOverControl LimitOverControl { get; }
-		// public IntimacyController IntimacyControl { get; }
-		// public PopupUseItemWindow PopupUseItemWindow { get; }
-		// public ValkyrieIconTextureCache ValkyrieIconCache { get; }
-		// public CostumeTextureCache CostumeIconCache { get; }
-		// public QuestEventTextureCache QuestEventCache { get; }
-		// public SNSTextureCache SnsIconCache { get; }
-		// public EpisodeTextuteCache EpisodeIconCache { get; }
-		// public StoryImageTextureCache StoryImageCache { get; }
-		// public SubPlateIconTextureCache SubPlateIconTextureCahe { get; }
-		// public DecorationItemTextureCache DecorationItemTextureCache { get; }
-		// public HomeBgIconBgTextureCache HomeBgIconTextureCache { get; }
-		// public BgControl BgControl { get; }
-		// public MenuHeaderControl HeaderMenu { get; }
-		// public MenuFooterControl FooterMenu { get; }
-		// public HelpButton HelpButton { get; }
-		// public bool DirtyChangeScene { get; }
-		// public HomeLobbyButtonController LobbyButtonControl { get; }
-		// public FlexibleLayoutCamera FlexibleLayoutCamera { get; }
-		// public DenominationManager DenomControl { get; }
-		// public long EnterToHomeTime { get; }
-
-		// // RVA: 0xB2DCF8 Offset: 0xB2DCF8 VA: 0xB2DCF8
-		// public SceneIconTextureCache get_SceneIconCache() { }
-
-		// // RVA: 0xB2DD94 Offset: 0xB2DD94 VA: 0xB2DD94
-		// public DivaIconTextureCache get_DivaIconCache() { }
-
-		// // RVA: 0xB2DE30 Offset: 0xB2DE30 VA: 0xB2DE30
-		// public BgTextureCache get_BgTextureCache() { }
-
-		// // RVA: 0xB2DECC Offset: 0xB2DECC VA: 0xB2DECC
-		// public ItemTextureCache get_ItemTextureCache() { }
-
-		// // RVA: 0xB2DF68 Offset: 0xB2DF68 VA: 0xB2DF68
-		// public MenuResidentTextureCache get_MenuResidentTextureCache() { }
-
-		// // RVA: 0xB2E004 Offset: 0xB2E004 VA: 0xB2E004
-		// public MusicJacketTextureCache get_MusicJacketTextureCache() { }
-
-		// // RVA: 0xB2E0A0 Offset: 0xB2E0A0 VA: 0xB2E0A0
-		// public UnitPopupWindowControl get_UnitSaveWindowControl() { }
-
-		// // RVA: 0xB2E0A8 Offset: 0xB2E0A8 VA: 0xB2E0A8
-		// public StatusWindowControl get_StatusWindowControl() { }
-
-		// // RVA: 0xB2E0B0 Offset: 0xB2E0B0 VA: 0xB2E0B0
-		// public MusicPopupWindowControl get_MusicPopupWindowControl() { }
-
-		// // RVA: 0xB2E0B8 Offset: 0xB2E0B8 VA: 0xB2E0B8
-		// public HelpPopupWindowControl get_HelpPopupWindowControl() { }
-
-		// // RVA: 0xB2E0C0 Offset: 0xB2E0C0 VA: 0xB2E0C0
-		// public LimitOverControl get_LimitOverControl() { }
-
-		// // RVA: 0xB2E0C8 Offset: 0xB2E0C8 VA: 0xB2E0C8
-		// public IntimacyController get_IntimacyControl() { }
-
-		// // RVA: 0xB2E0D0 Offset: 0xB2E0D0 VA: 0xB2E0D0
-		// public PopupUseItemWindow get_PopupUseItemWindow() { }
-
-		// // RVA: 0xB2E0D8 Offset: 0xB2E0D8 VA: 0xB2E0D8
-		// public ValkyrieIconTextureCache get_ValkyrieIconCache() { }
-
-		// // RVA: 0xB2E174 Offset: 0xB2E174 VA: 0xB2E174
-		// public CostumeTextureCache get_CostumeIconCache() { }
-
-		// // RVA: 0xB2E210 Offset: 0xB2E210 VA: 0xB2E210
-		// public QuestEventTextureCache get_QuestEventCache() { }
-
-		// // RVA: 0xB2E2AC Offset: 0xB2E2AC VA: 0xB2E2AC
-		// public SNSTextureCache get_SnsIconCache() { }
-
-		// // RVA: 0xB2E348 Offset: 0xB2E348 VA: 0xB2E348
-		// public EpisodeTextuteCache get_EpisodeIconCache() { }
-
-		// // RVA: 0xB2E3E4 Offset: 0xB2E3E4 VA: 0xB2E3E4
-		// public StoryImageTextureCache get_StoryImageCache() { }
-
-		// // RVA: 0xB2E480 Offset: 0xB2E480 VA: 0xB2E480
-		// public SubPlateIconTextureCache get_SubPlateIconTextureCahe() { }
-
-		// // RVA: 0xB2E51C Offset: 0xB2E51C VA: 0xB2E51C
-		// public DecorationItemTextureCache get_DecorationItemTextureCache() { }
-
-		// // RVA: 0xB2E5B8 Offset: 0xB2E5B8 VA: 0xB2E5B8
-		// public HomeBgIconBgTextureCache get_HomeBgIconTextureCache() { }
-
-		// // RVA: 0xB2E654 Offset: 0xB2E654 VA: 0xB2E654
-		// public BgControl get_BgControl() { }
-
-		// // RVA: 0xB2E680 Offset: 0xB2E680 VA: 0xB2E680
-		// public MenuHeaderControl get_HeaderMenu() { }
-
-		// // RVA: 0xB2E6AC Offset: 0xB2E6AC VA: 0xB2E6AC
-		// public MenuFooterControl get_FooterMenu() { }
-
-		// // RVA: 0xB2E6D8 Offset: 0xB2E6D8 VA: 0xB2E6D8
-		// public HelpButton get_HelpButton() { }
-
-		// // RVA: 0xB2E704 Offset: 0xB2E704 VA: 0xB2E704
-		// public bool get_DirtyChangeScene() { }
-
-		// // RVA: 0xB2E730 Offset: 0xB2E730 VA: 0xB2E730
-		// public HomeLobbyButtonController get_LobbyButtonControl() { }
-
-		// // RVA: 0xB2E738 Offset: 0xB2E738 VA: 0xB2E738
-		// public FlexibleLayoutCamera get_FlexibleLayoutCamera() { }
-
-		// // RVA: 0xB2AB9C Offset: 0xB2AB9C VA: 0xB2AB9C
-		// public DenominationManager get_DenomControl() { }
-
-		// // RVA: 0xB2E7EC Offset: 0xB2E7EC VA: 0xB2E7EC
-		// public long get_EnterToHomeTime() { }
+		public static MenuScene Instance { get; private set; } // 0x0
+		public static bool IsAlreadyHome { get; set; } // 0x4
+		public static bool IsFirstTitleFlow { get; set; } // 0x5
+		private static bool ComebackByRestart { get; private set; } // 0x6
+		// public MenuDivaManager divaManager { get; set; } // 0x2C
+		// public SceneIconTextureCache SceneIconCache { get; } 0xB2DCF8
+		// public DivaIconTextureCache DivaIconCache { get; } 0xB2DD94
+		// public BgTextureCache BgTextureCache { get; } 0xB2DE30
+		// public ItemTextureCache ItemTextureCache { get; } 0xB2DECC
+		// public MenuResidentTextureCache MenuResidentTextureCache { get; } 0xB2DF68
+		// public MusicJacketTextureCache MusicJacketTextureCache { get; } 0xB2E004
+		// public UnitPopupWindowControl UnitSaveWindowControl { get; } 0xB2E0A0
+		// public StatusWindowControl StatusWindowControl { get; } 0xB2E0A8
+		// public MusicPopupWindowControl MusicPopupWindowControl { get; } 0xB2E0B0
+		// public HelpPopupWindowControl HelpPopupWindowControl { get; } 0xB2E0B8
+		// public LimitOverControl LimitOverControl { get; } 0xB2E0C0
+		// public IntimacyController IntimacyControl { get; } 0xB2E0C8
+		// public PopupUseItemWindow PopupUseItemWindow { get; } 0xB2E0D0
+		// public ValkyrieIconTextureCache ValkyrieIconCache { get; } 0xB2E0D8
+		// public CostumeTextureCache CostumeIconCache { get; } 0xB2E174
+		// public QuestEventTextureCache QuestEventCache { get; } 0xB2E210
+		// public SNSTextureCache SnsIconCache { get; } 0xB2E2AC
+		// public EpisodeTextuteCache EpisodeIconCache { get; } 0xB2E348
+		// public StoryImageTextureCache StoryImageCache { get; } 0xB2E3E4
+		// public SubPlateIconTextureCache SubPlateIconTextureCahe { get; } 0xB2E480
+		// public DecorationItemTextureCache DecorationItemTextureCache { get; } 0xB2E51C
+		// public HomeBgIconBgTextureCache HomeBgIconTextureCache { get; } 0xB2E5B8
+		// public BgControl BgControl { get; } 0xB2E654
+		// public MenuHeaderControl HeaderMenu { get; } 0xB2E680
+		// public MenuFooterControl FooterMenu { get; } 0xB2E6AC
+		// public HelpButton HelpButton { get; } 0xB2E6D8
+		// public bool DirtyChangeScene { get; } 0xB2E704
+		// public HomeLobbyButtonController LobbyButtonControl { get; } 0xB2E730
+		// public FlexibleLayoutCamera FlexibleLayoutCamera { get; } 0xB2E738
+		// public DenominationManager DenomControl { get; } 0xB2AB9C
+		// public long EnterToHomeTime { get; } 0xB2E7EC
 
 		// // RVA: 0xB2E7F4 Offset: 0xB2E7F4 VA: 0xB2E7F4 Slot: 9
 		// protected override void DoAwake() { }
@@ -541,12 +438,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xB37B10 Offset: 0xB37B10 VA: 0xB37B10
 		// public Vector3 GetDivaCameraRotByScene(TransitionList.Type type) { }
-
-		// // RVA: 0xB37B4C Offset: 0xB37B4C VA: 0xB37B4C
-		// public void .ctor() { }
-
-		// // RVA: 0xB37C3C Offset: 0xB37C3C VA: 0xB37C3C
-		// private static void .cctor() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6C82FC Offset: 0x6C82FC VA: 0x6C82FC
 		// // RVA: 0xB37CBC Offset: 0xB37CBC VA: 0xB37CBC

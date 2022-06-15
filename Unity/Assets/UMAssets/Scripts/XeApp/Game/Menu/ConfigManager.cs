@@ -14,90 +14,17 @@ namespace XeApp.Game.Menu
 		public const int NOTES_SPEED_MIN_VALUE = 10;
 		public const int NOTES_SPEED_MAX_VALUE = 100;
 		public const float NOTES_SPEED_BASIC = 10;
-		// [CompilerGeneratedAttribute] // RVA: 0x67789C Offset: 0x67789C VA: 0x67789C
-		// private ILDKBCLAFPB.MPHNGGECENI <Option>k__BackingField; // 0x8
-		// [CompilerGeneratedAttribute] // RVA: 0x6778AC Offset: 0x6778AC VA: 0x6778AC
-		// private ILDKBCLAFPB.JDBOPCADICO <Notification>k__BackingField; // 0xC
-		// [CompilerGeneratedAttribute] // RVA: 0x6778BC Offset: 0x6778BC VA: 0x6778BC
-		// private BEJIKEOAJHN <OptionSLive>k__BackingField; // 0x10
-		// [CompilerGeneratedAttribute] // RVA: 0x6778CC Offset: 0x6778CC VA: 0x6778CC
-		// private static bool <gotoTimingScene>k__BackingField; // 0x0
-		// [CompilerGeneratedAttribute] // RVA: 0x6778DC Offset: 0x6778DC VA: 0x6778DC
-		// private static Vector2 <scrollPosition>k__BackingField; // 0x4
-		// [CompilerGeneratedAttribute] // RVA: 0x6778EC Offset: 0x6778EC VA: 0x6778EC
-		// private static int <selectTab>k__BackingField; // 0xC
-		// [CompilerGeneratedAttribute] // RVA: 0x6778FC Offset: 0x6778FC VA: 0x6778FC
-		// private int <HomeDiva>k__BackingField; // 0x14
 		private int m_optionHomeDiva; // 0x18
 		private bool m_notesSpeedDiffSelection; // 0x1C
-		private int[,] s_QualityValueTbl; // 0x20
+		private int[,] s_QualityValueTbl = new int[2,4] {BE65193B3F3FB05846EEBEBE875ED0B71E3AF6EB}; // 0x20 // 2/4 or 4/2 ?
 
-		// Properties
-		public ILDKBCLAFPB.MPHNGGECENI Option { get; set; }
-		public ILDKBCLAFPB.JDBOPCADICO Notification { get; set; }
-		public BEJIKEOAJHN OptionSLive { get; set; }
-		public static bool gotoTimingScene { get; set; }
-		public static Vector2 scrollPosition { get; set; }
-		public static int selectTab { get; set; }
-		public int HomeDiva { get; set; }
-
-		// Methods
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7009A4 Offset: 0x7009A4 VA: 0x7009A4
-		// // RVA: 0x1B57304 Offset: 0x1B57304 VA: 0x1B57304
-		// public ILDKBCLAFPB.MPHNGGECENI get_Option() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7009B4 Offset: 0x7009B4 VA: 0x7009B4
-		// // RVA: 0x1B5730C Offset: 0x1B5730C VA: 0x1B5730C
-		// private void set_Option(ILDKBCLAFPB.MPHNGGECENI value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7009C4 Offset: 0x7009C4 VA: 0x7009C4
-		// // RVA: 0x1B57314 Offset: 0x1B57314 VA: 0x1B57314
-		// public ILDKBCLAFPB.JDBOPCADICO get_Notification() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7009D4 Offset: 0x7009D4 VA: 0x7009D4
-		// // RVA: 0x1B5731C Offset: 0x1B5731C VA: 0x1B5731C
-		// private void set_Notification(ILDKBCLAFPB.JDBOPCADICO value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7009E4 Offset: 0x7009E4 VA: 0x7009E4
-		// // RVA: 0x1B57324 Offset: 0x1B57324 VA: 0x1B57324
-		// public BEJIKEOAJHN get_OptionSLive() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7009F4 Offset: 0x7009F4 VA: 0x7009F4
-		// // RVA: 0x1B5732C Offset: 0x1B5732C VA: 0x1B5732C
-		// private void set_OptionSLive(BEJIKEOAJHN value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x700A04 Offset: 0x700A04 VA: 0x700A04
-		// // RVA: 0x1B57334 Offset: 0x1B57334 VA: 0x1B57334
-		// public static bool get_gotoTimingScene() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x700A14 Offset: 0x700A14 VA: 0x700A14
-		// // RVA: 0x1B57398 Offset: 0x1B57398 VA: 0x1B57398
-		// public static void set_gotoTimingScene(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x700A24 Offset: 0x700A24 VA: 0x700A24
-		// // RVA: 0x1B573FC Offset: 0x1B573FC VA: 0x1B573FC
-		// public static Vector2 get_scrollPosition() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x700A34 Offset: 0x700A34 VA: 0x700A34
-		// // RVA: 0x1B5746C Offset: 0x1B5746C VA: 0x1B5746C
-		// public static void set_scrollPosition(Vector2 value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x700A44 Offset: 0x700A44 VA: 0x700A44
-		// // RVA: 0x1B574D8 Offset: 0x1B574D8 VA: 0x1B574D8
-		// public static int get_selectTab() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x700A54 Offset: 0x700A54 VA: 0x700A54
-		// // RVA: 0x1B5753C Offset: 0x1B5753C VA: 0x1B5753C
-		// public static void set_selectTab(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x700A64 Offset: 0x700A64 VA: 0x700A64
-		// // RVA: 0x1B575A0 Offset: 0x1B575A0 VA: 0x1B575A0
-		// public int get_HomeDiva() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x700A74 Offset: 0x700A74 VA: 0x700A74
-		// // RVA: 0x1B575A8 Offset: 0x1B575A8 VA: 0x1B575A8
-		// private void set_HomeDiva(int value) { }
+		public ILDKBCLAFPB.MPHNGGECENI Option { get; private set; } // 0x8
+		public ILDKBCLAFPB.JDBOPCADICO Notification { get; private set; } // 0xC
+		public BEJIKEOAJHN OptionSLive { get; private set; } // 0x10
+		public static bool gotoTimingScene { get; set; } // 0x0
+		public static Vector2 scrollPosition { get; set; } // 0x4
+		public static int selectTab { get; set; } // 0xC
+		public int HomeDiva { get; private set; } // 0x14
 
 		// // RVA: 0x1B575B0 Offset: 0x1B575B0 VA: 0x1B575B0
 		// public void Initialize() { }
@@ -321,8 +248,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x1B5D114 Offset: 0x1B5D114 VA: 0x1B5D114
 		// public float ParamDefault(ConfigManager.eParamDefaultType type) { }
-
-		// // RVA: 0x1B5D350 Offset: 0x1B5D350 VA: 0x1B5D350
-		// public void .ctor() { }
 	}
 }

@@ -1,21 +1,20 @@
 
 public class LFHGFLJLGFB : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 1;
 	// private const int ODDKIBLJKPI = 50;
 	// private int ENOBDCFHELD; // 0x24
 	// private int FCEJCHGLFGN; // 0x28
 	// private List<CEBFFLDKAEC> FNDJLOMNECG; // 0x2C
 
-	// // Properties
-	// public int KPEBMCLONHK { get; }
+	// public int KPEBMCLONHK { get; } ??
 	// public override bool DMICHEJIAJL { get; }
 
-	// // Methods
-
 	// // RVA: 0xD6B438 Offset: 0xD6B438 VA: 0xD6B438
-	// public void .ctor() { }
+	public LFHGFLJLGFB()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xD6B4DC Offset: 0xD6B4DC VA: 0xD6B4DC Slot: 4
 	public override void KMBPACJNEOF()

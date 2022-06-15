@@ -72,10 +72,4 @@ public class CriAtomOutputDeviceObserver : CriMonoBehaviour
 	// [IteratorStateMachineAttribute] // RVA: 0x6357E8 Offset: 0x6357E8 VA: 0x6357E8
 	// // RVA: 0x28B0EF8 Offset: 0x28B0EF8 VA: 0x28B0EF8
 	// private IEnumerator CoroutineForCheck_ANDROID() { }
-
-	// // RVA: 0x28B0FA4 Offset: 0x28B0FA4 VA: 0x28B0FA4
-	// public void .ctor() { }
-
-	// // RVA: 0x28B0FAC Offset: 0x28B0FAC VA: 0x28B0FAC
-	// private static void .cctor() { }
 }

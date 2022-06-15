@@ -16,7 +16,7 @@ namespace XeApp.Game.Common
 		private Transform m_transform_object; // 0x20
 		[SerializeField]
 		private Transform m_pool; // 0x24
-		private List<TouchParticleObject> m_useParticlePoolList; // 0x28
+		private List<TouchParticleObject> m_useParticlePoolList = new List<TouchParticleObject>(); // 0x28
 		private ParticleSystem[] m_patricles; // 0x2C
 		private Action m_updater; // 0x30
 		private bool m_is_touch; // 0x34
@@ -26,24 +26,21 @@ namespace XeApp.Game.Common
 		private const int POOL_OBJECT_MAX = 5;
 		private const int PARTICLE_START_TIME = 0;
 		[SerializeField]
-		private float MAGNITUDE_MIN; // 0x48
+		private float MAGNITUDE_MIN = 0.0125f; // 0x48
 
-		// Properties
-		public Camera Camera { get; set; }
-
-		// Methods
-
-		// // RVA: 0x1CCFAC4 Offset: 0x1CCFAC4 VA: 0x1CCFAC4
-		// public void set_Camera(Camera value) { }
-
-		// // RVA: 0x1CCFACC Offset: 0x1CCFACC VA: 0x1CCFACC
-		// public Camera get_Camera() { }
+		// public Camera Camera { get; set; } 0x1CCFAC4 0x1CCFACC
 
 		// // RVA: 0x1CCFAD4 Offset: 0x1CCFAD4 VA: 0x1CCFAD4
-		// private void Awake() { }
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1CCFCE0 Offset: 0x1CCFCE0 VA: 0x1CCFCE0
-		// private void Update() { }
+		private void Update()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1CCFD0C Offset: 0x1CCFD0C VA: 0x1CCFD0C
 		// private void UpdateIdle() { }
@@ -62,8 +59,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0x1CD07C8 Offset: 0x1CD07C8 VA: 0x1CD07C8
 		// public void SetTouchEffectMode(bool isRhythmGame) { }
-
-		// // RVA: 0x1CD0920 Offset: 0x1CD0920 VA: 0x1CD0920
-		// public void .ctor() { }
 	}
 }

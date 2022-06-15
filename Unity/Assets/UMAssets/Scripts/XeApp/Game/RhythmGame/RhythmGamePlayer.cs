@@ -61,8 +61,7 @@ namespace XeApp.Game.RhythmGame
 			public Setting()
 			{
 				m_enable_cutin = true;
-				m_visible_diva = false; // ??
-				//.m_enable_cutin = 0x101;
+				m_visible_diva = true;
 			}
 		}
 
@@ -114,9 +113,9 @@ namespace XeApp.Game.RhythmGame
 			public int m_msec_max; // 0x10
 		}
 		
-		public static readonly Color IntroEndFadeColor; // 0x0
-		public static readonly Color ValkyrieStartFadeColor; // 0x10
-		public static readonly Color DivaModeEndFadeColor; // 0x20
+		public static readonly Color IntroEndFadeColor = new Color(0, 0, 0, 0); // 0x0
+		public static readonly Color ValkyrieStartFadeColor = new Color(0x3f333333,0x3f4ccccd,0x3f4ccccd,0); // 0x10
+		public static readonly Color DivaModeEndFadeColor = new Color(0x3f666666,0x3f666666,0x3f666666,0); // 0x20
 		public const float DivaModeEndFadeOutSec = 0.5f;
 		public const float DivaModeEndFadeInSec = 0.5f;
 		[SerializeField]
@@ -129,18 +128,18 @@ namespace XeApp.Game.RhythmGame
 		private RhythmGameUIController uiController; // 0x24
 		public CriAtomExPlayback bgmPlayback; // 0x28
 		private CriAtomExPlayback voicePlayback; // 0x2C
-		private CriAtomExPlayback[] loopSEPlayback; // 0x44
-		private NotesSoundPlayer notesSoundPlayer; // 0x48
+		private CriAtomExPlayback[] loopSEPlayback = new CriAtomExPlayback[2]; // 0x44
+		private NotesSoundPlayer notesSoundPlayer = new NotesSoundPlayer(); // 0x48
 		[SerializeField]
 		private RhythmGameScene scene; // 0x4C
 		[SerializeField]
 		private RNoteOwner rNoteOwner; // 0x50
-		private RhythmGameConsts.NoteResultParam_Excellent m_NoteResultParam_Excellent; // 0x54
-		private RhythmGameConsts.NoteParam_CenterLiveSkill m_NoteParam_CLiveSkill; // 0x58
-		private RhythmGameConsts.NoteParam_EventItem m_NoteParam_EventItem; // 0x5C
-		private RhythmGameSpecialNotesAssigner.AssignInfo m_NoteAssingInfo; // 0x60
-		private SkillOwner skillOwner; // 0x68
-		private BuffEffectOwner buffOwner; // 0x6C
+		private RhythmGameConsts.NoteResultParam_Excellent m_NoteResultParam_Excellent = new RhythmGameConsts.NoteResultParam_Excellent(); // 0x54
+		private RhythmGameConsts.NoteParam_CenterLiveSkill m_NoteParam_CLiveSkill = new RhythmGameConsts.NoteParam_CenterLiveSkill(); // 0x58
+		private RhythmGameConsts.NoteParam_EventItem m_NoteParam_EventItem = new RhythmGameConsts.NoteParam_EventItem(); // 0x5C
+		private RhythmGameSpecialNotesAssigner.AssignInfo m_NoteAssingInfo = new RhythmGameSpecialNotesAssigner.AssignInfo(); // 0x60
+		private SkillOwner skillOwner = new SkillOwner(); // 0x68
+		private BuffEffectOwner buffOwner = new BuffEffectOwner(); // 0x6C
 		private RhythmGameFlow gameFlow; // 0x70
 		private bool isPauseRequest; // 0x74
 		private bool isResetRequest; // 0x75
@@ -151,7 +150,7 @@ namespace XeApp.Game.RhythmGame
 		public int noteOffsetMillisec; // 0x80
 		public int currentRawMusicMillisec; // 0x84
 		public int continueCount; // 0x88
-		private int tutorialPopupStartTime; // 0x8C
+		private int tutorialPopupStartTime = -1; // 0x8C
 		[SerializeField]
 		private CRIAtomMemoryPoolInfo memPoolInfo; // 0x90
 		[SerializeField]
@@ -166,12 +165,12 @@ namespace XeApp.Game.RhythmGame
 		private ValkyrieModeObject valkyrieModeObject; // 0xA4
 		[SerializeField]
 		private DivaModeObject divaModeObject; // 0xA8
-		private List<StageLightingObject> stageLightingObjectList; // 0xAC
-		private List<StageLightingAddObject> stageLightingAddObjectList; // 0xB0
-		private List<StageExtensionObject> stageExtensionObjectList; // 0xB4
-		private List<DivaExtensionObject> divaExtensionObjectList; // 0xB8
-		private List<DivaCutinObject> divaCutinObjectList; // 0xBC
-		private List<MusicCameraCutinObject> musicCameraCutinObjectList; // 0xC0
+		private List<StageLightingObject> stageLightingObjectList = new List<StageLightingObject>(); // 0xAC
+		private List<StageLightingAddObject> stageLightingAddObjectList = new List<StageLightingAddObject>(); // 0xB0
+		private List<StageExtensionObject> stageExtensionObjectList = new List<StageExtensionObject>(); // 0xB4
+		private List<DivaExtensionObject> divaExtensionObjectList = new List<DivaExtensionObject>(); // 0xB8
+		private List<DivaCutinObject> divaCutinObjectList = new List<DivaCutinObject>(); // 0xBC
+		private List<MusicCameraCutinObject> musicCameraCutinObjectList = new List<MusicCameraCutinObject>(); // 0xC0
 		[SerializeField]
 		private LowModeBackgroundObject lowModeBackgroundObject; // 0xC4
 		[SerializeField]
@@ -187,57 +186,57 @@ namespace XeApp.Game.RhythmGame
 		[SerializeField]
 		private MeshRenderer dimmer3dMesh; // 0xDC
 		private BattleEventResultVoice battleEventResultVoice; // 0x138
-		private BitArray eventFireFlags; // 0x13C
-		private List<int> dropItemList; // 0x140
-		private int[] dropItemRarityCount; // 0x144
+		private BitArray eventFireFlags = new BitArray(3); // 0x13C
+		private List<int> dropItemList = new List<int>(); // 0x140
+		private int[] dropItemRarityCount = new int[2]; // 0x144
 		private RhythmGameResource resource; // 0x148
 		private Action updater; // 0x14C
-		private List<RNoteObject> preJudgeValkyrieNotes; // 0x150
+		private List<RNoteObject> preJudgeValkyrieNotes = new List<RNoteObject>(); // 0x150
 		private bool skillTouched; // 0x154
 		private bool touchedCenterLiveSkill; // 0x155
 		private bool touchedEventItem; // 0x156
-		private List<int> liveSkillActivateCountList; // 0x158
-		private RhythmGamePlayLogger logger; // 0x15C
+		private List<int> liveSkillActivateCountList = new List<int>(XeApp.Game.Common.TeamConst.TeamSceneNum); // 0x158
+		private RhythmGamePlayLogger logger = new RhythmGamePlayLogger(); // 0x15C
 		private int m_bit_note_result; // 0x160
-		private int[] noteTouchSEIndex; // 0x164
+		private int[] noteTouchSEIndex = new int[8] {4, 5, 3, 2, 1, 0, 7, 6}; // Field$<PrivateImplementationDetails>.B97719DD67FEBE5083885CEEA340284B07BE6023; // 0x164
 		private const int BattleEventVoiceNum = 3;
-		private ActiveSkillRestartTimer activeSkillRestartTimer; // 0x168
+		private ActiveSkillRestartTimer activeSkillRestartTimer = new ActiveSkillRestartTimer(); // 0x168
 		public static bool IsLowQualityMode; // 0x30
 
-		public Setting setting { get; set; }  // 0xC
-		public SettingMV setting_mv { get; set; } // 0x10
-		public BackupSaveData backupSaveData { get; set; } // 0x14
-		public MusicData musicData { get; set; } // get_musicData 0x9AF428 // set_musicData 0x9AF44C 
-		public BgmPlayer bgmPlayer { get; set; } // get_bgmPlayer 0x9AF450 // set_bgmPlayer 0x9AF484 
-		public int musicMillisecLength { get; set; } // 0x30
-		public int notesMillisec { get; set; } // 0x34
-		public int deviceMillisec { get; set; } // 0x38
-		public float deviceSec { get; set; } // 0x3C
-		public int musicRequestChangeMillisec { get; set; } // 0x40
-		public RhythmGameStatus status { get; set; } // 0x64
-		public RhythmGameScoreEvent introFadeEvent { get; set; } // 0xE0
-		public RhythmGameScoreEvent normalModeEndEvent { get; set; } // 0xE4
-		public RhythmGameScoreEvent valkyrieStartHUDEvent { get; set; } // 0xE8
-		public RhythmGameScoreEvent valkyriePreFadeEvent { get; set; } // 0xEC
-		public RhythmGameScoreEvent valkyrieCutsceneStartEvent { get; set; } // 0xF0
-		public RhythmGameScoreEvent valkyrieModeStartEvent { get; set; } // 0xF4
-		public RhythmGameScoreEvent valkyrieCutsceneEndEvent { get; set; } // 0xF8
-		public RhythmGameScoreEvent valkyrieModeEndEvent { get; set; } // 0xFC
-		public RhythmGameScoreEvent divaCutsceneStartEvent { get; set; } // 0x100
-		public RhythmGameScoreEvent divaModeStartEvent { get; set; } // 0x104
-		public RhythmGameScoreEvent rhythmGameResultStartEvent { get; set; } // 0x108
-		public RhythmGameScoreEvent tutorialOneEndEvent { get; set; } // 0x10C
-		public RhythmGameScoreEvent tutorialTwoFoceFWaveMaxEvent { get; set; } // 0x110
-		public RhythmGameScoreEvent tutorialTwoFoceEnemyDefeatEvent { get; set; } // 0x114
-		public RhythmGameScoreEvent tutorialTwoModeDescriptionEvent { get; set; } // 0x118
-		public RhythmGameScoreEvent tutorialTwoActiveSkillGuideEvent { get; set; } // 0x11C
-		public RhythmGameScoreEvent battleEventResult01 { get; set; } // 0x120
-		public RhythmGameScoreEvent battleEventResult02 { get; set; } // 0x124
-		public RhythmGameScoreEvent mvPilotCutinFirstEvent { get; set; } // 0x128
-		public RhythmGameScoreEvent mvPilotCutinSecondEvent { get; set; } // 0x12C
-		public RhythmGameCheerSoundOrderer soundCheerOrderer { get; set; } // 0x130
-		public RhythmGameVoicePlayer voicePlayer { get; set; } // 0x134
-		public BattleEventResultVoice BattleEventResultVoide { get; } // get_BattleEventResultVoide 0x9AF640 
+		public Setting setting { get; private set; }  // 0xC
+		public SettingMV setting_mv { get; private set; } // 0x10
+		public BackupSaveData backupSaveData { get; private set; } // 0x14
+		// public MusicData musicData { get; private set; } // get_musicData 0x9AF428 // set_musicData 0x9AF44C 
+		// public BgmPlayer bgmPlayer { get; private set; } // get_bgmPlayer 0x9AF450 // set_bgmPlayer 0x9AF484 
+		public int musicMillisecLength { get; private set; } // 0x30
+		public int notesMillisec { get; private set; } // 0x34
+		public int deviceMillisec { get; private set; } // 0x38
+		public float deviceSec { get; private set; } // 0x3C
+		public int musicRequestChangeMillisec { get; private set; } // 0x40
+		public RhythmGameStatus status { get; private set; } // 0x64
+		public RhythmGameScoreEvent introFadeEvent { get; private set; } // 0xE0
+		public RhythmGameScoreEvent normalModeEndEvent { get; private set; } // 0xE4
+		public RhythmGameScoreEvent valkyrieStartHUDEvent { get; private set; } // 0xE8
+		public RhythmGameScoreEvent valkyriePreFadeEvent { get; private set; } // 0xEC
+		public RhythmGameScoreEvent valkyrieCutsceneStartEvent { get; private set; } // 0xF0
+		public RhythmGameScoreEvent valkyrieModeStartEvent { get; private set; } // 0xF4
+		public RhythmGameScoreEvent valkyrieCutsceneEndEvent { get; private set; } // 0xF8
+		public RhythmGameScoreEvent valkyrieModeEndEvent { get; private set; } // 0xFC
+		public RhythmGameScoreEvent divaCutsceneStartEvent { get; private set; } // 0x100
+		public RhythmGameScoreEvent divaModeStartEvent { get; private set; } // 0x104
+		public RhythmGameScoreEvent rhythmGameResultStartEvent { get; private set; } // 0x108
+		public RhythmGameScoreEvent tutorialOneEndEvent { get; private set; } // 0x10C
+		public RhythmGameScoreEvent tutorialTwoFoceFWaveMaxEvent { get; private set; } // 0x110
+		public RhythmGameScoreEvent tutorialTwoFoceEnemyDefeatEvent { get; private set; } // 0x114
+		public RhythmGameScoreEvent tutorialTwoModeDescriptionEvent { get; private set; } // 0x118
+		public RhythmGameScoreEvent tutorialTwoActiveSkillGuideEvent { get; private set; } // 0x11C
+		public RhythmGameScoreEvent battleEventResult01 { get; private set; } // 0x120
+		public RhythmGameScoreEvent battleEventResult02 { get; private set; } // 0x124
+		public RhythmGameScoreEvent mvPilotCutinFirstEvent { get; private set; } // 0x128
+		public RhythmGameScoreEvent mvPilotCutinSecondEvent { get; private set; } // 0x12C
+		public RhythmGameCheerSoundOrderer soundCheerOrderer { get; private set; } // 0x130
+		public RhythmGameVoicePlayer voicePlayer { get; private set; } // 0x134
+		// public BattleEventResultVoice BattleEventResultVoide { get; } // get_BattleEventResultVoide 0x9AF640 
 
 		// RVA: 0x9AF648 Offset: 0x9AF648 VA: 0x9AF648
 		private void Awake()
@@ -1161,42 +1160,6 @@ namespace XeApp.Game.RhythmGame
 
 		// // RVA: 0x9CC5F8 Offset: 0x9CC5F8 VA: 0x9CC5F8
 		// private bool TutorialChecker(TutorialConditionId condition) { }
-
-		// // RVA: 0x9CC608 Offset: 0x9CC608 VA: 0x9CC608
-		public RhythmGamePlayer()
-		{
-			loopSEPlayback = new CriAtomExPlayback[2];
-			notesSoundPlayer = new NotesSoundPlayer();
-			m_NoteResultParam_Excellent = new RhythmGameConsts.NoteResultParam_Excellent();
-			m_NoteParam_CLiveSkill = new RhythmGameConsts.NoteParam_CenterLiveSkill();
-			m_NoteParam_EventItem = new RhythmGameConsts.NoteParam_EventItem();
-			m_NoteAssingInfo = new RhythmGameSpecialNotesAssigner.AssignInfo();
-			skillOwner = new SkillOwner();
-			tutorialPopupStartTime = -1;
-			buffOwner = new BuffEffectOwner();
-			stageLightingObjectList = new List<StageLightingObject>();
-			stageLightingAddObjectList = new List<StageLightingAddObject>();
-			stageExtensionObjectList = new List<StageExtensionObject>();
-			divaExtensionObjectList = new List<DivaExtensionObject>();
-			divaCutinObjectList = new List<DivaCutinObject>();
-			musicCameraCutinObjectList = new List<MusicCameraCutinObject>();
-			eventFireFlags = new BitArray(3);
-			dropItemList = new List<int>();
-			dropItemRarityCount = new int[2];
-			preJudgeValkyrieNotes = new List<RNoteObject>();
-			liveSkillActivateCountList = new List<int>(XeApp.Game.Common.TeamConst.TeamSceneNum);
-			logger = new RhythmGamePlayLogger();
-			noteTouchSEIndex = new int[8] {4, 5, 3, 2, 1, 0, 7, 6}; // Field$<PrivateImplementationDetails>.B97719DD67FEBE5083885CEEA340284B07BE6023
-			activeSkillRestartTimer = new ActiveSkillRestartTimer();
-		}
-
-		// // RVA: 0x9CCA14 Offset: 0x9CCA14 VA: 0x9CCA14
-		static RhythmGamePlayer()
-		{
-			IntroEndFadeColor = new Color(0, 0, 0, 0);
-			ValkyrieStartFadeColor = new Color(0x3f333333,0x3f4ccccd,0x3f4ccccd,0);
-			DivaModeEndFadeColor = new Color(0x3f666666,0x3f666666,0x3f666666,0);
-		}
 
 	}
 }

@@ -13,7 +13,7 @@ namespace XeApp.Game.Common
 			LocalStorage = 1,
 		}
 		
-		public enum eSheet // TypeDefIndex: 16997
+		public enum eSheet
 		{
 			common = 0,
 			data_ = 1,
@@ -36,10 +36,7 @@ namespace XeApp.Game.Common
 		public MessageLoader.InstallSource defaultInstallSource; // 0x10
 
 
-		public bool IsLoading { get; }
-
-		// // RVA: 0x1115A74 Offset: 0x1115A74 VA: 0x1115A74
-		// public bool get_IsLoading() { }
+		// public bool IsLoading { get; } 0x1115A74
 
 		// // RVA: 0x1115A7C Offset: 0x1115A7C VA: 0x1115A7C
 		public void Request(MessageLoader.eSheet sheet, int version)
@@ -93,6 +90,9 @@ namespace XeApp.Game.Common
 		// public static MessageLoader.eSheet DivaIdToSheet(int divaId) { }
 
 		// // RVA: 0x1117144 Offset: 0x1117144 VA: 0x1117144
-		// public void .ctor() { }
+		public MessageLoader()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }

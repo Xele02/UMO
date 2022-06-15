@@ -28,7 +28,10 @@ namespace SecureLib
         // private static extern bool __sl_cslt(string wl) { }
 
         // // RVA: 0x2E71EF4 Offset: 0x2E71EF4 VA: 0x2E71EF4
-        // private static void .cctor() { }
+        static SecureLibAPI()
+		{
+            UnityEngine.Debug.LogError("TODO");
+		}
 
         // // RVA: 0x2E71EF8 Offset: 0x2E71EF8 VA: 0x2E71EF8
         public static bool isRooted()

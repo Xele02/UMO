@@ -12,33 +12,18 @@ namespace XeSys
 
 	public class TouchInfo
 	{
-		// [CompilerGeneratedAttribute] // RVA: 0x652E3C Offset: 0x652E3C VA: 0x652E3C
-		// private int <id>k__BackingField; // 0x8
-		// [CompilerGeneratedAttribute] // RVA: 0x652E4C Offset: 0x652E4C VA: 0x652E4C
-		// private TouchState <state>k__BackingField; // 0xC
-		// [CompilerGeneratedAttribute] // RVA: 0x652E5C Offset: 0x652E5C VA: 0x652E5C
-		// private float <time>k__BackingField; // 0x10
-		// [CompilerGeneratedAttribute] // RVA: 0x652E6C Offset: 0x652E6C VA: 0x652E6C
-		// private Vector3 <position>k__BackingField; // 0x14
-		// [CompilerGeneratedAttribute] // RVA: 0x652E7C Offset: 0x652E7C VA: 0x652E7C
-		// private Vector3 <appPosition>k__BackingField; // 0x20
-		// [CompilerGeneratedAttribute] // RVA: 0x652E8C Offset: 0x652E8C VA: 0x652E8C
-		// private Vector3 <nativePosition>k__BackingField; // 0x2C
-
-		public int id { get; set; }
-		public TouchState state { get; set; }
-		public float time { get; set; }
-		public Vector3 position { get; set; }
-		public Vector3 appPosition { get; set; }
-		public Vector3 nativePosition { get; set; }
-		public float x { get; }
-		public float y { get; }
-		public bool isBegan { get; }
-		public bool isMoved { get; }
-		public bool isEnded { get; }
-		public bool isIllegal { get; }
-
-		// Methods
+		public int id { get; set; } // 0x8
+		public TouchState state { get; set; } // 0xC
+		public float time { get; set; } // 0x10
+		public Vector3 position { get; set; } // 0x14
+		public Vector3 appPosition { get; set; } // 0x20
+		public Vector3 nativePosition { get; set; } // 0x2C
+		// public float x { get; }
+		// public float y { get; }
+		// public bool isBegan { get; }
+		// public bool isMoved { get; }
+		// public bool isEnded { get; }
+		// public bool isIllegal { get; }
 
 		// // RVA: 0x23A0454 Offset: 0x23A0454 VA: 0x23A0454
 		// public float get_x() { }
@@ -59,7 +44,10 @@ namespace XeSys
 		// public bool get_isIllegal() { }
 
 		// // RVA: 0x23A66CC Offset: 0x23A66CC VA: 0x23A66CC
-		// public void .ctor() { }
+		public TouchInfo()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x23A66EC Offset: 0x23A66EC VA: 0x23A66EC
 		// public void Initialize() { }

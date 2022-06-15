@@ -1,17 +1,13 @@
 
 public class LGGPBMPINDL : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 1;
 	// public int MEBHCFJCKFE; // 0x24
 	// public int OBGBAOLONDD; // 0x28
 	// public long NFIOKIBPJCJ; // 0x30
 	// public int KDMPHHFADMC; // 0x38
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
 
 	// // RVA: 0xD73940 Offset: 0xD73940 VA: 0xD73940
 	// public void KHEKNNFCAOI(int GPLGIGCNNAD) { }
@@ -20,7 +16,10 @@ public class LGGPBMPINDL : KLFDBFMNLBL
 	// public bool IPLBEGCODDC(int EKANGPODCEP) { }
 
 	// // RVA: 0xD73990 Offset: 0xD73990 VA: 0xD73990
-	// public void .ctor() { }
+	public LGGPBMPINDL()
+	{
+		KMBPACJNEOF();
+	}
 
 	// // RVA: 0xD739BC Offset: 0xD739BC VA: 0xD739BC Slot: 4
 	public override void KMBPACJNEOF()

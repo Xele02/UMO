@@ -1,7 +1,6 @@
 
 public class NKFJNAANPNP : KLFDBFMNLBL
 {
-	// // Fields
 	// protected int DALBFCKKGGA; // 0x24
 	// protected int FIBFMLMHOGN; // 0x28
 	// protected int KOICDJCMKEC; // 0x2C
@@ -11,10 +10,7 @@ public class NKFJNAANPNP : KLFDBFMNLBL
 	// private ulong NEJBNCHLMNJ; // 0x38
 	// private string IHGIDOFLDBD; // 0x40
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
 
 	// // RVA: 0xC126EC Offset: 0xC126EC VA: 0xC126EC
 	// public int LDLCGGACHGA(long JHNMKKNEENE) { }
@@ -38,7 +34,10 @@ public class NKFJNAANPNP : KLFDBFMNLBL
 	// public List<NKFJNAANPNP.MOJLCADLMKH> MCPIBDPKBBD(long JHNMKKNEENE) { }
 
 	// // RVA: 0xC13BF0 Offset: 0xC13BF0 VA: 0xC13BF0
-	// public void .ctor() { }
+	public NKFJNAANPNP()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xC13CF8 Offset: 0xC13CF8 VA: 0xC13CF8 Slot: 4
 	public override void KMBPACJNEOF()

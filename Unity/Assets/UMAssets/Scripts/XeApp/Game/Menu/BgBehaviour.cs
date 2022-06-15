@@ -48,56 +48,56 @@ namespace XeApp.Game.Menu
 		}
 
 
-		[SerializeField] // RVA: 0x66A340 Offset: 0x66A340 VA: 0x66A340
+		[SerializeField]
 		private GameObject m_decorationPrefab; // 0xC
-		[SerializeField] // RVA: 0x66A350 Offset: 0x66A350 VA: 0x66A350
+		[SerializeField]
 		private GameObject m_decorationRoot; // 0x10
-		[SerializeField] // RVA: 0x66A360 Offset: 0x66A360 VA: 0x66A360
+		[SerializeField]
 		private RawImage m_bgImage; // 0x14
-		[SerializeField] // RVA: 0x66A370 Offset: 0x66A370 VA: 0x66A370
+		[SerializeField]
 		private TranslationTween m_transLationTween; // 0x18
-		[SerializeField] // RVA: 0x66A380 Offset: 0x66A380 VA: 0x66A380
+		[SerializeField]
 		private Image m_tileImage; // 0x1C
-		[SerializeField] // RVA: 0x66A390 Offset: 0x66A390 VA: 0x66A390
+		[SerializeField]
 		private RawImage m_tileMask; // 0x20
-		[SerializeField] // RVA: 0x66A3A0 Offset: 0x66A3A0 VA: 0x66A3A0
+		[SerializeField]
 		private Image[] m_growImages; // 0x24
-		[SerializeField] // RVA: 0x66A3B0 Offset: 0x66A3B0 VA: 0x66A3B0
+		[SerializeField]
 		private Sprite m_homeTileSprite; // 0x28
-		[SerializeField] // RVA: 0x66A3C0 Offset: 0x66A3C0 VA: 0x66A3C0
+		[SerializeField]
 		private Sprite m_menuTileSprite; // 0x2C
-		[SerializeField] // RVA: 0x66A3D0 Offset: 0x66A3D0 VA: 0x66A3D0
+		[SerializeField]
 		private Sprite m_musicTileSprite; // 0x30
-		[SerializeField] // RVA: 0x66A3E0 Offset: 0x66A3E0 VA: 0x66A3E0
+		[SerializeField]
 		private Sprite m_offerTileSprite; // 0x34
-		[SerializeField] // RVA: 0x66A3F0 Offset: 0x66A3F0 VA: 0x66A3F0
+		[SerializeField]
 		private Texture2D m_texture; // 0x38
-		[SerializeField] // RVA: 0x66A400 Offset: 0x66A400 VA: 0x66A400
+		[SerializeField]
 		private Color32[] m_colorTable; // 0x3C
-		[SerializeField] // RVA: 0x66A410 Offset: 0x66A410 VA: 0x66A410
+		[SerializeField]
 		private Vector3[] m_decorationPosition; // 0x40
-		[SerializeField] // RVA: 0x66A420 Offset: 0x66A420 VA: 0x66A420
+		[SerializeField]
 		private Vector3[] m_decorationScale; // 0x44
-		[SerializeField] // RVA: 0x66A430 Offset: 0x66A430 VA: 0x66A430
+		[SerializeField]
 		private Material[] m_decorationMaterials; // 0x48
-		[SerializeField] // RVA: 0x66A440 Offset: 0x66A440 VA: 0x66A440
+		[SerializeField]
 		private BgBehaviour.AttributeSetting m_attrSetting; // 0x4C
-		[SerializeField] // RVA: 0x66A450 Offset: 0x66A450 VA: 0x66A450
+		[SerializeField]
 		private UGUIFader m_fader; // 0x50
-		[SerializeField] // RVA: 0x66A460 Offset: 0x66A460 VA: 0x66A460
+		[SerializeField]
 		private Image m_overlay; // 0x54
-		[SerializeField] // RVA: 0x66A470 Offset: 0x66A470 VA: 0x66A470
+		[SerializeField]
 		private ScrollRect m_storyBgScroll; // 0x58
-		[SerializeField] // RVA: 0x66A480 Offset: 0x66A480 VA: 0x66A480
+		[SerializeField]
 		private GameObject m_storyBgPanel; // 0x5C
-		[SerializeField] // RVA: 0x66A490 Offset: 0x66A490 VA: 0x66A490
+		[SerializeField]
 		private Material m_bgMipmapBiasMaterialSource; // 0x60
-		[SerializeField] // RVA: 0x66A4A0 Offset: 0x66A4A0 VA: 0x66A4A0
+		[SerializeField]
 		private Material m_bgTransColoredBlurMaterialSource; // 0x64
 		public static readonly float HomeSceneOverlayAlpha; // 0x0
-		private List<GameObject> m_decrationInstance; // 0x68
-		private List<RotationTween> m_rotationTween; // 0x6C
-		private List<Image> m_colorChangeImages; // 0x70
+		private List<GameObject> m_decrationInstance = new List<GameObject>(); // 0x68
+		private List<RotationTween> m_rotationTween = new List<RotationTween>(); // 0x6C
+		private List<Image> m_colorChangeImages = new List<Image>(); // 0x70
 		private BgScroll m_bgScroll; // 0x74
 		private Material m_bgMipmapBiasMaterialInstance; // 0x78
 		private Material m_bgTransColoredBlurMaterialInstance; // 0x7C
@@ -109,15 +109,9 @@ namespace XeApp.Game.Menu
 		private const int ColorIndexTblLength = 10;
 		private static readonly int[,] m_colorIndexTbl; // 0x44
 
-		public RawImage BgImage { get; }
-		public UGUIFader Fader { get; }
-		public ScrollRect storyBgScrollRect { get; set; }
-
-		// // RVA: 0x14365E0 Offset: 0x14365E0 VA: 0x14365E0
-		// public RawImage get_BgImage() { }
-
-		// // RVA: 0x14365E8 Offset: 0x14365E8 VA: 0x14365E8
-		// public UGUIFader get_Fader() { }
+		// public RawImage BgImage { get; } 0x14365E0
+		// public UGUIFader Fader { get; } 0x14365E8
+		// public ScrollRect storyBgScrollRect { get; private set; } 0x143BBD0 0x143BBD8
 
 		// // RVA: 0x14365F0 Offset: 0x14365F0 VA: 0x14365F0
 		private void Awake()
@@ -240,12 +234,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x143BAE0 Offset: 0x143BAE0 VA: 0x143BAE0
 		// public IEnumerator Co_ChangeTilingFade(float time, float alpha) { }
 
-		// // RVA: 0x143BBD0 Offset: 0x143BBD0 VA: 0x143BBD0
-		// public ScrollRect get_storyBgScrollRect() { }
-
-		// // RVA: 0x143BBD8 Offset: 0x143BBD8 VA: 0x143BBD8
-		// private void set_storyBgScrollRect(ScrollRect value) { }
-
 		// [IteratorStateMachineAttribute] // RVA: 0x6C9F04 Offset: 0x6C9F04 VA: 0x6C9F04
 		// // RVA: 0x143BBDC Offset: 0x143BBDC VA: 0x143BBDC
 		// public IEnumerator SetupStoryBg(int map, Action finish) { }
@@ -256,10 +244,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x143BD0C Offset: 0x143BD0C VA: 0x143BD0C
 		// public void StoryBgHide() { }
 
-		// // RVA: 0x143BD5C Offset: 0x143BD5C VA: 0x143BD5C
-		// public void .ctor() { }
-
 		// // RVA: 0x143BE50 Offset: 0x143BE50 VA: 0x143BE50
-		// private static void .cctor() { }
+		static BgBehaviour()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }

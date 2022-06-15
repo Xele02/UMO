@@ -15,10 +15,10 @@ namespace XeApp.Game.Common
 
 		public static readonly string[] Name; // 0x0
 
-		// RVA: 0xE6CF8C Offset: 0xE6CF8C VA: 0xE6CF8C
-		// public void .ctor() { }
-
 		// RVA: 0xE6CF94 Offset: 0xE6CF94 VA: 0xE6CF94
-		// private static void .cctor() { }
+		static Difficulty()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }

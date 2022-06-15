@@ -39,6 +39,9 @@ namespace XeSys.Gfx
 		// protected void Loaded() { }
 
 		// // RVA: 0x1EF8B3C Offset: 0x1EF8B3C VA: 0x1EF8B3C
-		// public void .ctor() { }
+		public LayoutUGUIScriptBase()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }

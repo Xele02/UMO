@@ -163,7 +163,10 @@ public class KOGHKIODHPA : DIHHCBACKGG
         // public void HLCCBPNDEOE(int NANNGLGOFKH) { }
 
         // // RVA: 0x112FBBC Offset: 0x112FBBC VA: 0x112FBBC
-        // public void .ctor() { }
+        public ADPMJDMFEIK()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
         // // RVA: 0x11319F0 Offset: 0x11319F0 VA: 0x11319F0
         // public void LHPDDGIJKNB() { }

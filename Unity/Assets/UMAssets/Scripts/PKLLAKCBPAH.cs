@@ -1,19 +1,15 @@
 
 public class PKLLAKCBPAH : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 1;
 	// private int ENOBDCFHELD; // 0x24
 	// private int FCEJCHGLFGN; // 0x28
 	// private sbyte MLLAPPOGDJO; // 0x2C
 	// private string LAJDGNJCMEH; // 0x30
 
-	// // Properties
 	// public bool DGNMOIBJBBJ { get; set; }
 	// public string PCBDMADAIEO { get; set; }
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
 
 	// // RVA: 0x93EF3C Offset: 0x93EF3C VA: 0x93EF3C
 	// public bool GOOBCPPNKNF() { }
@@ -28,7 +24,10 @@ public class PKLLAKCBPAH : KLFDBFMNLBL
 	// public void KNBPHPFBGMI(string NANNGLGOFKH) { }
 
 	// // RVA: 0x93EF90 Offset: 0x93EF90 VA: 0x93EF90
-	// public void .ctor() { }
+	public PKLLAKCBPAH()
+	{
+		KMBPACJNEOF();
+	}
 
 	// // RVA: 0x93EFBC Offset: 0x93EFBC VA: 0x93EFBC Slot: 11
 	// public override FENCAJJBLBH PFAKPFKJJKA() { }

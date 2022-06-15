@@ -6,7 +6,6 @@ namespace XeApp.Game.Tutorial
 {
 	public class BasicTutorialManager : SingletonBehaviour<BasicTutorialManager>
 	{
-		// Fields
 		private GameObject m_blackImageInstance; // 0xC
 		private TutorialHighLight m_highLight; // 0x10
 		private GameObject m_cursorInstance; // 0x14
@@ -15,8 +14,6 @@ namespace XeApp.Game.Tutorial
 		private StringBuilder m_strBuilder; // 0x20
 		// private TutorialMessageWindow m_messageWindow; // 0x24
 		private int[,] m_charaTextRowColCountTable; // 0x28
-
-		// Methods
 
 		// // RVA: 0xE3D1B0 Offset: 0xE3D1B0 VA: 0xE3D1B0
 		// public bool IsLoadedLayout() { }
@@ -111,7 +108,10 @@ namespace XeApp.Game.Tutorial
 		// public static bool IsBeginnerMission() { }
 
 		// // RVA: 0xE42630 Offset: 0xE42630 VA: 0xE42630
-		// public void .ctor() { }
+		public BasicTutorialManager()
+		{
+			UnityEngine.Degub.LogError("TODO");
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6AE5B8 Offset: 0x6AE5B8 VA: 0x6AE5B8
 		// // RVA: 0xE42748 Offset: 0xE42748 VA: 0xE42748

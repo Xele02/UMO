@@ -1,7 +1,6 @@
 
 public class CCPKHBECNLH : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;
 	// public const int ICHFGGBPCBJ = 3;
@@ -11,15 +10,15 @@ public class CCPKHBECNLH : KLFDBFMNLBL
 	// public const int BHCKAPNMBNE = 3;
 	// public const int EGOLNNPNJCA = 10;
 	// public const int KKBHHBGCNJO = 5;
-	// public List<CCPKHBECNLH.BHIDLKBIJFK> FBCJICEPLED; // 0x24
+	// public List<CCPKHBECNLH.BHIDLKBIJFK> FBCJICEPLED = new List<CCPKHBECNLH.BHIDLKBIJFK>(); // 0x24
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
 
-	// // Methods
-
 	// // RVA: 0x190A2E4 Offset: 0x190A2E4 VA: 0x190A2E4
-	// public void .ctor() { }
+	public CCPKHBECNLH()
+	{
+		LHPDDGIJKNB();
+	}
 
 	// // RVA: 0x190A380 Offset: 0x190A380 VA: 0x190A380 Slot: 4
 	public override void KMBPACJNEOF()

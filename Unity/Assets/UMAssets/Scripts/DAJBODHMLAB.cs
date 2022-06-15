@@ -1,26 +1,19 @@
 
 public class DAJBODHMLAB : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 1;
 	// public DAJBODHMLAB.MMLACIFMNBN LJMCPFACDGJ; // 0x24
 	// private int FBGGEFFJJHB; // 0x28
 
-	// // Properties
 	// [ObsoleteAttribute] // RVA: 0x74987C Offset: 0x74987C VA: 0x74987C
-	// public bool KCMEDJHEGGM { get; set; }
+	// public bool KCMEDJHEGGM { get; set; } KPMHCNNEOLK 0x1769500  HGHNELFKMJF 0x17695FC
 	// public override bool DMICHEJIAJL { get; }
 
-	// // Methods
-
-	// // RVA: 0x1769500 Offset: 0x1769500 VA: 0x1769500
-	// public bool KPMHCNNEOLK() { }
-
-	// // RVA: 0x17695FC Offset: 0x17695FC VA: 0x17695FC
-	// public void HGHNELFKMJF(bool NANNGLGOFKH) { }
-
 	// // RVA: 0x1769700 Offset: 0x1769700 VA: 0x1769700
-	// public void .ctor() { }
+	public DAJBODHMLAB()
+	{
+		LHPDDGIJKNB();
+	}
 
 	// // RVA: 0x176981C Offset: 0x176981C VA: 0x176981C Slot: 4
 	public override void KMBPACJNEOF()

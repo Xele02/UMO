@@ -11,20 +11,15 @@ namespace XeApp.Game.Common
 		private const int FLICK = 4;
 		private const int MISS = 8;
 		private const int LONG_CONTINUE = 16;
-		private List<int> requestBuffer; // 0x8
+		private List<int> requestBuffer = new List<int>(16); // 0x8
 		private int loopSeState; // 0xC
 		private int preLoopSeState; // 0x10
 		// private CriAtomExPlayback loopSEPlayback; // 0x14
 		// private CriAtomSource sePlayerLongNotes; // 0x18
 		public static bool isNewNoteSoundEnable; // 0x0
-		private static int[] noteTouchSEIndex; // 0x4
-		// private static NotesSoundPlayer.NoteSEType[] mixTable; // 0x8
-		private float[] loopSeVoumeTable; // 0x1C
-
-		// Methods
-
-		// // RVA: 0xAED500 Offset: 0xAED500 VA: 0xAED500
-		// public void .ctor() { }
+		private static int[] noteTouchSEIndex = new int[18] {991B4AA294B603012C2FE81FB07438DB965792D3}; // 0x4
+		// private static NotesSoundPlayer.NoteSEType[] mixTable = new NotesSoundPlayer.NoteSEType[25] {90F02A84C31F5632D4095B6046021D892411CBCC}; // 0x8
+		private float[] loopSeVoumeTable = new float[2] { 1.0f, 2.0f }; // 0x1C
 
 		// // RVA: 0xAED608 Offset: 0xAED608 VA: 0xAED608
 		// public void PreSetup() { }
@@ -64,8 +59,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0xAEDB38 Offset: 0xAEDB38 VA: 0xAEDB38
 		// public static int LineIDToLineGroup(int trackLineID) { }
-
-		// // RVA: 0xAEE11C Offset: 0xAEE11C VA: 0xAEE11C
-		// private static void .cctor() { }
 	}
 }

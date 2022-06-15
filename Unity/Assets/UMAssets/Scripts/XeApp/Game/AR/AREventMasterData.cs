@@ -10,33 +10,18 @@ namespace XeApp.Game.AR
 			public long endTime; // 0x10
 			public int enable; // 0x18
 			public int bgId; // 0x1C
-
-			// RVA: 0xBB7C5C Offset: 0xBB7C5C VA: 0xBB7C5C
-			// public void .ctor() { }
 		}
 
 		private static AREventMasterData sm_instance; // 0x0
-		// private List<AREventMasterData.Data> m_eventList; // 0x18
-		private List<AREventMasterData.Chenge_bg> m_chengeBg; // 0x1C
-		// private List<AREventMasterData.EventTime> m_eventTime; // 0x20
+		// private List<AREventMasterData.Data> m_eventList = new List<AREventMasterData.Data>(); // 0x18
+		private List<AREventMasterData.Chenge_bg> m_chengeBg = new List<AREventMasterData.Chenge_bg>(); // 0x1C
+		// private List<AREventMasterData.EventTime> m_eventTime = new List<AREventMasterData.EventTime>(); // 0x20
 		private long m_arStartTime; // 0x28
 		private long m_arEndTime; // 0x30
-		// [CompilerGeneratedAttribute] // RVA: 0x68D88C Offset: 0x68D88C VA: 0x68D88C
-		// private Dictionary<string, NNJFKLBPBNK> <m_stringParam>k__BackingField; // 0x38
-		// [CompilerGeneratedAttribute] // RVA: 0x68D89C Offset: 0x68D89C VA: 0x68D89C
-		// private Dictionary<string, CEBFFLDKAEC> <m_intParam>k__BackingField; // 0x3C
 
-		public static AREventMasterData Instance { get; }
-		// public Dictionary<string, NNJFKLBPBNK> m_stringParam { get; set; }
-		// public Dictionary<string, CEBFFLDKAEC> m_intParam { get; set; }
-
-		// // RVA: 0xBB6C40 Offset: 0xBB6C40 VA: 0xBB6C40
-		// public static AREventMasterData get_Instance() { }
-
-		// RVA: 0xBB6DA4 Offset: 0xBB6DA4 VA: 0xBB6DA4
-		private AREventMasterData()
-		{
-		}
+		// public static AREventMasterData Instance { get; } 0xBB6C40
+		// public Dictionary<string, NNJFKLBPBNK> m_stringParam { get; set; } // 0x38
+		// public Dictionary<string, CEBFFLDKAEC> m_intParam { get; set; } // 0x3C
 
 		// [CompilerGeneratedAttribute] // RVA: 0x741A84 Offset: 0x741A84 VA: 0x741A84
 		// // RVA: 0xBB6F14 Offset: 0xBB6F14 VA: 0xBB6F14
@@ -84,9 +69,6 @@ namespace XeApp.Game.AR
 
 		// // RVA: 0xBB7E4C Offset: 0xBB7E4C VA: 0xBB7E4C
 		// public AREventMasterData.EventTime FindEventTime() { }
-
-		// // RVA: 0xBB86B8 Offset: 0xBB86B8 VA: 0xBB86B8
-		// private static void .cctor() { }
 
 	}
 }

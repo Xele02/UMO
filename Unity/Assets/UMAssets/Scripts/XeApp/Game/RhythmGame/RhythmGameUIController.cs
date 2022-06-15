@@ -5,58 +5,14 @@ namespace XeApp.Game.RhythmGame
 {
 	public class RhythmGameUIController : MonoBehaviour
 	{
-		// Fields
-		//[CompilerGeneratedAttribute] // RVA: 0x68E5E8 Offset: 0x68E5E8 VA: 0x68E5E8
-		// private GameUIIntro <intro>k__BackingField; // 0xC
-		// [CompilerGeneratedAttribute] // RVA: 0x68E5F8 Offset: 0x68E5F8 VA: 0x68E5F8
-		// private GameUIComplete <complete>k__BackingField; // 0x10
-		// [CompilerGeneratedAttribute] // RVA: 0x68E608 Offset: 0x68E608 VA: 0x68E608
-		// private GameUIFailed <failed>k__BackingField; // 0x14
-		// [CompilerGeneratedAttribute] // RVA: 0x68E618 Offset: 0x68E618 VA: 0x68E618
-		// private IRhythmGameHUD <Hud>k__BackingField; // 0x18
 		// private List<Animator> m_list_anim; // 0x1C
 		// private List<ParticleSystem> m_list_particle; // 0x20
 		// private List<EffectBundleControllerSimple> m_list_effect; // 0x24
 
-		// // Properties
-		// public GameUIIntro intro { get; set; }
-		// public GameUIComplete complete { get; set; }
-		// public GameUIFailed failed { get; set; }
-		public IRhythmGameHUD Hud { get; set; }
-
-		// // Methods
-
-		// [CompilerGeneratedAttribute] // RVA: 0x745FC4 Offset: 0x745FC4 VA: 0x745FC4
-		// // RVA: 0xC0C4B8 Offset: 0xC0C4B8 VA: 0xC0C4B8
-		// public GameUIIntro get_intro() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x745FD4 Offset: 0x745FD4 VA: 0x745FD4
-		// // RVA: 0xC0C4C0 Offset: 0xC0C4C0 VA: 0xC0C4C0
-		// private void set_intro(GameUIIntro value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x745FE4 Offset: 0x745FE4 VA: 0x745FE4
-		// // RVA: 0xC0C4C8 Offset: 0xC0C4C8 VA: 0xC0C4C8
-		// public GameUIComplete get_complete() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x745FF4 Offset: 0x745FF4 VA: 0x745FF4
-		// // RVA: 0xC0C4D0 Offset: 0xC0C4D0 VA: 0xC0C4D0
-		// private void set_complete(GameUIComplete value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x746004 Offset: 0x746004 VA: 0x746004
-		// // RVA: 0xC0C4D8 Offset: 0xC0C4D8 VA: 0xC0C4D8
-		// public GameUIFailed get_failed() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x746014 Offset: 0x746014 VA: 0x746014
-		// // RVA: 0xC0C4E0 Offset: 0xC0C4E0 VA: 0xC0C4E0
-		// private void set_failed(GameUIFailed value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x746024 Offset: 0x746024 VA: 0x746024
-		// // RVA: 0xBF2694 Offset: 0xBF2694 VA: 0xBF2694
-		// public IRhythmGameHUD get_Hud() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x746034 Offset: 0x746034 VA: 0x746034
-		// // RVA: 0xC0C4E8 Offset: 0xC0C4E8 VA: 0xC0C4E8
-		// private void set_Hud(IRhythmGameHUD value) { }
+		// public GameUIIntro intro { get; private set; } // 0xC
+		// public GameUIComplete complete { get; private set; } // 0x10
+		// public GameUIFailed failed { get; private set; } // 0x14
+		public IRhythmGameHUD Hud { get; private set; } // 0x18
 
 		// // RVA: 0xC0C4F0 Offset: 0xC0C4F0 VA: 0xC0C4F0
 		// public void Pause() { }
@@ -222,6 +178,9 @@ namespace XeApp.Game.RhythmGame
 		// private PopupSetting CreateMvModeEndConfirmPopupSetting() { }
 
 		// // RVA: 0xC11D80 Offset: 0xC11D80 VA: 0xC11D80
-		// public void .ctor() { }
+		public RhythmGameUIController()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }

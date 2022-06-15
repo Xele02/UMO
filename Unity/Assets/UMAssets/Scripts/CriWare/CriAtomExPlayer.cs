@@ -54,7 +54,10 @@ public class CriAtomExPlayer : CriDisposable
 	// public void remove_OnSequenceCallback(CriAtomExSequencer.EventCallback value) { }
 
 	// // RVA: 0x28A38E8 Offset: 0x28A38E8 VA: 0x28A38E8
-	// public void .ctor() { }
+	public CriAtomExPlayer()
+	{
+		UnityEngine.Debug.LogError("");
+	}
 
 	// // RVA: 0x28A3B08 Offset: 0x28A3B08 VA: 0x28A3B08
 	// public void .ctor(int maxPath, int maxPathStrings) { }

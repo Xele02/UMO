@@ -4,7 +4,7 @@ public class CriAtomExVoicePool : CriDisposable
 	// public const int StandardStreamingAsrVoicePoolId = 1;
 	// public const int StandardMemoryNsrVoicePoolId = 2;
 	// public const int StandardStreamingNsrVoicePoolId = 3;
-	// protected IntPtr _handle; // 0x18
+	// protected IntPtr _handle = IntPtr.Zero; // 0x18
 	// protected uint _identifier; // 0x1C
 	// protected int _numVoices; // 0x20
 	// protected int _maxChannels; // 0x24
@@ -72,7 +72,4 @@ public class CriAtomExVoicePool : CriDisposable
 
 	// // RVA: 0x28AE3E8 Offset: 0x28AE3E8 VA: 0x28AE3E8
 	// private static extern void criAtomExVoicePool_DetachDsp(IntPtr pool) { }
-
-	// // RVA: 0x28AB98C Offset: 0x28AB98C VA: 0x28AB98C
-	// protected void .ctor() { }
 }

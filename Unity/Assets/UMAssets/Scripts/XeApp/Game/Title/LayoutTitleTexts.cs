@@ -6,13 +6,10 @@ namespace XeApp.Game.Title
 {
 	public class LayoutTitleTexts : LayoutUGUIScriptBase
 	{
-		// Fields
 		[SerializeField]
 		private Text m_version; // 0x14
 		[SerializeField]
 		private Text m_id; // 0x18
-
-		// Methods
 
 		// // RVA: 0xE3B004 Offset: 0xE3B004 VA: 0xE3B004
 		public void SetStatus()
@@ -37,8 +34,5 @@ namespace XeApp.Game.Title
 
 		// // RVA: 0xE3B2DC Offset: 0xE3B2DC VA: 0xE3B2DC Slot: 5
 		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
-
-		// // RVA: 0xE3B2F4 Offset: 0xE3B2F4 VA: 0xE3B2F4
-		// public void .ctor() { }
 	}
 }

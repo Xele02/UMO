@@ -8,10 +8,8 @@ namespace XeApp.Game.Menu
 		// private PopupSnsInheritingContent m_snsInheritingContent; // 0x10
 		// private PopupWindowControl m_snsCoopControl; // 0x14
 		// private Action m_inheritingSuccess; // 0x18
-		// [CompilerGeneratedAttribute] // RVA: 0x670564 Offset: 0x670564 VA: 0x670564
-		// private bool <IsOpen>k__BackingField; // 0x1C
 
-		public bool IsOpen { get; set; }
+		public bool IsOpen { get; private set; } // 0x1C
 
 		// // RVA: 0x13DE1B8 Offset: 0x13DE1B8 VA: 0x13DE1B8
 		public static InheritingMenu Create(Transform parent)
@@ -22,14 +20,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x13DE2A4 Offset: 0x13DE2A4 VA: 0x13DE2A4
 		// public PopupWindowControl GetSnsCoopWindowControl() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6E586C Offset: 0x6E586C VA: 0x6E586C
-		// // RVA: 0x13DE2AC Offset: 0x13DE2AC VA: 0x13DE2AC
-		// public bool get_IsOpen() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6E587C Offset: 0x6E587C VA: 0x6E587C
-		// // RVA: 0x13DE2B4 Offset: 0x13DE2B4 VA: 0x13DE2B4
-		// private void set_IsOpen(bool value) { }
 
 		// // RVA: 0x13DE2BC Offset: 0x13DE2BC VA: 0x13DE2BC
 		public void Awake()
@@ -118,9 +108,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x13E0868 Offset: 0x13E0868 VA: 0x13E0868
 		// private void GotoTitle() { }
-
-		// // RVA: 0x13E0A04 Offset: 0x13E0A04 VA: 0x13E0A04
-		// public void .ctor() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6E5BD4 Offset: 0x6E5BD4 VA: 0x6E5BD4
 		// // RVA: 0x13E0A0C Offset: 0x13E0A0C VA: 0x13E0A0C

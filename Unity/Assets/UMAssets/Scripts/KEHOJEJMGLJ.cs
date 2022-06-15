@@ -168,5 +168,8 @@ public class KEHOJEJMGLJ
 	// private void BEINKAGIHJB() { }
 
 	// // RVA: 0xE8CBA0 Offset: 0xE8CBA0 VA: 0xE8CBA0
-	// private static void .cctor() { }
+	static KEHOJEJMGLJ()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 }

@@ -82,7 +82,4 @@ public class MMPBPOIFDAF : KLFDBFMNLBL
 
 	// // RVA: 0x1971B6C Offset: 0x1971B6C VA: 0x1971B6C Slot: 9
 	// public override bool NFKFOODCJJB() { }
-
-	// // RVA: 0x1971B74 Offset: 0x1971B74 VA: 0x1971B74
-	// private static void .cctor() { }
 }

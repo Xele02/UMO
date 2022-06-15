@@ -1,38 +1,18 @@
 
 public class NEKDCJKANAH : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
-	// public static string POFDDFCGEGP; // 0x0
+	// public static string POFDDFCGEGP = "_"; // 0x0
 	// private const int FLPFFEIKAKM = 200;
 	// private const int FLGCFMIACIN = 3;
 	// private const int KOLKCGMGLMN = 99999;
 	// private const int GCAHAAADBEH = 45684125;
 	// private const int GKIDNIKODDK = 52143548;
 	// private int AKLLPNDJFCN; // 0x24
-	// [CompilerGeneratedAttribute] // RVA: 0x667654 Offset: 0x667654 VA: 0x667654
-	// private List<NEKDCJKANAH.HKDNILFKCFC> <JAKKBNNDGOM>k__BackingField; // 0x28
 
-	// // Properties
-	// public bool EOHHFADHHBL { get; set; }
-	// public List<NEKDCJKANAH.HKDNILFKCFC> MMKAJBFBKNH { get; set; }
+	// public bool EOHHFADHHBL { get; set; } FPOHKGALENL 0x1AE66D8  HCFHGHNGPJK 0x1AE66F4
+	// public List<NEKDCJKANAH.HKDNILFKCFC> MMKAJBFBKNH { get; private set; } // 0x28 BLJEKMOEHCM FJAHCOJOEJO
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
-
-	// // RVA: 0x1AE66D8 Offset: 0x1AE66D8 VA: 0x1AE66D8
-	// public bool FPOHKGALENL() { }
-
-	// // RVA: 0x1AE66F4 Offset: 0x1AE66F4 VA: 0x1AE66F4
-	// public void HCFHGHNGPJK(bool NANNGLGOFKH) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BF790 Offset: 0x6BF790 VA: 0x6BF790
-	// // RVA: 0x1AE6710 Offset: 0x1AE6710 VA: 0x1AE6710
-	// public List<NEKDCJKANAH.HKDNILFKCFC> BLJEKMOEHCM() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BF7A0 Offset: 0x6BF7A0 VA: 0x6BF7A0
-	// // RVA: 0x1AE6718 Offset: 0x1AE6718 VA: 0x1AE6718
-	// private void FJAHCOJOEJO(List<NEKDCJKANAH.HKDNILFKCFC> NANNGLGOFKH) { }
 
 	// // RVA: 0x1AE6720 Offset: 0x1AE6720 VA: 0x1AE6720
 	// public int FKJMJELHGGG() { }
@@ -44,7 +24,10 @@ public class NEKDCJKANAH : KLFDBFMNLBL
 	// public void NDANPOKGFAN() { }
 
 	// // RVA: 0x1AE6A30 Offset: 0x1AE6A30 VA: 0x1AE6A30
-	// public void .ctor() { }
+	public NEKDCJKANAH()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x1AE6AD4 Offset: 0x1AE6AD4 VA: 0x1AE6AD4 Slot: 4
 	public override void KMBPACJNEOF()

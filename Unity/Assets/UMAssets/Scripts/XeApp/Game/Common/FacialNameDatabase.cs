@@ -5,11 +5,8 @@ namespace XeApp.Game.Common
 {
 	public class FacialNameDatabase
 	{
-		// Fields
-		private static List<string> facialNameList; // 0x0
-		public static bool isInitialized; // 0x4
-
-		// Methods
+		private static List<string> facialNameList = new List<string>(); // 0x0
+		public static bool isInitialized = false; // 0x4
 
 		// // RVA: 0x1C12F70 Offset: 0x1C12F70 VA: 0x1C12F70
 		// public static void Create(TextAsset textAsset) { }
@@ -29,11 +26,5 @@ namespace XeApp.Game.Common
 			UnityEngine.Debug.LogError("TODO");
 			return "";
 		}
-
-		// // RVA: 0x1C1372C Offset: 0x1C1372C VA: 0x1C1372C
-		// public void .ctor() { }
-
-		// // RVA: 0x1C13734 Offset: 0x1C13734 VA: 0x1C13734
-		// private static void .cctor() { }
 	}
 }

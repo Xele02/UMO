@@ -7,16 +7,13 @@ namespace XeApp.Game.Common
 		private AbsoluteLayout m_anim; // 0x14
 		private LayoutUGUIRuntime m_runtime; // 0x18
 
-		// Properties
-		public bool IsInitialized { get; }
-
-		// Methods
-
-		// // RVA: 0x1CDE8D8 Offset: 0x1CDE8D8 VA: 0x1CDE8D8
-		// public bool get_IsInitialized() { }
+		// public bool IsInitialized { get; } 0x1CDE8D8
 
 		// // RVA: 0x1CDE904 Offset: 0x1CDE904 VA: 0x1CDE904
-		// private void Start() { }
+		private void Start()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1CDE96C Offset: 0x1CDE96C VA: 0x1CDE96C Slot: 5
 		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
@@ -33,8 +30,5 @@ namespace XeApp.Game.Common
 		{
 			UnityEngine.Debug.LogError("TODO");
 		}
-
-		// // RVA: 0x1CDEC30 Offset: 0x1CDEC30 VA: 0x1CDEC30
-		// public void .ctor() { }
 	}
 }

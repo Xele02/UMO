@@ -92,8 +92,5 @@ namespace XeApp.Native
             UnityEngine.Debug.LogWarning("TODO xedec_get_abi_type");
             return 0;
         }
-
-        // // RVA: 0x2F94E14 Offset: 0x2F94E14 VA: 0x2F94E14
-        // private static void .cctor() { }
     }
 }

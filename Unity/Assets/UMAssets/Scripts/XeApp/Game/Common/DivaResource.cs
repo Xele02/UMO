@@ -150,11 +150,31 @@ namespace XeApp.Game.Common
 			Manual = 1
 		}
 		
-		private static string[] divaCommonFacialAnimName; // 0x0
-		public static readonly int MAX_REACTION; // 0x4
-		public static readonly int MAX_TALK; // 0x8
-		public static readonly int MAX_PRESENT; // 0xC
-		public static readonly int MAX_SIMPLE_TALK; // 0x10
+		private static string[] divaCommonFacialAnimName = new string[18]
+			{
+				"face_exp_normal",
+				"face_exp_joy",
+				"face_exp_laugh",
+				"face_exp_smile",
+				"face_eye_close",
+				"mouth_exp_normal",
+				"mouth_exp_joy",
+				"mouth_exp_laugh",
+				"mouth_exp_smile",
+				"mouth_exp_sorrow",
+				"mouth_lip_A",
+				"mouth_lip_I",
+				"mouth_lip_U",
+				"mouth_lip_E",
+				"mouth_lip_O",
+				"mouth_lip_N",
+				"mouth_lip_bigA",
+				"mouth_lip_bigO"
+			}; // 0x0
+		public static readonly int MAX_REACTION = 5; // 0x4
+		public static readonly int MAX_TALK = 2; // 0x8
+		public static readonly int MAX_PRESENT = 1; // 0xC
+		public static readonly int MAX_SIMPLE_TALK = 1; // 0x10
 		public DivaParam divaParam; // 0xC
 		public GameObject divaPrefab; // 0x10
 		public GameObject mikePrefab; // 0x14
@@ -174,8 +194,8 @@ namespace XeApp.Game.Common
 		public LoginMotionOverrideResource loginMotionOverride; // 0xC0
 		public UnlockMotionOverrideResource unlockMotionOverride; // 0xD0
 		public UnlockCostumeMotionOverrideResource unlockCostumeMotionOverride; // 0xF4
-		public List<FacialOverrideResouece> commonFacialResource; // 0x118
-		public List<FacialOverrideResouece> specialFacialResource; // 0x11C
+		public List<FacialOverrideResouece> commonFacialResource = new List<FacialOverrideResouece>(); // 0x118
+		public List<FacialOverrideResouece> specialFacialResource = new List<FacialOverrideResouece>(); // 0x11C
 		public AnimationClip mikeStandAnimationOverrideClip; // 0x120
 		public BoneSpringResource boneSpringResource; // 0x124
 		public SetupFlags setupFlags; // 0x128
@@ -183,9 +203,9 @@ namespace XeApp.Game.Common
 		public List<GameObject> subPrefabEffect; // 0x130
 		public GameObject subPrefabWind; // 0x134
 		public BoneSpringResource subBoneSpringResource; // 0x138
-		protected int m_loadedDivaId; // 0x140
-		protected int m_loadedModelId; // 0x144
-		protected int m_loadedColorId; // 0x148
+		protected int m_loadedDivaId = -1; // 0x140
+		protected int m_loadedModelId = -1; // 0x144
+		protected int m_loadedColorId = -1; // 0x148
 		private bool isLoadedSimpleResource; // 0x156
 
 		protected static string[] DivaCommonFacialAnimNames { get { return divaCommonFacialAnimName; } } // get_DivaCommonFacialAnimNames 0x1BF7F5C
@@ -1065,45 +1085,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0x1BFA5BC Offset: 0x1BFA5BC VA: 0x1BFA5BC Slot: 4
 		// public virtual void ChangeCostumeTexture() { }
-
-		// // RVA: 0x1BFA5C0 Offset: 0x1BFA5C0 VA: 0x1BFA5C0
-		public DivaResource()
-		{
-			commonFacialResource = new List<FacialOverrideResouece>();
-			specialFacialResource = new List<FacialOverrideResouece>();
-			m_loadedDivaId = -1;
-			m_loadedModelId = -1;
-			m_loadedColorId = -1;
-		}
-
-		// // RVA: 0x1BFA674 Offset: 0x1BFA674 VA: 0x1BFA674
-		static DivaResource()
-		{
-			divaCommonFacialAnimName = new string[18]
-			{
-				"face_exp_normal",
-				"face_exp_joy",
-				"face_exp_laugh",
-				"face_exp_smile",
-				"face_eye_close",
-				"mouth_exp_normal",
-				"mouth_exp_joy",
-				"mouth_exp_laugh",
-				"mouth_exp_smile",
-				"mouth_exp_sorrow",
-				"mouth_lip_A",
-				"mouth_lip_I",
-				"mouth_lip_U",
-				"mouth_lip_E",
-				"mouth_lip_O",
-				"mouth_lip_N",
-				"mouth_lip_bigA",
-				"mouth_lip_bigO"
-			};
-			MAX_REACTION = 5;
-			MAX_TALK = 2;
-			MAX_PRESENT = 1;
-			MAX_SIMPLE_TALK = 1;
-		}
 	}
 }

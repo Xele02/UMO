@@ -13,7 +13,7 @@ namespace XeApp.Game.Common
 		}
 
 		private AbsoluteLayout m_layoutType; // 0x14
-		private AbsoluteLayout[] m_layoutBar; // 0x18
+		private AbsoluteLayout[] m_layoutBar = new AbsoluteLayout[2]; // 0x18
 		private const float DELAY_VALUE = 0.7f;
 		private float m_ratio; // 0x1C
 		[SerializeField] // RVA: 0x687930 Offset: 0x687930 VA: 0x687930
@@ -21,20 +21,23 @@ namespace XeApp.Game.Common
 		private UILoadProgress.Type m_type; // 0x24
 		private Action m_updater; // 0x28
 		private Transform m_parent; // 0x2C
-		private WaitForEndOfFrame m_frameYilder; // 0x30
+		private WaitForEndOfFrame m_frameYilder = new WaitForEndOfFrame(); // 0x30
 		private bool m_isReady; // 0x34
 		private Transform m_oldParent; // 0x38
 
-		public bool IsReady { get; }
-
-		// // RVA: 0x1CDDEB8 Offset: 0x1CDDEB8 VA: 0x1CDDEB8
-		// public bool get_IsReady() { }
+		// public bool IsReady { get; } 0x1CDDEB8
 
 		// // RVA: 0x1CDDEC0 Offset: 0x1CDDEC0 VA: 0x1CDDEC0
-		// private void Start() { }
+		private void Start()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1CDDEC4 Offset: 0x1CDDEC4 VA: 0x1CDDEC4
-		// private void Update() { }
+		private void Update()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1CDDED8 Offset: 0x1CDDED8 VA: 0x1CDDED8
 		// private void UpdateIdle() { }
@@ -72,8 +75,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0x1CDE298 Offset: 0x1CDE298 VA: 0x1CDE298 Slot: 5
 		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
-
-		// // RVA: 0x1CDE5E8 Offset: 0x1CDE5E8 VA: 0x1CDE5E8
-		// public void .ctor() { }
 	}
 }

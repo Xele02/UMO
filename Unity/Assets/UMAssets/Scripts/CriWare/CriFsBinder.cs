@@ -16,7 +16,7 @@ public class CriFsBinder : CriDisposable
 	
 	private IntPtr handle; // 0x18
 
-	public IntPtr nativeHandle { get; }
+	// public IntPtr nativeHandle { get; }
 
 	// // RVA: 0x2944550 Offset: 0x2944550 VA: 0x2944550
 	public CriFsBinder()

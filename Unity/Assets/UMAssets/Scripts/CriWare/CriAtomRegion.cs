@@ -2,18 +2,7 @@
 // [DisallowMultipleComponent] // RVA: 0x632740 Offset: 0x632740 VA: 0x632740
 public class CriAtomRegion : CriMonoBehaviour
 {
-	// [CompilerGeneratedAttribute] // RVA: 0x63468C Offset: 0x63468C VA: 0x63468C
-	// private CriAtomEx3dRegion <region3dHn>k__BackingField; // 0x1C
-
-	// public CriAtomEx3dRegion region3dHn { get; set; }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x635894 Offset: 0x635894 VA: 0x635894
-	// // RVA: 0x28AEE40 Offset: 0x28AEE40 VA: 0x28AEE40
-	// public CriAtomEx3dRegion get_region3dHn() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6358A4 Offset: 0x6358A4 VA: 0x6358A4
-	// // RVA: 0x28B4EF0 Offset: 0x28B4EF0 VA: 0x28B4EF0
-	// protected void set_region3dHn(CriAtomEx3dRegion value) { }
+	// public CriAtomEx3dRegion region3dHn { get; protected set; } // 0x1C
 
 	// // RVA: 0x28B4EF8 Offset: 0x28B4EF8 VA: 0x28B4EF8
 	private void Awake()
@@ -53,7 +42,4 @@ public class CriAtomRegion : CriMonoBehaviour
     {
         UnityEngine.Debug.LogError("TODO");
     }
-
-	// // RVA: 0x28B5138 Offset: 0x28B5138 VA: 0x28B5138
-	// public void .ctor() { }
 }

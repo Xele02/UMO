@@ -1,19 +1,18 @@
 
 public class ALIPBIMCAPN : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// public const int MJFKKHOFMBO = 100;
 	// public const int ICHFGGBPCBJ = 6;
-	// public List<ALIPBIMCAPN.GLNFOMDKJJH> FBCJICEPLED; // 0x24
+	// public List<ALIPBIMCAPN.GLNFOMDKJJH> FBCJICEPLED = new List<ALIPBIMCAPN.GLNFOMDKJJH>(); // 0x24
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
 
-	// // Methods
-
 	// // RVA: 0xCD9EFC Offset: 0xCD9EFC VA: 0xCD9EFC
-	// public void .ctor() { }
+	public ALIPBIMCAPN()
+	{
+		LHPDDGIJKNB();
+	}
 
 	// // RVA: 0xCD9F98 Offset: 0xCD9F98 VA: 0xCD9F98 Slot: 4
 	public override void KMBPACJNEOF()

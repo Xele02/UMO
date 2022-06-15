@@ -4,12 +4,9 @@ namespace XeApp.Game.RhythmGame.UI
 {
     public class UiDivaTexture : UiReplaceTexture
     {
-        // Fields
         private Texture2D mainTexture; // 0x10
         private Texture2D maskTexture; // 0x14
         private Texture2D bgTexture; // 0x18
-
-        // Methods
 
         // [IteratorStateMachineAttribute] // RVA: 0x7477DC Offset: 0x7477DC VA: 0x7477DC
         // // RVA: 0x1567E34 Offset: 0x1567E34 VA: 0x1567E34
@@ -26,7 +23,10 @@ namespace XeApp.Game.RhythmGame.UI
         // public override void OnDestory() { }
 
         // // RVA: 0x156810C Offset: 0x156810C VA: 0x156810C
-        // public void .ctor() { }
+        public UiDivaTexture()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
         // [CompilerGeneratedAttribute] // RVA: 0x7478CC Offset: 0x7478CC VA: 0x7478CC
         // // RVA: 0x15681A4 Offset: 0x15681A4 VA: 0x15681A4

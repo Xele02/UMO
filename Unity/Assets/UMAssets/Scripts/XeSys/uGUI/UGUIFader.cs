@@ -7,21 +7,18 @@ namespace XeSys.uGUI
 	[RequireComponent(typeof(Image))]
 	public class UGUIFader : MonoBehaviour
 	{
-		public Color startColor; // 0xC
-		public Color endColor; // 0x1C
-		public Color currentColor; // 0x2C
+		public Color startColor = Color.black; // 0xC
+		public Color endColor = Color.black; // 0x1C
+		public Color currentColor = Color.black; // 0x2C
 		public Action onFadeEndAction; // 0x3C
 		private float mCurrentTime; // 0x40
 		private float mTargetTime; // 0x44
 		private Action mUpdate; // 0x48
 		private Image mImage; // 0x4C
 
-		// Properties
 		public float currentTime { get; }
 		public float targetTime { get; }
 		public bool isFading { get; }
-
-		// Methods
 
 		// // RVA: 0x274AEB4 Offset: 0x274AEB4 VA: 0x274AEB4
 		// public Image GetImage() { }
@@ -61,8 +58,5 @@ namespace XeSys.uGUI
 
 		// // RVA: 0x274B254 Offset: 0x274B254 VA: 0x274B254
 		// public void Fade(float time, Color start, Color end) { }
-
-		// // RVA: 0x274B4BC Offset: 0x274B4BC VA: 0x274B4BC
-		// public void .ctor() { }
 	}
 }

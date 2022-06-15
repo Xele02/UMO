@@ -1,10 +1,10 @@
 // [AddComponentMenu] // RVA: 0x632684 Offset: 0x632684 VA: 0x632684
 public class CriAtom : CriMonoBehaviour
 {
-	public string acfFile; // 0x1C
+	public string acfFile = ""; // 0x1C
 	// private bool acfIsLoading; // 0x20
-	public CriAtomCueSheet[] cueSheets; // 0x24
-	public string dspBusSetting; // 0x28
+	public CriAtomCueSheet[] cueSheets = new CriAtomCueSheet[0](); // 0x24
+	public string dspBusSetting = ""; // 0x28
 	public bool dontDestroyOnLoad; // 0x2C
 	// private static CriAtomExSequencer.EventCallback eventUserCallback; // 0x0
 	// private static CriAtomExSequencer.EventCbFunc eventUserCbFunc; // 0x4
@@ -225,10 +225,4 @@ public class CriAtom : CriMonoBehaviour
 
 	// // RVA: 0x287AEA8 Offset: 0x287AEA8 VA: 0x287AEA8
 	// private static void UnregisterCueLinkCallbackChain(CriAtomEx.CueLinkCbFunc func) { }
-
-	// // RVA: 0x287E8DC Offset: 0x287E8DC VA: 0x287E8DC
-	// public void .ctor() { }
-
-	// // RVA: 0x287E96C Offset: 0x287E96C VA: 0x287E96C
-	// private static void .cctor() { }
 }

@@ -1,21 +1,20 @@
 
 public class AHHPBMBBCFM : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 1;
 	// public const int FIKANMEAEIF = 5;
 	// public const int CAHJOIDBJDJ = 5;
-	// public List<DAJBODHMLAB.MMLACIFMNBN> JBJHCJFOICD; // 0x24
+	// public List<DAJBODHMLAB.MMLACIFMNBN> JBJHCJFOICD = new List<DAJBODHMLAB.MMLACIFMNBN>(); // 0x24
 	// private int ENOBDCFHELD; // 0x28
 	// private int FCEJCHGLFGN; // 0x2C
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
 
-	// // Methods
-
 	// // RVA: 0x15C6EF8 Offset: 0x15C6EF8 VA: 0x15C6EF8
-	// public void .ctor() { }
+	public AHHPBMBBCFM()
+	{
+		LHPDDGIJKNB();
+	}
 
 	// // RVA: 0x15C6F90 Offset: 0x15C6F90 VA: 0x15C6F90 Slot: 4
 	public override void KMBPACJNEOF()

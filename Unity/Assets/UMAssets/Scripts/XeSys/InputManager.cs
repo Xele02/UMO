@@ -137,7 +137,10 @@ namespace XeSys
 		// public float get_PinchDelta() { }
 
 		// // RVA: 0x1EF603C Offset: 0x1EF603C VA: 0x1EF603C
-		// public void .ctor() { }
+		public InputManager()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1EF61D4 Offset: 0x1EF61D4 VA: 0x1EF61D4
 		// private void Awake() { }
@@ -201,8 +204,5 @@ namespace XeSys
 
 		// // RVA: 0x1EF793C Offset: 0x1EF793C VA: 0x1EF793C
 		// public void Debug() { }
-
-		// // RVA: 0x1EF7944 Offset: 0x1EF7944 VA: 0x1EF7944
-		// private static void .cctor() { }
 	}
 }

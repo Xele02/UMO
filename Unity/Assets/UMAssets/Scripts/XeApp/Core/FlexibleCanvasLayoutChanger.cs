@@ -8,7 +8,6 @@ namespace XeApp.Core
 	[RequireComponent(typeof(ContentSizeFitter))]
 	public class FlexibleCanvasLayoutChanger : MonoBehaviour
 	{
-		// Fields
 		private bool isExpand; // 0xC
 		private RectTransform rect; // 0x10
 		private RectTransform childRootRect; // 0x14
@@ -17,16 +16,23 @@ namespace XeApp.Core
 		private ContentSizeFitter contentSizeFitter; // 0x20
 		private CanvasScaler.ScreenMatchMode defaultMatchMode; // 0x24
 
-		// Methods
-
 		// // RVA: 0x1D6FE38 Offset: 0x1D6FE38 VA: 0x1D6FE38
-		// private void Start() { }
+		private void Start()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1D702EC Offset: 0x1D702EC VA: 0x1D702EC
-		// private void Update() { }
+		private void Update()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1D702F0 Offset: 0x1D702F0 VA: 0x1D702F0
-		// private void LateUpdate() { }
+		private void LateUpdate()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1D70230 Offset: 0x1D70230 VA: 0x1D70230
 		// public void CanvasScalerModeCheck() { }
@@ -39,8 +45,5 @@ namespace XeApp.Core
 
 		// // RVA: 0x1D70384 Offset: 0x1D70384 VA: 0x1D70384
 		// private void ToDefault() { }
-
-		// // RVA: 0x1D704A8 Offset: 0x1D704A8 VA: 0x1D704A8
-		// public void .ctor() { }
 	}
 }

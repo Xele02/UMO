@@ -32,7 +32,10 @@ public class AOJGDNFAIJL
         public bool DNLCLAOPFPF { get; private set; } // 0x23 JPEAMBLKJEF KINDNNEJNOL GOIIKFBHFLD
 
         // // RVA: 0xD59A94 Offset: 0xD59A94 VA: 0xD59A94
-        // public void .ctor(int DLAEJOBELBH, bool HJNAMIDGAJB) { }
+        public AMIECPBIALP(int DLAEJOBELBH, bool HJNAMIDGAJB)
+		{
+			OBKGEDCKHHE(DLAEJOBELBH, HJNAMIDGAJB);
+		}
 
         // // RVA: 0xD59B44 Offset: 0xD59B44 VA: 0xD59B44
         public void OBKGEDCKHHE(int DLAEJOBELBH, bool HJNAMIDGAJB)

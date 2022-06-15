@@ -32,9 +32,7 @@ namespace XeApp.Game.Common
 		}
 
 		private static readonly string[] categoryPrefix; // 0x0
-		private bool m_enable; // 0x20
-
-		// Methods
+		private bool m_enable = true; // 0x20
 
 		// // RVA: 0x1C09D7C Offset: 0x1C09D7C VA: 0x1C09D7C
 		// public void SetEnable(bool a_enable) { }
@@ -66,10 +64,10 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1C0A290 Offset: 0x1C0A290 VA: 0x1C0A290
 		// public void Stop() { }
 
-		// // RVA: 0x1C0A2D0 Offset: 0x1C0A2D0 VA: 0x1C0A2D0
-		// public void .ctor() { }
-
 		// // RVA: 0x1C0A2E0 Offset: 0x1C0A2E0 VA: 0x1C0A2E0
-		// private static void .cctor() { }
+		static DivaVoicePlayer()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }

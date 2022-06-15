@@ -1,20 +1,19 @@
 
 public class MKNIBACMCDO : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// public const int FBBENLHJFKO = 5;
 	// private int FBGGEFFJJHB; // 0x24
 	// public JNMFKOHFAFB.ONCMONJIPCD[] LDIINNKMLLO; // 0x28
 	// public int NBIIKNFOLLK; // 0x2C
 
-	// // Properties
 	// public int HODDNKENKHD { get; set; }
 
-	// // Methods
-
 	// // RVA: 0x195AA5C Offset: 0x195AA5C VA: 0x195AA5C
-	// public void .ctor() { }
+	public MKNIBACMCDO()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x195AB08 Offset: 0x195AB08 VA: 0x195AB08
 	// public int EMLKHGADCIE() { }

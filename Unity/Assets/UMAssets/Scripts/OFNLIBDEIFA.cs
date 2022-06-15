@@ -1,7 +1,6 @@
 
 public class OFNLIBDEIFA : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;
 	// public const int ICHFGGBPCBJ = 3;
@@ -11,15 +10,15 @@ public class OFNLIBDEIFA : KLFDBFMNLBL
 	// public const long EGHFCEBIGEE = 99999999;
 	// public const int KKBHHBGCNJO = 5;
 	// public const int DOONPLKIOGD = 10;
-	// public List<OFNLIBDEIFA.GCCDGBBDICM> FBCJICEPLED; // 0x24
+	// public List<OFNLIBDEIFA.GCCDGBBDICM> FBCJICEPLED = new List<OFNLIBDEIFA.GCCDGBBDICM>(); // 0x24
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
 
-	// // Methods
-
 	// // RVA: 0x1DD23AC Offset: 0x1DD23AC VA: 0x1DD23AC
-	// public void .ctor() { }
+	public OFNLIBDEIFA()
+	{
+		LHPDDGIJKNB();
+	}
 
 	// // RVA: 0x1DD2448 Offset: 0x1DD2448 VA: 0x1DD2448 Slot: 4
 	public override void KMBPACJNEOF()

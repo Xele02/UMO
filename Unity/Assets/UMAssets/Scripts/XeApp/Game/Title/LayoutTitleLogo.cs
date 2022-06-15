@@ -15,40 +15,10 @@ namespace XeApp.Game.Title
 		private float[] m_waitArray; // 0x24
 		private int m_visibleIndex; // 0x28
 		private Coroutine m_logoCoroutine; // 0x2C
-		// [CompilerGeneratedAttribute] // RVA: 0x6655E4 Offset: 0x6655E4 VA: 0x6655E4
-		// private bool <IsOpen>k__BackingField; // 0x30
-		// [CompilerGeneratedAttribute] // RVA: 0x6655F4 Offset: 0x6655F4 VA: 0x6655F4
-		// private bool <IsClose>k__BackingField; // 0x31
-		// [CompilerGeneratedAttribute] // RVA: 0x665604 Offset: 0x665604 VA: 0x665604
-		// private bool <IsSkip>k__BackingField; // 0x32
 
-		public bool IsOpen { get; set; }
-		public bool IsClose { get; set; }
-		public bool IsSkip { get; set; }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B3990 Offset: 0x6B3990 VA: 0x6B3990
-		// // RVA: 0xE39A30 Offset: 0xE39A30 VA: 0xE39A30
-		// public bool get_IsOpen() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B39A0 Offset: 0x6B39A0 VA: 0x6B39A0
-		// // RVA: 0xE39A38 Offset: 0xE39A38 VA: 0xE39A38
-		// private void set_IsOpen(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B39B0 Offset: 0x6B39B0 VA: 0x6B39B0
-		// // RVA: 0xE39A40 Offset: 0xE39A40 VA: 0xE39A40
-		// public bool get_IsClose() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B39C0 Offset: 0x6B39C0 VA: 0x6B39C0
-		// // RVA: 0xE39A48 Offset: 0xE39A48 VA: 0xE39A48
-		// private void set_IsClose(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B39D0 Offset: 0x6B39D0 VA: 0x6B39D0
-		// // RVA: 0xE39A50 Offset: 0xE39A50 VA: 0xE39A50
-		// public bool get_IsSkip() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B39E0 Offset: 0x6B39E0 VA: 0x6B39E0
-		// // RVA: 0xE39A58 Offset: 0xE39A58 VA: 0xE39A58
-		// private void set_IsSkip(bool value) { }
+		public bool IsOpen { get; private set; } // 0x30
+		public bool IsClose { get; private set; } // 0x31
+		public bool IsSkip { get; private set; } // 0x32
 
 		// // RVA: 0xE39A60 Offset: 0xE39A60 VA: 0xE39A60
 		public void SetStatus()
@@ -88,6 +58,9 @@ namespace XeApp.Game.Title
 		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
 
 		// // RVA: 0xE3A004 Offset: 0xE3A004 VA: 0xE3A004
-		// public void .ctor() { }
+		public LayoutTitleLogo()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }
