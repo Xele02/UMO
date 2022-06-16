@@ -661,7 +661,7 @@ public class OKGLGHCBCJP_Database
 			}
 			if(valid)
 			{
-				res.Add(OKGLGHCBCJP_Database.BEOKNKGHFFE()i);
+				res.Add((OKGLGHCBCJP_Database.BEOKNKGHFFE)i);
 			}
 		}
 		return res;
@@ -677,26 +677,26 @@ public class OKGLGHCBCJP_Database
 	}
 
 	// // RVA: 0x14918F8 Offset: 0x14918F8 VA: 0x14918F8
-	public void KHEKNNFCAOI(OKGLGHCBCJP.BEOKNKGHFFE[] INBBCDGDMLC)
+	public void KHEKNNFCAOI(OKGLGHCBCJP_Database.BEOKNKGHFFE[] INBBCDGDMLC)
 	{
 		MGJKEJHEBPO = new List<DIHHCBACKGG>();
 		// EFMAIKAHFEK = null;
 		// OILKBADFBOK = null;
 		// IELDDHJMFKN = null;
 		// FPOIPGFFAPE = null;
-		// JEMMMJEJLNL = null;
+		JEMMMJEJLNL = null;
 		// NBKNAAPBFFL = null;
 		// NGCCGLLLDIB = null;
 		// ALFKMKICDPP = null;
 		// GOGFKAECFIP = null;
-		// MFPNGNMFEAL = null;
-		// EPAHOAKPAJJ = null;
+		MFPNGNMFEAL = null;
+		EPAHOAKPAJJ = null;
 		// CIGBHCHOPEO = null;
 		// PJGDIJPCHAK = null;
-		// MJALLIOHKEJ = null;
+		MJALLIOHKEJ = null;
 		// BGKKOOGPEFD = null;
 		// GAPONCJOKAC = null;
-		// MGFMPKLLGHE = null;
+		MGFMPKLLGHE = null;
 		// OAINIGNLJKC = null;
 		// HGLIIPFLMFB = null;
 		// LBNBNAFGMDE = null;
@@ -714,7 +714,7 @@ public class OKGLGHCBCJP_Database
 		// FMPEMFPLPDA = null;
 		// OINLLHOMEAK = null;
 		// GKMAHADAAFI = null;
-		// HNMMJINNHII = null;
+		HNMMJINNHII = null;
 		// NKDGLGCAPEI = null;
 		// LOJAMHAADBF = null;
 		// PFEKKPABPKL = null;
@@ -725,23 +725,23 @@ public class OKGLGHCBCJP_Database
 		// HDGOHBFKKDM = null;
 		// IHPFCIJKFIC = null;
 		// ICICKEBMEFA = null;
-		// MEGJDBJCEOC = null;
-		// LPPGENBEECK_musicMaster = null;
+		MEGJDBJCEOC = null;
+		IBPAFKKEKNK = null;
 		// NEGKEEAFKHP = null;
 		// LBCMJGOOHLJ = null;
 		// OBGGLAKOHKP = null;
 		// LPFEHNJEJFB = null;
 		// MHGPMMIDKMM = null;
 		// KKIMFMKOHFH = null;
-		// ECNHDEHADGL = null;
+		ECNHDEHADGL = null;
 		// IFLGCDGOLOP = null;
 		// FOFADHAENKC = null;
 		// OMGFKMANMAB = null;
 		// OOEPHOEFBNL = null;
 		// OHCIFMDPAPD = null;
-		// GDEKCOOBLMA = null;
+		GDEKCOOBLMA = null;
 		// KNMFNBEOGON = null;
-		// ACPALDEELCL = null;
+		ACPALDEELCL = null;
 		// NMJEDFNPIPL = null;
 		// KCCDBKIOLDJ = null;
 		// FBGKBGNIHGC = null;
@@ -760,92 +760,92 @@ public class OKGLGHCBCJP_Database
 			{
 				NDLAAACJOLP.Add(INBBCDGDMLC[i]);
 				MGJKEJHEBPO.Add(item);
-				switch(INBBCDGDMLC[i])
+				switch((int)INBBCDGDMLC[i])
 				{
-					case 0: EFMAIKAHFEK = item; break;
-					case 1: OILKBADFBOK = item; break;
-					case 2: IELDDHJMFKN = item; break;
-					case 3: FPOIPGFFAPE = item; break;
-					case 4: JEMMMJEJLNL = item; break;
-					case 5: NBKNAAPBFFL = item; break;
-					case 6: NGCCGLLLDIB = item; break;
-					case 7: ALFKMKICDPP = item; break;
-					case 8: GOGFKAECFIP = item; break;
-					case 9: MFPNGNMFEAL = item; break;
-					case 10: EPAHOAKPAJJ = item; break;
-					case 11: CIGBHCHOPEO = item; break;
-					case 12: PJGDIJPCHAK = item; break;
-					case 13: MJALLIOHKEJ = item; break;
-					case 14: BGKKOOGPEFD = item; break;
-					case 15: GAPONCJOKAC = item; break;
-					case 16: MGFMPKLLGHE = item; break;
-					case 17: OAINIGNLJKC = item; break;
-					case 18: HGLIIPFLMFB = item; break;
-					case 19: LBNBNAFGMDE = item; break;
-					case 20: OPFBEAJJMJB = item; break;
-					case 21: KOPOGNLKAEN = item; break;
-					case 22: MOLEPBNJAGE = item; break;
-					case 23: NEGGMILDEEF = item; break;
-					case 45: NKOKFIMNCJM = item; break;
-					case 49: EFHMLHKODOD = item; break;
-					case 50: DHOFNBMPBAG = item; break;
-					case 63: ONOJBMDKBLE = item; break;
-					case 74: KHPOJKHKLEM = item; break;
-					case 75: CLLPBOPLICM = item; break;
-					case 76: NBEMLGADAGK = item; break;
-					case 77: FMPEMFPLPDA = item; break;
-					case 78: OINLLHOMEAK = item; break;
-					case 79: GKMAHADAAFI = item; break;
-					case 80: HNMMJINNHII = item; break;
-					case 81: NKDGLGCAPEI = item; break;
-					case 82: LOJAMHAADBF = item; break;
-					case 83: PFEKKPABPKL = item; break;
-					case 84: NFDHMGGLEPN = item; break;
-					case 85: MGIMEEEALPK = item; break;
-					case 86: MLGEHCJPAFB = item; break;
-					case 87: KDIALKDKBGE = item; break;
-					case 88: HDGOHBFKKDM = item; break;
-					case 89: IHPFCIJKFIC = item; break;
-					case 90: ICICKEBMEFA = item; break;
-					case 91: MEGJDBJCEOC = item; break;
-					case 92: LPPGENBEECK_musicMaster = item; break;
-					case 93: NEGKEEAFKHP = item; break;
-					case 94: LBCMJGOOHLJ = item; break;
-					case 95: OBGGLAKOHKP = item; break;
-					case 96: LPFEHNJEJFB = item; break;
-					case 97: MHGPMMIDKMM = item; break;
-					case 98: KKIMFMKOHFH = item; break;
-					case 99: ECNHDEHADGL = item; break;
-					case 100: IFLGCDGOLOP = item; break;
-					case 101: FOFADHAENKC = item; break;
-					case 102: OMGFKMANMAB = item; break;
-					case 103: OOEPHOEFBNL = item; break;
-					case 104: OHCIFMDPAPD = item; break;
-					case 105: GDEKCOOBLMA = item; break;
-					case 106: KNMFNBEOGON = item; break;
-					case 107: ACPALDEELCL = item; break;
-					case 108: LINHIDCNAMG = item; break;
-					case 109: KIBMNCOLJNC = item; break;
-					case 110: NMJEDFNPIPL = item; break;
-					case 111: FBGKBGNIHGC = item; break;
-					case 112: DIAEPFPGPEP = item; break;
-					case 113: PEOALFEGNDH = item; break;
-					case 114: KCCDBKIOLDJ = item; break;
-					case 115: DCNNPEDOGOG = item; break;
-					case 116: MBAGKLJDKMH = item; break;
-					default:break;
+					// case 0: EFMAIKAHFEK = item; break;
+					// case 1: OILKBADFBOK = item; break;
+					// case 2: IELDDHJMFKN = item; break;
+					// case 3: FPOIPGFFAPE = item; break;
+					case 4: JEMMMJEJLNL = (KOGHKIODHPA)item; break;
+					// case 5: NBKNAAPBFFL = item; break;
+					// case 6: NGCCGLLLDIB = item; break;
+					// case 7: ALFKMKICDPP = item; break;
+					// case 8: GOGFKAECFIP = item; break;
+					case 9: MFPNGNMFEAL = (LCLCCHLDNHJ)item; break;
+					case 10: EPAHOAKPAJJ = (NDBFKHKMMCE)item; break;
+					// case 11: CIGBHCHOPEO = item; break;
+					// case 12: PJGDIJPCHAK = item; break;
+					case 13: MJALLIOHKEJ = (BBLECJKKKLA)item; break;
+					// case 14: BGKKOOGPEFD = item; break;
+					// case 15: GAPONCJOKAC = item; break;
+					case 16: MGFMPKLLGHE = (HPBPIOPPDCB)item; break;
+					// case 17: OAINIGNLJKC = item; break;
+					// case 18: HGLIIPFLMFB = item; break;
+					// case 19: LBNBNAFGMDE = item; break;
+					// case 20: OPFBEAJJMJB = item; break;
+					// case 21: KOPOGNLKAEN = item; break;
+					// case 22: MOLEPBNJAGE = item; break;
+					// case 23: NEGGMILDEEF = item; break;
+					// case 45: NKOKFIMNCJM = item; break;
+					// case 49: EFHMLHKODOD = item; break;
+					// case 50: DHOFNBMPBAG = item; break;
+					// case 63: ONOJBMDKBLE = item; break;
+					// case 74: KHPOJKHKLEM = item; break;
+					// case 75: CLLPBOPLICM = item; break;
+					// case 76: NBEMLGADAGK = item; break;
+					// case 77: FMPEMFPLPDA = item; break;
+					// case 78: OINLLHOMEAK = item; break;
+					// case 79: GKMAHADAAFI = item; break;
+					case 80: HNMMJINNHII = (LDDDBPNGGIN)item; break;
+					// case 81: NKDGLGCAPEI = item; break;
+					// case 82: LOJAMHAADBF = item; break;
+					// case 83: PFEKKPABPKL = item; break;
+					// case 84: NFDHMGGLEPN = item; break;
+					// case 85: MGIMEEEALPK = item; break;
+					// case 86: MLGEHCJPAFB = item; break;
+					// case 87: KDIALKDKBGE = item; break;
+					// case 88: HDGOHBFKKDM = item; break;
+					// case 89: IHPFCIJKFIC = item; break;
+					// case 90: ICICKEBMEFA = item; break;
+					case 91: MEGJDBJCEOC = (KBCCGHLCFNO)item; break;
+					case 92: IBPAFKKEKNK = (LPPGENBEECK_musicMaster)item; break;
+					// case 93: NEGKEEAFKHP = item; break;
+					// case 94: LBCMJGOOHLJ = item; break;
+					// case 95: OBGGLAKOHKP = item; break;
+					// case 96: LPFEHNJEJFB = item; break;
+					// case 97: MHGPMMIDKMM = item; break;
+					// case 98: KKIMFMKOHFH = item; break;
+					case 99: ECNHDEHADGL = (MLIBEPGADJH)item; break;
+					// case 100: IFLGCDGOLOP = item; break;
+					// case 101: FOFADHAENKC = item; break;
+					// case 102: OMGFKMANMAB = item; break;
+					// case 103: OOEPHOEFBNL = item; break;
+					// case 104: OHCIFMDPAPD = item; break;
+					case 105: GDEKCOOBLMA = (PEBFNABDJDI)item; break;
+					// case 106: KNMFNBEOGON = item; break;
+					case 107: ACPALDEELCL = (JOHKNBEFHHP)item; break;
+					// case 108: LINHIDCNAMG = item; break;
+					// case 109: KIBMNCOLJNC = item; break;
+					// case 110: NMJEDFNPIPL = item; break;
+					// case 111: FBGKBGNIHGC = item; break;
+					// case 112: DIAEPFPGPEP = item; break;
+					// case 113: PEOALFEGNDH = item; break;
+					// case 114: KCCDBKIOLDJ = item; break;
+					// case 115: DCNNPEDOGOG = item; break;
+					// case 116: MBAGKLJDKMH = item; break;
+					default: UnityEngine.Debug.LogError("TODO" + INBBCDGDMLC[i]); break;
 				}
 			}
 		}
 	}
 
 	// // RVA: 0x14942FC Offset: 0x14942FC VA: 0x14942FC
-	private DIHHCBACKGG MNMFKKKFDCL(OKGLGHCBCJP.BEOKNKGHFFE NEJBNCHLMNJ)
+	private DIHHCBACKGG MNMFKKKFDCL(OKGLGHCBCJP_Database.BEOKNKGHFFE NEJBNCHLMNJ)
 	{
 		DIHHCBACKGG res = null;
 		if(BGEJFKHOMOC.ContainsKey((int)NEJBNCHLMNJ))
 		{
-			res = BGEJFKHOMOC[NEJBNCHLMNJ]();
+			res = BGEJFKHOMOC[(int)NEJBNCHLMNJ]();
 			res.LHPDDGIJKNB();
 			res.JIKKNHIAEKG = IIILDINMAKI[(int)NEJBNCHLMNJ];
 		}
@@ -858,19 +858,19 @@ public class OKGLGHCBCJP_Database
 	// // RVA: 0x1494FAC Offset: 0x1494FAC VA: 0x1494FAC
 	public bool IIEMACPEEBJ(List<string> ANFNAHPIJDH, CBBJHPBGBAJ_Archive OCMCEKEKAPI)
 	{
-		CBBJHPBGBAJ.JBCFNCNGLPM found = KGHAJGGMPKL.Find((CBBJHPBGBAJ.JBCFNCNGLPM GHPLINIACBB) => {
+		CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File found = OCMCEKEKAPI.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) => {
 				//0x149D488
-				return GHPLINIACBB.OPFGFINHFCE == "schema_hash.bytes";
+				return GHPLINIACBB.OPFGFINHFCE_Name == "schema_hash.bytes";
 		});
 		Dictionary<string, int> data = new Dictionary<string, int>();
 		if(found != null)
 		{
-			BNBONBECPKB b = BNBONBECPKB.HEGEKFMJNCC(found.DBBGALAPFGC);
-			LPMLJGGJGGK[] array = b.FHEIILDDCIM();
+			BNBONBECPKB b = BNBONBECPKB.HEGEKFMJNCC(found.DBBGALAPFGC_Data);
+			LPMLJGGJGGK[] array = b.GMLFFMJMPCC;
 			for(int i = 0; i < array.Length; i++)
 			{
-				string str = array[i].DKJOHDGOIJE();
-				int val = array[i].HJMJGBCJBIN();
+				string str = array[i].OPFGFINHFCE;
+				int val = array[i].IOIMHJAOKOO;
 				data.Add(str, val);
 			}
 		}
@@ -884,20 +884,20 @@ public class OKGLGHCBCJP_Database
 			if(OCMCEKEKAPI != null && item != null)
 			{
 				string KHFAJGHCHPN = item.JIKKNHIAEKG + ".bytes";
-				CBBJHPBGBAJ.JBCFNCNGLPM found2 = KGHAJGGMPKL.Find((CBBJHPBGBAJ.JBCFNCNGLPM GHPLINIACBB) => {
+				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File found2 = OCMCEKEKAPI.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) => {
 					//0x14A0728
-					return GHPLINIACBB.OPFGFINHFCE == KHFAJGHCHPN;
+					return GHPLINIACBB.OPFGFINHFCE_Name == KHFAJGHCHPN;
 				});
 				bool res = false;
 				if(found2 != null)
 				{
-					if(!data.ContainsKey(LIGPJAIDNOA.MHDFCBBFMOA[found2.LMHMIIKCGPE]))
+					if(!data.ContainsKey(LIGPJAIDNOA.MHDFCBBFMOA[item.LMHMIIKCGPE]))
 					{
-						Debug.LogError(LIGPJAIDNOA.MHDFCBBFMOA[found2.LMHMIIKCGPE]+"schema not found");
+						Debug.LogError(LIGPJAIDNOA.MHDFCBBFMOA[item.LMHMIIKCGPE]+"schema not found");
 						return false;
 					}
 					
-					if(LIGPJAIDNOA.INPAHCHFIHM[found2.LMHMIIKCGPE] != data[LIGPJAIDNOA.MHDFCBBFMOA[found2.LMHMIIKCGPE]])
+					if(LIGPJAIDNOA.INPAHCHFIHM[item.LMHMIIKCGPE] != data[LIGPJAIDNOA.MHDFCBBFMOA[item.LMHMIIKCGPE]])
 					{
 						//new object[5];
 						//361

@@ -7,10 +7,10 @@ public class HDPLHCDAFHA{}
 public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
 {
 	public List<string> DFDLAIGFDAH; // 0x7C
-	// private bool OGLMMENAJFL_onSuccess; // 0x84
+	private bool OGLMMENAJFL_onSuccess; // 0x84
 
 	public FAPJEIOBPDG MKGLJLCMGIB { get; set; } // JJMNHPMPMEN 0x80 //  CJEOCNPHGNM // MGABGLAGKCL
-	public override bool EBPLLJGPFDA { get; }  // 0x84 // OGLMMENAJFL_onSuccess // HGPAELCGELL 0x1743458
+	public override bool EBPLLJGPFDA { get { return OGLMMENAJFL_onSuccess; } } // HGPAELCGELL 0x1743458
 
 	// RVA: 0x174328C Offset: 0x174328C VA: 0x174328C Slot: 12
 	//public override void DHLDNIEELHO() { } // Prepare request
@@ -40,7 +40,7 @@ public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
 					bool val = MKGLJLCMGIB.Invoke(DFDLAIGFDAH, jsonData[AFEHLCGHAEE.NDFIEMPPMLF]);
 					DLKLLHPLANH = !val;
 			}
-			EBPLLJGPFDA = true;
+			OGLMMENAJFL_onSuccess = true;
 	}
 
 	// RVA: 0x17435C8 Offset: 0x17435C8 VA: 0x17435C8

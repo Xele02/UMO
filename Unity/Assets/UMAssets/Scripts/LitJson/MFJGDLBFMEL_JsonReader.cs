@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-public enum LIMGNGJNDAK{}
 public enum LIMGNGJNDAK_JsonToken
 {
 	HJNNKCMLGFL_None = 0,

@@ -105,6 +105,7 @@ namespace XeApp.Game.Menu
 		protected override bool DoUpdateEnter()
 		{
 			UnityEngine.Debug.LogError("TODO");
+			return false;
 		}
 
 		// // RVA: 0xB306D8 Offset: 0xB306D8 VA: 0xB306D8
@@ -154,6 +155,7 @@ namespace XeApp.Game.Menu
 		protected override bool DoUpdateLeave()
 		{
 			UnityEngine.Debug.LogError("TODO");
+			return false;
 		}
 
 		// // RVA: 0xB30E8C Offset: 0xB30E8C VA: 0xB30E8C

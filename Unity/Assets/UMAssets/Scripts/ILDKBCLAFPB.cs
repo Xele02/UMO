@@ -95,7 +95,7 @@ public class ILDKBCLAFPB
         // public bool AHIBBPFIAMJ { get; }
         // public bool FFKLPNPJLMB { get; }
         // public bool FGJBDPOGMDI { get; }
-        // public bool CIGAPPFDFKL { get; private set; } MNJOLLGPMPI 0x2035E64 JCCDFGOGFFA 0x2035E8C
+        public bool CIGAPPFDFKL { get { return DDHCLNFPNGK != 2; } private set {} } //MNJOLLGPMPI 0x2035E64 JCCDFGOGFFA 0x2035E8C
         // public bool OOCKIFIHJJN { get; private set; } CKJIGBCJGMI 0x2035E78 IBPIBMKAMPE 0x2035E90
 
         // // RVA: 0x2035BF0 Offset: 0x2035BF0 VA: 0x2035BF0

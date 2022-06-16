@@ -10,7 +10,7 @@ public class FMFBNHLMHPL : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x1198528 Offset: 0x1198528 VA: 0x1198528
-	public LHPDDGIJKNB()
+	public FMFBNHLMHPL()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

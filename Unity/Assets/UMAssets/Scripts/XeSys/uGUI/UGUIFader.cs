@@ -18,28 +18,34 @@ namespace XeSys.uGUI
 
 		// public float currentTime { get; } 0x274AEBC
 		// public float targetTime { get; }  0x274AEC4
-		// public bool isFading { get; } 0x274AECC
+		public bool isFading { get {
+			return mUpdate != this.UpdateIdle;
+		} } //0x274AECC
 
 		// // RVA: 0x274AEB4 Offset: 0x274AEB4 VA: 0x274AEB4
 		public Image GetImage()
 		{
 			UnityEngine.Debug.LogError("TODO");
+			return null;
 		}
 
 		// // RVA: 0x274AF64 Offset: 0x274AF64 VA: 0x274AF64
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO UGUIFader Awake");
 		}
 
 		// // RVA: 0x274AFEC Offset: 0x274AFEC VA: 0x274AFEC
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO UGUIFader Update");
 		}
 
 		// // RVA: 0x274B018 Offset: 0x274B018 VA: 0x274B018
-		// private void UpdateIdle() { }
+		private void UpdateIdle()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x274B01C Offset: 0x274B01C VA: 0x274B01C
 		// private void UpdateFade() { }

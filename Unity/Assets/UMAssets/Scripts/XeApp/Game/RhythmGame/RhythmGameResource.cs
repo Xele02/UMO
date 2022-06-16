@@ -54,8 +54,28 @@ namespace XeApp.Game.RhythmGame
 		public GameObject completeUiPrefab; // 0x88
 
 		// public bool isSpecialDirectionResourceLoaded { get; set; }
-		// public bool isTakeoffDivaVoice { get; set; }
-		// public int takeoffVoiceId { get; set; }
+		public bool isTakeoffDivaVoice { 
+			get
+			{ //  0xBF5E1C
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if(param == null)
+					return false;
+				return param.isTakeoffDivaVoice;
+			} private set
+			{ // 0xBF5EDC
+				return;
+			} }
+		public int takeoffVoiceId { 
+			get 
+			{  // 0xBF5EE0
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if(param == null)
+					return -1;
+				return param.takeoffVoiceId;
+			} private set
+			{ // 0xBF5F98
+				return;
+			} } 
 		// public int enteredValkyrieModeVoiceId { get; set; }
 		// public int enterdDivaModeVoiceId { get; set; }
 		// public int enterdAwakenDivaModeVoiceId { get; set; }
@@ -88,19 +108,11 @@ namespace XeApp.Game.RhythmGame
 		// public int GetSpecialStageResourceId() { }
 
 		// // RVA: 0xBF5ADC Offset: 0xBF5ADC VA: 0xBF5ADC
-		// public MusicVoiceChangerParam TryGetMusicVoiceChangerParam() { }
-
-		// // RVA: 0xBF5E1C Offset: 0xBF5E1C VA: 0xBF5E1C
-		// public bool get_isTakeoffDivaVoice() { }
-
-		// // RVA: 0xBF5EDC Offset: 0xBF5EDC VA: 0xBF5EDC
-		// private void set_isTakeoffDivaVoice(bool value) { }
-
-		// // RVA: 0xBF5EE0 Offset: 0xBF5EE0 VA: 0xBF5EE0
-		// public int get_takeoffVoiceId() { }
-
-		// // RVA: 0xBF5F98 Offset: 0xBF5F98 VA: 0xBF5F98
-		// private void set_takeoffVoiceId(int value) { }
+		public MusicVoiceChangerParam TryGetMusicVoiceChangerParam()
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return null;
+		}
 
 		// // RVA: 0xBF25DC Offset: 0xBF25DC VA: 0xBF25DC
 		// public int get_enteredValkyrieModeVoiceId() { }

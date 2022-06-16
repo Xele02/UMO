@@ -285,7 +285,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B07B8 Offset: 0x9B07B8 VA: 0x9B07B8
 		private void OnDestroy()
 		{
-			if(!XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.MNJOLLGPMPI())
+			if(!XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
 			{
 				XeApp.Game.GameManager.Instance.PopupCanvas.worldCamera.clearFlags = UnityEngine.CameraClearFlags.Nothing;
 			}
@@ -693,7 +693,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C10DC Offset: 0x9C10DC VA: 0x9C10DC
 		private void StartRhythmGame()
 		{
-			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.MNJOLLGPMPI())
+			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
 			{
 				musicIntroObject.Begin();
 				ValkyrieColorParam col = resource.musicIntroResource.paramColor;
@@ -778,7 +778,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			yield return null; // wait end tuto
 			
-			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.MNJOLLGPMPI())
+			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
 			{
 				musicIntroObject.Takeoff();
 			}
