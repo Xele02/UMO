@@ -138,5 +138,9 @@ public class KOGHKIODHPA : DIHHCBACKGG
 	// private bool DCMPGIJIBBB(GGNFFEBIPON FOLMNOOIOFM) { }
 
 	// // RVA: 0x1131470 Offset: 0x1131470 VA: 0x1131470 Slot: 11
-	// public override uint CAOGDCBPBAN() { }
+	public override uint CAOGDCBPBAN()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return 0;
+	}
 }

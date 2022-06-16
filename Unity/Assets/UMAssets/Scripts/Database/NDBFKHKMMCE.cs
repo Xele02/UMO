@@ -84,7 +84,11 @@ public class NDBFKHKMMCE : DIHHCBACKGG
 	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }
 
 	// // RVA: 0x1AE1BF0 Offset: 0x1AE1BF0 VA: 0x1AE1BF0 Slot: 11
-	// public override uint CAOGDCBPBAN() { }
+	public override uint CAOGDCBPBAN()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return 0;
+	}
 
 	// // RVA: 0x1AE2358 Offset: 0x1AE2358 VA: 0x1AE2358
 	// public int KDFMGDNOMHE(OKGLGHCBCJP LKMHPJKIFDN, BBHNACPENDM LDEGEHAEALK, int NCLLKNJBEKI) { }

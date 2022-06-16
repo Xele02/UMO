@@ -41,5 +41,9 @@ public class HPBPIOPPDCB : DIHHCBACKGG
 	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }
 
 	// // RVA: 0x16093A8 Offset: 0x16093A8 VA: 0x16093A8 Slot: 11
-	// public override uint CAOGDCBPBAN() { }
+	public override uint CAOGDCBPBAN()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return 0;
+	}
 }

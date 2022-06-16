@@ -199,7 +199,11 @@ public class LDDDBPNGGIN : DIHHCBACKGG
 	// private uint DIGCEJDMJBN(List<sbyte> NNDGIAEFMOG) { }
 
 	// // RVA: 0xDA7BFC Offset: 0xDA7BFC VA: 0xDA7BFC Slot: 11
-	// public override uint CAOGDCBPBAN() { }
+	public override uint CAOGDCBPBAN()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return 0;
+	}
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6C0A30 Offset: 0x6C0A30 VA: 0x6C0A30
 	// // RVA: 0xDA8004 Offset: 0xDA8004 VA: 0xDA8004

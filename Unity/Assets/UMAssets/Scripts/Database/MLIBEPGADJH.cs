@@ -176,7 +176,11 @@ public class MLIBEPGADJH : DIHHCBACKGG
 	// public int ELKHCOEMNOJ(int BCCHOBPJJKE, int DMNIMMGGJJJ, LLKLAKGKNLD HDGOHBFKKDM) { }
 
 	// // RVA: 0x1961F54 Offset: 0x1961F54 VA: 0x1961F54 Slot: 11
-	// public override uint CAOGDCBPBAN() { }
+	public override uint CAOGDCBPBAN()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return 0;
+	}
 
 	// // RVA: 0x195BFB8 Offset: 0x195BFB8 VA: 0x195BFB8
 	// public bool FGNJBMPDBLO(int BCCHOBPJJKE) { }

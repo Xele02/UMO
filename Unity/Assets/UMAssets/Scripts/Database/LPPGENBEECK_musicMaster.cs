@@ -221,7 +221,11 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	}
 
 	// // RVA: 0x10D7BD4 Offset: 0x10D7BD4 VA: 0x10D7BD4 Slot: 11
-	// public override uint CAOGDCBPBAN() { }
+	public override uint CAOGDCBPBAN()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return 0;
+	}
 }
 
 

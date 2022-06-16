@@ -54,5 +54,9 @@ public class MHDFCLCMDKO : DIHHCBACKGG
 	// private bool FJGJEJDJHEG(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }
 
 	// // RVA: 0x132B5F8 Offset: 0x132B5F8 VA: 0x132B5F8 Slot: 11
-	// public override uint CAOGDCBPBAN() { }
+	public override uint CAOGDCBPBAN()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return 0;
+	}
 }

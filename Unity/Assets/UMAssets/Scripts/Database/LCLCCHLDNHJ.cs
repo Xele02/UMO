@@ -126,7 +126,11 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
 	// private bool EEIKAAONMPO(IBCDCBLBJKE BGMLCPNJPMD) { }
 
 	// // RVA: 0xD9CEF8 Offset: 0xD9CEF8 VA: 0xD9CEF8 Slot: 11
-	// public override uint CAOGDCBPBAN() { }
+	public override uint CAOGDCBPBAN()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return 0;
+	}
 
 	// // RVA: 0xD9D4A0 Offset: 0xD9D4A0 VA: 0xD9D4A0
 	// public bool OEMKAFGPOCE(int JPIDIENBGKH, int AHHJLDLAPAN) { }

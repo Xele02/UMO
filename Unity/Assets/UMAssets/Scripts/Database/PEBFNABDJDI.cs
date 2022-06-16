@@ -112,7 +112,11 @@ public class PEBFNABDJDI : DIHHCBACKGG
 	// public int AHJDJACMFMN(long EOLFJGMAJAB) { }
 
 	// // RVA: 0xCC7F98 Offset: 0xCC7F98 VA: 0xCC7F98 Slot: 11
-	// public override uint CAOGDCBPBAN() { }
+	public override uint CAOGDCBPBAN()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return 0;
+	}
 
 	// // RVA: 0xCC8338 Offset: 0xCC8338 VA: 0xCC8338
 	// public bool BLEDNLHJDEF() { }
