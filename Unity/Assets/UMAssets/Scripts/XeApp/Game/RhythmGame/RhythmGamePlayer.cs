@@ -725,19 +725,11 @@ namespace XeApp.Game.RhythmGame
 			// 0xBF32EC
 			
 			
-			// // Namespace: 
-			// [CompilerGeneratedAttribute] // RVA: 0x650AA8 Offset: 0x650AA8 VA: 0x650AA8
-			// private sealed class RhythmGamePlayer.<>c__DisplayClass276_0 // TypeDefIndex: 18178
+			// private sealed class RhythmGamePlayer.<>c__DisplayClass276_0
 			// {
-				// // Fields
 				// public RhythmGamePlayer <>4__this; // 0x8
 				// public bool isShowingDescription; // 0xC
 				// public Action <>9__5; // 0x10
-
-				// // Methods
-
-				// // RVA: 0xBF176C Offset: 0xBF176C VA: 0xBF176C
-				// public void .ctor() { }
 
 				// // RVA: 0xBF1774 Offset: 0xBF1774 VA: 0xBF1774
 				// internal void <Co_StartMusic>b__5() { }
@@ -752,19 +744,11 @@ namespace XeApp.Game.RhythmGame
 				// internal bool <Co_StartMusic>b__2() { }
 			// }
 
-			// // Namespace: 
-			// [CompilerGeneratedAttribute] // RVA: 0x650AB8 Offset: 0x650AB8 VA: 0x650AB8
-			// private sealed class RhythmGamePlayer.<>c__DisplayClass276_1 // TypeDefIndex: 18179
+			// private sealed class RhythmGamePlayer.<>c__DisplayClass276_1
 			// {
-				// // Fields
 				// public BasicTutorialManager mrg; // 0x8
 				// public RhythmGamePlayer.<>c__DisplayClass276_0 CS$<>8__locals1; // 0xC
 				// public Action <>9__4; // 0x10
-
-				// // Methods
-
-				// // RVA: 0xBF17A0 Offset: 0xBF17A0 VA: 0xBF17A0
-				// public void .ctor() { }
 
 				// // RVA: 0xBF17A8 Offset: 0xBF17A8 VA: 0xBF17A8
 				// internal void <Co_StartMusic>b__3() { }

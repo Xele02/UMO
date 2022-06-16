@@ -5,7 +5,6 @@ using System.Text;
 
 internal class GCCDDJPHNMC_FsmContext
 {
-	// Fields
 	public bool KEBIIAMNKAJ_Return; // 0x8
 	public int FJLLOPCNALE_NextState; // 0xC
 	public OFIGBFBNKKK_Lexer LHFLKEHHBHH_L; // 0x10
@@ -13,8 +12,7 @@ internal class GCCDDJPHNMC_FsmContext
 
 }
 
-// Namespace: 
-internal class OFIGBFBNKKK_Lexer // TypeDefIndex: 18715
+internal class OFIGBFBNKKK_Lexer
 {
 
 	#region Fields

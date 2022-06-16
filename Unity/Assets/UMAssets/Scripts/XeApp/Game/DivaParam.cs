@@ -9,7 +9,6 @@ namespace XeApp.Game
 		[Serializable]
 		public class ChangePersonalityInfo
 		{
-			// Fields
 			[SerializeField]
 			public int m_cosModelId; // 0x8
 			[SerializeField]
@@ -19,8 +18,6 @@ namespace XeApp.Game
 		public Color psylliumColor; // 0xC
 		[SerializeField]
 		public List<ChangePersonalityInfo> m_changePersonlityInfo; // 0x1C
-
-		// // Methods
 
 		// // RVA: 0x11B94CC Offset: 0x11B94CC VA: 0x11B94CC
 		// public int ChangePersonalityId(int a_cos_model_id, int a_personality_id) { }

@@ -17,10 +17,11 @@ namespace XeApp.Game.RhythmGame
 		public ParameterData_ValkyrieChangeBattle m_paramBattle; // 0x1C
 		public ParameterData_ValkyrieChangeEnemy m_paramEnemy; // 0x20
 
-		// Methods
-
 		// // RVA: 0x1551C0C Offset: 0x1551C0C VA: 0x1551C0C
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1551C88 Offset: 0x1551C88 VA: 0x1551C88
 		public void LoadResource()

@@ -142,7 +142,11 @@ public class MLIBEPGADJH : DIHHCBACKGG
 	}
 
 	// // RVA: 0x195DA6C Offset: 0x195DA6C VA: 0x195DA6C Slot: 9
-	// public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC) { }
+	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+    {
+        UnityEngine.Debug.LogError("TODO");
+		return true;
+    }
 
 	// // RVA: 0x195EF38 Offset: 0x195EF38 VA: 0x195EF38 Slot: 10
 	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }

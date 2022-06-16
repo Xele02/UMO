@@ -22,9 +22,9 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 	#endregion
 
 	// ???
-	// private static string HKICMNAACDA; // 0x0
-	// private static string BNKHBCBJBKI; // 0x4
-	// private static string CKHEDJODNIP; // 0x8
+	// private static string HKICMNAACDA = "JsonData array"; // 0x0
+	// private static string BNKHBCBJBKI = "JsonData object"; // 0x4
+	// private static string CKHEDJODNIP = "Uninitialized JsonData"; // 0x8
 
 	#region Properties
 	// // RVA: 0x1509FFC Offset: 0x1509FFC VA: 0x1509FFC
@@ -972,9 +972,6 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 
 		return "Uninitialized JsonData";
 	}
-
-	// // RVA: 0x150FA88 Offset: 0x150FA88 VA: 0x150FA88
-	// private static void .cctor() { }
 	
 	// // RVA: 0x150BF1C Offset: 0x150BF1C VA: 0x150BF1C
 	// public string FLPBHNAOIOB(int OIPCCBHIKIA) { }
@@ -985,14 +982,10 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 		return JMGLNPKCBPG_inst_object.ContainsKey(GODGBGGHPNG_prop_name);
     }
 	
-	
-	// Namespace: 
 	internal class COHBCOLJMBI_OrderedDictionaryEnumerator : IDictionaryEnumerator
 	{
-		// Fields
 		private IEnumerator<KeyValuePair<string, EDOHBJAPLPF_JsonData>> GIJHIKDBGFM_list_enumerator; // 0x8
 
-		// Properties
 		// RVA: 0x176431C Offset: 0x176431C VA: 0x176431C Slot: 8
 		//public object get_Current() { }
 		public object /*FKPCEJPAOCF_*/Current { get { return Entry; } }
@@ -1011,7 +1004,6 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 		//public object get_Value() { }
 		public object /*BLNDFNMPILA_*/Value { get { return GIJHIKDBGFM_list_enumerator.Current.Value; } }
 
-		// Methods
 		// RVA: 0x1764704 Offset: 0x1764704 VA: 0x1764704
 		public COHBCOLJMBI_OrderedDictionaryEnumerator(IEnumerator<KeyValuePair<string, EDOHBJAPLPF_JsonData>> CAMOPBPPDLF_enumerator)
         {

@@ -31,7 +31,10 @@ namespace XeApp.Game.Title
 		// public void Hide() { }
 
 		// // RVA: 0xE3AA28 Offset: 0xE3AA28 VA: 0xE3AA28
-		// private void Update() { }
+		private void Update()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xE3AB04 Offset: 0xE3AB04 VA: 0xE3AB04 Slot: 5
 		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }

@@ -55,13 +55,22 @@ namespace XeSys
 		}
 
 		// // RVA: 0x203683C Offset: 0x203683C VA: 0x203683C
-		// private void Awake() { }
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x2036AF0 Offset: 0x2036AF0 VA: 0x2036AF0
-		// private void Start() { }
+		private void Start()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x2036AF4 Offset: 0x2036AF4 VA: 0x2036AF4
-		// private void Update() { }
+		private void Update()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x20369B4 Offset: 0x20369B4 VA: 0x20369B4
 		// private void InitializeCamera() { }

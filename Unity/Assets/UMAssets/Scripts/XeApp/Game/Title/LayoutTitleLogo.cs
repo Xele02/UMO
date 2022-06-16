@@ -30,7 +30,10 @@ namespace XeApp.Game.Title
 		// public void Reset() { }
 
 		// // RVA: 0xE39B64 Offset: 0xE39B64 VA: 0xE39B64
-		// public void Update() { }
+		public void Update()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xE39AB4 Offset: 0xE39AB4 VA: 0xE39AB4
 		// public void SwitchLogo(int index) { }

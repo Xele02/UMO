@@ -88,15 +88,15 @@ public class ILDKBCLAFPB
         public int HJPDHDHMOPF; // 0xC0
         public bool BIEOIPOLFLN = true; // 0xC4
 
-        public bool PBANLLOLBKK { get; }
-        public bool GBCGNDJANFJ { get; }
-        public bool ENJFHBNCHEB { get; }
-        public bool PPDJAPPLOPA { get; }
-        public bool AHIBBPFIAMJ { get; }
-        public bool FFKLPNPJLMB { get; }
-        public bool FGJBDPOGMDI { get; }
-        public bool CIGAPPFDFKL { get; set; }
-        public bool OOCKIFIHJJN { get; set; }
+        // public bool PBANLLOLBKK { get; }
+        // public bool GBCGNDJANFJ { get; }
+        // public bool ENJFHBNCHEB { get; }
+        // public bool PPDJAPPLOPA { get; }
+        // public bool AHIBBPFIAMJ { get; }
+        // public bool FFKLPNPJLMB { get; }
+        // public bool FGJBDPOGMDI { get; }
+        // public bool CIGAPPFDFKL { get; private set; } MNJOLLGPMPI 0x2035E64 JCCDFGOGFFA 0x2035E8C
+        // public bool OOCKIFIHJJN { get; private set; } CKJIGBCJGMI 0x2035E78 IBPIBMKAMPE 0x2035E90
 
         // // RVA: 0x2035BF0 Offset: 0x2035BF0 VA: 0x2035BF0
         public void PBCBJAPONBF()
@@ -130,22 +130,6 @@ public class ILDKBCLAFPB
 
         // // RVA: 0x2035E48 Offset: 0x2035E48 VA: 0x2035E48
         // public bool INPHNKJPJFN() { }
-
-        // // RVA: 0x2035E64 Offset: 0x2035E64 VA: 0x2035E64
-        public bool MNJOLLGPMPI()
-        {
-            UnityEngine.Debug.LogError("TODO ILDKBCLAFPB.MNJOLLGPMPI");
-            return false;
-        }
-
-        // // RVA: 0x2035E8C Offset: 0x2035E8C VA: 0x2035E8C
-        // private void JCCDFGOGFFA(bool NANNGLGOFKH) { }
-
-        // // RVA: 0x2035E78 Offset: 0x2035E78 VA: 0x2035E78
-        // public bool CKJIGBCJGMI() { }
-
-        // // RVA: 0x2035E90 Offset: 0x2035E90 VA: 0x2035E90
-        // private void IBPIBMKAMPE(bool NANNGLGOFKH) { }
 
         // // RVA: 0x2035E94 Offset: 0x2035E94 VA: 0x2035E94
         // public int CBLEFELBNDN() { }
@@ -358,13 +342,7 @@ public class ILDKBCLAFPB
         public sbyte OKGKFFLMFKH = 1; // 0xE
         public int OLBKCGKDBBL; // 0x10
 
-        public sbyte EJGJPICOCBI { get; set; }
-
-        // // RVA: 0x2035A10 Offset: 0x2035A10 VA: 0x2035A10
-        // public sbyte ILKOBMOJIPG() { }
-
-        // // RVA: 0x2035A20 Offset: 0x2035A20 VA: 0x2035A20
-        // public void IONHLLLJLAI(sbyte NANNGLGOFKH) { }
+        // public sbyte EJGJPICOCBI { get; set; } ILKOBMOJIPG 0x2035A10 IONHLLLJLAI 0x2035A20
 
         // // RVA: 0x2035A38 Offset: 0x2035A38 VA: 0x2035A38
         // public void AAHGFMHAJFG(int ICDJHNPILBC, bool JKDJCFEBDHC) { }

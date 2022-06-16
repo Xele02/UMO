@@ -8,23 +8,13 @@ public class CriAtomExMic : CriDisposable
 	// private const string errorInvalidNumBuffers = "[CRIWARE] Number of buffers are not same with channels of CriAtomMic.";
 	// private const string errorAlreadyInitialized = "[CRIWARE] CriAtomMic module is already initialized.";
 	// private const string errorNotInitialized = "[CRIWARE] CriAtomMic module is not initialized.";
-	// [CompilerGeneratedAttribute] // RVA: 0x6349E4 Offset: 0x6349E4 VA: 0x6349E4
-	// private static bool <isInitialized>k__BackingField; // 0x0
 	// private IntPtr handle; // 0x18
 	// private IntPtr[] bufferPointers; // 0x1C
 	// private GCHandle[] gcHandles; // 0x20
 	// private CriAudioWriteStream outputWriteStream; // 0x24
 	// private static int _initializationCount; // 0x4
 
-	// public static bool isInitialized { get; set; }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x635E3C Offset: 0x635E3C VA: 0x635E3C
-	// // RVA: 0x289B6C8 Offset: 0x289B6C8 VA: 0x289B6C8
-	// public static bool get_isInitialized() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x635E4C Offset: 0x635E4C VA: 0x635E4C
-	// // RVA: 0x289B754 Offset: 0x289B754 VA: 0x289B754
-	// private static void set_isInitialized(bool value) { }
+	// public static bool isInitialized { get; private set; } // 0x0
 
 	// // RVA: 0x289B7E4 Offset: 0x289B7E4 VA: 0x289B7E4
 	// public static void InitializeModule() { }
@@ -63,7 +53,10 @@ public class CriAtomExMic : CriDisposable
 	// private void Dispose(bool disposing) { }
 
 	// // RVA: 0x289CE4C Offset: 0x289CE4C VA: 0x289CE4C
-	// public void Start() { }
+	public void Start()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0x289CFD8 Offset: 0x289CFD8 VA: 0x289CFD8
 	// public void Stop() { }

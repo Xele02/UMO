@@ -1,7 +1,6 @@
 
 public class ICLNENNIMOP : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// private const long GMNKHOJAOPC = 1496070000;
 	// private const long GNBEEACODKK = 1811602800;
@@ -11,10 +10,7 @@ public class ICLNENNIMOP : KLFDBFMNLBL
 	// private List<int> NBOLDNMPJFG; // 0x30
 	// private List<int> FONGFOAMHJK; // 0x34
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
 
 	// // RVA: 0x11E9C2C Offset: 0x11E9C2C VA: 0x11E9C2C
 	// public int BDCAICINCKK(int GHBPLHBNMBK) { }
@@ -32,7 +28,10 @@ public class ICLNENNIMOP : KLFDBFMNLBL
 	// public void POIKGADFLHF(int GHBPLHBNMBK, double HMLEDBJDCAF) { }
 
 	// // RVA: 0x11EA084 Offset: 0x11EA084 VA: 0x11EA084
-	// public void .ctor() { }
+	public ICLNENNIMOP()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x11EA198 Offset: 0x11EA198 VA: 0x11EA198 Slot: 4
 	public override void KMBPACJNEOF()

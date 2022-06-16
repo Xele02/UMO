@@ -18,7 +18,6 @@ namespace XeApp.Game.Common
             Max = 9,
         }
 
-        // Fields
         private const int DivaIconDecorationMsizeCacheNum = 23;
         private const int DivaIconDecorationSsizeCacheNum = 26;
         private const int SceneIconDecorationLsizeCacheNum = 40;
@@ -32,8 +31,6 @@ namespace XeApp.Game.Common
         private GameObject m_rootObject; // 0x10
         private MonoBehaviour m_monoBehaviour; // 0x14
         private Font m_useFont; // 0x18
-
-        // // Methods
 
         // // RVA: 0x11068B4 Offset: 0x11068B4 VA: 0x11068B4
         public LayoutPoolManager(GameObject parent)

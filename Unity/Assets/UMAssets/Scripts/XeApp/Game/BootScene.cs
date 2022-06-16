@@ -5,10 +5,7 @@ namespace XeApp.Game
 {
 	public class BootScene : MainSceneBase
 	{
-		// Fields
 		private int m_revertStep; // 0x28
-
-		// Methods
 
 		// // RVA: 0xE5CA58 Offset: 0xE5CA58 VA: 0xE5CA58 Slot: 9
 		protected override void DoAwake()

@@ -20,7 +20,7 @@ public class PNGOLKLFFLH
 	public int AKDKFIPNAOL; // 0x48
 	public IEIGOPLPJGI OPBPKNHIPPE = new IEIGOPLPJGI(); // 0x4C
 
-	public string COCGOFFMFCO { get; }
+	// public string COCGOFFMFCO { get; }
 
 	// // RVA: 0xFF1A68 Offset: 0xFF1A68 VA: 0xFF1A68
 	// public string GMJIKEHEPPA() { }

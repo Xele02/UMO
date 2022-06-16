@@ -90,13 +90,22 @@ namespace XeApp.Game.Menu
 		// public long EnterToHomeTime { get; } 0xB2E7EC
 
 		// // RVA: 0xB2E7F4 Offset: 0xB2E7F4 VA: 0xB2E7F4 Slot: 9
-		// protected override void DoAwake() { }
+		protected override void DoAwake()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xB2E990 Offset: 0xB2E990 VA: 0xB2E990 Slot: 10
-		// protected override void DoStart() { }
+		protected override void DoStart()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xB305FC Offset: 0xB305FC VA: 0xB305FC Slot: 12
-		// protected override bool DoUpdateEnter() { }
+		protected override bool DoUpdateEnter()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xB306D8 Offset: 0xB306D8 VA: 0xB306D8
 		// public static float GetLongScreenScale() { }
@@ -105,7 +114,10 @@ namespace XeApp.Game.Menu
 		// private void MakeComebackSceneInfo(ref MenuScene.MenuSceneCamebackInfo info) { }
 
 		// // RVA: 0xB307F0 Offset: 0xB307F0 VA: 0xB307F0 Slot: 13
-		// protected override void DoUpdateMain() { }
+		protected override void DoUpdateMain()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xB307F8 Offset: 0xB307F8 VA: 0xB307F8
 		// private void MenuObservationChengeScene() { }
@@ -115,7 +127,10 @@ namespace XeApp.Game.Menu
 		// private IEnumerator ChangeTransitionCoroutine() { }
 
 		// // RVA: 0xB309EC Offset: 0xB309EC VA: 0xB309EC
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C78AC Offset: 0x6C78AC VA: 0x6C78AC
 		// // RVA: 0xB30570 Offset: 0xB30570 VA: 0xB30570
@@ -136,7 +151,10 @@ namespace XeApp.Game.Menu
 		// public void SetDivaXposition(float xpos) { }
 
 		// // RVA: 0xB30D6C Offset: 0xB30D6C VA: 0xB30D6C Slot: 14
-		// protected override bool DoUpdateLeave() { }
+		protected override bool DoUpdateLeave()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xB30E8C Offset: 0xB30E8C VA: 0xB30E8C
 		// public void InitializePlayerStatusData() { }

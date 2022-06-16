@@ -4,9 +4,9 @@ using System.Collections;
 using System.Collections.Specialized;
 
 
-public enum JFBMDLGBPEN_JsonType // TypeDefIndex: 18692
+public enum JFBMDLGBPEN{}
+public enum JFBMDLGBPEN_JsonType
 {
-	// Fields
 	HJNNKCMLGFL_None = 0,
 	JKMLKAMHJIF_Object = 1,
 	BDHGEFMCJDF_Array = 2,
@@ -18,10 +18,8 @@ public enum JFBMDLGBPEN_JsonType // TypeDefIndex: 18692
 }
 
 
-// Namespace: 
 public interface IHIFCPDDDKN_IJsonWrapper : IList, IOrderedDictionary
 {
-	// // Properties
 	// // RVA: -1 Offset: -1 Slot: 0
 	// public abstract bool HJENKHBBMMO();
 	bool EPNGJLOKGIF_IsArray { get; }

@@ -31,48 +31,25 @@ namespace CriMana
 		// public Player.StatusChangeCallback statusChangeCallback; // 0x70
 		// [CompilerGeneratedAttribute] // RVA: 0x635294 Offset: 0x635294 VA: 0x635294
 		// private Player.SubtitleChangeCallback OnSubtitleChanged; // 0x74
-		// [CompilerGeneratedAttribute] // RVA: 0x6352A4 Offset: 0x6352A4 VA: 0x6352A4
-		// private bool <additiveMode>k__BackingField; // 0x78
-		// [CompilerGeneratedAttribute] // RVA: 0x6352B4 Offset: 0x6352B4 VA: 0x6352B4
-		// private int <maxFrameDrop>k__BackingField; // 0x7C
-		// [CompilerGeneratedAttribute] // RVA: 0x6352C4 Offset: 0x6352C4 VA: 0x6352C4
-		// private bool <applyTargetAlpha>k__BackingField; // 0x80
-		// [CompilerGeneratedAttribute] // RVA: 0x6352D4 Offset: 0x6352D4 VA: 0x6352D4
-		// private bool <uiRenderMode>k__BackingField; // 0x81
-		// [CompilerGeneratedAttribute] // RVA: 0x6352E4 Offset: 0x6352E4 VA: 0x6352E4
-		// private IntPtr <subtitleBuffer>k__BackingField; // 0x84
-		// [CompilerGeneratedAttribute] // RVA: 0x6352F4 Offset: 0x6352F4 VA: 0x6352F4
-		// private int <subtitleSize>k__BackingField; // 0x88
-		// [CompilerGeneratedAttribute] // RVA: 0x635304 Offset: 0x635304 VA: 0x635304
-		// private CriManaMoviePlayerHolder <playerHolder>k__BackingField; // 0x8C
 
-		// internal Player.Status nativeStatus { get; }
-		// private Player.Status requiredStatus { get; set; }
-		// public bool additiveMode { get; set; }
-		// public int maxFrameDrop { get; set; }
-		// public bool applyTargetAlpha { get; set; }
-		// public bool uiRenderMode { get; set; }
-		// public bool isFrameAvailable { get; }
-		// public MovieInfo movieInfo { get; }
-		// public FrameInfo frameInfo { get; }
-		// public Player.Status status { get; }
-		// public int numberOfEntries { get; }
-		// public IntPtr subtitleBuffer { get; set; }
-		// public int subtitleSize { get; set; }
-		// public CriAtomExPlayer atomExPlayer { get; }
-		// public CriAtomEx3dSource atomEx3DsourceForAmbisonics { get; }
-		// public Player.TimerType timerType { get; }
-		// public CriManaMoviePlayerHolder playerHolder { get; set; }
-		// public bool isAlive { get; }
-
-		// // RVA: 0x2957404 Offset: 0x2957404 VA: 0x2957404
-		// internal Player.Status get_nativeStatus() { }
-
-		// // RVA: 0x295740C Offset: 0x295740C VA: 0x295740C
-		// private Player.Status get_requiredStatus() { }
-
-		// // RVA: 0x2957414 Offset: 0x2957414 VA: 0x2957414
-		// private void set_requiredStatus(Player.Status value) { }
+		// internal Player.Status nativeStatus { get; } 0x2957404
+		// private Player.Status requiredStatus { get; set; } 0x295740C 0x2957414
+		// public bool additiveMode { get; set; } // 0x78
+		// public int maxFrameDrop { get; set; } // 0x7C
+		// public bool applyTargetAlpha { get; set; } // 0x80
+		// public bool uiRenderMode { get; set; } // 0x81
+		// public bool isFrameAvailable { get; } 0x29577DC
+		// public MovieInfo movieInfo { get; } 0x29577E4
+		// public FrameInfo frameInfo { get; } 0x29577F8
+		// public Player.Status status { get; } 0x295780C
+		// public int numberOfEntries { get; } 0x29578A0
+		// public IntPtr subtitleBuffer { get; private set; } // 0x84
+		// public int subtitleSize { get; private set; } // 0x88
+		// public CriAtomExPlayer atomExPlayer { get; } 0x2957A4C
+		// public CriAtomEx3dSource atomEx3DsourceForAmbisonics { get; } 0x2957A54
+		// public Player.TimerType timerType { get; } 0x2957A5C
+		// public CriManaMoviePlayerHolder playerHolder { get; set; } // 0x8C
+		// public bool isAlive { get; } 0x295E640
 
 		// [CompilerGeneratedAttribute] // RVA: 0x63670C Offset: 0x63670C VA: 0x63670C
 		// // RVA: 0x2957584 Offset: 0x2957584 VA: 0x2957584
@@ -82,88 +59,11 @@ namespace CriMana
 		// // RVA: 0x2957690 Offset: 0x2957690 VA: 0x2957690
 		// public void remove_OnSubtitleChanged(Player.SubtitleChangeCallback value) { }
 
-		// [CompilerGeneratedAttribute] // RVA: 0x63672C Offset: 0x63672C VA: 0x63672C
-		// // RVA: 0x295779C Offset: 0x295779C VA: 0x295779C
-		// public bool get_additiveMode() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63673C Offset: 0x63673C VA: 0x63673C
-		// // RVA: 0x29577A4 Offset: 0x29577A4 VA: 0x29577A4
-		// public void set_additiveMode(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63674C Offset: 0x63674C VA: 0x63674C
-		// // RVA: 0x29577AC Offset: 0x29577AC VA: 0x29577AC
-		// public int get_maxFrameDrop() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63675C Offset: 0x63675C VA: 0x63675C
-		// // RVA: 0x29577B4 Offset: 0x29577B4 VA: 0x29577B4
-		// public void set_maxFrameDrop(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63676C Offset: 0x63676C VA: 0x63676C
-		// // RVA: 0x29577BC Offset: 0x29577BC VA: 0x29577BC
-		// public bool get_applyTargetAlpha() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63677C Offset: 0x63677C VA: 0x63677C
-		// // RVA: 0x29577C4 Offset: 0x29577C4 VA: 0x29577C4
-		// public void set_applyTargetAlpha(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63678C Offset: 0x63678C VA: 0x63678C
-		// // RVA: 0x29577CC Offset: 0x29577CC VA: 0x29577CC
-		// public bool get_uiRenderMode() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63679C Offset: 0x63679C VA: 0x63679C
-		// // RVA: 0x29577D4 Offset: 0x29577D4 VA: 0x29577D4
-		// public void set_uiRenderMode(bool value) { }
-
-		// // RVA: 0x29577DC Offset: 0x29577DC VA: 0x29577DC
-		// public bool get_isFrameAvailable() { }
-
-		// // RVA: 0x29577E4 Offset: 0x29577E4 VA: 0x29577E4
-		// public MovieInfo get_movieInfo() { }
-
-		// // RVA: 0x29577F8 Offset: 0x29577F8 VA: 0x29577F8
-		// public FrameInfo get_frameInfo() { }
-
-		// // RVA: 0x295780C Offset: 0x295780C VA: 0x295780C
-		// public Player.Status get_status() { }
-
-		// // RVA: 0x29578A0 Offset: 0x29578A0 VA: 0x29578A0
-		// public int get_numberOfEntries() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6367AC Offset: 0x6367AC VA: 0x6367AC
-		// // RVA: 0x2957A2C Offset: 0x2957A2C VA: 0x2957A2C
-		// public IntPtr get_subtitleBuffer() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6367BC Offset: 0x6367BC VA: 0x6367BC
-		// // RVA: 0x2957A34 Offset: 0x2957A34 VA: 0x2957A34
-		// private void set_subtitleBuffer(IntPtr value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6367CC Offset: 0x6367CC VA: 0x6367CC
-		// // RVA: 0x2957A3C Offset: 0x2957A3C VA: 0x2957A3C
-		// public int get_subtitleSize() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6367DC Offset: 0x6367DC VA: 0x6367DC
-		// // RVA: 0x2957A44 Offset: 0x2957A44 VA: 0x2957A44
-		// private void set_subtitleSize(int value) { }
-
-		// // RVA: 0x2957A4C Offset: 0x2957A4C VA: 0x2957A4C
-		// public CriAtomExPlayer get_atomExPlayer() { }
-
-		// // RVA: 0x2957A54 Offset: 0x2957A54 VA: 0x2957A54
-		// public CriAtomEx3dSource get_atomEx3DsourceForAmbisonics() { }
-
-		// // RVA: 0x2957A5C Offset: 0x2957A5C VA: 0x2957A5C
-		// public Player.TimerType get_timerType() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6367EC Offset: 0x6367EC VA: 0x6367EC
-		// // RVA: 0x2957A64 Offset: 0x2957A64 VA: 0x2957A64
-		// public CriManaMoviePlayerHolder get_playerHolder() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6367FC Offset: 0x6367FC VA: 0x6367FC
-		// // RVA: 0x2957A6C Offset: 0x2957A6C VA: 0x2957A6C
-		// public void set_playerHolder(CriManaMoviePlayerHolder value) { }
-
 		// // RVA: 0x2957A74 Offset: 0x2957A74 VA: 0x2957A74
-		// public void .ctor() { }
+		public Player()
+		{
+			UnityEngine.Debug.LogWarning("TODO CriMana Player");
+		}
 
 		// // RVA: 0x2957D9C Offset: 0x2957D9C VA: 0x2957D9C
 		// public void .ctor(bool advanced_audio_mode, bool ambisonics_mode, uint max_path_length) { }
@@ -190,7 +90,10 @@ namespace CriMana
 		// public void PrepareForRendering() { }
 
 		// // RVA: 0x29595E8 Offset: 0x29595E8 VA: 0x29595E8
-		// public void Start() { }
+		public void Start()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x2959670 Offset: 0x2959670 VA: 0x2959670
 		// public void Stop() { }
@@ -317,16 +220,16 @@ namespace CriMana
 		// public void UpdateWithManualTimeAdvanced() { }
 
 		// // RVA: 0x295E4B4 Offset: 0x295E4B4 VA: 0x295E4B4
-		// public void Update() { }
+		public void Update()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x295E4C8 Offset: 0x295E4C8 VA: 0x295E4C8
 		// public void OnWillRenderObject(CriManaMovieMaterial sender) { }
 
 		// // RVA: 0x295E5EC Offset: 0x295E5EC VA: 0x295E5EC
 		// public bool UpdateMaterial(Material material) { }
-
-		// // RVA: 0x295E640 Offset: 0x295E640 VA: 0x295E640
-		// public bool get_isAlive() { }
 
 		// // RVA: 0x295E510 Offset: 0x295E510 VA: 0x295E510
 		// public void IssuePluginEvent(Player.CriManaUnityPlayer_RenderEventAction renderEventAction) { }
@@ -539,8 +442,5 @@ namespace CriMana
 
 		// // RVA: 0x295E658 Offset: 0x295E658 VA: 0x295E658
 		// private static extern IntPtr criWareUnity_GetRenderEventFunc() { }
-
-		// // RVA: 0x2960444 Offset: 0x2960444 VA: 0x2960444
-		// private static void .cctor() { }
 	}
 }

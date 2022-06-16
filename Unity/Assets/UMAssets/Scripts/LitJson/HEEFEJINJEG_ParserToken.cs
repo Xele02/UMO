@@ -1,6 +1,5 @@
 
-// Namespace: 
-internal enum HEEFEJINJEG_ParserToken // TypeDefIndex: 18717
+internal enum HEEFEJINJEG_ParserToken
 {
     // Lexer tokens
 	HJNNKCMLGFL_None = System.Char.MaxValue + 1,

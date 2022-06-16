@@ -4,7 +4,6 @@ public abstract class DIHHCBACKGG
 	public static int IEFOPDOOLOK = 1; // 0x0
 	public int LMHMIIKCGPE; // 0xC
 
-	// // Properties
 	public virtual string JIKKNHIAEKG { get; set; } // 0x8 HIPHMHKCJOI  // KLGJBKFAOGN // FEENLLLIMHM
 	// public virtual int GLOLECOPKDM { get; set; } // 0x10 FKLFBFJJHPF // FPNGGOKOJHF // PMJJHGPMLBN
 	public bool LNIMEIMBCMF { get; set; } // 0x14 FELOLNHPBOI  // // JCGFCHCLKAH // HNHIPLGADIF

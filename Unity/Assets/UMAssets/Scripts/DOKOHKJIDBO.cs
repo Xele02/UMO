@@ -10,7 +10,7 @@ public class DOKOHKJIDBO
 	public string BEIFBNGMFPG = "StringLiteral_9874"; // 0x10
 	public Dictionary<int, BEEINMBNKNM_Encryption> KCOIDGJOJHC_EncryptionMap = new Dictionary<int, BEEINMBNKNM_Encryption>(); // 0x14
 
-	public static DOKOHKJIDBO HHCJCDFCLOB { get; private set; } // LGMPACEDIJF, Get NKACBOEHELJ, Set OKPMHKNCNAL
+	public static DOKOHKJIDBO HHCJCDFCLOB { get; private set; } // 0x0 // LGMPACEDIJF, Get NKACBOEHELJ, Set OKPMHKNCNAL
 
 	// RVA: 0x1232884 Offset: 0x1232884 VA: 0x1232884
 	public void KIDFJDNOGDG()

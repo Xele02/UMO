@@ -1,15 +1,11 @@
 
 public class GEGHOCKCKKA : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 1;
 	// public const int HAKDOMMLLJP = 99999999;
 	// public List<GEGHOCKCKKA.AIAPDPDOIKG> ODHBHOGFNAA; // 0x24
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
 
 	// // RVA: 0x16B869C Offset: 0x16B869C VA: 0x16B869C
 	// public int HPPKOGKNKMH(int PPFNGGCBJKC, long JHNMKKNEENE) { }
@@ -36,7 +32,10 @@ public class GEGHOCKCKKA : KLFDBFMNLBL
 	// public List<NKFJNAANPNP.MOJLCADLMKH> BNGLMLIMFDM(int PPFNGGCBJKC, long JHNMKKNEENE) { }
 
 	// // RVA: 0x16BA850 Offset: 0x16BA850 VA: 0x16BA850
-	// public void .ctor() { }
+	public GEGHOCKCKKA()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x16BAB98 Offset: 0x16BAB98 VA: 0x16BAB98 Slot: 4
 	public override void KMBPACJNEOF()

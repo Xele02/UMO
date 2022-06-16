@@ -17,7 +17,6 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
         private static StringBuilder FAEDHJHCEFJ = new StringBuilder(); // 0x4
         private int GEJGMGDAKAM; // 0x38
 
-        // Properties
         public int JPIDIENBGKH { get; set; } // 0x8 CPCGNLOMIJL PHLLMIGCPCB BLBNMENMCIF
         public short AHHJLDLAPAN { get; set; } // 0xC AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
         public short DAJGPBLEEOB { get; set; } // 0xE ABHFCJKBJKD LHPKEPPBKPF OIOEEEDODJA
@@ -111,7 +110,11 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
     }
 
 	// // RVA: 0xD9B5B0 Offset: 0xD9B5B0 VA: 0xD9B5B0 Slot: 9
-	// public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC) { }
+	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+    {
+        UnityEngine.Debug.LogError("TODO");
+		return true;
+    }
 
 	// // RVA: 0xD9CCBC Offset: 0xD9CCBC VA: 0xD9CCBC Slot: 10
 	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }

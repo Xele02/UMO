@@ -27,7 +27,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BC0540 Offset: 0x1BC0540 VA: 0x1BC0540
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1BC05E8 Offset: 0x1BC05E8 VA: 0x1BC05E8
 		// public static bool IsActivePopupWindow() { }

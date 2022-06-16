@@ -7,7 +7,7 @@ namespace XeApp.Core
 		private int m_blockCount; // 0x8
 		private EventSystem eventSystem; // 0xC
 
-		public bool InputEnabled { get; set; }
+		// public bool InputEnabled { get; set; }
 
 		// // RVA: 0x1D6EC40 Offset: 0x1D6EC40 VA: 0x1D6EC40
 		public void Init(EventSystem es)

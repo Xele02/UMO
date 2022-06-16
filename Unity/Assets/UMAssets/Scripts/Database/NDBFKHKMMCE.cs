@@ -15,29 +15,9 @@ public class NDBFKHKMMCE : DIHHCBACKGG
 	// public List<NDBFKHKMMCE.IEOEMNPLANK> COLIEKINOPB; // 0x30
 	// public List<NDBFKHKMMCE.CCHHGIJMLBN> KHCACDIKJLG; // 0x34
 	// public List<NDBFKHKMMCE.NNCIBDMDEFE> JDMCHNFAOFO; // 0x38
-	// [CompilerGeneratedAttribute] // RVA: 0x667954 Offset: 0x667954 VA: 0x667954
-	// private Dictionary<string, NNJFKLBPBNK> <IHKPIFIBECO>k__BackingField; // 0x3C
-	// [CompilerGeneratedAttribute] // RVA: 0x667964 Offset: 0x667964 VA: 0x667964
-	// private Dictionary<string, CEBFFLDKAEC> <KLDCHOIPJGB>k__BackingField; // 0x40
 
-	// public Dictionary<string, NNJFKLBPBNK> FJOEBCMGDMI { get; set; }
-	// public Dictionary<string, CEBFFLDKAEC> OHJFBLFELNK { get; set; }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFD90 Offset: 0x6BFD90 VA: 0x6BFD90
-	// // RVA: 0x1ADDED8 Offset: 0x1ADDED8 VA: 0x1ADDED8
-	// public Dictionary<string, NNJFKLBPBNK> GAMGELHIHHI() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFDA0 Offset: 0x6BFDA0 VA: 0x6BFDA0
-	// // RVA: 0x1ADDEE0 Offset: 0x1ADDEE0 VA: 0x1ADDEE0
-	// private void DDDEJIJGGBJ(Dictionary<string, NNJFKLBPBNK> NANNGLGOFKH) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFDB0 Offset: 0x6BFDB0 VA: 0x6BFDB0
-	// // RVA: 0x1ADDEE8 Offset: 0x1ADDEE8 VA: 0x1ADDEE8
-	// public Dictionary<string, CEBFFLDKAEC> AEMNOGNEBOJ() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BFDC0 Offset: 0x6BFDC0 VA: 0x6BFDC0
-	// // RVA: 0x1ADDEF0 Offset: 0x1ADDEF0 VA: 0x1ADDEF0
-	// private void DGKDBOAMNBB(Dictionary<string, CEBFFLDKAEC> NANNGLGOFKH) { }
+	// public Dictionary<string, NNJFKLBPBNK> FJOEBCMGDMI { get; private set; } // 0x3C IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
+	// public Dictionary<string, CEBFFLDKAEC> OHJFBLFELNK { get; private set; } // 0x40 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
 
 	// // RVA: 0x1ADDEF8 Offset: 0x1ADDEF8 VA: 0x1ADDEF8
 	// public bool KOPLBMLHKCD(int GLCLFMGPMAN) { }
@@ -73,7 +53,11 @@ public class NDBFKHKMMCE : DIHHCBACKGG
     }
 
 	// // RVA: 0x1ADF298 Offset: 0x1ADF298 VA: 0x1ADF298 Slot: 9
-	// public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC) { }
+	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+    {
+        UnityEngine.Debug.LogError("TODO");
+		return true;
+    }
 
 	// // RVA: 0x1ADF5B4 Offset: 0x1ADF5B4 VA: 0x1ADF5B4
 	// private bool MPPKBPADFBE(NLFIKMMPOAL AJLPJINDCBI) { }

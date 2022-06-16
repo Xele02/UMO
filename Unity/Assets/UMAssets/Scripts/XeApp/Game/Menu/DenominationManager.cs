@@ -33,7 +33,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17CF744 Offset: 0x17CF744 VA: 0x17CF744
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x17CF7DC Offset: 0x17CF7DC VA: 0x17CF7DC
 		// public void StartPurchaseSequence(IMCBBOAFION onSuccess, JFDNPFFOACP onCancel, DJBHIFLHJLK onError, OnDenomChangeDate onChangeDate, ProductListFilter filter) { }

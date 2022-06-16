@@ -7,19 +7,13 @@ public class MKNIBACMCDO : KLFDBFMNLBL
 	// public JNMFKOHFAFB.ONCMONJIPCD[] LDIINNKMLLO; // 0x28
 	// public int NBIIKNFOLLK; // 0x2C
 
-	// public int HODDNKENKHD { get; set; }
+	// public int HODDNKENKHD { get; set; } EMLKHGADCIE 0x195AB08 LAGDPCMEBOD 0x195AB18
 
 	// // RVA: 0x195AA5C Offset: 0x195AA5C VA: 0x195AA5C
 	public MKNIBACMCDO()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}
-
-	// // RVA: 0x195AB08 Offset: 0x195AB08 VA: 0x195AB08
-	// public int EMLKHGADCIE() { }
-
-	// // RVA: 0x195AB18 Offset: 0x195AB18 VA: 0x195AB18
-	// public void LAGDPCMEBOD(int NANNGLGOFKH) { }
 
 	// // RVA: 0x195AB28 Offset: 0x195AB28 VA: 0x195AB28 Slot: 4
 	public override void KMBPACJNEOF()

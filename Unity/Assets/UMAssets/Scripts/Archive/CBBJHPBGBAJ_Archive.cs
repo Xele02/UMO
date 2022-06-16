@@ -4,6 +4,7 @@ using System.Text;
 using System.Collections.Generic;
 
 // Represent a TAR file 
+public class CBBJHPBGBAJ{}
 public class CBBJHPBGBAJ_Archive
 {
 	public class JBCFNCNGLPM_File

@@ -138,7 +138,6 @@ public class BBHNACPENDM
 	private static int[] GHJIPAFCBNN = new int[12] {0x1, 0xd, 0xf, 0x14, 0x61, 0x64, 0x66, 0x6a, 0x25, 0x28, 0x29, 0x2f}; // 0x14
 	private static int[] MABKCDEOOMC = new int[4] {1, 2, 4, 9}; // 0x18
 
-	// Properties
 	public JBMPOAAMGNB JHFIPCIHJNL { get; private set; } // 0xC KMGGEBHHBAA ECLNKICNLBG LBHPNACEDGL
 	// public EGOLBAPFHHD KCCLEHLLOFG { get; private set; } // 0x10 EGGBCKDPNNP ELICAAHFMOE MCEPFJGMKGK
 	// public JNMFKOHFAFB MHEAEGMIKIE { get; private set; } // 0x14 IPIDNJLGHHA IOINJEBJGAL BGIFNFCAEDH

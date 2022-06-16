@@ -6,8 +6,8 @@ public class PEBFNABDJDI : DIHHCBACKGG
         public long BIMOIPDPLJO; // 0x8
         public int OLMFFMANMNE; // 0x10
 
-        // public long KJLPILMAIKH { get; set; }
-        // public int CEMEIPNMAAD { get; set; }
+        // public long KJLPILMAIKH { get; set; } GLFFDLFFELA 0x16C0E08 PEMIOJOMOHL 0x16C0DD8
+        // public int CEMEIPNMAAD { get; set; } MPHJDGEDFOC 0x16C0E1C FNCCGEAMNAC 0x16C0DF4
 
         // // RVA: 0x16C0DA0 Offset: 0x16C0DA0 VA: 0x16C0DA0
         public JFIGGEAFMCN() 
@@ -15,18 +15,6 @@ public class PEBFNABDJDI : DIHHCBACKGG
             BIMOIPDPLJO = 0xbd07d870;
             OLMFFMANMNE = 0x96aafb;
         }
-
-        // // RVA: 0x16C0E08 Offset: 0x16C0E08 VA: 0x16C0E08
-        // public long GLFFDLFFELA() { }
-
-        // // RVA: 0x16C0DD8 Offset: 0x16C0DD8 VA: 0x16C0DD8
-        // public void PEMIOJOMOHL(long NANNGLGOFKH) { }
-
-        // // RVA: 0x16C0E1C Offset: 0x16C0E1C VA: 0x16C0E1C
-        // public int MPHJDGEDFOC() { }
-
-        // // RVA: 0x16C0DF4 Offset: 0x16C0DF4 VA: 0x16C0DF4
-        // public void FNCCGEAMNAC(int NANNGLGOFKH) { }
     }
 
 	// public static bool EEDNHJDKIAC; // 0x0

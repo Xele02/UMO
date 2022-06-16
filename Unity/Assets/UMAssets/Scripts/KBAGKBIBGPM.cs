@@ -1,21 +1,20 @@
 
 public class KBAGKBIBGPM : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 1;
 	// public const int ICHFGGBPCBJ = 4;
 	// public const int BJEPEBMLKOL = 50;
 	// public const int HNDHMLCHKFM = 1073741824;
 	// public const int NEJCHBPCHOP = 1073741823;
-	// public List<KBAGKBIBGPM.JAIFDODKMIA> FBCJICEPLED; // 0x24
+	// public List<KBAGKBIBGPM.JAIFDODKMIA> FBCJICEPLED = new List<KBAGKBIBGPM.JAIFDODKMIA>(4); // 0x24
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
 
-	// // Methods
-
 	// // RVA: 0x1013AA8 Offset: 0x1013AA8 VA: 0x1013AA8
-	// public void .ctor() { }
+	public KBAGKBIBGPM()
+	{
+		LHPDDGIJKNB();
+	}
 
 	// // RVA: 0x1013B44 Offset: 0x1013B44 VA: 0x1013B44 Slot: 4
 	public override void KMBPACJNEOF()

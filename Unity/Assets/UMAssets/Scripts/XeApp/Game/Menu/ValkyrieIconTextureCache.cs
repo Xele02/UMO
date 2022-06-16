@@ -3,8 +3,6 @@ namespace XeApp.Game.Menu
 {
 	public class ValkyrieIconTextureCache : IconTextureCache
 	{
-		// Methods
-
 		// // RVA: 0x16557F4 Offset: 0x16557F4 VA: 0x16557F4 Slot: 5
 		// public override void Terminated() { }
 

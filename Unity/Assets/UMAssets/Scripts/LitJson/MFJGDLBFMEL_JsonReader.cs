@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-// Namespace: 
+public enum LIMGNGJNDAK{}
 public enum LIMGNGJNDAK_JsonToken
 {
-	// Fields
 	HJNNKCMLGFL_None = 0,
 	EKHMLPGOKGB_ObjectStart = 1,
 	LPHOANHJJNH_PropertyName = 2,
@@ -23,7 +22,6 @@ public enum LIMGNGJNDAK_JsonToken
 
 // https://github.com/LitJSON/litjson/blob/cd646def20af4aff19a02f8e7bcdd28b54fc850f/src/LitJson/JsonReader.cs
 
-// Namespace: 
 public class MFJGDLBFMEL_JsonReader
 {
 	#region Fields

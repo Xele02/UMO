@@ -325,7 +325,7 @@ namespace XeApp.Game
 		// // RVA: 0x99AD3C Offset: 0x99AD3C VA: 0x99AD3C
 		private void OnDestroy()
 		{
-			// !!!
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0x99ADD8 Offset: 0x99ADD8 VA: 0x99ADD8

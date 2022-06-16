@@ -1452,8 +1452,6 @@ namespace Cryptor
         private static bool isInitialized; // 0x0
         private static Dictionary<uint, LoadRequest> loadRequestDict; // 0x4
 
-        // // Methods
-
         // // RVA: 0x2BAE368 Offset: 0x2BAE368 VA: 0x2BAE368
         private static /*extern */bool dsfd_initialize(byte[] seed1, byte[] seed2, byte[] seed3/*[In] IntPtr seed1, [In] IntPtr seed2, [In] IntPtr seed3*/) 
         { 

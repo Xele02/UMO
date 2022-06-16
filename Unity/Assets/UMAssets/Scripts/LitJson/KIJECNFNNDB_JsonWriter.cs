@@ -4,10 +4,8 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 
-// Namespace: 
-internal enum KLCFANODNFB_Condition // TypeDefIndex: 18711
+internal enum KLCFANODNFB_Condition
 {
-	// Fields
 	JCPOGOIDAHP_InArray,
 	PODKMAMAKOK_InObject,
 	CKDOPEGLBHB_NotAProperty,
@@ -15,23 +13,16 @@ internal enum KLCFANODNFB_Condition // TypeDefIndex: 18711
 	BLNDFNMPILA_Value
 }
 
-// Namespace: 
-internal class LHOMBAJMBDN_WriterContext // TypeDefIndex: 18712
+internal class LHOMBAJMBDN_WriterContext
 {
-	// Fields
 	public int HNBFOAJIIAL_Count; // 0x8
 	public bool JCPOGOIDAHP_InArray; // 0xC
 	public bool PODKMAMAKOK_InObject; // 0xD
 	public bool PDGOJNHEABE_ExpectingValue; // 0xE
 	public int HPCFOIINKJI_Padding; // 0x10
-
-	// Methods
-
-	// RVA: 0x17F7414 Offset: 0x17F7414 VA: 0x17F7414
-	//public void .ctor() { }
 }
 
-public class KIJECNFNNDB_JsonWriter // TypeDefIndex: 18713
+public class KIJECNFNNDB_JsonWriter
 {
 	#region Fields
 	private static NumberFormatInfo JCHAHJIDEHM_number_format; // 0x0

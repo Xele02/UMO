@@ -38,7 +38,11 @@ public class MHDFCLCMDKO : DIHHCBACKGG
     }
 
 	// // RVA: 0x132AF10 Offset: 0x132AF10 VA: 0x132AF10 Slot: 9
-	// public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC) { }
+	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+    {
+        UnityEngine.Debug.LogError("TODO");
+		return true;
+    }
 
 	// // RVA: 0x132B18C Offset: 0x132B18C VA: 0x132B18C Slot: 10
 	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }

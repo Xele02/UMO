@@ -58,7 +58,4 @@ public class NEKDCJKANAH : KLFDBFMNLBL
 
 	// // RVA: 0x1AE973C Offset: 0x1AE973C VA: 0x1AE973C
 	// public void GGKLNCHMPFC(int LFLLLOPAKCO) { }
-
-	// // RVA: 0x1AE9844 Offset: 0x1AE9844 VA: 0x1AE9844
-	// private static void .cctor() { }
 }

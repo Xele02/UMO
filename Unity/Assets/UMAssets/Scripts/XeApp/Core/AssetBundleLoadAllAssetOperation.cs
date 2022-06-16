@@ -5,12 +5,9 @@ namespace XeApp.Core
 {
     public class AssetBundleLoadAllAssetOperation : AssetBundleLoadAllAssetOperationBase
     {
-        // Fields
         protected string m_AssetBundleName; // 0x8
         protected string m_loadingError; // 0xC
         private AssetBundleRequest m_request; // 0x10
-
-        // // Methods
 
         // // RVA: 0xE0F1D4 Offset: 0xE0F1D4 VA: 0xE0F1D4
         public AssetBundleLoadAllAssetOperation(string bundleName)

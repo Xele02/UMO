@@ -446,7 +446,4 @@ public class KDHGBOOECKC
         UnityEngine.Debug.LogError("TODO");
         yield break;
     }
-
-	// // RVA: 0x1037F98 Offset: 0x1037F98 VA: 0x1037F98
-	// public void .ctor() { }
 }

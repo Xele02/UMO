@@ -222,7 +222,6 @@ namespace XeApp.Game.Common
 
 		public class MvInfo
 		{
-			// Properties
 			public bool isModeDiva { get; set; } // 0x8
 			public bool isModeValkyrie { get; set; } // 0x9
 			public bool isCutin { get; set; } // 0xA

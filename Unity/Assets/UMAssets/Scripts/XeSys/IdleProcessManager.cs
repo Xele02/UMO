@@ -34,29 +34,16 @@ namespace XeSys
 		private int idle; // 0x18
 		private int registered; // 0x1C
 		private Stopwatch sw = new Stopwatch(); // 0x20
-		// [CompilerGeneratedAttribute] // RVA: 0x6534C4 Offset: 0x6534C4 VA: 0x6534C4
-		// private float <ProcessingRate>k__BackingField; // 0x24
-		// [CompilerGeneratedAttribute] // RVA: 0x6534D4 Offset: 0x6534D4 VA: 0x6534D4
-		// private bool <IsFixedTime>k__BackingField; // 0x28
-		// [CompilerGeneratedAttribute] // RVA: 0x6534E4 Offset: 0x6534E4 VA: 0x6534E4
-		// private int <ProcessingMilliSeconds>k__BackingField; // 0x2C
-		// [CompilerGeneratedAttribute] // RVA: 0x6534F4 Offset: 0x6534F4 VA: 0x6534F4
-		// private bool <IsAutoExtention>k__BackingField; // 0x30
 		public int lazyCount; // 0x34
 		private const int LAZY_LIMIT_COUNT = 2;
-		// [CompilerGeneratedAttribute] // RVA: 0x653504 Offset: 0x653504 VA: 0x653504
-		// private bool <IsBurstEnable>k__BackingField; // 0x38
-		// [CompilerGeneratedAttribute] // RVA: 0x653514 Offset: 0x653514 VA: 0x653514
-		// private float <BurstProcessingRate>k__BackingField; // 0x3C
 		private WaitForEndOfFrame recycle = new WaitForEndOfFrame(); // 0x40
 
-		// Properties
-		public float ProcessingRate { get; set; }
-		public bool IsFixedTime { get; set; }
-		public int ProcessingMilliSeconds { get; set; }
-		public bool IsAutoExtention { get; set; }
-		public bool IsBurstEnable { get; set; }
-		public float BurstProcessingRate { get; set; }
+		public float ProcessingRate { get; set; } // 0x24
+		public bool IsFixedTime { get; set; } // 0x28
+		public int ProcessingMilliSeconds { get; set; } // 0x2C
+		public bool IsAutoExtention { get; set; } // 0x30
+		public bool IsBurstEnable { get; set; } // 0x38
+		public float BurstProcessingRate { get; set; } // 0x3C
 
 		// // RVA: 0x1EF2A28 Offset: 0x1EF2A28 VA: 0x1EF2A28
 		private void Awake()

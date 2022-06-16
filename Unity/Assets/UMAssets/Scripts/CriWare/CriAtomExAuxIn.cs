@@ -27,7 +27,10 @@ public class CriAtomExAuxIn : CriDisposable
 	}
 
 	// // RVA: 0x28985A8 Offset: 0x28985A8 VA: 0x28985A8
-	// public void Start() { }
+	public void Start()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0x28986BC Offset: 0x28986BC VA: 0x28986BC
 	// public void Stop() { }

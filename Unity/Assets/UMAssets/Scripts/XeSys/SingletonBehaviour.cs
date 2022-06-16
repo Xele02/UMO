@@ -4,10 +4,8 @@ namespace XeSys
 {
 	public class SingletonBehaviour<T> : MonoBehaviour where T : class
 	{
-		// Fields
 		private static T mInstance; // 0x0
 
-		// Properties
 		public static T Instance { get
 		{
 			if(mInstance == null)

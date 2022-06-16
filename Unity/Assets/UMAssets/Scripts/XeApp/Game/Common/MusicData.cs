@@ -62,9 +62,6 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE62E0 Offset: 0xAE62E0 VA: 0xAE62E0
 		private IEnumerator Co_LoadData(int musicId, int difficultyId, int stageDivaNum, bool line6Mode)
 		{
-			// // Fields
-			// private int <>1__state; // 0x8
-			// private object <>2__current; // 0xC
 			// public MusicData <>4__this; // 0x10
 			// public int musicId; // 0x14
 			// public int difficultyId; // 0x18

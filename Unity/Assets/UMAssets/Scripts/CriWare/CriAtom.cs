@@ -13,12 +13,10 @@ public class CriAtom : CriMonoBehaviour
 	// private static CriAtomExBeatSync.CbFunc obsoleteBeatSyncFunc; // 0xC
 	// [CompilerGeneratedAttribute] // RVA: 0x63462C Offset: 0x63462C VA: 0x63462C
 	// private static CriAtomEx.CueLinkCbFunc cueLinkUserCbFunc; // 0x10
-	// [CompilerGeneratedAttribute] // RVA: 0x63463C Offset: 0x63463C VA: 0x63463C
-	// private static CriAtom <instance>k__BackingField; // 0x14
 	// private GCHandle acfRegisterGCHandle; // 0x30
 	public bool dontRemoveExistsCueSheet; // 0x34
 
-	// private static CriAtom instance { get; set; }
+	// private static CriAtom instance { get; set; } // 0x14
 	// public static bool CueSheetsAreLoading { get; }
 
 	// // RVA: 0x2879DA0 Offset: 0x2879DA0 VA: 0x2879DA0
@@ -54,14 +52,6 @@ public class CriAtom : CriMonoBehaviour
 
 	// // RVA: 0x287AE28 Offset: 0x287AE28 VA: 0x287AE28
 	// internal static void remove_OnCueLinkCallback(CriAtomEx.CueLinkCbFunc value) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x63545C Offset: 0x63545C VA: 0x63545C
-	// // RVA: 0x287AF80 Offset: 0x287AF80 VA: 0x287AF80
-	// private static CriAtom get_instance() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x63546C Offset: 0x63546C VA: 0x63546C
-	// // RVA: 0x287B00C Offset: 0x287B00C VA: 0x287B00C
-	// private static void set_instance(CriAtom value) { }
 
 	// // RVA: 0x287B09C Offset: 0x287B09C VA: 0x287B09C
 	// public static void AttachDspBusSetting(string settingName) { }

@@ -3,25 +3,15 @@ public class CriWareErrorHandler : CriMonoBehaviour
 {
 	public bool enableDebugPrintOnTerminal; // 0x1C
 	public bool enableForceCrashOnError; // 0x1D
-	public bool dontDestroyOnLoad; // 0x1E
-	// [CompilerGeneratedAttribute] // RVA: 0x634C24 Offset: 0x634C24 VA: 0x634C24
-	// private static string <errorMessage>k__BackingField; // 0x0
+	public bool dontDestroyOnLoad = true; // 0x1E
 	// [CompilerGeneratedAttribute] // RVA: 0x634C34 Offset: 0x634C34 VA: 0x634C34
 	// private static CriWareErrorHandler.Callback OnCallback; // 0x4
 	// [ObsoleteAttribute] // RVA: 0x634C44 Offset: 0x634C44 VA: 0x634C44
 	// public static CriWareErrorHandler.Callback callback; // 0x8
-	public uint messageBufferCounts; // 0x20
+	public uint messageBufferCounts = 8; // 0x20
 	// private static int initializationCount; // 0xC
 
-	// public static string errorMessage { get; set; }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6364DC Offset: 0x6364DC VA: 0x6364DC
-	// // RVA: 0x2BAA004 Offset: 0x2BAA004 VA: 0x2BAA004
-	// public static string get_errorMessage() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6364EC Offset: 0x6364EC VA: 0x6364EC
-	// // RVA: 0x2BAA090 Offset: 0x2BAA090 VA: 0x2BAA090
-	// public static void set_errorMessage(string value) { }
+	// public static string errorMessage { get; set; } // 0x0
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6364FC Offset: 0x6364FC VA: 0x6364FC
 	// // RVA: 0x2BAA120 Offset: 0x2BAA120 VA: 0x2BAA120
@@ -109,10 +99,4 @@ public class CriWareErrorHandler : CriMonoBehaviour
 
 	// // RVA: 0x2BAAA38 Offset: 0x2BAAA38 VA: 0x2BAAA38
 	// private static extern void CRIWAREEA2D718D(CriWareErrorHandler.ErrorCallbackFunc callback) { }
-
-	// // RVA: 0x2BABF80 Offset: 0x2BABF80 VA: 0x2BABF80
-	// public void .ctor() { }
-
-	// // RVA: 0x2BABF98 Offset: 0x2BABF98 VA: 0x2BABF98
-	// private static void .cctor() { }
 }

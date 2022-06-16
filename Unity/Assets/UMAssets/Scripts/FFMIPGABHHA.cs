@@ -1,31 +1,24 @@
 
 public class FFMIPGABHHA : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// public const long BBEGLBMOBOF = 32158710441;
-	// public static string POFDDFCGEGP; // 0x0
+	// public static string POFDDFCGEGP = "_"; // 0x0
 	// public string IOIMHJAOKOO; // 0x24
 	// private long KLAPHOKNEDG; // 0x28
 	// public long AFNJCFEKFDD; // 0x30
 
-	// // Properties
-	// public long BEBJKJKBOGH { get; set; }
+	// public long BEBJKJKBOGH { get; set; } DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
-
-	// // RVA: 0x14E4B88 Offset: 0x14E4B88 VA: 0x14E4B88
-	// public long DIAPHCJBPFD() { }
-
-	// // RVA: 0x14E4BA0 Offset: 0x14E4BA0 VA: 0x14E4BA0
-	// public void IHAIKPNEEJE(long NANNGLGOFKH) { }
 
 	// // RVA: 0x14E4BBC Offset: 0x14E4BBC VA: 0x14E4BBC
 	// public static string CAOGDCBPBAN(string MDADLCOCEBN, int EHDDADDKMFI, int FEOKKEPAIBB) { }
 
 	// // RVA: 0x14E4E1C Offset: 0x14E4E1C VA: 0x14E4E1C
-	// public void .ctor() { }
+	public FFMIPGABHHA()
+	{
+		KMBPACJNEOF();
+	}
 
 	// // RVA: 0x14E4E48 Offset: 0x14E4E48 VA: 0x14E4E48 Slot: 4
 	public override void KMBPACJNEOF()
@@ -50,7 +43,4 @@ public class FFMIPGABHHA : KLFDBFMNLBL
 
 	// // RVA: 0x14E5A68 Offset: 0x14E5A68 VA: 0x14E5A68 Slot: 9
 	// public override bool NFKFOODCJJB() { }
-
-	// // RVA: 0x14E5A70 Offset: 0x14E5A70 VA: 0x14E5A70
-	// private static void .cctor() { }
 }

@@ -1,7 +1,6 @@
 
 public class FJGNPNFLHPH : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;
 	// public const int ICHFGGBPCBJ = 3;
@@ -13,13 +12,13 @@ public class FJGNPNFLHPH : KLFDBFMNLBL
 	// public List<FJGNPNFLHPH.JIALCLGJPKL> FBCJICEPLED; // 0x30
 	// public List<IKCGAJKCPFN> NNMPGOAGEOL; // 0x34
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
 
-	// // Methods
-
 	// // RVA: 0x14E9B00 Offset: 0x14E9B00 VA: 0x14E9B00
-	// public void .ctor() { }
+	public FJGNPNFLHPH()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x14E9BD4 Offset: 0x14E9BD4 VA: 0x14E9BD4 Slot: 4
 	public override void KMBPACJNEOF()

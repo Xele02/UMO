@@ -9,7 +9,6 @@ namespace XeApp.Game.RhythmGame
 	{
 		public class UITextureResource
 		{
-			// Fields
 			public Texture centerCardTexture; // 0x8
 			public List<Material> divaSkillCutinMaterials = new List<Material>(); // 0xC
 			public Dictionary<int, Material> skillEffectMaterials = new Dictionary<int, Material>(); // 0x10
@@ -54,26 +53,27 @@ namespace XeApp.Game.RhythmGame
 		public GameObject faildUiPrefab; // 0x84
 		public GameObject completeUiPrefab; // 0x88
 
-		public bool isSpecialDirectionResourceLoaded { get; set; }
-		public bool isTakeoffDivaVoice { get; set; }
-		public int takeoffVoiceId { get; set; }
-		public int enteredValkyrieModeVoiceId { get; set; }
-		public int enterdDivaModeVoiceId { get; set; }
-		public int enterdAwakenDivaModeVoiceId { get; set; }
-		public int enterFoldWaveId_50 { get; set; }
-		public int enterFoldWaveId_100 { get; set; }
-		public bool isUITextureResoucesLoaded { get; set; }
-		public bool is3DModeMusicDataResoucesLoaded { get; set; }
-		public bool is2DModeMusicDataResoucesLoaded { get; set; }
-		public bool is3DModeSpecialResoucesLoaded { get; set; }
-		public bool is2DModeSpecialResoucesLoaded { get; set; }
-		public bool is3DModeAllResoucesLoaded { get; set; }
-		public bool is2DModeAllResoucesLoaded { get; set; }
-
-		// // Methods
+		// public bool isSpecialDirectionResourceLoaded { get; set; }
+		// public bool isTakeoffDivaVoice { get; set; }
+		// public int takeoffVoiceId { get; set; }
+		// public int enteredValkyrieModeVoiceId { get; set; }
+		// public int enterdDivaModeVoiceId { get; set; }
+		// public int enterdAwakenDivaModeVoiceId { get; set; }
+		// public int enterFoldWaveId_50 { get; set; }
+		// public int enterFoldWaveId_100 { get; set; }
+		// public bool isUITextureResoucesLoaded { get; set; }
+		// public bool is3DModeMusicDataResoucesLoaded { get; set; }
+		// public bool is2DModeMusicDataResoucesLoaded { get; set; }
+		// public bool is3DModeSpecialResoucesLoaded { get; set; }
+		// public bool is2DModeSpecialResoucesLoaded { get; set; }
+		// public bool is3DModeAllResoucesLoaded { get; set; }
+		// public bool is2DModeAllResoucesLoaded { get; set; }
 
 		// // RVA: 0xBF4744 Offset: 0xBF4744 VA: 0xBF4744
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xBF50C0 Offset: 0xBF50C0 VA: 0xBF50C0
 		// public bool get_isSpecialDirectionResourceLoaded() { }

@@ -18,7 +18,11 @@ public class BBLECJKKKLA : DIHHCBACKGG
     }
 
 	// // RVA: 0xF2B510 Offset: 0xF2B510 VA: 0xF2B510 Slot: 9
-	// public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC) { }
+	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+    {
+        UnityEngine.Debug.LogError("TODO");
+		return true;
+    }
 
 	// // RVA: 0xF2BF0C Offset: 0xF2BF0C VA: 0xF2BF0C Slot: 10
 	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }

@@ -1,10 +1,7 @@
 using System;
 
-// Namespace: 
-public class IKFDGFEAJPL_JsonException : ApplicationException // TypeDefIndex: 18696
+public class IKFDGFEAJPL_JsonException : ApplicationException
 {
-	// Methods
-
 	// RVA: 0x8E451C Offset: 0x8E451C VA: 0x8E451C
 	public IKFDGFEAJPL_JsonException() : base() { }
 

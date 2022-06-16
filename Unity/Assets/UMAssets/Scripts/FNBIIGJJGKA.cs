@@ -1,7 +1,6 @@
 
 public class FNBIIGJJGKA : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// private const int MKINOABMBGM = 20;
 	// private const int FOBFLHIIJOM = 100;
@@ -18,10 +17,7 @@ public class FNBIIGJJGKA : KLFDBFMNLBL
 	// public long[] NJIDHLPGBFO; // 0x3C
 	// public long PCBJHBCNNGD; // 0x40
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
 
 	// // RVA: 0x119E81C Offset: 0x119E81C VA: 0x119E81C
 	// public void BEJONIOEGCI(int DLAEJOBELBH, int AKNELONELJK, bool BCGLDMKODLC, bool NANEGCHBEDN, List<int> PGPBALKFBNK, bool PMCGHPOGLGM, bool GIKLNODJKFK = False) { }
@@ -42,7 +38,10 @@ public class FNBIIGJJGKA : KLFDBFMNLBL
 	// public int CEPBENFKMFF(int AKNELONELJK) { }
 
 	// // RVA: 0x119EB74 Offset: 0x119EB74 VA: 0x119EB74
-	// public void .ctor() { }
+	public FNBIIGJJGKA()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x119EC90 Offset: 0x119EC90 VA: 0x119EC90 Slot: 4
 	public override void KMBPACJNEOF()

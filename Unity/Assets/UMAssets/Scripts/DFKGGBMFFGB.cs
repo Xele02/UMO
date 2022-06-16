@@ -18,19 +18,13 @@ public class DFKGGBMFFGB
 	public HighScoreRatingRank.Type AGJIIKKOKFJ; // 0x38
 
 	// public BBHNACPENDM AHEFHIMGIBI { get; } // GNMGJMDJEGI 0x197E7F0
-	// public int NLMELNHPIID { get; set; }//???
+	// public int NLMELNHPIID { get; set; }//DBEFCECMFMG 0x197E8C0 ILFOOPKEKLC 0x197E90C
 
 	// // RVA: 0x197E7F8 Offset: 0x197E7F8 VA: 0x197E7F8
 	public DFKGGBMFFGB()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}
-
-	// // RVA: 0x197E8C0 Offset: 0x197E8C0 VA: 0x197E8C0
-	// public int DBEFCECMFMG() { }
-
-	// // RVA: 0x197E90C Offset: 0x197E90C VA: 0x197E90C
-	// public void ILFOOPKEKLC(int NANNGLGOFKH) { }
 
 	// // RVA: 0x197E960 Offset: 0x197E960 VA: 0x197E960
 	// public void KHEKNNFCAOI(BBHNACPENDM NIMOGBDCMLJ, bool HEHLHEKCIFF = False) { }

@@ -9,18 +9,8 @@ namespace XeApp.Game.Title
 	{
 		[SerializeField]
 		private ActionButton m_Tap; // 0x14
-		// [CompilerGeneratedAttribute] // RVA: 0x665624 Offset: 0x665624 VA: 0x665624
-		// private Action <ButtonCallbackTap>k__BackingField; // 0x18
 
-		public Action ButtonCallbackTap { get; set; }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B3B80 Offset: 0x6B3B80 VA: 0x6B3B80
-		// // RVA: 0xE3ADFC Offset: 0xE3ADFC VA: 0xE3ADFC
-		// public Action get_ButtonCallbackTap() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B3B90 Offset: 0x6B3B90 VA: 0x6B3B90
-		// // RVA: 0xE3AE04 Offset: 0xE3AE04 VA: 0xE3AE04
-		// public void set_ButtonCallbackTap(Action value) { }
+		public Action ButtonCallbackTap { get; set; } // 0x18
 
 		// // RVA: 0xE3AE0C Offset: 0xE3AE0C VA: 0xE3AE0C
 		public void SetCallback()

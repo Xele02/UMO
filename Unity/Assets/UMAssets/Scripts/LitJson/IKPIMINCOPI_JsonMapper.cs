@@ -7,21 +7,17 @@ using System.Reflection;
 
 internal struct HNPAFOGPHIM_PropertyMetadata
 {
-	// Fields
 	public MemberInfo HHKBDDNBEAA_Info; // 0x0
 	public bool KFKMLGBHPFI_IsField; // 0x4
 	public Type JMKADEBOBLA_Type; // 0x8
 }
 
-// Namespace: 
 internal struct PNELLEFDAMJ_ArrayMetadata
 {
-	// Fields
 	private Type HBMLACMKOGF_element_type; // 0x0
 	private bool FGKEHMPKILA_is_array; // 0x4
 	private bool KKHKAKEDAPG_is_list; // 0x5
 
-	// Properties
 	// RVA: 0x7FBD8C Offset: 0x7FBD8C VA: 0x7FBD8C
 	//public Type IGCFEPKFDIG() { }
 	// RVA: 0x7FBD94 Offset: 0x7FBD94 VA: 0x7FBD94
@@ -59,15 +55,12 @@ internal struct PNELLEFDAMJ_ArrayMetadata
 }
 
 
-// Namespace: 
-internal struct OBDHMJIBHIP_ObjectMetadata // TypeDefIndex: 18699
+internal struct OBDHMJIBHIP_ObjectMetadata
 {
-	// Fields
 	private Type HBMLACMKOGF_element_type; // 0x0
 	private bool FCILDCFBKMG_is_dictionary; // 0x4
 	private IDictionary<string, HNPAFOGPHIM_PropertyMetadata> LALJJDFLKGD_properties; // 0x8
 
-	// Properties
 	// RVA: 0x7FF6EC Offset: 0x7FF6EC VA: 0x7FF6EC
 	//public Type IGCFEPKFDIG() { }
 	// RVA: 0x7FF6F4 Offset: 0x7FF6F4 VA: 0x7FF6F4
@@ -111,7 +104,7 @@ public   delegate TValue MAIGGGACCCE_ImporterFunc<TJson, TValue> (TJson BJKEOACP
 
 public delegate IHIFCPDDDKN_IJsonWrapper OEIBKOCANDB_WrapperFactory();
 
-public class IKPIMINCOPI_JsonMapper // TypeDefIndex: 18705
+public class IKPIMINCOPI_JsonMapper
 {
 	#region Fields
 	private static int EAKADAEHFNP_max_nesting_depth; // 0x0
@@ -1018,7 +1011,4 @@ public class IKPIMINCOPI_JsonMapper // TypeDefIndex: 18705
 	{
 		FILBDMLOHNE_custom_importers_table.Clear();
 	}
-
-	// RVA: 0x8F24E4 Offset: 0x8F24E4 VA: 0x8F24E4
-	//public void .ctor() { }
 }

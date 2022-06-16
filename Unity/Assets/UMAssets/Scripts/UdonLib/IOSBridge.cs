@@ -2,8 +2,8 @@ namespace UdonLib
 {
 	public class IOSBridge
 	{
-        public static long GetAvailableStorageMB { get; }
-        public static long GetAvailableStorageKB { get; }
+        // public static long GetAvailableStorageMB { get; }
+        // public static long GetAvailableStorageKB { get; }
 
         // // RVA: 0xE0B8C0 Offset: 0xE0B8C0 VA: 0xE0B8C0
         // public static void PlayShutterSound() { }

@@ -31,7 +31,4 @@ public class CriManaAmbisonicSource : CriMonoBehaviour
 
 	// // RVA: 0x29613E0 Offset: 0x29613E0 VA: 0x29613E0
 	// private void RoatateAmbisonicSourceOrientationByTransformOfChild(ref Vector3 input_euler) { }
-
-	// // RVA: 0x29619FC Offset: 0x29619FC VA: 0x29619FC
-	// public void .ctor() { }
 }

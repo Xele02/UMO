@@ -45,7 +45,4 @@ public class NFMHCLHEMHB : KLFDBFMNLBL
 
 	// // RVA: 0x1AF0698 Offset: 0x1AF0698 VA: 0x1AF0698 Slot: 9
 	// public override bool NFKFOODCJJB() { }
-
-	// // RVA: 0x1AF06A0 Offset: 0x1AF06A0 VA: 0x1AF06A0
-	// private static void .cctor() { }
 }

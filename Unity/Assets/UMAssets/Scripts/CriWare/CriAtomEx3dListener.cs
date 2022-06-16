@@ -23,7 +23,10 @@ public class CriAtomEx3dListener : CriDisposable
 	// public IntPtr get_nativeHandle() { }
 
 	// // RVA: 0x2885074 Offset: 0x2885074 VA: 0x2885074
-	// public void Update() { }
+	public void Update()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x28851BC Offset: 0x28851BC VA: 0x28851BC
 	// public void ResetParameters() { }

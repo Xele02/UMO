@@ -16,27 +16,27 @@ namespace XeSys.uGUI
 		private Action mUpdate; // 0x48
 		private Image mImage; // 0x4C
 
-		public float currentTime { get; }
-		public float targetTime { get; }
-		public bool isFading { get; }
+		// public float currentTime { get; } 0x274AEBC
+		// public float targetTime { get; }  0x274AEC4
+		// public bool isFading { get; } 0x274AECC
 
 		// // RVA: 0x274AEB4 Offset: 0x274AEB4 VA: 0x274AEB4
-		// public Image GetImage() { }
-
-		// // RVA: 0x274AEBC Offset: 0x274AEBC VA: 0x274AEBC
-		// public float get_currentTime() { }
-
-		// // RVA: 0x274AEC4 Offset: 0x274AEC4 VA: 0x274AEC4
-		// public float get_targetTime() { }
-
-		// // RVA: 0x274AECC Offset: 0x274AECC VA: 0x274AECC
-		// public bool get_isFading() { }
+		public Image GetImage()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x274AF64 Offset: 0x274AF64 VA: 0x274AF64
-		// private void Awake() { }
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x274AFEC Offset: 0x274AFEC VA: 0x274AFEC
-		// private void Update() { }
+		private void Update()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x274B018 Offset: 0x274B018 VA: 0x274B018
 		// private void UpdateIdle() { }

@@ -22,15 +22,11 @@ namespace XeApp.Game.Menu
 			public int Weight { get { return m_weight; } } // get_Weight 0xED0CE0
 		}
 		
-		// Fields
 		[SerializeField]
 		[Header("- touch [Voice Id] [Touch / Talk / Timezone / Present / SimpleTalk]")]
 		private List<MenuDivaVoiceTableCos.Data> m_touchReaction; // 0xC
 
-		// Properties
 		public List<MenuDivaVoiceTableCos.Data> TouchReaction { get { return m_touchReaction; } set { return; } } // get_TouchReaction 0xED0C18  set_TouchReaction 0xED0C20 
-
-		// Methods
 
 		// // RVA: 0xED0C24 Offset: 0xED0C24 VA: 0xED0C24
 		// public MenuDivaVoiceTableCos.Data GetTouchReactionData(int a_index) { }

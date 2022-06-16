@@ -16,7 +16,10 @@ namespace XeApp.Game.Common
 		// public bool isAllLoaded { get; } 0xAEA888
 
 		// // RVA: 0xAEA8B4 Offset: 0xAEA8B4 VA: 0xAEA8B4
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xAEA8CC Offset: 0xAEA8CC VA: 0xAEA8CC
 		// public void LoadResources(int runwayId, int enviromentId, int valkyrieId) { }

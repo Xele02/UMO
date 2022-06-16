@@ -15,7 +15,7 @@ public class CJMOKHDNBNB
         }
         return OAFCIACBJNN;
     } } 
-	public static string NPDKPLJENOJ { get; }
+	// public static string NPDKPLJENOJ { get; }
 
 	// // RVA: 0x107CFDC Offset: 0x107CFDC VA: 0x107CFDC
 	// public static string KEPPNAKFDIF() { }

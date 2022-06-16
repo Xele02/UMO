@@ -1,20 +1,19 @@
 
 public class FEHINJKHDAP : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// public const int ICHFGGBPCBJ = 6;
 	// public const int KKBHHBGCNJO = 5;
 	// public const long EGHFCEBIGEE = 99999999;
-	// public List<FEHINJKHDAP.ALGDNCMJHGN> FBCJICEPLED; // 0x24
+	// public List<FEHINJKHDAP.ALGDNCMJHGN> FBCJICEPLED = new List<FEHINJKHDAP.ALGDNCMJHGN>(6); // 0x24
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
 
-	// // Methods
-
 	// // RVA: 0xFD2E00 Offset: 0xFD2E00 VA: 0xFD2E00
-	// public void .ctor() { }
+	public FEHINJKHDAP()
+	{
+		LHPDDGIJKNB();
+	}
 
 	// // RVA: 0xFD2E9C Offset: 0xFD2E9C VA: 0xFD2E9C Slot: 4
 	public override void KMBPACJNEOF()

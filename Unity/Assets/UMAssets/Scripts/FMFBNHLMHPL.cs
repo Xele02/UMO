@@ -1,20 +1,19 @@
 
 public class FMFBNHLMHPL : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// public const int BJEPEBMLKOL = 50;
 	// public const int ICHFGGBPCBJ = 9;
 	// public const int CCLDBKDCJEH = 1;
 	// public List<FMFBNHLMHPL.LCFOEDLCCON> FBCJICEPLED; // 0x24
 
-	// // Properties
 	// public override bool DMICHEJIAJL { get; }
 
-	// // Methods
-
 	// // RVA: 0x1198528 Offset: 0x1198528 VA: 0x1198528
-	// public void .ctor() { }
+	public LHPDDGIJKNB()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x11985C4 Offset: 0x11985C4 VA: 0x11985C4 Slot: 4
 	public override void KMBPACJNEOF()

@@ -1,15 +1,11 @@
 public class FKNOCGCODBK : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 3;
 	// private List<CIFHILOJJFC> AHBBMJANGHE; // 0x24
 	// public CIFHILOJJFC DBMOBFCLFOB; // 0x28
 
-	// // Properties
 	// public CIFHILOJJFC JKNGLJNEEPO { get; }
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
 
 	// // RVA: 0x118F3A8 Offset: 0x118F3A8 VA: 0x118F3A8
 	// public CIFHILOJJFC GCINIJEMHFK(int PPFNGGCBJKC) { }
@@ -18,7 +14,10 @@ public class FKNOCGCODBK : KLFDBFMNLBL
 	// public CIFHILOJJFC FJDDNKGHPHN() { }
 
 	// // RVA: 0x118F4A4 Offset: 0x118F4A4 VA: 0x118F4A4
-	// public void .ctor() { }
+	public FKNOCGCODBK()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x118F56C Offset: 0x118F56C VA: 0x118F56C Slot: 4
 	public override void KMBPACJNEOF()

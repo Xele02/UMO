@@ -7,21 +7,9 @@ public class PKLLAKCBPAH : KLFDBFMNLBL
 	// private sbyte MLLAPPOGDJO; // 0x2C
 	// private string LAJDGNJCMEH; // 0x30
 
-	// public bool DGNMOIBJBBJ { get; set; }
-	// public string PCBDMADAIEO { get; set; }
+	// public bool DGNMOIBJBBJ { get; set; } GOOBCPPNKNF 0x93EF3C NBBIKPFKHME 0x93EF50
+	// public string PCBDMADAIEO { get; set; } KBGEHDFKHJC 0x93EF80 KNBPHPFBGMI 0x93EF88
 	// public override bool DMICHEJIAJL { get; }
-
-	// // RVA: 0x93EF3C Offset: 0x93EF3C VA: 0x93EF3C
-	// public bool GOOBCPPNKNF() { }
-
-	// // RVA: 0x93EF50 Offset: 0x93EF50 VA: 0x93EF50
-	// public void NBBIKPFKHME(bool NANNGLGOFKH) { }
-
-	// // RVA: 0x93EF80 Offset: 0x93EF80 VA: 0x93EF80
-	// public string KBGEHDFKHJC() { }
-
-	// // RVA: 0x93EF88 Offset: 0x93EF88 VA: 0x93EF88
-	// public void KNBPHPFBGMI(string NANNGLGOFKH) { }
 
 	// // RVA: 0x93EF90 Offset: 0x93EF90 VA: 0x93EF90
 	public PKLLAKCBPAH()

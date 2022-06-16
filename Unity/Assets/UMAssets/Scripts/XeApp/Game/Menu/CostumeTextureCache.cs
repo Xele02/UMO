@@ -3,7 +3,6 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeTextureCache : IconTextureCache
 	{
-		// Methods
 		public CostumeTextureCache() : base(default(int))
 		{
 		}

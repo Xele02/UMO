@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace XeApp.Game.Menu
 {
-	public class MenuDivaVoiceTable : ScriptableObject // TypeDefIndex: 10763
+	public class MenuDivaVoiceTable : ScriptableObject
 	{
 		[Serializable]
 		public class Data
@@ -19,7 +19,6 @@ namespace XeApp.Game.Menu
 			public DivaMenuMotion.Type MotionType { get { return m_motionType; } } // get_MotionType 0xED0C08 
 		}
 
-		// Fields
 		[SerializeField]
 		[Header("- m_home_[Voice Id]")]
 		private List<MenuDivaVoiceTable.Data> m_timeTalk; // 0xC
@@ -46,8 +45,6 @@ namespace XeApp.Game.Menu
 		private List<int> m_IntimacyLock_TimeTalk; // 0x2C
 		[SerializeField]
 		private List<int> m_IntimacyLock_TouchReaction; // 0x30
-
-		// Methods
 
 		// // RVA: 0xECE090 Offset: 0xECE090 VA: 0xECE090
 		// public List<MenuDivaVoiceTable.Data> GetList_TimeTalk() { }

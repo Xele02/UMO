@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+public class OKGLGHCBCJP{}
 public class OKGLGHCBCJP_Database
 {
 	public enum BEOKNKGHFFE

@@ -3,67 +3,13 @@ namespace XeSys
 {
     public class TouchInfoRecord
     {
-        // Fields
-        // [CompilerGeneratedAttribute] // RVA: 0x652E9C Offset: 0x652E9C VA: 0x652E9C
-        // private int <id>k__BackingField; // 0x8
-        // [CompilerGeneratedAttribute] // RVA: 0x652EAC Offset: 0x652EAC VA: 0x652EAC
-        // private int <recentCapacity>k__BackingField; // 0xC
-        // [CompilerGeneratedAttribute] // RVA: 0x652EBC Offset: 0x652EBC VA: 0x652EBC
-        // private TouchInfo <currentInfo>k__BackingField; // 0x10
-        // [CompilerGeneratedAttribute] // RVA: 0x652ECC Offset: 0x652ECC VA: 0x652ECC
-        // private TouchInfo <beganInfo>k__BackingField; // 0x14
-        // [CompilerGeneratedAttribute] // RVA: 0x652EDC Offset: 0x652EDC VA: 0x652EDC
-        // private TouchInfo <endedInfo>k__BackingField; // 0x18
         private TouchInfo[] recentInfos; // 0x1C
 
-        // Properties
-        public int id { get; set; }
-        public int recentCapacity { get; set; }
-        public TouchInfo currentInfo { get; set; }
-        public TouchInfo beganInfo { get; set; }
-        public TouchInfo endedInfo { get; set; }
-
-        // // Methods
-
-        // [CompilerGeneratedAttribute] // RVA: 0x69127C Offset: 0x69127C VA: 0x69127C
-        // // RVA: 0x23A699C Offset: 0x23A699C VA: 0x23A699C
-        // public int get_id() { }
-
-        // [CompilerGeneratedAttribute] // RVA: 0x69128C Offset: 0x69128C VA: 0x69128C
-        // // RVA: 0x23A69A4 Offset: 0x23A69A4 VA: 0x23A69A4
-        // private void set_id(int value) { }
-
-        // [CompilerGeneratedAttribute] // RVA: 0x69129C Offset: 0x69129C VA: 0x69129C
-        // // RVA: 0x23A69AC Offset: 0x23A69AC VA: 0x23A69AC
-        // public int get_recentCapacity() { }
-
-        // [CompilerGeneratedAttribute] // RVA: 0x6912AC Offset: 0x6912AC VA: 0x6912AC
-        // // RVA: 0x23A69B4 Offset: 0x23A69B4 VA: 0x23A69B4
-        // private void set_recentCapacity(int value) { }
-
-        // [CompilerGeneratedAttribute] // RVA: 0x6912BC Offset: 0x6912BC VA: 0x6912BC
-        // // RVA: 0x2389B88 Offset: 0x2389B88 VA: 0x2389B88
-        // public TouchInfo get_currentInfo() { }
-
-        // [CompilerGeneratedAttribute] // RVA: 0x6912CC Offset: 0x6912CC VA: 0x6912CC
-        // // RVA: 0x23A69BC Offset: 0x23A69BC VA: 0x23A69BC
-        // private void set_currentInfo(TouchInfo value) { }
-
-        // [CompilerGeneratedAttribute] // RVA: 0x6912DC Offset: 0x6912DC VA: 0x6912DC
-        // // RVA: 0x2389A3C Offset: 0x2389A3C VA: 0x2389A3C
-        // public TouchInfo get_beganInfo() { }
-
-        // [CompilerGeneratedAttribute] // RVA: 0x6912EC Offset: 0x6912EC VA: 0x6912EC
-        // // RVA: 0x23A69C4 Offset: 0x23A69C4 VA: 0x23A69C4
-        // private void set_beganInfo(TouchInfo value) { }
-
-        // [CompilerGeneratedAttribute] // RVA: 0x6912FC Offset: 0x6912FC VA: 0x6912FC
-        // // RVA: 0x23A69CC Offset: 0x23A69CC VA: 0x23A69CC
-        // public TouchInfo get_endedInfo() { }
-
-        // [CompilerGeneratedAttribute] // RVA: 0x69130C Offset: 0x69130C VA: 0x69130C
-        // // RVA: 0x23A69D4 Offset: 0x23A69D4 VA: 0x23A69D4
-        // private void set_endedInfo(TouchInfo value) { }
+        public int id { get; private set; }  // 0x8
+        public int recentCapacity { get; private set; } // 0xC
+        public TouchInfo currentInfo { get; private set; } // 0x10
+        public TouchInfo beganInfo { get; private set; } // 0x14
+        public TouchInfo endedInfo { get; private set; } // 0x18
 
         // // RVA: 0x23A69DC Offset: 0x23A69DC VA: 0x23A69DC
         // public void .ctor(int id, int recentCapacity) { }

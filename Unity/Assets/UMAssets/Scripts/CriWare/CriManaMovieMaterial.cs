@@ -28,13 +28,9 @@ public class CriManaMovieMaterial : CriMonoBehaviour
 
 	public bool playOnStart; // 0x1C
 	public bool restartOnEnable; // 0x1D
-	// [CompilerGeneratedAttribute] // RVA: 0x634B64 Offset: 0x634B64 VA: 0x634B64
-	// private bool <isMaterialAvailable>k__BackingField; // 0x1E
-	// [CompilerGeneratedAttribute] // RVA: 0x634B74 Offset: 0x634B74 VA: 0x634B74
-	// private Player <player>k__BackingField; // 0x20
 	public CriManaMovieMaterial.RenderMode renderMode; // 0x24
 	// public CriManaMovieMaterial.OnApplicationPauseCallback onApplicationPauseCallback; // 0x28
-	// private Player.TimerType _timerType; // 0x2C
+	// private Player.TimerType _timerType = 2; // 0x2C
 	[SerializeField] // RVA: 0x634B84 Offset: 0x634B84 VA: 0x634B84
 	private Material _material; // 0x30
 	[SerializeField] // RVA: 0x634B94 Offset: 0x634B94 VA: 0x634B94
@@ -58,110 +54,24 @@ public class CriManaMovieMaterial : CriMonoBehaviour
 	// private GameObject ambisonicSource; // 0x48
 	// private bool wasDisabled; // 0x4C
 	// private bool wasPausedOnDisable; // 0x4D
-	// private WaitForEndOfFrame frameEnd; // 0x50
+	// private WaitForEndOfFrame frameEnd = new WaitForEndOfFrame(); // 0x50
 	// private bool unpauseOnApplicationUnpause; // 0x54
-	// [CompilerGeneratedAttribute] // RVA: 0x634C14 Offset: 0x634C14 VA: 0x634C14
-	// private bool <HaveRendererOwner>k__BackingField; // 0x55
 	// private CriManaMoviePlayerHolder playerHolder; // 0x58
 	// public const int DONT_FORGET_COMMENT_OUT_PLAYER_PAUSE = 0;
 
-	// public string moviePath { get; set; }
-	// public bool loop { get; set; }
-	// public CriManaMovieMaterial.MaxFrameDrop maxFrameDrop { get; set; }
-	// public bool advancedAudio { get; set; }
-	// public bool ambisonics { get; set; }
-	// public bool additiveMode { get; set; }
-	// public bool applyTargetAlpha { get; set; }
-	// public bool uiRenderMode { get; set; }
-	// public bool isMaterialAvailable { get; set; }
-	// public Player player { get; set; }
-	// public Material material { get; set; }
-	// public Player.TimerType timerType { get; set; }
-	// protected bool HaveRendererOwner { get; set; }
-
-	// // RVA: 0x2962720 Offset: 0x2962720 VA: 0x2962720
-	// public string get_moviePath() { }
-
-	// // RVA: 0x2962728 Offset: 0x2962728 VA: 0x2962728
-	// public void set_moviePath(string value) { }
-
-	// // RVA: 0x29627CC Offset: 0x29627CC VA: 0x29627CC
-	// public bool get_loop() { }
-
-	// // RVA: 0x29627D4 Offset: 0x29627D4 VA: 0x29627D4
-	// public void set_loop(bool value) { }
-
-	// // RVA: 0x2962878 Offset: 0x2962878 VA: 0x2962878
-	// public CriManaMovieMaterial.MaxFrameDrop get_maxFrameDrop() { }
-
-	// // RVA: 0x2962880 Offset: 0x2962880 VA: 0x2962880
-	// public void set_maxFrameDrop(CriManaMovieMaterial.MaxFrameDrop value) { }
-
-	// // RVA: 0x2962894 Offset: 0x2962894 VA: 0x2962894
-	// public bool get_advancedAudio() { }
-
-	// // RVA: 0x296289C Offset: 0x296289C VA: 0x296289C
-	// public void set_advancedAudio(bool value) { }
-
-	// // RVA: 0x2962F10 Offset: 0x2962F10 VA: 0x2962F10
-	// public bool get_ambisonics() { }
-
-	// // RVA: 0x2962958 Offset: 0x2962958 VA: 0x2962958
-	// public void set_ambisonics(bool value) { }
-
-	// // RVA: 0x2962F18 Offset: 0x2962F18 VA: 0x2962F18
-	// public bool get_additiveMode() { }
-
-	// // RVA: 0x2962F20 Offset: 0x2962F20 VA: 0x2962F20
-	// public void set_additiveMode(bool value) { }
-
-	// // RVA: 0x2962FC4 Offset: 0x2962FC4 VA: 0x2962FC4
-	// public bool get_applyTargetAlpha() { }
-
-	// // RVA: 0x2962FCC Offset: 0x2962FCC VA: 0x2962FCC
-	// public void set_applyTargetAlpha(bool value) { }
-
-	// // RVA: 0x2963070 Offset: 0x2963070 VA: 0x2963070
-	// public bool get_uiRenderMode() { }
-
-	// // RVA: 0x296214C Offset: 0x296214C VA: 0x296214C
-	// public void set_uiRenderMode(bool value) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x63638C Offset: 0x63638C VA: 0x63638C
-	// // RVA: 0x2962098 Offset: 0x2962098 VA: 0x2962098
-	// public bool get_isMaterialAvailable() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x63639C Offset: 0x63639C VA: 0x63639C
-	// // RVA: 0x2963078 Offset: 0x2963078 VA: 0x2963078
-	// private void set_isMaterialAvailable(bool value) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6363AC Offset: 0x6363AC VA: 0x6363AC
-	// // RVA: 0x2961300 Offset: 0x2961300 VA: 0x2961300
-	// public Player get_player() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6363BC Offset: 0x6363BC VA: 0x6363BC
-	// // RVA: 0x2963080 Offset: 0x2963080 VA: 0x2963080
-	// private void set_player(Player value) { }
-
-	// // RVA: 0x29620A0 Offset: 0x29620A0 VA: 0x29620A0
-	// public Material get_material() { }
-
-	// // RVA: 0x2963088 Offset: 0x2963088 VA: 0x2963088
-	// public void set_material(Material value) { }
-
-	// // RVA: 0x296317C Offset: 0x296317C VA: 0x296317C
-	// public Player.TimerType get_timerType() { }
-
-	// // RVA: 0x2963184 Offset: 0x2963184 VA: 0x2963184
-	// public void set_timerType(Player.TimerType value) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6363CC Offset: 0x6363CC VA: 0x6363CC
-	// // RVA: 0x2961C88 Offset: 0x2961C88 VA: 0x2961C88
-	// protected bool get_HaveRendererOwner() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6363DC Offset: 0x6363DC VA: 0x6363DC
-	// // RVA: 0x296319C Offset: 0x296319C VA: 0x296319C
-	// private void set_HaveRendererOwner(bool value) { }
+	// public string moviePath { get; set; } 0x2962720 0x2962728
+	// public bool loop { get; set; } 0x29627CC 0x29627D4
+	// public CriManaMovieMaterial.MaxFrameDrop maxFrameDrop { get; set; } 0x2962878 0x2962880
+	// public bool advancedAudio { get; set; } 0x2962894 0x296289C
+	// public bool ambisonics { get; set; } 0x2962F10 0x2962958
+	// public bool additiveMode { get; set; } 0x2962F18 0x2962F20
+	// public bool applyTargetAlpha { get; set; } 0x2962FC4 0x2962FCC
+	// public bool uiRenderMode { get; set; } 0x2963070 0x296214C
+	// public bool isMaterialAvailable { get; private set; } // 0x1E
+	// public Player player { get; private set; } // 0x20
+	// public Material material { get; set; } 0x29620A0 0x2963088
+	// public Player.TimerType timerType { get; set; } 0x296317C 0x2963184
+	// protected bool HaveRendererOwner { get; private set; } // 0x55
 
 	// // RVA: 0x29631A4 Offset: 0x29631A4 VA: 0x29631A4
 	// public void Play() { }
@@ -256,7 +166,4 @@ public class CriManaMovieMaterial : CriMonoBehaviour
 
 	// // RVA: 0x29636E0 Offset: 0x29636E0 VA: 0x29636E0
 	// private void CreateMaterial() { }
-
-	// // RVA: 0x29620AC Offset: 0x29620AC VA: 0x29620AC
-	// public void .ctor() { }
 }

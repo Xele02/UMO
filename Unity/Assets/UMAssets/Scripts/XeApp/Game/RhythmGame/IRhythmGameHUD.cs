@@ -1,7 +1,6 @@
 
 public interface IRhythmGameHUD
 {
-	// Properties
 	bool isReadyHUD { get; set; }
 	int CurrentCombo { get; set; }
 	int CurrentBattleCombo { get; set; }
@@ -9,8 +8,6 @@ public interface IRhythmGameHUD
 	bool isEnableCutin { get; set; }
 	bool isShowNotes { get; set; }
 	// public abstract RhythmGameHudPauseButtonEvent PauseButton { get; }
-
-	// // Methods
 
 	// // RVA: -1 Offset: -1 Slot: 0
 	// public abstract bool get_isReadyHUD();

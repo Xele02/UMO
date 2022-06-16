@@ -30,7 +30,4 @@ public class CriManaMoviePlayerHolder : CriMonoBehaviour
     {
         UnityEngine.Debug.LogError("TODO");
     }
-
-	// // RVA: 0x29648D4 Offset: 0x29648D4 VA: 0x29648D4
-	// public void .ctor() { }
 }

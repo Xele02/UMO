@@ -3,7 +3,6 @@ namespace XeApp.Game.Common
 {
     public class ParameterData_ValkyrieChangeEnemy : ParameterData
     {
-        // Fields
         public const int DATA_VL = 0;
         public const int DATA_MC = 1;
         public const int DATA_DV = 2;

@@ -22,10 +22,16 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1F10338 Offset: 0x1F10338 VA: 0x1F10338 Slot: 4
-		// protected override void Awake() { }
+		protected override void Awake()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1F10434 Offset: 0x1F10434 VA: 0x1F10434
-		// private void Start() { }
+		private void Start()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1F10438 Offset: 0x1F10438 VA: 0x1F10438
 		// private void UpdateParameter() { }

@@ -6,8 +6,8 @@ namespace XeSys
 {
 	public class SceneAsyncLoader : MonoBehaviour
 	{
-		private string sceneName { get; set; }
-		public bool isLoaded { get; set; }
+		private string sceneName { get; set; } // 0xC
+		public bool isLoaded { get; private set; } // 0x10
 
 		// // RVA: 0x239F244 Offset: 0x239F244 VA: 0x239F244
 		public static SceneAsyncLoader Create(string sceneName)
@@ -31,7 +31,10 @@ namespace XeSys
 		}
 
 		// // RVA: 0x239F37C Offset: 0x239F37C VA: 0x239F37C
-		private void Update() { }
+		private void Update()
+		{
+			return;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6918EC Offset: 0x6918EC VA: 0x6918EC
 		// // RVA: 0x239F380 Offset: 0x239F380 VA: 0x239F380

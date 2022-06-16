@@ -51,8 +51,8 @@ namespace FlatBuffers
 // /// <summary>
 // /// Offset class for typesafe assignments.
 // /// </summary>
-// public class AAABLJBBNJH_Offset<T> where T : class
-// {
+public class AAABLJBBNJH<T> where T : class
+{}
 // 	public int BLNDFNMPILA_Value; // 0x0
 
 // 	public AAABLJBBNJH_Offset(int NANNGLGOFKH_value)
@@ -62,8 +62,8 @@ namespace FlatBuffers
 // }
 
 
-// public class EANEPBLOKJB_StringOffset
-// {
+public class EANEPBLOKJB
+{}
 // 	public int BLNDFNMPILA_Value; // 0x0
 
 // 	public EANEPBLOKJB_StringOffset(int NANNGLGOFKH_value)
@@ -72,8 +72,8 @@ namespace FlatBuffers
 //     }
 // }
 
-// public class EPIPFBNHFKI_VectorOffset
-// {
+public class EPIPFBNHFKI
+{}
 // 	public int BLNDFNMPILA_Value; // 0x0
 
 // 	public EPIPFBNHFKI_VectorOffset(int NANNGLGOFKH_value)

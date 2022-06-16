@@ -4,7 +4,6 @@
 
 // public class BMHPFEELLNP
 // {
-// 	// // Properties
 // 	//public NLDAADHODFI[] HDDGLOAECEK { get; set; } // FFDJKIKFALM // 0x8 // EGFNOLIPDJO // NOBKFEHPAOL
 // 	//public KEBPMGGPLIF[] LNNNCEAAIAM { get; set; } // CEOGECAGOON // 0xC // NNPKGOICGIK // EEOBJPBHEHN
 // 	//public JPALGGIPGGN[] MDFFJJKBDFC { get; set; } // MLEEAALCDDB // 0x10 // CGKHDMIDHGN // MDIFADGJNNH

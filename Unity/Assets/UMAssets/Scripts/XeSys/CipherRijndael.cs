@@ -4,22 +4,7 @@ namespace XeSys
 {
 	public class CipherRijndael
 	{
-		// Fields
-		// [CompilerGeneratedAttribute] // RVA: 0x6534B4 Offset: 0x6534B4 VA: 0x6534B4
-		// private Rijndael <rijndale>k__BackingField; // 0x8
-
-		// Properties
-		private Rijndael rijndale { get; set; }
-
-		// Methods
-
-		// [CompilerGeneratedAttribute] // RVA: 0x691CD4 Offset: 0x691CD4 VA: 0x691CD4
-		// // RVA: 0x193004C Offset: 0x193004C VA: 0x193004C
-		// private Rijndael get_rijndale() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x691CE4 Offset: 0x691CE4 VA: 0x691CE4
-		// // RVA: 0x1930054 Offset: 0x1930054 VA: 0x1930054
-		// private void set_rijndale(Rijndael value) { }
+		private Rijndael rijndale { get; set; } // 0x8
 
 		// // RVA: 0x193005C Offset: 0x193005C VA: 0x193005C
 		public CipherRijndael(string password, string salt)

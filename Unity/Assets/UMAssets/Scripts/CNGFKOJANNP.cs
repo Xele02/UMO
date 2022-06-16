@@ -10,8 +10,8 @@ public class CNGFKOJANNP
 	public PJADOKMABLA IBJEFPCNMAL; // 0x1C
 
 	public static CNGFKOJANNP HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF // NKACBOEHELJ OKPMHKNCNAL
-	// public bool MGALHAHPADF { get; set; } // ??
-	// public bool AKPCMLEPPGC { get; set; } // ??
+	// public bool MGALHAHPADF { get; set; } // AOMLLAKLDEO 0x175B694 AMKHFLKAEGG 0x175B61C
+	// public bool AKPCMLEPPGC { get; set; } // HJLOFLKLELJ 0x175B6C8 EGALFIJGJOH 0x175B658
 
 	// // RVA: 0x175B470 Offset: 0x175B470 VA: 0x175B470
 	public void NOIKNDALDAC(byte[] PFJBBHAMAKM)
@@ -21,18 +21,6 @@ public class CNGFKOJANNP
 
 	// // RVA: 0x175B490 Offset: 0x175B490 VA: 0x175B490
 	// public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
-
-	// // RVA: 0x175B694 Offset: 0x175B694 VA: 0x175B694
-	// public bool AOMLLAKLDEO() { }
-
-	// // RVA: 0x175B61C Offset: 0x175B61C VA: 0x175B61C
-	// public void AMKHFLKAEGG(bool NANNGLGOFKH) { }
-
-	// // RVA: 0x175B6C8 Offset: 0x175B6C8 VA: 0x175B6C8
-	// public bool HJLOFLKLELJ() { }
-
-	// // RVA: 0x175B658 Offset: 0x175B658 VA: 0x175B658
-	// public void EGALFIJGJOH(bool NANNGLGOFKH) { }
 
 	// // RVA: 0x175B6FC Offset: 0x175B6FC VA: 0x175B6FC
 	public void EGDJHGIAFGO()

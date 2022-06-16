@@ -1,10 +1,9 @@
 
 public class GGHPEFNADEN : KLFDBFMNLBL
 {
-	// // Fields
 	// private const int ECFEMKGFDCE = 2;
 	// public const int ECDKBNNCHJB = 7;
-	// public string LJNAKDMILMC; // 0x24
+	// public string LJNAKDMILMC = ""; // 0x24
 	// public int INLNJOGHLJE; // 0x28
 	// public int CDMGDFLPPHN; // 0x2C
 	// public int LNACKEBEMOB; // 0x30
@@ -15,37 +14,19 @@ public class GGHPEFNADEN : KLFDBFMNLBL
 	// public int BKIIKBEACDN; // 0x44
 	// public int OKKAFCJGCJL; // 0x48
 
-	// // Properties
-	// public string EBAMGNMELPO { get; set; }
-	// public string HBODCMLFDOB { get; set; }
-	// public string OEDIICBDNKG { get; set; }
+	// public string EBAMGNMELPO { get; set; } NLLPAPKGDJM 0xAA1300 GDOPHGNBAGO 0xAA1308
+	// public string HBODCMLFDOB { get; set; } MDOIHMLLDEC 0xAA1348 DNGOCLOHDPE 0xAA1350
+	// public string OEDIICBDNKG { get; set; } GNOMCGBDNDA 0xAA1390 MFIEGCGDLFH 0xAA1398
 	// public override bool DMICHEJIAJL { get; }
-
-	// // Methods
-
-	// // RVA: 0xAA1300 Offset: 0xAA1300 VA: 0xAA1300
-	// public string NLLPAPKGDJM() { }
-
-	// // RVA: 0xAA1308 Offset: 0xAA1308 VA: 0xAA1308
-	// public void GDOPHGNBAGO(string NANNGLGOFKH) { }
-
-	// // RVA: 0xAA1348 Offset: 0xAA1348 VA: 0xAA1348
-	// public string MDOIHMLLDEC() { }
-
-	// // RVA: 0xAA1350 Offset: 0xAA1350 VA: 0xAA1350
-	// public void DNGOCLOHDPE(string NANNGLGOFKH) { }
-
-	// // RVA: 0xAA1390 Offset: 0xAA1390 VA: 0xAA1390
-	// public string GNOMCGBDNDA() { }
-
-	// // RVA: 0xAA1398 Offset: 0xAA1398 VA: 0xAA1398
-	// public void MFIEGCGDLFH(string NANNGLGOFKH) { }
 
 	// // RVA: 0xAA13D8 Offset: 0xAA13D8 VA: 0xAA13D8
 	// public List<string> HOFACDIBDLM() { }
 
 	// // RVA: 0xAA1544 Offset: 0xAA1544 VA: 0xAA1544
-	// public void .ctor() { }
+	public GGHPEFNADEN()
+	{
+		LHPDDGIJKNB();
+	}
 
 	// // RVA: 0xAA15BC Offset: 0xAA15BC VA: 0xAA15BC Slot: 4
 	public override void KMBPACJNEOF()

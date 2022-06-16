@@ -3,7 +3,6 @@ namespace XeApp.Game.Menu
 {
 	public abstract class IconTextureCache
 	{
-		// Fields
 		//private IndexableDictionary<string, IiconTexture> m_iconTextureCache; // 0x8
 		//private IndexableDictionary<string, IconTextureLodingInfo> m_loadingAssetBundle; // 0xC
 		private int m_capacity; // 0x10
