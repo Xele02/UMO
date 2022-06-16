@@ -13,9 +13,9 @@ namespace XeApp.Core
 		}
 
 		private const int ANDROID_LOWSPEC_MEMSIZE = 1400;
-		private static string[] recommendedAndroidDevice_High; // 0x0
-		private static string[] recommendedAndroidDevice_Middle; // 0x4
-		public static AppQualitySetting.DeviceSpec spec; // 0x8
+		private static string[] recommendedAndroidDevice_High = new string[1] { "htc Nexus 9" }; // 0x0
+		private static string[] recommendedAndroidDevice_Middle = new string[3] { "Sony SO-03G", "Sony SOV31", "Sony 402SO" }; // 0x4
+		public static AppQualitySetting.DeviceSpec spec = DeviceSpec.Low; // 0x8
 
 		// // RVA: 0xE0D960 Offset: 0xE0D960 VA: 0xE0D960
 		public static void Modify()
@@ -75,12 +75,6 @@ namespace XeApp.Core
 
 		// // RVA: 0xE0E7AC Offset: 0xE0E7AC VA: 0xE0E7AC
 		public static void InitDefault3dMode()
-		{
-			UnityEngine.Debug.LogError("TODO");
-		}
-
-		// // RVA: 0xE0EB40 Offset: 0xE0EB40 VA: 0xE0EB40
-		static AppQualitySetting()
 		{
 			UnityEngine.Debug.LogError("TODO");
 		}

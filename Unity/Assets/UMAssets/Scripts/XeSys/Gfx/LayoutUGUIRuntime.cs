@@ -7,19 +7,19 @@ namespace XeSys.Gfx
 {
 	public class LayoutUGUIRuntime : MonoBehaviour
 	{
-		private static float s_commonTimeScale; // 0x0
+		private static float s_commonTimeScale = 1.0f; // 0x0
 		[SerializeField]
-		private string m_layoutPath; // 0xC
+		private string m_layoutPath = ""; // 0xC
 		[SerializeField]
-		private string m_uvlistPath; // 0x10
+		private string m_uvlistPath = ""; // 0x10
 		[SerializeField]
-		private string m_texturePath; // 0x14
+		private string m_texturePath = ""; // 0x14
 		[SerializeField]
 		private string[] m_uvlistPathList; // 0x18
 		[SerializeField]
 		private string[] m_texturePathList; // 0x1C
 		[SerializeField]
-		private string m_animListPath; // 0x20
+		private string m_animListPath = ""; // 0x20
 		[SerializeField]
 		private Font m_font; // 0x24
 		[SerializeField]
@@ -27,31 +27,31 @@ namespace XeSys.Gfx
 		[SerializeField]
 		private bool m_isUseImage; // 0x29
 		[SerializeField]
-		private bool m_isLayoutAutoLoad; // 0x2A
+		private bool m_isLayoutAutoLoad = true; // 0x2A
 		[SerializeField]
-		private bool m_isAutoStart; // 0x2B
+		private bool m_isAutoStart = true; // 0x2B
 		//[HideInInspector] // RVA: 0x653CF4 Offset: 0x653CF4 VA: 0x653CF4
 		[SerializeField]
 		private bool m_isPrefabTextureDelete; // 0x2C
 		[SerializeField]
-		private bool m_isActiveCheck; // 0x2D
+		private bool m_isActiveCheck = true; // 0x2D
 		[SerializeField]
-		private float m_timeScale; // 0x30
+		private float m_timeScale = 1.0f; // 0x30
 		[SerializeField]
 		private GameObject[] m_ActiveObjLsit; // 0x34
 		[SerializeField]
-		private Color m_testColor; // 0x38
-		private LayoutLoader m_layoutLoader; // 0x48
+		private Color m_testColor = Color.white; // 0x38
+		private LayoutLoader m_layoutLoader = new LayoutLoader(4); // 0x48
 		private Action m_updater; // 0x4C
 		private Layout m_layout; // 0x50
 		private TexUVListManager m_uvMan; // 0x54
 		private int m_initFromLayoutCount; // 0x58
 		private Transform m_transform; // 0x5C
-		private static bool m_isAlwaysUpdateSRT; // 0x4
+		private static bool m_isAlwaysUpdateSRT = false; // 0x4
 		// private List<LayoutUGUIRuntime.UguiInfo> m_uguiList; // 0x60
 		private ResourceRequest layoutRequest; // 0x68
 		private ResourceRequest[] uvListRequest; // 0x6C
-		private static StringBuilder s_texNameWork; // 0x8
+		private static StringBuilder s_texNameWork = new StringBuilder(0x20); // 0x8
 
 		// public static float CommonTimeScale { get; set; } 0x1EFFBF0 0x1EFFC7C
 		// public string LayoutPath { get; set; } 0x1EFFD18 0x1EFBE08
@@ -76,19 +76,19 @@ namespace XeSys.Gfx
 		// RVA: 0x1F0005C Offset: 0x1F0005C VA: 0x1F0005C
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO LayoutUGUIRuntime Awake");
 		}
 
 		// RVA: 0x1F00100 Offset: 0x1F00100 VA: 0x1F00100
 		private void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO LayoutUGUIRuntime Start");
 		}
 
 		// RVA: 0x1F0021C Offset: 0x1F0021C VA: 0x1F0021C
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO LayoutUGUIRuntime Update");
 		}
 
 		// // RVA: 0x1F00248 Offset: 0x1F00248 VA: 0x1F00248
@@ -142,17 +142,5 @@ namespace XeSys.Gfx
 
 		// // RVA: 0x1F01F14 Offset: 0x1F01F14 VA: 0x1F01F14
 		// public void DeleteTexture() { }
-
-		// RVA: 0x1F022CC Offset: 0x1F022CC VA: 0x1F022CC
-		public LayoutUGUIRuntime()
-		{
-			UnityEngine.Debug.LogError("TODO");
-		}
-
-		// RVA: 0x1F023A8 Offset: 0x1F023A8 VA: 0x1F023A8
-		static LayoutUGUIRuntime()
-		{
-			UnityEngine.Debug.LogError("TODO");
-		}
 	}
 }

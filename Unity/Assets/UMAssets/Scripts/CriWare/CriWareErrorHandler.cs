@@ -34,13 +34,13 @@ public class CriWareErrorHandler : CriMonoBehaviour
 	// // RVA: 0x2BAA448 Offset: 0x2BAA448 VA: 0x2BAA448
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogWarning("TODO CriWareErrorHandler Awake");
 	}
 
 	// // RVA: 0x2BAAB48 Offset: 0x2BAAB48 VA: 0x2BAAB48 Slot: 4
 	protected override void OnEnable()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogWarning("TODO CriWareErrorHandler OnEnable");
 	}
 
 	// // RVA: 0x2BAAC10 Offset: 0x2BAAC10 VA: 0x2BAAC10 Slot: 5
@@ -52,7 +52,7 @@ public class CriWareErrorHandler : CriMonoBehaviour
 	// // RVA: 0x2BAAC9C Offset: 0x2BAAC9C VA: 0x2BAAC9C
 	private void Start()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogWarning("TODO CriWareErrorHandler Start");
 	}
 
 	// // RVA: 0x2BAACA0 Offset: 0x2BAACA0 VA: 0x2BAACA0 Slot: 6

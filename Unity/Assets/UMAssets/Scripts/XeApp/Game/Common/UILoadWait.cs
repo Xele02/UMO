@@ -12,7 +12,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDE904 Offset: 0x1CDE904 VA: 0x1CDE904
 		private void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO UILoadWait Start");
 		}
 
 		// // RVA: 0x1CDE96C Offset: 0x1CDE96C VA: 0x1CDE96C Slot: 5

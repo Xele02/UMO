@@ -41,7 +41,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x1EF8B3C Offset: 0x1EF8B3C VA: 0x1EF8B3C
 		public LayoutUGUIScriptBase()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO LayoutUGUIScriptBase");
 		}
 	}
 }

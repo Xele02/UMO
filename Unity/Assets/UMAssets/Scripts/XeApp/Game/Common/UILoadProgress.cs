@@ -30,13 +30,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDDEC0 Offset: 0x1CDDEC0 VA: 0x1CDDEC0
 		private void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO UILoadProgress Start");
 		}
 
 		// // RVA: 0x1CDDEC4 Offset: 0x1CDDEC4 VA: 0x1CDDEC4
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO UILoadProgress Update");
 		}
 
 		// // RVA: 0x1CDDED8 Offset: 0x1CDDED8 VA: 0x1CDDED8

@@ -68,7 +68,6 @@ public class PJKLMCGEJMK
         LCIGLIDJILJ_updater = this.LFKLIOKFGLP_TryStartRequest;
         HFMOEKIBNKA.EAJMLOKKOOK(Utility.GetCurrentUnixTime());
         DNMDKBFINPG.JOJFKIIHMOJ(HFMOEKIBNKA.KMEFBNBFJHI());
-        UnityEngine.Debug.LogError("TODO");
         BNJPAKLNOPA_WorkerThreadQueue = new XeApp.Core.WorkerThread.WorkerThreadQueue();
         BNJPAKLNOPA_WorkerThreadQueue.Start();
     }
@@ -84,6 +83,7 @@ public class PJKLMCGEJMK
     public void FFBCKMFKFME()
     {
         UnityEngine.Debug.LogError("TODO");
+        BNJPAKLNOPA_WorkerThreadQueue.Abort();
     }
 
     // // RVA: 0x931760 Offset: 0x931760 VA: 0x931760

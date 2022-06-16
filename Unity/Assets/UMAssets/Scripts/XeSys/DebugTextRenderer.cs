@@ -12,12 +12,21 @@ namespace XeSys
 			public float mDirection; // 0x10
 
 			// // RVA: 0x806050 Offset: 0x806050 VA: 0x806050
-			// public void .ctor(Vector3 posi, TextAnchor anchor, float direction) { }
+			public Info(Vector3 posi, TextAnchor anchor, float direction)
+			{
+				mBasePosition = posi;
+				mAnchor = anchor;
+				mDirection = direction;
+			}
 		}
 
-		public static bool enable; // 0x0
+		public static bool enable = true; // 0x0
 		private const float LINE_SPACE = 18;
-		private static Info[] mAnchorInfo; // 0x4
+		private static Info[] mAnchorInfo = new Info[5] { new Info(new Vector3(0,1,0), TextAnchor.UpperLeft, 0),
+														new Info(new Vector3(0,1,0), TextAnchor.UpperLeft, 1),
+														new Info(new Vector3(1,1,0), TextAnchor.UpperRight, 1),
+														new Info(new Vector3(0,0,0), TextAnchor.LowerLeft, -1),
+														new Info(new Vector3(1,0,0), TextAnchor.LowerRight, -1) }; // 0x4
 		private float[] mPosiY; // 0xC
 		private Vector2 mBasePosition; // 0x10
 		private Vector2 mNextPosition; // 0x18
@@ -71,11 +80,5 @@ namespace XeSys
 
 		// // RVA: 0x20374A0 Offset: 0x20374A0 VA: 0x20374A0
 		// public void Print(string str, Color[] color) { }
-
-		// // RVA: 0x2037708 Offset: 0x2037708 VA: 0x2037708
-		static DebugTextRenderer()
-		{
-			UnityEngine.Debug.LogError("TODO");
-		}
 	}
 }

@@ -47,13 +47,13 @@ public class CriWareInitializer : CriMonoBehaviour
 	// // RVA: 0x2BAD38C Offset: 0x2BAD38C VA: 0x2BAD38C Slot: 6
 	public override void CriInternalUpdate()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		return;
 	}
 
 	// // RVA: 0x2BAD390 Offset: 0x2BAD390 VA: 0x2BAD390 Slot: 7
 	public override void CriInternalLateUpdate()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		return;
 	}
 
 	// // RVA: 0x2BAC8D8 Offset: 0x2BAC8D8 VA: 0x2BAC8D8

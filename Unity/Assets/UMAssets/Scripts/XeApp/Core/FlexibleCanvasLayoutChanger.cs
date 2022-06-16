@@ -19,19 +19,19 @@ namespace XeApp.Core
 		// // RVA: 0x1D6FE38 Offset: 0x1D6FE38 VA: 0x1D6FE38
 		private void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO FlexibleCanvasLayoutChanger Start");
 		}
 
 		// // RVA: 0x1D702EC Offset: 0x1D702EC VA: 0x1D702EC
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO FlexibleCanvasLayoutChanger Update");
 		}
 
 		// // RVA: 0x1D702F0 Offset: 0x1D702F0 VA: 0x1D702F0
 		private void LateUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO FlexibleCanvasLayoutChanger LateUpdate");
 		}
 
 		// // RVA: 0x1D70230 Offset: 0x1D70230 VA: 0x1D70230

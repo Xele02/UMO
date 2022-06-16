@@ -1,3 +1,5 @@
+using XeSys;
+using System;
 
 public class LGNBLDHKLJK
 {
@@ -9,7 +11,8 @@ public class LGNBLDHKLJK
 	// // RVA: 0x17F59C8 Offset: 0x17F59C8 VA: 0x17F59C8
 	public void JOJFKIIHMOJ(long LKCCMBEOLLA)
     {
-		UnityEngine.Debug.LogError("TODO");
+		DateTime date = Utility.GetLocalDateTime(LKCCMBEOLLA);
+		ABNEIOCBKPI = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
     }
 
 	// // RVA: 0x17F5AE4 Offset: 0x17F5AE4 VA: 0x17F5AE4

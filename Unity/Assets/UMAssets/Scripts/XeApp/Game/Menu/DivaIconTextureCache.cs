@@ -110,7 +110,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17E4C44 Offset: 0x17E4C44 VA: 0x17E4C44
 		static DivaIconTextureCache()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO DivaIconTextureCache");
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6C6030 Offset: 0x6C6030 VA: 0x6C6030

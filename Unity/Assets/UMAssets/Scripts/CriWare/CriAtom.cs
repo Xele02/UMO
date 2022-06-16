@@ -127,13 +127,13 @@ public class CriAtom : CriMonoBehaviour
 	// // RVA: 0x287D264 Offset: 0x287D264 VA: 0x287D264
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogWarning("TODO CriAtom Awake");
 	}
 
 	// // RVA: 0x287D88C Offset: 0x287D88C VA: 0x287D88C Slot: 4
 	protected override void OnEnable()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogWarning("TODO CriAtom Awake");
 	}
 
 	// // RVA: 0x287D964 Offset: 0x287D964 VA: 0x287D964

@@ -139,7 +139,7 @@ namespace XeSys
 		// // RVA: 0x1EF603C Offset: 0x1EF603C VA: 0x1EF603C
 		public InputManager()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO InputManager");
 		}
 
 		// // RVA: 0x1EF61D4 Offset: 0x1EF61D4 VA: 0x1EF61D4

@@ -166,10 +166,4 @@ public class KEHOJEJMGLJ
 
 	// // RVA: 0xE8C7E8 Offset: 0xE8C7E8 VA: 0xE8C7E8
 	// private void BEINKAGIHJB() { }
-
-	// // RVA: 0xE8CBA0 Offset: 0xE8CBA0 VA: 0xE8CBA0
-	static KEHOJEJMGLJ()
-	{
-		UnityEngine.Debug.LogError("TODO");
-	}
 }

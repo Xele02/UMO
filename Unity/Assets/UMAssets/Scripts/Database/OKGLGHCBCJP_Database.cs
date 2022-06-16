@@ -126,16 +126,324 @@ public class OKGLGHCBCJP_Database
 
 	}
 
-	public delegate void BIFFPAKDHJJ();
+	public delegate DIHHCBACKGG BIFFPAKDHJJ();
 
-	public static BEOKNKGHFFE[] GAAEFILMAED; // 0x0
-	public static readonly string[] IJBLEJOKEFH; // 0x4
+	public static BEOKNKGHFFE[] GAAEFILMAED = new BEOKNKGHFFE[0x47]
+	{
+		BEOKNKGHFFE.LIIJEGOIKDP,
+		BEOKNKGHFFE.MLNHHIIDJAO,
+		BEOKNKGHFFE.PICOGHJNOJA,
+		BEOKNKGHFFE.DBBOBIHPDNA,
+		BEOKNKGHFFE.PEIFIFLMIIF,
+		BEOKNKGHFFE.JOMAMMACANH,
+		BEOKNKGHFFE.DHMPHBPODCI,
+		BEOKNKGHFFE.DGPIFKCLAGB,
+		BEOKNKGHFFE.EFHFNMAIEJG,
+		BEOKNKGHFFE.LOFOAIEMECN,
+		BEOKNKGHFFE.LHFCAMJHMLB,
+		BEOKNKGHFFE.BGMIHMDPDCM,
+		BEOKNKGHFFE.DBILOJAEIOO,
+		BEOKNKGHFFE.DLFGIKANBDK,
+		BEOKNKGHFFE.PLJHAFGEGEB,
+		BEOKNKGHFFE.DHMEFNNJANH,
+		BEOKNKGHFFE.CNENKCCMEFL,
+		BEOKNKGHFFE.ACGFJFNPLKB,
+		BEOKNKGHFFE.PKDKLHJLEFA,
+		BEOKNKGHFFE.PGHFPIMIOKE,
+		BEOKNKGHFFE.CNGPLGIMJBB,
+		BEOKNKGHFFE.JBFFIPCOGEC,
+		BEOKNKGHFFE.BBDKHAMANCB,
+		BEOKNKGHFFE.MIOOJINHHFO,
+		BEOKNKGHFFE.HJDJGMNAJFJ,
+		BEOKNKGHFFE.OFAAHIINGFD,
+		BEOKNKGHFFE.OFGFNFAJHFE,
+		BEOKNKGHFFE.MDAEJLJPIHN,
+		BEOKNKGHFFE.AMGKNGLDHMG,
+		BEOKNKGHFFE.BKEKCFONNBG,
+		BEOKNKGHFFE.JLNNFLCLGBM,
+		BEOKNKGHFFE.MHNJLGONIPK,
+		BEOKNKGHFFE.FPFHPCDNIDN,
+		BEOKNKGHFFE.OJFINMGAFPG,
+		BEOKNKGHFFE.HJBCLCJIAMN,
+		BEOKNKGHFFE.JOMKJEEEGLM,
+		BEOKNKGHFFE.MGLIHABHABA,
+		BEOKNKGHFFE.JHIAPFBBCCJ,
+		BEOKNKGHFFE.FLANCIJMJHP,
+		BEOKNKGHFFE.BKGFKGIGJNL,
+		BEOKNKGHFFE.NLIJGKHKMII,
+		BEOKNKGHFFE.CLAMLDCILJO,
+		BEOKNKGHFFE.FONDIJMKCAJ,
+		BEOKNKGHFFE.KPBNAHEIJIC,
+		BEOKNKGHFFE.ECEDGCHFCEF,
+		BEOKNKGHFFE.HOBIIBFBMKJ,
+		BEOKNKGHFFE.CHOGKKCHBCJ,
+		BEOKNKGHFFE.JMJMNDKFOIF,
+		BEOKNKGHFFE.LNCIOFKDBHD,
+		BEOKNKGHFFE.GPEFCGBGIHD,
+		BEOKNKGHFFE.JFDOPKICHPJ,
+		BEOKNKGHFFE.HDJDAENLIBF,
+		BEOKNKGHFFE.KOALKJHIHFC,
+		BEOKNKGHFFE.KNMIJOPCJCH,
+		BEOKNKGHFFE.ELBGPMIFOHO,
+		BEOKNKGHFFE.ABANJLALLBK,
+		BEOKNKGHFFE.HGOGFPOCKFA,
+		BEOKNKGHFFE.LCEEHPPLHNC,
+		BEOKNKGHFFE.AOPBBHMIEPB,
+		BEOKNKGHFFE.HGFDKEMHGHK,
+		BEOKNKGHFFE.ACECCMLEDMO,
+		BEOKNKGHFFE.HDDBEGLGIDK,
+		BEOKNKGHFFE.EMHPGEHBKPG,
+		BEOKNKGHFFE.JJMBJBFKJHK,
+		BEOKNKGHFFE.EKLPMPHCIDL,
+		BEOKNKGHFFE.OPHNLHMINEO,
+		BEOKNKGHFFE.NPLKLHDPLEO,
+		BEOKNKGHFFE.EEPIDKPPLJI,
+		BEOKNKGHFFE.LJKEOODGGJF,
+		BEOKNKGHFFE.NPOPGPFPLOL,
+		BEOKNKGHFFE.AHKEJPLNAJK
+	}; // 0x0
+	public static readonly string[] IJBLEJOKEFH = new string[0x75] {
+  		"adventure",
+		"anketo",
+		"asset",
+		"bingo",
+		"board",
+		"bonus_vc",
+		"campaign_diva",
+		"compo",
+		"cos_item",
+		"costume",
+		"deco_item",
+		"deco_item_init",
+		"deco_point",
+		"deco_set_item",
+		"deco_sp_setting",
+		"deco_stamp",
+		"diva",
+		"diva2",
+		"drop",
+		"emblem",
+		"enemy",
+		"energy_item",
+		"episode",
+		"epi_item",
+		"event_april_fool_a",
+		"event_april_fool_b",
+		"event_april_fool_c",
+		"event_april_fool_d",
+		"event_april_fool_e",
+		"event_april_fool_f",
+		"event_april_fool_g",
+		"event_april_fool_h",
+		"event_april_fool_i",
+		"event_battle_a",
+		"event_battle_b",
+		"event_battle_c",
+		"event_box_gacha_a",
+		"event_box_gacha_b",
+		"event_box_gacha_c",
+		"event_box_gacha_d",
+		"event_box_gacha_e",
+		"event_box_gacha_f",
+		"event_collection_a",
+		"event_collection_b",
+		"event_collection_c",
+		"event_gacha_ticket",
+		"event_godiva_a",
+		"event_godiva_b",
+		"event_godiva_c",
+		"event_godiva_ranking",
+		"event_item",
+		"event_mission_a",
+		"event_mission_b",
+		"event_mission_c",
+		"event_present_campaign_a",
+		"event_raid_a",
+		"event_raid_b",
+		"event_raid_c",
+		"event_raid_d",
+		"event_raidlobby_a",
+		"event_raidlobby_b",
+		"event_raidlobby_c",
+		"event_raidlobby_d",
+		"event_raid_item",
+		"event_quest_a",
+		"event_quest_b",
+		"event_quest_c",
+		"event_score_a",
+		"event_score_b",
+		"event_score_c",
+		"event_score_d",
+		"event_score_e",
+		"event_score_f",
+		"event_sp_a",
+		"event_ticket",
+		"event_weekday",
+		"event_story",
+		"exp",
+		"gacha_limit",
+		"gacha_ticket",
+		"game",
+		"grow_item",
+		"help_browser",
+		"home_bg",
+		"home_pickup",
+		"home_voice",
+		"rich_banner",
+		"intimacy",
+		"limit_over",
+		"limited_item",
+		"medal",
+		"monthly_pass",
+		"music",
+		"mv_ticket",
+		"offer",
+		"pilot",
+		"present_item",
+		"quest",
+		"rareup_item",
+		"scene",
+		"shop",
+		"skill",
+		"sns",
+		"sp_item",
+		"story",
+		"system",
+		"tips",
+		"title_banner",
+		"tutorial_mini_adv",
+		"tutorial_pict",
+		"uc_item",
+		"val_item",
+		"val_skill",
+		"valkyrie",
+		"vc_item",
+		"highscore_rating",
+		"limited_compo_item"}; // 0x4
 	public List<OKGLGHCBCJP_Database.BEOKNKGHFFE> NDLAAACJOLP = new List<OKGLGHCBCJP_Database.BEOKNKGHFFE>(); // 0x8
 	public string[] IIILDINMAKI = new string[117]; // 0xC
 	public long[] GJFPFFBAKGK = new long[117]; // 0x10
 
 	// private List<DIHHCBACKGG> MGJKEJHEBPO; // 0x130
-	//private static Dictionary<int, OKGLGHCBCJP.BIFFPAKDHJJ> BGEJFKHOMOC; // 0x8
+	private static Dictionary<int, BIFFPAKDHJJ> BGEJFKHOMOC = new Dictionary<int, BIFFPAKDHJJ>() {
+		// {0,() => { return new GPMHOAKFALE(); } }, // 0x149D500
+		// {1,() => { return new IPJBAPLFECP(); } }, //0x149D56C
+		// {2,() => { return new LFPJCEMANCK(); } }, //0x149D5D8
+		// {3,() => { return new JKICPBIIHNE(); } }, //0x149D644
+		{4,() => { return new KOGHKIODHPA(); } }, //0x149D6B0
+		// {5,() => { return new HHJHIFJIKAC(); } }, //0x149D71C
+		// {6,() => { return new AIPOFGJGPKI(); } }, //0x149D788
+		// {7,() => { return new HHPEMHHCKBE(); } }, //0x149D7F4
+		// {8,() => { return new PLPBJOFICEJ(); } }, //0x149D860
+		{9,() => { return new LCLCCHLDNHJ(); } }, //0x149D8CC
+		{10,() => { return new NDBFKHKMMCE(); } }, //0x149D938
+		// {11,() => { return new JEPMHCPBIGD(); } }, //0x149D9A4
+		// {12,() => { return new GAEBMAEDNAN(); } }, //0x149DA10
+		{13,() => { return new BBLECJKKKLA(); } }, //0x149DA7C
+		// {14,() => { return new NEGELNMPEPH(); } }, //0x149DAE8
+		// {15,() => { return new IHFIAFDLAAK(); } }, //0x149DB54
+		{16,() => { return new HPBPIOPPDCB(); } }, //0x149DBC0
+		// {17,() => { return new HMIJOOPHJLB(); } }, //0x149DC2C
+		// {18,() => { return new NBPHJDCOECH(); } }, //0x149DC98
+		// {19,() => { return new IHGBPAJMJFK(); } }, //0x149DD04
+		// {20,() => { return new MHDFCLCMDKO(); } }, //0x149DD70
+		// {21,() => { return new JKDKODAPGBJ(); } }, //0x149DDDC
+		// {22,() => { return new KMOGDEOKHPG(); } }, //0x149DE48
+		// {23,() => { return new KIICLPJJBNL(); } }, //0x149DEB4
+		// {24,() => { return new KCGOMAFPGDD(); } }, //0x149DF20
+		// {25,() => { return new KCGOMAFPGDD(); } }, //0x149DF8C
+		// {26,() => { return new KCGOMAFPGDD(); } }, //0x149DFF8
+		// {27,() => { return new KCGOMAFPGDD(); } }, //0x149E064
+		// {28,() => { return new KCGOMAFPGDD(); } }, //0x149E0D0
+		// {29,() => { return new KCGOMAFPGDD(); } }, //0x149E13C
+		// {30,() => { return new KCGOMAFPGDD(); } }, //0x149E1A8
+		// {31,() => { return new KCGOMAFPGDD(); } }, //0x149E214
+		// {32,() => { return new KCGOMAFPGDD(); } }, //0x149E280
+		// {33,() => { return new ICFLJACCIKF(); } }, //0x149E2EC
+		// {34,() => { return new ICFLJACCIKF(); } }, //0x149E358
+		// {35,() => { return new ICFLJACCIKF(); } }, //0x149E3C4
+		// {36,() => { return new IMDBGDNPLJA(); } }, //0x149E430
+		// {37,() => { return new IMDBGDNPLJA(); } }, //0x149E49C
+		// {38,() => { return new IMDBGDNPLJA(); } }, //0x149E508
+		// {39,() => { return new IMDBGDNPLJA(); } }, //0x149E574
+		// {40,() => { return new IMDBGDNPLJA(); } }, //0x149E5E0
+		// {41,() => { return new IMDBGDNPLJA(); } }, //0x149E64C
+		// {42,() => { return new PHBACNMCMHG(); } }, //0x149E6B8
+		// {43,() => { return new PHBACNMCMHG(); } }, //0x149E724
+		// {44,() => { return new PHBACNMCMHG(); } }, //0x149E790
+		// {45,() => { return new JNGINLMOJKH(); } }, //0x149E7FC
+		// {46,() => { return new LNELCMNJPIC(); } }, //0x149E868
+		// {47,() => { return new LNELCMNJPIC(); } }, //0x149E8D4
+		// {48,() => { return new LNELCMNJPIC(); } }, //0x149E940
+		// {49,() => { return new JPJGOECJFEE(); } }, //0x149E9AC
+		// {50,() => { return new HGLPLKKBBOL(); } }, //0x149EA18
+		// {51,() => { return new ACBAHDMEFFL(); } }, //0x149EA84
+		// {52,() => { return new ACBAHDMEFFL(); } }, //0x149EAF0
+		// {53,() => { return new ACBAHDMEFFL(); } }, //0x149EB5C
+		// {54,() => { return new HIADOIECMFP(); } }, //0x149EBC8
+		// {55,() => { return new BKOGPDBKFFJ(); } }, //0x149EC34
+		// {56,() => { return new BKOGPDBKFFJ(); } }, //0x149ECA0
+		// {57,() => { return new BKOGPDBKFFJ(); } }, //0x149ED0C
+		// {58,() => { return new BKOGPDBKFFJ(); } }, //0x149ED78
+		// {59,() => { return new LDEBIBGHCGD(); } }, //0x149EDE4
+		// {60,() => { return new LDEBIBGHCGD(); } }, //0x149EE50
+		// {61,() => { return new LDEBIBGHCGD(); } }, //0x149EEBC
+		// {62,() => { return new LDEBIBGHCGD(); } }, //0x149EF28
+		// {63,() => { return new NKBOMKGFGIO(); } }, //0x149EF94
+		// {64,() => { return new LMBBEGIAKAD(); } }, //0x149F000
+		// {65,() => { return new LMBBEGIAKAD(); } }, //0x149F06C
+		// {66,() => { return new LMBBEGIAKAD(); } }, //0x149F0D8
+		// {67,() => { return new HIHJGPDLNDN(); } }, //0x149F144
+		// {68,() => { return new HIHJGPDLNDN(); } }, //0x149F1B0
+		// {69,() => { return new HIHJGPDLNDN(); } }, //0x149F21C
+		// {70,() => { return new HIHJGPDLNDN(); } }, //0x149F288
+		// {71,() => { return new HIHJGPDLNDN(); } }, //0x149F2F4
+		// {72,() => { return new HIHJGPDLNDN(); } }, //0x149F360
+		// {73,() => { return new HIHJGPDLNDN(); } }, //0x149F3CC
+		// {74,() => { return new OEIJEFBBJBD(); } }, //0x149F438
+		// {75,() => { return new DKCJADHKGAN(); } }, //0x149F4A4
+		// {76,() => { return new FBIOJHECAHB(); } }, //0x149F510
+		// {77,() => { return new JJOPEDJCCJK(); } }, //0x149F57C
+		// {78,() => { return new BIHCALIAJII(); } }, //0x149F5E8
+		// {79,() => { return new PMDCIJMMNGK(); } }, //0x149F654
+		{80,() => { return new LDDDBPNGGIN(); } }, //0x149F6C0
+		// {81,() => { return new KEEKEFEPKFN(); } }, //0x149F72C
+		// {82,() => { return new KCDJCKCKKFM(); } }, //0x149F798
+		// {83,() => { return new ALJHJDHNFFB(); } }, //0x149F804
+		// {84,() => { return new JJCJKALEIAC(); } }, //0x149F870
+		// {85,() => { return new NPCCDMKJBMM(); } }, //0x149F8DC
+		// {86,() => { return new JKMLBONMAHD(); } }, //0x149F948
+		// {87,() => { return new GJALOMELEHD(); } }, //0x149F9B4
+		// {88,() => { return new LLKLAKGKNLD(); } }, //0x149FA20
+		// {89,() => { return new EGLOKAEIHCB(); } }, //0x149FA8C
+		// {90,() => { return new HHFFOACILKG(); } }, //0x149FAF8
+		{91,() => { return new KBCCGHLCFNO(); } }, //0x149FB64
+		{92,() => { return new LPPGENBEECK_musicMaster(); } }, //0x149FBD0
+		// {93,() => { return new GJAEGCMKMEK(); } }, //0x149FC3C
+		// {94,() => { return new LGHIPHEDCNC(); } }, //0x149FCA8
+		// {95,() => { return new MPOEMCEBBJH(); } }, //0x149FD14
+		// {96,() => { return new MDACFBPPIHD(); } }, //0x149FD80
+		// {97,() => { return new DHOJHGODBAB(); } }, //0x149FDEC
+		// {98,() => { return new CKDOOBKOJBB(); } }, //0x149FE58
+		{99,() => { return new MLIBEPGADJH(); } }, //0x149FEC4
+		// {100,() => { return new BKPAPCMJKHE(); } }, //0x149FF30
+		// {101,() => { return new JNKEEAOKNCI(); } }, //0x149FF9C
+		// {102,() => { return new BOKMNHAFJHF(); } }, //0x14A0008
+		// {103,() => { return new PPNFHHPJOKK(); } }, //0x14A0074
+		// {104,() => { return new LAEGMENIEDB(); } }, //0x14A00E0
+		{105,() => { return new PEBFNABDJDI(); } }, //0x14A014C
+		// {106,() => { return new BCKMELFCKKN(); } }, //0x14A01B8
+		{107,() => { return new JOHKNBEFHHP(); } }, //0x14A0224
+		// {108,() => { return new ILLPGHGGKLL(); } }, //0x14A0290
+		// {109,() => { return new PJANOOPJIDE(); } }, //0x14A02FC
+		// {110,() => { return new DGDIEDDPNNG(); } }, //0x14A0368
+		// {111,() => { return new INDEPDKCJDD(); } }, //0x14A03D4
+		// {112,() => { return new GKFMJAHKEMA(); } }, //0x14A0440
+		// {113,() => { return new JPIANKEOOMB(); } }, //0x14A04AC
+		// {114,() => { return new DKJMDIFAKKD(); } }, //0x14A0518
+		// {115,() => { return new HGPEFPFODHO(); } }, //0x14A0584
+		// {116,() => { return new JHAAHJNEBOG(); } }, //0x14A05F0
+	}; // 0x8
 
 	// public GPMHOAKFALE EFMAIKAHFEK { get; private set; } // 0x14 JLLBGAHIIBG LLCFMAELHEP IEBCIAFOBIN
 	// public IPJBAPLFECP OILKBADFBOK { get; private set; } // 0x18 PMEPLHGCOPN ACKDFMAHCPG IKNMGMOEIBJ
@@ -230,7 +538,6 @@ public class OKGLGHCBCJP_Database
 	// RVA: 0x1490C94 Offset: 0x1490C94 VA: 0x1490C94
 	public OKGLGHCBCJP_Database()
 	{
-		UnityEngine.Debug.LogError("TODO");
 		for(int i = 0; i < 117; i++)
 		{
 			IIILDINMAKI[i] = IJBLEJOKEFH[i];
@@ -301,210 +608,6 @@ public class OKGLGHCBCJP_Database
 	public void IDBDAPPJOND()
 	{
 		UnityEngine.Debug.LogError("TODO");
-	}
-
-	// RVA: 0x14966B4 Offset: 0x14966B4 VA: 0x14966B4
-	static OKGLGHCBCJP_Database()
-	{
-		UnityEngine.Debug.LogError("TODO");
-		GAAEFILMAED = new BEOKNKGHFFE[0x47]
-		{
-			BEOKNKGHFFE.LIIJEGOIKDP,
-			BEOKNKGHFFE.MLNHHIIDJAO,
-			BEOKNKGHFFE.PICOGHJNOJA,
-			BEOKNKGHFFE.DBBOBIHPDNA,
-			BEOKNKGHFFE.PEIFIFLMIIF,
-			BEOKNKGHFFE.JOMAMMACANH,
-			BEOKNKGHFFE.DHMPHBPODCI,
-			BEOKNKGHFFE.DGPIFKCLAGB,
-			BEOKNKGHFFE.EFHFNMAIEJG,
-			BEOKNKGHFFE.LOFOAIEMECN,
-			BEOKNKGHFFE.LHFCAMJHMLB,
-			BEOKNKGHFFE.BGMIHMDPDCM,
-			BEOKNKGHFFE.DBILOJAEIOO,
-			BEOKNKGHFFE.DLFGIKANBDK,
-			BEOKNKGHFFE.PLJHAFGEGEB,
-			BEOKNKGHFFE.DHMEFNNJANH,
-			BEOKNKGHFFE.CNENKCCMEFL,
-			BEOKNKGHFFE.ACGFJFNPLKB,
-			BEOKNKGHFFE.PKDKLHJLEFA,
-			BEOKNKGHFFE.PGHFPIMIOKE,
-			BEOKNKGHFFE.CNGPLGIMJBB,
-			BEOKNKGHFFE.JBFFIPCOGEC,
-			BEOKNKGHFFE.BBDKHAMANCB,
-			BEOKNKGHFFE.MIOOJINHHFO,
-			BEOKNKGHFFE.HJDJGMNAJFJ,
-			BEOKNKGHFFE.OFAAHIINGFD,
-			BEOKNKGHFFE.OFGFNFAJHFE,
-			BEOKNKGHFFE.MDAEJLJPIHN,
-			BEOKNKGHFFE.AMGKNGLDHMG,
-			BEOKNKGHFFE.BKEKCFONNBG,
-			BEOKNKGHFFE.JLNNFLCLGBM,
-			BEOKNKGHFFE.MHNJLGONIPK,
-			BEOKNKGHFFE.FPFHPCDNIDN,
-			BEOKNKGHFFE.OJFINMGAFPG,
-			BEOKNKGHFFE.HJBCLCJIAMN,
-			BEOKNKGHFFE.JOMKJEEEGLM,
-			BEOKNKGHFFE.MGLIHABHABA,
-			BEOKNKGHFFE.JHIAPFBBCCJ,
-			BEOKNKGHFFE.FLANCIJMJHP,
-			BEOKNKGHFFE.BKGFKGIGJNL,
-			BEOKNKGHFFE.NLIJGKHKMII,
-			BEOKNKGHFFE.CLAMLDCILJO,
-			BEOKNKGHFFE.FONDIJMKCAJ,
-			BEOKNKGHFFE.KPBNAHEIJIC,
-			BEOKNKGHFFE.ECEDGCHFCEF,
-			BEOKNKGHFFE.HOBIIBFBMKJ,
-			BEOKNKGHFFE.CHOGKKCHBCJ,
-			BEOKNKGHFFE.JMJMNDKFOIF,
-			BEOKNKGHFFE.LNCIOFKDBHD,
-			BEOKNKGHFFE.GPEFCGBGIHD,
-			BEOKNKGHFFE.JFDOPKICHPJ,
-			BEOKNKGHFFE.HDJDAENLIBF,
-			BEOKNKGHFFE.KOALKJHIHFC,
-			BEOKNKGHFFE.KNMIJOPCJCH,
-			BEOKNKGHFFE.ELBGPMIFOHO,
-			BEOKNKGHFFE.ABANJLALLBK,
-			BEOKNKGHFFE.HGOGFPOCKFA,
-			BEOKNKGHFFE.LCEEHPPLHNC,
-			BEOKNKGHFFE.AOPBBHMIEPB,
-			BEOKNKGHFFE.HGFDKEMHGHK,
-			BEOKNKGHFFE.ACECCMLEDMO,
-			BEOKNKGHFFE.HDDBEGLGIDK,
-			BEOKNKGHFFE.EMHPGEHBKPG,
-			BEOKNKGHFFE.JJMBJBFKJHK,
-			BEOKNKGHFFE.EKLPMPHCIDL,
-			BEOKNKGHFFE.OPHNLHMINEO,
-			BEOKNKGHFFE.NPLKLHDPLEO,
-			BEOKNKGHFFE.EEPIDKPPLJI,
-			BEOKNKGHFFE.LJKEOODGGJF,
-			BEOKNKGHFFE.NPOPGPFPLOL,
-			BEOKNKGHFFE.AHKEJPLNAJK
-		};
-
-		IJBLEJOKEFH = new string[0x75];
-		int Idx = 0;
-  		IJBLEJOKEFH[Idx++] = "adventure";
-		IJBLEJOKEFH[Idx++] = "anketo";
-		IJBLEJOKEFH[Idx++] = "asset";
-		IJBLEJOKEFH[Idx++] = "bingo";
-		IJBLEJOKEFH[Idx++] = "board";
-		IJBLEJOKEFH[Idx++] = "bonus_vc";
-		IJBLEJOKEFH[Idx++] = "campaign_diva";
-		IJBLEJOKEFH[Idx++] = "compo";
-		IJBLEJOKEFH[Idx++] = "cos_item";
-		IJBLEJOKEFH[Idx++] = "costume";
-		IJBLEJOKEFH[Idx++] = "deco_item";
-		IJBLEJOKEFH[Idx++] = "deco_item_init";
-		IJBLEJOKEFH[Idx++] = "deco_point";
-		IJBLEJOKEFH[Idx++] = "deco_set_item";
-		IJBLEJOKEFH[Idx++] = "deco_sp_setting";
-		IJBLEJOKEFH[Idx++] = "deco_stamp";
-		IJBLEJOKEFH[Idx++] = "diva";
-		IJBLEJOKEFH[Idx++] = "diva2";
-		IJBLEJOKEFH[Idx++] = "drop";
-		IJBLEJOKEFH[Idx++] = "emblem";
-		IJBLEJOKEFH[Idx++] = "enemy";
-		IJBLEJOKEFH[Idx++] = "energy_item";
-		IJBLEJOKEFH[Idx++] = "episode";
-		IJBLEJOKEFH[Idx++] = "epi_item";
-		IJBLEJOKEFH[Idx++] = "event_april_fool_a";
-		IJBLEJOKEFH[Idx++] = "event_april_fool_b";
-		IJBLEJOKEFH[Idx++] = "event_april_fool_c";
-		IJBLEJOKEFH[Idx++] = "event_april_fool_d";
-		IJBLEJOKEFH[Idx++] = "event_april_fool_e";
-		IJBLEJOKEFH[Idx++] = "event_april_fool_f";
-		IJBLEJOKEFH[Idx++] = "event_april_fool_g";
-		IJBLEJOKEFH[Idx++] = "event_april_fool_h";
-		IJBLEJOKEFH[Idx++] = "event_april_fool_i";
-		IJBLEJOKEFH[Idx++] = "event_battle_a";
-		IJBLEJOKEFH[Idx++] = "event_battle_b";
-		IJBLEJOKEFH[Idx++] = "event_battle_c";
-		IJBLEJOKEFH[Idx++] = "event_box_gacha_a";
-		IJBLEJOKEFH[Idx++] = "event_box_gacha_b";
-		IJBLEJOKEFH[Idx++] = "event_box_gacha_c";
-		IJBLEJOKEFH[Idx++] = "event_box_gacha_d";
-		IJBLEJOKEFH[Idx++] = "event_box_gacha_e";
-		IJBLEJOKEFH[Idx++] = "event_box_gacha_f";
-		IJBLEJOKEFH[Idx++] = "event_collection_a";
-		IJBLEJOKEFH[Idx++] = "event_collection_b";
-		IJBLEJOKEFH[Idx++] = "event_collection_c";
-		IJBLEJOKEFH[Idx++] = "event_gacha_ticket";
-		IJBLEJOKEFH[Idx++] = "event_godiva_a";
-		IJBLEJOKEFH[Idx++] = "event_godiva_b";
-		IJBLEJOKEFH[Idx++] = "event_godiva_c";
-		IJBLEJOKEFH[Idx++] = "event_godiva_ranking";
-		IJBLEJOKEFH[Idx++] = "event_item";
-		IJBLEJOKEFH[Idx++] = "event_mission_a";
-		IJBLEJOKEFH[Idx++] = "event_mission_b";
-		IJBLEJOKEFH[Idx++] = "event_mission_c";
-		IJBLEJOKEFH[Idx++] = "event_present_campaign_a";
-		IJBLEJOKEFH[Idx++] = "event_raid_a";
-		IJBLEJOKEFH[Idx++] = "event_raid_b";
-		IJBLEJOKEFH[Idx++] = "event_raid_c";
-		IJBLEJOKEFH[Idx++] = "event_raid_d";
-		IJBLEJOKEFH[Idx++] = "event_raidlobby_a";
-		IJBLEJOKEFH[Idx++] = "event_raidlobby_b";
-		IJBLEJOKEFH[Idx++] = "event_raidlobby_c";
-		IJBLEJOKEFH[Idx++] = "event_raidlobby_d";
-		IJBLEJOKEFH[Idx++] = "event_raid_item";
-		IJBLEJOKEFH[Idx++] = "event_quest_a";
-		IJBLEJOKEFH[Idx++] = "event_quest_b";
-		IJBLEJOKEFH[Idx++] = "event_quest_c";
-		IJBLEJOKEFH[Idx++] = "event_score_a";
-		IJBLEJOKEFH[Idx++] = "event_score_b";
-		IJBLEJOKEFH[Idx++] = "event_score_c";
-		IJBLEJOKEFH[Idx++] = "event_score_d";
-		IJBLEJOKEFH[Idx++] = "event_score_e";
-		IJBLEJOKEFH[Idx++] = "event_score_f";
-		IJBLEJOKEFH[Idx++] = "event_sp_a";
-		IJBLEJOKEFH[Idx++] = "event_ticket";
-		IJBLEJOKEFH[Idx++] = "event_weekday";
-		IJBLEJOKEFH[Idx++] = "event_story";
-		IJBLEJOKEFH[Idx++] = "exp";
-		IJBLEJOKEFH[Idx++] = "gacha_limit";
-		IJBLEJOKEFH[Idx++] = "gacha_ticket";
-		IJBLEJOKEFH[Idx++] = "game";
-		IJBLEJOKEFH[Idx++] = "grow_item";
-		IJBLEJOKEFH[Idx++] = "help_browser";
-		IJBLEJOKEFH[Idx++] = "home_bg";
-		IJBLEJOKEFH[Idx++] = "home_pickup";
-		IJBLEJOKEFH[Idx++] = "home_voice";
-		IJBLEJOKEFH[Idx++] = "rich_banner";
-		IJBLEJOKEFH[Idx++] = "intimacy";
-		IJBLEJOKEFH[Idx++] = "limit_over";
-		IJBLEJOKEFH[Idx++] = "limited_item";
-		IJBLEJOKEFH[Idx++] = "medal";
-		IJBLEJOKEFH[Idx++] = "monthly_pass";
-		IJBLEJOKEFH[Idx++] = "music";
-		IJBLEJOKEFH[Idx++] = "mv_ticket";
-		IJBLEJOKEFH[Idx++] = "offer";
-		IJBLEJOKEFH[Idx++] = "pilot";
-		IJBLEJOKEFH[Idx++] = "present_item";
-		IJBLEJOKEFH[Idx++] = "quest";
-		IJBLEJOKEFH[Idx++] = "rareup_item";
-		IJBLEJOKEFH[Idx++] = "scene";
-		IJBLEJOKEFH[Idx++] = "shop";
-		IJBLEJOKEFH[Idx++] = "skill";
-		IJBLEJOKEFH[Idx++] = "sns";
-		IJBLEJOKEFH[Idx++] = "sp_item";
-		IJBLEJOKEFH[Idx++] = "story";
-		IJBLEJOKEFH[Idx++] = "system";
-		IJBLEJOKEFH[Idx++] = "tips";
-		IJBLEJOKEFH[Idx++] = "title_banner";
-		IJBLEJOKEFH[Idx++] = "tutorial_mini_adv";
-		IJBLEJOKEFH[Idx++] = "tutorial_pict";
-		IJBLEJOKEFH[Idx++] = "uc_item";
-		IJBLEJOKEFH[Idx++] = "val_item";
-		IJBLEJOKEFH[Idx++] = "val_skill";
-		IJBLEJOKEFH[Idx++] = "valkyrie";
-		IJBLEJOKEFH[Idx++] = "vc_item";
-		IJBLEJOKEFH[Idx++] = "highscore_rating";
-		IJBLEJOKEFH[Idx++] = "limited_compo_item";
-  
-		//BGEJFKHOMOC = new Dictionary<int, BIFFPAKDHJJ>();
-		//BGEJFKHOMOC.Add(0, );
-		//TODO
 	}
 	
 }

@@ -30,7 +30,7 @@ namespace SecureLib
         // // RVA: 0x2E71EF4 Offset: 0x2E71EF4 VA: 0x2E71EF4
         static SecureLibAPI()
 		{
-            UnityEngine.Debug.LogError("TODO");
+            UnityEngine.Debug.LogWarning("TODO SecureLibAPI");
 		}
 
         // // RVA: 0x2E71EF8 Offset: 0x2E71EF8 VA: 0x2E71EF8

@@ -39,7 +39,7 @@ namespace XeSys
 		// // RVA: 0x1931994 Offset: 0x1931994 VA: 0x1931994
 		public DebugFPS()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO DebugFPS");
 		}
 
 		// // RVA: 0x1931A48 Offset: 0x1931A48 VA: 0x1931A48

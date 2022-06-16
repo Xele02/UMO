@@ -4,10 +4,7 @@ namespace XeSys
 {
 	public class Utility
 	{
-		// Fields
 		private static DateTime UNIX_EPOCH = new DateTime(1970, 1, 1, 0, 0, 0, 1, 0); // 0x0
-
-		// Methods
 
 		// // RVA: 0x23A8920 Offset: 0x23A8920 VA: 0x23A8920
 		// public static int GetVersionValue(string versionString) { }
@@ -42,12 +39,15 @@ namespace XeSys
 		// // RVA: 0x23A9000 Offset: 0x23A9000 VA: 0x23A9000
 		public static DateTime GetLocalDateTime(long unixTime)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return new DateTime();
+			return UNIX_EPOCH.AddSeconds(unixTime);
 		}
 
 		// // RVA: 0x23A90F8 Offset: 0x23A90F8 VA: 0x23A90F8
-		// public static long GetTargetUnixTime(int year, int month, int day, int hour, int minute, int second) { }
+		public static long GetTargetUnixTime(int year, int month, int day, int hour, int minute, int second)
+		{
+			DateTime date = new DateTime(year, month, day, hour, minute, second, DateTimeKind.Utc);
+			return (long)(TimeZoneInfo.ConvertTimeToUtc(date, TimeZoneInfo.Utc) - UNIX_EPOCH).TotalSeconds;
+		}
 
 		// // RVA: 0x23A9268 Offset: 0x23A9268 VA: 0x23A9268
 		public static long GetCurrentUnixTime()
