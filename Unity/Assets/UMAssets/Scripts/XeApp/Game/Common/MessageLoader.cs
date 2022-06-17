@@ -92,7 +92,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1117144 Offset: 0x1117144 VA: 0x1117144
 		public MessageLoader()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO MessageLoader");
 		}
 	}
 }

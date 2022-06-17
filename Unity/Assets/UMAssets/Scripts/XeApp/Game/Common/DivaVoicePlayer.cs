@@ -67,7 +67,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1C0A2E0 Offset: 0x1C0A2E0 VA: 0x1C0A2E0
 		static DivaVoicePlayer()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO !!!");
 		}
 	}
 }

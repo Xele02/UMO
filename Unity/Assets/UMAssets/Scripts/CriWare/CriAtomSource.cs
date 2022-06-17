@@ -99,13 +99,13 @@ public class CriAtomSource : CriMonoBehaviour
 	// // RVA: 0x28B5EAC Offset: 0x28B5EAC VA: 0x28B5EAC
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogWarning("TODO CriAtomSource Awake");
 	}
 
 	// // RVA: 0x28B5EBC Offset: 0x28B5EBC VA: 0x28B5EBC Slot: 4
 	protected override void OnEnable()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogWarning("TODO CriAtomSource OnEnable");
 	}
 
 	// // RVA: 0x28B5EF8 Offset: 0x28B5EF8 VA: 0x28B5EF8
@@ -129,7 +129,7 @@ public class CriAtomSource : CriMonoBehaviour
 	// // RVA: 0x28B632C Offset: 0x28B632C VA: 0x28B632C
 	private void Start()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogWarning("TODO CriAtomSource Start");
 	}
 
 	// // RVA: 0x28B6490 Offset: 0x28B6490 VA: 0x28B6490 Slot: 6

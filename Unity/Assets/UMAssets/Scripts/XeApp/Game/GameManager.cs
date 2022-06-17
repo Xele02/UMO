@@ -447,6 +447,7 @@ namespace XeApp.Game
 			while(!NKGJPJPHLIF.HHCJCDFCLOB.CGMMHFHHLID)
 				yield return null;
 
+			//!!! crash, no instance ?
 			KDLPEDBKMID.HHCJCDFCLOB.OEPPEGHGNNO = this.InstallEvent;
 			NDABOOOOENC.HHCJCDFCLOB.NCDLCIPGPNC();
 			IsSystemInitialized = true;

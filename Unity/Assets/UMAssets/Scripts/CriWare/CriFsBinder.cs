@@ -21,7 +21,7 @@ public class CriFsBinder : CriDisposable
 	// // RVA: 0x2944550 Offset: 0x2944550 VA: 0x2944550
 	public CriFsBinder()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO !!!");
 	}
 
 	// // RVA: 0x294486C Offset: 0x294486C VA: 0x294486C Slot: 5

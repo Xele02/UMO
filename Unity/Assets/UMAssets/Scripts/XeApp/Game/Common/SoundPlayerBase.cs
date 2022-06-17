@@ -35,7 +35,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1397D54 Offset: 0x1397D54 VA: 0x1397D54
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO SoundPlayerBase Awake");
 		}
 
 		// // RVA: 0x1397D64 Offset: 0x1397D64 VA: 0x1397D64 Slot: 6

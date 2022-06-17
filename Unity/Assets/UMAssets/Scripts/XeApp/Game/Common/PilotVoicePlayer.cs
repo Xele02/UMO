@@ -44,7 +44,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAF7218 Offset: 0xAF7218 VA: 0xAF7218
 		static PilotVoicePlayer()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO !!!");
 		}
 	}
 }

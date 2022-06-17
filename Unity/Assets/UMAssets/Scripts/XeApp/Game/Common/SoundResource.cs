@@ -2,10 +2,15 @@ namespace XeApp.Game.Common
 {
 	public class SoundResource
 	{
-		private static readonly string[] CueSheetSubDirectoryName; // 0x0
-		private static readonly string[] BuiltinSheetName; // 0x4
-		private static readonly string[] TutorialBuiltinSheetName; // 0x8
-		public static string[] decryptDirs; // 0xC
+		private static readonly string[] CueSheetSubDirectoryName = new string[6] { "snd/se", "snd/bgm", "snd/vo/diva", "snd/vo/pilot", "snd/vo/event", "snd/vo/adv" }; // 0x0
+		private static readonly string[] BuiltinSheetName = new string[5] { "cs_se_boot", "cs_bgm_002", "cs_bgm_009", "cs_diva_title", "cs_diva_greeting" }; // 0x4
+		private static readonly string[] TutorialBuiltinSheetName = new string[24] {"cs_bgm_adjust", "cs_bgm_tutorial", "cs_bgm_001", "cs_bgm_003",
+																				"cs_bgm_004", "cs_bgm_007", "cs_bgm_008", "cs_bgm_010", "cs_bgm_011",
+																				"cs_w_0022", "cs_se_adv", "cs_se_gacha", "cs_se_game", "cs_se_menu",
+																				"cs_se_notes", "cs_se_result", "cs_diva_001", "cs_adv_000001",
+																				"cs_adv_000002", "cs_adv_000003", "cs_adv_000004", "cs_adv_000005",
+																				"cs_adv_000006", "cs_pilot_004"}; // 0x8
+		public static string[] decryptDirs = new string[7] { "ly/sb", "gm/it/px", "dv/x1", "ef/da", "ct/xg", "dr/xt", "gc/px" }; // 0xC
 		private static int selectDecIndex; // 0x10
 
 		// // RVA: 0x1399740 Offset: 0x1399740 VA: 0x1399740
@@ -92,11 +97,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0x139AC70 Offset: 0x139AC70 VA: 0x139AC70
 		// public static void DeployDecFile(string srcPath, string rawAwbPath, string cueSheetName) { }
-
-		// // RVA: 0x139B794 Offset: 0x139B794 VA: 0x139B794
-		static SoundResource()
-		{
-			UnityEngine.Debug.LogError("TODO");
-		}
 	}
 }

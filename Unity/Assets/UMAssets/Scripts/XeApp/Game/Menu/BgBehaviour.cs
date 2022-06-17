@@ -94,20 +94,30 @@ namespace XeApp.Game.Menu
 		private Material m_bgMipmapBiasMaterialSource; // 0x60
 		[SerializeField]
 		private Material m_bgTransColoredBlurMaterialSource; // 0x64
-		public static readonly float HomeSceneOverlayAlpha; // 0x0
+		public static readonly float HomeSceneOverlayAlpha = 0.3f; // 0x0
 		private List<GameObject> m_decrationInstance = new List<GameObject>(); // 0x68
 		private List<RotationTween> m_rotationTween = new List<RotationTween>(); // 0x6C
 		private List<Image> m_colorChangeImages = new List<Image>(); // 0x70
 		private BgScroll m_bgScroll; // 0x74
 		private Material m_bgMipmapBiasMaterialInstance; // 0x78
 		private Material m_bgTransColoredBlurMaterialInstance; // 0x7C
-		private static readonly Rect TextureUv4_3; // 0x4
-		private static readonly Vector2 PlateSize; // 0x14
-		private static readonly Rect PlateUv; // 0x1C
-		private static readonly Vector2 RectSize4_3; // 0x2C
-		private static readonly Rect WhiteTextureUv; // 0x34
+		private static readonly Rect TextureUv4_3 = new Rect(0.0234375f, 0.142578f, 0.953125f, 0.714844f); // 0x4
+		private static readonly Vector2 PlateSize = new Vector2(244, 244); // 0x14
+		private static readonly Rect PlateUv = new Rect(0, 0, 1, 1); // 0x1C
+		private static readonly Vector2 RectSize4_3 = new Vector2(244, 183); // 0x2C
+		private static readonly Rect WhiteTextureUv = new Rect(0.396484f, 0.45459f, 0.00976562f, 0.00488281f); // 0x34
 		private const int ColorIndexTblLength = 10;
-		private static readonly int[,] m_colorIndexTbl; // 0x44
+		private static readonly int[,] m_colorIndexTbl = new int[10, 10] { 
+			{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+			{ 5, 6, 7, 8, 5, 6, 7, 8, 9, 9 },
+			{ 10, 11, 12, 13, 10, 11, 12, 13, 14, 14},
+			{ 15, 16, 17, 18, 15, 16, 17, 18, 19, 19},
+			{ 20, 21, 22, 23, 20, 21, 22, 23, 24, 24},
+			{ 25, 26, 27, 28, 25, 26, 27, 28, 29, 29},
+			{ 35, 36, 37, 38, 35, 36, 37, 38, 39, 39},
+			{ 30, 31, 32, 33, 30, 31, 32, 28, 34, 34},
+			{ 40, 41, 42, 43, -1, -1, -1, -1, -1, -1},
+			{ 44, 45, 46, 47, -1, -1, -1, -1, -1, -1} }; // 0x44
 
 		// public RawImage BgImage { get; } 0x14365E0
 		// public UGUIFader Fader { get; } 0x14365E8
@@ -243,11 +253,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x143BD0C Offset: 0x143BD0C VA: 0x143BD0C
 		// public void StoryBgHide() { }
-
-		// // RVA: 0x143BE50 Offset: 0x143BE50 VA: 0x143BE50
-		static BgBehaviour()
-		{
-			UnityEngine.Debug.LogError("TODO");
-		}
 	}
 }

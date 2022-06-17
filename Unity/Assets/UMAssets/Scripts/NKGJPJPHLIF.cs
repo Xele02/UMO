@@ -287,6 +287,7 @@ public class NKGJPJPHLIF
 					}
 			}
 			CGMMHFHHLID = true;
+			//!!! chekk if ?
 			KLMFJJCNBIP();
 	}
 
@@ -320,7 +321,7 @@ public class NKGJPJPHLIF
 			}
 
 
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO !!!");
 	}
 
 	// // RVA: 0xC1662C Offset: 0xC1662C VA: 0xC1662C

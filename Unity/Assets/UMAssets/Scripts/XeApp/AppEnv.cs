@@ -151,7 +151,7 @@ namespace XeApp
         // // RVA: 0xE0CF30 Offset: 0xE0CF30 VA: 0xE0CF30
         static AppEnv()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO !!!");
 		}
     }
 }

@@ -17,7 +17,7 @@ public class CriFsLoader : CriDisposable
 	// // RVA: 0x29483A8 Offset: 0x29483A8 VA: 0x29483A8
 	public CriFsLoader()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO !!!");
 	}
 
 	// // RVA: 0x2948884 Offset: 0x2948884 VA: 0x2948884 Slot: 5

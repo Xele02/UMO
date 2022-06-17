@@ -101,7 +101,7 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C3142C Offset: 0x1C3142C VA: 0x1C3142C
 	public void BLKLMNNOMGH()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO !!!");
 	}
 
 	// // RVA: 0x1C32220 Offset: 0x1C32220 VA: 0x1C32220
@@ -113,7 +113,7 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C30E40 Offset: 0x1C30E40 VA: 0x1C30E40
 	public void BJIOOOJGEPC()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO !!!");
 	}
 
 	// // RVA: 0x1C32458 Offset: 0x1C32458 VA: 0x1C32458
