@@ -71,7 +71,10 @@ namespace XeSys
 		// public static bool IsAcrossDay(long prevUnixTime, long nextUnixTime) { }
 
 		// // RVA: 0x23A9AF0 Offset: 0x23A9AF0 VA: 0x23A9AF0
-		// public static void SaveToStorage(string path, byte[] bytes, bool overwrite) { }
+		public static void SaveToStorage(string path, byte[] bytes, bool overwrite)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: -1 Offset: -1
 		// public static void Swap<T>(ref T lhs, ref T rhs) { }

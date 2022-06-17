@@ -629,7 +629,10 @@ namespace XeApp.Game
 		// public void SetRunInBackground(bool permit) { }
 
 		// // RVA: 0x9A01C8 Offset: 0x9A01C8 VA: 0x9A01C8
-		// public void SetNeverSleep(bool enable) { }
+		public void SetNeverSleep(bool enable)
+		{
+			UnityEngine.Debug.LogWarning("TODO GameManager SetNeverSleep");
+		}
 
 		// // RVA: 0x9A01DC Offset: 0x9A01DC VA: 0x9A01DC
 		// public void SetTimeScale(float time) { }

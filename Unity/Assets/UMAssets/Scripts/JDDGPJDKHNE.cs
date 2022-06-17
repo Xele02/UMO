@@ -1,5 +1,6 @@
 using UnityEngine;
 using XeSys;
+using System.Collections.Generic;
 
 public class JDDGPJDKHNE
 {
@@ -23,8 +24,8 @@ public class JDDGPJDKHNE
 	private const int KOCBJPOBAGB = 65535;
 	private const int HEHBMFJIKAE = 20;
 	private const int NNPPLEFJDLB = 180;
-	// private SakashoAPICallContext AHIEGJNDNJP; // 0x28
-	// private SakashoAPICallContext DIGJPMJHNHG; // 0x2C
+	private SakashoAPICallContext AHIEGJNDNJP; // 0x28
+	private SakashoAPICallContext DIGJPMJHNHG; // 0x2C
 	private List<GBAMMLEAIOF> DAOEKHGKJOD = new List<GBAMMLEAIOF>(100); // 0x30
 	private List<GBAMMLEAIOF> AKAFMAEJNBO = new List<GBAMMLEAIOF>(100); // 0x34
 	public bool FCMCNIMEAEA; // 0x38
@@ -139,7 +140,7 @@ public class JDDGPJDKHNE
 						{
 							PIBMLNOFHHG = 0;
 							GKFKKIICFME = 10;
-							if(BBMBNCPEAHC.MGJKEJHEBPO < 30)
+							if(BBMBNCPEAHC.MGJKEJHEBPO.Count < 30)
 							{
 								GKFKKIICFME = BBMBNCPEAHC.MGJKEJHEBPO.Count;
 							}
@@ -196,9 +197,9 @@ public class JDDGPJDKHNE
 						if(AHIEGJNDNJP == null)
 						{
 							KCOKHCLKFIE = 10;
-							if(LAHBCJNDGCH.MGJKEJHEBP.Count < 10)
+							if(LAHBCJNDGCH.MGJKEJHEBPO.Count < 10)
 							{
-								KCOKHCLKFIE = LAHBCJNDGCH.MGJKEJHEBP.Count;
+								KCOKHCLKFIE = LAHBCJNDGCH.MGJKEJHEBPO.Count;
 							}
 							SakashoLogData[] datas = new SakashoLogData[KCOKHCLKFIE];
 							for(int i = 0; i < KCOKHCLKFIE; i++)

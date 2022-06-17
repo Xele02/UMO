@@ -8,7 +8,11 @@ public class StorageSupport
     }
 
 	// // RVA: 0x2E72290 Offset: 0x2E72290 VA: 0x2E72290
-	// public static int GetAvailableStorageSizeMB() { }
+	public static int GetAvailableStorageSizeMB()
+	{
+        UnityEngine.Debug.LogError("TODO");
+        return 10000;
+	}
 
 	// // RVA: 0x2E723D0 Offset: 0x2E723D0 VA: 0x2E723D0
 	// public static bool FileExists(string path) { }

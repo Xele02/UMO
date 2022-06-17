@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using XeSys;
+
 public class PEBFNABDJDI : DIHHCBACKGG
 {
     public class JFIGGEAFMCN
@@ -135,4 +137,36 @@ public class PEBFNABDJDI : DIHHCBACKGG
 
 	// // RVA: 0xCC8734 Offset: 0xCC8734 VA: 0xCC8734
 	// public bool NJGEDPHNIKC() { }
+}
+ 
+public class CHBDMJBEENG
+{
+	private int OBPBCNNFNFO; // 0x8
+	private int DCBANOMELHM; // 0xC
+	private int NMJDFCEJOCP; // 0x10
+	private int IGNPLAKONFE; // 0x14
+	private int JOGHEIDHELL; // 0x18
+	private int ALMFPODMADF; // 0x1C
+	private int HNDNGHNDNMD; // 0x20
+	private int JIICFAEIGLO; // 0x24
+	private int ELCCKELHDIJ; // 0x28
+	public List<sbyte> FPBEBCIPEPI = new List<sbyte>(10); // 0x2C
+
+	// public int PFNBMPCIIJJ { get; set; } FHKONOMKGBN 0x12BE018 BLIGJALGJIK 0x12BE028
+	public int KBNGOBEAHIC { get { return OBPBCNNFNFO ^ NMJDFCEJOCP; } set { NMJDFCEJOCP = OBPBCNNFNFO ^ value; } } //JKEJHFKAKDN 0x12BE038 OKFDFHNIILF 0x12BE048
+	// public int JOIEHMBKJHI { get; set; } LKFCFNJDCOD 0x12BE058 EAKKAOCBAMF 0x12BE068
+	// public int KHGJIGNHAGD { get; set; } NLNDHIKBGOA 0x12BE078 OACFGDPBLCP 0x12BE088
+	// public int EEBOIPHMMBP { get; set; } PCJCHDJPDHN 0x12BE098 BCLCFCILPFP 0x12BE0A8
+	// public int IMNJNFICJPM { get; set; } GCLLEGIMPCF 0x12BE0B8 FKPEMBDPOME 0x12BE0C8
+	// public int PIAMMJNADJH { get; set; } AOHLFEDHOHH 0x12BE0D8 IPHJMAENLHE 0x12BE0E8
+	// public int KMNPFOPBDMA { get; set; } BKMILJONJDL 0x12BE0F8 PLJFDIKPMMH 0x12BE108
+
+	// RVA: 0x12BE118 Offset: 0x12BE118 VA: 0x12BE118
+	public CHBDMJBEENG()
+	{
+		OBPBCNNFNFO = (int)Utility.GetCurrentUnixTime() ^ 0x70f5a731;
+	}
+
+	// RVA: 0x12BE1EC Offset: 0x12BE1EC VA: 0x12BE1EC
+	// public uint CAOGDCBPBAN() { }
 }

@@ -21,7 +21,7 @@ public class CriFsBinder : CriDisposable
 	// // RVA: 0x2944550 Offset: 0x2944550 VA: 0x2944550
 	public CriFsBinder()
 	{
-		if(!CriFsPlugin.IsLibraryInitialized()
+		if(!CriFsPlugin.IsLibraryInitialized())
 		{
 			new Exception("CriFsPlugin is not initialized.");
 		}
@@ -31,7 +31,7 @@ public class CriFsBinder : CriDisposable
 		{
 			new Exception("criFsBinder_Create() failed.");
 		}
-		CriDisposableObjectManager.Register(this, 2);
+		CriDisposableObjectManager.Register(this, CriDisposableObjectManager.ModuleType.Fs);
 	}
 
 	// // RVA: 0x294486C Offset: 0x294486C VA: 0x294486C Slot: 5

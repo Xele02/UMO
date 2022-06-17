@@ -17,7 +17,7 @@ public class CriFsLoader : CriDisposable
 	// // RVA: 0x29483A8 Offset: 0x29483A8 VA: 0x29483A8
 	public CriFsLoader()
 	{
-		if(!CriFsPlugin.IsLibraryInitialized()
+		if(!CriFsPlugin.IsLibraryInitialized())
 		{
 			new Exception("CriFsPlugin is not initialized.");
 		}
@@ -27,7 +27,7 @@ public class CriFsLoader : CriDisposable
 		{
 			new Exception("criFsLoader_Create() failed.");
 		}
-		CriDisposableObjectManager.Register(this, 2);
+		CriDisposableObjectManager.Register(this, CriDisposableObjectManager.ModuleType.Fs);
 	}
 
 	// // RVA: 0x2948884 Offset: 0x2948884 VA: 0x2948884 Slot: 5

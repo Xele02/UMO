@@ -3,6 +3,7 @@ using System.Text;
 using System.IO;
 using System;
 using System.Collections.Generic;
+using XeSys;
 
 public class NPAFCENJADP
 {
@@ -98,7 +99,7 @@ public class NPAFCENJADP
 		binWriter.Write(0);
 		binWriter.Write(JCNNBEEHFLE); // write long?
 		binWriter.Write((long)0);
-		int iVar12 = MGJKEJHEBPO.Count * 16 + 32;
+		iVar12 = MGJKEJHEBPO.Count * 16 + 32;
 		for(int i = 0; i < MGJKEJHEBPO.Count; i++)
 		{
 			binWriter.Write(iVar12); // write offset
@@ -112,7 +113,7 @@ public class NPAFCENJADP
 		{
 			binWriter.Write(MGJKEJHEBPO[i].EJJEHEHFMGO); // write data
 			iVar12 = ((MGJKEJHEBPO[i].EJJEHEHFMGO.Length + 3) / 4) * 4 - MGJKEJHEBPO[i].EJJEHEHFMGO.Length;
-			for(int i = 0; i < iVar12; i++)
+			for(int j = 0; j < iVar12; j++)
 			{
 				binWriter.Write((byte)0); // write zero fill
 			}

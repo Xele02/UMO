@@ -3,6 +3,9 @@ using UnityEngine;
 using System.Text;
 using System.Collections.Generic;
 using System.IO;
+using System.Collections;
+using XeSys.File;
+using XeApp.Game;
 
 public delegate bool OMIFMMJPMDJ(int INDDJNMPONH, float LNAHJANMJNM);
 public delegate void OBHIGCFPKJN(string DOGDHKIEBJA, IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP);
@@ -97,7 +100,7 @@ public class KDLPEDBKMID
 	{
 		HHCJCDFCLOB = this;
 		LCIGLIDJILJ = this.LFKLIOKFGLP;
-		CriFileRequestManager.HHCJCDFCLOB.NPGIEMFFFIO = () => {
+		CriFileRequestManager.HHCJCDFCLOB.GOEAHKDGBBH = () => {
 			//0xE841D8
 			return LNHFLJBGGJB;
 		};
@@ -208,7 +211,7 @@ public class KDLPEDBKMID
 		string fileName = Path.GetFileNameWithoutExtension(CJEKGLGBIHF);
 		string ext = Path.GetExtension(CJEKGLGBIHF);
 		
-		uint val = BEEINMBNKNM.DIKDKNIKPNJ(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.GDEKCOOBLMA.NGHKJOEDLIP.KBNGOBEAHIC, CJEKGLGBIHF);
+		uint val = BEEINMBNKNM_Encryption.DIKDKNIKPNJ((uint)IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.GDEKCOOBLMA.NGHKJOEDLIP.KBNGOBEAHIC, CJEKGLGBIHF);
 		JBBHNIACMFJ.Clear();
 		JBBHNIACMFJ.Append(KEHOJEJMGLJ.FLHOFIEOKDH);
 		JBBHNIACMFJ.Append(dir);
@@ -252,6 +255,7 @@ public class KDLPEDBKMID
 			// RVA: 0xE84A04 Offset: 0xE84A04 VA: 0xE84A04
 			//internal void OIIFKBGOJKO() { }
 		// 0xE84A14
+		int APGOAMNGFFF = 0;
 		if(OEPPEGHGNNO == null)
 		{
 			OEPPEGHGNNO = (int INDDJNMPONH, float LNAHJANMJNM) => 
@@ -283,7 +287,7 @@ public class KDLPEDBKMID
 				OEPPEGHGNNO(2, 100);
 				GameManager.Instance.SetNeverSleep(false);
 				LFPOPKJMGKA = false;
-				return false;
+				yield break;
 			}
 			PMDNNKAPIKJ = new JEHIAIPJNJF(3);
 			PMDNNKAPIKJ.DOMFHDPMCCO(JFEKDMEMKHE);
@@ -297,9 +301,9 @@ public class KDLPEDBKMID
 			yield return null;
 			//2
 			PMDNNKAPIKJ.FBANBDCOEJL();
-			if(PMDNNKAPIKJ.CMCKNKKCNDK == 2)
+			if(PMDNNKAPIKJ.CMCKNKKCNDK == /*2*/JEHIAIPJNJF.NKLKJEOKIFO.FEJIMBDPMKI)
 			{
-				HANBBBBLLGP = 100.0f
+				HANBBBBLLGP = 100.0f;
 				OEPPEGHGNNO(3, 100);
 				PMDNNKAPIKJ.Dispose();
 				PMDNNKAPIKJ = null;
@@ -307,14 +311,14 @@ public class KDLPEDBKMID
 			}
 			else
 			{
-				if(PMDNNKAPIKJ.CMCKNKKCNDK == 4)
+				if(PMDNNKAPIKJ.CMCKNKKCNDK == /*4*/JEHIAIPJNJF.NKLKJEOKIFO.LPLEIJIFOKN)
 				{
 					string errorStr = "network";
 					if(PMDNNKAPIKJ.BHICPONFJKM)
 						errorStr = "storage";
 					if(StorageSupport.GetAvailableStorageSizeMB() > -1 && StorageSupport.GetAvailableStorageSizeMB() < 50)
 						errorStr = "storage";
-					LBLMCMHMNGC.APGOAMNGFFF = 0;
+					APGOAMNGFFF = 0;
 					MAIHLKPEHJN(errorStr, () => {
 						//0xE849D8
 						UnityEngine.Debug.LogError("TODO");
@@ -324,13 +328,13 @@ public class KDLPEDBKMID
 					});
 					//goto LAB_00e84f0c; // To 3
 					//LAB_00e84f0c
-					while(LBLMCMHMNGC.APGOAMNGFFF == 0)
+					while(APGOAMNGFFF == 0)
 					{
 						yield return null;
 					}
 					// L 267
 					PMDNNKAPIKJ.PBIMGBKLDPP();
-					if(LBLMCMHMNGC.APGOAMNGFFF != 1)
+					if(APGOAMNGFFF != 1)
 					{
 						//goto LAB_00e85514;
 						UnityEngine.Debug.LogError("TODO");

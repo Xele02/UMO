@@ -29,7 +29,7 @@ public class GBAMMLEAIOF
 		byte[] data = new byte[EJJEHEHFMGO.Length];
 		for(int i = 0; i < data.Length; i++)
 		{
-			data[i] = EJJEHEHFMGO[i] ^ 0x17;
+			data[i] = (byte)(EJJEHEHFMGO[i] ^ 0x17);
 		}
 		UnityEngine.Debug.LogError("Text result : " + Encoding.UTF8.GetString(data));
 		return Encoding.UTF8.GetString(data);
