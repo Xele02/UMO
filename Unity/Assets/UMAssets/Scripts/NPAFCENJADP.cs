@@ -54,18 +54,18 @@ public class NPAFCENJADP
 
             if(b != null && b.Length > 0xf)
             {
-                int a = BitConverter.ToInt32(b, 0);
+                int a = BitConverter.ToInt32(b, 0); // Read header
                 if(a != 0x3ac13967)
                     return false;
                 BitConverter.ToInt32(b, 4);
-                int a2 = BitConverter.ToInt32(b, 8);
-                JCNNBEEHFLE = BitConverter.ToInt64(b, 16);
+                int a2 = BitConverter.ToInt32(b, 8); // Read count
+                JCNNBEEHFLE = BitConverter.ToInt64(b, 16); // Read long
                 int readPos = 32;
                 for(int i = a2; i > 0; i--)
                 {
-                    int b1 = BitConverter.ToInt32(b, readPos);
-                    int b2 = BitConverter.ToInt32(b, readPos + 4);
-                    int b3 = BitConverter.ToInt32(b, readPos + 8);
+                    int b1 = BitConverter.ToInt32(b, readPos); // read offset
+                    int b2 = BitConverter.ToInt32(b, readPos + 4); // read length
+                    int b3 = BitConverter.ToInt32(b, readPos + 8); // read value
                     GBAMMLEAIOF g = new GBAMMLEAIOF();
                     g.KHEKNNFCAOI(b3, b, b1, b2);
                     MGJKEJHEBPO.Add(g);
@@ -79,7 +79,62 @@ public class NPAFCENJADP
     }
 
 	// // RVA: 0x1CB09D4 Offset: 0x1CB09D4 VA: 0x1CB09D4
-	// public void HJMKBCFJOOH() { }
+	public void HJMKBCFJOOH()
+	{
+		LNHFLJBGGJB = true;
+		int iVar12 = 0x20;
+		for(int i = 0; i < MGJKEJHEBPO.Count; i++)
+		{
+			iVar12 = iVar12 + 16 + ((MGJKEJHEBPO[i].EJJEHEHFMGO.Length + 3) / 4) * 4;
+		}
+		
+		CFFBJGGICCE = new byte[iVar12];
+		MemoryStream memStream = new MemoryStream(CFFBJGGICCE);
+		BinaryWriter binWriter = new BinaryWriter(memStream);
+		
+		binWriter.Write(0x3ac13967); // Write header
+		binWriter.Write(1);
+		binWriter.Write(MGJKEJHEBPO.Count); // Write data num
+		binWriter.Write(0);
+		binWriter.Write(JCNNBEEHFLE); // write long?
+		binWriter.Write((long)0);
+		int iVar12 = MGJKEJHEBPO.Count * 16 + 32;
+		for(int i = 0; i < MGJKEJHEBPO.Count; i++)
+		{
+			binWriter.Write(iVar12); // write offset
+			binWriter.Write(MGJKEJHEBPO[i].EJJEHEHFMGO.Length); // write length
+			binWriter.Write(MGJKEJHEBPO[i].PGEDKFOIPIP); // write value
+			binWriter.Write(0);
+			iVar12 += ((MGJKEJHEBPO[i].EJJEHEHFMGO.Length + 3) / 4) * 4;
+		}
+		
+		for(int i = 0; i < MGJKEJHEBPO.Count; i++)
+		{
+			binWriter.Write(MGJKEJHEBPO[i].EJJEHEHFMGO); // write data
+			iVar12 = ((MGJKEJHEBPO[i].EJJEHEHFMGO.Length + 3) / 4) * 4 - MGJKEJHEBPO[i].EJJEHEHFMGO.Length;
+			for(int i = 0; i < iVar12; i++)
+			{
+				binWriter.Write((byte)0); // write zero fill
+			}
+		}
+		binWriter.Close();
+		
+		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+			//0x1CB13C4
+			ICryptoTransform crypt = KHFCJBEFJNC.CreateEncryptor();
+			byte[] res = crypt.TransformFinalBlock(CFFBJGGICCE, 0, CFFBJGGICCE.Length);
+			for(int i = 0; i < CFFBJGGICCE.Length; i++)
+			{
+				CFFBJGGICCE[i] = 0;
+			}
+			Utility.SaveToStorage(ELLBAAFKDCH[0], res, true);
+			Utility.SaveToStorage(ELLBAAFKDCH[1], res, true);
+			LNHFLJBGGJB = false;
+		});
+		
+		binWriter.Dispose();
+		memStream.Dispose();
+	}
 
 	// // RVA: 0x1CB0390 Offset: 0x1CB0390 VA: 0x1CB0390
 	private static void GLHEDLJKJOO(string GMEFFNIMFIF, string CDPAMAOOHNF, int NKPAPLIBIJJ, out byte[] LJNAKDMILMC, int BBALOLKMAOL, out byte[] BKJMLLELIJB)
@@ -94,8 +149,4 @@ public class NPAFCENJADP
         LJNAKDMILMC = a.GetBytes(NKPAPLIBIJJ / 8);
         BKJMLLELIJB = a.GetBytes(BBALOLKMAOL / 8);
     }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6B6968 Offset: 0x6B6968 VA: 0x6B6968
-	// // RVA: 0x1CB13C4 Offset: 0x1CB13C4 VA: 0x1CB13C4
-	// private void <Save>b__14_0() { }
 }

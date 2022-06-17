@@ -82,13 +82,24 @@ public class BEEINMBNKNM_Encryption
 	//public string AGKMBDIJHID(int INDDJNMPONH) { }
 
 	// RVA: 0xC73F54 Offset: 0xC73F54 VA: 0xC73F54
-	//public static uint GKBODMNBFJM(uint IOIMHJAOKOO, byte[] DBBGALAPFGC) { }
+	public static uint GKBODMNBFJM(uint IOIMHJAOKOO, byte[] DBBGALAPFGC)
+	{
+		return ANMDMMBEJPB(IOIMHJAOKOO, DBBGALAPFGC, DBBGALAPFGC.Length);
+	}
 
 	// RVA: 0xC73FC8 Offset: 0xC73FC8 VA: 0xC73FC8
-	//private static extern uint ANMDMMBEJPB(uint IOIMHJAOKOO, IntPtr DBBGALAPFGC, int NFHFALDMGGC) { }
+	private static /*extern*/ uint ANMDMMBEJPB(uint IOIMHJAOKOO, /*IntPtr */byte[] DBBGALAPFGC, int NFHFALDMGGC)
+	{
+		// return xedec_hash(IOIMHJAOKOO, DBBGALAPFGC, NFHFALDMGGC);
+		UnityEngine.Debug.LogError("TODO xedec_hash");
+		return 0;
+	}
 
 	// RVA: 0xC740D4 Offset: 0xC740D4 VA: 0xC740D4
-	//public static uint DIKDKNIKPNJ(uint IOIMHJAOKOO, string CJEKGLGBIHF_path) { }
+	public static uint DIKDKNIKPNJ(uint IOIMHJAOKOO, string CJEKGLGBIHF_path)
+	{
+		return GKBODMNBFJM(IOIMHJAOKOO, Encoding.UTF8.GetBytes(CJEKGLGBIHF_path));
+	}
 
 	// RVA: 0xC74128 Offset: 0xC74128 VA: 0xC74128
 	public void DGBPHDMEDNP(int DHIPGHBJLIL, int POMLAOPLMNA, int DFIDIEENJAE)

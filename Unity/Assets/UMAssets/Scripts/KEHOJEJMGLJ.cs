@@ -12,7 +12,7 @@ public class KEHOJEJMGLJ
 
 	private float NDEJCDBHPLB = 180.0f; // 0x8
 	private const bool LFNLMBBPMPJ = false;
-	// public FECDBKKBAHO KLIJFOBEKBE = new FECDBKKBAHO(); // 0xC
+	public FECDBKKBAHO KLIJFOBEKBE = new FECDBKKBAHO(); // 0xC
 	// public OAFCKDDEBFN GMLCCMEHNCI = new OAFCKDDEBFN(); // 0x10
 	// private static IGJHFKELHKJ MLPDBGFBAAC; // 0x4
 	public static bool HBCEEIOHENM = true; // 0x8
@@ -49,7 +49,15 @@ public class KEHOJEJMGLJ
 	public static string FLHOFIEOKDH { get; set; } // 0x10 PGOHBLKDJOM ODMAEKMPAGP BBPOAGDNMOJ
 	public static string JNGKCPJBMBA { get; set; } // 0x14 BMIJOIFPCCE KEOJOEFBBJE FMEBBKPCEPK
 	public string FPCIBJLJOFI { get; set; } // 0x18 LCFILOOJABA NOJDHDJNPAL IHJLOEIKMDI
-	// public static string LBEPLOJBFCM { get; } // KHCOOFHPKGE 0xE7E984
+	public static string LBEPLOJBFCM { 
+		get { // KHCOOFHPKGE 0xE7E984
+			if(IMABJMPEPGE == null)
+			{
+				IMABJMPEPGE = "android";
+			}
+			return IMABJMPEPGE;
+		}
+	} 
 	public static string OGCDNCDMLCA { get {
 		// FHOCCNDOAPJ 0xE7EB1C
 		if(JCMJBMBMJAK == null)
@@ -61,7 +69,15 @@ public class KEHOJEJMGLJ
 		}
         return JCMJBMBMJAK;
 	}}
-	// public static string CGAHFOBGHIM { get; } // AMBIPPMFFCJ 0xE7DF14
+	public static string CGAHFOBGHIM { 
+		get { // AMBIPPMFFCJ 0xE7DF14
+			if(PMHFLOLDHAO == null)
+			{
+				PMHFLOLDHAO = OGCDNCDMLCA + "/" + LBEPLOJBFCM;
+			}
+			return PMHFLOLDHAO;
+		}
+	}
 	public static string LHJNPJFNDNA { get; private set; } // 0x24 HCGGEEMOKFN JBIPCECPFGN ONAJIIACAEB
 	// public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x1C KPEKONPJHCL LKCDOGAFPNM NPJJMDFAIII
 	// public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x20 EAIFOAGPGGH KCLBNOKEPIG OCIMGEFKKLM

@@ -10,14 +10,24 @@ public class CriFsLoader : CriDisposable
         Error = 3,
     }
 
-	//private IntPtr handle; // 0x18
+	private IntPtr handle; // 0x18
 	// private GCHandle dstGch; // 0x1C
 	// private GCHandle srcGch; // 0x20
 
 	// // RVA: 0x29483A8 Offset: 0x29483A8 VA: 0x29483A8
 	public CriFsLoader()
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		if(!CriFsPlugin.IsLibraryInitialized()
+		{
+			new Exception("CriFsPlugin is not initialized.");
+		}
+		handle = IntPtr.Zero;
+		criFsLoader_Create(out handle);
+		if(handle == IntPtr.Zero)
+		{
+			new Exception("criFsLoader_Create() failed.");
+		}
+		CriDisposableObjectManager.Register(this, 2);
 	}
 
 	// // RVA: 0x2948884 Offset: 0x2948884 VA: 0x2948884 Slot: 5
@@ -76,7 +86,10 @@ public class CriFsLoader : CriDisposable
 	// protected override void Finalize() { }
 
 	// // RVA: 0x2948778 Offset: 0x2948778 VA: 0x2948778
-	// private static extern int criFsLoader_Create(out IntPtr loader) { }
+	private static /*extern */int criFsLoader_Create(out IntPtr loader)
+	{
+		return ExternLib.LibCriWare.criFsLoader_Create(out loader);
+	}
 
 	// // RVA: 0x2948A18 Offset: 0x2948A18 VA: 0x2948A18
 	private static /*extern*/ int criFsLoader_Destroy(/*IntPtr*/CriFsLoader loader)

@@ -17,7 +17,8 @@ namespace XeApp.Game.Common
 			Num = 10,
 		}
 
-		private static readonly string[] categoryPrefix; // 0x0
+		private static readonly string[] categoryPrefix = new string[10] { "g_gstart", "g_fwave", "g_vmode", "g_special", "m_get", "m_select", "g_change",
+																			"m_good", "m_great", "m_sortie"}; // 0x0
 		private bool m_enable = true; // 0x20
 
 		// // RVA: 0xAF6DA8 Offset: 0xAF6DA8 VA: 0xAF6DA8
@@ -40,11 +41,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0xAF7200 Offset: 0xAF7200 VA: 0xAF7200
 		// public void Stop() { }
-
-		// // RVA: 0xAF7218 Offset: 0xAF7218 VA: 0xAF7218
-		static PilotVoicePlayer()
-		{
-			UnityEngine.Debug.LogError("TODO !!!");
-		}
 	}
 }

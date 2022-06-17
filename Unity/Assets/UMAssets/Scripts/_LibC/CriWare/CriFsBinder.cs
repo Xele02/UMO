@@ -73,5 +73,11 @@ namespace ExternLib
             }
             return 0;
         }
+		
+		public static uint criFsBinder_Create(out IntPtr binder)
+		{
+			binder = new IntPtr(1);
+			return 0;
+		}
     }
 }

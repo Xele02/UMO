@@ -21,7 +21,17 @@ public class CriFsBinder : CriDisposable
 	// // RVA: 0x2944550 Offset: 0x2944550 VA: 0x2944550
 	public CriFsBinder()
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		if(!CriFsPlugin.IsLibraryInitialized()
+		{
+			new Exception("CriFsPlugin is not initialized.");
+		}
+		handle = IntPtr.Zero;
+		CriFsBinder.criFsBinder_Create(out handle);
+		if(handle == IntPtr.Zero)
+		{
+			new Exception("criFsBinder_Create() failed.");
+		}
+		CriDisposableObjectManager.Register(this, 2);
 	}
 
 	// // RVA: 0x294486C Offset: 0x294486C VA: 0x294486C Slot: 5
@@ -109,7 +119,10 @@ public class CriFsBinder : CriDisposable
 	// protected override void Finalize() { }
 
 	// // RVA: 0x2944760 Offset: 0x2944760 VA: 0x2944760
-	// private static extern uint criFsBinder_Create(out IntPtr binder) { }
+	private static /*extern */uint criFsBinder_Create(out IntPtr binder)
+	{
+		return ExternLib.LibCriWare.criFsBinder_Create(out binder);
+	}
 
 	// // RVA: 0x29449A8 Offset: 0x29449A8 VA: 0x29449A8
 	private static /*extern */uint criFsBinder_Destroy(/*IntPtr*/CriFsBinder binder)

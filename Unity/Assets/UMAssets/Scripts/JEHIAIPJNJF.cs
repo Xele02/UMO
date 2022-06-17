@@ -116,7 +116,16 @@ public class JEHIAIPJNJF : IDisposable
 	// public void DOMFHDPMCCO(List<KDLPEDBKMID.EMEKAOMPFNC> CEKHMLAEKIK) { }
 
 	// // RVA: 0x1C354B8 Offset: 0x1C354B8 VA: 0x1C354B8
-	// public bool MNAIIMMIMIO(string CJEKGLGBIHF) { }
+	public bool MNAIIMMIMIO(string CJEKGLGBIHF)
+	{
+		for(int i = 0; i < JOJMBFBGMGN.Count; i++)
+		{
+			if(JOJMBFBGMGN[i].AJPIGKBIDDL == CJEKGLGBIHF)
+				return true;
+				
+		}
+		return false;
+	}
 
 	// // RVA: 0x1C355BC Offset: 0x1C355BC VA: 0x1C355BC
 	// public void LAOEGNLOJHC() { }

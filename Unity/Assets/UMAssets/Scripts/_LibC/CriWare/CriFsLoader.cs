@@ -29,5 +29,11 @@ namespace ExternLib
         {
             return 0;
         }
+		
+		public static int criFsLoader_Create(out IntPtr loader)
+		{
+			loader = new IntPtr(1);
+			return 0;
+		}
     }
 }

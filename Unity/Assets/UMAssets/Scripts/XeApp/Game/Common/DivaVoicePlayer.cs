@@ -31,7 +31,10 @@ namespace XeApp.Game.Common
 			None = -1,
 		}
 
-		private static readonly string[] categoryPrefix; // 0x0
+		private static readonly string[] categoryPrefix = new string[23] { "m_login", "m_home", "m_touch", "m_gacha", "m_gstart", "g_askill", "g_dmode", "g_gend",
+																			"g_gover", "g_special", "m_lvup", "m_result", "m_story", "m_review", "m_costume",
+																			"m_mission", "m_present", "m_intimacy", "m_3rdlive", "g_change", "g_bttresult_001", 
+																			"g_bttresult_002", "m_raidsupport"}; // 0x0
 		private bool m_enable = true; // 0x20
 
 		// // RVA: 0x1C09D7C Offset: 0x1C09D7C VA: 0x1C09D7C
@@ -63,11 +66,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0x1C0A290 Offset: 0x1C0A290 VA: 0x1C0A290
 		// public void Stop() { }
-
-		// // RVA: 0x1C0A2E0 Offset: 0x1C0A2E0 VA: 0x1C0A2E0
-		static DivaVoicePlayer()
-		{
-			UnityEngine.Debug.LogError("TODO !!!");
-		}
 	}
 }

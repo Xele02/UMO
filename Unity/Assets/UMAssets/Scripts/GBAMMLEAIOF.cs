@@ -1,3 +1,4 @@
+using System.Text;
 
 public class GBAMMLEAIOF
 {
@@ -23,5 +24,14 @@ public class GBAMMLEAIOF
     }
 
 	// // RVA: 0x1401B74 Offset: 0x1401B74 VA: 0x1401B74
-	// public string HGJLBEBNMIP() { }
+	public string HGJLBEBNMIP()
+	{
+		byte[] data = new byte[EJJEHEHFMGO.Length];
+		for(int i = 0; i < data.Length; i++)
+		{
+			data[i] = EJJEHEHFMGO[i] ^ 0x17;
+		}
+		UnityEngine.Debug.LogError("Text result : " + Encoding.UTF8.GetString(data));
+		return Encoding.UTF8.GetString(data);
+	}
 }
