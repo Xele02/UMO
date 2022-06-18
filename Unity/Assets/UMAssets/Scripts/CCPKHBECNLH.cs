@@ -17,7 +17,7 @@ public class CCPKHBECNLH : KLFDBFMNLBL
 	// // RVA: 0x190A2E4 Offset: 0x190A2E4 VA: 0x190A2E4
 	public CCPKHBECNLH()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0x190A380 Offset: 0x190A380 VA: 0x190A380 Slot: 4

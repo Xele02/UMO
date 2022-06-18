@@ -14,10 +14,10 @@ public class MHDFCLCMDKO : DIHHCBACKGG
         // public uint CAOGDCBPBAN() { }
 
         // // RVA: 0x132B77C Offset: 0x132B77C VA: 0x132B77C
-        // public void LHPDDGIJKNB() { }
+        // public void LHPDDGIJKNB_Reset() { }
 
         // // RVA: 0x132B798 Offset: 0x132B798 VA: 0x132B798
-        // public void ODDIHGPONFL(MHDFCLCMDKO.CJLENGHPIDH GPBJHKLFCEP) { }
+        // public void ODDIHGPONFL_Copy(MHDFCLCMDKO.CJLENGHPIDH GPBJHKLFCEP) { }
     }
 
 	// public List<MHDFCLCMDKO.CJLENGHPIDH> CKADCLJDCJK { get; private set; } // 0x20 LKHMPJNEEHH NOIMCFANIGL KFNHNMPHCGM

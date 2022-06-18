@@ -18,7 +18,7 @@ public class CCBMJNPFPBB : KLFDBFMNLBL
 	// // RVA: 0x18FDE14 Offset: 0x18FDE14 VA: 0x18FDE14
 	public CCBMJNPFPBB()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0x18FDEB0 Offset: 0x18FDEB0 VA: 0x18FDEB0 Slot: 4

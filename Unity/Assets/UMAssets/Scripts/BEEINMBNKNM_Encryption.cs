@@ -15,7 +15,7 @@ public class BEEINMBNKNM_Encryption
 	//private uint FBGGEFFJJHB() { }
 
 	// RVA: 0xC73B28 Offset: 0xC73B28 VA: 0xC73B28
-	public void KHEKNNFCAOI(uint KNEFBLHBDBG)
+	public void KHEKNNFCAOI_Init(uint KNEFBLHBDBG)
 	{
 			this.KNEFBLHBDBG = KNEFBLHBDBG;
 			PMBEODGMMBB = KNEFBLHBDBG;

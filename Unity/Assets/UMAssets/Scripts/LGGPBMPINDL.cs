@@ -10,7 +10,7 @@ public class LGGPBMPINDL : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0xD73940 Offset: 0xD73940 VA: 0xD73940
-	// public void KHEKNNFCAOI(int GPLGIGCNNAD) { }
+	// public void KHEKNNFCAOI_Init(int GPLGIGCNNAD) { }
 
 	// // RVA: 0xD7395C Offset: 0xD7395C VA: 0xD7395C
 	// public bool IPLBEGCODDC(int EKANGPODCEP) { }

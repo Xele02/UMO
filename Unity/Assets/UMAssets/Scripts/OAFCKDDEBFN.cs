@@ -10,7 +10,7 @@ public class OAFCKDDEBFN
         private int KNEFBLHBDBG; // 0x10
 
 		// RVA: 0x1CBED14 Offset: 0x1CBED14 VA: 0x1CBED14
-        public void KHEKNNFCAOI(string MKANHLNEEGL, int KNEFBLHBDBG)
+        public void KHEKNNFCAOI_Init(string MKANHLNEEGL, int KNEFBLHBDBG)
         {
             DMKAFCEJFDG_decryptor = null;
             JHOONHIHJNJ_MatchKey = null;
@@ -20,7 +20,7 @@ public class OAFCKDDEBFN
             if(KNEFBLHBDBG == 0)
                 return;
             DMKAFCEJFDG_decryptor = new BEEINMBNKNM_Encryption();
-            DMKAFCEJFDG_decryptor.KHEKNNFCAOI((uint)KNEFBLHBDBG);
+            DMKAFCEJFDG_decryptor.KHEKNNFCAOI_Init((uint)KNEFBLHBDBG);
         }
     }
 
@@ -54,7 +54,7 @@ public class OAFCKDDEBFN
 			MFJONNINDCJ data = JGJJIBPPEPD[index];
 			string MKANHLNEEGL = data.MKANHLNEEGL;
 			int value = data.JBGEEPFKIGG;
-			newData.KHEKNNFCAOI(MKANHLNEEGL, value);
+			newData.KHEKNNFCAOI_Init(MKANHLNEEGL, value);
 			MGJKEJHEBPO.Add(newData);
 			index = index + 1;
 		}

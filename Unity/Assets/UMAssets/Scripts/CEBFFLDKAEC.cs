@@ -29,7 +29,7 @@ public class CEBFFLDKAEC
 	}
 
 	// // RVA: 0x12B13B0 Offset: 0x12B13B0 VA: 0x12B13B0
-	// public void LHPDDGIJKNB(int HBDLKOBJHFP, int LMJDJEACHBC) { }
+	// public void LHPDDGIJKNB_Reset(int HBDLKOBJHFP, int LMJDJEACHBC) { }
 
 	// // RVA: 0x12B13CC Offset: 0x12B13CC VA: 0x12B13CC
 	// public void DNBGDMBCLMI() { }

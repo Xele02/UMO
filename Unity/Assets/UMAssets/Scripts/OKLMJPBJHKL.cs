@@ -17,7 +17,7 @@ public class OKLMJPBJHKL : KLFDBFMNLBL
 	// // RVA: 0x14A4304 Offset: 0x14A4304 VA: 0x14A4304
 	public OKLMJPBJHKL()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0x14A43A0 Offset: 0x14A43A0 VA: 0x14A43A0 Slot: 4

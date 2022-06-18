@@ -22,7 +22,7 @@ public abstract class KLFDBFMNLBL
 	}
 
 	// // RVA: 0x1A0BC70 Offset: 0x1A0BC70 VA: 0x1A0BC70
-	public void LHPDDGIJKNB()
+	public void LHPDDGIJKNB_Reset()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}
@@ -37,7 +37,7 @@ public abstract class KLFDBFMNLBL
 	// public abstract bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP);
 
 	// // RVA: 0x1A0BCA4 Offset: 0x1A0BCA4 VA: 0x1A0BCA4
-	// public void ODDIHGPONFL(KLFDBFMNLBL GPBJHKLFCEP) { }
+	// public void ODDIHGPONFL_Copy(KLFDBFMNLBL GPBJHKLFCEP) { }
 
 	// // RVA: -1 Offset: -1 Slot: 7
 	// public abstract void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP);

@@ -5,7 +5,7 @@ public class LHFOAFAOPLC
 	private static bool BAFFAONJPCE; // 0x0
 
 	// // RVA: 0x17F6470 Offset: 0x17F6470 VA: 0x17F6470
-	public static void KHEKNNFCAOI()
+	public static void KHEKNNFCAOI_Init()
     {
         if(!BAFFAONJPCE)
         {

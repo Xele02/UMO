@@ -7,10 +7,10 @@ public class AMCGONHBGGF
 	public int[] EBDNICPAFLB = new int[3]; // 0x14
 
 	// // RVA: 0xCE0D98 Offset: 0xCE0D98 VA: 0xCE0D98
-	// public void LHPDDGIJKNB() { }
+	// public void LHPDDGIJKNB_Reset() { }
 
 	// // RVA: 0xCE0E1C Offset: 0xCE0E1C VA: 0xCE0E1C
-	// public void ODDIHGPONFL(AMCGONHBGGF GPBJHKLFCEP) { }
+	// public void ODDIHGPONFL_Copy(AMCGONHBGGF GPBJHKLFCEP) { }
 
 	// // RVA: 0xCE0F1C Offset: 0xCE0F1C VA: 0xCE0F1C
 	// public bool AGBOGBEOFME(AMCGONHBGGF OIKJFMGEICL) { }

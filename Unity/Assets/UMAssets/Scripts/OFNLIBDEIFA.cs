@@ -17,7 +17,7 @@ public class OFNLIBDEIFA : KLFDBFMNLBL
 	// // RVA: 0x1DD23AC Offset: 0x1DD23AC VA: 0x1DD23AC
 	public OFNLIBDEIFA()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0x1DD2448 Offset: 0x1DD2448 VA: 0x1DD2448 Slot: 4

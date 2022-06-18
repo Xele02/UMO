@@ -15,7 +15,7 @@ public class NKCNFFPLIAN
 	public string OPFGFINHFCE { get { return FINCFIGKHPA.DNJEJEANJGL; } } // DKJOHDGOIJE 0x18AEED4
  
 	// // RVA: 0x18AEF00 Offset: 0x18AEF00 VA: 0x18AEF00
-	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
+	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
     {
         MLCELGHBCLK.DNJEJEANJGL = ((string)OBHAFLMHAKG[AFEHLCGHAEE.LJNAKDMILMC]);
         PJHFOFGOPDA.DNJEJEANJGL = ((int)OBHAFLMHAKG[AFEHLCGHAEE.CNDDKMJAIBG]);
@@ -41,7 +41,7 @@ public class NKCNFFPLIAN
         for(int i = 0; i < jsondata.HNBFOAJIIAL_Count; i++)
         {
             NKCNFFPLIAN n = new NKCNFFPLIAN();
-            n.KHEKNNFCAOI(jsondata[i]);
+            n.KHEKNNFCAOI_Init(jsondata[i]);
             res.Add(n);
         }
         return res;

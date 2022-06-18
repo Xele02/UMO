@@ -19,7 +19,7 @@ public class NILOACEHJKJ : KLFDBFMNLBL
 	// // RVA: 0x18A1B38 Offset: 0x18A1B38 VA: 0x18A1B38
 	public NILOACEHJKJ()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0x18A1BD4 Offset: 0x18A1BD4 VA: 0x18A1BD4 Slot: 4

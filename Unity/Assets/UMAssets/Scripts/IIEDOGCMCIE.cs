@@ -49,7 +49,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
                 int val3 = a.LPJLEHAJADA("m_2", 0);
                 int val4 = a.LPJLEHAJADA("m_3", 0);
                 BEEINMBNKNM_Encryption encryption = new BEEINMBNKNM_Encryption();
-                encryption.KHEKNNFCAOI((uint)(val4 + 7));
+                encryption.KHEKNNFCAOI_Init((uint)(val4 + 7));
                 encryption.DGBPHDMEDNP(val1, val2, val3);
                 encryption.FAEFDAJAMCE(result);
                 encryption.AAGCKDHEMFD_GenerateKey();

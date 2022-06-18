@@ -25,7 +25,7 @@ public class GGHPEFNADEN : KLFDBFMNLBL
 	// // RVA: 0xAA1544 Offset: 0xAA1544 VA: 0xAA1544
 	public GGHPEFNADEN()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0xAA15BC Offset: 0xAA15BC VA: 0xAA15BC Slot: 4

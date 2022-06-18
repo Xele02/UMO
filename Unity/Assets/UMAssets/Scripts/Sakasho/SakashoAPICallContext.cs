@@ -16,7 +16,13 @@ public class SakashoAPICallContext
     }
 
 	// // RVA: 0x30784D0 Offset: 0x30784D0 VA: 0x30784D0
-	// public static void Initialize(SakashoAPICallContext.CancelAPICallDelegate cancelAPICallDelegate) { }
+	public static void Initialize(SakashoAPICallContext.CancelAPICallDelegate cancelAPICallDelegate)
+	{
+		if(initialized)
+			return;
+		initialized = true;
+		SakashoAPICallContext.cancelAPICallDelegate = cancelAPICallDelegate;
+	}
 
 	// // RVA: 0x307855C Offset: 0x307855C VA: 0x307855C
 	// public static void Finish() { }

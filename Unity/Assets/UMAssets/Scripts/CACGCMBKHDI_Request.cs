@@ -113,7 +113,7 @@ public abstract class CACGCMBKHDI_Request
     public void DCKLDDCAJAP(string IDLHJIOMJBK_result)
     {
         HOHOBEOJPBK = new OBOKMHHMOIL();
-        HOHOBEOJPBK.KHEKNNFCAOI(IDLHJIOMJBK_result);
+        HOHOBEOJPBK.KHEKNNFCAOI_Init(IDLHJIOMJBK_result);
         EFGFPCBGDDK = true;
         NGCAIEGPLKD_result = IDLHJIOMJBK_result;
     }
@@ -127,7 +127,7 @@ public abstract class CACGCMBKHDI_Request
     // // RVA: 0x18F2BE0 Offset: 0x18F2BE0 VA: 0x18F2BE0 Slot: 15
     public virtual void NLDKLFODOJJ()
     {
-        UnityEngine.Debug.LogError("TODO");
+        return;
     }
 
     // // RVA: 0x18F2BE4 Offset: 0x18F2BE4 VA: 0x18F2BE4

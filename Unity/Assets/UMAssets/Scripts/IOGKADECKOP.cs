@@ -456,7 +456,7 @@ public class IOGKADECKOP
 	// private NHPDPKHMFEP MGPMDNDOBFI; // 0x2C
 	// private int FHACAEAHPIA; // 0x30
 		//0xA0B93C
-		
+		UnityEngine.Debug.LogError("PFEKBBONCJJ_Coroutine_GameStart");
 		// 0
 		PGIGNJDPCAH.NNOBACMJHDM(0);
 		PGIGNJDPCAH.IPJMPBANBPP = true;

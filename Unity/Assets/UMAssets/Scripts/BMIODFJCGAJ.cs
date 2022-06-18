@@ -33,7 +33,7 @@ public class BMIODFJCGAJ : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x19C8200 Offset: 0x19C8200 VA: 0x19C8200
-	// public void KHEKNNFCAOI(int GPLGIGCNNAD, string LJNAKDMILMC, string OPFGFINHFCE) { }
+	// public void KHEKNNFCAOI_Init(int GPLGIGCNNAD, string LJNAKDMILMC, string OPFGFINHFCE) { }
 
 	// // RVA: 0x19C8378 Offset: 0x19C8378 VA: 0x19C8378
 	public BMIODFJCGAJ()

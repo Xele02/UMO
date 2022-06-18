@@ -9,10 +9,10 @@ public class IAPDFOPPGND
 	private int EILKGEADKGH; // 0x1C
 
 	// // RVA: 0x120EB38 Offset: 0x120EB38 VA: 0x120EB38
-	// public void KHEKNNFCAOI(int ABLOIBMGLFD, int HMFFHLPNMPH) { }
+	// public void KHEKNNFCAOI_Init(int ABLOIBMGLFD, int HMFFHLPNMPH) { }
 
 	// // RVA: 0x120EDCC Offset: 0x120EDCC VA: 0x120EDCC
-	// public void KHEKNNFCAOI(JNMFKOHFAFB FIAMPPHKOOF) { }
+	// public void KHEKNNFCAOI_Init(JNMFKOHFAFB FIAMPPHKOOF) { }
 
 	// // RVA: 0x120F0BC Offset: 0x120F0BC VA: 0x120F0BC
 	// public static List<IAPDFOPPGND> FKDIMODKKJD(bool CDEOEEHBOBI) { }

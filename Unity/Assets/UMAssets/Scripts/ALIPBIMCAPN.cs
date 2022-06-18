@@ -11,7 +11,7 @@ public class ALIPBIMCAPN : KLFDBFMNLBL
 	// // RVA: 0xCD9EFC Offset: 0xCD9EFC VA: 0xCD9EFC
 	public ALIPBIMCAPN()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0xCD9F98 Offset: 0xCD9F98 VA: 0xCD9F98 Slot: 4

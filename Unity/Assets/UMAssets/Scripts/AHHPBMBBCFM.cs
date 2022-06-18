@@ -13,7 +13,7 @@ public class AHHPBMBBCFM : KLFDBFMNLBL
 	// // RVA: 0x15C6EF8 Offset: 0x15C6EF8 VA: 0x15C6EF8
 	public AHHPBMBBCFM()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0x15C6F90 Offset: 0x15C6F90 VA: 0x15C6F90 Slot: 4

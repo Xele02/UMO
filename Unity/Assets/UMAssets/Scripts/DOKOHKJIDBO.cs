@@ -22,75 +22,71 @@ public class DOKOHKJIDBO
 	// LFIEDDHNLBE : GameStart : true, Initialize : false
 	public void DBEPFLFHAFH(bool LFIEDDHNLBE, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		// // RVA: 0x12330E0 Offset: 0x12330E0 VA: 0x12330E0
+		// internal bool APDFIGKALGM(SakashoErrorId LJJGBICGLLF) { }
+		// // RVA: 0x1233124 Offset: 0x1233124 VA: 0x1233124
+		// internal void OMGNDJPDAMH(CACGCMBKHDI JIPCHHHLOMM) { }
+		// // RVA: 0x123329C Offset: 0x123329C VA: 0x123329C
+		// internal void CCHHOEDOHKN(CACGCMBKHDI JIPCHHHLOMM) { }
+
 		KCOIDGJOJHC_EncryptionMap.Clear();
 		LNAHEIEIBOI = false;
 
 		IKCAJDOKNOM = new ANCJLICGOLP();
 		IKCAJDOKNOM.KHEKNNFCAOI_Init();
 
-		NKGJPJPHLIF a = NKGJPJPHLIF.HHCJCDFCLOB;
-
-		//PJKLMCGEJMK b = a.IBLPICFDGOF;
-		HDPLHCDAFHA_RequestMaster request = new HDPLHCDAFHA_RequestMaster();
-		//request = b.IFFNCAFNEAG_AddRequest(request) as HDPLHCDAFHA_RequestMaster;
-		// c.AILPHBMCCGP = !LFIEDDHNLBE;
-		// MMACCEADALH dgt = (/*SakashoErrorId*/ LJJGBICGLLF) => 
-		// {
-		//     if(!LFIEDDHNLBE) return true;
-		//     return LJJGBICGLLF == 5;
-		// };
-		// c.NBFDEFGFLPJ = dgt;
-
-		List<string> s = IKCAJDOKNOM.ELJGLMPOINC_GetTypesStr();
-		request.DFDLAIGFDAH = s; // ??
-		FAPJEIOBPDG dgt2 = IKCAJDOKNOM.IIEMACPEEBJ; // called by HDPLHCDAFHA.DIAMDBHBKBH 0x1743464 > HDPLHCDAFHA.MGFNKDPHFGI
-													// 
-													// IIEMACPEEBJ(s, IKPIMINCOPI.PFAMKCGJKKL(c.ALHHGGDPGEH()) )
-		request.MKGLJLCMGIB = dgt2;
-		// CACGCMBKHDI.HDHIKGLMOGF dgt3 = (/*CACGCMBKHDI*/ JIPCHHHLOMM) => {
-		//     int val = this.IKCAJDOKNOM.LPJLEHAJADA("m_0", 0);
-		//     if(val != 0)
-		//     {
-		//         val = this.IKCAJDOKNOM.LPJLEHAJADA("s_0", 0);
-		//         if(val != 0)
-		//         {
-		//             this.ANDDAABHGIP();
-		//             this.LNAHEIEIBOI = true;
-		//             BHFHGFKBOHH.Invoke();
-		//             return;
-		//         }
-		//     }
-		//     if(LFIEDDHNLBE != false)
-		//     {
-		//         this.GNCHKCLDCBP(MOBEEPPKFLG);
-		//         return;
-		//     }
-		//     BHFHGFKBOHH.Invoke();
-		// };
-		// c.FAKPBHKKNOK(dgt3);
-		// CACGCMBKHDI.HDHIKGLMOGF dgt4 = (/*CACGCMBKHDI */JIPCHHHLOMM) => {
-		//     if(!JIPCHHHLOMM.DLKLLHPLANH && JIPCHHHLOMM.LBJPGPOJOKP() != 5)
-		//     {
-		//         MOBEEPPKFLG.Invoke();
-		//         return;
-		//     }
-		//     if(!LFIEDDHNLBE)
-		//     {
-		//         BHFHGFKBOHH.Invoke();
-		//         return;
-		//     }
-		//     this.GNCHKCLDCBP(MOBEEPPKFLG);
-		//     return;
-		// };
-		// c.AHNDFJKKLDJ = dgt4;
-
-		// Hack
-		//request.DIAMDBHBKBH();
+		HDPLHCDAFHA_RequestMaster request = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.IFFNCAFNEAG_AddRequest<HDPLHCDAFHA_RequestMaster>(new HDPLHCDAFHA_RequestMaster());
+		request.AILPHBMCCGP = !LFIEDDHNLBE;
+		request.NBFDEFGFLPJ = (SakashoErrorId LJJGBICGLLF) => 
+		{ // 0x12330E0
+			if(!LFIEDDHNLBE) return true;
+			return LJJGBICGLLF == SakashoErrorId.MASTER_DATA_NOT_FOUND;
+		};
+		
+		request.DFDLAIGFDAH = IKCAJDOKNOM.ELJGLMPOINC_GetTypesStr();
+		request.MKGLJLCMGIB = IKCAJDOKNOM.IIEMACPEEBJ;
+		request.BHFHGFKBOHH = (CACGCMBKHDI_Request JIPCHHHLOMM) => 
+		{
+			//0x1233124
+			if(IKCAJDOKNOM.LPJLEHAJADA("m_0", 0) != 0)
+			{
+				if(IKCAJDOKNOM.LPJLEHAJADA("s_0", 0) != 0)
+				{
+					ANDDAABHGIP();
+					LNAHEIEIBOI = true;
+					BHFHGFKBOHH.Invoke();
+					return;
+				}
+			}
+			if(LNAHEIEIBOI)
+			{
+				GNCHKCLDCBP(MOBEEPPKFLG);
+				return;
+			}
+			BHFHGFKBOHH.Invoke();
+		};
+		request.MOBEEPPKFLG = (CACGCMBKHDI_Request JIPCHHHLOMM) => 
+		{
+			//0x123329C
+			if(!JIPCHHHLOMM.DLKLLHPLANH && JIPCHHHLOMM.CJMFJOMECKI != SakashoErrorId.MASTER_DATA_NOT_FOUND)
+			{
+				MOBEEPPKFLG();
+				return;
+			}
+			if(!LFIEDDHNLBE)
+			{
+				BHFHGFKBOHH();
+				return;
+			}
+			GNCHKCLDCBP(MOBEEPPKFLG);
+		};
 	}
 
 	// RVA: 0x1232C34 Offset: 0x1232C34 VA: 0x1232C34
-	//private void GNCHKCLDCBP(DJBHIFLHJLK MOBEEPPKFLG) { }
+	private void GNCHKCLDCBP(DJBHIFLHJLK MOBEEPPKFLG)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// RVA: 0x1232CE4 Offset: 0x1232CE4 VA: 0x1232CE4
 	//private bool FPMFBJINHPJ(SakashoErrorId KLCMLLLIANB) { }
@@ -98,7 +94,18 @@ public class DOKOHKJIDBO
 	// RVA: 0x1232CF4 Offset: 0x1232CF4 VA: 0x1232CF4
 	private void ANDDAABHGIP()
 	{
-		UnityEngine.Debug.LogError("TODO");
-		
+		KCOIDGJOJHC_EncryptionMap.Clear();
+		for(int i = 1; i < 11; i++)
+		{
+			if(IKCAJDOKNOM.LPJLEHAJADA("w"+i+"_0", 0) != 0)
+			{
+				BEEINMBNKNM_Encryption encryptor = new BEEINMBNKNM_Encryption();
+				encryptor.DGBPHDMEDNP(IKCAJDOKNOM.LPJLEHAJADA("w"+i+"_0", 0), 
+									IKCAJDOKNOM.LPJLEHAJADA("w"+i+"_1", 0),
+									IKCAJDOKNOM.LPJLEHAJADA("w"+i+"_2", 0));
+				encryptor.KHEKNNFCAOI_Init((uint)IKCAJDOKNOM.LPJLEHAJADA("w"+i+"_3", 0) + 7);
+				KCOIDGJOJHC_EncryptionMap.Add(i, encryptor);
+			}
+		}
 	}
 }

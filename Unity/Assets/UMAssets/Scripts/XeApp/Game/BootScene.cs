@@ -16,7 +16,7 @@ namespace XeApp.Game
 		// // RVA: 0xE5CA64 Offset: 0xE5CA64 VA: 0xE5CA64 Slot: 10
 		protected override void DoStart()
 		{
-			LHFOAFAOPLC.KHEKNNFCAOI();
+			LHFOAFAOPLC.KHEKNNFCAOI_Init();
 		}
 
 		// // RVA: 0xE5CAE0 Offset: 0xE5CAE0 VA: 0xE5CAE0 Slot: 12

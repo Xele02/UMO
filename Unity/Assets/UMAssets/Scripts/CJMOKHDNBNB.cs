@@ -11,7 +11,7 @@ public class CJMOKHDNBNB
         {
             if(!MNBLHMNIGFE)
                 NLLNGLNEFOC();
-            KHEKNNFCAOI();
+            KHEKNNFCAOI_Init();
         }
         return OAFCIACBJNN;
     } } 
@@ -21,7 +21,7 @@ public class CJMOKHDNBNB
 	// public static string KEPPNAKFDIF() { }
 
 	// // RVA: 0x107CF18 Offset: 0x107CF18 VA: 0x107CF18
-	public static void KHEKNNFCAOI()
+	public static void KHEKNNFCAOI_Init()
     {
         OAFCIACBJNN = UnityEngine.Application.persistentDataPath;
         HMGCLBLBMKN = UnityEngine.Application.persistentDataPath;
@@ -38,6 +38,6 @@ public class CJMOKHDNBNB
 	public static void NLLNGLNEFOC()
     {
         MNBLHMNIGFE = false;
-        KHEKNNFCAOI();
+        KHEKNNFCAOI_Init();
     }
 }

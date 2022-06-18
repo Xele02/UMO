@@ -13,5 +13,10 @@ public abstract class SakashoCallbackHandlerBase : ISakashoCallbackHandler
 	public abstract void Callback(string message);
 
 	// // RVA: 0x3078DB8 Offset: 0x3078DB8 VA: 0x3078DB8
-	// protected void RemoveCallback() { }
+	protected void RemoveCallback()
+	{
+		if(callbackId < 1)
+			return;
+		SakashoCallbackRegistry.RemoveCallback(callbackId);
+	}
 }

@@ -7,7 +7,7 @@ using System.Globalization;
 public class MNNCBFONAOL
 {
 	// // RVA: 0x17B1624 Offset: 0x17B1624 VA: 0x17B1624
-	public static void KHEKNNFCAOI()
+	public static void KHEKNNFCAOI_Init()
     {
         byte[] HKICMNAACDA = new byte[16];
         byte[] BNKHBCBJBKI = new byte[16];

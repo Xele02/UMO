@@ -13,7 +13,7 @@ public class KBAGKBIBGPM : KLFDBFMNLBL
 	// // RVA: 0x1013AA8 Offset: 0x1013AA8 VA: 0x1013AA8
 	public KBAGKBIBGPM()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0x1013B44 Offset: 0x1013B44 VA: 0x1013B44 Slot: 4

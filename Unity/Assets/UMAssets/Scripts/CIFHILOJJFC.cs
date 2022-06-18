@@ -28,10 +28,10 @@ public class CIFHILOJJFC
 	// public int CJJIHFDLNMJ(CIFHILOJJFC.OJPDCIGOLMA MKANHLNEEGL) { }
 
 	// // RVA: 0xFF5D50 Offset: 0xFF5D50 VA: 0xFF5D50
-	// public void LHPDDGIJKNB() { }
+	// public void LHPDDGIJKNB_Reset() { }
 
 	// // RVA: 0xFF5EB0 Offset: 0xFF5EB0 VA: 0xFF5EB0
-	// public void ODDIHGPONFL(CIFHILOJJFC GPBJHKLFCEP, bool OIBBFBLBLMH = False) { }
+	// public void ODDIHGPONFL_Copy(CIFHILOJJFC GPBJHKLFCEP, bool OIBBFBLBLMH = False) { }
 
 	// // RVA: 0xFF6070 Offset: 0xFF6070 VA: 0xFF6070
 	// public bool AGBOGBEOFME(CIFHILOJJFC OIKJFMGEICL) { }

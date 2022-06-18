@@ -18,7 +18,7 @@ public class JLOGEHCIBEJ : KLFDBFMNLBL
 	// // RVA: 0x147BDFC Offset: 0x147BDFC VA: 0x147BDFC
 	public JLOGEHCIBEJ()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0x147BE98 Offset: 0x147BE98 VA: 0x147BE98 Slot: 4

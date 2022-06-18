@@ -36,7 +36,7 @@ public class LGDNAJACFHI
 	public static int[] MKJBOPJEAHN = new int[10] {1, 2, 2, 3, 3, 3, 3, 3, 3, 3}; // 0x8
 
 	// // RVA: 0xD725A8 Offset: 0xD725A8 VA: 0xD725A8
-	// public bool KHEKNNFCAOI(KBPDNHOKEKD MEANCEOIMGE) { }
+	// public bool KHEKNNFCAOI_Init(KBPDNHOKEKD MEANCEOIMGE) { }
 
 	// // RVA: 0xD72E08 Offset: 0xD72E08 VA: 0xD72E08
 	// public void GNIKLANHDHD() { }

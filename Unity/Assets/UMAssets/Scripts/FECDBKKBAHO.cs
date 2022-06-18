@@ -14,7 +14,7 @@ public class FECDBKKBAHO
 	private long JHNMKKNEENE; // 0x28
 
 	// // RVA: 0xFCF300 Offset: 0xFCF300 VA: 0xFCF300
-	// public void KHEKNNFCAOI() { }
+	// public void KHEKNNFCAOI_Init() { }
 
 	// // RVA: 0xFCF7E8 Offset: 0xFCF7E8 VA: 0xFCF7E8
 	// public void JCHLONCMPAJ() { }

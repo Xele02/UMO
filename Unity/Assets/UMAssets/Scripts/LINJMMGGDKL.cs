@@ -21,7 +21,7 @@ public class LINJMMGGDKL
 	}
 
 	// // RVA: 0x18054D8 Offset: 0x18054D8 VA: 0x18054D8
-	// public void LHPDDGIJKNB(int HBDLKOBJHFP, int LMJDJEACHBC) { }
+	// public void LHPDDGIJKNB_Reset(int HBDLKOBJHFP, int LMJDJEACHBC) { }
 
 	// // RVA: 0x18054F4 Offset: 0x18054F4 VA: 0x18054F4
 	// public void DNBGDMBCLMI() { }

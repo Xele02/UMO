@@ -76,6 +76,8 @@ public class IMMAOANGPNK
 		// 0x9FF020
 
 		//lambda 1 : 0x9FE328 // lambda 2 : 0x9FE334
+
+		UnityEngine.Debug.LogError("MHEKMICKGDM_LoadFromStorage");
 		bool KOMKKBDABJP = false;
 		bool CNAIDEAFAAM = false;
 		BBGDKLLEPIB.HHCJCDFCLOB.PAHGEEOFEPM(() => { KOMKKBDABJP = true; }, () => { KOMKKBDABJP = true; CNAIDEAFAAM = true; }); //?? 0x101
@@ -113,7 +115,7 @@ public class IMMAOANGPNK
 				BBHOKHCDBFI(GBEGLNMFLIE);
 				List<OKGLGHCBCJP_Database.BEOKNKGHFFE> list = NKEBMCIMJND.BPCKOIDILDK(JOBKIDDLCPL, val);
 				NKEBMCIMJND.LNAKMLCCEJG(list, OKGLGHCBCJP_Database.GAAEFILMAED);
-				NKEBMCIMJND.KHEKNNFCAOI(list);
+				NKEBMCIMJND.KHEKNNFCAOI_Init(list);
 				bool HBODCMLFDOB = false;
 				NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 					List<string> listStr = NKEBMCIMJND.PKOJMBICNHH();

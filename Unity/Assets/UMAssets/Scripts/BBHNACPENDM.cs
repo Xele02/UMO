@@ -213,7 +213,7 @@ public class BBHNACPENDM
 	// */
 
 	// // RVA: 0xF1C528 Offset: 0xF1C528 VA: 0xF1C528
-	// public void KHEKNNFCAOI(OKGLGHCBCJP NKEBMCIMJND) { }
+	// public void KHEKNNFCAOI_Init(OKGLGHCBCJP NKEBMCIMJND) { }
 
 	// // RVA: 0xF1F2AC Offset: 0xF1F2AC VA: 0xF1F2AC
 	// public void EBKCPELHDKN() { }
@@ -237,13 +237,13 @@ public class BBHNACPENDM
 	// public void HIJAFAIOLIL() { }
 
 	// // RVA: 0xF1C554 Offset: 0xF1C554 VA: 0xF1C554
-	// public void KHEKNNFCAOI(ulong HGNJJBLEMPH) { }
+	// public void KHEKNNFCAOI_Init(ulong HGNJJBLEMPH) { }
 
 	// // RVA: 0xF1F390 Offset: 0xF1F390 VA: 0xF1F390
 	// private KLFDBFMNLBL MNMFKKKFDCL(ulong NEJBNCHLMNJ) { }
 
 	// // RVA: 0xF1FA34 Offset: 0xF1FA34 VA: 0xF1FA34
-	// public void ODDIHGPONFL(BBHNACPENDM GPBJHKLFCEP) { }
+	// public void ODDIHGPONFL_Copy(BBHNACPENDM GPBJHKLFCEP) { }
 
 	// // RVA: 0xF1FC9C Offset: 0xF1FC9C VA: 0xF1FC9C
 	// public bool IIEMACPEEBJ(List<string> ANFNAHPIJDH, EDOHBJAPLPF AAEDAEHIONI) { }

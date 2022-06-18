@@ -12,7 +12,7 @@ public class FEHINJKHDAP : KLFDBFMNLBL
 	// // RVA: 0xFD2E00 Offset: 0xFD2E00 VA: 0xFD2E00
 	public FEHINJKHDAP()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0xFD2E9C Offset: 0xFD2E9C VA: 0xFD2E9C Slot: 4

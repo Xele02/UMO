@@ -26,7 +26,7 @@ public class PNGOLKLFFLH
 	// public string GMJIKEHEPPA() { }
 
 	// // RVA: 0xFF1AB0 Offset: 0xFF1AB0 VA: 0xFF1AB0
-	// public void KHEKNNFCAOI(int GPPEFLKGGGJ, int IGBFFCLMAMM = 0, long BEBJKJKBOGH = 0) { }
+	// public void KHEKNNFCAOI_Init(int GPPEFLKGGGJ, int IGBFFCLMAMM = 0, long BEBJKJKBOGH = 0) { }
 
 	// // RVA: 0xFF2298 Offset: 0xFF2298 VA: 0xFF2298
 	// public bool OELFCIKFMLL(int IGBFFCLMAMM) { }

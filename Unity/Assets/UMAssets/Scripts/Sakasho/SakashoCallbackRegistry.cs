@@ -1,6 +1,7 @@
 using System.Threading;
 using System.Collections.Generic;
 using SakashoSystemCallback;
+using System;
 
 public class SakashoCallbackRegistry
 {
@@ -15,7 +16,12 @@ public class SakashoCallbackRegistry
 	public static ISakashoQueueHolder MainThreadQueueHolder { get; set; } // 0x1C
 
 	// // RVA: 0x3079714 Offset: 0x3079714 VA: 0x3079714
-	// private static void ParseMessage(string message, out int callbackId, out string json) { }
+	private static void ParseMessage(string message, out int callbackId, out string json)
+    {
+        int idx = message.IndexOf(":");
+        callbackId = Int32.Parse(message.Substring(0, idx));
+        json = message.Substring(idx+1);
+    }
 
 	// // RVA: 0x3077424 Offset: 0x3077424 VA: 0x3077424
 	public static int WithdrawCallbackId()
@@ -76,11 +82,28 @@ public class SakashoCallbackRegistry
     }
 
 	// // RVA: 0x3079858 Offset: 0x3079858 VA: 0x3079858
-	// public static void FireOnSuccess(string message) { }
+	public static void FireOnSuccess(string message)
+    {
+        int callId;
+        string json;
+        ParseMessage(message, out callId, out json);
+        Monitor.Enter(lockObject);
+
+        if(successHandlers.ContainsKey(callId))
+        {
+            successHandlers[callId].Callback(json);
+        }
+
+        Monitor.Exit(lockObject);
+    }
 
 	// // RVA: 0x3079BA8 Offset: 0x3079BA8 VA: 0x3079BA8
 	// public static void FireOnError(string message) { }
 
 	// // RVA: 0x3079EF8 Offset: 0x3079EF8 VA: 0x3079EF8
-	// public static bool RunOnMainThread(Action action) { }
+	public static bool RunOnMainThread(Action action)
+    {
+        MainThreadQueueHolder.PushToQueue(action);
+        return true;
+    }
 }

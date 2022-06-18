@@ -7,5 +7,5 @@ public class IEIGOPLPJGI
 	public int CHIMPKJDCPP; // 0x14
 
 	// // RVA: 0x11ED364 Offset: 0x11ED364 VA: 0x11ED364
-	// public void KHEKNNFCAOI(int PFGJJLGLPAC) { }
+	// public void KHEKNNFCAOI_Init(int PFGJJLGLPAC) { }
 }

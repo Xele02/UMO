@@ -8,7 +8,7 @@ public class LPDNKHAIOLH
 	// private static uint FBGGEFFJJHB() { }
 
 	// // RVA: 0x10CE360 Offset: 0x10CE360 VA: 0x10CE360
-	public static void KHEKNNFCAOI(int KNEFBLHBDBG)
+	public static void KHEKNNFCAOI_Init(int KNEFBLHBDBG)
     {
         PMBEODGMMBB = (uint)(KNEFBLHBDBG & 0x7fffffff);
     }

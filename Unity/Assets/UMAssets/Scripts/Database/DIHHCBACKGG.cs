@@ -18,7 +18,7 @@ public abstract class DIHHCBACKGG
     }
 
 	// // RVA: 0x198AB70 Offset: 0x198AB70 VA: 0x198AB70
-	public void LHPDDGIJKNB()
+	public void LHPDDGIJKNB_Reset()
 	{
 		KMBPACJNEOF();
 	}

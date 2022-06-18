@@ -266,7 +266,7 @@ public class PJKLMCGEJMK
             
             UnityEngine.Debug.LogError("Check "+ADKIDBJCAJA.CKOOCBJGHBI +" "+JDIBBDGNFKH);
             
-            bool enterIf = ADKIDBJCAJA.CKOOCBJGHBI - JDIBBDGNFKH == 0;
+            bool enterIf = ADKIDBJCAJA.CKOOCBJGHBI - JDIBBDGNFKH >= 0;
             if(!enterIf)
             {
                 OHFKAECPJPO(ADKIDBJCAJA);
@@ -296,7 +296,7 @@ public class PJKLMCGEJMK
                 GPBPFELFMFL = null;
                 ADKIDBJCAJA.CJMFJOMECKI = 0;
                 KADMOOOMMJF = false;
-                IEBFCJACLPN.LHPDDGIJKNB();
+                IEBFCJACLPN.LHPDDGIJKNB_Reset();
                 SakashoError error = ADKIDBJCAJA.ANMFDAGDMDE;
                 string errorJSon = null;
                 int errorResponse = 0;
@@ -314,7 +314,7 @@ public class PJKLMCGEJMK
                         {
                             IEFOIIAEBBJ = true;
                         }
-                        IEBFCJACLPN.ODDIHGPONFL(b);
+                        IEBFCJACLPN.ODDIHGPONFL_Copy(b);
                         OPFEFKOOMED.EHMKHLIGFEJ(b);
                     }
                 }
@@ -457,6 +457,7 @@ public class PJKLMCGEJMK
         }
         else
         {
+            UnityEngine.Debug.LogError("NBCKHIAINIM_Coroutine_Execute Error");
             a = ADKIDBJCAJA.MOBEEPPKFLG;
             if(a == null)
                 yield break;

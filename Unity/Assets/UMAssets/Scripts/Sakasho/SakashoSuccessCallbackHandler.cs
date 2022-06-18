@@ -13,6 +13,13 @@ public class SakashoSuccessCallbackHandler : SakashoCallbackHandlerBase
 	// RVA: 0x3081E44 Offset: 0x3081E44 VA: 0x3081E44 Slot: 5
 	public override void Callback(string message)
     {
-        UnityEngine.Debug.LogError("TODO");
+        RemoveCallback();
+        if(onSuccess != null)
+        {
+            SakashoCallbackRegistry.RunOnMainThread(() => {
+                //0x3081F68
+                onSuccess(message);
+            });
+        }
     }
 }

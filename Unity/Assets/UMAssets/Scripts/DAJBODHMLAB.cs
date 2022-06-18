@@ -12,7 +12,7 @@ public class DAJBODHMLAB : KLFDBFMNLBL
 	// // RVA: 0x1769700 Offset: 0x1769700 VA: 0x1769700
 	public DAJBODHMLAB()
 	{
-		LHPDDGIJKNB();
+		LHPDDGIJKNB_Reset();
 	}
 
 	// // RVA: 0x176981C Offset: 0x176981C VA: 0x176981C Slot: 4

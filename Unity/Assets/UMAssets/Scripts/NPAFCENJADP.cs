@@ -20,7 +20,7 @@ public class NPAFCENJADP
 	public long JCNNBEEHFLE; // 0x20
 
 	// // RVA: 0x1CAFFC0 Offset: 0x1CAFFC0 VA: 0x1CAFFC0
-	public void KHEKNNFCAOI(string CJEKGLGBIHF)
+	public void KHEKNNFCAOI_Init(string CJEKGLGBIHF)
     {
         KHFCJBEFJNC = new RijndaelManaged();
         byte[] out1 = null;
@@ -68,7 +68,7 @@ public class NPAFCENJADP
                     int b2 = BitConverter.ToInt32(b, readPos + 4); // read length
                     int b3 = BitConverter.ToInt32(b, readPos + 8); // read value
                     GBAMMLEAIOF g = new GBAMMLEAIOF();
-                    g.KHEKNNFCAOI(b3, b, b1, b2);
+                    g.KHEKNNFCAOI_Init(b3, b, b1, b2);
                     MGJKEJHEBPO.Add(g);
                     readPos += 16;
                 }
