@@ -107,7 +107,7 @@ public class JDDGPJDKHNE
 		{
 			if(!BBMBNCPEAHC.LNHFLJBGGJB)
 			{
-				if(!FCMCNIMEAEA)
+				if(!FCMCNIMEAEA && DAOEKHGKJOD.Count > 0)
 				{
 					for(int i = 0; i < DAOEKHGKJOD.Count; i++)
 					{
@@ -178,7 +178,7 @@ public class JDDGPJDKHNE
 		{
 			if(!LAHBCJNDGCH.LNHFLJBGGJB)
 			{
-				if(!NNOOHDDKILN)
+				if(NNOOHDDKILN)
 				{
 					LAHBCJNDGCH.HJMKBCFJOOH();
 					NNOOHDDKILN = false;

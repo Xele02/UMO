@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace XeSys
 {
@@ -73,7 +74,21 @@ namespace XeSys
 		// // RVA: 0x23A9AF0 Offset: 0x23A9AF0 VA: 0x23A9AF0
 		public static void SaveToStorage(string path, byte[] bytes, bool overwrite)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.Log("Save to "+path);
+			path = path.Replace("file://", "");
+			string dir = Path.GetDirectoryName(path);
+			if(!Directory.Exists(dir))
+			{
+				Directory.CreateDirectory(dir);
+			}
+			if(!overwrite)
+			{
+				if(System.IO.File.Exists(path))
+					return;
+			}
+			FileStream f = new FileStream(path, FileMode.Create, FileAccess.Write);
+			f.Write(bytes, 0, bytes.Length);
+			f.Close();
 		}
 
 		// // RVA: -1 Offset: -1

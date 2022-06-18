@@ -25,5 +25,9 @@ public class SakashoError
     }
 
 	// // RVA: 0x307A424 Offset: 0x307A424 VA: 0x307A424
-	// public SakashoErrorId getErrorId() { }
+	public SakashoErrorId getErrorId()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return SakashoErrorId.UNKNOWN;
+	}
 }

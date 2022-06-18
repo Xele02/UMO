@@ -142,7 +142,7 @@ public class NPAFCENJADP
     {
         if(CDPAMAOOHNF.Length < 8)
         {
-            new System.Exception("CipherRijndale.GenerateKeyFromPassword : salt is less than 8byte.");
+            throw new System.Exception("CipherRijndale.GenerateKeyFromPassword : salt is less than 8byte.");
         }
 
         Rfc2898DeriveBytes a = new Rfc2898DeriveBytes(GMEFFNIMFIF, Encoding.UTF8.GetBytes(CDPAMAOOHNF));

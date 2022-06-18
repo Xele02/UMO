@@ -23,13 +23,13 @@ public class CriFsBinder : CriDisposable
 	{
 		if(!CriFsPlugin.IsLibraryInitialized())
 		{
-			new Exception("CriFsPlugin is not initialized.");
+			throw new Exception("CriFsPlugin is not initialized.");
 		}
 		handle = IntPtr.Zero;
 		CriFsBinder.criFsBinder_Create(out handle);
 		if(handle == IntPtr.Zero)
 		{
-			new Exception("criFsBinder_Create() failed.");
+			throw new Exception("criFsBinder_Create() failed.");
 		}
 		CriDisposableObjectManager.Register(this, CriDisposableObjectManager.ModuleType.Fs);
 	}

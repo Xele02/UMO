@@ -15,7 +15,10 @@ public class NDABOOOOENC
 	// public bool LHGFPPIEKPJ { get; set; } // PFHHNKMGPGJ 0x1ADB760 DNPOLCNDBKH 0x1ADB768
 
 	// // RVA: 0x1ADB76C Offset: 0x1ADB76C VA: 0x1ADB76C
-	// public void IJBGPAENLJA() { }
+	public void IJBGPAENLJA()
+	{
+		HHCJCDFCLOB = this;
+	}
 
 	// // RVA: 0x1ADB7EC Offset: 0x1ADB7EC VA: 0x1ADB7EC
 	// private string DMCLJKABBCJ() { }
@@ -32,7 +35,7 @@ public class NDABOOOOENC
 	// // RVA: 0x1ADBB08 Offset: 0x1ADBB08 VA: 0x1ADBB08
 	public void NCDLCIPGPNC()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogWarning("TODO NDABOOOOENC NCDLCIPGPNC (playgames)");
     }
 
 	// // RVA: 0x1ADBDC0 Offset: 0x1ADBDC0 VA: 0x1ADBDC0

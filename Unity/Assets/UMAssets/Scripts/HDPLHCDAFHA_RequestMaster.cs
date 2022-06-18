@@ -13,7 +13,10 @@ public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
 	public override bool EBPLLJGPFDA { get { return OGLMMENAJFL_onSuccess; } } // HGPAELCGELL 0x1743458
 
 	// RVA: 0x174328C Offset: 0x174328C VA: 0x174328C Slot: 12
-	//public override void DHLDNIEELHO() { } // Prepare request
+	public override void DHLDNIEELHO()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    } // Prepare request
 
 	// RVA: 0x174339C Offset: 0x174339C VA: 0x174339C Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE) 
@@ -28,7 +31,10 @@ public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x1743460 Offset: 0x1743460 VA: 0x1743460 Slot: 15
-	//public override void NLDKLFODOJJ() { }
+	public override void NLDKLFODOJJ()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// RVA: 0x1743464 Offset: 0x1743464 VA: 0x1743464
 	private void DIAMDBHBKBH()

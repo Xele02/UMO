@@ -108,7 +108,10 @@ public class KDLPEDBKMID
 	}
 
 	// // RVA: 0xE7D90C Offset: 0xE7D90C VA: 0xE7D90C
-	// public void FFBCKMFKFME() { }
+	public void FFBCKMFKFME()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0xE7D990 Offset: 0xE7D990 VA: 0xE7D990
 	public void OFLDICKPNFD(bool CJPFICKPJPP, DJBHIFLHJLK FGGJNGCAFGK)
@@ -117,7 +120,10 @@ public class KDLPEDBKMID
     }
 
 	// // RVA: 0xE7DA9C Offset: 0xE7DA9C VA: 0xE7DA9C
-	// public void BAGMHFKPFIF() { }
+	public void BAGMHFKPFIF()
+    {
+        LCIGLIDJILJ();
+    }
 
 	// // RVA: 0xE7DAC8 Offset: 0xE7DAC8 VA: 0xE7DAC8
 	private void LFKLIOKFGLP()

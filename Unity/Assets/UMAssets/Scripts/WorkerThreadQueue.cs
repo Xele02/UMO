@@ -54,7 +54,13 @@ namespace XeApp
 				// // RVA: 0x1D7A28C Offset: 0x1D7A28C VA: 0x1D7A28C
 				public void Add(Action job)
 				{
-					UnityEngine.Debug.LogError("TODO");
+					bool isLocked = false;
+					Monitor.Enter(sync, ref isLocked);
+					jobs.Add(job);
+					resetEvent.Set();
+					UnityEngine.Debug.LogError("Added job "+job);
+					if(isLocked)
+						Monitor.Exit(sync);
 				}
 
 				// // RVA: 0x1D7A3C4 Offset: 0x1D7A3C4 VA: 0x1D7A3C4
@@ -63,7 +69,9 @@ namespace XeApp
 					Action job = GetJob();
 					while(job != null)
 					{
+						UnityEngine.Debug.LogError("Executing job "+job);
 						job();
+						UnityEngine.Debug.LogError("Executed job "+job);
 						bool isLocked = false;
 						Monitor.Enter(sync, ref isLocked);
 

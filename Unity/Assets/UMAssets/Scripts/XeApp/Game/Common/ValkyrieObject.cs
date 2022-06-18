@@ -82,7 +82,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xD2A8D0 Offset: 0xD2A8D0 VA: 0xD2A8D0
 		public void SetIBLColor(ValkyrieColorParam a_color_param)
 		{
-			UnityEngine.Debug.Log("TODO");
+			UnityEngine.Debug.LogError("TODO");
 		}
 
 		// // RVA: 0xD28DA4 Offset: 0xD28DA4 VA: 0xD28DA4

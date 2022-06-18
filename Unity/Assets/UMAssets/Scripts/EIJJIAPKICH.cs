@@ -7,7 +7,10 @@ public class EIJJIAPKICH : CACGCMBKHDI_Request
 	// public override bool GINMIBJOABO() { }
 
 	// // RVA: 0x12EB990 Offset: 0x12EB990 VA: 0x12EB990 Slot: 12
-	// public override void DHLDNIEELHO() { }
+	public override void DHLDNIEELHO()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6C4260 Offset: 0x6C4260 VA: 0x6C4260
 	// // RVA: 0x12EBA6C Offset: 0x12EBA6C VA: 0x12EBA6C

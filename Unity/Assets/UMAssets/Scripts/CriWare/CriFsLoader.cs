@@ -19,13 +19,13 @@ public class CriFsLoader : CriDisposable
 	{
 		if(!CriFsPlugin.IsLibraryInitialized())
 		{
-			new Exception("CriFsPlugin is not initialized.");
+			throw new Exception("CriFsPlugin is not initialized.");
 		}
 		handle = IntPtr.Zero;
 		criFsLoader_Create(out handle);
 		if(handle == IntPtr.Zero)
 		{
-			new Exception("criFsLoader_Create() failed.");
+			throw new Exception("criFsLoader_Create() failed.");
 		}
 		CriDisposableObjectManager.Register(this, CriDisposableObjectManager.ModuleType.Fs);
 	}

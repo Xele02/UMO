@@ -36,10 +36,10 @@ public class ILDKBCLAFPB
         public const int BBIDMJJNLKP = 70;
         public const int PHHFFLHPEEG = 70;
         public const int MMJPNPDOJJI = 80;
-        public int BGLLCLEDHKK; // 0x8 // init ??
-        public int HOMPENLIHCK; // 0xC // init ??
-        public int CNCIMBGLKOB; // 0x10 // init ??
-        public int LMDACNNJDOE; // 0x14 // init ??
+        public int BGLLCLEDHKK = 0; // 0x8 // init ??
+        public int HOMPENLIHCK = 0; // 0xC // init ??
+        public int CNCIMBGLKOB = 0; // 0x10 // init ??
+        public int LMDACNNJDOE = 0; // 0x14 // init ??
         public int ICGAOAFIHFD = 15; // 0x18
         public int FCKEDCKCEFC = 15; // 0x1C
         public int IBEINHHMHAC = 11; // 0x20
@@ -62,17 +62,17 @@ public class ILDKBCLAFPB
         public int AHLFOHJMGAI; // 0x64
         public int FPJHOLMLDGC = 1; // 0x68
         public int CDGKHMEOEMP; // 0x6C
-        public int OLALFDCEHKJ; // 0x70 // init ??
-        public int FPFAMFOPJDJ; // 0x74 // init ??
-        public int DCHMOFLEFMI; // 0x78 // init ??
-        public int MBOEPFLNDOD; // 0x7C // init ??
+        public int OLALFDCEHKJ = 10; // 0x70 // init ??
+        public int FPFAMFOPJDJ = 64; // 0x74 // init ??
+        public int DCHMOFLEFMI = 30; // 0x78 // init ??
+        public int MBOEPFLNDOD = 40; // 0x7C // init ??
         public int MGOOLKHAPAF = 60; // 0x80
         public int AIKDLBAANLG = 70; // 0x84
         public int KOKDGGOFPPI = 80; // 0x88
-        public int LIPAPGABJOA; // 0x8C // init ??
-        public int JDJBFBPBLDC; // 0x90 // init ??
-        public int FJKNAHGFAPP; // 0x94 // init ??
-        public int LHJHOFNIJJF; // 0x98 // init ??
+        public int LIPAPGABJOA = 70; // 0x8C // init ??
+        public int JDJBFBPBLDC = 70; // 0x90 // init ??
+        public int FJKNAHGFAPP = 80; // 0x94 // init ??
+        public int LHJHOFNIJJF = 1; // 0x98 // init ??
         public bool ODOEJMPJHME; // 0x9C
         public int LBIKGDHCICB; // 0xA0
         public int JJDENMHGOIH; // 0xA4
@@ -198,7 +198,7 @@ public class ILDKBCLAFPB
 		// RVA: 0x20358E8 Offset: 0x20358E8 VA: 0x20358E8
 		public MPHNGGECENI()
 		{
-			UnityEngine.Debug.Log("TODO dump init vars");
+			UnityEngine.Debug.LogError("TODO dump init vars");
 		}
 		
 	}
