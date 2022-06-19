@@ -69,8 +69,10 @@ public class IOGKADECKOP
 	// // RVA: 0xA065F0 Offset: 0xA065F0 VA: 0xA065F0
 	public bool FKDKMCKJNJD()
     {
+		UnityEngine.Debug.Log("FKDKMCKJNJD");
 		if(!BICOBOLNFLJ)
 			return false;
+		UnityEngine.Debug.Log("FKDKMCKJNJD 2");
 		
         MCJHELIEHMC = InheritingMenu.Create(null);
 		DANMJLOBLIE.StartCoroutine(LMDJGHMDDJA_LogoActCoroutine());
@@ -104,7 +106,7 @@ public class IOGKADECKOP
 	// // RVA: 0xA06658 Offset: 0xA06658 VA: 0xA06658
 	private IEnumerator LMDJGHMDDJA_LogoActCoroutine()
 	{
-        UnityEngine.Debug.LogError("Enter LMDJGHMDDJA_LogoActCoroutine");
+        UnityEngine.Debug.Log("Enter LMDJGHMDDJA_LogoActCoroutine");
 		//0x14087CC
 		PJKLMCGEJMK LPKMGOHDKGM = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF;
 		while(!(NOFPJPHIPBD.IsSetup && !LKFGMDGFKDP))
@@ -138,15 +140,18 @@ public class IOGKADECKOP
 		{
 			NOFPJPHIPBD.ShowArButton();
 		}
-		DANMJLOBLIE.StartCoroutine(HNPMKCFMEGA_Inquiry());
-        UnityEngine.Debug.LogError("Exit LMDJGHMDDJA_LogoActCoroutine");
+		DANMJLOBLIE.StartCoroutine(HNPMKCFMEGA_Coroutine_Inquiry());
+        UnityEngine.Debug.Log("Exit LMDJGHMDDJA_LogoActCoroutine");
+
+		UnityEngine.Debug.LogError("Hack to remove");
+		FGBKOJCFMKM();
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B3D30 Offset: 0x6B3D30 VA: 0x6B3D30
 	// // RVA: 0xA06564 Offset: 0xA06564 VA: 0xA06564
 	private IEnumerator GGKONDNONPP_BootCoroutine()
     {
-        UnityEngine.Debug.LogError("Enter GGKONDNONPP_BootCoroutine");
+        UnityEngine.Debug.Log("Enter GGKONDNONPP_BootCoroutine");
 		// 0xA0976C
 		if(!GameManager.Instance.IsSystemInitialized)
 		{
@@ -160,14 +165,14 @@ public class IOGKADECKOP
 		yield return GameManager.Instance.UnloadAllAssets();
 		yield return DANMJLOBLIE.StartCoroutine(LLMFFOGJNLH_Coroutine_Initialize());
 		BICOBOLNFLJ = true;
-        UnityEngine.Debug.LogError("Exit GGKONDNONPP_BootCoroutine");
+        UnityEngine.Debug.Log("Exit GGKONDNONPP_BootCoroutine");
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B3DA8 Offset: 0x6B3DA8 VA: 0x6B3DA8
 	// // RVA: 0xA06B98 Offset: 0xA06B98 VA: 0xA06B98
 	private IEnumerator DFLFHJHBKOC_CoroutineAppBoot()
 	{
-        UnityEngine.Debug.LogError("Enter DFLFHJHBKOC_CoroutineAppBoot");
+        UnityEngine.Debug.Log("Enter DFLFHJHBKOC_CoroutineAppBoot");
 	// private IOGKADECKOP.<>c__DisplayClass27_0 OPLBFCEPDCH; // 0x14
 	// private IOGKADECKOP.<>c__DisplayClass27_1 LBLMCMHMNGC; // 0x18
 	// private IOGKADECKOP.<>c__DisplayClass27_2 PHPPCOBECCA; // 0x1C
@@ -228,7 +233,7 @@ public class IOGKADECKOP
 			}
 			if(IOSBridge.GetOSMajorVersion() < 14)
 			{
-        		UnityEngine.Debug.LogError("Exit Error DFLFHJHBKOC_CoroutineAppBoot");
+        		UnityEngine.Debug.LogError("Exit  Error DFLFHJHBKOC_CoroutineAppBoot");
 				yield break;
 			}
 			bool HFPLKFCPHDK = true;
@@ -243,14 +248,14 @@ public class IOGKADECKOP
 				yield return null;
 			}
 		}
-		UnityEngine.Debug.LogError("Exit DFLFHJHBKOC_CoroutineAppBoot");
+		UnityEngine.Debug.Log("Exit DFLFHJHBKOC_CoroutineAppBoot");
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B3E20 Offset: 0x6B3E20 VA: 0x6B3E20
 	// // RVA: 0xA06C44 Offset: 0xA06C44 VA: 0xA06C44
 	private IEnumerator FIIEPEEMMLD_CoroutineStart()
 	{
-        UnityEngine.Debug.LogError("Enter FIIEPEEMMLD_CoroutineStart");
+        UnityEngine.Debug.Log("Enter FIIEPEEMMLD_CoroutineStart");
 		//0xA0A82C
 		ConfigManager.SetUserData();
 		GameManager.Instance.fullscreenFader.Fade(0, Color.black);
@@ -270,14 +275,14 @@ public class IOGKADECKOP
 		GameManager.Instance.SetSystemCanvasResolution(screenSize);
 		yield return DANMJLOBLIE.StartCoroutine(BLJICEOFNMM_LoadLayoutTitle());
 		LKFGMDGFKDP = false;
-        UnityEngine.Debug.LogError("Exit FIIEPEEMMLD_CoroutineStart");
+        UnityEngine.Debug.Log("Exit FIIEPEEMMLD_CoroutineStart");
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B3E98 Offset: 0x6B3E98 VA: 0x6B3E98
 	// // RVA: 0xA06CF0 Offset: 0xA06CF0 VA: 0xA06CF0
 	private IEnumerator LLMFFOGJNLH_Coroutine_Initialize()
 	{
-        UnityEngine.Debug.LogError("Enter LLMFFOGJNLH_Coroutine_Initialize");
+        UnityEngine.Debug.Log("Enter LLMFFOGJNLH_Coroutine_Initialize");
         //0xA0F2C4
 		bool BEKAMBBOLBO = false;
 		bool CNAIDEAFAAM = false;
@@ -333,14 +338,14 @@ public class IOGKADECKOP
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.OLBAIKLLIFE = false;
 		SoundResource.DecCacheClear();
 		yield return DANMJLOBLIE.StartCoroutine(LCCKLAEOAMB_Coroutine_InitAREventAndTitleBG());
-        UnityEngine.Debug.LogError("Exit LLMFFOGJNLH_Coroutine_Initialize");
+        UnityEngine.Debug.Log("Exit LLMFFOGJNLH_Coroutine_Initialize");
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B3F10 Offset: 0x6B3F10 VA: 0x6B3F10
 	// // RVA: 0xA06D9C Offset: 0xA06D9C VA: 0xA06D9C
 	private IEnumerator BLJICEOFNMM_LoadLayoutTitle()
 	{
-        UnityEngine.Debug.LogError("Enter BLJICEOFNMM_LoadLayoutTitle");
+        UnityEngine.Debug.Log("Enter BLJICEOFNMM_LoadLayoutTitle");
 		//0x1404868
 		if(IJCPLBPLJLJ == null)
 		{
@@ -409,19 +414,23 @@ public class IOGKADECKOP
 			}
 			NOFPJPHIPBD.LayoutSetup();
 		}
-        UnityEngine.Debug.LogError("Exit BLJICEOFNMM_LoadLayoutTitle");
+        UnityEngine.Debug.Log("Exit BLJICEOFNMM_LoadLayoutTitle");
 	}
 
 	// // RVA: 0xA06E24 Offset: 0xA06E24 VA: 0xA06E24
-	// private void PELOLGDNOGL() { }
+	private void PELOLGDNOGL()
+	{
+		UnityEngine.Debug.LogError("TODO !!!");
+		NOFPJPHIPBD.ScreenTap.ButtonCallbackTap = this.FGBKOJCFMKM;
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B3F88 Offset: 0x6B3F88 VA: 0x6B3F88
 	// // RVA: 0xA07174 Offset: 0xA07174 VA: 0xA07174
 	private IEnumerator ABPGOJDKKHO_PopupShowSNS(Action KBCBGIGOLHP, Action AOCANKOMKFG, bool DLNDPMNLMGC = false)
 	{
-        UnityEngine.Debug.LogError("Enter ABPGOJDKKHO_PopupShowSNS");
+        UnityEngine.Debug.Log("Enter ABPGOJDKKHO_PopupShowSNS");
 		UnityEngine.Debug.LogError("TODO");
-        UnityEngine.Debug.LogError("Exit ABPGOJDKKHO_PopupShowSNS");
+        UnityEngine.Debug.Log("Exit ABPGOJDKKHO_PopupShowSNS");
 		yield break;
 	}
 
@@ -429,7 +438,7 @@ public class IOGKADECKOP
 	// // RVA: 0xA07248 Offset: 0xA07248 VA: 0xA07248
 	private IEnumerator IMDAHCEDGFK_Coroutine_TitleLogo()
 	{
-        UnityEngine.Debug.LogError("Enter IMDAHCEDGFK_Coroutine_TitleLogo");
+        UnityEngine.Debug.Log("Enter IMDAHCEDGFK_Coroutine_TitleLogo");
 		//0x140845C
 		LKFGMDGFKDP = true;
 		
@@ -444,30 +453,32 @@ public class IOGKADECKOP
 		{
 			yield return null;
 		}
-		
+
 		NOFPJPHIPBD.TitleLogo.Hide();
 		LKFGMDGFKDP = false;
 
-        UnityEngine.Debug.LogError("Exit IMDAHCEDGFK_Coroutine_TitleLogo");
+        UnityEngine.Debug.Log("Exit IMDAHCEDGFK_Coroutine_TitleLogo");
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B4078 Offset: 0x6B4078 VA: 0x6B4078
 	// // RVA: 0xA072D0 Offset: 0xA072D0 VA: 0xA072D0
 	private IEnumerator IMJGOIOLGIO_Contract(Action FHANAFNKIFC, Action DOGDHKIEBJA)
 	{
-        UnityEngine.Debug.LogError("Enter IMJGOIOLGIO_Contract");
+        UnityEngine.Debug.Log("Enter IMJGOIOLGIO_Contract");
 		UnityEngine.Debug.LogError("TODO");
-        UnityEngine.Debug.LogError("Exit IMJGOIOLGIO_Contract");
+        UnityEngine.Debug.Log("Exit IMJGOIOLGIO_Contract");
 		yield break;
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B40F0 Offset: 0x6B40F0 VA: 0x6B40F0
 	// // RVA: 0xA07398 Offset: 0xA07398 VA: 0xA07398
-	private IEnumerator HNPMKCFMEGA_Inquiry()
+	private IEnumerator HNPMKCFMEGA_Coroutine_Inquiry()
 	{
-        UnityEngine.Debug.LogError("Enter HNPMKCFMEGA_Inquiry");
-		UnityEngine.Debug.LogError("TODO");
-        UnityEngine.Debug.LogError("Exit HNPMKCFMEGA_Inquiry");
+        UnityEngine.Debug.Log("Enter HNPMKCFMEGA_Coroutine_Inquiry");
+		//0x140453C
+		UnityEngine.Debug.LogError("TODO !!!");
+		PELOLGDNOGL();
+        UnityEngine.Debug.Log("Exit HNPMKCFMEGA_Coroutine_Inquiry");
 		yield break;
 	}
 
@@ -475,7 +486,7 @@ public class IOGKADECKOP
 	// // RVA: 0xA068C0 Offset: 0xA068C0 VA: 0xA068C0
 	private IEnumerator PFEKBBONCJJ_Coroutine_GameStart()
 	{
-        UnityEngine.Debug.LogError("Enter PFEKBBONCJJ_Coroutine_GameStart");
+        UnityEngine.Debug.Log("Enter PFEKBBONCJJ_Coroutine_GameStart");
 	// private IOGKADECKOP.<>c__DisplayClass36_0 OPLBFCEPDCH; // 0x14
 	// private IOGKADECKOP.<>c__DisplayClass36_1 LBLMCMHMNGC; // 0x18
 	// private IOGKADECKOP.<>c__DisplayClass36_2 PHPPCOBECCA; // 0x1C
@@ -539,7 +550,7 @@ public class IOGKADECKOP
 			NLJKCDHIPEG = null;
 			MPHCKPBAKMO = null;
 			DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        	UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        	UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 			yield break;
 		}
 		int checkSecure = 0;
@@ -579,7 +590,7 @@ public class IOGKADECKOP
 			NLJKCDHIPEG = null;
 			MPHCKPBAKMO = null;
 			DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        	UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        	UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 			yield break;
 		}
 		BEKAMBBOLBO = false;
@@ -604,7 +615,7 @@ public class IOGKADECKOP
 			NLJKCDHIPEG = null;
 			MPHCKPBAKMO = null;
 			DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        	UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        	UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 			yield break;
 		}
 		// L473
@@ -631,7 +642,7 @@ public class IOGKADECKOP
 			NLJKCDHIPEG = null;
 			MPHCKPBAKMO = null;
 			DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        	UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        	UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 			yield break;
 		}
 		// L524
@@ -660,7 +671,7 @@ public class IOGKADECKOP
 			NLJKCDHIPEG = null;
 			MPHCKPBAKMO = null;
 			DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        	UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        	UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 			yield break;
 		}
 		// L 581
@@ -723,7 +734,7 @@ public class IOGKADECKOP
 			NLJKCDHIPEG = null;
 			MPHCKPBAKMO = null;
 			DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        	UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        	UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 			yield break;
 		}
 		bool FBBAOFKBGBA = true;
@@ -773,7 +784,7 @@ public class IOGKADECKOP
 				if(CNAIDEAFAAM)
 				{
 					DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        			UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        			UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 					yield break;
 				}
 				// L 1028
@@ -837,7 +848,7 @@ public class IOGKADECKOP
 						NLJKCDHIPEG = null;
 						MPHCKPBAKMO = null;
 						DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        				UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        				UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 						yield break;
 					}
 					//L1159
@@ -864,7 +875,7 @@ public class IOGKADECKOP
 						NLJKCDHIPEG = null;
 						MPHCKPBAKMO = null;
 						DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        				UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        				UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 						yield break;
 					}
 					//L1223
@@ -895,7 +906,7 @@ public class IOGKADECKOP
 						NLJKCDHIPEG = null;
 						MPHCKPBAKMO = null;
 						DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        				UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        				UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 						yield break;
 					}
 					//L1304
@@ -944,7 +955,7 @@ public class IOGKADECKOP
 						NLJKCDHIPEG = null;
 						MPHCKPBAKMO = null;
 						DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        				UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        				UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 						yield break;
 					}
 					//L1147
@@ -966,7 +977,7 @@ public class IOGKADECKOP
 							NLJKCDHIPEG = null;
 							MPHCKPBAKMO = null;
 							DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-       						UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+       						UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 							yield break;
 						}
 						EMOMAPKPGGK[i].LAOEGNLOJHC();
@@ -983,7 +994,7 @@ public class IOGKADECKOP
 							NLJKCDHIPEG = null;
 							MPHCKPBAKMO = null;
 							DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        					UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        					UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 							yield break;
 						}
 					}
@@ -1056,7 +1067,7 @@ public class IOGKADECKOP
 						DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
 					}));
 					//goto LAB_00a0e3c0;
-        			UnityEngine.Debug.LogError("Exit PFEKBBONCJJ_Coroutine_GameStart");
+        			UnityEngine.Debug.Log("Exit PFEKBBONCJJ_Coroutine_GameStart");
 					yield break;
 				}
 				else
@@ -1069,16 +1080,16 @@ public class IOGKADECKOP
 		//goto LAB_00a0e370;
 		//LAB_00a0e370
 		DANMJLOBLIE.StartCoroutine(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-        UnityEngine.Debug.LogError("Exit Error PFEKBBONCJJ_Coroutine_GameStart");
+        UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B41E0 Offset: 0x6B41E0 VA: 0x6B41E0
 	// // RVA: 0xA07440 Offset: 0xA07440 VA: 0xA07440
 	private IEnumerator ACHBBAIODMC()
 	{
-        UnityEngine.Debug.LogError("Enter ACHBBAIODMC");
+        UnityEngine.Debug.Log("Enter ACHBBAIODMC");
 		UnityEngine.Debug.LogError("TODO");
-        UnityEngine.Debug.LogError("Exit ACHBBAIODMC");
+        UnityEngine.Debug.Log("Exit ACHBBAIODMC");
 		yield break;
 	}
 
@@ -1086,7 +1097,7 @@ public class IOGKADECKOP
 	// // RVA: 0xA074C8 Offset: 0xA074C8 VA: 0xA074C8
 	private IEnumerator HBBDEHKOFKN_Coroutine_DownloadTitleBannerTexture()
 	{
-        UnityEngine.Debug.LogError("Enter HBBDEHKOFKN_Coroutine_DownloadTitleBannerTexture");
+        UnityEngine.Debug.Log("Enter HBBDEHKOFKN_Coroutine_DownloadTitleBannerTexture");
 		//0xA0B26C
 		AssetBundleLoadAssetOperation AHBCOPDIEEH = null;
 		
@@ -1116,7 +1127,7 @@ public class IOGKADECKOP
 		{
 			GameManager.Instance.ProgressBar.SetType(UILoadProgress.Type.Normal);
 		}
-        UnityEngine.Debug.LogError("Exit HBBDEHKOFKN_Coroutine_DownloadTitleBannerTexture");
+        UnityEngine.Debug.Log("Exit HBBDEHKOFKN_Coroutine_DownloadTitleBannerTexture");
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B42D0 Offset: 0x6B42D0 VA: 0x6B42D0
@@ -1127,11 +1138,11 @@ public class IOGKADECKOP
 	// // RVA: 0xA07574 Offset: 0xA07574 VA: 0xA07574
 	private IEnumerator NNPDJBJGBFA_Coroutine_ReturnToTitle()
 	{
-        UnityEngine.Debug.LogError("Enter NNPDJBJGBFA_Coroutine_ReturnToTitle");
+        UnityEngine.Debug.Log("Enter NNPDJBJGBFA_Coroutine_ReturnToTitle");
 		//0x1405D14
 		
         UnityEngine.Debug.LogError("TODO");
-        UnityEngine.Debug.LogError("Exit NNPDJBJGBFA_Coroutine_ReturnToTitle");
+        UnityEngine.Debug.Log("Exit NNPDJBJGBFA_Coroutine_ReturnToTitle");
 		yield break;
 	}
 
@@ -1207,7 +1218,7 @@ public class IOGKADECKOP
 	// // RVA: 0xA07FF0 Offset: 0xA07FF0 VA: 0xA07FF0
 	private IEnumerator LCCKLAEOAMB_Coroutine_InitAREventAndTitleBG()
 	{
-        UnityEngine.Debug.LogError("Enter LCCKLAEOAMB_Coroutine_InitAREventAndTitleBG");
+        UnityEngine.Debug.Log("Enter LCCKLAEOAMB_Coroutine_InitAREventAndTitleBG");
 		//0xA0ECD8
 		//private IOGKADECKOP.<>c__DisplayClass48_0 OPLBFCEPDCH; // 0x10
 		//IOGKADECKOP KIGBLACMODG; // 0x14
@@ -1235,7 +1246,7 @@ public class IOGKADECKOP
 		}
 		if(!OOIBKCCMCAG)
 		{
-        	UnityEngine.Debug.LogError("Exit Error LCCKLAEOAMB_Coroutine_InitAREventAndTitleBG");
+        	UnityEngine.Debug.LogError("Exit  Error LCCKLAEOAMB_Coroutine_InitAREventAndTitleBG");
 			yield break;
 		}
 		if(PDOILOAFKCF != null)
@@ -1250,7 +1261,7 @@ public class IOGKADECKOP
 			
 			AssetBundleManager.UnloadAssetBundle(FCFBGJOFEHO, false);
 		}
-        UnityEngine.Debug.LogError("Exit LCCKLAEOAMB_Coroutine_InitAREventAndTitleBG");
+        UnityEngine.Debug.Log("Exit LCCKLAEOAMB_Coroutine_InitAREventAndTitleBG");
 	}
 
 	// // RVA: 0xA0809C Offset: 0xA0809C VA: 0xA0809C

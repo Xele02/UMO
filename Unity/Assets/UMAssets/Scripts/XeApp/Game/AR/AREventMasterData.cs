@@ -53,7 +53,7 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBB6FC4 Offset: 0xBB6FC4 VA: 0xBB6FC4 Slot: 4
 		protected override void Initialize(byte[] bytes)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO Initialize");
 		}
 
 		// // RVA: 0xBB7C6C Offset: 0xBB7C6C VA: 0xBB7C6C
@@ -74,7 +74,7 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBB8448 Offset: 0xBB8448 VA: 0xBB8448
 		public AREventMasterData.Chenge_bg FindChangeBG()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO FindChangeBG");
 			return null;
 		}
 

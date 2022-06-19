@@ -23,7 +23,7 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE35950 Offset: 0xE35950 VA: 0xE35950
 		public void CallbackClear()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO LayoutTitleButtons CallbackClear");
 		}
 
 		// // RVA: 0xE359A0 Offset: 0xE359A0 VA: 0xE359A0

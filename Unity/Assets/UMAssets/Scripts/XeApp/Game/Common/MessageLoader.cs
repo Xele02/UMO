@@ -82,9 +82,9 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1117090 Offset: 0x1117090 VA: 0x1117090
 		private IEnumerator CheckDone()
 		{
-    		UnityEngine.Debug.LogError("Enter CheckDone");
+    		UnityEngine.Debug.Log("Enter CheckDone");
 			UnityEngine.Debug.LogWarning("TODO MessageLoader CheckDone");
-    		UnityEngine.Debug.LogError("Exit CheckDone");
+    		UnityEngine.Debug.Log("Exit CheckDone");
 			yield break;
 		}
 

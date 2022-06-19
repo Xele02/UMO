@@ -36,21 +36,21 @@ namespace SecureLib
         // // RVA: 0x2E71EF8 Offset: 0x2E71EF8 VA: 0x2E71EF8
         public static bool isRooted()
         {
-            UnityEngine.Debug.LogError("TODO");
+            UnityEngine.Debug.LogWarning("TODO isRooted");
             return false;
         }
 
         // // RVA: 0x2E71F70 Offset: 0x2E71F70 VA: 0x2E71F70
         public static bool isDebuggerAttachedJava()
         {
-            UnityEngine.Debug.LogError("TODO");
+            UnityEngine.Debug.LogWarning("TODO isDebuggerAttachedJava");
             return false;
         }
 
         // // RVA: 0x2E71FE8 Offset: 0x2E71FE8 VA: 0x2E71FE8
         public static bool isDebuggerAttachedNative()
         {
-            UnityEngine.Debug.LogError("TODO");
+            UnityEngine.Debug.LogWarning("TODO isDebuggerAttachedNative");
             return false;
         }
 
@@ -63,7 +63,7 @@ namespace SecureLib
         // // RVA: 0x2E71FF4 Offset: 0x2E71FF4 VA: 0x2E71FF4
         public static bool isEmulator()
         {
-            UnityEngine.Debug.LogError("TODO");
+            UnityEngine.Debug.LogWarning("TODO isEmulator");
             return false;
         }
 

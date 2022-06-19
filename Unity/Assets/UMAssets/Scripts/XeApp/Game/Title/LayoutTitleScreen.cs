@@ -17,7 +17,7 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE3A87C Offset: 0xE3A87C VA: 0xE3A87C
 		public void TapAnim()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO LayoutTitleScreen TapAnim");
 		}
 
 		// // RVA: 0xE365F0 Offset: 0xE365F0 VA: 0xE365F0

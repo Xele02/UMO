@@ -42,6 +42,7 @@ namespace XeApp.Game.Title
 		public void Show()
 		{
 			UnityEngine.Debug.LogWarning("TODO TitleLogo Show");
+			IsClose = true; // hack to skip logo sequence for now
 		}
 
 		// // RVA: 0xE39DDC Offset: 0xE39DDC VA: 0xE39DDC

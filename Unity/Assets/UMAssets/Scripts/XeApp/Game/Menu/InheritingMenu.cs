@@ -14,8 +14,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13DE1B8 Offset: 0x13DE1B8 VA: 0x13DE1B8
 		public static InheritingMenu Create(Transform parent)
 		{
-			UnityEngine.Debug.LogWarning("TODO InheritingMenu Create");
-			return null;
+			GameObject go = new GameObject("InheritingMenu");
+			go.transform.SetParent(parent);
+			return go.AddComponent<InheritingMenu>();
 		}
 
 		// // RVA: 0x13DE2A4 Offset: 0x13DE2A4 VA: 0x13DE2A4
@@ -24,13 +25,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13DE2BC Offset: 0x13DE2BC VA: 0x13DE2BC
 		public void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO InheritingMenu Awake");
 		}
 
 		// // RVA: 0x13DE2C0 Offset: 0x13DE2C0 VA: 0x13DE2C0
 		public void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO InheritingMenu Start");
 		}
 
 		// // RVA: 0x13DE2C4 Offset: 0x13DE2C4 VA: 0x13DE2C4

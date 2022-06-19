@@ -32,7 +32,7 @@ namespace XeSys.uGUI
 		// // RVA: 0x274AF64 Offset: 0x274AF64 VA: 0x274AF64
 		private void Awake()
 		{
-			UnityEngine.Debug.LogWarning("TODO UGUIFader Awake");
+			mUpdate = this.UpdateIdle;
 		}
 
 		// // RVA: 0x274AFEC Offset: 0x274AFEC VA: 0x274AFEC

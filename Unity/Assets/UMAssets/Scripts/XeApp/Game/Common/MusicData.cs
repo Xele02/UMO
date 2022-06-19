@@ -62,7 +62,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE62E0 Offset: 0xAE62E0 VA: 0xAE62E0
 		private IEnumerator Co_LoadData(int musicId, int difficultyId, int stageDivaNum, bool line6Mode)
 		{
-    		UnityEngine.Debug.LogError("Enter Co_LoadData");
+    		UnityEngine.Debug.Log("Enter Co_LoadData");
 			// public MusicData <>4__this; // 0x10
 			// public int musicId; // 0x14
 			// public int difficultyId; // 0x18
@@ -91,7 +91,7 @@ namespace XeApp.Game.Common
 			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH, musicBase.BKJGCEOEPFB, -1, line6Mode, this.LoadedCommonScoreData, "s_"));
 
 			UnityEngine.Debug.LogError("TODO");
-    		UnityEngine.Debug.LogError("Exit Co_LoadData");
+    		UnityEngine.Debug.Log("Exit Co_LoadData");
 		}
 
 		// // RVA: 0xAE63F4 Offset: 0xAE63F4 VA: 0xAE63F4
@@ -105,9 +105,9 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE64E0 Offset: 0xAE64E0 VA: 0xAE64E0
 		private IEnumerator LoadScoreTarFile(int musicId)
 		{
-    		UnityEngine.Debug.LogError("Enter LoadScoreTarFile");
+    		UnityEngine.Debug.Log("Enter LoadScoreTarFile");
 			UnityEngine.Debug.LogError("TODO");
-    		UnityEngine.Debug.LogError("Exit LoadScoreTarFile");
+    		UnityEngine.Debug.Log("Exit LoadScoreTarFile");
 			yield break;
 		}
 
@@ -127,9 +127,9 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE6A98 Offset: 0xAE6A98 VA: 0xAE6A98
 		private IEnumerator LoadScoreData(AssetBundleLoadAllAssetOperationBase operation, int wavId, int variationId, int difficultyType, bool is6Line, Action<MusicScoreData> dataSetFunc, string strPrefix = "s_")
 		{
-    		UnityEngine.Debug.LogError("Enter LoadScoreData");
+    		UnityEngine.Debug.Log("Enter LoadScoreData");
 			UnityEngine.Debug.LogError("TODO");
-    		UnityEngine.Debug.LogError("Exit LoadScoreData");
+    		UnityEngine.Debug.Log("Exit LoadScoreData");
 			yield break;
 		}
 

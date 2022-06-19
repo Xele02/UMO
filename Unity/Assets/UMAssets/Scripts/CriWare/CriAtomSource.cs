@@ -160,7 +160,7 @@ public class CriAtomSource : CriMonoBehaviour
 	// // RVA: 0x28B66EC Offset: 0x28B66EC VA: 0x28B66EC
 	public CriAtomExPlayback Play(int cueId)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogWarning("TODO CriAtomExPlayback Play");
 		return new CriAtomExPlayback();
 	}
 

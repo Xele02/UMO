@@ -116,7 +116,15 @@ public class KDLPEDBKMID
 	// // RVA: 0xE7D990 Offset: 0xE7D990 VA: 0xE7D990
 	public void OFLDICKPNFD(bool CJPFICKPJPP, DJBHIFLHJLK FGGJNGCAFGK)
     {
-        UnityEngine.Debug.LogError("TODO");
+        if(CJPFICKPJPP)
+		{
+			MAIHLKPEHJN = JHHBAFKMBDL.HHCJCDFCLOB.DOHNKJKOGFJ;
+		}
+		else
+		{
+			MAIHLKPEHJN = this.EEHMGCMAOAB;
+		}
+		this.FGGJNGCAFGK = FGGJNGCAFGK;
     }
 
 	// // RVA: 0xE7DA9C Offset: 0xE7DA9C VA: 0xE7DA9C
@@ -243,7 +251,7 @@ public class KDLPEDBKMID
 	// // RVA: 0xE7DCBC Offset: 0xE7DCBC VA: 0xE7DCBC
 	private IEnumerator EOFJPNPFGDM_Coroutine_Install()
 	{
-        UnityEngine.Debug.LogError("Enter EOFJPNPFGDM_Coroutine_Install");
+        UnityEngine.Debug.Log("Enter EOFJPNPFGDM_Coroutine_Install");
 		// private KDLPEDBKMID.<>c__DisplayClass44_0 OPLBFCEPDCH; // 0x14			
 			// public KDLPEDBKMID KIGBLACMODG; // 0x8
 			// public PJKLMCGEJMK CPHFEPHDJIB; // 0xC
@@ -294,7 +302,7 @@ public class KDLPEDBKMID
 				OEPPEGHGNNO(2, 100);
 				GameManager.Instance.SetNeverSleep(false);
 				LFPOPKJMGKA = false;
-        		UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+        		UnityEngine.Debug.LogError("Exit  Error EOFJPNPFGDM_Coroutine_Install");
 				yield break;
 			}
 			PMDNNKAPIKJ = new JEHIAIPJNJF(3);
@@ -383,7 +391,7 @@ public class KDLPEDBKMID
 		}
 		
         UnityEngine.Debug.LogError("TODO !!!");
-    	UnityEngine.Debug.LogError("Exit EOFJPNPFGDM_Coroutine_Install");
+    	UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 	}
 
 	// // RVA: 0xE7ECF4 Offset: 0xE7ECF4 VA: 0xE7ECF4

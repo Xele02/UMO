@@ -60,9 +60,9 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1395A94 Offset: 0x1395A94 VA: 0x1395A94
 		private IEnumerator SurveyLatencyEstimator()
 		{
-    		UnityEngine.Debug.LogError("Enter SurveyLatencyEstimator");
+    		UnityEngine.Debug.Log("Enter SurveyLatencyEstimator");
 			UnityEngine.Debug.LogWarning("TODO SoundManager.SurveyLatencyEstimator");
-    		UnityEngine.Debug.LogError("Exit SurveyLatencyEstimator");
+    		UnityEngine.Debug.Log("Exit SurveyLatencyEstimator");
 			yield break;
 		}
 

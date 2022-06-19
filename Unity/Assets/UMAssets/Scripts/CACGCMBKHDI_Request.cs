@@ -140,13 +140,13 @@ public abstract class CACGCMBKHDI_Request
     // // RVA: 0x18F2C1C Offset: 0x18F2C1C VA: 0x18F2C1C
     private IEnumerator HOHLIBIOPOM_CheckDone()
     {
-        UnityEngine.Debug.LogError("Enter HOHLIBIOPOM_CheckDone");
+        UnityEngine.Debug.Log("Enter HOHLIBIOPOM_CheckDone");
         //0x18F2D34
         while(!NAEDHHPPFCK)
         {
             yield return null;
         }
-        UnityEngine.Debug.LogError("Exit HOHLIBIOPOM_CheckDone");
+        UnityEngine.Debug.Log("Exit HOHLIBIOPOM_CheckDone");
     }
 
     // // RVA: 0x18F2CC8 Offset: 0x18F2CC8 VA: 0x18F2CC8 Slot: 16

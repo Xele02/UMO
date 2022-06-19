@@ -5,7 +5,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CCED9C Offset: 0x1CCED9C VA: 0x1CCED9C
 		public void EntrySheet()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO TitlecallVoicePlayer EntrySheet");
 		}
 
 		// // RVA: 0x1CCEE08 Offset: 0x1CCEE08 VA: 0x1CCEE08

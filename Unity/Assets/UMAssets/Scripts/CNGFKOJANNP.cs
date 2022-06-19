@@ -39,7 +39,8 @@ public class CNGFKOJANNP
 	// // RVA: 0x175B6FC Offset: 0x175B6FC VA: 0x175B6FC
 	public void EGDJHGIAFGO()
     {
-        UnityEngine.Debug.LogError("TODO");
+		MGALHAHPADF = true;
+		AKPCMLEPPGC = false;
     }
 
 	// // RVA: 0x175B720 Offset: 0x175B720 VA: 0x175B720

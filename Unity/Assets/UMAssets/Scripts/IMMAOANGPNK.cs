@@ -64,7 +64,7 @@ public class IMMAOANGPNK
 	// // RVA: 0x9FBA5C Offset: 0x9FBA5C VA: 0x9FBA5C
 	private IEnumerator MHEKMICKGDM_LoadFromStorage(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
 	{
-        UnityEngine.Debug.LogError("Enter MHEKMICKGDM_LoadFromStorage");
+        UnityEngine.Debug.Log("Enter MHEKMICKGDM_LoadFromStorage");
 		// private int GGPNEJDOELB; // 0x8
 		// private object GMEFKDIEHCA; // 0xC
 		// public IMMAOANGPNK KIGBLACMODG; // 0x10
@@ -88,7 +88,7 @@ public class IMMAOANGPNK
 		if(CNAIDEAFAAM)
 		{
 			MOBEEPPKFLG();
-        	UnityEngine.Debug.LogError("Exit Error MHEKMICKGDM_LoadFromStorage");
+        	UnityEngine.Debug.LogError("Exit  Error MHEKMICKGDM_LoadFromStorage");
 			yield break;
 		}
 
@@ -109,7 +109,7 @@ public class IMMAOANGPNK
 					yield return N.a.StartCoroutine(LGFPCADOCAA_ShowError());
 					MOBEEPPKFLG();
 					GBEGLNMFLIE = null;
-        			UnityEngine.Debug.LogError("Exit Error MHEKMICKGDM_LoadFromStorage");
+        			UnityEngine.Debug.LogError("Exit  Error MHEKMICKGDM_LoadFromStorage");
 					yield break;
 				}
 				long val = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
@@ -152,7 +152,7 @@ public class IMMAOANGPNK
 				{
 					yield return N.a.StartCoroutine(LGFPCADOCAA_ShowError());
 					MOBEEPPKFLG();
-        			UnityEngine.Debug.LogError("Exit Error MHEKMICKGDM_LoadFromStorage");
+        			UnityEngine.Debug.LogError("Exit  Error MHEKMICKGDM_LoadFromStorage");
 					yield break;
 				}
 				
@@ -287,7 +287,7 @@ public class IMMAOANGPNK
 								{
 									BHFHGFKBOHH();
 									LNAHEIEIBOI = true;
-        							UnityEngine.Debug.LogError("Exit MHEKMICKGDM_LoadFromStorage");
+        							UnityEngine.Debug.Log("Exit MHEKMICKGDM_LoadFromStorage");
 									yield break;
 								}
 							}
@@ -314,22 +314,22 @@ public class IMMAOANGPNK
 					}
 				}
 				MOBEEPPKFLG();
-        		UnityEngine.Debug.LogError("Exit Error MHEKMICKGDM_LoadFromStorage");
+        		UnityEngine.Debug.LogError("Exit  Error MHEKMICKGDM_LoadFromStorage");
 				yield break;
 			}
 		}
 		yield return N.a.StartCoroutine(LGFPCADOCAA_ShowError());
 		MOBEEPPKFLG();
-        UnityEngine.Debug.LogError("Exit Error MHEKMICKGDM_LoadFromStorage");
+        UnityEngine.Debug.LogError("Exit  Error MHEKMICKGDM_LoadFromStorage");
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B7760 Offset: 0x6B7760 VA: 0x6B7760
 	// // RVA: 0x9FBCFC Offset: 0x9FBCFC VA: 0x9FBCFC
 	private IEnumerator LGFPCADOCAA_ShowError()
 	{
-        UnityEngine.Debug.LogError("Enter LGFPCADOCAA_ShowError");
+        UnityEngine.Debug.Log("Enter LGFPCADOCAA_ShowError");
 		UnityEngine.Debug.LogError("TODO");
-        UnityEngine.Debug.LogError("Exit LGFPCADOCAA_ShowError");
+        UnityEngine.Debug.Log("Exit LGFPCADOCAA_ShowError");
 		yield break;
 	}
 

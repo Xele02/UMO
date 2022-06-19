@@ -22,7 +22,7 @@ public class JEHIAIPJNJF : IDisposable
         public double KMABBBKJFCB; // 0x18
         public bool NEDNDAKLBMJ; // 0x20
         public bool IKBKLPNADJM; // 0x21
-        // public GCGNICILKLD LAPFOLJGJMB; // 0x24
+        public GCGNICILKLD LAPFOLJGJMB; // 0x24
     }
 
     public class AFGDFAJEBFA
@@ -114,7 +114,10 @@ public class JEHIAIPJNJF : IDisposable
     }
 
 	// // RVA: 0x1C34F08 Offset: 0x1C34F08 VA: 0x1C34F08
-	// public void DOMFHDPMCCO(List<GCGNICILKLD> IDJBKGBMDAJ, string JCILKDKNDLE, string OGCDNCDMLCA) { }
+	public void DOMFHDPMCCO(List<GCGNICILKLD> IDJBKGBMDAJ, string JCILKDKNDLE, string OGCDNCDMLCA)
+	{
+        UnityEngine.Debug.LogError("TODO !!!");
+	}
 
 	// // RVA: 0x1C352A0 Offset: 0x1C352A0 VA: 0x1C352A0
 	public void DOMFHDPMCCO(List<KDLPEDBKMID.EMEKAOMPFNC> CEKHMLAEKIK)
@@ -137,7 +140,7 @@ public class JEHIAIPJNJF : IDisposable
 	// // RVA: 0x1C355BC Offset: 0x1C355BC VA: 0x1C355BC
 	public void LAOEGNLOJHC()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO !!!");
 	}
 
 	// // RVA: 0x1C3578C Offset: 0x1C3578C VA: 0x1C3578C

@@ -91,7 +91,7 @@ namespace XeSys
 		// // RVA: 0x239BA5C Offset: 0x239BA5C VA: 0x239BA5C
 		private IEnumerator DelayLoad()
 		{
-			UnityEngine.Debug.LogError("Enter DelayLoad");
+			UnityEngine.Debug.Log("Enter DelayLoad");
 			//0x239BE54
 			while(true)
 			{
@@ -125,7 +125,7 @@ namespace XeSys
 			}
 			isLoading = false;
 
-			UnityEngine.Debug.LogError("Exit DelayLoad");
+			UnityEngine.Debug.Log("Exit DelayLoad");
 		}
 
 		// // RVA: 0x239BB08 Offset: 0x239BB08 VA: 0x239BB08

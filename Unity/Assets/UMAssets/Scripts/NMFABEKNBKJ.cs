@@ -60,7 +60,7 @@ public class NMFABEKNBKJ
 	// // RVA: 0x1CAB8B8 Offset: 0x1CAB8B8 VA: 0x1CAB8B8
 	private IEnumerator LAGOJPPLDOH_Corotuine_BootInitilaize_FCM(IMCBBOAFION PONEMLJPAOE, IMCBBOAFION CNJANCCFBIL)
 	{
-    	UnityEngine.Debug.LogError("Enter LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
+    	UnityEngine.Debug.Log("Enter LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
 		// private NMFABEKNBKJ.<>c__DisplayClass28_0 OPLBFCEPDCH; // 0x14
 			// // RVA: 0x1CACDE8 Offset: 0x1CACDE8 VA: 0x1CACDE8
 			// internal void OGFIBLEDIBD() { }
@@ -68,7 +68,7 @@ public class NMFABEKNBKJ
 
 		//0x1CADBC8
 		UnityEngine.Debug.LogWarning("TODO LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
-    	UnityEngine.Debug.LogError("Exit LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
+    	UnityEngine.Debug.Log("Exit LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
 		PONEMLJPAOE();
 		yield break;
 	}

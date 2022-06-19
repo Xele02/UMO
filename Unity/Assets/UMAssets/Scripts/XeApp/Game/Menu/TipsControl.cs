@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA97284 Offset: 0xA97284 VA: 0xA97284
 		public static void SetSituationValue(TipsControl.SituationId id, int val)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO SetSituationValue");
 		}
 
 		// // RVA: 0xA9734C Offset: 0xA9734C VA: 0xA9734C

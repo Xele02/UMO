@@ -44,7 +44,6 @@ namespace UdonLib
         // // RVA: 0xE0B928 Offset: 0xE0B928 VA: 0xE0B928
         public static int GetOSMajorVersion()
         {
-            UnityEngine.Debug.LogError("TODO");
             return 0;
         }
 	}

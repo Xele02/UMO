@@ -32,7 +32,11 @@ public class GCGNICILKLD
             return NKLIKAENLNC.DNJEJEANJGL;
         return null;
     } } //0x16AAC90 NCFJKJMKANL
-	// public long CALJIGKCAAH { get; set; } 0x16AACA8 MMINNMHAJGO 0x16AACBC CBMKIPILIND
+	public long CALJIGKCAAH { get {
+        return BBEGLBMOBOF ^ CFKONDFCBEB;
+    } set {
+        CFKONDFCBEB = BBEGLBMOBOF ^ value;
+    } } //0x16AACA8 MMINNMHAJGO 0x16AACBC CBMKIPILIND
 	// public uint HHPEMFKDHLK { get; }  0x16AACDC NCFONAKINMA
 
 	// RVA: 0x16AACEC Offset: 0x16AACEC VA: 0x16AACEC

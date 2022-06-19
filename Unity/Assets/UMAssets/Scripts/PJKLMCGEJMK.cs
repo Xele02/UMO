@@ -179,7 +179,7 @@ public class PJKLMCGEJMK
     // // RVA: 0x93188C Offset: 0x93188C VA: 0x93188C
     private IEnumerator NBCKHIAINIM_Coroutine_Execute(CACGCMBKHDI_Request ADKIDBJCAJA)
     {
-    	UnityEngine.Debug.LogError("Enter NBCKHIAINIM_Coroutine_Execute");
+    	UnityEngine.Debug.Log("Enter NBCKHIAINIM_Coroutine_Execute");
         // private PJKLMCGEJMK.<>c__DisplayClass69_0 OPLBFCEPDCH; // 0x18
             // public bool FFEFFPIHPFF; // 0x8
             // public bool APLAAAMOBCF; // 0x9
@@ -455,7 +455,7 @@ public class PJKLMCGEJMK
             a = ADKIDBJCAJA.BHFHGFKBOHH;
             if(a == null)
             {
-    	        UnityEngine.Debug.LogError("Exit NBCKHIAINIM_Coroutine_Execute");
+    	        UnityEngine.Debug.Log("Exit NBCKHIAINIM_Coroutine_Execute");
                 yield break;
             }
         }
@@ -465,12 +465,12 @@ public class PJKLMCGEJMK
             a = ADKIDBJCAJA.MOBEEPPKFLG;
             if(a == null)
             {
-    	        UnityEngine.Debug.LogError("Exit Error NBCKHIAINIM_Coroutine_Execute");
+    	        UnityEngine.Debug.LogError("Exit  Error NBCKHIAINIM_Coroutine_Execute");
                 yield break;
             }
         }
         a(ADKIDBJCAJA);
-    	UnityEngine.Debug.LogError("Exit "+(KADMOOOMMJF?" Error":"")+" NBCKHIAINIM_Coroutine_Execute");
+    	UnityEngine.Debug.Log("Exit "+(KADMOOOMMJF?" Error":"")+" NBCKHIAINIM_Coroutine_Execute");
     }
 
     // // RVA: 0x931E18 Offset: 0x931E18 VA: 0x931E18
@@ -484,9 +484,9 @@ public class PJKLMCGEJMK
     // // RVA: 0x931F34 Offset: 0x931F34 VA: 0x931F34
     private IEnumerator MELKAFEGNMD(CACGCMBKHDI_Request ADKIDBJCAJA, SakashoErrorId KLCMLLLIANB, int MJACIGCPNDA, string IIGAKOKGKIB, EHLCCMEDIOH IICBBDEPBAM)
     {
-    	UnityEngine.Debug.LogError("Enter MELKAFEGNMD");
+    	UnityEngine.Debug.Log("Enter MELKAFEGNMD");
         UnityEngine.Debug.LogError("TODO");
-    	UnityEngine.Debug.LogError("Exit MELKAFEGNMD");
+    	UnityEngine.Debug.Log("Exit MELKAFEGNMD");
         yield break;
     }
 
@@ -494,9 +494,9 @@ public class PJKLMCGEJMK
     // // RVA: 0x932064 Offset: 0x932064 VA: 0x932064
     private IEnumerator AOMMJNJGFEL(CACGCMBKHDI_Request ADKIDBJCAJA, KPKEOIJHIMN.GIDACIOHFNN CMCKNKKCNDK_Status)
     {
-    	UnityEngine.Debug.LogError("Enter AOMMJNJGFEL");
+    	UnityEngine.Debug.Log("Enter AOMMJNJGFEL");
         UnityEngine.Debug.LogError("TODO");
-    	UnityEngine.Debug.LogError("Exit AOMMJNJGFEL");
+    	UnityEngine.Debug.Log("Exit AOMMJNJGFEL");
         yield break;
     }
 
@@ -568,9 +568,9 @@ public class PJKLMCGEJMK
     // // RVA: 0x932FF4 Offset: 0x932FF4 VA: 0x932FF4
     private IEnumerator GGOECCJJPFN(CACGCMBKHDI_Request ADKIDBJCAJA)
     {
-    	UnityEngine.Debug.LogError("Enter GGOECCJJPFN");
+    	UnityEngine.Debug.Log("Enter GGOECCJJPFN");
         UnityEngine.Debug.LogError("TODO");
-    	UnityEngine.Debug.LogError("Exit GGOECCJJPFN");
+    	UnityEngine.Debug.Log("Exit GGOECCJJPFN");
         yield break;
     }
 

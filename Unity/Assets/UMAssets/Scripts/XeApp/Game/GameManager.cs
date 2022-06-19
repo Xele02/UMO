@@ -157,7 +157,7 @@ namespace XeApp.Game
 		public UGUILetterBoxController LetterBox { get; set; } // 0x114
 		public LongScreenFrame LongScreenFrame { get; set; } // 0x11C
 		public UnityAction onDownLoadFinish { get; set; }	// 0x138
-		public bool InputEnabled { get { Debug.LogError("TODO"); return false; } set { Debug.LogError("TODO"); } } // get_InputEnabled 0x999F0C set_InputEnabled 0x999F38 
+		public bool InputEnabled { get { Debug.LogWarning("TODO"); return true; } set { Debug.LogError("TODO Set Input Enabled "+value); } } // get_InputEnabled 0x999F0C set_InputEnabled 0x999F38 
 		public EventSystemControl EventSystemControl { get { return eventSystemController; } } // get_EventSystemControl 0x999F6C 
 		public LayoutCommonTextureManager UnionTextureManager { get { return unionTextureManager; } } // get_UnionTextureManager 0x999F74 
 		public UGUICommonManager UguiCommonManager { get { return uguiCommonManager; } } // get_UguiCommonManager 0x999F7C 
@@ -197,7 +197,7 @@ namespace XeApp.Game
 		// // RVA: 0x9888B0 Offset: 0x9888B0 VA: 0x9888B0
 		public void AddPushBackButtonHandler(GameManager.PushBackButtonHandler handler)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO AddPushBackButtonHandler");
 		}
 
 		// // RVA: 0x99A334 Offset: 0x99A334 VA: 0x99A334
@@ -206,7 +206,7 @@ namespace XeApp.Game
 		// // RVA: 0x988E80 Offset: 0x988E80 VA: 0x988E80
 		public void RemovePushBackButtonHandler(GameManager.PushBackButtonHandler handler)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO RemovePushBackButtonHandler");
 		}
 
 		// // RVA: 0x98B534 Offset: 0x98B534 VA: 0x98B534
@@ -238,10 +238,10 @@ namespace XeApp.Game
 		// // RVA: 0x99A7A4 Offset: 0x99A7A4 VA: 0x99A7A4
 		public IEnumerator UnloadAllAssets()
 		{
-    		UnityEngine.Debug.LogError("Enter UnloadAllAssets");
+    		UnityEngine.Debug.Log("Enter UnloadAllAssets");
 			//0x1428C74
 			UnityEngine.Debug.LogWarning("TODO GameManager.UnloadAllAssets");
-    		UnityEngine.Debug.LogError("Exit UnloadAllAssets");
+    		UnityEngine.Debug.Log("Exit UnloadAllAssets");
 			yield break;
 		}
 
@@ -259,7 +259,7 @@ namespace XeApp.Game
 		// // RVA: 0x99AC08 Offset: 0x99AC08 VA: 0x99AC08
 		private IEnumerator Co_InitScreen()
 		{
-    		UnityEngine.Debug.LogError("Enter Co_InitScreen");
+    		UnityEngine.Debug.Log("Enter Co_InitScreen");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public GameManager <>4__this; // 0x10
@@ -313,7 +313,7 @@ namespace XeApp.Game
 			ReInitScreen();
 			yield return null;
 			isBootInitialized = true;
-    		UnityEngine.Debug.LogError("Exit Co_InitScreen");
+    		UnityEngine.Debug.Log("Exit Co_InitScreen");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADAB0 Offset: 0x6ADAB0 VA: 0x6ADAB0
@@ -432,7 +432,7 @@ namespace XeApp.Game
 		// // RVA: 0x99DCFC Offset: 0x99DCFC VA: 0x99DCFC
 		private IEnumerator InitializeSystemCoroutine()
 		{
-    		UnityEngine.Debug.LogError("Enter InitializeSystemCoroutine");
+    		UnityEngine.Debug.Log("Enter InitializeSystemCoroutine");
 			UnityEngine.Debug.LogWarning("TODO finish GameManager.InitializeSystemCoroutine");
 			//private int <>1__state; // 0x8
 			//private object <>2__current; // 0xC
@@ -452,11 +452,10 @@ namespace XeApp.Game
 			while(!NKGJPJPHLIF.HHCJCDFCLOB.CGMMHFHHLID)
 				yield return null;
 
-			//!!! crash, no instance ?
 			KDLPEDBKMID.HHCJCDFCLOB.OEPPEGHGNNO = this.InstallEvent;
 			NDABOOOOENC.HHCJCDFCLOB.NCDLCIPGPNC();
 			IsSystemInitialized = true;
-    		UnityEngine.Debug.LogError("Exit InitializeSystemCoroutine");
+    		UnityEngine.Debug.Log("Exit InitializeSystemCoroutine");
 		}
 
 		// // RVA: 0x99DD84 Offset: 0x99DD84 VA: 0x99DD84
