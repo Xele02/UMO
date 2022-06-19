@@ -51,7 +51,10 @@ namespace XeApp.Game.AR
 		// public static void Release() { }
 
 		// // RVA: 0xBB6FC4 Offset: 0xBB6FC4 VA: 0xBB6FC4 Slot: 4
-		// protected override void Initialize(byte[] bytes) { }
+		protected override void Initialize(byte[] bytes)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xBB7C6C Offset: 0xBB7C6C VA: 0xBB7C6C
 		// public string GetStringParam(string key, string noval) { }

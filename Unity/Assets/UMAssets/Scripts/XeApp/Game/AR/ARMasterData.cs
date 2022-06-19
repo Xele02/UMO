@@ -1,6 +1,12 @@
+using System.Collections;
+using System;
+using System.IO;
+using UnityEngine;
+using System.Security.Cryptography;
+
 namespace XeApp.Game.AR
 {
-	public class ARMasterData
+	public abstract class ARMasterData
 	{
 		private const string LIST_NAME = "db";
 		private const string DATA_PATH = "/db/{0}.dat";
@@ -13,7 +19,7 @@ namespace XeApp.Game.AR
 		public string name { get { return m_name; } set { m_name = value; } } //0xBBA77C 0xBB6E94
 
 		// // RVA: -1 Offset: -1 Slot: 4
-		// protected abstract void Initialize(byte[] bytes);
+		protected abstract void Initialize(byte[] bytes);
 
 		// RVA: 0xBBA784 Offset: 0xBBA784 VA: 0xBBA784
 		public bool IsReady()
@@ -25,23 +31,222 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBBA78C Offset: 0xBBA78C VA: 0xBBA78C
 		public void StartInstall(IMCBBOAFION onSuccess, DJBHIFLHJLK onError)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			N.a.StartCoroutine(Coroutine_Install(onSuccess, onError));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741AC4 Offset: 0x741AC4 VA: 0x741AC4
 		// // RVA: 0xBBA7E4 Offset: 0xBBA7E4 VA: 0xBBA7E4
-		// private IEnumerator Coroutine_Install(IMCBBOAFION onSuccess, DJBHIFLHJLK onError) { }
+		private IEnumerator Coroutine_Install(IMCBBOAFION onSuccess, DJBHIFLHJLK onError)
+		{
+			// private ARMasterData.<>c__DisplayClass13_0 <>8__1; // 0x14
+				// public bool isError; // 0x8
+				// public byte[] dataBytes; // 0xC
+				// RVA: 0xBBB36C Offset: 0xBBB36C VA: 0xBBB36C
+				// internal void <Coroutine_Install>b__0() { }
+				// RVA: 0xBBB378 Offset: 0xBBB378 VA: 0xBBB378
+				// internal void <Coroutine_Install>b__1(byte[] data) { }
+			// public DJBHIFLHJLK onError; // 0x18
+			// public IMCBBOAFION onSuccess; // 0x1C
+			// private ARMasterData.<>c__DisplayClass13_1 <>8__2; // 0x20
+				// public bool done; // 0x8
+				// // RVA: 0xBBB388 Offset: 0xBBB388 VA: 0xBBB388
+				// internal void <Coroutine_Install>b__2() { }
+			// 0xBBBD8C
+			m_isReady = false;
+			bool isError = false;
+			yield return Coroutine_Download(() => {
+				//0xBBB36C
+				isError = true;
+			});
+			if(isError)
+			{
+				if(onError != null)
+					onError();
+				yield break;
+			}
+			
+			byte[] dataBytes = null;
+			yield return Coroutine_LoadTarFile(BBGDKLLEPIB.OGCDNCDMLCA + string.Format(DATA_PATH, m_name), (byte[] data) => {
+				//0xBBB378
+				dataBytes = data;
+			} );
+
+			if(dataBytes != null)
+			{
+				Initialize(dataBytes);
+				if(onSuccess != null)
+					onSuccess();
+				m_isReady = true;
+				yield break;
+			}
+			if(ignoreError)
+			{
+				if(onError != null)
+					onError();
+				yield break;
+			}
+
+			bool done = false;
+			
+			JHHBAFKMBDL.HHCJCDFCLOB.LIBDGGBAINI(() => {
+				//0xBBB388
+				done = true;
+			});
+			while(!done)
+				yield return null;
+
+			if(onError != null)
+				onError();
+
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741B3C Offset: 0x741B3C VA: 0x741B3C
 		// // RVA: 0xBBA8C4 Offset: 0xBBA8C4 VA: 0xBBA8C4
-		// private IEnumerator Coroutine_LoadTarFile(string path, Action<byte[]> onFinished) { }
+		private IEnumerator Coroutine_LoadTarFile(string path, Action<byte[]> onFinished)
+		{
+			UnityEngine.Debug.LogError("TODO");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741BB4 Offset: 0x741BB4 VA: 0x741BB4
 		// // RVA: 0xBBA9A4 Offset: 0xBBA9A4 VA: 0xBBA9A4
-		// private IEnumerator Coroutine_Download(DJBHIFLHJLK onError) { }
+		private IEnumerator Coroutine_Download(DJBHIFLHJLK onError)
+		{
+			// private ARMasterData.<>c__DisplayClass15_0 <>8__1; // 0x18
+				// public string dest; // 0x8
+				// public byte[] dataBytes; // 0xC
+			// private ARMasterData.<>c__DisplayClass15_1 <>8__2; // 0x1C
+				// public bool fin; // 0x8
+				// public ARMasterData.<>c__DisplayClass15_0 CS$<>8__locals1; // 0xC
+				// // RVA: 0xBBB3A4 Offset: 0xBBB3A4 VA: 0xBBB3A4
+				// internal void <Coroutine_Download>b__2() { }
+			// private PJKLMCGEJMK <am>5__2; // 0x20
+			// private JPAPJLIPNOK <req>5__3; // 0x24
+			// private string <src>5__4; // 0x28
+			// private bool <loop>5__5; // 0x2C
+			// private int <retryCount>5__6; // 0x30
+			// private WWW <www>5__7; // 0x34
+			// private float <endTime>5__8; // 0x38
+			// 0xBBB400
+
+			PJKLMCGEJMK am = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF;
+			JPAPJLIPNOK req = am.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK>(new JPAPJLIPNOK());
+			req.FPCIBJLJOFI = "db";
+
+			if(ignoreError)
+			{
+				req.AILPHBMCCGP = true;
+				req.NBFDEFGFLPJ = (SakashoErrorId e) => {
+					//0xBBB35C
+					return true;
+				};
+			}
+			yield return req.GDPDELLNOBO(N.a);
+
+			if(req.NPNNPNAIONN)
+			{
+				if(onError != null)
+					onError();
+				yield break;
+			}
+
+			GCGNICILKLD found = req.NFEAMMJIMPG.KGHAJGGMPKL.Find((GCGNICILKLD _) => {
+				// 0xBBB1A4
+				return _.OIEAICNAMNB.Contains(string.Format("/db/{0}.dat", m_name));
+			});
+			if(found == null)
+				yield break;
+
+			string src = req.NFEAMMJIMPG.GLMGHMCOMEC + found.MFBMBPJAADA;
+			string dest = BBGDKLLEPIB.OGCDNCDMLCA + found.OIEAICNAMNB;
+			UnityEngine.Debug.LogError("Dld from "+src+" to "+dest);
+
+			string dir = Path.GetDirectoryName(dest);
+			if(!Directory.Exists(dir))
+			{
+				Directory.CreateDirectory(dir);
+			}
+			if(File.Exists(dest))
+			{
+				if(CalcMD5(dest) == found.POEGMFKLFJG)
+				{
+					UnityEngine.Debug.LogError("File match, don't dld");
+					yield break;
+				}
+			}
+
+			byte[] dataBytes = null;
+			int retryCount = 0;
+			bool loop = true;
+			while(loop)
+			{
+				WWW www = new WWW(src);
+				float endTime = Time.realtimeSinceStartup + timeoutTime;
+				//LAB_00bbba10:
+				while(!www.isDone)
+				{
+					if(Time.realtimeSinceStartup < endTime)
+					{
+						yield return null;
+					}
+					else
+					{
+						break;
+					}
+				}
+				if(www.isDone)
+				{
+					if(www.error != null)
+					{
+						if(onError != null)
+							onError();
+						yield break;
+					}
+					dataBytes = www.bytes;
+					break;
+				}
+				retryCount = retryCount + 1;
+				if(retryCount > 1)
+				{
+					if(onError != null)
+					{
+						onError();
+					}
+					www = null;
+					yield break;
+				}
+			}
+			if(dataBytes != null)
+			{
+				bool fin = false;
+				am.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+					//0xBBB3A4
+					File.WriteAllBytes(dest, dataBytes);
+					fin = true;
+				});
+				while(!fin)
+					yield return null;
+			}
+			src = null;
+		}
 
 		// // RVA: 0xBBAA6C Offset: 0xBBAA6C VA: 0xBBAA6C
-		// private string CalcMD5(string path) { }
+		private string CalcMD5(string path)
+		{
+			MD5 md5 = MD5.Create();
+			FileStream f = File.OpenRead(path);
+			byte[] hash = md5.ComputeHash(f);
+			string res = "";
+			for(int i = 0; i < hash.Length; i++)
+			{
+				res += string.Format("{0:x2}", (byte)hash[i]);
+			}
+			if(f != null)
+			{
+				f.Dispose();
+			}
+			return res;
+		}
 
 		// // RVA: 0xBBADA4 Offset: 0xBBADA4 VA: 0xBBADA4
 		// private bool ValidateSchemaHash(byte[] hashBytes, string name) { }
@@ -49,9 +254,5 @@ namespace XeApp.Game.AR
 		// [CompilerGeneratedAttribute] // RVA: 0x741C2C Offset: 0x741C2C VA: 0x741C2C
 		// // RVA: 0xBBB100 Offset: 0xBBB100 VA: 0xBBB100
 		// private bool <Coroutine_LoadTarFile>b__14_1(CBBJHPBGBAJ.JBCFNCNGLPM _) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x741C3C Offset: 0x741C3C VA: 0x741C3C
-		// // RVA: 0xBBB1A4 Offset: 0xBBB1A4 VA: 0xBBB1A4
-		// private bool <Coroutine_Download>b__15_1(GCGNICILKLD _) { }
 	}
 }

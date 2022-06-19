@@ -5,8 +5,11 @@ public class JDEFIJBCJLC
 
 	public string DNJEJEANJGL { get
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return "";
+			if(DLHDPLPLCAC != null)
+			{
+				return FFGBKEEIBNL.HKICMNAACDA(DLHDPLPLCAC);
+			}
+			return null;
 			//JADLONAJDAK 0x1C32C68
 		} set {
 			//JFNEHIGOBHH 0x1C32C8C	

@@ -21,7 +21,7 @@ public class HHEIANIHCNH : CACGCMBKHDI_Request
 
 public class HEHLBMMFMPL
 {
-    public class HHEIANIHCNH : CACGCMBKHDI
+    public class HHEIANIHCNH : CACGCMBKHDI_Request
     {
         public HEHLBMMFMPL NFEAMMJIMPG { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
