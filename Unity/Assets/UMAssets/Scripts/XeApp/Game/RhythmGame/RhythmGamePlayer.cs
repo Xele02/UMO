@@ -719,6 +719,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C12F8 Offset: 0x9C12F8 VA: 0x9C12F8
 		private IEnumerator Co_StartMusic()
 		{
+    		UnityEngine.Debug.LogError("Enter Co_StartMusic");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public RhythmGamePlayer <>4__this; // 0x10
@@ -787,6 +788,7 @@ namespace XeApp.Game.RhythmGame
 				MusicIntroStartPlayerCutInCallback();
 			}
 			Play();
+    		UnityEngine.Debug.LogError("Exit Co_StartMusic");
 		}
 
 		// // RVA: 0x9B2AE0 Offset: 0x9B2AE0 VA: 0x9B2AE0
@@ -905,6 +907,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C4868 Offset: 0x9C4868 VA: 0x9C4868
 		private IEnumerator Co_FadeOutAndExit()
 		{
+    		UnityEngine.Debug.LogError("Enter Co_FadeOutAndExit");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public RhythmGamePlayer <>4__this; // 0x10
@@ -915,6 +918,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			GotoTitleSceneInError();
 			uiController.DeleteIntro();
+    		UnityEngine.Debug.LogError("Exit Co_FadeOutAndExit");
 		}
 
 		// // RVA: 0x9C48F0 Offset: 0x9C48F0 VA: 0x9C48F0
@@ -942,9 +946,11 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C4AE8 Offset: 0x9C4AE8 VA: 0x9C4AE8
 		public IEnumerator Co_WaitRhytmGameEnd(bool isClear)
 		{
+    		UnityEngine.Debug.LogError("Enter Co_WaitRhytmGameEnd");
 			yield return null;
 			Debug.LogError("TODO");
 			UnityEngine.Debug.LogError("TODO");
+    		UnityEngine.Debug.LogError("Exit Co_WaitRhytmGameEnd");
 		}
 
 		// // RVA: 0x9C4B8C Offset: 0x9C4B8C VA: 0x9C4B8C
@@ -1048,7 +1054,9 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9CB194 Offset: 0x9CB194 VA: 0x9CB194
 		private IEnumerator WaitMusicPlayCoroutine(float a_sec_wait)
 		{
+    		UnityEngine.Debug.LogError("Enter WaitMusicPlayCoroutine");
 			UnityEngine.Debug.LogError("TODO");
+    		UnityEngine.Debug.LogError("Exit WaitMusicPlayCoroutine");
 			yield return null;
 		}
 

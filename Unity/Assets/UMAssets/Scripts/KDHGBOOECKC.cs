@@ -603,7 +603,9 @@ public class KDHGBOOECKC
 	// // RVA: 0x1037EDC Offset: 0x1037EDC VA: 0x1037EDC
 	public IEnumerator CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
     {
+        UnityEngine.Debug.LogError("Enter CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements");
         UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("Exit CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements");
         yield break;
     }
 }

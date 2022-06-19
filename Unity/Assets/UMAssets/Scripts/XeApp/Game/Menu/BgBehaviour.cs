@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x143718C Offset: 0x143718C VA: 0x143718C
 		public void ChangeColor(BgBehaviour.ColorType type)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO BgBehaviour ChangeColor");
 		}
 
 		// // RVA: 0x14374E4 Offset: 0x14374E4 VA: 0x14374E4
@@ -168,7 +168,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x143842C Offset: 0x143842C VA: 0x143842C
 		public void SetMenu()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO BgBehaviour SetMenu");
 		}
 
 		// // RVA: 0x1438B40 Offset: 0x1438B40 VA: 0x1438B40

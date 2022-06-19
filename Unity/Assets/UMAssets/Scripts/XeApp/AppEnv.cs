@@ -105,7 +105,7 @@ namespace XeApp
         // // RVA: 0xE0C8A8 Offset: 0xE0C8A8 VA: 0xE0C8A8
         public static bool IsCBT()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO IsCBT");
 			return false;
 		}
 

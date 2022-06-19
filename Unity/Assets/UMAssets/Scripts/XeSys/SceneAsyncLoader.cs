@@ -40,9 +40,11 @@ namespace XeSys
 		// // RVA: 0x239F380 Offset: 0x239F380 VA: 0x239F380
 		private IEnumerator LoadLevel()
 		{
+    		UnityEngine.Debug.LogError("Enter LoadLevel");
 			//0x239F438
 			yield return SceneManager.LoadSceneAsync(sceneName);
 			isLoaded = true;
+    		UnityEngine.Debug.LogError("Exit LoadLevel");
 		}
 	}
 }

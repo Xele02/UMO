@@ -3,14 +3,14 @@ public class StorageSupport
 	// // RVA: 0x2E72264 Offset: 0x2E72264 VA: 0x2E72264
 	public static bool IsAvailableStorage()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogWarning("TODO IsAvailableStorage");
         return true;
     }
 
 	// // RVA: 0x2E72290 Offset: 0x2E72290 VA: 0x2E72290
 	public static int GetAvailableStorageSizeMB()
 	{
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogWarning("TODO GetAvailableStorageSizeMB");
         return 10000;
 	}
 

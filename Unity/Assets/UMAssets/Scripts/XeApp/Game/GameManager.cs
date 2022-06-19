@@ -238,8 +238,10 @@ namespace XeApp.Game
 		// // RVA: 0x99A7A4 Offset: 0x99A7A4 VA: 0x99A7A4
 		public IEnumerator UnloadAllAssets()
 		{
+    		UnityEngine.Debug.LogError("Enter UnloadAllAssets");
 			//0x1428C74
 			UnityEngine.Debug.LogWarning("TODO GameManager.UnloadAllAssets");
+    		UnityEngine.Debug.LogError("Exit UnloadAllAssets");
 			yield break;
 		}
 
@@ -257,6 +259,7 @@ namespace XeApp.Game
 		// // RVA: 0x99AC08 Offset: 0x99AC08 VA: 0x99AC08
 		private IEnumerator Co_InitScreen()
 		{
+    		UnityEngine.Debug.LogError("Enter Co_InitScreen");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public GameManager <>4__this; // 0x10
@@ -310,6 +313,7 @@ namespace XeApp.Game
 			ReInitScreen();
 			yield return null;
 			isBootInitialized = true;
+    		UnityEngine.Debug.LogError("Exit Co_InitScreen");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADAB0 Offset: 0x6ADAB0 VA: 0x6ADAB0
@@ -427,7 +431,8 @@ namespace XeApp.Game
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADB28 Offset: 0x6ADB28 VA: 0x6ADB28
 		// // RVA: 0x99DCFC Offset: 0x99DCFC VA: 0x99DCFC
 		private IEnumerator InitializeSystemCoroutine()
-		{			
+		{
+    		UnityEngine.Debug.LogError("Enter InitializeSystemCoroutine");
 			UnityEngine.Debug.LogWarning("TODO finish GameManager.InitializeSystemCoroutine");
 			//private int <>1__state; // 0x8
 			//private object <>2__current; // 0xC
@@ -451,6 +456,7 @@ namespace XeApp.Game
 			KDLPEDBKMID.HHCJCDFCLOB.OEPPEGHGNNO = this.InstallEvent;
 			NDABOOOOENC.HHCJCDFCLOB.NCDLCIPGPNC();
 			IsSystemInitialized = true;
+    		UnityEngine.Debug.LogError("Exit InitializeSystemCoroutine");
 		}
 
 		// // RVA: 0x99DD84 Offset: 0x99DD84 VA: 0x99DD84
@@ -885,7 +891,7 @@ namespace XeApp.Game
 		// // RVA: 0x9A0CA0 Offset: 0x9A0CA0 VA: 0x9A0CA0
 		public void SetSystemCanvasRenderMode(RenderMode mode)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO SetSystemCanvasRenderMode");
 		}
 
 		// // RVA: 0x9A0CA4 Offset: 0x9A0CA4 VA: 0x9A0CA4

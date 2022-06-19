@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class NMFABEKNBKJ
 {
@@ -52,12 +53,24 @@ public class NMFABEKNBKJ
 	// // RVA: 0x1CAB858 Offset: 0x1CAB858 VA: 0x1CAB858
 	public void OJKIKODJJCD(IMCBBOAFION PONEMLJPAOE, IMCBBOAFION CNJANCCFBIL)
     {
-        UnityEngine.Debug.LogError("TODO");
+		N.a.StartCoroutine(LAGOJPPLDOH_Corotuine_BootInitilaize_FCM(PONEMLJPAOE, CNJANCCFBIL));
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BA83C Offset: 0x6BA83C VA: 0x6BA83C
 	// // RVA: 0x1CAB8B8 Offset: 0x1CAB8B8 VA: 0x1CAB8B8
-	// private IEnumerator LAGOJPPLDOH(IMCBBOAFION PONEMLJPAOE, IMCBBOAFION CNJANCCFBIL) { }
+	private IEnumerator LAGOJPPLDOH_Corotuine_BootInitilaize_FCM(IMCBBOAFION PONEMLJPAOE, IMCBBOAFION CNJANCCFBIL)
+	{
+    	UnityEngine.Debug.LogError("Enter LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
+		// private NMFABEKNBKJ.<>c__DisplayClass28_0 OPLBFCEPDCH; // 0x14
+			// // RVA: 0x1CACDE8 Offset: 0x1CACDE8 VA: 0x1CACDE8
+			// internal void OGFIBLEDIBD() { }
+		// private float FBFKMOECEIM; // 0x20
+
+		//0x1CADBC8
+		UnityEngine.Debug.LogWarning("TODO LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
+    	UnityEngine.Debug.LogError("Exit LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
+		yield break;
+	}
 
 	// // RVA: 0x1CAB998 Offset: 0x1CAB998 VA: 0x1CAB998
 	// public void FCDDHHKAGEP(IMCBBOAFION CNJANCCFBIL) { }

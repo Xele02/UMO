@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B57958 Offset: 0x1B57958 VA: 0x1B57958
 		public static void SetUserData()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO ConfigManager SetUserData");
 		}
 
 		// // RVA: 0x1B57C34 Offset: 0x1B57C34 VA: 0x1B57C34

@@ -61,7 +61,9 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE36AC0 Offset: 0xE36AC0 VA: 0xE36AC0
 		public IEnumerator LoadLayoutScreen(Action callback)
 		{
-			UnityEngine.Debug.LogError("TODO");
+    		UnityEngine.Debug.LogError("Enter LoadLayoutScreen");
+			UnityEngine.Debug.LogWarning("TODO LoadLayoutScreen");
+    		UnityEngine.Debug.LogError("Exit LoadLayoutScreen");
 			yield break;
 		}
 
@@ -69,7 +71,9 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE36B88 Offset: 0xE36B88 VA: 0xE36B88
 		public IEnumerator LoadLayoutScreenTap(Action callback)
 		{
-			UnityEngine.Debug.LogError("TODO");
+    		UnityEngine.Debug.LogError("Enter LoadLayoutScreenTap");
+			UnityEngine.Debug.LogWarning("TODO LoadLayoutScreenTap");
+    		UnityEngine.Debug.LogError("Exit LoadLayoutScreenTap");
 			yield break;
 		}
 
@@ -77,7 +81,9 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE36C50 Offset: 0xE36C50 VA: 0xE36C50
 		public IEnumerator LoadLayoutButtons(Action callback)
 		{
-			UnityEngine.Debug.LogError("TODO");
+    		UnityEngine.Debug.LogError("Enter LoadLayoutButtons");
+			UnityEngine.Debug.LogWarning("TODO LoadLayoutButtons");
+    		UnityEngine.Debug.LogError("Exit LoadLayoutButtons");
 			yield break;
 		}
 
@@ -85,7 +91,9 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE36D18 Offset: 0xE36D18 VA: 0xE36D18
 		public IEnumerator LoadLayoutTexts(Action callback)
 		{
-			UnityEngine.Debug.LogError("TODO");
+    		UnityEngine.Debug.LogError("Enter LoadLayoutTexts");
+			UnityEngine.Debug.LogWarning("TODO LoadLayoutTexts");
+    		UnityEngine.Debug.LogError("Exit LoadLayoutTexts");
 			yield break;
 		}
 
@@ -93,7 +101,9 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE36DE0 Offset: 0xE36DE0 VA: 0xE36DE0
 		public IEnumerator LoadLayoutCopyRight(Action callback)
 		{
-			UnityEngine.Debug.LogError("TODO");
+    		UnityEngine.Debug.LogError("Enter LoadLayoutCopyRight");
+			UnityEngine.Debug.LogWarning("TODO LoadLayoutCopyRight");
+    		UnityEngine.Debug.LogError("Exit LoadLayoutCopyRight");
 			yield break;
 		}
 
@@ -101,7 +111,9 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE36EA8 Offset: 0xE36EA8 VA: 0xE36EA8
 		public IEnumerator LoadLayoutLbButtons(Action callback)
 		{
-			UnityEngine.Debug.LogError("TODO");
+    		UnityEngine.Debug.LogError("Enter LoadLayoutLbButtons");
+			UnityEngine.Debug.LogWarning("TODO LoadLayoutLbButtons");
+    		UnityEngine.Debug.LogError("Exit LoadLayoutLbButtons");
 			yield break;
 		}
 
@@ -109,7 +121,9 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE36F70 Offset: 0xE36F70 VA: 0xE36F70
 		public IEnumerator LoadLayoutTitleLogo(Action callback)
 		{
-			UnityEngine.Debug.LogError("TODO");
+    		UnityEngine.Debug.LogError("Enter LoadLayoutTitleLogo");
+			UnityEngine.Debug.LogWarning("TODO LoadLayoutTitleLogo");
+    		UnityEngine.Debug.LogError("Exit LoadLayoutTitleLogo");
 			yield break;
 		}
 
@@ -117,7 +131,9 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE37038 Offset: 0xE37038 VA: 0xE37038
 		public IEnumerator LoadLayoutArButton(Action callback)
 		{
-			UnityEngine.Debug.LogError("TODO");
+    		UnityEngine.Debug.LogError("Enter LoadLayoutArButton");
+			UnityEngine.Debug.LogWarning("TODO LoadLayoutArButton");
+    		UnityEngine.Debug.LogError("Exit LoadLayoutArButton");
 			yield break;
 		}
 
@@ -125,7 +141,9 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE37100 Offset: 0xE37100 VA: 0xE37100
 		public IEnumerator LoadLayoutMonthlyPass(Action callback)
 		{
-			UnityEngine.Debug.LogError("TODO");
+    		UnityEngine.Debug.LogError("Enter LoadLayoutMonthlyPass");
+			UnityEngine.Debug.LogWarning("TODO LoadLayoutMonthlyPass");
+    		UnityEngine.Debug.LogError("Exit LoadLayoutMonthlyPass");
 			yield break;
 		}
 

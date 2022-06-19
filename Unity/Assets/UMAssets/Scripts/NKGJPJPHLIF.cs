@@ -247,48 +247,51 @@ public class NKGJPJPHLIF
 	// // RVA: 0xC17EEC Offset: 0xC17EEC VA: 0xC17EEC
 	private IEnumerator MAMKIDBAINA_Coroutine_InitializeSystem(IMCBBOAFION KLMFJJCNBIP)
 	{
-			// public NKGJPJPHLIF KIGBLACMODG; // 0x10
-			// private NKGJPJPHLIF.<>c__DisplayClass73_0 OPLBFCEPDCH; // 0x14
-			// public IMCBBOAFION KLMFJJCNBIP; // 0x18
-			// private List<NKCNFFPLIAN> NCAAFGHKNAN; // 0x1C
-			//0xC1BD5C
+    	UnityEngine.Debug.LogError("Enter MAMKIDBAINA_Coroutine_InitializeSystem");
+		// public NKGJPJPHLIF KIGBLACMODG; // 0x10
+		// private NKGJPJPHLIF.<>c__DisplayClass73_0 OPLBFCEPDCH; // 0x14
+		// public IMCBBOAFION KLMFJJCNBIP; // 0x18
+		// private List<NKCNFFPLIAN> NCAAFGHKNAN; // 0x1C
+		//0xC1BD5C
 
-			yield return null;
-			SakashoInitializer s = N.a.GetComponent<SakashoInitializer>();
-			if(s == null)
-			{
-					List<NKCNFFPLIAN> NCAAFGHKNAN = NKCNFFPLIAN.PCODDPDFLHK();
-					yield return N.a.StartCoroutine(EEOJBAHJAIN_Coroutine_Nil());
+		yield return null;
+		SakashoInitializer s = N.a.GetComponent<SakashoInitializer>();
+		if(s == null)
+		{
+				List<NKCNFFPLIAN> NCAAFGHKNAN = NKCNFFPLIAN.PCODDPDFLHK();
+				yield return N.a.StartCoroutine(EEOJBAHJAIN_Coroutine_Nil());
 
-					string LNOLGFLNAAI = AppEnv.sakashoConnectTargetType[(int)AppEnv.GetSakashoConnectTarget()];
-					if(NMMCABJNNLH < CNAINDDMPDL.Length)
-					{
-							LNOLGFLNAAI = LNOLGFLNAAI + CNAINDDMPDL[NMMCABJNNLH];
-					}
-					NKCNFFPLIAN a = NCAAFGHKNAN.Find((NKCNFFPLIAN PKLPKMLGFGK) => {
-							// 0xC1A774
-							return LNOLGFLNAAI == PKLPKMLGFGK.OPFGFINHFCE;
-					});
-					if(a != null)
-					{
-							N.a.A().transform.parent = N.a.transform;
-							s = N.a.A().GetComponent<SakashoInitializer>();
-							s.serverMode = a.CNDDKMJAIBG;
-							s.sakashoGameId = ""+a.DMJGDDEACMD;
-							s.sakashoCommonKey = a.LJNAKDMILMC;
-							s.paymentType = 0;
-							MLKOPOKGHHH = s.sakashoGameId;
-							IMDEGHBHAPC = a.CNDDKMJAIBG;
-							yield return new WaitForSeconds(0.1f);
-					}
-					else
-					{
-							yield break;
-					}
-			}
-			CGMMHFHHLID = true;
-			if(KLMFJJCNBIP != null)
-				KLMFJJCNBIP();
+				string LNOLGFLNAAI = AppEnv.sakashoConnectTargetType[(int)AppEnv.GetSakashoConnectTarget()];
+				if(NMMCABJNNLH < CNAINDDMPDL.Length)
+				{
+						LNOLGFLNAAI = LNOLGFLNAAI + CNAINDDMPDL[NMMCABJNNLH];
+				}
+				NKCNFFPLIAN a = NCAAFGHKNAN.Find((NKCNFFPLIAN PKLPKMLGFGK) => {
+						// 0xC1A774
+						return LNOLGFLNAAI == PKLPKMLGFGK.OPFGFINHFCE;
+				});
+				if(a != null)
+				{
+						N.a.A().transform.parent = N.a.transform;
+						s = N.a.A().GetComponent<SakashoInitializer>();
+						s.serverMode = a.CNDDKMJAIBG;
+						s.sakashoGameId = ""+a.DMJGDDEACMD;
+						s.sakashoCommonKey = a.LJNAKDMILMC;
+						s.paymentType = 0;
+						MLKOPOKGHHH = s.sakashoGameId;
+						IMDEGHBHAPC = a.CNDDKMJAIBG;
+						yield return new WaitForSeconds(0.1f);
+				}
+				else
+				{
+    					UnityEngine.Debug.LogError("Exit Error MAMKIDBAINA_Coroutine_InitializeSystem");
+						yield break;
+				}
+		}
+		CGMMHFHHLID = true;
+		if(KLMFJJCNBIP != null)
+			KLMFJJCNBIP();
+    	UnityEngine.Debug.LogError("Exit MAMKIDBAINA_Coroutine_InitializeSystem");
 	}
 
 	// // RVA: 0xC17FB4 Offset: 0xC17FB4 VA: 0xC17FB4
@@ -301,6 +304,7 @@ public class NKGJPJPHLIF
 	// // RVA: 0xC18024 Offset: 0xC18024 VA: 0xC18024
 	private IEnumerator PFKIHFCAPNC_Coroutine_InitializePlayerToken(IMCBBOAFION KLMFJJCNBIP, DJBHIFLHJLK JGKOLBLPMPG, bool MKFJAGGLEFL, bool FBBNPFFEJBN)
 	{
+    	UnityEngine.Debug.LogError("Enter PFKIHFCAPNC_Coroutine_InitializePlayerToken");
 		// public NKGJPJPHLIF KIGBLACMODG; // 0x10
 		// private HHEIANIHCNH FFEEIONIBFF; // 0x24
 		// private PKNOGNLPHAE CNEMMHHJKNG; // 0x28
@@ -311,6 +315,7 @@ public class NKGJPJPHLIF
 			//goto LAB_00c1bbc4;
 			if(KLMFJJCNBIP != null)
 				KLMFJJCNBIP();
+    		UnityEngine.Debug.LogError("Exit PFKIHFCAPNC_Coroutine_InitializePlayerToken");
 			yield break;
 		}
 		HHEIANIHCNH FFEEIONIBFF = IBLPICFDGOF.IFFNCAFNEAG_AddRequest<HHEIANIHCNH>(new HHEIANIHCNH());
@@ -358,6 +363,7 @@ public class NKGJPJPHLIF
 			DCPCLHOJEHE = true;
 		if(KLMFJJCNBIP != null)
 			KLMFJJCNBIP();
+    	UnityEngine.Debug.LogError("Exit PFKIHFCAPNC_Coroutine_InitializePlayerToken");
 	}
 
 	// // RVA: 0xC1662C Offset: 0xC1662C VA: 0xC1662C
@@ -526,32 +532,34 @@ public class NKGJPJPHLIF
 	// // RVA: 0xC19528 Offset: 0xC19528 VA: 0xC19528
 	private IEnumerator EEOJBAHJAIN_Coroutine_Nil()
 	{
+    	UnityEngine.Debug.LogError("Enter EEOJBAHJAIN_Coroutine_Nil");
 		// private CriFsLoadFileRequest PNLGHFCFPPK; // 0x14
-			// 0xC1C344
-			UnityEngine.Debug.Log("buildOption="+AppInfo.buildOption);
-			NMMCABJNNLH = 0;
-			CriFsLoadFileRequest PNLGHFCFPPK = CriFsUtility.LoadFile(Path.Combine(CriWare.Common.streamingAssetsPath, "img/nil.png"), 0x100000);
-			while(!PNLGHFCFPPK.isDone)
+		// 0xC1C344
+		UnityEngine.Debug.Log("buildOption="+AppInfo.buildOption);
+		NMMCABJNNLH = 0;
+		CriFsLoadFileRequest PNLGHFCFPPK = CriFsUtility.LoadFile(Path.Combine(CriWare.Common.streamingAssetsPath, "img/nil.png"), 0x100000);
+		while(!PNLGHFCFPPK.isDone)
+		{
+				yield return null;
+		}
+		if(PNLGHFCFPPK.error == null)
+		{
+			if(NHNHGIJCGFG())
 			{
-					yield return null;
+				byte[] b = PNLGHFCFPPK.bytes;
+				string str = PKIKNNOAKMI(b);
+				int a = GNECFAGJEOI(str);
+				NMMCABJNNLH = a;
+				UnityEngine.Debug.LogError("EEOJBAHJAIN_Coroutine_Nil key found : "+a);
+				if(a > -1)
+				{
+						if(a < CNAINDDMPDL.Length)
+								yield break;
+				}
+				NMMCABJNNLH = 0;
 			}
-			if(PNLGHFCFPPK.error == null)
-			{
-					if(NHNHGIJCGFG())
-					{
-							byte[] b = PNLGHFCFPPK.bytes;
-							string str = PKIKNNOAKMI(b);
-							int a = GNECFAGJEOI(str);
-							NMMCABJNNLH = a;
-							UnityEngine.Debug.LogError("EEOJBAHJAIN_Coroutine_Nil key found : "+a);
-							if(a > -1)
-							{
-									if(a < CNAINDDMPDL.Length)
-											yield break;
-							}
-							NMMCABJNNLH = 0;
-					}
-			}
+		}
+    	UnityEngine.Debug.LogError("Exit EEOJBAHJAIN_Coroutine_Nil");
 	}
 	// // RVA: 0xC195D4 Offset: 0xC195D4 VA: 0xC195D4
 	private bool NHNHGIJCGFG()

@@ -12,7 +12,7 @@ namespace Mana.Service.Ad
         // // RVA: 0x17BD040 Offset: 0x17BD040 VA: 0x17BD040
         public void SendLaunchEvent()
         {
-            UnityEngine.Debug.LogError("TODO");
+            UnityEngine.Debug.LogWarning("TODO ManaAdAPIHelper SendLaunchEvent");
         }
 
         // // RVA: 0x17BD520 Offset: 0x17BD520 VA: 0x17BD520
@@ -21,7 +21,7 @@ namespace Mana.Service.Ad
         // // RVA: 0x17BD65C Offset: 0x17BD65C VA: 0x17BD65C
         public void TryPendingSendResumeEvent()
         {
-            UnityEngine.Debug.LogError("TODO");
+            UnityEngine.Debug.LogWarning("TODO ManaAdAPIHelper TryPendingSendResumeEvent ");
         }
 
         // // RVA: 0x17BD75C Offset: 0x17BD75C VA: 0x17BD75C

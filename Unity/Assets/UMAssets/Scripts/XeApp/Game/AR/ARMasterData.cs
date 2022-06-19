@@ -37,6 +37,7 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBBA7E4 Offset: 0xBBA7E4 VA: 0xBBA7E4
 		private IEnumerator Coroutine_Install(IMCBBOAFION onSuccess, DJBHIFLHJLK onError)
 		{
+    		UnityEngine.Debug.LogError("Enter Coroutine_Install");
 			// private ARMasterData.<>c__DisplayClass13_0 <>8__1; // 0x14
 				// public bool isError; // 0x8
 				// public byte[] dataBytes; // 0xC
@@ -61,6 +62,7 @@ namespace XeApp.Game.AR
 			{
 				if(onError != null)
 					onError();
+    			UnityEngine.Debug.LogError("Exit Error Coroutine_Install");
 				yield break;
 			}
 			
@@ -76,13 +78,14 @@ namespace XeApp.Game.AR
 				if(onSuccess != null)
 					onSuccess();
 				m_isReady = true;
-				UnityEngine.Debug.LogError("End Coroutine_Install");
+    			UnityEngine.Debug.LogError("Exit Coroutine_Install");
 				yield break;
 			}
 			if(ignoreError)
 			{
 				if(onError != null)
 					onError();
+    			UnityEngine.Debug.LogError("Exit Error Coroutine_Install");
 				yield break;
 			}
 
@@ -98,12 +101,14 @@ namespace XeApp.Game.AR
 			if(onError != null)
 				onError();
 
+    		UnityEngine.Debug.LogError("Exit Error Coroutine_Install");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741B3C Offset: 0x741B3C VA: 0x741B3C
 		// // RVA: 0xBBA8C4 Offset: 0xBBA8C4 VA: 0xBBA8C4
 		private IEnumerator Coroutine_LoadTarFile(string path, Action<byte[]> onFinished)
 		{
+    		UnityEngine.Debug.LogError("Enter Coroutine_LoadTarFile");
 			// private byte[] <dataBytes>5__2; // 0x1C
 			// private IIEDOGCMCIE <tar>5__3; // 0x20
 			//0xBBC28C
@@ -144,12 +149,14 @@ namespace XeApp.Game.AR
 					}
 				}
 			}
+    		UnityEngine.Debug.LogError("Exit Coroutine_LoadTarFile");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741BB4 Offset: 0x741BB4 VA: 0x741BB4
 		// // RVA: 0xBBA9A4 Offset: 0xBBA9A4 VA: 0xBBA9A4
 		private IEnumerator Coroutine_Download(DJBHIFLHJLK onError)
 		{
+    		UnityEngine.Debug.LogError("Enter Coroutine_Download");
 			// private ARMasterData.<>c__DisplayClass15_0 <>8__1; // 0x18
 				// public string dest; // 0x8
 				// public byte[] dataBytes; // 0xC
@@ -185,6 +192,7 @@ namespace XeApp.Game.AR
 			{
 				if(onError != null)
 					onError();
+    			UnityEngine.Debug.LogError("Exit Error Coroutine_Download");
 				yield break;
 			}
 
@@ -193,7 +201,10 @@ namespace XeApp.Game.AR
 				return _.OIEAICNAMNB.Contains(string.Format("/db/{0}.dat", m_name));
 			});
 			if(found == null)
+			{
+    			UnityEngine.Debug.LogError("Exit Error Coroutine_Download");
 				yield break;
+			}
 
 			string src = req.NFEAMMJIMPG.GLMGHMCOMEC + found.MFBMBPJAADA;
 			string dest = BBGDKLLEPIB.OGCDNCDMLCA + found.OIEAICNAMNB;
@@ -209,6 +220,7 @@ namespace XeApp.Game.AR
 				if(CalcMD5(dest) == found.POEGMFKLFJG)
 				{
 					UnityEngine.Debug.LogError("File match, don't dld");
+    				UnityEngine.Debug.LogError("Exit Error Coroutine_Download");
 					yield break;
 				}
 			}
@@ -238,6 +250,7 @@ namespace XeApp.Game.AR
 					{
 						if(onError != null)
 							onError();
+    					UnityEngine.Debug.LogError("Exit Error Coroutine_Download");
 						yield break;
 					}
 					dataBytes = www.bytes;
@@ -251,6 +264,7 @@ namespace XeApp.Game.AR
 						onError();
 					}
 					www = null;
+    				UnityEngine.Debug.LogError("Exit Error Coroutine_Download");
 					yield break;
 				}
 			}
@@ -266,6 +280,7 @@ namespace XeApp.Game.AR
 					yield return null;
 			}
 			src = null;
+    		UnityEngine.Debug.LogError("Exit Coroutine_Download");
 		}
 
 		// // RVA: 0xBBAA6C Offset: 0xBBAA6C VA: 0xBBAA6C
