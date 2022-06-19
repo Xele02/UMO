@@ -414,7 +414,7 @@ public class OKGLGHCBCJP_Database
 		// {84,() => { return new JJCJKALEIAC(); } }, //0x149F870
 		// {85,() => { return new NPCCDMKJBMM(); } }, //0x149F8DC
 		// {86,() => { return new JKMLBONMAHD(); } }, //0x149F948
-		// {87,() => { return new GJALOMELEHD(); } }, //0x149F9B4
+		{87,() => { return new GJALOMELEHD(); } }, //0x149F9B4
 		// {88,() => { return new LLKLAKGKNLD(); } }, //0x149FA20
 		// {89,() => { return new EGLOKAEIHCB(); } }, //0x149FA8C
 		// {90,() => { return new HHFFOACILKG(); } }, //0x149FAF8
@@ -487,7 +487,7 @@ public class OKGLGHCBCJP_Database
 	// public JJCJKALEIAC NFDHMGGLEPN { get; private set; } // 0xAC GGHPDLEFLAF KFBIAJPDFOL BLPBJMIOOHJ
 	// public NPCCDMKJBMM MGIMEEEALPK { get; private set; } // 0xB0 IIGKAHAPDCK EMOJEAIPDCL KJJAAHMMPDD
 	// public JKMLBONMAHD MLGEHCJPAFB { get; private set; } // 0xB4 DIOBCOIDGBL KLENJIKKNGL MCEKLAONFOO
-	// public GJALOMELEHD KDIALKDKBGE { get; private set; } // 0xB8 AJILIAMLKCN OHOFMNKPACI AJNFIOMEBPE
+	   public GJALOMELEHD KDIALKDKBGE { get; private set; } // 0xB8 AJILIAMLKCN OHOFMNKPACI AJNFIOMEBPE
 	// public LLKLAKGKNLD HDGOHBFKKDM { get; private set; } // 0xBC GOCPJPDCIFF HNHCBNDJBIL OMHPACMOBMD
 	// public EGLOKAEIHCB IHPFCIJKFIC { get; private set; } // 0xC0 DLCGGEGFOFM BKAPBBKJELI MINMKCJFHDG
 	// public HHFFOACILKG ICICKEBMEFA { get; private set; } // 0xC4 BLEKIIHCAEL ECAMAOEFEJK IEOJCBOIKPN
@@ -721,7 +721,7 @@ public class OKGLGHCBCJP_Database
 		// NFDHMGGLEPN = null;
 		// MGIMEEEALPK = null;
 		// MLGEHCJPAFB = null;
-		// KDIALKDKBGE = null;
+		KDIALKDKBGE = null;
 		// HDGOHBFKKDM = null;
 		// IHPFCIJKFIC = null;
 		// ICICKEBMEFA = null;
@@ -803,7 +803,7 @@ public class OKGLGHCBCJP_Database
 					// case 84: NFDHMGGLEPN = item; break;
 					// case 85: MGIMEEEALPK = item; break;
 					// case 86: MLGEHCJPAFB = item; break;
-					// case 87: KDIALKDKBGE = item; break;
+					case 87: KDIALKDKBGE = (GJALOMELEHD)item; break;
 					// case 88: HDGOHBFKKDM = item; break;
 					// case 89: IHPFCIJKFIC = item; break;
 					// case 90: ICICKEBMEFA = item; break;

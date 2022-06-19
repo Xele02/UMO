@@ -12,13 +12,13 @@ public class EJHPIMANJFP
 	// // RVA: 0x12EFA68 Offset: 0x12EFA68 VA: 0x12EFA68
 	public EJHPIMANJFP()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		MHKCPJDNJKI = new List<LGDNAJACFHI>();
 	}
 
 	// // RVA: 0x12EFAF4 Offset: 0x12EFAF4 VA: 0x12EFAF4
 	public void IJBGPAENLJA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		HHCJCDFCLOB = this;
 	}
 
 	// // RVA: 0x12EFB58 Offset: 0x12EFB58 VA: 0x12EFB58

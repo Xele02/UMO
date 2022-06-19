@@ -18,7 +18,11 @@ public class PKLLAKCBPAH : KLFDBFMNLBL
 	}
 
 	// // RVA: 0x93EFBC Offset: 0x93EFBC VA: 0x93EFBC Slot: 11
-	// public override FENCAJJBLBH PFAKPFKJJKA() { }
+	public override FENCAJJBLBH PFAKPFKJJKA()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 
 	// // RVA: 0x93EFC4 Offset: 0x93EFC4 VA: 0x93EFC4 Slot: 6
 	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP) { }

@@ -137,7 +137,7 @@ public class JGEOBNENMAH
 	// // RVA: 0xB025D0 Offset: 0xB025D0 VA: 0xB025D0
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		HHCJCDFCLOB = this;
 	}
 
 	// // RVA: 0xB02650 Offset: 0xB02650 VA: 0xB02650

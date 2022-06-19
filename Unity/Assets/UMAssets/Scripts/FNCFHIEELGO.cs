@@ -37,7 +37,11 @@ public class FNCFHIEELGO : KLFDBFMNLBL
 	}
 
 	// // RVA: 0x13E4974 Offset: 0x13E4974 VA: 0x13E4974 Slot: 11
-	// public override FENCAJJBLBH PFAKPFKJJKA() { }
+	public override FENCAJJBLBH PFAKPFKJJKA()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 
 	// // RVA: 0x13E4BC0 Offset: 0x13E4BC0 VA: 0x13E4BC0
 	// private FENCAJJBLBH JJPAJEBBFOB(string OPFGFINHFCE) { }

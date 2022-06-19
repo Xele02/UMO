@@ -59,5 +59,9 @@ public class GEGHOCKCKKA : KLFDBFMNLBL
 	// public override bool NFKFOODCJJB() { }
 
 	// // RVA: 0x16BC748 Offset: 0x16BC748 VA: 0x16BC748 Slot: 11
-	// public override FENCAJJBLBH PFAKPFKJJKA() { }
+	public override FENCAJJBLBH PFAKPFKJJKA()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 }

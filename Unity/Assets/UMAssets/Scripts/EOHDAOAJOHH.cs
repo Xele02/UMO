@@ -19,7 +19,9 @@ public class EOHDAOAJOHH
 	// // RVA: 0xFB76C4 Offset: 0xFB76C4 VA: 0xFB76C4
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		HHCJCDFCLOB = this;
+		BOCLJJMAHHB = false;
+		NCAJHMNKJJD = false;
 	}
 
 	// // RVA: 0xFB774C Offset: 0xFB774C VA: 0xFB774C

@@ -26,7 +26,11 @@ public class IOEKHJBOMDH : KLFDBFMNLBL
 	}
 
 	// // RVA: 0xA02AA4 Offset: 0xA02AA4 VA: 0xA02AA4 Slot: 11
-	// public override FENCAJJBLBH PFAKPFKJJKA() { }
+	public override FENCAJJBLBH PFAKPFKJJKA()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 
 	// // RVA: 0xA02EE4 Offset: 0xA02EE4 VA: 0xA02EE4 Slot: 4
 	public override void KMBPACJNEOF()

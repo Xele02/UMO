@@ -36,7 +36,13 @@ public class OAFCKDDEBFN
 	// private int KGIIIIOHIDJ(int OIPCCBHIKIA) { }
 
 	// // RVA: 0x1CBEC14 Offset: 0x1CBEC14 VA: 0x1CBEC14
-	// public void ALLGKHCNKDN() { } // <<
+	public void ALLGKHCNKDN()
+	{
+		MGJKEJHEBPO.Clear();
+		OAFCKDDEBFN.AACCPKIGMED a = new OAFCKDDEBFN.AACCPKIGMED();
+		a.KHEKNNFCAOI_Init("/ct/bg/.+", 0x187088ed);
+		MGJKEJHEBPO.Add(a);
+	}
 
 	// RVA: 0x1CBEDF4 Offset: 0x1CBEDF4 VA: 0x1CBEDF4
 	public void PGLANLKJBLI_Init() //> GameStart >  KEHOJEJMGLJ.PAHGEEOFEPM

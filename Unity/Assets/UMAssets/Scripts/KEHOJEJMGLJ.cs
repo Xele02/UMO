@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using XeSys;
+using System.IO;
 
 public class KEHOJEJMGLJ
 {
@@ -14,8 +16,8 @@ public class KEHOJEJMGLJ
 	private float NDEJCDBHPLB = 180.0f; // 0x8
 	private const bool LFNLMBBPMPJ = false;
 	public FECDBKKBAHO KLIJFOBEKBE = new FECDBKKBAHO(); // 0xC
-	// public OAFCKDDEBFN GMLCCMEHNCI = new OAFCKDDEBFN(); // 0x10
-	// private static IGJHFKELHKJ MLPDBGFBAAC; // 0x4
+	public OAFCKDDEBFN GMLCCMEHNCI = new OAFCKDDEBFN(); // 0x10
+	private static IGJHFKELHKJ MLPDBGFBAAC; // 0x4
 	public static bool HBCEEIOHENM = true; // 0x8
 	// public KEHOJEJMGLJ.ACGGHEIMPHC EMJFHKHLHDB = 1; // 0x14
 	// private static string[] EENNDMBAGNC = new string[1] {"android"}; // 0xC
@@ -86,7 +88,12 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE87F08 Offset: 0xE87F08 VA: 0xE87F08
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		HHCJCDFCLOB = this;
+		KLIJFOBEKBE.KHEKNNFCAOI_Init();
+		FileLoader.Instance.findDecryptor = GMLCCMEHNCI.MFHAOMELJKJ_FindDecryptor;
+		GMLCCMEHNCI.ALLGKHCNKDN();
+		MLPDBGFBAAC = new IGJHFKELHKJ();
+		OMPMGDHJJPG();
 	}
 
 	// // RVA: 0xE882B8 Offset: 0xE882B8 VA: 0xE882B8 Slot: 1
@@ -145,16 +152,60 @@ public class KEHOJEJMGLJ
 	// public void OANLHPBJIND() { }
 
 	// // RVA: 0xE89CF8 Offset: 0xE89CF8 VA: 0xE89CF8
-	// public static void INLICKMJHHK(string CJEKGLGBIHF_path) { }
+	public static void INLICKMJHHK(string CJEKGLGBIHF_path)
+	{
+		File.Delete(CJEKGLGBIHF_path);
+	}
 
 	// // RVA: 0xE8B6B0 Offset: 0xE8B6B0 VA: 0xE8B6B0
-	// public static void IOCKEBLNODI(string NEFEFHBHFFF) { }
+	public static void IOCKEBLNODI(string NEFEFHBHFFF)
+	{
+		Directory.Delete(NEFEFHBHFFF);
+	}
 
 	// // RVA: 0xE8806C Offset: 0xE8806C VA: 0xE8806C
-	// public void OMPMGDHJJPG() { }
+	public void OMPMGDHJJPG()
+	{
+		if(string.IsNullOrEmpty(CJMOKHDNBNB.FIPFFELDIOG))
+		{
+			UnityEngine.Debug.LogError("Install.InstallPathManager.CriWare_installTargetPath is empty");
+			return;
+		}
+		string tmpDir = CJMOKHDNBNB.FIPFFELDIOG + "/tmp";
+		if(Directory.Exists(tmpDir))
+		{
+			string[] files = Directory.GetFiles(tmpDir);
+			for(int i = 0; i < files.Length; i++)
+			{
+				INLICKMJHHK(files[i]);
+			}
+			string[] dirs = Directory.GetDirectories(tmpDir);
+			for(int i = 0; i < dirs.Length; i++)
+			{
+				ALKHIONADIP(dirs[i]);
+			}
+		}
+	}
 
 	// // RVA: 0xE8B7C8 Offset: 0xE8B7C8 VA: 0xE8B7C8
-	// private static void ALKHIONADIP(string CJJJPKJHOGM) { }
+	private static void ALKHIONADIP(string CJJJPKJHOGM)
+	{
+		if(!Directory.Exists(CJJJPKJHOGM))
+		{
+			return;
+		}
+		string[] files = Directory.GetFiles(CJJJPKJHOGM);
+		for(int i = 0; i < files.Length; i++)
+		{
+			INLICKMJHHK(files[i]);
+		}
+		string[] dirs = Directory.GetDirectories(CJJJPKJHOGM);
+		for(int i = 0; i < dirs.Length; i++)
+		{
+			ALKHIONADIP(dirs[i]);
+		}
+		IOCKEBLNODI(CJJJPKJHOGM);
+	}
 
 	// // RVA: 0xE8B9A4 Offset: 0xE8B9A4 VA: 0xE8B9A4
 	// private static void PKLPEIBEGNO() { }

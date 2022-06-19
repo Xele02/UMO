@@ -51,7 +51,7 @@ public class NHPDPKHMFEP
 	// // RVA: 0x1897918 Offset: 0x1897918 VA: 0x1897918
 	public void IJBGPAENLJA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		HHCJCDFCLOB = this;
 	}
 
 	// // RVA: 0x1897998 Offset: 0x1897998 VA: 0x1897998

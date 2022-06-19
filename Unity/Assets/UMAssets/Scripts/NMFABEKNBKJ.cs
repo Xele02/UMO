@@ -43,7 +43,10 @@ public class NMFABEKNBKJ
 	// // RVA: 0x1CAB7E4 Offset: 0x1CAB7E4 VA: 0x1CAB7E4
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
     {
-        UnityEngine.Debug.LogError("TODO");
+		HHCJCDFCLOB = this;
+		HBAFMHEBNDP = -1;
+		PLOOEECNHFB = false;
+		ECCHBMAGKLF = false;
     }
 
 	// // RVA: 0x1CAB858 Offset: 0x1CAB858 VA: 0x1CAB858

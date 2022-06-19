@@ -1,6 +1,37 @@
 
 public class JNMFKOHFAFB : KLFDBFMNLBL
 {
+	public class KNHIPBADANI
+	{
+		public static int FBGGEFFJJHB = 0x46bd435; // 0x0
+		private int ELMLPFGPIIM; // 0x8
+		private int EHOIENNDEDH; // 0xC
+		private int MBCPMFPKNBA; // 0x10
+		private int MDIGCJGJBBA; // 0x14
+		private int NKCNFBCEEOI; // 0x18
+		private int FEIKCJFNEGC; // 0x1C
+		private int OPLKJKAIFPF; // 0x20
+		public byte[] PDNIFBEGMHC = new byte[15]; // 0x24
+		public byte[] EMOJHJGHJLN = new byte[50]; // 0x28
+
+		// public int PPFNGGCBJKC { get; set; } 0x1B9AEE8 DEMEPMAEJOO 0x1B9AE4C HIGKAIDMOKN
+		// public int ANAJIAENLNB { get; set; } 0x1BA163C MMOMNMBKHJF 0x1B9AF80 FEHNFGPFINK
+		// public int MJBODMOLOBC { get; set; } 0x1B9B1F8 JDPBFBEBJOK 0x1B9B01C PNKGEPNKKBM
+		// public int JPIPENJGGDD { get; set; } 0x1BA16D4 FBLKAMOKPPP 0x1B9B0BC BEEPHNBJGLI
+		// public int DMNIMMGGJJJ { get; set; } 0x1BA176C CJCDKIKDBNP 0x1B9B158 CCGHKFJEFCB
+
+		// // RVA: 0x1B98808 Offset: 0x1B98808 VA: 0x1B98808
+		// public void KMBPACJNEOF() { }
+
+		// // RVA: 0x1B9DB80 Offset: 0x1B9DB80 VA: 0x1B9DB80
+		// public void ODDIHGPONFL(JNMFKOHFAFB.KNHIPBADANI GPBJHKLFCEP) { }
+
+		// // RVA: 0x1B9E86C Offset: 0x1B9E86C VA: 0x1B9E86C
+		// public bool AGBOGBEOFME(JNMFKOHFAFB.KNHIPBADANI GPBJHKLFCEP) { }
+
+		// // RVA: 0x1BA1810 Offset: 0x1BA1810 VA: 0x1BA1810
+		// public void DOMFHDPMCCO(int BCCHOBPJJKE, byte[] KBOLNIBLIND, byte[] ODKMKEHJOCK, int MJBODMOLOBC, int JPIPENJGGDD, int DMNIMMGGJJJ) { }
+	}
 	// public const int ECFEMKGFDCE = 2;
 	// private int FBGGEFFJJHB; // 0x24
 	// private int AOFGNAJLLPD; // 0x28

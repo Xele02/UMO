@@ -70,7 +70,7 @@ public abstract class IKDICBBFBMI
 	public const string PKCHABKLDOC = "event_prologue_achv_item_id";
 	public const string HMEFMAPKOBF = "event_epilogue_achv_item_id";
 
-	// public virtual OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get; } // ?
+	// public virtual OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get; } 0x8DD514 DKHCGLCNKCD Slot: 4
 	// public int OENLHLCKMDI { get; } // ?
 	// public bool NBCFEEFEDHH { get; } // ?
 	// public bool BEGOPNADOJL { get; } // ?
@@ -78,10 +78,10 @@ public abstract class IKDICBBFBMI
 	// public bool DLPIPAGONIN { get; } // ?
 
 	// // RVA: 0x8DCDBC Offset: 0x8DCDBC VA: 0x8DCDBC
-	// public void .ctor(string OPFGFINHFCE) { }
-
-	// // RVA: 0x8DD514 Offset: 0x8DD514 VA: 0x8DD514 Slot: 4
-	// public virtual OHCAABOMEOF.KGOGMKMBCPP DKHCGLCNKCD() { }
+	public IKDICBBFBMI(string OPFGFINHFCE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x8DD51C Offset: 0x8DD51C VA: 0x8DD51C Slot: 5
 	// public virtual string IFKKBHPMALH() { }

@@ -40,5 +40,9 @@ public class DAJBODHMLAB : KLFDBFMNLBL
 	// public override bool NFKFOODCJJB() { }
 
 	// // RVA: 0x176BBBC Offset: 0x176BBBC VA: 0x176BBBC Slot: 11
-	// public override FENCAJJBLBH PFAKPFKJJKA() { }
+	public override FENCAJJBLBH PFAKPFKJJKA()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 }

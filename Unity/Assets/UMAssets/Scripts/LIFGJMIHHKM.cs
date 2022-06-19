@@ -56,5 +56,9 @@ public class LIFGJMIHHKM : KLFDBFMNLBL
 	// public override bool NFKFOODCJJB() { }
 
 	// // RVA: 0x180166C Offset: 0x180166C VA: 0x180166C Slot: 11
-	// public override FENCAJJBLBH PFAKPFKJJKA() { }
+	public override FENCAJJBLBH PFAKPFKJJKA()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 }

@@ -14,9 +14,13 @@ public class GNGMCIAIKMA
 	private int ELNEJEEKOEI; // 0x14
 	private int IDKOMEFBCBD; // 0x18
 	public int DKFOMHOJBGD; // 0x1C
-	public List<long> GEAHCCJPOCN; // 0x20
-	private readonly sbyte[,] LMEHCADEKLN; // 0x24
-	// public List<GNGMCIAIKMA.DFABPMMMIIB> CEHNIJPOEAF; // 0x28
+	public List<long> GEAHCCJPOCN = new List<long>(); // 0x20
+	private readonly sbyte[,] LMEHCADEKLN = new sbyte[3, 8] {
+		{ 0x5b, 0x58, 0x59, 0x5e, 0x5f, 0x5c, 0x5d, 0x52},
+		{ 0x53, 0x5b, 0x5e, 0x5d, 0x58, 0x5f, 0x52, 0x59}, 
+		{ 0x5c, 0x53, 0x5b, 0x5f, 0x53, 0x59, 0x5f, 0x5d}
+	}; // 0x24
+	// public List<GNGMCIAIKMA.DFABPMMMIIB> CEHNIJPOEAF = new List<GNGMCIAIKMA.DFABPMMMIIB>(); // 0x28
 
 	public static GNGMCIAIKMA HHCJCDFCLOB { get; private set; } // 0x10 GNGMCIAIKMA OKPMHKNCNAL
 	// public int PMPKHBAJAFA { get; set; } // OAKEIKFELFC 0xAB8FE4  MBHILIEPJOO 0xAB9050
@@ -34,13 +38,19 @@ public class GNGMCIAIKMA
 	// // RVA: 0xAB9640 Offset: 0xAB9640 VA: 0xAB9640
 	public GNGMCIAIKMA() 
 	{ 
-		UnityEngine.Debug.LogError("TODO");
+		FBGGEFFJJHB = LPDNKHAIOLH.CEIBAFOCNCA();
+		BBEGLBMOBOF = ~FBGGEFFJJHB; // not sure
+		ILGOKEAIBBA = FBGGEFFJJHB;
+		NPNDCNDCDPC = FBGGEFFJJHB;
+		PFJENHEKCAO = FBGGEFFJJHB;
+		ELNEJEEKOEI = FBGGEFFJJHB;
+		IDKOMEFBCBD = FBGGEFFJJHB;
 	}
 
 	// // RVA: 0xAB9974 Offset: 0xAB9974 VA: 0xAB9974
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		HHCJCDFCLOB = this;
 	}
 
 	// // RVA: 0xAB99D8 Offset: 0xAB99D8 VA: 0xAB99D8

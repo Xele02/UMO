@@ -47,5 +47,9 @@ public class OCLHKHAMDHF : KLFDBFMNLBL
 	// public override bool NFKFOODCJJB() { }
 
 	// // RVA: 0x1B304E4 Offset: 0x1B304E4 VA: 0x1B304E4 Slot: 11
-	// public override FENCAJJBLBH PFAKPFKJJKA() { }
+	public override FENCAJJBLBH PFAKPFKJJKA()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 }
