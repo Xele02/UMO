@@ -35,7 +35,7 @@ namespace XeApp.Core
 			subScene = null;
 			enableFade = true;
 			mNextSceneName = null;
-			updateState = this.UpdateEnter; // ?
+			updateState = this.UpdateEnter;
 			SystemManager.Create(systemManagerPrefab);
 			GameManager.Create(gameManagerPrefab);
 			if(GetComponent<Camera>() != null)

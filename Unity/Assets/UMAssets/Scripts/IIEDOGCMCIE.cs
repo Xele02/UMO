@@ -10,7 +10,9 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
 	// // RVA: 0x120437C Offset: 0x120437C VA: 0x120437C
 	public void MCDJJPAKBLH(string CJEKGLGBIHF_path)
     {
-		UnityEngine.Debug.LogError("TODO");
+        PLOOEECNHFB = false;
+        BIOFMLDLNKD = false;
+        N.a.StartCoroutine(ODDEPBIJHOE_Load(CJEKGLGBIHF_path));
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BA26C Offset: 0x6BA26C VA: 0x6BA26C
@@ -56,7 +58,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
             }
             BIOFMLDLNKD = KHEKNNFCAOI_Load(request.Result);
             PLOOEECNHFB = true;
-            if(!BIOFMLDLNKD)
+            if(BIOFMLDLNKD)
             {
                 yield break;
             }

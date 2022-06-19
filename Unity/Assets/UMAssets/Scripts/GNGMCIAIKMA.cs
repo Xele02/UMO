@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class GNGMCIAIKMA
 {
@@ -37,7 +38,10 @@ public class GNGMCIAIKMA
 	}
 
 	// // RVA: 0xAB9974 Offset: 0xAB9974 VA: 0xAB9974
-	// public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xAB99D8 Offset: 0xAB99D8 VA: 0xAB99D8
 	// public bool GBCPDBJEDHL() { }

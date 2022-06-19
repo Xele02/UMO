@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine;
 
 public class KDHGBOOECKC
 {
@@ -28,7 +29,10 @@ public class KDHGBOOECKC
 	// public KDHGBOOECKC.CBJJINJDFDC NGHMGNMNNEP { get; private set; } // 0x60 DJGNEFOADCE PNBNEBNMCJA EGJIKLMEBNF
 
 	// // RVA: 0x1026FE4 Offset: 0x1026FE4 VA: 0x1026FE4
-	// public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x10271C0 Offset: 0x10271C0 VA: 0x10271C0
 	// public bool MDKADMHKOLN(OKGLGHCBCJP LKMHPJKIFDN, BBHNACPENDM LDEGEHAEALK, BOPFPIHGJMD.MLBMHDCCGHI FGHGMHPNEMG, int MLDPDLPHJPM, bool FAGEBAKNAOB = False, int KDLDOLENIDG = 0, int AHHJLDLAPAN = 0, long KOOEOKEDJDO = 0, bool AGELHLFEJNG = True) { }

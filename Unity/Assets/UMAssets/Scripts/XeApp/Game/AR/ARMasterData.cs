@@ -24,8 +24,7 @@ namespace XeApp.Game.AR
 		// RVA: 0xBBA784 Offset: 0xBBA784 VA: 0xBBA784
 		public bool IsReady()
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return false;
+			return m_isReady;
 		}
 
 		// // RVA: 0xBBA78C Offset: 0xBBA78C VA: 0xBBA78C
@@ -77,6 +76,7 @@ namespace XeApp.Game.AR
 				if(onSuccess != null)
 					onSuccess();
 				m_isReady = true;
+				UnityEngine.Debug.LogError("End Coroutine_Install");
 				yield break;
 			}
 			if(ignoreError)
@@ -104,8 +104,46 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBBA8C4 Offset: 0xBBA8C4 VA: 0xBBA8C4
 		private IEnumerator Coroutine_LoadTarFile(string path, Action<byte[]> onFinished)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			yield break;
+			// private byte[] <dataBytes>5__2; // 0x1C
+			// private IIEDOGCMCIE <tar>5__3; // 0x20
+			//0xBBC28C
+
+			byte[] dataBytes = null;
+			IIEDOGCMCIE tar = new IIEDOGCMCIE();
+			tar.MCDJJPAKBLH(path);
+			while(!tar.PLOOEECNHFB)
+			{
+				yield return null;
+			}
+			if(tar.NPNNPNAIONN == false)
+			{
+				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
+					//0xBBB2D0
+					return _.OPFGFINHFCE_Name.Contains("schema_hash.bytes");
+				});
+				if(file != null)
+				{
+					if(ValidateSchemaHash(file.DBBGALAPFGC_Data, m_name))
+					{
+						CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File db_file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
+							//0xBBB100
+							return _.OPFGFINHFCE_Name.Contains(string.Format("{0}.bytes", m_name));
+						});
+						if(db_file != null)
+						{
+							dataBytes = db_file.DBBGALAPFGC_Data;
+						}
+						if(onFinished != null)
+						{
+							onFinished(dataBytes);
+						}
+					}
+					else
+					{
+						UnityEngine.Debug.LogError("Error validating schema");
+					}
+				}
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741BB4 Offset: 0x741BB4 VA: 0x741BB4
@@ -249,10 +287,27 @@ namespace XeApp.Game.AR
 		}
 
 		// // RVA: 0xBBADA4 Offset: 0xBBADA4 VA: 0xBBADA4
-		// private bool ValidateSchemaHash(byte[] hashBytes, string name) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x741C2C Offset: 0x741C2C VA: 0x741C2C
-		// // RVA: 0xBBB100 Offset: 0xBBB100 VA: 0xBBB100
-		// private bool <Coroutine_LoadTarFile>b__14_1(CBBJHPBGBAJ.JBCFNCNGLPM _) { }
+		private bool ValidateSchemaHash(byte[] hashBytes, string name)
+		{
+			BNBONBECPKB b = BNBONBECPKB.HEGEKFMJNCC(hashBytes);
+			LPMLJGGJGGK[] l = b.GMLFFMJMPCC;
+			for(int i = 0; i < l.Length; i++)
+			{
+				if(l[i].OPFGFINHFCE == name)
+				{
+					for(int j = 0; j < LIGPJAIDNOA.MHDFCBBFMOA.Length; j++)
+					{
+						if(LIGPJAIDNOA.MHDFCBBFMOA[j] == name)
+						{
+							if(LIGPJAIDNOA.INPAHCHFIHM[j] == l[i].IOIMHJAOKOO)
+								return true;
+							else
+								return false;
+						}
+					}
+				}
+			}
+			return false;
+		}
 	}
 }

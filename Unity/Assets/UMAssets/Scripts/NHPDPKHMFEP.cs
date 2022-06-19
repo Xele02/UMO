@@ -1,3 +1,4 @@
+
 public class NHPDPKHMFEP
 {
 	public enum CJDLIFEENBF
@@ -48,7 +49,10 @@ public class NHPDPKHMFEP
 		} }
 
 	// // RVA: 0x1897918 Offset: 0x1897918 VA: 0x1897918
-	// public void IJBGPAENLJA() { }
+	public void IJBGPAENLJA()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x1897998 Offset: 0x1897998 VA: 0x1897998
 	// private bool AIJFDCIDDLO(SakashoErrorId PPFNGGCBJKC) { }

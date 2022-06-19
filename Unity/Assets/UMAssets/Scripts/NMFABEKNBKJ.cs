@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class NMFABEKNBKJ
 {
@@ -40,7 +41,10 @@ public class NMFABEKNBKJ
 	// private void FCPBCDOKOPD(NMFABEKNBKJ.LOICDBFAAJL PPFNGGCBJKC, string IPBHCLIHAPG = "") { }
 
 	// // RVA: 0x1CAB7E4 Offset: 0x1CAB7E4 VA: 0x1CAB7E4
-	// public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0x1CAB858 Offset: 0x1CAB858 VA: 0x1CAB858
 	public void OJKIKODJJCD(IMCBBOAFION PONEMLJPAOE, IMCBBOAFION CNJANCCFBIL)

@@ -1,3 +1,5 @@
+using FlatBuffers;
+using System.Collections.Generic;
 
 public class BNBONBECPKB
 {
@@ -6,7 +8,22 @@ public class BNBONBECPKB
 	// RVA: 0x19CA924 Offset: 0x19CA924 VA: 0x19CA924
 	public static BNBONBECPKB HEGEKFMJNCC(byte[] NIODCJLINJN)
     {
-        UnityEngine.Debug.LogError("TODO");
-        return null;
+        ByteBuffer buffer = new ByteBuffer(NIODCJLINJN);
+        ODNNPHLAMGH table = ODNNPHLAMGH.GetRootAsODNNPHLAMGH(buffer);
+        BNBONBECPKB b = new BNBONBECPKB();
+
+        List<LPMLJGGJGGK> l = new List<LPMLJGGJGGK>();
+
+        for(int i = 0; i < table.AMGOKLNCCPHLength; i++)
+        {
+            LPMLJGGJGGK obj = new LPMLJGGJGGK();
+            obj.OPFGFINHFCE = table.GetAMGOKLNCCPH(i).IIDCFMHCPLJ;
+            obj.IOIMHJAOKOO = table.GetAMGOKLNCCPH(i).PAPMBEBHHIG;
+            l.Add(obj);
+        }
+
+        b.GMLFFMJMPCC = l.ToArray();
+        
+        return b;
     }
 }

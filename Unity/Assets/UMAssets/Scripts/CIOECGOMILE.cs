@@ -1,6 +1,7 @@
 using System.Text;
 using System.Collections.Generic;
 using System;
+using UnityEngine;
 
 public class CIOECGOMILE
 {
@@ -103,10 +104,16 @@ public class CIOECGOMILE
 	// public void DJICHKCLMCD(List<KPPFJJJAFFC> PIPMPLFMCPL) { }
 
 	// // RVA: 0xFFB088 Offset: 0xFFB088 VA: 0xFFB088
-	// public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xFFB4B0 Offset: 0xFFB4B0 VA: 0xFFB4B0
-	// public void BAGMHFKPFIF() { }
+	public void BAGMHFKPFIF()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xFFB7A8 Offset: 0xFFB7A8 VA: 0xFFB7A8
 	public void ODJCMJBNDOK(IMCBBOAFION BHFHGFKBOHH, IMCBBOAFION FLENFOEFHPL, DJBHIFLHJLK MOBEEPPKFLG, bool JKJEFPNIPFO = false)

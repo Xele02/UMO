@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class JEPBIIJDGEF
 {
@@ -8,7 +9,10 @@ public class JEPBIIJDGEF
 	public static JEPBIIJDGEF HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF JEPBIIJDGEF OKPMHKNCNAL
 
 	// // RVA: 0x1C3957C Offset: 0x1C3957C VA: 0x1C3957C
-	// public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x1C33488 Offset: 0x1C33488 VA: 0x1C33488
 	public IKDICBBFBMI OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP INDDJNMPONH, KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/)

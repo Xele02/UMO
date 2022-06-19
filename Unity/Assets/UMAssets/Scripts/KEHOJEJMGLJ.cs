@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System;
+using UnityEngine;
 
 public class KEHOJEJMGLJ
 {
@@ -83,7 +84,10 @@ public class KEHOJEJMGLJ
 	// public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x20 EAIFOAGPGGH KCLBNOKEPIG OCIMGEFKKLM
 
 	// // RVA: 0xE87F08 Offset: 0xE87F08 VA: 0xE87F08
-	// public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xE882B8 Offset: 0xE882B8 VA: 0xE882B8 Slot: 1
 	// protected override void Finalize() { }

@@ -1,3 +1,4 @@
+using UnityEngine;
 
 public class CNGFKOJANNP
 {
@@ -20,7 +21,10 @@ public class CNGFKOJANNP
 	}
 
 	// // RVA: 0x175B490 Offset: 0x175B490 VA: 0x175B490
-	// public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x175B6FC Offset: 0x175B6FC VA: 0x175B6FC
 	public void EGDJHGIAFGO()

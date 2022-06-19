@@ -171,66 +171,68 @@ public class IOGKADECKOP
 		GameManager.Instance.fullscreenFader.Fade(0.0f, Color.black);
 		GameManager.Instance.SetupResolutionDefault();
 		
-		if(GameManager.Instance.IsSystemInitialized)
+		while(!GameManager.Instance.IsSystemInitialized)
 		{
-			SoundResource.DecCacheClear();
-			ConfigManager.SetUserData();
-			GameManager.Instance.ChangePopupPriority(true);
-			GameManager.Instance.SetSystemCanvasRenderMode(RenderMode.ScreenSpaceCamera);
-			GameManager.Instance.SetTouchEffectVisible(true);
-			DANMJLOBLIE.StartCoroutine(BLJICEOFNMM_LoadLayoutTitle());
-			DANMJLOBLIE.StartCoroutine(IMDAHCEDGFK_Coroutine_TitleLogo());
-			if(AppEnv.IsCBT())
+			yield return null;
+		}
+		SoundResource.DecCacheClear();
+		ConfigManager.SetUserData();
+		GameManager.Instance.ChangePopupPriority(true);
+		GameManager.Instance.SetSystemCanvasRenderMode(RenderMode.ScreenSpaceCamera);
+		GameManager.Instance.SetTouchEffectVisible(true);
+		DANMJLOBLIE.StartCoroutine(BLJICEOFNMM_LoadLayoutTitle());
+		DANMJLOBLIE.StartCoroutine(IMDAHCEDGFK_Coroutine_TitleLogo());
+		if(AppEnv.IsCBT())
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
+		else
+		{
+			bool BEKAMBBOLBO = false;
+			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.OLBAIKLLIFE = true;
+			NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN(() => {
+				//0xA08F1C
+				BEKAMBBOLBO = true;
+			}, () => {
+				// 0xA08F28
+				BEKAMBBOLBO = true;
+			}, true, false);
+			while(!BEKAMBBOLBO)
 			{
+				yield return null;
+			}
+			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.OLBAIKLLIFE = false;
+			OKDMEMPECDO = true;
+			while(!StorageSupport.IsAvailableStorage())
+			{
+				yield return null;
 				UnityEngine.Debug.LogError("TODO");
 			}
-			else
+			ManaAdAPIHelper.Instance.SendLaunchEvent();
+			ManaAdAPIHelper.Instance.TryPendingSendResumeEvent();
+			BEKAMBBOLBO = false;
+			NMFABEKNBKJ.HHCJCDFCLOB.OJKIKODJJCD(() => {
+				//0xA08F34
+				BEKAMBBOLBO = true;
+			}, () => {
+				return;
+			});
+			while(!BEKAMBBOLBO)
 			{
-				bool BEKAMBBOLBO = false;
-				NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.OLBAIKLLIFE = true;
-				NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN(() => {
-					//0xA08F1C
-					BEKAMBBOLBO = true;
-				}, () => {
-					// 0xA08F28
-					BEKAMBBOLBO = true;
-				}, true, false);
-				while(!BEKAMBBOLBO)
-				{
-					yield return null;
-				}
-				NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.OLBAIKLLIFE = false;
-				OKDMEMPECDO = true;
-				while(!StorageSupport.IsAvailableStorage())
-				{
-					UnityEngine.Debug.LogError("TODO");
-				}
-				ManaAdAPIHelper.Instance.SendLaunchEvent();
-				ManaAdAPIHelper.Instance.TryPendingSendResumeEvent();
-				BEKAMBBOLBO = false;
-				NMFABEKNBKJ.HHCJCDFCLOB.OJKIKODJJCD(() => {
-					//0xA08F34
-					BEKAMBBOLBO = true;
-				}, () => {
-					return;
-				});
-				while(!BEKAMBBOLBO)
-				{
-					yield return null;
-				}
-				if(IOSBridge.GetOSMajorVersion() < 14)
-					yield break;
-				bool HFPLKFCPHDK = true;
-				com.adjust.sdk.Adjust.requestTrackingAuthorizationWithCompletionHandler((int LHMDABPNDDH) => {
-					//0xA08F5C
-					if(LHMDABPNDDH == 3)
-						com.adjust.sdk.Adjust.setEnabled(true);
-					HFPLKFCPHDK = false;
-				}, "Adjust");
-				while(HFPLKFCPHDK)
-				{
-					yield return null;
-				}
+				yield return null;
+			}
+			if(IOSBridge.GetOSMajorVersion() < 14)
+				yield break;
+			bool HFPLKFCPHDK = true;
+			com.adjust.sdk.Adjust.requestTrackingAuthorizationWithCompletionHandler((int LHMDABPNDDH) => {
+				//0xA08F5C
+				if(LHMDABPNDDH == 3)
+					com.adjust.sdk.Adjust.setEnabled(true);
+				HFPLKFCPHDK = false;
+			}, "Adjust");
+			while(HFPLKFCPHDK)
+			{
+				yield return null;
 			}
 		}
 	}
@@ -456,7 +458,6 @@ public class IOGKADECKOP
 	// private NHPDPKHMFEP MGPMDNDOBFI; // 0x2C
 	// private int FHACAEAHPIA; // 0x30
 		//0xA0B93C
-		UnityEngine.Debug.LogError("PFEKBBONCJJ_Coroutine_GameStart");
 		// 0
 		PGIGNJDPCAH.NNOBACMJHDM(0);
 		PGIGNJDPCAH.IPJMPBANBPP = true;

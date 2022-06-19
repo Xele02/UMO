@@ -1,3 +1,4 @@
+using UnityEngine;
 
 public class EOHDAOAJOHH
 {
@@ -16,7 +17,10 @@ public class EOHDAOAJOHH
 	public bool MOEDFPOIJDM { get; private set; } // 0xE KNECAFLJOBG GNMEIHEKNDI KNFPFPAKEJB
 
 	// // RVA: 0xFB76C4 Offset: 0xFB76C4 VA: 0xFB76C4
-	// public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xFB774C Offset: 0xFB774C VA: 0xFB774C
 	// public void OJKIKODJJCD() { }

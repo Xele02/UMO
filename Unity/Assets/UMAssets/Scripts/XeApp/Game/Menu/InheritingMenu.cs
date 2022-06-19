@@ -14,7 +14,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13DE1B8 Offset: 0x13DE1B8 VA: 0x13DE1B8
 		public static InheritingMenu Create(Transform parent)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO InheritingMenu Create");
 			return null;
 		}
 

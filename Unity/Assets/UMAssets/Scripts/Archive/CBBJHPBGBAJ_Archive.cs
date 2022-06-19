@@ -19,11 +19,10 @@ public class CBBJHPBGBAJ_Archive
 	// RVA: 0x18F7E78 Offset: 0x18F7E78 VA: 0x18F7E78
 	public bool KHEKNNFCAOI_Load(byte[] GANPCOAGBBK_db)
 	{
-		UnityEngine.Debug.LogError("TODO");
-		//if(BOBCNJIPPJN.AGJJGJCIMKI_IsCompressed(GANPCOAGBBK_db))
-		//{
-		//	GANPCOAGBBK_db = BOBCNJIPPJN.JCBCBNFPJDH_Decompress(GANPCOAGBBK_db);
-		//}
+		if(BOBCNJIPPJN.AGJJGJCIMKI(GANPCOAGBBK_db))
+		{
+			GANPCOAGBBK_db = BOBCNJIPPJN.JCBCBNFPJDH(GANPCOAGBBK_db);
+		}
 		KGHAJGGMPKL_Files.Clear();
 		int offset = 0;
 		while(offset < GANPCOAGBBK_db.Length)
@@ -88,8 +87,8 @@ public class CBBJHPBGBAJ_Archive
 		int b = 0;
 		for(int i = 0; i < str.Length - 1; i++)
 		{
-			char c = str[str.Length - 1 - i];
-			int num = (int)c - 48;
+			byte c = (byte)str[str.Length - 2 - i];
+			byte num = (byte)(c - 48);
 			b = num * d + b;
 			d = d << 3;
 		}

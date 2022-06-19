@@ -4,7 +4,7 @@ public class StorageSupport
 	public static bool IsAvailableStorage()
     {
         UnityEngine.Debug.LogError("TODO");
-        return false;
+        return true;
     }
 
 	// // RVA: 0x2E72290 Offset: 0x2E72290 VA: 0x2E72290
