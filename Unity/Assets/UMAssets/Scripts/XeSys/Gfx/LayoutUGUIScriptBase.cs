@@ -31,8 +31,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x1F04928 Offset: 0x1F04928 VA: 0x1F04928
 		public bool IsLoaded()
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return false;
+			return isLoaded;
 		}
 
 		// // RVA: 0x1F04930 Offset: 0x1F04930 VA: 0x1F04930

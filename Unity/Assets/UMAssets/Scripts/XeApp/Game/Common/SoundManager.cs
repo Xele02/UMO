@@ -62,7 +62,7 @@ namespace XeApp.Game.Common
 		{
     		UnityEngine.Debug.LogError("Enter SurveyLatencyEstimator");
 			UnityEngine.Debug.LogWarning("TODO SoundManager.SurveyLatencyEstimator");
-    		UnityEngine.Debug.LogError("Enter Exit");
+    		UnityEngine.Debug.LogError("Exit SurveyLatencyEstimator");
 			yield break;
 		}
 

@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System;
 
 namespace XeSys
 {
@@ -42,10 +44,19 @@ namespace XeSys
 		}
 
 		// // RVA: 0x239B4AC Offset: 0x239B4AC VA: 0x239B4AC
-		// private void EraseInfo(ResourcesInfo info) { }
+		private void EraseInfo(ResourcesInfo info)
+		{
+			loadingList.Remove(info);
+		}
 
 		// // RVA: 0x239B52C Offset: 0x239B52C VA: 0x239B52C
-		// private void UpdateInfo(ResourcesInfo info) { }
+		private void UpdateInfo(ResourcesInfo info)
+		{
+			info.Update();
+			if(!info.isLoaded)
+				return;
+			loadedEraseList.Add(info);
+		}
 
 		// // RVA: 0x239B5E4 Offset: 0x239B5E4 VA: 0x239B5E4
 		public void Initialize()
@@ -54,20 +65,75 @@ namespace XeSys
 		}
 
 		// // RVA: 0x239B860 Offset: 0x239B860 VA: 0x239B860
-		// public void Request(string path, FileLoadedPostProcess callback) { }
+		public void Request(string path, FileLoadedPostProcess callback)
+		{
+			Request(path, callback, null, 0);
+		}
 
 		// // RVA: 0x239B884 Offset: 0x239B884 VA: 0x239B884
-		// public void Request(string path, FileLoadedPostProcess callback, Dictionary<string, string> args, int argValue) { }
+		public void Request(string path, FileLoadedPostProcess callback, Dictionary<string, string> args, int argValue)
+		{
+			string newPath = ConvertResourcesPath(path);
+			ResourcesInfo ri = new ResourcesInfo(path, callback, args, argValue);
+			requestList.Add(ri);
+		}
 
 		// // RVA: 0x239BA2C Offset: 0x239BA2C VA: 0x239BA2C
-		// public void Load() { }
+		public void Load()
+		{
+			isLoading = true;
+			if(m_delayLoad != null)
+				return;
+			m_delayLoad = DelayLoad();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x69171C Offset: 0x69171C VA: 0x69171C
 		// // RVA: 0x239BA5C Offset: 0x239BA5C VA: 0x239BA5C
-		// private IEnumerator DelayLoad() { }
+		private IEnumerator DelayLoad()
+		{
+			UnityEngine.Debug.LogError("Enter DelayLoad");
+			//0x239BE54
+			while(true)
+			{
+				int countToDo = System.Math.Min(requestList.Count, concurrentLimit - loadingList.Count);
+				if(countToDo > 0)
+				{
+					for(int i = 0; i < countToDo; i++)
+					{
+						Load(requestList[i]);
+					}
+					requestList.RemoveRange(0, countToDo);
+				}
+				for(int i = 0; i < loadingList.Count; i++)
+				{
+					UpdateInfo(loadingList[i]);
+				}
+				if(loadedEraseList.Count > 0)
+				{
+					for(int i = 0; i < loadedEraseList.Count; i++)
+					{
+						EraseInfo(loadedEraseList[i]);
+					}
+					loadedEraseList.Clear();
+				}
+				int remain = requestList.Count;
+				if(remain == 0)
+					remain = loadingList.Count;
+				if(remain == 0)
+					break;
+				yield return null;
+			}
+			isLoading = false;
+
+			UnityEngine.Debug.LogError("Exit DelayLoad");
+		}
 
 		// // RVA: 0x239BB08 Offset: 0x239BB08 VA: 0x239BB08
-		// private void Load(ResourcesInfo info) { }
+		private void Load(ResourcesInfo info)
+		{
+			info.LoadAsync();
+			loadingList.Add(info);
+		}
 
 		// // RVA: 0x239BBB8 Offset: 0x239BBB8 VA: 0x239BBB8 Slot: 4
 		public int Load(string path, FileLoadedPostProcess callback)
@@ -94,6 +160,14 @@ namespace XeSys
 		// private IEnumerator Unload() { }
 
 		// // RVA: 0x239B960 Offset: 0x239B960 VA: 0x239B960
-		// private string ConvertResourcesPath(string path) { }
+		private string ConvertResourcesPath(string path)
+		{
+			string ext = Path.GetExtension(path);
+			if(!string.IsNullOrEmpty(ext))
+			{
+				return path.Replace(ext, "");
+			}
+			return path;
+		}
 	}
 }

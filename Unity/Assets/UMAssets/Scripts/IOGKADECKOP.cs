@@ -442,9 +442,12 @@ public class IOGKADECKOP
 		
 		while(!NOFPJPHIPBD.TitleLogo.IsClose)
 		{
-			NOFPJPHIPBD.TitleLogo.Hide();
-			LKFGMDGFKDP = false;
+			yield return null;
 		}
+		
+		NOFPJPHIPBD.TitleLogo.Hide();
+		LKFGMDGFKDP = false;
+
         UnityEngine.Debug.LogError("Exit IMDAHCEDGFK_Coroutine_TitleLogo");
 	}
 

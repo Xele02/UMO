@@ -69,6 +69,7 @@ public class NMFABEKNBKJ
 		//0x1CADBC8
 		UnityEngine.Debug.LogWarning("TODO LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
     	UnityEngine.Debug.LogError("Exit LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
+		PONEMLJPAOE();
 		yield break;
 	}
 

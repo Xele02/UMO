@@ -3,6 +3,7 @@ using XeApp.Game.Menu;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using XeSys;
 
 namespace XeApp.Game.Title
 {
@@ -27,7 +28,7 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE3646C Offset: 0xE3646C VA: 0xE3646C
 		public void LayoutSetup()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO LayoutTitleController LayoutSetup");
 		}
 
 		// // RVA: 0xE36478 Offset: 0xE36478 VA: 0xE36478
@@ -64,6 +65,7 @@ namespace XeApp.Game.Title
     		UnityEngine.Debug.LogError("Enter LoadLayoutScreen");
 			UnityEngine.Debug.LogWarning("TODO LoadLayoutScreen");
     		UnityEngine.Debug.LogError("Exit LoadLayoutScreen");
+			callback();
 			yield break;
 		}
 
@@ -74,6 +76,7 @@ namespace XeApp.Game.Title
     		UnityEngine.Debug.LogError("Enter LoadLayoutScreenTap");
 			UnityEngine.Debug.LogWarning("TODO LoadLayoutScreenTap");
     		UnityEngine.Debug.LogError("Exit LoadLayoutScreenTap");
+			callback();
 			yield break;
 		}
 
@@ -84,6 +87,7 @@ namespace XeApp.Game.Title
     		UnityEngine.Debug.LogError("Enter LoadLayoutButtons");
 			UnityEngine.Debug.LogWarning("TODO LoadLayoutButtons");
     		UnityEngine.Debug.LogError("Exit LoadLayoutButtons");
+			callback();
 			yield break;
 		}
 
@@ -94,6 +98,7 @@ namespace XeApp.Game.Title
     		UnityEngine.Debug.LogError("Enter LoadLayoutTexts");
 			UnityEngine.Debug.LogWarning("TODO LoadLayoutTexts");
     		UnityEngine.Debug.LogError("Exit LoadLayoutTexts");
+			callback();
 			yield break;
 		}
 
@@ -104,6 +109,7 @@ namespace XeApp.Game.Title
     		UnityEngine.Debug.LogError("Enter LoadLayoutCopyRight");
 			UnityEngine.Debug.LogWarning("TODO LoadLayoutCopyRight");
     		UnityEngine.Debug.LogError("Exit LoadLayoutCopyRight");
+			callback();
 			yield break;
 		}
 
@@ -114,6 +120,7 @@ namespace XeApp.Game.Title
     		UnityEngine.Debug.LogError("Enter LoadLayoutLbButtons");
 			UnityEngine.Debug.LogWarning("TODO LoadLayoutLbButtons");
     		UnityEngine.Debug.LogError("Exit LoadLayoutLbButtons");
+			callback();
 			yield break;
 		}
 
@@ -122,9 +129,23 @@ namespace XeApp.Game.Title
 		public IEnumerator LoadLayoutTitleLogo(Action callback)
 		{
     		UnityEngine.Debug.LogError("Enter LoadLayoutTitleLogo");
-			UnityEngine.Debug.LogWarning("TODO LoadLayoutTitleLogo");
+			//0xE39440
+			yield return LoadLayoutBase("Layout/startup/root_start_logo_layout_root", (GameObject instance) => {
+				//0xE37768
+				TitleLogo = instance.GetComponent<LayoutTitleLogo>();
+				titleObjectList.Add(instance);
+			});
+
+			while(!TitleLogo.IsLoaded())
+			{
+				yield return null;
+			}
+			if(callback != null)
+			{
+				callback();
+			}
+
     		UnityEngine.Debug.LogError("Exit LoadLayoutTitleLogo");
-			yield break;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B34A8 Offset: 0x6B34A8 VA: 0x6B34A8
@@ -134,6 +155,7 @@ namespace XeApp.Game.Title
     		UnityEngine.Debug.LogError("Enter LoadLayoutArButton");
 			UnityEngine.Debug.LogWarning("TODO LoadLayoutArButton");
     		UnityEngine.Debug.LogError("Exit LoadLayoutArButton");
+			callback();
 			yield break;
 		}
 
@@ -144,15 +166,56 @@ namespace XeApp.Game.Title
     		UnityEngine.Debug.LogError("Enter LoadLayoutMonthlyPass");
 			UnityEngine.Debug.LogWarning("TODO LoadLayoutMonthlyPass");
     		UnityEngine.Debug.LogError("Exit LoadLayoutMonthlyPass");
+			callback();
 			yield break;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B3598 Offset: 0x6B3598 VA: 0x6B3598
 		// // RVA: 0xE371C8 Offset: 0xE371C8 VA: 0xE371C8
-		// private IEnumerator LoadLayoutBase(string path, Action<GameObject> callback) { }
+		private IEnumerator LoadLayoutBase(string path, Action<GameObject> callback)
+		{
+    		UnityEngine.Debug.LogError("Enter LoadLayoutBase");
+			//0xE3843C
+
+			bool isLoading = false;
+			GameObject obj = null;
+			//0xE37EFC
+			LoadLayoutInner(path, (GameObject instance) => {
+				//0xE37EFC
+				if(Parent != null)
+				{
+					instance.transform.SetParent(Parent.transform, false);
+					instance.transform.SetSiblingIndex(2);
+					obj = instance;
+				}
+				isLoading = true;
+				titleObjectList.Add(instance);
+			});
+			while(!isLoading)
+			{
+				yield return null;
+			}
+			if(callback != null)
+			{
+				callback(obj);
+			}
+
+    		UnityEngine.Debug.LogError("Exit LoadLayoutBase");
+		}
 
 		// // RVA: 0xE372A8 Offset: 0xE372A8 VA: 0xE372A8
-		// private void LoadLayoutInner(string resourceName, Action<GameObject> callback) { }
+		private void LoadLayoutInner(string resourceName, Action<GameObject> callback)
+		{
+			ResourcesManager.Instance.Request(resourceName, (FileResultObject flo) => {
+				// 0xE380B4
+				GameObject obj = UnityEngine.Object.Instantiate(flo.unityObject) as GameObject;
+				if(callback != null)
+					callback(obj);
+				titleObjectList.Add(obj);
+				return true;
+			});
+			ResourcesManager.Instance.Load();
+		}
 
 		// // RVA: 0xE37424 Offset: 0xE37424 VA: 0xE37424
 		// public void PopupShowSupport(Action closeCallback) { }
