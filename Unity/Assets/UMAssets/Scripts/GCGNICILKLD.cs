@@ -17,7 +17,7 @@ public class GCGNICILKLD
 	public static uint LAFJPOLCKLP = 0x14577faf; // 0x8
 	public static long PMMJABPFGOA = 0x74841251; // 0x10
 
-	public string OIEAICNAMNB { get {
+	public string OIEAICNAMNB { get { // name
         if(PGDPCHNHMKI != null)
             return PGDPCHNHMKI.DNJEJEANJGL;
         return null;
@@ -27,12 +27,12 @@ public class GCGNICILKLD
             return ELLCDOJOGKL.DNJEJEANJGL;
         return null;
     } } //0x16AAC78 NJDFIHBJDOG
-	public string POEGMFKLFJG { get {
+	public string POEGMFKLFJG { get { // md5
         if(NKLIKAENLNC != null)
             return NKLIKAENLNC.DNJEJEANJGL;
         return null;
     } } //0x16AAC90 NCFJKJMKANL
-	public long CALJIGKCAAH { get {
+	public long CALJIGKCAAH { get { // last update
         return BBEGLBMOBOF ^ CFKONDFCBEB;
     } set {
         CFKONDFCBEB = BBEGLBMOBOF ^ value;

@@ -39,7 +39,7 @@ public class BBGDKLLEPIB
 	public static string FNHCECHLIJI = "/db/ar_marker.dat"; // 0x10
 	public static string NLOICACDGNI = "/db/ar_event.dat"; // 0x14
 	private static string JCMJBMBMJAK = null; // 0x18
-	public string OCOGBOHOGGE; // 0x10
+	public string OCOGBOHOGGE; // 0x10 // db name?
 	public List<long> PFMPODNDFIB = new List<long>(); // 0x14
 	public long POCKENHKOBL; // 0x18
 	public static bool FJDOHLADGFI = true; // 0x20
@@ -66,9 +66,9 @@ public class BBGDKLLEPIB
 		}
 		return JCMJBMBMJAK;
 	} } //  FHOCCNDOAPJ 0xF17474
-	public static string LHJNPJFNDNA { get; private set; } // 0x1C HCGGEEMOKFN // JBIPCECPFGN 0xF1762C ONAJIIACAEB 0xF176B8
-	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; }  // 0x20 KPEKONPJHCL LKCDOGAFPNM 0xF17894  NPJJMDFAIII 0xF1789C
-	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x24 EAIFOAGPGGH KCLBNOKEPIG 0xF178A4 OCIMGEFKKLM 0xF178AC
+	public static string LHJNPJFNDNA { get; private set; } // 0x1C HCGGEEMOKFN // JBIPCECPFGN 0xF1762C ONAJIIACAEB 0xF176B8  // Rev?
+	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; }  // 0x20 KPEKONPJHCL LKCDOGAFPNM 0xF17894  NPJJMDFAIII 0xF1789C // Update percent callback
+	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x24 EAIFOAGPGGH KCLBNOKEPIG 0xF178A4 OCIMGEFKKLM 0xF178AC // Error CB
 
 	// // RVA: 0xF17748 Offset: 0xF17748 VA: 0xF17748
 	// public bool KHJHKNLEOAB(long JHNMKKNEENE) { }
@@ -166,7 +166,7 @@ public class BBGDKLLEPIB
 				{
 					KEHOJEJMGLJ.AFKGMCBJBJA();
 				}
-				PKLPEIBEGNO();
+				PKLPEIBEGNO(); // save used db version on disk
 				GC.Collect();
 				//goto LAB_00f1b02c;
 				if(BHFHGFKBOHH != null)
@@ -180,8 +180,8 @@ public class BBGDKLLEPIB
 
 			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 				//0xF1A184
-				DIDACHONHJA(ref FAOOOLDDBBB, OGCDNCDMLCA);
-				IAPEABPJPOE(COJNCNGHIJC.NFEAMMJIMPG, ref FAOOOLDDBBB);
+				DIDACHONHJA(ref FAOOOLDDBBB, OGCDNCDMLCA); // List files reccursively in /mx into FAOOOLDDBBB
+				IAPEABPJPOE(COJNCNGHIJC.NFEAMMJIMPG, ref FAOOOLDDBBB); // Check files md5 on disk
 				KOMKKBDABJP = true;
 			});
 			// L293
@@ -193,7 +193,7 @@ public class BBGDKLLEPIB
 				KOMKKBDABJP = false;
 				NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 					//0xF1A2B8
-					CIDPPOGCODB(FAOOOLDDBBB);
+					CIDPPOGCODB(FAOOOLDDBBB); // Delete files in FAOOOLDDBBB
 					KOMKKBDABJP = true;
 				});
 				//LAB_00f1b234
@@ -222,35 +222,286 @@ public class BBGDKLLEPIB
 		MHHFMCPJONH.LAOEGNLOJHC();
 		yield return null;
 		//4
-		MHHFMCPJONH.FBANBDCOEJL();
-		//L.312
-		if(MHHFMCPJONH.CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.FEJIMBDPMKI/*2*/)
+		while(true)
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			MHHFMCPJONH.FBANBDCOEJL();
+			//L.312
+			if(MHHFMCPJONH.CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.FEJIMBDPMKI/*2*/)
+			{
+				OEPPEGHGNNO(3, 100);
+				if(MHHFMCPJONH != null)
+					MHHFMCPJONH.Dispose();
+				OEPPEGHGNNO(2, 100);
+				KOMKKBDABJP = false;
+				NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+					//0xF1A474
+					CIDPPOGCODB(FAOOOLDDBBB);
+					KOMKKBDABJP = true;
+				});
+				//goto LAB_00f1ac88;
+				//10
+				while(!KOMKKBDABJP)
+					yield return null;
+				LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK.AJBPBEALBOB;
+				if(GBCDHECMDMC())
+				{
+					KEHOJEJMGLJ.AFKGMCBJBJA();
+				}
+				PKLPEIBEGNO(); // save used db version on disk
+				GC.Collect();
+				//LAB_00f1b02c:
+				if(BHFHGFKBOHH != null)
+					BHFHGFKBOHH();
+				UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
+				yield break;
+			}
+			//L361
+			if(MHHFMCPJONH.CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.LPLEIJIFOKN/*4*/)
+			{
+				int APGOAMNGFFF = 0;
+				string errorType = "network";
+				if(MHHFMCPJONH.BHICPONFJKM)
+					errorType = "storage";
+				int diskSpace = StorageSupport.GetAvailableStorageSizeMB();
+				if(diskSpace > -1 && diskSpace < 50)
+					errorType = "storage";
+				MAIHLKPEHJN(errorType, () => {
+					//0xF1A4DC
+					APGOAMNGFFF = 1;
+				}, () => {
+					//0xF1A4E8
+					APGOAMNGFFF = -1;
+				});
+				//goto LAB_00f1ab74;
+				//5
+				while(!APGOAMNGFFF)
+					yield return null;
+				if(APGOAMNGFFF != 1)
+				{
+					//goto LAB_00f1b7e4;
+					MHHFMCPJONH.Dispose();
+					UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+					yield break;
+				}
+				MHHFMCPJONH.PBIMGBKLDPP();
+				//goto LAB_00f1abe8;
+				//6
+				while(MHHFMCPJONH.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+				{
+					MHHFMCPJONH.FBANBDCOEJL();
+					yield return null;
+				}
+				//goto LAB_00f1b81c;
+				MHHFMCPJONH.LAOEGNLOJHC();
+				// To 4
+				continue;
+			}
+			
+			//L410
+			OEPPEGHGNNO(3, MHHFMCPJONH.HCAJCKCOCHC());
+			if(MHHFMCPJONH.MNFGKBAEFFL() || MHHFMCPJONH.KAMPHNKAHAB)
+			{
+				//LAB_00f1b614:
+				MHHFMCPJONH.PBIMGBKLDPP();
+				//goto LAB_00f1ac10;
+				//7
+				while(MHHFMCPJONH.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+				{
+					MHHFMCPJONH.FBANBDCOEJL();
+					yield return null;
+				}
+				int APGOAMNGFFF = 0;
+				string errorType = "network";
+				if(MHHFMCPJONH.BHICPONFJKM)
+					errorType = "storage";
+				int diskSpace = StorageSupport.GetAvailableStorageSizeMB();
+				if(diskSpace > -1 && diskSpace < 50)
+					errorType = "storage";
+				MAIHLKPEHJN(errorType, () => {
+					//0xF1A4FC
+					APGOAMNGFFF = 1;
+				}, () => {
+					//0xF1A508
+					APGOAMNGFFF = -1;
+				});
+				//goto LAB_00f1b744;
+				//8
+				//LAB_00f1b744:
+				while(APGOAMNGFFF == 0)
+					yield return null;
+				if(APGOAMNGFFF == 1)
+				{
+					//LAB_00f1b7e4				
+					MHHFMCPJONH.Dispose();
+					UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+					yield break;
+				}
+				MHHFMCPJONH.PBIMGBKLDPP();
+				//LAB_00f1b7a8:
+				while(MHHFMCPJONH.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+				{
+					MHHFMCPJONH.FBANBDCOEJL();
+					yield return null;
+				}
+				//goto LAB_00f1b81c;
+				MHHFMCPJONH.LAOEGNLOJHC();
+				// To 4
+				continue;
+			}
+			//L445
+		//goto LAB_00f1b828;
+		// To 4
 		}
-
+		
 		UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 	}
 
 	// // RVA: 0xF17B50 Offset: 0xF17B50 VA: 0xF17B50
 	private void DIDACHONHJA(ref Dictionary<string, int> FAOOOLDDBBB, string CJJJPKJHOGM)
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		if(Directory.Exists(CJJJPKJHOGM))
+		{
+			string files[] = Directory.GetFiles(CJJJPKJHOGM);
+			for(int i = 0; i < files.Length; i++)
+			{
+				string name = files[i].Substring(OGCDNCDMLCA.Length);
+				name = name.Replace('\\', '/');
+				FAOOOLDDBBB[name] = 1;
+			}
+			string dirs[] = Directory.GetDirectories(CJJJPKJHOGM);
+			for(int i = 0; i < dirs.Length; i++)
+			{
+				DIDACHONHJA(ref FAOOOLDDBBB, dirs[i]);
+			}
+		}
 	}
 
 	// // RVA: 0xF17D68 Offset: 0xF17D68 VA: 0xF17D68
 	public void CIDPPOGCODB(Dictionary<string, int> FAOOOLDDBBB)
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		foreach(var item : FAOOOLDDBBB)
+		{
+			if(item.Value == 1)
+			{
+				string path = OGCDNCDMLCA + item.Key;
+				File.SetAttribute(path, 0x80);
+				File.Delete(path);
+			}
+		}
 	}
 
 	// // RVA: 0xF180AC Offset: 0xF180AC VA: 0xF180AC
-	// private static bool NHIIAHGHOMH(string KLICLHJAMMD, long KPBJHHHMOJE) { }
+	private static bool NHIIAHGHOMH(string KLICLHJAMMD, long KPBJHHHMOJE) // check filetime
+	{
+		UnityEngine.Debug.LogError("TO CHECK");
+		return (File.GetLastWriteTime(KLICLHJAMMD) - (CBHCDLLOBBK + KPBJHHHMOJE)).TotalSeconds >= 2;
+	}
 
 	// // RVA: 0xF18248 Offset: 0xF18248 VA: 0xF18248
 	private void IAPEABPJPOE(IKAHKDKIGNA CBLEBKOJJDB, ref Dictionary<string, int> FAOOOLDDBBB)
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		MD5 md5 = MD5.Create();
+		Regex regex = new Regex("/db/md-(\d\d\d\d)(\d\d)(\d\d)-(\d\d)(\d\d)(\d\d)_v(\d+)_s1_h\w+.dat");
+		POCKENHKOBL = 0;
+		PFMPODNDFIB.Clear();
+		for(int i = 0; i < CBLEBKOJJDB.KGHAJGGMPKL.Length; i++)
+		{
+			GCGNICILKLD fileinfo = CBLEBKOJJDB.KGHAJGGMPKL[i];
+			string name = fileinfo.OIEAICNAMNB;
+			Match m = regex.Match(name);
+			if(m.Success)
+			{
+				if(m.Groups.Count > 0)
+				{
+					int val = Int32.Parse(m.Groups[1].Value);
+					int val2 = Int32.Parse(m.Groups[2].Value);
+					int val3 = Int32.Parse(m.Groups[3].Value);
+					int val4 = Int32.Parse(m.Groups[4].Value);
+					int val5 = Int32.Parse(m.Groups[5].Value);
+					int val6 = Int32.Parse(m.Groups[6].Value);
+					long time = Utility.GetTargetUnixTime(val, val2, val3, val4, val5, val6);
+					UnityEngine.Debug.LogError("TODO CHECK "+DMPNAEEIANJ+" "+time);
+					if(DMPNAEEIANJ >= time)
+					{
+						PFMPODNDFIB.Add(time);
+						UnityEngine.Debug.LogError("TODO CHECK "+POCKENHKOBL+" "+time);
+						if(POCKENHKOBL < time)
+						{
+							POCKENHKOBL = time;
+							OCOGBOHOGGE = fileinfo.OIEAICNAMNB;
+						}
+					}
+				}
+			}
+		}
+		
+		for(int i = 0; i < CBLEBKOJJDB.KGHAJGGMPKL.Length; i++)
+		{
+			string path = OGCDNCDMLCA + CBLEBKOJJDB.KGHAJGGMPKL[i].OIEAICNAMNB;
+			Match m = regex.Match(CBLEBKOJJDB.KGHAJGGMPKL[i].OIEAICNAMNB);
+			if(!m.Success)
+			{
+				if(CBLEBKOJJDB.KGHAJGGMPKL[i].OIEAICNAMNB == JNPHAJICDPN) // sd.dat
+				{
+					ICCMKHKNAMJ.Add(CBLEBKOJJDB.KGHAJGGMPKL[i]);
+					continue;
+				}
+				if(File.Exists(path))
+				{
+					if(CBLEBKOJJDB.KGHAJGGMPKL[i].OIEAICNAMNB != FNHCECHLIJI && CBLEBKOJJDB.KGHAJGGMPKL[i].OIEAICNAMNB != NLOICACDGNI) // ar_marker.dat / ar_event.dat
+					{
+						continue;
+					}
+					
+					if(NHIIAHGHOMH(path, CBLEBKOJJDB.KGHAJGGMPKL[i].CALJIGKCAAH))
+					{
+						if(IFCHFDEDCGF(md5, path) == CBLEBKOJJDB.KGHAJGGMPKL[i].POEGMFKLFJG)
+						{
+							FAOOOLDDBBB[CBLEBKOJJDB.KGHAJGGMPKL[i].OIEAICNAMNB] = 2;
+							continue;
+						}
+					}
+				}
+			}
+			else
+			{
+				if(m.Groups.Count > 0)
+				{
+					int val = Int32.Parse(m.Groups[1].Value);
+					int val2 = Int32.Parse(m.Groups[2].Value);
+					int val3 = Int32.Parse(m.Groups[3].Value);
+					int val4 = Int32.Parse(m.Groups[4].Value);
+					int val5 = Int32.Parse(m.Groups[5].Value);
+					int val6 = Int32.Parse(m.Groups[6].Value);
+					long time = Utility.GetTargetUnixTime(val, val2, val3, val4, val5, val6);
+					if(time == POCKENHKOBL)
+					{
+						if(File.Exists(path))
+						{
+							if(NHIIAHGHOMH(path, CBLEBKOJJDB.KGHAJGGMPKL[i].CALJIGKCAAH))
+							{
+								if(IFCHFDEDCGF(md5, path) != CBLEBKOJJDB.KGHAJGGMPKL[i].POEGMFKLFJG)
+								{
+									ICCMKHKNAMJ.Add(CBLEBKOJJDB.KGHAJGGMPKL[i]);
+									continue;
+								}
+								FAOOOLDDBBB[CBLEBKOJJDB.KGHAJGGMPKL[i].OIEAICNAMNB] = 2;
+							}
+							else
+							{
+								if(IFCHFDEDCGF(md5, path) != CBLEBKOJJDB.KGHAJGGMPKL[i].POEGMFKLFJG)
+								{
+									ICCMKHKNAMJ.Add(CBLEBKOJJDB.KGHAJGGMPKL[i]);
+									continue;
+								}
+								FAOOOLDDBBB[CBLEBKOJJDB.KGHAJGGMPKL[i].OIEAICNAMNB] = 2;
+							}
+						}
+					}
+				}
+			}
+		}
+		
 	}
 
 	// // RVA: 0xF19620 Offset: 0xF19620 VA: 0xF19620
@@ -267,21 +518,76 @@ public class BBGDKLLEPIB
 	// public static void GFOMKMANCPP(string CJEKGLGBIHF, long KMNPPIKCPNG) { }
 
 	// // RVA: 0xF193D4 Offset: 0xF193D4 VA: 0xF193D4
-	// private static string IFCHFDEDCGF(MD5 DMIPFEIICDP, string CJEKGLGBIHF) { }
+	private static string IFCHFDEDCGF(MD5 DMIPFEIICDP, string CJEKGLGBIHF)
+	{
+		FileStream f = File.OpenRead(CJEKGLGBIHF);
+		byte[] hash = md5.ComputeHash(f);
+		string str = "";
+		for(int i = 0; i < hash.Length; i++)
+		{
+			str = str + string.Format("{0:x2}", hash[i]);
+		}
+		f.Dispose();
+		return str;
+	}
 
 	// // RVA: 0xF19654 Offset: 0xF19654 VA: 0xF19654
 	// private static void ALKHIONADIP(string CJJJPKJHOGM) { }
 
 	// // RVA: 0xF197AC Offset: 0xF197AC VA: 0xF197AC
-	private void PKLPEIBEGNO()
+	private void PKLPEIBEGNO() // save used db version on disk
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		string dir = CJMOKHDNBNB.FIPFFELDIOG + KCOGAGGCPBP.HAFLEFNJAKD; // /sys
+		if(!Directory.Exists(dir))
+		{
+			Directory.CreateDirectory(dir);
+		}
+		if(string.IsNullOrEmpty(LHJNPJFNDNA))
+			return;
+		
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		json["rev"] = LHJNPJFNDNA;
+		json["db"] = OCOGBOHOGGE;
+		string jsonStr = IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(json);
+		byte[] data = Encoding.UTF8.GetBytes(jsonStr);
+		for(int i = 0; i < data.Length; i++)
+		{
+			data[i] = (byte)(data[i] ^ 0x1b);
+		}
+		
+		File.WriteAllBytes(dir+"/"+KCOGAGGCPBP.HJNJMNFEJEH, data); // sys/02
 	}
 
 	// // RVA: 0xF19B10 Offset: 0xF19B10 VA: 0xF19B10
 	private bool GBCDHECMDMC()
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		string dir = CJMOKHDNBNB.FIPFFELDIOG + KCOGAGGCPBP.HAFLEFNJAKD; // sys
+		if(!Directory.Exists(dir))
+		{
+			Directory.CreateDirectory(dir);
+		}
+		string file = dir + "/" + KCOGAGGCPBP.HJNJMNFEJEH; // sys/02
+		if(File.Exists(file))
+		{
+			byte[] data = File.ReadAllBytes(file);
+			for(int i = 0; i < data.Lenth; i++)
+			{
+				data[i] = (byte)(data[i] ^ 0x1b);
+			}
+			string jsonStr = Encoding.UTF8.GetString(data);
+			EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(jsonStr);
+			
+			if(json.BBAJPINMOEP_Contains("rev"))
+			{
+				if(!json.BBAJPINMOEP_Contains("db"))
+				{
+					if(json["rev"] == LHJNPJFNDNA)
+					{
+						return json["db"] == OCOGBOHOGGE;
+					}
+				}
+			}
+		}
 		return false;
 	}
 }
