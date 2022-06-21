@@ -517,7 +517,22 @@ public class PJKLMCGEJMK
     // // RVA: 0x932144 Offset: 0x932144 VA: 0x932144
     public void CEEAFKHANJB(int EAABKFGHKBG, int ABFKANCAMPN)
 	{
-		UnityEngine.Debug.LogError("TODO");
+        int val = 0;
+        float fVal = 0;
+        if(EAABKFGHKBG < 0)
+            val = 0;
+        else if(EAABKFGHKBG < 10)
+            val = EAABKFGHKBG + 2;
+        else
+            val = 10;
+        NLGJBBGAOLH = val;
+        if(ABFKANCAMPN < 1000)
+            fVal = 1.0f;
+        else if(ABFKANCAMPN < 30001)
+            fVal = ABFKANCAMPN / 1000.0f;
+        else
+            fVal = 30.0f;
+        BLKIMNAILKK = fVal / 10.0f;
 	}
 
     // // RVA: 0x9321AC Offset: 0x9321AC VA: 0x9321AC

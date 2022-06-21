@@ -49,8 +49,10 @@ public class PEBFNABDJDI : DIHHCBACKGG
 	// // RVA: 0xCC453C Offset: 0xCC453C VA: 0xCC453C
 	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
 	{
-		UnityEngine.Debug.LogError("TODO");
-		return 0;
+		if(!OHJFBLFELNK.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		
+		return OHJFBLFELNK[LJNAKDMILMC].DNJEJEANJGL;
 	}
 
 	// // RVA: 0xCC4620 Offset: 0xCC4620 VA: 0xCC4620

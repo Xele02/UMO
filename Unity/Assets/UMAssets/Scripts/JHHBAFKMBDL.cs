@@ -104,7 +104,7 @@ public class JHHBAFKMBDL
 	// public void EEBIICOLLIC(IMCBBOAFION BHEOPIPFEFJ) { }
 
 	// // RVA: 0xB0C15C Offset: 0xB0C15C VA: 0xB0C15C
-	public void GKMAHMLNMEK(IMCBBOAFION BHEOPIPFEFJ, string LJPMEHDDBGP)
+	public void GKMAHMLNMEK(IMCBBOAFION BHEOPIPFEFJ, string LJPMEHDDBGP) // Error popup
     {
         UnityEngine.Debug.LogError("TODO");
     }

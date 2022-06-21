@@ -6,15 +6,15 @@ public class ATELIDAVAPK
 	// // RVA: 0xD61A14 Offset: 0xD61A14 VA: 0xD61A14
 	public bool Init(byte[] dataBytes)
     {
-        UnityEngine.Debug.LogError("TODO");
-        return false;
+        master = PJADOKMABLA.HEGEKFMJNCC(dataBytes);
+		return true;
     }
 
 	// // RVA: 0xD61B04 Offset: 0xD61B04 VA: 0xD61B04
 	public bool CCKHESGNI()
     {
-        UnityEngine.Debug.LogError("TODO");
-        return false;
+        UnityEngine.Debug.LogWarning("TODO CCKHESGNI"); // apkcheck
+        return true;
     }
 
 	// // RVA: 0xD62044 Offset: 0xD62044 VA: 0xD62044
@@ -23,8 +23,8 @@ public class ATELIDAVAPK
 	// // RVA: 0xD6204C Offset: 0xD6204C VA: 0xD6204C
 	public bool QTHZDMBR()
     {
-        UnityEngine.Debug.LogError("TODO");
-        return false;
+        UnityEngine.Debug.LogWarning("TODO QTHZDMBR"); // check code digest
+        return true;
     }
 
 	// // RVA: 0xD624BC Offset: 0xD624BC VA: 0xD624BC
