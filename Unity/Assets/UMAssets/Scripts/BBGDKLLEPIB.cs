@@ -433,7 +433,6 @@ public class BBGDKLLEPIB
 						{
 							POCKENHKOBL = time;
 							OCOGBOHOGGE = fileinfo.OIEAICNAMNB;
-							UnityEngine.Debug.LogError("BBB "+OCOGBOHOGGE);
 						}
 					}
 				}

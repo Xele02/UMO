@@ -9,5 +9,5 @@ public class MCKCJMLOAFP
 	public int BDLNMOIOMHK; // 0x1C
 
 	// RVA: 0x130D5D8 Offset: 0x130D5D8 VA: 0x130D5D8
-	// public void DPKCOKLMFMK(EDOHBJAPLPF IDLHJIOMJBK) { }
+	// public void DPKCOKLMFMK(EDOHBJAPLPF_JsonData IDLHJIOMJBK) { }
 }

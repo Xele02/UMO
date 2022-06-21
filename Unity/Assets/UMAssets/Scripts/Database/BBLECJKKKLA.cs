@@ -25,7 +25,7 @@ public class BBLECJKKKLA : DIHHCBACKGG
     }
 
 	// // RVA: 0xF2BF0C Offset: 0xF2BF0C VA: 0xF2BF0C Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
 		return false;

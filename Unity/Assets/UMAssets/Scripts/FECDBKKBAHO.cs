@@ -40,13 +40,20 @@ public class FECDBKKBAHO
 	// public FECDBKKBAHO.FHOPNIJCFKA LBDOLHGDIEB(string CJEKGLGBIHF) { }
 
 	// // RVA: 0xFCF948 Offset: 0xFCF948 VA: 0xFCF948
-	// public void OJCJPCHFPGO(string CJEKGLGBIHF) { }
+	public void OJCJPCHFPGO(string CJEKGLGBIHF)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xFCFA28 Offset: 0xFCFA28 VA: 0xFCFA28
 	// public void KMHCHILJPIG() { }
 
 	// // RVA: 0xFCFBB8 Offset: 0xFCFBB8 VA: 0xFCFBB8
-	// public FECDBKKBAHO.FHOPNIJCFKA ANIJHEBLMGB(string CJEKGLGBIHF, long DGGFLBJBLLN, int KKPAHLMJKIH) { }
+	public FECDBKKBAHO.FHOPNIJCFKA ANIJHEBLMGB(string CJEKGLGBIHF, long DGGFLBJBLLN, int KKPAHLMJKIH)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 
 	// // RVA: 0xFCF3E0 Offset: 0xFCF3E0 VA: 0xFCF3E0
 	public void PCODDPDFLHK()

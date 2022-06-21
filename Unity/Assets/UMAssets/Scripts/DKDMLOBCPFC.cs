@@ -15,5 +15,5 @@ public class DKDMLOBCPFC
 	// public bool AGBOGBEOFME(DKDMLOBCPFC OIKJFMGEICL) { }
 
 	// // RVA: 0x198E724 Offset: 0x198E724 VA: 0x198E724
-	// public EDOHBJAPLPF NOJCMGAFAAC() { }
+	// public EDOHBJAPLPF_JsonData NOJCMGAFAAC() { }
 }

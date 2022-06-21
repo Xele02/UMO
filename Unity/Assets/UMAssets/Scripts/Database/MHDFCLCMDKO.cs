@@ -45,7 +45,7 @@ public class MHDFCLCMDKO : DIHHCBACKGG
     }
 
 	// // RVA: 0x132B18C Offset: 0x132B18C VA: 0x132B18C Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
 		return false;
@@ -55,7 +55,7 @@ public class MHDFCLCMDKO : DIHHCBACKGG
 	// private bool FJGJEJDJHEG(NHADPDNKGIE OFGBEDPGPFO) { }
 
 	// // RVA: 0x132B190 Offset: 0x132B190 VA: 0x132B190
-	// private bool FJGJEJDJHEG(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }
+	// private bool FJGJEJDJHEG(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE) { }
 
 	// // RVA: 0x132B5F8 Offset: 0x132B5F8 VA: 0x132B5F8 Slot: 11
 	public override uint CAOGDCBPBAN()

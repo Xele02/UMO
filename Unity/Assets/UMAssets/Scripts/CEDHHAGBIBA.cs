@@ -12,13 +12,13 @@ public class CEDHHAGBIBA
 	// public static string AMNBKLLDGKJ(byte[] IDDIIHBJPEE) { }
 
 	// // RVA: 0x12B1D48 Offset: 0x12B1D48 VA: 0x12B1D48
-	// public static int GNJBKANDLEE(EDOHBJAPLPF IDLHJIOMJBK, string PGHEHAFKPMC) { }
+	// public static int GNJBKANDLEE(EDOHBJAPLPF_JsonData IDLHJIOMJBK, string PGHEHAFKPMC) { }
 
 	// // RVA: 0x12B1F2C Offset: 0x12B1F2C VA: 0x12B1F2C
-	// public static long NIKODNFGCEM(EDOHBJAPLPF IDLHJIOMJBK, string PGHEHAFKPMC) { }
+	// public static long NIKODNFGCEM(EDOHBJAPLPF_JsonData IDLHJIOMJBK, string PGHEHAFKPMC) { }
 
 	// // RVA: 0x12B2120 Offset: 0x12B2120 VA: 0x12B2120
-	// public static string BNCLNFJHEND(EDOHBJAPLPF IDLHJIOMJBK, string PGHEHAFKPMC) { }
+	// public static string BNCLNFJHEND(EDOHBJAPLPF_JsonData IDLHJIOMJBK, string PGHEHAFKPMC) { }
 
 	// // RVA: 0x12B226C Offset: 0x12B226C VA: 0x12B226C
 	public static byte[] IHDGCICCPIG(string LJNAKDMILMC)

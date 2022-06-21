@@ -220,7 +220,7 @@ namespace XeApp.Game.AR
 				if(CalcMD5(dest) == found.POEGMFKLFJG)
 				{
 					UnityEngine.Debug.LogError("File match, don't dld");
-    				UnityEngine.Debug.LogError("Exit  Error Coroutine_Download");
+    				UnityEngine.Debug.Log("Exit Coroutine_Download");
 					yield break;
 				}
 			}

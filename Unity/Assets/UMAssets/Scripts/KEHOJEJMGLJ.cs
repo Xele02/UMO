@@ -28,7 +28,7 @@ public class KEHOJEJMGLJ
 	public List<string> FBGNDKKDOIE = null; // 0x28
 	// private JEHIAIPJNJF PMDNNKAPIKJ; // 0x2C
 	public static bool FJDOHLADGFI; // 0x28
-	// public IKAHKDKIGNA IDJBKGBMDAJ; // 0x30
+	public IKAHKDKIGNA IDJBKGBMDAJ; // 0x30
 	// private List<GCGNICILKLD> ICCMKHKNAMJ; // 0x34
 	private static DateTime CBHCDLLOBBK = new DateTime(1970, 1, 1, 0, 0, 0, 1, 0); // 0x30
 	private const int AJCPBLIKDGB = 1;

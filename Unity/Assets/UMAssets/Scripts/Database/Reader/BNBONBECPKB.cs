@@ -1,0 +1,32 @@
+using FlatBuffers;
+using System.Collections.Generic;
+
+public class LPMLJGGJGGK
+{
+	public string OPFGFINHFCE { get; set; } // 0x8 LGIIAPHCLPN DKJOHDGOIJE MJAMIGECMMF
+	public int IOIMHJAOKOO { get; set; } // 0xC GMLEDKKPBFJ HJMJGBCJBIN OLGHLLNJPKD
+}
+public class BNBONBECPKB
+{
+	public LPMLJGGJGGK[] GMLFFMJMPCC { get; set; } // 0x8 MKAFOOHLHAC FHEIILDDCIM CBMHJMIJLHH
+	public static BNBONBECPKB HEGEKFMJNCC(byte[] NIODCJLINJN)// 0x19CA924
+	{
+		ByteBuffer buffer = new ByteBuffer(NIODCJLINJN);
+		ODNNPHLAMGH res_readData = ODNNPHLAMGH.GetRootAsODNNPHLAMGH(buffer);
+		BNBONBECPKB res_data = new BNBONBECPKB();
+
+		List<LPMLJGGJGGK> GMLFFMJMPCC_list = new List<LPMLJGGJGGK>();
+		for(int GMLFFMJMPCC_idx = 0; GMLFFMJMPCC_idx < res_readData.AMGOKLNCCPHLength; GMLFFMJMPCC_idx++)
+		{
+			FIMKNOFPMLA GMLFFMJMPCC_readData = res_readData.GetAMGOKLNCCPH(GMLFFMJMPCC_idx);
+			LPMLJGGJGGK GMLFFMJMPCC_data = new LPMLJGGJGGK();
+
+			GMLFFMJMPCC_data.OPFGFINHFCE = GMLFFMJMPCC_readData.IIDCFMHCPLJ;
+			GMLFFMJMPCC_data.IOIMHJAOKOO = GMLFFMJMPCC_readData.PAPMBEBHHIG;
+			GMLFFMJMPCC_list.Add(GMLFFMJMPCC_data);
+		}
+		res_data.GMLFFMJMPCC = GMLFFMJMPCC_list.ToArray();
+
+		return res_data;
+	}
+}

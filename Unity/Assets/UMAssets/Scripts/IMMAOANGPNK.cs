@@ -351,7 +351,7 @@ public class IMMAOANGPNK
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.CEEAFKHANJB(NKEBMCIMJND.GDEKCOOBLMA.NGHKJOEDLIP.KHGJIGNHAGD, NKEBMCIMJND.GDEKCOOBLMA.NGHKJOEDLIP.JOIEHMBKJHI);
 		//L54
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.BLFILNOBHMM = 0 < NKEBMCIMJND.GDEKCOOBLMA.LPJLEHAJADA("action_revert_show_error", 0);
-		if(NKEBMCIMJND.GDEKCOOBLMA.AEMNOGNEBOJ.ContainsKey(AFEHLCGHAEE.JJHDDBLNOHA/*delay_install_autowait*/) != 1)
+		if(!NKEBMCIMJND.GDEKCOOBLMA.OHJFBLFELNK.ContainsKey(AFEHLCGHAEE.JJHDDBLNOHA/*delay_install_autowait*/))
 		{
 			return;
 		}
@@ -368,26 +368,26 @@ public class IMMAOANGPNK
 	private void BBHOKHCDBFI(CBBJHPBGBAJ_Archive GBEGLNMFLIE)
 	{
 		JOBKIDDLCPL.Clear();
-		CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File item = KGHAJGGMPKL.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) => {
+		CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File item = GBEGLNMFLIE.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) => {
 			//0x9FDD4C 
-			return GHPLINIACBB.OPFGFINHFCE.Contains("schedule");
+			return GHPLINIACBB.OPFGFINHFCE_Name.Contains("schedule");
 		});
 		if(item != null)
 		{
-			if(item.OPFGFINHFCE.Contains(".bytes"))
+			if(item.OPFGFINHFCE_Name.Contains(".bytes"))
 			{
 				IOBIKMEGCAL data = IOBIKMEGCAL.HEGEKFMJNCC(item.DBBGALAPFGC_Data);
 				DMABOGLGILJ[] schedule_item = data.IHMCKPOIBDA;
-				for(int i = 0; i < schedule_item.Count; i++)
+				for(int i = 0; i < schedule_item.Length; i++)
 				{
 					GDIPLANPCEI info = new GDIPLANPCEI();
 					info.OPFGFINHFCE = schedule_item[i].OPFGFINHFCE;
 					info.KBFOIECIADN = schedule_item[i].KBFOIECIADN;
 					info.EGBOHDFBAPB = schedule_item[i].EGBOHDFBAPB;
-					JOBKIDDLCPL.Add(data);
+					JOBKIDDLCPL.Add(info);
 				}
 			}
-			else if(item.OPFGFINHFCE.Contains(".json");
+			else if(item.OPFGFINHFCE_Name.Contains(".json"))
 			{
 				UnityEngine.Debug.LogError("TODO");
 				//schedules
@@ -456,8 +456,8 @@ public class IMMAOANGPNK
 			});
 			if(MGFBEKNMJOA.Count > 0)
 			{
-				UnityEngine.Debug.LogError("TODO test "+item.PDBPFJJCADD+" "+JHNMKKNEENE);
 				IMMAOANGPNK.MPFFINOMILP item = MGFBEKNMJOA[0];
+				UnityEngine.Debug.LogError("TODO test "+item.PDBPFJJCADD+" "+JHNMKKNEENE);
 				if(item.PDBPFJJCADD < JHNMKKNEENE)
 				{
 					DIHHCBACKGG.IEFOPDOOLOK = item.IJEKNCDIIAE;
@@ -466,7 +466,7 @@ public class IMMAOANGPNK
 					strData[1] = item.IJEKNCDIIAE;
 					strData[2] = ",name=";
 					strData[3] = item.OPFGFINHFCE;
-					UnityEngine.Debug.Log(String.Concat(strData));
+					UnityEngine.Debug.Log(string.Concat(strData));
 				}
 			}
 		}

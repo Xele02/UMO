@@ -16,5 +16,5 @@ public class AMCGONHBGGF
 	// public bool AGBOGBEOFME(AMCGONHBGGF OIKJFMGEICL) { }
 
 	// // RVA: 0xCE101C Offset: 0xCE101C VA: 0xCE101C
-	// public EDOHBJAPLPF NOJCMGAFAAC() { }
+	// public EDOHBJAPLPF_JsonData NOJCMGAFAAC() { }
 }

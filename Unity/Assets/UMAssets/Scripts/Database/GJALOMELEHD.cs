@@ -51,7 +51,7 @@ public class GJALOMELEHD : DIHHCBACKGG
 	// public bool KOPMKAKPJOO(AMBAEMHAMDB GGKAPJELKOA) { }
 
 	// // RVA: 0xAAA568 Offset: 0xAAA568 VA: 0xAAA568 Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
 		return false;

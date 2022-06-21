@@ -21,10 +21,10 @@ public class ALIPBIMCAPN : KLFDBFMNLBL
 	}
 
 	// // RVA: 0xCDA2C4 Offset: 0xCDA2C4 VA: 0xCDA2C4 Slot: 5
-	// public override void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH) { }
+	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
 
 	// // RVA: 0xCDABFC Offset: 0xCDABFC VA: 0xCDABFC Slot: 6
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP)
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		UnityEngine.Debug.LogError("TODO");
 		return false;

@@ -213,7 +213,7 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 	// // RVA: 0x14F3A88 Offset: 0x14F3A88 VA: 0x14F3A88
 	// public EDOHBJAPLPF_JsonData GOAMILGNJIE(string GODGBGGHPNG) 
 	// // RVA: 0x14F3498 Offset: 0x14F3498 VA: 0x14F3498
-	// public void set_Item(string GODGBGGHPNG, EDOHBJAPLPF NANNGLGOFKH) { }
+	// public void set_Item(string GODGBGGHPNG, EDOHBJAPLPF_JsonData NANNGLGOFKH) { }
 	public EDOHBJAPLPF_JsonData /*INIMBLOHIEF*/this[string GODGBGGHPNG_prop_name] {
 		get {
 			OGLGGGMGCPL_EnsureDictionary ();
@@ -245,7 +245,7 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 	// // RVA: 0x150C0F8 Offset: 0x150C0F8 VA: 0x150C0F8
 	//public EDOHBJAPLPF_JsonData GOAMILGNJIE(int OIPCCBHIKIA) 
 	// // RVA: 0x150BBD0 Offset: 0x150BBD0 VA: 0x150BBD0
-	// public void set_Item(int OIPCCBHIKIA, EDOHBJAPLPF NANNGLGOFKH) { }
+	// public void set_Item(int OIPCCBHIKIA, EDOHBJAPLPF_JsonData NANNGLGOFKH) { }
 	public EDOHBJAPLPF_JsonData /*INIMBLOHIEF*/this[int index] {
 		get {
 			CBJBIDKHLFM_EnsureCollection ();
@@ -354,31 +354,31 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 
 	#region Implicit Conversions
 	// // RVA: 0x150C558 Offset: 0x150C558 VA: 0x150C558
-	public static /*EDOHBJAPLPF JNEJKMKNIJJ*/implicit operator EDOHBJAPLPF_JsonData(bool IDLHJIOMJBK_data) 
+	public static /*EDOHBJAPLPF_JsonData JNEJKMKNIJJ*/implicit operator EDOHBJAPLPF_JsonData(bool IDLHJIOMJBK_data) 
 	{ 
 		return new EDOHBJAPLPF_JsonData(IDLHJIOMJBK_data);
 	}
 
 	// // RVA: 0x150C5D4 Offset: 0x150C5D4 VA: 0x150C5D4
-	public static /*EDOHBJAPLPF JNEJKMKNIJJ*/implicit operator EDOHBJAPLPF_JsonData(double IDLHJIOMJBK_data)
+	public static /*EDOHBJAPLPF_JsonData JNEJKMKNIJJ*/implicit operator EDOHBJAPLPF_JsonData(double IDLHJIOMJBK_data)
 	{ 
 		return new EDOHBJAPLPF_JsonData(IDLHJIOMJBK_data);
 	}
 
 	// // RVA: 0x14F3988 Offset: 0x14F3988 VA: 0x14F3988
-	public static /*EDOHBJAPLPF JNEJKMKNIJJ*/implicit operator EDOHBJAPLPF_JsonData(int IDLHJIOMJBK_data)
+	public static /*EDOHBJAPLPF_JsonData JNEJKMKNIJJ*/implicit operator EDOHBJAPLPF_JsonData(int IDLHJIOMJBK_data)
 	{ 
 		return new EDOHBJAPLPF_JsonData(IDLHJIOMJBK_data);
 	}
 
 	// // RVA: 0x14F3A04 Offset: 0x14F3A04 VA: 0x14F3A04
-	public static /*EDOHBJAPLPF JNEJKMKNIJJ*/implicit operator EDOHBJAPLPF_JsonData(long IDLHJIOMJBK_data)
+	public static /*EDOHBJAPLPF_JsonData JNEJKMKNIJJ*/implicit operator EDOHBJAPLPF_JsonData(long IDLHJIOMJBK_data)
 	{ 
 		return new EDOHBJAPLPF_JsonData(IDLHJIOMJBK_data);
 	}
 
 	// // RVA: 0x14F341C Offset: 0x14F341C VA: 0x14F341C
-	public static /*EDOHBJAPLPF JNEJKMKNIJJ*/implicit operator EDOHBJAPLPF_JsonData(string IDLHJIOMJBK_data)
+	public static /*EDOHBJAPLPF_JsonData JNEJKMKNIJJ*/implicit operator EDOHBJAPLPF_JsonData(string IDLHJIOMJBK_data)
 	{ 
 		return new EDOHBJAPLPF_JsonData(IDLHJIOMJBK_data);
 	}

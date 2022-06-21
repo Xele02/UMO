@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
+using System.Text;
 
 public class OKGLGHCBCJP{}
 public class OKGLGHCBCJP_Database
@@ -448,7 +450,7 @@ public class OKGLGHCBCJP_Database
 
 	// public GPMHOAKFALE EFMAIKAHFEK { get; private set; } // 0x14 JLLBGAHIIBG LLCFMAELHEP IEBCIAFOBIN
 	// public IPJBAPLFECP OILKBADFBOK { get; private set; } // 0x18 PMEPLHGCOPN ACKDFMAHCPG IKNMGMOEIBJ
-	// public LFPJCEMANCK IELDDHJMFKN { get; private set; } // 0x1C POIPNMNLPII LDEGIHHDKIM OPKDGNFPLMJ
+	   public LFPJCEMANCK IELDDHJMFKN { get; private set; } // 0x1C POIPNMNLPII LDEGIHHDKIM OPKDGNFPLMJ
 	// public JKICPBIIHNE FPOIPGFFAPE { get; private set; } // 0x20 IGDEDAEJHHE DGFJAPEKHFO GNMGEPPDCKA
 	   public KOGHKIODHPA JEMMMJEJLNL { get; private set; } // 0x24 JCNENMIJKJM LEOMPFKGIDH OJLDODJNICJ
 	// public HHJHIFJIKAC NBKNAAPBFFL { get; private set; } // 0x28 DPLHDEEFDJM ADJIKEFIPJA JNIKDFJOHFA
@@ -682,7 +684,7 @@ public class OKGLGHCBCJP_Database
 		MGJKEJHEBPO = new List<DIHHCBACKGG>();
 		// EFMAIKAHFEK = null;
 		// OILKBADFBOK = null;
-		// IELDDHJMFKN = null;
+		IELDDHJMFKN = null;
 		// FPOIPGFFAPE = null;
 		JEMMMJEJLNL = null;
 		// NBKNAAPBFFL = null;
@@ -764,7 +766,7 @@ public class OKGLGHCBCJP_Database
 				{
 					// case 0: EFMAIKAHFEK = item; break;
 					// case 1: OILKBADFBOK = item; break;
-					// case 2: IELDDHJMFKN = item; break;
+					case 2: IELDDHJMFKN = (LFPJCEMANCK)item; break;
 					// case 3: FPOIPGFFAPE = item; break;
 					case 4: JEMMMJEJLNL = (KOGHKIODHPA)item; break;
 					// case 5: NBKNAAPBFFL = item; break;
@@ -853,7 +855,7 @@ public class OKGLGHCBCJP_Database
 	}
 
 	// // RVA: 0x149494C Offset: 0x149494C VA: 0x149494C
-	public bool IIEMACPEEBJ(List<string> ANFNAHPIJDH, EDOHBJAPLPF AAEDAEHIONI)
+	public bool IIEMACPEEBJ(List<string> ANFNAHPIJDH, EDOHBJAPLPF_JsonData AAEDAEHIONI)
 	{
 		UnityEngine.Debug.LogError("TODO");
 		return false;
@@ -905,22 +907,22 @@ public class OKGLGHCBCJP_Database
 					{
 						object[] strData = new object[5];
 						//361
-						strData[0] = LIGPJAIDNOA.MHDFCBBFMOA[LMHMIIKCGPE];
+						strData[0] = LIGPJAIDNOA.MHDFCBBFMOA[item.LMHMIIKCGPE];
 						strData[1] = " schema hash miss match  file=";
 						strData[2] = data[LIGPJAIDNOA.MHDFCBBFMOA[item.LMHMIIKCGPE]];
 						strData[3] = ",code=";
 						strData[4] = LIGPJAIDNOA.INPAHCHFIHM[item.LMHMIIKCGPE];
-						UnityEngine.Debug.Log(String.Concat(strData));
+						UnityEngine.Debug.Log(string.Concat(strData));
 						return false;
 					}
 					read = true;
-					if(!item.IIEMACPEEBJ(file.DBBGALAPFGC_Data))
+					if(!item.IIEMACPEEBJ(found2.DBBGALAPFGC_Data))
 					{
-						throw new MasterDeserializeException(item.JIKKNHIAEKG + AFEHLCGHAEE.FAIOPNOJIBF /*'/'*/ + item.HDIDJNCGICK);
+						throw new Exception(item.JIKKNHIAEKG + AFEHLCGHAEE.FAIOPNOJIBF /*'/'*/ + item.HDIDJNCGICK);
 					}
 				}
 				string ECLJBKNPACL = item.JIKKNHIAEKG + ".json";
-				found2 = OCMCEKEKAPI.KGHAJGGMPKL.Find((CBBJHPBGBAJ.JBCFNCNGLPM GHPLINIACBB) => {
+				found2 = OCMCEKEKAPI.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) => {
 					//0x14A075C 
 					return GHPLINIACBB.OPFGFINHFCE_Name == ECLJBKNPACL;
 				});
@@ -928,9 +930,9 @@ public class OKGLGHCBCJP_Database
 				{
 					string jsonStr = Encoding.UTF8.GetString(found2.DBBGALAPFGC_Data);
 					EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(jsonStr);
-					if(!item.IIEMACPEEBJ(json, 0)
+					if(!item.IIEMACPEEBJ(json, 0))
 					{
-						throw new MasterDeserializeException(item.JIKKNHIAEKG + AFEHLCGHAEE.FAIOPNOJIBF /*'/'*/ + item.HDIDJNCGICK);
+						throw new Exception(item.JIKKNHIAEKG + AFEHLCGHAEE.FAIOPNOJIBF /*'/'*/ + item.HDIDJNCGICK);
 					}
 				}
 			}	

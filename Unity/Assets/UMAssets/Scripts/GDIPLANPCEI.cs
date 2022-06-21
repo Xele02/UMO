@@ -6,6 +6,6 @@ public class GDIPLANPCEI
 	public long EGBOHDFBAPB; // 0x18
 
 	// // RVA: 0x16B52F0 Offset: 0x16B52F0 VA: 0x16B52F0
-	// public void KHEKNNFCAOI_Init(EDOHBJAPLPF IDLHJIOMJBK) { }
+	// public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData IDLHJIOMJBK) { }
 
 }

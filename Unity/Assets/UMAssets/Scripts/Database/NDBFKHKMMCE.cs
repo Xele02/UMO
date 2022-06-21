@@ -81,7 +81,7 @@ public class NDBFKHKMMCE : DIHHCBACKGG
 	// private bool BFLDLDCDFIC(NLFIKMMPOAL AJLPJINDCBI) { }
 
 	// // RVA: 0x1AE1BE8 Offset: 0x1AE1BE8 VA: 0x1AE1BE8 Slot: 10
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE)
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
 		return false;
