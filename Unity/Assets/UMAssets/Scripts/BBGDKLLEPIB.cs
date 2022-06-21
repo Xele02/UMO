@@ -2,6 +2,11 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using System.Collections;
+using System.Security.Cryptography;
+using System.IO;
+using System.Text.RegularExpressions;
+using XeSys;
+using System.Text;
 
 public class BBGDKLLEPIB
 {
@@ -143,9 +148,10 @@ public class BBGDKLLEPIB
 		Dictionary<string, int> FAOOOLDDBBB = new Dictionary<string, int>();
 		//goto LAB_00f1b2e8;
 
+		JPAPJLIPNOK COJNCNGHIJC = null;
 		while(true)
 		{
-			JPAPJLIPNOK COJNCNGHIJC = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK>(new JPAPJLIPNOK());
+			COJNCNGHIJC = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK>(new JPAPJLIPNOK());
 			COJNCNGHIJC.FPCIBJLJOFI = FPCIBJLJOFI;
 			yield return COJNCNGHIJC.GDPDELLNOBO(N.a);
 			// 1
@@ -220,10 +226,10 @@ public class BBGDKLLEPIB
 			FAOOOLDDBBB[JGBPLIGAILE.LAPFOLJGJMB.OIEAICNAMNB] = 2;
 		};
 		MHHFMCPJONH.LAOEGNLOJHC();
-		yield return null;
 		//4
 		while(true)
 		{
+			yield return null;
 			MHHFMCPJONH.FBANBDCOEJL();
 			//L.312
 			if(MHHFMCPJONH.CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.FEJIMBDPMKI/*2*/)
@@ -232,7 +238,7 @@ public class BBGDKLLEPIB
 				if(MHHFMCPJONH != null)
 					MHHFMCPJONH.Dispose();
 				OEPPEGHGNNO(2, 100);
-				KOMKKBDABJP = false;
+				bool KOMKKBDABJP = false;
 				NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 					//0xF1A474
 					CIDPPOGCODB(FAOOOLDDBBB);
@@ -274,7 +280,7 @@ public class BBGDKLLEPIB
 				});
 				//goto LAB_00f1ab74;
 				//5
-				while(!APGOAMNGFFF)
+				while(APGOAMNGFFF == 0)
 					yield return null;
 				if(APGOAMNGFFF != 1)
 				{
@@ -361,14 +367,14 @@ public class BBGDKLLEPIB
 	{
 		if(Directory.Exists(CJJJPKJHOGM))
 		{
-			string files[] = Directory.GetFiles(CJJJPKJHOGM);
+			string[] files = Directory.GetFiles(CJJJPKJHOGM);
 			for(int i = 0; i < files.Length; i++)
 			{
 				string name = files[i].Substring(OGCDNCDMLCA.Length);
 				name = name.Replace('\\', '/');
 				FAOOOLDDBBB[name] = 1;
 			}
-			string dirs[] = Directory.GetDirectories(CJJJPKJHOGM);
+			string[] dirs = Directory.GetDirectories(CJJJPKJHOGM);
 			for(int i = 0; i < dirs.Length; i++)
 			{
 				DIDACHONHJA(ref FAOOOLDDBBB, dirs[i]);
@@ -379,12 +385,13 @@ public class BBGDKLLEPIB
 	// // RVA: 0xF17D68 Offset: 0xF17D68 VA: 0xF17D68
 	public void CIDPPOGCODB(Dictionary<string, int> FAOOOLDDBBB)
 	{
-		foreach(var item : FAOOOLDDBBB)
+		foreach(var item in FAOOOLDDBBB)
 		{
 			if(item.Value == 1)
 			{
 				string path = OGCDNCDMLCA + item.Key;
-				File.SetAttribute(path, 0x80);
+				File.SetAttributes(path, FileAttributes.Normal);
+				UnityEngine.Debug.Log("Delete File "+path);
 				File.Delete(path);
 			}
 		}
@@ -393,18 +400,17 @@ public class BBGDKLLEPIB
 	// // RVA: 0xF180AC Offset: 0xF180AC VA: 0xF180AC
 	private static bool NHIIAHGHOMH(string KLICLHJAMMD, long KPBJHHHMOJE) // check filetime
 	{
-		UnityEngine.Debug.LogError("TO CHECK");
-		return (File.GetLastWriteTime(KLICLHJAMMD) - (CBHCDLLOBBK + KPBJHHHMOJE)).TotalSeconds >= 2;
+		return (File.GetLastWriteTime(KLICLHJAMMD) - (CBHCDLLOBBK.AddSeconds(KPBJHHHMOJE))).TotalSeconds >= 2;
 	}
 
 	// // RVA: 0xF18248 Offset: 0xF18248 VA: 0xF18248
 	private void IAPEABPJPOE(IKAHKDKIGNA CBLEBKOJJDB, ref Dictionary<string, int> FAOOOLDDBBB)
 	{
 		MD5 md5 = MD5.Create();
-		Regex regex = new Regex("/db/md-(\d\d\d\d)(\d\d)(\d\d)-(\d\d)(\d\d)(\d\d)_v(\d+)_s1_h\w+.dat");
+		Regex regex = new Regex(@"/db/md-(\d\d\d\d)(\d\d)(\d\d)-(\d\d)(\d\d)(\d\d)_v(\d+)_s1_h\w+.dat");
 		POCKENHKOBL = 0;
 		PFMPODNDFIB.Clear();
-		for(int i = 0; i < CBLEBKOJJDB.KGHAJGGMPKL.Length; i++)
+		for(int i = 0; i < CBLEBKOJJDB.KGHAJGGMPKL.Count; i++)
 		{
 			GCGNICILKLD fileinfo = CBLEBKOJJDB.KGHAJGGMPKL[i];
 			string name = fileinfo.OIEAICNAMNB;
@@ -420,22 +426,21 @@ public class BBGDKLLEPIB
 					int val5 = Int32.Parse(m.Groups[5].Value);
 					int val6 = Int32.Parse(m.Groups[6].Value);
 					long time = Utility.GetTargetUnixTime(val, val2, val3, val4, val5, val6);
-					UnityEngine.Debug.LogError("TODO CHECK "+DMPNAEEIANJ+" "+time);
 					if(DMPNAEEIANJ >= time)
 					{
 						PFMPODNDFIB.Add(time);
-						UnityEngine.Debug.LogError("TODO CHECK "+POCKENHKOBL+" "+time);
 						if(POCKENHKOBL < time)
 						{
 							POCKENHKOBL = time;
 							OCOGBOHOGGE = fileinfo.OIEAICNAMNB;
+							UnityEngine.Debug.LogError("BBB "+OCOGBOHOGGE);
 						}
 					}
 				}
 			}
 		}
 		
-		for(int i = 0; i < CBLEBKOJJDB.KGHAJGGMPKL.Length; i++)
+		for(int i = 0; i < CBLEBKOJJDB.KGHAJGGMPKL.Count; i++)
 		{
 			string path = OGCDNCDMLCA + CBLEBKOJJDB.KGHAJGGMPKL[i].OIEAICNAMNB;
 			Match m = regex.Match(CBLEBKOJJDB.KGHAJGGMPKL[i].OIEAICNAMNB);
@@ -497,6 +502,10 @@ public class BBGDKLLEPIB
 								FAOOOLDDBBB[CBLEBKOJJDB.KGHAJGGMPKL[i].OIEAICNAMNB] = 2;
 							}
 						}
+						else
+						{
+							ICCMKHKNAMJ.Add(CBLEBKOJJDB.KGHAJGGMPKL[i]);
+						}
 					}
 				}
 			}
@@ -507,8 +516,7 @@ public class BBGDKLLEPIB
 	// // RVA: 0xF19620 Offset: 0xF19620 VA: 0xF19620
 	private bool ALDMHFCFECK(int INDDJNMPONH, float LNAHJANMJNM)
 	{
-		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0xF19628 Offset: 0xF19628 VA: 0xF19628
@@ -521,7 +529,7 @@ public class BBGDKLLEPIB
 	private static string IFCHFDEDCGF(MD5 DMIPFEIICDP, string CJEKGLGBIHF)
 	{
 		FileStream f = File.OpenRead(CJEKGLGBIHF);
-		byte[] hash = md5.ComputeHash(f);
+		byte[] hash = DMIPFEIICDP.ComputeHash(f);
 		string str = "";
 		for(int i = 0; i < hash.Length; i++)
 		{
@@ -555,6 +563,7 @@ public class BBGDKLLEPIB
 			data[i] = (byte)(data[i] ^ 0x1b);
 		}
 		
+		UnityEngine.Debug.Log("Write file "+dir+"/"+KCOGAGGCPBP.HJNJMNFEJEH);
 		File.WriteAllBytes(dir+"/"+KCOGAGGCPBP.HJNJMNFEJEH, data); // sys/02
 	}
 
@@ -570,7 +579,7 @@ public class BBGDKLLEPIB
 		if(File.Exists(file))
 		{
 			byte[] data = File.ReadAllBytes(file);
-			for(int i = 0; i < data.Lenth; i++)
+			for(int i = 0; i < data.Length; i++)
 			{
 				data[i] = (byte)(data[i] ^ 0x1b);
 			}
@@ -581,9 +590,9 @@ public class BBGDKLLEPIB
 			{
 				if(!json.BBAJPINMOEP_Contains("db"))
 				{
-					if(json["rev"] == LHJNPJFNDNA)
+					if((string)json["rev"] == LHJNPJFNDNA)
 					{
-						return json["db"] == OCOGBOHOGGE;
+						return (string)json["db"] == OCOGBOHOGGE;
 					}
 				}
 			}

@@ -59,10 +59,16 @@ public class CriFsWebInstaller : CriDisposable
 	public static bool isCrcEnabled { get; private set; } // 0x1
 	// public static CriFsWebInstaller.ModuleConfig defaultModuleConfig { get; } 0x294DDFC
 
+    // tmp hack
+    public UnityEngine.WWW www = null;
+    public string fileSavePath;
+    public CriFsWebInstaller.StatusInfo status = new CriFsWebInstaller.StatusInfo();
+    // tmp hack
+
 	// // RVA: 0x294D7A4 Offset: 0x294D7A4 VA: 0x294D7A4
 	public CriFsWebInstaller()
     {
-        UnityEngine.Debug.LogError("TODO CriFsWebInstaller()");
+        UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller()");
     }
 
 	// // RVA: 0x294DF48 Offset: 0x294DF48 VA: 0x294DF48 Slot: 1
@@ -71,22 +77,37 @@ public class CriFsWebInstaller : CriDisposable
 	// // RVA: 0x294E0CC Offset: 0x294E0CC VA: 0x294E0CC Slot: 5
 	public override void Dispose()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogWarning("CriFsWebInstaller Dispose");
 	}
 
 	// // RVA: 0x294D8BC Offset: 0x294D8BC VA: 0x294D8BC
-	// public void Copy(string url, string dstPath) { }
+	public void Copy(string url, string dstPath)
+    {
+        UnityEngine.Debug.LogWarning("Todo Copy "+url+" "+dstPath);
+        www = new UnityEngine.WWW(url);
+        fileSavePath = dstPath;
+        status.status = Status.Busy;
+    }
 
 	// // RVA: 0x294D728 Offset: 0x294D728 VA: 0x294D728
-	// public void Stop() { }
+	public void Stop()
+	{
+		UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller Stop");
+        if(www != null)
+        {
+            www.Dispose();
+            www = null;
+        }
+        status.status = Status.Stop;
+	}
 
 	// // RVA: 0x294DB28 Offset: 0x294DB28 VA: 0x294DB28
 	public CriFsWebInstaller.StatusInfo GetStatusInfo()
     {
         CriFsWebInstaller.StatusInfo st;
-        if(handle != null)
+        if(/*handle != null*/true)
         {
-            criFsWebInstaller_GetStatusInfo(handle, out st);
+            criFsWebInstaller_GetStatusInfo(this, out st);
         }
         else
         {
@@ -112,7 +133,7 @@ public class CriFsWebInstaller : CriDisposable
 	// // RVA: 0x294C460 Offset: 0x294C460 VA: 0x294C460
 	public static void ExecuteMain()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller ExecuteMain");
     }
 
 	// // RVA: 0x294EC08 Offset: 0x294EC08 VA: 0x294EC08
@@ -143,10 +164,35 @@ public class CriFsWebInstaller : CriDisposable
 	// private static extern int criFsWebInstaller_Stop(IntPtr installer) { }
 
 	// // RVA: 0x294E3D0 Offset: 0x294E3D0 VA: 0x294E3D0
-	private static /*extern */int criFsWebInstaller_GetStatusInfo(IntPtr installer, out CriFsWebInstaller.StatusInfo status)
+	private static /*extern */int criFsWebInstaller_GetStatusInfo(/*IntPtr*/CriFsWebInstaller installer, out CriFsWebInstaller.StatusInfo status)
     {
-        UnityEngine.Debug.LogError("TODO");
-        status = new CriFsWebInstaller.StatusInfo();
+        UnityEngine.Debug.LogWarning("TODO criFsWebInstaller_GetStatusInfo");
+        
+        status = installer.status;
+
+        if(installer.www != null)
+        {
+            if(status.status != Status.Complete)
+            {
+                status.status = Status.Busy;
+                status.contentsSize = 1000;
+                status.receivedSize = (long)(1000 * installer.www.progress);
+                if(installer.www.isDone)
+                {
+                    status.status = Status.Complete;
+                    UnityEngine.Debug.Log("Write file "+installer.fileSavePath);
+                    System.IO.File.WriteAllBytes(installer.fileSavePath, installer.www.bytes);
+                }
+            }
+        }
+        else
+        {
+            status.contentsSize = -1;
+            status.receivedSize = 0;
+            status.httpStatusCode = 0;
+            status.status = Status.Stop;
+            status.error = Error.None;
+        }
         return 0;
     }
 

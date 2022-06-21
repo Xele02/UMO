@@ -104,7 +104,7 @@ public class IMMAOANGPNK
 				{
 					yield return null;
 				}
-				if(GBEGLNMFLIE.NPNNPNAIONN == false)
+				if(GBEGLNMFLIE.NPNNPNAIONN == true)
 				{
 					yield return N.a.StartCoroutine(LGFPCADOCAA_ShowError());
 					MOBEEPPKFLG();
@@ -176,6 +176,7 @@ public class IMMAOANGPNK
 				}
 				if(File.Exists(BLOMMALFLCM))
 				{
+					UnityEngine.Debug.Log("Delete File "+BLOMMALFLCM);
 					File.Delete(BLOMMALFLCM);
 				}
 				GCELJIDIGDG = HCNDEJCCIMA.IAKPCFDLMKP;
@@ -354,7 +355,7 @@ public class IMMAOANGPNK
 	// // RVA: 0x9FC518 Offset: 0x9FC518 VA: 0x9FC518
 	private void BBHOKHCDBFI(CBBJHPBGBAJ_Archive GBEGLNMFLIE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO !!!");
 	}
 
 	// // RVA: 0x9FCE3C Offset: 0x9FCE3C VA: 0x9FCE3C
@@ -382,7 +383,7 @@ public class IMMAOANGPNK
 			}
 		}
 		
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO !!!");
 	}
 
 	// // RVA: 0x9FD930 Offset: 0x9FD930 VA: 0x9FD930

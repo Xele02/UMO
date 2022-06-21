@@ -68,25 +68,25 @@ namespace XeApp.Game.Common
 		// RVA: 0xE5DE78 Offset: 0xE5DE78 VA: 0xE5DE78 Slot: 16
 		public override void OnPointerEnter(PointerEventData eventData)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO OnPointerEnter");
 		}
 
 		// RVA: 0xE5DF08 Offset: 0xE5DF08 VA: 0xE5DF08 Slot: 17
 		public override void OnPointerExit(PointerEventData eventData)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO OnPointerExit");
 		}
 
 		// RVA: 0xE5DF8C Offset: 0xE5DF8C VA: 0xE5DF8C Slot: 18
 		public override void OnPointerDown(PointerEventData eventData)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO OnPointerDown");
 		}
 
 		// RVA: 0xE5E040 Offset: 0xE5E040 VA: 0xE5E040 Slot: 19
 		public override void OnPointerUp(PointerEventData eventData)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO OnPointerUp");
 		}
 
 		// // RVA: 0xE5E0D8 Offset: 0xE5E0D8 VA: 0xE5E0D8 Slot: 27

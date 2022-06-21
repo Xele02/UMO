@@ -97,13 +97,13 @@ public class KOGHKIODHPA : DIHHCBACKGG
 	// // RVA: 0x1130188 Offset: 0x1130188 VA: 0x1130188
 	public KOGHKIODHPA()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO !!!");
     }
 
 	// // RVA: 0x1130328 Offset: 0x1130328 VA: 0x1130328 Slot: 8
 	protected override void KMBPACJNEOF()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO !!!");
     }
 
 	// // RVA: 0x1130450 Offset: 0x1130450 VA: 0x1130450 Slot: 9

@@ -273,6 +273,7 @@ namespace XeApp.Game.AR
 				bool fin = false;
 				am.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 					//0xBBB3A4
+					UnityEngine.Debug.Log("Write file "+dest);
 					File.WriteAllBytes(dest, dataBytes);
 					fin = true;
 				});

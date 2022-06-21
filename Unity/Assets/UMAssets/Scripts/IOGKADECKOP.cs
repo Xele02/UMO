@@ -69,10 +69,8 @@ public class IOGKADECKOP
 	// // RVA: 0xA065F0 Offset: 0xA065F0 VA: 0xA065F0
 	public bool FKDKMCKJNJD()
     {
-		UnityEngine.Debug.Log("FKDKMCKJNJD");
 		if(!BICOBOLNFLJ)
 			return false;
-		UnityEngine.Debug.Log("FKDKMCKJNJD 2");
 		
         MCJHELIEHMC = InheritingMenu.Create(null);
 		DANMJLOBLIE.StartCoroutine(LMDJGHMDDJA_LogoActCoroutine());
@@ -420,7 +418,7 @@ public class IOGKADECKOP
 	// // RVA: 0xA06E24 Offset: 0xA06E24 VA: 0xA06E24
 	private void PELOLGDNOGL()
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		UnityEngine.Debug.LogWarning("TODO PELOLGDNOGL");
 		NOFPJPHIPBD.ScreenTap.ButtonCallbackTap = this.FGBKOJCFMKM;
 	}
 
@@ -476,7 +474,7 @@ public class IOGKADECKOP
 	{
         UnityEngine.Debug.Log("Enter HNPMKCFMEGA_Coroutine_Inquiry");
 		//0x140453C
-		UnityEngine.Debug.LogError("TODO !!!");
+		UnityEngine.Debug.LogWarning("TODO HNPMKCFMEGA_Coroutine_Inquiry");
 		PELOLGDNOGL();
         UnityEngine.Debug.Log("Exit HNPMKCFMEGA_Coroutine_Inquiry");
 		yield break;

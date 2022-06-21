@@ -1,5 +1,10 @@
 using System.Collections.Generic;
 using System;
+using System.Text;
+using XeSys;
+using UnityEngine;
+using System.Threading;
+using System.IO;
 
 public class JEHIAIPJNJF : IDisposable
 {
@@ -19,7 +24,7 @@ public class JEHIAIPJNJF : IDisposable
         public string NFCMNIEHJML; // 0xC
         public string ADHHKEMDOIK; // 0x10
         public int OIPCCBHIKIA; // 0x14
-        public double KMABBBKJFCB; // 0x18
+        public double KMABBBKJFCB; // 0x18 // percent
         public bool NEDNDAKLBMJ; // 0x20
         public bool IKBKLPNADJM; // 0x21
         public GCGNICILKLD LAPFOLJGJMB; // 0x24
@@ -30,8 +35,8 @@ public class JEHIAIPJNJF : IDisposable
         public CriFsWebInstaller.StatusInfo IOKJFDPOEFP; // 0x8
         public JEHIAIPJNJF.HCJPJKCIBDL ICKGJODOCBB; // 0x28
         public bool GGFGJEDLKNC; // 0x2C
-        public float LBNOBJFOKMI; // 0x30
-        public long NPKGIPPJGEI; // 0x38
+        public float LBNOBJFOKMI; // 0x30 // timeout detector
+        public long NPKGIPPJGEI; // 0x38 // current size received
         public int JBPJJGNGMFG; // 0x40
     }
  
@@ -61,7 +66,7 @@ public class JEHIAIPJNJF : IDisposable
 	// // RVA: 0x1C34424 Offset: 0x1C34424 VA: 0x1C34424
 	public static void BNGLMLOLPEL()
 	{
-
+		UnityEngine.Debug.LogWarning("TODO BNGLMLOLPEL");
 	}
 
 	// // RVA: 0x1C34554 Offset: 0x1C34554 VA: 0x1C34554
@@ -71,16 +76,56 @@ public class JEHIAIPJNJF : IDisposable
 	}
 
 	// // RVA: 0x1C34638 Offset: 0x1C34638 VA: 0x1C34638
-	// private int FCPPMGNCGNO() { }
+	private int FCPPMGNCGNO()
+	{
+		int res = 0;
+		for(int i = 0; i < JOJMBFBGMGN.Count; i++)
+		{
+			if(!JOJMBFBGMGN[i].IKBKLPNADJM)
+			{
+				if(JOJMBFBGMGN[i].NEDNDAKLBMJ)
+				{
+					res = res + 1;
+				}
+			}
+			else
+			{
+				res = res + 1;
+			}
+		}
+		
+		return JOJMBFBGMGN.Count - res;
+	}
 
 	// // RVA: 0x1C34784 Offset: 0x1C34784 VA: 0x1C34784
-	// private int IOBFPLEDMOL() { }
+	private int IOBFPLEDMOL()
+	{
+		for(int i = 0; i < JOJMBFBGMGN.Count; i++)
+		{
+			if(!JOJMBFBGMGN[i].IKBKLPNADJM)
+			{
+				if(!JOJMBFBGMGN[i].NEDNDAKLBMJ)
+				{
+					return i;
+				}
+			}
+		}
+		return -1;
+	}
 
 	// // RVA: 0x1C348D0 Offset: 0x1C348D0 VA: 0x1C348D0
 	public float HCAJCKCOCHC()
 	{
-		UnityEngine.Debug.LogError("TODO");
-		return 0;
+		double res = 0.0f;
+		if(CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.FEJIMBDPMKI && JOJMBFBGMGN != null)
+		{
+			for(int i = 0; i < JOJMBFBGMGN.Count; i++)
+			{
+				res += JOJMBFBGMGN[i].KMABBBKJFCB;
+			}
+			res = res * 100.0f / JOJMBFBGMGN.Count;
+		}
+		return (float)res;
 	}
 
 	// RVA: 0x1C34A10 Offset: 0x1C34A10 VA: 0x1C34A10
@@ -110,7 +155,8 @@ public class JEHIAIPJNJF : IDisposable
 	// // RVA: 0x1C34E78 Offset: 0x1C34E78 VA: 0x1C34E78 Slot: 4
 	public void Dispose()
     {
-        UnityEngine.Debug.LogError("TODO");
+		PEFNBFCMIBL(false);
+		GC.SuppressFinalize(this);
     }
 
 	// // RVA: 0x1C34F08 Offset: 0x1C34F08 VA: 0x1C34F08
@@ -124,12 +170,10 @@ public class JEHIAIPJNJF : IDisposable
 		{
 			HCJPJKCIBDL data = new HCJPJKCIBDL();
 			data.AJPIGKBIDDL = IDJBKGBMDAJ[i].OIEAICNAMNB;
-			str.SetLength(0);
-			str.Append(JCILKDKNDLE);
+			str.Set(JCILKDKNDLE);
 			str.Append(IDJBKGBMDAJ[i].OIEAICNAMNB);
-			data.NFCMNIEHJML = JCILKDKNDLE + IDJBKGBMDAJ[i].POEGMFKLFJG;
-			str.SetLength(0);
-			str.Append(OGCDNCDMLCA);
+			data.NFCMNIEHJML = JCILKDKNDLE + IDJBKGBMDAJ[i].MFBMBPJAADA;
+			str.Set(OGCDNCDMLCA);
 			str.Append(IDJBKGBMDAJ[i].OIEAICNAMNB);
 			data.LAPFOLJGJMB = IDJBKGBMDAJ[i];
 			data.ADHHKEMDOIK = str.ToString();
@@ -163,20 +207,20 @@ public class JEHIAIPJNJF : IDisposable
 	{
 		IMDNPMAIJFO();
 		BHICPONFJKM = false;
-		if(CMCKNKKCNDK != 0)
+		if(CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
 			return;
-		CMCKNKKCNDK = 1;
+		CMCKNKKCNDK = JEHIAIPJNJF.NKLKJEOKIFO.JGHMJIGGJHI/*1*/;
 	}
 
 	// // RVA: 0x1C3578C Offset: 0x1C3578C VA: 0x1C3578C
 	public void PBIMGBKLDPP()
 	{
-		if(CMCKNKKCNDK == 5)
+		if(CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.DNCJBLFALPA/*5*/)
 		{
-			CMCKNKKCNDK = 1;
+			CMCKNKKCNDK = JEHIAIPJNJF.NKLKJEOKIFO.JGHMJIGGJHI/*1*/;
 			return;
 		}
-		if(CMCKNKKCNDK == 4)
+		if(CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.LPLEIJIFOKN/*4*/)
 		{
 			return;
 		}
@@ -187,40 +231,226 @@ public class JEHIAIPJNJF : IDisposable
 			installer.Stop();
 			if(info.ICKGJODOCBB != null)
 			{
-				info.KMABBBKJFCB = 0;
+				info.ICKGJODOCBB.KMABBBKJFCB = 0;
 				info.ICKGJODOCBB.NEDNDAKLBMJ = false;
 				info.ICKGJODOCBB.IKBKLPNADJM = false;
 				info.ICKGJODOCBB = null;
 			}
 		}
-		CMCKNKKCNDK = 5;
+		CMCKNKKCNDK = JEHIAIPJNJF.NKLKJEOKIFO.DNCJBLFALPA/*5*/;
 		EMAEFFGBFIB = 0;
 	}
 
 	// // RVA: 0x1C35A48 Offset: 0x1C35A48 VA: 0x1C35A48
 	public void FBANBDCOEJL()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		if(OEMNJCADFLL > -1)
+		{
+			OEMNJCADFLL = OEMNJCADFLL - 1;
+			if(OEMNJCADFLL == 0)
+			{
+				IMDNPMAIJFO();
+			}
+		}
+		if(CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.JGHMJIGGJHI)
+		{
+			if(CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.DNCJBLFALPA)
+			{
+				CriFsWebInstaller.ExecuteMain();
+				PKDGOJNCLBK();
+				string logTxt = "";
+				if(KJIGCCPJBFK.Count == 0)
+				{
+					//logTxt = "StringLiteral_11859";
+				}
+				else
+				{
+					//logTxt = "StringLiteral_11860" + EMAEFFGBFIB;
+					EMAEFFGBFIB = EMAEFFGBFIB + 1;
+					if(EMAEFFGBFIB < GKJDDNOBIPM)
+						return;
+					// log StringLiteral_11861
+					// log StringLiteral_11862
+					int numInstaller = KJIGCCPJBFK.Count;
+					while(KJIGCCPJBFK.Count > 0)
+					{
+						CriFsWebInstaller wi = KJIGCCPJBFK[0];
+						JEHIAIPJNJF.AFGDFAJEBFA info = PLDKOCEHDAL[wi];
+						KJIGCCPJBFK.RemoveAt(0);
+						PLDKOCEHDAL.Remove(wi);
+						if(info.ICKGJODOCBB != null)
+						{
+							info.ICKGJODOCBB.NEDNDAKLBMJ = false;
+							info.ICKGJODOCBB.KMABBBKJFCB = 0;
+						}
+						CICJCFPNCNO.Add(wi);
+					}
+					//log StringLiteral_11863
+					for(int i = 0; i < numInstaller; i++)
+					{
+						CriFsWebInstaller installer = new CriFsWebInstaller();
+						JEHIAIPJNJF.AFGDFAJEBFA info = new JEHIAIPJNJF.AFGDFAJEBFA();
+						info.IOKJFDPOEFP = installer.GetStatusInfo();
+						GBFHGDHNDIE.Enqueue(installer);
+						JLNFKNICIFD[i] = info;
+						PLDKOCEHDAL.Add(installer, info);
+					}
+				}
+				CMCKNKKCNDK = 0;
+				EMAEFFGBFIB = 0;
+				return;
+			}
+			if(CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.LLGCBKEOHNP)
+				return;
+		}
+		CriFsWebInstaller.ExecuteMain();
+		int a = PKDGOJNCLBK();
+		if(a < 1)
+		{
+			if(FCPPMGNCGNO() != 0)
+			{
+				HNKPDKKIPOH();
+				return;
+			}
+			if(KJIGCCPJBFK.Count != 0)
+				return;
+			CMCKNKKCNDK = JEHIAIPJNJF.NKLKJEOKIFO.FEJIMBDPMKI;
+		}
+		else
+		{
+			if(KJIGCCPJBFK.Count == a)
+			{
+				CMCKNKKCNDK = JEHIAIPJNJF.NKLKJEOKIFO.LPLEIJIFOKN;
+			}
+			else
+			{
+				CMCKNKKCNDK = JEHIAIPJNJF.NKLKJEOKIFO.LLGCBKEOHNP;
+			}
+		}
 	}
 
 	// // RVA: 0x1C34D48 Offset: 0x1C34D48 VA: 0x1C34D48
-	// private void PEFNBFCMIBL(bool PGDOLHMCLIA) { }
+	private void PEFNBFCMIBL(bool PGDOLHMCLIA)
+	{
+		if(OILIGLGDNAD)
+			return;
+		if(CMCKNKKCNDK != 0)
+		{
+			PBIMGBKLDPP();
+			while(CMCKNKKCNDK != 0)
+			{
+				FBANBDCOEJL();
+				Thread.Sleep(1);
+			}
+		}
+		while(GBFHGDHNDIE.Count != 0)
+		{
+			CriFsWebInstaller installer = GBFHGDHNDIE.Dequeue();	
+			installer.Dispose();
+		}
+		JOJMBFBGMGN = null;
+		GBFHGDHNDIE = null;
+		JLNFKNICIFD = null;
+	}
 
 	// // RVA: 0x1C36BC0 Offset: 0x1C36BC0 VA: 0x1C36BC0
 	// public string LCKGFBCHOAJ() { }
 
 	// // RVA: 0x1C363E4 Offset: 0x1C363E4 VA: 0x1C363E4
-	// private int PKDGOJNCLBK() { }
+	private int PKDGOJNCLBK()
+	{
+		int index = 0;
+		int res = 0;
+		CriFsWebInstaller.Status status;
+		JEHIAIPJNJF.AFGDFAJEBFA info = null;
+		CriFsWebInstaller installer = null;
+		while(true)
+		{
+			while(true)
+			{
+				while(true)
+				{
+					if(index >= KJIGCCPJBFK.Count)
+						return res;
+					installer = KJIGCCPJBFK[index];
+					info = PLDKOCEHDAL[installer];
+					info.IOKJFDPOEFP = installer.GetStatusInfo();
+					status = info.IOKJFDPOEFP.status;
+					if(info.IOKJFDPOEFP.status != CriFsWebInstaller.Status.Stop)
+						break;
+					if(info.ICKGJODOCBB != null)
+					{
+						info.ICKGJODOCBB.IKBKLPNADJM = false;
+						info.ICKGJODOCBB.NEDNDAKLBMJ = false;
+						info.ICKGJODOCBB.KMABBBKJFCB = 0;
+					}
+					KJIGCCPJBFK.RemoveAt(index);
+					GBFHGDHNDIE.Enqueue(installer);
+				}
+				if(status == CriFsWebInstaller.Status.Complete)
+					break;
+				if(status == CriFsWebInstaller.Status.Error)
+				{
+					DLHJNILCAGE(info);
+					index = index + 1;
+					CMCKNKKCNDK = JEHIAIPJNJF.NKLKJEOKIFO.LLGCBKEOHNP;
+					res = res + 1;
+				}
+				else
+				{
+					if(info.IOKJFDPOEFP.contentsSize > 0)
+					{
+						if(info.ICKGJODOCBB != null)
+						{
+							info.ICKGJODOCBB.KMABBBKJFCB = 1.0f * info.IOKJFDPOEFP.receivedSize / info.IOKJFDPOEFP.contentsSize;
+						}
+						float f = 0.0f;
+						if(info.IOKJFDPOEFP.receivedSize == info.NPKGIPPJGEI)
+						{
+							f = info.LBNOBJFOKMI + Time.deltaTime;
+						}
+						info.LBNOBJFOKMI = f;
+						info.NPKGIPPJGEI = info.IOKJFDPOEFP.receivedSize;
+					}
+					else
+					{
+						info.LBNOBJFOKMI = info.LBNOBJFOKMI + Time.deltaTime;
+					}
+					index = index + 1;
+				}
+			}
+			if(LBGNKOJFOFC != null)
+				LBGNKOJFOFC(info.ICKGJODOCBB);
+			info.ICKGJODOCBB.KMABBBKJFCB = 1.0;
+			info.ICKGJODOCBB.IKBKLPNADJM = false;
+			info.ICKGJODOCBB.NEDNDAKLBMJ = true;
+			installer.Stop();
+			KJIGCCPJBFK.RemoveAt(index);
+			GBFHGDHNDIE.Enqueue(installer);
+			info.IOKJFDPOEFP = installer.GetStatusInfo();
+			info.ICKGJODOCBB = null;
+		}
+		return 0;
+	}
 
 	// // RVA: 0x1C380F0 Offset: 0x1C380F0 VA: 0x1C380F0
 	public bool MNFGKBAEFFL()
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		for(int i = 0; i < KJIGCCPJBFK.Count; i++)
+		{
+			JEHIAIPJNJF.AFGDFAJEBFA info = PLDKOCEHDAL[KJIGCCPJBFK[i]];
+			info.IOKJFDPOEFP = KJIGCCPJBFK[i].GetStatusInfo();
+			if(GCKDIGMAMND <= info.LBNOBJFOKMI)
+				return true;
+		}
 		return false;
 	}
 
 	// // RVA: 0x1C37140 Offset: 0x1C37140 VA: 0x1C37140
-	// private void DLHJNILCAGE(JEHIAIPJNJF.AFGDFAJEBFA PHKJOMLDNOB) { }
+	private void DLHJNILCAGE(JEHIAIPJNJF.AFGDFAJEBFA PHKJOMLDNOB)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x1C35730 Offset: 0x1C35730 VA: 0x1C35730
 	public void IMDNPMAIJFO()
@@ -248,5 +478,39 @@ public class JEHIAIPJNJF : IDisposable
 	// private void DEOEDMFDPGP() { }
 
 	// // RVA: 0x1C36884 Offset: 0x1C36884 VA: 0x1C36884
-	// private void HNKPDKKIPOH() { }
+	private void HNKPDKKIPOH()
+	{
+		while(true)
+		{ 
+			if(GBFHGDHNDIE.Count == 0)
+				return;
+			int num = IOBFPLEDMOL();
+			if(num < 0 || KAMPHNKAHAB)
+			{
+				return;
+			}
+			CriFsWebInstaller installer = GBFHGDHNDIE.Dequeue();
+			JEHIAIPJNJF.HCJPJKCIBDL info = JOJMBFBGMGN[num];
+			JEHIAIPJNJF.AFGDFAJEBFA info2 = PLDKOCEHDAL[installer];
+			string dirName = Path.GetDirectoryName(info.ADHHKEMDOIK);
+			if(!Directory.Exists(dirName))
+			{
+				Directory.CreateDirectory(dirName);
+			}
+			if(File.Exists(info.ADHHKEMDOIK))
+			{
+				UnityEngine.Debug.Log("Delete File "+info.ADHHKEMDOIK);
+				File.Delete(info.ADHHKEMDOIK);
+			}
+			installer.Copy(info.NFCMNIEHJML, info.ADHHKEMDOIK);
+			info.KMABBBKJFCB = 0;
+			info.NEDNDAKLBMJ = false;
+			info.IKBKLPNADJM = true;
+			KJIGCCPJBFK.Add(installer);
+			info2.ICKGJODOCBB = info;
+			info2.GGFGJEDLKNC = false;
+			info2.IOKJFDPOEFP = installer.GetStatusInfo();
+			info2.LBNOBJFOKMI = 0.0f;
+		}
+	}
 }

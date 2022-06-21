@@ -33,7 +33,7 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE3AA28 Offset: 0xE3AA28 VA: 0xE3AA28
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO LayoutTitleScreen Update");
 		}
 
 		// // RVA: 0xE3AB04 Offset: 0xE3AB04 VA: 0xE3AB04 Slot: 5

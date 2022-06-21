@@ -165,6 +165,7 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE89CF8 Offset: 0xE89CF8 VA: 0xE89CF8
 	public static void INLICKMJHHK(string CJEKGLGBIHF_path)
 	{
+		UnityEngine.Debug.Log("Delete File "+CJEKGLGBIHF_path);
 		File.Delete(CJEKGLGBIHF_path);
 	}
 

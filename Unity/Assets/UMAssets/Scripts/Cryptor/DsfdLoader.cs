@@ -1515,6 +1515,8 @@ namespace Cryptor
         // // RVA: 0x2BAF080 Offset: 0x2BAF080 VA: 0x2BAF080
         public static DsfdLoader.ILoadRequest LoadFile(string filePath)
         {
+            if(!System.IO.File.Exists(filePath))
+                return null;
             if(isInitialized)
             {
                 uint res = dsfd_single(filePath);
