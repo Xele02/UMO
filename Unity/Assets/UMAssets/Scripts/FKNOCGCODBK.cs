@@ -29,7 +29,11 @@ public class FKNOCGCODBK : KLFDBFMNLBL
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH) { }
 
 	// // RVA: 0x118FEC0 Offset: 0x118FEC0 VA: 0x118FEC0 Slot: 6
-	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP) { }
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return false;
+	}
 
 	// // RVA: 0x11916EC Offset: 0x11916EC VA: 0x11916EC Slot: 7
 	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }

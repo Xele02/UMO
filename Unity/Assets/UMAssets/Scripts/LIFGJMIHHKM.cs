@@ -44,7 +44,11 @@ public class LIFGJMIHHKM : KLFDBFMNLBL
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH) { }
 
 	// // RVA: 0x1800634 Offset: 0x1800634 VA: 0x1800634 Slot: 6
-	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP) { }
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return false;
+	}
 
 	// // RVA: 0x1800BA4 Offset: 0x1800BA4 VA: 0x1800BA4 Slot: 7
 	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }

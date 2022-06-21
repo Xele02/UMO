@@ -117,7 +117,11 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
     }
 
 	// // RVA: 0xD9CCBC Offset: 0xD9CCBC VA: 0xD9CCBC Slot: 10
-	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return false;
+	}
 
 	// // RVA: 0xD9CCC4 Offset: 0xD9CCC4 VA: 0xD9CCC4
 	// private bool EEIKAAONMPO(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }

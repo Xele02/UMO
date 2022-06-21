@@ -51,7 +51,11 @@ public class GJALOMELEHD : DIHHCBACKGG
 	// public bool KOPMKAKPJOO(AMBAEMHAMDB GGKAPJELKOA) { }
 
 	// // RVA: 0xAAA568 Offset: 0xAAA568 VA: 0xAAA568 Slot: 10
-	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return false;
+	}
 
 	// // RVA: 0xAAA570 Offset: 0xAAA570 VA: 0xAAA570 Slot: 11
 	public override uint CAOGDCBPBAN()

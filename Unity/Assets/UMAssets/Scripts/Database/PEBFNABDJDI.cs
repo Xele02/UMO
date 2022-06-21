@@ -40,7 +40,7 @@ public class PEBFNABDJDI : DIHHCBACKGG
 	public Dictionary<string, string> JLJEEMEOPLE { get; set; } // CJGBLCGHHEI 0x2C // DCHGJLCADKP // ICHNENECFGN
 	// public Dictionary<string, BIJMLAPNMAB> LMBIOEDHNHB { get; set; } // OOCFKPKLBJH 0x30 // BGCEPJDLFFA // JPLHJCLOPKE
 	// public Dictionary<string, NNJFKLBPBNK> FJOEBCMGDMI { get; set; } // IHKPIFIBECO 0x34 // GAMGELHIHHI // DDDEJIJGGBJ
-	// public Dictionary<string, CEBFFLDKAEC> OHJFBLFELNK { get; set; } // KLDCHOIPJGB 0x38 // AEMNOGNEBOJ // DGKDBOAMNBB
+	public Dictionary<string, CEBFFLDKAEC> OHJFBLFELNK { get; set; } // KLDCHOIPJGB 0x38 // AEMNOGNEBOJ // DGKDBOAMNBB
 	public Dictionary<string, int> KBAPDOLLLAN { get; set; } // BKGIMGCBBOC 0x3C // OOEBAHFJPAB // MCMHANFFFNF
 
 	// // RVA: 0xCC4458 Offset: 0xCC4458 VA: 0xCC4458
@@ -75,13 +75,13 @@ public class PEBFNABDJDI : DIHHCBACKGG
 	public PEBFNABDJDI()
     {
         LNIMEIMBCMF = false;
-        //NGHKJOEDLIP = new CHBDMJBEENG();
+        NGHKJOEDLIP = new CHBDMJBEENG();
         //JDBLDOPHHNL = new List<OGNALGCHKED>();
         //BHDJIIHLMDM = new List<EJABAIAPFLK>();
         JLJEEMEOPLE = new Dictionary<string, string>();
         LMHMIIKCGPE = 79;
         //LMBIOEDHNHB = new Dictionary<string, BIJMLAPNMAB>();
-        //OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC>();
+        OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC>();
         KBAPDOLLLAN = new Dictionary<string, int>();
         //JNJAOACIGOC = new List<CEBFFLDKAEC>();
         //FJOEBCMGDMI = new Dictionary<string, NNJFKLBPBNK>();
@@ -105,7 +105,11 @@ public class PEBFNABDJDI : DIHHCBACKGG
     }
 
 	// // RVA: 0xCC6E38 Offset: 0xCC6E38 VA: 0xCC6E38 Slot: 10
-	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return false;
+	}
 
 	// // RVA: 0xCC6B8C Offset: 0xCC6B8C VA: 0xCC6B8C
 	// private void DMLGPFLLMOB(Dictionary<int, long> AKMJDDOFJOL, string FJOEBCMGDMI) { }
@@ -154,8 +158,8 @@ public class CHBDMJBEENG
 
 	// public int PFNBMPCIIJJ { get; set; } FHKONOMKGBN 0x12BE018 BLIGJALGJIK 0x12BE028
 	public int KBNGOBEAHIC { get { return OBPBCNNFNFO ^ NMJDFCEJOCP; } set { NMJDFCEJOCP = OBPBCNNFNFO ^ value; } } //JKEJHFKAKDN 0x12BE038 OKFDFHNIILF 0x12BE048
-	// public int JOIEHMBKJHI { get; set; } LKFCFNJDCOD 0x12BE058 EAKKAOCBAMF 0x12BE068
-	// public int KHGJIGNHAGD { get; set; } NLNDHIKBGOA 0x12BE078 OACFGDPBLCP 0x12BE088
+	public int JOIEHMBKJHI { get { return OBPBCNNFNFO ^ IGNPLAKONFE; } set { IGNPLAKONFE = OBPBCNNFNFO ^ value; } } //LKFCFNJDCOD 0x12BE058 EAKKAOCBAMF 0x12BE068
+	public int KHGJIGNHAGD { get { return OBPBCNNFNFO ^ JOGHEIDHELL } set { JOGHEIDHELL = OBPBCNNFNFO ^ value; } } //NLNDHIKBGOA 0x12BE078 OACFGDPBLCP 0x12BE088
 	// public int EEBOIPHMMBP { get; set; } PCJCHDJPDHN 0x12BE098 BCLCFCILPFP 0x12BE0A8
 	// public int IMNJNFICJPM { get; set; } GCLLEGIMPCF 0x12BE0B8 FKPEMBDPOME 0x12BE0C8
 	// public int PIAMMJNADJH { get; set; } AOHLFEDHOHH 0x12BE0D8 IPHJMAENLHE 0x12BE0E8

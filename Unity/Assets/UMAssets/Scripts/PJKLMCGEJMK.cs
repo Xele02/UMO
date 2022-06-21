@@ -515,7 +515,10 @@ public class PJKLMCGEJMK
     }
 
     // // RVA: 0x932144 Offset: 0x932144 VA: 0x932144
-    // public void CEEAFKHANJB(int EAABKFGHKBG, int ABFKANCAMPN) { }
+    public void CEEAFKHANJB(int EAABKFGHKBG, int ABFKANCAMPN)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
     // // RVA: 0x9321AC Offset: 0x9321AC VA: 0x9321AC
     private void NELKBIEGFIF(CACGCMBKHDI_Request ADKIDBJCAJA)

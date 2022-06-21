@@ -34,7 +34,7 @@ public abstract class KLFDBFMNLBL
 	// public abstract void OKJPIBHMKMJ(EDOHBJAPLPF OILEIIEIBHP, long MCKEOKFMLAH);
 
 	// // RVA: -1 Offset: -1 Slot: 6
-	// public abstract bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP);
+	public abstract bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP);
 
 	// // RVA: 0x1A0BCA4 Offset: 0x1A0BCA4 VA: 0x1A0BCA4
 	// public void ODDIHGPONFL_Copy(KLFDBFMNLBL GPBJHKLFCEP) { }

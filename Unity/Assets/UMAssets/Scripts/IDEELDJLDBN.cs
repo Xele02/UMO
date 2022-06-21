@@ -1,3 +1,4 @@
+using FlatBuffers
 
 public class IDEELDJLDBN
 {
@@ -6,7 +7,7 @@ public class IDEELDJLDBN
 	// // RVA: 0x11EB4FC Offset: 0x11EB4FC VA: 0x11EB4FC
 	public static IDEELDJLDBN HEGEKFMJNCC(byte[] NIODCJLINJN)
     {
-        UnityEngine.Debug.LogError("TODO !!!");
-        return null;
+		UnityEngine.Debug.LogError("TODO reader auto JHCHMCIFCND");
+		return null;
     }
 }

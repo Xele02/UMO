@@ -55,7 +55,11 @@ public class KBCCGHLCFNO : DIHHCBACKGG
     }
 
 	// // RVA: 0x101A2B4 Offset: 0x101A2B4 VA: 0x101A2B4 Slot: 10
-	// public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return false;
+	}
 
 	// // RVA: 0x101A2BC Offset: 0x101A2BC VA: 0x101A2BC Slot: 11
 	public override uint CAOGDCBPBAN()

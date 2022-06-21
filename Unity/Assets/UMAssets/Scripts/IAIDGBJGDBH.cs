@@ -14,6 +14,7 @@ public class IAIDGBJGDBH
 	// // RVA: 0x120DA20 Offset: 0x120DA20 VA: 0x120DA20
 	public static IAIDGBJGDBH HEGEKFMJNCC(byte[] NIODCJLINJN)
     {
+		UnityEngine.Debug.LogError("TODO reader auto DHFKAKFHFOL");
         ByteBuffer reader = new ByteBuffer(NIODCJLINJN); // this
         DHFKAKFHFOL d = DHFKAKFHFOL.GetRootAsDHFKAKFHFOL(reader); // this00
         IAIDGBJGDBH self = new IAIDGBJGDBH(); // this01

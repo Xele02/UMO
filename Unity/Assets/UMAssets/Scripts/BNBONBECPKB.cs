@@ -8,6 +8,7 @@ public class BNBONBECPKB
 	// RVA: 0x19CA924 Offset: 0x19CA924 VA: 0x19CA924
 	public static BNBONBECPKB HEGEKFMJNCC(byte[] NIODCJLINJN)
     {
+		UnityEngine.Debug.LogError("TODO reader auto ODNNPHLAMGH");
         ByteBuffer buffer = new ByteBuffer(NIODCJLINJN);
         ODNNPHLAMGH table = ODNNPHLAMGH.GetRootAsODNNPHLAMGH(buffer);
         BNBONBECPKB b = new BNBONBECPKB();
