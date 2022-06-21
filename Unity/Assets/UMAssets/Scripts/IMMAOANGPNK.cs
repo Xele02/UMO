@@ -420,13 +420,11 @@ public class IMMAOANGPNK
 			for(int i = 0; i < b.Length; i++)
 			{
 				int val = b[i].BEBJKJKBOGH;
-				UnityEngine.Debug.LogError("TODO test "+val+" "+JHNMKKNEENE); // Which version to keep ? all new ones + lastest, or all old ones + next ?
 				if(val < JHNMKKNEENE)
 				{
 					if(obj != null)
 					{
-						UnityEngine.Debug.LogError("TODO test 2 "+val+" "+obj.PDBPFJJCADD);
-						if(val > obj.PDBPFJJCADD)
+						if(val < obj.PDBPFJJCADD)
 						{
 							continue;
 						}
@@ -457,7 +455,6 @@ public class IMMAOANGPNK
 			if(MGFBEKNMJOA.Count > 0)
 			{
 				IMMAOANGPNK.MPFFINOMILP item = MGFBEKNMJOA[0];
-				UnityEngine.Debug.LogError("TODO test "+item.PDBPFJJCADD+" "+JHNMKKNEENE);
 				if(item.PDBPFJJCADD < JHNMKKNEENE)
 				{
 					DIHHCBACKGG.IEFOPDOOLOK = item.IJEKNCDIIAE;

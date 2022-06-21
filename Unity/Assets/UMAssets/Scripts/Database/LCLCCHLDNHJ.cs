@@ -73,9 +73,9 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
 	public const int DJGNIDBKLCE = 500;
 	public const int KHHGMLNMHBN = 3;
 	public static readonly int GFIKOEEBIJP = GameAttribute.ArrayNum - 1; // 0x0
-	public string HDIDJNCGICK; // 0x34
+	public string HDIDJNCGICK = ""; // 0x34
 
-	// public List<LCLCCHLDNHJ.ILODJKFJJDO> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<LCLCCHLDNHJ.ILODJKFJJDO> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 	public Dictionary<int, int[]> MBLNIECELNK { get; private set; } // 0x24 GHJIJLGHBLA EHAONDMIOFL CAJNIOACOCP
 	public Dictionary<int, int[]> AKKDOIJNMBH { get; private set; } // 0x28 MJPHOOLJKJE HJMAIPELMAH JJOIDPBEEOH
 	// public Dictionary<int, LCLCCHLDNHJ.JMEHNBGDEBD> FDNBEPCEHBH { get; private set; } // 0x2C AMDEGDEHAAL HJLBICBIFAP FIOPFDLGEAE
@@ -100,13 +100,22 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
 	// // RVA: 0xD9B39C Offset: 0xD9B39C VA: 0xD9B39C
 	public LCLCCHLDNHJ()
     {
-        UnityEngine.Debug.LogError("TODO");
+        JIKKNHIAEKG = "";
+        LNIMEIMBCMF = false;
+        LMHMIIKCGPE = 11;
+        CDENCMNHNGA = new List<LCLCCHLDNHJ.ILODJKFJJDO>();
     }
 
 	// // RVA: 0xD9B4A8 Offset: 0xD9B4A8 VA: 0xD9B4A8 Slot: 8
 	protected override void KMBPACJNEOF()
     {
-        UnityEngine.Debug.LogError("TODO");
+        CDENCMNHNGA.Clear();
+        for(int i = 1; i < 501; i++)
+        {
+            LCLCCHLDNHJ.ILODJKFJJDO data = new LCLCCHLDNHJ.ILODJKFJJDO();
+            data.JPIDIENBGKH = i;
+            CDENCMNHNGA.Add(data);
+        }
     }
 
 	// // RVA: 0xD9B5B0 Offset: 0xD9B5B0 VA: 0xD9B5B0 Slot: 9

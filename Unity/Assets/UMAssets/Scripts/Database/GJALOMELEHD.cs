@@ -25,20 +25,20 @@ public class GJALOMELEHD : DIHHCBACKGG
 	// // RVA: 0xAA8E74 Offset: 0xAA8E74 VA: 0xAA8E74
 	public GJALOMELEHD()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO !!!");
     }
 
 	// // RVA: 0xAA903C Offset: 0xAA903C VA: 0xAA903C Slot: 8
 	protected override void KMBPACJNEOF()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO !!!");
     }
 
 	// // RVA: 0xAA9164 Offset: 0xAA9164 VA: 0xAA9164 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
         UnityEngine.Debug.LogError("TODO");
-        return false;
+        return true;
     }
 
 	// // RVA: 0xAA9450 Offset: 0xAA9450 VA: 0xAA9450

@@ -161,13 +161,13 @@ public class LDDDBPNGGIN : DIHHCBACKGG
 	// // RVA: 0xDA1420 Offset: 0xDA1420 VA: 0xDA1420
 	public LDDDBPNGGIN()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO !!!");
     }
 
 	// // RVA: 0xDA1C50 Offset: 0xDA1C50 VA: 0xDA1C50 Slot: 8
 	protected override void KMBPACJNEOF()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO !!!");
     }
 
 	// // RVA: 0xDA2768 Offset: 0xDA2768 VA: 0xDA2768 Slot: 9

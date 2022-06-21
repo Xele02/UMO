@@ -38,13 +38,13 @@ public class KBCCGHLCFNO : DIHHCBACKGG
 	// RVA: 0x1018AB8 Offset: 0x1018AB8 VA: 0x1018AB8
 	public KBCCGHLCFNO()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO !!!");
     }
 
 	// // RVA: 0x1018C7C Offset: 0x1018C7C VA: 0x1018C7C Slot: 8
 	protected override void KMBPACJNEOF()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO !!!");
     }
 
 	// // RVA: 0x1018DB4 Offset: 0x1018DB4 VA: 0x1018DB4 Slot: 9

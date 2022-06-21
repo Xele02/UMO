@@ -650,8 +650,7 @@ public class OKGLGHCBCJP_Database
 			}
 			for(int j = 0; j < JOBKIDDLCPL.Count; j++)
 			{
-				UnityEngine.Debug.LogError("TODO Check test "+JOBKIDDLCPL[j].KBFOIECIADN+" "+JOBKIDDLCPL[j].EGBOHDFBAPB);
-				if(JOBKIDDLCPL[j].KBFOIECIADN == 0 && JOBKIDDLCPL[j].EGBOHDFBAPB != 0)
+				if(JOBKIDDLCPL[j].KBFOIECIADN < JHNMKKNEENE && JOBKIDDLCPL[j].EGBOHDFBAPB != 0)
 				{
 					if(IJBLEJOKEFH[i] != "" && JOBKIDDLCPL[j].OPFGFINHFCE == IJBLEJOKEFH[i])
 					{
@@ -663,7 +662,12 @@ public class OKGLGHCBCJP_Database
 			}
 			if(valid)
 			{
+				UnityEngine.Debug.Log("Database will load : "+IJBLEJOKEFH[i]);
 				res.Add((OKGLGHCBCJP_Database.BEOKNKGHFFE)i);
+			}
+			else
+			{
+				UnityEngine.Debug.Log("Wont load "+IJBLEJOKEFH[i]);
 			}
 		}
 		return res;

@@ -64,13 +64,13 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D050C Offset: 0x10D050C VA: 0x10D050C
 	public LPPGENBEECK_musicMaster()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO !!!");
 	}
 
 	// // RVA: 0x10D07EC Offset: 0x10D07EC VA: 0x10D07EC Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO !!!");
 	}
 
 	// // RVA: 0x10D0B00 Offset: 0x10D0B00 VA: 0x10D0B00 Slot: 9
@@ -102,7 +102,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D0BB4 Offset: 0x10D0BB4 VA: 0x10D0BB4
 	private bool JJOLLBDMIJP_LoadScore(BMHPFEELLNP FCLGPOPLDFL)
 	{
-		FMAFIIPNNEO[] array = FCLGPOPLDFL.DGEPOLGDKHA;
+		/*FMAFIIPNNEO[] array = FCLGPOPLDFL.DGEPOLGDKHA;
 		for(int i = 0; i < array.Length; i++)
 		{
 			KLBKPANJCPL_Score data = new KLBKPANJCPL_Score();
@@ -120,7 +120,8 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 			data.OABPNBLPHHP = (int)array[i].AOLENLGEJED;
 			data.GIABDDFGHOK = (int)array[i].EPEBHGHKMBE;
 			CMPPNEFNGMK_Scores.Add(data);
-		}
+		}*/
+		UnityEngine.Debug.LogError("TODO");
 		return true;
 	}
 
@@ -130,13 +131,13 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D1584 Offset: 0x10D1584 VA: 0x10D1584
 	private bool AOPNONMKCLC_LoadMusic(BMHPFEELLNP FCLGPOPLDFL)
 	{
-		JPALGGIPGGN[] array = FCLGPOPLDFL.MDFFJJKBDFC;
+		/*JPALGGIPGGN[] array = FCLGPOPLDFL.MDFFJJKBDFC;
 		for(int i = 0; i < array.Length; i++)
 		{
 			EONOEHOKBEB_Music data = new EONOEHOKBEB_Music();
 			
 			EPMMNEFADAP_Musics.Add(data);
-		}
+		}*/
 		UnityEngine.Debug.LogError("TODO");
 		return true;
 	}

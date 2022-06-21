@@ -42,6 +42,16 @@
 //       data.DIPKCALNIII = uint_list.ToArray();
 //       data.ELDPFJIDNAB = readData.GHPIPMFBJHH;
 //       data.NDIJPKPDOMG = readData.EMFHICAOLOA;
+
+//{'type': 'DCHENGJKOKI', 'name': 'DFEDIAPLFHN', 'backfield': <_sre.SRE_Match object; span=(12613259, 12613316), match='private DCHENGJKOKI <JDPHNDKLPIO>k__BackingField;>, 'getter': <_sre.SRE_Match object; span=(12617297, 12617458), match='[CompilerGeneratedAttribute] // RVA: 0x696B48 Off>, 'setter': <_sre.SRE_Match object; span=(12617461, 12617638), match='[CompilerGeneratedAttribute] // RVA: 0x696B58 Off>}
+//INPCGKFIMIG_readData
+//{'name': 'FFBCKIHFJJJ', 'type': 'HJJBMKIDKFG'}
+        //DCHENGJKOKI DCHENGJKOKI_data = new DCHENGJKOKI();
+        //{
+            // inner filling
+        //}
+        //data.XXX = DCHENGJKOKI_data;
+
 //     }
 //     res.BOECDBOLGJN = MDCGKDDENNG_list.ToArray();
 

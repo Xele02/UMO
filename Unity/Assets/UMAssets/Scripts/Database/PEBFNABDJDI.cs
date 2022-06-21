@@ -88,20 +88,20 @@ public class PEBFNABDJDI : DIHHCBACKGG
         //IFBBNEGGCIH = new List<NNJFKLBPBNK>();
         NLNNEOLDOGE = new sbyte[24];
         POEHINEHAEG = new sbyte[24];
+		UnityEngine.Debug.LogError("TODO !!!");
     }
 
 	// // RVA: 0xCC50C8 Offset: 0xCC50C8 VA: 0xCC50C8 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO !!!");
 	}
 
 	// // RVA: 0xCC5308 Offset: 0xCC5308 VA: 0xCC5308 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        IAIDGBJGDBH.HEGEKFMJNCC(DBBGALAPFGC);
         UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
     }
 
 	// // RVA: 0xCC6E38 Offset: 0xCC6E38 VA: 0xCC6E38 Slot: 10
