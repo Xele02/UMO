@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 
 public class KBCCGHLCFNO : DIHHCBACKGG
 {
@@ -76,8 +77,8 @@ public class KBCCGHLCFNO : DIHHCBACKGG
 	public List<KBCCGHLCFNO.OFCDEIEAKLN> JHNEKMAHOPJ; // 0x24
 	public List<KBCCGHLCFNO.BJEKBPEKCIM> MHKCPJDNJKI; // 0x28
 	// public static int DMDKPBPBDKD = -1; // 0x4
-	// private int EHKFGCPHHJJ; // 0x34
-	// private int NLLNHNGMHGP; // 0x38
+	private int EHKFGCPHHJJ; // 0x34
+	private int NLLNHNGMHGP; // 0x38
 	// public int IPAOPMEFJKD; // 0x3C
 	// public int JOCGBFGPBCN; // 0x40
 

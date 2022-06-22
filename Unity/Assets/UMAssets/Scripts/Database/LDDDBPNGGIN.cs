@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using XeSys;
 
 public class LDDDBPNGGIN : DIHHCBACKGG
 {
@@ -233,7 +234,7 @@ public class LDDDBPNGGIN : DIHHCBACKGG
 	// // RVA: 0xDA1C50 Offset: 0xDA1C50 VA: 0xDA1C50 Slot: 8
 	protected override void KMBPACJNEOF()
     {
-		FBGGEFFJJHB = Utility.GetCurrentUnixTime() ^ 0x48f8c5;
+		FBGGEFFJJHB = (int)(Utility.GetCurrentUnixTime() ^ 0x48f8c5);
 		KGHLOJNCFDO.Clear();
 		PDNEMDIEGFB.Clear();
 		HPEFFMGGIBC.Clear();
@@ -290,10 +291,10 @@ public class LDDDBPNGGIN : DIHHCBACKGG
 		ODEBNEPEDLN.Clear();
 		JJBJKENKAJP.Clear();
 		ALPMOLDJJKL.Clear();
-		EDJPHDKKKMN.Clear();
+		PNDCOGFIGJO.Clear();
 		HFHMMOMMFON.Clear();
 		JHPPLIGJFPI.Clear();
-		LIIEMFJHMJG.Clear();
+		KDIJDAKMODE.Clear();
 		PNEMPHGJLKG = FBGGEFFJJHB;
 		NPEECLODIKB = FBGGEFFJJHB ^ 10;
 		AJBKGOPDGFI.Clear();
@@ -485,4 +486,32 @@ public class LDDDBPNGGIN : DIHHCBACKGG
 	// [CompilerGeneratedAttribute] // RVA: 0x6C0C60 Offset: 0x6C0C60 VA: 0x6C0C60
 	// // RVA: 0xDA9184 Offset: 0xDA9184 VA: 0xDA9184
 	// private void <Deserialize>b__245_35(int OIPCCBHIKIA, int JBGEEPFKIGG) { }
+}
+
+public class JANMKFAKHIC
+{
+	public int ADKDHKMPMHP; // 0x8
+	public int DHIPGHBJLIL; // 0xC
+}
+
+
+public class EGLJKICMCPG
+{
+	public short PHGLKBPLFDH; // 0x8
+	public short GKPPCFMBANO; // 0xA
+	public short MPPANPOOIIB; // 0xC
+	public short DAPGDCPDCNA; // 0xE
+	public short[] MDDMKHJNCBO; // 0x10
+
+	// RVA: 0x1C4FDBC Offset: 0x1C4FDBC VA: 0x1C4FDBC
+	// public short JNNKKPNGPAA(SpecialNoteAttribute.Type FJFCNGNGIBN) { }
+}
+
+public class KLJCBKMHKNK
+{
+	public List<EGLJKICMCPG> CDENCMNHNGA = new List<EGLJKICMCPG>(); // 0x8
+	public int PPFNGGCBJKC; // 0xC
+
+	// RVA: 0x111C678 Offset: 0x111C678 VA: 0x111C678
+	// public EGLJKICMCPG GCINIJEMHFK(KLJCBKMHKNK.HHMPIIILOLD CNDDKMJAIBG) { }
 }

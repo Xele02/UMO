@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class JGEOBNENMAH
@@ -120,7 +121,7 @@ public class JGEOBNENMAH
 	private int IBJNOOLMBEH; // 0xC4
 	private int LIIMMJHEADN; // 0xC8
 	// private EIIGCIHOGPB FCBNNDPGNGH = new EIIGCIHOGPB(); // 0xCC
-	// private PKECIDPBEFL LFDFPBEAAFA; // 0xD0
+	private PKECIDPBEFL LFDFPBEAAFA; // 0xD0
 	private List<string> DDGBLKBDAFC; // 0xD4
 	private List<int> DFDEALBHBDB; // 0xD8
 	// private KIJECNFNNDB LAFGAPBDKML = new KIJECNFNNDB(); // 0xDC

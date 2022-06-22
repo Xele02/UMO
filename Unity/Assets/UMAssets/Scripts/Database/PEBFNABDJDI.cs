@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using XeSys;
+using System;
 
 public class PEBFNABDJDI : DIHHCBACKGG
 {
@@ -97,8 +98,7 @@ public class PEBFNABDJDI : DIHHCBACKGG
 	protected override void KMBPACJNEOF()
 	{
 		JDBLDOPHHNL.Clear();
-		NGHKJOEDLIP.Clear();
-		FPBEBCIPEPI.Clear();
+		NGHKJOEDLIP.FPBEBCIPEPI.Clear();
 		NGHKJOEDLIP.FPBEBCIPEPI.Add(0);
 		OHJFBLFELNK.Clear();
 		JNJAOACIGOC.Clear();
@@ -186,5 +186,73 @@ public class CHBDMJBEENG
 	}
 
 	// RVA: 0x12BE1EC Offset: 0x12BE1EC VA: 0x12BE1EC
+	// public uint CAOGDCBPBAN() { }
+}
+
+public class OGNALGCHKED
+{
+	private int OBPBCNNFNFO; // 0x8
+	private int AGOIMGHMGOH; // 0xC
+	public string BMBEAHIAGBH; // 0x10
+	public byte[] KGFBCJBOJPK; // 0x14
+
+	// public string MKANHLNEEGL { get; set; }
+	// public int LJNAKDMILMC { get; set; }
+
+	// RVA: 0x1DDF5AC Offset: 0x1DDF5AC VA: 0x1DDF5AC
+	public OGNALGCHKED()
+	{
+		OBPBCNNFNFO = (int)(Utility.GetCurrentUnixTime() ^ 0x70f5a731);
+	}
+
+	// // RVA: 0x1DDF648 Offset: 0x1DDF648 VA: 0x1DDF648
+	// public string KMICICLALGM() { }
+
+	// // RVA: 0x1DDF800 Offset: 0x1DDF800 VA: 0x1DDF800
+	// public void BEMBDHHJDAH(string NANNGLGOFKH) { }
+
+	// // RVA: 0x1DDF868 Offset: 0x1DDF868 VA: 0x1DDF868
+	// public int LIIHHICIBKM() { }
+
+	// // RVA: 0x1DDF878 Offset: 0x1DDF878 VA: 0x1DDF878
+	// public void OACJGKPBHIK(int NANNGLGOFKH) { }
+
+	// // RVA: 0x1DDF798 Offset: 0x1DDF798 VA: 0x1DDF798
+	// private void PCAGOJJPIIP(byte[] BNKHBCBJBKI) { }
+}
+
+public class EJABAIAPFLK
+{
+	public enum GHEPCFJHEEA
+	{
+		HJNNKCMLGFL = -1,
+		MCIACFOAHID = 0,
+		MECKFENAEPJ = 1,
+		NDGMFGMHCJM = 2,
+	}
+
+	public int HAMJMEHKOKL; // 0x8
+	public string LJNAKDMILMC; // 0xC
+	public EJABAIAPFLK.GHEPCFJHEEA DLGMPHGKDKD; // 0x10
+	public Nullable<int> NHPCKCOPKAM; // 0x14
+	public Nullable<int> PJFKNNNDMIA; // 0x1C
+	public bool DBMKMAPNCCK; // 0x24
+	public bool JJOPBMCLBCB; // 0x25
+	public int MLPLGFLKKLI; // 0x28
+	public int ADPPAIPFHML; // 0x2C
+
+	// // RVA: 0x12EBC80 Offset: 0x12EBC80 VA: 0x12EBC80
+	// public uint CAOGDCBPBAN() { }
+
+	// // RVA: 0x12EBCB8 Offset: 0x12EBCB8 VA: 0x12EBCB8
+	// public EMOLDNAEDMG MGCBIOALLFE(BBHNACPENDM AHEFHIMGIBI) { }
+}
+
+public class BIJMLAPNMAB
+{
+	public string OIPCKOBNHJL; // 0x8
+	public int AEMLILCNODL; // 0xC
+
+	// // RVA: 0xC85350 Offset: 0xC85350 VA: 0xC85350
 	// public uint CAOGDCBPBAN() { }
 }
