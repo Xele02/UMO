@@ -13,18 +13,20 @@ public class JOHKNBEFHHP : DIHHCBACKGG
         // // RVA: 0x1BA4288 Offset: 0x1BA4288 VA: 0x1BA4288
         // public uint CAOGDCBPBAN() { }
     }
-	public List<JOHKNBEFHHP.NGKJHBDEELB> CDENCMNHNGA; // 0x20
+	public List<JOHKNBEFHHP.NGKJHBDEELB> CDENCMNHNGA = new List<JOHKNBEFHHP.NGKJHBDEELB>(); // 0x20
 
 	// // RVA: 0x1BA3D84 Offset: 0x1BA3D84 VA: 0x1BA3D84
 	public JOHKNBEFHHP()
     {
-        UnityEngine.Debug.LogError("TODO !!!");
+		JIKKNHIAEKG = "";
+		LNIMEIMBCMF = false;
+		LMHMIIKCGPE = 81;
     }
 
 	// // RVA: 0x1BA3E78 Offset: 0x1BA3E78 VA: 0x1BA3E78 Slot: 8
 	protected override void KMBPACJNEOF()
     {
-        UnityEngine.Debug.LogError("TODO !!!");
+		CDENCMNHNGA.Clear();
     }
 
 	// // RVA: 0x1BA3EF0 Offset: 0x1BA3EF0 VA: 0x1BA3EF0 Slot: 9

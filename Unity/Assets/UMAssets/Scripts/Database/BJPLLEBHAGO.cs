@@ -11,55 +11,13 @@ public class EPPOHFLMDBC
 	public int EAJBBFLFDHI; // 0x20
 	public int EHDLPKCCJIA; // 0x24
 
-	// public int ANAJIAENLNB { get; set; }
-	// public int HFIDCMNFBJG { get; set; }
-	// public int PFJCOCPKABN { get; set; }
-	// public int JFJDLEMNKFE { get; set; }
-	// public int GDOLPGBLMEA { get; set; }
-	// public int ONDFNOOICLE { get; set; }
-	// public int HCFOMFDPGEC { get; set; }
-
-	// // RVA: 0xFC14D4 Offset: 0xFC14D4 VA: 0xFC14D4
-	// public int MMOMNMBKHJF() { }
-
-	// // RVA: 0xFC14E4 Offset: 0xFC14E4 VA: 0xFC14E4
-	// public void FEHNFGPFINK(int NANNGLGOFKH) { }
-
-	// // RVA: 0xFC14F4 Offset: 0xFC14F4 VA: 0xFC14F4
-	// public int CMDOHPBAFCO() { }
-
-	// // RVA: 0xFC1504 Offset: 0xFC1504 VA: 0xFC1504
-	// public void BJBDGCMJNEO(int NANNGLGOFKH) { }
-
-	// // RVA: 0xFC1514 Offset: 0xFC1514 VA: 0xFC1514
-	// public int EJPPLFNLAAO() { }
-
-	// // RVA: 0xFC1524 Offset: 0xFC1524 VA: 0xFC1524
-	// public void NEMMJEJENFD(int NANNGLGOFKH) { }
-
-	// // RVA: 0xFC1534 Offset: 0xFC1534 VA: 0xFC1534
-	// public int GCMPLDKECFM() { }
-
-	// // RVA: 0xFC1544 Offset: 0xFC1544 VA: 0xFC1544
-	// public void CEHKELOHIBD(int NANNGLGOFKH) { }
-
-	// // RVA: 0xFC1554 Offset: 0xFC1554 VA: 0xFC1554
-	// public int LEHDODJMICA() { }
-
-	// // RVA: 0xFC1564 Offset: 0xFC1564 VA: 0xFC1564
-	// public void IKPOCJDOOGA(int NANNGLGOFKH) { }
-
-	// // RVA: 0xFC1574 Offset: 0xFC1574 VA: 0xFC1574
-	// public int OGGOHKCANFG() { }
-
-	// // RVA: 0xFC1584 Offset: 0xFC1584 VA: 0xFC1584
-	// public void BKMHMPEBNPE(int NANNGLGOFKH) { }
-
-	// // RVA: 0xFC1594 Offset: 0xFC1594 VA: 0xFC1594
-	// public int GGIDKCOMCJL() { }
-
-	// // RVA: 0xFC15A4 Offset: 0xFC15A4 VA: 0xFC15A4
-	// public void LAIHOHGICJD(int NANNGLGOFKH) { }
+	// public int ANAJIAENLNB { get; set; } 0xFC14D4 MMOMNMBKHJF 0xFC14E4 FEHNFGPFINK
+	// public int HFIDCMNFBJG { get; set; } 0xFC14F4 CMDOHPBAFCO 0xFC1504 BJBDGCMJNEO
+	// public int PFJCOCPKABN { get; set; } 0xFC1514 EJPPLFNLAAO 0xFC1524 NEMMJEJENFD
+	// public int JFJDLEMNKFE { get; set; } 0xFC1534 GCMPLDKECFM 0xFC1544 CEHKELOHIBD
+	// public int GDOLPGBLMEA { get; set; } 0xFC1554 LEHDODJMICA 0xFC1564 IKPOCJDOOGA
+	// public int ONDFNOOICLE { get; set; } 0xFC1574 OGGOHKCANFG 0xFC1584 BKMHMPEBNPE
+	// public int HCFOMFDPGEC { get; set; } 0xFC1594 GGIDKCOMCJL 0xFC15A4 LAIHOHGICJD
 
 	// // RVA: 0xFC15B4 Offset: 0xFC15B4 VA: 0xFC15B4
 	public void DOMFHDPMCCO(int ANAJIAENLNB, int FBGGEFFJJHB, short JKPPKAHPPKH, short MKMIEGPOKGG, short MELGGCAIONF, short LDLHPACIIAB, short JNNDFGPMEDA, short IDOIMLGLPAB)

@@ -19,27 +19,27 @@ public class PEBFNABDJDI : DIHHCBACKGG
         }
     }
 
-	// public static bool EEDNHJDKIAC; // 0x0
-	// private List<NNJFKLBPBNK> IFBBNEGGCIH; // 0x40
-	//private List<CEBFFLDKAEC> JNJAOACIGOC; // 0x44
+	public static bool EEDNHJDKIAC; // 0x0
+	private List<NNJFKLBPBNK> IFBBNEGGCIH; // 0x40
+	private List<CEBFFLDKAEC> JNJAOACIGOC; // 0x44
 	public Dictionary<int, long> IOIDJALFFJA = new Dictionary<int, long>(); // 0x48
 	public sbyte[] NLNNEOLDOGE; // 0x4C
 	public sbyte[] POEHINEHAEG; // 0x50
-	// public int JDFBNIBIPPK; // 0x54
-	// public bool GNEGCHEGECN; // 0x58
+	public int JDFBNIBIPPK; // 0x54
+	public bool GNEGCHEGECN; // 0x58
     public List<int> PDELLJAOANM = new List<int>(); // 0x5C
 	public int CAAMBBJBODI = 12; // 0x60
-	// private List<string> NCJKIFNCLAF; // 0x64
-	// public int FPGDAPAILAK; // 0x68
+	private List<string> NCJKIFNCLAF; // 0x64
+	public int FPGDAPAILAK; // 0x68
 	public List<JFIGGEAFMCN> BMAHEAMPCED = new List<JFIGGEAFMCN>(); // 0x6C
-	// public int KMDDIEJBNPO; // 0x70
+	public int KMDDIEJBNPO; // 0x70
 
 	public CHBDMJBEENG NGHKJOEDLIP { get; set; } // CLJNODMDGFA  0x20 // OPMNKEBHEBI // FLAGNHPCHCF
-	// public List<OGNALGCHKED> JDBLDOPHHNL { get; set; } // IJDNKAPDDFF 0x24 // FCBDHDGIMHO // OOLGKMGAHOP
-	// public List<EJABAIAPFLK> BHDJIIHLMDM { get; set; } // BFKDBLJIGLO 0x28 // JIAMJJLMMLF // HBDIDBHLJCO
+	public List<OGNALGCHKED> JDBLDOPHHNL { get; set; } // IJDNKAPDDFF 0x24 // FCBDHDGIMHO // OOLGKMGAHOP
+	public List<EJABAIAPFLK> BHDJIIHLMDM { get; set; } // BFKDBLJIGLO 0x28 // JIAMJJLMMLF // HBDIDBHLJCO
 	public Dictionary<string, string> JLJEEMEOPLE { get; set; } // CJGBLCGHHEI 0x2C // DCHGJLCADKP // ICHNENECFGN
-	// public Dictionary<string, BIJMLAPNMAB> LMBIOEDHNHB { get; set; } // OOCFKPKLBJH 0x30 // BGCEPJDLFFA // JPLHJCLOPKE
-	// public Dictionary<string, NNJFKLBPBNK> FJOEBCMGDMI { get; set; } // IHKPIFIBECO 0x34 // GAMGELHIHHI // DDDEJIJGGBJ
+	public Dictionary<string, BIJMLAPNMAB> LMBIOEDHNHB { get; set; } // OOCFKPKLBJH 0x30 // BGCEPJDLFFA // JPLHJCLOPKE
+	public Dictionary<string, NNJFKLBPBNK> FJOEBCMGDMI { get; set; } // IHKPIFIBECO 0x34 // GAMGELHIHHI // DDDEJIJGGBJ
 	public Dictionary<string, CEBFFLDKAEC> OHJFBLFELNK { get; set; } // KLDCHOIPJGB 0x38 // AEMNOGNEBOJ // DGKDBOAMNBB
 	public Dictionary<string, int> KBAPDOLLLAN { get; set; } // BKGIMGCBBOC 0x3C // OOEBAHFJPAB // MCMHANFFFNF
 
@@ -76,27 +76,39 @@ public class PEBFNABDJDI : DIHHCBACKGG
 	// // RVA: 0xCC4D0C Offset: 0xCC4D0C VA: 0xCC4D0C
 	public PEBFNABDJDI()
     {
+		JIKKNHIAEKG = "";
         LNIMEIMBCMF = false;
         NGHKJOEDLIP = new CHBDMJBEENG();
-        //JDBLDOPHHNL = new List<OGNALGCHKED>();
-        //BHDJIIHLMDM = new List<EJABAIAPFLK>();
+        JDBLDOPHHNL = new List<OGNALGCHKED>();
+        BHDJIIHLMDM = new List<EJABAIAPFLK>();
         JLJEEMEOPLE = new Dictionary<string, string>();
         LMHMIIKCGPE = 79;
-        //LMBIOEDHNHB = new Dictionary<string, BIJMLAPNMAB>();
+        LMBIOEDHNHB = new Dictionary<string, BIJMLAPNMAB>();
         OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC>();
         KBAPDOLLLAN = new Dictionary<string, int>();
-        //JNJAOACIGOC = new List<CEBFFLDKAEC>();
-        //FJOEBCMGDMI = new Dictionary<string, NNJFKLBPBNK>();
-        //IFBBNEGGCIH = new List<NNJFKLBPBNK>();
+        JNJAOACIGOC = new List<CEBFFLDKAEC>();
+        FJOEBCMGDMI = new Dictionary<string, NNJFKLBPBNK>();
+        IFBBNEGGCIH = new List<NNJFKLBPBNK>();
         NLNNEOLDOGE = new sbyte[24];
         POEHINEHAEG = new sbyte[24];
-		UnityEngine.Debug.LogError("TODO !!!");
     }
 
 	// // RVA: 0xCC50C8 Offset: 0xCC50C8 VA: 0xCC50C8 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		JDBLDOPHHNL.Clear();
+		NGHKJOEDLIP.Clear();
+		FPBEBCIPEPI.Clear();
+		NGHKJOEDLIP.FPBEBCIPEPI.Add(0);
+		OHJFBLFELNK.Clear();
+		JNJAOACIGOC.Clear();
+		KBAPDOLLLAN.Clear();
+		FJOEBCMGDMI.Clear();
+		IFBBNEGGCIH.Clear();
+		CAAMBBJBODI = 12;
+		BMAHEAMPCED.Clear();
+		FPGDAPAILAK = 0;
+		IOIDJALFFJA.Clear();
 	}
 
 	// // RVA: 0xCC5308 Offset: 0xCC5308 VA: 0xCC5308 Slot: 9

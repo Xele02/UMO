@@ -1291,7 +1291,7 @@ public class IOGKADECKOP
 		{
 			if(l[i].PPEGAKEIEGM == 2)
 			{
-				//? 
+				UnityEngine.Debug.LogError("TODO Check "+val1+" "+l[i].PDBPFJJCADD+" "+l[i].FDBNFFNFOND);
 				if(val1 >= l[i].PDBPFJJCADD && val1 <= l[i].FDBNFFNFOND)
 				{
 					BLEAOGCLJPK = l[i].KNHOMNONOEB;

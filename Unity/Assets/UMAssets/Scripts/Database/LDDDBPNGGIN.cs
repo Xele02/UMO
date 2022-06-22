@@ -6,7 +6,7 @@ public class LDDDBPNGGIN : DIHHCBACKGG
 	private const int NHCGFMDPPPA = 5;
 	private const int NAJMGFDOCMH = 25;
 	public static int EDGOFPJDPPI = -1; // 0x0
-	private int FBGGEFFJJHB; // 0x20
+	private int FBGGEFFJJHB = 0x1aa9f1; // 0x20
 	public int LECAOCJCEKF; // 0xAC
 	public int IHIONKFAAED; // 0xB0
 	public int HHPJIALEPEE; // 0xB4
@@ -20,7 +20,7 @@ public class LDDDBPNGGIN : DIHHCBACKGG
 	public int LPDACKNMGNK; // 0xD8
 	private List<int> EDCJLGMBGCH; // 0xDC
 	private List<int> DFEAPKGAGMN; // 0xE0
-	// private Dictionary<int, byte[]> GEDEIGJKMGI; // 0xFC
+	private Dictionary<int, byte[]> GEDEIGJKMGI; // 0xFC
 	public List<int> HLKHOFPAOMK; // 0x108
 	public List<int> HLLJIICKNIP; // 0x10C
 	public List<int> FENOHOEIJOE; // 0x110
@@ -32,14 +32,14 @@ public class LDDDBPNGGIN : DIHHCBACKGG
 	public List<int> GJDCMCFCIKD; // 0x128
 	public List<int> IIDJCNEOLAL; // 0x12C
 	public List<int> JJBJKENKAJP; // 0x130
-	// private List<KLJCBKMHKNK> HPEFFMGGIBC; // 0x134
+	private List<KLJCBKMHKNK> HPEFFMGGIBC; // 0x134
 	private int PNEMPHGJLKG; // 0x138
 	private int NPEECLODIKB; // 0x13C
 	public List<sbyte> JHPPLIGJFPI; // 0x140
 	private List<int> DOAAGIMJOMM; // 0x144
 	private List<int> KMJNLIMMCED; // 0x148
 
-	// public List<JANMKFAKHIC> KGHLOJNCFDO { get; private set; } // 0x24 KGEFOIBPACG KHDCLBNDLPL IKNIJILKKCC
+	public List<JANMKFAKHIC> KGHLOJNCFDO { get; private set; } // 0x24 KGEFOIBPACG KHDCLBNDLPL IKNIJILKKCC
 	public List<int> PDNEMDIEGFB { get; private set; } // 0x28 JLOJENKKFFK MNANHEAKBBM BAKOHDPHEDO
 	private List<int> JKPKJKFJDGL { get; set; } // 0x2C OJIPOCNKJBD KDPCOHLOEPI EOHDGCNIFDD
 	private List<int> OBLDNPMODOM { get; set; } // 0x30 NPILHIHHEAI BBNCEDBIOPA BNDHBJKKLDJ
@@ -161,13 +161,146 @@ public class LDDDBPNGGIN : DIHHCBACKGG
 	// // RVA: 0xDA1420 Offset: 0xDA1420 VA: 0xDA1420
 	public LDDDBPNGGIN()
     {
-        UnityEngine.Debug.LogError("TODO !!!");
+		JIKKNHIAEKG = "";
+		LNIMEIMBCMF = false;
+		KGHLOJNCFDO = new List<JANMKFAKHIC>(30);
+		PDNEMDIEGFB = new List<int>(5);
+		HPEFFMGGIBC = new List<KLJCBKMHKNK>();
+		JKPKJKFJDGL = new List<int>(25);
+		PIBHLAMOJNH = new List<int>(25);
+		EKONPEGLAND = new List<int>();
+		ILIEHCECHOA = new List<int>();
+		NPNCNFKCIAE = new List<int>();
+		HODKHINFHGH = new List<int>();
+		BFDLLHNGICE = new List<int>();
+		ICNFEDCCODF = new List<int>();
+		AOFKIBFPAOD = new List<int>();
+		FDLBHEMAOLC = new List<int>();
+		MNGGGOOCJBM = new List<int>();
+		BLEDLGDGBHI = new List<int>();
+		PLGLPDGAADE = new List<int>();
+		IFHAPIJOCOJ = new List<int>();
+		DDLNCIOPBBB = new List<int>();
+		DDGNKEJKJCK = new List<int>();
+		KDGGKFOAGAE = new List<int>();
+		FBKOFEHDENI = new List<int>();
+		KBOIDPDGCLA = new List<int>();
+		GGAMKBLHGGI = new List<int>();
+		OBLDNPMODOM = new List<int>(25);
+		COKBDFIMOPM = new List<int>(25);
+		OHNJBOFLCOL = new List<int>(25);
+		HHCDCEOJCIH = new List<int>(25);
+		IMIMFIKCFMK = new List<int>(25);
+		FIDHHBBINNB = new List<int>(25);
+		CAIAODFECPC = new List<int>(25);
+		KGJDEFCEEAB = new List<int>(25);
+		PLMFEFIIBFL = new List<int>(25);
+		BGKMMAGPAMJ = new List<int>(25);
+		MPADAMHJBKK = new List<int>(25);
+		HLKHOFPAOMK = new List<int>(25);
+		HLLJIICKNIP = new List<int>(25);
+		FENOHOEIJOE = new List<int>(25);
+		LJPKLMJPLAC = new List<int>(25);
+		MALHPBKPIDE = new List<int>(25);
+		GEFODCKCCBK = new List<int>(25);
+		ELLLGOHHICG = new List<int>(25);
+		IHMOHBMPMLO = new List<int>(25);
+		GJDCMCFCIKD = new List<int>(25);
+		IIDJCNEOLAL = new List<int>(25);
+		CPNJJKDKNOO = new List<int>(5);
+		EONACOOGKCA = new List<int>(5);
+		EDCJLGMBGCH = new List<int>(12);
+		DFEAPKGAGMN = new List<int>(12);
+		LLDJIAKLOGC = new List<sbyte>(6);
+		FKLCEJNHKMN = new List<sbyte>(6);
+		ODEBNEPEDLN = new List<byte[]>();
+		ALPMOLDJJKL = new List<sbyte>(12);
+		PNDCOGFIGJO = new List<sbyte>(12);
+		HFHMMOMMFON = new List<byte[]>(12);
+		JJBJKENKAJP = new List<int>(5);
+		PNEMPHGJLKG = FBGGEFFJJHB;
+		NPEECLODIKB = FBGGEFFJJHB;
+		JHPPLIGJFPI = new List<sbyte>(8);
+		KDIJDAKMODE = new List<int>(5);
+		AJBKGOPDGFI = new List<int>(5);
+		GEDEIGJKMGI = new Dictionary<int, byte[]>();
+		DOAAGIMJOMM = new List<int>(5);
+		KMJNLIMMCED = new List<int>(5);
+		OHJFBLFELNK = new Dictionary<string, int>();
+		LMHMIIKCGPE = 49;
     }
 
 	// // RVA: 0xDA1C50 Offset: 0xDA1C50 VA: 0xDA1C50 Slot: 8
 	protected override void KMBPACJNEOF()
     {
-        UnityEngine.Debug.LogError("TODO !!!");
+		FBGGEFFJJHB = Utility.GetCurrentUnixTime() ^ 0x48f8c5;
+		KGHLOJNCFDO.Clear();
+		PDNEMDIEGFB.Clear();
+		HPEFFMGGIBC.Clear();
+		EKONPEGLAND.Clear();
+		ILIEHCECHOA.Clear();
+		NPNCNFKCIAE.Clear();
+		HODKHINFHGH.Clear();
+		BFDLLHNGICE.Clear();
+		ICNFEDCCODF.Clear();
+		AOFKIBFPAOD.Clear();
+		FDLBHEMAOLC.Clear();
+		MNGGGOOCJBM.Clear();
+		BLEDLGDGBHI.Clear();
+		PLGLPDGAADE.Clear();
+		IFHAPIJOCOJ.Clear();
+		DDLNCIOPBBB.Clear();
+		DDGNKEJKJCK.Clear();
+		KDGGKFOAGAE.Clear();
+		FBKOFEHDENI.Clear();
+		KBOIDPDGCLA.Clear();
+		GGAMKBLHGGI.Clear();
+		OBLDNPMODOM.Clear();
+		COKBDFIMOPM.Clear();
+		OHNJBOFLCOL.Clear();
+		HHCDCEOJCIH.Clear();
+		IMIMFIKCFMK.Clear();
+		FIDHHBBINNB.Clear();
+		CAIAODFECPC.Clear();
+		KGJDEFCEEAB.Clear();
+		PLMFEFIIBFL.Clear();
+		BGKMMAGPAMJ.Clear();
+		MPADAMHJBKK.Clear();
+		HLKHOFPAOMK.Clear();
+		HLLJIICKNIP.Clear();
+		FENOHOEIJOE.Clear();
+		LJPKLMJPLAC.Clear();
+		MALHPBKPIDE.Clear();
+		GEFODCKCCBK.Clear();
+		ELLLGOHHICG.Clear();
+		IHMOHBMPMLO.Clear();
+		GJDCMCFCIKD.Clear();
+		IIDJCNEOLAL.Clear();
+		CPNJJKDKNOO.Clear();
+		EONACOOGKCA.Clear();
+		EDCJLGMBGCH.Clear();
+		DFEAPKGAGMN.Clear();
+		LECAOCJCEKF = 0x2710;
+		IHIONKFAAED = 0x32;
+		HHPJIALEPEE = 0xc8;
+		BCCKJLPNJJM = 0xc8;
+		LLDJIAKLOGC.Clear();
+		CIFKMCKFMOA = 1000;
+		FKLCEJNHKMN.Clear();
+		ODEBNEPEDLN.Clear();
+		JJBJKENKAJP.Clear();
+		ALPMOLDJJKL.Clear();
+		EDJPHDKKKMN.Clear();
+		HFHMMOMMFON.Clear();
+		JHPPLIGJFPI.Clear();
+		LIIEMFJHMJG.Clear();
+		PNEMPHGJLKG = FBGGEFFJJHB;
+		NPEECLODIKB = FBGGEFFJJHB ^ 10;
+		AJBKGOPDGFI.Clear();
+		GEDEIGJKMGI.Clear();
+		DOAAGIMJOMM.Clear();
+		KMJNLIMMCED.Clear();
+		OHJFBLFELNK.Clear();
     }
 
 	// // RVA: 0xDA2768 Offset: 0xDA2768 VA: 0xDA2768 Slot: 9

@@ -227,12 +227,27 @@ public class JGEOBNENMAH
 	// // RVA: 0xB0A378 Offset: 0xB0A378 VA: 0xB0A378
 	public void EMDLPEGOEJB(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
     {
-        UnityEngine.Debug.LogError("TODO !!!");
+		LFDFPBEAAFA = new PKECIDPBEFL();
+		LFDFPBEAAFA.PEHBBKFGLNO();
+		if(LFDFPBEAAFA.GKMONHIBHCL)
+		{
+			N.a.StartCoroutine(ODBDMBAFOIN_Coroutine_Recover(BHFHGFKBOHH, AOCANKOMKFG));
+			return;
+		}
+		LFDFPBEAAFA.OJCJPCHFPGO();
+		LFDFPBEAAFA = null;
+		BHFHGFKBOHH();
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B65D8 Offset: 0x6B65D8 VA: 0x6B65D8
 	// // RVA: 0xB0A4B4 Offset: 0xB0A4B4 VA: 0xB0A4B4
-	// private IEnumerator ODBDMBAFOIN_Recover(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG) { }
+	private IEnumerator ODBDMBAFOIN_Coroutine_Recover(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
+	{
+		UnityEngine.Debug.Log("Enter ODBDMBAFOIN_Coroutine_Recover");
+		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.Log("Exit ODBDMBAFOIN_Coroutine_Recover");
+		yield break;
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B6650 Offset: 0x6B6650 VA: 0x6B6650
 	// // RVA: 0xB0A594 Offset: 0xB0A594 VA: 0xB0A594

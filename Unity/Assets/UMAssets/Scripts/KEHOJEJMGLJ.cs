@@ -100,7 +100,10 @@ public class KEHOJEJMGLJ
 	// protected override void Finalize() { }
 
 	// // RVA: 0xE88334 Offset: 0xE88334 VA: 0xE88334
-	// private void FCPBCDOKOPD(KEHOJEJMGLJ.LIFANPDHNHE PPFNGGCBJKC, string IPBHCLIHAPG) { }
+	private void FCPBCDOKOPD(KEHOJEJMGLJ.LIFANPDHNHE PPFNGGCBJKC, string IPBHCLIHAPG)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xE883AC Offset: 0xE883AC VA: 0xE883AC
 	public void OFLDICKPNFD(bool CJPFICKPJPP, DJBHIFLHJLK FGGJNGCAFGK)
@@ -119,12 +122,84 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE884B4 Offset: 0xE884B4 VA: 0xE884B4
 	public void PAHGEEOFEPM(KEHOJEJMGLJ.ACGGHEIMPHC INDDJNMPONH, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG, int INAEAAJIJMF = 0, long GCLPIJNJFAE = 0)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		GMLCCMEHNCI.PGLANLKJBLI();
+		this.GCLPIJNJFAE = GCLPIJNJFAE;
+		this.INAEAAJIJMF = INAEAAJIJMF;
+		KIEBFLDPBPA = 0;
+		if(MLPDBGFBAAC == null)
+		{
+			MLPDBGFBAAC = new IGJHFKELHKJ();
+		}
+		if(IGJHFKELHKJ != null)
+		{
+			IGJHFKELHKJ.PCODDPDFLHK();
+			if(INDDJNMPONH == 2)
+			{
+				IGJHFKELHKJ.PNMIOGBPDFN();
+			}
+		}
+		LHJNPJFNDNA = null;
+		if(EMJFHKHLHDB == INDDJNMPONH && INDDJNMPONH != 0)
+		{
+			if(INDDJNMPONH == 1)
+			{
+				GBCDHECMDMC();
+			}
+		}
+		else
+		{
+			LHJNPJFNDNA = null;
+		}
+		EMJFHKHLHDB = INDDJNMPONH;
+		FPCIBJLJOFI = "android";
+		JCMJBMBMJAK = CJMOKHDNBNB.FIPFFELDIOG + "/data";
+		//FCPBCDOKOPD(,null); ???
+		N.a.StartCoroutine(EOFJPNPFGDM_Coroutine_Install(BHFHGFKBOHH,MOBEEPPKFLG));
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BB624 Offset: 0x6BB624 VA: 0x6BB624
 	// // RVA: 0xE88C70 Offset: 0xE88C70 VA: 0xE88C70
-	// private IEnumerator EOFJPNPFGDM_Install(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
+	private IEnumerator EOFJPNPFGDM_Coroutine_Install(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
+	{
+		// private KEHOJEJMGLJ.<>c__DisplayClass75_0 OPLBFCEPDCH; // 0x14
+			// public KEHOJEJMGLJ KIGBLACMODG; // 0x8
+			// public bool KOMKKBDABJP; // 0xC
+		// private KEHOJEJMGLJ.<>c__DisplayClass75_1 LBLMCMHMNGC; // 0x18
+			// public Dictionary<string, int> FAOOOLDDBBB; // 0x8
+			// public JPAPJLIPNOK COJNCNGHIJC; // 0xC
+			// public KEHOJEJMGLJ.<>c__DisplayClass75_0 PGFMIBMJBHD; // 0x10
+			// RVA: 0xE8CE74 Offset: 0xE8CE74 VA: 0xE8CE74
+			// internal void IPGJJANJOMJ() { }
+			// // RVA: 0xE8D3C0 Offset: 0xE8D3C0 VA: 0xE8D3C0
+			// internal void EGDGJOPDNFF() { }
+			// // RVA: 0xE8D424 Offset: 0xE8D424 VA: 0xE8D424
+			// internal void FKJIINPOGKK(JEHIAIPJNJF.HCJPJKCIBDL JGBPLIGAILE) { }
+			// // RVA: 0xE8D8B0 Offset: 0xE8D8B0 VA: 0xE8D8B0
+			// internal void BCMEPPIPGIB() { }
+		// public DJBHIFLHJLK MOBEEPPKFLG; // 0x1C
+		// public IMCBBOAFION BHFHGFKBOHH; // 0x20
+		// private KEHOJEJMGLJ.<>c__DisplayClass75_2 PHPPCOBECCA; // 0x24
+			// public int APGOAMNGFFF; // 0x8
+			// // RVA: 0xE8D91C Offset: 0xE8D91C VA: 0xE8D91C
+			// internal void EKHEBHFBKID() { }
+			// // RVA: 0xE8D928 Offset: 0xE8D928 VA: 0xE8D928
+			// internal void OIIFKBGOJKO() { }
+		// private KEHOJEJMGLJ.<>c__DisplayClass75_3 OGEABHOODHB; // 0x28
+			// public int APGOAMNGFFF; // 0x8
+			// // RVA: 0xE8D93C Offset: 0xE8D93C VA: 0xE8D93C
+			// internal void NNGKGAGFFBE() { }
+			// // RVA: 0xE8D948 Offset: 0xE8D948 VA: 0xE8D948
+			// internal void CAPIELNEBFB() { }
+		// private bool NGDBJIAFCKE; // 0x2C
+		// private PJKLMCGEJMK JFAIABBIPEO; // 0x30
+		// private LFPOMKLKHPB NOAMCCLDODN; // 0x34
+		// private int NJDHMNBBCLK; // 0x38
+		//0xE8DA10
+		UnityEngine.Debug.Log("Enter EOFJPNPFGDM_Coroutine_Install");
+		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
+		yield break;
+	}
 
 	// // RVA: 0xE88D50 Offset: 0xE88D50 VA: 0xE88D50
 	// private void DIDACHONHJA(ref Dictionary<string, int> FAOOOLDDBBB, string CJJJPKJHOGM) { }
@@ -226,7 +301,10 @@ public class KEHOJEJMGLJ
 	// private static void PKLPEIBEGNO() { }
 
 	// // RVA: 0xE888B8 Offset: 0xE888B8 VA: 0xE888B8
-	// private static void GBCDHECMDMC() { }
+	private static void GBCDHECMDMC()
+	{
+		UnityEngine.Debug.LogError("TODO !!!");
+	}
 
 	// // RVA: 0xE8BC98 Offset: 0xE8BC98 VA: 0xE8BC98
 	public static void AFKGMCBJBJA()
