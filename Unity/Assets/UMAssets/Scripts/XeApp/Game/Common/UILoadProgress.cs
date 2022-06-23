@@ -63,7 +63,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDE270 Offset: 0x1CDE270 VA: 0x1CDE270
 		public void SetPer(int per)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO SetPer");
 		}
 
 		// // RVA: 0x1CDDEE0 Offset: 0x1CDDEE0 VA: 0x1CDDEE0

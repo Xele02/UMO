@@ -110,7 +110,10 @@ public class FECDBKKBAHO
 	// private void BNPFBOIFDAG() { }
 
 	// // RVA: 0xFD0C1C Offset: 0xFD0C1C VA: 0xFD0C1C
-	// public void EBCAKALIAHH() { }
+	public void EBCAKALIAHH()
+    {
+        UnityEngine.Debug.LogError("TODO");
+    }
 
 	// // RVA: 0xFD09C8 Offset: 0xFD09C8 VA: 0xFD09C8
 	// private void PMHECMICPGN(string CJJJPKJHOGM) { }

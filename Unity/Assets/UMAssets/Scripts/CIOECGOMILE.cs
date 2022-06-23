@@ -1,5 +1,6 @@
 using System.Text;
 using System.Collections.Generic;
+using System.Collections;
 using System;
 using UnityEngine;
 using XeSys;
@@ -160,12 +161,41 @@ public class CIOECGOMILE
 	// // RVA: 0xFFB7A8 Offset: 0xFFB7A8 VA: 0xFFB7A8
 	public void ODJCMJBNDOK(IMCBBOAFION BHFHGFKBOHH, IMCBBOAFION FLENFOEFHPL, DJBHIFLHJLK MOBEEPPKFLG, bool JKJEFPNIPFO = false)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		N.a.StartCoroutine(ODDEPBIJHOE_Coroutine_Load(BHFHGFKBOHH,FLENFOEFHPL,MOBEEPPKFLG,JKJEFPNIPFO));
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B7B58 Offset: 0x6B7B58 VA: 0x6B7B58
 	// // RVA: 0xFFB818 Offset: 0xFFB818 VA: 0xFFB818
-	// private IEnumerator ODDEPBIJHOE_Load(IMCBBOAFION BHFHGFKBOHH, IMCBBOAFION FLENFOEFHPL, DJBHIFLHJLK MOBEEPPKFLG, bool JKJEFPNIPFO) { }
+	private IEnumerator ODDEPBIJHOE_Coroutine_Load(IMCBBOAFION BHFHGFKBOHH, IMCBBOAFION FLENFOEFHPL, DJBHIFLHJLK MOBEEPPKFLG, bool JKJEFPNIPFO)
+	{
+		// public CIOECGOMILE KIGBLACMODG; // 0x10
+		// private CIOECGOMILE.<>c__DisplayClass119_0 OPLBFCEPDCH; // 0x14
+			// public bool HFPLKFCPHDK; // 0x8
+			// // RVA: 0x100A354 Offset: 0x100A354 VA: 0x100A354
+			// internal void GEAINKJJEIF() { }
+		// public DJBHIFLHJLK MOBEEPPKFLG; // 0x18
+		// public bool JKJEFPNIPFO; // 0x1C
+		// private CIOECGOMILE.<>c__DisplayClass119_1 LBLMCMHMNGC; // 0x20
+			// public bool PLOOEECNHFB; // 0x8
+			// public bool NPNNPNAIONN; // 0x9
+			// // RVA: 0x100A368 Offset: 0x100A368 VA: 0x100A368
+			// internal void MELEJFNIAIM() { }
+			// // RVA: 0x100A374 Offset: 0x100A374 VA: 0x100A374
+			// internal void CHHCNDJIEDC() { }
+		// public IMCBBOAFION FLENFOEFHPL; // 0x24
+		// public IMCBBOAFION BHFHGFKBOHH; // 0x28
+		// private PJKLMCGEJMK OKDOIAEGADK; // 0x2C
+		// private OKGLGHCBCJP DLMOKNDEMMB; // 0x30
+		// private NAIJIFAJGGK BPOJOBICBAC; // 0x34
+		// private DOLDMCAMEOD GHPOKNKDBGO; // 0x38
+		//0x1010F04
+		UnityEngine.Debug.Log("Enter ODDEPBIJHOE_Coroutine_Load");
+
+		UnityEngine.Debug.LogError("TODO !!!!");
+
+		UnityEngine.Debug.Log("Exit ODDEPBIJHOE_Coroutine_Load");
+		yield break;
+	}
 
 	// // RVA: 0xFFB930 Offset: 0xFFB930 VA: 0xFFB930
 	// public void CJMDNPCBEJF(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG, bool JKJEFPNIPFO = False) { }

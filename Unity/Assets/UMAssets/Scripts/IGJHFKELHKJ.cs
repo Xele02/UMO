@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using XeSys;
+using System.IO;
 
 public class IGJHFKELHKJ
 {
@@ -26,7 +28,12 @@ public class IGJHFKELHKJ
 	// // RVA: 0x11F4F48 Offset: 0x11F4F48 VA: 0x11F4F48
 	public void PNMIOGBPDFN()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		uint[] keyArray = new uint[BEIEHPNODAM.Keys.Count];
+		BEIEHPNODAM.Keys.CopyTo(keyArray, 0);
+		for(int i = 0; i < BEIEHPNODAM.Keys.Count; i++)
+		{
+			BEIEHPNODAM[keyArray[i]].CPBPOIMHIML = true;
+		}
 	}
 
 	// // RVA: 0x11F5114 Offset: 0x11F5114 VA: 0x11F5114
@@ -38,9 +45,36 @@ public class IGJHFKELHKJ
 	// // RVA: 0x11F5320 Offset: 0x11F5320 VA: 0x11F5320
 	public void PCODDPDFLHK()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		IGJHFKELHKJ.FBGGEFFJJHB = (uint)(Utility.GetCurrentUnixTime() + 100);
+		BEIEHPNODAM.Clear();
+		JHJMNLMNPGO = CJMOKHDNBNB.FIPFFELDIOG + KCOGAGGCPBP.HAFLEFNJAKD; // /sys
+		if(!Directory.Exists(JHJMNLMNPGO))
+		{
+			UnityEngine.Debug.Log("Create Dir "+JHJMNLMNPGO);
+			Directory.CreateDirectory(JHJMNLMNPGO);
+		}
+		string file = JHJMNLMNPGO + "/" + KCOGAGGCPBP.PNBIAPMFPPD; // 01
+		if(File.Exists(file))
+		{
+			FileStream f = new FileStream(file, FileMode.Open);
+			BinaryReader b = new BinaryReader(f);
+			int header = b.ReadInt32();
+			if(header == 0x28747411)
+			{
+				int val = b.ReadInt32();
+				UnityEngine.Debug.LogError("TODO !!!!");
+			}
+		}
+		file = JHJMNLMNPGO + "/" + KCOGAGGCPBP.NMGOCAFNNMM; // 04
+		if(File.Exists(file))
+		{
+			UnityEngine.Debug.LogError("TODO !!!!");
+		}
 	}
 
 	// // RVA: 0x11F6154 Offset: 0x11F6154 VA: 0x11F6154
-	// public void HJMKBCFJOOH() { }
+	public void HJMKBCFJOOH()
+	{
+		UnityEngine.Debug.LogError("TODO !!!");
+	}
 }

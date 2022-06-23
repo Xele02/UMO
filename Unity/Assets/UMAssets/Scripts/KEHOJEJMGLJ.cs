@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using XeSys;
 using System.IO;
+using XeApp.Game;
 
 public class KEHOJEJMGLJ
 {
@@ -57,10 +58,10 @@ public class KEHOJEJMGLJ
 	private static string PMHFLOLDHAO = null; // 0x20
 	public DJBHIFLHJLK FGGJNGCAFGK; // 0x24
 	public List<string> FBGNDKKDOIE = null; // 0x28
-	// private JEHIAIPJNJF PMDNNKAPIKJ; // 0x2C
+	private JEHIAIPJNJF PMDNNKAPIKJ; // 0x2C
 	public static bool FJDOHLADGFI; // 0x28
 	public IKAHKDKIGNA IDJBKGBMDAJ; // 0x30
-	// private List<GCGNICILKLD> ICCMKHKNAMJ; // 0x34
+	private List<GCGNICILKLD> ICCMKHKNAMJ; // 0x34
 	private static DateTime CBHCDLLOBBK = new DateTime(1970, 1, 1, 0, 0, 0, 1, 0); // 0x30
 	private const int AJCPBLIKDGB = 1;
 	private const int FAHBCEJNLJD = 2;
@@ -113,7 +114,7 @@ public class KEHOJEJMGLJ
 		}
 	}
 	public static string LHJNPJFNDNA { get; private set; } // 0x24 HCGGEEMOKFN JBIPCECPFGN ONAJIIACAEB
-	// public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x1C KPEKONPJHCL LKCDOGAFPNM NPJJMDFAIII
+	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x1C KPEKONPJHCL LKCDOGAFPNM NPJJMDFAIII
 	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x20 EAIFOAGPGGH KCLBNOKEPIG OCIMGEFKKLM
 
 	// // RVA: 0xE87F08 Offset: 0xE87F08 VA: 0xE87F08
@@ -192,51 +193,469 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE88C70 Offset: 0xE88C70 VA: 0xE88C70
 	private IEnumerator EOFJPNPFGDM_Coroutine_Install(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		// private KEHOJEJMGLJ.<>c__DisplayClass75_0 OPLBFCEPDCH; // 0x14
-			// public KEHOJEJMGLJ KIGBLACMODG; // 0x8
-			// public bool KOMKKBDABJP; // 0xC
-		// private KEHOJEJMGLJ.<>c__DisplayClass75_1 LBLMCMHMNGC; // 0x18
-			// public Dictionary<string, int> FAOOOLDDBBB; // 0x8
-			// public JPAPJLIPNOK COJNCNGHIJC; // 0xC
-			// public KEHOJEJMGLJ.<>c__DisplayClass75_0 PGFMIBMJBHD; // 0x10
-			// RVA: 0xE8CE74 Offset: 0xE8CE74 VA: 0xE8CE74
-			// internal void IPGJJANJOMJ() { }
-			// // RVA: 0xE8D3C0 Offset: 0xE8D3C0 VA: 0xE8D3C0
-			// internal void EGDGJOPDNFF() { }
-			// // RVA: 0xE8D424 Offset: 0xE8D424 VA: 0xE8D424
-			// internal void FKJIINPOGKK(JEHIAIPJNJF.HCJPJKCIBDL JGBPLIGAILE) { }
-			// // RVA: 0xE8D8B0 Offset: 0xE8D8B0 VA: 0xE8D8B0
-			// internal void BCMEPPIPGIB() { }
 		// public DJBHIFLHJLK MOBEEPPKFLG; // 0x1C
 		// public IMCBBOAFION BHFHGFKBOHH; // 0x20
-		// private KEHOJEJMGLJ.<>c__DisplayClass75_2 PHPPCOBECCA; // 0x24
-			// public int APGOAMNGFFF; // 0x8
-			// // RVA: 0xE8D91C Offset: 0xE8D91C VA: 0xE8D91C
-			// internal void EKHEBHFBKID() { }
-			// // RVA: 0xE8D928 Offset: 0xE8D928 VA: 0xE8D928
-			// internal void OIIFKBGOJKO() { }
-		// private KEHOJEJMGLJ.<>c__DisplayClass75_3 OGEABHOODHB; // 0x28
-			// public int APGOAMNGFFF; // 0x8
-			// // RVA: 0xE8D93C Offset: 0xE8D93C VA: 0xE8D93C
-			// internal void NNGKGAGFFBE() { }
-			// // RVA: 0xE8D948 Offset: 0xE8D948 VA: 0xE8D948
-			// internal void CAPIELNEBFB() { }
 		// private bool NGDBJIAFCKE; // 0x2C
 		// private PJKLMCGEJMK JFAIABBIPEO; // 0x30
 		// private LFPOMKLKHPB NOAMCCLDODN; // 0x34
 		// private int NJDHMNBBCLK; // 0x38
 		//0xE8DA10
 		UnityEngine.Debug.Log("Enter EOFJPNPFGDM_Coroutine_Install");
-		UnityEngine.Debug.LogError("TODO");
-		UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
-		yield break;
+
+		int NJDHMNBBCLK = 0;
+		// private KEHOJEJMGLJ.<>c__DisplayClass75_0 OPLBFCEPDCH; // 0x14
+			// public KEHOJEJMGLJ KIGBLACMODG; // 0x8
+			// public bool KOMKKBDABJP; // 0xC
+		if(OEPPEGHGNNO == null)
+		{
+			OEPPEGHGNNO = this.ALDMHFCFECK;
+		}
+		if(MAIHLKPEHJN == null)
+		{
+			MAIHLKPEHJN = this.EEHMGCMAOAB;
+		}
+		//FCPBCDOKOPD?
+		KLIJFOBEKBE.PCODDPDFLHK();
+		DMPNAEEIANJ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+		if(GCLPIJNJFAE == 0)
+		{
+			GCLPIJNJFAE = DMPNAEEIANJ;
+		}
+		DLAEPJPPEKI = true;
+		bool NGDBJIAFCKE = false;
+		FFHCCIOCPAD();
+		PJKLMCGEJMK JFAIABBIPEO = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF;
+		//goto LAB_00e8e258;
+		while(true)
+		{
+
+			// private KEHOJEJMGLJ.<>c__DisplayClass75_1 LBLMCMHMNGC; // 0x18
+				// public Dictionary<string, int> FAOOOLDDBBB; // 0x8
+				// public JPAPJLIPNOK COJNCNGHIJC; // 0xC
+				// public KEHOJEJMGLJ.<>c__DisplayClass75_0 PGFMIBMJBHD; // 0x10
+				// RVA: 0xE8CE74 Offset: 0xE8CE74 VA: 0xE8CE74
+				// internal void IPGJJANJOMJ() { }
+				// // RVA: 0xE8D3C0 Offset: 0xE8D3C0 VA: 0xE8D3C0
+				// internal void EGDGJOPDNFF() { }
+				// // RVA: 0xE8D424 Offset: 0xE8D424 VA: 0xE8D424
+				// internal void FKJIINPOGKK(JEHIAIPJNJF.HCJPJKCIBDL JGBPLIGAILE) { }
+				// // RVA: 0xE8D8B0 Offset: 0xE8D8B0 VA: 0xE8D8B0
+				// internal void BCMEPPIPGIB() { }
+
+			//FCPBCDOKOPD?
+			JPAPJLIPNOK COJNCNGHIJC = JFAIABBIPEO.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK>(new JPAPJLIPNOK());
+			COJNCNGHIJC.FPCIBJLJOFI = FPCIBJLJOFI;
+			yield return COJNCNGHIJC.GDPDELLNOBO(N.a);
+			//1
+
+			if(COJNCNGHIJC.NPNNPNAIONN)
+			{
+				if(MOBEEPPKFLG != null)
+				{
+					MOBEEPPKFLG();
+				}
+				//FCPBCDOKOPD?
+				UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+				yield break;
+			}
+
+			IDJBKGBMDAJ = COJNCNGHIJC.NFEAMMJIMPG;
+			FLHOFIEOKDH = COJNCNGHIJC.NFEAMMJIMPG.GLMGHMCOMEC;
+			JNGKCPJBMBA = FLHOFIEOKDH + AFEHLCGHAEE.FAIOPNOJIBF + LBEPLOJBFCM + AFEHLCGHAEE.FAIOPNOJIBF;
+
+			DMPNAEEIANJ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+			//FCPBCDOKOPD()?
+			if(EMJFHKHLHDB == KEHOJEJMGLJ.ACGGHEIMPHC.DEKNOKPEIHO/*2*/)
+			{
+				if(BHFHGFKBOHH != null)
+				{
+					BHFHGFKBOHH();
+				}
+				//FCPBCDOKOPD?
+			}
+			else
+			{
+				if(LHJNPJFNDNA != COJNCNGHIJC.HOHOBEOJPBK.AJBPBEALBOB)
+				{
+					ICCMKHKNAMJ = new List<GCGNICILKLD>();
+					Dictionary<string, int> FAOOOLDDBBB = new Dictionary<string, int>();
+					bool KOMKKBDABJP = false;
+					JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+						//0xE8CE74
+						//FCPBCDOKOPD?
+						KLIJFOBEKBE.EBCAKALIAHH();
+						PAIGMDNFNDJ = 0;
+						DIDACHONHJA(ref FAOOOLDDBBB, JCMJBMBMJAK);
+						string[] str = new string[5];
+						str[0] = ""+COJNCNGHIJC.NFEAMMJIMPG.KGHAJGGMPKL.Count;
+						str[1] = ",installed=";
+						str[2] = ""+PAIGMDNFNDJ;
+						str[3] = ",timestamp=";
+						str[4] = ""+0;
+						UnityEngine.Debug.Log(string.Concat(str));
+						//FCPBCDOKOPD
+						NFIDKHELFDK = 0;
+						IAPEABPJPOE(COJNCNGHIJC.NFEAMMJIMPG, ref FAOOOLDDBBB);
+						BEINKAGIHJB();
+						KOMKKBDABJP = true;
+					});
+					//goto LAB_00e8dd6c;
+					//2
+					while(KOMKKBDABJP == false)
+						yield return null;
+
+					//FCPBCDOKOPD?
+					DLAEPJPPEKI = false;
+					// L 482
+					if(ICCMKHKNAMJ.Count == 0)
+					{
+						KOMKKBDABJP = false;
+						JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+							//0xE8D3C0
+							CIDPPOGCODB(FAOOOLDDBBB);
+							KOMKKBDABJP = true;
+						});
+						//goto LAB_00e8eab0;
+						//3
+						//LAB_00e8eab0:
+						while(!KOMKKBDABJP)
+						{
+							yield return null;
+						}
+						LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK.AJBPBEALBOB;
+						if(MLPDBGFBAAC != null)
+						{
+							MLPDBGFBAAC.HJMKBCFJOOH();
+						}
+						if(EMJFHKHLHDB == KEHOJEJMGLJ.ACGGHEIMPHC.GGCIMLDFDOC/*1*/)
+						{
+							PKLPEIBEGNO();
+						}
+						ICCMKHKNAMJ.Clear();
+						KLIJFOBEKBE.HJMKBCFJOOH();
+						KDHNLDOIOAL();
+						GC.Collect();
+						GameManager.Instance.SetNeverSleep(false);
+						//FCPBCDOKOPD
+						if(BHFHGFKBOHH != null)
+						{
+							BHFHGFKBOHH();
+						}
+						//goto LAB_00e8f334;
+						FBGNDKKDOIE = null;
+						UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
+						yield break;
+					}
+					// L518
+					GameManager.Instance.SetNeverSleep(true);
+					LFPOMKLKHPB NOAMCCLDODN = new LFPOMKLKHPB();
+					NOAMCCLDODN.LKLCOEJLBGG();
+					//break;
+					if(!NOAMCCLDODN.PLOOEECNHFB)
+					{
+						yield return null;
+						// to 10
+						//LAB_00e8f0a4:
+						while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+						{
+							PMDNNKAPIKJ.FBANBDCOEJL();
+							yield return null;
+						}
+						int APGOAMNGFFF = 0;
+						string errorStr = "network";
+						if(PMDNNKAPIKJ.KAMPHNKAHAB)
+						{
+							errorStr = "storage";
+						}
+						int avaiable = StorageSupport.GetAvailableStorageSizeMB();
+						if(avaiable > -1 && avaiable < 50)
+							errorStr = "storage";
+						MAIHLKPEHJN(errorStr, () => {
+							//0xE8D93C
+							UnityEngine.Debug.LogError("TODO");
+						}, () => {
+							//0xE8D948
+							UnityEngine.Debug.LogError("TODO");
+						});
+						//goto LAB_00e8f260;
+						//0xb
+						while(APGOAMNGFFF == 0)
+							yield return null;
+						if(APGOAMNGFFF != 1)
+						{
+							//LAB_00e8f30c:
+							PMDNNKAPIKJ.Dispose();
+							PMDNNKAPIKJ = null;
+							if(FGGJNGCAFGK != null)
+								FGGJNGCAFGK();
+							//LAB_00e8f334
+							FBGNDKKDOIE = null;
+							UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+							yield break;
+						}
+						PMDNNKAPIKJ.PBIMGBKLDPP();
+						//LAB_00e8f2d0:
+						while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+						{
+							PMDNNKAPIKJ.FBANBDCOEJL();
+							//LAB_00e8f2fc:
+							yield return null;
+							// 0xc
+							//goto LAB_00e8f2d0
+						}
+						//goto LAB_00e8f360;
+					}
+					else
+					{
+						NOAMCCLDODN.NKIKBOJOCNN(ICCMKHKNAMJ);
+						//LAB_00e8e7d8
+						while(!NOAMCCLDODN.PLOOEECNHFB)
+						{
+							yield return null;
+							// To 5
+							//5
+						}
+
+						if(!NOAMCCLDODN.AAAOKDDILCP)
+						{
+							if(MOBEEPPKFLG != null)
+							{
+								MOBEEPPKFLG();
+							}
+							UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+							yield break;
+						}
+						OEPPEGHGNNO(1, 0);
+						//LAB_00e8e87c:
+						while(!OEPPEGHGNNO(4, 0))
+						{
+							yield return null;
+							// to 6
+							//6
+						}
+						PMDNNKAPIKJ = new JEHIAIPJNJF(3);
+						PMDNNKAPIKJ.DOMFHDPMCCO(ICCMKHKNAMJ, FLHOFIEOKDH, JCMJBMBMJAK);
+						PMDNNKAPIKJ.LBGNKOJFOFC = (JEHIAIPJNJF.HCJPJKCIBDL JGBPLIGAILE) => {
+							//0xE8D424
+							UnityEngine.Debug.LogError("TODO");
+						};
+						NJDHMNBBCLK = 60;
+						// goto LAB_00e8f360
+					}
+					//LAB_00e8f360:
+					PMDNNKAPIKJ.LAOEGNLOJHC();
+					while(true)
+					{
+						//LAB_00e8f368
+						yield return null;
+						//To 7
+						//7
+						PMDNNKAPIKJ.FBANBDCOEJL();
+						if(PMDNNKAPIKJ.CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.FEJIMBDPMKI/*2*/)
+						{
+							OEPPEGHGNNO(3, 100);
+							PMDNNKAPIKJ.Dispose();
+							PMDNNKAPIKJ = null;
+							BDGGNOAIIFK(100);
+							OEPPEGHGNNO(3, 100);
+							GameManager.Instance.SetNeverSleep(false);
+							KOMKKBDABJP = false;
+							JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+								//0xE8D8B0
+								UnityEngine.Debug.LogError("TODO");
+							});
+							//goto LAB_00e8e0f8;
+							//0xd
+							//LAB_00e8e0f8
+							while(!KOMKKBDABJP)
+								yield return null;
+							KLIJFOBEKBE.HJMKBCFJOOH();
+							GC.Collect();
+							NGDBJIAFCKE = true;
+							LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK.AJBPBEALBOB;
+							if(EMJFHKHLHDB == KEHOJEJMGLJ.ACGGHEIMPHC.GGCIMLDFDOC/*1*/)
+							{
+								PKLPEIBEGNO();
+							}
+							NOAMCCLDODN = null;
+							//LAB_00e8e258:
+							break;
+						}
+						//L731
+						if(PMDNNKAPIKJ.CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.LPLEIJIFOKN/*4*/)
+						{
+							// private KEHOJEJMGLJ.<>c__DisplayClass75_2 PHPPCOBECCA; // 0x24
+								// public int APGOAMNGFFF; // 0x8
+								// // RVA: 0xE8D91C Offset: 0xE8D91C VA: 0xE8D91C
+								// internal void EKHEBHFBKID() { }
+								// // RVA: 0xE8D928 Offset: 0xE8D928 VA: 0xE8D928
+								// internal void OIIFKBGOJKO() { }
+							int APGOAMNGFFF = 0;
+							string errorStr = "network";
+							if(PMDNNKAPIKJ.BHICPONFJKM)
+								errorStr = "storage";
+							int avaiable = StorageSupport.GetAvailableStorageSizeMB();
+							if(avaiable > -1 && avaiable < 50)
+								errorStr = "storage";
+							MAIHLKPEHJN(errorStr, () => {
+								//0xE8D91C
+								UnityEngine.Debug.LogError("TODO");
+							}, () => {
+								//0xE8D928
+								UnityEngine.Debug.LogError("TODO");
+							});
+							//goto LAB_00e8dffc;
+							// 8
+							while(APGOAMNGFFF == 0)
+								yield return null;
+							if(APGOAMNGFFF == 1)
+							{
+								PMDNNKAPIKJ.PBIMGBKLDPP();
+								//goto LAB_00e8e088;
+								//9
+								while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+								{
+									PMDNNKAPIKJ.FBANBDCOEJL();
+									yield return null;
+								}
+								//goto LAB_00e8f360;
+								PMDNNKAPIKJ.LAOEGNLOJHC();
+								continue;
+							}
+							// LAB_00e8f30c;
+							PMDNNKAPIKJ.Dispose();
+							PMDNNKAPIKJ = null;
+							if(FGGJNGCAFGK != null)
+								FGGJNGCAFGK();
+							//LAB_00e8f334
+							FBGNDKKDOIE = null;
+							UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+							yield break;
+						}
+						// L.780
+						OEPPEGHGNNO(3, PMDNNKAPIKJ.HCAJCKCOCHC());
+						BDGGNOAIIFK(PMDNNKAPIKJ.HCAJCKCOCHC());
+						if(PMDNNKAPIKJ.MNFGKBAEFFL() || PMDNNKAPIKJ.KAMPHNKAHAB)
+						{
+							//LAB_00e8f064:
+							// private KEHOJEJMGLJ.<>c__DisplayClass75_3 OGEABHOODHB; // 0x28
+								// public int APGOAMNGFFF; // 0x8
+								// // RVA: 0xE8D93C Offset: 0xE8D93C VA: 0xE8D93C
+								// internal void NNGKGAGFFBE() { }
+								// // RVA: 0xE8D948 Offset: 0xE8D948 VA: 0xE8D948
+								// internal void CAPIELNEBFB() { }
+							PMDNNKAPIKJ.PBIMGBKLDPP();
+							//goto LAB_00e8f0a4;
+							//LAB_00e8f0a4:
+							while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+							{
+								PMDNNKAPIKJ.FBANBDCOEJL();
+								yield return null;
+							}
+							int APGOAMNGFFF = 0;
+							string errorStr = "network";
+							if(PMDNNKAPIKJ.KAMPHNKAHAB)
+							{
+								errorStr = "storage";
+							}
+							int avaiable = StorageSupport.GetAvailableStorageSizeMB();
+							if(avaiable > -1 && avaiable < 50)
+								errorStr = "storage";
+							MAIHLKPEHJN(errorStr, () => {
+								//0xE8D93C
+								UnityEngine.Debug.LogError("TODO");
+							}, () => {
+								//0xE8D948
+								UnityEngine.Debug.LogError("TODO");
+							});
+							//goto LAB_00e8f260;
+							//0xb
+							while(APGOAMNGFFF == 0)
+								yield return null;
+							if(APGOAMNGFFF != 1)
+							{
+								//LAB_00e8f30c:
+								PMDNNKAPIKJ.Dispose();
+								PMDNNKAPIKJ = null;
+								if(FGGJNGCAFGK != null)
+									FGGJNGCAFGK();
+								//LAB_00e8f334
+								FBGNDKKDOIE = null;
+								UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+								yield break;
+							}
+							PMDNNKAPIKJ.PBIMGBKLDPP();
+							//LAB_00e8f2d0:
+							while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+							{
+								PMDNNKAPIKJ.FBANBDCOEJL();
+								//LAB_00e8f2fc:
+								yield return null;
+								// 0xc
+								//goto LAB_00e8f2d0
+							}
+							//goto LAB_00e8f360;
+							PMDNNKAPIKJ.LAOEGNLOJHC();
+							continue;
+						}
+						NJDHMNBBCLK = NJDHMNBBCLK - 1;
+						if(NJDHMNBBCLK < 0)
+						{
+							GC.Collect();
+							NJDHMNBBCLK = 60;
+						}
+						//goto LAB_00e8f368;
+						continue;
+					}
+					//L 380
+					if(NGDBJIAFCKE)
+					{
+						OEPPEGHGNNO(2, 100);
+					}
+					GC.Collect();
+					if(BHFHGFKBOHH != null)
+					{
+						BHFHGFKBOHH();
+					}
+					//FCPBCDOKOPD
+					if(MLPDBGFBAAC != null)
+					{
+						if(DLAEPJPPEKI)
+						{
+							MLPDBGFBAAC.PNMIOGBPDFN();
+						}
+						MLPDBGFBAAC.HJMKBCFJOOH();
+					}
+					if(ICCMKHKNAMJ != null)
+					{
+						ICCMKHKNAMJ.Clear();
+						ICCMKHKNAMJ = null;
+					}
+					KLIJFOBEKBE.HJMKBCFJOOH();
+					KDHNLDOIOAL();
+					break;
+				}
+			}
+			GameManager.Instance.SetNeverSleep(false);
+			// goto LAB_00e8f334;
+			FBGNDKKDOIE = null;
+
+			UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
+			break;
+		}
 	}
 
 	// // RVA: 0xE88D50 Offset: 0xE88D50 VA: 0xE88D50
-	// private void DIDACHONHJA(ref Dictionary<string, int> FAOOOLDDBBB, string CJJJPKJHOGM) { }
+	private void DIDACHONHJA(ref Dictionary<string, int> FAOOOLDDBBB, string CJJJPKJHOGM)
+	{
+		UnityEngine.Debug.LogError("TODO !!!");
+	}
 
 	// // RVA: 0xE88F88 Offset: 0xE88F88 VA: 0xE88F88
-	// public void CIDPPOGCODB(Dictionary<string, int> FAOOOLDDBBB) { }
+	public void CIDPPOGCODB(Dictionary<string, int> FAOOOLDDBBB)
+	{
+		UnityEngine.Debug.LogError("TODO !!!");
+	}
 
 	// // RVA: 0xE89EA0 Offset: 0xE89EA0 VA: 0xE89EA0
 	// public static bool NHIIAHGHOMH(string KLICLHJAMMD, long KPBJHHHMOJE, uint HHPEMFKDHLK) { }
@@ -245,10 +664,17 @@ public class KEHOJEJMGLJ
 	// private void DDJGHFCIDML(FECDBKKBAHO.FHOPNIJCFKA CFMIMNHLHJJ, PKKHIEAEDPC CEJDIAECJKD, string CJEKGLGBIHF_path) { }
 
 	// // RVA: 0xE8A2C4 Offset: 0xE8A2C4 VA: 0xE8A2C4
-	// private void IAPEABPJPOE(IKAHKDKIGNA CBLEBKOJJDB, ref Dictionary<string, int> FAOOOLDDBBB) { }
+	private void IAPEABPJPOE(IKAHKDKIGNA CBLEBKOJJDB, ref Dictionary<string, int> FAOOOLDDBBB)
+	{
+		UnityEngine.Debug.LogError("TODO !!!");
+	}
 
 	// // RVA: 0xE8B240 Offset: 0xE8B240 VA: 0xE8B240
-	// private bool ALDMHFCFECK(int INDDJNMPONH, float LNAHJANMJNM) { }
+	private bool ALDMHFCFECK(int INDDJNMPONH, float LNAHJANMJNM)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return false;
+	}
 
 	// // RVA: 0xE8B248 Offset: 0xE8B248 VA: 0xE8B248
 	private void EEHMGCMAOAB(string DOGDHKIEBJA, IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP)
@@ -329,7 +755,10 @@ public class KEHOJEJMGLJ
 	}
 
 	// // RVA: 0xE8B9A4 Offset: 0xE8B9A4 VA: 0xE8B9A4
-	// private static void PKLPEIBEGNO() { }
+	private static void PKLPEIBEGNO()
+	{
+		UnityEngine.Debug.LogError("TODO !!!");
+	}
 
 	// // RVA: 0xE888B8 Offset: 0xE888B8 VA: 0xE888B8
 	private static void GBCDHECMDMC()
@@ -344,13 +773,22 @@ public class KEHOJEJMGLJ
 	}
 
 	// // RVA: 0xE8BDB0 Offset: 0xE8BDB0 VA: 0xE8BDB0
-	// private void BDGGNOAIIFK(float OLDAGCNLJOI) { }
+	private void BDGGNOAIIFK(float OLDAGCNLJOI)
+	{
+		UnityEngine.Debug.LogError("TODO !!!");
+	}
 
 	// // RVA: 0xE8BF18 Offset: 0xE8BF18 VA: 0xE8BF18
-	// private void FFHCCIOCPAD() { }
+	private void FFHCCIOCPAD()
+	{
+		UnityEngine.Debug.LogError("TODO !!!!");
+	}
 
 	// // RVA: 0xE8C288 Offset: 0xE8C288 VA: 0xE8C288
-	// private void KDHNLDOIOAL() { }
+	private void KDHNLDOIOAL()
+	{
+		UnityEngine.Debug.LogError("TODO !!!");
+	}
 
 	// // RVA: 0xE8C30C Offset: 0xE8C30C VA: 0xE8C30C
 	// private int JGNEKCNFFDE() { }
@@ -363,5 +801,8 @@ public class KEHOJEJMGLJ
 	// public void KPMCJMIEMMB(IMCBBOAFION BHFHGFKBOHH) { }
 
 	// // RVA: 0xE8C7E8 Offset: 0xE8C7E8 VA: 0xE8C7E8
-	// private void BEINKAGIHJB() { }
+	private void BEINKAGIHJB()
+	{
+		UnityEngine.Debug.LogError("TODO !!!");
+	}
 }

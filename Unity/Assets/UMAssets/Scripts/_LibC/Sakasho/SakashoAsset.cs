@@ -129,9 +129,13 @@ namespace ExternLib
     ]
 }";
             }
+            else if(json.Contains("android"))
+            {
+                message = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath+"/../../Data/RequestGetFiles.json"));
+            }
             else
             {
-                UnityEngine.Debug.LogError("TODO");
+                UnityEngine.Debug.LogError("TODO SakashoAssetGetAssetList "+json);
             }
             UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", ""+callbackId+":"+message);
             // end hack

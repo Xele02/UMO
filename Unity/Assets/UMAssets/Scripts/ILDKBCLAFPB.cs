@@ -3,6 +3,7 @@ using XeSys;
 using System.IO;
 using UnityEngine;
 using XeApp.Game.Common;
+using System.Text;
 
 public class ILDKBCLAFPB
 {
@@ -308,13 +309,13 @@ public class ILDKBCLAFPB
         // // RVA: 0x201A834 Offset: 0x201A834 VA: 0x201A834
         public void ODDIHGPONFL_Copy(ILDKBCLAFPB.IPHAEFKCNMN FMKAONAMGCN)
         {
-            UnityEngine.Debug.LogError("TODO");
+            UnityEngine.Debug.LogError("TODO !!!!");
         }
 
         // // RVA: 0x2032DB8 Offset: 0x2032DB8 VA: 0x2032DB8
         public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
         {
-            UnityEngine.Debug.LogError("TODO");
+            UnityEngine.Debug.LogError("TODO !!!!");
         }
 
         // // RVA: 0x2033FE0 Offset: 0x2033FE0 VA: 0x2033FE0
@@ -323,8 +324,8 @@ public class ILDKBCLAFPB
         // // RVA: 0x201B1B0 Offset: 0x201B1B0 VA: 0x201B1B0
         public void NFDEBEJFNGD(string DLENPPIJNPA)
         {
-            //KHEKNNFCAOI_Init(IKPIMINCOPI.PFAMKCGJKKL(DLENPPIJNPA));
-            UnityEngine.Debug.LogError("TODO");
+            UnityEngine.Debug.LogError(DLENPPIJNPA);
+            KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(DLENPPIJNPA));
         }
 
         // // RVA: 0x201A460 Offset: 0x201A460 VA: 0x201A460
@@ -468,7 +469,12 @@ public class ILDKBCLAFPB
     {
         if(File.Exists(HDMOIHHPJEA))
         {
-            UnityEngine.Debug.LogError("TODO");
+            FileInfo info = new FileInfo(HDMOIHHPJEA);
+            FileStream fs = info.OpenRead();
+            StreamReader sr = new StreamReader(fs, Encoding.UTF8);
+            string data = sr.ReadToEnd();
+            sr.Dispose();
+            return data;
         }
         return null;
     }
