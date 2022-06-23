@@ -2,7 +2,7 @@ using XeApp.Core.WorkerThread;
 using UnityEngine;
 using System.Collections;
 
-public delegate bool MMACCEADALH(SakashoErrorId PPFNGGCBJKC);
+public delegate bool MMACCEADALH(SakashoErrorId PPFNGGCBJKC_Id);
 
 
 public class IDNNDIHDLGA
@@ -49,7 +49,7 @@ public abstract class CACGCMBKHDI_Request
     public string GEKKKPIIOAF { get; set; } // 0x48 AOCPFCELECC EFJKDEPPKJL EOIEFLFHAFI
     public string JNDJDDBAIAJ { get; set; } // 0x4C APGMLBJEHPH NHPMIODGLEJ NJGFHKKAKEM
     // public virtual bool DCLHBCFKIJI { get; set; } IHGGDFHAGGM 0x18F2320 AHLIMCFMAHO 0x18F2328 
-    public double KINJOEIAHFK { get; set; } // 0x58 BLHFJCJNIGC CMNMHDELKND IOPPCLACPOF
+    public double KINJOEIAHFK_StartTime { get; set; } // 0x58 BLHFJCJNIGC CMNMHDELKND IOPPCLACPOF
     public double DMOBOIOFPCM { get; set; } // 0x60 GJKEKJMCFLB IBBPAJGOFFA FNIKLDHAPEG
     public double LHGPAJGIAME { get; set; }  // 0x68 FOFFKBHGEPC OJCLNCIEHLL BPAIAMDPKBJ
     // public double MOCNPGKAPKE { get; } // FLDLAOCPFCP 0x18F23E0

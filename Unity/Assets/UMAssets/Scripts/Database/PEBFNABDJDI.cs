@@ -10,7 +10,7 @@ public class PEBFNABDJDI : DIHHCBACKGG
         public int OLMFFMANMNE; // 0x10
 
         // public long KJLPILMAIKH { get; set; } GLFFDLFFELA 0x16C0E08 PEMIOJOMOHL 0x16C0DD8
-        // public int CEMEIPNMAAD { get; set; } MPHJDGEDFOC 0x16C0E1C FNCCGEAMNAC 0x16C0DF4
+        // public int CEMEIPNMAAD_Version { get; set; } MPHJDGEDFOC 0x16C0E1C FNCCGEAMNAC 0x16C0DF4
 
         // // RVA: 0x16C0DA0 Offset: 0x16C0DA0 VA: 0x16C0DA0
         public JFIGGEAFMCN() 

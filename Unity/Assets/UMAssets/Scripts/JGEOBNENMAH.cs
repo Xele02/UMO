@@ -76,15 +76,15 @@ public class JGEOBNENMAH
 	// public List<IELJJAAJAOE> DCELMKFJHPG = new List<IELJJAAJAOE>(); // 0x10
 	public int PFHMFKKDMBM; // 0x14
 	public int LBLOIOMNEIH; // 0x18
-	public int IKBLCEFCGDE; // 0x1C
-	public int GCAPLLEIAAI; // 0x20
-	public int GPMILOPNBPA; // 0x24
-	public int PBGLMBMEKAA; // 0x28
-	public int CODDMAKLBDO; // 0x2C
+	public int IKBLCEFCGDE_LastLuck; // 0x1C
+	public int GCAPLLEIAAI_LastScore; // 0x20
+	public int GPMILOPNBPA_LastScoreExcellent; // 0x24
+	public int PBGLMBMEKAA_LastCombo; // 0x28
+	public int CODDMAKLBDO_LastComboRank; // 0x2C
 	public int PENICOGGNLF; // 0x30
 	public int CFNCNCBEPED; // 0x34
-	public int NMDKKAAOIOI; // 0x38
-	public int MJKFDDKLLFP; // 0x3C
+	public int NMDKKAAOIOI_LastBaseUnionCredit; // 0x38
+	public int MJKFDDKLLFP_LastDropUnionCredit; // 0x3C
 	public int PLMBDFGGBAJ; // 0x40
 	public int MMMKNPEMBIL; // 0x44
 	public int NGDDIIDJFNG; // 0x48

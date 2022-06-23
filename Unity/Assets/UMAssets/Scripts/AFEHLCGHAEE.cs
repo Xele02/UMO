@@ -65,7 +65,7 @@ public class AFEHLCGHAEE
 	public static string GLKOMLHCBEO = "query"; // 0xF4
 	public static string EHODALENBEL = "d_in"; // 0xF8
 	public static string EBIFBMEKEIL = "tap_st"; // 0xFC
-	public static string OLDAGCNLJOI = "progress"; // 0x100
+	public static string OLDAGCNLJOI_Progress = "progress"; // 0x100
 	public static string OHMCIEMIKCE = "t"; // 0x104
 	public static string PINEFBCMNKP = "show_unitlive_add"; // 0x108
 	public static string FDFDHIFMOGE = "rwd_all"; // 0x10C
@@ -348,7 +348,7 @@ public class AFEHLCGHAEE
 	public static string CALPJOGCDGL = "show_anketo"; // 0x560
 	public static string DFELEPDHLBF = "rds1"; // 0x564
 	public static string BBCPDMKEHAK = "/daily/"; // 0x568
-	public static string PPFNGGCBJKC = "id"; // 0x56C
+	public static string PPFNGGCBJKC_Id = "id"; // 0x56C
 	public static string LOMHJBIJMOD = "categories"; // 0x570
 	public static string JGOHPDKCJKB = "rw"; // 0x574
 	public static string PJJFEAHIPGL = "inventories"; // 0x578

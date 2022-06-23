@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public class LFPOMKLKHPB
 {
 	private const int BIAOPOMKMJE = 325392159;
-	private const int CEMEIPNMAAD = 1;
+	private const int CEMEIPNMAAD_Version = 1;
 	private const uint BEHBKIJEGMK = 40742721;
 	public bool BIOFMLDLNKD; // 0x8
 	public bool PLOOEECNHFB; // 0x9

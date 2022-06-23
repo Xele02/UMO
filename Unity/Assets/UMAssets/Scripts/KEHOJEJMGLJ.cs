@@ -773,7 +773,7 @@ public class KEHOJEJMGLJ
 	}
 
 	// // RVA: 0xE8BDB0 Offset: 0xE8BDB0 VA: 0xE8BDB0
-	private void BDGGNOAIIFK(float OLDAGCNLJOI)
+	private void BDGGNOAIIFK(float OLDAGCNLJOI_Progress)
 	{
 		UnityEngine.Debug.LogError("TODO !!!");
 	}

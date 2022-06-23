@@ -21,7 +21,7 @@ public class AMLGMLNGMFB : IKDICBBFBMI
 	// private List<int> DAFEPLPDCJD(long JHNMKKNEENE) { }
 
 	// // RVA: 0xCE224C Offset: 0xCE224C VA: 0xCE224C
-	// public int BMBELGEDKEG(int PPFNGGCBJKC) { }
+	// public int BMBELGEDKEG(int PPFNGGCBJKC_Id) { }
 
 	// // RVA: 0xCE24AC Offset: 0xCE24AC VA: 0xCE24AC
 	// public int GOHABONFBDM(JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD) { }
@@ -70,7 +70,7 @@ public class AMLGMLNGMFB : IKDICBBFBMI
 	// private IEnumerator NJIEIJJMAHK(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG) { }
 
 	// // RVA: 0xCE4390 Offset: 0xCE4390 VA: 0xCE4390
-	// private int APJDIPINLLK(List<int> HNLFPKNBOHE, int PPFNGGCBJKC) { }
+	// private int APJDIPINLLK(List<int> HNLFPKNBOHE, int PPFNGGCBJKC_Id) { }
 
 	// // RVA: 0xCE4488 Offset: 0xCE4488 VA: 0xCE4488 Slot: 33
 	// public override bool MPMKJNJGFEF() { }

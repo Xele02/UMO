@@ -17,7 +17,7 @@ public class HHJHIFJIKAC : DIHHCBACKGG
 
     public class MNGJPJBCMBH
     {
-        public int PPFNGGCBJKC; // 0x8
+        public int PPFNGGCBJKC_Id; // 0x8
         public int PLALNIIBLOF; // 0xC
         public int PDBPFJJCADD; // 0x10
         public int EGBOHDFBAPB; // 0x14
@@ -41,7 +41,7 @@ public class HHJHIFJIKAC : DIHHCBACKGG
 	// public bool IIEKKOHBNLA(int INFIBMLIHLO) { }
 
 	// // RVA: 0x183106C Offset: 0x183106C VA: 0x183106C
-	// public HHJHIFJIKAC.MNGJPJBCMBH NPOALOFHFPN(int PPFNGGCBJKC) { }
+	// public HHJHIFJIKAC.MNGJPJBCMBH NPOALOFHFPN(int PPFNGGCBJKC_Id) { }
 
 	// // RVA: 0x1831168 Offset: 0x1831168 VA: 0x1831168
 	// public HHJHIFJIKAC.MNGJPJBCMBH GOLBDLHCBCA(long EOLFJGMAJAB) { }

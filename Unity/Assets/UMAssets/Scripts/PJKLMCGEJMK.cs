@@ -141,7 +141,7 @@ public class PJKLMCGEJMK
         ADKIDBJCAJA_Request.PLOOEECNHFB = false;
 
         double time = Time.realtimeSinceStartup;
-        ADKIDBJCAJA_Request.KINJOEIAHFK = time;
+        ADKIDBJCAJA_Request.KINJOEIAHFK_StartTime = time;
         ADKIDBJCAJA_Request.DMOBOIOFPCM = time;
         ADKIDBJCAJA_Request.LHGPAJGIAME = time;
         ADKIDBJCAJA_Request.CFICLNJACCD = NLGJBBGAOLH;
@@ -163,7 +163,7 @@ public class PJKLMCGEJMK
         ADKIDBJCAJA_Request.PLOOEECNHFB = false;
 
         double time = Time.realtimeSinceStartup;
-        ADKIDBJCAJA_Request.KINJOEIAHFK = time;
+        ADKIDBJCAJA_Request.KINJOEIAHFK_StartTime = time;
         ADKIDBJCAJA_Request.DMOBOIOFPCM = time;
         ADKIDBJCAJA_Request.LHGPAJGIAME = time;
         ADKIDBJCAJA_Request.CFICLNJACCD = NLGJBBGAOLH;

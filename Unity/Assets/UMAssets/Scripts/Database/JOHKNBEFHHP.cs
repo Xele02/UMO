@@ -4,7 +4,7 @@ public class JOHKNBEFHHP : DIHHCBACKGG
 {
     public class NGKJHBDEELB
     {
-        public int PPFNGGCBJKC; // 0x8
+        public int PPFNGGCBJKC_Id; // 0x8
         public sbyte PPEGAKEIEGM; // 0xC
         public long PDBPFJJCADD; // 0x10
         public long FDBNFFNFOND; // 0x18
