@@ -1186,7 +1186,7 @@ public class IOGKADECKOP
 	{
 		if(!GameManager.Instance.IsTutorial)
 		{
-			if(GameManager.Instance.localSave.EPJOACOONAC().PPOJCDCCFNI_TutorialEnd.PPOJCDCCFNI == 0)
+			if(GameManager.Instance.localSave.EPJOACOONAC().IAHLNPMFJMH.PPOJCDCCFNI_TutorialEnd == 0)
 				return;
 			
 			GameManager.Instance.ProgressBar.Begin(DANMJLOBLIE.transform.parent);

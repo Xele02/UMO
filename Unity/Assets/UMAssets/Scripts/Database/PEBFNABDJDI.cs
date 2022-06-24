@@ -114,7 +114,7 @@ public class PEBFNABDJDI : DIHHCBACKGG
 	// // RVA: 0xCC5308 Offset: 0xCC5308 VA: 0xCC5308 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO Database Load");
 		return true;
     }
 
@@ -134,7 +134,7 @@ public class PEBFNABDJDI : DIHHCBACKGG
 	// // RVA: 0xCC7F98 Offset: 0xCC7F98 VA: 0xCC7F98 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
 		return 0;
 	}
 

@@ -88,7 +88,10 @@ public class JHHBAFKMBDL
 	// public void BAGANBPCGMD(IMCBBOAFION BHEOPIPFEFJ) { }
 
 	// // RVA: 0xB151D8 Offset: 0xB151D8 VA: 0xB151D8
-	// public void AHEMKCHEHMM(IMCBBOAFION BHEOPIPFEFJ) { }
+	public void AHEMKCHEHMM(IMCBBOAFION BHEOPIPFEFJ)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xB2200C Offset: 0xB2200C VA: 0xB2200C
 	// public bool EAADBLJMIPP() { }

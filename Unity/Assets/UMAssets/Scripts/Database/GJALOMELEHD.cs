@@ -102,7 +102,7 @@ public class GJALOMELEHD : DIHHCBACKGG
 	// // RVA: 0xAA9164 Offset: 0xAA9164 VA: 0xAA9164 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO Database Load");
         return true;
     }
 
@@ -125,7 +125,7 @@ public class GJALOMELEHD : DIHHCBACKGG
 	// // RVA: 0xAAA570 Offset: 0xAAA570 VA: 0xAAA570 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
 		return 0;
 	}
 

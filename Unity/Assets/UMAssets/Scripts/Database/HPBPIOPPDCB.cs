@@ -48,7 +48,7 @@ public class HPBPIOPPDCB : DIHHCBACKGG
 	// // RVA: 0x16088BC Offset: 0x16088BC VA: 0x16088BC Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO Database Load");
 		return true;
     }
 
@@ -62,7 +62,7 @@ public class HPBPIOPPDCB : DIHHCBACKGG
 	// // RVA: 0x16093A8 Offset: 0x16093A8 VA: 0x16093A8 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
 		return 0;
 	}
 }

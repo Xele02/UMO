@@ -11,7 +11,7 @@ public class IGJHFKELHKJ
         public uint AAFDKMODECB; // 0x18
         public bool CPBPOIMHIML; // 0x1C
 
-        // public uint IOIMHJAOKOO { get; set; } 0x11F5288 HJMJGBCJBIN 0x11F60B8 OLGHLLNJPKD
+        public uint IOIMHJAOKOO { get { return FBGGEFFJJHB ^ AAFDKMODECB; } set { AAFDKMODECB = value ^ FBGGEFFJJHB; } } //0x11F5288 HJMJGBCJBIN 0x11F60B8 OLGHLLNJPKD
     }
     
 	private const int BIAOPOMKMJE = 678720529;
@@ -62,13 +62,28 @@ public class IGJHFKELHKJ
 			if(header == 0x28747411)
 			{
 				int val = b.ReadInt32();
-				UnityEngine.Debug.LogError("TODO !!!!");
+				if(val > 0)
+				{
+					for(int i = 0; i < val; i++)
+					{
+						IGJHFKELHKJ.HPJEDLPEJLF data = new IGJHFKELHKJ.HPJEDLPEJLF();
+						data.IOIMHJAOKOO = b.ReadUInt32();
+						b.ReadUInt32();
+						data.JMGLAOBOAHM = b.ReadInt64();
+						data.CPBPOIMHIML = false;
+						data.LGEGIKJGCCA = b.ReadInt64();
+						BEIEHPNODAM.Add(data.IOIMHJAOKOO, data);
+					}
+				}
+				return; // ?
 			}
+			b.Close();
+			f.Dispose();
 		}
 		file = JHJMNLMNPGO + "/" + KCOGAGGCPBP.NMGOCAFNNMM; // 04
 		if(File.Exists(file))
 		{
-			UnityEngine.Debug.LogError("TODO !!!!");
+			UnityEngine.Debug.LogError("TODO");
 		}
 	}
 

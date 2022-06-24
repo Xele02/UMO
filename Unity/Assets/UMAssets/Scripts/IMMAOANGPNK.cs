@@ -158,7 +158,7 @@ public class IMMAOANGPNK
 				
 				if(MessageLoader.Instance != null)
 				{
-					UnityEngine.Debug.LogError("TODO");
+					UnityEngine.Debug.LogError("TODO MessageLoader");
 				}
 				
 				AMAFAKNIHFO();

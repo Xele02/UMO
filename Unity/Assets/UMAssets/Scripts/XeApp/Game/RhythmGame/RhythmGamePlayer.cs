@@ -82,7 +82,7 @@ namespace XeApp.Game.RhythmGame
 		public class BackupSaveData
 		{
 			public bool m_enable; // 0x8
-			public ILDKBCLAFPB.MPHNGGECENI m_option; // 0xC
+			public ILDKBCLAFPB.MPHNGGECENI_Option m_option; // 0xC
 		}
  
 		private enum NoteSEType
@@ -400,35 +400,35 @@ namespace XeApp.Game.RhythmGame
 			if(d.musicInfo.IsMvMode)
 			{
 				BackupSave();
-				ILDKBCLAFPB.MPHNGGECENI saveInfo = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB;
-				BEJIKEOAJHN b = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().MHHPDGJLJGE;
+				ILDKBCLAFPB.MPHNGGECENI_Option saveInfo = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB;
+				BEJIKEOAJHN_OptionSLive b = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().MHHPDGJLJGE;
 				saveInfo.PBCBJAPONBF();
-				saveInfo.LMDACNNJDOE = b.LMDACNNJDOE;
-				saveInfo.ICGAOAFIHFD = b.ICGAOAFIHFD;
-				saveInfo.FCKEDCKCEFC = b.FCKEDCKCEFC;
-				saveInfo.IBEINHHMHAC = b.IBEINHHMHAC;
-				saveInfo.DDHCLNFPNGK = b.DDHCLNFPNGK;
-				saveInfo.HHMCIGLCBNG = b.HHMCIGLCBNG;
-				saveInfo.AHLFOHJMGAI = b.AHLFOHJMGAI;
-				saveInfo.DADIPGPHLDD = b.DADIPGPHLDD;
-				saveInfo.DCHMOFLEFMI = backupSaveData.m_option.DCHMOFLEFMI;
-				saveInfo.MBOEPFLNDOD = backupSaveData.m_option.MBOEPFLNDOD;
-				saveInfo.MGOOLKHAPAF = backupSaveData.m_option.MGOOLKHAPAF;
-				saveInfo.AIKDLBAANLG = backupSaveData.m_option.AIKDLBAANLG;
-				saveInfo.KOKDGGOFPPI = backupSaveData.m_option.KOKDGGOFPPI;
-				saveInfo.LIPAPGABJOA = backupSaveData.m_option.LIPAPGABJOA;
-				saveInfo.JDJBFBPBLDC = backupSaveData.m_option.JDJBFBPBLDC;
-				saveInfo.FJKNAHGFAPP = backupSaveData.m_option.FJKNAHGFAPP;
-				saveInfo.OJAJHIMOIEC = backupSaveData.m_option.OJAJHIMOIEC;
-				saveInfo.OAKOJGPBAJF = backupSaveData.m_option.OAKOJGPBAJF;
-				saveInfo.IHEPCAHBECA = backupSaveData.m_option.IHEPCAHBECA;
-				saveInfo.NFMEIILKACN = backupSaveData.m_option.NFMEIILKACN;
-				saveInfo.KDNKCOAJGCM = backupSaveData.m_option.KDNKCOAJGCM;
-				saveInfo.MJHEPGIEDDL = backupSaveData.m_option.MJHEPGIEDDL;
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_BGM, saveInfo.ICGAOAFIHFD, true);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_SE, saveInfo.LMDACNNJDOE, true);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_NOTES, saveInfo.IBEINHHMHAC, true);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_VOICE, saveInfo.FCKEDCKCEFC, true);
+				saveInfo.LMDACNNJDOE_VolSeRhythm = b.LMDACNNJDOE_VolSeRhythm;
+				saveInfo.ICGAOAFIHFD_VolBgmRhythm = b.ICGAOAFIHFD_VolBgmRhythm;
+				saveInfo.FCKEDCKCEFC_VolVoiceRhythm = b.FCKEDCKCEFC_VolVoiceRhythm;
+				saveInfo.IBEINHHMHAC_VolNotesRhythm = b.IBEINHHMHAC_VolNotesRhythm;
+				saveInfo.DDHCLNFPNGK_RenderQuality = b.DDHCLNFPNGK_RenderQuality;
+				saveInfo.HHMCIGLCBNG_QualityCustomDiva3D = b.HHMCIGLCBNG_QualityCustomDiva3D;
+				saveInfo.AHLFOHJMGAI_QualityCustomOther3D = b.AHLFOHJMGAI_QualityCustomOther3D;
+				saveInfo.DADIPGPHLDD_EffectCutin = b.DADIPGPHLDD_EffectCutin;
+				saveInfo.DCHMOFLEFMI_NotesSpeedEasy = backupSaveData.m_option.DCHMOFLEFMI_NotesSpeedEasy;
+				saveInfo.MBOEPFLNDOD_NotesSpeedNormal = backupSaveData.m_option.MBOEPFLNDOD_NotesSpeedNormal;
+				saveInfo.MGOOLKHAPAF_NotesSpeedHard = backupSaveData.m_option.MGOOLKHAPAF_NotesSpeedHard;
+				saveInfo.AIKDLBAANLG_NotesSpeedVeryHard = backupSaveData.m_option.AIKDLBAANLG_NotesSpeedVeryHard;
+				saveInfo.KOKDGGOFPPI_NotesSpeedExtreme = backupSaveData.m_option.KOKDGGOFPPI_NotesSpeedExtreme;
+				saveInfo.LIPAPGABJOA_NotesSpeedHardPlus = backupSaveData.m_option.LIPAPGABJOA_NotesSpeedHardPlus;
+				saveInfo.JDJBFBPBLDC_NotesSpeedVeryHardPlus = backupSaveData.m_option.JDJBFBPBLDC_NotesSpeedVeryHardPlus;
+				saveInfo.FJKNAHGFAPP_NotesSpeedExtremePlus = backupSaveData.m_option.FJKNAHGFAPP_NotesSpeedExtremePlus;
+				saveInfo.OJAJHIMOIEC_NoteOffset = backupSaveData.m_option.OJAJHIMOIEC_NoteOffset;
+				saveInfo.OAKOJGPBAJF_BackKey = backupSaveData.m_option.OAKOJGPBAJF_BackKey;
+				saveInfo.IHEPCAHBECA_VideoMode = backupSaveData.m_option.IHEPCAHBECA_VideoMode;
+				saveInfo.NFMEIILKACN_NotesRoute = backupSaveData.m_option.NFMEIILKACN_NotesRoute;
+				saveInfo.KDNKCOAJGCM_NotesType = backupSaveData.m_option.KDNKCOAJGCM_NotesType;
+				saveInfo.MJHEPGIEDDL_IsSlideNoteEffect = backupSaveData.m_option.MJHEPGIEDDL_IsSlideNoteEffect;
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_BGM, saveInfo.ICGAOAFIHFD_VolBgmRhythm, true);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_SE, saveInfo.LMDACNNJDOE_VolSeRhythm, true);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_NOTES, saveInfo.IBEINHHMHAC_VolNotesRhythm, true);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_VOICE, saveInfo.FCKEDCKCEFC_VolVoiceRhythm, true);
 				setting_mv.m_enable = true;
 				setting_mv.m_mode_diva = d.mvInfo.isModeDiva;
 				setting_mv.m_mode_valkyrie = d.mvInfo.isModeValkyrie;
@@ -442,12 +442,12 @@ namespace XeApp.Game.RhythmGame
 			if(d.ForceCutin() > 0)
 			{
 				BackupSave();
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.DADIPGPHLDD = d.ForceCutin() != 1 ? 1 : 0;
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.DADIPGPHLDD_EffectCutin = d.ForceCutin() != 1 ? 1 : 0;
 			}
 			if(d.ForceDivaMode() > 0)
 			{
 				BackupSave();
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.PMGMMMGCEEI = d.ForceDivaMode() != 1 ? 1 : 0;
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.PMGMMMGCEEI_Video = d.ForceDivaMode() != 1 ? 1 : 0;
 			}
 			if(d.ForceValkyrieMode() > 0)
 			{
@@ -457,7 +457,7 @@ namespace XeApp.Game.RhythmGame
 			
 			setting = new Setting();
 			setting.m_enable_cutin = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.GLKGAOFHLPN();
-			setting.m_visible_diva = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CJKKALFPMLA;
+			setting.m_visible_diva = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CJKKALFPMLA_IsDivaModeDivaVisible;
 			if(setting_mv.m_enable)
 			{
 				Setting.DMode a = Setting.DMode.Normal;
@@ -486,10 +486,10 @@ namespace XeApp.Game.RhythmGame
 			if(backupSaveData.m_enable)
 			{
 				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB = backupSaveData.m_option;
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_BGM, backupSaveData.m_option.ICGAOAFIHFD, false);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_SE, backupSaveData.m_option.LMDACNNJDOE, false);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_NOTES, backupSaveData.m_option.IBEINHHMHAC, false);
-				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_VOICE, backupSaveData.m_option.FCKEDCKCEFC, false);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_BGM, backupSaveData.m_option.ICGAOAFIHFD_VolBgmRhythm, false);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_SE, backupSaveData.m_option.LMDACNNJDOE_VolSeRhythm, false);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_NOTES, backupSaveData.m_option.IBEINHHMHAC_VolNotesRhythm, false);
+				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_VOICE, backupSaveData.m_option.FCKEDCKCEFC_VolVoiceRhythm, false);
 				backupSaveData.m_enable = false;
 				backupSaveData.m_option = null;
 			}

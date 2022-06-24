@@ -156,7 +156,7 @@ public class BBHNACPENDM
 	// public NEKDCJKANAH LNOOKHJBENO { get; private set; } // 0x24 BFKBGNOEDIK OEINGEBANNH DIFDDCMHIID
 	// public FKNOCGCODBK MLAFAACKKBG { get; private set; } // 0x28 OAIPEIDEOCO GFMBIMHMNJA MAKNCHHIOKF
 	// public CEDOOHCPHMG KMBJGAHCBDI { get; private set; } // 0x2C LFCFLKOPGJI MKOMCOGEKDH OLGDMANGPPF
-	// public EBFLJMOCLNA BEKHNNCGIEL { get; private set; } // 0x30 PIAGLBICDHH APEFIJHBGMD AHMKJHKMCEH
+	public EBFLJMOCLNA BEKHNNCGIEL { get; private set; } // 0x30 PIAGLBICDHH APEFIJHBGMD AHMKJHKMCEH
 	// public OCLHKHAMDHF NGHJPEIKLJL { get; private set; } // 0x34 NNHADBEPECA AJKOCPKDMEJ BJAOICEINFJ
 	// public OIGEIIGKMNH JJFFBDLIOCF { get; private set; } // 0x38 KHBLHGGNPPM BLDKFABPKAE JCMIADNDCNP
 	// public DDEMMEPBOIA FLHMJHBOBEA { get; private set; } // 0x3C NJAJCMECMFE OOCEKNJPKHO BDPKHAHGDKL
@@ -185,7 +185,7 @@ public class BBHNACPENDM
 	// public LGIDLHLBFFJ HMMNDKHKEBC { get; private set; } // 0x98 HBPDMEDPANM HPNJLDMMLOP GAEOOJAIHJC
 	// public LGIOGDIPNGI DPNKPPBEAGJ { get; private set; } // 0x9C MMANMDKOCIH PHMKDJBPODJ FDHJGFNNJID
 	// public LIFGJMIHHKM AFHFIPLOKMN { get; private set; } // 0xA0 MABLGJEDAAO GEHCLAGHAKB LLCKLEHDGJM
-	// public FFMIPGABHHA FHLMCCPCEAI { get; private set; } // 0xA4 AJPJGBAIBCD MIFLPDHAFEG NGGLLCCMKNN
+	public FFMIPGABHHA FHLMCCPCEAI { get; private set; } // 0xA4 AJPJGBAIBCD MIFLPDHAFEG NGGLLCCMKNN
 	// public NFMHCLHEMHB PEGNNEFHDOP { get; private set; } // 0xA8 DMOGGMEFGII CAJIJHHMOMG MOOKFNFALPJ
 	// public DAJBODHMLAB PDKHANKAPCI { get; private set; } // 0xAC GJHOEAFCNDA KGBNBKPMKDG PJNPGHDEINA
 	// public AHHPBMBBCFM DNIPIBICFGN { get; private set; } // 0xB0 MJMPPFHOLPG CLOJDOMJNGL NJDJFEAIEFJ
@@ -202,10 +202,18 @@ public class BBHNACPENDM
 	// public int ABPOMNOIKDA { get; set; } // NMDJOKGPIOA 0xF1C03C NPALOAPEPAC 0xF1C050
 
 	// // RVA: 0xF1BAEC Offset: 0xF1BAEC VA: 0xF1BAEC
-	// private ulong BCJKHLAOLAP(OKGLGHCBCJP NDFIEMPPMLF) { }
+	private ulong BCJKHLAOLAP(OKGLGHCBCJP NDFIEMPPMLF)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return 0;
+	}
 
 	// // RVA: 0xF1C064 Offset: 0xF1C064 VA: 0xF1C064
-	// public List<string> KPIDBPEKMFD() { }
+	public List<string> KPIDBPEKMFD()
+	{
+		UnityEngine.Debug.LogError("TODO !!!!");
+		return null;
+	}
 
 	// // RVA: 0xF1C1E0 Offset: 0xF1C1E0 VA: 0xF1C1E0
 	// public static List<string> KPIDBPEKMFD(ulong MKDDOJOADMF) { }
@@ -222,7 +230,10 @@ public class BBHNACPENDM
 	// */
 
 	// // RVA: 0xF1C528 Offset: 0xF1C528 VA: 0xF1C528
-	// public void KHEKNNFCAOI_Init(OKGLGHCBCJP NKEBMCIMJND) { }
+	public void KHEKNNFCAOI_Init(OKGLGHCBCJP_Database NKEBMCIMJND)
+	{
+		KHEKNNFCAOI(BCJKHLAOLAP(NKEBMCIMJND));
+	}
 
 	// // RVA: 0xF1F2AC Offset: 0xF1F2AC VA: 0xF1F2AC
 	// public void EBKCPELHDKN() { }
@@ -246,16 +257,26 @@ public class BBHNACPENDM
 	// public void HIJAFAIOLIL() { }
 
 	// // RVA: 0xF1C554 Offset: 0xF1C554 VA: 0xF1C554
-	// public void KHEKNNFCAOI_Init(ulong HGNJJBLEMPH) { }
+	public void KHEKNNFCAOI_Init(ulong HGNJJBLEMPH)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xF1F390 Offset: 0xF1F390 VA: 0xF1F390
 	// private KLFDBFMNLBL MNMFKKKFDCL(ulong NEJBNCHLMNJ) { }
 
 	// // RVA: 0xF1FA34 Offset: 0xF1FA34 VA: 0xF1FA34
-	// public void ODDIHGPONFL_Copy(BBHNACPENDM GPBJHKLFCEP) { }
+	public void ODDIHGPONFL_Copy(BBHNACPENDM GPBJHKLFCEP)
+	{
+		UnityEngine.Debug.LogError("TODO !!!");
+	}
 
 	// // RVA: 0xF1FC9C Offset: 0xF1FC9C VA: 0xF1FC9C
-	// public bool IIEMACPEEBJ(List<string> ANFNAHPIJDH, EDOHBJAPLPF_JsonData AAEDAEHIONI) { }
+	public bool IIEMACPEEBJ(List<string> ANFNAHPIJDH, EDOHBJAPLPF_JsonData AAEDAEHIONI)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return true;
+	}
 
 	// // RVA: 0xF202A4 Offset: 0xF202A4 VA: 0xF202A4
 	// public BBHNACPENDM.EMHDCKMFCGE IMMANCAIDLP() { }
@@ -296,7 +317,10 @@ public class BBHNACPENDM
 	}
 
 	// // RVA: 0xF2205C Offset: 0xF2205C VA: 0xF2205C
-	// public void NEBDDPDPAKJ(bool FHBAKFIHFLE = False) { }
+	public void NEBDDPDPAKJ(bool FHBAKFIHFLE = false)
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0xF220F8 Offset: 0xF220F8 VA: 0xF220F8
 	// public void JCFDDJIBKPA() { }

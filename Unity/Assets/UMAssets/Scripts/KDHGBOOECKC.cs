@@ -465,10 +465,18 @@ public class KDHGBOOECKC
 	// public int BCJNPJKGNHF(int JBGEEPFKIGG) { }
 
 	// // RVA: 0x1034DC0 Offset: 0x1034DC0 VA: 0x1034DC0
-	// public bool PCPECPFJMGC() { }
+	public bool PCPECPFJMGC()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return false;
+	}
 
 	// // RVA: 0x1034E9C Offset: 0x1034E9C VA: 0x1034E9C
-	// public bool IHGJNLNJPOK() { }
+	public bool IHGJNLNJPOK()
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return false;
+	}
 
 	// // RVA: 0x1034FD8 Offset: 0x1034FD8 VA: 0x1034FD8
 	// public int EJBPEBIIMPG() { }

@@ -134,7 +134,7 @@ public class KBCCGHLCFNO : DIHHCBACKGG
 	// // RVA: 0x1018DB4 Offset: 0x1018DB4 VA: 0x1018DB4 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO Database Load");
         return true;
     }
 
@@ -148,7 +148,7 @@ public class KBCCGHLCFNO : DIHHCBACKGG
 	// // RVA: 0x101A2BC Offset: 0x101A2BC VA: 0x101A2BC Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
 		return 0;
 	}
 }

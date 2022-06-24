@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 
 public class EGOLBAPFHHD : KLFDBFMNLBL
 {
@@ -48,15 +49,15 @@ public class EGOLBAPFHHD : KLFDBFMNLBL
 	// public const int FDPBFCGEIJK = 4;
 	// public const int MBCKPJJPMOH = 4;
 	// private int LEDNHIFBCON; // 0x24
-	// private long DABADKNMNCA; // 0x28
+	private long DABADKNMNCA; // 0x28
 	// private int MDJGIOGOGAO; // 0x30
 	// private int HMJBBNEACOA; // 0x34
 	// private int PAHPNGJFKMO; // 0x38
 	// private int BECMBCHHHHA; // 0x3C
-	// private long BCKIGFDMGBO; // 0x40
+	private long BCKIGFDMGBO; // 0x40
 	// public int HIGJEJKADDP; // 0x48
 	// private int FEDJFDMAPMA; // 0x4C
-	// private int CAPBCOFKBHL; // 0x50
+	private int CAPBCOFKBHL; // 0x50
 	// private int PJKDBODIGPG; // 0x54
 	// private int FBGGEFFJJHB; // 0x58
 	// private long GEDGKCOBBDC; // 0x60
@@ -173,7 +174,10 @@ public class EGOLBAPFHHD : KLFDBFMNLBL
 	// public int BCFPEJODJPP { get; set; } JNIDNCEICCE 0x1C51308 CPIJOEDODBG 0x1C51318
 	// public long FOKNAMPDPFP { get; set; } EMONLIDLFEC 0x1C5132C  AICIKGMHEBE 0x1C51340
 	// public int NFHLDFJIBKI { get; set; } DDLMHIAOLMM 0x1C51360 MJBPIJKNPHD 0x1C51370
-	// public int KIECDDFNCAN { get; set; } LNOBPNDNEAK 0x1C49114  BNGHHNPKLNB 0x1C513D8
+	public int KIECDDFNCAN { get { return (int)(CAPBCOFKBHL ^ DABADKNMNCA); } set {
+		BCKIGFDMGBO = value;
+		DABADKNMNCA = value ^ CAPBCOFKBHL;
+	 } } //LNOBPNDNEAK 0x1C49114  BNGHHNPKLNB 0x1C513D8
 	// public int EOHDMCMHBKJ { get; set; } BJCPOLILHAK 0x1C513EC  HHCEHNHHKFM 0x1C513FC
 	// public List<EGOLBAPFHHD.OFAPDOKONML> KBMDMEEMGLK { get; private set; } // 0x1D8 HFAPPMPFOGA BDOKMMIIEPK ECDKAGIGFBN
 	// public List<EGOLBAPFHHD.AMCANGCIBEG> GJODJNIHKKF { get; private set; } // 0x1DC GCEBOGKOJPL AHGCJELKMEN IAJJEALILHI
@@ -301,7 +305,11 @@ public class EGOLBAPFHHD : KLFDBFMNLBL
 	// public bool KCIPEJCFJMD() { }
 
 	// // RVA: 0x1C52038 Offset: 0x1C52038 VA: 0x1C52038
-	// public List<int> LPFFDGNDLKG(bool ANLBEIOFIGB = True, int CPNEKIDCAMF = 2160) { }
+	public List<int> LPFFDGNDLKG(bool ANLBEIOFIGB = true, int CPNEKIDCAMF = 2160)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 
 	// // RVA: 0x1C5261C Offset: 0x1C5261C VA: 0x1C5261C
 	// private PPNFHHPJOKK.JBBIPIAABOJ FOECFMNNNMP(int PPFNGGCBJKC) { }

@@ -32,7 +32,7 @@ public class JOHKNBEFHHP : DIHHCBACKGG
 	// // RVA: 0x1BA3EF0 Offset: 0x1BA3EF0 VA: 0x1BA3EF0 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO Database Load");
 		return true;
     }
 
@@ -46,7 +46,7 @@ public class JOHKNBEFHHP : DIHHCBACKGG
 	// // RVA: 0x1BA4188 Offset: 0x1BA4188 VA: 0x1BA4188 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
 		return 0;
 	}
 }

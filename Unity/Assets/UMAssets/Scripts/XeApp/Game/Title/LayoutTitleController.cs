@@ -46,7 +46,7 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE368A4 Offset: 0xE368A4 VA: 0xE368A4
 		public void SetVisible(bool isVisible)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO Layout Title Controller SetVisible "+isVisible);
 		}
 
 		// // RVA: 0xE36A24 Offset: 0xE36A24 VA: 0xE36A24

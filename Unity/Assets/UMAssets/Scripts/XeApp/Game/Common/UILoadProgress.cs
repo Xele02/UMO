@@ -45,7 +45,8 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDDFA4 Offset: 0x1CDDFA4 VA: 0x1CDDFA4
 		public void Begin(Transform parent)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO UILoadProgress Begin");
+			m_isReady = true;
 		}
 
 		// // RVA: 0x1CDE13C Offset: 0x1CDE13C VA: 0x1CDE13C
@@ -57,7 +58,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDE1B8 Offset: 0x1CDE1B8 VA: 0x1CDE1B8
 		public void SetType(UILoadProgress.Type type)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO UILoadPRogress SetType");
 		}
 
 		// // RVA: 0x1CDE270 Offset: 0x1CDE270 VA: 0x1CDE270

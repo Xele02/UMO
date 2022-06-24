@@ -781,7 +781,7 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE8BF18 Offset: 0xE8BF18 VA: 0xE8BF18
 	private void FFHCCIOCPAD()
 	{
-		UnityEngine.Debug.LogError("TODO !!!!");
+		UnityEngine.Debug.LogError("TODO Delete some files in bgm");
 	}
 
 	// // RVA: 0xE8C288 Offset: 0xE8C288 VA: 0xE8C288

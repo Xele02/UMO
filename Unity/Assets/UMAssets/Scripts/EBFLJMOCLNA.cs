@@ -32,7 +32,10 @@ public class EBFLJMOCLNA : KLFDBFMNLBL
 	// public void BJGLMIDBKKB(int JPIDIENBGKH) { }
 
 	// // RVA: 0x14F7E20 Offset: 0x14F7E20 VA: 0x14F7E20
-	// public void AGEAPKNODHO() { }
+	public void AGEAPKNODHO()
+	{
+		UnityEngine.Debug.LogError("TODO");
+	}
 
 	// // RVA: 0x14F8070 Offset: 0x14F8070 VA: 0x14F8070
 	// public void CGBCFBGJHKC(int AHHJLDLAPAN) { }

@@ -342,7 +342,7 @@ public class NDBFKHKMMCE : DIHHCBACKGG
 	// // RVA: 0x1ADE920 Offset: 0x1ADE920 VA: 0x1ADE920
 	public void MFIAFCCJHOF(BBLECJKKKLA MJALLIOHKEJ)
 	{
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO  DB Init");
 	}
 
 	// // RVA: 0x1ADEE2C Offset: 0x1ADEE2C VA: 0x1ADEE2C
@@ -372,7 +372,7 @@ public class NDBFKHKMMCE : DIHHCBACKGG
 	// // RVA: 0x1ADF298 Offset: 0x1ADF298 VA: 0x1ADF298 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO Database Load");
 		return true;
     }
 
@@ -407,7 +407,7 @@ public class NDBFKHKMMCE : DIHHCBACKGG
 	// // RVA: 0x1AE1BF0 Offset: 0x1AE1BF0 VA: 0x1AE1BF0 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
 		return 0;
 	}
 

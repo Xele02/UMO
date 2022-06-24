@@ -1,14 +1,14 @@
 
 public class FFMIPGABHHA : KLFDBFMNLBL
 {
-	// private const int ECFEMKGFDCE = 2;
-	// public const long BBEGLBMOBOF = 32158710441;
-	// public static string POFDDFCGEGP = "_"; // 0x0
-	// public string IOIMHJAOKOO; // 0x24
-	// private long KLAPHOKNEDG; // 0x28
-	// public long AFNJCFEKFDD; // 0x30
+	private const int ECFEMKGFDCE = 2;
+	public const long BBEGLBMOBOF = 32158710441;
+	public static string POFDDFCGEGP = "_"; // 0x0
+	public string IOIMHJAOKOO; // 0x24
+	private long KLAPHOKNEDG; // 0x28
+	public long AFNJCFEKFDD; // 0x30
 
-	// public long BEBJKJKBOGH { get; set; } DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
+	public long BEBJKJKBOGH { get { return KLAPHOKNEDG ^ 0x77ccefaa9; } set { KLAPHOKNEDG = value ^ 0x77ccefaa9; } } //DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x14E4BBC Offset: 0x14E4BBC VA: 0x14E4BBC

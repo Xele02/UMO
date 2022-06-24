@@ -479,7 +479,7 @@ public class OKGLGHCBCJP_Database
 	// public ABBOEIPOBLJ KHPOJKHKLEM { get; private set; } // 0x84 MOKKFOJJBOL GPOGPBKFNLJ DILCIJAHIOB
 	// public DKCJADHKGAN CLLPBOPLICM { get; private set; } // 0x88 FNJBPMENMGD GFEDAIKEGGC AIDDOHHKJGG
 	// public FBIOJHECAHB NBEMLGADAGK { get; private set; } // 0x8C DCKAOHBMJLM INDINPLHFPO CJBHGJLJBNJ
-	// public JJOPEDJCCJK FMPEMFPLPDA { get; private set; } // 0x90 NFHAGPKJMCM JBOGJKMKPHB LJNHCFIIOBB
+	   public JJOPEDJCCJK FMPEMFPLPDA { get; private set; } // 0x90 NFHAGPKJMCM JBOGJKMKPHB LJNHCFIIOBB
 	// public BIHCALIAJII OINLLHOMEAK { get; private set; } // 0x94 NFNMMHLNOME ACMDICBGLLH AECOJNDBPPA
 	// public PMDCIJMMNGK GKMAHADAAFI { get; private set; } // 0x98 CDPNLBODAFG MIOKEFPFJPL JCGBPLBDCED
 	   public LDDDBPNGGIN HNMMJINNHII { get; private set; } // 0x9C OEGOKKFEMLN // NNKOOANMMJN FDBLNEBHBKD
@@ -717,7 +717,7 @@ public class OKGLGHCBCJP_Database
 		// KHPOJKHKLEM = null;
 		// CLLPBOPLICM = null;
 		// NBEMLGADAGK = null;
-		// FMPEMFPLPDA = null;
+		FMPEMFPLPDA = null;
 		// OINLLHOMEAK = null;
 		// GKMAHADAAFI = null;
 		HNMMJINNHII = null;
@@ -799,7 +799,7 @@ public class OKGLGHCBCJP_Database
 					// case 74: KHPOJKHKLEM = item; break;
 					// case 75: CLLPBOPLICM = item; break;
 					// case 76: NBEMLGADAGK = item; break;
-					// case 77: FMPEMFPLPDA = item; break;
+					case 77: FMPEMFPLPDA = (JJOPEDJCCJK)item; break;
 					// case 78: OINLLHOMEAK = item; break;
 					// case 79: GKMAHADAAFI = item; break;
 					case 80: HNMMJINNHII = (LDDDBPNGGIN)item; break;
