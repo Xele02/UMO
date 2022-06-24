@@ -1,11 +1,82 @@
+using System.Collections.Generic;
+
 public class DEKKMGAFJCG : KLFDBFMNLBL
 {
+	public class MNNLOBDPCCH
+	{
+		private List<int> KJFGPMCKKOD = new List<int>(300); // 0x8
+		private List<int> OJKHIMDICBI = new List<int>(300); // 0xC
+		private List<int> OGKFEBONAAP = new List<int>(300); // 0x10
+		private List<int> NBJLJHECGEF = new List<int>(2); // 0x14
+		public int CPGFPEDMDEH; // 0x30
+		public int FBGGEFFJJHB = 0x8e; // 0x34
+		public int LFIEICOKCDE; // 0x38
+		public int MJJEODANLKB; // 0x3C
+		public int BEMIPFOEHNL; // 0x40
+		public int CKPNEAELHGB; // 0x44
+		public int EFCFPHJBDLF; // 0x48
+		public int PDFBAFBABNB; // 0x4C
+		public int NJMEPLMHKGM; // 0x50
+		public int BIGEOBIAMCC; // 0x54
+		public int HMGACICFNNA; // 0x58
+		public int EDHLMBBAFKM; // 0x5C
+		public int DAAIECDPNBM; // 0x60
+
+		public int DIPKCALNIII { get; set; } // 0x18 HLEPHANBMGN EOGPBFIDAPF JDNCGPBAFMB
+		public int HEBKEJBDCBH { get; set; } // 0x1C GHHNOPMHDJE OMOHEDILHMF FCGDHINFKHC
+		public int BEEAIAAJOHD { get; set; } // 0x20 JPEMECNHGLE DIIBIOEMHAI JIHEDMEFKAF
+		public int AFNIOJHODAG { get; set; } // 0x24 JMNBFBLHJMC OCABHAPHAMH DIAIECJEGDG
+		public int HPJMPINPKEP { get; set; } // 0x28 FFHDAPEBIOM JKALKLILMPH HALNDNAKBIE
+		public int KKEPMONFGEI { get; set; } // 0x2C HGHGFBHGAKL EDJNFDAPBAP MJDLBJPPPOL
+		// public List<int> ANAJIAENLNB { get; } 0x1973BD8 MMOMNMBKHJF
+		// public List<int> LKIFDCEKDCK { get; } 0x1973BE0 GOKMANFHFPC
+		// public List<int> KBOLNIBLIND { get; } 0x1973BE8 HEOJHPJAPJC
+		// public List<int> EBDNICPAFLB { get; } 0x1972894 GHDADHFINPE
+		// public int KCCONFODCPN { get; set; } 0x1973C20 GMOJMNAFGFF 0x1975018 AFJNLICPHEM
+		// public int BNDNNCHJGBB { get; set; } 0x1973C3C ACFHGNKOBHK 0x1975030 JLCPBIOLJON
+		// public int JLEPLIHFPKD { get; set; } 0x1973C58 IMCFHELDLLB 0x1975048 BIGDLBNDOEJ
+		// public int GCGCFGJCLEL { get; set; } 0x1973C74 NJEMIKDCDDO 0x1975060 AOEKFBICAJE
+		// public int APKBMBKMPAB { get; set; } 0x1973C94 CPIAANDJCBL 0x197507C ENAGDPKCBJD
+		// public int DDODJCCIENF { get; set; } 0x1973CB0 MJBJAFNIMNK 0x1975094 PECPGGACCMJ
+		// public int NFDPLBOIDAB { get; set; } 0x1973CCC PHHGPFOGJPD 0x19750AC KEIPFIPCDMA
+		// public int NEAADNDKGLG { get; set; } 0x1973CE8 NNJOIONEHNA 0x19750C4 AOPELFDEENK
+		// public int MMCEMJILMJI { get; set; } 0x1973D04 LCACIAMABII 0x19750DC NOKGCDDMCLA
+		// public int HDPANGMKKCP { get; set; } 0x1973D20 BPLDHGOMIHE 0x19750F4 KDLHBMNGHOI
+		// public int FFMLBEEBHDD { get; set; } 0x1973D3C JJOCEKDMNCN 0x197510C BBAHDADNMIM
+		public int PIGLAEFPNEK { get; set; } // 0x64 NIFCANFEMPB CIPINKBCEDB NCGOKHEDOLB
+		// public int JCHHIPOPNIN { get; set; } 0x197289C KJGAMDBEKEM 0x1974FF4 KMEDIPKMMBN
+		public int ACABEFKBBEN { get; set; } // 0x68 AJBEODMJGDN OFECNFINKEH NLFNBNNJJJC
+
+		// // RVA: 0x197B9A8 Offset: 0x197B9A8 VA: 0x197B9A8
+		// public int OKMELNIIMMO() { }
+
+		// // RVA: 0x1972A30 Offset: 0x1972A30 VA: 0x1972A30
+		public MNNLOBDPCCH()
+		{
+			LHPDDGIJKNB();
+		}
+
+		// // RVA: 0x197B9B0 Offset: 0x197B9B0 VA: 0x197B9B0
+		public void LHPDDGIJKNB()
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
+
+		// // RVA: 0x1975AC4 Offset: 0x1975AC4 VA: 0x1975AC4
+		// public bool AGBOGBEOFME(DEKKMGAFJCG.MNNLOBDPCCH OIKJFMGEICL) { }
+
+		// // RVA: 0x19752F4 Offset: 0x19752F4 VA: 0x19752F4
+		// public void ODDIHGPONFL(DEKKMGAFJCG.MNNLOBDPCCH GPBJHKLFCEP) { }
+
+		// // RVA: 0x19765E4 Offset: 0x19765E4 VA: 0x19765E4
+		// public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, DEKKMGAFJCG.MNNLOBDPCCH OHMCIEMIKCE, bool EFOEPDLNLJG) { }
+	}
 	// public const int ECFEMKGFDCE = 2;
 	// public const int LBBLNLCFIOH = 10;
 	// private const int CIEBPOLGCBC = 300;
 	// public const int NLKJKCPHOLP = 2;
 
-	// public List<DEKKMGAFJCG.MNNLOBDPCCH> NBIGLBMHEDC { get; private set; } // 0x24 DGMMMDMLCJF PICPPMMJAEH
+	public List<DEKKMGAFJCG.MNNLOBDPCCH> NBIGLBMHEDC { get; private set; } // 0x24 DGMMMDMLCJF PICPPMMJAEH
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x19724F0 Offset: 0x19724F0 VA: 0x19724F0

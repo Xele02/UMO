@@ -25,7 +25,13 @@ public class JBMPOAAMGNB : KLFDBFMNLBL
 	// // RVA: 0x1421668 Offset: 0x1421668 VA: 0x1421668 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		LLNDMKBBNIJ = 1;
+		OPFGFINHFCE = IMHFIDMLLNI;
+		AFPONJEJKCO = 0;
+		CMKKFCGBILD = NBPICMBNPPB;
+		IJHBIMNKOMC = 0;
+		FNLNIKFNHAM = false;
+		PBEKKMOPENN = 0;
 	}
 
 	// // RVA: 0x1421728 Offset: 0x1421728 VA: 0x1421728 Slot: 5

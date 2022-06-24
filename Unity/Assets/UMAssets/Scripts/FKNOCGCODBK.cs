@@ -8,7 +8,11 @@ public class FKNOCGCODBK : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x118F3A8 Offset: 0x118F3A8 VA: 0x118F3A8
-	// public CIFHILOJJFC GCINIJEMHFK(int PPFNGGCBJKC) { }
+	public CIFHILOJJFC GCINIJEMHFK(int PPFNGGCBJKC)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		return null;
+	}
 
 	// // RVA: 0x118F428 Offset: 0x118F428 VA: 0x118F428
 	// public CIFHILOJJFC FJDDNKGHPHN() { }

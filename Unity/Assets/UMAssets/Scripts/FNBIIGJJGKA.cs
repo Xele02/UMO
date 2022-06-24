@@ -9,7 +9,7 @@ public class FNBIIGJJGKA : KLFDBFMNLBL
 	// private const long GKIALDDPKNF = 99999;
 	// private const int AFHHHFICNIN = 12;
 	// public OHDCBNFDHLA EJFAEKPGKNJ; // 0x24
-	// public NAKMCMEPAGH BDLNMOIOMHK; // 0x28
+	public NAKMCMEPAGH BDLNMOIOMHK; // 0x28
 	// public byte[] NONMPJBNBNN; // 0x2C
 	// public byte[] CFHOMPIKIGK; // 0x30
 	// public byte[] NDBEHBMEGGI; // 0x34

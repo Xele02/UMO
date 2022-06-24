@@ -110,7 +110,10 @@ namespace XeApp
 		}
 
         // // RVA: 0xE0C920 Offset: 0xE0C920 VA: 0xE0C920
-        // public static bool IsPresentation() { }
+        public static bool IsPresentation()
+        {
+            return false;
+        }
 
         // // RVA: 0xE0C998 Offset: 0xE0C998 VA: 0xE0C998
         // public static AppEnv.RegionType get_Region() { }

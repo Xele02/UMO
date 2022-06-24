@@ -146,7 +146,11 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
 	}
 
 	// // RVA: 0xD9D4A0 Offset: 0xD9D4A0 VA: 0xD9D4A0
-	// public bool OEMKAFGPOCE(int JPIDIENBGKH, int AHHJLDLAPAN) { }
+	public bool OEMKAFGPOCE(int JPIDIENBGKH, int AHHJLDLAPAN)
+    {
+		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
+		return false;
+    }
 
 	// // RVA: 0xD9D658 Offset: 0xD9D658 VA: 0xD9D658
 	// public bool KPHOIIKOEOG(int PPKEBOEJAKH, int JPIDIENBGKH, int AHHJLDLAPAN) { }

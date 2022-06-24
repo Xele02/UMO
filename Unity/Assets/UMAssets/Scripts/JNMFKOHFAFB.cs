@@ -33,7 +33,7 @@ public class JNMFKOHFAFB : KLFDBFMNLBL
 		// public void DOMFHDPMCCO(int BCCHOBPJJKE, byte[] KBOLNIBLIND, byte[] ODKMKEHJOCK, int MJBODMOLOBC, int JPIPENJGGDD, int DMNIMMGGJJJ) { }
 	}
 	// public const int ECFEMKGFDCE = 2;
-	// private int FBGGEFFJJHB; // 0x24
+	private int FBGGEFFJJHB; // 0x24
 	// private int AOFGNAJLLPD; // 0x28
 	// private int MBCPMFPKNBA; // 0x2C
 	// private int BJHHOBEMBJG; // 0x30
@@ -50,7 +50,7 @@ public class JNMFKOHFAFB : KLFDBFMNLBL
 	// private long GBFJLFBBDLL; // 0x60
 	// private long DOOLJJCBNON; // 0x68
 	// private long GKCNAJDCODL; // 0x70
-	// private int BFKKFMILHMO; // 0x78
+	private int BFKKFMILHMO; // 0x78
 	// private int FCFIANFLKCF; // 0x7C
 	// private int OBJIGFALAGG; // 0x80
 	// private int KGNOMMHMJEB; // 0x84
@@ -81,7 +81,7 @@ public class JNMFKOHFAFB : KLFDBFMNLBL
 	// public int JGDNCEANEBB { get; set; } GBFDJKKKEIM 0x1B97D88 IOOJAGNAKKN 0x1B97D98
 	// public long LDKEOMCNLBE { get; set; } MNNJCAENCHJ 0x1B97DA8 JMPKDHKCMON 0x1B97DC0
 	// public long PCBJHBCNNGD { get; set; } BHLKKHJLGGE 0x1B97DD4 FJFFPLKGNDF 0x1B97DEC
-	// public int AEBENOJEGOJ { get; set; } DEBHLAOOOBN 0x1B97E00 AKKKJMMFOKH 0x1B97E10
+	public int AEBENOJEGOJ { get { return FBGGEFFJJHB ^ BFKKFMILHMO; } set { BFKKFMILHMO = FBGGEFFJJHB ^ value; } } //DEBHLAOOOBN 0x1B97E00 AKKKJMMFOKH 0x1B97E10
 	// public int JHOIMONJKLG { get; set; } DJPLEMJPOIH 0x1B97E20 JINGNHOHDKD 0x1B97E30
 	// public int JEENEHPOCFN { get; set; } ODBOEKIHJDB 0x1B97E40 KOJIBFLIAAK 0x1B97E50
 	// public int NADEAGFJDLL { get; set; } EICGJGODOPK 0x1B97E60 INFBHCPEBIG 0x1B97E70

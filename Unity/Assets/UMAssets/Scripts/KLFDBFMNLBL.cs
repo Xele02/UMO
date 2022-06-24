@@ -24,7 +24,12 @@ public abstract class KLFDBFMNLBL
 	// // RVA: 0x1A0BC70 Offset: 0x1A0BC70 VA: 0x1A0BC70
 	public void LHPDDGIJKNB_Reset()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		FJMOAAPNCJI = -1;
+		KFKDMBPNLJK = true;
+		MCNELPPHFKJ = true;
+		FHMMFHAIPLF = false;
+		LLBJFFFJEPJ = false;
+		KMBPACJNEOF();
 	}
 
 	// // RVA: -1 Offset: -1 Slot: 4
