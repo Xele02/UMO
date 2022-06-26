@@ -219,6 +219,7 @@ public class CIOECGOMILE
 			b = b | !AHEFHIMGIBI.MGJKEJHEBPO[i].LLBJFFFJEPJ;
 		}
 
+		UnityEngine.Debug.Log(str.ToString());
 		ILCCJNDFFOB.HHCJCDFCLOB.NJEIHFPKOMG(!(BPOJOBICBAC.NPNNPNAIONN || b) ? 1 : 0, (int)BPOJOBICBAC.CJMFJOMECKI, str.ToString());
 		if(BPOJOBICBAC.NPNNPNAIONN || b)
 		{
@@ -248,9 +249,9 @@ public class CIOECGOMILE
 			yield break;
 		}
 		// L 379
-		PKBOFLOJNIJ = BPOJOBICBAC.NFEAMMJIMPG.IFNLEKOILPM;
+		PKBOFLOJNIJ = BPOJOBICBAC.NFEAMMJIMPG.IFNLEKOILPM_UpdatedAt;
 		ECFNAOCFKKN = PKBOFLOJNIJ;
-		HAELBFCGHMB = BPOJOBICBAC.NFEAMMJIMPG.MLGKDBJLNBM == 2;
+		HAELBFCGHMB = BPOJOBICBAC.NFEAMMJIMPG.MLGKDBJLNBM_DataStatus == 2;
 		BPOJOBICBAC = null;
 		AHEFHIMGIBI.NEBDDPDPAKJ(JKJEFPNIPFO);
 		FMFKHDPKLOC.ODDIHGPONFL_Copy(AHEFHIMGIBI);
@@ -334,11 +335,12 @@ public class CIOECGOMILE
 						}	
 						yield return N.a.StartCoroutine(EKKCGGHIFEG_GetFriendCounts(MOBEEPPKFLG));
 						// to 8
-						MCLANEJGNHD();
+						MCLANEJGNHD_GetSystemProducts();
 						// goto LAB_01011c88;
 						//9
 						while(true)
 						{
+							UnityEngine.Debug.LogError("4");
 							if(DICMPMEEIJL)
 							{
 								if(!JNDDNFEINEH)
@@ -622,9 +624,10 @@ public class CIOECGOMILE
 	// private IEnumerator GEOMKFMLDPL_DrawLotFreeVC_AfterSave(LOBDIAABMKG EPNFGKBBJCE, GCAHJLOGMCI.NFCAJPIJFAM BJLONGBNPCI, List<MFDJIFIIPJD> BODJIDOHAHF, CDOPFBOHDEF BHFHGFKBOHH, DJBHIFLHJLK JGKOLBLPMPG, bool IAHLNPMFJMH) { }
 
 	// // RVA: 0x1005D78 Offset: 0x1005D78 VA: 0x1005D78
-	private void MCLANEJGNHD()
+	private void MCLANEJGNHD_GetSystemProducts()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO Request payment");
+		DICMPMEEIJL = true;
 	}
 
 	// // RVA: 0x1005F44 Offset: 0x1005F44 VA: 0x1005F44

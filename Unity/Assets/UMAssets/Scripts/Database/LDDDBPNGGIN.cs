@@ -315,7 +315,7 @@ public class LDDDBPNGGIN : DIHHCBACKGG
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0xDA4E98 Offset: 0xDA4E98 VA: 0xDA4E98

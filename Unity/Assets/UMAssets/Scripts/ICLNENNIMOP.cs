@@ -46,7 +46,7 @@ public class ICLNENNIMOP : KLFDBFMNLBL
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0x11EA9DC Offset: 0x11EA9DC VA: 0x11EA9DC Slot: 7

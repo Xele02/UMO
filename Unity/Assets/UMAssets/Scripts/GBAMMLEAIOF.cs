@@ -7,10 +7,24 @@ public class GBAMMLEAIOF
 	public int PGEDKFOIPIP; // 0xC
 
 	// // RVA: 0x1401894 Offset: 0x1401894 VA: 0x1401894
-	// public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, byte[] IDLHJIOMJBK) { }
+	public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, byte[] IDLHJIOMJBK)
+	{
+		EJJEHEHFMGO = IDLHJIOMJBK;
+		this.PGEDKFOIPIP = PGEDKFOIPIP;
+		for(int i = 0; i < IDLHJIOMJBK.Length; i++)
+		{
+			EJJEHEHFMGO[i] = (byte)(EJJEHEHFMGO[i] ^ 0x17);
+			IDLHJIOMJBK = EJJEHEHFMGO;
+		}
+	}
 
 	// // RVA: 0x1401938 Offset: 0x1401938 VA: 0x1401938
-	// public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, EDOHBJAPLPF_JsonData AAEDAEHIONI, KIJECNFNNDB LAFGAPBDKML) { }
+	public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, EDOHBJAPLPF_JsonData AAEDAEHIONI, KIJECNFNNDB_JsonWriter LAFGAPBDKML)
+	{
+		LAFGAPBDKML.LCABGAFGNFL_Reset();
+		IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(AAEDAEHIONI, LAFGAPBDKML);
+		KHEKNNFCAOI_Init(PGEDKFOIPIP, Encoding.UTF8.GetBytes(LAFGAPBDKML.ToString()));
+	}
 
 	// // RVA: 0x1401A54 Offset: 0x1401A54 VA: 0x1401A54
 	public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, byte[] IDLHJIOMJBK, int POMLAOPLMNA, int MOIECBABHNP)
@@ -31,7 +45,6 @@ public class GBAMMLEAIOF
 		{
 			data[i] = (byte)(EJJEHEHFMGO[i] ^ 0x17);
 		}
-		UnityEngine.Debug.LogError("Text result : " + Encoding.UTF8.GetString(data));
 		return Encoding.UTF8.GetString(data);
 	}
 }

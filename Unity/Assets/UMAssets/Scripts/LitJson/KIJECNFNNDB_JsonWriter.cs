@@ -317,7 +317,16 @@ public class KIJECNFNNDB_JsonWriter
 	}
 
 	// // RVA: 0x1A00C5C Offset: 0x1A00C5C VA: 0x1A00C5C
-	public void LCABGAFGNFL() { }
+	public void LCABGAFGNFL_Reset()
+	{
+		HAPJMMMLGPJ_has_reached_end = false;
+		OKHBNEMHONG_ctx_stack.Clear();
+		PHKJOMLDNOB_context = new LHOMBAJMBDN_WriterContext();
+		OKHBNEMHONG_ctx_stack.Push(PHKJOMLDNOB_context);
+
+		if(BPJEEBHPGDJ_inst_string_builder != null)
+			BPJEEBHPGDJ_inst_string_builder.Length = 0;
+	}
 
 	// // RVA: 0x1A00D48 Offset: 0x1A00D48 VA: 0x1A00D48
 	public void FPEKCEGADMG_Write(bool GOOAMNCOICJ_boolean)

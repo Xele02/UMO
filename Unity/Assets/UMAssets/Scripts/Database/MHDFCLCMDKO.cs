@@ -48,7 +48,7 @@ public class MHDFCLCMDKO : DIHHCBACKGG
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0x132AF3C Offset: 0x132AF3C VA: 0x132AF3C

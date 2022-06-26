@@ -1,8 +1,10 @@
+using System.Collections.Generic;
+
 public class FKNOCGCODBK : KLFDBFMNLBL
 {
 	// private const int ECFEMKGFDCE = 3;
-	// private List<CIFHILOJJFC> AHBBMJANGHE; // 0x24
-	// public CIFHILOJJFC DBMOBFCLFOB; // 0x28
+	private List<CIFHILOJJFC> AHBBMJANGHE; // 0x24
+	public CIFHILOJJFC DBMOBFCLFOB = new CIFHILOJJFC(); // 0x28
 
 	// public CIFHILOJJFC JKNGLJNEEPO { get; }
 	// public override bool DMICHEJIAJL { get; }
@@ -10,8 +12,7 @@ public class FKNOCGCODBK : KLFDBFMNLBL
 	// // RVA: 0x118F3A8 Offset: 0x118F3A8 VA: 0x118F3A8
 	public CIFHILOJJFC GCINIJEMHFK(int PPFNGGCBJKC)
 	{
-		UnityEngine.Debug.LogError("TODO");
-		return null;
+		return AHBBMJANGHE[PPFNGGCBJKC];
 	}
 
 	// // RVA: 0x118F428 Offset: 0x118F428 VA: 0x118F428
@@ -20,13 +21,21 @@ public class FKNOCGCODBK : KLFDBFMNLBL
 	// // RVA: 0x118F4A4 Offset: 0x118F4A4 VA: 0x118F4A4
 	public FKNOCGCODBK()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		AHBBMJANGHE = new List<CIFHILOJJFC>(16);
+		KMBPACJNEOF();
 	}
 
 	// // RVA: 0x118F56C Offset: 0x118F56C VA: 0x118F56C Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		AHBBMJANGHE.Clear();
+		for(int i = 0; i < 16; i++)
+		{
+			CIFHILOJJFC data = new CIFHILOJJFC();
+			data.GIDKKHFHALL = i;
+			data.OPFGFINHFCE = CIFHILOJJFC.CBELJGBFLGA;
+			AHBBMJANGHE.Add(data);
+		}
 	}
 
 	// // RVA: 0x118F6B0 Offset: 0x118F6B0 VA: 0x118F6B0 Slot: 5
@@ -36,7 +45,7 @@ public class FKNOCGCODBK : KLFDBFMNLBL
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0x11916EC Offset: 0x11916EC VA: 0x11916EC Slot: 7

@@ -41,7 +41,8 @@ public class JBMPOAAMGNB : KLFDBFMNLBL
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		IJHBIMNKOMC = 1; // hack skip tuto ?
+		return true;
 	}
 
 	// // RVA: 0x1422000 Offset: 0x1422000 VA: 0x1422000 Slot: 7

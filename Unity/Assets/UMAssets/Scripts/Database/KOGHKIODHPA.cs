@@ -128,7 +128,7 @@ public class KOGHKIODHPA : DIHHCBACKGG
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0x113123C Offset: 0x113123C VA: 0x113123C

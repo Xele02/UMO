@@ -129,7 +129,7 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0xD9CCC4 Offset: 0xD9CCC4 VA: 0xD9CCC4

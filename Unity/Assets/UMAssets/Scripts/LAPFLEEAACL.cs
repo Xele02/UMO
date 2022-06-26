@@ -24,18 +24,20 @@ public class LAPFLEEAACL
 	// // RVA: 0xD94650 Offset: 0xD94650 VA: 0xD94650
 	public void OFKONDFPMLJ()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO SakashoPayment$$GetProducts");
+		PLOOEECNHFB = true;
     }
 
 	// // RVA: 0xD94AA0 Offset: 0xD94AA0 VA: 0xD94AA0
 	public void LAOEGNLOJHC()
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO BJGOKLICIDO_Coroutine_Convert");
+		PLOOEECNHFB = true;
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B8E60 Offset: 0x6B8E60 VA: 0x6B8E60
 	// // RVA: 0xD94D64 Offset: 0xD94D64 VA: 0xD94D64
-	// private IEnumerator BJGOKLICIDO_Convert(int LGMBMMMAFKK) { }
+	// private IEnumerator BJGOKLICIDO_Coroutine_Convert(int LGMBMMMAFKK) { }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B8ED8 Offset: 0x6B8ED8 VA: 0x6B8ED8
 	// // RVA: 0xD94E0C Offset: 0xD94E0C VA: 0xD94E0C

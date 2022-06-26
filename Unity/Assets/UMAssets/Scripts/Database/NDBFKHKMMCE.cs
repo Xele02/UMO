@@ -401,7 +401,7 @@ public class NDBFKHKMMCE : DIHHCBACKGG
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0x1AE1BF0 Offset: 0x1AE1BF0 VA: 0x1AE1BF0 Slot: 11

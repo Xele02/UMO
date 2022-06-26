@@ -122,7 +122,7 @@ public class PEBFNABDJDI : DIHHCBACKGG
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0xCC6B8C Offset: 0xCC6B8C VA: 0xCC6B8C

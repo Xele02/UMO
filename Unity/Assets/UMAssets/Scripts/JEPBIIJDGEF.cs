@@ -120,7 +120,8 @@ public class JEPBIIJDGEF
 	// // RVA: 0x1C3B3D4 Offset: 0x1C3B3D4 VA: 0x1C3B3D4
 	public void GHKKPKBBEAN(long JHNMKKNEENE, IMCBBOAFION KLMFJJCNBIP, DJBHIFLHJLK AOCANKOMKFG)
     {
-        UnityEngine.Debug.LogError("TODO");
+        UnityEngine.Debug.LogError("TODO Coroutine_Prepare");
+		KLMFJJCNBIP();
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BCAD4 Offset: 0x6BCAD4 VA: 0x6BCAD4

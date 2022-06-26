@@ -32,7 +32,7 @@ public class CEDOOHCPHMG : KLFDBFMNLBL
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0x12B4594 Offset: 0x12B4594 VA: 0x12B4594 Slot: 7

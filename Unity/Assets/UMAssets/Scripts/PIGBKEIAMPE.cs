@@ -114,6 +114,7 @@ public class PIGBKEIAMPE
 	public void HHDGOABFEPC(IMCBBOAFION BHFHGFKBOHH, CACGCMBKHDI_Request.HDHIKGLMOGF AOCANKOMKFG, bool FBBNPFFEJBN = false)
 	{
 		UnityEngine.Debug.LogError("TODO");
+		PLOOEECNHFB = true;
 	}
 
 	// // RVA: 0x16D4E68 Offset: 0x16D4E68 VA: 0x16D4E68

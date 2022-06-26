@@ -130,7 +130,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0x10D0BB4 Offset: 0x10D0BB4 VA: 0x10D0BB4

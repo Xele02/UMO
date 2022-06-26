@@ -6,9 +6,13 @@ public class SakashoHadoopLog : SakashoAPIBase
 	public static SakashoAPICallContext SendLogToHadoop(SakashoHadoopLogData[] logData, OnSuccess onSuccess, OnError onError)
     {
         UnityEngine.Debug.LogError("TODO");
-        return null;
+        int callID = SakashoAPIBase.Call(SakashoHadoopLogSendLogToHadoop, "", onSuccess, onError);
+        return new SakashoAPICallContext(callID);
     }
 
 	// RVA: 0x2BC6B48 Offset: 0x2BC6B48 VA: 0x2BC6B48
-	// private static extern int SakashoHadoopLogSendLogToHadoop(int callbackId, string json) { }
+	private static /*extern */int SakashoHadoopLogSendLogToHadoop(int callbackId, string json)
+    {
+        return ExternLib.LibSakasho.SakashoHadoopLogSendLogToHadoop(callbackId, json);
+    }
 }

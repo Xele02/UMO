@@ -429,6 +429,7 @@ public class IOGKADECKOP
         UnityEngine.Debug.Log("Enter ABPGOJDKKHO_PopupShowSNS");
 		UnityEngine.Debug.LogError("TODO");
         UnityEngine.Debug.Log("Exit ABPGOJDKKHO_PopupShowSNS");
+		KBCBGIGOLHP();
 		yield break;
 	}
 
@@ -465,6 +466,7 @@ public class IOGKADECKOP
         UnityEngine.Debug.Log("Enter IMJGOIOLGIO_Contract");
 		UnityEngine.Debug.LogError("TODO");
         UnityEngine.Debug.Log("Exit IMJGOIOLGIO_Contract");
+		FHANAFNKIFC();
 		yield break;
 	}
 
@@ -855,8 +857,11 @@ public class IOGKADECKOP
 					CNAIDEAFAAM = false;
 					NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG(() => {
 						//0xA09384
+						BEKAMBBOLBO = true;
 					}, () => {
 						//0xA09390
+						BEKAMBBOLBO = true;
+						CNAIDEAFAAM = true;
 					}, false, true);
 					//goto LAB_00a0d4d4;
 					
@@ -1197,6 +1202,7 @@ public class IOGKADECKOP
 	// // RVA: 0xA07D9C Offset: 0xA07D9C VA: 0xA07D9C
 	public void FHBJNLFHGPB(int LNAHJANMJNM) // Update loading percent
 	{
+		UnityEngine.Debug.Log("Init % : "+LNAHJANMJNM);
 		GameManager.Instance.ProgressBar.SetPer(LNAHJANMJNM);
 	}
 

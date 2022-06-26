@@ -47,7 +47,7 @@ public class MKNIBACMCDO : KLFDBFMNLBL
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0x195B680 Offset: 0x195B680 VA: 0x195B680

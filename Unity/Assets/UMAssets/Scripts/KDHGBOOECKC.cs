@@ -173,6 +173,7 @@ public class KDHGBOOECKC
 	// // RVA: 0x1026FE4 Offset: 0x1026FE4 VA: 0x1026FE4
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
 	{
+		HHCJCDFCLOB = this;
 		NKMMJACCHEH = new KDHGBOOECKC.NKMCJCAJIGD();
 		NKMMJACCHEH.LHPDDGIJKNB();
 		KPNGLBDMEBF = new KDHGBOOECKC.JLLOKCFPOFH();
@@ -614,6 +615,7 @@ public class KDHGBOOECKC
         UnityEngine.Debug.Log("Enter CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements");
         UnityEngine.Debug.LogError("TODO");
         UnityEngine.Debug.Log("Exit CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements");
+		BHFHGFKBOHH();
         yield break;
     }
 }

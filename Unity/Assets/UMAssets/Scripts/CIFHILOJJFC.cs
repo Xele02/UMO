@@ -16,6 +16,11 @@ public class CIFHILOJJFC
 	public CIFHILOJJFC()
 	{ 
 		UnityEngine.Debug.LogError("TODO");
+		FDBOPFEOENF = new List<AMCGONHBGGF>(3);
+		for(int i = 0; i < 3; i++)
+		{
+			FDBOPFEOENF.Add(new AMCGONHBGGF());
+		}
 	}
 
 	// // RVA: 0xFF54D4 Offset: 0xFF54D4 VA: 0xFF54D4

@@ -406,9 +406,9 @@ public class OKGLGHCBCJP_Database
 		// {74,() => { return new OEIJEFBBJBD(); } }, //0x149F438
 		// {75,() => { return new DKCJADHKGAN(); } }, //0x149F4A4
 		// {76,() => { return new FBIOJHECAHB(); } }, //0x149F510
-		// {77,() => { return new JJOPEDJCCJK(); } }, //0x149F57C
+		{77,() => { return new JJOPEDJCCJK(); } }, //0x149F57C
 		// {78,() => { return new BIHCALIAJII(); } }, //0x149F5E8
-		// {79,() => { return new PMDCIJMMNGK(); } }, //0x149F654
+		{79,() => { return new PMDCIJMMNGK(); } }, //0x149F654
 		{80,() => { return new LDDDBPNGGIN(); } }, //0x149F6C0
 		// {81,() => { return new KEEKEFEPKFN(); } }, //0x149F72C
 		// {82,() => { return new KCDJCKCKKFM(); } }, //0x149F798
@@ -481,7 +481,7 @@ public class OKGLGHCBCJP_Database
 	// public FBIOJHECAHB NBEMLGADAGK { get; private set; } // 0x8C DCKAOHBMJLM INDINPLHFPO CJBHGJLJBNJ
 	   public JJOPEDJCCJK FMPEMFPLPDA { get; private set; } // 0x90 NFHAGPKJMCM JBOGJKMKPHB LJNHCFIIOBB
 	// public BIHCALIAJII OINLLHOMEAK { get; private set; } // 0x94 NFNMMHLNOME ACMDICBGLLH AECOJNDBPPA
-	// public PMDCIJMMNGK GKMAHADAAFI { get; private set; } // 0x98 CDPNLBODAFG MIOKEFPFJPL JCGBPLBDCED
+	   public PMDCIJMMNGK GKMAHADAAFI { get; private set; } // 0x98 CDPNLBODAFG MIOKEFPFJPL JCGBPLBDCED
 	   public LDDDBPNGGIN HNMMJINNHII { get; private set; } // 0x9C OEGOKKFEMLN // NNKOOANMMJN FDBLNEBHBKD
 	// public KEEKEFEPKFN NKDGLGCAPEI { get; private set; } // 0xA0 OEBKCKBOHDC GKNAKMMFPJG FPNMNKOHIDL
 	// public KCDJCKCKKFM LOJAMHAADBF { get; private set; } // 0xA4 PHJBEOHOPNK BEONJGJAHHA GKIMOCCMPNE
@@ -719,7 +719,7 @@ public class OKGLGHCBCJP_Database
 		// NBEMLGADAGK = null;
 		FMPEMFPLPDA = null;
 		// OINLLHOMEAK = null;
-		// GKMAHADAAFI = null;
+		GKMAHADAAFI = null;
 		HNMMJINNHII = null;
 		// NKDGLGCAPEI = null;
 		// LOJAMHAADBF = null;
@@ -801,7 +801,7 @@ public class OKGLGHCBCJP_Database
 					// case 76: NBEMLGADAGK = item; break;
 					case 77: FMPEMFPLPDA = (JJOPEDJCCJK)item; break;
 					// case 78: OINLLHOMEAK = item; break;
-					// case 79: GKMAHADAAFI = item; break;
+					case 79: GKMAHADAAFI = (PMDCIJMMNGK)item; break;
 					case 80: HNMMJINNHII = (LDDDBPNGGIN)item; break;
 					// case 81: NKDGLGCAPEI = item; break;
 					// case 82: LOJAMHAADBF = item; break;

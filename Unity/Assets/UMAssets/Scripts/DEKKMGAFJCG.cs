@@ -76,7 +76,7 @@ public class DEKKMGAFJCG : KLFDBFMNLBL
 	// private const int CIEBPOLGCBC = 300;
 	// public const int NLKJKCPHOLP = 2;
 
-	public List<DEKKMGAFJCG.MNNLOBDPCCH> NBIGLBMHEDC { get; private set; } // 0x24 DGMMMDMLCJF PICPPMMJAEH
+	public List<DEKKMGAFJCG.MNNLOBDPCCH> NBIGLBMHEDC { get; private set; } // 0x24 ELHJMCKHBBO DGMMMDMLCJF PICPPMMJAEH
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x19724F0 Offset: 0x19724F0 VA: 0x19724F0
@@ -88,7 +88,8 @@ public class DEKKMGAFJCG : KLFDBFMNLBL
 	// // RVA: 0x19728A4 Offset: 0x19728A4 VA: 0x19728A4
 	public DEKKMGAFJCG()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		NBIGLBMHEDC = new List<DEKKMGAFJCG.MNNLOBDPCCH>();
+		KMBPACJNEOF();
 	}
 
 	// // RVA: 0x1972948 Offset: 0x1972948 VA: 0x1972948 Slot: 4
@@ -104,7 +105,7 @@ public class DEKKMGAFJCG : KLFDBFMNLBL
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0x1975124 Offset: 0x1975124 VA: 0x1975124 Slot: 7

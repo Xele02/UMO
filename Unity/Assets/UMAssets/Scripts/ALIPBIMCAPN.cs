@@ -27,7 +27,7 @@ public class ALIPBIMCAPN : KLFDBFMNLBL
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0xCDB344 Offset: 0xCDB344 VA: 0xCDB344 Slot: 7

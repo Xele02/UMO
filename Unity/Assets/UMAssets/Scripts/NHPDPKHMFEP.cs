@@ -60,7 +60,8 @@ public class NHPDPKHMFEP
 	// // RVA: 0x18979DC Offset: 0x18979DC VA: 0x18979DC
 	public void OFKONDFPMLJ(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO SakashoPlatformPayment$$GetProducts");
+		BHFHGFKBOHH();
 	}
 
 	// // RVA: 0x1897D38 Offset: 0x1897D38 VA: 0x1897D38

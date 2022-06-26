@@ -11,7 +11,14 @@ namespace XeSys
 		// public static EDOHBJAPLPF GetArrayObject(EDOHBJAPLPF jdata, string key, int index) { }
 
 		// // RVA: 0x2389DA8 Offset: 0x2389DA8 VA: 0x2389DA8
-		// public static EDOHBJAPLPF GetObject(EDOHBJAPLPF jdata, string key) { }
+		public static EDOHBJAPLPF_JsonData GetObject(EDOHBJAPLPF_JsonData jdata, string key)
+		{
+			if(!jdata.BBAJPINMOEP_Contains(key))
+				return null;
+			if(jdata[key].LLHIGGPIILM_IsObject)
+				return jdata[key];
+			return null;
+		}
 
 		// // RVA: 0x2389E30 Offset: 0x2389E30 VA: 0x2389E30
 		// public static string GetString(EDOHBJAPLPF jdata, string key, string notExistValue) { }
@@ -103,7 +110,29 @@ namespace XeSys
 		// public static long GetLong(EDOHBJAPLPF jdata, string key) { }
 
 		// // RVA: 0x238A8F0 Offset: 0x238A8F0 VA: 0x238A8F0
-		// public static long GetLong(EDOHBJAPLPF jdata) { }
+		public static long GetLong(EDOHBJAPLPF_JsonData jdata)
+		{
+			if(jdata != null)
+			{
+				if(jdata.DCPEFFOMOOK_IsLong)
+				{
+					return (long)jdata;
+				}
+				if(jdata.MDDJBLEDMBJ_IsInt)
+				{
+					return (long)((int)jdata);
+				}
+				if(jdata.EPNAPDBIJJE_IsString)
+				{
+					long val;
+					if(Int64.TryParse((string)jdata, out val))
+					{
+						return val;
+					}
+				}
+			}
+			return 0;
+		}
 
 		// // RVA: 0x238AA9C Offset: 0x238AA9C VA: 0x238AA9C
 		// public static bool GetFlag(EDOHBJAPLPF jdata, string key, bool notExistValue) { }

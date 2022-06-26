@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 
 public delegate void JFDNPFFOACP();
 public delegate void ELBOJBBIBFM(LGDNAJACFHI PPFNGGCBJKC_Id);
@@ -108,12 +109,19 @@ public class AMOCLPHDGBP
 	// // RVA: 0xCE9EB0 Offset: 0xCE9EB0 VA: 0xCE9EB0
 	public void OLNDKPDNPCM(IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP, DJBHIFLHJLK BFKEGJMPELF, bool EBKGBLFCENA = false, bool BOGDHEBBHFA = false)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		N.a.StartCoroutine(GEMPIKIBEKJ_Coroutine_AutoRecover(KLMFJJCNBIP,NEFKBBNKNPP,BFKEGJMPELF,EBKGBLFCENA,BOGDHEBBHFA));
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B9280 Offset: 0x6B9280 VA: 0x6B9280
 	// // RVA: 0xCE9F24 Offset: 0xCE9F24 VA: 0xCE9F24
-	// private IEnumerator GEMPIKIBEKJ_AutoRecover(IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP, DJBHIFLHJLK BFKEGJMPELF, bool EBKGBLFCENA, bool BOGDHEBBHFA) { }
+	private IEnumerator GEMPIKIBEKJ_Coroutine_AutoRecover(IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP, DJBHIFLHJLK BFKEGJMPELF, bool EBKGBLFCENA, bool BOGDHEBBHFA)
+	{
+		UnityEngine.Debug.Log("Enter GEMPIKIBEKJ_Coroutine_AutoRecover");
+		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.Log("Exit GEMPIKIBEKJ_Coroutine_AutoRecover");
+		KLMFJJCNBIP();
+		yield break;
+	}
 
 	// // RVA: 0xCEA030 Offset: 0xCEA030 VA: 0xCEA030
 	// private void PCLDNINHHBE(List<int> NNDGIAEFMOG, long JHNMKKNEENE) { }

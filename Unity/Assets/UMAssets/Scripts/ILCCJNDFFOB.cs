@@ -1,4 +1,5 @@
 using System.Text;
+using UnityEngine;
 
 public class ILCCJNDFFOB
 {
@@ -38,13 +39,19 @@ public class ILCCJNDFFOB
 	// private string COPGJHJGHJG(long KPBJHHHMOJE) { }
 
 	// // RVA: 0x8F44CC Offset: 0x8F44CC VA: 0x8F44CC
-	// private void FLBFCCIEPNC(EDOHBJAPLPF_JsonData IDLHJIOMJBK, long JCNNBEEHFLE) { }
+	private void FLBFCCIEPNC(EDOHBJAPLPF_JsonData IDLHJIOMJBK, long JCNNBEEHFLE)
+	{
+		UnityEngine.Debug.LogWarning("TODO ILCCJNDFFOB.FLBFCCIEPNC");
+	}
 
 	// // RVA: 0x8F4AB8 Offset: 0x8F4AB8 VA: 0x8F4AB8
 	// private void BAHPICOFGFH(EDOHBJAPLPF_JsonData IDLHJIOMJBK, JBECFDNKPFD MFCGAKOAGFE) { }
 
 	// // RVA: 0x8F509C Offset: 0x8F509C VA: 0x8F509C
-	// private static void DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO KAPMOPMDHJE, EDOHBJAPLPF_JsonData IDLHJIOMJBK, bool FOIGCFNFPOB = False) { }
+	private static void DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO KAPMOPMDHJE, EDOHBJAPLPF_JsonData IDLHJIOMJBK, bool FOIGCFNFPOB = false)
+	{
+		JDDGPJDKHNE.HHCJCDFCLOB.CLHLFPDNFNM((int)KAPMOPMDHJE,IDLHJIOMJBK,FOIGCFNFPOB);
+	}
 
 	// // RVA: 0x8F50E4 Offset: 0x8F50E4 VA: 0x8F50E4
 	// public void JONAMONAHOB(int ADPPAIPFHML, int FKIBPHGINAE, LGDNAJACFHI MEANCEOIMGE) { }
@@ -205,7 +212,15 @@ public class ILCCJNDFFOB
 	// // RVA: 0x90C240 Offset: 0x90C240 VA: 0x90C240
 	public void NJEIHFPKOMG(int HBODCMLFDOB, int EJJNDLJIIIF, string EFBLONMFDCB)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB());
+		json["result"] = HBODCMLFDOB;
+		json["error_code"] = EJJNDLJIIIF;
+		json["parse_result"] = EFBLONMFDCB;
+		json["system_memory_size"] = SystemInfo.systemMemorySize;
+		json["graphic_device_name"] = SystemInfo.graphicsDeviceName;
+		json["processor_type"] = SystemInfo.processorType;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.NJEIHFPKOMG/*36*/, json, false);
 	}
 
 	// // RVA: 0x90C664 Offset: 0x90C664 VA: 0x90C664

@@ -72,7 +72,7 @@ public class HHJHIFJIKAC : DIHHCBACKGG
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0x1831840 Offset: 0x1831840 VA: 0x1831840 Slot: 11

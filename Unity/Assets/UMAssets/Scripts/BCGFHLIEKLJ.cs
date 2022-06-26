@@ -49,7 +49,7 @@ public class BCGFHLIEKLJ : KLFDBFMNLBL
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		UnityEngine.Debug.LogError("TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0xF32498 Offset: 0xF32498 VA: 0xF32498 Slot: 7
