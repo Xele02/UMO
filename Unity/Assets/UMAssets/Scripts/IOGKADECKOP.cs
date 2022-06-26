@@ -1091,7 +1091,7 @@ public class IOGKADECKOP
 	private IEnumerator ACHBBAIODMC()
 	{
         UnityEngine.Debug.Log("Enter ACHBBAIODMC");
-		UnityEngine.Debug.LogError("TODO");
+		UnityEngine.Debug.LogError("TODO UtarateRankingUpdate");
         UnityEngine.Debug.Log("Exit ACHBBAIODMC");
 		yield break;
 	}
