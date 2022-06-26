@@ -54,42 +54,47 @@ output_dir = options.output
 if output_dir is None:
 	output_dir = default_config["download_path"]
 
-with open("../Data/RequestGetFiles.json", "r") as f:
-	files_info = json.load(f)
+def DownloadFiles(file_path):
+	with open(file_path, "r") as f:
+		files_info = json.load(f)
+	
+	file_list = files_info["files"]
+	
+	def filter_func(x):
+		for pattern in patterns:
+			if re.search(pattern, x["file"]) != None:
+				return True
+		return False
+	
+	file_list = list(filter(filter_func, file_list))
+	
+	url = files_info["base_url"]
+	print("Download on "+url)
+	
+	cnt = 0
+	for file in file_list:
+		print(str(cnt)+"/"+str(len(file_list))+" "+file["file"])
+		fullpath = output_dir + file["file"]
+		if os.path.isfile(fullpath+".md5"):
+			with open(fullpath+".md5", "r") as md5file:
+				md5 = md5file.read()
+			if md5 != file["hash_value"]:
+				print("Wrong hash, redld")
+			else:
+				print("Skip")
+				continue
+		try:
+			request = requests.get(url+file["file"], allow_redirects=True)
+			if request.status_code != 200:
+				logging.error("Http error : "+str(request.status_code))
+			open('tmp','wb').write(request.content)
+			os.makedirs(os.path.dirname(fullpath), exist_ok=True)
+			os.rename("tmp", fullpath)
+			open(fullpath+".md5","w").write(file["hash_value"])
+		except ValueError:
+			logging.error(VaueError)
+		cnt = cnt + 1
 
-file_list = files_info["files"]
 
-def filter_func(x):
-	for pattern in patterns:
-		if re.search(pattern, x["file"]) != None:
-			return True
-	return False
-
-file_list = list(filter(filter_func, file_list))
-
-url = files_info["base_url"]
-print("Download on "+url)
-
-cnt = 0
-for file in file_list:
-	print(str(cnt)+"/"+str(len(file_list))+" "+file["file"])
-	fullpath = output_dir + file["file"]
-	if os.path.isfile(fullpath+".md5"):
-		with open(fullpath+".md5", "r") as md5file:
-			md5 = md5file.read()
-		if md5 != file["hash_value"]:
-			print("Wrong hash, redld")
-		else:
-			print("Skip")
-			continue
-	try:
-		request = requests.get(url+file["file"], allow_redirects=True)
-		if request.status_code != 200:
-			logging.error("Http error : "+str(request.status_code))
-		open('tmp','wb').write(request.content)
-		os.makedirs(os.path.dirname(fullpath), exist_ok=True)
-		os.rename("tmp", fullpath)
-		open(fullpath+".md5","w").write(file["hash_value"])
-	except ValueError:
-		logging.error(VaueError)
-	cnt = cnt + 1
+DownloadFiles("../Data/RequestGetFiles.json")
+DownloadFiles("../Data/RequestGetDB.json")
