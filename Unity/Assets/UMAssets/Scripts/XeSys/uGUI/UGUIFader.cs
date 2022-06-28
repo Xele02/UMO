@@ -25,8 +25,7 @@ namespace XeSys.uGUI
 		// // RVA: 0x274AEB4 Offset: 0x274AEB4 VA: 0x274AEB4
 		public Image GetImage()
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return null;
+			return mImage;
 		}
 
 		// // RVA: 0x274AF64 Offset: 0x274AF64 VA: 0x274AF64
@@ -38,31 +37,74 @@ namespace XeSys.uGUI
 		// // RVA: 0x274AFEC Offset: 0x274AFEC VA: 0x274AFEC
 		private void Update()
 		{
-			UnityEngine.Debug.LogWarning("TODO UGUIFader Update");
+			mUpdate();
 		}
 
 		// // RVA: 0x274B018 Offset: 0x274B018 VA: 0x274B018
 		private void UpdateIdle()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			return;
 		}
 
 		// // RVA: 0x274B01C Offset: 0x274B01C VA: 0x274B01C
-		// private void UpdateFade() { }
+		private void UpdateFade()
+		{
+			float time = mCurrentTime + TimeWrapper.deltaTime;
+			float percent = time / mTargetTime;
+			mCurrentTime = time;
+			if(percent >= 0.995f)
+			{
+				if(endColor.a <= 0.0f)
+				{
+					mImage.enabled = false;
+				}
+				if(onFadeEndAction != null)
+					onFadeEndAction();
+				percent = 1.0f;
+				mUpdate = this.UpdateIdle;
+			}
+			currentColor = Color.Lerp(startColor, endColor, percent);
+			mImage.color = currentColor;
+		}
 
 		// // RVA: 0x274B1D0 Offset: 0x274B1D0 VA: 0x274B1D0
 		public void Fade(float time, float targetAlpha)
 		{
-			UnityEngine.Debug.LogWarning("TODO Fade");
+			Fade(time, currentColor, new Color(currentColor.r, currentColor.g, currentColor.b, targetAlpha));
 		}
 
 		// // RVA: 0x274B210 Offset: 0x274B210 VA: 0x274B210
 		public void Fade(float time, Color end)
 		{
-			UnityEngine.Debug.LogWarning("TODO Fade");
+			Fade(time, currentColor, end);
 		}
 
 		// // RVA: 0x274B254 Offset: 0x274B254 VA: 0x274B254
-		// public void Fade(float time, Color start, Color end) { }
+		public void Fade(float time, Color start, Color end)
+		{
+			mImage = GetComponent<Image>();
+			if(time <= 0)
+			{
+				currentColor = end;
+				startColor = end;
+				endColor = end;
+				mCurrentTime = time;
+				mTargetTime = time;
+				mImage.color = end;
+				mImage.enabled = end.a > 0;
+				mUpdate = this.UpdateIdle;
+			}
+			else
+			{
+				currentColor = start;
+				startColor = start;
+				endColor = end;
+				mTargetTime = time;
+				mCurrentTime = 0.0f;
+				mImage.color = start;
+				mImage.enabled = true;
+				mUpdate = this.UpdateFade;
+			}
+		}
 	}
 }

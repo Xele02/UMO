@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using XeApp.Game;
 using XeSys.uGUI;
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -16,21 +17,52 @@ namespace XeApp.Game.Menu
 			private class Preset
 			{
 				[SerializeField]
-				private Sprite m_sourceImage;
+				private Sprite m_sourceImage; // 0x8
 				[SerializeField]
-				private Color m_color;
+				private Color m_color; // 0xC
+
+				// RVA: 0x143C97C Offset: 0x143C97C VA: 0x143C97C
+				public void Apply(Image image)
+				{
+					image.sprite = m_sourceImage;
+					image.color = m_color;
+				}
 			}
 
 			[SerializeField]
-			private Image m_targetImage;
+			private Image m_targetImage; // 0x8
 			[SerializeField]
-			private Preset m_presetHoshi;
+			private BgBehaviour.AttributeSetting.Preset m_presetHoshi; // 0xC
 			[SerializeField]
-			private Preset m_presetAi;
+			private BgBehaviour.AttributeSetting.Preset m_presetAi; // 0x10
 			[SerializeField]
-			private Preset m_presetInochi;
+			private BgBehaviour.AttributeSetting.Preset m_presetInochi; // 0x14
 			[SerializeField]
-			private Preset m_presetZen;
+			private BgBehaviour.AttributeSetting.Preset m_presetZen; // 0x18
+			private List<BgBehaviour.AttributeSetting.Preset> m_presets; // 0x1C
+
+			// RVA: 0x1436A34 Offset: 0x1436A34 VA: 0x1436A34
+			public void Setup()
+			{
+				m_presets = new List<Preset>(5);
+				m_presets.Add(null);
+				m_presets.Add(m_presetHoshi);
+				m_presets.Add(m_presetAi);
+				m_presets.Add(m_presetInochi);
+				m_presets.Add(m_presetZen);
+			}
+
+			// RVA: 0x143B9F0 Offset: 0x143B9F0 VA: 0x143B9F0
+			public void Apply(GameAttribute.Type attr)
+			{
+				if(m_presets[(int)attr] != null)
+				{
+					m_targetImage.enabled = true;
+					m_presets[(int)attr].Apply(m_targetImage);
+				}
+				else
+					m_targetImage.enabled = false;
+			}
 		}
 		
 		public enum ColorType
@@ -126,19 +158,38 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x14365F0 Offset: 0x14365F0 VA: 0x14365F0
 		private void Awake()
 		{
-			UnityEngine.Debug.LogWarning("TODO BgBehaviour.Awake");
+			m_decrationInstance.Add(UnityEngine.Object.Instantiate<GameObject>(m_decorationPrefab));
+			m_decrationInstance.Add(UnityEngine.Object.Instantiate<GameObject>(m_decrationInstance[0]));
+			for(int i = 0; i < m_decrationInstance.Count; i++)
+			{
+				m_rotationTween.AddRange(m_decrationInstance[i].GetComponentsInChildren<RotationTween>(true));
+				m_colorChangeImages.AddRange(m_decrationInstance[i].GetComponentsInChildren<Image>(true));
+				m_decrationInstance[i].transform.SetParent(m_decorationRoot.transform, false);
+			}
+			for(int i = 0; i < m_growImages.Length; i++)
+			{
+				m_colorChangeImages.Add(m_growImages[i]);
+			}
+			m_attrSetting.Setup();
+			m_bgMipmapBiasMaterialInstance = new Material(m_bgMipmapBiasMaterialSource);
+			m_bgTransColoredBlurMaterialInstance = new Material(m_bgTransColoredBlurMaterialSource);
 		}
 
 		// // RVA: 0x1436BB4 Offset: 0x1436BB4 VA: 0x1436BB4
 		private void Start()
 		{
-			UnityEngine.Debug.LogWarning("TODO BgBehaviour.Awake");
+			HideOverlay();
+			ChangeAttribute(GameAttribute.Type.None);
 		}
 
 		// // RVA: 0x1436C34 Offset: 0x1436C34 VA: 0x1436C34
 		private void Update()
 		{
-			UnityEngine.Debug.LogWarning("TODO BgBehaviour.Update");
+			for(int i = 0; i < m_rotationTween.Count; i++)
+			{
+				m_rotationTween[i].UpdateCurve();
+			}
+			m_transLationTween.UpdateCurve();
 		}
 
 		// // RVA: 0x1436D4C Offset: 0x1436D4C VA: 0x1436D4C
@@ -226,13 +277,19 @@ namespace XeApp.Game.Menu
 		// public void ResetBgImageRectSize(bool isPlate) { }
 
 		// // RVA: 0x1436C04 Offset: 0x1436C04 VA: 0x1436C04
-		// public void ChangeAttribute(GameAttribute.Type attr) { }
+		public void ChangeAttribute(GameAttribute.Type attr)
+		{
+			m_attrSetting.Apply(attr);
+		}
 
 		// // RVA: 0x14379A4 Offset: 0x14379A4 VA: 0x14379A4
 		// public void ShowOverlay(float alpha) { }
 
 		// // RVA: 0x1436BD4 Offset: 0x1436BD4 VA: 0x1436BD4
-		// public void HideOverlay() { }
+		public void HideOverlay()
+		{
+			m_overlay.enabled = false;
+		}
 
 		// // RVA: 0x1438A94 Offset: 0x1438A94 VA: 0x1438A94
 		// public void ChangeTilingType(BgBehaviour.TilingType type, bool mask = False) { }

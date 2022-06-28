@@ -804,9 +804,9 @@ namespace XeApp.Game
 			{
 				if(PopupWindowManager.IsReady())
 				{
-					return true; // Hack
 					if(nowloading.IsInitialized)
 					{
+						Debug.Log("Wait DownloadBar "+DownloadBar.gameObject.activeSelf+" "+transmissionIcon.activeSelf);
 						if(!DownloadBar.gameObject.activeSelf)
 						{
 							return !transmissionIcon.activeSelf;
@@ -866,13 +866,35 @@ namespace XeApp.Game
 		// // RVA: 0x9A040C Offset: 0x9A040C VA: 0x9A040C
 		public void ChangePopupPriority(bool popupTop)
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.ChangePopupPriority()");
+			int maxLayer = Mathf.Max(popupCanvas.sortingOrder, Mathf.Max(fadeCanvas.sortingOrder, systemLayoutCanvas.sortingOrder));
+			int minLayer = Mathf.Min(popupCanvas.sortingOrder, Mathf.Min(fadeCanvas.sortingOrder, systemLayoutCanvas.sortingOrder));
+
+			if(popupCanvas.sortingOrder < fadeCanvas.sortingOrder)
+			{
+				if(!popupTop)
+					return;
+				popupCanvas.sortingOrder = maxLayer + 0x31;
+				systemLayoutCanvas.sortingOrder =  maxLayer + 0x32;
+				fadeCanvas.sortingOrder = minLayer + 0x32;
+			}
+			else
+			{
+				if(popupTop)
+					return;
+				popupCanvas.sortingOrder = minLayer + 0x32;
+				systemLayoutCanvas.sortingOrder = minLayer + 0x33;
+				fadeCanvas.sortingOrder = maxLayer + 0x32;
+			}
 		}
 
 		// // RVA: 0x9A0314 Offset: 0x9A0314 VA: 0x9A0314
 		private void ChangeLayerWithChild(GameObject go, int layer)
 		{
-			UnityEngine.Debug.LogWarning("TODO ChangeLayerWithChild");
+			go.layer = layer;
+			for(int i = 0; i < go.transform.childCount; i++)
+			{
+				ChangeLayerWithChild(go.transform.GetChild(i).gameObject, layer);
+			}
 		}
 
 		// // RVA: 0x9A0294 Offset: 0x9A0294 VA: 0x9A0294

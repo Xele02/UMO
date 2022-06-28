@@ -7,6 +7,13 @@ namespace XeSys
 {
 	public class SystemManager : MonoBehaviour
 	{
+		public enum OverPermissionAspectResult
+		{
+			None = 0,
+			HdivV = 1,
+			VdivH = 2,
+		}
+
 		[SerializeField]
 		private DebugTextRenderer debugTextRendererPrefab; // 0xC
 		[SerializeField]
@@ -157,6 +164,15 @@ namespace XeSys
 		// public static bool IsExistGameObject(string name) { }
 
 		// // RVA: 0x23A6434 Offset: 0x23A6434 VA: 0x23A6434
-		// public SystemManager.OverPermissionAspectResult CheckOverPermissionAspectRatio() { }
+		public SystemManager.OverPermissionAspectResult CheckOverPermissionAspectRatio()
+		{
+			if(Screen.width * 1.0f / Screen.height < 1.782778f)
+			{
+				if(Screen.height * 1.0f / Screen.width < 0.755f)
+					return OverPermissionAspectResult.None;
+				return OverPermissionAspectResult.VdivH;
+			}
+			return OverPermissionAspectResult.HdivV;
+		}
 	}
 }

@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using UnityEngine;
 using System;
+using System.Collections;
 
 namespace XeSys
 {
@@ -48,44 +49,334 @@ namespace XeSys
 		// // RVA: 0x1EF2A28 Offset: 0x1EF2A28 VA: 0x1EF2A28
 		private void Awake()
 		{
-			UnityEngine.Debug.LogWarning("TODO IdleProcessManager.Awake()");
+			IsFixedTime = false;
+			IsAutoExtention = true;
+			ProcessingRate = 0.1f;
+			BurstProcessingRate = 1.0f;
+			processes = new IdleProcessManager.IdleProcess[initialProcessesCount];
+			active = -1;
+			idle = 0;
+			registered = -1;
+			lazyCount = 0;
+			IsBurstEnable = true;
+			InitializeRange(processes, -1, -1, 0, processes.Length);
+			StartCoroutine(IdleCoroutine());
 		}
 
-		// // RVA: 0x1EF2CD4 Offset: 0x1EF2CD4 VA: 0x1EF2CD4
+		// // RVA: g Offset: 0x1EF2CD4 VA: 0x1EF2CD4
 		private void Update()
 		{
-			UnityEngine.Debug.LogWarning("TODO IdleProcessManager.Update()");
+			sw.Reset();
+			sw.Start();
 		}
 
 		// // RVA: 0x1EF2D24 Offset: 0x1EF2D24 VA: 0x1EF2D24
-		// public int Register(Func<IdleProcessManager.ProcessResult> process, int priority, float weight = 0) { }
+		public int Register(Func<IdleProcessManager.ProcessResult> process, int priority, float weight = 0)
+		{
+			int target = idle;
+			if(idle == -1)
+			{
+				if(!IsAutoExtention)
+					return -1;
+				Extend(processes.Length * 2);
+				target = idle;
+			}
+			Unlink(ref idle, target);
+			//UnityEngine.Debug.Log("Register process "+target);
+			processes[target].State = 1;
+			processes[target].Process = process;
+			processes[target].Priority = priority;
+			if(weight == 0)
+			{
+				
+			}
+			else
+			{
+				UnityEngine.Debug.LogError("Check weight "+weight);
+			}
+			processes[target].Weight = (uint)(weight * 10000000);
+			processes[target].Age = 0;
+			Link(ref registered, -1, registered, target);
+			return target;
+		}
 
 		// // RVA: 0x1EF34C8 Offset: 0x1EF34C8 VA: 0x1EF34C8
-		// public int Register(IEnumerator coroutine, int priority, float weight = 0) { }
+		public int Register(IEnumerator coroutine, int priority, float weight = 0)
+		{
+			return Register(() => {
+				//0x1EF3F08
+				if(coroutine.MoveNext())
+				{
+					if(coroutine.Current != null)
+					{
+						if(coroutine.Current is ProcessResult)
+						{
+							return (ProcessResult)coroutine.Current;
+						}
+					}
+					return ProcessResult.Next;
+				}
+				return ProcessResult.End;
+			}, priority, weight);
+		}
 
 		// // RVA: 0x1EF35BC Offset: 0x1EF35BC VA: 0x1EF35BC
-		// public void Unregister(int index) { }
+		public void Unregister(int index)
+		{
+			if(index > -1)
+			{
+				if(index < processes.Length)
+				{
+					if(processes[index].State != 0)
+					{
+						if(processes[index].State == 1)
+						{
+							Unlink(ref registered, index);
+						}
+						else
+						{
+							Unlink(ref active, index);
+						}
+						Link(ref idle, -1, idle, index);
+						processes[index].Process = null;
+						processes[index].State = 0;
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x1EF2B1C Offset: 0x1EF2B1C VA: 0x1EF2B1C
-		// private static void InitializeRange(IdleProcessManager.IdleProcess[] processes, int prev, int next, int start, int end) { }
+		private static void InitializeRange(IdleProcessManager.IdleProcess[] processes, int prev, int next, int start, int end)
+		{
+			processes[start].Prev = prev;
+			if((end - 1) > start)
+			{
+				do
+				{
+					processes[start].State = 0;
+					processes[start].Next = start + 1;
+					processes[start + 1].Prev = start;
+					start++;
+				} while( start != (end-1));
+			}
+			processes[end - 1].State = 0;
+			processes[end - 1].Next = next;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x691DB4 Offset: 0x691DB4 VA: 0x691DB4
 		// // RVA: 0x1EF2C48 Offset: 0x1EF2C48 VA: 0x1EF2C48
-		// private IEnumerator IdleCoroutine() { }
+		private IEnumerator IdleCoroutine()
+		{
+			//0x1EF41D0
+			while(true)
+			{
+				yield return recycle;
+				Idle();
+			}
+		}
 
 		// // RVA: 0x1EF3744 Offset: 0x1EF3744 VA: 0x1EF3744
-		// private void Idle() { }
+		private void Idle()
+		{
+			if(registered > -1)
+			{
+				Activate();
+			}
+			if(active < 0)
+			{
+				return;
+			}
+			long ticks = 10000000 / Application.targetFrameRate;
+			long allowedticks = 0;
+			if(!IsBurstEnable)
+			{
+				if(!IsFixedTime)
+				{
+					allowedticks = ticks - sw.ElapsedTicks;
+				}
+				else
+				{
+					allowedticks = (long)(ticks * ProcessingRate);
+				}
+			}
+			else
+			{
+				allowedticks = (long)(ticks * BurstProcessingRate);
+			}
+			sw.Stop();
+			if(allowedticks < 0)
+			{
+				lazyCount++;
+				return;
+			}
+#if UNITY_EDITOR
+			allowedticks = allowedticks * 5; // Editor is slower than build
+#endif
+			sw.Reset();
+			sw.Start();
+			int i = active;
+			bool noExec = lazyCount > 1;
+			do
+			{
+				int next = processes[i].Next;
+				processes[i].Age = processes[i].Age + 1;
+				bool exec = false;
+				if(!noExec && !IsBurstEnable)
+				{
+					if(processes[i].Weight == 0)
+					{
+						exec = true;
+					}
+					else if(processes[i].Age > 15)
+					{
+						exec = true;
+					}
+					else if(sw.ElapsedTicks - processes[i].Weight > 0)
+					{
+						exec = true;
+					}
+				}
+				else
+				{
+					exec = true;
+				}
+				if(exec)
+				{
+					//UnityEngine.Debug.Log("IdleManager Exec Process : "+i);
+					ProcessResult res = processes[i].Process();
+					if(res != ProcessResult.Continue)
+					{
+						if(res == ProcessResult.End)
+						{
+							//UnityEngine.Debug.Log("IdleManager End Process : "+i);
+							Unregister(i);
+						}
+					}
+					else
+					{
+						next = i;
+					}
+					lazyCount = 0;
+				}
+				if(next < 0)
+				{
+					//UnityEngine.Debug.Log("Break, no more to execute");
+					break;
+				}
+				noExec = false;
+				i = next;
+				//UnityEngine.Debug.Log(sw.ElapsedTicks+" < "+allowedticks);
+			} while(sw.ElapsedTicks < allowedticks);
+			sw.Stop();
+		}
 
 		// // RVA: 0x1EF2F68 Offset: 0x1EF2F68 VA: 0x1EF2F68
-		// private void Extend(int count) { }
+		private void Extend(int count)
+		{
+			if(processes.Length < count)
+			{
+				IdleProcessManager.IdleProcess[] newList = new IdleProcessManager.IdleProcess[count];
+				for(int i = 0; i < processes.Length; i++)
+				{
+					newList[i] = processes[i];
+				}
+				if(idle > -1)
+				{
+					newList[idle].Prev = newList.Length - 1;
+				}
+				InitializeRange(newList, -1, idle, processes.Length, newList.Length);
+				processes = newList;
+				idle = newList.Length;
+			}
+		}
 
 		// // RVA: 0x1EF3B84 Offset: 0x1EF3B84 VA: 0x1EF3B84
-		// private void Activate() { }
+		private void Activate()
+		{
+			int target = registered;
+			int prev = 0;
+			if(target > -1)
+			{
+				do
+				{
+					registered = processes[registered].Next;
+					processes[target].State = 2;
+					int u3 = active;
+					if(u3 < 0)
+					{
+						prev = -1;
+						//UnityEngine.Debug.Log("Activate "+target+" after "+prev+" & before "+u3);
+						Link(ref active, prev, u3, target);
+					}
+					else
+					{
+						if(processes[u3].Priority > processes[target].Priority)
+						{
+							prev = -1;
+							//UnityEngine.Debug.Log("Activate 2 "+target+" after "+prev+" & before "+u3);
+							Link(ref active, prev, u3, target);
+						}
+						else
+						{
+							while(true)
+							{
+								prev = u3;
+								if(processes[prev].Next < 0)
+									break;
+								if(processes[target].Priority < processes[processes[prev].Next].Priority)
+									break;
+								u3 = processes[prev].Next;
+							}
+							u3 = processes[prev].Next;
+							//UnityEngine.Debug.Log("Activate 3 "+target+" after "+prev+" & before "+u3);
+							Link(ref active, prev, u3, target);
+						}
+					}
+					target = registered;
+				} while(target > -1);
+			}
+		}
 
 		// // RVA: 0x1EF3180 Offset: 0x1EF3180 VA: 0x1EF3180
-		// private void Unlink(ref int top, int target) { }
+		private void Unlink(ref int top, int target)
+		{
+			if(target > -1)
+			{
+				if(processes[target].Next > -1)
+				{
+					processes[processes[target].Next].Prev = processes[target].Prev;
+				}
+				if(processes[target].Prev < 0)
+				{
+					top = processes[target].Next;
+				}
+				else
+				{
+					processes[processes[target].Prev].Next = processes[target].Next;
+				}
+			}
+		}
 
 		// // RVA: 0x1EF3398 Offset: 0x1EF3398 VA: 0x1EF3398
-		// private void Link(ref int top, int prev, int next, int target) { }
+		private void Link(ref int top, int prev, int next, int target)
+		{
+			if(target > -1)
+			{
+				processes[target].Prev = prev;
+				processes[target].Next = next;
+				if(next > -1)
+				{
+					processes[next].Prev = target;
+				}
+				if(prev > -1)
+				{
+					processes[prev].Next = target;
+				}
+				else
+				{
+					top = target;
+				}
+			}
+		}
 	}
 }

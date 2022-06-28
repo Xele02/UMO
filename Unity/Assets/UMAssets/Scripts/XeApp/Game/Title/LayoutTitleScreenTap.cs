@@ -34,6 +34,10 @@ namespace XeApp.Game.Title
 		}
 
 		// // RVA: 0xE3AFD0 Offset: 0xE3AFD0 VA: 0xE3AFD0 Slot: 5
-		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
+		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return true;
+		}
 	}
 }

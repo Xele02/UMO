@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using XeSys.Gfx;
 
 namespace XeApp.Game.Common
 {
@@ -39,7 +40,11 @@ namespace XeApp.Game.Common
 		// public AbsoluteLayout RootAbsoluteLayout { get; } 0xE5D330
 
 		// // RVA: 0xE5D338 Offset: 0xE5D338 VA: 0xE5D338 Slot: 5
-		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
+		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return true;
+		}
 
 		// RVA: 0xE5D880 Offset: 0xE5D880 VA: 0xE5D880 Slot: 28
 		protected virtual void Awake()

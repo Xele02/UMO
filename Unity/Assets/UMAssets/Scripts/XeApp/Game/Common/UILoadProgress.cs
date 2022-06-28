@@ -30,17 +30,21 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDDEC0 Offset: 0x1CDDEC0 VA: 0x1CDDEC0
 		private void Start()
 		{
-			UnityEngine.Debug.LogWarning("TODO UILoadProgress Start");
+			return;
 		}
 
 		// // RVA: 0x1CDDEC4 Offset: 0x1CDDEC4 VA: 0x1CDDEC4
 		private void Update()
 		{
-			UnityEngine.Debug.LogWarning("TODO UILoadProgress Update");
+			if(m_updater != null)
+				m_updater();
 		}
 
 		// // RVA: 0x1CDDED8 Offset: 0x1CDDED8 VA: 0x1CDDED8
-		// private void UpdateIdle() { }
+		private void UpdateIdle()
+		{
+			ChangeProgress(m_per);
+		}
 
 		// // RVA: 0x1CDDFA4 Offset: 0x1CDDFA4 VA: 0x1CDDFA4
 		public void Begin(Transform parent)
@@ -68,13 +72,24 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1CDDEE0 Offset: 0x1CDDEE0 VA: 0x1CDDEE0
-		// private void ChangeProgress(int per) { }
+		private void ChangeProgress(int per)
+		{
+			UnityEngine.Debug.LogWarning("TODO Change Progress");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7398AC Offset: 0x7398AC VA: 0x7398AC
 		// // RVA: 0x1CDE0B0 Offset: 0x1CDE0B0 VA: 0x1CDE0B0
 		// private IEnumerator WaitOneFrameCoroutine() { }
 
 		// // RVA: 0x1CDE298 Offset: 0x1CDE298 VA: 0x1CDE298 Slot: 5
-		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
+		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
+		{
+			m_layoutType = layout.FindViewById("sw_cmn_load_progress_all") as AbsoluteLayout;
+			m_layoutBar[0] = layout.FindViewById("swfrm_mask_bar_01_anim") as AbsoluteLayout;
+			m_layoutBar[1] = layout.FindViewById("swfrm_mask_bar_03_anim") as AbsoluteLayout;
+			m_updater = this.UpdateIdle;
+			gameObject.SetActive(false);
+			return true;
+		}
 	}
 }

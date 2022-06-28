@@ -141,8 +141,8 @@ public class IOGKADECKOP
 		DANMJLOBLIE.StartCoroutine(HNPMKCFMEGA_Coroutine_Inquiry());
         UnityEngine.Debug.Log("Exit LMDJGHMDDJA_LogoActCoroutine");
 
-		UnityEngine.Debug.LogError("Hack to remove");
-		FGBKOJCFMKM();
+		//UnityEngine.Debug.LogError("Hack to remove");
+		//FGBKOJCFMKM();
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B3D30 Offset: 0x6B3D30 VA: 0x6B3D30

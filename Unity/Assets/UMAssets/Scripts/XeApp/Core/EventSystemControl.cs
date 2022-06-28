@@ -7,19 +7,16 @@ namespace XeApp.Core
 		private int m_blockCount; // 0x8
 		private EventSystem eventSystem; // 0xC
 
-		// public bool InputEnabled { get; set; }
+		// public bool InputEnabled { get; set; } 0x1D6ECA4 0x1D6ECB8
 
 		// // RVA: 0x1D6EC40 Offset: 0x1D6EC40 VA: 0x1D6EC40
 		public void Init(EventSystem es)
 		{
-			UnityEngine.Debug.LogWarning("TODO EventSystemControl.Init");
+			m_blockCount = 0;
+			eventSystem = es;
+			es.enabled = true;
+			eventSystem.pixelDragThreshold = 16;
 		}
-
-		// // RVA: 0x1D6ECA4 Offset: 0x1D6ECA4 VA: 0x1D6ECA4
-		// public bool get_InputEnabled() { }
-
-		// // RVA: 0x1D6ECB8 Offset: 0x1D6ECB8 VA: 0x1D6ECB8
-		// public void set_InputEnabled(bool value) { }
 
 		// // RVA: 0x1D6ED14 Offset: 0x1D6ED14 VA: 0x1D6ED14
 		// public bool SwitchDefaultInputModule() { }

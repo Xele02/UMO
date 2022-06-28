@@ -43,7 +43,11 @@ namespace XeApp.Game.Title
 		// private IEnumerator InheritingDark() { }
 
 		// // RVA: 0xE35D20 Offset: 0xE35D20 VA: 0xE35D20 Slot: 5
-		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
+		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return true;
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6B2F70 Offset: 0x6B2F70 VA: 0x6B2F70
 		// // RVA: 0xE3612C Offset: 0xE3612C VA: 0xE3612C

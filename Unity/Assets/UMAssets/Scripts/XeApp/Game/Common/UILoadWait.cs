@@ -1,4 +1,5 @@
 using XeSys.Gfx;
+using System.Collections;
 
 namespace XeApp.Game.Common
 {
@@ -12,15 +13,29 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDE904 Offset: 0x1CDE904 VA: 0x1CDE904
 		private void Start()
 		{
-			UnityEngine.Debug.LogWarning("TODO UILoadWait Start");
+			m_runtime = GetComponent<LayoutUGUIRuntime>();
 		}
 
 		// // RVA: 0x1CDE96C Offset: 0x1CDE96C VA: 0x1CDE96C Slot: 5
-		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
+		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
+		{
+			m_anim = layout.FindViewByExId("root_cmn_load_now_sw_cmn_load_now_anim") as AbsoluteLayout;
+			Loaded();
+			StartCoroutine(WaitLayoutUGUICoroutine());
+			return true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x739974 Offset: 0x739974 VA: 0x739974
 		// // RVA: 0x1CDEA5C Offset: 0x1CDEA5C VA: 0x1CDEA5C
-		// private IEnumerator WaitLayoutUGUICoroutine() { }
+		private IEnumerator WaitLayoutUGUICoroutine()
+		{
+			//0x1CDEC3C
+			while(!m_runtime.IsReady)
+			{
+				yield return null;
+			}
+			gameObject.SetActive(false);
+		}
 
 		// // RVA: 0x1CDEB08 Offset: 0x1CDEB08 VA: 0x1CDEB08
 		// public void Show() { }

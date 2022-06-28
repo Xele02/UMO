@@ -42,7 +42,6 @@ namespace XeApp.Game.Title
 		public void Show()
 		{
 			UnityEngine.Debug.LogWarning("TODO TitleLogo Show");
-			IsClose = true; // hack to skip logo sequence for now
 		}
 
 		// // RVA: 0xE39DDC Offset: 0xE39DDC VA: 0xE39DDC
@@ -61,6 +60,10 @@ namespace XeApp.Game.Title
 		// private void Skip() { }
 
 		// // RVA: 0xE39EA0 Offset: 0xE39EA0 VA: 0xE39EA0 Slot: 5
-		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
+		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
+		{
+			UnityEngine.Debug.LogError("TODO");
+			return true;
+		}
 	}
 }
