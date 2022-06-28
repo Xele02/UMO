@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutIntimacyInfo : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private NumberBase m_numExpNow;
 		[SerializeField]

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class LayoutDecorationBottomButtons : LayoutUGUIScriptBase
 {
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 	[Serializable]
 	public class BottomButtons
 	{

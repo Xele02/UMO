@@ -8,6 +8,7 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeInfoWindow : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[Serializable]
 		public class CostumeInfo
 		{

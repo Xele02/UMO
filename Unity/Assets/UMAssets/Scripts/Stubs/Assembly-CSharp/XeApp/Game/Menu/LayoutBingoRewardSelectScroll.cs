@@ -5,6 +5,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutBingoRewardSelectScroll : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private float m_offsetLength;
 		[SerializeField]

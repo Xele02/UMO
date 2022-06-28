@@ -8,6 +8,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutEventGoDivaMusicInfo : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private TextureListSupport m_textureListSupport;
 		[SerializeField]

@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LobbyLiveMessge : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_nameText;
 	}

@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class TipsWindow : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private TipsContent m_conten;
 		[SerializeField]

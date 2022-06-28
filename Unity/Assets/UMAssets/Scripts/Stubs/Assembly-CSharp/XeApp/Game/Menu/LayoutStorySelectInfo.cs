@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutStorySelectInfo : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ActionButton m_closeButton;
 		[SerializeField]

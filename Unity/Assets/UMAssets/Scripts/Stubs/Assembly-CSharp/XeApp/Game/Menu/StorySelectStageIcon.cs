@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class StorySelectStageIcon : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private bool m_is_large;
 		[SerializeField]

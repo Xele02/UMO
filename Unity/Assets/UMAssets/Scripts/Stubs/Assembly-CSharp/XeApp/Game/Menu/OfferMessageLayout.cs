@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class OfferMessageLayout : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text MessageText;
 	}

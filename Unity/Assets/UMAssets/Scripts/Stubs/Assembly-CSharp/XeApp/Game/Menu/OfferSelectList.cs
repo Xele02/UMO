@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class OfferSelectList : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		public enum OfferSelectTab
 		{
 			DivaTab = 0,

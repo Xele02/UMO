@@ -9,6 +9,7 @@ namespace XeApp.Game.Menu
 {
 	public class SceneSelectList : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private SwapScrollList m_scrollList;
 		[SerializeField]

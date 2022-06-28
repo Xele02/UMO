@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupUnlockMusic : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_musicName;
 		[SerializeField]

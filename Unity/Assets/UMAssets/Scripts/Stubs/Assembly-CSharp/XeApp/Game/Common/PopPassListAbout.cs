@@ -6,6 +6,7 @@ namespace XeApp.Game.Common
 {
 	public class PopPassListAbout : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ActionButton m_buttonDetail;
 		[SerializeField]

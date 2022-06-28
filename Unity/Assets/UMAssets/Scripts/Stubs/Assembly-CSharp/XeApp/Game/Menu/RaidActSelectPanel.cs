@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class RaidActSelectPanel : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		public enum PanelType
 		{
 			PanelRight = 0,

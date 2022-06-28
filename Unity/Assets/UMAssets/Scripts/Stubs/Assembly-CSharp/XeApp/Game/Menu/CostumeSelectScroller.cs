@@ -5,6 +5,7 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeSelectScroller : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private float m_swaip_height_value;
 		[SerializeField]

@@ -5,6 +5,7 @@ namespace XeApp.Game.Menu
 {
 	public class SwaipTouch : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private bool m_is_swaip_width_flag;
 		[SerializeField]

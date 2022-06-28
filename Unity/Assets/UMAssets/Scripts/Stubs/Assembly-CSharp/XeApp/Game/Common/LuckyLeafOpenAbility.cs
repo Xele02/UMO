@@ -6,6 +6,7 @@ namespace XeApp.Game.Common
 {
 	public class LuckyLeafOpenAbility : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text[] prevLeafEffectTexts;
 		[SerializeField]

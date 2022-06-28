@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutSeriesTab : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private List<ActionButton> m_SeriesButtons;
 		[SerializeField]

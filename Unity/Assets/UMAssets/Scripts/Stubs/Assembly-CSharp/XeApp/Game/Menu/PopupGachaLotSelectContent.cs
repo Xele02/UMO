@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class PopupGachaLotSelectContent : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[Serializable]
 		private class LotInfo
 		{

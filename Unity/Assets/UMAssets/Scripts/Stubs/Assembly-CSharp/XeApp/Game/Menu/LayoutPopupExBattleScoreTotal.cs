@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupExBattleScoreTotal : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private NumberBase m_totalScore;
 		[SerializeField]

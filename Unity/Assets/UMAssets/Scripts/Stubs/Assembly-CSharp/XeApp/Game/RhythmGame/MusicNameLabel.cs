@@ -6,6 +6,7 @@ namespace XeApp.Game.RhythmGame
 {
 	public class MusicNameLabel : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_text;
 	}

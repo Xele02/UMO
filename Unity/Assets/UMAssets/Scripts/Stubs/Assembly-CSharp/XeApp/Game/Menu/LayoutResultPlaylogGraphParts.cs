@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutResultPlaylogGraphParts : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[Serializable]
 		public class PartsData
 		{

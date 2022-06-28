@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutDecorationOptionContent : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ToggleButton[] buttons;
 		[SerializeField]

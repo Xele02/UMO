@@ -8,6 +8,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutDecorationWindow01 : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ActionButton m_leftButton;
 		[SerializeField]

@@ -5,6 +5,7 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeSelectListTermsPopup : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		public Text m_text;
 		public RawImageEx m_image_diva_cos;
 		public RawImageEx m_image_ul_cos_plate;

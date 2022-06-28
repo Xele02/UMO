@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class SubPlatePlateControl : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private LayoutUGUIRuntime m_runtime;
 		[SerializeField]

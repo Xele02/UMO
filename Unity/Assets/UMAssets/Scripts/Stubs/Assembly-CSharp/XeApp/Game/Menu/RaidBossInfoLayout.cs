@@ -8,6 +8,7 @@ namespace XeApp.Game.Menu
 {
 	public class RaidBossInfoLayout : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_bossNameText;
 		[SerializeField]

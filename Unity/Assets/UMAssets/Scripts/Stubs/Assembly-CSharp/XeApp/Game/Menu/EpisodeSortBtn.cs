@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class EpisodeSortBtn : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ActionButton m_btn_01;
 		[SerializeField]

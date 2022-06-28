@@ -7,6 +7,7 @@ namespace XeApp.Game.Tutorial
 {
 	public class TutorialWindow : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_titleText;
 		[SerializeField]

@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class RaidResultDamageLayout : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_nameText;
 		[SerializeField]

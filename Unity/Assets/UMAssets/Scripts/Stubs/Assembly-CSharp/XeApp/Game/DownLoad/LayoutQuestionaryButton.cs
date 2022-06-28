@@ -7,6 +7,7 @@ namespace XeApp.Game.DownLoad
 {
 	public class LayoutQuestionaryButton : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ToggleButton m_toggleButton;
 		[SerializeField]

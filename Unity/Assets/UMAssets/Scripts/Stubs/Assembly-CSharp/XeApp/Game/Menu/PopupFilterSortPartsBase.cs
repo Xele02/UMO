@@ -5,6 +5,7 @@ namespace XeApp.Game.Menu
 {
 	public class PopupFilterSortPartsBase : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		public enum Type
 		{
 			None = 0,

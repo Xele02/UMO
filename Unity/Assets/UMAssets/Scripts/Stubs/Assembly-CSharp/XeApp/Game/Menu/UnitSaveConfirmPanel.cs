@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class UnitSaveConfirmPanel : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private RawImageEx[] m_lowerDivaIconImages;
 		[SerializeField]

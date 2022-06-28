@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class CharaSet : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private StayButton[] m_divaButton;
 		[SerializeField]

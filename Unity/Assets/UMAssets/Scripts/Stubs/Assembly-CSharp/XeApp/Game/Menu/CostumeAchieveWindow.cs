@@ -5,6 +5,7 @@ namespace XeApp.Game.Menu
 {
 	internal class CostumeAchieveWindow : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		public SimpleVoicePlayer m_voicePlayer;
 	}
 }

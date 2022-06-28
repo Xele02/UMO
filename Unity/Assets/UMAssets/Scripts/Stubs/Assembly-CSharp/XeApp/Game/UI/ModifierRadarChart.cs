@@ -5,6 +5,7 @@ namespace XeApp.Game.UI
 {
 	public class ModifierRadarChart : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private int m_DataCount;
 		[SerializeField]

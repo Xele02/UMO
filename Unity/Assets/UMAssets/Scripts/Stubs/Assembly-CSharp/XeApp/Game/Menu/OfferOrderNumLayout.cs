@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class OfferOrderNumLayout : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private NumberBase orderNum;
 		[SerializeField]

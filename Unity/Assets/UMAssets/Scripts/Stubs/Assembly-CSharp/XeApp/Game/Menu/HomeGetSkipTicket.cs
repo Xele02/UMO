@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class HomeGetSkipTicket : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ActionButton m_buttonClose;
 		[SerializeField]

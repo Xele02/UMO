@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutResultPlaylogDetail : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ScrollRect m_ScrollRect;
 		[SerializeField]

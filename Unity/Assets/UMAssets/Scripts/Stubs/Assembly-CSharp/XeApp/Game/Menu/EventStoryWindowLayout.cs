@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class EventStoryWindowLayout : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private EventStorySeriestabLayout m_mcrs_tab_btn;
 		[SerializeField]

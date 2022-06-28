@@ -7,6 +7,7 @@ namespace XeApp.Game
 {
 	public class TextureListSupport : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[Serializable]
 		public class Data
 		{

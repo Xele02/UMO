@@ -4,5 +4,6 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutSNSBoot : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 	}
 }

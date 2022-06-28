@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutNotReceiveItem : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text DescText;
 		[SerializeField]

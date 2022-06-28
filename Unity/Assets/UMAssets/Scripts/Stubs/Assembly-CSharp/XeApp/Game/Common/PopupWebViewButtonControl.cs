@@ -7,6 +7,7 @@ namespace XeApp.Game.Common
 {
 	public class PopupWebViewButtonControl : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ActionButton m_returnButton;
 		[SerializeField]

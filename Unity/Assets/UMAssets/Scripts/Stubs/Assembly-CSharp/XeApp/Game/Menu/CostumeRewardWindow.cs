@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeRewardWindow : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ScrollRect m_scrollRect;
 	}

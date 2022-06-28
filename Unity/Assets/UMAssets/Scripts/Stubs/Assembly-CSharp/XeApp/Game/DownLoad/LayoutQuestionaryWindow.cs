@@ -7,6 +7,7 @@ namespace XeApp.Game.DownLoad
 {
 	public class LayoutQuestionaryWindow : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private LayoutQuestionaryButton[] m_radioButtons;
 		[SerializeField]

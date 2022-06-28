@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutGetBingoReward : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private RawImageEx ItemIcon;
 		[SerializeField]

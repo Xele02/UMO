@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class MusicSelectAttrFrame : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private List<RawImageEx> m_frameImages;
 		[SerializeField]

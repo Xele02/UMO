@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutLoginBonusPopupContents : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_itemName;
 		[SerializeField]

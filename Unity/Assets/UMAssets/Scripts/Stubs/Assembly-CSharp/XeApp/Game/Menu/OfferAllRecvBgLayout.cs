@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class OfferAllRecvBgLayout : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		public ActionButton m_okButton;
 		[SerializeField]

@@ -6,6 +6,7 @@ namespace XeApp.Game.Common
 {
 	public class PopupSkipTicketUseConfirm : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private RawImageEx m_imageIcon;
 		[SerializeField]

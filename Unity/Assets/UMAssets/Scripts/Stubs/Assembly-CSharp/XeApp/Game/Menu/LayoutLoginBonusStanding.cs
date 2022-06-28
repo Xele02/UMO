@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutLoginBonusStanding : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[Serializable]
 		public class LoginBonusPrizeObject
 		{

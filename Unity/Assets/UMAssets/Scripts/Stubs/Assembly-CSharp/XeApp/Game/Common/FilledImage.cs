@@ -6,6 +6,7 @@ namespace XeApp.Game.Common
 {
 	public class FilledImage : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private RawImageExFilled m_instance;
 	}

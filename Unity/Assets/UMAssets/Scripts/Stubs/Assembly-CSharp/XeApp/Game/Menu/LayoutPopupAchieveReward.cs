@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupAchieveReward : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private RawImageEx[] m_icons;
 		[SerializeField]

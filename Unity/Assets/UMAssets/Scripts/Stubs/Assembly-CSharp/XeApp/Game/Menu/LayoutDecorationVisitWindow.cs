@@ -8,6 +8,7 @@ namespace XeApp.Game.Menu
 {
 	internal class LayoutDecorationVisitWindow : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[Serializable]
 		private struct TabLayoutData
 		{

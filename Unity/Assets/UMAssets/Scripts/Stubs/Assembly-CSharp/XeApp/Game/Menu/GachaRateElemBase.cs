@@ -5,6 +5,7 @@ namespace XeApp.Game.Menu
 {
 	public class GachaRateElemBase : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private RectTransform m_rectTrans;
 		[SerializeField]

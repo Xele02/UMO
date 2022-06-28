@@ -5,6 +5,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupConfigButtonLabel : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		public enum eLabelType
 		{
 			None = 0,

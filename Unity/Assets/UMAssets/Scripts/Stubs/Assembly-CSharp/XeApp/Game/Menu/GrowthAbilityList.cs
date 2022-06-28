@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class GrowthAbilityList : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private GameObject m_rootObject;
 		[SerializeField]

@@ -6,6 +6,7 @@ namespace XeApp.Game.Common
 {
 	public class PopupLimitedHomeBG : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private RawImageEx m_image_00;
 		[SerializeField]

@@ -7,6 +7,7 @@ namespace XeApp.Game.Common
 {
 	public class ToggleButtonGroup : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[Serializable]
 		public class SelectButtonEvent : UnityEvent<int>
 		{

@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class EpisodeSceneIconCreater : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private SwapScrollList m_swapScroll;
 		[SerializeField]

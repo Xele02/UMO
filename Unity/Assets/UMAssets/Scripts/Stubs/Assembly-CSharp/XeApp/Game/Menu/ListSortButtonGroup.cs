@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class ListSortButtonGroup : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		public enum SortOrder
 		{
 			Small = 0,

@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutQuestEvent2MissionSelect : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private MusicSelectCDCursor m_cdCursor;
 		[SerializeField]

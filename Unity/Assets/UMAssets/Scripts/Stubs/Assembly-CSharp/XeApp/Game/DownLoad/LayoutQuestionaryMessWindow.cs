@@ -6,6 +6,7 @@ namespace XeApp.Game.DownLoad
 {
 	public class LayoutQuestionaryMessWindow : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private AdvMessage m_message;
 		[SerializeField]

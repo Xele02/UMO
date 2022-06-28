@@ -8,6 +8,7 @@ namespace XeApp.Game.Menu
 {
 	public class RaidApHealWindow : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[Serializable]
 		private class Content
 		{

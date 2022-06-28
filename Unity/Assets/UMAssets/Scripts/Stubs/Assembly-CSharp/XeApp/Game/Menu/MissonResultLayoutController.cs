@@ -7,6 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class MissonResultLayoutController : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_missionInfoText;
 		[SerializeField]

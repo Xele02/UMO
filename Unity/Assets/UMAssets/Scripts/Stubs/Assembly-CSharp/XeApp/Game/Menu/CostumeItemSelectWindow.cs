@@ -9,6 +9,7 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeItemSelectWindow : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[Serializable]
 		public class ItemPanel
 		{

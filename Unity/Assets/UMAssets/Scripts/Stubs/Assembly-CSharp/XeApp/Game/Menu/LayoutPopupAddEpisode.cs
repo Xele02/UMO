@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupAddEpisode : LayoutUGUIScriptBase
 	{
+    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_title;
 		[SerializeField]
