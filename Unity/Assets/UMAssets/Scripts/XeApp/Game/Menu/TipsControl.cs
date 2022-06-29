@@ -102,7 +102,10 @@ namespace XeApp.Game.Menu
 		// private void InitializeTipsList() { }
 
 		// // RVA: 0xA98660 Offset: 0xA98660 VA: 0xA98660
-		// public void Show(int count = 3) { }
+		public void Show(int count = 3)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0xA99004 Offset: 0xA99004 VA: 0xA99004
 		// public void Show(IBJAKJJICBC musicData) { }

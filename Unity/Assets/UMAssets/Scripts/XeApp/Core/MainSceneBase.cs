@@ -146,7 +146,7 @@ namespace XeApp.Core
 			if(!asyncLoader.isLoaded)
 				return;
 
-			DestroyObject(asyncLoader.gameObject);
+			Destroy(asyncLoader.gameObject);
 		}
 
 		// // RVA: 0x1D73E28 Offset: 0x1D73E28 VA: 0x1D73E28 Slot: 9

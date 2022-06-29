@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 namespace XeApp.Game.Common
 {
@@ -127,7 +128,11 @@ namespace XeApp.Game.Common
 		// public void RequestEntryRhythmGameCueSheet(UnityAction onLoadedCallback, int forceNoteSe = 0) { }
 
 		// // RVA: 0x139697C Offset: 0x139697C VA: 0x139697C
-		// public void RequestEntryMenuCueSheet(UnityAction onLoadedCallback) { }
+		public void RequestEntryMenuCueSheet(UnityAction onLoadedCallback)
+		{
+			UnityEngine.Debug.LogError("TODO");
+			onLoadedCallback();
+		}
 
 		// // RVA: 0x1396BFC Offset: 0x1396BFC VA: 0x1396BFC
 		// public void RequestEntryGachaCueSheet(UnityAction onLoadedCallback) { }
