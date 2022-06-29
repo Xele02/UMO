@@ -158,7 +158,15 @@ public class IMMAOANGPNK
 				
 				if(MessageLoader.Instance != null)
 				{
-					UnityEngine.Debug.LogError("TODO MessageLoader");
+					MessageLoader.Instance.Request(GBEGLNMFLIE, MessageLoader.eSheet.common, 0);
+					MessageLoader.Instance.Request(GBEGLNMFLIE, MessageLoader.eSheet.menu, 0);
+					MessageLoader.Instance.Request(GBEGLNMFLIE, MessageLoader.eSheet.master, 0);
+					for(int i = 4; i < 14; i++)
+					{
+						MessageLoader.Instance.Request(GBEGLNMFLIE, (MessageLoader.eSheet)i, 0);
+					}
+					Database.Instance.musicText.LoadFromTAR(GBEGLNMFLIE);
+					Database.Instance.roomText.LoadFromBinaryTAR(GBEGLNMFLIE);
 				}
 				
 				AMAFAKNIHFO();

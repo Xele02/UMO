@@ -29,7 +29,12 @@ namespace XeSys
 		// public static ushort GetValueUInt16(byte[] bytes, ref int offset) { }
 
 		// // RVA: 0x2397640 Offset: 0x2397640 VA: 0x2397640
-		// public static int GetValueInt32(byte[] bytes, ref int offset) { }
+		public static int GetValueInt32(byte[] bytes, ref int offset)
+		{
+			int val = BitConverter.ToInt32(bytes, offset);
+			offset += 4;
+			return val;
+		}
 
 		// // RVA: 0x23A8EC8 Offset: 0x23A8EC8 VA: 0x23A8EC8
 		// public static uint GetValueUInt32(byte[] bytes, ref int offset) { }

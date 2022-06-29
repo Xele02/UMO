@@ -115,6 +115,14 @@ public class PEBFNABDJDI : DIHHCBACKGG
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
         UnityEngine.Debug.LogError("TODO Database Load");
+
+		IAIDGBJGDBH reader = IAIDGBJGDBH.HEGEKFMJNCC(DBBGALAPFGC);
+
+		for(int i = 0; i < reader.NELGGEGAJPH.Length; i++)
+		{
+			JLJEEMEOPLE.Add(reader.NELGGEGAJPH[i].PPFNGGCBJKC, reader.NELGGEGAJPH[i].HJLDBEJOMIO);
+		}
+
 		return true;
     }
 

@@ -20,16 +20,35 @@ namespace XeSys
 		}
 
 		// // RVA: 0x2397B34 Offset: 0x2397B34 VA: 0x2397B34
-		// public MessageBank RegisterBank(string bankName, byte[] bytes) { }
+		public MessageBank RegisterBank(string bankName, byte[] bytes)
+		{
+			if(!msgBankDic.ContainsKey(bankName))
+			{
+				MessageBank bank = new MessageBank();
+				bank.Setup(bytes);
+				msgBankDic.Add(bankName, bank);
+				return bank;
+			}
+			return null;
+		}
 
 		// // RVA: 0x2397C38 Offset: 0x2397C38 VA: 0x2397C38
-		// public void ReleaseBank(string bankName) { }
+		public void ReleaseBank(string bankName)
+		{
+			if(!msgBankDic.ContainsKey(bankName))
+				return;
+			msgBankDic[bankName].Dispose();
+			msgBankDic.Remove(bankName);
+		}
 
 		// // RVA: 0x2397D3C Offset: 0x2397D3C VA: 0x2397D3C
 		public MessageBank GetBank(string bankName)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return null;
+			if(!msgBankDic.ContainsKey(bankName))
+			{
+				throw new Exception("MessageManager.GetBank : ["+bankName+"] is not exist");
+			}
+			return msgBankDic[bankName];
 		}
 
 		// // RVA: 0x2397E6C Offset: 0x2397E6C VA: 0x2397E6C
