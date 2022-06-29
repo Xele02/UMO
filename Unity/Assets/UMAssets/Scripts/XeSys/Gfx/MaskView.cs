@@ -14,8 +14,8 @@ namespace XeSys.Gfx
 		public string ImageName { get { return m_ImageName; } set { m_ImageName = value; } } //0x1EFF4A8 0x1F0A108
 		// public TexUVList Tex { get; set; } 0x1EFF498 0x1F0A110
 		// public TexUVData UVData { get; set; } 0x1EFF4A0 0x1F0A118
-		// public bool IsFlipX { get; set; } 0x1F0A120 0x1F0A128
-		// public bool IsFlipY { get; set; } 0x1F0A130 0x1F0A138
+		public bool IsFlipX { get { return m_IsFlipX; } set { m_IsFlipX = value; } } //0x1F0A120 0x1F0A128
+		public bool IsFlipY { get { return m_IsFlipY; } set { m_IsFlipY = value; } } //0x1F0A130 0x1F0A138
 
 		// // RVA: 0x1F0A140 Offset: 0x1F0A140 VA: 0x1F0A140
 		public void SetTexture(TexUVList tex, TexUVData uvdata)

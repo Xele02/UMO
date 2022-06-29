@@ -139,7 +139,13 @@ namespace XeSys.Gfx
 		// public void StopAnim() { }
 
 		// // RVA: 0x1EE7018 Offset: 0x1EE7018 VA: 0x1EE7018
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			if(m_AnimType == 0)
+				return m_Animation.IsAnimEnd == false;
+			else
+				return m_FrameAnimation.IsAnimEnd == false;
+		}
 
 		// [ObsoleteAttribute] // RVA: 0x692690 Offset: 0x692690 VA: 0x692690
 		// // RVA: 0x1EE7060 Offset: 0x1EE7060 VA: 0x1EE7060
@@ -232,10 +238,16 @@ namespace XeSys.Gfx
 		// public void StartAnimGoStop(int start, int end) { }
 
 		// // RVA: 0x1EE8B84 Offset: 0x1EE8B84 VA: 0x1EE8B84
-		// public void StartAnimGoStop(string startLabel, string endLabel) { }
+		public void StartAnimGoStop(string startLabel, string endLabel)
+		{
+			m_FrameAnimation.StartAnimGoStop(startLabel, endLabel);
+		}
 
 		// // RVA: 0x1EE8C50 Offset: 0x1EE8C50 VA: 0x1EE8C50
-		// public void StartAnimGoStop(string label) { }
+		public void StartAnimGoStop(string label)
+		{
+			m_FrameAnimation.StartAnimGoStop(Label);
+		}
 
 		// // RVA: 0x1EE8D08 Offset: 0x1EE8D08 VA: 0x1EE8D08
 		// public void StartAnimLoop(int start, int end) { }
@@ -244,7 +256,10 @@ namespace XeSys.Gfx
 		// public void StartAnimLoop(int current, int start, int end) { }
 
 		// // RVA: 0x1EE8E5C Offset: 0x1EE8E5C VA: 0x1EE8E5C
-		// public void StartAnimLoop(string startLabel, string endLabel) { }
+		public void StartAnimLoop(string startLabel, string endLabel)
+		{
+			m_FrameAnimation.StartAnimLoop(startLabel, endLabel);
+		}
 
 		// // RVA: 0x1EE8F18 Offset: 0x1EE8F18 VA: 0x1EE8F18
 		public void StartAnimLoop(string label)

@@ -4,6 +4,35 @@ namespace XeApp.Game.AR
 {
 	public class AREventMasterData : ARMasterData
 	{
+		public class Campaign
+		{
+			public string eventId = ""; // 0x8
+			public long startTime; // 0x10
+			public long endTime; // 0x18
+			public int bannerId; // 0x20
+			public int imageCount; // 0x24
+		}
+
+		public class EventTime
+		{
+			public long startTime; // 0x8
+			public long endTime; // 0x10
+			public int enable; // 0x18
+		}
+
+		public class Data
+		{
+			public int no; // 0x8
+			public int enable; // 0xC
+			public string eventId = ""; // 0x10
+			public string eventName = ""; // 0x14
+			public string[] snsTemplateTable = new string[2]; // 0x18
+			public AREventMasterData.Campaign campaign = new AREventMasterData.Campaign(); // 0x1C
+
+			// RVA: 0xBB8728 Offset: 0xBB8728 VA: 0xBB8728
+			// public bool CanShowHelp() { }
+		}
+
 		public class Chenge_bg
 		{
 			public long startTime; // 0x8
@@ -13,9 +42,9 @@ namespace XeApp.Game.AR
 		}
 
 		private static AREventMasterData sm_instance; // 0x0
-		// private List<AREventMasterData.Data> m_eventList = new List<AREventMasterData.Data>(); // 0x18
+		private List<AREventMasterData.Data> m_eventList = new List<AREventMasterData.Data>(); // 0x18
 		private List<AREventMasterData.Chenge_bg> m_chengeBg = new List<AREventMasterData.Chenge_bg>(); // 0x1C
-		// private List<AREventMasterData.EventTime> m_eventTime = new List<AREventMasterData.EventTime>(); // 0x20
+		private List<AREventMasterData.EventTime> m_eventTime = new List<AREventMasterData.EventTime>(); // 0x20
 		private long m_arStartTime; // 0x28
 		private long m_arEndTime; // 0x30
 
@@ -28,24 +57,8 @@ namespace XeApp.Game.AR
 			}
 			return sm_instance;
 		} } 
-		// public Dictionary<string, NNJFKLBPBNK> m_stringParam { get; set; } // 0x38
-		// public Dictionary<string, CEBFFLDKAEC> m_intParam { get; set; } // 0x3C
-
-		// [CompilerGeneratedAttribute] // RVA: 0x741A84 Offset: 0x741A84 VA: 0x741A84
-		// // RVA: 0xBB6F14 Offset: 0xBB6F14 VA: 0xBB6F14
-		// public Dictionary<string, NNJFKLBPBNK> get_m_stringParam() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x741A94 Offset: 0x741A94 VA: 0x741A94
-		// // RVA: 0xBB6F1C Offset: 0xBB6F1C VA: 0xBB6F1C
-		// private void set_m_stringParam(Dictionary<string, NNJFKLBPBNK> value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x741AA4 Offset: 0x741AA4 VA: 0x741AA4
-		// // RVA: 0xBB6F24 Offset: 0xBB6F24 VA: 0xBB6F24
-		// public Dictionary<string, CEBFFLDKAEC> get_m_intParam() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x741AB4 Offset: 0x741AB4 VA: 0x741AB4
-		// // RVA: 0xBB6F2C Offset: 0xBB6F2C VA: 0xBB6F2C
-		// private void set_m_intParam(Dictionary<string, CEBFFLDKAEC> value) { }
+		public Dictionary<string, NNJFKLBPBNK> m_stringParam { get; private set; } // 0x38
+		public Dictionary<string, CEBFFLDKAEC> m_intParam { get; private set; } // 0x3C
 
 		// // RVA: 0xBB6F34 Offset: 0xBB6F34 VA: 0xBB6F34
 		// public static void Release() { }
@@ -53,7 +66,58 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBB6FC4 Offset: 0xBB6FC4 VA: 0xBB6FC4 Slot: 4
 		protected override void Initialize(byte[] bytes)
 		{
-			UnityEngine.Debug.LogWarning("TODO Initialize");
+			IINMAJAFDIF fileData = IINMAJAFDIF.HEGEKFMJNCC(bytes);
+			m_eventList.Clear();
+			for(int i = 0; i < fileData.GHGFEFIAIFC.Length; i++)
+			{
+				Data data = new Data();
+				data.no = fileData.GHGFEFIAIFC[i].IKPIDCFOFEA;
+				data.enable = fileData.GHGFEFIAIFC[i].PLALNIIBLOF;
+				data.eventId = fileData.GHGFEFIAIFC[i].DNJLJMKKDNA.ToLower();
+				data.eventName = fileData.GHGFEFIAIFC[i].OFJIBKAOMKO;
+				data.snsTemplateTable[0] = fileData.GHGFEFIAIFC[i].AMLNJJHJEHE;
+				data.snsTemplateTable[1] = fileData.GHGFEFIAIFC[i].DJJAKCKDGMA;
+				data.campaign.eventId = fileData.GHGFEFIAIFC[i].DNJLJMKKDNA.ToLower();
+				data.campaign.startTime = fileData.GHGFEFIAIFC[i].KIGNIOGKEGD;
+				data.campaign.endTime = fileData.GHGFEFIAIFC[i].AKCAHAKHIPI;
+				data.campaign.bannerId = fileData.GHGFEFIAIFC[i].LCCDKCPBJAK;
+				data.campaign.imageCount = fileData.GHGFEFIAIFC[i].LLAGMIDPGFP;
+				m_eventList.Add(data);
+			}
+			m_chengeBg.Clear();
+			for(int i = 0; i < fileData.DEJCELHJKHN.Length; i++)
+			{
+				Chenge_bg data = new Chenge_bg();
+				data.bgId = fileData.DEJCELHJKHN[i].OENPCNBFPDA;
+				data.enable = fileData.DEJCELHJKHN[i].PLALNIIBLOF;
+				data.startTime = fileData.DEJCELHJKHN[i].KBPENAAJPHN;
+				data.endTime = fileData.DEJCELHJKHN[i].AKKDBALDNAN;
+				m_chengeBg.Add(data);
+			}
+			m_intParam = new Dictionary<string, CEBFFLDKAEC>();
+			for(int i = 0; i < fileData.BHGDNGHDDAC.Length; i++)
+			{
+				CEBFFLDKAEC data = new CEBFFLDKAEC();
+				data.DNJEJEANJGL = fileData.BHGDNGHDDAC[i].JBGEEPFKIGG;
+				m_intParam.Add(fileData.BHGDNGHDDAC[i].LJNAKDMILMC, data);
+			}
+			m_stringParam = new Dictionary<string, NNJFKLBPBNK>();
+			for(int i = 0; i < fileData.MHGMDJNOLMI.Length; i++)
+			{
+				NNJFKLBPBNK data = new NNJFKLBPBNK();
+				data.DNJEJEANJGL = fileData.MHGMDJNOLMI[i].JBGEEPFKIGG;
+				m_stringParam.Add(fileData.MHGMDJNOLMI[i].LJNAKDMILMC, data);
+
+			}
+			m_eventTime.Clear();
+			for(int i = 0; i < fileData.GCKNBNMLCEF.Length; i++)
+			{
+				EventTime data = new EventTime();
+				data.startTime = fileData.GCKNBNMLCEF[i].JLIPMPMDEHI;
+				data.endTime = fileData.GCKNBNMLCEF[i].LOPHEKJBJKD;
+				data.enable = fileData.GCKNBNMLCEF[i].PLALNIIBLOF;
+				m_eventTime.Add(data);
+			}
 		}
 
 		// // RVA: 0xBB7C6C Offset: 0xBB7C6C VA: 0xBB7C6C
@@ -74,8 +138,18 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBB8448 Offset: 0xBB8448 VA: 0xBB8448
 		public AREventMasterData.Chenge_bg FindChangeBG()
 		{
-			UnityEngine.Debug.LogWarning("TODO FindChangeBG");
-			return null;
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+			for(int i = 0; i < m_chengeBg.Count; i++)
+			{
+				if(m_chengeBg[i].enable == 2)
+				{
+					if(m_chengeBg[i].startTime <= time && m_chengeBg[i].endTime >= time)
+						return m_chengeBg[i];
+				}
+			}
+			UnityEngine.Debug.LogWarning("No BG found return the last one");
+			// HACK for game post close
+			return m_chengeBg[m_chengeBg.Count-1];
 		}
 
 		// // RVA: 0xBB7E4C Offset: 0xBB7E4C VA: 0xBB7E4C

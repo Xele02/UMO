@@ -433,7 +433,6 @@ namespace XeApp.Game
 		private IEnumerator InitializeSystemCoroutine()
 		{
     		UnityEngine.Debug.Log("Enter InitializeSystemCoroutine");
-			UnityEngine.Debug.LogWarning("TODO finish GameManager.InitializeSystemCoroutine");
 			//private int <>1__state; // 0x8
 			//private object <>2__current; // 0xC
 			//public GameManager <>4__this; // 0x10
@@ -806,7 +805,6 @@ namespace XeApp.Game
 				{
 					if(nowloading.IsInitialized)
 					{
-						Debug.Log("Wait DownloadBar "+DownloadBar.gameObject.activeSelf+" "+transmissionIcon.activeSelf);
 						if(!DownloadBar.gameObject.activeSelf)
 						{
 							return !transmissionIcon.activeSelf;
@@ -832,19 +830,28 @@ namespace XeApp.Game
 		// // RVA: 0x98060C Offset: 0x98060C VA: 0x98060C
 		public static void FadeIn(float time = 0.4f)
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.FadeIn");
+			if(GameManager.Instance.fullscreenFader != null)
+			{
+				GameManager.Instance.fullscreenFader.Fade(time, Color.clear);
+			}
 		}
 
 		// // RVA: 0x9809CC Offset: 0x9809CC VA: 0x9809CC
 		public static void FadeOut(float time = 0.4f)
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.FadeOut");
+			if(GameManager.Instance.fullscreenFader != null)
+			{
+				GameManager.Instance.fullscreenFader.Fade(time, Color.black);
+			}
 		}
 
 		// // RVA: 0x97FDB0 Offset: 0x97FDB0 VA: 0x97FDB0
 		public static bool IsFading()
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.IsFading");
+			if(GameManager.Instance.fullscreenFader != null)
+			{
+				return GameManager.Instance.fullscreenFader.isFading;
+			}
 			return false;
 		}
 
@@ -912,13 +919,13 @@ namespace XeApp.Game
 		// // RVA: 0x9A0CA0 Offset: 0x9A0CA0 VA: 0x9A0CA0
 		public void SetSystemCanvasRenderMode(RenderMode mode)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetSystemCanvasRenderMode");
+			return;
 		}
 
 		// // RVA: 0x9A0CA4 Offset: 0x9A0CA4 VA: 0x9A0CA4
 		public void SetSystemCanvasResolution(Vector2 resolution)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			systemLayoutCanvas.GetComponent<CanvasScaler>().referenceResolution = resolution;
 		}
 
 		// // RVA: 0x99B14C Offset: 0x99B14C VA: 0x99B14C

@@ -138,8 +138,21 @@ namespace XeSys
 		// // RVA: 0x203BC10 Offset: 0x203BC10 VA: 0x203BC10
 		private bool FileLoadedCallback(FileResultObject fro)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return false;
+			FileLoadInfo info = fileLoadingDic[fro.pathHashCode];
+			fileLoadingDic.Remove(fro.pathHashCode);
+			info.Succeeded(fro);
+			if(!fro.dispose)
+			{
+				if(!fileLoadedDic.ContainsKey(fro.pathHashCode))
+				{
+					fileLoadedDic.Add(fro.pathHashCode, info);
+				}
+			}
+			else
+			{
+				info.request.PEFNBFCMIBL();
+			}
+			return true;
 		}
 
 		// // RVA: 0x203B3F0 Offset: 0x203B3F0 VA: 0x203B3F0

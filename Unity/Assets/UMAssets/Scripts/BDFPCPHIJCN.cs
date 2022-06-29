@@ -55,10 +55,16 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 		{
 			if(LGADCGFMLLD == 1)
 			{
+				UnityEngine.Debug.Log("Bundle wait for load in memory");
 				if(NMNCMNNPNCI.isDone)
 				{
+					UnityEngine.Debug.Log("Bundle loaded in memory");
 					IMGIFJHHEED_fro.assetBundle = NMNCMNNPNCI.assetBundle;
 					NMNCMNNPNCI = null;
+				}
+				else
+				{
+					return false;
 				}
 			}
 			else if(LGADCGFMLLD == 0)
@@ -76,6 +82,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 						Debug.LogError("decrypt failed");
 					}
 				}
+				UnityEngine.Debug.Log("Bundle decrypted, start load in memory");
 				NMNCMNNPNCI = AssetBundle.LoadFromMemoryAsync(data);
 				LGADCGFMLLD = 1;
 				return false;

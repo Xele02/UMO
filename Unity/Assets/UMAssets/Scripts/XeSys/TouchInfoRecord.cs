@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 namespace XeSys
 {
     public class TouchInfoRecord
@@ -12,28 +14,80 @@ namespace XeSys
         public TouchInfo endedInfo { get; private set; } // 0x18
 
         // // RVA: 0x23A69DC Offset: 0x23A69DC VA: 0x23A69DC
-        // public void .ctor(int id, int recentCapacity) { }
+        public TouchInfoRecord(int id, int recentCapacity)
+        {
+            this.id = id;
+            this.recentCapacity = recentCapacity;
+            recentInfos = new TouchInfo[recentCapacity];
+            for(int i = 0; i < recentCapacity; i++)
+            {
+                recentInfos[i] = new TouchInfo();
+            }
+            currentInfo = new TouchInfo();
+            beganInfo = new TouchInfo();
+            endedInfo = new TouchInfo();
+        }
 
         // // RVA: 0x23A6B80 Offset: 0x23A6B80 VA: 0x23A6B80
         // public TouchInfo FindRecentInfo(int frameFromLatest) { }
 
         // // RVA: 0x23A6C0C Offset: 0x23A6C0C VA: 0x23A6C0C
-        // public void Update(TouchPhase phase, Vector3 pos) { }
+        public void Update(TouchPhase phase, Vector3 pos)
+        {
+            if(phase == TouchPhase.Stationary)
+                UpdateStationary(pos);
+            else if(phase == TouchPhase.Ended)
+                UpdateEnded(pos);
+            else if(phase == TouchPhase.Began)
+                UpdateBegan(pos);
+        }
 
         // // RVA: 0x23A6E88 Offset: 0x23A6E88 VA: 0x23A6E88
-        // public void UpdateReleased() { }
+        public void UpdateReleased()
+        {
+            currentInfo.Initialize();
+            beganInfo.Initialize();
+            endedInfo.Initialize();
+            UpdateRecent();
+        }
 
         // // RVA: 0x23A6C7C Offset: 0x23A6C7C VA: 0x23A6C7C
-        // private void UpdateBegan(Vector3 pos) { }
+        private void UpdateBegan(Vector3 pos)
+        {
+            for(int i = 0; i < recentInfos.Length; i++)
+            {
+                recentInfos[i].Initialize();
+            }
+            currentInfo.Setup(id, TouchState.BEGAN, pos);
+            beganInfo.Setup(id, TouchState.BEGAN, pos);
+            endedInfo.Initialize();
+            UpdateRecent();
+        }
 
         // // RVA: 0x23A6DA0 Offset: 0x23A6DA0 VA: 0x23A6DA0
-        // private void UpdateStationary(Vector3 pos) { }
+        private void UpdateStationary(Vector3 pos)
+        {
+            currentInfo.Setup(id, TouchState.MOVED, pos);
+            UpdateRecent();
+        }
 
         // // RVA: 0x23A6DFC Offset: 0x23A6DFC VA: 0x23A6DFC
-        // private void UpdateEnded(Vector3 pos) { }
+        private void UpdateEnded(Vector3 pos)
+        {
+            currentInfo.Setup(id, TouchState.ENDED, pos);
+            endedInfo.Setup(id, TouchState.ENDED, pos);
+            UpdateRecent();
+        }
 
         // // RVA: 0x23A6EF4 Offset: 0x23A6EF4 VA: 0x23A6EF4
-        // private void UpdateRecent() { }
+        private void UpdateRecent()
+        {
+            for(int i = 0; i < recentInfos.Length - 1; i++)
+            {
+                recentInfos[i].Copy(recentInfos[i+1]);
+            }
+            recentInfos[recentInfos.Length - 1].Copy(currentInfo);
+        }
 
         // // RVA: 0x23A7004 Offset: 0x23A7004 VA: 0x23A7004
         // public float GetRecentDeltaDistance(int frame) { }

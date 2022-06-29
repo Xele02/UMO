@@ -21,7 +21,6 @@ namespace XeApp.Game.Title
 			m_Tap.ClearOnClickCallback();
 			m_Tap.AddOnClickCallback(() => {
 				//0xE3AFF0
-				UnityEngine.Debug.LogError("ScreenTap CB");
 				if(ButtonCallbackTap != null)
 					ButtonCallbackTap();
 			});
@@ -30,13 +29,14 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE3AF1C Offset: 0xE3AF1C VA: 0xE3AF1C
 		public void ClearCallback()
 		{
-			UnityEngine.Debug.LogWarning("TODO LayoutTitleScreenTap ClearCallback");
+			if(m_Tap != null)
+				m_Tap.ClearOnClickCallback();
 		}
 
 		// // RVA: 0xE3AFD0 Offset: 0xE3AFD0 VA: 0xE3AFD0 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			Loaded();
 			return true;
 		}
 	}

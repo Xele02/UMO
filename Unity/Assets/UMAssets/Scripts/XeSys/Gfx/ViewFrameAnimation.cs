@@ -90,10 +90,36 @@ namespace XeSys.Gfx
 		// public void StartAnimGoStopTime(float start, float end) { }
 
 		// // RVA: 0x1EE8BBC Offset: 0x1EE8BBC VA: 0x1EE8BBC
-		// public void StartAnimGoStop(string startLabel, string endLabel) { }
+		public void StartAnimGoStop(string startLabel, string endLabel)
+		{
+			float startTime = data.SearchLabelTime(startLabel);
+			float endTime = data.SearchLabelTime(endLabel);
+			if(startTime >= 0)
+			{
+				if(endTime >= 0)
+				{
+					m_Action = AnimAction.stop;
+					m_startTime = startTime;
+					m_endTime = endTime;
+					m_AnimCount = startTime;
+					m_IsAnimEnd = false;
+				}
+			}
+		}
 
 		// // RVA: 0x1EE8C80 Offset: 0x1EE8C80 VA: 0x1EE8C80
-		// public void StartAnimGoStop(string startLabel) { }
+		public void StartAnimGoStop(string startLabel)
+		{
+			float startTime, endTime;
+			if(data.SearchLabelTimePair(startLabel, m_FrameSec, out startTime, out endTime))
+			{
+				m_Action = AnimAction.stop;
+				m_startTime = startTime;
+				m_endTime = endTime;
+				m_AnimCount = startTime;
+				m_IsAnimEnd = false;
+			}
+		}
 
 		// // RVA: 0x1EE93C0 Offset: 0x1EE93C0 VA: 0x1EE93C0
 		// public void StartAnimInverseGoStop(string startLabel) { }
@@ -105,7 +131,25 @@ namespace XeSys.Gfx
 		// public void StartAnimLoop(int current, int start, int end) { }
 
 		// // RVA: 0x1EE8E94 Offset: 0x1EE8E94 VA: 0x1EE8E94
-		// public void StartAnimLoop(string startLabel, string endLabel) { }
+		public void StartAnimLoop(string startLabel, string endLabel)
+		{
+			if(data != null)
+			{
+				float startTime = data.SearchLabelTime(startLabel);
+				float endTime = data.SearchLabelTime(endLabel);
+				if(startTime >= 0)
+				{
+					if(endTime >= 0)
+					{
+						m_Action = AnimAction.loop;
+						m_startTime = startTime;
+						m_endTime = endTime;
+						m_AnimCount = startTime;
+						m_IsAnimEnd = false;
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x1EE8F48 Offset: 0x1EE8F48 VA: 0x1EE8F48
 		public void StartAnimLoop(string startLabel)
@@ -135,17 +179,17 @@ namespace XeSys.Gfx
 			float time = m_endTime;
 			float elapsed = m_timeScale * dt;
 			float animCount = m_AnimCount;
-			bool b = false;
+			bool hitEnd = false;
 			if(time >= 0)
 			{
-				b = true;
+				hitEnd = false;
 				if(m_startTime < time)
 				{
 					m_AnimCount = animCount + elapsed;
 					if(m_AnimCount >= time)
 					{
 						m_AnimCount = time;
-						b = false;
+						hitEnd = true;
 					}
 				}
 				else
@@ -154,7 +198,7 @@ namespace XeSys.Gfx
 					if(m_AnimCount <= time)
 					{
 						m_AnimCount = time;
-						b = false;
+						hitEnd = true;
 					}
 				}
 			}
@@ -173,7 +217,7 @@ namespace XeSys.Gfx
 				newTime = data.AnimTimeMap.GetPlayFrame(m_AnimCount, m_FrameSec);
 			}
 			bool res = ApplyFrameAction(animCount, newTime);
-			if(b && !res)
+			if(hitEnd && !res)
 			{
 				if(m_Action == AnimAction.loop)
 				{

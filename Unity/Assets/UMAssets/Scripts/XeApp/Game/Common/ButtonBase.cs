@@ -1,5 +1,6 @@
 using XeSys.Gfx;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace XeApp.Game.Common
 {
@@ -41,7 +42,15 @@ namespace XeApp.Game.Common
 				ChangeTranstionState();
 			}
 		} } //0xE63A9C 0xE63A44
-		// public bool Dark { get; set; } 0xE63AA4 0xE63AAC
+		public bool Dark { get { return m_isDark; } set {
+			if(m_isDark != value)
+			{
+				m_isDark = value;
+				if(!value)
+					m_selectionState = SelectState.Normal;
+				ChangeTranstionState();
+			}
+		} } //0xE63AA4 0xE63AAC
 		public bool Hidden { get { return m_isHidden; } set {
 			if(m_isHidden == value)
 				return;
@@ -64,13 +73,25 @@ namespace XeApp.Game.Common
 		// RVA: 0xE5D9BC Offset: 0xE5D9BC VA: 0xE5D9BC Slot: 11
 		protected virtual void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			LayoutUGUIHitOnly[] hits = GetComponentsInChildren<LayoutUGUIHitOnly>(true);
+			for(int i = 0; i < hits.Length; i++)
+			{
+				if(hits[i].gameObject.activeSelf)
+				{
+					Button b = hits[i].GetComponent<Button>();
+					if(b != null)
+					{
+						b.enabled = false;
+					}
+					hits[i].raycastTarget = true;
+				}
+			}
 		}
 
 		// RVA: 0xE63CAC Offset: 0xE63CAC VA: 0xE63CAC Slot: 12
 		protected virtual void OnDisable()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			return;
 		}
 
 		// // RVA: 0xE63CB0 Offset: 0xE63CB0 VA: 0xE63CB0 Slot: 13
@@ -85,24 +106,20 @@ namespace XeApp.Game.Common
 		// RVA: 0xE5DDD4 Offset: 0xE5DDD4 VA: 0xE5DDD4 Slot: 15
 		public virtual void OnPointerClick(PointerEventData eventData)
 		{
-			UnityEngine.Debug.LogError("OnPointerClick 1 "+gameObject.transform.parent.gameObject.name);
 			IsEventProcessed = false;
 			if(!IsInputOff && !IsInputLock && !Disable && !Hidden)
 			{
-				UnityEngine.Debug.LogError("OnPointerClick 2 "+eventData.pointerId);
 #if UNITY_ANDROID
 				if(eventData.pointerId == 0)
 #else
 				if(eventData.pointerId == -1)
 #endif
 				{
-					UnityEngine.Debug.LogError("OnPointerClick 3");
 					m_selectionState = ButtonBase.SelectState.Decide;
 					IsEventProcessed = true;
 					ChangeTranstionState();
 					if(OnClickEvent != null)
 					{
-						UnityEngine.Debug.LogError("OnPointerClick 4");
 						OnClickEvent();
 						m_isClick = true;
 					}
@@ -143,7 +160,7 @@ namespace XeApp.Game.Common
 		// RVA: 0xE60008 Offset: 0xE60008 VA: 0xE60008
 		public void AddOnClickCallback(ButtonBase.OnClickCallback OnClickEvent)
 		{
-			OnClickEvent += OnClickEvent;
+			this.OnClickEvent += OnClickEvent;
 		}
 
 		// // RVA: 0xE645C4 Offset: 0xE645C4 VA: 0xE645C4

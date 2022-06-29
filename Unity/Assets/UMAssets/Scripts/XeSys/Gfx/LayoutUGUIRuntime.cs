@@ -7,6 +7,13 @@ using System.Collections;
 
 namespace XeSys.Gfx
 {
+	#if UNITY_EDITOR
+	public class DebugLinkInfo : MonoBehaviour
+	{
+		public string LayoutId;
+	}
+	#endif
+
 	public class LayoutUGUIRuntime : MonoBehaviour
 	{
 		public class UguiInfo
@@ -181,6 +188,7 @@ namespace XeSys.Gfx
 					{
 						Transform originParent = m_rectTrans.parent;
 						m_rectTrans.SetParent(m_rectTrans.parent.parent.parent, false);
+						SetRectTrans();
 						m_rectTrans.SetParent(originParent, true);
 						GetViewScale(m_view, ref m_scaleWork);
 						m_rectTrans.localScale = m_scaleWork;
@@ -277,7 +285,7 @@ namespace XeSys.Gfx
 				m_rectTrans.gameObject.SetActive(true);
 			}
 
-			// RVA: 0x1F03D10 Offset: 0x1F03D10 VA: 0x1F03D10 Slot: 4
+			// RVA: g Offset: 0x1F03D10 VA: 0x1F03D10 Slot: 4
 			public override void Update()
 			{
 				SetRectTrans();
@@ -481,7 +489,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x1F00A1C Offset: 0x1F00A1C VA: 0x1F00A1C
 		private IEnumerator LoadScriptableLayoutCoroutine()
 		{
-			UnityEngine.Debug.Log("Enter LoadScriptableLayoutCoroutine");
+			UnityEngine.Debug.Log("Enter LoadScriptableLayoutCoroutine "+m_layoutPath);
 			// private ResourceRequest <req>5__2; // 0x14
 			// private ScriptableLayout <scriptableLayout>5__3; // 0x18
 			// private int <i>5__4; // 0x1C
@@ -513,13 +521,13 @@ namespace XeSys.Gfx
 			if(scriptableLayout == null)
 			{
 				m_updater = this.LoadXmlLayout;
-				UnityEngine.Debug.Log("Exit LoadScriptableLayoutCoroutine");
+				UnityEngine.Debug.Log("Exit XML LoadScriptableLayoutCoroutine"+m_layoutPath);
 				yield break;
 			}
 			if(m_layout == null)
 			{
 				m_layout = new Layout();
-				if(m_layout.fontInfo == null)
+				if(m_layout.fontInfo == null)	
 				{
 					m_layout.fontInfo = new FontInfo();
 					m_layout.fontInfo.font = m_font;
@@ -535,12 +543,13 @@ namespace XeSys.Gfx
 			ConnectUguiInfo(scriptableLayout.ViewsCount);
 			m_updater = this.UpdatePreStart;
 
-			UnityEngine.Debug.Log("Exit LoadScriptableLayoutCoroutine");
+			UnityEngine.Debug.Log("Exit ScriptableLayout LoadScriptableLayoutCoroutine"+m_layoutPath);
 		}
 
 		// // RVA: 0x1F00AC8 Offset: 0x1F00AC8 VA: 0x1F00AC8
 		private void LoadXmlLayout()
 		{
+			UnityEngine.Debug.LogError(m_layoutPath+" "+m_animListPath+" "+m_layout);
 			if(!(m_layout == null && !string.IsNullOrEmpty(m_layoutPath)) && string.IsNullOrEmpty(m_animListPath))
 			{
 				ConnectUguiInfo();
@@ -548,6 +557,7 @@ namespace XeSys.Gfx
 			}
 			else
 			{
+				UnityEngine.Debug.LogError("Will load UV & Anims");
 				List<string> lstr = new List<string>(4);
 				if(m_layout == null && !string.IsNullOrEmpty(m_layoutPath))
 				{
@@ -605,6 +615,9 @@ namespace XeSys.Gfx
 				}
 				if(view == null)
 					continue;
+				#if UNITY_EDITOR
+				rt.gameObject.AddComponent<DebugLinkInfo>().LayoutId = view.ID;
+				#endif
 				if(rt.name.Contains("ScrollbarH") || rt.name.Contains("ScrollbarV"))
 				{
 					m_uguiList.Add(new UguiInfoScrollbar(view, rt as RectTransform));

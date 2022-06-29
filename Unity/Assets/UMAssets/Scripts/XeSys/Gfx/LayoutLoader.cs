@@ -50,11 +50,13 @@ namespace XeSys.Gfx
 				{
 					if(m_pathList[i].Contains("_animlist"))
 					{
+						UnityEngine.Debug.LogError("Will load anim "+m_pathList[i]+" on "+m_loader);
 						m_animLoader = new LayoutAnimationLoader();
 						m_animLoader.Load(m_loader, m_pathList[i], this.LoadedAnimation);
 					}
 					else
 					{
+						UnityEngine.Debug.LogError("Will load asset "+m_pathList[i]+" on "+m_loader);
 						m_loader.Load(m_pathList[i], this.LoadedFile);
 					}
 				}

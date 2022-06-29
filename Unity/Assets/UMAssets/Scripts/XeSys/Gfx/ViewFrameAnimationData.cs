@@ -81,7 +81,17 @@ namespace XeSys.Gfx
 		// public float SearchLabelFrame(string label) { }
 
 		// // RVA: 0x1EE9FD4 Offset: 0x1EE9FD4 VA: 0x1EE9FD4
-		// public float SearchLabelTime(string label) { }
+		public float SearchLabelTime(string label)
+		{
+			if(m_LabelIndex.ContainsKey(label))
+			{
+				return m_LabelList[m_LabelIndex[label]].Time;
+			}
+			else
+			{
+				return -1;
+			}
+		}
 
 		// // RVA: 0x1EEA0D4 Offset: 0x1EEA0D4 VA: 0x1EEA0D4
 		public bool SearchLabelTimePair(string label, float frameSec, out float start, out float end)

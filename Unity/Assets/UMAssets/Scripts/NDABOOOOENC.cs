@@ -12,7 +12,7 @@ public class NDABOOOOENC
 	private int FAGBLGODELF; // 0xC
 
 	public static NDABOOOOENC HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
-	// public bool LHGFPPIEKPJ { get; set; } // PFHHNKMGPGJ 0x1ADB760 DNPOLCNDBKH 0x1ADB768
+	public bool LHGFPPIEKPJ { get { return APEIJNFMEFG; } set { return; } } // PFHHNKMGPGJ 0x1ADB760 DNPOLCNDBKH 0x1ADB768
 
 	// // RVA: 0x1ADB76C Offset: 0x1ADB76C VA: 0x1ADB76C
 	public void IJBGPAENLJA()

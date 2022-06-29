@@ -59,9 +59,16 @@ public class BEEINMBNKNM_Encryption
 	// RVA: 0xC73C18 Offset: 0xC73C18 VA: 0xC73C18
 	private static /*extern*/ void FFPAGMCDALB(byte[] CDENCMNHNGA, byte[] DBBGALAPFGC, int NFHFALDMGGC)
 	{
-			//TODO
+			//TODO extract to lib file
 			// Decrypt xedec
-			UnityEngine.Debug.LogError("TODO");
+			uint offset = (uint)DBBGALAPFGC.Length;
+			for(int i = 0; i < DBBGALAPFGC.Length; i++)
+			{
+				uint val = (uint)((offset << 3)&0xffffffff);
+				offset = (uint)(val - offset);
+				offset++;
+				DBBGALAPFGC[i] = (byte)(DBBGALAPFGC[i] ^ CDENCMNHNGA[offset%1024]);
+			}
 	}
 
 	// RVA: 0xC73D28 Offset: 0xC73D28 VA: 0xC73D28

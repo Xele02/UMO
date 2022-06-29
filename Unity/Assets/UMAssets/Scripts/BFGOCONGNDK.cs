@@ -1,3 +1,6 @@
+using System.IO;
+using System;
+using System.Security.Cryptography;
 
 public class BFGOCONGNDK
 {
@@ -10,19 +13,45 @@ public class BFGOCONGNDK
 	public bool MBGHLLHFNHH; // 0x20
 
 	// // RVA: 0xC79E1C Offset: 0xC79E1C VA: 0xC79E1C
-	// private string HIOMFHINAAH() { }
+	private string HIOMFHINAAH()
+	{
+		return CJMOKHDNBNB.FIPFFELDIOG + "/sys/" + KCOGAGGCPBP.OGIALGFMODF; // 05
+	}
 
 	// // RVA: 0xC79EFC Offset: 0xC79EFC VA: 0xC79EFC
 	public static string NLMBMNKEINP(int KEFGPJBKAOD)
     {
-        UnityEngine.Debug.LogError("TODO");
-        return null;
+        return "ct/bg/tl/"+ KEFGPJBKAOD.ToString("D4") + ".xab";
     }
 
 	// // RVA: 0xC79F98 Offset: 0xC79F98 VA: 0xC79F98
 	public void PCODDPDFLHK()
     {
-        UnityEngine.Debug.LogError("TODO");
+		// Checking something ?
+		MBGHLLHFNHH = false;
+		string s = HIOMFHINAAH();
+		if(File.Exists(s))
+		{
+			byte[] data = File.ReadAllBytes(s);
+			if(data != null && data.Length > 15)
+			{
+				int header = BitConverter.ToInt32(data, 0);
+				if(header == 0xb4eb2)
+				{
+					int size = BitConverter.ToInt32(data, 8);
+					if(size == data.Length - 16)
+					{
+						if(size > 16)
+						{
+        					UnityEngine.Debug.LogWarning("TODO");
+						}
+					}
+				}
+			}
+		}
+
+        UnityEngine.Debug.LogWarning("TODO");
+		MBGHLLHFNHH = true;
     }
 
 	// // RVA: 0xC7A53C Offset: 0xC7A53C VA: 0xC7A53C
@@ -31,7 +60,31 @@ public class BFGOCONGNDK
 	// // RVA: 0xC7AF9C Offset: 0xC7AF9C VA: 0xC7AF9C
 	public bool DAONJOOCPFP(int ODJPFMGNDML)
     {
-        UnityEngine.Debug.LogError("TODO");
-        return false;
+        OENPCNBFPDA = ODJPFMGNDML; // Hack, force bg id since PCODDPDFLHK is not executed
+
+		if(OENPCNBFPDA == ODJPFMGNDML)
+		{
+			string fileBg = CJMOKHDNBNB.FIPFFELDIOG + "/data/android/" + NLMBMNKEINP(ODJPFMGNDML);
+			if(File.Exists(fileBg))
+			{
+				if(KEHOJEJMGLJ.HHCJCDFCLOB != null)
+				{
+					BEEINMBNKNM_Encryption decryptor = KEHOJEJMGLJ.HHCJCDFCLOB.GMLCCMEHNCI.MFHAOMELJKJ_FindDecryptor("/"+NLMBMNKEINP(ODJPFMGNDML));
+					if(decryptor != null)
+					{
+						MD5 md5 = MD5.Create();
+						FileStream f = File.OpenRead(fileBg);
+						byte[] hash = md5.ComputeHash(f);
+						UnityEngine.Debug.LogError("TODO end BG check hash");
+						return true;
+					}
+				}
+			}
+			else
+			{
+				UnityEngine.Debug.LogError("File missing : " + fileBg);
+			}
+		}
+		return false;
     }
 }

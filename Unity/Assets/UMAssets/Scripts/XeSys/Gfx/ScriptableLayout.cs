@@ -20,7 +20,6 @@ namespace XeSys.Gfx
 		// // RVA: 0x1EFA7B4 Offset: 0x1EFA7B4 VA: 0x1EFA7B4
 		public void Deserialize(Layout layout)
 		{
-			Debug.Log("Deserialize "+this.name);
 			if(serializableViews.Count < 1)
 				return;
 

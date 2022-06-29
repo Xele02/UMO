@@ -35,14 +35,17 @@ namespace XeSys.Gfx
 		// // RVA: 0x1EF7F68 Offset: 0x1EF7F68 VA: 0x1EF7F68
 		private bool LoadedList(FileResultObject fro)
 		{
+			UnityEngine.Debug.LogError("Anim loaded : "+fro.path+" error : "+fro.error);
 			string list;
 			if(fro.unityObject != null)
 			{
 				list = (fro.unityObject as TextAsset).text;
+				UnityEngine.Debug.LogError("Loading anim "+fro.path+" as text asset "+list);
 			}
 			else
 			{
 				list = Encoding.ASCII.GetString(fro.bytes);
+				UnityEngine.Debug.LogError("Loading anim "+fro.path+" as bytes asset "+list);
 			}
 			GenerateAnimationFileList(fro.path, list);
 			return true;

@@ -34,7 +34,18 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE36478 Offset: 0xE36478 VA: 0xE36478
 		public void Show()
 		{
-			UnityEngine.Debug.LogWarning("TODO LayoutTitleController Show");
+			if(Buttons != null)
+			{
+				Buttons.Show();
+			}
+			if(Screen != null)
+			{
+				Screen.Show();
+			}
+			if(LbButtons != null)
+			{
+				LbButtons.Show();
+			}
 		}
 
 		// // RVA: 0xE367F4 Offset: 0xE367F4 VA: 0xE367F4

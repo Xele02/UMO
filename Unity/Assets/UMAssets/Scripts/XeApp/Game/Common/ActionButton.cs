@@ -55,7 +55,11 @@ namespace XeApp.Game.Common
 		// RVA: 0xE5D884 Offset: 0xE5D884 VA: 0xE5D884 Slot: 11
 		protected override void Start()
 		{
-			UnityEngine.Debug.LogWarning("TODO ActionButton Start");
+			base.Start();
+			m_animEndCallBack = () => {
+				//0xE5F314
+				return;
+			};
 		}
 
 		// RVA: 0xE5DBBC Offset: 0xE5DBBC VA: 0xE5DBBC Slot: 12

@@ -37,7 +37,11 @@ namespace XeSys.Gfx
 		// private void UpdateParameter() { }
 
 		// // RVA: 0x1F10814 Offset: 0x1F10814 VA: 0x1F10814
-		// public static Vector3 ScreenToAppPosition(Vector3 screenPosition) { }
+		public static Vector3 ScreenToAppPosition(Vector3 screenPosition)
+		{
+			UnityEngine.Debug.LogWarning("TODO ScreenToAppPosition");
+			return screenPosition;
+		}
 
 		// // RVA: 0x1F10984 Offset: 0x1F10984 VA: 0x1F10984
 		// public static Vector3 AppToScreenPosition(Vector3 appPosi) { }

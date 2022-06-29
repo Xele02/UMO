@@ -77,6 +77,7 @@ namespace XeApp.Core
 					}, 
 					(FileResultObject fo) => {
 						//0x1D6AEDC
+						UnityEngine.Debug.LogError("Load Assetbundle Failed:"+assetBundleName);
 						m_lodingErrors[assetBundleName] = "Load Assetbundle Failed:"+assetBundleName;
 						m_lodingAssetBundle.Remove(assetBundleName);
 						fo.dispose = true;
@@ -102,8 +103,10 @@ namespace XeApp.Core
 		// // RVA: 0xE12AA8 Offset: 0xE12AA8 VA: 0xE12AA8
 		public static AssetBundleLoadAssetOperation LoadAssetAsync(string assetBundleName, string assetName, Type type)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return null;
+			LoadAssetBundle(assetBundleName, false);
+			AssetBundleLoadAssetOperationFull operation = new AssetBundleLoadAssetOperationFull(assetBundleName, assetName, type);
+			m_InProgressOperations.Add(operation);
+			return operation;
 		}
 
 		// // RVA: 0xE12BA8 Offset: 0xE12BA8 VA: 0xE12BA8
@@ -128,7 +131,32 @@ namespace XeApp.Core
 		// public static AssetBundleLoadUGUIOperationBase LoadUGUIAsync(string assetBundleName, string prefabName) { }
 
 		// // RVA: 0xE0F2E0 Offset: 0xE0F2E0 VA: 0xE0F2E0
-		// public static LoadedAssetBundle GetLoadedAssetBundle(string assetBundleName, out string error) { }
+		public static LoadedAssetBundle GetLoadedAssetBundle(string assetBundleName, out string error)
+		{
+			if(!m_lodingErrors.TryGetValue(assetBundleName, out error))
+			{
+				LoadedAssetBundle bundle = null;
+				m_LoadedAssetBundles.TryGetValue(assetBundleName, out bundle);
+				if(bundle != null)
+				{
+					string[] deps = null;
+					m_Dependencies.TryGetValue(assetBundleName, out deps);
+					if(deps == null)
+						return bundle;
+					for(int i = 0; i < deps.Length; i++)
+					{
+						if(m_lodingErrors.TryGetValue(deps[i], out error))
+							return bundle;
+						LoadedAssetBundle depBundle = null;
+						m_LoadedAssetBundles.TryGetValue(deps[i], out depBundle);
+						if(depBundle == null)
+							return null;
+					}
+					return bundle;
+				}
+			}
+			return null;
+		}
 
 		// // RVA: 0xE13060 Offset: 0xE13060 VA: 0xE13060
 		// public static string MakeAssetBundlePath(string assetBundleName) { }
@@ -139,7 +167,7 @@ namespace XeApp.Core
 		// // RVA: 0xE131E4 Offset: 0xE131E4 VA: 0xE131E4
 		public static void UnloadAssetBundle(string assetBundleName, bool unloadAllLoadedObject = false)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnloadAssetBundleInternal(assetBundleName, unloadAllLoadedObject);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x747C54 Offset: 0x747C54 VA: 0x747C54
@@ -151,7 +179,20 @@ namespace XeApp.Core
 		// protected static void UnloadDependencies(string assetBundleName) { }
 
 		// // RVA: 0xE1326C Offset: 0xE1326C VA: 0xE1326C
-		// protected static void UnloadAssetBundleInternal(string assetBundleName, bool unloadAllLoadedObject = False) { }
+		protected static void UnloadAssetBundleInternal(string assetBundleName, bool unloadAllLoadedObject = false)
+		{
+			string error;
+			LoadedAssetBundle info = GetLoadedAssetBundle(assetBundleName, out error);
+			if(info != null)
+			{
+				info.m_ReferencedCount -= 1;
+				if(info.m_ReferencedCount == 0)
+				{
+					info.m_AssetBundle.Unload(unloadAllLoadedObject);
+					m_LoadedAssetBundles.Remove(assetBundleName);
+				}
+			}
+		}
 
 		// // RVA: 0xE135EC Offset: 0xE135EC VA: 0xE135EC
 		private void Update()
