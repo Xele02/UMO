@@ -585,7 +585,12 @@ namespace XeApp.Game
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADC18 Offset: 0x6ADC18 VA: 0x6ADC18
 		// // RVA: 0x99F6C8 Offset: 0x99F6C8 VA: 0x99F6C8
-		// public IEnumerator Co_CacheAppResources() { }
+		public IEnumerator Co_CacheAppResources()
+		{
+			UnityEngine.Debug.LogError("TODO Co_CacheAppResources");
+			IsCacheActive = true;
+			yield break;
+		}
 
 		// // RVA: 0x99B318 Offset: 0x99B318 VA: 0x99B318
 		private void SetupAssetBundleBasePath()

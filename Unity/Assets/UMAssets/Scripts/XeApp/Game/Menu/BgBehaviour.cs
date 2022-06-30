@@ -208,7 +208,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14374E4 Offset: 0x14374E4 VA: 0x14374E4
-		// public void SetHome(bool isBgDark) { }
+		public void SetHome(bool isBgDark)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1437E00 Offset: 0x1437E00 VA: 0x1437E00
 		// public void SetHomeScene(bool isBgDark) { }
@@ -274,7 +277,10 @@ namespace XeApp.Game.Menu
 		// public void SetRaid() { }
 
 		// // RVA: 0x1437A4C Offset: 0x1437A4C VA: 0x1437A4C
-		// public void ResetBgImageRectSize(bool isPlate) { }
+		public void ResetBgImageRectSize(bool isPlate)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 
 		// // RVA: 0x1436C04 Offset: 0x1436C04 VA: 0x1436C04
 		public void ChangeAttribute(GameAttribute.Type attr)

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 using System;
 using UnityEngine.Events;
+using System.Collections;
+using XeApp.Core;
 
 namespace XeApp.Game.Menu
 {
@@ -280,7 +282,7 @@ namespace XeApp.Game.Menu
 			private MenuHeaderControl m_titleBarControl; // 0x1C
 			private GameObject m_uiRootObject; // 0x20
 			private Font m_font; // 0x24
-			// private HelpButton m_helpButton; // 0x28
+			private HelpButton m_helpButton; // 0x28
 			// private SceneStack m_transitionStack = new SceneStack(); // 0x2C
 			// private TransitionRoot m_currentRoot; // 0x30
 			// private TransitionInfo m_current = new TransitionInfo(); // 0x34
@@ -293,12 +295,6 @@ namespace XeApp.Game.Menu
 			// private Dictionary<SceneGroupCategory, MenuButtonAnim.ButtonType> m_groupCategoryButtonTypeMap = new Dictionary<SceneGroupCategory, MenuButtonAnim.ButtonType>() {
 			//	{ 2, 0 }, { 3, 1}, {4, 0}, {19, 2}, { 5, 3}, { 6, 4}, { 7, 6 }, { 10, 5 }, { 11, 3 }, { 9, 3 }, {12, 3 }, { 18, 3}
 			//}; // 0x48
-			// [CompilerGeneratedAttribute] // RVA: 0x66A020 Offset: 0x66A020 VA: 0x66A020
-			// private bool <DirtyChangeScene>k__BackingField; // 0x4C
-			// [CompilerGeneratedAttribute] // RVA: 0x66A030 Offset: 0x66A030 VA: 0x66A030
-			// private bool <IsTransition>k__BackingField; // 0x4D
-			// [CompilerGeneratedAttribute] // RVA: 0x66A040 Offset: 0x66A040 VA: 0x66A040
-			// private bool <StopTransition>k__BackingField; // 0x4E
 			// private List<NewMarkIcon> m_newMarkIconList = new List<NewMarkIcon>(32); // 0x50
 			// [CompilerGeneratedAttribute] // RVA: 0x66A050 Offset: 0x66A050 VA: 0x66A050
 			public UnityAction<SceneGroupCategory, SceneGroupCategory> ChangeGroupCategoryListener; // 0x54
@@ -392,50 +388,14 @@ namespace XeApp.Game.Menu
 			// 	{ 11, new CacheCategory() { m_category = 11, m_sceneName = new TransitionList.Type[2] { 87, 87 } } }
 			// }; // 0x70
 
-			// // Properties
-			// public bool DirtyChangeScene { get; set; }
-			// public bool IsTransition { get; set; }
-			// public bool StopTransition { get; set; }
-			// public MenuHeaderControl MenuHeader { get; }
-			// public MenuFooterControl MenuFooter { get; }
-			// public HelpButton HelpButton { get; }
-			// private List<TransitionTreeObject.SceneRoot> SceneDirectory { get; }
-			// public BgControl bgControl { get; }
-
-			// // Methods
-
-			// [CompilerGeneratedAttribute] // RVA: 0x6C8AEC Offset: 0x6C8AEC VA: 0x6C8AEC
-			// // RVA: 0xA31458 Offset: 0xA31458 VA: 0xA31458
-			// public bool get_DirtyChangeScene() { }
-
-			// [CompilerGeneratedAttribute] // RVA: 0x6C8AFC Offset: 0x6C8AFC VA: 0x6C8AFC
-			// // RVA: 0xA31460 Offset: 0xA31460 VA: 0xA31460
-			// private void set_DirtyChangeScene(bool value) { }
-
-			// [CompilerGeneratedAttribute] // RVA: 0x6C8B0C Offset: 0x6C8B0C VA: 0x6C8B0C
-			// // RVA: 0xA31468 Offset: 0xA31468 VA: 0xA31468
-			// public bool get_IsTransition() { }
-
-			// [CompilerGeneratedAttribute] // RVA: 0x6C8B1C Offset: 0x6C8B1C VA: 0x6C8B1C
-			// // RVA: 0xA31470 Offset: 0xA31470 VA: 0xA31470
-			// private void set_IsTransition(bool value) { }
-
-			// [CompilerGeneratedAttribute] // RVA: 0x6C8B2C Offset: 0x6C8B2C VA: 0x6C8B2C
-			// // RVA: 0xA31478 Offset: 0xA31478 VA: 0xA31478
-			// public bool get_StopTransition() { }
-
-			// [CompilerGeneratedAttribute] // RVA: 0x6C8B3C Offset: 0x6C8B3C VA: 0x6C8B3C
-			// // RVA: 0xA31480 Offset: 0xA31480 VA: 0xA31480
-			// public void set_StopTransition(bool value) { }
-
-			// // RVA: 0xA31488 Offset: 0xA31488 VA: 0xA31488
-			// public MenuHeaderControl get_MenuHeader() { }
-
-			// // RVA: 0xA31490 Offset: 0xA31490 VA: 0xA31490
-			// public MenuFooterControl get_MenuFooter() { }
-
-			// // RVA: 0xA31498 Offset: 0xA31498 VA: 0xA31498
-			// public HelpButton get_HelpButton() { }
+			public bool DirtyChangeScene { get; private set; } // 0x4C
+			// public bool IsTransition { get; private set; } // 0x4D
+			// public bool StopTransition { get; set; } // 0x4E
+			// public MenuHeaderControl MenuHeader { get; } 0xA31488
+			public MenuFooterControl MenuFooter { get { return m_menuBarControl; } } //0xA31490
+			public HelpButton HelpButton { get { return m_helpButton; } }// 0xA31498
+			// private List<TransitionTreeObject.SceneRoot> SceneDirectory { get; } 0xA316B8
+			// public BgControl bgControl { get; } 0xA399F8
 
 			// [CompilerGeneratedAttribute] // RVA: 0x6C8B4C Offset: 0x6C8B4C VA: 0x6C8B4C
 			// // RVA: 0xA314A0 Offset: 0xA314A0 VA: 0xA314A0
@@ -444,9 +404,6 @@ namespace XeApp.Game.Menu
 			// [CompilerGeneratedAttribute] // RVA: 0x6C8B5C Offset: 0x6C8B5C VA: 0x6C8B5C
 			// // RVA: 0xA315AC Offset: 0xA315AC VA: 0xA315AC
 			// public void remove_ChangeGroupCategoryListener(UnityAction<SceneGroupCategory, SceneGroupCategory> value) { }
-
-			// // RVA: 0xA316B8 Offset: 0xA316B8 VA: 0xA316B8
-			// private List<TransitionTreeObject.SceneRoot> get_SceneDirectory() { }
 
 			// // RVA: 0xA316E4 Offset: 0xA316E4 VA: 0xA316E4
 			public MenuTransitionControl(GameObject bgRoot, GameObject uiRoot, Font font, TransitionTreeObject tto)
@@ -486,9 +443,6 @@ namespace XeApp.Game.Menu
 			// // RVA: 0xA399CC Offset: 0xA399CC VA: 0xA399CC
 			// public GameObject GetCurrentBg() { }
 
-			// // RVA: 0xA399F8 Offset: 0xA399F8 VA: 0xA399F8
-			// public BgControl get_bgControl() { }
-
 			// // RVA: 0xA39A00 Offset: 0xA39A00 VA: 0xA39A00
 			// public TransitionInfo GetCurrentScene() { }
 
@@ -509,14 +463,67 @@ namespace XeApp.Game.Menu
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8B6C Offset: 0x6C8B6C VA: 0x6C8B6C
 			// // RVA: 0xA39B1C Offset: 0xA39B1C VA: 0xA39B1C
-			// public IEnumerator Initialize(MonoBehaviour mb, UnityAction action) { }
+			public IEnumerator Initialize(MonoBehaviour mb, UnityAction action)
+			{
+				//0xA410DC
+				int loadCount = 0;
+				mb.StartCoroutine(m_bgControl.Load(() => {
+					//0xA3D740
+					loadCount++;
+				}));
+				mb.StartCoroutine(m_menuBarControl.Load(m_font, () => {
+					//0xA3D750
+					loadCount++;
+				}));
+				mb.StartCoroutine(m_titleBarControl.Load(mb, m_font, () => {
+					//0xA3D760
+					loadCount++;
+				}));
+				mb.StartCoroutine(Co_LoadHelpButton(() => {
+					//0xA3D770
+					loadCount++;
+				}));
+				SetupPrefabSwitchTable();
+				while(loadCount < 4)
+					yield return null;
+				if(action != null)
+				{
+					action();
+				}
+			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8BE4 Offset: 0x6C8BE4 VA: 0x6C8BE4
 			// // RVA: 0xA39BFC Offset: 0xA39BFC VA: 0xA39BFC
-			// private IEnumerator Co_LoadHelpButton(UnityAction finish) { }
+			private IEnumerator Co_LoadHelpButton(UnityAction finish)
+			{
+				//0xA4067C
+				AssetBundleLoadLayoutOperationBase op = AssetBundleManager.LoadLayoutAsync("ly/092.xab", "roo_cmn_help_question_btn_layout_root");
+				yield return op;
+				yield return op.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+					//0xA3D408;
+					instance.transform.SetParent(m_uiRootObject.transform, false);
+					m_helpButton = instance.GetComponent<HelpButton>();
+				});
+				if(finish != null)
+					finish();
+				AssetBundleManager.UnloadAssetBundle("ly/092.xab");
+			}
 
 			// // RVA: 0xA39CC4 Offset: 0xA39CC4 VA: 0xA39CC4
-			// private void SetupPrefabSwitchTable() { }
+			private void SetupPrefabSwitchTable()
+			{
+				prefabSwitchTable.Clear();
+				PEBFNABDJDI p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.GDEKCOOBLMA;
+				for(int i = 0; i < assetBundleNames.Length; i++)
+				{
+					if(p.LMBIOEDHNHB.ContainsKey(assetBundleNames[i].prefabName))
+					{
+						BIJMLAPNMAB b = p.LMBIOEDHNHB[assetBundleNames[i].prefabName];
+						PrefabSwitchInfo info = new PrefabSwitchInfo((TransitionList.Type)i, b.AEMLILCNODL, b.OIPCKOBNHJL);
+						prefabSwitchTable.Add(info);
+					}
+				}
+			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8C5C Offset: 0x6C8C5C VA: 0x6C8C5C
 			// // RVA: 0xA3A010 Offset: 0xA3A010 VA: 0xA3A010
@@ -584,7 +591,10 @@ namespace XeApp.Game.Menu
 			// public void SetHelpButtonDisable() { }
 
 			// // RVA: 0xA3B5A8 Offset: 0xA3B5A8 VA: 0xA3B5A8
-			// public void ApplyPlayerStatus(IFBCGCCJBHI playerStatus) { }
+			public void ApplyPlayerStatus(IFBCGCCJBHI playerStatus)
+			{
+				m_titleBarControl.ApplyPlayerStatus(playerStatus);
+			}
 
 			// // RVA: 0xA3B5DC Offset: 0xA3B5DC VA: 0xA3B5DC
 			// public void SaveRequest() { }
@@ -617,10 +627,6 @@ namespace XeApp.Game.Menu
 				UnityEngine.Debug.LogError("TODO");
 				return false;
 			}
-
-			// [CompilerGeneratedAttribute] // RVA: 0x6C8EB4 Offset: 0x6C8EB4 VA: 0x6C8EB4
-			// // RVA: 0xA3D408 Offset: 0xA3D408 VA: 0xA3D408
-			// private void <Co_LoadHelpButton>b__72_0(GameObject instance) { }
 		}
 
 		public const float FADE_TIME = 0.1f;

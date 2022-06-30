@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using XeSys;
 using System.Collections;
 using XeApp.Game.Common;
+using UnityEngine.Events;
 
 namespace XeApp.Game.Menu
 {
@@ -81,7 +82,7 @@ namespace XeApp.Game.Menu
 		private StatusWindowControl m_statusWindowControl; // 0x50
 		private SortWindowControl m_sortWindowControl; // 0x54
 		private PopupFilterSortWindowControl m_popupFilterSortWindowContrl; // 0x58
-		// private IFBCGCCJBHI m_playerStatusData; // 0x5C
+		private IFBCGCCJBHI m_playerStatusData; // 0x5C
 		private UnitPopupWindowControl m_unitSaveWindowControl; // 0x60
 		private MusicPopupWindowControl m_musicPopupWindowControl; // 0x64
 		private HelpPopupWindowControl m_helpPopupWindowControl; // 0x68
@@ -128,7 +129,7 @@ namespace XeApp.Game.Menu
 		// public BgControl BgControl { get; } 0xB2E654
 		// public MenuHeaderControl HeaderMenu { get; } 0xB2E680
 		// public MenuFooterControl FooterMenu { get; } 0xB2E6AC
-		// public HelpButton HelpButton { get; } 0xB2E6D8
+		public HelpButton HelpButton { get { return m_menuTransitionControl.HelpButton; } } //0xB2E6D8
 		// public bool DirtyChangeScene { get; } 0xB2E704
 		// public HomeLobbyButtonController LobbyButtonControl { get; } 0xB2E730
 		// public FlexibleLayoutCamera FlexibleLayoutCamera { get; } 0xB2E738
@@ -202,7 +203,16 @@ namespace XeApp.Game.Menu
 					return false;
 				MenuUpdater.updater = () => {
 					//0xB37CC8
-					UnityEngine.Debug.LogError("TODO");
+					if(m_menuTransitionControl.DirtyChangeScene && m_isInTransition)
+					{
+						Debug.Log("transition requested but in transition");
+					}
+					if(m_menuTransitionControl.DirtyChangeScene && !m_isInTransition)
+					{
+						StartCoroutine(ChangeTransitionCoroutine());
+						m_playerStatusData.FBANBDCOEJL();
+						m_menuTransitionControl.ApplyPlayerStatus(m_playerStatusData);
+					}
 				};
 				return true;
 			}
@@ -229,7 +239,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7834 Offset: 0x6C7834 VA: 0x6C7834
 		// // RVA: 0xB30940 Offset: 0xB30940 VA: 0xB30940
-		// private IEnumerator ChangeTransitionCoroutine() { }
+		private IEnumerator ChangeTransitionCoroutine()
+		{
+			UnityEngine.Debug.LogError("TODO");
+			yield break;
+		}
 
 		// // RVA: 0xB309EC Offset: 0xB309EC VA: 0xB309EC
 		public void OnDestroy()
@@ -241,17 +255,83 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30570 Offset: 0xB30570 VA: 0xB30570
 		private IEnumerator InitializeCoroutine()
 		{
+			//0xB3C09C
+			m_isInitializeing = true;
+			m_isSceneEnter = true;
+			bool isWait = true;
+
+			StartCoroutine(CoroutineDivaModel(() => {
+				//0xB38588
+				isWait = false;
+			}));
+			yield return StartCoroutine(CoroutineSystemResource());
+
 			UnityEngine.Debug.LogError("TODO");
 			yield break;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7924 Offset: 0x6C7924 VA: 0x6C7924
 		// // RVA: 0xB30B5C Offset: 0xB30B5C VA: 0xB30B5C
-		// private IEnumerator CoroutineSystemResource() { }
+		private IEnumerator CoroutineSystemResource()
+		{
+			// // RVA:  Offset: 0xB385DC VA: 0xB385DC
+			// internal void <CoroutineSystemResource>b__4() { }
+			
+			//0xB39FF8
+			int reqCount = 0;
+			int loadCount = 0;
+			StartCoroutine(m_menuTransitionControl.Initialize(this, () => {
+				//0xB3859C
+				loadCount++;
+			}));
+			reqCount++;
+			StartCoroutine(m_statusWindowControl.Initialize(gameObject, () => {
+				//0xB385AC
+				loadCount++;
+			}));
+			reqCount++;
+			StartCoroutine(m_sortWindowControl.Initialize(gameObject, () => {
+				//0xB385BC
+				loadCount++;
+			}));
+			reqCount++;
+			StartCoroutine(m_popupFilterSortWindowContrl.Initialize(gameObject, () => {
+				//0xB385CC
+				loadCount++;
+			}));
+			reqCount++;
+			StartCoroutine(m_unitSaveWindowControl.Initialize(gameObject, () => {
+				//0xB385DC
+				loadCount++;
+			}));
+			reqCount++;
+			StartCoroutine(GameManager.Instance.Co_CacheAppResources());
+			while(!GameManager.Instance.IsCacheActive)
+				yield return null;
+			while(loadCount != reqCount)
+				yield return null;
+			HelpButton.HelpButtonListener += this.OnShowHelpPopup;
+			m_menuTransitionControl.MenuFooter.Initialize();
+			if(!GameManager.Instance.IsTutorial)
+			{
+				StartCoroutine(m_lobbyButtonControl.Co_LoadLayout(m_uiRootObject));
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C799C Offset: 0x6C799C VA: 0x6C799C
 		// // RVA: 0xB30C08 Offset: 0xB30C08 VA: 0xB30C08
-		// private IEnumerator CoroutineDivaModel(UnityAction finish) { }
+		private IEnumerator CoroutineDivaModel(UnityAction finish)
+		{
+			// private DivaResource.MenuFacialType <divaFacialType>5__2; // 0x18
+			// private int <divaId>5__3; // 0x1C
+			// private int <modelId>5__4; // 0x20
+			// private int <colorId>5__5; // 0x24
+			// private bool <isResult>5__6; // 0x28
+			//0xB3980C
+			UnityEngine.Debug.LogError("TODO");
+			finish();
+			yield break;
+		}
 
 		// // RVA: 0xB30CD0 Offset: 0xB30CD0 VA: 0xB30CD0
 		// public void SetActiveDivaModel(bool active, bool isIdle = True) { }
@@ -556,7 +636,10 @@ namespace XeApp.Game.Menu
 		// public static void RemainDivaOneTime() { }
 
 		// // RVA: 0xB3703C Offset: 0xB3703C VA: 0xB3703C
-		// private void OnShowHelpPopup(int id, int eventHelpId) { }
+		private void OnShowHelpPopup(int id, int eventHelpId)
+		{
+			UnityEngine.Debug.LogError("TODO OnShowHelpPopup");
+		}
 
 		// // RVA: 0xB372CC Offset: 0xB372CC VA: 0xB372CC
 		// private void OnBackButton() { }

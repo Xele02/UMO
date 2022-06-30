@@ -125,7 +125,13 @@ namespace XeApp.Core
 		}
 
 		// // RVA: 0xE12E78 Offset: 0xE12E78 VA: 0xE12E78
-		// public static AssetBundleLoadLayoutOperationBase LoadLayoutAsync(string assetBundleName, string prefabName) { }
+		public static AssetBundleLoadLayoutOperationBase LoadLayoutAsync(string assetBundleName, string prefabName)
+		{
+			LoadAssetBundle(assetBundleName, false);
+			AssetBundleLoadLayoutOperationBase operation = new AssetBundleLoadLayoutOperation(assetBundleName, prefabName);
+			m_InProgressOperations.Add(operation);
+			return operation;
+		}
 
 		// // RVA: 0xE12F6C Offset: 0xE12F6C VA: 0xE12F6C
 		// public static AssetBundleLoadUGUIOperationBase LoadUGUIAsync(string assetBundleName, string prefabName) { }
