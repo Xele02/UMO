@@ -38,7 +38,10 @@ namespace XeApp.Game.Tutorial
 		// public static void Log(OAGBCBBHMPF.OGBCFNIKAFI step) { }
 
 		// // RVA: 0xE3DB08 Offset: 0xE3DB08 VA: 0xE3DB08
-		// public static void TutorialAfterFirstLoginBonus() { }
+		public static void TutorialAfterFirstLoginBonus()
+		{
+			UnityEngine.Debug.LogWarning("TODO TutorialAfterFirstLoginBonus");
+		}
 
 		// // RVA: 0xE3DD1C Offset: 0xE3DD1C VA: 0xE3DD1C
 		// public static void TutorialAfterFirstHome() { }

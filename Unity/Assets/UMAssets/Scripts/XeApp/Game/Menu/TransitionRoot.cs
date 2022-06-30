@@ -612,8 +612,8 @@ namespace XeApp.Game.Menu
 					{
 						AssetBundleManager.UnloadAssetBundle(assetBundleNames[key].bundlePath);
 					}
-					m_instanceCacheDict[key].OnDeleteCache();
-					UnityEngine.Object.Destroy(m_instanceCacheDict[key].gameObject);
+					m_instanceCacheDict.GetValue(key).OnDeleteCache();
+					UnityEngine.Object.Destroy(m_instanceCacheDict.GetValue(key).gameObject);
 				}
 				m_instanceCacheDict.Clear();
 				yield break;
@@ -675,7 +675,7 @@ namespace XeApp.Game.Menu
 				root.transform.SetParent(m_uiRootObject.transform, false);
 				root.gameObject.SetActive(false);
 				m_instanceCacheDict.Add((int)transitionName, root);
-				UnityEngine.Debug.Log("Exit RegisterCache");
+				UnityEngine.Debug.Log("Exit RegisterCache "+transitionName);
 			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8D4C Offset: 0x6C8D4C VA: 0x6C8D4C
@@ -855,7 +855,7 @@ namespace XeApp.Game.Menu
 				{
 					yield return RegisterCache(SceneCacheCategory.TITLE, m_next.name);
 					// to 11
-					m_currentRoot = m_instanceCacheDict[(int)m_next.name];
+					m_currentRoot = m_instanceCacheDict.GetValue((int)m_next.name);
 				}
 				m_currentRoot.Args = m_next.args;
 				m_currentRoot.ArgsReturn = m_next.args_return;

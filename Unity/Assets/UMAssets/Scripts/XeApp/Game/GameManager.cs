@@ -950,7 +950,10 @@ namespace XeApp.Game
 		// public void CreateViewPlayerData() { }
 
 		// // RVA: 0x98874C Offset: 0x98874C VA: 0x98874C
-		// public void ResetViewPlayerData() { }
+		public void ResetViewPlayerData()
+		{
+			UnityEngine.Debug.LogError("TODO ResetViewPlayerData");
+		}
 
 		// // RVA: 0x9A0DF8 Offset: 0x9A0DF8 VA: 0x9A0DF8
 		// public void DeleteViewPlayerData() { }
