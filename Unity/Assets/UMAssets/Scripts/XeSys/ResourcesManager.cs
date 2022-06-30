@@ -138,15 +138,20 @@ namespace XeSys
 		// // RVA: 0x239BBB8 Offset: 0x239BBB8 VA: 0x239BBB8 Slot: 4
 		public int Load(string path, FileLoadedPostProcess callback)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return -1;
+			Load(path, callback, null, 0);
+			return 0;
 		}
 
 		// // RVA: 0x239BBE0 Offset: 0x239BBE0 VA: 0x239BBE0 Slot: 5
 		public int Load(string path, FileLoadedPostProcess callback, Dictionary<string, string> args, int argValue)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return -1;
+			Request(path, callback, args, argValue);
+			isLoading = true;
+			if(m_delayLoad == null)
+			{
+				m_delayLoad = DelayLoad();
+			}
+			return 0;
 		}
 
 		// // RVA: 0x239BC2C Offset: 0x239BC2C VA: 0x239BC2C

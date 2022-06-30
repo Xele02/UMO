@@ -78,7 +78,7 @@ namespace XeApp.Game.Menu
 		private const string RaidBgTextureBundlePath = "ct/bg/rd/";
 		private const string LobbyMainBgTextureBundlePath = "ct/bg/lb/";
 		private BgControl.LimitedHomeBg m_limitedHomeBg = new LimitedHomeBg(); // 0x48
-		// private StoryBgParam storyBgParam; // 0x4C
+		private StoryBgParam storyBgParam; // 0x4C
 		private bool storyBgLoading; // 0x58
 
 		// public BgControl.LimitedHomeBg limitedHomeBg { get; private set; } 0x143CA14 0x143CA1C
@@ -97,7 +97,10 @@ namespace XeApp.Game.Menu
 		// public GameObject GetCurrent() { }
 
 		// // RVA: 0x143CBC0 Offset: 0x143CBC0 VA: 0x143CBC0
-		// public BgType GetCurrentType() { }
+		public BgType GetCurrentType()
+		{
+			return m_type;
+		}
 
 		// // RVA: 0x143CBC8 Offset: 0x143CBC8 VA: 0x143CBC8
 		// public BgTextureType GetCurrentTextureType() { }
@@ -106,7 +109,10 @@ namespace XeApp.Game.Menu
 		// public int GetCurrentId() { }
 
 		// // RVA: 0x143CBD8 Offset: 0x143CBD8 VA: 0x143CBD8
-		// public GameAttribute.Type GetCurrentAttr() { }
+		public GameAttribute.Type GetCurrentAttr()
+		{
+			return m_attr;
+		}
 
 		// // RVA: 0x143CBE0 Offset: 0x143CBE0 VA: 0x143CBE0
 		// public bool GetBgIsFade() { }
@@ -146,7 +152,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C59E0 Offset: 0x6C59E0 VA: 0x6C59E0
 		// // RVA: 0x143D36C Offset: 0x143D36C VA: 0x143D36C
-		// public IEnumerator ChangeBgCoroutine(BgType bgType, int id = -1, SceneGroupCategory category = -1, TransitionList.Type transitionType = -2, int attribute = -1) { }
+		public IEnumerator ChangeBgCoroutine(BgType bgType, int id = -1, SceneGroupCategory category = SceneGroupCategory.UNDEFINED, TransitionList.Type transitionType = TransitionList.Type.UNDEFINED, int attribute = -1)
+		{
+			UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine");
+			yield return null;
+		}
 
 		// // RVA: 0x143D498 Offset: 0x143D498 VA: 0x143D498
 		// public void ShowBgDark() { }
@@ -166,7 +176,10 @@ namespace XeApp.Game.Menu
 		// public void DeleteLimitedBG() { }
 
 		// // RVA: 0x143D874 Offset: 0x143D874 VA: 0x143D874
-		// public void ReserveFade(float time, Color color) { }
+		public void ReserveFade(float time, Color color)
+		{
+			UnityEngine.Debug.LogError("TODO BG ReserveFade");
+		}
 
 		// // RVA: 0x143D89C Offset: 0x143D89C VA: 0x143D89C
 		// private int GetDefaultHomeBg() { }
@@ -244,7 +257,12 @@ namespace XeApp.Game.Menu
 		// public void SetStoryParam(StoryBgParam param) { }
 
 		// // RVA: 0x143EA78 Offset: 0x143EA78 VA: 0x143EA78
-		// public StoryBgParam OutputStoryBgParam(bool isStory) { }
+		public StoryBgParam OutputStoryBgParam(bool isStory)
+		{
+			storyBgParam.isCategoryStory = isStory;
+			storyBgParam.x = m_bgBehaviour.storyBgScrollRect.content.anchoredPosition.x;
+			return storyBgParam;
+		}
 
 		// // RVA: 0x143EB70 Offset: 0x143EB70 VA: 0x143EB70
 		// public void StorytBgReturn() { }

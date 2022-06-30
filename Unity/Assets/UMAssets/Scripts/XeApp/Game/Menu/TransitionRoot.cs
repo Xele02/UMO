@@ -6,6 +6,8 @@ using System;
 using UnityEngine.Events;
 using System.Collections;
 using XeApp.Core;
+using XeSys;
+using XeApp.Game.Tutorial;
 
 namespace XeApp.Game.Menu
 {
@@ -283,26 +285,47 @@ namespace XeApp.Game.Menu
 			private GameObject m_uiRootObject; // 0x20
 			private Font m_font; // 0x24
 			private HelpButton m_helpButton; // 0x28
-			// private SceneStack m_transitionStack = new SceneStack(); // 0x2C
-			// private TransitionRoot m_currentRoot; // 0x30
-			// private TransitionInfo m_current = new TransitionInfo(); // 0x34
-			// private TransitionInfo m_next; // 0x38
-			// private TransitionRoot.MenuTransitionControl.TransitionType m_transitionType; // 0x3C
-			// private bool m_isRequestSave; // 0x40
-			// private bool m_remainDivaOneTimeFlag; // 0x41
+			private SceneStack m_transitionStack = new SceneStack(); // 0x2C
+			private TransitionRoot m_currentRoot; // 0x30
+			private TransitionInfo m_current = new TransitionInfo(); // 0x34
+			private TransitionInfo m_next; // 0x38
+			private TransitionRoot.MenuTransitionControl.TransitionType m_transitionType; // 0x3C
+			private bool m_isRequestSave; // 0x40
+			private bool m_remainDivaOneTimeFlag; // 0x41
 			// private bool m_isStoryNewIconCashe; // 0x42
-			// private IndexableDictionary<int, TransitionRoot> m_instanceCacheDict = new IndexableDictionary<int, TransitionRoot>(0); // 0x44
-			// private Dictionary<SceneGroupCategory, MenuButtonAnim.ButtonType> m_groupCategoryButtonTypeMap = new Dictionary<SceneGroupCategory, MenuButtonAnim.ButtonType>() {
-			//	{ 2, 0 }, { 3, 1}, {4, 0}, {19, 2}, { 5, 3}, { 6, 4}, { 7, 6 }, { 10, 5 }, { 11, 3 }, { 9, 3 }, {12, 3 }, { 18, 3}
-			//}; // 0x48
-			// private List<NewMarkIcon> m_newMarkIconList = new List<NewMarkIcon>(32); // 0x50
+			private IndexableDictionary<int, TransitionRoot> m_instanceCacheDict = new IndexableDictionary<int, TransitionRoot>(0); // 0x44
+			private Dictionary<SceneGroupCategory, MenuButtonAnim.ButtonType> m_groupCategoryButtonTypeMap = new Dictionary<SceneGroupCategory, MenuButtonAnim.ButtonType>() {
+				{ SceneGroupCategory.CONTINUATION, MenuButtonAnim.ButtonType.HOME }, 
+				{ SceneGroupCategory.FORMATION, MenuButtonAnim.ButtonType.SETTING}, 
+				{ SceneGroupCategory.STORY, MenuButtonAnim.ButtonType.HOME}, 
+				{ SceneGroupCategory.VOP, MenuButtonAnim.ButtonType.VOP}, 
+				{ SceneGroupCategory.FREE, MenuButtonAnim.ButtonType.LIVE}, 
+				{ SceneGroupCategory.GACHA, MenuButtonAnim.ButtonType.GACHA}, 
+				{ SceneGroupCategory.OPTION, MenuButtonAnim.ButtonType.MENU }, 
+				{ SceneGroupCategory.QUEST, MenuButtonAnim.ButtonType.QUEST }, 
+				{ SceneGroupCategory.EVENT_QUEST, MenuButtonAnim.ButtonType.LIVE }, 
+				{ SceneGroupCategory.EVENT_MUISC, MenuButtonAnim.ButtonType.LIVE }, 
+				{ SceneGroupCategory.EVENT_BATTLE, MenuButtonAnim.ButtonType.LIVE }, 
+				{ SceneGroupCategory.EVENT_GODIVA, MenuButtonAnim.ButtonType.LIVE}
+			}; // 0x48
+			private List<NewMarkIcon> m_newMarkIconList = new List<NewMarkIcon>(32); // 0x50
 			// [CompilerGeneratedAttribute] // RVA: 0x66A050 Offset: 0x66A050 VA: 0x66A050
 			public UnityAction<SceneGroupCategory, SceneGroupCategory> ChangeGroupCategoryListener; // 0x54
 			private TransitionTreeObject treeObject; // 0x58
-			// private List<TransitionList.Type> m_enableDivaModelTransitionName = new List<TransitionList.Type>() {
-			//	14, 2, 105, 8, 35, 111, 112
-			//}; // 0x5C
-			// private List<TransitionList.Type> m_notAutoLoadDiva = new List<TransitionList.Type>() { 30, 35 }; // 0x60
+			private List<TransitionList.Type> m_enableDivaModelTransitionName = new List<TransitionList.Type>() {
+				TransitionList.Type.LOGIN_BONUS, 
+				TransitionList.Type.HOME, 
+				TransitionList.Type.HOME_BG_SELECT, 
+				TransitionList.Type.RESULT, 
+				TransitionList.Type.COSTUME_VIEW_MODE, 
+				TransitionList.Type.GAKUYA, 
+				TransitionList.Type.GAKUYA_DIVA_VIEW
+			}; // 0x5C
+			private List<TransitionList.Type> m_notAutoLoadDiva = new List<TransitionList.Type>()
+			{ 
+				TransitionList.Type.COSTUME_SELECT,
+				TransitionList.Type.COSTUME_VIEW_MODE
+			}; // 0x60
 			// private Dictionary<TransitionList.Type, float[]> m_divaAdjustPosition = new Dictionary<TransitionList.Type, float[]>() {
 			//	{ 12, new float[2] {1.0f, 1.5f} }
 			//}; // 0x64
@@ -389,9 +412,9 @@ namespace XeApp.Game.Menu
 			// }; // 0x70
 
 			public bool DirtyChangeScene { get; private set; } // 0x4C
-			// public bool IsTransition { get; private set; } // 0x4D
+			public bool IsTransition { get; private set; } // 0x4D
 			// public bool StopTransition { get; set; } // 0x4E
-			// public MenuHeaderControl MenuHeader { get; } 0xA31488
+			public MenuHeaderControl MenuHeader { get { return m_titleBarControl; } } // 0xA31488
 			public MenuFooterControl MenuFooter { get { return m_menuBarControl; } } //0xA31490
 			public HelpButton HelpButton { get { return m_helpButton; } }// 0xA31498
 			// private List<TransitionTreeObject.SceneRoot> SceneDirectory { get; } 0xA316B8
@@ -420,10 +443,16 @@ namespace XeApp.Game.Menu
 			// public void Move(SceneGroupCategory category, TransitionList.Type nextTransition, TransitionArgs args, bool isFading = True) { }
 
 			// // RVA: 0xA39000 Offset: 0xA39000 VA: 0xA39000
-			// public void Mount(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = True, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0) { }
+			public void Mount(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0)
+			{
+				ChangeMount(uniqueId,false,args,cambackUnityScene,false);
+			}
 
 			// // RVA: 0xA39334 Offset: 0xA39334 VA: 0xA39334
-			// public void MountWithFade(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = True, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0) { }
+			public void MountWithFade(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0)
+			{
+				ChangeMount(uniqueId,false,args,cambackUnityScene,true);
+			}
 
 			// // RVA: 0xA39364 Offset: 0xA39364 VA: 0xA39364
 			// public void Call(TransitionList.Type next, TransitionArgs args, bool isFading = True) { }
@@ -435,10 +464,53 @@ namespace XeApp.Game.Menu
 			// private void ChangeCall(TransitionList.Type nextTransition, bool isFading = True, TransitionArgs args) { }
 
 			// // RVA: 0xA39030 Offset: 0xA39030 VA: 0xA39030
-			// private void ChangeMount(TransitionUniqueId uniqueId, bool isFading = True, TransitionArgs args, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene camBackUnityScene = 0, bool isForceFading = False) { }
+			private void ChangeMount(TransitionUniqueId uniqueId, bool isFading = true, TransitionArgs args = null, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene camBackUnityScene = 0, bool isForceFading = false)
+			{
+				UnityEngine.Debug.Log("Scene mount "+uniqueId.ToString());
+				int group = (int)uniqueId >> 16;
+				TransitionTreeObject.SceneRoot root = treeObject.Find((TransitionTreeObject.SceneRoot x) => {
+					//0xA3D6C8
+					return (int)x.m_category == group;
+				});
+				if(root != null)
+				{
+					TransitionTreeObject.SceneTree sceneTree = FindTransitionTree(root, (TransitionTreeObject.SceneTree x) => {
+						//0xA3D700
+						return x.m_uniquId == (int)uniqueId;
+					});
+					if(sceneTree != null)
+					{
+						TransitionInfo info = new TransitionInfo();
+						info.name = sceneTree.m_sceneName;
+						info.groupCategory = (SceneGroupCategory)group;
+						info.fadeId = sceneTree.m_FadeId;
+						info.cacheCategory = sceneTree.m_cacheCategory;
+						info.titleLabel = sceneTree.m_titleLabel;
+						info.descId = sceneTree.m_descId;
+						info.bgType = sceneTree.m_bgType;
+						info.uniqueId = (int)uniqueId;
+						info.isForceFading = isForceFading;
+						info.camBackUnityScene = camBackUnityScene;
+						m_next = info;
+						info.args = args;
+						m_transitionType = TransitionType.Mount;
+						DirtyChangeScene = true;
+					}
+				}
+			}
 
 			// // RVA: 0xA396F4 Offset: 0xA396F4 VA: 0xA396F4
-			// private TransitionTreeObject.SceneTree FindTransitionTree(TransitionTreeObject.SceneRoot root, Func<TransitionTreeObject.SceneTree, bool> comp) { }
+			private TransitionTreeObject.SceneTree FindTransitionTree(TransitionTreeObject.SceneRoot root, Func<TransitionTreeObject.SceneTree, bool> comp)
+			{
+				for(int i = 0; i < root.list.Count; i++)
+				{
+					if(comp(root.list[i]))
+					{
+						return root.list[i];
+					}
+				}
+				return null;
+			}
 
 			// // RVA: 0xA399CC Offset: 0xA399CC VA: 0xA399CC
 			// public GameObject GetCurrentBg() { }
@@ -456,7 +528,10 @@ namespace XeApp.Game.Menu
 			// public bool OnPushReturnButton() { }
 
 			// // RVA: 0xA39A4C Offset: 0xA39A4C VA: 0xA39A4C
-			// public void ClearDirtyChangeScene() { }
+			public void ClearDirtyChangeScene()
+			{
+				DirtyChangeScene = false;
+			}
 
 			// // RVA: 0xA39A58 Offset: 0xA39A58 VA: 0xA39A58
 			// public int GetDefaultBgmId(SceneGroupCategory category) { }
@@ -527,11 +602,81 @@ namespace XeApp.Game.Menu
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8C5C Offset: 0x6C8C5C VA: 0x6C8C5C
 			// // RVA: 0xA3A010 Offset: 0xA3A010 VA: 0xA3A010
-			// private IEnumerator DeleteCache(SceneCacheCategory cacheCategory) { }
+			private IEnumerator DeleteCache(SceneCacheCategory cacheCategory)
+			{
+				//0xA40948
+				for(int i = 0; i < m_instanceCacheDict.Count; i++)
+				{
+					int key = m_instanceCacheDict.GetKey(i);
+					if(!string.IsNullOrEmpty(assetBundleNames[key].bundlePath))
+					{
+						AssetBundleManager.UnloadAssetBundle(assetBundleNames[key].bundlePath);
+					}
+					m_instanceCacheDict[key].OnDeleteCache();
+					UnityEngine.Object.Destroy(m_instanceCacheDict[key].gameObject);
+				}
+				m_instanceCacheDict.Clear();
+				yield break;
+			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8CD4 Offset: 0x6C8CD4 VA: 0x6C8CD4
 			// // RVA: 0xA3A0BC Offset: 0xA3A0BC VA: 0xA3A0BC
-			// private IEnumerator RegisterCache(SceneCacheCategory cacheCategory, TransitionList.Type transitionName) { }
+			private IEnumerator RegisterCache(SceneCacheCategory cacheCategory, TransitionList.Type transitionName)
+			{
+				// private TransitionRoot <root>5__2; // 0x20
+				// private TransitionRoot.MenuTransitionControl.BundleName <assetBundle>5__3; // 0x24
+				// private ResourcesManager <resourceManager>5__4; // 0x28
+				// private AssetBundleLoadLayoutOperationBase <operation>5__5; // 0x2C
+				//0xA414D4
+				UnityEngine.Debug.Log("Enter RegisterCache");
+				GameObject instance = null;
+				TransitionRoot root = null;
+				TransitionRoot.MenuTransitionControl.BundleName assetBundle = assetBundleNames[(int)transitionName];
+				if(!string.IsNullOrEmpty(assetBundle.bundlePath))
+				{
+					if(!string.IsNullOrEmpty(assetBundle.textureBundlePath))
+					{
+						yield return AssetBundleManager.LoadUnionAssetBundle(assetBundleNames[(int)transitionName].textureBundlePath);
+						//to 3
+					}
+					// goto LAB_00a41be4
+					AssetBundleLoadLayoutOperationBase operation = AssetBundleManager.LoadLayoutAsync(assetBundle.bundlePath, GetPrefabName(transitionName));
+					yield return operation;
+					yield return operation.InitializeLayoutCoroutine(m_font, (GameObject layout) => {
+						//0xA3D788
+						instance = layout;
+					});
+					instance.SetActive(true);
+					root = instance.GetComponent<TransitionRoot>();
+					while(!root.IsReady)
+						yield return null;
+					AssetBundleManager.UnloadAssetBundle(assetBundle.bundlePath, false);
+					operation = null;
+				}
+				else
+				{
+					ResourcesManager resourceManager = ResourcesManager.Instance;
+					FileResultObject rObject = null;
+					resourceManager.Request(prefabName[(int)transitionName], (FileResultObject fo) => {
+						//0xA3D798
+						rObject = fo;
+						return true;
+					});
+					resourceManager.Load();
+					yield return null;
+					while(resourceManager.isLoading)
+						yield return null;
+					instance = UnityEngine.Object.Instantiate<GameObject>(rObject.unityObject as GameObject);
+					root = instance.GetComponent<TransitionRoot>();
+					while(!root.IsReady)
+						yield return null;
+				}
+				//LAB_00a41aa4:
+				root.transform.SetParent(m_uiRootObject.transform, false);
+				root.gameObject.SetActive(false);
+				m_instanceCacheDict.Add((int)transitionName, root);
+				UnityEngine.Debug.Log("Exit RegisterCache");
+			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8D4C Offset: 0x6C8D4C VA: 0x6C8D4C
 			// // RVA: 0xA3A184 Offset: 0xA3A184 VA: 0xA3A184
@@ -543,13 +688,351 @@ namespace XeApp.Game.Menu
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8E3C Offset: 0x6C8E3C VA: 0x6C8E3C
 			// // RVA: 0xA3A2DC Offset: 0xA3A2DC VA: 0xA3A2DC
-			// public IEnumerator ChangeTransition() { }
+			public IEnumerator ChangeTransition()
+			{
+				// private TransitionList.Type <prevTransition>5__2; // 0x18
+				// private MenuHeaderControl <header>5__3; // 0x1C
+				// private TransitionRoot <exitRoot>5__4; // 0x20
+				// private bool <isCacheChange>5__5; // 0x24
+				// private bool <isGroupChange>5__6; // 0x25
+				// private bool <isFading>5__7; // 0x26
+				// private TransitionList.Type <lastSceneName>5__8; // 0x28
+				// private bool <isDivaActivate>5__9; // 0x2C
+				// private bool <isNotAutoLoad>5__10; // 0x2D
+				// private ButtonBase <onButton>5__11; // 0x30
+				// private MenuDivaManager <divaManager>5__12; // 0x34
+				//0xA3D91C
+				TransitionList.Type prevTransition = TransitionList.Type.UNDEFINED;
+				bool isSaveError = false;
+				if(m_isRequestSave)
+				{
+					UnityEngine.Debug.LogError("TODO request save");
+				}
+				DirtyChangeScene = false;
+				IsTransition = true;
+				MenuScene.Instance.InputDisable();
+				MenuScene.Instance.RaycastDisable();
+				MenuHeaderControl header = MenuScene.Instance.HeaderMenu;
+				if(header != null)
+				{
+					if(header.MenuTop != null)
+					{
+						//to1
+						while(header.MenuTop.IsPlayingMiniWindow())
+							yield return null;
+						header.MenuTop.LeaveMiniWindow();
+					}
+				}
+				TransitionRoot exitRoot = m_currentRoot;
+				if(m_currentRoot != null)
+				{
+					ButtonBase onButton = exitRoot.m_buttons.Find((ButtonBase _) => {
+						//0xA3D598
+						return _.IsPlaying();
+					});
+					if(onButton != null)
+					{
+						while(onButton.IsPlaying())
+							yield return null;
+					}
+				}
+				if(m_transitionType == TransitionType.Call)
+				{
+					PushStack();
+				}
+				else if(m_transitionType == TransitionType.Return)
+				{
+					SceneStackInfo prev = m_transitionStack.Pop();
+					m_next.cacheCategory = prev.cacheCategory;
+					m_next.groupCategory = prev.groupCategory;
+					m_next.name = prev.name;
+					m_next.fadeId = prev.fadeId;
+					m_next.titleLabel = prev.titleLabel;
+					m_next.descId = prev.descId;
+					m_next.bgmId = prev.bgmId;
+					m_next.bgType = prev.bgType;
+					m_next.bgId = prev.bgId;
+					m_next.bgAttr = prev.bgAttr;
+					m_next.args = prev.args;
+					m_next.uniqueId = prev.uniqueId;
+					m_next.args_return = null;
+					if(m_currentRoot != null)
+					{
+						m_next.args_return = m_currentRoot.GetCallArgsReturn();
+					}
+				}
+				else if(m_transitionType == TransitionType.Mount)
+				{
+					m_transitionStack.Clear();
+					RevivalStack();
+					if(m_transitionStack.Count > 0)
+					{
+						if(m_next.bgType == BgType.Undefined)
+						{
+							m_next.bgType = m_transitionStack.GetTop().bgType;
+						}
+					}
+				}
+				if(exitRoot != null)
+				{
+					exitRoot.OnStartExitTitleHeader();
+					exitRoot.OnStartExitAnimation();
+					prevTransition = exitRoot.TransitionName;
+					m_helpButton.TryHide(m_next.name);
+					while(!exitRoot.IsEndExitAnimation())
+						yield return null;
+				}
+				bool isCacheChange = m_current.cacheCategory != m_next.cacheCategory;
+				bool isGroupChange = m_current.groupCategory != m_next.groupCategory;
+				bool isFading = false;
+				if(m_current.fadeId == m_next.fadeId && !isCacheChange)
+				{
+					isFading = m_next.isForceFading;
+				}
+				else
+				{
+					isFading = true;
+				}
+
+				if(isFading)
+				{
+					bool canShowNowLoading = CanShowNowLoading(prevTransition, m_next.name);
+					GameManager.Instance.fullscreenFader.Fade(0.1f, Color.black);
+					if(canShowNowLoading || isCacheChange)
+					{
+						GameManager.Instance.NowLoading.Show();
+					}
+				}
+				while(GameManager.Instance.fullscreenFader.isFading)
+					yield return null;
+				if(isFading)
+				{
+					int tipsCount = 0;
+					if(CanShowTips(prevTransition, m_next.name, m_next.camBackUnityScene, out tipsCount) && tipsCount > 0)
+					{
+						TipsControl.Instance.Show(tipsCount);
+						yield return TipsControl.Instance.WaitLoadingYield;
+						while(TipsControl.Instance.isPlayingAnime())
+							yield return null;
+					}
+				}
+				if(isGroupChange)
+				{
+					OnChangeGroupCategory(m_current.groupCategory, m_next.groupCategory);
+				}
+				if(prevTransition == TransitionList.Type.TITLE || prevTransition == TransitionList.Type.UNDEFINED)
+				{
+					MenuScene.Instance.InitializePlayerStatusData();
+				}
+				// to 7
+				yield return null;
+				m_newMarkIconList.ForEach((NewMarkIcon _) => {
+					//0xA3D5CC
+					_.Release();
+				});
+				m_newMarkIconList.Clear();
+				while(CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI)
+					yield return null;
+				if(isSaveError)
+				{
+					isSaveError = false;
+					IsTransition = false;
+					yield break;
+				}
+				if(m_currentRoot != null)
+				{
+					m_currentRoot.OnDestoryScene();
+					m_currentRoot.gameObject.SetActive(false);
+				}
+				if(isCacheChange)
+				{
+					yield return DeleteCache(SceneCacheCategory.TITLE);
+					// to 9
+					yield return Resources.UnloadUnusedAssets();
+					// to 10
+				}
+				if(!TryGetRoot(0, m_next.name, out m_currentRoot))
+				{
+					yield return RegisterCache(SceneCacheCategory.TITLE, m_next.name);
+					// to 11
+					m_currentRoot = m_instanceCacheDict[(int)m_next.name];
+				}
+				m_currentRoot.Args = m_next.args;
+				m_currentRoot.ArgsReturn = m_next.args_return;
+				m_currentRoot.m_prevTransition = prevTransition;
+				m_currentRoot.m_transitionType = m_transitionType;
+				m_currentRoot.gameObject.SetActive(true);
+				m_currentRoot.HideCanvas();
+				m_currentRoot.transform.SetParent(null, false);
+				m_currentRoot.m_parentTransition = TransitionList.Type.UNDEFINED;
+				if(m_transitionStack.GetTop() != null)
+				{
+					m_currentRoot.m_parentTransition = m_transitionStack.GetTop().name;
+				}
+				if(!isFading)
+				{
+					m_bgControl.ReserveFade(0.1f, Color.black);
+				}
+				yield return m_bgControl.ChangeBgCoroutine(m_next.bgType, m_next.bgId, m_next.groupCategory, m_next.name, m_next.bgAttr);
+				// to 12
+				TransitionList.Type lastSceneName = TransitionList.Type.NUM;
+				if(m_current != null)
+					lastSceneName = m_current.name;
+				m_next.args = null;
+				m_current = m_next;
+				m_currentRoot.ResetButton();
+				yield return null;
+				// to 13
+				m_currentRoot.OnPreSetCanvas();
+				// to 14
+				while(!m_currentRoot.IsEndPreSetCanvas())
+					yield return null;
+				// to 15
+				yield return null;
+				m_currentRoot.transform.SetParent(m_uiRootObject.transform, false);
+				m_currentRoot.ShowCanvas();
+				m_titleBarControl.Show(m_next.name, (TransitionUniqueId)m_next.uniqueId, m_next.titleLabel, m_next.groupCategory, m_next.descId, m_transitionStack.Count > 0);
+				bool isDivaActivate = m_enableDivaModelTransitionName.Contains(m_next.name);
+				if(m_remainDivaOneTimeFlag)
+				{
+					if(m_enableDivaModelTransitionName.Contains(lastSceneName))
+						isDivaActivate = true;
+				}
+				bool isNotAutoLoad  = m_notAutoLoadDiva.Contains(m_next.name);
+				if(isDivaActivate)
+				{
+					if(!GameManager.Instance.divaResource.isMenuAllLoaded && !isNotAutoLoad)
+					{
+						UnityEngine.Debug.LogError("TODO Load diva menu");
+						//L777
+						// to 16
+					}
+					// to 17
+					UnityEngine.Debug.LogError("TODO Load diva menu");
+				}
+				m_remainDivaOneTimeFlag = false;
+				bool idleDivaModel = false;
+				if(lastSceneName != TransitionList.Type.GACHA_CHECK_NEW_COSTUME && 
+				(lastSceneName != TransitionList.Type.GAKUYA && m_current.name != TransitionList.Type.HOME) && 
+				(lastSceneName != TransitionList.Type.COSTUME_SELECT && m_current.name != TransitionList.Type.COSTUME_VIEW_MODE) &&
+				(lastSceneName != TransitionList.Type.COSTUME_VIEW_MODE && m_current.name != TransitionList.Type.COSTUME_SELECT))
+				{
+					idleDivaModel = true;
+				}
+				bool activeDivaModel = false;
+				if(m_next.name == TransitionList.Type.HOME || m_next.name == TransitionList.Type.HOME_BG_SELECT)
+				{
+					UnityEngine.Debug.LogError("TODO check activate diva");
+					//L876
+				}
+				else
+				{
+					activeDivaModel = true;
+				}
+				MenuScene.Instance.SetActiveDivaModel(activeDivaModel && isDivaActivate, idleDivaModel);
+				bool divaActivated = false;
+				if(isDivaActivate)
+				{
+					UnityEngine.Debug.LogError("TODO setup diva");
+					divaActivated = isDivaActivate;
+				}
+				if((isNotAutoLoad || divaActivated) == false)
+				{
+					//nothing
+				}
+				else
+				{
+					UnityEngine.Debug.LogError("TODO setup cam");
+				}
+				m_currentRoot.OnPostSetCanvas();
+				while(!m_currentRoot.IsEndPostSetCanvas())
+					yield return null;
+				MenuButtonAnim.ButtonType buttonType = MenuButtonAnim.ButtonType.NONE;
+				if(!m_groupCategoryButtonTypeMap.TryGetValue(m_next.groupCategory, out buttonType))
+				{
+					buttonType = MenuButtonAnim.ButtonType.NONE;
+				}
+				m_menuBarControl.Show(m_next.name, (TransitionUniqueId)m_next.uniqueId, buttonType, isFading);
+				if(m_currentRoot.IsRequestGotoTitle)
+				{
+					MenuScene.Instance.GotoTitle();
+					yield break;
+				}
+				if(m_currentRoot.AutoFadeFlag)
+				{
+					if(isFading)
+					{
+						TipsControl.Instance.Close();
+						while(TipsControl.Instance.isPlayingAnime())
+							yield return null;
+					}
+					GameManager.Instance.NowLoading.Hide();
+					GameManager.Instance.fullscreenFader.Fade(0.1f, 0.0f);
+				}
+				m_currentRoot.OnStartEnterTitleHeader();
+				m_currentRoot.OnStartEnterAnimation();
+				m_helpButton.TryShow(m_next.name);
+				if(!m_currentRoot.OnBgmStart())
+				{
+					if(m_transitionType == TransitionType.Return)
+					{
+						UnityEngine.Debug.LogError("TODO Play bgm Sound");
+					}
+					else
+					{
+						UnityEngine.Debug.LogError("TODO Play bgm Sound");
+					}
+					UnityEngine.Debug.LogError("TODO Play bgm Sound");
+				}
+				UnityEngine.Debug.LogError("TODO Play bgm Sound");
+				//LAB_00a401d4
+				while(GameManager.Instance.fullscreenFader.isFading)
+					yield return null;
+				while(!m_currentRoot.IsEndEnterAnimation())
+					yield return null;
+				IsTransition = false;
+				UpdateMenuNewIcon(m_next.name, prevTransition);
+				m_currentRoot.OnOpenScene();
+				while(!m_currentRoot.IsEndOpenScene())
+					yield return null;
+				yield return TutorialManager.TryShowTutorialCoroutine(m_currentRoot.CheckTutorialFunc);
+				//to 0x17
+				MenuScene.Instance.InputEnable();
+				MenuScene.Instance.RaycastEnable();
+				m_currentRoot.OnActivateScene();
+				// to 0x18
+				while(!m_currentRoot.IsEndActivateScene())
+					yield return null;
+				if(GameManager.Instance.IsTutorial)
+				{
+					m_currentRoot.OnTutorial();
+				}
+				m_currentRoot.Args = null;
+				m_currentRoot.ArgsReturn = null;
+			}
 
 			// // RVA: 0xA3A388 Offset: 0xA3A388 VA: 0xA3A388
-			// private string GetPrefabName(TransitionList.Type transitionName) { }
+			private string GetPrefabName(TransitionList.Type transitionName)
+			{
+				PrefabSwitchInfo info = prefabSwitchTable.Find((PrefabSwitchInfo p) => {
+					//0xA3D8A0
+					return p.targetType == transitionName;
+				});
+				if(info != null)
+				{
+					if(info.thresholdMasterVersion < 1)
+						return info.prefabName;
+					else if(info.thresholdMasterVersion <= DIHHCBACKGG.IEFOPDOOLOK)
+						return info.prefabName;
+				}
+				return assetBundleNames[(int)transitionName].prefabName;
+			}
 
 			// // RVA: 0xA3A56C Offset: 0xA3A56C VA: 0xA3A56C
-			// private bool TryGetRoot(SceneCacheCategory category, TransitionList.Type name, out TransitionRoot root) { }
+			private bool TryGetRoot(SceneCacheCategory category, TransitionList.Type name, out TransitionRoot root)
+			{
+				return m_instanceCacheDict.TryGetValue((int)name, out root);
+			}
 
 			// // RVA: 0xA3A5F4 Offset: 0xA3A5F4 VA: 0xA3A5F4
 			// private float CalcDivaPositionX(float min, float max) { }
@@ -558,13 +1041,77 @@ namespace XeApp.Game.Menu
 			// private bool IsShiftIdleAnimation(TransitionList.Type current, TransitionList.Type next) { }
 
 			// // RVA: 0xA3A754 Offset: 0xA3A754 VA: 0xA3A754
-			// private bool RevivalStack(TransitionTreeObject.SceneRoot root, TransitionTreeObject.SceneTree tree, TransitionUniqueId uniqueId) { }
+			private bool RevivalStack(TransitionTreeObject.SceneRoot root, TransitionTreeObject.SceneTree tree, TransitionUniqueId uniqueId)
+			{
+				if(tree.m_uniquId != (int)uniqueId)
+				{
+					int bgmId;
+					if(m_transitionStack.Count == 0)
+					{
+						bgmId = sceneGroupCategoryBgmId[(int)m_next.groupCategory];
+					}
+					else
+					{
+						bgmId = m_transitionStack.GetTop().bgmId;
+					}
+					BgType bgType = tree.m_bgType;
+					if(bgType == BgType.Undefined)
+					{
+						if(m_transitionStack.Count == 0)
+						{
+							bgType = BgType.Undefined;
+						}
+						else
+						{
+							bgType = m_transitionStack.GetTop().bgType;
+						}
+					}
+					SceneStackInfo info = new SceneStackInfo();
+					info.groupCategory = m_next.groupCategory;
+					info.cacheCategory = tree.m_cacheCategory;
+					info.fadeId = tree.m_FadeId;
+					info.name = tree.m_sceneName;
+					info.titleLabel = tree.m_titleLabel;
+					info.bgmId = bgmId;
+					info.descId = tree.m_descId;
+					info.bgId = -1;
+					info.bgType = bgType;
+					info.uniqueId = tree.m_uniquId;
+					m_transitionStack.Push(info);
+					if(tree.m_childIndex > -1)
+					{
+						if(RevivalStack(root, root.list[tree.m_childIndex], uniqueId))
+						{
+							return true;
+						}
+						for(int i = root.list[tree.m_childIndex].m_siblingIndex; i > -1; i = root.list[i].m_siblingIndex)
+						{
+							if(RevivalStack(root, root.list[i], uniqueId))
+								return true;
+						}
+					}
+					m_transitionStack.Pop();
+					return false;
+				}
+				return true;
+			}
 
 			// // RVA: 0xA3AC58 Offset: 0xA3AC58 VA: 0xA3AC58
-			// private void RevivalStack() { }
+			private void RevivalStack()
+			{
+				int group = m_next.uniqueId >> 0x10;
+				TransitionTreeObject.SceneRoot root = treeObject.List.Find((TransitionTreeObject.SceneRoot category) => {
+					//0xA3D8E0
+					return (int)category.m_category == group;
+				});
+				RevivalStack(root, root.list[0], (TransitionUniqueId)root.list[0].m_uniquId);
+			}
 
 			// // RVA: 0xA3ADFC Offset: 0xA3ADFC VA: 0xA3ADFC
-			// public static void UpdateMenuNewIcon(TransitionList.Type nextTransition, TransitionList.Type prevTransition) { }
+			public static void UpdateMenuNewIcon(TransitionList.Type nextTransition, TransitionList.Type prevTransition)
+			{
+				UnityEngine.Debug.LogError("TODO UpdateMenuNewIcon");
+			}
 
 			// // RVA: 0xA3B1C0 Offset: 0xA3B1C0 VA: 0xA3B1C0
 			// public void SetFooterMenuButtonDisable(MenuFooterControl.Button button) { }
@@ -609,16 +1156,47 @@ namespace XeApp.Game.Menu
 			// public void LoadStack(SceneStack stack) { }
 
 			// // RVA: 0xA3B6FC Offset: 0xA3B6FC VA: 0xA3B6FC
-			// public void PushStack() { }
+			public void PushStack()
+			{
+				SceneStackInfo stack = new SceneStackInfo();
+				stack.cacheCategory = m_current.cacheCategory;
+				stack.groupCategory = m_current.groupCategory;
+				stack.name = m_current.name;
+				stack.fadeId = m_current.fadeId;
+				stack.titleLabel = m_current.titleLabel;
+				stack.descId = m_current.descId;
+				stack.bgmId = SoundManager.Instance.bgmPlayer.currentBgmId;
+				stack.bgType = m_bgControl.GetCurrentType();
+				stack.bgAttr = (int)m_bgControl.GetCurrentAttr();
+				stack.storyBgParam = m_bgControl.OutputStoryBgParam(m_current.groupCategory == SceneGroupCategory.STORY);
+				stack.args = m_currentRoot.GetCallArgs();
+				stack.uniqueId = m_current.uniqueId;
+				m_transitionStack.Push(stack);
+			}
 
 			// // RVA: 0xA3B9A0 Offset: 0xA3B9A0 VA: 0xA3B9A0
-			// private void OnChangeGroupCategory(SceneGroupCategory prevCategory, SceneGroupCategory nextCategory) { }
+			private void OnChangeGroupCategory(SceneGroupCategory prevCategory, SceneGroupCategory nextCategory)
+			{
+				if(ChangeGroupCategoryListener != null)
+					ChangeGroupCategoryListener(prevCategory, nextCategory);
+			}
 
 			// // RVA: 0xA3BA1C Offset: 0xA3BA1C VA: 0xA3BA1C
 			// public Vector3 GetDivaCameraRotByScene(TransitionList.Type type) { }
 
 			// // RVA: 0xA3BB18 Offset: 0xA3BB18 VA: 0xA3BB18
-			// public bool CanShowNowLoading(TransitionList.Type from, TransitionList.Type to) { }
+			public bool CanShowNowLoading(TransitionList.Type from, TransitionList.Type to)
+			{
+				for(int i = 0; i < loadPlaceList.Length; i++)
+				{
+					if((loadPlaceList[i].from == TransitionList.Type.UNDEFINED || loadPlaceList[i].from == from) &&
+						loadPlaceList[i].to == to)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
 
 			// // RVA: 0xA3BDA4 Offset: 0xA3BDA4 VA: 0xA3BDA4
 			public bool CanShowTips(TransitionList.Type from, TransitionList.Type to, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene camBackUnityScene, out int count)
@@ -645,104 +1223,166 @@ namespace XeApp.Game.Menu
 		private int m_inputStateCount; // 0x40
 		private bool m_isAutoFade = true; // 0x44
 
-		// public TransitionList.Type TransitionName { get; } 0xA7FEC0
+		public TransitionList.Type TransitionName { get { return m_transitionName; } } //0xA7FEC0
 		// public GameObject bgRoot { get; set; } 0xA9D73C 0xA9D744
-		// public TransitionArgs Args { get; set; } 0xA83E84 0xA9D74C
-		// public TransitionArgs ArgsReturn { get; set; } 0xA9D754 0xA9D75C
+		public TransitionArgs Args { get { return m_args; } set { m_args = value; } } //0xA83E84 0xA9D74C
+		public TransitionArgs ArgsReturn { get { return m_args_return; } set { m_args_return = value; } } //0xA9D754 0xA9D75C
 		// public TransitionList.Type PrevTransition { get; } 0xA7FEC8
 		// public TransitionList.Type ParentTransition { get; } 0xA9D764
 		// public TransitionRoot.MenuTransitionControl.TransitionType TransitionType { get; } 0xA9D76C
-		// public bool IsRequestGotoTitle { get; set; } // 0x28
-		// public bool IsReady { get; protected set; } // 0x29
+		public bool IsRequestGotoTitle { get; set; } // 0x28
+		public bool IsReady { get; protected set; } // 0x29
 		// public int InputStateCount { get; } 0xA9D78C
-		// public bool AutoFadeFlag { get; set; } 0xA9D794 0xA9D79C
+		public bool AutoFadeFlag { get { return m_isAutoFade; } set { m_isAutoFade = value; } }// 0xA9D794 0xA9D79C
 
 		// RVA: 0xA80A84 Offset: 0xA80A84 VA: 0xA80A84 Slot: 4
 		protected virtual void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			IsReady = false;
 		}
 
 		// RVA: 0xA80B40 Offset: 0xA80B40 VA: 0xA80B40 Slot: 5
 		protected virtual void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			return;
 		}
 
 		// RVA: 0xA9D7A4 Offset: 0xA9D7A4 VA: 0xA9D7A4 Slot: 6
 		protected virtual void OnEnable()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			return;
 		}
 
 		// RVA: 0xA9D7A8 Offset: 0xA9D7A8 VA: 0xA9D7A8 Slot: 7
 		protected virtual void OnDisable()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			return;
 		}
 
 		// // RVA: 0xA9D7AC Offset: 0xA9D7AC VA: 0xA9D7AC Slot: 8
-		// protected virtual void OnStartEnterTitleHeader() { }
+		protected virtual void OnStartEnterTitleHeader()
+		{
+			return;
+		}
 
 		// // RVA: 0xA9D7B0 Offset: 0xA9D7B0 VA: 0xA9D7B0 Slot: 9
-		// protected virtual void OnStartEnterAnimation() { }
+		protected virtual void OnStartEnterAnimation()
+		{
+			return;
+		}
 
 		// // RVA: 0xA9D7B4 Offset: 0xA9D7B4 VA: 0xA9D7B4 Slot: 10
-		// protected virtual bool IsEndEnterAnimation() { }
+		protected virtual bool IsEndEnterAnimation()
+		{
+			return true;
+		}
 
 		// // RVA: 0xA9D7BC Offset: 0xA9D7BC VA: 0xA9D7BC Slot: 11
-		// protected virtual void OnStartExitTitleHeader() { }
+		protected virtual void OnStartExitTitleHeader()
+		{
+			return;
+		}
 
 		// // RVA: 0xA9D7C0 Offset: 0xA9D7C0 VA: 0xA9D7C0 Slot: 12
-		// protected virtual void OnStartExitAnimation() { }
+		protected virtual void OnStartExitAnimation()
+		{
+			return;
+		}
 
 		// // RVA: 0xA9D7C4 Offset: 0xA9D7C4 VA: 0xA9D7C4 Slot: 13
-		// protected virtual bool IsEndExitAnimation() { }
+		protected virtual bool IsEndExitAnimation()
+		{
+			return true;
+		}
 
 		// // RVA: 0xA9D7CC Offset: 0xA9D7CC VA: 0xA9D7CC Slot: 14
-		// protected virtual void OnDestoryScene() { }
+		protected virtual void OnDestoryScene()
+		{
+			return;
+		}
 
 		// // RVA: 0xA9D7D0 Offset: 0xA9D7D0 VA: 0xA9D7D0 Slot: 15
-		// protected virtual void OnDeleteCache() { }
+		protected virtual void OnDeleteCache()
+		{
+			return;
+		}
 
 		// // RVA: 0xA9D7D4 Offset: 0xA9D7D4 VA: 0xA9D7D4 Slot: 16
-		// protected virtual void OnPreSetCanvas() { }
+		protected virtual void OnPreSetCanvas()
+		{
+			return;
+		}
 
 		// // RVA: 0xA8553C Offset: 0xA8553C VA: 0xA8553C Slot: 17
-		// protected virtual bool IsEndPreSetCanvas() { }
+		protected virtual bool IsEndPreSetCanvas()
+		{
+			return !GameManager.Instance.SceneIconCache.IsLoading() &&
+					!GameManager.Instance.DivaIconCache.IsLoading() && 
+					!GameManager.Instance.ValkyrieIconCache.IsLoading();
+		}
 
 		// // RVA: 0xA9D7D8 Offset: 0xA9D7D8 VA: 0xA9D7D8 Slot: 18
-		// protected virtual void OnPostSetCanvas() { }
+		protected virtual void OnPostSetCanvas()
+		{
+			return;
+		}
 
 		// // RVA: 0xA85780 Offset: 0xA85780 VA: 0xA85780 Slot: 19
-		// protected virtual bool IsEndPostSetCanvas() { }
+		protected virtual bool IsEndPostSetCanvas()
+		{
+			return true;
+		}
 
 		// // RVA: 0xA9D7DC Offset: 0xA9D7DC VA: 0xA9D7DC Slot: 20
-		// protected virtual bool OnBgmStart() { }
+		protected virtual bool OnBgmStart()
+		{
+			return false;
+		}
 
 		// // RVA: 0xA9D7E4 Offset: 0xA9D7E4 VA: 0xA9D7E4 Slot: 21
-		// protected virtual void OnOpenScene() { }
+		protected virtual void OnOpenScene()
+		{
+			return;
+		}
 
 		// // RVA: 0xA9D7E8 Offset: 0xA9D7E8 VA: 0xA9D7E8 Slot: 22
-		// protected virtual bool IsEndOpenScene() { }
+		protected virtual bool IsEndOpenScene()
+		{
+			return true;
+		}
 
 		// // RVA: 0xA9D7F0 Offset: 0xA9D7F0 VA: 0xA9D7F0 Slot: 23
-		// protected virtual void OnActivateScene() { }
+		protected virtual void OnActivateScene()
+		{
+			return;
+		}
 
 		// // RVA: 0xA9D7F4 Offset: 0xA9D7F4 VA: 0xA9D7F4 Slot: 24
-		// protected virtual bool IsEndActivateScene() { }
+		protected virtual bool IsEndActivateScene()
+		{
+			return true;
+		}
 
 		// // RVA: 0xA9D7FC Offset: 0xA9D7FC VA: 0xA9D7FC Slot: 25
-		// protected virtual void OnTutorial() { }
+		protected virtual void OnTutorial()
+		{
+			return;
+		}
 
 		// // RVA: 0xA9D800 Offset: 0xA9D800 VA: 0xA9D800 Slot: 26
 		// protected virtual bool OnPushReturnButton() { }
 
 		// // RVA: 0xA9D808 Offset: 0xA9D808 VA: 0xA9D808 Slot: 27
-		// protected virtual TransitionArgs GetCallArgs() { }
+		protected virtual TransitionArgs GetCallArgs()
+		{
+			return null;
+		}
 
 		// // RVA: 0xA917EC Offset: 0xA917EC VA: 0xA917EC Slot: 28
-		// protected virtual TransitionArgs GetCallArgsReturn() { }
+		protected virtual TransitionArgs GetCallArgsReturn()
+		{
+			return null;
+		}
 
 		// // RVA: 0xA9D810 Offset: 0xA9D810 VA: 0xA9D810
 		// protected void GotoTitle() { }
@@ -766,21 +1406,55 @@ namespace XeApp.Game.Menu
 		// public void InputDisable(string objName) { }
 
 		// // RVA: 0xA9F5B0 Offset: 0xA9F5B0 VA: 0xA9F5B0
-		// protected void ResetButton() { }
+		protected void ResetButton()
+		{
+			GetComponentsInChildren<ButtonBase>(true, m_buttons);
+			m_buttons.ForEach((ButtonBase button) => {
+				//0xA310D4
+				button.SetOff();
+			});
+		}
 
 		// // RVA: 0xA9DC88 Offset: 0xA9DC88 VA: 0xA9DC88
 		// private void ListupInputObjects() { }
 
 		// // RVA: 0xA9F728 Offset: 0xA9F728 VA: 0xA9F728
-		// protected void ShowCanvas() { }
+		protected void ShowCanvas()
+		{
+			ListupCanvas();
+			if(m_canvases == null)
+				return;
+			Array.ForEach(m_canvases, (Canvas _) => {
+				//0xA31108
+				_.enabled = true;
+			});
+		}
 
 		// // RVA: 0xA9F8F8 Offset: 0xA9F8F8 VA: 0xA9F8F8
-		// protected void HideCanvas() { }
+		protected void HideCanvas()
+		{
+			ListupCanvas();
+			if(m_canvases == null)
+				return;
+			Array.ForEach(m_canvases, (Canvas _) => {
+				//0xA31138
+				_.enabled = false;
+			});
+		}
 
 		// // RVA: 0xA9F880 Offset: 0xA9F880 VA: 0xA9F880
-		// private void ListupCanvas() { }
+		private void ListupCanvas()
+		{
+			if(m_canvases != null)
+				return;
+			m_canvases = GetComponentsInChildren<Canvas>(true);
+		}
 
 		// // RVA: 0xA9FA50 Offset: 0xA9FA50 VA: 0xA9FA50
-		// protected bool CheckTutorialFunc(TutorialConditionId conditionId) { }
+		protected bool CheckTutorialFunc(TutorialConditionId conditionId)
+		{
+			UnityEngine.Debug.LogError("TODO CheckTutorialFunc");
+			return false;
+		}
 	}
 }

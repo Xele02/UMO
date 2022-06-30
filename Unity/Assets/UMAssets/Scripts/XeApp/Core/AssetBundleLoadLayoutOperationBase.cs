@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using XeSys.Gfx;
 
 namespace XeApp.Core
 {
@@ -15,6 +16,6 @@ namespace XeApp.Core
         public abstract IEnumerator InitializeLayoutCoroutine(Font font, Action<GameObject> finish);
 
         // RVA: -1 Offset: -1 Slot: 12
-        // public abstract IEnumerator CreateLayoutCoroutine(LayoutUGUIRuntime runtime, Font font, Action<Layout, TexUVListManager> finish);
+        public abstract IEnumerator CreateLayoutCoroutine(LayoutUGUIRuntime runtime, Font font, Action<Layout, TexUVListManager> finish);
     }
 }

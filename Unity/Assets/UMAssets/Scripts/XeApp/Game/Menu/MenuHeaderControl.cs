@@ -11,7 +11,7 @@ namespace XeApp.Game.Menu
 		private GameObject m_root; // 0x8
 		private GameObject m_userInfoInstance; // 0xC
 		private GameObject m_menuStackInstance; // 0x10
-		// private CommonMenuTop m_userInfo; // 0x14
+		private CommonMenuTop m_userInfo; // 0x14
 		// private CommonMenuStack m_menuStack; // 0x18
 		// private List<LayoutUGUIHitOnly> m_buttons = new List<LayoutUGUIHitOnly>(); // 0x1C
 		private int[] m_buttonBlockCount; // 0x20
@@ -216,7 +216,7 @@ namespace XeApp.Game.Menu
 		}; // 0x3C
 		private string[] assetBundleName = new string[4] { "ly/004.xab", "UI_MenuTop", "ly/034.xab", "UI_MenuStack" }; // 0x40
 
-		// public CommonMenuTop MenuTop { get; } 0xB26CA4
+		public CommonMenuTop MenuTop { get { return m_userInfo; } } //0xB26CA4
 		// public CommonMenuStack MenuStack { get; } 0xB26CAC
 		// public UnityEvent OnChargeMoney { get; } 0xB26CB4
 
@@ -230,7 +230,10 @@ namespace XeApp.Game.Menu
 		// public bool CheckDisableUserInfo(TransitionInfo info) { }
 
 		// // RVA: 0xB2903C Offset: 0xB2903C VA: 0xB2903C
-		// public void Show(TransitionList.Type transitionName, TransitionUniqueId uniqueId, CommonMenuStackLabel.LabelType labelType, SceneGroupCategory group, int descId, bool isVisibleBackButton) { }
+		public void Show(TransitionList.Type transitionName, TransitionUniqueId uniqueId, CommonMenuStackLabel.LabelType labelType, SceneGroupCategory group, int descId, bool isVisibleBackButton)
+		{
+			UnityEngine.Debug.LogError("TODO Menu Header Show");
+		}
 
 		// // RVA: 0xB29640 Offset: 0xB29640 VA: 0xB29640
 		// public void SetActive(bool active) { }

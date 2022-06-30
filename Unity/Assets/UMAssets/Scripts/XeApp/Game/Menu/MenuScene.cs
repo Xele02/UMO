@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 		// public DecorationItemTextureCache DecorationItemTextureCache { get; } 0xB2E51C
 		// public HomeBgIconBgTextureCache HomeBgIconTextureCache { get; } 0xB2E5B8
 		// public BgControl BgControl { get; } 0xB2E654
-		// public MenuHeaderControl HeaderMenu { get; } 0xB2E680
+		public MenuHeaderControl HeaderMenu { get { return m_menuTransitionControl.MenuHeader; } } //0xB2E680
 		// public MenuFooterControl FooterMenu { get; } 0xB2E6AC
 		public HelpButton HelpButton { get { return m_menuTransitionControl.HelpButton; } } //0xB2E6D8
 		// public bool DirtyChangeScene { get; } 0xB2E704
@@ -210,8 +210,11 @@ namespace XeApp.Game.Menu
 					if(m_menuTransitionControl.DirtyChangeScene && !m_isInTransition)
 					{
 						StartCoroutine(ChangeTransitionCoroutine());
-						m_playerStatusData.FBANBDCOEJL();
-						m_menuTransitionControl.ApplyPlayerStatus(m_playerStatusData);
+						if(m_playerStatusData != null)
+						{
+							m_playerStatusData.FBANBDCOEJL();
+							m_menuTransitionControl.ApplyPlayerStatus(m_playerStatusData);
+						}
 					}
 				};
 				return true;
@@ -225,7 +228,70 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB2F0E0 Offset: 0xB2F0E0 VA: 0xB2F0E0
 		private void MakeComebackSceneInfo(ref MenuScene.MenuSceneCamebackInfo info)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			if(ComebackByRestart)
+			{
+				ComebackByRestart = false;
+				info.category = SceneGroupCategory.LOGINBONUS;
+				info.nextName = TransitionList.Type.LOGIN_BONUS;
+				info.uniqueId = TransitionUniqueId.LOGINBONUS;
+				return;
+			}
+			if(string.IsNullOrEmpty(prevSceneName))
+			{
+				info.flags = MenuSceneCamebackInfo.Flags.GotoTitle;
+				return;
+			}
+			bool fromRhythmGame = true;
+			if(prevSceneName != "RhythmGame")
+			{
+				fromRhythmGame = prevSceneName == "RhythmGameSkip";
+			}
+			GameManager.Instance.SetTouchEffectVisible(true);
+			GameManager.Instance.SetTouchEffectMode(false);
+			if(fromRhythmGame == false)
+			{
+				if(prevSceneName == "GachaDirection")
+				{
+					UnityEngine.Debug.LogError("TODO init from gacha");
+					//L141
+					return;
+				}
+				if(prevSceneName == "RhythmAdjust")
+				{
+					UnityEngine.Debug.LogError("TODO init from RhythmAdjust");
+					//179
+					return;
+				}
+				if(prevSceneName == "Adv")
+				{
+					UnityEngine.Debug.LogError("TODO init from Adv");
+					//256
+					return;
+				}
+				if(GameManager.Instance.IsTutorial)
+				{
+					UnityEngine.Debug.LogError("TODO init from Tutorial");
+					//299
+					return;
+				}
+				if(prevSceneName == "MiniGame")
+				{
+					info.category = SceneGroupCategory.FREE;
+					info.nextName = TransitionList.Type.MUSIC_SELECT;
+					info.uniqueId = TransitionUniqueId.MUSICSELECT;
+					return;
+				}
+				else
+				{
+					info.category = SceneGroupCategory.LOGINBONUS;
+					info.nextName = TransitionList.Type.LOGIN_BONUS;
+					info.uniqueId = TransitionUniqueId.LOGINBONUS;
+					return;
+				}
+			}
+
+			UnityEngine.Debug.LogError("TODO init from RhythmGame");
+
 		}
 
 		// // RVA: 0xB307F0 Offset: 0xB307F0 VA: 0xB307F0 Slot: 13
@@ -241,8 +307,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30940 Offset: 0xB30940 VA: 0xB30940
 		private IEnumerator ChangeTransitionCoroutine()
 		{
-			UnityEngine.Debug.LogError("TODO");
-			yield break;
+			//0xB38ECC
+			m_isInTransition = true;
+			GameManager.Instance.RemovePushBackButtonHandler(this.OnBackButton);
+			GameManager.Instance.CloseSnsNotice();
+			if(!CheckDatelineAndAssetUpdateInner())
+			{
+				yield return StartCoroutine(m_menuTransitionControl.ChangeTransition());
+				GameManager.Instance.AddLastBackButtonHandler(this.OnBackButton);
+			}
+			else
+			{
+				m_menuTransitionControl.ClearDirtyChangeScene();
+			}
+			m_isInTransition = false;
 		}
 
 		// // RVA: 0xB309EC Offset: 0xB309EC VA: 0xB309EC
@@ -266,8 +344,36 @@ namespace XeApp.Game.Menu
 			}));
 			yield return StartCoroutine(CoroutineSystemResource());
 
-			UnityEngine.Debug.LogError("TODO");
-			yield break;
+			while(isWait)
+				yield return null;
+			
+			if(SystemManager.isLongScreenDevice)
+			{
+				UnityEngine.Debug.LogError("TODO isLongScreenDevice");
+			}
+			SetActiveDivaModel(m_sceneCamebackInfo.isDivaActive, true);
+			if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.GotoTitle)
+			{
+				StartCoroutine(GotoTitleCoroutine());
+			}
+			else if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.RetryGame)
+			{
+				UnityEngine.Debug.LogError("TODO MenuSceneCamebackInfo.Flags.RetryGame");
+			}
+			else if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.ReturnScene)
+			{
+				UnityEngine.Debug.LogError("TODO MenuSceneCamebackInfo.Flags.ReturnScene");
+			}
+			else if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.Adventure)
+			{
+				UnityEngine.Debug.LogError("TODO MenuSceneCamebackInfo.Flags.Adventure");
+			}
+			else
+			{
+				Mount(m_sceneCamebackInfo.uniqueId, m_sceneCamebackInfo.args, true, m_sceneCamebackInfo.camBackUnityScene);
+			}
+			m_isInitializeing = false;
+			m_isSceneEnter = false;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7924 Offset: 0x6C7924 VA: 0x6C7924
@@ -334,7 +440,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB30CD0 Offset: 0xB30CD0 VA: 0xB30CD0
-		// public void SetActiveDivaModel(bool active, bool isIdle = True) { }
+		public void SetActiveDivaModel(bool active, bool isIdle = true)
+		{
+			UnityEngine.Debug.LogError("TODO SetActiveDivaModel");
+		}
 
 		// // RVA: 0xB30D0C Offset: 0xB30D0C VA: 0xB30D0C
 		// public void SetDivaXposition(float xpos) { }
@@ -347,7 +456,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB30E8C Offset: 0xB30E8C VA: 0xB30E8C
-		// public void InitializePlayerStatusData() { }
+		public void InitializePlayerStatusData()
+		{
+			m_playerStatusData = new IFBCGCCJBHI();
+			m_playerStatusData.KHEKNNFCAOI();
+		}
 
 		// // RVA: 0xB30F18 Offset: 0xB30F18 VA: 0xB30F18
 		// public int GetMedalMonthId() { }
@@ -395,7 +508,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7C6C Offset: 0x6C7C6C VA: 0x6C7C6C
 		// // RVA: 0xB31C48 Offset: 0xB31C48 VA: 0xB31C48
-		// private IEnumerator GotoTitleCoroutine() { }
+		private IEnumerator GotoTitleCoroutine()
+		{
+			UnityEngine.Debug.LogError("TODO GotoTitleCoroutine");
+			yield return null;
+		}
 
 		// // RVA: 0xB2B4A8 Offset: 0xB2B4A8 VA: 0xB2B4A8
 		public void GotoTitle()
@@ -438,10 +555,16 @@ namespace XeApp.Game.Menu
 		// public void Call(TransitionList.Type next, TransitionArgs args, bool isFading = True) { }
 
 		// // RVA: 0xB32094 Offset: 0xB32094 VA: 0xB32094
-		// public void Mount(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = True, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0) { }
+		public void Mount(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0)
+		{
+			m_menuTransitionControl.Mount(uniqueId,args,isFading,cambackUnityScene);
+		}
 
 		// // RVA: 0xB320EC Offset: 0xB320EC VA: 0xB320EC
-		// public void MountWithFade(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = True, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0) { }
+		public void MountWithFade(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0)
+		{
+			m_menuTransitionControl.MountWithFade(uniqueId,args,isFading,cambackUnityScene);
+		}
 
 		// // RVA: 0xB32144 Offset: 0xB32144 VA: 0xB32144
 		// public GameObject GetCurrentBg() { }
@@ -468,16 +591,28 @@ namespace XeApp.Game.Menu
 		// public int GetDefaultBgmId(SceneGroupCategory category) { }
 
 		// // RVA: 0xB2B190 Offset: 0xB2B190 VA: 0xB2B190
-		// public void InputEnable() { }
+		public void InputEnable()
+		{
+			UnityEngine.Debug.LogError("TODO InputEnable");
+		}
 
 		// // RVA: 0xB2AAD4 Offset: 0xB2AAD4 VA: 0xB2AAD4
-		// public void InputDisable() { }
+		public void InputDisable()
+		{
+			UnityEngine.Debug.LogError("TODO InputDisable");
+		}
 
 		// // RVA: 0xB322EC Offset: 0xB322EC VA: 0xB322EC
-		// public void RaycastEnable() { }
+		public void RaycastEnable()
+		{
+			UnityEngine.Debug.LogError("TODO Raycast Enable");
+		}
 
 		// // RVA: 0xB32338 Offset: 0xB32338 VA: 0xB32338
-		// public void RaycastDisable() { }
+		public void RaycastDisable()
+		{
+			UnityEngine.Debug.LogError("TODO Raycast Disable");
+		}
 
 		// // RVA: 0xB32384 Offset: 0xB32384 VA: 0xB32384
 		// public void UpdateEnterToHomeTime() { }
@@ -618,7 +753,11 @@ namespace XeApp.Game.Menu
 		// public static bool CheckDatelineAndAssetUpdate() { }
 
 		// // RVA: 0xB35814 Offset: 0xB35814 VA: 0xB35814
-		// private bool CheckDatelineAndAssetUpdateInner() { }
+		private bool CheckDatelineAndAssetUpdateInner()
+		{
+			UnityEngine.Debug.LogError("TODO CheckDatelineAndAssetUpdateInner");
+			return false;
+		}
 
 		// // RVA: 0xB35920 Offset: 0xB35920 VA: 0xB35920
 		// public bool CheckEventLimit(IBJAKJJICBC musicData, bool isCheckDateLine = True, bool isDoTransition = True, KGCNCBOKCBA.GNENJEHKMHD status = 5, int eventUniqueId = 0) { }
@@ -642,7 +781,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB372CC Offset: 0xB372CC VA: 0xB372CC
-		// private void OnBackButton() { }
+		private void OnBackButton()
+		{
+			UnityEngine.Debug.LogError("TODO OnBackButton");
+		}
 
 		// // RVA: 0xB37B00 Offset: 0xB37B00 VA: 0xB37B00
 		// public int GetInputDisableCount() { }

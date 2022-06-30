@@ -71,6 +71,7 @@ namespace XeSys
 		// // RVA: 0x203B0FC Offset: 0x203B0FC VA: 0x203B0FC
 		public int Request(string path, string withoutPlarformPath, FileLoadedPostProcess succeeded, FileLoadedPostProcess failed, Dictionary<string, string> args, int argValue, bool loadedDispose)
 		{
+			UnityEngine.Debug.Log("Request file "+path);
 			FileLoadInfo item = null;
 			int hash = path.GetHashCode();
 			if(fileLoadedDic.ContainsKey(hash))

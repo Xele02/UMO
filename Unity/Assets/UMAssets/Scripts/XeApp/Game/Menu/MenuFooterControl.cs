@@ -30,7 +30,10 @@ namespace XeApp.Game.Menu
 		// public bool CheckDisableFooter(TransitionInfo info) { }
 
 		// // RVA: 0xED20EC Offset: 0xED20EC VA: 0xED20EC
-		// public void Show(TransitionList.Type transitionName, TransitionUniqueId uniqueId, MenuButtonAnim.ButtonType selectedButton, bool isFading) { }
+		public void Show(TransitionList.Type transitionName, TransitionUniqueId uniqueId, MenuButtonAnim.ButtonType selectedButton, bool isFading)
+		{
+			UnityEngine.Debug.LogError("TODO footer Show");
+		}
 
 		// // RVA: 0xED2390 Offset: 0xED2390 VA: 0xED2390
 		// public void Enter(bool isFading = False) { }

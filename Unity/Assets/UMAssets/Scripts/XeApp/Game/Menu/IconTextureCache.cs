@@ -36,7 +36,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13DC9B4 Offset: 0x13DC9B4 VA: 0x13DC9B4
-		// public bool IsLoading() { }
+		public bool IsLoading()
+		{
+			UnityEngine.Debug.LogWarning("TODO IconTextureCache.IsLoading()");
+			return false;
+		}
 
 		// // RVA: -1 Offset: -1 Slot: 7
 		// protected abstract IiconTexture CreateIconTexture(IconTextureLodingInfo info);

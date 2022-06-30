@@ -105,7 +105,10 @@ namespace XeApp.Game.Common
 		// public override void SetOn() { }
 
 		// // RVA: 0xE5E484 Offset: 0xE5E484 VA: 0xE5E484 Slot: 21
-		// public override void SetOff() { }
+		public override void SetOff()
+		{
+			UnityEngine.Debug.LogError("TODO Button SetOff");
+		}
 
 		// // RVA: 0xE5E5A4 Offset: 0xE5E5A4 VA: 0xE5E5A4 Slot: 24
 		// protected override void PlayEnter() { }

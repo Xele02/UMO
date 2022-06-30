@@ -201,7 +201,10 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x99A334 Offset: 0x99A334 VA: 0x99A334
-		// public void AddLastBackButtonHandler(GameManager.PushBackButtonHandler handler) { }
+		public void AddLastBackButtonHandler(GameManager.PushBackButtonHandler handler)
+		{
+			UnityEngine.Debug.LogWarning("TODO AddLastBackButtonHandler");
+		}
 
 		// // RVA: 0x988E80 Offset: 0x988E80 VA: 0x988E80
 		public void RemovePushBackButtonHandler(GameManager.PushBackButtonHandler handler)
@@ -867,7 +870,10 @@ namespace XeApp.Game
 		// public void ShowSnsNotice(int snsId, UnityAction pushAction, bool isButtonEnable = True) { }
 
 		// // RVA: 0x9A09FC Offset: 0x9A09FC VA: 0x9A09FC
-		// public void CloseSnsNotice() { }
+		public void CloseSnsNotice()
+		{
+			UnityEngine.Debug.LogWarning("TODO GameManager CloseSnsNotice");
+		}
 
 		// // RVA: 0x9A0AB0 Offset: 0x9A0AB0 VA: 0x9A0AB0
 		// public void ShowOfferNotice(UnityAction pushAction, bool isButtonEnable = True) { }

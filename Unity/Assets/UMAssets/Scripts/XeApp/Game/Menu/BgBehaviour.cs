@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 
 		// public RawImage BgImage { get; } 0x14365E0
 		// public UGUIFader Fader { get; } 0x14365E8
-		// public ScrollRect storyBgScrollRect { get; private set; } 0x143BBD0 0x143BBD8
+		public ScrollRect storyBgScrollRect { get { return m_storyBgScroll; } private set { return; } } //0x143BBD0 0x143BBD8
 
 		// // RVA: 0x14365F0 Offset: 0x14365F0 VA: 0x14365F0
 		private void Awake()

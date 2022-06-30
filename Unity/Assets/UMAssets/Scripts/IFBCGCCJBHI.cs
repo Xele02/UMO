@@ -35,7 +35,10 @@ public class IFBCGCCJBHI
 	public int DOMEGAEKENF { get; private set; } // 0x44 OKGKAFNFIAP KFDJNOODCHM LGAHJNJDOHD
 
 	// // RVA: 0x11EE64C Offset: 0x11EE64C VA: 0x11EE64C
-	// public void KHEKNNFCAOI() { }
+	public void KHEKNNFCAOI()
+	{
+		UnityEngine.Debug.LogError("TODO Init player data");
+	}
 
 	// // RVA: 0x11EE784 Offset: 0x11EE784 VA: 0x11EE784
 	public void FBANBDCOEJL()

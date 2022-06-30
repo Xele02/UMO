@@ -357,21 +357,21 @@ namespace XeSys.Gfx
 		private static StringBuilder s_texNameWork = new StringBuilder(0x20); // 0x8
 
 		// public static float CommonTimeScale { get; set; } 0x1EFFBF0 0x1EFFC7C
-		// public string LayoutPath { get; set; } 0x1EFFD18 0x1EFBE08
+		public string LayoutPath { get { return m_layoutPath; } set { m_layoutPath = value; } } //0x1EFFD18 0x1EFBE08
 		// public string UvListPath { get; set; } 0x1EFFD28 0x1EFFD20
 		// public string TexturePath { get; set; } 0x1EFFD38 0x1EFFD30
-		// public string AnimListPath { get; set; } 0x1EFFD40 0x1EFBE20
+		public string AnimListPath { get { return m_animListPath; } set { m_animListPath = value; } } //0x1EFFD40 0x1EFBE20
 		// public Font Font { get; set; } 0x1EFFD48 0x1EFBE28
 		// public bool IsTextureSplit { get; set; } 0x1EFFD50 0x1EFBF00
 		// public bool IsUseImage { get; set; } 0x1EFFD58 0x1EFBF08
-		// public string[] UvListPathList { get; set; } 0x1EFFD60 0x1EFBE10
-		// public string[] TexturePathList { get; set; } 0x1EFFD68 0x1EFBE18
+		public string[] UvListPathList { get { return m_uvlistPathList; } set { m_uvlistPathList = value; } } //0x1EFFD60 0x1EFBE10
+		public string[] TexturePathList { get { return m_texturePathList; } set { m_texturePathList = value; } } //0x1EFFD68 0x1EFBE18
 		// public GameObject[] ActiveObjList { get; set; } 0x1EFFD78 0x1EFFD70
-		// public bool IsLayoutAutoLoad { get; set; } 0x1EFFD80 0x1EFFD88
+		public bool IsLayoutAutoLoad { get { return m_isLayoutAutoLoad; } set { m_isLayoutAutoLoad = value; } } //0x1EFFD80 0x1EFFD88
 		// public float TimeScale { get; set; } 0x1EFFD90 0x1EFFD98
 		public static bool IsAlwaysUpdateSRT { get { return m_isAlwaysUpdateSRT; } set { m_isAlwaysUpdateSRT = value; } } //0x1EFFDA0 0x1EFBF20
-		// public Layout Layout { get; set; } 0x1EFFE2C 0x1EFBF10
-		// public TexUVListManager UvMan { get; set; } 0x1EFFE34 0x1EFBF18
+		public Layout Layout { get { return m_layout; } set { m_layout = value; } } //0x1EFFE2C 0x1EFBF10
+		public TexUVListManager UvMan { get { return m_uvMan; } set { m_uvMan = value; } } //0x1EFFE34 0x1EFBF18
 		// public List<LayoutUGUIRuntime.UguiInfo> UguiInfoList { set; } 0x1EFCE04
 		public bool IsReady { get; private set; } // 0x64
 		// public bool IsUpdate { get; set; } 0x1EFFE4C 0x1EFFEE4

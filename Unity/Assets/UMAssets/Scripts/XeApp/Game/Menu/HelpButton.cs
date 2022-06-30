@@ -49,7 +49,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xE30560 Offset: 0xE30560 VA: 0xE30560
-		// public void TryShow(TransitionList.Type transitionName) { }
+		public void TryShow(TransitionList.Type transitionName)
+		{
+			UnityEngine.Debug.LogError("TODO TryShow HelpButton");
+		}
 
 		// // RVA: 0xE306A4 Offset: 0xE306A4 VA: 0xE306A4
 		// public static int FindHelpUniqueId(int searchId) { }
@@ -82,7 +85,10 @@ namespace XeApp.Game.Menu
 		// public void HideDecoStorageHelpButton() { }
 
 		// // RVA: 0xE30DD4 Offset: 0xE30DD4 VA: 0xE30DD4
-		// public void TryHide(TransitionList.Type transitionName) { }
+		public void TryHide(TransitionList.Type transitionName)
+		{
+			UnityEngine.Debug.LogError("TODO Help TryHide");
+		}
 
 		// // RVA: 0xE30964 Offset: 0xE30964 VA: 0xE30964
 		// private void Show(int pattern) { }

@@ -146,7 +146,10 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x204A3AC Offset: 0x204A3AC VA: 0x204A3AC
-		// public void LoadFromString(string layoutText) { }
+		public void LoadFromString(string layoutText)
+		{
+			UnityEngine.Debug.LogError("TODO Layout LoadFromString");
+		}
 
 		// // RVA: 0x204A3B0 Offset: 0x204A3B0 VA: 0x204A3B0
 		// private void ReadXmlString(string text) { }
@@ -455,6 +458,9 @@ namespace XeSys.Gfx
 		// public ScriptableLayout Export() { }
 
 		// // RVA: 0x2051500 Offset: 0x2051500 VA: 0x2051500
-		// public void Import(ScriptableLayout scriptable) { }
+		public void Import(ScriptableLayout scriptable)
+		{
+			scriptable.Deserialize(this);
+		}
 	}
 }

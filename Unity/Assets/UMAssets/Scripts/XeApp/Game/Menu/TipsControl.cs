@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 		private static int[] m_situationValues = new int[7]; // 0x0
 
 		public bool IsInitialized { get; private set; } // 0x40
-		// public WaitWhile WaitLoadingYield { get; } 0xA974F4
+		public WaitWhile WaitLoadingYield { get { return m_waitLoading; } } //0xA974F4
 		// public bool IsLoading { get; } 0xA974FC
 
 		// // RVA: 0xA97284 Offset: 0xA97284 VA: 0xA97284
@@ -118,10 +118,17 @@ namespace XeApp.Game.Menu
 		// private void LoadTexture(int index, TipsData data) { }
 
 		// // RVA: 0xA99520 Offset: 0xA99520 VA: 0xA99520
-		// public void Close() { }
+		public void Close()
+		{
+			UnityEngine.Debug.LogError("TODO Tips Close");
+		}
 
 		// // RVA: 0xA99794 Offset: 0xA99794 VA: 0xA99794
-		// public bool isPlayingAnime() { }
+		public bool isPlayingAnime()
+		{
+			UnityEngine.Debug.LogError("TODO Tips isPlayinganime");
+			return false;
+		}
 
 		// // RVA: 0xA9874C Offset: 0xA9874C VA: 0xA9874C
 		// private void MakeTipsList(int listUpCount) { }

@@ -214,7 +214,10 @@ namespace XeApp.Game.Common
 		// public virtual void SetOn() { }
 
 		// // RVA: 0xE5E574 Offset: 0xE5E574 VA: 0xE5E574 Slot: 21
-		// public virtual void SetOff() { }
+		public virtual void SetOff()
+		{
+			UnityEngine.Debug.LogError("TODO Button SetOff");
+		}
 
 		// // RVA: 0xE64CC4 Offset: 0xE64CC4 VA: 0xE64CC4 Slot: 22
 		// protected virtual void PlayDecide() { }
@@ -232,6 +235,10 @@ namespace XeApp.Game.Common
 		// protected virtual void PlayHidden() { }
 
 		// // RVA: 0xE64CD8 Offset: 0xE64CD8 VA: 0xE64CD8 Slot: 27
-		// public virtual bool IsPlaying() { }
+		public virtual bool IsPlaying()
+		{
+			UnityEngine.Debug.LogError("TODO Button ISPlaying");
+			return false;
+		}
 	}
 }
