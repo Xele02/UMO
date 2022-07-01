@@ -461,11 +461,31 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x99DD84 Offset: 0x99DD84 VA: 0x99DD84
-		// public void InitializeUnionData() { }
+		public void InitializeUnionData()
+		{
+			if(IsUnionDataInitialized)
+				return;
+			StartCoroutine(UnionDataCoroutine());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADBA0 Offset: 0x6ADBA0 VA: 0x6ADBA0
 		// // RVA: 0x99DDB8 Offset: 0x99DDB8 VA: 0x99DDB8
-		// private IEnumerator UnionDataCoroutine() { }
+		private IEnumerator UnionDataCoroutine()
+		{
+			//0x14281D8
+			MessageLoader.Instance.defaultInstallSource = MessageLoader.InstallSource.LocalStorage;
+			yield return AssetBundleManager.LoadUnionAssetBundle("handmade/shader.xab");
+			Shader.WarmupAllShaders();
+			yield return AssetBundleManager.LoadUnionAssetBundle("handmade/cmnparam.xab");
+			yield return AssetBundleManager.LoadUnionAssetBundle("ct/sc/ef.xab");
+			yield return AssetBundleManager.LoadUnionAssetBundle("dc/cmn.xab");
+			yield return UnionTextureManager.LoadUnionTexture();
+			yield return uguiCommonManager.Load();
+
+			UnityEngine.Debug.LogError("TODO finish UnionDataCoroutine (Tips / Facial / Sns");
+
+			IsUnionDataInitialized = true;
+		}
 
 		// // RVA: 0x99CDA8 Offset: 0x99CDA8 VA: 0x99CDA8
 		private void AppSpecial()

@@ -386,7 +386,11 @@ public class NKGJPJPHLIF
 	// public void DCOKFLPPHEB() { }
 
 	// // RVA: 0xC188EC Offset: 0xC188EC VA: 0xC188EC
-	// public void LBEHLMLKPDM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
+	public void LBEHLMLKPDM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
+	{
+		UnityEngine.Debug.LogError("TODO");
+		BHFHGFKBOHH();
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B99A0 Offset: 0x6B99A0 VA: 0x6B99A0
 	// // RVA: 0xC18C58 Offset: 0xC18C58 VA: 0xC18C58

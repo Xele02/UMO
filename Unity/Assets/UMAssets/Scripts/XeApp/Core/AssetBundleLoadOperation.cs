@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine;
 
 namespace XeApp.Core
 {
@@ -26,5 +27,26 @@ namespace XeApp.Core
 
         // // RVA: -1 Offset: -1 Slot: 9
         public abstract bool IsDone();
+
+        #if UNITY_EDITOR
+        IEnumerator updateEnumerator;
+        bool fixIsDone = false;
+        public bool FixTextures(AssetBundle bundle)
+        {
+            if(fixIsDone)
+                return false;
+            if(updateEnumerator == null)
+            {
+                updateEnumerator = BundleShaderInfo.Instance.FixMaterialShader(bundle);
+            }
+            bool not_done = updateEnumerator.MoveNext();
+            if(!not_done)
+            {
+                updateEnumerator = null;
+                fixIsDone = true;
+            }
+            return not_done;
+        }
+        #endif
     }
 }

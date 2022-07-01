@@ -47,6 +47,8 @@ namespace XeApp.Game.DownLoad
 			//0x11BFC54 
 			yield return StartCoroutine(Co_InitializeQuestionary());
 
+			yield return StartCoroutine(Co_InitializeUnionDataProc());
+
 			NextScene("Menu");
 
 			UnityEngine.Debug.LogError("TODO");
@@ -75,7 +77,15 @@ namespace XeApp.Game.DownLoad
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B51D0 Offset: 0x6B51D0 VA: 0x6B51D0
 		// // RVA: 0x11BE9E8 Offset: 0x11BE9E8 VA: 0x11BE9E8
-		// private IEnumerator Co_InitializeUnionDataProc() { }
+		private IEnumerator Co_InitializeUnionDataProc()
+		{
+			//0x11BFA78
+			GameManager.Instance.InitializeUnionData();
+			while(!GameManager.Instance.IsUnionDataInitialized)
+			{
+				yield return null;
+			}
+		}
 
 		// // RVA: 0x11BEA7C Offset: 0x11BEA7C VA: 0x11BEA7C
 		// private void FinishDownLoad() { }

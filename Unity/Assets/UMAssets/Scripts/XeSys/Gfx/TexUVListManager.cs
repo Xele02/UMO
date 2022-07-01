@@ -74,6 +74,8 @@ namespace XeSys.Gfx
 		// // RVA: 0x1EE1730 Offset: 0x1EE1730 VA: 0x1EE1730
 		public void Register(int index, TexUVList uvList)
 		{
+			if(uvList == null)
+				UnityEngine.Debug.LogError("Registering a TexUVList null");
 			Reserve(index + 1);
 			if(m_count <= index)
 				m_count = index + 1;

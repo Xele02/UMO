@@ -28,7 +28,12 @@ namespace XeApp.Core
             m_loadedAssetBundle = AssetBundleManager.GetLoadedAssetBundle(m_AssetBundleName, out m_loadingError);
             if(m_loadedAssetBundle != null)
             {
-                m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync(m_AssetName, m_Type);
+#if UNITY_EDITOR
+                if(!FixTextures(m_loadedAssetBundle.m_AssetBundle))
+#endif
+                {
+                    m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync(m_AssetName, m_Type);
+                }
             }
             return !IsError();
         }
@@ -107,6 +112,8 @@ namespace XeApp.Core
                             yield return null;
                         uvList = m_request.asset as TexUVList;
                     }
+                    if(uvList == null)
+                        UnityEngine.Debug.LogError("Failed to load "+Path.GetFileName(runtime.UvListPathList[j]));
                     uvMan.Register(j, uvList);
                 }
                 layout.SettingTexture(uvMan);

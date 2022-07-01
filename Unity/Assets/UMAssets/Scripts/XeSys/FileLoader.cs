@@ -132,7 +132,7 @@ namespace XeSys
 		// // RVA: 0x203BB00 Offset: 0x203BB00 VA: 0x203BB00
 		private bool FailedCallback(FileResultObject fro)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO Failed to load "+fro.path);
 			return false;
 		}
 

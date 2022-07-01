@@ -6,7 +6,7 @@ namespace XeApp.Core
     public abstract class AssetBundleLoadAllAssetOperationBase : AssetBundleLoadOperation
     {
         // RVA: -1 Offset: -1 Slot: 10
-        public abstract T GetAsset<T>(string assetName);
+        public abstract T GetAsset<T>(string assetName) where T : class;
         // /* GenericInstMethod :
         // |
         // |-RVA: -1 Offset: -1

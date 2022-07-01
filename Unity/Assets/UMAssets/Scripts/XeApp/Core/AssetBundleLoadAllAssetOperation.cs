@@ -18,8 +18,20 @@ namespace XeApp.Core
         // // RVA: 0xE0F1F4 Offset: 0xE0F1F4 VA: 0xE0F1F4 Slot: 7
         public override bool Update()
         {
-			UnityEngine.Debug.LogError("TODO");
-            return false;
+			if(m_request == null)
+            {
+                LoadedAssetBundle loadedBundle = AssetBundleManager.GetLoadedAssetBundle(m_AssetBundleName, out m_loadingError);
+                if(loadedBundle != null)
+                {
+#if UNITY_EDITOR
+                    if(!FixTextures(loadedBundle.m_AssetBundle))
+#endif
+                    {
+                        m_request = loadedBundle.m_AssetBundle.LoadAllAssetsAsync();
+                    }
+                }
+            }
+            return !IsDone();
         }
 
         // // RVA: 0xE0F64C Offset: 0xE0F64C VA: 0xE0F64C Slot: 9
@@ -35,7 +47,15 @@ namespace XeApp.Core
         // // RVA: -1 Offset: -1 Slot: 10
         public override T GetAsset<T>(string assetName)
         {
-			UnityEngine.Debug.LogError("TODO");
+			if(!IsDone() || IsError())
+                return default(T);
+            for(int i = 0; i < m_request.allAssets.Length; i++)
+            {
+                if(m_request.allAssets[i].name == assetName)
+                {
+                    return m_request.allAssets[i] as T;
+                }
+            }
             return default(T);
         }
         // /* GenericInstMethod :
@@ -53,7 +73,11 @@ namespace XeApp.Core
         // // RVA: 0xE0F6B8 Offset: 0xE0F6B8 VA: 0xE0F6B8 Slot: 11
         public override void ForEach(Action<UnityEngine.Object> action)
         {
-			UnityEngine.Debug.LogError("TODO");
+            if(!IsDone())
+                return;
+            if(IsError())
+                return;
+            Array.ForEach(m_request.allAssets, action);
         }
     }
 }

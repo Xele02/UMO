@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using XeSys.Gfx;
+using System.Text;
 
 namespace XeApp.Game.Common
 {
@@ -21,7 +22,7 @@ namespace XeApp.Game.Common
 		protected string m_parentExId = String.Empty; // 0x40
 		[SerializeField]
 		protected bool m_isRelativeSearch; // 0x44
-		// protected AbsoluteLayout m_abs; // 0x48
+		protected AbsoluteLayout m_abs; // 0x48
 		protected string m_normalLabel = "st_wait"; // 0x4C
 		protected string m_onPointerStartLabel = "go_bot_on"; // 0x50
 		protected string m_onPointerEndLabel = "st_bot_on"; // 0x54
@@ -42,8 +43,44 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE5D338 Offset: 0xE5D338 VA: 0xE5D338 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return true;
+			if(!m_isRelativeSearch)
+			{
+				StringBuilder str = new StringBuilder(m_symbolName);
+				str.Append("_");
+				str.Append(name.Replace(" (AbsoluteLayout)", ""));
+				if(string.IsNullOrEmpty(m_parentExId))
+				{
+					m_abs = layout.FindViewByExId(str.ToString()) as AbsoluteLayout;
+				}
+				else
+				{
+					m_abs = (layout.FindViewByExId(m_parentExId) as AbsoluteLayout).FindViewByExId(str.ToString()) as AbsoluteLayout;
+				}
+			}
+			else
+			{
+				m_abs = GetComponentInParent<LayoutUGUIRuntime>().FindViewBase(transform as RectTransform) as AbsoluteLayout;
+			}
+			if(!string.IsNullOrEmpty(m_exId))
+			{
+				m_abs = m_abs.FindViewByExId(m_exId) as AbsoluteLayout;
+			}
+			if(m_childAnim)
+			{
+				for(int i = 0; i < m_abs.viewCount; i++)
+				{
+					if(m_abs[i] != null)
+					{
+						if(m_abs[i] is AbsoluteLayout)
+						{
+							m_abs = m_abs[i] as AbsoluteLayout;
+							break;
+						}
+					}
+				}
+			}
+			Loaded();
+			return base.InitializeFromLayout(layout, uvMan);
 		}
 
 		// RVA: 0xE5D880 Offset: 0xE5D880 VA: 0xE5D880 Slot: 28

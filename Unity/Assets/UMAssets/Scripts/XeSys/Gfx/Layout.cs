@@ -446,7 +446,11 @@ namespace XeSys.Gfx
 		// public void CopyTo(Layout layout) { }
 
 		// // RVA: 0x2051394 Offset: 0x2051394 VA: 0x2051394
-		// public Layout DeepClone() { }
+		public Layout DeepClone()
+		{
+			UnityEngine.Debug.LogError("TODO Layout DeepClone");
+			return new Layout();
+		}
 
 		// // RVA: 0x2051410 Offset: 0x2051410 VA: 0x2051410
 		// public void StartGameObject() { }

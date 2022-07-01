@@ -68,5 +68,9 @@ public class CGFNKMNBNBN
 	// public static IEnumerator PKMMMMFMCBE(int KEFGPJBKAOD, Action<Texture2D> KBCBGIGOLHP) { }
 
 	// // RVA: 0x12BBA64 Offset: 0x12BBA64 VA: 0x12BBA64
-	// public static bool DGCIHGPOMCI(long JHNMKKNEENE) { }
+	public static bool DGCIHGPOMCI(long JHNMKKNEENE)
+	{
+		UnityEngine.Debug.LogWarning("TODO DGCIHGPOMCI");
+		return false;
+	}
 }

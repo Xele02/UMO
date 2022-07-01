@@ -19,7 +19,16 @@ namespace XeApp.Core
         {
             if(m_loadedAssetBundle == null)
             {
-                m_loadedAssetBundle = AssetBundleManager.GetLoadedAssetBundle(m_AssetBundleName, out m_loadingError);
+                LoadedAssetBundle loadedBundle =  AssetBundleManager.GetLoadedAssetBundle(m_AssetBundleName, out m_loadingError);
+                if(loadedBundle != null)
+                {
+#if UNITY_EDITOR
+                    if(!FixTextures(loadedBundle.m_AssetBundle))
+#endif
+                    {
+                        m_loadedAssetBundle = loadedBundle;
+                    }
+                }
                 return !IsError();
             }
             return !IsDone();

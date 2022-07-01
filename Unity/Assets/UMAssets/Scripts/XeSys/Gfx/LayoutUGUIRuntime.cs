@@ -11,6 +11,19 @@ namespace XeSys.Gfx
 	public class DebugLinkInfo : MonoBehaviour
 	{
 		public string LayoutId;
+		public string shaderName;
+
+		void Update()
+		{
+			RawImageEx img = GetComponent<RawImageEx>();
+			if(img != null)
+			{
+				if(img.material != null)
+				{
+					shaderName = ""+img.material.shader.GetInstanceID();
+				}
+			}
+		}
 	}
 	#endif
 
@@ -667,7 +680,14 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1F01720 Offset: 0x1F01720 VA: 0x1F01720
-		// public RectTransform FindRectTransform(ViewBase view) { }
+		public RectTransform FindRectTransform(ViewBase view)
+		{
+			if(view.UguiInfo != null)
+			{
+				return view.UguiInfo.RectTrans;
+			}
+			return null;
+		}
 
 		// // RVA: 0x1F01790 Offset: 0x1F01790 VA: 0x1F01790
 		// public void SetActiveChildren(bool active) { }

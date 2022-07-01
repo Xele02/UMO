@@ -79,7 +79,8 @@ namespace XeApp.Game.Menu
 			UnityEngine.Debug.LogWarning("TOTO login next scene");
 
 			yield return null;
-			MenuScene.Instance.Mount(TransitionUniqueId.HOME_CAMPAIGNROULETTE, null, true, 0);
+			//MenuScene.Instance.Mount(TransitionUniqueId.HOME_CAMPAIGNROULETTE, null, true, 0);
+			MenuScene.Instance.Mount(TransitionUniqueId.EPISODEAPPEAL, null, true, 0);
 			yield break;
 		}
 

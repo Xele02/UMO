@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 		private HomeLobbyButtonController m_lobbyButtonControl; // 0x84
 		// private FlexibleLayoutCamera _flexibleLayoutCamera; // 0x88
 		private DenominationManager m_denomControl; // 0x8C
-		// private long m_enterToHomeTime; // 0x90
+		private long m_enterToHomeTime; // 0x90
 		private MenuSceneUpdater MenuUpdater; // 0x98
 		private MenuScene.MenuSceneCamebackInfo m_sceneCamebackInfo; // 0x9C
 
@@ -128,10 +128,10 @@ namespace XeApp.Game.Menu
 		// public HomeBgIconBgTextureCache HomeBgIconTextureCache { get; } 0xB2E5B8
 		// public BgControl BgControl { get; } 0xB2E654
 		public MenuHeaderControl HeaderMenu { get { return m_menuTransitionControl.MenuHeader; } } //0xB2E680
-		// public MenuFooterControl FooterMenu { get; } 0xB2E6AC
+		public MenuFooterControl FooterMenu { get { return m_menuTransitionControl.MenuFooter; } } //0xB2E6AC
 		public HelpButton HelpButton { get { return m_menuTransitionControl.HelpButton; } } //0xB2E6D8
 		// public bool DirtyChangeScene { get; } 0xB2E704
-		// public HomeLobbyButtonController LobbyButtonControl { get; } 0xB2E730
+		public HomeLobbyButtonController LobbyButtonControl { get { return m_lobbyButtonControl; } } //0xB2E730
 		// public FlexibleLayoutCamera FlexibleLayoutCamera { get; } 0xB2E738
 		// public DenominationManager DenomControl { get; } 0xB2AB9C
 		// public long EnterToHomeTime { get; } 0xB2E7EC
@@ -615,7 +615,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32384 Offset: 0xB32384 VA: 0xB32384
-		// public void UpdateEnterToHomeTime() { }
+		public void UpdateEnterToHomeTime()
+		{
+			m_enterToHomeTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+		}
 
 		// // RVA: 0xB32468 Offset: 0xB32468 VA: 0xB32468
 		// public void HeaderEnter() { }
