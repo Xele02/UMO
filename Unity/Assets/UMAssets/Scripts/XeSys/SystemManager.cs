@@ -2,6 +2,7 @@ using UnityEngine;
 using XeSys.File;
 using System;
 using XeSys.Gfx;
+using XeApp;
 
 namespace XeSys
 {
@@ -147,7 +148,51 @@ namespace XeSys
 		// // RVA: 0x23A59C8 Offset: 0x23A59C8 VA: 0x23A59C8
 		public void UpdateScreenSize()
 		{
-			UnityEngine.Debug.LogWarning("TODO SystemManager.UpdateScreenSize");
+			BaseScreenHalfSize = BaseScreenSize * 0.5f;
+			BaseAspect = BaseScreenSize.x / BaseScreenSize.y;
+			// ? Weird base aspect calc. Round to 2 digit ?
+			if(CheckOverPermissionAspectRatio() == OverPermissionAspectResult.None)
+			{
+				ScreenSize = new Vector2(1184, 792);
+			}
+			else
+			{
+				ScreenSize = new Vector2(Screen.width, Screen.height);
+			}
+			ScreenHalfSize = ScreenSize * 0.5f;
+			ScreenAspect = ScreenSize.x / ScreenSize.y;
+			// ? Like BaseAspect
+			AdjustScale = ScreenSize / BaseScreenSize;
+			AdjustInvScale = Vector2.one / AdjustScale;
+			if(ScreenAspect < BaseAspect)
+			{
+				AppEnv.letterBoxDirection = AppEnv.LetterBoxDirection.TopBottom;
+				AdjustScaleValue = AdjustScale.y;
+			}
+			else
+			{
+				AppEnv.letterBoxDirection = AppEnv.LetterBoxDirection.LeftRight;
+				AdjustScaleValue = AdjustScale.x;
+			}
+			AdjustScaleInvValue = 1.0f / AdjustScaleValue;
+			CanWideScreenMenu = false;
+			if(CheckOverPermissionAspectRatio() == OverPermissionAspectResult.HdivV)
+			{
+				if(IsForceWideScreen)
+				{
+					isLongScreenDevice = true;
+					longScreenBaseSize = new Vector2(BaseScreenSize.x, BaseScreenSize.x * 9.0f * 0.0625f);
+				}
+				else
+				{
+					longScreenBaseSize = BaseScreenSize;
+				}
+				CanWideScreenMenu = true;
+			}
+			else
+			{
+				longScreenBaseSize = BaseScreenSize;
+			}
 		}
 
 		// // RVA: 0x239B71C Offset: 0x239B71C VA: 0x239B71C

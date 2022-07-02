@@ -206,6 +206,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x20405B0 Offset: 0x20405B0 VA: 0x20405B0
 		private void StartAllAnimGoStop(List<ViewBase> listView, string startLabel, string endLabel)
 		{
+			UnityEngine.Debug.Log(ID);
 			StartAnimGoStop(startLabel, endLabel);
 			for(int i = 0; i < listView.Count; i++)
 			{
@@ -519,10 +520,24 @@ namespace XeSys.Gfx
 		// public void TextFadeOut(float time, Color col) { }
 
 		// // RVA: 0x2043778 Offset: 0x2043778 VA: 0x2043778 Slot: 10
-		// public override void CopyTo(ViewBase view) { }
+		public override void CopyTo(ViewBase view)
+		{
+			base.CopyTo(view);
+			AbsoluteLayout al = view as AbsoluteLayout;
+			al.m_List.Clear();
+			for(int i = 0; i < viewCount; i++)
+			{
+				al.AddView(this[i].DeepClone());
+			}
+		}
 
 		// // RVA: 0x204393C Offset: 0x204393C VA: 0x204393C Slot: 11
-		// public override ViewBase DeepClone() { }
+		public override ViewBase DeepClone()
+		{
+			AbsoluteLayout v = new AbsoluteLayout();
+			CopyTo(v);
+			return v;
+		}
 
 		// // RVA: 0x2043B24 Offset: 0x2043B24 VA: 0x2043B24
 		// public void StartAllAnimDefault() { }

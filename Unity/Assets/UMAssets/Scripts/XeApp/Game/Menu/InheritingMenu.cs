@@ -15,7 +15,7 @@ namespace XeApp.Game.Menu
 		public static InheritingMenu Create(Transform parent)
 		{
 			GameObject go = new GameObject("InheritingMenu");
-			go.transform.SetParent(parent);
+			go.transform.SetParent(parent, false);
 			return go.AddComponent<InheritingMenu>();
 		}
 

@@ -286,10 +286,33 @@ namespace XeSys.Gfx
 		// public void StartAnimOut() { }
 
 		// // RVA: 0x1EE00CC Offset: 0x1EE00CC VA: 0x1EE00CC Slot: 10
-		// public virtual void CopyTo(ViewBase view) { }
+		public virtual void CopyTo(ViewBase view)
+		{
+			m_FrameAnimation.CopyTo(view.m_FrameAnimation);
+			m_FrameAnimation.InitializeEmptyAnimation();
+			view.m_ID = m_ID;
+			view.m_EXID = m_EXID;
+			view.m_AnimID = m_AnimID;
+			m_transformData.CopyTo(view.m_transformData);
+			view.m_AlignH = m_AlignH;
+			view.m_AlignV = m_AlignV;
+			view.m_BlendType = m_BlendType;
+			view.m_tag = m_tag;
+			view.m_Color = m_Color;
+			view.m_CurrentColor = m_CurrentColor;
+			view.m_enabled = m_enabled;
+			view.m_Label = m_Label;
+			view.m_IsTouchCheck = m_IsTouchCheck;
+			view.m_DrawLayer = m_DrawLayer;
+		}
 
 		// // RVA: 0x1EE9300 Offset: 0x1EE9300 VA: 0x1EE9300 Slot: 11
-		// public virtual ViewBase DeepClone() { }
+		public virtual ViewBase DeepClone()
+		{
+			ViewBase v = new ViewBase();
+			CopyTo(v);
+			return v;
+		}
 
 		// // RVA: 0x1EE9384 Offset: 0x1EE9384 VA: 0x1EE9384 Slot: 12
 		// public virtual void StartGameObject() { }

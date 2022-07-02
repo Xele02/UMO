@@ -143,6 +143,29 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xED20EC Offset: 0xED20EC VA: 0xED20EC
 		public void Show(TransitionList.Type transitionName, TransitionUniqueId uniqueId, MenuButtonAnim.ButtonType selectedButton, bool isFading)
 		{
+			if(m_menuBar == null)
+				return;
+			
+			int idx = m_disableMenuBarScene.FindIndex((TransitionList.Type x) => {
+				//0xB2699C
+				return x == transitionName;
+			});
+			if(idx < 0)
+			{
+				idx = m_disableMenuBarUniqueScene.FindIndex((TransitionUniqueId x) => {
+					//0xB269B0
+					return uniqueId == x;
+				});
+			}
+			if(idx > -1)
+			{
+				m_menuBar.Leave(isFading);
+				return;
+			}
+			m_menuBar.gameObject.SetActive(true);
+			m_menuBar.transform.SetAsLastSibling();
+			m_menuBar.Enter(isFading, selectedButton);
+
 			UnityEngine.Debug.LogError("TODO footer Show");
 		}
 

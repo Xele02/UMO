@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 		private bool is_button_click = true; // 0x2C
 		private bool is_enter; // 0x2D
 
-		// public bool IsEnter { get; } 0xEC38C0
+		public bool IsEnter { get { return is_enter; } }// 0xEC38C0
 		private Func<TransitionList.Type, bool> OnInterruptEvent { get; set; } // 0x30
 
 		// RVA: 0xEC38D8 Offset: 0xEC38D8 VA: 0xEC38D8
@@ -42,13 +42,36 @@ namespace XeApp.Game.Menu
 		// public void Release() { }
 
 		// // RVA: 0xEC3A4C Offset: 0xEC3A4C VA: 0xEC3A4C
-		// public void Enter(bool isEnd, MenuButtonAnim.ButtonType selectedButton) { }
+		public void Enter(bool isEnd, MenuButtonAnim.ButtonType selectedButton)
+		{
+			if(!IsEnter)
+			{
+				Enter(isEnd);
+			}
+			if(selectedButton != MenuButtonAnim.ButtonType.NONE)
+			{
+				ChangeNotSelectBaseButtonAll();
+				ChangeButtonSelect(selectedButton);
+			}
+		}
 
 		// // RVA: 0xEC3A8C Offset: 0xEC3A8C VA: 0xEC3A8C
-		// public void Enter(bool isEnd) { }
+		public void Enter(bool isEnd)
+		{
+			if(IsEnter)
+				return;
+			mMainRuntime.Layout.StartAllAnimGoStop(isEnd ? "st_in" : "go_in", "st_in");
+			is_enter = true;
+		}
 
 		// // RVA: 0xEC3CE8 Offset: 0xEC3CE8 VA: 0xEC3CE8
-		// public void Leave(bool isEnd) { }
+		public void Leave(bool isEnd)
+		{
+			if(!is_enter)
+				return;
+			mMainRuntime.Layout.StartAllAnimGoStop(isEnd ? "st_out" : "go_out", "st_out");
+			is_enter = false;
+		}
 
 		// // RVA: 0xEC3DD0 Offset: 0xEC3DD0 VA: 0xEC3DD0
 		// public bool IsButtonClick() { }
@@ -63,13 +86,22 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xEC3C4C Offset: 0xEC3C4C VA: 0xEC3C4C
-		// public void ChangeButtonSelect(MenuButtonAnim.ButtonType type) { }
+		public void ChangeButtonSelect(MenuButtonAnim.ButtonType type)
+		{
+			mMenuButtons[(int)type].ChangeSelectBaseButton();
+		}
 
 		// // RVA: 0xEC3E34 Offset: 0xEC3E34 VA: 0xEC3E34
 		// public void ChangeButtonNone(MenuButtonAnim.ButtonType type) { }
 
 		// // RVA: 0xEC3B74 Offset: 0xEC3B74 VA: 0xEC3B74
-		// public void ChangeNotSelectBaseButtonAll() { }
+		public void ChangeNotSelectBaseButtonAll()
+		{
+			for(int i = 0; i < mMenuButtons.Count; i++)
+			{
+				mMenuButtons[i].ChangeNotSelectBaseButton();
+			}
+		}
 
 		// // RVA: 0xEC3FA8 Offset: 0xEC3FA8 VA: 0xEC3FA8
 		// public void SetButtonBadge(MenuButtonAnim.ButtonType buttonType, BadgeConstant.ID badgeId, string text) { }

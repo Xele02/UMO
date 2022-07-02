@@ -121,10 +121,27 @@ namespace XeApp.Game.Menu
 		// public void OnButtonNone() { }
 
 		// // RVA: 0xEC3DEC Offset: 0xEC3DEC VA: 0xEC3DEC
-		// public void ChangeSelectBaseButton() { }
+		public void ChangeSelectBaseButton()
+		{
+			if(buttonAnimeDisable)
+				return;
+			if(Disable)
+				return;
+			m_base_type = BaseType.Selected;
+			ChangeButtonBase(BaseType.Selected);
+		}
 
 		// // RVA: 0xEC3F4C Offset: 0xEC3F4C VA: 0xEC3F4C
-		// public void ChangeNotSelectBaseButton() { }
+		public void ChangeNotSelectBaseButton()
+		{
+			if(buttonAnimeDisable)
+				return;
+			if(Disable)
+				return;
+			m_base_type = BaseType.Default;
+			ChangeButtonBase(BaseType.Default);
+			SetOff();
+		}
 
 		// // RVA: 0xEC7D80 Offset: 0xEC7D80 VA: 0xEC7D80
 		// public void SetButtonType(MenuButtonAnim.ButtonType type) { }
@@ -152,7 +169,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xEC7BF0 Offset: 0xEC7BF0 VA: 0xEC7BF0
-		// private void ChangeButtonBase(MenuButtonAnim.BaseType type) { }
+		private void ChangeButtonBase(MenuButtonAnim.BaseType type)
+		{
+			UnityEngine.Debug.LogError("TODO ChangeButtonBase");
+		}
 
 		// // RVA: 0xEC7D88 Offset: 0xEC7D88 VA: 0xEC7D88
 		// public void SetMenuPrefab(MenuBarPrefab menu) { }

@@ -395,7 +395,10 @@ namespace XeSys.Gfx
 		// public void StartAllAnimGoStop(int start, int end) { }
 
 		// // RVA: 0x2050DC8 Offset: 0x2050DC8 VA: 0x2050DC8
-		// public void StartAllAnimGoStop(string startLabel, string endLabel) { }
+		public void StartAllAnimGoStop(string startLabel, string endLabel)
+		{
+			m_Root.StartAllAnimGoStop(startLabel, endLabel);
+		}
 
 		// // RVA: 0x2050E0C Offset: 0x2050E0C VA: 0x2050E0C
 		// public void StartAllAnimGoStop(string startLabel) { }
@@ -443,13 +446,19 @@ namespace XeSys.Gfx
 		// public void TextFadeOut(float time, Color col) { }
 
 		// // RVA: 0x2051304 Offset: 0x2051304 VA: 0x2051304
-		// public void CopyTo(Layout layout) { }
+		public void CopyTo(Layout layout)
+		{
+			layout.fontInfo = fontInfo;
+			layout.m_ForceAnimChildren = m_ForceAnimChildren;
+			m_Root.CopyTo(layout.m_Root);
+		}
 
 		// // RVA: 0x2051394 Offset: 0x2051394 VA: 0x2051394
 		public Layout DeepClone()
 		{
-			UnityEngine.Debug.LogError("TODO Layout DeepClone");
-			return new Layout();
+			Layout layout = new Layout(false);
+			CopyTo(layout);
+			return layout;
 		}
 
 		// // RVA: 0x2051410 Offset: 0x2051410 VA: 0x2051410

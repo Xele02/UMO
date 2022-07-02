@@ -276,6 +276,8 @@ namespace XeSys.Gfx
 		// // RVA: 0x1EE8A08 Offset: 0x1EE8A08 VA: 0x1EE8A08
 		public void CopyTo(ViewFrameAnimation anim)
 		{
+			if(data == null)
+				UnityEngine.Debug.LogError("Copying empty data animation");
 			anim.data = data;
 			anim.m_timeScale = m_timeScale;
 			anim.m_BaseX = m_BaseX;

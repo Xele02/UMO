@@ -62,10 +62,21 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1F0A578 Offset: 0x1F0A578 VA: 0x1F0A578 Slot: 10
-		// public override void CopyTo(ViewBase view) { }
+		public override void CopyTo(ViewBase view)
+		{
+			base.CopyTo(view);
+			MaskView v = view as MaskView;
+			v.m_Tex = m_Tex;
+			v.m_UVData = m_UVData;
+		}
 
 		// // RVA: 0x1F0A698 Offset: 0x1F0A698 VA: 0x1F0A698 Slot: 11
-		// public override ViewBase DeepClone() { }
+		public override ViewBase DeepClone()
+		{
+			MaskView v = new MaskView();
+			CopyTo(v);
+			return v;
+		}
 
 		// // RVA: 0x1F0A7A0 Offset: 0x1F0A7A0 VA: 0x1F0A7A0 Slot: 15
 		// public override void Serialize(List<SerializableView> list, int parent) { }

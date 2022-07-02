@@ -71,10 +71,28 @@ namespace XeSys.Gfx
 		// public void SetMaskFromView(ViewBase view) { }
 
 		// // RVA: 0x2048CE0 Offset: 0x2048CE0 VA: 0x2048CE0 Slot: 10
-		// public override void CopyTo(ViewBase view) { }
+		public override void CopyTo(ViewBase view)
+		{
+			base.CopyTo(view);
+			ImageView v = view as ImageView;
+			v.m_ImageName = m_ImageName;
+			v.SetTexture(m_Tex, m_UVData);
+			v.m_IsRender = m_IsRender;
+			v.m_IsFlipX = m_IsFlipX;
+			v.m_IsFlipY = m_IsFlipY;
+			v.m_IsDraw = m_IsDraw;
+			v.m_viewWidth = m_viewWidth;
+			v.m_viewHeight = m_viewHeight;
+			v.m_IsMask = m_IsMask;
+		}
 
 		// // RVA: 0x2049590 Offset: 0x2049590 VA: 0x2049590 Slot: 11
-		// public override ViewBase DeepClone() { }
+		public override ViewBase DeepClone()
+		{
+			ImageView v = new ImageView();
+			CopyTo(v);
+			return v;
+		}
 
 		// // RVA: 0x2049614 Offset: 0x2049614 VA: 0x2049614
 		// public void SetMonochrome(bool isMonochrome) { }

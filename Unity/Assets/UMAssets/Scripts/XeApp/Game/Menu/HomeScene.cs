@@ -436,6 +436,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x971AA4 Offset: 0x971AA4 VA: 0x971AA4
 		private IEnumerator Co_SceneIntroduce()
 		{
+			//0x13D2790
 			UnityEngine.Debug.LogError("TODO Co_SceneIntroduce");
 			yield return null;
 		}

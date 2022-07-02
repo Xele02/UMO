@@ -82,7 +82,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA978D0 Offset: 0xA978D0 VA: 0xA978D0
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogWarning("TODO Tips update");
 		}
 
 		// // RVA: 0xA978FC Offset: 0xA978FC VA: 0xA978FC

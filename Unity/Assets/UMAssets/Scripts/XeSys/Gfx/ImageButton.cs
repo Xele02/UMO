@@ -56,10 +56,21 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x2048BC4 Offset: 0x2048BC4 VA: 0x2048BC4 Slot: 10
-		// public override void CopyTo(ViewBase view) { }
+		public override void CopyTo(ViewBase view)
+		{
+			base.CopyTo(view);
+			ImageButton v = view as ImageButton;
+			v.m_PushTex = m_PushTex;
+			v.m_PushUVData = m_PushUVData;
+		}
 
 		// // RVA: 0x2048EDC Offset: 0x2048EDC VA: 0x2048EDC Slot: 11
-		// public override ViewBase DeepClone() { }
+		public override ViewBase DeepClone()
+		{
+			ImageButton v = new ImageButton();
+			CopyTo(v);
+			return v;
+		}
 
 		// // RVA: 0x2048F7C Offset: 0x2048F7C VA: 0x2048F7C Slot: 15
 		// public override void Serialize(List<SerializableView> list, int parent) { }
