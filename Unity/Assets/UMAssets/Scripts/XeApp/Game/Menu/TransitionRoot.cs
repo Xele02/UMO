@@ -516,7 +516,10 @@ namespace XeApp.Game.Menu
 			// public GameObject GetCurrentBg() { }
 
 			// // RVA: 0xA39A00 Offset: 0xA39A00 VA: 0xA39A00
-			// public TransitionInfo GetCurrentScene() { }
+			public TransitionInfo GetCurrentScene()
+			{
+				return m_current;
+			}
 
 			// // RVA: 0xA39A08 Offset: 0xA39A08 VA: 0xA39A08
 			// public TransitionInfo GetNextScene() { }
@@ -1385,7 +1388,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA9D810 Offset: 0xA9D810 VA: 0xA9D810
-		// protected void GotoTitle() { }
+		protected void GotoTitle()
+		{
+			UnityEngine.Debug.LogError("TODO Goto Title");
+		}
 
 		// // RVA: 0xA9D81C Offset: 0xA9D81C VA: 0xA9D81C Slot: 29
 		// protected virtual void InputEnable() { }

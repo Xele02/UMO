@@ -8,6 +8,11 @@ namespace XeApp.Game.Menu
 {
 	public class HomeLobbyButtonController : MonoBehaviour
 	{
+		public enum Type
+		{
+			UP = 0,
+			DOWN = 1,
+		}
 		public HomeLobbyButton m_lobbyTabBtn; // 0xC
 		public HomeLobbySceneButton m_lobbySceneBtn; // 0x10
 		public List<ButtonBase> m_listBtn = new List<ButtonBase>(); // 0x14
@@ -33,17 +38,27 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x9667E8 Offset: 0x9667E8 VA: 0x9667E8
-		// public void Setup(HomeLobbyButtonController.Type a_type = 1) { }
+		public void Setup(HomeLobbyButtonController.Type a_type = Type.DOWN)
+		{
+			UnityEngine.Debug.LogError("TODO LobbyButton Setup");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E2944 Offset: 0x6E2944 VA: 0x6E2944
 		// // RVA: 0x967008 Offset: 0x967008 VA: 0x967008
-		// public IEnumerator Co_CheckNewMark(Action OnError) { }
+		public IEnumerator Co_CheckNewMark(Action OnError)
+		{
+			UnityEngine.Debug.LogError("TODO LobbyButton Co_CheckNewMark");
+			yield break;
+		}
 
 		// // RVA: 0x966FCC Offset: 0x966FCC VA: 0x966FCC
 		// public void Show(bool isEnd = False) { }
 
 		// // RVA: 0x9670D0 Offset: 0x9670D0 VA: 0x9670D0
-		// public void Hide(bool isEnd = False) { }
+		public void Hide(bool isEnd = false)
+		{
+			UnityEngine.Debug.LogError("TODO LobbyButton Hide");
+		}
 
 		// // RVA: 0x967244 Offset: 0x967244 VA: 0x967244
 		// public void Wait() { }
@@ -58,14 +73,22 @@ namespace XeApp.Game.Menu
 		// public void TransitionLobbyMain() { }
 
 		// // RVA: 0x9682F0 Offset: 0x9682F0 VA: 0x9682F0
-		// public void RequestInitRaidLobby(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle) { }
+		public void RequestInitRaidLobby(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle)
+		{
+			UnityEngine.Debug.LogError("TODO LobbyButton RequestInitRaidLobby");
+			onSuccess();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E29BC Offset: 0x6E29BC VA: 0x6E29BC
 		// // RVA: 0x968314 Offset: 0x968314 VA: 0x968314
 		// public IEnumerator InitRaidLobby(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle) { }
 
 		// // RVA: 0x9683DC Offset: 0x9683DC VA: 0x9683DC
-		// public bool CheckLobbyAnnounce() { }
+		public bool CheckLobbyAnnounce()
+		{
+			UnityEngine.Debug.LogError("TODO CheckLobbyAnnounce");
+			return false;
+		}
 
 		// // RVA: 0x9686FC Offset: 0x9686FC VA: 0x9686FC
 		// public bool TryLobbyAnnounce() { }

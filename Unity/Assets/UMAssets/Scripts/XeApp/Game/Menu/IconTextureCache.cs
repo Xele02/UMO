@@ -1,18 +1,20 @@
 
+using XeSys;
+
 namespace XeApp.Game.Menu
 {
 	public abstract class IconTextureCache
 	{
-		//private IndexableDictionary<string, IiconTexture> m_iconTextureCache; // 0x8
-		//private IndexableDictionary<string, IconTextureLodingInfo> m_loadingAssetBundle; // 0xC
+		private IndexableDictionary<string, IiconTexture> m_iconTextureCache; // 0x8
+		private IndexableDictionary<string, IconTextureLodingInfo> m_loadingAssetBundle; // 0xC
 		private int m_capacity; // 0x10
 		private ulong m_createCount; // 0x18
 
 		// RVA: 0x13DBD3C Offset: 0x13DBD3C VA: 0x13DBD3C
 		public IconTextureCache(int capacity = 0)
 		{
-			//m_loadingAssetBundle = new IndexableDictionary<string, IconTextureLodingInfo>();
-			//m_iconTextureCache = new IndexableDictionary<string, IiconTexture>(capacity);
+			m_loadingAssetBundle = new IndexableDictionary<string, IconTextureLodingInfo>();
+			m_iconTextureCache = new IndexableDictionary<string, IiconTexture>(capacity);
 			m_capacity = capacity;
 			m_createCount = 0;
 		}

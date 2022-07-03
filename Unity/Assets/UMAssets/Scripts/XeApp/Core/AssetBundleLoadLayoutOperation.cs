@@ -23,17 +23,15 @@ namespace XeApp.Core
         // RVA: 0xE0FD30 Offset: 0xE0FD30 VA: 0xE0FD30 Slot: 7
         public override bool Update()
         { 
+            //UnityEngine.Debug.Log("Update Load "+m_AssetName+" - req: "+m_request+" - loadedbundle: "+m_loadedAssetBundle+" - error : "+m_loadingError+" - isdone: "+IsDone()+" - iserror : "+IsError());
             if(m_request != null)
                 return !IsDone();
             m_loadedAssetBundle = AssetBundleManager.GetLoadedAssetBundle(m_AssetBundleName, out m_loadingError);
             if(m_loadedAssetBundle != null)
             {
-#if UNITY_EDITOR
-                if(!FixTextures(m_loadedAssetBundle.m_AssetBundle))
-#endif
-                {
-                    m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync(m_AssetName, m_Type);
-                }
+                UnityEngine.Debug.Log("Request load layout in bundle : "+m_AssetName);
+                m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync(m_AssetName, m_Type);
+                //UnityEngine.Debug.Log("Request load layout in bundle : "+m_AssetName+" "+m_request);
             }
             return !IsError();
         }
@@ -42,8 +40,12 @@ namespace XeApp.Core
         // RVA: 0xE0FE3C Offset: 0xE0FE3C VA: 0xE0FE3C Slot: 11
         public override IEnumerator InitializeLayoutCoroutine(Font font, Action<GameObject> finish)
         {
-            UnityEngine.Debug.Log("Enter InitializeLayoutCoroutine");
+            UnityEngine.Debug.Log("Enter InitializeLayoutCoroutine "+m_AssetName);
+            //UnityEngine.Debug.Log("Enter InitializeLayoutCoroutine request : "+m_request);
             //0xE110FC
+#if UNITY_EDITOR
+            BundleShaderInfo.Instance.FixMaterialShader(m_request.asset);
+#endif
             GameObject instance = UnityEngine.Object.Instantiate<GameObject>(m_request.asset as GameObject);
             LayoutUGUIRuntime[] runtimes = instance.GetComponentsInChildren<LayoutUGUIRuntime>(true);
             for(int i = 0; i < runtimes.Length; i++)
@@ -77,7 +79,7 @@ namespace XeApp.Core
             {
                 finish(instance);
             }
-            UnityEngine.Debug.Log("Exit InitializeLayoutCoroutine");
+            UnityEngine.Debug.Log("Exit InitializeLayoutCoroutine "+m_AssetName);
         }
 
         // [IteratorStateMachineAttribute] // RVA: 0x747F58 Offset: 0x747F58 VA: 0x747F58

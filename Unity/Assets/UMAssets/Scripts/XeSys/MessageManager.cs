@@ -52,7 +52,15 @@ namespace XeSys
 		}
 
 		// // RVA: 0x2397E6C Offset: 0x2397E6C VA: 0x2397E6C
-		// public string GetMessage(string bankName, string labelName) { }
+		public string GetMessage(string bankName, string labelName)
+		{
+			MessageBank bank = GetBank(bankName);
+			if(bank != null)
+			{
+				return bank.GetMessageByLabel(labelName);
+			}
+			return null;
+		}
 
 		// // RVA: 0x2397E98 Offset: 0x2397E98 VA: 0x2397E98
 		// public bool IsExistBank(string bankName) { }

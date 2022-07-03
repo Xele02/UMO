@@ -128,7 +128,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xEC464C Offset: 0xEC464C VA: 0xEC464C
-		// private bool IsTopLevelScene(SceneGroupCategory category, TransitionList.Type transitionName) { }
+		private bool IsTopLevelScene(SceneGroupCategory category, TransitionList.Type transitionName)
+		{
+			if(MenuScene.Instance.GetCurrentScene().name == transitionName)
+				return MenuScene.Instance.GetCurrentScene().groupCategory != category;
+			return true;
+		}
 
 		// // RVA: 0xEC4728 Offset: 0xEC4728 VA: 0xEC4728
 		// public bool IsPlaying() { }
@@ -157,6 +162,21 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC53A4 Offset: 0xEC53A4 VA: 0xEC53A4
 		private void CallBackFreeBattle()
 		{
+			if(OnInterruptEvent != null && OnInterruptEvent(TransitionList.Type.MUSIC_SELECT))
+			{
+				mMenuButtons[3].buttonAnimeDisable = true;
+				return;
+			}
+			mMenuButtons[3].buttonAnimeDisable = false;
+			int cueId = 6;
+			if(IsTopLevelScene(SceneGroupCategory.FREE, TransitionList.Type.MUSIC_SELECT))
+			{
+				MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, null, true, 0);
+				MenuScene.Instance.StatusWindowControl.ResetHistory();
+				cueId = 0;
+			}
+			SoundManager.Instance.sePlayerBoot.Play(cueId);
+
 			UnityEngine.Debug.LogError("TODO CallBackFreeBattle");
 		}
 

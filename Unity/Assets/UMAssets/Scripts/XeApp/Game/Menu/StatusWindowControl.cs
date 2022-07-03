@@ -21,7 +21,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x12E155C Offset: 0x12E155C VA: 0x12E155C
-		// public void ResetHistory() { }
+		public void ResetHistory()
+		{
+			UnityEngine.Debug.LogError("TODO StatusWindowControl ResetHistory");
+		}
 
 		// // RVA: 0x12E1708 Offset: 0x12E1708 VA: 0x12E1708
 		// public void ShowDivaStatusPopupWindow(FFHPBEPOMAK diva, DFKGGBMFFGB playerData, EAJCBFGKKFA friendData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isFriend = False, bool isChangeScene = True, bool isCloseOnly = False, int divaSlotNumber = -1, bool isGoDiva = False) { }

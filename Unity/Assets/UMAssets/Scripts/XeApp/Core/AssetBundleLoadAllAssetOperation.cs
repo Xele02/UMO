@@ -23,12 +23,7 @@ namespace XeApp.Core
                 LoadedAssetBundle loadedBundle = AssetBundleManager.GetLoadedAssetBundle(m_AssetBundleName, out m_loadingError);
                 if(loadedBundle != null)
                 {
-#if UNITY_EDITOR
-                    if(!FixTextures(loadedBundle.m_AssetBundle))
-#endif
-                    {
-                        m_request = loadedBundle.m_AssetBundle.LoadAllAssetsAsync();
-                    }
+                    m_request = loadedBundle.m_AssetBundle.LoadAllAssetsAsync();
                 }
             }
             return !IsDone();
@@ -53,6 +48,9 @@ namespace XeApp.Core
             {
                 if(m_request.allAssets[i].name == assetName)
                 {
+#if UNITY_EDITOR
+                    BundleShaderInfo.Instance.FixMaterialShader(m_request.allAssets[i]);
+#endif
                     return m_request.allAssets[i] as T;
                 }
             }

@@ -417,7 +417,11 @@ public class NKOBMDPHNGP : IKDICBBFBMI
 	// public List<int> ACNLOIIGPLL() { }
 
 	// // RVA: 0xC27698 Offset: 0xC27698 VA: 0xC27698
-	// public static int ADPMLOEOAFD() { }
+	public static int ADPMLOEOAFD()
+	{
+		UnityEngine.Debug.LogError("TODO ADPMLOEOAFD (raid)");
+		return 0;
+	}
 
 	// // RVA: 0xC276A4 Offset: 0xC276A4 VA: 0xC276A4
 	// public static string GPNELLFNPLA() { }
@@ -432,7 +436,11 @@ public class NKOBMDPHNGP : IKDICBBFBMI
 	// private int GGPLIBIPHLI(int AKNELONELJK = 0) { }
 
 	// // RVA: 0xC27EE0 Offset: 0xC27EE0 VA: 0xC27EE0
-	// public bool AKNOOLKMEGJ() { }
+	public bool AKNOOLKMEGJ()
+	{
+		UnityEngine.Debug.LogError("TODO AKNOOLKMEGJ");
+		return false;
+	}
 
 	// // RVA: 0xC27F04 Offset: 0xC27F04 VA: 0xC27F04
 	// public void OMNKLDDHNNE() { }

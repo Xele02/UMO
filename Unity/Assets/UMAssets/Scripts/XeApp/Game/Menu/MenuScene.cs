@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 		// public MenuResidentTextureCache MenuResidentTextureCache { get; } 0xB2DF68
 		// public MusicJacketTextureCache MusicJacketTextureCache { get; } 0xB2E004
 		// public UnitPopupWindowControl UnitSaveWindowControl { get; } 0xB2E0A0
-		// public StatusWindowControl StatusWindowControl { get; } 0xB2E0A8
+		public StatusWindowControl StatusWindowControl { get { return m_statusWindowControl; } } //0xB2E0A8
 		// public MusicPopupWindowControl MusicPopupWindowControl { get; } 0xB2E0B0
 		// public HelpPopupWindowControl HelpPopupWindowControl { get; } 0xB2E0B8
 		// public LimitOverControl LimitOverControl { get; } 0xB2E0C0
@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 		public MenuHeaderControl HeaderMenu { get { return m_menuTransitionControl.MenuHeader; } } //0xB2E680
 		public MenuFooterControl FooterMenu { get { return m_menuTransitionControl.MenuFooter; } } //0xB2E6AC
 		public HelpButton HelpButton { get { return m_menuTransitionControl.HelpButton; } } //0xB2E6D8
-		// public bool DirtyChangeScene { get; } 0xB2E704
+		public bool DirtyChangeScene { get { return m_menuTransitionControl.DirtyChangeScene; } } //0xB2E704
 		public HomeLobbyButtonController LobbyButtonControl { get { return m_lobbyButtonControl; } } //0xB2E730
 		// public FlexibleLayoutCamera FlexibleLayoutCamera { get; } 0xB2E738
 		// public DenominationManager DenomControl { get; } 0xB2AB9C
@@ -573,7 +573,10 @@ namespace XeApp.Game.Menu
 		// public IEnumerator ChangeBgTexture(BgTextureType textureType, int bgId) { }
 
 		// // RVA: 0xB321DC Offset: 0xB321DC VA: 0xB321DC
-		// public TransitionInfo GetCurrentScene() { }
+		public TransitionInfo GetCurrentScene()
+		{
+			return m_menuTransitionControl.GetCurrentScene();
+		}
 
 		// // RVA: 0xB32208 Offset: 0xB32208 VA: 0xB32208
 		// public TransitionRoot GetCurrentTransitionRoot() { }

@@ -205,10 +205,16 @@ namespace XeApp.Game.Menu
 		// public bool IsPlaying() { }
 
 		// // RVA: 0xED2620 Offset: 0xED2620 VA: 0xED2620
-		// public void SelectedButton(MenuButtonAnim.ButtonType buttonType) { }
+		public void SelectedButton(MenuButtonAnim.ButtonType buttonType)
+		{
+			m_menuBar.ChangeButtonSelect(buttonType);
+		}
 
 		// // RVA: 0xED2650 Offset: 0xED2650 VA: 0xED2650
-		// public void NotSelectButtonAll() { }
+		public void NotSelectButtonAll()
+		{
+			m_menuBar.ChangeNotSelectBaseButtonAll();
+		}
 
 		// // RVA: 0xED2678 Offset: 0xED2678 VA: 0xED2678
 		// public void SetButtonDisable(MenuFooterControl.Button bit) { }

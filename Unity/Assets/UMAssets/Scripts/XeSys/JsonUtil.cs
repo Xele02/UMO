@@ -135,7 +135,13 @@ namespace XeSys
 		}
 
 		// // RVA: 0x238AA9C Offset: 0x238AA9C VA: 0x238AA9C
-		// public static bool GetFlag(EDOHBJAPLPF jdata, string key, bool notExistValue) { }
+		public static bool GetFlag(EDOHBJAPLPF_JsonData jdata, string key, bool notExistValue)
+		{
+			int val = GetInt(jdata, key, -1);
+			if(val != -1)
+				return val != 0;
+			return notExistValue;
+		}
 
 		// // RVA: 0x238AACC Offset: 0x238AACC VA: 0x238AACC
 		// public static bool GetFlag(EDOHBJAPLPF jdata, string key) { }

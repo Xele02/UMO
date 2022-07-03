@@ -126,7 +126,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.FooterMenu.MenuBar.SetInterruptEvent((TransitionList.Type type) => {
 				//0x13C78E0
 				UnityEngine.Debug.Log("TODO");
-				return true;
+				return false;
 			});
 			m_isInitRaidLobby = false;
 			UnityEngine.Debug.LogWarning("TODO Raid");

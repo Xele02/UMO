@@ -38,6 +38,7 @@ namespace XeApp.Core
 			LoadedAssetBundle loadedBundle = null;
 			if(m_LoadedAssetBundles.TryGetValue(assetBundleName, out loadedBundle))
 			{
+				UnityEngine.Debug.Log("LoadAssetBundle using already loaded AB "+assetBundleName);
 				loadedBundle.m_ReferencedCount++;
 				return true;
 			}
@@ -47,6 +48,7 @@ namespace XeApp.Core
 				string path = null;
 				if(m_lodingAssetBundle.TryGetValue(assetBundleName, out loadingCount))
 				{
+					UnityEngine.Debug.Log("LoadAssetBundle using currently loading AB "+assetBundleName);
 					m_lodingAssetBundle[assetBundleName] = loadingCount++;
 					return true;
 				}
@@ -65,6 +67,10 @@ namespace XeApp.Core
 				FileLoader.Instance.Request(path, assetBundleName, 
 					(FileResultObject fo) => {
 						//0x1D6AC7C
+#if UNITY_EDITOR
+						BundleShaderInfo.Instance.RegisterShaderIds(fo.assetBundle, () => {
+#endif
+						UnityEngine.Debug.Log("LoadAssetBundle loaded "+assetBundleName);
 						LoadedAssetBundle res = new LoadedAssetBundle(fo.assetBundle);
 						m_LoadedAssetBundles.Add(assetBundleName, res);
 						if(m_lodingAssetBundle.TryGetValue(assetBundleName, out loadingCount))
@@ -73,6 +79,10 @@ namespace XeApp.Core
 						}
 						m_lodingAssetBundle.Remove(assetBundleName);
 						fo.dispose = true;
+
+#if UNITY_EDITOR
+						});
+#endif
 						return true;
 					}, 
 					(FileResultObject fo) => {
@@ -193,11 +203,13 @@ namespace XeApp.Core
 		// // RVA: 0xE1326C Offset: 0xE1326C VA: 0xE1326C
 		protected static void UnloadAssetBundleInternal(string assetBundleName, bool unloadAllLoadedObject = false)
 		{
+			UnityEngine.Debug.Log("Request bundle unload "+assetBundleName);
 			string error;
 			LoadedAssetBundle info = GetLoadedAssetBundle(assetBundleName, out error);
 			if(info != null)
 			{
 				info.m_ReferencedCount -= 1;
+				UnityEngine.Debug.Log("Refcount is "+info.m_ReferencedCount);
 				if(info.m_ReferencedCount == 0)
 				{
 					info.m_AssetBundle.Unload(unloadAllLoadedObject);
