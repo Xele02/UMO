@@ -122,6 +122,13 @@ public class PEBFNABDJDI : DIHHCBACKGG
 		{
 			JLJEEMEOPLE.Add(reader.NELGGEGAJPH[i].PPFNGGCBJKC, reader.NELGGEGAJPH[i].HJLDBEJOMIO);
 		}
+		for(int i = 0; i < reader.GJOBPIOOEHD.Length; i++)
+		{
+			BIJMLAPNMAB data = new BIJMLAPNMAB();
+			data.OIPCKOBNHJL = reader.GJOBPIOOEHD[i].BDCNFMMAEJJ;
+			data.AEMLILCNODL = (int)reader.GJOBPIOOEHD[i].CJOKJFGDHLD;
+			LMBIOEDHNHB.Add(reader.GJOBPIOOEHD[i].GJCCGIFLKPD, data);
+		}
 
 		return true;
     }

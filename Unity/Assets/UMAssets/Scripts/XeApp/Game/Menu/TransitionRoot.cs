@@ -1024,9 +1024,15 @@ namespace XeApp.Game.Menu
 				if(info != null)
 				{
 					if(info.thresholdMasterVersion < 1)
+					{
+						UnityEngine.Debug.Log("Replace prefab "+assetBundleNames[(int)transitionName].prefabName+" with "+info.prefabName);
 						return info.prefabName;
+					}
 					else if(info.thresholdMasterVersion <= DIHHCBACKGG.IEFOPDOOLOK)
+					{
+						UnityEngine.Debug.Log("Replace prefab "+assetBundleNames[(int)transitionName].prefabName+" with "+info.prefabName);
 						return info.prefabName;
+					}
 				}
 				return assetBundleNames[(int)transitionName].prefabName;
 			}

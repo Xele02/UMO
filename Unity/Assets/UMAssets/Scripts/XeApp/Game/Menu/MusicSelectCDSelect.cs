@@ -3,11 +3,57 @@ using XeApp.Game.Common;
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using System.Collections;
 
 namespace XeApp.Game.Menu
 {
 	public class MusicSelectCDSelect : LayoutLabelScriptBase
 	{
+		public enum StyleType
+		{
+			Multi = 0,
+			Single = 1,
+			None = 2,
+		}
+ 
+		public enum EventStyle
+		{
+			Weekly = 0,
+			Disable = 1,
+			None = 2,
+			ExTicket = 3,
+			ExEvent = 4,
+			ScoreEvent = 5,
+			SimulationLive = 6,
+		}
+
+		public enum DropType
+		{
+			None = 0,
+			Ticket = 1,
+			FoldRadar = 2,
+		}
+
+		public enum EventType
+		{
+			Weekly = 0,
+			Score = 1,
+			Special = 2,
+			Birthday = 3,
+			None = 4,
+			Raid = 5,
+		}
+
+		public enum PlayButtonType
+		{
+			PlayEn = 0,
+			Play = 1,
+			Event = 2,
+			Download = 3,
+			Live = 4,
+			Ok = 5,
+		}
+
 		public delegate void SelectionChangedCallback(int offset);
 		public delegate void ScrollRepeatedCallback(int repeatDelta, int beginIndex, int endIndex);
 
@@ -29,45 +75,45 @@ namespace XeApp.Game.Menu
 		private MusicSelectPlayButton m_playButton; // 0x30
 		[SerializeField]
 		private MusicSelectUnitButton m_unitButton; // 0x34
-		// private LayoutSymbolData m_symbolMain; // 0x38
-		// private LayoutSymbolData m_symbolStyle; // 0x3C
-		// private LayoutSymbolData m_symbolPlayButtonType; // 0x40
-		// private LayoutSymbolData m_symbolPlayButtonMain; // 0x44
-		// private LayoutSymbolData m_symbolCurMain; // 0x48
-		// private LayoutSymbolData m_symbolCurTag; // 0x4C
-		// private LayoutSymbolData m_symbolCurStyle; // 0x50
-		// private LayoutSymbolData m_symbolCurItemNum; // 0x54
-		// private LayoutSymbolData m_symbolCurCountExt; // 0x58
-		// private LayoutSymbolData m_symbolCurCountExtAnim; // 0x5C
-		// private LayoutSymbolData m_symbolCurItemDrop; // 0x60
-		// private LayoutSymbolData m_symbolCurTimeLimited; // 0x64
-		// private LayoutSymbolData m_symbolUnitLiveStyle; // 0x68
-		// private LayoutSymbolData m_symbolCurWeekRecovery; // 0x6C
-		// private LayoutSymbolData m_symbolCurStep; // 0x70
-		// private LayoutSymbolData m_symbolScroll; // 0x74
-		// private MusicSelectCDSelect.StyleType m_styleType; // 0x78
-		// private LayoutSymbolData symbolCurMain; // 0x7C
-		// private LayoutSymbolData symbolCurTag; // 0x80
-		// private LayoutSymbolData symbolCurStyle; // 0x84
-		// private LayoutSymbolData symbolCurItemNum; // 0x88
-		// private LayoutSymbolData symbolCurCountExt; // 0x8C
-		// private LayoutSymbolData symbolCurCountExtAnim; // 0x90
-		// private LayoutSymbolData symbolCurItemDrop; // 0x94
-		// private LayoutSymbolData symbolCurTimeLimited; // 0x98
-		// private LayoutSymbolData symbolUnitLiveStyle; // 0x9C
-		// private LayoutSymbolData symbolCurWeekRecovery; // 0xA0
-		// private LayoutSymbolData symbolCurStep; // 0xA4
-		// private MusicSelectCDCursor usingCursor; // 0xA8
-		// private AbsoluteLayout m_eventRankingLayout; // 0xAC
-		// private AbsoluteLayout m_eventGoDivaExpBonusLayout; // 0xB0
-		// private AbsoluteLayout m_eventGoDivaRankingLayout; // 0xB4
-		// private AbsoluteLayout m_eventGoDivaExpLayout; // 0xB8
-		// private List<int> m_eventItemId = new List<int>; // 0xBC
-		// private bool m_isShow; // 0xE4
+		private LayoutSymbolData m_symbolMain; // 0x38
+		private LayoutSymbolData m_symbolStyle; // 0x3C
+		private LayoutSymbolData m_symbolPlayButtonType; // 0x40
+		private LayoutSymbolData m_symbolPlayButtonMain; // 0x44
+		private LayoutSymbolData m_symbolCurMain; // 0x48
+		private LayoutSymbolData m_symbolCurTag; // 0x4C
+		private LayoutSymbolData m_symbolCurStyle; // 0x50
+		private LayoutSymbolData m_symbolCurItemNum; // 0x54
+		private LayoutSymbolData m_symbolCurCountExt; // 0x58
+		private LayoutSymbolData m_symbolCurCountExtAnim; // 0x5C
+		private LayoutSymbolData m_symbolCurItemDrop; // 0x60
+		private LayoutSymbolData m_symbolCurTimeLimited; // 0x64
+		private LayoutSymbolData m_symbolUnitLiveStyle; // 0x68
+		private LayoutSymbolData m_symbolCurWeekRecovery; // 0x6C
+		private LayoutSymbolData m_symbolCurStep; // 0x70
+		private LayoutSymbolData m_symbolScroll; // 0x74
+		private MusicSelectCDSelect.StyleType m_styleType; // 0x78
+		private LayoutSymbolData symbolCurMain; // 0x7C
+		private LayoutSymbolData symbolCurTag; // 0x80
+		private LayoutSymbolData symbolCurStyle; // 0x84
+		private LayoutSymbolData symbolCurItemNum; // 0x88
+		private LayoutSymbolData symbolCurCountExt; // 0x8C
+		private LayoutSymbolData symbolCurCountExtAnim; // 0x90
+		private LayoutSymbolData symbolCurItemDrop; // 0x94
+		private LayoutSymbolData symbolCurTimeLimited; // 0x98
+		private LayoutSymbolData symbolUnitLiveStyle; // 0x9C
+		private LayoutSymbolData symbolCurWeekRecovery; // 0xA0
+		private LayoutSymbolData symbolCurStep; // 0xA4
+		private MusicSelectCDCursor usingCursor; // 0xA8
+		private AbsoluteLayout m_eventRankingLayout; // 0xAC
+		private AbsoluteLayout m_eventGoDivaExpBonusLayout; // 0xB0
+		private AbsoluteLayout m_eventGoDivaRankingLayout; // 0xB4
+		private AbsoluteLayout m_eventGoDivaExpLayout; // 0xB8
+		private List<int> m_eventItemId = new List<int>(); // 0xBC
+		private bool m_isShow; // 0xE4
 
 		public Action onClickEventDetailButton { private get; set; } // 0xC0
 		public Action<int> onClickFlowButton { private get; set; } // 0xC4
-		// private Action<int> onClickUnitButton { private get; set; } // 0xC8
+		private Action<int> onClickUnitButton { get; set; } // 0xC8
 		public MusicSelectCDSelect.SelectionChangedCallback onSelectionChanged { private get; set; } // 0xCC
 		public MusicSelectCDSelect.ScrollRepeatedCallback onScrollRepeated { private get; set; } // 0xD0
 		public Action<bool> onScrollStarted { private get; set; } // 0xD4
@@ -87,7 +133,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167016C Offset: 0x167016C VA: 0x167016C
 		public void Enter()
 		{
-			UnityEngine.Debug.LogError("TODO InitializeFromLayout Enter");
+			m_isShow = true;
+			m_scroller.InputEnable();
+			m_symbolMain.StartAnim("enter");
 		}
 
 		// // RVA: 0x1670218 Offset: 0x1670218 VA: 0x1670218
@@ -105,8 +153,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167044C Offset: 0x167044C VA: 0x167044C
 		public bool IsPlaying()
 		{
-			UnityEngine.Debug.LogError("TODO InitializeFromLayout IsPlaying");
-			return false;
+			return m_symbolMain.IsPlaying();
 		}
 
 		// // RVA: 0x1670478 Offset: 0x1670478 VA: 0x1670478
@@ -134,7 +181,11 @@ namespace XeApp.Game.Menu
 		// public void RefreshJackets() { }
 
 		// // RVA: 0x1670A84 Offset: 0x1670A84 VA: 0x1670A84
-		// public void SetStyleType(MusicSelectCDSelect.StyleType type) { }
+		public void SetStyleType(MusicSelectCDSelect.StyleType type)
+		{
+			UnityEngine.Debug.LogError("TODO cd select SetStyleType");
+			m_symbolStyle.StartAnim("single");
+		}
 
 		// // RVA: 0x1670C44 Offset: 0x1670C44 VA: 0x1670C44
 		// public void ApplyCursorAttr(GameAttribute.Type attr) { }
@@ -275,23 +326,75 @@ namespace XeApp.Game.Menu
 		// public void SetNeedEnergy(int energy) { }
 
 		// // RVA: 0x1672E8C Offset: 0x1672E8C VA: 0x1672E8C
-		// private void OnSelectionChanged(int offset) { }
+		private void OnSelectionChanged(int offset)
+		{
+			UnityEngine.Debug.LogError("TODO OnSelectionChanged");
+		}
 
 		// // RVA: 0x1673300 Offset: 0x1673300 VA: 0x1673300
-		// public void OnScrollRepeated(int repeatDelta, bool isSelectionFlipped) { }
+		public void OnScrollRepeated(int repeatDelta, bool isSelectionFlipped)
+		{
+			UnityEngine.Debug.LogError("TODO OnScrollRepeated");
+		}
 
 		// // RVA: 0x167333C Offset: 0x167333C VA: 0x167333C
-		// public void OnScrollStarted(bool isAuto) { }
+		public void OnScrollStarted(bool isAuto)
+		{
+			UnityEngine.Debug.LogError("TODO OnScrollStarted");
+		}
 
 		// // RVA: 0x16733D4 Offset: 0x16733D4 VA: 0x16733D4
-		// public void OnScrollUpdated(bool isAuto) { }
+		public void OnScrollUpdated(bool isAuto)
+		{
+			UnityEngine.Debug.LogError("TODO OnScrollUpdated");
+		}
 
 		// // RVA: 0x1673448 Offset: 0x1673448 VA: 0x1673448
-		// public void OnScrollEnded(bool isAuto) { }
+		public void OnScrollEnded(bool isAuto)
+		{
+			UnityEngine.Debug.LogError("TODO OnScrollEnded");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F344C Offset: 0x6F344C VA: 0x6F344C
 		// // RVA: 0x16734E0 Offset: 0x16734E0 VA: 0x16734E0
-		// private IEnumerator Co_Initialize() { }
+		private IEnumerator Co_Initialize()
+		{
+			//0x16741A0
+			while(!m_eventDetailButton.IsLoaded())
+				yield return null;
+
+			for(int i = 0; i < m_cdSelectButtons.Count; i++)
+			{
+				while(!m_cdSelectButtons[i].IsLoaded())
+					yield return null;
+			}
+			for(int i = 0; i < m_jacketImages.Count; i++)
+			{
+				while(!m_jacketImages[i].IsLoaded())
+					yield return null;
+			}
+			for(int i = 0; i < m_singleJacketImages.Count; i++)
+			{
+				while(!m_singleJacketImages[i].IsLoaded())
+					yield return null;
+			}
+
+			m_eventDetailButton.AddOnClickCallback(() => {
+				//0x1673ECC
+				UnityEngine.Debug.LogError("TODO EventDetaliButton click");
+			});
+			for(int i = 0; i < m_cdSelectButtons.Count; i++)
+			{
+				m_cdSelectButtons[i].onSelectButton = (int offset) => {
+					//0x1673EE0
+					UnityEngine.Debug.LogError("TODO click m_cdSelectButtons");
+				};
+
+			}
+
+			UnityEngine.Debug.LogError("TODO Co_Initialize MusicCDSelect");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F34C4 Offset: 0x6F34C4 VA: 0x6F34C4
 		// // RVA: 0x1671848 Offset: 0x1671848 VA: 0x1671848
@@ -300,24 +403,45 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x16735AC Offset: 0x16735AC VA: 0x16735AC Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			UnityEngine.Debug.LogError("TODO InitializeFromLayout MusicSelectCDSelect");
+			base.InitializeFromLayout(layout, uvMan);
+			m_symbolMain = CreateSymbol("main", layout);
+			m_symbolStyle = CreateSymbol("style", layout);
+			m_symbolCurMain = CreateSymbol("cur_main", layout);
+			m_symbolCurTag = CreateSymbol("cur_tag", layout);
+			m_symbolCurStyle = CreateSymbol("cur_style", layout);
+			m_symbolCurItemNum = CreateSymbol("cur_item_num", layout);
+			m_symbolCurCountExt = CreateSymbol("cur_count_ext", layout);
+			m_symbolCurCountExtAnim = CreateSymbol("cur_count_ext_anim", layout);
+			m_symbolCurItemDrop = CreateSymbol("cur_item_drop", layout);
+			m_symbolCurTimeLimited = CreateSymbol("cur_time_limited", layout);
+			m_symbolUnitLiveStyle = CreateSymbol("unitlive_style", layout);
+			m_symbolCurWeekRecovery = CreateSymbol("cur_week_recovery", layout);
+			m_symbolCurStep = CreateSymbol("cur_step", layout);
+			m_symbolScroll = CreateSymbol("m_scroll", layout);
+			m_symbolPlayButtonType = CreateSymbol("btn_play_type", layout);
+			m_symbolPlayButtonMain = CreateSymbol("btn_play_main", layout);
+			
+			m_scroller.onSelectionChanged = this.OnSelectionChanged;
+			m_scroller.onScrollRepeated = this.OnScrollRepeated;
+			m_scroller.onScrollStarted = this.OnScrollStarted;
+			m_scroller.onScrollUpdated = this.OnScrollUpdated;
+			m_scroller.onScrollEnded = this.OnScrollEnded;
+
+			m_eventRankingLayout = layout.FindViewByExId("swtbl_sel_music_eve_week_swtbl_sel_music_eve_rank") as AbsoluteLayout;
+			m_eventGoDivaExpBonusLayout = layout.FindViewById("sw_exp_fnt_onoff_anim") as AbsoluteLayout;
+			m_eventGoDivaRankingLayout = layout.FindViewById("sw_s_m_eve_rank_diva_onoff_anim") as AbsoluteLayout;
+			m_eventGoDivaExpLayout = layout.FindViewById("swtbl_sel_me3_icon") as AbsoluteLayout;
+
+			m_playButton.AddOnClickCallback(() => {
+				//0x1673F54
+				UnityEngine.Debug.LogError("TODO Play button click");
+			});
+			StartCoroutine(Co_Initialize());
 			return true;
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F353C Offset: 0x6F353C VA: 0x6F353C
 		// // RVA: 0x1673DE0 Offset: 0x1673DE0 VA: 0x1673DE0
 		// private void <SetupUnitLive>b__99_0(MusicSelectUnitButton.Style style) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F354C Offset: 0x6F354C VA: 0x6F354C
-		// // RVA: 0x1673ECC Offset: 0x1673ECC VA: 0x1673ECC
-		// private void <Co_Initialize>b__154_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F355C Offset: 0x6F355C VA: 0x6F355C
-		// // RVA: 0x1673EE0 Offset: 0x1673EE0 VA: 0x1673EE0
-		// private void <Co_Initialize>b__154_1(int offset) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F356C Offset: 0x6F356C VA: 0x6F356C
-		// // RVA: 0x1673F54 Offset: 0x1673F54 VA: 0x1673F54
-		// private void <InitializeFromLayout>b__156_0() { }
 	}
 }

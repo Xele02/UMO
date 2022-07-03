@@ -243,6 +243,7 @@ namespace XeApp.Game.Menu
 		protected virtual void ApplyMusicListInfo()
 		{
 			UnityEngine.Debug.LogError("TODO MusicSelectScene* ApplyMusicListInfo");
+			m_cdSelect.SetStyleType(MusicSelectCDSelect.StyleType.Single);
 		}
 
 		// // RVA: 0xF3B180 Offset: 0xF3B180 VA: 0xF3B180 Slot: 43

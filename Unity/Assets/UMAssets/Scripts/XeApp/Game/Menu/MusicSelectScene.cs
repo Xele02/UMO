@@ -402,6 +402,7 @@ namespace XeApp.Game.Menu
 		protected override void ApplyMusicListInfo()
 		{
 			UnityEngine.Debug.LogError("TODO MusicSelectScene* ApplyMusicListInfo");
+			base.ApplyMusicListInfo();
 		}
 
 		// // RVA: 0x1682BAC Offset: 0x1682BAC VA: 0x1682BAC Slot: 44

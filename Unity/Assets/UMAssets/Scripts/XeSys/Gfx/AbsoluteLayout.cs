@@ -339,16 +339,43 @@ namespace XeSys.Gfx
 		// public void StartSiblingAnimGoStop(int start, int end) { }
 
 		// // RVA: 0x20410DC Offset: 0x20410DC VA: 0x20410DC
-		// public void StartSiblingAnimGoStop(string startLabel, string endLabel) { }
+		public void StartSiblingAnimGoStop(string startLabel, string endLabel)
+		{
+			AbsoluteLayout p = Parent as AbsoluteLayout;
+			if(p == null)
+				return;
+			for(int i = 0; i < p.m_List.Count; i++)
+			{
+				p.m_List[i].StartAnimGoStop(startLabel, endLabel);
+			}
+		}
 
 		// // RVA: 0x2041218 Offset: 0x2041218 VA: 0x2041218
-		// public void StartSiblingAnimGoStop(string startLabel) { }
+		public void StartSiblingAnimGoStop(string startLabel)
+		{
+			AbsoluteLayout p = Parent as AbsoluteLayout;
+			if(p == null)
+				return;
+			for(int i = 0; i < p.m_List.Count; i++)
+			{
+				p.m_List[i].StartAnimGoStop(startLabel);
+			}
+		}
 
 		// // RVA: 0x204134C Offset: 0x204134C VA: 0x204134C
 		// public void StartSiblingAnimLoop(int start, int end) { }
 
 		// // RVA: 0x2041488 Offset: 0x2041488 VA: 0x2041488
-		// public void StartSiblingAnimLoop(string startLabel, string endLabel) { }
+		public void StartSiblingAnimLoop(string startLabel, string endLabel)
+		{
+			AbsoluteLayout p = Parent as AbsoluteLayout;
+			if(p == null)
+				return;
+			for(int i = 0; i < p.m_List.Count; i++)
+			{
+				p.m_List[i].StartAnimLoop(startLabel);
+			}
+		}
 
 		// // RVA: 0x20415C4 Offset: 0x20415C4 VA: 0x20415C4
 		// public void StartSiblingAnimLoop(string startLabel) { }
@@ -409,10 +436,19 @@ namespace XeSys.Gfx
 		// private void StartChildrenAnimLoop(List<ViewBase> listView, int current, int start, int end) { }
 
 		// // RVA: 0x2041D88 Offset: 0x2041D88 VA: 0x2041D88
-		// public void StartChildrenAnimLoop(string startLabel, string endLabel) { }
+		public void StartChildrenAnimLoop(string startLabel, string endLabel)
+		{
+			StartChildrenAnimLoop(m_List, startLabel, endLabel);
+		}
 
 		// // RVA: 0x2041DAC Offset: 0x2041DAC VA: 0x2041DAC
-		// private void StartChildrenAnimLoop(List<ViewBase> listView, string startLabel, string endLabel) { }
+		private void StartChildrenAnimLoop(List<ViewBase> listView, string startLabel, string endLabel)
+		{
+			for(int i = 0; i < listView.Count; i++)
+			{
+				listView[i].StartAnimLoop(startLabel, endLabel);
+			}
+		}
 
 		// // RVA: 0x2041E98 Offset: 0x2041E98 VA: 0x2041E98
 		// public void StartChildrenAnimLoop(string Label) { }
