@@ -150,7 +150,13 @@ namespace XeApp.Core
 		}
 
 		// // RVA: 0xE12F6C Offset: 0xE12F6C VA: 0xE12F6C
-		// public static AssetBundleLoadUGUIOperationBase LoadUGUIAsync(string assetBundleName, string prefabName) { }
+		public static AssetBundleLoadUGUIOperationBase LoadUGUIAsync(string assetBundleName, string prefabName)
+		{
+			LoadAssetBundle(assetBundleName, false);
+			AssetBundleLoadUGUIOperation operation = new AssetBundleLoadUGUIOperation(assetBundleName, prefabName);
+			m_InProgressOperations.Add(operation);
+			return operation;
+		}
 
 		// // RVA: 0xE0F2E0 Offset: 0xE0F2E0 VA: 0xE0F2E0
 		public static LoadedAssetBundle GetLoadedAssetBundle(string assetBundleName, out string error)

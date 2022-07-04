@@ -7,30 +7,21 @@ namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectEventItem : MonoBehaviour
 	{
-		[SerializeField]
-		private InOutAnime m_inOut;
-		[SerializeField]
-		private CanvasGroup m_canvasGroup;
-		[SerializeField]
-		private RawImageEx m_itemIcon;
-		[SerializeField]
-		private TextMeshProUGUI m_itemNumText;
-
-		// // Fields
 		// [HeaderAttribute] // RVA: 0x6748CC Offset: 0x6748CC VA: 0x6748CC
-		// [SerializeField] // RVA: 0x6748CC Offset: 0x6748CC VA: 0x6748CC
-		// private InOutAnime m_inOut; // 0xC
-		// [SerializeField] // RVA: 0x674914 Offset: 0x674914 VA: 0x674914
-		// private CanvasGroup m_canvasGroup; // 0x10
-		// [SerializeField] // RVA: 0x674924 Offset: 0x674924 VA: 0x674924
-		// private RawImageEx m_itemIcon; // 0x14
-		// [SerializeField] // RVA: 0x674934 Offset: 0x674934 VA: 0x674934
-		// private TextMeshProUGUI m_itemNumText; // 0x18
-
-		// // Methods
+		[SerializeField]
+		private InOutAnime m_inOut; // 0xC
+		[SerializeField]
+		private CanvasGroup m_canvasGroup; // 0x10
+		[SerializeField]
+		private RawImageEx m_itemIcon; // 0x14
+		[SerializeField]
+		private TextMeshProUGUI m_itemNumText; // 0x18
 
 		// // RVA: 0xBDDC5C Offset: 0xBDDC5C VA: 0xBDDC5C
-		// private void Awake() { }
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
 		// // RVA: 0xBDDC60 Offset: 0xBDDC60 VA: 0xBDDC60
 		// public void SetEnable(bool isEnable) { }
@@ -49,9 +40,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xBDDE68 Offset: 0xBDDE68 VA: 0xBDDE68
 		// public bool IsPlaying() { }
-
-		// // RVA: 0xBDDE94 Offset: 0xBDDE94 VA: 0xBDDE94
-		// public void .ctor() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F59FC Offset: 0x6F59FC VA: 0x6F59FC
 		// // RVA: 0xBDDE9C Offset: 0xBDDE9C VA: 0xBDDE9C

@@ -7,64 +7,34 @@ namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectSeriesButtonGroup : MonoBehaviour
 	{
+		// private static readonly MusicSelectConsts.SeriesType[] BUTTON_LIST_TYPE = new MusicSelectConsts.SeriesType[6] {DB17E883A647963A26D973378923EF4649801319}; // 0x0
+		// public static readonly SeriesAttr.Type[] CONVERT_SERIES_LIST = new SeriesAttr.Type[6] {43455BB18F9D2C51C2C5B74704B48B60579B2E8D}; // 0x4
 		[SerializeField]
-		private UGUIToggleButtonGroup m_toggleButtonGroup;
+		private UGUIToggleButtonGroup m_toggleButtonGroup; // 0xC
 		[SerializeField]
-		private InOutAnime m_inOut;
+		private InOutAnime m_inOut; // 0x10
 		[SerializeField]
-		private UGUIButton m_pullDownButton;
+		private UGUIButton m_pullDownButton; // 0x14
 		[SerializeField]
-		private InOutAnime m_pullDownInOut;
+		private InOutAnime m_pullDownInOut; // 0x18
 		[SerializeField]
-		private Sprite[] m_seriesSprites;
+		private Sprite[] m_seriesSprites = new Sprite[6]; // 0x1C
 		[SerializeField]
-		private Image[] m_btnImage;
+		private Image[] m_btnImage = new Image[6]; // 0x20
 		[SerializeField]
-		private TextMeshProUGUI[] m_btnText;
+		private TextMeshProUGUI[] m_btnText = new TextMeshProUGUI[6]; // 0x24
 		[SerializeField]
-		private Image m_pullDownBtnImage;
+		private Image m_pullDownBtnImage; // 0x28
 		[SerializeField]
-		private TextMeshProUGUI m_pullDownBtnText;
+		private TextMeshProUGUI m_pullDownBtnText; // 0x2C
 
-		// // Fields
-		// private static readonly MusicSelectConsts.SeriesType[] BUTTON_LIST_TYPE; // 0x0
-		// public static readonly SeriesAttr.Type[] CONVERT_SERIES_LIST; // 0x4
-		// [SerializeField] // RVA: 0x6759D0 Offset: 0x6759D0 VA: 0x6759D0
-		// private UGUIToggleButtonGroup m_toggleButtonGroup; // 0xC
-		// [SerializeField] // RVA: 0x6759E0 Offset: 0x6759E0 VA: 0x6759E0
-		// private InOutAnime m_inOut; // 0x10
-		// [SerializeField] // RVA: 0x6759F0 Offset: 0x6759F0 VA: 0x6759F0
-		// private UGUIButton m_pullDownButton; // 0x14
-		// [SerializeField] // RVA: 0x675A00 Offset: 0x675A00 VA: 0x675A00
-		// private InOutAnime m_pullDownInOut; // 0x18
-		// [SerializeField] // RVA: 0x675A10 Offset: 0x675A10 VA: 0x675A10
-		// private Sprite[] m_seriesSprites; // 0x1C
-		// [SerializeField] // RVA: 0x675A20 Offset: 0x675A20 VA: 0x675A20
-		// private Image[] m_btnImage; // 0x20
-		// [SerializeField] // RVA: 0x675A30 Offset: 0x675A30 VA: 0x675A30
-		// private TextMeshProUGUI[] m_btnText; // 0x24
-		// [SerializeField] // RVA: 0x675A40 Offset: 0x675A40 VA: 0x675A40
-		// private Image m_pullDownBtnImage; // 0x28
-		// [SerializeField] // RVA: 0x675A50 Offset: 0x675A50 VA: 0x675A50
-		// private TextMeshProUGUI m_pullDownBtnText; // 0x2C
-		// [CompilerGeneratedAttribute] // RVA: 0x675A60 Offset: 0x675A60 VA: 0x675A60
-		// private Action<int> <OnButtonClickListener>k__BackingField; // 0x30
-
-		// // Properties
-		// private Action<int> OnButtonClickListener { get; set; }
-
-		// // Methods
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F7274 Offset: 0x6F7274 VA: 0x6F7274
-		// // RVA: 0xAD92E4 Offset: 0xAD92E4 VA: 0xAD92E4
-		// private Action<int> get_OnButtonClickListener() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F7284 Offset: 0x6F7284 VA: 0x6F7284
-		// // RVA: 0xAC6074 Offset: 0xAC6074 VA: 0xAC6074
-		// public void set_OnButtonClickListener(Action<int> value) { }
+		// public Action<int> OnButtonClickListener { private get; set; } // 0x30
 
 		// // RVA: 0xAD92EC Offset: 0xAD92EC VA: 0xAD92EC
-		// private void Awake() { }
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
 		// // RVA: 0xAD9714 Offset: 0xAD9714 VA: 0xAD9714
 		// public void SetSeriesButton(int series) { }
@@ -89,12 +59,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xAD9768 Offset: 0xAD9768 VA: 0xAD9768
 		// private void SetPullDownText(int btnIndex) { }
-
-		// // RVA: 0xAD9AA4 Offset: 0xAD9AA4 VA: 0xAD9AA4
-		// public void .ctor() { }
-
-		// // RVA: 0xAD9B50 Offset: 0xAD9B50 VA: 0xAD9B50
-		// private static void .cctor() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F7294 Offset: 0x6F7294 VA: 0x6F7294
 		// // RVA: 0xAD9C2C Offset: 0xAD9C2C VA: 0xAD9C2C

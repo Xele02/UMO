@@ -4,20 +4,16 @@ namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectUISapporter : MonoBehaviour
 	{
-		public bool isLine6Mode;
-		public KGCNCBOKCBA.GNENJEHKMHD eventStatus;
-
-		// // Fields
-		// public bool isLine6Mode; // 0xC
-		// public KGCNCBOKCBA.GNENJEHKMHD eventStatus; // 0x10
+		public bool isLine6Mode; // 0xC
+		public KGCNCBOKCBA.GNENJEHKMHD eventStatus; // 0x10
 		// private Difficulty.Type m_difficulty; // 0x14
 		// private MusicSelectConsts.SeriesType m_series; // 0x18
 		// private VerticalMusicSelectSortOrder.SortOrder m_sortOrder; // 0x1C
 		// private FPGEMAIAMBF m_rewardData; // 0x20
 		// private List<MusicRewardStat> m_rewardStats; // 0x24
-		// private StringBuilder m_stringBuffer; // 0x28
+		// private StringBuilder m_stringBuffer = new StringBuilder(64); // 0x28
 		// private List<FKMOKDCJFEN> m_questList; // 0x2C
-		// private FDDIIKBJNNA m_snsData; // 0x30
+		// private FDDIIKBJNNA m_snsData = new FDDIIKBJNNA(); // 0x30
 		// private VerticalMusicSelectMusicList m_musicSelectList; // 0x34
 		// private VerticalMusicSelectMusicDetail m_musicDetail; // 0x38
 		// private VerticalMusicSelectUtaRate m_utaRate; // 0x3C
@@ -33,24 +29,12 @@ namespace XeApp.Game.Menu
 		// private MMOLNAHHDOM m_unitLiveLocalSaveData; // 0x64
 		// private IKDICBBFBMI m_eventCtrl; // 0x68
 
-		// // Properties
-		// public Difficulty.Type difficulty { get; }
-		// public MusicSelectConsts.SeriesType series { get; }
-		// public VerticalMusicSelectSortOrder.SortOrder sortOrder { get; }
-		// public bool IsEventCounting { get; }
-		// public bool IsEventEndChallengePeriod { get; }
-		// public bool IsEventRankingEnd { get; }
-
-		// // Methods
-
-		// // RVA: 0xAD9F84 Offset: 0xAD9F84 VA: 0xAD9F84
-		// public Difficulty.Type get_difficulty() { }
-
-		// // RVA: 0xAD9F8C Offset: 0xAD9F8C VA: 0xAD9F8C
-		// public MusicSelectConsts.SeriesType get_series() { }
-
-		// // RVA: 0xAD9F94 Offset: 0xAD9F94 VA: 0xAD9F94
-		// public VerticalMusicSelectSortOrder.SortOrder get_sortOrder() { }
+		// public Difficulty.Type difficulty { get; } 0xAD9F84
+		// public MusicSelectConsts.SeriesType series { get; } 0xAD9F8C
+		// public VerticalMusicSelectSortOrder.SortOrder sortOrder { get; } 0xAD9F94
+		// public bool IsEventCounting { get; } 0xADA1B8
+		// public bool IsEventEndChallengePeriod { get; } 0xADA1CC
+		// public bool IsEventRankingEnd { get; } 0xADA1E0
 
 		// // RVA: 0xAC7248 Offset: 0xAC7248 VA: 0xAC7248
 		// public void SetUp(VerticalMusicSelectMusicList musicSelectList, VerticalMusicSelectMusicDetail musicDetail, VerticalMusicSelectUtaRate utaRate, VerticalMusicSelectEventBanner eventBanner, VerticalMusicSelectDifficultyButtonGroup difficultyButtonGroup, VerticalMusicSelectSeriesButtonGroup seriesButtonGroup, VerticalMusicSelectPlayButton playButton, VerticalMusicSelctSimulationButton simulationButton, VerticalMusicSelectSortOrder orderButton, IKDICBBFBMI eventCtrl, MMOLNAHHDOM unitLiveLocalSaveData, VerticalMusicSelecLine6Button line6Button, VerticalMusicSelecChoiceMusicListTab choiceMusicListTab) { }
@@ -60,15 +44,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xADA168 Offset: 0xADA168 VA: 0xADA168
 		// private void CreateSnsList(IKDICBBFBMI eventCtrl) { }
-
-		// // RVA: 0xADA1B8 Offset: 0xADA1B8 VA: 0xADA1B8
-		// public bool get_IsEventCounting() { }
-
-		// // RVA: 0xADA1CC Offset: 0xADA1CC VA: 0xADA1CC
-		// public bool get_IsEventEndChallengePeriod() { }
-
-		// // RVA: 0xADA1E0 Offset: 0xADA1E0 VA: 0xADA1E0
-		// public bool get_IsEventRankingEnd() { }
 
 		// // RVA: 0xADA1F4 Offset: 0xADA1F4 VA: 0xADA1F4
 		// public bool IsNewStory() { }
@@ -195,8 +170,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xADBC78 Offset: 0xADBC78 VA: 0xADBC78
 		// public void SetCollectionEventRanking(IBJAKJJICBC musicData, int rank) { }
-
-		// // RVA: 0xADBC7C Offset: 0xADBC7C VA: 0xADBC7C
-		// public void .ctor() { }
 	}
 }

@@ -8,63 +8,33 @@ namespace XeApp.Game.Menu
 	public class VerticalMusicSelectEventBanner : MonoBehaviour
 	{
 		[SerializeField]
-		private CanvasGroup m_canvasGroup;
+		private CanvasGroup m_canvasGroup; // 0xC
 		[SerializeField]
-		private UGUIButton m_uGUIButton;
+		private UGUIButton m_uGUIButton; // 0x10
 		[SerializeField]
-		private InOutAnime m_inOut;
+		private InOutAnime m_inOut; // 0x14
 		[SerializeField]
-		private RawImage m_eventBunnerImage;
+		private RawImage m_eventBunnerImage; // 0x18
 		[SerializeField]
-		private GameObject m_countingObj;
+		private GameObject m_countingObj; // 0x1C
 		[SerializeField]
-		private GameObject m_openObj;
+		private GameObject m_openObj; // 0x20
 		[SerializeField]
-		private TextMeshProUGUI m_limitTime;
+		private TextMeshProUGUI m_limitTime; // 0x24
 		[SerializeField]
-		private InOutAnime m_pullDownInOut;
+		private InOutAnime m_pullDownInOut; // 0x28
 		[SerializeField]
-		private UGUIButton m_pullDownButton;
+		private UGUIButton m_pullDownButton; // 0x2C
+		// private string m_musicEventRemainPrefix = ""; // 0x30
+		// private string m_musicEventRemainTime = ""; // 0x34
 
-		// // Fields
-		// [SerializeField] // RVA: 0x67482C Offset: 0x67482C VA: 0x67482C
-		// private CanvasGroup m_canvasGroup; // 0xC
-		// [SerializeField] // RVA: 0x67483C Offset: 0x67483C VA: 0x67483C
-		// private UGUIButton m_uGUIButton; // 0x10
-		// [SerializeField] // RVA: 0x67484C Offset: 0x67484C VA: 0x67484C
-		// private InOutAnime m_inOut; // 0x14
-		// [SerializeField] // RVA: 0x67485C Offset: 0x67485C VA: 0x67485C
-		// private RawImage m_eventBunnerImage; // 0x18
-		// [SerializeField] // RVA: 0x67486C Offset: 0x67486C VA: 0x67486C
-		// private GameObject m_countingObj; // 0x1C
-		// [SerializeField] // RVA: 0x67487C Offset: 0x67487C VA: 0x67487C
-		// private GameObject m_openObj; // 0x20
-		// [SerializeField] // RVA: 0x67488C Offset: 0x67488C VA: 0x67488C
-		// private TextMeshProUGUI m_limitTime; // 0x24
-		// [SerializeField] // RVA: 0x67489C Offset: 0x67489C VA: 0x67489C
-		// private InOutAnime m_pullDownInOut; // 0x28
-		// [SerializeField] // RVA: 0x6748AC Offset: 0x6748AC VA: 0x6748AC
-		// private UGUIButton m_pullDownButton; // 0x2C
-		// private string m_musicEventRemainPrefix; // 0x30
-		// private string m_musicEventRemainTime; // 0x34
-		// [CompilerGeneratedAttribute] // RVA: 0x6748BC Offset: 0x6748BC VA: 0x6748BC
-		// private Action <OnButtonClickListener>k__BackingField; // 0x38
-
-		// // Properties
-		// private Action OnButtonClickListener { get; set; }
-
-		// // Methods
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F59AC Offset: 0x6F59AC VA: 0x6F59AC
-		// // RVA: 0xBDD218 Offset: 0xBDD218 VA: 0xBDD218
-		// public void set_OnButtonClickListener(Action value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F59BC Offset: 0x6F59BC VA: 0x6F59BC
-		// // RVA: 0xBDD220 Offset: 0xBDD220 VA: 0xBDD220
-		// private Action get_OnButtonClickListener() { }
+		// public Action OnButtonClickListener { private get; set; } // 0x38
 
 		// // RVA: 0xBDD228 Offset: 0xBDD228 VA: 0xBDD228
-		// private void Awake() { }
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
 		// // RVA: 0xBDD36C Offset: 0xBDD36C VA: 0xBDD36C
 		// private void ApplyRemainTime() { }
@@ -101,9 +71,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xBDD998 Offset: 0xBDD998 VA: 0xBDD998
 		// public void SetEnable(bool isEneble) { }
-
-		// // RVA: 0xBDDA1C Offset: 0xBDDA1C VA: 0xBDDA1C
-		// public void .ctor() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F59CC Offset: 0x6F59CC VA: 0x6F59CC
 		// // RVA: 0xBDDA8C Offset: 0xBDDA8C VA: 0xBDDA8C

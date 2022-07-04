@@ -1,21 +1,26 @@
+using System.Collections;
+using System.Text;
+using UnityEngine;
+using XeApp.Core;
+using XeApp.Game.Common;
+using XeApp.Game.MusicSelect;
+using XeSys;
+
 namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectScene : VerticalMusicSelectSceneBase
 	{
-		// // Fields
-		// private static readonly FreeCategoryId.Type[] MUSIC_LIST_TYPE; // 0x0
-		// private VerticalMusicSelectUISapporter m_musicSelectUISapporter; // 0xB0
-		// private List<VerticalMusicDataList> m_originalMusicDataList; // 0xB4
-		// private List<VerticalMusicDataList> m_originalEventMusicDataList; // 0xB8
-		// private VerticalMusicDataList m_filterMusicDataList; // 0xBC
-		// private VerticalMusicDataList m_filterMusicEventDataList; // 0xC0
+		// private static readonly FreeCategoryId.Type[] MUSIC_LIST_TYPE = new FreeCategoryId.Type[5] {5F2E96BE9C0A28A18AE1C50C5298E42BB9EC26E0}; // 0x0
+		// private VerticalMusicSelectUISapporter m_musicSelectUISapporter = new VerticalMusicSelectUISapporter(); // 0xB0
+		// private List<VerticalMusicDataList> m_originalMusicDataList = new List<VerticalMusicDataList>(); // 0xB4
+		// private List<VerticalMusicDataList> m_originalEventMusicDataList = new List<VerticalMusicDataList>(); // 0xB8
+		// private VerticalMusicDataList m_filterMusicDataList = new VerticalMusicDataList(); // 0xBC
+		// private VerticalMusicDataList m_filterMusicEventDataList = new VerticalMusicDataList(); // 0xC0
 		// private bool m_isListScroll; // 0xC4
 		// private bool m_isChangeBg; // 0xC5
 		// private bool m_isEndMyRankRequest; // 0xC6
 		// private bool m_showScoreRankingPopup; // 0xC7
-		// public static readonly MusicSelectConsts.SeriesType[] CategoryToSeriesType; // 0x4
-		// [CompilerGeneratedAttribute] // RVA: 0x6758B0 Offset: 0x6758B0 VA: 0x6758B0
-		// private int <list_no>k__BackingField; // 0xC8
+		// public static readonly MusicSelectConsts.SeriesType[] CategoryToSeriesType = new MusicSelectConsts.SeriesType[7] {B21C1224684EAD6057E0D535F5E726DA8EDD5779}; // 0x4
 		// private bool m_isBgCached; // 0xCC
 		// private bool m_isScoreRankingPopup; // 0xCD
 		// private bool m_isScoreEventTimeLimit; // 0xCE
@@ -25,93 +30,47 @@ namespace XeApp.Game.Menu
 		// private FreeCategoryId.Type m_pickupFreeCategoryId; // 0xD8
 		// private OHCAABOMEOF.KGOGMKMBCPP m_currentEventType; // 0xDC
 		// private VerticalMusicSelecChoiceMusicListTab.MusicTab m_musicTab; // 0xE0
-		// private VerticalMusicSelectMusicList m_musicList; // 0xE4
-		// private VerticalMusicSelectMusicDetail m_musicDetail; // 0xE8
-		// private VerticalMusicSelectUtaRate m_utaRate; // 0xEC
-		// private VerticalMusicSelectEventBanner m_eventBanner; // 0xF0
-		// private VerticalMusicSelectEventItem m_eventItem; // 0xF4
-		// private VerticalMusicSelectDifficultyButtonGroup m_difficultyButtonGroup; // 0xF8
-		// private VerticalMusicSelectSeriesButtonGroup m_seriesButtonGroup; // 0xFC
-		// private VerticalMusicSelecLine6Button m_line6Button; // 0x100
-		// private VerticalMusicSelctSimulationButton m_simulationButton; // 0x104
-		// private VerticalMusicSelectPlayButton m_playButton; // 0x108
-		// private VerticalMusicSelecChoiceMusicListTab m_choiceMusicTab; // 0x10C
-		// private MusicJecketScrollView m_jacketScroll; // 0x110
-		// private VerticalMusicSelectMusicFilterButton m_filterButton; // 0x114
-		// private VerticalMusicSelectSortOrder m_orderButton; // 0x118
+		private VerticalMusicSelectMusicList m_musicList; // 0xE4
+		private VerticalMusicSelectMusicDetail m_musicDetail; // 0xE8
+		 private VerticalMusicSelectUtaRate m_utaRate; // 0xEC
+		private VerticalMusicSelectEventBanner m_eventBanner; // 0xF0
+		private VerticalMusicSelectEventItem m_eventItem; // 0xF4
+		 private VerticalMusicSelectDifficultyButtonGroup m_difficultyButtonGroup; // 0xF8
+		private VerticalMusicSelectSeriesButtonGroup m_seriesButtonGroup; // 0xFC
+		private VerticalMusicSelecLine6Button m_line6Button; // 0x100
+		 private VerticalMusicSelctSimulationButton m_simulationButton; // 0x104
+		 private VerticalMusicSelectPlayButton m_playButton; // 0x108
+		 private VerticalMusicSelecChoiceMusicListTab m_choiceMusicTab; // 0x10C
+		 private MusicJecketScrollView m_jacketScroll; // 0x110
+		 private VerticalMusicSelectMusicFilterButton m_filterButton; // 0x114
+		 private VerticalMusicSelectSortOrder m_orderButton; // 0x118
 		// private LayoutEventGoDivaFeverLimit m_feverLimit; // 0x11C
-		// private static readonly int newSeriesBgIdDiff; // 0x8
-		// private static readonly int eventCategoryId; // 0xC
-		// private static readonly int[] CategoryToNewSeriesBgId; // 0x10
-		// private static readonly int[] SeriesToNewSeriesBgId; // 0x14
-		// private static readonly int noMusicCategoryId; // 0x18
+		// private static readonly int newSeriesBgIdDiff = 6; // 0x8
+		// private static readonly int eventCategoryId = 5; // 0xC
+		// private static readonly int[] CategoryToNewSeriesBgId = new int[7] { -1, newSeriesBgIdDiff+4, newSeriesBgIdDiff+3, newSeriesBgIdDiff+2, newSeriesBgIdDiff+1, newSeriesBgIdDiff+eventCategoryId, newSeriesBgIdDiff+6 }; // 0x10
+		// private static readonly int[] SeriesToNewSeriesBgId = new int[6] { -1, newSeriesBgIdDiff+1, newSeriesBgIdDiff+2, newSeriesBgIdDiff+3, newSeriesBgIdDiff+4, newSeriesBgIdDiff+6 }; // 0x14
+		// private static readonly int noMusicCategoryId = CategoryToNewSeriesBgId[6] + 1; // 0x18
 
-		// // Properties
-		// private VerticalMusicSelectSortOrder.SortOrder sortOrder { get; }
-		// protected override IBJAKJJICBC selectMusicData { get; }
-		// protected override VerticalMusicDataList.MusicListData selectMusicListData { get; }
-		// protected override Difficulty.Type diff { get; }
-		// protected override MusicSelectConsts.SeriesType series { get; }
-		// protected override int list_no { get; set; }
-		// protected override int musicListCount { get; }
-		// protected override VerticalMusicDataList currentMusicList { get; }
-		// protected override List<VerticalMusicDataList> originalMusicList { get; }
-		// protected override bool isLine6Mode { get; }
-		// private bool m_isLine6Mode { get; set; }
-		// private List<VerticalMusicDataList> currentOriginalMusicDataList { get; }
-
-		// // Methods
-
-		// // RVA: 0xBE5B30 Offset: 0xBE5B30 VA: 0xBE5B30
-		// private VerticalMusicSelectSortOrder.SortOrder get_sortOrder() { }
-
-		// // RVA: 0xBE5B5C Offset: 0xBE5B5C VA: 0xBE5B5C Slot: 40
-		// protected override IBJAKJJICBC get_selectMusicData() { }
-
-		// // RVA: 0xBE5C04 Offset: 0xBE5C04 VA: 0xBE5C04 Slot: 41
-		// protected override VerticalMusicDataList.MusicListData get_selectMusicListData() { }
-
-		// // RVA: 0xBE5C90 Offset: 0xBE5C90 VA: 0xBE5C90 Slot: 31
-		// protected override Difficulty.Type get_diff() { }
-
-		// // RVA: 0xBE5CBC Offset: 0xBE5CBC VA: 0xBE5CBC Slot: 32
-		// protected override MusicSelectConsts.SeriesType get_series() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5E8C Offset: 0x6F5E8C VA: 0x6F5E8C
-		// // RVA: 0xBE5CE8 Offset: 0xBE5CE8 VA: 0xBE5CE8 Slot: 33
-		// protected override void set_list_no(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5E9C Offset: 0x6F5E9C VA: 0x6F5E9C
-		// // RVA: 0xBE5CF0 Offset: 0xBE5CF0 VA: 0xBE5CF0 Slot: 34
-		// protected override int get_list_no() { }
-
-		// // RVA: 0xBE5CF8 Offset: 0xBE5CF8 VA: 0xBE5CF8 Slot: 36
-		// protected override int get_musicListCount() { }
-
-		// // RVA: 0xBE5D00 Offset: 0xBE5D00 VA: 0xBE5D00 Slot: 37
-		// protected override VerticalMusicDataList GetMusicList(int i) { }
-
-		// // RVA: 0xBE5D14 Offset: 0xBE5D14 VA: 0xBE5D14 Slot: 38
-		// protected override VerticalMusicDataList get_currentMusicList() { }
-
-		// // RVA: 0xBE5D2C Offset: 0xBE5D2C VA: 0xBE5D2C Slot: 39
-		// protected override List<VerticalMusicDataList> get_originalMusicList() { }
-
-		// // RVA: 0xBE5D34 Offset: 0xBE5D34 VA: 0xBE5D34 Slot: 35
-		// protected override bool get_isLine6Mode() { }
-
-		// // RVA: 0xBE5D7C Offset: 0xBE5D7C VA: 0xBE5D7C
-		// private void set_m_isLine6Mode(bool value) { }
-
-		// // RVA: 0xBE5D58 Offset: 0xBE5D58 VA: 0xBE5D58
-		// private bool get_m_isLine6Mode() { }
-
-		// // RVA: 0xBE5DA4 Offset: 0xBE5DA4 VA: 0xBE5DA4
-		// private List<VerticalMusicDataList> get_currentOriginalMusicDataList() { }
+		// private VerticalMusicSelectSortOrder.SortOrder sortOrder { get; } 0xBE5B30
+		// protected override IBJAKJJICBC selectMusicData { get; } 0xBE5B5C
+		// protected override VerticalMusicDataList.MusicListData selectMusicListData { get; } 0xBE5C04
+		// protected override Difficulty.Type diff { get; } 0xBE5C90
+		// protected override MusicSelectConsts.SeriesType series { get; } 0xBE5CBC
+		// protected override int list_no { get; set; } // 0xC8
+		// protected override int musicListCount { get; } 0xBE5CF8 0xBE5D00
+		// protected override VerticalMusicDataList currentMusicList { get; } 0xBE5D14
+		// protected override List<VerticalMusicDataList> originalMusicList { get; } 0xBE5D2C
+		// protected override bool isLine6Mode { get; } 0xBE5D34
+		// private bool m_isLine6Mode { get; set; } 0xBE5D7C 0xBE5D58
+		// private List<VerticalMusicDataList> currentOriginalMusicDataList { get; } 0xBE5DA4
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5EAC Offset: 0x6F5EAC VA: 0x6F5EAC
 		// // RVA: 0xBE5DBC Offset: 0xBE5DBC VA: 0xBE5DBC Slot: 42
-		// protected override IEnumerator Co_OnPreSetCanvas() { }
+		//protected override IEnumerator Co_OnPreSetCanvas()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	yield break;
+		//}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5F24 Offset: 0x6F5F24 VA: 0x6F5F24
 		// // RVA: 0xBE5E44 Offset: 0xBE5E44 VA: 0xBE5E44
@@ -119,56 +78,284 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5F9C Offset: 0x6F5F9C VA: 0x6F5F9C
 		// // RVA: 0xBE5F30 Offset: 0xBE5F30 VA: 0xBE5F30 Slot: 43
-		// protected override IEnumerator Co_OnPostSetCanvas() { }
+		//protected override IEnumerator Co_OnPostSetCanvas()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	yield break;
+		//}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6014 Offset: 0x6F6014 VA: 0x6F6014
 		// // RVA: 0xBE5FB8 Offset: 0xBE5FB8 VA: 0xBE5FB8 Slot: 44
-		// protected override IEnumerator Co_ActivateScene() { }
+		//protected override IEnumerator Co_ActivateScene()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	yield break;
+		//}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F608C Offset: 0x6F608C VA: 0x6F608C
 		// // RVA: 0xBE6040 Offset: 0xBE6040 VA: 0xBE6040
-		// private IEnumerator Co_ShowScoreRankingPopup() { }
+		private IEnumerator Co_ShowScoreRankingPopup()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6104 Offset: 0x6F6104 VA: 0x6F6104
 		// // RVA: 0xBE60C8 Offset: 0xBE60C8 VA: 0xBE60C8 Slot: 45
-		// protected override IEnumerator Co_LoadResourceOnAwake() { }
+		protected override IEnumerator Co_LoadResourceOnAwake()
+		{
+			//0xAC3C08
+			Font systemFont = GameManager.Instance.GetSystemFont();
+			StringBuilder bundleName = new StringBuilder();
+			bundleName.Set("ly/038.xab");
+			int bundleCount = 0;
+
+			AssetBundleLoadUGUIOperationBase uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectMusicDetail");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF08B4
+				instance.transform.SetParent(transform, false);
+				m_musicDetail = instance.GetComponentInChildren<VerticalMusicSelectMusicDetail>();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectMusicList");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF0984
+				instance.transform.SetParent(transform, false);
+				m_musicList = instance.GetComponentInChildren<VerticalMusicSelectMusicList>();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectUtaRate");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF0A54
+				instance.transform.SetParent(transform, false);
+				m_utaRate = instance.GetComponentInChildren<VerticalMusicSelectUtaRate>();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectDifficulty");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF0B24
+				instance.transform.SetParent(transform, false);
+				m_difficultyButtonGroup = instance.GetComponentInChildren<VerticalMusicSelectDifficultyButtonGroup>();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectLine6Button");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF0BF4
+				instance.transform.SetParent(transform, false);
+				m_line6Button = instance.GetComponentInChildren<VerticalMusicSelecLine6Button>();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectEventItem");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF0CC4
+				instance.transform.SetParent(transform, false);
+				m_eventItem = instance.GetComponentInChildren<VerticalMusicSelectEventItem>();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectSimulationButton");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF0D94
+				instance.transform.SetParent(transform, false);
+				m_simulationButton = instance.GetComponentInChildren<VerticalMusicSelctSimulationButton>();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectPlayButton");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF0E64
+				instance.transform.SetParent(transform, false);
+				m_playButton = instance.GetComponentInChildren<VerticalMusicSelectPlayButton>();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelecChoiceMusicListTab");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF0F34
+				instance.transform.SetParent(transform, false);
+				m_choiceMusicTab = instance.GetComponentInChildren<VerticalMusicSelecChoiceMusicListTab>();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "AllSelect");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF1004
+				instance.transform.SetParent(transform, false);
+				instance.SetActive(false);
+				m_jacketScroll = instance.GetComponentInChildren<MusicJecketScrollView>();
+			});
+			bundleCount++;
+
+			GameObject baseContent = null;
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "AllSelectJuketButton");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xAC2BC4
+				baseContent = instance;
+				MusicJacketScrollItem item = instance.GetComponentInChildren<MusicJacketScrollItem>();
+				item.SetVisible(false);
+				m_jacketScroll.scrollList.AddScrollObject(item);
+			});
+			bundleCount++;
+
+			for (int i = m_jacketScroll.scrollList.ScrollObjectCount - 1; i != 0; i--)
+			{
+				m_jacketScroll.scrollList.AddScrollObject(UnityEngine.Object.Instantiate<GameObject>(baseContent).GetComponentInChildren<SwapScrollListContent>());
+			}
+
+			m_jacketScroll.scrollList.Apply();
+			m_jacketScroll.scrollList.SetContentEscapeMode(true);
+			m_jacketScroll.Initialize();
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectFilterButton");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF1114
+				instance.transform.SetParent(transform, false);
+				m_filterButton = instance.GetComponentInChildren<VerticalMusicSelectMusicFilterButton>();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectSeries");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF11E4
+				instance.transform.SetParent(transform, false);
+				m_seriesButtonGroup = instance.GetComponentInChildren<VerticalMusicSelectSeriesButtonGroup > ();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectSortOrderButton");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF12B4
+				instance.transform.SetParent(transform, false);
+				m_orderButton = instance.GetComponentInChildren<VerticalMusicSelectSortOrder>();
+			});
+			bundleCount++;
+
+			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectEventBunner");
+			yield return uguiOp;
+			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xBF1384
+				instance.transform.SetParent(transform, false);
+				m_eventBanner = instance.GetComponentInChildren<VerticalMusicSelectEventBanner>();
+			});
+			bundleCount++;
+
+			for(int i = 0; i < bundleCount; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F617C Offset: 0x6F617C VA: 0x6F617C
 		// // RVA: 0xBE6150 Offset: 0xBE6150 VA: 0xBE6150 Slot: 46
-		// protected override IEnumerator Co_WaitForLoaded() { }
+		protected override IEnumerator Co_WaitForLoaded()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+			yield break;
+		}
 
-		// // RVA: 0xBE61C0 Offset: 0xBE61C0 VA: 0xBE61C0 Slot: 9
-		// protected override void OnStartEnterAnimation() { }
+		// RVA: 0xBE61C0 Offset: 0xBE61C0 VA: 0xBE61C0 Slot: 9
+		protected override void OnStartEnterAnimation()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
-		// // RVA: 0xBE63FC Offset: 0xBE63FC VA: 0xBE63FC Slot: 10
-		// protected override bool IsEndEnterAnimation() { }
+		// RVA: 0xBE63FC Offset: 0xBE63FC VA: 0xBE63FC Slot: 10
+		protected override bool IsEndEnterAnimation()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+			return false;
+		}
 
-		// // RVA: 0xBE65C8 Offset: 0xBE65C8 VA: 0xBE65C8 Slot: 12
-		// protected override void OnStartExitAnimation() { }
+		// RVA: 0xBE65C8 Offset: 0xBE65C8 VA: 0xBE65C8 Slot: 12
+		protected override void OnStartExitAnimation()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
-		// // RVA: 0xBE683C Offset: 0xBE683C VA: 0xBE683C Slot: 13
-		// protected override bool IsEndExitAnimation() { }
+		// RVA: 0xBE683C Offset: 0xBE683C VA: 0xBE683C Slot: 13
+		protected override bool IsEndExitAnimation()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+			return false;
+		}
 
-		// // RVA: 0xBE6A30 Offset: 0xBE6A30 VA: 0xBE6A30 Slot: 20
-		// protected override bool OnBgmStart() { }
+		// RVA: 0xBE6A30 Offset: 0xBE6A30 VA: 0xBE6A30 Slot: 20
+		protected override bool OnBgmStart()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+			return true;
+		}
 
-		// // RVA: 0xBE6AFC Offset: 0xBE6AFC VA: 0xBE6AFC Slot: 47
-		// protected override void OnUpdate() { }
+		// RVA: 0xBE6AFC Offset: 0xBE6AFC VA: 0xBE6AFC Slot: 47
+		//protected override void OnUpdate()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
-		// // RVA: 0xBE6B00 Offset: 0xBE6B00 VA: 0xBE6B00 Slot: 48
-		// protected override void ReleaseScene() { }
+		// RVA: 0xBE6B00 Offset: 0xBE6B00 VA: 0xBE6B00 Slot: 48
+		//protected override void ReleaseScene()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
-		// // RVA: 0xBE6BA0 Offset: 0xBE6BA0 VA: 0xBE6BA0 Slot: 49
-		// protected override void ReleaseCache() { }
+		// RVA: 0xBE6BA0 Offset: 0xBE6BA0 VA: 0xBE6BA0 Slot: 49
+		//protected override void ReleaseCache()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
-		// // RVA: 0xBE6C68 Offset: 0xBE6C68 VA: 0xBE6C68 Slot: 50
-		// protected override void OnInputDisable() { }
+		// RVA: 0xBE6C68 Offset: 0xBE6C68 VA: 0xBE6C68 Slot: 50
+		//protected override void OnInputDisable()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
-		// // RVA: 0xBE6CAC Offset: 0xBE6CAC VA: 0xBE6CAC Slot: 51
-		// protected override void OnInputEnable() { }
+		// RVA: 0xBE6CAC Offset: 0xBE6CAC VA: 0xBE6CAC Slot: 51
+		//protected override void OnInputEnable()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
-		// // RVA: 0xBE6CF0 Offset: 0xBE6CF0 VA: 0xBE6CF0 Slot: 55
-		// protected override int GetDanceDivaCount() { }
+		// RVA: 0xBE6CF0 Offset: 0xBE6CF0 VA: 0xBE6CF0 Slot: 55
+		//protected override int GetDanceDivaCount()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	return 0;
+		//}
 
 		// // RVA: 0xBE6D18 Offset: 0xBE6D18 VA: 0xBE6D18
 		// protected void TryInstall(StringBuilder bundleName, VerticalMusicDataList musicList) { }
@@ -210,19 +397,31 @@ namespace XeApp.Game.Menu
 		// private void OnClickEventBanner() { }
 
 		// // RVA: 0xBEA808 Offset: 0xBEA808 VA: 0xBEA808 Slot: 52
-		// protected override void ApplyCommonInfo() { }
+		//protected override void ApplyCommonInfo()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
-		// // RVA: 0xBEAA40 Offset: 0xBEAA40 VA: 0xBEAA40 Slot: 53
-		// protected override void ApplyMusicInfo() { }
+		// RVA: 0xBEAA40 Offset: 0xBEAA40 VA: 0xBEAA40 Slot: 53
+		//protected override void ApplyMusicInfo()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
 		// // RVA: 0xBEBC94 Offset: 0xBEBC94 VA: 0xBEBC94
 		// private int GetChangeBgId(VerticalMusicDataList.MusicListData musicListData) { }
 
 		// // RVA: 0xBEBF44 Offset: 0xBEBF44 VA: 0xBEBF44 Slot: 54
-		// protected override void DelayedApplyMusicInfo() { }
+		//protected override void DelayedApplyMusicInfo()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
-		// // RVA: 0xBEC300 Offset: 0xBEC300 VA: 0xBEC300 Slot: 59
-		// protected override void OnDecideCurrentMusic(ref VerticalMusicSelectSceneBase.MusicDecideInfo info) { }
+		// RVA: 0xBEC300 Offset: 0xBEC300 VA: 0xBEC300 Slot: 59
+		//protected override void OnDecideCurrentMusic(ref VerticalMusicSelectSceneBase.MusicDecideInfo info)
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
 		// // RVA: 0xBEAACC Offset: 0xBEAACC VA: 0xBEAACC
 		// private void ApplyMusicInfoNone() { }
@@ -237,7 +436,10 @@ namespace XeApp.Game.Menu
 		// private void SetListNo(int no) { }
 
 		// // RVA: 0xBEC314 Offset: 0xBEC314 VA: 0xBEC314 Slot: 57
-		// protected override void OnClickDifficultyButton(int index) { }
+		//protected override void OnClickDifficultyButton(int index)
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
 		// // RVA: 0xBEC918 Offset: 0xBEC918 VA: 0xBEC918
 		// private void OnClickSeriesButton(int index) { }
@@ -261,7 +463,10 @@ namespace XeApp.Game.Menu
 		// private void OnClickLine6Button() { }
 
 		// // RVA: 0xBECFD4 Offset: 0xBECFD4 VA: 0xBECFD4 Slot: 56
-		// protected override void OnApplyUnitLiveButtonSetting(bool isUnit) { }
+		//protected override void OnApplyUnitLiveButtonSetting(bool isUnit)
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
 		// // RVA: 0xBEAA10 Offset: 0xBEAA10 VA: 0xBEAA10
 		// private void SetMusicTab(VerticalMusicSelecChoiceMusicListTab.MusicTab type) { }
@@ -352,12 +557,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xBEF84C Offset: 0xBEF84C VA: 0xBEF84C
 		// private bool IsCanDoUnitHelp() { }
-
-		// // RVA: 0xBEFB04 Offset: 0xBEFB04 VA: 0xBEFB04
-		// public void .ctor() { }
-
-		// // RVA: 0xBEFC08 Offset: 0xBEFC08 VA: 0xBEFC08
-		// private static void .cctor() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F61F4 Offset: 0x6F61F4 VA: 0x6F61F4
 		// // RVA: 0xBF00B8 Offset: 0xBF00B8 VA: 0xBF00B8
@@ -482,62 +681,6 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x6F63D4 Offset: 0x6F63D4 VA: 0x6F63D4
 		// // RVA: 0xBF08AC Offset: 0xBF08AC VA: 0xBF08AC
 		// private void <Co_ActivateScene>b__71_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F63E4 Offset: 0x6F63E4 VA: 0x6F63E4
-		// // RVA: 0xBF08B4 Offset: 0xBF08B4 VA: 0xBF08B4
-		// private void <Co_LoadResourceOnAwake>b__73_0(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F63F4 Offset: 0x6F63F4 VA: 0x6F63F4
-		// // RVA: 0xBF0984 Offset: 0xBF0984 VA: 0xBF0984
-		// private void <Co_LoadResourceOnAwake>b__73_1(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6404 Offset: 0x6F6404 VA: 0x6F6404
-		// // RVA: 0xBF0A54 Offset: 0xBF0A54 VA: 0xBF0A54
-		// private void <Co_LoadResourceOnAwake>b__73_2(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6414 Offset: 0x6F6414 VA: 0x6F6414
-		// // RVA: 0xBF0B24 Offset: 0xBF0B24 VA: 0xBF0B24
-		// private void <Co_LoadResourceOnAwake>b__73_3(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6424 Offset: 0x6F6424 VA: 0x6F6424
-		// // RVA: 0xBF0BF4 Offset: 0xBF0BF4 VA: 0xBF0BF4
-		// private void <Co_LoadResourceOnAwake>b__73_4(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6434 Offset: 0x6F6434 VA: 0x6F6434
-		// // RVA: 0xBF0CC4 Offset: 0xBF0CC4 VA: 0xBF0CC4
-		// private void <Co_LoadResourceOnAwake>b__73_5(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6444 Offset: 0x6F6444 VA: 0x6F6444
-		// // RVA: 0xBF0D94 Offset: 0xBF0D94 VA: 0xBF0D94
-		// private void <Co_LoadResourceOnAwake>b__73_6(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6454 Offset: 0x6F6454 VA: 0x6F6454
-		// // RVA: 0xBF0E64 Offset: 0xBF0E64 VA: 0xBF0E64
-		// private void <Co_LoadResourceOnAwake>b__73_7(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6464 Offset: 0x6F6464 VA: 0x6F6464
-		// // RVA: 0xBF0F34 Offset: 0xBF0F34 VA: 0xBF0F34
-		// private void <Co_LoadResourceOnAwake>b__73_8(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6474 Offset: 0x6F6474 VA: 0x6F6474
-		// // RVA: 0xBF1004 Offset: 0xBF1004 VA: 0xBF1004
-		// private void <Co_LoadResourceOnAwake>b__73_9(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6484 Offset: 0x6F6484 VA: 0x6F6484
-		// // RVA: 0xBF1114 Offset: 0xBF1114 VA: 0xBF1114
-		// private void <Co_LoadResourceOnAwake>b__73_10(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6494 Offset: 0x6F6494 VA: 0x6F6494
-		// // RVA: 0xBF11E4 Offset: 0xBF11E4 VA: 0xBF11E4
-		// private void <Co_LoadResourceOnAwake>b__73_11(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F64A4 Offset: 0x6F64A4 VA: 0x6F64A4
-		// // RVA: 0xBF12B4 Offset: 0xBF12B4 VA: 0xBF12B4
-		// private void <Co_LoadResourceOnAwake>b__73_12(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F64B4 Offset: 0x6F64B4 VA: 0x6F64B4
-		// // RVA: 0xBF1384 Offset: 0xBF1384 VA: 0xBF1384
-		// private void <Co_LoadResourceOnAwake>b__73_13(GameObject instance) { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F64C4 Offset: 0x6F64C4 VA: 0x6F64C4
 		// // RVA: 0xBF1454 Offset: 0xBF1454 VA: 0xBF1454

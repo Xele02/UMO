@@ -1,302 +1,189 @@
+using System.Collections;
+using System.Collections.Generic;
+using XeApp.Game.Common;
+using XeApp.Game.MusicSelect;
+
 namespace XeApp.Game.Menu
 {
-	public class VerticalMusicSelectSceneBase : TransitionRoot
+	public abstract class VerticalMusicSelectSceneBase : TransitionRoot
 	{
-		// // Fields
-		// [CompilerGeneratedAttribute] // RVA: 0x6758C0 Offset: 0x6758C0 VA: 0x6758C0
-		// private bool <m_isEndPresetCanvas>k__BackingField; // 0x45
-		// [CompilerGeneratedAttribute] // RVA: 0x6758D0 Offset: 0x6758D0 VA: 0x6758D0
-		// private bool <m_isEndPostSetCanvas>k__BackingField; // 0x46
-		// [CompilerGeneratedAttribute] // RVA: 0x6758E0 Offset: 0x6758E0 VA: 0x6758E0
-		// private bool <m_isEndActivateScene>k__BackingField; // 0x47
-		// [CompilerGeneratedAttribute] // RVA: 0x6758F0 Offset: 0x6758F0 VA: 0x6758F0
-		// private bool <openSimulationLive>k__BackingField; // 0x48
-		// [CompilerGeneratedAttribute] // RVA: 0x675900 Offset: 0x675900 VA: 0x675900
-		// private IKDICBBFBMI <m_eventCtrl>k__BackingField; // 0x4C
+
+		protected struct MusicDecideInfo
+		{
+			public long overrideCurrentTime; // 0x0
+			public string missionText; // 0x8
+			public int overrideEnemyCenterSkill; // 0xC
+			public int overrideEnemyLiveSkill; // 0x10
+			public GameSetupData.MusicInfo.InitFreeMusicParam initParam; // 0x14
+			public static MusicDecideInfo Empty = new MusicDecideInfo(0, string.Empty, 0, 0); // 0x0
+
+			// RVA: 0x7FAA44 Offset: 0x7FAA44 VA: 0x7FAA44
+			public MusicDecideInfo(long overrideCurrentTime, string missionText, int overrideEnemyCenterSkill, int overrideEnemyLiveSkill)
+			{
+				this.overrideCurrentTime = overrideCurrentTime;
+				this.missionText = missionText;
+				this.overrideEnemyCenterSkill = overrideEnemyCenterSkill;
+				this.overrideEnemyLiveSkill = overrideEnemyLiveSkill;
+				initParam.isDisableBattleEventIntermediateResult = false;
+			}
+		}
+
+		protected class MusicLockData
+		{
+			public string lockDetail = ""; // 0x8
+			public int freeMusicId = 0; // 0xC
+			public bool isLock = false; // 0x10
+		}
+
+		protected struct EventHelpInfo
+		{
+			public List<int> helpIds; // 0x0
+			public bool isShowFirstHelp; // 0x4
+		}
+
+		public delegate bool CheckMatchMusicFilterFunc(VerticalMusicDataList.MusicListData musicData, int series, long currentTime);
+
 		// protected IKDICBBFBMI m_scoreEventCtrl; // 0x50
-		// [CompilerGeneratedAttribute] // RVA: 0x675910 Offset: 0x675910 VA: 0x675910
-		// private int <m_eventId>k__BackingField; // 0x54
-		// [CompilerGeneratedAttribute] // RVA: 0x675920 Offset: 0x675920 VA: 0x675920
-		// private MMOLNAHHDOM <m_unitLiveLocalSaveData>k__BackingField; // 0x58
-		// [CompilerGeneratedAttribute] // RVA: 0x675930 Offset: 0x675930 VA: 0x675930
-		// private LimitTimeWatcher <m_musicTimeWatcher>k__BackingField; // 0x5C
-		// [CompilerGeneratedAttribute] // RVA: 0x675940 Offset: 0x675940 VA: 0x675940
-		// private LimitTimeWatcher <m_bannerTimeWatcher>k__BackingField; // 0x60
-		// private VerticalMusicSelectSceneBase.MusicDecideInfo m_musicDecideInfo; // 0x68
-		// private PopupAchieveRewardSetting m_rewardPopupSetting; // 0x88
-		// private PopupUnitDanceWarning m_popupUnitDanceWarning; // 0x8C
-		// private PopupMusicBookMarkSetting m_musicBookMarkSetting; // 0x90
+		// private VerticalMusicSelectSceneBase.MusicDecideInfo m_musicDecideInfo = MusicDevideInfo.Empty; // 0x68
+		 private PopupAchieveRewardSetting m_rewardPopupSetting = new PopupAchieveRewardSetting(); // 0x88
+		// private PopupUnitDanceWarning m_popupUnitDanceWarning = new PopupUnitDanceWarning(); // 0x8C
+		// private PopupMusicBookMarkSetting m_musicBookMarkSetting = new PopupMusicBookMarkSetting(); // 0x90
 		// private bool m_isConfirmedUnitDance; // 0x94
-		// private TeamSlectSceneArgs m_teamSelectSceneArgs; // 0x98
-		// [CompilerGeneratedAttribute] // RVA: 0x675950 Offset: 0x675950 VA: 0x675950
-		// private int <m_eventTicketId>k__BackingField; // 0x9C
-		// [CompilerGeneratedAttribute] // RVA: 0x675960 Offset: 0x675960 VA: 0x675960
-		// private KGCNCBOKCBA.GNENJEHKMHD <m_eventStatus>k__BackingField; // 0xA0
-		// [CompilerGeneratedAttribute] // RVA: 0x675970 Offset: 0x675970 VA: 0x675970
-		// private bool <m_isEventTimeLimit>k__BackingField; // 0xA4
-		// [CompilerGeneratedAttribute] // RVA: 0x675980 Offset: 0x675980 VA: 0x675980
-		// private bool <m_muteSelectionSe>k__BackingField; // 0xA5
-		// [CompilerGeneratedAttribute] // RVA: 0x675990 Offset: 0x675990 VA: 0x675990
-		// private bool <m_requestFadeOutBgm>k__BackingField; // 0xA6
-		// [CompilerGeneratedAttribute] // RVA: 0x6759A0 Offset: 0x6759A0 VA: 0x6759A0
-		// private int <m_changeToTrialBgmId>k__BackingField; // 0xA8
+		// private TeamSlectSceneArgs m_teamSelectSceneArgs = new TeamSlectSceneArgs(); // 0x98
 		// private const float BGM_FADE_OUT_SEC = 0,3;
-		// private List<Action> NoticeActionList; // 0xAC
+		// private List<Action> NoticeActionList = new List<Action>(); // 0xAC
 
-		// // Properties
-		// protected bool m_isEndPresetCanvas { get; set; }
-		// protected bool m_isEndPostSetCanvas { get; set; }
-		// protected bool m_isEndActivateScene { get; set; }
-		// protected abstract Difficulty.Type diff { get; }
-		// protected abstract MusicSelectConsts.SeriesType series { get; }
-		// protected abstract int list_no { get; set; }
-		// protected bool openSimulationLive { get; set; }
-		// protected abstract bool isLine6Mode { get; }
-		// protected abstract int musicListCount { get; }
-		// protected abstract VerticalMusicDataList currentMusicList { get; }
-		// protected abstract List<VerticalMusicDataList> originalMusicList { get; }
-		// protected IKDICBBFBMI m_eventCtrl { get; set; }
-		// protected int m_eventId { get; set; }
-		// protected MMOLNAHHDOM m_unitLiveLocalSaveData { get; set; }
-		// protected LimitTimeWatcher m_musicTimeWatcher { get; set; }
-		// protected LimitTimeWatcher m_bannerTimeWatcher { get; set; }
-		// protected abstract IBJAKJJICBC selectMusicData { get; }
-		// protected abstract VerticalMusicDataList.MusicListData selectMusicListData { get; }
-		// protected bool listIsEmpty { get; }
-		// protected bool listIsEmptyByFilter { get; }
-		// protected bool isExistSelectMusicData { get; }
-		// protected int musicId { get; }
-		// protected int freeMusicId { get; }
-		// protected int gameEventType { get; }
-		// protected int m_eventTicketId { get; set; }
-		// protected KGCNCBOKCBA.GNENJEHKMHD m_eventStatus { get; set; }
-		// protected bool m_isEventTimeLimit { get; set; }
-		// private bool m_muteSelectionSe { get; set; }
-		// private bool m_requestFadeOutBgm { get; set; }
-		// private int m_changeToTrialBgmId { get; set; }
-		// private float bgmFadeOutSec { get; }
-		// public bool IsEventCounting { get; }
-		// public bool IsEventEndChallengePeriod { get; }
-		// public bool IsEventRankingEnd { get; }
-
-		// // Methods
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6734 Offset: 0x6F6734 VA: 0x6F6734
-		// // RVA: 0xAC8A7C Offset: 0xAC8A7C VA: 0xAC8A7C
-		// protected bool get_m_isEndPresetCanvas() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6744 Offset: 0x6F6744 VA: 0x6F6744
-		// // RVA: 0xAC7FB8 Offset: 0xAC7FB8 VA: 0xAC7FB8
-		// protected void set_m_isEndPresetCanvas(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6754 Offset: 0x6F6754 VA: 0x6F6754
-		// // RVA: 0xAC8A84 Offset: 0xAC8A84 VA: 0xAC8A84
-		// protected bool get_m_isEndPostSetCanvas() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6764 Offset: 0x6F6764 VA: 0x6F6764
-		// // RVA: 0xAC606C Offset: 0xAC606C VA: 0xAC606C
-		// protected void set_m_isEndPostSetCanvas(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6774 Offset: 0x6F6774 VA: 0x6F6774
-		// // RVA: 0xAC8A8C Offset: 0xAC8A8C VA: 0xAC8A8C
-		// protected bool get_m_isEndActivateScene() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6784 Offset: 0x6F6784 VA: 0x6F6784
-		// // RVA: 0xAC37D0 Offset: 0xAC37D0 VA: 0xAC37D0
-		// protected void set_m_isEndActivateScene(bool value) { }
-
-		// // RVA: -1 Offset: -1 Slot: 31
-		// protected abstract Difficulty.Type get_diff();
-
-		// // RVA: -1 Offset: -1 Slot: 32
-		// protected abstract MusicSelectConsts.SeriesType get_series();
-
-		// // RVA: -1 Offset: -1 Slot: 33
-		// protected abstract void set_list_no(int value);
-
-		// // RVA: -1 Offset: -1 Slot: 34
-		// protected abstract int get_list_no();
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6794 Offset: 0x6F6794 VA: 0x6F6794
-		// // RVA: 0xAC7CB8 Offset: 0xAC7CB8 VA: 0xAC7CB8
-		// protected void set_openSimulationLive(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F67A4 Offset: 0x6F67A4 VA: 0x6F67A4
-		// // RVA: 0xAC8A94 Offset: 0xAC8A94 VA: 0xAC8A94
-		// protected bool get_openSimulationLive() { }
-
-		// // RVA: -1 Offset: -1 Slot: 35
-		// protected abstract bool get_isLine6Mode();
-
-		// // RVA: -1 Offset: -1 Slot: 36
-		// protected abstract int get_musicListCount();
+		// protected bool m_isEndPresetCanvas { get; set; } // 0x45
+		// protected bool m_isEndPostSetCanvas { get; set; } // 0x46
+		// protected bool m_isEndActivateScene { get; set; } // 0x47
+		// protected abstract Difficulty.Type diff { get; }  //Slot: 31
+		// protected abstract MusicSelectConsts.SeriesType series { get; } //Slot: 32
+		// protected abstract int list_no { get; set; } //Slot: 34 Slot: 33
+		// protected bool openSimulationLive { get; set; } // 0x48
+		// protected abstract bool isLine6Mode { get; } // Slot: 35
+		// protected abstract int musicListCount { get; } // Slot: 36
+		// protected abstract VerticalMusicDataList currentMusicList { get; } //  Slot: 38
+		// protected abstract List<VerticalMusicDataList> originalMusicList { get; } //  Slot: 39
+		// protected IKDICBBFBMI m_eventCtrl { get; set; } // 0x4C
+		// protected int m_eventId { get; set; } // 0x54
+		// protected MMOLNAHHDOM m_unitLiveLocalSaveData { get; private set; } // 0x58
+		// protected LimitTimeWatcher m_musicTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x5C
+		// protected LimitTimeWatcher m_bannerTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x60
+		// protected abstract IBJAKJJICBC selectMusicData { get; } // Slot: 40
+		// protected abstract VerticalMusicDataList.MusicListData selectMusicListData { get; } // Slot: 41
+		// protected bool listIsEmpty { get; } 0xAC8AD4
+		// protected bool listIsEmptyByFilter { get; } 0xAC8B48
+		// protected bool isExistSelectMusicData { get; } 0xAC8B50
+		// protected int musicId { get; } 0xAC8B58
+		// protected int freeMusicId { get; } 0xAC8BAC
+		// protected int gameEventType { get; } 0xAC8C00
+		// protected int m_eventTicketId { get; set; } // 0x9C
+		// protected KGCNCBOKCBA.GNENJEHKMHD m_eventStatus { get; set; } // 0xA0
+		// protected bool m_isEventTimeLimit { get; set; } // 0xA4
+		// private bool m_muteSelectionSe { get; set; } // 0xA5
+		// private bool m_requestFadeOutBgm { get; set; } // 0xA6
+		// private int m_changeToTrialBgmId { get; set; } // 0xA8
+		// private float bgmFadeOutSec { get; } 0xAC8CAC
+		// public bool IsEventCounting { get; } 0xACFD7C
+		// public bool IsEventEndChallengePeriod { get; } 0xACFD90
+		// public bool IsEventRankingEnd { get; } 0xACFDA4
 
 		// // RVA: -1 Offset: -1 Slot: 37
 		// protected abstract VerticalMusicDataList GetMusicList(int index);
 
-		// // RVA: -1 Offset: -1 Slot: 38
-		// protected abstract VerticalMusicDataList get_currentMusicList();
-
-		// // RVA: -1 Offset: -1 Slot: 39
-		// protected abstract List<VerticalMusicDataList> get_originalMusicList();
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F67B4 Offset: 0x6F67B4 VA: 0x6F67B4
-		// // RVA: 0xAC7238 Offset: 0xAC7238 VA: 0xAC7238
-		// protected IKDICBBFBMI get_m_eventCtrl() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F67C4 Offset: 0x6F67C4 VA: 0x6F67C4
-		// // RVA: 0xAC7230 Offset: 0xAC7230 VA: 0xAC7230
-		// protected void set_m_eventCtrl(IKDICBBFBMI value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F67D4 Offset: 0x6F67D4 VA: 0x6F67D4
-		// // RVA: 0xAC8A9C Offset: 0xAC8A9C VA: 0xAC8A9C
-		// protected int get_m_eventId() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F67E4 Offset: 0x6F67E4 VA: 0x6F67E4
-		// // RVA: 0xAC8AA4 Offset: 0xAC8AA4 VA: 0xAC8AA4
-		// protected void set_m_eventId(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F67F4 Offset: 0x6F67F4 VA: 0x6F67F4
-		// // RVA: 0xAC7240 Offset: 0xAC7240 VA: 0xAC7240
-		// protected MMOLNAHHDOM get_m_unitLiveLocalSaveData() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6804 Offset: 0x6F6804 VA: 0x6F6804
-		// // RVA: 0xAC8AAC Offset: 0xAC8AAC VA: 0xAC8AAC
-		// private void set_m_unitLiveLocalSaveData(MMOLNAHHDOM value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6814 Offset: 0x6F6814 VA: 0x6F6814
-		// // RVA: 0xAC8AB4 Offset: 0xAC8AB4 VA: 0xAC8AB4
-		// protected LimitTimeWatcher get_m_musicTimeWatcher() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6824 Offset: 0x6F6824 VA: 0x6F6824
-		// // RVA: 0xAC8ABC Offset: 0xAC8ABC VA: 0xAC8ABC
-		// private void set_m_musicTimeWatcher(LimitTimeWatcher value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6834 Offset: 0x6F6834 VA: 0x6F6834
-		// // RVA: 0xAC8AC4 Offset: 0xAC8AC4 VA: 0xAC8AC4
-		// protected LimitTimeWatcher get_m_bannerTimeWatcher() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6844 Offset: 0x6F6844 VA: 0x6F6844
-		// // RVA: 0xAC8ACC Offset: 0xAC8ACC VA: 0xAC8ACC
-		// private void set_m_bannerTimeWatcher(LimitTimeWatcher value) { }
-
-		// // RVA: -1 Offset: -1 Slot: 40
-		// protected abstract IBJAKJJICBC get_selectMusicData();
-
-		// // RVA: -1 Offset: -1 Slot: 41
-		// protected abstract VerticalMusicDataList.MusicListData get_selectMusicListData();
-
-		// // RVA: 0xAC8AD4 Offset: 0xAC8AD4 VA: 0xAC8AD4
-		// protected bool get_listIsEmpty() { }
-
-		// // RVA: 0xAC8B48 Offset: 0xAC8B48 VA: 0xAC8B48
-		// protected bool get_listIsEmptyByFilter() { }
-
-		// // RVA: 0xAC8B50 Offset: 0xAC8B50 VA: 0xAC8B50
-		// protected bool get_isExistSelectMusicData() { }
-
-		// // RVA: 0xAC8B58 Offset: 0xAC8B58 VA: 0xAC8B58
-		// protected int get_musicId() { }
-
-		// // RVA: 0xAC8BAC Offset: 0xAC8BAC VA: 0xAC8BAC
-		// protected int get_freeMusicId() { }
-
-		// // RVA: 0xAC8C00 Offset: 0xAC8C00 VA: 0xAC8C00
-		// protected int get_gameEventType() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6854 Offset: 0x6F6854 VA: 0x6F6854
-		// // RVA: 0xAC8C54 Offset: 0xAC8C54 VA: 0xAC8C54
-		// protected void set_m_eventTicketId(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6864 Offset: 0x6F6864 VA: 0x6F6864
-		// // RVA: 0xAC8C5C Offset: 0xAC8C5C VA: 0xAC8C5C
-		// protected int get_m_eventTicketId() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6874 Offset: 0x6F6874 VA: 0x6F6874
-		// // RVA: 0xAC7FB0 Offset: 0xAC7FB0 VA: 0xAC7FB0
-		// protected KGCNCBOKCBA.GNENJEHKMHD get_m_eventStatus() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6884 Offset: 0x6F6884 VA: 0x6F6884
-		// // RVA: 0xAC8C64 Offset: 0xAC8C64 VA: 0xAC8C64
-		// protected void set_m_eventStatus(KGCNCBOKCBA.GNENJEHKMHD value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6894 Offset: 0x6F6894 VA: 0x6F6894
-		// // RVA: 0xAC8C6C Offset: 0xAC8C6C VA: 0xAC8C6C
-		// protected bool get_m_isEventTimeLimit() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F68A4 Offset: 0x6F68A4 VA: 0x6F68A4
-		// // RVA: 0xAC8C74 Offset: 0xAC8C74 VA: 0xAC8C74
-		// protected void set_m_isEventTimeLimit(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F68B4 Offset: 0x6F68B4 VA: 0x6F68B4
-		// // RVA: 0xAC8C7C Offset: 0xAC8C7C VA: 0xAC8C7C
-		// private void set_m_muteSelectionSe(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F68C4 Offset: 0x6F68C4 VA: 0x6F68C4
-		// // RVA: 0xAC8C84 Offset: 0xAC8C84 VA: 0xAC8C84
-		// private bool get_m_muteSelectionSe() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F68D4 Offset: 0x6F68D4 VA: 0x6F68D4
-		// // RVA: 0xAC8C8C Offset: 0xAC8C8C VA: 0xAC8C8C
-		// private void set_m_requestFadeOutBgm(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F68E4 Offset: 0x6F68E4 VA: 0x6F68E4
-		// // RVA: 0xAC8C94 Offset: 0xAC8C94 VA: 0xAC8C94
-		// private bool get_m_requestFadeOutBgm() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F68F4 Offset: 0x6F68F4 VA: 0x6F68F4
-		// // RVA: 0xAC8C9C Offset: 0xAC8C9C VA: 0xAC8C9C
-		// private void set_m_changeToTrialBgmId(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6904 Offset: 0x6F6904 VA: 0x6F6904
-		// // RVA: 0xAC8CA4 Offset: 0xAC8CA4 VA: 0xAC8CA4
-		// private int get_m_changeToTrialBgmId() { }
-
-		// // RVA: 0xAC8CAC Offset: 0xAC8CAC VA: 0xAC8CAC
-		// private float get_bgmFadeOutSec() { }
-
 		// // RVA: 0xAC8CB8 Offset: 0xAC8CB8 VA: 0xAC8CB8 Slot: 4
-		// protected override void Awake() { }
+		protected override void Awake()
+		{
+			base.Awake();
+			StartCoroutine(Co_Awake());
+		}
 
 		// // RVA: 0xAC8D74 Offset: 0xAC8D74 VA: 0xAC8D74
-		// protected void Update() { }
+		protected void Update()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
-		// // RVA: 0xAC8DD8 Offset: 0xAC8DD8 VA: 0xAC8DD8 Slot: 16
-		// protected override void OnPreSetCanvas() { }
+		// RVA: 0xAC8DD8 Offset: 0xAC8DD8 VA: 0xAC8DD8 Slot: 16
+		protected override void OnPreSetCanvas()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
-		// // RVA: 0xAC8EA4 Offset: 0xAC8EA4 VA: 0xAC8EA4 Slot: 17
-		// protected override bool IsEndPreSetCanvas() { }
+		// RVA: 0xAC8EA4 Offset: 0xAC8EA4 VA: 0xAC8EA4 Slot: 17
+		protected override bool IsEndPreSetCanvas()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+			return false;
+		}
 
-		// // RVA: 0xAC8F58 Offset: 0xAC8F58 VA: 0xAC8F58 Slot: 18
-		// protected override void OnPostSetCanvas() { }
+		// RVA: 0xAC8F58 Offset: 0xAC8F58 VA: 0xAC8F58 Slot: 18
+		protected override void OnPostSetCanvas()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
-		// // RVA: 0xAC8F8C Offset: 0xAC8F8C VA: 0xAC8F8C Slot: 19
-		// protected override bool IsEndPostSetCanvas() { }
+		// RVA: 0xAC8F8C Offset: 0xAC8F8C VA: 0xAC8F8C Slot: 19
+		protected override bool IsEndPostSetCanvas()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+			return false;
+		}
 
-		// // RVA: 0xAC8F94 Offset: 0xAC8F94 VA: 0xAC8F94 Slot: 23
-		// protected override void OnActivateScene() { }
+		// RVA: 0xAC8F94 Offset: 0xAC8F94 VA: 0xAC8F94 Slot: 23
+		protected override void OnActivateScene()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
-		// // RVA: 0xAC8FC8 Offset: 0xAC8FC8 VA: 0xAC8FC8 Slot: 24
-		// protected override bool IsEndActivateScene() { }
+		// RVA: 0xAC8FC8 Offset: 0xAC8FC8 VA: 0xAC8FC8 Slot: 24
+		protected override bool IsEndActivateScene()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+			return false;
+		}
 
-		// // RVA: 0xAC8FD0 Offset: 0xAC8FD0 VA: 0xAC8FD0 Slot: 20
-		// protected override bool OnBgmStart() { }
+		// RVA: 0xAC8FD0 Offset: 0xAC8FD0 VA: 0xAC8FD0 Slot: 20
+		protected override bool OnBgmStart()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+			return true;
+		}
 
-		// // RVA: 0xAC8FF0 Offset: 0xAC8FF0 VA: 0xAC8FF0 Slot: 14
-		// protected override void OnDestoryScene() { }
+		// RVA: 0xAC8FF0 Offset: 0xAC8FF0 VA: 0xAC8FF0 Slot: 14
+		protected override void OnDestoryScene()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
-		// // RVA: 0xAC9038 Offset: 0xAC9038 VA: 0xAC9038 Slot: 15
-		// protected override void OnDeleteCache() { }
+		// RVA: 0xAC9038 Offset: 0xAC9038 VA: 0xAC9038 Slot: 15
+		protected override void OnDeleteCache()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
-		// // RVA: 0xAC9070 Offset: 0xAC9070 VA: 0xAC9070 Slot: 30
-		// protected override void InputDisable() { }
+		// RVA: 0xAC9070 Offset: 0xAC9070 VA: 0xAC9070 Slot: 30
+		//protected override void InputDisable()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
-		// // RVA: 0xAC909C Offset: 0xAC909C VA: 0xAC909C Slot: 29
-		// protected override void InputEnable() { }
+		// RVA: 0xAC909C Offset: 0xAC909C VA: 0xAC909C Slot: 29
+		//protected override void InputEnable()
+		//{
+		//	UnityEngine.Debug.LogError("TODO !!!");
+		//}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6914 Offset: 0x6F6914 VA: 0x6F6914
 		// // RVA: 0xAC8CE8 Offset: 0xAC8CE8 VA: 0xAC8CE8
-		// private IEnumerator Co_Awake() { }
+		private IEnumerator Co_Awake()
+		{
+			//0xAD45C0
+			yield return Co_LoadResourceOnAwake();
+			m_rewardPopupSetting.SetParent(transform);
+			yield return Co_WaitForLoaded();
+			IsReady = true;
+		}
 
 		// // RVA: -1 Offset: -1 Slot: 42
 		// protected abstract IEnumerator Co_OnPreSetCanvas();
@@ -308,10 +195,10 @@ namespace XeApp.Game.Menu
 		// protected abstract IEnumerator Co_ActivateScene();
 
 		// // RVA: -1 Offset: -1 Slot: 45
-		// protected abstract IEnumerator Co_LoadResourceOnAwake();
+		protected abstract IEnumerator Co_LoadResourceOnAwake();
 
 		// // RVA: -1 Offset: -1 Slot: 46
-		// protected abstract IEnumerator Co_WaitForLoaded();
+		protected abstract IEnumerator Co_WaitForLoaded();
 
 		// // RVA: -1 Offset: -1 Slot: 47
 		// protected abstract void OnUpdate();
@@ -463,15 +350,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACFD6C Offset: 0xACFD6C VA: 0xACFD6C
 		// protected void OnScrollEnded() { }
 
-		// // RVA: 0xACFD7C Offset: 0xACFD7C VA: 0xACFD7C
-		// public bool get_IsEventCounting() { }
-
-		// // RVA: 0xACFD90 Offset: 0xACFD90 VA: 0xACFD90
-		// public bool get_IsEventEndChallengePeriod() { }
-
-		// // RVA: 0xACFDA4 Offset: 0xACFDA4 VA: 0xACFDA4
-		// public bool get_IsEventRankingEnd() { }
-
 		// // RVA: 0xACFDB8 Offset: 0xACFDB8 VA: 0xACFDB8
 		// protected void OnClickEventDetailButton() { }
 
@@ -602,8 +480,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xAD2C28 Offset: 0xAD2C28 VA: 0xAD2C28
 		// protected bool CheckTutorialFunc_UtaRate(TutorialConditionId conditionId) { }
-
-		// // RVA: 0xAD2D24 Offset: 0xAD2D24 VA: 0xAD2D24
-		// protected void .ctor() { }
 	}
 }
