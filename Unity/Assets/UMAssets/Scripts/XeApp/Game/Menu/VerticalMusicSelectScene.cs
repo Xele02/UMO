@@ -321,10 +321,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xBE6AFC Offset: 0xBE6AFC VA: 0xBE6AFC Slot: 47
-		//protected override void OnUpdate()
-		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
-		//}
+		protected override void OnUpdate()
+		{
+			return;
+		}
 
 		// RVA: 0xBE6B00 Offset: 0xBE6B00 VA: 0xBE6B00 Slot: 48
 		//protected override void ReleaseScene()

@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using XeSys.Gfx;
 using XeApp.Game.Common;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -20,12 +21,17 @@ namespace XeApp.Game.Menu
 		// [HeaderAttribute] // RVA: 0x675CC4 Offset: 0x675CC4 VA: 0x675CC4
 		private InOutAnime m_inOut; // 0x18
 
-		// public Action onClickButton { private get; set; } // 0x1C
+		public Action onClickButton { private get; set; } // 0x1C
 
 		// // RVA: 0xADBDD4 Offset: 0xADBDD4 VA: 0xADBDD4
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			m_utaRateButton.ClearOnClickCallback();
+			m_utaRateButton.AddOnClickCallback(() => {
+				//0xADBFF0
+				if(onClickButton != null)
+					onClickButton();
+			});
 		}
 
 		// // RVA: 0xADB430 Offset: 0xADB430 VA: 0xADB430
@@ -45,9 +51,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xADBF64 Offset: 0xADBF64 VA: 0xADBF64
 		// public void SetEnable(bool isEneble) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F7304 Offset: 0x6F7304 VA: 0x6F7304
-		// // RVA: 0xADBFF0 Offset: 0xADBFF0 VA: 0xADBFF0
-		// private void <Awake>b__8_0() { }
 	}
 }

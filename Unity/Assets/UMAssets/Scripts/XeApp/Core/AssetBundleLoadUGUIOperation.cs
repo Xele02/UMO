@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace XeApp.Core
 {
@@ -30,7 +31,20 @@ namespace XeApp.Core
 		// RVA: 0xE11AE4 Offset: 0xE11AE4 VA: 0xE11AE4 Slot: 11
 		public override IEnumerator InitializeUGUICoroutine(Font font, Action<GameObject> finish)
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			//0xE11CA8
+#if UNITY_EDITOR
+            BundleShaderInfo.Instance.FixMaterialShader(m_request.asset);
+#endif
+			GameObject obj = UnityEngine.Object.Instantiate(m_request.asset as GameObject);
+			Text[] texts  = obj.GetComponentsInChildren<Text>(true);
+			Array.ForEach(texts, (Text text) => {
+				//0xE11BCC
+				if(text.font  != null)
+					return;
+				text.font = font;
+			});
+			if(finish != null)
+				finish(obj);
 			yield break;
 		}
 	}

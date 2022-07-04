@@ -1,6 +1,7 @@
 using UnityEngine;
 using XeApp.Game.Common;
 using TMPro;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -32,12 +33,17 @@ namespace XeApp.Game.Menu
 		// [HeaderAttribute] // RVA: 0x675710 Offset: 0x675710 VA: 0x675710
 		private GameObject m_weeklyRecovery; // 0x30
 
-		// public Action<bool> OnClicButtonListener { private get; set; } // 0x34
+		public Action<bool> OnClicButtonListener { private get; set; } // 0x34
 
 		// // RVA: 0xBE5278 Offset: 0xBE5278 VA: 0xBE5278
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			m_playButton.ClearOnClickCallback();
+			m_playButton.AddOnClickCallback(() => {
+				//0xBE57B0
+				if(OnClicButtonListener != null)
+					OnClicButtonListener(false);
+			});
 		}
 
 		// // RVA: 0xBE5340 Offset: 0xBE5340 VA: 0xBE5340
@@ -66,9 +72,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xBE5774 Offset: 0xBE5774 VA: 0xBE5774
 		// public void SetInputEnable(bool isEnable) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5E1C Offset: 0x6F5E1C VA: 0x6F5E1C
-		// // RVA: 0xBE57B0 Offset: 0xBE57B0 VA: 0xBE57B0
-		// private void <Awake>b__15_0() { }
 	}
 }

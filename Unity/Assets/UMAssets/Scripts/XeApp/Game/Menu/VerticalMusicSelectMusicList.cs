@@ -34,7 +34,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE1AE4 Offset: 0xBE1AE4 VA: 0xBE1AE4
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			m_musicScroll.OnUpdateCenter.AddListener(this.MusicUpdateCenterItem);
+			m_musicScroll.OnUpdateListItem.AddListener(this.MusicUpdateListItem);
+			m_musicScroll.OnUpdateClipItem.AddListener(() => {
+				//0xBE4864
+				UnityEngine.Debug.LogError("TODO OnUpdateClipItem");
+			});
 		}
 
 		// // RVA: 0xBE1CB0 Offset: 0xBE1CB0 VA: 0xBE1CB0
@@ -66,13 +71,15 @@ namespace XeApp.Game.Menu
 		// public void SetEnable(bool isEneble) { }
 
 		// // RVA: 0xBE233C Offset: 0xBE233C VA: 0xBE233C
-		// private void MusicUpdateCenterItem(int listIndex, MusicScrollCenterItem obj) { }
+		private void MusicUpdateCenterItem(int listIndex, MusicScrollCenterItem obj)
+		{
+			UnityEngine.Debug.LogError("TODO MusicUpdateCenterItem");
+		}
 
 		// // RVA: 0xBE3850 Offset: 0xBE3850 VA: 0xBE3850
-		// private void MusicUpdateListItem(int listIndex, MusicScrollItem obj) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5D0C Offset: 0x6F5D0C VA: 0x6F5D0C
-		// // RVA: 0xBE4864 Offset: 0xBE4864 VA: 0xBE4864
-		// private void <Awake>b__21_0() { }
+		private void MusicUpdateListItem(int listIndex, MusicScrollItem obj)
+		{
+			UnityEngine.Debug.LogError("TODO MusicUpdateCenterItem");
+		}
 	}
 }

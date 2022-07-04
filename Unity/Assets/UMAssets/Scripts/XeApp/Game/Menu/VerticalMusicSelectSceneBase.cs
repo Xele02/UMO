@@ -67,8 +67,8 @@ namespace XeApp.Game.Menu
 		// protected IKDICBBFBMI m_eventCtrl { get; set; } // 0x4C
 		// protected int m_eventId { get; set; } // 0x54
 		// protected MMOLNAHHDOM m_unitLiveLocalSaveData { get; private set; } // 0x58
-		// protected LimitTimeWatcher m_musicTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x5C
-		// protected LimitTimeWatcher m_bannerTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x60
+		protected LimitTimeWatcher m_musicTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x5C
+		protected LimitTimeWatcher m_bannerTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x60
 		// protected abstract IBJAKJJICBC selectMusicData { get; } // Slot: 40
 		// protected abstract VerticalMusicDataList.MusicListData selectMusicListData { get; } // Slot: 41
 		// protected bool listIsEmpty { get; } 0xAC8AD4
@@ -101,7 +101,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC8D74 Offset: 0xAC8D74 VA: 0xAC8D74
 		protected void Update()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			m_bannerTimeWatcher.Update();
+			m_musicTimeWatcher.Update();
+			OnUpdate();
 		}
 
 		// RVA: 0xAC8DD8 Offset: 0xAC8DD8 VA: 0xAC8DD8 Slot: 16
@@ -114,7 +116,7 @@ namespace XeApp.Game.Menu
 		protected override bool IsEndPreSetCanvas()
 		{
 			UnityEngine.Debug.LogError("TODO !!!");
-			return false;
+			return true;
 		}
 
 		// RVA: 0xAC8F58 Offset: 0xAC8F58 VA: 0xAC8F58 Slot: 18
@@ -127,7 +129,7 @@ namespace XeApp.Game.Menu
 		protected override bool IsEndPostSetCanvas()
 		{
 			UnityEngine.Debug.LogError("TODO !!!");
-			return false;
+			return true;
 		}
 
 		// RVA: 0xAC8F94 Offset: 0xAC8F94 VA: 0xAC8F94 Slot: 23
@@ -140,7 +142,7 @@ namespace XeApp.Game.Menu
 		protected override bool IsEndActivateScene()
 		{
 			UnityEngine.Debug.LogError("TODO !!!");
-			return false;
+			return true;
 		}
 
 		// RVA: 0xAC8FD0 Offset: 0xAC8FD0 VA: 0xAC8FD0 Slot: 20
@@ -201,7 +203,7 @@ namespace XeApp.Game.Menu
 		protected abstract IEnumerator Co_WaitForLoaded();
 
 		// // RVA: -1 Offset: -1 Slot: 47
-		// protected abstract void OnUpdate();
+		protected abstract void OnUpdate();
 
 		// // RVA: -1 Offset: -1 Slot: 48
 		// protected abstract void ReleaseScene();

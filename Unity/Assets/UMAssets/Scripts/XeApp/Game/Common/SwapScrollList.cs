@@ -28,8 +28,8 @@ namespace XeApp.Game.Common
 		//private bool m_isContentEscapeMode; // 0x48
 		//private RectTransform m_contentEscapeRoot; // 0x4C
 		//private RectTransform m_scrollRectTransfom; // 0x50
-		//private RawImageEx m_verticalScrollBarImage; // 0x54
-		//private RawImageEx m_horizontalScrollBarImage; // 0x58
+		private RawImageEx m_verticalScrollBarImage; // 0x54
+		private RawImageEx m_horizontalScrollBarImage; // 0x58
 
 		//public List<SwapScrollListContent> ScrollObjects { get; } 0x1CCB004
 		//public int ListTopPosition { get; } 0x1CCB00C
@@ -53,13 +53,26 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CCB268 Offset: 0x1CCB268 VA: 0x1CCB268
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			m_isVertical = m_scrollRect.vertical;
+			m_scrollRect.onValueChanged.AddListener(this.UpdateScrollCb);
+			for(int i = 0; i < m_scrollObjects.Count; i++)
+			{
+				m_scrollObjects[i].Index = i;
+			}
+			if(m_scrollRect.horizontalScrollbar != null)
+			{
+				m_horizontalScrollBarImage = m_scrollRect.horizontalScrollbar.GetComponent<RawImageEx>();
+			}
+			if(m_scrollRect.verticalScrollbar != null)
+			{
+				m_verticalScrollBarImage = m_scrollRect.verticalScrollbar.GetComponent<RawImageEx>();
+			}
 		}
 
 		//// RVA: 0x1CCB5FC Offset: 0x1CCB5FC VA: 0x1CCB5FC
 		public void AddScrollObject(SwapScrollListContent obj)
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			m_scrollObjects.Add(obj);
 		}
 
 		//// RVA: 0x1CCB67C Offset: 0x1CCB67C VA: 0x1CCB67C
@@ -71,7 +84,27 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CCB724 Offset: 0x1CCB724 VA: 0x1CCB724
 		public void Apply()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			for(int i = 0; i < m_rowCount; i++)
+			{
+				for(int j = 0; j < m_columnCount; j++)
+				{
+					int idx = i * m_columnCount + j;
+					SwapScrollListContent item = m_scrollObjects[idx];
+					item.AnchorMin = new Vector2(0.0f, 1.0f);
+					item.AnchorMax = new Vector2(0.0f, 1.0f);
+					item.Pivot = new Vector2(0.0f, 1.0f);
+					item.Size = m_contentRect;
+					item.Index = idx;
+					item.AnchoredPosition = new Vector2(m_contentRect.x * j + m_leftTopPosition.x, m_contentRect.y * i + m_leftTopPosition.y);
+					item.transform.SetParent(m_scrollRect.content, false);
+				}
+				for(int j = 0; j < m_columnCount; j++)
+				{
+					int idx = i * m_columnCount + j;
+					SwapScrollListContent item = m_scrollObjects[idx];
+					item.RectTransform.SetSiblingIndex((i+1) * m_columnCount - j);
+				}
+			}
 		}
 
 		//// RVA: 0x1CCBCF8 Offset: 0x1CCBCF8 VA: 0x1CCBCF8
@@ -93,7 +126,10 @@ namespace XeApp.Game.Common
 		//public void ResetScrollVelocity() { }
 
 		//// RVA: 0x1CCCD6C Offset: 0x1CCCD6C VA: 0x1CCCD6C
-		//private void UpdateScrollCb(Vector2 position) { }
+		private void UpdateScrollCb(Vector2 position)
+		{
+			UnityEngine.Debug.LogError("TODO UpdateScrollCb");
+		}
 
 		//// RVA: 0x1CCDA80 Offset: 0x1CCDA80 VA: 0x1CCDA80
 		//public void VisibleRegionUpdate() { }

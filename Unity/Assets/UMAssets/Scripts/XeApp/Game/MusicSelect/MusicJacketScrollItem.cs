@@ -51,7 +51,7 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xC9B0A4 Offset: 0xC9B0A4 VA: 0xC9B0A4
 		public void SetVisible(bool isVisible)
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			m_canvasGroup.alpha = isVisible ? 1.0f : 0.0f;
 		}
 
 		//// RVA: 0xC9B0F0 Offset: 0xC9B0F0 VA: 0xC9B0F0

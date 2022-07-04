@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using XeApp.Game.Common;
 using TMPro;
 using XeSys.Gfx;
+using XeSys;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -10,12 +12,12 @@ namespace XeApp.Game.Menu
 	{
 		[SerializeField]
 		private Color m_invalidDigitColor = Color.gray; // 0xC
-		// private string m_invalidDigitColorHtml; // 0x1C
+		private string m_invalidDigitColorHtml; // 0x1C
 		// private int m_validScoreDigit = 8; // 0x20
 		// private int m_validUtaRateDigit = 4; // 0x24
 		// private StringBuilder m_invalidDigitSb = new StringBuilder(); // 0x28
-		// private string m_eventRemainTimeFormat; // 0x2C
-		// private string m_eventRemainCountFormat; // 0x30
+		private string m_eventRemainTimeFormat; // 0x2C
+		private string m_eventRemainCountFormat; // 0x30
 		// private int m_coverId; // 0x34
 		// private bool m_isEventCover; // 0x38
 		[SerializeField]
@@ -112,20 +114,65 @@ namespace XeApp.Game.Menu
 		private CanvasGroup m_eventCountingObj; // 0xD4
 		[SerializeField]
 		private TextMeshProUGUI m_eventRemainTime; // 0xD8
-		// private int m_isOnUnitIndex; // 0xDC
+		private int m_isOnUnitIndex; // 0xDC
 		// private List<int> m_itemIdList = new List<int>(3); // 0xE0
 
-		// public Action OnMusicBookMarkButtonClickListener { private get; set; } // 0xE4
-		// public Action<int> OnUnitButtonClickListener { private get; set; } // 0xE8
-		// public Action OnJacketButtonClickListener { private get; set; } // 0xEC
-		// public Action OnEventDetailClickListener { private get; set; } // 0xF0
-		// public Action OnEventRewardClickListener { private get; set; } // 0xF4
+		public Action OnMusicBookMarkButtonClickListener { private get; set; } // 0xE4
+		public Action<int> OnUnitButtonClickListener { private get; set; } // 0xE8
+		public Action OnJacketButtonClickListener { private get; set; } // 0xEC
+		public Action OnEventDetailClickListener { private get; set; } // 0xF0
+		public Action OnEventRewardClickListener { private get; set; } // 0xF4
 		// private MusicJacketTextureCache jacketTexCache { get; } 0xBDE614
 
 		// // RVA: 0xBDE6B0 Offset: 0xBDE6B0 VA: 0xBDE6B0
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			m_eventRemainTimeFormat = MessageManager.Instance.GetBank("menu").GetMessageByLabel("vertical_music_select_event_remain_time");
+			m_eventRemainCountFormat = MessageManager.Instance.GetBank("menu").GetMessageByLabel("vertical_music_select_event_remain_count");
+			m_invalidDigitColorHtml = "#"+ColorUtility.ToHtmlStringRGBA(m_invalidDigitColor);
+			m_jacketSelectButton.ClearOnClickCallback();
+			m_jacketSelectButton.AddOnClickCallback(() => {
+				//0xBE0A1C
+				if(OnJacketButtonClickListener != null)
+					OnJacketButtonClickListener();
+			});
+			m_bookMarakButton.ClearOnClickCallback();
+			m_bookMarakButton.AddOnClickCallback(() => {
+				//0xBE0A30
+				if(OnMusicBookMarkButtonClickListener != null)
+					OnMusicBookMarkButtonClickListener();
+			});
+			m_weeklyDescButton.ClearOnClickCallback();
+			m_weeklyDescButton.AddOnClickCallback(() => {
+				//0xBE0A44
+				if(OnEventDetailClickListener != null)
+					OnEventDetailClickListener();
+			});
+			m_ScoreRankingDescButton.ClearOnClickCallback();
+			m_ScoreRankingDescButton.AddOnClickCallback(() => {
+				//0xBE0A58
+				if(OnEventDetailClickListener != null)
+					OnEventDetailClickListener();
+			});
+			m_ScoreRankingEventRewardButton.ClearOnClickCallback();
+			m_ScoreRankingEventRewardButton.AddOnClickCallback(() => {
+				//0xBE0A6C
+				if(OnEventRewardClickListener != null)
+					OnEventRewardClickListener();
+			});
+			m_unitToggleButtonGroup.OnSelectToggleButtonEvent.AddListener((int index) => {
+				//0xBE0A80
+				for(int i = 0; i < m_unitToggleButton.Length; i++)
+				{
+					if(!m_unitToggleButton[i].Hidden && m_isOnUnitIndex != i)
+					{
+						if(OnUnitButtonClickListener != null)
+						{
+							OnUnitButtonClickListener(i);
+						}
+					}
+				}
+			});
 		}
 
 		// // RVA: 0xBDEB04 Offset: 0xBDEB04 VA: 0xBDEB04
@@ -209,29 +256,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xBE0874 Offset: 0xBE0874 VA: 0xBE0874
 		// public void SetEnable(bool isEneble) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5B74 Offset: 0x6F5B74 VA: 0x6F5B74
-		// // RVA: 0xBE0A1C Offset: 0xBE0A1C VA: 0xBE0A1C
-		// private void <Awake>b__76_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5B84 Offset: 0x6F5B84 VA: 0x6F5B84
-		// // RVA: 0xBE0A30 Offset: 0xBE0A30 VA: 0xBE0A30
-		// private void <Awake>b__76_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5B94 Offset: 0x6F5B94 VA: 0x6F5B94
-		// // RVA: 0xBE0A44 Offset: 0xBE0A44 VA: 0xBE0A44
-		// private void <Awake>b__76_2() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5BA4 Offset: 0x6F5BA4 VA: 0x6F5BA4
-		// // RVA: 0xBE0A58 Offset: 0xBE0A58 VA: 0xBE0A58
-		// private void <Awake>b__76_3() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5BB4 Offset: 0x6F5BB4 VA: 0x6F5BB4
-		// // RVA: 0xBE0A6C Offset: 0xBE0A6C VA: 0xBE0A6C
-		// private void <Awake>b__76_4() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5BC4 Offset: 0x6F5BC4 VA: 0x6F5BC4
-		// // RVA: 0xBE0A80 Offset: 0xBE0A80 VA: 0xBE0A80
-		// private void <Awake>b__76_5(int index) { }
 	}
 }
