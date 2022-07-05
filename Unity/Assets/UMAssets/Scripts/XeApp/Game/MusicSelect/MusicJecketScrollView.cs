@@ -6,15 +6,15 @@ namespace XeApp.Game.MusicSelect
 	public class MusicJecketScrollView : MonoBehaviour
 	{
 		//[HeaderAttribute] // RVA: 0x6658E8 Offset: 0x6658E8 VA: 0x6658E8
-		[SerializeField] // RVA: 0x6658E8 Offset: 0x6658E8 VA: 0x6658E8
+		[SerializeField]
 		private UGUISwapScrollList m_scrollList; // 0xC
 		//[HeaderAttribute] // RVA: 0x665938 Offset: 0x665938 VA: 0x665938
-		[SerializeField] // RVA: 0x665938 Offset: 0x665938 VA: 0x665938
+		[SerializeField]
 		private MusicJacketScrollItem m_prefabContentItem; // 0x10
 		//[HeaderAttribute] // RVA: 0x665998 Offset: 0x665998 VA: 0x665998
-		[SerializeField] // RVA: 0x665998 Offset: 0x665998 VA: 0x665998
+		[SerializeField]
 		private UGUIButton m_buttonClose; // 0x14
-		[SerializeField] // RVA: 0x6659E0 Offset: 0x6659E0 VA: 0x6659E0
+		[SerializeField]
 		//[HeaderAttribute] // RVA: 0x6659E0 Offset: 0x6659E0 VA: 0x6659E0
 		private InOutAnime m_animeInOut; // 0x18
 		//private List<VerticalMusicDataList.MusicListData> m_musicList; // 0x1C

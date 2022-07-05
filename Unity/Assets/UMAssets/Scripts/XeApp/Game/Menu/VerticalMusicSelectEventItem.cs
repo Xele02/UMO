@@ -33,13 +33,19 @@ namespace XeApp.Game.Menu
 		// public void SetTicketIcon(int ticketId) { }
 
 		// // RVA: 0xBDDE08 Offset: 0xBDDE08 VA: 0xBDDE08
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_inOut.ForceEnter(null);
+		}
 
 		// // RVA: 0xBDDE38 Offset: 0xBDDE38 VA: 0xBDDE38
 		// public void Leave() { }
 
 		// // RVA: 0xBDDE68 Offset: 0xBDDE68 VA: 0xBDDE68
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOut.IsPlaying();
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F59FC Offset: 0x6F59FC VA: 0x6F59FC
 		// // RVA: 0xBDDE9C Offset: 0xBDDE9C VA: 0xBDDE9C

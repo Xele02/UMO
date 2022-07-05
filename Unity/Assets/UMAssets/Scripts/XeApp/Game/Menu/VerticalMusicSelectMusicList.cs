@@ -3,6 +3,7 @@ using XeApp.Game.Common;
 using XeApp.Game.MusicSelect;
 using TMPro;
 using System.Collections.Generic;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -24,13 +25,13 @@ namespace XeApp.Game.Menu
 		// private static readonly int hashStateIn = Animator.StringToHash("Base Layer.In"); // 0x0
 		// private static readonly int hashStateOut = Animator.StringToHash("Base Layer.Out"); // 0x4
 		// private static readonly int hashStateClip = Animator.StringToHash("Base Layer.Clip"); // 0x8
-		// private List<VerticalMusicDataList.MusicListData> m_musicList = new List<VerticalMusicDataList.MusicListData>(); // 0x20
+		 private List<VerticalMusicDataList.MusicListData> m_musicList = new List<VerticalMusicDataList.MusicListData>(); // 0x20
 		// private int m_difficult; // 0x24
 		// private bool m_isSingleMusic; // 0x28
 
-		// public MusicScrollView MusicScrollView { get; } 0xBE1ABC
-		// public Action<int> OnUpdateCenter { get; set; } // 0x2C
-		// public Action OnUpdateClip { get; set; } // 0x30
+		public MusicScrollView MusicScrollView { get { return m_musicScroll; } } //0xBE1ABC
+		public Action<int> OnUpdateCenter { get; set; } // 0x2C
+		public Action OnUpdateClip { get; set; } // 0x30
 
 		// // RVA: 0xBE1AE4 Offset: 0xBE1AE4 VA: 0xBE1AE4
 		private void Awake()
@@ -63,13 +64,19 @@ namespace XeApp.Game.Menu
 		// public IEnumerator Co_UpdateAnim(Action outEndCallback) { }
 
 		// // RVA: 0xBE21F8 Offset: 0xBE21F8 VA: 0xBE21F8
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_inOut.ForceEnter(null);
+		}
 
 		// // RVA: 0xBE2228 Offset: 0xBE2228 VA: 0xBE2228
 		// public void Leave() { }
 
 		// // RVA: 0xBE228C Offset: 0xBE228C VA: 0xBE228C
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOut.IsPlaying();
+		}
 
 		// // RVA: 0xBE22B8 Offset: 0xBE22B8 VA: 0xBE22B8
 		// public void SetEnable(bool isEneble) { }
@@ -78,6 +85,7 @@ namespace XeApp.Game.Menu
 		private void MusicUpdateCenterItem(int listIndex, MusicScrollCenterItem obj)
 		{
 			UnityEngine.Debug.LogError("TODO MusicUpdateCenterItem");
+			obj.SetTitle(m_musicList[listIndex].MusicName);
 		}
 
 		// // RVA: 0xBE3850 Offset: 0xBE3850 VA: 0xBE3850

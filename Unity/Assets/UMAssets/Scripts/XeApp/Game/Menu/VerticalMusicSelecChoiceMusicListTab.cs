@@ -36,13 +36,19 @@ namespace XeApp.Game.Menu
 		// public void SetMusicListTab(VerticalMusicSelecChoiceMusicListTab.MusicTab musicTab) { }
 
 		// // RVA: 0xBDB5B8 Offset: 0xBDB5B8 VA: 0xBDB5B8
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_inOut.ForceEnter(null);
+		}
 
 		// // RVA: 0xBDB5E8 Offset: 0xBDB5E8 VA: 0xBDB5E8
 		// public void Leave() { }
 
 		// // RVA: 0xBDB618 Offset: 0xBDB618 VA: 0xBDB618
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOut.IsPlaying();
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F590C Offset: 0x6F590C VA: 0x6F590C
 		// // RVA: 0xBDB64C Offset: 0xBDB64C VA: 0xBDB64C

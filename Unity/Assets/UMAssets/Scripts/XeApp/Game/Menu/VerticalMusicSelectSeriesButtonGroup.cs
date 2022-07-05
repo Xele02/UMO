@@ -40,7 +40,10 @@ namespace XeApp.Game.Menu
 		// public void SetSeriesButton(int series) { }
 
 		// // RVA: 0xAD98E4 Offset: 0xAD98E4 VA: 0xAD98E4
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_inOut.ForceEnter(null);
+		}
 
 		// // RVA: 0xAD9914 Offset: 0xAD9914 VA: 0xAD9914
 		// public void Leave() { }

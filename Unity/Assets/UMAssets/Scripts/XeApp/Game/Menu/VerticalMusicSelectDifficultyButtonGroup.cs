@@ -52,13 +52,19 @@ namespace XeApp.Game.Menu
 		// public void SetMusicLevel(int index, int musicLevel, VerticalMusicSelectDifficultyButtonGroup.ButtonStyle style) { }
 
 		// // RVA: 0xBDCE0C Offset: 0xBDCE0C VA: 0xBDCE0C
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_inOut.ForceEnter(null);
+		}
 
 		// // RVA: 0xBDCE3C Offset: 0xBDCE3C VA: 0xBDCE3C
 		// public void Leave() { }
 
 		// // RVA: 0xBDCEA0 Offset: 0xBDCEA0 VA: 0xBDCEA0
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOut.IsPlaying();
+		}
 
 		// // RVA: 0xBDCECC Offset: 0xBDCECC VA: 0xBDCECC
 		// public void SetEnable(bool isEneble) { }

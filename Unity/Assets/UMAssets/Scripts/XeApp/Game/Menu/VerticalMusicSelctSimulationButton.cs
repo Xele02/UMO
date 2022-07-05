@@ -47,12 +47,18 @@ namespace XeApp.Game.Menu
 		// public void SetInputEnable(bool isEnable) { }
 
 		// // RVA: 0xBDB31C Offset: 0xBDB31C VA: 0xBDB31C
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_inOut.ForceEnter(null);
+		}
 
 		// // RVA: 0xBDB34C Offset: 0xBDB34C VA: 0xBDB34C
 		// public void Leave() { }
 
 		// // RVA: 0xBDB3B0 Offset: 0xBDB3B0 VA: 0xBDB3B0
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOut.IsPlaying();
+		}
 	}
 }

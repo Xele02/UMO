@@ -39,13 +39,19 @@ namespace XeApp.Game.Menu
 		// public void SetButtonEnable(bool isEnable) { }
 
 		// // RVA: 0xAD9EDC Offset: 0xAD9EDC VA: 0xAD9EDC
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_inOut.ForceEnter(null);
+		}
 
 		// // RVA: 0xAD9F0C Offset: 0xAD9F0C VA: 0xAD9F0C
 		// public void Leave() { }
 
 		// // RVA: 0xAD9F3C Offset: 0xAD9F3C VA: 0xAD9F3C
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOut.IsPlaying();
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F72D4 Offset: 0x6F72D4 VA: 0x6F72D4
 		// // RVA: 0xAD9F70 Offset: 0xAD9F70 VA: 0xAD9F70

@@ -41,13 +41,19 @@ namespace XeApp.Game.Menu
 		// public void SetScoreRatingRank(HighScoreRatingRank.Type rank) { }
 
 		// // RVA: 0xADBEA4 Offset: 0xADBEA4 VA: 0xADBEA4
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_inOut.ForceEnter(null);
+		}
 
 		// // RVA: 0xADBED4 Offset: 0xADBED4 VA: 0xADBED4
 		// public void Leave() { }
 
 		// // RVA: 0xADBF38 Offset: 0xADBF38 VA: 0xADBF38
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOut.IsPlaying();
+		}
 
 		// // RVA: 0xADBF64 Offset: 0xADBF64 VA: 0xADBF64
 		// public void SetEnable(bool isEneble) { }

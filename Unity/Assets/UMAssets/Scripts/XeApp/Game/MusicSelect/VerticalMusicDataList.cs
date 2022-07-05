@@ -19,7 +19,7 @@ namespace XeApp.Game.MusicSelect
 			//	public bool IsHighLevel { get; } = false; // 0x1C
 			//	public string EventPeriod { get; } // 0x20
 			//	public string MusicTimeStr { get; } // 0x24
-			//	public string MusicName { get; } // 0x28
+				public string MusicName { get; } // 0x28
 			//	public string VocalName { get; } // 0x2C
 			//	public int MusicTime { get; } // 0x30
 			//	public MusicSelectConsts.MusicTimeType TimeType { get; } = 2; // 0x34
@@ -37,7 +37,11 @@ namespace XeApp.Game.MusicSelect
 		private List<VerticalMusicDataList.MusicListData> m_viewSimulation6LineList = new List<VerticalMusicDataList.MusicListData>(); // 0x14
 
 		//// RVA: 0xCA0F60 Offset: 0xCA0F60 VA: 0xCA0F60
-		//public static List<VerticalMusicDataList.MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId) { }
+		public static List<VerticalMusicDataList.MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId)
+		{
+			UnityEngine.Debug.LogError("TODO CreateMusicListData !!!");
+			return new List<VerticalMusicDataList.MusicListData>();
+		}
 
 		//// RVA: 0xCA24B0 Offset: 0xCA24B0 VA: 0xCA24B0
 		//private static List<IKDICBBFBMI> GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP type, long currentTime, KGCNCBOKCBA.GNENJEHKMHD term = 9) { }
@@ -124,7 +128,29 @@ namespace XeApp.Game.MusicSelect
 		//public VerticalMusicDataList.MusicListData Find(Predicate<VerticalMusicDataList.MusicListData> match, bool line6Mode, bool simulation) { }
 
 		//// RVA: 0xCA3888 Offset: 0xCA3888 VA: 0xCA3888
-		//public void AddList(List<VerticalMusicDataList.MusicListData> addList, bool line6Mode, bool simulation) { }
+		public void AddList(List<VerticalMusicDataList.MusicListData> addList, bool line6Mode, bool simulation)
+		{
+			List<VerticalMusicDataList.MusicListData> inList;
+			if(simulation)
+			{
+				if(line6Mode)
+				{
+					inList = m_viewSimulationList;
+				}
+				else
+				{
+					inList = m_viewSimulation6LineList;
+				}
+			}
+			else if(line6Mode)
+				inList = m_viewList;
+			else
+				inList = m_view6LineList;
+			foreach(MusicListData data in addList)
+			{
+				inList.Add(data);
+			}
+		}
 
 		//// RVA: 0xCA3A24 Offset: 0xCA3A24 VA: 0xCA3A24
 		//public void Clear() { }

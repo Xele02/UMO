@@ -20,8 +20,8 @@ namespace XeApp.Game.Menu
 		private VerticalMusicDataList m_filterMusicEventDataList = new VerticalMusicDataList(); // 0xC0
 		// private bool m_isListScroll; // 0xC4
 		private bool m_isChangeBg; // 0xC5
-		// private bool m_isEndMyRankRequest; // 0xC6
-		// private bool m_showScoreRankingPopup; // 0xC7
+		 private bool m_isEndMyRankRequest; // 0xC6
+		 private bool m_showScoreRankingPopup; // 0xC7
 		// public static readonly MusicSelectConsts.SeriesType[] CategoryToSeriesType = new MusicSelectConsts.SeriesType[7] {B21C1224684EAD6057E0D535F5E726DA8EDD5779}; // 0x4
 		// private bool m_isBgCached; // 0xCC
 		// private bool m_isScoreRankingPopup; // 0xCD
@@ -34,24 +34,24 @@ namespace XeApp.Game.Menu
 		private VerticalMusicSelecChoiceMusicListTab.MusicTab m_musicTab; // 0xE0
 		private VerticalMusicSelectMusicList m_musicList; // 0xE4
 		private VerticalMusicSelectMusicDetail m_musicDetail; // 0xE8
-		 private VerticalMusicSelectUtaRate m_utaRate; // 0xEC
+		private VerticalMusicSelectUtaRate m_utaRate; // 0xEC
 		private VerticalMusicSelectEventBanner m_eventBanner; // 0xF0
 		private VerticalMusicSelectEventItem m_eventItem; // 0xF4
-		 private VerticalMusicSelectDifficultyButtonGroup m_difficultyButtonGroup; // 0xF8
+		private VerticalMusicSelectDifficultyButtonGroup m_difficultyButtonGroup; // 0xF8
 		private VerticalMusicSelectSeriesButtonGroup m_seriesButtonGroup; // 0xFC
 		private VerticalMusicSelecLine6Button m_line6Button; // 0x100
-		 private VerticalMusicSelctSimulationButton m_simulationButton; // 0x104
-		 private VerticalMusicSelectPlayButton m_playButton; // 0x108
-		 private VerticalMusicSelecChoiceMusicListTab m_choiceMusicTab; // 0x10C
-		 private MusicJecketScrollView m_jacketScroll; // 0x110
-		 private VerticalMusicSelectMusicFilterButton m_filterButton; // 0x114
-		 private VerticalMusicSelectSortOrder m_orderButton; // 0x118
+		private VerticalMusicSelctSimulationButton m_simulationButton; // 0x104
+		private VerticalMusicSelectPlayButton m_playButton; // 0x108
+		private VerticalMusicSelecChoiceMusicListTab m_choiceMusicTab; // 0x10C
+		private MusicJecketScrollView m_jacketScroll; // 0x110
+		private VerticalMusicSelectMusicFilterButton m_filterButton; // 0x114
+		private VerticalMusicSelectSortOrder m_orderButton; // 0x118
 		// private LayoutEventGoDivaFeverLimit m_feverLimit; // 0x11C
-		// private static readonly int newSeriesBgIdDiff = 6; // 0x8
-		// private static readonly int eventCategoryId = 5; // 0xC
-		// private static readonly int[] CategoryToNewSeriesBgId = new int[7] { -1, newSeriesBgIdDiff+4, newSeriesBgIdDiff+3, newSeriesBgIdDiff+2, newSeriesBgIdDiff+1, newSeriesBgIdDiff+eventCategoryId, newSeriesBgIdDiff+6 }; // 0x10
-		// private static readonly int[] SeriesToNewSeriesBgId = new int[6] { -1, newSeriesBgIdDiff+1, newSeriesBgIdDiff+2, newSeriesBgIdDiff+3, newSeriesBgIdDiff+4, newSeriesBgIdDiff+6 }; // 0x14
-		// private static readonly int noMusicCategoryId = CategoryToNewSeriesBgId[6] + 1; // 0x18
+		private static readonly int newSeriesBgIdDiff = 6; // 0x8
+		private static readonly int eventCategoryId = 5; // 0xC
+		private static readonly int[] CategoryToNewSeriesBgId = new int[7] { -1, newSeriesBgIdDiff+4, newSeriesBgIdDiff+3, newSeriesBgIdDiff+2, newSeriesBgIdDiff+1, newSeriesBgIdDiff+eventCategoryId, newSeriesBgIdDiff+6 }; // 0x10
+		private static readonly int[] SeriesToNewSeriesBgId = new int[6] { -1, newSeriesBgIdDiff+1, newSeriesBgIdDiff+2, newSeriesBgIdDiff+3, newSeriesBgIdDiff+4, newSeriesBgIdDiff+6 }; // 0x14
+		private static readonly int noMusicCategoryId = CategoryToNewSeriesBgId[6] + 1; // 0x18
 
 		// private VerticalMusicSelectSortOrder.SortOrder sortOrder { get; } 0xBE5B30
 		// protected override IBJAKJJICBC selectMusicData { get; } 0xBE5B5C
@@ -162,25 +162,81 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5F9C Offset: 0x6F5F9C VA: 0x6F5F9C
 		// // RVA: 0xBE5F30 Offset: 0xBE5F30 VA: 0xBE5F30 Slot: 43
-		//protected override IEnumerator Co_OnPostSetCanvas()
-		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
-		//	yield break;
-		//}
+		protected override IEnumerator Co_OnPostSetCanvas()
+		{
+			//0xAC51E4
+			m_isEndPostSetCanvas = false;
+			m_musicList.OnUpdateCenter = (int index) =>
+			{
+				//0xBF00C4
+				UnityEngine.Debug.LogError("TODO OnUpdateCenter");
+			};
+			m_musicList.OnUpdateClip = () =>
+			{
+				//0xBF00FC
+				UnityEngine.Debug.LogError("TODO OnUpdateClip");
+			};
+			m_musicList.MusicScrollView.CenterItem.OnRewardButtonClickListener = () =>
+			{
+				//0xBF010C
+				UnityEngine.Debug.LogError("TODO OnRewardButtonClickListener");
+			};
+			m_musicList.MusicScrollView.CenterItem.OnMusicInfoButtonClickListener = () =>
+			{
+				//0xBF01A0
+				UnityEngine.Debug.LogError("TODO OnMusicInfoButtonClickListener");
+			};
+			m_playButton.OnClicButtonListener = (bool isSimulation) =>
+			{
+				//0xBF04E0
+				m_musicList.MusicScrollView.SetPosition(list_no);
+				OnClickPlayButton(isSimulation);
+			};
+			UnityEngine.Debug.LogError("TODO Co_OnPostSetCanvas listener !!!");
+			m_musicList.MusicScrollView.ScrollEnable(true);
+			ApplyCommonInfo();
+			OnChangeFilter();
+			m_isEndMyRankRequest = false;
+			JEPBIIJDGEF.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP.KEILBOLBDHN, 0, () =>
+			{
+				//0xBF0888
+				m_isEndMyRankRequest = true;
+			}, () =>
+			{
+				//0xBF0894
+				m_isEndMyRankRequest = true;
+				m_showScoreRankingPopup = false;
+				GotoTitle();
+			});
+			while (!m_isEndMyRankRequest)
+				yield return null;
+
+
+			UnityEngine.Debug.LogError("TODO fix that, where is m_isEndPostSetCanvas = true really set ?");
+			m_isEndPostSetCanvas = false;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6014 Offset: 0x6F6014 VA: 0x6F6014
 		// // RVA: 0xBE5FB8 Offset: 0xBE5FB8 VA: 0xBE5FB8 Slot: 44
-		//protected override IEnumerator Co_ActivateScene()
-		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
-		//	yield break;
-		//}
+		protected override IEnumerator Co_ActivateScene()
+		{
+			//0xAC2CE0
+			m_isEndActivateScene = false;
+			if(!MenuScene.Instance.DirtyChangeScene)
+			{
+				MenuScene.Instance.InputDisable();
+				yield return Co_ShowScoreRankingPopup();
+				MenuScene.Instance.InputEnable();
+			}
+			UnityEngine.Debug.LogError("TODO DirtyChangeScene stuff");
+			m_isEndActivateScene = true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F608C Offset: 0x6F608C VA: 0x6F608C
 		// // RVA: 0xBE6040 Offset: 0xBE6040 VA: 0xBE6040
 		private IEnumerator Co_ShowScoreRankingPopup()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			UnityEngine.Debug.LogError("TODO Co_ShowScoreRankingPopup");
 			yield break;
 		}
 
@@ -367,21 +423,35 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE6150 Offset: 0xBE6150 VA: 0xBE6150 Slot: 46
 		protected override IEnumerator Co_WaitForLoaded()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
-			yield break;
+			//0xAC89A0
+			yield return null;
 		}
 
 		// RVA: 0xBE61C0 Offset: 0xBE61C0 VA: 0xBE61C0 Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			m_musicList.Enter();
+			m_musicDetail.Enter();
+			m_utaRate.Enter();
+			m_difficultyButtonGroup.Enter();
+			m_seriesButtonGroup.Enter();
+			m_eventBanner.Enter();
+			m_eventItem.Enter();
+			m_filterButton.Enter();
+			m_line6Button.Enter();
+			m_simulationButton.Enter();
+			m_choiceMusicTab.Enter();
+			m_playButton.Enter();
+			m_orderButton.Enter();
+			MenuScene.Instance.LobbyButtonControl.Setup(HomeLobbyButtonController.Type.DOWN);
 		}
 
 		// RVA: 0xBE63FC Offset: 0xBE63FC VA: 0xBE63FC Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
-			return false;
+			return !m_musicList.IsPlaying() && !m_musicDetail.IsPlaying() && !m_utaRate.IsPlaying() && !m_difficultyButtonGroup.IsPlaying() && !m_eventBanner.IsPlaying() && 
+				!m_eventItem.IsPlaying() && !m_filterButton.IsPlaying() && !m_line6Button.IsPlaying() && !m_simulationButton.IsPlaying() && !m_choiceMusicTab.IsPlaying() && 
+				!m_playButton.IsPlaying() && !m_orderButton.IsPlaying();
 		}
 
 		// RVA: 0xBE65C8 Offset: 0xBE65C8 VA: 0xBE65C8 Slot: 12
@@ -465,7 +535,63 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE7818 Offset: 0xBE7818 VA: 0xBE7818
 		private void SetCreateMusicList()
 		{
-			UnityEngine.Debug.LogError("TODO SetCreateMusicList!!!");
+			long date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+			int lastMusicId = GetLastStoryFreeMusicId();
+			int song_Thresold = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.GDEKCOOBLMA.LPJLEHAJADA("verticalmusicselect_music_type_threshold", 96000);
+			m_originalMusicDataList.Clear();
+			m_originalEventMusicDataList.Clear();
+			for(int i = 0; i < eventCategoryId; i++)
+			{
+				List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(MUSIC_LIST_TYPE[i], date, true, false, false, false);
+				List<IBJAKJJICBC> viewMusicDataList = IBJAKJJICBC.FKDIMODKKJD(MUSIC_LIST_TYPE[i], date, true, false, false, true);
+				List<VerticalMusicDataList.MusicListData> list1 = VerticalMusicDataList.CreateMusicListData(l, m_eventCtrl, false, song_Thresold, lastMusicId);
+				List<VerticalMusicDataList.MusicListData> list2 = VerticalMusicDataList.CreateMusicListData(viewMusicDataList, m_eventCtrl, true, song_Thresold, lastMusicId);
+				VerticalMusicDataList datalist = new VerticalMusicDataList();
+				datalist.AddList(list1, false, false);
+				datalist.AddList(list2, true, false);
+				datalist.AddList(new List<VerticalMusicDataList.MusicListData>(), false, true);
+				datalist.AddList(new List<VerticalMusicDataList.MusicListData>(), true, true);
+				m_originalMusicDataList.Add(datalist);
+			}
+			List<IBJAKJJICBC> l2 = IBJAKJJICBC.FKDIMODKKJD(5, date, true, false, false, false);
+			List<IBJAKJJICBC> l3 = IBJAKJJICBC.FKDIMODKKJD(5, date, true, false, false, true);
+			List<IBJAKJJICBC> l4 = IBJAKJJICBC.LIENJMIJMIE(date, false);
+			List<IBJAKJJICBC> l5 = new List<IBJAKJJICBC>();
+			foreach(IBJAKJJICBC a in l4)
+			{
+				bool diff = true;
+				foreach (IBJAKJJICBC b in l2)
+				{
+					diff &= a.GHBPLHBNMBK != b.GHBPLHBNMBK;
+				}
+				if (diff)
+					l5.Add(a);
+			}
+			l2.AddRange(l5);
+
+			l4 = IBJAKJJICBC.LIENJMIJMIE(date, true);
+			l5 = new List<IBJAKJJICBC>();
+			foreach (IBJAKJJICBC a in l4)
+			{
+				bool diff = true;
+				foreach (IBJAKJJICBC b in l3)
+				{
+					diff &= a.GHBPLHBNMBK != b.GHBPLHBNMBK;
+				}
+				if (diff)
+					l5.Add(a);
+			}
+			l3.AddRange(l5);
+
+			List<VerticalMusicDataList.MusicListData> list3 = VerticalMusicDataList.CreateMusicListData(l2, m_eventCtrl, false, song_Thresold, lastMusicId);
+			List<VerticalMusicDataList.MusicListData> list4 = VerticalMusicDataList.CreateMusicListData(l3, m_eventCtrl, false, song_Thresold, lastMusicId);
+
+			VerticalMusicDataList datalist2 = new VerticalMusicDataList();
+			datalist2.AddList(list3, false, false);
+			datalist2.AddList(list4, true, false);
+			datalist2.AddList(new List<VerticalMusicDataList.MusicListData>(), false, true);
+			datalist2.AddList(new List<VerticalMusicDataList.MusicListData>(), true, true);
+			m_originalMusicDataList.Add(datalist2);
 		}
 
 		// // RVA: 0xBE87B4 Offset: 0xBE87B4 VA: 0xBE87B4
@@ -496,10 +622,10 @@ namespace XeApp.Game.Menu
 		// private void OnClickEventBanner() { }
 
 		// // RVA: 0xBEA808 Offset: 0xBEA808 VA: 0xBEA808 Slot: 52
-		//protected override void ApplyCommonInfo()
-		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
-		//}
+		protected override void ApplyCommonInfo()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
 		// RVA: 0xBEAA40 Offset: 0xBEAA40 VA: 0xBEAA40 Slot: 53
 		//protected override void ApplyMusicInfo()
@@ -626,7 +752,10 @@ namespace XeApp.Game.Menu
 		// private void SetFreeMusicIdByListNo(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP gameEventType) { }
 
 		// // RVA: 0xBEC3C0 Offset: 0xBEC3C0 VA: 0xBEC3C0
-		// private void OnChangeFilter() { }
+		private void OnChangeFilter()
+		{
+			UnityEngine.Debug.LogError("TODO OnChangeFilter");
+		}
 
 		// // RVA: 0xBEEC50 Offset: 0xBEEC50 VA: 0xBEEC50
 		// private void OnClickFilterButton() { }

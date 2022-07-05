@@ -246,13 +246,19 @@ namespace XeApp.Game.Menu
 		// public int GetDanceNum() { }
 
 		// // RVA: 0xBE07B4 Offset: 0xBE07B4 VA: 0xBE07B4
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_inOut.ForceEnter(null);
+		}
 
 		// // RVA: 0xBE07E4 Offset: 0xBE07E4 VA: 0xBE07E4
 		// public void Leave() { }
 
 		// // RVA: 0xBE0848 Offset: 0xBE0848 VA: 0xBE0848
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOut.IsPlaying();
+		}
 
 		// // RVA: 0xBE0874 Offset: 0xBE0874 VA: 0xBE0874
 		// public void SetEnable(bool isEneble) { }

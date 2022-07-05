@@ -14,7 +14,7 @@ namespace XeApp.Game.Menu
 		private GameObject[] m_filterObj = new GameObject[2]; // 0x14
 		[SerializeField]
 		private TextMeshProUGUI[] m_sortText = new TextMeshProUGUI[2]; // 0x18
-		// private bool m_isEntered; // 0x1C
+		private bool m_isEntered; // 0x1C
 
 		// public Action OnClickButtonListener { private get; set; } // 0x20
 
@@ -31,7 +31,11 @@ namespace XeApp.Game.Menu
 		// public void TryLeave() { }
 
 		// // RVA: 0xBE1654 Offset: 0xBE1654 VA: 0xBE1654
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_isEntered = true;
+			m_inOut.ForceEnter(null);
+		}
 
 		// // RVA: 0xBE169C Offset: 0xBE169C VA: 0xBE169C
 		// public void Leave() { }
@@ -43,7 +47,10 @@ namespace XeApp.Game.Menu
 		// public void Hide() { }
 
 		// // RVA: 0xBE1768 Offset: 0xBE1768 VA: 0xBE1768
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOut.IsPlaying();
+		}
 
 		// // RVA: 0xBE1794 Offset: 0xBE1794 VA: 0xBE1794
 		// public void SetButtonStatus(VerticalMusicSelectMusicFilterButton.ButtonStatusType status) { }
