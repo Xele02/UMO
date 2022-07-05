@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace XeApp.Game.MusicSelect
 {
 	public class VerticalMusicDataList
@@ -29,10 +31,10 @@ namespace XeApp.Game.MusicSelect
 			//	public void .ctor(VerticalMusicDataList.MusicListData.InitParam initParam) { }
 		}
 
-		//private List<VerticalMusicDataList.MusicListData> m_viewList = new List<VerticalMusicDataList.MusicListData>(); // 0x8
-		//private List<VerticalMusicDataList.MusicListData> m_view6LineList = new List<VerticalMusicDataList.MusicListData>(); // 0xC
-		//private List<VerticalMusicDataList.MusicListData> m_viewSimulationList = new List<VerticalMusicDataList.MusicListData>(); // 0x10
-		//private List<VerticalMusicDataList.MusicListData> m_viewSimulation6LineList = new List<VerticalMusicDataList.MusicListData>(); // 0x14
+		private List<VerticalMusicDataList.MusicListData> m_viewList = new List<VerticalMusicDataList.MusicListData>(); // 0x8
+		private List<VerticalMusicDataList.MusicListData> m_view6LineList = new List<VerticalMusicDataList.MusicListData>(); // 0xC
+		private List<VerticalMusicDataList.MusicListData> m_viewSimulationList = new List<VerticalMusicDataList.MusicListData>(); // 0x10
+		private List<VerticalMusicDataList.MusicListData> m_viewSimulation6LineList = new List<VerticalMusicDataList.MusicListData>(); // 0x14
 
 		//// RVA: 0xCA0F60 Offset: 0xCA0F60 VA: 0xCA0F60
 		//public static List<VerticalMusicDataList.MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId) { }
@@ -47,10 +49,58 @@ namespace XeApp.Game.MusicSelect
 		//public int GetCount(bool line6Mode, bool simulation) { }
 
 		//// RVA: 0xCA2FA4 Offset: 0xCA2FA4 VA: 0xCA2FA4
-		//public VerticalMusicDataList.MusicListData Get(int index, bool line6Mode, bool simulation) { }
+		public VerticalMusicDataList.MusicListData Get(int index, bool line6Mode, bool simulation)
+		{
+			List<VerticalMusicDataList.MusicListData> data;
+			if(simulation)
+			{
+				if(line6Mode)
+				{
+					data = m_viewSimulationList;
+				}
+				else
+				{
+					data = m_viewSimulation6LineList;
+				}
+			}
+			else if(line6Mode)
+			{
+				data = m_viewList;
+			}
+			else
+			{
+				data = m_view6LineList;
+			}
+			if(index >= data.Count)
+				return null;
+			return data[index];
+		}
 
 		//// RVA: 0xCA2F78 Offset: 0xCA2F78 VA: 0xCA2F78
-		//public List<VerticalMusicDataList.MusicListData> GetList(bool line6Mode, bool simulation) { }
+		public List<VerticalMusicDataList.MusicListData> GetList(bool line6Mode, bool simulation)
+		{
+			List<VerticalMusicDataList.MusicListData> data;
+			if(simulation)
+			{
+				if(line6Mode)
+				{
+					data = m_viewSimulationList;
+				}
+				else
+				{
+					data = m_viewSimulation6LineList;
+				}
+			}
+			else if(line6Mode)
+			{
+				data = m_viewList;
+			}
+			else
+			{
+				data = m_view6LineList;
+			}
+			return data;
+		}
 
 		//// RVA: 0xCA3088 Offset: 0xCA3088 VA: 0xCA3088
 		//public void UpdateDownloadState(int musicId) { }

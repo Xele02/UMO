@@ -2,6 +2,7 @@ using UnityEngine;
 using XeApp.Game.Common;
 using XeApp.Game.MusicSelect;
 using TMPro;
+using System.Collections.Generic;
 
 namespace XeApp.Game.Menu
 {
@@ -52,7 +53,10 @@ namespace XeApp.Game.Menu
 		// public void ChangeDifficult(int diff) { }
 
 		// // RVA: 0xBE1F68 Offset: 0xBE1F68 VA: 0xBE1F68
-		// public void SetMusicDataList(List<VerticalMusicDataList.MusicListData> musicList, int listNo, int diff) { }
+		public void SetMusicDataList(List<VerticalMusicDataList.MusicListData> musicList, int listNo, int diff)
+		{
+			UnityEngine.Debug.LogError("TODO SetMusicDataList !!!");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5C94 Offset: 0x6F5C94 VA: 0x6F5C94
 		// // RVA: 0xBE2130 Offset: 0xBE2130 VA: 0xBE2130

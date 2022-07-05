@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using XeApp.Core;
@@ -11,13 +13,13 @@ namespace XeApp.Game.Menu
 	public class VerticalMusicSelectScene : VerticalMusicSelectSceneBase
 	{
 		// private static readonly FreeCategoryId.Type[] MUSIC_LIST_TYPE = new FreeCategoryId.Type[5] {5F2E96BE9C0A28A18AE1C50C5298E42BB9EC26E0}; // 0x0
-		// private VerticalMusicSelectUISapporter m_musicSelectUISapporter = new VerticalMusicSelectUISapporter(); // 0xB0
-		// private List<VerticalMusicDataList> m_originalMusicDataList = new List<VerticalMusicDataList>(); // 0xB4
-		// private List<VerticalMusicDataList> m_originalEventMusicDataList = new List<VerticalMusicDataList>(); // 0xB8
-		// private VerticalMusicDataList m_filterMusicDataList = new VerticalMusicDataList(); // 0xBC
-		// private VerticalMusicDataList m_filterMusicEventDataList = new VerticalMusicDataList(); // 0xC0
+		private VerticalMusicSelectUISapporter m_musicSelectUISapporter = new VerticalMusicSelectUISapporter(); // 0xB0
+		private List<VerticalMusicDataList> m_originalMusicDataList = new List<VerticalMusicDataList>(); // 0xB4
+		private List<VerticalMusicDataList> m_originalEventMusicDataList = new List<VerticalMusicDataList>(); // 0xB8
+		private VerticalMusicDataList m_filterMusicDataList = new VerticalMusicDataList(); // 0xBC
+		private VerticalMusicDataList m_filterMusicEventDataList = new VerticalMusicDataList(); // 0xC0
 		// private bool m_isListScroll; // 0xC4
-		// private bool m_isChangeBg; // 0xC5
+		private bool m_isChangeBg; // 0xC5
 		// private bool m_isEndMyRankRequest; // 0xC6
 		// private bool m_showScoreRankingPopup; // 0xC7
 		// public static readonly MusicSelectConsts.SeriesType[] CategoryToSeriesType = new MusicSelectConsts.SeriesType[7] {B21C1224684EAD6057E0D535F5E726DA8EDD5779}; // 0x4
@@ -26,10 +28,10 @@ namespace XeApp.Game.Menu
 		// private bool m_isScoreEventTimeLimit; // 0xCE
 		// private bool m_isListEmptyByFilter; // 0xCF
 		// private int m_eventIndex; // 0xD0
-		// private int m_pickupFreeMusicId; // 0xD4
-		// private FreeCategoryId.Type m_pickupFreeCategoryId; // 0xD8
+		private int m_pickupFreeMusicId; // 0xD4
+		private FreeCategoryId.Type m_pickupFreeCategoryId; // 0xD8
 		// private OHCAABOMEOF.KGOGMKMBCPP m_currentEventType; // 0xDC
-		// private VerticalMusicSelecChoiceMusicListTab.MusicTab m_musicTab; // 0xE0
+		private VerticalMusicSelecChoiceMusicListTab.MusicTab m_musicTab; // 0xE0
 		private VerticalMusicSelectMusicList m_musicList; // 0xE4
 		private VerticalMusicSelectMusicDetail m_musicDetail; // 0xE8
 		 private VerticalMusicSelectUtaRate m_utaRate; // 0xEC
@@ -53,28 +55,110 @@ namespace XeApp.Game.Menu
 
 		// private VerticalMusicSelectSortOrder.SortOrder sortOrder { get; } 0xBE5B30
 		// protected override IBJAKJJICBC selectMusicData { get; } 0xBE5B5C
-		// protected override VerticalMusicDataList.MusicListData selectMusicListData { get; } 0xBE5C04
-		// protected override Difficulty.Type diff { get; } 0xBE5C90
+		protected override VerticalMusicDataList.MusicListData selectMusicListData { get {
+			return currentMusicList.Get(list_no, isLine6Mode, false);
+		} } //0xBE5C04
+		protected override Difficulty.Type diff { get { return m_musicSelectUISapporter.difficulty; } } //0xBE5C90
 		// protected override MusicSelectConsts.SeriesType series { get; } 0xBE5CBC
-		// protected override int list_no { get; set; } // 0xC8
+		protected override int list_no { get; set; } // 0xC8
 		// protected override int musicListCount { get; } 0xBE5CF8 0xBE5D00
-		// protected override VerticalMusicDataList currentMusicList { get; } 0xBE5D14
+		protected override VerticalMusicDataList currentMusicList { get { 
+			if(m_musicTab == 0)
+				return m_filterMusicDataList;
+			return m_filterMusicEventDataList;
+		} } //0xBE5D14
 		// protected override List<VerticalMusicDataList> originalMusicList { get; } 0xBE5D2C
-		// protected override bool isLine6Mode { get; } 0xBE5D34
-		// private bool m_isLine6Mode { get; set; } 0xBE5D7C 0xBE5D58
+		protected override bool isLine6Mode { get { return m_musicSelectUISapporter.isLine6Mode; } } //0xBE5D34
+		private bool m_isLine6Mode { get { return m_musicSelectUISapporter.isLine6Mode;  } set { m_musicSelectUISapporter.isLine6Mode = value; } } //0xBE5D7C 0xBE5D58
 		// private List<VerticalMusicDataList> currentOriginalMusicDataList { get; } 0xBE5DA4
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5EAC Offset: 0x6F5EAC VA: 0x6F5EAC
 		// // RVA: 0xBE5DBC Offset: 0xBE5DBC VA: 0xBE5DBC Slot: 42
-		//protected override IEnumerator Co_OnPreSetCanvas()
-		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
-		//	yield break;
-		//}
+		protected override IEnumerator Co_OnPreSetCanvas()
+		{
+			//0xAC6148
+			GameManager.Instance.SetFPS(60);
+			MusicSelectArgs args = Args as MusicSelectArgs;
+			if(args == null)
+			{
+				m_isLine6Mode = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO.ADHMDONLHLJ.LMPCJJKHHPA();
+			}
+			else
+			{
+				UnityEngine.Debug.LogError("TODO Args != null");
+			}
+			long currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+			JEPBIIJDGEF.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false);
+			m_musicSelectUISapporter.SetUp(m_musicList, m_musicDetail, m_utaRate, m_eventBanner, m_difficultyButtonGroup, m_seriesButtonGroup, m_playButton, m_simulationButton, m_orderButton, m_eventCtrl, m_unitLiveLocalSaveData, m_line6Button, m_choiceMusicTab);
+			SetCreateMusicList();
+			CrateFilterDataList(m_filterMusicDataList, m_originalMusicDataList, 0, currentTime, (VerticalMusicDataList.MusicListData s, int c, long f) => {
+				//0xAC28DC
+				return true;
+			});
+			CrateFilterDataList(m_filterMusicEventDataList, m_originalEventMusicDataList, 0, currentTime, (VerticalMusicDataList.MusicListData s, int c, long f) => {
+				//0xAC28E4
+				return true;
+			});
+			bool isEvent = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO.ADHMDONLHLJ.OAALFANHEHL();
+			int var1;
+			OHCAABOMEOF.KGOGMKMBCPP var2;
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO.ADHMDONLHLJ.FKJBADIPKHK(isEvent, out var1, out var2);
+
+			m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal;
+
+			if(isEvent)
+				m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
+			
+			m_isEndPresetCanvas = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.GDEKCOOBLMA.LPJLEHAJADA("mv_player_level", 5) <= 
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI.KCCLEHLLOFG.KIECDDFNCAN;
+
+			m_simulationButton.SetTicketNum(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI.KCCLEHLLOFG.GKKDNOFMJJN);
+			Database.Instance.bonusData.ClearEpisodeBonus();
+			if(m_pickupFreeMusicId > 0)
+				var1 = m_pickupFreeMusicId;
+			if(IsCanDoUnitHelp())
+			{
+				UnityEngine.Debug.LogError("TODO IsCanDoUnitHelp");
+			}
+			if(!SelectUnitDanceFocus(out m_pickupFreeMusicId, out m_pickupFreeCategoryId, ref m_musicSelectUISapporter.isLine6Mode, false, 0))
+			{
+				SelectAprilFoolFocus();
+			}
+			m_musicSelectUISapporter.SetSmallBigOrder(!GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO.ADHMDONLHLJ.CFNMCFDDOJO() ? VerticalMusicSelectSortOrder.SortOrder.Big : VerticalMusicSelectSortOrder.SortOrder.Small);
+			SelectArgsFocus(args);
+			ApplyEventInfo();
+			List<VerticalMusicDataList.MusicListData> musicList = currentMusicList.GetList(isLine6Mode, false);
+			m_musicList.SetMusicDataList(musicList, list_no, (int)diff);
+			StringBuilder str = new StringBuilder(32);
+			str.SetFormat("ct/mc/{0:D3}.xab",0);
+			for(int i = 0; i < m_originalMusicDataList.Count; i++)
+			{
+				TryInstall(str, m_originalMusicDataList[i]);
+			}
+			for(int i = 0; i < m_originalEventMusicDataList.Count; i++)
+			{
+				TryInstall(str, m_originalEventMusicDataList[i]);
+			}
+			m_isChangeBg = false;
+			StartCoroutine(Co_SetupBg(BgType.VerticalMusic, GetChangeBgId(selectMusicListData), false, () => {
+				//0xBF00B8
+				m_isChangeBg = true;
+			}));
+
+			while(!m_isChangeBg)
+				yield return null;
+			m_musicSelectUISapporter.eventStatus = m_eventStatus;
+			m_isEndPresetCanvas = true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5F24 Offset: 0x6F5F24 VA: 0x6F5F24
 		// // RVA: 0xBE5E44 Offset: 0xBE5E44 VA: 0xBE5E44
-		// private IEnumerator Co_SetupBg(BgType bgType, int bgId, bool isFade, Action endCallBack) { }
+		private IEnumerator Co_SetupBg(BgType bgType, int bgId, bool isFade, Action endCallBack)
+		{
+			UnityEngine.Debug.LogError("TODO Co_SetupBg");
+			endCallBack();
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5F9C Offset: 0x6F5F9C VA: 0x6F5F9C
 		// // RVA: 0xBE5F30 Offset: 0xBE5F30 VA: 0xBE5F30 Slot: 43
@@ -358,7 +442,10 @@ namespace XeApp.Game.Menu
 		//}
 
 		// // RVA: 0xBE6D18 Offset: 0xBE6D18 VA: 0xBE6D18
-		// protected void TryInstall(StringBuilder bundleName, VerticalMusicDataList musicList) { }
+		protected void TryInstall(StringBuilder bundleName, VerticalMusicDataList musicList)
+		{
+			UnityEngine.Debug.LogError("TODO TryInstall !!!");
+		}
 
 		// // RVA: 0xBE7054 Offset: 0xBE7054 VA: 0xBE7054
 		// private void SetPlayButton(VerticalMusicSelectPlayButton.PlayButtonType type) { }
@@ -376,22 +463,34 @@ namespace XeApp.Game.Menu
 		// public void SetTicketDropIcon(int ticketId) { }
 
 		// // RVA: 0xBE7818 Offset: 0xBE7818 VA: 0xBE7818
-		// private void SetCreateMusicList() { }
+		private void SetCreateMusicList()
+		{
+			UnityEngine.Debug.LogError("TODO SetCreateMusicList!!!");
+		}
 
 		// // RVA: 0xBE87B4 Offset: 0xBE87B4 VA: 0xBE87B4
-		// public void SelectAprilFoolFocus() { }
+		public void SelectAprilFoolFocus()
+		{
+			UnityEngine.Debug.LogError("TODO SelectAprilFoolFocus!!!");
+		}
 
 		// // RVA: 0xBE8AE8 Offset: 0xBE8AE8 VA: 0xBE8AE8
 		// private int GetMinigameListNo(int minigameId) { }
 
 		// // RVA: 0xBE8C6C Offset: 0xBE8C6C VA: 0xBE8C6C
-		// private void SelectArgsFocus(MusicSelectArgs args) { }
+		private void SelectArgsFocus(MusicSelectArgs args)
+		{
+			UnityEngine.Debug.LogError("TODO SelectArgsFocus");
+		}
 
 		// // RVA: 0xBE97AC Offset: 0xBE97AC VA: 0xBE97AC
 		// private bool CheckShowEventBanner(OHCAABOMEOF.KGOGMKMBCPP eventType) { }
 
 		// // RVA: 0xBE97F0 Offset: 0xBE97F0 VA: 0xBE97F0
-		// private void ApplyEventInfo() { }
+		private void ApplyEventInfo()
+		{
+			UnityEngine.Debug.LogError("TODO ApplyEventInfo");
+		}
 
 		// // RVA: 0xBEA28C Offset: 0xBEA28C VA: 0xBEA28C
 		// private void OnClickEventBanner() { }
@@ -409,7 +508,11 @@ namespace XeApp.Game.Menu
 		//}
 
 		// // RVA: 0xBEBC94 Offset: 0xBEBC94 VA: 0xBEBC94
-		// private int GetChangeBgId(VerticalMusicDataList.MusicListData musicListData) { }
+		private int GetChangeBgId(VerticalMusicDataList.MusicListData musicListData)
+		{
+			UnityEngine.Debug.LogError("TODO GetChangeBgId");
+			return 0;
+		}
 
 		// // RVA: 0xBEBF44 Offset: 0xBEBF44 VA: 0xBEBF44 Slot: 54
 		//protected override void DelayedApplyMusicInfo()
@@ -556,7 +659,11 @@ namespace XeApp.Game.Menu
 		// private bool CheckMusicFilter_MusicRange(int filterBit, MusicSelectConsts.MusicTimeType timeType) { }
 
 		// // RVA: 0xBEF84C Offset: 0xBEF84C VA: 0xBEF84C
-		// private bool IsCanDoUnitHelp() { }
+		private bool IsCanDoUnitHelp()
+		{
+			UnityEngine.Debug.LogError("TODO IsCanDoUnitHelp");
+			return false;
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F61F4 Offset: 0x6F61F4 VA: 0x6F61F4
 		// // RVA: 0xBF00B8 Offset: 0xBF00B8 VA: 0xBF00B8

@@ -48,29 +48,29 @@ namespace XeApp.Game.Menu
 		 private PopupAchieveRewardSetting m_rewardPopupSetting = new PopupAchieveRewardSetting(); // 0x88
 		// private PopupUnitDanceWarning m_popupUnitDanceWarning = new PopupUnitDanceWarning(); // 0x8C
 		// private PopupMusicBookMarkSetting m_musicBookMarkSetting = new PopupMusicBookMarkSetting(); // 0x90
-		// private bool m_isConfirmedUnitDance; // 0x94
+		private bool m_isConfirmedUnitDance; // 0x94
 		// private TeamSlectSceneArgs m_teamSelectSceneArgs = new TeamSlectSceneArgs(); // 0x98
 		// private const float BGM_FADE_OUT_SEC = 0,3;
 		// private List<Action> NoticeActionList = new List<Action>(); // 0xAC
 
-		// protected bool m_isEndPresetCanvas { get; set; } // 0x45
+		protected bool m_isEndPresetCanvas { get; set; } // 0x45
 		// protected bool m_isEndPostSetCanvas { get; set; } // 0x46
 		// protected bool m_isEndActivateScene { get; set; } // 0x47
-		// protected abstract Difficulty.Type diff { get; }  //Slot: 31
+		protected abstract Difficulty.Type diff { get; }  //Slot: 31
 		// protected abstract MusicSelectConsts.SeriesType series { get; } //Slot: 32
-		// protected abstract int list_no { get; set; } //Slot: 34 Slot: 33
+		protected abstract int list_no { get; set; } //Slot: 34 Slot: 33
 		// protected bool openSimulationLive { get; set; } // 0x48
-		// protected abstract bool isLine6Mode { get; } // Slot: 35
+		protected abstract bool isLine6Mode { get; } // Slot: 35
 		// protected abstract int musicListCount { get; } // Slot: 36
-		// protected abstract VerticalMusicDataList currentMusicList { get; } //  Slot: 38
+		protected abstract VerticalMusicDataList currentMusicList { get; } //  Slot: 38
 		// protected abstract List<VerticalMusicDataList> originalMusicList { get; } //  Slot: 39
-		// protected IKDICBBFBMI m_eventCtrl { get; set; } // 0x4C
+		protected IKDICBBFBMI m_eventCtrl { get; set; } // 0x4C
 		// protected int m_eventId { get; set; } // 0x54
-		// protected MMOLNAHHDOM m_unitLiveLocalSaveData { get; private set; } // 0x58
+		protected MMOLNAHHDOM m_unitLiveLocalSaveData { get; private set; } // 0x58
 		protected LimitTimeWatcher m_musicTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x5C
 		protected LimitTimeWatcher m_bannerTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x60
 		// protected abstract IBJAKJJICBC selectMusicData { get; } // Slot: 40
-		// protected abstract VerticalMusicDataList.MusicListData selectMusicListData { get; } // Slot: 41
+		protected abstract VerticalMusicDataList.MusicListData selectMusicListData { get; } // Slot: 41
 		// protected bool listIsEmpty { get; } 0xAC8AD4
 		// protected bool listIsEmptyByFilter { get; } 0xAC8B48
 		// protected bool isExistSelectMusicData { get; } 0xAC8B50
@@ -78,7 +78,7 @@ namespace XeApp.Game.Menu
 		// protected int freeMusicId { get; } 0xAC8BAC
 		// protected int gameEventType { get; } 0xAC8C00
 		// protected int m_eventTicketId { get; set; } // 0x9C
-		// protected KGCNCBOKCBA.GNENJEHKMHD m_eventStatus { get; set; } // 0xA0
+		protected KGCNCBOKCBA.GNENJEHKMHD m_eventStatus { get; set; } // 0xA0
 		// protected bool m_isEventTimeLimit { get; set; } // 0xA4
 		// private bool m_muteSelectionSe { get; set; } // 0xA5
 		// private bool m_requestFadeOutBgm { get; set; } // 0xA6
@@ -109,7 +109,8 @@ namespace XeApp.Game.Menu
 		// RVA: 0xAC8DD8 Offset: 0xAC8DD8 VA: 0xAC8DD8 Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			LoadUnitLiveSaveData();
+			StartCoroutine(Co_OnPreSetCanvas());
 		}
 
 		// RVA: 0xAC8EA4 Offset: 0xAC8EA4 VA: 0xAC8EA4 Slot: 17
@@ -188,7 +189,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: -1 Offset: -1 Slot: 42
-		// protected abstract IEnumerator Co_OnPreSetCanvas();
+		protected abstract IEnumerator Co_OnPreSetCanvas();
 
 		// // RVA: -1 Offset: -1 Slot: 43
 		// protected abstract IEnumerator Co_OnPostSetCanvas();
@@ -234,7 +235,12 @@ namespace XeApp.Game.Menu
 		// protected abstract int GetDanceDivaCount();
 
 		// // RVA: 0xAC8E10 Offset: 0xAC8E10 VA: 0xAC8E10
-		// private void LoadUnitLiveSaveData() { }
+		private void LoadUnitLiveSaveData()
+		{
+			m_unitLiveLocalSaveData = new MMOLNAHHDOM();
+			m_unitLiveLocalSaveData.PCODDPDFLHK();
+			m_isConfirmedUnitDance = false;
+		}
 
 		// // RVA: 0xAC9108 Offset: 0xAC9108 VA: 0xAC9108
 		// private void ApplyUnitLiveButtonSetting(bool isUnit) { }
@@ -304,7 +310,10 @@ namespace XeApp.Game.Menu
 		// protected void ApplyEventBannerRemainTime(VerticalMusicSelectEventBanner eventBunner, long remainSec) { }
 
 		// // RVA: 0xAC72BC Offset: 0xAC72BC VA: 0xAC72BC
-		// public static void CrateFilterDataList(VerticalMusicDataList filterMusicList, List<VerticalMusicDataList> originalMusicList, int series, long currentTime, VerticalMusicSelectSceneBase.CheckMatchMusicFilterFunc checkFunc) { }
+		public static void CrateFilterDataList(VerticalMusicDataList filterMusicList, List<VerticalMusicDataList> originalMusicList, int series, long currentTime, VerticalMusicSelectSceneBase.CheckMatchMusicFilterFunc checkFunc)
+		{
+			UnityEngine.Debug.LogError("TODO CrateFilterDataList");
+		}
 
 		// // RVA: 0xACEC6C Offset: 0xACEC6C VA: 0xACEC6C
 		// private void OnWebViewClose() { }
@@ -453,7 +462,15 @@ namespace XeApp.Game.Menu
 		// protected bool CanDoUnitDanceFocus(bool line6Mode = False) { }
 
 		// // RVA: 0xAC7CC0 Offset: 0xAC7CC0 VA: 0xAC7CC0
-		// protected bool SelectUnitDanceFocus(out int freeMusicId, out FreeCategoryId.Type category, ref bool line6Mode, bool isSimulation, OHCAABOMEOF.KGOGMKMBCPP eventCategory) { }
+		protected bool SelectUnitDanceFocus(out int freeMusicId, out FreeCategoryId.Type category, ref bool line6Mode, bool isSimulation, OHCAABOMEOF.KGOGMKMBCPP eventCategory)
+		{
+			UnityEngine.Debug.LogError("TODO SelectUnitDanceFocus");
+			freeMusicId = 0;
+			category = FreeCategoryId.Type.Macross;
+			line6Mode = false;
+			isSimulation = true;
+			return true;
+		}
 
 		// // RVA: 0xAD2568 Offset: 0xAD2568 VA: 0xAD2568
 		// protected void SetupHelp(ref VerticalMusicSelectSceneBase.EventHelpInfo helpInfo, IKDICBBFBMI eventCtrl) { }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -6,7 +7,7 @@ namespace XeApp.Game.Menu
 	{
 		public bool isLine6Mode; // 0xC
 		public KGCNCBOKCBA.GNENJEHKMHD eventStatus; // 0x10
-		// private Difficulty.Type m_difficulty; // 0x14
+		private Difficulty.Type m_difficulty; // 0x14
 		// private MusicSelectConsts.SeriesType m_series; // 0x18
 		// private VerticalMusicSelectSortOrder.SortOrder m_sortOrder; // 0x1C
 		// private FPGEMAIAMBF m_rewardData; // 0x20
@@ -14,22 +15,22 @@ namespace XeApp.Game.Menu
 		// private StringBuilder m_stringBuffer = new StringBuilder(64); // 0x28
 		// private List<FKMOKDCJFEN> m_questList; // 0x2C
 		// private FDDIIKBJNNA m_snsData = new FDDIIKBJNNA(); // 0x30
-		// private VerticalMusicSelectMusicList m_musicSelectList; // 0x34
-		// private VerticalMusicSelectMusicDetail m_musicDetail; // 0x38
-		// private VerticalMusicSelectUtaRate m_utaRate; // 0x3C
-		// private VerticalMusicSelectEventBanner m_eventBanner; // 0x40
-		// private VerticalMusicSelectDifficultyButtonGroup m_difficultyButtonGroup; // 0x44
-		// private VerticalMusicSelectSeriesButtonGroup m_seriesButtonGroup; // 0x48
-		// private VerticalMusicSelectPlayButton m_playButton; // 0x4C
-		// private VerticalMusicSelctSimulationButton m_simulationButton; // 0x50
-		// private VerticalMusicSelectSortOrder m_orderButton; // 0x54
-		// private VerticalMusicSelecLine6Button m_line6Button; // 0x58
-		// private VerticalMusicSelecChoiceMusicListTab m_choiceMusicTab; // 0x5C
+		private VerticalMusicSelectMusicList m_musicSelectList; // 0x34
+		private VerticalMusicSelectMusicDetail m_musicDetail; // 0x38
+		private VerticalMusicSelectUtaRate m_utaRate; // 0x3C
+		private VerticalMusicSelectEventBanner m_eventBanner; // 0x40
+		private VerticalMusicSelectDifficultyButtonGroup m_difficultyButtonGroup; // 0x44
+		private VerticalMusicSelectSeriesButtonGroup m_seriesButtonGroup; // 0x48
+		private VerticalMusicSelectPlayButton m_playButton; // 0x4C
+		private VerticalMusicSelctSimulationButton m_simulationButton; // 0x50
+		private VerticalMusicSelectSortOrder m_orderButton; // 0x54
+		private VerticalMusicSelecLine6Button m_line6Button; // 0x58
+		private VerticalMusicSelecChoiceMusicListTab m_choiceMusicTab; // 0x5C
 		// private LayoutEventGoDivaFeverLimit m_feverLimit; // 0x60
-		// private MMOLNAHHDOM m_unitLiveLocalSaveData; // 0x64
-		// private IKDICBBFBMI m_eventCtrl; // 0x68
+		private MMOLNAHHDOM m_unitLiveLocalSaveData; // 0x64
+		private IKDICBBFBMI m_eventCtrl; // 0x68
 
-		// public Difficulty.Type difficulty { get; } 0xAD9F84
+		public Difficulty.Type difficulty { get { return m_difficulty; } } //0xAD9F84
 		// public MusicSelectConsts.SeriesType series { get; } 0xAD9F8C
 		// public VerticalMusicSelectSortOrder.SortOrder sortOrder { get; } 0xAD9F94
 		// public bool IsEventCounting { get; } 0xADA1B8
@@ -37,7 +38,23 @@ namespace XeApp.Game.Menu
 		// public bool IsEventRankingEnd { get; } 0xADA1E0
 
 		// // RVA: 0xAC7248 Offset: 0xAC7248 VA: 0xAC7248
-		// public void SetUp(VerticalMusicSelectMusicList musicSelectList, VerticalMusicSelectMusicDetail musicDetail, VerticalMusicSelectUtaRate utaRate, VerticalMusicSelectEventBanner eventBanner, VerticalMusicSelectDifficultyButtonGroup difficultyButtonGroup, VerticalMusicSelectSeriesButtonGroup seriesButtonGroup, VerticalMusicSelectPlayButton playButton, VerticalMusicSelctSimulationButton simulationButton, VerticalMusicSelectSortOrder orderButton, IKDICBBFBMI eventCtrl, MMOLNAHHDOM unitLiveLocalSaveData, VerticalMusicSelecLine6Button line6Button, VerticalMusicSelecChoiceMusicListTab choiceMusicListTab) { }
+		public void SetUp(VerticalMusicSelectMusicList musicSelectList, VerticalMusicSelectMusicDetail musicDetail, VerticalMusicSelectUtaRate utaRate, VerticalMusicSelectEventBanner eventBanner, VerticalMusicSelectDifficultyButtonGroup difficultyButtonGroup, VerticalMusicSelectSeriesButtonGroup seriesButtonGroup, VerticalMusicSelectPlayButton playButton, VerticalMusicSelctSimulationButton simulationButton, VerticalMusicSelectSortOrder orderButton, IKDICBBFBMI eventCtrl, MMOLNAHHDOM unitLiveLocalSaveData, VerticalMusicSelecLine6Button line6Button, VerticalMusicSelecChoiceMusicListTab choiceMusicListTab)
+		{
+			m_musicDetail = musicDetail;
+			m_musicSelectList = musicSelectList;
+			m_utaRate = utaRate;
+			m_eventBanner = eventBanner;
+			m_difficultyButtonGroup = difficultyButtonGroup;
+			m_seriesButtonGroup = seriesButtonGroup;
+			m_unitLiveLocalSaveData = unitLiveLocalSaveData;
+			m_eventCtrl = eventCtrl;
+			m_playButton = playButton;
+			m_simulationButton = simulationButton;
+			m_orderButton = orderButton;
+			m_line6Button = line6Button;
+			m_choiceMusicTab = choiceMusicListTab;
+			RewardSetUp();
+		}
 
 		// // RVA: 0xADA0C0 Offset: 0xADA0C0 VA: 0xADA0C0
 		// private void CrateQuestList(IKDICBBFBMI eventCtrl) { }
@@ -58,7 +75,10 @@ namespace XeApp.Game.Menu
 		// public void SetMusicInfoStyle(VerticalMusicSelectUISapporter.MusicInfoStyle infostyle) { }
 
 		// // RVA: 0xAD9F9C Offset: 0xAD9F9C VA: 0xAD9F9C
-		// private void RewardSetUp() { }
+		private void RewardSetUp()
+		{
+			UnityEngine.Debug.LogError("RewardSetup");
+		}
 
 		// // RVA: 0xADAAF4 Offset: 0xADAAF4 VA: 0xADAAF4
 		// public void SetupRewardStat(IBJAKJJICBC musicData) { }
@@ -136,7 +156,10 @@ namespace XeApp.Game.Menu
 		// public void SetEnergy(IBJAKJJICBC musicData) { }
 
 		// // RVA: 0xAC7F7C Offset: 0xAC7F7C VA: 0xAC7F7C
-		// public void SetSmallBigOrder(VerticalMusicSelectSortOrder.SortOrder sortOrder) { }
+		public void SetSmallBigOrder(VerticalMusicSelectSortOrder.SortOrder sortOrder)
+		{
+			UnityEngine.Debug.LogError("TODO SetSmallBigOrder");
+		}
 
 		// // RVA: 0xADBBC0 Offset: 0xADBBC0 VA: 0xADBBC0
 		// public void SetSmallBigOrderEnable(bool isEnable) { }

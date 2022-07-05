@@ -5,6 +5,13 @@ namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelecChoiceMusicListTab : MonoBehaviour
 	{
+		public enum MusicTab
+		{
+			Normal = 0,
+			Event = 1,
+			Max = 2,
+		}
+
 		// [HeaderAttribute] // RVA: 0x6742A4 Offset: 0x6742A4 VA: 0x6742A4
 		[SerializeField]
 		private InOutAnime m_inOut; // 0xC
