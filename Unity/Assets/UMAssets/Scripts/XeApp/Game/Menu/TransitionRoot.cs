@@ -455,13 +455,51 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA39364 Offset: 0xA39364 VA: 0xA39364
-			// public void Call(TransitionList.Type next, TransitionArgs args, bool isFading = True) { }
+			public void Call(TransitionList.Type next, TransitionArgs args, bool isFading = true)
+			{
+				ChangeCall(next,false,args);
+			}
 
 			// // RVA: 0xA3966C Offset: 0xA3966C VA: 0xA3966C
 			// public void Return(bool isFading = True) { }
 
 			// // RVA: 0xA39384 Offset: 0xA39384 VA: 0xA39384
-			// private void ChangeCall(TransitionList.Type nextTransition, bool isFading = True, TransitionArgs args) { }
+			private void ChangeCall(TransitionList.Type nextTransition, bool isFading = true, TransitionArgs args = null)
+			{
+				TransitionTreeObject.SceneRoot root = treeObject.List.Find((TransitionTreeObject.SceneRoot x) => {
+					//0xA3D5F8
+					return (int)x.m_category == (m_current.uniqueId >> 0x10);
+				});
+				if(root != null)
+				{
+					TransitionTreeObject.SceneTree tree = FindTransitionTree(root, (TransitionTreeObject.SceneTree x) => {
+						//0xA3D630
+						return x.m_uniquId == m_current.uniqueId;
+					});
+					TransitionTreeObject.SceneTree child = tree.FindChild(root.list, (TransitionTreeObject.SceneTree x) => {
+						//0xA3D690
+						return x.m_sceneName == nextTransition;
+					});
+					if(child != null)
+					{
+						TransitionInfo info = new TransitionInfo();
+						info.name = nextTransition;
+						info.groupCategory = m_next.groupCategory;
+						info.parentTransition = m_next.parentTransition;
+						info.fadeId = child.m_FadeId;
+						info.cacheCategory = child.m_cacheCategory;
+						info.titleLabel = child.m_titleLabel;
+						info.descId = child.m_descId;
+						info.bgType = child.m_bgType;
+						info.uniqueId = child.m_uniquId;
+						m_next = info;
+						info.args = args;
+						info.camBackUnityScene = 0;
+						m_transitionType = TransitionType.Call;
+						DirtyChangeScene = true;
+					}
+				}
+			}
 
 			// // RVA: 0xA39030 Offset: 0xA39030 VA: 0xA39030
 			private void ChangeMount(TransitionUniqueId uniqueId, bool isFading = true, TransitionArgs args = null, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene camBackUnityScene = 0, bool isForceFading = false)

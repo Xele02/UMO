@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using XeApp.Game.Common;
@@ -273,14 +274,31 @@ namespace XeApp.Game.Menu
 		// private IEnumerator Co_CheckSimulationLive(Action<bool> endCallBack) { }
 
 		// // RVA: 0xAC95E8 Offset: 0xAC95E8 VA: 0xAC95E8 Slot: 58
-		// protected virtual bool CurrentMusicDecisionCheck(bool isSimulation, Action cancelCallback, MKIKFJKPEHK viewBoostData, int selectIndex = 0) { }
+		protected virtual bool CurrentMusicDecisionCheck(bool isSimulation, Action cancelCallback, MKIKFJKPEHK viewBoostData, int selectIndex = 0)
+		{
+			UnityEngine.Debug.LogError("TODO CurrentMusicDecisionCheck");
+			OpenStaminaWindow(() => {
+				DecideCurrentMusic(isSimulation);
+			}, null);
+			return false;
+		}
 
 		// // RVA: 0xAC9FF8 Offset: 0xAC9FF8 VA: 0xAC9FF8
-		// private void CheckBoostData(bool isSimulation, Action<bool> endCallback, Action cancelCallback) { }
+		private void CheckBoostData(bool isSimulation, Action<bool> endCallback, Action cancelCallback)
+		{
+			UnityEngine.Debug.LogError("TODO CheckBoostData");
+			StartCoroutine(Co_CheckBoostData(isSimulation, endCallback, cancelCallback));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6B6C Offset: 0x6F6B6C VA: 0x6F6B6C
 		// // RVA: 0xACA0C8 Offset: 0xACA0C8 VA: 0xACA0C8
-		// private IEnumerator Co_CheckBoostData(bool isSimulation, Action<bool> endCallback, Action cancelCallback) { }
+		private IEnumerator Co_CheckBoostData(bool isSimulation, Action<bool> endCallback, Action cancelCallback)
+		{
+			//0xAD49C0
+			UnityEngine.Debug.LogError("TODO Co_CheckBoostData");
+			CurrentMusicDecisionCheck(true, null, null, 0);
+			yield break;
+		}
 
 		// // RVA: 0xACA1C0 Offset: 0xACA1C0 VA: 0xACA1C0
 		// private void OnCancelDecideMusic() { }
@@ -289,13 +307,18 @@ namespace XeApp.Game.Menu
 		// protected abstract void OnDecideCurrentMusic(ref VerticalMusicSelectSceneBase.MusicDecideInfo info);
 
 		// // RVA: 0xACA1CC Offset: 0xACA1CC VA: 0xACA1CC
-		// private void DecideCurrentMusic(bool isSimulation) { }
+		private void DecideCurrentMusic(bool isSimulation)
+		{
+			UnityEngine.Debug.LogError("TODO DecideCurrentMusic");
+			MenuScene.Instance.Call(TransitionList.Type.SIMULATIONLIVE_SETTING, null, true);
+		}
 
 		// // RVA: 0xACAA10 Offset: 0xACAA10 VA: 0xACAA10
 		protected void OnClickPlayButton(bool isSimulation)
 		{
 			UnityEngine.Debug.LogError("TODO OnClickPlayButton");
-			GotoRegularMusicSelect();
+			//GotoRegularMusicSelect();
+			CheckBoostData(true, null, null);
 		}
 
 		// // RVA: 0xACB214 Offset: 0xACB214 VA: 0xACB214
@@ -431,7 +454,11 @@ namespace XeApp.Game.Menu
 		// protected void OpenWeekRecoveryWindow(Action<int> recoveryCallback, Action cancelCallback) { }
 
 		// // RVA: 0xAC9C88 Offset: 0xAC9C88 VA: 0xAC9C88
-		// protected void OpenStaminaWindow(Action recoveryCallback, Action cancelCallback) { }
+		protected void OpenStaminaWindow(Action recoveryCallback, Action cancelCallback)
+		{
+			UnityEngine.Debug.LogError("TODO OpenStaminaWindow");
+			recoveryCallback();
+		}
 
 		// // RVA: 0xAD16B4 Offset: 0xAD16B4 VA: 0xAD16B4
 		// protected void OpenMusicBookMarkWindow(Action okCallBack, bool initialze) { }

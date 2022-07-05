@@ -48,7 +48,11 @@ namespace XeApp.Game.Common
 		//public bool IsEnter { get; } 0x10FEF5C
 
 		//// RVA: 0x10FEF70 Offset: 0x10FEF70 VA: 0x10FEF70
-		//private void Start() { }
+		private void Start()
+		{
+			SetInitPos();
+			Leave(0.0f, false, null);
+		}
 
 		//// RVA: 0x10FF614 Offset: 0x10FF614 VA: 0x10FF614
 		//private void OnDisable() { }
@@ -75,7 +79,66 @@ namespace XeApp.Game.Common
 		//public void Leave(bool force = False, Action endCallback) { }
 
 		//// RVA: 0x10FF244 Offset: 0x10FF244 VA: 0x10FF244
-		//public void Leave(float animTime, bool force = False, Action endCallback) { }
+		public void Leave(float animTime, bool force = false, Action endCallback = null)
+		{
+			if(state == State.Leave)
+				return;
+			if(!force && m_animCoroutine != null)
+				return;
+			else if(m_animCoroutine != null)
+			{
+				StopCoroutine(m_animCoroutine);
+				m_animCoroutine = null;
+			}
+			state = State.Leave;
+			RectTransform rect = transform as RectTransform;
+			Vector2 target = rect.anchoredPosition;
+			switch(inType)
+			{
+				case InType.Left:
+					m_leavePos.x = rect.anchoredPosition.x - moveAmount;
+					break;
+				case InType.Right:
+					m_leavePos.x = rect.anchoredPosition.x + moveAmount;
+					break;
+				case InType.Top:
+					m_leavePos.y = rect.anchoredPosition.y + moveAmount;
+					break;
+				case InType.Bottom:
+					m_leavePos.y = rect.anchoredPosition.y - moveAmount;
+					break;
+				case InType.Scaling:
+					m_leavePos = Vector2.zero;
+					break;
+				case InType.ScalingVertical:
+					m_leavePos = new Vector2(1, 0);
+					break;
+				case InType.ScalingSide:
+					m_leavePos = new Vector2(0, 1);
+					break;
+				case InType.Height:
+					m_leavePos = rect.sizeDelta + new Vector2(0, -moveAmount);
+					break;
+			}
+			m_animCoroutine = StartCoroutine(Co_Animation(rect.anchoredPosition, m_leavePos, animTime, (Vector2 vec) => {
+				//0x110011C
+				if(inType < InType.Scaling)
+				{
+					rect.anchoredPosition = vec;
+					return;
+				}
+				if(inType < InType.Height)
+				{
+					rect.localScale = vec;
+					return;
+				}
+				if(inType == InType.Height)
+				{
+					rect.sizeDelta = vec;
+				}
+
+			}, endCallback));
+		}
 
 		//// RVA: 0x10FFB90 Offset: 0x10FFB90 VA: 0x10FFB90
 		//public void ForceLeave(Action endCallback) { }
@@ -141,7 +204,7 @@ namespace XeApp.Game.Common
 
 				while (time < animTime)
 				{
-					time = Mathf.Clamp(time = Time.deltaTime, 0, animTime);
+					time = Mathf.Clamp(time + Time.deltaTime, 0, animTime);
 					if (animCallback != null)
 						animCallback(start + diff * curve.Evaluate(time * speed));
 					yield return null;
@@ -157,6 +220,41 @@ namespace XeApp.Game.Common
 		//public void SetMoveAmount(int move) { }
 
 		//// RVA: 0x10FEFA0 Offset: 0x10FEFA0 VA: 0x10FEFA0
-		//private void SetInitPos() { }
+		private void SetInitPos()
+		{
+			if(m_isInit)
+				return;
+			m_isInit = true;
+			RectTransform rect = transform as RectTransform;
+			m_enterPos = rect.anchoredPosition;
+			m_leavePos = m_enterPos;
+			switch(inType)
+			{
+				case InType.Left:
+					m_leavePos.x = m_enterPos.x - moveAmount;
+					break;
+				case InType.Right:
+					m_leavePos.x = m_enterPos.x + moveAmount;
+					break;
+				case InType.Top:
+					m_leavePos.y = m_enterPos.y + moveAmount;
+					break;
+				case InType.Bottom:
+					m_leavePos.y = m_enterPos.y - moveAmount;
+					break;
+				case InType.Scaling:
+					m_leavePos = Vector2.zero;
+					break;
+				case InType.ScalingVertical:
+					m_leavePos = new Vector2(1, 0);
+					break;
+				case InType.ScalingSide:
+					m_leavePos = new Vector2(0, 1);
+					break;
+				case InType.Height:
+					m_leavePos = rect.sizeDelta + new Vector2(0, -moveAmount);
+					break;
+			}
+		}
 	}
 }

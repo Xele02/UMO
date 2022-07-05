@@ -21,7 +21,21 @@ namespace XeApp.Game.Menu
 			public int m_siblingIndex; // 0x28
 
 			// RVA: 0xA3983C Offset: 0xA3983C VA: 0xA3983C
-			// public TransitionTreeObject.SceneTree FindChild(List<TransitionTreeObject.SceneTree> list, Func<TransitionTreeObject.SceneTree, bool> cmp) { }
+			public TransitionTreeObject.SceneTree FindChild(List<TransitionTreeObject.SceneTree> list, Func<TransitionTreeObject.SceneTree, bool> cmp)
+			{
+				if(m_childIndex < 0)
+					return null;
+				bool found = cmp(list[m_childIndex]);
+				TransitionTreeObject.SceneTree res = list[m_childIndex];
+				while(!found)
+				{
+					if(res.m_siblingIndex < 0)
+						return null;
+					res = list[res.m_siblingIndex];
+					found = cmp(res);
+				}
+				return res;
+			}
 		}
 
 		[Serializable]

@@ -12,7 +12,8 @@ namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectScene : VerticalMusicSelectSceneBase
 	{
-		// private static readonly FreeCategoryId.Type[] MUSIC_LIST_TYPE = new FreeCategoryId.Type[5] {5F2E96BE9C0A28A18AE1C50C5298E42BB9EC26E0}; // 0x0
+		private static readonly FreeCategoryId.Type[] MUSIC_LIST_TYPE = new FreeCategoryId.Type[5]
+			{FreeCategoryId.Type.Macross, FreeCategoryId.Type.Seven, FreeCategoryId.Type.Frontia, FreeCategoryId.Type.Delta, FreeCategoryId.Type.Other}; // 0x0
 		private VerticalMusicSelectUISapporter m_musicSelectUISapporter = new VerticalMusicSelectUISapporter(); // 0xB0
 		private List<VerticalMusicDataList> m_originalMusicDataList = new List<VerticalMusicDataList>(); // 0xB4
 		private List<VerticalMusicDataList> m_originalEventMusicDataList = new List<VerticalMusicDataList>(); // 0xB8
@@ -213,7 +214,7 @@ namespace XeApp.Game.Menu
 
 
 			UnityEngine.Debug.LogError("TODO fix that, where is m_isEndPostSetCanvas = true really set ?");
-			m_isEndPostSetCanvas = false;
+			m_isEndPostSetCanvas = true;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6014 Offset: 0x6F6014 VA: 0x6F6014
@@ -464,7 +465,7 @@ namespace XeApp.Game.Menu
 		protected override bool IsEndExitAnimation()
 		{
 			UnityEngine.Debug.LogError("TODO !!!");
-			return false;
+			return true;
 		}
 
 		// RVA: 0xBE6A30 Offset: 0xBE6A30 VA: 0xBE6A30 Slot: 20
@@ -542,8 +543,8 @@ namespace XeApp.Game.Menu
 			m_originalEventMusicDataList.Clear();
 			for(int i = 0; i < eventCategoryId; i++)
 			{
-				List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(MUSIC_LIST_TYPE[i], date, true, false, false, false);
-				List<IBJAKJJICBC> viewMusicDataList = IBJAKJJICBC.FKDIMODKKJD(MUSIC_LIST_TYPE[i], date, true, false, false, true);
+				List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD((int)MUSIC_LIST_TYPE[i], date, true, false, false, false);
+				List<IBJAKJJICBC> viewMusicDataList = IBJAKJJICBC.FKDIMODKKJD((int)MUSIC_LIST_TYPE[i], date, true, false, false, true);
 				List<VerticalMusicDataList.MusicListData> list1 = VerticalMusicDataList.CreateMusicListData(l, m_eventCtrl, false, song_Thresold, lastMusicId);
 				List<VerticalMusicDataList.MusicListData> list2 = VerticalMusicDataList.CreateMusicListData(viewMusicDataList, m_eventCtrl, true, song_Thresold, lastMusicId);
 				VerticalMusicDataList datalist = new VerticalMusicDataList();

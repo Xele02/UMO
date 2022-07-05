@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		private void MusicUpdateCenterItem(int listIndex, MusicScrollCenterItem obj)
 		{
 			UnityEngine.Debug.LogError("TODO MusicUpdateCenterItem");
-			obj.SetTitle(m_musicList[listIndex].MusicName);
+			//obj.SetTitle(m_musicList[listIndex].MusicName);
 		}
 
 		// // RVA: 0xBE3850 Offset: 0xBE3850 VA: 0xBE3850

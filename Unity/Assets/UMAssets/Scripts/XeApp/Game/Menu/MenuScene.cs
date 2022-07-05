@@ -552,7 +552,10 @@ namespace XeApp.Game.Menu
 		// public void Return(bool isFading = True) { }
 
 		// // RVA: 0xB32044 Offset: 0xB32044 VA: 0xB32044
-		// public void Call(TransitionList.Type next, TransitionArgs args, bool isFading = True) { }
+		public void Call(TransitionList.Type next, TransitionArgs args, bool isFading = true)
+		{
+			m_menuTransitionControl.Call(next, args, isFading);
+		}
 
 		// // RVA: 0xB32094 Offset: 0xB32094 VA: 0xB32094
 		public void Mount(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0)
