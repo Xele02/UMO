@@ -5,81 +5,53 @@ namespace XeApp.Game.Menu
 {
 	public class SetDeckPrismSettingButtons : MonoBehaviour
 	{
-		[SerializeField]
-		private InOutAnime m_inOut;
-		[SerializeField]
-		private GameObject m_prismButtonObject;
-		[SerializeField]
-		private UGUIToggleButton m_prismButton;
-		[SerializeField]
-		private GameObject m_valkyrieModeButtonObject;
-		[SerializeField]
-		private UGUIToggleButton m_valkyrieModeButton;
-		[SerializeField]
-		private GameObject m_notesButtonObject;
-		[SerializeField]
-		private UGUIToggleButton m_notesButton;
-		[SerializeField]
-		private GameObject m_divaSpModeButtonObject;
-		[SerializeField]
-		private UGUIToggleButton m_divaSpModeButton;
-		[SerializeField]
-		private UGUIButton m_originalSettingButton;
+		public enum ModeType
+		{
+			Prism = 0,
+			SLive = 1,
+		}
 
-		// // Namespace: 
-		// public enum SetDeckPrismSettingButtons.ModeType // TypeDefIndex: 16438
-		// {
-		// 	// Fields
-		// 	public int value__; // 0x0
-		// 	public const SetDeckPrismSettingButtons.ModeType Prism = 0;
-		// 	public const SetDeckPrismSettingButtons.ModeType SLive = 1;
-		// }
-
-		// // Fields
 		// [TooltipAttribute] // RVA: 0x682474 Offset: 0x682474 VA: 0x682474
-		// [SerializeField] // RVA: 0x682474 Offset: 0x682474 VA: 0x682474
+		[SerializeField]
 		// [HeaderAttribute] // RVA: 0x682474 Offset: 0x682474 VA: 0x682474
-		// private InOutAnime m_inOut; // 0xC
+		private InOutAnime m_inOut; // 0xC
 		// [TooltipAttribute] // RVA: 0x6824E4 Offset: 0x6824E4 VA: 0x6824E4
-		// [SerializeField] // RVA: 0x6824E4 Offset: 0x6824E4 VA: 0x6824E4
-		// private GameObject m_prismButtonObject; // 0x10
-		// [SerializeField] // RVA: 0x68254C Offset: 0x68254C VA: 0x68254C
+		[SerializeField]
+		private GameObject m_prismButtonObject; // 0x10
+		[SerializeField]
 		// [TooltipAttribute] // RVA: 0x68254C Offset: 0x68254C VA: 0x68254C
-		// private UGUIToggleButton m_prismButton; // 0x14
-		// [SerializeField] // RVA: 0x6825A4 Offset: 0x6825A4 VA: 0x6825A4
+		private UGUIToggleButton m_prismButton; // 0x14
+		[SerializeField]
 		// [TooltipAttribute] // RVA: 0x6825A4 Offset: 0x6825A4 VA: 0x6825A4
-		// private GameObject m_valkyrieModeButtonObject; // 0x18
+		private GameObject m_valkyrieModeButtonObject; // 0x18
 		// [TooltipAttribute] // RVA: 0x682618 Offset: 0x682618 VA: 0x682618
-		// [SerializeField] // RVA: 0x682618 Offset: 0x682618 VA: 0x682618
-		// private UGUIToggleButton m_valkyrieModeButton; // 0x1C
+		[SerializeField]
+		private UGUIToggleButton m_valkyrieModeButton; // 0x1C
 		// [TooltipAttribute] // RVA: 0x68267C Offset: 0x68267C VA: 0x68267C
-		// [SerializeField] // RVA: 0x68267C Offset: 0x68267C VA: 0x68267C
-		// private GameObject m_notesButtonObject; // 0x20
+		[SerializeField]
+		private GameObject m_notesButtonObject; // 0x20
 		// [TooltipAttribute] // RVA: 0x6826E8 Offset: 0x6826E8 VA: 0x6826E8
-		// [SerializeField] // RVA: 0x6826E8 Offset: 0x6826E8 VA: 0x6826E8
-		// private UGUIToggleButton m_notesButton; // 0x24
-		// [SerializeField] // RVA: 0x682744 Offset: 0x682744 VA: 0x682744
+		[SerializeField]
+		private UGUIToggleButton m_notesButton; // 0x24
+		[SerializeField]
 		// [TooltipAttribute] // RVA: 0x682744 Offset: 0x682744 VA: 0x682744
-		// private GameObject m_divaSpModeButtonObject; // 0x28
-		// [SerializeField] // RVA: 0x6827B4 Offset: 0x6827B4 VA: 0x6827B4
+		private GameObject m_divaSpModeButtonObject; // 0x28
+		[SerializeField]
 		// [TooltipAttribute] // RVA: 0x6827B4 Offset: 0x6827B4 VA: 0x6827B4
-		// private UGUIToggleButton m_divaSpModeButton; // 0x2C
+		private UGUIToggleButton m_divaSpModeButton; // 0x2C
 		// [TooltipAttribute] // RVA: 0x682810 Offset: 0x682810 VA: 0x682810
-		// [SerializeField] // RVA: 0x682810 Offset: 0x682810 VA: 0x682810
-		// private UGUIButton m_originalSettingButton; // 0x30
+		[SerializeField]
+		private UGUIButton m_originalSettingButton; // 0x30
 		// public Action OnClickOriginalSettingButton; // 0x34
 		// private AOJGDNFAIJL.AMIECPBIALP m_prismData; // 0x38
 
-		// // Properties
-		// public InOutAnime InOut { get; }
-
-		// // Methods
-
-		// // RVA: 0xA73650 Offset: 0xA73650 VA: 0xA73650
-		// public InOutAnime get_InOut() { }
+		// public InOutAnime InOut { get; } 0xA73650
 
 		// // RVA: 0xA73658 Offset: 0xA73658 VA: 0xA73658
-		// private void Awake() { }
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("TODO SetDeckPrismSettingButtons Awake");
+		}
 
 		// // RVA: 0xA739D8 Offset: 0xA739D8 VA: 0xA739D8
 		// public void UpdateContent(AOJGDNFAIJL.AMIECPBIALP prismData, SetDeckPrismSettingButtons.ModeType modeType, bool isExistOriginalSetting) { }
@@ -107,9 +79,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xA73F90 Offset: 0xA73F90 VA: 0xA73F90
 		// private void OnClickDivaSpModeButtonFunc() { }
-
-		// // RVA: 0xA74054 Offset: 0xA74054 VA: 0xA74054
-		// public void .ctor() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x730CEC Offset: 0x730CEC VA: 0x730CEC
 		// // RVA: 0xA7405C Offset: 0xA7405C VA: 0xA7405C
