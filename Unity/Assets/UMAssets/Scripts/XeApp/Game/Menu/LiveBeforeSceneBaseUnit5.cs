@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using XeApp.Core;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -77,7 +79,10 @@ namespace XeApp.Game.Menu
 		// protected bool IsDifferHomeDivaModel(JLKEOGLJNOD unitData, GameSetupData.TeamInfo teamInfo, bool isGotoGame) { }
 
 		// // RVA: 0x1547C0C Offset: 0x1547C0C VA: 0x1547C0C
-		// protected void AdvanceGame(StatusData teamUnitStatus, DFKGGBMFFGB playerData, EAJCBFGKKFA friendData, LimitOverStatusData limitOverData, bool isSkip, int ticketCount, long consumeTime, JGEOBNENMAH.NEDILFPPCJF log, bool isNotUpdateProfile) { }
+		protected void AdvanceGame(StatusData teamUnitStatus, DFKGGBMFFGB playerData, EAJCBFGKKFA friendData, LimitOverStatusData limitOverData, bool isSkip, int ticketCount, long consumeTime, JGEOBNENMAH.NEDILFPPCJF log, bool isNotUpdateProfile)
+		{
+			UnityEngine.Debug.LogError("TODO AdvanceGame");
+		}
 
 		// // RVA: 0x15487BC Offset: 0x15487BC VA: 0x15487BC
 		// protected void UpdatePrismData(int musicId, GameSetupData.MusicInfo musicInfo) { }
@@ -89,7 +94,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1548D74 Offset: 0x1548D74 VA: 0x1548D74
-		// protected void ShowPrismSelectPopup(PopupMvModeSelectListContent.SelectTarget target, int divaSlotNumber, int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation, Action onOK, Action onEnd) { }
+		protected void ShowPrismSelectPopup(PopupMvModeSelectListContent.SelectTarget target, int divaSlotNumber, int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation, Action onOK, Action onEnd)
+		{
+			UnityEngine.Debug.LogError("TODO ShowPrismSelectPopup");
+		}
 
 		// // RVA: 0x15490A0 Offset: 0x15490A0 VA: 0x15490A0
 		// protected bool OriginalPrizmApply(int musicId, GameSetupData.MusicInfo musicInfo) { }

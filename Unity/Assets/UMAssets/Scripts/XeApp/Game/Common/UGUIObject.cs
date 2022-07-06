@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace XeApp.Game.Common
 {
-	class UGUIObject
+	public class UGUIObject
 	{
 		public GameObject instanceObject { get; private set; } // 0x8
 

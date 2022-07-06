@@ -9,9 +9,9 @@ namespace XeApp.Game.Menu
 {
 	public class MenuLayoutGameObjectCahce : MonoBehaviour
 	{
-		private IndexableDictionary<string, LayoutObjectPool> m_layoutInstancePool; // 0xC
-		private IndexableDictionary<string, UGUIObjectPool> m_uguiInstancePool; // 0x10
-		private IndexableDictionary<string, string> m_dependencyBundleMap; // 0x14
+		private IndexableDictionary<string, LayoutObjectPool> m_layoutInstancePool = new IndexableDictionary<string, LayoutObjectPool>(); // 0xC
+		private IndexableDictionary<string, UGUIObjectPool> m_uguiInstancePool = new IndexableDictionary<string, UGUIObjectPool>(); // 0x10
+		private IndexableDictionary<string, string> m_dependencyBundleMap = new IndexableDictionary<string, string>(); // 0x14
 		private GameObject m_rootObject; // 0x18
 
 		//// RVA: 0xB2C270 Offset: 0xB2C270 VA: 0xB2C270
@@ -67,7 +67,10 @@ namespace XeApp.Game.Menu
 		//public LayoutObject GetInstance(string assetName) { }
 
 		//// RVA: 0xB2CC94 Offset: 0xB2CC94 VA: 0xB2CC94
-		//public UGUIObject GetUGUIInstance(string assetName) { }
+		public UGUIObject GetUGUIInstance(string assetName)
+		{
+			return m_uguiInstancePool[assetName].GetInstance();
+		}
 
 		//// RVA: 0xB2CD34 Offset: 0xB2CD34 VA: 0xB2CD34
 		//public void ReturnInstance(string assetName, LayoutObject layObj) { }

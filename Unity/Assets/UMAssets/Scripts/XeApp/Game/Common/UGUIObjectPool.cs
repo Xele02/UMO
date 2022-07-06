@@ -59,10 +59,16 @@ namespace XeApp.Game.Common
 				m_poolList[i].instanceObject.gameObject.SetActive(false);
 			}
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
+			m_isReady = true;
 		}
 
 		//// RVA: 0x1CD9660 Offset: 0x1CD9660 VA: 0x1CD9660
-		//public UGUIObject GetInstance() { }
+		public UGUIObject GetInstance()
+		{
+			UGUIObject obj = m_poolList[0];
+			m_poolList.RemoveAt(0);
+			return obj;
+		}
 
 		//// RVA: 0x1CD9714 Offset: 0x1CD9714 VA: 0x1CD9714
 		//public void Release(UGUIObject uguiObject) { }
