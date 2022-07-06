@@ -336,7 +336,53 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC72BC Offset: 0xAC72BC VA: 0xAC72BC
 		public static void CrateFilterDataList(VerticalMusicDataList filterMusicList, List<VerticalMusicDataList> originalMusicList, int series, long currentTime, VerticalMusicSelectSceneBase.CheckMatchMusicFilterFunc checkFunc)
 		{
-			UnityEngine.Debug.LogError("TODO CrateFilterDataList");
+			filterMusicList.Clear();
+			for(int i = 0; i < originalMusicList.Count; i++)
+			{
+				VerticalMusicDataList item = originalMusicList[i];
+				List<VerticalMusicDataList.MusicListData> l1 = new List<VerticalMusicDataList.MusicListData>();
+				List<VerticalMusicDataList.MusicListData> l2 = new List<VerticalMusicDataList.MusicListData>();
+				List<VerticalMusicDataList.MusicListData> l3 = new List<VerticalMusicDataList.MusicListData>();
+				List<VerticalMusicDataList.MusicListData> l4 = new List<VerticalMusicDataList.MusicListData>();
+
+				List<VerticalMusicDataList.MusicListData> a1 = item.GetList(false, false);
+				List<VerticalMusicDataList.MusicListData> a2 = item.GetList(true, false);
+				List<VerticalMusicDataList.MusicListData> a3 = item.GetList(false, true);
+				List<VerticalMusicDataList.MusicListData> a4 = item.GetList(true, true);
+
+				for(int j = 0; j < a1.Count; j++)
+				{
+					if(checkFunc(a1[j], series, currentTime))
+					{
+						l1.Add(a1[j]);
+					}
+				}
+				for(int j = 0; j < a2.Count; j++)
+				{
+					if(checkFunc(a2[j], series, currentTime))
+					{
+						l2.Add(a2[j]);
+					}
+				}
+				for(int j = 0; j < a3.Count; j++)
+				{
+					if(checkFunc(a3[j], series, currentTime))
+					{
+						l3.Add(a3[j]);
+					}
+				}
+				for(int j = 0; j < a4.Count; j++)
+				{
+					if(checkFunc(a4[j], series, currentTime))
+					{
+						l4.Add(a4[j]);
+					}
+				}
+				filterMusicList.AddList(l1, false, false);
+				filterMusicList.AddList(l2, true, false);
+				filterMusicList.AddList(l3, false, true);
+				filterMusicList.AddList(l4, true, true);
+			}
 		}
 
 		// // RVA: 0xACEC6C Offset: 0xACEC6C VA: 0xACEC6C

@@ -548,7 +548,9 @@ namespace XeApp.Game.Menu
 				List<VerticalMusicDataList.MusicListData> list1 = VerticalMusicDataList.CreateMusicListData(l, m_eventCtrl, false, song_Thresold, lastMusicId);
 				List<VerticalMusicDataList.MusicListData> list2 = VerticalMusicDataList.CreateMusicListData(viewMusicDataList, m_eventCtrl, true, song_Thresold, lastMusicId);
 				VerticalMusicDataList datalist = new VerticalMusicDataList();
+				UnityEngine.Debug.Log("m_originalMusicDataList add 1 "+list1.Count);
 				datalist.AddList(list1, false, false);
+				UnityEngine.Debug.Log("m_originalMusicDataList add 1 "+list2.Count);
 				datalist.AddList(list2, true, false);
 				datalist.AddList(new List<VerticalMusicDataList.MusicListData>(), false, true);
 				datalist.AddList(new List<VerticalMusicDataList.MusicListData>(), true, true);
@@ -588,7 +590,9 @@ namespace XeApp.Game.Menu
 			List<VerticalMusicDataList.MusicListData> list4 = VerticalMusicDataList.CreateMusicListData(l3, m_eventCtrl, false, song_Thresold, lastMusicId);
 
 			VerticalMusicDataList datalist2 = new VerticalMusicDataList();
+			UnityEngine.Debug.Log("m_originalMusicDataList add 2 "+list3.Count);
 			datalist2.AddList(list3, false, false);
+			UnityEngine.Debug.Log("m_originalMusicDataList add 2 "+list4.Count);
 			datalist2.AddList(list4, true, false);
 			datalist2.AddList(new List<VerticalMusicDataList.MusicListData>(), false, true);
 			datalist2.AddList(new List<VerticalMusicDataList.MusicListData>(), true, true);

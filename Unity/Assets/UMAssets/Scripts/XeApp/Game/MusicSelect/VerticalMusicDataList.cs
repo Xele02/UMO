@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.MusicSelect
 {
@@ -7,6 +8,26 @@ namespace XeApp.Game.MusicSelect
 
 		public class MusicListData
 		{
+			public struct InitParam
+			{
+				// public IBJAKJJICBC viewMusic; // 0x0
+				// public List<MusicRewardStat> rewardStat; // 0x4
+				// public long aprilFoolEndTime; // 0x8
+				// public bool isOpen; // 0x10
+				// public bool isNew; // 0x11
+				// public bool isUnlockable; // 0x12
+				// public bool isSimulation; // 0x13
+				// public bool isHighLevel; // 0x14
+				// public MusicSelectConsts.MusicTimeType timeType; // 0x18
+				// public MusicSelectConsts.MusicType musicType; // 0x1C
+				// public MusicSelectConsts.EventType eventType; // 0x20
+				// public MusicSelectConsts.PlayBoostType boostType; // 0x24
+				// public string eventPeriod; // 0x28
+				// public string musicTimeStr; // 0x2C
+				public string musicName; // 0x30
+				// public string vocalName; // 0x34
+				// public int musicTime; // 0x38
+			}
 			//	private List<MusicRewardStat> m_rewardStat = new List<MusicRewardStat>(); // 0xC
 
 			//	public IBJAKJJICBC ViewMusic { get; } = new IBJAKJJICBC(); // 0x8
@@ -28,7 +49,11 @@ namespace XeApp.Game.MusicSelect
 			//	public MusicSelectConsts.PlayBoostType PlayBoostType { get; } = 1; // 0x40
 
 			//	// RVA: 0xCA2E0C Offset: 0xCA2E0C VA: 0xCA2E0C
-			//	public void .ctor(VerticalMusicDataList.MusicListData.InitParam initParam) { }
+			public MusicListData(VerticalMusicDataList.MusicListData.InitParam initParam)
+			{
+				UnityEngine.Debug.LogError("TODO MusicListData()");
+				MusicName = initParam.musicName;
+			}
 		}
 
 		private List<VerticalMusicDataList.MusicListData> m_viewList = new List<VerticalMusicDataList.MusicListData>(); // 0x8
@@ -40,7 +65,20 @@ namespace XeApp.Game.MusicSelect
 		public static List<VerticalMusicDataList.MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId)
 		{
 			UnityEngine.Debug.LogError("TODO CreateMusicListData !!!");
-			return new List<VerticalMusicDataList.MusicListData>();
+
+			List<VerticalMusicDataList.MusicListData> res =  new List<VerticalMusicDataList.MusicListData>();
+			for(int i = 0; i < viewMusicDataList.Count; i++)
+			{
+				MusicListData.InitParam initparam;
+				int id = viewMusicDataList[i].GHBPLHBNMBK;
+				/*KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.IBPAFKKEKNK.GEAANLPDJBP[id];
+				EONOEHOKBEB_Music a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.IBPAFKKEKNK.INJDLHAEPEK(id, musicInfo.DLAEJOBELBH);
+				initparam.musicName = Database.Instance.musicText.Get(a.KNMGEEFGDNI).musicName;*/
+				initparam.musicName = "Music "+id;
+				VerticalMusicDataList.MusicListData data = new VerticalMusicDataList.MusicListData(initparam);
+				res.Add(data);
+			}
+			return res;
 		}
 
 		//// RVA: 0xCA24B0 Offset: 0xCA24B0 VA: 0xCA24B0
@@ -153,6 +191,12 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA3A24 Offset: 0xCA3A24 VA: 0xCA3A24
-		//public void Clear() { }
+		public void Clear()
+		{
+			m_viewList.Clear();
+			m_view6LineList.Clear();
+			m_viewSimulationList.Clear();
+			m_viewSimulation6LineList.Clear();
+		}
 	}
 }

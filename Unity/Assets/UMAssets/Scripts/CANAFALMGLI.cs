@@ -8,7 +8,7 @@ public class CANAFALMGLI : IKDICBBFBMI
 	// public static string INBEMNCFEJP = ""; // 0x4
 	// public List<int> AILDCKKOLJG = new List<int>(); // 0xE8
 
-	// public override OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get; } 0x18F4084 DKHCGLCNKCD  Slot: 4
+	public override OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get { return OHCAABOMEOF.KGOGMKMBCPP.DMPMKBCPHMA; } }// 0x18F4084 DKHCGLCNKCD  Slot: 4
 
 	// RVA: 0x18F408C Offset: 0x18F408C VA: 0x18F408C
 	public CANAFALMGLI(string OPFGFINHFCE) : base(OPFGFINHFCE)

@@ -22,7 +22,7 @@ public class NKOBMDPHNGP : IKDICBBFBMI
 	// private static StringBuilder NIGIOKLMJIH = new StringBuilder(32); // 0x0
 	// private List<int> OKGDAODFFBF = new List<int>(16); // 0x118
 
-	// public override OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get; } 0xC1E3C0 DKHCGLCNKCD  Slot: 4
+	public override OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get { return OHCAABOMEOF.KGOGMKMBCPP.MCGPGMGEPHG; } } //0xC1E3C0 DKHCGLCNKCD  Slot: 4
 	// public bool IFGKKLPOONJ { get; }
 	// public bool LLJAIPIDANN { get; }
 	// public bool IPLBEGCODDC { get; }

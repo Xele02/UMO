@@ -4,6 +4,46 @@ using UnityEngine;
 
 public class JGEOBNENMAH
 {
+	public class NEDILFPPCJF
+	{
+		public int HBKBKHACHHI; // 0x8
+		public int GMECIBOJCFF; // 0xC
+		public int MIMLMJGGNJH; // 0x10
+		public int IPEKDLNEOFI; // 0x14
+		public int BFHPKJEKJNN; // 0x18
+		public int DDBEJNGJIPF; // 0x1C
+		public int CBOCBLLOMHE; // 0x20
+		public int MINAGJOIGOP; // 0x24
+		public int ICBJAAPJNEI; // 0x28
+		public int AGNGKDFONAM; // 0x2C
+		public int KAEHAANLPKF; // 0x30
+		public int NIBMFONLOME; // 0x34
+		public int PLMGHHHFAGL; // 0x38
+		public int EKKCKGDGNPM; // 0x3C
+		public int GCAOLGILAAI; // 0x40
+		public int IBFPGFJDLEI; // 0x44
+		public int APPEPDLOPAA; // 0x48
+		public int LHBINHCMEDA; // 0x4C
+		public int BPNAAEDJGPC; // 0x50
+		public int NDKKNEIDCFF; // 0x54
+		public int IFHMFONMGPE; // 0x58
+		public int AKNKIOKELEP; // 0x5C
+		public int LPKBGBLIDCE; // 0x60
+		public int LCFAJIELMMF; // 0x64
+		public int OIKJEAEJOME; // 0x68
+		public int JJDKFJACLMD; // 0x6C
+		public const int GIAEAOIMOME = 3;
+		public int[] EEKANKOEJIL = new int[3]; // 0x70
+		public int[] HNINPGMPGMJ = new int[3]; // 0x74
+		public int[] DNGJJFFKOBG = new int[3]; // 0x78
+		public int[] IPPIIBLLDDG = new int[3]; // 0x7C
+		public int[] HHNPILDOHKP = new int[3]; // 0x80
+		public int[] MHPLFJHDIEP = new int[3]; // 0x84
+		public int[] NBCMAGJGHLC = new int[3]; // 0x88
+		public int[] LBGNJCODPEJ = new int[3]; // 0x8C
+		public int[] EGEKLGIEKLL = new int[3]; // 0x90
+	}
+
 	public class PDNNOFFFDAG
 	{
 		public int GHBPLHBNMBK; // 0x8
@@ -17,7 +57,7 @@ public class JGEOBNENMAH
 		public bool OBOPMHBPCFE; // 0x25
 		public long FMBLKADNICN; // 0x28
 		public int IEMFPDGIAHG; // 0x30
-		// public JGEOBNENMAH.NEDILFPPCJF ENMGODCHGAC = new JGEOBNENMAH.NEDILFPPCJF(); // 0x34
+		public JGEOBNENMAH.NEDILFPPCJF ENMGODCHGAC = new JGEOBNENMAH.NEDILFPPCJF(); // 0x34
 		public bool PMCGHPOGLGM; // 0x38
 		public int KAIPAEILJHO; // 0x3C
 		public bool CEPCBJHNMJA; // 0x40

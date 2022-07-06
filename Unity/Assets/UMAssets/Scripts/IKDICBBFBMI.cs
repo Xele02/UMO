@@ -70,7 +70,7 @@ public abstract class IKDICBBFBMI
 	public const string PKCHABKLDOC = "event_prologue_achv_item_id";
 	public const string HMEFMAPKOBF = "event_epilogue_achv_item_id";
 
-	// public virtual OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get; } 0x8DD514 DKHCGLCNKCD Slot: 4
+	public virtual OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get { return OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL; } } //0x8DD514 DKHCGLCNKCD Slot: 4
 	// public int OENLHLCKMDI { get; } // ?
 	// public bool NBCFEEFEDHH { get; } // ?
 	// public bool BEGOPNADOJL { get; } // ?

@@ -43,8 +43,8 @@ namespace XeApp.Game.Menu
 		protected override void OnPreSetCanvas()
 		{
 			UnityEngine.Debug.LogError("TODO OnPreSetCanvas");
-			m_prismUnitInfo.OnClickItem = this.OnClickPrismIetms;
 			InitializeUGUIObject();
+			m_prismUnitInfo.OnClickItem = this.OnClickPrismIetms;
 		}
 
 		// // RVA: 0x12CE1A0 Offset: 0x12CE1A0 VA: 0x12CE1A0 Slot: 17

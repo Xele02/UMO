@@ -24,7 +24,7 @@ namespace XeApp.Game.MusicSelect
 		public MusicUpdateClipItem OnUpdateClipItem; // 0x3C
 		public ScrollStartEvent OnScrollStartEvent; // 0x40
 		public ScrollEndEvent OnScrollEndEvent; // 0x44
-		//private int _itemCount; // 0x48
+		private int _itemCount; // 0x48
 		//private Vector2 _scrollValue; // 0x4C
 		//private Vector2 _prevPosition; // 0x54
 		//private Vector2 _velocity; // 0x5C
@@ -45,7 +45,7 @@ namespace XeApp.Game.MusicSelect
 		//private const float ScrollItemSize = 90;
 
 		public MusicScrollCenterItem CenterItem { get { return _centerItem; } } //0xC9F66C
-		//public int ItemCount { get; set; } 0xC9F674 0xC9F67C
+		public int ItemCount { get { return _itemCount; } set { if(_itemCount != value) _itemCount = value; } } //0xC9F674 0xC9F67C
 		//public float DeltaTime { get; }0xCA0450
 
 		//// RVA: 0xC9F68C Offset: 0xC9F68C VA: 0xC9F68C

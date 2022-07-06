@@ -36,7 +36,12 @@ namespace XeApp.Game.Common
 		private static string ds_a = "ds_a"; // 0x24
 
 		// // RVA: 0xAEBAF0 Offset: 0xAEBAF0 VA: 0xAEBAF0
-		// public MusicTextDatabase.TextInfo Get(int musicNameId) { }
+		public MusicTextDatabase.TextInfo Get(int musicNameId)
+		{
+			if(table.Count <= musicNameId)
+				return null;
+			return table[musicNameId];
+		}
 
 		// // RVA: 0xAEBBAC Offset: 0xAEBBAC VA: 0xAEBBAC
 		public void Init(byte[] dataBytes)
