@@ -9,6 +9,9 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 	private int LGADCGFMLLD; // 0x50
 	private AssetBundleCreateRequest NMNCMNNPNCI; // 0x54
 
+#if UNITY_EDITOR
+	bool m_DownloadingFile = false;
+#endif
 	// RVA: 0xC70568 Offset: 0xC70568 VA: 0xC70568
 	public BDFPCPHIJCN(string CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
         : base(CJEKGLGBIHF_path,BOPDLODALFD_withoutPlarformPath,OGLMMENAJFL_onSuccess,GOIHDOPGPCE_onFail,JBKMAPLCBMO_arg,HNKPENAFDKA_argValue,LAMFBMFNOFP_fi)
@@ -25,7 +28,16 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 		}
 		else
 		{
+#if UNITY_EDITOR
+			m_DownloadingFile = true;
+			FileSystemProxy.TryInstallFile(HHHEFALNMJO_mPath, (string newPath) =>
+			{
+				IEJJKNOEKLM = new WWW("file://" + newPath);
+				m_DownloadingFile = false;
+			});
+#else
 			IEJJKNOEKLM = new WWW("file://"+HHHEFALNMJO_mPath);
+#endif
 		}
 		LGADCGFMLLD = 0;
 	}
@@ -33,6 +45,10 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 	// // RVA: 0xC70770 Offset: 0xC70770 VA: 0xC70770 Slot: 5
 	public override bool GDEMPLAOGKK_IsDone()
 	{
+#if UNITY_EDITOR
+		if (m_DownloadingFile)
+			return false;
+#endif
 		if(FHHAFJMELMD_alreadyLoading)
 		{
 			return true;
@@ -51,6 +67,10 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 	// // RVA: 0xC707CC Offset: 0xC707CC VA: 0xC707CC Slot: 9
 	public override bool MLMEOLAEJEL_DoLoadData()
 	{
+#if UNITY_EDITOR
+		if (m_DownloadingFile)
+			return false;
+#endif
 		if(!FHHAFJMELMD_alreadyLoading)
 		{
 			if(LGADCGFMLLD == 1)

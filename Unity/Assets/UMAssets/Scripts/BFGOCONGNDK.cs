@@ -65,7 +65,8 @@ public class BFGOCONGNDK
 		if(OENPCNBFPDA == ODJPFMGNDML)
 		{
 			string fileBg = CJMOKHDNBNB.FIPFFELDIOG + "/data/android/" + NLMBMNKEINP(ODJPFMGNDML);
-			if(File.Exists(fileBg))
+			//if(File.Exists(fileBg))
+			if(FileSystemProxy.FileExists(fileBg))
 			{
 				if(KEHOJEJMGLJ.HHCJCDFCLOB != null)
 				{
