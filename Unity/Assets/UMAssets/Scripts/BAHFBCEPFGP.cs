@@ -12,10 +12,10 @@ public class BAHFBCEPFGP : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0xF14400 Offset: 0xF14400 VA: 0xF14400
-	// public void DDCBGCODHHN(int DLAEJOBELBH, int HPNLNIFICNI) { }
+	// public void DDCBGCODHHN(int DLAEJOBELBH_Id, int HPNLNIFICNI) { }
 
 	// // RVA: 0xF14574 Offset: 0xF14574 VA: 0xF14574
-	// public bool CGEPJMFFLLJ(int DLAEJOBELBH, int HPNLNIFICNI) { }
+	// public bool CGEPJMFFLLJ(int DLAEJOBELBH_Id, int HPNLNIFICNI) { }
 
 	// // RVA: 0xF146F4 Offset: 0xF146F4 VA: 0xF146F4
 	// public void KDJJJAIPJCA() { }

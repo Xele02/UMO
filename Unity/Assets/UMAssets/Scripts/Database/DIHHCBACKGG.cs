@@ -59,5 +59,20 @@ public abstract class DIHHCBACKGG
 	}
 
 	// // RVA: 0x1989E1C Offset: 0x1989E1C VA: 0x1989E1C
-	// public int JKAECBCNHAN(int IJEKNCDIIAE, int PLALNIIBLOF, int DBHPPMPNCKF = 0) { }
+	public int JKAECBCNHAN(int IJEKNCDIIAE, int PLALNIIBLOF, int DBHPPMPNCKF = 0)
+	{
+		if(DBHPPMPNCKF != 0)
+		{
+			if (DBHPPMPNCKF <= IEFOPDOOLOK)
+				return 0;
+		}
+		if(IJEKNCDIIAE != 0)
+		{
+			if (IJEKNCDIIAE <= IEFOPDOOLOK)
+				return PLALNIIBLOF;
+		}
+		if (PLALNIIBLOF == 2)
+			PLALNIIBLOF = 1;
+		return PLALNIIBLOF;
+	}
 }

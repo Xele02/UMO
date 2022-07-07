@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using UnityEngine;
 
 namespace XeSys
 {
@@ -141,7 +142,18 @@ namespace XeSys
 		// public static bool IsActiveGameObject(GameObject go) { }
 
 		// // RVA: 0x23A9DD0 Offset: 0x23A9DD0 VA: 0x23A9DD0
-		// public static GameObject SearchGameObjectRecursively(string name, Transform rootTrans) { }
+		public static GameObject SearchGameObjectRecursively(string name, Transform rootTrans)
+		{
+			foreach(var t in rootTrans)
+			{
+				if ((t as Transform).gameObject.name == name)
+					return (t as Transform).gameObject;
+				GameObject o = SearchGameObjectRecursively(name, t as Transform);
+				if (o != null)
+					return o;
+			}
+			return null;
+		}
 
 		// // RVA: -1 Offset: -1
 		// public static T SearchComponentRecursively<T>(string gameObjectName, Transform rootTform) { }

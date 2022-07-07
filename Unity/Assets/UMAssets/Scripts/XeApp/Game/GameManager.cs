@@ -852,7 +852,15 @@ namespace XeApp.Game
 		// // RVA: 0x99B4B0 Offset: 0x99B4B0 VA: 0x99B4B0
 		private void CreateFont()
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.CreateFont");
+			if (fontManagerPrefab == null)
+				return;
+			Object obj = Utility.SearchGameObjectRecursively("Font", transform);
+			if (obj != null)
+				return;
+			font = Object.Instantiate<FontManager>(fontManagerPrefab);
+			DontDestroyOnLoad(font);
+			font.name = "Font";
+			font.transform.SetParent(transform, false);
 		}
 
 		// // RVA: 0x98060C Offset: 0x98060C VA: 0x98060C
@@ -962,8 +970,7 @@ namespace XeApp.Game
 		// // RVA: 0x99B14C Offset: 0x99B14C VA: 0x99B14C
 		public Font GetSystemFont()
 		{
-			UnityEngine.Debug.LogWarning("TODO GetSystemFont");
-			return null;
+			return font.GetFontInfo(3).font;
 		}
 
 		// // RVA: 0x9A0D4C Offset: 0x9A0D4C VA: 0x9A0D4C

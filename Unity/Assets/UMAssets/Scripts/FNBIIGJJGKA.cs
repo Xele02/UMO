@@ -21,7 +21,7 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x119E81C Offset: 0x119E81C VA: 0x119E81C
-	// public void BEJONIOEGCI(int DLAEJOBELBH, int AKNELONELJK, bool BCGLDMKODLC, bool NANEGCHBEDN, List<int> PGPBALKFBNK, bool PMCGHPOGLGM, bool GIKLNODJKFK = False) { }
+	// public void BEJONIOEGCI(int DLAEJOBELBH_Id, int AKNELONELJK, bool BCGLDMKODLC, bool NANEGCHBEDN, List<int> PGPBALKFBNK, bool PMCGHPOGLGM, bool GIKLNODJKFK = False) { }
 
 	// // RVA: 0x119EAD0 Offset: 0x119EAD0 VA: 0x119EAD0
 	// private int GMKMEENIJFK(byte[] IDLHJIOMJBK, int AKNELONELJK) { }

@@ -38,13 +38,13 @@ public class AOJGDNFAIJL
         }
 
         // // RVA: 0xD59A94 Offset: 0xD59A94 VA: 0xD59A94
-        public AMIECPBIALP(int DLAEJOBELBH, bool HJNAMIDGAJB)
+        public AMIECPBIALP(int DLAEJOBELBH_Id, bool HJNAMIDGAJB)
 		{
-			OBKGEDCKHHE(DLAEJOBELBH, HJNAMIDGAJB);
+			OBKGEDCKHHE(DLAEJOBELBH_Id, HJNAMIDGAJB);
 		}
 
         // // RVA: 0xD59B44 Offset: 0xD59B44 VA: 0xD59B44
-        public void OBKGEDCKHHE(int DLAEJOBELBH, bool HJNAMIDGAJB)
+        public void OBKGEDCKHHE(int DLAEJOBELBH_Id, bool HJNAMIDGAJB)
         {
             UnityEngine.Debug.LogError("TODO");
         }

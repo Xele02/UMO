@@ -343,8 +343,8 @@ namespace XeApp.Game.RhythmGame
 		private void InitializeMusicData()
 		{
 			totalComboNum = resource.musicData.musicScoreData.CalcComboLimit();
-			bgmPlayer.RequestChangeCueSheet(resource.musicData.musicBase.KKPAHLMJKIH, null);
-			bgmPlayer.ChangeMusicCue(resource.musicData.musicBase.KKPAHLMJKIH);
+			bgmPlayer.RequestChangeCueSheet(resource.musicData.musicBase.KKPAHLMJKIH_WavId, null);
+			bgmPlayer.ChangeMusicCue(resource.musicData.musicBase.KKPAHLMJKIH_WavId);
 			musicMillisecLength = bgmPlayer.millisecLength;
 			InitializeMusicScoreEvent();
 			
