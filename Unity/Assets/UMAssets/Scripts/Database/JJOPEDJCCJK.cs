@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-public class JJOPEDJCCJK : DIHHCBACKGG
+public class JJOPEDJCCJK { }
+public class JJOPEDJCCJK_Exp : DIHHCBACKGG
 {
     public class GDBAIHMLCBI
     {
@@ -38,9 +39,9 @@ public class JJOPEDJCCJK : DIHHCBACKGG
 	private List<int> JIBLNGDIPIG; // 0x4C
 	private List<int> FDDCBPLIHFG; // 0x50
 	private List<int> ECAODIBMEDM; // 0x54
-	private List<JJOPEDJCCJK.GDBAIHMLCBI> HBDIDGBMDIA; // 0x58
+	private List<JJOPEDJCCJK_Exp.GDBAIHMLCBI> HBDIDGBMDIA; // 0x58
 
-	public List<JJOPEDJCCJK.GPLPAOGMPAM> GNIPHICJAIA { get; private set; } // 0x5C LLBFAHJOJMG BNEEDCLHFHL LPFFJIGGHLG
+	public List<JJOPEDJCCJK_Exp.GPLPAOGMPAM> GNIPHICJAIA { get; private set; } // 0x5C LLBFAHJOJMG BNEEDCLHFHL LPFFJIGGHLG
 
 	// // RVA: 0x13550F8 Offset: 0x13550F8 VA: 0x13550F8
 	// public int ODKGLFCFJHJ() { }
@@ -101,7 +102,7 @@ public class JJOPEDJCCJK : DIHHCBACKGG
 	// public int FAANKGOFNGE(int BPLOEAHOPFI) { }
 
 	// RVA: 0x135621C Offset: 0x135621C VA: 0x135621C
-	public JJOPEDJCCJK()
+	public JJOPEDJCCJK_Exp()
     {
         JIKKNHIAEKG = "";
         LNIMEIMBCMF = false;
@@ -113,12 +114,12 @@ public class JJOPEDJCCJK : DIHHCBACKGG
         ILJKACFDKHI = new List<int>(300);
         LEKPPFJMFMH = new List<int>(300);
         JNIHDCMHINF = new List<int>(150);
-        GNIPHICJAIA = new List<JJOPEDJCCJK.GPLPAOGMPAM>(8);
+        GNIPHICJAIA = new List<JJOPEDJCCJK_Exp.GPLPAOGMPAM>(8);
         AOLNJDHGNGA = new List<int>(25);
         JIBLNGDIPIG = new List<int>(25);
         FDDCBPLIHFG = new List<int>(25);
         ECAODIBMEDM = new List<int>(25);
-        HBDIDGBMDIA = new List<JJOPEDJCCJK.GDBAIHMLCBI>();
+        HBDIDGBMDIA = new List<JJOPEDJCCJK_Exp.GDBAIHMLCBI>();
         LMHMIIKCGPE = 46;
     }
 

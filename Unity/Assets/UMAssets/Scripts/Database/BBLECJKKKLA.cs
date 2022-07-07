@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-public class BBLECJKKKLA : DIHHCBACKGG
+public class BBLECJKKKLA { }
+public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG
 {
 	public class GJBPBKNHLHC
 	{
@@ -38,10 +39,10 @@ public class BBLECJKKKLA : DIHHCBACKGG
 
 	public const int ICGIBJBALLH = 300;
 	public static int FBGGEFFJJHB = 0x181b5; // 0x0
-	public List<BBLECJKKKLA.GJBPBKNHLHC> CDENCMNHNGA = new List<BBLECJKKKLA.GJBPBKNHLHC>(300); // 0x20
+	public List<BBLECJKKKLA_DecoSetItem.GJBPBKNHLHC> CDENCMNHNGA = new List<BBLECJKKKLA_DecoSetItem.GJBPBKNHLHC>(300); // 0x20
 
 	// // RVA: 0xF2B3A0 Offset: 0xF2B3A0 VA: 0xF2B3A0
-	public BBLECJKKKLA()
+	public BBLECJKKKLA_DecoSetItem()
     {
 		JIKKNHIAEKG = "";
 		LNIMEIMBCMF = false;

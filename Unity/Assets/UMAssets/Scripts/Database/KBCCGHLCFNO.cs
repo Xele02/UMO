@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-public class KBCCGHLCFNO : DIHHCBACKGG
+public class KBCCGHLCFNO { }
+public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG
 {
 	public class JKGFAIPDNDL
 	{
@@ -73,9 +74,9 @@ public class KBCCGHLCFNO : DIHHCBACKGG
 	}
 
 	// public static int FBGGEFFJJHB = 0x9694bcb; // 0x0
-	public List<KBCCGHLCFNO.JKGFAIPDNDL> AHJNPEAMCCH; // 0x20
-	public List<KBCCGHLCFNO.OFCDEIEAKLN> JHNEKMAHOPJ; // 0x24
-	public List<KBCCGHLCFNO.BJEKBPEKCIM> MHKCPJDNJKI; // 0x28
+	public List<KBCCGHLCFNO_MonthlyPass.JKGFAIPDNDL> AHJNPEAMCCH; // 0x20
+	public List<KBCCGHLCFNO_MonthlyPass.OFCDEIEAKLN> JHNEKMAHOPJ; // 0x24
+	public List<KBCCGHLCFNO_MonthlyPass.BJEKBPEKCIM> MHKCPJDNJKI; // 0x28
 	// public static int DMDKPBPBDKD = -1; // 0x4
 	private int EHKFGCPHHJJ; // 0x34
 	private int NLLNHNGMHGP; // 0x38
@@ -107,13 +108,13 @@ public class KBCCGHLCFNO : DIHHCBACKGG
 	// public KBCCGHLCFNO.JKGFAIPDNDL LPPKMMLKHJB(int ADECCOKCCDH, int BAOFEFFADPD) { }
 
 	// RVA: 0x1018AB8 Offset: 0x1018AB8 VA: 0x1018AB8
-	public KBCCGHLCFNO()
+	public KBCCGHLCFNO_MonthlyPass()
     {
 		JIKKNHIAEKG = "";
 		LNIMEIMBCMF = false;
-		AHJNPEAMCCH = new List<KBCCGHLCFNO.JKGFAIPDNDL>();
-		JHNEKMAHOPJ = new List<KBCCGHLCFNO.OFCDEIEAKLN>();
-		MHKCPJDNJKI = new List<KBCCGHLCFNO.BJEKBPEKCIM>();
+		AHJNPEAMCCH = new List<KBCCGHLCFNO_MonthlyPass.JKGFAIPDNDL>();
+		JHNEKMAHOPJ = new List<KBCCGHLCFNO_MonthlyPass.OFCDEIEAKLN>();
+		MHKCPJDNJKI = new List<KBCCGHLCFNO_MonthlyPass.BJEKBPEKCIM>();
 		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC>();
 		FJOEBCMGDMI = new Dictionary<string, string>();
 		LMHMIIKCGPE = 61;

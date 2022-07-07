@@ -360,8 +360,8 @@ namespace XeApp.Game.Common
 			
 			IMMAOANGPNK a = IMMAOANGPNK.HHCJCDFCLOB;
 			OKGLGHCBCJP_Database o = a.NKEBMCIMJND;
-			LCLCCHLDNHJ l = o.MFPNGNMFEAL;
-			LCLCCHLDNHJ.ILODJKFJJDO cos_master = l.NLIBHNJNJAN(divaId, modelId);
+			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL;
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO cos_master = l.NLIBHNJNJAN(divaId, modelId);
 			bundleName.SetFormat("dv/ca/cmn.xab", "");
 			
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
@@ -492,8 +492,8 @@ namespace XeApp.Game.Common
 			GameObject wind = null;
 			IMMAOANGPNK im = IMMAOANGPNK.HHCJCDFCLOB;
 			OKGLGHCBCJP_Database o = im.NKEBMCIMJND;
-			LCLCCHLDNHJ l = o.MFPNGNMFEAL;
-			LCLCCHLDNHJ.ILODJKFJJDO a = l.NLIBHNJNJAN(divaId, modelId);
+			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL;
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO a = l.NLIBHNJNJAN(divaId, modelId);
 			int e = a.EGLDFPILJLG;
 			if(e == 0)
 			{
@@ -685,7 +685,7 @@ namespace XeApp.Game.Common
 			{
 				IMMAOANGPNK i = IMMAOANGPNK.HHCJCDFCLOB;
 				OKGLGHCBCJP_Database o = i.NKEBMCIMJND;
-				HPBPIOPPDCB h = o.MGFMPKLLGHE;
+				HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE;
 				BJPLLEBHAGO b = h.GCINIJEMHFK(divaId);
 				int ms = b.IDDHKOEFJFB;
 				yield return StartCoroutine(Co_LoadMikeStandResource(ms));
@@ -898,7 +898,7 @@ namespace XeApp.Game.Common
 			
 			IMMAOANGPNK im = IMMAOANGPNK.HHCJCDFCLOB;
 			OKGLGHCBCJP_Database o = im.NKEBMCIMJND;
-			HPBPIOPPDCB h = o.MGFMPKLLGHE;
+			HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE;
 			BJPLLEBHAGO b = h.GCINIJEMHFK(divaId);
 			int personalityId = b.FPMGHDKACOF;
 			

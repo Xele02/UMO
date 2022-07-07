@@ -629,7 +629,7 @@ namespace XeApp.Game.Menu
 			private void SetupPrefabSwitchTable()
 			{
 				prefabSwitchTable.Clear();
-				PEBFNABDJDI p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.GDEKCOOBLMA;
+				PEBFNABDJDI_System p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.GDEKCOOBLMA;
 				for(int i = 0; i < assetBundleNames.Length; i++)
 				{
 					if(p.LMBIOEDHNHB.ContainsKey(assetBundleNames[i].prefabName))

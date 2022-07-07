@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using System.Text;
 using XeApp.Game.Common;
 
-public class LCLCCHLDNHJ : DIHHCBACKGG
+public class LCLCCHLDNHJ { }
+public class LCLCCHLDNHJ_Costume : DIHHCBACKGG
 {
 
     public class ILODJKFJJDO
@@ -75,7 +76,7 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
 	public static readonly int GFIKOEEBIJP = GameAttribute.ArrayNum - 1; // 0x0
 	public string HDIDJNCGICK = ""; // 0x34
 
-	public List<LCLCCHLDNHJ.ILODJKFJJDO> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<LCLCCHLDNHJ_Costume.ILODJKFJJDO> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 	public Dictionary<int, int[]> MBLNIECELNK { get; private set; } // 0x24 GHJIJLGHBLA EHAONDMIOFL CAJNIOACOCP
 	public Dictionary<int, int[]> AKKDOIJNMBH { get; private set; } // 0x28 MJPHOOLJKJE HJMAIPELMAH JJOIDPBEEOH
 	// public Dictionary<int, LCLCCHLDNHJ.JMEHNBGDEBD> FDNBEPCEHBH { get; private set; } // 0x2C AMDEGDEHAAL HJLBICBIFAP FIOPFDLGEAE
@@ -98,12 +99,12 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
 	// public LCLCCHLDNHJ.ILODJKFJJDO MGENBBDAONJ(int AHHJLDLAPAN) { }
 
 	// // RVA: 0xD9B39C Offset: 0xD9B39C VA: 0xD9B39C
-	public LCLCCHLDNHJ()
+	public LCLCCHLDNHJ_Costume()
     {
         JIKKNHIAEKG = "";
         LNIMEIMBCMF = false;
         LMHMIIKCGPE = 11;
-        CDENCMNHNGA = new List<LCLCCHLDNHJ.ILODJKFJJDO>();
+        CDENCMNHNGA = new List<LCLCCHLDNHJ_Costume.ILODJKFJJDO>();
     }
 
 	// // RVA: 0xD9B4A8 Offset: 0xD9B4A8 VA: 0xD9B4A8 Slot: 8
@@ -112,7 +113,7 @@ public class LCLCCHLDNHJ : DIHHCBACKGG
         CDENCMNHNGA.Clear();
         for(int i = 1; i < 501; i++)
         {
-            LCLCCHLDNHJ.ILODJKFJJDO data = new LCLCCHLDNHJ.ILODJKFJJDO();
+            LCLCCHLDNHJ_Costume.ILODJKFJJDO data = new LCLCCHLDNHJ_Costume.ILODJKFJJDO();
             data.JPIDIENBGKH = i;
             CDENCMNHNGA.Add(data);
         }

@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using XeSys;
 using System;
 
-public class PEBFNABDJDI : DIHHCBACKGG
+public class PEBFNABDJDI { }
+public class PEBFNABDJDI_System : DIHHCBACKGG
 {
     public class JFIGGEAFMCN
     {
@@ -75,7 +76,7 @@ public class PEBFNABDJDI : DIHHCBACKGG
 	// public int DDGHBNLOBAJ(string OPFGFINHFCE) { }
 
 	// // RVA: 0xCC4D0C Offset: 0xCC4D0C VA: 0xCC4D0C
-	public PEBFNABDJDI()
+	public PEBFNABDJDI_System()
     {
 		JIKKNHIAEKG = "";
         LNIMEIMBCMF = false;

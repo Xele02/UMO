@@ -124,19 +124,19 @@ public class IMMAOANGPNK
 					HBODCMLFDOB = NKEBMCIMJND.IIEMACPEEBJ(listStr, GBEGLNMFLIE);
 					if(HBODCMLFDOB)
 					{
-						MLIBEPGADJH a = NKEBMCIMJND.ECNHDEHADGL;
+						MLIBEPGADJH_Scene a = NKEBMCIMJND.ECNHDEHADGL;
 						if(a != null)
 						{
-							KOGHKIODHPA b = NKEBMCIMJND.JEMMMJEJLNL;
+							KOGHKIODHPA_Board b = NKEBMCIMJND.JEMMMJEJLNL;
 							if(b != null)
 							{
 								a.AMACEDAPNKJ(NKEBMCIMJND.HNMMJINNHII, b);
 							}
 						}
-						BBLECJKKKLA c = NKEBMCIMJND.MJALLIOHKEJ;
+						BBLECJKKKLA_DecoSetItem c = NKEBMCIMJND.MJALLIOHKEJ;
 						if(c != null)
 						{
-							NDBFKHKMMCE d = NKEBMCIMJND.EPAHOAKPAJJ;
+							NDBFKHKMMCE_DecoItem d = NKEBMCIMJND.EPAHOAKPAJJ;
 							if(d != null)
 							{
 								d.MFIAFCCJHOF(c);

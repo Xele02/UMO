@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using XeSys;
 
-public class LDDDBPNGGIN : DIHHCBACKGG
+public class LDDDBPNGGIN { }
+public class LDDDBPNGGIN_Game : DIHHCBACKGG
 {
 	private const int NADNGLNALCK = 30;
 	private const int NHCGFMDPPPA = 5;
@@ -160,7 +161,7 @@ public class LDDDBPNGGIN : DIHHCBACKGG
 	// public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }
 
 	// // RVA: 0xDA1420 Offset: 0xDA1420 VA: 0xDA1420
-	public LDDDBPNGGIN()
+	public LDDDBPNGGIN_Game()
     {
 		JIKKNHIAEKG = "";
 		LNIMEIMBCMF = false;

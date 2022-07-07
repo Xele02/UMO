@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-public class GJALOMELEHD : DIHHCBACKGG
+public class GJALOMELEHD { }
+public class GJALOMELEHD_Intimacy : DIHHCBACKGG
 {
 	public class ELAIMNHBCFB
 	{
@@ -62,9 +63,9 @@ public class GJALOMELEHD : DIHHCBACKGG
 	public const int PEJGHAJJDIG = 40;
 	public const int LBBLNLCFIOH = 10;
 	public static int FBGGEFFJJHB = 0x4341b; // 0x0
-	public List<GJALOMELEHD.ELAIMNHBCFB> CJAEGOMDICD = new List<GJALOMELEHD.ELAIMNHBCFB>(28); // 0x20
-	public List<GJALOMELEHD.MFMLEAMJJCH> OOCKOCAACMD = new List<GJALOMELEHD.MFMLEAMJJCH>(); // 0x24
-	public List<GJALOMELEHD.AHIGPDEDCFO> COHLJLNLBKM = new List<GJALOMELEHD.AHIGPDEDCFO>(); // 0x28
+	public List<GJALOMELEHD_Intimacy.ELAIMNHBCFB> CJAEGOMDICD = new List<GJALOMELEHD_Intimacy.ELAIMNHBCFB>(28); // 0x20
+	public List<GJALOMELEHD_Intimacy.MFMLEAMJJCH> OOCKOCAACMD = new List<GJALOMELEHD_Intimacy.MFMLEAMJJCH>(); // 0x24
+	public List<GJALOMELEHD_Intimacy.AHIGPDEDCFO> COHLJLNLBKM = new List<GJALOMELEHD_Intimacy.AHIGPDEDCFO>(); // 0x28
 
 	public Dictionary<string, CEBFFLDKAEC> OHJFBLFELNK { get; private set; } // 0x2C KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
 	public Dictionary<string, NNJFKLBPBNK> FJOEBCMGDMI { get; private set; } // 0x30 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
@@ -80,7 +81,7 @@ public class GJALOMELEHD : DIHHCBACKGG
     }
 
 	// // RVA: 0xAA8E74 Offset: 0xAA8E74 VA: 0xAA8E74
-	public GJALOMELEHD()
+	public GJALOMELEHD_Intimacy()
     {
 		JIKKNHIAEKG = "";
 		LNIMEIMBCMF = false;

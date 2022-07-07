@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-public class PMDCIJMMNGK : DIHHCBACKGG
+public class PMDCIJMMNGK { }
+public class PMDCIJMMNGK_GachaTicket : DIHHCBACKGG
 {
 	public const int ODBKCBKACNP = 13;
 	public static int FBGGEFFJJHB = 0x304c2; // 0x0
@@ -14,7 +15,7 @@ public class PMDCIJMMNGK : DIHHCBACKGG
 	// public PMDCIJMMNGK.EJAKHFONNGN AAJILEFHFGC(int GJDNBENICPF) { }
 
 	// RVA: 0xFEC8A4 Offset: 0xFEC8A4 VA: 0xFEC8A4
-	public PMDCIJMMNGK()
+	public PMDCIJMMNGK_GachaTicket()
     {
         JIKKNHIAEKG = "";
         LNIMEIMBCMF = false;

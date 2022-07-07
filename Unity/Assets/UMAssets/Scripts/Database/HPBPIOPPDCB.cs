@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-public class HPBPIOPPDCB : DIHHCBACKGG
+public class HPBPIOPPDCB { }
+public class HPBPIOPPDCB_Diva : DIHHCBACKGG
 {
 	public static bool DINNDBNPNFK; // 0x0
 	public const int NLPCOAKLBAN = 0;
@@ -20,7 +21,7 @@ public class HPBPIOPPDCB : DIHHCBACKGG
     }
 
 	// // RVA: 0x16085F0 Offset: 0x16085F0 VA: 0x16085F0
-	public HPBPIOPPDCB()
+	public HPBPIOPPDCB_Diva()
     {
 		JIKKNHIAEKG = "";
 		LNIMEIMBCMF = false;

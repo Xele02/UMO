@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-public class JOHKNBEFHHP : DIHHCBACKGG
+public class JOHKNBEFHHP { }
+public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG
 {
     public class NGKJHBDEELB
     {
@@ -13,10 +14,10 @@ public class JOHKNBEFHHP : DIHHCBACKGG
         // // RVA: 0x1BA4288 Offset: 0x1BA4288 VA: 0x1BA4288
         // public uint CAOGDCBPBAN() { }
     }
-	public List<JOHKNBEFHHP.NGKJHBDEELB> CDENCMNHNGA = new List<JOHKNBEFHHP.NGKJHBDEELB>(); // 0x20
+	public List<JOHKNBEFHHP_TitleBanner.NGKJHBDEELB> CDENCMNHNGA = new List<JOHKNBEFHHP_TitleBanner.NGKJHBDEELB>(); // 0x20
 
 	// // RVA: 0x1BA3D84 Offset: 0x1BA3D84 VA: 0x1BA3D84
-	public JOHKNBEFHHP()
+	public JOHKNBEFHHP_TitleBanner()
     {
 		JIKKNHIAEKG = "";
 		LNIMEIMBCMF = false;

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-public class KOGHKIODHPA : DIHHCBACKGG
+public class KOGHKIODHPA { }
+public class KOGHKIODHPA_Board : DIHHCBACKGG
 {
     public class ADPMJDMFEIK
     {
@@ -95,7 +96,7 @@ public class KOGHKIODHPA : DIHHCBACKGG
 	// public int NENHCPMDAGM(int JPIPENJGGDD, int AOPBAOJIOGO, int ILABPFOMEAG) { }
 
 	// // RVA: 0x1130188 Offset: 0x1130188 VA: 0x1130188
-	public KOGHKIODHPA()
+	public KOGHKIODHPA_Board()
     {
 		JIKKNHIAEKG = "";
 		LNIMEIMBCMF = false;
