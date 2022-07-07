@@ -81,7 +81,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG
 				for(int k = 0, j = 1; j <= AGNCAAFGLBE; j++, k+=2)
 				{
 					data2.ANAJIAENLNB = j;
-					data2.ANIJHEBLMGB(array[i].DFEDIAPLFHN.OEOIHIIIMCK[k], array[i].DFEDIAPLFHN.OEOIHIIIMCK[k+1]);
+					data2.ANIJHEBLMGB((int)array[i].DFEDIAPLFHN.OEOIHIIIMCK[k], (short)array[i].DFEDIAPLFHN.OEOIHIIIMCK[k+1]);
 					data.CMCKNKKCNDK[j].FBGGEFFJJHB = (int)val2;
 					data.CMCKNKKCNDK[j].ODDIHGPONFL(data2);
 					val2 = val2 * 0xb;

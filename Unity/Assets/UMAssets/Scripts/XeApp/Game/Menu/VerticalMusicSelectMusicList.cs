@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		// private static readonly int hashStateIn = Animator.StringToHash("Base Layer.In"); // 0x0
 		// private static readonly int hashStateOut = Animator.StringToHash("Base Layer.Out"); // 0x4
 		// private static readonly int hashStateClip = Animator.StringToHash("Base Layer.Clip"); // 0x8
-		 private List<VerticalMusicDataList.MusicListData> m_musicList = new List<VerticalMusicDataList.MusicListData>(); // 0x20
+		private List<VerticalMusicDataList.MusicListData> m_musicList = new List<VerticalMusicDataList.MusicListData>(); // 0x20
 		private int m_difficult; // 0x24
 		private bool m_isSingleMusic; // 0x28
 
@@ -106,7 +106,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE3850 Offset: 0xBE3850 VA: 0xBE3850
 		private void MusicUpdateListItem(int listIndex, MusicScrollItem obj)
 		{
+			if(m_musicList.Count == 0)
+				return;
+			if(m_musicList.Count <= listIndex)
+				return;
 			UnityEngine.Debug.LogError("TODO MusicUpdateCenterItem");
+			obj.SetTitle(m_musicList[listIndex].MusicName);
 		}
 	}
 }

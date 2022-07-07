@@ -14,7 +14,10 @@ namespace XeApp.Game.Common
 			Illegal = 7,
 		}
 
-		private static readonly SeriesAttr.Type[] tbl = new SeriesAttr.Type[11] { 13C46555F6180D443804482D835A8B2F937C08C0 }; // 0x0
+		private static readonly SeriesAttr.Type[] tbl = new SeriesAttr.Type[11] { 
+			Type.None, Type.Delta, Type.Frontia, Type.Seven, Type.First, Type.Frontia, Type.Frontia,
+			Type.Seven, Type.Seven, Type.First, Type.Plus
+		 }; // 0x0
 
 		// RVA: 0x1391FEC Offset: 0x1391FEC VA: 0x1391FEC
 		public static SeriesAttr.Type ConvertFromLogoId(SeriesLogoId.Type logo)

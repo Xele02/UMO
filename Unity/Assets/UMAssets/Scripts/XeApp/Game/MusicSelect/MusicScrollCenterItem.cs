@@ -118,7 +118,10 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xC9CCB4 Offset: 0xC9CCB4 VA: 0xC9CCB4
-		//public void SetHighLevelMusicTitle(string title) { }
+		public void SetHighLevelMusicTitle(string title)
+		{
+			m_highLevelMusicName.text = title;
+		}
 
 		//// RVA: 0xC9CCF0 Offset: 0xC9CCF0 VA: 0xC9CCF0
 		//public void SetEventName(string text) { }
