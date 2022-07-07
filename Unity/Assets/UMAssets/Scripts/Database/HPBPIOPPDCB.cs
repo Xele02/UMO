@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using XeSys;
 
 public class HPBPIOPPDCB { }
 public class HPBPIOPPDCB_Diva : DIHHCBACKGG
@@ -16,8 +17,11 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG
 	// // RVA: 0x1608560 Offset: 0x1608560 VA: 0x1608560
 	public BJPLLEBHAGO GCINIJEMHFK(int AHHJLDLAPAN)
     {
-        UnityEngine.Debug.LogError("TODO");
-        return null;
+        if(AHHJLDLAPAN != 0)
+		{
+			return CDENCMNHNGA[AHHJLDLAPAN - 1];
+		}
+		return null;
     }
 
 	// // RVA: 0x16085F0 Offset: 0x16085F0 VA: 0x16085F0
@@ -49,14 +53,49 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG
 	// // RVA: 0x16088BC Offset: 0x16088BC VA: 0x16088BC Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO Database Load");
-		return true;
+		long time = Utility.GetCurrentUnixTime();
+		MHKHMCAPDKK reader = MHKHMCAPDKK.HEGEKFMJNCC(DBBGALAPFGC);
+		MALFJMBMCLG[] array = reader.INPCGKFIMIG;
+		if (array.Length < 11)
+		{
+			for(int i = 0; i != array.Length; i++)
+			{
+				long val2 = time * 0x96a + 2;
+				BJPLLEBHAGO data = CDENCMNHNGA[i];
+				data.AHHJLDLAPAN = (sbyte)array[i].PPFNGGCBJKC;
+				data.AIHCEGFANAM = (sbyte)array[i].JPFMJHLCMJL;
+				data.IDDHKOEFJFB = (sbyte)array[i].JIBNPJCIALH;
+				data.FPMGHDKACOF = (sbyte)array[i].OKADDOIJGNB;
+				data.PPEGAKEIEGM = (sbyte)JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
+				data.DOAJJALOKLI = (sbyte)array[i].KLCMKLPIDDJ;
+				data.PKNONBBKCCP = (sbyte)array[i].BAOFEFFADPD;
+				data.LIOGKHIGJKN = (ushort)array[i].LIOGKHIGJKN;
+				data.CMBCBNEODPD = (ushort)array[i].CMBCBNEODPD;
+
+				EPPOHFLMDBC data2 = new EPPOHFLMDBC();
+				data2.DOMFHDPMCCO(0, (int)val2, (short)array[i].DFEDIAPLFHN.BCCOMAODPJI, (short)array[i].DFEDIAPLFHN.LJELGFAFGAB, (short)array[i].DFEDIAPLFHN.KNEDJFLCCLN,
+						(short)array[i].DFEDIAPLFHN.MBAMIOJNGBD, (short)array[i].DFEDIAPLFHN.ADLGKMBIPCA, (short)array[i].DFEDIAPLFHN.PIPCIMIALOO);
+				data.CMCKNKKCNDK[0].ODDIHGPONFL(data2);
+				val2 = val2 * 0xb + 3;
+				AGNCAAFGLBE = array[i].DFEDIAPLFHN.OEOIHIIIMCK.Length / 2;
+				for(int k = 0, j = 1; j <= AGNCAAFGLBE; j++, k+=2)
+				{
+					data2.ANAJIAENLNB = j;
+					data2.ANIJHEBLMGB(array[i].DFEDIAPLFHN.OEOIHIIIMCK[k], array[i].DFEDIAPLFHN.OEOIHIIIMCK[k+1]);
+					data.CMCKNKKCNDK[j].FBGGEFFJJHB = (int)val2;
+					data.CMCKNKKCNDK[j].ODDIHGPONFL(data2);
+					val2 = val2 * 0xb;
+				}
+				return true;
+			}
+		}
+		HDIDJNCGICK = "\"diva\" table overflow";
+		return false;
     }
 
 	// // RVA: 0x16093A0 Offset: 0x16093A0 VA: 0x16093A0 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		UnityEngine.Debug.LogError("TODO");
 		return true;
 	}
 

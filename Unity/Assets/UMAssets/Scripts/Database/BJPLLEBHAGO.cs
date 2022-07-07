@@ -36,7 +36,9 @@ public class EPPOHFLMDBC
 	// public void ANIJHEBLMGB(int INDDJNMPONH, short JBGEEPFKIGG) { }
 
 	// // RVA: 0xFC1698 Offset: 0xFC1698 VA: 0xFC1698
-	// public void ODDIHGPONFL(EPPOHFLMDBC GPBJHKLFCEP) { }
+	/*public void ODDIHGPONFL(EPPOHFLMDBC GPBJHKLFCEP)
+	{
+	}*/
 
 	// // RVA: 0xFC1800 Offset: 0xFC1800 VA: 0xFC1800
 	// public uint CAOGDCBPBAN() { }
