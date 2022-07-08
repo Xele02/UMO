@@ -18,7 +18,7 @@ namespace XeApp.Game.Menu
 		private SetDeckPlayButtons m_playButtons; // 0x8C
 		private SetDeckUnitInfoSLive m_prismUnitInfo; // 0x90
 		private ConfigMenu m_gameSettingMenu; // 0x94
-		// private bool m_isWaitOnPostSetCanvas; // 0x98
+		private bool m_isWaitOnPostSetCanvas; // 0x98
 		// private bool m_isWaitActivateScene; // 0x99
 		// private bool m_isWaitExitAnimation; // 0x9A
 
@@ -57,18 +57,25 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE228 Offset: 0x12CE228 VA: 0x12CE228 Slot: 18
 		protected override void OnPostSetCanvas()
 		{
-			UnityEngine.Debug.LogError("TODO OnPostSetCanvas");
+			StartCoroutine(Co_OnPostSetCanvas());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7274B4 Offset: 0x7274B4 VA: 0x7274B4
 		// // RVA: 0x12CE24C Offset: 0x12CE24C VA: 0x12CE24C
-		// private IEnumerator Co_OnPostSetCanvas() { //0x12D0718 }
+		private IEnumerator Co_OnPostSetCanvas() {
+			//0x12D0718
+			m_isWaitOnPostSetCanvas = true;
+			yield return null;
+			m_isWaitOnPostSetCanvas = false;
+			yield break;
+		}
 
 		// // RVA: 0x12CE2F8 Offset: 0x12CE2F8 VA: 0x12CE2F8 Slot: 19
 		protected override bool IsEndPostSetCanvas()
 		{
-			UnityEngine.Debug.LogError("TODO IsEndPostSetCanvas");
-			return true;
+			if (!m_isWaitOnPostSetCanvas)
+				return base.IsEndPostSetCanvas();
+			return false;
 		}
 
 		// // RVA: 0x12CE310 Offset: 0x12CE310 VA: 0x12CE310 Slot: 14
@@ -202,6 +209,7 @@ namespace XeApp.Game.Menu
 		private void AdvanceGame()
 		{
 			UnityEngine.Debug.LogError("TODO AdvanceGame");
+			Database.Instance.gameSetup.SetMvMode(new StatusData(), m_prismData);
 			AdvanceGame(null, null, null, null, false, 9999, 0, null, true);
 		}
 

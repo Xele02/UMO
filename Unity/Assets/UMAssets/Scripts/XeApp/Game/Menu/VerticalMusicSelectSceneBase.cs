@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 		protected MMOLNAHHDOM m_unitLiveLocalSaveData { get; private set; } // 0x58
 		protected LimitTimeWatcher m_musicTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x5C
 		protected LimitTimeWatcher m_bannerTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x60
-		// protected abstract IBJAKJJICBC selectMusicData { get; } // Slot: 40
+		protected abstract IBJAKJJICBC selectMusicData { get; } // Slot: 40
 		protected abstract VerticalMusicDataList.MusicListData selectMusicListData { get; } // Slot: 41
 		// protected bool listIsEmpty { get; } 0xAC8AD4
 		// protected bool listIsEmptyByFilter { get; } 0xAC8B48
@@ -310,6 +310,7 @@ namespace XeApp.Game.Menu
 		private void DecideCurrentMusic(bool isSimulation)
 		{
 			UnityEngine.Debug.LogError("TODO DecideCurrentMusic");
+			Database.Instance.selectedMusic.SetMusicData(selectMusicData);
 			MenuScene.Instance.Call(TransitionList.Type.SIMULATIONLIVE_SETTING, null, true);
 		}
 

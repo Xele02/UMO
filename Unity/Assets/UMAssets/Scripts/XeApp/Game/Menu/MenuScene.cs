@@ -5,6 +5,7 @@ using XeSys;
 using System.Collections;
 using XeApp.Game.Common;
 using UnityEngine.Events;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -472,7 +473,11 @@ namespace XeApp.Game.Menu
 		// public void InitAssitPlate() { }
 
 		// // RVA: 0xB30FF4 Offset: 0xB30FF4 VA: 0xB30FF4
-		// public void GotoRhythmGame(bool isSkip, int ticketCount, bool isNotUpdateProfile) { }
+		public void GotoRhythmGame(bool isSkip, int ticketCount, bool isNotUpdateProfile)
+		{
+			UnityEngine.Debug.LogError("TODO GotoRhythmGame");
+			StartCoroutine(GotoRhythmGameCorotine(() => { /*0xB37CCC*/return null; }, false));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7A14 Offset: 0x6C7A14 VA: 0x6C7A14
 		// // RVA: 0xB312F8 Offset: 0xB312F8 VA: 0xB312F8
@@ -487,7 +492,14 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7B04 Offset: 0x6C7B04 VA: 0x6C7B04
 		// // RVA: 0xB31238 Offset: 0xB31238 VA: 0xB31238
-		// private IEnumerator GotoRhythmGameCorotine(Func<IEnumerator> wait, bool isSkip = False) { }
+		private IEnumerator GotoRhythmGameCorotine(Func<IEnumerator> wait, bool isSkip = false)
+		{
+			UnityEngine.Debug.LogError("TODO GotoRhythmGameCorotine");
+			//0xB3B65C
+			//RhythmGamePreLoad//0xB3C79C
+			NextScene("RhythmGame");
+			yield break;
+		}
 
 		// // RVA: 0xB31758 Offset: 0xB31758 VA: 0xB31758
 		// public void GotoAdventure(bool isExecuteSceneExit = False) { }

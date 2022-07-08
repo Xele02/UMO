@@ -40,7 +40,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG
 
         public int JPIDIENBGKH { get; set; } // 0x8 CPCGNLOMIJL PHLLMIGCPCB BLBNMENMCIF
         public short AHHJLDLAPAN { get; set; } // 0xC AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
-        public short DAJGPBLEEOB { get; set; } // 0xE ABHFCJKBJKD LHPKEPPBKPF OIOEEEDODJA
+        public short DAJGPBLEEOB_PrismCostumeModelId { get; set; } // 0xE ABHFCJKBJKD LHPKEPPBKPF OIOEEEDODJA
 		public int PPEGAKEIEGM { get { return FBGGEFFJJHB ^ OIFAFKDMEEJ; } set { OIFAFKDMEEJ = FBGGEFFJJHB ^ value; } } //KPOEEPIMMJP 0xD9D5B8 NCIEAFEDPBH 0xD9CCEC
 		public int HGHFFJKGNCO { get; set; } // 0x14 EJPLGMFLNMN JNGLBKKJFLF DHHJKJFHILD
         public bool EODICFLJAKO { get; set; } // 0x18 LLGHLILPKEE FDPHJPGGGMN KHDBHGJILNO
@@ -87,7 +87,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG
         // // RVA: 0xD9DEB0 Offset: 0xD9DEB0 VA: 0xD9DEB0
         private void ILBDHNHFJHL()
         {
-			FAEDHJHCEFJ.SetFormat("dv/cs/{0:D3}_{1:D3}_00.xab", AHHJLDLAPAN, DAJGPBLEEOB);
+			FAEDHJHCEFJ.SetFormat("dv/cs/{0:D3}_{1:D3}_00.xab", AHHJLDLAPAN, DAJGPBLEEOB_PrismCostumeModelId);
 			MEDNOBOLCEL = (byte)(KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH(FAEDHJHCEFJ.ToString()) ? 2 : 1);
 		}
     }
@@ -189,7 +189,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG
 				ILODJKFJJDO data = CDENCMNHNGA[i];
 				data.JPIDIENBGKH = (int)array[i].PPFNGGCBJKC;
 				data.AHHJLDLAPAN = (short)array[i].OCAMDLMPBGA;
-				data.DAJGPBLEEOB = (short)array[i].LKMHPJKIFDN;
+				data.DAJGPBLEEOB_PrismCostumeModelId = (short)array[i].LKMHPJKIFDN;
 				data.HGHFFJKGNCO = (int)array[i].DLAIGBEOGNN;
 				data.EODICFLJAKO = array[i].DBHPPMPNCKF > 0;
 				data.PPEGAKEIEGM = JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, array[i].DBHPPMPNCKF);

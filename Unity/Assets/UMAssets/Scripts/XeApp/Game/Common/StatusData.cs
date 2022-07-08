@@ -30,7 +30,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1CC9E44 Offset: 0x1CC9E44 VA: 0x1CC9E44
-		// public void Copy(StatusData src) { }
+		public void Copy(StatusData src)
+		{
+			UnityEngine.Debug.LogError("TODO TeamStatus Copy");
+		}
 
 		// // RVA: 0x1CC9F98 Offset: 0x1CC9F98 VA: 0x1CC9F98
 		// public void Add(StatusData add) { }

@@ -10,7 +10,7 @@ namespace XeApp.Game.MusicSelect
 		{
 			public struct InitParam
 			{
-				// public IBJAKJJICBC viewMusic; // 0x0
+				public IBJAKJJICBC viewMusic; // 0x0
 				// public List<MusicRewardStat> rewardStat; // 0x4
 				// public long aprilFoolEndTime; // 0x8
 				// public bool isOpen; // 0x10
@@ -30,7 +30,7 @@ namespace XeApp.Game.MusicSelect
 			}
 			//	private List<MusicRewardStat> m_rewardStat = new List<MusicRewardStat>(); // 0xC
 
-			//	public IBJAKJJICBC ViewMusic { get; } = new IBJAKJJICBC(); // 0x8
+			public IBJAKJJICBC ViewMusic { get; } = new IBJAKJJICBC(); // 0x8
 			//	public List<MusicRewardStat> RewardStat { get; } 0xCA3E58
 			//	public long AprilFoolEndTime { get; } // 0x10
 			//	public bool IsOpen { get; } = false; // 0x18
@@ -53,6 +53,7 @@ namespace XeApp.Game.MusicSelect
 			{
 				UnityEngine.Debug.LogError("TODO MusicListData()");
 				MusicName = initParam.musicName;
+				ViewMusic = initParam.viewMusic;
 			}
 		}
 
@@ -74,6 +75,7 @@ namespace XeApp.Game.MusicSelect
 				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP[id - 1];
 				EONOEHOKBEB_Music a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK(id, musicInfo.DLAEJOBELBH_Id);
 				initparam.musicName = Database.Instance.musicText.Get(a.KNMGEEFGDNI_Nam).musicName;
+				initparam.viewMusic = viewMusicDataList[i]; // to check
 				//initparam.musicName = "Music "+id;
 				VerticalMusicDataList.MusicListData data = new VerticalMusicDataList.MusicListData(initparam);
 				res.Add(data);

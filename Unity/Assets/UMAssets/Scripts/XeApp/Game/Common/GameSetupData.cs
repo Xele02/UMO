@@ -50,10 +50,29 @@ namespace XeApp.Game.Common
 				// private bool CheckLiveSkill(EEDKAACNBBG musicData, int a_l_skill_id) { }
 
 				// // RVA: 0xE9FFC0 Offset: 0xE9FFC0 VA: 0xE9FFC0
-				// public void SetupMvInfo(AOJGDNFAIJL.AMIECPBIALP prismData, int a_index) { }
+				public void SetupMvInfo(AOJGDNFAIJL.AMIECPBIALP prismData, int a_index)
+				{
+					Initialize();
+					SetupPrismInfo(prismData, a_index);
+					positionId = a_index + 1;
+					divaId = prismDivaId;
+					costumeModelId = prismCostumeModelId;
+					costumeColorId = prismCostumeColorId;
+				}
 
 				// // RVA: 0xEA0368 Offset: 0xEA0368 VA: 0xEA0368
-				// private void SetupPrismInfo(AOJGDNFAIJL.AMIECPBIALP prismData, int index) { }
+				private void SetupPrismInfo(AOJGDNFAIJL.AMIECPBIALP prismData, int index)
+				{
+					if(prismData.PNBKLGKCKGO(index) > 0)
+					{
+						prismDivaId = prismData.PNBKLGKCKGO(index);
+					}
+					if(prismData.OCNHIHMAGMJ(index) > 0)
+					{
+						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA[prismData.OCNHIHMAGMJ(index) - 1].DAJGPBLEEOB_PrismCostumeModelId;
+						prismCostumeColorId = prismData.DOIGAGAAAOP(index);
+					}
+				}
 
 				// // RVA: 0xEA000C Offset: 0xEA000C VA: 0xEA000C
 				// public void SetForcePrismData(AIPEHINPIHC a_prism, int a_index) { }
@@ -125,7 +144,19 @@ namespace XeApp.Game.Common
 			// public void SetupInfo(StatusData teamStateus, DFKGGBMFFGB playerData, int teamNo, EEDKAACNBBG musicData, EAJCBFGKKFA friendData, LimitOverStatusData limitOverStatus, AOJGDNFAIJL.AMIECPBIALP prismData, bool isGoDiva = False) { }
 
 			// // RVA: 0xE9CDAC Offset: 0xE9CDAC VA: 0xE9CDAC
-			// public void SetupMvInfo(StatusData teamStateus, AOJGDNFAIJL.AMIECPBIALP info) { }
+			public void SetupMvInfo(StatusData teamStateus, AOJGDNFAIJL.AMIECPBIALP info)
+			{
+				Initialize();
+				for(int i = 0; i < 5; i++)
+				{
+					danceDivaList_[i].SetupMvInfo(info, i);
+				}
+				valkyrieId = info.PNDKNFBLKDP();
+				prismValkyrieId = info.PNDKNFBLKDP();
+				teamStatus = new StatusData();
+				teamStatus.Copy(teamStateus);
+				teamLuck_ = 0x4e8bf5d;
+			}
 
 			// // RVA: 0xE9D15C Offset: 0xE9D15C VA: 0xE9D15C
 			// public void SetForcePrismData(AIPEHINPIHC a_prism) { }
@@ -258,7 +289,14 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE9CBC8 Offset: 0xE9CBC8 VA: 0xE9CBC8
-		// public void SetMvMode(StatusData teamStatus, AOJGDNFAIJL.AMIECPBIALP prismData) { }
+		public void SetMvMode(StatusData teamStatus, AOJGDNFAIJL.AMIECPBIALP prismData)
+		{
+			m_teamInfo.SetupMvInfo(teamStatus, prismData);
+			m_mvInfo.isCutin = GameManager.Instance.localSave.EPJOACOONAC().MHHPDGJLJGE.DADIPGPHLDD_EffectCutin == 0;
+			m_mvInfo.isShowNotes = prismData.DNLCLAOPFPF;
+			m_mvInfo.isModeDiva = prismData.HGEKDNNJAAC;
+			m_mvInfo.isModeValkyrie = prismData.OHLCKPIMMFH;
+		}
 
 		// // RVA: 0xE9CF04 Offset: 0xE9CF04 VA: 0xE9CF04
 		// public void SetLiveSkip(bool isSkip, int ticketCount) { }

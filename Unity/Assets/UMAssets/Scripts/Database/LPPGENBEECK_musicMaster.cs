@@ -38,7 +38,14 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	}
 
 	// // RVA: 0x10CF8B4 Offset: 0x10CF8B4 VA: 0x10CF8B4
-	// public DJNPIGEFPMF FLMLJIKBIMJ(int KLCIIHKFPPO) { }
+	public DJNPIGEFPMF FLMLJIKBIMJ(int KLCIIHKFPPO)
+	{
+		if (KLCIIHKFPPO > 0)
+		{
+			return CLHIABAKKJM[KLCIIHKFPPO - 1];
+		}
+		return null;
+	}
 
 	// // RVA: 0x10CF944 Offset: 0x10CF944 VA: 0x10CF944
 	// public HMJHLLPBCLD KCBOGEBCMMJ(int LJNAKDMILMC) { }

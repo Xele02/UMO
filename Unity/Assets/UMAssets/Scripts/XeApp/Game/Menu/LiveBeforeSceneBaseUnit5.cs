@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 			new PrefabCacheParam() { prefabName="SetDeckUnitInfo_SLive", count=1 },
 			new PrefabCacheParam() { prefabName="SetDeckStatusWindow", count=1 }
 		}; // 0x0
-		// protected AOJGDNFAIJL.AMIECPBIALP m_prismData = new AOJGDNFAIJL.AMIECPBIALP(); // 0x48
+		 protected AOJGDNFAIJL.AMIECPBIALP m_prismData = new AOJGDNFAIJL.AMIECPBIALP(); // 0x48
 		// private AOJGDNFAIJL.AMIECPBIALP m_prismLogDiffData = new AOJGDNFAIJL.AMIECPBIALP(); // 0x4C
 		// private PopupMvModeSelectListSetting m_prismPopupSetting = new PopupMvModeSelectListSetting(); // 0x50
 		// private List<int> m_lackDivaIds = new List<int>(); // 0x54
@@ -82,6 +82,7 @@ namespace XeApp.Game.Menu
 		protected void AdvanceGame(StatusData teamUnitStatus, DFKGGBMFFGB playerData, EAJCBFGKKFA friendData, LimitOverStatusData limitOverData, bool isSkip, int ticketCount, long consumeTime, JGEOBNENMAH.NEDILFPPCJF log, bool isNotUpdateProfile)
 		{
 			UnityEngine.Debug.LogError("TODO AdvanceGame");
+			MenuScene.Instance.GotoRhythmGame(false, 0, false);
 		}
 
 		// // RVA: 0x15487BC Offset: 0x15487BC VA: 0x15487BC

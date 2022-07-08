@@ -55,7 +55,12 @@ namespace XeApp.Game.Menu
 		private static readonly int noMusicCategoryId = CategoryToNewSeriesBgId[6] + 1; // 0x18
 
 		// private VerticalMusicSelectSortOrder.SortOrder sortOrder { get; } 0xBE5B30
-		// protected override IBJAKJJICBC selectMusicData { get; } 0xBE5B5C
+		protected override IBJAKJJICBC selectMusicData { get {
+				VerticalMusicDataList.MusicListData musicData = currentMusicList.Get(list_no, isLine6Mode, false);
+				if (musicData != null)
+					return musicData.ViewMusic;
+				return null;
+		} } //0xBE5B5C
 		protected override VerticalMusicDataList.MusicListData selectMusicListData { get {
 			return currentMusicList.Get(list_no, isLine6Mode, false);
 		} } //0xBE5C04

@@ -22,14 +22,14 @@ public class AOJGDNFAIJL
         private bool NAENFAFGMEP; // 0x5C
         private int PFMHBFAKNNL; // 0x60
 
-        public int[] OMNDNNFANCK { get; private set; } // 0x10 ACAKFKBJCIE PGFAAJJJPNH OKBCIFPNKIL
-        public int[] DLPIKHDNIIE { get; private set; } // 0x14 NKHEFHPGPOO JMJHBEFHIBN LMEJNJIEDOE
-        public int[] PBHPPCPKHDL { get; private set; } // 0x18 JCMGMDGJBMF CFEGNKFHGAM CGKCELFGHCK
-        public int FBAGIDFLHHI { get; private set; } // 0x1C ALNPAMMMLLO FGBBLAADIDG AFJIFKDFNDI
+        public int[] OMNDNNFANCK { get; private set; } // 0x10 ACAKFKBJCIE PGFAAJJJPNH OKBCIFPNKIL // prismdivaids
+        public int[] DLPIKHDNIIE { get; private set; } // 0x14 NKHEFHPGPOO JMJHBEFHIBN LMEJNJIEDOE // prismcostumeid
+        public int[] PBHPPCPKHDL { get; private set; } // 0x18 JCMGMDGJBMF CFEGNKFHGAM CGKCELFGHCK // costume color id
+        public int FBAGIDFLHHI { get; private set; } // 0x1C ALNPAMMMLLO FGBBLAADIDG AFJIFKDFNDI // valkId
         public bool FBGAKINEIPG { get; private set; } // 0x20 BNIOOBDDMJB IKPHJPLOGLD KFFLMEHHNKJ
-        public bool OHLCKPIMMFH { get; private set; } // 0x21 NEKDPHBJJGO BLJNAHPNEPC GMFAOCGDIBP
-        public bool HGEKDNNJAAC { get; private set; } // 0x22 DPIFLIMIDPI ABKLDEHPOJH IFAFHCOMMHJ
-        public bool DNLCLAOPFPF { get; private set; } // 0x23 JPEAMBLKJEF KINDNNEJNOL GOIIKFBHFLD
+        public bool OHLCKPIMMFH { get; private set; } // 0x21 NEKDPHBJJGO BLJNAHPNEPC GMFAOCGDIBP // ValkMode
+        public bool HGEKDNNJAAC { get; private set; } // 0x22 DPIFLIMIDPI ABKLDEHPOJH IFAFHCOMMHJ // divamode
+        public bool DNLCLAOPFPF { get; private set; } // 0x23 JPEAMBLKJEF KINDNNEJNOL GOIIKFBHFLD // shownote
 
         // RVA: 0xD599FC Offset: 0xD599FC VA: 0xD599FC
 	    public AMIECPBIALP()
@@ -50,16 +50,40 @@ public class AOJGDNFAIJL
         }
 
         // // RVA: 0xD5B314 Offset: 0xD5B314 VA: 0xD5B314
-        // public int PNBKLGKCKGO(int IOPHIHFOOEP) { }
+        public int PNBKLGKCKGO(int IOPHIHFOOEP)
+		{
+			if(IOPHIHFOOEP < 5)
+			{
+				return OMNDNNFANCK[IOPHIHFOOEP];
+			}
+			return OPICBODCKGG;
+		}
 
         // // RVA: 0xD5B370 Offset: 0xD5B370 VA: 0xD5B370
-        // public int OCNHIHMAGMJ(int IOPHIHFOOEP) { }
+        public int OCNHIHMAGMJ(int IOPHIHFOOEP)
+		{
+			if (IOPHIHFOOEP < 5)
+			{
+				return DLPIKHDNIIE[IOPHIHFOOEP];
+			}
+			return OPICBODCKGG;
+		}
 
         // // RVA: 0xD5B3CC Offset: 0xD5B3CC VA: 0xD5B3CC
-        // public int DOIGAGAAAOP(int IOPHIHFOOEP) { }
+        public int DOIGAGAAAOP(int IOPHIHFOOEP)
+		{
+			if (IOPHIHFOOEP < 5)
+			{
+				return PBHPPCPKHDL[IOPHIHFOOEP];
+			}
+			return OPICBODCKGG;
+		}
 
         // // RVA: 0xD5B428 Offset: 0xD5B428 VA: 0xD5B428
-        // public int PNDKNFBLKDP() { }
+        public int PNDKNFBLKDP()
+		{
+			return FBAGIDFLHHI;
+		}
 
         // // RVA: 0xD5B430 Offset: 0xD5B430 VA: 0xD5B430
         // public bool OFHMEAJBIEL() { }

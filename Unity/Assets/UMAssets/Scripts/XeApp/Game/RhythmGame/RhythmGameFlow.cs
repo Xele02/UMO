@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
@@ -72,14 +73,22 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC6924 Offset: 0xDC6924 VA: 0xDC6924
 		public void ChangeWaitLoadingStatus()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			currentStatus = Status.WaitLoadingResource;
+			updater = this.WaitLoadingResource;
 		}
 
 		// // RVA: 0xDC69B4 Offset: 0xDC69B4 VA: 0xDC69B4
-		// public void ChangeWaitDownloadingSpecialResourceStatus() { }
+		public void ChangeWaitDownloadingSpecialResourceStatus()
+		{
+			currentStatus = Status.WaitDownloadingSpecial;
+			updater = this.WaitDownloadingSpecialResource;
+		}
 
 		// // RVA: 0xDC6A44 Offset: 0xDC6A44 VA: 0xDC6A44
-		// public void ChangeWaitLoadingSpecialResourceStatus() { }
+		public void ChangeWaitLoadingSpecialResourceStatus()
+		{
+			UnityEngine.Debug.LogError("TODO ChangeWaitLoadingSpecialResourceStatus");
+		}
 
 		// // RVA: 0xDC6AD4 Offset: 0xDC6AD4 VA: 0xDC6AD4
 		// public void ChangeWaitDownloadingDataStatus() { }
@@ -126,10 +135,108 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDC7128 Offset: 0xDC7128 VA: 0xDC7128
-		// private void WaitLoadingResource() { }
+		private void WaitLoadingResource()
+		{
+			if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
+			{
+				if (!rhythmGameResource.is3DModeMusicDataResoucesLoaded)
+					return;
+			}
+			else
+			{
+				if (!rhythmGameResource.is2DModeMusicDataResoucesLoaded)
+					return;
+			}
+			ChangeWaitDownloadingSpecialResourceStatus();
+		}
 
 		// // RVA: 0xDC726C Offset: 0xDC726C VA: 0xDC726C
-		// private void WaitDownloadingSpecialResource() { }
+		private void WaitDownloadingSpecialResource()
+		{
+			GameSetupData.TeamInfo teamInfo = Database.Instance.gameSetup.teamInfo;
+			GameSetupData.MusicInfo musicInfo = Database.Instance.gameSetup.musicInfo;
+			int stageDivaNum = musicInfo.onStageDivaNum;
+			MusicDirectionParamBase musicParam = rhythmGameResource.musicData.musicParam;
+			int basaraPos = musicParam.basaraPositionId;
+			int pos = basaraPos;
+			if (stageDivaNum - 1 > 0)
+				pos = stageDivaNum;
+			if ((stageDivaNum - 1 == 1) == (stageDivaNum - 2 < 0) && (pos == 1) == (pos - 1 < 0))
+			{
+				int freePos = 0;
+				for(int i = 0; i < stageDivaNum; i++)
+				{
+					if(teamInfo.danceDivaList[i].prismDivaId == 9)
+					{
+						if (teamInfo.danceDivaList[i].positionId == basaraPos)
+							break;
+						freePos = teamInfo.danceDivaList[i].positionId;
+						teamInfo.danceDivaList[i].positionId = basaraPos;
+					}
+				}
+				if(freePos != 0)
+				{
+					for(int i = 0; i < stageDivaNum; i++)
+					{
+						if (teamInfo.danceDivaList[i].prismDivaId != 9)
+						{
+							if(teamInfo.danceDivaList[i].positionId == basaraPos)
+							{
+								teamInfo.danceDivaList[i].positionId = freePos;
+								break;
+							}
+						}
+					}
+				}
+			}
+			EONOEHOKBEB_Music DbMusicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC(musicInfo.prismMusicId);
+			int wavId = 0;
+			if(musicInfo.isFreeMode)
+			{
+				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC(musicInfo.freeMusicId).KEFGPJBKAOD;
+			}
+			else
+			{
+				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ(musicInfo.storyMusicId).KEFGPJBKAOD;
+			}
+			PNGOLKLFFLH p = new PNGOLKLFFLH();
+			p.KHEKNNFCAOI_Init(teamInfo.prismValkyrieId, 0, 0);
+
+			List<MusicDirectionParamBase.ConditionSetting> settingList = new List<MusicDirectionParamBase.ConditionSetting>();
+			MusicDirectionParamBase.ConditionSetting cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[0].prismDivaId, teamInfo.danceDivaList[0].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC, teamInfo.danceDivaList[0].positionId);
+			settingList.Add(cond);
+			int cnt = 0;
+			for(int i = 0; i < 4; i++)
+			{
+				if (rhythmGameResource.subDivaResource.Count <= i) break;
+				if(cnt < stageDivaNum - 1)
+				{
+					if(teamInfo.danceDivaList[i + 1].prismDivaId == 0)
+					{
+						rhythmGameResource.subDivaResource[i] = null;
+					}
+					else
+					{
+						cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[i + 1].prismDivaId, teamInfo.danceDivaList[i + 1].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC, teamInfo.danceDivaList[i + 1].positionId);
+						settingList.Add(cond);
+					}
+				}
+				else
+				{
+					rhythmGameResource.subDivaResource[i] = null;
+				}
+			}
+			if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
+			{
+				rhythmGameResource.LoadSpecialDirectionResource(wavId, stageDivaNum, settingList);
+			}
+			else
+			{
+				rhythmGameResource.LoadSpecialResourceFor2DMode(wavId, stageDivaNum, settingList);
+			}
+			ChangeWaitLoadingSpecialResourceStatus();
+			UnityEngine.Debug.LogError("TODO check WaitDownloadingSpecialResource");
+		}
 
 		// // RVA: 0xDC80E4 Offset: 0xDC80E4 VA: 0xDC80E4
 		// private void WaitLoadingSpecialResource() { }

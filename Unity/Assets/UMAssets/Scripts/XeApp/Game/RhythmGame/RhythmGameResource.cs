@@ -53,7 +53,7 @@ namespace XeApp.Game.RhythmGame
 		public GameObject faildUiPrefab; // 0x84
 		public GameObject completeUiPrefab; // 0x88
 
-		// public bool isSpecialDirectionResourceLoaded { get; set; }
+		// public bool isSpecialDirectionResourceLoaded { get; set; } 0xBF50C0 0xBF5968
 		public bool isTakeoffDivaVoice { 
 			get
 			{ //  0xBF5E1C
@@ -75,31 +75,25 @@ namespace XeApp.Game.RhythmGame
 			} private set
 			{ // 0xBF5F98
 				return;
-			} } 
-		// public int enteredValkyrieModeVoiceId { get; set; }
-		// public int enterdDivaModeVoiceId { get; set; }
-		// public int enterdAwakenDivaModeVoiceId { get; set; }
-		// public int enterFoldWaveId_50 { get; set; }
-		// public int enterFoldWaveId_100 { get; set; }
-		// public bool isUITextureResoucesLoaded { get; set; }
-		// public bool is3DModeMusicDataResoucesLoaded { get; set; }
-		// public bool is2DModeMusicDataResoucesLoaded { get; set; }
-		// public bool is3DModeSpecialResoucesLoaded { get; set; }
-		// public bool is2DModeSpecialResoucesLoaded { get; set; }
-		// public bool is3DModeAllResoucesLoaded { get; set; }
-		// public bool is2DModeAllResoucesLoaded { get; set; }
+			} }
+		// public int enteredValkyrieModeVoiceId { get; private set; } 0xBF25DC 0xBF5F9C
+		// public int enterdDivaModeVoiceId { get; private set; } 0xBF5FA0 0xBF6058
+		// public int enterdAwakenDivaModeVoiceId { get; private set; } 0xBF605C 0xBF6114
+		// public int enterFoldWaveId_50 { get; private set; } 0xBF6118 0xBF61D0
+		// public int enterFoldWaveId_100 { get; private set; } 0xBF61D4 0xBF628C
+		// public bool isUITextureResoucesLoaded { get; private set; } 0xBF6290 0xBF62B0
+		public bool is3DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { } }// 0xBF6490 0xBF64BC
+		public bool is2DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { } } //0xBF64C0 0xBF64EC
+		// public bool is3DModeSpecialResoucesLoaded { get; private set; } 0xBF64F0 0xBF64F4
+		// public bool is2DModeSpecialResoucesLoaded { get; private set; } 0xBF64F8 0xBF64FC
+		// public bool is3DModeAllResoucesLoaded { get; private set; } 0xBF6500 0xBF66CC
+		// public bool is2DModeAllResoucesLoaded { get; private set; } 0xBF66D0 0xBF6744
 
 		// // RVA: 0xBF4744 Offset: 0xBF4744 VA: 0xBF4744
 		public void OnDestroy()
 		{
 			UnityEngine.Debug.LogError("TODO");
 		}
-
-		// // RVA: 0xBF50C0 Offset: 0xBF50C0 VA: 0xBF50C0
-		// public bool get_isSpecialDirectionResourceLoaded() { }
-
-		// // RVA: 0xBF5968 Offset: 0xBF5968 VA: 0xBF5968
-		// public void set_isSpecialDirectionResourceLoaded(bool value) { }
 
 		// // RVA: 0xBF5970 Offset: 0xBF5970 VA: 0xBF5970
 		// public int GetSpecialDirectionMovieId() { }
@@ -114,80 +108,8 @@ namespace XeApp.Game.RhythmGame
 			return null;
 		}
 
-		// // RVA: 0xBF25DC Offset: 0xBF25DC VA: 0xBF25DC
-		// public int get_enteredValkyrieModeVoiceId() { }
-
-		// // RVA: 0xBF5F9C Offset: 0xBF5F9C VA: 0xBF5F9C
-		// private void set_enteredValkyrieModeVoiceId(int value) { }
-
-		// // RVA: 0xBF5FA0 Offset: 0xBF5FA0 VA: 0xBF5FA0
-		// public int get_enterdDivaModeVoiceId() { }
-
-		// // RVA: 0xBF6058 Offset: 0xBF6058 VA: 0xBF6058
-		// private void set_enterdDivaModeVoiceId(int value) { }
-
-		// // RVA: 0xBF605C Offset: 0xBF605C VA: 0xBF605C
-		// public int get_enterdAwakenDivaModeVoiceId() { }
-
-		// // RVA: 0xBF6114 Offset: 0xBF6114 VA: 0xBF6114
-		// private void set_enterdAwakenDivaModeVoiceId(int value) { }
-
-		// // RVA: 0xBF6118 Offset: 0xBF6118 VA: 0xBF6118
-		// public int get_enterFoldWaveId_50() { }
-
-		// // RVA: 0xBF61D0 Offset: 0xBF61D0 VA: 0xBF61D0
-		// private void set_enterFoldWaveId_50(int value) { }
-
-		// // RVA: 0xBF61D4 Offset: 0xBF61D4 VA: 0xBF61D4
-		// public int get_enterFoldWaveId_100() { }
-
-		// // RVA: 0xBF628C Offset: 0xBF628C VA: 0xBF628C
-		// private void set_enterFoldWaveId_100(int value) { }
-
-		// // RVA: 0xBF6290 Offset: 0xBF6290 VA: 0xBF6290
-		// public bool get_isUITextureResoucesLoaded() { }
-
-		// // RVA: 0xBF62B0 Offset: 0xBF62B0 VA: 0xBF62B0
-		// private void set_isUITextureResoucesLoaded(bool value) { }
-
 		// // RVA: 0xBF62B4 Offset: 0xBF62B4 VA: 0xBF62B4
 		// private bool divaResourceIsMusicAllLoaded() { }
-
-		// // RVA: 0xBF6490 Offset: 0xBF6490 VA: 0xBF6490
-		// public bool get_is3DModeMusicDataResoucesLoaded() { }
-
-		// // RVA: 0xBF64BC Offset: 0xBF64BC VA: 0xBF64BC
-		// private void set_is3DModeMusicDataResoucesLoaded(bool value) { }
-
-		// // RVA: 0xBF64C0 Offset: 0xBF64C0 VA: 0xBF64C0
-		// public bool get_is2DModeMusicDataResoucesLoaded() { }
-
-		// // RVA: 0xBF64EC Offset: 0xBF64EC VA: 0xBF64EC
-		// private void set_is2DModeMusicDataResoucesLoaded(bool value) { }
-
-		// // RVA: 0xBF64F0 Offset: 0xBF64F0 VA: 0xBF64F0
-		// public bool get_is3DModeSpecialResoucesLoaded() { }
-
-		// // RVA: 0xBF64F4 Offset: 0xBF64F4 VA: 0xBF64F4
-		// private void set_is3DModeSpecialResoucesLoaded(bool value) { }
-
-		// // RVA: 0xBF64F8 Offset: 0xBF64F8 VA: 0xBF64F8
-		// public bool get_is2DModeSpecialResoucesLoaded() { }
-
-		// // RVA: 0xBF64FC Offset: 0xBF64FC VA: 0xBF64FC
-		// private void set_is2DModeSpecialResoucesLoaded(bool value) { }
-
-		// // RVA: 0xBF6500 Offset: 0xBF6500 VA: 0xBF6500
-		// public bool get_is3DModeAllResoucesLoaded() { }
-
-		// // RVA: 0xBF66CC Offset: 0xBF66CC VA: 0xBF66CC
-		// private void set_is3DModeAllResoucesLoaded(bool value) { }
-
-		// // RVA: 0xBF66D0 Offset: 0xBF66D0 VA: 0xBF66D0
-		// public bool get_is2DModeAllResoucesLoaded() { }
-
-		// // RVA: 0xBF6744 Offset: 0xBF6744 VA: 0xBF6744
-		// private void set_is2DModeAllResoucesLoaded(bool value) { }
 
 		// // RVA: 0xBF6748 Offset: 0xBF6748 VA: 0xBF6748
 		private void Awake()
@@ -213,7 +135,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xBF6B7C Offset: 0xBF6B7C VA: 0xBF6B7C
-		// public void LoadSpecialDirectionResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		public void LoadSpecialDirectionResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			UnityEngine.Debug.LogError("TODO LoadSpecialDirectionResource");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7451EC Offset: 0x7451EC VA: 0x7451EC
 		// // RVA: 0xBF6BBC Offset: 0xBF6BBC VA: 0xBF6BBC
@@ -284,7 +209,10 @@ namespace XeApp.Game.RhythmGame
 		// private IEnumerator LoadPilotTexture() { }
 
 		// // RVA: 0xBF8ED0 Offset: 0xBF8ED0 VA: 0xBF8ED0
-		// public void LoadSpecialResourceFor2DMode(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		public void LoadSpecialResourceFor2DMode(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			UnityEngine.Debug.LogError("TODO LoadSpecialResourceFor2DMode");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7455AC Offset: 0x7455AC VA: 0x7455AC
 		// // RVA: 0xBF8EFC Offset: 0xBF8EFC VA: 0xBF8EFC
