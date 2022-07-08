@@ -354,7 +354,7 @@ namespace XeApp.Game.RhythmGame
 			initData.musicData = resource.musicData;
 			initData.teamScoreValue = s.soul + s.vocal + s.charm;
 			initData.teamEnergyValue = s.support;
-			initData.supportRate = s.support / (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.HNMMJINNHII.MPAMBMKFCKK) + 1;
+			initData.supportRate = s.support / (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK) + 1;
 			initData.valkyrieId = t.valkyrieId;
 			initData.maxLife = s.life;
 			initData.isLiveSkip = false;

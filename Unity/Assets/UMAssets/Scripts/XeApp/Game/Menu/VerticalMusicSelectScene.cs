@@ -110,7 +110,7 @@ namespace XeApp.Game.Menu
 			if(isEvent)
 				m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
 			
-			m_isEndPresetCanvas = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.GDEKCOOBLMA.LPJLEHAJADA("mv_player_level", 5) <= 
+			m_isEndPresetCanvas = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5) <= 
 				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI.KCCLEHLLOFG.KIECDDFNCAN;
 
 			m_simulationButton.SetTicketNum(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI.KCCLEHLLOFG.GKKDNOFMJJN);
@@ -170,7 +170,8 @@ namespace XeApp.Game.Menu
 			m_musicList.OnUpdateCenter = (int index) =>
 			{
 				//0xBF00C4
-				UnityEngine.Debug.LogError("TODO OnUpdateCenter");
+				list_no = index;
+				ApplyMusicInfo();
 			};
 			m_musicList.OnUpdateClip = () =>
 			{
@@ -538,7 +539,7 @@ namespace XeApp.Game.Menu
 		{
 			long date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
 			int lastMusicId = GetLastStoryFreeMusicId();
-			int song_Thresold = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.GDEKCOOBLMA.LPJLEHAJADA("verticalmusicselect_music_type_threshold", 96000);
+			int song_Thresold = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("verticalmusicselect_music_type_threshold", 96000);
 			m_originalMusicDataList.Clear();
 			m_originalEventMusicDataList.Clear();
 			for(int i = 0; i < eventCategoryId; i++)
@@ -633,10 +634,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xBEAA40 Offset: 0xBEAA40 VA: 0xBEAA40 Slot: 53
-		//protected override void ApplyMusicInfo()
-		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
-		//}
+		protected override void ApplyMusicInfo()
+		{
+			UnityEngine.Debug.LogError("TODO !!!");
+		}
 
 		// // RVA: 0xBEBC94 Offset: 0xBEBC94 VA: 0xBEBC94
 		private int GetChangeBgId(VerticalMusicDataList.MusicListData musicListData)

@@ -75,10 +75,12 @@ namespace XeApp.Game.MusicSelect
 			if(Math.Truncate(val) == 0 && !isForce)
 				return;
 			int newIndex = _currentIndex + (int)Math.Truncate(val);
-			if(newIndex < 0)
+			_currentIndex = newIndex;
+			if (newIndex < 0)
 				_currentIndex = _itemCount - 1;
 			if(newIndex >= _itemCount)
 				_currentIndex = 0;
+			UnityEngine.Debug.Log("Current scroll index : " + _currentIndex+" "+ newIndex);
 			int startIndex = _currentIndex;
 			for(int i = 0; i < _overScrollItem.Length; i++)
 			{

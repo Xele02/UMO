@@ -101,6 +101,8 @@ namespace XeApp.Game.Menu
 				return;
 			UnityEngine.Debug.LogError("TODO MusicUpdateCenterItem");
 			obj.SetTitle(m_musicList[listIndex].MusicName);
+			if (OnUpdateCenter != null)
+				OnUpdateCenter.Invoke(listIndex);
 		}
 
 		// // RVA: 0xBE3850 Offset: 0xBE3850 VA: 0xBE3850

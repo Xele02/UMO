@@ -56,11 +56,11 @@ public class JKNNIKNKMNJ
     {
         if(IMMAOANGPNK.HHCJCDFCLOB != null)
         {
-            if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND != null)
+            if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
             {
-                if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.KDIALKDKBGE != null)
+                if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy != null)
                 {
-                    return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.KDIALKDKBGE.LPJLEHAJADA("intimacy_count_max", 5);
+                    return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.LPJLEHAJADA("intimacy_count_max", 5);
                 }
             }
         }

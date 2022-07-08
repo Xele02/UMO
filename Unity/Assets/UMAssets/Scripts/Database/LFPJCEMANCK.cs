@@ -58,7 +58,8 @@ public class PKKHIEAEDPC
 }
 
 
-public class LFPJCEMANCK : DIHHCBACKGG
+public class LFPJCEMANCK { }
+public class LFPJCEMANCK_Asset : DIHHCBACKGG
 {
 	public int[] OEEJIIIICCP; // 0x28
 	public Dictionary<string, int> AJHAKFLPNHF = new Dictionary<string, int>(); // 0x2C
@@ -78,7 +79,7 @@ public class LFPJCEMANCK : DIHHCBACKGG
 	// public int MCHKDCGEAOB() { }
 
 	// RVA: 0xD6E270 Offset: 0xD6E270 VA: 0xD6E270
-	public LFPJCEMANCK()
+	public LFPJCEMANCK_Asset()
     {
         JIKKNHIAEKG = "";
         LNIMEIMBCMF = false;
@@ -97,7 +98,7 @@ public class LFPJCEMANCK : DIHHCBACKGG
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
         UnityEngine.Debug.LogError("TODO");
-        return false;
+        return true;
     }
 
 	// // RVA: 0xD6EB28 Offset: 0xD6EB28 VA: 0xD6EB28 Slot: 10

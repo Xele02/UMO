@@ -220,7 +220,7 @@ namespace XeApp.Game.Menu
 		protected abstract void ApplyCommonInfo();
 
 		// // RVA: -1 Offset: -1 Slot: 53
-		// protected abstract void ApplyMusicInfo();
+		protected abstract void ApplyMusicInfo();
 
 		// // RVA: -1 Offset: -1 Slot: 54
 		// protected abstract void DelayedApplyMusicInfo();

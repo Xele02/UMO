@@ -471,7 +471,7 @@ public class NKGJPJPHLIF
 							{
 									if(EJDOEBLBGIO.LNAHEIEIBOI)
 									{
-											if(EJDOEBLBGIO.NKEBMCIMJND.GDEKCOOBLMA.LPJLEHAJADA("server_time_auto_update", 0) == 0)
+											if(EJDOEBLBGIO.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("server_time_auto_update", 0) == 0)
 													return;
 											if(LJBHLFGDBHA - Utility.GetCurrentUnixTime() > 0) // ???
 											{

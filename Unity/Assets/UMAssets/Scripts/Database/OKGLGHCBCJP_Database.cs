@@ -331,7 +331,7 @@ public class OKGLGHCBCJP_Database
 	private static Dictionary<int, BIFFPAKDHJJ> BGEJFKHOMOC = new Dictionary<int, BIFFPAKDHJJ>() {
 		// {0,() => { return new GPMHOAKFALE(); } }, // 0x149D500				"adventure",
 		// {1,() => { return new IPJBAPLFECP(); } }, //0x149D56C				"anketo",
-		// {2,() => { return new LFPJCEMANCK(); } }, //0x149D5D8				"asset",
+		 {2,() => { return new LFPJCEMANCK_Asset(); } }, //0x149D5D8				"asset",
 		// {3,() => { return new JKICPBIIHNE(); } }, //0x149D644				"bingo",
 		{4,() => { return new KOGHKIODHPA_Board(); } }, //0x149D6B0					"board",
 		// {5,() => { return new HHJHIFJIKAC(); } }, //0x149D71C				"bonus_vc",
@@ -450,21 +450,21 @@ public class OKGLGHCBCJP_Database
 
 	// public GPMHOAKFALE EFMAIKAHFEK { get; private set; } // 0x14 JLLBGAHIIBG LLCFMAELHEP IEBCIAFOBIN
 	// public IPJBAPLFECP OILKBADFBOK { get; private set; } // 0x18 PMEPLHGCOPN ACKDFMAHCPG IKNMGMOEIBJ
-	   public LFPJCEMANCK IELDDHJMFKN { get; private set; } // 0x1C POIPNMNLPII LDEGIHHDKIM OPKDGNFPLMJ
+	   public LFPJCEMANCK_Asset IELDDHJMFKN_Asset { get; private set; } // 0x1C POIPNMNLPII LDEGIHHDKIM OPKDGNFPLMJ
 	// public JKICPBIIHNE FPOIPGFFAPE { get; private set; } // 0x20 IGDEDAEJHHE DGFJAPEKHFO GNMGEPPDCKA
-	   public KOGHKIODHPA_Board JEMMMJEJLNL { get; private set; } // 0x24 JCNENMIJKJM LEOMPFKGIDH OJLDODJNICJ
+	   public KOGHKIODHPA_Board JEMMMJEJLNL_Board { get; private set; } // 0x24 JCNENMIJKJM LEOMPFKGIDH OJLDODJNICJ
 	// public HHJHIFJIKAC NBKNAAPBFFL { get; private set; } // 0x28 DPLHDEEFDJM ADJIKEFIPJA JNIKDFJOHFA
 	// public AIPOFGJGPKI NGCCGLLLDIB { get; private set; } // 0x2C AKMEDCJEFIM ONFFEFOLNJA KHNFCNCCAJE
 	// public HHPEMHHCKBE ALFKMKICDPP { get; private set; } // 0x30 EGAMKFEHKOH OFKPEOKIBOP FBMPHCEEOGP
 	// public PLPBJOFICEJ GOGFKAECFIP { get; private set; } // 0x34 MFAKBNOPMAL ONAJMJDFKII OKGBJKKKBJK
-	   public LCLCCHLDNHJ_Costume MFPNGNMFEAL { get; private set; } // 0x38 BNPFDJNHBIN BHOKMJJHOOK PCDDICJFIEI
-	   public NDBFKHKMMCE_DecoItem EPAHOAKPAJJ { get; private set; } // 0x3C LKAKMHGBHKJ JHPEPALKAMJ BHEAGEGHAJB
+	   public LCLCCHLDNHJ_Costume MFPNGNMFEAL_Costume { get; private set; } // 0x38 BNPFDJNHBIN BHOKMJJHOOK PCDDICJFIEI
+	   public NDBFKHKMMCE_DecoItem EPAHOAKPAJJ_DecoItem { get; private set; } // 0x3C LKAKMHGBHKJ JHPEPALKAMJ BHEAGEGHAJB
 	// public JEPMHCPBIGD CIGBHCHOPEO { get; private set; } // 0x40 BONFHNBALOL GNIGMPDFEPP LFDFGOBDAMF
 	// public GAEBMAEDNAN PJGDIJPCHAK { get; private set; } // 0x44 JCDPLJOOJLG CMDIEHHIFOK CMJFJNNDFJJ
-	   public BBLECJKKKLA_DecoSetItem MJALLIOHKEJ { get; private set; } // 0x48 ABEMGBAJEBL BABMGOIFCOH GIIEMCFFDBD
+	   public BBLECJKKKLA_DecoSetItem MJALLIOHKEJ_DecoSetItem { get; private set; } // 0x48 ABEMGBAJEBL BABMGOIFCOH GIIEMCFFDBD
 	// public NEGELNMPEPH BGKKOOGPEFD { get; private set; } // 0x4C AAPCGHFOHFC BALCOIHEDMF BKGBCKMOMGN
 	// public IHFIAFDLAAK GAPONCJOKAC { get; private set; } // 0x50 NCNFBFCCPGG OJGMINMADBB NEPJLJDPKKN
-	   public HPBPIOPPDCB_Diva MGFMPKLLGHE { get; private set; } // 0x54 ONCMJNDIMPD // ODGINDHEIBJ GIFOPLEGJCI
+	   public HPBPIOPPDCB_Diva MGFMPKLLGHE_Diva { get; private set; } // 0x54 ONCMJNDIMPD // ODGINDHEIBJ GIFOPLEGJCI
 	// public HMIJOOPHJLB OAINIGNLJKC { get; private set; } // 0x58 EFGHBGKGCDI KNBBENGMPJL MAPJOGCOBCF
 	// public NBPHJDCOECH HGLIIPFLMFB { get; private set; } // 0x5C DNBKBMJEDFG GEHKLFKNGDK DAEJHNBAAHD
 	// public IHGBPAJMJFK LBNBNAFGMDE { get; private set; } // 0x60 DOKBBBOMOIP AEKIOLPFPCO PMEOIDAFOLD
@@ -479,37 +479,37 @@ public class OKGLGHCBCJP_Database
 	// public ABBOEIPOBLJ KHPOJKHKLEM { get; private set; } // 0x84 MOKKFOJJBOL GPOGPBKFNLJ DILCIJAHIOB
 	// public DKCJADHKGAN CLLPBOPLICM { get; private set; } // 0x88 FNJBPMENMGD GFEDAIKEGGC AIDDOHHKJGG
 	// public FBIOJHECAHB NBEMLGADAGK { get; private set; } // 0x8C DCKAOHBMJLM INDINPLHFPO CJBHGJLJBNJ
-	   public JJOPEDJCCJK_Exp FMPEMFPLPDA { get; private set; } // 0x90 NFHAGPKJMCM JBOGJKMKPHB LJNHCFIIOBB
+	   public JJOPEDJCCJK_Exp FMPEMFPLPDA_Exp { get; private set; } // 0x90 NFHAGPKJMCM JBOGJKMKPHB LJNHCFIIOBB
 	// public BIHCALIAJII OINLLHOMEAK { get; private set; } // 0x94 NFNMMHLNOME ACMDICBGLLH AECOJNDBPPA
-	   public PMDCIJMMNGK_GachaTicket GKMAHADAAFI { get; private set; } // 0x98 CDPNLBODAFG MIOKEFPFJPL JCGBPLBDCED
-	   public LDDDBPNGGIN_Game HNMMJINNHII { get; private set; } // 0x9C OEGOKKFEMLN // NNKOOANMMJN FDBLNEBHBKD
+	   public PMDCIJMMNGK_GachaTicket GKMAHADAAFI_GachaTicket { get; private set; } // 0x98 CDPNLBODAFG MIOKEFPFJPL JCGBPLBDCED
+	   public LDDDBPNGGIN_Game HNMMJINNHII_Game { get; private set; } // 0x9C OEGOKKFEMLN // NNKOOANMMJN FDBLNEBHBKD
 	// public KEEKEFEPKFN NKDGLGCAPEI { get; private set; } // 0xA0 OEBKCKBOHDC GKNAKMMFPJG FPNMNKOHIDL
 	// public KCDJCKCKKFM LOJAMHAADBF { get; private set; } // 0xA4 PHJBEOHOPNK BEONJGJAHHA GKIMOCCMPNE
 	// public ALJHJDHNFFB PFEKKPABPKL { get; private set; } // 0xA8 ODEEPLDCIDD CJNCHHCJDLG EJKAKGDGDOJ
 	// public JJCJKALEIAC NFDHMGGLEPN { get; private set; } // 0xAC GGHPDLEFLAF KFBIAJPDFOL BLPBJMIOOHJ
 	// public NPCCDMKJBMM MGIMEEEALPK { get; private set; } // 0xB0 IIGKAHAPDCK EMOJEAIPDCL KJJAAHMMPDD
 	// public JKMLBONMAHD MLGEHCJPAFB { get; private set; } // 0xB4 DIOBCOIDGBL KLENJIKKNGL MCEKLAONFOO
-	   public GJALOMELEHD_Intimacy KDIALKDKBGE { get; private set; } // 0xB8 AJILIAMLKCN OHOFMNKPACI AJNFIOMEBPE
+	   public GJALOMELEHD_Intimacy KDIALKDKBGE_Intimacy { get; private set; } // 0xB8 AJILIAMLKCN OHOFMNKPACI AJNFIOMEBPE
 	// public LLKLAKGKNLD HDGOHBFKKDM { get; private set; } // 0xBC GOCPJPDCIFF HNHCBNDJBIL OMHPACMOBMD
 	// public EGLOKAEIHCB IHPFCIJKFIC { get; private set; } // 0xC0 DLCGGEGFOFM BKAPBBKJELI MINMKCJFHDG
 	// public HHFFOACILKG ICICKEBMEFA { get; private set; } // 0xC4 BLEKIIHCAEL ECAMAOEFEJK IEOJCBOIKPN
-	   public KBCCGHLCFNO_MonthlyPass MEGJDBJCEOC { get; private set; } // 0xC8 LAJCNNENFPJ MIALNGOCOPJ NABHFEAEHFH
-	   public LPPGENBEECK_musicMaster IBPAFKKEKNK { get; private set; } // 0xCC CKFEJCIKLAE AHENIIKNNJF HMKLOBHNMMI
+	   public KBCCGHLCFNO_MonthlyPass MEGJDBJCEOC_MonthlyPass { get; private set; } // 0xC8 LAJCNNENFPJ MIALNGOCOPJ NABHFEAEHFH
+	   public LPPGENBEECK_musicMaster IBPAFKKEKNK_Music { get; private set; } // 0xCC CKFEJCIKLAE AHENIIKNNJF HMKLOBHNMMI
 	// public GJAEGCMKMEK NEGKEEAFKHP { get; private set; } // 0xD0 NFCPFDJHNFE HEMDMBJABPN EJFOCHNEPKD
 	// public LGHIPHEDCNC LBCMJGOOHLJ { get; private set; } // 0xD4 NAAKJHEPHGP NFGKMIAHJHD FMJANBICBME
 	// public MPOEMCEBBJH OBGGLAKOHKP { get; private set; } // 0xD8 AHLBGPDJMCC PLOCKLBILGJ CFGIBLPKPOH
 	// public MDACFBPPIHD LPFEHNJEJFB { get; private set; } // 0xDC HFOPPMPKKFL BCAGHHBCENF FKMAMMGADKI
 	// public DHOJHGODBAB MHGPMMIDKMM { get; private set; } // 0xE0 HFKCBLFIKEC BODCNAFFNII JFGOKBPMCFL
 	// public CKDOOBKOJBB KKIMFMKOHFH { get; private set; } // 0xE4 NFOFMEKFHEA AMANIEHMCLH OHKJEENNABM
-	   public MLIBEPGADJH_Scene ECNHDEHADGL { get; private set; } // 0xE8 IEIOOBGMFNI ACAKHGDFOPE MINEODNFCJG
+	   public MLIBEPGADJH_Scene ECNHDEHADGL_Scene { get; private set; } // 0xE8 IEIOOBGMFNI ACAKHGDFOPE MINEODNFCJG
 	// public BKPAPCMJKHE IFLGCDGOLOP { get; private set; } // 0xEC LPLEPMGGDMC JPPGBAEFJHD NNMGMDJDAEB
 	// public JNKEEAOKNCI FOFADHAENKC { get; private set; } // 0xF0 EMMJGCNLPIC AIKMDJIOIPO ODHIIKEDPDK
 	// public BOKMNHAFJHF OMGFKMANMAB { get; private set; } // 0xF4 MFLNAPMHPKD IEFPCCJONCN FJJMCAEKDCM
 	// public PPNFHHPJOKK OOEPHOEFBNL { get; private set; } // 0xF8 GEDHKEFKHEH HCAIIFDMGHF ELGOCAOHJBM
 	// public LAEGMENIEDB OHCIFMDPAPD { get; private set; } // 0xFC OCCBGBFIPFH HLLFEGMBGLE IKHIJOGKIAL
-	   public PEBFNABDJDI_System GDEKCOOBLMA { get; private set; } // 0x100 PINEBDOIEIB LIJDDDCBNPL AAEDGCBNJAO
+	   public PEBFNABDJDI_System GDEKCOOBLMA_System { get; private set; } // 0x100 PINEBDOIEIB LIJDDDCBNPL AAEDGCBNJAO
 	// public BCKMELFCKKN KNMFNBEOGON { get; private set; } // 0x104 CLNAKEBEBIM HAAKPEOBDIO JNKAICHDNND
-	   public JOHKNBEFHHP_TitleBanner ACPALDEELCL { get; private set; } // 0x108 MOHDEFAGJCD HCJMPMCLFAL OEBNPODPBGG
+	   public JOHKNBEFHHP_TitleBanner ACPALDEELCL_TitleBanner { get; private set; } // 0x108 MOHDEFAGJCD HCJMPMCLFAL OEBNPODPBGG
 	// public DGDIEDDPNNG NMJEDFNPIPL { get; private set; } // 0x10C AIDFHJFIJJE BOGKAJBELIJ ONFDHFKPFHK
 	// public DKJMDIFAKKD KCCDBKIOLDJ { get; private set; } // 0x110 NFOKONGDFNH MJBBGKMNMKH LFKKHMAFIBA
 	// public INDEPDKCJDD FBGKBGNIHGC { get; private set; } // 0x114 MOPJLGOMNLJ BAGFGFIMNLH KPAEENCFPIH
@@ -688,21 +688,21 @@ public class OKGLGHCBCJP_Database
 		MGJKEJHEBPO = new List<DIHHCBACKGG>();
 		// EFMAIKAHFEK = null;
 		// OILKBADFBOK = null;
-		IELDDHJMFKN = null;
+		IELDDHJMFKN_Asset = null;
 		// FPOIPGFFAPE = null;
-		JEMMMJEJLNL = null;
+		JEMMMJEJLNL_Board = null;
 		// NBKNAAPBFFL = null;
 		// NGCCGLLLDIB = null;
 		// ALFKMKICDPP = null;
 		// GOGFKAECFIP = null;
-		MFPNGNMFEAL = null;
-		EPAHOAKPAJJ = null;
+		MFPNGNMFEAL_Costume = null;
+		EPAHOAKPAJJ_DecoItem = null;
 		// CIGBHCHOPEO = null;
 		// PJGDIJPCHAK = null;
-		MJALLIOHKEJ = null;
+		MJALLIOHKEJ_DecoSetItem = null;
 		// BGKKOOGPEFD = null;
 		// GAPONCJOKAC = null;
-		MGFMPKLLGHE = null;
+		MGFMPKLLGHE_Diva = null;
 		// OAINIGNLJKC = null;
 		// HGLIIPFLMFB = null;
 		// LBNBNAFGMDE = null;
@@ -717,37 +717,37 @@ public class OKGLGHCBCJP_Database
 		// KHPOJKHKLEM = null;
 		// CLLPBOPLICM = null;
 		// NBEMLGADAGK = null;
-		FMPEMFPLPDA = null;
+		FMPEMFPLPDA_Exp = null;
 		// OINLLHOMEAK = null;
-		GKMAHADAAFI = null;
-		HNMMJINNHII = null;
+		GKMAHADAAFI_GachaTicket = null;
+		HNMMJINNHII_Game = null;
 		// NKDGLGCAPEI = null;
 		// LOJAMHAADBF = null;
 		// PFEKKPABPKL = null;
 		// NFDHMGGLEPN = null;
 		// MGIMEEEALPK = null;
 		// MLGEHCJPAFB = null;
-		KDIALKDKBGE = null;
+		KDIALKDKBGE_Intimacy = null;
 		// HDGOHBFKKDM = null;
 		// IHPFCIJKFIC = null;
 		// ICICKEBMEFA = null;
-		MEGJDBJCEOC = null;
-		IBPAFKKEKNK = null;
+		MEGJDBJCEOC_MonthlyPass = null;
+		IBPAFKKEKNK_Music = null;
 		// NEGKEEAFKHP = null;
 		// LBCMJGOOHLJ = null;
 		// OBGGLAKOHKP = null;
 		// LPFEHNJEJFB = null;
 		// MHGPMMIDKMM = null;
 		// KKIMFMKOHFH = null;
-		ECNHDEHADGL = null;
+		ECNHDEHADGL_Scene = null;
 		// IFLGCDGOLOP = null;
 		// FOFADHAENKC = null;
 		// OMGFKMANMAB = null;
 		// OOEPHOEFBNL = null;
 		// OHCIFMDPAPD = null;
-		GDEKCOOBLMA = null;
+		GDEKCOOBLMA_System = null;
 		// KNMFNBEOGON = null;
-		ACPALDEELCL = null;
+		ACPALDEELCL_TitleBanner = null;
 		// NMJEDFNPIPL = null;
 		// KCCDBKIOLDJ = null;
 		// FBGKBGNIHGC = null;
@@ -770,21 +770,21 @@ public class OKGLGHCBCJP_Database
 				{
 					// case 0: EFMAIKAHFEK = item; break;
 					// case 1: OILKBADFBOK = item; break;
-					case 2: IELDDHJMFKN = (LFPJCEMANCK)item; break;
+					case 2: IELDDHJMFKN_Asset = (LFPJCEMANCK_Asset)item; break;
 					// case 3: FPOIPGFFAPE = item; break;
-					case 4: JEMMMJEJLNL = (KOGHKIODHPA_Board)item; break;
+					case 4: JEMMMJEJLNL_Board = (KOGHKIODHPA_Board)item; break;
 					// case 5: NBKNAAPBFFL = item; break;
 					// case 6: NGCCGLLLDIB = item; break;
 					// case 7: ALFKMKICDPP = item; break;
 					// case 8: GOGFKAECFIP = item; break;
-					case 9: MFPNGNMFEAL = (LCLCCHLDNHJ_Costume)item; break;
-					case 10: EPAHOAKPAJJ = (NDBFKHKMMCE_DecoItem)item; break;
+					case 9: MFPNGNMFEAL_Costume = (LCLCCHLDNHJ_Costume)item; break;
+					case 10: EPAHOAKPAJJ_DecoItem = (NDBFKHKMMCE_DecoItem)item; break;
 					// case 11: CIGBHCHOPEO = item; break;
 					// case 12: PJGDIJPCHAK = item; break;
-					case 13: MJALLIOHKEJ = (BBLECJKKKLA_DecoSetItem)item; break;
+					case 13: MJALLIOHKEJ_DecoSetItem = (BBLECJKKKLA_DecoSetItem)item; break;
 					// case 14: BGKKOOGPEFD = item; break;
 					// case 15: GAPONCJOKAC = item; break;
-					case 16: MGFMPKLLGHE = (HPBPIOPPDCB_Diva)item; break;
+					case 16: MGFMPKLLGHE_Diva = (HPBPIOPPDCB_Diva)item; break;
 					// case 17: OAINIGNLJKC = item; break;
 					// case 18: HGLIIPFLMFB = item; break;
 					// case 19: LBNBNAFGMDE = item; break;
@@ -799,37 +799,37 @@ public class OKGLGHCBCJP_Database
 					// case 74: KHPOJKHKLEM = item; break;
 					// case 75: CLLPBOPLICM = item; break;
 					// case 76: NBEMLGADAGK = item; break;
-					case 77: FMPEMFPLPDA = (JJOPEDJCCJK_Exp)item; break;
+					case 77: FMPEMFPLPDA_Exp = (JJOPEDJCCJK_Exp)item; break;
 					// case 78: OINLLHOMEAK = item; break;
-					case 79: GKMAHADAAFI = (PMDCIJMMNGK_GachaTicket)item; break;
-					case 80: HNMMJINNHII = (LDDDBPNGGIN_Game)item; break;
+					case 79: GKMAHADAAFI_GachaTicket = (PMDCIJMMNGK_GachaTicket)item; break;
+					case 80: HNMMJINNHII_Game = (LDDDBPNGGIN_Game)item; break;
 					// case 81: NKDGLGCAPEI = item; break;
 					// case 82: LOJAMHAADBF = item; break;
 					// case 83: PFEKKPABPKL = item; break;
 					// case 84: NFDHMGGLEPN = item; break;
 					// case 85: MGIMEEEALPK = item; break;
 					// case 86: MLGEHCJPAFB = item; break;
-					case 87: KDIALKDKBGE = (GJALOMELEHD_Intimacy)item; break;
+					case 87: KDIALKDKBGE_Intimacy = (GJALOMELEHD_Intimacy)item; break;
 					// case 88: HDGOHBFKKDM = item; break;
 					// case 89: IHPFCIJKFIC = item; break;
 					// case 90: ICICKEBMEFA = item; break;
-					case 91: MEGJDBJCEOC = (KBCCGHLCFNO_MonthlyPass)item; break;
-					case 92: IBPAFKKEKNK = (LPPGENBEECK_musicMaster)item; break;
+					case 91: MEGJDBJCEOC_MonthlyPass = (KBCCGHLCFNO_MonthlyPass)item; break;
+					case 92: IBPAFKKEKNK_Music = (LPPGENBEECK_musicMaster)item; break;
 					// case 93: NEGKEEAFKHP = item; break;
 					// case 94: LBCMJGOOHLJ = item; break;
 					// case 95: OBGGLAKOHKP = item; break;
 					// case 96: LPFEHNJEJFB = item; break;
 					// case 97: MHGPMMIDKMM = item; break;
 					// case 98: KKIMFMKOHFH = item; break;
-					case 99: ECNHDEHADGL = (MLIBEPGADJH_Scene)item; break;
+					case 99: ECNHDEHADGL_Scene = (MLIBEPGADJH_Scene)item; break;
 					// case 100: IFLGCDGOLOP = item; break;
 					// case 101: FOFADHAENKC = item; break;
 					// case 102: OMGFKMANMAB = item; break;
 					// case 103: OOEPHOEFBNL = item; break;
 					// case 104: OHCIFMDPAPD = item; break;
-					case 105: GDEKCOOBLMA = (PEBFNABDJDI_System)item; break;
+					case 105: GDEKCOOBLMA_System = (PEBFNABDJDI_System)item; break;
 					// case 106: KNMFNBEOGON = item; break;
-					case 107: ACPALDEELCL = (JOHKNBEFHHP_TitleBanner)item; break;
+					case 107: ACPALDEELCL_TitleBanner = (JOHKNBEFHHP_TitleBanner)item; break;
 					// case 108: LINHIDCNAMG = item; break;
 					// case 109: KIBMNCOLJNC = item; break;
 					// case 110: NMJEDFNPIPL = item; break;

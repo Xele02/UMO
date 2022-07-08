@@ -39,7 +39,7 @@ public class NHPDPKHMFEP
 			{
 				if(IMMAOANGPNK.HHCJCDFCLOB == null)
 					return false;
-				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.MEGJDBJCEOC.LPJLEHAJADA("always_get_subscription", 0) != 0;
+				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.LPJLEHAJADA("always_get_subscription", 0) != 0;
 			}
 			return true;
 		} 

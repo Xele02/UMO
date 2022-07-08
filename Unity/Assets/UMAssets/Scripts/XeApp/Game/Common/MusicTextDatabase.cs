@@ -90,7 +90,7 @@ namespace XeApp.Game.Common
 				textInfo.dAnmStoreURL = "";
 				if(str != "0" && str != "")
 				{
-					textInfo.dAnmStoreURL = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.GDEKCOOBLMA.JLJEEMEOPLE[str];
+					textInfo.dAnmStoreURL = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE[str];
 				}
 				textInfo.storyDesc = (string)text[(int)info[story]];
 				textInfo.storyTitle = (string)text[(int)info[s_title]];

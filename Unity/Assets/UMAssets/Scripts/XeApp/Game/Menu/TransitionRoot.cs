@@ -629,13 +629,13 @@ namespace XeApp.Game.Menu
 			private void SetupPrefabSwitchTable()
 			{
 				prefabSwitchTable.Clear();
-				PEBFNABDJDI_System p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.GDEKCOOBLMA;
+				PEBFNABDJDI_System p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System;
 				for(int i = 0; i < assetBundleNames.Length; i++)
 				{
-					if(p.LMBIOEDHNHB.ContainsKey(assetBundleNames[i].prefabName))
+					if(p.LMBIOEDHNHB_SceneSwitch.ContainsKey(assetBundleNames[i].prefabName))
 					{
-						BIJMLAPNMAB b = p.LMBIOEDHNHB[assetBundleNames[i].prefabName];
-						PrefabSwitchInfo info = new PrefabSwitchInfo((TransitionList.Type)i, b.AEMLILCNODL, b.OIPCKOBNHJL);
+						BIJMLAPNMAB_SceneSwitch b = p.LMBIOEDHNHB_SceneSwitch[assetBundleNames[i].prefabName];
+						PrefabSwitchInfo info = new PrefabSwitchInfo((TransitionList.Type)i, b.AEMLILCNODL_MasterVersion, b.OIPCKOBNHJL_PrefabName);
 						prefabSwitchTable.Add(info);
 					}
 				}

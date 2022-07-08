@@ -40,7 +40,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 	public List<OGNALGCHKED> JDBLDOPHHNL { get; set; } // IJDNKAPDDFF 0x24 // FCBDHDGIMHO // OOLGKMGAHOP
 	public List<EJABAIAPFLK> BHDJIIHLMDM { get; set; } // BFKDBLJIGLO 0x28 // JIAMJJLMMLF // HBDIDBHLJCO
 	public Dictionary<string, string> JLJEEMEOPLE { get; set; } // CJGBLCGHHEI 0x2C // DCHGJLCADKP // ICHNENECFGN
-	public Dictionary<string, BIJMLAPNMAB> LMBIOEDHNHB { get; set; } // OOCFKPKLBJH 0x30 // BGCEPJDLFFA // JPLHJCLOPKE
+	public Dictionary<string, BIJMLAPNMAB_SceneSwitch> LMBIOEDHNHB_SceneSwitch { get; set; } // OOCFKPKLBJH 0x30 // BGCEPJDLFFA // JPLHJCLOPKE
 	public Dictionary<string, NNJFKLBPBNK> FJOEBCMGDMI { get; set; } // IHKPIFIBECO 0x34 // GAMGELHIHHI // DDDEJIJGGBJ
 	public Dictionary<string, CEBFFLDKAEC> OHJFBLFELNK { get; set; } // KLDCHOIPJGB 0x38 // AEMNOGNEBOJ // DGKDBOAMNBB
 	public Dictionary<string, int> KBAPDOLLLAN { get; set; } // BKGIMGCBBOC 0x3C // OOEBAHFJPAB // MCMHANFFFNF
@@ -85,7 +85,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
         BHDJIIHLMDM = new List<EJABAIAPFLK>();
         JLJEEMEOPLE = new Dictionary<string, string>();
         LMHMIIKCGPE = 79;
-        LMBIOEDHNHB = new Dictionary<string, BIJMLAPNMAB>();
+        LMBIOEDHNHB_SceneSwitch = new Dictionary<string, BIJMLAPNMAB_SceneSwitch>();
         OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC>();
         KBAPDOLLLAN = new Dictionary<string, int>();
         JNJAOACIGOC = new List<CEBFFLDKAEC>();
@@ -125,10 +125,10 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 		}
 		for(int i = 0; i < reader.GJOBPIOOEHD.Length; i++)
 		{
-			BIJMLAPNMAB data = new BIJMLAPNMAB();
-			data.OIPCKOBNHJL = reader.GJOBPIOOEHD[i].BDCNFMMAEJJ;
-			data.AEMLILCNODL = (int)reader.GJOBPIOOEHD[i].CJOKJFGDHLD;
-			LMBIOEDHNHB.Add(reader.GJOBPIOOEHD[i].GJCCGIFLKPD, data);
+			BIJMLAPNMAB_SceneSwitch data = new BIJMLAPNMAB_SceneSwitch();
+			data.OIPCKOBNHJL_PrefabName = reader.GJOBPIOOEHD[i].BDCNFMMAEJJ;
+			data.AEMLILCNODL_MasterVersion = (int)reader.GJOBPIOOEHD[i].CJOKJFGDHLD;
+			LMBIOEDHNHB_SceneSwitch.Add(reader.GJOBPIOOEHD[i].GJCCGIFLKPD, data);
 		}
 
 		return true;
@@ -264,10 +264,11 @@ public class EJABAIAPFLK
 	// public EMOLDNAEDMG MGCBIOALLFE(BBHNACPENDM AHEFHIMGIBI) { }
 }
 
-public class BIJMLAPNMAB
+public class BIJMLAPNMAB { }
+public class BIJMLAPNMAB_SceneSwitch
 {
-	public string OIPCKOBNHJL; // 0x8
-	public int AEMLILCNODL; // 0xC
+	public string OIPCKOBNHJL_PrefabName; // 0x8
+	public int AEMLILCNODL_MasterVersion; // 0xC
 
 	// // RVA: 0xC85350 Offset: 0xC85350 VA: 0xC85350
 	// public uint CAOGDCBPBAN() { }

@@ -359,8 +359,8 @@ namespace XeApp.Game.Common
 			AssetBundleLoadAllAssetOperationBase operation = null;
 			
 			IMMAOANGPNK a = IMMAOANGPNK.HHCJCDFCLOB;
-			OKGLGHCBCJP_Database o = a.NKEBMCIMJND;
-			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL;
+			OKGLGHCBCJP_Database o = a.NKEBMCIMJND_Database;
+			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL_Costume;
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO cos_master = l.NLIBHNJNJAN(divaId, modelId);
 			bundleName.SetFormat("dv/ca/cmn.xab", "");
 			
@@ -491,8 +491,8 @@ namespace XeApp.Game.Common
 			List<GameObject> list_effect = new List<GameObject>();
 			GameObject wind = null;
 			IMMAOANGPNK im = IMMAOANGPNK.HHCJCDFCLOB;
-			OKGLGHCBCJP_Database o = im.NKEBMCIMJND;
-			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL;
+			OKGLGHCBCJP_Database o = im.NKEBMCIMJND_Database;
+			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL_Costume;
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO a = l.NLIBHNJNJAN(divaId, modelId);
 			int e = a.EGLDFPILJLG;
 			if(e == 0)
@@ -684,8 +684,8 @@ namespace XeApp.Game.Common
 			if(mikeStandAnimationOverrideClip != null)
 			{
 				IMMAOANGPNK i = IMMAOANGPNK.HHCJCDFCLOB;
-				OKGLGHCBCJP_Database o = i.NKEBMCIMJND;
-				HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE;
+				OKGLGHCBCJP_Database o = i.NKEBMCIMJND_Database;
+				HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE_Diva;
 				BJPLLEBHAGO b = h.GCINIJEMHFK(divaId);
 				int ms = b.IDDHKOEFJFB;
 				yield return StartCoroutine(Co_LoadMikeStandResource(ms));
@@ -897,8 +897,8 @@ namespace XeApp.Game.Common
 			menuMotionOverride.simpletalk = new List<MenuMotionOverrideResource.Reaction>(MAX_SIMPLE_TALK);
 			
 			IMMAOANGPNK im = IMMAOANGPNK.HHCJCDFCLOB;
-			OKGLGHCBCJP_Database o = im.NKEBMCIMJND;
-			HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE;
+			OKGLGHCBCJP_Database o = im.NKEBMCIMJND_Database;
+			HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE_Diva;
 			BJPLLEBHAGO b = h.GCINIJEMHFK(divaId);
 			int personalityId = b.FPMGHDKACOF;
 			

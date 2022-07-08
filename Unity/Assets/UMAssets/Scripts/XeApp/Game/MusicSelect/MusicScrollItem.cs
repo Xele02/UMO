@@ -65,6 +65,8 @@ namespace XeApp.Game.MusicSelect
 		{
 			_startPos = RectTransform.anchoredPosition;
 			UnityEngine.Debug.LogError("TODO ScrollItem Awake");
+			m_highLevelObj.gameObject.SetActive(false);
+			m_eventName.transform.parent.gameObject.SetActive(false);
 		}
 
 		// RVA: 0xC9E00C Offset: 0xC9E00C VA: 0xC9E00C

@@ -71,8 +71,8 @@ namespace XeApp.Game.MusicSelect
 			{
 				MusicListData.InitParam initparam;
 				int id = viewMusicDataList[i].GHBPLHBNMBK;
-				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.IBPAFKKEKNK.GEAANLPDJBP[id];
-				EONOEHOKBEB_Music a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND.IBPAFKKEKNK.INJDLHAEPEK(id, musicInfo.DLAEJOBELBH_Id);
+				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP[id - 1];
+				EONOEHOKBEB_Music a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK(id, musicInfo.DLAEJOBELBH_Id);
 				initparam.musicName = Database.Instance.musicText.Get(a.KNMGEEFGDNI_Nam).musicName;
 				//initparam.musicName = "Music "+id;
 				VerticalMusicDataList.MusicListData data = new VerticalMusicDataList.MusicListData(initparam);
