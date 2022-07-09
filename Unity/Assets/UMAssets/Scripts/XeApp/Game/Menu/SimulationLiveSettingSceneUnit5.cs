@@ -44,7 +44,13 @@ namespace XeApp.Game.Menu
 		{
 			UnityEngine.Debug.LogError("TODO OnPreSetCanvas");
 			InitializeUGUIObject();
+
+			GameSetupData.MusicInfo musicInfo = Database.Instance.gameSetup.musicInfo;
 			m_prismUnitInfo.OnClickItem = this.OnClickPrismIetms;
+			m_playButtons.OnClickPlayButton = this.OnClickPlayButton;
+			UpdatePrismData(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH, musicInfo);
+			m_prismUnitInfo.UpdateContent(m_prismData, musicInfo);
+			base.OnPreSetCanvas();
 		}
 
 		// // RVA: 0x12CE1A0 Offset: 0x12CE1A0 VA: 0x12CE1A0 Slot: 17
@@ -94,6 +100,7 @@ namespace XeApp.Game.Menu
 		protected override bool IsEndEnterAnimation()
 		{
 			UnityEngine.Debug.LogError("TODO IsEndEnterAnimation");
+
 			return true;
 		}
 

@@ -64,7 +64,7 @@ static class FileSystemProxy
 			onDone(path);
 	}
 
-	static void InitServerFileList()
+	static IEnumerator InitServerFileList()
 	{
 		if (serverFileList == null)
 		{
@@ -74,9 +74,14 @@ static class FileSystemProxy
 			EDOHBJAPLPF_JsonData fileL = jsonData["files"];
 			for (int i = 0; i < fileL.HNBFOAJIIAL_Count; i++)
 			{
+				if((i % 1000) == 0)
+				{
+					UnityEngine.Debug.Log("Done file list "+i+"/"+fileL.HNBFOAJIIAL_Count);
+					yield return null;
+				}
 				string fileName = (string)fileL[i]["file"];
 				string localName = GCGNICILKLD.NOCCMAKNLLD.Replace(fileName, "");
-				UnityEngine.Debug.Log("Ad file " + localName + " to remote name " + fileName);
+				//UnityEngine.Debug.Log("Added file " + localName + " to remote name " + fileName);
 				serverFileList.Add(localName, fileName);
 			}
 		}
@@ -84,7 +89,7 @@ static class FileSystemProxy
 
 	static IEnumerator TryInstallFileCoroutine(string path, Action<string> onDone)
 	{
-		InitServerFileList();
+		yield return InitServerFileList();
 		path = path.Replace("\\", "/");
 		string relativePath = path;
 		int pos = path.IndexOf("/android/");
@@ -93,7 +98,10 @@ static class FileSystemProxy
 		UnityEngine.Debug.Log("Try install relative path : " + relativePath);
 		if (serverFileList.ContainsKey(relativePath))
 		{
-			string url = CurrentSettings.DataWebServerURL + serverFileList[relativePath];
+			string startPath = CurrentSettings.DataWebServerURL;
+			if(serverFileList[relativePath].StartsWith("/") && startPath.EndsWith("/"))
+				startPath = startPath.Substring(0, startPath.Length - 1);
+			string url = startPath + serverFileList[relativePath];
 			UnityEngine.Debug.Log("Try dld from server at " + url);
 			WWW dldData = new WWW(url);
 			while (!dldData.isDone)

@@ -16,7 +16,7 @@ Shader "MCRS/SplitTextureAddRGB16A8" {
 			LOD 100
 			Tags { "IGNOREPROJECTOR" = "true" "PreviewType" = "Plane" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
 			Blend SrcAlpha One, SrcAlpha One
-			ColorMask [_ColorMask] -1
+			ColorMask [_ColorMask]
 			ZWrite Off
 			Cull Off
 			Offset -1, -1

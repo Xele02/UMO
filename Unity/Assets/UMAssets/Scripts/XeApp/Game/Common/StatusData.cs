@@ -32,11 +32,34 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CC9E44 Offset: 0x1CC9E44 VA: 0x1CC9E44
 		public void Copy(StatusData src)
 		{
-			UnityEngine.Debug.LogError("TODO TeamStatus Copy");
+			life = src.life;
+			soul = src.soul;
+			vocal = src.vocal;
+			charm = src.charm;
+			sceneBonus = src.sceneBonus;
+			support = src.support;
+			fold = src.fold;
+			for(int i = 0; i < 6; i++)
+			{
+				spNoteExpected[i] = src.spNoteExpected[i];
+			}
 		}
 
 		// // RVA: 0x1CC9F98 Offset: 0x1CC9F98 VA: 0x1CC9F98
-		// public void Add(StatusData add) { }
+		public void Add(StatusData add)
+		{
+			life += add.life;
+			soul += add.soul;
+			vocal += add.vocal;
+			charm += add.charm;
+			sceneBonus += add.sceneBonus;
+			support += add.support;
+			fold += add.fold;
+			for(int i = 0; i < 6; i++)
+			{
+				spNoteExpected[i] += add.spNoteExpected[i];
+			}
+		}
 
 		// // RVA: 0x1CCA15C Offset: 0x1CCA15C VA: 0x1CCA15C
 		// public void Multi(int multi) { }

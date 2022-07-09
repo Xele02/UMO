@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
 public class EBFLJMOCLNA : KLFDBFMNLBL
 {
@@ -129,7 +130,11 @@ public class EBFLJMOCLNA : KLFDBFMNLBL
 	// private void HNLMNKFJHLK(EBFLJMOCLNA.ILFJDCICIKN LDEGEHAEALK, List<EBFLJMOCLNA.NMAPBJMLMPM> GJFECKHFKLK) { }
 
 	// // RVA: 0x14F84D4 Offset: 0x14F84D4 VA: 0x14F84D4
-	// public StatusData NNIKNCGNDHK(int MCDINKAKFGG) { }
+	public StatusData NNIKNCGNDHK(int MCDINKAKFGG_DivaId)
+	{
+		UnityEngine.Debug.LogError("TODO NNIKNCGNDHK");
+		return new StatusData();
+	}
 
 	// // RVA: 0x14F8720 Offset: 0x14F8720 VA: 0x14F8720
 	// public int[,] GODGHFDMAHF() { }

@@ -974,12 +974,21 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x9A0D4C Offset: 0x9A0D4C VA: 0x9A0D4C
-		// public void CreateViewPlayerData() { }
+		public void CreateViewPlayerData()
+		{
+			if(m_viewPlayerData == null)
+				m_viewPlayerData = new DFKGGBMFFGB();
+			m_viewPlayerData.KHEKNNFCAOI_Init(null, false);
+			UnityEngine.Debug.LogError("TODO CreateViewPlayerData");
+			//JKIJLMMLNPL.DJNPDEOLNHD();
+		}
 
 		// // RVA: 0x98874C Offset: 0x98874C VA: 0x98874C
 		public void ResetViewPlayerData()
 		{
 			UnityEngine.Debug.LogError("TODO ResetViewPlayerData");
+			//tmp
+			CreateViewPlayerData();
 		}
 
 		// // RVA: 0x9A0DF8 Offset: 0x9A0DF8 VA: 0x9A0DF8

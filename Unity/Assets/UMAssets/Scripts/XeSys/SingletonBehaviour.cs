@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace XeSys
 {
-	public class SingletonBehaviour<T> : MonoBehaviour where T : class
+	public class SingletonBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 	{
 		private static T mInstance; // 0x0
 

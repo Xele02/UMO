@@ -1,8 +1,18 @@
 
+using System;
+using System.IO;
+using UnityEngine;
+using XeApp.Core;
 using XeSys;
 
 namespace XeApp.Game.Menu
 {
+	public enum IconTextureType
+	{
+		Texture = 0,
+		Material = 1,
+	}
+
 	public abstract class IconTextureCache
 	{
 		private IndexableDictionary<string, IiconTexture> m_iconTextureCache; // 0x8
@@ -26,29 +36,107 @@ namespace XeApp.Game.Menu
 		// public abstract void Terminated();
 
 		// // RVA: 0x13DBFC0 Offset: 0x13DBFC0 VA: 0x13DBFC0 Slot: 6
-		// public virtual void Load(string path, Action<IiconTexture> callBack) { }
+		public virtual void Load(string path, Action<IiconTexture> callBack)
+		{
+			Load(path, IconTextureType.Texture, callBack);
+		}
 
 		// // RVA: 0x13DBFE0 Offset: 0x13DBFE0 VA: 0x13DBFE0
-		// protected void Load(string path, IconTextureType iconTextureType, Action<IiconTexture> callBack) { }
+		protected void Load(string path, IconTextureType iconTextureType, Action<IiconTexture> callBack)
+		{
+			IiconTexture res;
+			if(m_iconTextureCache.TryGetValue(path, out res))
+			{
+				if(m_capacity > 0)
+				{
+					m_createCount++;
+					res.CreateCount = m_createCount;
+				}
+				if(callBack != null)
+					callBack(res);
+			}
+			else
+			{
+				IconTextureLodingInfo info;
+				if(m_loadingAssetBundle.TryGetValue(path, out info))
+				{
+					info.CallBack += callBack;
+				}
+				else
+				{
+					if(m_capacity > 0)
+					{
+						if(m_iconTextureCache.Count >= m_capacity)
+						{
+							ulong createCount = m_iconTextureCache[0].CreateCount;
+							int idx = 0;
+							for(int i = 1; i < m_iconTextureCache.Count; i++)
+							{
+								if(m_iconTextureCache[i].CreateCount < createCount)
+								{
+									idx = i;
+								}
+							}
+							m_iconTextureCache.Remove(idx);
+						}
+					}
+					info = new IconTextureLodingInfo(AssetBundleManager.LoadAllAssetAsync(path), path);
+					info.CallBack += callBack;
+					info.TextureType = iconTextureType;
+					m_loadingAssetBundle.Add(path, info);
+				}
+			}
+		}
 
 		// // RVA: 0x13DC6D0 Offset: 0x13DC6D0 VA: 0x13DC6D0
 		public void Update()
 		{
-			UnityEngine.Debug.LogWarning("TODO IconTextureCache.Update()");
+			for(int i = 0; i < m_loadingAssetBundle.Count; )
+			{
+				string path = m_loadingAssetBundle.GetKey(i);
+				IconTextureLodingInfo info = m_loadingAssetBundle.GetValue(path);
+				if(info.Operation.IsDone())
+				{
+					IiconTexture icon = CreateIconTexture(info);
+					if(info.CallBack != null)
+						info.CallBack(icon);
+					m_iconTextureCache.Add(path, icon);
+					m_loadingAssetBundle.Remove(i);
+					AssetBundleManager.UnloadAssetBundle(info.Path, false);
+				}
+				else
+				{
+					if(info.Operation.IsError())
+					{
+						m_loadingAssetBundle.Remove(i);
+						AssetBundleManager.UnloadAssetBundle(info.Path, false);
+					}
+					else
+					{
+						i++;
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x13DC9B4 Offset: 0x13DC9B4 VA: 0x13DC9B4
 		public bool IsLoading()
 		{
-			UnityEngine.Debug.LogWarning("TODO IconTextureCache.IsLoading()");
-			return false;
+			return m_loadingAssetBundle.Count > 0;
 		}
 
 		// // RVA: -1 Offset: -1 Slot: 7
-		// protected abstract IiconTexture CreateIconTexture(IconTextureLodingInfo info);
+		protected abstract IiconTexture CreateIconTexture(IconTextureLodingInfo info);
 
 		// // RVA: 0x13DCA3C Offset: 0x13DCA3C VA: 0x13DCA3C
-		// protected void SetupForSplitTexture(IconTextureLodingInfo info, IiconTexture icon) { }
+		protected void SetupForSplitTexture(IconTextureLodingInfo info, IiconTexture icon)
+		{
+			string name = Path.GetFileNameWithoutExtension(info.Path);
+			icon.Material = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+			icon.BaseTexture = info.Operation.GetAsset<Texture2D>(name+"_base");
+			icon.MaskTexture = info.Operation.GetAsset<Texture2D>(name+"_mask");
+			icon.CreateCount++;
+		}
 
 		// // RVA: 0x13DCE74 Offset: 0x13DCE74 VA: 0x13DCE74
 		// protected void SetupForSplitTexture(IconTextureLodingInfo info, IiconTexture icon, Texture2D maskTexture) { }

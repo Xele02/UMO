@@ -86,7 +86,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x15487BC Offset: 0x15487BC VA: 0x15487BC
-		// protected void UpdatePrismData(int musicId, GameSetupData.MusicInfo musicInfo) { }
+		protected void UpdatePrismData(int musicId, GameSetupData.MusicInfo musicInfo)
+		{
+			m_prismData.OBKGEDCKHHE(musicId, 1 < musicInfo.onStageDivaNum);
+		}
 
 		// // RVA: 0x1548820 Offset: 0x1548820 VA: 0x1548820
 		protected void SetupPrismPopupSetting()

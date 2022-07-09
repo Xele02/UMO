@@ -14,7 +14,11 @@ namespace XeApp.Game.Menu
 		// public override void Terminated() { }
 
 		// // RVA: 0x14BD458 Offset: 0x14BD458 VA: 0x14BD458 Slot: 7
-		// protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info) { }
+		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
+		{
+			UnityEngine.Debug.LogError("TODO CreateIconTexture");
+			return null;
+		}
 
 		// // RVA: 0x14BD4E0 Offset: 0x14BD4E0 VA: 0x14BD4E0
 		public void Load(int id, Action<IiconTexture> callBack)

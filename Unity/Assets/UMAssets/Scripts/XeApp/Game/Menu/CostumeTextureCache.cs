@@ -3,7 +3,8 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeTextureCache : IconTextureCache
 	{
-		public CostumeTextureCache() : base(default(int))
+		// RVA: 0x16E8DA0 Offset: 0x16E8DA0 VA: 0x16E8DA0
+		public CostumeTextureCache() : base(0)
 		{
 		}
 
@@ -11,7 +12,11 @@ namespace XeApp.Game.Menu
 		// public override void Terminated() { }
 
 		// // RVA: 0x16E8DB4 Offset: 0x16E8DB4 VA: 0x16E8DB4 Slot: 7
-		// protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info) { }
+		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
+		{
+			UnityEngine.Debug.LogError("TODO CreateIconTexture");
+			return null;
+		}
 
 		// // RVA: 0x16E8E3C Offset: 0x16E8E3C VA: 0x16E8E3C
 		// public void Load(int cosId, int colorId, Action<IiconTexture> callBack) { }

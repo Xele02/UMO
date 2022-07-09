@@ -11,7 +11,11 @@ namespace XeApp.Game.Menu
 		// public override void Terminated() { }
 
 		// // RVA: 0x104B8D8 Offset: 0x104B8D8 VA: 0x104B8D8 Slot: 7
-		// protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info) { }
+		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
+		{
+			UnityEngine.Debug.LogError("TODO CreateIconTexture");
+			return null;
+		}
 
 		// // RVA: 0x104B3E8 Offset: 0x104B3E8 VA: 0x104B3E8
 		// public void Load(int jacketId, Action<IiconTexture> callBack) { }
@@ -27,9 +31,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x104BA94 Offset: 0x104BA94 VA: 0x104BA94
 		// public static void TryInstall(int jacketId) { }
-		
-		public MusicJacketTextureCache() : base(default(int))
-		{
-		}
 	}
 }

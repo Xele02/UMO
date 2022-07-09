@@ -2,11 +2,20 @@ using UnityEngine;
 using XeApp.Game.Common;
 using UnityEngine.UI;
 using System;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
 	public class SetDeckDivaCardControl : MonoBehaviour
 	{
+		public enum ImpType
+		{
+			Off = 0,
+			NoMessage = 1,
+			MemberLimit = 2,
+			Prism = 3,
+		}
+
 		//[TooltipAttribute] // RVA: 0x680544 Offset: 0x680544 VA: 0x680544
 		//[HeaderAttribute] // RVA: 0x680544 Offset: 0x680544 VA: 0x680544
 		[SerializeField]
@@ -63,30 +72,64 @@ namespace XeApp.Game.Menu
 		public Action OnClickDivaButton; // 0x50
 		//public Action OnStayDivaButton; // 0x54
 		public Action OnClickCostumeButton; // 0x58
-		//private FFHPBEPOMAK m_divaData; // 0x5C
+		private FFHPBEPOMAK m_divaData; // 0x5C
 		//private DFKGGBMFFGB m_playerData; // 0x60
 		//private int m_musicId; // 0x64
 		//private bool m_isStory; // 0x68
 		//private bool m_isGoDivaSub; // 0x69
-		//private int m_divaTextureLoadingCount; // 0x6C
+		private int m_divaTextureLoadingCount; // 0x6C
 		//private int m_costumeTextureLoadingCount; // 0x70
 
 		//public bool IsLoading { get; } 0xA68268
 		//public FFHPBEPOMAK DivaData { get; } 0xA6A0C0
-		//public UGUIStayButton DivaButton { get; } 0xA6A0C8
+		public UGUIStayButton DivaButton { get { return m_divaButton; } } //0xA6A0C8
 		//private bool IsEmpty { get; } 0xA6A0D0
 
 		//// RVA: 0xA6A0E4 Offset: 0xA6A0E4 VA: 0xA6A0E4
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO DivaCardControl Awake");
+			SetImp(ImpType.Off);
+			SetShowMultiIcon(false);
+			if(m_divaButton != null)
+			{
+				m_divaButton.AddOnClickCallback(() => {
+					//0xA6BBBC
+					UnityEngine.Debug.LogError("TODO click on diva button");
+				});
+				m_divaButton.AddOnStayCallback(() => {
+					//0xA6BBD0
+					UnityEngine.Debug.LogError("TODO stay on diva button");
+				});
+			}
+			if(m_costumeButton != null)
+			{
+				m_costumeButton.AddOnClickCallback(() => {
+					//0xA6BBE4
+					UnityEngine.Debug.LogError("TODO click on costume button");
+				});
+			}
 		}
 
 		//// RVA: 0xA6A3A8 Offset: 0xA6A3A8 VA: 0xA6A3A8
 		//public void Set(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData, bool isCenter, bool isGoDiva, int musicId = 0, bool isStory = False) { }
 
 		//// RVA: 0xA6B4F8 Offset: 0xA6B4F8 VA: 0xA6B4F8
-		//public void SetForPrism(FFHPBEPOMAK divaData) { }
+		public void SetForPrism(FFHPBEPOMAK divaData)
+		{
+			m_divaData = divaData;
+			SetDivaImageAndColor(divaData, false);
+			if(m_divaFrontImage != null)
+			{
+				m_divaFrontImage.gameObject.SetActive(false);
+			}
+			if(m_divaStatus != null)
+			{
+				m_divaStatus.gameObject.SetActive(false);
+			}
+			m_costumeButton.gameObject.SetActive(m_divaData != null);
+			if(m_divaData != null)
+				SetCostumeImage(m_divaData);
+		}
 
 		//// RVA: 0xA68D84 Offset: 0xA68D84 VA: 0xA68D84
 		//public void SetForAssist(FFHPBEPOMAK divaData) { }
@@ -95,39 +138,96 @@ namespace XeApp.Game.Menu
 		//public void SetStatusDisplayType(DisplayType type) { }
 
 		//// RVA: 0xA6A2EC Offset: 0xA6A2EC VA: 0xA6A2EC
-		//public void SetShowMultiIcon(bool isShow) { }
+		public void SetShowMultiIcon(bool isShow)
+		{
+			if(m_unitIconImage != null)
+				m_unitIconImage.enabled = isShow;
+		}
 
 		//// RVA: 0xA68A30 Offset: 0xA68A30 VA: 0xA68A30
-		//public void SetImp(SetDeckDivaCardControl.ImpType type) { }
+		public void SetImp(SetDeckDivaCardControl.ImpType type)
+		{
+			if(type == ImpType.Off)
+			{
+				m_divaImpObject.SetActive(false);
+				m_costumeImpObject.SetActive(false);
+				return;
+			}
+			m_divaImpObject.SetActive(true);
+			m_costumeImpObject.SetActive(true);
+			MessageBank bank = MessageManager.Instance.GetBank("menu");
+			if(type == ImpType.Prism)
+			{
+				m_messageText.enabled = false;
+				m_prismImpImage.enabled = true;
+			}
+			else if(type == ImpType.MemberLimit)
+			{
+				m_messageText.enabled = true;
+				m_messageText.text = bank.GetMessageByLabel("unit_diva_limit_message");
+				m_prismImpImage.enabled = false;
+			}
+			else if(type == ImpType.NoMessage)
+			{
+				m_messageText.enabled = false;
+				m_prismImpImage.enabled = false;
+			}
+		}
 
 		//// RVA: 0xA6A648 Offset: 0xA6A648 VA: 0xA6A648
-		//private void SetDivaImageAndColor(FFHPBEPOMAK divaData, bool isGoDivaSub = False) { }
+		private void SetDivaImageAndColor(FFHPBEPOMAK divaData, bool isGoDivaSub = false)
+		{
+			if(divaData == null)
+			{
+				m_emptyBackImage.gameObject.SetActive(true);
+				m_emptyImage.gameObject.SetActive(true);
+				m_divaBackImage.gameObject.SetActive(false);
+				m_divaImage.gameObject.SetActive(false);
+				m_divaIconImage.gameObject.SetActive(false);
+				m_divaFrameImage.gameObject.SetActive(false);
+				return;
+			}
+			m_emptyBackImage.gameObject.SetActive(false);
+			m_emptyImage.gameObject.SetActive(false);
+			m_divaBackImage.gameObject.SetActive(true);
+			m_divaImage.gameObject.SetActive(true);
+			m_divaIconImage.gameObject.SetActive(false);
+			m_divaFrameImage.gameObject.SetActive(true);
+			if(isGoDivaSub)
+			{
+				m_divaImage.gameObject.SetActive(false);
+				m_divaIconImage.gameObject.SetActive(true);
+				m_divaTextureLoadingCount++;
+				UnityEngine.Debug.LogError("TODO finish SetDivaImageAndColor");
+			}
+			else
+			{
+				m_divaTextureLoadingCount++;
+				GameManager.Instance.EpisodeIconCache.LoadDivaBustupTexture(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL.DAJGPBLEEOB, divaData.EKFONBFDAAP_ColorId, (IiconTexture texture, Rect rect) => {
+					//0xA6BCE4
+					texture.Set(m_divaImage);
+					m_divaImage.uvRect = rect;
+					m_divaTextureLoadingCount--;
+				});
+				Color col = m_divaColors.GetDivaColor(divaData.AHHJLDLAPAN_DivaId);
+				m_divaBackImage.color = new Color(col.r, col.g, col.b, m_divaBackImage.color.a);
+				m_divaFrameImage.color = new Color(col.r, col.g, col.b, m_divaFrameImage.color.a);
+				m_divaFrontImage.color = new Color(col.r, col.g, col.b, m_divaFrontImage.color.a);
+			}
+		}
 
 		//// RVA: 0xA6B280 Offset: 0xA6B280 VA: 0xA6B280
-		//private void SetCostumeImage(FFHPBEPOMAK divaData) { }
+		private void SetCostumeImage(FFHPBEPOMAK divaData)
+		{
+			UnityEngine.Debug.LogError("TODO SetCostumeImage");
+		}
 
 		//// RVA: 0xA6BB74 Offset: 0xA6BB74 VA: 0xA6BB74
 		//private Color ColorAlphaMarge(Color targetColor, float a) { }
 
-		//[CompilerGeneratedAttribute] // RVA: 0x730BCC Offset: 0x730BCC VA: 0x730BCC
-		//// RVA: 0xA6BBBC Offset: 0xA6BBBC VA: 0xA6BBBC
-		//private void <Awake>b__36_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x730BDC Offset: 0x730BDC VA: 0x730BDC
-		//// RVA: 0xA6BBD0 Offset: 0xA6BBD0 VA: 0xA6BBD0
-		//private void <Awake>b__36_1() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x730BEC Offset: 0x730BEC VA: 0x730BEC
-		//// RVA: 0xA6BBE4 Offset: 0xA6BBE4 VA: 0xA6BBE4
-		//private void <Awake>b__36_2() { }
-
 		//[CompilerGeneratedAttribute] // RVA: 0x730BFC Offset: 0x730BFC VA: 0x730BFC
 		//// RVA: 0xA6BBF8 Offset: 0xA6BBF8 VA: 0xA6BBF8
 		//private void <SetDivaImageAndColor>b__43_0(IiconTexture texture) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x730C0C Offset: 0x730C0C VA: 0x730C0C
-		//// RVA: 0xA6BCE4 Offset: 0xA6BCE4 VA: 0xA6BCE4
-		//private void <SetDivaImageAndColor>b__43_1(IiconTexture texture, Rect rect) { }
 
 		//[CompilerGeneratedAttribute] // RVA: 0x730C1C Offset: 0x730C1C VA: 0x730C1C
 		//// RVA: 0xA6BE1C Offset: 0xA6BE1C VA: 0xA6BE1C

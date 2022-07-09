@@ -346,7 +346,7 @@ public class OKGLGHCBCJP_Database
 		// {14,() => { return new NEGELNMPEPH(); } }, //0x149DAE8				"deco_sp_setting",
 		// {15,() => { return new IHFIAFDLAAK(); } }, //0x149DB54				"deco_stamp",
 		{16,() => { return new HPBPIOPPDCB_Diva(); } }, //0x149DBC0				"diva",
-		// {17,() => { return new HMIJOOPHJLB(); } }, //0x149DC2C				"diva2",
+		{17,() => { return new HMIJOOPHJLB_Diva2(); } }, //0x149DC2C				"diva2",
 		// {18,() => { return new NBPHJDCOECH(); } }, //0x149DC98				"drop",
 		// {19,() => { return new IHGBPAJMJFK(); } }, //0x149DD04				"emblem",
 		// {20,() => { return new MHDFCLCMDKO(); } }, //0x149DD70				"enemy",
@@ -465,7 +465,7 @@ public class OKGLGHCBCJP_Database
 	// public NEGELNMPEPH BGKKOOGPEFD { get; private set; } // 0x4C AAPCGHFOHFC BALCOIHEDMF BKGBCKMOMGN
 	// public IHFIAFDLAAK GAPONCJOKAC { get; private set; } // 0x50 NCNFBFCCPGG OJGMINMADBB NEPJLJDPKKN
 	   public HPBPIOPPDCB_Diva MGFMPKLLGHE_Diva { get; private set; } // 0x54 ONCMJNDIMPD // ODGINDHEIBJ GIFOPLEGJCI
-	// public HMIJOOPHJLB OAINIGNLJKC { get; private set; } // 0x58 EFGHBGKGCDI KNBBENGMPJL MAPJOGCOBCF
+	   public HMIJOOPHJLB_Diva2 OAINIGNLJKC_Diva2 { get; private set; } // 0x58 EFGHBGKGCDI KNBBENGMPJL MAPJOGCOBCF
 	// public NBPHJDCOECH HGLIIPFLMFB { get; private set; } // 0x5C DNBKBMJEDFG GEHKLFKNGDK DAEJHNBAAHD
 	// public IHGBPAJMJFK LBNBNAFGMDE { get; private set; } // 0x60 DOKBBBOMOIP AEKIOLPFPCO PMEOIDAFOLD
 	// public MHDFCLCMDKO OPFBEAJJMJB { get; private set; } // 0x64 DMKMEHGHLAL EDGAJGHMGOK AIBFBDMGEAL
@@ -703,7 +703,7 @@ public class OKGLGHCBCJP_Database
 		// BGKKOOGPEFD = null;
 		// GAPONCJOKAC = null;
 		MGFMPKLLGHE_Diva = null;
-		// OAINIGNLJKC = null;
+		OAINIGNLJKC_Diva2 = null;
 		// HGLIIPFLMFB = null;
 		// LBNBNAFGMDE = null;
 		// OPFBEAJJMJB = null;
@@ -785,7 +785,7 @@ public class OKGLGHCBCJP_Database
 					// case 14: BGKKOOGPEFD = item; break;
 					// case 15: GAPONCJOKAC = item; break;
 					case 16: MGFMPKLLGHE_Diva = (HPBPIOPPDCB_Diva)item; break;
-					// case 17: OAINIGNLJKC = item; break;
+					case 17: OAINIGNLJKC_Diva2 = (HMIJOOPHJLB_Diva2)item; break;
 					// case 18: HGLIIPFLMFB = item; break;
 					// case 19: LBNBNAFGMDE = item; break;
 					// case 20: OPFBEAJJMJB = item; break;

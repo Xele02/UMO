@@ -1,6 +1,7 @@
 using UnityEngine;
 using XeApp.Game.Common;
 using UnityEngine.UI;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -65,7 +66,7 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private Text m_energyText; // 0x38
 		// public Action OnClickSkipButton; // 0x3C
-		// public Action OnClickPlayButton; // 0x40
+		public Action OnClickPlayButton; // 0x40
 
 		// public InOutAnime InOut { get; } 0xA730C0
 
@@ -73,6 +74,12 @@ namespace XeApp.Game.Menu
 		private void Awake()
 		{
 			UnityEngine.Debug.LogError("TODO SetDeckPlayButtons Awake");
+			if(m_playButton != null)
+				m_playButton.AddOnClickCallback(() => {
+					//0xA7363C
+					if(OnClickPlayButton != null)
+						OnClickPlayButton();
+				});
 		}
 
 		// // RVA: 0xA7325C Offset: 0xA7325C VA: 0xA7325C
@@ -84,9 +91,5 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x730CCC Offset: 0x730CCC VA: 0x730CCC
 		// // RVA: 0xA73628 Offset: 0xA73628 VA: 0xA73628
 		// private void <Awake>b__19_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x730CDC Offset: 0x730CDC VA: 0x730CDC
-		// // RVA: 0xA7363C Offset: 0xA7363C VA: 0xA7363C
-		// private void <Awake>b__19_1() { }
 	}
 }

@@ -20,7 +20,10 @@ namespace XeApp.Game.Common
 		//public void SetGhostData(BKKMNPEEILG ghostData) { }
 
 		// RVA: 0x1391C9C Offset: 0x1391C9C VA: 0x1391C9C
-		//public EEDKAACNBBG GetSelectedMusicData() { }
+		public EEDKAACNBBG GetSelectedMusicData()
+		{
+			return selectedMusic;
+		}
 
 		// RVA: 0x1391CA4 Offset: 0x1391CA4 VA: 0x1391CA4
 		//public BKKMNPEEILG GetGhostData() { }

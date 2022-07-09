@@ -293,9 +293,9 @@ namespace XeApp.Game.Common
 		{
 			m_teamInfo.SetupMvInfo(teamStatus, prismData);
 			m_mvInfo.isCutin = GameManager.Instance.localSave.EPJOACOONAC().MHHPDGJLJGE.DADIPGPHLDD_EffectCutin == 0;
-			m_mvInfo.isShowNotes = prismData.DNLCLAOPFPF;
-			m_mvInfo.isModeDiva = prismData.HGEKDNNJAAC;
-			m_mvInfo.isModeValkyrie = prismData.OHLCKPIMMFH;
+			m_mvInfo.isShowNotes = prismData.DNLCLAOPFPF_ShowNotes;
+			m_mvInfo.isModeDiva = prismData.HGEKDNNJAAC_DivaMode;
+			m_mvInfo.isModeValkyrie = prismData.OHLCKPIMMFH_ValkyrieMode;
 		}
 
 		// // RVA: 0xE9CF04 Offset: 0xE9CF04 VA: 0xE9CF04

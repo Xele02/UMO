@@ -7,7 +7,11 @@ namespace XeApp.Game.Menu
 		// public override void Terminated() { }
 
 		// // RVA: 0x16557FC Offset: 0x16557FC VA: 0x16557FC Slot: 7
-		// protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info) { }
+		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
+		{
+			UnityEngine.Debug.LogError("TODO CreateIconTexture");
+			return null;
+		}
 
 		// // RVA: 0x1655884 Offset: 0x1655884 VA: 0x1655884
 		// public void Load(int valkyrie, int form, Action<IiconTexture> callBack) { }
@@ -23,9 +27,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x1655A8C Offset: 0x1655A8C VA: 0x1655A8C
 		// public static string MakePortraitIconBundleName(int valkyrie, int form) { }
-		
-		public ValkyrieIconTextureCache() : base(default(int))
-		{
-		}
 	}
 }

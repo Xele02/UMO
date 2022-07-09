@@ -39,7 +39,11 @@ namespace XeApp.Game.Menu
 		// public void SetStatusLoadingIcon(RawImageEx image) { }
 
 		// // RVA: 0x17E3880 Offset: 0x17E3880 VA: 0x17E3880 Slot: 7
-		// protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info) { }
+		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
+		{
+			UnityEngine.Debug.LogError("TODO CreateIconTexture");
+			return null;
+		}
 
 		// // RVA: 0x17E3908 Offset: 0x17E3908 VA: 0x17E3908
 		// public void Load(int id, int modelId, int colorId, Action<IiconTexture> callBack) { }

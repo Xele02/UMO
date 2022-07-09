@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private List<SetDeckDivaCardControl> m_additionDivas; // 0x14
 		public SetDeckUnitInfoSLive.EventOnClickItem OnClickItem; // 0x18
-		// private List<FFHPBEPOMAK> m_divaDatas = new List<FFHPBEPOMAK>(); // 0x1C
+		private List<FFHPBEPOMAK> m_divaDatas = new List<FFHPBEPOMAK>(); // 0x1C
 
 		// public UGUIEnterLeave AnimeControl { get; } 0xC36818
 
@@ -65,13 +65,50 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xC36D44 Offset: 0xC36D44 VA: 0xC36D44
-		// public void UpdateContent(AOJGDNFAIJL.AMIECPBIALP prismData, GameSetupData.MusicInfo musicInfo) { }
+		public void UpdateContent(AOJGDNFAIJL.AMIECPBIALP prismData, GameSetupData.MusicInfo musicInfo)
+		{
+			int maxDiva = Mathf.Max(m_divas.Count + m_additionDivas.Count, 5);
+			int numDiva = Mathf.Clamp(musicInfo.onStageDivaNum, 1, maxDiva);
+			for(int i = 0; i < maxDiva; i++)
+			{
+				m_divaDatas.Add(new FFHPBEPOMAK());
+			}
+			for(int i = 0; i < numDiva; i++)
+			{
+				if(prismData.PNBKLGKCKGO(i) > 0)
+				{
+					m_divaDatas[i].KHEKNNFCAOI(prismData.PNBKLGKCKGO(i), 0, prismData.OCNHIHMAGMJ(i), prismData.DOIGAGAAAOP(i), null, null, false);
+				}
+				GetDivaControlBySlotNumber(i).SetForPrism(m_divaDatas[i]);
+				GetDivaControlBySlotNumber(i).SetImp(SetDeckDivaCardControl.ImpType.Off);
+				GetDivaControlBySlotNumber(i).DivaButton.Disable = false;
+			}
+			for(int i = numDiva; i < maxDiva; i++)
+			{
+				GetDivaControlBySlotNumber(i).SetForPrism(null);
+				GetDivaControlBySlotNumber(i).SetImp(SetDeckDivaCardControl.ImpType.Prism);
+				GetDivaControlBySlotNumber(i).DivaButton.Disable = true;
+			}
+			foreach(var d in m_divas)
+			{
+				d.SetShowMultiIcon(false);
+			}
+			foreach(var d in m_additionDivas)
+			{
+				d.SetShowMultiIcon(false);
+			}
+		}
 
 		// // RVA: 0xC37444 Offset: 0xC37444 VA: 0xC37444
 		// public bool IsUpdatingContent() { }
 
 		// // RVA: 0xC3739C Offset: 0xC3739C VA: 0xC3739C
-		// private SetDeckDivaCardControl GetDivaControlBySlotNumber(int divaSlotNumber) { }
+		private SetDeckDivaCardControl GetDivaControlBySlotNumber(int divaSlotNumber)
+		{
+			if(divaSlotNumber < 3)
+				return m_divas[divaSlotNumber];
+			return m_additionDivas[divaSlotNumber - 3];
+		}
 
 		// // RVA: 0xC377D8 Offset: 0xC377D8 VA: 0xC377D8
 		private void OnClickDivaButton(int divaSlotNumber)

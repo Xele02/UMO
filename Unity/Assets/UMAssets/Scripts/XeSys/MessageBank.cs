@@ -68,7 +68,16 @@ namespace XeSys
 		// // RVA: 0x2397340 Offset: 0x2397340 VA: 0x2397340
 		public void SetupFromJson(byte[] bytes)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(Encoding.UTF8.GetString(bytes));
+			EDOHBJAPLPF_JsonData label = json["lbl"];
+			EDOHBJAPLPF_JsonData msg = json["msg"];
+			msgDic = new Dictionary<string, string>(label.HNBFOAJIIAL_Count);
+			labelList = new List<string>(label.HNBFOAJIIAL_Count);
+			for(int i = 0; i < label.HNBFOAJIIAL_Count; i++)
+			{
+				msgDic.Add((string)label[i], (string)msg[i]);
+				labelList.Add((string)label[i]);
+			}
 		}
 
 		// RVA: 0x2396EC4 Offset: 0x2396EC4 VA: 0x2396EC4 Slot: 4
