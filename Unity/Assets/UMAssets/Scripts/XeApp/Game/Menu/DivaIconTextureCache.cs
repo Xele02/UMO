@@ -1,4 +1,6 @@
+using System;
 using System.Text;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -41,8 +43,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17E3880 Offset: 0x17E3880 VA: 0x17E3880 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			UnityEngine.Debug.LogError("TODO CreateIconTexture");
-			return null;
+			DivaIconTexture tex = new DivaIconTexture();
+			SetupForSplitTexture(info, tex);
+			return tex;
 		}
 
 		// // RVA: 0x17E3908 Offset: 0x17E3908 VA: 0x17E3908
@@ -73,7 +76,10 @@ namespace XeApp.Game.Menu
 		// public static string GetDivaUpIconPath(int id, int modelId, int colorId) { }
 
 		// // RVA: 0x17E3F80 Offset: 0x17E3F80 VA: 0x17E3F80
-		// public void LoadDivaSmallBustupIcon(int id, int modelId, Action<IiconTexture> callBack) { }
+		public void LoadDivaSmallBustupIcon(int id, int modelId, Action<IiconTexture> callBack)
+		{
+			Load(string.Format(DivaSmallBustupPath, id, modelId), callBack);
+		}
 
 		// // RVA: 0x17E4044 Offset: 0x17E4044 VA: 0x17E4044
 		// public void LoadEventGoDivaIcon(int id, Action<IiconTexture> callBack) { }
@@ -106,7 +112,11 @@ namespace XeApp.Game.Menu
 		// public void TryLoadStandingCostumeIconInstall(int divaId, int modelId) { }
 
 		// // RVA: 0x17E49EC Offset: 0x17E49EC VA: 0x17E49EC
-		// public void TryLoadDivaSmallBustupIcon(int divaId, int modelId) { }
+		public void TryLoadDivaSmallBustupIcon(int divaId, int modelId)
+		{
+			m_strBuilder.SetFormat(DivaSmallBustupPath, divaId, modelId);
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC(m_strBuilder.ToString());
+		}
 
 		// // RVA: 0x17E4B28 Offset: 0x17E4B28 VA: 0x17E4B28
 		// public void TryLoadEventGoDivaIcon(int divaId) { }

@@ -451,10 +451,19 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x2041E98 Offset: 0x2041E98 VA: 0x2041E98
-		// public void StartChildrenAnimLoop(string Label) { }
+		public void StartChildrenAnimLoop(string Label)
+		{
+			StartChildrenAnimLoop(m_List, Label);
+		}
 
 		// // RVA: 0x2041EA4 Offset: 0x2041EA4 VA: 0x2041EA4
-		// private void StartChildrenAnimLoop(List<ViewBase> listView, string Label) { }
+		private void StartChildrenAnimLoop(List<ViewBase> listView, string Label)
+		{
+			for(int i = 0; i < listView.Count; i++)
+			{
+				listView[i].StartAnimLoop(Label);
+			}
+		}
 
 		// // RVA: 0x2041F80 Offset: 0x2041F80 VA: 0x2041F80
 		// public void FinishAnimLoop() { }

@@ -38,7 +38,7 @@ namespace XeApp.Game.Common
 		// private ActionButton.TransitionState m_transitionState; // 0x7C
 
 		// Properties
-		// public AbsoluteLayout RootAbsoluteLayout { get; } 0xE5D330
+		public AbsoluteLayout RootAbsoluteLayout { get { return m_abs; } } //0xE5D330
 
 		// // RVA: 0xE5D338 Offset: 0xE5D338 VA: 0xE5D338 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -139,7 +139,10 @@ namespace XeApp.Game.Common
 		// public override bool IsPlaying() { }
 
 		// // RVA: 0xE5E378 Offset: 0xE5E378 VA: 0xE5E378 Slot: 20
-		// public override void SetOn() { }
+		public override void SetOn()
+		{
+			UnityEngine.Debug.LogError("TODO Button SetOn");
+		}
 
 		// // RVA: 0xE5E484 Offset: 0xE5E484 VA: 0xE5E484 Slot: 21
 		public override void SetOff()

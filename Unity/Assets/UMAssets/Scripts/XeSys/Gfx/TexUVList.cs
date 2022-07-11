@@ -23,9 +23,9 @@ namespace XeSys.Gfx
 		private Dictionary<string, TexUVData> m_UVDataDictionary = new Dictionary<string, TexUVData>(); // 0x28
 
 		// public Texture2D Tex { get; } 0x1EE05A8
-		// public string name { get; } 0x1EE05B0
-		// public int width { get; } 0x1EE05B8
-		// public int height { get; } 0x1EE05C0
+		public new string name { get { return m_name; } } //0x1EE05B0
+		public int width { get { return m_width; } } //0x1EE05B8
+		public int height { get { return m_height; } } //0x1EE05C0
 
 		// // RVA: 0x1EE0688 Offset: 0x1EE0688 VA: 0x1EE0688
 		public static TexUVList NewInstance()

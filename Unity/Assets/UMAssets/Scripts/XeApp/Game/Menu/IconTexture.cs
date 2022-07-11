@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
 {
@@ -15,7 +16,17 @@ namespace XeApp.Game.Menu
         // public virtual void Release() { }
 
         // // RVA: 0x13DB938 Offset: 0x13DB938 VA: 0x13DB938 Slot: 16
-        // public virtual void Set(RawImageEx image) { }
+        public virtual void Set(RawImageEx image)
+        {
+            if(Material == null)
+                return;
+            if(image == null)
+                return;
+            image.material = Material;
+            image.texture = BaseTexture;
+            image.material.SetTexture("_MainTex", BaseTexture);
+            image.material.SetTexture("_MaskTex", MaskTexture);
+        }
 
         // // RVA: 0x13DBB50 Offset: 0x13DBB50 VA: 0x13DBB50 Slot: 17
         public virtual void Set(RawImage image)

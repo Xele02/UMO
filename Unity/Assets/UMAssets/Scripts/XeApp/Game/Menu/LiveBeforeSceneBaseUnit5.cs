@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using XeApp.Core;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -36,7 +37,7 @@ namespace XeApp.Game.Menu
 		}; // 0x0
 		 protected AOJGDNFAIJL.AMIECPBIALP m_prismData = new AOJGDNFAIJL.AMIECPBIALP(); // 0x48
 		// private AOJGDNFAIJL.AMIECPBIALP m_prismLogDiffData = new AOJGDNFAIJL.AMIECPBIALP(); // 0x4C
-		// private PopupMvModeSelectListSetting m_prismPopupSetting = new PopupMvModeSelectListSetting(); // 0x50
+		private PopupMvModeSelectListSetting m_prismPopupSetting = new PopupMvModeSelectListSetting(); // 0x50
 		// private List<int> m_lackDivaIds = new List<int>(); // 0x54
 		// private AOJGDNFAIJL.AMIECPBIALP m_prismOriginalData = new AOJGDNFAIJL.AMIECPBIALP(); // 0x58
 		// private TextPopupSetting m_textSetPrizmPopup = new TextPopupSetting(); // 0x5C
@@ -94,13 +95,57 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1548820 Offset: 0x1548820 VA: 0x1548820
 		protected void SetupPrismPopupSetting()
 		{
-			UnityEngine.Debug.LogError("TODO SetupPrismPopupSetting");
+			MessageBank bank = MessageManager.Instance.GetBank("menu");
+			m_prismPopupSetting.WindowSize = SizeType.Large;
+			m_prismPopupSetting.SetParent(transform);
+			m_prismPopupSetting.Buttons = new ButtonInfo[2];
+			m_prismPopupSetting.Buttons[0].Label = PopupButton.ButtonLabel.Cancel;
+			m_prismPopupSetting.Buttons[0].Type = PopupButton.ButtonType.Negative;
+			m_prismPopupSetting.Buttons[1].Label = PopupButton.ButtonLabel.Ok;
+			m_prismPopupSetting.Buttons[1].Type = PopupButton.ButtonType.Positive;
+
+			UnityEngine.Debug.LogError("TODO finish SetupPrismPopupSetting");
+
+			/*m_textSetPrizmPopup.WindowSize = SizeType.Middle;
+			m_textSetPrizmPopup.SetParent(transform);
+			m_textSetPrizmPopup.TitleText = bank.GetMessageByLabel("popup_set_prizm_title");
+			m_textSetPrizmPopup.Text = bank.GetMessageByLabel("popup_set_prizm_choice");
+			m_textSetPrizmPopup.Buttons = new ButtonInfo[2];
+			m_textSetPrizmPopup.Buttons[0].Label = PopupButton.ButtonLabel.Cancel;
+			m_textSetPrizmPopup.Buttons[0].Type = PopupButton.ButtonType.Negative;
+			m_textSetPrizmPopup.Buttons[1].Label = PopupButton.ButtonLabel.Ok;
+			m_textSetPrizmPopup.Buttons[1].Type = PopupButton.ButtonType.Positive;*/
+
+			//m_lackDivaSetting
+
 		}
 
 		// // RVA: 0x1548D74 Offset: 0x1548D74 VA: 0x1548D74
 		protected void ShowPrismSelectPopup(PopupMvModeSelectListContent.SelectTarget target, int divaSlotNumber, int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation, Action onOK, Action onEnd)
 		{
-			UnityEngine.Debug.LogError("TODO ShowPrismSelectPopup");
+			m_prismPopupSetting.SelectTarget = target;
+			m_prismPopupSetting.SelectIndex = divaSlotNumber;
+			m_prismPopupSetting.TitleText = MessageManager.Instance.GetMessage("menu", string.Format("mvmode_setting_popuptitle_{0:D3}", (int)target));
+			m_prismPopupSetting.MusicId = musicId;
+			PopupWindowManager.Show(m_prismPopupSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) => {
+				//0x154B570
+				if(type == PopupButton.ButtonType.Positive)
+				{
+					PopupMvModeSelectListContent pcontent = control.Content as PopupMvModeSelectListContent;
+					if(pcontent != null)
+					{
+						pcontent.Apply();
+						SendPrismChangeLog(musicId, musicInfo, isSimulation);
+						UpdatePrismData(musicId, musicInfo);
+						if(onOK != null)
+							onOK();
+					}
+				}
+			}, null, null, null, true, true, false, null, () => {
+				//0x154B718
+				if(onEnd != null)
+					onEnd();
+			}, null, null, null);
 		}
 
 		// // RVA: 0x15490A0 Offset: 0x15490A0 VA: 0x15490A0
@@ -116,6 +161,9 @@ namespace XeApp.Game.Menu
 		// protected static bool CheckExistOriginalSetting(AOJGDNFAIJL.AMIECPBIALP prismData) { }
 
 		// // RVA: 0x154983C Offset: 0x154983C VA: 0x154983C
-		// private void SendPrismChangeLog(int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation) { }
+		private void SendPrismChangeLog(int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation)
+		{
+			UnityEngine.Debug.LogError("TODO SendPrismChangeLog");
+		}
 	}
 }

@@ -211,7 +211,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE5E44C Offset: 0xE5E44C VA: 0xE5E44C Slot: 20
-		// public virtual void SetOn() { }
+		public virtual void SetOn()
+		{
+			UnityEngine.Debug.LogError("TODO Button SeSetOntOff");
+		}
 
 		// // RVA: 0xE5E574 Offset: 0xE5E574 VA: 0xE5E574 Slot: 21
 		public virtual void SetOff()

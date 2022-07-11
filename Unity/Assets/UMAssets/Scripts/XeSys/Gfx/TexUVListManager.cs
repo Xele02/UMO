@@ -193,6 +193,14 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EE224C Offset: 0x1EE224C VA: 0x1EE224C
-		// public TexUVList GetTexUVList(string texName) { }
+		public TexUVList GetTexUVList(string texName)
+		{
+			for(int i = 0; i < m_ListList.Length; i++)
+			{
+				if(m_ListList[i].name == texName)
+					return m_ListList[i];
+			}
+			return null;
+		}
 	}
 }

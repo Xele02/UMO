@@ -35,11 +35,12 @@ namespace XeApp.Game.Menu
 			int cnt = 0;
 			foreach(SetDeckDivaCardControl diva in m_divas)
 			{
+				int slot = cnt;
 				diva.OnClickDivaButton = () =>
 				{
 					//0xC37D58
 					if (OnClickItem != null)
-						OnClickItem(PopupMvModeSelectListContent.SelectTarget.Diva, cnt);
+						OnClickItem(PopupMvModeSelectListContent.SelectTarget.Diva, slot);
 				};
 				diva.OnClickCostumeButton = () =>
 				{
@@ -55,10 +56,11 @@ namespace XeApp.Game.Menu
 					//0xC37DC4
 					OnClickDivaButton(cnt);
 				};
+				int slot = cnt;
 				diva.OnClickCostumeButton = () =>
 				{
 					//0xC37E00
-					OnClickCostumeButton(cnt);
+					OnClickCostumeButton(slot);
 				};
 				cnt++;
 			}

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using XeApp.Game.Menu;
 
 namespace XeApp.Game.Common
 {
@@ -11,13 +12,68 @@ namespace XeApp.Game.Common
 		public static int starRank = 0; // 0x8
 
 		// // RVA: 0x1BACEE4 Offset: 0x1BACEE4 VA: 0x1BACEE4
-		// public static PopupWindowControl Show(PopupSetting setting, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack, Action<IPopupContent, PopupTabButton.ButtonLabel> cotentUpdateCallBack, Action openStartCallBack, Action openEndCallBack, bool isButtonEnable = True, bool isShowBlack = True, bool isUnderFadePlane = False, Func<bool> closeWaitCallBack, Action endCallBaack, Func<PopupWindowControl.SeType, bool> playSeEvent, Func<PopupButton.ButtonLabel, PopupButton.ButtonType, bool> buttonSeEvent, Func<PopupButton.ButtonType, PopupButton.ButtonLabel, bool> closeStartWaitCallBack) { }
+		public static PopupWindowControl Show(PopupSetting setting, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack, Action<IPopupContent, PopupTabButton.ButtonLabel> cotentUpdateCallBack, Action openStartCallBack, Action openEndCallBack, bool isButtonEnable = true, bool isShowBlack = true, bool isUnderFadePlane = false, Func<bool> closeWaitCallBack = null, Action endCallBaack = null, Func<PopupWindowControl.SeType, bool> playSeEvent = null, Func<PopupButton.ButtonLabel, PopupButton.ButtonType, bool> buttonSeEvent = null, Func<PopupButton.ButtonType, PopupButton.ButtonLabel, bool> closeStartWaitCallBack = null)
+		{
+			if(s_controls == null)
+			{
+				s_controls = FindObjectsOfType<PopupWindowControl>();
+			}
+			int popupIndex = SearchFreeIndex();
+			PopupWindowControl ctrl = s_controls[popupIndex];
+			GameManager.Instance.ChangePopupPriority(!isUnderFadePlane);
+			ctrl.m_callBack = buttonCallBack;
+			ctrl.m_contentUpdateCallBack = cotentUpdateCallBack;
+			ctrl.m_openStartCallBack = openStartCallBack;
+			ctrl.m_openEndCallBack = openEndCallBack;
+			ctrl.m_preCloseEndCallBack = PreCloseEndCallBack;
+			ctrl.m_postCloseEndCallBack = CloseEndCallBack;
+			ctrl.m_closeEndCallBack = endCallBaack;
+			ctrl.m_closeWaitCallBack += closeWaitCallBack;
+			ctrl.m_closeStartWaitCallBack = closeStartWaitCallBack;
+			ctrl.PlayWindowOpenHandler = playSeEvent;
+			ctrl.PlayPopupButtonSeHandler = buttonSeEvent;
+			ctrl.Show(setting, isShowBlack, isButtonEnable, false);
+			if(s_popupIndexStack.Count == 0)
+			{
+				if(MenuScene.Instance != null)
+				{
+					MenuScene.Instance.InputDisable();
+				}
+			}
+			else
+			{
+				s_controls[s_popupIndexStack[s_popupIndexStack.Count - 1]].InputDisable();
+			}
+			SetTopPriority(popupIndex);
+			s_popupIndexStack.Add(popupIndex);
+			return ctrl;
+		}
 
 		// // RVA: 0x1BBFD84 Offset: 0x1BBFD84 VA: 0x1BBFD84
-		// private static int SearchFreeIndex() { }
+		private static int SearchFreeIndex()
+		{
+			for(int i = 0; i < s_controls.Length; i++)
+			{
+				if(!s_popupIndexStack.Contains(i) && !s_controls[i].IsActive)
+					return i;
+
+			}
+			return -1;
+		}
 
 		// // RVA: 0x1BBFF64 Offset: 0x1BBFF64 VA: 0x1BBFF64
-		// private static void SetTopPriority(int popupWindowIndex) { }
+		private static void SetTopPriority(int popupWindowIndex)
+		{
+			int idx = s_controls[popupWindowIndex].transform.GetSiblingIndex();
+			for(int i = 0; i < s_controls.Length; i++)
+			{
+				if(idx < s_controls[i].transform.GetSiblingIndex())
+				{
+					idx = s_controls[i].transform.GetSiblingIndex();
+				}
+			}
+			s_controls[popupWindowIndex].transform.SetSiblingIndex(idx);
+		}
 
 		// // RVA: 0x1BC031C Offset: 0x1BC031C VA: 0x1BC031C
 		public static bool IsReady()
@@ -54,10 +110,28 @@ namespace XeApp.Game.Common
 		// public static string FormatTextBank(MessageBank bank, string label, object[] args) { }
 
 		// // RVA: 0x1BC12B8 Offset: 0x1BC12B8 VA: 0x1BC12B8
-		// private static int PreCloseEndCallBack() { }
+		private static int PreCloseEndCallBack()
+		{
+			s_popupIndexStack.RemoveAt(s_popupIndexStack.Count - 1);
+			if(s_popupIndexStack.Count != 0)
+			{
+				return s_popupIndexStack[s_popupIndexStack.Count - 1];
+			}
+			return -1;
+		}
 
 		// // RVA: 0x1BC14B8 Offset: 0x1BC14B8 VA: 0x1BC14B8
-		// private static void CloseEndCallBack(int controlIndex) { }
+		private static void CloseEndCallBack(int controlIndex)
+		{
+			if(controlIndex < 0)
+			{
+				if(MenuScene.Instance == null)
+					return;
+				MenuScene.Instance.InputEnable();
+				return;
+			}
+			s_controls[controlIndex].InputEnable();
+		}
 
 		// // RVA: 0x1BC1670 Offset: 0x1BC1670 VA: 0x1BC1670
 		// public static void Close(PopupWindowControl ignoreControl, Action endCallBack) { }

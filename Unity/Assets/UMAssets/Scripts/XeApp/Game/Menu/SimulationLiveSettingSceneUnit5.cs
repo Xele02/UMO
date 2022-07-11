@@ -191,7 +191,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x12CE1CC Offset: 0x12CE1CC VA: 0x12CE1CC
-		// private bool IsApplyWait() { }
+		private bool IsApplyWait()
+		{
+			UnityEngine.Debug.LogError("TODO IsApplyWait");
+			return false;
+		}
 
 		// // RVA: 0x12CE7FC Offset: 0x12CE7FC VA: 0x12CE7FC
 		// private bool IsPlaying() { }
@@ -229,10 +233,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CF9A8 Offset: 0x12CF9A8 VA: 0x12CF9A8
 		private void OnClickPrismIetms(PopupMvModeSelectListContent.SelectTarget target, int divaSlotNumber)
 		{
-			ShowPrismSelectPopup(target, divaSlotNumber, 0, null, false, () =>
+			ShowPrismSelectPopup(target, divaSlotNumber, Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH, Database.Instance.gameSetup.musicInfo, false, () =>
 			{
 				//0x12CFE94
-				UnityEngine.Debug.LogError("TODO apply diva select");
+				m_prismUnitInfo.UpdateContent(m_prismData, Database.Instance.gameSetup.musicInfo);
+				StartCoroutine(Co_ApplyWait());
 			}, null);
 		}
 
@@ -241,7 +246,14 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72761C Offset: 0x72761C VA: 0x72761C
 		// // RVA: 0x12CFB8C Offset: 0x12CFB8C VA: 0x12CFB8C
-		// private IEnumerator Co_ApplyWait() { }
+		private IEnumerator Co_ApplyWait()
+		{
+			//0x12D008C
+			MenuScene.Instance.RaycastDisable();
+			while(IsApplyWait())
+				yield return null;
+			MenuScene.Instance.RaycastEnable();
+		}
 
 		// // RVA: 0x12CFC38 Offset: 0x12CFC38 VA: 0x12CFC38
 		// private bool CheckTutorialCondition(TutorialConditionId conditionId) { }

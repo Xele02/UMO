@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
 {
@@ -15,7 +16,7 @@ namespace XeApp.Game.Menu
         // public abstract void Release();
 
         // // RVA: -1 Offset: -1 Slot: 9
-        // public abstract void Set(RawImageEx image);
+        void Set(RawImageEx image);
 
         // // RVA: -1 Offset: -1 Slot: 10
         void Set(RawImage image);

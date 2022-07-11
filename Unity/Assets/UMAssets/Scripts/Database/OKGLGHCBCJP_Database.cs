@@ -351,7 +351,7 @@ public class OKGLGHCBCJP_Database
 		// {19,() => { return new IHGBPAJMJFK(); } }, //0x149DD04				"emblem",
 		// {20,() => { return new MHDFCLCMDKO(); } }, //0x149DD70				"enemy",
 		// {21,() => { return new JKDKODAPGBJ(); } }, //0x149DDDC				"energy_item",
-		// {22,() => { return new KMOGDEOKHPG(); } }, //0x149DE48				"episode",
+		// {22,() => { return new KMOGDEOKHPG_Episode(); } }, //0x149DE48				"episode",
 		// {23,() => { return new KIICLPJJBNL(); } }, //0x149DEB4				"epi_item",
 		// {24,() => { return new KCGOMAFPGDD(); } }, //0x149DF20				"event_april_fool_a",
 		// {25,() => { return new KCGOMAFPGDD(); } }, //0x149DF8C				"event_april_fool_b",
@@ -471,7 +471,7 @@ public class OKGLGHCBCJP_Database
 	// public MHDFCLCMDKO OPFBEAJJMJB { get; private set; } // 0x64 DMKMEHGHLAL EDGAJGHMGOK AIBFBDMGEAL
 	// public JKDKODAPGBJ KOPOGNLKAEN { get; private set; } // 0x68 DACOHEDKLPD AEOJDBAPOEN PABHKGHLLLJ
 	// public KIICLPJJBNL NEGGMILDEEF { get; private set; } // 0x6C EEAPHFKEOOP EPDABADJFBH CFGCGOGNBMM
-	// public KMOGDEOKHPG MOLEPBNJAGE { get; private set; } // 0x70 PKELMNGHNJI GJAGLJAIAGC ECGGGFGFEOH
+	// public KMOGDEOKHPG_Episode MOLEPBNJAGE_Episode { get; private set; } // 0x70 PKELMNGHNJI GJAGLJAIAGC ECGGGFGFEOH
 	// public JNGINLMOJKH NKOKFIMNCJM { get; private set; } // 0x74 OOLBNNCGINP CHGCEALBNFF BDBOOJDGKFP
 	// public JPJGOECJFEE EFHMLHKODOD { get; private set; } // 0x78 KAOFKMKMDPH PAGHOGPONBK AODLPJLNDBK
 	// public HGLPLKKBBOL DHOFNBMPBAG { get; private set; } // 0x7C HLPDMEMHECG ILMEKLNLPND HMDGNIKNDKM
@@ -709,7 +709,7 @@ public class OKGLGHCBCJP_Database
 		// OPFBEAJJMJB = null;
 		// KOPOGNLKAEN = null;
 		// NEGGMILDEEF = null;
-		// MOLEPBNJAGE = null;
+		// MOLEPBNJAGE_Episode = null;
 		// NKOKFIMNCJM = null;
 		// EFHMLHKODOD = null;
 		// DHOFNBMPBAG = null;
@@ -790,7 +790,7 @@ public class OKGLGHCBCJP_Database
 					// case 19: LBNBNAFGMDE = item; break;
 					// case 20: OPFBEAJJMJB = item; break;
 					// case 21: KOPOGNLKAEN = item; break;
-					// case 22: MOLEPBNJAGE = item; break;
+					// case 22: MOLEPBNJAGE_Episode = (KMOGDEOKHPG_Episode)item; break;
 					// case 23: NEGGMILDEEF = item; break;
 					// case 45: NKOKFIMNCJM = item; break;
 					// case 49: EFHMLHKODOD = item; break;

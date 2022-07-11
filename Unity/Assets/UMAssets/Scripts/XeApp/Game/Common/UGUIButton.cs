@@ -88,7 +88,10 @@ namespace XeApp.Game.Common
 		// public override bool IsPlaying() { }
 
 		// // RVA: 0x1CD112C Offset: 0x1CD112C VA: 0x1CD112C Slot: 20
-		// public override void SetOn() { }
+		public override void SetOn()
+		{
+			UnityEngine.Debug.LogError("TODO UGUIButton SetOn");
+		}
 
 		// RVA: 0x1CD1210 Offset: 0x1CD1210 VA: 0x1CD1210 Slot: 21
 		public override void SetOff()

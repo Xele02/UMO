@@ -3,12 +3,20 @@ using UnityEngine.UI;
 using XeSys.Gfx;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
 	[ExecuteInEditMode]
 	public class PopupWindowControl : MonoBehaviour
 	{
+		public enum SeType
+		{
+			WindowOpen = 0,
+			WindowClose = 1,
+		}
+
 		public Text m_titleText; // 0xC
 		public Image m_image; // 0x10
 		public Image m_blackPanel; // 0x14
@@ -19,18 +27,18 @@ namespace XeApp.Game.Common
 		public AnimationCurve m_outCurve; // 0x28
 		public float m_speed = 10.0f;// 0x2C
 		public Sprite[] m_windowSprites; // 0x30
-		// public Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> m_callBack; // 0x34
-		// public Action<IPopupContent, PopupTabButton.ButtonLabel> m_contentUpdateCallBack; // 0x38
+		public Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> m_callBack; // 0x34
+		public Action<IPopupContent, PopupTabButton.ButtonLabel> m_contentUpdateCallBack; // 0x38
 		public Action m_openStartCallBack; // 0x3C
 		public Action m_openEndCallBack; // 0x40
 		public Func<int> m_preCloseEndCallBack; // 0x44
 		public Action<int> m_postCloseEndCallBack; // 0x48
 		public Action m_closeEndCallBack; // 0x4C
 		// [CompilerGeneratedAttribute] // RVA: 0x68BE8C Offset: 0x68BE8C VA: 0x68BE8C
-		private Func<bool> m_closeWaitCallBack; // 0x50
-		// public Func<PopupButton.ButtonType, PopupButton.ButtonLabel, bool> m_closeStartWaitCallBack; // 0x54
-		// public Func<PopupWindowControl.SeType, bool> PlayWindowOpenHandler; // 0x58
-		// public Func<PopupButton.ButtonLabel, PopupButton.ButtonType, bool> PlayPopupButtonSeHandler; // 0x5C
+		public Func<bool> m_closeWaitCallBack; // 0x50
+		public Func<PopupButton.ButtonType, PopupButton.ButtonLabel, bool> m_closeStartWaitCallBack; // 0x54
+		public Func<PopupWindowControl.SeType, bool> PlayWindowOpenHandler; // 0x58
+		public Func<PopupButton.ButtonLabel, PopupButton.ButtonType, bool> PlayPopupButtonSeHandler; // 0x5C
 		private const string PositiveButtonSe = "se_btn_001";
 		private const string NegativeButtonSe = "se_btn_002";
 		private const string OtherButtonSe = "se_btn_001";
@@ -41,8 +49,8 @@ namespace XeApp.Game.Common
 		private float m_time; // 0x64
 		private bool m_isAnimation; // 0x68
 		private bool m_isBlack; // 0x69
-		// private PopupButton.ButtonLabel m_backButtonLabel; // 0x6C
-		// private PopupButton.ButtonLabel m_negativeButtonLabel; // 0x70
+		private PopupButton.ButtonLabel m_backButtonLabel; // 0x6C
+		private PopupButton.ButtonLabel m_negativeButtonLabel; // 0x70
 		private PopupButton[] m_buttons; // 0x74
 		private int m_validButtonCount; // 0x78
 		private PopupTabButton[] m_tabButtons; // 0x7C
@@ -50,16 +58,16 @@ namespace XeApp.Game.Common
 		private ScrollRect m_scrollRect; // 0x84
 		private bool m_isButtonEnable; // 0x88
 		private WaitForEndOfFrame m_waitYielder = new WaitForEndOfFrame(); // 0x8C
-		// private ButtonInfo[] m_tmpButtons = new ButtonInfo[6]; // 0x90
+		private ButtonInfo[] m_tmpButtons = new ButtonInfo[6]; // 0x90
 		private Mask m_rectMask; // 0x94
 		private Image m_maskImage; // 0x98
-		// private IPopupContent m_content; // 0x9C
+		private IPopupContent m_content; // 0x9C
 		private bool m_isReady; // 0xA0
 		private bool m_isSelected; // 0xA1
-		// private PopupSetting m_setting; // 0xA4
+		private PopupSetting m_setting; // 0xA4
 		private bool m_isActive; // 0xA8
 		private bool m_isOpenWindow; // 0xA9
-		// private List<ButtonBase> m_inputTargetList = new List<ButtonBase>(64); // 0xAC
+		private List<ButtonBase> m_inputTargetList = new List<ButtonBase>(64); // 0xAC
 		private int m_blockCount; // 0xB0
 		// private List<ScrollRect> m_scrollTargetList = new List<ScrollRect>(4); // 0xB4
 		private int m_scrollBlockCount; // 0xB8
@@ -86,8 +94,8 @@ namespace XeApp.Game.Common
 		}; // 0x10
 		private static float[] s_windowVerticalAdjust = new float[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, -20.0f }; // 0x14
 		private const int SizeTableTitleOffset = 5;
-		// public bool IsActive { get; } 0x1BB888C
-		// public IPopupContent Content { get; } 0x1BB8894
+		public bool IsActive { get { return m_isActive; } } //0x1BB888C
+		public IPopupContent Content { get { return m_content; } } //0x1BB8894
 
 		// [CompilerGeneratedAttribute] // RVA: 0x73EBD4 Offset: 0x73EBD4 VA: 0x73EBD4
 		// // RVA: 0x1BB8674 Offset: 0x1BB8674 VA: 0x1BB8674
@@ -98,31 +106,61 @@ namespace XeApp.Game.Common
 		// public void remove_m_closeWaitCallBack(Func<bool> value) { }
 
 		// // RVA: 0x1BB889C Offset: 0x1BB889C VA: 0x1BB889C
-		// private static int CalcTblIndex(SizeType size, bool isCaption = True) { }
+		private static int CalcTblIndex(SizeType size, bool isCaption = true)
+		{
+			return (int)size + (isCaption ? 0 : 5);
+		}
 
 		// // RVA: 0x1BB88A8 Offset: 0x1BB88A8 VA: 0x1BB88A8
-		// public static Vector2 GetWindowSize(SizeType size, bool isCaption = True) { }
+		public static Vector2 GetWindowSize(SizeType size, bool isCaption = true)
+		{
+			return s_sizeTbl[CalcTblIndex(size, isCaption)];
+		}
 
 		// // RVA: 0x1BB36F4 Offset: 0x1BB36F4 VA: 0x1BB36F4
-		// public static Vector2 GetContentSize(SizeType size, bool isCaption = True) { }
+		public static Vector2 GetContentSize(SizeType size, bool isCaption = true)
+		{
+			return s_contentSizeTbl[CalcTblIndex(size, isCaption)];
+		}
 
 		// // RVA: 0x1BADFE0 Offset: 0x1BADFE0 VA: 0x1BADFE0
 		// public static Vector2 GetContentSize2(SizeType size, bool isCaption = True) { }
 
 		// // RVA: 0x1BB8988 Offset: 0x1BB8988 VA: 0x1BB8988
-		// public static Vector2 GetContentButtonPosition(SizeType size, bool isCaption = True) { }
+		public static Vector2 GetContentButtonPosition(SizeType size, bool isCaption = true)
+		{
+			return s_buttonPositionTbl[CalcTblIndex(size, isCaption)];
+		}
 
 		// // RVA: 0x1BB8A68 Offset: 0x1BB8A68 VA: 0x1BB8A68
-		// public static Vector2 GetContentCenterOffset(SizeType size, bool isCaption = True) { }
+		public static Vector2 GetContentCenterOffset(SizeType size, bool isCaption = true)
+		{
+			return s_contentCenterTbl[CalcTblIndex(size, isCaption)];
+		}
 
 		// // RVA: 0x1BB8B48 Offset: 0x1BB8B48 VA: 0x1BB8B48
-		// public static Vector2 GetWindowVerticalAdjust(SizeType size, bool isCaption = True) { }
+		public static Vector2 GetWindowVerticalAdjust(SizeType size, bool isCaption = true)
+		{
+			return new Vector2(0, s_windowVerticalAdjust[CalcTblIndex(size, isCaption)]);
+		}
 
 		// // RVA: 0x1BB8C38 Offset: 0x1BB8C38 VA: 0x1BB8C38
-		// private void OnPlayWindowOpenSe() { }
+		private void OnPlayWindowOpenSe()
+		{
+			if(PlayWindowOpenHandler != null)
+				if(PlayWindowOpenHandler(SeType.WindowOpen))
+					return;
+			PlayPopupWindowOpenSe(SeType.WindowOpen, SoundManager.Instance.sePlayerBoot);
+		}
 
 		// // RVA: 0x1BB8E08 Offset: 0x1BB8E08 VA: 0x1BB8E08
-		// private void OnPlayWindowCloseSe() { }
+		private void OnPlayWindowCloseSe()
+		{
+			if(PlayWindowOpenHandler != null)
+				if(PlayWindowOpenHandler(SeType.WindowClose))
+					return;
+			PlayPopupWindowOpenSe(SeType.WindowClose, SoundManager.Instance.sePlayerBoot);
+		}
 
 		// // RVA: 0x1BB8EE4 Offset: 0x1BB8EE4 VA: 0x1BB8EE4
 		private void Start()
@@ -138,9 +176,30 @@ namespace XeApp.Game.Common
 			});
 			for(int i = 0; i < m_buttons.Length; i++)
 			{
+				int index = i;
+				PopupButton button = m_buttons[i];
 				m_buttons[i].AddOnClickCallback(() => {
 					//0x1BBDC54
-					UnityEngine.Debug.LogError("TODO");
+					if(m_isSelected)
+						return;
+					m_isSelected = true;
+					if(PlayPopupButtonSeHandler != null)
+					{
+						PlayPopupButtonSeHandler.Invoke(button.Label, button.Type);
+					}
+					else
+					{
+						PlayPopupButtonSe(button.Label, button.Type, SoundManager.Instance.sePlayerBoot);
+					}
+					InputDisable();
+					Action endCallback = () => {
+						//0x1BBDEDC
+						if(m_callBack != null)
+						{
+							m_callBack.Invoke(this, button.Type, button.Label);
+						}
+					};
+					Close(endCallback, button);
 				});
 			}
 			m_tabButtons = GetComponentsInChildren<PopupTabButton>(true);
@@ -172,52 +231,238 @@ namespace XeApp.Game.Common
 		// public void PushNegativeOtherButton() { }
 
 		// // RVA: 0x1BB995C Offset: 0x1BB995C VA: 0x1BB995C
-		// private void PushBackButton() { }
+		private void PushBackButton()
+		{
+			UnityEngine.Debug.LogError("TODO PushBackButton");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73EBF4 Offset: 0x73EBF4 VA: 0x73EBF4
 		// // RVA: 0x1BB94E0 Offset: 0x1BB94E0 VA: 0x1BB94E0
 		private IEnumerator WaitLoadLayout()
 		{
+			//0x1BBF9FC
 			UnityEngine.Debug.Log("Enter Popup WaitLoadLayout");
-			UnityEngine.Debug.LogWarning("TODO Popup WaitLoadLayout");
-			UnityEngine.Debug.Log("Exit Popup WaitLoadLayout");
+			while(!IsLoadedLayout())
+			{
+				yield return null;
+			}
+			m_isReady = true;
 			m_image.gameObject.SetActive(false);
-			yield break;
+			m_blackPanel.gameObject.SetActive(false);
+			UnityEngine.Debug.Log("Exit Popup WaitLoadLayout");
 		}
 
 		// // RVA: 0x1BB9B18 Offset: 0x1BB9B18 VA: 0x1BB9B18
 		// public bool IsReady() { }
 
 		// // RVA: 0x1BB9B20 Offset: 0x1BB9B20 VA: 0x1BB9B20
-		// private bool IsLoadedLayout() { }
+		private bool IsLoadedLayout()
+		{
+			for(int i = 0; i < m_buttons.Length; i++)
+			{
+				if(!m_buttons[i].IsLoaded())
+					return false;
+			}
+			return true;
+		}
 
 		// // RVA: 0x1BB9BC4 Offset: 0x1BB9BC4 VA: 0x1BB9BC4
-		// public void Show(PopupSetting setting, bool isShowBlack = True, bool isButtonEnable = True, bool isError = False) { }
+		public void Show(PopupSetting setting, bool isShowBlack = true, bool isButtonEnable = true, bool isError = false)
+		{
+			m_isBlack = isShowBlack;
+			m_blockCount = 0;
+			m_isButtonEnable = isButtonEnable;
+			m_isSelected = false;
+			m_inputTargetList.Clear();
+			ReleaseResource();
+			m_titleText.text = setting.TitleText;
+			m_titleText.color = SystemTextColor.GetNormalColor();
+			m_titleText.fontSize = 28;
+			m_backButtonLabel = setting.BackButtonLabel;
+			m_negativeButtonLabel = setting.NegativeButtonLabel;
+			if(setting.Buttons.Length == 0)
+			{
+				m_buttonUguiRuntime.Layout.StartAllAnimGoStop("04");
+			}
+			else
+			{
+				m_buttonUguiRuntime.Layout.StartAllAnimGoStop(m_buttons.Length.ToString("00"));
+				Array.Copy(setting.Buttons, m_tmpButtons, setting.Buttons.Length);
+				Array.Reverse(m_tmpButtons, 0, setting.Buttons.Length);
+			}
+			for(int i = 0; i < m_buttons.Length; i++)
+			{
+				m_buttons[i].SetLabel(this, m_tmpButtons[i].Label/*??*/, m_tmpButtons[i].Type/*??*/);
+			}
+			m_buttonUguiRuntime.GetComponent<RectTransform>().anchoredPosition = GetContentButtonPosition(setting.WindowSize, setting.IsCaption);
+			m_validButtonCount = m_buttons.Length;
+			m_tabButtonUguiRuntime.gameObject.SetActive(m_buttons.Length != 0);
+			if(setting.Tabs.Length != 0)
+			{
+				AbsoluteLayout layout = m_tabButtonUguiRuntime.Layout.Root[0] as AbsoluteLayout;
+				layout.StartChildrenAnimGoStop(setting.Tabs.Length.ToString("00"));
+				for(int i = 0; i < setting.Tabs.Length; i++)
+				{
+					m_tabButtons[i].SetLabel(setting.Tabs[i]);
+					if(setting.Tabs[i] == setting.DefaultTab)
+					{
+						m_tabButtons[i].SetOn();
+					}
+					else
+					{
+						m_tabButtons[i].SetOff();
+					}
+				}
+			}
+			m_image.sprite = m_windowSprites[setting.IsCaption ? 0 : 1];
+			m_titleText.enabled = setting.IsCaption;
+			m_image.rectTransform.sizeDelta = GetWindowSize(setting.WindowSize, setting.IsCaption);
+			m_image.rectTransform.anchoredPosition = GetWindowVerticalAdjust(setting.WindowSize, setting.IsCaption);
+			m_setting = setting;
+			if(setting.ISLoaded())
+			{
+				SetupContent(m_setting.Content);
+			}
+			else if(m_setting.IsAssetBundle)
+			{
+				StartCoroutine(LoadResourceAssetBundleCoroutine());
+			}
+			else
+			{
+				ResourcesManager.Instance.Load(m_setting.PrefabPath, this.LoadResourceCallBack);
+			}
+		}
 
 		// // RVA: 0x1BBB064 Offset: 0x1BBB064 VA: 0x1BBB064
-		// public void Close(Action endCallBack, PopupButton button) { }
+		public void Close(Action endCallBack, PopupButton button)
+		{
+			endCallBack += () => {
+				//0x1BBD934
+				GameManager.Instance.RemovePushBackButtonHandler(this.PushBackButton);
+				InputEnable();
+				m_inputTargetList.Clear();
+			};
+			StartCoroutine(ClosePopupWindow(endCallBack, button));
+		}
 
 		// // RVA: 0x1BBB25C Offset: 0x1BBB25C VA: 0x1BBB25C
-		// public void ShowGradation() { }
+		public void ShowGradation()
+		{
+			for(int i = 0; i < m_gradation.Length; i++)
+			{
+				m_gradation[i].enabled = true;
+			}
+		}
 
 		// // RVA: 0x1BBB2F0 Offset: 0x1BBB2F0 VA: 0x1BBB2F0
-		// private bool LoadResourceCallBack(FileResultObject fro) { }
+		private bool LoadResourceCallBack(FileResultObject fro)
+		{
+			GameObject obj = UnityEngine.Object.Instantiate(fro.unityObject) as GameObject;
+			SetupContent(obj);
+			return true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73EC6C Offset: 0x73EC6C VA: 0x73EC6C
 		// // RVA: 0x1BBAFD8 Offset: 0x1BBAFD8 VA: 0x1BBAFD8
-		// private IEnumerator LoadResourceAssetBundleCoroutine() { }
+		private IEnumerator LoadResourceAssetBundleCoroutine()
+		{
+			//0x1BBEB3C
+			bool isShowNowLoding = false;
+			if(m_setting.IsPreload)
+			{
+				if(m_blackPanel != null)
+				{
+					m_blackPanel.gameObject.SetActive(m_isBlack);
+					GameManager.Instance.NowLoading.Show();
+					isShowNowLoding = true;
+				}
+			}
+			yield return m_setting.LoadAssetBundlePrefab(m_setting.m_parent);
+			if(isShowNowLoding)
+			{
+				GameManager.Instance.NowLoading.Hide();
+			}
+			if(m_setting.ISLoaded())
+			{
+				SetupContent(m_setting.Content);
+			}
+		}
 
 		// // RVA: 0x1BBA7FC Offset: 0x1BBA7FC VA: 0x1BBA7FC
-		// private void SetupContent(GameObject content) { }
+		private void SetupContent(GameObject content)
+		{
+			m_contentObject = content;
+			content.transform.SetParent(m_scrollRect.viewport, false);
+			m_content = m_contentObject.GetComponent<IPopupContent>();
+			m_content.Initialize(m_setting, GetContentSize(m_setting.WindowSize, m_setting.IsCaption), this);
+			m_scrollRect.transform.localPosition = GetContentCenterOffset(m_setting.WindowSize, m_setting.IsCaption);
+			m_scrollRect.GetComponent<RectTransform>().sizeDelta = GetContentSize(m_setting.WindowSize, m_setting.IsCaption);
+			m_scrollRect.content = m_contentObject.GetComponent<RectTransform>();
+			m_scrollRect.enabled = false;
+			if(m_content.IsScrollable())
+			{
+				m_scrollRect.verticalScrollbar.gameObject.SetActive(true);
+				m_rectMask.enabled = true;
+				m_maskImage.enabled = true;
+				for(int i = 0; i < m_gradation.Length; i++)
+				{
+					m_gradation[i].enabled = true;
+				}
+			}
+			else
+			{
+				m_scrollRect.verticalScrollbar.gameObject.SetActive(false);
+				m_rectMask.enabled = false;
+				m_maskImage.enabled = false;
+				for(int i = 0; i < m_gradation.Length; i++)
+				{
+					m_gradation[i].enabled = false;
+				}
+			}
+			InputDisable();
+			m_openEndCallBack += () => {
+				//0x1BBDA44
+				InputEnable();
+			};
+			GameManager.Instance.AddPushBackButtonHandler(this.PushBackButton);
+			StartCoroutine(ShowPopupWindow());
+		}
 
 		// // RVA: 0x1BBA6D0 Offset: 0x1BBA6D0 VA: 0x1BBA6D0
-		// private void ReleaseResource() { }
+		private void ReleaseResource()
+		{
+			if(m_contentObject == null)
+				return;
+			if(!m_setting.IsPreload)
+			{
+				UnityEngine.Object.Destroy(m_contentObject);
+			}
+			m_scrollRect.content = null;
+			m_contentObject = null;
+		}
 
 		// // RVA: 0x1BBB480 Offset: 0x1BBB480 VA: 0x1BBB480
-		// private void SetActiveImage(bool active) { }
+		private void SetActiveImage(bool active)
+		{
+			m_image.gameObject.SetActive(active);
+			m_blackPanel.gameObject.SetActive(active);
+		}
 
 		// // RVA: 0x1BBB528 Offset: 0x1BBB528 VA: 0x1BBB528
-		// private bool IsPlayingButtonAnim() { }
+		private bool IsPlayingButtonAnim() 
+		{
+			for(int i = 0; i < m_buttons.Length; i++)
+			{
+				if(m_buttons[i].IsPlaying())
+					return true;
+			}
+			for(int i = 0; i < m_tabButtons.Length; i++)
+			{
+				if(m_tabButtons[i].IsPlaying())
+					return true;
+			}
+			return false;
+		}
 
 		// // RVA: 0x1BBB660 Offset: 0x1BBB660 VA: 0x1BBB660
 		// public bool IsActivePopupWindow() { }
@@ -226,25 +471,150 @@ namespace XeApp.Game.Common
 		// public bool IsOpenPopupWindow() { }
 
 		// // RVA: 0x1BBB670 Offset: 0x1BBB670 VA: 0x1BBB670
-		// public void SetButtonHiddenEnable(bool enable) { }
+		public void SetButtonHiddenEnable(bool enable)
+		{
+			for(int i = 0; i < m_buttons.Length; i++)
+			{
+				if(m_buttons[i].RootAbsoluteLayout.IsVisible)
+				{
+					m_buttons[i].Hidden = !enable;
+				}
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73ECE4 Offset: 0x73ECE4 VA: 0x73ECE4
 		// // RVA: 0x1BBB3F4 Offset: 0x1BBB3F4 VA: 0x1BBB3F4
-		// private IEnumerator ShowPopupWindow() { }
+		private IEnumerator ShowPopupWindow()
+		{
+			//0x1BBF1B0
+			m_isOpenWindow = true;
+			m_currentCurver = m_inCurve;
+			m_image.rectTransform.localScale = Vector3.one * m_inCurve.Evaluate(0.0f);
+			SetActiveImage(true);
+			m_isActive = true;
+			while(!m_content.IsReady())
+				yield return m_waitYielder;
+			if(m_blackPanel != null && m_isBlack)
+			{
+				m_blackPanel.gameObject.SetActive(true);
+			}
+			IEnumerator readyButtons = IsReadyButtons();
+			yield return null;
+			while(readyButtons.MoveNext())
+				yield return null;
+			SetButtonHiddenEnable(m_isButtonEnable);
+			OnPlayWindowOpenSe();
+			m_isAnimation = true;
+			m_time = 0;
+			if(m_setting.IsOpenAnimeMoment)
+				m_time = 1;
+			if(m_openStartCallBack != null)
+			{
+				m_openStartCallBack();
+				m_openStartCallBack = null;
+			}
+			m_content.Show();
+			if(m_content.IsScrollable())
+			{
+				m_scrollRect.enabled = true;
+			}
+			yield return StartCoroutine(PlayPopupWindowAnim());
+			m_isAnimation = false;
+			if(m_openEndCallBack != null)
+			{
+				m_openEndCallBack.Invoke();
+				m_content.CallOpenEnd();
+				m_openEndCallBack = null;
+			}
+			
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73ED5C Offset: 0x73ED5C VA: 0x73ED5C
 		// // RVA: 0x1BBB19C Offset: 0x1BBB19C VA: 0x1BBB19C
-		// private IEnumerator ClosePopupWindow(Action endCallBack, PopupButton button) { }
+		private IEnumerator ClosePopupWindow(Action endCallBack, PopupButton button)
+		{
+			//0x1BBE258
+			while(IsPlayingButtonAnim())
+				yield return null;
+			if(m_closeStartWaitCallBack != null)
+			{
+				while(!m_closeStartWaitCallBack.Invoke(button.Type, button.Label))
+					yield return null;
+			}
+			OnPlayWindowCloseSe();
+			m_isAnimation = true;
+			m_currentCurver = m_outCurve;
+			m_time = 0;
+			m_content.Hide();
+			if(m_content.Parent != null)
+			{
+				if(m_contentObject != null)
+				{
+					m_contentObject.transform.SetParent(m_content.Parent, false);
+				}
+			}
+			m_isOpenWindow = false;
+			yield return StartCoroutine(PlayPopupWindowAnim());
+			m_isAnimation = false;
+			SetActiveImage(false);
+			ReleaseResource();
+			yield return null;
+			int popupId = -1;
+			if(m_preCloseEndCallBack != null)
+			{
+				popupId = m_preCloseEndCallBack();
+				m_preCloseEndCallBack = null;
+			}
+			endCallBack();
+			if(m_closeWaitCallBack != null)
+			{
+				while(!m_closeWaitCallBack())
+					yield return null;
+			}
+			if(m_closeEndCallBack != null)
+			{
+				m_closeEndCallBack();
+				m_closeEndCallBack = null;
+			}
+			if(m_postCloseEndCallBack != null)
+			{
+				m_postCloseEndCallBack.Invoke(popupId);
+				m_postCloseEndCallBack = null;
+			}
+			m_isActive = false;
+			m_closeWaitCallBack = null;
+			PlayWindowOpenHandler = null;
+			m_preCloseEndCallBack = null;
+			m_closeEndCallBack = null;
+			m_callBack = null;
+			m_openStartCallBack = null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73EDD4 Offset: 0x73EDD4 VA: 0x73EDD4
 		// // RVA: 0x1BBB7C8 Offset: 0x1BBB7C8 VA: 0x1BBB7C8
-		// private IEnumerator PlayPopupWindowAnim() { }
+		private IEnumerator PlayPopupWindowAnim()
+		{
+			//0x1BBEEE8
+			while(m_time < 1.0f)
+			{
+				m_time += Time.deltaTime * m_speed;
+				float val = m_currentCurver.Evaluate(m_time);
+				m_image.rectTransform.localScale = Vector2.one * val;
+				yield return null;
+			}
+		}
 
 		// // RVA: 0x1BB113C Offset: 0x1BB113C VA: 0x1BB113C
-		// public void InputDisable() { }
+		public void InputDisable()
+		{
+			UnityEngine.Debug.LogError("TODO InputDisable");
+		}
 
 		// // RVA: 0x1BB1264 Offset: 0x1BB1264 VA: 0x1BB1264
-		// public void InputEnable() { }
+		public void InputEnable()
+		{
+			UnityEngine.Debug.LogError("TODO InputEnable");
+		}
 
 		// // RVA: 0x1BBB904 Offset: 0x1BBB904 VA: 0x1BBB904
 		// public void ScrollDisable() { }
@@ -257,7 +627,25 @@ namespace XeApp.Game.Common
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73EE4C Offset: 0x73EE4C VA: 0x73EE4C
 		// // RVA: 0x1BBC090 Offset: 0x1BBC090 VA: 0x1BBC090
-		// private IEnumerator IsReadyButtons() { }
+		private IEnumerator IsReadyButtons()
+		{
+			//0x1BBE908
+			bool isReadyButtons = false;
+			while(true)
+			{
+				isReadyButtons = true;
+				for(int i = 0; i < m_buttons.Length; i++)
+				{
+					if(m_buttons[i].RootAbsoluteLayout.IsVisible)
+					{
+						isReadyButtons = m_buttons[i].IsReady;
+					}
+				}
+				if(isReadyButtons)
+					break;
+				yield return null;
+			}
+		}
 
 		// // RVA: 0x1BAC4B4 Offset: 0x1BAC4B4 VA: 0x1BAC4B4
 		// public PopupButton FindButton(PopupButton.ButtonLabel label) { }
@@ -275,17 +663,24 @@ namespace XeApp.Game.Common
 		// public void StopScrollMovement() { }
 
 		// // RVA: 0x1BBC568 Offset: 0x1BBC568 VA: 0x1BBC568
-		// public static void PlayPopupButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type, CriAtomSource source) { }
+		public static void PlayPopupButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type, CriAtomSource source)
+		{
+			UnityEngine.Debug.LogError("TODO PlayPopupButtonSe");
+		}
 
 		// // RVA: 0x1BB8D14 Offset: 0x1BB8D14 VA: 0x1BB8D14
-		// public static void PlayPopupWindowOpenSe(PopupWindowControl.SeType type, CriAtomSource source) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73EEC4 Offset: 0x73EEC4 VA: 0x73EEC4
-		// // RVA: 0x1BBD934 Offset: 0x1BBD934 VA: 0x1BBD934
-		// private void <Close>b__86_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73EED4 Offset: 0x73EED4 VA: 0x73EED4
-		// // RVA: 0x1BBDA44 Offset: 0x1BBDA44 VA: 0x1BBDA44
-		// private void <SetupContent>b__90_0() { }
+		public static void PlayPopupWindowOpenSe(PopupWindowControl.SeType type, CriAtomSource source)
+		{
+			if(source == null)
+				return;
+			if(type == SeType.WindowClose)
+			{
+				source.Play("se_wnd_001");
+			}
+			else if(type == SeType.WindowOpen)
+			{
+				source.Play("se_wnd_000");
+			}
+		}
 	}
 }

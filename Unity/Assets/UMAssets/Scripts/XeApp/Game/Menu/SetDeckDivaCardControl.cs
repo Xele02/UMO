@@ -94,7 +94,8 @@ namespace XeApp.Game.Menu
 			{
 				m_divaButton.AddOnClickCallback(() => {
 					//0xA6BBBC
-					UnityEngine.Debug.LogError("TODO click on diva button");
+					if(OnClickDivaButton != null)
+						OnClickDivaButton();
 				});
 				m_divaButton.AddOnStayCallback(() => {
 					//0xA6BBD0
