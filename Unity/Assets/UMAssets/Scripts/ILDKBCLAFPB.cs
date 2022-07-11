@@ -79,7 +79,7 @@ public class ILDKBCLAFPB
         public int LBIKGDHCICB_NotesSpeedAllApply; // 0xA0
         public int JJDENMHGOIH_NotesSpeedAutoRejected; // 0xA4
         public int KDNKCOAJGCM_NotesType = 1; // 0xA8
-        public int BBIOMNCILMC_HomeDivaId; // 0xAC
+        public int BBIOMNCILMC_HomeDivaId = 1; // 0xAC // Hack default init diva id for new save
         public bool GDLAPBKCBFP_IsHomeDivaWindow = true; // 0xB0
         public int BAGJHPGGCCI_PlayLogGraphType; // 0xB4
         public bool EDDMJEMOAGM_IsExcellentDisplaySetting = true; // 0xB8
@@ -104,7 +104,7 @@ public class ILDKBCLAFPB
         public void PBCBJAPONBF()
         {
             UnityEngine.Debug.LogError("TODO");
-        }
+		}
 
         // // RVA: 0x2035D68 Offset: 0x2035D68 VA: 0x2035D68
         // public bool KKBJCJNAGDB() { }

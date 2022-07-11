@@ -1,4 +1,7 @@
 
+using System.Text;
+using XeSys;
+
 public class CKFGMNAIBNG
 {
 	public int ECNEBGLPECK; // 0x8
@@ -20,8 +23,8 @@ public class CKFGMNAIBNG
 	// public int ENMAEBJGEKL { get; set; } 0x107DE8C FHIMMFAEDIP 0x107DE9C CPEAMPGOMCB
 	// public int DEOBDFOPLHG { get; set; } 0x107DEAC LHFCGJBCDEE 0x107DEBC OAGOCCBEFPD
 	public int DAJGPBLEEOB { get { return FBGGEFFJJHB ^ HNJNKCPDKAL; } set { HNJNKCPDKAL = FBGGEFFJJHB ^ value; } } //0x107DECC LHPKEPPBKPF 0x107DEDC OIOEEEDODJA
-	// public int AHHJLDLAPAN { get; set; } 0x107DEEC IPKDLMIDMHH 0x107DEFC IENNENMKEFO
-	// public int JPIDIENBGKH { get; set; } 0x107DF0C PHLLMIGCPCB 0x107DF1C BLBNMENMCIF
+	public int AHHJLDLAPAN_DivaId { get { return CGIGOFKGCII ^ FBGGEFFJJHB; } set { CGIGOFKGCII = FBGGEFFJJHB ^ value; } } //0x107DEEC IPKDLMIDMHH 0x107DEFC IENNENMKEFO
+	public int JPIDIENBGKH { get { return HFJLOKDMJHI ^ FBGGEFFJJHB; } set { HFJLOKDMJHI = FBGGEFFJJHB ^ value; } } //0x107DF0C PHLLMIGCPCB 0x107DF1C BLBNMENMCIF
 	// public int GKIKAABHAAD { get; set; } 0x107DF2C JNDLKKLLAMO 0x107DF3C PBOBJNPNBHG
 	// public int EGLDFPILJLG { get; set; } 0x107DF4C JACADMEJOAH 0x107DF5C MMDBFGAFINM
 	// public bool LFLNFHKOIIM { get; }
@@ -49,13 +52,17 @@ public class CKFGMNAIBNG
 	public void KHEKNNFCAOI(int AHHJLDLAPAN, int JPIDIENBGKH, int GKIKAABHAAD, bool OJEBNBLHPNP = false)
     {
         UnityEngine.Debug.LogError("TODO CKFGMNAIBNG KHEKNNFCAOI");
-    }
+		AHHJLDLAPAN_DivaId = AHHJLDLAPAN;
+		this.JPIDIENBGKH = JPIDIENBGKH;
+	}
 
 	// // RVA: 0x107EB24 Offset: 0x107EB24 VA: 0x107EB24
 	public void KHEKNNFCAOI(int AHHJLDLAPAN, int JPIDIENBGKH, BBHNACPENDM AHEFHIMGIBI, bool OJEBNBLHPNP = false)
     {
         UnityEngine.Debug.LogError("TODO CKFGMNAIBNG KHEKNNFCAOI");
-    }
+		AHHJLDLAPAN_DivaId = AHHJLDLAPAN;
+		this.JPIDIENBGKH = JPIDIENBGKH;
+	}
 
 	// // RVA: 0x107E604 Offset: 0x107E604 VA: 0x107E604
 	// private static void OHGOPFEOJOG(LCLCCHLDNHJ.ILODJKFJJDO NDFIEMPPMLF, MessageBank GDMBMJBMNME, StringBuilder JEHFDJPOEFF, int HDHANIEDJPA, int DEOBDFOPLHG, ref string OPFGFINHFCE, ref string HCAHCFGPJIF) { }
@@ -67,7 +74,15 @@ public class CKFGMNAIBNG
 	// public bool LMHEGNBODJG() { }
 
 	// // RVA: 0x107EFCC Offset: 0x107EFCC VA: 0x107EFCC
-	// public string HCPCHEPCFEA(int LEHGKNOCLBG) { }
+	public string HCPCHEPCFEA(int LEHGKNOCLBG)
+	{
+		if (LEHGKNOCLBG == 0)
+			return OPFGFINHFCE;
+		MessageBank bank = MessageManager.Instance.GetBank("master");
+		StringBuilder str = new StringBuilder(16);
+		str.SetFormat("cos_{0:D4}_{1:D2}", (FBGGEFFJJHB ^ HFJLOKDMJHI), LEHGKNOCLBG);
+		return bank.GetMessageByLabel(str.ToString());
+	}
 
 	// // RVA: 0x107ECCC Offset: 0x107ECCC VA: 0x107ECCC
 	// public void CEHICAFELBI(BBHNACPENDM AHEFHIMGIBI) { }

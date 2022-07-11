@@ -6,6 +6,15 @@ namespace XeApp.Game.Menu
 {
 	public class DivaIconTextureCache : IconTextureCache
 	{
+		public enum IconType
+		{
+			SSize = 0,
+			MSize = 1,
+			LSize = 2,
+			PS = 3,
+			Num = 4,
+		}
+
 		//private DivaIconTexture m_loadingDivaIcon; // 0x20
 		//private DivaIconTexture m_loadingStatusDivaIcon; // 0x24
 		private const string DivaSSizeIconPath = "ct/dv/me/01/{0:D2}_{1:D2}.xab";
@@ -22,10 +31,25 @@ namespace XeApp.Game.Menu
 		private const string DivaLSizeIconInColorPath = "ct/dv/me/03/{0:D2}_{1:D2}_{2:D2}.xab";
 		private const string DivaPSIconInColorPath = "ct/dv/ps/{0:D2}_{1:D2}_{2:D2}.xab";
 		private StringBuilder m_strBuilder = new StringBuilder(); // 0x28
-		private static string[][] IconFormatTable; // 0x0
+		private static string[][] IconFormatTable = new string[4][] {
+			new string[2] { DivaSSizeIconPath, DivaSSizeIconInColorPath },
+			new string[2] { DivaMSizeIconPath, DivaMSizeIconInColorPath },
+			new string[2] { DivaLSizeIconPath, DivaLSizeIconInColorPath },
+			new string[2] { DivaPSIconPath, DivaPSIconInColorPath }
+		}; // 0x0
 
 		// // RVA: 0x17E3444 Offset: 0x17E3444 VA: 0x17E3444
-		// public static string GetIconPath(DivaIconTextureCache.IconType type, int divaId, int modelId, int colorId) { }
+		public static string GetIconPath(IconType type, int divaId, int modelId, int colorId)
+		{
+			if(colorId == 0)
+			{
+				return string.Format(IconFormatTable[(int)type][0], divaId, modelId);
+			}
+			else
+			{
+				return string.Format(IconFormatTable[(int)type][1], divaId, modelId, colorId);
+			}
+		}
 
 		// // RVA: 0x17E3714 Offset: 0x17E3714 VA: 0x17E3714 Slot: 5
 		// public override void Terminated() { }
@@ -70,10 +94,16 @@ namespace XeApp.Game.Menu
 		// public void LoadTutorialIcon(int charId, Action<IiconTexture> callBack) { }
 
 		// // RVA: 0x17E3E38 Offset: 0x17E3E38 VA: 0x17E3E38
-		// public void LoadDivaUpIco(int id, int modelId, int colorId, Action<IiconTexture> callBack) { }
+		public void LoadDivaUpIco(int id, int modelId, int colorId, Action<IiconTexture> callBack)
+		{
+			Load(GetDivaUpIconPath(id, modelId, colorId), callBack);
+		}
 
 		// // RVA: 0x17E3EE4 Offset: 0x17E3EE4 VA: 0x17E3EE4
-		// public static string GetDivaUpIconPath(int id, int modelId, int colorId) { }
+		public static string GetDivaUpIconPath(int id, int modelId, int colorId)
+		{
+			return GetIconPath(IconType.PS, id, modelId, colorId);
+		}
 
 		// // RVA: 0x17E3F80 Offset: 0x17E3F80 VA: 0x17E3F80
 		public void LoadDivaSmallBustupIcon(int id, int modelId, Action<IiconTexture> callBack)
@@ -103,7 +133,11 @@ namespace XeApp.Game.Menu
 		// public void TryStateDivaIconInstall(int divaId, int modelId, int colorId) { }
 
 		// // RVA: 0x17E463C Offset: 0x17E463C VA: 0x17E463C
-		// public void TryStateDivaUpIconInstall(int divaId, int modelId, int colorId) { }
+		public void TryStateDivaUpIconInstall(int divaId, int modelId, int colorId)
+		{
+			m_strBuilder.Set(GetIconPath(IconType.PS, divaId, modelId, colorId));
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC(m_strBuilder.ToString());
+		}
 
 		// // RVA: 0x17E4774 Offset: 0x17E4774 VA: 0x17E4774
 		// public void TryLoadStoryIconInstall(int divaId, int modelId) { }
@@ -120,12 +154,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x17E4B28 Offset: 0x17E4B28 VA: 0x17E4B28
 		// public void TryLoadEventGoDivaIcon(int divaId) { }
-
-		// // RVA: 0x17E4C44 Offset: 0x17E4C44 VA: 0x17E4C44
-		static DivaIconTextureCache()
-		{
-			UnityEngine.Debug.LogWarning("TODO DivaIconTextureCache");
-		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6C6030 Offset: 0x6C6030 VA: 0x6C6030
 		// // RVA: 0x17E5200 Offset: 0x17E5200 VA: 0x17E5200

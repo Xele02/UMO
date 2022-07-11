@@ -50,6 +50,7 @@ namespace XeApp.Game.Menu
 			m_playButtons.OnClickPlayButton = this.OnClickPlayButton;
 			UpdatePrismData(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH, musicInfo);
 			m_prismUnitInfo.UpdateContent(m_prismData, musicInfo);
+			m_musicInfo.Set(Database.Instance.selectedMusic.GetSelectedMusicData(), musicInfo, true, SetDeckMusicInfo.BottomType.Description);
 			base.OnPreSetCanvas();
 		}
 

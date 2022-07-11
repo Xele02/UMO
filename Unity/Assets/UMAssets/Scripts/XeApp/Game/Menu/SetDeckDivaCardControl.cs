@@ -78,10 +78,10 @@ namespace XeApp.Game.Menu
 		//private bool m_isStory; // 0x68
 		//private bool m_isGoDivaSub; // 0x69
 		private int m_divaTextureLoadingCount; // 0x6C
-		//private int m_costumeTextureLoadingCount; // 0x70
+		private int m_costumeTextureLoadingCount; // 0x70
 
 		//public bool IsLoading { get; } 0xA68268
-		//public FFHPBEPOMAK DivaData { get; } 0xA6A0C0
+		public FFHPBEPOMAK DivaData { get { return m_divaData; } } //0xA6A0C0
 		public UGUIStayButton DivaButton { get { return m_divaButton; } } //0xA6A0C8
 		//private bool IsEmpty { get; } 0xA6A0D0
 
@@ -106,7 +106,8 @@ namespace XeApp.Game.Menu
 			{
 				m_costumeButton.AddOnClickCallback(() => {
 					//0xA6BBE4
-					UnityEngine.Debug.LogError("TODO click on costume button");
+					if (OnClickCostumeButton != null)
+						OnClickCostumeButton();
 				});
 			}
 		}
@@ -220,7 +221,17 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA6B280 Offset: 0xA6B280 VA: 0xA6B280
 		private void SetCostumeImage(FFHPBEPOMAK divaData)
 		{
-			UnityEngine.Debug.LogError("TODO SetCostumeImage");
+			m_costumeTextureLoadingCount++;
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL.DAJGPBLEEOB);
+			if(cosInfo != null)
+			{
+				GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM(EKLNMHFCAOI.FKGCBLHOOCL.KBHGPMNGALJ, cosInfo.JPIDIENBGKH_CostumeId), divaData.EKFONBFDAAP_ColorId, (IiconTexture icon) =>
+				{
+					//0xA6BE1C
+					icon.Set(m_costumeImage);
+					m_costumeTextureLoadingCount--;
+				});
+			}
 		}
 
 		//// RVA: 0xA6BB74 Offset: 0xA6BB74 VA: 0xA6BB74
@@ -229,9 +240,5 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x730BFC Offset: 0x730BFC VA: 0x730BFC
 		//// RVA: 0xA6BBF8 Offset: 0xA6BBF8 VA: 0xA6BBF8
 		//private void <SetDivaImageAndColor>b__43_0(IiconTexture texture) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x730C1C Offset: 0x730C1C VA: 0x730C1C
-		//// RVA: 0xA6BE1C Offset: 0xA6BE1C VA: 0xA6BE1C
-		//private void <SetCostumeImage>b__44_0(IiconTexture icon) { }
 	}
 }

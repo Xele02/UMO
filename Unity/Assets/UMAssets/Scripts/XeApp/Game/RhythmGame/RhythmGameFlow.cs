@@ -189,15 +189,15 @@ namespace XeApp.Game.RhythmGame
 					}
 				}
 			}
-			EONOEHOKBEB_Music DbMusicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC(musicInfo.prismMusicId);
+			EONOEHOKBEB_Music DbMusicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicInfo.prismMusicId);
 			int wavId = 0;
 			if(musicInfo.isFreeMode)
 			{
-				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC(musicInfo.freeMusicId).KEFGPJBKAOD;
+				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId).KEFGPJBKAOD_WavId;
 			}
 			else
 			{
-				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ(musicInfo.storyMusicId).KEFGPJBKAOD;
+				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ(musicInfo.storyMusicId).KEFGPJBKAOD_WavId;
 			}
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
 			p.KHEKNNFCAOI_Init(teamInfo.prismValkyrieId, 0, 0);

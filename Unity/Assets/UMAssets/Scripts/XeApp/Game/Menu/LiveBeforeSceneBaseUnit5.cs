@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 			new PrefabCacheParam() { prefabName="SetDeckUnitInfo_SLive", count=1 },
 			new PrefabCacheParam() { prefabName="SetDeckStatusWindow", count=1 }
 		}; // 0x0
-		 protected AOJGDNFAIJL.AMIECPBIALP m_prismData = new AOJGDNFAIJL.AMIECPBIALP(); // 0x48
+		 protected AOJGDNFAIJL_PrismData.AMIECPBIALP m_prismData = new AOJGDNFAIJL_PrismData.AMIECPBIALP(); // 0x48
 		// private AOJGDNFAIJL.AMIECPBIALP m_prismLogDiffData = new AOJGDNFAIJL.AMIECPBIALP(); // 0x4C
 		private PopupMvModeSelectListSetting m_prismPopupSetting = new PopupMvModeSelectListSetting(); // 0x50
 		// private List<int> m_lackDivaIds = new List<int>(); // 0x54

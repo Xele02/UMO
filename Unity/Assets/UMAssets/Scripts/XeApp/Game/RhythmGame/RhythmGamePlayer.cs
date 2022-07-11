@@ -370,7 +370,7 @@ namespace XeApp.Game.RhythmGame
 			else
 			{
 				status.energy.DisableCallbackPilotVoice();
-				AOJGDNFAIJL.AMIECPBIALP a = new AOJGDNFAIJL.AMIECPBIALP();				
+				AOJGDNFAIJL_PrismData.AMIECPBIALP a = new AOJGDNFAIJL_PrismData.AMIECPBIALP();				
 				a.OBKGEDCKHHE(Database.Instance.gameSetup.musicInfo.prismMusicId, 1 < Database.Instance.gameSetup.musicInfo.onStageDivaNum);
 				/*int[] difficulties = a.CEMKPBIBOCG(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 				Database.Instance.m_tutorialSetInstance.musicInfo.difficultyType

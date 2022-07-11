@@ -5,6 +5,7 @@ using UnityEngine;
 class RuntimeSettings : ScriptableObject
 {
 	public static bool ForceDivaUnlock = true;
+	public static bool ForceCostumeUnlock = true;
 	public string DataDirectory;
 	public string DataWebServerURL;
 }

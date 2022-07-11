@@ -27,7 +27,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14BD918 Offset: 0x14BD918 VA: 0x14BD918
-		// public void Load(int id, int subId, Action<IiconTexture> callBack) { }
+		public void Load(int id, int subId, Action<IiconTexture> callBack)
+		{
+			Load(MakeItemIconTexturePath(id, subId), callBack);
+		}
 
 		// // RVA: 0x14BD94C Offset: 0x14BD94C VA: 0x14BD94C
 		// public void LoadEmblem(int emblemId, Action<IiconTexture> callback) { }
@@ -36,7 +39,10 @@ namespace XeApp.Game.Menu
 		// public void TryInstallEmblem(int emblemId) { }
 
 		// // RVA: 0x14BDAC4 Offset: 0x14BDAC4 VA: 0x14BDAC4
-		// public void TryInstall(int id, int subId = 0) { }
+		public void TryInstall(int id, int subId = 0)
+		{
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC(MakeItemIconTexturePath(id, subId));
+		}
 
 		// // RVA: 0x14BDB7C Offset: 0x14BDB7C VA: 0x14BDB7C
 		// private static int ConvertDegreeTexId(int itemId) { }
@@ -45,7 +51,46 @@ namespace XeApp.Game.Menu
 		// public static string MakeEmblemIconTexturePath(int emblemId) { }
 
 		// // RVA: 0x14BD514 Offset: 0x14BD514 VA: 0x14BD514
-		// public static string MakeItemIconTexturePath(int id, int subId = 0) { }
+		public static string MakeItemIconTexturePath(int id, int subId = 0)
+		{
+			EKLNMHFCAOI.FKGCBLHOOCL val = EKLNMHFCAOI.BKHFLDMOGBD(id);
+			int val2 = 0;
+			if ((int)val < 6)
+			{
+				if (val != EKLNMHFCAOI.FKGCBLHOOCL.MHKFDBLMOGF/*4*/)
+				{
+					val2 = id;
+					//!!break;
+				}
+				else
+				{
+					UnityEngine.Debug.LogError("TODO MakeItemIconTexturePath");
+					/*int val3 = EKLNMHFCAOI.DEACAHNLMNI(id);
+					if(val3 < 1)
+					{
+						//LAB_014bd7d8
+						val2 = 40000;
+						!!break;
+					}
+					else
+					{
+						IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene
+					}*/
+				}
+			}
+			else
+			{
+				UnityEngine.Debug.LogError("TODO MakeItemIconTexturePath");
+			}
+			if(subId < 1)
+			{
+				return string.Format("ct/im/{0:D5}.xab", val2);
+			}
+			else
+			{
+				return string.Format("ct/im/{0:D5}_{1:D2}.xab", val2, subId);
+			}
+		}
 
 		// // RVA: 0x14BDCF8 Offset: 0x14BDCF8 VA: 0x14BDCF8
 		// public static string MakeDecoItemIconTexturePath(int id, int subId = 0) { }

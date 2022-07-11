@@ -39,24 +39,23 @@ namespace XeApp.Game.Menu
 				diva.OnClickDivaButton = () =>
 				{
 					//0xC37D58
-					if (OnClickItem != null)
-						OnClickItem(PopupMvModeSelectListContent.SelectTarget.Diva, slot);
+					OnClickDivaButton(slot);
 				};
 				diva.OnClickCostumeButton = () =>
 				{
 					//0xC37D94
-					OnClickCostumeButton(cnt);
+					OnClickCostumeButton(slot);
 				};
 				cnt++;
 			}
 			foreach (SetDeckDivaCardControl diva in m_additionDivas)
 			{
+				int slot = cnt;
 				diva.OnClickDivaButton = () =>
 				{
 					//0xC37DC4
-					OnClickDivaButton(cnt);
+					OnClickDivaButton(slot);
 				};
-				int slot = cnt;
 				diva.OnClickCostumeButton = () =>
 				{
 					//0xC37E00
@@ -67,7 +66,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xC36D44 Offset: 0xC36D44 VA: 0xC36D44
-		public void UpdateContent(AOJGDNFAIJL.AMIECPBIALP prismData, GameSetupData.MusicInfo musicInfo)
+		public void UpdateContent(AOJGDNFAIJL_PrismData.AMIECPBIALP prismData, GameSetupData.MusicInfo musicInfo)
 		{
 			int maxDiva = Mathf.Max(m_divas.Count + m_additionDivas.Count, 5);
 			int numDiva = Mathf.Clamp(musicInfo.onStageDivaNum, 1, maxDiva);
@@ -77,9 +76,9 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < numDiva; i++)
 			{
-				if(prismData.PNBKLGKCKGO(i) > 0)
+				if(prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i) > 0)
 				{
-					m_divaDatas[i].KHEKNNFCAOI(prismData.PNBKLGKCKGO(i), 0, prismData.OCNHIHMAGMJ(i), prismData.DOIGAGAAAOP(i), null, null, false);
+					m_divaDatas[i].KHEKNNFCAOI(prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i), 0, prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(i), prismData.DOIGAGAAAOP_GetPrismCostumeColorIdForSlot(i), null, null, false);
 				}
 				GetDivaControlBySlotNumber(i).SetForPrism(m_divaDatas[i]);
 				GetDivaControlBySlotNumber(i).SetImp(SetDeckDivaCardControl.ImpType.Off);
@@ -122,7 +121,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xC37C74 Offset: 0xC37C74 VA: 0xC37C74
 		private void OnClickCostumeButton(int divaSlotNumber)
 		{
-			UnityEngine.Debug.LogError("TODO OnClickCostumeButton");
+			FFHPBEPOMAK divaData = GetDivaControlBySlotNumber(divaSlotNumber).DivaData;
+			if(divaData != null && OnClickItem != null)
+			{
+				OnClickItem(PopupMvModeSelectListContent.SelectTarget.Costume, divaSlotNumber);
+			}
 		}
 	}
 }
