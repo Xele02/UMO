@@ -72,11 +72,17 @@ namespace XeApp.Game.Menu
 		protected LimitTimeWatcher m_bannerTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x60
 		protected abstract IBJAKJJICBC selectMusicData { get; } // Slot: 40
 		protected abstract VerticalMusicDataList.MusicListData selectMusicListData { get; } // Slot: 41
-		// protected bool listIsEmpty { get; } 0xAC8AD4
+		protected bool listIsEmpty { get {
+			return currentMusicList.GetCount(isLine6Mode, false) < 1;
+		} } //0xAC8AD4
 		// protected bool listIsEmptyByFilter { get; } 0xAC8B48
 		// protected bool isExistSelectMusicData { get; } 0xAC8B50
 		// protected int musicId { get; } 0xAC8B58
-		// protected int freeMusicId { get; } 0xAC8BAC
+		protected int freeMusicId { get {
+			if(listIsEmpty)
+				return 0;
+			return selectMusicData.GHBPLHBNMBK;
+		} } //0xAC8BAC
 		// protected int gameEventType { get; } 0xAC8C00
 		// protected int m_eventTicketId { get; set; } // 0x9C
 		protected KGCNCBOKCBA.GNENJEHKMHD m_eventStatus { get; set; } // 0xA0
@@ -310,6 +316,7 @@ namespace XeApp.Game.Menu
 		private void DecideCurrentMusic(bool isSimulation)
 		{
 			UnityEngine.Debug.LogError("TODO DecideCurrentMusic");
+			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, 0/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam());
 			Database.Instance.selectedMusic.SetMusicData(selectMusicData);
 			MenuScene.Instance.Call(TransitionList.Type.SIMULATIONLIVE_SETTING, null, true);
 		}

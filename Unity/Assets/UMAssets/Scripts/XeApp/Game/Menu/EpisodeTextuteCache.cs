@@ -52,6 +52,7 @@ namespace XeApp.Game.Menu
 			m_strBuilder.Clear();
 			if(colorId < 1)
 			{
+				UnityEngine.Debug.Log(divaId+" "+modelId+" "+colorId);
 				m_strBuilder.SetFormat(DivaBustupTexturePath, divaId, modelId);
 				if(!KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH(m_strBuilder.ToString()))
 				{
@@ -77,6 +78,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF09B6C Offset: 0xF09B6C VA: 0xF09B6C
 		private int FindEpisodeIdFromModelId(int divaId, int modelId)
 		{
+			//IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.
+			// Todo load episode Db
 			UnityEngine.Debug.LogError("TODO FindEpisodeIdFromModelId");
 			return 0;
 		}

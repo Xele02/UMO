@@ -64,10 +64,16 @@ static class FileSystemProxy
 			onDone(path);
 	}
 
+	static bool serverListInitializing = false;
+
 	static IEnumerator InitServerFileList()
 	{
+		while(serverListInitializing)
+			yield return null;
+
 		if (serverFileList == null)
 		{
+			serverListInitializing = true;
 			serverFileList = new Dictionary<string, string>();
 			string fileList = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath + "/../../Data/RequestGetFiles.json"));
 			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(fileList);
@@ -84,6 +90,7 @@ static class FileSystemProxy
 				//UnityEngine.Debug.Log("Added file " + localName + " to remote name " + fileName);
 				serverFileList.Add(localName, fileName);
 			}
+			serverListInitializing = false;
 		}
 	}
 

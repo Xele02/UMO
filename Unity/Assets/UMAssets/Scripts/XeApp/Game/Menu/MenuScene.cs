@@ -452,8 +452,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30D6C Offset: 0xB30D6C VA: 0xB30D6C Slot: 14
 		protected override bool DoUpdateLeave()
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return false;
+			UnityEngine.Debug.LogError("TODO DoUpdateLeave");
+			MenuUpdater.updater = null;
+			return true;
 		}
 
 		// // RVA: 0xB30E8C Offset: 0xB30E8C VA: 0xB30E8C

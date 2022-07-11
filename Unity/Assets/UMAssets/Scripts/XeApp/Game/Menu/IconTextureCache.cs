@@ -45,6 +45,7 @@ namespace XeApp.Game.Menu
 		protected void Load(string path, IconTextureType iconTextureType, Action<IiconTexture> callBack)
 		{
 			IiconTexture res;
+			UnityEngine.Debug.Log(path);
 			if(m_iconTextureCache.TryGetValue(path, out res))
 			{
 				if(m_capacity > 0)

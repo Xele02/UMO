@@ -270,7 +270,7 @@ namespace XeApp.Game.Menu
 					return;
 				listLayout.SetSubImage(texture);
 			});
-			GameManager.Instance.ItemTextureCache.Load(listItem.CostumeData.JPIDIENBGKH, listItem.ColorId, (IiconTexture texture) =>
+			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM(EKLNMHFCAOI.FKGCBLHOOCL.KBHGPMNGALJ, listItem.CostumeData.JPIDIENBGKH_CostumeId), listItem.ColorId, (IiconTexture texture) =>
 			{
 				//0x169C230
 				if (listLayout.ListIndex != listItem.ListIndex)

@@ -90,7 +90,30 @@ namespace XeApp.Game.MusicSelect
 		//public static string GetEventPeriodString(long openTime, long closeTime) { }
 
 		//// RVA: 0xCA2ED4 Offset: 0xCA2ED4 VA: 0xCA2ED4
-		//public int GetCount(bool line6Mode, bool simulation) { }
+		public int GetCount(bool line6Mode, bool simulation)
+		{
+			List<VerticalMusicDataList.MusicListData> data;
+			if(simulation)
+			{
+				if(line6Mode)
+				{
+					data = m_viewSimulationList;
+				}
+				else
+				{
+					data = m_viewSimulation6LineList;
+				}
+			}
+			else if(line6Mode)
+			{
+				data = m_viewList;
+			}
+			else
+			{
+				data = m_view6LineList;
+			}
+			return data.Count;
+		}
 
 		//// RVA: 0xCA2FA4 Offset: 0xCA2FA4 VA: 0xCA2FA4
 		public VerticalMusicDataList.MusicListData Get(int index, bool line6Mode, bool simulation)

@@ -236,7 +236,20 @@ namespace XeApp.Game.Common
 			// public void SetupInfoByStoryMusic(int storyMusicId, int onStageDivaNum = 1) { }
 
 			// // RVA: 0xE9DAC8 Offset: 0xE9DAC8 VA: 0xE9DAC8
-			// public void SetupInfoByFreeMusic(int freeMusicId, Difficulty.Type difficultyType, bool isEnergyRequired, GameSetupData.MusicInfo.InitFreeMusicParam initParam, OHCAABOMEOF.KGOGMKMBCPP gameEventType = 0, OHCAABOMEOF.KGOGMKMBCPP openEventType = 0, OHCAABOMEOF.KGOGMKMBCPP playEventType = 0, bool isMvMode = False, bool isLine6Mode = False, string musicLoadText = "", int overrideEnemyCenterSkillId = 0, int overrideEnemyLiveSkillId = 0, long mvLimitTime = -1, long limitTime = 0, int eventUniqueId = 0, int onStageDivaNum = 1, long setupTime = 0) { }
+			public void SetupInfoByFreeMusic(int freeMusicId, Difficulty.Type difficultyType, bool isEnergyRequired,
+				GameSetupData.MusicInfo.InitFreeMusicParam initParam, OHCAABOMEOF.KGOGMKMBCPP gameEventType = 0, 
+				OHCAABOMEOF.KGOGMKMBCPP openEventType = 0, OHCAABOMEOF.KGOGMKMBCPP playEventType = 0, 
+				bool isMvMode = false, bool isLine6Mode = false, string musicLoadText = "", 
+				int overrideEnemyCenterSkillId = 0, int overrideEnemyLiveSkillId = 0, long mvLimitTime = -1, 
+				long limitTime = 0, int eventUniqueId = 0, int onStageDivaNum = 1, long setupTime = 0)
+			{
+				UnityEngine.Debug.LogError("TODO SetupInfoByFreeMusic");
+				this.freeMusicId = freeMusicId;
+				this.onStageDivaNum = onStageDivaNum;
+				this.IsLine6Mode = isLine6Mode;
+				this.IsMvMode = isMvMode;
+				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[freeMusicId - 1].DLAEJOBELBH_Id;
+			}
 
 			// // RVA: 0xE9DF78 Offset: 0xE9DF78 VA: 0xE9DF78
 			// public void SetupInfoByTutorial(TutorialGameMode.Type tutorialMode) { }

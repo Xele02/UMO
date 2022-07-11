@@ -173,10 +173,23 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG
 	}
 
 	// // RVA: 0xD9B104 Offset: 0xD9B104 VA: 0xD9B104
-	public ILODJKFJJDO NLIBHNJNJAN(int AHHJLDLAPAN, int DAJGPBLEEOB)
+	public ILODJKFJJDO NLIBHNJNJAN(int AHHJLDLAPAN_DivaId, int DAJGPBLEEOB_PrismCostumeModelId)
     {
-        UnityEngine.Debug.LogError("TODO");
-        return null;
+        LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = CDENCMNHNGA.Find((LCLCCHLDNHJ_Costume.ILODJKFJJDO PKLPKMLGFGK) => {
+			//0xD9DCBC
+			if(PKLPKMLGFGK.PPEGAKEIEGM == 2)
+			{
+				return AHHJLDLAPAN_DivaId == PKLPKMLGFGK.AHHJLDLAPAN_PrismDivaId && DAJGPBLEEOB_PrismCostumeModelId == PKLPKMLGFGK.DAJGPBLEEOB_PrismCostumeModelId;
+			}
+			return false;
+		});
+		if(cosInfo != null)
+			return cosInfo;
+		cosInfo = CDENCMNHNGA.Find((LCLCCHLDNHJ_Costume.ILODJKFJJDO PKLPKMLGFGK) => {
+			//0xD9DD2C
+			return AHHJLDLAPAN_DivaId == PKLPKMLGFGK.AHHJLDLAPAN_PrismDivaId && PKLPKMLGFGK.DAJGPBLEEOB_PrismCostumeModelId == 1;
+		});
+        return cosInfo;
     }
 
 	// // RVA: 0xD9B29C Offset: 0xD9B29C VA: 0xD9B29C
