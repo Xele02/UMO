@@ -274,7 +274,7 @@ public interface IRhythmGameHUD
 	// public abstract void ShowBattleResult(bool isPlayerWin);
 
 	// // RVA: -1 Offset: -1 Slot: 88
-	// public abstract bool IsWarmupEnd();
+	bool IsWarmupEnd();
 
 	// // RVA: -1 Offset: -1 Slot: 89
 	// public abstract void SetLineAlpha(int lineNo, float alpha);

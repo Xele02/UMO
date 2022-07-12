@@ -133,7 +133,10 @@ namespace XeApp.Game.RhythmGame
 		// public void ChangeNextSceneStatus() { }
 
 		// // RVA: 0xDC6E68 Offset: 0xDC6E68 VA: 0xDC6E68
-		// public void ChangeErrorToTilteStatus() { }
+		public void ChangeErrorToTilteStatus()
+		{
+			UnityEngine.Debug.LogError("TODO ChangeErrorToTilteStatus");
+		}
 
 		// // RVA: 0xDC6E9C Offset: 0xDC6E9C VA: 0xDC6E9C
 		private void SetupGameData()
@@ -289,10 +292,10 @@ namespace XeApp.Game.RhythmGame
 
 			if (GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
 			{
-				int intro, introSky;
-				rhythmGameResource.paramResource.m_paramIntro.Check(Database.Instance.gameSetup, out intro, out introSky);
-				int battle;
-				rhythmGameResource.paramResource.m_paramBattle.Check(Database.Instance.gameSetup, out battle);
+				int intro = 0, introSky = 0;
+				rhythmGameResource.paramResource.m_paramIntro.Check(Database.Instance.gameSetup, ref intro, ref introSky);
+				int battle = 0;
+				rhythmGameResource.paramResource.m_paramBattle.Check(Database.Instance.gameSetup, ref battle);
 				rhythmGameResource.LoadUITextureResouces();
 				rhythmGameResource.divaResource.LoadBasicResource(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId,
 																	Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismCostumeModelId,
@@ -319,7 +322,7 @@ namespace XeApp.Game.RhythmGame
 												Database.Instance.gameSetup.musicInfo.onStageDivaNum, Database.Instance.gameSetup.teamInfo.danceDivaList[0].positionId);
 				if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.GPKILPOLNKO())
 				{
-					rhythmGameResource.divaModeResource.LoadResources(wavId, GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CBLEFELBNDN(), rhythmGameResource.GetSpecialDirectionMovieId);
+					rhythmGameResource.divaModeResource.LoadResources(wavId, GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CBLEFELBNDN_GetQuality(), rhythmGameResource.GetSpecialDirectionMovieId);
 				}
 				for(int i = 0; i < 4 && i < rhythmGameResource.subDivaResource.Count; i++)
 				{

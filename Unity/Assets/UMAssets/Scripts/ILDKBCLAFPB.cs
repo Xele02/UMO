@@ -139,7 +139,10 @@ public class ILDKBCLAFPB
         // public bool INPHNKJPJFN() { }
 
         // // RVA: 0x2035E94 Offset: 0x2035E94 VA: 0x2035E94
-        // public int CBLEFELBNDN() { }
+        public int CBLEFELBNDN_GetQuality()
+		{
+			return IHEPCAHBECA_VideoMode != 0 ? 1 : 2;
+		}
 
         // // RVA: 0x2035EA8 Offset: 0x2035EA8 VA: 0x2035EA8
         // public int DGCDPGPAAII(Difficulty.Type FEOKKEPAIBB, bool JCOJKAHFADL) { }

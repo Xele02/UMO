@@ -11,7 +11,11 @@ namespace XeApp.Game.Common
         public const int DATA_SKY = 5;
 
         // // RVA: 0xAF66C8 Offset: 0xAF66C8 VA: 0xAF66C8
-        // public bool Check(GameSetupData a_setup_data, ref int a_out_intro, ref int a_out_intro_sky) { }
+        public bool Check(GameSetupData a_setup_data, ref int a_out_intro, ref int a_out_intro_sky)
+        {
+            UnityEngine.Debug.LogError("TODO ParameterData_ValkyrieChangeIntro Check");
+            return true;
+        }
 
         // // RVA: 0xAF68A4 Offset: 0xAF68A4 VA: 0xAF68A4
         // public bool Check(int a_id_vl, int a_id_dv, int a_id_cs, int a_id_mc, ref int a_out_intro, ref int a_out_intro_sky) { }

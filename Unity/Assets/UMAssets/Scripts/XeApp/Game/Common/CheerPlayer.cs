@@ -38,7 +38,11 @@ namespace XeApp.Game.Common
 		// public void RequestChangeCueSheet() { }
 
 		// // RVA: 0xE655EC Offset: 0xE655EC VA: 0xE655EC
-		// public bool IsLoaded() { }
+		public bool IsLoaded()
+		{
+			UnityEngine.Debug.LogError("TODO CheerPlayer Is Loaded");
+			return true;
+		}
 
 		// // RVA: 0xE65614 Offset: 0xE65614 VA: 0xE65614
 		// public bool IsPlaying() { }

@@ -1139,7 +1139,11 @@ namespace XeApp.Game.RhythmGame
 		// private bool IsEnableMovie() { }
 
 		// // RVA: 0x9BE120 Offset: 0x9BE120 VA: 0x9BE120
-		// public bool IsRhythmGamePlayerEnd() { }
+		public bool IsRhythmGamePlayerEnd()
+		{
+			UnityEngine.Debug.LogError("TODO IsRhythmGamePlayerEnd");
+			return false;
+		}
 
 		// // RVA: 0x9CC460 Offset: 0x9CC460 VA: 0x9CC460
 		// public void OnCallback_PlayVoice_GameFailed() { }

@@ -22,7 +22,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAEA8CC Offset: 0xAEA8CC VA: 0xAEA8CC
-		// public void LoadResources(int runwayId, int enviromentId, int valkyrieId) { }
+		public void LoadResources(int runwayId, int enviromentId, int valkyrieId)
+		{
+			UnityEngine.Debug.LogError("TODO LoadResources");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7395B4 Offset: 0x7395B4 VA: 0x7395B4
 		// // RVA: 0xAEA904 Offset: 0xAEA904 VA: 0xAEA904
