@@ -34,10 +34,40 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1CDC518 Offset: 0x1CDC518 VA: 0x1CDC518
-		// public void SelectGroupButton(UGUIToggleButton button) { }
+		public void SelectGroupButton(UGUIToggleButton button)
+		{
+			for(int i = 0; i < m_toggleButtons.Length; i++)
+			{
+				if(m_toggleButtons[i] == button)
+				{
+					button.SetOn();
+				}
+				else
+				{
+					if (!m_toggleButtons[i].Disable && !m_toggleButtons[i].Hidden)
+						m_toggleButtons[i].SetOff();
+				}
+			}
+		}
 
 		// // RVA: 0x1CDCD5C Offset: 0x1CDCD5C VA: 0x1CDCD5C
-		// public void SelectGroupButton(int index) { }
+		public void SelectGroupButton(int index)
+		{
+			for(int i = 0; i < m_toggleButtons.Length; i++)
+			{
+				if(i == index)
+				{
+					m_toggleButtons[i].SetOn();
+				}
+				else
+				{
+					if(!m_toggleButtons[i].Disable && !m_toggleButtons[i].Hidden)
+					{
+						m_toggleButtons[i].SetOff();
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x1CDCEC4 Offset: 0x1CDCEC4 VA: 0x1CDCEC4
 		// public int GetSelectIndex() { }

@@ -116,9 +116,9 @@ namespace XeApp.Game.Menu
 				m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
 			
 			m_isEndPresetCanvas = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5) <= 
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI.KCCLEHLLOFG.KIECDDFNCAN;
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG.KIECDDFNCAN;
 
-			m_simulationButton.SetTicketNum(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI.KCCLEHLLOFG.GKKDNOFMJJN);
+			m_simulationButton.SetTicketNum(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG.GKKDNOFMJJN);
 			Database.Instance.bonusData.ClearEpisodeBonus();
 			if(m_pickupFreeMusicId > 0)
 				var1 = m_pickupFreeMusicId;
@@ -200,6 +200,12 @@ namespace XeApp.Game.Menu
 				OnClickPlayButton(isSimulation);
 			};
 			UnityEngine.Debug.LogError("TODO Co_OnPostSetCanvas listener !!!");
+			m_musicDetail.OnUnitButtonClickListener = (int index) =>
+			{
+				//0xBF02CC
+				SoundManager.Instance.sePlayerBoot.Play(3);
+				m_musicSelectUISapporter.SetUnitButton(index, selectMusicData);
+			};
 			m_musicList.MusicScrollView.ScrollEnable(true);
 			ApplyCommonInfo();
 			OnChangeFilter();
@@ -642,6 +648,7 @@ namespace XeApp.Game.Menu
 		protected override void ApplyMusicInfo()
 		{
 			UnityEngine.Debug.LogError("TODO !!!");
+			ApplyMusicInfoNormal();
 		}
 
 		// // RVA: 0xBEBC94 Offset: 0xBEBC94 VA: 0xBEBC94
@@ -670,7 +677,11 @@ namespace XeApp.Game.Menu
 		// private void ApplyMusicInfoEventEntrance() { }
 
 		// // RVA: 0xBEB120 Offset: 0xBEB120 VA: 0xBEB120
-		// private void ApplyMusicInfoNormal() { }
+		private void ApplyMusicInfoNormal()
+		{
+			UnityEngine.Debug.LogError("TODO ApplyMusicInfoNormal");
+			m_musicSelectUISapporter.SetUnitButton(selectMusicData, false);
+		}
 
 		// // RVA: 0xBEC304 Offset: 0xBEC304 VA: 0xBEC304
 		// private void SetListNo(int no) { }
@@ -840,10 +851,6 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x6F6274 Offset: 0x6F6274 VA: 0x6F6274
 		// // RVA: 0xBF02C8 Offset: 0xBF02C8 VA: 0xBF02C8
 		// private void <Co_OnPostSetCanvas>b__70_7() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6284 Offset: 0x6F6284 VA: 0x6F6284
-		// // RVA: 0xBF02CC Offset: 0xBF02CC VA: 0xBF02CC
-		// private void <Co_OnPostSetCanvas>b__70_8(int index) { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F6294 Offset: 0x6F6294 VA: 0x6F6294
 		// // RVA: 0xBF02D0 Offset: 0xBF02D0 VA: 0xBF02D0

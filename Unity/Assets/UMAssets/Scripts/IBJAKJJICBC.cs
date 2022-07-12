@@ -122,7 +122,11 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	// public int FOHHGKEJMEL() { }
 
 	// // RVA: 0x1214760 Offset: 0x1214760 VA: 0x1214760 Slot: 5
-	// public override bool DBIGDCOHOIC() { }
+	public override bool DBIGDCOHOIC()
+	{
+		UnityEngine.Debug.LogError("TODO DBIGDCOHOIC");
+		return base.DBIGDCOHOIC();
+	}
 
 	// // RVA: 0x12147B8 Offset: 0x12147B8 VA: 0x12147B8
 	// public bool ICKDCAMABPD(int OGPKGGLJACK) { }

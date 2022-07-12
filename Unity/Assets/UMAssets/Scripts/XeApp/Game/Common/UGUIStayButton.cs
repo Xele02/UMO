@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace XeApp.Game.Common
@@ -32,33 +33,59 @@ namespace XeApp.Game.Common
 		protected override void Start()
 		{
 			base.Start();
-			UnityEngine.Debug.LogError("TODO UGUIStayButtn Start");
+			m_updater = this.UpdateIdel;
 		}
 
 		// RVA: 0x1CDB914 Offset: 0x1CDB914 VA: 0x1CDB914
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO UGUIStayButtn Update");
+			if (m_updater != null)
+				m_updater();
 		}
 
 		// // RVA: 0x1CDB940 Offset: 0x1CDB940 VA: 0x1CDB940
-		// private void UpdateIdel() { }
+		private void UpdateIdel()
+		{
+			return;
+		}
 
 		// // RVA: 0x1CDB944 Offset: 0x1CDB944 VA: 0x1CDB944
-		// private void UpdatePressed() { }
+		private void UpdatePressed()
+		{
+			if(IsPressed())
+			{
+				if (!Disable && !m_isStayDisable && !IsInputOff)
+				{
+					if (Time.realtimeSinceStartup <= m_nextTime)
+						return;
+					SetOff();
+					PlayNormal();
+					m_stayEvent();
+					m_isLongPressed = true;
+				}
+			}
+			m_updater = this.UpdateIdel;
+		}
 
 		// RVA: 0x1CDBEE4 Offset: 0x1CDBEE4 VA: 0x1CDBEE4 Slot: 18
 		public override void OnPointerDown(PointerEventData eventData)
 		{
 			base.OnPointerDown(eventData);
-			UnityEngine.Debug.LogError("TODO UGUIStayButtn OnPointerDown");
+			if(IsEventProcessed && m_stayEvent != null)
+			{
+				m_isClick = false;
+				m_nextTime = Time.realtimeSinceStartup + m_interval;
+				m_updater = this.UpdatePressed;
+			}
+			m_isLongPressed = false;
 		}
 
 		// RVA: 0x1CDBFC8 Offset: 0x1CDBFC8 VA: 0x1CDBFC8 Slot: 15
 		public override void OnPointerClick(PointerEventData eventData)
 		{
+			if (m_isLongPressed)
+				return;
 			base.OnPointerClick(eventData);
-			UnityEngine.Debug.LogError("TODO UGUIStayButtn OnPointerClick");
 		}
 
 		// // RVA: 0x1CDBFDC Offset: 0x1CDBFDC VA: 0x1CDBFDC

@@ -1191,7 +1191,11 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3B5DC Offset: 0xA3B5DC VA: 0xA3B5DC
-			// public void SaveRequest() { }
+			public void SaveRequest()
+			{
+				if (!GameManager.Instance.IsTutorial)
+					m_isRequestSave = true;
+			}
 
 			// // RVA: 0xA3B688 Offset: 0xA3B688 VA: 0xA3B688
 			// public void RemainDivaOneTime() { }

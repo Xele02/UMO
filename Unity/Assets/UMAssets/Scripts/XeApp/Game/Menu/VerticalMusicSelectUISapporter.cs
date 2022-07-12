@@ -132,10 +132,17 @@ namespace XeApp.Game.Menu
 		// public void SetMusicTime(string time, bool isVisible) { }
 
 		// // RVA: 0xADB8B8 Offset: 0xADB8B8 VA: 0xADB8B8
-		// public void SetUnitButton(IBJAKJJICBC musicData, bool isMusicLock) { }
+		public void SetUnitButton(IBJAKJJICBC musicData, bool isMusicLock)
+		{
+			m_musicDetail.ShowUnitDanceButton(musicData, m_unitLiveLocalSaveData, isMusicLock);
+		}
 
 		// // RVA: 0xADB908 Offset: 0xADB908 VA: 0xADB908
-		// public void SetUnitButton(int index, IBJAKJJICBC musicData) { }
+		public void SetUnitButton(int index, IBJAKJJICBC musicData)
+		{
+			m_musicDetail.SetUnitButton(index);
+			m_unitLiveLocalSaveData.IAGAAOKODPM(musicData.GHBPLHBNMBK, m_musicDetail.GetDanceNum() > 1);
+		}
 
 		// // RVA: 0xADB9B8 Offset: 0xADB9B8 VA: 0xADB9B8
 		// public void SetDetailEventType(bool isVisible, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainTimeType, bool showRemainTime = True) { }

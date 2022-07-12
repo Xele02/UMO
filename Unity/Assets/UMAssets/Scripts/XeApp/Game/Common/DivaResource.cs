@@ -1003,7 +1003,7 @@ namespace XeApp.Game.Common
 			menuVoiceTableCos = null;
 			
 			CIOECGOMILE c = CIOECGOMILE.HHCJCDFCLOB;
-			BBHNACPENDM b2 = c.AHEFHIMGIBI;
+			BBHNACPENDM b2 = c.AHEFHIMGIBI_Save;
 			MMPBPOIFDAF m = b2.PNLOINMCCKH;
 			bool f = m.GOFAPKBNNCL(divaId);
 			if(f)

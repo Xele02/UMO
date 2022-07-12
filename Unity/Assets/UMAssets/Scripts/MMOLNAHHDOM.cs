@@ -46,7 +46,11 @@ public class MMOLNAHHDOM
 	// public void JCHLONCMPAJ(bool OGBEGDKPDGK) { }
 
 	// // RVA: 0x19695D0 Offset: 0x19695D0 VA: 0x19695D0
-	// public bool IAGAAOKODPM(int EHDDADDKMFI, bool JKDJCFEBDHC) { }
+	public bool IAGAAOKODPM(int EHDDADDKMFI, bool JKDJCFEBDHC)
+	{
+		UnityEngine.Debug.LogError("TODO MMOLNAHHDOM unitLiveLocalSaveData IAGAAOKODPM");
+		return true;
+	}
 
 	// // RVA: 0x19697A4 Offset: 0x19697A4 VA: 0x19697A4
 	// public bool NMBAHHJLGPP(int EHDDADDKMFI) { }

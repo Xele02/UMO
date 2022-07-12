@@ -268,7 +268,7 @@ namespace XeApp.Game.Menu
 			m_musicInfo.MakeCache();
 			m_cdSelect.MakeCache();
 			m_sliveButton.SetOptionStyle(m_isSimulationLive ? MusicSelectSLiveButton.Style.SimulationLive : MusicSelectSLiveButton.Style.BasicLive);
-			m_sliveButton.SetUnlockRank(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI.KCCLEHLLOFG.KIECDDFNCAN, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5));
+			m_sliveButton.SetUnlockRank(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG.KIECDDFNCAN, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5));
 			MessageBank menuBank = MessageManager.Instance.GetBank("menu");
 			m_musicInfo.SetNoInfoMessage(menuBank.GetMessageByLabel("music_not_exist_text_00"), menuBank.GetMessageByLabel("music_not_exist_line6_text_00"));
 			ApplyBasicInfo();
@@ -280,7 +280,7 @@ namespace XeApp.Game.Menu
 				//0x1685CE0
 				m_sliveItem.SetIcon(image);
 			});
-			m_sliveItem.SetCount(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI.KCCLEHLLOFG.GKKDNOFMJJN);
+			m_sliveItem.SetCount(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG.GKKDNOFMJJN);
 			MenuScene.Instance.FooterMenu.NotSelectButtonAll();
 			MenuScene.Instance.FooterMenu.SelectedButton(MenuButtonAnim.ButtonType.LIVE);
 			Database.Instance.bonusData.ClearEpisodeBonus();

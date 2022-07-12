@@ -234,16 +234,53 @@ namespace XeApp.Game.Menu
 		// private IEnumerator Co_LoadItemImages(List<int> itemIdList) { }
 
 		// // RVA: 0xBE00E8 Offset: 0xBE00E8 VA: 0xBE00E8
-		// public void SetUnitButton(int index) { }
+		public void SetUnitButton(int index)
+		{
+			m_unitToggleButtonGroup.SelectGroupButton(index);
+			m_isOnUnitIndex = index;
+		}
 
 		// // RVA: 0xBE0124 Offset: 0xBE0124 VA: 0xBE0124
-		// public void ShowUnitDanceButton(IBJAKJJICBC musicData, MMOLNAHHDOM saveUnitData, bool isMusicLock) { }
+		public void ShowUnitDanceButton(IBJAKJJICBC musicData, MMOLNAHHDOM saveUnitData, bool isMusicLock)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				int[] array = new int[4] { 1, 2, 3, 5 };
+
+				m_unitToggleButton[i].Hidden = musicData.BENDFLDLIAG_IsAvaiableForNumDiva(array[i]) != true;
+			}
+			m_unitToggleButtonGroupObj.blocksRaycasts = true;
+			if (!musicData.DBIGDCOHOIC())
+			{
+				UnityEngine.Debug.LogError("TODO ShowUnitDanceButton for locked");
+			}
+			else if (isMusicLock)
+			{
+				UnityEngine.Debug.LogError("TODO ShowUnitDanceButton for isMusicLock");
+			}
+			else
+			{
+				UnityEngine.Debug.LogError("TODO ShowUnitDanceButton for other lock check");
+			}
+		}
 
 		// // RVA: 0xBE0680 Offset: 0xBE0680 VA: 0xBE0680
 		// private int GetDivaDanceNum(VerticalMusicSelectMusicDetail.Number num) { }
 
 		// // RVA: 0xBE069C Offset: 0xBE069C VA: 0xBE069C
-		// public int GetDanceNum() { }
+		public int GetDanceNum()
+		{
+			for(int i = 0; i < m_unitToggleButton.Length; i++)
+			{
+				if(m_unitToggleButton[i].IsOn && !m_unitToggleButton[i].Hidden)
+				{
+					if (i > 3)
+						return 0;
+					return new int[4]{ 1, 2, 3, 5 }[i];
+				}
+			}
+			return 1;
+		}
 
 		// // RVA: 0xBE07B4 Offset: 0xBE07B4 VA: 0xBE07B4
 		public void Enter()

@@ -30,7 +30,7 @@ namespace XeApp.Game.Common
 		protected bool m_isClick; // 0x25
 		private LayoutUGUIHitOnly m_hitCheck; // 0x28
 
-		// public bool IsClick { get; } 0xE63A1C
+		public bool IsClick { get { return m_isClick; } } //0xE63A1C
 		public bool IsInputOff { get; set; } // 0x2C
 		public bool IsInputLock { get; set; } // 0x2D
 		public bool Disable { get { return m_isDisable; } set {  
@@ -68,7 +68,13 @@ namespace XeApp.Game.Common
 		public bool IsEventProcessed { get; private set; } // 0x2E
 
 		// // RVA: 0xE63BE8 Offset: 0xE63BE8 VA: 0xE63BE8
-		// private void DetectHitCheck() { }
+		private void DetectHitCheck()
+		{
+			if(m_hitCheck != null)
+			{
+				m_hitCheck = GetComponentInChildren<LayoutUGUIHitOnly>();
+			}
+		}
 
 		// RVA: 0xE5D9BC Offset: 0xE5D9BC VA: 0xE5D9BC Slot: 11
 		protected virtual void Start()
@@ -130,25 +136,95 @@ namespace XeApp.Game.Common
 		// RVA: 0xE5DE7C Offset: 0xE5DE7C VA: 0xE5DE7C Slot: 16
 		public virtual void OnPointerEnter(PointerEventData eventData)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			IsEventProcessed = false;
+			if (!IsInputOff && !IsInputLock)
+			{
+#if UNITY_ANDROID
+				if(eventData.pointerId == 0)
+#else
+				if (eventData.pointerId == -1)
+#endif
+				{
+					IsEventProcessed = true;
+					m_isPointerInside = true;
+					SelectState state = SelectState.Pressed;
+					if(!m_isPointerDown)
+					{
+						state = IsHighlighted(eventData) ? SelectState.Highlighted : SelectState.Normal;
+					}
+					m_selectionState = state;
+					ChangeTranstionState();
+				}
+			}
 		}
 
 		// RVA: 0xE5DF0C Offset: 0xE5DF0C VA: 0xE5DF0C Slot: 17
 		public virtual void OnPointerExit(PointerEventData eventData)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			IsEventProcessed = false;
+			if (!IsInputOff && !IsInputLock)
+			{
+#if UNITY_ANDROID
+				if(eventData.pointerId == 0)
+#else
+				if (eventData.pointerId == -1)
+#endif
+				{
+					IsEventProcessed = true;
+					m_isPointerInside = false;
+					m_selectionState = IsHighlighted(eventData) ? SelectState.Highlighted : SelectState.Normal;
+					ChangeTranstionState();
+				}
+			}
 		}
 
 		// RVA: 0xE5DF90 Offset: 0xE5DF90 VA: 0xE5DF90 Slot: 18
 		public virtual void OnPointerDown(PointerEventData eventData)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			IsEventProcessed = false;
+			if (!IsInputOff && !IsInputLock)
+			{
+				if (eventData.button == PointerEventData.InputButton.Left)
+				{
+#if UNITY_ANDROID
+					if(eventData.pointerId == 0)
+#else
+					if (eventData.pointerId == -1)
+#endif
+					{
+						IsEventProcessed = true;
+						m_isPointerDown = true;
+						SelectState state = SelectState.Pressed;
+						if(!m_isPointerInside)
+						{
+							state = IsHighlighted(eventData) ? SelectState.Highlighted : SelectState.Normal;
+						}
+						m_selectionState = state;
+						ChangeTranstionState();
+					}
+				}
+			}
 		}
 
 		// RVA: 0xE5E044 Offset: 0xE5E044 VA: 0xE5E044 Slot: 19
 		public virtual void OnPointerUp(PointerEventData eventData)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			if (!IsInputOff && !IsInputLock)
+			{
+				if (eventData.button == PointerEventData.InputButton.Left)
+				{
+#if UNITY_ANDROID
+					if(eventData.pointerId == 0)
+#else
+					if (eventData.pointerId == -1)
+#endif
+					{
+						m_isPointerDown = false;
+						m_selectionState = IsHighlighted(eventData) ? SelectState.Highlighted : SelectState.Normal; ;
+						ChangeTranstionState();
+					}
+				}
+			}
 		}
 
 		// RVA: 0xE5FEC4 Offset: 0xE5FEC4 VA: 0xE5FEC4
@@ -176,7 +252,16 @@ namespace XeApp.Game.Common
 		// public void RemoveAnimEndCallback(ButtonBase.AnimEndCallback AnimEndEvent) { }
 
 		// // RVA: 0xE64118 Offset: 0xE64118 VA: 0xE64118
-		// public bool IsEnableTouchId(PointerEventData eventData) { }
+		public bool IsEnableTouchId(PointerEventData eventData)
+		{
+#if UNITY_ANDROID
+			if(eventData.pointerId == 0)
+#else
+			if (eventData.pointerId == -1)
+#endif
+				return true;
+			return false;
+		}
 
 		// // RVA: 0xE649CC Offset: 0xE649CC VA: 0xE649CC
 		// public void PerformClick() { }
@@ -199,48 +284,133 @@ namespace XeApp.Game.Common
 		// private void UpdateSelectionState(BaseEventData eventData) { }
 
 		// // RVA: 0xE64A74 Offset: 0xE64A74 VA: 0xE64A74
-		// public bool IsPressed() { }
+		public bool IsPressed()
+		{
+			return m_isPointerInside && m_isPointerDown;
+		}
 
 		// // RVA: 0xE64A94 Offset: 0xE64A94 VA: 0xE64A94
-		// public bool IsHighlighted(BaseEventData eventData) { }
+		public bool IsHighlighted(BaseEventData eventData)
+		{
+			if(!m_isPointerInside || (m_isPointerInside && !m_isPointerDown))
+			{
+				PointerEventData pointerData = eventData as PointerEventData;
+				if(pointerData != null)
+				{ 
+					if(m_isPointerDown)
+					{
+						if (!m_isPointerInside)
+							return false;
+						if (pointerData.pointerPress == this)
+							return true;
+						return false;
+					}
+					if(m_isPointerInside)
+					{
+						if (pointerData.pointerPress == this)
+							return true;
+						if (m_isPointerDown)
+							return false;
+					}
+					else
+					{
+						return false;
+					}
+					return pointerData.pointerPress == null;
+				}
+				if (m_isPointerInside)
+					return true;
+			}
+			return false;
+		}
 
 		// // RVA: 0xE649F4 Offset: 0xE649F4 VA: 0xE649F4
 		private void DoStateTransition(ButtonBase.SelectState state)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			switch(state)
+			{
+				case SelectState.Normal:
+					PlayNormal();
+					break;
+				case SelectState.Highlighted:
+				case SelectState.Pressed:
+					PlayEnter();
+					break;
+				case SelectState.Disabled:
+					PlayDisable();
+					break;
+				case SelectState.Hidden:
+					PlayHidden();
+					break;
+				case SelectState.Decide:
+					PlayDecide();
+					break;
+				default:
+					break;
+			}
 		}
 
 		// // RVA: 0xE5E44C Offset: 0xE5E44C VA: 0xE5E44C Slot: 20
 		public virtual void SetOn()
 		{
-			UnityEngine.Debug.LogError("TODO Button SeSetOntOff");
+			m_isPointerInside = false;
+			m_isPointerDown = false;
+			m_isDisable = false;
+			m_isDark = false;
+			m_isHidden = false;
+			m_isClick = true;
+			DetectHitCheck();
+			HitCheckRaycastTarget = true;
+			m_selectionState = SelectState.Normal;
 		}
 
 		// // RVA: 0xE5E574 Offset: 0xE5E574 VA: 0xE5E574 Slot: 21
 		public virtual void SetOff()
 		{
-			UnityEngine.Debug.LogError("TODO Button SetOff");
+			m_isHidden = false;
+			m_isClick = false;
+			m_isPointerInside = false;
+			m_isPointerDown = false;
+			m_isDisable = false;
+			m_isDark = false;
+			DetectHitCheck();
+			HitCheckRaycastTarget = true;
+			m_selectionState = SelectState.Normal;
 		}
 
-		// // RVA: 0xE64CC4 Offset: 0xE64CC4 VA: 0xE64CC4 Slot: 22
-		// protected virtual void PlayDecide() { }
+		// RVA: 0xE64CC4 Offset: 0xE64CC4 VA: 0xE64CC4 Slot: 22
+		protected virtual void PlayDecide()
+		{
+			return;
+		}
 
-		// // RVA: 0xE64CC8 Offset: 0xE64CC8 VA: 0xE64CC8 Slot: 23
-		// protected virtual void PlayNormal() { }
+		// RVA: 0xE64CC8 Offset: 0xE64CC8 VA: 0xE64CC8 Slot: 23
+		protected virtual void PlayNormal()
+		{
+			return;
+		}
 
-		// // RVA: 0xE64CCC Offset: 0xE64CCC VA: 0xE64CCC Slot: 24
-		// protected virtual void PlayEnter() { }
+		// RVA: 0xE64CCC Offset: 0xE64CCC VA: 0xE64CCC Slot: 24
+		protected virtual void PlayEnter()
+		{
+			return;
+		}
 
-		// // RVA: 0xE64CD0 Offset: 0xE64CD0 VA: 0xE64CD0 Slot: 25
-		// protected virtual void PlayDisable() { }
+		// RVA: 0xE64CD0 Offset: 0xE64CD0 VA: 0xE64CD0 Slot: 25
+		protected virtual void PlayDisable()
+		{
+			return;
+		}
 
-		// // RVA: 0xE64CD4 Offset: 0xE64CD4 VA: 0xE64CD4 Slot: 26
-		// protected virtual void PlayHidden() { }
+		// RVA: 0xE64CD4 Offset: 0xE64CD4 VA: 0xE64CD4 Slot: 26
+		protected virtual void PlayHidden()
+		{
+			return;
+		}
 
 		// // RVA: 0xE64CD8 Offset: 0xE64CD8 VA: 0xE64CD8 Slot: 27
 		public virtual bool IsPlaying()
 		{
-			UnityEngine.Debug.LogError("TODO Button ISPlaying");
 			return false;
 		}
 	}

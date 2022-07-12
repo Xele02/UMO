@@ -87,26 +87,47 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC6A44 Offset: 0xDC6A44 VA: 0xDC6A44
 		public void ChangeWaitLoadingSpecialResourceStatus()
 		{
-			UnityEngine.Debug.LogError("TODO ChangeWaitLoadingSpecialResourceStatus");
+			currentStatus = Status.WaitLoadingSpecialResource;
+			updater = this.WaitLoadingSpecialResource;
 		}
 
 		// // RVA: 0xDC6AD4 Offset: 0xDC6AD4 VA: 0xDC6AD4
-		// public void ChangeWaitDownloadingDataStatus() { }
+		public void ChangeWaitDownloadingDataStatus()
+		{
+			currentStatus = Status.WaitDownloadingData;
+			updater = this.WaitDownloadingData;
+		}
 
 		// // RVA: 0xDC6B64 Offset: 0xDC6B64 VA: 0xDC6B64
-		// public void ChangeWaitLoadingDataStatus() { }
+		public void ChangeWaitLoadingDataStatus()
+		{
+			currentStatus = Status.WaitLoadingData;
+			updater = this.WaitLoadingData;
+		}
 
 		// // RVA: 0xDC6BF4 Offset: 0xDC6BF4 VA: 0xDC6BF4
-		// public void ChangeSetTextureStatus() { }
+		public void ChangeSetTextureStatus()
+		{
+			currentStatus = Status.SetTexture;
+			updater = this.SetStatusDivaTexture;
+		}
 
 		// // RVA: 0xDC6C84 Offset: 0xDC6C84 VA: 0xDC6C84
 		// public void ChangeWarmupStatus() { }
 
 		// // RVA: 0xDC6D14 Offset: 0xDC6D14 VA: 0xDC6D14
-		// public void ChangeGameStatus() { }
+		public void ChangeGameStatus()
+		{
+			currentStatus = Status.Game;
+			updater = this.BeginRhythmGame;
+		}
 
 		// // RVA: 0xDC6DA4 Offset: 0xDC6DA4 VA: 0xDC6DA4
-		// public void ChangeEndGameStatus() { }
+		public void ChangeEndGameStatus()
+		{
+			currentStatus = Status.EndGame;
+			updater = this.BeginCompleteAnim;
+		}
 
 		// // RVA: 0xDC6E34 Offset: 0xDC6E34 VA: 0xDC6E34
 		// public void ChangeNextSceneStatus() { }
@@ -239,34 +260,188 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDC80E4 Offset: 0xDC80E4 VA: 0xDC80E4
-		// private void WaitLoadingSpecialResource() { }
+		private void WaitLoadingSpecialResource()
+		{
+			if (GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
+			{
+				if (!rhythmGameResource.is3DModeSpecialResoucesLoaded)
+					return;
+			}
+			else
+			{
+				if (!rhythmGameResource.is2DModeSpecialResoucesLoaded)
+					return;
+			}
+			ChangeWaitDownloadingDataStatus();
+		}
 
 		// // RVA: 0xDC8228 Offset: 0xDC8228 VA: 0xDC8228
-		// private void WaitDownloadingData() { }
+		private void WaitDownloadingData()
+		{
+
+			UnityEngine.Debug.LogError("TODO WaitDownloadingData");
+			int wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KKPAHLMJKIH_WavId;
+
+			isPilotSoundLoaded = true;
+			isDivaSoundLoaded = true;
+			isBgmSoundLoaded = true;
+			// setup ennemy info
+
+			if (GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
+			{
+				int intro, introSky;
+				rhythmGameResource.paramResource.m_paramIntro.Check(Database.Instance.gameSetup, out intro, out introSky);
+				int battle;
+				rhythmGameResource.paramResource.m_paramBattle.Check(Database.Instance.gameSetup, out battle);
+				rhythmGameResource.LoadUITextureResouces();
+				rhythmGameResource.divaResource.LoadBasicResource(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId,
+																	Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismCostumeModelId,
+																	Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismCostumeColorId);
+				rhythmGameResource.divaResource.LoadFacialResource(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId, wavId,
+																		Database.Instance.gameSetup.musicInfo.onStageDivaNum);
+				List<int> prime = new List<int>();
+				for(int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum; i++)
+				{
+					prime.Add(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId).IDDHKOEFJFB);
+				}
+				rhythmGameResource.divaResource.LoadMusicAnimationResource(wavId, GameManager.Instance.GetMultipleDanceOverridePrimeId(prime),
+																		Database.Instance.gameSetup.teamInfo.danceDivaList[0].positionId,
+																		Database.Instance.gameSetup.musicInfo.onStageDivaNum,
+																		Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
+				rhythmGameResource.cameraResource.LoadResource(wavId, GameManager.Instance.GetMultipleDanceOverridePrimeId(prime), Database.Instance.gameSetup.musicInfo.onStageDivaNum);
+				int stageId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KEFGPJBKAOD_WavId;
+				// todo story stageid
+				rhythmGameResource.stageResources.LoadResouces(stageId, rhythmGameResource.GetSpecialStageResourceId);
+				rhythmGameResource.valkyrieResource.LoadResources(Database.Instance.gameSetup.teamInfo.prismValkyrieId, introSky, battle);
+				rhythmGameResource.musicIntroResource.LoadResources(intro, introSky, Database.Instance.gameSetup.teamInfo.prismValkyrieId);
+				rhythmGameResource.valkyrieModeResource.LoadResources(battle, Database.Instance.gameSetup.teamInfo.prismValkyrieId);
+				rhythmGameResource.musicBoneSpringResource[0].LoadMusicResouces(wavId, GameManager.Instance.GetMultipleDanceOverridePrimeId(prime),
+												Database.Instance.gameSetup.musicInfo.onStageDivaNum, Database.Instance.gameSetup.teamInfo.danceDivaList[0].positionId);
+				if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.GPKILPOLNKO())
+				{
+					rhythmGameResource.divaModeResource.LoadResources(wavId, GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CBLEFELBNDN(), rhythmGameResource.GetSpecialDirectionMovieId);
+				}
+				for(int i = 0; i < 4 && i < rhythmGameResource.subDivaResource.Count; i++)
+				{
+					if(i < Database.Instance.gameSetup.musicInfo.onStageDivaNum - 1)
+					{
+						if (i == 0)
+							rhythmGameResource.subDivaResource[i] = null; // ??
+						else
+						{
+							rhythmGameResource.subDivaResource[i].LoadBasicResource(Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismDivaId,
+																	Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismCostumeModelId,
+																	Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismCostumeColorId);
+							rhythmGameResource.subDivaResource[i].LoadFacialResource(Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismDivaId, wavId,
+																					Database.Instance.gameSetup.musicInfo.onStageDivaNum);
+							rhythmGameResource.subDivaResource[i].LoadMusicAnimationResource(wavId, GameManager.Instance.GetMultipleDanceOverridePrimeId(prime),
+																					Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].positionId,
+																					Database.Instance.gameSetup.musicInfo.onStageDivaNum,
+																					Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismDivaId);
+							rhythmGameResource.musicBoneSpringResource[i + 1].LoadMusicResouces(wavId, GameManager.Instance.GetMultipleDanceOverridePrimeId(prime),
+															Database.Instance.gameSetup.musicInfo.onStageDivaNum, Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].positionId);
+						}
+					}
+					else
+					{
+						rhythmGameResource.subDivaResource[i] = null;
+					}
+				}
+			}
+			else
+			{
+				//2d mode
+			}
+
+			ChangeWaitLoadingDataStatus();
+		}
 
 		// // RVA: 0xDC9D94 Offset: 0xDC9D94 VA: 0xDC9D94
-		// private void WaitLoadingData() { }
+		private void WaitLoadingData()
+		{
+			if (GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
+			{
+				if (!rhythmGameResource.is3DModeAllResoucesLoaded)
+					return;
+			}
+			else
+			{
+				if (!rhythmGameResource.is2DModeAllResoucesLoaded)
+					return;
+			}
+			if (isBgmSoundLoaded && isGameSESoundLoaded && isDivaSoundLoaded && !IsRareBreak && isDivaCosSoundLoaded && isPilotSoundLoaded
+				&& SoundManager.Instance.sePlayerCheer.IsLoaded() && FacialNameDatabase.isInitialized)
+			{
+				rhythmGameLoadedAction();
+				ChangeSetTextureStatus();
+			}
+		}
 
 		// // RVA: 0xDC9FD8 Offset: 0xDC9FD8 VA: 0xDC9FD8
-		// private void SetStatusDivaTexture() { }
+		private void SetStatusDivaTexture()
+		{
+			currentStatus = Status.Warmup;
+			updater = this.WaitWarmup;
+		}
 
 		// // RVA: 0xDC9FDC Offset: 0xDC9FDC VA: 0xDC9FDC
-		// private void WaitWarmup() { }
+		private void WaitWarmup()
+		{
+			if(uiController.Hud.IsWarmupEnd())
+			{
+				GameSaveStart();
+			}
+		}
 
 		// // RVA: 0xDCA0E4 Offset: 0xDCA0E4 VA: 0xDCA0E4
-		// private void GameSaveStart() { }
+		private void GameSaveStart()
+		{
+			isGameSaveEnd = false;
+			isGameSaveError = false;
+			{
+				UnityEngine.Debug.LogError("TODO GameSaveStart");
+				isGameSaveEnd = true;
+			}
+			updater = this.WaitGameSave;
+		}
 
 		// // RVA: 0xDCA250 Offset: 0xDCA250 VA: 0xDCA250
-		// private void WaitGameSave() { }
+		private void WaitGameSave()
+		{
+			if(isGameSaveEnd)
+			{
+				if(isGameSaveError)
+				{
+					ChangeErrorToTilteStatus();
+					updater = null;
+					return;
+				}
+				ChangeGameStatus();
+			}
+		}
 
 		// // RVA: 0xDCA294 Offset: 0xDCA294 VA: 0xDCA294
-		// private void BeginRhythmGame() { }
+		private void BeginRhythmGame()
+		{
+			rhythmGameBeginedAction();
+			updater = this.UpdateRhythmGame;
+		}
 
 		// // RVA: 0xDCA33C Offset: 0xDCA33C VA: 0xDCA33C
-		// private void UpdateRhythmGame() { }
+		private void UpdateRhythmGame()
+		{
+			if(gamePlayer.IsRhythmGamePlayerEnd())
+			{
+				updater = null;
+				ChangeEndGameStatus();
+			}
+		}
 
 		// // RVA: 0xDCA384 Offset: 0xDCA384 VA: 0xDCA384
-		// private void BeginCompleteAnim() { }
+		private void BeginCompleteAnim()
+		{
+			UnityEngine.Debug.LogError("TODO BeginCompleteAnim");
+		}
 
 		// // RVA: 0xDCA4A8 Offset: 0xDCA4A8 VA: 0xDCA4A8
 		public void OnUpdate()

@@ -42,7 +42,7 @@ namespace XeApp.Game.Common
 		private bool isLoadedScoreData; // 0x59
 		private bool isLoadedCheerData; // 0x5A
 		private bool isLoadedParam; // 0x5B
-		// private CBBJHPBGBAJ tarFile; // 0x5C
+		private CBBJHPBGBAJ tarFile; // 0x5C
 
 		public EONOEHOKBEB_Music musicBase { get; set; } // 0xC
 		public MusicScoreData commonData { get; set; } // 0x10
@@ -90,7 +90,16 @@ namespace XeApp.Game.Common
 
 			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, -1, line6Mode, this.LoadedCommonScoreData, "s_"));
 
-			UnityEngine.Debug.LogError("TODO");
+			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, -1, line6Mode, this.LoadedCheerScoreData, "mv_"));
+
+			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, line6Mode, this.LoadedMusicScoreData, "s_"));
+
+			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, false, this.LoadedMusicScoreData, "s_"));
+
+			yield return StartCoroutine(LoadDirectionParam(operation, musicBase.KKPAHLMJKIH_WavId));
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			RhythmGameConsts.SetWide(musicScoreData.isWideTrack);
     		UnityEngine.Debug.Log("Exit Co_LoadData");
 		}
 
@@ -114,31 +123,83 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE658C Offset: 0xAE658C VA: 0xAE658C
 		private void LoadedCommonScoreData(MusicScoreData data)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			commonData = data;
+			ExtractionEventFireMillisec();
+			isLoadedCommonData = true;
 		}
 
 		// // RVA: 0xAE6A78 Offset: 0xAE6A78 VA: 0xAE6A78
-		// private void LoadedMusicScoreData(MusicScoreData data) { }
+		private void LoadedMusicScoreData(MusicScoreData data)
+		{
+			isLoadedScoreData = true;
+			musicScoreData = data;
+		}
 
 		// // RVA: 0xAE6A88 Offset: 0xAE6A88 VA: 0xAE6A88
-		// private void LoadedCheerScoreData(MusicScoreData data) { }
+		private void LoadedCheerScoreData(MusicScoreData data)
+		{
+			isLoadedCheerData = true;
+			cheerScoreData = data;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A58C Offset: 0x73A58C VA: 0x73A58C
 		// // RVA: 0xAE6A98 Offset: 0xAE6A98 VA: 0xAE6A98
 		private IEnumerator LoadScoreData(AssetBundleLoadAllAssetOperationBase operation, int wavId, int variationId, int difficultyType, bool is6Line, Action<MusicScoreData> dataSetFunc, string strPrefix = "s_")
 		{
     		UnityEngine.Debug.Log("Enter LoadScoreData");
-			UnityEngine.Debug.LogError("TODO");
-    		UnityEngine.Debug.Log("Exit LoadScoreData");
+			//0xAE8084
+
+			MusicScoreData res = null;
+
+			int score_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CHBLIEKBOLL_GetScoreId(wavId, variationId, difficultyType, is6Line);
+			StringBuilder str = new StringBuilder();
+			str.SetFormat("{0}{1:D8}", strPrefix, score_id);
+			CBBJHPBGBAJ_Archive tarFile = null;
+			if(tarFile != null)
+			{
+				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tarFile.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
+				{
+					//0xAE702C
+					return x.OPFGFINHFCE_Name == str.ToString();
+				});
+				if (file != null)
+				{
+					res = MusicScoreData.Instantiate(file.DBBGALAPFGC_Data);
+				}
+			}
+			if (res == null)
+			{
+				TextAsset textAsset = operation.GetAsset<TextAsset>(str.ToString());
+				if (textAsset != null)
+				{
+					res = MusicScoreData.Instantiate(textAsset.bytes);
+				}
+			}
+			dataSetFunc(res);
+
+			UnityEngine.Debug.Log("Exit LoadScoreData");
 			yield break;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A604 Offset: 0x73A604 VA: 0x73A604
 		// // RVA: 0xAE6BFC Offset: 0xAE6BFC VA: 0xAE6BFC
-		// private IEnumerator LoadDirectionParam(AssetBundleLoadAllAssetOperationBase operation, int wavId) { }
+		private IEnumerator LoadDirectionParam(AssetBundleLoadAllAssetOperationBase operation, int wavId)
+		{
+			//0xAE7DB0
+			StringBuilder str = new StringBuilder();
+			str.SetFormat("p_{0:D4}", wavId);
+			musicParam = operation.GetAsset<MusicDirectionParamBase>(str.ToString());
+			str.SetFormat("bp_{0:D4}", wavId);
+			musicParam.BoolParam = operation.GetAsset<MusicDirectionBoolParam>(str.ToString());
+			isLoadedParam = true;
+			yield break;
+		}
 
 		// // RVA: 0xAE65AC Offset: 0xAE65AC VA: 0xAE65AC
-		// private void ExtractionEventFireMillisec() { }
+		private void ExtractionEventFireMillisec()
+		{
+			UnityEngine.Debug.LogError("TODO ExtractionEventFireMillisec");
+		}
 
 		// // RVA: 0xAE6CDC Offset: 0xAE6CDC VA: 0xAE6CDC
 		// public MusicData.NoteModeType GetNotesModeType(MusicScoreData.InputNoteInfo noteInfo) { }

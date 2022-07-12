@@ -84,8 +84,41 @@ namespace XeApp.Game.RhythmGame
 		// public bool isUITextureResoucesLoaded { get; private set; } 0xBF6290 0xBF62B0
 		public bool is3DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { } }// 0xBF6490 0xBF64BC
 		public bool is2DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { } } //0xBF64C0 0xBF64EC
-		// public bool is3DModeSpecialResoucesLoaded { get; private set; } 0xBF64F0 0xBF64F4
-		// public bool is2DModeSpecialResoucesLoaded { get; private set; } 0xBF64F8 0xBF64FC
+		public bool is3DModeSpecialResoucesLoaded { get
+			{
+				if (!isSpecialDirectionResourceLoaded_)
+					return false;
+				foreach(var d in divaExtensionResource)
+				{
+					if (d != null && !d.isAllLoaded)
+						return false;
+				}
+				foreach(var d in divaCutinResource)
+				{
+					if (d != null && !d.isAllLoaded)
+						return false;
+				}
+				foreach (var d in musicCameraCutinResource)
+				{
+					if (d != null && !d.isAllLoaded)
+						return false;
+				}
+				foreach (var d in stageLightingResource)
+				{
+					if (d != null && !d.isAllLoaded)
+						return false;
+				}
+				foreach (var d in stageExtensionResource)
+				{
+					if (d != null && !d.isAllLoaded)
+						return false;
+				}
+				if (musicVoiceChangerResource != null && !musicVoiceChangerResource.isAllLoaded)
+					return false;
+				return true;
+			}
+			private set { } } //0xBF64F0 0xBF64F4
+		public bool is2DModeSpecialResoucesLoaded { get; private set; } 0xBF64F8 0xBF64FC
 		// public bool is3DModeAllResoucesLoaded { get; private set; } 0xBF6500 0xBF66CC
 		// public bool is2DModeAllResoucesLoaded { get; private set; } 0xBF66D0 0xBF6744
 
@@ -96,10 +129,18 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xBF5970 Offset: 0xBF5970 VA: 0xBF5970
-		// public int GetSpecialDirectionMovieId() { }
+		public int GetSpecialDirectionMovieId()
+		{
+			UnityEngine.Debug.LogError("GetSpecialDirectionMovieId");
+			return 0;
+		}
 
 		// // RVA: 0xBF5978 Offset: 0xBF5978 VA: 0xBF5978
-		// public int GetSpecialStageResourceId() { }
+		public int GetSpecialStageResourceId()
+		{
+			UnityEngine.Debug.LogError("GetSpecialStageResourceId");
+			return 0;
+		}
 
 		// // RVA: 0xBF5ADC Offset: 0xBF5ADC VA: 0xBF5ADC
 		public MusicVoiceChangerParam TryGetMusicVoiceChangerParam()

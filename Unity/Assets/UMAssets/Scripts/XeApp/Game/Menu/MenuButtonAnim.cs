@@ -108,7 +108,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC7B14 Offset: 0xEC7B14 VA: 0xEC7B14
 		private void PushButtonCallback()
 		{
-			UnityEngine.Debug.LogError("TOTO button Push callback");
+			if (buttonAnimeDisable)
+				return;
+			m_menu.SetButtonClick(false);
+			m_menu.ChangeNotSelectBaseButtonAll();
+			ChangeSelectBaseButton();
+			MenuScene.SaveRequest();
+			m_is_decide_anim = true;
 		}
 
 		// RVA: 0xEC7BE8 Offset: 0xEC7BE8 VA: 0xEC7BE8 Slot: 15
@@ -171,7 +177,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC7BF0 Offset: 0xEC7BF0 VA: 0xEC7BF0
 		private void ChangeButtonBase(MenuButtonAnim.BaseType type)
 		{
-			UnityEngine.Debug.LogError("TODO ChangeButtonBase");
+			m_type_exid.Clear();
+			m_type_exid.AppendFormat("{0:D2}", (int)type + 1);
+			for(int i = 0; i < m_base_layout.Count; i++)
+			{
+				m_base_layout[i].StartSiblingAnimGoStop(m_type_exid.ToString());
+			}
 		}
 
 		// // RVA: 0xEC7D88 Offset: 0xEC7D88 VA: 0xEC7D88

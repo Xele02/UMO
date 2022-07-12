@@ -89,7 +89,13 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	}
 
 	// // RVA: 0x10CFE98 Offset: 0x10CFE98 VA: 0x10CFE98
-	// public int CHBLIEKBOLL(int KKPAHLMJKIH, int BKJGCEOEPFB, int NOAKHKMLPFK, bool GIKLNODJKFK = False) { }
+	public int CHBLIEKBOLL_GetScoreId(int KKPAHLMJKIH_WavId, int BKJGCEOEPFB_VariationId, int NOAKHKMLPFK_Difficulty, bool GIKLNODJKFK_Is6Line = false)
+	{
+		int val = 0;
+		if (GIKLNODJKFK_Is6Line)
+			val = (int)((NOAKHKMLPFK_Difficulty >> 0x1f) & 0xfffffc18) + 1000;
+		return BKJGCEOEPFB_VariationId + KKPAHLMJKIH_WavId * 10000 + NOAKHKMLPFK_Difficulty + val + 1;
+	}
 
 	// // RVA: 0x10CFED0 Offset: 0x10CFED0 VA: 0x10CFED0
 	// public bool BHJKMPBACAC(int GHBPLHBNMBK) { }

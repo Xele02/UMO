@@ -116,7 +116,12 @@ public class ILDKBCLAFPB
         }
 
         // // RVA: 0x2035D90 Offset: 0x2035D90 VA: 0x2035D90
-        // public bool GPKILPOLNKO() { }
+        public bool GPKILPOLNKO()
+		{
+			if (DDHCLNFPNGK_RenderQuality == 2)
+				return false;
+			return PMGMMMGCEEI_Video == 0;
+		}
 
         // // RVA: 0x2035DB8 Offset: 0x2035DB8 VA: 0x2035DB8
         // public bool PKEMELMMEKM() { }

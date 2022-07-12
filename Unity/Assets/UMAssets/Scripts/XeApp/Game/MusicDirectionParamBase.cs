@@ -61,7 +61,7 @@ namespace XeApp.Game
 		// public Color psylliumColor { get; } 0xC95330
 		// public float mikeStandOffsetRate { get; } 0xC95340
 		public virtual int basaraPositionId { get { return 1; } } //0xC95348
-		// public virtual MusicDirectionBoolParam BoolParam { get; set; } 0xC95350 0xC95358
+		public virtual MusicDirectionBoolParam BoolParam { get { return null} set { return; } } //0xC95350 0xC95358
 
 		// // RVA: 0xC94354 Offset: 0xC94354 VA: 0xC94354
 		// public List<MusicDirectionParamBase.ResourceData> CheckFulfill(List<MusicDirectionParamBase.SpecialDirectionData> data, List<MusicDirectionParamBase.ConditionSetting> settingList) { }

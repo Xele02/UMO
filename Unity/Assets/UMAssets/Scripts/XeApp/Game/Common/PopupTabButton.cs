@@ -1,6 +1,7 @@
 using XeSys.Gfx;
 using UnityEngine;
 using System.Text;
+using UnityEngine.EventSystems;
 
 namespace XeApp.Game.Common
 {
@@ -57,10 +58,22 @@ namespace XeApp.Game.Common
 		// public PopupTabButton.ButtonLabel Label { get; } 0x1BB436C
 
 		// // RVA: 0x1BB4374 Offset: 0x1BB4374 VA: 0x1BB4374 Slot: 5
-		// public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
+		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
+		{
+			m_uvManager = uvMan;
+			return base.InitializeFromLayout(layout, uvMan);
+		}
 
 		// // RVA: 0x1BB4394 Offset: 0x1BB4394 VA: 0x1BB4394 Slot: 11
-		// protected override void Start() { }
+		protected override void Start()
+		{
+			base.Start();
+			m_animEndCallBack = () =>
+			{
+				//0x1BB4B0C
+				return;
+			};
+		}
 
 		// // RVA: 0x1BB44D0 Offset: 0x1BB44D0 VA: 0x1BB44D0
 		public void SetLabel(PopupTabButton.ButtonLabel label)
@@ -81,18 +94,43 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BB4900 Offset: 0x1BB4900 VA: 0x1BB4900 Slot: 15
-		// public override void OnPointerClick(PointerEventData eventData) { }
+		public override void OnPointerClick(PointerEventData eventData)
+		{
+			if (IsClick)
+				return;
+			base.OnPointerClick(eventData);
+		}
 
 		// // RVA: 0x1BB4934 Offset: 0x1BB4934 VA: 0x1BB4934 Slot: 18
-		// public override void OnPointerDown(PointerEventData eventData) { }
+		public override void OnPointerDown(PointerEventData eventData)
+		{
+			if (IsClick)
+				return;
+			base.OnPointerDown(eventData);
+		}
 
 		// // RVA: 0x1BB4968 Offset: 0x1BB4968 VA: 0x1BB4968 Slot: 19
-		// public override void OnPointerUp(PointerEventData eventData) { }
+		public override void OnPointerUp(PointerEventData eventData)
+		{
+			if (IsClick)
+				return;
+			base.OnPointerUp(eventData);
+		}
 
 		// // RVA: 0x1BB499C Offset: 0x1BB499C VA: 0x1BB499C Slot: 16
-		// public override void OnPointerEnter(PointerEventData eventData) { }
+		public override void OnPointerEnter(PointerEventData eventData)
+		{
+			if (IsClick)
+				return;
+			base.OnPointerEnter(eventData);
+		}
 
 		// // RVA: 0x1BB49D0 Offset: 0x1BB49D0 VA: 0x1BB49D0 Slot: 17
-		// public override void OnPointerExit(PointerEventData eventData) { }
+		public override void OnPointerExit(PointerEventData eventData)
+		{
+			if (IsClick)
+				return;
+			base.OnPointerExit(eventData);
+		}
 	}
 }

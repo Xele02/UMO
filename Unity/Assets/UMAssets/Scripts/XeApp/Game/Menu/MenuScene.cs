@@ -757,7 +757,10 @@ namespace XeApp.Game.Menu
 		// private IEnumerator GotoRhythmAdjustCorotine() { }
 
 		// // RVA: 0xB35318 Offset: 0xB35318 VA: 0xB35318
-		// public static void SaveRequest() { }
+		public static void SaveRequest()
+		{
+			MenuScene.Instance.m_menuTransitionControl.SaveRequest();
+		}
 
 		// // RVA: 0xB353C4 Offset: 0xB353C4 VA: 0xB353C4
 		// public static void Save(IMCBBOAFION onSuccess, DJBHIFLHJLK onError) { }

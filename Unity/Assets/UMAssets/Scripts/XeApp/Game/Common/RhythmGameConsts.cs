@@ -102,10 +102,20 @@ namespace XeApp.Game.Common
 		public const int LineWideNum = 6;
 		public const int LineNumMax = 6;
 
-		// public static int LineNum { get; private set; } 0x138B168 0x138B1F4
+		public static int LineNum { get { return s_lineNum; } private set { s_lineNum = value; } } //0x138B168 0x138B1F4
 
 		// // RVA: 0x138B284 Offset: 0x138B284 VA: 0x138B284
-		// public static void SetWide(bool on) { }
+		public static void SetWide(bool on)
+		{
+			if(on)
+			{
+				LineNum = 6;
+			}
+			else
+			{
+				LineNum = 4;
+			}
+		}
 
 		// // RVA: 0x138B334 Offset: 0x138B334 VA: 0x138B334
 		// public static bool IsWideLine() { }
