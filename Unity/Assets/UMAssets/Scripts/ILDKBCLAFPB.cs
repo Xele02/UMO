@@ -157,9 +157,9 @@ public class ILDKBCLAFPB
         // public bool DCJKPJFIJKH() { }
 
         // // RVA: 0x2035F3C Offset: 0x2035F3C VA: 0x2035F3C
-        public int HBCHGGNOOCD(Difficulty.Type FEOKKEPAIBB, bool JCOJKAHFADL)
+        public int HBCHGGNOOCD_GetNotesDisplayTiming(Difficulty.Type FEOKKEPAIBB, bool JCOJKAHFADL)
         {
-            UnityEngine.Debug.LogError("TODO");
+            UnityEngine.Debug.LogError("TODO HBCHGGNOOCD_GetNotesDisplayTiming");
             return 0;
         }
 

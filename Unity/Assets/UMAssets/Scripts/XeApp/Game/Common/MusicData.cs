@@ -42,7 +42,7 @@ namespace XeApp.Game.Common
 		private bool isLoadedScoreData; // 0x59
 		private bool isLoadedCheerData; // 0x5A
 		private bool isLoadedParam; // 0x5B
-		private CBBJHPBGBAJ tarFile; // 0x5C
+		private CBBJHPBGBAJ_Archive tarFile; // 0x5C
 
 		public EONOEHOKBEB_Music musicBase { get; set; } // 0xC
 		public MusicScoreData commonData { get; set; } // 0x10
@@ -77,7 +77,7 @@ namespace XeApp.Game.Common
 			isLoadedParam = false;
 
 			musicBase = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
-			noteDisplayMillisec = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.HBCHGGNOOCD((XeApp.Game.Common.Difficulty.Type)difficultyId, false);
+			noteDisplayMillisec = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.HBCHGGNOOCD_GetNotesDisplayTiming((XeApp.Game.Common.Difficulty.Type)difficultyId, false);
 			yield return StartCoroutine(LoadScoreTarFile(musicId));
 
 			StringBuilder bundleName = new StringBuilder();
@@ -115,7 +115,35 @@ namespace XeApp.Game.Common
 		private IEnumerator LoadScoreTarFile(int musicId)
 		{
     		UnityEngine.Debug.Log("Enter LoadScoreTarFile");
-			UnityEngine.Debug.LogError("TODO");
+			//0xAE8584
+			StringBuilder str = new StringBuilder(64);
+			str.AppendFormat("sc/{0:D4}.dat", musicBase.KKPAHLMJKIH_WavId);
+			StringBuilder str2 = new StringBuilder(64);
+			str2.Clear();
+			if(!AssetBundleManager.isTutorialNow)
+			{
+				str2.Append(KEHOJEJMGLJ.CGAHFOBGHIM);
+				str2.Append("/");
+			}
+			else
+			{
+				str2.Append(Application.streamingAssetsPath);
+				str2.Append("/android/");
+			}
+			str2.Append(str);
+			bool done = false;
+			int hash = FileLoader.Instance.Request(str2.ToString(), str.ToString(), (FileResultObject fro) => {
+				//0xAE6F38
+				done = true;
+				tarFile = new CBBJHPBGBAJ_Archive();
+				tarFile.KHEKNNFCAOI_Load(fro.bytes);
+				return true;
+			}, null, 0, true);
+			FileLoader.Instance.Load();
+
+			while(!done)
+				yield return null;
+			FileLoader.Instance.Unload(hash);
     		UnityEngine.Debug.Log("Exit LoadScoreTarFile");
 			yield break;
 		}

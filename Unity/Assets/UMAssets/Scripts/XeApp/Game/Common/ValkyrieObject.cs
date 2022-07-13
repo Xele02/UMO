@@ -33,7 +33,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xD28300 Offset: 0xD28300 VA: 0xD28300
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			return;
 		}
 
 		// // RVA: 0xD28304 Offset: 0xD28304 VA: 0xD28304

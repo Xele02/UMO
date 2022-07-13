@@ -57,16 +57,29 @@ namespace XeSys
 		// public bool Unload(string path) { }
 
 		// // RVA: 0x203AF2C Offset: 0x203AF2C VA: 0x203AF2C
-		// public bool Unload(int pathHashCode) { }
+		public bool Unload(int pathHashCode)
+		{
+			if(!fileLoadedDic.ContainsKey(pathHashCode))
+				return false;
+			fileLoadedDic[pathHashCode].request.JNDNHPEIMEI();
+			fileLoadedDic.Remove(pathHashCode);
+			return true;
+		}
 
 		// // RVA: 0x203B0A0 Offset: 0x203B0A0 VA: 0x203B0A0
 		// public int Request(string path, string withoutPlarformPath, FileLoadedPostProcess succeeded) { }
 
 		// // RVA: 0x203B0CC Offset: 0x203B0CC VA: 0x203B0CC
-		// public int Request(string path, string withoutPlarformPath, FileLoadedPostProcess succeeded, Dictionary<string, string> args, int argValue, bool loadedDispose) { }
+		public int Request(string path, string withoutPlarformPath, FileLoadedPostProcess succeeded, Dictionary<string, string> args, int argValue, bool loadedDispose)
+		{
+			return Request(path, withoutPlarformPath, succeeded, null, args, argValue, loadedDispose);
+		}
 
 		// // RVA: 0x203B3C4 Offset: 0x203B3C4 VA: 0x203B3C4
-		// public int Request(string path, string withoutPlarformPath, FileLoadedPostProcess succeeded, Dictionary<string, string> args, int argValue) { }
+		public int Request(string path, string withoutPlarformPath, FileLoadedPostProcess succeeded, Dictionary<string, string> args, int argValue)
+		{
+			return Request(path, withoutPlarformPath, succeeded, null, args, argValue, false);
+		}
 
 		// // RVA: 0x203B0FC Offset: 0x203B0FC VA: 0x203B0FC
 		public int Request(string path, string withoutPlarformPath, FileLoadedPostProcess succeeded, FileLoadedPostProcess failed, Dictionary<string, string> args, int argValue, bool loadedDispose)
