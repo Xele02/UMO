@@ -183,8 +183,8 @@ namespace XeApp.Game.Common
 			public int prismMusicId { get {
 				if(m_prismMusicId < 1)
 					return musicId;
-				return prismMusicId;
-			} set { prismMusicId = value; } } // get_prismMusicId 0xE9D60C set_prismMusicId 0xE9D620
+				return m_prismMusicId;
+			} set { m_prismMusicId = value; } } // get_prismMusicId 0xE9D60C set_prismMusicId 0xE9D620
 			public int freeMusicId { get; set; } // 0x34
 			public int storyMusicId { get; set; } // 0x38
 			public Difficulty.Type difficultyType { get; set; } // 0x3C
@@ -244,11 +244,13 @@ namespace XeApp.Game.Common
 				long limitTime = 0, int eventUniqueId = 0, int onStageDivaNum = 1, long setupTime = 0)
 			{
 				UnityEngine.Debug.LogError("TODO SetupInfoByFreeMusic");
+				this.mode = GameMode.Type.FreeBattle;
 				this.freeMusicId = freeMusicId;
 				this.onStageDivaNum = onStageDivaNum;
 				this.IsLine6Mode = isLine6Mode;
 				this.IsMvMode = isMvMode;
 				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[freeMusicId - 1].DLAEJOBELBH_Id;
+				prismMusicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CIKALPJDGMF_ResolveMusicId(freeMusicId, musicId);
 			}
 
 			// // RVA: 0xE9DF78 Offset: 0xE9DF78 VA: 0xE9DF78

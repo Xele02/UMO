@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace XeApp.Game.Common
@@ -80,12 +82,30 @@ namespace XeApp.Game.Common
 		// // RVA: 0xD2BBF8 Offset: 0xD2BBF8 VA: 0xD2BBF8
 		public void LoadResources(int valkyrieId, int envId, int battleId)
 		{
+			isLoadedPrefab = false;
+			StartCoroutine(Co_LoadResources(valkyrieId, envId, battleId));
 			UnityEngine.Debug.LogError("TODO LoadResources");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73C4D0 Offset: 0x73C4D0 VA: 0x73C4D0
 		// // RVA: 0xD2BC30 Offset: 0xD2BC30 VA: 0xD2BC30
-		// private IEnumerator Co_LoadResources(int valkyrieId, int envId, int battleId) { }
+		private IEnumerator Co_LoadResources(int valkyrieId, int envId, int battleId)
+		{
+			StringBuilder bundleName; // 0x24
+			StringBuilder assetName; // 0x28
+			short modelId; // 0x2C
+			int subId_Intro; // 0x30
+			int subId_Battle; // 0x34
+			int i; // 0x38
+
+			//0xD2C5C0
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			//IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.
+			UnityEngine.Debug.LogError("TODO Valk Co_LoadResources, need load DB valkyrie data");
+			isLoadedPrefab = true;
+			yield break;
+		}
 
 		// // RVA: 0xD2BD28 Offset: 0xD2BD28 VA: 0xD2BD28
 		// private AnimationClip GetAnimClip(AssetBundleLoadAllAssetOperationBase a_op, StringBuilder a_sb, string a_str1, int a_model_id, int a_motion_sub_id) { }

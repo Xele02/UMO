@@ -121,13 +121,21 @@ namespace XeApp.Game.Common
 		// public static bool IsWideLine() { }
 
 		// // RVA: 0x138B3BC Offset: 0x138B3BC VA: 0x138B3BC
-		// public static bool IsWideLine(int lineNo) { }
+		public static bool IsWideLine(int lineNo)
+		{
+			return lineNo > 4;
+		}
 
 		// // RVA: 0x138B3D0 Offset: 0x138B3D0 VA: 0x138B3D0
 		// public static bool IsWingLine(int lineNo) { }
 
 		// // RVA: 0x138B3E4 Offset: 0x138B3E4 VA: 0x138B3E4
-		// public static bool IsLeftLine(int lineNo) { }
+		public static bool IsLeftLine(int lineNo)
+		{
+			if (lineNo < 4)
+				return !(lineNo > 1);
+			return !((lineNo & 1) != 0);
+		}
 
 	}
 }

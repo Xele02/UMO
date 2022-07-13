@@ -1,9 +1,10 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 namespace XeApp.Game
 {
-	public class MusicDirectionParamBase : ScriptableObject
+	public abstract class MusicDirectionParamBase : ScriptableObject
 	{
 		[Serializable]
 		public class MikeReplaceTargetData
@@ -42,6 +43,19 @@ namespace XeApp.Game
 				this.positionId = positionId;
 			}
 		}
+		
+		public class ResourceData
+		{
+			public int id; // 0x8
+			public int divaId; // 0xC
+
+			// RVA: 0xC93C54 Offset: 0xC93C54 VA: 0xC93C54
+			public ResourceData(int id, int divaId)
+			{
+				this.id = id;
+				this.divaId = divaId;
+			}
+		}
 
 		//[TooltipAttribute] // RVA: 0x6614B4 Offset: 0x6614B4 VA: 0x6614B4
 		[SerializeField] // RVA: 0x6614B4 Offset: 0x6614B4 VA: 0x6614B4
@@ -76,10 +90,10 @@ namespace XeApp.Game
 		// public abstract bool IsUseCommonMike(int divaId, int divaModelId);
 
 		// // RVA: -1 Offset: -1 Slot: 8
-		// public abstract List<MusicDirectionParamBase.ResourceData> CheckStageLightingResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList);
+		public abstract List<MusicDirectionParamBase.ResourceData> CheckStageLightingResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList);
 
 		// // RVA: -1 Offset: -1 Slot: 9
-		// public abstract List<MusicDirectionParamBase.ResourceData> CheckStageExtensionResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList);
+		public abstract List<MusicDirectionParamBase.ResourceData> CheckStageExtensionResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList);
 
 		// // RVA: -1 Offset: -1 Slot: 10
 		// public abstract List<MusicDirectionParamBase.ResourceData> CheckDivaExtensionResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList);

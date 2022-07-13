@@ -6,6 +6,9 @@ using Cryptor;
 public class IPGPAGNBBIK : LBHFILLFAGA
 {
 	private DsfdLoader.ILoadRequest COJNCNGHIJC; // 0x4C
+#if UNITY_EDITOR
+	bool isInstalling = false;
+#endif
 
 	// RVA: 0x140F5A4 Offset: 0x140F5A4 VA: 0x140F5A4
 	public IPGPAGNBBIK(string CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
@@ -16,12 +19,26 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 	// // RVA: 0x140F66C Offset: 0x140F66C VA: 0x140F66C Slot: 4
 	public override void BDALHEMDIDC_DoStart()
 	{
-		COJNCNGHIJC = Cryptor.DsfdLoader.LoadFile(HHHEFALNMJO_mPath);
+#if UNITY_EDITOR
+		isInstalling = true;
+		FileSystemProxy.TryInstallFile(HHHEFALNMJO_mPath, (string newPath) =>
+		{
+			isInstalling = false;
+			HHHEFALNMJO_mPath = newPath;
+#endif
+			COJNCNGHIJC = Cryptor.DsfdLoader.LoadFile(HHHEFALNMJO_mPath);
+#if UNITY_EDITOR
+		});
+#endif
 	}
 
 	// // RVA: 0x140F6F8 Offset: 0x140F6F8 VA: 0x140F6F8 Slot: 5
 	public override bool GDEMPLAOGKK_IsDone()
 	{
+#if UNITY_EDITOR
+		if (isInstalling)
+			return false;
+#endif
 		if(FHHAFJMELMD_alreadyLoading)
 			return true;
 		return COJNCNGHIJC.IsDone;
@@ -30,7 +47,11 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 	// // RVA: 0x140F7EC Offset: 0x140F7EC VA: 0x140F7EC Slot: 6
 	public override string LKPOPGJLPAJ_GetErrorStr()
 	{
-		if(!COJNCNGHIJC.IsSuccess)
+#if UNITY_EDITOR
+		if (isInstalling)
+			return null;
+#endif
+		if (!COJNCNGHIJC.IsSuccess)
 		{
 			return "decrypt error";
 		}
@@ -55,7 +76,11 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 	// // RVA: 0x140FA2C Offset: 0x140FA2C VA: 0x140FA2C Slot: 11
 	public override void PAHHAMPDBFP()
 	{
-		if(FHHAFJMELMD_alreadyLoading)
+#if UNITY_EDITOR
+		if (isInstalling)
+			return;
+#endif
+		if (FHHAFJMELMD_alreadyLoading)
 			return;
 		COJNCNGHIJC = null;
 		base.PAHHAMPDBFP();

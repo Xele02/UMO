@@ -390,7 +390,7 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
     { 
         if (IDLHJIOMJBK_data.INDDJNMPONH_type != JFBMDLGBPEN_JsonType.JIJLIKNGOOH_Boolean)
 			throw new InvalidCastException (
-				"Instance of JsonData doesn't hold a double");
+				"Instance of JsonData doesn't hold a double but "+ IDLHJIOMJBK_data.INDDJNMPONH_type);
 
 		return IDLHJIOMJBK_data.KIDMELNMHEN_inst_boolean;
     }
@@ -400,7 +400,7 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 	{
 		if (IDLHJIOMJBK_data.INDDJNMPONH_type != JFBMDLGBPEN_JsonType.PFOFBNKFKCA_Double)
 			throw new InvalidCastException (
-				"Instance of JsonData doesn't hold a double");
+				"Instance of JsonData doesn't hold a double but " + IDLHJIOMJBK_data.INDDJNMPONH_type);
 
 		return IDLHJIOMJBK_data.EMLHILAIKMM_inst_double;
 	}
@@ -410,7 +410,7 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 	{
 		if (IDLHJIOMJBK_data.INDDJNMPONH_type != JFBMDLGBPEN_JsonType.CEIBAFOCNCA_Int)
 			throw new InvalidCastException (
-				"Instance of JsonData doesn't hold an int");
+				"Instance of JsonData doesn't hold an int but " + IDLHJIOMJBK_data.INDDJNMPONH_type);
 
 		return IDLHJIOMJBK_data.NFGINMFAEOB_inst_int;
 	}
@@ -420,7 +420,7 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 	{
 		if (IDLHJIOMJBK_data.INDDJNMPONH_type != JFBMDLGBPEN_JsonType.HJBKGEBNJMP_Long)
 			throw new InvalidCastException (
-				"Instance of JsonData doesn't hold an int");
+				"Instance of JsonData doesn't hold an long but " + IDLHJIOMJBK_data.INDDJNMPONH_type);
 
 		return IDLHJIOMJBK_data.IKLMIBFMGEC_inst_long;
 	}
@@ -430,7 +430,7 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 	{
 		if (IDLHJIOMJBK_data.INDDJNMPONH_type != JFBMDLGBPEN_JsonType.IAAHPCHFCFB_String)
 			throw new InvalidCastException (
-				"Instance of JsonData doesn't hold a string");
+				"Instance of JsonData doesn't hold a string but " + IDLHJIOMJBK_data.INDDJNMPONH_type);
 
 		return IDLHJIOMJBK_data.FCNDAFPPLIN_inst_string;
 	}

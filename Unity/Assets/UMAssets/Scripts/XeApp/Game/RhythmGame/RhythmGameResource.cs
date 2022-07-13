@@ -2,6 +2,7 @@ using UnityEngine;
 using XeApp.Game.Common;
 using System.Collections.Generic;
 using XeApp.Game.RhythmGame.UI;
+using System.Collections;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -124,6 +125,7 @@ namespace XeApp.Game.RhythmGame
 		} private set {} }// 0xBF64F8 0xBF64FC
 		public bool is3DModeAllResoucesLoaded { get
 		{
+			//return divaResourceIsMusicAllLoaded() && 
 			UnityEngine.Debug.LogError("TODO is3DModeAllResoucesLoaded");
 			return true;
 		} private set {} } //0xBF6500 0xBF66CC
@@ -188,12 +190,32 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF6B7C Offset: 0xBF6B7C VA: 0xBF6B7C
 		public void LoadSpecialDirectionResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			UnityEngine.Debug.LogError("TODO LoadSpecialDirectionResource");
+			isInitializedSpecialStageResource = false;
+			specialDirectionMovieId_ = -1;
+			StartCoroutine(Co_LoadSpecialDirectionResource(wavId, stageDivaNum, settingList));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7451EC Offset: 0x7451EC VA: 0x7451EC
 		// // RVA: 0xBF6BBC Offset: 0xBF6BBC VA: 0xBF6BBC
-		// private IEnumerator Co_LoadSpecialDirectionResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		private IEnumerator Co_LoadSpecialDirectionResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			//0xBF9B1C
+			isSpecialDirectionResourceLoaded_ = false;
+			yield return new WaitUntil(() =>
+			{
+				//0xBF93A4
+				return musicData.isAllLoaded;
+			});
+			LoadStageLightingResource(wavId, stageDivaNum, settingList);
+			LoadStageExtensionResource(wavId, stageDivaNum, settingList);
+			LoadDivaExtensionResource(wavId, stageDivaNum, settingList);
+			LoadDivaCutinResource(wavId, stageDivaNum, settingList);
+			LoadMusicCameraCutinResource(wavId, stageDivaNum, settingList);
+			LoadMusicVoiceChangerResource(wavId, stageDivaNum, settingList);
+			LoadSpecialMovieResource(settingList);
+			LoadSpecialStageResource(wavId, stageDivaNum, settingList);
+			isSpecialDirectionResourceLoaded_ = true;
+		}
 
 		// // RVA: 0xBF6CB4 Offset: 0xBF6CB4 VA: 0xBF6CB4
 		// public void LoadARSpecialDirectionResource(int wavId, int divaId, int divaModelId, int stageDivaNum) { }
@@ -203,28 +225,87 @@ namespace XeApp.Game.RhythmGame
 		// private IEnumerator Co_LoadARSpecialDirectionResource(int wavId, int divaId, int divaModelId, int stageDivaNum) { }
 
 		// // RVA: 0xBF6E04 Offset: 0xBF6E04 VA: 0xBF6E04
-		// private void LoadStageLightingResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		private void LoadStageLightingResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			if(stageLightingResource != null)
+			{
+				foreach(var l in stageLightingResource)
+				{
+					Destroy(l);
+				}
+				stageLightingResource.Clear();
+			}
+			List<MusicDirectionParamBase.ResourceData> resources = musicData.musicParam.CheckStageLightingResourceId(settingList);
+			foreach(MusicDirectionParamBase.ResourceData resource in resources)
+			{
+				if (resource.id > 0)
+				{
+					StageLightingResource comp = gameObject.AddComponent<StageLightingResource>();
+					stageLightingResource.Add(comp);
+					comp.LoadResouces(wavId, resource.id, stageDivaNum);
+				}
+			}
+		}
 
 		// // RVA: 0xBF7234 Offset: 0xBF7234 VA: 0xBF7234
-		// private void LoadStageExtensionResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		private void LoadStageExtensionResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			if(stageExtensionResource != null)
+			{
+				foreach(var s in stageExtensionResource)
+				{
+					Destroy(s);
+				}
+				stageExtensionResource.Clear();
+			}
+
+			List<MusicDirectionParamBase.ResourceData> resources = musicData.musicParam.CheckStageExtensionResourceId(settingList);
+			foreach (MusicDirectionParamBase.ResourceData resource in resources)
+			{
+				if (resource.id > 0)
+				{
+					StageExtensionResource comp = gameObject.AddComponent<StageExtensionResource>();
+					stageExtensionResource.Add(comp);
+					comp.LoadResouces(wavId, resource.divaId, resource.id, stageDivaNum);
+				}
+			}
+		}
 
 		// // RVA: 0xBF766C Offset: 0xBF766C VA: 0xBF766C
-		// private void LoadDivaExtensionResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		private void LoadDivaExtensionResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			UnityEngine.Debug.LogError("TODO LoadDivaExtensionResource");
+		}
 
 		// // RVA: 0xBF7AA4 Offset: 0xBF7AA4 VA: 0xBF7AA4
-		// private void LoadDivaCutinResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		private void LoadDivaCutinResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			UnityEngine.Debug.LogError("TODO LoadDivaCutinResource");
+		}
 
 		// // RVA: 0xBF7EDC Offset: 0xBF7EDC VA: 0xBF7EDC
-		// private void LoadMusicCameraCutinResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		private void LoadMusicCameraCutinResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			UnityEngine.Debug.LogError("TODO LoadMusicCameraCutinResource");
+		}
 
 		// // RVA: 0xBF830C Offset: 0xBF830C VA: 0xBF830C
-		// private void LoadMusicVoiceChangerResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		private void LoadMusicVoiceChangerResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			UnityEngine.Debug.LogError("TODO LoadMusicVoiceChangerResource");
+		}
 
 		// // RVA: 0xBF8524 Offset: 0xBF8524 VA: 0xBF8524
-		// private void LoadSpecialMovieResource(List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		private void LoadSpecialMovieResource(List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			UnityEngine.Debug.LogError("TODO LoadSpecialMovieResource");
+		}
 
 		// // RVA: 0xBF8690 Offset: 0xBF8690 VA: 0xBF8690
-		// private void LoadSpecialStageResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		private void LoadSpecialStageResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			UnityEngine.Debug.LogError("TODO LoadSpecialStageResource");
+		}
 
 		// // RVA: 0xBF8874 Offset: 0xBF8874 VA: 0xBF8874
 		public void LoadUITextureResouces()
@@ -282,10 +363,6 @@ namespace XeApp.Game.RhythmGame
 		// [IteratorStateMachineAttribute] // RVA: 0x74569C Offset: 0x74569C VA: 0x74569C
 		// // RVA: 0xBF9110 Offset: 0xBF9110 VA: 0xBF9110
 		// private IEnumerator Co_LoadAllResourceFor2DMode(int introEnviromentId, int valkyrieModeId) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x745714 Offset: 0x745714 VA: 0x745714
-		// // RVA: 0xBF93A4 Offset: 0xBF93A4 VA: 0xBF93A4
-		// private bool <Co_LoadSpecialDirectionResource>b__86_0() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x745724 Offset: 0x745724 VA: 0x745724
 		// // RVA: 0xBF93D0 Offset: 0xBF93D0 VA: 0xBF93D0

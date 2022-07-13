@@ -1,11 +1,65 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using XeApp.Game.Common;
 
 namespace XeApp.Game
 {
 	public class MusicScoreData
 	{
+		public enum TouchState
+		{
+			None = 0,
+			Start = 1,
+			End = 2,
+			Continue = 3,
+			SwipeStart = 4,
+			SwipeEnd = 5,
+		}
+
+		public enum FlickType
+		{
+			None = 0,
+			Left = 1,
+			Right = 2,
+			Up = 3,
+			Down = 4,
+			Wing = 10,
+		}
+
 		public class InputNoteInfo
 		{
+			public int time { get; internal set; } // 0x8
+			public sbyte trackID { get; internal set; } // 0xC
+			public MusicScoreData.TouchState sync { get; internal set; } // 0xD
+			public MusicScoreData.TouchState longTouch { get; internal set; } // 0xE
+			public MusicScoreData.TouchState swipe { get; internal set; } // 0xF
+			public MusicScoreData.FlickType flick { get; internal set; } // 0x10
+			public int syncIndex { get; internal set; } // 0x14
+			public int nextIndex { get; internal set; } // 0x18
+			public int prevIndex { get; internal set; } // 0x1C
+			public int value { get; internal set; } // 0x20
+			public int thisIndex { get; internal set; } // 0x24
+			public int wingTrackID { get; internal set; } // 0x28
+			public bool isSlide { get; internal set; } // 0x2C
+			//public bool isWing { get; } 0xC9AF2C
+		}
+
+		public struct EventNoteInfo
+		{
+			public int time; // 0x0
+			public int value; // 0x4
+		}
+
+		public struct TenpoInfo
+		{
+			public int time; // 0x0
+			public float bpm; // 0x4
+			public float offset; // 0x8
+			public byte tacet; // 0xC
+			public byte meter; // 0xD
+			public int length; // 0x10
 		}
 
 		public const int CURRENT_VERSION = 1;
@@ -19,10 +73,10 @@ namespace XeApp.Game
 		public static readonly int TUTORIAL_TWO_FORCE_DEFEAT_ENEMY = 10002; // 0x1C
 		public static readonly int TUTORIAL_TWO_ACTIVE_SKILL_DESCRIPTION = 10003; // 0x20
 		public int version; // 0x8
-		// public List<MusicScoreData.TenpoInfo> tenpoTrack; // 0xC
-		// public List<MusicScoreData.InputNoteInfo> inputNoteTrack; // 0x10
-		// public List<MusicScoreData.EventNoteInfo> eventTrack10; // 0x14
-		// public List<MusicScoreData.EventNoteInfo> eventTrack11; // 0x18
+		public List<MusicScoreData.TenpoInfo> tenpoTrack; // 0xC
+		public List<MusicScoreData.InputNoteInfo> inputNoteTrack; // 0x10
+		public List<MusicScoreData.EventNoteInfo> eventTrack10; // 0x14
+		public List<MusicScoreData.EventNoteInfo> eventTrack11; // 0x18
 		public bool isWideTrack; // 0x1C
 		private int displayMilliSec; // 0x20
 		private int outDisplayMilliSec; // 0x24
@@ -85,12 +139,122 @@ namespace XeApp.Game
 		// // RVA: 0xC989D4 Offset: 0xC989D4 VA: 0xC989D4
 		private static MusicScoreData InstantiateFromJson(byte[] dataBytes, int offset, int size)
 		{
-			UnityEngine.Debug.LogError("TODO InstantiateFromJson");
-			return null;
+			MemoryStream ms = new MemoryStream(dataBytes, offset, size);
+			StreamReader reader = new StreamReader(ms, Encoding.UTF8);
+
+			EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(reader);
+			List<MusicScoreData.TenpoInfo> tempo = new List<MusicScoreData.TenpoInfo>();
+			List<MusicScoreData.InputNoteInfo> inputNote = new List<MusicScoreData.InputNoteInfo>();
+			EDOHBJAPLPF_JsonData tenpoTrack = json["TenpoTrack"];
+			if (tenpoTrack.EPNGJLOKGIF_IsArray)
+			{
+				for (int i = 0; i < tenpoTrack.HNBFOAJIIAL_Count; i++)
+				{
+					TenpoInfo tenpoData = new TenpoInfo();
+					tenpoData.time = (int)tenpoTrack[i]["time"];
+					tenpoData.bpm = (int)tenpoTrack[i]["bpm"]; // Should be double
+					tenpoData.offset = (int)tenpoTrack[i]["offset"]; // Should be double
+					tenpoData.tacet = (byte)(int)tenpoTrack[i]["tacet"];
+					tenpoData.meter = (byte)(int)tenpoTrack[i]["meter"];
+					tenpoData.length = (int)tenpoTrack[i]["length"];
+					tempo.Add(tenpoData);
+				}
+			}
+			EDOHBJAPLPF_JsonData inputTrack = json["InputTrack"];
+			bool isWide = false;
+			if (inputTrack.EPNGJLOKGIF_IsArray)
+			{
+				inputNote.Capacity = inputTrack.HNBFOAJIIAL_Count;
+				int localIndex = 0;
+				for (int i = 0; i < inputTrack.HNBFOAJIIAL_Count; i++)
+				{
+					InputNoteInfo noteInfo = new InputNoteInfo();
+					noteInfo.time = (int)inputTrack[i]["time"];
+					noteInfo.trackID = (sbyte)inputTrack[i]["trackID"];
+					noteInfo.sync = (TouchState)(int)inputTrack[i]["sync"];
+					noteInfo.syncIndex = (int)inputTrack[i]["syncIndex"];
+					noteInfo.longTouch = (TouchState)(int)inputTrack[i]["longTouch"];
+					noteInfo.swipe = (TouchState)(int)inputTrack[i]["swipe"];
+					noteInfo.flick = (FlickType)(int)inputTrack[i]["flick"];
+					noteInfo.prevIndex = (int)inputTrack[i]["prev"];
+					noteInfo.nextIndex = (int)inputTrack[i]["next"];
+					noteInfo.value = (int)inputTrack[i]["value"];
+					noteInfo.thisIndex = localIndex >> 0x10;
+					ProcessInputNoteInfo(ref noteInfo, inputNote);
+					inputNote.Add(noteInfo);
+					localIndex += 0x10000;
+					isWide |= RhythmGameConsts.IsWideLine(noteInfo.trackID);
+				}
+			}
+			EDOHBJAPLPF_JsonData eventTracks = json["EventTracks"];
+			List<MusicScoreData.EventNoteInfo> track10 = null;
+			List<MusicScoreData.EventNoteInfo> track11 = null;
+			if (eventTracks.EPNGJLOKGIF_IsArray)
+			{
+				for (int i = 0; i < eventTracks.HNBFOAJIIAL_Count; i++)
+				{
+					List<MusicScoreData.EventNoteInfo> eventInfo = new List<EventNoteInfo>();
+					EDOHBJAPLPF_JsonData trackID = eventTracks[i]["trackID"];
+					EDOHBJAPLPF_JsonData keys = eventTracks[i]["keys"];
+					eventInfo.Capacity = keys.HNBFOAJIIAL_Count;
+					for(int j = 0; j < keys.HNBFOAJIIAL_Count; j++)
+					{
+						eventInfo.Add(new EventNoteInfo() { time = (int)keys[j]["time"], value = (int)keys[j]["value"] });
+					}
+					if ((int)trackID == 10)
+						track10 = eventInfo;
+					if ((int)trackID == 11)
+						track11 = eventInfo;
+				}
+			}
+			MusicScoreData data = new MusicScoreData();
+			data.inputNoteTrack = inputNote;
+			data.eventTrack10 = track10;
+			data.eventTrack11 = track11;
+			data.tenpoTrack = tempo;
+			data.isWideTrack = isWide;
+
+			reader.Dispose();
+			ms.Dispose();
+
+			return data;
 		}
 
 		// // RVA: 0xC99F04 Offset: 0xC99F04 VA: 0xC99F04
-		// private static void ProcessInputNoteInfo(ref MusicScoreData.InputNoteInfo info, List<MusicScoreData.InputNoteInfo> infoList) { }
+		private static void ProcessInputNoteInfo(ref MusicScoreData.InputNoteInfo info, List<MusicScoreData.InputNoteInfo> infoList)
+		{
+			info.wingTrackID = -1;
+			if((int)info.flick < 9)
+			{
+				info.wingTrackID = (int)info.flick - 10;
+				//if(!RhythmGameConsts.IsWingLine(info.trackID)) //??
+				{
+					if (RhythmGameConsts.IsLeftLine(info.trackID))
+						info.flick = FlickType.Left;
+					else
+						info.flick = FlickType.Right;
+				}
+			}
+			if(info.longTouch == TouchState.End)
+			{
+				info.isSlide = true;
+				if(infoList[info.prevIndex].trackID == info.trackID)
+				{
+					info.isSlide = false;
+					if (infoList[info.prevIndex].longTouch == TouchState.Continue)
+						info.isSlide = true;
+					infoList[info.prevIndex].isSlide = info.isSlide;
+				}
+			}
+			else
+			{
+				if(info.longTouch == TouchState.Continue)
+				{
+					info.isSlide = true;
+					infoList[info.prevIndex].isSlide = true;
+				}
+			}
+		}
 
 		// // RVA: 0xC97D08 Offset: 0xC97D08 VA: 0xC97D08
 		private static MusicScoreData InstantiateFromRIFF(byte[] dataBytes, int offset, int size)
@@ -120,11 +284,5 @@ namespace XeApp.Game
 
 		// // RVA: 0xC9A894 Offset: 0xC9A894 VA: 0xC9A894
 		// private string ILSpyTrap(int n) { }
-
-		// // RVA: 0xC9A910 Offset: 0xC9A910 VA: 0xC9A910
-		static MusicScoreData()
-		{
-			UnityEngine.Debug.LogError("TODO");
-		}
 	}
 }
