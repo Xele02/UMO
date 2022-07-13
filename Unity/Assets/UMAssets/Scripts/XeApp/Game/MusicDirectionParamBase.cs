@@ -1,27 +1,113 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 namespace XeApp.Game
 {
 	public abstract class MusicDirectionParamBase : ScriptableObject
 	{
+		public enum SpecialDirectionType
+		{
+			StageLighting = 0,
+			CameraClip = 1,
+			DivaClip = 2,
+			StagePrefab = 3,
+			DivaPrefab = 4,
+			PilotVoice = 5,
+			DivaVoice = 6,
+			VoiceChanger = 7,
+			Movie = 8,
+			StageChanger = 9,
+			Num = 10,
+		}
+
 		[Serializable]
 		public class MikeReplaceTargetData
 		{
-			public int divaId;
-			public int costumeModelId;
+			// [TooltipAttribute] // RVA: 0x661678 Offset: 0x661678 VA: 0x661678
+			public int divaId; // 0x8
+			// [TooltipAttribute] // RVA: 0x6616AC Offset: 0x6616AC VA: 0x6616AC
+			public int costumeModelId; // 0xC
+
+			// RVA: 0xC93DA8 Offset: 0xC93DA8 VA: 0xC93DA8
+			// public bool IsFulfill(int divaId, int costumeModelId) { }
 		}
 
 		[Serializable]
 		public class SpecialDirectionData
 		{
-			public int divaId;
-			public int costumeModelId;
-			public int valkyrieId;
-			public int pilotId;
-			public int positionId;
-			public int directionGroupId;
+			// [TooltipAttribute] // RVA: 0x6616E0 Offset: 0x6616E0 VA: 0x6616E0
+			public int divaId; // 0x8
+			// [TooltipAttribute] // RVA: 0x661714 Offset: 0x661714 VA: 0x661714
+			[FormerlySerializedAsAttribute("costumeId")]
+			public int costumeModelId; // 0xC
+			// [TooltipAttribute] // RVA: 0x661774 Offset: 0x661774 VA: 0x661774
+			public int valkyrieId; // 0x10
+			// [TooltipAttribute] // RVA: 0x6617A8 Offset: 0x6617A8 VA: 0x6617A8
+			public int pilotId; // 0x14
+			// [TooltipAttribute] // RVA: 0x6617DC Offset: 0x6617DC VA: 0x6617DC
+			public int positionId; // 0x18
+			// [TooltipAttribute] // RVA: 0x661810 Offset: 0x661810 VA: 0x661810
+			public int directionGroupId; // 0x1C
+
+			// RVA: 0xC9491C Offset: 0xC9491C VA: 0xC9491C
+			public bool IsFulfill(MusicDirectionParamBase.ConditionSetting setting)
+			{
+				bool diva_valid = true;
+				if(divaId != 0)
+				{
+					diva_valid = divaId == setting.divaId;
+					if(divaId < 0)
+					{
+						diva_valid = divaId == setting.divaId || Mathf.Abs(divaId) != setting.divaId;
+					}
+				}
+				bool costume_valid = true;
+				if(costumeModelId > 0)
+				{
+					costume_valid = false;
+					if(costumeModelId == setting.costumeModelId)
+						costume_valid = true;
+				}
+				bool valkyrie_valid = true;
+				if(valkyrieId > 0)
+				{
+					valkyrie_valid = false;
+					if(valkyrieId == setting.valkyrieId)
+						valkyrie_valid = true;
+				}
+				bool pilot_valid = true;
+				if(pilotId > 0)
+				{
+					pilot_valid = false;
+					if(pilotId == setting.pilotId)
+						pilot_valid = true;
+				}
+				bool position_valid = positionId < 1 || positionId == setting.positionId;
+				return diva_valid && costume_valid && valkyrie_valid && pilot_valid && position_valid;
+			}
+
+			// RVA: 0xC953A4 Offset: 0xC953A4 VA: 0xC953A4
+			public bool IsFulfill(List<MusicDirectionParamBase.ConditionSetting> settingList)
+			{
+				if(divaId < 0 && positionId == 0)
+				{
+					foreach(var s in settingList)
+					{
+						if(Mathf.Abs(divaId) != s.divaId)
+						{
+							return false;
+						}
+					}
+				}
+				foreach(var s2 in settingList)
+				{
+					if(IsFulfill(s2))
+						return true;
+				}
+				return false;
+			}
 		}
 		
 		public class ConditionSetting

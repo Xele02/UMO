@@ -67,10 +67,10 @@ namespace XeApp.Core
 				FileLoader.Instance.Request(path, assetBundleName, 
 					(FileResultObject fo) => {
 						//0x1D6AC7C
+						UnityEngine.Debug.Log("LoadAssetBundle loaded "+assetBundleName);
 #if UNITY_EDITOR
 						BundleShaderInfo.Instance.RegisterShaderIds(fo.assetBundle, () => {
 #endif
-						UnityEngine.Debug.Log("LoadAssetBundle loaded "+assetBundleName);
 						LoadedAssetBundle res = new LoadedAssetBundle(fo.assetBundle);
 						m_LoadedAssetBundles.Add(assetBundleName, res);
 						if(m_lodingAssetBundle.TryGetValue(assetBundleName, out loadingCount))

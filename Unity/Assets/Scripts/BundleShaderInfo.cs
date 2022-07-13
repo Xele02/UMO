@@ -30,6 +30,11 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 
 	public IEnumerator Co_RegisterShaderIds(AssetBundle shaderBundle2, Action onCompleted)
 	{
+		if(shaderBundle2 == null)
+		{
+			UnityEngine.Debug.LogError("Error Register shader, bundle is null");
+			yield break;
+		}
         UnityEngine.Debug.Log("Enter Co_RegisterShaderIds "+shaderBundle2.name);
 		if(alreadyParsedBundle.Contains(shaderBundle2.name))
 		{

@@ -1,3 +1,4 @@
+using CriMana;
 using UnityEngine;
 
 // [AddComponentMenu] // RVA: 0x632920 Offset: 0x632920 VA: 0x632920
@@ -49,8 +50,8 @@ public class CriManaMovieMaterial : CriMonoBehaviour
 	private bool _applyTargetAlpha; // 0x43
 	[SerializeField] // RVA: 0x634C04 Offset: 0x634C04 VA: 0x634C04
 	private bool _uiRenderMode; // 0x44
-	// private bool materialOwn; // 0x45
-	// private bool isMonoBehaviourStartCalled; // 0x46
+	private bool materialOwn; // 0x45
+	private bool isMonoBehaviourStartCalled; // 0x46
 	// private GameObject ambisonicSource; // 0x48
 	// private bool wasDisabled; // 0x4C
 	// private bool wasPausedOnDisable; // 0x4D
@@ -59,17 +60,48 @@ public class CriManaMovieMaterial : CriMonoBehaviour
 	// private CriManaMoviePlayerHolder playerHolder; // 0x58
 	// public const int DONT_FORGET_COMMENT_OUT_PLAYER_PAUSE = 0;
 
-	// public string moviePath { get; set; } 0x2962720 0x2962728
-	// public bool loop { get; set; } 0x29627CC 0x29627D4
+	public string moviePath { get { return _moviePath; } set {
+		if(isMonoBehaviourStartCalled)
+		{
+			Debug.LogError("[CRIWARE] moviePath can not be changed. Use CriMana::Player::SetFile method.");
+			return;
+		}
+		_moviePath = value;
+	} } //0x2962720 0x2962728
+	public bool loop { get { return _loop; } set { 
+		if(isMonoBehaviourStartCalled)
+		{
+			Debug.LogError("[CRIWARE] loop property can not be changed. Use CriMana::Player::Loop method.");
+			return;
+		}
+		_loop = value;
+	 } } //0x29627CC 0x29627D4
 	// public CriManaMovieMaterial.MaxFrameDrop maxFrameDrop { get; set; } 0x2962878 0x2962880
 	// public bool advancedAudio { get; set; } 0x2962894 0x296289C
 	// public bool ambisonics { get; set; } 0x2962F10 0x2962958
-	// public bool additiveMode { get; set; } 0x2962F18 0x2962F20
+	public bool additiveMode { get { return _additiveMode; } set {
+		if(isMonoBehaviourStartCalled)
+		{
+			Debug.LogError("[CRIWARE] additiveMode can not be changed. Use CriMana::Player::additiveMode method.");
+			return;
+		}
+		_additiveMode = value;
+	} } //0x2962F18 0x2962F20
 	// public bool applyTargetAlpha { get; set; } 0x2962FC4 0x2962FCC
 	// public bool uiRenderMode { get; set; } 0x2963070 0x296214C
-	// public bool isMaterialAvailable { get; private set; } // 0x1E
-	// public Player player { get; private set; } // 0x20
-	// public Material material { get; set; } 0x29620A0 0x2963088
+	public bool isMaterialAvailable { get; private set; } // 0x1E
+	public Player player { get; private set; } // 0x20
+	public Material material { get { return _material; } set {
+		if(value == material)
+			return;
+		if(materialOwn)
+		{
+			Destroy(material);
+			materialOwn = false;
+		}
+		isMaterialAvailable = false;
+		_material = value;
+	} } //0x29620A0 0x2963088
 	// public Player.TimerType timerType { get; set; } 0x296317C 0x2963184
 	// protected bool HaveRendererOwner { get; private set; } // 0x55
 

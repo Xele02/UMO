@@ -154,7 +154,8 @@ namespace XeSys
 		{
 			FileLoadInfo info = fileLoadingDic[fro.pathHashCode];
 			fileLoadingDic.Remove(fro.pathHashCode);
-			info.Succeeded(fro);
+			if(!info.Succeeded(fro))
+				return false;
 			if(!fro.dispose)
 			{
 				if(!fileLoadedDic.ContainsKey(fro.pathHashCode))

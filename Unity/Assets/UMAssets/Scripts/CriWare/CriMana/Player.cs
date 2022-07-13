@@ -84,7 +84,10 @@ namespace CriMana
 		// public void DisposeRendererResource() { }
 
 		// // RVA: 0x29590CC Offset: 0x29590CC VA: 0x29590CC
-		// public void Prepare() { }
+		public void Prepare()
+		{
+			UnityEngine.Debug.LogError("TODO CriMana Player Prepare");
+		}
 
 		// // RVA: 0x29594E4 Offset: 0x29594E4 VA: 0x29594E4
 		// public void PrepareForRendering() { }
