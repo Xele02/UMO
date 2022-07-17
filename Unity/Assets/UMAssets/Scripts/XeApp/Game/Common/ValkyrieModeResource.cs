@@ -8,7 +8,7 @@ namespace XeApp.Game.Common
 		public ValkyrieColorParam paramColor { get; private set; } // 0x10
 		public AnimationClip changeCameraBeginAnimClip { get; private set; } // 0x14
 		public bool isLoadedMain { get; private set; } // 0x18
-		// public bool isAllLoaded { get; } 0xD27000
+		public bool isAllLoaded { get { return isLoadedMain; } } //0xD27000
 
 		// // RVA: 0xD27008 Offset: 0xD27008 VA: 0xD27008
 		// public void OnDestroy() { }
@@ -17,6 +17,7 @@ namespace XeApp.Game.Common
 		public void LoadResources(int id, int valkyrie_id)
 		{
 			UnityEngine.Debug.LogError("TODO ValkyrieMode LoadResources");
+			isLoadedMain = true;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73CB00 Offset: 0x73CB00 VA: 0x73CB00

@@ -125,9 +125,15 @@ namespace XeApp.Game.RhythmGame
 		} private set {} }// 0xBF64F8 0xBF64FC
 		public bool is3DModeAllResoucesLoaded { get
 		{
-			//return divaResourceIsMusicAllLoaded() && 
-			UnityEngine.Debug.LogError("TODO is3DModeAllResoucesLoaded");
-			return true;
+			bool ok = divaResourceIsMusicAllLoaded() && cameraResource.isAllLoaded && stageResources.isAllLoaded && 
+				valkyrieResource.isAllLoaded && musicIntroResource.isAllLoaded && valkyrieModeResource.isAllLoaded && 
+				divaModeResource.isAllLoaded && isUITextureResoucesLoaded_ && uiTextureResources != null && 
+				paramResource.isLoaded;
+			for(int i = 0; i < musicBoneSpringResource.Length; i++)
+			{
+				ok &= musicBoneSpringResource[i].isAllLoaded;
+			}
+			return ok;
 		} private set {} } //0xBF6500 0xBF66CC
 		public bool is2DModeAllResoucesLoaded { get {
 			UnityEngine.Debug.LogError("TODO is2DModeAllResoucesLoaded");
@@ -162,7 +168,18 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xBF62B4 Offset: 0xBF62B4 VA: 0xBF62B4
-		// private bool divaResourceIsMusicAllLoaded() { }
+		private bool divaResourceIsMusicAllLoaded()
+		{
+			foreach(var s in subDivaResource)
+			{
+				if(s != null)
+				{
+					if(!s.isMusicAllLoaded)
+						return false;
+				}
+			}
+			return divaResource.isMusicAllLoaded;
+		}
 
 		// // RVA: 0xBF6748 Offset: 0xBF6748 VA: 0xBF6748
 		private void Awake()
@@ -311,6 +328,8 @@ namespace XeApp.Game.RhythmGame
 		public void LoadUITextureResouces()
 		{
 			UnityEngine.Debug.LogError("TODO LoadUITextureResouces");
+			isUITextureResoucesLoaded_ = true;
+			uiTextureResources = new UITextureResource();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7452DC Offset: 0x7452DC VA: 0x7452DC

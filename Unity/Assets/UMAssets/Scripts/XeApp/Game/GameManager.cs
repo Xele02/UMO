@@ -481,8 +481,15 @@ namespace XeApp.Game
 			yield return AssetBundleManager.LoadUnionAssetBundle("dc/cmn.xab");
 			yield return UnionTextureManager.LoadUnionTexture();
 			yield return uguiCommonManager.Load();
+			if(!FacialNameDatabase.isInitialized)
+			{
+				AssetBundleLoadAssetOperation bootAssetOperation = AssetBundleManager.LoadAssetAsync("bt.xab", "facial_name_list", typeof(TextAsset));
+				yield return bootAssetOperation;
+				FacialNameDatabase.Create(bootAssetOperation.GetAsset<TextAsset>());
+				AssetBundleManager.UnloadAssetBundle("bt.xab");
+			}
 
-			UnityEngine.Debug.LogError("TODO finish UnionDataCoroutine (Tips / Facial / Sns");
+			UnityEngine.Debug.LogError("TODO finish UnionDataCoroutine (Tips / Sns");
 
 			IsUnionDataInitialized = true;
 		}

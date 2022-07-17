@@ -288,6 +288,8 @@ namespace XeApp.Game.RhythmGame
 			isPilotSoundLoaded = true;
 			isDivaSoundLoaded = true;
 			isBgmSoundLoaded = true;
+			isGameSESoundLoaded = true;
+			isDivaCosSoundLoaded = true;
 			// setup ennemy info
 
 			if (GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
@@ -390,7 +392,8 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC9FDC Offset: 0xDC9FDC VA: 0xDC9FDC
 		private void WaitWarmup()
 		{
-			if(uiController.Hud.IsWarmupEnd())
+			UnityEngine.Debug.LogError("TODO WaitWarmup hud");
+			//if(uiController.Hud.IsWarmupEnd())
 			{
 				GameSaveStart();
 			}

@@ -309,6 +309,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
         UnityEngine.Debug.LogError("TODO Database Load");
+		MPAMBMKFCKK = 1;
 		return true;
     }
 

@@ -304,7 +304,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B0AE4 Offset: 0x9B0AE4 VA: 0x9B0AE4
 		private void UpdateTask()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO UpdateTask");
 		}
 
 		// // RVA: 0x9B06DC Offset: 0x9B06DC VA: 0x9B06DC
@@ -377,15 +377,15 @@ namespace XeApp.Game.RhythmGame
 				int a = a.FGCCCMAFCNH();
 				float b = aGPGPOBJCMFB();
 				status.enemy.SetFixDamageParamter();*/
-				Debug.LogError("TODO");
+				Debug.LogError("TODO finish InitializeMusicData");
 			}
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO finish InitializeMusicData");
 		}
 
 		// // RVA: 0x9B4D20 Offset: 0x9B4D20 VA: 0x9B4D20
 		private void InitializeGameData()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO InitializeGameData");
 		}
 
 		// // RVA: 0x9B9258 Offset: 0x9B9258 VA: 0x9B9258
@@ -477,7 +477,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BAE64 Offset: 0x9BAE64 VA: 0x9BAE64
 		private void BackupSave()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO BackupSave");
 		}
 
 		// // RVA: 0x9BAFE8 Offset: 0x9BAFE8 VA: 0x9BAFE8
@@ -501,7 +501,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B7A9C Offset: 0x9B7A9C VA: 0x9B7A9C
 		private void InitializeMusicScoreEvent()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO InitializeMusicScoreEvent");
 		}
 
 		// // RVA: 0x9BAA40 Offset: 0x9BAA40 VA: 0x9BAA40

@@ -68,17 +68,18 @@ namespace XeApp.Core
 					(FileResultObject fo) => {
 						//0x1D6AC7C
 						UnityEngine.Debug.Log("LoadAssetBundle loaded "+assetBundleName);
+						fo.dispose = true;
+						AssetBundle bundle = fo.assetBundle;
 #if UNITY_EDITOR
-						BundleShaderInfo.Instance.RegisterShaderIds(fo.assetBundle, () => {
+						BundleShaderInfo.Instance.RegisterShaderIds(bundle, () => {
 #endif
-						LoadedAssetBundle res = new LoadedAssetBundle(fo.assetBundle);
+						LoadedAssetBundle res = new LoadedAssetBundle(bundle);
 						m_LoadedAssetBundles.Add(assetBundleName, res);
 						if(m_lodingAssetBundle.TryGetValue(assetBundleName, out loadingCount))
 						{
 							res.m_ReferencedCount += loadingCount;
 						}
 						m_lodingAssetBundle.Remove(assetBundleName);
-						fo.dispose = true;
 
 #if UNITY_EDITOR
 						});

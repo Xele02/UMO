@@ -5,9 +5,9 @@ namespace XeApp.Game.RhythmGame
 {
 	public class RhythmGameUIController : MonoBehaviour
 	{
-		// private List<Animator> m_list_anim; // 0x1C
-		// private List<ParticleSystem> m_list_particle; // 0x20
-		// private List<EffectBundleControllerSimple> m_list_effect; // 0x24
+		// private List<Animator> m_list_anim = new List<Animator>(); // 0x1C
+		// private List<ParticleSystem> m_list_particle = new List<ParticleSystem>(); // 0x20
+		// private List<EffectBundleControllerSimple> m_list_effect = new List<EffectBundleControllerSimple>(); // 0x24
 
 		// public GameUIIntro intro { get; private set; } // 0xC
 		// public GameUIComplete complete { get; private set; } // 0x10
@@ -23,13 +23,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0CC90 Offset: 0xC0CC90 VA: 0xC0CC90
 		public void OnAwake()
 		{
-			UnityEngine.Debug.LogWarning("TODO RhythmGameUIController.Awake");
+			return;
 		}
 
 		// // RVA: 0xC0CC94 Offset: 0xC0CC94 VA: 0xC0CC94
 		public void OnStart()
 		{
-			UnityEngine.Debug.LogWarning("TODO RhythmGameUIController.OnStart");
+			return;
 		}
 
 		// // RVA: 0xC0CC98 Offset: 0xC0CC98 VA: 0xC0CC98
@@ -178,9 +178,5 @@ namespace XeApp.Game.RhythmGame
 		// private PopupSetting CreateMvModeEndConfirmPopupSetting() { }
 
 		// // RVA: 0xC11D80 Offset: 0xC11D80 VA: 0xC11D80
-		public RhythmGameUIController()
-		{
-			UnityEngine.Debug.LogError("TODO");
-		}
 	}
 }

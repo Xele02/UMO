@@ -51,9 +51,16 @@ namespace XeApp.Core
 #if UNITY_EDITOR
                     BundleShaderInfo.Instance.FixMaterialShader(m_request.allAssets[i]);
 #endif
-                    return m_request.allAssets[i] as T;
+                    if(m_request.allAssets[i] is T)
+                        return m_request.allAssets[i] as T;
                 }
             }
+            string errorTxt = assetName+" ("+typeof(T)+") not found in "+m_AssetBundleName+", Files are ";
+            for(int i = 0; i < m_request.allAssets.Length; i++)
+            {
+                errorTxt += m_request.allAssets[i].name+" "+m_request.allAssets[i].GetType().ToString()+" ";
+            }
+            UnityEngine.Debug.LogError(errorTxt);
             return default(T);
         }
         // /* GenericInstMethod :

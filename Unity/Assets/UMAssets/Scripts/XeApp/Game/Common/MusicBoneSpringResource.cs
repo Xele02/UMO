@@ -15,7 +15,10 @@ namespace XeApp.Game.Common
 		public AnimationClip clip; // 0x14
 
 		public bool isLoaded { get; private set; } // 0x18
-		// public bool isAllLoaded { get; private set; } 0x1118AB4 0x1118AD8
+		public bool isAllLoaded { get {
+			if(isUnused) return true;
+			return isLoaded;
+		} private set {} } //0x1118AB4 0x1118AD8
 
 		// // RVA: 0x111878C Offset: 0x111878C VA: 0x111878C
 		// public void OnDestroy() { }

@@ -10,7 +10,11 @@ namespace XeApp.Game.Common
 		public static bool prePlayMovie = true; // 0x0
 
 		public CriManaMovieController moviePlayer { get; set; } // 0xC
-		// public bool isAllLoaded { get; } 0x1BF163C
+		public bool isAllLoaded { get {
+			if(isUnused)
+				return true;
+			return isLoadedMovie;
+		} } //0x1BF163C
 
 
 		// [CompilerGeneratedAttribute] // RVA: 0x738178 Offset: 0x738178 VA: 0x738178
@@ -28,6 +32,7 @@ namespace XeApp.Game.Common
 		public void LoadResources(int musicId, int qualityId, Func<int> getSpecialMovieId)
 		{
 			UnityEngine.Debug.LogError("TodO LoadResources");
+			isLoadedMovie = true;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x738198 Offset: 0x738198 VA: 0x738198

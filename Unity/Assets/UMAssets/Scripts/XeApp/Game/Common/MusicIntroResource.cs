@@ -13,7 +13,9 @@ namespace XeApp.Game.Common
 		public bool isLoadedRunway { get; private set; } // 0x20
 		public bool isLoadedEnviroment { get; private set; } // 0x21
 		public bool isLoadedAnimator { get; private set; } // 0x22
-		// public bool isAllLoaded { get; } 0xAEA888
+		public bool isAllLoaded { get {
+			return isLoadedRunway && isLoadedEnviroment && isLoadedAnimator;
+		} } //0xAEA888
 
 		// // RVA: 0xAEA8B4 Offset: 0xAEA8B4 VA: 0xAEA8B4
 		public void OnDestroy()
@@ -25,6 +27,9 @@ namespace XeApp.Game.Common
 		public void LoadResources(int runwayId, int enviromentId, int valkyrieId)
 		{
 			UnityEngine.Debug.LogError("TODO MusicIntro LoadResources");
+			isLoadedRunway = true;
+			isLoadedEnviroment = true;
+			isLoadedAnimator = true;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7395B4 Offset: 0x7395B4 VA: 0x7395B4

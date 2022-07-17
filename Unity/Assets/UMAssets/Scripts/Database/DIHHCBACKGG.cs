@@ -61,6 +61,9 @@ public abstract class DIHHCBACKGG
 	// // RVA: 0x1989E1C Offset: 0x1989E1C VA: 0x1989E1C
 	public int JKAECBCNHAN(int IJEKNCDIIAE, int PLALNIIBLOF, int DBHPPMPNCKF = 0)
 	{
+		UnityEngine.Debug.LogError("TODO Fix JKAECBCNHAN, static IEFOPDOOLOK should be initilized somewhere to a high value");
+		return PLALNIIBLOF;
+		
 		if(DBHPPMPNCKF != 0)
 		{
 			if (DBHPPMPNCKF <= IEFOPDOOLOK)

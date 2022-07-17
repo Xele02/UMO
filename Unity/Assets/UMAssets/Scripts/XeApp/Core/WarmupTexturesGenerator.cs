@@ -21,7 +21,7 @@ namespace XeApp.Core
 		// RVA: 0x1D79C6C Offset: 0x1D79C6C VA: 0x1D79C6C
 		public void Create(GameObject rootObj, Action onFinish)
 		{
-			GameObject obj = UnityEngine.Object.Instantiate<GameObject>(rootObj, Vector3.zero, Quaternion.identity);
+			GameObject obj = UnityEngine.Object.Instantiate<GameObject>(prefab, Vector3.zero, Quaternion.identity);
 			obj.GetComponent<WarmupTextures>().Initialize(rootObj, onFinish);
 		}
 
