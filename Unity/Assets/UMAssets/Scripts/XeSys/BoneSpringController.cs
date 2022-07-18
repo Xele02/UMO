@@ -148,6 +148,9 @@ namespace XeSys
 		//public void RequestInitialize() { }
 
 		//// RVA: 0x192C150 Offset: 0x192C150 VA: 0x192C150
-		//public List<BoneSpringControlPoint> GetListBSCP() { }
+		public List<BoneSpringControlPoint> GetListBSCP()
+		{
+			return controlPoints;
+		}
 	}
 }

@@ -31,7 +31,10 @@ namespace XeApp.Game
 			public int costumeModelId; // 0xC
 
 			// RVA: 0xC93DA8 Offset: 0xC93DA8 VA: 0xC93DA8
-			// public bool IsFulfill(int divaId, int costumeModelId) { }
+			public bool IsFulfill(int divaId, int costumeModelId)
+			{
+				return (this.divaId < 1 || this.divaId == divaId) && (this.costumeModelId < 1 || this.costumeModelId == costumeModelId);
+			}
 		}
 
 		[Serializable]
@@ -170,10 +173,17 @@ namespace XeApp.Game
 		// public List<int>[] GetSpecialDirectionResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList) { }
 
 		// // RVA: 0xC95238 Offset: 0xC95238 VA: 0xC95238
-		// public bool IsEnabledDirection(MusicDirectionBoolParam.DirectionType type) { }
+		public bool IsEnabledDirection(MusicDirectionBoolParam.DirectionType type)
+		{
+			if(BoolParam != null)
+			{
+				return BoolParam.IsEnabledDirection(type);
+			}
+			return false;
+		}
 
 		// // RVA: -1 Offset: -1 Slot: 7
-		// public abstract bool IsUseCommonMike(int divaId, int divaModelId);
+		public abstract bool IsUseCommonMike(int divaId, int divaModelId);
 
 		// // RVA: -1 Offset: -1 Slot: 8
 		public abstract List<MusicDirectionParamBase.ResourceData> CheckStageLightingResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList);

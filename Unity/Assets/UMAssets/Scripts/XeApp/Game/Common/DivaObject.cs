@@ -41,7 +41,7 @@ namespace XeApp.Game.Common
 		//public int modelId { get; private set; } 0x1BF2228 0x1BF2230
 		//public int colorId { get; private set; } 0x1BF2238 0x1BF2240
 		//public int positionId { get; private set; } 0x1BEBE10 0x1BF2248
-		//public GameObject divaPrefab { get; protected set; } 0x1BED1C4 0x1BF2250
+		public GameObject divaPrefab { get { return divaPrefab_; } protected set { divaPrefab_ = value; } } //0x1BED1C4 0x1BF2250
 		public bool isWaitUnlockBoneSpring { get; private set; } // 0x54
 		//public bool isWaitLockBoneSpring { get; private set; } 0x1BF2268 0x1BF2270
 		protected virtual bool useQualitySetting { get { return true; } } //0x1BF2274 

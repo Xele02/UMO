@@ -4,9 +4,9 @@ namespace XeApp.Game.Common
 {
 	public class MikeStandObject : MonoBehaviour
 	{
-		public float[] HightScaleFactor = new float[10] { 4AADE0310D792417BC7771A2BC1EE19CB55362D0 }; // 0xC
-		public float[] AdjustScaleFactor = new float[10] { C906995C247542613F4C4D48C8343F3CFD6470A4 }; // 0x10
-		public float[] AdjustRotationFactor = new float[10] { 90F7E05841CE4019124B0D0DBC487D36F62E006D }; // 0x14
+		public float[] HightScaleFactor = new float[10] { 0.9628f, 1.0391f, 1.0495f, 0.9912f, 0.9109f, 0.98f, 1.06f, 0.964f, 1, 1}; // 0xC
+		public float[] AdjustScaleFactor = new float[10] { 0.9506f, 1.0216f, 1.0237f, 0.9696f, 0.8915f, 0.98f, 1.0642f, 0.964f, 1, 1}; // 0x10
+		public float[] AdjustRotationFactor = new float[10] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }; // 0x14
 		public Animator animator; // 0x18
 		private AnimatorOverrideController overrideController; // 0x1C
 		[SerializeField]

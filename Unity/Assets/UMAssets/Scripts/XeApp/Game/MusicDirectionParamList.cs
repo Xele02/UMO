@@ -189,7 +189,17 @@ namespace XeApp.Game
 		}
 
 		// RVA: 0xC967DC Offset: 0xC967DC VA: 0xC967DC Slot: 7
-		// public override bool IsUseCommonMike(int divaId, int divaModelId) { }
+		public override bool IsUseCommonMike(int divaId, int divaModelId)
+		{
+			for(int i = 0; i < m_mikeReplaceTargetList.Count; i++)
+			{
+				if(m_mikeReplaceTargetList[i].IsFulfill(divaId, divaModelId))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
 
 		// RVA: 0xC96AC8 Offset: 0xC96AC8 VA: 0xC96AC8 Slot: 8
 		public override List<MusicDirectionParamBase.ResourceData> CheckStageLightingResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList)

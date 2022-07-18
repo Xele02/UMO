@@ -442,7 +442,7 @@ namespace XeApp.Game.RhythmGame
 						}
 					}
 				}
-				musicCameraObject.Initialize(resource.cameraResource, orderedDivaList, resource.musicData.musicParam.IsEnabledDirection(0));
+				musicCameraObject.Initialize(resource.cameraResource, orderedDivaList, resource.musicData.musicParam.IsEnabledDirection(MusicDirectionBoolParam.DirectionType.DivaAdjustXZ));
 				stageObject.Initialize(resource.stageResources, resource.musicData.musicBase.KNMGEEFGDNI_Nam);
 				valkyrieObject.Initialize(resource.valkyrieResource);
 				valkyrieObject.SetOverrideAnimationIntro(resource.musicIntroResource);
