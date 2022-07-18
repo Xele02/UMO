@@ -285,7 +285,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B07B8 Offset: 0x9B07B8 VA: 0x9B07B8
 		private void OnDestroy()
 		{
-			if(!XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
+			if(!XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				XeApp.Game.GameManager.Instance.PopupCanvas.worldCamera.clearFlags = UnityEngine.CameraClearFlags.Nothing;
 			}
@@ -373,19 +373,125 @@ namespace XeApp.Game.RhythmGame
 				AOJGDNFAIJL_PrismData.AMIECPBIALP a = new AOJGDNFAIJL_PrismData.AMIECPBIALP();				
 				a.OBKGEDCKHHE(Database.Instance.gameSetup.musicInfo.prismMusicId, 1 < Database.Instance.gameSetup.musicInfo.onStageDivaNum);
 				/*int[] difficulties = a.CEMKPBIBOCG(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
-				Database.Instance.m_tutorialSetInstance.musicInfo.difficultyType
+				Database.Instance.gameSetup.musicInfo.difficultyType
 				int a = a.FGCCCMAFCNH();
 				float b = aGPGPOBJCMFB();
 				status.enemy.SetFixDamageParamter();*/
-				Debug.LogError("TODO finish InitializeMusicData");
+				Debug.LogError("TODO finish InitializeMusicData enemy damage / difficulty");
 			}
-			UnityEngine.Debug.LogError("TODO finish InitializeMusicData");
+			UnityEngine.Debug.LogError("TODO finish InitializeMusicData note / score");
 		}
 
 		// // RVA: 0x9B4D20 Offset: 0x9B4D20 VA: 0x9B4D20
 		private void InitializeGameData()
 		{
-			UnityEngine.Debug.LogError("TODO InitializeGameData");
+			List<int> listDiva = new List<int>();
+			int prismDivaId = Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId;
+			listDiva.Add(prismDivaId);
+			if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			{
+				int prismCostumeId = Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismCostumeModelId;
+				gameDivaObject.Initialize(resource.divaResource, prismDivaId,
+						resource.musicData.musicParam.IsUseCommonMike(prismDivaId, prismCostumeId));
+				int subDivaNum = Database.Instance.gameSetup.musicInfo.onStageDivaNum - 1;
+				GameDivaObject[] gdo = FindObjectsOfType<GameDivaObject>();
+				for (int i = 0; i < 4; i++)
+				{
+					if (i < subDivaNum)
+					{
+						prismDivaId = Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismDivaId;
+						if (prismDivaId == 0)
+						{
+							subDivaObject[i] = null;
+						}
+						else
+						{
+							prismCostumeId = Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismCostumeModelId;
+							subDivaObject[i].Initialize(resource.subDivaResource[i], prismDivaId, resource.musicData.musicParam.IsUseCommonMike(prismDivaId, prismCostumeId));
+							listDiva.Add(prismDivaId);
+						}
+					}
+					else
+					{
+						for (int j = 0; j < gdo.Length; j++)
+						{
+							if (gdo[j].gameObject.name == "SubDivaGameObject"+(i+1))
+							{
+								gdo[j].gameObject.SetActive(false);
+								break;
+							}
+						}
+					}
+				}
+				List<int> orderedDivaList = new List<int>();
+				if(subDivaNum > 0)
+				{
+					orderedDivaList.Clear();
+					int currentPos = 1;
+					for(int i = 0; i < Database.Instance.gameSetup.teamInfo.danceDivaList.Length; )
+					{
+						if(Database.Instance.gameSetup.teamInfo.danceDivaList[i].positionId == currentPos)
+						{
+							orderedDivaList.Add(Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId);
+							i = 0;
+							currentPos++;
+						}
+						else
+						{
+							i++;
+						}
+					}
+				}
+				musicCameraObject.Initialize(resource.cameraResource, orderedDivaList, resource.musicData.musicParam.IsEnabledDirection(0));
+				stageObject.Initialize(resource.stageResources, resource.musicData.musicBase.KNMGEEFGDNI_Nam);
+				valkyrieObject.Initialize(resource.valkyrieResource);
+				valkyrieObject.SetOverrideAnimationIntro(resource.musicIntroResource);
+				valkyrieObject.SetEnableAwakeEffect(resource.paramResource.m_paramValkyrieAwake.Check(Database.Instance.gameSetup));
+				valkyrieObject.SetChangeExplosionEffect(resource.paramResource.m_paramValkyrieChangeExplosion.Check(Database.Instance.gameSetup));
+				musicIntroObject.Initialize(resource.musicIntroResource);
+				valkyrieModeObject.Initialize(resource.valkyrieModeResource, false);
+				if(valkyrieModeObject.IsEnableMovie())
+				{
+					divaModeObject.Initialize(resource.divaResource.moviePlayer);
+					divaModeObject.VisibleDiva = setting.m_visible_diva;
+				}
+				InitializeExtension();
+				musicIntroObject.onPlayerCutInStart = this.MusicIntroStartPlayerCutInCallbackFor3DMode;
+				valkyrieModeObject.onBeginShooting = this.ValkyrieModeBeginShootingCallback;
+				valkyrieModeObject.onEndAnimationCallback = this.ValkyrieModeEndAnimationCallback;
+				valkyrieModeObject.onPlayerCutInStart = this.ValkyrieModeStartPlayerCutInCallback;
+				valkyrieModeObject.onEnemyCutInStart = this.ValkyrieModeStartEnemyCutInCallback;
+				valkyrieModeObject.onEnemyLockOnStart = this.ValkyrieModeStartEnemyLockOnCallback;
+				stageObject.SetupPsylliumColor(resource.musicData.musicParam, resource.divaResource.divaParam, resource.subDivaResource, subDivaNum);
+				gameDivaObject.SetupDefaultMaterialColor(stageObject.param.mainColor, stageObject.param.rimColor, stageObject.param.mainColor, stageObject.param.rimPower, stageObject.param.shadowColor);
+				gameDivaObject.AdjustHight(resource.musicData.musicParam.mikeStandOffsetRate);
+				foreach(var ext in divaExtensionObjectList)
+				{
+					ext.SetupDefaultMaterialColor(stageObject.param.mainColor, stageObject.param.rimColor, stageObject.param.mainColor, stageObject.param.rimPower);
+				}
+				for(int i = 0; i < subDivaNum; i++)
+				{
+					if(subDivaObject[i] != null)
+					{
+						subDivaObject[i].SetupDefaultMaterialColor(stageObject.param.mainColor, stageObject.param.rimColor, stageObject.param.mainColor, stageObject.param.rimPower, stageObject.param.shadowColor);
+						subDivaObject[i].AdjustHight(resource.musicData.musicParam.mikeStandOffsetRate);
+						subDivaObject[i].SetupBoneSpring(resource, i + 1);
+					}
+				}
+				gameDivaObject.SetupBoneSpring(resource, 0);
+				musicCameraObject.AttachCameraBillboard();
+				List<GameDivaObject> divaObjects = new List<GameDivaObject>();
+				divaObjects.Add(gameDivaObject);
+				divaObjects.AddRange(subDivaObject);
+				musicCameraObject.AttachCameraDvaBillboard(divaObjects);
+				objectRoot2dLayer.SetActive(false);
+				ApplyDimmer();
+			}
+			else
+			{
+				UnityEngine.Debug.LogError("TODO InitializeGameData 2D");
+			}
+			UnityEngine.Debug.LogError("TODO InitializeGameData UI / Sound Effect");
 		}
 
 		// // RVA: 0x9B9258 Offset: 0x9B9258 VA: 0x9B9258
@@ -400,8 +506,8 @@ namespace XeApp.Game.RhythmGame
 			if(d.musicInfo.IsMvMode)
 			{
 				BackupSave();
-				ILDKBCLAFPB.MPHNGGECENI_Option saveInfo = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB;
-				BEJIKEOAJHN_OptionSLive b = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().MHHPDGJLJGE;
+				ILDKBCLAFPB.MPHNGGECENI_Option saveInfo = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options;
+				BEJIKEOAJHN_OptionSLive b = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().MHHPDGJLJGE_OptionsSLive;
 				saveInfo.PBCBJAPONBF();
 				saveInfo.LMDACNNJDOE_VolSeRhythm = b.LMDACNNJDOE_VolSeRhythm;
 				saveInfo.ICGAOAFIHFD_VolBgmRhythm = b.ICGAOAFIHFD_VolBgmRhythm;
@@ -442,22 +548,22 @@ namespace XeApp.Game.RhythmGame
 			if(d.ForceCutin() > 0)
 			{
 				BackupSave();
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.DADIPGPHLDD_EffectCutin = d.ForceCutin() != 1 ? 1 : 0;
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.DADIPGPHLDD_EffectCutin = d.ForceCutin() != 1 ? 1 : 0;
 			}
 			if(d.ForceDivaMode() > 0)
 			{
 				BackupSave();
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.PMGMMMGCEEI_Video = d.ForceDivaMode() != 1 ? 1 : 0;
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video = d.ForceDivaMode() != 1 ? 1 : 0;
 			}
 			if(d.ForceValkyrieMode() > 0)
 			{
 				BackupSave();
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.AFMDGKBANPH(d.ForceValkyrieMode() != 1); // ??
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.AFMDGKBANPH(d.ForceValkyrieMode() != 1); // ??
 			}
 			
 			setting = new Setting();
-			setting.m_enable_cutin = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.GLKGAOFHLPN();
-			setting.m_visible_diva = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CJKKALFPMLA_IsDivaModeDivaVisible;
+			setting.m_enable_cutin = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.GLKGAOFHLPN();
+			setting.m_visible_diva = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CJKKALFPMLA_IsDivaModeDivaVisible;
 			if(setting_mv.m_enable)
 			{
 				Setting.DMode a = Setting.DMode.Normal;
@@ -485,7 +591,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(backupSaveData.m_enable)
 			{
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB = backupSaveData.m_option;
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options = backupSaveData.m_option;
 				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_BGM, backupSaveData.m_option.ICGAOAFIHFD_VolBgmRhythm, false);
 				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_SE, backupSaveData.m_option.LMDACNNJDOE_VolSeRhythm, false);
 				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_NOTES, backupSaveData.m_option.IBEINHHMHAC_VolNotesRhythm, false);
@@ -501,14 +607,162 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B7A9C Offset: 0x9B7A9C VA: 0x9B7A9C
 		private void InitializeMusicScoreEvent()
 		{
-			UnityEngine.Debug.LogError("TODO InitializeMusicScoreEvent");
+			introFadeEvent = new RhythmGameScoreEvent();
+			if(resource.musicData.introFadeMillisec > -1)
+			{
+				introFadeEvent.onFireEvent = this.StartIntroFade;
+				introFadeEvent.millisec = resource.musicData.introFadeMillisec;
+				resource.musicIntroResource.OverrideIntroEndTime(ref introFadeEvent.millisec);
+			}
+			normalModeEndEvent = new RhythmGameScoreEvent();
+			if(resource.musicData.valkyrieModeJudgeMillisec > -1)
+			{
+				normalModeEndEvent.onFireEvent = this.EndNormalMode;
+				normalModeEndEvent.millisec = resource.musicData.valkyrieModeJudgeMillisec;
+			}
+			valkyrieStartHUDEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.valkyrieModeStartHUDMillisec > -1)
+			{
+				valkyrieStartHUDEvent.onFireEvent = this.StartValkyrieHUD;
+				valkyrieStartHUDEvent.millisec = resource.musicData.valkyrieModeStartHUDMillisec;
+			}
+			valkyriePreFadeEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.valkyrieModeStartFadeMillisec > -1)
+			{
+				valkyriePreFadeEvent.onFireEvent = this.StartValkyriePreFade;
+				valkyriePreFadeEvent.millisec = resource.musicData.valkyrieModeStartFadeMillisec;
+			}
+			valkyrieModeStartEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.valkyrieModeStartMillisec > -1)
+			{
+				valkyrieModeStartEvent.onFireEvent = this.StartValkyrieMode;
+				valkyrieModeStartEvent.millisec = resource.musicData.valkyrieModeStartMillisec;
+			}
+			valkyrieModeEndEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.divaModeJudgeMillisec > -1)
+			{
+				valkyrieModeEndEvent.onFireEvent = this.EndValkyrieMode;
+				valkyrieModeEndEvent.millisec = resource.musicData.divaModeJudgeMillisec;
+			}
+			valkyrieCutsceneStartEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.valkyrieModeStartMillisec > -1)
+			{
+				valkyrieCutsceneStartEvent.onFireEvent = this.StartValkyrieCutscene;
+				valkyrieCutsceneStartEvent.millisec = resource.musicData.valkyrieModeStartMillisec;
+			}
+			valkyrieCutsceneEndEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.valkyrieModeLeaveMillisec > -1)
+			{
+				valkyrieCutsceneEndEvent.onFireEvent = this.EndValkyrieCutscene;
+				valkyrieCutsceneEndEvent.millisec = resource.musicData.valkyrieModeLeaveMillisec;
+			}
+			divaModeStartEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.divaModeStartMillisec > -1)
+			{
+				divaModeStartEvent.onFireEvent = this.StartDivaMode;
+				divaModeStartEvent.millisec = resource.musicData.divaModeStartMillisec;
+			}
+			divaCutsceneStartEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.divaModeStartMillisec > -1)
+			{
+				divaCutsceneStartEvent.onFireEvent = this.StartDivaCutscene;
+				divaCutsceneStartEvent.millisec = resource.musicData.divaModeStartMillisec;
+			}
+			rhythmGameResultStartEvent = new RhythmGameScoreEvent();
+			rhythmGameResultStartEvent.onFireEvent = OnStartRhythmGameResult;
+			if (resource.musicData.rhythmGameResultStartMillisec < 0)
+			{
+				resource.musicData.rhythmGameResultStartMillisec = musicMillisecLength - 5000;
+			}
+			else
+			{
+				rhythmGameResultStartEvent.millisec = resource.musicData.rhythmGameResultStartMillisec;
+			}
+			tutorialOneEndEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.tutorialOneEndGameStartMillisec > -1)
+			{
+				tutorialOneEndEvent.onFireEvent = () =>
+				{
+					//0xBF1658
+					UnityEngine.Debug.LogError("TODO TutorialOnEndEvent");
+				};
+				tutorialOneEndEvent.millisec = resource.musicData.tutorialOneEndGameStartMillisec;
+			}
+			tutorialTwoFoceFWaveMaxEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.tutorialTwoForceFwaveMaxStartMillisec > -1)
+			{
+				tutorialTwoFoceFWaveMaxEvent.onFireEvent = this.ForceChangePercentage100ForTutorial;
+				tutorialTwoFoceFWaveMaxEvent.millisec = resource.musicData.tutorialTwoForceFwaveMaxStartMillisec;
+			}
+			tutorialTwoFoceEnemyDefeatEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.tutorialTwoForceDefeatEnemyStartMillisec > -1)
+			{
+				tutorialTwoFoceEnemyDefeatEvent.onFireEvent = this.ForceDefeatEnemyForTutorial;
+				tutorialTwoFoceEnemyDefeatEvent.millisec = resource.musicData.tutorialTwoForceDefeatEnemyStartMillisec;
+			}
+			tutorialTwoModeDescriptionEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.tutorialTwoModeDescriptionlStartMillisec > -1)
+			{
+				tutorialTwoModeDescriptionEvent.onFireEvent = () =>
+				{
+					//Method$XeApp.Game.RhythmGame.RhythmGamePlayer.<>c.<InitializeMusicScoreEvent>b__227_1()
+				};
+				tutorialTwoModeDescriptionEvent.millisec = resource.musicData.tutorialTwoModeDescriptionlStartMillisec;
+			}
+			tutorialTwoActiveSkillGuideEvent = new RhythmGameScoreEvent();
+			if (resource.musicData.tutorialTwoModeDescriptionlStartMillisec > -1)
+			{
+				tutorialTwoActiveSkillGuideEvent.onFireEvent = this.ShowTutorialActiveSkillGuide;
+				tutorialTwoActiveSkillGuideEvent.millisec = 17000;
+			}
+			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP.PFKOKHODEGL)
+			{
+				UnityEngine.Debug.LogError("TODO InitializeMusicScoreEvent Event Type 3");
+				//L744
+			}
+			if(setting.m_enable_cutin)
+			{
+				if(setting_mv.m_enable)
+				{
+					if(setting_mv.m_mode_valkyrie)
+					{
+						if(resource.musicData.cheerScoreData != null)
+						{
+							for(int i = 0; i < resource.musicData.cheerScoreData.eventTrack10.Count; i++)
+							{
+								if(resource.musicData.cheerScoreData.eventTrack10[i].value == 2)
+								{
+									mvPilotCutinSecondEvent = new RhythmGameScoreEvent();
+									if(resource.musicData.cheerScoreData.eventTrack10[i].time > -1)
+									{
+										mvPilotCutinSecondEvent.onFireEvent = this.OnPlayPilotVoice1_FromMV;
+										mvPilotCutinSecondEvent.millisec = resource.musicData.cheerScoreData.eventTrack10[i].time;
+									}
+								}
+								if (resource.musicData.cheerScoreData.eventTrack10[i].value == 1)
+								{
+									mvPilotCutinFirstEvent = new RhythmGameScoreEvent();
+									if (resource.musicData.cheerScoreData.eventTrack10[i].time > -1)
+									{
+										mvPilotCutinFirstEvent.onFireEvent = this.OnPlayPilotVoice0_FromMV;
+										mvPilotCutinFirstEvent.millisec = resource.musicData.cheerScoreData.eventTrack10[i].time;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x9BAA40 Offset: 0x9BAA40 VA: 0x9BAA40
 		// private void InitializeSkill() { }
 
 		// // RVA: 0x9BB22C Offset: 0x9BB22C VA: 0x9BB22C
-		// private void StartIntroFade() { }
+		private void StartIntroFade()
+		{
+			UnityEngine.Debug.LogError("TODO StartIntroFade");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744AD4 Offset: 0x744AD4 VA: 0x744AD4
 		// // RVA: 0x9BB324 Offset: 0x9BB324 VA: 0x9BB324
@@ -521,48 +775,81 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9BB5F0 Offset: 0x9BB5F0 VA: 0x9BB5F0
-		// private void OnPlayPilotVoice0_FromMV() { }
+		private void OnPlayPilotVoice0_FromMV()
+		{
+			UnityEngine.Debug.LogError("TODO OnPlayPilotVoice0_FromMV");
+		}
 
 		// // RVA: 0x9BB5F8 Offset: 0x9BB5F8 VA: 0x9BB5F8
-		// private void OnPlayPilotVoice1_FromMV() { }
+		private void OnPlayPilotVoice1_FromMV()
+		{
+			UnityEngine.Debug.LogError("TODO OnPlayPilotVoice1_FromMV");
+		}
 
 		// // RVA: 0x9BB600 Offset: 0x9BB600 VA: 0x9BB600
-		// private void EndNormalMode() { }
+		private void EndNormalMode()
+		{
+			UnityEngine.Debug.LogError("TODO EndNormalMode");
+		}
 
 		// // RVA: 0x9BB81C Offset: 0x9BB81C VA: 0x9BB81C
-		// private void StartValkyrieHUD() { }
+		private void StartValkyrieHUD()
+		{
+			UnityEngine.Debug.LogError("TODO StartValkyrieHUD");
+		}
 
 		// // RVA: 0x9BB820 Offset: 0x9BB820 VA: 0x9BB820
 		// private void ShowValkyrieHUD() { }
 
 		// // RVA: 0x9BBA08 Offset: 0x9BBA08 VA: 0x9BBA08
-		// private void StartValkyriePreFade() { }
+		private void StartValkyriePreFade()
+		{
+			UnityEngine.Debug.LogError("TODO StartValkyriePreFade");
+		}
 
 		// // RVA: 0x9BBC4C Offset: 0x9BBC4C VA: 0x9BBC4C
-		// private void StartValkyrieMode() { }
+		private void StartValkyrieMode()
+		{
+			UnityEngine.Debug.LogError("TODO StartValkyrieMode");
+		}
 
 		// // RVA: 0x9BC4A0 Offset: 0x9BC4A0 VA: 0x9BC4A0
-		// private void StartValkyrieCutscene() { }
+		private void StartValkyrieCutscene()
+		{
+			UnityEngine.Debug.LogError("TODO StartValkyrieCutscene");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744B4C Offset: 0x744B4C VA: 0x744B4C
 		// // RVA: 0x9BC85C Offset: 0x9BC85C VA: 0x9BC85C
 		// private IEnumerator Co_2DModeEnemyUIAnim(int startRawMusicMillisec) { }
 
 		// // RVA: 0x9BC900 Offset: 0x9BC900 VA: 0x9BC900
-		// private void EndValkyrieMode() { }
+		private void EndValkyrieMode()
+		{
+			UnityEngine.Debug.LogError("TODO EndValkyrieMode");
+		}
 
 		// // RVA: 0x9BCB28 Offset: 0x9BCB28 VA: 0x9BCB28
-		// private void EndValkyrieCutscene() { }
+		private void EndValkyrieCutscene()
+		{
+			UnityEngine.Debug.LogError("TODO EndValkyrieCutscene");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744BC4 Offset: 0x744BC4 VA: 0x744BC4
 		// // RVA: 0x9BD058 Offset: 0x9BD058 VA: 0x9BD058
 		// private IEnumerator Co_2DModeChangeBg(int startRawMusicMillisec) { }
 
 		// // RVA: 0x9BD0FC Offset: 0x9BD0FC VA: 0x9BD0FC
-		// private void StartDivaMode() { }
+		private void StartDivaMode()
+		{
+			UnityEngine.Debug.LogError("TODO StartDivaMode");
+		}
 
 		// // RVA: 0x9BD384 Offset: 0x9BD384 VA: 0x9BD384
-		// private void StartDivaCutscene() { }
+		private void StartDivaCutscene()
+		{
+			UnityEngine.Debug.LogError("TODO StartDivaCutscene");
+		}
 
 		// // RVA: 0x9BDAA0 Offset: 0x9BDAA0 VA: 0x9BDAA0
 		// private void EndDivaPreFade() { }
@@ -571,7 +858,10 @@ namespace XeApp.Game.RhythmGame
 		// private void EndDivaCutscene() { }
 
 		// // RVA: 0x9BDF60 Offset: 0x9BDF60 VA: 0x9BDF60
-		// private void OnStartRhythmGameResult() { }
+		private void OnStartRhythmGameResult()
+		{
+			UnityEngine.Debug.LogError("TODO OnStartRhythmGameResult");
+		}
 
 		// // RVA: 0x9B2BA0 Offset: 0x9B2BA0 VA: 0x9B2BA0
 		// private void UpdateSkill(int musicMillisec) { }
@@ -693,7 +983,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C10DC Offset: 0x9C10DC VA: 0x9C10DC
 		private void StartRhythmGame()
 		{
-			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
+			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				musicIntroObject.Begin();
 				ValkyrieColorParam col = resource.musicIntroResource.paramColor;
@@ -779,7 +1069,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			yield return null; // wait end tuto
 			
-			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.CIGAPPFDFKL)
+			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				musicIntroObject.Takeoff();
 			}
@@ -798,16 +1088,25 @@ namespace XeApp.Game.RhythmGame
 		// private void ShowEndTutorialWindow() { }
 
 		// // RVA: 0x9C16F0 Offset: 0x9C16F0 VA: 0x9C16F0
-		// private void ForceChangePercentage100ForTutorial() { }
+		private void ForceChangePercentage100ForTutorial()
+		{
+			UnityEngine.Debug.LogError("TODO ForceChangePercentage100ForTutorial");
+		}
 
 		// // RVA: 0x9C1854 Offset: 0x9C1854 VA: 0x9C1854
-		// private void ForceDefeatEnemyForTutorial() { }
+		private void ForceDefeatEnemyForTutorial()
+		{
+			UnityEngine.Debug.LogError("TODO ForceDefeatEnemyForTutorial");
+		}
 
 		// // RVA: 0x9C1B60 Offset: 0x9C1B60 VA: 0x9C1B60
 		// private void ShowModeDescriptionTutorialWindow() { }
 
 		// // RVA: 0x9C1C84 Offset: 0x9C1C84 VA: 0x9C1C84
-		// private void ShowTutorialActiveSkillGuide() { }
+		private void ShowTutorialActiveSkillGuide()
+		{
+			UnityEngine.Debug.LogError("TODO ShowTutorialActiveSkillGuide");
+		}
 
 		// // RVA: 0x9C1D84 Offset: 0x9C1D84 VA: 0x9C1D84
 		// private void ConfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }

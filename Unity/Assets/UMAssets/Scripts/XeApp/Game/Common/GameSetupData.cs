@@ -307,7 +307,7 @@ namespace XeApp.Game.Common
 		public void SetMvMode(StatusData teamStatus, AOJGDNFAIJL_PrismData.AMIECPBIALP prismData)
 		{
 			m_teamInfo.SetupMvInfo(teamStatus, prismData);
-			m_mvInfo.isCutin = GameManager.Instance.localSave.EPJOACOONAC().MHHPDGJLJGE.DADIPGPHLDD_EffectCutin == 0;
+			m_mvInfo.isCutin = GameManager.Instance.localSave.EPJOACOONAC().MHHPDGJLJGE_OptionsSLive.DADIPGPHLDD_EffectCutin == 0;
 			m_mvInfo.isShowNotes = prismData.DNLCLAOPFPF_ShowNotes;
 			m_mvInfo.isModeDiva = prismData.HGEKDNNJAAC_DivaMode;
 			m_mvInfo.isModeValkyrie = prismData.OHLCKPIMMFH_ValkyrieMode;

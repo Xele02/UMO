@@ -68,8 +68,8 @@ public class AOJGDNFAIJL_PrismData
             {
                 OOEPMEDAJNJ_Save = LDEGEHAEALK.GHDDPJBBEOC.GCINIJEMHFK(DLAEJOBELBH_MusicId);
                 EOPODFDEMGF = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP.BNECMLPHAGJ).DJPFJGKGOOF;
-                int divaId = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.BBIOMNCILMC_HomeDivaId;
-                if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.BBIOMNCILMC_HomeDivaId < 1)
+                int divaId = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
+                if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId < 1)
                 {
                     divaId = EOPODFDEMGF.FDBOPFEOENF[0].DIPKCALNIII;
                 }

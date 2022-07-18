@@ -43,6 +43,9 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAEAAD4 Offset: 0xAEAAD4 VA: 0xAEAAD4
-		// public void OverrideIntroEndTime(ref int a_msec) { }
+		public void OverrideIntroEndTime(ref int a_msec)
+		{
+			UnityEngine.Debug.LogError("TODO");
+		}
 	}
 }
