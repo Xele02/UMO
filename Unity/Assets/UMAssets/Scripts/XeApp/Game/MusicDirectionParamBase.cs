@@ -160,9 +160,9 @@ namespace XeApp.Game
 		protected float m_mikeStandOffsetRate = 1.0f; // 0x24
 
 		public float stateOffsetSec { get { return m_startOffsetSec; } } //0xC95320
-		// public bool psylliumOverride { get; } 0xC95328
-		// public Color psylliumColor { get; } 0xC95330
-		// public float mikeStandOffsetRate { get; } 0xC95340
+		public bool psylliumOverride { get { return m_psylliumOverride; } } //0xC95328
+		public Color psylliumColor { get { return m_psylliumColor; } } //0xC95330
+		public float mikeStandOffsetRate { get { return m_mikeStandOffsetRate; } } //0xC95340
 		public virtual int basaraPositionId { get { return 1; } } //0xC95348
 		public virtual MusicDirectionBoolParam BoolParam { get { return null; } set { return; } } //0xC95350 0xC95358
 

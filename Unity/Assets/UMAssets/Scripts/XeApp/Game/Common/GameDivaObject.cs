@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Game.RhythmGame;
 
 namespace XeApp.Game.Common
 {
@@ -42,20 +43,75 @@ namespace XeApp.Game.Common
 		//// RVA: 0xE95FFC Offset: 0xE95FFC VA: 0xE95FFC Slot: 6
 		protected override void SetupCustomComponents(DivaResource resource)
 		{
-			UnityEngine.Debug.LogError("TODO SetupCustomComponents");
+			Transform t = divaPrefab.transform.Find("joint_root/hips");
+			if(t != null)
+			{
+				adjustScaler = t.gameObject.GetComponent<ObjectPositionAdjuster>();
+				if (adjustScaler == null)
+					adjustScaler = t.gameObject.AddComponent<ObjectPositionAdjuster>();
+				adjustScaler.Initialize(ObjParam.GetHipScaleFactor(divaId), true, true, true);
+			}
+			facialBlendAnimMediator = GetComponentInChildren<GameFacialBlendAnimMediator>();
+			facialBlendAnimMediator.Initialize(resource, divaPrefab);
+			facialBlendAnimMediator.SetEyeMeshUvRate(ObjParam.GetEyeMeshUvRate(divaId));
+			rightFootShadow = transform.Find("RightFootShadow").GetComponent<ShadowProjector>();
+			t = divaPrefab.transform.Find("joint_root/hips/upleg_r/leg_r/foot_r");
+			if (t != null)
+				rightFootShadow.SetupTarget(t);
+			leftFootShadow = transform.Find("LeftFootShadow").GetComponent<ShadowProjector>();
+			t = divaPrefab.transform.Find("joint_root/hips/upleg_l/leg_l/foot_l");
+			if (t != null)
+				leftFootShadow.SetupTarget(t);
+			bodyShadow = transform.Find("BodyShadow").GetComponent<ShadowProjector>();
+			t = divaPrefab.transform.Find("joint_root/hips/spine");
+			if (t != null)
+				bodyShadow.SetupTarget(t);
+			if(!GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality())
+			{
+				rightFootShadow.gameObject.SetActive(false);
+				leftFootShadow.gameObject.SetActive(false);
+				bodyShadow.gameObject.SetActive(false);
+			}
+			SetActiveFoundChildren(divaPrefab.transform, "menu", false);
+			animator.playableGraph.SetTimeUpdateMode(UnityEngine.Playables.DirectorUpdateMode.Manual);
+			facialBlendAnimMediator.selfAnimator.playableGraph.SetTimeUpdateMode(UnityEngine.Playables.DirectorUpdateMode.Manual);
 		}
 
 		//// RVA: 0xE96914 Offset: 0xE96914 VA: 0xE96914 Slot: 5
 		protected override void OverrideCustomAnimation(DivaResource resource)
 		{
-			UnityEngine.Debug.LogError("TODO OverrideCustomAnimation");
+			overrideController["diva_cmn_game_music_body"] = resource.musicMotionOverrideResource.bodyClip;
+			musicBodyClipLength = resource.musicMotionOverrideResource.bodyClip.length;
 		}
 
 		//// RVA: 0xE969D8 Offset: 0xE969D8 VA: 0xE969D8
 		//public void OverrideCutinClip(DivaCutinResource resource) { }
 
 		//// RVA: 0xE96DB0 Offset: 0xE96DB0 VA: 0xE96DB0
-		//public void SetupBoneSpring(RhythmGameResource a_resource, int index = 0) { }
+		public void SetupBoneSpring(RhythmGameResource a_resource, int index = 0)
+		{
+			if(a_resource != null)
+			{
+				if(boneSpringController != null)
+				{
+					BoneSpringAnimObject bsao = transform.GetComponentInChildren<BoneSpringAnimObject>(true);
+					if(bsao != null)
+					{
+						if(a_resource.musicBoneSpringResource[index].clip != null)
+						{
+							bsao.gameObject.SetActive(true);
+							m_boneSpringAnim = bsao;
+							m_boneSpringAnim.Initialize(a_resource, divaPrefab, index, divaId);
+							m_boneSpringAnim.animator.playableGraph.SetTimeUpdateMode(UnityEngine.Playables.DirectorUpdateMode.Manual);
+						}
+						else
+						{
+							bsao.gameObject.SetActive(false);
+						}
+					}
+				}
+			}
+		}
 
 		//// RVA: 0xE970BC Offset: 0xE970BC VA: 0xE970BC
 		//public void SetEnableBoneSpringAnime(bool a_enable) { }
@@ -73,7 +129,39 @@ namespace XeApp.Game.Common
 		//public override void ChangeAnimationTime(double time) { }
 
 		//// RVA: 0xE97D40 Offset: 0xE97D40 VA: 0xE97D40
-		//public void SetupDefaultMaterialColor(Color mainColor, Color rimColor, float rimPower, Color shadowColor) { }
+		public void SetupDefaultMaterialColor(Color mainColor, Color rimColor, float rimPower, Color shadowColor)
+		{
+			defaultMainColor = mainColor;
+			defaultRimColor = rimColor;
+			defaultShadowColor = shadowColor;
+			defaultRimPower = rimPower;
+			m_list_material = new Dictionary<string, List<Material>>();
+			m_list_material["_Color"] = new List<Material>();
+			m_list_material["_RimColor"] = new List<Material>();
+			m_list_material["_RimLightPower"] = new List<Material>();
+			for(int i = 0; i < renderers.Count; i++)
+			{
+				if(renderers[i] != null)
+				{
+					if(!renderers[i].material.shader.name.Contains("Additive"))
+					{
+						if (renderers[i].material.HasProperty("_Color"))
+						{
+							m_list_material["_Color"].Add(renderers[i].material);
+						}
+						if (renderers[i].material.HasProperty("_RimColor"))
+						{
+							m_list_material["_RimColor"].Add(renderers[i].material);
+						}
+						if (renderers[i].material.HasProperty("_RimLightPower"))
+						{
+							m_list_material["_RimLightPower"].Add(renderers[i].material);
+						}
+					}
+				}
+			}
+			ChangeColor(mainColor, rimColor, rimPower, shadowColor);
+		}
 
 		//// RVA: 0xE98B40 Offset: 0xE98B40 VA: 0xE98B40
 		//public void ChangeMovieMaterialColor(bool isOn) { }
@@ -82,7 +170,36 @@ namespace XeApp.Game.Common
 		//public void UpdateColorByStageLighting(Color mainColor, Color rimColor, float rimPower, Color shadowColor) { }
 
 		//// RVA: 0xE98474 Offset: 0xE98474 VA: 0xE98474
-		//private void ChangeColor(Color mainColor, Color rimColor, float rimPower, Color shadowColor) { }
+		private void ChangeColor(Color mainColor, Color rimColor, float rimPower, Color shadowColor)
+		{
+			if(!m_valkyrieShaderControlelr.IsEnable() && m_list_material != null)
+			{
+				for(int i = 0; i < m_list_material["_Color"].Count; i++)
+				{
+					m_list_material["_Color"][i].SetColor("_Color", mainColor);
+				}
+				for (int i = 0; i < m_list_material["_RimColor"].Count; i++)
+				{
+					m_list_material["_RimColor"][i].SetColor("_RimColor", rimColor);
+				}
+				for (int i = 0; i < m_list_material["_RimLightPower"].Count; i++)
+				{
+					m_list_material["_RimLightPower"][i].SetFloat("_RimLightPower", rimPower);
+				}
+			}
+			if(bodyShadow != null)
+			{
+				bodyShadow.SetColor(shadowColor);
+			}
+			if(leftFootShadow != null)
+			{
+				leftFootShadow.SetColor(shadowColor);
+			}
+			if (rightFootShadow != null)
+			{
+				rightFootShadow.SetColor(shadowColor);
+			}
+		}
 
 		//// RVA: 0xE98E04 Offset: 0xE98E04 VA: 0xE98E04 Slot: 8
 		protected override void SetupEffectObject(List<GameObject> a_effect)

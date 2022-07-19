@@ -37,10 +37,10 @@ namespace XeApp.Game.Common
 		protected StageExtensionWindCtrlForMenu windObject; // 0x84
 		protected bool windEnable = true; // 0x88
 
-		//public int divaId { get; private set; } 0x1BE9D38 0x1BF2220
+		public int divaId { get { return divaId_; } private set { divaId_ = value; } } //0x1BE9D38 0x1BF2220
 		//public int modelId { get; private set; } 0x1BF2228 0x1BF2230
 		//public int colorId { get; private set; } 0x1BF2238 0x1BF2240
-		//public int positionId { get; private set; } 0x1BEBE10 0x1BF2248
+		public int positionId { get { return positionId_; } private set { positionId_ = value; } } //0x1BEBE10 0x1BF2248
 		public GameObject divaPrefab { get { return divaPrefab_; } protected set { divaPrefab_ = value; } } //0x1BED1C4 0x1BF2250
 		public bool isWaitUnlockBoneSpring { get; private set; } // 0x54
 		//public bool isWaitLockBoneSpring { get; private set; } 0x1BF2268 0x1BF2270
@@ -237,7 +237,20 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF4170 Offset: 0x1BF4170 VA: 0x1BF4170
-		//protected void SetActiveFoundChildren(Transform t, string targetName, bool active) { }
+		protected void SetActiveFoundChildren(Transform t, string targetName, bool active)
+		{
+			for(int i = 0; i < t.childCount; i++)
+			{
+				if(t.GetChild(i).name.Contains(targetName))
+				{
+					t.GetChild(i).gameObject.SetActive(active);
+				}
+				else
+				{
+					SetActiveFoundChildren(t.GetChild(i), targetName, active);
+				}
+			}
+		}
 
 		//// RVA: 0x1BF4288 Offset: 0x1BF4288 VA: 0x1BF4288
 		//public void VisibleRendererComponent(bool enable) { }
@@ -255,7 +268,13 @@ namespace XeApp.Game.Common
 		//public void SetActiveMikePrefab(bool active) { }
 
 		//// RVA: 0x1BF497C Offset: 0x1BF497C VA: 0x1BF497C
-		//public void AdjustHight(float offset) { }
+		public void AdjustHight(float offset)
+		{
+			if(mikeStandObject != null)
+			{
+				mikeStandObject.AdjustHight(offset);
+			}
+		}
 
 		//// RVA: 0x1BF023C Offset: 0x1BF023C VA: 0x1BF023C
 		//public void AttachMikeToLeftHand() { }

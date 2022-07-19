@@ -95,16 +95,29 @@ namespace XeApp.Game.Common
 		// public void ChangeAnimationTime(double time) { }
 
 		// // RVA: 0xAE4C24 Offset: 0xAE4C24 VA: 0xAE4C24
-		// public void AttachCameraBillboard() { }
+		public void AttachCameraBillboard()
+		{
+			AttachCameraStageBillboard();
+			AttachCameraDivaBillboard();
+		}
 
 		// // RVA: 0xAE4C40 Offset: 0xAE4C40 VA: 0xAE4C40
-		// private void AttachCameraStageBillboard() { }
+		private void AttachCameraStageBillboard()
+		{
+			UnityEngine.Debug.LogError("TODO MusicCameraObject AttachCameraStageBillboard");
+		}
 
 		// // RVA: 0xAE4DC4 Offset: 0xAE4DC4 VA: 0xAE4DC4
-		// private void AttachCameraDivaBillboard() { }
+		private void AttachCameraDivaBillboard()
+		{
+			UnityEngine.Debug.LogError("TODO MusicCameraObject AttachCameraDivaBillboard");
+		}
 
 		// // RVA: 0xAE4F48 Offset: 0xAE4F48 VA: 0xAE4F48
-		// public void AttachCameraDvaBillboard(List<GameDivaObject> a_list) { }
+		public void AttachCameraDvaBillboard(List<GameDivaObject> a_list)
+		{
+			UnityEngine.Debug.LogError("TODO MusicCameraObject AttachCameraDvaBillboard");
+		}
 
 		// // RVA: 0xAE5114 Offset: 0xAE5114 VA: 0xAE5114
 		// public Transform GetCameraTransform() { }

@@ -22,31 +22,34 @@ namespace XeApp.Game.Common
 		private GameObject m_runway; // 0x1C
 		private GameObject m_enviroment; // 0x20
 		// private MusicIntroMotionRef m_refData; // 0x24
-		// private MusicIntroEventListener m_eventListener; // 0x28
+		private MusicIntroEventListener m_eventListener; // 0x28
 		// private ReleaseData m_releaseData; // 0x2C
 		private List<Animator> m_animators = new List<Animator>(4); // 0x30
 		private Coroutine m_coWaitForAnimationEnd; // 0x34
 		private bool isInitialized; // 0x3F
 
 		public Action onEndAnimationCallback { private get;  set; } // 0x38
-		// public Action onPlayerCutInStart { set {} } // 0xAE9020
+		public Action onPlayerCutInStart { set { m_eventListener.onPlayerCutInStart = value; } } // 0xAE9020
 		public bool isRunning { get; private set; } // 0x3C
 		public bool isTakeoff { get; private set; } // 0x3D
 		public bool isPause { get; private set; } // 0x3E
 
 		// // RVA: 0xAE9078 Offset: 0xAE9078 VA: 0xAE9078
-		// public void Initialize(MusicIntroResource resource) { }
+		public void Initialize(MusicIntroResource resource)
+		{
+			UnityEngine.Debug.LogError("TODO MusicIntroObject Initialize");
+		}
 
 		// // RVA: 0xAE970C Offset: 0xAE970C VA: 0xAE970C
 		public void Begin()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO MusicIntroObject Begin");
 		}
 
 		// // RVA: 0xAE9D34 Offset: 0xAE9D34 VA: 0xAE9D34
 		public void Takeoff()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO MusicIntroObject Takeoff");
 		}
 
 		// // RVA: 0xAEA018 Offset: 0xAEA018 VA: 0xAEA018

@@ -450,9 +450,9 @@ namespace XeApp.Game.RhythmGame
 				valkyrieObject.SetChangeExplosionEffect(resource.paramResource.m_paramValkyrieChangeExplosion.Check(Database.Instance.gameSetup));
 				musicIntroObject.Initialize(resource.musicIntroResource);
 				valkyrieModeObject.Initialize(resource.valkyrieModeResource, false);
-				if(valkyrieModeObject.IsEnableMovie())
+				if(IsEnableMovie())
 				{
-					divaModeObject.Initialize(resource.divaResource.moviePlayer);
+					divaModeObject.Initialize(resource.divaModeResource.moviePlayer);
 					divaModeObject.VisibleDiva = setting.m_visible_diva;
 				}
 				InitializeExtension();
@@ -463,17 +463,17 @@ namespace XeApp.Game.RhythmGame
 				valkyrieModeObject.onEnemyCutInStart = this.ValkyrieModeStartEnemyCutInCallback;
 				valkyrieModeObject.onEnemyLockOnStart = this.ValkyrieModeStartEnemyLockOnCallback;
 				stageObject.SetupPsylliumColor(resource.musicData.musicParam, resource.divaResource.divaParam, resource.subDivaResource, subDivaNum);
-				gameDivaObject.SetupDefaultMaterialColor(stageObject.param.mainColor, stageObject.param.rimColor, stageObject.param.mainColor, stageObject.param.rimPower, stageObject.param.shadowColor);
+				gameDivaObject.SetupDefaultMaterialColor(stageObject.param.mainColor, stageObject.param.rimColor, stageObject.param.rimPower, stageObject.param.shadowColor);
 				gameDivaObject.AdjustHight(resource.musicData.musicParam.mikeStandOffsetRate);
 				foreach(var ext in divaExtensionObjectList)
 				{
-					ext.SetupDefaultMaterialColor(stageObject.param.mainColor, stageObject.param.rimColor, stageObject.param.mainColor, stageObject.param.rimPower);
+					ext.SetupDefaultMaterialColor(stageObject.param.mainColor, stageObject.param.rimColor, stageObject.param.rimPower);
 				}
 				for(int i = 0; i < subDivaNum; i++)
 				{
 					if(subDivaObject[i] != null)
 					{
-						subDivaObject[i].SetupDefaultMaterialColor(stageObject.param.mainColor, stageObject.param.rimColor, stageObject.param.mainColor, stageObject.param.rimPower, stageObject.param.shadowColor);
+						subDivaObject[i].SetupDefaultMaterialColor(stageObject.param.mainColor, stageObject.param.rimColor, stageObject.param.rimPower, stageObject.param.shadowColor);
 						subDivaObject[i].AdjustHight(resource.musicData.musicParam.mikeStandOffsetRate);
 						subDivaObject[i].SetupBoneSpring(resource, i + 1);
 					}
@@ -495,7 +495,85 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9B9258 Offset: 0x9B9258 VA: 0x9B9258
-		// private void InitializeExtension() { }
+		private void InitializeExtension()
+		{
+			int onStageDivaNum = Database.Instance.gameSetup.musicInfo.onStageDivaNum;
+			List<GameDivaObject> divas = RhythmGameExtension.GetDivaListOnPositionId(gameDivaObject, subDivaObject, onStageDivaNum);
+			RhythmGameExtension.DestroyExtensionList<StageExtensionObject>(ref stageExtensionObjectList);
+			int subDivaCount = onStageDivaNum - 1;
+			foreach(var ser in resource.stageExtensionResource)
+			{
+				StageExtensionObject obj = Resources.Load<StageExtensionObject>("MusicGame/ExtensionPrefabs/StageExtensionObject");
+				StageExtensionObject instanceObj = Instantiate(obj);
+				instanceObj.Initialize(ser, stageObject, musicCameraObject, divas);
+				instanceObj.SetupPsylliumColor(resource.musicData.musicParam, resource.divaResource.divaParam, resource.subDivaResource);
+				RhythmGameExtension.SettingHierarchy<StageExtensionObject>(ref instanceObj, "SceneRoot/Layer-3D/StageExtension");
+				stageExtensionObjectList.Add(instanceObj);
+			}
+			RhythmGameExtension.DestroyExtensionList<DivaExtensionObject>(ref divaExtensionObjectList);
+			foreach(var der in resource.divaExtensionResource)
+			{
+				GameDivaObject diva = RhythmGameExtension.GetDiva(gameDivaObject, subDivaObject, subDivaCount, der.divaId);
+				DivaExtensionObject obj = Resources.Load<DivaExtensionObject>("MusicGame/ExtensionPrefabs/DivaExtensionObject");
+				DivaExtensionObject instanceObj = Instantiate(obj);
+				instanceObj.Initialize(der, diva, musicCameraObject, divas);
+				RhythmGameExtension.SettingHierarchy<DivaExtensionObject>(ref instanceObj, "SceneRoot/Layer-3D/DivaExtension");
+				divaExtensionObjectList.Add(instanceObj);
+			}
+			foreach(var seo in stageExtensionObjectList)
+			{
+				seo.AddExtentionSetupWind(divaExtensionObjectList);
+			}
+			RhythmGameExtension.DestroyExtensionList<StageLightingObject>(ref stageLightingObjectList);
+			RhythmGameExtension.DestroyExtensionList<StageLightingAddObject>(ref stageLightingAddObjectList);
+			foreach(var slr in resource.stageLightingResource)
+			{
+				StageLightingObject obj = Resources.Load<StageLightingObject>("MusicGame/ExtensionPrefabs/StageLightingObject");
+				StageLightingObject instanceObj = Instantiate(obj);
+				instanceObj.Initialize(slr, stageObject, gameDivaObject, stageExtensionObjectList, divaExtensionObjectList, subDivaObject, subDivaCount);
+				RhythmGameExtension.SettingHierarchy<StageLightingObject>(ref instanceObj, "StageLighting");
+				stageLightingObjectList.Add(instanceObj);
+				for(int i = 0; i < slr.clip_add.Length; i++)
+				{
+					if(slr.clip_add[i] != null)
+					{
+						int position = Database.Instance.gameSetup.teamInfo.danceDivaList[i].positionId;
+						GameDivaObject diva = gameDivaObject;
+						if(position > 1)
+						{
+							diva = subDivaObject[position - 2];
+						}
+						StageLightingAddObject obj2 = Resources.Load<StageLightingAddObject>("MusicGame/ExtensionPrefabs/StageLightingAddObject");
+						StageLightingAddObject instanceObj2 = Instantiate(obj2);
+						instanceObj2.name = "StageLightingAddObject"+(i+1)+ "(Clone)";
+						instanceObj2.Initialize(i, slr, diva, divaExtensionObjectList);
+						RhythmGameExtension.SettingHierarchy<StageLightingAddObject>(ref instanceObj2, "StageLighting");
+						stageLightingAddObjectList.Add(instanceObj2);
+					}
+				}
+			}
+			RhythmGameExtension.DestroyExtensionList<DivaCutinObject>(ref divaCutinObjectList);
+			foreach(var dcr in resource.divaCutinResource)
+			{
+				GameDivaObject diva = RhythmGameExtension.GetDiva(gameDivaObject, subDivaObject, subDivaCount, dcr.divaId);
+				DivaCutinObject obj = Resources.Load<DivaCutinObject>("MusicGame/ExtensionPrefabs/DivaCutinObject");
+				DivaCutinObject instanceObj = Instantiate(obj);
+				instanceObj.Initialize(dcr, diva);
+				RhythmGameExtension.SettingHierarchy<DivaCutinObject>(ref instanceObj, "DivaCutin");
+				divaCutinObjectList.Add(instanceObj);
+			}
+			RhythmGameExtension.DestroyExtensionList<MusicCameraCutinObject>(ref musicCameraCutinObjectList);
+			int cnt = 0;
+			foreach(var mccr in resource.musicCameraCutinResource)
+			{
+				MusicCameraCutinObject obj = Resources.Load<MusicCameraCutinObject>("MusicGame/ExtensionPrefabs/MusicCameraCutinObject");
+				MusicCameraCutinObject instanceObj = Instantiate(obj);
+				instanceObj.Initialize(mccr, musicCameraObject, cnt);
+				RhythmGameExtension.SettingHierarchy<MusicCameraCutinObject>(ref instanceObj, "MusicCameraCutin");
+				musicCameraCutinObjectList.Add(instanceObj);
+				cnt++;
+			}
+		}
 
 		// // RVA: 0x9AFA54 Offset: 0x9AFA54 VA: 0x9AFA54
 		private void InitializeSetting()
@@ -602,7 +680,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9BA7BC Offset: 0x9BA7BC VA: 0x9BA7BC
-		// private void ApplyDimmer() { }
+		private void ApplyDimmer()
+		{
+			UnityEngine.Debug.LogError("TODO RhythmGamePlayer ApplyDimmer");
+		}
 
 		// // RVA: 0x9B7A9C Offset: 0x9B7A9C VA: 0x9B7A9C
 		private void InitializeMusicScoreEvent()
@@ -911,7 +992,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9BEC9C Offset: 0x9BEC9C VA: 0x9BEC9C
-		// private void MusicIntroStartPlayerCutInCallbackFor3DMode() { }
+		private void MusicIntroStartPlayerCutInCallbackFor3DMode()
+		{
+			UnityEngine.Debug.LogError("TODO MusicIntroStartPlayerCutInCallbackFor3DMode");
+		}
 
 		// // RVA: 0x9BECA0 Offset: 0x9BECA0 VA: 0x9BECA0
 		// private void MusicIntroStartPlayerCutInCallbackFor2DMode() { }
@@ -921,19 +1005,34 @@ namespace XeApp.Game.RhythmGame
 		// private IEnumerator Co_2DModeMusicIntroStartPlayerCutIn(int startRawMusicMillisec) { }
 
 		// // RVA: 0x9BED6C Offset: 0x9BED6C VA: 0x9BED6C
-		// private void ValkyrieModeBeginShootingCallback() { }
+		private void ValkyrieModeBeginShootingCallback()
+		{
+			UnityEngine.Debug.LogError("TODO ValkyrieModeBeginShootingCallback");
+		}
 
 		// // RVA: 0x9BEE64 Offset: 0x9BEE64 VA: 0x9BEE64
-		// private void ValkyrieModeEndAnimationCallback() { }
+		private void ValkyrieModeEndAnimationCallback()
+		{
+			UnityEngine.Debug.LogError("TODO ValkyrieModeEndAnimationCallback");
+		}
 
 		// // RVA: 0x9BEE90 Offset: 0x9BEE90 VA: 0x9BEE90
-		// private void ValkyrieModeStartPlayerCutInCallback() { }
+		private void ValkyrieModeStartPlayerCutInCallback()
+		{
+			UnityEngine.Debug.LogError("TODO ValkyrieModeStartPlayerCutInCallback");
+		}
 
 		// // RVA: 0x9BF138 Offset: 0x9BF138 VA: 0x9BF138
-		// private void ValkyrieModeStartEnemyCutInCallback() { }
+		private void ValkyrieModeStartEnemyCutInCallback()
+		{
+			UnityEngine.Debug.LogError("TODO ValkyrieModeStartEnemyCutInCallback");
+		}
 
 		// // RVA: 0x9BF2F4 Offset: 0x9BF2F4 VA: 0x9BF2F4
-		// private void ValkyrieModeStartEnemyLockOnCallback() { }
+		private void ValkyrieModeStartEnemyLockOnCallback()
+		{
+			UnityEngine.Debug.LogError("TODO ValkyrieModeStartEnemyLockOnCallback");
+		}
 
 		// // RVA: 0x9BF538 Offset: 0x9BF538 VA: 0x9BF538
 		// private void OnFullfillLiveSkill(LiveSkill skill) { }
@@ -1435,7 +1534,10 @@ namespace XeApp.Game.RhythmGame
 		// public int IncludeNotesOffsert(int rawMillisec) { }
 
 		// // RVA: 0x9B9168 Offset: 0x9B9168 VA: 0x9B9168
-		// private bool IsEnableMovie() { }
+		private bool IsEnableMovie()
+		{
+			return GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.GPKILPOLNKO();
+		}
 
 		// // RVA: 0x9BE120 Offset: 0x9BE120 VA: 0x9BE120
 		public bool IsRhythmGamePlayerEnd()

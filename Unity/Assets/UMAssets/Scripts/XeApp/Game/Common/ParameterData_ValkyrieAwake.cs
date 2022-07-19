@@ -10,7 +10,11 @@ namespace XeApp.Game.Common
         public const int DATA_PL = 4;
 
         // // RVA: 0xAF5220 Offset: 0xAF5220 VA: 0xAF5220
-        // public bool Check(GameSetupData a_setup_data) { }
+        public bool Check(GameSetupData a_setup_data)
+		{
+			UnityEngine.Debug.LogError("TODO ParameterData_ValkyrieAwake Check");
+			return true;
+		}
 
         // // RVA: 0xAF53F0 Offset: 0xAF53F0 VA: 0xAF53F0
         // public bool Check(int a_id_vl, int a_id_dv, int a_id_cs, int a_id_mc) { }

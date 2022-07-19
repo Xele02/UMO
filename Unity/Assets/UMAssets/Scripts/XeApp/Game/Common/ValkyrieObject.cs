@@ -25,10 +25,16 @@ namespace XeApp.Game.Common
 		// protected virtual bool usingQualitySetting { get; } 0xD27F14  Slot: 5
 
 		// // RVA: 0xD27F1C Offset: 0xD27F1C VA: 0xD27F1C
-		// public void SetChangeExplosionEffect(bool a_enable) { }
+		public void SetChangeExplosionEffect(bool a_enable)
+		{
+			UnityEngine.Debug.LogError("TODO ValkyrieObject SetChangeExplosionEffect");
+		}
 
 		// // RVA: 0xD280E8 Offset: 0xD280E8 VA: 0xD280E8
-		// public void SetEnableAwakeEffect(bool a_enable) { }
+		public void SetEnableAwakeEffect(bool a_enable)
+		{
+			UnityEngine.Debug.LogError("TODO ValkyrieObject SetEnableAwakeEffect");
+		}
 
 		// // RVA: 0xD28300 Offset: 0xD28300 VA: 0xD28300
 		private void Awake()
@@ -37,7 +43,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xD28304 Offset: 0xD28304 VA: 0xD28304
-		// public void Initialize(ValkyrieResource resource) { }
+		public void Initialize(ValkyrieResource resource)
+		{
+			UnityEngine.Debug.LogError("TODO ValkyrieObject Initialize");
+		}
 
 		// // RVA: 0xD29140 Offset: 0xD29140 VA: 0xD29140 Slot: 6
 		// protected virtual void InstantiateEffect() { }

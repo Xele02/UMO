@@ -39,7 +39,10 @@ namespace XeApp.Game.Common
 		//public void OverrideCutinClip(DivaCutinResource a_resource) { }
 
 		//// RVA: 0x1118404 Offset: 0x1118404 VA: 0x1118404
-		//public void AdjustHight(float offset) { }
+		public void AdjustHight(float offset)
+		{
+			hightAsjustPoint.localPosition = new Vector3(hightAsjustPoint.localPosition.x, hightAsjustPoint.localPosition.y * offset, hightAsjustPoint.localPosition.z);
+		}
 
 		//// RVA: 0x1118490 Offset: 0x1118490 VA: 0x1118490
 		//public void AttachMike(GameObject obj) { }

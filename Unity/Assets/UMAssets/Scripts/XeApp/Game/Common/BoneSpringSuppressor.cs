@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace XeApp.Game.Common
 {
@@ -71,16 +72,25 @@ namespace XeApp.Game.Common
 		private Preset m_preset = Preset._Num; // 0x1C
 
 		// // RVA: 0xE627A0 Offset: 0xE627A0 VA: 0xE627A0
-		// public void Load(GameObject root, BoneSpringSuppressParam param, BoneSpringSuppressor.Preset preset) { }
+		public void Load(GameObject root, BoneSpringSuppressParam param, BoneSpringSuppressor.Preset preset)
+		{
+			UnityEngine.Debug.LogError("TODO BoneSpringSuppressor Load");
+		}
 
 		// // RVA: 0xE63638 Offset: 0xE63638 VA: 0xE63638
 		// public void Unload() { }
 
 		// // RVA: 0xE61EFC Offset: 0xE61EFC VA: 0xE61EFC
-		// public void SetSuppressValue(float suppressValue) { }
+		public void SetSuppressValue(float suppressValue)
+		{
+			m_suppressValue = suppressValue;
+		}
 
 		// // RVA: 0xE61F04 Offset: 0xE61F04 VA: 0xE61F04
-		// public void UpdateSuppress() { }
+		public void UpdateSuppress()
+		{
+			UnityEngine.Debug.LogError("TODO BoneSpringSuppressor UpdateSuppress");
+		}
 
 		// // RVA: 0xE63644 Offset: 0xE63644 VA: 0xE63644
 		// private static bool CheckEquivalent(float checkValue, float baseValue, float epsilon) { }

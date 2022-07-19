@@ -138,7 +138,15 @@ public class ILDKBCLAFPB
         // public bool MIHFCOBBIPJ() { }
 
         // // RVA: 0x2035E0C Offset: 0x2035E0C VA: 0x2035E0C
-        // public bool JLEJPKOMKEJ() { }
+        public bool JLEJPKOMKEJ()
+		{
+			if(DDHCLNFPNGK_RenderQuality == 3)
+			{
+				if (FPJHOLMLDGC_QualityCustom2D == 1 && HHMCIGLCBNG_QualityCustomDiva3D == 1)
+					return AHLFOHJMGAI_QualityCustomOther3D == 1;
+			}
+			return false;
+		}
 
         // // RVA: 0x2035E48 Offset: 0x2035E48 VA: 0x2035E48
         public bool INPHNKJPJFN()

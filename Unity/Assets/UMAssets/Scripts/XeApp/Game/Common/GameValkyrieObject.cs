@@ -101,7 +101,10 @@ namespace XeApp.Game.Common
 		// public void DamageStop() { }
 
 		// // RVA: 0xEA20F4 Offset: 0xEA20F4 VA: 0xEA20F4
-		// public void SetOverrideAnimationIntro(MusicIntroResource a_resource) { }
+		public void SetOverrideAnimationIntro(MusicIntroResource a_resource)
+		{
+			UnityEngine.Debug.LogError("TODO ValkyrieObject SetOverrideAnimationIntro");
+		}
 
 		// // RVA: 0xEA2354 Offset: 0xEA2354 VA: 0xEA2354
 		static GameValkyrieObject()
