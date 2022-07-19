@@ -84,6 +84,7 @@ namespace XeApp.Game.Common
 		private void Awake()
 		{
 			UnityEngine.Debug.LogError("TODO FacialBlendAnimMediatorBase Awake");
+			selfAnimator_ = GetComponent<Animator>();
 		}
 
 		// RVA: 0x1C10ABC Offset: 0x1C10ABC VA: 0x1C10ABC
@@ -99,6 +100,7 @@ namespace XeApp.Game.Common
 		public void Initialize(DivaResource resource, GameObject divaPrefab)
 		{
 			UnityEngine.Debug.LogError("TODO FacialBlendAnimMediatorBase Initialize");
+			selfAnimator_.runtimeAnimatorController = resource.facialAnimatorController;
 		}
 
 		//// RVA: 0x1C1130C Offset: 0x1C1130C VA: 0x1C1130C

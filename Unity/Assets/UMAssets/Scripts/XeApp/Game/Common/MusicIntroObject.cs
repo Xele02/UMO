@@ -29,7 +29,10 @@ namespace XeApp.Game.Common
 		private bool isInitialized; // 0x3F
 
 		public Action onEndAnimationCallback { private get;  set; } // 0x38
-		public Action onPlayerCutInStart { set { m_eventListener.onPlayerCutInStart = value; } } // 0xAE9020
+		public Action onPlayerCutInStart { set { 
+			UnityEngine.Debug.LogError("TODO onPlayerCutInStart set");
+			//m_eventListener.onPlayerCutInStart = value;
+		} } // 0xAE9020
 		public bool isRunning { get; private set; } // 0x3C
 		public bool isTakeoff { get; private set; } // 0x3D
 		public bool isPause { get; private set; } // 0x3E

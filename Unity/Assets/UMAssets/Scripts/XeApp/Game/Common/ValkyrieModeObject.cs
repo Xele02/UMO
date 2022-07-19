@@ -36,9 +36,18 @@ namespace XeApp.Game.Common
 
 		public Action onBeginShooting { private get; set; } // 0x58
 		public Action onEndAnimationCallback { private get; set; } // 0x5C
-		public Action onPlayerCutInStart { set { m_eventListener.onPlayerCutInStart = value; } } //0x1CE31EC
-		public Action onEnemyCutInStart { set { m_eventListener.onEnemyCutInStart = value; } } //0x1CE3214
-		public Action onEnemyLockOnStart { set { m_eventListener.onEnemyLockOnStart = value; } } //0x1CE323C
+		public Action onPlayerCutInStart { set { 
+			UnityEngine.Debug.LogError("TODO onPlayerCutInStart set");
+			//m_eventListener.onPlayerCutInStart = value;
+		} } //0x1CE31EC
+		public Action onEnemyCutInStart { set { 
+			UnityEngine.Debug.LogError("TODO onEnemyCutInStart set");
+			//m_eventListener.onEnemyCutInStart = value; 
+		} } //0x1CE3214
+		public Action onEnemyLockOnStart { set { 
+			UnityEngine.Debug.LogError("TODO onEnemyLockOnStart set");
+			//m_eventListener.onEnemyLockOnStart = value;
+		} } //0x1CE323C
 		public bool isRunning { get; private set; } // 0x60
 		public bool isShootingPhase { get; private set; } // 0x61
 		public bool isPause { get; private set; } // 0x62
