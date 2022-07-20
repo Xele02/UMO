@@ -232,7 +232,10 @@ public class CriAtomExPlayer : CriDisposable
 	// public void Set3dListener(CriAtomEx3dListener listener) { }
 
 	// // RVA: 0x28A7F88 Offset: 0x28A7F88 VA: 0x28A7F88
-	// public void SetStartTime(long startTimeMs) { }
+	public void SetStartTime(long startTimeMs)
+	{
+		UnityEngine.Debug.LogError("TODO ExPlayer SetStartTime");
+	}
 
 	// // RVA: 0x28A8098 Offset: 0x28A8098 VA: 0x28A8098
 	// public void SetFirstBlockIndex(int index) { }

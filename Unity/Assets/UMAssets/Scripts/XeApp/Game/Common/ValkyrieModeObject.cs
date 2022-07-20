@@ -114,7 +114,10 @@ namespace XeApp.Game.Common
 		//private void ResetAnimationBaseTime() { }
 
 		//// RVA: 0x1CE4F9C Offset: 0x1CE4F9C VA: 0x1CE4F9C
-		//public void ChangeAnimationTime(double time) { }
+		public void ChangeAnimationTime(double time)
+		{
+			UnityEngine.Debug.LogWarning("TODO ValkyrieMode ChangeAnimationTime");
+		}
 
 		//// RVA: 0x1CE401C Offset: 0x1CE401C VA: 0x1CE401C
 		//private void SetAllActive(bool active) { }

@@ -152,7 +152,11 @@ public class CriAtomSource : CriMonoBehaviour
 	}
 
 	// // RVA: 0x28B64F4 Offset: 0x28B64F4 VA: 0x28B64F4
-	// public CriAtomExPlayback Play() { }
+	public CriAtomExPlayback Play()
+	{
+		UnityEngine.Debug.LogWarning("TODO CriAtomExPlayback Play");
+		return new CriAtomExPlayback();
+	}
 
 	// // RVA: 0x28B64FC Offset: 0x28B64FC VA: 0x28B64FC
 	public CriAtomExPlayback Play(string cueName)

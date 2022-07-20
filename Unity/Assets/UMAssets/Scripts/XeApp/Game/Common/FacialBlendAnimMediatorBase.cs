@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace XeApp.Game.Common
 {
@@ -119,7 +120,14 @@ namespace XeApp.Game.Common
 		//public void ResetReference() { }
 
 		//// RVA: 0x1C11334 Offset: 0x1C11334 VA: 0x1C11334
-		//public void SetTime(double time) { }
+		public void SetTime(double time)
+		{
+			selfAnimator_.speed = 1;
+			if (selfAnimator_.playableGraph.IsValid())
+			{
+				selfAnimator_.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(selfAnimator_.playableGraph.GetRootPlayable(0))));
+			}
+		}
 
 		//// RVA: 0x1C1149C Offset: 0x1C1149C VA: 0x1C1149C
 		private void LateUpdate()

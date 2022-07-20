@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace XeApp.Game.Common
 {
@@ -84,6 +85,16 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CC92B0 Offset: 0x1CC92B0 VA: 0x1CC92B0
-		//public void ChangeAnimationTime(double time) { }
+		public void ChangeAnimationTime(double time)
+		{
+			if(animator != null && animator.runtimeAnimatorController != null)
+			{
+				animator.speed = 1;
+				if (animator.playableGraph.IsValid())
+				{
+					animator.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(animator.playableGraph.GetRootPlayable(0))));
+				}
+			}
+		}
 	}
 }

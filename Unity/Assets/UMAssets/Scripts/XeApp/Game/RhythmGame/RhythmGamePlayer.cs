@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using XeApp.Game.Tutorial;
+using XeSys;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -304,7 +305,108 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B0AE4 Offset: 0x9B0AE4 VA: 0x9B0AE4
 		private void UpdateTask()
 		{
-			UnityEngine.Debug.LogError("TODO UpdateTask");
+			if(IsStopMusic())
+			{
+				isResetRequest = false;
+			}
+			if(isPauseRequest)
+			{
+				UnityEngine.Debug.LogError("TODO pause");
+			}
+			currentRawMusicMillisec = tutorialPopupStartTime;
+			if(tutorialPopupStartTime < 0)
+			{
+				//bgmPlayback
+				// TODO get from songs
+				currentRawMusicMillisec += (int)(Time.deltaTime * 1000);
+			}
+			notesMillisec = currentRawMusicMillisec - noteOffsetMillisec;
+			deviceMillisec = IncludeDeviceLatency(currentRawMusicMillisec);
+			deviceSec = deviceMillisec / 1000.0f;
+			if(!isResetRequest)
+			{
+				normalModeEndEvent.Update(notesMillisec);
+				valkyrieModeStartEvent.Update(notesMillisec);
+				valkyrieModeEndEvent.Update(notesMillisec);
+				divaModeStartEvent.Update(notesMillisec);
+				if(!isVisiblePauseWindow)
+				{
+					rhythmGameResultStartEvent.Update(notesMillisec);
+				}
+				tutorialOneEndEvent.Update(notesMillisec);
+				tutorialTwoFoceFWaveMaxEvent.Update(notesMillisec);
+				tutorialTwoFoceEnemyDefeatEvent.Update(notesMillisec);
+				tutorialTwoActiveSkillGuideEvent.Update(notesMillisec);
+				if(battleEventResult01 != null)
+					battleEventResult01.Update(deviceMillisec);
+				if(battleEventResult02 != null)
+					battleEventResult02.Update(deviceMillisec);
+				introFadeEvent.Update(deviceMillisec);
+				valkyrieStartHUDEvent.Update(deviceMillisec);
+				valkyriePreFadeEvent.Update(deviceMillisec);
+				valkyrieCutsceneStartEvent.Update(deviceMillisec);
+				valkyrieCutsceneEndEvent.Update(deviceMillisec);
+				divaCutsceneStartEvent.Update(deviceMillisec);
+				tutorialTwoModeDescriptionEvent.Update(deviceMillisec);
+				if(mvPilotCutinFirstEvent != null)
+					mvPilotCutinFirstEvent.Update(deviceMillisec);
+				if (mvPilotCutinSecondEvent != null)
+					mvPilotCutinSecondEvent.Update(deviceMillisec);
+				if (soundCheerOrderer != null)
+					soundCheerOrderer.Update(deviceMillisec);
+			}
+			if(NotesSoundPlayer.isNewNoteSoundEnable)
+			{
+				notesSoundPlayer.PreSetup();
+			}
+			if(!isResetRequest)
+			{
+				UnityEngine.Debug.LogError("TODO UpdateTask notes");
+				//rNoteOwner.OnUpdate(notesMillisec);
+			}
+			gameDivaObject.ChangeAnimationTime(deviceSec);
+			for(int i = 0; i < subDivaObject.Length; i++)
+			{
+				if(subDivaObject[i] != null)
+					subDivaObject[i].ChangeAnimationTime(deviceSec);
+			}
+			musicCameraObject.ChangeAnimationTime(deviceSec);
+			stageObject.ChangeAnimationTime(deviceSec);
+			musicIntroObject.ChangeAnimationTime(deviceSec);
+			valkyrieModeObject.ChangeAnimationTime(deviceSec);
+			for(int i = 0; i < stageLightingObjectList.Count; i++)
+			{
+				stageLightingObjectList[i].ChangeAnimationTime(deviceSec);
+			}
+			for (int i = 0; i < stageLightingAddObjectList.Count; i++)
+			{
+				stageLightingAddObjectList[i].ChangeAnimationTime(deviceSec);
+			}
+			for (int i = 0; i < stageExtensionObjectList.Count; i++)
+			{
+				stageExtensionObjectList[i].ChangeAnimationTime(deviceSec);
+			}
+			for (int i = 0; i < divaExtensionObjectList.Count; i++)
+			{
+				divaExtensionObjectList[i].ChangeAnimationTime(deviceSec);
+			}
+			for (int i = 0; i < divaCutinObjectList.Count; i++)
+			{
+				divaCutinObjectList[i].ChangeAnimationTime(deviceSec);
+			}
+			for (int i = 0; i < musicCameraCutinObjectList.Count; i++)
+			{
+				musicCameraCutinObjectList[i].ChangeAnimationTime(deviceSec);
+			}
+			status.Update();
+			if(!isVisiblePauseWindow)
+			{
+				if(status != null)
+				{
+					UnityEngine.Debug.LogError("TODO UpdateTask Update status / combo etc...");
+				}
+			}
+			UnityEngine.Debug.LogError("TODO UpdateTask Update controller / skill");
 		}
 
 		// // RVA: 0x9B06DC Offset: 0x9B06DC VA: 0x9B06DC
@@ -1445,24 +1547,68 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9CA6EC Offset: 0x9CA6EC VA: 0x9CA6EC
 		private void StartPlayMusic(int startTime)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			UnityEngine.Debug.LogError("TODO Finish StartPlayMusic");
+			//bgmPlayer.source.player.SetStartTime(startTime);
+			//bgmPlayback = bgmPlayer.source.Play();
+			gameDivaObject.PlayMusicAnimation(startTime);
+			for(int i = 0; i < subDivaObject.Length; i++)
+			{
+				if(subDivaObject[i] != null)
+				{
+					subDivaObject[i].PlayMusicAnimation(startTime);
+				}
+			}
+			musicCameraObject.PlayMusicAnimation(startTime);
+			foreach(var slo in stageLightingObjectList)
+			{
+				slo.PlayMusicAnimation();
+			}
+			foreach(var slao in stageLightingAddObjectList)
+			{
+				slao.PlayMusicAnimation();
+			}
+			foreach(var seo in stageExtensionObjectList)
+			{
+				seo.PlayMusicAnimation();
+			}
+			foreach(var deo in divaExtensionObjectList)
+			{
+				deo.PlayMusicAnimation();
+			}
+			foreach(var dco in divaCutinObjectList)
+			{
+				dco.PlayMusicAnimation();
+			}
+			foreach(var mcco in musicCameraCutinObjectList)
+			{
+				mcco.PlayMusicAnimation();
+			}
+			UnityEngine.Debug.LogError("TODO end StartPlayMusic (hud , debugfps)");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744E94 Offset: 0x744E94 VA: 0x744E94
 		// // RVA: 0x9CB194 Offset: 0x9CB194 VA: 0x9CB194
 		private IEnumerator WaitMusicPlayCoroutine(float a_sec_wait)
 		{
-    		UnityEngine.Debug.Log("Enter WaitMusicPlayCoroutine");
-			UnityEngine.Debug.LogError("TODO");
-    		UnityEngine.Debug.Log("Exit WaitMusicPlayCoroutine");
-			yield return null;
+			float waittime;
+			float startTime;
+			UnityEngine.Debug.Log("Enter WaitMusicPlayCoroutine");
+			//0xBF4584
+			waittime = a_sec_wait;
+			startTime = TimeWrapper.time;
+			while (TimeWrapper.time - startTime < waittime)
+				yield return null;
+			StartPlayMusic(Mathf.RoundToInt((TimeWrapper.time - startTime - waittime) * 1000));
+			UnityEngine.Debug.Log("Exit WaitMusicPlayCoroutine");
 		}
 
 		// // RVA: 0x9C3750 Offset: 0x9C3750 VA: 0x9C3750
 		public void Play()
 		{
 			//??XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.MNJOLLGPMPI()
-			if(bgmPlayer.source.status == CriAtomSource.Status.Stop)
+			//if(bgmPlayer.source.status == CriAtomSource.Status.Stop)
+			UnityEngine.Debug.LogError("TODO FInish Play");
+			if(true)
 			{
 				float val = resource.musicData.musicParam.stateOffsetSec;
 				resource.musicIntroResource.OverrideMusicStartTime(ref val);
@@ -1519,7 +1665,11 @@ namespace XeApp.Game.RhythmGame
 		// private bool IsPlayingMusic() { }
 
 		// // RVA: 0x9B1F80 Offset: 0x9B1F80 VA: 0x9B1F80
-		// private bool IsStopMusic() { }
+		private bool IsStopMusic()
+		{
+			UnityEngine.Debug.LogError("TODO IsStopMusic");
+			return false;
+		}
 
 		// // RVA: 0x9CC458 Offset: 0x9CC458 VA: 0x9CC458
 		// public int GetMusicMillisecLength() { }
@@ -1528,7 +1678,11 @@ namespace XeApp.Game.RhythmGame
 		// public int GetRawMusicMillisec() { }
 
 		// // RVA: 0x9B2A88 Offset: 0x9B2A88 VA: 0x9B2A88
-		// public int IncludeDeviceLatency(int rawMillisec) { }
+		public int IncludeDeviceLatency(int rawMillisec)
+		{
+			UnityEngine.Debug.LogError("TODO IncludeDeviceLatency");
+			return rawMillisec;
+		}
 
 		// // RVA: 0x9B2A7C Offset: 0x9B2A7C VA: 0x9B2A7C
 		// public int IncludeNotesOffsert(int rawMillisec) { }

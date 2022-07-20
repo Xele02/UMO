@@ -22,7 +22,10 @@ namespace XeApp.Game.Common
 		private float[] loopSeVoumeTable = new float[2] { 1.0f, 2.0f }; // 0x1C
 
 		// // RVA: 0xAED608 Offset: 0xAED608 VA: 0xAED608
-		// public void PreSetup() { }
+		public void PreSetup()
+		{
+			UnityEngine.Debug.LogError("TODO NoteSoundPlayer PreSetup");
+		}
 
 		// // RVA: 0xAED6F4 Offset: 0xAED6F4 VA: 0xAED6F4
 		// public void OnJudge(int trackId, int result, bool isLongBegin, bool isLongEnd, bool isLongContinue, bool isFlick, bool isMiss) { }

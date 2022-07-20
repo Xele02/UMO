@@ -136,6 +136,15 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 		{
 			FixMaterialShader(graphics[i].material);
 		}
+		Renderer[] renderers = obj.GetComponentsInChildren<Renderer>(true);
+		for (int i = 0; i < renderers.Length; i++)
+		{
+			if(renderers[i].sharedMaterials != null)
+			{
+				for(int j = 0; j < renderers[i].sharedMaterials.Length; j++)
+					FixMaterialShader(renderers[i].sharedMaterials[j]);
+			}
+		}
 	}
 
     public IEnumerator FixMaterialShader_Co(AssetBundle myLoadedAssetBundle)

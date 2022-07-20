@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using XeSys;
 
 namespace XeApp.Game.Common
@@ -289,14 +291,45 @@ namespace XeApp.Game.Common
 		//public void AttachMikeToObject(Transform a_transform) { }
 
 		//// RVA: 0x1BF4A38 Offset: 0x1BF4A38 VA: 0x1BF4A38
-		//public void LockBoneSpring(int a_index = 0) { }
+		public void LockBoneSpring(int a_index = 0)
+		{
+			if(boneSpringController != null)
+			{
+				boneSpringController.Lock(a_index);
+			}
+		}
 
 		//// RVA: 0x1BF4AF4 Offset: 0x1BF4AF4 VA: 0x1BF4AF4
-		//public void UnlockBoneSpring(bool a_fix = False, int a_index = 0) { }
+		public void UnlockBoneSpring(bool a_fix = false, int a_index = 0)
+		{
+			if(!a_fix)
+			{
+				StartCoroutine(WaitUnlockBoneSpring(a_index));
+				return;
+			}
+			if(boneSpringController != null)
+			{
+				if (!boneSpringController.IsLock(a_index))
+					return;
+				boneSpringController.Unlock(a_index);
+				boneSpringController.RequestInitialize();
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7364BC Offset: 0x7364BC VA: 0x7364BC
 		//// RVA: 0x1BF4C2C Offset: 0x1BF4C2C VA: 0x1BF4C2C
-		//protected IEnumerator WaitUnlockBoneSpring(int a_index = 0) { }
+		protected IEnumerator WaitUnlockBoneSpring(int a_index = 0)
+		{
+			//0x1BF7B84
+			isWaitUnlockBoneSpring = true;
+			yield return new WaitForSeconds(0.1f);
+			if (boneSpringController != null)
+			{
+				boneSpringController.Unlock(a_index);
+				boneSpringController.RequestInitialize();
+			}
+			isWaitUnlockBoneSpring = false;
+		}
 
 		//// RVA: 0x1BF4CF4 Offset: 0x1BF4CF4 VA: 0x1BF4CF4
 		//public void WaitLockBoneSpring(int a_index = 0, float a_seconds = 0,05) { }
@@ -327,7 +360,30 @@ namespace XeApp.Game.Common
 		//public void Resume() { }
 
 		//// RVA: 0x1BF590C Offset: 0x1BF590C VA: 0x1BF590C Slot: 7
-		//public virtual void ChangeAnimationTime(double time) { }
+		public virtual void ChangeAnimationTime(double time)
+		{
+			if (animator != null)
+			{
+				animator.speed = 1;
+				if (animator.playableGraph.IsValid())
+				{
+					animator.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(animator.playableGraph.GetRootPlayable(0))));
+				}
+				facialBlendAnimMediator.SetTime(time);
+				if(m_boneSpringAnim != null)
+				{
+					if(m_boneSpringAnim.animator != null)
+					{
+						m_boneSpringAnim.SetTime(time);
+					}
+				}
+				if(mikeStandObject != null)
+				{
+					mikeStandObject.SetTime(time);
+				}
+			}
+
+		}
 
 		//// RVA: 0x1BF5C50 Offset: 0x1BF5C50 VA: 0x1BF5C50
 		//protected void Anim_Play(string stateName, double time = 0) { }
@@ -401,10 +457,43 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF444C Offset: 0x1BF444C VA: 0x1BF444C
-		//public void SetActiveEffect(bool a_active) { }
+		public void SetActiveEffect(bool a_active)
+		{
+			if(!effectEnable && a_active)
+			{
+				return;
+			}
+			if (effectObject != null)
+			{
+				for (int i = 0; i < effectObject.Count; i++)
+				{
+					effectObject[i].SetActive(a_active);
+				}
+			}
+		}
 
 		//// RVA: 0x1BF7314 Offset: 0x1BF7314 VA: 0x1BF7314
-		//public void SetEnableEffect(bool a_enable, bool a_save_ignore = False) { }
+		public void SetEnableEffect(bool a_enable, bool a_save_ignore = false)
+		{
+			if(!a_save_ignore)
+			{
+				effectEnable = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.MDMDEAFFIMB_IsDivaEffect != 1 && a_enable;
+			}
+			else
+			{
+				effectEnable = a_enable;
+			}
+			if(effectEnable)
+			{
+				if (renderers.Count < 1)
+					return;
+				SetActiveEffect(renderers[0].enabled);
+			}
+			else
+			{
+				SetActiveEffect(false);
+			}
+		}
 
 		//// RVA: 0x1BF74CC Offset: 0x1BF74CC VA: 0x1BF74CC
 		//public bool GetEnableEffect() { }
@@ -433,10 +522,41 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF4550 Offset: 0x1BF4550 VA: 0x1BF4550
-		//public void SetActiveWind(bool a_active) { }
+		public void SetActiveWind(bool a_active)
+		{
+			if(!windEnable && a_active)
+			{
+				return;
+			}
+			if (windObject == null)
+				return;
+			if(!a_active)
+				windObject.ResetBoneSpringController();
+			windObject.gameObject.SetActive(a_active);
+		}
 
 		//// RVA: 0x1BF767C Offset: 0x1BF767C VA: 0x1BF767C
-		//public void SetEnableWind(bool a_enable, bool a_save_ignore = False) { }
+		public void SetEnableWind(bool a_enable, bool a_save_ignore = false)
+		{
+			if (!a_save_ignore)
+			{
+				windEnable = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.MDMDEAFFIMB_IsDivaEffect != 1 && a_enable;
+			}
+			else
+			{
+				windEnable = a_enable;
+			}
+			if(windEnable)
+			{
+				if (renderers.Count < 1)
+					return;
+				SetActiveWind(renderers[0].enabled);
+			}
+			else
+			{
+				SetActiveWind(false);
+			}
+		}
 
 		//// RVA: 0x1BF7834 Offset: 0x1BF7834 VA: 0x1BF7834
 		//public bool GetEnableWind() { }

@@ -120,7 +120,28 @@ namespace XeApp.Game.Common
 		//private void ChangeVisibilityCallback(bool isVisible) { }
 
 		//// RVA: 0xE972E8 Offset: 0xE972E8 VA: 0xE972E8
-		//public void PlayMusicAnimation(double time = 0) { }
+		public void PlayMusicAnimation(double time = 0)
+		{
+			if (animator == null)
+				return;
+			cutinBaseTime = -1;
+			resetCutinBaseTime = false;
+			isPlayingCutin = false;
+			LockBoneSpring(0);
+			float normalizedTime = (float)(time / musicBodyClipLength);
+			animator.Play("music", 0, normalizedTime);
+			facialBlendAnimMediator.selfAnimator.Play("music", 0, normalizedTime);
+			facialBlendAnimMediator.selfAnimator.Play("music", 1, normalizedTime);
+			if(m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+			{
+				m_boneSpringAnim.animator.Play("music", 0, normalizedTime);
+			}
+			if(mikeStandObject != null)
+			{
+				mikeStandObject.animator.Play("music", 0, normalizedTime);
+			}
+			UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0xE976E8 Offset: 0xE976E8 VA: 0xE976E8
 		//public void PlayCutinAnimation(int cutinId, bool isBody, bool isFace, bool isMouth, bool isMike, float fireTime) { }
@@ -204,13 +225,15 @@ namespace XeApp.Game.Common
 		//// RVA: 0xE98E04 Offset: 0xE98E04 VA: 0xE98E04 Slot: 8
 		protected override void SetupEffectObject(List<GameObject> a_effect)
 		{
-			UnityEngine.Debug.LogError("TODO SetupEffectObject");
+			base.SetupEffectObject(a_effect);
+			base.SetEnableEffect(true, false);
 		}
 
 		//// RVA: 0xE98E30 Offset: 0xE98E30 VA: 0xE98E30 Slot: 9
 		protected override void SetupWind(GameObject a_wind, DivaResource.BoneSpringResource a_resource)
 		{
-			UnityEngine.Debug.LogError("TODO SetupWind");
+			base.SetupWind(a_wind, a_resource);
+			base.SetEnableWind(false, false);
 		}
 	}
 }

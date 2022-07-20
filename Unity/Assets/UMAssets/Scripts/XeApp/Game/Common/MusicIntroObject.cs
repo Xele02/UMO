@@ -65,7 +65,10 @@ namespace XeApp.Game.Common
 		// public void Resume() { }
 
 		// // RVA: 0xAEA2F0 Offset: 0xAEA2F0 VA: 0xAEA2F0
-		// public void ChangeAnimationTime(double time) { }
+		public void ChangeAnimationTime(double time)
+		{
+			return;
+		}
 
 		// // RVA: 0xAE9B14 Offset: 0xAE9B14 VA: 0xAE9B14
 		// private void SetAllActive(bool active) { }

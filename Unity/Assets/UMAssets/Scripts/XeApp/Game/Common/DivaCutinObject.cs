@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace XeApp.Game.Common
 {
@@ -30,7 +31,14 @@ namespace XeApp.Game.Common
 		//public void ChangeCutin(int id) { }
 
 		//// RVA: 0xE6EB88 Offset: 0xE6EB88 VA: 0xE6EB88
-		//public void PlayMusicAnimation() { }
+		public void PlayMusicAnimation()
+		{
+			if (animator != null)
+			{
+				ChangeAnimationTime(0);
+				animator.Play("Music", 0);
+			}
+		}
 
 		//// RVA: 0xE6EE1C Offset: 0xE6EE1C VA: 0xE6EE1C
 		//public void Stop() { }
@@ -42,6 +50,16 @@ namespace XeApp.Game.Common
 		//public void Resume() { }
 
 		//// RVA: 0xE6EC6C Offset: 0xE6EC6C VA: 0xE6EC6C
-		//public void ChangeAnimationTime(double time) { }
+		public void ChangeAnimationTime(double time)
+		{
+			if (animator != null)
+			{
+				animator.speed = 1;
+				if (animator.playableGraph.IsValid())
+				{
+					animator.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(animator.playableGraph.GetRootPlayable(0))));
+				}
+			}
+		}
 	}
 }

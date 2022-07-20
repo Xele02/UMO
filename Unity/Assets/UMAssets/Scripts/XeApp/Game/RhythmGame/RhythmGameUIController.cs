@@ -42,6 +42,7 @@ namespace XeApp.Game.RhythmGame
 		public void BeginIntroAnim(Action callback)
 		{
 			UnityEngine.Debug.LogError("TODO");
+			callback();
 		}
 
 		// // RVA: 0xBF2A8C Offset: 0xBF2A8C VA: 0xBF2A8C

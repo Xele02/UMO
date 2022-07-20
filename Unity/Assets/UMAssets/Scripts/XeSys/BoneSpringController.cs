@@ -28,10 +28,23 @@ namespace XeSys
 			}
 
 			//// RVA: 0x192B4EC Offset: 0x192B4EC VA: 0x192B4EC
-			//public void SetData(float a_data) { }
+			public void SetData(float a_data)
+			{
+				m_data[m_cnt] = a_data;
+				m_cnt = (m_cnt + 1) % m_max;
+			}
 
 			//// RVA: 0x192B55C Offset: 0x192B55C VA: 0x192B55C
-			//public float CalcAverage() { }
+			public float CalcAverage()
+			{
+				float sum = 0;
+				for(int i = 0; i < m_max; i++)
+				{
+					sum += m_data[i];
+				}
+				m_average = sum / m_max;
+				return m_average;
+			}
 		}
 
 		private List<BoneSpringControlPoint> controlPoints = new List<BoneSpringControlPoint>(); // 0xC
@@ -76,17 +89,24 @@ namespace XeSys
 		//// RVA: 0x192B48C Offset: 0x192B48C VA: 0x192B48C
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO BoneSpringController Update");
+			gameDeltaTime = Time.smoothDeltaTime;
+			averageGameDeltaTime.SetData(gameDeltaTime);
+			gameDeltaTime = averageGameDeltaTime.CalcAverage();
 		}
 
 		//// RVA: 0x192B5F4 Offset: 0x192B5F4 VA: 0x192B5F4
 		private void LateUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO BoneSpringController LateUpdate");
+			if (!m_enable)
+				return;
+			UpdateControlPoint();
 		}
 
 		//// RVA: 0x192B9E4 Offset: 0x192B9E4 VA: 0x192B9E4
-		//private void FixedUpdate() { }
+		private void FixedUpdate()
+		{
+			return;
+		}
 
 		//// RVA: 0x192B9E8 Offset: 0x192B9E8 VA: 0x192B9E8
 		public void Initialize(BoneSpringController.PerformanceMode mode)
@@ -130,22 +150,67 @@ namespace XeSys
 		}
 
 		//// RVA: 0x192B604 Offset: 0x192B604 VA: 0x192B604
-		//private void UpdateControlPoint() { }
+		private void UpdateControlPoint()
+		{
+			if(isLockBit == 0)
+			{
+				fpsRate = gameDeltaTime / 0.01666667f;
+				fpsRate = Mathf.Max(fpsRate, 1.0f);
+				fpsRateSq = fpsRate * fpsRate;
+				for(int i = 0; i < m_collider.Count; i++)
+				{
+					m_collider[i].UpdatePosition();
+				}
+				for(int i = 0; i < m_collider.Count; i++)
+				{
+					m_collider[i].UpdateBoundingSphere();
+				}
+				for(int i = 0; i < controlPoints.Count; i++)
+				{
+					if(controlPoints[i].gameObject.activeInHierarchy)
+					{
+						controlPoints[i].UpdatePoint();
+					}
+				}
+				for (int i = 0; i < controlPoints.Count; i++)
+				{
+					if (controlPoints[i].gameObject.activeInHierarchy)
+					{
+						controlPoints[i].CheckCollision();
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x192BED0 Offset: 0x192BED0 VA: 0x192BED0
 		//private void ApplyControlPoint() { }
 
 		//// RVA: 0x192C02C Offset: 0x192C02C VA: 0x192C02C
-		//public void Lock(int a_index = 0) { }
+		public void Lock(int a_index = 0)
+		{
+			isLockBit |= 1 << a_index;
+		}
 
 		//// RVA: 0x192C044 Offset: 0x192C044 VA: 0x192C044
-		//public void Unlock(int a_index = 0) { }
+		public void Unlock(int a_index = 0)
+		{
+			isLockBit &= ~(1 << a_index);
+		}
 
 		//// RVA: 0x192C05C Offset: 0x192C05C VA: 0x192C05C
-		//public bool IsLock(int a_index = 0) { }
+		public bool IsLock(int a_index = 0)
+		{
+			return (isLockBit & (1 << a_index)) != 0;
+		}
 
 		//// RVA: 0x192C078 Offset: 0x192C078 VA: 0x192C078
-		//public void RequestInitialize() { }
+		public void RequestInitialize()
+		{
+			for(int i = 0; i < controlPoints.Count; i++)
+			{
+				controlPoints[i].RequestInitialize();
+			}
+		}
 
 		//// RVA: 0x192C150 Offset: 0x192C150 VA: 0x192C150
 		public List<BoneSpringControlPoint> GetListBSCP()

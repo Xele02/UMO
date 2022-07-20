@@ -4,7 +4,7 @@ namespace XeSys
 {
 	public class TimeWrapper
 	{
-		public static float time { get { UnityEngine.Debug.LogError("TODO"); return 0; } } // 0x23A6590 
+		public static float time { get { return Time.time; } } // 0x23A6590 
 		public static float timeSinceLevelLoad { get{ UnityEngine.Debug.LogError("TODO"); return 0; } } //0x23A6598
 		public static float deltaTime { get{ return Time.deltaTime; } } // 0x23A65A0
 		public static float fixedTime { get{ UnityEngine.Debug.LogError("TODO"); return 0; } } // 0x23A65A8

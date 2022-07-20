@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace XeApp.Game.Common
 {
@@ -66,7 +67,15 @@ namespace XeApp.Game.Common
 		//public void EventMovieStop() { }
 
 		//// RVA: 0x13A2208 Offset: 0x13A2208 VA: 0x13A2208
-		//public void PlayMusicAnimation() { }
+		public void PlayMusicAnimation()
+		{
+			if (animator != null)
+			{
+				ChangeAnimationTime(0);
+				animator.Play("Music", 0);
+				m_pause = false;
+			}
+		}
 
 		//// RVA: 0x13A284C Offset: 0x13A284C VA: 0x13A284C
 		//public void Stop() { }
@@ -78,6 +87,27 @@ namespace XeApp.Game.Common
 		//public void Resume() { }
 
 		//// RVA: 0x13A22F0 Offset: 0x13A22F0 VA: 0x13A22F0
-		//public void ChangeAnimationTime(double time) { }
+		public void ChangeAnimationTime(double time)
+		{
+			if (animator != null && animator.runtimeAnimatorController != null)
+			{
+				animator.speed = 1;
+				if (animator.playableGraph.IsValid())
+				{
+					animator.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(animator.playableGraph.GetRootPlayable(0))));
+				}
+			}
+			for(int i = 0; i < animatorList.Count; i++)
+			{
+				if(animatorList[i] != null && animatorList[i].runtimeAnimatorController != null)
+				{
+					animatorList[i].speed = 1;
+					if (animatorList[i].playableGraph.IsValid())
+					{
+						animatorList[i].playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(animatorList[i].playableGraph.GetRootPlayable(0))));
+					}
+				}
+			}
+		}
 	}
 }

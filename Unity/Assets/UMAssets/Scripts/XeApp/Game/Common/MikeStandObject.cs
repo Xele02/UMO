@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace XeApp.Game.Common
 {
@@ -48,6 +49,13 @@ namespace XeApp.Game.Common
 		//public void AttachMike(GameObject obj) { }
 
 		//// RVA: 0x11184EC Offset: 0x11184EC VA: 0x11184EC
-		//public void SetTime(double time) { }
+		public void SetTime(double time)
+		{
+			animator.speed = 1;
+			if (animator.playableGraph.IsValid())
+			{
+				animator.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(animator.playableGraph.GetRootPlayable(0))));
+			}
+		}
 	}
 }

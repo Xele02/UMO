@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Playables;
 using XeApp.Game.RhythmGame;
 using XeSys;
 
@@ -130,6 +131,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE63358 Offset: 0xE63358 VA: 0xE63358
-		//public void SetTime(double time) { }
+		public void SetTime(double time)
+		{
+			m_animator.speed = 1;
+			if (m_animator.playableGraph.IsValid())
+			{
+				m_animator.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(m_animator.playableGraph.GetRootPlayable(0))));
+			}
+		}
 	}
 }

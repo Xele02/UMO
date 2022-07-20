@@ -17,7 +17,17 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0x13A6784 Offset: 0x13A6784 VA: 0x13A6784
-		// public void ResetBoneSpringController() { }
+		public void ResetBoneSpringController()
+		{
+			for(int i = 0; i < m_list_diva.Count; i++)
+			{
+				List<BoneSpringControlPoint> points = m_list_diva[i].m_bsc.GetListBSCP();
+				for(int j = 0; j < points.Count; j++)
+				{
+					points[j].m_forceFromOutside = Vector3.zero;
+				}
+			}
+		}
 
 		// RVA: 0x13A636C Offset: 0x13A636C VA: 0x13A636C
 		private void SetupBoneSpringSuppresser(DivaObject a_diva, DivaResource.BoneSpringResource a_resource, StageExtensionWindCtrl.DivaInfo a_info)

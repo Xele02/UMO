@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace XeApp.Game.Common
 {
@@ -77,7 +78,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAE4320 Offset: 0xAE4320 VA: 0xAE4320
-		// public void PlayMusicAnimation(double time = 0) { }
+		public void PlayMusicAnimation(double time = 0)
+		{
+			if(animator != null)
+			{
+				cutinBaseTime = -1;
+				resetCutinBaseTime = false;
+				isPlayingCutin = false;
+				animator.Play("music", 0, (float)(time / musicClipLength));
+			}
+		}
 
 		// // RVA: 0xAE442C Offset: 0xAE442C VA: 0xAE442C
 		// public void PlayCutinAnimation(int cutinId, float fireTime, int resourceId) { }
@@ -92,7 +102,50 @@ namespace XeApp.Game.Common
 		// public void Resume() { }
 
 		// // RVA: 0xAE46D0 Offset: 0xAE46D0 VA: 0xAE46D0
-		// public void ChangeAnimationTime(double time) { }
+		public void ChangeAnimationTime(double time)
+		{
+			if (time < 0)
+				time = 0;
+			if (animator != null)
+			{
+				if(resetCutinBaseTime)
+				{
+					resetCutinBaseTime = false;
+					cutinBaseTime = time - cutinBaseTime;
+				}
+				animator.speed = 1;
+				if(!isPlayingCutin)
+				{
+					if (animator.playableGraph.IsValid())
+					{
+						animator.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(animator.playableGraph.GetRootPlayable(0))));
+					}
+				}
+				else
+				{
+					if (animator.playableGraph.IsValid())
+					{
+						animator.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(animator.playableGraph.GetRootPlayable(0)) - cutinBaseTime));
+					}
+					cutinBaseTime = 0;
+					AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo(0);
+					if(info.normalizedTime >= 1)
+					{
+						if(cutinEndTime >= 0)
+						{
+							if(Mathf.Abs((float)(time - cutinBaseTime - cutinEndTime)) >= 0.01f)
+							{
+								PlayMusicAnimation(time);
+							}
+						}
+						else
+						{
+							cutinEndTime = time - cutinBaseTime;
+						}
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xAE4C24 Offset: 0xAE4C24 VA: 0xAE4C24
 		public void AttachCameraBillboard()

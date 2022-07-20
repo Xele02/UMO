@@ -21,9 +21,21 @@ namespace XeSys
 		}
 
 		//// RVA: 0x1928658 Offset: 0x1928658 VA: 0x1928658
-		//public void UpdatePosition() { }
+		public void UpdatePosition()
+		{
+			position = transform.rotation * offset + transform.position;
+		}
 
 		//// RVA: 0x19287D0 Offset: 0x19287D0 VA: 0x19287D0
-		//public void UpdateBoundingSphere() { }
+		public void UpdateBoundingSphere()
+		{
+			radiusEx = radius * controller.Scale;
+			if(relational != null)
+			{
+				Vector3 dir = (relational.position - position).normalized;
+				m_bunding_sphere_pos = (relational.position + (dir * relational.radiusEx * 1) - ((dir * radiusEx * -1) + position)) * 0.5f + ((dir * radiusEx * -1) + position);
+				m_bunding_sphere_radius_sqr = m_bunding_sphere_pos.sqrMagnitude;
+			}
+		}
 	}
 }
