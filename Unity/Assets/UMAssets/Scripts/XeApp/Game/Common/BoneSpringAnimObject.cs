@@ -51,10 +51,13 @@ namespace XeApp.Game.Common
 			{
 				m_bsp_ctrl.influence = 1.0f - m_preset_default.transform.position.x;
 			}
-			for(int i = 0; i < m_list_preset.Count; i++)
+			if(m_list_preset != null)
 			{
-				m_list_preset[i].m_suppressor.SetSuppressValue(m_list_preset[i].m_preset_obj.transform.position.x);
-				m_list_preset[i].m_suppressor.UpdateSuppress();
+				for(int i = 0; i < m_list_preset.Count; i++)
+				{
+					m_list_preset[i].m_suppressor.SetSuppressValue(m_list_preset[i].m_preset_obj.transform.position.x);
+					m_list_preset[i].m_suppressor.UpdateSuppress();
+				}
 			}
 		}
 

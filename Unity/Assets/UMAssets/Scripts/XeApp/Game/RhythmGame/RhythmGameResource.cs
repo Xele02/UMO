@@ -166,8 +166,11 @@ namespace XeApp.Game.RhythmGame
 						{
 							return musicStageChangerResource.param.stageResourceId;
 						}
+						return 0;
 					}
+					return -1;
 				}
+				return 0;
 			}
 			return -1;
 		}

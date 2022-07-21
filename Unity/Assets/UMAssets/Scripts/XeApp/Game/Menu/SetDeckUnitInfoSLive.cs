@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 		{
 			int maxDiva = Mathf.Max(m_divas.Count + m_additionDivas.Count, 5);
 			int numDiva = Mathf.Clamp(musicInfo.onStageDivaNum, 1, maxDiva);
-			for(int i = 0; i < maxDiva; i++)
+			for(int i = m_divaDatas.Count; i < maxDiva; i++)
 			{
 				m_divaDatas.Add(new FFHPBEPOMAK());
 			}

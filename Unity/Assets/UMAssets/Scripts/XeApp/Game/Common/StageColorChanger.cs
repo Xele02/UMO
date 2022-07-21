@@ -85,7 +85,9 @@ namespace XeApp.Game.Common
 				if(!m_isPsylliumMulti)
 				{
 					Color col = psylliumMaterial.GetColor("_Color");
-					psylliumMaterial.SetColor("_Color", Color.Lerp(col, a_list[0], a_list[0].a));
+					Color newcol = Color.Lerp(col, a_list[0], a_list[0].a);
+					newcol.a = col.a;
+					psylliumMaterial.SetColor("_Color", newcol);
 				}
 				else
 				{
@@ -93,7 +95,9 @@ namespace XeApp.Game.Common
 					{
 						Color col = psylliumMaterial.GetColor("_Color" + (i+1));
 						int idx = i % a_list.Count;
-						psylliumMaterial.SetColor("_Color", Color.Lerp(col, a_list[idx], a_list[idx].a));
+						Color newcol = Color.Lerp(col, a_list[idx], a_list[idx].a);
+						newcol.a = col.a;
+						psylliumMaterial.SetColor("_Color", newcol);
 					}
 				}
 			}
@@ -102,24 +106,33 @@ namespace XeApp.Game.Common
 		// RVA: 0x139EEF4 Offset: 0x139EEF4 VA: 0x139EEF4
 		public void UpdateColorByStageLighting(Color fakelitColor, Color lightColorA, Color lightColorB, Color lightColorC)
 		{
+			Color newCol;
 			for (int i = 0; i < fakelitMaterials.Count; i++)
 			{
 				if(fakelitMaterials[i] != null)
 				{
-					fakelitMaterials[i].SetColor("_Color", Color.Lerp(fakelitColors[i], fakelitColor, fakelitColor.a));
+					newCol = Color.Lerp(fakelitColors[i], fakelitColor, fakelitColor.a);
+					newCol.a = fakelitColors[i].a;
+					fakelitMaterials[i].SetColor("_Color", newCol);
 				}
 			}
 			if(lightMaterialA != null)
 			{
-				lightMaterialA.SetColor("_Color", Color.Lerp(defaultColorA, lightColorA, lightColorA.a));
+				newCol = Color.Lerp(defaultColorA, lightColorA, lightColorA.a);
+				newCol.a = defaultColorA.a;
+				lightMaterialA.SetColor("_Color", newCol);
 			}
 			if (lightMaterialB != null)
 			{
-				lightMaterialB.SetColor("_Color", Color.Lerp(defaultColorB, lightColorB, lightColorB.a));
+				newCol = Color.Lerp(defaultColorB, lightColorB, lightColorB.a);
+				newCol.a = defaultColorB.a;
+				lightMaterialB.SetColor("_Color", newCol);
 			}
 			if (lightMaterialC != null)
 			{
-				lightMaterialC.SetColor("_Color", Color.Lerp(defaultColorC, lightColorC, lightColorC.a));
+				newCol = Color.Lerp(defaultColorC, lightColorC, lightColorC.a);
+				newCol.a = defaultColorC.a;
+				lightMaterialC.SetColor("_Color", newCol);
 			}
 		}
 	}

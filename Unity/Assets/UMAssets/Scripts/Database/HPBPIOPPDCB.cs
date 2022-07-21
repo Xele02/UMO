@@ -86,8 +86,8 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG
 					data.CMCKNKKCNDK[j].ODDIHGPONFL(data2);
 					val2 = val2 * 0xb;
 				}
-				return true;
 			}
+			return true;
 		}
 		HDIDJNCGICK = "\"diva\" table overflow";
 		return false;

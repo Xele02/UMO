@@ -296,11 +296,14 @@ namespace XeApp.Game.Common
 		{
 			if(!isMovieMode)
 			{
-				// TODO check
-				ChangeColor(Color.Lerp(defaultMainColor, mainColor, mainColor.a),
-							Color.Lerp(defaultRimColor, rimColor, rimColor.a),
-							Mathf.Lerp(defaultRimPower, rimPower, rimColor.a),
-							Color.Lerp(defaultShadowColor, shadowColor, shadowColor.a));
+				mainColor = Color.Lerp(defaultMainColor, mainColor, mainColor.a);
+				mainColor.a = defaultMainColor.a;
+				rimPower = Mathf.Lerp(defaultRimPower, rimPower, rimColor.a);
+				rimColor = Color.Lerp(defaultRimColor, rimColor, rimColor.a);
+				rimColor.a = defaultRimColor.a;
+				shadowColor = Color.Lerp(defaultShadowColor, shadowColor, shadowColor.a);
+				shadowColor.a = defaultShadowColor.a;
+				ChangeColor(mainColor, rimColor, rimPower, shadowColor);
 			}
 		}
 

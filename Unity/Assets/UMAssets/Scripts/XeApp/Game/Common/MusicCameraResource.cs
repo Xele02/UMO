@@ -88,8 +88,6 @@ namespace XeApp.Game.Common
 		{
 			StringBuilder strBuilder; // 0x1C
 			AssetBundleLoadAllAssetOperationBase operation; // 0x20
-			UnityEngine.Debug.LogError("TODO Co_LoadParam");
-
 			//0xAE5E60
 			strBuilder = new StringBuilder();
 			string wavIdString = GameManager.Instance.GetWavDirectoryName(waveId, "mc/{0}/sc.xab", stageDivaNum, 1, -1, true);

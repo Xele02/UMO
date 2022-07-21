@@ -22,6 +22,7 @@ namespace XeApp.Game.Common
 			this.divaObject = divaObject;
 			if(resource != null)
 			{
+				animator = GetComponent<Animator>();
 				animator.runtimeAnimatorController = resource.animatorController;
 				overrideController = new AnimatorOverrideController();
 				overrideController.name = "dr_dc_override_controller";

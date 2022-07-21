@@ -79,8 +79,18 @@ namespace XeSys
 			radiusEx = radius * controller.Scale;
 			boneLength = originalBoneLength * controller.Scale;
 			parentTransform.localRotation = originalLocalRotation;
+			Vector3 savePrevPos = prevPosition;
 			prevPosition = currentPosition;
-			currentPosition = (2 * currentPosition) - prevPosition + ((controller.fpsRateSq * (parentTransform.rotation * localVelocity)) + ((m_forceFromOutside * (1- influenceSuppressRateWind)) + (controller.fpsRateSq * (parentTransform.rotation * boneDirection * weight)) + (controller.fpsRateSq * (controller.fieldForce_ * mass))) + (controller.fpsRate * (stability * (prevPosition - currentPosition))));
+			currentPosition = (2 * currentPosition) - savePrevPos + ((controller.fpsRateSq * (parentTransform.rotation * localVelocity)) + ((m_forceFromOutside * (1- influenceSuppressRateWind)) + (controller.fpsRateSq * (parentTransform.rotation * boneDirection * weight)) + (controller.fpsRateSq * (controller.fieldForce_ * mass))) + (controller.fpsRate * (stability * (savePrevPos - currentPosition))));
+			float inf = influence * (1 - influenceSuppressRate) * controller.influence;
+			if(inf <= 0)
+			{
+				currentPosition = transform.position;
+			}
+			else if(inf < 1)
+			{
+				currentPosition = Vector3.Lerp(transform.position, currentPosition, inf);
+			}
 			KeepBoneLength();
 			parentTransform.rotation = Quaternion.FromToRotation(parentTransform.TransformDirection(boneDirection), currentPosition - parentTransform.position) * parentTransform.rotation;
 			m_resultParentRot = parentTransform.rotation;

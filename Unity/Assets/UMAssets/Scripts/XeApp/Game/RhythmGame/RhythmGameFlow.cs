@@ -330,8 +330,8 @@ namespace XeApp.Game.RhythmGame
 				{
 					if(i < Database.Instance.gameSetup.musicInfo.onStageDivaNum - 1)
 					{
-						if (i == 0)
-							rhythmGameResource.subDivaResource[i] = null; // ??
+						if (Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismDivaId == 0)
+							rhythmGameResource.subDivaResource[i] = null;
 						else
 						{
 							rhythmGameResource.subDivaResource[i].LoadBasicResource(Database.Instance.gameSetup.teamInfo.danceDivaList[i + 1].prismDivaId,

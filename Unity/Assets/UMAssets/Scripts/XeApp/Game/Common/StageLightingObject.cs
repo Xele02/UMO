@@ -51,7 +51,7 @@ namespace XeApp.Game.Common
 				divaObject.UpdateColorByStageLighting(diva_color, diva_rim_color, diva_rim_power.r, shadow_color);
 				for(int i = 0; i < divaExtensionObjectList.Count; i++)
 				{
-					divaExtensionObjectList[i].UpdateColorByStageLighting(diva_color, diva_rim_color, diva_rim_power.r);
+					divaExtensionObjectList[i].UpdateColorByStageLighting(diva_color, diva_rim_color, diva_rim_power.a);
 				}
 				for(int i = 0; i < subDivaNum; i++)
 				{
