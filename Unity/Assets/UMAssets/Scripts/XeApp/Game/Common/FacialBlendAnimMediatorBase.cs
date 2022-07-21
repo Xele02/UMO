@@ -84,7 +84,23 @@ namespace XeApp.Game.Common
 		// RVA: 0x1C105A0 Offset: 0x1C105A0 VA: 0x1C105A0
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO FacialBlendAnimMediatorBase Awake");
+			musicFaceClipLength = -1;
+			musicMouthClipLength = -1;
+			faceBlendTransforms = new Transform[15];
+			faceBlendLayerIndex = new int[15];
+			mouthBlendTransforms = new Transform[20];
+			mouthBlendLayerIndex = new int[20];
+			for(int i = 0; i < faceBlendLayerName.Length; i++)
+			{
+				faceBlendTransforms[i] = transform.Find(faceBlendLayerName[i]);
+			}
+			for(int i = 0; i < mouthBlendLayerName.Length; i++)
+			{
+				mouthBlendTransforms[i] = transform.Find(mouthBlendLayerName[i]);
+			}
+			cheekTransforms = transform.Find(cheekLayerName);
+			eyeLookUTransforms = transform.Find(eyeLookULayerName);
+			eyeLookVTransforms = transform.Find(eyeLookVLayerName);
 			selfAnimator_ = GetComponent<Animator>();
 		}
 
@@ -100,21 +116,64 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1C10ACC Offset: 0x1C10ACC VA: 0x1C10ACC
 		public void Initialize(DivaResource resource, GameObject divaPrefab)
 		{
-			UnityEngine.Debug.LogError("TODO FacialBlendAnimMediatorBase Initialize");
+			for(int i = 0; i < faceBlendLayerName.Length; i++)
+			{
+				faceBlendTransforms[i].localPosition = new Vector3(0, 0, 0);
+			}
+			for(int i = 0; i < mouthBlendLayerName.Length; i++)
+			{
+				mouthBlendTransforms[i].localPosition = new Vector3(0, 0, 0);
+			}
+			Setup(divaPrefab);
 			selfAnimator_.runtimeAnimatorController = resource.facialAnimatorController;
+			overrideController = new AnimatorOverrideController();
+			overrideController.name = "med_override_controller";
+			overrideController.runtimeAnimatorController = selfAnimator_.runtimeAnimatorController;
+			if(resource.IsSetupAuto)
+			{
+				OverrideCustomAnimation(resource);
+			}
+			selfAnimator_.runtimeAnimatorController = overrideController;
 		}
 
 		//// RVA: 0x1C1130C Offset: 0x1C1130C VA: 0x1C1130C
 		public void SetEyeMeshUvRate(Vector2 rate)
 		{
-			UnityEngine.Debug.LogError("TODO FacialBlendAnimMediatorBase SetEyeMeshUvRate");
+			eyeMeshUvRate = rate;
 		}
 
 		//// RVA: 0x1C11318 Offset: 0x1C11318 VA: 0x1C11318 Slot: 4
-		//protected virtual void OverrideCustomAnimation(DivaResource resource) { }
+		protected virtual void OverrideCustomAnimation(DivaResource resource)
+		{
+			return;
+		}
 
 		//// RVA: 0x1C10E44 Offset: 0x1C10E44 VA: 0x1C10E44
-		//protected void Setup(GameObject divaPrefab) { }
+		protected void Setup(GameObject divaPrefab)
+		{
+			SkinnedMeshRenderer[] smrs = divaPrefab.GetComponentsInChildren<SkinnedMeshRenderer>();
+			for(int i = 0; i < smrs.Length; i++)
+			{
+				if(smrs[i].name == "eye")
+				{
+					eyeMeshRenderer = smrs[i];
+				}
+				if(smrs[i].name == "cheek")
+				{
+					cheekMeshRenderer = smrs[i];
+				}
+			}
+			targetAnimator = divaPrefab.GetComponentInChildren<Animator>();
+			for(int i = 0; i < mouthBlendLayerName.Length; i++)
+			{
+				mouthBlendLayerIndex[i] = targetAnimator.GetLayerIndex(mouthBlendLayerName[i]);
+			}
+			for(int i = 0; i < faceBlendLayerName.Length; i++)
+			{
+				faceBlendLayerIndex[i] = targetAnimator.GetLayerIndex(faceBlendLayerName[i]);
+			}
+			isSetup = true;
+		}
 
 		//// RVA: 0x1C1131C Offset: 0x1C1131C VA: 0x1C1131C
 		//public void ResetReference() { }
@@ -132,23 +191,80 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1C1149C Offset: 0x1C1149C VA: 0x1C1149C
 		private void LateUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO FacialBlendAnimMediatorBase LateUpdate");
+			if(!isSetup)
+				return;
+			UpdateFaceBlend();
+			UpdateMouthBlend();
+			UpdateEyeLook();
+			UpdateCheekAlpha();
 		}
 
 		//// RVA: 0x1C114D8 Offset: 0x1C114D8 VA: 0x1C114D8
-		//private void UpdateFaceBlend() { }
+		private void UpdateFaceBlend()
+		{
+			float val = 0;
+			for(int i = 0; i < 15; i++)
+			{
+				val += faceBlendTransforms[i].localPosition.x;
+			}
+			if(val <= 0)
+				val = 1;
+			for(int i = 0; i < 15; i++)
+			{
+				if(faceBlendLayerIndex[i] > -1)
+				{
+					targetAnimator.SetLayerWeight(faceBlendLayerIndex[i], faceBlendTransforms[i].localPosition.x / val);
+				}
+			}
+		}
 
 		//// RVA: 0x1C11698 Offset: 0x1C11698 VA: 0x1C11698
-		//private void UpdateMouthBlend() { }
+		private void UpdateMouthBlend()
+		{
+			float val = 0;
+			for(int i = 0; i < 20; i++)
+			{
+				val += mouthBlendTransforms[i].localPosition.x;
+			}
+			if(val == 0)
+				val = 1;
+			for(int i = 0; i < 20; i++)
+			{
+				if(mouthBlendLayerIndex[i] > -1)
+				{
+					targetAnimator.SetLayerWeight(mouthBlendLayerIndex[i], mouthBlendTransforms[i].localPosition.x / val);
+				}
+			}
+		}
 
 		//// RVA: 0x1C11858 Offset: 0x1C11858 VA: 0x1C11858
-		//private void UpdateEyeLook() { }
+		private void UpdateEyeLook()
+		{
+			if(eyeMeshRenderer != null && eyeLookUTransforms != null && eyeLookVTransforms != null)
+			{
+				eyeMeshRenderer.material.mainTextureOffset = m_delayedEyeTexOffset;
+				m_delayedEyeTexOffset = MakeEyeMeshUvOffset();
+			}
+		}
 
 		//// RVA: 0x1C119EC Offset: 0x1C119EC VA: 0x1C119EC
-		//private void UpdateCheekAlpha() { }
+		private void UpdateCheekAlpha()
+		{
+			if(cheekMeshRenderer != null && cheekTransforms != null)
+			{
+				Color col = cheekMeshRenderer.material.color;
+				col.a = m_delayedCheekAlpha;
+				cheekMeshRenderer.material.color = col;
+				m_delayedCheekAlpha = cheekTransforms.localPosition.x;
+			}
+		}
 
 		//// RVA: 0x1C11BA0 Offset: 0x1C11BA0 VA: 0x1C11BA0
-		//private Vector2 MakeEyeMeshUvOffset() { }
+		private Vector2 MakeEyeMeshUvOffset()
+		{
+			return new Vector2(eyeLookUTransforms.localPosition.x * eyeMeshUvRate.x, 
+								eyeLookVTransforms.localPosition.y * eyeMeshUvRate.y);
+		}
 
 		//// RVA: 0x1C11C44 Offset: 0x1C11C44 VA: 0x1C11C44
 		//public void OverrideAnimation(ref DivaResource.MotionOverrideClipKeyResource resource) { }

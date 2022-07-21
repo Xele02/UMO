@@ -313,7 +313,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				UnityEngine.Debug.LogError("TODO pause");
 			}
-			currentRawMusicMillisec = tutorialPopupStartTime;
+			//currentRawMusicMillisec = tutorialPopupStartTime;
 			if(tutorialPopupStartTime < 0)
 			{
 				//bgmPlayback

@@ -221,7 +221,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ(musicInfo.storyMusicId).KEFGPJBKAOD_WavId;
+				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ(musicInfo.storyMusicId).KEFGPJBKAOD;
 			}
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
 			p.KHEKNNFCAOI_Init(teamInfo.prismValkyrieId, 0, 0);
@@ -252,11 +252,11 @@ namespace XeApp.Game.RhythmGame
 			}
 			if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
-				rhythmGameResource.LoadSpecialDirectionResource(wavId, stageDivaNum, settingList);
+				rhythmGameResource.LoadSpecialDirectionResource(DbMusicInfo.KKPAHLMJKIH_WavId, stageDivaNum, settingList);
 			}
 			else
 			{
-				rhythmGameResource.LoadSpecialResourceFor2DMode(wavId, stageDivaNum, settingList);
+				rhythmGameResource.LoadSpecialResourceFor2DMode(DbMusicInfo.KKPAHLMJKIH_WavId, stageDivaNum, settingList);
 			}
 			ChangeWaitLoadingSpecialResourceStatus();
 			UnityEngine.Debug.LogError("TODO check WaitDownloadingSpecialResource");

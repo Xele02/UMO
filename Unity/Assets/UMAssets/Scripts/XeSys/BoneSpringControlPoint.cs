@@ -117,7 +117,12 @@ namespace XeSys
 		//public void ApplyPoint() { }
 
 		//// RVA: 0x192A0B8 Offset: 0x192A0B8 VA: 0x192A0B8
-		//private void AfterCollisionProcess(float distance, float colRadius, Vector3 disangageVec) { }
+		private void AfterCollisionProcess(float distance, float colRadius, Vector3 disangageVec)
+		{
+			currentPosition = currentPosition + disangageVec * (1 - distance / colRadius);
+			KeepBoneLength();
+			UpdateBoundingSphere();
+		}
 
 		//// RVA: 0x1929728 Offset: 0x1929728 VA: 0x1929728
 		private void KeepBoneLength()
@@ -199,7 +204,25 @@ namespace XeSys
 		}
 
 		//// RVA: 0x192AADC Offset: 0x192AADC VA: 0x192AADC
-		//private bool CheckCapsuleCapsuleCollision(BoneSpringCollider collider) { }
+		private bool CheckCapsuleCapsuleCollision(BoneSpringCollider collider)
+		{
+			if((m_bunding_sphere_pos - collider.m_bunding_sphere_pos).sqrMagnitude <= (m_bunding_sphere_radius_sqr + collider.m_bunding_sphere_radius_sqr))
+			{
+				float line1targetRate, line2TargetRate;
+				float dist = Math.CalcNearDistanceLineToLine(currentPosition, relational.transform.position, collider.position, collider.relational.position, out line1targetRate, out line2TargetRate);
+				float radius1 = Mathf.Lerp(radiusEx, relational.radiusEx, line1targetRate);
+				float radius2 = Mathf.Lerp(collider.radiusEx, collider.relational.radiusEx, line2TargetRate);
+				if(dist <= (radius1 + radius2))
+				{
+					Vector3 dir = (((relational.transform.position - currentPosition) * radius1 + currentPosition) - (collider.position + ((collider.relational.position - collider.position) * radius2))) * (1 - radius1);
+					AfterCollisionProcess(dist, (radius1 + radius2), dir);
+					dir = (((relational.transform.position - currentPosition) * radius1 + currentPosition) - (collider.position + ((collider.relational.position - collider.position)) * radius2)) * radius1;
+					AfterCollisionProcess(dist, (radius1 + radius2), dir);
+					return true;
+				}
+			}
+			return false;
+		}
 
 		//// RVA: 0x192B028 Offset: 0x192B028 VA: 0x192B028
 		//public void CalcBoundingSphereFromCapsule(Vector3 t_st, Vector3 t_ed, float t_st_radius, float t_ed_radius, out Vector3 a_pos, out float a_radius) { }

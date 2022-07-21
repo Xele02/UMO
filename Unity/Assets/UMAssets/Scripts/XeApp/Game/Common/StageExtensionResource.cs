@@ -76,7 +76,7 @@ namespace XeApp.Game.Common
 			bundleName = new StringBuilder();
 			assetName = new StringBuilder();
 			string wavName = GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/dr/st/{1:D3}.xab", stageDivaNum, 1, assetId, false);
-			bundleName.SetFormat("mc/{0}/dr/st/{1:D3}.xab", wavId, assetId);
+			bundleName.SetFormat("mc/{0}/dr/st/{1:D3}.xab", wavName, assetId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 			assetName.SetFormat("dr_st_{0:D3}_param", assetId);
