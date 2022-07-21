@@ -1,5 +1,7 @@
+using System.Text;
 using UnityEngine;
 using UnityEngine.Playables;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -37,7 +39,21 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x11181A8 Offset: 0x11181A8 VA: 0x11181A8
-		//public void OverrideCutinClip(DivaCutinResource a_resource) { }
+		public void OverrideCutinClip(DivaCutinResource a_resource)
+		{
+			if(a_resource != null)
+			{
+				StringBuilder str = new StringBuilder();
+				for(int i = 0; i < a_resource.cutinMikeClips.Length; i++)
+				{
+					if(a_resource.cutinMikeClips[i] != null)
+					{
+						str.SetFormat("mikestand_cut_{0:D2}_anim", i + 1);
+						overrideController[str.ToString()] = a_resource.cutinMikeClips[i];
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x1118404 Offset: 0x1118404 VA: 0x1118404
 		public void AdjustHight(float offset)

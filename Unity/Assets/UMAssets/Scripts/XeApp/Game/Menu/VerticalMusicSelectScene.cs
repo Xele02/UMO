@@ -518,11 +518,10 @@ namespace XeApp.Game.Menu
 		//}
 
 		// RVA: 0xBE6CF0 Offset: 0xBE6CF0 VA: 0xBE6CF0 Slot: 55
-		//protected override int GetDanceDivaCount()
-		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
-		//	return 0;
-		//}
+		protected override int GetDanceDivaCount()
+		{
+			return m_musicDetail.GetDanceNum();
+		}
 
 		// // RVA: 0xBE6D18 Offset: 0xBE6D18 VA: 0xBE6D18
 		protected void TryInstall(StringBuilder bundleName, VerticalMusicDataList musicList)

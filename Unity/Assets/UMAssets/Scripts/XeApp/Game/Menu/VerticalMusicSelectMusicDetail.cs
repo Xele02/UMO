@@ -170,6 +170,7 @@ namespace XeApp.Game.Menu
 						{
 							OnUnitButtonClickListener(i);
 						}
+						return;
 					}
 				}
 			});
@@ -243,11 +244,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE0124 Offset: 0xBE0124 VA: 0xBE0124
 		public void ShowUnitDanceButton(IBJAKJJICBC musicData, MMOLNAHHDOM saveUnitData, bool isMusicLock)
 		{
+			int multiId = 0; // tmp
 			for (int i = 0; i < 4; i++)
 			{
 				int[] array = new int[4] { 1, 2, 3, 5 };
 
 				m_unitToggleButton[i].Hidden = musicData.BENDFLDLIAG_IsAvaiableForNumDiva(array[i]) != true;
+				if (i > 0 && !m_unitToggleButton[i].Hidden) // tmp
+					multiId = i;
 			}
 			m_unitToggleButtonGroupObj.blocksRaycasts = true;
 			if (!musicData.DBIGDCOHOIC())
@@ -262,6 +266,7 @@ namespace XeApp.Game.Menu
 			{
 				UnityEngine.Debug.LogError("TODO ShowUnitDanceButton for other lock check");
 			}
+			SetUnitButton(saveUnitData.NMBAHHJLGPP_IsMultiDiva(musicData.GHBPLHBNMBK) ? multiId : 0); // tmp
 		}
 
 		// // RVA: 0xBE0680 Offset: 0xBE0680 VA: 0xBE0680

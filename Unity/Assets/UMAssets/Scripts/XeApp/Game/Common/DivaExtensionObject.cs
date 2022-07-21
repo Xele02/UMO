@@ -48,7 +48,10 @@ namespace XeApp.Game.Common
 		//public void ChangeMovieMaterialColor(bool isOn) { }
 
 		//// RVA: 0x1BED964 Offset: 0x1BED964 VA: 0x1BED964
-		//public void UpdateColorByStageLighting(Color mainColor, Color rimColor, float rimPower) { }
+		public void UpdateColorByStageLighting(Color mainColor, Color rimColor, float rimPower)
+		{
+			UnityEngine.Debug.LogError("TODO DivaExtensionObject UpdateColorByStageLighting");
+		}
 
 		//// RVA: 0x1BED594 Offset: 0x1BED594 VA: 0x1BED594
 		//private void ChangeColor(Color mainColor, Color rimColor, float rimPower) { }

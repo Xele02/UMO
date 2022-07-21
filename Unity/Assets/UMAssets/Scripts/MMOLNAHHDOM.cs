@@ -3,7 +3,7 @@ using System.IO;
 public class MMOLNAHHDOM
 {
 	public const int OBLMMOLOFJB = 250;
-	private static byte[] LAIIKHJABMP = new byte[250]; // 0x0
+	private static byte[] LAIIKHJABMP_MultiDiva = new byte[250]; // 0x0
 	private static int JJJHKABCOIM = 0; // 0x4
 	private static string ELLBAAFKDCH; // 0x8
 
@@ -46,12 +46,34 @@ public class MMOLNAHHDOM
 	// public void JCHLONCMPAJ(bool OGBEGDKPDGK) { }
 
 	// // RVA: 0x19695D0 Offset: 0x19695D0 VA: 0x19695D0
-	public bool IAGAAOKODPM(int EHDDADDKMFI, bool JKDJCFEBDHC)
+	public bool IAGAAOKODPM_SetMultiDiva(int EHDDADDKMFI, bool JKDJCFEBDHC)
 	{
-		UnityEngine.Debug.LogError("TODO MMOLNAHHDOM unitLiveLocalSaveData IAGAAOKODPM");
+		int idx = EHDDADDKMFI - 1;
+		if ((idx >> 4) > 124)
+			return false;
+		int offset = (idx >> 3);
+		if (LAIIKHJABMP_MultiDiva.Length <= offset)
+			return true;
+		if(JKDJCFEBDHC)
+		{
+			LAIIKHJABMP_MultiDiva[offset] |= (byte)(1 << (idx & 7));
+		}
+		else
+		{
+			LAIIKHJABMP_MultiDiva[offset] &= (byte)~(1 << (idx & 7));
+		}
 		return true;
 	}
 
 	// // RVA: 0x19697A4 Offset: 0x19697A4 VA: 0x19697A4
-	// public bool NMBAHHJLGPP(int EHDDADDKMFI) { }
+	public bool NMBAHHJLGPP_IsMultiDiva(int EHDDADDKMFI)
+	{
+		int idx = EHDDADDKMFI - 1;
+		if((idx >> 4) > 124)
+			return false;
+		int offset = (idx >> 3);
+		if (LAIIKHJABMP_MultiDiva.Length <= offset)
+			return false;
+		return (LAIIKHJABMP_MultiDiva[offset] & (1 << (idx & 7))) != 0;
+	}
 }

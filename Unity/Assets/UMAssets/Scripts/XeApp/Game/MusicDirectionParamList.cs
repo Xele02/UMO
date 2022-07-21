@@ -214,21 +214,39 @@ namespace XeApp.Game
 		}
 
 		// RVA: 0xC96AE0 Offset: 0xC96AE0 VA: 0xC96AE0 Slot: 10
-		// public override List<MusicDirectionParamBase.ResourceData> CheckDivaExtensionResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		public override List<MusicDirectionParamBase.ResourceData> CheckDivaExtensionResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			return CheckCondition(m_divaPrefabList, settingList);
+		}
 
 		// // RVA: 0xC96AEC Offset: 0xC96AEC VA: 0xC96AEC Slot: 11
-		// public override List<MusicDirectionParamBase.ResourceData> CheckDivaCutinResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		public override List<MusicDirectionParamBase.ResourceData> CheckDivaCutinResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			return CheckCondition(m_divaClipList, settingList);
+		}
 
 		// // RVA: 0xC96AF8 Offset: 0xC96AF8 VA: 0xC96AF8 Slot: 12
-		// public override List<MusicDirectionParamBase.ResourceData> CheckMusicCameraCutinResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		public override List<MusicDirectionParamBase.ResourceData> CheckMusicCameraCutinResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			return CheckCondition(m_cameraClipList, settingList);
+		}
 
 		// // RVA: 0xC96B04 Offset: 0xC96B04 VA: 0xC96B04 Slot: 13
-		// public override List<MusicDirectionParamBase.ResourceData> CheckMusicVoiceChangerResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		public override List<MusicDirectionParamBase.ResourceData> CheckMusicVoiceChangerResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			return CheckCondition(m_voiceChangerList, settingList);
+		}
 
 		// // RVA: 0xC96B10 Offset: 0xC96B10 VA: 0xC96B10 Slot: 14
-		// public override List<MusicDirectionParamBase.ResourceData> CheckSpecialMovieResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		public override List<MusicDirectionParamBase.ResourceData> CheckSpecialMovieResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			return CheckCondition(m_movieList, settingList);
+		}
 
 		// // RVA: 0xC96B1C Offset: 0xC96B1C VA: 0xC96B1C Slot: 15
-		// public override List<MusicDirectionParamBase.ResourceData> CheckStageChangerResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		public override List<MusicDirectionParamBase.ResourceData> CheckStageChangerResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			return CheckCondition(m_stageChangerList, settingList);
+		}
 	}
 }

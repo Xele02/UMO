@@ -18,17 +18,63 @@ namespace XeApp.Game.Common
 		// RVA: 0xE6E2F8 Offset: 0xE6E2F8 VA: 0xE6E2F8
 		public void Initialize(DivaCutinResource resource, GameDivaObject divaObject)
 		{
-			UnityEngine.Debug.LogError("TODO DivaCutinObject Initialize");
+			this.resource = resource;
+			this.divaObject = divaObject;
+			if(resource != null)
+			{
+				animator.runtimeAnimatorController = resource.animatorController;
+				overrideController = new AnimatorOverrideController();
+				overrideController.name = "dr_dc_override_controller";
+				overrideController.runtimeAnimatorController = animator.runtimeAnimatorController;
+				SetupEventFireTime(resource.clip.events);
+				overrideController["dr_dc_cmn_animation"] = resource.clip;
+				animator.runtimeAnimatorController = overrideController;
+				divaObject.OverrideCutinClip(resource);
+				animator.playableGraph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
+				animator.Rebind();
+			}
 		}
 
 		// RVA: 0xE6E59C Offset: 0xE6E59C VA: 0xE6E59C
-		//private void SetupEventFireTime(AnimationEvent[] events) { }
+		private void SetupEventFireTime(AnimationEvent[] events)
+		{
+			changeCutinFireTimes.Clear();
+			for(int i = 0; i < events.Length; i++)
+			{
+				if(events[i].functionName == "ChangeCutin")
+				{
+					changeCutinFireTimes.Add(events[i].intParameter, events[i].floatParameter);
+				}
+			}
+		}
 
 		//// RVA: 0xE6E758 Offset: 0xE6E758 VA: 0xE6E758
 		//public void Reset() { }
 
 		//// RVA: 0xE6E82C Offset: 0xE6E82C VA: 0xE6E82C
-		//public void ChangeCutin(int id) { }
+		public void ChangeCutin(int id)
+		{
+			if(id > 0)
+			{
+				if(id <= resource.cutinBodyClips.Length)
+				{
+					if(divaObject != null)
+					{
+						if (resource != null)
+						{
+							bool hasBody = resource.cutinBodyClips[id - 1] != null;
+							bool hasFace = resource.cutinFaceClips[id - 1] != null;
+							bool hasMouth = resource.cutinMouthClips[id - 1] != null;
+							bool hasMike = resource.cutinMikeClips[id - 1] != null;
+							if (hasBody || hasFace || hasMouth || hasMike)
+							{
+								divaObject.PlayCutinAnimation(id, hasBody, hasFace, hasMouth, hasMike, changeCutinFireTimes[id]);
+							}
+						}
+					}
+				}
+			}
+		}
 
 		//// RVA: 0xE6EB88 Offset: 0xE6EB88 VA: 0xE6EB88
 		public void PlayMusicAnimation()

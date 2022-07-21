@@ -236,7 +236,7 @@ namespace XeApp.Game.Menu
 		// protected IEnumerator Co_ChangeBg(BgType bgType, int bgId, Action endCallBack, bool isFade) { }
 
 		// // RVA: -1 Offset: -1 Slot: 55
-		// protected abstract int GetDanceDivaCount();
+		protected abstract int GetDanceDivaCount();
 
 		// // RVA: 0xAC8E10 Offset: 0xAC8E10 VA: 0xAC8E10
 		private void LoadUnitLiveSaveData()
@@ -316,7 +316,8 @@ namespace XeApp.Game.Menu
 		private void DecideCurrentMusic(bool isSimulation)
 		{
 			UnityEngine.Debug.LogError("TODO DecideCurrentMusic");
-			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, 0/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam());
+			int onStageDivaNum = GetDanceDivaCount();
+			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, 0/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL, false, false, "", 0, 0, -1, 0, 0, onStageDivaNum);
 			Database.Instance.selectedMusic.SetMusicData(selectMusicData);
 			MenuScene.Instance.Call(TransitionList.Type.SIMULATIONLIVE_SETTING, null, true);
 		}

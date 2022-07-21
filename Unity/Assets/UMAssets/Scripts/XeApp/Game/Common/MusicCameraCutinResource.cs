@@ -1,4 +1,9 @@
+using System;
+using System.Collections;
+using System.Text;
 using UnityEngine;
+using XeApp.Core;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -25,18 +30,64 @@ namespace XeApp.Game.Common
 		// private void set_isLoaded(bool value) { }
 
 		// // RVA: 0x111A2DC Offset: 0x111A2DC VA: 0x111A2DC
-		// public void LoadResouces(int wavId, int assetId, int stageDivaNum) { }
+		public void LoadResouces(int wavId, int assetId, int stageDivaNum)
+		{
+			StartCoroutine(Co_LoadAllResouces(wavId, assetId, stageDivaNum));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A12C Offset: 0x73A12C VA: 0x73A12C
 		// // RVA: 0x111A308 Offset: 0x111A308 VA: 0x111A308
-		// private IEnumerator Co_LoadAllResouces(int wavId, int assetId, int stageDivaNum) { }
+		private IEnumerator Co_LoadAllResouces(int wavId, int assetId, int stageDivaNum)
+		{
+			//0x111A648
+			isLoaded = false;
+			isUnused = false;
+			yield return StartCoroutine(Co_LoadBasicResouces());
+			yield return StartCoroutine(Co_LoadMusicResouces(wavId, assetId, stageDivaNum));
+			isLoaded = true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A1A4 Offset: 0x73A1A4 VA: 0x73A1A4
 		// // RVA: 0x111A400 Offset: 0x111A400 VA: 0x111A400
-		// private IEnumerator Co_LoadBasicResouces() { }
+		private IEnumerator Co_LoadBasicResouces()
+		{
+			StringBuilder bundleName;
+			StringBuilder assetName;
+			AssetBundleLoadAllAssetOperationBase operation;
+			//0x111A84C
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			bundleName.SetFormat("mc/cmn/dr/cc.xab", Array.Empty<object>());
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+			assetName.SetFormat("dr_cc_cmn_animator", Array.Empty<object>());
+			animatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A21C Offset: 0x73A21C VA: 0x73A21C
 		// // RVA: 0x111A4AC Offset: 0x111A4AC VA: 0x111A4AC
-		// private IEnumerator Co_LoadMusicResouces(int wavId, int assetId, int stageDivaNum) { }
+		private IEnumerator Co_LoadMusicResouces(int wavId, int assetId, int stageDivaNum)
+		{
+			StringBuilder bundleName;
+			StringBuilder assetName;
+			AssetBundleLoadAllAssetOperationBase operation;
+			//0x111AB84
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			string wavName = GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/dr/cc/{1:D3}.xab", stageDivaNum, 1, assetId, false);
+			bundleName.SetFormat("mc/{0}/dr/cc/{1:D3}.xab", wavName, assetId);
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+			assetName.SetFormat("dr_cc_{0:D3}_anim", assetId);
+			clip = operation.GetAsset<AnimationClip>(assetName.ToString());
+			cutinClips = new AnimationClip[CutinLimit];
+			for(int i = 0; i < 3; i++)
+			{
+				assetName.SetFormat("dr_cc_{0:D3}_cut_{1:D2}", assetId, i + 1);
+				cutinClips[i] = operation.GetAsset<AnimationClip>(assetName.ToString());
+			}
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+		}
 	}
 }

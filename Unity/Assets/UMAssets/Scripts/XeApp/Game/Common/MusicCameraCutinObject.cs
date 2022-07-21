@@ -19,14 +19,66 @@ namespace XeApp.Game.Common
 		// RVA: 0x1119698 Offset: 0x1119698 VA: 0x1119698
 		public void Initialize(MusicCameraCutinResource resource, MusicCameraObject cameraObject, int resourceId = 0)
 		{
-			UnityEngine.Debug.LogError("TODO MusicCameraCutinObject Initialize");
+			this.cameraObject = cameraObject;
+			this.resource = resource;
+			this.resourceId = resourceId;
+			if(resource == null)
+			{
+				overrideController = null;
+				if(animator != null)
+				{
+					animator.runtimeAnimatorController = null;
+				}
+				animator = null;
+			}
+			else
+			{
+				animator = GetComponent<Animator>();
+				animator.runtimeAnimatorController = resource.animatorController;
+				overrideController = new AnimatorOverrideController();
+				overrideController.name = "dr_cc_override_controller";
+				overrideController.runtimeAnimatorController = animator.runtimeAnimatorController;
+				SetupEventFireTime(resource.clip.events);
+				overrideController["dr_cc_cmn_animation"] = resource.clip;
+				animator.runtimeAnimatorController = overrideController;
+				cameraObject.OverrideCutinClip(resource, resourceId);
+				animator.playableGraph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
+			}
 		}
 
 		// RVA: 0x11199A4 Offset: 0x11199A4 VA: 0x11199A4
-		//private void SetupEventFireTime(AnimationEvent[] events) { }
+		private void SetupEventFireTime(AnimationEvent[] events)
+		{
+			changeCutinFireTimes.Clear();
+			for(int i = 0; i < events.Length; i++)
+			{
+				if(events[i].functionName == "ChangeCutin")
+				{
+					changeCutinFireTimes.Add(events[i].intParameter, events[i].floatParameter);
+				}
+			}
+		}
 
 		//// RVA: 0x1119B60 Offset: 0x1119B60 VA: 0x1119B60
-		//public void ChangeCutin(int id) { }
+		public void ChangeCutin(int id)
+		{
+			if(id > 0)
+			{
+				if(id <= resource.cutinClips.Length)
+				{
+					if(cameraObject != null)
+					{
+						if(resource != null)
+						{
+							if(resource.cutinClips[id - 1] != null)
+							{
+								cameraObject.PlayCutinAnimation(id, changeCutinFireTimes[id], resourceId);
+							}
+						}
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x1119D80 Offset: 0x1119D80 VA: 0x1119D80
 		public void PlayMusicAnimation()

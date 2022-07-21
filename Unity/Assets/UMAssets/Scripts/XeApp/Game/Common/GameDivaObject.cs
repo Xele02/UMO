@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using XeApp.Game.RhythmGame;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -21,7 +23,28 @@ namespace XeApp.Game.Common
 			//public void Reset() { }
 
 			// RVA: 0xE97C44 Offset: 0xE97C44 VA: 0xE97C44
-			//public void UpdateSec(float a_now) { }
+			public void UpdateSec(float a_now)
+			{
+				if(!m_init)
+				{
+					m_init = true;
+					m_sec_now = a_now;
+					m_sec_prev = a_now;
+				}
+				else
+				{
+					m_sec_prev = m_sec_now;
+					m_sec_now = a_now;
+					if (m_sec_threshold <= Mathf.Abs(m_sec_prev - a_now))
+						m_skip_frame = 0;
+				}
+				m_skip = false;
+				if (m_skip_frame < m_skip_frame_max)
+				{
+					m_skip_frame++;
+					m_skip = true;
+				}
+			}
 		}
 
 		private ShadowProjector rightFootShadow; // 0x8C
@@ -85,7 +108,26 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE969D8 Offset: 0xE969D8 VA: 0xE969D8
-		//public void OverrideCutinClip(DivaCutinResource resource) { }
+		public void OverrideCutinClip(DivaCutinResource resource)
+		{
+			AnimatorOverrideController overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
+			StringBuilder str = new StringBuilder();
+			for(int i = 0; i < resource.cutinBodyClips.Length; i++)
+			{
+				if(resource.cutinBodyClips[i] != null)
+				{
+					str.SetFormat("diva_cmn_game_cut_{0:D2}_body", i + 1);
+					overrideController[str.ToString()] = resource.cutinBodyClips[i];
+				}
+			}
+			GameFacialBlendAnimMediator facial = facialBlendAnimMediator as GameFacialBlendAnimMediator;
+			facial.OverrideCutinClip(resource);
+			if(mikeStandObject != null)
+			{
+				mikeStandObject.OverrideCutinClip(resource);
+			}
+			animator.Rebind();
+		}
 
 		//// RVA: 0xE96DB0 Offset: 0xE96DB0 VA: 0xE96DB0
 		public void SetupBoneSpring(RhythmGameResource a_resource, int index = 0)
@@ -144,10 +186,72 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE976E8 Offset: 0xE976E8 VA: 0xE976E8
-		//public void PlayCutinAnimation(int cutinId, bool isBody, bool isFace, bool isMouth, bool isMike, float fireTime) { }
+		public void PlayCutinAnimation(int cutinId, bool isBody, bool isFace, bool isMouth, bool isMike, float fireTime)
+		{
+			if(animator != null)
+			{
+				resetCutinBaseTime = true;
+				isPlayingCutin = true;
+				cutinBaseTime = fireTime;
+				StringBuilder str = new StringBuilder();
+				str.SetFormat("cut_{0:D2}", cutinId);
+				LockBoneSpring(0);
+				if(isBody)
+				{
+					animator.Play(str.ToString(), 0);
+				}
+				if(isFace)
+				{
+					facialBlendAnimMediator.selfAnimator.Play(str.ToString(), 0);
+				}
+				if(isMouth)
+				{
+					facialBlendAnimMediator.selfAnimator.Play(str.ToString(), 1);
+				}
+				if(isMike)
+				{
+					if(mikeStandObject != null)
+					{
+						mikeStandObject.animator.Play(str.ToString(), 0);
+					}
+				}
+				UnlockBoneSpring(false, 0);
+			}
+		}
 
 		//// RVA: 0xE97A28 Offset: 0xE97A28 VA: 0xE97A28 Slot: 7
-		//public override void ChangeAnimationTime(double time) { }
+		public override void ChangeAnimationTime(double time)
+		{
+			if(animator != null)
+			{
+				if (time < 0)
+					time = 0;
+				if(resetCutinBaseTime)
+				{
+					resetCutinBaseTime = false;
+					cutinBaseTime = time - cutinBaseTime;
+				}
+				if(!isPlayingCutin)
+				{
+					base.ChangeAnimationTime(time);
+				}
+				else
+				{
+					base.ChangeAnimationTime(time);
+					cutinBaseTime = 0;
+					AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo(0);
+					if(info.normalizedTime >= 1)
+					{
+						PlayMusicAnimation(time);
+					}
+				}
+				m_checker_frameskip.UpdateSec((float)time);
+				if (!m_checker_frameskip.m_skip)
+					UnlockBoneSpring(true, 1);
+				else
+					LockBoneSpring(1);
+			}
+		}
 
 		//// RVA: 0xE97D40 Offset: 0xE97D40 VA: 0xE97D40
 		public void SetupDefaultMaterialColor(Color mainColor, Color rimColor, float rimPower, Color shadowColor)
@@ -188,7 +292,17 @@ namespace XeApp.Game.Common
 		//public void ChangeMovieMaterialColor(bool isOn) { }
 
 		//// RVA: 0xE98C20 Offset: 0xE98C20 VA: 0xE98C20
-		//public void UpdateColorByStageLighting(Color mainColor, Color rimColor, float rimPower, Color shadowColor) { }
+		public void UpdateColorByStageLighting(Color mainColor, Color rimColor, float rimPower, Color shadowColor)
+		{
+			if(!isMovieMode)
+			{
+				// TODO check
+				ChangeColor(Color.Lerp(defaultMainColor, mainColor, mainColor.a),
+							Color.Lerp(defaultRimColor, rimColor, rimColor.a),
+							Mathf.Lerp(defaultRimPower, rimPower, rimColor.a),
+							Color.Lerp(defaultShadowColor, shadowColor, shadowColor.a));
+			}
+		}
 
 		//// RVA: 0xE98474 Offset: 0xE98474 VA: 0xE98474
 		private void ChangeColor(Color mainColor, Color rimColor, float rimPower, Color shadowColor)

@@ -141,7 +141,7 @@ namespace XeApp.Game.Menu
 		public void SetUnitButton(int index, IBJAKJJICBC musicData)
 		{
 			m_musicDetail.SetUnitButton(index);
-			m_unitLiveLocalSaveData.IAGAAOKODPM(musicData.GHBPLHBNMBK, m_musicDetail.GetDanceNum() > 1);
+			m_unitLiveLocalSaveData.IAGAAOKODPM_SetMultiDiva(musicData.GHBPLHBNMBK, m_musicDetail.GetDanceNum() > 1);
 		}
 
 		// // RVA: 0xADB9B8 Offset: 0xADB9B8 VA: 0xADB9B8

@@ -46,10 +46,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CDC244 Offset: 0x1CDC244 VA: 0x1CDC244
 		public void Awake()
 		{
-			if(m_pushDownSetting.m_targetTrans != null)
-			{
-				m_pushDownBasePos = m_pushDownSetting.m_targetTrans.localPosition;
-			}
+			InitPushDownAnime();
 		}
 
 		// RVA: 0x1CDC314 Offset: 0x1CDC314 VA: 0x1CDC314 Slot: 15
@@ -155,7 +152,13 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0x1CDC248 Offset: 0x1CDC248 VA: 0x1CDC248
-		//private void InitPushDownAnime() { }
+		private void InitPushDownAnime()
+		{
+			if (m_pushDownSetting.m_targetTrans != null)
+			{
+				m_pushDownBasePos = m_pushDownSetting.m_targetTrans.localPosition;
+			}
+		}
 
 		// RVA: 0x1CDC7C0 Offset: 0x1CDC7C0 VA: 0x1CDC7C0
 		private void SetPushDownAnime(bool isDown)

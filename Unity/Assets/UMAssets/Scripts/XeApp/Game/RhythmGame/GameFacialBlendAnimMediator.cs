@@ -1,4 +1,7 @@
+using System.Text;
+using UnityEngine;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -15,6 +18,26 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// RVA: 0xF743CC Offset: 0xF743CC VA: 0xF743CC
-		//public void OverrideCutinClip(DivaCutinResource resource) { }
+		public void OverrideCutinClip(DivaCutinResource resource)
+		{
+			AnimatorOverrideController overrideCtrl = selfAnimator.runtimeAnimatorController as AnimatorOverrideController;
+			StringBuilder str = new StringBuilder();
+			for(int i = 0; i < resource.cutinFaceClips.Length; i++)
+			{
+				if (resource.cutinFaceClips[i] != null)
+				{
+					str.SetFormat("diva_cmn_game_cut_{0:D2}_face", i + 1);
+					overrideCtrl[str.ToString()] = resource.cutinFaceClips[i];
+				}
+			}
+			for(int i = 0; i < resource.cutinMouthClips.Length; i++)
+			{
+				if(resource.cutinMouthClips[i] != null)
+				{
+					str.SetFormat("diva_cmn_game_cut_{0:D2}_mouth", i + 1);
+					overrideCtrl[str.ToString()] = resource.cutinMouthClips[i];
+				}
+			}
+		}
 	}
 }

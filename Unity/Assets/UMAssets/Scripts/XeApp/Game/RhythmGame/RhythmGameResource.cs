@@ -156,8 +156,20 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF5978 Offset: 0xBF5978 VA: 0xBF5978
 		public int GetSpecialStageResourceId()
 		{
-			UnityEngine.Debug.LogError("GetSpecialStageResourceId");
-			return 0;
+			if (isInitializedSpecialStageResource)
+			{
+				if(musicStageChangerResource != null)
+				{
+					if(musicStageChangerResource.isAllLoaded)
+					{
+						if(musicStageChangerResource.param != null)
+						{
+							return musicStageChangerResource.param.stageResourceId;
+						}
+					}
+				}
+			}
+			return -1;
 		}
 
 		// // RVA: 0xBF5ADC Offset: 0xBF5ADC VA: 0xBF5ADC
@@ -291,19 +303,70 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF766C Offset: 0xBF766C VA: 0xBF766C
 		private void LoadDivaExtensionResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			UnityEngine.Debug.LogError("TODO LoadDivaExtensionResource");
+			if(divaExtensionResource != null)
+			{
+				foreach(var der in divaExtensionResource)
+				{
+					Destroy(der);
+				}
+			}
+			divaExtensionResource.Clear();
+			List<MusicDirectionParamBase.ResourceData> resources = musicData.musicParam.CheckDivaExtensionResourceId(settingList);
+			foreach (MusicDirectionParamBase.ResourceData resource in resources)
+			{
+				if (resource.id > 0)
+				{
+					DivaExtensionResource comp = gameObject.AddComponent<DivaExtensionResource>();
+					divaExtensionResource.Add(comp);
+					comp.LoadResouces(wavId, resource.id, resource.divaId, stageDivaNum);
+				}
+			}
 		}
 
 		// // RVA: 0xBF7AA4 Offset: 0xBF7AA4 VA: 0xBF7AA4
 		private void LoadDivaCutinResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			UnityEngine.Debug.LogError("TODO LoadDivaCutinResource");
+			if (divaCutinResource != null)
+			{
+				foreach (var dcr in divaCutinResource)
+				{
+					Destroy(dcr);
+				}
+			}
+			divaCutinResource.Clear();
+			List<MusicDirectionParamBase.ResourceData> resources = musicData.musicParam.CheckDivaCutinResourceId(settingList);
+			foreach (MusicDirectionParamBase.ResourceData resource in resources)
+			{
+				if (resource.id > 0)
+				{
+					DivaCutinResource comp = gameObject.AddComponent<DivaCutinResource>();
+					divaCutinResource.Add(comp);
+					comp.LoadResouces(wavId, resource.id, resource.divaId, stageDivaNum);
+				}
+			}
 		}
 
 		// // RVA: 0xBF7EDC Offset: 0xBF7EDC VA: 0xBF7EDC
 		private void LoadMusicCameraCutinResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			UnityEngine.Debug.LogError("TODO LoadMusicCameraCutinResource");
+			if (musicCameraCutinResource != null)
+			{
+				foreach (var dcr in musicCameraCutinResource)
+				{
+					Destroy(dcr);
+				}
+			}
+			musicCameraCutinResource.Clear();
+			List<MusicDirectionParamBase.ResourceData> resources = musicData.musicParam.CheckMusicCameraCutinResourceId(settingList);
+			foreach (MusicDirectionParamBase.ResourceData resource in resources)
+			{
+				if (resource.id > 0)
+				{
+					MusicCameraCutinResource comp = gameObject.AddComponent<MusicCameraCutinResource>();
+					musicCameraCutinResource.Add(comp);
+					comp.LoadResouces(wavId, resource.id, stageDivaNum);
+				}
+			}
 		}
 
 		// // RVA: 0xBF830C Offset: 0xBF830C VA: 0xBF830C
@@ -321,7 +384,16 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF8690 Offset: 0xBF8690 VA: 0xBF8690
 		private void LoadSpecialStageResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			UnityEngine.Debug.LogError("TODO LoadSpecialStageResource");
+			isInitializedSpecialStageResource = true;
+			List<MusicDirectionParamBase.ResourceData> resources = musicData.musicParam.CheckStageChangerResourceId(settingList);
+			if(resources.Count > 0)
+			{
+				if(resources[0].id > 0)
+				{
+					musicStageChangerResource = gameObject.AddComponent<MusicStageChangerResource>();
+					musicStageChangerResource.LoadResouces(wavId, resources[0].id, stageDivaNum);
+				}
+			}
 		}
 
 		// // RVA: 0xBF8874 Offset: 0xBF8874 VA: 0xBF8874

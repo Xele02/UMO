@@ -46,7 +46,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x13A1C1C Offset: 0x13A1C1C VA: 0x13A1C1C
-		//public void UpdateColorByStageLighting(Color fakelitColor, Color lightColorA, Color lightColorB, Color lightColorC) { }
+		public void UpdateColorByStageLighting(Color fakelitColor, Color lightColorA, Color lightColorB, Color lightColorC)
+		{
+			UnityEngine.Debug.LogError("TODO StageExtensionObject UpdateColorByStageLighting");
+		}
 
 		//// RVA: 0x13A1DC0 Offset: 0x13A1DC0 VA: 0x13A1DC0
 		public void SetupPsylliumColor(MusicDirectionParamBase musicParam, DivaParam divaParam, List<DivaResource> subDivaResource)

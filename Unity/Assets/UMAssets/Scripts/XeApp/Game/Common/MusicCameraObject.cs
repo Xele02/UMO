@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Playables;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -63,7 +65,29 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAE3EB8 Offset: 0xAE3EB8 VA: 0xAE3EB8
-		// public void OverrideCutinClip(MusicCameraCutinResource resource, int resourceId) { }
+		public void OverrideCutinClip(MusicCameraCutinResource resource, int resourceId)
+		{
+			animator = GetComponent<Animator>();
+			animator.speed = 0;
+			AnimatorOverrideController overrideCtrl = animator.runtimeAnimatorController as AnimatorOverrideController;
+			StringBuilder str = new StringBuilder();
+			for(int i = 0; i < resource.cutinClips.Length; i++)
+			{
+				if(resource.cutinClips[i] != null)
+				{
+					if(resourceId == 0)
+					{
+						str.SetFormat("game_cmn_cam_cut_{0:D2}", i + 1);
+					}
+					else
+					{
+						str.SetFormat("game_cmn_cam_cut_{0:D2}_{1}", i + 1, resourceId + 1);
+					}
+					overrideCtrl[str.ToString()] = resource.cutinClips[i];
+				}
+			}
+			animator.Rebind();
+		}
 
 		// // RVA: 0xAE4230 Offset: 0xAE4230 VA: 0xAE4230
 		private void LateUpdate()
@@ -90,7 +114,22 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAE442C Offset: 0xAE442C VA: 0xAE442C
-		// public void PlayCutinAnimation(int cutinId, float fireTime, int resourceId) { }
+		public void PlayCutinAnimation(int cutinId, float fireTime, int resourceId)
+		{
+			if(animator != null)
+			{
+				cutinEndTime = -1;
+				resetCutinBaseTime = true;
+				isPlayingCutin = true;
+				cutinBaseTime = fireTime;
+				StringBuilder str = new StringBuilder();
+				if (resourceId == 0)
+					str.SetFormat("cut_{0:D2}", cutinId);
+				else
+					str.SetFormat("cut_{0:D2}_{1}", cutinId, resourceId + 1);
+				animator.Play(str.ToString(), 0);
+			}
+		}
 
 		// // RVA: 0xAE4610 Offset: 0xAE4610 VA: 0xAE4610
 		// public void Stop() { }

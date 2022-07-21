@@ -100,6 +100,27 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0x139EEF4 Offset: 0x139EEF4 VA: 0x139EEF4
-		//public void UpdateColorByStageLighting(Color fakelitColor, Color lightColorA, Color lightColorB, Color lightColorC) { }
+		public void UpdateColorByStageLighting(Color fakelitColor, Color lightColorA, Color lightColorB, Color lightColorC)
+		{
+			for (int i = 0; i < fakelitMaterials.Count; i++)
+			{
+				if(fakelitMaterials[i] != null)
+				{
+					fakelitMaterials[i].SetColor("_Color", Color.Lerp(fakelitColors[i], fakelitColor, fakelitColor.a));
+				}
+			}
+			if(lightMaterialA != null)
+			{
+				lightMaterialA.SetColor("_Color", Color.Lerp(defaultColorA, lightColorA, lightColorA.a));
+			}
+			if (lightMaterialB != null)
+			{
+				lightMaterialB.SetColor("_Color", Color.Lerp(defaultColorB, lightColorB, lightColorB.a));
+			}
+			if (lightMaterialC != null)
+			{
+				lightMaterialC.SetColor("_Color", Color.Lerp(defaultColorC, lightColorC, lightColorC.a));
+			}
+		}
 	}
 }
