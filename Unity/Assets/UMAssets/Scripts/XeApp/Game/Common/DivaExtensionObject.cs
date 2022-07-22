@@ -27,7 +27,7 @@ namespace XeApp.Game.Common
 		private bool m_is_bsc_lock; // 0x64
 
 		//public int divaId { get; } 0x1BEBEB8
-		//public List<BoneSpringController> BoneSpringControllerList { get; } 0x1BEBEDC
+		public List<BoneSpringController> BoneSpringControllerList { get { return bscList; } } //0x1BEBEDC
 
 		//// RVA: 0x1BEBEE4 Offset: 0x1BEBEE4 VA: 0x1BEBEE4
 		//public void ResetAnimationPreview() { }

@@ -115,7 +115,10 @@ namespace XeSys
 			Scale = 1;
 			BoneSpringSettingParameter param = highPerformanceSettingParameter;
 			if (mode == PerformanceMode.Low)
+			{
+				UnityEngine.Debug.LogError("!!! bones are in low quality mode");
 				param = lowPerformanceSettingParameter;
+			}
 			if(param != null)
 			{
 				param.Load(gameObject);

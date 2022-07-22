@@ -80,7 +80,20 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x13A19FC Offset: 0x13A19FC VA: 0x13A19FC
-		// public void AddExtensionBSC(List<BoneSpringController> a_list_bsc) { }
+		public void AddExtensionBSC(List<BoneSpringController> a_list_bsc)
+		{
+			for(int i = 0; i < a_list_bsc.Count; i++)
+			{
+				if(a_list_bsc[i] != null)
+				{
+					DivaInfo info = new DivaInfo();
+					info.m_diva = null;
+					info.m_bsc = a_list_bsc[i];
+					info.m_node = CreateNodeInfo(a_list_bsc[i]);
+					m_list_diva.Add(info);
+				}
+			}
+		}
 
 		// // RVA: 0x13A5190 Offset: 0x13A5190 VA: 0x13A5190
 		private List<StageExtensionWindCtrl.NodeInfo> CreateNodeInfo(BoneSpringController a_bsc)

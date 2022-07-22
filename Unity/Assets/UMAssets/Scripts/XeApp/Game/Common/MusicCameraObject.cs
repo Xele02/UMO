@@ -212,7 +212,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAE5114 Offset: 0xAE5114 VA: 0xAE5114
-		// public Transform GetCameraTransform() { }
+		public Transform GetCameraTransform()
+		{
+			return transform.GetComponentInChildren<Camera>().transform;
+		}
 
 		// // RVA: 0xAE3AE4 Offset: 0xAE3AE4 VA: 0xAE3AE4
 		private void DivaHeightOffset(bool isSolo = false, bool isAdjustXZ = false)
