@@ -1,7 +1,6 @@
 using UnityEngine;
 using XeSys;
 using System.Collections.Generic;
-using CriWare;
 
 public class BDFPCPHIJCN : LBHFILLFAGA
 {
@@ -22,7 +21,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 	// RVA: 0xC70630 Offset: 0xC70630 VA: 0xC70630 Slot: 4
 	public override void BDALHEMDIDC_DoStart()
 	{
-		if(Common.IsStreamingAssetsPath(HHHEFALNMJO_mPath))
+		if(CriWare.IsStreamingAssetsPath(HHHEFALNMJO_mPath))
 		{
 			IEJJKNOEKLM = new WWW(Application.streamingAssetsPath + HHHEFALNMJO_mPath);
 		}

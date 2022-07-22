@@ -1,4 +1,6 @@
-﻿Shader "CriMana/ForwardRgbaAdditive" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "CriMana/ForwardRgbaAdditive" {
 	Properties {
 		_MainTex ("Texture", 2D) = "white" {}
 		Texture_rgba ("Texture RGBA", 2D) = "white" {}
@@ -39,7 +41,7 @@
 			v2f vert(appdata v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.uv  = TRANSFORM_TEX (v.texcoord, _MainTex);
 				return o;
 			}

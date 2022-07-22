@@ -1,4 +1,6 @@
-﻿Shader "CriMana/SofdecPrimeRgbAdditive" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "CriMana/SofdecPrimeRgbAdditive" {
 	Properties {
 		_MainTex ("Texture", 2D) = "white" {}
 	}
@@ -39,7 +41,7 @@
 			v2f vert(appdata v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.uv  = mul(MovieUvTransform, float4(TRANSFORM_TEX(v.texcoord, _MainTex), 0.0, 1.0));
 				return o;
 			}

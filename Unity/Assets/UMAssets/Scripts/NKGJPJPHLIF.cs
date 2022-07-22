@@ -541,7 +541,7 @@ public class NKGJPJPHLIF
 		// 0xC1C344
 		UnityEngine.Debug.Log("buildOption="+AppInfo.buildOption);
 		NMMCABJNNLH = 0;
-		CriFsLoadFileRequest PNLGHFCFPPK = CriFsUtility.LoadFile(Path.Combine(CriWare.Common.streamingAssetsPath, "img/nil.png"), 0x100000);
+		CriFsLoadFileRequest PNLGHFCFPPK = CriFsUtility.LoadFile(Path.Combine(CriWare.streamingAssetsPath, "img/nil.png"), 0x100000);
 		while(!PNLGHFCFPPK.isDone)
 		{
 				yield return null;

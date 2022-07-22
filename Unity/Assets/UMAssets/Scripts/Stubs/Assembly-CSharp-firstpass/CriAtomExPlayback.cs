@@ -1,9 +1,9 @@
-using System;
+//using System;
 
-public struct CriAtomExPlayback
-{
-	public CriAtomExPlayback(uint id) : this()
-	{
-	}
+//public struct CriAtomExPlayback
+//{
+//	public CriAtomExPlayback(uint id) : this()
+//	{
+//	}
 
-}
+//}

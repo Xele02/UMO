@@ -1,6 +1,6 @@
-namespace CriMana.Detail
-{
-	public class RendererResource
-	{
-	}
-}
+//namespace CriMana.Detail
+//{
+//	public class RendererResource
+//	{
+//	}
+//}

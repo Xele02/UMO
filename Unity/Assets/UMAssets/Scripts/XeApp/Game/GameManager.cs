@@ -12,7 +12,6 @@ using System.Text;
 using XeApp.Game.UI;
 using Mana.Service.Ad;
 using System.IO;
-using CriWare;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -629,7 +628,7 @@ namespace XeApp.Game
 			string platform = AssetBundleManager.GetPlatformName();
 			string path = Path.Combine(k, platform);
 			AssetBundleManager.BaseAssetBundleInstallPath = path;
-			string cp = CriWare.Common.streamingAssetsPath;
+			string cp = CriWare.streamingAssetsPath;
 			AssetBundleManager.StreamingAssetBundlePath = Path.Combine(cp, platform);
 		}
 
