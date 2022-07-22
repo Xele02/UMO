@@ -1,102 +1,162 @@
-// [AddComponentMenu] // RVA: 0x63296C Offset: 0x63296C VA: 0x63296C
-public class CriWareErrorHandler : CriMonoBehaviour
-{
-	public bool enableDebugPrintOnTerminal; // 0x1C
-	public bool enableForceCrashOnError; // 0x1D
-	public bool dontDestroyOnLoad = true; // 0x1E
-	// [CompilerGeneratedAttribute] // RVA: 0x634C34 Offset: 0x634C34 VA: 0x634C34
-	// private static CriWareErrorHandler.Callback OnCallback; // 0x4
-	// [ObsoleteAttribute] // RVA: 0x634C44 Offset: 0x634C44 VA: 0x634C44
-	// public static CriWareErrorHandler.Callback callback; // 0x8
-	public uint messageBufferCounts = 8; // 0x20
-	// private static int initializationCount; // 0xC
+﻿/****************************************************************************
+ *
+ * CRIWARE Unity Plugin
+ *
+ * Copyright (c) 2012-2014 CRI Middleware Co., Ltd.
+ *
+ * Library  : CRI Ware
+ * Module   : CRI Ware Error Handler
+ * File     : CriWareErrorHandler.cs
+ *
+ ****************************************************************************/
+using UnityEngine;
+using System;
+using System.Runtime.InteropServices;
 
-	// public static string errorMessage { get; set; } // 0x0
+/// \addtogroup CRIWARE_UNITY_COMPONENT
+/// @{
 
-	// [CompilerGeneratedAttribute] // RVA: 0x6364FC Offset: 0x6364FC VA: 0x6364FC
-	// // RVA: 0x2BAA120 Offset: 0x2BAA120 VA: 0x2BAA120
-	// public static void add_OnCallback(CriWareErrorHandler.Callback value) { }
+/*JP
+ * \brief CRIWAREエラーオブジェクト
+ * \par 説明:
+ * CRIWAREライブラリの初期化を行うためのコンポーネントです。<br>
+ */
+[AddComponentMenu("CRIWARE/Error Handler")]
+public class CriWareErrorHandler : MonoBehaviour {
+	/*JP
+	 * \brief コンソールデバッグ出力を有効にするかどうか
+	 * \par 注意:
+	 * Unityデバッグウィンドウだけでなく、コンソールデバッグ出力を有効にするかどうか [deprecated]
+	 * PCの場合はデバッグウィンドウに出力されます。
+	 */
+	public bool enableDebugPrintOnTerminal = false;
 
-	// [CompilerGeneratedAttribute] // RVA: 0x63650C Offset: 0x63650C VA: 0x63650C
-	// // RVA: 0x2BAA2B4 Offset: 0x2BAA2B4 VA: 0x2BAA2B4
-	// public static void remove_OnCallback(CriWareErrorHandler.Callback value) { }
+	/*JP エラー発生時に強制的にクラッシュさせるかどうか(デバッグ用) */
+	public bool enableForceCrashOnError = false;
 
-	// // RVA: 0x2BAA448 Offset: 0x2BAA448 VA: 0x2BAA448
-	private void Awake()
+	/*JP シーンチェンジ時にエラーハンドラを削除するかどうか */
+	public bool dontDestroyOnLoad = true;
+	
+	/*JP エラーメッセージ */
+	public static string errorMessage { get; set; }
+	
+	/* オブジェクト作成時の処理 */
+	void Awake() {
+		/* 初期化カウンタの更新 */
+		initializationCount++;
+		if (initializationCount != 1) {
+			/* 多重初期化は許可しない */
+			GameObject.Destroy(this);
+			return;
+		}
+		
+		/* エラー処理の初期化 */
+		criWareUnity_Initialize();
+		criWareUnity_SetForceCrashFlagOnError(enableForceCrashOnError);
+		
+		/* ターミナルへのログ出力表示切り替え */
+		criWareUnity_ControlLogOutput(enableDebugPrintOnTerminal);
+		
+		/* シーンチェンジ後もオブジェクトを維持するかどうかの設定 */
+		if (dontDestroyOnLoad) {
+			DontDestroyOnLoad(transform.gameObject);
+		}
+	}
+	
+	/* Execution Order の設定を確実に有効にするために OnEnable をオーバーライド */
+	void OnEnable() {
+	}
+	
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+#if !UNITY_EDITOR && (UNITY_ANDROID || UNITY_IOS || UNITY_TVOS)
+		if (enableDebugPrintOnTerminal == false){
+			/* iOS/Androidの場合、エラーメッセージの出力先が重複してしまうため、*/
+			/* ターミナル出力が無効になっている場合のみ、Unity出力を有効にする。*/
+			OutputErrorMessage();
+		}
+#else
+		OutputErrorMessage();
+#endif
+	}
+	
+	void OnDestroy() {
+		/* 初期化カウンタの更新 */
+		initializationCount--;
+		if (initializationCount != 0) {
+			return;
+		}
+		
+		/* エラー処理の終了処理 */
+		criWareUnity_Finalize();
+	}
+	
+	/* エラーメッセージのポーリングと出力 */
+	private static void OutputErrorMessage() 
 	{
-		UnityEngine.Debug.LogWarning("TODO CriWareErrorHandler Awake");
+		/* エラーメッセージのポーリング */
+		System.IntPtr ptr = criWareUnity_GetFirstError();
+		if (ptr == IntPtr.Zero) {
+			return;
+		}
+
+		/* Unity上でログ出力 */
+		string message = Marshal.PtrToStringAnsi(ptr);
+		if (message != string.Empty) {
+			OutputLog(message);
+			criWareUnity_ResetError();
+		}
+		
+		if (CriWareErrorHandler.errorMessage == null) {
+			CriWareErrorHandler.errorMessage = message.Substring(0);
+		}
 	}
 
-	// // RVA: 0x2BAAB48 Offset: 0x2BAAB48 VA: 0x2BAAB48 Slot: 4
-	protected override void OnEnable()
+	/*JP ログの出力 */
+	private static void OutputLog(string errmsg)
 	{
-		UnityEngine.Debug.LogWarning("TODO CriWareErrorHandler OnEnable");
+		if (errmsg == null) {
+			return;
+		}
+		
+		if (errmsg.StartsWith("E")) {
+			Debug.LogError("[CRIWARE] Error:" + errmsg);
+		} else if (errmsg.StartsWith("W")) {
+			Debug.LogWarning("[CRIWARE] Warning:" + errmsg);
+		} else {
+			Debug.Log("[CRIWARE]" + errmsg);
+		}
 	}
+	
+	/*JP 初期化カウンタ */
+	private static int initializationCount = 0;
+	
+	#region DLLImport
+	[DllImport(CriWare.pluginName)]
+	private static extern void criWareUnity_Initialize();
 
-	// // RVA: 0x2BAAC10 Offset: 0x2BAAC10 VA: 0x2BAAC10 Slot: 5
-	protected override void OnDisable()
-	{
-		UnityEngine.Debug.LogError("TODO");
-	}
+	[DllImport(CriWare.pluginName)]
+	private static extern void criWareUnity_Finalize();
 
-	// // RVA: 0x2BAAC9C Offset: 0x2BAAC9C VA: 0x2BAAC9C
-	private void Start()
-	{
-		UnityEngine.Debug.LogWarning("TODO CriWareErrorHandler Start");
-	}
+	[DllImport(CriWare.pluginName)]
+	private static extern System.IntPtr criWareUnity_GetFirstError();
 
-	// // RVA: 0x2BAACA0 Offset: 0x2BAACA0 VA: 0x2BAACA0 Slot: 6
-	public override void CriInternalUpdate()
-	{
-		UnityEngine.Debug.LogError("TODO");
-	}
+	[DllImport(CriWare.pluginName)]
+	private static extern void criWareUnity_ResetError();
 
-	// // RVA: 0x2BAAFA0 Offset: 0x2BAAFA0 VA: 0x2BAAFA0 Slot: 7
-	public override void CriInternalLateUpdate()
-	{
-		UnityEngine.Debug.LogError("TODO");
-	}
+	[DllImport(CriWare.pluginName)]
+	private static extern void criWareUnity_ControlLogOutput(bool sw);
 
-	// // RVA: 0x2BAAFA4 Offset: 0x2BAAFA4 VA: 0x2BAAFA4
-	private void OnDestroy()
-	{
-		UnityEngine.Debug.LogError("TODO");
-	}
+	[DllImport(CriWare.pluginName)]
+	private static extern void criWareUnity_SetForceCrashFlagOnError(bool sw);
+	#endregion	
+} // end of class
 
-	// // RVA: 0x2BAACB0 Offset: 0x2BAACB0 VA: 0x2BAACB0
-	// private void DequeueErrorMessages() { }
+/// @}
 
-	// // RVA: 0x2BAB35C Offset: 0x2BAB35C VA: 0x2BAB35C
-	// private static void HandleMessage(string errmsg) { }
-
-	// // RVA: 0x2BAB594 Offset: 0x2BAB594 VA: 0x2BAB594
-	// private static void OutputDefaultLog(string errmsg) { }
-
-	// [MonoPInvokeCallbackAttribute] // RVA: 0x63651C Offset: 0x63651C VA: 0x63651C
-	// // RVA: 0x2BA9F84 Offset: 0x2BA9F84 VA: 0x2BA9F84
-	// private static void ErrorCallbackFromNative(string errmsg) { }
-
-	// // RVA: 0x2BAA818 Offset: 0x2BAA818 VA: 0x2BAA818
-	// private static extern void CRIWARE2944E024(uint length) { }
-
-	// // RVA: 0x2BAA618 Offset: 0x2BAA618 VA: 0x2BAA618
-	// private static extern void CRIWARE2DABE6AD() { }
-
-	// // RVA: 0x2BAB170 Offset: 0x2BAB170 VA: 0x2BAB170
-	// private static extern void CRIWARE992B1A7A() { }
-
-	// // RVA: 0x2BAA920 Offset: 0x2BAA920 VA: 0x2BAA920
-	// private static extern void CRIWAREE5C6ECB6(bool sw) { }
-
-	// // RVA: 0x2BAB078 Offset: 0x2BAB078 VA: 0x2BAB078
-	// private static extern void CRIWARE972AEE70() { }
-
-	// // RVA: 0x2BAB268 Offset: 0x2BAB268 VA: 0x2BAB268
-	// private static extern IntPtr CRIWARE24FFC2BE() { }
-
-	// // RVA: 0x2BAA710 Offset: 0x2BAA710 VA: 0x2BAA710
-	// private static extern void CRIWARE2AB443C5(bool sw) { }
-
-	// // RVA: 0x2BAAA38 Offset: 0x2BAAA38 VA: 0x2BAAA38
-	// private static extern void CRIWAREEA2D718D(CriWareErrorHandler.ErrorCallbackFunc callback) { }
-}
+/* --- end of file --- */
