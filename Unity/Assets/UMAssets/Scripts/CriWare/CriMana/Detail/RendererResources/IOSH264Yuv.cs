@@ -178,19 +178,19 @@ namespace CriMana.Detail
 		
 		
 		#region Native API Definitions
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern bool criManaUnityPlayer_VideoToolboxCreateContext_IOS(
 			int   player_id,
 			[Out] out NativeContext native_context
 			);
 
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_VideoToolboxDestroyContext_IOS(
 			int   player_id,
 			[In, Out] ref NativeContext native_context
 			);
 
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern bool criManaUnityPlayer_VideoToolboxUpdateTexture_IOS(
 			int   player_id,
 			[In, Out] FrameInfo frame_info,

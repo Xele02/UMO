@@ -20,7 +20,7 @@ public class PFHMOOFJMIM : LBHFILLFAGA
     // RVA: 0x16C24F8 Offset: 0x16C24F8 VA: 0x16C24F8 Slot: 4
     public override void BDALHEMDIDC_DoStart()
 	{
-		if(CriWare.IsStreamingAssetsPath(HHHEFALNMJO_mPath))
+		if(CriWare.Common.IsStreamingAssetsPath(HHHEFALNMJO_mPath))
 		{
 			IEJJKNOEKLM = new WWW(Application.streamingAssetsPath + HHHEFALNMJO_mPath);
 		}

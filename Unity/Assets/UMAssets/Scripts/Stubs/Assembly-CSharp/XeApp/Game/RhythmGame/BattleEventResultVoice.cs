@@ -1,3 +1,5 @@
+using CriWare;
+
 namespace XeApp.Game.RhythmGame
 {
 	public class BattleEventResultVoice

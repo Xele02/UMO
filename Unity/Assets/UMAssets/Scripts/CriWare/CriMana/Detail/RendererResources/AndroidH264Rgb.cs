@@ -193,19 +193,19 @@ namespace CriMana.Detail
 
 
 		#region Native API Definitions
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern System.UInt32 criManaUnity_MediaCodecCreateTexture_ANDROID();
 		
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnity_MediaCodecDeleteTexture_ANDROID(System.UInt32 oes_texture);
 
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern bool criManaUnityPlayer_MediaCodecAttachTexture_ANDROID(int player_id, System.UInt32 oes_texture);
 
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_MediaCodecDetachTexture_ANDROID(int player_id, System.UInt32 oes_texture);
 
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern bool criManaUnityPlayer_MediaCodecUpdateTexture_ANDROID(
 			int player_id,
 			[In, Out] FrameInfo frame_info,

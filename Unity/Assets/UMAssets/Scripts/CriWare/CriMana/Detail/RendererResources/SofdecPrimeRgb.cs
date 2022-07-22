@@ -174,7 +174,7 @@ namespace CriMana.Detail
 
 
 		#region Native API Definitions
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern bool criManaUnityPlayer_UpdateTexture(
 			int player_id,
 			System.IntPtr texbuf,

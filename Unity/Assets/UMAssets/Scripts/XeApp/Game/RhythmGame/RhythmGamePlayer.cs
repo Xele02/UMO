@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System;
 using XeApp.Game.Tutorial;
 using XeSys;
+using CriWare;
 
 namespace XeApp.Game.RhythmGame
 {

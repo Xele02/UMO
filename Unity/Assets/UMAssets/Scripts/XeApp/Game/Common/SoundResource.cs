@@ -1,4 +1,5 @@
 using System.Text;
+using CriWare;
 using XeSys;
 
 namespace XeApp.Game.Common

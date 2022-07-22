@@ -32,7 +32,7 @@ public class CriFsServer : MonoBehaviour
 	#region Internal Methods
 	public static void CreateInstance() {
 		if (_instance == null) {
-			CriWare.managerObject.AddComponent<CriFsServer>();
+			CriWare.Common.managerObject.AddComponent<CriFsServer>();
 			_instance.installBufferSize = CriFsPlugin.installBufferSize;
 		}		
 	}
@@ -71,7 +71,7 @@ public class CriFsServer : MonoBehaviour
 	void Update()
 	{
 		#pragma warning disable 162
-		if (CriWare.supportsCriFsInstaller == true) {
+		if (CriWare.Common.supportsCriFsInstaller == true) {
 			CriFsInstaller.ExecuteMain();
 		}
 		#pragma warning restore 162

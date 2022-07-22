@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.Events;
 using System;
 using XeSys;
+using CriWare;
 
 namespace XeApp.Game.Common
 {

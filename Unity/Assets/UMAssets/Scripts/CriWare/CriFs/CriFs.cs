@@ -15,6 +15,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Collections;
 using System.Collections.Generic;
+using CriWare;
 
 /*==========================================================================
  *      CRI File System Native Wrapper
@@ -198,30 +199,30 @@ public class CriFsLoader : IDisposable
 	#endregion
 	
 	#region DLLImport
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsLoader_Create(out IntPtr loader);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsLoader_Destroy(IntPtr loader);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsLoader_Load(IntPtr loader, IntPtr binder, string path, long offset, long load_size, IntPtr buffer, long buffer_size);
     
 #if !UNITY_EDITOR && UNITY_PSP2
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsLoader_LoadWorkaroundForVITA(IntPtr loader, IntPtr binder, long offset, string path, long load_size, IntPtr buffer, long buffer_size);
 #endif
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsLoader_LoadById(IntPtr loader, IntPtr binder, int id, long offset, long load_size, IntPtr buffer, long buffer_size);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsLoader_Stop(IntPtr loader);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsLoader_GetStatus(IntPtr loader, out Status status);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsLoader_SetReadUnitSize(IntPtr loader, long unit_size);
 	#endregion
 }
@@ -269,7 +270,7 @@ public class CriFsInstaller : IDisposable
 		/* ハンドルの作成 */
 		this.handle = IntPtr.Zero;
 		#pragma warning disable 162
-		if (CriWare.supportsCriFsInstaller == true) {
+		if (CriWare.Common.supportsCriFsInstaller == true) {
 			criFsInstaller_Create(out this.handle, CopyPolicy.Always);
 			if (this.handle == IntPtr.Zero) {
 				CriFsPlugin.FinalizeLibrary();
@@ -409,26 +410,26 @@ public class CriFsInstaller : IDisposable
 	#endregion
 	
 	#region DLLImport
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criFsInstaller_ExecuteMain();
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsInstaller_Create(out IntPtr installer, CopyPolicy option);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsInstaller_Destroy(IntPtr installer);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsInstaller_Copy(IntPtr installer, IntPtr binder, 
 		string src_path, string dst_path, IntPtr buffer, long buffer_size);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsInstaller_Stop(IntPtr installer);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsInstaller_GetStatus(IntPtr installer, out Status status);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsInstaller_GetProgress(IntPtr installer, out float progress);
 	#endregion
 }
@@ -708,37 +709,37 @@ public class CriFsBinder : IDisposable
 	#endregion
 	
 	#region DLLImport
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern uint criFsBinder_Create(out IntPtr binder);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern uint criFsBinder_Destroy(IntPtr binder);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern uint criFsBinder_BindCpk(IntPtr binder, 
 		IntPtr srcBinder, string path, IntPtr work, int worksize, out uint bindId);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern uint criFsBinder_BindDirectory(IntPtr binder, 
 		IntPtr srcBinder, string path, IntPtr work, int worksize, out uint bindId);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern uint criFsBinder_BindFile(IntPtr binder, 
 		IntPtr srcBinder, string path, IntPtr work, int worksize, out uint bindId);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsBinder_Unbind(uint bindId);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsBinder_GetStatus(uint bindId, out Status status);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsBinder_GetFileSize(IntPtr binder, string path, out long size);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsBinder_GetFileSizeById(IntPtr binder, int id, out long size);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criFsBinder_SetPriority(uint bindId, int priority);
 
 	#endregion
@@ -1968,10 +1969,10 @@ public static class CriFsUtility
 	#region Native API Definition (DLL)
 	// CRI File System Unity
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern bool criFsUnity_SetUserAgentString(string userAgentString);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern bool criFsUnity_SetProxyServer(string proxyPath, UInt16 proxyPort);
 	#endregion
 }
@@ -1994,6 +1995,8 @@ public static class CriFsPlugin
 			num_loaders, num_binders, num_installers, max_path, minimize_file_descriptor_usage);
 		installBufferSize = argInstallBufferSize;
 	}
+
+	public static bool IsLibraryInitialized() { return isInitialized; } // tmp
 
 	public static void SetConfigAdditionalParameters_ANDROID(
 		int device_read_bps)
@@ -2060,30 +2063,30 @@ public static class CriFsPlugin
 	
     #region Native API Definition (DLL)
 	// CRI File System Unity
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criFsUnity_SetConfigParameters(
 		int num_loaders, int num_binders, int num_installers, int max_path, bool minimize_file_descriptor_usage);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criFsUnity_Initialize();
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criFsUnity_Finalize();
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	public static extern uint criFsUnity_GetAllocatedHeapSize();
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	public static extern UInt32 criFsLoader_GetRetryCount();
 
 	#if !UNITY_EDITOR && UNITY_ANDROID
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criFsUnity_SetConfigAdditionalParameters_ANDROID(int device_read_bps);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	public static extern void criFsUnity_SetMemoryFileSystemThreadPriority_ANDROID(int prio);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	public static extern void criFsUnity_SetDataDecompressionThreadPriority_ANDROID(int prio);
 	#endif
 

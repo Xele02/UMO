@@ -201,7 +201,7 @@ namespace CriMana.Detail
 
 
 		#region Native API Definitions
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern bool criManaUnityPlayer_UpdateTextureYuvByPtr(
 			int player_id,
 			System.IntPtr texid_y,
@@ -210,7 +210,7 @@ namespace CriMana.Detail
 			[In, Out] FrameInfo frame_info
 			);
 
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern bool criManaUnityPlayer_UpdateTextureYuvaByPtr(
 			int player_id,
 			System.IntPtr texid_y,

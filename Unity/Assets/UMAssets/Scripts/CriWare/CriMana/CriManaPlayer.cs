@@ -666,8 +666,8 @@ public class CriManaPlayer : MonoBehaviour
 			trueMoviePath = argMoviePath;
 		} else {
 			trueMoviePath = 
-				CriWare.IsStreamingAssetsPath(argMoviePath) 
-				? Path.Combine(CriWare.streamingAssetsPath, argMoviePath)
+				CriWare.Common.IsStreamingAssetsPath(argMoviePath) 
+				? Path.Combine(CriWare.Common.streamingAssetsPath, argMoviePath)
 				: argMoviePath;
 		}
 		
@@ -1081,7 +1081,7 @@ public class CriManaPlayer : MonoBehaviour
 	#region MonoBehavior inherited functions
 
 #if !CRIPLUGIN_USE_OLD_LOWLEVEL_INTERFACE && !(UNITY_IOS || UNITY_TVOS)
-    [DllImport(CriWare.pluginName)]
+    [DllImport(CriWare.Common.pluginName)]
     private static extern IntPtr GetRenderEventFunc();
 #endif
 
@@ -1213,8 +1213,8 @@ public class CriManaPlayer : MonoBehaviour
 			setFileDelegate = () =>
 			{
 				string usmPath = 
-					CriWare.IsStreamingAssetsPath(moviePath) 
-					? Path.Combine(CriWare.streamingAssetsPath, moviePath)
+					CriWare.Common.IsStreamingAssetsPath(moviePath) 
+					? Path.Combine(CriWare.Common.streamingAssetsPath, moviePath)
 					: moviePath;
 				criManaUnityPlayer_SetFile_APIv1(playerId, IntPtr.Zero, usmPath);
 			};
@@ -1361,97 +1361,97 @@ public class CriManaPlayer : MonoBehaviour
 
 	
 	#region Native API Definition
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criManaUnityPlayer_Create_APIv1();
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_Destroy_APIv1(int player_id);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_SetFile_APIv1(int player_id, IntPtr binder, string path);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_SetContentId_APIv1(int player_id, IntPtr binder, int content_id);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_SetFileRange_APIv1(int player_id, string path, UInt64 offset, Int64 range);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern bool criManaUnityPlayer_EntryFile_APIv1(int player_id, IntPtr binder, string path, bool repeat);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern bool criManaUnityPlayer_EntryContentId_APIv1(int player_id, IntPtr binder, int content_id, bool repeat);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern bool criManaUnityPlayer_EntryFileRange_APIv1(int player_id, string path, UInt64 offset, Int64 range, bool repeat);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_ClearEntry_APIv1(int player_id);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern Int32 criManaUnityPlayer_GetNumberOfEntry_APIv1(int player_id);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_SetCuePointCallback_APIv1(
 		int player_id,
 		CuePointCallbackFromNativeDelegate cbfunc
 		);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_GetMovieInfo_APIv1(int player_id, [Out] CriManaPlayer.MovieInfo movie_info);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criManaUnityPlayer_Update_APIv1(int player_id);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_Prepare_APIv1(int player_id);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_Start_APIv1(int player_id);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_Stop_APIv1(int player_id);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_SetSeekPosition_APIv1(int player_id, int seek_frame_no);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_Pause_APIv1(int player_id, int sw);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern bool criManaUnityPlayer_IsPaused_APIv1(int player_id);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_Loop_APIv1(int player_id, int sw);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern long criManaUnityPlayer_GetTime_APIv1(int player_id);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern int criManaUnityPlayer_GetStatus_APIv1(int player_id);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_SetAudioTrack_APIv1(int player_id, int track);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_SetVolume_APIv1(int player_id, float vol);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_SetSubAudioTrack_APIv1(int player_id, int track);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_SetSubAudioVolume_APIv1(int player_id, float vol);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_SetSpeed_APIv1(int player_id, float speed);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnityPlayer_SetDeviceSendLevel_APIv1(int player_id, int device_id, float level);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	public static extern bool criManaUnityPlayer_UpdateTexture_APIv1(int player_id, IntPtr texbuf, [Out] CriManaPlayer.FrameInfo frame_info);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	public static extern bool criManaUnityPlayer_UpdateTextureYuvByPtr_APIv1(
 		int player_id,
 		IntPtr texid_y,
@@ -1460,7 +1460,7 @@ public class CriManaPlayer : MonoBehaviour
 		[Out] CriManaPlayer.FrameInfo frame_info
 		);
 	
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	public static extern bool criManaUnityPlayer_UpdateTextureYuvaByPtr_APIv1(
 		int player_id,
 		IntPtr texid_y,

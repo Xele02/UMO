@@ -14,7 +14,7 @@ using UnityEngine;
 using System;
 using System.Runtime.InteropServices;
 using System.IO;
-
+using CriWare;
 
 namespace CriMana
 {
@@ -138,7 +138,7 @@ public class CriManaPlugin
 	/* 初期化カウンタ */
 	private static int initializationCount = 0;
 	public static bool isInitialized { get { return initializationCount > 0; } }
-
+	public static bool IsLibraryInitialized() { return isInitialized; } // tmp
 	public static string cuePointFormatDelimiter;
 
 	private static bool enabledMultithreadedRendering = false;
@@ -269,23 +269,23 @@ public class CriManaPlugin
 	}
 
 	#region Native API Definition
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnity_SetConfigParameters(int graphics_api, bool graphics_multi_threaded, int num_decoders, int num_of_max_entries);
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnity_Initialize();
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	private static extern void criManaUnity_Finalize();
 
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	public static extern uint criManaUnity_GetAllocatedHeapSize();
 	
 #if !UNITY_EDITOR && UNITY_ANDROID
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	public static extern void criManaUnity_SetDecodeThreadPriority_ANDROID(int prio);
 #elif !UNITY_EDITOR && UNITY_PSP2
-	[DllImport(CriWare.pluginName)]
+	[DllImport(CriWare.Common.pluginName)]
 	public static extern void criManaUnity_SetConfigAdditionalParameters_VITA(bool use_h264_playback, UInt32 width, UInt32 height);
 #endif
 

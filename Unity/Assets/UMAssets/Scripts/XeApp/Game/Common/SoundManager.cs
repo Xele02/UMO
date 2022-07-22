@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
+using CriWare;
 
 namespace XeApp.Game.Common
 {

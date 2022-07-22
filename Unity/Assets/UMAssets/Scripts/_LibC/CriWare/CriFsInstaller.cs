@@ -12,7 +12,7 @@ namespace ExternLib
             FileInfo fi = new FileInfo(path);
             if(!fi.Exists)
             {
-                string nPath = path.Replace(CriWare.streamingAssetsPath, Path.Combine(CriWare.streamingAssetsPath, "../../../Data/"));
+                string nPath = path.Replace(CriWare.Common.streamingAssetsPath, Path.Combine(CriWare.Common.streamingAssetsPath, "../../../Data/"));
                 FileInfo tfi = new FileInfo(nPath);
                 if(tfi.Exists)
                     fi = tfi;

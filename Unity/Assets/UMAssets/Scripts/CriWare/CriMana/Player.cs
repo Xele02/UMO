@@ -457,8 +457,8 @@ namespace CriMana
 		public bool SetFile(CriFsBinder binder, string moviePath, SetMode setMode = SetMode.New)
 		{
 			System.IntPtr binderPtr = (binder == null) ? System.IntPtr.Zero : binder.nativeHandle;
-			if ((binder == null) && CriWare.IsStreamingAssetsPath(moviePath) ) {
-				moviePath = System.IO.Path.Combine(CriWare.streamingAssetsPath, moviePath);
+			if ((binder == null) && CriWare.Common.IsStreamingAssetsPath(moviePath) ) {
+				moviePath = System.IO.Path.Combine(CriWare.Common.streamingAssetsPath, moviePath);
 			}
 			if (setMode == SetMode.New) {
 				criManaUnityPlayer_SetFile(playerId, binderPtr, moviePath);
@@ -900,7 +900,7 @@ namespace CriMana
 		}
 
 #if !CRIPLUGIN_USE_OLD_LOWLEVEL_INTERFACE && !(UNITY_IOS || UNITY_TVOS)
-        [DllImport(CriWare.pluginName)]
+        [DllImport(CriWare.Common.pluginName)]
         private static extern IntPtr GetRenderEventFunc();
 #endif
 
@@ -1001,76 +1001,76 @@ namespace CriMana
 
 
 		#region Native API Definitions
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern int criManaUnityPlayer_Create();
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_Destroy(int player_id);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetFile(int player_id, System.IntPtr binder, string path);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetContentId(int player_id, System.IntPtr binder, int content_id);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetFileRange(int player_id, string path, System.UInt64 offset, System.Int64 range);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern bool criManaUnityPlayer_EntryFile(int player_id, System.IntPtr binder, string path, bool repeat);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern bool criManaUnityPlayer_EntryContentId(int player_id, System.IntPtr binder, int content_id, bool repeat);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern bool criManaUnityPlayer_EntryFileRange(int player_id, string path, System.UInt64 offset, System.Int64 range, bool repeat);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_ClearEntry(int player_id);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern System.Int32 criManaUnityPlayer_GetNumberOfEntry(int player_id);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetCuePointCallback(
 			int player_id,
 			CuePointCallbackFromNativeDelegate cbfunc
 			);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_GetMovieInfo(int player_id, [Out] MovieInfo movie_info);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern int criManaUnityPlayer_Update(
 			int player_id,
 			System.IntPtr subtitle_buffer,
 			ref uint subtitle_size
 			);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_Prepare(int player_id);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_Start(int player_id);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_Stop(int player_id);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetSeekPosition(int player_id, int seek_frame_no);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_Pause(int player_id, int sw);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern bool criManaUnityPlayer_IsPaused(int player_id);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_Loop(int player_id, int sw);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern long criManaUnityPlayer_GetTime(int player_id);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern int criManaUnityPlayer_GetStatus(int player_id);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetAudioTrack(int player_id, int track);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetVolume(int player_id, float vol);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetSubAudioTrack(int player_id, int track);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetSubAudioVolume(int player_id, float vol);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetBusSendLevelByName(int player_id, string bus_name, float level);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetSubAudioBusSendLevelByName(int player_id, string bus_name, float level);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetSubtitleChannel(int player_id, int channel);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetSpeed(int player_id, float speed);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetDeviceSendLevel(int player_id, int device_id, float level);
-		[DllImport(CriWare.pluginName)]
+		[DllImport(CriWare.Common.pluginName)]
 		private static extern void criManaUnityPlayer_SetMaxPictureDataSize(int player_id, System.UInt32 max_data_size);
 		#endregion
 	}

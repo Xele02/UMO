@@ -18,7 +18,7 @@ public class CriMonoBehaviourManager : MonoBehaviour
         if(_instance != null)
             return;
         
-        CriWare.managerObject.AddComponent<CriMonoBehaviourManager>();
+        CriWare.Common.managerObject.AddComponent<CriMonoBehaviourManager>();
     }
 
 	// RVA: 0x2966A34 Offset: 0x2966A34 VA: 0x2966A34
