@@ -1,6 +1,7 @@
 using XeSys;
 using System;
 using UnityEngine;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -45,6 +46,14 @@ namespace XeApp.Game.Menu
 		public static void SetUserData()
 		{
 			UnityEngine.Debug.LogWarning("TODO ConfigManager SetUserData");
+			ILDKBCLAFPB.MPHNGGECENI_Option defaultOption = new ILDKBCLAFPB.MPHNGGECENI_Option();
+			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.MENU_BGM, defaultOption.HOMPENLIHCK_VolBgm, false);
+			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.MENU_SE, defaultOption.BGLLCLEDHKK_VolSe, false);
+			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.MENU_VOICE, defaultOption.CNCIMBGLKOB_VolVoice, false);
+			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_BGM, defaultOption.ICGAOAFIHFD_VolBgmRhythm, false);
+			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_SE, defaultOption.LMDACNNJDOE_VolSeRhythm, false);
+			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_NOTES, defaultOption.IBEINHHMHAC_VolNotesRhythm, false);
+			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_VOICE, defaultOption.FCKEDCKCEFC_VolVoiceRhythm, false);
 		}
 
 		// // RVA: 0x1B57C34 Offset: 0x1B57C34 VA: 0x1B57C34

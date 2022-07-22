@@ -198,20 +198,21 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB305FC Offset: 0xB305FC VA: 0xB305FC Slot: 12
 		protected override bool DoUpdateEnter()
 		{
-			if(!m_isInitializeing && m_isChangedCueSheet)
+			if (!m_isInitializeing && m_isChangedCueSheet)
 			{
-				if(m_isSceneEnter)
+				if (m_isSceneEnter)
 					return false;
-				MenuUpdater.updater = () => {
+				MenuUpdater.updater = () =>
+				{
 					//0xB37CC8
-					if(m_menuTransitionControl.DirtyChangeScene && m_isInTransition)
+					if (m_menuTransitionControl.DirtyChangeScene && m_isInTransition)
 					{
 						Debug.Log("transition requested but in transition");
 					}
-					if(m_menuTransitionControl.DirtyChangeScene && !m_isInTransition)
+					if (m_menuTransitionControl.DirtyChangeScene && !m_isInTransition)
 					{
 						StartCoroutine(ChangeTransitionCoroutine());
-						if(m_playerStatusData != null)
+						if (m_playerStatusData != null)
 						{
 							m_playerStatusData.FBANBDCOEJL();
 							m_menuTransitionControl.ApplyPlayerStatus(m_playerStatusData);

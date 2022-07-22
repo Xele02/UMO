@@ -153,16 +153,80 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1396FA0 Offset: 0x1396FA0 VA: 0x1396FA0
 		public void SetCategoryVolumeFromMark(CategoryId a_id, int a_mark, bool a_is_slive = false)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			float val = Mathf.Clamp((float)a_mark, 0, 20);
+			val = val / 20;
+			if(a_id == CategoryId.GAME_NOTES)
+			{
+				if(a_is_slive)
+				{
+					val = val + 0.35f;
+				}
+				else
+				{
+					val = val * 1.35f;
+				}
+			}
+			SetCategoryVolume(a_id, val);
 		}
 
 		// // RVA: 0x1397094 Offset: 0x1397094 VA: 0x1397094
-		// public void SetCategoryVolume(SoundManager.CategoryId id, float vol) { }
+		public void SetCategoryVolume(SoundManager.CategoryId id, float vol)
+		{
+			switch(id)
+			{
+				case CategoryId.MENU_SE:
+					CriAtom.SetCategoryVolume(0, vol);
+					break;
+				case CategoryId.MENU_VOICE:
+					CriAtom.SetCategoryVolume(1, vol);
+					break;
+				case CategoryId.MENU_BGM:
+					CriAtom.SetCategoryVolume(2, vol);
+					break;
+				case CategoryId.GAME_SE:
+					CriAtom.SetCategoryVolume(10, vol);
+					break;
+				case CategoryId.GAME_VOICE:
+					CriAtom.SetCategoryVolume(12, vol);
+					break;
+				case CategoryId.GAME_BGM:
+					CriAtom.SetCategoryVolume(13, vol);
+					break;
+				case CategoryId.GAME_NOTES:
+					CriAtom.SetCategoryVolume(14, vol);
+					break;
+				default: break;
+			}
+		}
 
 		// // RVA: 0x139729C Offset: 0x139729C VA: 0x139729C
 		public float GetCategoryVolume(SoundManager.CategoryId id)
 		{
-			UnityEngine.Debug.LogWarning("TODO SoundManager.GetCategoryVolume");
+			switch (id)
+			{
+				case CategoryId.MENU_SE:
+					return CriAtom.GetCategoryVolume(0);
+					break;
+				case CategoryId.MENU_VOICE:
+					return CriAtom.GetCategoryVolume(1);
+					break;
+				case CategoryId.MENU_BGM:
+					return CriAtom.GetCategoryVolume(2);
+					break;
+				case CategoryId.GAME_SE:
+					return CriAtom.GetCategoryVolume(10);
+					break;
+				case CategoryId.GAME_VOICE:
+					return CriAtom.GetCategoryVolume(12);
+					break;
+				case CategoryId.GAME_BGM:
+					return CriAtom.GetCategoryVolume(13);
+					break;
+				case CategoryId.GAME_NOTES:
+					return CriAtom.GetCategoryVolume(14);
+					break;
+				default: break;
+			}
 			return 0;
 		}
 

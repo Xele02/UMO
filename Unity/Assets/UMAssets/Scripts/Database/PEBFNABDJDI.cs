@@ -73,7 +73,14 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 	// public int GAGDEIMGBBG(int JIKLEHGJKBH) { }
 
 	// // RVA: 0xCC4C4C Offset: 0xCC4C4C VA: 0xCC4C4C
-	// public int DDGHBNLOBAJ(string OPFGFINHFCE) { }
+	public int DDGHBNLOBAJ(string OPFGFINHFCE)
+	{
+		UnityEngine.Debug.LogError("TODO DDGHBNLOBAJ is cuesheet encrypted");
+		return 0;
+		if (!KBAPDOLLLAN.ContainsKey(OPFGFINHFCE))
+			return 0;
+		return KBAPDOLLLAN[OPFGFINHFCE];
+	}
 
 	// // RVA: 0xCC4D0C Offset: 0xCC4D0C VA: 0xCC4D0C
 	public PEBFNABDJDI_System()

@@ -1,4 +1,7 @@
+using System;
+using System.Text;
 using UnityEngine.Events;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -17,34 +20,148 @@ namespace XeApp.Game.Common
 		// public long timeSyncedWithAudio { get; private set; } 0xE61350 0xE6137C
 
 		// // RVA: 0xE60AA4 Offset: 0xE60AA4 VA: 0xE60AA4
-		// public static void ConvertBgmIdToCueSheetName(int bgmId, ref string cueSheetName) { }
+		public static void ConvertBgmIdToCueSheetName(int bgmId, ref string cueSheetName)
+		{
+			StringBuilder str = new StringBuilder();
+			if(bgmId < MINIGAME_BGM_ID_BASE)
+			{
+				if(bgmId < AR_BGM_ID_BASE)
+				{
+					if(bgmId < PROLOGUE_BGM)
+					{
+						if(bgmId < ADJUST_BGM)
+						{
+							if(bgmId < MENU_TRIAL_ID_BASE)
+							{
+								if(bgmId < MENU_BGM_ID_BASE)
+								{
+									str.SetFormat("cs_w_{0:D4}", bgmId);
+								}
+								else
+								{
+									str.SetFormat("cs_bgm_{0:D3}", bgmId - MENU_BGM_ID_BASE);
+								}
+							}
+							else
+							{
+								str.SetFormat("cs_w_{0:D4}", bgmId - MENU_TRIAL_ID_BASE);
+							}
+						}
+						else
+						{
+							cueSheetName = "cs_bgm_adjust";
+							return;
+						}
+					}
+					else
+					{
+						cueSheetName = "cs_bgm_tutorial";
+						return;
+					}
+				}
+				else
+				{
+					str.SetFormat("cs_ar_w_{0:D4}", bgmId - AR_BGM_ID_BASE);
+				}
+			}
+			else
+			{
+				str.SetFormat("cs_bgm_minigame_{0:D3}", bgmId - MINIGAME_BGM_ID_BASE);
+			}
+			cueSheetName = str.ToString();
+		}
 
 		// // RVA: 0xE60EC0 Offset: 0xE60EC0 VA: 0xE60EC0
-		// public static void ConvertBgmIdToCueName(int bgmId, ref string cueName) { }
+		public static void ConvertBgmIdToCueName(int bgmId, ref string cueName)
+		{
+			StringBuilder str = new StringBuilder();
+			if (bgmId < MINIGAME_BGM_ID_BASE)
+			{
+				if (bgmId < AR_BGM_ID_BASE)
+				{
+					if (bgmId < PROLOGUE_BGM)
+					{
+						if (bgmId < ADJUST_BGM)
+						{
+							if (bgmId < MENU_TRIAL_ID_BASE)
+							{
+								if (bgmId < MENU_BGM_ID_BASE)
+								{
+									str.SetFormat("w_{0:D4}_chorus", bgmId);
+								}
+								else
+								{
+									str.SetFormat("bgm_{0:D3}", bgmId - MENU_BGM_ID_BASE);
+								}
+							}
+							else
+							{
+								str.SetFormat("w_{0:D4}_chorus", bgmId - MENU_TRIAL_ID_BASE);
+							}
+						}
+						else
+						{
+							cueName = "bgm_adjust";
+							return;
+						}
+					}
+					else
+					{
+						cueName = "cs_bgm_tutorial";
+						return;
+					}
+				}
+				else
+				{
+					str.SetFormat("ar_w_{0:D4}", bgmId - AR_BGM_ID_BASE);
+				}
+			}
+			else
+			{
+				str.SetFormat("bgm_minigame_{0:D3}", bgmId - MINIGAME_BGM_ID_BASE);
+			}
+			cueName = str.ToString();
+		}
 
 		// // RVA: 0xE61380 Offset: 0xE61380 VA: 0xE61380 Slot: 6
-		/*protected override void OnAwake()
+		protected override void OnAwake()
 		{
-			UnityEngine.Debug.LogError("TODO");
-		}*/
+			bgmSource = gameObject.AddComponent<CriAtomBgmSource>();
+			currentBgmId = -1;
+		}
 
 		// // RVA: 0xE61410 Offset: 0xE61410 VA: 0xE61410
 		public bool RequestChangeCueSheet(int wavId, UnityAction onEndCallback)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return false;
+			string sheetName = string.Empty;
+			ConvertBgmIdToCueSheetName(wavId, ref sheetName);
+			return RequestChangeCueSheet(sheetName, onEndCallback);
 		}
 
 		// // RVA: 0xE614D4 Offset: 0xE614D4 VA: 0xE614D4
 		public void ChangeMusicCue(int bgmId)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			string sheetName = string.Empty;
+			ConvertBgmIdToCueSheetName(bgmId, ref sheetName);
+			source.cueName = sheetName;
+			currentBgmId = bgmId;
 		}
 
 		// // RVA: 0xE615C0 Offset: 0xE615C0 VA: 0xE615C0
 		public void Play(int bgmId, float volume = 1)
 		{
-			UnityEngine.Debug.LogWarning("TODO BgmPlayer Play");
+			StopCue();
+			currentBgmId = -1;
+			string sheetName = string.Empty;
+			ConvertBgmIdToCueSheetName(bgmId, ref sheetName);
+			ChangeCueSheet(sheetName);
+			if (SoundResource.isSecureCueSheet(sheetName))
+				isPlayedSecureMusic = true;
+			string cueName = string.Empty;
+			ConvertBgmIdToCueName(bgmId, ref cueName);
+			PlayCue(cueName);
+			ChangeVolume(0, volume, null);
+			currentBgmId = bgmId;
 		}
 
 		// // RVA: 0xE61848 Offset: 0xE61848 VA: 0xE61848
@@ -57,6 +174,14 @@ namespace XeApp.Game.Common
 		// public void FadeOut(float sec, Action onStop) { }
 
 		// // RVA: 0xE61760 Offset: 0xE61760 VA: 0xE61760
-		// public void ChangeVolume(float sec, float targetVol, Action onEnd) { }
+		public new void ChangeVolume(float sec, float targetVol, Action onEnd)
+		{
+			base.ChangeVolume(sec,targetVol, () =>
+			{
+				//0xE61A08
+				if (onEnd != null)
+					onEnd();
+			});
+		}
 	}
 }
