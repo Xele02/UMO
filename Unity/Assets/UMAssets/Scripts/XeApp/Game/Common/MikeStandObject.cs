@@ -62,7 +62,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1118490 Offset: 0x1118490 VA: 0x1118490
-		//public void AttachMike(GameObject obj) { }
+		public void AttachMike(GameObject obj)
+		{
+			obj.transform.SetParent(mikeAttachPoint, false);
+		}
 
 		//// RVA: 0x11184EC Offset: 0x11184EC VA: 0x11184EC
 		public void SetTime(double time)

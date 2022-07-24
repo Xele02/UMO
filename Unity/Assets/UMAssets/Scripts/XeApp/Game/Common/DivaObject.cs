@@ -122,12 +122,12 @@ namespace XeApp.Game.Common
 			}
 			if(resource.mikePrefab != null)
 			{
-				GameObject mikePrefab = resource.mikePrefab;
+				GameObject mikePrefab_ = resource.mikePrefab;
 				if(useCommonMike && resource.mikeCommonPrefab != null)
 				{
-					mikePrefab = resource.mikeCommonPrefab;
+					mikePrefab_ = resource.mikeCommonPrefab;
 				}
-				mikePrefab = Instantiate(mikePrefab);
+				mikePrefab = Instantiate(mikePrefab_);
 				mikePrefab.transform.SetParent(transform, false);
 				mikePrefab.SetActive(false);
 			}
@@ -267,7 +267,12 @@ namespace XeApp.Game.Common
 		//public void Release() { }
 
 		//// RVA: 0x1BF0150 Offset: 0x1BF0150 VA: 0x1BF0150
-		//public void SetActiveMikePrefab(bool active) { }
+		public void SetActiveMikePrefab(bool active)
+		{
+			if(mikePrefab == null)
+				return;
+			mikePrefab.SetActive(active);
+		}
 
 		//// RVA: 0x1BF497C Offset: 0x1BF497C VA: 0x1BF497C
 		public void AdjustHight(float offset)
@@ -281,19 +286,34 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1BF023C Offset: 0x1BF023C VA: 0x1BF023C
 		public void AttachMikeToLeftHand()
 		{
-			UnityEngine.Debug.LogError("TODO AttachMikeToLeftHand");
+			if(leftHandAttachNode == null)
+				return;
+			if(mikePrefab == null)
+				return;
+			SetActiveMikePrefab(true);
+			mikePrefab.transform.SetParent(leftHandAttachNode, false);
 		}
 
 		//// RVA: 0x1BF039C Offset: 0x1BF039C VA: 0x1BF039C
 		public void AttachMikeToRightHand()
 		{
-			UnityEngine.Debug.LogError("TODO AttachMikeToRightHand");
+			if(rightHandAttachNode == null)
+				return;
+			if(mikePrefab == null)
+				return;
+			SetActiveMikePrefab(true);
+			mikePrefab.transform.SetParent(rightHandAttachNode, false);
 		}
 
 		//// RVA: 0x1BF04FC Offset: 0x1BF04FC VA: 0x1BF04FC
 		public void AttachToMikeStand()
 		{
-			UnityEngine.Debug.LogError("TODO AttachToMikeStand");
+			if(mikeStandObject == null)
+				return;
+			if(mikePrefab == null)
+				return;
+			SetActiveMikePrefab(true);
+			mikeStandObject.AttachMike(mikePrefab);
 		}
 
 		//// RVA: 0x1BEBB98 Offset: 0x1BEBB98 VA: 0x1BEBB98
