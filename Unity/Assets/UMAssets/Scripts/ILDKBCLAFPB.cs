@@ -49,7 +49,7 @@ public class ILDKBCLAFPB
         public int NFMEIILKACN_NotesRoute; // 0x28
         public int NAGJLEIPAAC_Cutin; // 0x2C
         public int DADIPGPHLDD_EffectCutin; // 0x30
-        public int DDHCLNFPNGK_RenderQuality = 1; // 0x34
+        public int DDHCLNFPNGK_RenderQuality = 0;// Tmp to init in full quality 1; // 0x34
         public int GEPLOFLHAOL_NeedInitRenderQuality; // 0x38
         public int OJAJHIMOIEC_NoteOffset; // 0x3C
         public int OAKOJGPBAJF_BackKey; // 0x40

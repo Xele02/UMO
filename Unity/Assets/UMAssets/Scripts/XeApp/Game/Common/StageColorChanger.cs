@@ -97,7 +97,7 @@ namespace XeApp.Game.Common
 						int idx = i % a_list.Count;
 						Color newcol = Color.Lerp(col, a_list[idx], a_list[idx].a);
 						newcol.a = col.a;
-						psylliumMaterial.SetColor("_Color", newcol);
+						psylliumMaterial.SetColor("_Color" + (i+1), newcol);
 					}
 				}
 			}

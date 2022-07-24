@@ -272,6 +272,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAE51D4 Offset: 0xAE51D4 VA: 0xAE51D4
-		// public void CameraOffset(AnimationEvent evt) { }
+		public void CameraOffset(AnimationEvent evt)
+		{
+			targetId = evt.intParameter % 10;
+			nextTargetId = evt.intParameter / 10;
+		}
 	}
 }
