@@ -15,7 +15,7 @@ public class BFGOCONGNDK
 	// // RVA: 0xC79E1C Offset: 0xC79E1C VA: 0xC79E1C
 	private string HIOMFHINAAH()
 	{
-		return CJMOKHDNBNB.FIPFFELDIOG + "/sys/" + KCOGAGGCPBP.OGIALGFMODF; // 05
+		return CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/sys/" + KCOGAGGCPBP.OGIALGFMODF; // 05
 	}
 
 	// // RVA: 0xC79EFC Offset: 0xC79EFC VA: 0xC79EFC
@@ -64,7 +64,7 @@ public class BFGOCONGNDK
 
 		if(OENPCNBFPDA == ODJPFMGNDML)
 		{
-			string fileBg = CJMOKHDNBNB.FIPFFELDIOG + "/data/android/" + NLMBMNKEINP(ODJPFMGNDML);
+			string fileBg = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data/android/" + NLMBMNKEINP(ODJPFMGNDML);
 			//if(File.Exists(fileBg))
 			if(FileSystemProxy.FileExists(fileBg))
 			{

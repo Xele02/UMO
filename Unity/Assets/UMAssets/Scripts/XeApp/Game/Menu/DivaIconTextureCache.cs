@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 		public void TryStateDivaUpIconInstall(int divaId, int modelId, int colorId)
 		{
 			m_strBuilder.Set(GetIconPath(IconType.PS, divaId, modelId, colorId));
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC(m_strBuilder.ToString());
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_NeedFileInstall(m_strBuilder.ToString());
 		}
 
 		// // RVA: 0x17E4774 Offset: 0x17E4774 VA: 0x17E4774
@@ -149,7 +149,7 @@ namespace XeApp.Game.Menu
 		public void TryLoadDivaSmallBustupIcon(int divaId, int modelId)
 		{
 			m_strBuilder.SetFormat(DivaSmallBustupPath, divaId, modelId);
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC(m_strBuilder.ToString());
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_NeedFileInstall(m_strBuilder.ToString());
 		}
 
 		// // RVA: 0x17E4B28 Offset: 0x17E4B28 VA: 0x17E4B28

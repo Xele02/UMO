@@ -62,7 +62,7 @@ public class BBGDKLLEPIB
 	public static string OGCDNCDMLCA { get { 
 		if(JCMJBMBMJAK == null)
 		{
-			string str = CJMOKHDNBNB.FIPFFELDIOG;
+			string str = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath;
 			if(string.IsNullOrEmpty(str))
 			{
 				Debug.LogError("Install.InstallPathManager.CriWare_installTargetPath is null");
@@ -94,7 +94,7 @@ public class BBGDKLLEPIB
 	public void PAHGEEOFEPM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
     {
 		BBGDKLLEPIB.LHJNPJFNDNA = "";
-		JCMJBMBMJAK = CJMOKHDNBNB.FIPFFELDIOG + "/mx";
+		JCMJBMBMJAK = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/mx";
 		N.a.StartCoroutine(EOFJPNPFGDM_Coroutine_Install(BHFHGFKBOHH, MOBEEPPKFLG));
     }
 
@@ -218,9 +218,9 @@ public class BBGDKLLEPIB
 		{
 			OEPPEGHGNNO(1, 0);
 		}
-		JEHIAIPJNJF MHHFMCPJONH = new JEHIAIPJNJF();
+		JEHIAIPJNJF_FileDownloader MHHFMCPJONH = new JEHIAIPJNJF_FileDownloader();
 		MHHFMCPJONH.DOMFHDPMCCO(ICCMKHKNAMJ, FLHOFIEOKDH, JCMJBMBMJAK);
-		MHHFMCPJONH.LBGNKOJFOFC = (JEHIAIPJNJF.HCJPJKCIBDL JGBPLIGAILE) => {
+		MHHFMCPJONH.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL JGBPLIGAILE) => {
 			//0xF1A318
 			UnityEngine.Debug.Log("download "+JGBPLIGAILE.AJPIGKBIDDL);
 			FAOOOLDDBBB[JGBPLIGAILE.LAPFOLJGJMB.OIEAICNAMNB] = 2;
@@ -232,7 +232,7 @@ public class BBGDKLLEPIB
 			yield return null;
 			MHHFMCPJONH.FBANBDCOEJL();
 			//L.312
-			if(MHHFMCPJONH.CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.FEJIMBDPMKI/*2*/)
+			if(MHHFMCPJONH.CMCKNKKCNDK == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.FEJIMBDPMKI/*2*/)
 			{
 				OEPPEGHGNNO(3, 100);
 				if(MHHFMCPJONH != null)
@@ -262,7 +262,7 @@ public class BBGDKLLEPIB
 				yield break;
 			}
 			//L361
-			if(MHHFMCPJONH.CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.LPLEIJIFOKN/*4*/)
+			if(MHHFMCPJONH.CMCKNKKCNDK == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.LPLEIJIFOKN/*4*/)
 			{
 				int APGOAMNGFFF = 0;
 				string errorType = "network";
@@ -292,7 +292,7 @@ public class BBGDKLLEPIB
 				MHHFMCPJONH.PBIMGBKLDPP();
 				//goto LAB_00f1abe8;
 				//6
-				while(MHHFMCPJONH.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+				while(MHHFMCPJONH.CMCKNKKCNDK != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
 				{
 					MHHFMCPJONH.FBANBDCOEJL();
 					yield return null;
@@ -311,7 +311,7 @@ public class BBGDKLLEPIB
 				MHHFMCPJONH.PBIMGBKLDPP();
 				//goto LAB_00f1ac10;
 				//7
-				while(MHHFMCPJONH.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+				while(MHHFMCPJONH.CMCKNKKCNDK != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
 				{
 					MHHFMCPJONH.FBANBDCOEJL();
 					yield return null;
@@ -344,7 +344,7 @@ public class BBGDKLLEPIB
 				}
 				MHHFMCPJONH.PBIMGBKLDPP();
 				//LAB_00f1b7a8:
-				while(MHHFMCPJONH.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+				while(MHHFMCPJONH.CMCKNKKCNDK != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
 				{
 					MHHFMCPJONH.FBANBDCOEJL();
 					yield return null;
@@ -544,7 +544,7 @@ public class BBGDKLLEPIB
 	// // RVA: 0xF197AC Offset: 0xF197AC VA: 0xF197AC
 	private void PKLPEIBEGNO() // save used db version on disk
 	{
-		string dir = CJMOKHDNBNB.FIPFFELDIOG + KCOGAGGCPBP.HAFLEFNJAKD; // /sys
+		string dir = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD; // /sys
 		if(!Directory.Exists(dir))
 		{
 			Directory.CreateDirectory(dir);
@@ -569,7 +569,7 @@ public class BBGDKLLEPIB
 	// // RVA: 0xF19B10 Offset: 0xF19B10 VA: 0xF19B10
 	private bool GBCDHECMDMC()
 	{
-		string dir = CJMOKHDNBNB.FIPFFELDIOG + KCOGAGGCPBP.HAFLEFNJAKD; // sys
+		string dir = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD; // sys
 		if(!Directory.Exists(dir))
 		{
 			Directory.CreateDirectory(dir);

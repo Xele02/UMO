@@ -58,7 +58,7 @@ public class KEHOJEJMGLJ
 	private static string PMHFLOLDHAO = null; // 0x20
 	public DJBHIFLHJLK FGGJNGCAFGK; // 0x24
 	public List<string> FBGNDKKDOIE = null; // 0x28
-	private JEHIAIPJNJF PMDNNKAPIKJ; // 0x2C
+	private JEHIAIPJNJF_FileDownloader PMDNNKAPIKJ; // 0x2C
 	public static bool FJDOHLADGFI; // 0x28
 	public IKAHKDKIGNA IDJBKGBMDAJ; // 0x30
 	private List<GCGNICILKLD> ICCMKHKNAMJ; // 0x34
@@ -84,7 +84,7 @@ public class KEHOJEJMGLJ
 	public static string FLHOFIEOKDH { get; set; } // 0x10 PGOHBLKDJOM ODMAEKMPAGP BBPOAGDNMOJ
 	public static string JNGKCPJBMBA { get; set; } // 0x14 BMIJOIFPCCE KEOJOEFBBJE FMEBBKPCEPK
 	public string FPCIBJLJOFI { get; set; } // 0x18 LCFILOOJABA NOJDHDJNPAL IHJLOEIKMDI
-	public static string LBEPLOJBFCM { 
+	public static string LBEPLOJBFCM_PlatformPrefix { 
 		get { // KHCOOFHPKGE 0xE7E984
 			if(IMABJMPEPGE == null)
 			{
@@ -93,22 +93,22 @@ public class KEHOJEJMGLJ
 			return IMABJMPEPGE;
 		}
 	} 
-	public static string OGCDNCDMLCA { get {
+	public static string OGCDNCDMLCA_PersistentDataPath { get {
 		// FHOCCNDOAPJ 0xE7EB1C
 		if(JCMJBMBMJAK == null)
 		{
-			string path = CJMOKHDNBNB.FIPFFELDIOG;
+			string path = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath;
 			if(string.IsNullOrEmpty(path))
 				UnityEngine.Debug.LogError("Install.InstallPathManager.CriWare_installTargetPath is null");
 			JCMJBMBMJAK = path + "/data";
 		}
         return JCMJBMBMJAK;
 	}}
-	public static string CGAHFOBGHIM { 
+	public static string CGAHFOBGHIM_PersistentPlatformDataPath { 
 		get { // AMBIPPMFFCJ 0xE7DF14
 			if(PMHFLOLDHAO == null)
 			{
-				PMHFLOLDHAO = OGCDNCDMLCA + "/" + LBEPLOJBFCM;
+				PMHFLOLDHAO = OGCDNCDMLCA_PersistentDataPath + "/" + LBEPLOJBFCM_PlatformPrefix;
 			}
 			return PMHFLOLDHAO;
 		}
@@ -184,7 +184,7 @@ public class KEHOJEJMGLJ
 		}
 		EMJFHKHLHDB = INDDJNMPONH;
 		FPCIBJLJOFI = "android";
-		JCMJBMBMJAK = CJMOKHDNBNB.FIPFFELDIOG + "/data";
+		JCMJBMBMJAK = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data";
 		//FCPBCDOKOPD(,null); ???
 		N.a.StartCoroutine(EOFJPNPFGDM_Coroutine_Install(BHFHGFKBOHH,MOBEEPPKFLG));
 	}
@@ -261,7 +261,7 @@ public class KEHOJEJMGLJ
 
 			IDJBKGBMDAJ = COJNCNGHIJC.NFEAMMJIMPG;
 			FLHOFIEOKDH = COJNCNGHIJC.NFEAMMJIMPG.GLMGHMCOMEC;
-			JNGKCPJBMBA = FLHOFIEOKDH + AFEHLCGHAEE.FAIOPNOJIBF + LBEPLOJBFCM + AFEHLCGHAEE.FAIOPNOJIBF;
+			JNGKCPJBMBA = FLHOFIEOKDH + AFEHLCGHAEE.FAIOPNOJIBF_Slash + LBEPLOJBFCM_PlatformPrefix + AFEHLCGHAEE.FAIOPNOJIBF_Slash;
 
 			DMPNAEEIANJ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
 			//FCPBCDOKOPD()?
@@ -356,7 +356,7 @@ public class KEHOJEJMGLJ
 						yield return null;
 						// to 10
 						//LAB_00e8f0a4:
-						while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+						while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
 						{
 							PMDNNKAPIKJ.FBANBDCOEJL();
 							yield return null;
@@ -395,7 +395,7 @@ public class KEHOJEJMGLJ
 						}
 						PMDNNKAPIKJ.PBIMGBKLDPP();
 						//LAB_00e8f2d0:
-						while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+						while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
 						{
 							PMDNNKAPIKJ.FBANBDCOEJL();
 							//LAB_00e8f2fc:
@@ -433,9 +433,9 @@ public class KEHOJEJMGLJ
 							// to 6
 							//6
 						}
-						PMDNNKAPIKJ = new JEHIAIPJNJF(3);
+						PMDNNKAPIKJ = new JEHIAIPJNJF_FileDownloader(3);
 						PMDNNKAPIKJ.DOMFHDPMCCO(ICCMKHKNAMJ, FLHOFIEOKDH, JCMJBMBMJAK);
-						PMDNNKAPIKJ.LBGNKOJFOFC = (JEHIAIPJNJF.HCJPJKCIBDL JGBPLIGAILE) => {
+						PMDNNKAPIKJ.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL JGBPLIGAILE) => {
 							//0xE8D424
 							UnityEngine.Debug.LogError("TODO");
 						};
@@ -451,7 +451,7 @@ public class KEHOJEJMGLJ
 						//To 7
 						//7
 						PMDNNKAPIKJ.FBANBDCOEJL();
-						if(PMDNNKAPIKJ.CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.FEJIMBDPMKI/*2*/)
+						if(PMDNNKAPIKJ.CMCKNKKCNDK == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.FEJIMBDPMKI/*2*/)
 						{
 							OEPPEGHGNNO(3, 100);
 							PMDNNKAPIKJ.Dispose();
@@ -482,7 +482,7 @@ public class KEHOJEJMGLJ
 							break;
 						}
 						//L731
-						if(PMDNNKAPIKJ.CMCKNKKCNDK == JEHIAIPJNJF.NKLKJEOKIFO.LPLEIJIFOKN/*4*/)
+						if(PMDNNKAPIKJ.CMCKNKKCNDK == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.LPLEIJIFOKN/*4*/)
 						{
 							// private KEHOJEJMGLJ.<>c__DisplayClass75_2 PHPPCOBECCA; // 0x24
 								// public int APGOAMNGFFF; // 0x8
@@ -513,7 +513,7 @@ public class KEHOJEJMGLJ
 								PMDNNKAPIKJ.PBIMGBKLDPP();
 								//goto LAB_00e8e088;
 								//9
-								while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+								while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
 								{
 									PMDNNKAPIKJ.FBANBDCOEJL();
 									yield return null;
@@ -547,7 +547,7 @@ public class KEHOJEJMGLJ
 							PMDNNKAPIKJ.PBIMGBKLDPP();
 							//goto LAB_00e8f0a4;
 							//LAB_00e8f0a4:
-							while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+							while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
 							{
 								PMDNNKAPIKJ.FBANBDCOEJL();
 								yield return null;
@@ -586,7 +586,7 @@ public class KEHOJEJMGLJ
 							}
 							PMDNNKAPIKJ.PBIMGBKLDPP();
 							//LAB_00e8f2d0:
-							while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
+							while(PMDNNKAPIKJ.CMCKNKKCNDK != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO.PBIMGBKLDPP/*0*/)
 							{
 								PMDNNKAPIKJ.FBANBDCOEJL();
 								//LAB_00e8f2fc:
@@ -713,12 +713,12 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE8806C Offset: 0xE8806C VA: 0xE8806C
 	public void OMPMGDHJJPG()
 	{
-		if(string.IsNullOrEmpty(CJMOKHDNBNB.FIPFFELDIOG))
+		if(string.IsNullOrEmpty(CJMOKHDNBNB.FIPFFELDIOG_PersistentPath))
 		{
 			UnityEngine.Debug.LogError("Install.InstallPathManager.CriWare_installTargetPath is empty");
 			return;
 		}
-		string tmpDir = CJMOKHDNBNB.FIPFFELDIOG + "/tmp";
+		string tmpDir = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/tmp";
 		if(Directory.Exists(tmpDir))
 		{
 			string[] files = Directory.GetFiles(tmpDir);

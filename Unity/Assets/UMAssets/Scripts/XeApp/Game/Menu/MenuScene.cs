@@ -198,20 +198,21 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB305FC Offset: 0xB305FC VA: 0xB305FC Slot: 12
 		protected override bool DoUpdateEnter()
 		{
-			if(!m_isInitializeing && m_isChangedCueSheet)
+			if (!m_isInitializeing && m_isChangedCueSheet)
 			{
-				if(m_isSceneEnter)
+				if (m_isSceneEnter)
 					return false;
-				MenuUpdater.updater = () => {
+				MenuUpdater.updater = () =>
+				{
 					//0xB37CC8
-					if(m_menuTransitionControl.DirtyChangeScene && m_isInTransition)
+					if (m_menuTransitionControl.DirtyChangeScene && m_isInTransition)
 					{
 						Debug.Log("transition requested but in transition");
 					}
-					if(m_menuTransitionControl.DirtyChangeScene && !m_isInTransition)
+					if (m_menuTransitionControl.DirtyChangeScene && !m_isInTransition)
 					{
 						StartCoroutine(ChangeTransitionCoroutine());
-						if(m_playerStatusData != null)
+						if (m_playerStatusData != null)
 						{
 							m_playerStatusData.FBANBDCOEJL();
 							m_menuTransitionControl.ApplyPlayerStatus(m_playerStatusData);
@@ -476,20 +477,41 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30FF4 Offset: 0xB30FF4 VA: 0xB30FF4
 		public void GotoRhythmGame(bool isSkip, int ticketCount, bool isNotUpdateProfile)
 		{
+			GameManager.Instance.SetSystemCanvasRenderMode(RenderMode.ScreenSpaceOverlay);
+			GameManager.Instance.ChangePopupPriority(true);
+
 			UnityEngine.Debug.LogError("TODO GotoRhythmGame");
 			StartCoroutine(GotoRhythmGameCorotine(() => { /*0xB37CCC*/return null; }, false));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7A14 Offset: 0x6C7A14 VA: 0x6C7A14
 		// // RVA: 0xB312F8 Offset: 0xB312F8 VA: 0xB312F8
-		// public static IEnumerator RhythmGamePreLoad(Func<IEnumerator> wait) { }
+		public static IEnumerator RhythmGamePreLoad(Func<IEnumerator> wait)
+		{
+			//0xB3C79C
+			GameManager.Instance.SetTouchEffectVisible(false);
+			yield return GameManager.Instance.TryInstallRhythmGameResource(Database.Instance.gameSetup);
+			GameManager.Instance.fullscreenFader.Fade(0.1f, Color.black);
+			while(GameManager.Instance.fullscreenFader.isFading)
+				yield return null;
+			if(wait != null)
+				yield return wait();
+			GameManager.Instance.NowLoading.Show();
+			SoundManager.Instance.bgmPlayer.Stop();
+			yield return RhythmGameStartVoicePlay();
+			yield return GameManager.Instance.ShowGameIntroCoroutine();
+		}
 
 		// // RVA: 0xB313A4 Offset: 0xB313A4 VA: 0xB313A4
 		// private static int SeachLiveStartMultiVoice() { }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7A8C Offset: 0x6C7A8C VA: 0x6C7A8C
 		// // RVA: 0xB316A4 Offset: 0xB316A4 VA: 0xB316A4
-		// public static IEnumerator RhythmGameStartVoicePlay() { }
+		public static IEnumerator RhythmGameStartVoicePlay()
+		{
+			UnityEngine.Debug.LogError("TODO RhythmGameStartVoicePlay");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7B04 Offset: 0x6C7B04 VA: 0x6C7B04
 		// // RVA: 0xB31238 Offset: 0xB31238 VA: 0xB31238
@@ -497,9 +519,15 @@ namespace XeApp.Game.Menu
 		{
 			UnityEngine.Debug.LogError("TODO GotoRhythmGameCorotine");
 			//0xB3B65C
-			//RhythmGamePreLoad//0xB3C79C
-			NextScene("RhythmGame");
-			yield break;
+			yield return RhythmGamePreLoad(wait);
+			enableFade = false;
+			while(SoundManager.Instance.voDiva.isPlaying && SoundManager.Instance.voDivaCos.isPlaying && 
+				SoundManager.Instance.voPilot.isPlaying)
+				yield return null;
+			if(isSkip)
+				NextScene("RhythmGameSkip");
+			else
+				NextScene("RhythmGame");
 		}
 
 		// // RVA: 0xB31758 Offset: 0xB31758 VA: 0xB31758

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using CriWare;
 using UnityEngine;
 
 namespace XeApp.Game.Common

@@ -22,7 +22,7 @@ public class MMOLNAHHDOM
 	// // RVA: 0x196826C Offset: 0x196826C VA: 0x196826C
 	public void KHEKNNFCAOI()
     {
-        KHEKNNFCAOI(CJMOKHDNBNB.FIPFFELDIOG + "/SaveData/ul0");
+        KHEKNNFCAOI(CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/ul0");
     }
 
 	// // RVA: 0x1968398 Offset: 0x1968398 VA: 0x1968398

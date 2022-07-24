@@ -66,20 +66,23 @@ namespace VGMToolbox.format
                     {
                         stringValue = this.Value.ToString();
                     }
-                    else if (CriUtfTable.IsUtfTable(utfStream, (long)this.Offset, useIncomingKeys, lcgEncryptionKeys))
-                    {
-                        CriUtfTable newUtf = new CriUtfTable();
-                        newUtf.Initialize(utfStream, (long)this.Offset);
-                        stringValue = newUtf.GetTableAsString((currentIdent + 4), true);
-                    }
                     else
                     {
-                        stringValue = FileUtil.GetStringFromFileChunk(utfStream, this.Offset, this.Size);
-
-                        if (stringValue.Length > 0x20)
+                        if (CriUtfTable.IsUtfTable(utfStream, (long)this.Offset, useIncomingKeys, lcgEncryptionKeys))
                         {
-                            formattedString = Regex.Replace(stringValue, ".{8}(?!$)", "$0 ");
-                            stringValue = Environment.NewLine + formattedString;
+                            CriUtfTable newUtf = new CriUtfTable();
+                            newUtf.Initialize(utfStream, (long)this.Offset);
+                            stringValue = newUtf.GetTableAsString((currentIdent + 4), true);
+                        }
+                        else
+                        {
+                            stringValue = FileUtil.GetStringFromFileChunk(utfStream, this.Offset, this.Size);
+
+                            if (stringValue.Length > 0x20)
+                            {
+                                formattedString = Regex.Replace(stringValue, ".{8}(?!$)", "$0 ");
+                                stringValue = Environment.NewLine + formattedString;
+                            }
                         }
                     }
                     
@@ -267,7 +270,6 @@ namespace VGMToolbox.format
                     sb.AppendLine();
                 }
             }
-
             sb.AppendLine(frontPad + "---------------------------");
             sb.AppendLine(frontPad + "--------- UTF END ---------");
             sb.AppendLine(frontPad + "---------------------------");
@@ -299,7 +301,6 @@ namespace VGMToolbox.format
                 {
                     this.LcgEncryptionKeys = GetKeysForEncryptedUtfTable(this.MagicBytes);
                 }
-
                 if (this.LcgEncryptionKeys.Count != 2)
                 {
                     throw new FormatException(String.Format("Unable to decrypt UTF table at offset: 0x{0}", this.BaseOffset.ToString("X8")));
@@ -681,25 +682,20 @@ namespace VGMToolbox.format
             try
             {
                 utf.MagicBytes = ParseFile.ParseSimpleOffset(fs, utf.BaseOffset, 4);
-
                 // check if file is decrypted and get decryption keys if needed
                 utf.checkEncryption(fs, useIncomingKeys, incomingLcgEncryptionKeys);
-
                 if (utf.IsEncrypted)
                 {
                     // write (decrypted) utf header to file 
                     utf.UtfTableFile = utf.WriteTableToTempFile(fs, offset, 4);
-
                     using (FileStream checkFs = File.Open(utf.UtfTableFile, FileMode.Open, FileAccess.Read, FileShare.Read))
                     {
                         utf.MagicBytes = ParseFile.ParseSimpleOffset(checkFs, utf.BaseOffset, 4);
                     }
 
-
                     //utf.IsEncrypted = false; // since we've decrypted to a temp file
                     // utf.UtfReader.IsEncrypted = false;
                 }
-                
                 if (ParseFile.CompareSegment(utf.MagicBytes, 0, SIGNATURE_BYTES))
                 {
                     ret = true;
@@ -720,7 +716,6 @@ namespace VGMToolbox.format
                     File.Delete(utf.UtfTableFile);
                 }
             }
-
             return ret;
         }
     }

@@ -6,7 +6,7 @@ public class CJMOKHDNBNB
 	private static string OAFCIACBJNN; // 0x4
 	private static string HMGCLBLBMKN; // 0x8
 
-	public static string FIPFFELDIOG { get { // MIGEKMKBPFM 0x107CD20
+	public static string FIPFFELDIOG_PersistentPath { get { // MIGEKMKBPFM 0x107CD20
         if(!PCIIJLFIEFH)
         {
             if(!MNBLHMNIGFE)

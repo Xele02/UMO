@@ -279,13 +279,22 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF023C Offset: 0x1BF023C VA: 0x1BF023C
-		//public void AttachMikeToLeftHand() { }
+		public void AttachMikeToLeftHand()
+		{
+			UnityEngine.Debug.LogError("TODO AttachMikeToLeftHand");
+		}
 
 		//// RVA: 0x1BF039C Offset: 0x1BF039C VA: 0x1BF039C
-		//public void AttachMikeToRightHand() { }
+		public void AttachMikeToRightHand()
+		{
+			UnityEngine.Debug.LogError("TODO AttachMikeToRightHand");
+		}
 
 		//// RVA: 0x1BF04FC Offset: 0x1BF04FC VA: 0x1BF04FC
-		//public void AttachToMikeStand() { }
+		public void AttachToMikeStand()
+		{
+			UnityEngine.Debug.LogError("TODO AttachToMikeStand");
+		}
 
 		//// RVA: 0x1BEBB98 Offset: 0x1BEBB98 VA: 0x1BEBB98
 		//public void AttachMikeToObject(Transform a_transform) { }

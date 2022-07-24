@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System;
 using XeApp.Game.Tutorial;
 using XeSys;
+using CriWare;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -313,13 +314,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				UnityEngine.Debug.LogError("TODO pause");
 			}
-			//currentRawMusicMillisec = tutorialPopupStartTime;
-			if(tutorialPopupStartTime < 0)
-			{
-				//bgmPlayback
-				// TODO get from songs
-				currentRawMusicMillisec += (int)(Time.deltaTime * 1000);
-			}
+			currentRawMusicMillisec = GetRawMusicMillisec();
 			notesMillisec = currentRawMusicMillisec - noteOffsetMillisec;
 			deviceMillisec = IncludeDeviceLatency(currentRawMusicMillisec);
 			deviceSec = deviceMillisec / 1000.0f;
@@ -594,6 +589,9 @@ namespace XeApp.Game.RhythmGame
 				UnityEngine.Debug.LogError("TODO InitializeGameData 2D");
 			}
 			UnityEngine.Debug.LogError("TODO InitializeGameData UI / Sound Effect");
+			bgmPlayer.source.player.SetStartTime(0);
+			bgmPlayer.source.Stop();
+			bgmPlayer.source.Pause(false);
 		}
 
 		// // RVA: 0x9B9258 Offset: 0x9B9258 VA: 0x9B9258
@@ -945,6 +943,7 @@ namespace XeApp.Game.RhythmGame
 		private void StartIntroFade()
 		{
 			UnityEngine.Debug.LogError("TODO StartIntroFade");
+			uguiFader.Fade(0.5f, RhythmGamePlayer.IntroEndFadeColor, RhythmGamePlayer.IntroEndFadeColor);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744AD4 Offset: 0x744AD4 VA: 0x744AD4
@@ -1547,18 +1546,17 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9CA6EC Offset: 0x9CA6EC VA: 0x9CA6EC
 		private void StartPlayMusic(int startTime)
 		{
-			UnityEngine.Debug.LogError("TODO Finish StartPlayMusic");
-			//bgmPlayer.source.player.SetStartTime(startTime);
-			//bgmPlayback = bgmPlayer.source.Play();
-			gameDivaObject.PlayMusicAnimation(startTime);
+			bgmPlayer.source.player.SetStartTime(startTime);
+			bgmPlayback = bgmPlayer.source.Play();
+			gameDivaObject.PlayMusicAnimation(0);
 			for(int i = 0; i < subDivaObject.Length; i++)
 			{
 				if(subDivaObject[i] != null)
 				{
-					subDivaObject[i].PlayMusicAnimation(startTime);
+					subDivaObject[i].PlayMusicAnimation(0);
 				}
 			}
-			musicCameraObject.PlayMusicAnimation(startTime);
+			musicCameraObject.PlayMusicAnimation(0);
 			foreach(var slo in stageLightingObjectList)
 			{
 				slo.PlayMusicAnimation();
@@ -1605,10 +1603,8 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C3750 Offset: 0x9C3750 VA: 0x9C3750
 		public void Play()
 		{
-			//??XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB.MNJOLLGPMPI()
-			//if(bgmPlayer.source.status == CriAtomSource.Status.Stop)
-			UnityEngine.Debug.LogError("TODO FInish Play");
-			if(true)
+			//XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D
+			if(bgmPlayer.source.status == CriAtomSource.Status.Stop)
 			{
 				float val = resource.musicData.musicParam.stateOffsetSec;
 				resource.musicIntroResource.OverrideMusicStartTime(ref val);
@@ -1667,15 +1663,24 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B1F80 Offset: 0x9B1F80 VA: 0x9B1F80
 		private bool IsStopMusic()
 		{
-			UnityEngine.Debug.LogError("TODO IsStopMusic");
-			return false;
+			return bgmPlayer.source.status == CriAtomSource.Status.Stop;
 		}
 
 		// // RVA: 0x9CC458 Offset: 0x9CC458 VA: 0x9CC458
 		// public int GetMusicMillisecLength() { }
 
 		// // RVA: 0x9B2A48 Offset: 0x9B2A48 VA: 0x9B2A48
-		// public int GetRawMusicMillisec() { }
+		public int GetRawMusicMillisec()
+		{
+			int res = tutorialPopupStartTime;
+			if(tutorialPopupStartTime < 0)
+			{
+				res = (int)bgmPlayback.timeSyncedWithAudio;
+				if(currentRawMusicMillisec < -1)
+					res = musicRequestChangeMillisec;
+			}
+			return res;
+		}
 
 		// // RVA: 0x9B2A88 Offset: 0x9B2A88 VA: 0x9B2A88
 		public int IncludeDeviceLatency(int rawMillisec)

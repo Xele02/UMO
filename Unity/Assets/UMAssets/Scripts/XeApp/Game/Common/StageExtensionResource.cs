@@ -6,6 +6,7 @@ using System.Text;
 using XeApp.Core;
 using XeSys;
 using System;
+using CriWare;
 
 namespace XeApp.Game.Common
 {
@@ -129,13 +130,13 @@ namespace XeApp.Game.Common
 				assetName.SetFormat("mov/gm/st/game_st_{0:D4}_{1:D3}.usm", wavId, divaId);
 			}
 			t_path = assetName.ToString();
-			if(KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC(t_path))
+			if(KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_NeedFileInstall(t_path))
 			{
 				while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB)
 					yield return null;
 			}
 			assetName.Clear();
-			assetName.Append(KEHOJEJMGLJ.CGAHFOBGHIM);
+			assetName.Append(KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath);
 			assetName.Append("/");
 			assetName.Append(t_path);
 			t_path = assetName.ToString();

@@ -64,16 +64,51 @@ namespace CriWare
         // public static int GetScriptVersionNumber() { }
 
         // // RVA: 0x2BA8EEC Offset: 0x2BA8EEC VA: 0x2BA8EEC
-        // public static int GetBinaryVersionNumber() { }
+        public static int GetBinaryVersionNumber()
+        {
+            return CRIWARED1CDE3A7_criWareUnity_GetVersionNumber();
+        }
 
         // // RVA: 0x2BA905C Offset: 0x2BA905C VA: 0x2BA905C
-        // public static int GetRequiredBinaryVersionNumber() { }
+        public static int GetRequiredBinaryVersionNumber()
+        {
+            #if true
+            return 0x02371300;
+            #else
+                #if UNITY_EDITOR
+                        switch (Application.platform) {
+                            case RuntimePlatform.WindowsEditor:
+                                return 0x02371300;
+                            case RuntimePlatform.OSXEditor:
+                                return 0x02371300;
+                            default:
+                                return 0x02371300;
+                        }
+                #elif UNITY_STANDALONE_WIN
+                        return 0x02371300;
+                #elif UNITY_STANDALONE_OSX
+                        return 0x02371300;
+                #elif UNITY_IOS
+                        return 0x02371300;
+                #elif UNITY_TVOS
+                        return 0x02371300;
+                #elif UNITY_ANDROID
+                        return 0x02371300;
+                #else
+                        return 0x02371300
+                #endif
+            #endif
+        }
 
         // // RVA: 0x2BA9068 Offset: 0x2BA9068 VA: 0x2BA9068
         public static bool CheckBinaryVersionCompatibility()
         {
-            UnityEngine.Debug.LogWarning("CheckBinaryVersionCompatibility");
-            return true;
+            if (GetBinaryVersionNumber() == GetRequiredBinaryVersionNumber()) {
+                return true;
+            } else {
+                Debug.LogError("CRI runtime library is not compatible. Confirm the version number.");
+                return false;
+            }
         }
 
         // // RVA: 0x2BA9140 Offset: 0x2BA9140 VA: 0x2BA9140
@@ -89,7 +124,15 @@ namespace CriWare
         // public static Common.CpuUsage GetAtomCpuUsage() { }
 
         // // RVA: 0x2BA8F68 Offset: 0x2BA8F68 VA: 0x2BA8F68
-        // public static extern int CRIWARED1CDE3A7() { }
+        #if UNITY_ANDROID
+        [DllImport(pluginName, CallingConvention = pluginCallingConvention)]
+        public static extern int criWareUnity_GetVersionNumber();
+        #else
+        public static int CRIWARED1CDE3A7_criWareUnity_GetVersionNumber()
+        {
+            return ExternLib.LibCriWare.CRIWARED1CDE3A7_criWareUnity_GetVersionNumber();
+        }
+        #endif
 
         // // RVA: 0x2BA9338 Offset: 0x2BA9338 VA: 0x2BA9338
         // public static extern void criWareUnity_SetRenderingEventOffsetForMana(int offset) { }

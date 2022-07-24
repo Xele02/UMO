@@ -1,7 +1,7 @@
 
 public class AFEHLCGHAEE
 {
-	public static string FAIOPNOJIBF = "/"; // 0x0
+	public static string FAIOPNOJIBF_Slash = "/"; // 0x0
 	public static string JIBNPJCIALH = "body"; // 0x4
 	public static string JNPCEKKNEBF = "scene_level"; // 0x8
 	public static string KLKOINDHOHG = "kind"; // 0xC

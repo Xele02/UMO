@@ -23,6 +23,7 @@ namespace VGMToolbox.format
 
         public string OriginalCueName { set; get; }
         public string CueName { set; get; }
+        public uint LengthMilli { set; get; }
     }
     
     public class CriAcbFile : CriUtfTable
@@ -276,6 +277,7 @@ namespace VGMToolbox.format
                 this.CueList[i].CueId = (uint)CriUtfTable.GetUtfFieldForRow(cueTableUtf, i, "CueId");
                 this.CueList[i].ReferenceType = (byte)CriUtfTable.GetUtfFieldForRow(cueTableUtf, i, "ReferenceType");
                 this.CueList[i].ReferenceIndex = (ushort)CriUtfTable.GetUtfFieldForRow(cueTableUtf, i, "ReferenceIndex");
+                this.CueList[i].LengthMilli = (uint)CriUtfTable.GetUtfFieldForRow(cueTableUtf, i, "Length");
 
                 switch (this.CueList[i].ReferenceType)
                 {
@@ -744,10 +746,34 @@ namespace VGMToolbox.format
             return afs2;
         }
 
-        public Stream GetCueFileStream(string cueName)
+        public Stream GetCueFileStream(int cueId, out bool isStreamed)
         {
-            Stream stream = null;
+            return GetCueFileStream(GetCueRecord(cueId), out isStreamed);
+        }
 
+        public CriAcbCueRecord GetCueRecord(int id)
+        {
+            // loop through cues and extract
+            for (int i = 0; i < CueList.Length; i++)
+            {
+                CriAcbCueRecord cue = CueList[i];
+                //UnityEngine.Debug.LogError(cue.OriginalCueName+" "+cueName);
+                if (cue.CueId == id)
+                {
+                    return cue;
+                }
+            }
+            UnityEngine.Debug.LogError("cue "+id+" not found");
+            return null;
+        }
+
+        public Stream GetCueFileStream(string cueName, out bool isStreamed)
+        {
+            return GetCueFileStream(GetCueRecord(cueName), out isStreamed);
+        }
+
+        public CriAcbCueRecord GetCueRecord(string cueName)
+        {
             // loop through cues and extract
             for (int i = 0; i < CueList.Length; i++)
             {
@@ -755,44 +781,52 @@ namespace VGMToolbox.format
                 //UnityEngine.Debug.LogError(cue.OriginalCueName+" "+cueName);
                 if (cue.OriginalCueName == cueName)
                 {
-                    if (cue.IsWaveformIdentified)
-                    {
-                        if (cue.IsStreaming) // external AWB file
-                        {
-                            if (this.ExternalAwb != null)
-                            {
-                                stream = File.Open(this.ExternalAwb.SourceFile, FileMode.Open, FileAccess.Read, FileShare.Read);
-                                stream.Seek(this.ExternalAwb.Files[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
-                                long size = this.ExternalAwb.Files[cue.WaveformId].FileLength;
-                            }
-                            else if (this.ExternalCpk != null)
-                            {
-                                stream = File.Open(this.ExternalCpk.SourceFileName, FileMode.Open, FileAccess.Read, FileShare.Read);
-                                stream.Seek(ExternalCpk.ItocFiles[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
-                                long size = this.ExternalCpk.ItocFiles[cue.WaveformId].FileLength;
-                            }
-                        }
-                        else // internal AWB file (inside ACB)
-                        {
-                            if (this.InternalAwb != null)
-                            {
-                                stream = File.Open(this.InternalAwb.SourceFile, FileMode.Open, FileAccess.Read, FileShare.Read);
-                                stream.Seek(this.InternalAwb.Files[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
-                                long size = this.InternalAwb.Files[cue.WaveformId].FileLength;
-                            }
-                            else if (this.InternalCpk != null)
-                            {
-                                stream = File.Open(this.InternalCpk.SourceFileName, FileMode.Open, FileAccess.Read, FileShare.Read);
-                                stream.Seek(this.InternalCpk.ItocFiles[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
-                                long size = this.InternalCpk.ItocFiles[cue.WaveformId].FileLength;
-                            }
-                        }
-                    } // if (cue.IsWaveformIdentified)                    
-                    break;
+                    return cue;
                 }
             }
-            if(stream == null)
-                UnityEngine.Debug.LogError("cue "+cueName+" not found");
+            UnityEngine.Debug.LogError("cue "+cueName+" not found");
+            return null;
+        }
+
+        private Stream GetCueFileStream(CriAcbCueRecord cue, out bool isStreamed)
+        {
+            Stream stream = null;
+            isStreamed = false;
+
+            if (cue.IsWaveformIdentified)
+            {
+                if (cue.IsStreaming) // external AWB file
+                {
+                    isStreamed = true;
+                    if (this.ExternalAwb != null)
+                    {
+                        stream = File.Open(this.ExternalAwb.SourceFile, FileMode.Open, FileAccess.Read, FileShare.Read);
+                        stream.Seek(this.ExternalAwb.Files[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
+                        long size = this.ExternalAwb.Files[cue.WaveformId].FileLength;
+                    }
+                    else if (this.ExternalCpk != null)
+                    {
+                        stream = File.Open(this.ExternalCpk.SourceFileName, FileMode.Open, FileAccess.Read, FileShare.Read);
+                        stream.Seek(ExternalCpk.ItocFiles[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
+                        long size = this.ExternalCpk.ItocFiles[cue.WaveformId].FileLength;
+                    }
+                }
+                else // internal AWB file (inside ACB)
+                {
+                    if (this.InternalAwb != null)
+                    {
+                        stream = File.Open(this.InternalAwb.SourceFile, FileMode.Open, FileAccess.Read, FileShare.Read);
+                        stream.Seek(this.InternalAwb.Files[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
+                        long size = this.InternalAwb.Files[cue.WaveformId].FileLength;
+                    }
+                    else if (this.InternalCpk != null)
+                    {
+                        stream = File.Open(this.InternalCpk.SourceFileName, FileMode.Open, FileAccess.Read, FileShare.Read);
+                        stream.Seek(this.InternalCpk.ItocFiles[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
+                        long size = this.InternalCpk.ItocFiles[cue.WaveformId].FileLength;
+                    }
+                }
+            } // if (cue.IsWaveformIdentified)
             return stream;
         }
 

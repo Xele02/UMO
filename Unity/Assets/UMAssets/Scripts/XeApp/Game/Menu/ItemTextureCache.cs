@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x14BDAC4 Offset: 0x14BDAC4 VA: 0x14BDAC4
 		public void TryInstall(int id, int subId = 0)
 		{
-			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC(MakeItemIconTexturePath(id, subId));
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_NeedFileInstall(MakeItemIconTexturePath(id, subId));
 		}
 
 		// // RVA: 0x14BDB7C Offset: 0x14BDB7C VA: 0x14BDB7C

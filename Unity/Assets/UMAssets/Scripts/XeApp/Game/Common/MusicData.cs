@@ -122,7 +122,7 @@ namespace XeApp.Game.Common
 			str2.Clear();
 			if(!AssetBundleManager.isTutorialNow)
 			{
-				str2.Append(KEHOJEJMGLJ.CGAHFOBGHIM);
+				str2.Append(KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath);
 				str2.Append("/");
 			}
 			else

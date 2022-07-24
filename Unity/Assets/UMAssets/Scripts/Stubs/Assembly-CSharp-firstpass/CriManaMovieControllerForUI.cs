@@ -1,7 +1,10 @@
 using UnityEngine.UI;
 
-public class CriManaMovieControllerForUI : CriManaMovieMaterial
+namespace CriWare
 {
-	public Graphic target;
-	public bool useOriginalMaterial;
+	public class CriManaMovieControllerForUI : CriManaMovieMaterial
+	{
+		public Graphic target;
+		public bool useOriginalMaterial;
+	}
 }

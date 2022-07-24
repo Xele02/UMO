@@ -247,6 +247,7 @@ namespace XeApp.Game.Menu
 		protected override bool OnBgmStart()
 		{
 			UnityEngine.Debug.LogError("TODO OnBgmStart");
+			//SoundManager.Instance.bgmPlayer.ContinuousPlay(BgmPlayer.MENU_BGM_ID_BASE);
 			return true;
 		}
 

@@ -625,7 +625,7 @@ namespace XeApp.Game
 		// // RVA: 0x99B318 Offset: 0x99B318 VA: 0x99B318
 		private void SetupAssetBundleBasePath()
 		{
-			string k = KEHOJEJMGLJ.OGCDNCDMLCA;
+			string k = KEHOJEJMGLJ.OGCDNCDMLCA_PersistentDataPath;
 			string platform = AssetBundleManager.GetPlatformName();
 			string path = Path.Combine(k, platform);
 			AssetBundleManager.BaseAssetBundleInstallPath = path;
@@ -1032,7 +1032,11 @@ namespace XeApp.Game
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADDB0 Offset: 0x6ADDB0 VA: 0x6ADDB0
 		// // RVA: 0x9A12B8 Offset: 0x9A12B8 VA: 0x9A12B8
-		// public IEnumerator ShowGameIntroCoroutine() { }
+		public IEnumerator ShowGameIntroCoroutine()
+		{
+			UnityEngine.Debug.LogError("TODO ShowGameIntroCoroutine");
+			yield break;
+		}
 
 		// // RVA: 0x9A1340 Offset: 0x9A1340 VA: 0x9A1340
 		// public void CleanCacheAssetBundle() { }
@@ -1046,7 +1050,11 @@ namespace XeApp.Game
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADE28 Offset: 0x6ADE28 VA: 0x6ADE28
 		// // RVA: 0x9A1478 Offset: 0x9A1478 VA: 0x9A1478
-		// public IEnumerator TryInstallRhythmGameResource(GameSetupData gameSetupData) { }
+		public IEnumerator TryInstallRhythmGameResource(GameSetupData gameSetupData)
+		{
+			UnityEngine.Debug.LogError("TODO TryInstallRhythmGameResource");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADEA0 Offset: 0x6ADEA0 VA: 0x6ADEA0
 		// // RVA: 0x9A1500 Offset: 0x9A1500 VA: 0x9A1500

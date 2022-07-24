@@ -9,6 +9,7 @@ using System.Text;
 using XeApp.Native;
 using System.IO;
 using System;
+using CriWare;
 
 public class NKGJPJPHLIF
 {
@@ -94,7 +95,7 @@ public class NKGJPJPHLIF
 			BHEDLCLHGPB.IJBGPAENLJA(DANMJLOBLIE);
 
 			MNNCBFONAOL.KHEKNNFCAOI_Init();//101
-			JEHIAIPJNJF.BNGLMLOLPEL();
+			JEHIAIPJNJF_FileDownloader.BNGLMLOLPEL();
 
 			OLKNOPIDFJG = new JDDGPJDKHNE(); //108
 			OLKNOPIDFJG.IJBGPAENLJA();
@@ -219,7 +220,7 @@ public class NKGJPJPHLIF
 	// RVA: 0xC17D40 Offset: 0xC17D40 VA: 0xC17D40
 	public void FFBCKMFKFME()
 	{
-			JEHIAIPJNJF.IKPHNPJFNEG();
+			JEHIAIPJNJF_FileDownloader.IKPHNPJFNEG();
 			if(BJAONAJFHFA != null)
 			{
 			        BJAONAJFHFA.FFBCKMFKFME();

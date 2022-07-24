@@ -47,7 +47,7 @@ public class IGJHFKELHKJ
 	{
 		IGJHFKELHKJ.FBGGEFFJJHB = (uint)(Utility.GetCurrentUnixTime() + 100);
 		BEIEHPNODAM.Clear();
-		JHJMNLMNPGO = CJMOKHDNBNB.FIPFFELDIOG + KCOGAGGCPBP.HAFLEFNJAKD; // /sys
+		JHJMNLMNPGO = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD; // /sys
 		if(!Directory.Exists(JHJMNLMNPGO))
 		{
 			UnityEngine.Debug.Log("Create Dir "+JHJMNLMNPGO);
