@@ -171,8 +171,7 @@ namespace ExternLib
                 HcaAudioStream audioStream = new HcaAudioStream(playersList[player].acbStream, decodeParams, audioParams);
                 playersList[player].audioStream = audioStream;
                 int length = System.Int32.MaxValue;
-                if(audioStream.HcaInfo.LoopFlag)
-                    source.loop = true;
+                source.loop = audioStream.HcaInfo.LoopFlag;
                 long reallength = (audioStream.Length / (2 * audioStream.HcaInfo.ChannelCount));
                 if(reallength < System.Int32.MaxValue)
                 {
