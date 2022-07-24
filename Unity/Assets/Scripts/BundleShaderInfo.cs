@@ -94,6 +94,18 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 	{
 		if(mat.shader.isSupported)
 			return;
+		if(!shaderList.ContainsKey(mat.shader.GetInstanceID()))
+		{
+			Shader shader = Shader.Find(mat.shader.name);
+			if(shader != null)
+			{
+				ShaderInfo info = new ShaderInfo();
+				info.shader = shader;
+				info.name = System.IO.Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(shader));
+				shaderList.Add(mat.shader.GetInstanceID(), info);
+				Debug.Log("Loaded game shader "+mat.shader.GetInstanceID()+" "+info.name);
+			}
+		}
 		if(shaderList.ContainsKey(mat.shader.GetInstanceID()))
 		{
 			Shader shader = shaderList[mat.shader.GetInstanceID()].shader;
@@ -111,21 +123,10 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 				Debug.LogError("shader not found : "+shaderList[mat.shader.GetInstanceID()].name+" for "+mat.name);
 			}
 		}
-		/*else
+		else
 		{
-			Shader shader_ = Shader.Find(mat.shader.name);
-			if(shader_)
-			{
-				var so = new SerializedObject(mat);
-				int renderQueue = so.FindProperty("m_CustomRenderQueue").intValue;
-				mat.shader = shader_;
-				if(renderQueue != -1)
-					mat.renderQueue = renderQueue;
-				Debug.Log("Loaded Shader "+shader_.name+" on "+mat.name);
-			}
-			else
-				Debug.LogError("Shader not found for "+mat.name+" "+mat.shader.GetInstanceID()+" "+mat.shader.name);
-		}*/
+			Debug.LogError("shader not found : "+mat.shader.name+" "+mat.shader.GetInstanceID()+" for "+mat.name);
+		}
 	}
 
 	public void FixMaterialShaderGO(GameObject obj)
