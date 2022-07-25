@@ -54,11 +54,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x14BD514 Offset: 0x14BD514 VA: 0x14BD514
 		public static string MakeItemIconTexturePath(int id, int subId = 0)
 		{
-			EKLNMHFCAOI.FKGCBLHOOCL val = EKLNMHFCAOI.BKHFLDMOGBD(id);
+			EKLNMHFCAOI.FKGCBLHOOCL_Category val = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(id);
 			int val2 = 0;
 			if ((int)val < 6)
 			{
-				if (val != EKLNMHFCAOI.FKGCBLHOOCL.MHKFDBLMOGF/*4*/)
+				if (val != EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene/*4*/)
 				{
 					val2 = id;
 					//!!break;

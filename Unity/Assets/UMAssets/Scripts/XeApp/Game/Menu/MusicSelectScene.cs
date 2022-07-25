@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 			ApplyMusicInfo();
 			ApplyEventInfo();
 			m_sliveItem.ItemIconHide();
-			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM(EKLNMHFCAOI.FKGCBLHOOCL.IGIFMNJADEC/*16*/,1), (IiconTexture image) => {
+			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.IGIFMNJADEC_MvTicket/*16*/,1), (IiconTexture image) => {
 				//0x1685CE0
 				m_sliveItem.SetIcon(image);
 			});

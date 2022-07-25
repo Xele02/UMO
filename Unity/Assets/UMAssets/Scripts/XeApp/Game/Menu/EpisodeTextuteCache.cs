@@ -78,9 +78,23 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF09B6C Offset: 0xF09B6C VA: 0xF09B6C
 		private int FindEpisodeIdFromModelId(int divaId, int modelId)
 		{
-			//IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.
-			// Todo load episode Db
-			UnityEngine.Debug.LogError("TODO FindEpisodeIdFromModelId");
+			foreach(var episode in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD)
+			{
+				foreach(var a in episode.HHJGBJCIFON)
+				{
+					if(a != 0)
+					{
+						JNIKPOIKFAC_Reward reward = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.LFAAEPAAEMB_Rewards[a];
+						if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_Item) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+						{
+							if (EKLNMHFCAOI.DEACAHNLMNI_getItemId(reward.KIJAPOFAGPN_Item) == IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN(divaId, modelId).JPIDIENBGKH_CostumeId)
+							{
+								return episode.KELFCMEOPPM;
+							}
+						}
+					}
+				}
+			}
 			return 0;
 		}
 

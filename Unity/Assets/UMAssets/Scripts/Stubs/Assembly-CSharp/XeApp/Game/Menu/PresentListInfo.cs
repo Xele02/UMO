@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 		public int List_index;
 		public long s64bit_List_ID;
 		public int item_ID;
-		public EKLNMHFCAOI.FKGCBLHOOCL item_TYPE;
+		public EKLNMHFCAOI.FKGCBLHOOCL_Category item_TYPE;
 		public int item_Value;
 		public bool IsAvailable;
 		public string name;
