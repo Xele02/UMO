@@ -73,7 +73,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 	// public int GAGDEIMGBBG(int JIKLEHGJKBH) { }
 
 	// // RVA: 0xCC4C4C Offset: 0xCC4C4C VA: 0xCC4C4C
-	public int DDGHBNLOBAJ(string OPFGFINHFCE)
+	public int DDGHBNLOBAJ_IsCueEncrypted(string OPFGFINHFCE)
 	{
 		UnityEngine.Debug.LogError("TODO DDGHBNLOBAJ is cuesheet encrypted");
 		return 0;

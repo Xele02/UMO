@@ -206,7 +206,7 @@ namespace XeApp.Game.Common
 			if(!IsBuiltinSheet(cueSheetName))
 			{
 				string path = GetStreamingAssetCueSheetPath(cueSheetName);
-				bool exists = KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_NeedFileInstall(path+".acb");
+				bool exists = KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(path+".acb");
 				if(!IsBgm(cueSheetName))
 				{
 					if(!IsVoice(cueSheetName))
@@ -224,7 +224,7 @@ namespace XeApp.Game.Common
 					suf = ".awb";
 				}
 				path = path + suf;
-				exists |= KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_NeedFileInstall(path);
+				exists |= KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(path);
 				return exists;
 			}
 			return false;

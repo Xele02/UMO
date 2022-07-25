@@ -6,6 +6,7 @@ using System.IO;
 using System.Collections;
 using XeSys.File;
 using XeApp.Game;
+using XeSys;
 
 public delegate bool OMIFMMJPMDJ(int INDDJNMPONH, float LNAHJANMJNM);
 public delegate void OBHIGCFPKJN(string DOGDHKIEBJA, IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP);
@@ -52,23 +53,23 @@ public class KDLPEDBKMID
 																	"ly/083.xab",
 																	"handmade/shader.xab",
 																	"handmade/cmnparam.xab"}; // 0x4
-	private static readonly string[] FJFFOIHEDID = new string[6] {"mc/{0}/bt001.xab",
+	private static readonly string[] FJFFOIHEDID_SoundFilesFormat = new string[6] {"mc/{0}/bt001.xab",
 																	"mc/{0}/ft.xab",
 																	"mc/{0}/sc.xab",
 																	"sc/{0:D4}.dat",
 																	"snd/bgm/cs_w_{0:D4}.acb",
 																	"snd/bgm/cs_w_{0:D4}.awb"}; // 0x8
-	private static readonly string[] KJAAFBDBDOM = new string[6] {"mc/{0}/bt001.xab",
+	private static readonly string[] KJAAFBDBDOM_soundFilesFormat = new string[6] {"mc/{0}/bt001.xab",
 																	"mc/{0}/ft.xab",
 																	"mc/{0}/sc.xab",
 																	"sc/{0:D4}.dat",
 																	"snd/bgm/cs_w_{0:D4}.acb",
 																	"snd/bgm/cs_w_{0:D4}_d.awb"}; // 0xC
-	private static readonly string MFDEFIILPGM = "st/{0:D4}.xab"; // 0x10
-	private static readonly string JOLFLDNELHO = "mov/gm/dv/game_dv_{0:D4}_mv_{1}q{2:D1}.usm"; // 0x14
-	private static readonly string NMFLPJMFPFN = "mc/{0}/bt002.xab"; // 0x18
-	private static readonly string EMLADNPGDOG = "mov/gm/dv/game_dv_{0:D4}_mv_{1}q{2:D1}.usm"; // 0x1C
-	private static readonly string[] ABNBIJGFNBA = new string[6] {"mc/{0}/dr/cc/{1:D3}.xab",
+	private static readonly string MFDEFIILPGM_StageFileFormat = "st/{0:D4}.xab"; // 0x10
+	private static readonly string JOLFLDNELHO_VideoFileFormat = "mov/gm/dv/game_dv_{0:D4}_mv_{1}q{2:D1}.usm"; // 0x14
+	private static readonly string NMFLPJMFPFN_MoveTrackFileFormat = "mc/{0}/bt002.xab"; // 0x18
+	private static readonly string EMLADNPGDOG_VideoFileFormat = "mov/gm/dv/game_dv_{0:D4}_mv_{1}q{2:D1}.usm"; // 0x1C
+	private static readonly string[] ABNBIJGFNBA_3dExtensionsFilesFormat = new string[6] {"mc/{0}/dr/cc/{1:D3}.xab",
 																	"mc/{0}/dr/dc/{1:D3}.xab",
 																	"mc/{0}/dr/dv/{1:D3}.xab",
 																	"mc/{0}/dr/li/{1:D3}.xab",
@@ -107,7 +108,7 @@ public class KDLPEDBKMID
 			//0xE841D8
 			return LNHFLJBGGJB;
 		};
-		CriFileRequestManager.HHCJCDFCLOB.JPNMBNEHBOC = this.BDOFDNICMLC_NeedFileInstall;
+		CriFileRequestManager.HHCJCDFCLOB.JPNMBNEHBOC = this.BDOFDNICMLC_StartInstallIfNeeded;
 	}
 
 	// // RVA: 0xE7D90C Offset: 0xE7D90C VA: 0xE7D90C
@@ -179,7 +180,7 @@ public class KDLPEDBKMID
 	}
 
 	// // RVA: 0xE7E040 Offset: 0xE7E040 VA: 0xE7E040
-	public bool BDOFDNICMLC_NeedFileInstall(string KEIGHMAKAAC)
+	public bool BDOFDNICMLC_StartInstallIfNeeded(string KEIGHMAKAAC)
 	{
 		if(!ENEFCDLNAEF_IsFileExistsOnDisk(KEIGHMAKAAC))
 		{
@@ -485,16 +486,86 @@ public class KDLPEDBKMID
 	// public bool HFMOAJDHDHJ(int GHBPLHBNMBK) { }
 
 	// // RVA: 0xE7F26C Offset: 0xE7F26C VA: 0xE7F26C
-	// private static string[] JAAOIKIALFJ(int ECOIBKOIPFP) { }
+	private static string[] JAAOIKIALFJ(int ECOIBKOIPFP)
+	{
+		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.DDGHBNLOBAJ_IsCueEncrypted("cs_w_"+ECOIBKOIPFP.ToString("D4")) != 0)
+		{
+			return KJAAFBDBDOM_soundFilesFormat;
+		}
+		else
+		{
+			return FJFFOIHEDID_SoundFilesFormat;
+		}
+	}
 
 	// // RVA: 0xE7F44C Offset: 0xE7F44C VA: 0xE7F44C
-	// public bool OKJCGCOGDIA(int ECOIBKOIPFP, int DNHLEPCFPFC, int MOBOJNCPCGD, int HADONLEBKLD) { }
+	public bool OKJCGCOGDIA(int ECOIBKOIPFP_WavId, int DNHLEPCFPFC_SongId, int MOBOJNCPCGD_VidQuality, int HADONLEBKLD_OnStageDivaNum)
+	{
+		StringBuilder str = new StringBuilder(128);
+		str.SetFormat(MFDEFIILPGM_StageFileFormat, DNHLEPCFPFC_SongId);
+		bool res = BDOFDNICMLC_StartInstallIfNeeded(str.ToString());
+		if(MOBOJNCPCGD_VidQuality > 0)
+		{
+			str.SetFormat(JOLFLDNELHO_VideoFileFormat, ECOIBKOIPFP_WavId, "", MOBOJNCPCGD_VidQuality);
+			res |= BDOFDNICMLC_StartInstallIfNeeded(str.ToString());
+		}
+		string[] strs = JAAOIKIALFJ(ECOIBKOIPFP_WavId);
+		for(int i = 0; i < strs.Length; i++)
+		{
+			if(strs[i].IndexOf("mc") == 0)
+			{
+				string waveName = GameManager.Instance.GetWavDirectoryName(ECOIBKOIPFP_WavId, strs[i], HADONLEBKLD_OnStageDivaNum, 1, 1, false);
+				str.SetFormat(strs[i], waveName);
+			}
+			else
+			{
+				str.SetFormat(strs[i], ECOIBKOIPFP_WavId);
+			}
+			res |= BDOFDNICMLC_StartInstallIfNeeded(str.ToString());
+		}
+		return res;
+	}
 
 	// // RVA: 0xE7F898 Offset: 0xE7F898 VA: 0xE7F898
 	// public void LIDGJKCOGFA(int ECOIBKOIPFP, int DNHLEPCFPFC, int MOBOJNCPCGD, List<string> NNDGIAEFMOG, int HADONLEBKLD) { }
 
 	// // RVA: 0xE7FD38 Offset: 0xE7FD38 VA: 0xE7FD38
-	// public bool KEILLGAJEPF(int ECOIBKOIPFP, int IMPALJEMHJJ, int DNHLEPCFPFC, List<int> KJAIAJIIOMA, List<int> DJPOMCAOKKD, List<int> KBGIODFCIGN, List<int> LMIFMHACFID, List<int> DDFCBCNPGHD, List<int> MEJEDAJBJKN, int MCFPOJBDIHP, List<int> HPDJEIFEADB, int HADONLEBKLD) { }
+	public bool KEILLGAJEPF_AddRhythmResources(int ECOIBKOIPFP_WavId, int IMPALJEMHJJ_OverridePrimeId, int DNHLEPCFPFC_SongId, List<int> KJAIAJIIOMA_MusicCameraCutinList, List<int> DJPOMCAOKKD_DivaCutinList, List<int> KBGIODFCIGN_DivaExtensionCutinList, List<int> LMIFMHACFID_StageLightingList, List<int> DDFCBCNPGHD_StageExtensionList, List<int> MEJEDAJBJKN_SpecialMovieResource, int MCFPOJBDIHP_VidQuality, List<int> HPDJEIFEADB_StageChangerList, int HADONLEBKLD_OnStageDivaNum)
+	{
+		bool res = OKJCGCOGDIA(ECOIBKOIPFP_WavId, DNHLEPCFPFC_SongId, MCFPOJBDIHP_VidQuality, HADONLEBKLD_OnStageDivaNum);
+		if(IMPALJEMHJJ_OverridePrimeId == 2)
+		{
+			string waveName = GameManager.Instance.GetWavDirectoryName(ECOIBKOIPFP_WavId, NMFLPJMFPFN_MoveTrackFileFormat, HADONLEBKLD_OnStageDivaNum, 2, 1, true);
+			res |= BDOFDNICMLC_StartInstallIfNeeded(string.Format(NMFLPJMFPFN_MoveTrackFileFormat, waveName));
+		}
+		List<int>[] l = new List<int>[6];
+		l[0] = KJAIAJIIOMA_MusicCameraCutinList;
+		l[1] = DJPOMCAOKKD_DivaCutinList;
+		l[2] = KBGIODFCIGN_DivaExtensionCutinList;
+		l[3] = LMIFMHACFID_StageLightingList;
+		l[4] = DDFCBCNPGHD_StageExtensionList;
+		l[5] = HPDJEIFEADB_StageChangerList;
+		StringBuilder str = new StringBuilder(128);
+		for(int i = 0; i < ABNBIJGFNBA_3dExtensionsFilesFormat.Length; i++)
+		{
+			foreach(int r in l[i])
+			{
+				if(r > 0)
+				{
+					string waveName = GameManager.Instance.GetWavDirectoryName(ECOIBKOIPFP_WavId, ABNBIJGFNBA_3dExtensionsFilesFormat[i], HADONLEBKLD_OnStageDivaNum, 1, r, false);
+					str.SetFormat(ABNBIJGFNBA_3dExtensionsFilesFormat[i], waveName, r);
+					res |= BDOFDNICMLC_StartInstallIfNeeded(str.ToString());
+				}
+			}
+		}
+		if(MCFPOJBDIHP_VidQuality > 0 && MEJEDAJBJKN_SpecialMovieResource[0] > 0)
+		{
+			str.SetFormat("dr_{0:D3}_", MEJEDAJBJKN_SpecialMovieResource[0]);
+			str.SetFormat(EMLADNPGDOG_VideoFileFormat, ECOIBKOIPFP_WavId, str, MCFPOJBDIHP_VidQuality);
+			res |= BDOFDNICMLC_StartInstallIfNeeded(str.ToString());
+		}
+		return res;
+	}
 
 	// // RVA: 0xE806E8 Offset: 0xE806E8 VA: 0xE806E8
 	// public void IDCJNAFJLAA(int ECOIBKOIPFP, int IMPALJEMHJJ, int DNHLEPCFPFC, List<int> KJAIAJIIOMA, List<int> DJPOMCAOKKD, List<int> KBGIODFCIGN, List<int> LMIFMHACFID, List<int> DDFCBCNPGHD, List<int> MEJEDAJBJKN, int MCFPOJBDIHP, List<int> HPDJEIFEADB, List<string> NNDGIAEFMOG, int HADONLEBKLD) { }

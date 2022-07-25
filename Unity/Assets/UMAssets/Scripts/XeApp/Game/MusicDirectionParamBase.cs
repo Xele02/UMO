@@ -170,7 +170,36 @@ namespace XeApp.Game
 		// public List<MusicDirectionParamBase.ResourceData> CheckFulfill(List<MusicDirectionParamBase.SpecialDirectionData> data, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
 
 		// // RVA: 0xC94AE0 Offset: 0xC94AE0 VA: 0xC94AE0
-		// public List<int>[] GetSpecialDirectionResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		public List<int>[] GetSpecialDirectionResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			List<MusicDirectionParamBase.ResourceData>[] data = new List<MusicDirectionParamBase.ResourceData>[10];
+			data[0] = CheckStageLightingResourceId(settingList);
+			data[3] = CheckStageExtensionResourceId(settingList);
+			data[4] = CheckDivaExtensionResourceId(settingList);
+			data[2] = CheckDivaCutinResourceId(settingList);
+			data[1] = CheckMusicCameraCutinResourceId(settingList);
+			data[7] = CheckMusicVoiceChangerResourceId(settingList);
+			data[8] = CheckSpecialMovieResourceId(settingList);
+			data[9] = CheckStageChangerResourceId(settingList);
+			List<int>[] res = new List<int>[10];
+			for(int i = 0; i < 9; i++)
+			{
+				List<int> resdata = new List<int>();
+				if(data[i] == null)
+				{
+					resdata.Add(0);
+				}
+				else
+				{
+					foreach(var d in data[i])
+					{
+						resdata.Add(d.id);
+					}
+				}
+				res[i] = resdata;
+			}
+			return res;
+		}
 
 		// // RVA: 0xC95238 Offset: 0xC95238 VA: 0xC95238
 		public bool IsEnabledDirection(MusicDirectionBoolParam.DirectionType type)

@@ -1052,8 +1052,101 @@ namespace XeApp.Game
 		// // RVA: 0x9A1478 Offset: 0x9A1478 VA: 0x9A1478
 		public IEnumerator TryInstallRhythmGameResource(GameSetupData gameSetupData)
 		{
-			UnityEngine.Debug.LogError("TODO TryInstallRhythmGameResource");
-			yield break;
+			GameSetupData setupData; // 0x14
+			GameSetupData.TeamInfo ti; // 0x18
+			GameSetupData.MusicInfo mi; // 0x1C
+			OKGLGHCBCJP_Database master; // 0x20
+			EONOEHOKBEB_Music musicBase; // 0x24
+			int wavId; // 0x28
+			StringBuilder bundleName; // 0x2C
+			StringBuilder assetName; // 0x30
+			AssetBundleLoadAssetOperation operation; // 0x34
+			MusicDirectionParamBase directionParam; // 0x38
+
+			//0x1426BDC
+			setupData = gameSetupData;
+			ti = setupData.teamInfo;
+			mi = setupData.musicInfo;
+			master = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+			musicBase = master.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(mi.prismMusicId);
+			wavId = musicBase.KKPAHLMJKIH_WavId;
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			string waveName = GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/sc.xab", mi.onStageDivaNum, 1, -1, true);
+			bundleName.SetFormat("mc/{0}/sc.xab", waveName);
+			assetName.SetFormat("p_{0:D4}", wavId);
+			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(MusicDirectionParamBase));
+			yield return operation;
+			directionParam = operation.GetAsset<MusicDirectionParamBase>();
+			assetName.SetFormat("bp_{0:D4}", wavId);
+			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(MusicDirectionBoolParam));
+			yield return operation;
+			directionParam.BoolParam = operation.GetAsset<MusicDirectionBoolParam>();
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+
+			//master.MGFMPKLLGHE_Diva.GCINIJEMHFK(ti.divaList[0].prismDivaId).IDDHKOEFJFB;
+			int a = 0;
+			if(mi.isFreeMode)
+			{
+				a = master.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(mi.freeMusicId).KEFGPJBKAOD_WavId;
+			}
+			else
+			{
+				a = master.IBPAFKKEKNK_Music.FLMLJIKBIMJ(mi.storyMusicId).KEFGPJBKAOD;
+			}
+			PNGOLKLFFLH b = new PNGOLKLFFLH();
+			b.KHEKNNFCAOI_Init(ti.prismValkyrieId, ti.valkyrieForm, 0);
+			int vidQuality = 0;
+			if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video == 0)
+			{
+				vidQuality = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CBLEFELBNDN_GetQuality();
+			}
+			List<MusicDirectionParamBase.ConditionSetting> settingList = new List<MusicDirectionParamBase.ConditionSetting>();
+			for(int i = 0; i < mi.onStageDivaNum; i++)
+			{
+				MusicDirectionParamBase.ConditionSetting cond = new MusicDirectionParamBase.ConditionSetting();
+				cond.divaId = ti.danceDivaList[i].prismDivaId;
+				cond.costumeModelId = ti.danceDivaList[i].prismCostumeModelId;
+				cond.valkyrieId = ti.prismValkyrieId;
+				cond.pilotId = b.OPBPKNHIPPE.PFGJJLGLPAC;
+				cond.positionId = ti.danceDivaList[i].positionId;
+				settingList.Add(cond);
+			}
+			List<int> l = new List<int>();
+			for (int i = 0; i < mi.onStageDivaNum; i++)
+			{
+				l.Add(master.MGFMPKLLGHE_Diva.GCINIJEMHFK(ti.danceDivaList[i].prismDivaId).IDDHKOEFJFB);
+			}
+			int c = GameManager.Instance.GetMultipleDanceOverridePrimeId(l);
+			int basaraPos = directionParam.basaraPositionId;
+			int otherPos = 0;
+			if (mi.onStageDivaNum > 1)
+			{
+				for(int i = 0; i < mi.onStageDivaNum; i++)
+				{
+					if(settingList[i].divaId == 9)
+					{
+						if (settingList[i].positionId == basaraPos)
+							break;
+						otherPos = settingList[i].positionId;
+						settingList[i].positionId = basaraPos;
+					}
+				}
+				if(otherPos != 0)
+				{
+					for (int i = 0; i < mi.onStageDivaNum; i++)
+					{
+						if (settingList[i].divaId != 9 && settingList[i].positionId == basaraPos)
+						{
+							settingList[i].positionId = otherPos;
+						}
+					}
+				}
+			}
+			List<int>[] res = directionParam.GetSpecialDirectionResourceId(settingList);
+			KDLPEDBKMID.HHCJCDFCLOB.KEILLGAJEPF_AddRhythmResources(wavId, c, a, res[1], res[2], res[4], res[0], res[3], res[8], vidQuality, res[9], mi.onStageDivaNum);
+			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB)
+				yield return null;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADEA0 Offset: 0x6ADEA0 VA: 0x6ADEA0
