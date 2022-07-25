@@ -24,7 +24,7 @@ namespace ExternLib
         public static bool criAtomExAcb_GetCueInfoByName(IntPtr acb_hn, string name, out CriAtomEx.CueInfo info)
         {
             info = new CriAtomEx.CueInfo();
-            if(acbFiles.ContainsKey(acb_hn))
+            if(!acbFiles.ContainsKey(acb_hn))
                 return false;
             CriAcbFile file = acbFiles[acb_hn];
             CriAcbCueRecord cueRecord = file.GetCueRecord(name);

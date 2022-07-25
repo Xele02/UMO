@@ -855,7 +855,8 @@ namespace XeApp.Game.RhythmGame
 			{
 				resource.musicData.rhythmGameResultStartMillisec = musicMillisecLength - 5000;
 			}
-			else
+			//else
+			UnityEngine.Debug.LogError("TODO why else ?");
 			{
 				rhythmGameResultStartEvent.millisec = resource.musicData.rhythmGameResultStartMillisec;
 			}
@@ -1701,8 +1702,9 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BE120 Offset: 0x9BE120 VA: 0x9BE120
 		public bool IsRhythmGamePlayerEnd()
 		{
-			UnityEngine.Debug.LogError("TODO IsRhythmGamePlayerEnd");
-			return false;
+			if(isVisiblePauseWindow)
+				return false;
+			return !rhythmGameResultStartEvent.active;
 		}
 
 		// // RVA: 0x9CC460 Offset: 0x9CC460 VA: 0x9CC460

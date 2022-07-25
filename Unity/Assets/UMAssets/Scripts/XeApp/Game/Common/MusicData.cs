@@ -226,7 +226,57 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE65AC Offset: 0xAE65AC VA: 0xAE65AC
 		private void ExtractionEventFireMillisec()
 		{
-			UnityEngine.Debug.LogError("TODO ExtractionEventFireMillisec");
+			introFadeMillisec = MusicData.INTRO_FADE_DEFAULT_MILLISEC;
+			valkyrieModeJudgeMillisec = -1;
+			valkyrieModeStartFadeMillisec = -1;
+			valkyrieModeStartMillisec = -1;
+			valkyrieModeLeaveMillisec = -1;
+			divaModeJudgeMillisec = -1;
+			rhythmGameResultStartMillisec = -1;
+			tutorialOneEndGameStartMillisec = -1;
+			tutorialTwoForceFwaveMaxStartMillisec = -1;
+			tutorialTwoForceDefeatEnemyStartMillisec = -1;
+			tutorialTwoModeDescriptionlStartMillisec = -1;
+			if(commonData != null)
+			{
+				for(int i = 0; i < commonData.eventTrack10.Count; i++)
+				{
+					if(commonData.eventTrack10[i].value == MusicScoreData.INTRO_FADE)
+						introFadeMillisec = commonData.eventTrack10[i].time;
+					else if(commonData.eventTrack10[i].value == MusicScoreData.START_VALKYRIE_MODE)
+					{
+						valkyrieModeJudgeMillisec = commonData.eventTrack10[i].time + MusicData.VALKYRIE_MODE_JUDGE_OFFSET;
+						valkyrieModeStartHUDMillisec = commonData.eventTrack10[i].time + MusicData.VALKYRIE_MODE_HUD_OFFSET;
+						valkyrieModeStartFadeMillisec = commonData.eventTrack10[i].time + MusicData.VALKYRIE_MODE_FADE_OFFSET;
+						valkyrieModeStartMillisec = commonData.eventTrack10[i].time;
+						tutorialTwoModeDescriptionlStartMillisec = commonData.eventTrack10[i].time + MusicData.TUTORIAL_MODE_DESCRIPTION_OFFSET;
+					}
+					else if(commonData.eventTrack10[i].value == MusicScoreData.LEAVE_VALKYRIE_MODE)
+					{
+						valkyrieModeLeaveMillisec = commonData.eventTrack10[i].time;
+						divaModeJudgeMillisec = commonData.eventTrack10[i].time + MusicData.DIVA_MODE_JUDGE_OFFSET;
+					}
+					else if(commonData.eventTrack10[i].value == MusicScoreData.START_DIVA_MODE)
+					{
+						divaModeStartMillisec = commonData.eventTrack10[i].time;
+					}
+					else if(commonData.eventTrack10[i].value == MusicScoreData.START_COMBO_RESULT)
+					{
+					}
+					else if(commonData.eventTrack10[i].value == MusicScoreData.TUTORIAL_ONE_END_GAME)
+					{
+						tutorialOneEndGameStartMillisec = commonData.eventTrack10[i].time;
+					}
+					else if(commonData.eventTrack10[i].value == MusicScoreData.TUTORIAL_TWO_FORCE_FWAVE_MAX)
+					{
+						tutorialTwoForceFwaveMaxStartMillisec = commonData.eventTrack10[i].time;
+					}
+					else if(commonData.eventTrack10[i].value == MusicScoreData.TUTORIAL_TWO_FORCE_DEFEAT_ENEMY)
+					{
+						tutorialTwoForceDefeatEnemyStartMillisec = commonData.eventTrack10[i].time;
+					}
+				}
+			}
 		}
 
 		// // RVA: 0xAE6CDC Offset: 0xAE6CDC VA: 0xAE6CDC
