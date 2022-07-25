@@ -59,10 +59,10 @@ namespace CriWare
 
         public static bool isInitialized { get; private set; } // 0x0
         public static bool isCrcEnabled { get; private set; } // 0x1
-        // public static CriFsWebInstaller.ModuleConfig defaultModuleConfig { get; } 0x294DDFC
+        public static CriFsWebInstaller.ModuleConfig defaultModuleConfig { get { return new ModuleConfig() { numInstallers = 2, proxyHost = null, proxyPort = 0, userAgent = null, inactiveTimeoutSec = 300, allowInsecureSSL = false }; } }// 0x294DDFC
 
-        // tmp hack
-        public UnityEngine.WWW www = null;
+		// tmp hack
+		public UnityEngine.WWW www = null;
         public string fileSavePath;
         public CriFsWebInstaller.StatusInfo status = new CriFsWebInstaller.StatusInfo();
         // tmp hack
@@ -85,6 +85,7 @@ namespace CriWare
         // // RVA: 0x294D8BC Offset: 0x294D8BC VA: 0x294D8BC
         public void Copy(string url, string dstPath)
         {
+			url = FileSystemProxy.ConvertURL(url);
             UnityEngine.Debug.LogWarning("Todo Copy "+url+" "+dstPath);
             www = new UnityEngine.WWW(url);
             fileSavePath = dstPath;
@@ -127,13 +128,19 @@ namespace CriWare
         // public bool GetCRC32(out uint ret_val) { }
 
         // // RVA: 0x294E59C Offset: 0x294E59C VA: 0x294E59C
-        // public static void InitializeModule(CriFsWebInstaller.ModuleConfig config) { }
+        public static void InitializeModule(CriFsWebInstaller.ModuleConfig config)
+		{
+			UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller InitializeModule");
+		}
 
         // // RVA: 0x294E8A4 Offset: 0x294E8A4 VA: 0x294E8A4
-        // public static void FinalizeModule() { }
+        public static void FinalizeModule()
+		{
+			UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller FinalizeModule");
+		}
 
-        // // RVA: 0x294C460 Offset: 0x294C460 VA: 0x294C460
-        public static void ExecuteMain()
+		// // RVA: 0x294C460 Offset: 0x294C460 VA: 0x294C460
+		public static void ExecuteMain()
         {
             UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller ExecuteMain");
         }
@@ -182,8 +189,11 @@ namespace CriWare
                     if(installer.www.isDone)
                     {
                         status.status = Status.Complete;
-                        UnityEngine.Debug.Log("Write file "+installer.fileSavePath);
-                        System.IO.File.WriteAllBytes(installer.fileSavePath, installer.www.bytes);
+						if (string.IsNullOrEmpty(installer.www.error))
+						{
+							UnityEngine.Debug.Log("Write file " + installer.fileSavePath);
+							System.IO.File.WriteAllBytes(installer.fileSavePath, installer.www.bytes);
+						}
                     }
                 }
             }

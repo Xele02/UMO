@@ -12,7 +12,7 @@ public class ANCJLICGOLP
     }
 
 	private Dictionary<string, CEBFFLDKAEC> OHJFBLFELNK; // 0x8
-	private Dictionary<string, JDEFIJBCJLC> FJOEBCMGDMI; // 0xC
+	private Dictionary<string, JDEFIJBCJLC_EncryptedString> FJOEBCMGDMI; // 0xC
 	public List<MFJONNINDCJ> JGJJIBPPEPD_List; // 0x10
 	private static List<string> OHNJJIMGKGK_TypesStr; // 0x0
 
@@ -38,7 +38,7 @@ public class ANCJLICGOLP
 	public void KHEKNNFCAOI_Init()
 	{
 		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC>();
-		FJOEBCMGDMI = new Dictionary<string, JDEFIJBCJLC>();
+		FJOEBCMGDMI = new Dictionary<string, JDEFIJBCJLC_EncryptedString>();
 		JGJJIBPPEPD_List = new List<MFJONNINDCJ>();
 	}
 
@@ -156,8 +156,8 @@ public class ANCJLICGOLP
 			do
 			{
 				EDOHBJAPLPF_JsonData data = IMKIBKOICBF[OIPCCBHIKIA];
-				JDEFIJBCJLC elem = new JDEFIJBCJLC();
-				elem.DNJEJEANJGL = (string)data["v"];
+				JDEFIJBCJLC_EncryptedString elem = new JDEFIJBCJLC_EncryptedString();
+				elem.DNJEJEANJGL_Value = (string)data["v"];
 				FJOEBCMGDMI.Add((string)data["k"], elem);
 				OIPCCBHIKIA++;
 			} while(OIPCCBHIKIA != size);

@@ -1044,8 +1044,8 @@ namespace XeApp.Game
 		// // RVA: 0x9A1348 Offset: 0x9A1348 VA: 0x9A1348
 		public bool InstallEvent(int type, float per)
 		{
-			UnityEngine.Debug.LogError("TODO");
-			return false;
+			UnityEngine.Debug.LogError("TODO InstallEvent");
+			return true;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADE28 Offset: 0x6ADE28 VA: 0x6ADE28

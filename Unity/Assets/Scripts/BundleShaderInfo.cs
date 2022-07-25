@@ -21,7 +21,9 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
     public void Start()
     {
         UnityEngine.Object.DontDestroyOnLoad(this);
-    }
+		StartCoroutine(FileSystemProxy.InitServerFileList());
+
+	}
 
 	public void RegisterShaderIds(AssetBundle shaderBundle2, Action onCompleted)
 	{

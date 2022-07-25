@@ -78,27 +78,6 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1398094 Offset: 0x1398094 VA: 0x1398094
 		private IEnumerator Co_InstallProcess(string cueSheetName, UnityAction onEndCallback)
 		{
-#if UNITY_EDITOR
-			bool acbAvaiable = false;
-			bool awbAvaiable = false;
-			FileSystemProxy.TryInstallFile(SoundResource.GetAcbPath(cueSheetName), (string newPath) =>
-			{
-				acbAvaiable = true;
-			});
-			if (SoundResource.GetAwbPath(cueSheetName) != null)
-			{
-				FileSystemProxy.TryInstallFile(SoundResource.GetAwbPath(cueSheetName), (string newPath) =>
-				{
-					awbAvaiable = true;
-				});
-			}
-			else
-			{
-				awbAvaiable = true;
-			}
-			while (!acbAvaiable && !awbAvaiable)
-				yield return null;
-#endif
 			//0x1395404
 			yield return new WaitWhile(() =>
 			{

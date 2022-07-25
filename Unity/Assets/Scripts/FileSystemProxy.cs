@@ -21,6 +21,32 @@ static class FileSystemProxy
 		}
 	}
 
+	static public string ConvertURL(string url)
+	{
+		//InitServerFileList();
+		if (url.Contains("!s00000000z!"))
+		{
+			int idx = url.IndexOf("/android/");
+			string fileName = url.Substring(idx);
+			fileName = fileName.Replace("!s00000000z!", "");
+			if(serverFileList.ContainsKey(fileName))
+			{
+				url = url.Substring(0, idx) + serverFileList[fileName];
+			}
+			else
+			{
+				return "";
+			}
+		}
+
+		if (CurrentSettings == null || string.IsNullOrEmpty(CurrentSettings.DataWebServerURL))
+			return url;
+		string serverPath = CurrentSettings.DataWebServerURL;
+		if (serverPath.EndsWith("/"))
+			serverPath = serverPath.Substring(0, serverPath.Length - 1);
+		return url.Replace("https://assets-sakasho.cdn-dena.com/1246/20220502151005", serverPath);
+	}
+
 	static public string ConvertPath(string path)
 	{
 		path = path.Replace("\\", "/");
@@ -28,7 +54,7 @@ static class FileSystemProxy
 			return path;
 		if (CurrentSettings == null)
 			return path;
-		InitServerFileList();
+		//InitServerFileList();
 		if (path.Contains(UnityEngine.Application.persistentDataPath + "/data") && Directory.Exists(CurrentSettings.DataDirectory))
 		{
 			path = path.Replace(UnityEngine.Application.persistentDataPath + "/data", CurrentSettings.DataDirectory);
@@ -66,7 +92,7 @@ static class FileSystemProxy
 
 	static bool serverListInitializing = false;
 
-	static IEnumerator InitServerFileList()
+	public static IEnumerator InitServerFileList()
 	{
 		while(serverListInitializing)
 			yield return null;
@@ -86,7 +112,7 @@ static class FileSystemProxy
 					yield return null;
 				}
 				string fileName = (string)fileL[i]["file"];
-				string localName = GCGNICILKLD.NOCCMAKNLLD.Replace(fileName, "");
+				string localName = GCGNICILKLD_AssetFileInfo.NOCCMAKNLLD.Replace(fileName, "");
 				//UnityEngine.Debug.Log("Added file " + localName + " to remote name " + fileName);
 				serverFileList.Add(localName, fileName);
 			}

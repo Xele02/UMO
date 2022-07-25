@@ -39,7 +39,7 @@ public class LFPOMKLKHPB
 	// public string OBDBAEOPJPL(List<GCGNICILKLD> KGHAJGGMPKL) { }
 
 	// // RVA: 0xD6FF78 Offset: 0xD6FF78 VA: 0xD6FF78
-	public void NKIKBOJOCNN(List<GCGNICILKLD> KGHAJGGMPKL)
+	public void NKIKBOJOCNN(List<GCGNICILKLD_AssetFileInfo> KGHAJGGMPKL)
     {
         UnityEngine.Debug.LogError("TODO !!!");
     }

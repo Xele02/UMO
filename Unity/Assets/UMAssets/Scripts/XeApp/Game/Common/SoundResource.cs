@@ -224,7 +224,8 @@ namespace XeApp.Game.Common
 					suf = ".awb";
 				}
 				path = path + suf;
-				return exists || KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_NeedFileInstall(path);
+				exists |= KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_NeedFileInstall(path);
+				return exists;
 			}
 			return false;
 		}

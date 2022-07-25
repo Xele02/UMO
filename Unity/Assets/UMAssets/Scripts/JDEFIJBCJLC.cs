@@ -1,9 +1,10 @@
 
-public class JDEFIJBCJLC
+public class JDEFIJBCJLC { }
+public class JDEFIJBCJLC_EncryptedString
 {
 	private byte[] DLHDPLPLCAC; // 0x8
 
-	public string DNJEJEANJGL { get
+	public string DNJEJEANJGL_Value { get
 		{
 			if(DLHDPLPLCAC != null)
 			{

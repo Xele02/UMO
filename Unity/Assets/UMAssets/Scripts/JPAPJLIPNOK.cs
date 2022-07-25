@@ -41,7 +41,7 @@ public class JPAPJLIPNOK : CACGCMBKHDI_Request
 
 public class IKAHKDKIGNA
 {
-	public List<GCGNICILKLD> KGHAJGGMPKL; // 0x8
+	public List<GCGNICILKLD_AssetFileInfo> KGHAJGGMPKL; // 0x8
 	public string GLMGHMCOMEC; // 0xC
 	public string PNELHHHCFAI; // 0x10
 
@@ -50,12 +50,12 @@ public class IKAHKDKIGNA
     {
         EDOHBJAPLPF_JsonData files = IDLHJIOMJBK[AFEHLCGHAEE.KGHAJGGMPKL/*files*/];
         int num = files.HNBFOAJIIAL_Count;
-        KGHAJGGMPKL = new List<GCGNICILKLD>(num);
+        KGHAJGGMPKL = new List<GCGNICILKLD_AssetFileInfo>(num);
         for(int i = 0; i < num; i++)
         {
             EDOHBJAPLPF_JsonData fileData = files[i];
-            GCGNICILKLD fileInfo = new GCGNICILKLD();
-            fileInfo.KHEKNNFCAOI(fileData, i);
+            GCGNICILKLD_AssetFileInfo fileInfo = new GCGNICILKLD_AssetFileInfo();
+            fileInfo.KHEKNNFCAOI_Load(fileData, i);
             KGHAJGGMPKL.Add(fileInfo);
         }
         GLMGHMCOMEC = (string)IDLHJIOMJBK[AFEHLCGHAEE.GLMGHMCOMEC/*base_url*/];
@@ -66,7 +66,7 @@ public class IKAHKDKIGNA
 	{
 		for(int i = 0; i < KGHAJGGMPKL.Count; i++)
 		{
-			if (KGHAJGGMPKL[i].OIEAICNAMNB == "/android/" + CKDFCDDOBDH)
+			if (KGHAJGGMPKL[i].OIEAICNAMNB_LocalFileName == "/android/" + CKDFCDDOBDH)
 				return true;
 		}
 		return false;

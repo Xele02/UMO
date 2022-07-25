@@ -196,9 +196,9 @@ namespace XeApp.Game.AR
 				yield break;
 			}
 
-			GCGNICILKLD found = req.NFEAMMJIMPG.KGHAJGGMPKL.Find((GCGNICILKLD _) => {
+			GCGNICILKLD_AssetFileInfo found = req.NFEAMMJIMPG.KGHAJGGMPKL.Find((GCGNICILKLD_AssetFileInfo _) => {
 				// 0xBBB1A4
-				return _.OIEAICNAMNB.Contains(string.Format("/db/{0}.dat", m_name));
+				return _.OIEAICNAMNB_LocalFileName.Contains(string.Format("/db/{0}.dat", m_name));
 			});
 			if(found == null)
 			{
@@ -206,8 +206,8 @@ namespace XeApp.Game.AR
 				yield break;
 			}
 
-			string src = req.NFEAMMJIMPG.GLMGHMCOMEC + found.MFBMBPJAADA;
-			string dest = BBGDKLLEPIB.OGCDNCDMLCA + found.OIEAICNAMNB;
+			string src = req.NFEAMMJIMPG.GLMGHMCOMEC + found.MFBMBPJAADA_FileName;
+			string dest = BBGDKLLEPIB.OGCDNCDMLCA + found.OIEAICNAMNB_LocalFileName;
 			UnityEngine.Debug.LogError("Dld from "+src+" to "+dest);
 
 			string dir = Path.GetDirectoryName(dest);
@@ -217,7 +217,7 @@ namespace XeApp.Game.AR
 			}
 			if(File.Exists(dest))
 			{
-				if(CalcMD5(dest) == found.POEGMFKLFJG)
+				if(CalcMD5(dest) == found.POEGMFKLFJG_Hash)
 				{
 					UnityEngine.Debug.LogError("File match, don't dld");
     				UnityEngine.Debug.Log("Exit Coroutine_Download");
