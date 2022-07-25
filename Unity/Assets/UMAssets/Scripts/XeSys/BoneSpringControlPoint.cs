@@ -58,8 +58,8 @@ namespace XeSys
 				influenceSuppressRateWind = 0;
 				currentPosition = transform.position;
 				prevPosition = transform.position;
-				boneDirection = transform.position.normalized;
-				originalBoneLength = (parentTransform.position - transform.position).sqrMagnitude;
+				boneDirection = transform.localPosition.normalized;
+				originalBoneLength = (parentTransform.position - transform.position).magnitude;
 			}
 		}
 
@@ -102,8 +102,9 @@ namespace XeSys
 			if(relational != null)
 			{
 				Vector3 dir = (relational.currentPosition - currentPosition).normalized;
-				m_bunding_sphere_pos = ((relational.currentPosition + (dir * relational.radiusEx * 1) - (currentPosition + (dir * radiusEx * -1))) * 0.5f) +(currentPosition + (dir * radiusEx * -1));
-				m_bunding_sphere_radius_sqr = m_bunding_sphere_pos.sqrMagnitude;
+				Vector3 halfdist = ((relational.currentPosition + (dir * relational.radiusEx * 1) - (currentPosition + (dir * radiusEx * -1))) * 0.5f);
+				m_bunding_sphere_pos = halfdist+(currentPosition + (dir * radiusEx * -1));
+				m_bunding_sphere_radius_sqr = halfdist.sqrMagnitude;
 			}
 		}
 
@@ -114,7 +115,7 @@ namespace XeSys
 			bool hasCollision = false;
 			for(int i = 0; i < colliderList.Count; i++)
 			{
-				hasCollision &= CheckCollision(colliderList[i]);
+				hasCollision |= CheckCollision(colliderList[i]);
 			}
 			if(hasCollision)
 			{
@@ -173,40 +174,38 @@ namespace XeSys
 		private bool CheckSphererCapsuleCollision(BoneSpringCollider collider)
 		{
 			float lineNearestTargetRate;
-			float var10, var4, var3;
-			Vector3 v94, v70;
+			float intersectRadius, testRadius, intersectDist;
+			Vector3 testPos, testPos2;
 			if (relational != null)
 			{
 				// This is a sphere, other is a capsule
-				var3 = Math.CalcNearDistancePointToLine(collider.position, currentPosition, relational.transform.position, out lineNearestTargetRate);
+				intersectDist = Math.CalcNearDistancePointToLine(collider.position, currentPosition, relational.transform.position, out lineNearestTargetRate);
 				Vector3 v = collider.position;
-				var10 = collider.radiusEx;
-				var4 = Mathf.Lerp(radiusEx, relational.radiusEx, lineNearestTargetRate);
-				v70 = collider.position;
-				v94 = currentPosition + ((relational.transform.position - currentPosition) * lineNearestTargetRate);
+				intersectRadius = collider.radiusEx;
+				testRadius = Mathf.Lerp(radiusEx, relational.radiusEx, lineNearestTargetRate);
+				testPos2 = collider.position;
+				testPos = currentPosition + ((relational.transform.position - currentPosition) * lineNearestTargetRate);
 			}
 			else
 			{
-				var3 = Math.CalcNearDistancePointToLine(currentPosition, collider.position, collider.relational.position, out lineNearestTargetRate);
-				var10 = Mathf.Lerp(collider.radiusEx, collider.relational.radiusEx, lineNearestTargetRate);
-				var4 = radiusEx;
-				v70 = collider.position + (collider.relational.position - collider.position) * lineNearestTargetRate;
-				v94 = currentPosition;
+				intersectDist = Math.CalcNearDistancePointToLine(currentPosition, collider.position, collider.relational.position, out lineNearestTargetRate);
+				intersectRadius = Mathf.Lerp(collider.radiusEx, collider.relational.radiusEx, lineNearestTargetRate);
+				testRadius = radiusEx;
+				testPos2 = collider.position + (collider.relational.position - collider.position) * lineNearestTargetRate;
+				testPos = currentPosition;
 			}
-			var10 = var10 + var4;
-			if (var3 <= var10)
+			float fullRadius = intersectRadius + testRadius;
+			if (intersectDist <= fullRadius)
 			{
-				Vector3 dir = v94 - v70;
+				Vector3 dir = testPos - testPos2;
 				if(relational != null)
 				{
-					dir = dir * (1 - lineNearestTargetRate);
-					AfterCollisionProcess(var3, var10, dir);
-					dir = dir * lineNearestTargetRate;
-					relational.AfterCollisionProcess(var3, var10, dir);
+					AfterCollisionProcess(intersectDist, fullRadius, dir * (1 - lineNearestTargetRate));
+					relational.AfterCollisionProcess(intersectDist, fullRadius, dir * lineNearestTargetRate);
 				}
 				else
 				{
-					AfterCollisionProcess(var3, var10, dir);
+					AfterCollisionProcess(intersectDist, fullRadius, dir);
 				}
 				return true;
 			}
@@ -224,9 +223,9 @@ namespace XeSys
 				float radius2 = Mathf.Lerp(collider.radiusEx, collider.relational.radiusEx, line2TargetRate);
 				if(dist <= (radius1 + radius2))
 				{
-					Vector3 dir = (((relational.transform.position - currentPosition) * radius1 + currentPosition) - (collider.position + ((collider.relational.position - collider.position) * radius2))) * (1 - radius1);
+					Vector3 dir = (((relational.transform.position - currentPosition) * line1targetRate + currentPosition) - (collider.position + ((collider.relational.position - collider.position) * line2TargetRate))) * (1 - line1targetRate);
 					AfterCollisionProcess(dist, (radius1 + radius2), dir);
-					dir = (((relational.transform.position - currentPosition) * radius1 + currentPosition) - (collider.position + ((collider.relational.position - collider.position)) * radius2)) * radius1;
+					dir = (((relational.transform.position - currentPosition) * line1targetRate + currentPosition) - (collider.position + ((collider.relational.position - collider.position) * line2TargetRate))) * (line1targetRate);
 					AfterCollisionProcess(dist, (radius1 + radius2), dir);
 					return true;
 				}

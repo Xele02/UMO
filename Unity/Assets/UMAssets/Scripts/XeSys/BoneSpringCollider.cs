@@ -33,8 +33,9 @@ namespace XeSys
 			if(relational != null)
 			{
 				Vector3 dir = (relational.position - position).normalized;
-				m_bunding_sphere_pos = (relational.position + (dir * relational.radiusEx * 1) - ((dir * radiusEx * -1) + position)) * 0.5f + ((dir * radiusEx * -1) + position);
-				m_bunding_sphere_radius_sqr = m_bunding_sphere_pos.sqrMagnitude;
+				Vector3 halfDist = (relational.position + (dir * relational.radiusEx * 1) - ((dir * radiusEx * -1) + position)) * 0.5f;
+				m_bunding_sphere_pos = halfDist + ((dir * radiusEx * -1) + position);
+				m_bunding_sphere_radius_sqr = halfDist.sqrMagnitude;
 			}
 		}
 	}
