@@ -182,7 +182,7 @@ namespace XeApp.Game
 			data[8] = CheckSpecialMovieResourceId(settingList);
 			data[9] = CheckStageChangerResourceId(settingList);
 			List<int>[] res = new List<int>[10];
-			for(int i = 0; i < 9; i++)
+			for(int i = 0; i < 10; i++)
 			{
 				List<int> resdata = new List<int>();
 				if(data[i] == null)
