@@ -17,13 +17,16 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 	}
     private  Dictionary<int,ShaderInfo> shaderList = new Dictionary<int, ShaderInfo>();
 	private HashSet<string> alreadyParsedBundle = new HashSet<string>();
+	private bool isInitialized = false;
 
     public void Start()
     {
         UnityEngine.Object.DontDestroyOnLoad(this);
-		StartCoroutine(FileSystemProxy.InitServerFileList());
+		isInitialized = true;
 
 	}
+
+	public bool IsInitialized { get { return isInitialized; } }
 
 	public void RegisterShaderIds(AssetBundle shaderBundle2, Action onCompleted)
 	{

@@ -9,9 +9,12 @@ static class FileSystemProxy
 {
 	private static Dictionary<string, string> serverFileList;
 
+	private static bool isInitialized = false;
+
+	static public bool IsInitialized { get { return isInitialized; } }
+
 	static public string ConvertURL(string url)
 	{
-		//InitServerFileList();
 		if (url.Contains("!s00000000z!"))
 		{
 			int idx = url.IndexOf("/android/");
@@ -46,7 +49,6 @@ static class FileSystemProxy
 			return path;
 		if (RuntimeSettings.CurrentSettings == null)
 			return path;
-		//InitServerFileList();
 		if (path.Contains(UnityEngine.Application.persistentDataPath + "/data") && Directory.Exists(RuntimeSettings.CurrentSettings.DataDirectory))
 		{
 			string new_path = path.Replace(UnityEngine.Application.persistentDataPath + "/data", RuntimeSettings.CurrentSettings.DataDirectory);
@@ -93,16 +95,10 @@ static class FileSystemProxy
 			onDone(path);
 	}
 
-	static bool serverListInitializing = false;
-
 	public static IEnumerator InitServerFileList()
 	{
-		while(serverListInitializing)
-			yield return null;
-
 		if (serverFileList == null)
 		{
-			serverListInitializing = true;
 			serverFileList = new Dictionary<string, string>();
 			string fileList = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath + "/../../Data/RequestGetFiles.json"));
 			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(fileList);
@@ -119,7 +115,7 @@ static class FileSystemProxy
 				//UnityEngine.Debug.Log("Added file " + localName + " to remote name " + fileName);
 				serverFileList.Add(localName, fileName);
 			}
-			serverListInitializing = false;
+			isInitialized = true;
 		}
 	}
 

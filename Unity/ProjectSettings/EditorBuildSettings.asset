@@ -42,6 +42,6 @@ EditorBuildSettings:
     path: Assets/UMAssets/Scene/Project/Scenes/MiniGame.unity
     guid: d7f37c3f7a70d184586b90020a3b3ffc
   - enabled: 1
-    path: Assets/Scenes/TestSong.unity
-    guid: ba4da65aa8c5ccc30a4e426bd744fa3c
+    path: Assets/Scenes/Start.unity
+    guid: 22fde2ae384d7eb24ae7026a828e6655
   m_configObjects: {}
