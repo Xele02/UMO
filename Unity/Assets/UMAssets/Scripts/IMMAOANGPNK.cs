@@ -20,7 +20,7 @@ public class IMMAOANGPNK
 	public byte[] GCELJIDIGDG; // 0x20
 
 	public static IMMAOANGPNK HHCJCDFCLOB { get; private set; }  // 0x0 LGMPACEDIJF // NKACBOEHELJ 0x9F4C94 OKPMHKNCNAL 0x9FB6B0
-	public bool LNAHEIEIBOI { get; set; }  // 0x8 INBPPDMFOAD  FHEAKKHAAPF 0x9FB740 GOEIEJFPLOG 0x9FB748
+	public bool LNAHEIEIBOI_Initialized { get; set; }  // 0x8 INBPPDMFOAD  FHEAKKHAAPF 0x9FB740 GOEIEJFPLOG 0x9FB748
 	public OKGLGHCBCJP_Database NKEBMCIMJND_Database { get; private set; }  // 0xC MFOHJHBKKBA // GBGACEBEHKM 0x9F4D20 CCMBFKBIMEE 0x9FB750
 	public string NDHOBEEEKEM { get; private set; }  // 0x10 IKBMAEMKGMN JNAKONBIOKB 0x9FB758 PDOJAEDKBDJ 0x9FB760
 	public List<GDIPLANPCEI> JOBKIDDLCPL { get; private set; } // 0x1C MAFBBMCECAD AMJKGMNLEKE 0x9FB768 CMKNDEJMAIJ 0x9FB770
@@ -30,7 +30,7 @@ public class IMMAOANGPNK
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
 	{
 		HHCJCDFCLOB = this;
-		LNAHEIEIBOI = false;
+		LNAHEIEIBOI_Initialized = false;
 		NKEBMCIMJND_Database = new OKGLGHCBCJP_Database();
 		ENEBEGGOHFP = 0;
 		JOBKIDDLCPL = new List<GDIPLANPCEI>();
@@ -295,7 +295,7 @@ public class IMMAOANGPNK
 								if(BHFHGFKBOHH != null)
 								{
 									BHFHGFKBOHH();
-									LNAHEIEIBOI = true;
+									LNAHEIEIBOI_Initialized = true;
         							UnityEngine.Debug.Log("Exit MHEKMICKGDM_LoadFromStorage");
 									yield break;
 								}

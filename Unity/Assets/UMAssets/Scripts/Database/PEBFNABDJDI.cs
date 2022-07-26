@@ -46,7 +46,12 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 	public Dictionary<string, int> KBAPDOLLLAN { get; set; } // BKGIMGCBBOC 0x3C // OOEBAHFJPAB // MCMHANFFFNF
 
 	// // RVA: 0xCC4458 Offset: 0xCC4458 VA: 0xCC4458
-	// public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }
+	public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH)
+	{
+		if (!FJOEBCMGDMI.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		return FJOEBCMGDMI[LJNAKDMILMC].DNJEJEANJGL;
+	}
 
 	// // RVA: 0xCC453C Offset: 0xCC453C VA: 0xCC453C
 	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
@@ -73,10 +78,8 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 	// public int GAGDEIMGBBG(int JIKLEHGJKBH) { }
 
 	// // RVA: 0xCC4C4C Offset: 0xCC4C4C VA: 0xCC4C4C
-	public int DDGHBNLOBAJ_IsCueEncrypted(string OPFGFINHFCE)
+	public int DDGHBNLOBAJ_GetCueEncryptedKey(string OPFGFINHFCE)
 	{
-		UnityEngine.Debug.LogError("TODO DDGHBNLOBAJ is cuesheet encrypted");
-		return 0;
 		if (!KBAPDOLLLAN.ContainsKey(OPFGFINHFCE))
 			return 0;
 		return KBAPDOLLLAN[OPFGFINHFCE];
@@ -136,6 +139,29 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 			data.OIPCKOBNHJL_PrefabName = reader.GJOBPIOOEHD[i].BDCNFMMAEJJ;
 			data.AEMLILCNODL_MasterVersion = (int)reader.GJOBPIOOEHD[i].CJOKJFGDHLD;
 			LMBIOEDHNHB_SceneSwitch.Add(reader.GJOBPIOOEHD[i].GJCCGIFLKPD, data);
+		}
+		for(int i = 0; i < reader.MHGMDJNOLMI.Length; i++) // L495
+		{
+			NNJFKLBPBNK data = new NNJFKLBPBNK();
+			data.DNJEJEANJGL = reader.MHGMDJNOLMI[i].JBGEEPFKIGG;
+			FJOEBCMGDMI[reader.MHGMDJNOLMI[i].LJNAKDMILMC] = data;
+			IFBBNEGGCIH.Add(data);
+		}
+
+		if ((LPJLEHAJADA("acb_setting", 3) & 1) != 0) // L 702
+		{
+			string val = EFEGBHACJAL("login_bonus_setting", "");
+			if(!string.IsNullOrEmpty(val))
+			{
+				char[] sep = new char[1] { ',' };
+				string[] ids = val.Split(sep);
+				for(int i = 0; i < ids.Length / 2; i++)
+				{
+					int val1 = Int32.Parse(ids[i * 2]);
+					int val2 = Int32.Parse(ids[i * 2 + 1]);
+					KBAPDOLLLAN.Add("cs_w_"+val1.ToString("D4"), val2);
+				}
+			}
 		}
 
 		return true;

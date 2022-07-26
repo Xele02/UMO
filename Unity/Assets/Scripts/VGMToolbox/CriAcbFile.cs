@@ -50,7 +50,7 @@ namespace VGMToolbox.format
         protected enum AwbToExtract { Internal, External };
 
 
-        public CriAcbFile(FileStream fs, long offset, bool includeCueIdInFileName)
+        public CriAcbFile(FileStream fs, long offset, bool includeCueIdInFileName, string externalFileName = "")
         {
             // initialize UTF
             this.Initialize(fs, offset);
@@ -80,7 +80,7 @@ namespace VGMToolbox.format
                 (!ByteConversion.IsZeroFilledByteArray(this.StreamAwbHash)))
             {
                 // get external file name
-                this.StreamfilePath = this.GetStreamfilePath();
+                this.StreamfilePath = string.IsNullOrEmpty(externalFileName) ? this.GetStreamfilePath() : externalFileName;
 
                 // get file type
                 using (FileStream awbFs = File.Open(this.StreamfilePath, FileMode.Open, FileAccess.Read, FileShare.Read))

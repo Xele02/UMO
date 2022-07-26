@@ -470,7 +470,7 @@ public class NKGJPJPHLIF
 					{
 							if(DPCCNOCAHGC && PECPLBANLBN)
 							{
-									if(EJDOEBLBGIO.LNAHEIEIBOI)
+									if(EJDOEBLBGIO.LNAHEIEIBOI_Initialized)
 									{
 											if(EJDOEBLBGIO.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("server_time_auto_update", 0) == 0)
 													return;

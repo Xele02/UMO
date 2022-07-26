@@ -44,7 +44,7 @@ namespace ExternLib
             }
             using(FileStream fs = File.Open(acb_path, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                CriAcbFile file = new CriAcbFile(fs, 0, false);
+                CriAcbFile file = new CriAcbFile(fs, 0, false, awb_path);
                 IntPtr res = new IntPtr(++acbCount);
                 acbFiles[res] = file;
                 return res;

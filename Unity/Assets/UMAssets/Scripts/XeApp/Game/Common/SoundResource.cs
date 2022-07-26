@@ -1,3 +1,4 @@
+using System.IO;
 using System.Text;
 using CriWare;
 using XeSys;
@@ -149,7 +150,7 @@ namespace XeApp.Game.Common
 				return null;
 			if(isSecureCueSheet(cueSheetName))
 			{
-				UnityEngine.Debug.LogError("TODO GetAwbPath issecure");
+				return GetCueSheetPath(cueSheetName) + "_d.awb";
 			}
 			return GetCueSheetPath(cueSheetName) + ".awb";
 		}
@@ -164,7 +165,17 @@ namespace XeApp.Game.Common
 		// public static void ChooseDecFileBase() { }
 
 		// // RVA: 0x139A9E4 Offset: 0x139A9E4 VA: 0x139A9E4
-		// public static string GetDecAwbPath(string cueSheetName) { }
+		public static string GetDecAwbPath(string cueSheetName)
+		{
+			StringBuilder str = new StringBuilder(256);
+			str.Append(KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath);
+			str.Append('/');
+			str.Append(decryptDirs[selectDecIndex]);
+			str.Append('/');
+			str.Append(cueSheetName.Replace("cs_w_", ""));
+			str.Append(".xab");
+			return str.ToString();
+		}
 
 		// // RVA: 0x1394924 Offset: 0x1394924 VA: 0x1394924
 		public static bool AddCueSheet(string cueSheetName)
@@ -175,7 +186,12 @@ namespace XeApp.Game.Common
 				string path = "";
 				if(isSecureCueSheet(cueSheetName))
 				{
-					UnityEngine.Debug.LogError("TODO AddCueSheet secure");
+					string srcPath = GetAwbPath(cueSheetName);
+					path = GetDecAwbPath(cueSheetName);
+					if(!File.Exists(path))
+					{
+						DeployDecFile(srcPath, path, cueSheetName);
+					}
 				}
 				else
 				{
@@ -236,9 +252,9 @@ namespace XeApp.Game.Common
 		// // RVA: 0x139A7D8 Offset: 0x139A7D8 VA: 0x139A7D8
 		public static bool isSecureCueSheet(string cueSheetName)
 		{
-			UnityEngine.Debug.LogError("TODO isSecureCueSheet");
+			if(IMMAOANGPNK.HHCJCDFCLOB != null && IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.DDGHBNLOBAJ_GetCueEncryptedKey(cueSheetName) != 0;
 			return false;
-			//return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.DDGHBNLOBAJ(cueSheetName) != 0;
 		}
 
 		// // RVA: 0x139B1F8 Offset: 0x139B1F8 VA: 0x139B1F8
@@ -248,15 +264,55 @@ namespace XeApp.Game.Common
 		// public static CriFsLoadFileRequest RequestLoadAwbFile(string cueSheetName) { }
 
 		// // RVA: 0x139B478 Offset: 0x139B478 VA: 0x139B478
-		// public static BEEINMBNKNM FindDecryptor(string cueSheetName) { }
+		public static BEEINMBNKNM_Encryption FindDecryptor(string cueSheetName)
+		{
+			if (IMMAOANGPNK.HHCJCDFCLOB != null)
+			{
+				if (IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				{
+					int key = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.DDGHBNLOBAJ_GetCueEncryptedKey(cueSheetName);
+					if (key != 0)
+					{
+						return DOKOHKJIDBO.HHCJCDFCLOB.KCOIDGJOJHC_EncryptionMap[key];
+					}
+				}
+			}
+			return null;
+		}
 
 		// // RVA: 0x139B61C Offset: 0x139B61C VA: 0x139B61C
 		// public static bool IsAcbHeader(byte[] bytes) { }
 
 		// // RVA: 0x139B6D4 Offset: 0x139B6D4 VA: 0x139B6D4
-		// public static bool IsAwbHeader(byte[] bytes) { }
+		public static bool IsAwbHeader(byte[] bytes)
+		{
+			if (bytes == null)
+				return false;
+			if (bytes.Length < 4)
+				return false;
+			if (bytes[0] == 'A' && bytes[1] == 'S' && bytes[2] == 'F' && bytes[3] == '2')
+				return true;
+			return false;
+		}
 
 		// // RVA: 0x139AC70 Offset: 0x139AC70 VA: 0x139AC70
-		// public static void DeployDecFile(string srcPath, string rawAwbPath, string cueSheetName) { }
+		public static void DeployDecFile(string srcPath, string rawAwbPath, string cueSheetName)
+		{
+			byte[] bytes = File.ReadAllBytes(srcPath);
+			if(!IsAwbHeader(bytes))
+			{
+				BEEINMBNKNM_Encryption decryptor = FindDecryptor(cueSheetName);
+				if(decryptor != null)
+				{
+					decryptor.FAEFDAJAMCE(bytes);
+				}
+			}
+			string dir = Path.GetDirectoryName(rawAwbPath);
+			if(!Directory.Exists(dir))
+			{
+				Directory.CreateDirectory(dir);
+			}
+			File.WriteAllBytes(rawAwbPath, bytes);
+		}
 	}
 }

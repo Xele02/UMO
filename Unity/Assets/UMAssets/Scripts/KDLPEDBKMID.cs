@@ -488,7 +488,7 @@ public class KDLPEDBKMID
 	// // RVA: 0xE7F26C Offset: 0xE7F26C VA: 0xE7F26C
 	private static string[] JAAOIKIALFJ(int ECOIBKOIPFP)
 	{
-		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.DDGHBNLOBAJ_IsCueEncrypted("cs_w_"+ECOIBKOIPFP.ToString("D4")) != 0)
+		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.DDGHBNLOBAJ_GetCueEncryptedKey("cs_w_"+ECOIBKOIPFP.ToString("D4")) != 0)
 		{
 			return KJAAFBDBDOM_soundFilesFormat;
 		}
