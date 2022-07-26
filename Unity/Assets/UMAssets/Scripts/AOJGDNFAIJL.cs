@@ -265,7 +265,7 @@ public class AOJGDNFAIJL_PrismData
             }
             foreach(DEKKMGAFJCG.MNNLOBDPCCH a in LDEGEHAEALK.DGCJCAHIAPP.NBIGLBMHEDC)
             {
-                if(RuntimeSettings.ForceDivaUnlock || a.CPGFPEDMDEH == 1)
+                if(RuntimeSettings.CurrentSettings.ForceDivaUnlock || a.CPGFPEDMDEH == 1)
                 {
                     AOJGDNFAIJL_PrismData.LLHDHKLACJA_SelectDivaInfo data2 = new AOJGDNFAIJL_PrismData.LLHDHKLACJA_SelectDivaInfo();
                     data2.PPFNGGCBJKC_Id = a.DIPKCALNIII;
@@ -307,7 +307,7 @@ public class AOJGDNFAIJL_PrismData
 					if (OMNDNNFANCK_PrismDivaIds[IOPHIHFOOEP_SlotIndex] == cosInfo.AHHJLDLAPAN_PrismDivaId) //???
 					{
 						int val3 = 0;
-						if(RuntimeSettings.ForceCostumeUnlock || LDEGEHAEALK.BEKHNNCGIEL.FABAGMLEKIB[i].CGKAEMGLHNK())
+						if(RuntimeSettings.CurrentSettings.ForceCostumeUnlock || LDEGEHAEALK.BEKHNNCGIEL.FABAGMLEKIB[i].CGKAEMGLHNK())
 						{
 							val3 = LDEGEHAEALK.BEKHNNCGIEL.FABAGMLEKIB[i].BEEAIAAJOHD_CostumeId;
 						}

@@ -14,9 +14,9 @@ namespace ExternLib
                 message =
 @"{
     ""SAKASHO_CURRENT_ASSET_REVISION"": ""20220622141305"",
-    ""SAKASHO_CURRENT_DATE_TIME"": "+Utility.GetCurrentUnixTime()+@",
+    ""SAKASHO_CURRENT_DATE_TIME"": "+Utility.GetCurrentUnixTime()+ @",
     ""SAKASHO_CURRENT_MASTER_REVISION"": 5,
-    ""base_url"": ""https://assets-sakasho.cdn-dena.com/1246/20220622141305"",
+    ""base_url"": ""[SERVER_DATA_PATH]"",
     ""files"": [
         {
             ""file"": ""/db/ar_event!sa4130fcbz!.dat"",
@@ -134,7 +134,8 @@ namespace ExternLib
             else if(json.Contains("android"))
             {
                 message = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath+"/../../Data/RequestGetFiles.json"));
-            }
+				message.Replace("https://assets-sakasho.cdn-dena.com/1246/20220502151005", "[SERVER_DATA_PATH]");
+			}
             else
             {
                 UnityEngine.Debug.LogError("TODO SakashoAssetGetAssetList "+json);

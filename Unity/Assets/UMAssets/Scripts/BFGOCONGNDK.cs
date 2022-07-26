@@ -64,7 +64,7 @@ public class BFGOCONGNDK
 
 		if(OENPCNBFPDA == ODJPFMGNDML)
 		{
-			string fileBg = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data/android/" + NLMBMNKEINP(ODJPFMGNDML);
+			string fileBg = FileSystemProxy.ConvertPath(CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data/android/" + NLMBMNKEINP(ODJPFMGNDML));
 			//if(File.Exists(fileBg))
 			if(FileSystemProxy.FileExists(fileBg))
 			{

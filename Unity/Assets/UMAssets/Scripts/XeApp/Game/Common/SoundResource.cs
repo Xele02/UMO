@@ -140,7 +140,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x139A5A8 Offset: 0x139A5A8 VA: 0x139A5A8
 		public static string GetAcbPath(string cueSheetName)
 		{
-			return GetCueSheetPath(cueSheetName) + ".acb";
+			return FileSystemProxy.ConvertPath(GetCueSheetPath(cueSheetName) + ".acb");
 		}
 
 		// // RVA: 0x139A640 Offset: 0x139A640 VA: 0x139A640
@@ -150,9 +150,9 @@ namespace XeApp.Game.Common
 				return null;
 			if(isSecureCueSheet(cueSheetName))
 			{
-				return GetCueSheetPath(cueSheetName) + "_d.awb";
+				return FileSystemProxy.ConvertPath(GetCueSheetPath(cueSheetName) + "_d.awb");
 			}
-			return GetCueSheetPath(cueSheetName) + ".awb";
+			return FileSystemProxy.ConvertPath(GetCueSheetPath(cueSheetName) + ".awb");
 		}
 
 		// // RVA: 0x1398490 Offset: 0x1398490 VA: 0x1398490

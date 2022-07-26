@@ -176,7 +176,7 @@ public class KDLPEDBKMID
 		{
 			path = KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath + AFEHLCGHAEE.FAIOPNOJIBF_Slash + KEIGHMAKAAC;
 		}
-		return File.Exists(path);
+		return FileSystemProxy.FileExists(path);
 	}
 
 	// // RVA: 0xE7E040 Offset: 0xE7E040 VA: 0xE7E040

@@ -183,7 +183,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 			data.AJPIGKBIDDL_LocalFileName = IDJBKGBMDAJ[i].OIEAICNAMNB_LocalFileName;
 			str.Set(JCILKDKNDLE_BaseUrl);
 			str.Append(IDJBKGBMDAJ[i].OIEAICNAMNB_LocalFileName);
-			data.NFCMNIEHJML_ServerPath = JCILKDKNDLE_BaseUrl + IDJBKGBMDAJ[i].MFBMBPJAADA_FileName;
+			data.NFCMNIEHJML_ServerPath = FileSystemProxy.ConvertURL(JCILKDKNDLE_BaseUrl + IDJBKGBMDAJ[i].MFBMBPJAADA_FileName);
 			str.Set(OGCDNCDMLCA_LocalPath);
 			str.Append(IDJBKGBMDAJ[i].OIEAICNAMNB_LocalFileName);
 			data.LAPFOLJGJMB_AssetFileInfo = IDJBKGBMDAJ[i];

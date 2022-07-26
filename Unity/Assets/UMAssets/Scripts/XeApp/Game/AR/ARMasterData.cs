@@ -206,8 +206,8 @@ namespace XeApp.Game.AR
 				yield break;
 			}
 
-			string src = req.NFEAMMJIMPG.GLMGHMCOMEC + found.MFBMBPJAADA_FileName;
-			string dest = BBGDKLLEPIB.OGCDNCDMLCA + found.OIEAICNAMNB_LocalFileName;
+			string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG.GLMGHMCOMEC + found.MFBMBPJAADA_FileName);
+			string dest = FileSystemProxy.ConvertPath(BBGDKLLEPIB.OGCDNCDMLCA + found.OIEAICNAMNB_LocalFileName);
 			UnityEngine.Debug.LogError("Dld from "+src+" to "+dest);
 
 			string dir = Path.GetDirectoryName(dest);

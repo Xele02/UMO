@@ -7,19 +7,7 @@ using XeApp.Game;
 
 static class FileSystemProxy
 {
-	private static RuntimeSettings m_currentSettings;
 	private static Dictionary<string, string> serverFileList;
-
-	static RuntimeSettings CurrentSettings {
-		get
-		{
-			if(m_currentSettings == null)
-			{
-				m_currentSettings = Resources.Load<RuntimeSettings>("EditorRuntimeSettings");
-			}
-			return m_currentSettings;
-		}
-	}
 
 	static public string ConvertURL(string url)
 	{
@@ -39,12 +27,16 @@ static class FileSystemProxy
 			}
 		}
 
-		if (CurrentSettings == null || string.IsNullOrEmpty(CurrentSettings.DataWebServerURL))
+		if (RuntimeSettings.CurrentSettings == null || string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataWebServerURL))
+		{
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataDirectory))
+				url = url.Replace("[SERVER_DATA_PATH]", "file://"+RuntimeSettings.CurrentSettings.DataDirectory);
 			return url;
-		string serverPath = CurrentSettings.DataWebServerURL;
+		}
+		string serverPath = RuntimeSettings.CurrentSettings.DataWebServerURL;
 		if (serverPath.EndsWith("/"))
 			serverPath = serverPath.Substring(0, serverPath.Length - 1);
-		return url.Replace("https://assets-sakasho.cdn-dena.com/1246/20220502151005", serverPath);
+		return url.Replace("[SERVER_DATA_PATH]", serverPath);
 	}
 
 	static public string ConvertPath(string path)
@@ -52,14 +44,25 @@ static class FileSystemProxy
 		path = path.Replace("\\", "/");
 		if (File.Exists(path))
 			return path;
-		if (CurrentSettings == null)
+		if (RuntimeSettings.CurrentSettings == null)
 			return path;
 		//InitServerFileList();
-		if (path.Contains(UnityEngine.Application.persistentDataPath + "/data") && Directory.Exists(CurrentSettings.DataDirectory))
+		if (path.Contains(UnityEngine.Application.persistentDataPath + "/data") && Directory.Exists(RuntimeSettings.CurrentSettings.DataDirectory))
 		{
-			path = path.Replace(UnityEngine.Application.persistentDataPath + "/data", CurrentSettings.DataDirectory);
-			if (File.Exists(path))
-				return path;
+			string new_path = path.Replace(UnityEngine.Application.persistentDataPath + "/data", RuntimeSettings.CurrentSettings.DataDirectory);
+			if (File.Exists(new_path)) // Search normal name
+				return new_path;
+			if (File.Exists(new_path + ".decrypted")) // Search normal name + ".decrypted"
+				return new_path + ".decrypted";
+			string baseName = new_path.Replace(RuntimeSettings.CurrentSettings.DataDirectory, "");
+			if(serverFileList.ContainsKey(baseName))
+			{
+				new_path = RuntimeSettings.CurrentSettings.DataDirectory + serverFileList[baseName];
+				if (File.Exists(new_path)) // Search server format name (with hash)
+					return new_path;
+				if (File.Exists(new_path + ".decrypted")) // Search server format name (with hash) decrypted
+					return new_path + ".decrypted";
+			}
 		}
 		return path;
 	}
@@ -78,9 +81,9 @@ static class FileSystemProxy
 				onDone(existingPath);
 			return;
 		}
-		if (CurrentSettings != null)
+		if (RuntimeSettings.CurrentSettings != null)
 		{
-			if(!string.IsNullOrEmpty(CurrentSettings.DataWebServerURL))
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataWebServerURL))
 			{
 				GameManager.Instance.StartCoroutine(TryInstallFileCoroutine(path, onDone));
 				return;
@@ -131,7 +134,7 @@ static class FileSystemProxy
 		UnityEngine.Debug.Log("Try install relative path : " + relativePath);
 		if (serverFileList.ContainsKey(relativePath))
 		{
-			string startPath = CurrentSettings.DataWebServerURL;
+			string startPath = RuntimeSettings.CurrentSettings.DataWebServerURL;
 			if(serverFileList[relativePath].StartsWith("/") && startPath.EndsWith("/"))
 				startPath = startPath.Substring(0, startPath.Length - 1);
 			string url = startPath + serverFileList[relativePath];

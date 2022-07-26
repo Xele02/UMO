@@ -19,7 +19,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
 	// // RVA: 0x12043D8 Offset: 0x12043D8 VA: 0x12043D8
 	public IEnumerator ODDEPBIJHOE_Load(string CJEKGLGBIHF_path)
     {
-        UnityEngine.Debug.Log("Enter ODDEPBIJHOE_Load");
+        UnityEngine.Debug.Log("Enter ODDEPBIJHOE_Load "+ CJEKGLGBIHF_path);
         // 	public string CJEKGLGBIHF_path; // 0x10
         // 	public IIEDOGCMCIE KIGBLACMODG; // 0x14
         // 	private DsfdLoader.ILoadRequest OCJDGDAJMFC; // 0x18
