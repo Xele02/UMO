@@ -76,11 +76,13 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < numDiva; i++)
 			{
-				if(prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i) > 0)
+				FFHPBEPOMAK divaData = null;
+				if (prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i) > 0)
 				{
 					m_divaDatas[i].KHEKNNFCAOI(prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i), 0, prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(i), prismData.DOIGAGAAAOP_GetPrismCostumeColorIdForSlot(i), null, null, false);
+					divaData = m_divaDatas[i];
 				}
-				GetDivaControlBySlotNumber(i).SetForPrism(m_divaDatas[i]);
+				GetDivaControlBySlotNumber(i).SetForPrism(divaData);
 				GetDivaControlBySlotNumber(i).SetImp(SetDeckDivaCardControl.ImpType.Off);
 				GetDivaControlBySlotNumber(i).DivaButton.Disable = false;
 			}
