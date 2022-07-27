@@ -193,5 +193,59 @@ namespace XeApp.Game
 		{
 			return CheckCondition(m_stageChangerList, settingList);
 		}
+
+		// Added for UMO
+		public override void WriteEffectList(System.IO.StreamWriter writer, string prefix)
+		{
+			//writer.Write("Song;Type;Id;Diva;Costume;Valkyrie;Pilot;Position;Group;AttachToDiva");
+			int count = 0;
+			foreach (var cond in m_mikeReplaceTargetList)
+			{
+				writer.WriteLine(prefix + ";MikeReplace;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";;;;");
+				count++;
+			}
+			count = 0;
+			foreach (var cond in m_stageLightingList)
+			{
+				writer.WriteLine(prefix + ";StageLighting;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + cond.directionGroupId);
+				count++;
+			}
+			count = 0;
+			foreach (var cond in m_cameraClipList)
+			{
+				writer.WriteLine(prefix + ";CameraClip;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + cond.directionGroupId);
+				count++;
+			}
+			count = 0;
+			foreach (var cond in m_divaClipList)
+			{
+				writer.WriteLine(prefix + ";DivaClip;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + cond.directionGroupId);
+				count++;
+			}
+			count = 0;
+			foreach (var cond in m_stagePrefabList)
+			{
+				writer.WriteLine(prefix + ";StagePrefab;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + cond.directionGroupId);
+				count++;
+			}
+			count = 0;
+			foreach (var cond in m_divaPrefabList)
+			{
+				writer.WriteLine(prefix + ";DivaPrefab;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + cond.directionGroupId);
+				count++;
+			}
+			count = 0;
+			foreach (var cond in m_voiceChangerList)
+			{
+				writer.WriteLine(prefix + ";VoiceChanger;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + cond.directionGroupId);
+				count++;
+			}
+			count = 0;
+			foreach (var cond in m_stageChangerList)
+			{
+				writer.WriteLine(prefix + ";StageChanger;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + cond.directionGroupId);
+				count++;
+			}
+		}
 	}
 }

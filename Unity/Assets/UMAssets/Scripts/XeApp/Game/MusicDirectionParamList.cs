@@ -248,5 +248,83 @@ namespace XeApp.Game
 		{
 			return CheckCondition(m_stageChangerList, settingList);
 		}
+
+		// added for UMO
+		public override void WriteEffectList(System.IO.StreamWriter writer, string prefix)
+		{
+			//writer.Write("Song;Type;Id;Diva;Costume;Valkyrie;Pilot;Position;Group;AttachToDiva");
+			int count = 0;
+			foreach (var list in m_mikeReplaceTargetList)
+			{
+				foreach (var cond in list.m_mikeReplaceTargetDataList)
+				{
+					writer.WriteLine(prefix + ";MikeReplace;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";;;;");
+				}
+				count++;
+			}
+			count = 0;
+			foreach (var list in m_stageLightingList)
+			{
+				foreach (var cond in list.m_specialDirectionDataList)
+				{
+					writer.WriteLine(prefix + ";StageLighting;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+				}
+				count++;
+			}
+			count = 0;
+			foreach (var list in m_cameraClipList)
+			{
+				foreach (var cond in list.m_specialDirectionDataList)
+				{
+					writer.WriteLine(prefix + ";CameraClip;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+				}
+				count++;
+			}
+			count = 0;
+			foreach (var list in m_divaClipList)
+			{
+				foreach (var cond in list.m_specialDirectionDataList)
+				{
+					writer.WriteLine(prefix + ";DivaClip;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+				}
+				count++;
+			}
+			count = 0;
+			foreach (var list in m_stagePrefabList)
+			{
+				foreach (var cond in list.m_specialDirectionDataList)
+				{
+					writer.WriteLine(prefix + ";StagePrefab;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+				}
+				count++;
+			}
+			count = 0;
+			foreach (var list in m_divaPrefabList)
+			{
+				foreach (var cond in list.m_specialDirectionDataList)
+				{
+					writer.WriteLine(prefix + ";DivaPrefab;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+				}
+				count++;
+			}
+			count = 0;
+			foreach (var list in m_voiceChangerList)
+			{
+				foreach (var cond in list.m_specialDirectionDataList)
+				{
+					writer.WriteLine(prefix + ";VoiceChanger;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+				}
+				count++;
+			}
+			count = 0;
+			foreach (var list in m_stageChangerList)
+			{
+				foreach (var cond in list.m_specialDirectionDataList)
+				{
+					writer.WriteLine(prefix + ";StageChanger;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+				}
+				count++;
+			}
+		}
 	}
 }

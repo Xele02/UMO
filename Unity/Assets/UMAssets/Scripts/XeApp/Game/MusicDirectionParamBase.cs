@@ -237,5 +237,8 @@ namespace XeApp.Game
 
 		// // RVA: -1 Offset: -1 Slot: 15
 		public abstract List<MusicDirectionParamBase.ResourceData> CheckStageChangerResourceId(List<MusicDirectionParamBase.ConditionSetting> settingList);
+
+		// Added for UMO
+		public abstract void WriteEffectList(System.IO.StreamWriter writer, string prefix);
 	}
 }
