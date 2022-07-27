@@ -6,6 +6,7 @@ using System.Collections;
 using XeApp.Core;
 using XeApp.Game;
 using XeSys;
+using System;
 
 class DataExporter
 {
@@ -44,7 +45,10 @@ class DataExporter
 							numMulti = k + 1;
 					}
 				}
-				fileOutput += "|" + i + "|" + MusicDb.EPMMNEFADAP_Musics[i].KKPAHLMJKIH_WavId + "|" + Title + "|" + Serie + "|" + (divaSolo ? "X" : "") + "|" + (numMulti != -1 ? numMulti.ToString() : "") + "\n";
+				bool valid = MusicDb.GEAANLPDJBP_FreeMusicDatas.Find((KEODKEGFDLD data) => {
+					return data.DLAEJOBELBH_Id == MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_Id && data.PPEGAKEIEGM == 2;
+				}) != null;
+				fileOutput += "|" + i + "|" + MusicDb.EPMMNEFADAP_Musics[i].KKPAHLMJKIH_WavId + "|" + Title + "|" + Serie + "|" + (divaSolo ? "X" : "") + "|" + (numMulti != -1 ? numMulti.ToString() : "") + "|" + (valid ? "X" : "") + "\n";
 			}
 		}
 		File.WriteAllText(Application.dataPath + "../../../Data/SongList.txt", fileOutput);
@@ -60,10 +64,16 @@ class DataExporter
 	{
 		LCLCCHLDNHJ_Costume CostumeDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
 		string fileOutput = "";
-		for (int i = 0; i < CostumeDb.CDENCMNHNGA.Count; i++)
+		for(int diva = 1; diva <= 10; diva++)
 		{
-			string cos_name = "";// MessageManager.Instance.GetMessage("master", "ep_nm_" + CostumeDb.CDENCMNHNGA[i].DAJGPBLEEOB_PrismCostumeModelId.ToString("D4"));
-			fileOutput += "|" + CostumeDb.CDENCMNHNGA[i].AHHJLDLAPAN_PrismDivaId + "|" + CostumeDb.CDENCMNHNGA[i].DAJGPBLEEOB_PrismCostumeModelId + "|" + CostumeDb.CDENCMNHNGA[i].JPIDIENBGKH_CostumeId + "|" + cos_name + "\n";
+			for (int i = 0; i < CostumeDb.CDENCMNHNGA.Count; i++)
+			{
+				if(CostumeDb.CDENCMNHNGA[i].PPEGAKEIEGM == 2 && CostumeDb.CDENCMNHNGA[i].AHHJLDLAPAN_PrismDivaId == diva)
+				{
+					string cos_name = MessageManager.Instance.GetMessage("master", "cos_" + CostumeDb.CDENCMNHNGA[i].DAJGPBLEEOB_PrismCostumeModelId.ToString("D4"));
+					fileOutput += "|" + CostumeDb.CDENCMNHNGA[i].AHHJLDLAPAN_PrismDivaId + "|" + CostumeDb.CDENCMNHNGA[i].DAJGPBLEEOB_PrismCostumeModelId + "|" + CostumeDb.CDENCMNHNGA[i].JPIDIENBGKH_CostumeId + "|" + cos_name + "\n";
+				}
+			}
 		}
 		File.WriteAllText(Application.dataPath + "../../../Data/CostumeList.txt", fileOutput);
 	}
