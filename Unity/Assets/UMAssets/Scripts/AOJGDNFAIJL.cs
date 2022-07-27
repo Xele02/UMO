@@ -528,7 +528,7 @@ public class AOJGDNFAIJL_PrismData
         // // RVA: 0xD5B0A8 Offset: 0xD5B0A8 VA: 0xD5B0A8
         private bool HPHDLNEKPKP_IsCostumeValidForDiva(int JPIDIENBGKH_CostumeId, int AHHJLDLAPAN_DivaId)
         {
-            if(JPIDIENBGKH_CostumeId > 1 && AHHJLDLAPAN_DivaId > 1) //??
+            if(JPIDIENBGKH_CostumeId > 0 && AHHJLDLAPAN_DivaId > 0)
             {
                 foreach(var a in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA)
                 {
