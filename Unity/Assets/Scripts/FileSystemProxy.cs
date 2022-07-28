@@ -32,8 +32,10 @@ static class FileSystemProxy
 
 		if (RuntimeSettings.CurrentSettings == null || string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataWebServerURL))
 		{
-			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataDirectory))
-				url = url.Replace("[SERVER_DATA_PATH]", "file://"+RuntimeSettings.CurrentSettings.DataDirectory);
+			if (!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataDirectory))
+			{
+				url = url.Replace("[SERVER_DATA_PATH]", "file://" + Path.GetFullPath(RuntimeSettings.CurrentSettings.DataDirectory));
+			}
 			return url;
 		}
 		string serverPath = RuntimeSettings.CurrentSettings.DataWebServerURL;
