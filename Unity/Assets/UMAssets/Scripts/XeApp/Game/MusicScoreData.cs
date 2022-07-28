@@ -152,8 +152,8 @@ namespace XeApp.Game
 				{
 					TenpoInfo tenpoData = new TenpoInfo();
 					tenpoData.time = (int)tenpoTrack[i]["time"];
-					tenpoData.bpm = (int)tenpoTrack[i]["bpm"]; // Should be double
-					tenpoData.offset = (int)tenpoTrack[i]["offset"]; // Should be double
+					tenpoData.bpm = (float)(double)tenpoTrack[i]["bpm"];
+					tenpoData.offset = (float)(double)tenpoTrack[i]["offset"];
 					tenpoData.tacet = (byte)(int)tenpoTrack[i]["tacet"];
 					tenpoData.meter = (byte)(int)tenpoTrack[i]["meter"];
 					tenpoData.length = (int)tenpoTrack[i]["length"];

@@ -6,6 +6,7 @@ public class UMOStart : MonoBehaviour
     bool hasSwitched = false;
     void Start()
     {
+        System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
 		StartCoroutine(FileSystemProxy.InitServerFileList());
     }
     
