@@ -17,3 +17,6 @@ A clear and concise description of what the bug is.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem. And screenshot/video link of the original game song record as reference.
+
+**Log**
+Join Unity Log which can be found inside %appdata%/../Local/Unity/Editor/Editor.log
