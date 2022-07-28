@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ForceDivaUnlock: 1
   ForceCostumeUnlock: 1
-  DataDirectory: D:\Alex\UM\UMO\Tools\Data
+  DataDirectory: ..\Tools\Data
   WebServerURL: 
   DataWebServerURL: 

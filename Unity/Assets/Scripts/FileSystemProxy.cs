@@ -49,21 +49,27 @@ static class FileSystemProxy
 			return path;
 		if (RuntimeSettings.CurrentSettings == null)
 			return path;
-		if (path.Contains(UnityEngine.Application.persistentDataPath + "/data") && Directory.Exists(RuntimeSettings.CurrentSettings.DataDirectory))
+		if (path.Contains(UnityEngine.Application.persistentDataPath + "/data") && !string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataDirectory))
 		{
-			string new_path = path.Replace(UnityEngine.Application.persistentDataPath + "/data", RuntimeSettings.CurrentSettings.DataDirectory);
-			if (File.Exists(new_path)) // Search normal name
-				return new_path;
-			if (File.Exists(new_path + ".decrypted")) // Search normal name + ".decrypted"
-				return new_path + ".decrypted";
-			string baseName = new_path.Replace(RuntimeSettings.CurrentSettings.DataDirectory, "");
-			if(serverFileList.ContainsKey(baseName))
+			string dataDir = RuntimeSettings.CurrentSettings.DataDirectory;
+			if (!Path.IsPathRooted(dataDir))
+				dataDir = Path.GetFullPath(dataDir);
+			if (Directory.Exists(dataDir))
 			{
-				new_path = RuntimeSettings.CurrentSettings.DataDirectory + serverFileList[baseName];
-				if (File.Exists(new_path)) // Search server format name (with hash)
+				string new_path = path.Replace(UnityEngine.Application.persistentDataPath + "/data", dataDir);
+				if (File.Exists(new_path)) // Search normal name
 					return new_path;
-				if (File.Exists(new_path + ".decrypted")) // Search server format name (with hash) decrypted
+				if (File.Exists(new_path + ".decrypted")) // Search normal name + ".decrypted"
 					return new_path + ".decrypted";
+				string baseName = new_path.Replace(dataDir, "");
+				if (serverFileList.ContainsKey(baseName))
+				{
+					new_path = dataDir + serverFileList[baseName];
+					if (File.Exists(new_path)) // Search server format name (with hash)
+						return new_path;
+					if (File.Exists(new_path + ".decrypted")) // Search server format name (with hash) decrypted
+						return new_path + ".decrypted";
+				}
 			}
 		}
 		return path;
