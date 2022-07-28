@@ -86,7 +86,7 @@ def decrypt_file(path, outfile):
 				found = re.search(key_data["f"], path.replace("\\","/"))
 				if found != None:
 					if key_data["k"] == 0:
-						logging.info("Pattern "+key_data+" is not encrypted, skip")
+						logging.info("Pattern "+key_data["f"]+" is not encrypted, skip")
 						return
 					logging.info("Using key for pattern "+key_data["f"])
 					key = key_data["key"]

@@ -81,6 +81,7 @@ def DownloadFiles(file_path):
 			if md5 != file["hash_value"]:
 				print("Wrong hash, redld")
 			else:
+				cnt = cnt + 1
 				print("Skip")
 				continue
 		try:
