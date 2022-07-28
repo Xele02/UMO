@@ -91,8 +91,9 @@ class DataExporter
 
 	static public IEnumerator ExtractEffectList()
 	{
-		StreamWriter writer = new StreamWriter(Application.dataPath + "../../../Data/SongEffectlist.csv", false);
-		writer.WriteLine("Song;Type;Id;Diva;Costume;Valkyrie;Pilot;Position;Group;AttachToDiva");
+		LPPGENBEECK_musicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
+
+		StreamWriter writer = new StreamWriter(Application.dataPath + "../../../Data/SongEffectlist.txt", false);
 		string path = FileSystemProxy.ConvertPath(UnityEngine.Application.persistentDataPath + "/data/android/mc/0001/sc.xab");
 		int pos = path.IndexOf("mc/") + 2;
 		string[] dirsSong = Directory.GetDirectories(path.Substring(0, pos));
@@ -103,14 +104,33 @@ class DataExporter
 			if (dirInfo.Name == "cmn")
 				continue;
 
-			var operation = AssetBundleManager.LoadAssetAsync("mc/" + dirInfo.Name + "/sc.xab", "p_" + dirInfo.Name.Replace("_3", "").Replace("_2", ""), typeof(MusicDirectionParamBase));
+			string songId = dirInfo.Name.Replace("_3", "").Replace("_2", "").Replace("_5", "");
+
+			var music = MusicDb.EPMMNEFADAP_Musics.Find((EONOEHOKBEB_Music data) =>
+			{
+				return data.KKPAHLMJKIH_WavId == Int32.Parse(songId);
+			});
+			string Title = music != null ? Database.Instance.musicText.Get(music.KNMGEEFGDNI_Nam).musicName : "";
+			if (dirInfo.Name.Contains("_3"))
+				Title += " (3 divas)";
+			if (dirInfo.Name.Contains("_2"))
+				Title += " (2 divas)";
+			if (dirInfo.Name.Contains("_5"))
+				Title += " (5 divas)";
+
+			if (Title != "")
+				writer.WriteLine("# "+Title);
+			writer.WriteLine("|Song|Type|Id|Diva|Costume|Valkyrie|Pilot|Position|Group|AttachToDiva|");
+			writer.WriteLine("|---|---|---|---|---|---|---|---|---|---|");
+
+			var operation = AssetBundleManager.LoadAssetAsync("mc/" + dirInfo.Name + "/sc.xab", "p_" + songId, typeof(MusicDirectionParamBase));
 			yield return operation;
 
 			MusicDirectionParamBase param = operation.GetAsset<MusicDirectionParamBase>();
 
 			if (param)
 			{
-				param.WriteEffectList(writer, dirInfo.Name);
+				param.WriteEffectList(writer, "|"+dirInfo.Name);
 			}
 			AssetBundleManager.UnloadAssetBundle("mc/" + dirInfo.Name + "/sc.xab", true);
 		}

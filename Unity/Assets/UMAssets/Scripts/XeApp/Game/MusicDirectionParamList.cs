@@ -258,7 +258,7 @@ namespace XeApp.Game
 			{
 				foreach (var cond in list.m_mikeReplaceTargetDataList)
 				{
-					writer.WriteLine(prefix + ";MikeReplace;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";;;;");
+					writer.WriteLine(prefix + "|MikeReplace|" + count + "|" + cond.divaId + "|" + cond.costumeModelId + "|||||");
 				}
 				count++;
 			}
@@ -267,7 +267,7 @@ namespace XeApp.Game
 			{
 				foreach (var cond in list.m_specialDirectionDataList)
 				{
-					writer.WriteLine(prefix + ";StageLighting;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+					writer.WriteLine(prefix + "|StageLighting|" + count + "|" + cond.divaId + "|" + cond.costumeModelId + "|" + cond.valkyrieId + "|" + cond.pilotId + "|" + cond.positionId + "|" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + "|" + list.m_attachDivaId);
 				}
 				count++;
 			}
@@ -276,7 +276,7 @@ namespace XeApp.Game
 			{
 				foreach (var cond in list.m_specialDirectionDataList)
 				{
-					writer.WriteLine(prefix + ";CameraClip;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+					writer.WriteLine(prefix + "|CameraClip|" + count + "|" + cond.divaId + "|" + cond.costumeModelId + "|" + cond.valkyrieId + "|" + cond.pilotId + "|" + cond.positionId + "|" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + "|" + list.m_attachDivaId);
 				}
 				count++;
 			}
@@ -285,7 +285,7 @@ namespace XeApp.Game
 			{
 				foreach (var cond in list.m_specialDirectionDataList)
 				{
-					writer.WriteLine(prefix + ";DivaClip;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+					writer.WriteLine(prefix + "|DivaClip|" + count + "|" + cond.divaId + "|" + cond.costumeModelId + "|" + cond.valkyrieId + "|" + cond.pilotId + "|" + cond.positionId + "|" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + "|" + list.m_attachDivaId);
 				}
 				count++;
 			}
@@ -294,7 +294,7 @@ namespace XeApp.Game
 			{
 				foreach (var cond in list.m_specialDirectionDataList)
 				{
-					writer.WriteLine(prefix + ";StagePrefab;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+					writer.WriteLine(prefix + "|StagePrefab|" + count + "|" + cond.divaId + "|" + cond.costumeModelId + "|" + cond.valkyrieId + "|" + cond.pilotId + "|" + cond.positionId + "|" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + "|" + list.m_attachDivaId);
 				}
 				count++;
 			}
@@ -303,7 +303,7 @@ namespace XeApp.Game
 			{
 				foreach (var cond in list.m_specialDirectionDataList)
 				{
-					writer.WriteLine(prefix + ";DivaPrefab;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+					writer.WriteLine(prefix + "|DivaPrefab|" + count + "|" + cond.divaId + "|" + cond.costumeModelId + "|" + cond.valkyrieId + "|" + cond.pilotId + "|" + cond.positionId + "|" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + "|" + list.m_attachDivaId);
 				}
 				count++;
 			}
@@ -312,7 +312,7 @@ namespace XeApp.Game
 			{
 				foreach (var cond in list.m_specialDirectionDataList)
 				{
-					writer.WriteLine(prefix + ";VoiceChanger;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+					writer.WriteLine(prefix + "|VoiceChanger|" + count + "|" + cond.divaId + "|" + cond.costumeModelId + "|" + cond.valkyrieId + "|" + cond.pilotId + "|" + cond.positionId + "|" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + "|" + list.m_attachDivaId);
 				}
 				count++;
 			}
@@ -321,7 +321,7 @@ namespace XeApp.Game
 			{
 				foreach (var cond in list.m_specialDirectionDataList)
 				{
-					writer.WriteLine(prefix + ";StageChanger;" + count + ";" + cond.divaId + ";" + cond.costumeModelId + ";" + cond.valkyrieId + ";" + cond.pilotId + ";" + cond.positionId + ";" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + ";" + list.m_attachDivaId);
+					writer.WriteLine(prefix + "|StageChanger|" + count + "|" + cond.divaId + "|" + cond.costumeModelId + "|" + cond.valkyrieId + "|" + cond.pilotId + "|" + cond.positionId + "|" + list.m_resourceGroupId + (cond.directionGroupId != 0 ? "/" + cond.directionGroupId : "") + "|" + list.m_attachDivaId);
 				}
 				count++;
 			}
