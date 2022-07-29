@@ -17,9 +17,10 @@ Fonctionality :
 # Installation
 
 * Clone the project or extract the release zip.
-* (Optional) Copy android and db directory from the game dump into Tools/Data/
 * Launch Unity Editor 2018.4.23f1 or 2018.4.24f1, load the project in Unity folder.
-* (Optional) If you didn't copy the asset dump into Tools/Data/, open the asset in Resources/EditorRuntimeSettings and change the Data Directory to where your asset dump is.
+* To tell the Editor where is the asset bundle dump, either do :
+  * Copy android and db directory from the game dump into Tools/Data/
+  * In the editor, open the asset Resources/EditorRuntimeSettings and change the Data Directory to where your asset dump is.
 * Load the scene Scenes/Start.
 * Hit play.
 
