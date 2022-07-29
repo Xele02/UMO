@@ -321,7 +321,7 @@ namespace XeApp.Game.RhythmGame
 				rhythmGameResource.musicIntroResource.LoadResources(intro, introSky, Database.Instance.gameSetup.teamInfo.prismValkyrieId);
 				rhythmGameResource.valkyrieModeResource.LoadResources(battle, Database.Instance.gameSetup.teamInfo.prismValkyrieId);
 				rhythmGameResource.musicBoneSpringResource[0].LoadMusicResouces(wavId, GameManager.Instance.GetMultipleDanceOverridePrimeId(prime),
-												Database.Instance.gameSetup.musicInfo.onStageDivaNum, Database.Instance.gameSetup.teamInfo.danceDivaList[0].positionId);
+												Database.Instance.gameSetup.musicInfo.onStageDivaNum, Database.Instance.gameSetup.musicInfo.onStageDivaNum > 1 ? Database.Instance.gameSetup.teamInfo.danceDivaList[0].positionId : 0);
 				if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.GPKILPOLNKO())
 				{
 					rhythmGameResource.divaModeResource.LoadResources(wavId, GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CBLEFELBNDN_GetQuality(), rhythmGameResource.GetSpecialDirectionMovieId);
