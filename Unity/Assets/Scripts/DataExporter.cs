@@ -7,6 +7,7 @@ using XeApp.Core;
 using XeApp.Game;
 using XeSys;
 using System;
+using XeApp.Game.Menu;
 
 class DataExporter
 {
@@ -62,16 +63,28 @@ class DataExporter
 	[MenuItem("UMO/Export Costume List")]
 	static void ExportCostumeList()
 	{
+		Directory.CreateDirectory(Application.dataPath + "../../../Data/CostumeImg/");
 		LCLCCHLDNHJ_Costume CostumeDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
 		string fileOutput = "";
 		for(int diva = 1; diva <= 10; diva++)
 		{
 			for (int i = 0; i < CostumeDb.CDENCMNHNGA.Count; i++)
 			{
-				if(CostumeDb.CDENCMNHNGA[i].PPEGAKEIEGM == 2 && CostumeDb.CDENCMNHNGA[i].AHHJLDLAPAN_PrismDivaId == diva)
+				var cosInfo = CostumeDb.CDENCMNHNGA[i];
+				if (cosInfo.PPEGAKEIEGM == 2 && cosInfo.AHHJLDLAPAN_PrismDivaId == diva)
 				{
-					string cos_name = MessageManager.Instance.GetMessage("master", "cos_" + CostumeDb.CDENCMNHNGA[i].DAJGPBLEEOB_PrismCostumeModelId.ToString("D4"));
-					fileOutput += "|" + CostumeDb.CDENCMNHNGA[i].AHHJLDLAPAN_PrismDivaId + "|" + CostumeDb.CDENCMNHNGA[i].DAJGPBLEEOB_PrismCostumeModelId + "|" + CostumeDb.CDENCMNHNGA[i].JPIDIENBGKH_CostumeId + "|" + cos_name + "\n";
+					GameManager.Instance.DivaIconCache.LoadDivaUpIco(cosInfo.AHHJLDLAPAN_PrismDivaId, cosInfo.DAJGPBLEEOB_PrismCostumeModelId, 0, (IiconTexture texture) =>
+					{
+						//0x169C1D8
+						Material mat = new Material(Shader.Find("MCRS/SplitTextureRGB16A8"));
+						mat.SetTexture("_MainTex", texture.BaseTexture);
+						mat.SetTexture("_MaskTex", texture.MaskTexture);
+						Texture2D tex = TextureHelper.Copy(texture.BaseTexture, -1, -1, mat);
+						File.WriteAllBytes(Application.dataPath + "../../../Data/CostumeImg/" + cosInfo.JPIDIENBGKH_CostumeId + ".png", tex.EncodeToPNG());
+					});
+
+					string cos_name = MessageManager.Instance.GetMessage("master", "cos_" + cosInfo.DAJGPBLEEOB_PrismCostumeModelId.ToString("D4"));
+					fileOutput += "|[[/images/costumes/"+ cosInfo.JPIDIENBGKH_CostumeId + ".png]]|" + cosInfo.AHHJLDLAPAN_PrismDivaId + "|" + cosInfo.DAJGPBLEEOB_PrismCostumeModelId + "|" + cosInfo.JPIDIENBGKH_CostumeId + "|" + cos_name + "\n";
 				}
 			}
 		}

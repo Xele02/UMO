@@ -240,5 +240,25 @@ namespace XeApp.Game
 
 		// Added for UMO
 		public abstract void WriteEffectList(System.IO.StreamWriter writer, string prefix);
+		protected string GetCostumeImageString(int divaId, int costumeId)
+		{
+			string costumeImg = "";
+			costumeId = Mathf.Abs(costumeId);
+			divaId = Math.Abs(divaId);
+			if (costumeId != 0 && divaId != 0)
+			{
+				LCLCCHLDNHJ_Costume CostumeDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
+				var cosInfo = CostumeDb.NLIBHNJNJAN(divaId, costumeId);
+				if (cosInfo != null)
+				{
+					costumeImg = "[[/images/costumes/" + cosInfo.JPIDIENBGKH_CostumeId + ".png]] ";
+				}
+			}
+			return costumeImg;
+		}
+		protected string GetNumberAsString(int number)
+		{
+			return number != 0 ? ""+number : "";
+		}
 	}
 }
