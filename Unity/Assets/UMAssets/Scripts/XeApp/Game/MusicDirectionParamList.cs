@@ -19,7 +19,7 @@ namespace XeApp.Game
 					return false;
 				foreach(var m in m_mikeReplaceTargetDataList)
 				{
-					if((m.divaId > 0 && m.divaId != divaId) || (m.costumeModelId > 0 && m.costumeModelId != costumeModelId))
+					if(!m.IsFulfill(divaId, costumeModelId))
 						return false;
 				}
 				return true;
@@ -167,7 +167,7 @@ namespace XeApp.Game
 								{
 									foreach(var s in settingList)
 									{
-										if(fullfill[j].positionId != s.positionId)
+										if(fullfill[j].positionId == s.positionId)
 										{
 											divaId = s.divaId;
 											break;
