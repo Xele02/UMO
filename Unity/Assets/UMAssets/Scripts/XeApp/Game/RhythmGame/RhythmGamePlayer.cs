@@ -1657,7 +1657,19 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B30C4 Offset: 0x9B30C4 VA: 0x9B30C4
 		private bool ApplyChangeMusicSequenceTime()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			if(!isChangeSequenceRequest)
+				return false;
+			if(bgmPlayer.source.status == CriAtomSource.Status.Playing)
+			{
+				bgmPlayer.source.player.SetStartTime(Mathf.Clamp(musicRequestChangeMillisec, 0, musicMillisecLength));
+				#if UNITY_ANDROID
+				bgmPlayer.source.player.Stop();
+				bgmPlayback = bgmPlayer.source.player.Start();
+				#endif
+				UnityEngine.Debug.LogError("TODO Check ApplyChangeMusicSequenceTime");
+				isChangeSequenceRequest = false;
+				return true;
+			}
 			return false;
 		}
 
