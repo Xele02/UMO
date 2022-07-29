@@ -782,7 +782,16 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BA7BC Offset: 0x9BA7BC VA: 0x9BA7BC
 		private void ApplyDimmer()
 		{
-			UnityEngine.Debug.LogError("TODO RhythmGamePlayer ApplyDimmer");
+			if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.OLALFDCEHKJ_Dimmer3d > 9)
+			{
+				dimmer3dMesh.gameObject.SetActive(false);
+			}
+			else
+			{
+				dimmer3dMesh.gameObject.SetActive(true);
+				dimmer3dMesh.sharedMaterial = new Material(dimmer3dMesh.sharedMaterial);
+				dimmer3dMesh.sharedMaterial.color = new Color(0, 0, 0, (10 - GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.OLALFDCEHKJ_Dimmer3d) * 180.0f / 10.0f / 255.0f );
+			}
 		}
 
 		// // RVA: 0x9B7A9C Offset: 0x9B7A9C VA: 0x9B7A9C

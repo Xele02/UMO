@@ -196,19 +196,44 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE4C40 Offset: 0xAE4C40 VA: 0xAE4C40
 		private void AttachCameraStageBillboard()
 		{
-			UnityEngine.Debug.LogError("TODO MusicCameraObject AttachCameraStageBillboard");
+			if(stageObject == null)
+				return;
+			Camera cam = transform.GetComponentInChildren<Camera>(true);
+			BillboardObject[] bbs = stageObject.transform.GetComponentsInChildren<BillboardObject>(true);
+			for(int i = 0; i < bbs.Length; i++)
+			{
+				bbs[i].camera = cam;
+			}
 		}
 
 		// // RVA: 0xAE4DC4 Offset: 0xAE4DC4 VA: 0xAE4DC4
 		private void AttachCameraDivaBillboard()
 		{
-			UnityEngine.Debug.LogError("TODO MusicCameraObject AttachCameraDivaBillboard");
+			if(divaObject == null)
+				return;
+			Camera cam = GetComponentInChildren<Camera>(true);
+			BillboardObject[] bbs = divaObject.transform.GetComponentsInChildren<BillboardObject>(true);
+			for(int i = 0; i < bbs.Length; i++)
+			{
+				bbs[i].camera = cam;
+			}
 		}
 
 		// // RVA: 0xAE4F48 Offset: 0xAE4F48 VA: 0xAE4F48
 		public void AttachCameraDvaBillboard(List<GameDivaObject> a_list)
 		{
-			UnityEngine.Debug.LogError("TODO MusicCameraObject AttachCameraDvaBillboard");
+			if(a_list != null)
+			{
+				Camera cam = transform.GetComponentInChildren<Camera>(true);
+				for(int i = 0; i < a_list.Count; i++)
+				{
+					BillboardObject[] bbs = a_list[i].transform.GetComponentsInChildren<BillboardObject>(true);
+					for(int j = 0; j < bbs.Length; j++)
+					{
+						bbs[j].camera = cam;
+					}
+				}
+			}
 		}
 
 		// // RVA: 0xAE5114 Offset: 0xAE5114 VA: 0xAE5114
