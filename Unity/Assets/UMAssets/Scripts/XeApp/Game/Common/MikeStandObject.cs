@@ -26,8 +26,8 @@ namespace XeApp.Game.Common
 		public void Initialize(int divaId, RuntimeAnimatorController animController, AnimationClip overrideClip)
 		{
 			hightAsjustPoint.localPosition = new Vector3(hightAsjustPoint.localPosition.x, hightAsjustPoint.localPosition.y * HightScaleFactor[divaId - 1], hightAsjustPoint.localPosition.z);
-			scaleAsjustPoint.gameObject.GetComponent<ObjectPositionAdjuster>().Initialize(AdjustScaleFactor[divaId - 1], true, true, true);
-			scaleAsjustPoint.gameObject.GetComponent<ObjectRotationAdjuster>().Initialize(AdjustRotationFactor[divaId - 1], true, true, true);
+			scaleAsjustPoint.gameObject.AddComponent<ObjectPositionAdjuster>().Initialize(AdjustScaleFactor[divaId - 1], true, true, true);
+			scaleAsjustPoint.gameObject.AddComponent<ObjectRotationAdjuster>().Initialize(AdjustRotationFactor[divaId - 1], true, true, true);
 			animator = gameObject.GetComponent<Animator>();
 			animator.runtimeAnimatorController = animController;
 			overrideController = new AnimatorOverrideController();
