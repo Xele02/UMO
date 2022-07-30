@@ -182,7 +182,7 @@ namespace XeApp.Game.Common
 		public void SetTime(double time)
 		{
 			selfAnimator_.speed = 1;
-			if (selfAnimator_.playableGraph.IsValid())
+			if (PlayableExtensions.IsValid<Playable>(selfAnimator_.playableGraph.GetRootPlayable(0)))
 			{
 				selfAnimator_.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(selfAnimator_.playableGraph.GetRootPlayable(0))));
 			}

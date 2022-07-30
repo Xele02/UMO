@@ -242,7 +242,7 @@ namespace XeApp.Game.Common
 			if (animator != null && animator.runtimeAnimatorController != null)
 			{
 				animator.speed = 1;
-				if (animator.playableGraph.IsValid())
+				if (PlayableExtensions.IsValid<Playable>(animator.playableGraph.GetRootPlayable(0)))
 				{
 					animator.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(animator.playableGraph.GetRootPlayable(0))));
 				}
@@ -252,7 +252,7 @@ namespace XeApp.Game.Common
 				if(animatorList[i] != null && animatorList[i].runtimeAnimatorController != null)
 				{
 					animatorList[i].speed = 1;
-					if (animatorList[i].playableGraph.IsValid())
+					if (PlayableExtensions.IsValid<Playable>(animatorList[i].playableGraph.GetRootPlayable(0)))
 					{
 						animatorList[i].playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(animatorList[i].playableGraph.GetRootPlayable(0))));
 					}

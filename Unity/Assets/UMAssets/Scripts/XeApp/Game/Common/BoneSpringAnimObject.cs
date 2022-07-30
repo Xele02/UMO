@@ -133,11 +133,11 @@ namespace XeApp.Game.Common
 			}
 		}
 
-		//// RVA: 0xE63358 Offset: 0xE63358 VA: 0xE63358
+		//// RVA: g Offset: 0xE63358 VA: 0xE63358
 		public void SetTime(double time)
 		{
 			m_animator.speed = 1;
-			if (m_animator.playableGraph.IsValid())
+			if (PlayableExtensions.IsValid<Playable>(m_animator.playableGraph.GetRootPlayable(0)))
 			{
 				m_animator.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(m_animator.playableGraph.GetRootPlayable(0))));
 			}
