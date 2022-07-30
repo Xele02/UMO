@@ -666,7 +666,7 @@ namespace XeApp.Game.Common
 			
 			if(divaNum > 1 && divaId == 9)
 			{
-				attachPositionId = "_"+positionId;
+				attachPositionId = "_"+positionId+"_B";
 			}
 			assetName.SetFormat("music_{0}_prime_{1:D3}{2}_body", wavPath, primeId, attachPositionId);
 			musicMotionOverrideResource.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
