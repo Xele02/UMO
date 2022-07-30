@@ -184,8 +184,6 @@ namespace XeApp.Game.RhythmGame
 			int basaraPos = musicParam.basaraPositionId;
 			int pos = basaraPos;
 			if (stageDivaNum - 1 > 0)
-				pos = stageDivaNum;
-			if ((stageDivaNum - 1 == 1) == (stageDivaNum - 2 < 0) && (pos == 1) == (pos - 1 < 0))
 			{
 				int freePos = 0;
 				for(int i = 0; i < stageDivaNum; i++)
