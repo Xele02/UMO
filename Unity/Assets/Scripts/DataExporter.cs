@@ -8,6 +8,7 @@ using XeApp.Game;
 using XeSys;
 using System;
 using XeApp.Game.Menu;
+using UnityEngine.SceneManagement;
 
 class DataExporter
 {
@@ -149,6 +150,34 @@ class DataExporter
 		}
 		writer.Close();
 		Debug.Log("Done");
+	}
+
+	[MenuItem("UMO/Copy Song setup for bug report", validate = true)]
+	static bool CopySongSetupAvaiable()
+	{
+		return Application.isPlaying && IMMAOANGPNK.HHCJCDFCLOB != null && 
+			IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized && 
+			SceneManager.GetActiveScene().name.Contains("Rhythm");
+	}
+	[MenuItem("UMO/Copy Song setup for bug report")]
+	static void CopySongSetup()
+	{
+		string txt = "";
+		int songId = Database.Instance.gameSetup.musicInfo.prismMusicId;
+		var music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics.Find((EONOEHOKBEB_Music data) =>
+		{
+			return data.KKPAHLMJKIH_WavId == songId;
+		});
+		string Title = music != null ? Database.Instance.musicText.Get(music.KNMGEEFGDNI_Nam).musicName : "";
+		txt += "Song : "+songId+" "+Title+"\n";
+		txt += "Num diva : "+Database.Instance.gameSetup.musicInfo.onStageDivaNum+"\n";
+		for(int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum; i++)
+		{
+			txt += " "+i+" : Diva : "+Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId + " - Costume : " + 
+				Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismCostumeModelId + " - " + Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismCostumeColorId + 
+				" Position : "+Database.Instance.gameSetup.teamInfo.danceDivaList[i].positionId+"\n";
+		}
+		GUIUtility.systemCopyBuffer = txt;
 	}
 
 }
