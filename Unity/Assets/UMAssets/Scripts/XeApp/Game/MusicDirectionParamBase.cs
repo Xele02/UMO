@@ -98,9 +98,9 @@ namespace XeApp.Game
 				{
 					foreach(var s in settingList)
 					{
-						if(Mathf.Abs(divaId) != s.divaId)
+						if(Mathf.Abs(divaId) == s.divaId)
 						{
-							return false;
+							return true;
 						}
 					}
 				}
