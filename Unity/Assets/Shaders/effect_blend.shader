@@ -1,17 +1,15 @@
-Shader "MCRS/Stage/Psyllium" {
+Shader "MCRS/Effect/Blend" {
 	Properties {
-		_MainColorTex ("MainColorTex", 2D) = "white" {}
-		_MainAlphaTex ("MainAlphaTex", 2D) = "white" {}
-		_PsylliumTex ("PsylliumTex", 2D) = "white" {}
+		_MainTex ("DiffuseTex", 2D) = "white" {}
 		_Color ("Main Color", Vector) = (1,1,1,1)
-		_Power ("Power", Float) = 1
 	}
 	SubShader {
-		Tags { "IGNOREPROJECTOR" = "true" "LIGHTMODE" = "FORWARDBASE" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
+		Tags { "IGNOREPROJECTOR" = "true" "PreviewType" = "Plane" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
 		Pass {
-			Tags { "IGNOREPROJECTOR" = "true" "LIGHTMODE" = "FORWARDBASE" "QUEUE" = "Transparent" "RenderType" = "Transparent" "SHADOWSUPPORT" = "true" }
+			Tags { "IGNOREPROJECTOR" = "true" "PreviewType" = "Plane" "QUEUE" = "Transparent" "RenderType" = "Transparent" "SHADOWSUPPORT" = "true" }
 			Blend SrcAlpha OneMinusSrcAlpha, SrcAlpha OneMinusSrcAlpha
 			ZWrite Off
+			Cull Off
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -32,25 +30,20 @@ Shader "MCRS/Stage/Psyllium" {
 				float4 color0 : COLOR0;
 			};
 
-			sampler2D _MainColorTex;
-			float4 _MainColorTex_ST;
-			sampler2D _MainAlphaTex;
-			float4 _MainAlphaTex_ST;
-			sampler2D _PsylliumTex;
-			float4 _PsylliumTex_ST;
+			sampler2D _MainTex;
+			float4 _MainTex_ST;
 			float4 _Color;
-			float _Power;
 
 
 			v2f vert(appdata v)
 			{
 				v2f o;
-				o.texcoord0 = TRANSFORM_TEX(v.texcoord0, _MainColorTex);
+				o.texcoord0 = TRANSFORM_TEX(v.texcoord0, _MainTex);
 				o.position0 = UnityObjectToClipPos(v.position0);
 				o.color0 = v.color0;
 				return o; 
 			}
-/*			GpuProgramID 20820
+/*			GpuProgramID 46136
 			Program "vp" {
 				SubProgram "gles hw_tier02 " {
 					Keywords { "DIRECTIONAL" }
@@ -60,7 +53,7 @@ Shader "MCRS/Stage/Psyllium" {
 					
 					uniform 	vec4 hlslcc_mtx4x4unity_ObjectToWorld[4];
 					uniform 	vec4 hlslcc_mtx4x4unity_MatrixVP[4];
-					uniform 	vec4 _MainColorTex_ST;
+					uniform 	vec4 _MainTex_ST;
 					attribute highp vec4 in_POSITION0;
 					attribute highp vec4 in_TEXCOORD0;
 					attribute highp vec4 in_COLOR0;
@@ -90,20 +83,17 @@ Shader "MCRS/Stage/Psyllium" {
 					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2] * hlslcc_mtx4x4unity_ObjectToWorld[3].zzzz + u_xlat1;
 					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[3] * hlslcc_mtx4x4unity_ObjectToWorld[3].wwww + u_xlat1;
 					    gl_Position = u_xlat1 * in_POSITION0.wwww + u_xlat0;
-					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainColorTex_ST.xy + _MainColorTex_ST.zw;
+					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
 					    vs_COLOR1 = in_COLOR0;
 					    return;
 					}
 */
 			fixed4 frag(v2f i) : SV_Target
 			{
-				float4 u_xlat10_0, u_xlat3, u_xlat0, SV_Target0, u_xlat10_1, u_xlat10_2;
-				u_xlat10_0.xyz = tex2D(_MainColorTex, i.texcoord0.xy).xyz;
-				u_xlat10_1.xyz = tex2D(_PsylliumTex, i.texcoord0.xy).xyz;
-				u_xlat3.xyz = u_xlat10_1.xyz * _Color.xyz;
-				SV_Target0.xyz = u_xlat10_0.xyz * i.color0.xyz + u_xlat3.xyz;
-				u_xlat10_0.x = tex2D(_MainAlphaTex, i.texcoord0.xy).x;
-				SV_Target0.w = u_xlat10_1.x * _Power + u_xlat10_0.x;
+				float4 u_xlat10_0, u_xlat0, SV_Target0;
+				u_xlat10_0 = tex2D(_MainTex, i.texcoord0.xy);
+				u_xlat0 = u_xlat10_0 * i.color0;
+				SV_Target0 = u_xlat0 * _Color;
 				return SV_Target0;
 			}
 
@@ -119,24 +109,17 @@ Shader "MCRS/Stage/Psyllium" {
 					#endif
 					precision highp int;
 					uniform 	vec4 _Color;
-					uniform 	float _Power;
-					uniform lowp sampler2D _MainColorTex;
-					uniform lowp sampler2D _MainAlphaTex;
-					uniform lowp sampler2D _PsylliumTex;
+					uniform lowp sampler2D _MainTex;
 					varying highp vec2 vs_TEXCOORD0;
 					varying highp vec4 vs_COLOR1;
 					#define SV_Target0 gl_FragData[0]
-					lowp vec3 u_xlat10_0;
-					lowp vec3 u_xlat10_1;
-					vec3 u_xlat3;
+					vec4 u_xlat0;
+					lowp vec4 u_xlat10_0;
 					void main()
 					{
-					    u_xlat10_0.xyz = texture2D(_MainColorTex, vs_TEXCOORD0.xy).xyz;
-					    u_xlat10_1.xyz = texture2D(_PsylliumTex, vs_TEXCOORD0.xy).xyz;
-					    u_xlat3.xyz = u_xlat10_1.xyz * _Color.xyz;
-					    SV_Target0.xyz = u_xlat10_0.xyz * vs_COLOR1.xyz + u_xlat3.xyz;
-					    u_xlat10_0.x = texture2D(_MainAlphaTex, vs_TEXCOORD0.xy).x;
-					    SV_Target0.w = u_xlat10_1.x * _Power + u_xlat10_0.x;
+					    u_xlat10_0 = texture2D(_MainTex, vs_TEXCOORD0.xy);
+					    u_xlat0 = u_xlat10_0 * vs_COLOR1;
+					    SV_Target0 = u_xlat0 * _Color;
 					    return;
 					}
 					
