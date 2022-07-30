@@ -35,13 +35,113 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1BEBEE8 Offset: 0x1BEBEE8 VA: 0x1BEBEE8
 		public void Initialize(DivaExtensionResource resource, DivaObject divaObject, MusicCameraObject cameraObject, List<GameDivaObject> a_diva_list)
 		{
-			UnityEngine.Debug.LogError("TODO DivaExtensionObject Initialize");
+			if(resource != null)
+			{
+				animator = GetComponent<Animator>();
+				animator.runtimeAnimatorController = resource.animatorController;
+				overrideController = new AnimatorOverrideController();
+				overrideController.name = "dr_dv_override_controller";
+				overrideController.runtimeAnimatorController = animator.runtimeAnimatorController;
+				overrideController["dr_dv_cmn_animation"] = resource.clip;
+				animator.runtimeAnimatorController = overrideController;
+				if(animator != null && animator.runtimeAnimatorController != null)
+				{
+					animator.playableGraph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
+				}
+				attachNodeList = new List<Transform>(resource.param.attachDataList.Count);
+				prefabInstanceList = new List<GameObject>(resource.param.attachDataList.Count);
+				animatorList.Clear();
+				particleList.Clear();
+				bscList.Clear();
+				for(int i = 0; i < resource.param.attachDataList.Count; i++)
+				{
+					Transform t = divaObject.divaPrefab.transform.Find(resource.param.attachDataList[i].path);
+					attachNodeList.Add(t);
+					if(t == null)
+						return;
+					GameObject prefab = Instantiate<GameObject>(resource.prefabList[i]);
+					prefab.transform.SetParent(t, false);
+					prefab.SetActive(resource.param.attachDataList[i].isEnableStart);
+					prefabInstanceList.Add(prefab);
+					if(prefab.GetComponent<DivaExtensionAdjust>())
+					{
+						prefab.GetComponent<DivaExtensionAdjust>().Initialize(divaObject.divaId);
+					}
+					if(prefab.GetComponent<DivaExtensionAdjust2>())
+					{
+						prefab.GetComponent<DivaExtensionAdjust2>().Initialize(divaObject.divaId);
+					}
+					if(prefab.GetComponent<DivaExtensionAdjust3>())
+					{
+						prefab.GetComponent<DivaExtensionAdjust3>().Initialize(a_diva_list);
+					}
+					if(prefab.GetComponent<DivaExtensionAdjustInterpolate>())
+					{
+						prefab.GetComponent<DivaExtensionAdjustInterpolate>().Initialize(a_diva_list);
+					}
+					if(prefab.GetComponent<DivaExtensionChangeAnimationForPositionId>())
+					{
+						prefab.GetComponent<DivaExtensionChangeAnimationForPositionId>().Initialize(divaObject);
+					}
+					if(prefab.GetComponentInChildren<BoneSpringController>(true))
+					{
+						prefab.GetComponentInChildren<BoneSpringController>(true).Initialize(BoneSpringController.PerformanceMode.High);
+					}
+					if(prefab.GetComponent<GameObjectFollowingTwoPos>())
+					{
+						prefab.GetComponent<GameObjectFollowingTwoPos>().Initialize(divaObject.divaPrefab.transform);
+					}
+					if(prefab.GetComponent<GameObjectFollowingAnyPos>())
+					{
+						prefab.GetComponent<GameObjectFollowingAnyPos>().Initialize(divaObject.divaPrefab.transform);
+					}
+					if(prefab.GetComponent<DivaExtensionAttachDivaMike>())
+					{
+						prefab.GetComponent<DivaExtensionAttachDivaMike>().Initialize(divaObject);
+					}
+					if(prefab.GetComponent<DivaExtensionPositionOffset>())
+					{
+						prefab.GetComponent<DivaExtensionPositionOffset>().Initialize(divaObject);
+					}
+					renderers.AddRange(prefab.GetComponentsInChildren<Renderer>());
+					animatorList.AddRange(prefab.GetComponentsInChildren<Animator>(true));
+					particleList.AddRange(prefab.GetComponentsInChildren<ParticleSystem>(true));
+					bscList.AddRange(prefab.GetComponentsInChildren<BoneSpringController>(true));
+					MusicCameraFollower[] mcfs = prefab.GetComponentsInChildren<MusicCameraFollower>(true);
+					for(int j = 0; j < mcfs.Length; j++)
+					{
+						mcfs[j].Initialize(cameraObject);
+					}
+				}
+				for(int i = 0; i < animatorList.Count; i++)
+				{
+					if(animatorList[i] != null && animatorList[i].runtimeAnimatorController != null)
+					{
+						animatorList[i].playableGraph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
+					}
+				}
+			}
 		}
 
 		//// RVA: 0x1BED240 Offset: 0x1BED240 VA: 0x1BED240
 		public void SetupDefaultMaterialColor(Color mainColor, Color rimColor, float rimPower)
 		{
-			UnityEngine.Debug.LogError("TODO DivaExtensionObject SetupDefaultMaterialColor");
+			defaultMainColor = mainColor;
+			defaultRimColor = rimColor;
+			defaultRimPower = rimPower;
+			materials.Clear();
+			for(int i = 0; i < renderers.Count; i++)
+			{
+				if(renderers[i] != null)
+				{
+					if(renderers[i].material.HasProperty("_Color") && renderers[i].material.HasProperty("_RimColor") &&
+						renderers[i].material.HasProperty("_RimLightPower"))
+					{
+						materials.Add(renderers[i].material);
+					}
+				}
+			}
+			ChangeColor(mainColor, rimColor, rimPower);
 		}
 
 		//// RVA: 0x1BED8C4 Offset: 0x1BED8C4 VA: 0x1BED8C4
@@ -50,17 +150,52 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1BED964 Offset: 0x1BED964 VA: 0x1BED964
 		public void UpdateColorByStageLighting(Color mainColor, Color rimColor, float rimPower)
 		{
-			UnityEngine.Debug.LogError("TODO DivaExtensionObject UpdateColorByStageLighting");
+			if(!isMovieMode)
+			{
+				Color main = Color.Lerp(defaultMainColor, mainColor, mainColor.a);
+				main.a = defaultMainColor.a;
+				Color rim = Color.Lerp(defaultRimColor, rimColor, rimColor.a);
+				rim.a = defaultRimColor.a;
+				ChangeColor(main, rim, Mathf.Lerp(defaultRimPower, rimPower, rimColor.a));
+			}
 		}
 
 		//// RVA: 0x1BED594 Offset: 0x1BED594 VA: 0x1BED594
-		//private void ChangeColor(Color mainColor, Color rimColor, float rimPower) { }
+		private void ChangeColor(Color mainColor, Color rimColor, float rimPower)
+		{
+			if(materials != null)
+			{
+				for(int i = 0; i < materials.Count; i++)
+				{
+					if(materials[i] != null)
+					{
+						Color col = materials[i].GetColor("_Color");
+						mainColor.a = col.a;
+						materials[i].SetColor("_Color", mainColor);
+						col = materials[i].GetColor("_RimColor");
+						rimColor.a = col.a;
+						materials[i].SetColor("_RimColor", rimColor);
+						materials[i].SetFloat("_RimLightPower", rimPower);
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x1BEDADC Offset: 0x1BEDADC VA: 0x1BEDADC
-		//public void EnableObject(int id) { }
+		public void EnableObject(int id)
+		{
+			if((id - 1) >= prefabInstanceList.Count)
+				return;
+			prefabInstanceList[id - 1].SetActive(true);
+		}
 
 		//// RVA: 0x1BEDBB8 Offset: 0x1BEDBB8 VA: 0x1BEDBB8
-		//public void DisableObject(int id) { }
+		public void DisableObject(int id)
+		{
+			if((id - 1) >= prefabInstanceList.Count)
+				return;
+			prefabInstanceList[id - 1].SetActive(false);
+		}
 
 		//// RVA: 0x1BEDC94 Offset: 0x1BEDC94 VA: 0x1BEDC94
 		public void PlayMusicAnimation()
@@ -119,7 +254,10 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1BEEAA0 Offset: 0x1BEEAA0 VA: 0x1BEEAA0
 		public void LateUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO LateUpdate DivaExtenssionObject");
+			if(m_pause)
+			{
+				UnityEngine.Debug.LogError("TODO LateUpdate DivaExtenssionObject when paused");
+			}
 		}
 	}
 }

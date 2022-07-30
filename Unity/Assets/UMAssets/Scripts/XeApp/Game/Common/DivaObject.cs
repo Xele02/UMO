@@ -317,7 +317,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BEBB98 Offset: 0x1BEBB98 VA: 0x1BEBB98
-		//public void AttachMikeToObject(Transform a_transform) { }
+		public void AttachMikeToObject(Transform a_transform)
+		{
+			if(mikePrefab == null)
+				return;
+			SetActiveMikePrefab(true);
+			mikePrefab.transform.SetParent(a_transform, false);
+		}
 
 		//// RVA: 0x1BF4A38 Offset: 0x1BF4A38 VA: 0x1BF4A38
 		public void LockBoneSpring(int a_index = 0)
