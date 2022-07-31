@@ -1,14 +1,13 @@
+using CriWare.CriMana;
+
 namespace CriWare
 {
 
     public class CriManaMoviePlayerHolder : CriMonoBehaviour
     {
-        // private Player _player; // 0x1C
+        private Player _player; // 0x1C
 
-        // public Player player { set; }
-
-        // // RVA: 0x29634BC Offset: 0x29634BC VA: 0x29634BC
-        // public void set_player(Player value) { }
+        public Player player { set { _player = value; } } // 0x29634BC
 
         // // RVA: 0x2964844 Offset: 0x2964844 VA: 0x2964844
         private void Awake()

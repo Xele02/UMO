@@ -34,7 +34,7 @@ namespace CriWare
 		public bool restartOnEnable; // 0x1D
 		public CriManaMovieMaterial.RenderMode renderMode; // 0x24
 		// public CriManaMovieMaterial.OnApplicationPauseCallback onApplicationPauseCallback; // 0x28
-		// private Player.TimerType _timerType = 2; // 0x2C
+		private Player.TimerType _timerType = Player.TimerType.Audio; // 0x2C
 		[SerializeField] // RVA: 0x634B84 Offset: 0x634B84 VA: 0x634B84
 		private Material _material; // 0x30
 		[SerializeField] // RVA: 0x634B94 Offset: 0x634B94 VA: 0x634B94
@@ -60,7 +60,7 @@ namespace CriWare
 		// private bool wasPausedOnDisable; // 0x4D
 		// private WaitForEndOfFrame frameEnd = new WaitForEndOfFrame(); // 0x50
 		// private bool unpauseOnApplicationUnpause; // 0x54
-		// private CriManaMoviePlayerHolder playerHolder; // 0x58
+		private CriManaMoviePlayerHolder playerHolder; // 0x58
 		// public const int DONT_FORGET_COMMENT_OUT_PLAYER_PAUSE = 0;
 
 		public string moviePath { get { return _moviePath; } set {
@@ -124,7 +124,28 @@ namespace CriWare
 		// protected virtual void OnMaterialUpdated() { }
 
 		// // RVA: 0x2963280 Offset: 0x2963280 VA: 0x2963280
-		// public void PlayerManualInitialize() { }
+		public void PlayerManualInitialize()
+		{
+			int max_path_length = 0;
+			if(!string.IsNullOrEmpty(_moviePath))
+			{
+				max_path_length = _moviePath.Length + 1;
+				if(Common.IsStreamingAssetsPath(_moviePath))
+				{
+					max_path_length += Common.streamingAssetsPath.Length;
+				}
+			}
+			player = new Player(_advancedAudio, _ambisonics, (uint)max_path_length);
+			player.SetMasterTimerType(_timerType);
+			isMaterialAvailable = false;
+			if(Application.isPlaying)
+			{
+				GameObject obj = new GameObject("CriManaMovieResources");
+				playerHolder = obj.AddComponent<CriManaMoviePlayerHolder>();
+				playerHolder.player = player;
+				player.playerHolder = playerHolder;
+			}
+		}
 
 		// // RVA: 0x29634C4 Offset: 0x29634C4 VA: 0x29634C4
 		// public void PlayerManualFinalize() { }
@@ -144,7 +165,7 @@ namespace CriWare
 		// // RVA: 0x29621F0 Offset: 0x29621F0 VA: 0x29621F0 Slot: 12
 		protected virtual void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			PlayerManualInitialize();
 		}
 
 		// // RVA: 0x2963908 Offset: 0x2963908 VA: 0x2963908 Slot: 4

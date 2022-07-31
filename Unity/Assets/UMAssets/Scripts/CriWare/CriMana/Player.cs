@@ -4,6 +4,15 @@ namespace CriWare
 	{
 		public class Player : CriDisposable
 		{
+			public enum TimerType
+			{
+				None = 0,
+				System = 1,
+				Audio = 2,
+				User = 3,
+				Manual = 4,
+			}
+
 			// private const int InvalidPlayerId = -1;
 			// private static Player updatingPlayer; // 0x0
 			// private int playerId; // 0x18
@@ -50,7 +59,7 @@ namespace CriWare
 			// public CriAtomExPlayer atomExPlayer { get; } 0x2957A4C
 			// public CriAtomEx3dSource atomEx3DsourceForAmbisonics { get; } 0x2957A54
 			// public Player.TimerType timerType { get; } 0x2957A5C
-			// public CriManaMoviePlayerHolder playerHolder { get; set; } // 0x8C
+			public CriManaMoviePlayerHolder playerHolder { get; set; } // 0x8C
 			// public bool isAlive { get; } 0x295E640
 
 			// [CompilerGeneratedAttribute] // RVA: 0x63670C Offset: 0x63670C VA: 0x63670C
@@ -68,7 +77,10 @@ namespace CriWare
 			}
 
 			// // RVA: 0x2957D9C Offset: 0x2957D9C VA: 0x2957D9C
-			// public void .ctor(bool advanced_audio_mode, bool ambisonics_mode, uint max_path_length) { }
+			public Player(bool advanced_audio_mode, bool ambisonics_mode, uint max_path_length)
+			{
+				UnityEngine.Debug.LogWarning("TODO CriMana Player");
+			}
 
 			// // RVA: 0x29582BC Offset: 0x29582BC VA: 0x29582BC Slot: 1
 			// protected override void Finalize() { }
@@ -132,7 +144,10 @@ namespace CriWare
 			// public void Loop(bool sw) { }
 
 			// // RVA: 0x295AEE4 Offset: 0x295AEE4 VA: 0x295AEE4
-			// public void SetMasterTimerType(Player.TimerType timerType) { }
+			public void SetMasterTimerType(Player.TimerType timerType)
+			{
+				UnityEngine.Debug.LogError("TODO SetMasterTimerType");
+			}
 
 			// // RVA: 0x295B084 Offset: 0x295B084 VA: 0x295B084
 			// public void SetSeekPosition(int frameNumber) { }
