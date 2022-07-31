@@ -211,10 +211,16 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x13A2060 Offset: 0x13A2060 VA: 0x13A2060
-		//public void EventMoviePlay() { }
+		public void EventMoviePlay()
+		{
+			UnityEngine.Debug.LogError("TODO EventMoviePlay");
+		}
 
 		//// RVA: 0x13A2114 Offset: 0x13A2114 VA: 0x13A2114
-		//public void EventMovieStop() { }
+		public void EventMovieStop()
+		{
+			UnityEngine.Debug.LogError("TODO EventMoviePlay");
+		}
 
 		//// RVA: 0x13A2208 Offset: 0x13A2208 VA: 0x13A2208
 		public void PlayMusicAnimation()
