@@ -164,7 +164,7 @@ namespace XeApp.Game.Common
 				{
 					if (PlayableExtensions.IsValid<Playable>(animator.playableGraph.GetRootPlayable(0)))
 					{
-						animator.playableGraph.Evaluate((float)(time - PlayableExtensions.GetTime<Playable>(animator.playableGraph.GetRootPlayable(0)) - cutinBaseTime));
+						animator.playableGraph.Evaluate((float)(time - cutinBaseTime - PlayableExtensions.GetTime<Playable>(animator.playableGraph.GetRootPlayable(0)) - cutinBaseTime));
 					}
 					cutinBaseTime = 0;
 					AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo(0);
