@@ -23,7 +23,15 @@ namespace XeApp.Game.Menu
 		private bool m_isChangeBg; // 0xC5
 		 private bool m_isEndMyRankRequest; // 0xC6
 		 private bool m_showScoreRankingPopup; // 0xC7
-		public static readonly MusicSelectConsts.SeriesType[] CategoryToSeriesType = new MusicSelectConsts.SeriesType[7] { 0xB087CD 28 }; // 0x4
+		public static readonly MusicSelectConsts.SeriesType[] CategoryToSeriesType = new MusicSelectConsts.SeriesType[7] { 
+			MusicSelectConsts.SeriesType.All,
+			MusicSelectConsts.SeriesType.First,
+			MusicSelectConsts.SeriesType.Seven,
+			MusicSelectConsts.SeriesType.Frontia,
+			MusicSelectConsts.SeriesType.Delta,
+			MusicSelectConsts.SeriesType.All,
+			MusicSelectConsts.SeriesType.Other
+		 }; // 0x4
 		private bool m_isBgCached; // 0xCC
 		// private bool m_isScoreRankingPopup; // 0xCD
 		// private bool m_isScoreEventTimeLimit; // 0xCE
