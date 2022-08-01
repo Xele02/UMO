@@ -23,8 +23,8 @@ namespace XeApp.Game.Menu
 		private bool m_isChangeBg; // 0xC5
 		 private bool m_isEndMyRankRequest; // 0xC6
 		 private bool m_showScoreRankingPopup; // 0xC7
-		// public static readonly MusicSelectConsts.SeriesType[] CategoryToSeriesType = new MusicSelectConsts.SeriesType[7] {B21C1224684EAD6057E0D535F5E726DA8EDD5779}; // 0x4
-		// private bool m_isBgCached; // 0xCC
+		public static readonly MusicSelectConsts.SeriesType[] CategoryToSeriesType = new MusicSelectConsts.SeriesType[7] { 0xB087CD 28 }; // 0x4
+		private bool m_isBgCached; // 0xCC
 		// private bool m_isScoreRankingPopup; // 0xCD
 		// private bool m_isScoreEventTimeLimit; // 0xCE
 		// private bool m_isListEmptyByFilter; // 0xCF
@@ -161,9 +161,22 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE5E44 Offset: 0xBE5E44 VA: 0xBE5E44
 		private IEnumerator Co_SetupBg(BgType bgType, int bgId, bool isFade, Action endCallBack)
 		{
-			UnityEngine.Debug.LogError("TODO Co_SetupBg");
-			endCallBack();
-			yield break;
+			BgControl bgControl;
+			//0xAC807C
+			if (!m_isBgCached)
+			{
+				bgControl = MenuScene.Instance.BgControl;
+				for(int i = 0; i < VerticalMusicSelectScene.CategoryToSeriesType.Length; i++)
+				{
+					if((int)VerticalMusicSelectScene.CategoryToSeriesType[i] > -1)
+					{
+						yield return bgControl.CacheBg(BgType.VerticalMusic, (int)CategoryToSeriesType[i]);
+					}
+				}
+				yield return bgControl.CacheBg(BgType.VerticalMusic, noMusicCategoryId);
+			}
+			m_isBgCached = true;
+			yield return Co_ChangeBg(bgType, bgId, endCallBack, isFade);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5F9C Offset: 0x6F5F9C VA: 0x6F5F9C

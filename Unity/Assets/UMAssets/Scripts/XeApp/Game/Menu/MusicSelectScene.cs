@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		private FreeCategoryId.Type m_pickupFreeCategoryId; // 0x12C
 		// private const int BASIC_LIVE = 0;
 		// private const int SIMULATION_LIVE = 1;
-		// private static readonly int[] s_categoryToSeries = new int[7] { -1, 4, 3, 2, 1, 5, 6 }; // 0x0
+		private static readonly int[] s_categoryToSeries = new int[7] { -1, 4, 3, 2, 1, 5, 6 }; // 0x0
 
 		// private MusicSelectArgs myArgs { get; set; } // 0xF8
 		// private bool hasMyArgs { get; } 0x167F17C

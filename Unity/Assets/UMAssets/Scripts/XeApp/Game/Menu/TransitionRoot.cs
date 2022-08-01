@@ -418,7 +418,7 @@ namespace XeApp.Game.Menu
 			public MenuFooterControl MenuFooter { get { return m_menuBarControl; } } //0xA31490
 			public HelpButton HelpButton { get { return m_helpButton; } }// 0xA31498
 			// private List<TransitionTreeObject.SceneRoot> SceneDirectory { get; } 0xA316B8
-			// public BgControl bgControl { get; } 0xA399F8
+			public BgControl bgControl { get { return m_bgControl; } } //0xA399F8
 
 			// [CompilerGeneratedAttribute] // RVA: 0x6C8B4C Offset: 0x6C8B4C VA: 0x6C8B4C
 			// // RVA: 0xA314A0 Offset: 0xA314A0 VA: 0xA314A0

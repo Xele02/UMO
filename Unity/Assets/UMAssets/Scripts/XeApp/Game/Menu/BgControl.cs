@@ -6,10 +6,29 @@ using XeApp.Game.Common;
 using System.Text;
 using UnityEngine.Events;
 using XeSys;
+using XeApp.Core;
 
 namespace XeApp.Game.Menu
 {
-	public class BgControl
+	public enum BgTextureType
+	{
+		Normal = 0,
+		Scene = 1,
+		Music = 2,
+		MusicEvent = 3,
+		Valkyrie = 4,
+		Result = 5,
+		LoginBonus = 6,
+		CostumeSelect = 7,
+		NewYearEvent = 8,
+		GachaBox = 9,
+		GachaNormal = 10,
+		Offer = 11,
+		Raid = 12,
+		LobbyMain = 13,
+		_Num = 14,
+	}
+public class BgControl
 	{ 
 		public enum BgTextureFlag
 		{
@@ -24,7 +43,10 @@ namespace XeApp.Game.Menu
 			private BgControl.BgTextureFlag flags; // 0x10
 
 			// RVA: 0x143F530 Offset: 0x143F530 VA: 0x143F530
-			// public void SetFlags(BgControl.BgTextureFlag flags) { }
+			public void SetFlags(BgControl.BgTextureFlag flags)
+			{
+				this.flags = flags;
+			}
 
 			// RVA: 0x143E340 Offset: 0x143E340 VA: 0x143E340
 			// public bool CanDestory() { }
@@ -55,7 +77,7 @@ namespace XeApp.Game.Menu
 		// private BgPriority m_priority; // 0x24
 		private BgControl.BgTexture m_bgTexture; // 0x28
 		private StringBuilder m_strBuilder = new StringBuilder(128); // 0x2C
-		// private static IndexableDictionary<string, BgControl.BgTexture> m_cachedTextures = new IndexableDictionary<string, BgTexture>(8); // 0x0
+		private static IndexableDictionary<string, BgControl.BgTexture> m_cachedTextures = new IndexableDictionary<string, BgTexture>(8); // 0x0
 		private bool m_fadeReserved; // 0x30
 		private float m_fadeTime = -1.0f; // 0x34
 		private Color m_fadeColor = Color.black; // 0x38
@@ -224,7 +246,31 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5C38 Offset: 0x6C5C38 VA: 0x6C5C38
 		// // RVA: 0x143E260 Offset: 0x143E260 VA: 0x143E260
-		// public IEnumerator CacheBg(BgType bgType, int id) { }
+		public IEnumerator CacheBg(BgType bgType, int id)
+		{
+			AssetBundleLoadAssetOperation operation;
+			//0x143EFDC
+			BgTextureType texType = 0;
+			ConvertBgType(bgType, ref texType, ref id);
+			if(texType == BgTextureType.Raid)
+			{
+				m_strBuilder.SetFormat("{0}{1:D3}_{2:D2}.xab", "ct/bg/rd/", id, 1);
+			}
+			else if(texType == BgTextureType.Music)
+			{
+				m_strBuilder.SetFormat("{0}{1:D2}.xab", "ct/bg/mc/nm/", id);
+			}
+			if(!m_cachedTextures.ContainsKey(m_strBuilder.ToString()))
+			{
+				operation = AssetBundleManager.LoadAssetAsync(m_strBuilder.ToString(), id.ToString("D2"), typeof(Texture2D));
+				yield return operation;
+				BgTexture tex = new BgTexture();
+				tex.SetFlags(BgTextureFlag.Permanently);
+				tex.texture = operation.GetAsset<Texture2D>();
+				AssetBundleManager.UnloadAssetBundle(m_strBuilder.ToString(), false);
+				m_cachedTextures.Add(m_strBuilder.ToString(), tex);
+			}
+		}
 
 		// // RVA: 0x143CDE8 Offset: 0x143CDE8 VA: 0x143CDE8
 		// public void DestroyCacheBg() { }
@@ -242,7 +288,10 @@ namespace XeApp.Game.Menu
 		// private void ConvertBgType(BgType bgType, ref BgTextureType textureType, ref int id, ref int evolveId) { }
 
 		// // RVA: 0x143E650 Offset: 0x143E650 VA: 0x143E650
-		// private void ConvertBgType(BgType bgType, ref BgTextureType textureType, ref int id) { }
+		private void ConvertBgType(BgType bgType, ref BgTextureType textureType, ref int id)
+		{
+!!!
+		}
 
 		// // RVA: 0x143E574 Offset: 0x143E574 VA: 0x143E574
 		// public static int CompoundSceneBgId(int sceneId, int rank) { }
