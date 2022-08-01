@@ -130,7 +130,11 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDC6E34 Offset: 0xDC6E34 VA: 0xDC6E34
-		// public void ChangeNextSceneStatus() { }
+		public void ChangeNextSceneStatus()
+		{
+			currentStatus = Status.NextScene;
+			rhythmGameEndedAction();
+		}
 
 		// // RVA: 0xDC6E68 Offset: 0xDC6E68 VA: 0xDC6E68
 		public void ChangeErrorToTilteStatus()
@@ -445,6 +449,8 @@ namespace XeApp.Game.RhythmGame
 		private void BeginCompleteAnim()
 		{
 			UnityEngine.Debug.LogError("TODO BeginCompleteAnim");
+			updater = null;
+			ChangeNextSceneStatus(); // called in RhythmGameUIController$$BeginCompleteAnim
 		}
 
 		// // RVA: 0xDCA4A8 Offset: 0xDCA4A8 VA: 0xDCA4A8

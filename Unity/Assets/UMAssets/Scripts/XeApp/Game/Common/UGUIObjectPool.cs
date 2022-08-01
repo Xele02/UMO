@@ -71,7 +71,12 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CD9714 Offset: 0x1CD9714 VA: 0x1CD9714
-		//public void Release(UGUIObject uguiObject) { }
+		public void Release(UGUIObject uguiObject)
+		{
+			uguiObject.instanceObject.transform.SetParent(m_rootObject.transform, false);
+			uguiObject.instanceObject.SetActive(false);
+			m_poolList.Add(uguiObject);
+		}
 
 	}
 }

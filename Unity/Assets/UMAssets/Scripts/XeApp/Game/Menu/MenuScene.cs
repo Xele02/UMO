@@ -481,7 +481,9 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.ChangePopupPriority(true);
 
 			UnityEngine.Debug.LogError("TODO GotoRhythmGame");
-			StartCoroutine(GotoRhythmGameCorotine(() => { /*0xB37CCC*/return null; }, false));
+			StartCoroutine(GotoRhythmGameCorotine(() => {
+				return m_menuTransitionControl.DestroyTransion();
+			}, false));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7A14 Offset: 0x6C7A14 VA: 0x6C7A14

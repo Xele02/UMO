@@ -143,7 +143,18 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF4744 Offset: 0xBF4744 VA: 0xBF4744
 		public void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			if(divaResource != null)
+			{
+				divaResource.ReleaseMusicResource();
+			}
+			foreach(var s in subDivaResource)
+			{
+				if(s != null)
+				{
+					s.ReleaseMusicResource();
+				}
+			}
+			UnityEngine.Debug.LogError("TODO RhtythmGameResource finish OnDestroy");
 		}
 
 		// // RVA: 0xBF5970 Offset: 0xBF5970 VA: 0xBF5970

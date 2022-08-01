@@ -19,9 +19,9 @@ namespace XeSys
 		private RectTransform m_baseRect; // 0x20
 		private bool isMeasureingAvg; // 0x24
 		private double mTotalFps; // 0x28
-		private int mAvgFpsCount; // 0x30
+		private int mAvgFpsCount = 1; // 0x30
 		public double avgFPS; // 0x38
-		public double minFPS; // 0x40
+		public double minFPS = 60; // 0x40
 
 		public static DebugFPS Instance { get { return mInstance; } } // 0x19316DC
 		// public float fps { get; }
@@ -32,14 +32,21 @@ namespace XeSys
 		// // RVA: 0x1931770 Offset: 0x1931770 VA: 0x1931770
 		public static GameObject Create(DebugFPS prefab)
 		{
-			UnityEngine.Debug.LogWarning("TODO DebugFPS.Create");
-			return null;
+			GameObject obj = GameObject.Find("DebugFPS");
+			if(!obj)
+			{
+				DebugFPS comp = Instantiate<DebugFPS>(prefab, new Vector3(0.95f, 0.99f, 0), Quaternion.identity);
+				obj = comp.gameObject;
+				obj.name = "DebugFPS";
+				comp.m_Label.enabled = false;
+			}
+			return obj;
 		}
 
 		// // RVA: 0x1931994 Offset: 0x1931994 VA: 0x1931994
 		public DebugFPS()
 		{
-			UnityEngine.Debug.LogWarning("TODO DebugFPS");
+			mInstance = this;
 		}
 
 		// // RVA: 0x1931A48 Offset: 0x1931A48 VA: 0x1931A48

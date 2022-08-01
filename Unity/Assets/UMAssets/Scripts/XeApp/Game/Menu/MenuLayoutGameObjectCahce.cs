@@ -76,6 +76,9 @@ namespace XeApp.Game.Menu
 		//public void ReturnInstance(string assetName, LayoutObject layObj) { }
 
 		//// RVA: 0xB2CDDC Offset: 0xB2CDDC VA: 0xB2CDDC
-		//public void ReturnUGUIInstance(string assetName, UGUIObject uguiObject) { }
+		public void ReturnUGUIInstance(string assetName, UGUIObject uguiObject)
+		{
+			m_uguiInstancePool[assetName].Release(uguiObject);
+		}
 	}
 }

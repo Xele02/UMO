@@ -1455,18 +1455,26 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C4AE8 Offset: 0x9C4AE8 VA: 0x9C4AE8
 		public IEnumerator Co_WaitRhytmGameEnd(bool isClear)
 		{
-    		UnityEngine.Debug.Log("Enter Co_WaitRhytmGameEnd");
-			yield return null;
-			Debug.LogError("TODO");
-			UnityEngine.Debug.LogError("TODO");
-    		UnityEngine.Debug.Log("Exit Co_WaitRhytmGameEnd");
+			int[] noteResultCount;
+			int noteResultCount_Excellent;
+			UnityEngine.Debug.Log("Enter Co_WaitRhytmGameEnd");
+			//0xBF3B04
+			UnityEngine.Debug.LogError("TODO Co_WaitRhytmGameEnd");
+			GameManager.FadeOut(0.4f);
+			GotoMenuSceneInSuccess(new int[5], 0);
+			UnityEngine.Debug.Log("Exit Co_WaitRhytmGameEnd");
+			yield break;
 		}
 
 		// // RVA: 0x9C4B8C Offset: 0x9C4B8C VA: 0x9C4B8C
 		// private void MakeClearSetupData(out JGEOBNENMAH.HAJIFNABIFF clearSetup, int[] noteResultCount, int noteResultCount_Excellent, int noteResultCount_EventItem) { }
 
 		// // RVA: 0x9C5C78 Offset: 0x9C5C78 VA: 0x9C5C78
-		// private void GotoMenuSceneInSuccess(int[] noteResultCount, int noteResultCount_Excellent) { }
+		private void GotoMenuSceneInSuccess(int[] noteResultCount, int noteResultCount_Excellent)
+		{
+			UnityEngine.Debug.LogError("TODO GotoMenuSceneInSuccess");
+			scene.GotoMenuScene();
+		}
 
 		// // RVA: 0x9C5D68 Offset: 0x9C5D68 VA: 0x9C5D68
 		// private void GotoMenuSceneInFailed() { }

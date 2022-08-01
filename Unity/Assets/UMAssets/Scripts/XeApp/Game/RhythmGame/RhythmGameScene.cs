@@ -62,7 +62,16 @@ namespace XeApp.Game.RhythmGame
 		// public void GotoPrevScene() { }
 
 		// // RVA: 0xBFDCE0 Offset: 0xBFDCE0 VA: 0xBFDCE0
-		// public void GotoMenuScene() { }
+		public void GotoMenuScene()
+		{
+			if(CNGFKOJANNP.HHCJCDFCLOB != null)
+			{
+				CNGFKOJANNP.HHCJCDFCLOB.KANPNADDJBK();
+			}
+			if (onChangeScene != null)
+				onChangeScene();
+			NextScene("Menu");
+		}
 
 		// // RVA: 0xBFDD74 Offset: 0xBFDD74 VA: 0xBFDD74
 		// public void GotoTitleScene() { }

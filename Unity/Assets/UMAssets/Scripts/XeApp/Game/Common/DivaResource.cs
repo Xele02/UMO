@@ -255,8 +255,11 @@ namespace XeApp.Game.Common
 			facialAnimatorController = null;
 			isLoadedBasicResource = false;
 			boneSpringResource.suppress.presets.Clear();
-			prefabEffect.Clear();
-			prefabEffect = null;
+			if (prefabEffect != null)
+			{
+				prefabEffect.Clear();
+				prefabEffect = null;
+			}
 			prefabWind = null;
 		}
 
@@ -266,6 +269,8 @@ namespace XeApp.Game.Common
 			musicMotionOverrideResource.bodyClip = null;
 			musicMotionOverrideResource.faceBlendClip = null;
 			musicMotionOverrideResource.mouthBlendClip = null;
+			isLoadedARAnimationResource = false;
+			isLoadedMusicAnimationResource = false;
 			//for(int i = 0; i < commonFacialResource.Count; i++)
 			//	commonFacialResource[i].overrideClip = null;
 			commonFacialResource.Clear();

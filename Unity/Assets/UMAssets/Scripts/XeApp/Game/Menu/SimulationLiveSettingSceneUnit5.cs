@@ -88,7 +88,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE310 Offset: 0x12CE310 VA: 0x12CE310 Slot: 14
 		protected override void OnDestoryScene()
 		{
-			UnityEngine.Debug.LogError("TODO OnDestoryScene");
+			FinalizeUGUIObject();
+			base.OnDestoryScene();
 		}
 
 		// // RVA: 0x12CE610 Offset: 0x12CE610 VA: 0x12CE610 Slot: 9
@@ -177,7 +178,23 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x12CE330 Offset: 0x12CE330 VA: 0x12CE330
-		// private void FinalizeUGUIObject() { }
+		private void FinalizeUGUIObject()
+		{
+			ClearUGUIObjectListener();
+			HideUGUIObject();
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckHeadButtons", m_headButtonsObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckPrismSettingButtons", m_prismSettingButtonsObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckValkyrieButton", m_valkyrieButtonObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckMusicInfo", m_musicInfoObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckPlayButtons", m_playButtonsObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckUnitInfo_SLive", m_prismUnitInfoObject);
+			m_prismUnitInfoObject = null;
+			m_headButtonsObject = null;
+			m_prismSettingButtonsObject = null;
+			m_valkyrieButtonObject = null;
+			m_playButtonsObject = null;
+			m_musicInfoObject = null;
+		}
 
 		// // RVA: 0x12CEB84 Offset: 0x12CEB84 VA: 0x12CEB84
 		private void ClearUGUIObjectListener()

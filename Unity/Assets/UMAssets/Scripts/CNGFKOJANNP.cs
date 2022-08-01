@@ -50,7 +50,10 @@ public class CNGFKOJANNP
     }
 
 	// // RVA: 0x175B728 Offset: 0x175B728 VA: 0x175B728
-	// public void KANPNADDJBK() { }
+	public void KANPNADDJBK()
+	{
+		MGALHAHPADF = true;
+	}
 
 	// // RVA: 0x175B730 Offset: 0x175B730 VA: 0x175B730
 	// public void FGDBKOCCKOE(bool JKDJCFEBDHC) { }
