@@ -7,6 +7,8 @@ using System.Text;
 using UnityEngine.Events;
 using XeSys;
 using XeApp.Core;
+using XeSys.uGUI;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -71,7 +73,7 @@ public class BgControl
 		private GameObject m_bgInstance; // 0xC
 		private BgBehaviour m_bgBehaviour; // 0x10
 		private BgType m_type = BgType.Undefined; // 0x14
-		// private BgTextureType m_textureType; // 0x18
+		private BgTextureType m_textureType; // 0x18
 		private int m_id; // 0x1C
 		private GameAttribute.Type m_attr; // 0x20
 		// private BgPriority m_priority; // 0x24
@@ -176,8 +178,82 @@ public class BgControl
 		// // RVA: 0x143D36C Offset: 0x143D36C VA: 0x143D36C
 		public IEnumerator ChangeBgCoroutine(BgType bgType, int id = -1, SceneGroupCategory category = SceneGroupCategory.UNDEFINED, TransitionList.Type transitionType = TransitionList.Type.UNDEFINED, int attribute = -1)
 		{
-			UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine");
-			yield return null;
+			BgTextureType textureType = 0;
+			bool doFade;
+			float fadeTime;
+			UGUIFader fader;
+			//0x143F5D4
+			ConvertBgType(bgType, ref textureType, ref id);
+			bool wasEnabled = m_limitedHomeBg.m_enable;
+			m_limitedHomeBg.m_enable = false;
+			if(bgType == BgType.Home)
+			{
+				UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine Home");
+			}
+			if(wasEnabled && m_limitedHomeBg.m_enable)
+			{
+				// L 426
+				UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine Limited Home BG");
+			}
+			doFade = m_fadeReserved && ((wasEnabled != m_limitedHomeBg.m_enable) || !(m_textureType == textureType && id == m_id));
+			m_fadeReserved = false;
+			fadeTime = m_fadeTime;
+			fader = m_bgBehaviour.Fader;
+			if(doFade)
+			{
+				fader.Fade(fadeTime, m_fadeColor);
+				while (fader.isFading)
+					yield return null;
+			}
+			m_limitedHomeBg.m_music_id = LimitedHomeBg.INVALID_MUSIC_ID;
+			if(bgType < BgType.CostumeSelect)
+			{
+				if(bgType == BgType.Home || bgType == BgType.HomeNormal || bgType == BgType.LoginBonus)
+				{
+					// L528
+					UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine Home BG");
+				}
+			}
+			if (m_limitedHomeBg.m_enable)
+			{
+				// 588
+				UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine Limited BG");
+			}
+			if (!m_limitedHomeBg.m_enable)
+			{
+				DeleteLimitedBG();
+				yield return LoadBgTexture(textureType, id, bgType == BgType.GachaPickup);
+				switch(bgType)
+				{
+					case BgType.VerticalMusic:
+						m_bgBehaviour.SetVerticalMusic();
+						break;
+					default:
+						//L 785
+						UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine Other BG");
+						break;
+				}
+				StoryBgHide();
+			}
+			// LAB_01440c6c
+			if (attribute < 0)
+			{
+				if (m_type != bgType)
+				{
+					ChangeAttribute(0);
+				}
+			}
+			else
+			{
+				ChangeAttribute((GameAttribute.Type)attribute);
+			}
+			m_type = bgType;
+			if (doFade)
+			{
+				fader.Fade(fadeTime, 0);
+				while (fader.isFading)
+					yield return null;
+			}
 		}
 
 		// // RVA: 0x143D498 Offset: 0x143D498 VA: 0x143D498
@@ -195,12 +271,17 @@ public class BgControl
 		// public IEnumerator Co_CreateLimitedBG(int a_bundle_id, int a_time_zone) { }
 
 		// // RVA: 0x143D0C8 Offset: 0x143D0C8 VA: 0x143D0C8
-		// public void DeleteLimitedBG() { }
+		public void DeleteLimitedBG()
+		{
+			UnityEngine.Debug.LogError("TODO DeleteLimitedBG");
+		}
 
 		// // RVA: 0x143D874 Offset: 0x143D874 VA: 0x143D874
 		public void ReserveFade(float time, Color color)
 		{
-			UnityEngine.Debug.LogError("TODO BG ReserveFade");
+			m_fadeReserved = true;
+			m_fadeTime = time;
+			m_fadeColor = color;
 		}
 
 		// // RVA: 0x143D89C Offset: 0x143D89C VA: 0x143D89C
@@ -225,14 +306,65 @@ public class BgControl
 		// public void ChangeTeamSelect() { }
 
 		// // RVA: 0x143DF08 Offset: 0x143DF08 VA: 0x143DF08
-		// public void ChangeAttribute(GameAttribute.Type attr) { }
+		public void ChangeAttribute(GameAttribute.Type attr)
+		{
+			if (m_attr == attr)
+				return;
+			m_bgBehaviour.ChangeAttribute(attr);
+			m_attr = attr;
+		}
 
 		// // RVA: 0x143DF4C Offset: 0x143DF4C VA: 0x143DF4C
 		// public void ChangeTilingType(BgBehaviour.TilingType type) { }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5B48 Offset: 0x6C5B48 VA: 0x6C5B48
 		// // RVA: 0x143DF80 Offset: 0x143DF80 VA: 0x143DF80
-		// public IEnumerator LoadBgTexture(BgTextureType textureType, int id, bool isBlur = False) { }
+		public IEnumerator LoadBgTexture(BgTextureType textureType, int id, bool isBlur = false)
+		{
+			Type types;
+			AssetBundleLoadAssetOperation operation;
+			//0x1442B38
+			if (m_bgTexture != null && m_textureType == textureType && m_id == id)
+				yield break;
+			m_textureType = textureType;
+			m_id = id;
+			m_strBuilder.Clear();
+			bool canBeMat = false;
+			switch (textureType)
+			{
+				case BgTextureType.Music:
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", "ct/bg/mc/nm/", m_id);
+					break;
+				default:
+					UnityEngine.Debug.LogError("TODO load other bg");
+					yield break;
+					break;
+			}
+			BgTexture tex;
+			if (!m_cachedTextures.TryGetValue(m_strBuilder.ToString(), out tex))
+			{
+				types = typeof(Texture2D);
+				if(m_textureType == BgTextureType.Scene)
+				{
+					if(canBeMat)
+						types = typeof(Material);
+				}
+				operation = AssetBundleManager.LoadAssetAsync(m_strBuilder.ToString(), id.ToString("D2"), types);
+				yield return operation;
+				tex = new BgTexture();
+				if(types == typeof(Texture2D))
+				{
+					tex.texture = operation.GetAsset<Texture2D>();
+				}
+				else
+				{
+					tex.material = operation.GetAsset<Material>();
+				}
+				AssetBundleManager.UnloadAssetBundle(m_strBuilder.ToString());
+			}
+			m_bgBehaviour.SetHomeBgTexture(tex, m_textureType == BgTextureType.Scene, isBlur);
+			m_bgTexture = tex;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5BC0 Offset: 0x6C5BC0 VA: 0x6C5BC0
 		// // RVA: 0x143E078 Offset: 0x143E078 VA: 0x143E078
@@ -290,7 +422,39 @@ public class BgControl
 		// // RVA: 0x143E650 Offset: 0x143E650 VA: 0x143E650
 		private void ConvertBgType(BgType bgType, ref BgTextureType textureType, ref int id)
 		{
-!!!
+			int category_id = 0;
+			int asset_id = 0;
+			if(bgType < BgType.Music)
+			{
+				if(bgType == BgType.Home)
+				{
+					category_id = -1;
+					asset_id = -1;
+					UnityEngine.Debug.LogError("TODO ConvertBgType home");
+
+				}
+				else
+				{
+					category_id = -1;
+					asset_id = -1;
+				}
+				UnityEngine.Debug.LogError("TODO ConvertBgType home");
+				textureType = BgTextureType.Normal;
+			}
+			else
+			{
+				textureType = BgTextureType.GachaNormal;
+				switch(bgType)
+				{
+					case BgType.Music:
+					case BgType.VerticalMusic:
+						textureType = BgTextureType.Music;
+						break;
+					default:
+						UnityEngine.Debug.LogError("TODO ConvertBgType others");
+						break;
+				}
+			}
 		}
 
 		// // RVA: 0x143E574 Offset: 0x143E574 VA: 0x143E574
@@ -327,7 +491,10 @@ public class BgControl
 		// public void StoryBgShow() { }
 
 		// // RVA: 0x143EE70 Offset: 0x143EE70 VA: 0x143EE70
-		// public void StoryBgHide() { }
+		public void StoryBgHide()
+		{
+			m_bgBehaviour.StoryBgHide();
+		}
 
 		// // RVA: 0x143EC5C Offset: 0x143EC5C VA: 0x143EC5C
 		// public void SetStoryBgSetPositionX(float x) { }

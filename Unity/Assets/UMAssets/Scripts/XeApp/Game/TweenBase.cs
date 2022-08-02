@@ -19,7 +19,10 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x191AB88 Offset: 0x191AB88 VA: 0x191AB88
-		// public void ResetTime() { }
+		public void ResetTime()
+		{
+			m_time = 0;
+		}
 
 		// // RVA: 0x191AB94 Offset: 0x191AB94 VA: 0x191AB94
 		public float Evaluate()

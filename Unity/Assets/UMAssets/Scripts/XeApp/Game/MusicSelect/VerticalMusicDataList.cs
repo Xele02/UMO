@@ -17,7 +17,7 @@ namespace XeApp.Game.MusicSelect
 				// public bool isNew; // 0x11
 				// public bool isUnlockable; // 0x12
 				// public bool isSimulation; // 0x13
-				// public bool isHighLevel; // 0x14
+				public bool isHighLevel; // 0x14
 				// public MusicSelectConsts.MusicTimeType timeType; // 0x18
 				// public MusicSelectConsts.MusicType musicType; // 0x1C
 				// public MusicSelectConsts.EventType eventType; // 0x20
@@ -37,7 +37,7 @@ namespace XeApp.Game.MusicSelect
 			//	public bool IsUnlockable { get; } = false; // 0x19
 			//	public bool IsNew { get; } = false; //0x1A
 			//	public bool IsSimulation { get; } = false; // 0x1B
-			//	public bool IsHighLevel { get; } = false; // 0x1C
+			public bool IsHighLevel { get; } = false; // 0x1C
 			//	public string EventPeriod { get; } // 0x20
 			//	public string MusicTimeStr { get; } // 0x24
 				public string MusicName { get; } // 0x28
@@ -54,6 +54,7 @@ namespace XeApp.Game.MusicSelect
 				UnityEngine.Debug.LogError("TODO MusicListData()");
 				MusicName = initParam.musicName;
 				ViewMusic = initParam.viewMusic;
+				IsHighLevel = initParam.isHighLevel;
 			}
 		}
 
@@ -76,6 +77,7 @@ namespace XeApp.Game.MusicSelect
 				EONOEHOKBEB_Music a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(id, musicInfo.DLAEJOBELBH_Id);
 				initparam.musicName = Database.Instance.musicText.Get(a.KNMGEEFGDNI_Nam).musicName;
 				initparam.viewMusic = viewMusicDataList[i]; // to check
+				initparam.isHighLevel = false;
 				//initparam.musicName = "Music "+id;
 				VerticalMusicDataList.MusicListData data = new VerticalMusicDataList.MusicListData(initparam);
 				res.Add(data);

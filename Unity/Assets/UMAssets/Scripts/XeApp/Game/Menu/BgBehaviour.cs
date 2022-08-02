@@ -79,8 +79,16 @@ namespace XeApp.Game.Menu
 			HomeNight = 9,
 		}
 
+		public enum TilingType
+		{
+			Dot = 0,
+			Mark = 1,
+			Cross = 2,
+			Square = 3,
+		}
 
-		[SerializeField]
+
+	[SerializeField]
 		private GameObject m_decorationPrefab; // 0xC
 		[SerializeField]
 		private GameObject m_decorationRoot; // 0x10
@@ -152,7 +160,7 @@ namespace XeApp.Game.Menu
 			{ 44, 45, 46, 47, -1, -1, -1, -1, -1, -1} }; // 0x44
 
 		// public RawImage BgImage { get; } 0x14365E0
-		// public UGUIFader Fader { get; } 0x14365E8
+		public UGUIFader Fader { get { return m_fader; } } //0x14365E8
 		public ScrollRect storyBgScrollRect { get { return m_storyBgScroll; } private set { return; } } //0x143BBD0 0x143BBD8
 
 		// // RVA: 0x14365F0 Offset: 0x14365F0 VA: 0x14365F0
@@ -196,21 +204,91 @@ namespace XeApp.Game.Menu
 		// public void ClearBg() { }
 
 		// // RVA: 0x1436D7C Offset: 0x1436D7C VA: 0x1436D7C
-		// public void SetHomeBgTexture(BgControl.BgTexture texture, bool isScene, bool isBlur = False) { }
+		public void SetHomeBgTexture(BgControl.BgTexture texture, bool isScene, bool isBlur = false)
+		{
+			if(texture.texture != null)
+			{
+				SetBgTexture(texture.texture, isScene, isBlur);
+				return;
+			}
+			m_bgImage.texture = null;
+			m_bgImage.material = texture.material;
+		}
 
 		// // RVA: 0x1436EA4 Offset: 0x1436EA4 VA: 0x1436EA4
-		// public void SetBgTexture(Texture2D texture, bool isScene, bool isBlur = False) { }
+		public void SetBgTexture(Texture2D texture, bool isScene, bool isBlur = false)
+		{
+			m_bgImage.texture = texture;
+			if(!isScene)
+			{
+				m_bgImage.material = null;
+				return;
+			}
+			if(isBlur)
+			{
+				m_bgTransColoredBlurMaterialInstance.SetTexture("_MainTex", texture);
+				m_bgTransColoredBlurMaterialInstance.SetFloat("_Distance", 0.002f);
+				m_bgImage.material = m_bgTransColoredBlurMaterialInstance;
+			}
+			else
+			{
+				m_bgMipmapBiasMaterialInstance.SetTexture("_MainTex", texture);
+				m_bgMipmapBiasMaterialInstance.SetTexture("_MaskTex", Texture2D.whiteTexture);
+				m_bgMipmapBiasMaterialInstance.SetFloat("_MipmapBias", -0.5f);
+				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EJPFDDOOKJI(SystemInfo.graphicsDeviceName))
+				{
+					m_bgMipmapBiasMaterialInstance.EnableKeyword("FIXEDBIAS");
+				}
+				m_bgImage.material = m_bgMipmapBiasMaterialInstance;
+			}
+		}
 
 		// // RVA: 0x143718C Offset: 0x143718C VA: 0x143718C
 		public void ChangeColor(BgBehaviour.ColorType type)
 		{
-			UnityEngine.Debug.LogWarning("TODO BgBehaviour ChangeColor");
+			for(int j = 0; j < 8; j++)
+			{
+				if(m_colorIndexTbl[(int)type, j] > -1)
+				{
+					m_colorChangeImages[j].color = m_colorTable[m_colorIndexTbl[(int)type, j]];
+				}
+			}
+			for (int j = 0; j < 2; j++)
+			{
+				if (m_colorIndexTbl[(int)type, 8] > -1)
+				{
+					m_growImages[j].color = m_colorTable[m_colorIndexTbl[(int)type, 8]];
+				}
+			}
 		}
 
 		// // RVA: 0x14374E4 Offset: 0x14374E4 VA: 0x14374E4
 		public void SetHome(bool isBgDark)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			m_tileImage.enabled = false;
+			m_transLationTween.enabled = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(true);
+			m_decrationInstance[0].transform.localPosition = m_decorationPosition[0];
+			m_decrationInstance[0].transform.localScale = m_decorationScale[0];
+			m_decrationInstance[1].SetActive(false);
+			for(int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			for(int i = 0; i < m_colorChangeImages.Count; i++)
+			{
+				m_colorChangeImages[i].material = m_decorationMaterials[0];
+			}
+			if(isBgDark)
+			{
+				ShowOverlay(HomeSceneOverlayAlpha);
+			}
+			else
+			{
+				HideOverlay();
+			}
+			ResetBgImageRectSize(false);
 		}
 
 		// // RVA: 0x1437E00 Offset: 0x1437E00 VA: 0x1437E00
@@ -232,7 +310,27 @@ namespace XeApp.Game.Menu
 		// public void SetMusic(bool simulation = False) { }
 
 		// // RVA: 0x1439294 Offset: 0x1439294 VA: 0x1439294
-		// public void SetVerticalMusic() { }
+		public void SetVerticalMusic()
+		{
+			ChangeTilingType(0, false);
+			m_tileImage.enabled = false;
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[0].transform.localPosition = m_decorationPosition[0];
+			m_decrationInstance[0].transform.localScale = m_decorationScale[0];
+			m_decrationInstance[1].SetActive(false);
+			for(int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			for(int i = 0; i < m_colorChangeImages.Count; i++)
+			{
+				m_colorChangeImages[i].material = m_decorationMaterials[0];
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x1439708 Offset: 0x1439708 VA: 0x1439708
 		// public void SetDownLoad() { }
@@ -279,7 +377,30 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1437A4C Offset: 0x1437A4C VA: 0x1437A4C
 		public void ResetBgImageRectSize(bool isPlate)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			RectTransform transf = m_bgImage.GetComponent<RectTransform>();
+			if(!isPlate)
+			{
+				transf.sizeDelta = RectSize4_3;
+			}
+			else
+			{
+				transf.sizeDelta = PlateSize;
+			}
+			Canvas canvas = GetComponentInParent<Canvas>();
+			RectTransform parentTransf = canvas.GetComponent<RectTransform>();
+			if(parentTransf.GetChild(0) != null)
+			{
+				parentTransf = parentTransf.GetChild(0).GetComponent<RectTransform>();
+			}
+			transf.localScale = new Vector3(parentTransf.sizeDelta.x / transf.sizeDelta.x, parentTransf.sizeDelta.y / transf.sizeDelta.y, 1);
+			if(!isPlate)
+			{
+				m_bgImage.uvRect = TextureUv4_3;
+			}
+			else
+			{
+				m_bgImage.uvRect = PlateUv;
+			}
 		}
 
 		// // RVA: 0x1436C04 Offset: 0x1436C04 VA: 0x1436C04
@@ -289,7 +410,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14379A4 Offset: 0x14379A4 VA: 0x14379A4
-		// public void ShowOverlay(float alpha) { }
+		public void ShowOverlay(float alpha)
+		{
+			m_overlay.enabled = true;
+			m_overlay.color = new Color(1, 1, 1, alpha);
+		}
 
 		// // RVA: 0x1436BD4 Offset: 0x1436BD4 VA: 0x1436BD4
 		public void HideOverlay()
@@ -298,7 +423,25 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1438A94 Offset: 0x1438A94 VA: 0x1438A94
-		// public void ChangeTilingType(BgBehaviour.TilingType type, bool mask = False) { }
+		public void ChangeTilingType(BgBehaviour.TilingType type, bool mask = false)
+		{
+			switch(type)
+			{
+				case TilingType.Dot:
+					m_tileImage.sprite = m_homeTileSprite;
+					break;
+				case TilingType.Mark:
+					m_tileImage.sprite = m_menuTileSprite;
+					break;
+				case TilingType.Cross:
+					m_tileImage.sprite = m_musicTileSprite;
+					break;
+				case TilingType.Square:
+					m_tileImage.sprite = m_offerTileSprite;
+					break;
+			}
+			m_tileMask.enabled = mask;
+		}
 
 		// // RVA: 0x143BABC Offset: 0x143BABC VA: 0x143BABC
 		// public void ChangeTilingFade(float time, float alpha) { }
@@ -315,6 +458,9 @@ namespace XeApp.Game.Menu
 		// public void StoryBgShow() { }
 
 		// // RVA: 0x143BD0C Offset: 0x143BD0C VA: 0x143BD0C
-		// public void StoryBgHide() { }
+		public void StoryBgHide()
+		{
+			m_storyBgScroll.gameObject.SetActive(false);
+		}
 	}
 }

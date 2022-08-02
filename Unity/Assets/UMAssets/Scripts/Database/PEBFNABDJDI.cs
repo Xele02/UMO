@@ -66,7 +66,10 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 	// public int HEDDDBDAMGO(string LJNAKDMILMC, string KKMJBMKHGNH) { }
 
 	// // RVA: 0xCC4804 Offset: 0xCC4804 VA: 0xCC4804
-	// public bool EJPFDDOOKJI(string MDBKPOCDJDP) { }
+	public bool EJPFDDOOKJI(string MDBKPOCDJDP)
+	{
+		return NCJKIFNCLAF.Contains(MDBKPOCDJDP);
+	}
 
 	// // RVA: 0xCC4880 Offset: 0xCC4880 VA: 0xCC4880
 	// public int NCEMAEDMJLO(long EOLFJGMAJAB) { }
@@ -146,6 +149,15 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 			data.DNJEJEANJGL = reader.MHGMDJNOLMI[i].JBGEEPFKIGG;
 			FJOEBCMGDMI[reader.MHGMDJNOLMI[i].LJNAKDMILMC] = data;
 			IFBBNEGGCIH.Add(data);
+		}
+
+		//L549
+		NCJKIFNCLAF = new List<string>();
+		string str = EFEGBHACJAL("fixedbias_gpu_name", "");
+		if(!string.IsNullOrEmpty(str))
+		{
+			char[] sep = new char[1] { ',' };
+			NCJKIFNCLAF.AddRange(str.Split(sep));
 		}
 
 		if ((LPJLEHAJADA("acb_setting", 3) & 1) != 0) // L 702

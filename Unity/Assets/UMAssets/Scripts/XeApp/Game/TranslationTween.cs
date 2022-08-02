@@ -26,6 +26,10 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0xE3D07C Offset: 0xE3D07C VA: 0xE3D07C
-		// public void ResetCurve() { }
+		public void ResetCurve()
+		{
+			ResetTime();
+			transform.localPosition = Vector3.Slerp(m_from, m_to, Evaluate());
+		}
 	}
 }

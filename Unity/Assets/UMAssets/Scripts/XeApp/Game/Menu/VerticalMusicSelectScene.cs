@@ -174,11 +174,11 @@ namespace XeApp.Game.Menu
 			if (!m_isBgCached)
 			{
 				bgControl = MenuScene.Instance.BgControl;
-				for(int i = 0; i < VerticalMusicSelectScene.CategoryToSeriesType.Length; i++)
+				for(int i = 0; i < VerticalMusicSelectScene.CategoryToNewSeriesBgId.Length; i++)
 				{
-					if((int)VerticalMusicSelectScene.CategoryToSeriesType[i] > -1)
+					if((int)VerticalMusicSelectScene.CategoryToNewSeriesBgId[i] > -1)
 					{
-						yield return bgControl.CacheBg(BgType.VerticalMusic, (int)CategoryToSeriesType[i]);
+						yield return bgControl.CacheBg(BgType.VerticalMusic, (int)CategoryToNewSeriesBgId[i]);
 					}
 				}
 				yield return bgControl.CacheBg(BgType.VerticalMusic, noMusicCategoryId);
@@ -674,8 +674,22 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEBC94 Offset: 0xBEBC94 VA: 0xBEBC94
 		private int GetChangeBgId(VerticalMusicDataList.MusicListData musicListData)
 		{
-			UnityEngine.Debug.LogError("TODO GetChangeBgId");
-			return 0;
+			if(listIsEmpty)
+			{
+				return noMusicCategoryId;
+			}
+			if (musicListData.IsHighLevel)
+			{
+				return SeriesToNewSeriesBgId[selectMusicData.AIHCEGFANAM];
+			}
+			else
+			{
+				if(musicListData.ViewMusic.DEPGBBJMFED == 0)
+				{
+					return CategoryToNewSeriesBgId[5];
+				}
+				return CategoryToNewSeriesBgId[selectMusicData.DEPGBBJMFED];
+			}
 		}
 
 		// // RVA: 0xBEBF44 Offset: 0xBEBF44 VA: 0xBEBF44 Slot: 54

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
 using XeApp.Game.MusicSelect;
 
@@ -233,7 +234,19 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F698C Offset: 0x6F698C VA: 0x6F698C
 		// // RVA: 0xAC83B4 Offset: 0xAC83B4 VA: 0xAC83B4
-		// protected IEnumerator Co_ChangeBg(BgType bgType, int bgId, Action endCallBack, bool isFade) { }
+		protected IEnumerator Co_ChangeBg(BgType bgType, int bgId, Action endCallBack, bool isFade)
+		{
+			//0xAD4790
+			if (isFade)
+			{
+				MenuScene.Instance.BgControl.ReserveFade(0.2f, Color.black);
+			}
+			yield return MenuScene.Instance.BgControl.ChangeBgCoroutine(bgType, bgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1);
+			if(endCallBack != null)
+			{
+				endCallBack();
+			}
+		}
 
 		// // RVA: -1 Offset: -1 Slot: 55
 		protected abstract int GetDanceDivaCount();

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 public class IBJAKJJICBC : EEDKAACNBBG
 {
-	// private const int FBGGEFFJJHB = 2108636250;
+	private const int FBGGEFFJJHB = 0x7daf3c5a;
 	// private const sbyte JFOFMKBJBBE = 19;
 	// private const sbyte CNECJGKECHK = 87;
-	private int EPGOIGPKPPJ = 0x7daf3c5a; // 0x40
-	// private int HNEHIJCAOJM = 0x7daf3c5a; // 0x44
+	private int EPGOIGPKPPJ = FBGGEFFJJHB; // 0x40
+	private int HNEHIJCAOJM = FBGGEFFJJHB; // 0x44
 	// private sbyte ACKPOCNHOOP = 0x13; // 0x48
 	// private sbyte IFLNGLECALJ = 0x13; // 0x49
 	// private sbyte MEPLEIEDBGE = 0x13; // 0x4A
@@ -49,8 +49,8 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	// public bool GBNOALJPOBM; // 0xC8
 	// public long NJDCMCDEAPK; // 0xD0
 
-	public int GHBPLHBNMBK { get { return EPGOIGPKPPJ ^ 0x7daf3c5a; } set { EPGOIGPKPPJ = value ^ 0x7daf3c5a; } } //0x1213164 HKFCFPFPMBN 0x1213178 IFMPBFAAKNN
-	// public int DEPGBBJMFED { get; set; } 0x121318C FNMFOBJIIIC 0x12131A0 OBEDPJLBBEG
+	public int GHBPLHBNMBK { get { return EPGOIGPKPPJ ^ FBGGEFFJJHB; } set { EPGOIGPKPPJ = value ^ FBGGEFFJJHB; } } //0x1213164 HKFCFPFPMBN 0x1213178 IFMPBFAAKNN
+	public int DEPGBBJMFED { get { return HNEHIJCAOJM ^ FBGGEFFJJHB; } set { HNEHIJCAOJM = value ^ FBGGEFFJJHB; } } //0x121318C FNMFOBJIIIC 0x12131A0 OBEDPJLBBEG
 	// public bool CADENLBDAEB { get; set; } 0x12131B4 KJGFPPLHLAB 0x12131C8 ILJHLPMDHPO
 	// public bool LDGOHPAPBMM { get; set; } 0x12131F8 GEBJMDIJNAH 0x121320C JBMMFDLGCMC
 	// public bool CPBDGAGKNGH { get; set; } 0x121323C KJLPFJJHJPE 0x1213250 CLALHMCBPNF
@@ -144,6 +144,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 		KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[GHBPLHBNMBK - 1];
 		base.KHEKNNFCAOI(musicInfo.DLAEJOBELBH_Id);
 		this.GHBPLHBNMBK = GHBPLHBNMBK;
+		DEPGBBJMFED = musicInfo.DEPGBBJMFED;
 	}
 
 	// // RVA: 0x1215B3C Offset: 0x1215B3C VA: 0x1215B3C
