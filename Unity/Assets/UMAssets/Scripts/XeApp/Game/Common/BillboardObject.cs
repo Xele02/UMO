@@ -14,7 +14,7 @@ namespace XeApp.Game.Common
 				return;
 			if(!enableVertical)
 			{
-				transform.LookAt(new Vector3(camera.transform.position.x, camera.transform.position.y, transform.position.z));
+				transform.LookAt(new Vector3(camera.transform.position.x, transform.position.y, camera.transform.position.z));
 			}
 			else
 			{
