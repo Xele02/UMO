@@ -45,10 +45,10 @@ namespace XeApp.Game.Menu
 
 		public delegate bool CheckMatchMusicFilterFunc(VerticalMusicDataList.MusicListData musicData, int series, long currentTime);
 
-		// protected IKDICBBFBMI m_scoreEventCtrl; // 0x50
+		protected IKDICBBFBMI m_scoreEventCtrl; // 0x50
 		// private VerticalMusicSelectSceneBase.MusicDecideInfo m_musicDecideInfo = MusicDevideInfo.Empty; // 0x68
-		 private PopupAchieveRewardSetting m_rewardPopupSetting = new PopupAchieveRewardSetting(); // 0x88
-		// private PopupUnitDanceWarning m_popupUnitDanceWarning = new PopupUnitDanceWarning(); // 0x8C
+		private PopupAchieveRewardSetting m_rewardPopupSetting = new PopupAchieveRewardSetting(); // 0x88
+		private PopupUnitDanceWarning m_popupUnitDanceWarning = new PopupUnitDanceWarning(); // 0x8C
 		// private PopupMusicBookMarkSetting m_musicBookMarkSetting = new PopupMusicBookMarkSetting(); // 0x90
 		private bool m_isConfirmedUnitDance; // 0x94
 		// private TeamSlectSceneArgs m_teamSelectSceneArgs = new TeamSlectSceneArgs(); // 0x98
@@ -61,7 +61,7 @@ namespace XeApp.Game.Menu
 		protected abstract Difficulty.Type diff { get; }  //Slot: 31
 		// protected abstract MusicSelectConsts.SeriesType series { get; } //Slot: 32
 		protected abstract int list_no { get; set; } //Slot: 34 Slot: 33
-		// protected bool openSimulationLive { get; set; } // 0x48
+		protected bool openSimulationLive { get; set; } // 0x48
 		protected abstract bool isLine6Mode { get; } // Slot: 35
 		// protected abstract int musicListCount { get; } // Slot: 36
 		protected abstract VerticalMusicDataList currentMusicList { get; } //  Slot: 38
@@ -154,20 +154,22 @@ namespace XeApp.Game.Menu
 		// RVA: 0xAC8FD0 Offset: 0xAC8FD0 VA: 0xAC8FD0 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			UnityEngine.Debug.LogError("TODO OnBgmStart");
+			DelayedApplyMusicInfo();
 			return true;
 		}
 
 		// RVA: 0xAC8FF0 Offset: 0xAC8FF0 VA: 0xAC8FF0 Slot: 14
 		protected override void OnDestoryScene()
 		{
-			UnityEngine.Debug.LogError("TODO OnDestoryScene");
+			ReleaseScene();
+			m_unitLiveLocalSaveData.HJMKBCFJOOH(false);
 		}
 
 		// RVA: 0xAC9038 Offset: 0xAC9038 VA: 0xAC9038 Slot: 15
 		protected override void OnDeleteCache()
 		{
-			UnityEngine.Debug.LogError("TODO OnDeleteCache");
+			ReleaseCache();
+			m_popupUnitDanceWarning.Release();
 		}
 
 		// RVA: 0xAC9070 Offset: 0xAC9070 VA: 0xAC9070 Slot: 30
@@ -212,10 +214,10 @@ namespace XeApp.Game.Menu
 		protected abstract void OnUpdate();
 
 		// // RVA: -1 Offset: -1 Slot: 48
-		// protected abstract void ReleaseScene();
+		protected abstract void ReleaseScene();
 
 		// // RVA: -1 Offset: -1 Slot: 49
-		// protected abstract void ReleaseCache();
+		protected abstract void ReleaseCache();
 
 		// // RVA: -1 Offset: -1 Slot: 50
 		// protected abstract void OnInputDisable();
@@ -230,7 +232,7 @@ namespace XeApp.Game.Menu
 		protected abstract void ApplyMusicInfo();
 
 		// // RVA: -1 Offset: -1 Slot: 54
-		// protected abstract void DelayedApplyMusicInfo();
+		protected abstract void DelayedApplyMusicInfo();
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F698C Offset: 0x6F698C VA: 0x6F698C
 		// // RVA: 0xAC83B4 Offset: 0xAC83B4 VA: 0xAC83B4
@@ -295,6 +297,22 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC95E8 Offset: 0xAC95E8 VA: 0xAC95E8 Slot: 58
 		protected virtual bool CurrentMusicDecisionCheck(bool isSimulation, Action cancelCallback, MKIKFJKPEHK viewBoostData, int selectIndex = 0)
 		{
+			/*if(viewBoostData == null)
+			{
+				if(selectMusicData.LHONOILACFL)
+				{
+					if(selectMusicData.MOJMEFIENDM < 1)
+					{
+						OpenWeekRecoveryWindow((int recovery) =>
+						{
+							//0xAD3920
+							UnityEngine.Debug.LogError("TODO OpenWeekRecoveryWindow");
+						}, cancelCallback);
+						return false;
+					}
+				}
+				CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI.DCLKMNGMIKC
+			}*/
 			UnityEngine.Debug.LogError("TODO CurrentMusicDecisionCheck");
 			OpenStaminaWindow(() => {
 				DecideCurrentMusic(isSimulation);

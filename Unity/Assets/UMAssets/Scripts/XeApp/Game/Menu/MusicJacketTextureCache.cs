@@ -1,4 +1,6 @@
 
+using System;
+
 namespace XeApp.Game.Menu
 {
 	public class MusicJacketTextureCache : IconTextureCache
@@ -18,10 +20,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x104B3E8 Offset: 0x104B3E8 VA: 0x104B3E8
-		// public void Load(int jacketId, Action<IiconTexture> callBack) { }
+		public void Load(int jacketId, Action<IiconTexture> callBack)
+		{
+			Load(MakeJacketTexturePath(jacketId), callBack);
+		}
 
 		// // RVA: 0x104B960 Offset: 0x104B960 VA: 0x104B960
-		// public static string MakeJacketTexturePath(int jacketId) { }
+		public static string MakeJacketTexturePath(int jacketId)
+		{
+			return string.Format("ct/mc/{0:D3}.xab", jacketId);
+		}
 
 		// // RVA: 0x104B418 Offset: 0x104B418 VA: 0x104B418
 		// public void LoadDetail(int jacketId, Action<IiconTexture> callBack) { }

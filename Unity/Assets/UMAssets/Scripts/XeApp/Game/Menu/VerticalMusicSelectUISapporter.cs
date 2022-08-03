@@ -5,6 +5,18 @@ namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectUISapporter : MonoBehaviour
 	{
+		public enum MusicInfoStyle
+		{
+			Music = 0,
+			SLlive = 1,
+			MiniGameEventEntrance = 2,
+			OtherEventEntrance = 3,
+			Lock = 4,
+			Unlockable = 5,
+			NoneFilter = 6,
+			None6Line = 7,
+		}
+
 		public bool isLine6Mode; // 0xC
 		public KGCNCBOKCBA.GNENJEHKMHD eventStatus; // 0x10
 		private Difficulty.Type m_difficulty; // 0x14
@@ -72,7 +84,34 @@ namespace XeApp.Game.Menu
 		// private bool IsEnableEvMission() { }
 
 		// // RVA: 0xADA950 Offset: 0xADA950 VA: 0xADA950
-		// public void SetMusicInfoStyle(VerticalMusicSelectUISapporter.MusicInfoStyle infostyle) { }
+		public void SetMusicInfoStyle(VerticalMusicSelectUISapporter.MusicInfoStyle infostyle)
+		{
+			m_difficultyButtonGroup.SetDifficultStyle(infostyle);
+			m_musicDetail.SetMusicInfoStyle(infostyle);
+			m_musicSelectList.SetMusicListStyle(infostyle, m_choiceMusicTab.isNormal);
+			switch(infostyle)
+			{
+				case MusicInfoStyle.Music:
+				case MusicInfoStyle.SLlive:
+					m_difficultyButtonGroup.SetDifficultyButton(m_difficulty);
+					m_playButton.SetButtonEnable(true);
+					return;
+				case MusicInfoStyle.MiniGameEventEntrance:
+				case MusicInfoStyle.OtherEventEntrance:
+				case MusicInfoStyle.Lock:
+				case MusicInfoStyle.Unlockable:
+					m_playButton.SetButtonEnable(true);
+					return;
+				case MusicInfoStyle.NoneFilter:
+				case MusicInfoStyle.None6Line:
+					break;
+				default:
+					return;
+			}
+			m_difficultyButtonGroup.SetDifficultyButton(m_difficulty);
+			m_playButton.SetButtonEnable(false);
+			m_simulationButton.SetButtonState(VerticalMusicSelctSimulationButton.ButtonState.Disable);
+		}
 
 		// // RVA: 0xAD9F9C Offset: 0xAD9F9C VA: 0xAD9F9C
 		private void RewardSetUp()
@@ -90,7 +129,27 @@ namespace XeApp.Game.Menu
 		// public void SetDifftatus(VerticalMusicDataList.MusicListData musicListData) { }
 
 		// // RVA: 0xAC2ADC Offset: 0xAC2ADC VA: 0xAC2ADC
-		// public void SetDiffity(Difficulty.Type diffity) { }
+		public void SetDiffity(Difficulty.Type diffity)
+		{
+			m_difficulty = diffity;
+			Difficulty.Type diff = 0;
+			if (!isLine6Mode)
+			{
+				m_difficultyButtonGroup.SetDifficultyButtonStyle(VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.NormalLine);
+				diff = m_difficulty;
+			}
+			else
+			{
+				m_difficultyButtonGroup.SetDifficultyButtonStyle(VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.Line6);
+				diff = m_difficulty;
+				if((int)diff < 2)
+				{
+					diff = Difficulty.Type.Hard;
+					m_difficulty = Difficulty.Type.Hard;
+				}
+			}
+			m_difficultyButtonGroup.SetDifficultyButton(diff);
+		}
 
 		// // RVA: 0xAC2B68 Offset: 0xAC2B68 VA: 0xAC2B68
 		// public void SetLineTypeToggle(bool is6Lane) { }
@@ -157,7 +216,10 @@ namespace XeApp.Game.Menu
 		// public void SetScoreRankingNum(int num) { }
 
 		// // RVA: 0xADBAA4 Offset: 0xADBAA4 VA: 0xADBAA4
-		// public void SetWeeklyEventCountEmptyEnable(bool isEnable) { }
+		public void SetWeeklyEventCountEmptyEnable(bool isEnable)
+		{
+			m_playButton.WeeklyRecoveryEnable(isEnable);
+		}
 
 		// // RVA: 0xADBAD8 Offset: 0xADBAD8 VA: 0xADBAD8
 		// public void SetEnergy(IBJAKJJICBC musicData) { }

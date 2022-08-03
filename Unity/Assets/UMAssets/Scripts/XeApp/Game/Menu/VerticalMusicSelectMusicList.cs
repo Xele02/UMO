@@ -4,6 +4,7 @@ using XeApp.Game.MusicSelect;
 using TMPro;
 using System.Collections.Generic;
 using System;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -45,7 +46,43 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBE1CB0 Offset: 0xBE1CB0 VA: 0xBE1CB0
-		// public void SetMusicListStyle(VerticalMusicSelectUISapporter.MusicInfoStyle style, bool isTabNormal) { }
+		public void SetMusicListStyle(VerticalMusicSelectUISapporter.MusicInfoStyle style, bool isTabNormal)
+		{
+			if(isTabNormal)
+			{
+				if(style == VerticalMusicSelectUISapporter.MusicInfoStyle.NoneFilter)
+				{
+					m_musicScroll.SetListEnable(false);
+					m_emptyTextObj.SetActive(true);
+					m_emptyText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_text_01");
+				}
+				else if(style != VerticalMusicSelectUISapporter.MusicInfoStyle.None6Line)
+				{
+					m_musicScroll.SetListEnable(true);
+					m_emptyTextObj.SetActive(false);
+				}
+				else
+				{
+					m_musicScroll.SetListEnable(false);
+					m_emptyTextObj.SetActive(true);
+					m_emptyText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_line6_text_01");
+				}
+			}
+			else
+			{
+				if(style != VerticalMusicSelectUISapporter.MusicInfoStyle.NoneFilter && style != VerticalMusicSelectUISapporter.MusicInfoStyle.None6Line)
+				{
+					m_musicScroll.SetListEnable(true);
+					m_emptyTextObj.SetActive(false);
+				}
+				else
+				{
+					m_musicScroll.SetListEnable(false);
+					m_emptyTextObj.SetActive(true);
+					m_emptyText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_text_02");
+				}
+			}
+		}
 
 		// // RVA: 0xBE1F30 Offset: 0xBE1F30 VA: 0xBE1F30
 		// public void SetScroll(int listNo) { }

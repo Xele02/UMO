@@ -52,7 +52,11 @@ public class MCGNOFMAPBJ
 	// public void ODDIHGPONFL(MCGNOFMAPBJ GPBJHKLFCEP) { }
 
 	// // RVA: 0x130CE44 Offset: 0x130CE44 VA: 0x130CE44 Slot: 4
-	// public virtual int DCLKMNGMIKC() { }
+	public virtual int DCLKMNGMIKC()
+	{
+		UnityEngine.Debug.LogError("TODO DCLKMNGMIKC");
+		return 0;
+	}
 
 	// // RVA: 0x130D008 Offset: 0x130D008 VA: 0x130D008 Slot: 5
 	// public virtual long MLLGPBGFLFI() { }

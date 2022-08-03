@@ -33,7 +33,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBDB940 Offset: 0xBDB940 VA: 0xBDB940
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			m_toggleButton.AddOnClickCallback(() =>
+			{
+				//0xBDBE38
+				return;
+			});
 		}
 
 		// // RVA: 0xBDBA80 Offset: 0xBDBA80 VA: 0xBDBA80
@@ -43,18 +47,47 @@ namespace XeApp.Game.Menu
 		// public void SetInputEnable(bool isEnable) { }
 
 		// // RVA: 0xBDBAE8 Offset: 0xBDBAE8 VA: 0xBDBAE8
-		// public void SetEnable(bool isEnable) { }
+		public void SetEnable(bool isEnable)
+		{
+			m_toggleButton.Disable = !isEnable;
+		}
 
 		// // RVA: 0xBDBB1C Offset: 0xBDBB1C VA: 0xBDBB1C
-		// public bool IsEnable() { }
+		public bool IsEnable()
+		{
+			return !m_toggleButton.Disable;
+		}
 
 		// // RVA: 0xBDBB4C Offset: 0xBDBB4C VA: 0xBDBB4C
-		// public void SetDifficultyIcon(MusicSelectConsts.DifficultIconType iconType) { }
+		public void SetDifficultyIcon(MusicSelectConsts.DifficultIconType iconType)
+		{
+			m_onDifficultIcon.sprite = m_difficultSprite.GetSpriteSet((int)iconType).on;
+			m_offDifficultIcon.sprite = m_difficultSprite.GetSpriteSet((int)iconType).off;
+		}
 
 		// // RVA: 0xBDBBE8 Offset: 0xBDBBE8 VA: 0xBDBBE8
-		// public void SetMusicLevel(string musicLevel) { }
+		public void SetMusicLevel(string musicLevel)
+		{
+			for(int i = 0; i < m_musicLevel.Length; i++)
+			{
+				m_musicLevel[i].text = musicLevel;
+			}
+		}
 
 		// // RVA: 0xBDBC80 Offset: 0xBDBC80 VA: 0xBDBC80
-		// public void SetDifficultyStatus(bool isNew, bool isClear, RhythmGameConsts.ResultComboType comboRank) { }
+		public void SetDifficultyStatus(bool isNew, bool isClear, RhythmGameConsts.ResultComboType comboRank)
+		{
+			m_clearObj.SetActive(false);
+			m_fullComboObj.SetActive(false);
+			m_perfectFullComboObj.SetActive(false);
+			if (!isClear)
+				return;
+			if (comboRank == RhythmGameConsts.ResultComboType.PerfectFullCombo)
+				m_perfectFullComboObj.SetActive(true);
+			else if (comboRank == RhythmGameConsts.ResultComboType.FullCombo)
+				m_fullComboObj.SetActive(true);
+			else
+				m_clearObj.SetActive(true);
+		}
 	}
 }

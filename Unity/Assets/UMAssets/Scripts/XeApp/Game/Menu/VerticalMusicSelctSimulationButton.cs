@@ -7,6 +7,14 @@ namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelctSimulationButton : MonoBehaviour
 	{
+		public enum ButtonState // TypeDefIndex: 13284
+		{
+			Open = 0,
+			Lock = 1,
+			Disable = 2,
+			Hidden = 3,
+		}
+
 		// [HeaderAttribute] // RVA: 0x6741E4 Offset: 0x6741E4 VA: 0x6741E4
 		[SerializeField]
 		private UGUIButton m_button; // 0xC
@@ -34,11 +42,28 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBDB154 Offset: 0xBDB154 VA: 0xBDB154
 		public void SetTicketNum(int num)
 		{
-			UnityEngine.Debug.LogError("TODO SetTicketNum");
+			m_tokenText.text = "" + num;
 		}
 
 		// // RVA: 0xBDB1A0 Offset: 0xBDB1A0 VA: 0xBDB1A0
-		// public void SetButtonState(VerticalMusicSelctSimulationButton.ButtonState state) { }
+		public void SetButtonState(VerticalMusicSelctSimulationButton.ButtonState state)
+		{
+			if(state == ButtonState.Disable)
+			{
+				m_button.Disable = true;
+				m_lockObj.SetActive(false);
+			}
+			else if(state == ButtonState.Lock)
+			{
+				m_button.Disable = false;
+				m_lockObj.SetActive(true);
+			}
+			else if(state == ButtonState.Open)
+			{
+				m_button.Disable = false;
+				m_lockObj.SetActive(false);
+			}
+		}
 
 		// // RVA: 0xBDB274 Offset: 0xBDB274 VA: 0xBDB274
 		// public void SetEnable(bool isEneble) { }

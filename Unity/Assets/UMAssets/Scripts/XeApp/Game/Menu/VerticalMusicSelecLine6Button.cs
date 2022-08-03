@@ -1,6 +1,7 @@
 using UnityEngine;
 using XeApp.Game.Common;
 using UnityEngine.UI;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -17,12 +18,18 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private Image m_6line; // 0x18
 
-		// public Action OnClickButtonListener { private get; set; } // 0x1C
+		public Action OnClickButtonListener { private get; set; } // 0x1C
 
 		// // RVA: 0xBDB6EC Offset: 0xBDB6EC VA: 0xBDB6EC
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			m_button.ClearOnClickCallback();
+			m_button.AddOnClickCallback(() =>
+			{
+				//0xBDB92C
+				if(OnClickButtonListener != null)
+					OnClickButtonListener();
+			});
 		}
 
 		// // RVA: 0xBDB7B4 Offset: 0xBDB7B4 VA: 0xBDB7B4
@@ -48,9 +55,5 @@ namespace XeApp.Game.Menu
 		{
 			return m_inOut.IsPlaying();
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F593C Offset: 0x6F593C VA: 0x6F593C
-		// // RVA: 0xBDB92C Offset: 0xBDB92C VA: 0xBDB92C
-		// private void <Awake>b__8_0() { }
 	}
 }

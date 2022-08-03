@@ -7,6 +7,17 @@ namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectPlayButton : MonoBehaviour
 	{
+		public enum PlayButtonType
+		{
+			PlayEn = 0,
+			Play = 1,
+			Event = 2,
+			Download = 3,
+			Release = 4,
+			Story = 5,
+			Num = 6,
+		}
+
 		// [HeaderAttribute] // RVA: 0x675590 Offset: 0x675590 VA: 0x675590
 		[SerializeField]
 		private UGUIButton m_playButton; // 0xC
@@ -53,7 +64,10 @@ namespace XeApp.Game.Menu
 		// public void SetEnergy(int energy) { }
 
 		// // RVA: 0xBE55D8 Offset: 0xBE55D8 VA: 0xBE55D8
-		// public void WeeklyRecoveryEnable(bool isEnable) { }
+		public void WeeklyRecoveryEnable(bool isEnable)
+		{
+			m_weeklyRecovery.SetActive(isEnable);
+		}
 
 		// // RVA: 0xBE560C Offset: 0xBE560C VA: 0xBE560C
 		public void Enter()
@@ -71,10 +85,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBE56CC Offset: 0xBE56CC VA: 0xBE56CC
-		// public void SetEnable(bool isEneble) { }
+		public void SetEnable(bool isEneble)
+		{
+			if(!isEneble)
+			{
+				m_inOut.ForceEnter(0, null);
+			}
+			gameObject.SetActive(isEneble);
+		}
 
 		// // RVA: 0xBE5740 Offset: 0xBE5740 VA: 0xBE5740
-		// public void SetButtonEnable(bool isEnable) { }
+		public void SetButtonEnable(bool isEnable)
+		{
+			m_playButton.Disable = !isEnable;
+		}
 
 		// // RVA: 0xBE5774 Offset: 0xBE5774 VA: 0xBE5774
 		// public void SetInputEnable(bool isEnable) { }

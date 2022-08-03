@@ -13,10 +13,10 @@ namespace XeApp.Game.MusicSelect
 				public IBJAKJJICBC viewMusic; // 0x0
 				// public List<MusicRewardStat> rewardStat; // 0x4
 				// public long aprilFoolEndTime; // 0x8
-				// public bool isOpen; // 0x10
+				public bool isOpen; // 0x10
 				// public bool isNew; // 0x11
-				// public bool isUnlockable; // 0x12
-				// public bool isSimulation; // 0x13
+				public bool isUnlockable; // 0x12
+				public bool isSimulation; // 0x13
 				public bool isHighLevel; // 0x14
 				// public MusicSelectConsts.MusicTimeType timeType; // 0x18
 				// public MusicSelectConsts.MusicType musicType; // 0x1C
@@ -33,10 +33,10 @@ namespace XeApp.Game.MusicSelect
 			public IBJAKJJICBC ViewMusic { get; } = new IBJAKJJICBC(); // 0x8
 			//	public List<MusicRewardStat> RewardStat { get; } 0xCA3E58
 			//	public long AprilFoolEndTime { get; } // 0x10
-			//	public bool IsOpen { get; } = false; // 0x18
-			//	public bool IsUnlockable { get; } = false; // 0x19
+			public bool IsOpen { get; } = false; // 0x18
+			public bool IsUnlockable { get; } = false; // 0x19
 			//	public bool IsNew { get; } = false; //0x1A
-			//	public bool IsSimulation { get; } = false; // 0x1B
+			public bool IsSimulation { get; } = false; // 0x1B
 			public bool IsHighLevel { get; } = false; // 0x1C
 			//	public string EventPeriod { get; } // 0x20
 			//	public string MusicTimeStr { get; } // 0x24
@@ -55,6 +55,9 @@ namespace XeApp.Game.MusicSelect
 				MusicName = initParam.musicName;
 				ViewMusic = initParam.viewMusic;
 				IsHighLevel = initParam.isHighLevel;
+				IsSimulation = initParam.isSimulation;
+				IsOpen = initParam.isOpen;
+				IsUnlockable = initParam.isUnlockable;
 			}
 		}
 

@@ -66,7 +66,18 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xC9F8B0 Offset: 0xC9F8B0 VA: 0xC9F8B0
-		//public void SetListEnable(bool isEnable) { }
+		public void SetListEnable(bool isEnable)
+		{
+			for(int i = 0; i < _overScrollItem.Length; i++)
+			{
+				_overScrollItem[i].gameObject.SetActive(isEnable);
+			}
+			for (int i = 0; i < _underScrollItem.Length; i++)
+			{
+				_underScrollItem[i].gameObject.SetActive(isEnable);
+			}
+			_centerItem.gameObject.SetActive(isEnable);
+		}
 
 		//// RVA: 0xC9FA20 Offset: 0xC9FA20 VA: 0xC9FA20
 		public void UpdateListPosition(bool isForce = false)

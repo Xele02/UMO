@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JEPBIIJDGEF
+public class JEPBIIJDGEF { }
+public class JEPBIIJDGEF_EventInfo
 {
 	private delegate IKDICBBFBMI IKAFJHHHJDN();
 
 	public List<IKDICBBFBMI> MPEOOINCGEN = new List<IKDICBBFBMI>(); // 0x8
-	private static JEPBIIJDGEF.IKAFJHHHJDN[] OGCFJIIBLEO = new IKAFJHHHJDN[45] {
+	private static JEPBIIJDGEF_EventInfo.IKAFJHHHJDN[] OGCFJIIBLEO = new IKAFJHHHJDN[45] {
 														() => { return new HAEDCCLHEMN("event_battle_a"); /*0x1C3F1E0*/},
 														() => { return new HAEDCCLHEMN("event_battle_b"); /*0x1C3F260*/ },
 														() => { return new HAEDCCLHEMN("event_battle_c"); /*0x1C3F2E0*/ },
@@ -54,7 +55,7 @@ public class JEPBIIJDGEF
 														() => { return new MANPIONIGNO("event_godiva_c"); /*0x1C407E0*/ },
 													} ; // 0x4
 
-	public static JEPBIIJDGEF HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF JEPBIIJDGEF OKPMHKNCNAL
+	public static JEPBIIJDGEF_EventInfo HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF JEPBIIJDGEF OKPMHKNCNAL
 
 	// // RVA: 0x1C3957C Offset: 0x1C3957C VA: 0x1C3957C
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)

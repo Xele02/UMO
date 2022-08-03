@@ -300,7 +300,26 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x143842C Offset: 0x143842C VA: 0x143842C
 		public void SetMenu()
 		{
-			UnityEngine.Debug.LogWarning("TODO BgBehaviour SetMenu");
+			m_tileImage.enabled = true;
+			ChangeTilingType(TilingType.Mark, false);
+			m_transLationTween.IsPause = false;
+			m_decrationInstance[0].SetActive(true);
+			m_decrationInstance[0].transform.localPosition = m_decorationPosition[1];
+			m_decrationInstance[0].transform.localScale = m_decorationScale[1];
+			m_decrationInstance[1].SetActive(true);
+			m_decrationInstance[0].transform.localPosition = m_decorationPosition[2];
+			m_decrationInstance[0].transform.localScale = m_decorationScale[2];
+			for(int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(true);
+			}
+			for(int i = 0; i < m_colorChangeImages.Count; i++)
+			{
+				m_colorChangeImages[i].material = m_decorationMaterials[0];
+			}
+			m_bgImage.texture = m_texture;
+			m_bgImage.uvRect = WhiteTextureUv;
+			HideOverlay();
 		}
 
 		// // RVA: 0x1438B40 Offset: 0x1438B40 VA: 0x1438B40

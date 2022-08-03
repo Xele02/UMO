@@ -18,8 +18,8 @@ namespace XeApp.Game.Menu
 		// private StringBuilder m_invalidDigitSb = new StringBuilder(); // 0x28
 		private string m_eventRemainTimeFormat; // 0x2C
 		private string m_eventRemainCountFormat; // 0x30
-		// private int m_coverId; // 0x34
-		// private bool m_isEventCover; // 0x38
+		private int m_coverId; // 0x34
+		private bool m_isEventCover; // 0x38
 		[SerializeField]
 		// [HeaderAttribute] // RVA: 0x674A84 Offset: 0x674A84 VA: 0x674A84
 		private RawImage m_imageJacket; // 0x3C
@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
 		public Action OnJacketButtonClickListener { private get; set; } // 0xEC
 		public Action OnEventDetailClickListener { private get; set; } // 0xF0
 		public Action OnEventRewardClickListener { private get; set; } // 0xF4
-		// private MusicJacketTextureCache jacketTexCache { get; } 0xBDE614
+		private MusicJacketTextureCache jacketTexCache { get { return GameManager.Instance.MusicJacketTextureCache; } } //0xBDE614
 
 		// // RVA: 0xBDE6B0 Offset: 0xBDE6B0 VA: 0xBDE6B0
 		private void Awake()
@@ -183,16 +183,76 @@ namespace XeApp.Game.Menu
 		// public void SetEventInfo(bool isVisible, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainTimeType, bool showRemainTime) { }
 
 		// // RVA: 0xBDF004 Offset: 0xBDF004 VA: 0xBDF004
-		// public void SetMusicInfoStyle(VerticalMusicSelectUISapporter.MusicInfoStyle style) { }
+		public void SetMusicInfoStyle(VerticalMusicSelectUISapporter.MusicInfoStyle style)
+		{
+			m_jacketSelectButton.enabled = false;
+			m_bookMarkObj.alpha = 0.0f;
+			m_bookMarkObj.blocksRaycasts = false;
+			m_lockObj.alpha = 0.0f;
+			m_lockIcon.enabled = false;
+			m_musicTimeObj.SetActive(false);
+			m_scoreObj.SetActive(false);
+			m_musicUtaRateObj.SetActive(false);
+			switch(style)
+			{
+				case VerticalMusicSelectUISapporter.MusicInfoStyle.Music:
+					m_bookMarkObj.alpha = 1.0f;
+					m_bookMarkObj.blocksRaycasts = true;
+					m_scoreObj.SetActive(true);
+					m_musicTimeObj.SetActive(true);
+					m_musicUtaRateObj.SetActive(true);
+					break;
+				case VerticalMusicSelectUISapporter.MusicInfoStyle.SLlive:
+					break;
+				case VerticalMusicSelectUISapporter.MusicInfoStyle.MiniGameEventEntrance:
+				case VerticalMusicSelectUISapporter.MusicInfoStyle.OtherEventEntrance:
+					m_unitToggleButtonGroupObj.alpha = 0.0f;
+					m_unitToggleButtonGroupObj.blocksRaycasts = false;
+					SetImageJacket(3);
+					return;
+				case VerticalMusicSelectUISapporter.MusicInfoStyle.Lock:
+				case VerticalMusicSelectUISapporter.MusicInfoStyle.Unlockable:
+					m_lockObj.alpha = 1.0f;
+					m_lockIcon.enabled = true;
+					break;
+				case VerticalMusicSelectUISapporter.MusicInfoStyle.NoneFilter:
+				case VerticalMusicSelectUISapporter.MusicInfoStyle.None6Line:
+					SetImageJacket(0);
+					m_unitToggleButtonGroupObj.alpha = 0.0f;
+					m_unitToggleButtonGroupObj.blocksRaycasts = false;
+					return;
+				default:
+					return;
+			}
+			m_jacketSelectButton.enabled = true;
+		}
 
 		// // RVA: 0xBDF348 Offset: 0xBDF348 VA: 0xBDF348
-		// public void SetImageJacket(int jacketId) { }
+		public void SetImageJacket(int jacketId)
+		{
+			m_imageJacket.enabled = false;
+			m_isEventCover = false;
+			m_coverId = jacketId;
+			jacketTexCache.Load(jacketId, (IiconTexture image) =>
+			{
+				//0xBE0B88
+				if (m_coverId != jacketId)
+					return;
+				if (m_isEventCover)
+					return;
+				m_imageJacket.enabled = true;
+				image.Set(m_imageJacket);
+			});
+		}
 
 		// // RVA: 0xBDF494 Offset: 0xBDF494 VA: 0xBDF494
 		// public void SetImageJacketIsEvent(int jacketId) { }
 
 		// // RVA: 0xBDF5E0 Offset: 0xBDF5E0 VA: 0xBDF5E0
-		// public void EventCountingEnable(bool isEnabel) { }
+		public void EventCountingEnable(bool isEnabel)
+		{
+			m_eventCountingObj.alpha = isEnabel ? 1.0f : 0.0f;
+		}
 
 		// // RVA: 0xBDF62C Offset: 0xBDF62C VA: 0xBDF62C
 		// public void SetHighScore(int highScore, bool isVisible) { }

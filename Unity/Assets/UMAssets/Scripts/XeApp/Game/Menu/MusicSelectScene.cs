@@ -221,7 +221,7 @@ namespace XeApp.Game.Menu
 			while(!m_isEndRaidLobbyRequest)
 				yield return null;
 			m_isEndMyRankRequest = false;
-			JEPBIIJDGEF.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP.KEILBOLBDHN/*4*/, 0, () => {
+			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP.KEILBOLBDHN/*4*/, 0, () => {
 				//0x1685C50
 				m_isEndMyRankRequest = true;
 			}, () => {
@@ -356,7 +356,7 @@ namespace XeApp.Game.Menu
 			m_eventId = 0;
 			m_eventIndex = 0;
 			m_eventTicketId = 0;
-			NKOBMDPHNGP d = JEPBIIJDGEF.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP.MCGPGMGEPHG/*13*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP;
+			NKOBMDPHNGP d = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP.MCGPGMGEPHG/*13*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP;
 			bool b = false;
 			if(d == null)
 			{
@@ -369,7 +369,7 @@ namespace XeApp.Game.Menu
 					m_eventTicketId = NKOBMDPHNGP.ADPMLOEOAFD();
 				}
 			}
-			m_eventCtrl = JEPBIIJDGEF.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/, false);
+			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/, false);
 			if(m_eventCtrl == null)
 			{
 				if(m_eventBanner != null)
@@ -385,7 +385,7 @@ namespace XeApp.Game.Menu
 			{
 				m_feverLimit.SetOnOff(false);
 			}
-			m_scoreEventCtrl = JEPBIIJDGEF.HHCJCDFCLOB.AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/);
+			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/);
 			if(m_scoreEventCtrl != null)
 			{
 				UnityEngine.Debug.LogError("TODO init score event music");
