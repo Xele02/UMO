@@ -164,10 +164,7 @@ class DataExporter
 	{
 		string txt = "";
 		int songId = Database.Instance.gameSetup.musicInfo.prismMusicId;
-		var music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics.Find((EONOEHOKBEB_Music data) =>
-		{
-			return data.KKPAHLMJKIH_WavId == songId;
-		});
+		var music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(songId);
 		string Title = music != null ? Database.Instance.musicText.Get(music.KNMGEEFGDNI_Nam).musicName : "";
 		txt += "Song : "+songId+" "+Title+"\n";
 		txt += "Num diva : "+Database.Instance.gameSetup.musicInfo.onStageDivaNum+"\n";
