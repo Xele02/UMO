@@ -48,7 +48,7 @@ namespace XeApp.Game.Menu
 			GameSetupData.MusicInfo musicInfo = Database.Instance.gameSetup.musicInfo;
 			m_prismUnitInfo.OnClickItem = this.OnClickPrismIetms;
 			m_playButtons.OnClickPlayButton = this.OnClickPlayButton;
-			UpdatePrismData(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH, musicInfo);
+			UpdatePrismData(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId, musicInfo);
 			m_prismUnitInfo.UpdateContent(m_prismData, musicInfo);
 			m_musicInfo.Set(Database.Instance.selectedMusic.GetSelectedMusicData(), musicInfo, true, SetDeckMusicInfo.BottomType.Description);
 			base.OnPreSetCanvas();
@@ -251,7 +251,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CF9A8 Offset: 0x12CF9A8 VA: 0x12CF9A8
 		private void OnClickPrismIetms(PopupMvModeSelectListContent.SelectTarget target, int divaSlotNumber)
 		{
-			ShowPrismSelectPopup(target, divaSlotNumber, Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH, Database.Instance.gameSetup.musicInfo, false, () =>
+			ShowPrismSelectPopup(target, divaSlotNumber, Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo, false, () =>
 			{
 				//0x12CFE94
 				m_prismUnitInfo.UpdateContent(m_prismData, Database.Instance.gameSetup.musicInfo);

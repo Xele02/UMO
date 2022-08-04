@@ -152,7 +152,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDCD20 Offset: 0xBDCD20 VA: 0xBDCD20
-		// public void SetMusicLevel(int index, int musicLevel, VerticalMusicSelectDifficultyButtonGroup.ButtonStyle style) { }
+		public void SetMusicLevel(int index, int musicLevel, VerticalMusicSelectDifficultyButtonGroup.ButtonStyle style)
+		{
+			string str = "" + musicLevel;
+			if(style == ButtonStyle.Line6)
+			{
+				str += "+";
+			}
+			m_diffityButton[index].SetMusicLevel(str);
+		}
 
 		// // RVA: 0xBDCE0C Offset: 0xBDCE0C VA: 0xBDCE0C
 		public void Enter()

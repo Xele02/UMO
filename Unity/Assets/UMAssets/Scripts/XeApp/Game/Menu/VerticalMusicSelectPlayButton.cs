@@ -61,7 +61,10 @@ namespace XeApp.Game.Menu
 		// public void SetPlayButtonType(VerticalMusicSelectPlayButton.PlayButtonType type) { }
 
 		// // RVA: 0xBE558C Offset: 0xBE558C VA: 0xBE558C
-		// public void SetEnergy(int energy) { }
+		public void SetEnergy(int energy)
+		{
+			m_enagyNumText.text = "" + energy;
+		}
 
 		// // RVA: 0xBE55D8 Offset: 0xBE55D8 VA: 0xBE55D8
 		public void WeeklyRecoveryEnable(bool isEnable)

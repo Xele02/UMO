@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using XeApp.Game.Common;
 
@@ -24,16 +25,29 @@ namespace XeApp.Game.Menu
 		// [HeaderAttribute] // RVA: 0x675B48 Offset: 0x675B48 VA: 0x675B48
 		private GameObject m_bigOrder; // 0x18
 		
-		// public Action OnClickButtonListener { private get; set; } // 0x1C
+		public Action OnClickButtonListener { private get; set; } // 0x1C
 
 		// // RVA: 0xAD9D78 Offset: 0xAD9D78 VA: 0xAD9D78
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			m_button.AddOnClickCallback(() =>
+			{
+				//0xAD9F70
+				if (OnClickButtonListener != null)
+					OnClickButtonListener();
+			});
 		}
 
 		// // RVA: 0xAD9E20 Offset: 0xAD9E20 VA: 0xAD9E20
-		// public void SetOrder(VerticalMusicSelectSortOrder.SortOrder sortOrder) { }
+		public void SetOrder(VerticalMusicSelectSortOrder.SortOrder sortOrder)
+		{
+			m_smallOrder.SetActive(false);
+			m_bigOrder.SetActive(false);
+			if(sortOrder == SortOrder.Small)
+				m_smallOrder.SetActive(true);
+			else
+				m_bigOrder.SetActive(true);
+		}
 
 		// // RVA: 0xAD9EA8 Offset: 0xAD9EA8 VA: 0xAD9EA8
 		// public void SetButtonEnable(bool isEnable) { }
@@ -52,9 +66,5 @@ namespace XeApp.Game.Menu
 		{
 			return m_inOut.IsPlaying();
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F72D4 Offset: 0x6F72D4 VA: 0x6F72D4
-		// // RVA: 0xAD9F70 Offset: 0xAD9F70 VA: 0xAD9F70
-		// private void <Awake>b__9_0() { }
 	}
 }

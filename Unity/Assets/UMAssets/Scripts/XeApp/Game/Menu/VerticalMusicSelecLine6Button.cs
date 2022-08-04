@@ -36,10 +36,18 @@ namespace XeApp.Game.Menu
 		// public void SetButtonEnable(bool isEnable) { }
 
 		// // RVA: 0xBDB7E8 Offset: 0xBDB7E8 VA: 0xBDB7E8
-		// public void Set4Line() { }
+		public void Set4Line()
+		{
+			m_4line.enabled = true;
+			m_6line.enabled = false;
+		}
 
 		// // RVA: 0xBDB840 Offset: 0xBDB840 VA: 0xBDB840
-		// public void Set6Line() { }
+		public void Set6Line()
+		{
+			m_6line.enabled = true;
+			m_4line.enabled = false;
+		}
 
 		// // RVA: 0xBDB898 Offset: 0xBDB898 VA: 0xBDB898
 		public void Enter()

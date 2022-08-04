@@ -5,17 +5,29 @@ using TMPro;
 using XeSys.Gfx;
 using XeSys;
 using System;
+using XeApp.Game.Common.uGUI;
+using System.Text;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectMusicDetail : MonoBehaviour
 	{
+		public enum MusicRemainTimeType
+		{
+			Weekly = 0,
+			HighLevel = 1,
+			ScoreRanking = 2,
+			Other = 3,
+		}
+
 		[SerializeField]
 		private Color m_invalidDigitColor = Color.gray; // 0xC
 		private string m_invalidDigitColorHtml; // 0x1C
-		// private int m_validScoreDigit = 8; // 0x20
-		// private int m_validUtaRateDigit = 4; // 0x24
-		// private StringBuilder m_invalidDigitSb = new StringBuilder(); // 0x28
+		private int m_validScoreDigit = 8; // 0x20
+		private int m_validUtaRateDigit = 4; // 0x24
+		private StringBuilder m_invalidDigitSb = new StringBuilder(); // 0x28
 		private string m_eventRemainTimeFormat; // 0x2C
 		private string m_eventRemainCountFormat; // 0x30
 		private int m_coverId; // 0x34
@@ -115,7 +127,7 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private TextMeshProUGUI m_eventRemainTime; // 0xD8
 		private int m_isOnUnitIndex; // 0xDC
-		// private List<int> m_itemIdList = new List<int>(3); // 0xE0
+		private List<int> m_itemIdList = new List<int>(3); // 0xE0
 
 		public Action OnMusicBookMarkButtonClickListener { private get; set; } // 0xE4
 		public Action<int> OnUnitButtonClickListener { private get; set; } // 0xE8
@@ -177,10 +189,65 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDEB04 Offset: 0xBDEB04 VA: 0xBDEB04
-		// public void SetHighLevelClearStatus(bool isClear, RhythmGameConsts.ResultComboType comboRank) { }
+		public void SetHighLevelClearStatus(bool isClear, RhythmGameConsts.ResultComboType comboRank)
+		{
+			m_highLevelClearStateObj.alpha = 0.0f;
+			if (!isClear)
+				return;
+			m_highLevelClearStateObj.alpha = 1.0f;
+			if(comboRank == RhythmGameConsts.ResultComboType.FullCombo)
+			{
+				m_highLevelClearStateImage.sprite = m_highLevelClearStateSprites[1];
+			}
+			else if(comboRank == RhythmGameConsts.ResultComboType.PerfectFullCombo)
+			{
+				m_highLevelClearStateImage.sprite = m_highLevelClearStateSprites[2];
+			}
+			else
+			{
+				m_highLevelClearStateImage.sprite = m_highLevelClearStateSprites[0];
+			}
+		}
 
 		// // RVA: 0xBDEC30 Offset: 0xBDEC30 VA: 0xBDEC30
-		// public void SetEventInfo(bool isVisible, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainTimeType, bool showRemainTime) { }
+		public void SetEventInfo(bool isVisible, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainTimeType, bool showRemainTime)
+		{
+			m_weeklyObj.alpha = 0.0f;
+			m_weeklyObj.blocksRaycasts = false;
+			m_eventObj.alpha = 0.0f;
+			m_eventObj.blocksRaycasts = false;
+			m_highLevelFrmObj.alpha = 0.0f;
+			m_highLevelFrmObj.blocksRaycasts = false;
+			m_highLevelRemainTimeObj.alpha = 0.0f;
+			m_highLevelRemainTimeObj.blocksRaycasts = false;
+			m_ScoreRankingDescButton.gameObject.SetActive(false);
+			m_ScoreRankingEventRewardButton.gameObject.SetActive(false);
+			m_ScoreRankingObj.SetActive(false);
+			m_eventRemainTime.enabled = showRemainTime;
+			if (!isVisible)
+				return;
+			switch(remainTimeType)
+			{
+				case MusicRemainTimeType.Weekly:
+					m_weeklyObj.alpha = 1.0f;
+					m_weeklyObj.blocksRaycasts = true;
+					return;
+				case MusicRemainTimeType.HighLevel:
+					m_highLevelFrmObj.alpha = 1.0f;
+					m_highLevelRemainTimeObj.alpha = 1.0f;
+					return;
+				case MusicRemainTimeType.ScoreRanking:
+					m_eventObj.alpha = 1.0f;
+					m_eventObj.blocksRaycasts = true;
+					m_ScoreRankingDescButton.gameObject.SetActive(true);
+					m_ScoreRankingEventRewardButton.gameObject.SetActive(true);
+					m_ScoreRankingObj.SetActive(true);
+					return;
+				case MusicRemainTimeType.Other:
+					m_eventObj.alpha = 1.0f;
+					return;
+			}
+		}
 
 		// // RVA: 0xBDF004 Offset: 0xBDF004 VA: 0xBDF004
 		public void SetMusicInfoStyle(VerticalMusicSelectUISapporter.MusicInfoStyle style)
@@ -255,44 +322,182 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDF62C Offset: 0xBDF62C VA: 0xBDF62C
-		// public void SetHighScore(int highScore, bool isVisible) { }
+		public void SetHighScore(int highScore, bool isVisible)
+		{
+			m_highScore.text = AppendInvalidDigitString(highScore, m_validScoreDigit, !isVisible);
+		}
 
 		// // RVA: 0xBDF834 Offset: 0xBDF834 VA: 0xBDF834
-		// public void SetScoreRank(ResultScoreRank.Type scoreRank) { }
+		public void SetScoreRank(ResultScoreRank.Type scoreRank)
+		{
+			if(scoreRank == ResultScoreRank.Type.Illegal)
+			{
+				m_scoreRnak.enabled = false;
+				return;
+			}
+			m_scoreRnak.enabled = true;
+			m_scoreRnak.sprite = m_changeScoreRank[(int)scoreRank];
+		}
 
 		// // RVA: 0xBDF8E0 Offset: 0xBDF8E0 VA: 0xBDF8E0
-		// public void SetAttr(int attr, bool isVisible) { }
+		public void SetAttr(int attr, bool isVisible)
+		{
+			m_backImage.enabled = isVisible;
+			if (!isVisible)
+				return;
+			if(attr == 0)
+			{
+				if (m_changeBackImage.Length < 5)
+					return;
+				m_backImage.sprite = m_changeBackImage[4];
+			}
+			else
+			{
+				if (m_changeBackImage.Length < attr - 1)
+					return;
+				m_backImage.sprite = m_changeBackImage[attr - 1];
+			}
+		}
 
 		// // RVA: 0xBDF9F8 Offset: 0xBDF9F8 VA: 0xBDF9F8
-		// public void SetMusicUtaRate(int utaRate, bool isVisible) { }
+		public void SetMusicUtaRate(int utaRate, bool isVisible)
+		{
+			if(!isVisible)
+			{
+				m_musicUtaRateObj.SetActive(false);
+			}
+			else
+			{
+				m_musicUtaRateObj.SetActive(true);
+				m_musicUtaRate.text = AppendInvalidDigitString(utaRate, m_validUtaRateDigit, utaRate == 0);
+			}
+		}
 
 		// // RVA: 0xBDFAA4 Offset: 0xBDFAA4 VA: 0xBDFAA4
-		// public void SetMusicTime(string time, bool isVisible) { }
+		public void SetMusicTime(string time, bool isVisible)
+		{
+			if (!isVisible)
+			{
+				m_musicTimeObj.SetActive(false);
+			}
+			else
+			{
+				m_musicUtaRateObj.SetActive(true);
+				m_musicTime.text = time;
+			}
+		}
 
 		// // RVA: 0xBDFB30 Offset: 0xBDFB30 VA: 0xBDFB30
-		// public void SetSaveBookMark(bool isEnable, bool isBookMark) { }
+		public void SetSaveBookMark(bool isEnable, bool isBookMark)
+		{
+			m_bookMarkSaveObj.SetActive(false);
+			m_bookMarkNotSaveObj.SetActive(false);
+			m_bookMarakButton.Hidden = !isEnable;
+			if(isBookMark)
+			{
+				m_bookMarkSaveObj.SetActive(true);
+			}
+			else
+			{
+				m_bookMarkNotSaveObj.SetActive(true);
+			}
+		}
 
 		// // RVA: 0xBDFBE8 Offset: 0xBDFBE8 VA: 0xBDFBE8
-		// private int GetDigit(int num) { }
+		private int GetDigit(int num)
+		{
+			if(num != 0)
+			{
+				return Mathf.RoundToInt(Mathf.Log10(num)) + 1;
+			}
+			return 1;
+		}
 
 		// // RVA: 0xBDF678 Offset: 0xBDF678 VA: 0xBDF678
-		// private string AppendInvalidDigitString(int num, int validDigit, bool isAllInvalid) { }
+		private string AppendInvalidDigitString(int num, int validDigit, bool isAllInvalid)
+		{
+			if(!isAllInvalid)
+			{
+				validDigit = validDigit - GetDigit(num);
+			}
+			m_invalidDigitSb.Clear();
+			if(validDigit > 0)
+			{
+				do
+				{
+					m_invalidDigitSb.Append("0");
+					validDigit--;
+				} while (validDigit != 0);
+			}
+			m_invalidDigitSb.Set(RichTextUtility.MakeColorTagString(m_invalidDigitSb.ToString(), m_invalidDigitColorHtml));
+			if(!isAllInvalid)
+			{
+				m_invalidDigitSb.Append(num);
+			}
+			return m_invalidDigitSb.ToString();
+		}
 
 		// // RVA: 0xBDFC90 Offset: 0xBDFC90 VA: 0xBDFC90
 		// public void SetEventTime(string time, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainTimeType) { }
 
 		// // RVA: 0xBDFD40 Offset: 0xBDFD40 VA: 0xBDFD40
-		// public void SetWeeklyEventCount(int count) { }
+		public void SetWeeklyEventCount(int count)
+		{
+			m_weeklyRemainCount.text = string.Format(m_eventRemainCountFormat, count);
+		}
 
 		// // RVA: 0xBDFDF0 Offset: 0xBDFDF0 VA: 0xBDFDF0
-		// public void SetWeeklyItem(IBJAKJJICBC musicData) { }
+		public void SetWeeklyItem(IBJAKJJICBC musicData)
+		{
+			List<int> list = new List<int>(3);
+			for (int i = 0; i < 3; i++)
+			{
+				int val = musicData.ICHJBDPJNMA(musicData.IHKFMJDOBAH, i);
+				if(val > 0)
+					list.Add(val);
+			}
+			if(gameObject.activeInHierarchy)
+			{
+				StartCoroutine(Co_LoadItemImages(list));
+			}
+		}
 
 		// // RVA: 0xBDFFFC Offset: 0xBDFFFC VA: 0xBDFFFC
-		// public void SetScoreRankingNum(int num) { }
+		public void SetScoreRankingNum(int num)
+		{
+			if(num != 0)
+			{
+				m_ScoreRankingNum.text = "" + num;
+			}
+			else
+			{
+				m_ScoreRankingNum.text = "---";
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5AFC Offset: 0x6F5AFC VA: 0x6F5AFC
 		// // RVA: 0xBDFF54 Offset: 0xBDFF54 VA: 0xBDFF54
-		// private IEnumerator Co_LoadItemImages(List<int> itemIdList) { }
+		private IEnumerator Co_LoadItemImages(List<int> itemIdList)
+		{
+			//0xBE10D8
+			m_itemIdList.Clear();
+			m_itemIdList.AddRange(itemIdList);
+			for(int i = 0; i < itemIdList.Count; i++)
+			{
+				int idx = i;
+				GameManager.Instance.ItemTextureCache.Load(itemIdList[i], (IiconTexture image) =>
+				{
+					//0xBE0E80
+					if (m_itemIdList.Count <= idx)
+						return;
+					if (m_itemIdList[idx] != itemIdList[idx])
+						return;
+					image.Set(m_weeklyItemImage[idx]);
+				});
+				while (GameManager.Instance.ItemTextureCache.IsLoading())
+					yield return null;
+			}
+		}
 
 		// // RVA: 0xBE00E8 Offset: 0xBE00E8 VA: 0xBE00E8
 		public void SetUnitButton(int index)
@@ -329,7 +534,7 @@ namespace XeApp.Game.Menu
 			{
 				UnityEngine.Debug.LogError("TODO ShowUnitDanceButton for other lock check");
 			}
-			SetUnitButton(saveUnitData.NMBAHHJLGPP_IsMultiDiva(musicData.GHBPLHBNMBK) ? multiId : soloId); // tmp
+			SetUnitButton(saveUnitData.NMBAHHJLGPP_IsMultiDiva(musicData.GHBPLHBNMBK_FreeMusicId) ? multiId : soloId); // tmp
 		}
 
 		// // RVA: 0xBE0680 Offset: 0xBE0680 VA: 0xBE0680

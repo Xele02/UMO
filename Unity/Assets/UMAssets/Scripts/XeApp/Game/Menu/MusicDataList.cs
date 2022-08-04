@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		{
 			return FindIndex((IBJAKJJICBC _) => {
 				//0x104A274
-				return freeMusicId == _.GHBPLHBNMBK;
+				return freeMusicId == _.GHBPLHBNMBK_FreeMusicId;
 			}, line6Mode, simulation);
 		}
 

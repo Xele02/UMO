@@ -12,7 +12,7 @@ namespace XeApp.Game.MusicSelect
 			{
 				public IBJAKJJICBC viewMusic; // 0x0
 				// public List<MusicRewardStat> rewardStat; // 0x4
-				// public long aprilFoolEndTime; // 0x8
+				public long aprilFoolEndTime; // 0x8
 				public bool isOpen; // 0x10
 				// public bool isNew; // 0x11
 				public bool isUnlockable; // 0x12
@@ -23,7 +23,7 @@ namespace XeApp.Game.MusicSelect
 				// public MusicSelectConsts.EventType eventType; // 0x20
 				// public MusicSelectConsts.PlayBoostType boostType; // 0x24
 				// public string eventPeriod; // 0x28
-				// public string musicTimeStr; // 0x2C
+				public string musicTimeStr; // 0x2C
 				public string musicName; // 0x30
 				// public string vocalName; // 0x34
 				// public int musicTime; // 0x38
@@ -32,15 +32,15 @@ namespace XeApp.Game.MusicSelect
 
 			public IBJAKJJICBC ViewMusic { get; } = new IBJAKJJICBC(); // 0x8
 			//	public List<MusicRewardStat> RewardStat { get; } 0xCA3E58
-			//	public long AprilFoolEndTime { get; } // 0x10
+			public long AprilFoolEndTime { get; } // 0x10
 			public bool IsOpen { get; } = false; // 0x18
 			public bool IsUnlockable { get; } = false; // 0x19
 			//	public bool IsNew { get; } = false; //0x1A
 			public bool IsSimulation { get; } = false; // 0x1B
 			public bool IsHighLevel { get; } = false; // 0x1C
 			//	public string EventPeriod { get; } // 0x20
-			//	public string MusicTimeStr { get; } // 0x24
-				public string MusicName { get; } // 0x28
+			public string MusicTimeStr { get; } // 0x24
+			public string MusicName { get; } // 0x28
 			//	public string VocalName { get; } // 0x2C
 			//	public int MusicTime { get; } // 0x30
 			//	public MusicSelectConsts.MusicTimeType TimeType { get; } = 2; // 0x34
@@ -58,6 +58,8 @@ namespace XeApp.Game.MusicSelect
 				IsSimulation = initParam.isSimulation;
 				IsOpen = initParam.isOpen;
 				IsUnlockable = initParam.isUnlockable;
+				MusicTimeStr = initParam.musicTimeStr;
+				AprilFoolEndTime = initParam.aprilFoolEndTime;
 			}
 		}
 
@@ -75,14 +77,18 @@ namespace XeApp.Game.MusicSelect
 			for(int i = 0; i < viewMusicDataList.Count; i++)
 			{
 				MusicListData.InitParam initparam;
-				int id = viewMusicDataList[i].GHBPLHBNMBK;
+				int id = viewMusicDataList[i].GHBPLHBNMBK_FreeMusicId;
 				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[id - 1];
 				EONOEHOKBEB_Music a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(id, musicInfo.DLAEJOBELBH_Id);
 				initparam.musicName = Database.Instance.musicText.Get(a.KNMGEEFGDNI_Nam).musicName;
 				initparam.viewMusic = viewMusicDataList[i]; // to check
 				initparam.isHighLevel = false;
-				//initparam.musicName = "Music "+id;
-				VerticalMusicDataList.MusicListData data = new VerticalMusicDataList.MusicListData(initparam);
+				initparam.aprilFoolEndTime = 0; // TODO
+				initparam.isOpen = true; // TODO
+				initparam.isSimulation = true; // TODO
+				initparam.isUnlockable = false; // TODO
+				initparam.musicTimeStr = ""; // TODO
+				MusicListData data = new MusicListData(initparam);
 				res.Add(data);
 			}
 			return res;

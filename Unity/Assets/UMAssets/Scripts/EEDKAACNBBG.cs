@@ -3,43 +3,43 @@ using XeApp.Game.Common;
 public class EEDKAACNBBG
 {
 	private const int FBGGEFFJJHB = 0x7daf3c5a;
-	public int KOPBFHIBOJJ = 0x7daf3c5a; // 0x8
-	public int GBGHABAJPGJ = 0x7daf3c5a; // 0xC
-	public int PAAEGMPLLOD = 0x7daf3c5a; // 0x10
-	public int NJHHGPGBEOF = 0x7daf3c5a; // 0x14
-	public int AHECDFEOOBF = 0x7daf3c5a; // 0x18
-	public int BNJIMPADBAH = 0x7daf3c5a; // 0x1C
+	public int KOPBFHIBOJJ_MusicIdCrypted = FBGGEFFJJHB; // 0x8
+	public int GBGHABAJPGJ_JacketIdCrypted = FBGGEFFJJHB; // 0xC
+	public int PAAEGMPLLOD = FBGGEFFJJHB; // 0x10
+	public int NJHHGPGBEOF_SerieCrypted = FBGGEFFJJHB; // 0x14
+	public int AHECDFEOOBF = FBGGEFFJJHB; // 0x18
+	public int BNJIMPADBAH_JacketAttrCrypted = FBGGEFFJJHB; // 0x1C
 	public string NEDBBJDAFBH; // 0x20
 	public string NBKFBCLDGAL; // 0x24
 	public string LJCEDBBNPBB; // 0x28
 	public string KLMPFGOCBHC; // 0x2C
 	public string OLLHCHDEHHM; // 0x30
-	public int EDDPAECJHHC = 0x7daf3c5a; // 0x34
-	public int CALAEHJCPIC = 0x7daf3c5a; // 0x38
-	public byte BNCMJNMIDIN; // 0x3C
+	public int EDDPAECJHHC = FBGGEFFJJHB; // 0x34
+	public int CALAEHJCPIC = FBGGEFFJJHB; // 0x38
+	public byte BNCMJNMIDIN_AvaiableDivaModes; // 0x3C
 
-	public int DLAEJOBELBH { get { return KOPBFHIBOJJ ^ FBGGEFFJJHB; } set { KOPBFHIBOJJ = value ^ FBGGEFFJJHB; } }// 0x1C487F4 MPGNHBOBFBD 0x1C48808 EPEMOAEGPLI
-	// public int JNCPEGJGHOG { get; set; } 0x1C4881C HHEADMHBBPB 0x1C48830 GOFFKDDNACG
+	public int DLAEJOBELBH_MusicId { get { return KOPBFHIBOJJ_MusicIdCrypted ^ FBGGEFFJJHB; } set { KOPBFHIBOJJ_MusicIdCrypted = value ^ FBGGEFFJJHB; } }// 0x1C487F4 MPGNHBOBFBD 0x1C48808 EPEMOAEGPLI
+	public int JNCPEGJGHOG_JacketId { get { return GBGHABAJPGJ_JacketIdCrypted ^ FBGGEFFJJHB; } set { GBGHABAJPGJ_JacketIdCrypted = value ^ FBGGEFFJJHB; } } //0x1C4881C HHEADMHBBPB 0x1C48830 GOFFKDDNACG
 	// public int NNHOBFBCIIJ { get; set; } 0x1C48844 AOBMNDMGGIO 0x1C48858 NIMNBBDNJMC
-	public int AIHCEGFANAM { get { return NJHHGPGBEOF ^ FBGGEFFJJHB; } set { NJHHGPGBEOF = value ^ FBGGEFFJJHB; } } //0x1C4886C ANEJPLENMAL 0x1C48880 HEHDOGFEIOL
+	public int AIHCEGFANAM_Serie { get { return NJHHGPGBEOF_SerieCrypted ^ FBGGEFFJJHB; } set { NJHHGPGBEOF_SerieCrypted = value ^ FBGGEFFJJHB; } } //0x1C4886C ANEJPLENMAL 0x1C48880 HEHDOGFEIOL
 	// public int EMIKBGHIOMN { get; set; } 0x1C48894 BJGJCKFOBCA 0x1C488A8 OAKIKBEEACC
-	// public int FKDCCLPGKDK { get; set; } 0x1C488BC FBADKBMGIBP 0x1C488D0 NCNMMABFHGN
+	public int FKDCCLPGKDK_JacketAttr { get { return BNJIMPADBAH_JacketAttrCrypted ^ FBGGEFFJJHB; } set { BNJIMPADBAH_JacketAttrCrypted = value ^ FBGGEFFJJHB; } } //0x1C488BC FBADKBMGIBP 0x1C488D0 NCNMMABFHGN
 	// public int KKPAHLMJKIH { get; set; } 0x1C488E4 ENODDPDBIPA 0x1C488F8 HOAKFLEAEOH
 	// public int BKJGCEOEPFB { get; set; } 0x1C4890C FNEBPBJBIIP 0x1C48920 OIDGLNHNGJB
-	// public bool IFNPBIJEPBO { get; private set; } // 0x3D ODDANOKGMLN GNLBOEKONDC OCOEKEKKGGG
+	public bool IFNPBIJEPBO_IsDlded { get; private set; } // 0x3D ODDANOKGMLN GNLBOEKONDC OCOEKEKKGGG
 
 	// // RVA: 0x1C48944 Offset: 0x1C48944 VA: 0x1C48944 Slot: 4
 	public virtual void KHEKNNFCAOI(int DLAEJOBELBH)
 	{
 		UnityEngine.Debug.LogError("TODO KHEKNNFCAOI");
-		this.DLAEJOBELBH = DLAEJOBELBH;
+		this.DLAEJOBELBH_MusicId = DLAEJOBELBH;
 		EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[DLAEJOBELBH - 1];
-		BNCMJNMIDIN = 0;
-		AIHCEGFANAM = (int)SeriesAttr.ConvertFromLogoId((SeriesLogoId.Type)musicInfo.EMIKBGHIOMN_SerieLogoId);
+		BNCMJNMIDIN_AvaiableDivaModes = 0;
+		AIHCEGFANAM_Serie = (int)SeriesAttr.ConvertFromLogoId((SeriesLogoId.Type)musicInfo.EMIKBGHIOMN_SerieLogoId);
 		if (musicInfo.NJAOOMHCIHL_Dvs > 0)
-			BNCMJNMIDIN |= 1;
+			BNCMJNMIDIN_AvaiableDivaModes |= 1;
 		if (musicInfo.PECMGDOMLAF_Dvm > 1)
-			BNCMJNMIDIN |= (byte)(1 << (musicInfo.PECMGDOMLAF_Dvm - 1));
+			BNCMJNMIDIN_AvaiableDivaModes |= (byte)(1 << (musicInfo.PECMGDOMLAF_Dvm - 1));
 	}
 
 	// // RVA: 0x1C48F30 Offset: 0x1C48F30 VA: 0x1C48F30 Slot: 5
@@ -56,7 +56,7 @@ public class EEDKAACNBBG
 	// // RVA: 0x1C49124 Offset: 0x1C49124 VA: 0x1C49124
 	public bool BENDFLDLIAG_IsAvaiableForNumDiva(int OFGIOBGAJPA_NumDiva)
 	{
-		return (BNCMJNMIDIN & (1 << (OFGIOBGAJPA_NumDiva - 1))) != 0;
+		return (BNCMJNMIDIN_AvaiableDivaModes & (1 << (OFGIOBGAJPA_NumDiva - 1))) != 0;
 	}
 
 	// // RVA: 0x1C49144 Offset: 0x1C49144 VA: 0x1C49144

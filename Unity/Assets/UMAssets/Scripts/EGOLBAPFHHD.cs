@@ -565,7 +565,11 @@ public class EGOLBAPFHHD : KLFDBFMNLBL
 	// public void DOGPMKIKKDA(int KLMIFEKNBLL, int MFCNKPHPJBH, bool JKDJCFEBDHC) { }
 
 	// // RVA: 0x1C539A8 Offset: 0x1C539A8 VA: 0x1C539A8
-	// public bool KNKGEALPDGF(int KLMIFEKNBLL, int MFCNKPHPJBH) { }
+	public bool KNKGEALPDGF(int KLMIFEKNBLL, int MFCNKPHPJBH)
+	{
+		UnityEngine.Debug.LogError("TODO KNKGEALPDGF");
+		return false;
+	}
 
 	// // RVA: 0x1C53A8C Offset: 0x1C53A8C VA: 0x1C53A8C
 	// public void BAAGCGEGIMK(int MFCNKPHPJBH, string OPFGFINHFCE) { }

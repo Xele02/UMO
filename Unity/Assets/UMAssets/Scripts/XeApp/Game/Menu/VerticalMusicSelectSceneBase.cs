@@ -82,7 +82,7 @@ namespace XeApp.Game.Menu
 		protected int freeMusicId { get {
 			if(listIsEmpty)
 				return 0;
-			return selectMusicData.GHBPLHBNMBK;
+			return selectMusicData.GHBPLHBNMBK_FreeMusicId;
 		} } //0xAC8BAC
 		// protected int gameEventType { get; } 0xAC8C00
 		// protected int m_eventTicketId { get; set; } // 0x9C
@@ -365,10 +365,22 @@ namespace XeApp.Game.Menu
 		// protected bool CheckEventLimit() { }
 
 		// // RVA: 0xACE0E0 Offset: 0xACE0E0 VA: 0xACE0E0
-		// protected void ApplyRemainTime(VerticalMusicSelectMusicDetail musicDetail, long endTime, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainType, LimitTimeWatcher.OnEndCallback endCallback) { }
+		protected void ApplyRemainTime(VerticalMusicSelectMusicDetail musicDetail, long endTime, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainType, LimitTimeWatcher.OnEndCallback endCallback)
+		{
+			m_musicTimeWatcher.onElapsedCallback = (long current, long limit, long remain) =>
+			{
+				//0xAD3D14
+				ApplyEventRemainTime(musicDetail, remain, remainType);
+			};
+			m_musicTimeWatcher.onEndCallback = endCallback;
+			m_musicTimeWatcher.WatchStart(endTime, true);
+		}
 
 		// // RVA: 0xACE260 Offset: 0xACE260 VA: 0xACE260
-		// protected void ApplyEventRemainTime(VerticalMusicSelectMusicDetail musicDetail, long remainSec, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainType) { }
+		protected void ApplyEventRemainTime(VerticalMusicSelectMusicDetail musicDetail, long remainSec, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainType)
+		{
+			UnityEngine.Debug.LogError("TODO ApplyEventRemainTime");
+		}
 
 		// // RVA: 0xACE2F0 Offset: 0xACE2F0 VA: 0xACE2F0
 		// protected void ApplyEventBannerRemainTime(VerticalMusicSelectEventBanner eventBunner, long remainSec) { }

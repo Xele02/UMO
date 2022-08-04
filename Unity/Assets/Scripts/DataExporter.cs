@@ -39,7 +39,7 @@ class DataExporter
 
 				for (int k = 0; k < 7; k++)
 				{
-					if ((song.BNCMJNMIDIN & (1 << k)) != 0)
+					if ((song.BNCMJNMIDIN_AvaiableDivaModes & (1 << k)) != 0)
 					{
 						if (k == 0)
 							divaSolo = true;
