@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-public abstract class IKDICBBFBMI
+public abstract class IKDICBBFBMI { }
+public abstract class IKDICBBFBMI_EventBase
 {
 	public const int NLHCFCAPBFH = 10;
 	public const int NFGBMPKFEGC = 999;
@@ -78,7 +79,7 @@ public abstract class IKDICBBFBMI
 	// public bool DLPIPAGONIN { get; } // ?
 
 	// // RVA: 0x8DCDBC Offset: 0x8DCDBC VA: 0x8DCDBC
-	public IKDICBBFBMI(string OPFGFINHFCE)
+	public IKDICBBFBMI_EventBase(string OPFGFINHFCE)
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}
@@ -90,7 +91,11 @@ public abstract class IKDICBBFBMI
 	// public virtual string DCODGEOEDPG() { }
 
 	// // RVA: 0x8DD52C Offset: 0x8DD52C VA: 0x8DD52C Slot: 7
-	// public virtual List<int> HEACCHAKMFG() { }
+	public virtual List<int> HEACCHAKMFG()
+	{
+		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		return new List<int>();
+	}
 
 	// // RVA: 0x8DD534 Offset: 0x8DD534 VA: 0x8DD534 Slot: 8
 	// public virtual int OMJHBJPCFFC(int EHDDADDKMFI) { }

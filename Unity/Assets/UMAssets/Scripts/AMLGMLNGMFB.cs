@@ -1,5 +1,8 @@
 
-public class AMLGMLNGMFB : IKDICBBFBMI
+using System.Collections.Generic;
+
+public class AMLGMLNGMFB { }
+public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 {
 	// private const int GHJHJDIDCFA = 3;
 	// private List<KCGOMAFPGDD.EIEGCBJHGCP> NFMDLCBJOIB = new List<KCGOMAFPGDD.EIEGCBJHGCP>(); // 0xE8
@@ -12,7 +15,7 @@ public class AMLGMLNGMFB : IKDICBBFBMI
 	// public override string IFKKBHPMALH() { }
 
 	// RVA: 0xCE1E40 Offset: 0xCE1E40 VA: 0xCE1E40
-	public AMLGMLNGMFB(string OPFGFINHFCE) : base(OPFGFINHFCE)
+	public AMLGMLNGMFB_EventAprilFool(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
         return;
     }
@@ -36,7 +39,11 @@ public class AMLGMLNGMFB : IKDICBBFBMI
 	// public void BEFJOAGGAJD() { }
 
 	// // RVA: 0xCE2CE0 Offset: 0xCE2CE0 VA: 0xCE2CE0 Slot: 7
-	// public override List<int> HEACCHAKMFG() { }
+	public override List<int> HEACCHAKMFG()
+	{
+		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		return base.HEACCHAKMFG();
+	}
 
 	// // RVA: 0xCE2E54 Offset: 0xCE2E54 VA: 0xCE2E54 Slot: 9
 	// public override long HOOBCIIOCJD(int GHBPLHBNMBK) { }

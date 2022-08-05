@@ -1,5 +1,6 @@
 
-public class CHHECNJBMLA : IKDICBBFBMI
+public class CHHECNJBMLA { }
+public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 {
 	// private const int GHJHJDIDCFA = 3;
 	// private EECOJKDJIFG KBACNOCOANM; // 0xE8
@@ -22,7 +23,7 @@ public class CHHECNJBMLA : IKDICBBFBMI
 	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0) { }
 
 	// RVA: 0x12BF074 Offset: 0x12BF074 VA: 0x12BF074
-	public CHHECNJBMLA(string OPFGFINHFCE) : base(OPFGFINHFCE)
+	public CHHECNJBMLA_EventBoxGacha(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
         return;
     }

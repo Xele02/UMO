@@ -60,7 +60,11 @@ public class EEDKAACNBBG
 	}
 
 	// // RVA: 0x1C49144 Offset: 0x1C49144 VA: 0x1C49144
-	// public bool KLOGLLFOAPL() { }
+	public bool KLOGLLFOAPL()
+	{
+		UnityEngine.Debug.LogError("TODO KLOGLLFOAPL");
+		return false;
+	}
 
 	// // RVA: 0x1C49158 Offset: 0x1C49158 VA: 0x1C49158
 	// public bool HAMPEDFMIAD() { }

@@ -1,5 +1,8 @@
 
-public class MANPIONIGNO : IKDICBBFBMI
+using System.Collections.Generic;
+
+public class MANPIONIGNO { }
+public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 {
 	// private const int GHJHJDIDCFA = 3;
 	// private List<LNELCMNJPIC.HGLNJDGOPMM> NFMDLCBJOIB = new List<LNELCMNJPIC.HGLNJDGOPMM>(); // 0xE8
@@ -13,7 +16,7 @@ public class MANPIONIGNO : IKDICBBFBMI
 	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO) { }
 
 	// RVA: 0xA1693C Offset: 0xA1693C VA: 0xA1693C
-	public MANPIONIGNO(string OPFGFINHFCE) : base(OPFGFINHFCE)
+	public MANPIONIGNO_EventGoDiva(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
         CMEOKJMCEBH = true;
     }
@@ -31,7 +34,11 @@ public class MANPIONIGNO : IKDICBBFBMI
 	// public void BEFJOAGGAJD() { }
 
 	// // RVA: 0xA17174 Offset: 0xA17174 VA: 0xA17174 Slot: 7
-	// public override List<int> HEACCHAKMFG() { }
+	public override List<int> HEACCHAKMFG()
+	{
+		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		return base.HEACCHAKMFG();
+	}
 
 	// // RVA: 0xA172F4 Offset: 0xA172F4 VA: 0xA172F4 Slot: 9
 	// public override long HOOBCIIOCJD(int GHBPLHBNMBK) { }

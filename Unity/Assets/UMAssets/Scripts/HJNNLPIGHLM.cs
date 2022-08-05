@@ -1,5 +1,8 @@
 
-public class HJNNLPIGHLM : IKDICBBFBMI // TypeDefIndex: 8979
+using System.Collections.Generic;
+
+public class HJNNLPIGHLM { }
+public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex: 8979
 {
 	private const int GHJHJDIDCFA = 3;
 	// private List<PHBACNMCMHG.LLFNMNJGLNL> NFMDLCBJOIB = new List<PHBACNMCMHG.LLFNMNJGLNL>(); // 0xE8
@@ -13,7 +16,7 @@ public class HJNNLPIGHLM : IKDICBBFBMI // TypeDefIndex: 8979
 	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO) { }
 
 	// // RVA: 0x183A6CC Offset: 0x183A6CC VA: 0x183A6CC
-	public HJNNLPIGHLM(string OPFGFINHFCE) : base(OPFGFINHFCE)
+	public HJNNLPIGHLM_EventCollection(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
         return;
     }
@@ -31,7 +34,11 @@ public class HJNNLPIGHLM : IKDICBBFBMI // TypeDefIndex: 8979
 	// public void BEFJOAGGAJD() { }
 
 	// // RVA: 0x183ADBC Offset: 0x183ADBC VA: 0x183ADBC Slot: 7
-	// public override List<int> HEACCHAKMFG() { }
+	public override List<int> HEACCHAKMFG()
+	{
+		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		return base.HEACCHAKMFG();
+	}
 
 	// // RVA: 0x183AF30 Offset: 0x183AF30 VA: 0x183AF30 Slot: 9
 	// public override long HOOBCIIOCJD(int GHBPLHBNMBK) { }

@@ -356,7 +356,7 @@ namespace XeApp.Game.Menu
 			m_eventId = 0;
 			m_eventIndex = 0;
 			m_eventTicketId = 0;
-			NKOBMDPHNGP d = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP.MCGPGMGEPHG/*13*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP;
+			NKOBMDPHNGP_EventRaidLobby d = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP.MCGPGMGEPHG/*13*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 			bool b = false;
 			if(d == null)
 			{
@@ -366,7 +366,7 @@ namespace XeApp.Game.Menu
 			{
 				if(d.AKNOOLKMEGJ())
 				{
-					m_eventTicketId = NKOBMDPHNGP.ADPMLOEOAFD();
+					m_eventTicketId = NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD();
 				}
 			}
 			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/, false);

@@ -69,7 +69,7 @@ namespace XeApp.Game.MusicSelect
 		private List<VerticalMusicDataList.MusicListData> m_viewSimulation6LineList = new List<VerticalMusicDataList.MusicListData>(); // 0x14
 
 		//// RVA: 0xCA0F60 Offset: 0xCA0F60 VA: 0xCA0F60
-		public static List<VerticalMusicDataList.MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId)
+		public static List<VerticalMusicDataList.MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI_EventBase eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId)
 		{
 			UnityEngine.Debug.LogError("TODO CreateMusicListData !!!");
 

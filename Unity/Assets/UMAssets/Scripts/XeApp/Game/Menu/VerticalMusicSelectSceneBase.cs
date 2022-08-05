@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 
 		public delegate bool CheckMatchMusicFilterFunc(VerticalMusicDataList.MusicListData musicData, int series, long currentTime);
 
-		protected IKDICBBFBMI m_scoreEventCtrl; // 0x50
+		protected IKDICBBFBMI_EventBase m_scoreEventCtrl; // 0x50
 		// private VerticalMusicSelectSceneBase.MusicDecideInfo m_musicDecideInfo = MusicDevideInfo.Empty; // 0x68
 		private PopupAchieveRewardSetting m_rewardPopupSetting = new PopupAchieveRewardSetting(); // 0x88
 		private PopupUnitDanceWarning m_popupUnitDanceWarning = new PopupUnitDanceWarning(); // 0x8C
@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 		// protected abstract int musicListCount { get; } // Slot: 36
 		protected abstract VerticalMusicDataList currentMusicList { get; } //  Slot: 38
 		// protected abstract List<VerticalMusicDataList> originalMusicList { get; } //  Slot: 39
-		protected IKDICBBFBMI m_eventCtrl { get; set; } // 0x4C
+		protected IKDICBBFBMI_EventBase m_eventCtrl { get; set; } // 0x4C
 		// protected int m_eventId { get; set; } // 0x54
 		protected MMOLNAHHDOM m_unitLiveLocalSaveData { get; private set; } // 0x58
 		protected LimitTimeWatcher m_musicTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x5C

@@ -1,5 +1,6 @@
 
-public class CANAFALMGLI : IKDICBBFBMI
+public class CANAFALMGLI { }
+public class CANAFALMGLI_EventPresentCampaign : IKDICBBFBMI_EventBase
 {
 	// public static bool BIMJBABOKDN = false; // 0x0
 	// public static bool NNJBFKKDLBC = false; // 0x1
@@ -11,7 +12,7 @@ public class CANAFALMGLI : IKDICBBFBMI
 	public override OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get { return OHCAABOMEOF.KGOGMKMBCPP.DMPMKBCPHMA; } }// 0x18F4084 DKHCGLCNKCD  Slot: 4
 
 	// RVA: 0x18F408C Offset: 0x18F408C VA: 0x18F408C
-	public CANAFALMGLI(string OPFGFINHFCE) : base(OPFGFINHFCE)
+	public CANAFALMGLI_EventPresentCampaign(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
         return;
     }

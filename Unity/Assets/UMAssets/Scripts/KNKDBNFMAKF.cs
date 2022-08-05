@@ -1,5 +1,6 @@
 
-public class KNKDBNFMAKF : IKDICBBFBMI
+public class KNKDBNFMAKF { }
+public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 {
 	// private const int GHJHJDIDCFA = 3;
 	// private EECOJKDJIFG KBACNOCOANM; // 0xE8
@@ -18,7 +19,7 @@ public class KNKDBNFMAKF : IKDICBBFBMI
 	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0) { }
 
 	// RVA: 0x1123024 Offset: 0x1123024 VA: 0x1123024
-	public KNKDBNFMAKF(string OPFGFINHFCE) : base(OPFGFINHFCE)
+	public KNKDBNFMAKF_EventSp(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
         return;
     }

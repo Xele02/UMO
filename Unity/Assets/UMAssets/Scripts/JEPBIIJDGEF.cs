@@ -4,55 +4,55 @@ using UnityEngine;
 public class JEPBIIJDGEF { }
 public class JEPBIIJDGEF_EventInfo
 {
-	private delegate IKDICBBFBMI IKAFJHHHJDN();
+	private delegate IKDICBBFBMI_EventBase IKAFJHHHJDN();
 
-	public List<IKDICBBFBMI> MPEOOINCGEN = new List<IKDICBBFBMI>(); // 0x8
+	public List<IKDICBBFBMI_EventBase> MPEOOINCGEN = new List<IKDICBBFBMI_EventBase>(); // 0x8
 	private static JEPBIIJDGEF_EventInfo.IKAFJHHHJDN[] OGCFJIIBLEO = new IKAFJHHHJDN[45] {
-														() => { return new HAEDCCLHEMN("event_battle_a"); /*0x1C3F1E0*/},
-														() => { return new HAEDCCLHEMN("event_battle_b"); /*0x1C3F260*/ },
-														() => { return new HAEDCCLHEMN("event_battle_c"); /*0x1C3F2E0*/ },
-														() => { return new HJNNLPIGHLM("event_collection_a"); /*0x1C3F360*/ },
-														() => { return new HJNNLPIGHLM("event_collection_b"); /*0x1C3F3E0*/ },
-														() => { return new HJNNLPIGHLM("event_collection_c"); /*0x1C3F460*/ },
-														() => { return new HLEBAINCOME("event_score_a"); /*0x1C3F4E0*/ },
-														() => { return new HLEBAINCOME("event_score_b"); /*0x1C3F560*/ },
-														() => { return new HLEBAINCOME("event_score_c"); /*0x1C3F5E0*/ },
-														() => { return new HLEBAINCOME("event_score_d"); /*0x1C3F660*/ },
-														() => { return new HLEBAINCOME("event_score_e"); /*0x1C3F6E0*/ },
-														() => { return new HLEBAINCOME("event_score_f"); /*0x1C3F760*/ },
-														() => { return new KPJHLACKGJF("event_mission_a"); /*0x1C3F7E0*/ },
-														() => { return new KPJHLACKGJF("event_mission_b"); /*0x1C3F860*/ },
-														() => { return new KPJHLACKGJF("event_mission_c"); /*0x1C3F8E0*/ },
-														() => { return new KNKDBNFMAKF("event_sp_a"); /*0x1C3F960*/ },
-														() => { return new KNKDBNFMAKF("event_sp_b"); /*0x1C3F9E0*/ },
-														() => { return new KNKDBNFMAKF("event_sp_c"); /*0x1C3FA60*/ },
-														() => { return new CHHECNJBMLA("event_box_gacha_a"); /*0x1C3FAE0*/ },
-														() => { return new CHHECNJBMLA("event_box_gacha_b"); /*0x1C3FB60*/ },
-														() => { return new CHHECNJBMLA("event_box_gacha_c"); /*0x1C3FBE0*/ },
-														() => { return new CHHECNJBMLA("event_box_gacha_d"); /*0x1C3FC60*/ },
-														() => { return new CHHECNJBMLA("event_box_gacha_e"); /*0x1C3FCE0*/ },
-														() => { return new CHHECNJBMLA("event_box_gacha_f"); /*0x1C3FD60*/ },
-														() => { return new AMLGMLNGMFB("event_april_fool_a"); /*0x1C3FDE0*/ },
-														() => { return new AMLGMLNGMFB("event_april_fool_b"); /*0x1C3FE60*/ },
-														() => { return new AMLGMLNGMFB("event_april_fool_c"); /*0x1C3FEE0*/ },
-														() => { return new AMLGMLNGMFB("event_april_fool_d"); /*0x1C3FF60*/ },
-														() => { return new AMLGMLNGMFB("event_april_fool_e"); /*0x1C3FFE0*/ },
-														() => { return new AMLGMLNGMFB("event_april_fool_f"); /*0x1C40060*/ },
-														() => { return new AMLGMLNGMFB("event_april_fool_g"); /*0x1C400E0*/ },
-														() => { return new AMLGMLNGMFB("event_april_fool_h"); /*0x1C40160*/ },
-														() => { return new AMLGMLNGMFB("event_april_fool_i"); /*0x1C401E0*/ },
-														() => { return new CANAFALMGLI("event_present_campaign_a"); /*0x1C40260*/ },
-														() => { return new NKOBMDPHNGP("event_raidlobby_a"); /*0x1C402E0*/ },
-														() => { return new NKOBMDPHNGP("event_raidlobby_b"); /*0x1C40360*/ },
-														() => { return new NKOBMDPHNGP("event_raidlobby_c"); /*0x1C403E0*/ },
-														() => { return new NKOBMDPHNGP("event_raidlobby_d"); /*0x1C40460*/ },
-														() => { return new PKNOKJNLPOE("event_raid_a"); /*0x1C404E0*/ },
-														() => { return new PKNOKJNLPOE("event_raid_b"); /*0x1C40560*/ },
-														() => { return new PKNOKJNLPOE("event_raid_c"); /*0x1C405E0*/ },
-														() => { return new PKNOKJNLPOE("event_raid_d"); /*0x1C40660*/ },
-														() => { return new MANPIONIGNO("event_godiva_a"); /*0x1C406E0*/ },
-														() => { return new MANPIONIGNO("event_godiva_b"); /*0x1C40760*/ },
-														() => { return new MANPIONIGNO("event_godiva_c"); /*0x1C407E0*/ },
+														() => { return new HAEDCCLHEMN_EventBattle("event_battle_a"); /*0x1C3F1E0*/},
+														() => { return new HAEDCCLHEMN_EventBattle("event_battle_b"); /*0x1C3F260*/ },
+														() => { return new HAEDCCLHEMN_EventBattle("event_battle_c"); /*0x1C3F2E0*/ },
+														() => { return new HJNNLPIGHLM_EventCollection("event_collection_a"); /*0x1C3F360*/ },
+														() => { return new HJNNLPIGHLM_EventCollection("event_collection_b"); /*0x1C3F3E0*/ },
+														() => { return new HJNNLPIGHLM_EventCollection("event_collection_c"); /*0x1C3F460*/ },
+														() => { return new HLEBAINCOME_EventScore("event_score_a"); /*0x1C3F4E0*/ },
+														() => { return new HLEBAINCOME_EventScore("event_score_b"); /*0x1C3F560*/ },
+														() => { return new HLEBAINCOME_EventScore("event_score_c"); /*0x1C3F5E0*/ },
+														() => { return new HLEBAINCOME_EventScore("event_score_d"); /*0x1C3F660*/ },
+														() => { return new HLEBAINCOME_EventScore("event_score_e"); /*0x1C3F6E0*/ },
+														() => { return new HLEBAINCOME_EventScore("event_score_f"); /*0x1C3F760*/ },
+														() => { return new KPJHLACKGJF_EventMission("event_mission_a"); /*0x1C3F7E0*/ },
+														() => { return new KPJHLACKGJF_EventMission("event_mission_b"); /*0x1C3F860*/ },
+														() => { return new KPJHLACKGJF_EventMission("event_mission_c"); /*0x1C3F8E0*/ },
+														() => { return new KNKDBNFMAKF_EventSp("event_sp_a"); /*0x1C3F960*/ },
+														() => { return new KNKDBNFMAKF_EventSp("event_sp_b"); /*0x1C3F9E0*/ },
+														() => { return new KNKDBNFMAKF_EventSp("event_sp_c"); /*0x1C3FA60*/ },
+														() => { return new CHHECNJBMLA_EventBoxGacha("event_box_gacha_a"); /*0x1C3FAE0*/ },
+														() => { return new CHHECNJBMLA_EventBoxGacha("event_box_gacha_b"); /*0x1C3FB60*/ },
+														() => { return new CHHECNJBMLA_EventBoxGacha("event_box_gacha_c"); /*0x1C3FBE0*/ },
+														() => { return new CHHECNJBMLA_EventBoxGacha("event_box_gacha_d"); /*0x1C3FC60*/ },
+														() => { return new CHHECNJBMLA_EventBoxGacha("event_box_gacha_e"); /*0x1C3FCE0*/ },
+														() => { return new CHHECNJBMLA_EventBoxGacha("event_box_gacha_f"); /*0x1C3FD60*/ },
+														() => { return new AMLGMLNGMFB_EventAprilFool("event_april_fool_a"); /*0x1C3FDE0*/ },
+														() => { return new AMLGMLNGMFB_EventAprilFool("event_april_fool_b"); /*0x1C3FE60*/ },
+														() => { return new AMLGMLNGMFB_EventAprilFool("event_april_fool_c"); /*0x1C3FEE0*/ },
+														() => { return new AMLGMLNGMFB_EventAprilFool("event_april_fool_d"); /*0x1C3FF60*/ },
+														() => { return new AMLGMLNGMFB_EventAprilFool("event_april_fool_e"); /*0x1C3FFE0*/ },
+														() => { return new AMLGMLNGMFB_EventAprilFool("event_april_fool_f"); /*0x1C40060*/ },
+														() => { return new AMLGMLNGMFB_EventAprilFool("event_april_fool_g"); /*0x1C400E0*/ },
+														() => { return new AMLGMLNGMFB_EventAprilFool("event_april_fool_h"); /*0x1C40160*/ },
+														() => { return new AMLGMLNGMFB_EventAprilFool("event_april_fool_i"); /*0x1C401E0*/ },
+														() => { return new CANAFALMGLI_EventPresentCampaign("event_present_campaign_a"); /*0x1C40260*/ },
+														() => { return new NKOBMDPHNGP_EventRaidLobby("event_raidlobby_a"); /*0x1C402E0*/ },
+														() => { return new NKOBMDPHNGP_EventRaidLobby("event_raidlobby_b"); /*0x1C40360*/ },
+														() => { return new NKOBMDPHNGP_EventRaidLobby("event_raidlobby_c"); /*0x1C403E0*/ },
+														() => { return new NKOBMDPHNGP_EventRaidLobby("event_raidlobby_d"); /*0x1C40460*/ },
+														() => { return new PKNOKJNLPOE_EventRaid("event_raid_a"); /*0x1C404E0*/ },
+														() => { return new PKNOKJNLPOE_EventRaid("event_raid_b"); /*0x1C40560*/ },
+														() => { return new PKNOKJNLPOE_EventRaid("event_raid_c"); /*0x1C405E0*/ },
+														() => { return new PKNOKJNLPOE_EventRaid("event_raid_d"); /*0x1C40660*/ },
+														() => { return new MANPIONIGNO_EventGoDiva("event_godiva_a"); /*0x1C406E0*/ },
+														() => { return new MANPIONIGNO_EventGoDiva("event_godiva_b"); /*0x1C40760*/ },
+														() => { return new MANPIONIGNO_EventGoDiva("event_godiva_c"); /*0x1C407E0*/ },
 													} ; // 0x4
 
 	public static JEPBIIJDGEF_EventInfo HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF JEPBIIJDGEF OKPMHKNCNAL
@@ -64,14 +64,14 @@ public class JEPBIIJDGEF_EventInfo
 	}
 
 	// // RVA: 0x1C33488 Offset: 0x1C33488 VA: 0x1C33488
-	public IKDICBBFBMI OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP INDDJNMPONH, KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/)
+	public IKDICBBFBMI_EventBase OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP INDDJNMPONH, KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/)
     {
         UnityEngine.Debug.LogError("TODO");
         return null;
     }
 
 	// // RVA: 0x1C395FC Offset: 0x1C395FC VA: 0x1C395FC
-	public IKDICBBFBMI MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/, bool BJIOJJDLODJ = false)
+	public IKDICBBFBMI_EventBase MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/, bool BJIOJJDLODJ = false)
 	{
 		UnityEngine.Debug.LogError("TODO MKBJOOAILBB");
 		return null;
@@ -81,7 +81,7 @@ public class JEPBIIJDGEF_EventInfo
 	// public List<IKDICBBFBMI> CMDEHIMPHBL(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = 9, bool BJIOJJDLODJ = False) { }
 
 	// // RVA: 0x1C39BD4 Offset: 0x1C39BD4 VA: 0x1C39BD4
-	public IKDICBBFBMI AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/)
+	public IKDICBBFBMI_EventBase AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/)
 	{
 		UnityEngine.Debug.LogError("TODO AJLEDCKMFLP");
 		return null;

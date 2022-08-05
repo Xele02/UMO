@@ -1,5 +1,8 @@
 
-public class PKNOKJNLPOE : IKDICBBFBMI
+using System.Collections.Generic;
+
+public class PKNOKJNLPOE { }
+public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 {
 	// private const int GHJHJDIDCFA = 3;
 	// public const int EGJPAEHGDEL = 40;
@@ -81,7 +84,7 @@ public class PKNOKJNLPOE : IKDICBBFBMI
 	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0) { }
 
 	// RVA: 0x9400DC Offset: 0x9400DC VA: 0x9400DC
-	public PKNOKJNLPOE(string OPFGFINHFCE) : base(OPFGFINHFCE)
+	public PKNOKJNLPOE_EventRaid(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
         UnityEngine.Debug.LogError("TODO");
     }
@@ -105,7 +108,11 @@ public class PKNOKJNLPOE : IKDICBBFBMI
 	// public override string DCODGEOEDPG() { }
 
 	// // RVA: 0x94097C Offset: 0x94097C VA: 0x94097C Slot: 7
-	// public override List<int> HEACCHAKMFG() { }
+	public override List<int> HEACCHAKMFG()
+	{
+		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		return base.HEACCHAKMFG();
+	}
 
 	// // RVA: 0x940984 Offset: 0x940984 VA: 0x940984
 	// public List<int> HEACCHAKMFG(int MFMPCHIJINJ) { }

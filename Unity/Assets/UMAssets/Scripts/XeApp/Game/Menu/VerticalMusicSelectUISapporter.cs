@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		private VerticalMusicSelecChoiceMusicListTab m_choiceMusicTab; // 0x5C
 		// private LayoutEventGoDivaFeverLimit m_feverLimit; // 0x60
 		private MMOLNAHHDOM m_unitLiveLocalSaveData; // 0x64
-		private IKDICBBFBMI m_eventCtrl; // 0x68
+		private IKDICBBFBMI_EventBase m_eventCtrl; // 0x68
 
 		public Difficulty.Type difficulty { get { return m_difficulty; } } //0xAD9F84
 		// public MusicSelectConsts.SeriesType series { get; } 0xAD9F8C
@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 		// public bool IsEventRankingEnd { get; } 0xADA1E0
 
 		// // RVA: 0xAC7248 Offset: 0xAC7248 VA: 0xAC7248
-		public void SetUp(VerticalMusicSelectMusicList musicSelectList, VerticalMusicSelectMusicDetail musicDetail, VerticalMusicSelectUtaRate utaRate, VerticalMusicSelectEventBanner eventBanner, VerticalMusicSelectDifficultyButtonGroup difficultyButtonGroup, VerticalMusicSelectSeriesButtonGroup seriesButtonGroup, VerticalMusicSelectPlayButton playButton, VerticalMusicSelctSimulationButton simulationButton, VerticalMusicSelectSortOrder orderButton, IKDICBBFBMI eventCtrl, MMOLNAHHDOM unitLiveLocalSaveData, VerticalMusicSelecLine6Button line6Button, VerticalMusicSelecChoiceMusicListTab choiceMusicListTab)
+		public void SetUp(VerticalMusicSelectMusicList musicSelectList, VerticalMusicSelectMusicDetail musicDetail, VerticalMusicSelectUtaRate utaRate, VerticalMusicSelectEventBanner eventBanner, VerticalMusicSelectDifficultyButtonGroup difficultyButtonGroup, VerticalMusicSelectSeriesButtonGroup seriesButtonGroup, VerticalMusicSelectPlayButton playButton, VerticalMusicSelctSimulationButton simulationButton, VerticalMusicSelectSortOrder orderButton, IKDICBBFBMI_EventBase eventCtrl, MMOLNAHHDOM unitLiveLocalSaveData, VerticalMusicSelecLine6Button line6Button, VerticalMusicSelecChoiceMusicListTab choiceMusicListTab)
 		{
 			m_musicDetail = musicDetail;
 			m_musicSelectList = musicSelectList;
@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 			if (m_rewardStats != null)
 				return;
 			m_rewardStats = new List<MusicRewardStat>();
-			for(int i = 0; i < 4; i++)
+			for(int i = 0; i < 5; i++)
 			{
 				m_rewardStats.Add(new MusicRewardStat());
 			}

@@ -95,7 +95,13 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG
 	// public int MMLNFAJOPCB(int ANAJIAENLNB) { }
 
 	// // RVA: 0xDA0448 Offset: 0xDA0448 VA: 0xDA0448
-	// public int HHEEPBJNAKA(int ANAJIAENLNB, bool GIKLNODJKFK) { }
+	public int HHEEPBJNAKA_GetEnergy(int ANAJIAENLNB, bool GIKLNODJKFK)
+	{
+		if (!GIKLNODJKFK)
+			return COKBDFIMOPM[ANAJIAENLNB - 1];
+		else
+			return CAIAODFECPC[ANAJIAENLNB - 1];
+	}
 
 	// // RVA: 0xDA04D8 Offset: 0xDA04D8 VA: 0xDA04D8
 	// public int AOGJFPLIOGB(int ANAJIAENLNB, bool GIKLNODJKFK) { }

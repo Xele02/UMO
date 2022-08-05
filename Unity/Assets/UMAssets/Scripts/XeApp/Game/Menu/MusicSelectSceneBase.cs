@@ -57,8 +57,8 @@ namespace XeApp.Game.Menu
 		// protected MusicSelectButtonSet.OptionStyle m_overrideButtonStyle; // 0x88
 		// protected GameSetupData.MusicInfo.InitFreeMusicParam m_initParam; // 0x8C
 		// private PopupUnitDanceWarning m_popupUnitDanceWarning = new PopupUnitDanceWarning(); // 0x94
-		protected IKDICBBFBMI m_eventCtrl; // 0x98
-		protected IKDICBBFBMI m_scoreEventCtrl; // 0x9C
+		protected IKDICBBFBMI_EventBase m_eventCtrl; // 0x98
+		protected IKDICBBFBMI_EventBase m_scoreEventCtrl; // 0x9C
 		// private List<FKMOKDCJFEN> m_questList; // 0xA0
 		// private FDDIIKBJNNA m_snsData = new FDDIIKBJNNA(); // 0xA4
 		protected MMOLNAHHDOM m_unitLiveLocalSaveData; // 0xA8

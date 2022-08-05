@@ -21,7 +21,10 @@ public class EJKBKMBJMGL_EnemyData
 	//public bool CDEFLIHHNAB { get; } 0x12F37B8 NKOCPFCGNOG
 
 	//// RVA: 0x12F37F4 Offset: 0x12F37F4 VA: 0x12F37F4
-	//public void KHEKNNFCAOI(int EJNIMIAPJFJ, int IHKNHNKMGAD) { }
+	public void KHEKNNFCAOI(int EJNIMIAPJFJ, int IHKNHNKMGAD)
+	{
+		UnityEngine.Debug.LogError("TODO Init enemyData");
+	}
 
 	//// RVA: 0x12F3BD0 Offset: 0x12F3BD0 VA: 0x12F3BD0
 	//public void NPEKPHAFMGE(int DCOALMMJDJK, int KKPLDFNDFDE) { }

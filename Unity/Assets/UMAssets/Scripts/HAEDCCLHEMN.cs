@@ -1,5 +1,8 @@
 
-public class HAEDCCLHEMN : IKDICBBFBMI
+using System.Collections.Generic;
+
+public class HAEDCCLHEMN { }
+public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 {
 	// private const int GHJHJDIDCFA = 3;
 	// private const int PLOKNLNKNCM = 3;
@@ -50,7 +53,7 @@ public class HAEDCCLHEMN : IKDICBBFBMI
 	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0) { }
 
 	// RVA: 0x1B6CACC Offset: 0x1B6CACC VA: 0x1B6CACC
-	public HAEDCCLHEMN(string OPFGFINHFCE) : base(OPFGFINHFCE)
+	public HAEDCCLHEMN_EventBattle(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
         return;
     }
@@ -71,7 +74,11 @@ public class HAEDCCLHEMN : IKDICBBFBMI
 	// public List<int> ANFCICBOGFE(bool BODDJDJAIGN) { }
 
 	// // RVA: 0x1B6D800 Offset: 0x1B6D800 VA: 0x1B6D800 Slot: 7
-	// public override List<int> HEACCHAKMFG() { }
+	public override List<int> HEACCHAKMFG()
+	{
+		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		return base.HEACCHAKMFG();
+	}
 
 	// // RVA: 0x1B6D808 Offset: 0x1B6D808 VA: 0x1B6D808 Slot: 9
 	// public override long HOOBCIIOCJD(int GHBPLHBNMBK) { }

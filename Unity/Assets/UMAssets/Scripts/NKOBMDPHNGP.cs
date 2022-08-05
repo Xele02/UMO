@@ -1,5 +1,6 @@
 
-public class NKOBMDPHNGP : IKDICBBFBMI
+public class NKOBMDPHNGP { }
+public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 {
 	// private const int GHJHJDIDCFA = 3;
 	// private const int HDNDLJNKFFF = 100;
@@ -47,7 +48,7 @@ public class NKOBMDPHNGP : IKDICBBFBMI
 	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0) { }
 
 	// RVA: 0xC1E3D0 Offset: 0xC1E3D0 VA: 0xC1E3D0
-	public NKOBMDPHNGP(string OPFGFINHFCE) : base(OPFGFINHFCE)
+	public NKOBMDPHNGP_EventRaidLobby(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
         UnityEngine.Debug.LogError("TODO");
         /*if(FJLIDJJAGOM() == null)
