@@ -44,7 +44,7 @@ namespace XeApp.Game.Common
 			{
 				if(events[i].functionName == "ChangeCutin")
 				{
-					changeCutinFireTimes.Add(events[i].intParameter, events[i].floatParameter);
+					changeCutinFireTimes.Add(events[i].intParameter, events[i].time);
 				}
 			}
 		}

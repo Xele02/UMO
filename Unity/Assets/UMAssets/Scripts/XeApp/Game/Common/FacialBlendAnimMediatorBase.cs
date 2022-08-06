@@ -111,7 +111,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C10AC0 Offset: 0x1C10AC0 VA: 0x1C10AC0
-		//public void Release() { }
+		public void Release()
+		{
+			isSetup = false;
+		}
 
 		//// RVA: 0x1C10ACC Offset: 0x1C10ACC VA: 0x1C10ACC
 		public void Initialize(DivaResource resource, GameObject divaPrefab)
