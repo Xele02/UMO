@@ -30,17 +30,60 @@ namespace XeApp.Game.Common
 		// RVA: 0x13A6AD8 Offset: 0x13A6AD8 VA: 0x13A6AD8
 		private void LateUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO StageLightingAddObject LateUpdate");
+			if(resource != null)
+			{
+				divaObject.UpdateColorByStageLighting(TransformToColor(colorControlTransforms[0]),
+													TransformToColor(colorControlTransforms[1]),
+													TransformToColor(colorControlTransforms[2]).r,
+													TransformToColor(colorControlTransforms[3]));
+				for(int i = 0; i < divaExtensionObjectList.Count; i++)
+				{
+					divaExtensionObjectList[i].UpdateColorByStageLighting(TransformToColor(colorControlTransforms[0]),
+													TransformToColor(colorControlTransforms[1]),
+													TransformToColor(colorControlTransforms[2]).r);
+				}
+			}
 		}
 
 		// RVA: 0x13A6EDC Offset: 0x13A6EDC VA: 0x13A6EDC
 		public void Initialize(int index, StageLightingResource resource, GameDivaObject divaObject, List<DivaExtensionObject> divaExtensionObjectList)
 		{
-			UnityEngine.Debug.LogError("TODO StageLightingAddObject Initialize");
+			this.index = index;
+			this.resource = resource;
+			this.divaObject = divaObject;
+			foreach(var deo in divaExtensionObjectList)
+			{
+				if(deo.divaId == divaObject.divaId)
+				{
+					this.divaExtensionObjectList.Add(deo);
+				}
+			}
+			if(resource != null)
+			{
+				for(int i = 0; i < colorControlObjectName.Length; i++)
+				{
+					Transform t = transform.Find(colorControlObjectName[i]);
+					if(t != null)
+					{
+						colorControlTransforms[i] = t;
+					}
+				}
+				animator = GetComponent<Animator>();
+				animator.runtimeAnimatorController = resource.animatorController;
+				overrideController = new AnimatorOverrideController();
+				overrideController.name = "dr_li_override_controller";
+				overrideController.runtimeAnimatorController = animator.runtimeAnimatorController;
+				overrideController["dr_li_cmn_animation"] = resource.clip_add[index];
+				animator.runtimeAnimatorController = overrideController;
+				animator.playableGraph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
+			}
 		}
 
 		// RVA: 0x13A6E00 Offset: 0x13A6E00 VA: 0x13A6E00
-		//private Color TransformToColor(Transform t) { }
+		private Color TransformToColor(Transform t)
+		{
+			return new Color(t.localPosition.x, t.localPosition.y, t.localPosition.z, t.localEulerAngles.x);
+		}
 
 		//// RVA: 0x13A7470 Offset: 0x13A7470 VA: 0x13A7470
 		public void PlayMusicAnimation()
