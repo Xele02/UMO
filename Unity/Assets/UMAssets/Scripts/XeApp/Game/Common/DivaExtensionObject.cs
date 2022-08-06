@@ -35,6 +35,8 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1BEBEE8 Offset: 0x1BEBEE8 VA: 0x1BEBEE8
 		public void Initialize(DivaExtensionResource resource, DivaObject divaObject, MusicCameraObject cameraObject, List<GameDivaObject> a_diva_list)
 		{
+			this.resource = resource;
+			this.divaObject = divaObject;
 			if(resource != null)
 			{
 				animator = GetComponent<Animator>();
