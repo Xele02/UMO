@@ -100,7 +100,7 @@ namespace XeApp.Game
 					{
 						if(Mathf.Abs(divaId) == s.divaId)
 						{
-							return true;
+							return false;
 						}
 					}
 				}

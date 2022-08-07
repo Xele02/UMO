@@ -20,7 +20,7 @@ namespace XeApp.Game.Common
 			animator.runtimeAnimatorController = overrideController;
 			if(string.IsNullOrEmpty(m_state_name))
 				return;
-			overrideController["name"] = m_list_anim_clip[a_diva_obj.positionId - 1];
+			overrideController[m_state_name] = m_list_anim_clip[a_diva_obj.positionId - 1];
 		}
 	}
 }
