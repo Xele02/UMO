@@ -41,7 +41,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG
 	private List<int> DOAAGIMJOMM; // 0x144
 	private List<int> KMJNLIMMCED; // 0x148
 
-	public List<JANMKFAKHIC> KGHLOJNCFDO { get; private set; } // 0x24 KGEFOIBPACG KHDCLBNDLPL IKNIJILKKCC
+	public List<JANMKFAKHIC_ComboBonus> KGHLOJNCFDO_ComboBonus { get; private set; } // 0x24 KGEFOIBPACG KHDCLBNDLPL IKNIJILKKCC
 	public List<int> PDNEMDIEGFB { get; private set; } // 0x28 JLOJENKKFFK MNANHEAKBBM BAKOHDPHEDO
 	private List<int> JKPKJKFJDGL { get; set; } // 0x2C OJIPOCNKJBD KDPCOHLOEPI EOHDGCNIFDD
 	private List<int> OBLDNPMODOM { get; set; } // 0x30 NPILHIHHEAI BBNCEDBIOPA BNDHBJKKLDJ
@@ -171,7 +171,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG
     {
 		JIKKNHIAEKG = "";
 		LNIMEIMBCMF = false;
-		KGHLOJNCFDO = new List<JANMKFAKHIC>(30);
+		KGHLOJNCFDO_ComboBonus = new List<JANMKFAKHIC_ComboBonus>(30);
 		PDNEMDIEGFB = new List<int>(5);
 		HPEFFMGGIBC = new List<KLJCBKMHKNK>();
 		JKPKJKFJDGL = new List<int>(25);
@@ -242,7 +242,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG
 	protected override void KMBPACJNEOF()
     {
 		FBGGEFFJJHB = (int)(Utility.GetCurrentUnixTime() ^ 0x48f8c5);
-		KGHLOJNCFDO.Clear();
+		KGHLOJNCFDO_ComboBonus.Clear();
 		PDNEMDIEGFB.Clear();
 		HPEFFMGGIBC.Clear();
 		EKONPEGLAND.Clear();
@@ -314,8 +314,363 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG
 	// // RVA: 0xDA2768 Offset: 0xDA2768 VA: 0xDA2768 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO Database Load");
-		MPAMBMKFCKK = 1;
+		IPDBLJMFKHL reader = IPDBLJMFKHL.HEGEKFMJNCC(DBBGALAPFGC);
+		{
+			uint[] array = reader.BEHEPILDEGG;
+			KGHLOJNCFDO_ComboBonus.Clear();
+			for (int i = 0; i < array.Length / 2; i++)
+			{
+				JANMKFAKHIC_ComboBonus data = new JANMKFAKHIC_ComboBonus();
+				data.ADKDHKMPMHP = (int)array[i * 2];
+				data.DHIPGHBJLIL = (int)array[i * 2 + 1];
+				KGHLOJNCFDO_ComboBonus.Add(data);
+			}
+		}
+		{
+			PDNEMDIEGFB.Clear();
+			uint[] array = reader.DHMKKDEKJID;
+			for(int i = 0; i < array.Length; i++)
+			{
+				PDNEMDIEGFB.Add((int)array[i]);
+			}
+		}
+		JKPKJKFJDGL.Clear();
+		PIBHLAMOJNH.Clear();
+		{
+			uint[] array1 = reader.GPCCCPHPDNL;
+			uint[] array2 = reader.BOFDLPNBGOJ;
+			for(int i = 0;i < array1.Length; i++)
+			{
+				JKPKJKFJDGL.Add((int)array1[i]);
+				PIBHLAMOJNH.Add((int)array2[i]);
+			}
+		}
+		{
+			BOAKDBGHGPM src = reader.ELPCGDPJBGB;
+			{
+				int[] array = src.EBIFBMEKEIL;
+				for(int i = 0; i< array.Length; i++)
+				{
+					BFDLLHNGICE.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.OCLBNLOCOPC;
+				for (int i = 0; i < array.Length; i++)
+				{
+					ICNFEDCCODF.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.BGKIIFCGOLI;
+				for (int i = 0; i < array.Length; i++)
+				{
+					NPNCNFKCIAE.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.AFFLGPAJMHC;
+				for (int i = 0; i < array.Length; i++)
+				{
+					HODKHINFHGH.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.NMALAMICDGP;
+				for (int i = 0; i < array.Length; i++)
+				{
+					EKONPEGLAND.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.KNJJPDDBKBA;
+				for (int i = 0; i < array.Length; i++)
+				{
+					ILIEHCECHOA.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.CDNKGPHFIHI;
+				for (int i = 0; i < array.Length; i++)
+				{
+					AOFKIBFPAOD.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.HILOBIHECNN;
+				for (int i = 0; i < array.Length; i++)
+				{
+					FDLBHEMAOLC.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.CDNKGPHFIHI;
+				for (int i = 0; i < array.Length; i++)
+				{
+					MNGGGOOCJBM.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.HILOBIHECNN;
+				for (int i = 0; i < array.Length; i++)
+				{
+					BLEDLGDGBHI.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.DMFAMLPFNPO;
+				for (int i = 0; i < array.Length; i++)
+				{
+					PLGLPDGAADE.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.JPJMMIAFCEO;
+				for (int i = 0; i < array.Length; i++)
+				{
+					IFHAPIJOCOJ.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.NLNNFIEAAPC;
+				for (int i = 0; i < array.Length; i++)
+				{
+					DDLNCIOPBBB.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.KHBEKNAIGEH;
+				for (int i = 0; i < array.Length; i++)
+				{
+					DDGNKEJKJCK.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.PHFNPONOGMK;
+				for (int i = 0; i < array.Length; i++)
+				{
+					KDGGKFOAGAE.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.JECMJBFGMCA;
+				for (int i = 0; i < array.Length; i++)
+				{
+					FBKOFEHDENI.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.AJKDHAADIIP;
+				for (int i = 0; i < array.Length; i++)
+				{
+					KBOIDPDGCLA.Add(array[i]);
+				}
+			}
+			{
+				int[] array = src.NBMPDOGPOPN;
+				for (int i = 0; i < array.Length; i++)
+				{
+					GGAMKBLHGGI.Add(array[i]);
+				}
+			}
+		}
+		{
+			uint[] array = reader.KNDKMLHAONN;
+			for(int i = 0; i < array.Length; i++)
+			{
+				OBLDNPMODOM.Add((int)array[i]);
+			}
+		}
+		{
+			uint[] array1 = reader.AEJPNAKLKED;
+			uint[] array2 = reader.BPGOIALMEBD;
+			for (int i = 0; i < array1.Length; i++)
+			{
+				COKBDFIMOPM.Add((int)array1[i]);
+				CAIAODFECPC.Add((int)array2[i]);
+			}
+		}
+		{
+			uint[] array1 = reader.NBBLIKLDGKL;
+			uint[] array2 = reader.APGFIDEIALK;
+			for (int i = 0; i < array1.Length; i++)
+			{
+				OHNJBOFLCOL.Add((int)array1[i]);
+				KGJDEFCEEAB.Add((int)array2[i]);
+			}
+		}
+		{
+			uint[] array1 = reader.FEKLEAOHIFG;
+			uint[] array2 = reader.DPKOBEEOBFN;
+			for (int i = 0; i < array1.Length; i++)
+			{
+				HHCDCEOJCIH.Add((int)array1[i]);
+				PLMFEFIIBFL.Add((int)array2[i]);
+			}
+		}
+		{
+			uint[] array1 = reader.APJBBOHHFNE;
+			uint[] array2 = reader.CPGHODANBMF;
+			for (int i = 0; i < array1.Length; i++)
+			{
+				IMIMFIKCFMK.Add((int)array1[i]);
+				BGKMMAGPAMJ.Add((int)array2[i]);
+			}
+		}
+		{
+			uint[] array1 = reader.ACGLMKEBMDL;
+			uint[] array2 = reader.KDLGMEBCBAC;
+			for (int i = 0; i < array1.Length; i++)
+			{
+				FIDHHBBINNB.Add((int)array1[i]);
+				MPADAMHJBKK.Add((int)array2[i]);
+			}
+		}
+		{
+			uint[] array1 = reader.JGEIIONMJMI;
+			uint[] array2 = reader.DOAFFAGEHOM;
+			for (int i = 0; i < array1.Length; i++)
+			{
+				HLKHOFPAOMK.Add((int)array1[i]);
+				GEFODCKCCBK.Add((int)array2[i]);
+			}
+		}
+		{
+			uint[] array1 = reader.CMENIBCJJNF;
+			uint[] array2 = reader.BIHJCIGKMBA;
+			for (int i = 0; i < array1.Length; i++)
+			{
+				HLLJIICKNIP.Add((int)array1[i]);
+				ELLLGOHHICG.Add((int)array2[i]);
+			}
+		}
+		{
+			uint[] array1 = reader.KMFHHOANPFH;
+			uint[] array2 = reader.OOBOCLOFPBF;
+			for (int i = 0; i < array1.Length; i++)
+			{
+				FENOHOEIJOE.Add((int)array1[i]);
+				IHMOHBMPMLO.Add((int)array2[i]);
+			}
+		}
+		{
+			uint[] array1 = reader.EHODALENBEL;
+			uint[] array2 = reader.DKAIOCGKJLO;
+			for (int i = 0; i < array1.Length; i++)
+			{
+				LJPKLMJPLAC.Add((int)array1[i]);
+				GJDCMCFCIKD.Add((int)array2[i]);
+			}
+		}
+		{
+			uint[] array1 = reader.ALJIHHGHCOG;
+			uint[] array2 = reader.OIDAMEGDNOF;
+			for (int i = 0; i < array1.Length; i++)
+			{
+				MALHPBKPIDE.Add((int)array1[i]);
+				IIDJCNEOLAL.Add((int)array2[i]);
+			}
+		}
+		{
+			uint[] array = reader.DHJMHKKGIGE;
+			for(int i = 0; i < array.Length; i++)
+			{
+				JJBJKENKAJP.Add((int)array[i]);
+			}
+		}
+		{
+			uint[] array = reader.EGAEODOCBEL;
+			for (int i = 0; i < array.Length; i++)
+			{
+				LLDJIAKLOGC.Add((sbyte)array[i]);
+			}
+		}
+		{
+			uint[] array = reader.EDKOLGMBOAB;
+			for (int i = 0; i < array.Length; i++)
+			{
+				ALPMOLDJJKL.Add((sbyte)array[i]);
+			}
+		}
+		{
+			uint[] array = reader.IFCIFFKIGAM;
+			for (int i = 0; i < array.Length; i++)
+			{
+				PNDCOGFIGJO.Add((sbyte)array[i]);
+				byte[] b = new byte[1];
+				b[0] = 0;
+				for(int j = 0; j < array[i]; j++)
+				{
+					b[j >> 3] |= (byte)(1 << (j & 7));
+				}
+				HFHMMOMMFON.Add(b);
+			}
+		}
+		{
+			uint[] array = reader.KGDFDGPBEBO;
+			for (int i = 0; i < array.Length; i++)
+			{
+				FKLCEJNHKMN.Add((sbyte)array[i]);
+				byte[] b = new byte[15];
+				for(int j = 0; j < 15; j++)
+					b[j] = 0;
+				for (int j = 0; j < array[i]; j++)
+				{
+					b[j >> 3] |= (byte)(1 << (j & 7));
+				}
+				ODEBNEPEDLN.Add(b);
+			}
+		}
+		{
+			uint[] array = reader.NNCLBDOAAJE;
+			for (int i = 0; i < array.Length; i++)
+			{
+				JHPPLIGJFPI.Add((sbyte)array[i]);
+			}
+		}
+		{
+			int[] array = reader.CDGLFHLKOKF;
+			for (int i = 0; i < array.Length; i++)
+			{
+				KDIJDAKMODE.Add(array[i]);
+			}
+		}
+		{
+			int[] array = reader.HJCDMCCIMPI;
+			for (int i = 0; i < array.Length; i++)
+			{
+				AJBKGOPDGFI.Add(array[i]);
+			}
+		}
+		{
+			int[] array = reader.IMBPPBDMDKB;
+			for (int i = 0; i < array.Length; i++)
+			{
+				if (i < array.Length / 2)
+				{
+					DOAAGIMJOMM.Add(array[i]);
+				}
+				else
+				{
+					KMJNLIMMCED.Add(array[i]);
+				}
+			}
+		}
+		IMOBCGKLJJG(reader);
+		GGMGOGCBHDE(reader);
+
+		{
+			int[] array = reader.BLPPPLONCGI;
+			PNEMPHGJLKG = FBGGEFFJJHB ^ array[0];
+			NPEECLODIKB = FBGGEFFJJHB ^ (array[1] == 0 ? 1 : array[1]);
+		}
+		{
+			JMELOFNPNBJ[] array = reader.BHGDNGHDDAC;
+			for(int i = 0; i < array.Length; i++)
+			{
+				OHJFBLFELNK[array[i].LJNAKDMILMC] = array[i].JBGEEPFKIGG;
+			}
+		}
 		return true;
     }
 
@@ -327,13 +682,98 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG
 	}
 
 	// // RVA: 0xDA4E98 Offset: 0xDA4E98 VA: 0xDA4E98
-	// private bool IMOBCGKLJJG(IPDBLJMFKHL GKNHGLCNBIJ) { }
+	private bool IMOBCGKLJJG(IPDBLJMFKHL GKNHGLCNBIJ)
+	{
+		INFBDFJLCPJ data = GKNHGLCNBIJ.GIAGNPBBPAD;
+		{
+			int[] array = data.OOKGKIONGJF;
+			for(int i = 0;i < array.Length; i++)
+			{
+				CPNJJKDKNOO.Add(array[i]);
+			}
+		}
+		List<int> l = new List<int>();
+		{
+			uint[] array = data.PGLELFPNOPI;
+			for (int i = 0; i < array.Length; i++)
+			{
+				l.Add((int)array[i]);
+			}
+			LECAOCJCEKF = l[0];
+			IHIONKFAAED = l[1];
+			HHPJIALEPEE = l[2];
+			BCCKJLPNJJM = l[3];
+			CIFKMCKFMOA = l[4];
+		}
+		{
+			uint[] array = data.LHICAPGLBOF;
+			for (int i = 0; i < array.Length; i++)
+			{
+				EONACOOGKCA.Add((int)array[i]);
+			}
+		}
+		l.Clear();
+		{
+			uint[] array = data.LCFIHFMFICM;
+			for (int i = 0; i < array.Length; i++)
+			{
+				l.Add((int)array[i]);
+			}
+			FLPKPBECPOD = l[0];
+			NELJPDJEKNM = l[1];
+			MPAMBMKFCKK = l[2];
+			IJDBNKCLGIC = l[3];
+			GLMKBFEHPLA = l[4];
+			LPDACKNMGNK = l[5];
+		}
+		EDCJLGMBGCH.Clear();
+		{
+			uint[] array = data.PPAOHBBEPKK;
+			for (int i = 0; i < array.Length; i++)
+			{
+				EDCJLGMBGCH.Add((int)array[i]);
+			}
+		}
+		DFEAPKGAGMN.Clear();
+		{
+			int[] array = data.BABAGPKAONA;
+			for (int i = 0; i < array.Length; i++)
+			{
+				DFEAPKGAGMN.Add(array[i]);
+			}
+		}
+		return true;
+	}
 
 	// // RVA: 0xDA6DDC Offset: 0xDA6DDC VA: 0xDA6DDC
 	// private bool IMOBCGKLJJG(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int KAPMOPMDHJE, ref bool NGJDHLGMHMH) { }
 
 	// // RVA: 0xDA5614 Offset: 0xDA5614 VA: 0xDA5614
-	// private bool GGMGOGCBHDE(IPDBLJMFKHL GKNHGLCNBIJ) { }
+	private bool GGMGOGCBHDE(IPDBLJMFKHL GKNHGLCNBIJ)
+	{
+		KHDOHBDIJOC[] array_data = GKNHGLCNBIJ.BEKOPEJPACJ;
+		for(int i = 0; i < array_data.Length; i++)
+		{
+			KLJCBKMHKNK data = new KLJCBKMHKNK();
+			data.PPFNGGCBJKC_Id = (int)array_data[i].PPFNGGCBJKC;
+			for(int j = 0; j < array_data[i].EAOPGELMIHB.Length; j++)
+			{
+				EGLJKICMCPG data2 = new EGLJKICMCPG();
+				data2.PHGLKBPLFDH = (short)array_data[i].EAOPGELMIHB[j].FBHMAIEDEGJ;
+				data2.GKPPCFMBANO = (short)array_data[i].EAOPGELMIHB[j].JPHMLLIBLGG;
+				data2.MPPANPOOIIB = (short)array_data[i].EAOPGELMIHB[j].ABNMKJGNKFO;
+				data2.DAPGDCPDCNA = (short)array_data[i].EAOPGELMIHB[j].KPECMLFDLOI;
+				data2.MDDMKHJNCBO = new short[array_data[i].EAOPGELMIHB[j].LEJHEGIMCCL.Length];
+				for(int k = 0; k < array_data[i].EAOPGELMIHB[j].LEJHEGIMCCL.Length; k++)
+				{
+					data2.MDDMKHJNCBO[k] = (short)array_data[i].EAOPGELMIHB[j].LEJHEGIMCCL[k];
+				}
+				data.CDENCMNHNGA.Add(data2);
+			}
+			HPEFFMGGIBC.Add(data);
+		}
+		return true;
+	}
 
 	// // RVA: 0xDA7398 Offset: 0xDA7398 VA: 0xDA7398
 	// private bool GGMGOGCBHDE(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int KAPMOPMDHJE, ref bool NGJDHLGMHMH) { }
@@ -496,7 +936,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG
 	// private void <Deserialize>b__245_35(int OIPCCBHIKIA, int JBGEEPFKIGG) { }
 }
 
-public class JANMKFAKHIC
+public class JANMKFAKHIC_ComboBonus
 {
 	public int ADKDHKMPMHP; // 0x8
 	public int DHIPGHBJLIL; // 0xC

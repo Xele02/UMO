@@ -1,6 +1,7 @@
 using UnityEngine;
 using XeApp.Game.Common;
 using TMPro;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -16,12 +17,17 @@ namespace XeApp.Game.Menu
 		private TextMeshProUGUI[] m_sortText = new TextMeshProUGUI[2]; // 0x18
 		private bool m_isEntered; // 0x1C
 
-		// public Action OnClickButtonListener { private get; set; } // 0x20
+		public Action OnClickButtonListener { private get; set; } // 0x20
 
 		// // RVA: 0xBE159C Offset: 0xBE159C VA: 0xBE159C
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			m_button.AddOnClickCallback(() =>
+			{
+				//0xBE1AA8
+				if (OnClickButtonListener != null)
+					OnClickButtonListener();
+			});
 		}
 
 		// // RVA: 0xBE1644 Offset: 0xBE1644 VA: 0xBE1644
@@ -60,9 +66,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xBE19E4 Offset: 0xBE19E4 VA: 0xBE19E4
 		// public void SetButtonEnable(bool isEnable) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5C44 Offset: 0x6F5C44 VA: 0x6F5C44
-		// // RVA: 0xBE1AA8 Offset: 0xBE1AA8 VA: 0xBE1AA8
-		// private void <Awake>b__10_0() { }
 	}
 }

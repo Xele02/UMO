@@ -50,8 +50,8 @@ namespace XeApp.Game.Menu
 			{
 				if(m_capacity > 0)
 				{
-					m_createCount++;
 					res.CreateCount = m_createCount;
+					m_createCount++;
 				}
 				if(callBack != null)
 					callBack(res);
@@ -136,7 +136,8 @@ namespace XeApp.Game.Menu
 			icon.Material = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
 			icon.BaseTexture = info.Operation.GetAsset<Texture2D>(name+"_base");
 			icon.MaskTexture = info.Operation.GetAsset<Texture2D>(name+"_mask");
-			icon.CreateCount++;
+			icon.CreateCount = m_createCount;
+			m_createCount++;
 		}
 
 		// // RVA: 0x13DCE74 Offset: 0x13DCE74 VA: 0x13DCE74
@@ -149,7 +150,14 @@ namespace XeApp.Game.Menu
 		// protected void SetupForSplitTextureBias(IconTextureLodingInfo info, IiconTexture icon, Texture2D maskTexture, float mipmapBias) { }
 
 		// // RVA: 0x13DDB7C Offset: 0x13DDB7C VA: 0x13DDB7C
-		// protected void SetupForSingleTexture(IconTextureLodingInfo info, IiconTexture icon) { }
+		protected void SetupForSingleTexture(IconTextureLodingInfo info, IiconTexture icon)
+		{
+			icon.Material = new Material(Shader.Find("XeSys/Unlit/Transparent"));
+			icon.BaseTexture = info.Operation.GetAsset<Texture2D>(Path.GetFileNameWithoutExtension(info.Path));
+			icon.MaskTexture = null;
+			icon.CreateCount = m_createCount;
+			m_createCount++;
+		}
 
 		// // RVA: 0x13DC66C Offset: 0x13DC66C VA: 0x13DC66C
 		// public ulong GetCreateCountAndIncrement() { }

@@ -919,7 +919,7 @@ namespace XeApp.Game.Menu
 			{
 				if(selectMusicListData.IsSimulation)
 				{
-					if(selectMusicListData.ViewMusic.EKANGPODCEP != m_eventCtrl.PGIIDPEGGPI)
+					if(selectMusicListData.ViewMusic.EKANGPODCEP != m_eventCtrl.PGIIDPEGGPI || !m_isEventTimeLimit)
 					{
 						ApplyRemainTime(m_musicDetail, selectMusicData.ALMOMLMCHNA_OtherEndTime, VerticalMusicSelectMusicDetail.MusicRemainTimeType.Other, null);
 						m_musicSelectUISapporter.SetDetailEventType(true, VerticalMusicSelectMusicDetail.MusicRemainTimeType.Other, true);

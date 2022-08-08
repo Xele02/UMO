@@ -74,7 +74,7 @@ public class JEPBIIJDGEF_EventInfo
 	public IKDICBBFBMI_EventBase MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/, bool BJIOJJDLODJ = false)
 	{
 		UnityEngine.Debug.LogError("TODO MKBJOOAILBB");
-		return null;
+		return new HAEDCCLHEMN_EventBattle("");
 	}
 
 	// // RVA: 0x1C39848 Offset: 0x1C39848 VA: 0x1C39848
