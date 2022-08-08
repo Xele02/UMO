@@ -1,5 +1,6 @@
 
-public class CCPKHBECNLH : KLFDBFMNLBL
+public class CCPKHBECNLH { }
+public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;
@@ -15,7 +16,7 @@ public class CCPKHBECNLH : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x190A2E4 Offset: 0x190A2E4 VA: 0x190A2E4
-	public CCPKHBECNLH()
+	public CCPKHBECNLH_EventBattle()
 	{
 		LHPDDGIJKNB_Reset();
 	}

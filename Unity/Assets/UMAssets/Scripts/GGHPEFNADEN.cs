@@ -1,5 +1,6 @@
 
-public class GGHPEFNADEN : KLFDBFMNLBL
+public class GGHPEFNADEN { }
+public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int ECDKBNNCHJB = 7;
@@ -23,7 +24,7 @@ public class GGHPEFNADEN : KLFDBFMNLBL
 	// public List<string> HOFACDIBDLM() { }
 
 	// // RVA: 0xAA1544 Offset: 0xAA1544 VA: 0xAA1544
-	public GGHPEFNADEN()
+	public GGHPEFNADEN_Ticket()
 	{
 		LHPDDGIJKNB_Reset();
 	}

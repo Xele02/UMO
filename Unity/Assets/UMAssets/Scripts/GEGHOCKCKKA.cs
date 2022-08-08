@@ -1,5 +1,6 @@
 
-public class GEGHOCKCKKA : KLFDBFMNLBL
+public class GEGHOCKCKKA { }
+public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public const int HAKDOMMLLJP = 99999999;
@@ -32,7 +33,7 @@ public class GEGHOCKCKKA : KLFDBFMNLBL
 	// public List<NKFJNAANPNP.MOJLCADLMKH> BNGLMLIMFDM(int PPFNGGCBJKC, long JHNMKKNEENE) { }
 
 	// // RVA: 0x16BA850 Offset: 0x16BA850 VA: 0x16BA850
-	public GEGHOCKCKKA()
+	public GEGHOCKCKKA_LimitedCompoItem()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

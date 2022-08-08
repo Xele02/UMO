@@ -5,7 +5,7 @@ public class IFBCGCCJBHI
 	private MCGNOFMAPBJ BPLOEAHOPFI; // 0x8
 	// private JKNNIKNKMNJ IOCLFHJLHLE; // 0xC
 	private StringBuilder KOHNLDKIKPC = new StringBuilder(80); // 0x10
-	private EGOLBAPFHHD KCCLEHLLOFG; // 0x14
+	private EGOLBAPFHHD_Common KCCLEHLLOFG; // 0x14
 	private long KLDBCKIJACO = -1; // 0x18
 	private long NFKMOHGLPAO = -1; // 0x20
 	public int EGJCFJLAKMO = -1; // 0x34
@@ -45,9 +45,9 @@ public class IFBCGCCJBHI
     {
         if(KCCLEHLLOFG == null)
         {
-            if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG != null)
+            if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common != null)
             {
-                KCCLEHLLOFG = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG;
+                KCCLEHLLOFG = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common;
             }
         }
         IGHDEGMBPKI();

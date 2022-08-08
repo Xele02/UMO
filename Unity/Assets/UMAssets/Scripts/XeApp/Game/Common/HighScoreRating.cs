@@ -5,7 +5,7 @@ namespace XeApp.Game.Common
 		public const int LIST_UTA_GRADE_MIN = 25;
 		public const int LIST_UTA_GRADE_NOWPLUS = 2;
 		public const int HSR_RANKING_NUM = 10;
-		public HighScoreRating.HSRatingData[,] hsRatingMusicData; // 0x10
+		//public HighScoreRating.HSRatingData[,] hsRatingMusicData; // 0x10
 
 		public int[] rateAttr { get; private set; } // 0x8
 		public int rateTotal { get; private set; } // 0xC

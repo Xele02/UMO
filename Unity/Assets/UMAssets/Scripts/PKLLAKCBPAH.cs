@@ -1,5 +1,6 @@
 
-public class PKLLAKCBPAH : KLFDBFMNLBL
+public class PKLLAKCBPAH { }
+public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// private int ENOBDCFHELD; // 0x24
@@ -12,7 +13,7 @@ public class PKLLAKCBPAH : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x93EF90 Offset: 0x93EF90 VA: 0x93EF90
-	public PKLLAKCBPAH()
+	public PKLLAKCBPAH_DecoPublicInfo()
 	{
 		KMBPACJNEOF();
 	}

@@ -1,5 +1,6 @@
 
-public class LGGPBMPINDL : KLFDBFMNLBL
+public class LGGPBMPINDL { }
+public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public int MEBHCFJCKFE; // 0x24
@@ -16,7 +17,7 @@ public class LGGPBMPINDL : KLFDBFMNLBL
 	// public bool IPLBEGCODDC(int EKANGPODCEP) { }
 
 	// // RVA: 0xD73990 Offset: 0xD73990 VA: 0xD73990
-	public LGGPBMPINDL()
+	public LGGPBMPINDL_EventRaidPlayer()
 	{
 		KMBPACJNEOF();
 	}

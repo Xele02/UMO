@@ -1,5 +1,6 @@
 
-public class NILOACEHJKJ : KLFDBFMNLBL
+public class NILOACEHJKJ { }
+public class NILOACEHJKJ_EventSP : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;
@@ -17,7 +18,7 @@ public class NILOACEHJKJ : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x18A1B38 Offset: 0x18A1B38 VA: 0x18A1B38
-	public NILOACEHJKJ()
+	public NILOACEHJKJ_EventSP()
 	{
 		LHPDDGIJKNB_Reset();
 	}

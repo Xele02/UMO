@@ -1,5 +1,6 @@
 
-public class NFMHCLHEMHB : KLFDBFMNLBL
+public class NFMHCLHEMHB { }
+public class NFMHCLHEMHB_Bingo : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0
@@ -17,7 +18,7 @@ public class NFMHCLHEMHB : KLFDBFMNLBL
 	// public NFMHCLHEMHB.CCGKCGJKADC EACEMMDIPFD() { }
 
 	// // RVA: 0x1AEA574 Offset: 0x1AEA574 VA: 0x1AEA574
-	public NFMHCLHEMHB()
+	public NFMHCLHEMHB_Bingo()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

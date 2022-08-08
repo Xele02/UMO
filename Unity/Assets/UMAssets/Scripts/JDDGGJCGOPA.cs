@@ -1,7 +1,8 @@
 
 using System.Collections.Generic;
 
-public class JDDGGJCGOPA : KLFDBFMNLBL
+public class JDDGGJCGOPA { }
+public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_SaveBlock
 {
 	public class EHFMCGGNPIJ
 	{
@@ -131,14 +132,14 @@ public class JDDGGJCGOPA : KLFDBFMNLBL
 	// public const int KKBHHBGCNJO = 5;
 	// public const int ACBHDLAIIMD = 99999;
 
-	public List<JDDGGJCGOPA.EHFMCGGNPIJ> FAMANJGJANN { get; private set; } // 0x24 LHMENNHFMJH GHOMEFLHMMH FPFABLHNHFK
+	public List<JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ> FAMANJGJANN { get; private set; } // 0x24 LHMENNHFMJH GHOMEFLHMMH FPFABLHNHFK
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x1C238B4 Offset: 0x1C238B4 VA: 0x1C238B4
 	// public JDDGGJCGOPA.EHFMCGGNPIJ GCINIJEMHFK(int ADHMMMEOJMK) { }
 
 	// // RVA: 0x1C23978 Offset: 0x1C23978 VA: 0x1C23978
-	public JDDGGJCGOPA()
+	public JDDGGJCGOPA_RecordMusic()
 	{
 		FAMANJGJANN = new List<EHFMCGGNPIJ>(2000);
 		KMBPACJNEOF();
@@ -150,7 +151,7 @@ public class JDDGGJCGOPA : KLFDBFMNLBL
 		FAMANJGJANN.Clear();
 		for(int i = 0; i < 2000; i++)
 		{
-			JDDGGJCGOPA.EHFMCGGNPIJ data = new JDDGGJCGOPA.EHFMCGGNPIJ();
+			JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ data = new JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ();
 			data.FDMENECIKEL = i;
 			FAMANJGJANN.Add(data);
 		}

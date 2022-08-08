@@ -1,7 +1,8 @@
 
 using System.Collections.Generic;
 
-public class MMPBPOIFDAF : KLFDBFMNLBL
+public class MMPBPOIFDAF { }
+public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_SaveBlock
 {
 	public class PMKOFEIONEG
 	{
@@ -124,7 +125,7 @@ public class MMPBPOIFDAF : KLFDBFMNLBL
 	private const int CPDDEFMBHOM = 6000;
 	private const int JBCJOLMDAOD = 100;
 
-	public List<MMPBPOIFDAF.PMKOFEIONEG> OPIBAPEGCLA { get; private set; } // 0x24 OAKOEGLENEJ KHGLIMIOIEJ HELEKCPEPLE
+	public List<MMPBPOIFDAF_Scene.PMKOFEIONEG> OPIBAPEGCLA { get; private set; } // 0x24 OAKOEGLENEJ KHGLIMIOIEJ HELEKCPEPLE
 	// public override bool DMICHEJIAJL { get; } ??
 
 	// // RVA: 0x1969998 Offset: 0x1969998 VA: 0x1969998
@@ -168,7 +169,7 @@ public class MMPBPOIFDAF : KLFDBFMNLBL
 	// public int JPFAAHCMCEO() { }
 
 	// // RVA: 0x196BD54 Offset: 0x196BD54 VA: 0x196BD54
-	public MMPBPOIFDAF()
+	public MMPBPOIFDAF_Scene()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

@@ -1,5 +1,6 @@
 
-public class MKNIBACMCDO : KLFDBFMNLBL
+public class MKNIBACMCDO { }
+public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int FBBENLHJFKO = 5;
@@ -10,7 +11,7 @@ public class MKNIBACMCDO : KLFDBFMNLBL
 	// public int HODDNKENKHD { get; set; } EMLKHGADCIE 0x195AB08 LAGDPCMEBOD 0x195AB18
 
 	// // RVA: 0x195AA5C Offset: 0x195AA5C VA: 0x195AA5C
-	public MKNIBACMCDO()
+	public MKNIBACMCDO_AssistPlate()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

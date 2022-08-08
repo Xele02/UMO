@@ -1,5 +1,6 @@
 
-public class DAJBODHMLAB : KLFDBFMNLBL
+public class DAJBODHMLAB { }
+public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public DAJBODHMLAB.MMLACIFMNBN LJMCPFACDGJ; // 0x24
@@ -10,7 +11,7 @@ public class DAJBODHMLAB : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x1769700 Offset: 0x1769700 VA: 0x1769700
-	public DAJBODHMLAB()
+	public DAJBODHMLAB_DecoPublicSet()
 	{
 		LHPDDGIJKNB_Reset();
 	}

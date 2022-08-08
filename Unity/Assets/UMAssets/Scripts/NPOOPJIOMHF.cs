@@ -1,7 +1,8 @@
 
 using System.Collections.Generic;
 
-public class NPOOPJIOMHF : KLFDBFMNLBL
+public class NPOOPJIOMHF { }
+public class NPOOPJIOMHF_Prism : KLFDBFMNLBL_SaveBlock
 {
 	public class CLGGEONAHPL_TeamSelectionSetting
 	{
@@ -47,11 +48,11 @@ public class NPOOPJIOMHF : KLFDBFMNLBL
 	// private const int ECFEMKGFDCE = 3;
 	// public static string POFDDFCGEGP = "_"; // 0x0
 
-	public List<NPOOPJIOMHF.CLGGEONAHPL_TeamSelectionSetting> AHBBMJANGHE_TeamSelectionBySongs { get; private set; } // 0x24 DLDLMEDGOBA MELKCNPOKKB CEGODGDEJGN
+	public List<NPOOPJIOMHF_Prism.CLGGEONAHPL_TeamSelectionSetting> AHBBMJANGHE_TeamSelectionBySongs { get; private set; } // 0x24 DLDLMEDGOBA MELKCNPOKKB CEGODGDEJGN
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x1CB6740 Offset: 0x1CB6740 VA: 0x1CB6740
-	public NPOOPJIOMHF.CLGGEONAHPL_TeamSelectionSetting GCINIJEMHFK(int PPFNGGCBJKC)
+	public NPOOPJIOMHF_Prism.CLGGEONAHPL_TeamSelectionSetting GCINIJEMHFK_GetTeamForSong(int PPFNGGCBJKC)
 	{
 		int index = 0;
 		if(PPFNGGCBJKC > 0)
@@ -63,7 +64,7 @@ public class NPOOPJIOMHF : KLFDBFMNLBL
 	// public bool DFIGPDCBAPB(int PPFNGGCBJKC) { }
 
 	// // RVA: 0x1CB6A28 Offset: 0x1CB6A28 VA: 0x1CB6A28
-	public NPOOPJIOMHF()
+	public NPOOPJIOMHF_Prism()
 	{
 		AHBBMJANGHE_TeamSelectionBySongs = new List<CLGGEONAHPL_TeamSelectionSetting>(300);
 		KMBPACJNEOF();
@@ -75,7 +76,7 @@ public class NPOOPJIOMHF : KLFDBFMNLBL
 		AHBBMJANGHE_TeamSelectionBySongs.Clear();
 		for(int i = 0; i <= 299; i++)
 		{
-			NPOOPJIOMHF.CLGGEONAHPL_TeamSelectionSetting data = new NPOOPJIOMHF.CLGGEONAHPL_TeamSelectionSetting();
+			NPOOPJIOMHF_Prism.CLGGEONAHPL_TeamSelectionSetting data = new NPOOPJIOMHF_Prism.CLGGEONAHPL_TeamSelectionSetting();
 			data.PPFNGGCBJKC = i+1;
 			data.OCAMDLMPBGA_SelectedDivaSoloId = 0;
 			data.PGCEGEJOOON_SelectedCostumeSoloId = 0;

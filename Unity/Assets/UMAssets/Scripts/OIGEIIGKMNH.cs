@@ -1,5 +1,6 @@
 
-public class OIGEIIGKMNH : KLFDBFMNLBL
+public class OIGEIIGKMNH { }
+public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0
@@ -26,7 +27,7 @@ public class OIGEIIGKMNH : KLFDBFMNLBL
 	// public int NBFPEPBFEHI(int PPFNGGCBJKC, JPIANKEOOMB PEOALFEGNDH) { }
 
 	// // RVA: 0x1DE3A98 Offset: 0x1DE3A98 VA: 0x1DE3A98
-	public OIGEIIGKMNH()
+	public OIGEIIGKMNH_Valkyrie()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

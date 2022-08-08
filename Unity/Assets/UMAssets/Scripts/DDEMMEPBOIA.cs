@@ -1,5 +1,6 @@
 
-public class DDEMMEPBOIA : KLFDBFMNLBL
+public class DDEMMEPBOIA { }
+public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0
@@ -8,7 +9,7 @@ public class DDEMMEPBOIA : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x1771C6C Offset: 0x1771C6C VA: 0x1771C6C
-	public DDEMMEPBOIA()
+	public DDEMMEPBOIA_Sns()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

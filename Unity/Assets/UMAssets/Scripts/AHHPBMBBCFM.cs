@@ -1,5 +1,6 @@
 
-public class AHHPBMBBCFM : KLFDBFMNLBL
+public class AHHPBMBBCFM { }
+public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public const int FIKANMEAEIF = 5;
@@ -11,7 +12,7 @@ public class AHHPBMBBCFM : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x15C6EF8 Offset: 0x15C6EF8 VA: 0x15C6EF8
-	public AHHPBMBBCFM()
+	public AHHPBMBBCFM_DecoPrivateSet()
 	{
 		LHPDDGIJKNB_Reset();
 	}

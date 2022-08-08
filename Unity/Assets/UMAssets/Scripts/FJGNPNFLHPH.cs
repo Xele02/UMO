@@ -1,5 +1,6 @@
 
-public class FJGNPNFLHPH : KLFDBFMNLBL
+public class FJGNPNFLHPH { }
+public class FJGNPNFLHPH_EventCollection : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;
@@ -15,7 +16,7 @@ public class FJGNPNFLHPH : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x14E9B00 Offset: 0x14E9B00 VA: 0x14E9B00
-	public FJGNPNFLHPH()
+	public FJGNPNFLHPH_EventCollection()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

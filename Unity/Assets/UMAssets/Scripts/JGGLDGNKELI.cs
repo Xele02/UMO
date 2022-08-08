@@ -1,5 +1,6 @@
 
-public class JGGLDGNKELI : KLFDBFMNLBL
+public class JGGLDGNKELI { }
+public class JGGLDGNKELI_Emblem : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0
@@ -8,7 +9,7 @@ public class JGGLDGNKELI : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0xB16538 Offset: 0xB16538 VA: 0xB16538
-	public JGGLDGNKELI()
+	public JGGLDGNKELI_Emblem()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

@@ -1,5 +1,6 @@
 
-public class OCLHKHAMDHF : KLFDBFMNLBL
+public class OCLHKHAMDHF { }
+public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0
@@ -17,7 +18,7 @@ public class OCLHKHAMDHF : KLFDBFMNLBL
 	// public void BOAIINJHENE() { }
 
 	// // RVA: 0x1B2CDD4 Offset: 0x1B2CDD4 VA: 0x1B2CDD4
-	public OCLHKHAMDHF()
+	public OCLHKHAMDHF_Episode()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

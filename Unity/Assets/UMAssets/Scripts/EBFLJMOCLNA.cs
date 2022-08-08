@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using XeApp.Game.Common;
 
-public class EBFLJMOCLNA : KLFDBFMNLBL
+public class EBFLJMOCLNA { }
+public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_SaveBlock
 {
 	public class ILFJDCICIKN // TypeDefIndex: 9373
 	{
@@ -106,7 +107,7 @@ public class EBFLJMOCLNA : KLFDBFMNLBL
 	// public const int PADPOGKDNDP = 500;
 	private int JLFONLABECA; // 0x28
 
-	public List<EBFLJMOCLNA.ILFJDCICIKN> FABAGMLEKIB { get; private set; } = new List<ILFJDCICIKN>(500); // 0x24 PICMGGDAMCD NGJACJFHBKM NEHGIPDDKNG
+	public List<EBFLJMOCLNA_Costume.ILFJDCICIKN> FABAGMLEKIB { get; private set; } = new List<ILFJDCICIKN>(500); // 0x24 PICMGGDAMCD NGJACJFHBKM NEHGIPDDKNG
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x14F6B90 Offset: 0x14F6B90 VA: 0x14F6B90
@@ -162,7 +163,7 @@ public class EBFLJMOCLNA : KLFDBFMNLBL
 	// public int LMLGEDEJCJO(int PPFNGGCBJKC, LCLCCHLDNHJ MFPNGNMFEAL, bool HGIKOKNMMDH = True) { }
 
 	// // RVA: 0x14F8EB0 Offset: 0x14F8EB0 VA: 0x14F8EB0
-	public EBFLJMOCLNA()
+	public EBFLJMOCLNA_Costume()
 	{
 		KMBPACJNEOF();
 	}

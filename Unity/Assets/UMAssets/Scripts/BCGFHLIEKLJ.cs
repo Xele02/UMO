@@ -1,5 +1,6 @@
 
-public class BCGFHLIEKLJ : KLFDBFMNLBL
+public class BCGFHLIEKLJ { }
+public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 3;
 	// private const string POFDDFCGEGP = "_";
@@ -31,7 +32,7 @@ public class BCGFHLIEKLJ : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; } // ??
 
 	// // RVA: 0xF2A574 Offset: 0xF2A574 VA: 0xF2A574
-	public BCGFHLIEKLJ()
+	public BCGFHLIEKLJ_DecoItem()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

@@ -1,5 +1,6 @@
 
-public abstract class KLFDBFMNLBL
+public abstract class KLFDBFMNLBL { }
+public abstract class KLFDBFMNLBL_SaveBlock
 {
 	public bool LLBJFFFJEPJ; // 0x8
 	public long FJMOAAPNCJI = -1; // 0x10
@@ -13,7 +14,7 @@ public abstract class KLFDBFMNLBL
 	// public virtual bool DMICHEJIAJL { get; } // ?
 
 	// // RVA: 0x1A0BBE8 Offset: 0x1A0BBE8 VA: 0x1A0BBE8
-	public KLFDBFMNLBL() 
+	public KLFDBFMNLBL_SaveBlock() 
 	{
 		JIKKNHIAEKG = "";
 		MCNELPPHFKJ = true;

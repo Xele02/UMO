@@ -125,9 +125,9 @@ namespace XeApp.Game.Menu
 				m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
 			
 			m_isEndPresetCanvas = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5) <= 
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG.KIECDDFNCAN;
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 
-			m_simulationButton.SetTicketNum(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG.GKKDNOFMJJN);
+			m_simulationButton.SetTicketNum(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.GKKDNOFMJJN_NumTicket);
 			Database.Instance.bonusData.ClearEpisodeBonus();
 			if(m_pickupFreeMusicId > 0)
 				var1 = m_pickupFreeMusicId;

@@ -1,5 +1,6 @@
 
-public class JBMPOAAMGNB : KLFDBFMNLBL
+public class JBMPOAAMGNB { }
+public class JBMPOAAMGNB_Base : KLFDBFMNLBL_SaveBlock
 {
 	private const int ECFEMKGFDCE = 2;
 	private const int JDNKJIFMONK = 1;
@@ -17,7 +18,7 @@ public class JBMPOAAMGNB : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get { UnityEngine.Debug.LogError("TODO"); } } 
 
 	// // RVA: 0x142163C Offset: 0x142163C VA: 0x142163C
-	public JBMPOAAMGNB()
+	public JBMPOAAMGNB_Base()
 	{
 		KMBPACJNEOF();
 	}

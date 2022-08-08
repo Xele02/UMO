@@ -1,5 +1,6 @@
 
-public class BAHFBCEPFGP : KLFDBFMNLBL
+public class BAHFBCEPFGP { }
+public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// private const int JDOFFDAJGBO = 300;

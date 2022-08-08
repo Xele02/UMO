@@ -1,5 +1,6 @@
 
-public class OKLMJPBJHKL : KLFDBFMNLBL
+public class OKLMJPBJHKL { }
+public class OKLMJPBJHKL_EventMission : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;
@@ -15,7 +16,7 @@ public class OKLMJPBJHKL : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x14A4304 Offset: 0x14A4304 VA: 0x14A4304
-	public OKLMJPBJHKL()
+	public OKLMJPBJHKL_EventMission()
 	{
 		LHPDDGIJKNB_Reset();
 	}

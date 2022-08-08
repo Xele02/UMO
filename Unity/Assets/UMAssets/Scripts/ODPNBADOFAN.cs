@@ -1,5 +1,6 @@
 
-public class ODPNBADOFAN : KLFDBFMNLBL
+public class ODPNBADOFAN { }
+public class ODPNBADOFAN_Quest : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0
@@ -18,7 +19,7 @@ public class ODPNBADOFAN : KLFDBFMNLBL
 	// public int KJJJNMHNMCG(DHOJHGODBAB MHGPMMIDKMM) { }
 
 	// // RVA: 0x1B39890 Offset: 0x1B39890 VA: 0x1B39890
-	public ODPNBADOFAN()
+	public ODPNBADOFAN_Quest()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

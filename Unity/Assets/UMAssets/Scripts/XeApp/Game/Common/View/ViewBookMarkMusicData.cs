@@ -13,7 +13,7 @@ namespace XeApp.Game.Common.View
 			bool res = false;
 			for(int i = 0; i < 3; i++)
 			{
-				res |= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG.KNKGEALPDGF(DLAEJOBELBH, i);
+				res |= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.KNKGEALPDGF_GetBookmark(DLAEJOBELBH, i);
 			}
 			return res;
 		}

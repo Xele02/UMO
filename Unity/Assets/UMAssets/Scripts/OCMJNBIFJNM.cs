@@ -1,5 +1,6 @@
 
-public class OCMJNBIFJNM : KLFDBFMNLBL
+public class OCMJNBIFJNM { }
+public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_SaveBlock
 {
 	private const int ECFEMKGFDCE = 2;
 	private const int ENOBDCFHELD = 1967760659;
@@ -74,7 +75,7 @@ public class OCMJNBIFJNM : KLFDBFMNLBL
 	// public void ALANKFMEIPK(int IOPHIHFOOEP, int JBGEEPFKIGG) { }
 
 	// // RVA: 0x1B31A78 Offset: 0x1B31A78 VA: 0x1B31A78
-	public OCMJNBIFJNM()
+	public OCMJNBIFJNM_Offer()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

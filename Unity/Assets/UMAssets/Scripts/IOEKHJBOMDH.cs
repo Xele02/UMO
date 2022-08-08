@@ -1,5 +1,6 @@
 
-public class IOEKHJBOMDH : KLFDBFMNLBL
+public class IOEKHJBOMDH { }
+public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 3;
 	// private const string POFDDFCGEGP = "_";
@@ -20,7 +21,7 @@ public class IOEKHJBOMDH : KLFDBFMNLBL
 	// public bool HOAKPBBIGPK(IHFIAFDLAAK GAPONCJOKAC, int PPFNGGCBJKC) { }
 
 	// // RVA: 0xA029B4 Offset: 0xA029B4 VA: 0xA029B4
-	public IOEKHJBOMDH()
+	public IOEKHJBOMDH_DecoStamp()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

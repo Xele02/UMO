@@ -1,5 +1,6 @@
 
-public class BMIODFJCGAJ : KLFDBFMNLBL
+public class BMIODFJCGAJ { }
+public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_SaveBlock
 {
 	// public const int ECFEMKGFDCE = 2;
 	// private const int OIEOCBIJLDC = 10;
@@ -36,7 +37,7 @@ public class BMIODFJCGAJ : KLFDBFMNLBL
 	// public void KHEKNNFCAOI_Init(int GPLGIGCNNAD, string LJNAKDMILMC, string OPFGFINHFCE) { }
 
 	// // RVA: 0x19C8378 Offset: 0x19C8378 VA: 0x19C8378
-	public BMIODFJCGAJ()
+	public BMIODFJCGAJ_EventBattlePlayer()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-public class FKNOCGCODBK : KLFDBFMNLBL
+public class FKNOCGCODBK { }
+public class FKNOCGCODBK_Unit : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 3;
 	private List<CIFHILOJJFC> AHBBMJANGHE; // 0x24
@@ -19,7 +20,7 @@ public class FKNOCGCODBK : KLFDBFMNLBL
 	// public CIFHILOJJFC FJDDNKGHPHN() { }
 
 	// // RVA: 0x118F4A4 Offset: 0x118F4A4 VA: 0x118F4A4
-	public FKNOCGCODBK()
+	public FKNOCGCODBK_Unit()
 	{
 		AHBBMJANGHE = new List<CIFHILOJJFC>(16);
 		KMBPACJNEOF();

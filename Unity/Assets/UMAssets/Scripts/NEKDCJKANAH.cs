@@ -1,5 +1,6 @@
 
-public class NEKDCJKANAH : KLFDBFMNLBL
+public class NEKDCJKANAH { }
+public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0
@@ -24,7 +25,7 @@ public class NEKDCJKANAH : KLFDBFMNLBL
 	// public void NDANPOKGFAN() { }
 
 	// // RVA: 0x1AE6A30 Offset: 0x1AE6A30 VA: 0x1AE6A30
-	public NEKDCJKANAH()
+	public NEKDCJKANAH_StoryRecord()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

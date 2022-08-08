@@ -1,5 +1,6 @@
 
-public class KDLBHAKPLPH : KLFDBFMNLBL
+public class KDLBHAKPLPH { }
+public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// private const int KDNHEMPAGIE = 100;
@@ -9,7 +10,7 @@ public class KDLBHAKPLPH : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0xE7B884 Offset: 0xE7B884 VA: 0xE7B884
-	public KDLBHAKPLPH()
+	public KDLBHAKPLPH_ArMarker()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

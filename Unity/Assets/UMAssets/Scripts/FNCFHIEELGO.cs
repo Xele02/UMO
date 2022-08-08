@@ -1,5 +1,6 @@
 
-public class FNCFHIEELGO : KLFDBFMNLBL
+public class FNCFHIEELGO { }
+public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public List<NDBFKHKMMCE.FKIMJLOFONM> MPPKMEIEGFE; // 0x24
@@ -31,7 +32,7 @@ public class FNCFHIEELGO : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x13E48A8 Offset: 0x13E48A8 VA: 0x13E48A8
-	public FNCFHIEELGO()
+	public FNCFHIEELGO_DecoVisit()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

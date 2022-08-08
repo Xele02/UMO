@@ -1,5 +1,6 @@
 
-public class CEDOOHCPHMG : KLFDBFMNLBL
+public class CEDOOHCPHMG { }
+public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// private List<MPBEHHIAGOI> GFPFBJDPHLJ; // 0x24
@@ -14,7 +15,7 @@ public class CEDOOHCPHMG : KLFDBFMNLBL
 	// public CIFHILOJJFC IGKLKPIEEEH(int AHHJLDLAPAN) { }
 
 	// // RVA: 0x12B2B90 Offset: 0x12B2B90 VA: 0x12B2B90
-	public CEDOOHCPHMG()
+	public CEDOOHCPHMG_UnitGoDiva()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

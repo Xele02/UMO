@@ -1,6 +1,6 @@
 
 public class FNBIIGJJGKA {}
-public class FNBIIGJJGKA_Counter : KLFDBFMNLBL
+public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// private const int MKINOABMBGM = 20;

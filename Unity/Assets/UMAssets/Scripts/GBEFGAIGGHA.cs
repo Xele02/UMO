@@ -1,5 +1,6 @@
 
-public class GBEFGAIGGHA : KLFDBFMNLBL
+public class GBEFGAIGGHA { }
+public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int EPAOCPMNLNC = 6000;
@@ -15,7 +16,7 @@ public class GBEFGAIGGHA : KLFDBFMNLBL
 	// public void LBLNLMGHLAG(BKPAPCMJKHE IFLGCDGOLOP, long JHNMKKNEENE) { }
 
 	// // RVA: 0x1402020 Offset: 0x1402020 VA: 0x1402020
-	public GBEFGAIGGHA()
+	public GBEFGAIGGHA_Shop()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

@@ -1,5 +1,6 @@
 
-public class ICLNENNIMOP : KLFDBFMNLBL
+public class ICLNENNIMOP { }
+public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// private const long GMNKHOJAOPC = 1496070000;
@@ -28,7 +29,7 @@ public class ICLNENNIMOP : KLFDBFMNLBL
 	// public void POIKGADFLHF(int GHBPLHBNMBK, double HMLEDBJDCAF) { }
 
 	// // RVA: 0x11EA084 Offset: 0x11EA084 VA: 0x11EA084
-	public ICLNENNIMOP()
+	public ICLNENNIMOP_FreeScoreMax()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

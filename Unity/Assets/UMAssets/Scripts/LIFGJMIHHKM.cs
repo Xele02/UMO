@@ -1,5 +1,6 @@
 
-public class LIFGJMIHHKM : KLFDBFMNLBL
+public class LIFGJMIHHKM { }
+public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int HAKDOMMLLJP = 99999999;
@@ -29,7 +30,7 @@ public class LIFGJMIHHKM : KLFDBFMNLBL
 	// public List<NKFJNAANPNP.MOJLCADLMKH> BNGLMLIMFDM(int PPFNGGCBJKC, long JHNMKKNEENE) { }
 
 	// // RVA: 0x17FF8F4 Offset: 0x17FF8F4 VA: 0x17FF8F4
-	public LIFGJMIHHKM()
+	public LIFGJMIHHKM_LimitedItem()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

@@ -1,5 +1,6 @@
 
-public class ALIPBIMCAPN : KLFDBFMNLBL
+public class ALIPBIMCAPN { }
+public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int MJFKKHOFMBO = 100;
@@ -9,7 +10,7 @@ public class ALIPBIMCAPN : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0xCD9EFC Offset: 0xCD9EFC VA: 0xCD9EFC
-	public ALIPBIMCAPN()
+	public ALIPBIMCAPN_EventBoxGacha()
 	{
 		LHPDDGIJKNB_Reset();
 	}

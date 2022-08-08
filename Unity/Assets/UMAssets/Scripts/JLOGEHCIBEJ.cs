@@ -1,5 +1,6 @@
 
-public class JLOGEHCIBEJ : KLFDBFMNLBL
+public class JLOGEHCIBEJ { }
+public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public const int ICHFGGBPCBJ = 4;
@@ -16,7 +17,7 @@ public class JLOGEHCIBEJ : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x147BDFC Offset: 0x147BDFC VA: 0x147BDFC
-	public JLOGEHCIBEJ()
+	public JLOGEHCIBEJ_EventRaid()
 	{
 		LHPDDGIJKNB_Reset();
 	}

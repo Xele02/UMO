@@ -1,5 +1,6 @@
 
-public class EAOHMJHHDKN : KLFDBFMNLBL
+public class EAOHMJHHDKN { }
+public class EAOHMJHHDKN_GachaLimit : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// private const int GACEJGPNHMP = 1000;
@@ -21,7 +22,7 @@ public class EAOHMJHHDKN : KLFDBFMNLBL
 	// public int LGJEOHCDCPF(int HHGMPEEGFMA) { }
 
 	// // RVA: 0x14F2B48 Offset: 0x14F2B48 VA: 0x14F2B48
-	public EAOHMJHHDKN()
+	public EAOHMJHHDKN_GachaLimit()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

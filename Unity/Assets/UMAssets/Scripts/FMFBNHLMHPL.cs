@@ -1,5 +1,6 @@
 
-public class FMFBNHLMHPL : KLFDBFMNLBL
+public class FMFBNHLMHPL { }
+public class FMFBNHLMHPL_EventAprilFool : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int BJEPEBMLKOL = 50;
@@ -10,7 +11,7 @@ public class FMFBNHLMHPL : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x1198528 Offset: 0x1198528 VA: 0x1198528
-	public FMFBNHLMHPL()
+	public FMFBNHLMHPL_EventAprilFool()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

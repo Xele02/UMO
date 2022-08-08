@@ -1,5 +1,6 @@
 
-public class FFMIPGABHHA : KLFDBFMNLBL
+public class FFMIPGABHHA { }
+public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_SaveBlock
 {
 	private const int ECFEMKGFDCE = 2;
 	public const long BBEGLBMOBOF = 32158710441;
@@ -15,7 +16,7 @@ public class FFMIPGABHHA : KLFDBFMNLBL
 	// public static string CAOGDCBPBAN(string MDADLCOCEBN, int EHDDADDKMFI, int FEOKKEPAIBB) { }
 
 	// // RVA: 0x14E4E1C Offset: 0x14E4E1C VA: 0x14E4E1C
-	public FFMIPGABHHA()
+	public FFMIPGABHHA_SaveHash()
 	{
 		KMBPACJNEOF();
 	}

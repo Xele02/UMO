@@ -3,7 +3,7 @@ using XeApp.Game.Common;
 
 public class DFKGGBMFFGB
 {
-	private BBHNACPENDM LDEGEHAEALK; // 0x8
+	private BBHNACPENDM_SaveData LDEGEHAEALK; // 0x8
 	private OKGLGHCBCJP_Database LKMHPJKIFDN; // 0xC
 	private bool BNFDBPPOAOE; // 0x10
 	public List<FFHPBEPOMAK> NBIGLBMHEDC = new List<FFHPBEPOMAK>(); // 0x14
@@ -21,7 +21,7 @@ public class DFKGGBMFFGB
 	// public int NLMELNHPIID { get; set; }//DBEFCECMFMG 0x197E8C0 ILFOOPKEKLC 0x197E90C
 
 	// // RVA: 0x197E960 Offset: 0x197E960 VA: 0x197E960
-	public void KHEKNNFCAOI_Init(BBHNACPENDM NIMOGBDCMLJ, bool HEHLHEKCIFF = false)
+	public void KHEKNNFCAOI_Init(BBHNACPENDM_SaveData NIMOGBDCMLJ, bool HEHLHEKCIFF = false)
 	{
 		UnityEngine.Debug.LogError("TODO KHEKNNFCAOI_Init");
 		if(NIMOGBDCMLJ == null)

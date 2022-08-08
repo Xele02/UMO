@@ -1,5 +1,6 @@
 
-public class LGIDLHLBFFJ : KLFDBFMNLBL
+public class LGIDLHLBFFJ { }
+public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int KCFBAOJKKHH = 2;
@@ -80,7 +81,7 @@ public class LGIDLHLBFFJ : KLFDBFMNLBL
 	// public void DGIBOADNFOI(int ADPPAIPFHML) { }
 
 	// // RVA: 0xD85B2C Offset: 0xD85B2C VA: 0xD85B2C
-	public LGIDLHLBFFJ()
+	public LGIDLHLBFFJ_MonthlyPass()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}

@@ -1,5 +1,6 @@
 
-public class FEHINJKHDAP : KLFDBFMNLBL
+public class FEHINJKHDAP { }
+public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int ICHFGGBPCBJ = 6;
@@ -10,7 +11,7 @@ public class FEHINJKHDAP : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0xFD2E00 Offset: 0xFD2E00 VA: 0xFD2E00
-	public FEHINJKHDAP()
+	public FEHINJKHDAP_EventScore()
 	{
 		LHPDDGIJKNB_Reset();
 	}

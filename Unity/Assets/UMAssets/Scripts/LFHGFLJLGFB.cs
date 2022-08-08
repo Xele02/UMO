@@ -1,5 +1,6 @@
 
-public class LFHGFLJLGFB : KLFDBFMNLBL
+public class LFHGFLJLGFB { }
+public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_SaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// private const int ODDKIBLJKPI = 50;
@@ -11,7 +12,7 @@ public class LFHGFLJLGFB : KLFDBFMNLBL
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0xD6B438 Offset: 0xD6B438 VA: 0xD6B438
-	public LFHGFLJLGFB()
+	public LFHGFLJLGFB_FavoritePlayer()
 	{
 		UnityEngine.Debug.LogError("TODO");
 	}
