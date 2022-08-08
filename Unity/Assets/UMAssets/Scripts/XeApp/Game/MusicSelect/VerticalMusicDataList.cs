@@ -18,7 +18,7 @@ namespace XeApp.Game.MusicSelect
 				public bool isUnlockable; // 0x12
 				public bool isSimulation; // 0x13
 				public bool isHighLevel; // 0x14
-				// public MusicSelectConsts.MusicTimeType timeType; // 0x18
+				public MusicSelectConsts.MusicTimeType timeType; // 0x18
 				// public MusicSelectConsts.MusicType musicType; // 0x1C
 				// public MusicSelectConsts.EventType eventType; // 0x20
 				// public MusicSelectConsts.PlayBoostType boostType; // 0x24
@@ -43,7 +43,7 @@ namespace XeApp.Game.MusicSelect
 			public string MusicName { get; } // 0x28
 			//	public string VocalName { get; } // 0x2C
 			//	public int MusicTime { get; } // 0x30
-			//	public MusicSelectConsts.MusicTimeType TimeType { get; } = 2; // 0x34
+			public MusicSelectConsts.MusicTimeType TimeType { get; } = MusicSelectConsts.MusicTimeType.Max; // 0x34
 			//	public MusicSelectConsts.EventType EventType { get; } = 5; // 0x38
 			//	public MusicSelectConsts.MusicType MusicType { get; } = 3; // 0x3C
 			//	public MusicSelectConsts.PlayBoostType PlayBoostType { get; } = 1; // 0x40
@@ -60,6 +60,7 @@ namespace XeApp.Game.MusicSelect
 				IsUnlockable = initParam.isUnlockable;
 				MusicTimeStr = initParam.musicTimeStr;
 				AprilFoolEndTime = initParam.aprilFoolEndTime;
+				TimeType = initParam.timeType;
 			}
 		}
 

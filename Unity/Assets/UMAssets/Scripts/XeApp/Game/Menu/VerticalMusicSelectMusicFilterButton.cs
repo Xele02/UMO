@@ -7,6 +7,13 @@ namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectMusicFilterButton : MonoBehaviour
 	{
+		public enum ButtonStatusType
+		{
+			FilterOff = 0,
+			FilterOn = 1,
+			Max = 2,
+		}
+
 		[SerializeField]
 		private InOutAnime m_inOut; // 0xC
 		[SerializeField]
@@ -59,12 +66,22 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBE1794 Offset: 0xBE1794 VA: 0xBE1794
-		// public void SetButtonStatus(VerticalMusicSelectMusicFilterButton.ButtonStatusType status) { }
+		public void SetButtonStatus(VerticalMusicSelectMusicFilterButton.ButtonStatusType status)
+		{
+			for(int i = 0; i < m_filterObj.Length; i++)
+			{
+				m_filterObj[i].SetActive(false);
+			}
+			m_filterObj[(int)status].SetActive(true);
+		}
 
 		// // RVA: 0xBE1890 Offset: 0xBE1890 VA: 0xBE1890
 		// public void SetButtonSortItem(SortItem sortIem) { }
 
 		// // RVA: 0xBE19E4 Offset: 0xBE19E4 VA: 0xBE19E4
-		// public void SetButtonEnable(bool isEnable) { }
+		public void SetButtonEnable(bool isEnable)
+		{
+			m_button.Disable = !isEnable;
+		}
 	}
 }

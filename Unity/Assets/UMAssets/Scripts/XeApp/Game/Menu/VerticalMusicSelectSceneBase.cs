@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 		protected bool m_isEndPostSetCanvas { get; set; } // 0x46
 		protected bool m_isEndActivateScene { get; set; } // 0x47
 		protected abstract Difficulty.Type diff { get; }  //Slot: 31
-		// protected abstract MusicSelectConsts.SeriesType series { get; } //Slot: 32
+		protected abstract MusicSelectConsts.SeriesType series { get; } //Slot: 32
 		protected abstract int list_no { get; set; } //Slot: 34 Slot: 33
 		protected bool openSimulationLive { get; set; } // 0x48
 		protected abstract bool isLine6Mode { get; } // Slot: 35

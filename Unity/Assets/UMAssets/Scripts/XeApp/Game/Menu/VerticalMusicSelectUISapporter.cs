@@ -22,7 +22,7 @@ namespace XeApp.Game.Menu
 		public bool isLine6Mode; // 0xC
 		public KGCNCBOKCBA.GNENJEHKMHD eventStatus; // 0x10
 		private Difficulty.Type m_difficulty; // 0x14
-		// private MusicSelectConsts.SeriesType m_series; // 0x18
+		private MusicSelectConsts.SeriesType m_series; // 0x18
 		private VerticalMusicSelectSortOrder.SortOrder m_sortOrder; // 0x1C
 		private FPGEMAIAMBF m_rewardData; // 0x20
 		private List<MusicRewardStat> m_rewardStats; // 0x24
@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		private IKDICBBFBMI_EventBase m_eventCtrl; // 0x68
 
 		public Difficulty.Type difficulty { get { return m_difficulty; } } //0xAD9F84
-		// public MusicSelectConsts.SeriesType series { get; } 0xAD9F8C
+		public MusicSelectConsts.SeriesType series { get { return m_series; } } //0xAD9F8C
 		// public VerticalMusicSelectSortOrder.SortOrder sortOrder { get; } 0xAD9F94
 		// public bool IsEventCounting { get; } 0xADA1B8
 		// public bool IsEventEndChallengePeriod { get; } 0xADA1CC
@@ -334,10 +334,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xADBBC0 Offset: 0xADBBC0 VA: 0xADBBC0
-		// public void SetSmallBigOrderEnable(bool isEnable) { }
+		public void SetSmallBigOrderEnable(bool isEnable)
+		{
+			m_orderButton.SetButtonEnable(isEnable);
+		}
 
 		// // RVA: 0xADBBF0 Offset: 0xADBBF0 VA: 0xADBBF0
-		// public void SetSeriesButtonEnable(bool isEnable) { }
+		public void SetSeriesButtonEnable(bool isEnable)
+		{
+			m_seriesButtonGroup.SetPullDownEnable(isEnable);
+		}
 
 		// // RVA: 0xADBC20 Offset: 0xADBC20 VA: 0xADBC20
 		public void SetBookMark(bool isEnable, bool isBookMark)

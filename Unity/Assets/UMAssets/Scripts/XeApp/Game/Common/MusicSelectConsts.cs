@@ -25,5 +25,13 @@ namespace XeApp.Game.Common
 			ExtremePlus = 7,
 			Num = 8
 		}
+		
+		public enum MusicTimeType
+		{
+			Long = 0,
+			Short = 1,
+			Max = 2,
+		}
+
 	}
 }

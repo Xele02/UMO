@@ -7,8 +7,8 @@ namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectSeriesButtonGroup : MonoBehaviour
 	{
-		// private static readonly MusicSelectConsts.SeriesType[] BUTTON_LIST_TYPE = new MusicSelectConsts.SeriesType[6] {DB17E883A647963A26D973378923EF4649801319}; // 0x0
-		// public static readonly SeriesAttr.Type[] CONVERT_SERIES_LIST = new SeriesAttr.Type[6] {43455BB18F9D2C51C2C5B74704B48B60579B2E8D}; // 0x4
+		private static readonly MusicSelectConsts.SeriesType[] BUTTON_LIST_TYPE = new MusicSelectConsts.SeriesType[6] {DB17E883A647963A26D973378923EF4649801319}; // 0x0
+		public static readonly SeriesAttr.Type[] CONVERT_SERIES_LIST = new SeriesAttr.Type[6] {43455BB18F9D2C51C2C5B74704B48B60579B2E8D}; // 0x4
 		[SerializeField]
 		private UGUIToggleButtonGroup m_toggleButtonGroup; // 0xC
 		[SerializeField]
@@ -55,7 +55,14 @@ namespace XeApp.Game.Menu
 		// public void SetEnable(bool isEneble) { }
 
 		// // RVA: 0xAD9A28 Offset: 0xAD9A28 VA: 0xAD9A28
-		// public void SetPullDownEnable(bool isEneble) { }
+		public void SetPullDownEnable(bool isEneble)
+		{
+			m_pullDownButton.Disable = !isEneble;
+			if(!isEneble)
+			{
+				m_pullDownInOut.Leave(0.1f, true);
+			}
+		}
 
 		// // RVA: 0xAD94F8 Offset: 0xAD94F8 VA: 0xAD94F8
 		// private void SetLogo(Image spriteImage, int btnIndex) { }

@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_isLine6Mode = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO.BCOIACHCMLA.LMPCJJKHHPA();
+				m_isLine6Mode = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA.LMPCJJKHHPA();
 			}
 			m_pickupFreeMusicId = 0;
 			m_pickupFreeCategoryId = 0;
@@ -317,11 +317,11 @@ namespace XeApp.Game.Menu
 				//0x16859E4
 				return true;
 			});
-			Difficulty.Type difficulty = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO.BCOIACHCMLA.FFACBDAJJJP();
-			FreeCategoryId.Type categoryId = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO.BCOIACHCMLA.OGJDBPMKJKE();
+			Difficulty.Type difficulty = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA.FFACBDAJJJP();
+			FreeCategoryId.Type categoryId = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA.OGJDBPMKJKE();
 			int curMusicId = 0;
 			OHCAABOMEOF.KGOGMKMBCPP val2 = 0;
-			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO.BCOIACHCMLA.FKJBADIPKHK(
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA.FKJBADIPKHK(
 				categoryId,
 				out curMusicId, out val2
 			);
