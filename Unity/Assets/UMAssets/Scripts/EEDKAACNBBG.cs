@@ -45,7 +45,7 @@ public class EEDKAACNBBG
 	// // RVA: 0x1C48F30 Offset: 0x1C48F30 VA: 0x1C48F30 Slot: 5
 	public virtual bool DBIGDCOHOIC()
 	{
-		//return JFEEHOKLFPO() <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG.FBGGEFFJJHB;
+		//return JFEEHOKLFPO() <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.FBGGEFFJJHB ^ CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.HMJBBNEACOA;
 		UnityEngine.Debug.LogError("TODO DBIGDCOHOIC");
 		return true;
 	}
@@ -60,14 +60,16 @@ public class EEDKAACNBBG
 	}
 
 	// // RVA: 0x1C49144 Offset: 0x1C49144 VA: 0x1C49144
-	public bool KLOGLLFOAPL()
+	public bool KLOGLLFOAPL_HasMultiDivaMode()
 	{
-		UnityEngine.Debug.LogError("TODO KLOGLLFOAPL");
-		return false;
+		return BNCMJNMIDIN_AvaiableDivaModes > 1;
 	}
 
 	// // RVA: 0x1C49158 Offset: 0x1C49158 VA: 0x1C49158
-	// public bool HAMPEDFMIAD() { }
+	public bool HAMPEDFMIAD_HasOnlyMultiDivaMode()
+	{
+		return BNCMJNMIDIN_AvaiableDivaModes > 1 && (BNCMJNMIDIN_AvaiableDivaModes & 1) == 0;
+	}
 
 	// // RVA: 0x1C4917C Offset: 0x1C4917C VA: 0x1C4917C
 	// public int IOMLIADJJLD(bool FJNPMGBCBGJ = False) { }

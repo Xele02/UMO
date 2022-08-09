@@ -2,13 +2,20 @@ using UnityEngine;
 using XeApp.Game.Common;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectSeriesButtonGroup : MonoBehaviour
 	{
-		private static readonly MusicSelectConsts.SeriesType[] BUTTON_LIST_TYPE = new MusicSelectConsts.SeriesType[6] {DB17E883A647963A26D973378923EF4649801319}; // 0x0
-		public static readonly SeriesAttr.Type[] CONVERT_SERIES_LIST = new SeriesAttr.Type[6] {43455BB18F9D2C51C2C5B74704B48B60579B2E8D}; // 0x4
+		private static readonly MusicSelectConsts.SeriesType[] BUTTON_LIST_TYPE = new MusicSelectConsts.SeriesType[6] 
+		{
+			MusicSelectConsts.SeriesType.All, MusicSelectConsts.SeriesType.First, MusicSelectConsts.SeriesType.Seven, MusicSelectConsts.SeriesType.Frontia,
+			MusicSelectConsts.SeriesType.Delta, MusicSelectConsts.SeriesType.Other
+		}; // 0x0
+		public static readonly SeriesAttr.Type[] CONVERT_SERIES_LIST = new SeriesAttr.Type[6] {
+			SeriesAttr.Type.None, SeriesAttr.Type.First, SeriesAttr.Type.Seven, SeriesAttr.Type.Frontia, SeriesAttr.Type.Delta, SeriesAttr.Type.Plus
+		}; // 0x4
 		[SerializeField]
 		private UGUIToggleButtonGroup m_toggleButtonGroup; // 0xC
 		[SerializeField]
@@ -28,12 +35,40 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private TextMeshProUGUI m_pullDownBtnText; // 0x2C
 
-		// public Action<int> OnButtonClickListener { private get; set; } // 0x30
+		public Action<int> OnButtonClickListener { private get; set; } // 0x30
 
 		// // RVA: 0xAD92EC Offset: 0xAD92EC VA: 0xAD92EC
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			for(int i = 0; i < m_btnImage.Length; i++)
+			{
+				SetLogo(m_btnImage[i], i);
+			}
+			m_toggleButtonGroup.OnSelectToggleButtonEvent.RemoveAllListeners();
+			m_toggleButtonGroup.OnSelectToggleButtonEvent.AddListener((int index) =>
+			{
+				//0xAD9C2C
+				if (OnButtonClickListener != null)
+				{
+					OnButtonClickListener(index);
+					SetLogo(m_pullDownBtnImage, index);
+					SetPullDownText(index);
+				}
+			});
+			m_pullDownButton.ClearOnClickCallback();
+			m_pullDownButton.AddOnClickCallback(() =>
+			{
+				//0xAD9CBC
+				SoundManager.Instance.sePlayerBoot.Play(3);
+				if(m_pullDownInOut.IsEnter)
+				{
+					m_pullDownInOut.ForceLeave(null);
+				}
+				else
+				{
+					m_pullDownInOut.ForceEnter(null);
+				}
+			});
 		}
 
 		// // RVA: 0xAD9714 Offset: 0xAD9714 VA: 0xAD9714
@@ -65,17 +100,33 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xAD94F8 Offset: 0xAD94F8 VA: 0xAD94F8
-		// private void SetLogo(Image spriteImage, int btnIndex) { }
+		private void SetLogo(Image spriteImage, int btnIndex)
+		{
+			if(BUTTON_LIST_TYPE[btnIndex] == MusicSelectConsts.SeriesType.All)
+			{
+				spriteImage.enabled = false;
+				m_btnText[0].enabled = true;
+			}
+			else
+			{
+				m_btnText[(int)BUTTON_LIST_TYPE[btnIndex]].enabled = false;
+				spriteImage.enabled = true;
+				spriteImage.sprite = m_seriesSprites[(int)BUTTON_LIST_TYPE[btnIndex]];
+			}
+		}
 
 		// // RVA: 0xAD9768 Offset: 0xAD9768 VA: 0xAD9768
-		// private void SetPullDownText(int btnIndex) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F7294 Offset: 0x6F7294 VA: 0x6F7294
-		// // RVA: 0xAD9C2C Offset: 0xAD9C2C VA: 0xAD9C2C
-		// private void <Awake>b__15_0(int index) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F72A4 Offset: 0x6F72A4 VA: 0x6F72A4
-		// // RVA: 0xAD9CBC Offset: 0xAD9CBC VA: 0xAD9CBC
-		// private void <Awake>b__15_1() { }
+		private void SetPullDownText(int btnIndex)
+		{
+			if(BUTTON_LIST_TYPE[btnIndex] != MusicSelectConsts.SeriesType.All)
+			{
+				m_pullDownBtnText.enabled = false;
+			}
+			else
+			{
+				m_pullDownBtnText.enabled = true;
+				m_pullDownBtnText.text = m_btnText[0].text;
+			}
+		}
 	}
 }

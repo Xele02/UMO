@@ -5,7 +5,10 @@ namespace XeApp.Game.Common.View
 	public class ViewBookMarkMusicData : MonoBehaviour
 	{
 		//// RVA: 0xD30ECC Offset: 0xD30ECC VA: 0xD30ECC
-		//public static bool KNKGEALPDGF(int DLAEJOBELBH, int OIPCCBHIKIA) { }
+		public static bool KNKGEALPDGF(int DLAEJOBELBH, int OIPCCBHIKIA)
+		{
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.KNKGEALPDGF_GetBookmark(DLAEJOBELBH, OIPCCBHIKIA);
+		}
 
 		//// RVA: 0xD30FB8 Offset: 0xD30FB8 VA: 0xD30FB8
 		public static bool KNKGEALPDGF(int DLAEJOBELBH)

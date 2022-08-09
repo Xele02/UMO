@@ -56,7 +56,10 @@ namespace XeSys
 		}
 
 		// // RVA: 0x238A4F8 Offset: 0x238A4F8 VA: 0x238A4F8
-		// public static int GetInt(EDOHBJAPLPF jdata, string key) { }
+		public static int GetInt(EDOHBJAPLPF_JsonData jdata, string key)
+		{
+			return GetInt(jdata, key, 0);
+		}
 
 		// // RVA: 0x238A500 Offset: 0x238A500 VA: 0x238A500
 		public static int GetInt(EDOHBJAPLPF_JsonData jdata)

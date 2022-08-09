@@ -8,6 +8,13 @@ namespace XeApp.Game.MusicSelect
 {
 	public class MusicScrollItem : MonoBehaviour
 	{
+		public enum ListType
+		{
+			Normal = 0,
+			EventEntrance = 1,
+			HighLevel = 2,
+		}
+
 		private RectTransform _rectTransform; // 0xC
 		[SerializeField]
 		private Text _title; // 0x10
@@ -57,16 +64,20 @@ namespace XeApp.Game.MusicSelect
 			}
 			return _rectTransform;
 		} } //0xC9DE0C
-		// public MusicScrollItemLabelGroup LabelGroup { get; } 0xC9DEE8
+		public MusicScrollItemLabelGroup LabelGroup { get { return m_labelGroup; } } //0xC9DEE8
 		// public Vector2 StartPos { get; } 0xC9DEF0
 
 		// RVA: 0xC9DF04 Offset: 0xC9DF04 VA: 0xC9DF04
 		private void Awake()
 		{
 			_startPos = RectTransform.anchoredPosition;
-			UnityEngine.Debug.LogError("TODO ScrollItem Awake");
-			m_highLevelObj.gameObject.SetActive(false);
-			m_eventName.transform.parent.gameObject.SetActive(false);
+			m_button.ClearOnClickCallback();
+			m_button.AddOnClickCallback(() =>
+			{
+				//0xC9EA70
+				if (OnClickList != null)
+					OnClickList(this);
+			});
 		}
 
 		// RVA: 0xC9E00C Offset: 0xC9E00C VA: 0xC9E00C
@@ -120,28 +131,70 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		// // RVA: 0xC9E5D8 Offset: 0xC9E5D8 VA: 0xC9E5D8
-		// public void SetHighLevelMusicTitle(string title) { }
+		public void SetHighLevelMusicTitle(string title)
+		{
+			m_highLevelMusicName.text = title;
+		}
 
 		// // RVA: 0xC9E614 Offset: 0xC9E614 VA: 0xC9E614
-		// public void SetEventName(string name) { }
+		public void SetEventName(string name)
+		{
+			m_eventName.text = name;
+		}
 
 		// // RVA: 0xC9E650 Offset: 0xC9E650 VA: 0xC9E650
-		// public void SetLockIcon(bool isOpen, bool isUnlockable) { }
+		public void SetLockIcon(bool isOpen, bool isUnlockable)
+		{
+			m_lockObj.alpha = isOpen ? 0 : 1;
+			m_rewardObj.alpha = isOpen ? 1 : 0;
+			m_unlockableImage.enabled = isUnlockable && !isOpen;
+		}
 
 		// // RVA: 0xC9E700 Offset: 0xC9E700 VA: 0xC9E700
-		// public void SetNewIcon(bool isNew) { }
+		public void SetNewIcon(bool isNew)
+		{
+			m_newIcon.enabled = isNew;
+		}
 
 		// // RVA: 0xC9E734 Offset: 0xC9E734 VA: 0xC9E734
-		// public void SetAttribute(int attr) { }
+		public void SetAttribute(int attr)
+		{
+			m_attrIcon.sprite = m_attrIconSet.GetMusicAttrIconSprite(attr);
+		}
 
 		// // RVA: 0xC9E790 Offset: 0xC9E790 VA: 0xC9E790
-		// public void SetRewardState(bool score, bool combo, bool clearCount) { }
+		public void SetRewardState(bool score, bool combo, bool clearCount)
+		{
+			m_scoreReward.enabled = score;
+			m_comboReward.enabled = combo;
+			m_clearCountReward.enabled = clearCount;
+		}
 
 		// // RVA: 0xC9E818 Offset: 0xC9E818 VA: 0xC9E818
-		// public void SetListType(MusicScrollItem.ListType listType) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B4AE8 Offset: 0x6B4AE8 VA: 0x6B4AE8
-		// // RVA: 0xC9EA70 Offset: 0xC9EA70 VA: 0xC9EA70
-		// private void <Awake>b__28_0() { }
+		public void SetListType(MusicScrollItem.ListType listType)
+		{
+			_title.enabled = false;
+			m_eventName.enabled = false;
+			m_attrIcon.enabled = false;
+			m_highLevelMusicName.enabled = false;
+			m_highLevelObj.alpha = 0;
+			if(listType == ListType.HighLevel)
+			{
+				m_highLevelObj.alpha = 1;
+				m_attrIcon.enabled = true;
+				m_highLevelMusicName.enabled = true;
+			}
+			else if(listType == ListType.EventEntrance)
+			{
+				m_lockObj.alpha = 0;
+				m_rewardObj.alpha = 0;
+				m_eventName.enabled = true;
+			}
+			else
+			{
+				m_attrIcon.enabled = true;
+				_title.enabled = true;
+			}
+		}
 	}
 }

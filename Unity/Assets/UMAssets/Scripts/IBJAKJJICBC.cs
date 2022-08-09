@@ -4,12 +4,19 @@ using XeApp.Game.Common;
 
 public class IBJAKJJICBC : EEDKAACNBBG
 {
+	public enum AAADDDFCKLF
+	{
+		ALNCPFNNBLH = 0,
+		IANFNICOEFE = 1,
+		OGGMDNKPFEB = 2,
+	}
+
 	public class GFKEJIHPAOM
 	{
 		public long KINJOEIAHFK; // 0x8
 		public long PCCFAKEOBIC; // 0x10
 		public long EMEKFFHCHMH; // 0x18
-		public string OPFGFINHFCE; // 0x20
+		public string OPFGFINHFCE_EventName; // 0x20
 		public string KLMPFGOCBHC; // 0x24
 		public int GOAPADIHAHG; // 0x28
 		public OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE; // 0x2C
@@ -197,7 +204,40 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	// public bool ICKDCAMABPD(int OGPKGGLJACK) { }
 
 	// // RVA: 0x1214824 Offset: 0x1214824 VA: 0x1214824
-	// public bool PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF IKENKJKOGNN) { }
+	public bool PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF IKENKJKOGNN)
+	{
+		// Will need to check tests
+		bool res = DBIGDCOHOIC();
+		if(HAMPEDFMIAD_HasOnlyMultiDivaMode())
+		{
+			if(((int)IKENKJKOGNN - 1) > 1)
+			{
+				if (IKENKJKOGNN != 0)
+					return false;
+				return true;
+			}
+		}
+		else
+		{
+			if (KLOGLLFOAPL_HasMultiDivaMode())
+			{
+				res = true;
+				if (((int)IKENKJKOGNN - 1) > 1)
+				{
+					if (IKENKJKOGNN != 0)
+						return false;
+					return DBIGDCOHOIC();
+				}
+			}
+			else
+			{
+				res = false;
+				if ((int)IKENKJKOGNN < 3)
+					res = ((6 >> ((int)IKENKJKOGNN & 7)) & 1) != 0;
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0x12148D4 Offset: 0x12148D4 VA: 0x12148D4
 	// public bool JHLDFOLFNGB(Difficulty.Type AKNELONELJK, bool NGKGFBLFEGH) { }
@@ -291,7 +331,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 		{
 			BNCMJNMIDIN_AvaiableDivaModes = (byte)(BNCMJNMIDIN_AvaiableDivaModes & 1);
 		}
-		if(DBIGDCOHOIC() && KLOGLLFOAPL())
+		if(DBIGDCOHOIC() && KLOGLLFOAPL_HasMultiDivaMode())
 		{
 			MEPLEIEDBGE = saveInfo.CPBDGAGKNGH ? CNECJGKECHK_True : JFOFMKBJBBE_False; //todo switch to property
 			if (saveInfo.CPBDGAGKNGH)

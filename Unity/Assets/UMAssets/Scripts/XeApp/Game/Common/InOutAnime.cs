@@ -45,7 +45,7 @@ namespace XeApp.Game.Common
 		private Vector2 m_leavePos; // 0x2C
 		private bool m_isInit; // 0x34
 
-		//public bool IsEnter { get; } 0x10FEF5C
+		public bool IsEnter { get { return state == State.Enter; } } //0x10FEF5C
 
 		//// RVA: 0x10FEF70 Offset: 0x10FEF70 VA: 0x10FEF70
 		private void Start()
@@ -141,10 +141,43 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x10FFB90 Offset: 0x10FFB90 VA: 0x10FFB90
-		//public void ForceLeave(Action endCallback) { }
+		public void ForceLeave(Action endCallback)
+		{
+			ForceLeave(animTime, endCallback);
+		}
 
 		//// RVA: 0x10FFB9C Offset: 0x10FFB9C VA: 0x10FFB9C
-		//public void ForceLeave(float animTime, Action endCallback) { }
+		public void ForceLeave(float animTime, Action endCallback)
+		{
+			if (state != State.Leave)
+			{
+				if (m_animCoroutine != null)
+				{
+					StopCoroutine(m_animCoroutine);
+					m_animCoroutine = null;
+				}
+				state = State.Leave;
+				RectTransform rect = (transform as RectTransform);
+				m_animCoroutine = StartCoroutine(Co_Animation(rect.anchoredPosition, m_leavePos, animTime, (Vector2 vec) =>
+				{
+					//0x1100278
+					if (inType < InType.Scaling)
+					{
+						rect.anchoredPosition = vec;
+						return;
+					}
+					if (inType < InType.Height)
+					{
+						rect.localScale = vec;
+						return;
+					}
+					if (inType == InType.Height)
+					{
+						rect.sizeDelta = vec;
+					}
+				}, endCallback));
+			}
+		}
 
 		//// RVA: 0x10FFD6C Offset: 0x10FFD6C VA: 0x10FFD6C
 		public void ForceEnter(Action endCallback)

@@ -149,8 +149,73 @@ namespace XeApp.Game.Menu
 				return;
 			if(m_musicList.Count <= listIndex)
 				return;
-			UnityEngine.Debug.LogError("TODO MusicUpdateCenterItem");
-			obj.SetTitle(m_musicList[listIndex].MusicName);
+			if (m_isSingleMusic)
+				listIndex = 0;
+			if (m_musicList[listIndex].ViewMusic.AJGCPCMLGKO)
+			{
+				obj.SetListType(MusicScrollItem.ListType.EventEntrance);
+				obj.SetEventName(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN.OPFGFINHFCE_EventName);
+				obj.SetNewIcon(false);
+				obj.SetAttribute(4);
+			}
+			else if (m_musicList[listIndex].ViewMusic.BNIAJAKIAJC)
+			{
+				obj.SetListType(MusicScrollItem.ListType.EventEntrance);
+				obj.SetEventName(m_musicList[listIndex].ViewMusic.NOKBLCDMLPP.OPFGFINHFCE_EventName);
+				obj.SetNewIcon(false);
+				obj.SetAttribute(4);
+			}
+			else if (m_musicList[listIndex].IsSimulation)
+			{
+				obj.SetListType(MusicScrollItem.ListType.EventEntrance);
+				obj.SetEventName(m_musicList[listIndex].MusicName);
+				obj.SetAttribute(m_musicList[listIndex].ViewMusic.FKDCCLPGKDK_JacketAttr);
+				obj.SetNewIcon(false);
+			}
+			else
+			{
+				if (m_musicList[listIndex].IsHighLevel)
+				{
+					obj.SetListType(MusicScrollItem.ListType.HighLevel);
+					obj.SetHighLevelMusicTitle(m_musicList[listIndex].MusicName);
+				}
+				else
+				{
+					obj.SetListType(MusicScrollItem.ListType.Normal);
+					obj.SetTitle(m_musicList[listIndex].MusicName);
+				}
+				obj.SetAttribute(m_musicList[listIndex].ViewMusic.FKDCCLPGKDK_JacketAttr);
+				obj.SetLockIcon(m_musicList[listIndex].IsOpen, m_musicList[listIndex].IsUnlockable);
+				if(!m_musicList[listIndex].IsOpen)
+					obj.SetNewIcon(false);
+				else
+					obj.SetNewIcon(m_musicList[listIndex].IsNew);
+			}
+			if (m_musicList[listIndex].IsSimulation)
+			{
+				obj.LabelGroup.EnableLimitedSLiveLabel();
+				obj.LabelGroup.DisableTimeLabel();
+				obj.LabelGroup.DisableEventLabel();
+				obj.LabelGroup.DisableMusicTypeLabel();
+				obj.LabelGroup.DisablePlayBoostLabel();
+			}
+			else
+			{
+				obj.LabelGroup.DisableLimitedSLiveLabel();
+				obj.LabelGroup.SetTimeLabel(m_musicList[listIndex].TimeType);
+				obj.LabelGroup.SetEventLabel(m_musicList[listIndex].EventType);
+				obj.LabelGroup.SetMusicTypeLabel(m_musicList[listIndex].MusicType);
+				obj.LabelGroup.SetPlayBoostLabel(m_musicList[listIndex].PlayBoostType);
+			}
+			if(m_musicList[listIndex].RewardStat != null && m_difficult < m_musicList[listIndex].RewardStat.Count)
+			{
+				obj.SetRewardState(m_musicList[listIndex].RewardStat[m_difficult].isScoreComplete, m_musicList[listIndex].RewardStat[m_difficult].isComboComplete
+					, m_musicList[listIndex].RewardStat[m_difficult].isClearCountComplete);
+			}
+			else
+			{
+				obj.SetRewardState(false, false, false);
+			}
 		}
 	}
 }

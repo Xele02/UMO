@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using XeApp.Game.Common;
+using XeApp.Game.Menu;
 
 namespace XeApp.Game.MusicSelect
 {
@@ -11,31 +13,31 @@ namespace XeApp.Game.MusicSelect
 			public struct InitParam
 			{
 				public IBJAKJJICBC viewMusic; // 0x0
-				// public List<MusicRewardStat> rewardStat; // 0x4
+				public List<MusicRewardStat> rewardStat; // 0x4
 				public long aprilFoolEndTime; // 0x8
 				public bool isOpen; // 0x10
-				// public bool isNew; // 0x11
+				public bool isNew; // 0x11
 				public bool isUnlockable; // 0x12
 				public bool isSimulation; // 0x13
 				public bool isHighLevel; // 0x14
 				public MusicSelectConsts.MusicTimeType timeType; // 0x18
-				// public MusicSelectConsts.MusicType musicType; // 0x1C
-				// public MusicSelectConsts.EventType eventType; // 0x20
-				// public MusicSelectConsts.PlayBoostType boostType; // 0x24
+				public MusicSelectConsts.MusicType musicType; // 0x1C
+				public MusicSelectConsts.EventType eventType; // 0x20
+				public MusicSelectConsts.PlayBoostType boostType; // 0x24
 				// public string eventPeriod; // 0x28
 				public string musicTimeStr; // 0x2C
 				public string musicName; // 0x30
 				// public string vocalName; // 0x34
 				// public int musicTime; // 0x38
 			}
-			//	private List<MusicRewardStat> m_rewardStat = new List<MusicRewardStat>(); // 0xC
+			private List<MusicRewardStat> m_rewardStat = new List<MusicRewardStat>(); // 0xC
 
 			public IBJAKJJICBC ViewMusic { get; } = new IBJAKJJICBC(); // 0x8
-			//	public List<MusicRewardStat> RewardStat { get; } 0xCA3E58
+			public List<MusicRewardStat> RewardStat { get { return m_rewardStat; } } //0xCA3E58
 			public long AprilFoolEndTime { get; } // 0x10
 			public bool IsOpen { get; } = false; // 0x18
 			public bool IsUnlockable { get; } = false; // 0x19
-			//	public bool IsNew { get; } = false; //0x1A
+			public bool IsNew { get; } = false; //0x1A
 			public bool IsSimulation { get; } = false; // 0x1B
 			public bool IsHighLevel { get; } = false; // 0x1C
 			//	public string EventPeriod { get; } // 0x20
@@ -44,9 +46,9 @@ namespace XeApp.Game.MusicSelect
 			//	public string VocalName { get; } // 0x2C
 			//	public int MusicTime { get; } // 0x30
 			public MusicSelectConsts.MusicTimeType TimeType { get; } = MusicSelectConsts.MusicTimeType.Max; // 0x34
-			//	public MusicSelectConsts.EventType EventType { get; } = 5; // 0x38
-			//	public MusicSelectConsts.MusicType MusicType { get; } = 3; // 0x3C
-			//	public MusicSelectConsts.PlayBoostType PlayBoostType { get; } = 1; // 0x40
+			public MusicSelectConsts.EventType EventType { get; } = MusicSelectConsts.EventType.Max; // 0x38
+			public MusicSelectConsts.MusicType MusicType { get; } = MusicSelectConsts.MusicType.Max; // 0x3C
+			public MusicSelectConsts.PlayBoostType PlayBoostType { get; } = MusicSelectConsts.PlayBoostType.Max; // 0x40
 
 			//	// RVA: 0xCA2E0C Offset: 0xCA2E0C VA: 0xCA2E0C
 			public MusicListData(VerticalMusicDataList.MusicListData.InitParam initParam)
@@ -61,6 +63,11 @@ namespace XeApp.Game.MusicSelect
 				MusicTimeStr = initParam.musicTimeStr;
 				AprilFoolEndTime = initParam.aprilFoolEndTime;
 				TimeType = initParam.timeType;
+				m_rewardStat = initParam.rewardStat;
+				EventType = initParam.eventType;
+				MusicType = initParam.musicType;
+				PlayBoostType = initParam.boostType;
+				IsNew = initParam.isNew;
 			}
 		}
 
@@ -89,6 +96,12 @@ namespace XeApp.Game.MusicSelect
 				initparam.isSimulation = true; // TODO
 				initparam.isUnlockable = false; // TODO
 				initparam.musicTimeStr = ""; // TODO
+				initparam.timeType = MusicSelectConsts.MusicTimeType.Short; // TODO
+				initparam.isNew = false;
+				initparam.musicType = MusicSelectConsts.MusicType.None;
+				initparam.rewardStat = new List<MusicRewardStat>();
+				initparam.eventType = MusicSelectConsts.EventType.Max;
+				initparam.boostType = MusicSelectConsts.PlayBoostType.Max;
 				MusicListData data = new MusicListData(initparam);
 				res.Add(data);
 			}
@@ -185,13 +198,48 @@ namespace XeApp.Game.MusicSelect
 		//public void UpdateDownloadState(int musicId) { }
 
 		//// RVA: 0xCA3330 Offset: 0xCA3330 VA: 0xCA3330
-		//public int FindIndex(int freeMusicId, bool line6Mode, bool simulation) { }
+		public int FindIndex(int freeMusicId, bool line6Mode, bool simulation)
+		{
+			return FindIndex((MusicListData _) =>
+			{
+				//0xCA3BF4
+				return _.ViewMusic.GHBPLHBNMBK_FreeMusicId == freeMusicId;
+			}, line6Mode, simulation);
+		}
 
 		//// RVA: 0xCA34CC Offset: 0xCA34CC VA: 0xCA34CC
 		//public int FindIndex(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP gameEventType, bool line6Mode, bool simulation) { }
 
 		//// RVA: 0xCA3424 Offset: 0xCA3424 VA: 0xCA3424
-		//public int FindIndex(Predicate<VerticalMusicDataList.MusicListData> match, bool line6Mode, bool simulation) { }
+		public int FindIndex(Predicate<VerticalMusicDataList.MusicListData> match, bool line6Mode, bool simulation)
+		{
+			List<VerticalMusicDataList.MusicListData> list = null;
+			if (simulation)
+			{
+				if(line6Mode)
+				{
+					list = m_viewSimulationList;
+				}
+				else
+				{
+					list = m_viewSimulation6LineList;
+				}
+			}
+			else
+			{
+				if(line6Mode)
+				{
+					list = m_viewList;
+				}
+				else
+				{
+					list = m_view6LineList;
+				}
+			}
+			if (list != null)
+				return list.FindIndex(match);
+			return 0;
+		}
 
 		//// RVA: 0xCA35DC Offset: 0xCA35DC VA: 0xCA35DC
 		//public VerticalMusicDataList.MusicListData Find(int freeMusicId, bool line6Mode, bool simulation) { }

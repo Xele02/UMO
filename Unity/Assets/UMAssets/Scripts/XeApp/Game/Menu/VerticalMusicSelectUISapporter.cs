@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 
 		public Difficulty.Type difficulty { get { return m_difficulty; } } //0xAD9F84
 		public MusicSelectConsts.SeriesType series { get { return m_series; } } //0xAD9F8C
-		// public VerticalMusicSelectSortOrder.SortOrder sortOrder { get; } 0xAD9F94
+		public VerticalMusicSelectSortOrder.SortOrder sortOrder { get { return m_sortOrder; } } //0xAD9F94
 		// public bool IsEventCounting { get; } 0xADA1B8
 		// public bool IsEventEndChallengePeriod { get; } 0xADA1CC
 		// public bool IsEventRankingEnd { get; } 0xADA1E0

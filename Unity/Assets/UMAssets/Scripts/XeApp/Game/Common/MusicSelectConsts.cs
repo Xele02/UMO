@@ -32,6 +32,30 @@ namespace XeApp.Game.Common
 			Short = 1,
 			Max = 2,
 		}
+		
+		public enum MusicType
+		{
+			None = 0,
+			Mirror = 1,
+			Another = 2,
+			Max = 3,
+		}
+		
+		public enum EventType
+		{
+			Special = 0,
+			Raid = 1,
+			Weekly = 2,
+			Birthday = 3,
+			ScoreRanking = 4,
+			Max = 5,
+		}
+
+		public enum PlayBoostType
+		{
+			Boost = 0,
+			Max = 1,
+		}
 
 	}
 }
