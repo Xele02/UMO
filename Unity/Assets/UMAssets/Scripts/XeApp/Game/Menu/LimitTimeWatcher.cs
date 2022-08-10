@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x154049C Offset: 0x154049C VA: 0x154049C
 		public void Update()
 		{
-			UnityEngine.Debug.LogWarning("TODO LimitTimeWatcher Update");
+			TodoLogger.Log(5, "LimitTimeWatcher Update");
 		}
 
 		// // RVA: 0x15411A8 Offset: 0x15411A8 VA: 0x15411A8

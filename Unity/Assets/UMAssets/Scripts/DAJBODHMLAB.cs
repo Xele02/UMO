@@ -19,7 +19,7 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x176981C Offset: 0x176981C VA: 0x176981C Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x1769AD4 Offset: 0x1769AD4 VA: 0x1769AD4 Slot: 5
@@ -28,7 +28,7 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x176A330 Offset: 0x176A330 VA: 0x176A330 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
@@ -47,7 +47,7 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x176BBBC Offset: 0x176BBBC VA: 0x176BBBC Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return null;
 	}
 }

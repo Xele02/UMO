@@ -5,7 +5,7 @@ public class SakashoHadoopLog : SakashoAPIBase
 	// RVA: 0x2BC6754 Offset: 0x2BC6754 VA: 0x2BC6754
 	public static SakashoAPICallContext SendLogToHadoop(SakashoHadoopLogData[] logData, OnSuccess onSuccess, OnError onError)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         int callID = SakashoAPIBase.Call(SakashoHadoopLogSendLogToHadoop, "", onSuccess, onError);
         return new SakashoAPICallContext(callID);
     }

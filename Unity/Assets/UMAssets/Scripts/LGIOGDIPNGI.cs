@@ -9,6 +9,6 @@ public class LGIOGDIPNGI_RareUpItem : NKFJNAANPNP
 	// // RVA: 0x17F4078 Offset: 0x17F4078 VA: 0x17F4078
 	public LGIOGDIPNGI_RareUpItem()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 }

@@ -179,7 +179,7 @@ namespace ExternLib.Java_Sakasho.jp.dena.sakasho.core.network
 
         private /*native */byte[] generateRequestSignature(string var1, string var2, byte[] var3)
         {
-            UnityEngine.Debug.Log("TODO Generate signature "+var1+" "+var2+" "+System.BitConverter.ToString(var3));
+            TodoLogger.Log(10, "Generate signature "+var1+" "+var2+" "+System.BitConverter.ToString(var3));
             return null;
         }
     }

@@ -12,7 +12,7 @@ public class CriManaPlugin
 	// // RVA: 0x29649FC Offset: 0x29649FC VA: 0x29649FC
 	public static void SetConfigParameters(bool graphicsMultiThreaded, int num_decoders, int max_num_of_entries)
     {
-        UnityEngine.Debug.LogWarning("TODO CriManaPlugin SetConfigParameters");
+        TodoLogger.Log(5, "CriManaPlugin SetConfigParameters");
     }
 
 	// // RVA: 0x2964C3C Offset: 0x2964C3C VA: 0x2964C3C
@@ -28,7 +28,7 @@ public class CriManaPlugin
 	// // RVA: 0x2964F50 Offset: 0x2964F50 VA: 0x2964F50
 	public static void SetConfigAdditonalParameters_ANDROID(bool use_h264_playback)
     {
-        UnityEngine.Debug.LogWarning("TODO CriManaPlugin SetConfigAdditonalParameters_ANDROID");
+        TodoLogger.Log(5, "CriManaPlugin SetConfigAdditonalParameters_ANDROID");
     }
 
 	// // RVA: 0x2965224 Offset: 0x2965224 VA: 0x2965224
@@ -37,7 +37,7 @@ public class CriManaPlugin
 	// // RVA: 0x2965228 Offset: 0x2965228 VA: 0x2965228
 	public static void InitializeLibrary()
     {
-        UnityEngine.Debug.LogWarning("TODO CriManaPlugin InitializeLibrary");
+        TodoLogger.Log(5, "CriManaPlugin InitializeLibrary");
     }
 
 	// // RVA: 0x2957C30 Offset: 0x2957C30 VA: 0x2957C30
@@ -49,7 +49,7 @@ public class CriManaPlugin
 	// // RVA: 0x296547C Offset: 0x296547C VA: 0x296547C
 	public static void FinalizeLibrary()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0x29659AC Offset: 0x29659AC VA: 0x29659AC

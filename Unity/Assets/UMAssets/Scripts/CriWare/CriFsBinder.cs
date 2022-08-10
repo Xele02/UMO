@@ -73,7 +73,7 @@ namespace CriWare
 		// // RVA: 0x29450E8 Offset: 0x29450E8 VA: 0x29450E8
 		public static void Unbind(uint bindId)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2944400 Offset: 0x2944400 VA: 0x2944400

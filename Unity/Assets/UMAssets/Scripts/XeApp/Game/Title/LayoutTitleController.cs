@@ -51,13 +51,13 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE367F4 Offset: 0xE367F4 VA: 0xE367F4
 		public void ShowArButton()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xE368A4 Offset: 0xE368A4 VA: 0xE368A4
 		public void SetVisible(bool isVisible)
 		{
-			UnityEngine.Debug.LogWarning("TODO Layout Title Controller SetVisible "+isVisible);
+			TodoLogger.Log(5, "Layout Title Controller SetVisible "+isVisible);
 		}
 
 		// // RVA: 0xE36A24 Offset: 0xE36A24 VA: 0xE36A24
@@ -66,7 +66,7 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE36A28 Offset: 0xE36A28 VA: 0xE36A28 Slot: 4
 		public void Dispose()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B3160 Offset: 0x6B3160 VA: 0x6B3160
@@ -123,7 +123,7 @@ namespace XeApp.Game.Title
 		public IEnumerator LoadLayoutTexts(Action callback)
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutTexts");
-			UnityEngine.Debug.LogWarning("TODO LoadLayoutTexts");
+			TodoLogger.Log(5, "LoadLayoutTexts");
     		UnityEngine.Debug.Log("Exit LoadLayoutTexts");
 			callback();
 			yield break;
@@ -134,7 +134,7 @@ namespace XeApp.Game.Title
 		public IEnumerator LoadLayoutCopyRight(Action callback)
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutCopyRight");
-			UnityEngine.Debug.LogWarning("TODO LoadLayoutCopyRight");
+			TodoLogger.Log(5, "LoadLayoutCopyRight");
     		UnityEngine.Debug.Log("Exit LoadLayoutCopyRight");
 			callback();
 			yield break;
@@ -185,7 +185,7 @@ namespace XeApp.Game.Title
 		public IEnumerator LoadLayoutArButton(Action callback)
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutArButton");
-			UnityEngine.Debug.LogWarning("TODO LoadLayoutArButton");
+			TodoLogger.Log(5, "LoadLayoutArButton");
     		UnityEngine.Debug.Log("Exit LoadLayoutArButton");
 			callback();
 			yield break;
@@ -196,7 +196,7 @@ namespace XeApp.Game.Title
 		public IEnumerator LoadLayoutMonthlyPass(Action callback)
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutMonthlyPass");
-			UnityEngine.Debug.LogWarning("TODO LoadLayoutMonthlyPass");
+			TodoLogger.Log(5, "LoadLayoutMonthlyPass");
     		UnityEngine.Debug.Log("Exit LoadLayoutMonthlyPass");
 			callback();
 			yield break;

@@ -32,7 +32,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF166C Offset: 0x1BF166C VA: 0x1BF166C
 		public void LoadResources(int musicId, int qualityId, Func<int> getSpecialMovieId)
 		{
-			UnityEngine.Debug.LogError("TodO LoadResources");
+			TodoLogger.Log(0, "LoadResources");
 			isLoadedMovie = true;
 		}
 

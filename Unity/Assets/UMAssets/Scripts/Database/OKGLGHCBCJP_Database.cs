@@ -839,7 +839,7 @@ public class OKGLGHCBCJP_Database
 					// case 114: KCCDBKIOLDJ = item; break;
 					// case 115: DCNNPEDOGOG = item; break;
 					// case 116: MBAGKLJDKMH = item; break;
-					default: UnityEngine.Debug.LogError("TODO" + INBBCDGDMLC[i]); break;
+					default: TodoLogger.Log(0, "TODO" + INBBCDGDMLC[i]); break;
 				}
 			}
 		}
@@ -861,7 +861,7 @@ public class OKGLGHCBCJP_Database
 	// // RVA: 0x149494C Offset: 0x149494C VA: 0x149494C
 	public bool IIEMACPEEBJ(List<string> ANFNAHPIJDH, EDOHBJAPLPF_JsonData AAEDAEHIONI)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return false;
 	}
 

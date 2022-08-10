@@ -13,13 +13,13 @@ public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x195AA5C Offset: 0x195AA5C VA: 0x195AA5C
 	public MKNIBACMCDO_AssistPlate()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x195AB28 Offset: 0x195AB28 VA: 0x195AB28 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x195AC68 Offset: 0x195AC68 VA: 0x195AC68 Slot: 7
@@ -34,7 +34,7 @@ public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x195B3C8 Offset: 0x195B3C8 VA: 0x195B3C8 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return null;
 	}
 
@@ -47,7 +47,7 @@ public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x195B560 Offset: 0x195B560 VA: 0x195B560 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

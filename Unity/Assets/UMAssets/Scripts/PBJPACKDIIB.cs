@@ -47,6 +47,6 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 	// // RVA: 0xCBC7EC Offset: 0xCBC7EC VA: 0xCBC7EC Slot: 4
 	public void Dispose()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 }

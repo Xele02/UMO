@@ -35,13 +35,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167DE08 Offset: 0x167DE08 VA: 0x167DE08
 		public void TryLeave()
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectSLiveButton TryLeave");
+			TodoLogger.Log(0, "MusicSelectSLiveButton TryLeave");
 		}
 
 		// // RVA: 0x167DD74 Offset: 0x167DD74 VA: 0x167DD74
 		public void Enter()
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectSLiveButton Enter");
+			TodoLogger.Log(0, "MusicSelectSLiveButton Enter");
 		}
 
 		// // RVA: 0x167DE18 Offset: 0x167DE18 VA: 0x167DE18
@@ -53,26 +53,26 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167DF30 Offset: 0x167DF30 VA: 0x167DF30
 		public void Hide()
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectSLiveButton Hide");
+			TodoLogger.Log(0, "MusicSelectSLiveButton Hide");
 		}
 
 		// // RVA: 0x167DFB4 Offset: 0x167DFB4 VA: 0x167DFB4
 		public bool IsPlaying()
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectSLiveButton IsPlaying");
+			TodoLogger.Log(0, "MusicSelectSLiveButton IsPlaying");
 			return false;
 		}
 
 		// // RVA: 0x167DFE0 Offset: 0x167DFE0 VA: 0x167DFE0
 		public void SetOptionStyle(MusicSelectSLiveButton.Style style)
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectSLiveButton SetOptionStyle");
+			TodoLogger.Log(0, "MusicSelectSLiveButton SetOptionStyle");
 		}
 
 		// // RVA: 0x167E0EC Offset: 0x167E0EC VA: 0x167E0EC
 		public void SetUnlockRank(int nowRank, int unlockRank)
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectSLiveButton SetUnlockRank");
+			TodoLogger.Log(0, "MusicSelectSLiveButton SetUnlockRank");
 		}
 
 		// // RVA: 0x167E168 Offset: 0x167E168 VA: 0x167E168
@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167E2A8 Offset: 0x167E2A8 VA: 0x167E2A8 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			UnityEngine.Debug.LogError("TODO InitializeFromLayout MusicSelectSLiveButton");
+			TodoLogger.Log(0, "InitializeFromLayout MusicSelectSLiveButton");
 			return true;
 		}
 	}

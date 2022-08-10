@@ -32,13 +32,13 @@ namespace XeApp.Game.Menu
 		// RVA: 0x10A563C Offset: 0x10A563C VA: 0x10A563C
 		private void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO Campaign roulette on destroy");
+			TodoLogger.Log(0, "Campaign roulette on destroy");
 		}
 
 		// RVA: 0x10A5670 Offset: 0x10A5670 VA: 0x10A5670 Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			UnityEngine.Debug.LogError("TODO Campaign roulette OnPreSetCanvas");
+			TodoLogger.Log(0, "Campaign roulette OnPreSetCanvas");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6CB39C Offset: 0x6CB39C VA: 0x6CB39C
@@ -48,46 +48,46 @@ namespace XeApp.Game.Menu
 		// RVA: 0x10A5AAC Offset: 0x10A5AAC VA: 0x10A5AAC Slot: 18
 		protected override void OnPostSetCanvas() 
 		{
-			UnityEngine.Debug.LogError("TODO Campaign roulette OnPostSetCanvas");
+			TodoLogger.Log(0, "Campaign roulette OnPostSetCanvas");
 		}
 
 		// RVA: 0x10A5AB4 Offset: 0x10A5AB4 VA: 0x10A5AB4 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			UnityEngine.Debug.LogError("TODO Campaign roulette IsEndPreSetCanvas");
+			TodoLogger.Log(0, "Campaign roulette IsEndPreSetCanvas");
 			return true;
 		}
 
 		// RVA: 0x10A5B78 Offset: 0x10A5B78 VA: 0x10A5B78 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			UnityEngine.Debug.LogError("TODO Campaign roulette OnBgmStart");
+			TodoLogger.Log(0, "Campaign roulette OnBgmStart");
 			return true;
 		}
 
 		// RVA: 0x10A5C58 Offset: 0x10A5C58 VA: 0x10A5C58 Slot: 14
 		protected override void OnDestoryScene()
 		{
-			UnityEngine.Debug.LogError("TODO Campaign roulette OnDestoryScene");
+			TodoLogger.Log(0, "Campaign roulette OnDestoryScene");
 		}
 
 		// RVA: 0x10A5C5C Offset: 0x10A5C5C VA: 0x10A5C5C Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO Campaign roulette OnStartEnterAnimation");
+			TodoLogger.Log(0, "Campaign roulette OnStartEnterAnimation");
 		}
 
 		// RVA: 0x10A5D0C Offset: 0x10A5D0C VA: 0x10A5D0C Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO Campaign roulette IsEndEnterAnimation");
+			TodoLogger.Log(0, "Campaign roulette IsEndEnterAnimation");
 			return true;
 		}
 
 		// // RVA: 0x10A5D14 Offset: 0x10A5D14 VA: 0x10A5D14 Slot: 31
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			UnityEngine.Debug.LogError("TODO Campaign roulette OnPointerClick");
+			TodoLogger.Log(0, "Campaign roulette OnPointerClick");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6CB414 Offset: 0x6CB414 VA: 0x6CB414

@@ -19,7 +19,7 @@ namespace com.adjust.sdk
 		// // RVA: 0x274CC30 Offset: 0x274CC30 VA: 0x274CC30
 		private void Awake()
 		{
-			UnityEngine.Debug.LogWarning("TODO Adjust Awake");
+			TodoLogger.Log(5, "Adjust Awake");
 		}
 
 		// // RVA: 0x274D108 Offset: 0x274D108 VA: 0x274D108
@@ -34,7 +34,7 @@ namespace com.adjust.sdk
 		// // RVA: 0x274FDC4 Offset: 0x274FDC4 VA: 0x274FDC4
 		public static void setEnabled(bool enabled)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x274FFA8 Offset: 0x274FFA8 VA: 0x274FFA8
@@ -94,7 +94,7 @@ namespace com.adjust.sdk
 		// // RVA: 0x2753290 Offset: 0x2753290 VA: 0x2753290
 		public static void requestTrackingAuthorizationWithCompletionHandler(Action<int> statusCallback, string sceneName = "Adjust")
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x275331C Offset: 0x275331C VA: 0x275331C

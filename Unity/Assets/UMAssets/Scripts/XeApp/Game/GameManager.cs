@@ -197,25 +197,25 @@ namespace XeApp.Game
 		// // RVA: 0x9888B0 Offset: 0x9888B0 VA: 0x9888B0
 		public void AddPushBackButtonHandler(GameManager.PushBackButtonHandler handler)
 		{
-			UnityEngine.Debug.LogWarning("TODO AddPushBackButtonHandler");
+			TodoLogger.Log(5, "AddPushBackButtonHandler");
 		}
 
 		// // RVA: 0x99A334 Offset: 0x99A334 VA: 0x99A334
 		public void AddLastBackButtonHandler(GameManager.PushBackButtonHandler handler)
 		{
-			UnityEngine.Debug.LogWarning("TODO AddLastBackButtonHandler");
+			TodoLogger.Log(5, "AddLastBackButtonHandler");
 		}
 
 		// // RVA: 0x988E80 Offset: 0x988E80 VA: 0x988E80
 		public void RemovePushBackButtonHandler(GameManager.PushBackButtonHandler handler)
 		{
-			UnityEngine.Debug.LogWarning("TODO RemovePushBackButtonHandler");
+			TodoLogger.Log(5, "RemovePushBackButtonHandler");
 		}
 
 		// // RVA: 0x98B534 Offset: 0x98B534 VA: 0x98B534
 		public void ClearPushBackButtonHandler()
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.ClearPushBackButtonHandler()");
+			TodoLogger.Log(5, "GameManager.ClearPushBackButtonHandler()");
 		}
 
 		// // RVA: 0x99A3B4 Offset: 0x99A3B4 VA: 0x99A3B4
@@ -243,7 +243,7 @@ namespace XeApp.Game
 		{
     		UnityEngine.Debug.Log("Enter UnloadAllAssets");
 			//0x1428C74
-			UnityEngine.Debug.LogWarning("TODO GameManager.UnloadAllAssets");
+			TodoLogger.Log(5, "GameManager.UnloadAllAssets");
     		UnityEngine.Debug.Log("Exit UnloadAllAssets");
 			yield break;
 		}
@@ -332,7 +332,7 @@ namespace XeApp.Game
 		// // RVA: 0x99AD3C Offset: 0x99AD3C VA: 0x99AD3C
 		private void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x99ADD8 Offset: 0x99ADD8 VA: 0x99ADD8
@@ -368,7 +368,7 @@ namespace XeApp.Game
 		// // RVA: 0x99B0D4 Offset: 0x99B0D4 VA: 0x99B0D4
 		private void OnFontTextureRebuilt(Font font)
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.OnFontTextureRebuilt");
+			TodoLogger.Log(5, "GameManager.OnFontTextureRebuilt");
 		}
 
 		// // RVA: 0x99B194 Offset: 0x99B194 VA: 0x99B194
@@ -489,7 +489,7 @@ namespace XeApp.Game
 				AssetBundleManager.UnloadAssetBundle("bt.xab");
 			}
 
-			UnityEngine.Debug.LogError("TODO finish UnionDataCoroutine (Tips / Sns");
+			TodoLogger.Log(0, "finish UnionDataCoroutine (Tips / Sns");
 
 			IsUnionDataInitialized = true;
 		}
@@ -592,7 +592,7 @@ namespace XeApp.Game
 		// // RVA: 0x99E7FC Offset: 0x99E7FC VA: 0x99E7FC
 		public void SetDispLongScreenFrame(bool isShow)
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.SetDispLongScreenFrame");
+			TodoLogger.Log(5, "GameManager.SetDispLongScreenFrame");
 		}
 
 		// // RVA: 0x99E908 Offset: 0x99E908 VA: 0x99E908
@@ -604,20 +604,20 @@ namespace XeApp.Game
 		// // RVA: 0x99EB70 Offset: 0x99EB70 VA: 0x99EB70
 		private void ReInitScreen()
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.ReInitScreen");
+			TodoLogger.Log(5, "GameManager.ReInitScreen");
 		}
 
 		// // RVA: 0x99F2B4 Offset: 0x99F2B4 VA: 0x99F2B4
 		public void UpdateInputArea(bool isAr)
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.UpdateInputArea");
+			TodoLogger.Log(5, "GameManager.UpdateInputArea");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADC18 Offset: 0x6ADC18 VA: 0x6ADC18
 		// // RVA: 0x99F6C8 Offset: 0x99F6C8 VA: 0x99F6C8
 		public IEnumerator Co_CacheAppResources()
 		{
-			UnityEngine.Debug.LogError("TODO Co_CacheAppResources");
+			TodoLogger.Log(0, "Co_CacheAppResources");
 			IsCacheActive = true;
 			yield break;
 		}
@@ -636,7 +636,7 @@ namespace XeApp.Game
 		// // RVA: 0x99DE40 Offset: 0x99DE40 VA: 0x99DE40
 		public void SetupResolution(float baseWidth, float baseHeight)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetupResolution");
+			TodoLogger.Log(5, "SetupResolution");
 		}
 
 		// // RVA: 0x99F750 Offset: 0x99F750 VA: 0x99F750
@@ -645,13 +645,13 @@ namespace XeApp.Game
 		// // RVA: 0x99FB5C Offset: 0x99FB5C VA: 0x99FB5C
 		public void RevertResolution()
 		{
-			UnityEngine.Debug.LogWarning("TODO GameMAnager.RevertResolution()");
+			TodoLogger.Log(5, "GameMAnager.RevertResolution()");
 		}
 
 		// // RVA: 0x99FF14 Offset: 0x99FF14 VA: 0x99FF14
 		public void SetupResolutionDefault()
 		{
-			UnityEngine.Debug.LogWarning("TODO SetupResolutionDefault");
+			TodoLogger.Log(5, "SetupResolutionDefault");
 		}
 
 		// // RVA: 0x9A0068 Offset: 0x9A0068 VA: 0x9A0068
@@ -670,7 +670,7 @@ namespace XeApp.Game
 		// // RVA: 0x9A01C8 Offset: 0x9A01C8 VA: 0x9A01C8
 		public void SetNeverSleep(bool enable)
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager SetNeverSleep");
+			TodoLogger.Log(5, "GameManager SetNeverSleep");
 		}
 
 		// // RVA: 0x9A01DC Offset: 0x9A01DC VA: 0x9A01DC
@@ -853,7 +853,7 @@ namespace XeApp.Game
 		// // RVA: 0x9A0758 Offset: 0x9A0758 VA: 0x9A0758
 		public void ResetSystemCanvasCamera()
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.ResetSystemCanvasCamera");
+			TodoLogger.Log(5, "GameManager.ResetSystemCanvasCamera");
 		}
 
 		// // RVA: 0x99B4B0 Offset: 0x99B4B0 VA: 0x99B4B0
@@ -907,7 +907,7 @@ namespace XeApp.Game
 		// // RVA: 0x9A09FC Offset: 0x9A09FC VA: 0x9A09FC
 		public void CloseSnsNotice()
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager CloseSnsNotice");
+			TodoLogger.Log(5, "GameManager CloseSnsNotice");
 		}
 
 		// // RVA: 0x9A0AB0 Offset: 0x9A0AB0 VA: 0x9A0AB0
@@ -953,13 +953,13 @@ namespace XeApp.Game
 		// // RVA: 0x9A0294 Offset: 0x9A0294 VA: 0x9A0294
 		public void SetTouchEffectVisible(bool isVisible)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetTouchEffectVisible");
+			TodoLogger.Log(5, "SetTouchEffectVisible");
 		}
 
 		// // RVA: 0x9A0C6C Offset: 0x9A0C6C VA: 0x9A0C6C
 		public void SetTouchEffectMode(bool isRhythmGame)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x9A0CA0 Offset: 0x9A0CA0 VA: 0x9A0CA0
@@ -986,14 +986,14 @@ namespace XeApp.Game
 			if(m_viewPlayerData == null)
 				m_viewPlayerData = new DFKGGBMFFGB();
 			m_viewPlayerData.KHEKNNFCAOI_Init(null, false);
-			UnityEngine.Debug.LogError("TODO CreateViewPlayerData");
+			TodoLogger.Log(0, "CreateViewPlayerData");
 			//JKIJLMMLNPL.DJNPDEOLNHD();
 		}
 
 		// // RVA: 0x98874C Offset: 0x98874C VA: 0x98874C
 		public void ResetViewPlayerData()
 		{
-			UnityEngine.Debug.LogError("TODO ResetViewPlayerData");
+			TodoLogger.Log(0, "ResetViewPlayerData");
 			//tmp
 			CreateViewPlayerData();
 		}
@@ -1034,7 +1034,7 @@ namespace XeApp.Game
 		// // RVA: 0x9A12B8 Offset: 0x9A12B8 VA: 0x9A12B8
 		public IEnumerator ShowGameIntroCoroutine()
 		{
-			UnityEngine.Debug.LogError("TODO ShowGameIntroCoroutine");
+			TodoLogger.Log(0, "ShowGameIntroCoroutine");
 			yield break;
 		}
 
@@ -1044,7 +1044,7 @@ namespace XeApp.Game
 		// // RVA: 0x9A1348 Offset: 0x9A1348 VA: 0x9A1348
 		public bool InstallEvent(int type, float per)
 		{
-			UnityEngine.Debug.LogError("TODO InstallEvent");
+			TodoLogger.Log(0, "InstallEvent");
 			return true;
 		}
 
@@ -1190,7 +1190,7 @@ namespace XeApp.Game
 		// // RVA: 0x9A1958 Offset: 0x9A1958 VA: 0x9A1958
 		public void SetTransmissionIconPosition(bool isARMode)
 		{
-			UnityEngine.Debug.LogWarning("TODO GameManager.SetTransmissionIconPosition()");
+			TodoLogger.Log(5, "GameManager.SetTransmissionIconPosition()");
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6ADF18 Offset: 0x6ADF18 VA: 0x6ADF18

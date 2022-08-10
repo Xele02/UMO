@@ -40,7 +40,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE3DB08 Offset: 0xE3DB08 VA: 0xE3DB08
 		public static void TutorialAfterFirstLoginBonus()
 		{
-			UnityEngine.Debug.LogWarning("TODO TutorialAfterFirstLoginBonus");
+			TodoLogger.Log(5, "TutorialAfterFirstLoginBonus");
 		}
 
 		// // RVA: 0xE3DD1C Offset: 0xE3DD1C VA: 0xE3DD1C
@@ -65,7 +65,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE413B4 Offset: 0xE413B4 VA: 0xE413B4
 		public void HideCursor()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xE4146C Offset: 0xE4146C VA: 0xE4146C
@@ -113,7 +113,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE42630 Offset: 0xE42630 VA: 0xE42630
 		public BasicTutorialManager()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6AE5B8 Offset: 0x6AE5B8 VA: 0x6AE5B8

@@ -102,7 +102,7 @@ namespace XeSys
 		// // RVA: 0x1EF64F4 Offset: 0x1EF64F4 VA: 0x1EF64F4
 		private void MobileAction()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1EF6744 Offset: 0x1EF6744 VA: 0x1EF6744

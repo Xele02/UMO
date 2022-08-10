@@ -21,14 +21,14 @@ namespace XeApp.Game.Menu
 		// RVA: 0x127D170 Offset: 0x127D170 VA: 0x127D170 Slot: 4
 		protected override void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO Episode Appeal Awake");
+			TodoLogger.Log(0, "Episode Appeal Awake");
 			IsReady = true;
 		}
 
 		// RVA: 0x127D3A0 Offset: 0x127D3A0 VA: 0x127D3A0 Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			UnityEngine.Debug.LogError("TODO Episode Appeal OnPreSetCanvas");
+			TodoLogger.Log(0, "Episode Appeal OnPreSetCanvas");
 		}
 
 		// RVA: 0x127D6B0 Offset: 0x127D6B0 VA: 0x127D6B0 Slot: 17
@@ -53,7 +53,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x127D77C Offset: 0x127D77C VA: 0x127D77C Slot: 14
 		protected override void OnDestoryScene()
 		{
-			UnityEngine.Debug.LogError("TODO Episode Appeal OnPreSetCanvas");
+			TodoLogger.Log(0, "Episode Appeal OnPreSetCanvas");
 		}
 
 		// RVA: 0x127D92C Offset: 0x127D92C VA: 0x127D92C Slot: 20
@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator MainFlow()
 		{
 			//0x127DB30
-			UnityEngine.Debug.LogError("TODO Episode Appeal OnPreSetCanvas");
+			TodoLogger.Log(0, "Episode Appeal OnPreSetCanvas");
 			yield return null;
 			MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, 0);
 		}

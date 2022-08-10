@@ -139,7 +139,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC6E68 Offset: 0xDC6E68 VA: 0xDC6E68
 		public void ChangeErrorToTilteStatus()
 		{
-			UnityEngine.Debug.LogError("TODO ChangeErrorToTilteStatus");
+			TodoLogger.Log(0, "ChangeErrorToTilteStatus");
 		}
 
 		// // RVA: 0xDC6E9C Offset: 0xDC6E9C VA: 0xDC6E9C
@@ -261,7 +261,7 @@ namespace XeApp.Game.RhythmGame
 				rhythmGameResource.LoadSpecialResourceFor2DMode(DbMusicInfo.KKPAHLMJKIH_WavId, stageDivaNum, settingList);
 			}
 			ChangeWaitLoadingSpecialResourceStatus();
-			UnityEngine.Debug.LogError("TODO check WaitDownloadingSpecialResource");
+			TodoLogger.Log(0, "check WaitDownloadingSpecialResource");
 		}
 
 		// // RVA: 0xDC80E4 Offset: 0xDC80E4 VA: 0xDC80E4
@@ -284,7 +284,7 @@ namespace XeApp.Game.RhythmGame
 		private void WaitDownloadingData()
 		{
 
-			UnityEngine.Debug.LogError("TODO WaitDownloadingData");
+			TodoLogger.Log(0, "WaitDownloadingData");
 			int wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KKPAHLMJKIH_WavId;
 
 			isPilotSoundLoaded = true;
@@ -394,7 +394,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC9FDC Offset: 0xDC9FDC VA: 0xDC9FDC
 		private void WaitWarmup()
 		{
-			UnityEngine.Debug.LogError("TODO WaitWarmup hud");
+			TodoLogger.Log(0, "WaitWarmup hud");
 			//if(uiController.Hud.IsWarmupEnd())
 			{
 				GameSaveStart();
@@ -407,7 +407,7 @@ namespace XeApp.Game.RhythmGame
 			isGameSaveEnd = false;
 			isGameSaveError = false;
 			{
-				UnityEngine.Debug.LogError("TODO GameSaveStart");
+				TodoLogger.Log(0, "GameSaveStart");
 				isGameSaveEnd = true;
 			}
 			updater = this.WaitGameSave;
@@ -448,7 +448,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCA384 Offset: 0xDCA384 VA: 0xDCA384
 		private void BeginCompleteAnim()
 		{
-			UnityEngine.Debug.LogError("TODO BeginCompleteAnim");
+			TodoLogger.Log(0, "BeginCompleteAnim");
 			updater = null;
 			ChangeNextSceneStatus(); // called in RhythmGameUIController$$BeginCompleteAnim
 		}

@@ -10,7 +10,7 @@ namespace XeApp.Game.Common
 		public void SetMusicData(IBJAKJJICBC selectedMusic)
 		{
 			this.selectedMusic = selectedMusic;
-			UnityEngine.Debug.LogError("TODO Finish SetMusicData");
+			TodoLogger.Log(0, "Finish SetMusicData");
 		}
 
 		// RVA: 0x1391C84 Offset: 0x1391C84 VA: 0x1391C84

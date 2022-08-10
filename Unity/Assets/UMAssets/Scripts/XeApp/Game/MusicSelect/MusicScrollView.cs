@@ -247,7 +247,6 @@ namespace XeApp.Game.MusicSelect
 #endif
 			{
 				_scrollValue += eventData.delta;
-				UnityEngine.Debug.Log("scroll value : "+_scrollValue);
 				_velocity = Vector2.Lerp(_velocity, (_prevPosition - eventData.position) / 0.01666667f, 0.1666667f);
 				UpdateItemPosition(_scrollValue.y / 90.0f);
 				UpdateCenterItem(_scrollValue.y / 90.0f, false, false);

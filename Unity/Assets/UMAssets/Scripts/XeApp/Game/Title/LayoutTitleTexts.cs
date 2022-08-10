@@ -14,7 +14,7 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE3B004 Offset: 0xE3B004 VA: 0xE3B004
 		public void SetStatus()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xE3B150 Offset: 0xE3B150 VA: 0xE3B150
@@ -35,7 +35,7 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE3B2DC Offset: 0xE3B2DC VA: 0xE3B2DC Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			return true;
 		}
 	}

@@ -128,7 +128,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 	// // RVA: 0xCC5308 Offset: 0xCC5308 VA: 0xCC5308 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO Database Load");
+        TodoLogger.Log(0, "Database Load");
 
 		IAIDGBJGDBH reader = IAIDGBJGDBH.HEGEKFMJNCC(DBBGALAPFGC);
 
@@ -182,7 +182,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 	// // RVA: 0xCC6E38 Offset: 0xCC6E38 VA: 0xCC6E38 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
@@ -195,7 +195,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 	// // RVA: 0xCC7F98 Offset: 0xCC7F98 VA: 0xCC7F98 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
+		TodoLogger.Log(0, "CAOGDCBPBAN");
 		return 0;
 	}
 

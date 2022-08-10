@@ -45,7 +45,7 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xC9AFFC Offset: 0xC9AFFC VA: 0xC9AFFC
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			TodoLogger.Log(0, "!!!");
 		}
 
 		//// RVA: 0xC9B0A4 Offset: 0xC9B0A4 VA: 0xC9B0A4

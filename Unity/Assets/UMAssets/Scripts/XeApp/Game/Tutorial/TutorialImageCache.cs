@@ -20,7 +20,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE45FC4 Offset: 0xE45FC4 VA: 0xE45FC4 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			UnityEngine.Debug.LogError("TODO CreateIconTexture");
+			TodoLogger.Log(0, "CreateIconTexture");
 			return null;
 		}
 	}

@@ -44,7 +44,7 @@ namespace XeSys
 		// RVA: -1 Offset: -1
 		public static void Release()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 		/* GenericInstMethod :
 		|

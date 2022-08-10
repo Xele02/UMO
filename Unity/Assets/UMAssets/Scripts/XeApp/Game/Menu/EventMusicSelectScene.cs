@@ -21,84 +21,84 @@ namespace XeApp.Game.Menu
 		// RVA: 0x13B12C8 Offset: 0x13B12C8 VA: 0x13B12C8 Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene OnPreSetCanvas");
+			TodoLogger.Log(0, "EventMusicSelectScene OnPreSetCanvas");
 		}
 
 		// RVA: 0x13B1378 Offset: 0x13B1378 VA: 0x13B1378 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene IsEndPreSetCanvas");
+			TodoLogger.Log(0, "EventMusicSelectScene IsEndPreSetCanvas");
 			return true;
 		}
 
 		// RVA: 0x13B14B8 Offset: 0x13B14B8 VA: 0x13B14B8 Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene OnStartEnterAnimation");
+			TodoLogger.Log(0, "EventMusicSelectScene OnStartEnterAnimation");
 		}
 
 		// RVA: 0x13B16B4 Offset: 0x13B16B4 VA: 0x13B16B4 Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene IsEndEnterAnimation");
+			TodoLogger.Log(0, "EventMusicSelectScene IsEndEnterAnimation");
 			return true;
 		}
 
 		// RVA: 0x13B1808 Offset: 0x13B1808 VA: 0x13B1808 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene OnStartExitAnimation");
+			TodoLogger.Log(0, "EventMusicSelectScene OnStartExitAnimation");
 		}
 
 		// RVA: 0x13B193C Offset: 0x13B193C VA: 0x13B193C Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene IsEndExitAnimation");
+			TodoLogger.Log(0, "EventMusicSelectScene IsEndExitAnimation");
 			return true;
 		}
 
 		// RVA: 0x13B1A90 Offset: 0x13B1A90 VA: 0x13B1A90 Slot: 35
 		protected override void CheckTryInstall()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene CheckTryInstall");
+			TodoLogger.Log(0, "EventMusicSelectScene CheckTryInstall");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EEDAC Offset: 0x6EEDAC VA: 0x6EEDAC
 		// // RVA: 0x13B1B80 Offset: 0x13B1B80 VA: 0x13B1B80 Slot: 36
 		protected override IEnumerator Co_Initialize()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene Co_Initialize");
+			TodoLogger.Log(0, "EventMusicSelectScene Co_Initialize");
 			yield break;
 		}
 
 		// RVA: 0x13B1C2C Offset: 0x13B1C2C VA: 0x13B1C2C Slot: 39
 		protected override void Release()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene Release");
+			TodoLogger.Log(0, "EventMusicSelectScene Release");
 		}
 
 		// RVA: 0x13B1C7C Offset: 0x13B1C7C VA: 0x13B1C7C Slot: 40
 		protected override void SetupViewMusicData()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene SetupViewMusicData");
+			TodoLogger.Log(0, "EventMusicSelectScene SetupViewMusicData");
 		}
 
 		// RVA: 0x13B1EBC Offset: 0x13B1EBC VA: 0x13B1EBC Slot: 41
 		protected override void ApplyBasicInfo()
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectScene* ApplyBasicInfo");
+			TodoLogger.Log(0, "MusicSelectScene* ApplyBasicInfo");
 		}
 
 		// RVA: 0x13B1EC4 Offset: 0x13B1EC4 VA: 0x13B1EC4 Slot: 42
 		protected override void ApplyMusicListInfo()
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectScene* ApplyMusicListInfo");
+			TodoLogger.Log(0, "MusicSelectScene* ApplyMusicListInfo");
 		}
 
 		// RVA: 0x13B1F2C Offset: 0x13B1F2C VA: 0x13B1F2C Slot: 44
 		protected override void DelayedApplyMusicInfo()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene DelayedApplyMusicInfo");
+			TodoLogger.Log(0, "EventMusicSelectScene DelayedApplyMusicInfo");
 		}
 
 		// RVA: 0x13B20C0 Offset: 0x13B20C0 VA: 0x13B20C0 Slot: 45
@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13B3878 Offset: 0x13B3878 VA: 0x13B3878 Slot: 55
 		protected override IEnumerator Co_LoadLayout()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene Co_LoadLayout");
+			TodoLogger.Log(0, "EventMusicSelectScene Co_LoadLayout");
 			yield break;
 		}
 
@@ -155,7 +155,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13B3924 Offset: 0x13B3924 VA: 0x13B3924 Slot: 56
 		protected override IEnumerator Co_WaitForLoaded()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene Co_WaitForLoaded");
+			TodoLogger.Log(0, "EventMusicSelectScene Co_WaitForLoaded");
 			yield break;
 		}
 
@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13B3A98 Offset: 0x13B3A98 VA: 0x13B3A98 Slot: 37
 		protected override IEnumerator Co_OnActivateScene()
 		{
-			UnityEngine.Debug.LogError("TODO EventMusicSelectScene Co_OnActivateScene");
+			TodoLogger.Log(0, "EventMusicSelectScene Co_OnActivateScene");
 			yield break;
 		}
 

@@ -27,13 +27,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0xD27F1C Offset: 0xD27F1C VA: 0xD27F1C
 		public void SetChangeExplosionEffect(bool a_enable)
 		{
-			UnityEngine.Debug.LogError("TODO ValkyrieObject SetChangeExplosionEffect");
+			TodoLogger.Log(0, "ValkyrieObject SetChangeExplosionEffect");
 		}
 
 		// // RVA: 0xD280E8 Offset: 0xD280E8 VA: 0xD280E8
 		public void SetEnableAwakeEffect(bool a_enable)
 		{
-			UnityEngine.Debug.LogError("TODO ValkyrieObject SetEnableAwakeEffect");
+			TodoLogger.Log(0, "ValkyrieObject SetEnableAwakeEffect");
 		}
 
 		// // RVA: 0xD28300 Offset: 0xD28300 VA: 0xD28300
@@ -45,7 +45,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xD28304 Offset: 0xD28304 VA: 0xD28304
 		public void Initialize(ValkyrieResource resource)
 		{
-			UnityEngine.Debug.LogError("TODO ValkyrieObject Initialize");
+			TodoLogger.Log(0, "ValkyrieObject Initialize");
 		}
 
 		// // RVA: 0xD29140 Offset: 0xD29140 VA: 0xD29140 Slot: 6
@@ -91,7 +91,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xD2A8D0 Offset: 0xD2A8D0 VA: 0xD2A8D0
 		public void SetIBLColor(ValkyrieColorParam a_color_param)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xD28DA4 Offset: 0xD28DA4 VA: 0xD28DA4

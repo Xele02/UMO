@@ -104,7 +104,7 @@ public class ILDKBCLAFPB
         // // RVA: 0x2035BF0 Offset: 0x2035BF0 VA: 0x2035BF0
         public void PBCBJAPONBF()
         {
-            UnityEngine.Debug.LogError("TODO");
+            TodoLogger.Log(0, "TODO");
 		}
 
         // // RVA: 0x2035D68 Offset: 0x2035D68 VA: 0x2035D68
@@ -180,7 +180,7 @@ public class ILDKBCLAFPB
         // // RVA: 0x2035F3C Offset: 0x2035F3C VA: 0x2035F3C
         public int HBCHGGNOOCD_GetNotesDisplayTiming(Difficulty.Type FEOKKEPAIBB, bool JCOJKAHFADL)
         {
-            UnityEngine.Debug.LogError("TODO HBCHGGNOOCD_GetNotesDisplayTiming");
+            TodoLogger.Log(0, "HBCHGGNOOCD_GetNotesDisplayTiming");
             return 0;
         }
 
@@ -205,7 +205,7 @@ public class ILDKBCLAFPB
         // // RVA: 0x20361B8 Offset: 0x20361B8 VA: 0x20361B8
         public void AFMDGKBANPH(bool IPJMPBANBPP)
         {
-            UnityEngine.Debug.LogError("TODO");
+            TodoLogger.Log(0, "TODO");
         }
 
         // // RVA: 0x20361E0 Offset: 0x20361E0 VA: 0x20361E0
@@ -217,7 +217,7 @@ public class ILDKBCLAFPB
         // // RVA: 0x20326F4 Offset: 0x20326F4 VA: 0x20326F4
         public void ODDIHGPONFL_Copy(ILDKBCLAFPB.MPHNGGECENI_Option FMKAONAMGCN)
         {
-            UnityEngine.Debug.LogError("TODO SaveCopy");
+            TodoLogger.Log(0, "SaveCopy");
         }
 
         // // RVA: 0x20346A4 Offset: 0x20346A4 VA: 0x20346A4
@@ -473,7 +473,7 @@ public class ILDKBCLAFPB
 			// // RVA: 0x202448C Offset: 0x202448C VA: 0x202448C
 			public void FKJBADIPKHK(bool FAGEBAKNAOB, out int GHBPLHBNMBK, out OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE)
 			{
-				UnityEngine.Debug.LogError("TODO FKJBADIPKHK");
+				TodoLogger.Log(0, "FKJBADIPKHK");
 				GHBPLHBNMBK = 0;
 				HIDHLFCBIDE = OHCAABOMEOF.KGOGMKMBCPP.AOPKACCDKPA;
 			}
@@ -522,7 +522,7 @@ public class ILDKBCLAFPB
 		// // RVA: 0x201ED08 Offset: 0x201ED08 VA: 0x201ED08
 		public void ODDIHGPONFL_Copy(ILDKBCLAFPB.APLMBKKCNKC_Select PJFKNNNDMIA)
 		{
-			UnityEngine.Debug.LogError("TODO finish ODDIHGPONFL_Copy");
+			TodoLogger.Log(0, "finish ODDIHGPONFL_Copy");
 			BCOIACHCMLA.ODDIHGPONFL_Copy(PJFKNNNDMIA.BCOIACHCMLA);
 		}
 
@@ -532,7 +532,7 @@ public class ILDKBCLAFPB
 		// // RVA: 0x20214C8 Offset: 0x20214C8 VA: 0x20214C8
 		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
 		{
-			UnityEngine.Debug.LogError("TODO finish KHEKNNFCAOI_Init");
+			TodoLogger.Log(0, "finish KHEKNNFCAOI_Init");
 			if(OBHAFLMHAKG.BBAJPINMOEP_Contains("live"))
 			{
 				BCOIACHCMLA.KHEKNNFCAOI_Init(OBHAFLMHAKG["live"]);
@@ -562,7 +562,7 @@ public class ILDKBCLAFPB
         // // RVA: 0x202A6FC Offset: 0x202A6FC VA: 0x202A6FC
         public void ODDIHGPONFL_Copy(ILDKBCLAFPB.FOLMONPGGPP_Header FMKAONAMGCN)
 		{
-			UnityEngine.Debug.LogError("TODO SaveCopy");
+			TodoLogger.Log(0, "SaveCopy");
 		}
 
         // // RVA: 0x201B130 Offset: 0x201B130 VA: 0x201B130
@@ -830,7 +830,7 @@ public class ILDKBCLAFPB
         // // RVA: 0x2026544 Offset: 0x2026544 VA: 0x2026544
         public void ODDIHGPONFL_Copy(ILDKBCLAFPB.DNLECGEBDOI_Tutorial FMKAONAMGCN)
 		{
-			UnityEngine.Debug.LogError("TODO SaveCopy");
+			TodoLogger.Log(0, "SaveCopy");
 		}
 
         // // RVA: 0x20269E4 Offset: 0x20269E4 VA: 0x20269E4
@@ -1670,13 +1670,13 @@ public class ILDKBCLAFPB
 	// // RVA: 0x2019A4C Offset: 0x2019A4C VA: 0x2019A4C
 	private static void AAPCFCKIFND(ILDKBCLAFPB.IPHAEFKCNMN NHLBKJCPLBL)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0x2019B34 Offset: 0x2019B34 VA: 0x2019B34
 	private static void IBMGEHJHHPK(ILDKBCLAFPB.IPHAEFKCNMN NHLBKJCPLBL)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0x2019C30 Offset: 0x2019C30 VA: 0x2019C30
@@ -1705,7 +1705,7 @@ public class ILDKBCLAFPB
 	// // RVA: 0x201A204 Offset: 0x201A204 VA: 0x201A204
 	public bool HJMKBCFJOOH()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return false;
     }
 
@@ -1769,7 +1769,7 @@ public class ILDKBCLAFPB
 	// // RVA: 0x201B314 Offset: 0x201B314 VA: 0x201B314
 	public void FBCDKFENOEM()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x201BB54 Offset: 0x201BB54 VA: 0x201BB54

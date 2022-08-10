@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CD44C Offset: 0x12CD44C VA: 0x12CD44C Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			UnityEngine.Debug.LogError("TODO OnPreSetCanvas");
+			TodoLogger.Log(0, "OnPreSetCanvas");
 			InitializeUGUIObject();
 
 			GameSetupData.MusicInfo musicInfo = Database.Instance.gameSetup.musicInfo;
@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE1A0 Offset: 0x12CE1A0 VA: 0x12CE1A0 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			UnityEngine.Debug.LogError("TODO IsEndPreSetCanvas");
+			TodoLogger.Log(0, "IsEndPreSetCanvas");
 			return true;
 		}
 
@@ -95,13 +95,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE610 Offset: 0x12CE610 VA: 0x12CE610 Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO OnStartEnterAnimation");
+			TodoLogger.Log(0, "OnStartEnterAnimation");
 		}
 
 		// // RVA: 0x12CE7E8 Offset: 0x12CE7E8 VA: 0x12CE7E8 Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO IsEndEnterAnimation");
+			TodoLogger.Log(0, "IsEndEnterAnimation");
 
 			return true;
 		}
@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE9BC Offset: 0x12CE9BC VA: 0x12CE9BC Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO OnStartExitAnimation");
+			TodoLogger.Log(0, "OnStartExitAnimation");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72752C Offset: 0x72752C VA: 0x72752C
@@ -119,20 +119,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CEA8C Offset: 0x12CEA8C VA: 0x12CEA8C Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO IsEndExitAnimation");
+			TodoLogger.Log(0, "IsEndExitAnimation");
 			return true;
 		}
 
 		// // RVA: 0x12CEAA0 Offset: 0x12CEAA0 VA: 0x12CEAA0 Slot: 23
 		protected override void OnActivateScene()
 		{
-			UnityEngine.Debug.LogError("TODO OnActivateScene");
+			TodoLogger.Log(0, "OnActivateScene");
 		}
 
 		// // RVA: 0x12CEB50 Offset: 0x12CEB50 VA: 0x12CEB50 Slot: 24
 		protected override bool IsEndActivateScene()
 		{
-			UnityEngine.Debug.LogError("TODO IsEndActivateScene");
+			TodoLogger.Log(0, "IsEndActivateScene");
 			return true;
 		}
 
@@ -199,19 +199,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CEB84 Offset: 0x12CEB84 VA: 0x12CEB84
 		private void ClearUGUIObjectListener()
 		{
-			UnityEngine.Debug.LogError("TODO ClearUGUIObjectListener");
+			TodoLogger.Log(0, "ClearUGUIObjectListener");
 		}
 
 		// // RVA: 0x12CECCC Offset: 0x12CECCC VA: 0x12CECCC
 		private void HideUGUIObject()
 		{
-			UnityEngine.Debug.LogError("TODO HideUGUIObject");
+			TodoLogger.Log(0, "HideUGUIObject");
 		}
 
 		// // RVA: 0x12CE1CC Offset: 0x12CE1CC VA: 0x12CE1CC
 		private bool IsApplyWait()
 		{
-			UnityEngine.Debug.LogError("TODO IsApplyWait");
+			TodoLogger.Log(0, "IsApplyWait");
 			return false;
 		}
 
@@ -237,7 +237,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CF308 Offset: 0x12CF308 VA: 0x12CF308
 		private void AdvanceGame()
 		{
-			UnityEngine.Debug.LogError("TODO AdvanceGame");
+			TodoLogger.Log(0, "AdvanceGame");
 			Database.Instance.gameSetup.SetMvMode(new StatusData(), m_prismData);
 			AdvanceGame(null, null, null, null, false, 9999, 0, null, true);
 		}

@@ -34,13 +34,13 @@ public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x13E48A8 Offset: 0x13E48A8 VA: 0x13E48A8
 	public FNCFHIEELGO_DecoVisit()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x13E4974 Offset: 0x13E4974 VA: 0x13E4974 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return null;
 	}
 
@@ -53,7 +53,7 @@ public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x13E53F4 Offset: 0x13E53F4 VA: 0x13E53F4 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
@@ -75,6 +75,6 @@ public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x13E707C Offset: 0x13E707C VA: 0x13E707C Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 }

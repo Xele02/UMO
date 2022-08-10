@@ -19,7 +19,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0xFD2E9C Offset: 0xFD2E9C VA: 0xFD2E9C Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0xFD2F8C Offset: 0xFD2F8C VA: 0xFD2F8C Slot: 5
@@ -28,7 +28,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0xFD48FC Offset: 0xFD48FC VA: 0xFD48FC Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
@@ -44,7 +44,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0xFD5D94 Offset: 0xFD5D94 VA: 0xFD5D94 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return null;
 	}
 

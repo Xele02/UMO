@@ -99,7 +99,7 @@ public class BEEINMBNKNM_Encryption
 	private static /*extern*/ uint ANMDMMBEJPB(uint IOIMHJAOKOO, /*IntPtr */byte[] DBBGALAPFGC, int NFHFALDMGGC)
 	{
 		// return xedec_hash(IOIMHJAOKOO, DBBGALAPFGC, NFHFALDMGGC);
-		UnityEngine.Debug.LogError("TODO xedec_hash");
+		TodoLogger.Log(0, "xedec_hash");
 		return 0;
 	}
 
@@ -124,7 +124,7 @@ public class BEEINMBNKNM_Encryption
 			PMBEODGMMBB = KNEFBLHBDBG;
 			if(size > 0)
 			{
-					UnityEngine.Debug.LogError("TODO");
+					TodoLogger.Log(0, "TODO");
 					uint q = 0;//Math.DivRem(size, PLNOOFNMHAL);
 					/*for(int i = 0; i < size; i++)
 					{

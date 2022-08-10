@@ -35,7 +35,7 @@ public class NDABOOOOENC
 	// // RVA: 0x1ADBB08 Offset: 0x1ADBB08 VA: 0x1ADBB08
 	public void NCDLCIPGPNC()
     {
-        UnityEngine.Debug.LogWarning("TODO NDABOOOOENC NCDLCIPGPNC (playgames)");
+        TodoLogger.Log(5, "NDABOOOOENC NCDLCIPGPNC (playgames)");
     }
 
 	// // RVA: 0x1ADBDC0 Offset: 0x1ADBDC0 VA: 0x1ADBDC0

@@ -24,13 +24,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167C470 Offset: 0x167C470 VA: 0x167C470
 		public void TryLeave()
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectMusicRate TryLeave");
+			TodoLogger.Log(0, "MusicSelectMusicRate TryLeave");
 		}
 
 		// // RVA: 0x167C3EC Offset: 0x167C3EC VA: 0x167C3EC
 		public void Enter()
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectMusicRate Enter");
+			TodoLogger.Log(0, "MusicSelectMusicRate Enter");
 		}
 
 		// // RVA: 0x167C480 Offset: 0x167C480 VA: 0x167C480
@@ -42,13 +42,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167C588 Offset: 0x167C588 VA: 0x167C588
 		public void Hide()
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectMusicRate Hide");
+			TodoLogger.Log(0, "MusicSelectMusicRate Hide");
 		}
 
 		// // RVA: 0x167C60C Offset: 0x167C60C VA: 0x167C60C
 		public bool IsPlaying()
 		{
-			UnityEngine.Debug.LogError("TODO MusicSelectMusicRate IsPlaying");
+			TodoLogger.Log(0, "MusicSelectMusicRate IsPlaying");
 			return false;
 		}
 
@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167C82C Offset: 0x167C82C VA: 0x167C82C Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			UnityEngine.Debug.LogError("TODO InitializeFromLayout MusicSelectMusicRate");
+			TodoLogger.Log(0, "InitializeFromLayout MusicSelectMusicRate");
 			return true;
 		}
 	}

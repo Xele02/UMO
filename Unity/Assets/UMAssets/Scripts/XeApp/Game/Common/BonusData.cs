@@ -9,7 +9,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE63700 Offset: 0xE63700 VA: 0xE63700
 		public void ClearEpisodeBonus()
 		{
-			UnityEngine.Debug.LogWarning("TODO ClearEpisodeBonus");
+			TodoLogger.Log(5, "ClearEpisodeBonus");
 		}
 
 		// // RVA: 0xE63778 Offset: 0xE63778 VA: 0xE63778

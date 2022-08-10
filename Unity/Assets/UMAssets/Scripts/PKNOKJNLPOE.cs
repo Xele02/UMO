@@ -86,7 +86,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	// RVA: 0x9400DC Offset: 0x9400DC VA: 0x9400DC
 	public PKNOKJNLPOE_EventRaid(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0x940304 Offset: 0x940304 VA: 0x940304

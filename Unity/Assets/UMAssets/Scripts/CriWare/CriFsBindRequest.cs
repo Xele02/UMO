@@ -18,19 +18,19 @@ namespace CriWare
 		// // RVA: 0x2944354 Offset: 0x2944354 VA: 0x2944354 Slot: 6
 		public override void Stop()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2944358 Offset: 0x2944358 VA: 0x2944358 Slot: 8
 		public override void Update()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x29444CC Offset: 0x29444CC VA: 0x29444CC Slot: 7
 		protected override void Dispose(bool disposing)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 	}
 }

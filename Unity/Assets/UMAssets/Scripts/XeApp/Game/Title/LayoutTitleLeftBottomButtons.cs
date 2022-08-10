@@ -27,7 +27,7 @@ namespace XeApp.Game.Title
 			{
 				m_buttonGpgs.AddOnClickCallback(() => {
 					// 0xE399C4
-					UnityEngine.Debug.LogError("TODO");
+					TodoLogger.Log(0, "TODO");
 				});
 			}
 		}

@@ -73,7 +73,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA730C8 Offset: 0xA730C8 VA: 0xA730C8
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO SetDeckPlayButtons Awake");
+			TodoLogger.Log(0, "SetDeckPlayButtons Awake");
 			if(m_playButton != null)
 				m_playButton.AddOnClickCallback(() => {
 					//0xA7363C

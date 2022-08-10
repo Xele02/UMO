@@ -7,13 +7,13 @@ namespace ExternLib
 
         public static bool UnitySakashoSystemInitialize(string sdkType, string sdkVersionNumber, int serverMode, string gameId, string commonKey, int paymentType)
         {
-            UnityEngine.Debug.LogWarning("TODO UnitySakashoSystemInitialize");
+            TodoLogger.Log(5, "UnitySakashoSystemInitialize");
             return true;
         }
         public static void UnitySetCallbackReceiverName(string callbackReceiverName)
         {
             UnityCallbackObject = callbackReceiverName;
-            UnityEngine.Debug.LogWarning("TODO UnitySetCallbackReceiverName");
+            TodoLogger.Log(5, "UnitySetCallbackReceiverName");
         }
     }
 }

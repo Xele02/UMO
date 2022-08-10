@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBDD228 Offset: 0xBDD228 VA: 0xBDD228
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			TodoLogger.Log(0, "!!!");
 		}
 
 		// // RVA: 0xBDD36C Offset: 0xBDD36C VA: 0xBDD36C

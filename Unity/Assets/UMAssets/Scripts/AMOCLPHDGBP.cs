@@ -117,7 +117,7 @@ public class AMOCLPHDGBP
 	private IEnumerator GEMPIKIBEKJ_Coroutine_AutoRecover(IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP, DJBHIFLHJLK BFKEGJMPELF, bool EBKGBLFCENA, bool BOGDHEBBHFA)
 	{
 		UnityEngine.Debug.Log("Enter GEMPIKIBEKJ_Coroutine_AutoRecover");
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		UnityEngine.Debug.Log("Exit GEMPIKIBEKJ_Coroutine_AutoRecover");
 		KLMFJJCNBIP();
 		yield break;

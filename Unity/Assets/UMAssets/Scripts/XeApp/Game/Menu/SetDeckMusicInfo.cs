@@ -81,13 +81,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA6F6C0 Offset: 0xA6F6C0 VA: 0xA6F6C0
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO SetDeckMusicInfo Awake");
+			TodoLogger.Log(0, "SetDeckMusicInfo Awake");
 		}
 
 		// // RVA: 0xA6F828 Offset: 0xA6F828 VA: 0xA6F828
 		public void Set(EEDKAACNBBG viewMusicData, GameSetupData.MusicInfo musicInfo, bool isMvMode, SetDeckMusicInfo.BottomType bottomType)
 		{
-			UnityEngine.Debug.LogError("TODO Music Info Set");
+			TodoLogger.Log(0, "Music Info Set");
 			m_musicNameText.text = Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicInfo.freeMusicId, musicInfo.musicId).KNMGEEFGDNI_Nam).musicName;
 		}
 

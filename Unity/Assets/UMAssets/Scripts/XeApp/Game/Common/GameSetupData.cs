@@ -243,7 +243,7 @@ namespace XeApp.Game.Common
 				int overrideEnemyCenterSkillId = 0, int overrideEnemyLiveSkillId = 0, long mvLimitTime = -1, 
 				long limitTime = 0, int eventUniqueId = 0, int onStageDivaNum = 1, long setupTime = 0)
 			{
-				UnityEngine.Debug.LogError("TODO SetupInfoByFreeMusic");
+				TodoLogger.Log(0, "SetupInfoByFreeMusic");
 				this.mode = GameMode.Type.FreeBattle;
 				this.freeMusicId = freeMusicId;
 				this.onStageDivaNum = onStageDivaNum;

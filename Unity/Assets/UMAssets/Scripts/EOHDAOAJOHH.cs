@@ -72,7 +72,7 @@ public class EOHDAOAJOHH
 	// // RVA: 0xFB88AC Offset: 0xFB88AC VA: 0xFB88AC
 	public void OPODBGPJDCJ()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0xFB8EF0 Offset: 0xFB8EF0 VA: 0xFB8EF0

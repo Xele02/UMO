@@ -18,13 +18,13 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x1402020 Offset: 0x1402020 VA: 0x1402020
 	public GBEFGAIGGHA_Shop()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x14020C4 Offset: 0x14020C4 VA: 0x14020C4 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x14021FC Offset: 0x14021FC VA: 0x14021FC Slot: 5
@@ -33,7 +33,7 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x14028B8 Offset: 0x14028B8 VA: 0x14028B8 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

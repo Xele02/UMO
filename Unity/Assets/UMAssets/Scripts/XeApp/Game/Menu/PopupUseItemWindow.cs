@@ -10,7 +10,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x11607F0 Offset: 0x11607F0 VA: 0x11607F0
 		public void Initialize()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733634 Offset: 0x733634 VA: 0x733634

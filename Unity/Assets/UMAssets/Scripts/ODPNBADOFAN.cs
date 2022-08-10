@@ -21,13 +21,13 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x1B39890 Offset: 0x1B39890 VA: 0x1B39890
 	public ODPNBADOFAN_Quest()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x1B39950 Offset: 0x1B39950 VA: 0x1B39950 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x1B39C80 Offset: 0x1B39C80 VA: 0x1B39C80 Slot: 5
@@ -36,7 +36,7 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x1B3A84C Offset: 0x1B3A84C VA: 0x1B3A84C Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

@@ -15,7 +15,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x12E147C Offset: 0x12E147C VA: 0x12E147C
 		public IEnumerator Initialize(GameObject parent, UnityAction action)
 		{
-			UnityEngine.Debug.LogError("TODO StatusWindowControl Initialize");
+			TodoLogger.Log(0, "StatusWindowControl Initialize");
 			action();
 			yield break;
 		}
@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12E155C Offset: 0x12E155C VA: 0x12E155C
 		public void ResetHistory()
 		{
-			UnityEngine.Debug.LogError("TODO StatusWindowControl ResetHistory");
+			TodoLogger.Log(0, "StatusWindowControl ResetHistory");
 		}
 
 		// // RVA: 0x12E1708 Offset: 0x12E1708 VA: 0x12E1708

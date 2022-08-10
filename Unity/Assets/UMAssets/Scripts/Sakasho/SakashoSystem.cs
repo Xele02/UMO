@@ -63,7 +63,7 @@ public class SakashoSystem
 	// // RVA: 0x2E6BCC4 Offset: 0x2E6BCC4 VA: 0x2E6BCC4
 	public static bool CancelAPICall(int callId)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

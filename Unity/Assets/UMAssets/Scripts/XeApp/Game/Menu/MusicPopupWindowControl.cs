@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x104BB44 Offset: 0x104BB44 VA: 0x104BB44
 		public void Initialize(Transform parent)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x104BE40 Offset: 0x104BE40 VA: 0x104BE40
@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x104C5C4 Offset: 0x104C5C4 VA: 0x104C5C4
 		static MusicPopupWindowControl()
 		{
-			UnityEngine.Debug.LogError("TODO static MusicPopupWindowControl");
+			TodoLogger.Log(0, "static MusicPopupWindowControl");
 		}
 	}
 }

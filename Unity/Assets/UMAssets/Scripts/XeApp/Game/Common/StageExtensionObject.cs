@@ -32,7 +32,7 @@ namespace XeApp.Game.Common
 		{
 			if(moviePlayer != null)
 			{
-				UnityEngine.Debug.LogError("TODO StageExtensionObject LateUpdate Update movie player");
+				TodoLogger.Log(0, "StageExtensionObject LateUpdate Update movie player");
 			}
 			if(m_pause)
 			{
@@ -213,13 +213,13 @@ namespace XeApp.Game.Common
 		//// RVA: 0x13A2060 Offset: 0x13A2060 VA: 0x13A2060
 		public void EventMoviePlay()
 		{
-			UnityEngine.Debug.LogError("TODO EventMoviePlay");
+			TodoLogger.Log(0, "EventMoviePlay");
 		}
 
 		//// RVA: 0x13A2114 Offset: 0x13A2114 VA: 0x13A2114
 		public void EventMovieStop()
 		{
-			UnityEngine.Debug.LogError("TODO EventMoviePlay");
+			TodoLogger.Log(0, "EventMoviePlay");
 		}
 
 		//// RVA: 0x13A2208 Offset: 0x13A2208 VA: 0x13A2208

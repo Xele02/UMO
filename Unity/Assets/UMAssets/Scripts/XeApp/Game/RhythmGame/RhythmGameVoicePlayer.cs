@@ -34,7 +34,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x15518C4 Offset: 0x15518C4 VA: 0x15518C4
 		public Result ChangePlayVoice(Voice a_voice)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			return Result.None;
 		}
 

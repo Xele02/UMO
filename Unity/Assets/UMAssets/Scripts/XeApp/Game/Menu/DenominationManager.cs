@@ -28,14 +28,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17CF4F0 Offset: 0x17CF4F0 VA: 0x17CF4F0
 		public static DenominationManager Create(Transform parent)
 		{
-			UnityEngine.Debug.LogWarning("TODO DenominationManager.Create");
+			TodoLogger.Log(5, "DenominationManager.Create");
 			return null;
 		}
 
 		// // RVA: 0x17CF744 Offset: 0x17CF744 VA: 0x17CF744
 		public void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x17CF7DC Offset: 0x17CF7DC VA: 0x17CF7DC

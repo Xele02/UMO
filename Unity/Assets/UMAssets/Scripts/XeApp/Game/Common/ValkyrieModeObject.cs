@@ -38,15 +38,15 @@ namespace XeApp.Game.Common
 		public Action onBeginShooting { private get; set; } // 0x58
 		public Action onEndAnimationCallback { private get; set; } // 0x5C
 		public Action onPlayerCutInStart { set { 
-			UnityEngine.Debug.LogError("TODO onPlayerCutInStart set");
+			TodoLogger.Log(0, "onPlayerCutInStart set");
 			//m_eventListener.onPlayerCutInStart = value;
 		} } //0x1CE31EC
 		public Action onEnemyCutInStart { set { 
-			UnityEngine.Debug.LogError("TODO onEnemyCutInStart set");
+			TodoLogger.Log(0, "onEnemyCutInStart set");
 			//m_eventListener.onEnemyCutInStart = value; 
 		} } //0x1CE3214
 		public Action onEnemyLockOnStart { set { 
-			UnityEngine.Debug.LogError("TODO onEnemyLockOnStart set");
+			TodoLogger.Log(0, "onEnemyLockOnStart set");
 			//m_eventListener.onEnemyLockOnStart = value;
 		} } //0x1CE323C
 		public bool isRunning { get; private set; } // 0x60
@@ -65,13 +65,13 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CE3298 Offset: 0x1CE3298 VA: 0x1CE3298
 		private void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO OnDestroy");
+			TodoLogger.Log(0, "OnDestroy");
 		}
 
 		// RVA: 0x1CE32A8 Offset: 0x1CE32A8 VA: 0x1CE32A8
 		public void Initialize(ValkyrieModeResource resource, bool isDebug = false)
 		{
-			UnityEngine.Debug.LogError("TODO ValkyrieModeObject Initialize");
+			TodoLogger.Log(0, "ValkyrieModeObject Initialize");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73C828 Offset: 0x73C828 VA: 0x73C828
@@ -117,7 +117,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CE4F9C Offset: 0x1CE4F9C VA: 0x1CE4F9C
 		public void ChangeAnimationTime(double time)
 		{
-			UnityEngine.Debug.LogWarning("TODO ValkyrieMode ChangeAnimationTime");
+			TodoLogger.Log(5, "ValkyrieMode ChangeAnimationTime");
 		}
 
 		//// RVA: 0x1CE401C Offset: 0x1CE401C VA: 0x1CE401C
@@ -140,7 +140,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CE53A8 Offset: 0x1CE53A8 VA: 0x1CE53A8
 		static ValkyrieModeObject()
 		{
-			UnityEngine.Debug.LogError("TODO static ValkyrieModeObject");
+			TodoLogger.Log(0, "static ValkyrieModeObject");
 		}
 	}
 }

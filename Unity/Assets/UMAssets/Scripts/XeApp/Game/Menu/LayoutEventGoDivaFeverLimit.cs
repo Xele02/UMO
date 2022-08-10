@@ -21,13 +21,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1990AA0 Offset: 0x1990AA0 VA: 0x1990AA0
 		public void TryEnter()
 		{
-			UnityEngine.Debug.LogError("TODO LayoutEventGoDivaFeverLimit TryEnter");
+			TodoLogger.Log(0, "LayoutEventGoDivaFeverLimit TryEnter");
 		}
 
 		// // RVA: 0x1990AB0 Offset: 0x1990AB0 VA: 0x1990AB0
 		public void TryLeave()
 		{
-			UnityEngine.Debug.LogError("TODO LayoutEventGoDivaFeverLimit TryLeave");
+			TodoLogger.Log(0, "LayoutEventGoDivaFeverLimit TryLeave");
 		}
 
 		// // RVA: 0x1990AC0 Offset: 0x1990AC0 VA: 0x1990AC0
@@ -36,20 +36,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1990B44 Offset: 0x1990B44 VA: 0x1990B44
 		public void Hide()
 		{
-			UnityEngine.Debug.LogError("TODO LayoutEventGoDivaFeverLimit Hide");
+			TodoLogger.Log(0, "LayoutEventGoDivaFeverLimit Hide");
 		}
 
 		// // RVA: 0x1990BC8 Offset: 0x1990BC8 VA: 0x1990BC8
 		public bool IsPlaying()
 		{
-			UnityEngine.Debug.LogError("TODO LayoutEventGoDivaFeverLimit IsPlaying");
+			TodoLogger.Log(0, "LayoutEventGoDivaFeverLimit IsPlaying");
 			return false;
 		}
 
 		// // RVA: 0x1990BF4 Offset: 0x1990BF4 VA: 0x1990BF4
 		public void SetOnOff(bool bOn)
 		{
-			UnityEngine.Debug.LogError("TODO LayoutEventGoDivaFeverLimit SetOnOff");
+			TodoLogger.Log(0, "LayoutEventGoDivaFeverLimit SetOnOff");
 		}
 
 		// // RVA: 0x1990C88 Offset: 0x1990C88 VA: 0x1990C88
@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1990CC4 Offset: 0x1990CC4 VA: 0x1990CC4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			UnityEngine.Debug.LogError("TODO InitializeFromLayout LayoutEventGoDivaFeverLimit");
+			TodoLogger.Log(0, "InitializeFromLayout LayoutEventGoDivaFeverLimit");
 			return true;
 		}
 	}

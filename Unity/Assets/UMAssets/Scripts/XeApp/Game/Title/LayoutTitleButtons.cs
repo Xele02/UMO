@@ -49,7 +49,7 @@ namespace XeApp.Game.Title
 				{
 					m_Inheriting.AddOnClickCallback(() => {
 						//0xE3612C
-						UnityEngine.Debug.LogError("TODO");
+						TodoLogger.Log(0, "TODO");
 					});
 				}
 			}
@@ -57,7 +57,7 @@ namespace XeApp.Game.Title
 			{
 				m_Support.AddOnClickCallback(() => {
 					//0xE36198
-					UnityEngine.Debug.LogError("TODO");
+					TodoLogger.Log(0, "TODO");
 				});
 			}
 		}

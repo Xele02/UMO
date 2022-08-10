@@ -26,7 +26,7 @@ namespace XeApp.Game.Common
 		private Coroutine m_coroutine_bsc_lock; // 0x60
 		private bool m_is_bsc_lock; // 0x64
 
-		//public int divaId { get; } 0x1BEBEB8
+		public int divaId { get { return divaObject.divaId; } } //0x1BEBEB8
 		public List<BoneSpringController> BoneSpringControllerList { get { return bscList; } } //0x1BEBEDC
 
 		//// RVA: 0x1BEBEE4 Offset: 0x1BEBEE4 VA: 0x1BEBEE4
@@ -35,6 +35,8 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1BEBEE8 Offset: 0x1BEBEE8 VA: 0x1BEBEE8
 		public void Initialize(DivaExtensionResource resource, DivaObject divaObject, MusicCameraObject cameraObject, List<GameDivaObject> a_diva_list)
 		{
+			this.resource = resource;
+			this.divaObject = divaObject;
 			if(resource != null)
 			{
 				animator = GetComponent<Animator>();
@@ -256,7 +258,7 @@ namespace XeApp.Game.Common
 		{
 			if(m_pause)
 			{
-				UnityEngine.Debug.LogError("TODO LateUpdate DivaExtenssionObject when paused");
+				TodoLogger.Log(0, "LateUpdate DivaExtenssionObject when paused");
 			}
 		}
 	}

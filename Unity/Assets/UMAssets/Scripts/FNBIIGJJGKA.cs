@@ -41,7 +41,7 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x119EB74 Offset: 0x119EB74 VA: 0x119EB74
 	public FNBIIGJJGKA_Counter()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		BDLNMOIOMHK = new NAKMCMEPAGH();
 		KMBPACJNEOF();
 	}
@@ -49,7 +49,7 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x119EC90 Offset: 0x119EC90 VA: 0x119EC90 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		BDLNMOIOMHK.LHPDDGIJKNB();
 	}
 
@@ -68,7 +68,7 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_SaveBlock
 				BDLNMOIOMHK.EDLBLCGHECJ = CJAENOMGPDA(jsonData, "max", 0, ref b);
 			}
 		}
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

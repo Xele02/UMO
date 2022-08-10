@@ -198,7 +198,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D52EC Offset: 0x10D52EC VA: 0x10D52EC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
@@ -587,7 +587,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D7BD4 Offset: 0x10D7BD4 VA: 0x10D7BD4 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
+		TodoLogger.Log(0, "CAOGDCBPBAN");
 		return 0;
 	}
 }
@@ -790,7 +790,7 @@ public class HMJHLLPBCLD : IComparable<HMJHLLPBCLD>
 	// // RVA: 0x15F6A10 Offset: 0x15F6A10 VA: 0x15F6A10 Slot: 4
 	public int CompareTo(HMJHLLPBCLD EAIPIMCBNJN)
 	{
-		UnityEngine.Debug.LogError("TODO HMJHLLPBCLD CompareTo");
+		TodoLogger.Log(0, "HMJHLLPBCLD CompareTo");
 		return 0;
 	}
 

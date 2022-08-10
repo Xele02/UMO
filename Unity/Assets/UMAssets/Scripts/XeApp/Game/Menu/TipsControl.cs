@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA97284 Offset: 0xA97284 VA: 0xA97284
 		public static void SetSituationValue(TipsControl.SituationId id, int val)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetSituationValue");
+			TodoLogger.Log(5, "SetSituationValue");
 		}
 
 		// // RVA: 0xA9734C Offset: 0xA9734C VA: 0xA9734C
@@ -70,19 +70,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA97504 Offset: 0xA97504 VA: 0xA97504
 		private void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xA97708 Offset: 0xA97708 VA: 0xA97708
 		private void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xA978D0 Offset: 0xA978D0 VA: 0xA978D0
 		private void Update()
 		{
-			UnityEngine.Debug.LogWarning("TODO Tips update");
+			TodoLogger.Log(5, "Tips update");
 		}
 
 		// // RVA: 0xA978FC Offset: 0xA978FC VA: 0xA978FC
@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA98660 Offset: 0xA98660 VA: 0xA98660
 		public void Show(int count = 3)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xA99004 Offset: 0xA99004 VA: 0xA99004
@@ -120,13 +120,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA99520 Offset: 0xA99520 VA: 0xA99520
 		public void Close()
 		{
-			UnityEngine.Debug.LogError("TODO Tips Close");
+			TodoLogger.Log(0, "Tips Close");
 		}
 
 		// // RVA: 0xA99794 Offset: 0xA99794 VA: 0xA99794
 		public bool isPlayingAnime()
 		{
-			UnityEngine.Debug.LogError("TODO Tips isPlayinganime");
+			TodoLogger.Log(0, "Tips isPlayinganime");
 			return false;
 		}
 

@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 		protected override void OnPreSetCanvas()
 		{
 			// MenuScene.Instance.divaManager.transform.Find("DivaCamera").GetComponent<Camera>().enabled = true;
-			UnityEngine.Debug.LogError("TODO diva 3d");
+			TodoLogger.Log(0, "diva 3d");
 			m_eventAdvId = GetEventAdvId();
 			if(CanRareBreakAdv() || m_eventAdvId > 0)
 			{
@@ -125,17 +125,17 @@ namespace XeApp.Game.Menu
 			}
 			MenuScene.Instance.FooterMenu.MenuBar.SetInterruptEvent((TransitionList.Type type) => {
 				//0x13C78E0
-				UnityEngine.Debug.Log("TODO");
+				TodoLogger.Log(10, "TODO");
 				return false;
 			});
 			m_isInitRaidLobby = false;
-			UnityEngine.Debug.LogWarning("TODO Raid");
+			TodoLogger.Log(5, "Raid");
 			/*MenuScene.Instance.LobbyButtonControl.StartCoroutine(MenuScene.Instance.LobbyButtonControl.InitRaidLobby(() => {
 				//0x13C790C*/
 				m_isInitRaidLobby = true;
 			/*}, () => {
 				//0x13C7934
-				UnityEngine.Debug.Log("TODO");
+				TodoLogger.Log(10, "TODO");
 			}));*/
 			m_isSuccessPrepare = false;
 			NKGJPJPHLIF.HHCJCDFCLOB.LBEHLMLKPDM(() => {
@@ -143,9 +143,9 @@ namespace XeApp.Game.Menu
 				m_isSuccessPrepare = true;
 			}, () => {
 				//0x13C79A8
-				UnityEngine.Debug.Log("TODO");
+				TodoLogger.Log(10, "TODO");
 			});
-			UnityEngine.Debug.LogWarning("TODO m_balloonLeadData");
+			TodoLogger.Log(5, "m_balloonLeadData");
 			// m_balloonLeadData = PLADCDJLOBE.PLADCDJLOBE();
 			// Database.Instance.bonusData.ClearEpisodeBonus();
 			m_isUpdateMusicRateRanking = false;
@@ -154,18 +154,18 @@ namespace XeApp.Game.Menu
 				m_isUpdateMusicRateRanking = true;
 			/*}, () => {
 				//0x13C7A3C
-				UnityEngine.Debug.Log("TODO");
+				TodoLogger.Log(10, "TODO");
 			});*/
 			if(!MenuScene.IsAlreadyHome)
 			{
 				m_isCheckGachaProductList = false;
 				NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG(() => {
 					//0x13C7AD0
-					UnityEngine.Debug.Log("TODO");
+					TodoLogger.Log(10, "TODO");
 					m_isCheckGachaProductList = true;
 				}, () => {
 					//0x13C7B24
-					UnityEngine.Debug.Log("TODO");
+					TodoLogger.Log(10, "TODO");
 				}, false, false);
 			}
 			else
@@ -177,7 +177,7 @@ namespace XeApp.Game.Menu
 			{
 				StartCoroutine(Co_ChangeBg());
 			}
-			UnityEngine.Debug.LogWarning("TODO end OnPreSetCanvas");
+			TodoLogger.Log(5, "end OnPreSetCanvas");
 			// MenuScene.Instance.LobbyButtonControl.Wait();
 			// MenuScene.Instance.DenomControl.AddResponseHandler(this.OnChargeMoney);
 			// BingoQuestStart();
@@ -193,7 +193,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x971570 Offset: 0x971570 VA: 0x971570
 		private IEnumerator Co_ChangeBg()
 		{
-			UnityEngine.Debug.LogWarning("TODO Co_ChangeBg");
+			TodoLogger.Log(5, "Co_ChangeBg");
 			yield return null;
 		}
 
@@ -217,7 +217,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_isHomeShowDiva)
 			{
-				UnityEngine.Debug.LogError("TODO 3d diva");
+				TodoLogger.Log(0, "3d diva");
 				//if(m_divaTalk.IsDownLoading())
 				//	return false;
 			}
@@ -246,7 +246,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x971B40 Offset: 0x971B40 VA: 0x971B40 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			UnityEngine.Debug.LogError("TODO OnBgmStart");
+			TodoLogger.Log(0, "OnBgmStart");
 			//SoundManager.Instance.bgmPlayer.ContinuousPlay(BgmPlayer.MENU_BGM_ID_BASE);
 			return true;
 		}
@@ -254,7 +254,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x972010 Offset: 0x972010 VA: 0x972010 Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO OnStartEnterAnimation");
+			TodoLogger.Log(0, "OnStartEnterAnimation");
 			// EnterIntimacy();
 			// m_eventBanner.Enter();
 			// m_campaignBanner.Enter();
@@ -270,7 +270,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x972284 Offset: 0x972284 VA: 0x972284 Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO IsEndEnterAnimation");
+			TodoLogger.Log(0, "IsEndEnterAnimation");
 			return true;
 			//return !m_eventBanner.IsPlaying() && !m_campaignBanner.IsPlaying() && !m_fesBanner.IsPlaying() && !m_subMenu.IsPlaying() && 
 			//	!m_buttonGroup.IsPlaying() && !m_playRecordBanner.IsPlaying() && base.IsEndEnterAnimation();
@@ -279,10 +279,10 @@ namespace XeApp.Game.Menu
 		// RVA: 0x972398 Offset: 0x972398 VA: 0x972398 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO OnStartExitAnimation");
+			TodoLogger.Log(0, "OnStartExitAnimation");
 			// if(m_isHomeShowDiva)
 			// {
-			// 	UnityEngine.Debug.LogError("TODO 3d diva");
+			// 	TodoLogger.Log(0, "3d diva");
 			// }
 			// LeaveIntimacy();
 			// m_playRecordBanner.Leave();
@@ -301,20 +301,20 @@ namespace XeApp.Game.Menu
 		// RVA: 0x97286C Offset: 0x97286C VA: 0x97286C Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			return true;
 		}
 
 		// RVA: 0x972A48 Offset: 0x972A48 VA: 0x972A48 Slot: 14
 		protected override void OnDestoryScene()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0x972E08 Offset: 0x972E08 VA: 0x972E08 Slot: 15
 		protected override void OnDeleteCache()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0x972FA4 Offset: 0x972FA4 VA: 0x972FA4 Slot: 29
@@ -328,7 +328,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_Loading()
 		{
 			//0x13D0F0C
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			IsReady = true;
 			yield break;
 		}
@@ -438,7 +438,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_SceneIntroduce()
 		{
 			//0x13D2790
-			UnityEngine.Debug.LogError("TODO Co_SceneIntroduce");
+			TodoLogger.Log(0, "Co_SceneIntroduce");
 			yield return null;
 		}
 
@@ -636,7 +636,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x971360 Offset: 0x971360 VA: 0x971360
 		private bool CanRareBreakAdv()
 		{
-			UnityEngine.Debug.LogError("TODO CanRareBreakAdv");
+			TodoLogger.Log(0, "CanRareBreakAdv");
 			return false;
 		}
 
@@ -649,7 +649,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x970F60 Offset: 0x970F60 VA: 0x970F60
 		private int GetEventAdvId()
 		{
-			UnityEngine.Debug.LogError("TODO GetEventAdvId");
+			TodoLogger.Log(0, "GetEventAdvId");
 			return 0;
 		}
 

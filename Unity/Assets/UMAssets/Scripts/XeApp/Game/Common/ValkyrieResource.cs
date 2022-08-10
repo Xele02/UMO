@@ -84,7 +84,7 @@ namespace XeApp.Game.Common
 		{
 			isLoadedPrefab = false;
 			StartCoroutine(Co_LoadResources(valkyrieId, envId, battleId));
-			UnityEngine.Debug.LogError("TODO LoadResources");
+			TodoLogger.Log(0, "LoadResources");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73C4D0 Offset: 0x73C4D0 VA: 0x73C4D0
@@ -102,7 +102,7 @@ namespace XeApp.Game.Common
 			bundleName = new StringBuilder();
 			assetName = new StringBuilder();
 			//IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.
-			UnityEngine.Debug.LogError("TODO Valk Co_LoadResources, need load DB valkyrie data");
+			TodoLogger.Log(0, "Valk Co_LoadResources, need load DB valkyrie data");
 			isLoadedPrefab = true;
 			yield break;
 		}

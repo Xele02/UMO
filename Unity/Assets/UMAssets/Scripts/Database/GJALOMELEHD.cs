@@ -76,7 +76,7 @@ public class GJALOMELEHD_Intimacy : DIHHCBACKGG
 	// // RVA: 0xAA8D90 Offset: 0xAA8D90 VA: 0xAA8D90
 	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return 0;
     }
 
@@ -103,7 +103,7 @@ public class GJALOMELEHD_Intimacy : DIHHCBACKGG
 	// // RVA: 0xAA9164 Offset: 0xAA9164 VA: 0xAA9164 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO Database Load");
+        TodoLogger.Log(0, "Database Load");
         return true;
     }
 
@@ -119,14 +119,14 @@ public class GJALOMELEHD_Intimacy : DIHHCBACKGG
 	// // RVA: 0xAAA568 Offset: 0xAAA568 VA: 0xAAA568 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
 	// // RVA: 0xAAA570 Offset: 0xAAA570 VA: 0xAAA570 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
+		TodoLogger.Log(0, "CAOGDCBPBAN");
 		return 0;
 	}
 

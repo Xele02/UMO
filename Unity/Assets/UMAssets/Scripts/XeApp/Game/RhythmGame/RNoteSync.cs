@@ -38,7 +38,7 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xDC0C18 Offset: 0xDC0C18 VA: 0xDC0C18
 		private void LateUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xDC130C Offset: 0xDC130C VA: 0xDC130C
@@ -53,25 +53,25 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xDC1330 Offset: 0xDC1330 VA: 0xDC1330 Slot: 5
 		protected override void PausableAwake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0xDC1334 Offset: 0xDC1334 VA: 0xDC1334 Slot: 6
 		protected override void PausableStart()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0xDC1338 Offset: 0xDC1338 VA: 0xDC1338 Slot: 7
 		protected override void PausableUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0xDC133C Offset: 0xDC133C VA: 0xDC133C Slot: 8
 		protected override void PausableInPause()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0xDB514C Offset: 0xDB514C VA: 0xDB514C
@@ -80,13 +80,13 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xDC1340 Offset: 0xDC1340 VA: 0xDC1340
 		public RNoteSync()
 		{
-			UnityEngine.Debug.LogError("TODO RNoteSync()");
+			TodoLogger.Log(0, "RNoteSync()");
 		}
 
 		// RVA: 0xDC17AC Offset: 0xDC17AC VA: 0xDC17AC
 		static RNoteSync()
 		{
-			UnityEngine.Debug.LogError("TODO static RNoteSync()");
+			TodoLogger.Log(0, "static RNoteSync()");
 		}
 	}
 }

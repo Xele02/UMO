@@ -16,7 +16,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xD27018 Offset: 0xD27018 VA: 0xD27018
 		public void LoadResources(int id, int valkyrie_id)
 		{
-			UnityEngine.Debug.LogError("TODO ValkyrieMode LoadResources");
+			TodoLogger.Log(0, "ValkyrieMode LoadResources");
 			isLoadedMain = true;
 		}
 

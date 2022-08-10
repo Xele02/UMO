@@ -53,7 +53,7 @@ namespace ExternLib
         }
         public static ushort CRIWARE2178C0A8_criAtomUnity_GetNativeParameterId(int id)
         {
-            UnityEngine.Debug.LogError("TODO CRIWARE2178C0A8_criAtomUnity_GetNativeParameterId");
+            TodoLogger.Log(0, "CRIWARE2178C0A8_criAtomUnity_GetNativeParameterId");
             return 0;
         }
     }

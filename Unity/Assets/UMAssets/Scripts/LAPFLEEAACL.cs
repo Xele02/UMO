@@ -24,14 +24,14 @@ public class LAPFLEEAACL
 	// // RVA: 0xD94650 Offset: 0xD94650 VA: 0xD94650
 	public void OFKONDFPMLJ()
     {
-        UnityEngine.Debug.LogError("TODO SakashoPayment$$GetProducts");
+        TodoLogger.Log(0, "SakashoPayment$$GetProducts");
 		PLOOEECNHFB = true;
     }
 
 	// // RVA: 0xD94AA0 Offset: 0xD94AA0 VA: 0xD94AA0
 	public void LAOEGNLOJHC()
     {
-        UnityEngine.Debug.LogError("TODO BJGOKLICIDO_Coroutine_Convert");
+        TodoLogger.Log(0, "BJGOKLICIDO_Coroutine_Convert");
 		PLOOEECNHFB = true;
     }
 

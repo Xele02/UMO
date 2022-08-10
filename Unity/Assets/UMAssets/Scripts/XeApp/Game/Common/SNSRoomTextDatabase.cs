@@ -15,7 +15,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x138C2F8 Offset: 0x138C2F8 VA: 0x138C2F8
 		public void LoadFromBinaryTAR(CBBJHPBGBAJ_Archive tar)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x73AA64 Offset: 0x73AA64 VA: 0x73AA64

@@ -171,7 +171,7 @@ namespace CriWare
 		// // RVA: 0x2963908 Offset: 0x2963908 VA: 0x2963908 Slot: 4
 		protected override void OnEnable()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6363EC Offset: 0x6363EC VA: 0x6363EC
@@ -181,25 +181,25 @@ namespace CriWare
 		// // RVA: 0x2963A1C Offset: 0x2963A1C VA: 0x2963A1C Slot: 5
 		protected override void OnDisable()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2963AF4 Offset: 0x2963AF4 VA: 0x2963AF4 Slot: 13
 		protected virtual void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2963B20 Offset: 0x2963B20 VA: 0x2963B20 Slot: 14
 		protected virtual void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2961C84 Offset: 0x2961C84 VA: 0x2961C84 Slot: 6
 		public override void CriInternalUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2963BD0 Offset: 0x2963BD0 VA: 0x2963BD0 Slot: 15
@@ -208,7 +208,7 @@ namespace CriWare
 		// // RVA: 0x2963BF8 Offset: 0x2963BF8 VA: 0x2963BF8 Slot: 7
 		public override void CriInternalLateUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2963C2C Offset: 0x2963C2C VA: 0x2963C2C Slot: 16

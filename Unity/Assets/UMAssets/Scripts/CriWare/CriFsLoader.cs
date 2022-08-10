@@ -81,7 +81,7 @@ namespace CriWare
 		// // RVA: 0x294853C Offset: 0x294853C VA: 0x294853C
 		public void SetReadUnitSize(int unit_size)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetReadUnitSize");
+			TodoLogger.Log(5, "SetReadUnitSize");
 		}
 
 		// // RVA: 0x29497CC Offset: 0x29497CC VA: 0x29497CC Slot: 1

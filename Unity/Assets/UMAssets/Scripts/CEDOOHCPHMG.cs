@@ -17,13 +17,13 @@ public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x12B2B90 Offset: 0x12B2B90 VA: 0x12B2B90
 	public CEDOOHCPHMG_UnitGoDiva()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x12B2C68 Offset: 0x12B2C68 VA: 0x12B2C68 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x12B2E08 Offset: 0x12B2E08 VA: 0x12B2E08 Slot: 5
@@ -32,7 +32,7 @@ public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x12B3180 Offset: 0x12B3180 VA: 0x12B3180 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

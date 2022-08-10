@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xC3A898 Offset: 0xC3A898 VA: 0xC3A898
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO SetDeckValkyrieButton Awake");
+			TodoLogger.Log(0, "SetDeckValkyrieButton Awake");
 		}
 
 		// // RVA: 0xC3AAAC Offset: 0xC3AAAC VA: 0xC3AAAC

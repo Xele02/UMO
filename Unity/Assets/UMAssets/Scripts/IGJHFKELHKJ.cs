@@ -83,13 +83,13 @@ public class IGJHFKELHKJ
 		file = JHJMNLMNPGO + "/" + KCOGAGGCPBP.NMGOCAFNNMM; // 04
 		if(File.Exists(file))
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 	}
 
 	// // RVA: 0x11F6154 Offset: 0x11F6154 VA: 0x11F6154
 	public void HJMKBCFJOOH()
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		TodoLogger.Log(0, "!!!");
 	}
 }

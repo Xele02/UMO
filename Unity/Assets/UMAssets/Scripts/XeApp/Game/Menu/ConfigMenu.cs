@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1B5D9E0 Offset: 0x1B5D9E0 VA: 0x1B5D9E0
 		public static ConfigMenu Create(Transform parent)
 		{
-			UnityEngine.Debug.LogError("TODO Create Config");
+			TodoLogger.Log(0, "Create Config");
 			return null;
 		}
 
@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1B5EFA4 Offset: 0x1B5EFA4 VA: 0x1B5EFA4 Slot: 4
 		public void Dispose()
 		{
-			UnityEngine.Debug.LogError("TODO Dispose ConfigMenu");
+			TodoLogger.Log(0, "Dispose ConfigMenu");
 		}
 
 		//[CompilerGeneratedAttribute] // RVA: 0x7010B4 Offset: 0x7010B4 VA: 0x7010B4

@@ -50,7 +50,7 @@ namespace XeApp.Game.Common
 			Release(sheet);
 			if(defaultInstallSource == InstallSource.LocalStorage)
 			{
-				UnityEngine.Debug.LogError("TODO MessageLoader 1");
+				TodoLogger.Log(0, "MessageLoader 1");
 			}
 			else
 			{
@@ -110,7 +110,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1117054 Offset: 0x1117054 VA: 0x1117054 Slot: 4
 		public void Dispose()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1116088 Offset: 0x1116088 VA: 0x1116088

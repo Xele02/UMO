@@ -67,7 +67,7 @@ namespace XeApp.Game.Common
 		{
     		UnityEngine.Debug.Log("Enter SurveyLatencyEstimator");
 			//0x1397B84
-			UnityEngine.Debug.LogWarning("TODO SoundManager.SurveyLatencyEstimator");
+			TodoLogger.Log(5, "SoundManager.SurveyLatencyEstimator");
     		UnityEngine.Debug.Log("Exit SurveyLatencyEstimator");
 			yield break;
 		}
@@ -137,7 +137,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x139697C Offset: 0x139697C VA: 0x139697C
 		public void RequestEntryMenuCueSheet(UnityAction onLoadedCallback)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			onLoadedCallback();
 		}
 

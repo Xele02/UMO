@@ -97,8 +97,9 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 
 	public void FixMaterialShaderMat(Material mat)
 	{
-		if(mat.shader.isSupported)
-			return;
+		UnityEngine.Debug.Log("Checking shader for mat "+mat.name);
+		//if(mat.shader.isSupported)
+		//	return;
 		if(!shaderList.ContainsKey(mat.shader.GetInstanceID()))
 		{
 			Shader shader = Shader.Find(mat.shader.name);
@@ -137,6 +138,7 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 
 	public void FixMaterialShaderGO(GameObject obj)
 	{
+		UnityEngine.Debug.Log("Checking shader for object "+obj.name);
 		// Search in Graphic element
 		Graphic[] graphics = obj.GetComponentsInChildren<Graphic>(true);
 		for(int i = 0; i < graphics.Length; i++)

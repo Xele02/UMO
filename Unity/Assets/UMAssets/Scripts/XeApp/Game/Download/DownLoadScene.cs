@@ -51,7 +51,7 @@ namespace XeApp.Game.DownLoad
 
 			NextScene("Menu");
 
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			UnityEngine.Debug.Log("Exit Co_MainProc");
 		}
 
@@ -63,7 +63,7 @@ namespace XeApp.Game.DownLoad
 			//0x11BF7A4
 			yield return null;
 
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			UnityEngine.Debug.Log("Exit Co_InitializeQuestionary");
 		}
 

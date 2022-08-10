@@ -220,7 +220,7 @@ namespace XeApp.Game.Common
 			{
 				if(!GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality())
 				{
-					UnityEngine.Debug.LogError("TODO Diva Low quality 3d setyp");
+					TodoLogger.Log(0, "Diva Low quality 3d setyp");
 				}
 			}
 			m_valkyrieShaderControlelr.Initialize(renderers, null);
@@ -264,7 +264,21 @@ namespace XeApp.Game.Common
 		//public void SetEnableRenderer(bool enable) { }
 
 		//// RVA: 0x1BF4828 Offset: 0x1BF4828 VA: 0x1BF4828
-		//public void Release() { }
+		public void Release()
+		{
+			animator = null;
+			if(facialBlendAnimMediator != null)
+			{
+				facialBlendAnimMediator.Release();
+			}
+			if(divaPrefab_ != null)
+			{
+				Destroy(divaPrefab_);
+				divaPrefab_ = null;
+			}
+			DestroyEffect();
+			DestroyWind();
+		}
 
 		//// RVA: 0x1BF0150 Offset: 0x1BF0150 VA: 0x1BF0150
 		public void SetActiveMikePrefab(bool active)

@@ -17,13 +17,13 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x17552F0 Offset: 0x17552F0 VA: 0x17552F0
 	public HHDEBNFMIMH_Adventure()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x1755394 Offset: 0x1755394 VA: 0x1755394 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x175549C Offset: 0x175549C VA: 0x175549C Slot: 5
@@ -32,7 +32,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x1755B78 Offset: 0x1755B78 VA: 0x1755B78 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

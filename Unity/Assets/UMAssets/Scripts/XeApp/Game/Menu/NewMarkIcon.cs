@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
         // // RVA: 0x1516168 Offset: 0x1516168 VA: 0x1516168
         public void Release()
         {
-            UnityEngine.Debug.LogError("TODO Release NewMarkIcon");
+            TodoLogger.Log(0, "Release NewMarkIcon");
         }
 
         // // RVA: 0x15163F4 Offset: 0x15163F4 VA: 0x15163F4

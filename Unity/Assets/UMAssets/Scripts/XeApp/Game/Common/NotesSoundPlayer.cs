@@ -24,7 +24,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAED608 Offset: 0xAED608 VA: 0xAED608
 		public void PreSetup()
 		{
-			UnityEngine.Debug.LogError("TODO NoteSoundPlayer PreSetup");
+			TodoLogger.Log(0, "NoteSoundPlayer PreSetup");
 		}
 
 		// // RVA: 0xAED6F4 Offset: 0xAED6F4 VA: 0xAED6F4
@@ -33,7 +33,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAED7CC Offset: 0xAED7CC VA: 0xAED7CC
 		public void PostSetup(BgmPlayer bgmPlayer, bool isVolumeZero)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xAEDFE0 Offset: 0xAEDFE0 VA: 0xAEDFE0

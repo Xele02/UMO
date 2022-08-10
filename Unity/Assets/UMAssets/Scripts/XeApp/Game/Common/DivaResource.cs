@@ -873,7 +873,7 @@ namespace XeApp.Game.Common
 			//yield return StartCoroutine(Co_LoadUnlockCostumeDivaAction(divaId));
 			isLoadedMenuAnimationResource = true;
 			
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
     		UnityEngine.Debug.Log("Exit Co_LoadMenuResource");
 		}
 

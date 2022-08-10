@@ -64,25 +64,25 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xDA95A8 Offset: 0xDA95A8 VA: 0xDA95A8 Slot: 5
 		protected override void PausableAwake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0xDA95AC Offset: 0xDA95AC VA: 0xDA95AC Slot: 6
 		protected override void PausableStart()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0xDA95B0 Offset: 0xDA95B0 VA: 0xDA95B0 Slot: 7
 		protected override void PausableUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0xDA95B4 Offset: 0xDA95B4 VA: 0xDA95B4 Slot: 8
 		protected override void PausableInPause()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 	}
 }

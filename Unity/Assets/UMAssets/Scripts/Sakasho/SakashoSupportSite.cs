@@ -58,7 +58,7 @@ public class SakashoSupportSite : SakashoAPIBase
 	private static /*extern*/ int SakashoSupportSiteGetToken(int callbackId, string json)
     {
         // call lib sakasho.SakashoSupportSiteGetToken
-        UnityEngine.Debug.LogError("TODO SakashoSupportSiteGetToken");
+        TodoLogger.Log(0, "SakashoSupportSiteGetToken");
         return 0;
     }
 

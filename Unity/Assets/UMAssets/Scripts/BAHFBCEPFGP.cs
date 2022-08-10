@@ -24,7 +24,7 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0xF148A4 Offset: 0xF148A4 VA: 0xF148A4 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0xF148A8 Offset: 0xF148A8 VA: 0xF148A8 Slot: 5
@@ -33,7 +33,7 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0xF14CD0 Offset: 0xF14CD0 VA: 0xF14CD0 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

@@ -73,13 +73,13 @@ namespace CriWare
 			// // RVA: 0x2957A74 Offset: 0x2957A74 VA: 0x2957A74
 			public Player()
 			{
-				UnityEngine.Debug.LogWarning("TODO CriMana Player");
+				TodoLogger.Log(5, "CriMana Player");
 			}
 
 			// // RVA: 0x2957D9C Offset: 0x2957D9C VA: 0x2957D9C
 			public Player(bool advanced_audio_mode, bool ambisonics_mode, uint max_path_length)
 			{
-				UnityEngine.Debug.LogWarning("TODO CriMana Player");
+				TodoLogger.Log(5, "CriMana Player");
 			}
 
 			// // RVA: 0x29582BC Offset: 0x29582BC VA: 0x29582BC Slot: 1
@@ -88,7 +88,7 @@ namespace CriWare
 			// // RVA: 0x29585C0 Offset: 0x29585C0 VA: 0x29585C0 Slot: 5
 			public override void Dispose()
 			{
-				UnityEngine.Debug.LogError("TODO");
+				TodoLogger.Log(0, "TODO");
 			}
 
 			// // RVA: 0x2958650 Offset: 0x2958650 VA: 0x2958650
@@ -100,7 +100,7 @@ namespace CriWare
 			// // RVA: 0x29590CC Offset: 0x29590CC VA: 0x29590CC
 			public void Prepare()
 			{
-				UnityEngine.Debug.LogError("TODO CriMana Player Prepare");
+				TodoLogger.Log(0, "CriMana Player Prepare");
 			}
 
 			// // RVA: 0x29594E4 Offset: 0x29594E4 VA: 0x29594E4
@@ -109,7 +109,7 @@ namespace CriWare
 			// // RVA: 0x29595E8 Offset: 0x29595E8 VA: 0x29595E8
 			public void Start()
 			{
-				UnityEngine.Debug.LogError("TODO");
+				TodoLogger.Log(0, "TODO");
 			}
 
 			// // RVA: 0x2959670 Offset: 0x2959670 VA: 0x2959670
@@ -146,7 +146,7 @@ namespace CriWare
 			// // RVA: 0x295AEE4 Offset: 0x295AEE4 VA: 0x295AEE4
 			public void SetMasterTimerType(Player.TimerType timerType)
 			{
-				UnityEngine.Debug.LogError("TODO SetMasterTimerType");
+				TodoLogger.Log(0, "SetMasterTimerType");
 			}
 
 			// // RVA: 0x295B084 Offset: 0x295B084 VA: 0x295B084
@@ -242,7 +242,7 @@ namespace CriWare
 			// // RVA: 0x295E4B4 Offset: 0x295E4B4 VA: 0x295E4B4
 			public void Update()
 			{
-				UnityEngine.Debug.LogError("TODO");
+				TodoLogger.Log(0, "TODO");
 			}
 
 			// // RVA: 0x295E4C8 Offset: 0x295E4C8 VA: 0x295E4C8

@@ -83,13 +83,13 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0xD85B2C Offset: 0xD85B2C VA: 0xD85B2C
 	public LGIDLHLBFFJ_MonthlyPass()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0xD85C70 Offset: 0xD85C70 VA: 0xD85C70 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0xD86020 Offset: 0xD86020 VA: 0xD86020 Slot: 5
@@ -98,7 +98,7 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0xD87544 Offset: 0xD87544 VA: 0xD87544 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
@@ -114,7 +114,7 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0xD8A954 Offset: 0xD8A954 VA: 0xD8A954 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return null;
 	}
 

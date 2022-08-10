@@ -192,7 +192,7 @@ public class IOGKADECKOP
 		DANMJLOBLIE.StartCoroutine(IMDAHCEDGFK_Coroutine_TitleLogo());
 		if(AppEnv.IsCBT())
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 		else
 		{
@@ -214,7 +214,7 @@ public class IOGKADECKOP
 			while(!StorageSupport.IsAvailableStorage())
 			{
 				yield return null;
-				UnityEngine.Debug.LogError("TODO");
+				TodoLogger.Log(0, "TODO");
 			}
 			ManaAdAPIHelper.Instance.SendLaunchEvent();
 			ManaAdAPIHelper.Instance.TryPendingSendResumeEvent();
@@ -418,7 +418,7 @@ public class IOGKADECKOP
 	// // RVA: 0xA06E24 Offset: 0xA06E24 VA: 0xA06E24
 	private void PELOLGDNOGL()
 	{
-		UnityEngine.Debug.LogWarning("TODO PELOLGDNOGL");
+		TodoLogger.Log(5, "PELOLGDNOGL");
 		NOFPJPHIPBD.ScreenTap.ButtonCallbackTap = this.FGBKOJCFMKM;
 	}
 
@@ -427,7 +427,7 @@ public class IOGKADECKOP
 	private IEnumerator ABPGOJDKKHO_PopupShowSNS(Action KBCBGIGOLHP, Action AOCANKOMKFG, bool DLNDPMNLMGC = false)
 	{
         UnityEngine.Debug.Log("Enter ABPGOJDKKHO_PopupShowSNS");
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
         UnityEngine.Debug.Log("Exit ABPGOJDKKHO_PopupShowSNS");
 		KBCBGIGOLHP();
 		yield break;
@@ -464,7 +464,7 @@ public class IOGKADECKOP
 	private IEnumerator IMJGOIOLGIO_Contract(Action FHANAFNKIFC, Action DOGDHKIEBJA)
 	{
         UnityEngine.Debug.Log("Enter IMJGOIOLGIO_Contract");
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
         UnityEngine.Debug.Log("Exit IMJGOIOLGIO_Contract");
 		FHANAFNKIFC();
 		yield break;
@@ -476,7 +476,7 @@ public class IOGKADECKOP
 	{
         UnityEngine.Debug.Log("Enter HNPMKCFMEGA_Coroutine_Inquiry");
 		//0x140453C
-		UnityEngine.Debug.LogWarning("TODO HNPMKCFMEGA_Coroutine_Inquiry");
+		TodoLogger.Log(5, "HNPMKCFMEGA_Coroutine_Inquiry");
 		PELOLGDNOGL();
         UnityEngine.Debug.Log("Exit HNPMKCFMEGA_Coroutine_Inquiry");
 		yield break;
@@ -1091,7 +1091,7 @@ public class IOGKADECKOP
 	private IEnumerator ACHBBAIODMC()
 	{
         UnityEngine.Debug.Log("Enter ACHBBAIODMC");
-		UnityEngine.Debug.LogError("TODO UtarateRankingUpdate");
+		TodoLogger.Log(0, "UtarateRankingUpdate");
         UnityEngine.Debug.Log("Exit ACHBBAIODMC");
 		yield break;
 	}
@@ -1144,7 +1144,7 @@ public class IOGKADECKOP
         UnityEngine.Debug.Log("Enter NNPDJBJGBFA_Coroutine_ReturnToTitle");
 		//0x1405D14
 		
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         UnityEngine.Debug.Log("Exit NNPDJBJGBFA_Coroutine_ReturnToTitle");
 		yield break;
 	}
@@ -1297,7 +1297,7 @@ public class IOGKADECKOP
 		{
 			if(l[i].PPEGAKEIEGM == 2)
 			{
-				UnityEngine.Debug.LogError("TODO Check "+val1+" "+l[i].PDBPFJJCADD+" "+l[i].FDBNFFNFOND);
+				TodoLogger.Log(0, "Check "+val1+" "+l[i].PDBPFJJCADD+" "+l[i].FDBNFFNFOND);
 				if(val1 >= l[i].PDBPFJJCADD && val1 <= l[i].FDBNFFNFOND)
 				{
 					BLEAOGCLJPK = l[i].KNHOMNONOEB;

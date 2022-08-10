@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1B4CCE8 Offset: 0x1B4CCE8 VA: 0x1B4CCE8 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			UnityEngine.Debug.LogError("TODO Init layout common top menu");
+			TodoLogger.Log(0, "Init layout common top menu");
 			return true;
 		}
 
@@ -127,13 +127,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B4E8E4 Offset: 0x1B4E8E4 VA: 0x1B4E8E4
 		public void LeaveMiniWindow()
 		{
-			UnityEngine.Debug.LogError("TODO LeaveMiniWindow");
+			TodoLogger.Log(0, "LeaveMiniWindow");
 		}
 
 		// // RVA: 0x1B4EC20 Offset: 0x1B4EC20 VA: 0x1B4EC20
 		public bool IsPlayingMiniWindow()
 		{
-			UnityEngine.Debug.LogError("TODO IsPlayingMiniWindow");
+			TodoLogger.Log(0, "IsPlayingMiniWindow");
 			return false;
 		}
 

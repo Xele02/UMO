@@ -52,7 +52,7 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG
         // // RVA: 0x112FBBC Offset: 0x112FBBC VA: 0x112FBBC
         public ADPMJDMFEIK()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
         // // RVA: 0x11319F0 Offset: 0x11319F0 VA: 0x11319F0
@@ -121,14 +121,14 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG
 	// // RVA: 0x1130450 Offset: 0x1130450 VA: 0x1130450 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO Database Load");
+        TodoLogger.Log(0, "Database Load");
 		return true;
     }
 
 	// // RVA: 0x1131120 Offset: 0x1131120 VA: 0x1131120 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
@@ -156,7 +156,7 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG
 	// // RVA: 0x1131470 Offset: 0x1131470 VA: 0x1131470 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
+		TodoLogger.Log(0, "CAOGDCBPBAN");
 		return 0;
 	}
 }

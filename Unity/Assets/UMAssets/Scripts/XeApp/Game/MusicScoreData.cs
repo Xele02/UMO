@@ -259,7 +259,7 @@ namespace XeApp.Game
 		// // RVA: 0xC97D08 Offset: 0xC97D08 VA: 0xC97D08
 		private static MusicScoreData InstantiateFromRIFF(byte[] dataBytes, int offset, int size)
 		{
-			UnityEngine.Debug.LogError("TODO InstantiateFromRIFF");
+			TodoLogger.Log(0, "InstantiateFromRIFF");
 			return null;
 		}
 
@@ -278,7 +278,7 @@ namespace XeApp.Game
 		// // RVA: 0xC9A7B0 Offset: 0xC9A7B0 VA: 0xC9A7B0
 		public int CalcComboLimit()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			return 0;
 		}
 

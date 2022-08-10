@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xECF9A4 Offset: 0xECF9A4 VA: 0xECF9A4
 		public void Update()
 		{
-			UnityEngine.Debug.LogWarning("TODO MenuDivaTalk Update");
+			TodoLogger.Log(5, "MenuDivaTalk Update");
 		}
 
 		// // RVA: 0xECEBE4 Offset: 0xECEBE4 VA: 0xECEBE4

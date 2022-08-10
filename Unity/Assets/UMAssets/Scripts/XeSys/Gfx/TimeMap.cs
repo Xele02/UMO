@@ -45,11 +45,11 @@ namespace XeSys.Gfx
 			}
 			if(m_DataList[0].TmType == TimeMapData.TimeMapType.CustomElm)
 			{
-				UnityEngine.Debug.LogError("TODO");
+				TodoLogger.Log(0, "TODO");
 			}
 			else if(m_DataList[0].TmType == TimeMapData.TimeMapType.Quadratic)
 			{
-				UnityEngine.Debug.LogError("TODO");
+				TodoLogger.Log(0, "TODO");
 			}
 			return time;
 		}

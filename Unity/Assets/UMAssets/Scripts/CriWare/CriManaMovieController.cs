@@ -12,7 +12,7 @@ namespace CriWare
 		// // RVA: 0x2961B8C Offset: 0x2961B8C VA: 0x2961B8C Slot: 6
 		public override void CriInternalUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2961C90 Offset: 0x2961C90 VA: 0x2961C90 Slot: 10

@@ -8,7 +8,7 @@ namespace ExternLib
     {
         public static bool criAtomEx_RegisterAcfFile(CriFsBinder binder, string path, IntPtr work, int workSize)
         {
-            UnityEngine.Debug.LogWarning("TODO criAtomEx_RegisterAcfFile");
+            TodoLogger.Log(5, "criAtomEx_RegisterAcfFile");
             return true;
         }
 

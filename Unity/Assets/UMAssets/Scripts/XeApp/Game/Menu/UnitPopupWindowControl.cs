@@ -19,7 +19,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x12475E0 Offset: 0x12475E0 VA: 0x12475E0
 		public IEnumerator Initialize(GameObject parent, UnityAction action)
 		{
-			UnityEngine.Debug.LogError("TODO UnitPopupWindowControl Initialize");
+			TodoLogger.Log(0, "UnitPopupWindowControl Initialize");
 			action();
 			yield break;
 		}

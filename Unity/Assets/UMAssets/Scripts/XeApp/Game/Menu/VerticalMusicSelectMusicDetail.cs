@@ -524,15 +524,15 @@ namespace XeApp.Game.Menu
 			m_unitToggleButtonGroupObj.blocksRaycasts = true;
 			if (!musicData.DBIGDCOHOIC())
 			{
-				UnityEngine.Debug.LogError("TODO ShowUnitDanceButton for locked");
+				TodoLogger.Log(0, "ShowUnitDanceButton for locked");
 			}
 			else if (isMusicLock)
 			{
-				UnityEngine.Debug.LogError("TODO ShowUnitDanceButton for isMusicLock");
+				TodoLogger.Log(0, "ShowUnitDanceButton for isMusicLock");
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("TODO ShowUnitDanceButton for other lock check");
+				TodoLogger.Log(0, "ShowUnitDanceButton for other lock check");
 			}
 			SetUnitButton(saveUnitData.NMBAHHJLGPP_IsMultiDiva(musicData.GHBPLHBNMBK_FreeMusicId) ? multiId : soloId); // tmp
 		}

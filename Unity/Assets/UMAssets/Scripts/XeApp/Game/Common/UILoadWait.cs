@@ -40,13 +40,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDEB08 Offset: 0x1CDEB08 VA: 0x1CDEB08
 		public void Show()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1CDEBF8 Offset: 0x1CDEBF8 VA: 0x1CDEBF8
 		public void Hide()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 	}
 }

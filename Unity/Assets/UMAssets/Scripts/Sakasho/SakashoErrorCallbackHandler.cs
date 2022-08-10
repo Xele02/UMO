@@ -16,6 +16,6 @@ public class SakashoErrorCallbackHandler : SakashoCallbackHandlerBase
 	// RVA: 0x3081054 Offset: 0x3081054 VA: 0x3081054 Slot: 5
 	public override void Callback(string message)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 }

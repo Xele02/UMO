@@ -12,7 +12,7 @@ public class LHFOAFAOPLC
             GameObject go = GameObject.Find("Adjust");
             if(go != null)
             {
-                UnityEngine.Debug.LogWarning("TODO LHFOAFAOPLC.KHEKNNFCAOI Lib adjust");
+                TodoLogger.Log(5, "LHFOAFAOPLC.KHEKNNFCAOI Lib adjust");
                 BAFFAONJPCE = true;
             }
         }

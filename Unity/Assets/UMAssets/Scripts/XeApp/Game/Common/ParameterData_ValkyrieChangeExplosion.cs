@@ -8,7 +8,7 @@ namespace XeApp.Game.Common
         // // RVA: 0xAF651C Offset: 0xAF651C VA: 0xAF651C
         public bool Check(GameSetupData a_setup_data)
 		{
-			UnityEngine.Debug.LogError("TODO ParameterData_ValkyrieChangeExplosion Check");
+			TodoLogger.Log(0, "ParameterData_ValkyrieChangeExplosion Check");
 			return true;
 		}
 

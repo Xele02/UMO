@@ -141,19 +141,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC478C Offset: 0xEC478C VA: 0xEC478C
 		private void CallBackHome()
 		{
-			UnityEngine.Debug.LogError("TODO CallBackHome");
+			TodoLogger.Log(0, "CallBackHome");
 		}
 
 		// // RVA: 0xEC4980 Offset: 0xEC4980 VA: 0xEC4980
 		private void CallBackSetting()
 		{
-			UnityEngine.Debug.LogError("TODO CallBackSetting");
+			TodoLogger.Log(0, "CallBackSetting");
 		}
 
 		// // RVA: 0xEC4BB8 Offset: 0xEC4BB8 VA: 0xEC4BB8
 		private void CallBackVOP()
 		{
-			UnityEngine.Debug.LogError("TODO CallBackVOP");
+			TodoLogger.Log(0, "CallBackVOP");
 		}
 
 		// // RVA: 0xEC4E90 Offset: 0xEC4E90 VA: 0xEC4E90
@@ -177,31 +177,31 @@ namespace XeApp.Game.Menu
 			}
 			SoundManager.Instance.sePlayerBoot.Play(cueId);
 
-			UnityEngine.Debug.LogError("TODO CallBackFreeBattle");
+			TodoLogger.Log(0, "CallBackFreeBattle");
 		}
 
 		// // RVA: 0xEC55DC Offset: 0xEC55DC VA: 0xEC55DC
 		private void CallBackGacha()
 		{
-			UnityEngine.Debug.LogError("TODO CallBackGacha");
+			TodoLogger.Log(0, "CallBackGacha");
 		}
 
 		// // RVA: 0xEC5818 Offset: 0xEC5818 VA: 0xEC5818
 		private void CallBackQuest()
 		{
-			UnityEngine.Debug.LogError("TODO CallBackQuest");
+			TodoLogger.Log(0, "CallBackQuest");
 		}
 
 		// // RVA: 0xEC5A50 Offset: 0xEC5A50 VA: 0xEC5A50
 		private void CallBackMenu()
 		{
-			UnityEngine.Debug.LogError("TODO CallBackMenu");
+			TodoLogger.Log(0, "CallBackMenu");
 		}
 
 		// // RVA: 0xEC5C88 Offset: 0xEC5C88 VA: 0xEC5C88
 		private void CallBackBack()
 		{
-			UnityEngine.Debug.LogError("TODO CallBackBack");
+			TodoLogger.Log(0, "CallBackBack");
 		}
 
 		// // RVA: 0xEC5C8C Offset: 0xEC5C8C VA: 0xEC5C8C

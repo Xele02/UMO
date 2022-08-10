@@ -486,7 +486,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x1C52038 Offset: 0x1C52038 VA: 0x1C52038
 	public List<int> LPFFDGNDLKG(bool ANLBEIOFIGB = true, int CPNEKIDCAMF = 2160)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return null;
 	}
 
@@ -807,7 +807,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x1C58130 Offset: 0x1C58130 VA: 0x1C58130 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
@@ -823,7 +823,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x1C69388 Offset: 0x1C69388 VA: 0x1C69388 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return null;
 	}
 

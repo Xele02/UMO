@@ -18,7 +18,7 @@ public class DOLDMCAMEOD : CACGCMBKHDI_Request
 	// RVA: 0x1233364 Offset: 0x1233364 VA: 0x1233364 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        UnityEngine.Debug.LogError("TODO GetRemainingForCurrencyIds");
+        TodoLogger.Log(0, "GetRemainingForCurrencyIds");
         DCKLDDCAJAP("{}");
         NFEAMMJIMPG = new LDADODICMLG();
         NFEAMMJIMPG.BBEPLKNMICJ = new List<MCKCJMLOAFP>();
@@ -27,6 +27,6 @@ public class DOLDMCAMEOD : CACGCMBKHDI_Request
 	// RVA: 0x1233474 Offset: 0x1233474 VA: 0x1233474 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
     {
-        UnityEngine.Debug.LogError("TODO GetRemainingForCurrencyIds response");
+        TodoLogger.Log(0, "GetRemainingForCurrencyIds response");
     }
 }

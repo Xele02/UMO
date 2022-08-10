@@ -20,13 +20,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAEA8B4 Offset: 0xAEA8B4 VA: 0xAEA8B4
 		public void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xAEA8CC Offset: 0xAEA8CC VA: 0xAEA8CC
 		public void LoadResources(int runwayId, int enviromentId, int valkyrieId)
 		{
-			UnityEngine.Debug.LogError("TODO MusicIntro LoadResources");
+			TodoLogger.Log(0, "MusicIntro LoadResources");
 			isLoadedRunway = true;
 			isLoadedEnviroment = true;
 			isLoadedAnimator = true;
@@ -39,13 +39,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAEA9FC Offset: 0xAEA9FC VA: 0xAEA9FC
 		public void OverrideMusicStartTime(ref float a_sec)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xAEAAD4 Offset: 0xAEAAD4 VA: 0xAEAAD4
 		public void OverrideIntroEndTime(ref int a_msec)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 	}
 }

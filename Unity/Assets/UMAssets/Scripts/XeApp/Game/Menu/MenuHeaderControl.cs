@@ -232,7 +232,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB2903C Offset: 0xB2903C VA: 0xB2903C
 		public void Show(TransitionList.Type transitionName, TransitionUniqueId uniqueId, CommonMenuStackLabel.LabelType labelType, SceneGroupCategory group, int descId, bool isVisibleBackButton)
 		{
-			UnityEngine.Debug.LogError("TODO Menu Header Show");
+			TodoLogger.Log(0, "Menu Header Show");
 		}
 
 		// // RVA: 0xB29640 Offset: 0xB29640 VA: 0xB29640
@@ -251,7 +251,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB298F8 Offset: 0xB298F8 VA: 0xB298F8
 		public IEnumerator Load(MonoBehaviour mb, Font font, UnityAction action)
 		{
-			UnityEngine.Debug.LogError("TODO MenuHeaderControl Load");
+			TodoLogger.Log(0, "MenuHeaderControl Load");
 			action();
 			yield break;
 		}
@@ -271,7 +271,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB29E8C Offset: 0xB29E8C VA: 0xB29E8C
 		public void ApplyPlayerStatus(IFBCGCCJBHI playerStatus)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xB2A28C Offset: 0xB2A28C VA: 0xB2A28C

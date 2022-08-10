@@ -85,7 +85,7 @@ public class DOKOHKJIDBO
 	// RVA: 0x1232C34 Offset: 0x1232C34 VA: 0x1232C34
 	private void GNCHKCLDCBP(DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// RVA: 0x1232CE4 Offset: 0x1232CE4 VA: 0x1232CE4

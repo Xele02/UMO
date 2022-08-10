@@ -41,7 +41,7 @@ public class ILCCJNDFFOB
 	// // RVA: 0x8F44CC Offset: 0x8F44CC VA: 0x8F44CC
 	private void FLBFCCIEPNC(EDOHBJAPLPF_JsonData IDLHJIOMJBK, long JCNNBEEHFLE)
 	{
-		UnityEngine.Debug.LogWarning("TODO ILCCJNDFFOB.FLBFCCIEPNC");
+		TodoLogger.Log(5, "ILCCJNDFFOB.FLBFCCIEPNC");
 	}
 
 	// // RVA: 0x8F4AB8 Offset: 0x8F4AB8 VA: 0x8F4AB8

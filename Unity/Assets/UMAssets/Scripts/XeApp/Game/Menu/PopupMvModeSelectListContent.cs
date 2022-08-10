@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(m_selectTarget == SelectTarget.Valkyrie)
 			{
-				UnityEngine.Debug.LogError("TODO fill valkyrie list");
+				TodoLogger.Log(0, "fill valkyrie list");
 			}
 			m_scrollView.UpdateItemListener += this.OnUpdateScrollItem;
 			m_scrollView.SetupListItem(m_scrollItem);
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("TODO Apply valk & costume");
+				TodoLogger.Log(0, "Apply valk & costume");
 			}
 			m_prismData.LMAAILCIFLF_ApplyInSave();
 		}
@@ -193,7 +193,7 @@ namespace XeApp.Game.Menu
 				return;
 			if(m_selectTarget == SelectTarget.Valkyrie)
 			{
-				UnityEngine.Debug.LogError("TODO OnUpdateScrollItem Valkyrie");
+				TodoLogger.Log(0, "OnUpdateScrollItem Valkyrie");
 			}
 			else if(m_selectTarget == SelectTarget.Costume)
 			{

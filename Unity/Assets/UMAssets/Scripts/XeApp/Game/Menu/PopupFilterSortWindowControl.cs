@@ -13,7 +13,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x179E21C Offset: 0x179E21C VA: 0x179E21C
 		public IEnumerator Initialize(GameObject parent, UnityAction action)
 		{
-			UnityEngine.Debug.LogError("TODO PopupFilterSortWindowControl Initialize");
+			TodoLogger.Log(0, "PopupFilterSortWindowControl Initialize");
 			action();
 			yield break;
 		}

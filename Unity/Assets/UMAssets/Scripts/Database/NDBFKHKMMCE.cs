@@ -343,7 +343,7 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG
 	// // RVA: 0x1ADE920 Offset: 0x1ADE920 VA: 0x1ADE920
 	public void MFIAFCCJHOF(BBLECJKKKLA_DecoSetItem MJALLIOHKEJ)
 	{
-        UnityEngine.Debug.LogError("TODO  DB Init");
+        TodoLogger.Log(0, " DB Init");
 	}
 
 	// // RVA: 0x1ADEE2C Offset: 0x1ADEE2C VA: 0x1ADEE2C
@@ -373,7 +373,7 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG
 	// // RVA: 0x1ADF298 Offset: 0x1ADF298 VA: 0x1ADF298 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO Database Load");
+        TodoLogger.Log(0, "Database Load");
 		return true;
     }
 
@@ -401,14 +401,14 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG
 	// // RVA: 0x1AE1BE8 Offset: 0x1AE1BE8 VA: 0x1AE1BE8 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
 	// // RVA: 0x1AE1BF0 Offset: 0x1AE1BF0 VA: 0x1AE1BF0 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
+		TodoLogger.Log(0, "CAOGDCBPBAN");
 		return 0;
 	}
 

@@ -58,7 +58,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1C0A1DC Offset: 0x1C0A1DC VA: 0x1C0A1DC
 		public void Play(VoiceCategory categoryType, int voiceId)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1C0A298 Offset: 0x1C0A298 VA: 0x1C0A298

@@ -31,7 +31,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x110A814 Offset: 0x110A814 VA: 0x110A814
 		public void ChangeIntroBg()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x110A89C Offset: 0x110A89C VA: 0x110A89C

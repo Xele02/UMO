@@ -44,14 +44,14 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE30410 Offset: 0xE30410 VA: 0xE30410 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			UnityEngine.Debug.LogError("TODO InitializeFromLayout HelpButton");
+			TodoLogger.Log(0, "InitializeFromLayout HelpButton");
 			return true;	
 		}
 
 		// // RVA: 0xE30560 Offset: 0xE30560 VA: 0xE30560
 		public void TryShow(TransitionList.Type transitionName)
 		{
-			UnityEngine.Debug.LogError("TODO TryShow HelpButton");
+			TodoLogger.Log(0, "TryShow HelpButton");
 		}
 
 		// // RVA: 0xE306A4 Offset: 0xE306A4 VA: 0xE306A4
@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xE30DD4 Offset: 0xE30DD4 VA: 0xE30DD4
 		public void TryHide(TransitionList.Type transitionName)
 		{
-			UnityEngine.Debug.LogError("TODO Help TryHide");
+			TodoLogger.Log(0, "Help TryHide");
 		}
 
 		// // RVA: 0xE30964 Offset: 0xE30964 VA: 0xE30964
@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE311E0 Offset: 0xE311E0 VA: 0xE311E0
 		public HelpButton()
 		{
-			UnityEngine.Debug.LogError("TODO HelpButton()");
+			TodoLogger.Log(0, "HelpButton()");
 		}
 	}
 }

@@ -134,7 +134,7 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE88334 Offset: 0xE88334 VA: 0xE88334
 	private void FCPBCDOKOPD(KEHOJEJMGLJ.LIFANPDHNHE PPFNGGCBJKC, string IPBHCLIHAPG)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0xE883AC Offset: 0xE883AC VA: 0xE883AC
@@ -372,10 +372,10 @@ public class KEHOJEJMGLJ
 							errorStr = "storage";
 						MAIHLKPEHJN(errorStr, () => {
 							//0xE8D93C
-							UnityEngine.Debug.LogError("TODO");
+							TodoLogger.Log(0, "TODO");
 						}, () => {
 							//0xE8D948
-							UnityEngine.Debug.LogError("TODO");
+							TodoLogger.Log(0, "TODO");
 						});
 						//goto LAB_00e8f260;
 						//0xb
@@ -437,7 +437,7 @@ public class KEHOJEJMGLJ
 						PMDNNKAPIKJ.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ, FLHOFIEOKDH, JCMJBMBMJAK);
 						PMDNNKAPIKJ.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {
 							//0xE8D424
-							UnityEngine.Debug.LogError("TODO");
+							TodoLogger.Log(0, "TODO");
 						};
 						NJDHMNBBCLK = 60;
 						// goto LAB_00e8f360
@@ -462,7 +462,7 @@ public class KEHOJEJMGLJ
 							KOMKKBDABJP = false;
 							JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 								//0xE8D8B0
-								UnityEngine.Debug.LogError("TODO");
+								TodoLogger.Log(0, "TODO");
 							});
 							//goto LAB_00e8e0f8;
 							//0xd
@@ -499,10 +499,10 @@ public class KEHOJEJMGLJ
 								errorStr = "storage";
 							MAIHLKPEHJN(errorStr, () => {
 								//0xE8D91C
-								UnityEngine.Debug.LogError("TODO");
+								TodoLogger.Log(0, "TODO");
 							}, () => {
 								//0xE8D928
-								UnityEngine.Debug.LogError("TODO");
+								TodoLogger.Log(0, "TODO");
 							});
 							//goto LAB_00e8dffc;
 							// 8
@@ -563,10 +563,10 @@ public class KEHOJEJMGLJ
 								errorStr = "storage";
 							MAIHLKPEHJN(errorStr, () => {
 								//0xE8D93C
-								UnityEngine.Debug.LogError("TODO");
+								TodoLogger.Log(0, "TODO");
 							}, () => {
 								//0xE8D948
-								UnityEngine.Debug.LogError("TODO");
+								TodoLogger.Log(0, "TODO");
 							});
 							//goto LAB_00e8f260;
 							//0xb
@@ -648,13 +648,13 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE88D50 Offset: 0xE88D50 VA: 0xE88D50
 	private void DIDACHONHJA(ref Dictionary<string, int> FAOOOLDDBBB, string CJJJPKJHOGM)
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		TodoLogger.Log(0, "!!!");
 	}
 
 	// // RVA: 0xE88F88 Offset: 0xE88F88 VA: 0xE88F88
 	public void CIDPPOGCODB(Dictionary<string, int> FAOOOLDDBBB)
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		TodoLogger.Log(0, "!!!");
 	}
 
 	// // RVA: 0xE89EA0 Offset: 0xE89EA0 VA: 0xE89EA0
@@ -666,26 +666,26 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE8A2C4 Offset: 0xE8A2C4 VA: 0xE8A2C4
 	private void IAPEABPJPOE(IKAHKDKIGNA CBLEBKOJJDB, ref Dictionary<string, int> FAOOOLDDBBB)
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		TodoLogger.Log(0, "!!!");
 	}
 
 	// // RVA: 0xE8B240 Offset: 0xE8B240 VA: 0xE8B240
 	private bool ALDMHFCFECK(int INDDJNMPONH, float LNAHJANMJNM)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return false;
 	}
 
 	// // RVA: 0xE8B248 Offset: 0xE8B248 VA: 0xE8B248
 	private void EEHMGCMAOAB(string DOGDHKIEBJA, IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0xE845B8 Offset: 0xE845B8 VA: 0xE845B8
 	public static void GFOMKMANCPP(string CJEKGLGBIHF_path, long KMNPPIKCPNG, uint HHPEMFKDHLK, bool FLJBOOPPGDM = false)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0xE8B274 Offset: 0xE8B274 VA: 0xE8B274
@@ -757,37 +757,37 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE8B9A4 Offset: 0xE8B9A4 VA: 0xE8B9A4
 	private static void PKLPEIBEGNO()
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		TodoLogger.Log(0, "!!!");
 	}
 
 	// // RVA: 0xE888B8 Offset: 0xE888B8 VA: 0xE888B8
 	private static void GBCDHECMDMC()
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		TodoLogger.Log(0, "!!!");
 	}
 
 	// // RVA: 0xE8BC98 Offset: 0xE8BC98 VA: 0xE8BC98
 	public static void AFKGMCBJBJA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0xE8BDB0 Offset: 0xE8BDB0 VA: 0xE8BDB0
 	private void BDGGNOAIIFK(float OLDAGCNLJOI_Progress)
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		TodoLogger.Log(0, "!!!");
 	}
 
 	// // RVA: 0xE8BF18 Offset: 0xE8BF18 VA: 0xE8BF18
 	private void FFHCCIOCPAD()
 	{
-		UnityEngine.Debug.LogError("TODO Delete some files in bgm");
+		TodoLogger.Log(0, "Delete some files in bgm");
 	}
 
 	// // RVA: 0xE8C288 Offset: 0xE8C288 VA: 0xE8C288
 	private void KDHNLDOIOAL()
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		TodoLogger.Log(0, "!!!");
 	}
 
 	// // RVA: 0xE8C30C Offset: 0xE8C30C VA: 0xE8C30C
@@ -803,6 +803,6 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE8C7E8 Offset: 0xE8C7E8 VA: 0xE8C7E8
 	private void BEINKAGIHJB()
 	{
-		UnityEngine.Debug.LogError("TODO !!!");
+		TodoLogger.Log(0, "!!!");
 	}
 }

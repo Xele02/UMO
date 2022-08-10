@@ -165,7 +165,7 @@ namespace XeSys.Gfx
         // // RVA: 0x2052384 Offset: 0x2052384 VA: 0x2052384
         public void LoadFromBytes(byte[] bytes)
         {
-            UnityEngine.Debug.LogError("TODO");
+            TodoLogger.Log(0, "TODO");
         }
 
         // // RVA: 0x2052478 Offset: 0x2052478 VA: 0x2052478

@@ -156,7 +156,7 @@ public class FFHPBEPOMAK
 		}
 		else
 		{
-			UnityEngine.Debug.LogError("TODO episode info");
+			TodoLogger.Log(0, "episode info");
 			//KELFCMEOPPM = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode
 			//L.280
 		}

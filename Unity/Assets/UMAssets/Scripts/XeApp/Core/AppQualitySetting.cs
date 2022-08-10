@@ -41,7 +41,7 @@ namespace XeApp.Core
 		// // RVA: 0xE0DAC8 Offset: 0xE0DAC8 VA: 0xE0DAC8
 		public static AppQualitySetting.DeviceSpec GetDeviceSpec()
 		{
-			UnityEngine.Debug.LogWarning("TODO GetDeviceSpec");
+			TodoLogger.Log(5, "GetDeviceSpec");
 			return AppQualitySetting.DeviceSpec.High;
 		}
 
@@ -76,7 +76,7 @@ namespace XeApp.Core
 		// // RVA: 0xE0E7AC Offset: 0xE0E7AC VA: 0xE0E7AC
 		public static void InitDefault3dMode()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 	}
 }

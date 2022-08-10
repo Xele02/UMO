@@ -36,7 +36,7 @@ public class MNNCBFONAOL
 	// // RVA: 0x17B1978 Offset: 0x17B1978 VA: 0x17B1978
 	public static void PDENBOEFJGE()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0x17B17D0 Offset: 0x17B17D0 VA: 0x17B17D0

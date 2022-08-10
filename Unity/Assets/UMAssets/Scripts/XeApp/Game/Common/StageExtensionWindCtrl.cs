@@ -112,7 +112,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x13A541C Offset: 0x13A541C VA: 0x13A541C Slot: 6
 		public virtual void Update()
 		{
-			UnityEngine.Debug.LogError("TODO Wind Update");
+			TodoLogger.Log(0, "Wind Update");
 		}
 
 		// // RVA: 0x13A6030 Offset: 0x13A6030 VA: 0x13A6030 Slot: 4

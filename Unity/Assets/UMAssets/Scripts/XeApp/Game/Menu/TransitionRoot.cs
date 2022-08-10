@@ -755,7 +755,7 @@ namespace XeApp.Game.Menu
 				bool isSaveError = false;
 				if(m_isRequestSave)
 				{
-					UnityEngine.Debug.LogError("TODO request save");
+					TodoLogger.Log(0, "request save");
 				}
 				DirtyChangeScene = false;
 				IsTransition = true;
@@ -952,12 +952,12 @@ namespace XeApp.Game.Menu
 				{
 					if(!GameManager.Instance.divaResource.isMenuAllLoaded && !isNotAutoLoad)
 					{
-						UnityEngine.Debug.LogError("TODO Load diva menu");
+						TodoLogger.Log(0, "Load diva menu");
 						//L777
 						// to 16
 					}
 					// to 17
-					UnityEngine.Debug.LogError("TODO Load diva menu");
+					TodoLogger.Log(0, "Load diva menu");
 				}
 				m_remainDivaOneTimeFlag = false;
 				bool idleDivaModel = false;
@@ -971,7 +971,7 @@ namespace XeApp.Game.Menu
 				bool activeDivaModel = false;
 				if(m_next.name == TransitionList.Type.HOME || m_next.name == TransitionList.Type.HOME_BG_SELECT)
 				{
-					UnityEngine.Debug.LogError("TODO check activate diva");
+					TodoLogger.Log(0, "check activate diva");
 					//L876
 				}
 				else
@@ -982,7 +982,7 @@ namespace XeApp.Game.Menu
 				bool divaActivated = false;
 				if(isDivaActivate)
 				{
-					UnityEngine.Debug.LogError("TODO setup diva");
+					TodoLogger.Log(0, "setup diva");
 					divaActivated = isDivaActivate;
 				}
 				if((isNotAutoLoad || divaActivated) == false)
@@ -991,7 +991,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					UnityEngine.Debug.LogError("TODO setup cam");
+					TodoLogger.Log(0, "setup cam");
 				}
 				m_currentRoot.OnPostSetCanvas();
 				while(!m_currentRoot.IsEndPostSetCanvas())
@@ -1025,15 +1025,15 @@ namespace XeApp.Game.Menu
 				{
 					if(m_transitionType == TransitionType.Return)
 					{
-						UnityEngine.Debug.LogError("TODO Play bgm Sound");
+						TodoLogger.Log(0, "Play bgm Sound");
 					}
 					else
 					{
-						UnityEngine.Debug.LogError("TODO Play bgm Sound");
+						TodoLogger.Log(0, "Play bgm Sound");
 					}
-					UnityEngine.Debug.LogError("TODO Play bgm Sound");
+					TodoLogger.Log(0, "Play bgm Sound");
 				}
-				UnityEngine.Debug.LogError("TODO Play bgm Sound");
+				TodoLogger.Log(0, "Play bgm Sound");
 				//LAB_00a401d4
 				while(GameManager.Instance.fullscreenFader.isFading)
 					yield return null;
@@ -1165,7 +1165,7 @@ namespace XeApp.Game.Menu
 			// // RVA: 0xA3ADFC Offset: 0xA3ADFC VA: 0xA3ADFC
 			public static void UpdateMenuNewIcon(TransitionList.Type nextTransition, TransitionList.Type prevTransition)
 			{
-				UnityEngine.Debug.LogError("TODO UpdateMenuNewIcon");
+				TodoLogger.Log(0, "UpdateMenuNewIcon");
 			}
 
 			// // RVA: 0xA3B1C0 Offset: 0xA3B1C0 VA: 0xA3B1C0
@@ -1261,7 +1261,7 @@ namespace XeApp.Game.Menu
 			public bool CanShowTips(TransitionList.Type from, TransitionList.Type to, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene camBackUnityScene, out int count)
 			{
 				count = 0;
-				UnityEngine.Debug.LogError("TODO");
+				TodoLogger.Log(0, "TODO");
 				return false;
 			}
 		}
@@ -1446,7 +1446,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA9D810 Offset: 0xA9D810 VA: 0xA9D810
 		protected void GotoTitle()
 		{
-			UnityEngine.Debug.LogError("TODO Goto Title");
+			TodoLogger.Log(0, "Goto Title");
 		}
 
 		// // RVA: 0xA9D81C Offset: 0xA9D81C VA: 0xA9D81C Slot: 29
@@ -1515,7 +1515,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA9FA50 Offset: 0xA9FA50 VA: 0xA9FA50
 		protected bool CheckTutorialFunc(TutorialConditionId conditionId)
 		{
-			UnityEngine.Debug.LogError("TODO CheckTutorialFunc");
+			TodoLogger.Log(0, "CheckTutorialFunc");
 			return false;
 		}
 	}

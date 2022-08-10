@@ -33,21 +33,21 @@ namespace XeApp.Game.Menu
 		// RVA: 0x966720 Offset: 0x966720 VA: 0x966720
 		public IEnumerator Co_LoadLayout(GameObject a_ui_root)
 		{
-			UnityEngine.Debug.LogError("TODO LobbyButton Co_LoadLayout");
+			TodoLogger.Log(0, "LobbyButton Co_LoadLayout");
 			yield break;
 		}
 
 		// RVA: 0x9667E8 Offset: 0x9667E8 VA: 0x9667E8
 		public void Setup(HomeLobbyButtonController.Type a_type = Type.DOWN)
 		{
-			UnityEngine.Debug.LogError("TODO LobbyButton Setup");
+			TodoLogger.Log(0, "LobbyButton Setup");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E2944 Offset: 0x6E2944 VA: 0x6E2944
 		// // RVA: 0x967008 Offset: 0x967008 VA: 0x967008
 		public IEnumerator Co_CheckNewMark(Action OnError)
 		{
-			UnityEngine.Debug.LogError("TODO LobbyButton Co_CheckNewMark");
+			TodoLogger.Log(0, "LobbyButton Co_CheckNewMark");
 			yield break;
 		}
 
@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9670D0 Offset: 0x9670D0 VA: 0x9670D0
 		public void Hide(bool isEnd = false)
 		{
-			UnityEngine.Debug.LogError("TODO LobbyButton Hide");
+			TodoLogger.Log(0, "LobbyButton Hide");
 		}
 
 		// // RVA: 0x967244 Offset: 0x967244 VA: 0x967244
@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9682F0 Offset: 0x9682F0 VA: 0x9682F0
 		public void RequestInitRaidLobby(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle)
 		{
-			UnityEngine.Debug.LogError("TODO LobbyButton RequestInitRaidLobby");
+			TodoLogger.Log(0, "LobbyButton RequestInitRaidLobby");
 			onSuccess();
 		}
 
@@ -86,7 +86,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9683DC Offset: 0x9683DC VA: 0x9683DC
 		public bool CheckLobbyAnnounce()
 		{
-			UnityEngine.Debug.LogError("TODO CheckLobbyAnnounce");
+			TodoLogger.Log(0, "CheckLobbyAnnounce");
 			return false;
 		}
 

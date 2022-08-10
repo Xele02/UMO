@@ -9,7 +9,7 @@ public class CNABKDIKIOB : CACGCMBKHDI_Request
 	// RVA: 0x175AA5C Offset: 0x175AA5C VA: 0x175AA5C Slot: 12
 	public override void DHLDNIEELHO()
     {
-        UnityEngine.Debug.LogError("TODO GetVirtualCurrencyBalancesWithExpiredAt");
+        TodoLogger.Log(0, "GetVirtualCurrencyBalancesWithExpiredAt");
         DCKLDDCAJAP("{}");
         BHFHGFKBOHH(this);
     }
@@ -17,6 +17,6 @@ public class CNABKDIKIOB : CACGCMBKHDI_Request
 	// RVA: 0x175AB6C Offset: 0x175AB6C VA: 0x175AB6C Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
     {
-        UnityEngine.Debug.LogError("TODO GetVirtualCurrencyBalancesWithExpiredAt");
+        TodoLogger.Log(0, "GetVirtualCurrencyBalancesWithExpiredAt");
     }
 }

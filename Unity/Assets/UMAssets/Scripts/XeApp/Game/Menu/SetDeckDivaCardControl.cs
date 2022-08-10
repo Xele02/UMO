@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 				});
 				m_divaButton.AddOnStayCallback(() => {
 					//0xA6BBD0
-					UnityEngine.Debug.LogError("TODO stay on diva button");
+					TodoLogger.Log(0, "stay on diva button");
 				});
 			}
 			if(m_costumeButton != null)
@@ -200,7 +200,7 @@ namespace XeApp.Game.Menu
 				m_divaImage.gameObject.SetActive(false);
 				m_divaIconImage.gameObject.SetActive(true);
 				m_divaTextureLoadingCount++;
-				UnityEngine.Debug.LogError("TODO finish SetDivaImageAndColor");
+				TodoLogger.Log(0, "finish SetDivaImageAndColor");
 			}
 			else
 			{

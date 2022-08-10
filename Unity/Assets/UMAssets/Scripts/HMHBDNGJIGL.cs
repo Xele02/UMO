@@ -101,7 +101,7 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 	// // RVA: 0x15F521C Offset: 0x15F521C VA: 0x15F521C
 	private static bool KGDPFAPANIH(byte[] GKBDHBJDGAH)
 	{
-        UnityEngine.Debug.LogError("TODO static HMHBDNGJIGL");
+        TodoLogger.Log(0, "static HMHBDNGJIGL");
 		if(GKBDHBJDGAH.Length > 20)
 		{
 			for(int i = 0; i < 7; i++)

@@ -156,14 +156,14 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG
 	// // RVA: 0x195DA6C Offset: 0x195DA6C VA: 0x195DA6C Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO Database Load");
+        TodoLogger.Log(0, "Database Load");
 		return true;
     }
 
 	// // RVA: 0x195EF38 Offset: 0x195EF38 VA: 0x195EF38 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
@@ -176,7 +176,7 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG
 	// // RVA: 0x1960958 Offset: 0x1960958 VA: 0x1960958
 	public void AMACEDAPNKJ(LDDDBPNGGIN_Game HNMMJINNHII, KOGHKIODHPA_Board JEMMMJEJLNL)
 	{
-		UnityEngine.Debug.LogError("TODO DB Init");
+		TodoLogger.Log(0, "DB Init");
 	}
 
 	// // RVA: 0x1961B04 Offset: 0x1961B04 VA: 0x1961B04
@@ -194,7 +194,7 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG
 	// // RVA: 0x1961F54 Offset: 0x1961F54 VA: 0x1961F54 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
+		TodoLogger.Log(0, "CAOGDCBPBAN");
 		return 0;
 	}
 

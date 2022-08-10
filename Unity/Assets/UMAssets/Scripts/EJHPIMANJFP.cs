@@ -27,7 +27,7 @@ public class EJHPIMANJFP
 	// // RVA: 0x12EFB84 Offset: 0x12EFB84 VA: 0x12EFB84
 	public void LILDGEPCPPG(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP GBHILNDNNDF, DJBHIFLHJLK MOBEEPPKFLG, bool MBGCBCOPOLA, bool FBBNPFFEJBN)
 	{
-		UnityEngine.Debug.LogError("TODO AHGFMJOAEPM_Coroutine_GetProductList");
+		TodoLogger.Log(0, "AHGFMJOAEPM_Coroutine_GetProductList");
 		BHFHGFKBOHH();
 	}
 
