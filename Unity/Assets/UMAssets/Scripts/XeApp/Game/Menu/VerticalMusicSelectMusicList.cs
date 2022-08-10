@@ -136,10 +136,107 @@ namespace XeApp.Game.Menu
 				return;
 			if(m_musicList.Count <= listIndex)
 				return;
-			UnityEngine.Debug.LogError("TODO MusicUpdateCenterItem");
-			obj.SetTitle(m_musicList[listIndex].MusicName);
+			if (m_isSingleMusic)
+				listIndex = 0;
 			if (OnUpdateCenter != null)
 				OnUpdateCenter.Invoke(listIndex);
+			obj.ResetScroll();
+			if(m_musicList[listIndex].ViewMusic.AJGCPCMLGKO)
+			{
+				obj.SetListType(MusicScrollCenterItem.ListType.EventEntrance);
+				obj.SetEventName(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN.OPFGFINHFCE_EventName);
+				obj.SetEventDescription(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN.KLMPFGOCBHC_EventDesc);
+				obj.SetEventPeriod(m_musicList[listIndex].EventPeriod);
+				obj.SetAttribute(4);
+			}
+			else if (m_musicList[listIndex].ViewMusic.BNIAJAKIAJC)
+			{
+				obj.SetListType(MusicScrollCenterItem.ListType.EventEntrance);
+				obj.SetEventName(m_musicList[listIndex].ViewMusic.NOKBLCDMLPP.OPFGFINHFCE_EventName);
+				obj.SetEventDescription(m_musicList[listIndex].ViewMusic.NOKBLCDMLPP.KLMPFGOCBHC_EventDesc);
+				obj.SetEventDescription(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN.KLMPFGOCBHC_EventDesc);
+				obj.SetEventPeriod(m_musicList[listIndex].EventPeriod);
+				obj.SetAttribute(4);
+			}
+			else if (m_musicList[listIndex].IsSimulation)
+			{
+				obj.SetListType(MusicScrollCenterItem.ListType.LimitedSLive);
+				obj.SetEventName(m_musicList[listIndex].MusicName);
+				obj.SetEventDescription(m_musicList[listIndex].VocalName);
+				obj.SetAttribute(m_musicList[listIndex].ViewMusic.FKDCCLPGKDK_JacketAttr);
+				obj.SetNewIcon(false);
+			}
+			else
+			{
+				if (m_musicList[listIndex].IsHighLevel)
+				{
+					obj.SetListType(MusicScrollCenterItem.ListType.HighLevel);
+					obj.SetHighLevelMusicTitle(m_musicList[listIndex].MusicName);
+					obj.SetHighLevelSingerName(m_musicList[listIndex].VocalName);
+				}
+				else
+				{
+					obj.SetListType(MusicScrollCenterItem.ListType.Normal);
+					obj.SetTitle(m_musicList[listIndex].MusicName);
+					obj.SetSingerName(m_musicList[listIndex].VocalName);
+				}
+				obj.SetAttribute(m_musicList[listIndex].ViewMusic.FKDCCLPGKDK_JacketAttr);
+				obj.SetLockIcon(m_musicList[listIndex].IsOpen, m_musicList[listIndex].IsUnlockable);
+				if(!m_musicList[listIndex].ViewMusic.BJANNALFGGA)
+				{
+					obj.SetRankingButton(m_musicList[listIndex].ViewMusic.LEBDMNIGOJB);
+				}
+				else
+				{
+					obj.SetRankingButton(true);
+				}
+				if (!m_musicList[listIndex].IsOpen)
+					obj.SetNewIcon(false);
+				else
+					obj.SetNewIcon(m_musicList[listIndex].IsNew);
+			}
+			if(!m_isSingleMusic)
+			{
+				obj.SetMusicNo(listIndex + 1, m_musicList.Count);
+			}
+			else
+			{
+				obj.SetMusicNo(1, 1);
+			}
+			if (m_musicList[listIndex].IsSimulation)
+			{
+				obj.LabelGroup.EnableLimitedSLiveLabel();
+				obj.LabelGroup.DisableTimeLabel();
+				obj.LabelGroup.DisableEventLabel();
+				obj.LabelGroup.DisableMusicTypeLabel();
+				obj.LabelGroup.DisablePlayBoostLabel();
+				obj.SetRewardState(false, false, false);
+			}
+			else
+			{
+				obj.LabelGroup.DisableLimitedSLiveLabel();
+				obj.LabelGroup.SetTimeLabel(m_musicList[listIndex].TimeType);
+				obj.LabelGroup.SetEventLabel(m_musicList[listIndex].EventType);
+				obj.LabelGroup.SetMusicTypeLabel(m_musicList[listIndex].MusicType);
+				obj.LabelGroup.SetPlayBoostLabel(m_musicList[listIndex].PlayBoostType);
+				if (m_musicList[listIndex].RewardStat != null && m_difficult < m_musicList[listIndex].RewardStat.Count)
+				{
+					obj.SetRewardState(m_musicList[listIndex].RewardStat[m_difficult].isScoreComplete, m_musicList[listIndex].RewardStat[m_difficult].isComboComplete
+						, m_musicList[listIndex].RewardStat[m_difficult].isClearCountComplete);
+				}
+				else
+				{
+					obj.SetRewardState(false, false, false);
+				}
+			}
+			if(m_musicList[listIndex].ViewMusic.AIHCEGFANAM_Serie < 5)
+			{
+				obj.SetSeries(m_musicList[listIndex].ViewMusic.AIHCEGFANAM_Serie);
+			}
+			else
+			{
+				obj.SetSeries(10);
+			}
 		}
 
 		// // RVA: 0xBE3850 Offset: 0xBE3850 VA: 0xBE3850
@@ -198,6 +295,7 @@ namespace XeApp.Game.Menu
 				obj.LabelGroup.DisableEventLabel();
 				obj.LabelGroup.DisableMusicTypeLabel();
 				obj.LabelGroup.DisablePlayBoostLabel();
+				obj.SetRewardState(false, false, false);
 			}
 			else
 			{
@@ -206,15 +304,15 @@ namespace XeApp.Game.Menu
 				obj.LabelGroup.SetEventLabel(m_musicList[listIndex].EventType);
 				obj.LabelGroup.SetMusicTypeLabel(m_musicList[listIndex].MusicType);
 				obj.LabelGroup.SetPlayBoostLabel(m_musicList[listIndex].PlayBoostType);
-			}
-			if(m_musicList[listIndex].RewardStat != null && m_difficult < m_musicList[listIndex].RewardStat.Count)
-			{
-				obj.SetRewardState(m_musicList[listIndex].RewardStat[m_difficult].isScoreComplete, m_musicList[listIndex].RewardStat[m_difficult].isComboComplete
-					, m_musicList[listIndex].RewardStat[m_difficult].isClearCountComplete);
-			}
-			else
-			{
-				obj.SetRewardState(false, false, false);
+				if (m_musicList[listIndex].RewardStat != null && m_difficult < m_musicList[listIndex].RewardStat.Count)
+				{
+					obj.SetRewardState(m_musicList[listIndex].RewardStat[m_difficult].isScoreComplete, m_musicList[listIndex].RewardStat[m_difficult].isComboComplete
+						, m_musicList[listIndex].RewardStat[m_difficult].isClearCountComplete);
+				}
+				else
+				{
+					obj.SetRewardState(false, false, false);
+				}
 			}
 		}
 	}

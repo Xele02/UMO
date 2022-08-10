@@ -17,7 +17,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 		public long PCCFAKEOBIC; // 0x10
 		public long EMEKFFHCHMH; // 0x18
 		public string OPFGFINHFCE_EventName; // 0x20
-		public string KLMPFGOCBHC; // 0x24
+		public string KLMPFGOCBHC_EventDesc; // 0x24
 		public int GOAPADIHAHG; // 0x28
 		public OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE; // 0x2C
 
@@ -117,7 +117,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	// public int MFJKNCACBDG { get; set; } 0x12132D0 HLAFCPHCBED 0x12132E4 FMLMCHDKIPP
 	// public int OEILJHENAHN { get; set; } 0x12132F8 MGJDCGJMEKP 0x121330C IMJDLLMCMAH
 	// public int EEFLOOBOAGF { get; set; } 0x1213320 NLDELFLNODF 0x1213334 PEHLMNDKOEE
-	// public bool BJANNALFGGA { get; set; } 0x1213348 EPFAPPFDMJH 0x121335C AFBCHDAJIFL
+	public bool BJANNALFGGA { get { return IKGGKOFGMNC == CNECJGKECHK_True; } set { IKGGKOFGMNC = value ? CNECJGKECHK_True : JFOFMKBJBBE_False; } } //0x1213348 EPFAPPFDMJH 0x121335C AFBCHDAJIFL
 	// public bool OGHOPBAKEFE { get; set; } 0x121338C LNICBELKODE 0x12133A0 MMOFHBDNIFJ
 	// public int OPPBIOEJAND { get; set; } 0x12133D0 LPGPACOAGAM 0x12133E4 DFGJNJCLJKO
 	// public bool JOJPMFNJJPD { get; set; } 0x12133F8 MPMFLBPLMMN 0x121340C JDJIDAOAIBB
@@ -260,7 +260,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 			LHONOILACFL_IsWeeklyEvent = false;
 			NEBJMHHHDMO = 0x7daf3c5a; //todo switch to property
 			PDLMMOJDBKM = 0x7daf3c5a; //todo switch to property
-			IKGGKOFGMNC = CNECJGKECHK_True; //todo switch to property
+			BJANNALFGGA = true;
 		}
 		else
 		{

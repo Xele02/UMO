@@ -734,8 +734,9 @@ public class KEODKEGFDLD
 	// // RVA: 0x19F32FC Offset: 0x19F32FC VA: 0x19F32FC
 	public ADDHLABEFKH EMJCHPDJHEI(bool GIKLNODJKFK, int AKNELONELJK)
 	{
-		UnityEngine.Debug.LogError("TODO EMJCHPDJHEI");
-		return null;
+		if (IPFHDCEFLDE.Count < 1 || !GIKLNODJKFK)
+			return COGKJBAFBKN[AKNELONELJK];
+		return IPFHDCEFLDE[AKNELONELJK];
 	}
 
 }

@@ -85,8 +85,47 @@ namespace XeSys.Gfx
 		// public float Top { get; } 0x1EE61C0
 		public float MoveX { get { return m_transformData.m.Move.x; } set { m_transformData.m.Move.x = value; } } //0x1EE6204 0x1EE6230
 		public float MoveY { get { return m_transformData.m.Move.y; } set { m_transformData.m.Move.y = value; } } //0x1EE6268 0x1EE6294
-		// public float Width { get; set; } 0x1EE3050 0x1EE62D4
-		// public float Height { get; set; } 0x1EE630C 0x1EE6420
+		public float Width { get {
+				if(0 <= m_transformData.Width)
+				{
+					return m_transformData.Width;
+				}
+				else
+				{
+					if(m_Parent != null)
+					{
+						return PostRenderManager.renderingRect.width;
+					}
+					else
+					{
+						return m_Parent.Width;
+					}
+				}
+			} set {
+				m_transformData.Width = value;
+			} } //0x1EE3050 0x1EE62D4
+		public float Height { get
+			{
+				if (0 <= m_transformData.Height)
+				{
+					return m_transformData.Height;
+				}
+				else
+				{
+					if (m_Parent != null)
+					{
+						return PostRenderManager.renderingRect.height;
+					}
+					else
+					{
+						return m_Parent.Height;
+					}
+				}
+			} set
+			{
+				m_transformData.Height = value;
+			}
+		} //0x1EE630C 0x1EE6420
 		public float ScaleX { get { return m_transformData.m.Scale.x; } set { m_transformData.m.Scale.x = value; } } //0x1EE6458 0x1EE6484
 		public float ScaleY { get { return m_transformData.m.Scale.y; } set { m_transformData.m.Scale.y = value; } } //0x1EE64BC 0x1EE64E8
 		public float Rot { get{ return m_transformData.m.Rot; } set { m_transformData.m.Rot = value; } } //0x1EE6520 0x1EE6544

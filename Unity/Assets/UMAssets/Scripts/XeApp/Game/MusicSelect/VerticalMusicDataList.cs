@@ -24,10 +24,10 @@ namespace XeApp.Game.MusicSelect
 				public MusicSelectConsts.MusicType musicType; // 0x1C
 				public MusicSelectConsts.EventType eventType; // 0x20
 				public MusicSelectConsts.PlayBoostType boostType; // 0x24
-				// public string eventPeriod; // 0x28
+				public string eventPeriod; // 0x28
 				public string musicTimeStr; // 0x2C
 				public string musicName; // 0x30
-				// public string vocalName; // 0x34
+				public string vocalName; // 0x34
 				// public int musicTime; // 0x38
 			}
 			private List<MusicRewardStat> m_rewardStat = new List<MusicRewardStat>(); // 0xC
@@ -40,10 +40,10 @@ namespace XeApp.Game.MusicSelect
 			public bool IsNew { get; } = false; //0x1A
 			public bool IsSimulation { get; } = false; // 0x1B
 			public bool IsHighLevel { get; } = false; // 0x1C
-			//	public string EventPeriod { get; } // 0x20
+			public string EventPeriod { get; } // 0x20
 			public string MusicTimeStr { get; } // 0x24
 			public string MusicName { get; } // 0x28
-			//	public string VocalName { get; } // 0x2C
+			public string VocalName { get; } // 0x2C
 			//	public int MusicTime { get; } // 0x30
 			public MusicSelectConsts.MusicTimeType TimeType { get; } = MusicSelectConsts.MusicTimeType.Max; // 0x34
 			public MusicSelectConsts.EventType EventType { get; } = MusicSelectConsts.EventType.Max; // 0x38
@@ -68,6 +68,8 @@ namespace XeApp.Game.MusicSelect
 				MusicType = initParam.musicType;
 				PlayBoostType = initParam.boostType;
 				IsNew = initParam.isNew;
+				EventPeriod = initParam.eventPeriod;
+				VocalName = initParam.vocalName;
 			}
 		}
 
@@ -102,6 +104,8 @@ namespace XeApp.Game.MusicSelect
 				initparam.rewardStat = new List<MusicRewardStat>();
 				initparam.eventType = MusicSelectConsts.EventType.Max;
 				initparam.boostType = MusicSelectConsts.PlayBoostType.Max;
+				initparam.vocalName = "Vocal";
+				initparam.eventPeriod = "";
 				MusicListData data = new MusicListData(initparam);
 				res.Add(data);
 			}

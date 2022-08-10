@@ -1,3 +1,5 @@
+using System;
+
 namespace XeApp.Game.Menu
 {
 	public class MenuResidentTextureCache : IconTextureCache
@@ -8,12 +10,16 @@ namespace XeApp.Game.Menu
 		// RVA: 0xB2D638 Offset: 0xB2D638 VA: 0xB2D638 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			UnityEngine.Debug.LogError("TODO CreateIconTexture");
-			return null;
+			BgTexture tex = new BgTexture();
+			SetupForSplitTexture(info, tex);
+			return tex;
 		}
 
 		// // RVA: 0xB2D6C0 Offset: 0xB2D6C0 VA: 0xB2D6C0
-		// public void LoadLogo(int seriase, Action<IiconTexture> callBack) { }
+		public void LoadLogo(int seriase, Action<IiconTexture> callBack)
+		{
+			Load(string.Format("ct/lo/{0:D2}.xab", seriase), callBack);
+		}
 
 		// // RVA: 0xB2D768 Offset: 0xB2D768 VA: 0xB2D768
 		// public void LoadLogoUnlock(int seriase, Action<IiconTexture> callBack) { }
