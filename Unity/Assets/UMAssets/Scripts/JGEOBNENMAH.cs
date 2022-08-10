@@ -285,7 +285,7 @@ public class JGEOBNENMAH
 	private IEnumerator ODBDMBAFOIN_Coroutine_Recover(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
 	{
 		UnityEngine.Debug.Log("Enter ODBDMBAFOIN_Coroutine_Recover");
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		UnityEngine.Debug.Log("Exit ODBDMBAFOIN_Coroutine_Recover");
 		yield break;
 	}

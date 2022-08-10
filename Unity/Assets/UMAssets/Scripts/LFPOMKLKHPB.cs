@@ -16,7 +16,7 @@ public class LFPOMKLKHPB
 	// // RVA: 0xD6F134 Offset: 0xD6F134 VA: 0xD6F134
 	public void LKLCOEJLBGG()
     {
-        UnityEngine.Debug.LogError("TODO !!!");
+        TodoLogger.Log(0, "!!!");
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BB45C Offset: 0x6BB45C VA: 0x6BB45C
@@ -41,7 +41,7 @@ public class LFPOMKLKHPB
 	// // RVA: 0xD6FF78 Offset: 0xD6FF78 VA: 0xD6FF78
 	public void NKIKBOJOCNN(List<GCGNICILKLD_AssetFileInfo> KGHAJGGMPKL)
     {
-        UnityEngine.Debug.LogError("TODO !!!");
+        TodoLogger.Log(0, "!!!");
     }
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6BB4D4 Offset: 0x6BB4D4 VA: 0x6BB4D4

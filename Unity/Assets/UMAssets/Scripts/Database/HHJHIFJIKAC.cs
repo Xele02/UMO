@@ -52,33 +52,33 @@ public class HHJHIFJIKAC : DIHHCBACKGG
 	// // RVA: 0x18313A8 Offset: 0x18313A8 VA: 0x18313A8
 	public HHJHIFJIKAC()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x183149C Offset: 0x183149C VA: 0x183149C Slot: 8
 	protected override void KMBPACJNEOF()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0x1831514 Offset: 0x1831514 VA: 0x1831514 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
 		return true;
     }
 
 	// // RVA: 0x1831838 Offset: 0x1831838 VA: 0x1831838 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
 	// // RVA: 0x1831840 Offset: 0x1831840 VA: 0x1831840 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return 0;
 	}
 }

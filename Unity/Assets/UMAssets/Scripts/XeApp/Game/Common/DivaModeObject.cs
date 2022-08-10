@@ -45,13 +45,13 @@ namespace XeApp.Game.Common
 		{
 			if (!isRunning)
 				return;
-			UnityEngine.Debug.LogError("TODO DivaModeObject LateUpdate");
+			TodoLogger.Log(0, "DivaModeObject LateUpdate");
 		}
 
 		// RVA: 0x1BF0888 Offset: 0x1BF0888 VA: 0x1BF0888
 		public void Initialize(CriManaMovieController movieController)
 		{
-			UnityEngine.Debug.LogError("TODO DivaModeObject Initialize");
+			TodoLogger.Log(0, "DivaModeObject Initialize");
 		}
 
 		//// RVA: 0x1BF0CDC Offset: 0x1BF0CDC VA: 0x1BF0CDC

@@ -5,7 +5,7 @@ namespace ExternLib
     {
         public static void SakashoSystemResume()
         {
-            UnityEngine.Debug.LogWarning("TODO SakashoSystemResume");
+            TodoLogger.Log(5, "SakashoSystemResume");
         }
     }
 }

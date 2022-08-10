@@ -5,14 +5,14 @@ public class CriWareDecrypter
 	// // RVA: 0x2BA94BC Offset: 0x2BA94BC VA: 0x2BA94BC
 	public static bool Initialize(CriWareDecrypterConfig config)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return false;
     }
 
 	// // RVA: 0x2BA95B4 Offset: 0x2BA95B4 VA: 0x2BA95B4
 	public static bool Initialize(string key, string authenticationFile, bool enableAtomDecryption, bool enableManaDecryption)
     {
-        UnityEngine.Debug.LogWarning("TODO CriWareDecrypter Initialize");
+        TodoLogger.Log(5, "CriWareDecrypter Initialize");
         return false;
     }
 

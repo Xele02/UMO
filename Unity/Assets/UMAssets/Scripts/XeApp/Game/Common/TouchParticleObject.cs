@@ -19,19 +19,19 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CD09BC Offset: 0x1CD09BC VA: 0x1CD09BC
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0x1CD0B3C Offset: 0x1CD0B3C VA: 0x1CD0B3C
 		private void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0x1CD0B40 Offset: 0x1CD0B40 VA: 0x1CD0B40
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1CD0BD8 Offset: 0x1CD0BD8 VA: 0x1CD0BD8
@@ -46,25 +46,25 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CD0C2C Offset: 0x1CD0C2C VA: 0x1CD0C2C Slot: 5
 		protected override void PausableAwake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0x1CD0C30 Offset: 0x1CD0C30 VA: 0x1CD0C30 Slot: 6
 		protected override void PausableStart()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0x1CD0C34 Offset: 0x1CD0C34 VA: 0x1CD0C34 Slot: 7
 		protected override void PausableUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0x1CD0C38 Offset: 0x1CD0C38 VA: 0x1CD0C38 Slot: 8
 		protected override void PausableInPause()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0x1CD0770 Offset: 0x1CD0770 VA: 0x1CD0770

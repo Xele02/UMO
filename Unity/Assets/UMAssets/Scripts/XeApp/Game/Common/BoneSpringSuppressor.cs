@@ -74,7 +74,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE627A0 Offset: 0xE627A0 VA: 0xE627A0
 		public void Load(GameObject root, BoneSpringSuppressParam param, BoneSpringSuppressor.Preset preset)
 		{
-			UnityEngine.Debug.LogError("TODO BoneSpringSuppressor Load");
+			TodoLogger.Log(0, "BoneSpringSuppressor Load");
 		}
 
 		// // RVA: 0xE63638 Offset: 0xE63638 VA: 0xE63638
@@ -89,7 +89,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE61F04 Offset: 0xE61F04 VA: 0xE61F04
 		public void UpdateSuppress()
 		{
-			UnityEngine.Debug.LogError("TODO BoneSpringSuppressor UpdateSuppress");
+			TodoLogger.Log(0, "BoneSpringSuppressor UpdateSuppress");
 		}
 
 		// // RVA: 0xE63644 Offset: 0xE63644 VA: 0xE63644

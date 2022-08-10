@@ -13,7 +13,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x953ED4 Offset: 0x953ED4 VA: 0x953ED4
 		public void Initialize(Transform parent)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x953FBC Offset: 0x953FBC VA: 0x953FBC

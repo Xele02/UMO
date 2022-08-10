@@ -17,20 +17,20 @@ namespace XeSys.Gfx
 		// // RVA: 0x1F10244 Offset: 0x1F10244 VA: 0x1F10244
 		public static RenderManager Create(string name = "RenderManager")
 		{
-			UnityEngine.Debug.LogWarning("TODO RenderManager.Create");
+			TodoLogger.Log(5, "RenderManager.Create");
 			return null;
 		}
 
 		// // RVA: 0x1F10338 Offset: 0x1F10338 VA: 0x1F10338 Slot: 4
 		protected override void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1F10434 Offset: 0x1F10434 VA: 0x1F10434
 		private void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1F10438 Offset: 0x1F10438 VA: 0x1F10438
@@ -39,7 +39,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x1F10814 Offset: 0x1F10814 VA: 0x1F10814
 		public static Vector3 ScreenToAppPosition(Vector3 screenPosition)
 		{
-			UnityEngine.Debug.LogWarning("TODO ScreenToAppPosition");
+			TodoLogger.Log(5, "ScreenToAppPosition");
 			return screenPosition;
 		}
 

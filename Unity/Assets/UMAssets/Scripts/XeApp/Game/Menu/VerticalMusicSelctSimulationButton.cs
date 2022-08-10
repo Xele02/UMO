@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBDB154 Offset: 0xBDB154 VA: 0xBDB154
 		public void SetTicketNum(int num)
 		{
-			UnityEngine.Debug.LogError("TODO SetTicketNum");
+			TodoLogger.Log(0, "SetTicketNum");
 		}
 
 		// // RVA: 0xBDB1A0 Offset: 0xBDB1A0 VA: 0xBDB1A0

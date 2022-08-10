@@ -46,7 +46,7 @@ public class CNGFKOJANNP
 	// // RVA: 0x175B720 Offset: 0x175B720 VA: 0x175B720
 	public void IKHJJMKLAEP()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0x175B728 Offset: 0x175B728 VA: 0x175B728

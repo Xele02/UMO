@@ -25,13 +25,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13DE2BC Offset: 0x13DE2BC VA: 0x13DE2BC
 		public void Awake()
 		{
-			UnityEngine.Debug.LogWarning("TODO InheritingMenu Awake");
+			TodoLogger.Log(5, "InheritingMenu Awake");
 		}
 
 		// // RVA: 0x13DE2C0 Offset: 0x13DE2C0 VA: 0x13DE2C0
 		public void Start()
 		{
-			UnityEngine.Debug.LogWarning("TODO InheritingMenu Start");
+			TodoLogger.Log(5, "InheritingMenu Start");
 		}
 
 		// // RVA: 0x13DE2C4 Offset: 0x13DE2C4 VA: 0x13DE2C4

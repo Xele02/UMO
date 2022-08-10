@@ -26,13 +26,13 @@ public class NEKDCJKANAH : KLFDBFMNLBL
 	// // RVA: 0x1AE6A30 Offset: 0x1AE6A30 VA: 0x1AE6A30
 	public NEKDCJKANAH()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x1AE6AD4 Offset: 0x1AE6AD4 VA: 0x1AE6AD4 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x1AE6C4C Offset: 0x1AE6C4C VA: 0x1AE6C4C Slot: 5
@@ -41,7 +41,7 @@ public class NEKDCJKANAH : KLFDBFMNLBL
 	// // RVA: 0x1AE7448 Offset: 0x1AE7448 VA: 0x1AE7448 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

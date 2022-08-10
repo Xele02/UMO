@@ -37,14 +37,14 @@ namespace ExternLib
 
         public static void criAtomEx3dSource_SetRandomPositionConfig(IntPtr ex_3d_source, ref CriAtomEx.Randomize3dConfig config)
         {
-            UnityEngine.Debug.LogError("TODO criAtomEx3dSource_SetRandomPositionConfig");
+            TodoLogger.Log(0, "criAtomEx3dSource_SetRandomPositionConfig");
         }
 
         public static void criAtomEx3dSource_SetRandomPositionConfig(IntPtr ex_3d_source, IntPtr config)
         {
             if(config == IntPtr.Zero)
                 return;
-            UnityEngine.Debug.LogError("TODO criAtomEx3dSource_SetRandomPositionConfig");
+            TodoLogger.Log(0, "criAtomEx3dSource_SetRandomPositionConfig");
         }
 
         public static void criAtomEx3dSource_SetPosition(IntPtr ex_3d_source, ref CriAtomEx.NativeVector position)
@@ -61,7 +61,7 @@ namespace ExternLib
 
         public static void criAtomEx3dSource_Set3dRegionHn(IntPtr ex_3d_source, IntPtr ex_3d_region)
         {
-            UnityEngine.Debug.LogError("TODO criAtomEx3dSource_Set3dRegionHn");
+            TodoLogger.Log(0, "criAtomEx3dSource_Set3dRegionHn");
         }
     }
 }

@@ -11,7 +11,7 @@ public class SakashoLog : SakashoAPIBase
 	// RVA: 0x2BCB4E0 Offset: 0x2BCB4E0 VA: 0x2BCB4E0
 	public static SakashoAPICallContext SendLog(SakashoLogData[] logData, OnSuccess onSuccess, OnError onError)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return null;
     }
 

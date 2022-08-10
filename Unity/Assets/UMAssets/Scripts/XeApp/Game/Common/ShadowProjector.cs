@@ -13,7 +13,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x13922C8 Offset: 0x13922C8 VA: 0x13922C8
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO fix projector");
+			TodoLogger.Log(0, "fix projector");
 			/*m_projector.enabled = false;
 			m_projector.material = new Material(m_projector.material);*/
 		}
@@ -45,7 +45,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0x139256C Offset: 0x139256C VA: 0x139256C
 		private void UpdateTarget()
 		{
-			UnityEngine.Debug.LogError("TODO ShadowProjector Update");
+			TodoLogger.Log(0, "ShadowProjector Update");
 		}
 	}
 }

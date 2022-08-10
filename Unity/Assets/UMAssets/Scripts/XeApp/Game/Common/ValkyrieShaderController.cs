@@ -139,7 +139,7 @@ namespace XeApp.Game.Common
 							{
 								if(a_resource != null)
 								{
-									UnityEngine.Debug.LogError("TODO end valk shader init");
+									TodoLogger.Log(0, "end valk shader init");
 								}
 								m_material_info[i].m_default = new Material(m_material_info[i].m_target_renderer[j].m_material);
 							}
@@ -147,7 +147,7 @@ namespace XeApp.Game.Common
 							{
 								if (a_resource != null)
 								{
-									UnityEngine.Debug.LogError("TODO end valk shader init");
+									TodoLogger.Log(0, "end valk shader init");
 								}
 								m_material_info[i].m_default = new Material(m_material_info[i].m_target_renderer[j].m_material);
 								m_material_info[i].m_default_value.m_base_speed = m_material_info[i].m_default.GetInt(m_shader_nameid.m_speed);

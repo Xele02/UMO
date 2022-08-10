@@ -138,7 +138,7 @@ namespace ExternLib
 			}
             else
             {
-                UnityEngine.Debug.LogError("TODO SakashoAssetGetAssetList "+json);
+                TodoLogger.Log(0, "SakashoAssetGetAssetList "+json);
             }
             UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", ""+callbackId+":"+message);
             // end hack

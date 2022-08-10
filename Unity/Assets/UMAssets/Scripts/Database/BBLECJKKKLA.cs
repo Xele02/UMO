@@ -58,21 +58,21 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG
 	// // RVA: 0xF2B510 Offset: 0xF2B510 VA: 0xF2B510 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO Database Load");
+        TodoLogger.Log(0, "Database Load");
 		return true;
     }
 
 	// // RVA: 0xF2BF0C Offset: 0xF2BF0C VA: 0xF2BF0C Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
 	// // RVA: 0xF2BF14 Offset: 0xF2BF14 VA: 0xF2BF14 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
+		TodoLogger.Log(0, "CAOGDCBPBAN");
 		return 0;
 	}
 }

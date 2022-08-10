@@ -40,7 +40,7 @@ namespace XeApp.Game.Menu
 			m_musicScroll.OnUpdateListItem.AddListener(this.MusicUpdateListItem);
 			m_musicScroll.OnUpdateClipItem.AddListener(() => {
 				//0xBE4864
-				UnityEngine.Debug.LogError("TODO OnUpdateClipItem");
+				TodoLogger.Log(0, "OnUpdateClipItem");
 			});
 		}
 
@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 				return;
 			if(m_musicList.Count <= listIndex)
 				return;
-			UnityEngine.Debug.LogError("TODO MusicUpdateCenterItem");
+			TodoLogger.Log(0, "MusicUpdateCenterItem");
 			obj.SetTitle(m_musicList[listIndex].MusicName);
 			if (OnUpdateCenter != null)
 				OnUpdateCenter.Invoke(listIndex);
@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 				return;
 			if(m_musicList.Count <= listIndex)
 				return;
-			UnityEngine.Debug.LogError("TODO MusicUpdateCenterItem");
+			TodoLogger.Log(0, "MusicUpdateCenterItem");
 			obj.SetTitle(m_musicList[listIndex].MusicName);
 		}
 	}

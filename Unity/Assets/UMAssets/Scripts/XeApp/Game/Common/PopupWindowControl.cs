@@ -213,7 +213,7 @@ namespace XeApp.Game.Common
 			{
 				m_tabButtons[i].AddOnClickCallback(() => {
 					// 0x1BBDFF0
-					UnityEngine.Debug.LogError("TODO");
+					TodoLogger.Log(0, "TODO");
 				});
 			}
 			m_scrollRect = GetComponentInChildren<ScrollRect>(true);
@@ -234,7 +234,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BB995C Offset: 0x1BB995C VA: 0x1BB995C
 		private void PushBackButton()
 		{
-			UnityEngine.Debug.LogError("TODO PushBackButton");
+			TodoLogger.Log(0, "PushBackButton");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73EBF4 Offset: 0x73EBF4 VA: 0x73EBF4
@@ -608,13 +608,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BB113C Offset: 0x1BB113C VA: 0x1BB113C
 		public void InputDisable()
 		{
-			UnityEngine.Debug.LogError("TODO InputDisable");
+			TodoLogger.Log(0, "InputDisable");
 		}
 
 		// // RVA: 0x1BB1264 Offset: 0x1BB1264 VA: 0x1BB1264
 		public void InputEnable()
 		{
-			UnityEngine.Debug.LogError("TODO InputEnable");
+			TodoLogger.Log(0, "InputEnable");
 		}
 
 		// // RVA: 0x1BBB904 Offset: 0x1BBB904 VA: 0x1BBB904
@@ -666,7 +666,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BBC568 Offset: 0x1BBC568 VA: 0x1BBC568
 		public static void PlayPopupButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type, CriAtomSource source)
 		{
-			UnityEngine.Debug.LogError("TODO PlayPopupButtonSe");
+			TodoLogger.Log(0, "PlayPopupButtonSe");
 		}
 
 		// // RVA: 0x1BB8D14 Offset: 0x1BB8D14 VA: 0x1BB8D14

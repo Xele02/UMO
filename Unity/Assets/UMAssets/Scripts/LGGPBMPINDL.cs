@@ -24,7 +24,7 @@ public class LGGPBMPINDL : KLFDBFMNLBL
 	// // RVA: 0xD739BC Offset: 0xD739BC VA: 0xD739BC Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0xD739C0 Offset: 0xD739C0 VA: 0xD739C0 Slot: 5
@@ -33,7 +33,7 @@ public class LGGPBMPINDL : KLFDBFMNLBL
 	// // RVA: 0xD73D14 Offset: 0xD73D14 VA: 0xD73D14 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

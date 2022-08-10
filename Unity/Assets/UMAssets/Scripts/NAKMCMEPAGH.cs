@@ -101,7 +101,7 @@ public class NAKMCMEPAGH
 	// // RVA: 0x17C0B5C Offset: 0x17C0B5C VA: 0x17C0B5C
 	public void LHPDDGIJKNB()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x17C0DEC Offset: 0x17C0DEC VA: 0x17C0DEC

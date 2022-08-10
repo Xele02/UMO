@@ -35,7 +35,7 @@ namespace XeApp.Game.Common
         // // RVA: 0x11068B4 Offset: 0x11068B4 VA: 0x11068B4
         public LayoutPoolManager(GameObject parent)
         {
-            UnityEngine.Debug.LogWarning("TODO LayoutPoolManager");
+            TodoLogger.Log(5, "LayoutPoolManager");
         }
 
         // // RVA: 0x1106AE0 Offset: 0x1106AE0 VA: 0x1106AE0
@@ -44,7 +44,7 @@ namespace XeApp.Game.Common
         // // RVA: 0x1106B6C Offset: 0x1106B6C VA: 0x1106B6C
         public void Initialize(MonoBehaviour mb, Font font)
         {
-            UnityEngine.Debug.LogWarning("TODO LayoutPoolManager.Initialize");
+            TodoLogger.Log(5, "LayoutPoolManager.Initialize");
         }
 
         // // RVA: 0x1106B78 Offset: 0x1106B78 VA: 0x1106B78

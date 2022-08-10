@@ -85,7 +85,7 @@ public class PJKLMCGEJMK
     // // RVA: 0x931734 Offset: 0x931734 VA: 0x931734
     public void FFBCKMFKFME()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         BNJPAKLNOPA_WorkerThreadQueue.Abort();
     }
 
@@ -476,7 +476,7 @@ public class PJKLMCGEJMK
     // // RVA: 0x931E18 Offset: 0x931E18 VA: 0x931E18
     private bool EHLBPCGHLCL(CACGCMBKHDI_Request ADKIDBJCAJA, SakashoErrorId KLCMLLLIANB, bool OHPAOJNLDJO) 
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return false;
     }
 
@@ -485,7 +485,7 @@ public class PJKLMCGEJMK
     private IEnumerator MELKAFEGNMD(CACGCMBKHDI_Request ADKIDBJCAJA, SakashoErrorId KLCMLLLIANB, int MJACIGCPNDA, string IIGAKOKGKIB, EHLCCMEDIOH IICBBDEPBAM)
     {
     	UnityEngine.Debug.Log("Enter MELKAFEGNMD");
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     	UnityEngine.Debug.Log("Exit MELKAFEGNMD");
         yield break;
     }
@@ -495,7 +495,7 @@ public class PJKLMCGEJMK
     private IEnumerator AOMMJNJGFEL(CACGCMBKHDI_Request ADKIDBJCAJA, KPKEOIJHIMN.GIDACIOHFNN CMCKNKKCNDK_Status)
     {
     	UnityEngine.Debug.Log("Enter AOMMJNJGFEL");
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     	UnityEngine.Debug.Log("Exit AOMMJNJGFEL");
         yield break;
     }
@@ -538,7 +538,7 @@ public class PJKLMCGEJMK
     // // RVA: 0x9321AC Offset: 0x9321AC VA: 0x9321AC
     private void NELKBIEGFIF(CACGCMBKHDI_Request ADKIDBJCAJA)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
     // // RVA: 0x9324C8 Offset: 0x9324C8 VA: 0x9324C8
@@ -570,7 +570,7 @@ public class PJKLMCGEJMK
     // // RVA: 0x932CD4 Offset: 0x932CD4 VA: 0x932CD4
     private bool BKGNCCKFMPF(CACGCMBKHDI_Request ADKIDBJCAJA, IMCBBOAFION BHFHGFKBOHH, IMCBBOAFION LNGMPEGMLBN, DJBHIFLHJLK AOCANKOMKFG)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return false;
     }
 
@@ -587,7 +587,7 @@ public class PJKLMCGEJMK
     private IEnumerator GGOECCJJPFN(CACGCMBKHDI_Request ADKIDBJCAJA)
     {
     	UnityEngine.Debug.Log("Enter GGOECCJJPFN");
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     	UnityEngine.Debug.Log("Exit GGOECCJJPFN");
         yield break;
     }

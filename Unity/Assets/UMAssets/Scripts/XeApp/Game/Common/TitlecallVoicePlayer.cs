@@ -5,13 +5,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CCED9C Offset: 0x1CCED9C VA: 0x1CCED9C
 		public void EntrySheet()
 		{
-			UnityEngine.Debug.LogWarning("TODO TitlecallVoicePlayer EntrySheet");
+			TodoLogger.Log(5, "TitlecallVoicePlayer EntrySheet");
 		}
 
 		// // RVA: 0x1CCEE08 Offset: 0x1CCEE08 VA: 0x1CCEE08
 		public void Play(int divaId, int voiceId)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1CCEF54 Offset: 0x1CCEF54 VA: 0x1CCEF54
@@ -20,7 +20,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CCEF5C Offset: 0x1CCEF5C VA: 0x1CCEF5C
 		public void RequestRemoveCueSheet()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B488 Offset: 0x73B488 VA: 0x73B488

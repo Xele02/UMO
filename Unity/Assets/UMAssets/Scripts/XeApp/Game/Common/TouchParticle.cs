@@ -33,13 +33,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CCFAD4 Offset: 0x1CCFAD4 VA: 0x1CCFAD4
 		private void Awake()
 		{
-			UnityEngine.Debug.LogWarning("TODO TouchParticle Awake");
+			TodoLogger.Log(5, "TouchParticle Awake");
 		}
 
 		// // RVA: 0x1CCFCE0 Offset: 0x1CCFCE0 VA: 0x1CCFCE0
 		private void Update()
 		{
-			UnityEngine.Debug.LogWarning("TODO TouchParticle Update");
+			TodoLogger.Log(5, "TouchParticle Update");
 		}
 
 		// // RVA: 0x1CCFD0C Offset: 0x1CCFD0C VA: 0x1CCFD0C

@@ -31,14 +31,14 @@ public class MMOLNAHHDOM
 	// // RVA: 0x1968408 Offset: 0x1968408 VA: 0x1968408
 	public bool PCODDPDFLHK()
     {
-        UnityEngine.Debug.LogError("TODO MMOLNAHHDOM unitLiveLocalSaveData PCODDPDFLHK");
+        TodoLogger.Log(0, "MMOLNAHHDOM unitLiveLocalSaveData PCODDPDFLHK");
         return true;
     }
 
 	// // RVA: 0x1968E50 Offset: 0x1968E50 VA: 0x1968E50
 	public bool HJMKBCFJOOH(bool FBBNPFFEJBN = false)
     {
-        UnityEngine.Debug.LogError("TODO MMOLNAHHDOM unitLiveLocalSaveData HJMKBCFJOOH");
+        TodoLogger.Log(0, "MMOLNAHHDOM unitLiveLocalSaveData HJMKBCFJOOH");
         return false;
     }
 

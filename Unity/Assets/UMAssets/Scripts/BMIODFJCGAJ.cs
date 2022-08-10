@@ -38,13 +38,13 @@ public class BMIODFJCGAJ : KLFDBFMNLBL
 	// // RVA: 0x19C8378 Offset: 0x19C8378 VA: 0x19C8378
 	public BMIODFJCGAJ()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x19C8580 Offset: 0x19C8580 VA: 0x19C8580 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x19C8680 Offset: 0x19C8680 VA: 0x19C8680 Slot: 5
@@ -53,7 +53,7 @@ public class BMIODFJCGAJ : KLFDBFMNLBL
 	// // RVA: 0x19C8DF8 Offset: 0x19C8DF8 VA: 0x19C8DF8 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

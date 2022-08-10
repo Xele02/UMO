@@ -33,7 +33,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC006B0 Offset: 0xC006B0 VA: 0xC006B0
 		public void Update()
 		{
-			UnityEngine.Debug.LogError("TODO RhythmGameStatus Update");
+			TodoLogger.Log(0, "RhythmGameStatus Update");
 		}
 
 		// // RVA: 0xC0C2D8 Offset: 0xC0C2D8 VA: 0xC0C2D8

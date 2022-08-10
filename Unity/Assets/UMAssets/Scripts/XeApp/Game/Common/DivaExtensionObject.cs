@@ -258,7 +258,7 @@ namespace XeApp.Game.Common
 		{
 			if(m_pause)
 			{
-				UnityEngine.Debug.LogError("TODO LateUpdate DivaExtenssionObject when paused");
+				TodoLogger.Log(0, "LateUpdate DivaExtenssionObject when paused");
 			}
 		}
 	}

@@ -120,7 +120,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			private set { } } //0xBF64F0 0xBF64F4
 		public bool is2DModeSpecialResoucesLoaded { get {
-			UnityEngine.Debug.LogError("TODO is2DModeSpecialResoucesLoaded");
+			TodoLogger.Log(0, "is2DModeSpecialResoucesLoaded");
 			return true;
 		} private set {} }// 0xBF64F8 0xBF64FC
 		public bool is3DModeAllResoucesLoaded { get
@@ -136,7 +136,7 @@ namespace XeApp.Game.RhythmGame
 			return ok;
 		} private set {} } //0xBF6500 0xBF66CC
 		public bool is2DModeAllResoucesLoaded { get {
-			UnityEngine.Debug.LogError("TODO is2DModeAllResoucesLoaded");
+			TodoLogger.Log(0, "is2DModeAllResoucesLoaded");
 			return true;
 		} private set {} } //0xBF66D0 0xBF6744
 
@@ -154,7 +154,7 @@ namespace XeApp.Game.RhythmGame
 					s.ReleaseMusicResource();
 				}
 			}
-			UnityEngine.Debug.LogError("TODO RhtythmGameResource finish OnDestroy");
+			TodoLogger.Log(0, "RhtythmGameResource finish OnDestroy");
 		}
 
 		// // RVA: 0xBF5970 Offset: 0xBF5970 VA: 0xBF5970
@@ -189,7 +189,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF5ADC Offset: 0xBF5ADC VA: 0xBF5ADC
 		public MusicVoiceChangerParam TryGetMusicVoiceChangerParam()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			return null;
 		}
 
@@ -386,13 +386,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF830C Offset: 0xBF830C VA: 0xBF830C
 		private void LoadMusicVoiceChangerResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			UnityEngine.Debug.LogError("TODO LoadMusicVoiceChangerResource");
+			TodoLogger.Log(0, "LoadMusicVoiceChangerResource");
 		}
 
 		// // RVA: 0xBF8524 Offset: 0xBF8524 VA: 0xBF8524
 		private void LoadSpecialMovieResource(List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			UnityEngine.Debug.LogError("TODO LoadSpecialMovieResource");
+			TodoLogger.Log(0, "LoadSpecialMovieResource");
 		}
 
 		// // RVA: 0xBF8690 Offset: 0xBF8690 VA: 0xBF8690
@@ -413,7 +413,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF8874 Offset: 0xBF8874 VA: 0xBF8874
 		public void LoadUITextureResouces()
 		{
-			UnityEngine.Debug.LogError("TODO LoadUITextureResouces");
+			TodoLogger.Log(0, "LoadUITextureResouces");
 			isUITextureResoucesLoaded_ = true;
 			uiTextureResources = new UITextureResource();
 		}
@@ -451,7 +451,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF8ED0 Offset: 0xBF8ED0 VA: 0xBF8ED0
 		public void LoadSpecialResourceFor2DMode(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			UnityEngine.Debug.LogError("TODO LoadSpecialResourceFor2DMode");
+			TodoLogger.Log(0, "LoadSpecialResourceFor2DMode");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7455AC Offset: 0x7455AC VA: 0x7455AC

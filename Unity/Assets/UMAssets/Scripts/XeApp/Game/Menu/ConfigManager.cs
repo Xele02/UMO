@@ -36,7 +36,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B5788C Offset: 0x1B5788C VA: 0x1B5788C Slot: 4
 		public void Dispose()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1B57890 Offset: 0x1B57890 VA: 0x1B57890
@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B57958 Offset: 0x1B57958 VA: 0x1B57958
 		public static void SetUserData()
 		{
-			UnityEngine.Debug.LogWarning("TODO ConfigManager SetUserData");
+			TodoLogger.Log(5, "ConfigManager SetUserData");
 			ILDKBCLAFPB.MPHNGGECENI_Option defaultOption = new ILDKBCLAFPB.MPHNGGECENI_Option();
 			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.MENU_BGM, defaultOption.HOMPENLIHCK_VolBgm, false);
 			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.MENU_SE, defaultOption.BGLLCLEDHKK_VolSe, false);

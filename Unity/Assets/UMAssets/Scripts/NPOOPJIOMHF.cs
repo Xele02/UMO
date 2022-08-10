@@ -111,7 +111,7 @@ public class NPOOPJIOMHF : KLFDBFMNLBL
 	// // RVA: 0x1CB7B80 Offset: 0x1CB7B80 VA: 0x1CB7B80 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

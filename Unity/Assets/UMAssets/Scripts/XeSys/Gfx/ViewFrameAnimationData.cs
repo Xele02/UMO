@@ -235,7 +235,7 @@ namespace XeSys.Gfx
 				{
 					vt.m.Move = CurveBezier3(rate,m_FrameDataList[Base].TransFormData.m.Move,m_FrameDataList[Base].TransFormData.s.MoveBezierNext, m_FrameDataList[Target].TransFormData.s.MoveBezierPrev, m_FrameDataList[Target].TransFormData.m.Move);
 				}*/
-				UnityEngine.Debug.LogError("TODO");
+				TodoLogger.Log(0, "TODO");
 				// L370
 				vt.m.Move = Vector2.Lerp(m_FrameDataList[Base].TransFormData.m.Move, m_FrameDataList[Target].TransFormData.m.Move, rate);
 				isUpdateSRT = true;

@@ -30,7 +30,7 @@ namespace XeApp.Game.Common
 
 		public Action onEndAnimationCallback { private get;  set; } // 0x38
 		public Action onPlayerCutInStart { set { 
-			UnityEngine.Debug.LogError("TODO onPlayerCutInStart set");
+			TodoLogger.Log(0, "onPlayerCutInStart set");
 			//m_eventListener.onPlayerCutInStart = value;
 		} } // 0xAE9020
 		public bool isRunning { get; private set; } // 0x3C
@@ -40,19 +40,19 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE9078 Offset: 0xAE9078 VA: 0xAE9078
 		public void Initialize(MusicIntroResource resource)
 		{
-			UnityEngine.Debug.LogError("TODO MusicIntroObject Initialize");
+			TodoLogger.Log(0, "MusicIntroObject Initialize");
 		}
 
 		// // RVA: 0xAE970C Offset: 0xAE970C VA: 0xAE970C
 		public void Begin()
 		{
-			UnityEngine.Debug.LogError("TODO MusicIntroObject Begin");
+			TodoLogger.Log(0, "MusicIntroObject Begin");
 		}
 
 		// // RVA: 0xAE9D34 Offset: 0xAE9D34 VA: 0xAE9D34
 		public void Takeoff()
 		{
-			UnityEngine.Debug.LogError("TODO MusicIntroObject Takeoff");
+			TodoLogger.Log(0, "MusicIntroObject Takeoff");
 		}
 
 		// // RVA: 0xAEA018 Offset: 0xAEA018 VA: 0xAEA018

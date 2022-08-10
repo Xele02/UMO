@@ -80,7 +80,7 @@ public abstract class IKDICBBFBMI
 	// // RVA: 0x8DCDBC Offset: 0x8DCDBC VA: 0x8DCDBC
 	public IKDICBBFBMI(string OPFGFINHFCE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x8DD51C Offset: 0x8DD51C VA: 0x8DD51C Slot: 5
@@ -140,7 +140,7 @@ public abstract class IKDICBBFBMI
 	// // RVA: 0x8DE4E0 Offset: 0x8DE4E0 VA: 0x8DE4E0 Slot: 19
 	public virtual void HEFIKPAHCIA(GBNDFCEDNMG.CJDGJFINBFH HDAMBOOCIAA)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0x8DE830 Offset: 0x8DE830 VA: 0x8DE830 Slot: 20

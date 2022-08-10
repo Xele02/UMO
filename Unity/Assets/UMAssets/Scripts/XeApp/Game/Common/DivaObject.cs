@@ -220,7 +220,7 @@ namespace XeApp.Game.Common
 			{
 				if(!GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality())
 				{
-					UnityEngine.Debug.LogError("TODO Diva Low quality 3d setyp");
+					TodoLogger.Log(0, "Diva Low quality 3d setyp");
 				}
 			}
 			m_valkyrieShaderControlelr.Initialize(renderers, null);

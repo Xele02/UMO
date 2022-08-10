@@ -77,7 +77,7 @@ public class HMIJOOPHJLB_Diva2 : DIHHCBACKGG
 	// RVA: 0x15F680C Offset: 0x15F680C VA: 0x15F680C Slot: 11
 	public override uint CAOGDCBPBAN()
     {
-        UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
+        TodoLogger.Log(0, "CAOGDCBPBAN");
         return 0;
     }
 }

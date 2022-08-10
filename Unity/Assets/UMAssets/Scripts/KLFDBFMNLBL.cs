@@ -59,7 +59,7 @@ public abstract class KLFDBFMNLBL
 	// // RVA: 0x1A0BD30 Offset: 0x1A0BD30 VA: 0x1A0BD30
 	protected int CJAENOMGPDA(EDOHBJAPLPF_JsonData LFFNOHMOKJA, string LJNAKDMILMC, int HDDJJLKAFIF, ref bool NGJDHLGMHMH)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return 0;
 	}
 
@@ -78,7 +78,7 @@ public abstract class KLFDBFMNLBL
 	// // RVA: 0x1A0CA48 Offset: 0x1A0CA48 VA: 0x1A0CA48 Slot: 11
 	public virtual FENCAJJBLBH PFAKPFKJJKA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return null;
 	}
 

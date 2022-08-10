@@ -169,7 +169,7 @@ public class GCIJNCFDNON
 	public static StatusData JPCAIAAOOLN(int BCCHOBPJJKE, byte[] KBOLNIBLIND, byte[] ODKMKEHJOCK, int JPIPENJGGDD, int DPCIPDAECEA = 0)
 	{
 		StatusData res = new StatusData();
-		UnityEngine.Debug.LogError("TODO statusdata JPCAIAAOOLN");
+		TodoLogger.Log(0, "statusdata JPCAIAAOOLN");
 		return res;
 		/*if(BCCHOBPJJKE == 0)
 			return res;

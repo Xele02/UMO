@@ -389,7 +389,7 @@ public class NKGJPJPHLIF
 	// // RVA: 0xC188EC Offset: 0xC188EC VA: 0xC188EC
 	public void LBEHLMLKPDM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		BHFHGFKBOHH();
 	}
 
@@ -476,7 +476,7 @@ public class NKGJPJPHLIF
 													return;
 											if(LJBHLFGDBHA - Utility.GetCurrentUnixTime() > 0) // ???
 											{
-													UnityEngine.Debug.LogError("TODO 64 check");
+													TodoLogger.Log(0, "64 check");
 													PECPLBANLBN = false;
 													return;
 											}

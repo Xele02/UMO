@@ -43,14 +43,14 @@ public class BFGOCONGNDK
 					{
 						if(size > 16)
 						{
-        					UnityEngine.Debug.LogWarning("TODO");
+        					TodoLogger.Log(5, "TODO");
 						}
 					}
 				}
 			}
 		}
 
-        UnityEngine.Debug.LogWarning("TODO");
+        TodoLogger.Log(5, "TODO");
 		MBGHLLHFNHH = true;
     }
 
@@ -76,7 +76,7 @@ public class BFGOCONGNDK
 						MD5 md5 = MD5.Create();
 						FileStream f = File.OpenRead(fileBg);
 						byte[] hash = md5.ComputeHash(f);
-						UnityEngine.Debug.LogError("TODO end BG check hash");
+						TodoLogger.Log(0, "end BG check hash");
 						return true;
 					}
 				}

@@ -30,27 +30,27 @@ namespace SecureLib
         // // RVA: 0x2E71EF4 Offset: 0x2E71EF4 VA: 0x2E71EF4
         static SecureLibAPI()
 		{
-            UnityEngine.Debug.LogWarning("TODO SecureLibAPI");
+            TodoLogger.Log(5, "SecureLibAPI");
 		}
 
         // // RVA: 0x2E71EF8 Offset: 0x2E71EF8 VA: 0x2E71EF8
         public static bool isRooted()
         {
-            UnityEngine.Debug.LogWarning("TODO isRooted");
+            TodoLogger.Log(5, "isRooted");
             return false;
         }
 
         // // RVA: 0x2E71F70 Offset: 0x2E71F70 VA: 0x2E71F70
         public static bool isDebuggerAttachedJava()
         {
-            UnityEngine.Debug.LogWarning("TODO isDebuggerAttachedJava");
+            TodoLogger.Log(5, "isDebuggerAttachedJava");
             return false;
         }
 
         // // RVA: 0x2E71FE8 Offset: 0x2E71FE8 VA: 0x2E71FE8
         public static bool isDebuggerAttachedNative()
         {
-            UnityEngine.Debug.LogWarning("TODO isDebuggerAttachedNative");
+            TodoLogger.Log(5, "isDebuggerAttachedNative");
             return false;
         }
 
@@ -63,7 +63,7 @@ namespace SecureLib
         // // RVA: 0x2E71FF4 Offset: 0x2E71FF4 VA: 0x2E71FF4
         public static bool isEmulator()
         {
-            UnityEngine.Debug.LogWarning("TODO isEmulator");
+            TodoLogger.Log(5, "isEmulator");
             return false;
         }
 

@@ -34,7 +34,7 @@ public class CGFNKMNBNBN
 	// // RVA: 0x12BAE60 Offset: 0x12BAE60 VA: 0x12BAE60
 	public static bool MHJBBLBFHIB()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return false;
     }
 
@@ -70,7 +70,7 @@ public class CGFNKMNBNBN
 	// // RVA: 0x12BBA64 Offset: 0x12BBA64 VA: 0x12BBA64
 	public static bool DGCIHGPOMCI(long JHNMKKNEENE)
 	{
-		UnityEngine.Debug.LogWarning("TODO DGCIHGPOMCI");
+		TodoLogger.Log(5, "DGCIHGPOMCI");
 		return false;
 	}
 }

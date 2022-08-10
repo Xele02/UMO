@@ -103,13 +103,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0xEA20F4 Offset: 0xEA20F4 VA: 0xEA20F4
 		public void SetOverrideAnimationIntro(MusicIntroResource a_resource)
 		{
-			UnityEngine.Debug.LogError("TODO ValkyrieObject SetOverrideAnimationIntro");
+			TodoLogger.Log(0, "ValkyrieObject SetOverrideAnimationIntro");
 		}
 
 		// // RVA: 0xEA2354 Offset: 0xEA2354 VA: 0xEA2354
 		static GameValkyrieObject()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x73C108 Offset: 0x73C108 VA: 0x73C108

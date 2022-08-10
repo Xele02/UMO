@@ -85,7 +85,7 @@ public class OAFCKDDEBFN
 			}
 			index++;
 		}
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return null; // TODO
 	}
 }

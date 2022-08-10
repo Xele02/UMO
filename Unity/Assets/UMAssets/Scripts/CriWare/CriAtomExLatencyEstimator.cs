@@ -21,13 +21,13 @@ public static class CriAtomExLatencyEstimator
 	// // RVA: 0x289B4DC Offset: 0x289B4DC VA: 0x289B4DC
 	public static void FinalizeModule()
     {
-        UnityEngine.Debug.LogWarning("TODO CriAtomExLatencyEstimator FinalizeModule");
+        TodoLogger.Log(5, "CriAtomExLatencyEstimator FinalizeModule");
     }
 
 	// // RVA: 0x289B5C4 Offset: 0x289B5C4 VA: 0x289B5C4
 	public static CriAtomExLatencyEstimator.EstimatorInfo GetCurrentInfo()
     {
-        UnityEngine.Debug.LogWarning("TODO CriAtomExLatencyEstimator GetCurrentInfo");
+        TodoLogger.Log(5, "CriAtomExLatencyEstimator GetCurrentInfo");
         return new CriAtomExLatencyEstimator.EstimatorInfo();
     }
 

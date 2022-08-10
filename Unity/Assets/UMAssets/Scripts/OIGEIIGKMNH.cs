@@ -28,13 +28,13 @@ public class OIGEIIGKMNH : KLFDBFMNLBL
 	// // RVA: 0x1DE3A98 Offset: 0x1DE3A98 VA: 0x1DE3A98
 	public OIGEIIGKMNH()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x1DE3B3C Offset: 0x1DE3B3C VA: 0x1DE3B3C Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x1DE3D44 Offset: 0x1DE3D44 VA: 0x1DE3D44 Slot: 5
@@ -43,7 +43,7 @@ public class OIGEIIGKMNH : KLFDBFMNLBL
 	// // RVA: 0x1DE4580 Offset: 0x1DE4580 VA: 0x1DE4580 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

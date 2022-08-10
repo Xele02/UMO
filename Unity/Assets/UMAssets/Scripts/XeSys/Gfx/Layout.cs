@@ -148,7 +148,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x204A3AC Offset: 0x204A3AC VA: 0x204A3AC
 		public void LoadFromString(string layoutText)
 		{
-			UnityEngine.Debug.LogError("TODO Layout LoadFromString");
+			TodoLogger.Log(0, "Layout LoadFromString");
 		}
 
 		// // RVA: 0x204A3B0 Offset: 0x204A3B0 VA: 0x204A3B0
@@ -257,7 +257,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x204E888 Offset: 0x204E888 VA: 0x204E888
 		private void ReadAbsoluteLayoutAtt(AbsoluteLayout abs, Dictionary<string, string> dic)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			/*ReadCommonAtt(abs, dic);
 			if(dic.ContainsKey(colorAtt))
 			{
@@ -296,7 +296,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x205035C Offset: 0x205035C VA: 0x205035C
 		private void ReadChildrenView(AbsoluteLayout abs, XmlReader reader)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x204DB44 Offset: 0x204DB44 VA: 0x204DB44

@@ -45,7 +45,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG
 	// // RVA: 0x111F948 Offset: 0x111F948 VA: 0x111F948 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
     {
-        UnityEngine.Debug.LogError("TODO IIEMACPEEBJ");
+        TodoLogger.Log(0, "IIEMACPEEBJ");
         return true;
     }
 
@@ -124,7 +124,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG
 	// // RVA: 0x11201C0 Offset: 0x11201C0 VA: 0x11201C0 Slot: 11
 	public override uint CAOGDCBPBAN()
     {
-        UnityEngine.Debug.LogError("TODO CAOGDCBPBAN");
+        TodoLogger.Log(0, "CAOGDCBPBAN");
         return 0;
     }
 }

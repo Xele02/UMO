@@ -13,7 +13,7 @@ public class ATELIDAVAPK
 	// // RVA: 0xD61B04 Offset: 0xD61B04 VA: 0xD61B04
 	public bool CCKHESGNI()
     {
-        UnityEngine.Debug.LogWarning("TODO CCKHESGNI"); // apkcheck
+        TodoLogger.Log(5, "CCKHESGNI"); // apkcheck
         return true;
     }
 
@@ -23,7 +23,7 @@ public class ATELIDAVAPK
 	// // RVA: 0xD6204C Offset: 0xD6204C VA: 0xD6204C
 	public bool QTHZDMBR()
     {
-        UnityEngine.Debug.LogWarning("TODO QTHZDMBR"); // check code digest
+        TodoLogger.Log(5, "QTHZDMBR"); // check code digest
         return true;
     }
 

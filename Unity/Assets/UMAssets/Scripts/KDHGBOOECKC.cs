@@ -468,14 +468,14 @@ public class KDHGBOOECKC
 	// // RVA: 0x1034DC0 Offset: 0x1034DC0 VA: 0x1034DC0
 	public bool PCPECPFJMGC()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return false;
 	}
 
 	// // RVA: 0x1034E9C Offset: 0x1034E9C VA: 0x1034E9C
 	public bool IHGJNLNJPOK()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return false;
 	}
 
@@ -613,7 +613,7 @@ public class KDHGBOOECKC
 	public IEnumerator CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
     {
         UnityEngine.Debug.Log("Enter CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements");
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         UnityEngine.Debug.Log("Exit CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements");
 		BHFHGFKBOHH();
         yield break;

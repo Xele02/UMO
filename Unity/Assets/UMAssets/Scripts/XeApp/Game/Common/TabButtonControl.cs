@@ -14,7 +14,7 @@ namespace XeApp.Game.Common
 			{
 				m_buttons[i].AddOnClickCallback(() => {
 					//0x1CCE56C
-					UnityEngine.Debug.LogError("TODO");
+					TodoLogger.Log(0, "TODO");
 				});
 			}
 		}

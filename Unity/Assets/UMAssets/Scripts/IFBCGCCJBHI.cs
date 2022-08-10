@@ -37,7 +37,7 @@ public class IFBCGCCJBHI
 	// // RVA: 0x11EE64C Offset: 0x11EE64C VA: 0x11EE64C
 	public void KHEKNNFCAOI()
 	{
-		UnityEngine.Debug.LogError("TODO Init player data");
+		TodoLogger.Log(0, "Init player data");
 	}
 
 	// // RVA: 0x11EE784 Offset: 0x11EE784 VA: 0x11EE784
@@ -60,19 +60,19 @@ public class IFBCGCCJBHI
     {
         //if(BPLOEAHOPFI.MLLGPBGFLFI() != KLDBCKIJACO || FPLEADMHLKN == null)
         {
-            UnityEngine.Debug.LogError("TODO");
+            TodoLogger.Log(0, "TODO");
         }
     }
 
 	// // RVA: 0x11EEB30 Offset: 0x11EEB30 VA: 0x11EEB30
 	private void FOCDOMKICKL()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0x11EED70 Offset: 0x11EED70 VA: 0x11EED70
 	private void OCEAALKNGDK()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 }

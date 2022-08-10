@@ -15,7 +15,7 @@ public class BEJIKEOAJHN_OptionSLive
 	// // RVA: 0xC756D8 Offset: 0xC756D8 VA: 0xC756D8
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
 	{
-		UnityEngine.Debug.LogError("TODO SaveInit");
+		TodoLogger.Log(0, "SaveInit");
 	}
 
 	// // RVA: 0xC75848 Offset: 0xC75848 VA: 0xC75848
@@ -30,7 +30,7 @@ public class BEJIKEOAJHN_OptionSLive
 	// // RVA: 0xC75BB0 Offset: 0xC75BB0 VA: 0xC75BB0
 	public void ODDIHGPONFL_Copy(BEJIKEOAJHN_OptionSLive FMKAONAMGCN)
 	{
-		UnityEngine.Debug.LogError("TODO SaveCopy");
+		TodoLogger.Log(0, "SaveCopy");
 	}
 
 }

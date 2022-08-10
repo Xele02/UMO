@@ -70,7 +70,7 @@ namespace CriWare
         // // RVA: 0x294D7A4 Offset: 0x294D7A4 VA: 0x294D7A4
         public CriFsWebInstaller()
         {
-            UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller()");
+            TodoLogger.Log(5, "CriFsWebInstaller()");
         }
 
         // // RVA: 0x294DF48 Offset: 0x294DF48 VA: 0x294DF48 Slot: 1
@@ -86,7 +86,7 @@ namespace CriWare
         public void Copy(string url, string dstPath)
         {
 			url = FileSystemProxy.ConvertURL(url);
-            UnityEngine.Debug.LogWarning("Todo Copy "+url+" "+dstPath);
+            TodoLogger.Log(5, "Copy "+url+" "+dstPath);
             www = new UnityEngine.WWW(url);
             fileSavePath = dstPath;
             status.status = Status.Busy;
@@ -95,7 +95,7 @@ namespace CriWare
         // // RVA: 0x294D728 Offset: 0x294D728 VA: 0x294D728
         public void Stop()
         {
-            UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller Stop");
+            TodoLogger.Log(5, "CriFsWebInstaller Stop");
             if(www != null)
             {
                 www.Dispose();
@@ -130,19 +130,19 @@ namespace CriWare
         // // RVA: 0x294E59C Offset: 0x294E59C VA: 0x294E59C
         public static void InitializeModule(CriFsWebInstaller.ModuleConfig config)
 		{
-			UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller InitializeModule");
+			TodoLogger.Log(5, "CriFsWebInstaller InitializeModule");
 		}
 
         // // RVA: 0x294E8A4 Offset: 0x294E8A4 VA: 0x294E8A4
         public static void FinalizeModule()
 		{
-			UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller FinalizeModule");
+			TodoLogger.Log(5, "CriFsWebInstaller FinalizeModule");
 		}
 
 		// // RVA: 0x294C460 Offset: 0x294C460 VA: 0x294C460
 		public static void ExecuteMain()
         {
-            UnityEngine.Debug.LogWarning("TODO CriFsWebInstaller ExecuteMain");
+            TodoLogger.Log(5, "CriFsWebInstaller ExecuteMain");
         }
 
         // // RVA: 0x294EC08 Offset: 0x294EC08 VA: 0x294EC08
@@ -175,7 +175,7 @@ namespace CriWare
         // // RVA: 0x294E3D0 Offset: 0x294E3D0 VA: 0x294E3D0
         private static /*extern */int criFsWebInstaller_GetStatusInfo(/*IntPtr*/CriFsWebInstaller installer, out CriFsWebInstaller.StatusInfo status)
         {
-            UnityEngine.Debug.LogWarning("TODO criFsWebInstaller_GetStatusInfo");
+            TodoLogger.Log(5, "criFsWebInstaller_GetStatusInfo");
             
             status = installer.status;
 

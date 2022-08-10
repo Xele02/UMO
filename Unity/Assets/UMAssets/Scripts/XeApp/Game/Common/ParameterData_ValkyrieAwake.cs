@@ -12,7 +12,7 @@ namespace XeApp.Game.Common
         // // RVA: 0xAF5220 Offset: 0xAF5220 VA: 0xAF5220
         public bool Check(GameSetupData a_setup_data)
 		{
-			UnityEngine.Debug.LogError("TODO ParameterData_ValkyrieAwake Check");
+			TodoLogger.Log(0, "ParameterData_ValkyrieAwake Check");
 			return true;
 		}
 

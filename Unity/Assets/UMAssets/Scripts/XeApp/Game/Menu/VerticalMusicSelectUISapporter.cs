@@ -165,7 +165,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC7F7C Offset: 0xAC7F7C VA: 0xAC7F7C
 		public void SetSmallBigOrder(VerticalMusicSelectSortOrder.SortOrder sortOrder)
 		{
-			UnityEngine.Debug.LogError("TODO SetSmallBigOrder");
+			TodoLogger.Log(0, "SetSmallBigOrder");
 		}
 
 		// // RVA: 0xADBBC0 Offset: 0xADBBC0 VA: 0xADBBC0

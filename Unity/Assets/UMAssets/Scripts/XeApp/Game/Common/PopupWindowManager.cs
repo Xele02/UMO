@@ -78,14 +78,14 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC031C Offset: 0x1BC031C VA: 0x1BC031C
 		public static bool IsReady()
 		{
-			UnityEngine.Debug.LogWarning("TODO PopupWindowManager.IsReady");
+			TodoLogger.Log(5, "PopupWindowManager.IsReady");
 			return true;
 		}
 
 		// // RVA: 0x1BC0540 Offset: 0x1BC0540 VA: 0x1BC0540
 		public void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1BC05E8 Offset: 0x1BC05E8 VA: 0x1BC05E8
@@ -208,7 +208,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC5C10 Offset: 0x1BC5C10 VA: 0x1BC5C10
 		public static void ApplicationQuitPopupShow(Action cancelAction)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1BC5E74 Offset: 0x1BC5E74 VA: 0x1BC5E74

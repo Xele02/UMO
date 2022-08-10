@@ -42,7 +42,7 @@ namespace CriWare
         // RVA: 0x294BF04 Offset: 0x294BF04 VA: 0x294BF04
         private void OnDestroy()
         {
-            UnityEngine.Debug.LogError("TODO");
+            TodoLogger.Log(0, "TODO");
         }
 
         // // RVA: 0x294C138 Offset: 0x294C138 VA: 0x294C138 Slot: 6

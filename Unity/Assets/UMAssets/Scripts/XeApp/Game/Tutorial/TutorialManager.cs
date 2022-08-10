@@ -25,7 +25,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE463C4 Offset: 0xE463C4 VA: 0xE463C4
 		public static IEnumerator TryShowTutorialCoroutine(Func<TutorialConditionId, bool> checker)
 		{
-			UnityEngine.Debug.LogError("TODO TryShowTutorialCoroutine");
+			TodoLogger.Log(0, "TryShowTutorialCoroutine");
 			yield return null;
 		}
 

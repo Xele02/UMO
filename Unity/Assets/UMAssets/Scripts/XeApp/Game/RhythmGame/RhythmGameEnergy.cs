@@ -28,7 +28,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC5BAC Offset: 0xDC5BAC VA: 0xDC5BAC
 		public void DisableCallbackPilotVoice()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xDC5BB8 Offset: 0xDC5BB8 VA: 0xDC5BB8
@@ -61,7 +61,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC6314 Offset: 0xDC6314 VA: 0xDC6314
 		public RhythmGameEnergy()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 	}
 }

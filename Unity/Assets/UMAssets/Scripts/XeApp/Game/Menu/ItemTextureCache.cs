@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x14BD4E0 Offset: 0x14BD4E0 VA: 0x14BD4E0
 		public void Load(int id, Action<IiconTexture> callBack)
 		{
-			UnityEngine.Debug.LogError("TODO IconTextureCache Load");
+			TodoLogger.Log(0, "IconTextureCache Load");
 		}
 
 		// // RVA: 0x14BD918 Offset: 0x14BD918 VA: 0x14BD918
@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					UnityEngine.Debug.LogError("TODO MakeItemIconTexturePath");
+					TodoLogger.Log(0, "MakeItemIconTexturePath");
 					/*int val3 = EKLNMHFCAOI.DEACAHNLMNI(id);
 					if(val3 < 1)
 					{
@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("TODO MakeItemIconTexturePath");
+				TodoLogger.Log(0, "MakeItemIconTexturePath");
 			}
 			if(subId < 1)
 			{

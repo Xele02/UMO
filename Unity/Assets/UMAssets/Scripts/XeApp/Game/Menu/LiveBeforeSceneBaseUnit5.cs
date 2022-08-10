@@ -73,7 +73,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x15474B0 Offset: 0x15474B0 VA: 0x15474B0 Slot: 15
 		protected override void OnDeleteCache()
 		{
-			UnityEngine.Debug.LogError("TODO OnDeleteCache");
+			TodoLogger.Log(0, "OnDeleteCache");
 		}
 
 		// // RVA: 0x154760C Offset: 0x154760C VA: 0x154760C
@@ -82,7 +82,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1547C0C Offset: 0x1547C0C VA: 0x1547C0C
 		protected void AdvanceGame(StatusData teamUnitStatus, DFKGGBMFFGB playerData, EAJCBFGKKFA friendData, LimitOverStatusData limitOverData, bool isSkip, int ticketCount, long consumeTime, JGEOBNENMAH.NEDILFPPCJF log, bool isNotUpdateProfile)
 		{
-			UnityEngine.Debug.LogError("TODO AdvanceGame");
+			TodoLogger.Log(0, "AdvanceGame");
 			MenuScene.Instance.GotoRhythmGame(false, 0, false);
 		}
 
@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 			m_prismPopupSetting.Buttons[1].Label = PopupButton.ButtonLabel.Ok;
 			m_prismPopupSetting.Buttons[1].Type = PopupButton.ButtonType.Positive;
 
-			UnityEngine.Debug.LogError("TODO finish SetupPrismPopupSetting");
+			TodoLogger.Log(0, "finish SetupPrismPopupSetting");
 
 			/*m_textSetPrizmPopup.WindowSize = SizeType.Middle;
 			m_textSetPrizmPopup.SetParent(transform);
@@ -163,7 +163,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x154983C Offset: 0x154983C VA: 0x154983C
 		private void SendPrismChangeLog(int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation)
 		{
-			UnityEngine.Debug.LogError("TODO SendPrismChangeLog");
+			TodoLogger.Log(0, "SendPrismChangeLog");
 		}
 	}
 }

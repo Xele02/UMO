@@ -51,7 +51,7 @@ namespace XeApp.Game.MusicSelect
 			//	// RVA: 0xCA2E0C Offset: 0xCA2E0C VA: 0xCA2E0C
 			public MusicListData(VerticalMusicDataList.MusicListData.InitParam initParam)
 			{
-				UnityEngine.Debug.LogError("TODO MusicListData()");
+				TodoLogger.Log(0, "MusicListData()");
 				MusicName = initParam.musicName;
 				ViewMusic = initParam.viewMusic;
 			}
@@ -65,7 +65,7 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xCA0F60 Offset: 0xCA0F60 VA: 0xCA0F60
 		public static List<VerticalMusicDataList.MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId)
 		{
-			UnityEngine.Debug.LogError("TODO CreateMusicListData !!!");
+			TodoLogger.Log(0, "CreateMusicListData !!!");
 
 			List<VerticalMusicDataList.MusicListData> res =  new List<VerticalMusicDataList.MusicListData>();
 			for(int i = 0; i < viewMusicDataList.Count; i++)

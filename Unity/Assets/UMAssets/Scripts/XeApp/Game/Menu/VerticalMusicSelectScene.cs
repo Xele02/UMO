@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("TODO Args != null");
+				TodoLogger.Log(0, "Args != null");
 			}
 			long currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
 			JEPBIIJDGEF.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false);
@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 				var1 = m_pickupFreeMusicId;
 			if(IsCanDoUnitHelp())
 			{
-				UnityEngine.Debug.LogError("TODO IsCanDoUnitHelp");
+				TodoLogger.Log(0, "IsCanDoUnitHelp");
 			}
 			if(!SelectUnitDanceFocus(out m_pickupFreeMusicId, out m_pickupFreeCategoryId, ref m_musicSelectUISapporter.isLine6Mode, false, 0))
 			{
@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE5E44 Offset: 0xBE5E44 VA: 0xBE5E44
 		private IEnumerator Co_SetupBg(BgType bgType, int bgId, bool isFade, Action endCallBack)
 		{
-			UnityEngine.Debug.LogError("TODO Co_SetupBg");
+			TodoLogger.Log(0, "Co_SetupBg");
 			endCallBack();
 			yield break;
 		}
@@ -181,17 +181,17 @@ namespace XeApp.Game.Menu
 			m_musicList.OnUpdateClip = () =>
 			{
 				//0xBF00FC
-				UnityEngine.Debug.LogError("TODO OnUpdateClip");
+				TodoLogger.Log(0, "OnUpdateClip");
 			};
 			m_musicList.MusicScrollView.CenterItem.OnRewardButtonClickListener = () =>
 			{
 				//0xBF010C
-				UnityEngine.Debug.LogError("TODO OnRewardButtonClickListener");
+				TodoLogger.Log(0, "OnRewardButtonClickListener");
 			};
 			m_musicList.MusicScrollView.CenterItem.OnMusicInfoButtonClickListener = () =>
 			{
 				//0xBF01A0
-				UnityEngine.Debug.LogError("TODO OnMusicInfoButtonClickListener");
+				TodoLogger.Log(0, "OnMusicInfoButtonClickListener");
 			};
 			m_playButton.OnClicButtonListener = (bool isSimulation) =>
 			{
@@ -199,7 +199,7 @@ namespace XeApp.Game.Menu
 				m_musicList.MusicScrollView.SetPosition(list_no);
 				OnClickPlayButton(isSimulation);
 			};
-			UnityEngine.Debug.LogError("TODO Co_OnPostSetCanvas listener !!!");
+			TodoLogger.Log(0, "Co_OnPostSetCanvas listener !!!");
 			m_musicDetail.OnUnitButtonClickListener = (int index) =>
 			{
 				//0xBF02CC
@@ -225,7 +225,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 
 
-			UnityEngine.Debug.LogError("TODO fix that, where is m_isEndPostSetCanvas = true really set ?");
+			TodoLogger.Log(0, "fix that, where is m_isEndPostSetCanvas = true really set ?");
 			m_isEndPostSetCanvas = true;
 		}
 
@@ -241,7 +241,7 @@ namespace XeApp.Game.Menu
 				yield return Co_ShowScoreRankingPopup();
 				MenuScene.Instance.InputEnable();
 			}
-			UnityEngine.Debug.LogError("TODO DirtyChangeScene stuff");
+			TodoLogger.Log(0, "DirtyChangeScene stuff");
 			m_isEndActivateScene = true;
 		}
 
@@ -249,7 +249,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE6040 Offset: 0xBE6040 VA: 0xBE6040
 		private IEnumerator Co_ShowScoreRankingPopup()
 		{
-			UnityEngine.Debug.LogError("TODO Co_ShowScoreRankingPopup");
+			TodoLogger.Log(0, "Co_ShowScoreRankingPopup");
 			yield break;
 		}
 
@@ -470,20 +470,20 @@ namespace XeApp.Game.Menu
 		// RVA: 0xBE65C8 Offset: 0xBE65C8 VA: 0xBE65C8 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			TodoLogger.Log(0, "!!!");
 		}
 
 		// RVA: 0xBE683C Offset: 0xBE683C VA: 0xBE683C Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			TodoLogger.Log(0, "!!!");
 			return true;
 		}
 
 		// RVA: 0xBE6A30 Offset: 0xBE6A30 VA: 0xBE6A30 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			TodoLogger.Log(0, "!!!");
 			return true;
 		}
 
@@ -496,25 +496,25 @@ namespace XeApp.Game.Menu
 		// RVA: 0xBE6B00 Offset: 0xBE6B00 VA: 0xBE6B00 Slot: 48
 		//protected override void ReleaseScene()
 		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	TodoLogger.Log(0, "!!!");
 		//}
 
 		// RVA: 0xBE6BA0 Offset: 0xBE6BA0 VA: 0xBE6BA0 Slot: 49
 		//protected override void ReleaseCache()
 		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	TodoLogger.Log(0, "!!!");
 		//}
 
 		// RVA: 0xBE6C68 Offset: 0xBE6C68 VA: 0xBE6C68 Slot: 50
 		//protected override void OnInputDisable()
 		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	TodoLogger.Log(0, "!!!");
 		//}
 
 		// RVA: 0xBE6CAC Offset: 0xBE6CAC VA: 0xBE6CAC Slot: 51
 		//protected override void OnInputEnable()
 		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	TodoLogger.Log(0, "!!!");
 		//}
 
 		// RVA: 0xBE6CF0 Offset: 0xBE6CF0 VA: 0xBE6CF0 Slot: 55
@@ -526,7 +526,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE6D18 Offset: 0xBE6D18 VA: 0xBE6D18
 		protected void TryInstall(StringBuilder bundleName, VerticalMusicDataList musicList)
 		{
-			UnityEngine.Debug.LogError("TODO TryInstall !!!");
+			TodoLogger.Log(0, "TryInstall !!!");
 		}
 
 		// // RVA: 0xBE7054 Offset: 0xBE7054 VA: 0xBE7054
@@ -613,7 +613,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE87B4 Offset: 0xBE87B4 VA: 0xBE87B4
 		public void SelectAprilFoolFocus()
 		{
-			UnityEngine.Debug.LogError("TODO SelectAprilFoolFocus!!!");
+			TodoLogger.Log(0, "SelectAprilFoolFocus!!!");
 		}
 
 		// // RVA: 0xBE8AE8 Offset: 0xBE8AE8 VA: 0xBE8AE8
@@ -622,7 +622,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE8C6C Offset: 0xBE8C6C VA: 0xBE8C6C
 		private void SelectArgsFocus(MusicSelectArgs args)
 		{
-			UnityEngine.Debug.LogError("TODO SelectArgsFocus");
+			TodoLogger.Log(0, "SelectArgsFocus");
 		}
 
 		// // RVA: 0xBE97AC Offset: 0xBE97AC VA: 0xBE97AC
@@ -631,7 +631,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE97F0 Offset: 0xBE97F0 VA: 0xBE97F0
 		private void ApplyEventInfo()
 		{
-			UnityEngine.Debug.LogError("TODO ApplyEventInfo");
+			TodoLogger.Log(0, "ApplyEventInfo");
 		}
 
 		// // RVA: 0xBEA28C Offset: 0xBEA28C VA: 0xBEA28C
@@ -640,33 +640,33 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEA808 Offset: 0xBEA808 VA: 0xBEA808 Slot: 52
 		protected override void ApplyCommonInfo()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			TodoLogger.Log(0, "!!!");
 		}
 
 		// RVA: 0xBEAA40 Offset: 0xBEAA40 VA: 0xBEAA40 Slot: 53
 		protected override void ApplyMusicInfo()
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			TodoLogger.Log(0, "!!!");
 			ApplyMusicInfoNormal();
 		}
 
 		// // RVA: 0xBEBC94 Offset: 0xBEBC94 VA: 0xBEBC94
 		private int GetChangeBgId(VerticalMusicDataList.MusicListData musicListData)
 		{
-			UnityEngine.Debug.LogError("TODO GetChangeBgId");
+			TodoLogger.Log(0, "GetChangeBgId");
 			return 0;
 		}
 
 		// // RVA: 0xBEBF44 Offset: 0xBEBF44 VA: 0xBEBF44 Slot: 54
 		//protected override void DelayedApplyMusicInfo()
 		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	TodoLogger.Log(0, "!!!");
 		//}
 
 		// RVA: 0xBEC300 Offset: 0xBEC300 VA: 0xBEC300 Slot: 59
 		//protected override void OnDecideCurrentMusic(ref VerticalMusicSelectSceneBase.MusicDecideInfo info)
 		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	TodoLogger.Log(0, "!!!");
 		//}
 
 		// // RVA: 0xBEAACC Offset: 0xBEAACC VA: 0xBEAACC
@@ -678,7 +678,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEB120 Offset: 0xBEB120 VA: 0xBEB120
 		private void ApplyMusicInfoNormal()
 		{
-			UnityEngine.Debug.LogError("TODO ApplyMusicInfoNormal");
+			TodoLogger.Log(0, "ApplyMusicInfoNormal");
 			m_musicSelectUISapporter.SetUnitButton(selectMusicData, false);
 		}
 
@@ -688,7 +688,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEC314 Offset: 0xBEC314 VA: 0xBEC314 Slot: 57
 		//protected override void OnClickDifficultyButton(int index)
 		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	TodoLogger.Log(0, "!!!");
 		//}
 
 		// // RVA: 0xBEC918 Offset: 0xBEC918 VA: 0xBEC918
@@ -715,7 +715,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBECFD4 Offset: 0xBECFD4 VA: 0xBECFD4 Slot: 56
 		//protected override void OnApplyUnitLiveButtonSetting(bool isUnit)
 		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	TodoLogger.Log(0, "!!!");
 		//}
 
 		// // RVA: 0xBEAA10 Offset: 0xBEAA10 VA: 0xBEAA10
@@ -775,7 +775,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEC3C0 Offset: 0xBEC3C0 VA: 0xBEC3C0
 		private void OnChangeFilter()
 		{
-			UnityEngine.Debug.LogError("TODO OnChangeFilter");
+			TodoLogger.Log(0, "OnChangeFilter");
 		}
 
 		// // RVA: 0xBEEC50 Offset: 0xBEEC50 VA: 0xBEEC50
@@ -811,7 +811,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEF84C Offset: 0xBEF84C VA: 0xBEF84C
 		private bool IsCanDoUnitHelp()
 		{
-			UnityEngine.Debug.LogError("TODO IsCanDoUnitHelp");
+			TodoLogger.Log(0, "IsCanDoUnitHelp");
 			return false;
 		}
 

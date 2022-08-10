@@ -124,7 +124,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	// // RVA: 0x1214760 Offset: 0x1214760 VA: 0x1214760 Slot: 5
 	public override bool DBIGDCOHOIC()
 	{
-		UnityEngine.Debug.LogError("TODO DBIGDCOHOIC");
+		TodoLogger.Log(0, "DBIGDCOHOIC");
 		return base.DBIGDCOHOIC();
 	}
 
@@ -140,7 +140,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	// // RVA: 0x1214AE0 Offset: 0x1214AE0 VA: 0x1214AE0
 	public void KHEKNNFCAOI(int GHBPLHBNMBK, bool HCIKDFECJGE = false, int NLKONOBBDJK = 0, int IOFOHHOJCBE = 0, long JHNMKKNEENE = 0, bool PJLNJJIBFBN = false, bool LICNKMNIKBF = false, bool GIKLNODJKFK = false)
 	{
-		UnityEngine.Debug.LogError("TODO IBJAKJJCBC KHEKNNFCAOI ");
+		TodoLogger.Log(0, "IBJAKJJCBC KHEKNNFCAOI ");
 		KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[GHBPLHBNMBK - 1];
 		base.KHEKNNFCAOI(musicInfo.DLAEJOBELBH_Id);
 		this.GHBPLHBNMBK = GHBPLHBNMBK;
@@ -199,7 +199,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 				if(type != OHCAABOMEOF.KGOGMKMBCPP.AOPKACCDKPA)
 					type = 0;
 			}
-        	UnityEngine.Debug.LogError("TODO FKDIMODKKJD (generate song list)");
+        	TodoLogger.Log(0, "FKDIMODKKJD (generate song list)");
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas.Count; i++)
 			{
 				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[i];
@@ -214,7 +214,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 
 		}
 
-        UnityEngine.Debug.LogError("TODO FKDIMODKKJD (generate song list)");
+        TodoLogger.Log(0, "FKDIMODKKJD (generate song list)");
         return res;
     }
 
@@ -230,7 +230,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	// // RVA: 0x121ACC8 Offset: 0x121ACC8 VA: 0x121ACC8
 	public static List<IBJAKJJICBC> LIENJMIJMIE(long JHNMKKNEENE, bool GBNOALJPOBM = false)
     {
-        UnityEngine.Debug.LogError("TODO FKDIMODKKJD (generate song list)");
+        TodoLogger.Log(0, "FKDIMODKKJD (generate song list)");
         return new List<IBJAKJJICBC>();
     }
 

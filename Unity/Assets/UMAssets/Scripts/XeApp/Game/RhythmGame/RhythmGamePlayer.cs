@@ -312,7 +312,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			if(isPauseRequest)
 			{
-				UnityEngine.Debug.LogError("TODO pause");
+				TodoLogger.Log(0, "pause");
 			}
 			currentRawMusicMillisec = GetRawMusicMillisec();
 			notesMillisec = currentRawMusicMillisec - noteOffsetMillisec;
@@ -356,7 +356,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			if(!isResetRequest)
 			{
-				UnityEngine.Debug.LogError("TODO UpdateTask notes");
+				TodoLogger.Log(0, "UpdateTask notes");
 				//rNoteOwner.OnUpdate(notesMillisec);
 			}
 			gameDivaObject.ChangeAnimationTime(deviceSec);
@@ -398,10 +398,10 @@ namespace XeApp.Game.RhythmGame
 			{
 				if(status != null)
 				{
-					UnityEngine.Debug.LogError("TODO UpdateTask Update status / combo etc...");
+					TodoLogger.Log(0, "UpdateTask Update status / combo etc...");
 				}
 			}
-			UnityEngine.Debug.LogError("TODO UpdateTask Update controller / skill");
+			TodoLogger.Log(0, "UpdateTask Update controller / skill");
 		}
 
 		// // RVA: 0x9B06DC Offset: 0x9B06DC VA: 0x9B06DC
@@ -476,7 +476,7 @@ namespace XeApp.Game.RhythmGame
 				status.enemy.SetFixDamageParamter();*/
 				Debug.LogError("TODO finish InitializeMusicData enemy damage / difficulty");
 			}
-			UnityEngine.Debug.LogError("TODO finish InitializeMusicData note / score");
+			TodoLogger.Log(0, "finish InitializeMusicData note / score");
 		}
 
 		// // RVA: 0x9B4D20 Offset: 0x9B4D20 VA: 0x9B4D20
@@ -586,9 +586,9 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("TODO InitializeGameData 2D");
+				TodoLogger.Log(0, "InitializeGameData 2D");
 			}
-			UnityEngine.Debug.LogError("TODO InitializeGameData UI / Sound Effect");
+			TodoLogger.Log(0, "InitializeGameData UI / Sound Effect");
 			bgmPlayer.source.player.SetStartTime(0);
 			bgmPlayer.source.Stop();
 			bgmPlayer.source.Pause(false);
@@ -761,7 +761,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BAE64 Offset: 0x9BAE64 VA: 0x9BAE64
 		private void BackupSave()
 		{
-			UnityEngine.Debug.LogError("TODO BackupSave");
+			TodoLogger.Log(0, "BackupSave");
 		}
 
 		// // RVA: 0x9BAFE8 Offset: 0x9BAFE8 VA: 0x9BAFE8
@@ -865,7 +865,7 @@ namespace XeApp.Game.RhythmGame
 				resource.musicData.rhythmGameResultStartMillisec = musicMillisecLength - 5000;
 			}
 			//else
-			UnityEngine.Debug.LogError("TODO why else ?");
+			TodoLogger.Log(0, "why else ?");
 			{
 				rhythmGameResultStartEvent.millisec = resource.musicData.rhythmGameResultStartMillisec;
 			}
@@ -875,7 +875,7 @@ namespace XeApp.Game.RhythmGame
 				tutorialOneEndEvent.onFireEvent = () =>
 				{
 					//0xBF1658
-					UnityEngine.Debug.LogError("TODO TutorialOnEndEvent");
+					TodoLogger.Log(0, "TutorialOnEndEvent");
 				};
 				tutorialOneEndEvent.millisec = resource.musicData.tutorialOneEndGameStartMillisec;
 			}
@@ -908,7 +908,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP.PFKOKHODEGL)
 			{
-				UnityEngine.Debug.LogError("TODO InitializeMusicScoreEvent Event Type 3");
+				TodoLogger.Log(0, "InitializeMusicScoreEvent Event Type 3");
 				//L744
 			}
 			if(setting.m_enable_cutin)
@@ -952,7 +952,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BB22C Offset: 0x9BB22C VA: 0x9BB22C
 		private void StartIntroFade()
 		{
-			UnityEngine.Debug.LogError("TODO StartIntroFade");
+			TodoLogger.Log(0, "StartIntroFade");
 			uguiFader.Fade(0.5f, RhythmGamePlayer.IntroEndFadeColor, RhythmGamePlayer.IntroEndFadeColor);
 		}
 
@@ -963,31 +963,31 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BB3AC Offset: 0x9BB3AC VA: 0x9BB3AC
 		private void OnPlayPilotVoice(int playVoiceId)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x9BB5F0 Offset: 0x9BB5F0 VA: 0x9BB5F0
 		private void OnPlayPilotVoice0_FromMV()
 		{
-			UnityEngine.Debug.LogError("TODO OnPlayPilotVoice0_FromMV");
+			TodoLogger.Log(0, "OnPlayPilotVoice0_FromMV");
 		}
 
 		// // RVA: 0x9BB5F8 Offset: 0x9BB5F8 VA: 0x9BB5F8
 		private void OnPlayPilotVoice1_FromMV()
 		{
-			UnityEngine.Debug.LogError("TODO OnPlayPilotVoice1_FromMV");
+			TodoLogger.Log(0, "OnPlayPilotVoice1_FromMV");
 		}
 
 		// // RVA: 0x9BB600 Offset: 0x9BB600 VA: 0x9BB600
 		private void EndNormalMode()
 		{
-			UnityEngine.Debug.LogError("TODO EndNormalMode");
+			TodoLogger.Log(0, "EndNormalMode");
 		}
 
 		// // RVA: 0x9BB81C Offset: 0x9BB81C VA: 0x9BB81C
 		private void StartValkyrieHUD()
 		{
-			UnityEngine.Debug.LogError("TODO StartValkyrieHUD");
+			TodoLogger.Log(0, "StartValkyrieHUD");
 		}
 
 		// // RVA: 0x9BB820 Offset: 0x9BB820 VA: 0x9BB820
@@ -996,19 +996,19 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BBA08 Offset: 0x9BBA08 VA: 0x9BBA08
 		private void StartValkyriePreFade()
 		{
-			UnityEngine.Debug.LogError("TODO StartValkyriePreFade");
+			TodoLogger.Log(0, "StartValkyriePreFade");
 		}
 
 		// // RVA: 0x9BBC4C Offset: 0x9BBC4C VA: 0x9BBC4C
 		private void StartValkyrieMode()
 		{
-			UnityEngine.Debug.LogError("TODO StartValkyrieMode");
+			TodoLogger.Log(0, "StartValkyrieMode");
 		}
 
 		// // RVA: 0x9BC4A0 Offset: 0x9BC4A0 VA: 0x9BC4A0
 		private void StartValkyrieCutscene()
 		{
-			UnityEngine.Debug.LogError("TODO StartValkyrieCutscene");
+			TodoLogger.Log(0, "StartValkyrieCutscene");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744B4C Offset: 0x744B4C VA: 0x744B4C
@@ -1018,13 +1018,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BC900 Offset: 0x9BC900 VA: 0x9BC900
 		private void EndValkyrieMode()
 		{
-			UnityEngine.Debug.LogError("TODO EndValkyrieMode");
+			TodoLogger.Log(0, "EndValkyrieMode");
 		}
 
 		// // RVA: 0x9BCB28 Offset: 0x9BCB28 VA: 0x9BCB28
 		private void EndValkyrieCutscene()
 		{
-			UnityEngine.Debug.LogError("TODO EndValkyrieCutscene");
+			TodoLogger.Log(0, "EndValkyrieCutscene");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744BC4 Offset: 0x744BC4 VA: 0x744BC4
@@ -1034,13 +1034,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BD0FC Offset: 0x9BD0FC VA: 0x9BD0FC
 		private void StartDivaMode()
 		{
-			UnityEngine.Debug.LogError("TODO StartDivaMode");
+			TodoLogger.Log(0, "StartDivaMode");
 		}
 
 		// // RVA: 0x9BD384 Offset: 0x9BD384 VA: 0x9BD384
 		private void StartDivaCutscene()
 		{
-			UnityEngine.Debug.LogError("TODO StartDivaCutscene");
+			TodoLogger.Log(0, "StartDivaCutscene");
 		}
 
 		// // RVA: 0x9BDAA0 Offset: 0x9BDAA0 VA: 0x9BDAA0
@@ -1052,7 +1052,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BDF60 Offset: 0x9BDF60 VA: 0x9BDF60
 		private void OnStartRhythmGameResult()
 		{
-			UnityEngine.Debug.LogError("TODO OnStartRhythmGameResult");
+			TodoLogger.Log(0, "OnStartRhythmGameResult");
 		}
 
 		// // RVA: 0x9B2BA0 Offset: 0x9B2BA0 VA: 0x9B2BA0
@@ -1105,7 +1105,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BEC9C Offset: 0x9BEC9C VA: 0x9BEC9C
 		private void MusicIntroStartPlayerCutInCallbackFor3DMode()
 		{
-			UnityEngine.Debug.LogError("TODO MusicIntroStartPlayerCutInCallbackFor3DMode");
+			TodoLogger.Log(0, "MusicIntroStartPlayerCutInCallbackFor3DMode");
 		}
 
 		// // RVA: 0x9BECA0 Offset: 0x9BECA0 VA: 0x9BECA0
@@ -1118,31 +1118,31 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BED6C Offset: 0x9BED6C VA: 0x9BED6C
 		private void ValkyrieModeBeginShootingCallback()
 		{
-			UnityEngine.Debug.LogError("TODO ValkyrieModeBeginShootingCallback");
+			TodoLogger.Log(0, "ValkyrieModeBeginShootingCallback");
 		}
 
 		// // RVA: 0x9BEE64 Offset: 0x9BEE64 VA: 0x9BEE64
 		private void ValkyrieModeEndAnimationCallback()
 		{
-			UnityEngine.Debug.LogError("TODO ValkyrieModeEndAnimationCallback");
+			TodoLogger.Log(0, "ValkyrieModeEndAnimationCallback");
 		}
 
 		// // RVA: 0x9BEE90 Offset: 0x9BEE90 VA: 0x9BEE90
 		private void ValkyrieModeStartPlayerCutInCallback()
 		{
-			UnityEngine.Debug.LogError("TODO ValkyrieModeStartPlayerCutInCallback");
+			TodoLogger.Log(0, "ValkyrieModeStartPlayerCutInCallback");
 		}
 
 		// // RVA: 0x9BF138 Offset: 0x9BF138 VA: 0x9BF138
 		private void ValkyrieModeStartEnemyCutInCallback()
 		{
-			UnityEngine.Debug.LogError("TODO ValkyrieModeStartEnemyCutInCallback");
+			TodoLogger.Log(0, "ValkyrieModeStartEnemyCutInCallback");
 		}
 
 		// // RVA: 0x9BF2F4 Offset: 0x9BF2F4 VA: 0x9BF2F4
 		private void ValkyrieModeStartEnemyLockOnCallback()
 		{
-			UnityEngine.Debug.LogError("TODO ValkyrieModeStartEnemyLockOnCallback");
+			TodoLogger.Log(0, "ValkyrieModeStartEnemyLockOnCallback");
 		}
 
 		// // RVA: 0x9BF538 Offset: 0x9BF538 VA: 0x9BF538
@@ -1300,13 +1300,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C16F0 Offset: 0x9C16F0 VA: 0x9C16F0
 		private void ForceChangePercentage100ForTutorial()
 		{
-			UnityEngine.Debug.LogError("TODO ForceChangePercentage100ForTutorial");
+			TodoLogger.Log(0, "ForceChangePercentage100ForTutorial");
 		}
 
 		// // RVA: 0x9C1854 Offset: 0x9C1854 VA: 0x9C1854
 		private void ForceDefeatEnemyForTutorial()
 		{
-			UnityEngine.Debug.LogError("TODO ForceDefeatEnemyForTutorial");
+			TodoLogger.Log(0, "ForceDefeatEnemyForTutorial");
 		}
 
 		// // RVA: 0x9C1B60 Offset: 0x9C1B60 VA: 0x9C1B60
@@ -1315,7 +1315,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C1C84 Offset: 0x9C1C84 VA: 0x9C1C84
 		private void ShowTutorialActiveSkillGuide()
 		{
-			UnityEngine.Debug.LogError("TODO ShowTutorialActiveSkillGuide");
+			TodoLogger.Log(0, "ShowTutorialActiveSkillGuide");
 		}
 
 		// // RVA: 0x9C1D84 Offset: 0x9C1D84 VA: 0x9C1D84
@@ -1434,7 +1434,7 @@ namespace XeApp.Game.RhythmGame
 		private void TutorialClearEndRhythmGame()
 		{
 			Debug.LogError("TODO");
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x9C4A70 Offset: 0x9C4A70 VA: 0x9C4A70
@@ -1459,7 +1459,7 @@ namespace XeApp.Game.RhythmGame
 			int noteResultCount_Excellent;
 			UnityEngine.Debug.Log("Enter Co_WaitRhytmGameEnd");
 			//0xBF3B04
-			UnityEngine.Debug.LogError("TODO Co_WaitRhytmGameEnd");
+			TodoLogger.Log(0, "Co_WaitRhytmGameEnd");
 			GameManager.FadeOut(0.4f);
 			GotoMenuSceneInSuccess(new int[5], 0);
 			UnityEngine.Debug.Log("Exit Co_WaitRhytmGameEnd");
@@ -1472,7 +1472,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C5C78 Offset: 0x9C5C78 VA: 0x9C5C78
 		private void GotoMenuSceneInSuccess(int[] noteResultCount, int noteResultCount_Excellent)
 		{
-			UnityEngine.Debug.LogError("TODO GotoMenuSceneInSuccess");
+			TodoLogger.Log(0, "GotoMenuSceneInSuccess");
 			scene.GotoMenuScene();
 		}
 
@@ -1483,7 +1483,7 @@ namespace XeApp.Game.RhythmGame
 		private void GotoTitleSceneInError()
 		{
 			Debug.LogError("TODO");
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x9C5F68 Offset: 0x9C5F68 VA: 0x9C5F68
@@ -1599,7 +1599,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				mcco.PlayMusicAnimation();
 			}
-			UnityEngine.Debug.LogError("TODO end StartPlayMusic (hud , debugfps)");
+			TodoLogger.Log(0, "end StartPlayMusic (hud , debugfps)");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744E94 Offset: 0x744E94 VA: 0x744E94
@@ -1647,13 +1647,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B1FE8 Offset: 0x9B1FE8 VA: 0x9B1FE8
 		public void Pause()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x9B351C Offset: 0x9B351C VA: 0x9B351C
 		public void Resume()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x9CB244 Offset: 0x9CB244 VA: 0x9CB244
@@ -1674,7 +1674,7 @@ namespace XeApp.Game.RhythmGame
 				bgmPlayer.source.player.Stop();
 				bgmPlayback = bgmPlayer.source.player.Start();
 				#endif
-				UnityEngine.Debug.LogError("TODO Check ApplyChangeMusicSequenceTime");
+				TodoLogger.Log(0, "Check ApplyChangeMusicSequenceTime");
 				isChangeSequenceRequest = false;
 				return true;
 			}
@@ -1715,7 +1715,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B2A88 Offset: 0x9B2A88 VA: 0x9B2A88
 		public int IncludeDeviceLatency(int rawMillisec)
 		{
-			UnityEngine.Debug.LogError("TODO IncludeDeviceLatency");
+			TodoLogger.Log(0, "IncludeDeviceLatency");
 			return rawMillisec;
 		}
 

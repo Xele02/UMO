@@ -39,7 +39,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB2FA4 Offset: 0xEB2FA4 VA: 0xEB2FA4 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			UnityEngine.Debug.LogWarning("TODO LoginBonusScene OnBgmStart");
+			TodoLogger.Log(5, "LoginBonusScene OnBgmStart");
 			return true;
 		}
 
@@ -129,7 +129,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator ConnectLoginBonus()
 		{
 			//0xEB6920
-			UnityEngine.Debug.LogError("TODO ConnectLoginBonus");
+			TodoLogger.Log(0, "ConnectLoginBonus");
 			m_isConnect = false;
 			yield break;
 		}
@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB4D70 Offset: 0xEB4D70 VA: 0xEB4D70
 		private bool IsDefaultLoginBonus()
 		{ 
-			UnityEngine.Debug.LogWarning("TODO IsDefaultLoginBonus");
+			TodoLogger.Log(5, "IsDefaultLoginBonus");
 			return false;
 		}
 
@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xEB5030 Offset: 0xEB5030 VA: 0xEB5030 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			UnityEngine.Debug.LogWarning("TODO OnStartExitAnimation, 3d diva related");
+			TodoLogger.Log(5, "OnStartExitAnimation, 3d diva related");
 		}
 
 		// RVA: 0xEB51D4 Offset: 0xEB51D4 VA: 0xEB51D4 Slot: 13
@@ -196,7 +196,7 @@ namespace XeApp.Game.Menu
 		protected override void OnPreSetCanvas()
 		{
 			ResetData();
-			UnityEngine.Debug.LogWarning("TODO diva 3d");
+			TodoLogger.Log(5, "diva 3d");
 			//MenuScene.Instance.divaManager.BeginControl(m_divaControl);
 			PGIGNJDPCAH.MLPMNKKNFCJ();
 			m_updater.Add(this.ConnectLoginBonus());
@@ -216,12 +216,12 @@ namespace XeApp.Game.Menu
 				return;
 			if(IsDefaultLoginBonus())
 			{
-				UnityEngine.Debug.LogError("TODO IsDefaultLoginBonus");
+				TodoLogger.Log(0, "IsDefaultLoginBonus");
 				return;
 			}
 			m_isOpenScene = true;
 
-			UnityEngine.Debug.LogWarning("TODO remove");
+			TodoLogger.Log(5, "remove");
 
 			m_isConnect = false;
 			AutoFadeFlag = false;

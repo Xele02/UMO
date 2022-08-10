@@ -18,7 +18,7 @@ namespace XeApp.Game.Common
 		// RVA: 0xE6CF94 Offset: 0xE6CF94 VA: 0xE6CF94
 		static Difficulty()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 	}
 }

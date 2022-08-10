@@ -49,7 +49,7 @@ public class NKOBMDPHNGP : IKDICBBFBMI
 	// RVA: 0xC1E3D0 Offset: 0xC1E3D0 VA: 0xC1E3D0
 	public NKOBMDPHNGP(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         /*if(FJLIDJJAGOM() == null)
             return;
         FPPNANIIODA.EBKCPELHDKN();
@@ -419,7 +419,7 @@ public class NKOBMDPHNGP : IKDICBBFBMI
 	// // RVA: 0xC27698 Offset: 0xC27698 VA: 0xC27698
 	public static int ADPMLOEOAFD()
 	{
-		UnityEngine.Debug.LogError("TODO ADPMLOEOAFD (raid)");
+		TodoLogger.Log(0, "ADPMLOEOAFD (raid)");
 		return 0;
 	}
 
@@ -438,7 +438,7 @@ public class NKOBMDPHNGP : IKDICBBFBMI
 	// // RVA: 0xC27EE0 Offset: 0xC27EE0 VA: 0xC27EE0
 	public bool AKNOOLKMEGJ()
 	{
-		UnityEngine.Debug.LogError("TODO AKNOOLKMEGJ");
+		TodoLogger.Log(0, "AKNOOLKMEGJ");
 		return false;
 	}
 

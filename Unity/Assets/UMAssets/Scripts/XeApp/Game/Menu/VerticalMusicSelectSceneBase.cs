@@ -153,32 +153,32 @@ namespace XeApp.Game.Menu
 		// RVA: 0xAC8FD0 Offset: 0xAC8FD0 VA: 0xAC8FD0 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			UnityEngine.Debug.LogError("TODO OnBgmStart");
+			TodoLogger.Log(0, "OnBgmStart");
 			return true;
 		}
 
 		// RVA: 0xAC8FF0 Offset: 0xAC8FF0 VA: 0xAC8FF0 Slot: 14
 		protected override void OnDestoryScene()
 		{
-			UnityEngine.Debug.LogError("TODO OnDestoryScene");
+			TodoLogger.Log(0, "OnDestoryScene");
 		}
 
 		// RVA: 0xAC9038 Offset: 0xAC9038 VA: 0xAC9038 Slot: 15
 		protected override void OnDeleteCache()
 		{
-			UnityEngine.Debug.LogError("TODO OnDeleteCache");
+			TodoLogger.Log(0, "OnDeleteCache");
 		}
 
 		// RVA: 0xAC9070 Offset: 0xAC9070 VA: 0xAC9070 Slot: 30
 		//protected override void InputDisable()
 		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	TodoLogger.Log(0, "!!!");
 		//}
 
 		// RVA: 0xAC909C Offset: 0xAC909C VA: 0xAC909C Slot: 29
 		//protected override void InputEnable()
 		//{
-		//	UnityEngine.Debug.LogError("TODO !!!");
+		//	TodoLogger.Log(0, "!!!");
 		//}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6914 Offset: 0x6F6914 VA: 0x6F6914
@@ -282,7 +282,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC95E8 Offset: 0xAC95E8 VA: 0xAC95E8 Slot: 58
 		protected virtual bool CurrentMusicDecisionCheck(bool isSimulation, Action cancelCallback, MKIKFJKPEHK viewBoostData, int selectIndex = 0)
 		{
-			UnityEngine.Debug.LogError("TODO CurrentMusicDecisionCheck");
+			TodoLogger.Log(0, "CurrentMusicDecisionCheck");
 			OpenStaminaWindow(() => {
 				DecideCurrentMusic(isSimulation);
 			}, null);
@@ -292,7 +292,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC9FF8 Offset: 0xAC9FF8 VA: 0xAC9FF8
 		private void CheckBoostData(bool isSimulation, Action<bool> endCallback, Action cancelCallback)
 		{
-			UnityEngine.Debug.LogError("TODO CheckBoostData");
+			TodoLogger.Log(0, "CheckBoostData");
 			StartCoroutine(Co_CheckBoostData(isSimulation, endCallback, cancelCallback));
 		}
 
@@ -301,7 +301,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_CheckBoostData(bool isSimulation, Action<bool> endCallback, Action cancelCallback)
 		{
 			//0xAD49C0
-			UnityEngine.Debug.LogError("TODO Co_CheckBoostData");
+			TodoLogger.Log(0, "Co_CheckBoostData");
 			CurrentMusicDecisionCheck(true, null, null, 0);
 			yield break;
 		}
@@ -315,7 +315,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACA1CC Offset: 0xACA1CC VA: 0xACA1CC
 		private void DecideCurrentMusic(bool isSimulation)
 		{
-			UnityEngine.Debug.LogError("TODO DecideCurrentMusic");
+			TodoLogger.Log(0, "DecideCurrentMusic");
 			int onStageDivaNum = GetDanceDivaCount();
 			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, 0/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL, false, false, "", 0, 0, -1, 0, 0, onStageDivaNum);
 			Database.Instance.selectedMusic.SetMusicData(selectMusicData);
@@ -325,7 +325,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACAA10 Offset: 0xACAA10 VA: 0xACAA10
 		protected void OnClickPlayButton(bool isSimulation)
 		{
-			UnityEngine.Debug.LogError("TODO OnClickPlayButton");
+			TodoLogger.Log(0, "OnClickPlayButton");
 			//GotoRegularMusicSelect();
 			CheckBoostData(true, null, null);
 		}
@@ -409,7 +409,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACF30C Offset: 0xACF30C VA: 0xACF30C
 		protected int GetLastStoryFreeMusicId()
 		{
-			UnityEngine.Debug.LogError("TODO GetLastStoryFreeMusicId");
+			TodoLogger.Log(0, "GetLastStoryFreeMusicId");
 			return 99999;
 		}
 
@@ -511,7 +511,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC9C88 Offset: 0xAC9C88 VA: 0xAC9C88
 		protected void OpenStaminaWindow(Action recoveryCallback, Action cancelCallback)
 		{
-			UnityEngine.Debug.LogError("TODO OpenStaminaWindow");
+			TodoLogger.Log(0, "OpenStaminaWindow");
 			recoveryCallback();
 		}
 
@@ -521,7 +521,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACD354 Offset: 0xACD354 VA: 0xACD354
 		private void GotoRegularMusicSelect()
 		{
-			UnityEngine.Debug.LogError("TODO GotoRegularMusicSelect");
+			TodoLogger.Log(0, "GotoRegularMusicSelect");
 			MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, null, true, 0);
 		}
 
@@ -555,7 +555,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC7CC0 Offset: 0xAC7CC0 VA: 0xAC7CC0
 		protected bool SelectUnitDanceFocus(out int freeMusicId, out FreeCategoryId.Type category, ref bool line6Mode, bool isSimulation, OHCAABOMEOF.KGOGMKMBCPP eventCategory)
 		{
-			UnityEngine.Debug.LogError("TODO SelectUnitDanceFocus");
+			TodoLogger.Log(0, "SelectUnitDanceFocus");
 			freeMusicId = 0;
 			category = FreeCategoryId.Type.Macross;
 			line6Mode = false;

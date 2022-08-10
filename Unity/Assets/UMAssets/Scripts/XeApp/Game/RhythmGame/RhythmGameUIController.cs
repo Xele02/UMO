@@ -41,14 +41,14 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0D81C Offset: 0xC0D81C VA: 0xC0D81C
 		public void BeginIntroAnim(Action callback)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			callback();
 		}
 
 		// // RVA: 0xBF2A8C Offset: 0xBF2A8C VA: 0xBF2A8C
 		public void DeleteIntro()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xC0D874 Offset: 0xC0D874 VA: 0xC0D874

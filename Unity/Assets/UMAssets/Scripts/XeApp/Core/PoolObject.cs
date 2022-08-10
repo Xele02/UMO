@@ -19,7 +19,7 @@ namespace XeApp.Core
 		// RVA: 0x1D74948 Offset: 0x1D74948 VA: 0x1D74948 Slot: 13
 		public virtual void Dispose()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 	}
 }

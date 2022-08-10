@@ -254,25 +254,25 @@ namespace XeApp.Game.Menu
 			{
 				if(prevSceneName == "GachaDirection")
 				{
-					UnityEngine.Debug.LogError("TODO init from gacha");
+					TodoLogger.Log(0, "init from gacha");
 					//L141
 					return;
 				}
 				if(prevSceneName == "RhythmAdjust")
 				{
-					UnityEngine.Debug.LogError("TODO init from RhythmAdjust");
+					TodoLogger.Log(0, "init from RhythmAdjust");
 					//179
 					return;
 				}
 				if(prevSceneName == "Adv")
 				{
-					UnityEngine.Debug.LogError("TODO init from Adv");
+					TodoLogger.Log(0, "init from Adv");
 					//256
 					return;
 				}
 				if(GameManager.Instance.IsTutorial)
 				{
-					UnityEngine.Debug.LogError("TODO init from Tutorial");
+					TodoLogger.Log(0, "init from Tutorial");
 					//299
 					return;
 				}
@@ -292,7 +292,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 
-			UnityEngine.Debug.LogError("TODO init from RhythmGame");
+			TodoLogger.Log(0, "init from RhythmGame");
 
 		}
 
@@ -328,7 +328,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB309EC Offset: 0xB309EC VA: 0xB309EC
 		public void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C78AC Offset: 0x6C78AC VA: 0x6C78AC
@@ -351,7 +351,7 @@ namespace XeApp.Game.Menu
 			
 			if(SystemManager.isLongScreenDevice)
 			{
-				UnityEngine.Debug.LogError("TODO isLongScreenDevice");
+				TodoLogger.Log(0, "isLongScreenDevice");
 			}
 			SetActiveDivaModel(m_sceneCamebackInfo.isDivaActive, true);
 			if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.GotoTitle)
@@ -360,15 +360,15 @@ namespace XeApp.Game.Menu
 			}
 			else if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.RetryGame)
 			{
-				UnityEngine.Debug.LogError("TODO MenuSceneCamebackInfo.Flags.RetryGame");
+				TodoLogger.Log(0, "MenuSceneCamebackInfo.Flags.RetryGame");
 			}
 			else if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.ReturnScene)
 			{
-				UnityEngine.Debug.LogError("TODO MenuSceneCamebackInfo.Flags.ReturnScene");
+				TodoLogger.Log(0, "MenuSceneCamebackInfo.Flags.ReturnScene");
 			}
 			else if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.Adventure)
 			{
-				UnityEngine.Debug.LogError("TODO MenuSceneCamebackInfo.Flags.Adventure");
+				TodoLogger.Log(0, "MenuSceneCamebackInfo.Flags.Adventure");
 			}
 			else
 			{
@@ -436,7 +436,7 @@ namespace XeApp.Game.Menu
 			// private int <colorId>5__5; // 0x24
 			// private bool <isResult>5__6; // 0x28
 			//0xB3980C
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			finish();
 			yield break;
 		}
@@ -444,7 +444,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30CD0 Offset: 0xB30CD0 VA: 0xB30CD0
 		public void SetActiveDivaModel(bool active, bool isIdle = true)
 		{
-			UnityEngine.Debug.LogError("TODO SetActiveDivaModel");
+			TodoLogger.Log(0, "SetActiveDivaModel");
 		}
 
 		// // RVA: 0xB30D0C Offset: 0xB30D0C VA: 0xB30D0C
@@ -453,7 +453,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30D6C Offset: 0xB30D6C VA: 0xB30D6C Slot: 14
 		protected override bool DoUpdateLeave()
 		{
-			UnityEngine.Debug.LogError("TODO DoUpdateLeave");
+			TodoLogger.Log(0, "DoUpdateLeave");
 			MenuUpdater.updater = null;
 			return true;
 		}
@@ -480,7 +480,7 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.SetSystemCanvasRenderMode(RenderMode.ScreenSpaceOverlay);
 			GameManager.Instance.ChangePopupPriority(true);
 
-			UnityEngine.Debug.LogError("TODO GotoRhythmGame");
+			TodoLogger.Log(0, "GotoRhythmGame");
 			StartCoroutine(GotoRhythmGameCorotine(() => {
 				return m_menuTransitionControl.DestroyTransion();
 			}, false));
@@ -511,7 +511,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB316A4 Offset: 0xB316A4 VA: 0xB316A4
 		public static IEnumerator RhythmGameStartVoicePlay()
 		{
-			UnityEngine.Debug.LogError("TODO RhythmGameStartVoicePlay");
+			TodoLogger.Log(0, "RhythmGameStartVoicePlay");
 			yield break;
 		}
 
@@ -519,7 +519,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB31238 Offset: 0xB31238 VA: 0xB31238
 		private IEnumerator GotoRhythmGameCorotine(Func<IEnumerator> wait, bool isSkip = false)
 		{
-			UnityEngine.Debug.LogError("TODO GotoRhythmGameCorotine");
+			TodoLogger.Log(0, "GotoRhythmGameCorotine");
 			//0xB3B65C
 			yield return RhythmGamePreLoad(wait);
 			enableFade = false;
@@ -553,14 +553,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB31C48 Offset: 0xB31C48 VA: 0xB31C48
 		private IEnumerator GotoTitleCoroutine()
 		{
-			UnityEngine.Debug.LogError("TODO GotoTitleCoroutine");
+			TodoLogger.Log(0, "GotoTitleCoroutine");
 			yield return null;
 		}
 
 		// // RVA: 0xB2B4A8 Offset: 0xB2B4A8 VA: 0xB2B4A8
 		public void GotoTitle()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xB2B620 Offset: 0xB2B620 VA: 0xB2B620
@@ -642,25 +642,25 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB2B190 Offset: 0xB2B190 VA: 0xB2B190
 		public void InputEnable()
 		{
-			UnityEngine.Debug.LogError("TODO InputEnable");
+			TodoLogger.Log(0, "InputEnable");
 		}
 
 		// // RVA: 0xB2AAD4 Offset: 0xB2AAD4 VA: 0xB2AAD4
 		public void InputDisable()
 		{
-			UnityEngine.Debug.LogError("TODO InputDisable");
+			TodoLogger.Log(0, "InputDisable");
 		}
 
 		// // RVA: 0xB322EC Offset: 0xB322EC VA: 0xB322EC
 		public void RaycastEnable()
 		{
-			UnityEngine.Debug.LogError("TODO Raycast Enable");
+			TodoLogger.Log(0, "Raycast Enable");
 		}
 
 		// // RVA: 0xB32338 Offset: 0xB32338 VA: 0xB32338
 		public void RaycastDisable()
 		{
-			UnityEngine.Debug.LogError("TODO Raycast Disable");
+			TodoLogger.Log(0, "Raycast Disable");
 		}
 
 		// // RVA: 0xB32384 Offset: 0xB32384 VA: 0xB32384
@@ -798,7 +798,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB355A0 Offset: 0xB355A0 VA: 0xB355A0
 		private void ChangeGroupCategory(SceneGroupCategory prevCategory, SceneGroupCategory nextCategory)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0xB3568C Offset: 0xB3568C VA: 0xB3568C
@@ -810,7 +810,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB35814 Offset: 0xB35814 VA: 0xB35814
 		private bool CheckDatelineAndAssetUpdateInner()
 		{
-			UnityEngine.Debug.LogError("TODO CheckDatelineAndAssetUpdateInner");
+			TodoLogger.Log(0, "CheckDatelineAndAssetUpdateInner");
 			return false;
 		}
 
@@ -832,13 +832,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB3703C Offset: 0xB3703C VA: 0xB3703C
 		private void OnShowHelpPopup(int id, int eventHelpId)
 		{
-			UnityEngine.Debug.LogError("TODO OnShowHelpPopup");
+			TodoLogger.Log(0, "OnShowHelpPopup");
 		}
 
 		// // RVA: 0xB372CC Offset: 0xB372CC VA: 0xB372CC
 		private void OnBackButton()
 		{
-			UnityEngine.Debug.LogError("TODO OnBackButton");
+			TodoLogger.Log(0, "OnBackButton");
 		}
 
 		// // RVA: 0xB37B00 Offset: 0xB37B00 VA: 0xB37B00

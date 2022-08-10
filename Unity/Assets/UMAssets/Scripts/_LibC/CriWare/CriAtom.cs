@@ -8,12 +8,12 @@ namespace ExternLib
     {
         public static void criAtomExCategory_SetVolumeById(int id, float volume)
         {
-            UnityEngine.Debug.LogError("TODO criAtomExCategory_SetVolumeById");
+            TodoLogger.Log(0, "criAtomExCategory_SetVolumeById");
         }
 
         public static float criAtomExCategory_GetVolumeById(int id)
         {
-            UnityEngine.Debug.LogError("TODO criAtomExCategory_GetVolumeById");
+            TodoLogger.Log(0, "criAtomExCategory_GetVolumeById");
             return 1;
         }
     }

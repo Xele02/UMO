@@ -242,7 +242,7 @@ public class GNGMCIAIKMA
 	// // RVA: 0xAC108C Offset: 0xAC108C VA: 0xAC108C
 	public bool HEFIKPAHCIA(JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD, long JHNMKKNEENE = -1)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return false;
     }
 

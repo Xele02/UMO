@@ -41,27 +41,27 @@ namespace CriWare
 		// // RVA: 0x28B00BC Offset: 0x28B00BC VA: 0x28B00BC
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x28B09A4 Offset: 0x28B09A4 VA: 0x28B09A4
 		private void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 
 		// // RVA: 0x28B0CA4 Offset: 0x28B0CA4 VA: 0x28B0CA4 Slot: 6
 		public override void CriInternalUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 
 		// // RVA: 0x28B0E2C Offset: 0x28B0E2C VA: 0x28B0E2C Slot: 7
 		public override void CriInternalLateUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 

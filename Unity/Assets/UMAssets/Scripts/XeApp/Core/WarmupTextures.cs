@@ -86,7 +86,7 @@ namespace XeApp.Core
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("TODO warm movie");
+				TodoLogger.Log(0, "warm movie");
 				if (onFinish != null)
 					onFinish();
 			}

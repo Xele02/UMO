@@ -64,7 +64,7 @@ namespace XeApp.Game.MusicSelect
 		private void Awake()
 		{
 			_startPos = RectTransform.anchoredPosition;
-			UnityEngine.Debug.LogError("TODO ScrollItem Awake");
+			TodoLogger.Log(0, "ScrollItem Awake");
 			m_highLevelObj.gameObject.SetActive(false);
 			m_eventName.transform.parent.gameObject.SetActive(false);
 		}

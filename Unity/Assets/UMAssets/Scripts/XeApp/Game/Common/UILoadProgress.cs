@@ -49,32 +49,32 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDDFA4 Offset: 0x1CDDFA4 VA: 0x1CDDFA4
 		public void Begin(Transform parent)
 		{
-			UnityEngine.Debug.LogWarning("TODO UILoadProgress Begin");
+			TodoLogger.Log(5, "UILoadProgress Begin");
 			m_isReady = true;
 		}
 
 		// // RVA: 0x1CDE13C Offset: 0x1CDE13C VA: 0x1CDE13C
 		public void End()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x1CDE1B8 Offset: 0x1CDE1B8 VA: 0x1CDE1B8
 		public void SetType(UILoadProgress.Type type)
 		{
-			UnityEngine.Debug.LogWarning("TODO UILoadPRogress SetType");
+			TodoLogger.Log(5, "UILoadPRogress SetType");
 		}
 
 		// // RVA: 0x1CDE270 Offset: 0x1CDE270 VA: 0x1CDE270
 		public void SetPer(int per)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetPer");
+			TodoLogger.Log(5, "SetPer");
 		}
 
 		// // RVA: 0x1CDDEE0 Offset: 0x1CDDEE0 VA: 0x1CDDEE0
 		private void ChangeProgress(int per)
 		{
-			UnityEngine.Debug.LogWarning("TODO Change Progress");
+			TodoLogger.Log(5, "Change Progress");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7398AC Offset: 0x7398AC VA: 0x7398AC

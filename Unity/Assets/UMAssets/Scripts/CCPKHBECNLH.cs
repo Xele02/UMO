@@ -23,7 +23,7 @@ public class CCPKHBECNLH : KLFDBFMNLBL
 	// // RVA: 0x190A380 Offset: 0x190A380 VA: 0x190A380 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x190A470 Offset: 0x190A470 VA: 0x190A470 Slot: 5
@@ -32,7 +32,7 @@ public class CCPKHBECNLH : KLFDBFMNLBL
 	// // RVA: 0x190C288 Offset: 0x190C288 VA: 0x190C288 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
@@ -48,7 +48,7 @@ public class CCPKHBECNLH : KLFDBFMNLBL
 	// // RVA: 0x190ED98 Offset: 0x190ED98 VA: 0x190ED98 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return null;
 	}
 

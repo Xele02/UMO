@@ -110,7 +110,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CCBCF8 Offset: 0x1CCBCF8 VA: 0x1CCBCF8
 		public void SetContentEscapeMode(bool isEnable)
 		{
-			UnityEngine.Debug.LogError("TODO !!!");
+			TodoLogger.Log(0, "!!!");
 		}
 
 		//// RVA: 0x1CCC29C Offset: 0x1CCC29C VA: 0x1CCC29C
@@ -128,7 +128,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CCCD6C Offset: 0x1CCCD6C VA: 0x1CCCD6C
 		private void UpdateScrollCb(Vector2 position)
 		{
-			UnityEngine.Debug.LogError("TODO UpdateScrollCb");
+			TodoLogger.Log(0, "UpdateScrollCb");
 		}
 
 		//// RVA: 0x1CCDA80 Offset: 0x1CCDA80 VA: 0x1CCDA80

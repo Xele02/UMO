@@ -71,7 +71,7 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG
 	// // RVA: 0xD6D49C Offset: 0xD6D49C VA: 0xD6D49C
 	public PKKHIEAEDPC NBHDIKJMLEN(string CJEKGLGBIHF)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return null;
     }
 
@@ -91,20 +91,20 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG
 	// // RVA: 0xD6E3E8 Offset: 0xD6E3E8 VA: 0xD6E3E8 Slot: 8
 	protected override void KMBPACJNEOF()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0xD6E4E4 Offset: 0xD6E4E4 VA: 0xD6E4E4 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return true;
     }
 
 	// // RVA: 0xD6EB28 Offset: 0xD6EB28 VA: 0xD6EB28 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return true;
     }
 
@@ -123,7 +123,7 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG
 	// // RVA: 0xD6EFB0 Offset: 0xD6EFB0 VA: 0xD6EFB0 Slot: 11
 	public override uint CAOGDCBPBAN()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return 0;
     }
 }

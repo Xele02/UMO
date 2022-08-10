@@ -16,13 +16,13 @@ namespace XeApp.Core
 		// RVA: 0xE0D518 Offset: 0xE0D518 VA: 0xE0D518 Slot: 11
 		protected override void InternalPause()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// RVA: 0xE0D5F8 Offset: 0xE0D5F8 VA: 0xE0D5F8 Slot: 12
 		protected override void InternalResume()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 	}
 }

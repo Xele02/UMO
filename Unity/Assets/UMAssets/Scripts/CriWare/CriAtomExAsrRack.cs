@@ -30,7 +30,7 @@ namespace CriWare
 		// // RVA: 0x2896E8C Offset: 0x2896E8C VA: 0x2896E8C
 		public CriAtomExAsrRack(CriAtomExAsrRack.Config config, CriAtomExAsrRack.PlatformConfig platformConfig)
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2897124 Offset: 0x2897124 VA: 0x2897124
@@ -51,7 +51,7 @@ namespace CriWare
 		// // RVA: 0x28975E0 Offset: 0x28975E0 VA: 0x28975E0 Slot: 5
 		public override void Dispose()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x28977D0 Offset: 0x28977D0 VA: 0x28977D0

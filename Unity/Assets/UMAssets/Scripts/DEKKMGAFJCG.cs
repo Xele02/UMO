@@ -178,7 +178,7 @@ public class DEKKMGAFJCG : KLFDBFMNLBL
 	// // RVA: 0x1973D58 Offset: 0x1973D58 VA: 0x1973D58 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

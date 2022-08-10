@@ -35,7 +35,7 @@ public abstract class DIHHCBACKGG
 	// // RVA: 0x198ABF4 Offset: 0x198ABF4 VA: 0x198ABF4 Slot: 10
 	public virtual bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return false;
 	}
 
@@ -54,14 +54,14 @@ public abstract class DIHHCBACKGG
 	// // RVA: 0x198B6F0 Offset: 0x198B6F0 VA: 0x198B6F0 Slot: 11
 	public virtual uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return 0;
 	}
 
 	// // RVA: 0x1989E1C Offset: 0x1989E1C VA: 0x1989E1C
 	public int JKAECBCNHAN(int IJEKNCDIIAE, int PLALNIIBLOF, int DBHPPMPNCKF = 0)
 	{
-		UnityEngine.Debug.LogError("TODO Fix JKAECBCNHAN, static IEFOPDOOLOK should be initilized somewhere to a high value");
+		TodoLogger.Log(0, "Fix JKAECBCNHAN, static IEFOPDOOLOK should be initilized somewhere to a high value");
 		return PLALNIIBLOF;
 		
 		if(DBHPPMPNCKF != 0)

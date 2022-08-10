@@ -142,7 +142,7 @@ namespace XeSys
 		// // RVA: 0x23A6430 Offset: 0x23A6430 VA: 0x23A6430
 		private void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x23A59C8 Offset: 0x23A59C8 VA: 0x23A59C8

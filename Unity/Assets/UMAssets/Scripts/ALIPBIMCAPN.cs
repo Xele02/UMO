@@ -17,7 +17,7 @@ public class ALIPBIMCAPN : KLFDBFMNLBL
 	// // RVA: 0xCD9F98 Offset: 0xCD9F98 VA: 0xCD9F98 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0xCDA2C4 Offset: 0xCDA2C4 VA: 0xCDA2C4 Slot: 5
@@ -26,7 +26,7 @@ public class ALIPBIMCAPN : KLFDBFMNLBL
 	// // RVA: 0xCDABFC Offset: 0xCDABFC VA: 0xCDABFC Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 
@@ -42,7 +42,7 @@ public class ALIPBIMCAPN : KLFDBFMNLBL
 	// // RVA: 0xCDD9A4 Offset: 0xCDD9A4 VA: 0xCDD9A4 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return null;
 	}
 

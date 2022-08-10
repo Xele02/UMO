@@ -16,7 +16,7 @@ namespace XeSys
 		// RVA: 0x239797C Offset: 0x239797C VA: 0x239797C Slot: 4
 		public void Dispose()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2397B34 Offset: 0x2397B34 VA: 0x2397B34

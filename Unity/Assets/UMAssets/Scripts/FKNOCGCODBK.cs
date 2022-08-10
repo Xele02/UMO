@@ -44,7 +44,7 @@ public class FKNOCGCODBK : KLFDBFMNLBL
 	// // RVA: 0x118FEC0 Offset: 0x118FEC0 VA: 0x118FEC0 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

@@ -319,7 +319,7 @@ public class JNMFKOHFAFB : KLFDBFMNLBL
 	// // RVA: 0x1B9BBD4 Offset: 0x1B9BBD4 VA: 0x1B9BBD4 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

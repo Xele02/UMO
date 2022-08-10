@@ -337,7 +337,7 @@ public class IMMAOANGPNK
 	private IEnumerator LGFPCADOCAA_ShowError()
 	{
         UnityEngine.Debug.Log("Enter LGFPCADOCAA_ShowError");
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
         UnityEngine.Debug.Log("Exit LGFPCADOCAA_ShowError");
 		yield break;
 	}
@@ -397,7 +397,7 @@ public class IMMAOANGPNK
 			}
 			else if(item.OPFGFINHFCE_Name.Contains(".json"))
 			{
-				UnityEngine.Debug.LogError("TODO");
+				TodoLogger.Log(0, "TODO");
 				//schedules
 				//name
 				//opened_at

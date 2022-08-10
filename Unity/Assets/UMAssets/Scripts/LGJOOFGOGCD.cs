@@ -12,13 +12,13 @@ public class LGJOOFGOGCD : CACGCMBKHDI_Request
 	// RVA: 0x17F4230 Offset: 0x17F4230 VA: 0x17F4230 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        UnityEngine.Debug.LogError("TODO SakashoInventory$$GetInventories");
+        TodoLogger.Log(0, "SakashoInventory$$GetInventories");
         DCKLDDCAJAP("{}");
     }
 
 	// RVA: 0x17F4340 Offset: 0x17F4340 VA: 0x17F4340 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
     {
-        UnityEngine.Debug.LogError("TODO SakashoInventory$$GetInventories");
+        TodoLogger.Log(0, "SakashoInventory$$GetInventories");
     }
 }

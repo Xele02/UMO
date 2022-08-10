@@ -132,7 +132,7 @@ public class PKECIDPBEFL
 	// // RVA: 0x93CBD4 Offset: 0x93CBD4 VA: 0x93CBD4
 	public void MIABDPJHEHK(byte[] NIODCJLINJN)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// // RVA: 0x93AC74 Offset: 0x93AC74 VA: 0x93AC74

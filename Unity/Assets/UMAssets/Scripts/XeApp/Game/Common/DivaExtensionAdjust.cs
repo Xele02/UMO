@@ -17,7 +17,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1BE8E04 Offset: 0x1BE8E04 VA: 0x1BE8E04
 		public void Initialize(int divaId)
 		{
-			UnityEngine.Debug.LogError("TODOOOOOOOOOOOOOOO fix float val static");
+			TodoLogger.Log(0, "TODOOOOOOOOOOOOOOO fix float val static");
 			for(int i = 0; i < scaleAdjustPoint.Count; i++)
 			{
 				ObjectPositionAdjuster adjuster = scaleAdjustPoint[i].gameObject.AddComponent<ObjectPositionAdjuster>();

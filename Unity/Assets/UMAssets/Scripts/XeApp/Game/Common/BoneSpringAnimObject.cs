@@ -64,7 +64,7 @@ namespace XeApp.Game.Common
 		// RVA: 0xE62014 Offset: 0xE62014 VA: 0xE62014
 		private void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO BoneSpringAnimObject OnDestroy");
+			TodoLogger.Log(0, "BoneSpringAnimObject OnDestroy");
 		}
 
 		// RVA: 0xE62168 Offset: 0xE62168 VA: 0xE62168

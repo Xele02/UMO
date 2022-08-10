@@ -25,7 +25,7 @@ namespace XeApp.Game.RhythmGame.UI
         // // RVA: 0x156810C Offset: 0x156810C VA: 0x156810C
         public UiDivaTexture()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
         // [CompilerGeneratedAttribute] // RVA: 0x7478CC Offset: 0x7478CC VA: 0x7478CC

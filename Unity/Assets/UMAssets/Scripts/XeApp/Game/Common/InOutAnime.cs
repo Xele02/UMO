@@ -72,7 +72,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0x10FF654 Offset: 0x10FF654 VA: 0x10FF654
 		public void Enter(float animTime, bool force = false, Action endCallback = null)
 		{
-			UnityEngine.Debug.LogError("TODO InOutAnim Enter");
+			TodoLogger.Log(0, "InOutAnim Enter");
 		}
 
 		//// RVA: 0x10FFB64 Offset: 0x10FFB64 VA: 0x10FFB64

@@ -29,7 +29,7 @@ public class PGIGNJDPCAH
 	public static bool IPJMPBANBPP { 
 		get {
 			// IJMCHOOIMBB 0x16C982C 
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 			return false;
 		}
 		set{

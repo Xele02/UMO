@@ -67,7 +67,7 @@ public class NMFABEKNBKJ
 		// private float FBFKMOECEIM; // 0x20
 
 		//0x1CADBC8
-		UnityEngine.Debug.LogWarning("TODO LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
+		TodoLogger.Log(5, "LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
     	UnityEngine.Debug.Log("Exit LAGOJPPLDOH_Corotuine_BootInitilaize_FCM");
 		PONEMLJPAOE();
 		yield break;

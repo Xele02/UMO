@@ -12,7 +12,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x12DCC40 Offset: 0x12DCC40 VA: 0x12DCC40
 		public IEnumerator Initialize(GameObject parent, UnityAction action)
 		{
-			UnityEngine.Debug.LogError("TODO SortWindowControl Initialize");
+			TodoLogger.Log(0, "SortWindowControl Initialize");
 			action();
 			yield break;
 		}

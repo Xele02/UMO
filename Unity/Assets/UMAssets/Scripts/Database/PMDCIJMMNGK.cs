@@ -25,27 +25,27 @@ public class PMDCIJMMNGK_GachaTicket : DIHHCBACKGG
 	// RVA: 0xFEC9D0 Offset: 0xFEC9D0 VA: 0xFEC9D0 Slot: 8
 	protected override void KMBPACJNEOF()
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
     }
 
 	// RVA: 0xFECA74 Offset: 0xFECA74 VA: 0xFECA74 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return true;
     }
 
 	// RVA: 0xFED1AC Offset: 0xFED1AC VA: 0xFED1AC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
     {
-        UnityEngine.Debug.LogError("TODO");
+        TodoLogger.Log(0, "TODO");
         return true;
     }
 
 	// RVA: 0xFED538 Offset: 0xFED538 VA: 0xFED538 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return 0;
 	}
 }

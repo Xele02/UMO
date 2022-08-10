@@ -57,11 +57,11 @@ namespace ExternLib
         }
         public static void criAtomExPlayer_StopWithoutReleaseTime(IntPtr player)
         {
-            UnityEngine.Debug.LogError("TODO criAtomExPlayer_StopWithoutReleaseTime");
+            TodoLogger.Log(0, "criAtomExPlayer_StopWithoutReleaseTime");
         }
         public static void CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear(IntPtr pool)
         {
-            UnityEngine.Debug.LogError("TODO CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear");
+            TodoLogger.Log(0, "CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear");
         }
         public static void criAtomExPlayer_SetVolume(IntPtr player, float volume)
         {
@@ -72,7 +72,7 @@ namespace ExternLib
         }
         public static void CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy(IntPtr pool)
         {
-            UnityEngine.Debug.LogError("TODO CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy");
+            TodoLogger.Log(0, "CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy");
         }
         public static IntPtr criAtomExPlayer_Create(ref CriAtomExPlayer.Config config, IntPtr work, int work_size)
         {
@@ -114,11 +114,11 @@ namespace ExternLib
                 if(playersList[player].config.source.unityAudioSource == srcsList[source].config.source.unityAudioSource)
                     return;
             }
-            UnityEngine.Debug.LogError("TODO criAtomExPlayer_Set3dSourceHn");
+            TodoLogger.Log(0, "criAtomExPlayer_Set3dSourceHn");
         }
         public static void criAtomExPlayer_Set3dListenerHn(IntPtr player, IntPtr listener)
         {
-            UnityEngine.Debug.LogError("TODO criAtomExPlayer_Set3dListenerHn");
+            TodoLogger.Log(0, "criAtomExPlayer_Set3dListenerHn");
         }
         public static void criAtomExPlayer_SetPitch(IntPtr player, float pitch)
         {
@@ -206,16 +206,16 @@ namespace ExternLib
         }
         public static void criAtomExPlayer_LimitLoopCount(IntPtr player, int count)
         {
-            UnityEngine.Debug.LogError("TODO criAtomExPlayer_LimitLoopCount");
+            TodoLogger.Log(0, "criAtomExPlayer_LimitLoopCount");
         }
         public static IntPtr criAtomExPlayer_GetPlayerParameter(IntPtr player)
         {
-            UnityEngine.Debug.LogError("TODO criAtomExPlayer_GetPlayerParameter");
+            TodoLogger.Log(0, "criAtomExPlayer_GetPlayerParameter");
             return IntPtr.Zero;
         }
         public static void criAtomExPlayerParameter_RemoveParameter(IntPtr player_parameter, ushort id)
         {
-            UnityEngine.Debug.LogError("TODO criAtomExPlayerParameter_RemoveParameter");
+            TodoLogger.Log(0, "criAtomExPlayerParameter_RemoveParameter");
         }
         public static uint criAtomExPlayer_Start(IntPtr player)
         {
@@ -246,15 +246,15 @@ namespace ExternLib
         }
         public static void criAtomExPlayer_Pause(IntPtr player, bool sw)
         {
-            UnityEngine.Debug.LogError("TODO criAtomExPlayer_Pause");
+            TodoLogger.Log(0, "criAtomExPlayer_Pause");
         }
         public static void criAtomExPlayer_Resume(IntPtr player, CriAtomEx.ResumeMode mode)
         {
-            UnityEngine.Debug.LogError("TODO criAtomExPlayer_Resume");
+            TodoLogger.Log(0, "criAtomExPlayer_Resume");
         }
         public static bool criAtomExPlayer_IsPaused(IntPtr player)
         {
-            UnityEngine.Debug.LogError("TODO criAtomExPlayer_IsPaused");
+            TodoLogger.Log(0, "criAtomExPlayer_IsPaused");
             return false;
         }
         public static void CheckSoundStatus()

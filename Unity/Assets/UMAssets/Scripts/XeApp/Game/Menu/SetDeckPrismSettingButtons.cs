@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA73658 Offset: 0xA73658 VA: 0xA73658
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO SetDeckPrismSettingButtons Awake");
+			TodoLogger.Log(0, "SetDeckPrismSettingButtons Awake");
 		}
 
 		// // RVA: 0xA739D8 Offset: 0xA739D8 VA: 0xA739D8

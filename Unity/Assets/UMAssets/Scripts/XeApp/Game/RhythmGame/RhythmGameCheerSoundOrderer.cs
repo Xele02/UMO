@@ -90,7 +90,7 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xDC1888 Offset: 0xDC1888 VA: 0xDC1888
 		public void OnDestroy()
 		{
-			UnityEngine.Debug.LogError("TODO RhythmGameCheerSoundOrderer OnDestroy");
+			TodoLogger.Log(0, "RhythmGameCheerSoundOrderer OnDestroy");
 		}
 
 		//// RVA: 0xDC18EC Offset: 0xDC18EC VA: 0xDC18EC
@@ -99,7 +99,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDC212C Offset: 0xDC212C VA: 0xDC212C
 		public void Update(int a_note_msec)
 		{
-			UnityEngine.Debug.LogError("TODO RhythmGameCheerSoundOrderer Update");
+			TodoLogger.Log(0, "RhythmGameCheerSoundOrderer Update");
 		}
 
 		//// RVA: 0xDC23E0 Offset: 0xDC23E0 VA: 0xDC23E0

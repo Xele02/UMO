@@ -154,7 +154,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x143D36C Offset: 0x143D36C VA: 0x143D36C
 		public IEnumerator ChangeBgCoroutine(BgType bgType, int id = -1, SceneGroupCategory category = SceneGroupCategory.UNDEFINED, TransitionList.Type transitionType = TransitionList.Type.UNDEFINED, int attribute = -1)
 		{
-			UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine");
+			TodoLogger.Log(0, "BG ChangeBgCoroutine");
 			yield return null;
 		}
 
@@ -178,7 +178,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x143D874 Offset: 0x143D874 VA: 0x143D874
 		public void ReserveFade(float time, Color color)
 		{
-			UnityEngine.Debug.LogError("TODO BG ReserveFade");
+			TodoLogger.Log(0, "BG ReserveFade");
 		}
 
 		// // RVA: 0x143D89C Offset: 0x143D89C VA: 0x143D89C

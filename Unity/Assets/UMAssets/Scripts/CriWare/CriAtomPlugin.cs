@@ -34,61 +34,61 @@ namespace CriWare {
 		// // RVA: 0x28B181C Offset: 0x28B181C VA: 0x28B181C
 		public static void SetConfigParameters(int max_virtual_voices, int max_voice_limit_groups, int max_categories, int max_sequence_events_per_frame, int max_beatsync_callbacks_per_frame, int max_cuelink_callbacks_per_frame, int num_standard_memory_voices, int num_standard_streaming_voices, int num_hca_mx_memory_voices, int num_hca_mx_streaming_voices, int output_sampling_rate, int num_asr_output_channels, bool uses_in_game_preview, float server_frequency, int max_parameter_blocks, int categories_per_playback, int num_buses, bool vr_mode)
 		{
-			UnityEngine.Debug.LogWarning("TODO");
+			TodoLogger.Log(5, "TODO");
 		}
 
 		// // RVA: 0x28B1B0C Offset: 0x28B1B0C VA: 0x28B1B0C
 		public static void SetConfigMonitorParametes(int max_preview_objects, int communication_buffer_size, int playback_position_update_interval)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetConfigMonitorParametes");
+			TodoLogger.Log(5, "SetConfigMonitorParametes");
 		}
 
 		// // RVA: 0x28B1CB4 Offset: 0x28B1CB4 VA: 0x28B1CB4
 		public static void SetConfigAdditionalParameters_PC(long buffering_time_pc)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetConfigAdditionalParameters_PC");
+			TodoLogger.Log(5, "SetConfigAdditionalParameters_PC");
 		}
 
 		// // RVA: 0x28B1E4C Offset: 0x28B1E4C VA: 0x28B1E4C
 		public static void SetConfigAdditionalParameters_LINUX(CriAtomConfig.LinuxOutput output, int pulse_latency_usec)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetConfigAdditionalParameters_LINUX");
+			TodoLogger.Log(5, "SetConfigAdditionalParameters_LINUX");
 		}
 
 		// // RVA: 0x28B1FE4 Offset: 0x28B1FE4 VA: 0x28B1FE4
 		public static void SetConfigAdditionalParameters_IOS(bool enable_sonicsync, uint buffering_time_ios, bool override_ipod_music_ios)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetConfigAdditionalParameters_IOS");
+			TodoLogger.Log(5, "SetConfigAdditionalParameters_IOS");
 		}
 
 		// // RVA: 0x28B218C Offset: 0x28B218C VA: 0x28B218C
 		public static void SetConfigAdditionalParameters_ANDROID(bool enable_sonicsync, int num_low_delay_memory_voices, int num_low_delay_streaming_voices, int sound_buffering_time, int sound_start_buffering_time, bool use_fast_mixer, bool use_aaudio)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetConfigAdditionalParameters_ANDROID");
+			TodoLogger.Log(5, "SetConfigAdditionalParameters_ANDROID");
 		}
 
 		// // RVA: 0x28B284C Offset: 0x28B284C VA: 0x28B284C
 		public static void SetConfigAdditionalParameters_VITA(int num_atrac9_memory_voices, int num_atrac9_streaming_voices, int num_mana_decoders)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetConfigAdditionalParameters_VITA");
+			TodoLogger.Log(5, "SetConfigAdditionalParameters_VITA");
 		}
 
 		// // RVA: 0x28B2850 Offset: 0x28B2850 VA: 0x28B2850
 		public static void SetConfigAdditionalParameters_PS4(int num_atrac9_memory_voices, int num_atrac9_streaming_voices, bool use_audio3d, int num_audio3d_memory_voices, int num_audio3d_streaming_voices)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetConfigAdditionalParameters_PS4");
+			TodoLogger.Log(5, "SetConfigAdditionalParameters_PS4");
 		}
 
 		// // RVA: 0x28B2854 Offset: 0x28B2854 VA: 0x28B2854
 		public static void SetConfigAdditionalParameters_SWITCH(int num_opus_memory_voices, int num_opus_streaming_voices, bool init_socket)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetConfigAdditionalParameters_SWITCH");
+			TodoLogger.Log(5, "SetConfigAdditionalParameters_SWITCH");
 		}
 
 		// // RVA: 0x28B2858 Offset: 0x28B2858 VA: 0x28B2858
 		public static void SetConfigAdditionalParameters_WEBGL(int num_webaudio_voices)
 		{
-			UnityEngine.Debug.LogWarning("TODO SetConfigAdditionalParameters_WEBGL");
+			TodoLogger.Log(5, "SetConfigAdditionalParameters_WEBGL");
 		}
 
 		// // RVA: 0x28B285C Offset: 0x28B285C VA: 0x28B285C
@@ -97,7 +97,7 @@ namespace CriWare {
 		// // RVA: 0x28B29F4 Offset: 0x28B29F4 VA: 0x28B29F4
 		public static int GetRequiredMaxVirtualVoices(CriAtomConfig atomConfig)
 		{
-			UnityEngine.Debug.LogWarning("TODO GetRequiredMaxVirtualVoices");
+			TodoLogger.Log(5, "GetRequiredMaxVirtualVoices");
 			return 20;
 		}
 
@@ -127,7 +127,7 @@ namespace CriWare {
 			{
 				for(int i = 0; i < effectInterfaceList.Count; i++)
 				{
-					UnityEngine.Debug.LogError("TODO call effectInterfaceList RegisterEffectInterface");
+					TodoLogger.Log(0, "call effectInterfaceList RegisterEffectInterface");
 				}
 			}
 

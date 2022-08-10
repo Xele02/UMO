@@ -50,26 +50,26 @@ namespace XeSys
 		// // RVA: 0x2036834 Offset: 0x2036834 VA: 0x2036834
 		public static GameObject Create(DebugTextRenderer prefab)
 		{
-			UnityEngine.Debug.LogWarning("TODO DebugTextRenderer.Create");
+			TodoLogger.Log(5, "DebugTextRenderer.Create");
 			return null;
 		}
 
 		// // RVA: 0x203683C Offset: 0x203683C VA: 0x203683C
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2036AF0 Offset: 0x2036AF0 VA: 0x2036AF0
 		private void Start()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x2036AF4 Offset: 0x2036AF4 VA: 0x2036AF4
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO");
+			TodoLogger.Log(0, "TODO");
 		}
 
 		// // RVA: 0x20369B4 Offset: 0x20369B4 VA: 0x20369B4

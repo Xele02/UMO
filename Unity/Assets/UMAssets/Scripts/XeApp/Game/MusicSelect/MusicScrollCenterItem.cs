@@ -102,7 +102,7 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xC9C854 Offset: 0xC9C854 VA: 0xC9C854
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO MusicScrollCenterItem Awake");
+			TodoLogger.Log(0, "MusicScrollCenterItem Awake");
 			m_highLevelObj.gameObject.SetActive(false);
 			m_eventName.transform.parent.gameObject.SetActive(false);
 		}
