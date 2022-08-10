@@ -188,12 +188,12 @@ public class BgControl
 			m_limitedHomeBg.m_enable = false;
 			if(bgType == BgType.Home)
 			{
-				UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine Home");
+				TodoLogger.Log(0, "BG ChangeBgCoroutine Home");
 			}
 			if(wasEnabled && m_limitedHomeBg.m_enable)
 			{
 				// L 426
-				UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine Limited Home BG");
+				TodoLogger.Log(0, "BG ChangeBgCoroutine Limited Home BG");
 			}
 			doFade = m_fadeReserved && ((wasEnabled != m_limitedHomeBg.m_enable) || !(m_textureType == textureType && id == m_id));
 			m_fadeReserved = false;
@@ -211,13 +211,13 @@ public class BgControl
 				if(bgType == BgType.Home || bgType == BgType.HomeNormal || bgType == BgType.LoginBonus)
 				{
 					// L528
-					UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine Home BG");
+					TodoLogger.Log(0, "BG ChangeBgCoroutine Home BG");
 				}
 			}
 			if (m_limitedHomeBg.m_enable)
 			{
 				// 588
-				UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine Limited BG");
+				TodoLogger.Log(0, "BG ChangeBgCoroutine Limited BG");
 			}
 			if (!m_limitedHomeBg.m_enable)
 			{
@@ -230,7 +230,7 @@ public class BgControl
 						break;
 					default:
 						//L 785
-						UnityEngine.Debug.LogError("TODO BG ChangeBgCoroutine Other BG");
+						TodoLogger.Log(0, "BG ChangeBgCoroutine Other BG");
 						break;
 				}
 				StoryBgHide();
@@ -273,7 +273,7 @@ public class BgControl
 		// // RVA: 0x143D0C8 Offset: 0x143D0C8 VA: 0x143D0C8
 		public void DeleteLimitedBG()
 		{
-			UnityEngine.Debug.LogError("TODO DeleteLimitedBG");
+			TodoLogger.Log(0, "DeleteLimitedBG");
 		}
 
 		// // RVA: 0x143D874 Offset: 0x143D874 VA: 0x143D874
@@ -336,7 +336,7 @@ public class BgControl
 					m_strBuilder.AppendFormat("{0}{1:D2}.xab", "ct/bg/mc/nm/", m_id);
 					break;
 				default:
-					UnityEngine.Debug.LogError("TODO load other bg");
+					TodoLogger.Log(0, "load other bg");
 					yield break;
 					break;
 			}
@@ -430,7 +430,7 @@ public class BgControl
 				{
 					category_id = -1;
 					asset_id = -1;
-					UnityEngine.Debug.LogError("TODO ConvertBgType home");
+					TodoLogger.Log(0, "ConvertBgType home");
 
 				}
 				else
@@ -438,7 +438,7 @@ public class BgControl
 					category_id = -1;
 					asset_id = -1;
 				}
-				UnityEngine.Debug.LogError("TODO ConvertBgType home");
+				TodoLogger.Log(0, "ConvertBgType home");
 				textureType = BgTextureType.Normal;
 			}
 			else
@@ -451,7 +451,7 @@ public class BgControl
 						textureType = BgTextureType.Music;
 						break;
 					default:
-						UnityEngine.Debug.LogError("TODO ConvertBgType others");
+						TodoLogger.Log(0, "ConvertBgType others");
 						break;
 				}
 			}

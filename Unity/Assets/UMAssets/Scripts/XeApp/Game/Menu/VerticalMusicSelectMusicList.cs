@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 			m_musicScroll.OnUpdateListItem.AddListener(this.MusicUpdateListItem);
 			m_musicScroll.OnUpdateClipItem.AddListener(() => {
 				//0xBE4864
-				UnityEngine.Debug.LogError("TODO OnUpdateClipItem");
+				TodoLogger.Log(0, "OnUpdateClipItem");
 			});
 		}
 

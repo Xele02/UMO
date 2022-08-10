@@ -211,19 +211,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1149F3C Offset: 0x1149F3C VA: 0x1149F3C
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO PopupSortMenu Awake");
+			TodoLogger.Log(0, "PopupSortMenu Awake");
 		}
 
 		//// RVA: 0x114A514 Offset: 0x114A514 VA: 0x114A514 Slot: 17
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{
-			UnityEngine.Debug.LogError("TODO PopupSortMenu Initialize");
+			TodoLogger.Log(0, "PopupSortMenu Initialize");
 		}
 
 		//// RVA: 0x114B054 Offset: 0x114B054 VA: 0x114B054 Slot: 18
 		public bool IsScrollable()
 		{
-			UnityEngine.Debug.LogError("TODO PopupSortMenu IsScrollable");
+			TodoLogger.Log(0, "PopupSortMenu IsScrollable");
 			return false;
 		}
 
@@ -233,26 +233,26 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x114B08C Offset: 0x114B08C VA: 0x114B08C Slot: 19
 		public void Show()
 		{
-			UnityEngine.Debug.LogError("TODO PopupSortMenu Show");
+			TodoLogger.Log(0, "PopupSortMenu Show");
 		}
 
 		//// RVA: 0x114B114 Offset: 0x114B114 VA: 0x114B114 Slot: 20
 		public void Hide()
 		{
-			UnityEngine.Debug.LogError("TODO PopupSortMenu Hide");
+			TodoLogger.Log(0, "PopupSortMenu Hide");
 		}
 
 		//// RVA: 0x114B14C Offset: 0x114B14C VA: 0x114B14C Slot: 21
 		public bool IsReady()
 		{
-			UnityEngine.Debug.LogError("TODO PopupSortMenu IsReady");
+			TodoLogger.Log(0, "PopupSortMenu IsReady");
 			return true;
 		}
 
 		//// RVA: 0x114B1EC Offset: 0x114B1EC VA: 0x114B1EC Slot: 22
 		public void CallOpenEnd()
 		{
-			UnityEngine.Debug.LogError("TODO PopupSortMenu CallOpenEnd");
+			TodoLogger.Log(0, "PopupSortMenu CallOpenEnd");
 		}
 
 		//// RVA: 0x114B1F0 Offset: 0x114B1F0 VA: 0x114B1F0

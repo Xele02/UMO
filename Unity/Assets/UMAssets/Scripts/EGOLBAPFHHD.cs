@@ -568,7 +568,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x1C539A8 Offset: 0x1C539A8 VA: 0x1C539A8
 	public bool KNKGEALPDGF_GetBookmark(int KLMIFEKNBLL, int MFCNKPHPJBH)
 	{
-		UnityEngine.Debug.LogError("TODO KNKGEALPDGF");
+		TodoLogger.Log(0, "KNKGEALPDGF");
 		return false;
 	}
 

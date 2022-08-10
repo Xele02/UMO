@@ -37,7 +37,7 @@ public class FPGEMAIAMBF
 	//// RVA: 0x13FA620 Offset: 0x13FA620 VA: 0x13FA620
 	public void JMHCEMHPPCM(int GHBPLHBNMBK_MusicId, int AKNELONELJK_Difficulty, bool LFGNLKKFOCD_Is6Line, int MNNHHJBBICA = 0)
 	{
-		UnityEngine.Debug.LogError("TODO JMHCEMHPPCM");
+		TodoLogger.Log(0, "JMHCEMHPPCM");
 		HFPMKBAANFO = new List<LOIJICNJMKA>();
 		PDONJHCHBAE = new List<LOIJICNJMKA>();
 		IOCLNNCJFKA = new List<LOIJICNJMKA>();

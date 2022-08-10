@@ -31,7 +31,7 @@ public class EEDKAACNBBG
 	// // RVA: 0x1C48944 Offset: 0x1C48944 VA: 0x1C48944 Slot: 4
 	public virtual void KHEKNNFCAOI(int DLAEJOBELBH)
 	{
-		UnityEngine.Debug.LogError("TODO KHEKNNFCAOI");
+		TodoLogger.Log(0, "KHEKNNFCAOI");
 		this.DLAEJOBELBH_MusicId = DLAEJOBELBH;
 		EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[DLAEJOBELBH - 1];
 		BNCMJNMIDIN_AvaiableDivaModes = 0;
@@ -46,7 +46,7 @@ public class EEDKAACNBBG
 	public virtual bool DBIGDCOHOIC()
 	{
 		//return JFEEHOKLFPO() <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.FBGGEFFJJHB ^ CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.HMJBBNEACOA;
-		UnityEngine.Debug.LogError("TODO DBIGDCOHOIC");
+		TodoLogger.Log(0, "DBIGDCOHOIC");
 		return true;
 	}
 

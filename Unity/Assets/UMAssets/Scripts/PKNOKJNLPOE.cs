@@ -110,7 +110,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	// // RVA: 0x94097C Offset: 0x94097C VA: 0x94097C Slot: 7
 	public override List<int> HEACCHAKMFG()
 	{
-		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		TodoLogger.Log(0, "HEACCHAKMFG");
 		return base.HEACCHAKMFG();
 	}
 

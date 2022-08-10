@@ -24,7 +24,7 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 	// // RVA: 0x15EAD10 Offset: 0x15EAD10 VA: 0x15EAD10 Slot: 7
 	public override List<int> HEACCHAKMFG()
 	{
-		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		TodoLogger.Log(0, "HEACCHAKMFG");
 		return base.HEACCHAKMFG();
 	}
 

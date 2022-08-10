@@ -93,7 +93,7 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8DD52C Offset: 0x8DD52C VA: 0x8DD52C Slot: 7
 	public virtual List<int> HEACCHAKMFG()
 	{
-		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		TodoLogger.Log(0, "HEACCHAKMFG");
 		return new List<int>();
 	}
 

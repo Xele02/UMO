@@ -32,7 +32,7 @@ namespace XeSys.Gfx
 		//// RVA: 0x1F0DF48 Offset: 0x1F0DF48 VA: 0x1F0DF48
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO PostRenderManager Awake");
+			TodoLogger.Log(0, "PostRenderManager Awake");
 		}
 
 		//// RVA: 0x1F0F308 Offset: 0x1F0F308 VA: 0x1F0F308
@@ -41,7 +41,7 @@ namespace XeSys.Gfx
 		//// RVA: 0x1F0F3C8 Offset: 0x1F0F3C8 VA: 0x1F0F3C8
 		private void Start()
 		{
-			UnityEngine.Debug.LogError("TODO PostRenderManager Start");
+			TodoLogger.Log(0, "PostRenderManager Start");
 		}
 
 		//// RVA: 0x1F0F028 Offset: 0x1F0F028 VA: 0x1F0F028
@@ -50,7 +50,7 @@ namespace XeSys.Gfx
 		//// RVA: 0x1F0F3CC Offset: 0x1F0F3CC VA: 0x1F0F3CC
 		private void Update()
 		{
-			UnityEngine.Debug.LogError("TODO PostRenderManager Update");
+			TodoLogger.Log(0, "PostRenderManager Update");
 		}
 
 		//// RVA: 0x1F0DA9C Offset: 0x1F0DA9C VA: 0x1F0DA9C

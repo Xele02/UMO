@@ -23,7 +23,7 @@ public class EJKBKMBJMGL_EnemyData
 	//// RVA: 0x12F37F4 Offset: 0x12F37F4 VA: 0x12F37F4
 	public void KHEKNNFCAOI(int EJNIMIAPJFJ, int IHKNHNKMGAD)
 	{
-		UnityEngine.Debug.LogError("TODO Init enemyData");
+		TodoLogger.Log(0, "Init enemyData");
 	}
 
 	//// RVA: 0x12F3BD0 Offset: 0x12F3BD0 VA: 0x12F3BD0

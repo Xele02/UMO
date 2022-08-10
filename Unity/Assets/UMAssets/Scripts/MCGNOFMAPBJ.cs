@@ -54,7 +54,7 @@ public class MCGNOFMAPBJ
 	// // RVA: 0x130CE44 Offset: 0x130CE44 VA: 0x130CE44 Slot: 4
 	public virtual int DCLKMNGMIKC()
 	{
-		UnityEngine.Debug.LogError("TODO DCLKMNGMIKC");
+		TodoLogger.Log(0, "DCLKMNGMIKC");
 		return 0;
 	}
 

@@ -19,7 +19,7 @@ namespace XeApp.Game.Common
 		// RVA: 0xEA2B9C Offset: 0xEA2B9C VA: 0xEA2B9C
 		public void Init()
 		{
-			UnityEngine.Debug.LogError("TODO HighScoreRating");
+			TodoLogger.Log(0, "HighScoreRating");
 		}
 
 		//// RVA: 0xEA2F84 Offset: 0xEA2F84 VA: 0xEA2F84
@@ -43,7 +43,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA5E50 Offset: 0xEA5E50 VA: 0xEA5E50
 		public static int GetUtaRate(int free_music_id)
 		{
-			UnityEngine.Debug.LogError("GetUtaRate");
+			TodoLogger.Log(0, "GetUtaRate");
 			return 0;
 		}
 

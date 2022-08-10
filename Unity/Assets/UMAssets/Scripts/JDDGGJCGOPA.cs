@@ -217,7 +217,7 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x1C25884 Offset: 0x1C25884 VA: 0x1C25884 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		UnityEngine.Debug.LogError("TODO");
+		TodoLogger.Log(0, "TODO");
 		return true;
 	}
 

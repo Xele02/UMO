@@ -22,7 +22,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x15411A8 Offset: 0x15411A8 VA: 0x15411A8
 		public void WatchStart(long limitTime, bool forceCount = false)
 		{
-			UnityEngine.Debug.LogWarning("TODO LimitTimeWatcher WatchStart");
+			TodoLogger.Log(5, "LimitTimeWatcher WatchStart");
 		}
 
 		// // RVA: 0x154118C Offset: 0x154118C VA: 0x154118C

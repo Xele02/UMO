@@ -35,7 +35,7 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// // RVA: 0x11333D8 Offset: 0x11333D8 VA: 0x11333D8 Slot: 7
 	public override List<int> HEACCHAKMFG()
 	{
-		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		TodoLogger.Log(0, "HEACCHAKMFG");
 		return base.HEACCHAKMFG();
 	}
 

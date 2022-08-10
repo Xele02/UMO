@@ -1082,7 +1082,7 @@ public class ILDKBCLAFPB
 			// RVA: 0x2030AB4 Offset: 0x2030AB4 VA: 0x2030AB4
 			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB = 0)
 			{
-				UnityEngine.Debug.LogError("TODO LPNOICEBNEL_MusicSelect KHEKNNFCAOI");
+				TodoLogger.Log(0, "LPNOICEBNEL_MusicSelect KHEKNNFCAOI");
 			}
 
 			//// RVA: 0x202EA64 Offset: 0x202EA64 VA: 0x202EA64
@@ -1127,7 +1127,7 @@ public class ILDKBCLAFPB
 			// RVA: 0x2030EEC Offset: 0x2030EEC VA: 0x2030EEC
 			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB = 0)
 			{
-				UnityEngine.Debug.LogError("TODO KLIBOIEIMBA_EventMission KHEKNNFCAOI");
+				TodoLogger.Log(0, "KLIBOIEIMBA_EventMission KHEKNNFCAOI");
 			}
 
 			//// RVA: 0x202F1C0 Offset: 0x202F1C0 VA: 0x202F1C0
@@ -1172,7 +1172,7 @@ public class ILDKBCLAFPB
 			// RVA: 0x2030D8C Offset: 0x2030D8C VA: 0x2030D8C
 			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB = 0)
 			{
-				UnityEngine.Debug.LogError("TODO FPMABHADHBB_EventGoDiva KHEKNNFCAOI");
+				TodoLogger.Log(0, "FPMABHADHBB_EventGoDiva KHEKNNFCAOI");
 			}
 
 			//// RVA: 0x202EF5C Offset: 0x202EF5C VA: 0x202EF5C
@@ -1206,7 +1206,7 @@ public class ILDKBCLAFPB
 			// RVA: 0x2031070 Offset: 0x2031070 VA: 0x2031070
 			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
 			{
-				UnityEngine.Debug.LogError("TODO MCINLGMJPDM_SelectHomeBG KHEKNNFCAOI");
+				TodoLogger.Log(0, "MCINLGMJPDM_SelectHomeBG KHEKNNFCAOI");
 			}
 
 			//// RVA: 0x202F464 Offset: 0x202F464 VA: 0x202F464
@@ -1251,7 +1251,7 @@ public class ILDKBCLAFPB
 			// RVA: 0x2031128 Offset: 0x2031128 VA: 0x2031128
 			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
 			{
-				UnityEngine.Debug.LogError("TODO POCEANNLGLP_ShopProduct KHEKNNFCAOI");
+				TodoLogger.Log(0, "POCEANNLGLP_ShopProduct KHEKNNFCAOI");
 			}
 		}
 
@@ -1340,7 +1340,7 @@ public class ILDKBCLAFPB
 		//// RVA: 0x202C660 Offset: 0x202C660 VA: 0x202C660
 		public void ODDIHGPONFL_Copy(ILDKBCLAFPB.IJDOCJCLAIL_SortProprty FMKAONAMGCN)
 		{
-			UnityEngine.Debug.LogError("TODO ODDIHGPONFL_Copy");
+			TodoLogger.Log(0, "ODDIHGPONFL_Copy");
 		}
 
 		//// RVA: 0x202D584 Offset: 0x202D584 VA: 0x202D584

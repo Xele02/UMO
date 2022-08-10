@@ -36,7 +36,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA17174 Offset: 0xA17174 VA: 0xA17174 Slot: 7
 	public override List<int> HEACCHAKMFG()
 	{
-		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		TodoLogger.Log(0, "HEACCHAKMFG");
 		return base.HEACCHAKMFG();
 	}
 

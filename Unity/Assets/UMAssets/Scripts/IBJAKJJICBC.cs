@@ -196,7 +196,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	// // RVA: 0x1214760 Offset: 0x1214760 VA: 0x1214760 Slot: 5
 	public override bool DBIGDCOHOIC()
 	{
-		UnityEngine.Debug.LogError("TODO DBIGDCOHOIC");
+		TodoLogger.Log(0, "DBIGDCOHOIC");
 		return base.DBIGDCOHOIC();
 	}
 
@@ -264,7 +264,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 		}
 		else
 		{
-			UnityEngine.Debug.LogError("TODO IBJAKJJCBC KHEKNNFCAOI Init weekly event");
+			TodoLogger.Log(0, "IBJAKJJCBC KHEKNNFCAOI Init weekly event");
 		}
 		PPDEOMLMEKC = musicInfo.EEFLOOBOAGF ^ 0x7daf3c5a; //todo switch to property
 		IFLNGLECALJ = CNECJGKECHK_True; //todo switch to property
@@ -403,7 +403,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 				if(type != OHCAABOMEOF.KGOGMKMBCPP.AOPKACCDKPA)
 					type = 0;
 			}
-        	UnityEngine.Debug.LogError("TODO FKDIMODKKJD (generate song list)");
+        	TodoLogger.Log(0, "FKDIMODKKJD (generate song list)");
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas.Count; i++)
 			{
 				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[i];
@@ -418,14 +418,14 @@ public class IBJAKJJICBC : EEDKAACNBBG
 
 		}
 
-        UnityEngine.Debug.LogError("TODO FKDIMODKKJD (generate song list)");
+        TodoLogger.Log(0, "FKDIMODKKJD (generate song list)");
         return res;
     }
 
 	// // RVA: 0x121AA58 Offset: 0x121AA58 VA: 0x121AA58
 	private static List<IKDICBBFBMI_EventBase> DJPFFHLCCNL(OHCAABOMEOF.KGOGMKMBCPP INDDJNMPONH, long JHNMKKNEENE, KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/)
 	{
-		UnityEngine.Debug.LogError("TODO DJPFFHLCCNL");
+		TodoLogger.Log(0, "DJPFFHLCCNL");
 		return new List<IKDICBBFBMI_EventBase>();
 	}
 
@@ -446,17 +446,17 @@ public class IBJAKJJICBC : EEDKAACNBBG
 		IKDICBBFBMI_EventBase data = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false);
 		if(data != null && data.HEACCHAKMFG().Count > 0)
 		{
-			UnityEngine.Debug.LogError("TODO FKDIMODKKJD event info");
+			TodoLogger.Log(0, "FKDIMODKKJD event info");
 		}
 		data = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI);
 		if(data != null)
 		{
-			UnityEngine.Debug.LogError("TODO FKDIMODKKJD event info");
+			TodoLogger.Log(0, "FKDIMODKKJD event info");
 		}
 		List<IKDICBBFBMI_EventBase> ldata = DJPFFHLCCNL(OHCAABOMEOF.KGOGMKMBCPP.DAMDPLEBNCB, JHNMKKNEENE, KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI);
 		for(int i = 0; i < ldata.Count; i++)
 		{
-			UnityEngine.Debug.LogError("TODO FKDIMODKKJD event info");
+			TodoLogger.Log(0, "FKDIMODKKJD event info");
 		}
         return res;
     }

@@ -76,7 +76,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	// // RVA: 0x1B6D800 Offset: 0x1B6D800 VA: 0x1B6D800 Slot: 7
 	public override List<int> HEACCHAKMFG()
 	{
-		UnityEngine.Debug.LogError("TODO HEACCHAKMFG");
+		TodoLogger.Log(0, "HEACCHAKMFG");
 		return base.HEACCHAKMFG();
 	}
 
