@@ -72,11 +72,75 @@ namespace XeApp.Game.Common
 		//// RVA: 0x10FF654 Offset: 0x10FF654 VA: 0x10FF654
 		public void Enter(float animTime, bool force = false, Action endCallback = null)
 		{
-			TodoLogger.Log(0, "InOutAnim Enter");
+			if (state == State.Enter)
+				return;
+			if (!force && m_animCoroutine != null)
+				return;
+			else if(m_animCoroutine != null)
+			{
+				StopCoroutine(m_animCoroutine);
+				m_animCoroutine = null;
+			}
+			state = State.Enter;
+			RectTransform rect = transform as RectTransform;
+			Vector2 start = rect.anchoredPosition;
+			Vector2 target = rect.anchoredPosition;
+			switch (inType)
+			{
+				case InType.Left:
+					target.x = rect.anchoredPosition.x + moveAmount;
+					break;
+				case InType.Right:
+					target.x = rect.anchoredPosition.x - moveAmount;
+					break;
+				case InType.Top:
+					target.y = rect.anchoredPosition.y - moveAmount;
+					break;
+				case InType.Bottom:
+					target.y = rect.anchoredPosition.y + moveAmount;
+					break;
+				case InType.Scaling:
+					start = Vector2.zero;
+					target = Vector2.one;
+					break;
+				case InType.ScalingVertical:
+					start = new Vector2(1, 0);
+					target = Vector2.one;
+					break;
+				case InType.ScalingSide:
+					start = new Vector2(0, 1);
+					target = Vector2.one;
+					break;
+				case InType.Height:
+					start.x = rect.sizeDelta.x;
+					target = rect.sizeDelta;
+					break;
+			}
+			m_animCoroutine = StartCoroutine(Co_Animation(start, target, animTime, (Vector2 vec) => {
+				//0x10FFFC0
+				if (inType < InType.Scaling)
+				{
+					rect.anchoredPosition = vec;
+					return;
+				}
+				if (inType < InType.Height)
+				{
+					rect.localScale = vec;
+					return;
+				}
+				if (inType == InType.Height)
+				{
+					rect.sizeDelta = vec;
+				}
+
+			}, endCallback));
 		}
 
 		//// RVA: 0x10FFB64 Offset: 0x10FFB64 VA: 0x10FFB64
-		//public void Leave(bool force = False, Action endCallback) { }
+		public void Leave(bool force = false, Action endCallback = null)
+		{
+			Leave(animTime, force, endCallback);
+		}
 
 		//// RVA: 0x10FF244 Offset: 0x10FF244 VA: 0x10FF244
 		public void Leave(float animTime, bool force = false, Action endCallback = null)
@@ -92,35 +156,40 @@ namespace XeApp.Game.Common
 			}
 			state = State.Leave;
 			RectTransform rect = transform as RectTransform;
+			Vector2 start = rect.anchoredPosition;
 			Vector2 target = rect.anchoredPosition;
-			switch(inType)
+			switch (inType)
 			{
 				case InType.Left:
-					m_leavePos.x = rect.anchoredPosition.x - moveAmount;
+					target.x = rect.anchoredPosition.x - moveAmount;
 					break;
 				case InType.Right:
-					m_leavePos.x = rect.anchoredPosition.x + moveAmount;
+					target.x = rect.anchoredPosition.x + moveAmount;
 					break;
 				case InType.Top:
-					m_leavePos.y = rect.anchoredPosition.y + moveAmount;
+					target.y = rect.anchoredPosition.y + moveAmount;
 					break;
 				case InType.Bottom:
-					m_leavePos.y = rect.anchoredPosition.y - moveAmount;
+					target.y = rect.anchoredPosition.y - moveAmount;
 					break;
 				case InType.Scaling:
-					m_leavePos = Vector2.zero;
+					start = Vector2.one;
+					target = Vector2.zero;
 					break;
 				case InType.ScalingVertical:
-					m_leavePos = new Vector2(1, 0);
+					start = Vector2.one;
+					target = new Vector2(1, 0);
 					break;
 				case InType.ScalingSide:
-					m_leavePos = new Vector2(0, 1);
+					start = Vector2.one;
+					target = new Vector2(0, 1);
 					break;
 				case InType.Height:
-					m_leavePos = rect.sizeDelta + new Vector2(0, -moveAmount);
+					start = rect.sizeDelta;
+					target = rect.sizeDelta + new Vector2(0, -moveAmount);
 					break;
 			}
-			m_animCoroutine = StartCoroutine(Co_Animation(rect.anchoredPosition, m_leavePos, animTime, (Vector2 vec) => {
+			m_animCoroutine = StartCoroutine(Co_Animation(start, target, animTime, (Vector2 vec) => {
 				//0x110011C
 				if(inType < InType.Scaling)
 				{

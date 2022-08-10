@@ -287,7 +287,7 @@ public class ILDKBCLAFPB
 		{
 			private static readonly int LNHIHOKKPFF = FreeCategoryId.ArrayNum; // 0x0
 			private int OMKLPMBJLIO; // 0x8 // FreeCategoryId
-			private int HNKJDJFFACC; // 0xC // difficulty
+			private int HNKJDJFFACC_Diff; // 0xC // difficulty
 			private List<int> LGMDOEIPLAK; // 0x10
 			private List<int> AADOPBAMLJK; // 0x14
 			private int PFHPKAGBMOK; // 0x18
@@ -298,7 +298,7 @@ public class ILDKBCLAFPB
 			// // RVA: 0x2022BB8 Offset: 0x2022BB8 VA: 0x2022BB8
 			public EJBBPMBEKLP()
 			{
-				HNKJDJFFACC = 0;
+				HNKJDJFFACC_Diff = 0;
 				OMKLPMBJLIO = 0;
 				PMDNOPLFCNH = false;
 				LGMDOEIPLAK = new List<int>(LNHIHOKKPFF);
@@ -321,7 +321,7 @@ public class ILDKBCLAFPB
 			public void ODDIHGPONFL_Copy(ILDKBCLAFPB.APLMBKKCNKC_Select.EJBBPMBEKLP PJFKNNNDMIA)
 			{
 				PJFKNNNDMIA.OMKLPMBJLIO = OMKLPMBJLIO;
-				PJFKNNNDMIA.HNKJDJFFACC = HNKJDJFFACC;
+				PJFKNNNDMIA.HNKJDJFFACC_Diff = HNKJDJFFACC_Diff;
 				PJFKNNNDMIA.PMDNOPLFCNH = PMDNOPLFCNH;
 				PJFKNNNDMIA.LGMDOEIPLAK.Clear();
 				PJFKNNNDMIA.LGMDOEIPLAK.AddRange(LGMDOEIPLAK);
@@ -338,7 +338,7 @@ public class ILDKBCLAFPB
 			public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
 			{
 				OMKLPMBJLIO = JsonUtil.GetInt(OBHAFLMHAKG, "categoryId", 4);
-				HNKJDJFFACC = JsonUtil.GetInt(OBHAFLMHAKG, "difficulty", 0);
+				HNKJDJFFACC_Diff = JsonUtil.GetInt(OBHAFLMHAKG, "difficulty", 0);
 				PMDNOPLFCNH = JsonUtil.GetFlag(OBHAFLMHAKG, "isLine6", false);
 				LGMDOEIPLAK.Clear();
 				AADOPBAMLJK.Clear();
@@ -367,7 +367,7 @@ public class ILDKBCLAFPB
 			// // RVA: 0x2023EB4 Offset: 0x2023EB4 VA: 0x2023EB4
 			public Difficulty.Type FFACBDAJJJP()
 			{
-				return (Difficulty.Type)HNKJDJFFACC;
+				return (Difficulty.Type)HNKJDJFFACC_Diff;
 			}
 
 			// // RVA: 0x2023EBC Offset: 0x2023EBC VA: 0x2023EBC
@@ -408,8 +408,8 @@ public class ILDKBCLAFPB
 
 		public class GADJIIFFPFI
 		{
-			private int FFAKPFEGCOG = 0; // 0x8
-			private int HNKJDJFFACC = 0; // 0xC
+			private int FFAKPFEGCOG_Series = 0; // 0x8
+			private int HNKJDJFFACC_Diff = 0; // 0xC
 			private List<int> LGMDOEIPLAK = new List<int>(2) { 0, 0 }; // 0x10
 			private List<int> AADOPBAMLJK = new List<int>(2) { 0, 0 }; // 0x14
 			private int PFHPKAGBMOK; // 0x18
@@ -443,7 +443,7 @@ public class ILDKBCLAFPB
 			// // RVA: 0x202445C Offset: 0x202445C VA: 0x202445C
 			public Difficulty.Type FFACBDAJJJP()
 			{
-				return (Difficulty.Type)HNKJDJFFACC;
+				return (Difficulty.Type)HNKJDJFFACC_Diff;
 			}
 
 			// // RVA: 0x2024464 Offset: 0x2024464 VA: 0x2024464
@@ -479,10 +479,16 @@ public class ILDKBCLAFPB
 			}
 
 			// // RVA: 0x202454C Offset: 0x202454C VA: 0x202454C
-			// public void GJDEHJBAMNH(MusicSelectConsts.SeriesType MGBDCFIKBPM) { }
+			public void GJDEHJBAMNH(MusicSelectConsts.SeriesType MGBDCFIKBPM)
+			{
+				FFAKPFEGCOG_Series = (int)MGBDCFIKBPM;
+			}
 
 			// // RVA: 0x2024554 Offset: 0x2024554 VA: 0x2024554
-			// public void HJHBGHMNGKL(Difficulty.Type AKNELONELJK) { }
+			public void HJHBGHMNGKL(Difficulty.Type AKNELONELJK)
+			{
+				HNKJDJFFACC_Diff = (int)AKNELONELJK;
+			}
 
 			// // RVA: 0x202455C Offset: 0x202455C VA: 0x202455C
 			// public void HPDBEKAGKOD(bool GIKLNODJKFK) { }
@@ -491,13 +497,20 @@ public class ILDKBCLAFPB
 			// public void ABGEMNAHALF(bool FAGEBAKNAOB) { }
 
 			// // RVA: 0x202456C Offset: 0x202456C VA: 0x202456C
-			// public void BKFOJBAGDHN(bool GNLIFHBDDIL) { }
+			public void BKFOJBAGDHN(bool GNLIFHBDDIL)
+			{
+				PGNNDICEIBG = GNLIFHBDDIL;
+			}
 
 			// // RVA: 0x2024574 Offset: 0x2024574 VA: 0x2024574
 			// public void KJGPOAEGFHK(int EKANGPODCEP, int MCNEIJAOLNO) { }
 
 			// // RVA: 0x2024580 Offset: 0x2024580 VA: 0x2024580
-			// public void ACGKEJKPFIA(bool FAGEBAKNAOB, int GHBPLHBNMBK, OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE) { }
+			public void ACGKEJKPFIA(bool FAGEBAKNAOB, int GHBPLHBNMBK, OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE)
+			{
+				LGMDOEIPLAK[FAGEBAKNAOB ? 1 : 0] = GHBPLHBNMBK;
+				AADOPBAMLJK[FAGEBAKNAOB ? 1 : 0] = (int)HIDHLFCBIDE;
+			}
 		}
 
 		public ILDKBCLAFPB.APLMBKKCNKC_Select.EJBBPMBEKLP BCOIACHCMLA = new ILDKBCLAFPB.APLMBKKCNKC_Select.EJBBPMBEKLP(); // 0x8

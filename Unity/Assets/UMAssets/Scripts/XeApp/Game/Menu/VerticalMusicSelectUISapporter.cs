@@ -203,10 +203,16 @@ namespace XeApp.Game.Menu
 		// public void SetSeries(MusicSelectConsts.SeriesType seriesType) { }
 
 		// // RVA: 0xADB270 Offset: 0xADB270 VA: 0xADB270
-		// public void SetUtaRateIcon(HighScoreRatingRank.Type rank) { }
+		public void SetUtaRateIcon(HighScoreRatingRank.Type rank)
+		{
+			m_utaRate.SetScoreRatingRank(rank);
+		}
 
 		// // RVA: 0xADB400 Offset: 0xADB400 VA: 0xADB400
-		// public void SetUtaRateRating(int ratingValue) { }
+		public void SetUtaRateRating(int ratingValue)
+		{
+			m_utaRate.SetUtaRateRating(ratingValue);
+		}
 
 		// // RVA: 0xADB47C Offset: 0xADB47C VA: 0xADB47C
 		public void SetEnemyData(EJKBKMBJMGL_EnemyData enemyData)

@@ -782,14 +782,27 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEA808 Offset: 0xBEA808 VA: 0xBEA808 Slot: 52
 		protected override void ApplyCommonInfo()
 		{
-			TodoLogger.Log(0, "!!!");
+			m_eventBanner.SetMusicEventRemainPrefix(MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_event_remain_prefix_01"));
+			m_eventBanner.ChangeEventBanner(m_eventId);
+			GHLGEECLCMH data = new GHLGEECLCMH();
+			data.KHEKNNFCAOI(null, null);
+			m_musicSelectUISapporter.SetUtaRateIcon(data.LLNHMMBFPMA);
+			m_musicSelectUISapporter.SetUtaRateRating(data.ECMFBEHEGEH);
+			SetMusicTab(m_musicTab);
 		}
 
 		// RVA: 0xBEAA40 Offset: 0xBEAA40 VA: 0xBEAA40 Slot: 53
 		protected override void ApplyMusicInfo()
 		{
-			TodoLogger.Log(0, "!!!");
-			ApplyMusicInfoNormal();
+			if (listIsEmpty)
+				ApplyMusicInfoNone();
+			else
+			{
+				if (selectMusicData.AJGCPCMLGKO || selectMusicData.BNIAJAKIAJC)
+					ApplyMusicInfoEventEntrance();
+				else
+					ApplyMusicInfoNormal();
+			}
 		}
 
 		// // RVA: 0xBEBC94 Offset: 0xBEBC94 VA: 0xBEBC94
@@ -816,7 +829,28 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEBF44 Offset: 0xBEBF44 VA: 0xBEBF44 Slot: 54
 		protected override void DelayedApplyMusicInfo()
 		{
-			TodoLogger.Log(0, "!!!");
+			ApplyMusic();
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.GJDEHJBAMNH(series);
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.HJHBGHMNGKL(diff);
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.BKFOJBAGDHN(sortOrder == VerticalMusicSelectSortOrder.SortOrder.Small);
+			VerticalMusicSelecChoiceMusicListTab.MusicTab musicTab = m_musicTab;
+			int var3 = 0;
+			OHCAABOMEOF.KGOGMKMBCPP var4 = 0;
+			if (!listIsEmpty)
+			{
+				if(selectMusicData.BNIAJAKIAJC)
+				{
+					var3 = selectMusicData.NOKBLCDMLPP.OOCBPMNHLPM;
+					var4 = selectMusicData.NOKBLCDMLPP.HIDHLFCBIDE;
+				}
+				else
+				{
+					var3 = freeMusicId;
+					var4 = (OHCAABOMEOF.KGOGMKMBCPP)selectMusicData.MNNHHJBBICA;
+				}
+			}
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.ACGKEJKPFIA(musicTab != VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal, var3, var4);
+			StartCoroutine(Co_ChangeBg(BgType.VerticalMusic, GetChangeBgId(selectMusicListData), null, true));
 		}
 
 		// RVA: 0xBEC300 Offset: 0xBEC300 VA: 0xBEC300 Slot: 59
@@ -826,10 +860,29 @@ namespace XeApp.Game.Menu
 		//}
 
 		// // RVA: 0xBEAACC Offset: 0xBEAACC VA: 0xBEAACC
-		// private void ApplyMusicInfoNone() { }
+		private void ApplyMusicInfoNone()
+		{
+			VerticalMusicSelectUISapporter.MusicInfoStyle style = VerticalMusicSelectUISapporter.MusicInfoStyle.NoneFilter;
+			if(!m_isListEmptyByFilter && listIsEmpty)
+			{
+				if (isLine6Mode)
+					style = VerticalMusicSelectUISapporter.MusicInfoStyle.None6Line;
+			}
+			m_difficultyButtonGroup.SetEnable(true);
+			m_musicSelectUISapporter.SetMusicInfoStyle(style);
+			m_musicSelectUISapporter.SetJacketAttr(0, true);
+			m_musicSelectUISapporter.SetWeeklyEventCountEmptyEnable(false);
+			m_musicSelectUISapporter.SetMusicTime(null, false);
+			m_musicSelectUISapporter.SetDetailEventType(false, VerticalMusicSelectMusicDetail.MusicRemainTimeType.Other, true);
+			m_musicDetail.EventCountingEnable(false);
+			SetPlayButton(VerticalMusicSelectPlayButton.PlayButtonType.Play);
+		}
 
 		// // RVA: 0xBEAC3C Offset: 0xBEAC3C VA: 0xBEAC3C
-		// private void ApplyMusicInfoEventEntrance() { }
+		private void ApplyMusicInfoEventEntrance()
+		{
+			TodoLogger.Log(0, "ApplyMusicInfoEventEntrance");
+		}
 
 		// // RVA: 0xBEB120 Offset: 0xBEB120 VA: 0xBEB120
 		private void ApplyMusicInfoNormal()
@@ -972,7 +1025,10 @@ namespace XeApp.Game.Menu
 		//}
 
 		// // RVA: 0xBEAA10 Offset: 0xBEAA10 VA: 0xBEAA10
-		// private void SetMusicTab(VerticalMusicSelecChoiceMusicListTab.MusicTab type) { }
+		private void SetMusicTab(VerticalMusicSelecChoiceMusicListTab.MusicTab type)
+		{
+			m_choiceMusicTab.SetMusicListTab(type);
+		}
 
 		// // RVA: 0xBE97A4 Offset: 0xBE97A4 VA: 0xBE97A4
 		// private void SetMusicTab(bool isEvent) { }

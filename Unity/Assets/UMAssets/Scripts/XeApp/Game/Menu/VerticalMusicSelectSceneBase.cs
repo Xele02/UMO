@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 		protected abstract VerticalMusicDataList currentMusicList { get; } //  Slot: 38
 		// protected abstract List<VerticalMusicDataList> originalMusicList { get; } //  Slot: 39
 		protected IKDICBBFBMI_EventBase m_eventCtrl { get; set; } // 0x4C
-		// protected int m_eventId { get; set; } // 0x54
+		protected int m_eventId { get; set; } // 0x54
 		protected MMOLNAHHDOM m_unitLiveLocalSaveData { get; private set; } // 0x58
 		protected LimitTimeWatcher m_musicTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x5C
 		protected LimitTimeWatcher m_bannerTimeWatcher { get; private set; } = new LimitTimeWatcher(); // 0x60
@@ -89,8 +89,8 @@ namespace XeApp.Game.Menu
 		protected KGCNCBOKCBA.GNENJEHKMHD m_eventStatus { get; set; } // 0xA0
 		protected bool m_isEventTimeLimit { get; set; } // 0xA4
 		// private bool m_muteSelectionSe { get; set; } // 0xA5
-		// private bool m_requestFadeOutBgm { get; set; } // 0xA6
-		// private int m_changeToTrialBgmId { get; set; } // 0xA8
+		private bool m_requestFadeOutBgm { get; set; } // 0xA6
+		private int m_changeToTrialBgmId { get; set; } // 0xA8
 		// private float bgmFadeOutSec { get; } 0xAC8CAC
 		// public bool IsEventCounting { get; } 0xACFD7C
 		// public bool IsEventEndChallengePeriod { get; } 0xACFD90
@@ -473,16 +473,67 @@ namespace XeApp.Game.Menu
 		// private IEnumerator Co_ShowNotice() { }
 
 		// // RVA: 0xACF8C4 Offset: 0xACF8C4 VA: 0xACF8C4
-		// private void OnEndFadeOutBGM() { }
+		private void OnEndFadeOutBGM()
+		{
+			m_requestFadeOutBgm = false;
+			if (m_changeToTrialBgmId < 0)
+				return;
+			SoundManager.Instance.bgmPlayer.Play(m_changeToTrialBgmId, 1);
+			m_changeToTrialBgmId = -1;
+		}
 
 		// // RVA: 0xACF944 Offset: 0xACF944 VA: 0xACF944
-		// protected void FadeOutBGM() { }
+		protected void FadeOutBGM()
+		{
+			m_changeToTrialBgmId = -1;
+			if(SoundManager.Instance.bgmPlayer.isPlaying && !m_requestFadeOutBgm)
+			{
+				m_requestFadeOutBgm = true;
+				SoundManager.Instance.bgmPlayer.FadeOut(0.3f, this.OnEndFadeOutBGM);
+			}
+		}
 
 		// // RVA: 0xACFA5C Offset: 0xACFA5C VA: 0xACFA5C
-		// protected void ChangeTrialMusic(int wavId) { }
+		protected void ChangeTrialMusic(int wavId)
+		{
+			if(!SoundManager.Instance.bgmPlayer.isPlaying)
+			{
+				SoundManager.Instance.bgmPlayer.Play(BgmPlayer.MENU_TRIAL_ID_BASE + wavId);
+				m_changeToTrialBgmId = -1;
+				return;
+			}
+			if(!m_requestFadeOutBgm)
+			{
+				if(SoundManager.Instance.bgmPlayer.currentBgmId != BgmPlayer.MENU_TRIAL_ID_BASE + wavId)
+				{
+					m_changeToTrialBgmId = BgmPlayer.MENU_TRIAL_ID_BASE + wavId;
+					m_requestFadeOutBgm = true;
+					SoundManager.Instance.bgmPlayer.FadeOut(0.3f, this.OnEndFadeOutBGM);
+					return;
+				}
+			}
+			m_changeToTrialBgmId = BgmPlayer.MENU_TRIAL_ID_BASE + wavId;
+		}
 
 		// // RVA: 0xACFC14 Offset: 0xACFC14 VA: 0xACFC14
-		// protected void ApplyMusic() { }
+		protected void ApplyMusic()
+		{
+			if(!listIsEmpty)
+			{
+				if(!selectMusicData.AJGCPCMLGKO && !selectMusicData.BNIAJAKIAJC)
+				{
+					if (!selectMusicData.IFNPBIJEPBO_IsDlded)
+						FadeOutBGM();
+					else
+						ChangeTrialMusic(selectMusicData.KKPAHLMJKIH);
+				}
+				if(selectMusicData.KKPAHLMJKIH > 0)
+				{
+					ChangeTrialMusic(selectMusicData.KKPAHLMJKIH);
+				}
+			}
+			FadeOutBGM();
+		}
 
 		// // RVA: 0xACFD6C Offset: 0xACFD6C VA: 0xACFD6C
 		// protected void OnScrollEnded() { }

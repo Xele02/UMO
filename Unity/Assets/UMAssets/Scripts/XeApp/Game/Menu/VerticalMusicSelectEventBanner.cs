@@ -2,6 +2,7 @@ using UnityEngine;
 using XeApp.Game.Common;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -25,25 +26,59 @@ namespace XeApp.Game.Menu
 		private InOutAnime m_pullDownInOut; // 0x28
 		[SerializeField]
 		private UGUIButton m_pullDownButton; // 0x2C
-		// private string m_musicEventRemainPrefix = ""; // 0x30
-		// private string m_musicEventRemainTime = ""; // 0x34
+		private string m_musicEventRemainPrefix = ""; // 0x30
+		private string m_musicEventRemainTime = ""; // 0x34
 
-		// public Action OnButtonClickListener { private get; set; } // 0x38
+		public Action OnButtonClickListener { private get; set; } // 0x38
 
 		// // RVA: 0xBDD228 Offset: 0xBDD228 VA: 0xBDD228
 		private void Awake()
 		{
-			TodoLogger.Log(0, "!!!");
+			m_uGUIButton.ClearOnClickCallback();
+			m_uGUIButton.AddOnClickCallback(() =>
+			{
+				//0xBDDA8C
+				if (OnButtonClickListener != null)
+					OnButtonClickListener();
+			});
+			m_pullDownButton.ClearOnClickCallback();
+			m_pullDownButton.AddOnClickCallback(() =>
+			{
+				//0xBDDAA0
+				SoundManager.Instance.sePlayerBoot.Play(3);
+				if (m_pullDownInOut.IsEnter)
+					m_pullDownInOut.Leave(false);
+				else
+					m_pullDownInOut.Enter(false);
+			});
 		}
 
 		// // RVA: 0xBDD36C Offset: 0xBDD36C VA: 0xBDD36C
-		// private void ApplyRemainTime() { }
+		private void ApplyRemainTime()
+		{
+			m_limitTime.text = m_musicEventRemainPrefix + m_musicEventRemainTime;
+		}
 
 		// // RVA: 0xBDD3B4 Offset: 0xBDD3B4 VA: 0xBDD3B4
-		// public void ChangeEventBanner(int eventId) { }
+		public void ChangeEventBanner(int eventId)
+		{
+			m_uGUIButton.Hidden = true;
+			if (eventId == 0)
+				return;
+			GameManager.Instance.EventBannerTextureCache.LoadBanner(eventId, (IiconTexture image) =>
+			{
+				//0xBDDB58
+				m_uGUIButton.Hidden = false;
+				image.Set(m_eventBunnerImage);
+			});
+		}
 
 		// // RVA: 0xBDD4F0 Offset: 0xBDD4F0 VA: 0xBDD4F0
-		// public void SetMusicEventRemainPrefix(string text) { }
+		public void SetMusicEventRemainPrefix(string text)
+		{
+			m_musicEventRemainPrefix = text;
+			ApplyRemainTime();
+		}
 
 		// // RVA: 0xBDD4F8 Offset: 0xBDD4F8 VA: 0xBDD4F8
 		// public void SetLimitTimeLabel(string label) { }
@@ -77,17 +112,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xBDD998 Offset: 0xBDD998 VA: 0xBDD998
 		// public void SetEnable(bool isEneble) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F59CC Offset: 0x6F59CC VA: 0x6F59CC
-		// // RVA: 0xBDDA8C Offset: 0xBDDA8C VA: 0xBDDA8C
-		// private void <Awake>b__16_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F59DC Offset: 0x6F59DC VA: 0x6F59DC
-		// // RVA: 0xBDDAA0 Offset: 0xBDDAA0 VA: 0xBDDAA0
-		// private void <Awake>b__16_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F59EC Offset: 0x6F59EC VA: 0x6F59EC
-		// // RVA: 0xBDDB58 Offset: 0xBDDB58 VA: 0xBDDB58
-		// private void <ChangeEventBanner>b__18_0(IiconTexture image) { }
 	}
 }

@@ -35,10 +35,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xADB430 Offset: 0xADB430 VA: 0xADB430
-		// public void SetUtaRateRating(int ratingValue) { }
+		public void SetUtaRateRating(int ratingValue)
+		{
+			m_textUtaRate.text = "" + ratingValue;
+		}
 
 		// // RVA: 0xADB2A0 Offset: 0xADB2A0 VA: 0xADB2A0
-		// public void SetScoreRatingRank(HighScoreRatingRank.Type rank) { }
+		public void SetScoreRatingRank(HighScoreRatingRank.Type rank)
+		{
+			TodoLogger.Log(0, "VerticalMusicSelectUtaRate SetScoreRatingRank");
+		}
 
 		// // RVA: 0xADBEA4 Offset: 0xADBEA4 VA: 0xADBEA4
 		public void Enter()
