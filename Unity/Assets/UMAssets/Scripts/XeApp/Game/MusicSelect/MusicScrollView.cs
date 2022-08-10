@@ -53,7 +53,7 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xC9F68C Offset: 0xC9F68C VA: 0xC9F68C
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("TODO MusicScrollView Awake");
+			TodoLogger.Log(0, "TODO MusicScrollView Awake");
 		}
 
 		//// RVA: 0xC9F840 Offset: 0xC9F840 VA: 0xC9F840
@@ -331,7 +331,7 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xCA08E8 Offset: 0xCA08E8 VA: 0xCA08E8
 		private void LateUpdate()
 		{
-			UnityEngine.Debug.LogError("TODO MusicScrollView LateUpdate");
+			TodoLogger.Log(0, "MusicScrollView LateUpdate");
 			UpdateCenterItem(0.0f, false, true);
 		}
 

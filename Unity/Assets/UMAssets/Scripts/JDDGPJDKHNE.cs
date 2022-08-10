@@ -157,7 +157,7 @@ public class JDDGPJDKHNE
 							PIBMLNOFHHG = PIBMLNOFHHG + 1;
 							if(PIBMLNOFHHG < 30)
 								return;
-							UnityEngine.Debug.LogWarning("Check test");
+							TodoLogger.Log(5, "Check test");
 							if(Utility.GetCurrentUnixTime() - ELFLFGCFPIP < 3)
 							{
 								return;
