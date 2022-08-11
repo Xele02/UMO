@@ -3,6 +3,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -152,6 +153,15 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 			{
 				for(int j = 0; j < renderers[i].sharedMaterials.Length; j++)
 					FixMaterialShader(renderers[i].sharedMaterials[j]);
+			}
+		}
+		TMP_Text[] text = obj.GetComponentsInChildren<TMP_Text>();
+		for(int i = 0; i < text.Length; i++)
+		{
+			if (text[i].fontSharedMaterials != null)
+			{
+				for (int j = 0; j < text[i].fontSharedMaterials.Length; j++)
+					FixMaterialShader(text[i].fontSharedMaterials[j]);
 			}
 		}
 	}
