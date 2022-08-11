@@ -13,7 +13,7 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	// private static readonly int[] NHBMCIHGNIM = new int[2] { 1, 4 }; // 0x0
 	// private static readonly int[] IKMPCCPNGBP = new int[2] { 2, 8 }; // 0x4
 
-	public override OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE { get { return OHCAABOMEOF.KGOGMKMBCPP.ENPJADLIFAB; } } //0x1123014 DKHCGLCNKCD  Slot: 4
+	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB; } } //0x1123014 DKHCGLCNKCD  Slot: 4
 
 	// // RVA: 0x112301C Offset: 0x112301C VA: 0x112301C Slot: 32
 	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0) { }

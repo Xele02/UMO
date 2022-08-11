@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 			{
 				TodoLogger.Log(0, "OnPreSetCanvas IsCanDoUnitHelp");
 			}
-			if(!SelectUnitDanceFocus(out m_pickupFreeMusicId, out m_pickupFreeCategoryId, ref m_isLine6Mode, false, OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL))
+			if(!SelectUnitDanceFocus(out m_pickupFreeMusicId, out m_pickupFreeCategoryId, ref m_isLine6Mode, false, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL))
 			{
 				TodoLogger.Log(0, "OnPreSetCanvas !SelectUnitDanceFocus");
 			}
@@ -110,7 +110,7 @@ namespace XeApp.Game.Menu
 			if(!m_isSimulationLive)
 			{
 				m_musicRate.Enter();
-				if(MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce() && OHCAABOMEOF.BPJMGICFPBJ(m_eventId) == OHCAABOMEOF.KGOGMKMBCPP.CADKONMJEDA/*11*/)
+				if(MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce() && OHCAABOMEOF.BPJMGICFPBJ(m_eventId) == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA/*11*/)
 				{
 					m_isShowBanner = true;
 				}
@@ -221,7 +221,7 @@ namespace XeApp.Game.Menu
 			while(!m_isEndRaidLobbyRequest)
 				yield return null;
 			m_isEndMyRankRequest = false;
-			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP.KEILBOLBDHN/*4*/, 0, () => {
+			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN/*4*/, 0, () => {
 				//0x1685C50
 				m_isEndMyRankRequest = true;
 			}, () => {
@@ -320,7 +320,7 @@ namespace XeApp.Game.Menu
 			Difficulty.Type difficulty = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA.FFACBDAJJJP();
 			FreeCategoryId.Type categoryId = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA.OGJDBPMKJKE();
 			int curMusicId = 0;
-			OHCAABOMEOF.KGOGMKMBCPP val2 = 0;
+			OHCAABOMEOF.KGOGMKMBCPP_EventType val2 = 0;
 			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA.FKJBADIPKHK(
 				categoryId,
 				out curMusicId, out val2
@@ -356,7 +356,7 @@ namespace XeApp.Game.Menu
 			m_eventId = 0;
 			m_eventIndex = 0;
 			m_eventTicketId = 0;
-			NKOBMDPHNGP_EventRaidLobby d = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP.MCGPGMGEPHG/*13*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+			NKOBMDPHNGP_EventRaidLobby d = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG/*13*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 			bool b = false;
 			if(d == null)
 			{

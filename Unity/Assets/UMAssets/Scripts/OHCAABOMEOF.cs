@@ -1,7 +1,7 @@
 
 public class OHCAABOMEOF
 {
-    public enum KGOGMKMBCPP
+    public enum KGOGMKMBCPP_EventType
     {
         HJNNKCMLGFL = 0,
         AOPKACCDKPA = 1,
@@ -26,12 +26,12 @@ public class OHCAABOMEOF
 	// public static int LDGFHMMAFOC(OHCAABOMEOF.KGOGMKMBCPP INDDJNMPONH, int PPFNGGCBJKC) { }
 
 	// // RVA: 0x1DDFF28 Offset: 0x1DDFF28 VA: 0x1DDFF28
-	public static OHCAABOMEOF.KGOGMKMBCPP BPJMGICFPBJ(int PGIIDPEGGPI)
+	public static OHCAABOMEOF.KGOGMKMBCPP_EventType BPJMGICFPBJ(int PGIIDPEGGPI)
     {
         int res = PGIIDPEGGPI / 1000;
         if(PGIIDPEGGPI - 2000 < 1000)
-            res =  (int)OHCAABOMEOF.KGOGMKMBCPP.NKDOEBONGNI;
+            res =  (int)OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI;
 
-        return (OHCAABOMEOF.KGOGMKMBCPP)res;
+        return (OHCAABOMEOF.KGOGMKMBCPP_EventType)res;
     }
 }

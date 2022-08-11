@@ -26,7 +26,7 @@ namespace XeApp.Game.Menu
 		// public int FindIndex(int freeMusicId, bool line6Mode = False, bool simulation = False) { }
 
 		// // RVA: 0x10498EC Offset: 0x10498EC VA: 0x10498EC
-		public int FindIndex(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP gameEventType, bool line6Mode = false, bool simulation = false)
+		public int FindIndex(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType, bool line6Mode = false, bool simulation = false)
 		{
 			return FindIndex((IBJAKJJICBC _) => {
 				//0x104A274

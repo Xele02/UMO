@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 			MusicSelectArgs args = Args as MusicSelectArgs;
 			if(args == null)
 			{
-				m_isLine6Mode = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.LMPCJJKHHPA();
+				m_isLine6Mode = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.LMPCJJKHHPA_Is6LineMode();
 			}
 			else
 			{
@@ -114,10 +114,10 @@ namespace XeApp.Game.Menu
 				//0xAC28E4
 				return true;
 			});
-			bool isEvent = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.OAALFANHEHL();
-			int var1;
-			OHCAABOMEOF.KGOGMKMBCPP var2;
-			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.FKJBADIPKHK(isEvent, out var1, out var2);
+			bool isEvent = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.OAALFANHEHL_IsEventTab();
+			int songId;
+			OHCAABOMEOF.KGOGMKMBCPP_EventType eventType;
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.FKJBADIPKHK(isEvent, out songId, out eventType);
 
 			m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal;
 
@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 			m_simulationButton.SetTicketNum(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.GKKDNOFMJJN_NumTicket);
 			Database.Instance.bonusData.ClearEpisodeBonus();
 			if(m_pickupFreeMusicId > 0)
-				var1 = m_pickupFreeMusicId;
+				songId = m_pickupFreeMusicId;
 			if(IsCanDoUnitHelp())
 			{
 				TodoLogger.Log(0, "IsCanDoUnitHelp");
@@ -232,7 +232,7 @@ namespace XeApp.Game.Menu
 			ApplyCommonInfo();
 			OnChangeFilter();
 			m_isEndMyRankRequest = false;
-			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP.KEILBOLBDHN, 0, () =>
+			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN, 0, () =>
 			{
 				//0xBF0888
 				m_isEndMyRankRequest = true;
@@ -764,7 +764,65 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE8C6C Offset: 0xBE8C6C VA: 0xBE8C6C
 		private void SelectArgsFocus(MusicSelectArgs args)
 		{
-			TodoLogger.Log(0, "SelectArgsFocus");
+			ILDKBCLAFPB.APLMBKKCNKC_Select.GADJIIFFPFI save = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ;
+			m_musicSelectUISapporter.isLine6Mode = save.LMPCJJKHHPA_Is6LineMode();
+			OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType = 0;
+			int songId = 0;
+			save.FKJBADIPKHK(save.OAALFANHEHL_IsEventTab(), out songId, out gameEventType);
+			if(m_pickupFreeMusicId > 0)
+			{
+				songId = m_pickupFreeMusicId;
+			}
+			m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal;
+			MusicSelectConsts.SeriesType series = save.GPAJHMLOPNP_GetSeries();
+			Difficulty.Type diff = save.FFACBDAJJJP_GetDifficulty();
+			if (m_pickupFreeCategoryId == 0)
+			{
+				if(m_pickupFreeMusicId > 0)
+				{
+					series = MusicSelectConsts.SeriesType.All;
+				}
+				if (save.OAALFANHEHL_IsEventTab() && m_pickupFreeMusicId < 1)
+					m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
+			}
+			else
+			{
+				series = MusicSelectConsts.SeriesType.All;
+				if(m_pickupFreeCategoryId == FreeCategoryId.Type.Event)
+				{
+					m_musicSelectUISapporter.isLine6Mode = false;
+					m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
+					series = save.GPAJHMLOPNP_GetSeries();
+				}
+			}
+			SetMusicTab(m_musicTab);
+			int select_index = 0;
+			if(args == null || !args.hasSelection)
+			{
+				if(gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB)
+				{
+					select_index = GetMinigameListNo(songId);
+				}
+				else
+				{
+					select_index = currentMusicList.FindIndex(songId, gameEventType, m_musicSelectUISapporter.isLine6Mode, false);
+					if (select_index < 0)
+						select_index = 0;
+				}
+			}
+			else
+			{
+				TodoLogger.Log(0, "SelectArgsFocus when args");
+			}
+			list_no = select_index;
+			save.HJHBGHMNGKL_SetDifficulty(diff);
+			save.GJDEHJBAMNH_SetSeries(series);
+			save.ABGEMNAHALF_SetIsEventTab(m_musicTab == VerticalMusicSelecChoiceMusicListTab.MusicTab.Event);
+			save.ACGKEJKPFIA(m_musicTab == VerticalMusicSelecChoiceMusicListTab.MusicTab.Event, songId, gameEventType);
+			m_musicSelectUISapporter.SetSeries(series);
+			m_musicSelectUISapporter.SetDiffity(diff);
+			m_musicSelectUISapporter.SetLineTypeToggle(m_musicSelectUISapporter.isLine6Mode);
+			SetMusicTab(m_musicTab);
 		}
 
 		// // RVA: 0xBE97AC Offset: 0xBE97AC VA: 0xBE97AC
@@ -830,26 +888,26 @@ namespace XeApp.Game.Menu
 		protected override void DelayedApplyMusicInfo()
 		{
 			ApplyMusic();
-			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.GJDEHJBAMNH(series);
-			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.HJHBGHMNGKL(diff);
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.GJDEHJBAMNH_SetSeries(series);
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.HJHBGHMNGKL_SetDifficulty(diff);
 			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.BKFOJBAGDHN(sortOrder == VerticalMusicSelectSortOrder.SortOrder.Small);
 			VerticalMusicSelecChoiceMusicListTab.MusicTab musicTab = m_musicTab;
-			int var3 = 0;
-			OHCAABOMEOF.KGOGMKMBCPP var4 = 0;
+			int songId = 0;
+			OHCAABOMEOF.KGOGMKMBCPP_EventType eventType = 0;
 			if (!listIsEmpty)
 			{
 				if(selectMusicData.BNIAJAKIAJC)
 				{
-					var3 = selectMusicData.NOKBLCDMLPP.OOCBPMNHLPM;
-					var4 = selectMusicData.NOKBLCDMLPP.HIDHLFCBIDE;
+					songId = selectMusicData.NOKBLCDMLPP.OOCBPMNHLPM;
+					eventType = selectMusicData.NOKBLCDMLPP.HIDHLFCBIDE;
 				}
 				else
 				{
-					var3 = freeMusicId;
-					var4 = (OHCAABOMEOF.KGOGMKMBCPP)selectMusicData.MNNHHJBBICA;
+					songId = freeMusicId;
+					eventType = (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.MNNHHJBBICA_EventType;
 				}
 			}
-			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.ACGKEJKPFIA(musicTab != VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal, var3, var4);
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.ACGKEJKPFIA(musicTab != VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal, songId, eventType);
 			StartCoroutine(Co_ChangeBg(BgType.VerticalMusic, GetChangeBgId(selectMusicListData), null, true));
 		}
 
@@ -1130,11 +1188,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBED2FC Offset: 0xBED2FC VA: 0xBED2FC
-		private void SetFreeMusicIdByListNo(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP gameEventType)
+		private void SetFreeMusicIdByListNo(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType)
 		{
 			if(!listIsEmpty)
 			{
-				if(gameEventType == OHCAABOMEOF.KGOGMKMBCPP.DAMDPLEBNCB)
+				if(gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB)
 				{
 					list_no = GetMinigameListNo(freeMusicId);
 				}
@@ -1153,7 +1211,7 @@ namespace XeApp.Game.Menu
 		private void OnChangeFilter()
 		{
 			int freeMusicId = 0;
-			OHCAABOMEOF.KGOGMKMBCPP gameEventType = 0;
+			OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType = 0;
 			if(!listIsEmpty)
 			{
 				if(selectMusicData != null)
@@ -1166,7 +1224,7 @@ namespace XeApp.Game.Menu
 					else
 					{
 						freeMusicId = selectMusicData.GHBPLHBNMBK_FreeMusicId;
-						gameEventType = (OHCAABOMEOF.KGOGMKMBCPP)selectMusicData.MNNHHJBBICA;
+						gameEventType = (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.MNNHHJBBICA_EventType;
 					}
 				}
 			}
@@ -1266,7 +1324,7 @@ namespace XeApp.Game.Menu
 			if(filterBit != 0)
 			{
 				FPGEMAIAMBF data = new FPGEMAIAMBF();
-				data.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, (int)difficulty, isLine6Mode, musicData.MNNHHJBBICA);
+				data.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, (int)difficulty, isLine6Mode, musicData.MNNHHJBBICA_EventType);
 				if((filterBit & 1) != 0)
 				{
 					if (PopupSortMenu.IsAllRewardAchievedFilter(data.PDONJHCHBAE))

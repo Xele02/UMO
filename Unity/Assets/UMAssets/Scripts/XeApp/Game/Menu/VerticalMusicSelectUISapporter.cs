@@ -134,10 +134,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADAAF4 Offset: 0xADAAF4 VA: 0xADAAF4
 		public void SetupRewardStat(IBJAKJJICBC musicData)
 		{
-			m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, 0, isLine6Mode, musicData.MNNHHJBBICA);
+			m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, 0, isLine6Mode, musicData.MNNHHJBBICA_EventType);
 			for(int i = 0; i < musicData.MGJKEJHEBPO_DiffInfos.Count; i++)
 			{
-				m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, i, isLine6Mode, musicData.MNNHHJBBICA);
+				m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, i, isLine6Mode, musicData.MNNHHJBBICA_EventType);
 				m_rewardStats[i].Init(m_rewardData);
 			}
 		}
@@ -200,7 +200,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xADB23C Offset: 0xADB23C VA: 0xADB23C
-		// public void SetSeries(MusicSelectConsts.SeriesType seriesType) { }
+		public void SetSeries(MusicSelectConsts.SeriesType seriesType)
+		{
+			m_series = seriesType;
+			m_seriesButtonGroup.SetSeriesButton((int)seriesType);
+		}
 
 		// // RVA: 0xADB270 Offset: 0xADB270 VA: 0xADB270
 		public void SetUtaRateIcon(HighScoreRatingRank.Type rank)

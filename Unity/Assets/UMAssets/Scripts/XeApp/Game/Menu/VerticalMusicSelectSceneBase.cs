@@ -348,7 +348,7 @@ namespace XeApp.Game.Menu
 		{
 			TodoLogger.Log(0, "DecideCurrentMusic");
 			int onStageDivaNum = GetDanceDivaCount();
-			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, 0/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL, false, false, "", 0, 0, -1, 0, 0, onStageDivaNum);
+			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, 0/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, false, false, "", 0, 0, -1, 0, 0, onStageDivaNum);
 			Database.Instance.selectedMusic.SetMusicData(selectMusicData);
 			MenuScene.Instance.Call(TransitionList.Type.SIMULATIONLIVE_SETTING, null, true);
 		}
@@ -647,7 +647,7 @@ namespace XeApp.Game.Menu
 		// protected bool CanDoUnitDanceFocus(bool line6Mode = False) { }
 
 		// // RVA: 0xAC7CC0 Offset: 0xAC7CC0 VA: 0xAC7CC0
-		protected bool SelectUnitDanceFocus(out int freeMusicId, out FreeCategoryId.Type category, ref bool line6Mode, bool isSimulation, OHCAABOMEOF.KGOGMKMBCPP eventCategory)
+		protected bool SelectUnitDanceFocus(out int freeMusicId, out FreeCategoryId.Type category, ref bool line6Mode, bool isSimulation, OHCAABOMEOF.KGOGMKMBCPP_EventType eventCategory)
 		{
 			TodoLogger.Log(0, "SelectUnitDanceFocus");
 			freeMusicId = 0;

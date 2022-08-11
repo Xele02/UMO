@@ -72,7 +72,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xAD9714 Offset: 0xAD9714 VA: 0xAD9714
-		// public void SetSeriesButton(int series) { }
+		public void SetSeriesButton(int series)
+		{
+			m_toggleButtonGroup.SelectGroupButton(series);
+			SetLogo(m_pullDownBtnImage, series);
+			SetPullDownText(series);
+		}
 
 		// // RVA: 0xAD98E4 Offset: 0xAD98E4 VA: 0xAD98E4
 		public void Enter()

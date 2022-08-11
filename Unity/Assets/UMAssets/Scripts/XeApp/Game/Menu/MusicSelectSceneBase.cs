@@ -695,7 +695,7 @@ namespace XeApp.Game.Menu
 		// private bool IsEnableUnitDance(bool line6Mode = False) { }
 
 		// // RVA: 0xF48F34 Offset: 0xF48F34 VA: 0xF48F34
-		protected bool SelectUnitDanceFocus(out int freeMusicId, out FreeCategoryId.Type category, ref bool line6Mode, bool isSimulation, OHCAABOMEOF.KGOGMKMBCPP eventCategory)
+		protected bool SelectUnitDanceFocus(out int freeMusicId, out FreeCategoryId.Type category, ref bool line6Mode, bool isSimulation, OHCAABOMEOF.KGOGMKMBCPP_EventType eventCategory)
 		{
 			TodoLogger.Log(0, "SelectUnitDanceFocus");
 			freeMusicId = 0;

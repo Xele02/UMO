@@ -198,9 +198,9 @@ namespace XeApp.Game.Common
 			public bool isTutorialTwo { get { return tutorial == TutorialGameMode.Type.TutorialTwo; } set {} } // get_isTutorialTwo 0xE9D6D0 set_isTutorialTwo 0xE9D6E4
 			public int EventUniqueId { get; set; } // 0x50
 			public int onStageDivaNum { get; set; } // 0x54
-			public OHCAABOMEOF.KGOGMKMBCPP gameEventType { get; set; } // 0x58
-			public OHCAABOMEOF.KGOGMKMBCPP openEventType { get; set; } // 0x5C
-			public OHCAABOMEOF.KGOGMKMBCPP playEventType { get; set; } // 0x60
+			public OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType { get; set; } // 0x58
+			public OHCAABOMEOF.KGOGMKMBCPP_EventType openEventType { get; set; } // 0x5C
+			public OHCAABOMEOF.KGOGMKMBCPP_EventType playEventType { get; set; } // 0x60
 			public bool isEnergyRequired { get; set; } // 0x64
 
 			// // RVA: 0xE9D4F4 Offset: 0xE9D4F4 VA: 0xE9D4F4
@@ -218,10 +218,10 @@ namespace XeApp.Game.Common
 				mode = 0;
 				IsMvMode = false;
 				IsLine6Mode = false;
-				playEventType = OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL;
-				openEventType = OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL;
-				gameEventType = OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL;
-				openEventType = OHCAABOMEOF.KGOGMKMBCPP.HJNNKCMLGFL;
+				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL;
+				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL;
 				musicId = 0;
 				freeMusicId = 0;
 				mvLimitTime = -1;
@@ -237,8 +237,8 @@ namespace XeApp.Game.Common
 
 			// // RVA: 0xE9DAC8 Offset: 0xE9DAC8 VA: 0xE9DAC8
 			public void SetupInfoByFreeMusic(int freeMusicId, Difficulty.Type difficultyType, bool isEnergyRequired,
-				GameSetupData.MusicInfo.InitFreeMusicParam initParam, OHCAABOMEOF.KGOGMKMBCPP gameEventType = 0, 
-				OHCAABOMEOF.KGOGMKMBCPP openEventType = 0, OHCAABOMEOF.KGOGMKMBCPP playEventType = 0, 
+				GameSetupData.MusicInfo.InitFreeMusicParam initParam, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType = 0, 
+				OHCAABOMEOF.KGOGMKMBCPP_EventType openEventType = 0, OHCAABOMEOF.KGOGMKMBCPP_EventType playEventType = 0, 
 				bool isMvMode = false, bool isLine6Mode = false, string musicLoadText = "", 
 				int overrideEnemyCenterSkillId = 0, int overrideEnemyLiveSkillId = 0, long mvLimitTime = -1, 
 				long limitTime = 0, int eventUniqueId = 0, int onStageDivaNum = 1, long setupTime = 0)

@@ -212,7 +212,14 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA34CC Offset: 0xCA34CC VA: 0xCA34CC
-		//public int FindIndex(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP gameEventType, bool line6Mode, bool simulation) { }
+		public int FindIndex(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType, bool line6Mode, bool simulation)
+		{
+			return FindIndex((VerticalMusicDataList.MusicListData _) =>
+			{
+				//0xCA3C4C
+				return _.ViewMusic.GHBPLHBNMBK_FreeMusicId == freeMusicId && _.ViewMusic.MNNHHJBBICA_EventType == (int)gameEventType;
+			}, line6Mode, simulation);
+		}
 
 		//// RVA: 0xCA3424 Offset: 0xCA3424 VA: 0xCA3424
 		public int FindIndex(Predicate<VerticalMusicDataList.MusicListData> match, bool line6Mode, bool simulation)
