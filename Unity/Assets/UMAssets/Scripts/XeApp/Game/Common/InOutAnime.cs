@@ -293,7 +293,7 @@ namespace XeApp.Game.Common
 			//private float <time>5__3; // 0x38
 			//private float <speed>5__4; // 0x3C
 			//0x1100534
-			if(animTime < 0)
+			if(animTime <= 0)
 			{
 				if (animCallback != null)
 					animCallback(end);
