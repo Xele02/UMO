@@ -145,7 +145,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADAD1C Offset: 0xADAD1C VA: 0xADAD1C
 		public void SetRewardMark(IBJAKJJICBC musicData, bool withoutReward)
 		{
-
+			TodoLogger.Log(0, "SetRewardMark");
 		}
 
 		// // RVA: 0xADAEC4 Offset: 0xADAEC4 VA: 0xADAEC4

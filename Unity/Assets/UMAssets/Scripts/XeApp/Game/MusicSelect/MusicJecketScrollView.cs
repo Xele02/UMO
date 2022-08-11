@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using XeApp.Game.Common;
 
@@ -20,8 +21,8 @@ namespace XeApp.Game.MusicSelect
 		//private List<VerticalMusicDataList.MusicListData> m_musicList; // 0x1C
 
 		public UGUISwapScrollList scrollList { get { return m_scrollList; } } //0xC9B9AC
-		//public Action OnClickCloseButtonListener { private get; set; } // 0x20
-		//public Action<int> OnClickJacketButtonListener { get; set; } // 0x24
+		public Action OnClickCloseButtonListener { private get; set; } // 0x20
+		public Action<int> OnClickJacketButtonListener { get; set; } // 0x24
 
 		//// RVA: 0xC9B9D4 Offset: 0xC9B9D4 VA: 0xC9B9D4
 		//public void PerformClickClose() { }

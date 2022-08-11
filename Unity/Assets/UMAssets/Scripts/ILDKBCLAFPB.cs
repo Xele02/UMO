@@ -493,7 +493,10 @@ public class ILDKBCLAFPB
 			}
 
 			// // RVA: 0x202455C Offset: 0x202455C VA: 0x202455C
-			// public void HPDBEKAGKOD(bool GIKLNODJKFK) { }
+			public void HPDBEKAGKOD_SetIsLine6Mode(bool GIKLNODJKFK)
+			{
+				PMDNOPLFCNH_Is6LineMode = GIKLNODJKFK;
+			}
 
 			// // RVA: 0x2024564 Offset: 0x2024564 VA: 0x2024564
 			public void ABGEMNAHALF_SetIsEventTab(bool FAGEBAKNAOB)

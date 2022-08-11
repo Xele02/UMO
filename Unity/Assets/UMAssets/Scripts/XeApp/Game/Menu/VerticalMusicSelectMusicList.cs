@@ -5,6 +5,7 @@ using TMPro;
 using System.Collections.Generic;
 using System;
 using XeSys;
+using System.Collections;
 
 namespace XeApp.Game.Menu
 {
@@ -23,9 +24,9 @@ namespace XeApp.Game.Menu
 		private TextMeshProUGUI m_emptyText; // 0x18
 		[SerializeField]
 		private Animator m_listUpdateAnim; // 0x1C
-		// private static readonly int hashStateIn = Animator.StringToHash("Base Layer.In"); // 0x0
-		// private static readonly int hashStateOut = Animator.StringToHash("Base Layer.Out"); // 0x4
-		// private static readonly int hashStateClip = Animator.StringToHash("Base Layer.Clip"); // 0x8
+		private static readonly int hashStateIn = Animator.StringToHash("Base Layer.In"); // 0x0
+		private static readonly int hashStateOut = Animator.StringToHash("Base Layer.Out"); // 0x4
+		private static readonly int hashStateClip = Animator.StringToHash("Base Layer.Clip"); // 0x8
 		private List<VerticalMusicDataList.MusicListData> m_musicList = new List<VerticalMusicDataList.MusicListData>(); // 0x20
 		private int m_difficult; // 0x24
 		private bool m_isSingleMusic; // 0x28
@@ -109,7 +110,19 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5C94 Offset: 0x6F5C94 VA: 0x6F5C94
 		// // RVA: 0xBE2130 Offset: 0xBE2130 VA: 0xBE2130
-		// public IEnumerator Co_UpdateAnim(Action outEndCallback) { }
+		public IEnumerator Co_UpdateAnim(Action outEndCallback)
+		{
+			//0xBE493C
+			MenuScene.Instance.InputDisable();
+			m_listUpdateAnim.Play(hashStateOut);
+			yield return new WaitForSeconds(0.3f);
+			outEndCallback();
+			while (m_listUpdateAnim.GetCurrentAnimatorStateInfo(0).fullPathHash == hashStateOut)
+				yield return null;
+			while (m_listUpdateAnim.GetCurrentAnimatorStateInfo(0).fullPathHash == hashStateIn)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+		}
 
 		// // RVA: 0xBE21F8 Offset: 0xBE21F8 VA: 0xBE21F8
 		public void Enter()

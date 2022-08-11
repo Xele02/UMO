@@ -2,11 +2,16 @@ using XeSys.Gfx;
 using UnityEngine.UI;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 namespace XeApp.Game.Common
 {
 	public class SwapScrollList : LayoutUGUIScriptBase
 	{
+		public class SwapScrollUpdateItem : UnityEvent<int, SwapScrollListContent>
+		{
+		}
+
 		[SerializeField]
 		private ScrollRect m_scrollRect; // 0x14
 		[SerializeField]
@@ -21,7 +26,7 @@ namespace XeApp.Game.Common
 		private int m_columnCount = 1; // 0x30
 		[SerializeField]
 		private bool m_isVertical; // 0x34
-		//private SwapScrollList.SwapScrollUpdateItem m_scrollUpdateItem = new SwapScrollList.SwapScrollUpdateItem(); // 0x38
+		private SwapScrollList.SwapScrollUpdateItem m_scrollUpdateItem = new SwapScrollList.SwapScrollUpdateItem(); // 0x38
 		//private int m_itemCount; // 0x3C
 		//private int m_listTopPosition; // 0x40
 		//private float m_diffPrePosition; // 0x44
@@ -33,7 +38,7 @@ namespace XeApp.Game.Common
 
 		//public List<SwapScrollListContent> ScrollObjects { get; } 0x1CCB004
 		//public int ListTopPosition { get; } 0x1CCB00C
-		//public SwapScrollList.SwapScrollUpdateItem OnUpdateItem { get; } 0x1CCB014
+		public SwapScrollList.SwapScrollUpdateItem OnUpdateItem { get { return m_scrollUpdateItem; } } //0x1CCB014
 		//public RectTransform ScrollContent { get; } 0x1CCB01C
 		public int ScrollObjectCount { get { return m_rowCount * m_columnCount; } } //0x1CCB048
 		//public bool IsEnableScroll { get; } 0x1CCB058

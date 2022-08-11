@@ -545,7 +545,10 @@ namespace XeApp.Game.Menu
 		// protected void OnClickRankingButton(IBJAKJJICBC musicData) { }
 
 		// // RVA: 0xAD03FC Offset: 0xAD03FC VA: 0xAD03FC
-		// protected void OnClickRewardButton(Action openRewardWindowFunc) { }
+		protected void OnClickRewardButton(Action openRewardWindowFunc)
+		{
+			TodoLogger.Log(0, "OnClickRewardButton");
+		}
 
 		// // RVA: 0xAD0524 Offset: 0xAD0524 VA: 0xAD0524
 		// protected void OnClickEventRewardButton() { }
@@ -591,7 +594,10 @@ namespace XeApp.Game.Menu
 		// protected void OpenLockMusicInfoWindow() { }
 
 		// // RVA: 0xAD1F18 Offset: 0xAD1F18 VA: 0xAD1F18
-		// protected void OpenRewardWindow() { }
+		protected void OpenRewardWindow()
+		{
+			TodoLogger.Log(0, "OpenRewardWindow");
+		}
 
 		// // RVA: 0xAD08F4 Offset: 0xAD08F4 VA: 0xAD08F4
 		// protected void OpenMusicDetailWindow(VerticalMusicDataList.MusicListData musicData, Difficulty.Type difficulty) { }

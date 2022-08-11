@@ -19,7 +19,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 		public string OPFGFINHFCE_EventName; // 0x20
 		public string KLMPFGOCBHC_EventDesc; // 0x24
 		public int GOAPADIHAHG; // 0x28
-		public OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE; // 0x2C
+		public OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventCategory; // 0x2C
 
 		// RVA: 0x12204C0 Offset: 0x12204C0 VA: 0x12204C0
 		//public long KJILFMNCDLC() { }
@@ -27,7 +27,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	
 	public class DLLJPHLOICN : GFKEJIHPAOM
 	{
-		public int OOCBPMNHLPM; // 0x30
+		public int OOCBPMNHLPM_MusicId; // 0x30
 	}
 
 	public class ANJLFFPBAEF_DifficultyInfo

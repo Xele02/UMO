@@ -203,17 +203,91 @@ namespace XeApp.Game.Menu
 			m_musicList.OnUpdateClip = () =>
 			{
 				//0xBF00FC
-				TodoLogger.Log(0, "OnUpdateClip");
+				DelayedApplyMusicInfo();
 			};
 			m_musicList.MusicScrollView.CenterItem.OnRewardButtonClickListener = () =>
 			{
 				//0xBF010C
-				TodoLogger.Log(0, "OnRewardButtonClickListener");
+				OnClickRewardButton(this.OpenRewardWindow);
 			};
 			m_musicList.MusicScrollView.CenterItem.OnMusicInfoButtonClickListener = () =>
 			{
 				//0xBF01A0
 				TodoLogger.Log(0, "OnMusicInfoButtonClickListener");
+			};
+			m_musicList.MusicScrollView.CenterItem.OnEnemyInfoButtonClickListener = () =>
+			{
+				//0xBF01F0
+				TodoLogger.Log(0, "OnEnemyInfoButtonClickListener");
+			};
+			m_musicList.MusicScrollView.CenterItem.OnRankingButtonClickListener = () =>
+			{
+				//0xBF0240
+				TodoLogger.Log(0, "OnRankingButtonClickListener");
+			};
+			m_musicList.MusicScrollView.OnScrollStartEvent.RemoveAllListeners();
+			m_musicList.MusicScrollView.OnScrollStartEvent.AddListener(() =>
+			{
+				//0xBF02C4
+				TodoLogger.Log(0, "OnScrollStartEvent");
+			});
+			m_musicList.MusicScrollView.OnScrollEndEvent.RemoveAllListeners();
+			m_musicList.MusicScrollView.OnScrollEndEvent.AddListener(() =>
+			{
+				//0xBF02C8
+				TodoLogger.Log(0, "OnScrollEndEvent");
+			});
+			m_musicDetail.OnUnitButtonClickListener = (int index) =>
+			{
+				//0xBF02CC
+				SoundManager.Instance.sePlayerBoot.Play(3);
+				m_musicSelectUISapporter.SetUnitButton(index, selectMusicData);
+			};
+			m_musicDetail.OnMusicBookMarkButtonClickListener = () =>
+			{
+				//0xBF02D0
+				TodoLogger.Log(0, "OnMusicBookMarkButtonClickListener");
+			};
+			m_musicDetail.OnJacketButtonClickListener = () =>
+			{
+				//0xBF036C
+				TodoLogger.Log(0, "OnJacketButtonClickListener");
+			};
+			m_musicDetail.OnEventDetailClickListener = () =>
+			{
+				//0xBF0370
+				TodoLogger.Log(0, "OnEventDetailClickListener");
+			};
+			m_musicDetail.OnEventRewardClickListener = () =>
+			{
+				//0xBF0378
+				TodoLogger.Log(0, "OnEventRewardClickListener");
+			};
+			m_difficultyButtonGroup.OnButtonClickListener = (int index) =>
+			{
+				//0xBF0380
+				TodoLogger.Log(0, "m_difficultyButtonGroup OnButtonClickListener");
+			};
+			m_filterButton.OnClickButtonListener = () =>
+			{
+				//0xBF0390
+				TodoLogger.Log(0, "m_filterButton OnClickButtonListener");
+			};
+			m_seriesButtonGroup.OnButtonClickListener = (int index) =>
+			{
+				//0xBF0394
+				TodoLogger.Log(0, "m_seriesButtonGroup OnButtonClickListener");
+			};
+			m_line6Button.OnClickButtonListener = () =>
+			{
+				//0xBF0404
+				m_musicList.MusicScrollView.SetPosition(list_no);
+				OnClickLine6Button();
+			};
+			m_simulationButton.OnClickButtonListener = (bool isSimulation) =>
+			{
+				//0xBF046C
+				TodoLogger.Log(0, "m_simulationButton OnClickButtonListener");
 			};
 			m_playButton.OnClicButtonListener = (bool isSimulation) =>
 			{
@@ -221,13 +295,42 @@ namespace XeApp.Game.Menu
 				m_musicList.MusicScrollView.SetPosition(list_no);
 				OnClickPlayButton(isSimulation);
 			};
-			TodoLogger.Log(0, "Co_OnPostSetCanvas listener !!!");
-			m_musicDetail.OnUnitButtonClickListener = (int index) =>
+			m_utaRate.onClickButton = () =>
 			{
-				//0xBF02CC
-				SoundManager.Instance.sePlayerBoot.Play(3);
-				m_musicSelectUISapporter.SetUnitButton(index, selectMusicData);
+				//0xBF0554
+				TodoLogger.Log(0, "m_utaRate onClickButton");
 			};
+			m_eventBanner.OnButtonClickListener = () =>
+			{
+				//0xBF05C0
+				TodoLogger.Log(0, "m_eventBanner OnButtonClickListener");
+			};
+			m_choiceMusicTab.OnButtonClickListener = (bool index) =>
+			{
+				//0xBF0628
+				TodoLogger.Log(0, "m_choiceMusicTab OnButtonClickListener");
+			};
+			m_orderButton.OnClickButtonListener = () =>
+			{
+				//0xBF0698
+				TodoLogger.Log(0, "m_orderButton OnClickButtonListener");
+			};
+			m_jacketScroll.OnClickJacketButtonListener = (int freeMusicId) =>
+			{
+				//0xBF06B8
+				TodoLogger.Log(0, "m_jacketScroll OnClickJacketButtonListener");
+			};
+			m_jacketScroll.OnClickCloseButtonListener = () =>
+			{
+				//0xBF06BC
+				TodoLogger.Log(0, "m_jacketScroll OnClickCloseButtonListener");
+			};
+			m_jacketScroll.scrollList.OnUpdateItem.RemoveAllListeners();
+			m_jacketScroll.scrollList.OnUpdateItem.AddListener((int index, SwapScrollListContent content) =>
+			{
+				//0xBF06C0
+				TodoLogger.Log(0, "m_jacketScroll scrollList OnUpdateItem");
+			});
 			m_musicList.MusicScrollView.ScrollEnable(true);
 			ApplyCommonInfo();
 			OnChangeFilter();
@@ -898,8 +1001,8 @@ namespace XeApp.Game.Menu
 			{
 				if(selectMusicData.BNIAJAKIAJC)
 				{
-					songId = selectMusicData.NOKBLCDMLPP.OOCBPMNHLPM;
-					eventType = selectMusicData.NOKBLCDMLPP.HIDHLFCBIDE;
+					songId = selectMusicData.NOKBLCDMLPP.OOCBPMNHLPM_MusicId;
+					eventType = selectMusicData.NOKBLCDMLPP.HIDHLFCBIDE_EventCategory;
 				}
 				else
 				{
@@ -1074,7 +1177,36 @@ namespace XeApp.Game.Menu
 		// private void OnScrollEndEvent() { }
 
 		// // RVA: 0xBECBEC Offset: 0xBECBEC VA: 0xBECBEC
-		// private void OnClickLine6Button() { }
+		private void OnClickLine6Button()
+		{
+			SoundManager.Instance.sePlayerBoot.Play(3);
+			int selectFreeMusicId = 0;
+			OHCAABOMEOF.KGOGMKMBCPP_EventType selectEventCategory = 0;
+			if(selectMusicData != null)
+			{
+				if(selectMusicData.BNIAJAKIAJC)
+				{
+					selectFreeMusicId = selectMusicData.NOKBLCDMLPP.OOCBPMNHLPM_MusicId;
+					selectEventCategory = selectMusicData.NOKBLCDMLPP.HIDHLFCBIDE_EventCategory;
+				}
+				else
+				{
+					selectFreeMusicId = selectMusicData.GHBPLHBNMBK_FreeMusicId;
+					selectEventCategory = (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.MNNHHJBBICA_EventType;
+				}
+			}
+			m_musicSelectUISapporter.isLine6Mode = !m_musicSelectUISapporter.isLine6Mode;
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.HPDBEKAGKOD_SetIsLine6Mode(m_musicSelectUISapporter.isLine6Mode);
+			GameManager.Instance.localSave.HJMKBCFJOOH();
+			StartCoroutine(m_musicList.Co_UpdateAnim(() =>
+			{
+				//0xAC29B8
+				SetFreeMusicIdByListNo(selectFreeMusicId, selectEventCategory);
+				m_musicSelectUISapporter.SetDiffity(diff);
+				m_musicSelectUISapporter.SetLineTypeToggle(isLine6Mode);
+				OnChangeFilter();
+			}));
+		}
 
 		// // RVA: 0xBECFD4 Offset: 0xBECFD4 VA: 0xBECFD4 Slot: 56
 		//protected override void OnApplyUnitLiveButtonSetting(bool isUnit)
@@ -1218,8 +1350,8 @@ namespace XeApp.Game.Menu
 				{
 					if(selectMusicData.BNIAJAKIAJC)
 					{
-						freeMusicId = selectMusicData.NOKBLCDMLPP.OOCBPMNHLPM;
-						gameEventType = selectMusicData.NOKBLCDMLPP.HIDHLFCBIDE;
+						freeMusicId = selectMusicData.NOKBLCDMLPP.OOCBPMNHLPM_MusicId;
+						gameEventType = selectMusicData.NOKBLCDMLPP.HIDHLFCBIDE_EventCategory;
 					}
 					else
 					{
@@ -1398,114 +1530,6 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x6F61F4 Offset: 0x6F61F4 VA: 0x6F61F4
 		// // RVA: 0xBF00B8 Offset: 0xBF00B8 VA: 0xBF00B8
 		// private void <Co_OnPreSetCanvas>b__63_2() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6204 Offset: 0x6F6204 VA: 0x6F6204
-		// // RVA: 0xBF00C4 Offset: 0xBF00C4 VA: 0xBF00C4
-		// private void <Co_OnPostSetCanvas>b__70_0(int index) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6214 Offset: 0x6F6214 VA: 0x6F6214
-		// // RVA: 0xBF00FC Offset: 0xBF00FC VA: 0xBF00FC
-		// private void <Co_OnPostSetCanvas>b__70_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6224 Offset: 0x6F6224 VA: 0x6F6224
-		// // RVA: 0xBF010C Offset: 0xBF010C VA: 0xBF010C
-		// private void <Co_OnPostSetCanvas>b__70_2() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6234 Offset: 0x6F6234 VA: 0x6F6234
-		// // RVA: 0xBF01A0 Offset: 0xBF01A0 VA: 0xBF01A0
-		// private void <Co_OnPostSetCanvas>b__70_3() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6244 Offset: 0x6F6244 VA: 0x6F6244
-		// // RVA: 0xBF01F0 Offset: 0xBF01F0 VA: 0xBF01F0
-		// private void <Co_OnPostSetCanvas>b__70_4() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6254 Offset: 0x6F6254 VA: 0x6F6254
-		// // RVA: 0xBF0240 Offset: 0xBF0240 VA: 0xBF0240
-		// private void <Co_OnPostSetCanvas>b__70_5() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6264 Offset: 0x6F6264 VA: 0x6F6264
-		// // RVA: 0xBF02C4 Offset: 0xBF02C4 VA: 0xBF02C4
-		// private void <Co_OnPostSetCanvas>b__70_6() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6274 Offset: 0x6F6274 VA: 0x6F6274
-		// // RVA: 0xBF02C8 Offset: 0xBF02C8 VA: 0xBF02C8
-		// private void <Co_OnPostSetCanvas>b__70_7() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6294 Offset: 0x6F6294 VA: 0x6F6294
-		// // RVA: 0xBF02D0 Offset: 0xBF02D0 VA: 0xBF02D0
-		// private void <Co_OnPostSetCanvas>b__70_9() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F62A4 Offset: 0x6F62A4 VA: 0x6F62A4
-		// // RVA: 0xBF036C Offset: 0xBF036C VA: 0xBF036C
-		// private void <Co_OnPostSetCanvas>b__70_10() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F62B4 Offset: 0x6F62B4 VA: 0x6F62B4
-		// // RVA: 0xBF0370 Offset: 0xBF0370 VA: 0xBF0370
-		// private void <Co_OnPostSetCanvas>b__70_11() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F62C4 Offset: 0x6F62C4 VA: 0x6F62C4
-		// // RVA: 0xBF0378 Offset: 0xBF0378 VA: 0xBF0378
-		// private void <Co_OnPostSetCanvas>b__70_12() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F62D4 Offset: 0x6F62D4 VA: 0x6F62D4
-		// // RVA: 0xBF0380 Offset: 0xBF0380 VA: 0xBF0380
-		// private void <Co_OnPostSetCanvas>b__70_13(int index) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F62E4 Offset: 0x6F62E4 VA: 0x6F62E4
-		// // RVA: 0xBF0390 Offset: 0xBF0390 VA: 0xBF0390
-		// private void <Co_OnPostSetCanvas>b__70_14() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F62F4 Offset: 0x6F62F4 VA: 0x6F62F4
-		// // RVA: 0xBF0394 Offset: 0xBF0394 VA: 0xBF0394
-		// private void <Co_OnPostSetCanvas>b__70_15(int index) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6304 Offset: 0x6F6304 VA: 0x6F6304
-		// // RVA: 0xBF0404 Offset: 0xBF0404 VA: 0xBF0404
-		// private void <Co_OnPostSetCanvas>b__70_16() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6314 Offset: 0x6F6314 VA: 0x6F6314
-		// // RVA: 0xBF046C Offset: 0xBF046C VA: 0xBF046C
-		// private void <Co_OnPostSetCanvas>b__70_17(bool isSimulation) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6324 Offset: 0x6F6324 VA: 0x6F6324
-		// // RVA: 0xBF04E0 Offset: 0xBF04E0 VA: 0xBF04E0
-		// private void <Co_OnPostSetCanvas>b__70_18(bool isSimulation) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6334 Offset: 0x6F6334 VA: 0x6F6334
-		// // RVA: 0xBF0554 Offset: 0xBF0554 VA: 0xBF0554
-		// private void <Co_OnPostSetCanvas>b__70_19() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6344 Offset: 0x6F6344 VA: 0x6F6344
-		// // RVA: 0xBF05C0 Offset: 0xBF05C0 VA: 0xBF05C0
-		// private void <Co_OnPostSetCanvas>b__70_20() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6354 Offset: 0x6F6354 VA: 0x6F6354
-		// // RVA: 0xBF0628 Offset: 0xBF0628 VA: 0xBF0628
-		// private void <Co_OnPostSetCanvas>b__70_21(bool index) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6364 Offset: 0x6F6364 VA: 0x6F6364
-		// // RVA: 0xBF0698 Offset: 0xBF0698 VA: 0xBF0698
-		// private void <Co_OnPostSetCanvas>b__70_22() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6374 Offset: 0x6F6374 VA: 0x6F6374
-		// // RVA: 0xBF06B8 Offset: 0xBF06B8 VA: 0xBF06B8
-		// private void <Co_OnPostSetCanvas>b__70_23(int freeMusicId) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6384 Offset: 0x6F6384 VA: 0x6F6384
-		// // RVA: 0xBF06BC Offset: 0xBF06BC VA: 0xBF06BC
-		// private void <Co_OnPostSetCanvas>b__70_24() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F6394 Offset: 0x6F6394 VA: 0x6F6394
-		// // RVA: 0xBF06C0 Offset: 0xBF06C0 VA: 0xBF06C0
-		// private void <Co_OnPostSetCanvas>b__70_25(int index, SwapScrollListContent content) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F63A4 Offset: 0x6F63A4 VA: 0x6F63A4
-		// // RVA: 0xBF0888 Offset: 0xBF0888 VA: 0xBF0888
-		// private void <Co_OnPostSetCanvas>b__70_26() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F63B4 Offset: 0x6F63B4 VA: 0x6F63B4
-		// // RVA: 0xBF0894 Offset: 0xBF0894 VA: 0xBF0894
-		// private void <Co_OnPostSetCanvas>b__70_27() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6F63C4 Offset: 0x6F63C4 VA: 0x6F63C4
 		// // RVA: 0xBF08A4 Offset: 0xBF08A4 VA: 0xBF08A4
