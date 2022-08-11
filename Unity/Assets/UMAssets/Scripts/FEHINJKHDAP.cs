@@ -1,7 +1,73 @@
 
+using System.Collections.Generic;
+
 public class FEHINJKHDAP { }
 public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_SaveBlock
 {
+	public class ALGDNCMJHGN
+	{
+		public int ENOBDCFHELD; // 0x8
+		public int FCEJCHGLFGN; // 0xC
+		public long AADPAJOLEEF; // 0x10
+		public long IOJOBGHPLIE; // 0x18
+		public long DLEEMCAPOBP; // 0x20
+		public long JPNMMOEPAEM; // 0x28
+		public sbyte MLLPMIHMMFL; // 0x30
+		public List<CEBFFLDKAEC> KNIFCANOHOC = new List<CEBFFLDKAEC>(5); // 0x34
+		public List<CEBFFLDKAEC> NLKEBAOBJCM = new List<CEBFFLDKAEC>(5); // 0x38
+		public List<CEBFFLDKAEC> JNLKJCDFFMM = new List<CEBFFLDKAEC>(5); // 0x3C
+		public List<CEBFFLDKAEC> EMHFDJEFIHG = new List<CEBFFLDKAEC>(5); // 0x40
+		public List<sbyte> LAMCCNAKIOJ = new List<sbyte>(5); // 0x44
+		public List<byte> HNDPLCDMOJF = new List<byte>(5); // 0x48
+		public List<byte> JDIDBMEMKBC = new List<byte>(5); // 0x4C
+		public List<byte> AGGFHNMMGMN = new List<byte>(5); // 0x50
+		public List<CEBFFLDKAEC> HAFFCOKJHBN = new List<CEBFFLDKAEC>(5); // 0x54
+		public List<CEBFFLDKAEC> DNIGPFPHJAK = new List<CEBFFLDKAEC>(5); // 0x58
+		public List<CEBFFLDKAEC> DPPCFFFNBGA = new List<CEBFFLDKAEC>(5); // 0x5C
+		public List<CEBFFLDKAEC> FHFKOGIPAEH = new List<CEBFFLDKAEC>(5); // 0x60
+		public List<sbyte> EEECMKPLPNL = new List<sbyte>(5); // 0x64
+		public List<byte> LGBKKDOLOFP = new List<byte>(5); // 0x68
+		public List<byte> DKIIINIEKHP = new List<byte>(5); // 0x6C
+		public List<byte> JNNIOJIDNKM = new List<byte>(5); // 0x70
+		public int ODEHJGPDFCL; // 0x74
+		public int PDNJGJNGPNJ; // 0x78
+		public int ANDJNPEINGI; // 0x7C
+		public int ABFNAEKEGOB; // 0x80
+		public List<int> BKJPGJJAODB; // 0x84
+		private int JDFAEOFJLAD; // 0x88
+		public string MPCAGEPEJJJ; // 0x8C
+		public long EGBOHDFBAPB; // 0x90
+		public bool IMFBCJOIJKJ; // 0x98
+		public int INLNJOGHLJE; // 0x9C
+		public int EHDDADDKMFI; // 0xA0
+
+		//public int ECLDABOLHLM { get; set; } 0x14CCB58 HPPGLGDLIMM 0x14CCB68 ELFABLKMCMK
+		//public bool HPLMECLKFID { get; set; } 0x14CCB78 DCHHABKOMFP 0x14CCB8C EGGIBMLGCOJ
+		//public long DNBFMLBNAEE { get; set; } 0x14CCBBC JKHIIAEMMDE 0x14CCBD4 PFFKLBLEPKB
+		//public long NFIOKIBPJCJ { get; set; } 0x14CCC58 NGIDBCKCAMO 0x14CCC70 AEHIIPBDNGE
+
+		//// RVA: 0x14CCC98 Offset: 0x14CCC98 VA: 0x14CCC98
+		//public void LHPDDGIJKNB() { }
+
+		//// RVA: 0x14CD67C Offset: 0x14CD67C VA: 0x14CD67C
+		//public void ODDIHGPONFL(FEHINJKHDAP.ALGDNCMJHGN GPBJHKLFCEP) { }
+
+		//// RVA: 0x14CE1E4 Offset: 0x14CE1E4 VA: 0x14CE1E4
+		//public bool AGBOGBEOFME(FEHINJKHDAP.ALGDNCMJHGN OIKJFMGEICL) { }
+
+		//// RVA: 0x14CEE58 Offset: 0x14CEE58 VA: 0x14CEE58
+		//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, FEHINJKHDAP.ALGDNCMJHGN OHMCIEMIKCE, bool EFOEPDLNLJG) { }
+
+		//// RVA: 0x14D43F4 Offset: 0x14D43F4 VA: 0x14D43F4
+		//public void IOONPJENLOJ(JDDGGJCGOPA.EHFMCGGNPIJ GPBJHKLFCEP) { }
+
+		//// RVA: 0x14D4F08 Offset: 0x14D4F08 VA: 0x14D4F08
+		public JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo KJAFPNIFPGP()
+		{
+			TodoLogger.Log(0, "KJAFPNIFPGP");
+			return new JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo();
+		}
+	}
 	// private const int ECFEMKGFDCE = 2;
 	// public const int ICHFGGBPCBJ = 6;
 	// public const int KKBHHBGCNJO = 5;

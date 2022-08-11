@@ -54,12 +54,12 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_SaveBlock
 		public List<int> FHFKOGIPAEH { get { return CMMHMFIFNLA; } } //0x1C2F958 MLIKAHINHNO
 		public List<int> DNIGPFPHJAK { get { return GCHPCDLBHKB; } } //0x1C2F9FC JLJFCGBAMLC
 		public List<sbyte> EEECMKPLPNL { get { return CGEJAJFJGIN; } } //0x1C2FC8C LLOKGFIBMPI
-		// public List<byte> HNDPLCDMOJF { get; } 0x1C2F55C BAKANCFDLGK
-		// public List<byte> JDIDBMEMKBC { get; } 0x1C2F600 PJDDKJOCNJM
-		// public List<byte> AGGFHNMMGMN { get; } 0x1C2F6A4 JKNMIFJDOPC
-		// public List<byte> LGBKKDOLOFP { get; } 0x1C2FAA0 GIDMLJIGLFN
-		// public List<byte> DKIIINIEKHP { get; } 0x1C2FB44 ILMBCJFPDOA
-		// public List<byte> JNNIOJIDNKM { get; } 0x1C2FBE8 BDHDINPFBGG
+		public List<byte> HNDPLCDMOJF { get { return CCPAMBMMDAO; } } //0x1C2F55C BAKANCFDLGK
+		public List<byte> JDIDBMEMKBC { get { return BFIJHDIABDA; } } //0x1C2F600 PJDDKJOCNJM
+		public List<byte> AGGFHNMMGMN { get { return BOCKBJAEHKN; } } //0x1C2F6A4 JKNMIFJDOPC
+		public List<byte> LGBKKDOLOFP { get { return LHFMGNBHEIB; } } //0x1C2FAA0 GIDMLJIGLFN
+		public List<byte> DKIIINIEKHP { get { return BMMPNMDNDDM; } } //0x1C2FB44 ILMBCJFPDOA
+		public List<byte> JNNIOJIDNKM { get { return IGCADAEBODO } } //0x1C2FBE8 BDHDINPFBGG
 		// public int NCDHBLHHMDA { get; set; } 0x1C2FCAC JPCDGGKEBNB 0x1C2FCC0 LNOFGLLEGFM
 		// public long CAPAIICHDMH { get; set; } 0x1C2FCD4 LCCDEIHKPIM 0x1C266EC MBKNHNFNPFF
 		// public int FECIGAOOFBE { get; set; } 0x1C2FCE8 OKGBDDPLHJG 0x1C26704 HOFKGENEFJL

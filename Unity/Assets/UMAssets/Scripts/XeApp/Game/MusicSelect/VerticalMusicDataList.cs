@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
+using XeSys;
 
 namespace XeApp.Game.MusicSelect
 {
@@ -28,7 +29,7 @@ namespace XeApp.Game.MusicSelect
 				public string musicTimeStr; // 0x2C
 				public string musicName; // 0x30
 				public string vocalName; // 0x34
-				// public int musicTime; // 0x38
+				public int musicTime; // 0x38
 			}
 			private List<MusicRewardStat> m_rewardStat = new List<MusicRewardStat>(); // 0xC
 
@@ -44,7 +45,7 @@ namespace XeApp.Game.MusicSelect
 			public string MusicTimeStr { get; } // 0x24
 			public string MusicName { get; } // 0x28
 			public string VocalName { get; } // 0x2C
-			//	public int MusicTime { get; } // 0x30
+			public int MusicTime { get; } // 0x30
 			public MusicSelectConsts.MusicTimeType TimeType { get; } = MusicSelectConsts.MusicTimeType.Max; // 0x34
 			public MusicSelectConsts.EventType EventType { get; } = MusicSelectConsts.EventType.Max; // 0x38
 			public MusicSelectConsts.MusicType MusicType { get; } = MusicSelectConsts.MusicType.Max; // 0x3C
@@ -70,6 +71,7 @@ namespace XeApp.Game.MusicSelect
 				IsNew = initParam.isNew;
 				EventPeriod = initParam.eventPeriod;
 				VocalName = initParam.vocalName;
+				MusicTime = initParam.musicTime;
 			}
 		}
 
@@ -81,12 +83,132 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xCA0F60 Offset: 0xCA0F60 VA: 0xCA0F60
 		public static List<VerticalMusicDataList.MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI_EventBase eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId)
 		{
-			TodoLogger.Log(0, "CreateMusicListData !!!");
-
-			List<VerticalMusicDataList.MusicListData> res =  new List<VerticalMusicDataList.MusicListData>();
+			string musicTimeFormat = MessageManager.Instance.GetBank("menu").GetMessageByLabel("vertical_music_select_music_time");
+			List<VerticalMusicDataList.MusicListData> res = new List<VerticalMusicDataList.MusicListData>();
+			FPGEMAIAMBF b = new FPGEMAIAMBF();
 			for(int i = 0; i < viewMusicDataList.Count; i++)
 			{
-				MusicListData.InitParam initparam;
+				List<MusicRewardStat> rewardList = new List<MusicRewardStat>();
+				IBJAKJJICBC musicData = viewMusicDataList[i];
+				int val = 0;
+				for(int j = 0; j < musicData.MGJKEJHEBPO_DiffInfos.Count; j++)
+				{
+					MusicRewardStat reward = new MusicRewardStat();
+					b.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, j, line6Mode, musicData.MNNHHJBBICA_EventType);
+					reward.Init(b);
+					rewardList.Add(reward);
+					if(val < musicData.MGJKEJHEBPO_DiffInfos[i].HHMLMKAEJBJ_Score.MCMIPODICAN_length)
+					{
+						val = musicData.MGJKEJHEBPO_DiffInfos[i].HHMLMKAEJBJ_Score.MCMIPODICAN_length;
+					}
+				}
+				if(musicData.AJGCPCMLGKO)
+				{
+					int val2 = 5;
+					if(((int)musicData.AFCMIOIGAJN.HIDHLFCBIDE_EventCategory - 1) < 14)
+					{
+						int[] d = { 0, 5, 0, 5, 2, 0, 5, 5, 5, 0, 0, 5, 5, 0 };
+						val2 = d[((int)musicData.AFCMIOIGAJN.HIDHLFCBIDE_EventCategory - 1)];
+					}
+					int val3 = 1;
+					if(lastStoryFreeMusicId == 0)
+					{
+						val3 = 0;
+					}
+					else
+					{
+						val3 = musicData.GHBPLHBNMBK_FreeMusicId == lastStoryFreeMusicId;
+					}
+					MusicListData.InitParam initparam;
+					initparam.viewMusic = ; // 0x0
+					initparam.rewardStat = rewardList; // 0x4
+					initparam.aprilFoolEndTime = ; // 0x8
+					initparam.isOpen = ; // 0x10
+					initparam.isNew = ; // 0x11
+					initparam.isUnlockable = ; // 0x12
+					initparam.isSimulation = ; // 0x13
+					initparam.isHighLevel = ; // 0x14
+					initparam.timeType = ; // 0x18
+					initparam.musicType = ; // 0x1C
+					initparam.eventType = ; // 0x20
+					initparam.boostType = ; // 0x24
+					initparam.eventPeriod = ; // 0x28
+					initparam.musicTimeStr = ; // 0x2C
+					initparam.musicName = ; // 0x30
+					initparam.vocalName = ; // 0x34
+					initparam.musicTime = ; // 0x38
+					MusicListData data = new MusicListData(initparam);
+					res.Add(data);
+					/*
+					CONCAT460(piVar8, 
+					CONCAT456(in_stack_fffffee0,
+					ZEXT5256(
+						CONCAT448(local_50, 
+						CONCAT444(local_ac,				null
+						CONCAT440(local_a8,				null
+						CONCAT436(local_b4,				null
+						CONCAT432(local_98,				GetEventPeriodString
+						CONCAT428(local_94,				1
+						CONCAT424(local_8c,				val2
+						CONCAT420(iVar25,				0
+						CONCAT416(local_b0,				2
+						CONCAT412(local_b8,				0
+						CONCAT48(in_stack_fffffeb0,
+							(uint)bVar2 << 0x18 |		musicData.EHNGOGBJMGL
+							(uint)bVar1 << 8 |			musicData.LDGOHPAPBMM
+							local_88 |					1
+							uVar13 << 0x10;				val3
+						CONCAT44(local_74,				 0
+							seconds)					0
+							*/
+				}
+				else if(musicData.BNIAJAKIAJC)
+				{
+					TodoLogger.Log(0, "CreateMusicListData event 2");
+				}
+				else
+				{
+					KEODKEGFDLD freeMusicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[musicData.GHBPLHBNMBK_FreeMusicId - 1];
+					EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicData.GHBPLHBNMBK_FreeMusicId, freeMusicInfo.DLAEJOBELBH_Id);
+					string musicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName;
+					string vocalName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).vocalName;
+					int local74 = 0;
+					int seconds = 0;
+					int days, hours, minutes;
+					MusicSelectSceneBase.ExtractRemainTime(val / 1000.0f, out days, out hours, out minutes, out seconds);
+					string remainingTimeStr = string.Format(musicTimeFormat, minutes, seconds);
+					bool localb0 = val < musicTypeThreshold;
+					int eventData = musicData.MNNHHJBBICA_EventType;
+					if(eventData < 12)
+					{
+						//L582
+					}
+					/*
+					CONCAT460(piVar8, 
+					CONCAT456(in_stack_fffffee0,
+					ZEXT5256(
+						CONCAT448(local_50, 
+						CONCAT444(local_ac,				vocalName
+						CONCAT440(local_a8,				musicName
+						CONCAT436(local_b4,				remainingTimeStr
+						CONCAT432(local_98,				
+						CONCAT428(local_94,				
+						CONCAT424(local_8c,				
+						CONCAT420(iVar25,				
+						CONCAT416(local_b0,				
+						CONCAT412(local_b8,				
+						CONCAT48(in_stack_fffffeb0,
+							(uint)bVar2 << 0x18 |		
+							(uint)bVar1 << 8 |			
+							local_88 |					
+							uVar13 << 0x10;			
+						CONCAT44(local_74,				 
+							seconds)					
+							*/
+				}
+
+				TodoLogger.Log(0, "CreateMusicListData !!!");
+				/*MusicListData.InitParam initparam;
 				int id = viewMusicDataList[i].GHBPLHBNMBK_FreeMusicId;
 				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[id - 1];
 				EONOEHOKBEB_Music a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(id, musicInfo.DLAEJOBELBH_Id);
@@ -107,7 +229,7 @@ namespace XeApp.Game.MusicSelect
 				initparam.vocalName = "Vocal";
 				initparam.eventPeriod = "";
 				MusicListData data = new MusicListData(initparam);
-				res.Add(data);
+				res.Add(data);*/
 			}
 			return res;
 		}

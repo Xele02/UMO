@@ -80,7 +80,11 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 	// protected override void LMGMELPOGMH(int LHJCOPMMIGO) { }
 
 	// // RVA: 0x15EE24C Offset: 0x15EE24C VA: 0x15EE24C
-	// public FEHINJKHDAP.ALGDNCMJHGN JIPPHOKGLIH(bool HOENAFAJMGI = False) { }
+	public FEHINJKHDAP_EventScore.ALGDNCMJHGN JIPPHOKGLIH(bool HOENAFAJMGI = false)
+	{
+		TodoLogger.Log(0, "EventScore JIPPHOKGLIH");
+		return new FEHINJKHDAP_EventScore.ALGDNCMJHGN();
+	}
 
 	// // RVA: 0x15EE4E8 Offset: 0x15EE4E8 VA: 0x15EE4E8 Slot: 33
 	// public override bool MPMKJNJGFEF() { }
