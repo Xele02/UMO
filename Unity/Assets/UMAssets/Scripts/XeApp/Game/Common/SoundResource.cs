@@ -214,7 +214,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x139AEFC Offset: 0x139AEFC VA: 0x139AEFC
-		// public static bool IsInstalledCueSheet(string cueSheetName) { }
+		public static bool IsInstalledCueSheet(string cueSheetName)
+		{
+			if(!IsBuiltinSheet(cueSheetName))
+			{
+				string acb = GetAcbPath(cueSheetName);
+				string awb = GetAwbPath(cueSheetName);
+				return FileSystemProxy.FileExists(acb) && FileSystemProxy.FileExists(awb);
+			}
+			return true;
+		}
 
 		// // RVA: 0x138FB98 Offset: 0x138FB98 VA: 0x138FB98
 		public static bool InstallCueSheet(string cueSheetName)

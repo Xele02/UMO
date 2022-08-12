@@ -167,10 +167,9 @@ namespace XeApp.Game.Common
 		protected void ChangeVolume(float sec, float targetVol, Action onEnd)
 		{
 			if (fadeCoroutine != null)
-			{
 				StopCoroutine(fadeCoroutine);
+			if (changeVolume != null)
 				StopCoroutine(changeVolume);
-			}
 			fadeCoroutine = StartCoroutine(Co_ChangeVolume(sec, targetVol, onEnd));
 		}
 

@@ -525,11 +525,11 @@ namespace XeApp.Game.Menu
 					if (!selectMusicData.IFNPBIJEPBO_IsDlded)
 						FadeOutBGM();
 					else
-						ChangeTrialMusic(selectMusicData.KKPAHLMJKIH);
+						ChangeTrialMusic(selectMusicData.KKPAHLMJKIH_WavId);
 				}
-				if(selectMusicData.KKPAHLMJKIH > 0)
+				if(selectMusicData.KKPAHLMJKIH_WavId > 0)
 				{
-					ChangeTrialMusic(selectMusicData.KKPAHLMJKIH);
+					ChangeTrialMusic(selectMusicData.KKPAHLMJKIH_WavId);
 				}
 			}
 			FadeOutBGM();
