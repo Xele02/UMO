@@ -76,7 +76,11 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_SaveBlock
 		// public bool DMANHOPOBMP { get; set; } 0x1C24440 FCMKOPJKOOP 0x1C2679C ONBGMANKJKK
 
 		// // RVA: 0x1C2FE28 Offset: 0x1C2FE28 VA: 0x1C2FE28
-		// public bool FKBPJCDBDAG(long LKCCMBEOLLA) { }
+		public bool FKBPJCDBDAG(long LKCCMBEOLLA)
+		{
+			TodoLogger.Log(0, "FKBPJCDBDAG");
+			return false;
+		}
 
 		// // RVA: 0x1C242CC Offset: 0x1C242CC VA: 0x1C242CC
 		// public bool PDEHFBKMIHB() { }

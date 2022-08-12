@@ -1,6 +1,8 @@
 
+using System;
 using System.Collections.Generic;
 using XeApp.Game.Common;
+using XeSys;
 
 public class IBJAKJJICBC : EEDKAACNBBG
 {
@@ -71,7 +73,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	private sbyte MEPLEIEDBGE = JFOFMKBJBBE_False; // 0x4A
 	private int EGCMPELNLKP = FBGGEFFJJHB_Key; // 0x4C
 	private int CEMGANMAOML_EventTypeCrypted = FBGGEFFJJHB_Key; // 0x50
-	// private int NENONMAGGBP = FBGGEFFJJHB; // 0x54
+	private int NENONMAGGBP = FBGGEFFJJHB_Key; // 0x54
 	// private int MJLNDHPNFHE = FBGGEFFJJHB; // 0x58
 	private int PPDEOMLMEKC = FBGGEFFJJHB_Key; // 0x5C
 	private sbyte IKGGKOFGMNC; // 0x60
@@ -435,22 +437,98 @@ public class IBJAKJJICBC : EEDKAACNBBG
 				if(type != OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA)
 					type = 0;
 			}
-        	TodoLogger.Log(0, "FKDIMODKKJD (generate song list)");
-			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas.Count; i++)
+			//LAB_0121a02c:
+			TodoLogger.Log(0, "finish FKDIMODKKJD (generate song list)");
+			//event? = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.CLLPBOPLICM_EventWeekDay.PPIBJECKCEF(JHNMKKNEENE);
+			DateTime time = Utility.GetLocalDateTime(JHNMKKNEENE_Date);
+			for(int i = 0; i < numSongs; i++)
 			{
 				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[i];
 				if (musicInfo.PPEGAKEIEGM == 2)
 				{
-					IBJAKJJICBC songInfo = new IBJAKJJICBC();
-					songInfo.KHEKNNFCAOI(musicInfo.GHBPLHBNMBK, false, 0, 0, 0, true, false, false);
-					// Fill as needed
-					res.Add(songInfo);
+					if (musicInfo.GBNOALJPOBM || !JCOJKAHFADL)
+					{
+						if (DEPGBBJMFED_Serie != -1)
+						{
+							if(musicInfo.DEPGBBJMFED_CategoryId != DEPGBBJMFED_Serie)
+							{
+								continue;
+							}
+						}
+						bool b = false;
+						int val = 0;
+						bool b2 = false;
+						if(DEPGBBJMFED_Serie == 5 && /*event.FLPDCNBLOKL(time.??, musicInfo.GHBPLHBNMBK)*/ false)
+						{
+							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_MusicInfo[i].FKBPJCDBDAG(JHNMKKNEENE_Date);
+							//Setup vars
+							//L311
+							b = true;
+							val = 0;//event.KKNJPEMGEBF + event.IIJFLONJAFL;
+							b2 = false;//event.KKNJPEMGEBF > 0;
+						}
+						else
+						{
+							if(!OJEBNBLHPNP)
+							{
+								// set vars
+								b = false;
+								val = 0;
+								if (!LBHPMGDNPHK(musicInfo.GHBPLHBNMBK, DEPGBBJMFED_Serie))
+									continue;
+							}
+						}
+						IBJAKJJICBC songInfo = new IBJAKJJICBC();
+						songInfo.KHEKNNFCAOI(musicInfo.GHBPLHBNMBK, b, time.Millisecond/*??*/, val, JHNMKKNEENE_Date, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.FPGDAPAILAK == 2, false, JCOJKAHFADL);
+						songInfo.NENONMAGGBP = type ^ 0xPPP; // todo real prop
+						songInfo.GDLNCHCPMCK_HasBoost = b2;
+						if(EHBPHDPHPKF)
+						{
+							if(songInfo.ACKPOCNHOOP)
+							{
+								res.Add(songInfo);
+								return res;
+							}
+						}
+						else
+						{
+							res.Add(songInfo);
+						}
+					}
 				}
 			}
-
+			if(DEPGBBJMFED_Serie != 5)
+			{
+				res.Sort((IBJAKJJICBC HKICMNAACDA, IBJAKJJICBC BNKHBCBJBKI) =>
+				{
+					//0x1220084
+				});
+				return res;
+			}
+			if (!JNBMBDFKEOI)
+				return res;
+			List<IBJAKJJICBC> list = LIENJMIJMIE(JHNMKKNEENE_Date, JCOJKAHFADL);
+			for(int i = 0; i < list.Count; i++)
+			{
+				res.Add(list[i]);
+			}
+			return res;
 		}
 
-        TodoLogger.Log(0, "FKDIMODKKJD (generate song list)");
+		if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false) != null)
+		{
+			TodoLogger.Log(0, "FKDIMODKKJD (generate song list event)");
+		}
+		if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI) != null)
+		{
+			TodoLogger.Log(0, "FKDIMODKKJD (generate song list event)");
+		}
+		List<IKDICBBFBMI_EventBase> list2 = DJPFFHLCCNL(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB, JHNMKKNEENE_Date, KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI);
+		for(int i = 0; i < list2.Count; i++)
+		{
+			TodoLogger.Log(0, "FKDIMODKKJD (generate song list event)");
+		}
+
         return res;
     }
 
