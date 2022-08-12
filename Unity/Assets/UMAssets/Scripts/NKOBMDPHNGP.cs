@@ -23,7 +23,7 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 	// private static StringBuilder NIGIOKLMJIH = new StringBuilder(32); // 0x0
 	// private List<int> OKGDAODFFBF = new List<int>(16); // 0x118
 
-	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG; } } //0xC1E3C0 DKHCGLCNKCD  Slot: 4
+	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG; } } //0xC1E3C0 DKHCGLCNKCD  Slot: 4
 	// public bool IFGKKLPOONJ { get; }
 	// public bool LLJAIPIDANN { get; }
 	// public bool IPLBEGCODDC { get; }
@@ -80,7 +80,10 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 	// protected override void KKFLDCBHFJA(long JHNMKKNEENE) { }
 
 	// // RVA: 0xC1EFB4 Offset: 0xC1EFB4 VA: 0xC1EFB4 Slot: 46
-	// protected override void PJDGDNJNCNM(long JHNMKKNEENE) { }
+	protected override void PJDGDNJNCNM(long JHNMKKNEENE)
+	{
+		TodoLogger.Log(0, "PJDGDNJNCNM");
+	}
 
 	// // RVA: 0xC1F014 Offset: 0xC1F014 VA: 0xC1F014 Slot: 28
 	// public override long FBGDBGKNKOD() { }

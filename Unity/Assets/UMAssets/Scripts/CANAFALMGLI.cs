@@ -9,7 +9,7 @@ public class CANAFALMGLI_EventPresentCampaign : IKDICBBFBMI_EventBase
 	// public static string INBEMNCFEJP = ""; // 0x4
 	// public List<int> AILDCKKOLJG = new List<int>(); // 0xE8
 
-	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA; } }// 0x18F4084 DKHCGLCNKCD  Slot: 4
+	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA; } }// 0x18F4084 DKHCGLCNKCD  Slot: 4
 
 	// RVA: 0x18F408C Offset: 0x18F408C VA: 0x18F408C
 	public CANAFALMGLI_EventPresentCampaign(string OPFGFINHFCE) : base(OPFGFINHFCE)
@@ -33,7 +33,10 @@ public class CANAFALMGLI_EventPresentCampaign : IKDICBBFBMI_EventBase
 	// protected override void KKFLDCBHFJA(long JHNMKKNEENE) { }
 
 	// // RVA: 0x18F4AE0 Offset: 0x18F4AE0 VA: 0x18F4AE0 Slot: 46
-	// protected override void PJDGDNJNCNM(long JHNMKKNEENE) { }
+	protected override void PJDGDNJNCNM(long JHNMKKNEENE)
+	{
+		TodoLogger.Log(0, "PJDGDNJNCNM");
+	}
 
 	// // RVA: 0x18F4D50 Offset: 0x18F4D50 VA: 0x18F4D50 Slot: 71
 	// public override int BAEPGOAMBDK(string LJNAKDMILMC, int MNCOAGOKNAO) { }

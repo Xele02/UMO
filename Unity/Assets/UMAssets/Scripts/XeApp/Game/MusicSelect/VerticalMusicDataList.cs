@@ -90,81 +90,103 @@ namespace XeApp.Game.MusicSelect
 			{
 				List<MusicRewardStat> rewardList = new List<MusicRewardStat>();
 				IBJAKJJICBC musicData = viewMusicDataList[i];
-				int val = 0;
+				int musicTime = 0;
 				for(int j = 0; j < musicData.MGJKEJHEBPO_DiffInfos.Count; j++)
 				{
 					MusicRewardStat reward = new MusicRewardStat();
 					b.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, j, line6Mode, musicData.MNNHHJBBICA_EventType);
 					reward.Init(b);
 					rewardList.Add(reward);
-					if(val < musicData.MGJKEJHEBPO_DiffInfos[i].HHMLMKAEJBJ_Score.MCMIPODICAN_length)
+					if(musicTime < musicData.MGJKEJHEBPO_DiffInfos[j].HHMLMKAEJBJ_Score.MCMIPODICAN_length)
 					{
-						val = musicData.MGJKEJHEBPO_DiffInfos[i].HHMLMKAEJBJ_Score.MCMIPODICAN_length;
+						musicTime = musicData.MGJKEJHEBPO_DiffInfos[j].HHMLMKAEJBJ_Score.MCMIPODICAN_length;
 					}
 				}
 				if(musicData.AJGCPCMLGKO)
 				{
-					int val2 = 5;
+					MusicSelectConsts.EventType eventType = MusicSelectConsts.EventType.Max;
 					if(((int)musicData.AFCMIOIGAJN.HIDHLFCBIDE_EventCategory - 1) < 14)
 					{
-						int[] d = { 0, 5, 0, 5, 2, 0, 5, 5, 5, 0, 0, 5, 5, 0 };
-						val2 = d[((int)musicData.AFCMIOIGAJN.HIDHLFCBIDE_EventCategory - 1)];
+						MusicSelectConsts.EventType[] d = 
+						{
+							MusicSelectConsts.EventType.Special,
+							MusicSelectConsts.EventType.Max,
+							MusicSelectConsts.EventType.Special,
+							MusicSelectConsts.EventType.Max,
+							MusicSelectConsts.EventType.Weekly,
+							MusicSelectConsts.EventType.Special,
+							MusicSelectConsts.EventType.Max,
+							MusicSelectConsts.EventType.Max,
+							MusicSelectConsts.EventType.Max,
+							MusicSelectConsts.EventType.Special,
+							MusicSelectConsts.EventType.Special,
+							MusicSelectConsts.EventType.Max,
+							MusicSelectConsts.EventType.Max,
+							MusicSelectConsts.EventType.Special
+						};
+						eventType = d[((int)musicData.AFCMIOIGAJN.HIDHLFCBIDE_EventCategory - 1)];
 					}
-					int val3 = 1;
+					bool isOpen = true;
 					if(lastStoryFreeMusicId == 0)
 					{
-						val3 = 0;
+						isOpen = false;
 					}
 					else
 					{
-						val3 = musicData.GHBPLHBNMBK_FreeMusicId == lastStoryFreeMusicId;
+						isOpen = musicData.GHBPLHBNMBK_FreeMusicId == lastStoryFreeMusicId;
 					}
 					MusicListData.InitParam initparam;
-					initparam.viewMusic = ; // 0x0
-					initparam.rewardStat = rewardList; // 0x4
-					initparam.aprilFoolEndTime = ; // 0x8
-					initparam.isOpen = ; // 0x10
-					initparam.isNew = ; // 0x11
-					initparam.isUnlockable = ; // 0x12
-					initparam.isSimulation = ; // 0x13
-					initparam.isHighLevel = ; // 0x14
-					initparam.timeType = ; // 0x18
-					initparam.musicType = ; // 0x1C
-					initparam.eventType = ; // 0x20
-					initparam.boostType = ; // 0x24
-					initparam.eventPeriod = ; // 0x28
-					initparam.musicTimeStr = ; // 0x2C
-					initparam.musicName = ; // 0x30
-					initparam.vocalName = ; // 0x34
-					initparam.musicTime = ; // 0x38
+					initparam.viewMusic = musicData; // 0x0									public IBJAKJJICBC viewMusic; // 0x0
+					initparam.rewardStat = rewardList; // 0x4						public List<MusicRewardStat> rewardStat; // 0x4
+					initparam.aprilFoolEndTime = 0; // 0x8							public long aprilFoolEndTime; // 0x8
+					initparam.isOpen = isOpen; // 0x10									public bool isOpen; // 0x10
+					initparam.isNew = true; // 0x11										public bool isNew; // 0x11
+					initparam.isUnlockable = musicData.LDGOHPAPBMM; // 0x12								public bool isUnlockable; // 0x12
+					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13
+					initparam.isHighLevel = false; // 0x14								public bool isHighLevel; // 0x14
+					initparam.timeType = MusicSelectConsts.MusicTimeType.Max; // 0x18									public MusicSelectConsts.MusicTimeType timeType; // 0x18
+					initparam.musicType = MusicSelectConsts.MusicType.None; // 0x1C									public MusicSelectConsts.MusicType musicType; // 0x1C
+					initparam.eventType = eventType; // 0x20									public MusicSelectConsts.EventType eventType; // 0x20
+					initparam.boostType = MusicSelectConsts.PlayBoostType.Max; // 0x24									public MusicSelectConsts.PlayBoostType boostType; // 0x24
+					initparam.eventPeriod = GetEventPeriodString(musicData.AFCMIOIGAJN.KINJOEIAHFK_OpenTime, musicData.AFCMIOIGAJN.PCCFAKEOBIC_CloseTime); // 0x28								public string eventPeriod; // 0x28
+					initparam.musicTimeStr = null; // 0x2C								public string musicTimeStr; // 0x2C
+					initparam.musicName = null; // 0x30									public string musicName; // 0x30
+					initparam.vocalName = null; // 0x34									public string vocalName; // 0x34
+					initparam.musicTime = musicTime; // 0x38									public int musicTime; // 0x38
 					MusicListData data = new MusicListData(initparam);
 					res.Add(data);
-					/*
-					CONCAT460(piVar8, 
-					CONCAT456(in_stack_fffffee0,
-					ZEXT5256(
-						CONCAT448(local_50, 
-						CONCAT444(local_ac,				null
-						CONCAT440(local_a8,				null
-						CONCAT436(local_b4,				null
-						CONCAT432(local_98,				GetEventPeriodString
-						CONCAT428(local_94,				1
-						CONCAT424(local_8c,				val2
-						CONCAT420(iVar25,				0
-						CONCAT416(local_b0,				2
-						CONCAT412(local_b8,				0
-						CONCAT48(in_stack_fffffeb0,
-							(uint)bVar2 << 0x18 |		musicData.EHNGOGBJMGL
-							(uint)bVar1 << 8 |			musicData.LDGOHPAPBMM
-							local_88 |					1
-							uVar13 << 0x10;				val3
-						CONCAT44(local_74,				 0
-							seconds)					0
-							*/
 				}
 				else if(musicData.BNIAJAKIAJC)
 				{
-					TodoLogger.Log(0, "CreateMusicListData event 2");
+					bool isOpen = true;
+					if (lastStoryFreeMusicId == 0)
+					{
+						isOpen = false;
+					}
+					else
+					{
+						isOpen = musicData.GHBPLHBNMBK_FreeMusicId == lastStoryFreeMusicId;
+					}
+					MusicListData.InitParam initparam;
+					initparam.viewMusic = musicData; // 0x0									public IBJAKJJICBC viewMusic; // 0x0
+					initparam.rewardStat = rewardList; // 0x4						public List<MusicRewardStat> rewardStat; // 0x4
+					initparam.aprilFoolEndTime = 0; // 0x8							public long aprilFoolEndTime; // 0x8
+					initparam.isOpen = isOpen; // 0x10									public bool isOpen; // 0x10
+					initparam.isNew = true; // 0x11										public bool isNew; // 0x11
+					initparam.isUnlockable = musicData.LDGOHPAPBMM; // 0x12								public bool isUnlockable; // 0x12
+					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13
+					initparam.isHighLevel = false; // 0x14								public bool isHighLevel; // 0x14
+					initparam.timeType = MusicSelectConsts.MusicTimeType.Max; // 0x18									public MusicSelectConsts.MusicTimeType timeType; // 0x18
+					initparam.musicType = MusicSelectConsts.MusicType.None; // 0x1C									public MusicSelectConsts.MusicType musicType; // 0x1C
+					initparam.eventType = MusicSelectConsts.EventType.Special; // 0x20									public MusicSelectConsts.EventType eventType; // 0x20
+					initparam.boostType = MusicSelectConsts.PlayBoostType.Max; // 0x24									public MusicSelectConsts.PlayBoostType boostType; // 0x24
+					initparam.eventPeriod = GetEventPeriodString(musicData.NOKBLCDMLPP.KINJOEIAHFK_OpenTime, musicData.NOKBLCDMLPP.PCCFAKEOBIC_CloseTime); // 0x28								public string eventPeriod; // 0x28
+					initparam.musicTimeStr = null; // 0x2C								public string musicTimeStr; // 0x2C
+					initparam.musicName = null; // 0x30									public string musicName; // 0x30
+					initparam.vocalName = null; // 0x34									public string vocalName; // 0x34
+					initparam.musicTime = musicTime; // 0x38									public int musicTime; // 0x38
+					MusicListData data = new MusicListData(initparam);
+					res.Add(data);
 				}
 				else
 				{
@@ -172,73 +194,184 @@ namespace XeApp.Game.MusicSelect
 					EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicData.GHBPLHBNMBK_FreeMusicId, freeMusicInfo.DLAEJOBELBH_Id);
 					string musicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName;
 					string vocalName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).vocalName;
-					int local74 = 0;
 					int seconds = 0;
 					int days, hours, minutes;
-					MusicSelectSceneBase.ExtractRemainTime(val / 1000.0f, out days, out hours, out minutes, out seconds);
+					MusicSelectSceneBase.ExtractRemainTime(musicTime / 1000, out days, out hours, out minutes, out seconds);
 					string remainingTimeStr = string.Format(musicTimeFormat, minutes, seconds);
-					bool localb0 = val < musicTypeThreshold;
+					MusicSelectConsts.MusicTimeType timeType = musicTime < musicTypeThreshold ? MusicSelectConsts.MusicTimeType.Short : MusicSelectConsts.MusicTimeType.Long;
 					int eventData = musicData.MNNHHJBBICA_EventType;
-					if(eventData < 12)
+					MusicSelectConsts.EventType eventType ;
+					if (eventData < 12)
 					{
-						//L582
+						if (((1 << eventData & 0xff) & 0xc4a) == 0) // 110001001010
+						{
+							if (((1 << eventData & 0xff) & 0x394) == 0) // 001110010100
+							{
+								if (eventData != 5)
+								{
+									eventType = MusicSelectConsts.EventType.Max;
+									if (eventData == 14)
+										eventType = MusicSelectConsts.EventType.Special;
+								}
+								else
+								{
+									eventType = MusicSelectConsts.EventType.Weekly;
+								}
+							}
+							else
+								eventType = MusicSelectConsts.EventType.Max;
+						}
+						else eventType = MusicSelectConsts.EventType.Special;
 					}
-					/*
-					CONCAT460(piVar8, 
-					CONCAT456(in_stack_fffffee0,
-					ZEXT5256(
-						CONCAT448(local_50, 
-						CONCAT444(local_ac,				vocalName
-						CONCAT440(local_a8,				musicName
-						CONCAT436(local_b4,				remainingTimeStr
-						CONCAT432(local_98,				
-						CONCAT428(local_94,				
-						CONCAT424(local_8c,				
-						CONCAT420(iVar25,				
-						CONCAT416(local_b0,				
-						CONCAT412(local_b8,				
-						CONCAT48(in_stack_fffffeb0,
-							(uint)bVar2 << 0x18 |		
-							(uint)bVar1 << 8 |			
-							local_88 |					
-							uVar13 << 0x10;			
-						CONCAT44(local_74,				 
-							seconds)					
-							*/
+					else
+					{
+						eventType = MusicSelectConsts.EventType.Max;
+						if (eventData == 14)
+							eventType = MusicSelectConsts.EventType.Special;
+					}
+					if (musicData.LEBDMNIGOJB)
+						eventType = MusicSelectConsts.EventType.ScoreRanking;
+					MusicSelectConsts.PlayBoostType boostType = MusicSelectConsts.PlayBoostType.Max;
+					if(musicData.LHONOILACFL_IsWeeklyEvent)
+					{
+						eventType = MusicSelectConsts.EventType.Weekly;
+						boostType = !musicData.GDLNCHCPMCK_HasBoost ? MusicSelectConsts.PlayBoostType.Max : MusicSelectConsts.PlayBoostType.Boost;
+					}
+					string eventPeriodString = null;
+					if (eventController == null || !musicData.EHNGOGBJMGL)
+					{
+					}
+					else
+					{
+						eventPeriodString = GetEventPeriodString(eventController.GLIMIGNNGGB, eventController.DPJCPDKALGI);
+						if (musicData.AHAEGEHKONB_GetOtherTimeLeft() < 0)
+						{
+							continue;
+						}
+					}
+					//LAB_00ca1d50
+					if (musicData.KCKBOIDCPCK > 0)
+					{
+						eventData = musicData.KCKBOIDCPCK - 1; // ?not sure still event data
+						if (eventData < 6 && ((0x2f >> (eventData & 0xff)) & 1) != 0)
+						{
+							MusicSelectConsts.EventType[] _ = 
+							{
+								MusicSelectConsts.EventType.Weekly,
+								MusicSelectConsts.EventType.Special,
+								MusicSelectConsts.EventType.Special,
+								MusicSelectConsts.EventType.Birthday,
+								MusicSelectConsts.EventType.Weekly,
+								MusicSelectConsts.EventType.Special
+							};
+							eventType = _[eventData];
+						}
+					}
+					long aprilFoolEndTime = 0;
+					bool isHighLevel;
+					if (!musicData.FGKMJHKLGLD)
+					{
+						isHighLevel = false;
+					}
+					else
+					{
+						isHighLevel = false;
+						List<IKDICBBFBMI_EventBase> list = GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI(), KGCNCBOKCBA.GNENJEHKMHD.KPMNPGKKFJG);
+						for (int j = 0; j < list.Count; j++)
+						{
+							AMLGMLNGMFB_EventAprilFool eventApril = list[j] as AMLGMLNGMFB_EventAprilFool;
+							if (musicData.EKANGPODCEP == eventApril.PGIIDPEGGPI)
+							{
+								TodoLogger.Log(0, "CreateMusicDataList april event");
+								/*KCGOMAFPGDD.EIEGCBJHGCP dd = eventApril.KOBMFPACBMB().Find((KCGOMAFPGDD.EIEGCBJHGCP x) =>
+								{
+									//0xCA3DB4
+									return x.MPLGPBNJDJB == musicData.GHBPLHBNMBK_FreeMusicId;
+								});
+								aprilFoolEndTime = eventApril.DPJCPDKALGI;
+								if (dd.FDBNFFNFOND != 0)
+								{
+									aprilFoolEndTime = dd.FDBNFFNFOND;
+								}
+								if (eventApril.HLPEBPOPCPI() != 0 && dd.PPFNGGCBJKC == eventApril.HLPEBPOPCPI())
+								{
+									isHighLevel = true;
+								}*/
+							}
+						}
+					}
+					bool isNew = true;
+					if (musicData.DEPGBBJMFED_CategoryId != 5)
+					{
+						if (musicData.HAMPEDFMIAD_HasOnlyMultiDivaMode())
+						{
+							isNew = IBJAKJJICBC.LBHPMGDNPHK(musicData.GHBPLHBNMBK_FreeMusicId, musicData.DEPGBBJMFED_CategoryId) &&
+								(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.KIECDDFNCAN_Level);
+						}
+					}
+					MusicSelectConsts.MusicType musicType = (MusicSelectConsts.MusicType)(musicData.EEFLOOBOAGF % 10);
+					if (musicType > MusicSelectConsts.MusicType.Another)
+						musicType = MusicSelectConsts.MusicType.None;
+					bool isOpen;
+					if (lastStoryFreeMusicId == 0)
+					{
+						isOpen = false;
+					}
+					else
+					{
+						isOpen = musicData.GHBPLHBNMBK_FreeMusicId == lastStoryFreeMusicId;
+					}
+					MusicListData.InitParam initparam;
+					initparam.viewMusic = musicData; // 0x0									public IBJAKJJICBC viewMusic; // 0x0
+					initparam.rewardStat = rewardList; // 0x4						public List<MusicRewardStat> rewardStat; // 0x4
+					initparam.aprilFoolEndTime = aprilFoolEndTime; // 0x8							public long aprilFoolEndTime; // 0x8
+					initparam.isOpen = isOpen; // 0x10									public bool isOpen; // 0x10
+					initparam.isNew = isNew; // 0x11										public bool isNew; // 0x11
+					initparam.isUnlockable = musicData.LDGOHPAPBMM; // 0x12								public bool isUnlockable; // 0x12
+					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13
+					initparam.isHighLevel = isHighLevel; // 0x14								public bool isHighLevel; // 0x14
+					initparam.timeType = timeType; // 0x18									public MusicSelectConsts.MusicTimeType timeType; // 0x18
+					initparam.musicType = musicType; // 0x1C									public MusicSelectConsts.MusicType musicType; // 0x1C
+					initparam.eventType = eventType; // 0x20									public MusicSelectConsts.EventType eventType; // 0x20
+					initparam.boostType = boostType; // 0x24									public MusicSelectConsts.PlayBoostType boostType; // 0x24
+					initparam.eventPeriod = eventPeriodString; // 0x28								public string eventPeriod; // 0x28
+					initparam.musicTimeStr = remainingTimeStr; // 0x2C								public string musicTimeStr; // 0x2C
+					initparam.musicName = musicName; // 0x30									public string musicName; // 0x30
+					initparam.vocalName = vocalName; // 0x34									public string vocalName; // 0x34
+					initparam.musicTime = musicTime; // 0x38									public int musicTime; // 0x38
+					MusicListData data = new MusicListData(initparam);
+					res.Add(data);
 				}
-
-				TodoLogger.Log(0, "CreateMusicListData !!!");
-				/*MusicListData.InitParam initparam;
-				int id = viewMusicDataList[i].GHBPLHBNMBK_FreeMusicId;
-				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[id - 1];
-				EONOEHOKBEB_Music a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(id, musicInfo.DLAEJOBELBH_Id);
-				initparam.musicName = Database.Instance.musicText.Get(a.KNMGEEFGDNI_Nam).musicName;
-				initparam.viewMusic = viewMusicDataList[i]; // to check
-				initparam.isHighLevel = false;
-				initparam.aprilFoolEndTime = 0; // TODO
-				initparam.isOpen = true; // TODO
-				initparam.isSimulation = true; // TODO
-				initparam.isUnlockable = false; // TODO
-				initparam.musicTimeStr = ""; // TODO
-				initparam.timeType = MusicSelectConsts.MusicTimeType.Short; // TODO
-				initparam.isNew = false;
-				initparam.musicType = MusicSelectConsts.MusicType.None;
-				initparam.rewardStat = new List<MusicRewardStat>();
-				initparam.eventType = MusicSelectConsts.EventType.Max;
-				initparam.boostType = MusicSelectConsts.PlayBoostType.Max;
-				initparam.vocalName = "Vocal";
-				initparam.eventPeriod = "";
-				MusicListData data = new MusicListData(initparam);
-				res.Add(data);*/
 			}
 			return res;
 		}
 
 		//// RVA: 0xCA24B0 Offset: 0xCA24B0 VA: 0xCA24B0
-		//private static List<IKDICBBFBMI> GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP type, long currentTime, KGCNCBOKCBA.GNENJEHKMHD term = 9) { }
+		private static List<IKDICBBFBMI_EventBase> GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType type, long currentTime, KGCNCBOKCBA.GNENJEHKMHD term = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ)
+		{
+			List<IKDICBBFBMI_EventBase> res = new List<IKDICBBFBMI_EventBase>();
+			List<IKDICBBFBMI_EventBase> list = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.FindAll((IKDICBBFBMI_EventBase _) =>
+			{
+				//0xCA3E0C
+				return _.HIDHLFCBIDE_EventType == type;
+			});
+			for(int i = 0; i < list.Count; i++)
+			{
+				list[i].HCDGELDHFHB(currentTime);
+				if(list[i].NGOFCFJHOMI > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP && list[i].NGOFCFJHOMI <= term)
+				{
+					res.Add(list[i]);
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0xCA2728 Offset: 0xCA2728 VA: 0xCA2728
-		//public static string GetEventPeriodString(long openTime, long closeTime) { }
+		public static string GetEventPeriodString(long openTime, long closeTime)
+		{
+			TodoLogger.Log(0, "GetEventPeriodString");
+			return "";
+		}
 
 		//// RVA: 0xCA2ED4 Offset: 0xCA2ED4 VA: 0xCA2ED4
 		public int GetCount(bool line6Mode, bool simulation)

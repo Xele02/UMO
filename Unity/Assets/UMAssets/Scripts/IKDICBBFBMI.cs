@@ -6,7 +6,7 @@ public abstract class IKDICBBFBMI_EventBase
 	public const int NLHCFCAPBFH = 10;
 	public const int NFGBMPKFEGC = 999;
 	public string JOPOPMLFINI; // 0x8
-	// public KGCNCBOKCBA.GNENJEHKMHD NGOFCFJHOMI; // 0xC
+	public KGCNCBOKCBA.GNENJEHKMHD NGOFCFJHOMI; // 0xC
 	public string DGCOMDILAKM; // 0x10
 	public bool IBNKPMPFLGI; // 0x14
 	public bool LEPALMDKEOK; // 0x15
@@ -71,7 +71,7 @@ public abstract class IKDICBBFBMI_EventBase
 	public const string PKCHABKLDOC = "event_prologue_achv_item_id";
 	public const string HMEFMAPKOBF = "event_epilogue_achv_item_id";
 
-	public virtual OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL; } } //0x8DD514 DKHCGLCNKCD Slot: 4
+	public virtual OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL; } } //0x8DD514 DKHCGLCNKCD Slot: 4
 	// public int OENLHLCKMDI { get; } // ?
 	// public bool NBCFEEFEDHH { get; } // ?
 	// public bool BEGOPNADOJL { get; } // ?
@@ -254,10 +254,16 @@ public abstract class IKDICBBFBMI_EventBase
 	// protected IEnumerator AOGIMHOLIFB(List<string> MIDAMHNABAJ, DJBHIFLHJLK AOCANKOMKFG) { }
 
 	// // RVA: 0x8DFC0C Offset: 0x8DFC0C VA: 0x8DFC0C
-	// public void HCDGELDHFHB(long JHNMKKNEENE) { }
+	public void HCDGELDHFHB(long JHNMKKNEENE)
+	{
+		PJDGDNJNCNM(JHNMKKNEENE);
+	}
 
 	// // RVA: 0x8DFC34 Offset: 0x8DFC34 VA: 0x8DFC34 Slot: 46
-	// protected virtual void PJDGDNJNCNM(long JHNMKKNEENE) { }
+	protected virtual void PJDGDNJNCNM(long JHNMKKNEENE)
+	{
+		return;
+	}
 
 	// // RVA: 0x8DFC38 Offset: 0x8DFC38 VA: 0x8DFC38 Slot: 47
 	// public virtual void NBMDAOFPKGK(int DNBFMLBNAEE) { }

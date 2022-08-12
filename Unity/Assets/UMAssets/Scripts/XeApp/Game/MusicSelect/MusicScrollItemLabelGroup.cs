@@ -70,6 +70,8 @@ namespace XeApp.Game.MusicSelect
 		public void SetTimeLabel(MusicSelectConsts.MusicTimeType label)
 		{
 			DisableTimeLabel();
+			if ((int)label >= timeLabel.Length)
+				return;
 			timeLabel[(int)label].transform.parent.gameObject.SetActive(true);
 			timeLabel[(int)label].alpha = 1;
 		}
@@ -78,6 +80,8 @@ namespace XeApp.Game.MusicSelect
 		public void SetEventLabel(MusicSelectConsts.EventType label)
 		{
 			DisableEventLabel();
+			if ((int)label >= eventLabel.Length)
+				return;
 			eventLabel[(int)label].transform.parent.gameObject.SetActive(true);
 			eventLabel[(int)label].alpha = 1;
 		}
@@ -103,6 +107,8 @@ namespace XeApp.Game.MusicSelect
 		public void SetPlayBoostLabel(MusicSelectConsts.PlayBoostType label)
 		{
 			DisablePlayBoostLabel();
+			if ((int)label >= playBoostLabel.Length)
+				return;
 			playBoostLabel[(int)label].transform.parent.gameObject.SetActive(true);
 			playBoostLabel[(int)label].alpha = 1;
 		}

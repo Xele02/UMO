@@ -150,7 +150,15 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x138EF04 Offset: 0x138EF04 VA: 0x138EF04
-		public void SetCopyText() { }
+		public void SetCopyText()
+		{
+			if(m_copyText.text != m_text.text)
+			{
+				m_copyText.text = m_text.text;
+			}
+			m_copyText.rectTransform.anchoredPosition = new Vector2(m_text.rectTransform.sizeDelta.x + m_distance, 0);
+			m_copyText.rectTransform.sizeDelta = m_text.rectTransform.sizeDelta;
+		}
 
 		//// RVA: 0x138F0E0 Offset: 0x138F0E0 VA: 0x138F0E0
 		//public void CopyText(Text from, Text to) { }

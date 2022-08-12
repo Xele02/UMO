@@ -428,7 +428,13 @@ namespace XeApp.Game.Menu
 		// protected bool IsRangeOver(int index) { }
 
 		// // RVA: 0xF40414 Offset: 0xF40414 VA: 0xF40414
-		// public static void ExtractRemainTime(int totalSec, out int days, out int hours, out int minutes, out int seconds) { }
+		public static void ExtractRemainTime(int totalSec, out int days, out int hours, out int minutes, out int seconds)
+		{
+			days = totalSec / 86400;
+			hours = (totalSec - days * 86400) / 3600;
+			minutes = (totalSec - days * 86400 - hours * 3600) / 60;
+			seconds = (totalSec - days * 86400 - hours * 3600 - minutes * 60);
+		}
 
 		// // RVA: 0xF40494 Offset: 0xF40494 VA: 0xF40494
 		// public static string MakeRemainTime(int days, int hours, int minutes, int seconds) { }
