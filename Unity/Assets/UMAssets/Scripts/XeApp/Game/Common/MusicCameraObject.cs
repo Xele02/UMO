@@ -56,7 +56,7 @@ namespace XeApp.Game.Common
 				}
 			}
 			divaHeighOffsetTransform = transform.Find("camera_offset");
-			divaHeighOffsetTransform.localPosition = new Vector3(1, -1, 0);
+			divaHeighOffsetTransform.localPosition = new Vector3(1, 0, -1);
 			divaIndexList = divaIdList;
 			m_is_adjustXZ = isAdjustXZ;
 			m_is_solo = divaIdList.Count == 1;
@@ -289,8 +289,6 @@ namespace XeApp.Game.Common
 					nextScale = CameraScaleFactor[divaIndexList[nextTargetId - 1] - 1];
 				}
 				float ratio = divaHeighOffsetTransform.localPosition.y;
-				if(ratio < 0)
-					ratio = 0; // UMO fix, some song have -1 as ratio, which double the height factor.
 				scale = nextScale * ratio + scale * (1.0f - ratio);
 			}
 			adjust.enableY = true;
