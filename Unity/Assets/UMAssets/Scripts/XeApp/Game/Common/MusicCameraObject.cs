@@ -248,8 +248,8 @@ namespace XeApp.Game.Common
 			ObjectPositionAdjuster adjust = gameObject.GetComponent<ObjectPositionAdjuster>();
 			if(adjust == null)
 				adjust = gameObject.AddComponent<ObjectPositionAdjuster>();
-			targetId = 0;
-			nextTargetId = 0;
+			targetId = Mathf.RoundToInt(divaHeighOffsetTransform.localPosition.x);
+			nextTargetId = Mathf.RoundToInt(divaHeighOffsetTransform.localPosition.z);
 			float scale = 0;
 			if(targetId > divaIndexList.Count || nextTargetId > divaIndexList.Count)
 			{
@@ -288,7 +288,10 @@ namespace XeApp.Game.Common
 				{
 					nextScale = CameraScaleFactor[divaIndexList[nextTargetId - 1] - 1];
 				}
-				scale = nextScale * divaHeighOffsetTransform.localPosition.y + scale * (1.0f - divaHeighOffsetTransform.localPosition.y);
+				float ratio = divaHeighOffsetTransform.localPosition.y;
+				if(ratio < 0)
+					ratio = 0; // UMO fix, some song have -1 as ratio, which double the height factor.
+				scale = nextScale * ratio + scale * (1.0f - ratio);
 			}
 			adjust.enableY = true;
 			adjust.enableX = !isSolo || isAdjustXZ;
