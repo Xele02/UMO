@@ -63,7 +63,23 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 	}
 
 	// // RVA: 0xCC4620 Offset: 0xCC4620 VA: 0xCC4620
-	// public int HEDDDBDAMGO(string LJNAKDMILMC, string KKMJBMKHGNH) { }
+	public int HEDDDBDAMGO(string LJNAKDMILMC, string KKMJBMKHGNH)
+	{
+		string str = EFEGBHACJAL(LJNAKDMILMC, KKMJBMKHGNH);
+		char[] sep = new char[1]{','};
+		string[] strs = str.Split(sep);
+		if(strs.Length > 1)
+		{
+			for(int i = 0; i < strs.Length / 2; i++)
+			{
+				int val1 = Int32.Parse(strs[i * 2]);
+				int val2 = Int32.Parse(strs[i * 2 + 1]);
+				if(DIHHCBACKGG.IEFOPDOOLOK > val1 || (i + 1) >= strs.Length/2)
+					return val2;
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0xCC4804 Offset: 0xCC4804 VA: 0xCC4804
 	public bool EJPFDDOOKJI(string MDBKPOCDJDP)
@@ -175,6 +191,9 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 				}
 			}
 		}
+
+		//L581
+		FPGDAPAILAK = HEDDDBDAMGO("extreme_unlock", "1,2");
 
 		return true;
     }
