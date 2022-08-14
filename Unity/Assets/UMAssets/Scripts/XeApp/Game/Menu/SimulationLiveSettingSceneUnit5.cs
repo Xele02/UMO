@@ -95,15 +95,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE610 Offset: 0x12CE610 VA: 0x12CE610 Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			TodoLogger.Log(0, "OnStartEnterAnimation");
+			m_headButtons.InOut.Enter(false, null);
+			m_prismSettingButtons.InOut.Enter(false, null);
+			m_valkyrieButton.InOut.Enter(false, null);
+			m_prismUnitInfo.AnimeControl.TryEnter();
+			m_musicInfo.InOut.Enter(false, null);
+			m_musicInfo.ResetDescriptionScroll();
+			m_playButtons.InOut.Enter(false, null);
 		}
 
 		// // RVA: 0x12CE7E8 Offset: 0x12CE7E8 VA: 0x12CE7E8 Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			TodoLogger.Log(0, "IsEndEnterAnimation");
-
-			return true;
+			return !IsPlaying();
 		}
 
 		// // RVA: 0x12CE9BC Offset: 0x12CE9BC VA: 0x12CE9BC Slot: 12
@@ -216,7 +220,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x12CE7FC Offset: 0x12CE7FC VA: 0x12CE7FC
-		// private bool IsPlaying() { }
+		private bool IsPlaying()
+		{
+			return !m_headButtons.InOut.IsPlaying() &&
+					!m_prismSettingButtons.InOut.IsPlaying() &&
+					!m_valkyrieButton.InOut.IsPlaying() &&
+					!m_musicInfo.InOut.IsPlaying() &&
+					!m_playButtons.InOut.IsPlaying() &&
+					!m_prismUnitInfo.AnimeControl.IsPlaying();
+		}
 
 		// // RVA: 0x12CEEB4 Offset: 0x12CEEB4 VA: 0x12CEEB4
 		// private void OnClickGameSettingButton() { }

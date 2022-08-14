@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 		private List<Sprite> m_difficulty6LineSprites; // 0x4C
 		// public Action OnClickExpectedScoreDescButton; // 0x50
 
-		// public InOutAnime InOut { get; } 0xA6F6B0
+		public InOutAnime InOut { get { return m_inOut; } } //0xA6F6B0
 		// public SetDeckExpectedScoreGauge ExpectedScoreGauge { get; } 0xA6F6B8
 
 		// // RVA: 0xA6F6C0 Offset: 0xA6F6C0 VA: 0xA6F6C0
@@ -98,7 +98,10 @@ namespace XeApp.Game.Menu
 		// public void ReStartMusicAttrAnime() { }
 
 		// // RVA: 0xA6FF34 Offset: 0xA6FF34 VA: 0xA6FF34
-		// public void ResetDescriptionScroll() { }
+		public void ResetDescriptionScroll()
+		{
+			TodoLogger.Log(0, "ResetDescriptionScroll");
+		}
 
 		// // RVA: 0xA6FD80 Offset: 0xA6FD80 VA: 0xA6FD80
 		// private Sprite GetMusicAttrSprite(int attr) { }

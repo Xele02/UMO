@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 		// public Action OnClickUnitButton; // 0x48
 		// public Action OnClickSettingButton; // 0x4C
 
-		// public InOutAnime InOut { get; } 0xA6E4A8
+		public InOutAnime InOut { get { return m_inOut; } } //0xA6E4A8
 		// public UGUIButton AutoSettingButton { get; } 0xA6E4B0
 
 		// // RVA: 0xA6E4B8 Offset: 0xA6E4B8 VA: 0xA6E4B8

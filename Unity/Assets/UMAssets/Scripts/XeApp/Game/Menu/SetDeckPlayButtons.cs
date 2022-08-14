@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 		// public Action OnClickSkipButton; // 0x3C
 		public Action OnClickPlayButton; // 0x40
 
-		// public InOutAnime InOut { get; } 0xA730C0
+		public InOutAnime InOut { get { return m_inOut; } } //0xA730C0
 
 		// // RVA: 0xA730C8 Offset: 0xA730C8 VA: 0xA730C8
 		private void Awake()

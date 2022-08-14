@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		// public Action OnClickOriginalSettingButton; // 0x34
 		// private AOJGDNFAIJL.AMIECPBIALP m_prismData; // 0x38
 
-		// public InOutAnime InOut { get; } 0xA73650
+		public InOutAnime InOut { get { return m_inOut; } } //0xA73650
 
 		// // RVA: 0xA73658 Offset: 0xA73658 VA: 0xA73658
 		private void Awake()

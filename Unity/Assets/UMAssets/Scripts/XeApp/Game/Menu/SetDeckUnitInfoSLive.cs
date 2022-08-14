@@ -27,7 +27,7 @@ namespace XeApp.Game.Menu
 		public SetDeckUnitInfoSLive.EventOnClickItem OnClickItem; // 0x18
 		private List<FFHPBEPOMAK> m_divaDatas = new List<FFHPBEPOMAK>(); // 0x1C
 
-		// public UGUIEnterLeave AnimeControl { get; } 0xC36818
+		public UGUIEnterLeave AnimeControl { get { return m_animeControl; } } //0xC36818
 
 		// // RVA: 0xC36820 Offset: 0xC36820 VA: 0xC36820
 		private void Awake()

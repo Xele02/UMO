@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		// private NHDJHOPLMDE m_viewValkyrieAbilityData; // 0x2C
 		// private int m_valkyrieImageLoadingCount; // 0x30
 
-		// public InOutAnime InOut { get; } 0xC3A87C
+		public InOutAnime InOut { get { return m_inOut; } } //0xC3A87C
 		// public bool IsUpdatingContent { get; } 0xC3A884
 
 		// // RVA: 0xC3A898 Offset: 0xC3A898 VA: 0xC3A898
