@@ -10,7 +10,7 @@ namespace XeApp.Game.Common.uGUI
 		// RVA: 0xD39370 Offset: 0xD39370 VA: 0xD39370
 		public static string MakeColorTagString(string str, string htmlFormatColor)
 		{
-			sb.SetFormat("<color={0}>{1}</color>", htmlFormatColor);
+			sb.SetFormat("<color={0}>{1}</color>", htmlFormatColor, str);
 			return sb.ToString();
 		}
 

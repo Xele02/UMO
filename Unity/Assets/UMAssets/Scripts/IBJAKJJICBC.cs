@@ -317,12 +317,12 @@ public class IBJAKJJICBC : EEDKAACNBBG
 				}
 				else
 				{
-					info.NLBLLLLBHOP = 1;
+					info.CMCKNKKCNDK = 1;
 				}
 			}
 			else
 			{
-				info.NLBLLLLBHOP = 3;
+				info.CMCKNKKCNDK = 3;
 				LDGOHPAPBMM = true;
 			}
 			info.HHMLMKAEJBJ_Score = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.ALJFMLEJEHH(musicInfo2.KKPAHLMJKIH_WavId, musicInfo2.BKJGCEOEPFB_VariationId, i, GIKLNODJKFK, true);

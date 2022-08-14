@@ -126,22 +126,22 @@ namespace XeApp.Game.MusicSelect
 						};
 						eventType = d[((int)musicData.AFCMIOIGAJN.HIDHLFCBIDE_EventCategory - 1)];
 					}
-					bool isOpen = true;
+					bool isUnlockable = true;
 					if(lastStoryFreeMusicId == 0)
 					{
-						isOpen = false;
+						isUnlockable = false;
 					}
 					else
 					{
-						isOpen = musicData.GHBPLHBNMBK_FreeMusicId == lastStoryFreeMusicId;
+						isUnlockable = musicData.GHBPLHBNMBK_FreeMusicId == lastStoryFreeMusicId;
 					}
 					MusicListData.InitParam initparam;
 					initparam.viewMusic = musicData; // 0x0									public IBJAKJJICBC viewMusic; // 0x0
 					initparam.rewardStat = rewardList; // 0x4						public List<MusicRewardStat> rewardStat; // 0x4
 					initparam.aprilFoolEndTime = 0; // 0x8							public long aprilFoolEndTime; // 0x8
-					initparam.isOpen = isOpen; // 0x10									public bool isOpen; // 0x10
-					initparam.isNew = true; // 0x11										public bool isNew; // 0x11
-					initparam.isUnlockable = musicData.LDGOHPAPBMM; // 0x12								public bool isUnlockable; // 0x12
+					initparam.isOpen = true; // 0x10									public bool isOpen; // 0x10
+					initparam.isNew = musicData.LDGOHPAPBMM; // 0x11										public bool isNew; // 0x11
+					initparam.isUnlockable = isUnlockable; // 0x12								public bool isUnlockable; // 0x12
 					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13
 					initparam.isHighLevel = false; // 0x14								public bool isHighLevel; // 0x14
 					initparam.timeType = MusicSelectConsts.MusicTimeType.Max; // 0x18									public MusicSelectConsts.MusicTimeType timeType; // 0x18
@@ -158,22 +158,22 @@ namespace XeApp.Game.MusicSelect
 				}
 				else if(musicData.BNIAJAKIAJC)
 				{
-					bool isOpen = true;
+					bool isUnlockable = true;
 					if (lastStoryFreeMusicId == 0)
 					{
-						isOpen = false;
+						isUnlockable = false;
 					}
 					else
 					{
-						isOpen = musicData.GHBPLHBNMBK_FreeMusicId == lastStoryFreeMusicId;
+						isUnlockable = musicData.GHBPLHBNMBK_FreeMusicId == lastStoryFreeMusicId;
 					}
 					MusicListData.InitParam initparam;
 					initparam.viewMusic = musicData; // 0x0									public IBJAKJJICBC viewMusic; // 0x0
 					initparam.rewardStat = rewardList; // 0x4						public List<MusicRewardStat> rewardStat; // 0x4
 					initparam.aprilFoolEndTime = 0; // 0x8							public long aprilFoolEndTime; // 0x8
-					initparam.isOpen = isOpen; // 0x10									public bool isOpen; // 0x10
-					initparam.isNew = true; // 0x11										public bool isNew; // 0x11
-					initparam.isUnlockable = musicData.LDGOHPAPBMM; // 0x12								public bool isUnlockable; // 0x12
+					initparam.isOpen = true; // 0x10									public bool isOpen; // 0x10
+					initparam.isNew = musicData.LDGOHPAPBMM; // 0x11										public bool isNew; // 0x11
+					initparam.isUnlockable = isUnlockable; // 0x12								public bool isUnlockable; // 0x12
 					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13
 					initparam.isHighLevel = false; // 0x14								public bool isHighLevel; // 0x14
 					initparam.timeType = MusicSelectConsts.MusicTimeType.Max; // 0x18									public MusicSelectConsts.MusicTimeType timeType; // 0x18
@@ -300,35 +300,35 @@ namespace XeApp.Game.MusicSelect
 							}
 						}
 					}
-					bool isNew = true;
+					bool isOpen = true;
 					if (musicData.DEPGBBJMFED_CategoryId != 5)
 					{
 						if (musicData.HAMPEDFMIAD_HasOnlyMultiDivaMode())
 						{
-							isNew = IBJAKJJICBC.LBHPMGDNPHK(musicData.GHBPLHBNMBK_FreeMusicId, musicData.DEPGBBJMFED_CategoryId) &&
+							isOpen = IBJAKJJICBC.LBHPMGDNPHK(musicData.GHBPLHBNMBK_FreeMusicId, musicData.DEPGBBJMFED_CategoryId) &&
 								(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.KIECDDFNCAN_Level);
 						}
 					}
 					MusicSelectConsts.MusicType musicType = (MusicSelectConsts.MusicType)(musicData.EEFLOOBOAGF % 10);
 					if (musicType > MusicSelectConsts.MusicType.Another)
 						musicType = MusicSelectConsts.MusicType.None;
-					bool isOpen;
+					bool isUnlockable;
 					if (lastStoryFreeMusicId == 0)
 					{
-						isOpen = false;
+						isUnlockable = false;
 					}
 					else
 					{
-						isOpen = musicData.GHBPLHBNMBK_FreeMusicId == lastStoryFreeMusicId;
+						isUnlockable = musicData.GHBPLHBNMBK_FreeMusicId == lastStoryFreeMusicId;
 					}
 					MusicListData.InitParam initparam;
 					initparam.viewMusic = musicData; // 0x0									public IBJAKJJICBC viewMusic; // 0x0
 					initparam.rewardStat = rewardList; // 0x4						public List<MusicRewardStat> rewardStat; // 0x4
 					initparam.aprilFoolEndTime = aprilFoolEndTime; // 0x8							public long aprilFoolEndTime; // 0x8
-					initparam.isOpen = isOpen; // 0x10									public bool isOpen; // 0x10
-					initparam.isNew = isNew; // 0x11										public bool isNew; // 0x11
-					initparam.isUnlockable = musicData.LDGOHPAPBMM; // 0x12								public bool isUnlockable; // 0x12
-					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13
+					initparam.isOpen = isOpen; // 0x10									public bool isOpen; // 0x10		var13
+					initparam.isNew = musicData.LDGOHPAPBMM; // 0x11										public bool isNew; // 0x11	local88
+					initparam.isUnlockable = isUnlockable; // 0x12								public bool isUnlockable; // 0x12
+					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13		musicData.EHNGOGBJMGL - uVar13 - musicData.LDGOHPAPBMM - local_88
 					initparam.isHighLevel = isHighLevel; // 0x14								public bool isHighLevel; // 0x14
 					initparam.timeType = timeType; // 0x18									public MusicSelectConsts.MusicTimeType timeType; // 0x18
 					initparam.musicType = musicType; // 0x1C									public MusicSelectConsts.MusicType musicType; // 0x1C
