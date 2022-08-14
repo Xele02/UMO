@@ -56,7 +56,7 @@ namespace XeApp.Game.Common
 				}
 			}
 			divaHeighOffsetTransform = transform.Find("camera_offset");
-			divaHeighOffsetTransform.localPosition = new Vector3(1, -1, 0);
+			divaHeighOffsetTransform.localPosition = new Vector3(1, 0, -1);
 			divaIndexList = divaIdList;
 			m_is_adjustXZ = isAdjustXZ;
 			m_is_solo = divaIdList.Count == 1;
@@ -248,8 +248,8 @@ namespace XeApp.Game.Common
 			ObjectPositionAdjuster adjust = gameObject.GetComponent<ObjectPositionAdjuster>();
 			if(adjust == null)
 				adjust = gameObject.AddComponent<ObjectPositionAdjuster>();
-			targetId = 0;
-			nextTargetId = 0;
+			targetId = Mathf.RoundToInt(divaHeighOffsetTransform.localPosition.x);
+			nextTargetId = Mathf.RoundToInt(divaHeighOffsetTransform.localPosition.z);
 			float scale = 0;
 			if(targetId > divaIndexList.Count || nextTargetId > divaIndexList.Count)
 			{
@@ -288,7 +288,8 @@ namespace XeApp.Game.Common
 				{
 					nextScale = CameraScaleFactor[divaIndexList[nextTargetId - 1] - 1];
 				}
-				scale = nextScale * divaHeighOffsetTransform.localPosition.y + scale * (1.0f - divaHeighOffsetTransform.localPosition.y);
+				float ratio = divaHeighOffsetTransform.localPosition.y;
+				scale = nextScale * ratio + scale * (1.0f - ratio);
 			}
 			adjust.enableY = true;
 			adjust.enableX = !isSolo || isAdjustXZ;

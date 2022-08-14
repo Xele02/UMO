@@ -11,7 +11,7 @@ using XeSys;
 
 public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 {
-	struct ShaderInfo
+	class ShaderInfo
 	{
 		public string name;
 		public Shader shader;
@@ -99,16 +99,28 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 	public void FixMaterialShaderMat(Material mat)
 	{
 		UnityEngine.Debug.Log("Checking shader for mat "+mat.name);
+		if(!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(mat.shader)))
+		{
+			UnityEngine.Debug.Log("Already on disk shader used : "+AssetDatabase.GetAssetPath(mat.shader));
+			return;
+		}
 		//if(mat.shader.isSupported)
 		//	return;
 		if(!shaderList.ContainsKey(mat.shader.GetInstanceID()))
 		{
-			Shader shader = Shader.Find(mat.shader.name);
-			if(shader != null)
+			ShaderInfo info = null;
+			if(info == null)
 			{
-				ShaderInfo info = new ShaderInfo();
-				info.shader = shader;
-				info.name = System.IO.Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(shader));
+				Shader shader = Shader.Find(mat.shader.name);
+				if(shader != null)
+				{
+					info = new ShaderInfo();
+					info.shader = shader;
+					info.name = System.IO.Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(shader));
+				}
+			}
+			if(info != null)
+			{
 				shaderList.Add(mat.shader.GetInstanceID(), info);
 				Debug.Log("Loaded game shader "+mat.shader.GetInstanceID()+" "+info.name);
 			}

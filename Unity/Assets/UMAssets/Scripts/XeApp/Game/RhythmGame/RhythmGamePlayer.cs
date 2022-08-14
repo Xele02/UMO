@@ -520,7 +520,7 @@ namespace XeApp.Game.RhythmGame
 						}
 					}
 				}
-				List<int> orderedDivaList = new List<int>();
+				List<int> orderedDivaList = new List<int>(listDiva);
 				if(subDivaNum > 0)
 				{
 					orderedDivaList.Clear();

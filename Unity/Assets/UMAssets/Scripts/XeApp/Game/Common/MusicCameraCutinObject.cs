@@ -62,7 +62,6 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1119B60 Offset: 0x1119B60 VA: 0x1119B60
 		public void ChangeCutin(int id)
 		{
-			UnityEngine.Debug.Log("ChangeCutin "+id);
 			if(id > 0)
 			{
 				if(id <= resource.cutinClips.Length)
