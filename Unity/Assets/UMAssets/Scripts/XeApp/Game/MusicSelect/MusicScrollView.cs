@@ -400,16 +400,38 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xCA0B88 Offset: 0xCA0B88 VA: 0xCA0B88
 		private void OnClickList(MusicScrollItem scrollItem)
 		{
-			/*if(!_isScrollCancel && !_isDraging)
+			if(_isScrollCancel || _isDraging)
 				return;
 			if (target != 0)
 				return;
+			Vector2 pos = scrollItem.RectTransform.anchoredPosition;
 			for(int i = 0; i < _overScrollItem.Length; i++)
 			{
+				if(_overScrollItem[i].RectTransform.anchoredPosition.y == pos.y)
+				{
+					if(i != 0)
+					{
+						target = -i * 90;
+						if (OnScrollStartEvent != null)
+							OnScrollStartEvent.Invoke();
+						return;
+					}
+				}
+			}
 
-			}*/
-
-			TodoLogger.Log(0, "OnClickList");
+			for (int i = 0; i < _underScrollItem.Length; i++)
+			{
+				if (_underScrollItem[i].RectTransform.anchoredPosition.y == pos.y)
+				{
+					if (i != 0)
+					{
+						target = i * 90;
+						if (OnScrollStartEvent != null)
+							OnScrollStartEvent.Invoke();
+						return;
+					}
+				}
+			}
 		}
 
 		//// RVA: 0xCA0DC8 Offset: 0xCA0DC8 VA: 0xCA0DC8
@@ -423,7 +445,7 @@ namespace XeApp.Game.MusicSelect
 			target = 0;
 			prev = 0;
 			UpdateListPosition(true);
-			UpdateCenterItem(0, false, false);
+			UpdateCenterItem(0, false, true);
 		}
 	}
 }
