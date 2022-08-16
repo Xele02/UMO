@@ -47,7 +47,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	// public int IDBJPDBLIIG; // 0x14C
 	// private const int JAJDLKEOPPP = 432781;
 
-	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL; } } //0x1B6CA1C DKHCGLCNKCD  Slot: 4
+	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle; } } //0x1B6CA1C DKHCGLCNKCD  Slot: 4
 
 	// // RVA: 0x1B6CA24 Offset: 0x1B6CA24 VA: 0x1B6CA24 Slot: 32
 	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0) { }

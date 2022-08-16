@@ -110,7 +110,7 @@ namespace XeApp.Game.Menu
 			if(!m_isSimulationLive)
 			{
 				m_musicRate.Enter();
-				if(MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce() && OHCAABOMEOF.BPJMGICFPBJ(m_eventId) == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA/*11*/)
+				if(MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce() && OHCAABOMEOF.BPJMGICFPBJ(m_eventId) == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid/*11*/)
 				{
 					m_isShowBanner = true;
 				}

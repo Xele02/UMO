@@ -53,6 +53,12 @@ namespace XeApp.Game.Menu
 			// public bool IsAdventure() { }
 		}
 
+		public enum MusicPeriodMess
+		{
+			MusicSelect = 0,
+			TeamSelect = 1,
+		}
+
 		public const float FADE_TIME = 0.4f;
 		[SerializeField]
 		private TransitionTreeObject treeObject; // 0x28
@@ -824,7 +830,15 @@ namespace XeApp.Game.Menu
 		// public bool CheckEventLimit(IKDICBBFBMI controller, bool isCheckDateLine = True, bool isDoTransition = True) { }
 
 		// // RVA: 0xB36B6C Offset: 0xB36B6C VA: 0xB36B6C
-		// public bool TryMusicPeriod(long musicCloseAt, int unitqueId, OHCAABOMEOF.KGOGMKMBCPP eventType, bool isMvMode, MenuScene.MusicPeriodMess mess) { }
+		public bool TryMusicPeriod(long musicCloseAt, int unitqueId, OHCAABOMEOF.KGOGMKMBCPP_EventType eventType, bool isMvMode, MenuScene.MusicPeriodMess mess)
+		{
+			if (musicCloseAt == 0)
+				return false;
+			if (musicCloseAt > NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI())
+				return false;
+			TodoLogger.Log(0, "Finish TryMusicPeriod");
+			return true;
+		}
 
 		// // RVA: 0xB36F90 Offset: 0xB36F90 VA: 0xB36F90
 		// public static void RemainDivaOneTime() { }

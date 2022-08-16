@@ -156,20 +156,20 @@ namespace XeApp.Game.Menu
 			if (OnUpdateCenter != null)
 				OnUpdateCenter.Invoke(listIndex);
 			obj.ResetScroll();
-			if(m_musicList[listIndex].ViewMusic.AJGCPCMLGKO)
+			if(m_musicList[listIndex].ViewMusic.AJGCPCMLGKO_IsEvent)
 			{
 				obj.SetListType(MusicScrollCenterItem.ListType.EventEntrance);
-				obj.SetEventName(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN.OPFGFINHFCE_EventName);
-				obj.SetEventDescription(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN.KLMPFGOCBHC_EventDesc);
+				obj.SetEventName(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN_EventInfo.OPFGFINHFCE_EventName);
+				obj.SetEventDescription(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN_EventInfo.KLMPFGOCBHC_EventDesc);
 				obj.SetEventPeriod(m_musicList[listIndex].EventPeriod);
 				obj.SetAttribute(4);
 			}
-			else if (m_musicList[listIndex].ViewMusic.BNIAJAKIAJC)
+			else if (m_musicList[listIndex].ViewMusic.BNIAJAKIAJC_IsEventMinigame)
 			{
 				obj.SetListType(MusicScrollCenterItem.ListType.EventEntrance);
-				obj.SetEventName(m_musicList[listIndex].ViewMusic.NOKBLCDMLPP.OPFGFINHFCE_EventName);
-				obj.SetEventDescription(m_musicList[listIndex].ViewMusic.NOKBLCDMLPP.KLMPFGOCBHC_EventDesc);
-				obj.SetEventDescription(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN.KLMPFGOCBHC_EventDesc);
+				obj.SetEventName(m_musicList[listIndex].ViewMusic.NOKBLCDMLPP_MinigameEventInfo.OPFGFINHFCE_EventName);
+				obj.SetEventDescription(m_musicList[listIndex].ViewMusic.NOKBLCDMLPP_MinigameEventInfo.KLMPFGOCBHC_EventDesc);
+				obj.SetEventDescription(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN_EventInfo.KLMPFGOCBHC_EventDesc);
 				obj.SetEventPeriod(m_musicList[listIndex].EventPeriod);
 				obj.SetAttribute(4);
 			}
@@ -263,17 +263,17 @@ namespace XeApp.Game.Menu
 				return;
 			if (m_isSingleMusic)
 				listIndex = 0;
-			if (m_musicList[listIndex].ViewMusic.AJGCPCMLGKO)
+			if (m_musicList[listIndex].ViewMusic.AJGCPCMLGKO_IsEvent)
 			{
 				obj.SetListType(MusicScrollItem.ListType.EventEntrance);
-				obj.SetEventName(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN.OPFGFINHFCE_EventName);
+				obj.SetEventName(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN_EventInfo.OPFGFINHFCE_EventName);
 				obj.SetNewIcon(false);
 				obj.SetAttribute(4);
 			}
-			else if (m_musicList[listIndex].ViewMusic.BNIAJAKIAJC)
+			else if (m_musicList[listIndex].ViewMusic.BNIAJAKIAJC_IsEventMinigame)
 			{
 				obj.SetListType(MusicScrollItem.ListType.EventEntrance);
-				obj.SetEventName(m_musicList[listIndex].ViewMusic.NOKBLCDMLPP.OPFGFINHFCE_EventName);
+				obj.SetEventName(m_musicList[listIndex].ViewMusic.NOKBLCDMLPP_MinigameEventInfo.OPFGFINHFCE_EventName);
 				obj.SetNewIcon(false);
 				obj.SetAttribute(4);
 			}

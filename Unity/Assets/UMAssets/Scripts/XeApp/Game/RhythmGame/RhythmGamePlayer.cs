@@ -906,7 +906,7 @@ namespace XeApp.Game.RhythmGame
 				tutorialTwoActiveSkillGuideEvent.onFireEvent = this.ShowTutorialActiveSkillGuide;
 				tutorialTwoActiveSkillGuideEvent.millisec = 17000;
 			}
-			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL)
+			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
 				TodoLogger.Log(0, "InitializeMusicScoreEvent Event Type 3");
 				//L744

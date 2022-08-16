@@ -257,7 +257,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BCGLDMKODLC_IsClear)
 			{
-				if(musicData.AFCMIOIGAJN == null)
+				if(musicData.AFCMIOIGAJN_EventInfo == null)
 				{
 					m_musicDetail.SetHighScore(0, false);
 					m_musicDetail.SetScoreRank(ResultScoreRank.Type.Illegal);

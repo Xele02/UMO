@@ -102,10 +102,10 @@ namespace XeApp.Game.MusicSelect
 						musicTime = musicData.MGJKEJHEBPO_DiffInfos[j].HHMLMKAEJBJ_Score.MCMIPODICAN_length;
 					}
 				}
-				if(musicData.AJGCPCMLGKO)
+				if(musicData.AJGCPCMLGKO_IsEvent)
 				{
 					MusicSelectConsts.EventType eventType = MusicSelectConsts.EventType.Max;
-					if(((int)musicData.AFCMIOIGAJN.HIDHLFCBIDE_EventCategory - 1) < 14)
+					if(((int)musicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory - 1) < 14)
 					{
 						MusicSelectConsts.EventType[] d = 
 						{
@@ -124,7 +124,7 @@ namespace XeApp.Game.MusicSelect
 							MusicSelectConsts.EventType.Max,
 							MusicSelectConsts.EventType.Special
 						};
-						eventType = d[((int)musicData.AFCMIOIGAJN.HIDHLFCBIDE_EventCategory - 1)];
+						eventType = d[((int)musicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory - 1)];
 					}
 					bool isUnlockable = true;
 					if(lastStoryFreeMusicId == 0)
@@ -148,7 +148,7 @@ namespace XeApp.Game.MusicSelect
 					initparam.musicType = MusicSelectConsts.MusicType.None; // 0x1C									public MusicSelectConsts.MusicType musicType; // 0x1C
 					initparam.eventType = eventType; // 0x20									public MusicSelectConsts.EventType eventType; // 0x20
 					initparam.boostType = MusicSelectConsts.PlayBoostType.Max; // 0x24									public MusicSelectConsts.PlayBoostType boostType; // 0x24
-					initparam.eventPeriod = GetEventPeriodString(musicData.AFCMIOIGAJN.KINJOEIAHFK_OpenTime, musicData.AFCMIOIGAJN.PCCFAKEOBIC_CloseTime); // 0x28								public string eventPeriod; // 0x28
+					initparam.eventPeriod = GetEventPeriodString(musicData.AFCMIOIGAJN_EventInfo.KINJOEIAHFK_OpenTime, musicData.AFCMIOIGAJN_EventInfo.PCCFAKEOBIC_CloseTime); // 0x28								public string eventPeriod; // 0x28
 					initparam.musicTimeStr = null; // 0x2C								public string musicTimeStr; // 0x2C
 					initparam.musicName = null; // 0x30									public string musicName; // 0x30
 					initparam.vocalName = null; // 0x34									public string vocalName; // 0x34
@@ -156,7 +156,7 @@ namespace XeApp.Game.MusicSelect
 					MusicListData data = new MusicListData(initparam);
 					res.Add(data);
 				}
-				else if(musicData.BNIAJAKIAJC)
+				else if(musicData.BNIAJAKIAJC_IsEventMinigame)
 				{
 					bool isUnlockable = true;
 					if (lastStoryFreeMusicId == 0)
@@ -180,7 +180,7 @@ namespace XeApp.Game.MusicSelect
 					initparam.musicType = MusicSelectConsts.MusicType.None; // 0x1C									public MusicSelectConsts.MusicType musicType; // 0x1C
 					initparam.eventType = MusicSelectConsts.EventType.Special; // 0x20									public MusicSelectConsts.EventType eventType; // 0x20
 					initparam.boostType = MusicSelectConsts.PlayBoostType.Max; // 0x24									public MusicSelectConsts.PlayBoostType boostType; // 0x24
-					initparam.eventPeriod = GetEventPeriodString(musicData.NOKBLCDMLPP.KINJOEIAHFK_OpenTime, musicData.NOKBLCDMLPP.PCCFAKEOBIC_CloseTime); // 0x28								public string eventPeriod; // 0x28
+					initparam.eventPeriod = GetEventPeriodString(musicData.NOKBLCDMLPP_MinigameEventInfo.KINJOEIAHFK_OpenTime, musicData.NOKBLCDMLPP_MinigameEventInfo.PCCFAKEOBIC_CloseTime); // 0x28								public string eventPeriod; // 0x28
 					initparam.musicTimeStr = null; // 0x2C								public string musicTimeStr; // 0x2C
 					initparam.musicName = null; // 0x30									public string musicName; // 0x30
 					initparam.vocalName = null; // 0x34									public string vocalName; // 0x34
@@ -280,7 +280,7 @@ namespace XeApp.Game.MusicSelect
 						for (int j = 0; j < list.Count; j++)
 						{
 							AMLGMLNGMFB_EventAprilFool eventApril = list[j] as AMLGMLNGMFB_EventAprilFool;
-							if (musicData.EKANGPODCEP == eventApril.PGIIDPEGGPI)
+							if (musicData.EKANGPODCEP_EventId == eventApril.PGIIDPEGGPI)
 							{
 								TodoLogger.Log(0, "CreateMusicDataList april event");
 								/*KCGOMAFPGDD.EIEGCBJHGCP dd = eventApril.KOBMFPACBMB().Find((KCGOMAFPGDD.EIEGCBJHGCP x) =>

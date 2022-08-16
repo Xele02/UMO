@@ -914,7 +914,10 @@ namespace XeApp.Game
 		// public void ShowOfferNotice(UnityAction pushAction, bool isButtonEnable = True) { }
 
 		// // RVA: 0x9A0BB8 Offset: 0x9A0BB8 VA: 0x9A0BB8
-		// public void CloseOfferNotice() { }
+		public void CloseOfferNotice()
+		{
+			TodoLogger.Log(5, "GameManager CloseOfferNotice");
+		}
 
 		// // RVA: 0x9A040C Offset: 0x9A040C VA: 0x9A040C
 		public void ChangePopupPriority(bool popupTop)
