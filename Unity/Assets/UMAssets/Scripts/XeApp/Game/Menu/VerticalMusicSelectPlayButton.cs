@@ -58,7 +58,38 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBE5340 Offset: 0xBE5340 VA: 0xBE5340
-		// public void SetPlayButtonType(VerticalMusicSelectPlayButton.PlayButtonType type) { }
+		public void SetPlayButtonType(VerticalMusicSelectPlayButton.PlayButtonType type)
+		{
+			m_enagyObj.gameObject.SetActive(false);
+			m_playObj.gameObject.SetActive(false);
+			m_eventObj.gameObject.SetActive(false);
+			m_dlObj.gameObject.SetActive(false);
+			m_releaseObj.gameObject.SetActive(false);
+			m_storyObj.gameObject.SetActive(false);
+			switch (type)
+			{
+				case PlayButtonType.PlayEn:
+					m_enagyObj.gameObject.SetActive(true);
+					break;
+				case PlayButtonType.Play:
+					m_playObj.gameObject.SetActive(true);
+					break;
+				case PlayButtonType.Event:
+					m_eventObj.gameObject.SetActive(true);
+					break;
+				case PlayButtonType.Download:
+					m_dlObj.gameObject.SetActive(true);
+					break;
+				case PlayButtonType.Release:
+					m_releaseObj.gameObject.SetActive(true);
+					break;
+				case PlayButtonType.Story:
+					m_storyObj.gameObject.SetActive(true);
+					break;
+				default:
+					return;
+			}
+		}
 
 		// // RVA: 0xBE558C Offset: 0xBE558C VA: 0xBE558C
 		public void SetEnergy(int energy)
@@ -104,6 +135,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBE5774 Offset: 0xBE5774 VA: 0xBE5774
-		// public void SetInputEnable(bool isEnable) { }
+		public void SetInputEnable(bool isEnable)
+		{
+			m_playButton.IsInputOff = !isEnable;
+		}
 	}
 }

@@ -181,11 +181,15 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE61858 Offset: 0xE61858 VA: 0xE61858
-		public void FadeOut(float sec, Action onStop)
+		public new void FadeOut(float sec, Action onStop)
 		{
-			TodoLogger.Log(0, "BgmPlayer  FadeOut");
-			if(onStop != null)
-				onStop();
+			currentBgmId = -1;
+			base.FadeOut(sec, () =>
+			{
+				//0xE619F4
+				if (onStop != null)
+					onStop();
+			});
 		}
 
 		// // RVA: 0xE61760 Offset: 0xE61760 VA: 0xE61760

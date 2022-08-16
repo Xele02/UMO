@@ -7,10 +7,10 @@ namespace XeApp.Game.MusicSelect
 {
 	public class MusicScrollView : UIBehaviour, IPointerDownHandler, IEventSystemHandler, IPointerUpHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 	{
-		//private float scrollSpling = 6; // 0xC
+		private float scrollSpling = 6; // 0xC
 		private int longScrollCount = 6; // 0x10
 		private float scrollVelocity = 1.5f; // 0x14
-		//private float singleMoveSpling = 6; // 0x18
+		private float singleMoveSpling = 6; // 0x18
 		private float singleScrollVelocity = 0.5f; // 0x1C
 		private float centerUpdateRate = 0.6f; // 0x20
 		[SerializeField]
@@ -53,7 +53,14 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xC9F68C Offset: 0xC9F68C VA: 0xC9F68C
 		private void Awake()
 		{
-			TodoLogger.Log(0, "MusicScrollView Awake");
+			for(int i = 0; i < _overScrollItem.Length; i++)
+			{
+				_overScrollItem[i].OnClickList = OnClickList;
+			}
+			for (int i = 0; i < _underScrollItem.Length; i++)
+			{
+				_underScrollItem[i].OnClickList = OnClickList;
+			}
 		}
 
 		//// RVA: 0xC9F840 Offset: 0xC9F840 VA: 0xC9F840
@@ -342,12 +349,68 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xCA08E8 Offset: 0xCA08E8 VA: 0xCA08E8
 		private void LateUpdate()
 		{
-			TodoLogger.Log(0, "MusicScrollView LateUpdate");
-			UpdateCenterItem(0.0f, false, true);
+			if (!_isDraging && !_isTouch)
+			{
+				if (target != 0)
+				{
+					float val = scrollSpling;
+					if (_isSingleScroll)
+						val = singleMoveSpling;
+					float val2 = val * (target - prev) * 1.0f / 60;
+					_scrollValue.y += val2;
+					prev += val2;
+					if(Mathf.Abs(val2) < 0.5f)
+					{
+						_isClip = true;
+						target = 0;
+						prev = 0;
+						if(!_isReturn)
+						{
+							if (_scrollValue.y >= 0)
+								_scrollValue.y = _scrollValue.y + 90 - (_scrollValue.y % 90);
+							else
+								_scrollValue.y = _scrollValue.y - 90 - (_scrollValue.y % 90);
+						}
+						else
+						{
+							_scrollValue.y = 0;
+						}
+						if (OnUpdateClipItem != null)
+							OnUpdateClipItem.Invoke();
+						if (OnScrollEndEvent != null)
+							OnScrollEndEvent.Invoke();
+					}
+				}
+				UpdateItemPosition((_scrollValue.y % 90) / 90);
+				UpdateCenterItem((_scrollValue.y % 90) / 90, _isClip, false);
+				UpdateListPosition(false);
+				if(_isClip)
+				{
+					_isClip = false;
+					_isReturn = false;
+				}
+				for (int i = 0; i < 2; i++)
+				{
+					_scrollValue[i] = _scrollValue[i] % 90;
+				}
+			}
+			_isScrollCancel = false;
 		}
 
 		//// RVA: 0xCA0B88 Offset: 0xCA0B88 VA: 0xCA0B88
-		//private void OnClickList(MusicScrollItem scrollItem) { }
+		private void OnClickList(MusicScrollItem scrollItem)
+		{
+			/*if(!_isScrollCancel && !_isDraging)
+				return;
+			if (target != 0)
+				return;
+			for(int i = 0; i < _overScrollItem.Length; i++)
+			{
+
+			}*/
+
+			TodoLogger.Log(0, "OnClickList");
+		}
 
 		//// RVA: 0xCA0DC8 Offset: 0xCA0DC8 VA: 0xCA0DC8
 		public void SetPosition(int list_no)

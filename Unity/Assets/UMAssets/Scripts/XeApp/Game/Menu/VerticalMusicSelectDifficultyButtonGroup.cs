@@ -46,7 +46,13 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDBF2C Offset: 0xBDBF2C VA: 0xBDBF2C
-		// public void SetInputEnable(bool isEnable) { }
+		public void SetInputEnable(bool isEnable)
+		{
+			for(int i = 0; i < m_diffityButton.Length; i++)
+			{
+				m_diffityButton[i].SetInputEnable(isEnable);
+			}
+		}
 
 		// // RVA: 0xBDBFC0 Offset: 0xBDBFC0 VA: 0xBDBFC0
 		public void SetDifficultStyle(VerticalMusicSelectUISapporter.MusicInfoStyle style)

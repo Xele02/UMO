@@ -44,7 +44,10 @@ namespace XeApp.Game.Menu
 		// public void SetHidden(bool isHidden) { }
 
 		// // RVA: 0xBDBAB4 Offset: 0xBDBAB4 VA: 0xBDBAB4
-		// public void SetInputEnable(bool isEnable) { }
+		public void SetInputEnable(bool isEnable)
+		{
+			m_toggleButton.IsInputOff = !isEnable;
+		}
 
 		// // RVA: 0xBDBAE8 Offset: 0xBDBAE8 VA: 0xBDBAE8
 		public void SetEnable(bool isEnable)

@@ -76,7 +76,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDB2E8 Offset: 0xBDB2E8 VA: 0xBDB2E8
-		// public void SetInputEnable(bool isEnable) { }
+		public void SetInputEnable(bool isEnable)
+		{
+			m_button.IsInputOff = !isEnable;
+		}
 
 		// // RVA: 0xBDB31C Offset: 0xBDB31C VA: 0xBDB31C
 		public void Enter()

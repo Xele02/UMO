@@ -37,7 +37,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDB514 Offset: 0xBDB514 VA: 0xBDB514
-		// public void SetToggleEnable(bool isEnable) { }
+		public void SetToggleEnable(bool isEnable)
+		{
+			m_toggle.enabled = isEnable;
+		}
 
 		// // RVA: 0xBDB548 Offset: 0xBDB548 VA: 0xBDB548
 		public void SetMusicListTab(VerticalMusicSelecChoiceMusicListTab.MusicTab musicTab)

@@ -154,14 +154,54 @@ namespace XeApp.Game.Common
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B1E0 Offset: 0x73B1E0 VA: 0x73B1E0
 		// // RVA: 0x13989A8 Offset: 0x13989A8 VA: 0x13989A8
-		// private IEnumerator Co_ChangeVolume(float sec, float targetVol) { }
+		private IEnumerator Co_ChangeVolume(float sec, float targetVol)
+		{
+			float remain;
+			float baseVolume;
+			float rate;
+			//0x1398ED0
+			remain = sec;
+			baseVolume = source.volume - targetVol;
+			rate = 1;
+			while (rate > 0)
+			{
+				remain = Mathf.Max(remain - TimeWrapper.deltaTime, 0);
+				rate = remain / sec;
+				source.volume = targetVol + baseVolume * rate;
+				yield return null;
+			}
+			source.volume = targetVol;
+		}
 
 		// // RVA: 0x1398A98 Offset: 0x1398A98 VA: 0x1398A98
-		// protected void FadeOut(float sec, Action onStop) { }
+		protected void FadeOut(float sec, Action onStop)
+		{
+			if(fadeCoroutine != null)
+			{
+				StopCoroutine(fadeCoroutine);
+				if(changeVolume != null)
+				{
+					StopCoroutine(changeVolume);
+				}
+				source.volume = 1.0f;
+			}
+			fadeCoroutine = StartCoroutine(Co_FadeOut(sec, onStop));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B258 Offset: 0x73B258 VA: 0x73B258
 		// // RVA: 0x1398B3C Offset: 0x1398B3C VA: 0x1398B3C
-		// private IEnumerator Co_FadeOut(float sec, Action onStop) { }
+		private IEnumerator Co_FadeOut(float sec, Action onStop)
+		{
+			//0x13992E8
+			changeVolume = Co_ChangeVolume(sec, 0);
+			yield return changeVolume;
+			changeVolume = null;
+			StopCue(true);
+			source.volume = 1.0f;
+			fadeCoroutine = null;
+			if (onStop != null)
+				onStop();
+		}
 
 		// // RVA: 0x1398C28 Offset: 0x1398C28 VA: 0x1398C28
 		protected void ChangeVolume(float sec, float targetVol, Action onEnd)
@@ -177,21 +217,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1398CA4 Offset: 0x1398CA4 VA: 0x1398CA4
 		protected IEnumerator Co_ChangeVolume(float sec, float targetVol, Action onEnd)
 		{
-			float remain;
-			float baseVolume;
-			float rate;
-			//0x1398ED0
-			remain = sec;
-			baseVolume = source.volume - targetVol;
-			rate = 1;
-			while (rate >= 0)
-			{
-				remain = Mathf.Max(remain - TimeWrapper.deltaTime, 0);
-				rate = remain / sec;
-				source.volume = targetVol + baseVolume * rate;
-				yield return null;
-			}
-			source.volume = targetVol;
+			//0x1399140
+			changeVolume = Co_ChangeVolume(sec, targetVol);
+			yield return changeVolume;
+			changeVolume = null;
+			fadeCoroutine = null;
+			if (onEnd != null)
+				onEnd();
 		}
 	}
 }

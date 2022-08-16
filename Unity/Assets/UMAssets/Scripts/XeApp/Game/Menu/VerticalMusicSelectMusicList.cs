@@ -42,7 +42,9 @@ namespace XeApp.Game.Menu
 			m_musicScroll.OnUpdateListItem.AddListener(this.MusicUpdateListItem);
 			m_musicScroll.OnUpdateClipItem.AddListener(() => {
 				//0xBE4864
-				TodoLogger.Log(0, "OnUpdateClipItem");
+				m_listUpdateAnim.Play(hashStateClip);
+				if (OnUpdateClip != null)
+					OnUpdateClip();
 			});
 		}
 

@@ -229,13 +229,13 @@ namespace XeApp.Game.Menu
 			m_musicList.MusicScrollView.OnScrollStartEvent.AddListener(() =>
 			{
 				//0xBF02C4
-				TodoLogger.Log(0, "OnScrollStartEvent");
+				OnScrollStartEvent();
 			});
 			m_musicList.MusicScrollView.OnScrollEndEvent.RemoveAllListeners();
 			m_musicList.MusicScrollView.OnScrollEndEvent.AddListener(() =>
 			{
 				//0xBF02C8
-				TodoLogger.Log(0, "OnScrollEndEvent");
+				OnScrollEndEvent();
 			});
 			m_musicDetail.OnUnitButtonClickListener = (int index) =>
 			{
@@ -276,7 +276,8 @@ namespace XeApp.Game.Menu
 			m_seriesButtonGroup.OnButtonClickListener = (int index) =>
 			{
 				//0xBF0394
-				TodoLogger.Log(0, "m_seriesButtonGroup OnButtonClickListener");
+				m_musicList.MusicScrollView.SetPosition(list_no);
+				OnClickSeriesButton(index);
 			};
 			m_line6Button.OnClickButtonListener = () =>
 			{
@@ -287,7 +288,8 @@ namespace XeApp.Game.Menu
 			m_simulationButton.OnClickButtonListener = (bool isSimulation) =>
 			{
 				//0xBF046C
-				TodoLogger.Log(0, "m_simulationButton OnClickButtonListener");
+				m_musicList.MusicScrollView.SetPosition(list_no);
+				OnClickPlayButton(isSimulation);
 			};
 			m_playButton.OnClicButtonListener = (bool isSimulation) =>
 			{
@@ -609,7 +611,7 @@ namespace XeApp.Game.Menu
 		protected override bool OnBgmStart()
 		{
 			TodoLogger.Log(0, "!!!");
-			return true;
+			return base.OnBgmStart();
 		}
 
 		// RVA: 0xBE6AFC Offset: 0xBE6AFC VA: 0xBE6AFC Slot: 47
@@ -655,7 +657,32 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBE7054 Offset: 0xBE7054 VA: 0xBE7054
-		private void SetPlayButton(VerticalMusicSelectPlayButton.PlayButtonType type) { }
+		private void SetPlayButton(VerticalMusicSelectPlayButton.PlayButtonType type)
+		{
+			switch(type)
+			{
+				case VerticalMusicSelectPlayButton.PlayButtonType.PlayEn:
+					m_playButton.SetPlayButtonType(VerticalMusicSelectPlayButton.PlayButtonType.PlayEn);
+					break;
+				case VerticalMusicSelectPlayButton.PlayButtonType.Play:
+					m_playButton.SetPlayButtonType(VerticalMusicSelectPlayButton.PlayButtonType.Play);
+					break;
+				case VerticalMusicSelectPlayButton.PlayButtonType.Event:
+					m_playButton.SetPlayButtonType(VerticalMusicSelectPlayButton.PlayButtonType.Event);
+					break;
+				case VerticalMusicSelectPlayButton.PlayButtonType.Download:
+					m_playButton.SetPlayButtonType(VerticalMusicSelectPlayButton.PlayButtonType.Download);
+					break;
+				case VerticalMusicSelectPlayButton.PlayButtonType.Release:
+					m_playButton.SetPlayButtonType(VerticalMusicSelectPlayButton.PlayButtonType.Release);
+					break;
+				case VerticalMusicSelectPlayButton.PlayButtonType.Story:
+					m_playButton.SetPlayButtonType(VerticalMusicSelectPlayButton.PlayButtonType.Story);
+					break;
+				default:
+					return;
+			}
+		}
 
 		// // RVA: 0xBE7164 Offset: 0xBE7164 VA: 0xBE7164
 		public void SetPlayButton(VerticalMusicDataList.MusicListData musicListData)
@@ -1159,7 +1186,12 @@ namespace XeApp.Game.Menu
 		//}
 
 		// // RVA: 0xBEC918 Offset: 0xBEC918 VA: 0xBEC918
-		// private void OnClickSeriesButton(int index) { }
+		private void OnClickSeriesButton(int index)
+		{
+			SoundManager.Instance.sePlayerBoot.Play(3);
+			m_musicSelectUISapporter.SetSeries((MusicSelectConsts.SeriesType)index);
+			OnChangeFilter();
+		}
 
 		// // RVA: 0xBEC9A4 Offset: 0xBEC9A4 VA: 0xBEC9A4
 		// protected void OnClickUnitButton(int index) { }
@@ -1171,10 +1203,24 @@ namespace XeApp.Game.Menu
 		// private void ListClipItemCallBack() { }
 
 		// // RVA: 0xBECA8C Offset: 0xBECA8C VA: 0xBECA8C
-		// private void OnScrollStartEvent() { }
+		private void OnScrollStartEvent()
+		{
+			m_playButton.SetInputEnable(false);
+			m_simulationButton.SetInputEnable(false);
+			m_difficultyButtonGroup.SetInputEnable(false);
+			m_choiceMusicTab.SetToggleEnable(false);
+			m_line6Button.SetButtonEnable(false);
+		}
 
 		// // RVA: 0xBECB3C Offset: 0xBECB3C VA: 0xBECB3C
-		// private void OnScrollEndEvent() { }
+		private void OnScrollEndEvent()
+		{
+			m_playButton.SetInputEnable(true);
+			m_simulationButton.SetInputEnable(true);
+			m_difficultyButtonGroup.SetInputEnable(true);
+			m_choiceMusicTab.SetToggleEnable(true);
+			m_line6Button.SetButtonEnable(true);
+		}
 
 		// // RVA: 0xBECBEC Offset: 0xBECBEC VA: 0xBECBEC
 		private void OnClickLine6Button()
