@@ -15,15 +15,16 @@ Shader "XeSys/Unlit/Transparent" {
 			LOD 100
 			Tags { "IGNOREPROJECTOR" = "true" "PreviewType" = "Plane" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
 			Blend SrcAlpha OneMinusSrcAlpha, SrcAlpha OneMinusSrcAlpha
-			ColorMask 0 -1
+			ColorMask [_ColorMask]
 			ZWrite Off
 			Cull Off
 			Offset -1, -1
 			Stencil {
-				ReadMask 0
-				WriteMask 0
-				Comp Never
-				Pass Keep
+				Ref[_Stencil]
+				ReadMask[_StencilReadMask]
+				WriteMask[_StencilWriteMask]
+				Comp[_StencilComp]
+				Pass[_StencilOp]
 				Fail Keep
 				ZFail Keep
 			}
@@ -45,13 +46,20 @@ Shader "XeSys/Unlit/Transparent" {
 
 			struct v2f
 			{
+				float4 position0 : SV_POSITION;
 				float2 texcoord0 : TEXCOORD0;
 				float4 color0 : COLOR0;
 			};
 
+			sampler2D _MainTex;
+			float4 _MainTex_ST;
+
 			v2f vert(appdata v)
 			{
 				v2f o;
+				o.texcoord0 = TRANSFORM_TEX(v.texcoord0, _MainTex);
+				o.position0 = UnityObjectToClipPos(v.position0);
+				o.color0 = v.color0;
 				return o; 
 			}
 
@@ -102,7 +110,15 @@ Shader "XeSys/Unlit/Transparent" {
 */
 			fixed4 frag(v2f i) : SV_Target
 			{
-				return float4(1, 1, 1, 1);
+				float4 SV_Target0, u_xlat10_0, u_xlat16_1, u_xlat16_0;
+				bool u_xlatb0;
+				u_xlat10_0 = tex2D(_MainTex, i.texcoord0.xy);
+				u_xlat16_1 = u_xlat10_0.w * i.color0.w + -0.00999999978;
+				u_xlat16_0 = u_xlat10_0 * i.color0;
+				SV_Target0 = u_xlat16_0;
+				u_xlatb0 = u_xlat16_1 < 0.0;
+				if (((int(u_xlatb0) * -1)) != 0) { discard; }
+				return SV_Target0;
 			}
 
 /*
