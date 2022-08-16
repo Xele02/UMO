@@ -314,8 +314,8 @@ namespace XeApp.Game.Menu
 			};
 			m_choiceMusicTab.OnButtonClickListener = (bool index) =>
 			{
-				//0xBF0628
-				TodoLogger.Log(0, "m_choiceMusicTab OnButtonClickListener");
+				m_musicList.MusicScrollView.SetPosition(list_no);
+				OnClickMusicTabButton(index);
 			};
 			m_orderButton.OnClickButtonListener = () =>
 			{
@@ -1275,7 +1275,19 @@ namespace XeApp.Game.Menu
 		// private void SetMusicTab(bool isEvent) { }
 
 		// // RVA: 0xBED05C Offset: 0xBED05C VA: 0xBED05C
-		// private void OnClickMusicTabButton(bool isNormal) { }
+		private void OnClickMusicTabButton(bool isNormal)
+		{
+			SoundManager.Instance.sePlayerBoot.Play(3);
+			m_musicTab = isNormal ? VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal : VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
+			SetMusicTab(m_musicTab);
+			int songId;
+			OHCAABOMEOF.KGOGMKMBCPP_EventType eventType;
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.FKJBADIPKHK(m_musicTab == VerticalMusicSelecChoiceMusicListTab.MusicTab.Event, out songId, out eventType);
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.ADHMDONLHLJ.ABGEMNAHALF_SetIsEventTab(m_musicTab == VerticalMusicSelecChoiceMusicListTab.MusicTab.Event);
+			GameManager.Instance.localSave.HJMKBCFJOOH();
+			SetFreeMusicIdByListNo(songId, eventType);
+			StartCoroutine(m_musicList.Co_UpdateAnim(this.OnChangeFilter));
+		}
 
 		// // RVA: 0xBED3D0 Offset: 0xBED3D0 VA: 0xBED3D0
 		// private void OnClickJacketButton() { }
