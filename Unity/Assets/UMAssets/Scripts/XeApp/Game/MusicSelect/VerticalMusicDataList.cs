@@ -454,7 +454,41 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA3088 Offset: 0xCA3088 VA: 0xCA3088
-		//public void UpdateDownloadState(int musicId) { }
+		public void UpdateDownloadState(int musicId)
+		{
+			for(int i = 0; i < GetCount(false, false); i++)
+			{
+				var music = Get(i, false, false).ViewMusic;
+				if (music.DLAEJOBELBH_MusicId == musicId)
+				{
+					music.OBGKIMDIAJF_CheckIsDlded();
+				}
+			}
+			for (int i = 0; i < GetCount(true, false); i++)
+			{
+				var music = Get(i, true, false).ViewMusic;
+				if (music.DLAEJOBELBH_MusicId == musicId)
+				{
+					music.OBGKIMDIAJF_CheckIsDlded();
+				}
+			}
+			for (int i = 0; i < GetCount(false, true); i++) // Fixed from original game where it was a second time true,false
+			{
+				var music = Get(i, false, true).ViewMusic;
+				if (music.DLAEJOBELBH_MusicId == musicId)
+				{
+					music.OBGKIMDIAJF_CheckIsDlded();
+				}
+			}
+			for (int i = 0; i < GetCount(true, true); i++)
+			{
+				var music = Get(i, true, true).ViewMusic;
+				if (music.DLAEJOBELBH_MusicId == musicId)
+				{
+					music.OBGKIMDIAJF_CheckIsDlded();
+				}
+			}
+		}
 
 		//// RVA: 0xCA3330 Offset: 0xCA3330 VA: 0xCA3330
 		public int FindIndex(int freeMusicId, bool line6Mode, bool simulation)

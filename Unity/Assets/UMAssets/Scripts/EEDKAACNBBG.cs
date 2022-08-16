@@ -49,7 +49,7 @@ public class EEDKAACNBBG
 			BNCMJNMIDIN_AvaiableDivaModes |= 1;
 		if (musicInfo.PECMGDOMLAF_Dvm > 1)
 			BNCMJNMIDIN_AvaiableDivaModes |= (byte)(1 << (musicInfo.PECMGDOMLAF_Dvm - 1));
-		OBGKIMDIAJF();
+		OBGKIMDIAJF_CheckIsDlded();
 	}
 
 	// // RVA: 0x1C48F30 Offset: 0x1C48F30 VA: 0x1C48F30 Slot: 5
@@ -88,7 +88,7 @@ public class EEDKAACNBBG
 	// public bool JAPLKHPLOOF(OHCAABOMEOF.KGOGMKMBCPP JONPKLHMOBL) { }
 
 	// // RVA: 0x1C48E2C Offset: 0x1C48E2C VA: 0x1C48E2C
-	public void OBGKIMDIAJF()
+	public void OBGKIMDIAJF_CheckIsDlded()
 	{
 		string sheetName = "";
 		BgmPlayer.ConvertBgmIdToCueSheetName(KKPAHLMJKIH_WavId, ref sheetName);

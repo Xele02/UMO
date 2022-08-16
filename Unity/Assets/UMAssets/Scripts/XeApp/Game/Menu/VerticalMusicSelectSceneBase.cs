@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using XeApp.Game.Common;
 using XeApp.Game.MusicSelect;
+using XeSys.uGUI;
 
 namespace XeApp.Game.Menu
 {
@@ -64,7 +65,7 @@ namespace XeApp.Game.Menu
 		protected abstract int list_no { get; set; } //Slot: 34 Slot: 33
 		protected bool openSimulationLive { get; set; } // 0x48
 		protected abstract bool isLine6Mode { get; } // Slot: 35
-		// protected abstract int musicListCount { get; } // Slot: 36
+		protected abstract int musicListCount { get; } // Slot: 36
 		protected abstract VerticalMusicDataList currentMusicList { get; } //  Slot: 38
 		// protected abstract List<VerticalMusicDataList> originalMusicList { get; } //  Slot: 39
 		protected IKDICBBFBMI_EventBase m_eventCtrl { get; set; } // 0x4C
@@ -98,7 +99,7 @@ namespace XeApp.Game.Menu
 		// public bool IsEventRankingEnd { get; } 0xACFDA4
 
 		// // RVA: -1 Offset: -1 Slot: 37
-		// protected abstract VerticalMusicDataList GetMusicList(int index);
+		protected abstract VerticalMusicDataList GetMusicList(int index);
 
 		// // RVA: 0xAC8CB8 Offset: 0xAC8CB8 VA: 0xAC8CB8 Slot: 4
 		protected override void Awake()
@@ -304,12 +305,68 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC9360 Offset: 0xAC9360 VA: 0xAC9360
 		protected void DownloadCurrentMusic()
 		{
-			TodoLogger.Log(0, "DownloadCurrentMusic");
+			m_unitLiveLocalSaveData.HJMKBCFJOOH(false);
+			StartCoroutine(Co_DownloadMusic(selectMusicData));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6A7C Offset: 0x6F6A7C VA: 0x6F6A7C
 		// // RVA: 0xAC93C4 Offset: 0xAC93C4 VA: 0xAC93C4
-		// private IEnumerator Co_DownloadMusic(IBJAKJJICBC musicData) { }
+		private IEnumerator Co_DownloadMusic(IBJAKJJICBC musicData)
+		{
+			UGUIFader fader;
+			TipsControl tipsCtrl;
+			int musicId;
+			ILCCJNDFFOB lw;
+			float pre;
+			//0xAD76D0
+			fader = GameManager.Instance.fullscreenFader;
+			tipsCtrl = TipsControl.Instance;
+			MenuScene.Instance.InputDisable();
+			fader.Fade(0.5f, new Color(0, 0, 0, 1));
+			tipsCtrl.Show(musicData);
+			while (fader.isFading)
+				yield return null;
+			yield return tipsCtrl.WaitLoadingYield;
+			while (tipsCtrl.isPlayingAnime())
+				yield return null;
+			int val = 0;
+			musicId = musicData.DLAEJOBELBH_MusicId;
+			if (GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video == 0)
+			{
+				val = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CBLEFELBNDN_GetQuality();
+			}
+			KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP = 0;
+			lw = ILCCJNDFFOB.HHCJCDFCLOB;
+			pre = 0;
+			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA(musicData.KKPAHLMJKIH_WavId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicData.GHBPLHBNMBK_FreeMusicId).KEFGPJBKAOD_WavId, val, GetDanceDivaCount());
+			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB)
+			{
+				if(pre < 50)
+				{
+					if(KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP >= 50)
+					{
+						lw.OJOLFJGNEMO(1, musicId);
+					}
+				}
+				pre = KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP;
+				yield return null;
+			}
+
+			lw.OJOLFJGNEMO(2, musicId);
+			for(int i = 0; i < musicListCount; i++)
+			{
+				GetMusicList(i).UpdateDownloadState(musicId);
+			}
+			ApplyMusicInfo();
+			ApplyMusic();
+			fader.Fade(0.5f, 0);
+			tipsCtrl.Close();
+			while (fader.isFading)
+				yield return null;
+			while (tipsCtrl.isPlayingAnime())
+				yield return null;
+			MenuScene.Instance.InputEnable();
+		}
 
 		// // RVA: 0xAC948C Offset: 0xAC948C VA: 0xAC948C
 		private void CheckSimulationLive(Action<bool> endCallBack)

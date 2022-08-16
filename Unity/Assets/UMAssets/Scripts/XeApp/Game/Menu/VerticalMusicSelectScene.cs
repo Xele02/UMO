@@ -76,7 +76,12 @@ namespace XeApp.Game.Menu
 		protected override Difficulty.Type diff { get { return m_musicSelectUISapporter.difficulty; } } //0xBE5C90
 		protected override MusicSelectConsts.SeriesType series { get { return m_musicSelectUISapporter.series; } } //0xBE5CBC
 		protected override int list_no { get; set; } // 0xC8
-		// protected override int musicListCount { get; } 0xBE5CF8 0xBE5D00
+		protected override int musicListCount { get { return 2; } } //0xBE5CF8
+		// RVA: 0xBE5D00 Offset: 0xBE5D00 VA: 0xBE5D00 Slot: 37
+		protected override VerticalMusicDataList GetMusicList(int i)
+		{
+			return i == 0 ? m_filterMusicDataList : m_filterMusicEventDataList;
+		}
 		protected override VerticalMusicDataList currentMusicList { get { 
 			if(m_musicTab == 0)
 				return m_filterMusicDataList;

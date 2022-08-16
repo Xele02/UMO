@@ -104,11 +104,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA98660 Offset: 0xA98660 VA: 0xA98660
 		public void Show(int count = 3)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "TipsControl Show");
 		}
 
 		// // RVA: 0xA99004 Offset: 0xA99004 VA: 0xA99004
-		// public void Show(IBJAKJJICBC musicData) { }
+		public void Show(IBJAKJJICBC musicData)
+		{
+			TodoLogger.Log(0, "TipsControl Show");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x735614 Offset: 0x735614 VA: 0x735614
 		// // RVA: 0xA98F78 Offset: 0xA98F78 VA: 0xA98F78
