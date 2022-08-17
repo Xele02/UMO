@@ -47,13 +47,13 @@ public class IGJHFKELHKJ
 	{
 		IGJHFKELHKJ.FBGGEFFJJHB = (uint)(Utility.GetCurrentUnixTime() + 100);
 		BEIEHPNODAM.Clear();
-		JHJMNLMNPGO = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD; // /sys
+		JHJMNLMNPGO = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD_DirSys; // /sys
 		if(!Directory.Exists(JHJMNLMNPGO))
 		{
 			UnityEngine.Debug.Log("Create Dir "+JHJMNLMNPGO);
 			Directory.CreateDirectory(JHJMNLMNPGO);
 		}
-		string file = JHJMNLMNPGO + "/" + KCOGAGGCPBP.PNBIAPMFPPD; // 01
+		string file = JHJMNLMNPGO + "/" + KCOGAGGCPBP.PNBIAPMFPPD_File01; // 01
 		if(File.Exists(file))
 		{
 			FileStream f = new FileStream(file, FileMode.Open);
@@ -80,7 +80,7 @@ public class IGJHFKELHKJ
 			b.Close();
 			f.Dispose();
 		}
-		file = JHJMNLMNPGO + "/" + KCOGAGGCPBP.NMGOCAFNNMM; // 04
+		file = JHJMNLMNPGO + "/" + KCOGAGGCPBP.NMGOCAFNNMM_File04; // 04
 		if(File.Exists(file))
 		{
 			TodoLogger.Log(0, "TODO");

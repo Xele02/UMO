@@ -15,7 +15,7 @@ public class BFGOCONGNDK
 	// // RVA: 0xC79E1C Offset: 0xC79E1C VA: 0xC79E1C
 	private string HIOMFHINAAH()
 	{
-		return CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/sys/" + KCOGAGGCPBP.OGIALGFMODF; // 05
+		return CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/sys/" + KCOGAGGCPBP.OGIALGFMODF_File05; // 05
 	}
 
 	// // RVA: 0xC79EFC Offset: 0xC79EFC VA: 0xC79EFC

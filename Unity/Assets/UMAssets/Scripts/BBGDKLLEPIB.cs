@@ -544,7 +544,7 @@ public class BBGDKLLEPIB
 	// // RVA: 0xF197AC Offset: 0xF197AC VA: 0xF197AC
 	private void PKLPEIBEGNO() // save used db version on disk
 	{
-		string dir = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD; // /sys
+		string dir = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD_DirSys; // /sys
 		if(!Directory.Exists(dir))
 		{
 			Directory.CreateDirectory(dir);
@@ -562,19 +562,19 @@ public class BBGDKLLEPIB
 			data[i] = (byte)(data[i] ^ 0x1b);
 		}
 		
-		UnityEngine.Debug.Log("Write file "+dir+"/"+KCOGAGGCPBP.HJNJMNFEJEH);
-		File.WriteAllBytes(dir+"/"+KCOGAGGCPBP.HJNJMNFEJEH, data); // sys/02
+		UnityEngine.Debug.Log("Write file "+dir+"/"+KCOGAGGCPBP.HJNJMNFEJEH_File02);
+		File.WriteAllBytes(dir+"/"+KCOGAGGCPBP.HJNJMNFEJEH_File02, data); // sys/02
 	}
 
 	// // RVA: 0xF19B10 Offset: 0xF19B10 VA: 0xF19B10
 	private bool GBCDHECMDMC()
 	{
-		string dir = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD; // sys
+		string dir = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD_DirSys; // sys
 		if(!Directory.Exists(dir))
 		{
 			Directory.CreateDirectory(dir);
 		}
-		string file = dir + "/" + KCOGAGGCPBP.HJNJMNFEJEH; // sys/02
+		string file = dir + "/" + KCOGAGGCPBP.HJNJMNFEJEH_File02; // sys/02
 		if(File.Exists(file))
 		{
 			byte[] data = File.ReadAllBytes(file);
