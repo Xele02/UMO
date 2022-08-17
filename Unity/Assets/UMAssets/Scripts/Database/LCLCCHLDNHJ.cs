@@ -326,14 +326,20 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG
 	// // RVA: 0xD9CEF8 Offset: 0xD9CEF8 VA: 0xD9CEF8 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(0, "CAOGDCBPBAN");
+		TodoLogger.Log(100, "CAOGDCBPBAN");
 		return 0;
 	}
 
 	// // RVA: 0xD9D4A0 Offset: 0xD9D4A0 VA: 0xD9D4A0
-	public bool OEMKAFGPOCE(int JPIDIENBGKH, int AHHJLDLAPAN)
+	public bool OEMKAFGPOCE(int JPIDIENBGKH_CostumeId, int AHHJLDLAPAN_PrismDivaId)
     {
-		TodoLogger.Log(0, "CAOGDCBPBAN");
+		if (JPIDIENBGKH_CostumeId > 0 && JPIDIENBGKH_CostumeId <= CDENCMNHNGA.Count)
+		{
+			if(CDENCMNHNGA[JPIDIENBGKH_CostumeId - 1].PPEGAKEIEGM == 2)
+			{
+				return CDENCMNHNGA[JPIDIENBGKH_CostumeId - 1].JPIDIENBGKH_CostumeId == JPIDIENBGKH_CostumeId && CDENCMNHNGA[JPIDIENBGKH_CostumeId - 1].AHHJLDLAPAN_PrismDivaId == AHHJLDLAPAN_PrismDivaId;
+			}
+		}
 		return false;
     }
 
