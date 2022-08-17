@@ -803,8 +803,9 @@ public class HMJHLLPBCLD : IComparable<HMJHLLPBCLD>
 	// // RVA: 0x15F6A10 Offset: 0x15F6A10 VA: 0x15F6A10 Slot: 4
 	public int CompareTo(HMJHLLPBCLD EAIPIMCBNJN)
 	{
-		TodoLogger.Log(0, "HMJHLLPBCLD CompareTo");
-		return 0;
+		if (EAIPIMCBNJN == null)
+			return 1;
+		return LJNAKDMILMC.CompareTo(EAIPIMCBNJN.LJNAKDMILMC);
 	}
 
 	// // RVA: 0x15F6A54 Offset: 0x15F6A54 VA: 0x15F6A54
