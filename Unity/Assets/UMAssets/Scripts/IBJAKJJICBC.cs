@@ -479,7 +479,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 							}
 						}
 						IBJAKJJICBC songInfo = new IBJAKJJICBC();
-						songInfo.KHEKNNFCAOI(musicInfo.GHBPLHBNMBK, b, time.Millisecond/*??*/, val, JHNMKKNEENE_Date, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.FPGDAPAILAK == 2, false, JCOJKAHFADL);
+						songInfo.KHEKNNFCAOI(musicInfo.GHBPLHBNMBK, b, time.Millisecond/*??*/, val, JHNMKKNEENE_Date, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.FPGDAPAILAK_ExtremeUnlock == 2, false, JCOJKAHFADL);
 						songInfo.MFJKNCACBDG = (int)type;
 						songInfo.GDLNCHCPMCK_HasBoost = b2;
 						if(EHBPHDPHPKF)
