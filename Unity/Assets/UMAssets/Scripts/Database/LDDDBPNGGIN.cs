@@ -119,7 +119,26 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG
 	// public byte[] CEKGFNKJDCF(KOGHKIODHPA JEMMMJEJLNL, int JPIPENJGGDD, int AOPBAOJIOGO, int ILABPFOMEAG, int JKGFBFPIMGA, bool MCCIFLKCNKO) { }
 
 	// // RVA: 0xDA0984 Offset: 0xDA0984 VA: 0xDA0984
-	// public byte[] KLIGCACGHHN(KOGHKIODHPA JEMMMJEJLNL, int AOPBAOJIOGO, int ILABPFOMEAG, int JKGFBFPIMGA, bool MCCIFLKCNKO) { }
+	public byte[] KLIGCACGHHN(KOGHKIODHPA_Board JEMMMJEJLNL_BoardDb, int AOPBAOJIOGO_Sb, int ILABPFOMEAG_Va, int JKGFBFPIMGA_Rar, bool MCCIFLKCNKO_Feed)
+	{
+		int id = GENHLFPKOEE(JKGFBFPIMGA_Rar, MCCIFLKCNKO_Feed);
+		int id2 = JEMMMJEJLNL_BoardDb.NENHCPMDAGM(id, AOPBAOJIOGO_Sb, ILABPFOMEAG_Va);
+		int key = id * 1000 + id2;
+		if (GEDEIGJKMGI.ContainsKey(key))
+		{
+			return GEDEIGJKMGI[key];
+		}
+		else
+		{
+			byte[] res = new byte[50];
+			for(int i = 0; i < id2; i++)
+			{
+				res[i >> 3] |= (byte)(1 << (i & 7));
+			}
+			GEDEIGJKMGI.Add(key, res);
+			return res;
+		}
+	}
 
 	// // RVA: 0xDA0B80 Offset: 0xDA0B80 VA: 0xDA0B80
 	// public int FHHPNFAECCJ(int CKFNNECHOGG) { }
@@ -140,7 +159,13 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG
 	// public KLJCBKMHKNK BBFNPHGDCOF(int PPFNGGCBJKC_Id) { }
 
 	// // RVA: 0xDA08F4 Offset: 0xDA08F4 VA: 0xDA08F4
-	// public int GENHLFPKOEE(int FBFLDFMFFOH, bool MCCIFLKCNKO) { }
+	public int GENHLFPKOEE(int FBFLDFMFFOH_Rar, bool MCCIFLKCNKO_Feed)
+	{
+		if (MCCIFLKCNKO_Feed)
+			return ALPMOLDJJKL_RarFeedMltMax[FBFLDFMFFOH_Rar - 1];
+		else
+			return LLDJIAKLOGC_RarMltMax[FBFLDFMFFOH_Rar - 1];
+	}
 
 	// // RVA: 0xDA0E5C Offset: 0xDA0E5C VA: 0xDA0E5C
 	// public int LAGGGIEIPEG(int JKGFBFPIMGA, bool OBKCAELADKD, bool MCCIFLKCNKO) { }

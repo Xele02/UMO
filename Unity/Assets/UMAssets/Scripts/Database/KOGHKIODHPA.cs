@@ -101,13 +101,26 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG
 	public List<NHINPDLLFIO> GJLBMELKHEM { get; private set; } // 0x30 LLHGFEAEMNA EPGHPHEGHIN HCFHCAJOHMJ
 
 	// // RVA: 0x112F6A0 Offset: 0x112F6A0 VA: 0x112F6A0
-	// public AFIFDLOAKGI DDGNLCJGFJF(int KIJAPOFAGPN) { }
+	public AFIFDLOAKGI DDGNLCJGFJF(int KIJAPOFAGPN)
+	{
+		if(KIJAPOFAGPN != 0)
+		{
+			return PJADHDHKOEJ[KIJAPOFAGPN - 1];
+		}
+		return null;
+	}
 
 	// // RVA: 0x112F730 Offset: 0x112F730 VA: 0x112F730
-	// public DMPDJFAGCPN FDCDIHIIJJM(int BJNBBEMBMIK) { }
+	public DMPDJFAGCPN FDCDIHIIJJM_GetLayout(int BJNBBEMBMIK)
+	{
+		return KLEBDKALPBD_Layout[BJNBBEMBMIK - 1];
+	}
 
 	// // RVA: 0x112F7DC Offset: 0x112F7DC VA: 0x112F7DC
-	// public DMPDJFAGCPN GPKFGCFHDHH(int BJNBBEMBMIK, bool JEMMNNJIIJL = False) { }
+	public DMPDJFAGCPN GPKFGCFHDHH(int BJNBBEMBMIK, bool JEMMNNJIIJL = false)
+	{
+		return JEMMNNJIIJL ? GLEOCPPMAKK[BJNBBEMBMIK - 1] : OONHJNINFAD_Sub[BJNBBEMBMIK - 1];
+	}
 
 	// // RVA: 0x112F898 Offset: 0x112F898 VA: 0x112F898
 	// public AFIFDLOAKGI BHMFCIIGKCB(int BJNBBEMBMIK, int OIPCCBHIKIA) { }
@@ -116,10 +129,46 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG
 	// public AFIFDLOAKGI PBINAHNEFIK(int AOPBAOJIOGO, int OIPCCBHIKIA, int JPIPENJGGDD, int JPJNKNOJBMM, int ILABPFOMEAG, int JGJFIJOCPAG) { }
 
 	// // RVA: 0x112FEF4 Offset: 0x112FEF4 VA: 0x112FEF4
-	// public bool AKKIBDEENJH(int ILABPFOMEAG) { }
+	public bool AKKIBDEENJH(int ILABPFOMEAG_Va)
+	{
+		bool res = false;
+		if(ILABPFOMEAG_Va > 0 && ILABPFOMEAG_Va <= GJLBMELKHEM.Count)
+		{
+			if (GJLBMELKHEM[ILABPFOMEAG_Va - 1].PPEGAKEIEGM == 2)
+				res = true;
+		}
+		return res;
+	}
 
 	// // RVA: 0x112FFE4 Offset: 0x112FFE4 VA: 0x112FFE4
-	// public int NENHCPMDAGM(int JPIPENJGGDD, int AOPBAOJIOGO, int ILABPFOMEAG) { }
+	public int NENHCPMDAGM(int JPIPENJGGDD, int AOPBAOJIOGO_Sb, int ILABPFOMEAG_Va)
+	{
+		int res = 0;
+		DMPDJFAGCPN d = GPKFGCFHDHH(AOPBAOJIOGO_Sb, false);
+		if(d != null)
+		{
+			if(AKKIBDEENJH(ILABPFOMEAG_Va))
+			{
+				DMPDJFAGCPN d2 = GPKFGCFHDHH(AOPBAOJIOGO_Sb, true);
+				if(d2 != null)
+				{
+					if(JPIPENJGGDD > 0)
+					{
+						for(int i = 0; i < JPIPENJGGDD; i++)
+						{
+							DMPDJFAGCPN d3 = i < GJLBMELKHEM[ILABPFOMEAG_Va - 1].JPJNKNOJBMM ? d2 : d;
+							res += d.PDKGMFHIFML_Pl.Count - 1;
+						}
+					}
+				}
+			}
+			else
+			{
+				res = d.PDKGMFHIFML_Pl.Count - 1 * JPIPENJGGDD;
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0x1130188 Offset: 0x1130188 VA: 0x1130188
 	public KOGHKIODHPA_Board()
