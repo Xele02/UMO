@@ -672,7 +672,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB32384 Offset: 0xB32384 VA: 0xB32384
 		public void UpdateEnterToHomeTime()
 		{
-			m_enterToHomeTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+			m_enterToHomeTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		}
 
 		// // RVA: 0xB32468 Offset: 0xB32468 VA: 0xB32468
@@ -834,7 +834,7 @@ namespace XeApp.Game.Menu
 		{
 			if (musicCloseAt == 0)
 				return false;
-			if (musicCloseAt > NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI())
+			if (musicCloseAt > NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime())
 				return false;
 			TodoLogger.Log(0, "Finish TryMusicPeriod");
 			return true;

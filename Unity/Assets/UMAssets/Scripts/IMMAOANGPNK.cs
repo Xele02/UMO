@@ -112,7 +112,7 @@ public class IMMAOANGPNK
         			UnityEngine.Debug.LogError("Exit  Error MHEKMICKGDM_LoadFromStorage");
 					yield break;
 				}
-				long val = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+				long val = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 				CMFCGGAKLFN(GBEGLNMFLIE, val); // Read versions
 				BBHOKHCDBFI(GBEGLNMFLIE); // Read Schedules
 				List<OKGLGHCBCJP_Database.BEOKNKGHFFE> list = NKEBMCIMJND_Database.BPCKOIDILDK(JOBKIDDLCPL, val);

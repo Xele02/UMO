@@ -37,7 +37,7 @@ public class IOGKADECKOP
 	private bool EHKDIJELHAO; // 0x34
 	private bool OOIBKCCMCAG; // 0x35
 	private int NLFFEOBGFMC; // 0x38
-	private int BLEAOGCLJPK; // 0x3C
+	private int BLEAOGCLJPK_TitleBannerAssetId; // 0x3C
 	private readonly int[] MLDJAIHDFOM = new int[10] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; // 0x40
 
 	// // RVA: 0xA061D8 Offset: 0xA061D8 VA: 0xA061D8
@@ -646,7 +646,7 @@ public class IOGKADECKOP
 			yield break;
 		}
 		// L524
-		FJHPOIDFLEE();
+		FJHPOIDFLEE_FindTitleBannerToDisplay();
 		
 		BEKAMBBOLBO = false;
 		CNAIDEAFAAM = false;
@@ -701,7 +701,7 @@ public class IOGKADECKOP
 		}
 		//LAB_00a0dbd4:
 		FHBJNLFHGPB(30);
-		long timestamp = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+		long timestamp = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.LOMEEJGIAHO.JOJFKIIHMOJ(timestamp);
 		DateTime date = Utility.GetLocalDateTime(timestamp);
 		NKGJPJPHLIF.HHCJCDFCLOB.DHMLDAGGKCD = date.Month * 100 + date.Year * 100000 + date.Day;
@@ -885,7 +885,7 @@ public class IOGKADECKOP
 					FHBJNLFHGPB(80);
 					BEKAMBBOLBO = false;
 					CNAIDEAFAAM = false;
-					long val2 = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+					long val2 = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 					JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.GHKKPKBBEAN(val2, () => {
 						//0xA0939C
 						BEKAMBBOLBO = true;
@@ -1104,11 +1104,11 @@ public class IOGKADECKOP
 		//0xA0B26C
 		AssetBundleLoadAssetOperation AHBCOPDIEEH = null;
 		
-		if(BLEAOGCLJPK > 0)
+		if(BLEAOGCLJPK_TitleBannerAssetId > 0)
 		{
-			string assetName = BLEAOGCLJPK.ToString("D6");
+			string assetName = BLEAOGCLJPK_TitleBannerAssetId.ToString("D6");
   
-			string assetBundleName = String.Format("ct/bg/ld/{0:D6}.xab", BLEAOGCLJPK);
+			string assetBundleName = String.Format("ct/bg/ld/{0:D6}.xab", BLEAOGCLJPK_TitleBannerAssetId);
 			AHBCOPDIEEH = AssetBundleManager.LoadAssetAsync(assetBundleName, assetName, typeof(Texture2D));
 			yield return AHBCOPDIEEH;
 			
@@ -1288,19 +1288,18 @@ public class IOGKADECKOP
 	}
 
 	// // RVA: 0xA081F8 Offset: 0xA081F8 VA: 0xA081F8
-	private void FJHPOIDFLEE()
+	private void FJHPOIDFLEE_FindTitleBannerToDisplay()
 	{
-		long val1 = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
-		BLEAOGCLJPK = 0;
-		List<JOHKNBEFHHP_TitleBanner.NGKJHBDEELB> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ACPALDEELCL_TitleBanner.CDENCMNHNGA;
-		for(int i = 0; i < l.Count; i++)
+		long serverTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		BLEAOGCLJPK_TitleBannerAssetId = 0;
+		List<JOHKNBEFHHP_TitleBanner.NGKJHBDEELB> bannerList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ACPALDEELCL_TitleBanner.CDENCMNHNGA_BannerList;
+		for(int i = 0; i < bannerList.Count; i++)
 		{
-			if(l[i].PPEGAKEIEGM == 2)
+			if(bannerList[i].PPEGAKEIEGM == 2)
 			{
-				TodoLogger.Log(0, "Check "+val1+" "+l[i].PDBPFJJCADD+" "+l[i].FDBNFFNFOND);
-				if(val1 >= l[i].PDBPFJJCADD && val1 <= l[i].FDBNFFNFOND)
+				if(serverTime >= bannerList[i].PDBPFJJCADD_StartDate && serverTime <= bannerList[i].FDBNFFNFOND_EndDate)
 				{
-					BLEAOGCLJPK = l[i].KNHOMNONOEB;
+					BLEAOGCLJPK_TitleBannerAssetId = bannerList[i].KNHOMNONOEB_AssetId;
 					return;
 				}
 			}

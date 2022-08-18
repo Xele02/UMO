@@ -138,7 +138,7 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBB8448 Offset: 0xBB8448 VA: 0xBB8448
 		public AREventMasterData.Chenge_bg FindChangeBG()
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			for(int i = 0; i < m_chengeBg.Count; i++)
 			{
 				if(m_chengeBg[i].enable == 2)

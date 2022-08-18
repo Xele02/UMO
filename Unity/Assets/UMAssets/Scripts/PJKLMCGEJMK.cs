@@ -30,7 +30,7 @@ public class PJKLMCGEJMK
     public static long DALFMJFKCGJ; // 0x0
     public static bool KCEDAACIBFG; // 0x8
     private KPKEOIJHIMN OPFEFKOOMED = new KPKEOIJHIMN(); // 0x2C
-    private OBOKMHHMOIL IEBFCJACLPN = new OBOKMHHMOIL(); // 0x30
+    private OBOKMHHMOIL_ServerInfo IEBFCJACLPN = new OBOKMHHMOIL_ServerInfo(); // 0x30
     public bool IEFOIIAEBBJ; // 0x34
     public bool NFECEPJEMHG; // 0x35
     public bool LMBLIFCNKCJ; // 0x36
@@ -69,8 +69,8 @@ public class PJKLMCGEJMK
     {
         CMCKNKKCNDK_Status = PJKLMCGEJMK.AHADNLCOPOL.NFFGMBBNNPH_None;
         LCIGLIDJILJ_updater = this.LFKLIOKFGLP_TryStartRequest;
-        HFMOEKIBNKA.EAJMLOKKOOK(Utility.GetCurrentUnixTime());
-        DNMDKBFINPG.JOJFKIIHMOJ(HFMOEKIBNKA.KMEFBNBFJHI());
+        HFMOEKIBNKA.EAJMLOKKOOK_SetServerTime(Utility.GetCurrentUnixTime());
+        DNMDKBFINPG.JOJFKIIHMOJ(HFMOEKIBNKA.KMEFBNBFJHI_GetServerTime());
         BNJPAKLNOPA_WorkerThreadQueue = new XeApp.Core.WorkerThread.WorkerThreadQueue();
         BNJPAKLNOPA_WorkerThreadQueue.Start();
     }
@@ -303,15 +303,15 @@ public class PJKLMCGEJMK
                 int errorResponse = 0;
                 if(error == null)
                 {
-                    OBOKMHHMOIL b = ADKIDBJCAJA.HOHOBEOJPBK;
+                    OBOKMHHMOIL_ServerInfo b = ADKIDBJCAJA.HOHOBEOJPBK_ServerInfo;
                     if(b != null)
                     {
-                        if(b.LCAINKFINEI != 0)
+                        if(b.LCAINKFINEI_ServerCurrentDateTime != 0)
                         {
-                            HFMOEKIBNKA.EAJMLOKKOOK(b.LCAINKFINEI);
+                            HFMOEKIBNKA.EAJMLOKKOOK_SetServerTime(b.LCAINKFINEI_ServerCurrentDateTime);
                             NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK = false;
                         }
-                        if(!string.IsNullOrEmpty(b.ABFADMDAAKJ))
+                        if(!string.IsNullOrEmpty(b.ABFADMDAAKJ_ServerRecommendedClientVersion))
                         {
                             IEFOIIAEBBJ = true;
                         }

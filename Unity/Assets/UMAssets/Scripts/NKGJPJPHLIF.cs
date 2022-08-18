@@ -409,8 +409,8 @@ public class NKGJPJPHLIF
 		// // RVA:  Offset: 0xC1AA34 VA: 0xC1AA34
 		// internal void HPCLPPCILDO(CACGCMBKHDI JIPCHHHLOMM) { }
 
-		UnityEngine.Debug.LogError("Check "+IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI()+" "+GOEPLCHCCBC);
-		if((IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI() - GOEPLCHCCBC) < 1799 && !FBBNPFFEJBN)
+		UnityEngine.Debug.LogError("Check "+IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()+" "+GOEPLCHCCBC);
+		if((IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() - GOEPLCHCCBC) < 1799 && !FBBNPFFEJBN)
 		{
 			if(BHFHGFKBOHH != null)
 			{
@@ -435,7 +435,7 @@ public class NKGJPJPHLIF
 				val = COJNCNGHIJC.NFEAMMJIMPG.PNAAOBECMPA;
 			}
 			AFJEOKGBCNA = val;
-			GOEPLCHCCBC = IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI();
+			GOEPLCHCCBC = IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			if(BHFHGFKBOHH != null)
 			{
 				BHFHGFKBOHH();
@@ -484,9 +484,9 @@ public class NKGJPJPHLIF
 											KEJNOIJMBLP = SakashoSupportSite.GetToken(
 													(string IDLHJIOMJBK) => { // success
 															//0xC1A424
-															OBOKMHHMOIL o = new OBOKMHHMOIL();
+															OBOKMHHMOIL_ServerInfo o = new OBOKMHHMOIL_ServerInfo();
 															o.KHEKNNFCAOI_Init(IDLHJIOMJBK);
-															NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.EAJMLOKKOOK(o.LCAINKFINEI);
+															NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.EAJMLOKKOOK_SetServerTime(o.LCAINKFINEI_ServerCurrentDateTime);
 															KEJNOIJMBLP = null;
 															DPJBHHIHJJK = false;
 															PECPLBANLBN = false; // ?   strh r5,[r4,#0xbc]

@@ -7,9 +7,9 @@ using System.Threading;
 public class IIDJLAEDMPI
 {
 	private const long OMCDGIKLEDM = 20;
-	private long NNBNNPOEJLK; // 0x8
-	private long FLMCOGBDCCF; // 0x10
-	private long KBHHALOMJCI; // 0x18
+	private long NNBNNPOEJLK_ServerTime; // 0x8
+	private long FLMCOGBDCCF_CurrentTime; // 0x10
+	private long KBHHALOMJCI_LastTimeUpdate; // 0x18
 	private Stopwatch KOIMMJDGHHI; // 0x20
 	private object CBHDHHIHLLG; // 0x24
 	private uint HFFJFEMMIGF; // 0x28
@@ -28,21 +28,21 @@ public class IIDJLAEDMPI
 		CBHDHHIHLLG = new object();
 		OAJDFDHDMEN = -1;
 		NILMMFMIBMF = "";
-		FLMCOGBDCCF = Utility.GetCurrentUnixTime();
+		FLMCOGBDCCF_CurrentTime = Utility.GetCurrentUnixTime();
 		GameManager.Instance.appBootTime.UpdateElapsedTime();
-		KBHHALOMJCI = GameManager.Instance.appBootTime.ElapsedMilliseconds;
+		KBHHALOMJCI_LastTimeUpdate = GameManager.Instance.appBootTime.ElapsedMilliseconds;
 	}
 
 	// // RVA: 0x11EDDAC Offset: 0x11EDDAC VA: 0x11EDDAC
-	public long KMEFBNBFJHI()
+	public long KMEFBNBFJHI_GetServerTime()
 	{
-		if(NNBNNPOEJLK == 0)
+		if(NNBNNPOEJLK_ServerTime == 0)
 			return 0;
 
 		bool isLocked = false;
 		Monitor.Enter(CBHDHHIHLLG, ref isLocked);
 
-		long res = NNBNNPOEJLK + BMIKAALKIJC();
+		long res = NNBNNPOEJLK_ServerTime + BMIKAALKIJC_GetElapsedTimeSinceLastServerUpdate();
 		if(isLocked)
 			Monitor.Exit(CBHDHHIHLLG);
 
@@ -56,14 +56,14 @@ public class IIDJLAEDMPI
 	// public string MAFDCGIIMOE() { }
 
 	// // RVA: 0x1203D5C Offset: 0x1203D5C VA: 0x1203D5C
-	public void EAJMLOKKOOK(long NCNFAEKLJGA)
+	public void EAJMLOKKOOK_SetServerTime(long NCNFAEKLJGA)
 	{
-		NNBNNPOEJLK = NCNFAEKLJGA;
-		FLMCOGBDCCF = Utility.GetCurrentUnixTime();
+		NNBNNPOEJLK_ServerTime = NCNFAEKLJGA;
+		FLMCOGBDCCF_CurrentTime = Utility.GetCurrentUnixTime();
 		bool isLocked = false;
 		Monitor.Enter(CBHDHHIHLLG, ref isLocked);
 
-		KBHHALOMJCI = GameManager.Instance.appBootTime.ElapsedMilliseconds;
+		KBHHALOMJCI_LastTimeUpdate = GameManager.Instance.appBootTime.ElapsedMilliseconds;
 
 		if(isLocked)
 			Monitor.Exit(CBHDHHIHLLG);
@@ -73,12 +73,12 @@ public class IIDJLAEDMPI
 	// private long OPALLHDEOAL() { }
 
 	// // RVA: 0x1203A60 Offset: 0x1203A60 VA: 0x1203A60
-	private long BMIKAALKIJC()
+	private long BMIKAALKIJC_GetElapsedTimeSinceLastServerUpdate()
 	{
 		bool isLocked = false;
 		Monitor.Enter(CBHDHHIHLLG, ref isLocked);
 
-		long res = GameManager.Instance.appBootTime.ElapsedMilliseconds - KBHHALOMJCI;
+		long res = GameManager.Instance.appBootTime.ElapsedMilliseconds - KBHHALOMJCI_LastTimeUpdate;
 
 		if(isLocked)
 			Monitor.Exit(CBHDHHIHLLG);
