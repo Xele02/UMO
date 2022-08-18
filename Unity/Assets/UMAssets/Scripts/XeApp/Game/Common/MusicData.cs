@@ -182,17 +182,25 @@ namespace XeApp.Game.Common
 			int score_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CHBLIEKBOLL_GetScoreId(wavId, variationId, difficultyType, is6Line);
 			StringBuilder str = new StringBuilder();
 			str.SetFormat("{0}{1:D8}", strPrefix, score_id);
-			CBBJHPBGBAJ_Archive tarFile = null;
 			if(tarFile != null)
 			{
 				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tarFile.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
 				{
 					//0xAE702C
-					return x.OPFGFINHFCE_Name == str.ToString();
+					return x.OPFGFINHFCE_Name.Contains(str.ToString());
 				});
 				if (file != null)
 				{
 					res = MusicScoreData.Instantiate(file.DBBGALAPFGC_Data);
+				}
+				else
+				{
+					string listFiles = "";
+					foreach(var f in tarFile.KGHAJGGMPKL_Files)
+					{
+						listFiles += f.OPFGFINHFCE_Name +" ";
+					}
+					UnityEngine.Debug.LogError("File "+str.ToString()+" not found in tarFile. Files are : "+listFiles);
 				}
 			}
 			if (res == null)

@@ -224,10 +224,10 @@ namespace XeApp.Game
 		private static void ProcessInputNoteInfo(ref MusicScoreData.InputNoteInfo info, List<MusicScoreData.InputNoteInfo> infoList)
 		{
 			info.wingTrackID = -1;
-			if((int)info.flick < 9)
+			if((int)info.flick > 9)
 			{
 				info.wingTrackID = (int)info.flick - 10;
-				//if(!RhythmGameConsts.IsWingLine(info.trackID)) //??
+				if(!RhythmGameConsts.IsWingLine(info.trackID))
 				{
 					if (RhythmGameConsts.IsLeftLine(info.trackID))
 						info.flick = FlickType.Left;
@@ -259,12 +259,133 @@ namespace XeApp.Game
 		// // RVA: 0xC97D08 Offset: 0xC97D08 VA: 0xC97D08
 		private static MusicScoreData InstantiateFromRIFF(byte[] dataBytes, int offset, int size)
 		{
-			TodoLogger.Log(0, "InstantiateFromRIFF");
+			uint header = BitConverter.ToUInt32(dataBytes, offset);
+			int num = BitConverter.ToInt32(dataBytes, offset + 4);
+			bool isWideLine = false;
+			if(header == 0x46464952)
+			{
+				List<MusicScoreData.TenpoInfo> tenpoList = new List<TenpoInfo>();
+				List<MusicScoreData.InputNoteInfo> inputList = new List<InputNoteInfo>();
+				List<MusicScoreData.EventNoteInfo> eventList = new List<EventNoteInfo>();
+				List<MusicScoreData.EventNoteInfo> eventList2 = new List<EventNoteInfo>();
+				for(int pos = offset + 8; pos < num + offset;)
+				{
+					uint chunkId = BitConverter.ToUInt32(dataBytes, pos);
+					int chunkSize = BitConverter.ToInt32(dataBytes, pos + 4);
+					int numElem = BitConverter.ToInt32(dataBytes, pos + 8);
+					ushort elemSize = BitConverter.ToUInt16(dataBytes, pos + 12);
+					if(chunkId == 0x204d5042) // BPM 
+					{
+						if(elemSize != 20)
+						{
+							UnityEngine.Debug.LogError(tbl2[3]);
+							return null;
+						}
+						tenpoList.Capacity = numElem;
+						for(int i = 0; i < numElem; i++)
+						{
+							TenpoInfo tenpo = new TenpoInfo();
+							tenpo.time = BitConverter.ToInt32(dataBytes, pos + 16 + i * 20);;// int time; // 0x0
+							tenpo.bpm = BitConverter.ToSingle(dataBytes, pos + 20 + i * 20);// float bpm; // 0x4
+							tenpo.offset = BitConverter.ToSingle(dataBytes, pos + 24 + i * 20);// float offset; // 0x8
+							tenpo.tacet = dataBytes[pos + 32 + i * 20];// byte tacet; // 0xC
+							tenpo.meter = dataBytes[pos + 33 + i * 20];// byte meter; // 0xD
+							tenpo.length = BitConverter.ToInt32(dataBytes, pos + 28 + i * 20);// int length; // 0x10
+							tenpoList.Add(tenpo);
+						}
+					}
+					else if(chunkId == 0x45524353) // SCRE
+					{
+						if(numElem != 1 || elemSize != 4)
+						{
+							UnityEngine.Debug.LogError(tbl2[2]);
+							return null;
+						}
+						int val5 = BitConverter.ToInt32(dataBytes, pos + 16);
+						if(val5 != 1)
+						{
+							UnityEngine.Debug.LogError(tbl2[1]);
+							return null;
+						}
+					}
+					else if(chunkId == 0x544e5645) // EVNT
+					{
+						if(elemSize != 8)
+						{
+							UnityEngine.Debug.LogError(tbl2[5]);
+							return null;
+						}
+						if(dataBytes[pos + 14] == 11)
+						{
+							eventList2 = SetupEventTrack(dataBytes, pos + 16, numElem);
+						}
+						else if(dataBytes[pos + 14] == 10)
+						{
+							eventList = SetupEventTrack(dataBytes, pos + 16, numElem);
+						}
+					}
+					else if(chunkId == 0x54504e49) // INPT
+					{
+						if(elemSize != 20)
+						{
+							UnityEngine.Debug.LogError(tbl2[4]);
+							return null;
+						}
+						inputList.Capacity = numElem;
+						for(int i = 0; i < numElem; i++)
+						{
+							InputNoteInfo input = new InputNoteInfo();
+							input.time = BitConverter.ToInt32(dataBytes, pos + 16 + i * 20);
+							input.trackID = (sbyte)dataBytes[pos + 20 + i * 20];
+							input.syncIndex = BitConverter.ToUInt16(dataBytes, pos + 22 + i * 20);
+							input.sync = (TouchState)dataBytes[pos + 24 + i * 20];
+							input.longTouch = (TouchState)dataBytes[pos + 25 + i * 20];
+							input.swipe = (TouchState)dataBytes[pos + 26 + i * 20];
+							input.flick = (FlickType)dataBytes[pos + 27 + i * 20];
+							input.prevIndex = BitConverter.ToUInt16(dataBytes, pos + 28 + i * 20);
+							input.nextIndex = BitConverter.ToUInt16(dataBytes, pos + 30 + i * 20);
+							input.value = BitConverter.ToInt32(dataBytes, pos + 32 + i * 20);
+							input.thisIndex = i & 0xffff;
+							ProcessInputNoteInfo(ref input, inputList);
+							isWideLine |= RhythmGameConsts.IsWideLine(input.trackID);
+							inputList.Add(input);
+						}
+					}
+					pos += 8 + chunkSize;
+				}
+				if(eventList != null && eventList2 != null && tenpoList != null && inputList != null)
+				{
+					MusicScoreData scoreData = new MusicScoreData();
+					scoreData.tenpoTrack = tenpoList;
+					scoreData.inputNoteTrack = inputList;
+					scoreData.eventTrack10 = eventList;
+					scoreData.eventTrack11 = eventList2;
+					scoreData.isWideTrack = isWideLine;
+					return scoreData;
+				}
+				UnityEngine.Debug.LogError(tbl2[6]);
+			}
+			else
+			{
+				UnityEngine.Debug.LogError(tbl2[0]);
+			}
 			return null;
 		}
 
 		// // RVA: 0xC9A2CC Offset: 0xC9A2CC VA: 0xC9A2CC
-		// private static List<MusicScoreData.EventNoteInfo> SetupEventTrack(byte[] dataBytes, int offset, int count) { }
+		private static List<MusicScoreData.EventNoteInfo> SetupEventTrack(byte[] dataBytes, int offset, int count)
+		{
+			List<MusicScoreData.EventNoteInfo> res = new List<MusicScoreData.EventNoteInfo>();
+			res.Capacity = count;
+			for(int i = 0; i < count; i++)
+			{
+				EventNoteInfo info = new EventNoteInfo();
+				info.time = BitConverter.ToInt32(dataBytes, offset + i * 8);
+				info.value = BitConverter.ToInt32(dataBytes, offset + 4 + i * 8);
+				res.Add(info);
+			}
+			return res;
+		}
 
 		// // RVA: 0xC9A42C Offset: 0xC9A42C VA: 0xC9A42C
 		// private int GetSyncNeighborIndex(int index) { }
