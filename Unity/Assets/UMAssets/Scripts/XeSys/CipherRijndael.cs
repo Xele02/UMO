@@ -20,7 +20,11 @@ namespace XeSys
 		}
 
 		// // RVA: 0x1930390 Offset: 0x1930390 VA: 0x1930390
-		// public string EncryptToBase64(string plainText) { }
+		public string EncryptToBase64(string plainText)
+		{
+			byte[] data = Encoding.UTF8.GetBytes(plainText);
+			return Convert.ToBase64String(rijndale.CreateEncryptor().TransformFinalBlock(data, 0, data.Length));
+		}
 
 		// // RVA: 0x19305C4 Offset: 0x19305C4 VA: 0x19305C4
 		// public string EncryptToURLBase64(string plainText) { }

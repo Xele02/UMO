@@ -1033,8 +1033,8 @@ public class IOGKADECKOP
 					if(!OOICHDNLLJG)
 					{
 						CIOECGOMILE.HHCJCDFCLOB.AKCOAKHAGAL();
-						GameManager.Instance.localSave.EPJOACOONAC().IAHLNPMFJMH_Tutorial.PPOJCDCCFNI_TutorialEnd = 1;
-						GameManager.Instance.localSave.HJMKBCFJOOH();
+						GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PPOJCDCCFNI_TutorialEnd = 1;
+						GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 					}
 					else
 					{
@@ -1191,7 +1191,7 @@ public class IOGKADECKOP
 	{
 		if(!GameManager.Instance.IsTutorial)
 		{
-			if(GameManager.Instance.localSave.EPJOACOONAC().IAHLNPMFJMH_Tutorial.PPOJCDCCFNI_TutorialEnd == 0)
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PPOJCDCCFNI_TutorialEnd == 0)
 				return;
 			
 			GameManager.Instance.ProgressBar.Begin(DANMJLOBLIE.transform.parent);

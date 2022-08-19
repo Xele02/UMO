@@ -13,7 +13,7 @@ public class CEBFFLDKAEC
         return ENOBDCFHELD ^ DLHDPLPLCAC;
 	} set {
 		// JFNEHIGOBHH 0x12B125C
-        KPOCKNCJBPN();
+        KPOCKNCJBPN_CheckSecure();
 		DLHDPLPLCAC = ENOBDCFHELD ^ value;
 		IPKONDLIDHC = FCEJCHGLFGN ^ value;
 	} }   
@@ -35,7 +35,7 @@ public class CEBFFLDKAEC
 	// public void DNBGDMBCLMI() { }
 
 	// // RVA: 0x12B128C Offset: 0x12B128C VA: 0x12B128C
-	public FENCAJJBLBH KPOCKNCJBPN() 
+	public FENCAJJBLBH KPOCKNCJBPN_CheckSecure() 
 	{ 
 		if(NMNHBJIAPGG == null)
 		{

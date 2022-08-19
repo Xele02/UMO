@@ -534,7 +534,7 @@ namespace XeApp.Game
 			if(localSave == null)
 			{
 				localSave = new ILDKBCLAFPB(AFEHLCGHAEE.IEGHKKJJMHI, AFEHLCGHAEE.HBMPOOCGNEN);
-				localSave.PCODDPDFLHK();
+				localSave.PCODDPDFLHK_Load();
 			}
 			if(!divaResource)
 			{
@@ -1100,9 +1100,9 @@ namespace XeApp.Game
 			PNGOLKLFFLH b = new PNGOLKLFFLH();
 			b.KHEKNNFCAOI_Init(ti.prismValkyrieId, ti.valkyrieForm, 0);
 			int vidQuality = 0;
-			if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video == 0)
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video == 0)
 			{
-				vidQuality = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CBLEFELBNDN_GetQuality();
+				vidQuality = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CBLEFELBNDN_GetQuality();
 			}
 			List<MusicDirectionParamBase.ConditionSetting> settingList = new List<MusicDirectionParamBase.ConditionSetting>();
 			for(int i = 0; i < mi.onStageDivaNum; i++)

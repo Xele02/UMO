@@ -287,7 +287,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B07B8 Offset: 0x9B07B8 VA: 0x9B07B8
 		private void OnDestroy()
 		{
-			if(!XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			if(!XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				XeApp.Game.GameManager.Instance.PopupCanvas.worldCamera.clearFlags = UnityEngine.CameraClearFlags.Nothing;
 			}
@@ -485,7 +485,7 @@ namespace XeApp.Game.RhythmGame
 			List<int> listDiva = new List<int>();
 			int prismDivaId = Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId;
 			listDiva.Add(prismDivaId);
-			if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				int prismCostumeId = Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismCostumeModelId;
 				gameDivaObject.Initialize(resource.divaResource, prismDivaId,
@@ -684,8 +684,8 @@ namespace XeApp.Game.RhythmGame
 			if(d.musicInfo.IsMvMode)
 			{
 				BackupSave();
-				ILDKBCLAFPB.MPHNGGECENI_Option saveInfo = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options;
-				BEJIKEOAJHN_OptionSLive b = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().MHHPDGJLJGE_OptionsSLive;
+				ILDKBCLAFPB.MPHNGGECENI_Option saveInfo = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options;
+				BEJIKEOAJHN_OptionSLive b = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive;
 				saveInfo.PBCBJAPONBF();
 				saveInfo.LMDACNNJDOE_VolSeRhythm = b.LMDACNNJDOE_VolSeRhythm;
 				saveInfo.ICGAOAFIHFD_VolBgmRhythm = b.ICGAOAFIHFD_VolBgmRhythm;
@@ -726,22 +726,22 @@ namespace XeApp.Game.RhythmGame
 			if(d.ForceCutin() > 0)
 			{
 				BackupSave();
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.DADIPGPHLDD_EffectCutin = d.ForceCutin() != 1 ? 1 : 0;
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DADIPGPHLDD_EffectCutin = d.ForceCutin() != 1 ? 1 : 0;
 			}
 			if(d.ForceDivaMode() > 0)
 			{
 				BackupSave();
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video = d.ForceDivaMode() != 1 ? 1 : 0;
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video = d.ForceDivaMode() != 1 ? 1 : 0;
 			}
 			if(d.ForceValkyrieMode() > 0)
 			{
 				BackupSave();
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.AFMDGKBANPH(d.ForceValkyrieMode() != 1); // ??
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AFMDGKBANPH_SetValkyrieMode(d.ForceValkyrieMode() != 1); // ??
 			}
 			
 			setting = new Setting();
-			setting.m_enable_cutin = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.GLKGAOFHLPN();
-			setting.m_visible_diva = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CJKKALFPMLA_IsDivaModeDivaVisible;
+			setting.m_enable_cutin = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GLKGAOFHLPN();
+			setting.m_visible_diva = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CJKKALFPMLA_IsDivaModeDivaVisible;
 			if(setting_mv.m_enable)
 			{
 				Setting.DMode a = Setting.DMode.Normal;
@@ -769,7 +769,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(backupSaveData.m_enable)
 			{
-				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options = backupSaveData.m_option;
+				XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options = backupSaveData.m_option;
 				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_BGM, backupSaveData.m_option.ICGAOAFIHFD_VolBgmRhythm, false);
 				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_SE, backupSaveData.m_option.LMDACNNJDOE_VolSeRhythm, false);
 				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_NOTES, backupSaveData.m_option.IBEINHHMHAC_VolNotesRhythm, false);
@@ -782,7 +782,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BA7BC Offset: 0x9BA7BC VA: 0x9BA7BC
 		private void ApplyDimmer()
 		{
-			if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.OLALFDCEHKJ_Dimmer3d > 9)
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OLALFDCEHKJ_Dimmer3d > 9)
 			{
 				dimmer3dMesh.gameObject.SetActive(false);
 			}
@@ -790,7 +790,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				dimmer3dMesh.gameObject.SetActive(true);
 				dimmer3dMesh.sharedMaterial = new Material(dimmer3dMesh.sharedMaterial);
-				dimmer3dMesh.sharedMaterial.color = new Color(0, 0, 0, (10 - GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.OLALFDCEHKJ_Dimmer3d) * 180.0f / 10.0f / 255.0f );
+				dimmer3dMesh.sharedMaterial.color = new Color(0, 0, 0, (10 - GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OLALFDCEHKJ_Dimmer3d) * 180.0f / 10.0f / 255.0f );
 			}
 		}
 
@@ -1193,7 +1193,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C10DC Offset: 0x9C10DC VA: 0x9C10DC
 		private void StartRhythmGame()
 		{
-			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				musicIntroObject.Begin();
 				ValkyrieColorParam col = resource.musicIntroResource.paramColor;
@@ -1279,7 +1279,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			yield return null; // wait end tuto
 			
-			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				musicIntroObject.Takeoff();
 			}
@@ -1725,7 +1725,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B9168 Offset: 0x9B9168 VA: 0x9B9168
 		private bool IsEnableMovie()
 		{
-			return GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.GPKILPOLNKO();
+			return GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GPKILPOLNKO();
 		}
 
 		// // RVA: 0x9BE120 Offset: 0x9BE120 VA: 0x9BE120
