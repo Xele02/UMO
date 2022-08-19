@@ -21,7 +21,25 @@ namespace XeSys
 		}
 
 		// // RVA: 0x2389E30 Offset: 0x2389E30 VA: 0x2389E30
-		// public static string GetString(EDOHBJAPLPF jdata, string key, string notExistValue) { }
+		public static string GetString(EDOHBJAPLPF_JsonData jdata, string key, string notExistValue)
+		{
+			if(jdata.BBAJPINMOEP_Contains(key))
+			{
+				if(jdata[key].EPNAPDBIJJE_IsString)
+				{
+					return (string)jdata[key];
+				}
+				else if(jdata[key].MDDJBLEDMBJ_IsInt)
+				{
+					return "" + ((int)jdata[key]);
+				}
+				else if(jdata[key].DCPEFFOMOOK_IsLong)
+				{
+					return "" + ((long)jdata[key]);
+				}
+			}
+			return notExistValue;
+		}
 
 		// // RVA: 0x238A09C Offset: 0x238A09C VA: 0x238A09C
 		// public static string GetString(EDOHBJAPLPF jdata, string key) { }
@@ -110,7 +128,10 @@ namespace XeSys
 		}
 
 		// // RVA: 0x238A8D0 Offset: 0x238A8D0 VA: 0x238A8D0
-		// public static long GetLong(EDOHBJAPLPF jdata, string key) { }
+		public static long GetLong(EDOHBJAPLPF_JsonData jdata, string key)
+		{
+			return GetLong(jdata, key, 0);
+		}
 
 		// // RVA: 0x238A8F0 Offset: 0x238A8F0 VA: 0x238A8F0
 		public static long GetLong(EDOHBJAPLPF_JsonData jdata)

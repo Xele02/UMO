@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_isLine6Mode = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA.LMPCJJKHHPA();
+				m_isLine6Mode = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.LMPCJJKHHPA_IsLine6();
 			}
 			m_pickupFreeMusicId = 0;
 			m_pickupFreeCategoryId = 0;
@@ -317,13 +317,13 @@ namespace XeApp.Game.Menu
 				//0x16859E4
 				return true;
 			});
-			Difficulty.Type difficulty = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA.FFACBDAJJJP();
-			FreeCategoryId.Type categoryId = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA.OGJDBPMKJKE();
+			Difficulty.Type difficulty = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.FFACBDAJJJP_GetDifficulty();
+			FreeCategoryId.Type categoryId = GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.OGJDBPMKJKE_GetCategoryId();
 			int curMusicId = 0;
-			OHCAABOMEOF.KGOGMKMBCPP_EventType val2 = 0;
-			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA.FKJBADIPKHK(
+			OHCAABOMEOF.KGOGMKMBCPP_EventType eventType = 0;
+			GameManager.Instance.localSave.EPJOACOONAC().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.FKJBADIPKHK_GetSelectionForCategory(
 				categoryId,
-				out curMusicId, out val2
+				out curMusicId, out eventType
 			);
 			int mId = m_pickupFreeMusicId;
 			if(mId > 0)
@@ -337,7 +337,7 @@ namespace XeApp.Game.Menu
 				if(categoryId == 0)
 					categoryId = FreeCategoryId.Type.Macross/*1*/;
 				diff = difficulty;
-				musicDataIdx = m_filteredMusicDataList[(int)categoryId - 1].FindIndex(curMusicId, val2, m_isLine6Mode, m_isSimulationLive);
+				musicDataIdx = m_filteredMusicDataList[(int)categoryId - 1].FindIndex(curMusicId, eventType, m_isLine6Mode, m_isSimulationLive);
 
 				if(musicDataIdx < 0)
 				{

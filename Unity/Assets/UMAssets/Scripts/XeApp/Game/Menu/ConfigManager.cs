@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 		private int[,] s_QualityValueTbl = new int[2,4] {{0, 1, 2, 3}, {0, 1, 3, 0}}; // 0x20
 
 		public ILDKBCLAFPB.MPHNGGECENI_Option Option { get; private set; } // 0x8
-		public ILDKBCLAFPB.JDBOPCADICO Notification { get; private set; } // 0xC
+		public ILDKBCLAFPB.JDBOPCADICO_Notification Notification { get; private set; } // 0xC
 		public BEJIKEOAJHN_OptionSLive OptionSLive { get; private set; } // 0x10
 		public static bool gotoTimingScene { get; set; } // 0x0
 		public static Vector2 scrollPosition { get; set; } // 0x4
