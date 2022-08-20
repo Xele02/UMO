@@ -1,4 +1,4 @@
-Shader "MCRS/ValkyrieMulti_High" {
+Shader "MCRS/ValkyrieMulti_High_" {
 	Properties {
 		_VAL_col ("VAL_col", 2D) = "white" {}
 		_Frenel_slider ("Frenel_slider", Range(-0.5, 1)) = 0
