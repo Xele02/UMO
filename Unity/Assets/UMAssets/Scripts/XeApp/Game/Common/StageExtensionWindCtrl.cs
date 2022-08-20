@@ -112,7 +112,60 @@ namespace XeApp.Game.Common
 		// // RVA: 0x13A541C Offset: 0x13A541C VA: 0x13A541C Slot: 6
 		public virtual void Update()
 		{
-			TodoLogger.Log(0, "Wind Update");
+			if(m_pause)
+				return;
+			if(m_list_diva.Count == 0)
+				return;
+			m_frame += m_speed;
+			if(m_interval < m_frame)
+			{
+				m_frame = 0;
+			}
+			m_frame_rate = 1;
+			if(m_interval >= 0)
+			{
+				m_frame_rate = Mathf.Clamp(m_frame / m_interval, 0, 1);
+			}
+			Vector3 vec = Vector3.zero;
+			if(m_power >= 0)
+			{
+				if(m_wind_dir != Vector3.zero)
+				{
+					if(m_frame <= 0)
+					{
+						Quaternion q = Quaternion.Euler(Random.Range(m_rand_x.x, m_rand_x.y), Random.Range(m_rand_y.x, m_rand_y.y), 0);
+						m_next_dir = (q * m_wind_dir).normalized * m_power;
+					}
+					vec = Vector3.Slerp(m_prev_dir, m_next_dir, m_frame_rate);
+				}
+			}
+			m_now_dir = vec;
+			for(int i = 0; i < m_list_diva.Count; i++)
+			{
+				List<BoneSpringControlPoint> bscp = m_list_diva[i].m_bsc.GetListBSCP();
+				if(m_sub_power < 0)
+				{
+					for(int j = 0; j < bscp.Count; j++)
+					{
+						bscp[j].m_forceFromOutside = m_now_dir * m_list_diva[i].m_node[j].m_rate;
+					}
+				}
+				else
+				{
+					for(int j = 0; j < bscp.Count; j++)
+					{
+						if(m_frame <= 0)
+						{
+							Quaternion q = Quaternion.Euler(Random.Range(m_sub_rand_x.x, m_sub_rand_x.y), Random.Range(m_sub_rand_y.x, m_sub_rand_y.y), 0);
+							Vector3 vec2 = (q * m_now_dir).normalized * m_power;
+							m_list_diva[i].m_node[j].m_prev = m_list_diva[i].m_node[j].m_now;
+							m_list_diva[i].m_node[j].m_next = vec2;
+						}
+						m_list_diva[i].m_node[j].m_now = Vector3.Slerp(m_list_diva[i].m_node[j].m_prev, m_list_diva[i].m_node[j].m_next, m_frame_rate);
+						bscp[j].m_forceFromOutside = (m_list_diva[i].m_node[j].m_now + m_now_dir) * m_list_diva[i].m_node[j].m_rate;
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x13A6030 Offset: 0x13A6030 VA: 0x13A6030 Slot: 4
