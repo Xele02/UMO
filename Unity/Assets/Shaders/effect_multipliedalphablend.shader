@@ -52,7 +52,7 @@ Shader "MCRS/Effect/MultipliedAlphaBlend" {
 			v2f vert(appdata v)
 			{
 				v2f o;
-				o.texcoord0 = TRANSFORM_TEX(v.texcoord0, _MainTex);
+				o.texcoord0 = v.texcoord0;
 				o.position0 = UnityObjectToClipPos(v.position0);
 				o.color0 = v.color0;
 				return o; 
