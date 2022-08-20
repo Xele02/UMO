@@ -12,7 +12,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1BEBAE0 Offset: 0x1BEBAE0 VA: 0x1BEBAE0
 		public void Initialize(DivaObject a_divaObject)
 		{
-			if(m_target_node = null)
+			if(m_target_node == null)
 				return;
 			a_divaObject.AttachMikeToObject(m_target_node);
 		}
