@@ -39,7 +39,9 @@ namespace ReferenceViewer
 			/// <summary>
 			/// Win/GitGrep
 			/// </summary>
-			WIN_GitGrep
+			WIN_GitGrep,
+
+			LINUX_Grep
 		}
 
 		public SearchType Type { get; set; }
@@ -71,6 +73,7 @@ namespace ReferenceViewer
 		internal static readonly CommandInfo OSXGit = new CommandInfo("git", "-C '{0}' grep -z -l {1}", Null);
 		internal static readonly CommandInfo WinFindstr = new CommandInfo("findstr.exe", "/M /S {1} *", Environment.NewLine);
 		internal static readonly CommandInfo WinGit = new CommandInfo("git.exe", "-C \"{0}\" grep -z -l {1}", Null);
+		internal static readonly CommandInfo LinuxGrep = new CommandInfo("grep", "{1} -rl --null '{0}'", Null);
 	}
 
 	public static class SearchTypeExtensions
@@ -82,7 +85,8 @@ namespace ReferenceViewer
 				{Result.SearchType.OSX_Grep, CommandInfo.OSXGrep},
 				{Result.SearchType.OSX_GitGrep, CommandInfo.OSXGit},
 				{Result.SearchType.WIN_FindStr, CommandInfo.WinFindstr},
-				{Result.SearchType.WIN_GitGrep, CommandInfo.WinGit}
+				{Result.SearchType.WIN_GitGrep, CommandInfo.WinGit},
+				{Result.SearchType.LINUX_Grep, CommandInfo.LinuxGrep},
 			};
 
 		public static CommandInfo Command(this Result.SearchType searchType)
@@ -92,7 +96,7 @@ namespace ReferenceViewer
 
 		public static string AppendArguments(this Result.SearchType searchType, List<string> excludes)
 		{
-			if (searchType == Result.SearchType.OSX_Grep)
+			if (searchType == Result.SearchType.OSX_Grep || searchType == Result.SearchType.LINUX_Grep)
 			{
 				string appendArguments = string.Empty;
 				foreach (string exclude in excludes)

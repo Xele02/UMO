@@ -214,5 +214,38 @@ namespace ReferenceViewer
 #endregion
 
 #endif
+
+#if UNITY_EDITOR_LINUX
+
+#region Linux/Grep
+
+		[MenuItem("Assets/Find References In Project/By Grep", true)]
+		static bool IsEnabledByGrep()
+		{
+			if (Selection.assetGUIDs == null || Selection.assetGUIDs.Length == 0)
+			{
+				return false;
+			}
+			return true;
+		}
+		
+		[MenuItem("Assets/Find References In Project/By Grep", false, 26)]
+		public static void FindReferencesByGrep()
+		{
+			if (!LoadSettings())
+			{
+				return;
+			}
+
+			Result result = ReferenceViewerProcessor.FindReferencesByCommand(Result.SearchType.LINUX_Grep, settings.GetExcludeExtentions());
+			if (result != null)
+			{
+				ReferenceViewerWindow.CreateWindow(result);
+			}
+		}
+
+#endregion
+
+#endif
 	}
 }
