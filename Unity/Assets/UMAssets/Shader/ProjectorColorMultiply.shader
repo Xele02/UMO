@@ -9,7 +9,7 @@ Shader "Projector/ColorMultiply" {
 		Pass {
 			Tags { "QUEUE" = "Transparent" }
 			Blend DstColor Zero, DstColor Zero
-			ColorMask RGB -1
+			ColorMask RGB
 			ZWrite Off
 			Offset -1, -1
 			CGPROGRAM
@@ -44,7 +44,7 @@ Shader "Projector/ColorMultiply" {
 				v2f o;
 
 				o.texcoord0 = mul(unity_Projector, v.position0);
-				o.texcoord0 = mul(unity_ProjectorClip, v.position0);
+				o.texcoord1 = mul(unity_ProjectorClip, v.position0);
 				o.position0 = UnityObjectToClipPos(v.position0);
 				return o; 
 			}
