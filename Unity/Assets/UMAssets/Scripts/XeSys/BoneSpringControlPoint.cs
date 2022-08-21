@@ -119,7 +119,7 @@ namespace XeSys
 			}
 			if(hasCollision)
 			{
-				parentTransform.rotation = parentTransform.rotation * Quaternion.FromToRotation(parentTransform.TransformDirection(boneDirection), currentPosition - parentTransform.position);
+				parentTransform.rotation = Quaternion.FromToRotation(parentTransform.TransformDirection(boneDirection), currentPosition - parentTransform.position) * parentTransform.rotation;
 				m_resultParentRot = parentTransform.rotation;
 			}
 		}
@@ -226,7 +226,7 @@ namespace XeSys
 					Vector3 dir = (((relational.transform.position - currentPosition) * line1targetRate + currentPosition) - (collider.position + ((collider.relational.position - collider.position) * line2TargetRate))) * (1 - line1targetRate);
 					AfterCollisionProcess(dist, (radius1 + radius2), dir);
 					dir = (((relational.transform.position - currentPosition) * line1targetRate + currentPosition) - (collider.position + ((collider.relational.position - collider.position) * line2TargetRate))) * (line1targetRate);
-					AfterCollisionProcess(dist, (radius1 + radius2), dir);
+					relational.AfterCollisionProcess(dist, (radius1 + radius2), dir);
 					return true;
 				}
 			}
@@ -235,5 +235,35 @@ namespace XeSys
 
 		//// RVA: 0x192B028 Offset: 0x192B028 VA: 0x192B028
 		//public void CalcBoundingSphereFromCapsule(Vector3 t_st, Vector3 t_ed, float t_st_radius, float t_ed_radius, out Vector3 a_pos, out float a_radius) { }
+
+		public void DrawDebugVolume()
+		{
+			Gizmos.DrawSphere(transform.position, radius);
+			if(relational != null)
+			{
+				Gizmos.DrawSphere(relational.transform.position, relational.radius);
+				Gizmos.DrawLine(transform.position, relational.transform.position);
+			}
+		}
+
+		private void OnDrawGizmosSelected()
+		{
+			if (UnityEditor.Selection.activeGameObject != this.gameObject) return;
+			Gizmos.color = Color.red;
+			DrawDebugVolume();
+			Gizmos.color = Color.blue;
+			if (colliderList != null)
+			{
+				foreach (var col in colliderList)
+				{
+					if (col)
+					{
+						col.DrawDebugVolume();
+						//Gizmos.DrawRay(new Ray(GetComponent<Transform>().position, col.GetComponent<Transform>().position));
+						//Gizmos.DrawLine(GetComponent<Transform>().position, col.GetComponent<Transform>().position);
+					}
+				}
+			}
+		}
 	}
 }
