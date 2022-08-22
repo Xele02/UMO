@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -42,24 +43,39 @@ namespace XeApp.Game.Common
 
 		public class BindData
 		{
-			//protected BoneSpringControlPoint m_point; // 0x8
+			protected BoneSpringControlPoint m_point; // 0x8
 			protected float m_influenceRate; // 0xC
 			protected float m_savedInfluence; // 0x10
 
 			// // RVA: 0xE635E4 Offset: 0xE635E4 VA: 0xE635E4
-			// public void .ctor(BoneSpringControlPoint point, BoneSpringSuppressParam.TargetData data) { }
+			public BindData(BoneSpringControlPoint point, BoneSpringSuppressParam.TargetData data)
+			{
+				m_point = point;
+				m_savedInfluence = point.influence;
+				m_influenceRate = data.influenceRate;
+			}
 
 			// // RVA: 0xE6367C Offset: 0xE6367C VA: 0xE6367C Slot: 4
-			// public virtual void ApplyValue(float suppressValue) { }
+			public virtual void ApplyValue(float suppressValue)
+			{
+				m_point.influenceSuppressRate = m_influenceRate * suppressValue;
+			}
 		}
 
 		public class BindDataWind : BindData
 		{
 			// // RVA: 0xE635E0 Offset: 0xE635E0 VA: 0xE635E0
-			// public void .ctor(BoneSpringControlPoint point, BoneSpringSuppressParam.TargetData data) { }
+			public BindDataWind(BoneSpringControlPoint point, BoneSpringSuppressParam.TargetData data)
+				: base(point, data)
+			{
+				return;
+			}
 
 			// // RVA: 0xE636C0 Offset: 0xE636C0 VA: 0xE636C0 Slot: 4
-			// public override void ApplyValue(float suppressValue) { }
+			public override void ApplyValue(float suppressValue)
+			{
+				m_point.influenceSuppressRateWind = m_influenceRate * suppressValue;
+			}
 		}
 
 		public const int PresetNum = 30;
@@ -74,7 +90,49 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE627A0 Offset: 0xE627A0 VA: 0xE627A0
 		public void Load(GameObject root, BoneSpringSuppressParam param, BoneSpringSuppressor.Preset preset)
 		{
-			TodoLogger.Log(0, "BoneSpringSuppressor Load");
+			m_param = param;
+			m_preset = preset;
+			if(m_bindDatas == null)
+			{
+				m_bindDatas = new List<BindData>(param.targetCount);
+			}
+			else
+			{
+				m_bindDatas.Clear();
+				m_bindDatas.Capacity = m_param.targetCount;
+			}
+			BoneSpringController ctrl = root.GetComponentInChildren<BoneSpringController>();
+			for(int i = 0; i < m_param.targetCount; i++)
+			{
+				BoneSpringSuppressParam.TargetData data = m_param.GetTargetData(i);
+				Transform t = ctrl.gameObject.transform.Find(data.pointPath);
+				if(t == null)
+				{
+					Debug.LogError("Point not found : "+data.pointPath);
+				}
+				else
+				{
+					BoneSpringControlPoint ctrlPoint = t.GetComponent<BoneSpringControlPoint>();
+					if(ctrlPoint == null)
+					{
+						Debug.LogError("Component CtrlPoint not found on "+data.pointPath);
+					}
+					else
+					{
+						if(m_preset == Preset.preset11_Wind)
+						{
+							m_bindDatas.Add(new BindDataWind(ctrlPoint, data));
+						}
+						else
+						{
+							m_bindDatas.Add(new BindData(ctrlPoint, data));
+						}
+					}
+				}
+			}
+			m_suppressValue = 0;
+			m_isReady = true;
+			m_isSuppressing = false;
 		}
 
 		// // RVA: 0xE63638 Offset: 0xE63638 VA: 0xE63638
@@ -89,7 +147,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE61F04 Offset: 0xE61F04 VA: 0xE61F04
 		public void UpdateSuppress()
 		{
-			TodoLogger.Log(0, "BoneSpringSuppressor UpdateSuppress");
+			if(m_isReady)
+			{
+				for(int i = 0; i < m_bindDatas.Count; i++)
+				{
+					m_bindDatas[i].ApplyValue(m_suppressValue);
+				}
+			}
 		}
 
 		// // RVA: 0xE63644 Offset: 0xE63644 VA: 0xE63644

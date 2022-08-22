@@ -67,27 +67,25 @@ namespace XeSys
 		{
 			float f17;
 			Vector3 v9c;
-			Vector3 v70 = line1EndPoint - line1StartPoint;
-			Vector3 v9 = v70;
-			Vector3 v80 = line2EndPoint - line2StartPoint;
-			Vector3 v7 = v80;
-			Vector3 v90 = line2StartPoint - line1StartPoint;
-			Vector3 v3 = v90;
-			float f10 = Vector3.Dot(v80, v80);
-			float f11 = Vector3.Dot(v70, v80);
-			float f12 = Vector3.Dot(v90, v80);
+			Vector3 /*v70*/line1 = line1EndPoint - line1StartPoint;
+			//Vector3 v9 = v70;
+			Vector3 /*v80*/line2 = line2EndPoint - line2StartPoint;
+			//Vector3 v7 = v80;
+			Vector3 /*v90*/line12Start = line2StartPoint - line1StartPoint;
+			//Vector3 v3 = v90;
+			float f10 = Vector3.Dot(line2, line2);
+			float f11 = Vector3.Dot(line1, line2);
+			float f12 = Vector3.Dot(line12Start, line2);
 			line1NearestTargetRate = 0;
 			line2NearestTargetRate = 0;
 			if (f10 >= 0)
 			{
-				v70 = v7 * f11 / f10;
-				v80 = v70 - v9;
-				v90 = v7 * f12 / f10;
-				v9c = v90 - v3;
-				Vector3 v8 = v80;
-				Vector3 v2 = v9c;
+				Vector3 v70 = line2 * f11 / f10;
+				Vector3 v80 = v70 - line1;
+				Vector3 v90 = line2 * f12 / f10;
+				v9c = v90 - line12Start;
 				float f13 = Vector3.Dot(v80, v80);
-				float f14 = Vector3.Dot(v8, v9c);
+				float f14 = Vector3.Dot(v80, v9c);
 				if (f13 < Mathf.Epsilon)
 				{
 					line1NearestTargetRate = 0;
@@ -109,15 +107,17 @@ namespace XeSys
 					f17 = v60.sqrMagnitude;
 					if (f17 < f15)
 						f15 = f17;
-					line2NearestTargetRate = v7.x * v3.x + v7.y * v3.y + v7.z * v3.z / (0 - f10);
+					line2NearestTargetRate = line2.x * line12Start.x + line2.y * line12Start.y + line2.z * line12Start.z / (0 - f10);
 					float f19 = line2NearestTargetRate;
-					v70 = v7 * f19;
+					v70 = line2 * f19;
 					v80 = v70 + line2StartPoint;
 					v90 = line1StartPoint - v80;
 					v60 = v90;
 					f17 = v60.sqrMagnitude;
 					if (f15 < f17)
+					{
 						return f15;
+					}
 					return f17;
 				}
 				f14 = f14 / f13;
@@ -131,7 +131,7 @@ namespace XeSys
 					f14 = f11;
 					line1NearestTargetRate = f14;
 				}
-				f10 = ((f14 * v9.z - v3.z) * v7.z + (f14 * v9.x - v3.x) * v7.x + (f14 * v9.y - v3.y) * v7.y) / f10;
+				f10 = ((f14 * line1.z - line12Start.z) * line2.z + (f14 * line1.x - line12Start.x) * line2.x + (f14 * line1.y - line12Start.y) * line2.y) / f10;
 				line2NearestTargetRate = f10;
 				if (f10 >= 0)
 					f17 = 1.0f;
@@ -140,13 +140,10 @@ namespace XeSys
 				if (f10 <= 0 || f10 >= 1)
 					line2NearestTargetRate = f17;
 			}
-			f17 = line2NearestTargetRate;
-			v70 = v9 * f17;
-			v80 = v70 + line1StartPoint;
-			v90 = v7 * line2NearestTargetRate;
-			v9c = v90 + line2StartPoint;
-			Vector3 va8 = v9c - v80;
-			return va8.sqrMagnitude;
+			Vector3 line1Intersect = line1 * line1NearestTargetRate + line1StartPoint;
+			Vector3 line2Intersect = line2 * line2NearestTargetRate + line2StartPoint;
+			Vector3 intersectLine = line2Intersect - line1Intersect;
+			return intersectLine.magnitude;
 		}
 
 	}

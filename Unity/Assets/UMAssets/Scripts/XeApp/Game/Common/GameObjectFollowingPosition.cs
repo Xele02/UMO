@@ -28,11 +28,11 @@ namespace XeApp.Game.Common
 				}
 				sum /= m_target_trans.Count;
 				Vector3 pos = transform.position;
-				if(!m_freeze_x)
+				if(m_freeze_x)
 					pos.x = sum.x;
-				if(!m_freeze_y)
+				if(m_freeze_y)
 					pos.y = sum.y;
-				if(!m_freeze_z)
+				if(m_freeze_z)
 					pos.z = sum.z;
 				transform.position = pos;
 			}

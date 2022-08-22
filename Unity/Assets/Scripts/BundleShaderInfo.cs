@@ -167,13 +167,21 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 					FixMaterialShader(renderers[i].sharedMaterials[j]);
 			}
 		}
-		TMP_Text[] text = obj.GetComponentsInChildren<TMP_Text>();
+		TMP_Text[] text = obj.GetComponentsInChildren<TMP_Text>(true);
 		for(int i = 0; i < text.Length; i++)
 		{
 			if (text[i].fontSharedMaterials != null)
 			{
 				for (int j = 0; j < text[i].fontSharedMaterials.Length; j++)
 					FixMaterialShader(text[i].fontSharedMaterials[j]);
+			}
+		}
+		Projector[] projs = obj.GetComponentsInChildren<Projector>(true);
+		for(int i = 0; i < projs.Length; i++)
+		{
+			if (projs[i].material != null)
+			{
+				FixMaterialShader(projs[i].material);
 			}
 		}
 	}

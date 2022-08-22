@@ -38,5 +38,17 @@ namespace XeSys
 				m_bunding_sphere_radius_sqr = halfDist.sqrMagnitude;
 			}
 		}
+
+
+		public void DrawDebugVolume()
+		{
+			Gizmos.DrawSphere(transform.position, radius);
+			if(relational != null)
+			{
+				Gizmos.DrawSphere(relational.transform.position, relational.radius);
+				Gizmos.DrawLine(transform.position, relational.transform.position);
+			}
+		}
+
 	}
 }

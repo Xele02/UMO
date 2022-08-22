@@ -13,39 +13,49 @@ namespace XeApp.Game.Common
 		// RVA: 0x13922C8 Offset: 0x13922C8 VA: 0x13922C8
 		private void Awake()
 		{
-			TodoLogger.Log(0, "fix projector");
-			/*m_projector.enabled = false;
-			m_projector.material = new Material(m_projector.material);*/
+			m_projector.enabled = false;
+			m_projector.material = new Material(m_projector.material);
 		}
 
 		// RVA: 0x13923A4 Offset: 0x13923A4 VA: 0x13923A4
 		private void LateUpdate()
 		{
-			/*if (m_lateAction != null)
-				m_lateAction();*/
+			if (m_lateAction != null)
+				m_lateAction();
 		}
 
 		//// RVA: 0x13923B8 Offset: 0x13923B8 VA: 0x13923B8
 		public void SetupTarget(Transform target)
 		{
-			/*m_fitTo = target;
+			m_fitTo = target;
 			m_projector.enabled = true;
-			m_lateAction = this.UpdateTarget;*/
+			m_lateAction = this.UpdateTarget;
 		}
 
 		//// RVA: 0x139246C Offset: 0x139246C VA: 0x139246C
-		//public void Reset() { }
+		public void Reset()
+		{
+			m_fitTo = null;
+			m_projector.enabled = false;
+			m_lateAction = null;
+		}
 
 		//// RVA: 0x13924AC Offset: 0x13924AC VA: 0x13924AC
 		public void SetColor(Color color)
 		{
-			//m_projector.material.SetColor("_MainColor", color);
+			m_projector.material.SetColor("_MainColor", color);
 		}
 
 		//// RVA: 0x139256C Offset: 0x139256C VA: 0x139256C
 		private void UpdateTarget()
 		{
-			TodoLogger.Log(0, "ShadowProjector Update");
+			if(m_fitTo == null)
+			{
+				Reset();
+				return;
+			}
+			transform.position = m_fitTo.transform.position;
+			transform.rotation = Quaternion.identity;
 		}
 	}
 }
