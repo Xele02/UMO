@@ -708,7 +708,7 @@ namespace XeApp.Game.RhythmGame
 				saveInfo.IHEPCAHBECA_VideoMode = backupSaveData.m_option.IHEPCAHBECA_VideoMode;
 				saveInfo.NFMEIILKACN_NotesRoute = backupSaveData.m_option.NFMEIILKACN_NotesRoute;
 				saveInfo.KDNKCOAJGCM_NotesType = backupSaveData.m_option.KDNKCOAJGCM_NotesType;
-				saveInfo.MJHEPGIEDDL_IsSlideNoteEffect = backupSaveData.m_option.MJHEPGIEDDL_IsSlideNoteEffect;
+				saveInfo.MJHEPGIEDDL_IsNotSlideNoteEffect = backupSaveData.m_option.MJHEPGIEDDL_IsNotSlideNoteEffect;
 				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_BGM, saveInfo.ICGAOAFIHFD_VolBgmRhythm, true);
 				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_SE, saveInfo.LMDACNNJDOE_VolSeRhythm, true);
 				XeApp.Game.Common.SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.GAME_NOTES, saveInfo.IBEINHHMHAC_VolNotesRhythm, true);
@@ -741,7 +741,7 @@ namespace XeApp.Game.RhythmGame
 			
 			setting = new Setting();
 			setting.m_enable_cutin = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GLKGAOFHLPN();
-			setting.m_visible_diva = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CJKKALFPMLA_IsDivaModeDivaVisible;
+			setting.m_visible_diva = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CJKKALFPMLA_IsNotDivaModeDivaVisible;
 			if(setting_mv.m_enable)
 			{
 				Setting.DMode a = Setting.DMode.Normal;

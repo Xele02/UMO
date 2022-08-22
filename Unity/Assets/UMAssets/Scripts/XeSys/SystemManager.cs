@@ -62,7 +62,11 @@ namespace XeSys
 		public static bool IsForceWideScreen { get { return isForceWideScreen; } } // get_IsForceWideScreen 0x23A5150
 
 		// // RVA: 0x23A51DC Offset: 0x23A51DC VA: 0x23A51DC
-		// public static void SetForceWideScreen(bool isOn) { }
+		public static void SetForceWideScreen(bool isOn)
+		{
+			PlayerPrefs.SetInt("forceWideScreen", isOn ? 1 : 0);
+			PlayerPrefs.Save();
+		}
 
 		// // RVA: 0x23A524C Offset: 0x23A524C VA: 0x23A524C
 		public static void Create(GameObject prefab)

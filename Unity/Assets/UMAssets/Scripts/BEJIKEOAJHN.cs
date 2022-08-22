@@ -28,7 +28,7 @@ public class BEJIKEOAJHN_OptionSLive
 	}
 
 	// // RVA: 0xC75848 Offset: 0xC75848 VA: 0xC75848
-	// public EDOHBJAPLPF_JsonData NOJCMGAFAAC() { }
+	public EDOHBJAPLPF_JsonData NOJCMGAFAAC() { }
 
 	// // RVA: 0xC75ADC Offset: 0xC75ADC VA: 0xC75ADC
 	public static bool CHDGLBBFEKH_IsEqual(BEJIKEOAJHN_OptionSLive ILEKEPJBFDP, BEJIKEOAJHN_OptionSLive GEPALDIIDPC)
