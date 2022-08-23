@@ -1,7 +1,7 @@
 
 public class PNGOLKLFFLH
 {
-	public int GPPEFLKGGGJ; // 0x8
+	public int GPPEFLKGGGJ_ValkyrieId; // 0x8
 	public string[] GJHJBLCPPKE = new string[3]; // 0xC
 	public string IJBLEJOKEFH; // 0x10
 	public string MJJCKMPICIK; // 0x14

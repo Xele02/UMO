@@ -47,9 +47,11 @@ namespace XeApp.Game.Menu
 
 			GameSetupData.MusicInfo musicInfo = Database.Instance.gameSetup.musicInfo;
 			m_prismUnitInfo.OnClickItem = this.OnClickPrismIetms;
+			m_valkyrieButton.OnClickValkyrieButton = this.OnClickValkyrieButton;
 			m_playButtons.OnClickPlayButton = this.OnClickPlayButton;
 			UpdatePrismData(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId, musicInfo);
 			m_prismUnitInfo.UpdateContent(m_prismData, musicInfo);
+			m_valkyrieButton.UpdateContent(m_prismData);
 			m_musicInfo.Set(Database.Instance.selectedMusic.GetSelectedMusicData(), musicInfo, true, SetDeckMusicInfo.BottomType.Description);
 			base.OnPreSetCanvas();
 		}
@@ -237,7 +239,16 @@ namespace XeApp.Game.Menu
 		// private void OnClickOriginalSetting() { }
 
 		// // RVA: 0x12CF0E8 Offset: 0x12CF0E8 VA: 0x12CF0E8
-		// private void OnClickValkyrieButton() { }
+		private void OnClickValkyrieButton()
+		{
+			SoundManager.Instance.sePlayerBoot.Play(3);
+			ShowPrismSelectPopup(PopupMvModeSelectListContent.SelectTarget.Valkyrie, 0, Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo, false, () =>
+			{
+				//0x12CFE44
+				m_valkyrieButton.UpdateContent(m_prismData);
+				StartCoroutine(Co_ApplyWait());
+			}, null);
+		}
 
 		// // RVA: 0x12CF2A0 Offset: 0x12CF2A0 VA: 0x12CF2A0
 		private void OnClickPlayButton()
@@ -291,9 +302,5 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x727694 Offset: 0x727694 VA: 0x727694
 		// // RVA: 0x12CFD68 Offset: 0x12CFD68 VA: 0x12CFD68
 		// private void <OnClickOriginalSetting>b__39_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7276A4 Offset: 0x7276A4 VA: 0x7276A4
-		// // RVA: 0x12CFE44 Offset: 0x12CFE44 VA: 0x12CFE44
-		// private void <OnClickValkyrieButton>b__40_0() { }
 	}
 }

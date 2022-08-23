@@ -1,7 +1,7 @@
 
 public class IEIGOPLPJGI
 {
-	public int PFGJJLGLPAC; // 0x8
+	public int PFGJJLGLPAC_PilotId; // 0x8
 	public string OPFGFINHFCE; // 0xC
 	public int AIHCEGFANAM; // 0x10
 	public int CHIMPKJDCPP; // 0x14

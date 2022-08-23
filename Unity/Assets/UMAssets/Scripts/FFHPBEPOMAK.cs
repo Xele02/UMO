@@ -72,7 +72,7 @@ public class FFHPBEPOMAK
 	public bool MBFADDHOEOK; // 0x5A
 	public CKFGMNAIBNG FFKMJNHFFFL = new CKFGMNAIBNG(); // 0x5C
 	public CKFGMNAIBNG EGAFMGDFFCH = new CKFGMNAIBNG(); // 0x60
-	private BBHNACPENDM_SaveData LDEGEHAEALK; // 0x78
+	private BBHNACPENDM_ServerSaveData LDEGEHAEALK; // 0x78
 	// public static DisplayType[] HBBPOMBJJNG = new DisplayType[8] { 0, 1, 2, 3, 7, 8, 9, 10 }; // 0x0
 
 	public StatusData JLJGCBOHJID_Status { get; private set; } = new StatusData(); // 0x1C MHGEJIKLJOP CKAOBJJCOFO MKFJBBFNFPD
@@ -93,7 +93,7 @@ public class FFHPBEPOMAK
 	// public void LEHDLBJJBNC() { }
 
 	// RVA: 0x14DE4E0 Offset: 0x14DE4E0 VA: 0x14DE4E0
-	public void KHEKNNFCAOI(int AHHJLDLAPAN_DivaId, BBHNACPENDM_SaveData NIMOGBDCMLJ, bool OJEBNBLHPNP = false)
+	public void KHEKNNFCAOI(int AHHJLDLAPAN_DivaId, BBHNACPENDM_ServerSaveData NIMOGBDCMLJ, bool OJEBNBLHPNP = false)
 	{
 		BNFDBPPOAOE = true;
 		EEBBAGGJOGH = false;

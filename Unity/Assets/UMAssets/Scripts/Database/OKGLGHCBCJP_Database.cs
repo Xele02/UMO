@@ -442,7 +442,7 @@ public class OKGLGHCBCJP_Database
 		// {110,() => { return new DGDIEDDPNNG(); } }, //0x14A0368				"uc_item",
 		// {111,() => { return new INDEPDKCJDD(); } }, //0x14A03D4				"val_item",
 		// {112,() => { return new GKFMJAHKEMA(); } }, //0x14A0440				"val_skill",
-		// {113,() => { return new JPIANKEOOMB(); } }, //0x14A04AC				"valkyrie",
+		{113,() => { return new JPIANKEOOMB_Valkyrie(); } }, //0x14A04AC				"valkyrie",
 		// {114,() => { return new DKJMDIFAKKD(); } }, //0x14A0518				"vc_item",
 		// {115,() => { return new HGPEFPFODHO(); } }, //0x14A0584				"highscore_rating",
 		// {116,() => { return new JHAAHJNEBOG(); } }, //0x14A05F0				"limited_compo_item"
@@ -514,7 +514,7 @@ public class OKGLGHCBCJP_Database
 	// public DKJMDIFAKKD KCCDBKIOLDJ { get; private set; } // 0x110 NFOKONGDFNH MJBBGKMNMKH LFKKHMAFIBA
 	// public INDEPDKCJDD FBGKBGNIHGC { get; private set; } // 0x114 MOPJLGOMNLJ BAGFGFIMNLH KPAEENCFPIH
 	// public GKFMJAHKEMA DIAEPFPGPEP { get; private set; } // 0x118 BCDPCPEGMHC MOJPFJFKFPG IMCKGLCKPED
-	// public JPIANKEOOMB PEOALFEGNDH { get; private set; } // 0x11C IOEEBHMLNFN HFDLJDHDCED MJFJKMCBIHC
+	public JPIANKEOOMB_Valkyrie PEOALFEGNDH_Valkyrie { get; private set; } // 0x11C IOEEBHMLNFN HFDLJDHDCED MJFJKMCBIHC
 	// public HGPEFPFODHO DCNNPEDOGOG { get; private set; } // 0x120 DGEJGGLIBPK DDMLBAIOIHC ADFIKFDMPAN
 	// public ILLPGHGGKLL LINHIDCNAMG { get; private set; } // 0x124 CKMGPFOBCMH FAIKNJFGDIB MLLLCNLNJBI
 	// public PJANOOPJIDE KIBMNCOLJNC { get; private set; } // 0x128 KNIHEPFNDKP FDIFJJONAEA MLKGAOGFOPI
@@ -752,7 +752,7 @@ public class OKGLGHCBCJP_Database
 		// KCCDBKIOLDJ = null;
 		// FBGKBGNIHGC = null;
 		// DIAEPFPGPEP = null;
-		// PEOALFEGNDH = null;
+		PEOALFEGNDH_Valkyrie = null;
 		// DCNNPEDOGOG = null;
 		// LINHIDCNAMG = null;
 		// KIBMNCOLJNC = null;
@@ -835,7 +835,7 @@ public class OKGLGHCBCJP_Database
 					// case 110: NMJEDFNPIPL = item; break;
 					// case 111: FBGKBGNIHGC = item; break;
 					// case 112: DIAEPFPGPEP = item; break;
-					// case 113: PEOALFEGNDH = item; break;
+					case 113: PEOALFEGNDH_Valkyrie = item; break;
 					// case 114: KCCDBKIOLDJ = item; break;
 					// case 115: DCNNPEDOGOG = item; break;
 					// case 116: MBAGKLJDKMH = item; break;

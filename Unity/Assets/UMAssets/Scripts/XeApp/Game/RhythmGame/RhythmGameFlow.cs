@@ -229,7 +229,7 @@ namespace XeApp.Game.RhythmGame
 			p.KHEKNNFCAOI_Init(teamInfo.prismValkyrieId, 0, 0);
 
 			List<MusicDirectionParamBase.ConditionSetting> settingList = new List<MusicDirectionParamBase.ConditionSetting>();
-			MusicDirectionParamBase.ConditionSetting cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[0].prismDivaId, teamInfo.danceDivaList[0].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC, teamInfo.danceDivaList[0].positionId);
+			MusicDirectionParamBase.ConditionSetting cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[0].prismDivaId, teamInfo.danceDivaList[0].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC_PilotId, teamInfo.danceDivaList[0].positionId);
 			settingList.Add(cond);
 			int cnt = 0;
 			for(int i = 0; i < 4; i++)
@@ -243,7 +243,7 @@ namespace XeApp.Game.RhythmGame
 					}
 					else
 					{
-						cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[i + 1].prismDivaId, teamInfo.danceDivaList[i + 1].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC, teamInfo.danceDivaList[i + 1].positionId);
+						cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[i + 1].prismDivaId, teamInfo.danceDivaList[i + 1].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC_PilotId, teamInfo.danceDivaList[i + 1].positionId);
 						settingList.Add(cond);
 					}
 				}

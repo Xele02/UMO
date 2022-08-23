@@ -3,7 +3,7 @@ using XeSys;
 using XeApp;
 
 public class BBHNACPENDM { }
-public class BBHNACPENDM_SaveData
+public class BBHNACPENDM_ServerSaveData
 {
 	public enum BDADJONBIBO
 	{
@@ -17,7 +17,7 @@ public class BBHNACPENDM_SaveData
 	private delegate KLFDBFMNLBL_SaveBlock FFECIIHJDJA();
 	
 	public static bool BDMPBPLHALI = false; // 0x0
-	public BBHNACPENDM_SaveData.BDADJONBIBO HFCOIIHIENB; // 0x8
+	public BBHNACPENDM_ServerSaveData.BDADJONBIBO HFCOIIHIENB; // 0x8
 	public const int PKPABMAPHGE = 100;
 	public const int CFDJGBNJMIM = 0;
 	public const int IGCDFADKKML = 1;
@@ -145,7 +145,7 @@ public class BBHNACPENDM_SaveData
 	public long MCKEOKFMLAH; // 0xE0
 	// private KIJECNFNNDB LAFGAPBDKML = new KIJECNFNNDB(); // 0xE8
 	public List<KLFDBFMNLBL_SaveBlock> MGJKEJHEBPO; // 0xEC
-	private static Dictionary<ulong, BBHNACPENDM_SaveData.FFECIIHJDJA> BGEJFKHOMOC; // 0xC
+	private static Dictionary<ulong, BBHNACPENDM_ServerSaveData.FFECIIHJDJA> BGEJFKHOMOC; // 0xC
 	public static readonly int FBFCCLFFIAF = 1; // 0x10
 	private static int[] GHJIPAFCBNN = new int[12] {0x1, 0xd, 0xf, 0x14, 0x61, 0x64, 0x66, 0x6a, 0x25, 0x28, 0x29, 0x2f}; // 0x14
 	private static int[] MABKCDEOOMC = new int[4] {1, 2, 4, 9}; // 0x18
@@ -161,7 +161,7 @@ public class BBHNACPENDM_SaveData
 	// public CEDOOHCPHMG KMBJGAHCBDI { get; private set; } // 0x2C LFCFLKOPGJI MKOMCOGEKDH OLGDMANGPPF
 	public EBFLJMOCLNA_Costume BEKHNNCGIEL_Costume { get; private set; } // 0x30 PIAGLBICDHH APEFIJHBGMD AHMKJHKMCEH
 	// public OCLHKHAMDHF NGHJPEIKLJL { get; private set; } // 0x34 NNHADBEPECA AJKOCPKDMEJ BJAOICEINFJ
-	// public OIGEIIGKMNH JJFFBDLIOCF { get; private set; } // 0x38 KHBLHGGNPPM BLDKFABPKAE JCMIADNDCNP
+	public OIGEIIGKMNH_Valkyrie JJFFBDLIOCF_Valkyrie { get; private set; } // 0x38 KHBLHGGNPPM BLDKFABPKAE JCMIADNDCNP
 	// public DDEMMEPBOIA FLHMJHBOBEA { get; private set; } // 0x3C NJAJCMECMFE OOCEKNJPKHO BDPKHAHGDKL
 	public FJGNPNFLHPH_EventCollection MBAHCFLBDHN_EventCollection { get; private set; } // 0x40 KMAOEHJPMLI KEFOMFIIMDJ DNGHKPCPHNJ
 	// public ICLNENNIMOP FLBPFBFKBFC { get; private set; } // 0x44 FGDKNELIAAN EEHIJENEHCF CHDOPAGKCOL
@@ -354,7 +354,7 @@ public class BBHNACPENDM_SaveData
 		if((HGNJJBLEMPH & 256) != 0) { MLAFAACKKBG_Unit = (FKNOCGCODBK_Unit)MNMFKKKFDCL(8); MGJKEJHEBPO.Add(MLAFAACKKBG_Unit); }
 		if((HGNJJBLEMPH & 512) != 0) { BEKHNNCGIEL_Costume = (EBFLJMOCLNA_Costume)MNMFKKKFDCL(9); MGJKEJHEBPO.Add(BEKHNNCGIEL_Costume); }
 		// if((HGNJJBLEMPH & 1024) != 0) { NGHJPEIKLJL = (OCLHKHAMDHF)MNMFKKKFDCL(10); MGJKEJHEBPO.Add(NGHJPEIKLJL); }
-		// if((HGNJJBLEMPH & 2048) != 0) { JJFFBDLIOCF = (OIGEIIGKMNH)MNMFKKKFDCL(11); MGJKEJHEBPO.Add(JJFFBDLIOCF); }
+		if((HGNJJBLEMPH & 2048) != 0) { JJFFBDLIOCF_Valkyrie = (OIGEIIGKMNH_Valkyrie)MNMFKKKFDCL(11); MGJKEJHEBPO.Add(JJFFBDLIOCF_Valkyrie); }
 		// if((HGNJJBLEMPH & 4096) != 0) { FLHMJHBOBEA = (DDEMMEPBOIA)MNMFKKKFDCL(12); MGJKEJHEBPO.Add(FLHMJHBOBEA); }
 		if((HGNJJBLEMPH & 8192) != 0) { MBAHCFLBDHN_EventCollection = (FJGNPNFLHPH_EventCollection)MNMFKKKFDCL(13); MGJKEJHEBPO.Add(MBAHCFLBDHN_EventCollection); }
 		// if((HGNJJBLEMPH & 16384) != 0) { FLBPFBFKBFC = (ICLNENNIMOP)MNMFKKKFDCL(14); MGJKEJHEBPO.Add(FLBPFBFKBFC); }
@@ -412,7 +412,7 @@ public class BBHNACPENDM_SaveData
 	}
 
 	// // RVA: 0xF1FA34 Offset: 0xF1FA34 VA: 0xF1FA34
-	public void ODDIHGPONFL_Copy(BBHNACPENDM_SaveData GPBJHKLFCEP)
+	public void ODDIHGPONFL_Copy(BBHNACPENDM_ServerSaveData GPBJHKLFCEP)
 	{
 		TodoLogger.Log(0, "!!!");
 	}
@@ -629,9 +629,9 @@ public class BBHNACPENDM_SaveData
 	// public void NELPFCBCJAO() { }
 
 	// // RVA: 0xF25F74 Offset: 0xF25F74 VA: 0xF25F74
-	static BBHNACPENDM_SaveData()
+	static BBHNACPENDM_ServerSaveData()
 	{
-		BGEJFKHOMOC = new Dictionary<ulong, BBHNACPENDM_SaveData.FFECIIHJDJA>();
+		BGEJFKHOMOC = new Dictionary<ulong, BBHNACPENDM_ServerSaveData.FFECIIHJDJA>();
 		BGEJFKHOMOC.Add(0, () => { return new JBMPOAAMGNB_Base(); }); //0xF293C0 base
 		BGEJFKHOMOC.Add(1, () => { return new EGOLBAPFHHD_Common(); }); //0xF2942C common
 		BGEJFKHOMOC.Add(2, () => { return new JNMFKOHFAFB_PublicStatus(); }); //0xF29498 public_status
