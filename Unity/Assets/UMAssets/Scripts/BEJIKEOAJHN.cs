@@ -28,7 +28,19 @@ public class BEJIKEOAJHN_OptionSLive
 	}
 
 	// // RVA: 0xC75848 Offset: 0xC75848 VA: 0xC75848
-	public EDOHBJAPLPF_JsonData NOJCMGAFAAC() { }
+	public EDOHBJAPLPF_JsonData NOJCMGAFAAC()
+	{
+		EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
+		res["volSeRhythm"] = LMDACNNJDOE_VolSeRhythm;
+		res["volBgmRhythm"] = ICGAOAFIHFD_VolBgmRhythm;
+		res["volVoiceRhythm"] = FCKEDCKCEFC_VolVoiceRhythm;
+		res["volNotesRhythm"] = IBEINHHMHAC_VolNotesRhythm;
+		res["renderQuality"] = DDHCLNFPNGK_RenderQuality;
+		res["qualityCustomDiva3D"] = HHMCIGLCBNG_QualityCustomDiva3D;
+		res["qualityCustomOther3D"] = AHLFOHJMGAI_QualityCustomOther3D;
+		res["effectCutin"] = DADIPGPHLDD_EffectCutin;
+		return res;
+	}
 
 	// // RVA: 0xC75ADC Offset: 0xC75ADC VA: 0xC75ADC
 	public static bool CHDGLBBFEKH_IsEqual(BEJIKEOAJHN_OptionSLive ILEKEPJBFDP, BEJIKEOAJHN_OptionSLive GEPALDIIDPC)

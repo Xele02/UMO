@@ -64,6 +64,8 @@ namespace XeSys
 		// // RVA: 0x23A51DC Offset: 0x23A51DC VA: 0x23A51DC
 		public static void SetForceWideScreen(bool isOn)
 		{
+			TodoLogger.Log(0, "Fix isForceWideScreen");
+			isForceWideScreen = isOn;
 			PlayerPrefs.SetInt("forceWideScreen", isOn ? 1 : 0);
 			PlayerPrefs.Save();
 		}
