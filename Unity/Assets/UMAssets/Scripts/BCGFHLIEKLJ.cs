@@ -1,6 +1,6 @@
 
 public class BCGFHLIEKLJ { }
-public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_SaveBlock
+public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 3;
 	// private const string POFDDFCGEGP = "_";

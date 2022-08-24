@@ -1,6 +1,6 @@
 
 public class DAJBODHMLAB { }
-public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_SaveBlock
+public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public DAJBODHMLAB.MMLACIFMNBN LJMCPFACDGJ; // 0x24

@@ -1,6 +1,6 @@
 
 public class EAOHMJHHDKN { }
-public class EAOHMJHHDKN_GachaLimit : KLFDBFMNLBL_SaveBlock
+public class EAOHMJHHDKN_GachaLimit : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// private const int GACEJGPNHMP = 1000;

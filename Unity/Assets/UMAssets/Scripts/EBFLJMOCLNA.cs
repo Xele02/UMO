@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 
 public class EBFLJMOCLNA { }
-public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_SaveBlock
+public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class ILFJDCICIKN // TypeDefIndex: 9373
 	{

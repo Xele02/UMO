@@ -1,6 +1,6 @@
 
 public class BMIODFJCGAJ { }
-public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_SaveBlock
+public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 {
 	// public const int ECFEMKGFDCE = 2;
 	// private const int OIEOCBIJLDC = 10;

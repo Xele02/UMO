@@ -1,6 +1,6 @@
 
 public class OKLMJPBJHKL { }
-public class OKLMJPBJHKL_EventMission : KLFDBFMNLBL_SaveBlock
+public class OKLMJPBJHKL_EventMission : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;

@@ -3,7 +3,7 @@ using XeSys;
 using XeApp.Game.Common;
 
 public class EGOLBAPFHHD { }
-public class EGOLBAPFHHD_Common : KLFDBFMNLBL_SaveBlock
+public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class OFAPDOKONML
 	{

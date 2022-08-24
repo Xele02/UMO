@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 public class JDDGGJCGOPA { }
-public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_SaveBlock
+public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class EHFMCGGNPIJ_MusicInfo
 	{

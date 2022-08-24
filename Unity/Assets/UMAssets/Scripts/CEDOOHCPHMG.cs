@@ -1,6 +1,6 @@
 
 public class CEDOOHCPHMG { }
-public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_SaveBlock
+public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// private List<MPBEHHIAGOI> GFPFBJDPHLJ; // 0x24

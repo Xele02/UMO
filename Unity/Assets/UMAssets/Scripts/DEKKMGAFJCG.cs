@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 public class DEKKMGAFJCG { }
-public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_SaveBlock
+public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class MNNLOBDPCCH
 	{

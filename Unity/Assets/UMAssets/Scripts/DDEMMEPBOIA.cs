@@ -1,6 +1,6 @@
 
 public class DDEMMEPBOIA { }
-public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_SaveBlock
+public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0

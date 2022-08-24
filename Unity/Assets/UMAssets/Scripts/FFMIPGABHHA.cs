@@ -1,6 +1,6 @@
 
 public class FFMIPGABHHA { }
-public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_SaveBlock
+public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 {
 	private const int ECFEMKGFDCE = 2;
 	public const long BBEGLBMOBOF = 32158710441;

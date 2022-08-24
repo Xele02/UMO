@@ -1,6 +1,6 @@
 
 public class MKNIBACMCDO { }
-public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_SaveBlock
+public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int FBBENLHJFKO = 5;

@@ -1,5 +1,5 @@
 
-public class OFNLIBDEIFA : KLFDBFMNLBL_SaveBlock
+public class OFNLIBDEIFA : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;

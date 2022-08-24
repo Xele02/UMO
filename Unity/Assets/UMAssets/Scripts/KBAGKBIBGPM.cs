@@ -1,6 +1,6 @@
 
 public class KBAGKBIBGPM { }
-public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_SaveBlock
+public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public const int ICHFGGBPCBJ = 4;

@@ -70,7 +70,7 @@ public class AOJGDNFAIJL_PrismData
         public void OBKGEDCKHHE(int DLAEJOBELBH_MusicId, bool HJNAMIDGAJB_IsMultiDiva)
         {
             NAENFAFGMEP_IsMultiDiva = HJNAMIDGAJB_IsMultiDiva;
-            LDEGEHAEALK_Save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save;
+            LDEGEHAEALK_Save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
             if(LDEGEHAEALK_Save != null)
             {
                 OOEPMEDAJNJ_TeamSave = LDEGEHAEALK_Save.GHDDPJBBEOC_Prism.GCINIJEMHFK_GetTeamForSong(DLAEJOBELBH_MusicId);
@@ -372,9 +372,31 @@ public class AOJGDNFAIJL_PrismData
 			MDNHCIKGEAE_ValkyrieList.Clear();
 			MDNHCIKGEAE_ValkyrieList.Add(defaultInfo);
 			JPIANKEOOMB_Valkyrie valkDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie;
-			foreach (OIGEIIGKMNH_Valkyrie.HLNPGNNPCGO valk in LDEGEHAEALK_Save.JJFFBDLIOCF_Valkyrie.PGNBHFIAMPP)
+			foreach (OIGEIIGKMNH_Valkyrie.HLNPGNNPCGO_ValkyrieInfo valk in LDEGEHAEALK_Save.JJFFBDLIOCF_Valkyrie.CNGNBKNBKGI_ValkList)
 			{
-
+				MHOGKDIKIHE_ValkyrieInfo data = new MHOGKDIKIHE_ValkyrieInfo();
+				int val = valk.FODKKJIDDKN_Id;
+				if (val < 1)
+					val = 0;
+				else
+					val = val - 1;
+				JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbValk = valkDb.CDENCMNHNGA_ValkyrieList[val];
+				if (dbValk.PPEGAKEIEGM == 2 && valk.FJODMPGPDDD)
+				{
+					if(dbValk.GPPEFLKGGGJ == valk.FODKKJIDDKN_Id)
+					{
+						data.PPFNGGCBJKC_Id = valk.FODKKJIDDKN_Id;
+						if(AGBLOHKHHAB_SelectedValkyrieId < 1)
+						{
+							data.CBLHLEKLLDE_IsSet = false;
+						}
+						else
+						{
+							data.CBLHLEKLLDE_IsSet = valk.FODKKJIDDKN_Id == FBAGIDFLHHI_PrismValkyrieId;
+						}
+						MDNHCIKGEAE_ValkyrieList.Add(data);
+					}
+				}
 			}
 			return MDNHCIKGEAE_ValkyrieList;
 		}

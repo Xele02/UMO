@@ -1,6 +1,6 @@
 
 public class LIFGJMIHHKM { }
-public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_SaveBlock
+public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int HAKDOMMLLJP = 99999999;

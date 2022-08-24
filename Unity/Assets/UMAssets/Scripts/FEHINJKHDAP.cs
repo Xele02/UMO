@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 public class FEHINJKHDAP { }
-public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_SaveBlock
+public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class ALGDNCMJHGN
 	{
@@ -13,18 +13,18 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_SaveBlock
 		public long DLEEMCAPOBP; // 0x20
 		public long JPNMMOEPAEM; // 0x28
 		public sbyte MLLPMIHMMFL; // 0x30
-		public List<CEBFFLDKAEC> KNIFCANOHOC = new List<CEBFFLDKAEC>(5); // 0x34
-		public List<CEBFFLDKAEC> NLKEBAOBJCM = new List<CEBFFLDKAEC>(5); // 0x38
-		public List<CEBFFLDKAEC> JNLKJCDFFMM = new List<CEBFFLDKAEC>(5); // 0x3C
-		public List<CEBFFLDKAEC> EMHFDJEFIHG = new List<CEBFFLDKAEC>(5); // 0x40
+		public List<CEBFFLDKAEC_SecureInt> KNIFCANOHOC = new List<CEBFFLDKAEC_SecureInt>(5); // 0x34
+		public List<CEBFFLDKAEC_SecureInt> NLKEBAOBJCM = new List<CEBFFLDKAEC_SecureInt>(5); // 0x38
+		public List<CEBFFLDKAEC_SecureInt> JNLKJCDFFMM = new List<CEBFFLDKAEC_SecureInt>(5); // 0x3C
+		public List<CEBFFLDKAEC_SecureInt> EMHFDJEFIHG = new List<CEBFFLDKAEC_SecureInt>(5); // 0x40
 		public List<sbyte> LAMCCNAKIOJ = new List<sbyte>(5); // 0x44
 		public List<byte> HNDPLCDMOJF = new List<byte>(5); // 0x48
 		public List<byte> JDIDBMEMKBC = new List<byte>(5); // 0x4C
 		public List<byte> AGGFHNMMGMN = new List<byte>(5); // 0x50
-		public List<CEBFFLDKAEC> HAFFCOKJHBN = new List<CEBFFLDKAEC>(5); // 0x54
-		public List<CEBFFLDKAEC> DNIGPFPHJAK = new List<CEBFFLDKAEC>(5); // 0x58
-		public List<CEBFFLDKAEC> DPPCFFFNBGA = new List<CEBFFLDKAEC>(5); // 0x5C
-		public List<CEBFFLDKAEC> FHFKOGIPAEH = new List<CEBFFLDKAEC>(5); // 0x60
+		public List<CEBFFLDKAEC_SecureInt> HAFFCOKJHBN = new List<CEBFFLDKAEC_SecureInt>(5); // 0x54
+		public List<CEBFFLDKAEC_SecureInt> DNIGPFPHJAK = new List<CEBFFLDKAEC_SecureInt>(5); // 0x58
+		public List<CEBFFLDKAEC_SecureInt> DPPCFFFNBGA = new List<CEBFFLDKAEC_SecureInt>(5); // 0x5C
+		public List<CEBFFLDKAEC_SecureInt> FHFKOGIPAEH = new List<CEBFFLDKAEC_SecureInt>(5); // 0x60
 		public List<sbyte> EEECMKPLPNL = new List<sbyte>(5); // 0x64
 		public List<byte> LGBKKDOLOFP = new List<byte>(5); // 0x68
 		public List<byte> DKIIINIEKHP = new List<byte>(5); // 0x6C

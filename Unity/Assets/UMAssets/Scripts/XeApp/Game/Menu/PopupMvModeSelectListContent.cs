@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 					item.IsSet = l[i].CBLHLEKLLDE_IsSet;
 					m_scrollItem.Add(item);
 					GameManager.Instance.PilotTextureCache.TryInstall(item.ValkyrieData.OPBPKNHIPPE.PFGJJLGLPAC_PilotId);
-					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, l[i].DEMEPMAEJOO), 0);
+					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, l[i].PPFNGGCBJKC_Id), 0);
 				}
 			}
 			m_scrollView.UpdateItemListener += this.OnUpdateScrollItem;
@@ -301,7 +301,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				text = MessageManager.Instance.GetMessage("menu", "mvmode_setting_popup_text_002_001");
-				text = string.Format(text, listItem.ValkyrieData.IJBLEJOKEFH, listItem.ValkyrieData.MJJCKMPICIK, listItem.ValkyrieData.OPBPKNHIPPE.OPFGFINHFCE);
+				text = string.Format(text, listItem.ValkyrieData.IJBLEJOKEFH_ValkyrieName, listItem.ValkyrieData.MJJCKMPICIK_PilotName, listItem.ValkyrieData.OPBPKNHIPPE.OPFGFINHFCE);
 			}
 			listLayout.SetListIndex(listItem.ListIndex);
 			listLayout.HideTexture();

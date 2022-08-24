@@ -1,6 +1,6 @@
 
 public class FMFBNHLMHPL { }
-public class FMFBNHLMHPL_EventAprilFool : KLFDBFMNLBL_SaveBlock
+public class FMFBNHLMHPL_EventAprilFool : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int BJEPEBMLKOL = 50;

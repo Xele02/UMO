@@ -1,6 +1,6 @@
 
 public class JLOGEHCIBEJ { }
-public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_SaveBlock
+public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public const int ICHFGGBPCBJ = 4;

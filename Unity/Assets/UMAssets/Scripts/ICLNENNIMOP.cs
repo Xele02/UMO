@@ -1,6 +1,6 @@
 
 public class ICLNENNIMOP { }
-public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_SaveBlock
+public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// private const long GMNKHOJAOPC = 1496070000;

@@ -1,6 +1,6 @@
 
 public class GEGHOCKCKKA { }
-public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_SaveBlock
+public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public const int HAKDOMMLLJP = 99999999;

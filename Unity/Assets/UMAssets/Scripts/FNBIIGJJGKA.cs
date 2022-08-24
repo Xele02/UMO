@@ -1,6 +1,6 @@
 
 public class FNBIIGJJGKA {}
-public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_SaveBlock
+public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// private const int MKINOABMBGM = 20;
@@ -59,13 +59,13 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_SaveBlock
 	// // RVA: 0x11A05F4 Offset: 0x11A05F4 VA: 0x11A05F4 Slot: 6
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		if(OILEIIEIBHP.BBAJPINMOEP_Contains(JIKKNHIAEKG)) // counter
+		if(OILEIIEIBHP.BBAJPINMOEP_Contains(JIKKNHIAEKG_BlockName)) // counter
 		{
 			if(OILEIIEIBHP.BBAJPINMOEP_Contains(AFEHLCGHAEE.BDLNMOIOMHK/*total*/))
 			{
 				bool b = true;
 				EDOHBJAPLPF_JsonData jsonData = OILEIIEIBHP[AFEHLCGHAEE.BDLNMOIOMHK/*total*/];
-				BDLNMOIOMHK.EDLBLCGHECJ = CJAENOMGPDA(jsonData, "max", 0, ref b);
+				BDLNMOIOMHK.EDLBLCGHECJ = CJAENOMGPDA_ReadInt(jsonData, "max", 0, ref b);
 			}
 		}
 		TodoLogger.Log(0, "TODO");

@@ -1,6 +1,6 @@
 
 public class ALIPBIMCAPN { }
-public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_SaveBlock
+public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int MJFKKHOFMBO = 100;

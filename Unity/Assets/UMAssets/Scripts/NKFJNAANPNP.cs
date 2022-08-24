@@ -1,5 +1,5 @@
 
-public class NKFJNAANPNP : KLFDBFMNLBL_SaveBlock
+public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 {
 	// protected int DALBFCKKGGA; // 0x24
 	// protected int FIBFMLMHOGN; // 0x28

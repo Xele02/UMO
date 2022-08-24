@@ -1,6 +1,6 @@
 
 public class JGGLDGNKELI { }
-public class JGGLDGNKELI_Emblem : KLFDBFMNLBL_SaveBlock
+public class JGGLDGNKELI_Emblem : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0

@@ -1,6 +1,6 @@
 
 public class IOEKHJBOMDH { }
-public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_SaveBlock
+public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 3;
 	// private const string POFDDFCGEGP = "_";

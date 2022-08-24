@@ -16,6 +16,7 @@ public class CIFHILOJJFC
 	public CIFHILOJJFC()
 	{ 
 		TodoLogger.Log(0, "TODO");
+		FODKKJIDDKN = 1;
 		FDBOPFEOENF = new List<AMCGONHBGGF>(3);
 		for(int i = 0; i < 3; i++)
 		{

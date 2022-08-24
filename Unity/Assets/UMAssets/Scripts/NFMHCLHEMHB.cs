@@ -1,6 +1,6 @@
 
 public class NFMHCLHEMHB { }
-public class NFMHCLHEMHB_Bingo : KLFDBFMNLBL_SaveBlock
+public class NFMHCLHEMHB_Bingo : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0

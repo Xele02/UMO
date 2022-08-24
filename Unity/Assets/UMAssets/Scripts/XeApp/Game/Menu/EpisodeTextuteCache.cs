@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 		{
 			foreach(var episode in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD)
 			{
-				foreach(var a in episode.HHJGBJCIFON)
+				foreach(var a in episode.HHJGBJCIFON_Rewards)
 				{
 					if(a != 0)
 					{

@@ -1008,7 +1008,7 @@ namespace XeApp.Game.Common
 			menuVoiceTableCos = null;
 			
 			CIOECGOMILE c = CIOECGOMILE.HHCJCDFCLOB;
-			BBHNACPENDM_ServerSaveData b2 = c.AHEFHIMGIBI_Save;
+			BBHNACPENDM_ServerSaveData b2 = c.AHEFHIMGIBI_ServerSave;
 			MMPBPOIFDAF_Scene m = b2.PNLOINMCCKH_Scene;
 			bool f = m.GOFAPKBNNCL(divaId);
 			if(f)

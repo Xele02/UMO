@@ -11,7 +11,7 @@ public class ANCJLICGOLP
         HDEONBGNOIO = 2
     }
 
-	private Dictionary<string, CEBFFLDKAEC> OHJFBLFELNK; // 0x8
+	private Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK; // 0x8
 	private Dictionary<string, JDEFIJBCJLC_EncryptedString> FJOEBCMGDMI; // 0xC
 	public List<MFJONNINDCJ> JGJJIBPPEPD_List; // 0x10
 	private static List<string> OHNJJIMGKGK_TypesStr; // 0x0
@@ -23,7 +23,7 @@ public class ANCJLICGOLP
 		{
 			return KKMJBMKHGNH;
 		}
-		return OHJFBLFELNK[LJNAKDMILMC].DNJEJEANJGL;
+		return OHJFBLFELNK[LJNAKDMILMC].DNJEJEANJGL_Value;
 	}
 
 	// RVA: 0xD52D00 Offset: 0xD52D00 VA: 0xD52D00
@@ -37,7 +37,7 @@ public class ANCJLICGOLP
 
 	public void KHEKNNFCAOI_Init()
 	{
-		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC>();
+		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
 		FJOEBCMGDMI = new Dictionary<string, JDEFIJBCJLC_EncryptedString>();
 		JGJJIBPPEPD_List = new List<MFJONNINDCJ>();
 	}
@@ -135,8 +135,8 @@ public class ANCJLICGOLP
 				EDOHBJAPLPF_JsonData data = IMKIBKOICBF[idx];
 				EDOHBJAPLPF_JsonData subData = data["v"];
 				int val = (int)subData;
-				CEBFFLDKAEC elem = new CEBFFLDKAEC();
-				elem.DNJEJEANJGL = val;
+				CEBFFLDKAEC_SecureInt elem = new CEBFFLDKAEC_SecureInt();
+				elem.DNJEJEANJGL_Value = val;
 				subData = data["k"];
 				string key = (string)subData;
 				OHJFBLFELNK.Add(key, elem);

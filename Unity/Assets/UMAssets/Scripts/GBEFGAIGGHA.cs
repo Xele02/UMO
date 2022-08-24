@@ -1,6 +1,6 @@
 
 public class GBEFGAIGGHA { }
-public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_SaveBlock
+public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int EPAOCPMNLNC = 6000;

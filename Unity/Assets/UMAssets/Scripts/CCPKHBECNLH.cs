@@ -1,6 +1,6 @@
 
 public class CCPKHBECNLH { }
-public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_SaveBlock
+public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;

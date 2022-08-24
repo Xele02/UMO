@@ -1,6 +1,6 @@
 
 public class NEKDCJKANAH { }
-public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_SaveBlock
+public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0

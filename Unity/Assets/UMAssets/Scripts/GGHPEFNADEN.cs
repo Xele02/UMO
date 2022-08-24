@@ -1,6 +1,6 @@
 
 public class GGHPEFNADEN { }
-public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_SaveBlock
+public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int ECDKBNNCHJB = 7;

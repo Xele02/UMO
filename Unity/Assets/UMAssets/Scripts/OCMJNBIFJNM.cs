@@ -1,6 +1,6 @@
 
 public class OCMJNBIFJNM { }
-public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_SaveBlock
+public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 {
 	private const int ECFEMKGFDCE = 2;
 	private const int ENOBDCFHELD = 1967760659;

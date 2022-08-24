@@ -1,6 +1,6 @@
 
 public class AHHPBMBBCFM { }
-public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_SaveBlock
+public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public const int FIKANMEAEIF = 5;

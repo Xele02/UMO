@@ -1,6 +1,6 @@
 
 public class LGGPBMPINDL { }
-public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_SaveBlock
+public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public int MEBHCFJCKFE; // 0x24

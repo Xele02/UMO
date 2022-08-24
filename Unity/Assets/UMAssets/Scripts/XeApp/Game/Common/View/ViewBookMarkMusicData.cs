@@ -7,7 +7,7 @@ namespace XeApp.Game.Common.View
 		//// RVA: 0xD30ECC Offset: 0xD30ECC VA: 0xD30ECC
 		public static bool KNKGEALPDGF(int DLAEJOBELBH, int OIPCCBHIKIA)
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.KNKGEALPDGF_GetBookmark(DLAEJOBELBH, OIPCCBHIKIA);
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KNKGEALPDGF_GetBookmark(DLAEJOBELBH, OIPCCBHIKIA);
 		}
 
 		//// RVA: 0xD30FB8 Offset: 0xD30FB8 VA: 0xD30FB8
@@ -16,7 +16,7 @@ namespace XeApp.Game.Common.View
 			bool res = false;
 			for(int i = 0; i < 3; i++)
 			{
-				res |= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.KNKGEALPDGF_GetBookmark(DLAEJOBELBH, i);
+				res |= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KNKGEALPDGF_GetBookmark(DLAEJOBELBH, i);
 			}
 			return res;
 		}

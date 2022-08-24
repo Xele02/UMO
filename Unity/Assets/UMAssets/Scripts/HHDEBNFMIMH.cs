@@ -1,6 +1,6 @@
 
 public class HHDEBNFMIMH { }
-public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_SaveBlock
+public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public static string POFDDFCGEGP = "_"; // 0x0

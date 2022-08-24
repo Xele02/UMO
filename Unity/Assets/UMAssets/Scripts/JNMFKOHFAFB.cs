@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using XeSys;
 
 public class JNMFKOHFAFB { }
-public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_SaveBlock
+public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class KNHIPBADANI
 	{

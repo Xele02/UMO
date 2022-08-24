@@ -1,6 +1,6 @@
 
 public class CCBMJNPFPBB { }
-public class CCBMJNPFPBB_EventGoDiva : KLFDBFMNLBL_SaveBlock
+public class CCBMJNPFPBB_EventGoDiva : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int GKFIGBGDALK = 2;

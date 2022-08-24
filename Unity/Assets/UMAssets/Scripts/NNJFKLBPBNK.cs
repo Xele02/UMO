@@ -1,12 +1,12 @@
 
-public class NNJFKLBPBNK
+public class NNJFKLBPBNK_SecureString
 {
 	private byte[] DLHDPLPLCAC; // 0x8
 	private byte[] IPKONDLIDHC; // 0xC
 	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF = FENCAJJBLBH.EIAPDOGALDK.PNLBHBFOECC/*4*/; // 0x10
 	public FENCAJJBLBH NMNHBJIAPGG; // 0x14
 
-	public string DNJEJEANJGL { get {
+	public string DNJEJEANJGL_Value { get {
         //JADLONAJDAK 0x1CAED94
         if(DLHDPLPLCAC != null)
             return FFGBKEEIBNL.HKICMNAACDA(DLHDPLPLCAC);

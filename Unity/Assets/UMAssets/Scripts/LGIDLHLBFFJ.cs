@@ -1,6 +1,6 @@
 
 public class LGIDLHLBFFJ { }
-public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_SaveBlock
+public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int KCFBAOJKKHH = 2;

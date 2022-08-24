@@ -1,6 +1,6 @@
 
 public class LFHGFLJLGFB { }
-public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_SaveBlock
+public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// private const int ODDKIBLJKPI = 50;

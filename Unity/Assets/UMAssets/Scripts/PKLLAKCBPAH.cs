@@ -1,6 +1,6 @@
 
 public class PKLLAKCBPAH { }
-public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_SaveBlock
+public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// private int ENOBDCFHELD; // 0x24

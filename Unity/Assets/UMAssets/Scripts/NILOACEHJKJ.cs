@@ -1,6 +1,6 @@
 
 public class NILOACEHJKJ { }
-public class NILOACEHJKJ_EventSP : KLFDBFMNLBL_SaveBlock
+public class NILOACEHJKJ_EventSP : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 public class NPOOPJIOMHF { }
-public class NPOOPJIOMHF_Prism : KLFDBFMNLBL_SaveBlock
+public class NPOOPJIOMHF_Prism : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class CLGGEONAHPL_TeamSelectionSetting
 	{

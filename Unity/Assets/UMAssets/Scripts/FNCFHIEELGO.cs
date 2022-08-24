@@ -1,6 +1,6 @@
 
 public class FNCFHIEELGO { }
-public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_SaveBlock
+public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 1;
 	// public List<NDBFKHKMMCE.FKIMJLOFONM> MPPKMEIEGFE; // 0x24

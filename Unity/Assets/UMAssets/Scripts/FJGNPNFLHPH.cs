@@ -1,6 +1,6 @@
 
 public class FJGNPNFLHPH { }
-public class FJGNPNFLHPH_EventCollection : KLFDBFMNLBL_SaveBlock
+public class FJGNPNFLHPH_EventCollection : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 public class MMPBPOIFDAF { }
-public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_SaveBlock
+public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class PMKOFEIONEG
 	{

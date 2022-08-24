@@ -1,6 +1,6 @@
 
 public class JBMPOAAMGNB { }
-public class JBMPOAAMGNB_Base : KLFDBFMNLBL_SaveBlock
+public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 {
 	private const int ECFEMKGFDCE = 2;
 	private const int JDNKJIFMONK = 1;

@@ -1,6 +1,6 @@
 
 public class KDLBHAKPLPH { }
-public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_SaveBlock
+public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// private const int KDNHEMPAGIE = 100;
