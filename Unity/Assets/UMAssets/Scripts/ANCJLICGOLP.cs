@@ -62,9 +62,9 @@ public class ANCJLICGOLP
 				if(r)
 				{
 					EDOHBJAPLPF_JsonData a = AAEDAEHIONI[s];
-					a = a[AFEHLCGHAEE.IDLHJIOMJBK]; // data
+					a = a[AFEHLCGHAEE_Strings.IDLHJIOMJBK_data]; // data
 					EDOHBJAPLPF_JsonData b = AAEDAEHIONI[s];
-					b = b[AFEHLCGHAEE.KAPMOPMDHJE]; // label
+					b = b[AFEHLCGHAEE_Strings.KAPMOPMDHJE_label]; // label
 					int label = (int)b;
 					int idx = OHNJJIMGKGK_TypesStr.FindIndex((/*string*/ GHPLINIACBB) => {
 						return ANFNAHPIJDH[cnt] == GHPLINIACBB;

@@ -61,10 +61,10 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 	{
 		if(OILEIIEIBHP.BBAJPINMOEP_Contains(JIKKNHIAEKG_BlockName)) // counter
 		{
-			if(OILEIIEIBHP.BBAJPINMOEP_Contains(AFEHLCGHAEE.BDLNMOIOMHK/*total*/))
+			if(OILEIIEIBHP.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.BDLNMOIOMHK_total/*total*/))
 			{
 				bool b = true;
-				EDOHBJAPLPF_JsonData jsonData = OILEIIEIBHP[AFEHLCGHAEE.BDLNMOIOMHK/*total*/];
+				EDOHBJAPLPF_JsonData jsonData = OILEIIEIBHP[AFEHLCGHAEE_Strings.BDLNMOIOMHK_total/*total*/];
 				BDLNMOIOMHK.EDLBLCGHECJ = CJAENOMGPDA_ReadInt(jsonData, "max", 0, ref b);
 			}
 		}

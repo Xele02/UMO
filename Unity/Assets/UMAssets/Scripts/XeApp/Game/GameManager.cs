@@ -533,7 +533,7 @@ namespace XeApp.Game
 			GHNFIINGIGM.HKICMNAACDA();
 			if(localSave == null)
 			{
-				localSave = new ILDKBCLAFPB(AFEHLCGHAEE.IEGHKKJJMHI, AFEHLCGHAEE.HBMPOOCGNEN);
+				localSave = new ILDKBCLAFPB(AFEHLCGHAEE_Strings.IEGHKKJJMHI_SaveCipherPass, AFEHLCGHAEE_Strings.HBMPOOCGNEN_SaveCipherSalt);
 				localSave.PCODDPDFLHK_Load();
 			}
 			if(!divaResource)

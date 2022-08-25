@@ -22,6 +22,6 @@ public class IHKOJFIFPKB : CACGCMBKHDI_Request
     {
         EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
         NFEAMMJIMPG = new IHKOJFIFPKB.HBFOPNJHBCK();
-        NFEAMMJIMPG.PNAAOBECMPA = (int)json[AFEHLCGHAEE.PNAAOBECMPA/*num_replies*/];
+        NFEAMMJIMPG.PNAAOBECMPA = (int)json[AFEHLCGHAEE_Strings.PNAAOBECMPA_num_replies/*num_replies*/];
     }
 }

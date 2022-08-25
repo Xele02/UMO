@@ -48,7 +48,7 @@ public class IKAHKDKIGNA
 	// // RVA: 0x8DB638 Offset: 0x8DB638 VA: 0x8DB638
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
     {
-        EDOHBJAPLPF_JsonData files = IDLHJIOMJBK[AFEHLCGHAEE.KGHAJGGMPKL/*files*/];
+        EDOHBJAPLPF_JsonData files = IDLHJIOMJBK[AFEHLCGHAEE_Strings.KGHAJGGMPKL_files/*files*/];
         int num = files.HNBFOAJIIAL_Count;
         KGHAJGGMPKL = new List<GCGNICILKLD_AssetFileInfo>(num);
         for(int i = 0; i < num; i++)
@@ -58,7 +58,7 @@ public class IKAHKDKIGNA
             fileInfo.KHEKNNFCAOI_Load(fileData, i);
             KGHAJGGMPKL.Add(fileInfo);
         }
-        GLMGHMCOMEC = (string)IDLHJIOMJBK[AFEHLCGHAEE.GLMGHMCOMEC/*base_url*/];
+        GLMGHMCOMEC = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.GLMGHMCOMEC_base_url/*base_url*/];
     }
 
 	// // RVA: 0x8DB8C0 Offset: 0x8DB8C0 VA: 0x8DB8C0

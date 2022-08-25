@@ -52,7 +52,7 @@ public class GCGNICILKLD_AssetFileInfo
         if(PMMJABPFGOA_Key2 == 0)
             PMMJABPFGOA_Key2 = 0x74841251;
         
-        string file = (string)IDLHJIOMJBK_Json[AFEHLCGHAEE.MIMGPBHAJCO/*file*/];
+        string file = (string)IDLHJIOMJBK_Json[AFEHLCGHAEE_Strings.MIMGPBHAJCO_file/*file*/];
         ELLCDOJOGKL_FileName = new JDEFIJBCJLC_EncryptedString();
         ELLCDOJOGKL_FileName.DNJEJEANJGL_Value = file;
 
@@ -76,9 +76,9 @@ public class GCGNICILKLD_AssetFileInfo
         }
 
         NKLIKAENLNC_Hash = new JDEFIJBCJLC_EncryptedString();
-        NKLIKAENLNC_Hash.DNJEJEANJGL_Value = (string)IDLHJIOMJBK_Json[AFEHLCGHAEE.POEGMFKLFJG/*hash_value*/];
+        NKLIKAENLNC_Hash.DNJEJEANJGL_Value = (string)IDLHJIOMJBK_Json[AFEHLCGHAEE_Strings.POEGMFKLFJG_hash_value/*hash_value*/];
 
         LBALIFCJKON_Idx = OIPCCBHIKIA_Idx;
-        CFKONDFCBEB_LastUpdated = (int)IDLHJIOMJBK_Json[AFEHLCGHAEE.CALJIGKCAAH/*last_updated_at*/] ^ BBEGLBMOBOF_Key2;
+        CFKONDFCBEB_LastUpdated = (int)IDLHJIOMJBK_Json[AFEHLCGHAEE_Strings.CALJIGKCAAH_last_updated_at/*last_updated_at*/] ^ BBEGLBMOBOF_Key2;
     }
 }

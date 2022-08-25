@@ -48,19 +48,19 @@ public class HEHLBMMFMPL
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
     {
         EKFHOJIGHHH_IsCreated = 1;
-        if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE.EKFHOJIGHHH/*"is_created"*/))
+        if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EKFHOJIGHHH_is_created/*"is_created"*/))
         {
-            EKFHOJIGHHH_IsCreated = (int)IDLHJIOMJBK[AFEHLCGHAEE.EKFHOJIGHHH];
+            EKFHOJIGHHH_IsCreated = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.EKFHOJIGHHH_is_created];
         }
         EHGBICNIBKE_PlayerId = 0;
-        if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE.EHGBICNIBKE/*"player_id"*/))
+        if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EHGBICNIBKE_player_id/*"player_id"*/))
         {
-            EHGBICNIBKE_PlayerId = (int)IDLHJIOMJBK[AFEHLCGHAEE.EHGBICNIBKE];
+            EHGBICNIBKE_PlayerId = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.EHGBICNIBKE_player_id];
         }
         JFMEKPDHJPP_PlayerAccountStatus = 0;
-        if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE.JFMEKPDHJPP/*"player_account_status"*/))
+        if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.JFMEKPDHJPP_player_account_status/*"player_account_status"*/))
         {
-            JFMEKPDHJPP_PlayerAccountStatus = (int)IDLHJIOMJBK[AFEHLCGHAEE.JFMEKPDHJPP];
+            JFMEKPDHJPP_PlayerAccountStatus = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.JFMEKPDHJPP_player_account_status];
         }
     }
 }

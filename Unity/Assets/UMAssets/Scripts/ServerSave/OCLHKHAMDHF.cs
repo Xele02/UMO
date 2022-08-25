@@ -160,12 +160,12 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 					{
 						EDOHBJAPLPF_JsonData groupData = data[key];
 						JEHNEEBBDBO_EpisodeInfo info = BBAJKJPKOHD_EpisodeList[i];
-						info.HPLMMKHBKIG_Id = CJAENOMGPDA_ReadInt(groupData, AFEHLCGHAEE.PPFNGGCBJKC_Id, i+1, ref isInvalid);
-						info.OGDBKJKIGAJ_Val = CJAENOMGPDA_ReadInt(groupData, AFEHLCGHAEE.JBGEEPFKIGG_val, 0, ref isInvalid);
-						info.EBIIIAELNAA_Step = CJAENOMGPDA_ReadInt(groupData, AFEHLCGHAEE.LGADCGFMLLD_step, 0, ref isInvalid);
-						info.LHMOAJAIJCO_IsNew = CJAENOMGPDA_ReadInt(groupData, AFEHLCGHAEE.KLJGEHBKMMG_new, 0, ref isInvalid) != 0;
-						info.BEBJKJKBOGH_Date = DKMPHAPBDLH_ReadLong(groupData, AFEHLCGHAEE.BEBJKJKBOGH_Date, 0, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(groupData, AFEHLCGHAEE.CCCHFLGBMAF_recv, 0, 10, (int OIPCCBHIKIA, int JBGEEPFKIGG) =>
+						info.HPLMMKHBKIG_Id = CJAENOMGPDA_ReadInt(groupData, AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id, i+1, ref isInvalid);
+						info.OGDBKJKIGAJ_Val = CJAENOMGPDA_ReadInt(groupData, AFEHLCGHAEE_Strings.JBGEEPFKIGG_val, 0, ref isInvalid);
+						info.EBIIIAELNAA_Step = CJAENOMGPDA_ReadInt(groupData, AFEHLCGHAEE_Strings.LGADCGFMLLD_step, 0, ref isInvalid);
+						info.LHMOAJAIJCO_IsNew = CJAENOMGPDA_ReadInt(groupData, AFEHLCGHAEE_Strings.KLJGEHBKMMG_new, 0, ref isInvalid) != 0;
+						info.BEBJKJKBOGH_Date = DKMPHAPBDLH_ReadLong(groupData, AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date, 0, ref isInvalid);
+						IBCGPBOGOGP_ReadIntArray(groupData, AFEHLCGHAEE_Strings.CCCHFLGBMAF_recv, 0, 10, (int OIPCCBHIKIA, int JBGEEPFKIGG) =>
 						{
 							//0x1B30820
 							info.BDPOOJDJKAA_SetRewardReceived(OIPCCBHIKIA, JBGEEPFKIGG != 0);

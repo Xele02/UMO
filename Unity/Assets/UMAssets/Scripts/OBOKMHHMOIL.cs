@@ -33,25 +33,25 @@ public class OBOKMHHMOIL_ServerInfo
 	// // RVA: 0x1B2B94C Offset: 0x1B2B94C VA: 0x1B2B94C
 	public void KHEKNNFCAOI_Init(string HGAMEAPCKJL)
     {
-		int idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE.EBCFHFIOHBN); // SAKASHO_CURRENT_MASTER_REVISION
+		int idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE_Strings.EBCFHFIOHBN_SakashoCurrentMasterRevision); // SAKASHO_CURRENT_MASTER_REVISION
 		if(idx >= 0)
 		{
-			EBCFHFIOHBN_ServerCurrentMasterRevision = MBPLJOOMEBA(HGAMEAPCKJL, idx + AFEHLCGHAEE.EBCFHFIOHBN.Length + 2);
+			EBCFHFIOHBN_ServerCurrentMasterRevision = MBPLJOOMEBA(HGAMEAPCKJL, idx + AFEHLCGHAEE_Strings.EBCFHFIOHBN_SakashoCurrentMasterRevision.Length + 2);
 		}
-		idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE.AJBPBEALBOB); // SAKASHO_CURRENT_ASSET_REVISION
+		idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE_Strings.AJBPBEALBOB_SakashoCurrentAssetRevision); // SAKASHO_CURRENT_ASSET_REVISION
 		if(idx >= 0)
 		{
-			AJBPBEALBOB_ServerCurrentAssetRevision  = PEMIFCIFEKK(HGAMEAPCKJL, idx + AFEHLCGHAEE.AJBPBEALBOB.Length + 3);
+			AJBPBEALBOB_ServerCurrentAssetRevision  = PEMIFCIFEKK(HGAMEAPCKJL, idx + AFEHLCGHAEE_Strings.AJBPBEALBOB_SakashoCurrentAssetRevision.Length + 3);
 		}
-		idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE.LCAINKFINEI); // SAKASHO_CURRENT_DATE_TIME
+		idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE_Strings.LCAINKFINEI_SakashoCurrentDateTime); // SAKASHO_CURRENT_DATE_TIME
 		if(idx >= 0)
 		{
-			LCAINKFINEI_ServerCurrentDateTime  = System.Int32.Parse(MBPLJOOMEBA(HGAMEAPCKJL, idx + AFEHLCGHAEE.LCAINKFINEI.Length + 2));
+			LCAINKFINEI_ServerCurrentDateTime  = System.Int32.Parse(MBPLJOOMEBA(HGAMEAPCKJL, idx + AFEHLCGHAEE_Strings.LCAINKFINEI_SakashoCurrentDateTime.Length + 2));
 		}
-		idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE.ABFADMDAAKJ); // SAKASHO_RECOMMENDED_CLIENT_VERSION
+		idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE_Strings.ABFADMDAAKJ_SakashoRecommendedClientVersion); // SAKASHO_RECOMMENDED_CLIENT_VERSION
 		if(idx >= 0)
 		{
-			ABFADMDAAKJ_ServerRecommendedClientVersion  = PEMIFCIFEKK(HGAMEAPCKJL, idx + AFEHLCGHAEE.ABFADMDAAKJ.Length + 3);
+			ABFADMDAAKJ_ServerRecommendedClientVersion  = PEMIFCIFEKK(HGAMEAPCKJL, idx + AFEHLCGHAEE_Strings.ABFADMDAAKJ_SakashoRecommendedClientVersion.Length + 3);
 		}
     }
 

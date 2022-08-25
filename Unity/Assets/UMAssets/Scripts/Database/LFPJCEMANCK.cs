@@ -98,18 +98,18 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG
 					data.MABBBOEAPAA_Match = match;
 					if(match.Groups.Count > 0)
 					{
-						if(match.Groups[AFEHLCGHAEE.IKOFFIOMOME/*wav*/].Value != "")
+						if(match.Groups[AFEHLCGHAEE_Strings.IKOFFIOMOME_wav/*wav*/].Value != "")
 						{
 							int wavId = 0;
-							if(Int32.TryParse(match.Groups[AFEHLCGHAEE.IKOFFIOMOME/*wav*/].Value, out wavId))
+							if(Int32.TryParse(match.Groups[AFEHLCGHAEE_Strings.IKOFFIOMOME_wav/*wav*/].Value, out wavId))
 							{
 								data.KKPAHLMJKIH_WavId = wavId;
 							}
 						}
-						if(match.Groups[AFEHLCGHAEE.JJCJCOANHBL/*event*/].Value != "")
+						if(match.Groups[AFEHLCGHAEE_Strings.JJCJCOANHBL_event/*event*/].Value != "")
 						{
 							int eventId = 0;
-							if(Int32.TryParse(match.Groups[AFEHLCGHAEE.JJCJCOANHBL/*event*/].Value, out eventId))
+							if(Int32.TryParse(match.Groups[AFEHLCGHAEE_Strings.JJCJCOANHBL_event/*event*/].Value, out eventId))
 							{
 								data.EKANGPODCEP_EventId = eventId;
 							}

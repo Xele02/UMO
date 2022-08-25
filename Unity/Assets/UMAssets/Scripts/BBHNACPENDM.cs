@@ -434,21 +434,21 @@ public class BBHNACPENDM_ServerSaveData
 			{
 				EDOHBJAPLPF_JsonData jsonData = AAEDAEHIONI[OPFGFINHFCE];
 				long save_id = 0;
-				if(jsonData.BBAJPINMOEP_Contains(AFEHLCGHAEE.KAKFEGGEKLB/*save_id*/))
+				if(jsonData.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id/*save_id*/))
 				{
-					save_id = JsonUtil.GetLong(jsonData, AFEHLCGHAEE.KAKFEGGEKLB, 0);
+					save_id = JsonUtil.GetLong(jsonData, AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id, 0);
 				}
 				data.FJMOAAPNCJI = save_id;
 				if(data.IIEMACPEEBJ(AAEDAEHIONI) == false)
 					return false;
 				data.LLBJFFFJEPJ = true;
-				if(!jsonData.BBAJPINMOEP_Contains(AFEHLCGHAEE.KAKFEGGEKLB/*save_id*/))
+				if(!jsonData.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id/*save_id*/))
 				{
 					data.KFKDMBPNLJK_BlockInvalid = true;
 				}
 				else
 				{
-					save_id = JsonUtil.GetLong(jsonData, AFEHLCGHAEE.KAKFEGGEKLB, 0);
+					save_id = JsonUtil.GetLong(jsonData, AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id, 0);
 					if(save_id > MCKEOKFMLAH)
 						MCKEOKFMLAH = save_id;
 				}

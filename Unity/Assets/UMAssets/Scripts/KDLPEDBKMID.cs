@@ -174,7 +174,7 @@ public class KDLPEDBKMID
 		}
 		else
 		{
-			path = KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath + AFEHLCGHAEE.FAIOPNOJIBF_Slash + KEIGHMAKAAC;
+			path = KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath + AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + KEIGHMAKAAC;
 		}
 		return FileSystemProxy.FileExists(path);
 	}
@@ -218,11 +218,11 @@ public class KDLPEDBKMID
 	private string KPIAEBMBBPE_GetPathRelativeToDataDir(string KEIGHMAKAAC) // Platform path
 	{
 		JBBHNIACMFJ.Clear();
-		JBBHNIACMFJ.Append(AFEHLCGHAEE.FAIOPNOJIBF_Slash);
+		JBBHNIACMFJ.Append(AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash);
 		JBBHNIACMFJ.Append(KEHOJEJMGLJ.LBEPLOJBFCM_PlatformPrefix);
 		if(KEIGHMAKAAC[0] != '/')
 		{
-			JBBHNIACMFJ.Append(AFEHLCGHAEE.FAIOPNOJIBF_Slash);
+			JBBHNIACMFJ.Append(AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash);
 		}
 		JBBHNIACMFJ.Append(KEIGHMAKAAC);
 		return JBBHNIACMFJ.ToString();
@@ -240,7 +240,7 @@ public class KDLPEDBKMID
 		JBBHNIACMFJ.Clear();
 		JBBHNIACMFJ.Append(KEHOJEJMGLJ.FLHOFIEOKDH);
 		JBBHNIACMFJ.Append(dir);
-		JBBHNIACMFJ.Append(AFEHLCGHAEE.FAIOPNOJIBF_Slash);
+		JBBHNIACMFJ.Append(AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash);
 		JBBHNIACMFJ.Append(fileName);
 		JBBHNIACMFJ.Append("!s");
 		JBBHNIACMFJ.AppendFormat("{0:x8}", val);

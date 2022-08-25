@@ -25,7 +25,7 @@ public class NPAFCENJADP
         KHFCJBEFJNC = new RijndaelManaged();
         byte[] out1 = null;
         byte[] out2 = null;
-        GLHEDLJKJOO(AFEHLCGHAEE.DIGMEFPEBBC, AFEHLCGHAEE.ELLLLCLGECP, KHFCJBEFJNC.KeySize, out out1, KHFCJBEFJNC.BlockSize, out out2);
+        GLHEDLJKJOO(AFEHLCGHAEE_Strings.DIGMEFPEBBC_CipherPass, AFEHLCGHAEE_Strings.ELLLLCLGECP_CipherSalt, KHFCJBEFJNC.KeySize, out out1, KHFCJBEFJNC.BlockSize, out out2);
         KHFCJBEFJNC.Key = out1;
         KHFCJBEFJNC.IV = out2;
 

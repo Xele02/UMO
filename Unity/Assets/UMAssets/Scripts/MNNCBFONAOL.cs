@@ -42,7 +42,7 @@ public class MNNCBFONAOL
 	// // RVA: 0x17B17D0 Offset: 0x17B17D0 VA: 0x17B17D0
 	private static byte[] NLPIDMIPIIE()
     {
-        string seed = AFEHLCGHAEE.FEIAGLJKPAI;
+        string seed = AFEHLCGHAEE_Strings.FEIAGLJKPAI_Seed;
         char[] separator = new char[1] {'-'};
         string[] parts = seed.Split(separator);
         byte[] result = new byte[16];

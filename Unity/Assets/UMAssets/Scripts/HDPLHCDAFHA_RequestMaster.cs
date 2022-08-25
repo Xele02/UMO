@@ -38,7 +38,7 @@ public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
 		EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(res);
 		if(MKGLJLCMGIB != null)
 		{
-			bool val = MKGLJLCMGIB.Invoke(DFDLAIGFDAH, jsonData[AFEHLCGHAEE.NDFIEMPPMLF]);
+			bool val = MKGLJLCMGIB.Invoke(DFDLAIGFDAH, jsonData[AFEHLCGHAEE_Strings.NDFIEMPPMLF_master]);
 			DLKLLHPLANH = !val;
 		}
 		OGLMMENAJFL_onSuccess = true;
