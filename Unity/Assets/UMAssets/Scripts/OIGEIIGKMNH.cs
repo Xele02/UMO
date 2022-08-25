@@ -126,8 +126,8 @@ public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 					{
 						EDOHBJAPLPF_JsonData info = OILEIIEIBHP[key];
 						CNGNBKNBKGI_ValkList[i].FODKKJIDDKN_Id = i + 1;
-						CNGNBKNBKGI_ValkList[i].CADENLBDAEB_New = CJAENOMGPDA_ReadInt(info, AFEHLCGHAEE.KLJGEHBKMMG/*new*/, 0, ref isInvalid) != 0;
-						CNGNBKNBKGI_ValkList[i].BEBJKJKBOGH_Date = CJAENOMGPDA_ReadInt(info, AFEHLCGHAEE.BEBJKJKBOGH/*date*/, 0, ref isInvalid);
+						CNGNBKNBKGI_ValkList[i].CADENLBDAEB_New = CJAENOMGPDA_ReadInt(info, AFEHLCGHAEE.KLJGEHBKMMG_new/*new*/, 0, ref isInvalid) != 0;
+						CNGNBKNBKGI_ValkList[i].BEBJKJKBOGH_Date = CJAENOMGPDA_ReadInt(info, AFEHLCGHAEE.BEBJKJKBOGH_Date/*date*/, 0, ref isInvalid);
 						CNGNBKNBKGI_ValkList[i].CIEOBFIIPLD_FPt = CJAENOMGPDA_ReadInt(info, AFEHLCGHAEE.OOKGKIONGJF/*f_pt*/, 0, ref isInvalid);
 						CNGNBKNBKGI_ValkList[i].FJKIELICMAH_DvfNew = CJAENOMGPDA_ReadInt(info, AFEHLCGHAEE.HMJPPJNLBCM/*dvf_new*/, 1, ref isInvalid) != 0;
 					}

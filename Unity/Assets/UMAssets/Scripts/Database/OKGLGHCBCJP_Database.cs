@@ -424,7 +424,7 @@ public class OKGLGHCBCJP_Database
 		{92,() => { return new LPPGENBEECK_musicMaster(); } }, //0x149FBD0		"music",
 		// {93,() => { return new GJAEGCMKMEK(); } }, //0x149FC3C				"mv_ticket",
 		// {94,() => { return new LGHIPHEDCNC(); } }, //0x149FCA8				"offer",
-		// {95,() => { return new MPOEMCEBBJH(); } }, //0x149FD14				"pilot",
+		{95,() => { return new MPOEMCEBBJH_Pilot(); } }, //0x149FD14				"pilot",
 		// {96,() => { return new MDACFBPPIHD(); } }, //0x149FD80				"present_item",
 		// {97,() => { return new DHOJHGODBAB(); } }, //0x149FDEC				"quest",
 		// {98,() => { return new CKDOOBKOJBB(); } }, //0x149FE58				"rareup_item",
@@ -441,7 +441,7 @@ public class OKGLGHCBCJP_Database
 		// {109,() => { return new PJANOOPJIDE(); } }, //0x14A02FC				"tutorial_pict",
 		// {110,() => { return new DGDIEDDPNNG(); } }, //0x14A0368				"uc_item",
 		// {111,() => { return new INDEPDKCJDD(); } }, //0x14A03D4				"val_item",
-		// {112,() => { return new GKFMJAHKEMA_ValSkill(); } }, //0x14A0440				"val_skill",
+		{112,() => { return new GKFMJAHKEMA_ValSkill(); } }, //0x14A0440				"val_skill",
 		{113,() => { return new JPIANKEOOMB_Valkyrie(); } }, //0x14A04AC				"valkyrie",
 		// {114,() => { return new DKJMDIFAKKD(); } }, //0x14A0518				"vc_item",
 		// {115,() => { return new HGPEFPFODHO(); } }, //0x14A0584				"highscore_rating",
@@ -497,7 +497,7 @@ public class OKGLGHCBCJP_Database
 	   public LPPGENBEECK_musicMaster IBPAFKKEKNK_Music { get; private set; } // 0xCC CKFEJCIKLAE AHENIIKNNJF HMKLOBHNMMI
 	// public GJAEGCMKMEK NEGKEEAFKHP { get; private set; } // 0xD0 NFCPFDJHNFE HEMDMBJABPN EJFOCHNEPKD
 	// public LGHIPHEDCNC LBCMJGOOHLJ { get; private set; } // 0xD4 NAAKJHEPHGP NFGKMIAHJHD FMJANBICBME
-	// public MPOEMCEBBJH OBGGLAKOHKP { get; private set; } // 0xD8 AHLBGPDJMCC PLOCKLBILGJ CFGIBLPKPOH
+	public MPOEMCEBBJH_Pilot OBGGLAKOHKP_Pilot { get; private set; } // 0xD8 AHLBGPDJMCC PLOCKLBILGJ CFGIBLPKPOH
 	// public MDACFBPPIHD LPFEHNJEJFB { get; private set; } // 0xDC HFOPPMPKKFL BCAGHHBCENF FKMAMMGADKI
 	// public DHOJHGODBAB MHGPMMIDKMM { get; private set; } // 0xE0 HFKCBLFIKEC BODCNAFFNII JFGOKBPMCFL
 	// public CKDOOBKOJBB KKIMFMKOHFH { get; private set; } // 0xE4 NFOFMEKFHEA AMANIEHMCLH OHKJEENNABM
@@ -735,7 +735,7 @@ public class OKGLGHCBCJP_Database
 		IBPAFKKEKNK_Music = null;
 		// NEGKEEAFKHP = null;
 		// LBCMJGOOHLJ = null;
-		// OBGGLAKOHKP = null;
+		OBGGLAKOHKP_Pilot = null;
 		// LPFEHNJEJFB = null;
 		// MHGPMMIDKMM = null;
 		// KKIMFMKOHFH = null;
@@ -817,7 +817,7 @@ public class OKGLGHCBCJP_Database
 					case 92: IBPAFKKEKNK_Music = (LPPGENBEECK_musicMaster)item; break;
 					// case 93: NEGKEEAFKHP = item; break;
 					// case 94: LBCMJGOOHLJ = item; break;
-					// case 95: OBGGLAKOHKP = item; break;
+					case 95: OBGGLAKOHKP_Pilot = (MPOEMCEBBJH_Pilot)item; break;
 					// case 96: LPFEHNJEJFB = item; break;
 					// case 97: MHGPMMIDKMM = item; break;
 					// case 98: KKIMFMKOHFH = item; break;

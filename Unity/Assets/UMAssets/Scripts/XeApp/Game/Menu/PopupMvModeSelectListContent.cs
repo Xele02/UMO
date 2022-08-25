@@ -301,7 +301,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				text = MessageManager.Instance.GetMessage("menu", "mvmode_setting_popup_text_002_001");
-				text = string.Format(text, listItem.ValkyrieData.IJBLEJOKEFH_ValkyrieName, listItem.ValkyrieData.MJJCKMPICIK_PilotName, listItem.ValkyrieData.OPBPKNHIPPE.OPFGFINHFCE);
+				text = string.Format(text, listItem.ValkyrieData.IJBLEJOKEFH_ValkyrieName, listItem.ValkyrieData.MJJCKMPICIK_PilotName, listItem.ValkyrieData.OPBPKNHIPPE.OPFGFINHFCE_Name);
 			}
 			listLayout.SetListIndex(listItem.ListIndex);
 			listLayout.HideTexture();

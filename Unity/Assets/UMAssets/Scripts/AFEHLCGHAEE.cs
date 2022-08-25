@@ -271,7 +271,7 @@ public class AFEHLCGHAEE
 	public static string LLGBAPAACLL = "p2"; // 0x42C
 	public static string NMHGCOLMPJA = "ln"; // 0x430
 	public static string DDGFCOPPBBN = "test"; // 0x434
-	public static string LGADCGFMLLD = "step"; // 0x438
+	public static string LGADCGFMLLD_step = "step"; // 0x438
 	public static string GEFHAMEJHKD = "birth_year"; // 0x43C
 	public static string PGPGPJNBIOH = "uid"; // 0x440
 	public static string MKBCAPPIKMM = "pst_ver"; // 0x444
@@ -409,7 +409,7 @@ public class AFEHLCGHAEE
 	public static string DLCJLEBGBCI = "swp_st"; // 0x654
 	public static string LJGOOOMOMMA = "message"; // 0x658
 	public static string HENOGPAINDF = "center_card"; // 0x65C
-	public static string JBGEEPFKIGG = "val"; // 0x660
+	public static string JBGEEPFKIGG_val = "val"; // 0x660
 	public static string BEHEPILDEGG = "combo_bonus"; // 0x664
 	public static string EHGBICNIBKE = "player_id"; // 0x668
 	public static string MIKCFEHGNJB = "dt"; // 0x66C
@@ -528,7 +528,7 @@ public class AFEHLCGHAEE
 	public static string IFNLEKOILPM = "updated_at"; // 0x830
 	public static string AGBCJMMMLON = "step_index"; // 0x834
 	public static string NBBLIKLDGKL = "d_mis"; // 0x838
-	public static string KLJGEHBKMMG = "new"; // 0x83C
+	public static string KLJGEHBKMMG_new = "new"; // 0x83C
 	public static string KKAKGFJKMKL = "get_main_obj_ids"; // 0x840
 	public static string NHPCKCOPKAM = "from"; // 0x844
 	public static string GMLEMFDFKLG = "mi"; // 0x848
@@ -611,7 +611,7 @@ public class AFEHLCGHAEE
 	public static string ONOPACPKFPK = "ac"; // 0x97C
 	public static string JEENEHPOCFN = "max_df"; // 0x980
 	public static string BLJOJBEKFAH = "di_sp"; // 0x984
-	public static string BEBJKJKBOGH = "date"; // 0x988
+	public static string BEBJKJKBOGH_Date = "date"; // 0x988
 	public static string MOEDCMHBCHN = "client_time"; // 0x98C
 	public static string COCEIPAKJKF = "item"; // 0x990
 	public static string BKCJPIPJCCM = "sta_lot_done"; // 0x994
@@ -667,7 +667,7 @@ public class AFEHLCGHAEE
 	public static string EMBKPPHENAN = "wdat"; // 0xA5C
 	public static string HLMLHOFHIOK = "last_received_at"; // 0xA60
 	public static string DHMKKJNGDEN = "mission_name"; // 0xA64
-	public static string CCCHFLGBMAF = "recv"; // 0xA68
+	public static string CCCHFLGBMAF_recv = "recv"; // 0xA68
 	public static string KNJJPDDBKBA = "prs_ed"; // 0xA6C
 	public static string KBFOIECIADN = "opened_at"; // 0xA70
 	public static string AHKBMJPFIMB = "FreeVC"; // 0xA74
