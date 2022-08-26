@@ -175,7 +175,7 @@ namespace XeApp.Game.AR
 			// 0xBBB400
 
 			PJKLMCGEJMK am = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF;
-			JPAPJLIPNOK req = am.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK>(new JPAPJLIPNOK());
+			JPAPJLIPNOK_RequestAssetList req = am.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK_RequestAssetList>(new JPAPJLIPNOK_RequestAssetList());
 			req.FPCIBJLJOFI_Type = "db";
 
 			if(ignoreError)

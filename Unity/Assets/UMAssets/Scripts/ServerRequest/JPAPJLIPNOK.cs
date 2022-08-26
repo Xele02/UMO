@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class JPAPJLIPNOK : CACGCMBKHDI_Request
+public class JPAPJLIPNOK { }
+public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_Request
 {
 	private bool CHEGCAOBBEA; // 0x80
 

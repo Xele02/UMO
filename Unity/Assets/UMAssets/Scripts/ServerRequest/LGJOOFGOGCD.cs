@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class LGJOOFGOGCD : CACGCMBKHDI_Request
+public class LGJOOFGOGCD_RequestInventories : CACGCMBKHDI_Request
 {
 	public int IGNIIEBMFIN; // 0x7C
 	public int MLPLGFLKKLI; // 0x80

@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DOLDMCAMEOD : CACGCMBKHDI_Request
+public class DOLDMCAMEOD { }
+public class DOLDMCAMEOD_RequestRemainingForCurrencyIds : CACGCMBKHDI_Request
 {
     public class LDADODICMLG
     {
@@ -13,7 +14,7 @@ public class DOLDMCAMEOD : CACGCMBKHDI_Request
     
 	public List<int> CGCFENMHJIM; // 0x7C
 
-	public DOLDMCAMEOD.LDADODICMLG NFEAMMJIMPG { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public LDADODICMLG NFEAMMJIMPG { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0x1233364 Offset: 0x1233364 VA: 0x1233364 Slot: 12
 	public override void DHLDNIEELHO()

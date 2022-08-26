@@ -1,5 +1,6 @@
 
-public class EIJJIAPKICH : CACGCMBKHDI_Request
+public class EIJJIAPKICH { } 
+public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_Request
 {
 	// public override bool OIDCBBGLPHL { get; } // ??
 

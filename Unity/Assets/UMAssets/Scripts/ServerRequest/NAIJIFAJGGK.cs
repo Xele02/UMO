@@ -5,7 +5,8 @@ using XeSys;
 
 public delegate bool LDDPADICHHB(List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
 
-public class NAIJIFAJGGK : CACGCMBKHDI_Request
+public class NAIJIFAJGGK { }
+public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
 {
     public class PHAKFFBNNEI
     {
@@ -18,13 +19,13 @@ public class NAIJIFAJGGK : CACGCMBKHDI_Request
 
 	public List<string> HHIHCJKLJFF { get; set; } // 0x7C OHINHCAEFDJ AOELBKNHIMG HGAICKPMCCB
 	public LDDPADICHHB IJMPLDBGMHC { get; set; } // 0x80 LKIBOJLDBHM DCNBDAGBCPB LGLGACHHDGK
-	public NAIJIFAJGGK.PHAKFFBNNEI NFEAMMJIMPG { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public PHAKFFBNNEI NFEAMMJIMPG { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 	public override bool EBPLLJGPFDA { get {
         return NFEAMMJIMPG != null;
         } } // 0x17C031C HGPAELCGELL
 
 	// // RVA: 0x17C0084 Offset: 0x17C0084 VA: 0x17C0084
-	public NAIJIFAJGGK()
+	public NAIJIFAJGGK_RequestLoadPlayerData()
     {
         ICDEFIIADDO_Timeout = 30.0f;
     }
@@ -51,7 +52,7 @@ public class NAIJIFAJGGK : CACGCMBKHDI_Request
 	// // RVA: 0x17C0330 Offset: 0x17C0330 VA: 0x17C0330
 	private void DIAMDBHBKBH()
     {
-        NFEAMMJIMPG = new NAIJIFAJGGK.PHAKFFBNNEI();
+        NFEAMMJIMPG = new NAIJIFAJGGK_RequestLoadPlayerData.PHAKFFBNNEI();
         EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
         NFEAMMJIMPG.BIOGKIEECGN_CreatedAt = JsonUtil.GetLong(jsonData["created_at"]);
         NFEAMMJIMPG.IFNLEKOILPM_UpdatedAt = JsonUtil.GetLong(jsonData["updated_at"]);

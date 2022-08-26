@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class CNABKDIKIOB : CACGCMBKHDI_Request
+public class CNABKDIKIOB { }
+public class CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt : CACGCMBKHDI_Request
 {
 	// public CNABKDIKIOB.NDMAHKFPCAB NFEAMMJIMPG; // 0x7C
 	public List<int> CJNLEEEECOC; // 0x80

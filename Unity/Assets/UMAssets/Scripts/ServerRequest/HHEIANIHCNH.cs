@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class HHEIANIHCNH : CACGCMBKHDI_Request
+public class HHEIANIHCNH { }
+public class HHEIANIHCNH_RequestPlayerStatus : CACGCMBKHDI_Request
 {
 	public HEHLBMMFMPL NFEAMMJIMPG { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB x17574D0 KMKEGMGKCBA 0x17574D8
 
@@ -21,17 +22,6 @@ public class HHEIANIHCNH : CACGCMBKHDI_Request
 
 public class HEHLBMMFMPL
 {
-    public class HHEIANIHCNH : CACGCMBKHDI_Request
-    {
-        public HEHLBMMFMPL NFEAMMJIMPG { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-
-        // // RVA: 0x17574E0 Offset: 0x17574E0 VA: 0x17574E0 Slot: 12
-        // public override void DHLDNIEELHO() { }
-
-        // // RVA: 0x17575BC Offset: 0x17575BC VA: 0x17575BC Slot: 13
-        // public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE) { }
-    }
-
 	public int EKFHOJIGHHH_IsCreated; // 0x8
 	public int EHGBICNIBKE_PlayerId; // 0xC
 	public int JFMEKPDHJPP_PlayerAccountStatus; // 0x10

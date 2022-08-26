@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class IHKOJFIFPKB : CACGCMBKHDI_Request
+public class IHKOJFIFPKB { }
+public class IHKOJFIFPKB_RequestInquiryResponsesNumber : CACGCMBKHDI_Request
 {
     public class HBFOPNJHBCK
     {
@@ -9,7 +10,7 @@ public class IHKOJFIFPKB : CACGCMBKHDI_Request
     
 	public string ELBFGEBOPLI; // 0x7C
 
-	public IHKOJFIFPKB.HBFOPNJHBCK NFEAMMJIMPG { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
+	public HBFOPNJHBCK NFEAMMJIMPG { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0x12028C4 Offset: 0x12028C4 VA: 0x12028C4 Slot: 12
 	public override void DHLDNIEELHO()
@@ -21,7 +22,7 @@ public class IHKOJFIFPKB : CACGCMBKHDI_Request
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
     {
         EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
-        NFEAMMJIMPG = new IHKOJFIFPKB.HBFOPNJHBCK();
+        NFEAMMJIMPG = new IHKOJFIFPKB_RequestInquiryResponsesNumber.HBFOPNJHBCK();
         NFEAMMJIMPG.PNAAOBECMPA_NumReplies = (int)json[AFEHLCGHAEE_Strings.PNAAOBECMPA_num_replies/*num_replies*/];
     }
 }
