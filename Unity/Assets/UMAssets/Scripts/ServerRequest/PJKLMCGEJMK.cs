@@ -387,7 +387,7 @@ public class PJKLMCGEJMK
                     ADKIDBJCAJA.MGFNKDPHFGI(N.a);
                     //goto LAB_00933de0;
                     // To 9
-                    while(!ADKIDBJCAJA.EBPLLJGPFDA)
+                    while(!ADKIDBJCAJA.EBPLLJGPFDA_HasResult)
                     {
                         yield return null;
                     }
