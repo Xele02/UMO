@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 public class BBLECJKKKLA { }
-public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG
+public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 {
 	public class GJBPBKNHLHC
 	{
@@ -44,7 +44,7 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG
 	// // RVA: 0xF2B3A0 Offset: 0xF2B3A0 VA: 0xF2B3A0
 	public BBLECJKKKLA_DecoSetItem()
     {
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		LMHMIIKCGPE = 16;
     }

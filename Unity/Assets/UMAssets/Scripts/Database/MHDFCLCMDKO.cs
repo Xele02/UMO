@@ -1,5 +1,5 @@
 
-public class MHDFCLCMDKO : DIHHCBACKGG
+public class MHDFCLCMDKO : DIHHCBACKGG_DbSection
 {
     public class CJLENGHPIDH
     {

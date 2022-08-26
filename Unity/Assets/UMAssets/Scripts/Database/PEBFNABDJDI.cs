@@ -4,7 +4,7 @@ using System;
 using System.Text;
 
 public class PEBFNABDJDI { }
-public class PEBFNABDJDI_System : DIHHCBACKGG
+public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 {
     public class JFIGGEAFMCN
     {
@@ -75,7 +75,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 			{
 				int val1 = Int32.Parse(strs[i * 2]);
 				int val2 = Int32.Parse(strs[i * 2 + 1]);
-				if(DIHHCBACKGG.IEFOPDOOLOK > val1 || (i + 1) >= strs.Length/2)
+				if(DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion > val1 || (i + 1) >= strs.Length/2)
 					return val2;
 			}
 		}
@@ -108,7 +108,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG
 	// // RVA: 0xCC4D0C Offset: 0xCC4D0C VA: 0xCC4D0C
 	public PEBFNABDJDI_System()
     {
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
         LNIMEIMBCMF = false;
         NGHKJOEDLIP = new CHBDMJBEENG();
         JDBLDOPHHNL_Enc = new List<OGNALGCHKED>();

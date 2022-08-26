@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 public class MPOEMCEBBJH { }
-public class MPOEMCEBBJH_Pilot : DIHHCBACKGG
+public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 {
 	public class KOAKMNKEHDE_PilotInfo
 	{
@@ -29,7 +29,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG
 	// RVA: 0x17BC924 Offset: 0x17BC924 VA: 0x17BC924
 	public MPOEMCEBBJH_Pilot()
 	{
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		LMHMIIKCGPE = 65;
 		CDENCMNHNGA_PilotList = new List<KOAKMNKEHDE_PilotInfo>(100);

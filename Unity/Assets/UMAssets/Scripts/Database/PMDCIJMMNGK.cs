@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 public class PMDCIJMMNGK { }
-public class PMDCIJMMNGK_GachaTicket : DIHHCBACKGG
+public class PMDCIJMMNGK_GachaTicket : DIHHCBACKGG_DbSection
 {
 	public const int ODBKCBKACNP = 13;
 	public static int FBGGEFFJJHB = 0x304c2; // 0x0
@@ -17,7 +17,7 @@ public class PMDCIJMMNGK_GachaTicket : DIHHCBACKGG
 	// RVA: 0xFEC8A4 Offset: 0xFEC8A4 VA: 0xFEC8A4
 	public PMDCIJMMNGK_GachaTicket()
     {
-        JIKKNHIAEKG = "";
+        JIKKNHIAEKG_BlockName = "";
         LNIMEIMBCMF = false;
         LMHMIIKCGPE = 48;
     }

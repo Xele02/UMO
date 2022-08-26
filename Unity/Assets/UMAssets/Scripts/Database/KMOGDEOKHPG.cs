@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 public class KMOGDEOKHPG {}
-public class KMOGDEOKHPG_Episode : DIHHCBACKGG
+public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 {
 	public List<HMGPODKEFBA_EpisodeInfo> BBAJKJPKOHD_EpisodeList { get; private set; } = new List<HMGPODKEFBA_EpisodeInfo>(500); // 0x20 LOGMEMCACAC NNNEPHIJAKK HIAFHIDDPEJ
 	public List<FMLIFJBPFNA_Step> KODIKHBMBBJ_Steps { get; private set; } = new List<FMLIFJBPFNA_Step>(4); // 0x24 CAPCHAEJOGJ HKIODMBDNKN EIMDIFHLBKK
@@ -44,7 +44,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG
 	// // RVA: 0x111ED10 Offset: 0x111ED10 VA: 0x111ED10
 	public KMOGDEOKHPG_Episode()
     {
-        JIKKNHIAEKG = "";
+        JIKKNHIAEKG_BlockName = "";
         LMHMIIKCGPE = 25;
     }
 

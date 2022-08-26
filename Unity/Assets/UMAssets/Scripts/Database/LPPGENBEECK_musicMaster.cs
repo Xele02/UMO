@@ -3,7 +3,7 @@ using System;
 using XeApp.Game.Common;
 
 public class LPPGENBEECK {}
-public class LPPGENBEECK_musicMaster : DIHHCBACKGG
+public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 {
 	private List<HMJHLLPBCLD> OHLOHGGCCMD; // 0x30
 	private List<JPCKBFBCJKD> MGBKDJLEICI; // 0x34
@@ -147,7 +147,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 	// // RVA: 0x10D050C Offset: 0x10D050C VA: 0x10D050C
 	public LPPGENBEECK_musicMaster()
 	{
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		EPMMNEFADAP_Musics = new List<EONOEHOKBEB_Music>(300);
 		GEAANLPDJBP_FreeMusicDatas = new List<KEODKEGFDLD>(2000);
@@ -381,11 +381,11 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG
 			data.ELOGNMFPAHJ = (sbyte)array[i].JJMMJGANPFI;
 			data.BLDDNEJDFON = array[i].EIIOPABMJFJ;
 			bool b = false;
-			if(array[i].HHGPOOBOKHP > 0 && array[i].HHGPOOBOKHP <= DIHHCBACKGG.IEFOPDOOLOK)
+			if(array[i].HHGPOOBOKHP > 0 && array[i].HHGPOOBOKHP <= DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion)
 				b = true;
 			data.BHJNFBDNFEJ = b;
 			b = false;
-			if (array[i].OHDNJMJCGCJ > 0 && array[i].OHDNJMJCGCJ <= DIHHCBACKGG.IEFOPDOOLOK)
+			if (array[i].OHDNJMJCGCJ > 0 && array[i].OHDNJMJCGCJ <= DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion)
 				b = true;
 			data.GBNOALJPOBM = b;
 			for(int j = 0; j < array[i].CFJKNAIOEAN.Length; j++)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using XeSys;
 
 public class JPIANKEOOMB { }
-public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG
+public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 {
 	public class KJPIDJOMODA_ValkyrieInfo
 	{
@@ -64,7 +64,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG
 	// RVA: 0x1BA6A60 Offset: 0x1BA6A60 VA: 0x1BA6A60
 	public JPIANKEOOMB_Valkyrie()
 	{
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		LMHMIIKCGPE = 85;
 		CDENCMNHNGA_ValkyrieList = new List<KJPIDJOMODA_ValkyrieInfo>(100);

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 public class GJALOMELEHD { }
-public class GJALOMELEHD_Intimacy : DIHHCBACKGG
+public class GJALOMELEHD_Intimacy : DIHHCBACKGG_DbSection
 {
 	public class ELAIMNHBCFB
 	{
@@ -83,7 +83,7 @@ public class GJALOMELEHD_Intimacy : DIHHCBACKGG
 	// // RVA: 0xAA8E74 Offset: 0xAA8E74 VA: 0xAA8E74
 	public GJALOMELEHD_Intimacy()
     {
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
 		LMHMIIKCGPE = 56;

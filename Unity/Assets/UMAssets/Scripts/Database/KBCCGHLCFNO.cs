@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 public class KBCCGHLCFNO { }
-public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG
+public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
 {
 	public class JKGFAIPDNDL
 	{
@@ -110,7 +110,7 @@ public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG
 	// RVA: 0x1018AB8 Offset: 0x1018AB8 VA: 0x1018AB8
 	public KBCCGHLCFNO_MonthlyPass()
     {
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		AHJNPEAMCCH = new List<KBCCGHLCFNO_MonthlyPass.JKGFAIPDNDL>();
 		JHNEKMAHOPJ = new List<KBCCGHLCFNO_MonthlyPass.OFCDEIEAKLN>();

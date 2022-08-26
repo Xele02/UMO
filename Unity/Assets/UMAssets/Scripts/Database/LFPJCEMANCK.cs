@@ -73,7 +73,7 @@ public class PKKHIEAEDPC
 
 
 public class LFPJCEMANCK { }
-public class LFPJCEMANCK_Asset : DIHHCBACKGG
+public class LFPJCEMANCK_Asset : DIHHCBACKGG_DbSection
 {
 	public int[] OEEJIIIICCP; // 0x28
 	public Dictionary<string, int> AJHAKFLPNHF = new Dictionary<string, int>(); // 0x2C
@@ -162,7 +162,7 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG
 	// RVA: 0xD6E270 Offset: 0xD6E270 VA: 0xD6E270
 	public LFPJCEMANCK_Asset()
     {
-        JIKKNHIAEKG = "";
+        JIKKNHIAEKG_BlockName = "";
         LNIMEIMBCMF = false;
         KCMFDGNNPIL_Rules = new List<DFHCLGPLJCP_Rules>(100);
         LMHMIIKCGPE = 5;

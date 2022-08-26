@@ -204,19 +204,19 @@ public class CIOECGOMILE
 		StringBuilder str = new StringBuilder();
 		bool firstDone = false;
 		bool b = false;
-		for(int i = 0; i < AHEFHIMGIBI_ServerSave.MGJKEJHEBPO.Count; i++)
+		for(int i = 0; i < AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks.Count; i++)
 		{
 			if(firstDone)
 			{
 				str.Append(",");
 			}
-			str.Append(AHEFHIMGIBI_ServerSave.MGJKEJHEBPO[i].JIKKNHIAEKG_BlockName);
+			str.Append(AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks[i].JIKKNHIAEKG_BlockName);
 			str.Append(":");
-			str.Append(AHEFHIMGIBI_ServerSave.MGJKEJHEBPO[i].LLBJFFFJEPJ);
+			str.Append(AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks[i].LLBJFFFJEPJ);
 			str.Append(":");
-			str.Append(AHEFHIMGIBI_ServerSave.MGJKEJHEBPO[i].FJMOAAPNCJI);
+			str.Append(AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks[i].FJMOAAPNCJI);
 			firstDone = true;
-			b = b | !AHEFHIMGIBI_ServerSave.MGJKEJHEBPO[i].LLBJFFFJEPJ;
+			b = b | !AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks[i].LLBJFFFJEPJ;
 		}
 
 		UnityEngine.Debug.Log(str.ToString());

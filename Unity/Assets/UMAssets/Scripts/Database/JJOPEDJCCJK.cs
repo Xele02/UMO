@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 public class JJOPEDJCCJK { }
-public class JJOPEDJCCJK_Exp : DIHHCBACKGG
+public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 {
     public class GDBAIHMLCBI
     {
@@ -104,7 +104,7 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG
 	// RVA: 0x135621C Offset: 0x135621C VA: 0x135621C
 	public JJOPEDJCCJK_Exp()
     {
-        JIKKNHIAEKG = "";
+        JIKKNHIAEKG_BlockName = "";
         LNIMEIMBCMF = false;
         HLFGFGPCKNP = new List<int>(300);
         FKHFJAFKLPA = new List<int>(300);

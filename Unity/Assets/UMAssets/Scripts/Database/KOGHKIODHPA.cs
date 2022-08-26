@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using XeSys;
 
 public class KOGHKIODHPA { }
-public class KOGHKIODHPA_Board : DIHHCBACKGG
+public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 {
     public class ADPMJDMFEIK
     {
@@ -173,7 +173,7 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG
 	// // RVA: 0x1130188 Offset: 0x1130188 VA: 0x1130188
 	public KOGHKIODHPA_Board()
     {
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		PJADHDHKOEJ = new List<AFIFDLOAKGI>(500);
 		KLEBDKALPBD_Layout = new List<DMPDJFAGCPN>(1000);

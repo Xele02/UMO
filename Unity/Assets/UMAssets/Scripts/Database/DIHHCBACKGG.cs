@@ -1,19 +1,20 @@
 
-public abstract class DIHHCBACKGG
+public abstract class DIHHCBACKGG { }
+public abstract class DIHHCBACKGG_DbSection
 {
-	public static int IEFOPDOOLOK = 1; // 0x0
+	public static int IEFOPDOOLOK_MasterVersion = 1; // 0x0
 	public int LMHMIIKCGPE; // 0xC
 
-	public virtual string JIKKNHIAEKG { get; set; } // 0x8 HIPHMHKCJOI  // KLGJBKFAOGN // FEENLLLIMHM
+	public virtual string JIKKNHIAEKG_BlockName { get; set; } // 0x8 HIPHMHKCJOI  // KLGJBKFAOGN // FEENLLLIMHM
 	// public virtual int GLOLECOPKDM { get; set; } // 0x10 FKLFBFJJHPF // FPNGGOKOJHF // PMJJHGPMLBN
 	public bool LNIMEIMBCMF { get; set; } // 0x14 FELOLNHPBOI  // // JCGFCHCLKAH // HNHIPLGADIF
 	public string HDIDJNCGICK { get; set; } // 0x18 AEDHAENECGN // BILFANLLKPJ // CELPMALCAHG
 	public uint HHPOFCILDGN { get; set; } // 0x1C LGLBKNBFCIO // ACELOLOGDLM // MNDHNBBFJIB
 
 	// // RVA: 0x1984404 Offset: 0x1984404 VA: 0x1984404
-	public DIHHCBACKGG()
+	public DIHHCBACKGG_DbSection()
     {
-        JIKKNHIAEKG = "";
+        JIKKNHIAEKG_BlockName = "";
         LNIMEIMBCMF = false;
     }
 
@@ -35,8 +36,7 @@ public abstract class DIHHCBACKGG
 	// // RVA: 0x198ABF4 Offset: 0x198ABF4 VA: 0x198ABF4 Slot: 10
 	public virtual bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(0, "TODO");
-		return false;
+		return true;
 	}
 
 	// // RVA: 0x1984BC4 Offset: 0x1984BC4 VA: 0x1984BC4
@@ -61,17 +61,14 @@ public abstract class DIHHCBACKGG
 	// // RVA: 0x1989E1C Offset: 0x1989E1C VA: 0x1989E1C
 	public int JKAECBCNHAN(int IJEKNCDIIAE, int PLALNIIBLOF, int DBHPPMPNCKF = 0)
 	{
-		TodoLogger.Log(0, "Fix JKAECBCNHAN, static IEFOPDOOLOK should be initilized somewhere to a high value");
-		return PLALNIIBLOF;
-		
 		if(DBHPPMPNCKF != 0)
 		{
-			if (DBHPPMPNCKF <= IEFOPDOOLOK)
+			if (DBHPPMPNCKF <= IEFOPDOOLOK_MasterVersion)
 				return 0;
 		}
 		if(IJEKNCDIIAE != 0)
 		{
-			if (IJEKNCDIIAE <= IEFOPDOOLOK)
+			if (IJEKNCDIIAE <= IEFOPDOOLOK_MasterVersion)
 				return PLALNIIBLOF;
 		}
 		if (PLALNIIBLOF == 2)

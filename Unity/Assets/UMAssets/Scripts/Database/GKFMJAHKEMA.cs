@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 public class GKFMJAHKEMA { }
-public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG
+public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 {
 	public class CCPFGNNIBDD
 	{
@@ -308,7 +308,7 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG
 	//// RVA: 0xAAF210 Offset: 0xAAF210 VA: 0xAAF210
 	public GKFMJAHKEMA_ValSkill()
 	{
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		CCIDMMKDJDJ = new List<CCPFGNNIBDD>();
 		OJGFDCNOPBP = new List<GBDONNIHJHG>();

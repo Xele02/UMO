@@ -3,7 +3,7 @@ using XeApp.Game.Common;
 using XeSys;
 
 public class MLIBEPGADJH { }
-public class MLIBEPGADJH_Scene : DIHHCBACKGG
+public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 {
 	public class KKLDOOJBJMN
 	{
@@ -188,7 +188,7 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG
 	// // RVA: 0x195D800 Offset: 0x195D800 VA: 0x195D800
 	public MLIBEPGADJH_Scene()
 	{
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		LMHMIIKCGPE = 70;
 		CDENCMNHNGA = new List<MLIBEPGADJH_Scene.KKLDOOJBJMN>(6000);

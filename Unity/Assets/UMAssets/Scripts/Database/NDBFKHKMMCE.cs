@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 public class NDBFKHKMMCE { }
-public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG
+public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 {
 	public class EHLEEEBJLAM
 	{
@@ -349,7 +349,7 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG
 	// // RVA: 0x1ADEE2C Offset: 0x1ADEE2C VA: 0x1ADEE2C
 	public NDBFKHKMMCE_DecoItem()
     {
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
 		LNIMEIMBCMF = false;
 		LMHMIIKCGPE = 13;

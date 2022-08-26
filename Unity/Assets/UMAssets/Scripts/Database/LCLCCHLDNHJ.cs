@@ -5,7 +5,7 @@ using XeApp.Game.Common;
 using XeSys;
 
 public class LCLCCHLDNHJ { }
-public class LCLCCHLDNHJ_Costume : DIHHCBACKGG
+public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 {
 
     public class ILODJKFJJDO
@@ -198,7 +198,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG
 	// // RVA: 0xD9B39C Offset: 0xD9B39C VA: 0xD9B39C
 	public LCLCCHLDNHJ_Costume()
     {
-        JIKKNHIAEKG = "";
+        JIKKNHIAEKG_BlockName = "";
         LNIMEIMBCMF = false;
         LMHMIIKCGPE = 11;
         CDENCMNHNGA = new List<LCLCCHLDNHJ_Costume.ILODJKFJJDO>();
