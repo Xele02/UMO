@@ -11,7 +11,7 @@ public class CNABKDIKIOB : CACGCMBKHDI_Request
     {
         TodoLogger.Log(0, "GetVirtualCurrencyBalancesWithExpiredAt");
         DCKLDDCAJAP("{}");
-        BHFHGFKBOHH(this);
+        BHFHGFKBOHH_OnSuccess(this);
     }
 
 	// RVA: 0x175AB6C Offset: 0x175AB6C VA: 0x175AB6C Slot: 13

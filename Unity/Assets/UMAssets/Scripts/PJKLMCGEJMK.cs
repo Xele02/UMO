@@ -452,7 +452,7 @@ public class PJKLMCGEJMK
         CACGCMBKHDI_Request.HDHIKGLMOGF a = null;
         if(!KADMOOOMMJF)
         {
-            a = ADKIDBJCAJA.BHFHGFKBOHH;
+            a = ADKIDBJCAJA.BHFHGFKBOHH_OnSuccess;
             if(a == null)
             {
     	        UnityEngine.Debug.Log("Exit NBCKHIAINIM_Coroutine_Execute");
@@ -462,7 +462,7 @@ public class PJKLMCGEJMK
         else
         {
             UnityEngine.Debug.LogError("NBCKHIAINIM_Coroutine_Execute Error");
-            a = ADKIDBJCAJA.MOBEEPPKFLG;
+            a = ADKIDBJCAJA.MOBEEPPKFLG_OnFail;
             if(a == null)
             {
     	        UnityEngine.Debug.LogError("Exit  Error NBCKHIAINIM_Coroutine_Execute");

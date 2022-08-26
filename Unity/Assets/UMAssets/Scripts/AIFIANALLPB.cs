@@ -50,8 +50,8 @@ public class AIFIANALLPB
 		request.IPKCADIAAPG = JCHEPJKLGCF;
 		request.IGNIIEBMFIN = 1;
 		request.MLPLGFLKKLI = 30;
-		request.BHFHGFKBOHH = this.OOGDPKGCMED;
-		request.MOBEEPPKFLG = this.JHHKCOCJIKH;
+		request.BHFHGFKBOHH_OnSuccess = this.OOGDPKGCMED;
+		request.MOBEEPPKFLG_OnFail = this.JHHKCOCJIKH;
 	}
 
 	// // RVA: 0xCCC498 Offset: 0xCCC498 VA: 0xCCC498

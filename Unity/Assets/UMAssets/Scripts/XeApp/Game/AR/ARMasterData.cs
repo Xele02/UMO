@@ -176,7 +176,7 @@ namespace XeApp.Game.AR
 
 			PJKLMCGEJMK am = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF;
 			JPAPJLIPNOK req = am.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK>(new JPAPJLIPNOK());
-			req.FPCIBJLJOFI = "db";
+			req.FPCIBJLJOFI_Type = "db";
 
 			if(ignoreError)
 			{
@@ -196,7 +196,7 @@ namespace XeApp.Game.AR
 				yield break;
 			}
 
-			GCGNICILKLD_AssetFileInfo found = req.NFEAMMJIMPG.KGHAJGGMPKL.Find((GCGNICILKLD_AssetFileInfo _) => {
+			GCGNICILKLD_AssetFileInfo found = req.NFEAMMJIMPG.KGHAJGGMPKL_Files.Find((GCGNICILKLD_AssetFileInfo _) => {
 				// 0xBBB1A4
 				return _.OIEAICNAMNB_LocalFileName.Contains(string.Format("/db/{0}.dat", m_name));
 			});
@@ -206,7 +206,7 @@ namespace XeApp.Game.AR
 				yield break;
 			}
 
-			string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG.GLMGHMCOMEC + found.MFBMBPJAADA_FileName);
+			string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl + found.MFBMBPJAADA_FileName);
 			string dest = FileSystemProxy.ConvertPath(BBGDKLLEPIB.OGCDNCDMLCA + found.OIEAICNAMNB_LocalFileName);
 			UnityEngine.Debug.LogError("Dld from "+src+" to "+dest);
 

@@ -4,7 +4,7 @@ public class IHKOJFIFPKB : CACGCMBKHDI_Request
 {
     public class HBFOPNJHBCK
     {
-        public int PNAAOBECMPA; // 0x8
+        public int PNAAOBECMPA_NumReplies; // 0x8
     }
     
 	public string ELBFGEBOPLI; // 0x7C
@@ -22,6 +22,6 @@ public class IHKOJFIFPKB : CACGCMBKHDI_Request
     {
         EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
         NFEAMMJIMPG = new IHKOJFIFPKB.HBFOPNJHBCK();
-        NFEAMMJIMPG.PNAAOBECMPA = (int)json[AFEHLCGHAEE_Strings.PNAAOBECMPA_num_replies/*num_replies*/];
+        NFEAMMJIMPG.PNAAOBECMPA_NumReplies = (int)json[AFEHLCGHAEE_Strings.PNAAOBECMPA_num_replies/*num_replies*/];
     }
 }
