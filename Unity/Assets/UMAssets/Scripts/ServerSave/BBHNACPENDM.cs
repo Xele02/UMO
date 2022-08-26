@@ -610,7 +610,7 @@ public class BBHNACPENDM_ServerSaveData
 	// // RVA: 0xF25720 Offset: 0xF25720 VA: 0xF25720
 	private void HCOOGOCNNML()
 	{
-		/*if(KCCLEHLLOFG_Common != null && KCCLEHLLOFG_Common.POCPLFJCHDD != null)
+		if(KCCLEHLLOFG_Common != null && KCCLEHLLOFG_Common.POCPLFJCHDD != null)
 		{
 			if(KCCLEHLLOFG_Common.HCAHHCIGLLH)
 			{
@@ -619,7 +619,7 @@ public class BBHNACPENDM_ServerSaveData
 				KCCLEHLLOFG_Common.IGGDICEACIK();
 				CGFNKMNBNBN.HHGLKFFKFAB(-1);
 			}
-		}*/
+		}
 	}
 
 	// // RVA: 0xF257B4 Offset: 0xF257B4 VA: 0xF257B4
