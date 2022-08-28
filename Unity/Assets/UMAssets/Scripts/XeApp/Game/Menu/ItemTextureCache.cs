@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x14BD4E0 Offset: 0x14BD4E0 VA: 0x14BD4E0
 		public void Load(int id, Action<IiconTexture> callBack)
 		{
-			TodoLogger.Log(0, "IconTextureCache Load");
+			Load(MakeItemIconTexturePath(id, 0), callBack);
 		}
 
 		// // RVA: 0x14BD918 Offset: 0x14BD918 VA: 0x14BD918
@@ -82,6 +82,13 @@ namespace XeApp.Game.Menu
 			else
 			{
 				TodoLogger.Log(0, "MakeItemIconTexturePath");
+				val = val - 14;
+				switch (val)
+				{
+					default:
+						val2 = id;
+						break;
+				}
 			}
 			if(subId < 1)
 			{

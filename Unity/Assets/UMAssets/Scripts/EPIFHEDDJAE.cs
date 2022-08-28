@@ -1,0 +1,32 @@
+﻿
+public class EPIFHEDDJAE
+{
+	public enum NGEDJNHECKN
+	{
+		HJNNKCMLGFL = 0,
+		MGJDKBFHDML = 1,
+		FJFMLFPJKNB = 2,
+	}
+
+	public enum JAOBCBKBKJJ
+	{
+		HJNNKCMLGFL = 0,
+		FMHLGHDKJBC = 1,
+		JIOPJDJBLFK = 2,
+		FIFJJFPHOEM = 3,
+	}
+
+	public enum JFEIHHBGFPF
+	{
+		HJNNKCMLGFL = 0,
+		KLHDILNPGBB = 1,
+		JEEDNIBFAEL = 2,
+		KNMIMAAFAEB = 3,
+		CIFHKBNKGKJ = 4,
+		FANOODOOCFP = 5,
+		PPNNBADDNKB = 11,
+		FHBJEIEPABF = 12,
+	}
+
+	public const int IOGIPEHCGLF = 4;
+}

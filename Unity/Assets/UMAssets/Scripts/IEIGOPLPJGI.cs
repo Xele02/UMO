@@ -1,11 +1,19 @@
 
-public class IEIGOPLPJGI
+using XeSys;
+
+public class IEIGOPLPJGI_PilotInfo
 {
-	public int PFGJJLGLPAC; // 0x8
-	public string OPFGFINHFCE; // 0xC
-	public int AIHCEGFANAM; // 0x10
-	public int CHIMPKJDCPP; // 0x14
+	public int PFGJJLGLPAC_PilotId; // 0x8
+	public string OPFGFINHFCE_Name; // 0xC
+	public int AIHCEGFANAM_Sa; // 0x10
+	public int CHIMPKJDCPP_Pid; // 0x14
 
 	// // RVA: 0x11ED364 Offset: 0x11ED364 VA: 0x11ED364
-	// public void KHEKNNFCAOI_Init(int PFGJJLGLPAC) { }
+	public void KHEKNNFCAOI_Init(int PFGJJLGLPAC)
+	{
+		PFGJJLGLPAC_PilotId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OBGGLAKOHKP_Pilot.GCINIJEMHFK_GetPilot(PFGJJLGLPAC).PFGJJLGLPAC_Id;
+		AIHCEGFANAM_Sa = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OBGGLAKOHKP_Pilot.GCINIJEMHFK_GetPilot(PFGJJLGLPAC).AIHCEGFANAM_Sa;
+		CHIMPKJDCPP_Pid = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OBGGLAKOHKP_Pilot.GCINIJEMHFK_GetPilot(PFGJJLGLPAC).CHIMPKJDCPP_Pid;
+		OPFGFINHFCE_Name = MessageManager.Instance.GetMessage("master", "plt_nm_" + PFGJJLGLPAC.ToString("D4"));
+	}
 }

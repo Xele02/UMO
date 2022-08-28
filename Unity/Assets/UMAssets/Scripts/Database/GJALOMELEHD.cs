@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 public class GJALOMELEHD { }
-public class GJALOMELEHD_Intimacy : DIHHCBACKGG
+public class GJALOMELEHD_Intimacy : DIHHCBACKGG_DbSection
 {
 	public class ELAIMNHBCFB
 	{
@@ -67,8 +67,8 @@ public class GJALOMELEHD_Intimacy : DIHHCBACKGG
 	public List<GJALOMELEHD_Intimacy.MFMLEAMJJCH> OOCKOCAACMD = new List<GJALOMELEHD_Intimacy.MFMLEAMJJCH>(); // 0x24
 	public List<GJALOMELEHD_Intimacy.AHIGPDEDCFO> COHLJLNLBKM = new List<GJALOMELEHD_Intimacy.AHIGPDEDCFO>(); // 0x28
 
-	public Dictionary<string, CEBFFLDKAEC> OHJFBLFELNK { get; private set; } // 0x2C KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
-	public Dictionary<string, NNJFKLBPBNK> FJOEBCMGDMI { get; private set; } // 0x30 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK { get; private set; } // 0x2C KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI { get; private set; } // 0x30 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
 
 	// // RVA: 0xAA8CAC Offset: 0xAA8CAC VA: 0xAA8CAC
 	// public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }
@@ -83,11 +83,11 @@ public class GJALOMELEHD_Intimacy : DIHHCBACKGG
 	// // RVA: 0xAA8E74 Offset: 0xAA8E74 VA: 0xAA8E74
 	public GJALOMELEHD_Intimacy()
     {
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
-		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC>();
+		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
 		LMHMIIKCGPE = 56;
-		FJOEBCMGDMI = new Dictionary<string, NNJFKLBPBNK>();
+		FJOEBCMGDMI = new Dictionary<string, NNJFKLBPBNK_SecureString>();
     }
 
 	// // RVA: 0xAA903C Offset: 0xAA903C VA: 0xAA903C Slot: 8

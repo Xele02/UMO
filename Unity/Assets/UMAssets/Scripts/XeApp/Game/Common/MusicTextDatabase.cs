@@ -65,8 +65,8 @@ namespace XeApp.Game.Common
 			{
 				TextInfo textInfo = new TextInfo();
 				EDOHBJAPLPF_JsonData info = infos[i];
-				textInfo.id = (int)info[AFEHLCGHAEE.PPFNGGCBJKC_Id/*id*/];
-				textInfo.musicName = (string)text[(int)info[AFEHLCGHAEE.OPFGFINHFCE/*name*/]];
+				textInfo.id = (int)info[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id/*id*/];
+				textInfo.musicName = (string)text[(int)info[AFEHLCGHAEE_Strings.OPFGFINHFCE_name/*name*/]];
 				if(info.BBAJPINMOEP_Contains("o_n"))
 				{
 					textInfo.officialName = (string)text[(int)info["o_n"]];
@@ -84,7 +84,7 @@ namespace XeApp.Game.Common
 				{
 					textInfo.vocalNameLF = textInfo.vocalName;
 				}
-				textInfo.description = (string)text[(int)info[AFEHLCGHAEE.GJDKHDLKONI/*dsc*/]];
+				textInfo.description = (string)text[(int)info[AFEHLCGHAEE_Strings.GJDKHDLKONI_dsc/*dsc*/]];
 				textInfo.buyURL = (string)text[(int)info[buy2]];
 				string str = (string)text[(int)info[ds_a]].ToString();
 				textInfo.dAnmStoreURL = "";

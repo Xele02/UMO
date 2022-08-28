@@ -150,7 +150,17 @@ namespace XeApp.Game.Menu
 			}
 			else if(m_selectTarget == SelectTarget.Valkyrie)
 			{
-				TodoLogger.Log(0, "fill valkyrie list");
+				List<AOJGDNFAIJL_PrismData.MHOGKDIKIHE_ValkyrieInfo> l = m_prismData.PDECHELDNCC();
+				for (int i = 0; i < l.Count; i++)
+				{
+					ScrollValkyrieListItem item = new ScrollValkyrieListItem(l[i].PPFNGGCBJKC_Id);
+					SetIconPosition(0, i, item);
+					item.ListIndex = i;
+					item.IsSet = l[i].CBLHLEKLLDE_IsSet;
+					m_scrollItem.Add(item);
+					GameManager.Instance.PilotTextureCache.TryInstall(item.ValkyrieData.OPBPKNHIPPE.PFGJJLGLPAC_PilotId);
+					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, l[i].PPFNGGCBJKC_Id), 0);
+				}
 			}
 			m_scrollView.UpdateItemListener += this.OnUpdateScrollItem;
 			m_scrollView.SetupListItem(m_scrollItem);
@@ -179,7 +189,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.Log(0, "Apply valk & costume");
+				m_prismData.KEHGJNIGKBC_SelectValkyrie(m_selectListIndex);
 			}
 			m_prismData.LMAAILCIFLF_ApplyInSave();
 		}
@@ -193,7 +203,7 @@ namespace XeApp.Game.Menu
 				return;
 			if(m_selectTarget == SelectTarget.Valkyrie)
 			{
-				TodoLogger.Log(0, "OnUpdateScrollItem Valkyrie");
+				SetListItem(item, scrollItem as ScrollValkyrieListItem);
 			}
 			else if(m_selectTarget == SelectTarget.Costume)
 			{
@@ -281,7 +291,37 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x169B060 Offset: 0x169B060 VA: 0x169B060
-		// private void SetListItem(PopupMvSelectListItem listLayout, PopupMvModeSelectListContent.ScrollValkyrieListItem listItem) { }
+		private void SetListItem(PopupMvSelectListItem listLayout, PopupMvModeSelectListContent.ScrollValkyrieListItem listItem)
+		{
+			string text = "";
+			if(listItem.ListIndex == 0)
+			{
+				text = MessageManager.Instance.GetMessage("menu", "mvmode_setting_popup_text_002_000");
+			}
+			else
+			{
+				text = MessageManager.Instance.GetMessage("menu", "mvmode_setting_popup_text_002_001");
+				text = string.Format(text, listItem.ValkyrieData.IJBLEJOKEFH_ValkyrieName, listItem.ValkyrieData.MJJCKMPICIK_PilotName, listItem.ValkyrieData.OPBPKNHIPPE.OPFGFINHFCE_Name);
+			}
+			listLayout.SetListIndex(listItem.ListIndex);
+			listLayout.HideTexture();
+			listLayout.SetName(text);
+			GameManager.Instance.PilotTextureCache.Load(listItem.ValkyrieData.OPBPKNHIPPE.PFGJJLGLPAC_PilotId, (IiconTexture texture) =>
+			{
+				//0x169C288
+				if (listLayout.ListIndex != listItem.ListIndex)
+					return;
+				listLayout.SetSubImage(texture);
+			});
+			GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, listItem.ValkyrieData.GPPEFLKGGGJ_ValkyrieId), (IiconTexture texture) =>
+			{
+				//0x169C2E0
+				if (listLayout.ListIndex != listItem.ListIndex)
+					return;
+				listLayout.SetTexture(texture);
+			});
+			listLayout.SetBackGround(false);
+		}
 
 		// // RVA: 0x169B92C Offset: 0x169B92C VA: 0x169B92C Slot: 18
 		public bool IsScrollable()

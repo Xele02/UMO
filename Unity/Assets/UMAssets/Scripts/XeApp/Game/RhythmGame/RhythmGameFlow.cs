@@ -165,7 +165,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC7128 Offset: 0xDC7128 VA: 0xDC7128
 		private void WaitLoadingResource()
 		{
-			if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				if (!rhythmGameResource.is3DModeMusicDataResoucesLoaded)
 					return;
@@ -229,7 +229,7 @@ namespace XeApp.Game.RhythmGame
 			p.KHEKNNFCAOI_Init(teamInfo.prismValkyrieId, 0, 0);
 
 			List<MusicDirectionParamBase.ConditionSetting> settingList = new List<MusicDirectionParamBase.ConditionSetting>();
-			MusicDirectionParamBase.ConditionSetting cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[0].prismDivaId, teamInfo.danceDivaList[0].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC, teamInfo.danceDivaList[0].positionId);
+			MusicDirectionParamBase.ConditionSetting cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[0].prismDivaId, teamInfo.danceDivaList[0].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC_PilotId, teamInfo.danceDivaList[0].positionId);
 			settingList.Add(cond);
 			int cnt = 0;
 			for(int i = 0; i < 4; i++)
@@ -243,7 +243,7 @@ namespace XeApp.Game.RhythmGame
 					}
 					else
 					{
-						cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[i + 1].prismDivaId, teamInfo.danceDivaList[i + 1].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC, teamInfo.danceDivaList[i + 1].positionId);
+						cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[i + 1].prismDivaId, teamInfo.danceDivaList[i + 1].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC_PilotId, teamInfo.danceDivaList[i + 1].positionId);
 						settingList.Add(cond);
 					}
 				}
@@ -252,7 +252,7 @@ namespace XeApp.Game.RhythmGame
 					rhythmGameResource.subDivaResource[i] = null;
 				}
 			}
-			if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				rhythmGameResource.LoadSpecialDirectionResource(DbMusicInfo.KKPAHLMJKIH_WavId, stageDivaNum, settingList);
 			}
@@ -267,7 +267,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC80E4 Offset: 0xDC80E4 VA: 0xDC80E4
 		private void WaitLoadingSpecialResource()
 		{
-			if (GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				if (!rhythmGameResource.is3DModeSpecialResoucesLoaded)
 					return;
@@ -294,7 +294,7 @@ namespace XeApp.Game.RhythmGame
 			isDivaCosSoundLoaded = true;
 			// setup ennemy info
 
-			if (GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				int intro = 0, introSky = 0;
 				rhythmGameResource.paramResource.m_paramIntro.Check(Database.Instance.gameSetup, ref intro, ref introSky);
@@ -324,9 +324,9 @@ namespace XeApp.Game.RhythmGame
 				rhythmGameResource.valkyrieModeResource.LoadResources(battle, Database.Instance.gameSetup.teamInfo.prismValkyrieId);
 				rhythmGameResource.musicBoneSpringResource[0].LoadMusicResouces(wavId, GameManager.Instance.GetMultipleDanceOverridePrimeId(prime),
 												Database.Instance.gameSetup.musicInfo.onStageDivaNum, Database.Instance.gameSetup.musicInfo.onStageDivaNum > 1 ? Database.Instance.gameSetup.teamInfo.danceDivaList[0].positionId : 0);
-				if(GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.GPKILPOLNKO())
+				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GPKILPOLNKO())
 				{
-					rhythmGameResource.divaModeResource.LoadResources(wavId, GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CBLEFELBNDN_GetQuality(), rhythmGameResource.GetSpecialDirectionMovieId);
+					rhythmGameResource.divaModeResource.LoadResources(wavId, GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CBLEFELBNDN_GetQuality(), rhythmGameResource.GetSpecialDirectionMovieId);
 				}
 				for(int i = 0; i < 4 && i < rhythmGameResource.subDivaResource.Count; i++)
 				{
@@ -366,7 +366,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC9D94 Offset: 0xDC9D94 VA: 0xDC9D94
 		private void WaitLoadingData()
 		{
-			if (GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				if (!rhythmGameResource.is3DModeAllResoucesLoaded)
 					return;

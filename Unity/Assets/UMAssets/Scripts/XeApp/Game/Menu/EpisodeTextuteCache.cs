@@ -78,9 +78,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF09B6C Offset: 0xF09B6C VA: 0xF09B6C
 		private int FindEpisodeIdFromModelId(int divaId, int modelId)
 		{
-			foreach(var episode in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD)
+			foreach(var episode in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList)
 			{
-				foreach(var a in episode.HHJGBJCIFON)
+				foreach(var a in episode.HHJGBJCIFON_Rewards)
 				{
 					if(a != 0)
 					{

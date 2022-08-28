@@ -89,7 +89,7 @@ namespace XeApp.Game.Common
 			t = divaPrefab.transform.Find("joint_root/hips/spine");
 			if (t != null)
 				bodyShadow.SetupTarget(t);
-			if(!GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality())
+			if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality())
 			{
 				rightFootShadow.gameObject.SetActive(false);
 				leftFootShadow.gameObject.SetActive(false);

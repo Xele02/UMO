@@ -77,7 +77,7 @@ namespace XeApp.Game.Common
 			isLoadedParam = false;
 
 			musicBase = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
-			noteDisplayMillisec = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.HBCHGGNOOCD_GetNotesDisplayTiming((XeApp.Game.Common.Difficulty.Type)difficultyId, false);
+			noteDisplayMillisec = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HBCHGGNOOCD_GetNotesDisplayTiming((XeApp.Game.Common.Difficulty.Type)difficultyId, false);
 			yield return StartCoroutine(LoadScoreTarFile(musicId));
 
 			StringBuilder bundleName = new StringBuilder();

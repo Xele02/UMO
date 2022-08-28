@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using XeSys;
 
 public class LDDDBPNGGIN { }
-public class LDDDBPNGGIN_Game : DIHHCBACKGG
+public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 {
 	private const int NADNGLNALCK = 30;
 	private const int NHCGFMDPPPA = 5;
@@ -194,7 +194,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG
 	// // RVA: 0xDA1420 Offset: 0xDA1420 VA: 0xDA1420
 	public LDDDBPNGGIN_Game()
     {
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		KGHLOJNCFDO_ComboBonus = new List<JANMKFAKHIC_ComboBonus>(30);
 		PDNEMDIEGFB_JudgeCoef = new List<int>(5);

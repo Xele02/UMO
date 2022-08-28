@@ -45,9 +45,9 @@ public class IFBCGCCJBHI
     {
         if(KCCLEHLLOFG == null)
         {
-            if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common != null)
+            if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common != null)
             {
-                KCCLEHLLOFG = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common;
+                KCCLEHLLOFG = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common;
             }
         }
         IGHDEGMBPKI();

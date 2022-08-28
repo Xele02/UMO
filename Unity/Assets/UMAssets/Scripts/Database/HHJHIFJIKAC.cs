@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public class HHJHIFJIKAC : DIHHCBACKGG
+public class HHJHIFJIKAC : DIHHCBACKGG_DbSection
 {
     public enum IJFKAIHFJLF
     {

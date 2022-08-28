@@ -73,7 +73,7 @@ public class PKKHIEAEDPC
 
 
 public class LFPJCEMANCK { }
-public class LFPJCEMANCK_Asset : DIHHCBACKGG
+public class LFPJCEMANCK_Asset : DIHHCBACKGG_DbSection
 {
 	public int[] OEEJIIIICCP; // 0x28
 	public Dictionary<string, int> AJHAKFLPNHF = new Dictionary<string, int>(); // 0x2C
@@ -98,18 +98,18 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG
 					data.MABBBOEAPAA_Match = match;
 					if(match.Groups.Count > 0)
 					{
-						if(match.Groups[AFEHLCGHAEE.IKOFFIOMOME/*wav*/].Value != "")
+						if(match.Groups[AFEHLCGHAEE_Strings.IKOFFIOMOME_wav/*wav*/].Value != "")
 						{
 							int wavId = 0;
-							if(Int32.TryParse(match.Groups[AFEHLCGHAEE.IKOFFIOMOME/*wav*/].Value, out wavId))
+							if(Int32.TryParse(match.Groups[AFEHLCGHAEE_Strings.IKOFFIOMOME_wav/*wav*/].Value, out wavId))
 							{
 								data.KKPAHLMJKIH_WavId = wavId;
 							}
 						}
-						if(match.Groups[AFEHLCGHAEE.JJCJCOANHBL/*event*/].Value != "")
+						if(match.Groups[AFEHLCGHAEE_Strings.JJCJCOANHBL_event/*event*/].Value != "")
 						{
 							int eventId = 0;
-							if(Int32.TryParse(match.Groups[AFEHLCGHAEE.JJCJCOANHBL/*event*/].Value, out eventId))
+							if(Int32.TryParse(match.Groups[AFEHLCGHAEE_Strings.JJCJCOANHBL_event/*event*/].Value, out eventId))
 							{
 								data.EKANGPODCEP_EventId = eventId;
 							}
@@ -162,7 +162,7 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG
 	// RVA: 0xD6E270 Offset: 0xD6E270 VA: 0xD6E270
 	public LFPJCEMANCK_Asset()
     {
-        JIKKNHIAEKG = "";
+        JIKKNHIAEKG_BlockName = "";
         LNIMEIMBCMF = false;
         KCMFDGNNPIL_Rules = new List<DFHCLGPLJCP_Rules>(100);
         LMHMIIKCGPE = 5;

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 public class JOHKNBEFHHP { }
-public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG
+public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG_DbSection
 {
     public class NGKJHBDEELB
     {
@@ -19,7 +19,7 @@ public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG
 	// // RVA: 0x1BA3D84 Offset: 0x1BA3D84 VA: 0x1BA3D84
 	public JOHKNBEFHHP_TitleBanner()
     {
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		LMHMIIKCGPE = 81;
     }

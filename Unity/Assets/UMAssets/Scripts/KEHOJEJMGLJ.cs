@@ -53,9 +53,9 @@ public class KEHOJEJMGLJ
 	public static bool HBCEEIOHENM = true; // 0x8
 	public KEHOJEJMGLJ.ACGGHEIMPHC EMJFHKHLHDB = KEHOJEJMGLJ.ACGGHEIMPHC.GGCIMLDFDOC/*1*/; // 0x14
 	// private static string[] EENNDMBAGNC = new string[1] {"android"}; // 0xC
-	private static string IMABJMPEPGE; // 0x18
-	private static string JCMJBMBMJAK = null; // 0x1C
-	private static string PMHFLOLDHAO = null; // 0x20
+	private static string IMABJMPEPGE_PlatformPrefix; // 0x18
+	private static string JCMJBMBMJAK_PersistentDataPath = null; // 0x1C
+	private static string PMHFLOLDHAO_PersistentPlatformDataPath = null; // 0x20
 	public DJBHIFLHJLK FGGJNGCAFGK; // 0x24
 	public List<string> FBGNDKKDOIE = null; // 0x28
 	private JEHIAIPJNJF_FileDownloader PMDNNKAPIKJ; // 0x2C
@@ -81,36 +81,36 @@ public class KEHOJEJMGLJ
 
 	public static KEHOJEJMGLJ HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
 	// public static bool ONMPNMJCAAD { get; } // KFHIFNBPANF 0xE87C94
-	public static string FLHOFIEOKDH { get; set; } // 0x10 PGOHBLKDJOM ODMAEKMPAGP BBPOAGDNMOJ
-	public static string JNGKCPJBMBA { get; set; } // 0x14 BMIJOIFPCCE KEOJOEFBBJE FMEBBKPCEPK
-	public string FPCIBJLJOFI { get; set; } // 0x18 LCFILOOJABA NOJDHDJNPAL IHJLOEIKMDI
+	public static string FLHOFIEOKDH_BaseUrl { get; set; } // 0x10 PGOHBLKDJOM ODMAEKMPAGP BBPOAGDNMOJ
+	public static string JNGKCPJBMBA_ServerPlatformUrl { get; set; } // 0x14 BMIJOIFPCCE KEOJOEFBBJE FMEBBKPCEPK
+	public string FPCIBJLJOFI_PlatformName { get; set; } // 0x18 LCFILOOJABA NOJDHDJNPAL IHJLOEIKMDI
 	public static string LBEPLOJBFCM_PlatformPrefix { 
 		get { // KHCOOFHPKGE 0xE7E984
-			if(IMABJMPEPGE == null)
+			if(IMABJMPEPGE_PlatformPrefix == null)
 			{
-				IMABJMPEPGE = "android";
+				IMABJMPEPGE_PlatformPrefix = "android";
 			}
-			return IMABJMPEPGE;
+			return IMABJMPEPGE_PlatformPrefix;
 		}
 	} 
 	public static string OGCDNCDMLCA_PersistentDataPath { get {
 		// FHOCCNDOAPJ 0xE7EB1C
-		if(JCMJBMBMJAK == null)
+		if(JCMJBMBMJAK_PersistentDataPath == null)
 		{
 			string path = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath;
 			if(string.IsNullOrEmpty(path))
 				UnityEngine.Debug.LogError("Install.InstallPathManager.CriWare_installTargetPath is null");
-			JCMJBMBMJAK = path + "/data";
+			JCMJBMBMJAK_PersistentDataPath = path + "/data";
 		}
-        return JCMJBMBMJAK;
+        return JCMJBMBMJAK_PersistentDataPath;
 	}}
 	public static string CGAHFOBGHIM_PersistentPlatformDataPath { 
 		get { // AMBIPPMFFCJ 0xE7DF14
-			if(PMHFLOLDHAO == null)
+			if(PMHFLOLDHAO_PersistentPlatformDataPath == null)
 			{
-				PMHFLOLDHAO = OGCDNCDMLCA_PersistentDataPath + "/" + LBEPLOJBFCM_PlatformPrefix;
+				PMHFLOLDHAO_PersistentPlatformDataPath = OGCDNCDMLCA_PersistentDataPath + "/" + LBEPLOJBFCM_PlatformPrefix;
 			}
-			return PMHFLOLDHAO;
+			return PMHFLOLDHAO_PersistentPlatformDataPath;
 		}
 	}
 	public static string LHJNPJFNDNA { get; private set; } // 0x24 HCGGEEMOKFN JBIPCECPFGN ONAJIIACAEB
@@ -183,8 +183,8 @@ public class KEHOJEJMGLJ
 			LHJNPJFNDNA = null;
 		}
 		EMJFHKHLHDB = INDDJNMPONH;
-		FPCIBJLJOFI = "android";
-		JCMJBMBMJAK = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data";
+		FPCIBJLJOFI_PlatformName = "android";
+		JCMJBMBMJAK_PersistentDataPath = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data";
 		//FCPBCDOKOPD(,null); ???
 		N.a.StartCoroutine(EOFJPNPFGDM_Coroutine_Install(BHFHGFKBOHH,MOBEEPPKFLG));
 	}
@@ -243,8 +243,8 @@ public class KEHOJEJMGLJ
 				// internal void BCMEPPIPGIB() { }
 
 			//FCPBCDOKOPD?
-			JPAPJLIPNOK COJNCNGHIJC = JFAIABBIPEO.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK>(new JPAPJLIPNOK());
-			COJNCNGHIJC.FPCIBJLJOFI = FPCIBJLJOFI;
+			JPAPJLIPNOK_RequestAssetList COJNCNGHIJC = JFAIABBIPEO.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK_RequestAssetList>(new JPAPJLIPNOK_RequestAssetList());
+			COJNCNGHIJC.FPCIBJLJOFI_Type = FPCIBJLJOFI_PlatformName;
 			yield return COJNCNGHIJC.GDPDELLNOBO(N.a);
 			//1
 
@@ -260,8 +260,8 @@ public class KEHOJEJMGLJ
 			}
 
 			IDJBKGBMDAJ = COJNCNGHIJC.NFEAMMJIMPG;
-			FLHOFIEOKDH = COJNCNGHIJC.NFEAMMJIMPG.GLMGHMCOMEC;
-			JNGKCPJBMBA = FLHOFIEOKDH + AFEHLCGHAEE.FAIOPNOJIBF_Slash + LBEPLOJBFCM_PlatformPrefix + AFEHLCGHAEE.FAIOPNOJIBF_Slash;
+			FLHOFIEOKDH_BaseUrl = COJNCNGHIJC.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl;
+			JNGKCPJBMBA_ServerPlatformUrl = FLHOFIEOKDH_BaseUrl + AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + LBEPLOJBFCM_PlatformPrefix + AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash;
 
 			DMPNAEEIANJ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			//FCPBCDOKOPD()?
@@ -285,9 +285,9 @@ public class KEHOJEJMGLJ
 						//FCPBCDOKOPD?
 						KLIJFOBEKBE.EBCAKALIAHH();
 						PAIGMDNFNDJ = 0;
-						DIDACHONHJA(ref FAOOOLDDBBB, JCMJBMBMJAK);
+						DIDACHONHJA(ref FAOOOLDDBBB, JCMJBMBMJAK_PersistentDataPath);
 						string[] str = new string[5];
-						str[0] = ""+COJNCNGHIJC.NFEAMMJIMPG.KGHAJGGMPKL.Count;
+						str[0] = ""+COJNCNGHIJC.NFEAMMJIMPG.KGHAJGGMPKL_Files.Count;
 						str[1] = ",installed=";
 						str[2] = ""+PAIGMDNFNDJ;
 						str[3] = ",timestamp=";
@@ -434,7 +434,7 @@ public class KEHOJEJMGLJ
 							//6
 						}
 						PMDNNKAPIKJ = new JEHIAIPJNJF_FileDownloader(3);
-						PMDNNKAPIKJ.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ, FLHOFIEOKDH, JCMJBMBMJAK);
+						PMDNNKAPIKJ.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ, FLHOFIEOKDH_BaseUrl, JCMJBMBMJAK_PersistentDataPath);
 						PMDNNKAPIKJ.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {
 							//0xE8D424
 							TodoLogger.Log(0, "TODO");

@@ -57,8 +57,8 @@ namespace XeApp.Game.AR
 			}
 			return sm_instance;
 		} } 
-		public Dictionary<string, NNJFKLBPBNK> m_stringParam { get; private set; } // 0x38
-		public Dictionary<string, CEBFFLDKAEC> m_intParam { get; private set; } // 0x3C
+		public Dictionary<string, NNJFKLBPBNK_SecureString> m_stringParam { get; private set; } // 0x38
+		public Dictionary<string, CEBFFLDKAEC_SecureInt> m_intParam { get; private set; } // 0x3C
 
 		// // RVA: 0xBB6F34 Offset: 0xBB6F34 VA: 0xBB6F34
 		// public static void Release() { }
@@ -94,18 +94,18 @@ namespace XeApp.Game.AR
 				data.endTime = fileData.DEJCELHJKHN[i].AKKDBALDNAN;
 				m_chengeBg.Add(data);
 			}
-			m_intParam = new Dictionary<string, CEBFFLDKAEC>();
+			m_intParam = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
 			for(int i = 0; i < fileData.BHGDNGHDDAC.Length; i++)
 			{
-				CEBFFLDKAEC data = new CEBFFLDKAEC();
-				data.DNJEJEANJGL = fileData.BHGDNGHDDAC[i].JBGEEPFKIGG;
+				CEBFFLDKAEC_SecureInt data = new CEBFFLDKAEC_SecureInt();
+				data.DNJEJEANJGL_Value = fileData.BHGDNGHDDAC[i].JBGEEPFKIGG;
 				m_intParam.Add(fileData.BHGDNGHDDAC[i].LJNAKDMILMC, data);
 			}
-			m_stringParam = new Dictionary<string, NNJFKLBPBNK>();
+			m_stringParam = new Dictionary<string, NNJFKLBPBNK_SecureString>();
 			for(int i = 0; i < fileData.MHGMDJNOLMI.Length; i++)
 			{
-				NNJFKLBPBNK data = new NNJFKLBPBNK();
-				data.DNJEJEANJGL = fileData.MHGMDJNOLMI[i].JBGEEPFKIGG;
+				NNJFKLBPBNK_SecureString data = new NNJFKLBPBNK_SecureString();
+				data.DNJEJEANJGL_Value = fileData.MHGMDJNOLMI[i].JBGEEPFKIGG;
 				m_stringParam.Add(fileData.MHGMDJNOLMI[i].LJNAKDMILMC, data);
 
 			}

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using XeSys;
 
 public class KOGHKIODHPA { }
-public class KOGHKIODHPA_Board : DIHHCBACKGG
+public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 {
     public class ADPMJDMFEIK
     {
@@ -173,7 +173,7 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG
 	// // RVA: 0x1130188 Offset: 0x1130188 VA: 0x1130188
 	public KOGHKIODHPA_Board()
     {
-		JIKKNHIAEKG = "";
+		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		PJADHDHKOEJ = new List<AFIFDLOAKGI>(500);
 		KLEBDKALPBD_Layout = new List<DMPDJFAGCPN>(1000);
@@ -288,11 +288,11 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG
 			data.JPJNKNOJBMM = array[i].ALMNMBDELDB;
 			data.JBGEEPFKIGG = array[i].JBGEEPFKIGG;
 			data.PPEGAKEIEGM = JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
-			data.GMDCKJBIOGL = new List<CEBFFLDKAEC>();
+			data.GMDCKJBIOGL = new List<CEBFFLDKAEC_SecureInt>();
 			for(int j = 0; j < array[i].JFJFMFNMPPF.Length; j++)
 			{
-				CEBFFLDKAEC data2 = new CEBFFLDKAEC();
-				data2.DNJEJEANJGL = array[i].JFJFMFNMPPF[j];
+				CEBFFLDKAEC_SecureInt data2 = new CEBFFLDKAEC_SecureInt();
+				data2.DNJEJEANJGL_Value = array[i].JFJFMFNMPPF[j];
 				data.GMDCKJBIOGL.Add(data2);
 			}
 			GJLBMELKHEM.Add(data);
@@ -483,7 +483,7 @@ public class NHINPDLLFIO
 	private int EHOIENNDEDH; // 0x10
 	private int GALOFABOMPJ; // 0x14
 	private int ICKOHEDLEFP; // 0x18
-	public List<CEBFFLDKAEC> GMDCKJBIOGL; // 0x1C
+	public List<CEBFFLDKAEC_SecureInt> GMDCKJBIOGL; // 0x1C
 
 	public int PPEGAKEIEGM { get { return OIFAFKDMEEJ ^ FBGGEFFJJHB; } set { OIFAFKDMEEJ = value ^ FBGGEFFJJHB; } } //0x1890F04 KPOEEPIMMJP 0x1890F14 NCIEAFEDPBH
 	public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0x1890F24 DEMEPMAEJOO 0x1890F34 HIGKAIDMOKN

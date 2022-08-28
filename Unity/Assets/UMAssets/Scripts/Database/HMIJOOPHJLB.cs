@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using XeSys;
 
-public class HMIJOOPHJLB_Diva2 : DIHHCBACKGG
+public class HMIJOOPHJLB_Diva2 : DIHHCBACKGG_DbSection
 {
 	public static bool DINNDBNPNFK; // 0x0
 	public const int NLPCOAKLBAN = 0;
@@ -30,7 +30,7 @@ public class HMIJOOPHJLB_Diva2 : DIHHCBACKGG
 	// RVA: 0x15F61E4 Offset: 0x15F61E4 VA: 0x15F61E4
 	public HMIJOOPHJLB_Diva2()
     {
-        JIKKNHIAEKG = "";
+        JIKKNHIAEKG_BlockName = "";
         LMHMIIKCGPE = 20;
     }
 

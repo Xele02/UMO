@@ -218,7 +218,7 @@ namespace XeApp.Game.Common
 			Renderer[] renderers = divaPrefab_.transform.Find("mesh_root").GetComponentsInChildren<Renderer>();
 			if(useQualitySetting)
 			{
-				if(!GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality())
+				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality())
 				{
 					TodoLogger.Log(0, "Diva Low quality 3d setyp");
 				}
@@ -227,7 +227,7 @@ namespace XeApp.Game.Common
 			BoneSpringController.PerformanceMode boneQualityMode = BoneSpringController.PerformanceMode.High;
 			if(useQualitySetting)
 			{
-				if(!GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.INPHNKJPJFN())
+				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.INPHNKJPJFN())
 				{
 					boneQualityMode = BoneSpringController.PerformanceMode.Low;
 				}
@@ -526,7 +526,7 @@ namespace XeApp.Game.Common
 		{
 			if(!a_save_ignore)
 			{
-				effectEnable = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.MDMDEAFFIMB_IsDivaEffect != 1 && a_enable;
+				effectEnable = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MDMDEAFFIMB_IsDivaEffect != 1 && a_enable;
 			}
 			else
 			{
@@ -589,7 +589,7 @@ namespace XeApp.Game.Common
 		{
 			if (!a_save_ignore)
 			{
-				windEnable = GameManager.Instance.localSave.EPJOACOONAC().CNLJNGLMMHB_Options.MDMDEAFFIMB_IsDivaEffect != 1 && a_enable;
+				windEnable = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MDMDEAFFIMB_IsDivaEffect != 1 && a_enable;
 			}
 			else
 			{
