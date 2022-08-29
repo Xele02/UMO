@@ -368,7 +368,7 @@ public class CIOECGOMILE
 									GameManager.Instance.localSave.FBCDKFENOEM();
 									CHNJPFCKFOI.BCEAAAOLGEB();
 									FGDMEFINCEE();
-									if(AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC == 0)
+									if(AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd == 0)
 									{
 										if(FLENFOEFHPL != null)
 										{
@@ -384,7 +384,7 @@ public class CIOECGOMILE
 									{
 										BHFHGFKBOHH();
 									}
-									UnityEngine.Debug.LogError("Exit Error ODDEPBIJHOE_Coroutine_Load");
+									UnityEngine.Debug.LogError("Exit ODDEPBIJHOE_Coroutine_Load");
 									yield break;
 								}
 								//goto LAB_01011cb0;

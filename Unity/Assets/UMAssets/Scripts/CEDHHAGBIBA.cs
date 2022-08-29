@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Text;
 
 public class CEDHHAGBIBA
 {
@@ -6,7 +8,36 @@ public class CEDHHAGBIBA
 	private const int PMLANIPJEFO = 3;
 
 	// // RVA: 0x12B1884 Offset: 0x12B1884 VA: 0x12B1884
-	// public static string KJFAGPBALNO(string BJKEOACPMHB) { }
+	public static string KJFAGPBALNO(string BJKEOACPMHB)
+	{
+		StringBuilder str = new StringBuilder();
+		char[] chars = BJKEOACPMHB.ToCharArray();
+		for(int i = 0; i < chars.Length; i++)
+		{
+			if(chars[i] == '\\')
+			{
+				if (chars.Length < (i + 6))
+					str.Append(chars[i]);
+				else if(chars[i + 1] != 'u')
+					str.Append(chars[i]);
+				else
+				{
+					char[] c = new char[4];
+					for(int j = 0; j < 4; j++)
+					{
+						c[j] = chars[i + j + 2];
+					}
+					str.Append(Convert.ToInt32(c.ToString(), 16));
+					i += 4;
+				}
+			}
+			else
+			{
+				str.Append(chars[i]);
+			}
+		}
+		return str.ToString();
+	}
 
 	// // RVA: 0x12B1B20 Offset: 0x12B1B20 VA: 0x12B1B20
 	// public static string AMNBKLLDGKJ(byte[] IDDIIHBJPEE) { }
