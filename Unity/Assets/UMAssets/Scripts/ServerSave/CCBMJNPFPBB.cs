@@ -32,7 +32,7 @@ public class CCBMJNPFPBB_EventGoDiva : KLFDBFMNLBL_ServerSaveBlock
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
 
 	// // RVA: 0x18FFB34 Offset: 0x18FFB34 VA: 0x18FFB34 Slot: 6
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		TodoLogger.Log(0, "TODO");
 		return true;

@@ -184,7 +184,7 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
 
 	// // RVA: 0x196CC24 Offset: 0x196CC24 VA: 0x196CC24 Slot: 6
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		TodoLogger.Log(0, "TODO");
 		return true;

@@ -439,7 +439,7 @@ public class BBHNACPENDM_ServerSaveData
 					save_id = JsonUtil.GetLong(jsonData, AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id, 0);
 				}
 				data.FJMOAAPNCJI = save_id;
-				if(data.IIEMACPEEBJ(AAEDAEHIONI) == false)
+				if(data.IIEMACPEEBJ_Deserialize(AAEDAEHIONI) == false)
 					return false;
 				data.LLBJFFFJEPJ = true;
 				if(!jsonData.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id/*save_id*/))
@@ -610,7 +610,7 @@ public class BBHNACPENDM_ServerSaveData
 	// // RVA: 0xF25720 Offset: 0xF25720 VA: 0xF25720
 	private void HCOOGOCNNML()
 	{
-		if(KCCLEHLLOFG_Common != null && KCCLEHLLOFG_Common.POCPLFJCHDD != null)
+		if(KCCLEHLLOFG_Common != null && KCCLEHLLOFG_Common.POCPLFJCHDD_HomeBg != null)
 		{
 			if(KCCLEHLLOFG_Common.HCAHHCIGLLH)
 			{

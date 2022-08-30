@@ -95,7 +95,28 @@ public class CEDHHAGBIBA
 	// public static string EHNMFLADJKG(byte[] IFIKNDBPOKO) { }
 
 	// // RVA: 0x12B258C Offset: 0x12B258C VA: 0x12B258C
-	// public static void IFOLECIIDPO(byte[] IFIKNDBPOKO, string BJKEOACPMHB) { }
+	public static void IFOLECIIDPO_StringToByteArray(byte[] IFIKNDBPOKO, string BJKEOACPMHB)
+	{
+		if(string.IsNullOrEmpty(BJKEOACPMHB))
+		{
+			for(int i = 0; i < IFIKNDBPOKO.Length; i++)
+			{
+				IFIKNDBPOKO[i] = 0;
+			}
+		}
+		byte[] data = Convert.FromBase64String(BJKEOACPMHB);
+		for(int i = 0; i < IFIKNDBPOKO.Length; i++)
+		{
+			if(i < data.Length)
+			{
+				IFIKNDBPOKO[i] = data[i];
+			}
+			else
+			{
+				IFIKNDBPOKO[i] = 0;
+			}
+		}
+	}
 
 	// // RVA: 0x12B28A0 Offset: 0x12B28A0 VA: 0x12B28A0
 	// public static uint CAOGDCBPBAN(byte[] IFIKNDBPOKO) { }

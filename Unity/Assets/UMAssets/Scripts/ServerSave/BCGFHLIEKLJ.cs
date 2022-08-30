@@ -47,7 +47,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
 
 	// // RVA: 0xF30E1C Offset: 0xF30E1C VA: 0xF30E1C Slot: 6
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		TodoLogger.Log(0, "TODO");
 		return true;

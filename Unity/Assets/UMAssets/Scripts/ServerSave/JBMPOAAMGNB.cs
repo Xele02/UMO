@@ -39,7 +39,7 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
 
 	// // RVA: 0x1421B40 Offset: 0x1421B40 VA: 0x1421B40 Slot: 6
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		if (!OILEIIEIBHP.BBAJPINMOEP_Contains(JIKKNHIAEKG_BlockName))
 			return false;

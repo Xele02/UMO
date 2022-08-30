@@ -96,7 +96,7 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
 
 	// // RVA: 0xD87544 Offset: 0xD87544 VA: 0xD87544 Slot: 6
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		TodoLogger.Log(0, "TODO");
 		return true;

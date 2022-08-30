@@ -44,7 +44,7 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 	// public abstract void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH);
 
 	// // RVA: -1 Offset: -1 Slot: 6
-	public abstract bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP);
+	public abstract bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP);
 
 	// // RVA: 0x1A0BCA4 Offset: 0x1A0BCA4 VA: 0x1A0BCA4
 	// public void ODDIHGPONFL_Copy(KLFDBFMNLBL GPBJHKLFCEP) { }

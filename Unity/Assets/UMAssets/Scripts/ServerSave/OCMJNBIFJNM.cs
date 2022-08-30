@@ -93,7 +93,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 	// private EDOHBJAPLPF_JsonData BGGGENIANOD(OCMJNBIFJNM.PMOECIDOLNA FFOINHDALAM) { }
 
 	// // RVA: 0x1B33580 Offset: 0x1B33580 VA: 0x1B33580 Slot: 6
-	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP)
+	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
 		TodoLogger.Log(0, "TODO");
 		return true;
