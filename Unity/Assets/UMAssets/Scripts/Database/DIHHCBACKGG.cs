@@ -59,20 +59,20 @@ public abstract class DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1989E1C Offset: 0x1989E1C VA: 0x1989E1C
-	public int JKAECBCNHAN(int IJEKNCDIIAE, int PLALNIIBLOF, int DBHPPMPNCKF = 0)
+	public int JKAECBCNHAN(int IJEKNCDIIAE_AssetMasterVersion, int PLALNIIBLOF_MasterEnable, int DBHPPMPNCKF = 0)
 	{
 		if(DBHPPMPNCKF != 0)
 		{
 			if (DBHPPMPNCKF <= IEFOPDOOLOK_MasterVersion)
 				return 0;
 		}
-		if(IJEKNCDIIAE != 0)
+		if(IJEKNCDIIAE_AssetMasterVersion != 0)
 		{
-			if (IJEKNCDIIAE <= IEFOPDOOLOK_MasterVersion)
-				return PLALNIIBLOF;
+			if (IJEKNCDIIAE_AssetMasterVersion <= IEFOPDOOLOK_MasterVersion)
+				return PLALNIIBLOF_MasterEnable;
 		}
-		if (PLALNIIBLOF == 2)
-			PLALNIIBLOF = 1;
-		return PLALNIIBLOF;
+		if (PLALNIIBLOF_MasterEnable == 2)
+			PLALNIIBLOF_MasterEnable = 1;
+		return PLALNIIBLOF_MasterEnable;
 	}
 }

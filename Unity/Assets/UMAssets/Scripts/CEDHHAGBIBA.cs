@@ -122,6 +122,18 @@ public class CEDHHAGBIBA
 	// public static uint CAOGDCBPBAN(byte[] IFIKNDBPOKO) { }
 
 	// // RVA: 0x12B2994 Offset: 0x12B2994 VA: 0x12B2994
-	// public static int OGPFNHOKONH(byte[] IFIKNDBPOKO) { }
+	public static int OGPFNHOKONH(byte[] IFIKNDBPOKO)
+	{
+		int val = 0;
+		for(int i = 0; i < IFIKNDBPOKO.Length; i++)
+		{
+			int puVar1 = IFIKNDBPOKO[i];
+			int uVar3 = puVar1;
+			val = (int)((uVar3 & 1) + val + (uint)(puVar1 >> 7) - (uVar3 << 0x1e >> 0x1f) -
+				(uVar3 << 0x1d >> 0x1f) - (uVar3 << 0x1c >> 0x1f) -
+			  (uVar3 << 0x1b >> 0x1f) - (uVar3 << 0x1a >> 0x1f)) - (uVar3 << 0x19 >> 0x1f);
+		}
+		return val;
+	}
 
 }

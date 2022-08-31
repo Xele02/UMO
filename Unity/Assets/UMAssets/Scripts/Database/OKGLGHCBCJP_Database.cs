@@ -417,7 +417,7 @@ public class OKGLGHCBCJP_Database
 		// {(int)BEOKNKGHFFE_SectionName.BKGFKGIGJNL_HomeVoice,() => { return new NPCCDMKJBMM(); } }, //0x149F8DC				"home_voice",
 		// {(int)BEOKNKGHFFE_SectionName.NLIJGKHKMII_RichBanner,() => { return new JKMLBONMAHD(); } }, //0x149F948				"rich_banner",
 		{(int)BEOKNKGHFFE_Section.CLAMLDCILJO_Intimacy,() => { return new GJALOMELEHD_Intimacy(); } }, //0x149F9B4					"intimacy",
-		// {(int)BEOKNKGHFFE_SectionName.FONDIJMKCAJ_LimitOver,() => { return new LLKLAKGKNLD(); } }, //0x149FA20				"limit_over",
+		{(int)BEOKNKGHFFE_Section.FONDIJMKCAJ_LimitOver,() => { return new LLKLAKGKNLD_LimitOver(); } }, //0x149FA20				"limit_over",
 		// {(int)BEOKNKGHFFE_SectionName.KPBNAHEIJIC_LimitedItem,() => { return new EGLOKAEIHCB(); } }, //0x149FA8C				"limited_item",
 		// {(int)BEOKNKGHFFE_SectionName.ECEDGCHFCEF_Medal,() => { return new HHFFOACILKG(); } }, //0x149FAF8				"medal",
 		{(int)BEOKNKGHFFE_Section.HOBIIBFBMKJ_MonthlyPass,() => { return new KBCCGHLCFNO_MonthlyPass(); } }, //0x149FB64					"monthly_pass",
@@ -467,7 +467,7 @@ public class OKGLGHCBCJP_Database
 	   public HPBPIOPPDCB_Diva MGFMPKLLGHE_Diva { get; private set; } // 0x54 ONCMJNDIMPD // ODGINDHEIBJ GIFOPLEGJCI
 	   public HMIJOOPHJLB_Diva2 OAINIGNLJKC_Diva2 { get; private set; } // 0x58 EFGHBGKGCDI KNBBENGMPJL MAPJOGCOBCF
 	// public NBPHJDCOECH HGLIIPFLMFB { get; private set; } // 0x5C DNBKBMJEDFG GEHKLFKNGDK DAEJHNBAAHD
-	// public IHGBPAJMJFK LBNBNAFGMDE { get; private set; } // 0x60 DOKBBBOMOIP AEKIOLPFPCO PMEOIDAFOLD
+	public IHGBPAJMJFK_Emblem LBNBNAFGMDE_Emblem { get; private set; } // 0x60 DOKBBBOMOIP AEKIOLPFPCO PMEOIDAFOLD
 	// public MHDFCLCMDKO OPFBEAJJMJB { get; private set; } // 0x64 DMKMEHGHLAL EDGAJGHMGOK AIBFBDMGEAL
 	// public JKDKODAPGBJ KOPOGNLKAEN { get; private set; } // 0x68 DACOHEDKLPD AEOJDBAPOEN PABHKGHLLLJ
 	// public KIICLPJJBNL NEGGMILDEEF { get; private set; } // 0x6C EEAPHFKEOOP EPDABADJFBH CFGCGOGNBMM
@@ -490,7 +490,7 @@ public class OKGLGHCBCJP_Database
 	// public NPCCDMKJBMM MGIMEEEALPK { get; private set; } // 0xB0 IIGKAHAPDCK EMOJEAIPDCL KJJAAHMMPDD
 	// public JKMLBONMAHD MLGEHCJPAFB { get; private set; } // 0xB4 DIOBCOIDGBL KLENJIKKNGL MCEKLAONFOO
 	   public GJALOMELEHD_Intimacy KDIALKDKBGE_Intimacy { get; private set; } // 0xB8 AJILIAMLKCN OHOFMNKPACI AJNFIOMEBPE
-	// public LLKLAKGKNLD HDGOHBFKKDM { get; private set; } // 0xBC GOCPJPDCIFF HNHCBNDJBIL OMHPACMOBMD
+	public LLKLAKGKNLD_LimitOver HDGOHBFKKDM_LimitOver { get; private set; } // 0xBC GOCPJPDCIFF HNHCBNDJBIL OMHPACMOBMD
 	// public EGLOKAEIHCB IHPFCIJKFIC { get; private set; } // 0xC0 DLCGGEGFOFM BKAPBBKJELI MINMKCJFHDG
 	// public HHFFOACILKG ICICKEBMEFA { get; private set; } // 0xC4 BLEKIIHCAEL ECAMAOEFEJK IEOJCBOIKPN
 	   public KBCCGHLCFNO_MonthlyPass MEGJDBJCEOC_MonthlyPass { get; private set; } // 0xC8 LAJCNNENFPJ MIALNGOCOPJ NABHFEAEHFH
@@ -705,7 +705,7 @@ public class OKGLGHCBCJP_Database
 		MGFMPKLLGHE_Diva = null;
 		OAINIGNLJKC_Diva2 = null;
 		// HGLIIPFLMFB = null;
-		// LBNBNAFGMDE = null;
+		LBNBNAFGMDE_Emblem = null;
 		// OPFBEAJJMJB = null;
 		// KOPOGNLKAEN = null;
 		// NEGGMILDEEF = null;
@@ -728,7 +728,7 @@ public class OKGLGHCBCJP_Database
 		// MGIMEEEALPK = null;
 		// MLGEHCJPAFB = null;
 		KDIALKDKBGE_Intimacy = null;
-		// HDGOHBFKKDM = null;
+		HDGOHBFKKDM_LimitOver = null;
 		// IHPFCIJKFIC = null;
 		// ICICKEBMEFA = null;
 		MEGJDBJCEOC_MonthlyPass = null;
@@ -787,7 +787,7 @@ public class OKGLGHCBCJP_Database
 					case BEOKNKGHFFE_Section.CNENKCCMEFL_Diva: MGFMPKLLGHE_Diva = (HPBPIOPPDCB_Diva)item; break;
 					case BEOKNKGHFFE_Section.ACGFJFNPLKB_Diva2: OAINIGNLJKC_Diva2 = (HMIJOOPHJLB_Diva2)item; break;
 					// case BEOKNKGHFFE_Section.PKDKLHJLEFA_Drop: HGLIIPFLMFB = item; break;
-					// case BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem: LBNBNAFGMDE = item; break;
+					case BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem: LBNBNAFGMDE_Emblem = (IHGBPAJMJFK_Emblem)item; break;
 					// case BEOKNKGHFFE_Section.CNGPLGIMJBB_Energy: OPFBEAJJMJB = item; break;
 					// case BEOKNKGHFFE_Section.JBFFIPCOGEC_EnergyItem: KOPOGNLKAEN = item; break;
 					case BEOKNKGHFFE_Section.BBDKHAMANCB_Episode: MOLEPBNJAGE_Episode = (KMOGDEOKHPG_Episode)item; break;
@@ -810,7 +810,7 @@ public class OKGLGHCBCJP_Database
 					// case BEOKNKGHFFE_Section.BKGFKGIGJNL_HomeVoice: MGIMEEEALPK = item; break;
 					// case BEOKNKGHFFE_Section.NLIJGKHKMII_RichBanner: MLGEHCJPAFB = item; break;
 					case BEOKNKGHFFE_Section.CLAMLDCILJO_Intimacy: KDIALKDKBGE_Intimacy = (GJALOMELEHD_Intimacy)item; break;
-					// case BEOKNKGHFFE_Section.FONDIJMKCAJ_LimitOver: HDGOHBFKKDM = item; break;
+					case BEOKNKGHFFE_Section.FONDIJMKCAJ_LimitOver: HDGOHBFKKDM_LimitOver = (LLKLAKGKNLD_LimitOver)item; break;
 					// case BEOKNKGHFFE_Section.KPBNAHEIJIC_LimitedItem: IHPFCIJKFIC = item; break;
 					// case BEOKNKGHFFE_Section.ECEDGCHFCEF_Medal: ICICKEBMEFA = item; break;
 					case BEOKNKGHFFE_Section.HOBIIBFBMKJ_MonthlyPass: MEGJDBJCEOC_MonthlyPass = (KBCCGHLCFNO_MonthlyPass)item; break;

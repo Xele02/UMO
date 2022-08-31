@@ -76,7 +76,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
         // public int DOGKAEAHIMI(int ANAJIAENLNB) { }
 
         // // RVA: 0xD9E2D8 Offset: 0xD9E2D8 VA: 0xD9E2D8
-        public short[] KKLPLPGBOFD(int ANAJIAENLNB)
+        public short[] KKLPLPGBOFD_GetAvaiableColor(int ANAJIAENLNB)
 		{
 			List<short> result = new List<short>();
 			JEJCHECAEBD(ANAJIAENLNB, (int FGMJJBBDOOI, LCLCCHLDNHJ_Costume.ILODJKFJJDO.FBKPFMKPMAF GMCEJHMOJJD) =>
@@ -331,7 +331,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xD9D4A0 Offset: 0xD9D4A0 VA: 0xD9D4A0
-	public bool OEMKAFGPOCE(int JPIDIENBGKH_CostumeId, int AHHJLDLAPAN_PrismDivaId)
+	public bool OEMKAFGPOCE_IsCostumeAvaiable(int JPIDIENBGKH_CostumeId, int AHHJLDLAPAN_PrismDivaId)
     {
 		if (JPIDIENBGKH_CostumeId > 0 && JPIDIENBGKH_CostumeId <= CDENCMNHNGA.Count)
 		{
@@ -344,7 +344,20 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0xD9D658 Offset: 0xD9D658 VA: 0xD9D658
-	// public bool KPHOIIKOEOG(int PPKEBOEJAKH, int JPIDIENBGKH, int AHHJLDLAPAN) { }
+	public bool KPHOIIKOEOG_IsColorAvaiable(int PPKEBOEJAKH_ColorId, int JPIDIENBGKH_CostumeId, int AHHJLDLAPAN_DivaId)
+	{
+		ILODJKFJJDO cos = LBDOLHGDIEB(AHHJLDLAPAN_DivaId, JPIDIENBGKH_CostumeId);
+		if(cos != null)
+		{
+			short[] data = cos.KKLPLPGBOFD_GetAvaiableColor(cos.LLLCMHENKKN);
+			for(int i = 0; i < data.Length; i++)
+			{
+				if (data[i] == PPKEBOEJAKH_ColorId)
+					return true;
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0xD9D70C Offset: 0xD9D70C VA: 0xD9D70C
 	// public bool JAHFLLONDCN(int JPIDIENBGKH, int HEHKNMCDBJJ = 0) { }

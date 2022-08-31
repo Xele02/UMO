@@ -12,7 +12,14 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 	public List<BJPLLEBHAGO> CDENCMNHNGA = new List<BJPLLEBHAGO>(10); // 0x24
 
 	// // RVA: 0x160846C Offset: 0x160846C VA: 0x160846C
-	// public bool BEEGJHCDHJB(int AHHJLDLAPAN) { }
+	public bool BEEGJHCDHJB_IsDivaAvaiable(int AHHJLDLAPAN)
+	{
+		if(AHHJLDLAPAN > 0 && AHHJLDLAPAN <= CDENCMNHNGA.Count)
+		{
+			return CDENCMNHNGA[AHHJLDLAPAN - 1].PPEGAKEIEGM == 2;
+		}
+		return false;
+	}
 
 	// // RVA: 0x1608560 Offset: 0x1608560 VA: 0x1608560
 	public BJPLLEBHAGO GCINIJEMHFK(int AHHJLDLAPAN)

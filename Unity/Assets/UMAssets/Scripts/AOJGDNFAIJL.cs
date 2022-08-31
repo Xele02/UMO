@@ -338,7 +338,7 @@ public class AOJGDNFAIJL_PrismData
 								}
 							}
 							HJDEMKCNHJF_CostumeListBySlot[IOPHIHFOOEP_SlotIndex].Add(info2);
-							short[] colorList = cosInfo.KKLPLPGBOFD(LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB[i].ANAJIAENLNB);
+							short[] colorList = cosInfo.KKLPLPGBOFD_GetAvaiableColor(LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB[i].ANAJIAENLNB);
 							for (int j = 0; j < colorList.Length; j++)
 							{
 								BGCLFIILKIG_SelectCostumeInfo info3 = new BGCLFIILKIG_SelectCostumeInfo();
@@ -383,7 +383,7 @@ public class AOJGDNFAIJL_PrismData
 				JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbValk = valkDb.CDENCMNHNGA_ValkyrieList[val];
 				if (dbValk.PPEGAKEIEGM == 2 && valk.FJODMPGPDDD)
 				{
-					if(dbValk.GPPEFLKGGGJ == valk.FODKKJIDDKN_Id)
+					if(dbValk.GPPEFLKGGGJ_Id == valk.FODKKJIDDKN_Id)
 					{
 						data.PPFNGGCBJKC_Id = valk.FODKKJIDDKN_Id;
 						if(AGBLOHKHHAB_SelectedValkyrieId < 1)
