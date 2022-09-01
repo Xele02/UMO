@@ -270,16 +270,16 @@ public class AOJGDNFAIJL_PrismData
                 isSet = data.CBLHLEKLLDE_IsSet;
                 CCEMEAAIKOL_DivasListBySlot[IOPHIHFOOEP_SlotIndex].Add(data);
             }
-            foreach(DEKKMGAFJCG_Diva.MNNLOBDPCCH a in LDEGEHAEALK_Save.DGCJCAHIAPP_Diva.NBIGLBMHEDC)
+            foreach(DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo a in LDEGEHAEALK_Save.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList)
             {
                 if(RuntimeSettings.CurrentSettings.ForceDivaUnlock || a.CPGFPEDMDEH == 1)
                 {
                     AOJGDNFAIJL_PrismData.LLHDHKLACJA_SelectDivaInfo data2 = new AOJGDNFAIJL_PrismData.LLHDHKLACJA_SelectDivaInfo();
-                    data2.PPFNGGCBJKC_Id = a.DIPKCALNIII;
+                    data2.PPFNGGCBJKC_Id = a.DIPKCALNIII_DivaId;
                     data2.CBLHLEKLLDE_IsSet = false;
                     if(!isSet)
                     {
-                        if(OMNDNNFANCK_PrismDivaIds[IOPHIHFOOEP_SlotIndex] == a.DIPKCALNIII)
+                        if(OMNDNNFANCK_PrismDivaIds[IOPHIHFOOEP_SlotIndex] == a.DIPKCALNIII_DivaId)
                         {
                             data2.CBLHLEKLLDE_IsSet = true;
                         }
@@ -573,12 +573,12 @@ public class AOJGDNFAIJL_PrismData
         private void ADPFDMPMILA_FindCostume(int AHHJLDLAPAN_DivaId, ref int PDEEMMEHDPK_CostumeId, ref int HEHKNMCDBJJ_ColorId)
         {
             PDEEMMEHDPK_CostumeId = 0;
-            LCLCCHLDNHJ_Costume.ILODJKFJJDO a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB(AHHJLDLAPAN_DivaId, LDEGEHAEALK_Save.DGCJCAHIAPP_Diva.LGKFMLIOPKL(AHHJLDLAPAN_DivaId).BEEAIAAJOHD_CostumeId);
+            LCLCCHLDNHJ_Costume.ILODJKFJJDO a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB(AHHJLDLAPAN_DivaId, LDEGEHAEALK_Save.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(AHHJLDLAPAN_DivaId).BEEAIAAJOHD_CostumeId);
             if(a != null)
             {
                 PDEEMMEHDPK_CostumeId = a.JPIDIENBGKH_CostumeId;
 			}
-			HEHKNMCDBJJ_ColorId = LDEGEHAEALK_Save.DGCJCAHIAPP_Diva.LGKFMLIOPKL(AHHJLDLAPAN_DivaId).AFNIOJHODAG;
+			HEHKNMCDBJJ_ColorId = LDEGEHAEALK_Save.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(AHHJLDLAPAN_DivaId).AFNIOJHODAG_CostumeColorId;
 		}
 
         // // RVA: 0xD5B0A8 Offset: 0xD5B0A8 VA: 0xD5B0A8

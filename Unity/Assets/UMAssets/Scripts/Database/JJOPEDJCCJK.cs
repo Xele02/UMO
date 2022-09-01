@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class JJOPEDJCCJK { }
 public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
@@ -69,7 +70,12 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	// public int DAFDPHFHANB(int CAHEFHMNBAH) { }
 
 	// // RVA: 0x13557BC Offset: 0x13557BC VA: 0x13557BC
-	// public int IECLHMBPEIJ(int CIEOBFIIPLD) { }
+	public int IECLHMBPEIJ(int CIEOBFIIPLD)
+	{
+		if (CIEOBFIIPLD < 1)
+			return 0;
+		return GNIPHICJAIA[Mathf.Clamp(CIEOBFIIPLD - 1, 0, GNIPHICJAIA.Count - 1)].LKIFDCEKDCK;
+	}
 
 	// // RVA: 0x13558D8 Offset: 0x13558D8 VA: 0x13558D8
 	// public int CMENIBIIKPJ(int CIEOBFIIPLD) { }
