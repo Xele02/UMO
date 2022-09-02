@@ -334,7 +334,7 @@ public class OKGLGHCBCJP_Database
 		 {(int)BEOKNKGHFFE_Section.PICOGHJNOJA_Asset,() => { return new LFPJCEMANCK_Asset(); } }, //0x149D5D8				"asset",
 		// {(int)BEOKNKGHFFE_SectionName.DBBOBIHPDNA_Bingo,() => { return new JKICPBIIHNE(); } }, //0x149D644				"bingo",
 		{(int)BEOKNKGHFFE_Section.PEIFIFLMIIF_Board,() => { return new KOGHKIODHPA_Board(); } }, //0x149D6B0					"board",
-		// {(int)BEOKNKGHFFE_SectionName.JOMAMMACANH_BonusVC,() => { return new HHJHIFJIKAC(); } }, //0x149D71C				"bonus_vc",
+		{(int)BEOKNKGHFFE_Section.JOMAMMACANH_BonusVC,() => { return new HHJHIFJIKAC_BonusVc(); } }, //0x149D71C				"bonus_vc",
 		// {(int)BEOKNKGHFFE_SectionName.DHMPHBPODCI_CampaignDiva,() => { return new AIPOFGJGPKI(); } }, //0x149D788				"campaign_diva",
 		// {(int)BEOKNKGHFFE_SectionName.DGPIFKCLAGB_Compo,() => { return new HHPEMHHCKBE(); } }, //0x149D7F4				"compo",
 		// {(int)BEOKNKGHFFE_SectionName.EFHFNMAIEJG_CosItem,() => { return new PLPBJOFICEJ(); } }, //0x149D860				"cos_item",
@@ -453,7 +453,7 @@ public class OKGLGHCBCJP_Database
 	   public LFPJCEMANCK_Asset IELDDHJMFKN_Asset { get; private set; } // 0x1C POIPNMNLPII LDEGIHHDKIM OPKDGNFPLMJ
 	// public JKICPBIIHNE FPOIPGFFAPE { get; private set; } // 0x20 IGDEDAEJHHE DGFJAPEKHFO GNMGEPPDCKA
 	   public KOGHKIODHPA_Board JEMMMJEJLNL_Board { get; private set; } // 0x24 JCNENMIJKJM LEOMPFKGIDH OJLDODJNICJ
-	// public HHJHIFJIKAC NBKNAAPBFFL { get; private set; } // 0x28 DPLHDEEFDJM ADJIKEFIPJA JNIKDFJOHFA
+	   public HHJHIFJIKAC_BonusVc NBKNAAPBFFL_BonusVc { get; private set; } // 0x28 DPLHDEEFDJM ADJIKEFIPJA JNIKDFJOHFA
 	// public AIPOFGJGPKI NGCCGLLLDIB { get; private set; } // 0x2C AKMEDCJEFIM ONFFEFOLNJA KHNFCNCCAJE
 	// public HHPEMHHCKBE ALFKMKICDPP { get; private set; } // 0x30 EGAMKFEHKOH OFKPEOKIBOP FBMPHCEEOGP
 	// public PLPBJOFICEJ GOGFKAECFIP { get; private set; } // 0x34 MFAKBNOPMAL ONAJMJDFKII OKGBJKKKBJK
@@ -691,7 +691,7 @@ public class OKGLGHCBCJP_Database
 		IELDDHJMFKN_Asset = null;
 		// FPOIPGFFAPE = null;
 		JEMMMJEJLNL_Board = null;
-		// NBKNAAPBFFL = null;
+		NBKNAAPBFFL_BonusVc = null;
 		// NGCCGLLLDIB = null;
 		// ALFKMKICDPP = null;
 		// GOGFKAECFIP = null;
@@ -773,7 +773,7 @@ public class OKGLGHCBCJP_Database
 					case BEOKNKGHFFE_Section.PICOGHJNOJA_Asset: IELDDHJMFKN_Asset = (LFPJCEMANCK_Asset)item; break;
 					// case BEOKNKGHFFE_Section.DBBOBIHPDNA_Bingo: FPOIPGFFAPE = item; break;
 					case BEOKNKGHFFE_Section.PEIFIFLMIIF_Board: JEMMMJEJLNL_Board = (KOGHKIODHPA_Board)item; break;
-					// case BEOKNKGHFFE_Section.JOMAMMACANH_BonusVC: NBKNAAPBFFL = item; break;
+					case BEOKNKGHFFE_Section.JOMAMMACANH_BonusVC: NBKNAAPBFFL_BonusVc = (HHJHIFJIKAC_BonusVc)item; break;
 					// case BEOKNKGHFFE_Section.DHMPHBPODCI_CampaignDiva: NGCCGLLLDIB = item; break;
 					// case BEOKNKGHFFE_Section.DGPIFKCLAGB_Compo: ALFKMKICDPP = item; break;
 					// case BEOKNKGHFFE_Section.EFHFNMAIEJG_CosItem: GOGFKAECFIP = item; break;
