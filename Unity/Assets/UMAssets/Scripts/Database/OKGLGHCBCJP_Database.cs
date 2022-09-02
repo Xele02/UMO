@@ -28,7 +28,7 @@ public class OKGLGHCBCJP_Database
 		ACGFJFNPLKB_Diva2 = 17,
 		PKDKLHJLEFA_Drop = 18,
 		PGHFPIMIOKE_Emblem = 19,
-		CNGPLGIMJBB_Energy = 20,
+		CNGPLGIMJBB_Enemy = 20,
 		JBFFIPCOGEC_EnergyItem = 21,
 		BBDKHAMANCB_Episode = 22,
 		MIOOJINHHFO_EpiItem = 23,
@@ -153,7 +153,7 @@ public class OKGLGHCBCJP_Database
 		BEOKNKGHFFE_Section.ACGFJFNPLKB_Diva2,
 		BEOKNKGHFFE_Section.PKDKLHJLEFA_Drop,
 		BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem,
-		BEOKNKGHFFE_Section.CNGPLGIMJBB_Energy,
+		BEOKNKGHFFE_Section.CNGPLGIMJBB_Enemy,
 		BEOKNKGHFFE_Section.JBFFIPCOGEC_EnergyItem,
 		BEOKNKGHFFE_Section.BBDKHAMANCB_Episode,
 		BEOKNKGHFFE_Section.MIOOJINHHFO_EpiItem,
@@ -349,7 +349,7 @@ public class OKGLGHCBCJP_Database
 		{(int)BEOKNKGHFFE_Section.ACGFJFNPLKB_Diva2,() => { return new HMIJOOPHJLB_Diva2(); } }, //0x149DC2C				"diva2",
 		// {(int)BEOKNKGHFFE_SectionName.PKDKLHJLEFA_Drop,() => { return new NBPHJDCOECH(); } }, //0x149DC98				"drop",
 		// {(int)BEOKNKGHFFE_SectionName.PGHFPIMIOKE_Emblem,() => { return new IHGBPAJMJFK(); } }, //0x149DD04				"emblem",
-		// {(int)BEOKNKGHFFE_SectionName.CNGPLGIMJBB_Energy,() => { return new MHDFCLCMDKO(); } }, //0x149DD70				"enemy",
+		{(int)BEOKNKGHFFE_Section.CNGPLGIMJBB_Enemy,() => { return new MHDFCLCMDKO_Enemy(); } }, //0x149DD70				"enemy",
 		// {(int)BEOKNKGHFFE_SectionName.JBFFIPCOGEC_EnergyItem,() => { return new JKDKODAPGBJ(); } }, //0x149DDDC				"energy_item",
 		{(int)BEOKNKGHFFE_Section.BBDKHAMANCB_Episode,() => { return new KMOGDEOKHPG_Episode(); } }, //0x149DE48				"episode",
 		// {(int)BEOKNKGHFFE_SectionName.MIOOJINHHFO_EpiItem,() => { return new KIICLPJJBNL(); } }, //0x149DEB4				"epi_item",
@@ -468,7 +468,7 @@ public class OKGLGHCBCJP_Database
 	   public HMIJOOPHJLB_Diva2 OAINIGNLJKC_Diva2 { get; private set; } // 0x58 EFGHBGKGCDI KNBBENGMPJL MAPJOGCOBCF
 	// public NBPHJDCOECH HGLIIPFLMFB { get; private set; } // 0x5C DNBKBMJEDFG GEHKLFKNGDK DAEJHNBAAHD
 	public IHGBPAJMJFK_Emblem LBNBNAFGMDE_Emblem { get; private set; } // 0x60 DOKBBBOMOIP AEKIOLPFPCO PMEOIDAFOLD
-	// public MHDFCLCMDKO OPFBEAJJMJB { get; private set; } // 0x64 DMKMEHGHLAL EDGAJGHMGOK AIBFBDMGEAL
+	public MHDFCLCMDKO_Enemy OPFBEAJJMJB_Enemy { get; private set; } // 0x64 DMKMEHGHLAL EDGAJGHMGOK AIBFBDMGEAL
 	// public JKDKODAPGBJ KOPOGNLKAEN { get; private set; } // 0x68 DACOHEDKLPD AEOJDBAPOEN PABHKGHLLLJ
 	// public KIICLPJJBNL NEGGMILDEEF { get; private set; } // 0x6C EEAPHFKEOOP EPDABADJFBH CFGCGOGNBMM
 	public KMOGDEOKHPG_Episode MOLEPBNJAGE_Episode { get; private set; } // 0x70 PKELMNGHNJI GJAGLJAIAGC ECGGGFGFEOH
@@ -706,7 +706,7 @@ public class OKGLGHCBCJP_Database
 		OAINIGNLJKC_Diva2 = null;
 		// HGLIIPFLMFB = null;
 		LBNBNAFGMDE_Emblem = null;
-		// OPFBEAJJMJB = null;
+		OPFBEAJJMJB_Enemy = null;
 		// KOPOGNLKAEN = null;
 		// NEGGMILDEEF = null;
 		MOLEPBNJAGE_Episode = null;
@@ -788,7 +788,7 @@ public class OKGLGHCBCJP_Database
 					case BEOKNKGHFFE_Section.ACGFJFNPLKB_Diva2: OAINIGNLJKC_Diva2 = (HMIJOOPHJLB_Diva2)item; break;
 					// case BEOKNKGHFFE_Section.PKDKLHJLEFA_Drop: HGLIIPFLMFB = item; break;
 					case BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem: LBNBNAFGMDE_Emblem = (IHGBPAJMJFK_Emblem)item; break;
-					// case BEOKNKGHFFE_Section.CNGPLGIMJBB_Energy: OPFBEAJJMJB = item; break;
+					case BEOKNKGHFFE_Section.CNGPLGIMJBB_Enemy: OPFBEAJJMJB_Enemy = (MHDFCLCMDKO_Enemy)item; break;
 					// case BEOKNKGHFFE_Section.JBFFIPCOGEC_EnergyItem: KOPOGNLKAEN = item; break;
 					case BEOKNKGHFFE_Section.BBDKHAMANCB_Episode: MOLEPBNJAGE_Episode = (KMOGDEOKHPG_Episode)item; break;
 					// case BEOKNKGHFFE_Section.MIOOJINHHFO_EpiItem: NEGGMILDEEF = item; break;
