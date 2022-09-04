@@ -20,7 +20,7 @@ public class VLCManager : SingletonMonoBehaviour<VLCManager>
     {
         if(_libVLC == null)
         {
-            Core.Initialize(Application.dataPath);
+            Core.Initialize(Application.dataPath+"/Scripts/LibVlCSharp/LibVLC/x64/");
 
             _libVLC = new LibVLC(enableDebugLogs: true);
 

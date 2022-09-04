@@ -47,7 +47,7 @@ namespace LibVLCSharp.Shared
             DisableMessageErrorBox();
             InitializeDesktop(libvlcDirectoryPath);
 #if !NETSTANDARD1_1
-            //EnsureVersionsMatch();
+            EnsureVersionsMatch();
 #endif
             LibVLCLoaded = true;
         }
@@ -89,7 +89,7 @@ namespace LibVLCSharp.Shared
             }
 
 #if !NETSTANDARD1_1
-            LoadLibVLC(libvlcDirectoryPath);
+            //LoadLibVLC(libvlcDirectoryPath);
 #endif
         }
     }
