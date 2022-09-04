@@ -95,7 +95,7 @@ namespace LibVLCSharp.Shared
             [DllImport(Constants.LibraryName, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_media_player_get_length")]
             internal static extern long LibVLCMediaPlayerGetLength(IntPtr mediaPlayer);
-
+*/
             [DllImport(Constants.LibraryName, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_media_player_get_time")]
             internal static extern long LibVLCMediaPlayerGetTime(IntPtr mediaPlayer);
@@ -104,7 +104,7 @@ namespace LibVLCSharp.Shared
             [DllImport(Constants.LibraryName, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_media_player_set_time")]
             internal static extern void LibVLCMediaPlayerSetTime(IntPtr mediaPlayer, long time);
-
+/*
 
             [DllImport(Constants.LibraryName, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_media_player_get_position")]
@@ -174,12 +174,12 @@ namespace LibVLCSharp.Shared
             [DllImport(Constants.LibraryName, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_media_player_set_rate")]
             internal static extern int LibVLCMediaPlayerSetRate(IntPtr mediaPlayer, float rate);
-/*
+
 
             [DllImport(Constants.LibraryName, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_media_player_get_state")]
             internal static extern VLCState LibVLCMediaPlayerGetState(IntPtr mediaPlayer);
-
+/*
 
             [DllImport(Constants.LibraryName, CallingConvention = CallingConvention.Cdecl,
                 EntryPoint = "libvlc_media_player_get_fps")]
@@ -756,7 +756,7 @@ namespace LibVLCSharp.Shared
         /// The movie length (in ms), or -1 if there is no media.
         /// </summary>
         public long Length => Native.LibVLCMediaPlayerGetLength(NativeReference);
-
+*/
         /// <summary>
         /// Set the movie time (in ms). This has no effect if no media is being
         /// played. Not all formats and protocols support this.
@@ -768,7 +768,7 @@ namespace LibVLCSharp.Shared
             get => Native.LibVLCMediaPlayerGetTime(NativeReference);
             set => Native.LibVLCMediaPlayerSetTime(NativeReference, value);
         }
-
+/*
         /// <summary>
         /// Set movie position as percentage between 0.0 and 1.0. This has no
         /// effect if playback is not enabled. This might not work depending on
@@ -781,14 +781,14 @@ namespace LibVLCSharp.Shared
             get => Native.LibVLCMediaPlayerGetPosition(NativeReference);
             set => Native.LibVLCMediaPlayerSetPosition(NativeReference, value);
         }
-
+*/
         /// <summary>
         /// Set the movie time. This has no effect if no media is being
         /// played. Not all formats and protocols support this.
         /// </summary>
         /// <param name="time">the movie time to seek to</param>
         public void SeekTo(TimeSpan time) => Time = (long)time.TotalMilliseconds;
-
+/*
         /// <summary>
         /// Set movie chapter (if applicable).
         /// <para></para>
@@ -870,13 +870,13 @@ namespace LibVLCSharp.Shared
         {
             return Native.LibVLCMediaPlayerSetRate(NativeReference, rate);
         }
-/*
+
         /// <summary>
         /// Get the current state of the media player (playing, paused, ...)
         /// </summary>
         public VLCState State => Native.LibVLCMediaPlayerGetState(NativeReference);
 
-        /// <summary>
+/*        /// <summary>
         /// Get the frames per second (fps) for this playing movie, or 0 if unspecified
         /// </summary>
         public float Fps => Native.LibVLCMediaPlayerGetFps(NativeReference);

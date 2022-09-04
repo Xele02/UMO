@@ -318,7 +318,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 802c0ef15d7b0556aa74b3a71129ec00, type: 2}
-  pb: {fileID: 1144381165}
+  pb: {fileID: 0}
+  criManaCtrl: {fileID: 0}
+  testAudio: 0
+  testDirectVLC: 0
+  testCriMovie: 0
+  audioPath: /home/xele/.config/unity3d/UtaMacross/UtaMacross/data/android/snd/bgm/cs_w_0001.acb
+  moviePath: /home/xele/Projects/UtaMacrossOffline/Data/android/mov/gm/dv/game_dv_0119_mv_q2!s64ede4a6z!.usm
 --- !u!82 &534669910
 AudioSource:
   m_ObjectHideFlags: 0
@@ -415,6 +421,124 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &729165522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 729165527}
+  - component: {fileID: 729165526}
+  - component: {fileID: 729165525}
+  - component: {fileID: 729165524}
+  - component: {fileID: 729165523}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &729165523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729165522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91db3fc768a46f1499cf5dfe9bcc0cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnStart: 1
+  restartOnEnable: 0
+  renderMode: 0
+  _material: {fileID: 0}
+  _moviePath: /mnt/nfs/DiskStation1/Documents/Game/UtaMacross/com.dena.a12024374/xab/android/mov/gm/st/game_st_0117_009!s0546b85cz!.usm
+  _loop: 0
+  _maxFrameDrop: 0
+  _additiveMode: 0
+  _advancedAudio: 0
+  _ambisonics: 0
+  _applyTargetAlpha: 0
+  _uiRenderMode: 0
+  target: {fileID: 0}
+  useOriginalMaterial: 0
+--- !u!65 &729165524
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729165522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &729165525
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729165522}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 802c0ef15d7b0556aa74b3a71129ec00, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &729165526
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729165522}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &729165527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729165522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 62.6, y: 2, z: 60.19409}
+  m_LocalScale: {x: 80, y: 50, z: 10}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1144381160
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +640,331 @@ MonoBehaviour:
   m_GameObject: {fileID: 1144381160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3f71261adb92e13be89cf444e4b620, type: 3}
+  m_Script: {fileID: 11500000, guid: 91db3fc768a46f1499cf5dfe9bcc0cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPath: 
+  playOnStart: 1
+  restartOnEnable: 0
+  renderMode: 0
+  _material: {fileID: 0}
+  _moviePath: /mnt/nfs/DiskStation1/Documents/Game/UtaMacross/com.dena.a12024374/xab/android/mov/gm/st/game_st_0074_005!s6b278dfcz!.usm
+  _loop: 1
+  _maxFrameDrop: 0
+  _additiveMode: 0
+  _advancedAudio: 0
+  _ambisonics: 0
+  _applyTargetAlpha: 0
+  _uiRenderMode: 0
+  target: {fileID: 0}
+  useOriginalMaterial: 0
+--- !u!1 &1326787261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1326787263}
+  - component: {fileID: 1326787262}
+  m_Layer: 0
+  m_Name: VLC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1326787262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326787261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec4c479c17256dafb4209ae2b7fcf94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1326787263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326787261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -372.94034, y: 160.24763, z: -174.81418}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929082143304081156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969438899209759009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0370cefbfe22ab4c8dece03491c89ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acfFile: snd/mcrs.acf
+  cueSheets: []
+  dspBusSetting: 
+  dontDestroyOnLoad: 1
+  dontRemoveExistsCueSheet: 0
+--- !u!114 &1929487121127328715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969763980286385946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3591aae4c6e48d942b965d8736245740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initializesFileSystem: 1
+  fileSystemConfig:
+    numberOfLoaders: 30
+    numberOfBinders: 8
+    numberOfInstallers: 2
+    installBufferSize: 4096
+    maxPath: 256
+    userAgentString: 
+    minimizeFileDescriptorUsage: 0
+    enableCrcCheck: 0
+    androidDeviceReadBitrate: 50000000
+  initializesAtom: 1
+  atomConfig:
+    acfFileName: 
+    maxVirtualVoices: 72
+    maxVoiceLimitGroups: 32
+    maxCategories: 32
+    maxSequenceEventsPerFrame: 2
+    maxBeatSyncCallbacksPerFrame: 1
+    maxCueLinkCallbacksPerFrame: 1
+    standardVoicePoolConfig:
+      memoryVoices: 16
+      streamingVoices: 4
+    hcaMxVoicePoolConfig:
+      memoryVoices: 0
+      streamingVoices: 0
+    outputSamplingRate: 0
+    usesInGamePreview: 0
+    inGamePreviewMode: 0
+    switchInitializeSocket: 0
+    inGamePreviewConfig:
+      maxPreviewObjects: 200
+      communicationBufferSize: 2048
+      playbackPositionUpdateInterval: 8
+    serverFrequency: 60
+    asrOutputChannels: 0
+    useRandomSeedWithTime: 1
+    categoriesPerPlayback: 4
+    maxBuses: 8
+    maxParameterBlocks: 1024
+    vrMode: 0
+    keepPlayingSoundOnPause: 1
+    pcBufferingTime: 0
+    linuxOutput: 0
+    linuxPulseLatencyUsec: 60000
+    iosEnableSonicSync: 0
+    iosBufferingTime: 40
+    iosOverrideIPodMusic: 1
+    androidEnableSonicSync: 0
+    androidBufferingTime: 133
+    androidStartBufferingTime: 100
+    androidLowLatencyStandardVoicePoolConfig:
+      memoryVoices: 16
+      streamingVoices: 4
+    androidUsesAndroidFastMixer: 1
+    androidForceToUseAsrForDefaultPlayback: 1
+    androidUsesAAudio: 0
+    vitaManaVoicePoolConfig:
+      numberOfManaDecoders: 8
+    vitaAtrac9VoicePoolConfig:
+      memoryVoices: 0
+      streamingVoices: 0
+    ps4Atrac9VoicePoolConfig:
+      memoryVoices: 0
+      streamingVoices: 0
+    switchOpusVoicePoolConfig:
+      memoryVoices: 0
+      streamingVoices: 0
+    ps4Audio3dConfig:
+      useAudio3D: 0
+      voicePoolConfig:
+        memoryVoices: 0
+        streamingVoices: 0
+    webglWebAudioVoicePoolConfig:
+      voices: 16
+  initializesMana: 1
+  manaConfig:
+    numberOfDecoders: 8
+    numberOfMaxEntries: 4
+    pcH264PlaybackConfig:
+      useH264Playback: 1
+    vitaH264PlaybackConfig:
+      useH264Playback: 0
+      maxWidth: 960
+      maxHeight: 544
+      getMemoryFromTexture: 0
+    webglConfig:
+      webworkerPath: StreamingAssets
+      heapSize: 32
+  useDecrypter: 1
+  decrypterConfig:
+    key: 999999999
+    authenticationFile: 999999999
+    enableAtomDecryption: 1
+    enableManaDecryption: 1
+  dontInitializeOnAwake: 0
+  dontDestroyOnLoad: 1
+--- !u!114 &1929782092517230991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969785008859770353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6488a0ba791c2c458064b20830bc78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableDebugPrintOnTerminal: 0
+  enableForceCrashOnError: 0
+  dontDestroyOnLoad: 1
+  messageBufferCounts: 8
+--- !u!4 &1963627023431172475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969785008859770353}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1963792108918793418}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1963792108918793418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969732350227306295}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1972379565905962147}
+  - {fileID: 1963627023431172475}
+  - {fileID: 1972400405163756089}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1969438899209759009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1972400405163756089}
+  - component: {fileID: 1929082143304081156}
+  m_Layer: 0
+  m_Name: CriWareAtom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1969732350227306295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963792108918793418}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1969763980286385946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1972379565905962147}
+  - component: {fileID: 1929487121127328715}
+  m_Layer: 0
+  m_Name: CriWareLibraryInitializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1969785008859770353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963627023431172475}
+  - component: {fileID: 1929782092517230991}
+  m_Layer: 0
+  m_Name: CriWareErrorHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1972379565905962147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969763980286385946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1963792108918793418}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1972400405163756089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969438899209759009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1963792108918793418}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

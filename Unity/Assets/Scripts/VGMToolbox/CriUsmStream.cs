@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-
+using CriWare.CriMana;
 using VGMToolbox.util;
 
 namespace VGMToolbox.format
@@ -44,6 +44,8 @@ namespace VGMToolbox.format
         protected byte[] _videoMask1 = new byte[0x20];
         protected byte[] _videoMask2 = new byte[0x20];
         protected byte[] _audioMask = new byte[0x20];
+
+        public MovieInfo movieInfo;
 
         public CriUsmStream(string path)
             : base(path)
@@ -169,9 +171,43 @@ namespace VGMToolbox.format
 
             if(payloadType == 1 || payloadType == 3)
             {
-                /*CriUtfTable utfTable = new CriUtfTable();
+                CriUtfTable utfTable = new CriUtfTable();
                 utfTable.Initialize(fs, startOffset + 8 + payloadOffset);
-                UnityEngine.Debug.Log(utfTable.GetTableAsString(0, true));*/
+                UnityEngine.Debug.Log(utfTable.GetTableAsString(0, true));
+                if(utfTable.TableName == "VIDEO_HDRINFO")
+                {
+/*
+378 (888)
+  0x00000000 54 mat_height = 0x000001F4 (500)
+  0x00000000 54 disp_width = 0x00000378 (888)
+  0x00000000 54 disp_height = 0x000001F4 (500)
+  0x00000000 54 scrn_width = 0x00000000 (0)
+  0x00000000 50 mpeg_dcprec = 0x0000000B (11)
+  0x00000000 50 mpeg_codec = 0x00000001 (1)
+  0x00000000 54 alpha_type = 0x00000000 (0)
+  0x00000000 54 total_frames = 0x000004B0 (1200)
+  0x00000000 54 framerate_n = 0x00007530 (30000)
+  0x00000000 54 framerate_d = 0x000003E8 (1000)
+  0x00000000 54 metadata_count = 0x00000001 (1)
+  0x00000000 54 metadata_size = 0x000004C0 (1216)
+  0x00000000 54 ixsize = 0x0000C900 (51456)
+  0x00000000 54 pre_padding = 0x00000000 (0)
+  0x00000000 54 max_picture_size = 0x00000000 (0)
+  0x00000000 54 color_space = 0x00000000 (0)
+  0x00000000 54 picture_type = 0x00000000 (0)
+*/
+
+                    movieInfo = new MovieInfo();
+                    movieInfo.width = (uint)utfTable.Rows[0]["width"].Value;
+                    movieInfo.height = (uint)utfTable.Rows[0]["height"].Value;
+                    movieInfo.dispWidth = (uint)utfTable.Rows[0]["disp_width"].Value;
+                    movieInfo.dispHeight = (uint)utfTable.Rows[0]["disp_height"].Value;
+                    movieInfo.framerateN = (uint)utfTable.Rows[0]["framerate_n"].Value;
+                    movieInfo.framerateD = (uint)utfTable.Rows[0]["framerate_d"].Value;
+                    movieInfo.totalFrames = (uint)utfTable.Rows[0]["total_frames"].Value;
+                    movieInfo.codecType = (CodecType)(byte)utfTable.Rows[0]["mpeg_codec"].Value;
+                    movieInfo.alphaCodecType = (CodecType)(uint)utfTable.Rows[0]["alpha_type"].Value;
+                }
             }
 
             if(currentBlockIdVal == BitConverter.ToUInt32(CRID_BYTES, 0))
