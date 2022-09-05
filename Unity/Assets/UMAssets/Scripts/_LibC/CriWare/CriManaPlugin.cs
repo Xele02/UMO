@@ -12,6 +12,15 @@ namespace ExternLib
         }
         static ManaPluginData manaPluginData = new ManaPluginData();
 
+        public static void CRIWARE9CF52E96_criManaUnity_Initialize()
+        {
+            manaPluginData.isInitialized = true;
+        }
+
+        public static void CRIWAREDC8B0D52_criManaUnity_Finalize()
+        {
+            manaPluginData.isInitialized = false;
+        }
 
         public static bool CRIWARE50D2CE6F() /*IsLibraryInitialized*/
         {

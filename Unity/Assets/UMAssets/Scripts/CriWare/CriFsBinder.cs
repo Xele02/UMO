@@ -18,7 +18,7 @@ namespace CriWare
 		
 		private IntPtr handle; // 0x18
 
-		// public IntPtr nativeHandle { get; }
+		public IntPtr nativeHandle { get { return handle; } } // 0x2944AB4
 
 		// // RVA: 0x2944550 Offset: 0x2944550 VA: 0x2944550
 		public CriFsBinder()
@@ -113,9 +113,6 @@ namespace CriWare
 
 		// // RVA: 0x29465F4 Offset: 0x29465F4 VA: 0x29465F4
 		// public static void SetPriority(uint bindId, int priority) { }
-
-		// // RVA: 0x2944AB4 Offset: 0x2944AB4 VA: 0x2944AB4
-		// public IntPtr get_nativeHandle() { }
 
 		// // RVA: 0x29467A4 Offset: 0x29467A4 VA: 0x29467A4 Slot: 1
 		// protected override void Finalize() { }

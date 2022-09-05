@@ -32,7 +32,7 @@ namespace XeApp.Game.Common
 		{
 			if(moviePlayer != null)
 			{
-				TodoLogger.Log(0, "StageExtensionObject LateUpdate Update movie player");
+				// Nothing, was printing frame info ?
 			}
 			if(m_pause)
 			{
@@ -126,6 +126,7 @@ namespace XeApp.Game.Common
 					}
 					if(resource.movieMaterial != null)
 					{
+						BundleShaderInfo.Instance.FixMaterialShaderMat(resource.movieMaterial);
 						Renderer[] selfRenderers = instance.GetComponentsInChildren<Renderer>();
 						for(int j = 0; j < selfRenderers.Length; j++)
 						{
@@ -213,13 +214,18 @@ namespace XeApp.Game.Common
 		//// RVA: 0x13A2060 Offset: 0x13A2060 VA: 0x13A2060
 		public void EventMoviePlay()
 		{
-			TodoLogger.Log(0, "EventMoviePlay");
+			if(moviePlayer != null)
+				moviePlayer.Play();
 		}
 
 		//// RVA: 0x13A2114 Offset: 0x13A2114 VA: 0x13A2114
 		public void EventMovieStop()
 		{
-			TodoLogger.Log(0, "EventMoviePlay");
+			if(moviePlayer != null)
+			{
+				moviePlayer.Stop();
+				moviePlayer.player.Prepare();
+			}
 		}
 
 		//// RVA: 0x13A2208 Offset: 0x13A2208 VA: 0x13A2208

@@ -273,5 +273,10 @@ namespace ExternLib
                 criAtomExPlayer_Stop(playersStopped[i]);
             }
         }
+
+        public static void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType)
+        {
+
+        }
     }
 }

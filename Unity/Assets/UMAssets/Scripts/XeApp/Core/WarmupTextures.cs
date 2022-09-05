@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using CriWare;
+using CriWare.CriMana;
 using UnityEngine;
 
 namespace XeApp.Core
@@ -86,9 +87,37 @@ namespace XeApp.Core
 			}
 			else
 			{
-				TodoLogger.Log(0, "warm movie");
-				if (onFinish != null)
-					onFinish();
+				switch(step)
+				{
+					case 0:
+					Debug.Log("<color=cyan>movie play</color>");
+					moviePlayer.Play();
+					break;
+					case 1:
+					if(moviePlayer.player.status != Player.Status.Playing)
+						return;
+					Debug.Log("<color=cyan>movie playing</color>");
+					break;
+					case 2:
+					Debug.Log("<color=cyan>movie stop</color>");
+					moviePlayer.Stop();
+					break;
+					case 3:
+					if(moviePlayer.player.status != Player.Status.Stop)
+						return;
+					Debug.Log("<color=cyan>movie seek</color>");
+					moviePlayer.player.SetSeekPosition(0);
+					break;
+					case 4:
+					Debug.Log("<color=cyan>movie fin</color>");
+					if(onFinish != null)
+						onFinish();
+					Destroy(gameObject);
+					break;
+					default:
+					return;
+				}
+				step = step + 1;
 			}
 		}
 	}

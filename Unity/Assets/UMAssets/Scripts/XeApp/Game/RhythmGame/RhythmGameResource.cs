@@ -160,8 +160,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF5970 Offset: 0xBF5970 VA: 0xBF5970
 		public int GetSpecialDirectionMovieId()
 		{
-			UnityEngine.Debug.LogError("GetSpecialDirectionMovieId");
-			return 0;
+			return specialDirectionMovieId_;
 		}
 
 		// // RVA: 0xBF5978 Offset: 0xBF5978 VA: 0xBF5978
@@ -392,7 +391,14 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF8524 Offset: 0xBF8524 VA: 0xBF8524
 		private void LoadSpecialMovieResource(List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			TodoLogger.Log(0, "LoadSpecialMovieResource");
+			specialDirectionMovieId_ = 0;
+			List<MusicDirectionParamBase.ResourceData> res = musicData.musicParam.CheckSpecialMovieResourceId(settingList);
+			if(res.Count > 0)
+			{
+				if(res[0].id < 1)
+					return;
+				specialDirectionMovieId_ = res[0].id;
+			}
 		}
 
 		// // RVA: 0xBF8690 Offset: 0xBF8690 VA: 0xBF8690
