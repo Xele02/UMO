@@ -13,11 +13,14 @@ Fonctionality :
 
 * Unity version 2018.4.23f1 or 2018.4.24f1
 * The game data dump with android and db directories. Game can load from encrypted or decrypted bundle, with name format like bundle.xab, bundle.xab.decrypted, bundle!sxxxxxxz!.xab, bundle!sxxxxxxz!.xab.decrypted.
+* **For linux user** : Install vlc to have libvlc 3.0 avaiable :
+  * Ubuntu : ```apt-get install vlc```
+  * To check it'sok : ```/sbin/ldconfig -p | grep vlc``` should show libvlc and libvlccore.
 
 # Installation
 
-* Clone the project or extract the release zip.
-* Launch Unity Editor 2018.4.23f1 or 2018.4.24f1, load the project in Unity folder.
+* Clone the project or extract the release zip (If you extract the zip on a older installation, remove the Unity directory before doing so).
+* Launch Unity Editor 2018.4.23f1 or 2018.4.24f1 (Accept the upgrade asset popup), load the project in Unity folder.
 * To tell the Editor where is the asset bundle dump, either do :
   * Copy android and db directory from the game dump into Tools/Data/
   * In the editor, open the asset Resources/EditorRuntimeSettings and change the Data Directory to where your asset dump is.
