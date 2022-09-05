@@ -20,6 +20,7 @@ Fonctionality :
 # Installation
 
 * Clone the project or extract the release zip (If you extract the zip on a older installation, remove the Unity directory before doing so).
+* For automatic game data detection, you can copy android and db directory from the game dump into Tools/Data/
 * Launch Unity Editor 2018.4.23f1 or 2018.4.24f1 (Accept the upgrade asset popup), load the project in Unity folder.
 * Start the game : 
   * Either using the menu UMO/Start Game.
