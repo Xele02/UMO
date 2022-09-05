@@ -21,11 +21,10 @@ Fonctionality :
 
 * Clone the project or extract the release zip (If you extract the zip on a older installation, remove the Unity directory before doing so).
 * Launch Unity Editor 2018.4.23f1 or 2018.4.24f1 (Accept the upgrade asset popup), load the project in Unity folder.
-* To tell the Editor where is the asset bundle dump, either do :
-  * Copy android and db directory from the game dump into Tools/Data/
-  * In the editor, open the asset Resources/EditorRuntimeSettings and change the Data Directory to where your asset dump is.
-* Load the scene Scenes/Start.
-* Hit play.
+* Start the game : 
+  * Either using the menu UMO/Start Game.
+  * or load the scene Scenes/Start and hit play.
+* The game will search game data in Tools/Data or Data directory (default directories when using python script to download from game server). If you put your game data elsewhere, select the directory containing "android" and "db" directories in the next popup. For advanced configuration, you can check the asset Resources/EditorRuntimeSettings.
 
 # Used library :
 
