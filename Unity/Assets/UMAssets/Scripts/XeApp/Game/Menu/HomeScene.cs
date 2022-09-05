@@ -1,7 +1,11 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
+using XeApp.Core;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -91,7 +95,10 @@ namespace XeApp.Game.Menu
 		{
 			if(!IsReady)
 				return;
-			m_updater = this.Idle;
+			if(RuntimeSettings.CurrentSettings.SLiveViewer)
+				m_updater = this.LoadSLive;
+			else
+				m_updater = this.Idle;
 		}
 
 		// // RVA: 0x96EA7C Offset: 0x96EA7C VA: 0x96EA7C
@@ -765,5 +772,203 @@ namespace XeApp.Game.Menu
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E457C Offset: 0x6E457C VA: 0x6E457C
 		// 	// RVA: 0x97D3E0 Offset: 0x97D3E0 VA: 0x97D3E0
 		// 	private bool <Co_InitIntimacy>b__171_0() { }
+
+		private void LoadSLive()
+		{
+			StartCoroutine(LoadSLiveCoroutine());
+			m_updater = this.LoadSLiveWait;
+		}
+
+		private void LoadSLiveWait()
+		{
+
+		}
+
+		private IEnumerator LoadSLiveCoroutine()
+		{
+			UnityEngine.Debug.Log("Generate Next Song");
+
+			// select a song
+			var freemusics = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas;
+			int freemusicNum = 0;
+			do
+			{
+				freemusicNum = UnityEngine.Random.Range(0, freemusics.Count);
+			} while(freemusics[freemusicNum].PPEGAKEIEGM != 2);
+			UnityEngine.Debug.Log("Select Free Music : "+(freemusicNum + 1));
+
+			int musicId = freemusics[freemusicNum].DLAEJOBELBH_Id;
+			UnityEngine.Debug.Log("Music Id : "+musicId);
+			var musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[musicId - 1];
+			UnityEngine.Debug.Log("Wav Id : "+musicInfo.KKPAHLMJKIH_WavId);
+
+			EEDKAACNBBG song = new EEDKAACNBBG();
+			song.KHEKNNFCAOI(musicInfo.DLAEJOBELBH_Id);
+			UnityEngine.Debug.Log("Music Name : "+song.NEDBBJDAFBH_MusicName);
+
+			// select num diva
+			int numDiva = 1;
+			if(musicInfo.NJAOOMHCIHL_Dvs != 0 && musicInfo.PECMGDOMLAF_Dvm == 0)
+				numDiva = 1;
+			else if(musicInfo.NJAOOMHCIHL_Dvs == 0 && musicInfo.PECMGDOMLAF_Dvm != 0)
+				numDiva = musicInfo.PECMGDOMLAF_Dvm;
+			else
+				numDiva = UnityEngine.Random.Range(0, 2) == 0 ? 1 : musicInfo.PECMGDOMLAF_Dvm;
+			UnityEngine.Debug.Log("Select NumDiva : "+numDiva);
+
+			// load music 
+			string waveName = GameManager.Instance.GetWavDirectoryName(musicInfo.KKPAHLMJKIH_WavId, "mc/{0}/sc.xab", numDiva, 1, -1, true);
+			StringBuilder bundleName = new StringBuilder();
+			StringBuilder assetName = new StringBuilder();
+			bundleName.SetFormat("mc/{0}/sc.xab", waveName);
+			assetName.SetFormat("p_{0:D4}", musicInfo.KKPAHLMJKIH_WavId);
+			var operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(MusicDirectionParamBase));
+			yield return operation;
+
+			Database.Instance.gameSetup.teamInfo.prismValkyrieId = 1;
+			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freemusicNum + 1, 0/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, false, false, "", 0, 0, -1, 0, 0, numDiva);
+			GameSetupData.TeamInfo team = Database.Instance.gameSetup.teamInfo;
+			for(int i = 0; i < 5; i++)
+			{
+				team.danceDivaList[i].divaId = 0;
+				team.danceDivaList[i].prismDivaId = 0;
+				team.danceDivaList[i].costumeModelId = 0;
+				team.danceDivaList[i].prismCostumeModelId = 0;
+				team.danceDivaList[i].costumeColorId = 0;
+				team.danceDivaList[i].prismCostumeColorId = 0;
+				team.danceDivaList[i].positionId = i+1;
+			}
+
+			List<int> excludedDiva = new List<int>();
+			Dictionary<int, int> excludedDivaPos = new Dictionary<int, int>();
+			List<int> excludedCostume = new List<int>();
+			Dictionary<int, int> excludedCostumePos = new Dictionary<int, int>();
+
+
+			// 10% chance to launch a completely random setup
+			if(UnityEngine.Random.Range(0, 100) > 10)
+			{
+
+				// Get a random setup
+				MusicDirectionParamBase param = operation.GetAsset<MusicDirectionParamBase>();
+				List<MusicDirectionParamBase.SpecialDirectionData> randomData = param.GetRandomSetup();
+
+				// Fill diva list
+				UnityEngine.Debug.Log("Using Random Param : ");
+				for (int i = 0; i < randomData.Count; i++)
+				{
+					UnityEngine.Debug.Log("Diva Id : "+randomData[i].divaId +
+											" - Costume Id : "+randomData[i].costumeModelId +
+											" - Positon Id : "+randomData[i].positionId +
+											" - Valkyrie Id : "+randomData[i].valkyrieId +
+											" - Pilot Id : "+randomData[i].pilotId +
+											" - DirectionGroup Id : "+randomData[i].directionGroupId);
+				}
+
+				// First setup position locked diva
+				for (int i = 0; i < randomData.Count; i++)
+				{
+					if(randomData[i].positionId > 0)
+					{
+						if(randomData[i].divaId > 0 && randomData[i].costumeModelId >= 0)
+						{
+							if(team.danceDivaList[randomData[i].positionId - 1].divaId == 0)
+							{
+								team.danceDivaList[randomData[i].positionId - 1].divaId = randomData[i].divaId;
+								team.danceDivaList[randomData[i].positionId - 1].costumeModelId = randomData[i].costumeModelId;
+								UnityEngine.Debug.Log("Setting Diva "+randomData[i].divaId+" in forced position "+randomData[i].positionId);
+								UnityEngine.Debug.Log("Setting Costume "+randomData[i].costumeModelId+" in forced position "+randomData[i].positionId);
+								excludedDiva.Add(randomData[i].divaId);
+							}
+						}
+						if(randomData[i].divaId < 0)
+						{
+							excludedDivaPos.Add(Mathf.Abs(randomData[i].divaId), randomData[i].positionId);
+							UnityEngine.Debug.Log("Exclude diva "+randomData[i].divaId+" from position "+randomData[i].positionId);
+						}
+						if(randomData[i].costumeModelId < 0)
+						{
+							excludedCostumePos.Add(Mathf.Abs(randomData[i].divaId) * 1000 + Mathf.Abs(randomData[i].costumeModelId), randomData[i].positionId);
+							UnityEngine.Debug.Log("Exclude costume "+randomData[i].costumeModelId+" from position "+randomData[i].positionId);
+						}
+					}
+				}
+
+				// Fill with other non positioned diva
+				for (int i = 0; i < randomData.Count; i++)
+				{
+					if(randomData[i].positionId == 0)
+					{
+						if(randomData[i].divaId > 0 && randomData[i].costumeModelId >= 0)
+						{
+							if(team.danceDivaList[i].divaId == 0)
+							{
+								team.danceDivaList[i].divaId = randomData[i].divaId;
+								team.danceDivaList[i].costumeModelId = randomData[i].costumeModelId;
+								UnityEngine.Debug.Log("Setting Diva "+randomData[i].divaId+" in position "+(i+1));
+								UnityEngine.Debug.Log("Setting Costume "+randomData[i].costumeModelId+" in position "+(i+1));
+								excludedDiva.Add(randomData[i].divaId);
+							}
+						}
+						if(randomData[i].divaId < 0)
+						{
+							excludedDiva.Add(Mathf.Abs(randomData[i].divaId));
+							UnityEngine.Debug.Log("Exclude diva "+randomData[i].divaId);
+						}
+						if(randomData[i].costumeModelId < 0)
+						{
+							excludedCostume.Add(Mathf.Abs(randomData[i].divaId) * 1000 + Mathf.Abs(randomData[i].costumeModelId));
+							UnityEngine.Debug.Log("Exclude costume "+randomData[i].costumeModelId);
+						}
+					}
+					if(randomData[i].valkyrieId != 0)
+					{
+						Database.Instance.gameSetup.teamInfo.prismValkyrieId = randomData[i].valkyrieId;
+						UnityEngine.Debug.Log("Set valkyrie Id "+randomData[i].valkyrieId);
+					}
+				}
+			}
+
+			// Fill with other diva / costume
+			for(int i = 0; i < numDiva; i++)
+			{
+				if(team.danceDivaList[i].divaId == 0)
+				{
+					do
+					{
+						team.danceDivaList[i].divaId = UnityEngine.Random.Range(1, 11);
+					} while(excludedDiva.Contains(team.danceDivaList[i].divaId)
+						|| (excludedDivaPos.ContainsKey(team.danceDivaList[i].divaId) && 
+							excludedDivaPos[team.danceDivaList[i].divaId] == i + 1));
+					UnityEngine.Debug.Log("Fill with Diva "+team.danceDivaList[i].divaId+" in position "+(i+1));
+					excludedDiva.Add(team.danceDivaList[i].divaId);
+				}
+				if(team.danceDivaList[i].costumeModelId == 0)
+				{
+                    LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = null;
+					do
+					{
+						team.danceDivaList[i].costumeModelId = UnityEngine.Random.Range(1, 50);
+						cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN(team.danceDivaList[i].divaId, team.danceDivaList[i].costumeModelId);
+					} while(cosInfo.DAJGPBLEEOB_PrismCostumeModelId != team.danceDivaList[i].costumeModelId || 
+						excludedCostume.Contains(team.danceDivaList[i].divaId * 1000 + team.danceDivaList[i].costumeModelId)
+						|| (excludedCostumePos.ContainsKey(team.danceDivaList[i].divaId * 1000 + team.danceDivaList[i].costumeModelId) && 
+							excludedCostumePos[team.danceDivaList[i].divaId * 1000 + team.danceDivaList[i].costumeModelId] == i + 1));
+					UnityEngine.Debug.Log("Fill with Costume "+team.danceDivaList[i].costumeModelId+" in position "+(i+1));
+				}
+			}
+			for(int i = 0; i < 5; i++)
+			{
+				team.danceDivaList[i].prismDivaId = team.danceDivaList[i].divaId;
+				team.danceDivaList[i].prismCostumeModelId = team.danceDivaList[i].costumeModelId;
+				team.danceDivaList[i].prismCostumeColorId = team.danceDivaList[i].costumeColorId;
+			}
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), true);
+
+			// setup and launch
+			MenuScene.Instance.GotoRhythmGame(false, 0, false);
+
+		}
 	}
 }

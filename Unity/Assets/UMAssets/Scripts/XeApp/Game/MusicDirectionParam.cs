@@ -247,5 +247,32 @@ namespace XeApp.Game
 				count++;
 			}
 		}
+		override public List<SpecialDirectionData> GetRandomSetup()
+		{
+			List<SpecialDirectionDataSolo> allList = new List<SpecialDirectionDataSolo>();
+			allList.AddRange(m_stageLightingList);
+			allList.AddRange(m_cameraClipList);
+			allList.AddRange(m_divaClipList);
+			allList.AddRange(m_stagePrefabList);
+			allList.AddRange(m_divaPrefabList);
+			allList.AddRange(m_stageChangerList);
+			allList.RemoveAll(data => (data.divaId == 0 || ( data.divaId == 9 && data.costumeModelId == 0)) && data.valkyrieId == 0);
+			if(allList.Count > 0)
+			{
+				int id = UnityEngine.Random.Range(0, allList.Count);
+				List<SpecialDirectionData> res = new List<SpecialDirectionData>();
+				SpecialDirectionData data = new SpecialDirectionData();
+				data.divaId = allList[id].divaId;
+				data.costumeModelId = allList[id].costumeModelId;
+				data.valkyrieId = allList[id].valkyrieId;
+				data.pilotId = allList[id].pilotId;
+				data.positionId = allList[id].positionId;
+				data.directionGroupId = allList[id].directionGroupId;
+				res.Add(data);
+				return res;
+			}
+
+			return new List<SpecialDirectionData>();
+		}
 	}
 }

@@ -18,6 +18,19 @@ public class UMOStart : MonoBehaviour
         StartGameMenuInternal();
     }
 
+	[MenuItem("UMO/Start Auto SLive Viewer (Experimental)", validate = true)]
+	static bool StartSLiveAvaiable()
+	{
+		return !Application.isPlaying;
+	}
+
+	[MenuItem("UMO/Start Auto SLive Viewer (Experimental)")]
+	static void StartSLive()
+	{
+        RuntimeSettings.CurrentSettings.SLiveViewerRequest = true;
+        StartGameMenuInternal();
+    }
+
     static bool StartGameMenuInternal()
     {
         if(!RuntimeSettings.CurrentSettings.IsPathValid())
@@ -69,6 +82,15 @@ public class UMOStart : MonoBehaviour
         }
         canStart = true;
         System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+        if(RuntimeSettings.CurrentSettings.SLiveViewerRequest)
+        {
+            RuntimeSettings.CurrentSettings.SLiveViewerRequest = false;
+            RuntimeSettings.CurrentSettings.SLiveViewer = true;
+        }
+        else
+        {
+            RuntimeSettings.CurrentSettings.SLiveViewer = false;
+        }
 		StartCoroutine(FileSystemProxy.InitServerFileList());
     }
     

@@ -73,4 +73,7 @@ class RuntimeSettings : ScriptableObject
 	public string WebServerURL;
 	[Header("Web url where the android directory with asset bundle is. If left empty, DataDirectory should be set and with all the datas.")]
 	public string DataWebServerURL;
+
+	public bool SLiveViewerRequest { get; set; }
+	public bool SLiveViewer { get; set; }
 }

@@ -39,5 +39,15 @@ namespace XeApp.Game.Title
 		{
 			a.FGBKOJCFMKM();
 		}
+
+		private bool clickDone = false;
+		protected override void DoUpdateMain()
+		{
+			if(!clickDone && RuntimeSettings.CurrentSettings.SLiveViewer)
+			{
+				clickDone = true;
+				OnTouchScreen();
+			}
+		}
 	}
 }
