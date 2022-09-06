@@ -348,7 +348,7 @@ public class OKGLGHCBCJP_Database
 		{(int)BEOKNKGHFFE_Section.CNENKCCMEFL_Diva,() => { return new HPBPIOPPDCB_Diva(); } }, //0x149DBC0				"diva",
 		{(int)BEOKNKGHFFE_Section.ACGFJFNPLKB_Diva2,() => { return new HMIJOOPHJLB_Diva2(); } }, //0x149DC2C				"diva2",
 		// {(int)BEOKNKGHFFE_SectionName.PKDKLHJLEFA_Drop,() => { return new NBPHJDCOECH(); } }, //0x149DC98				"drop",
-		// {(int)BEOKNKGHFFE_SectionName.PGHFPIMIOKE_Emblem,() => { return new IHGBPAJMJFK(); } }, //0x149DD04				"emblem",
+		{(int)BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem,() => { return new IHGBPAJMJFK_Emblem(); } }, //0x149DD04				"emblem",
 		{(int)BEOKNKGHFFE_Section.CNGPLGIMJBB_Enemy,() => { return new MHDFCLCMDKO_Enemy(); } }, //0x149DD70				"enemy",
 		// {(int)BEOKNKGHFFE_SectionName.JBFFIPCOGEC_EnergyItem,() => { return new JKDKODAPGBJ(); } }, //0x149DDDC				"energy_item",
 		{(int)BEOKNKGHFFE_Section.BBDKHAMANCB_Episode,() => { return new KMOGDEOKHPG_Episode(); } }, //0x149DE48				"episode",
