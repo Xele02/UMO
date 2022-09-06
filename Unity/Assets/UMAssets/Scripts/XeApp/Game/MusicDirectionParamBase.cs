@@ -260,5 +260,7 @@ namespace XeApp.Game
 		{
 			return number != 0 ? ""+number : "";
 		}
+
+		public abstract List<SpecialDirectionData> GetRandomSetup();
 	}
 }

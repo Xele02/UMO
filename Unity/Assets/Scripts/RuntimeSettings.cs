@@ -1,4 +1,6 @@
 
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "RuntimeSettings", menuName = "ScriptableObjects/RuntimeSettings", order = 1)]
@@ -19,6 +21,47 @@ class RuntimeSettings : ScriptableObject
 		}
 	}
 
+	public bool IsPathValid()
+	{
+		if(!string.IsNullOrEmpty(DataWebServerURL))
+			return true;
+		if(!string.IsNullOrEmpty(DataDirectory))
+		{
+			if(Directory.Exists(DataDirectory))
+			{
+				if(Directory.Exists(Path.Combine(DataDirectory, "android")) && Directory.Exists(Path.Combine(DataDirectory, "db")))
+					return true;
+			}
+		}
+		string path = Path.GetFullPath("../Tools/Data");
+		if(Directory.Exists(path))
+		{
+			if(Directory.Exists(Path.Combine(path, "android")) && Directory.Exists(Path.Combine(path, "db")))
+			{
+				if(EditorUtility.DisplayDialog("Game data found", "Game data found in directory "+path+", use it ?", "Yes", "No"))
+				{
+					DataDirectory = path;
+					return true;
+				}
+				return false;
+			}
+		}
+		path = Path.GetFullPath("../Data");
+		if(Directory.Exists(path))
+		{
+			if(Directory.Exists(Path.Combine(path, "android")) && Directory.Exists(Path.Combine(path, "db")))
+			{
+				if(EditorUtility.DisplayDialog("Game data found", "Game data found in directory "+path+", use it ?", "Yes", "No"))
+				{
+					DataDirectory = path;
+					return true;
+				}
+				return false;
+			}
+		}
+		return false;
+	}
+
 	public bool ForceDivaUnlock = true;
 	public bool ForceCostumeUnlock = true;
 	public bool ForceSongUnlock = true;
@@ -31,4 +74,7 @@ class RuntimeSettings : ScriptableObject
 	public string WebServerURL;
 	[Header("Web url where the android directory with asset bundle is. If left empty, DataDirectory should be set and with all the datas.")]
 	public string DataWebServerURL;
+
+	public bool SLiveViewerRequest { get; set; }
+	public bool SLiveViewer { get; set; }
 }

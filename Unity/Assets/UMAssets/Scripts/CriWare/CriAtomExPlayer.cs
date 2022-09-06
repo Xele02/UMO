@@ -280,7 +280,10 @@ namespace CriWare
 		// public void SetPan3dVolume(float volume) { }
 
 		// // RVA: 0x28A6A60 Offset: 0x28A6A60 VA: 0x28A6A60
-		// public void SetPanType(CriAtomEx.PanType panType) { }
+		public void SetPanType(CriAtomEx.PanType panType)
+		{
+			criAtomExPlayer_SetPanType(this.handle, panType);
+		}
 
 		// // RVA: 0x28A6B4C Offset: 0x28A6B4C VA: 0x28A6B4C
 		// public void SetSendLevel(int channel, CriAtomEx.Speaker id, float level) { }
@@ -854,7 +857,14 @@ namespace CriWare
 		// private static extern void criAtomExPlayer_SetPan3dVolume(IntPtr player, float pan3d_volume) { }
 
 		// // RVA: 0x28A6A68 Offset: 0x28A6A68 VA: 0x28A6A68
-		// private static extern void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType) { }
+		#if UNITY_ANROID
+		private static extern void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType) { }
+		#else
+		private static void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType)
+		{
+			ExternLib.LibCriWare.criAtomExPlayer_SetPanType(player, panType);
+		}
+		#endif
 
 		// // RVA: 0x28A6B68 Offset: 0x28A6B68 VA: 0x28A6B68
 		// private static extern void criAtomExPlayer_SetSendLevel(IntPtr player, int channel, CriAtomEx.Speaker id, float level) { }

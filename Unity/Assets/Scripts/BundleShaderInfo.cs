@@ -98,8 +98,8 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 
 	public void FixMaterialShaderMat(Material mat)
 	{
-		UnityEngine.Debug.Log("Checking shader for mat "+mat.name);
-		if(!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(mat.shader)))
+		UnityEngine.Debug.Log("Checking shader for mat "+mat.name+" with shader "+mat.shader.GetInstanceID()+" "+mat.shader.name);
+		if(!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(mat.shader)) && !AssetDatabase.GetAssetPath(mat.shader).Contains("unity default resources"))
 		{
 			UnityEngine.Debug.Log("Already on disk shader used : "+AssetDatabase.GetAssetPath(mat.shader));
 			return;
@@ -114,6 +114,7 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 				Shader shader = Shader.Find(mat.shader.name);
 				if(shader != null)
 				{
+					UnityEngine.Debug.Log(mat.shader.name);
 					info = new ShaderInfo();
 					info.shader = shader;
 					info.name = System.IO.Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(shader));

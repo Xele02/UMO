@@ -326,5 +326,27 @@ namespace XeApp.Game
 				count++;
 			}
 		}
+
+		override public List<SpecialDirectionData> GetRandomSetup()
+		{
+			List<SpecialDirectionDataList> allList = new List<SpecialDirectionDataList>();
+			allList.AddRange(m_stageLightingList);
+			allList.AddRange(m_cameraClipList);
+			allList.AddRange(m_divaClipList);
+			allList.AddRange(m_stagePrefabList);
+			allList.AddRange(m_divaPrefabList);
+			allList.AddRange(m_stageChangerList);
+			allList.RemoveAll(list => list.m_specialDirectionDataList.FindAll(data => (data.divaId != 0 && (data.divaId != 9 || data.costumeModelId != 0)) || data.valkyrieId != 0).Count == 0);
+			if(allList.Count > 0)
+			{
+				int id = UnityEngine.Random.Range(0, allList.Count);
+				List<MusicDirectionParamBase.SpecialDirectionData> validData = allList[id].m_specialDirectionDataList.FindAll(data => (data.divaId != 0 && (data.divaId != 9 || data.costumeModelId != 0)) || data.valkyrieId != 0);
+				int id2 = UnityEngine.Random.Range(0, validData.Count);
+				int direction = validData[id2].directionGroupId;
+				return validData.FindAll(data => data.directionGroupId == direction );
+			}
+
+			return new List<SpecialDirectionData>();
+		}
 	}
 }

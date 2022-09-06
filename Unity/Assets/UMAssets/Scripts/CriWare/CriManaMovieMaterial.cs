@@ -1,3 +1,4 @@
+using System.Collections;
 using CriWare.CriMana;
 using UnityEngine;
 
@@ -56,8 +57,8 @@ namespace CriWare
 		private bool materialOwn; // 0x45
 		private bool isMonoBehaviourStartCalled; // 0x46
 		// private GameObject ambisonicSource; // 0x48
-		// private bool wasDisabled; // 0x4C
-		// private bool wasPausedOnDisable; // 0x4D
+		private bool wasDisabled; // 0x4C
+		private bool wasPausedOnDisable; // 0x4D
 		// private WaitForEndOfFrame frameEnd = new WaitForEndOfFrame(); // 0x50
 		// private bool unpauseOnApplicationUnpause; // 0x54
 		private CriManaMoviePlayerHolder playerHolder; // 0x58
@@ -106,22 +107,39 @@ namespace CriWare
 			_material = value;
 		} } //0x29620A0 0x2963088
 		// public Player.TimerType timerType { get; set; } 0x296317C 0x2963184
-		// protected bool HaveRendererOwner { get; private set; } // 0x55
+		protected bool HaveRendererOwner { get; private set; } // 0x55
 
 		// // RVA: 0x29631A4 Offset: 0x29631A4 VA: 0x29631A4
-		// public void Play() { }
+		public void Play()
+		{
+			player.Start();
+			CriInternalUpdate();
+		}
 
 		// // RVA: 0x29631E4 Offset: 0x29631E4 VA: 0x29631E4
-		// public void Stop() { }
+		public void Stop()
+		{
+			player.Stop();
+			if(!isMaterialAvailable)
+				return;
+			isMaterialAvailable = false;
+			OnMaterialAvailableChanged();
+		}
 
 		// // RVA: 0x2963238 Offset: 0x2963238 VA: 0x2963238
 		// public void Pause(bool sw) { }
 
 		// // RVA: 0x2963278 Offset: 0x2963278 VA: 0x2963278 Slot: 8
-		// protected virtual void OnMaterialAvailableChanged() { }
+		protected virtual void OnMaterialAvailableChanged()
+		{
+			return;
+		}
 
 		// // RVA: 0x296327C Offset: 0x296327C VA: 0x296327C Slot: 9
-		// protected virtual void OnMaterialUpdated() { }
+		protected virtual void OnMaterialUpdated()
+		{
+			return;
+		}
 
 		// // RVA: 0x2963280 Offset: 0x2963280 VA: 0x2963280
 		public void PlayerManualInitialize()
@@ -148,19 +166,78 @@ namespace CriWare
 		}
 
 		// // RVA: 0x29634C4 Offset: 0x29634C4 VA: 0x29634C4
-		// public void PlayerManualFinalize() { }
+		public void PlayerManualFinalize()
+		{
+			if(player == null)
+				return;
+			player.Dispose();
+			player = null;
+			material = null;
+		}
 
 		// // RVA: 0x2963504 Offset: 0x2963504 VA: 0x2963504
-		// public void PlayerManualSetup() { }
+		public void PlayerManualSetup()
+		{
+			Renderer r = GetComponent<Renderer>();
+			HaveRendererOwner = r != null;
+			if(material == null)
+				CreateMaterial();
+			if(!string.IsNullOrEmpty(_moviePath))
+			{
+				player.SetFile(null, _moviePath, 0);
+			}
+			player.Loop(_loop);
+			player.additiveMode = _additiveMode;
+			player.maxFrameDrop = (int)_maxFrameDrop;
+			player.applyTargetAlpha = _applyTargetAlpha;
+			player.uiRenderMode = _uiRenderMode;
+			if(playOnStart)
+			{
+				player.Start();
+			}
+		}
 
 		// // RVA: 0x29637A4 Offset: 0x29637A4 VA: 0x29637A4 Slot: 10
-		// public virtual bool RenderTargetManualSetup() { }
+		public virtual bool RenderTargetManualSetup()
+		{
+			return true;
+		}
 
 		// // RVA: 0x29637AC Offset: 0x29637AC VA: 0x29637AC Slot: 11
-		// public virtual void RenderTargetManualFinalize() { }
+		public virtual void RenderTargetManualFinalize()
+		{
+			return;
+		}
 
 		// // RVA: 0x29637B0 Offset: 0x29637B0 VA: 0x29637B0
-		// public void PlayerManualUpdate() { }
+		public void PlayerManualUpdate()
+		{
+			if(player != null)
+			{
+				if(player.timerType == Player.TimerType.User)
+				{
+					player.UpdateWithUserTime(0, 1000);
+				}
+				else
+				{
+					player.Update();
+				}
+				if(player.isFrameAvailable)
+				{
+					if(player.UpdateMaterial(_material))
+					{
+						OnMaterialUpdated();
+						if(isMaterialAvailable)
+							return;
+						isMaterialAvailable = true;
+						OnMaterialAvailableChanged();
+						return;
+					}
+				}
+				isMaterialAvailable = false;
+				OnMaterialAvailableChanged();
+			}
+		}
 
 		// // RVA: 0x29621F0 Offset: 0x29621F0 VA: 0x29621F0 Slot: 12
 		protected virtual void Awake()
@@ -171,35 +248,78 @@ namespace CriWare
 		// // RVA: 0x2963908 Offset: 0x2963908 VA: 0x2963908 Slot: 4
 		protected override void OnEnable()
 		{
-			TodoLogger.Log(0, "TODO");
+			base.OnEnable();
+			if(wasDisabled)
+			{
+				if(player != null && player.isAlive)
+				{
+					player.Pause(wasPausedOnDisable);
+					if(restartOnEnable)
+					{
+						StartCoroutine(RestartPlayerRoutine());
+					}
+				}
+			}
+			wasDisabled = false;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6363EC Offset: 0x6363EC VA: 0x6363EC
 		// // RVA: 0x2963970 Offset: 0x2963970 VA: 0x2963970
-		// private IEnumerator RestartPlayerRoutine() { }
+		private IEnumerator RestartPlayerRoutine()
+		{
+			//0x296457C
+			if(player.status != Player.Status.Playing && player.status != Player.Status.PlayEnd)
+				yield break;
+			Stop();
+			do
+			{
+				if(player.status == Player.Status.Stop)
+				{
+					Play();
+					player.Pause(wasPausedOnDisable);
+					break;
+				}
+				else if(player.status == Player.Status.StopProcessing)
+					yield return null;
+				else
+					break;
+			} while(true);
+		}
 
 		// // RVA: 0x2963A1C Offset: 0x2963A1C VA: 0x2963A1C Slot: 5
 		protected override void OnDisable()
 		{
-			TodoLogger.Log(0, "TODO");
+			base.OnDisable();
+			if(player != null && player.isAlive)
+			{
+				wasPausedOnDisable = player.IsPaused();
+				player.Pause(true);
+			}
+			wasDisabled = true;
 		}
 
 		// // RVA: 0x2963AF4 Offset: 0x2963AF4 VA: 0x2963AF4 Slot: 13
 		protected virtual void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			RenderTargetManualFinalize();
+			PlayerManualFinalize();
 		}
 
 		// // RVA: 0x2963B20 Offset: 0x2963B20 VA: 0x2963B20 Slot: 14
 		protected virtual void Start()
 		{
-			TodoLogger.Log(0, "TODO");
+			PlayerManualSetup();
+			isMonoBehaviourStartCalled = true;
+			if(!RenderTargetManualSetup())
+			{
+				Destroy(this);
+			}
 		}
 
 		// // RVA: 0x2961C84 Offset: 0x2961C84 VA: 0x2961C84 Slot: 6
 		public override void CriInternalUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			PlayerManualUpdate();
 		}
 
 		// // RVA: 0x2963BD0 Offset: 0x2963BD0 VA: 0x2963BD0 Slot: 15
@@ -208,7 +328,9 @@ namespace CriWare
 		// // RVA: 0x2963BF8 Offset: 0x2963BF8 VA: 0x2963BF8 Slot: 7
 		public override void CriInternalLateUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			if(renderMode != RenderMode.Always)
+				return;
+			player.OnWillRenderObject(null);
 		}
 
 		// // RVA: 0x2963C2C Offset: 0x2963C2C VA: 0x2963C2C Slot: 16
@@ -221,6 +343,11 @@ namespace CriWare
 		// private void ProcessApplicationPause(bool appPause) { }
 
 		// // RVA: 0x29636E0 Offset: 0x29636E0 VA: 0x29636E0
-		// private void CreateMaterial() { }
+		private void CreateMaterial()
+		{
+			_material = new Material(Shader.Find("VertexLit"));
+			_material.name = "CriMana-MovieMaterial";
+			materialOwn = true;
+		}
 	}
 }
