@@ -119,7 +119,15 @@ public class CEDHHAGBIBA
 	}
 
 	// // RVA: 0x12B28A0 Offset: 0x12B28A0 VA: 0x12B28A0
-	// public static uint CAOGDCBPBAN(byte[] IFIKNDBPOKO) { }
+	public static uint CAOGDCBPBAN(byte[] IFIKNDBPOKO)
+	{
+		uint res = 0x811c9dc5;
+		for(int i = 0; i < IFIKNDBPOKO.Length; i++)
+		{
+			res = (res ^ IFIKNDBPOKO[i]) * 0x1000193;
+		}
+		return res ^ LBLGDJJGFIO;
+	}
 
 	// // RVA: 0x12B2994 Offset: 0x12B2994 VA: 0x12B2994
 	public static int OGPFNHOKONH(byte[] IFIKNDBPOKO)
