@@ -146,7 +146,7 @@ namespace XeApp.Game.Common
 			moviePlayer = go.AddComponent<CriManaMovieController>();
 			moviePlayer.playOnStart = false;
 			moviePlayer.additiveMode = isMovieMaterialAdd;
-			moviePlayer.moviePath = t_path;
+			moviePlayer.moviePath = FileSystemProxy.ConvertPath(t_path);
 			moviePlayer.loop = true;
 			moviePlayer.material = movieMaterial;
 			yield return null;
