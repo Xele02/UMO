@@ -191,7 +191,7 @@ namespace XeApp.Game.Common
 			public string musicLoadText { get; set; } // 0x40
 			public bool IsDisableBattleEventIntermediateResult { get; set; } // 0x44
 			public TransitionUniqueId returnTransitionUniqueId { get; set; } // 0x48
-			public MHDFCLCMDKO.CJLENGHPIDH enemyInfo { get; set; } // 0x4C
+			public MHDFCLCMDKO_Enemy.CJLENGHPIDH_EnemyInfo enemyInfo { get; set; } // 0x4C
 			public bool isFreeMode { get { return mode == GameMode.Type.FreeBattle; } set {} } // get_isFreeMode 0xE9D690 set_isFreeMode 0xE9D6A4
 			public bool isStoryMode { get { return mode == GameMode.Type.StoryBattle; } set {} } // get_isStoryMode 0xE9D6A8 set_isStoryMode 0xE9D6B8
 			public bool isTutorialOne { get { return tutorial == TutorialGameMode.Type.TutorialOne; } set {} } // get_isTutorialOne 0xE9D6BC set_isTutorialOne 0xE9D6CC
@@ -227,7 +227,7 @@ namespace XeApp.Game.Common
 				mvLimitTime = -1;
 				LimitTime = 0;
 				musicLoadText = "";
-				enemyInfo = new MHDFCLCMDKO.CJLENGHPIDH();
+				enemyInfo = new MHDFCLCMDKO_Enemy.CJLENGHPIDH_EnemyInfo();
 				IsDisableBattleEventIntermediateResult = false;
 				returnTransitionUniqueId = TransitionUniqueId.HOME;
 			}

@@ -60,7 +60,7 @@ public class JKNNIKNKMNJ
             {
                 if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy != null)
                 {
-                    return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.LPJLEHAJADA("intimacy_count_max", 5);
+                    return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.LPJLEHAJADA_GetValue("intimacy_count_max", 5);
                 }
             }
         }

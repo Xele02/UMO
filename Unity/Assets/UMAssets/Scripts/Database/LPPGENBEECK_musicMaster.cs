@@ -111,7 +111,14 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x10CFED0 Offset: 0x10CFED0 VA: 0x10CFED0
-	// public bool BHJKMPBACAC(int GHBPLHBNMBK) { }
+	public bool BHJKMPBACAC_IsFreeMusicAvaiable(int GHBPLHBNMBK)
+	{
+		if (GHBPLHBNMBK > 0 && GHBPLHBNMBK <= GEAANLPDJBP_FreeMusicDatas.Count)
+		{
+			return NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK).PPEGAKEIEGM == 2;
+		}
+		return false;
+	}
 
 	// // RVA: 0x10CFFA0 Offset: 0x10CFFA0 VA: 0x10CFFA0
 	public EONOEHOKBEB_Music INJDLHAEPEK_GetMusicInfo(int GHBPLHBNMBK_FreeMusicId, int DLAEJOBELBH_Id)

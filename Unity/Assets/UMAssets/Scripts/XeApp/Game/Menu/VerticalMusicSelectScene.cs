@@ -1522,19 +1522,19 @@ namespace XeApp.Game.Menu
 				data.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, (int)difficulty, isLine6Mode, musicData.MNNHHJBBICA_EventType);
 				if((filterBit & 1) != 0)
 				{
-					if (PopupSortMenu.IsAllRewardAchievedFilter(data.PDONJHCHBAE))
+					if (PopupSortMenu.IsAllRewardAchievedFilter(data.PDONJHCHBAE_ScoreReward))
 						return false;
 				}
 				if((filterBit & 2) != 0)
 				{
-					if (PopupSortMenu.IsAllRewardAchievedFilter(data.HFPMKBAANFO))
+					if (PopupSortMenu.IsAllRewardAchievedFilter(data.HFPMKBAANFO_ComboReward))
 						return false;
 				}
 				if ((filterBit & 4) == 0)
 					return true;
 				else
 				{
-					if (PopupSortMenu.IsAllRewardAchievedFilter(data.IOCLNNCJFKA))
+					if (PopupSortMenu.IsAllRewardAchievedFilter(data.IOCLNNCJFKA_ClearReward))
 						return false;
 				}
 			}

@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Text;
 
 public class CEDHHAGBIBA
 {
@@ -6,7 +8,36 @@ public class CEDHHAGBIBA
 	private const int PMLANIPJEFO = 3;
 
 	// // RVA: 0x12B1884 Offset: 0x12B1884 VA: 0x12B1884
-	// public static string KJFAGPBALNO(string BJKEOACPMHB) { }
+	public static string KJFAGPBALNO(string BJKEOACPMHB)
+	{
+		StringBuilder str = new StringBuilder();
+		char[] chars = BJKEOACPMHB.ToCharArray();
+		for(int i = 0; i < chars.Length; i++)
+		{
+			if(chars[i] == '\\')
+			{
+				if (chars.Length < (i + 6))
+					str.Append(chars[i]);
+				else if(chars[i + 1] != 'u')
+					str.Append(chars[i]);
+				else
+				{
+					char[] c = new char[4];
+					for(int j = 0; j < 4; j++)
+					{
+						c[j] = chars[i + j + 2];
+					}
+					str.Append(Convert.ToInt32(c.ToString(), 16));
+					i += 4;
+				}
+			}
+			else
+			{
+				str.Append(chars[i]);
+			}
+		}
+		return str.ToString();
+	}
 
 	// // RVA: 0x12B1B20 Offset: 0x12B1B20 VA: 0x12B1B20
 	// public static string AMNBKLLDGKJ(byte[] IDDIIHBJPEE) { }
@@ -64,12 +95,53 @@ public class CEDHHAGBIBA
 	// public static string EHNMFLADJKG(byte[] IFIKNDBPOKO) { }
 
 	// // RVA: 0x12B258C Offset: 0x12B258C VA: 0x12B258C
-	// public static void IFOLECIIDPO(byte[] IFIKNDBPOKO, string BJKEOACPMHB) { }
+	public static void IFOLECIIDPO_StringToByteArray(byte[] IFIKNDBPOKO, string BJKEOACPMHB)
+	{
+		if(string.IsNullOrEmpty(BJKEOACPMHB))
+		{
+			for(int i = 0; i < IFIKNDBPOKO.Length; i++)
+			{
+				IFIKNDBPOKO[i] = 0;
+			}
+		}
+		byte[] data = Convert.FromBase64String(BJKEOACPMHB);
+		for(int i = 0; i < IFIKNDBPOKO.Length; i++)
+		{
+			if(i < data.Length)
+			{
+				IFIKNDBPOKO[i] = data[i];
+			}
+			else
+			{
+				IFIKNDBPOKO[i] = 0;
+			}
+		}
+	}
 
 	// // RVA: 0x12B28A0 Offset: 0x12B28A0 VA: 0x12B28A0
-	// public static uint CAOGDCBPBAN(byte[] IFIKNDBPOKO) { }
+	public static uint CAOGDCBPBAN(byte[] IFIKNDBPOKO)
+	{
+		uint res = 0x811c9dc5;
+		for(int i = 0; i < IFIKNDBPOKO.Length; i++)
+		{
+			res = (res ^ IFIKNDBPOKO[i]) * 0x1000193;
+		}
+		return res ^ LBLGDJJGFIO;
+	}
 
 	// // RVA: 0x12B2994 Offset: 0x12B2994 VA: 0x12B2994
-	// public static int OGPFNHOKONH(byte[] IFIKNDBPOKO) { }
+	public static int OGPFNHOKONH(byte[] IFIKNDBPOKO)
+	{
+		int val = 0;
+		for(int i = 0; i < IFIKNDBPOKO.Length; i++)
+		{
+			int puVar1 = IFIKNDBPOKO[i];
+			int uVar3 = puVar1;
+			val = (int)((uVar3 & 1) + val + (uint)(puVar1 >> 7) - (uVar3 << 0x1e >> 0x1f) -
+				(uVar3 << 0x1d >> 0x1f) - (uVar3 << 0x1c >> 0x1f) -
+			  (uVar3 << 0x1b >> 0x1f) - (uVar3 << 0x1a >> 0x1f)) - (uVar3 << 0x19 >> 0x1f);
+		}
+		return val;
+	}
 
 }
