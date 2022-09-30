@@ -1,19 +1,20 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using UnityEngine.Playables;
 
 namespace XeApp.Game.Common
 {
 	public class GameValkyrieObject : ValkyrieObject
 	{
-		protected static readonly int EnterStateHash; // 0x0
-		protected static readonly int MainStateHash; // 0x4
-		protected static readonly int DamageStateHash; // 0x8
-		protected static readonly int TransformStateHash; // 0xC
-		protected static readonly int BattroidMainStateHash; // 0x10
-		protected static readonly int BattroidDamageStateHash; // 0x14
-		protected static readonly int EndStateHash; // 0x18
-		protected static readonly int TransformParamStateHash; // 0x1C
+		protected static readonly int EnterStateHash = Animator.StringToHash("Begin"); // 0x0
+		protected static readonly int MainStateHash = Animator.StringToHash("Main"); // 0x4
+		protected static readonly int DamageStateHash = Animator.StringToHash("Damage"); // 0x8
+		protected static readonly int TransformStateHash = Animator.StringToHash("Transform"); // 0xC
+		protected static readonly int BattroidMainStateHash = Animator.StringToHash("BattroidMain"); // 0x10
+		protected static readonly int BattroidDamageStateHash = Animator.StringToHash("BattroidDamage"); // 0x14
+		protected static readonly int EndStateHash = Animator.StringToHash("End"); // 0x18
+		protected static readonly int TransformParamStateHash = Animator.StringToHash("isTranform"); // 0x1C
 		private double m_animationBaseTime = -1; // 0x40
 		private bool m_resetAnimationBaseTime; // 0x48
 		private bool m_isPause; // 0x49
@@ -40,7 +41,26 @@ namespace XeApp.Game.Common
 		// public void ResetAnimationBaseTime() { }
 
 		// // RVA: 0xEA0D50 Offset: 0xEA0D50 VA: 0xEA0D50
-		// public void ChangeAnimationTime(double time) { }
+		public void ChangeAnimationTime(double time)
+		{
+			if(m_resetAnimationBaseTime)
+			{
+				m_animationBaseTime = time;
+				m_resetAnimationBaseTime = false;
+			}
+			if(gameObject.activeSelf)
+			{
+				animator.speed = 1;
+				if (PlayableExtensions.IsValid<Playable>(animator.playableGraph.GetRootPlayable(0)))
+				{
+					animator.playableGraph.Evaluate((float)(time - m_animationBaseTime - PlayableExtensions.GetTime<Playable>(animator.playableGraph.GetRootPlayable(0))));
+				}
+			}
+			if(effectFactories != null)
+			{
+				effectFactories.ChangeAnimationTime(time);
+			}
+		}
 
 		// // RVA: 0xEA0F64 Offset: 0xEA0F64 VA: 0xEA0F64
 		// public void Pause() { }
@@ -104,12 +124,6 @@ namespace XeApp.Game.Common
 		public void SetOverrideAnimationIntro(MusicIntroResource a_resource)
 		{
 			TodoLogger.Log(0, "ValkyrieObject SetOverrideAnimationIntro");
-		}
-
-		// // RVA: 0xEA2354 Offset: 0xEA2354 VA: 0xEA2354
-		static GameValkyrieObject()
-		{
-			TodoLogger.Log(0, "TODO");
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x73C108 Offset: 0x73C108 VA: 0x73C108

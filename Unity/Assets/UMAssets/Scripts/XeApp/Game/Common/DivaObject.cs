@@ -413,6 +413,7 @@ namespace XeApp.Game.Common
 		{
 			if (animator != null)
 			{
+				if (time < 0) time = 0;
 				animator.speed = 1;
 				if (PlayableExtensions.IsValid<Playable>(animator.playableGraph.GetRootPlayable(0)))
 				{

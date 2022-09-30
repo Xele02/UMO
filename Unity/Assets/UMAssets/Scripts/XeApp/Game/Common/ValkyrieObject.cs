@@ -18,9 +18,9 @@ namespace XeApp.Game.Common
 		public GameObject fighter { get; private set; } // 0x24
 		public GameObject gerwalk { get; private set; } // 0x28
 		public GameObject battroid { get; private set; } // 0x2C
-		// protected EffectFactoryCollector effectFactories { get; private set; } // 0x34
-		// protected ValkyrieSoundOrderer soundOrderer { get; private set; } // 0x38
-		// protected ValkyrieEventListener eventListener { get; private set; } // 0x3C
+		protected EffectFactoryCollector effectFactories { get; private set; } // 0x34
+		protected ValkyrieSoundOrderer soundOrderer { get; private set; } // 0x38
+		protected ValkyrieEventListener eventListener { get; private set; } // 0x3C
 		// protected virtual bool usingEffectFactory { get; } 0xD27F0C Slot: 4
 		// protected virtual bool usingQualitySetting { get; } 0xD27F14  Slot: 5
 
@@ -67,7 +67,24 @@ namespace XeApp.Game.Common
 		// private void DestroyValkyrie() { }
 
 		// // RVA: 0xD29D80 Offset: 0xD29D80 VA: 0xD29D80
-		// public void Activate(bool toActive) { }
+		public void Activate(bool toActive)
+		{
+			if (toActive)
+				m_activateCount++;
+			else
+			{
+				m_activateCount--;
+				if (m_activateCount < 0)
+					m_activateCount = 0;
+			}
+			m_valkyrie.SetActive(m_activateCount > 0);
+			animator.enabled = m_activateCount > 0;
+			if(m_activateCount == 0)
+			{
+				soundOrderer.StopSoundAllPlayback();
+			}
+			effectFactories.SetupAll();
+		}
 
 		// // RVA: 0xD29E54 Offset: 0xD29E54 VA: 0xD29E54
 		// public void Pause() { }
