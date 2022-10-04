@@ -37,5 +37,20 @@ namespace ExternLib
             }
             return CriAtomExPlayback.Status.Removed;
         }
-    }
+
+		public static void criAtomExPlayback_Stop(uint id)
+		{
+			if (playbacksList.ContainsKey(id) && playersList.ContainsKey(playbacksList[id].playerPtr))
+			{
+				criAtomExPlayer_Stop(playbacksList[id].playerPtr);
+			}
+		}
+		public static void criAtomExPlayback_StopWithoutReleaseTime(uint id)
+		{
+			if (playbacksList.ContainsKey(id) && playersList.ContainsKey(playbacksList[id].playerPtr))
+			{
+				criAtomExPlayer_StopWithoutReleaseTime(playbacksList[id].playerPtr);
+			}
+		}
+	}
 }

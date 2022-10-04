@@ -7,6 +7,8 @@ namespace XeApp.Game.Common
 {
 	public class EffectFactoryBase : MonoBehaviour, IComponentDeepCopy
 	{
+		public delegate GameObject GetCommonAssetFunc(string assetName);
+
 		[Serializable]
 		public class Setting
 		{
@@ -135,13 +137,47 @@ namespace XeApp.Game.Common
 			//public void ChangeAnimationTime(double time, double diffTime) { }
 
 			//// RVA: 0x1C0D4F0 Offset: 0x1C0D4F0 VA: 0x1C0D4F0
-			//public void EmitStart(double syncTime) { }
+			public void EmitStart(double syncTime)
+			{
+				bool wasActive = gameObject.activeSelf;
+				gameObject.SetActive(true);
+				if(!isPause)
+				{
+					if(hasParticle)
+					{
+						particle.Play();
+					}
+					if(hasAnimator)
+					{
+						if(wasActive)
+						{
+							animator.Rebind();
+						}
+						animator.enabled = true;
+						animator.speed = 1;
+					}
+				}
+				isEmit = true;
+				baseTime = syncTime;
+			}
 
 			//// RVA: 0x1C0E08C Offset: 0x1C0E08C VA: 0x1C0E08C
 			//public void EmitBurst(int count, double syncTime) { }
 
 			//// RVA: 0x1C0D888 Offset: 0x1C0D888 VA: 0x1C0D888
-			//public void EmitStop() { }
+			public void EmitStop()
+			{
+				if(hasParticle)
+				{
+					particle.Stop();
+				}
+				if(hasAnimator)
+				{
+					animator.enabled = false;
+					animator.speed = 0;
+				}
+				isEmit = false;
+			}
 
 			//// RVA: 0x1C0D94C Offset: 0x1C0D94C VA: 0x1C0D94C
 			public void Disable()
@@ -186,7 +222,16 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0AFD0 Offset: 0x1C0AFD0 VA: 0x1C0AFD0
-		//public void Redirection(EffectFactoryBase.GetCommonAssetFunc getCommonAsset) { }
+		public void Redirection(EffectFactoryBase.GetCommonAssetFunc getCommonAsset)
+		{
+			for (int i = 0; i < m_settings.Count; i++)
+			{
+				if(!string.IsNullOrEmpty(m_settings[i].commonAssetName))
+				{
+					m_settings[i].effectPrefab = getCommonAsset(m_settings[i].commonAssetName);
+				}
+			}
+		}
 
 		//// RVA: 0x1C0B9D0 Offset: 0x1C0B9D0 VA: 0x1C0B9D0
 		public void Instantiate()
@@ -233,7 +278,16 @@ namespace XeApp.Game.Common
 		//protected virtual void OnResume(EffectFactoryBase.Instance instance) { }
 
 		//// RVA: 0x1C0C4D0 Offset: 0x1C0C4D0 VA: 0x1C0C4D0
-		//private void Execute(string name, Action<EffectFactoryBase.Instance> action) { }
+		private void Execute(string name, Action<Instance> action)
+		{
+			for (int i = 0; i < m_instances.Count; i++)
+			{
+				if (m_instances[i].id == name)
+				{
+					action(m_instances[i]);
+				}
+			}
+		}
 
 		//// RVA: 0x1C0AED8 Offset: 0x1C0AED8 VA: 0x1C0AED8
 		private void ExecuteAll(Action<Instance> action)
@@ -267,13 +321,27 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0C8A0 Offset: 0x1C0C8A0 VA: 0x1C0C8A0
-		//public void EmitStart(string name) { }
+		public void EmitStart(string name)
+		{
+			Execute(name, (Instance instance) =>
+			{
+				//0x1C0D4B0
+				instance.EmitStart(m_syncTime);
+			});
+		}
 
 		//// RVA: 0x1C0C944 Offset: 0x1C0C944 VA: 0x1C0C944
 		//public void EmitBurst(string name, int count) { }
 
 		//// RVA: 0x1C0CA40 Offset: 0x1C0CA40 VA: 0x1C0CA40
-		//public void EmitStop(string name) { }
+		public void EmitStop(string name)
+		{
+			Execute(name, (Instance instance) =>
+			{
+				//0x1C0D860
+				instance.EmitStop();
+			});
+		}
 
 		//// RVA: 0x1C0CB8C Offset: 0x1C0CB8C VA: 0x1C0CB8C
 		//public void Disable(string name) { }
@@ -288,7 +356,18 @@ namespace XeApp.Game.Common
 		//public void Resume() { }
 
 		//// RVA: -1 Offset: -1
-		//public void ForEach<T>(string id, Action<T> action) { }
+		public void ForEach<T>(string id, Action<T> action)
+		{
+			Execute(id, (Instance instance) =>
+			{
+				// 0x30A5E8C
+				T[] comps = instance.gameObject.GetComponentsInChildren<T>(true);
+				for(int i = 0; i < comps.Length; i++)
+				{
+					action(comps[i]);
+				}
+			});
+		}
 		///* GenericInstMethod :
 		//|
 		//|-RVA: 0x1AB47B0 Offset: 0x1AB47B0 VA: 0x1AB47B0
@@ -311,7 +390,7 @@ namespace XeApp.Game.Common
 			int i = 0;
 			foreach (Setting s in m_settings)
 			{
-				impl.FindRelative<Transform>(impl, i, transform);
+				impl.FindRelative<Transform>(i, transform, ref s.parent);
 				i++;
 			}
 			OnPostCopy(impl);
@@ -328,9 +407,5 @@ namespace XeApp.Game.Common
 		{
 			return;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x738260 Offset: 0x738260 VA: 0x738260
-		//							 // RVA: 0x1C0D4B0 Offset: 0x1C0D4B0 VA: 0x1C0D4B0
-		//private void <EmitStart>b__24_0(EffectFactoryBase.Instance instance) { }
 	}
 }

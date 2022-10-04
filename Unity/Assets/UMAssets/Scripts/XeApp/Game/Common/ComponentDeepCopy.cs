@@ -113,7 +113,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE66EE0 Offset: 0xE66EE0 VA: 0xE66EE0
-		//private static bool IsEqualsOrSubclassOf(Type this, Type target) { }
+		private static bool IsEqualsOrSubclassOf(Type self, Type target)
+		{
+			return self == target || self.IsSubclassOf(target);
+		}
 
 		//// RVA: 0xE66F40 Offset: 0xE66F40 VA: 0xE66F40
 		//private static bool ContainComponents(ComponentDeepCopy.ObjectData obj, List<ComponentDeepCopy.ComponentData> components) { }
@@ -139,11 +142,38 @@ namespace XeApp.Game.Common
 		//// RVA: 0xE6778C Offset: 0xE6778C VA: 0xE6778C
 		private void RegisterRelative(Transform from, UnityEngine.Object to, Type type)
 		{
-			!!!
+			RelativeData data = new RelativeData();
+			if(to != null)
+			{
+				if(IsEqualsOrSubclassOf(type, typeof(GameObject)))
+				{
+					data.path = MakeRelativePath((to as GameObject).transform, from);
+					LogDebug(string.Format(" - {0}", data.path));
+				}
+				else if (IsEqualsOrSubclassOf(type, typeof(Component)))
+				{
+					data.path = MakeRelativePath((to as Component).transform, from);
+					data.index = System.Array.IndexOf((to as Component).GetComponents(type), to);
+					LogDebug(string.Format(" - {0} ({1})", data.path, data.index));
+				}
+				else
+				{
+					LogError(string.Format("StringLiteral_13620 {0}", type));
+				}
+			}
+			else
+			{
+				LogDebug(string.Format(" - None ({0})", type.Name));
+			}
+			data.type = type;
+			m_relativeDatas.Add(data);
 		}
 
 		//// RVA: -1 Offset: -1
-		//public bool FindRelative<T>(int i, Transform from, ref T result) { }
+		public bool FindRelative<T>(int i, Transform from, ref T result)
+		{
+			return FindRelative(i, from, ref result, null, null);
+		}
 		///* GenericInstMethod :
 		//|
 		//|-RVA: 0x1A0D9A0 Offset: 0x1A0D9A0 VA: 0x1A0D9A0
@@ -152,7 +182,37 @@ namespace XeApp.Game.Common
 		//*/
 
 		//// RVA: -1 Offset: -1
-		//public bool FindRelative<T>(int i, Transform from, ref T result, Action<T> onFound, Action onNotFound) { }
+		public bool FindRelative<T>(int i, Transform from, ref T result, Action<T> onFound, Action onNotFound)
+		{
+			if(string.IsNullOrEmpty(m_relativeDatas[i].path))
+			{
+				LogDebug(string.Format(" - None ({0}) ... StringLiteral_13622", typeof(T).Name));
+			}
+			else
+			{
+				Transform t = FindRelativeByPath(m_copyTo.transform, m_relativeDatas[i].path);
+				if(t != null)
+				{
+					T[] cp = t.GetComponents<T>();
+					if(m_relativeDatas[i].index < cp.Length)
+					{
+						LogDebug(string.Format(" - StringLiteral_21823\n   {0} ({1})", m_relativeDatas[i].path, m_relativeDatas[i].index));
+						result = cp[m_relativeDatas[i].index];
+						if (onFound != null)
+							onFound(result);
+						return true;
+					}
+					LogError(string.Format(" - StringLiteral_21824\n   {0} ({2})\n   {1}", m_relativeDatas[i].path, typeof(T).FullName, m_relativeDatas[i].index));
+				}
+				else
+				{
+					LogError(string.Format(" - StringLiteral_13625\n   {0}", m_relativeDatas[i].path));
+				}
+				if (onNotFound != null)
+					onNotFound();
+			}
+			return false;
+		}
 		///* GenericInstMethod :
 		//|
 		//|-RVA: 0x1A0DA08 Offset: 0x1A0DA08 VA: 0x1A0DA08
@@ -166,25 +226,58 @@ namespace XeApp.Game.Common
 		//public bool FindRelative(int i, Transform from, ref GameObject result, Action<GameObject> onFound, Action onNotFound) { }
 
 		//// RVA: 0xE6748C Offset: 0xE6748C VA: 0xE6748C
-		//public string MakeRelativePath(Transform from, Transform to) { }
+		public string MakeRelativePath(Transform from, Transform to)
+		{
+			string res = "";
+			while(true)
+			{
+				if (to == null)
+					return "";
+				res = to.name + "/" + res;
+				if (to == from)
+					break;
+				to = to.parent;
+			}
+			res = res.Remove(res.Length - 1);
+			return res;
+		}
 
 		//// RVA: 0xE67644 Offset: 0xE67644 VA: 0xE67644
-		//public Transform FindRelativeByPath(Transform root, string path) { }
+		public Transform FindRelativeByPath(Transform root, string path)
+		{
+			int pos = path.IndexOf('/');
+			if (pos < 0)
+			{
+				return root;
+			}
+			return root.Find(path.Remove(0, pos));
+		}
 
 		//// RVA: 0xE68078 Offset: 0xE68078 VA: 0xE68078
 		//public void LogInfo(string log) { }
 
 		//// RVA: 0xE67C90 Offset: 0xE67C90 VA: 0xE67C90
-		//public void LogDebug(string log) { }
+		public void LogDebug(string log)
+		{
+			Log(log, s_logDebugColor);
+			m_logGroups.Add(LogGroup.Debug);
+		}
 
 		//// RVA: 0xE681F8 Offset: 0xE681F8 VA: 0xE681F8
 		//public void LogWarning(string log) { }
 
 		//// RVA: 0xE67D38 Offset: 0xE67D38 VA: 0xE67D38
-		//public void LogError(string log) { }
+		public void LogError(string log)
+		{
+			Log(log, s_logErrColor);
+			m_logGroups.Add(LogGroup.Error);
+		}
 
 		//// RVA: 0xE68120 Offset: 0xE68120 VA: 0xE68120
-		//private void Log(string log, Color color) { }
+		private void Log(string log, Color color)
+		{
+			m_logs.Add(string.Format("<color=#{1}>{0}</color>", log, ColorUtility.ToHtmlStringRGB(color)));
+		}
 
 		//// RVA: 0xE682AC Offset: 0xE682AC VA: 0xE682AC
 		//public IEnumerable<string> IterationLog() { }

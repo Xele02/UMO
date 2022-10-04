@@ -57,8 +57,8 @@ namespace ExternLib
         }
         public static void criAtomExPlayer_StopWithoutReleaseTime(IntPtr player)
         {
-            TodoLogger.Log(0, "criAtomExPlayer_StopWithoutReleaseTime");
-        }
+			criAtomExPlayer_Stop(player);
+		}
         public static void CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear(IntPtr pool)
         {
             TodoLogger.Log(0, "CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear");

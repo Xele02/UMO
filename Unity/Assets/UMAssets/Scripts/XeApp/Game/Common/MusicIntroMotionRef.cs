@@ -14,12 +14,14 @@ namespace XeApp.Game.Common
 			[SerializeField]
 			private bool m_hasTakeoff; // 0xD
 
-			// public bool hasIdle { get; } 0xAE9000
-			// public bool hasTakeoff { get; } 0xAE9008
+			public bool hasIdle { get { return m_hasIdle; } } //0xAE9000
+			public bool hasTakeoff { get { return m_hasTakeoff; } } //0xAE9008
 
 			// RVA: 0xAE8F0C Offset: 0xAE8F0C VA: 0xAE8F0C
 			public AnimationData(Animator animator, bool hasIdle, bool hasTakeoff) : base(default(Animator))
 			{
+				m_hasTakeoff = hasTakeoff;
+				m_hasIdle = hasIdle;
 			}
 
 		}
@@ -37,16 +39,22 @@ namespace XeApp.Game.Common
 		[SerializeField]
 		private List<MusicIntroMotionRef.AnimationData> m_animationDatas; // 0x18
 
-		// public Transform cameraRoot { get; } 0xAE8AF8
-		// public Transform enviromentRoot { get; } 0xAE8B00
-		// public Transform valkyrieRoot { get; } 0xAE8B08
-		// public override int animationDataNum { get; } 0xAE8B10
+		public Transform cameraRoot { get { return m_cameraRoot; } } //0xAE8AF8
+		public Transform enviromentRoot { get { return m_enviromentRoot; } } //0xAE8B00
+		public Transform valkyrieRoot { get { return m_valkyrieRoot; } } //0xAE8B08
+		public override int animationDataNum { get { return m_animationDatas.Count; } } //0xAE8B10
 
 		// // RVA: 0xAE8B88 Offset: 0xAE8B88 VA: 0xAE8B88
-		// public MusicIntroMotionRef.AnimationData GetAnimationData(int index) { }
+		public AnimationData GetAnimationData(int index)
+		{
+			return m_animationDatas[index];
+		}
 
 		// // RVA: 0xAE8C08 Offset: 0xAE8C08 VA: 0xAE8C08 Slot: 5
-		// protected override Animator GetAnimator(int index) { }
+		protected override Animator GetAnimator(int index)
+		{
+			return GetAnimationData(index).animator;
+		}
 
 		// // RVA: 0xAE8CA8 Offset: 0xAE8CA8 VA: 0xAE8CA8 Slot: 6
 		// protected override void ResetAnimationData(Func<Animator, int, int, bool> hasStateMachine) { }

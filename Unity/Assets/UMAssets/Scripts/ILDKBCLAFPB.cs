@@ -180,7 +180,12 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035DD4 Offset: 0x2035DD4 VA: 0x2035DD4
-        // public bool DKECHCHOMEL() { }
+        public bool DKECHCHOMEL_GetValkyrieQuality()
+		{
+			if (DDHCLNFPNGK_RenderQuality == 3)
+				return AHLFOHJMGAI_QualityCustomOther3D == 0;
+			return DDHCLNFPNGK_RenderQuality == 0;
+		}
 
         // // RVA: 0x2035DF0 Offset: 0x2035DF0 VA: 0x2035DF0
         // public bool MIHFCOBBIPJ() { }

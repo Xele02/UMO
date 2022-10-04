@@ -52,8 +52,8 @@ namespace XeApp.Game.Common
 			public int m_color_IBL; // 0x8
 		}
 
-		private Dictionary<int, ValkyrieShaderController.MaterialInfo> m_material_info = new Dictionary<int, MaterialInfo>(); // 0xC
-		private ValkyrieShaderController.ShaderNameId m_shader_nameid; // 0x10
+		private Dictionary<int, MaterialInfo> m_material_info = new Dictionary<int, MaterialInfo>(); // 0xC
+		private ShaderNameId m_shader_nameid; // 0x10
 
 		//// RVA: 0xD2F120 Offset: 0xD2F120 VA: 0xD2F120
 		public ValkyrieShaderController.Type GetShaderType(string a_name)
@@ -163,9 +163,67 @@ namespace XeApp.Game.Common
 		//public void Pause(bool a_pause) { }
 
 		//// RVA: 0xD2A988 Offset: 0xD2A988 VA: 0xD2A988
-		//public void SetIBLColor(ValkyrieColorParam a_color_param) { }
+		public void SetIBLColor(ValkyrieColorParam a_color_param)
+		{
+			if(IsEnable())
+			{
+				for(int i = 0; i < m_material_info.Count; i++)
+				{
+					if(m_material_info[i].m_target_renderer[0].m_type == Type.Default_Hi)
+					{
+						if(m_material_info[i].m_awake != null)
+						{
+							m_material_info[i].m_awake.SetColor(m_shader_nameid.m_color_IBL, a_color_param != null ? a_color_param.colorValkyrie : m_material_info[i].m_default_value.m_awake_color_IBL);
+						}
+						if (m_material_info[i].m_default != null)
+						{
+							m_material_info[i].m_awake.SetColor(m_shader_nameid.m_color_IBL, a_color_param != null ? a_color_param.colorValkyrie : m_material_info[i].m_default_value.m_base_color_IBL);
+						}
+						foreach(var s in m_material_info[i].m_target_renderer)
+						{
+							s.m_renderer.material.SetColor(m_shader_nameid.m_color_IBL, s.m_is_awake ? (a_color_param != null ? a_color_param.colorValkyrie : m_material_info[i].m_default_value.m_awake_color_IBL) : a_color_param != null ? a_color_param.colorValkyrie : m_material_info[i].m_default_value.m_base_color_IBL);
+						}
+					}
+				}
+			}
+		}
 
 		//// RVA: 0xD2A36C Offset: 0xD2A36C VA: 0xD2A36C
-		//public void SetAwakeMaterial(bool a_enable) { }
+		public void SetAwakeMaterial(bool a_enable)
+		{
+			if(IsEnable())
+			{
+				int idx = 0;
+				foreach(var s in m_material_info)
+				{
+					if(s.Value.m_awake != null)
+					{
+						if(a_enable)
+						{
+							foreach(var r in s.Value.m_target_renderer)
+							{
+								if(r.m_material_index == idx)
+								{
+									r.m_renderer.material = s.Value.m_awake;
+									r.m_is_awake = true;
+								}
+							}
+						}
+						else
+						{
+							foreach (var r in s.Value.m_target_renderer)
+							{
+								if (r.m_material_index == idx)
+								{
+									r.m_renderer.material = s.Value.m_default;
+									r.m_is_awake = false;
+								}
+							}
+						}
+					}
+					idx++;
+				}
+			}
+		}
 	}
 }

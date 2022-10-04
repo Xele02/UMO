@@ -34,7 +34,7 @@ public class PNGOLKLFFLH
 		this.GPPEFLKGGGJ_ValkyrieId = GPPEFLKGGGJ_ValkyrieId;
 		NPHOIEOPIJO = BEBJKJKBOGH;
 		AIHCEGFANAM = valkDb.AIHCEGFANAM;
-		LFPHDOFDOOE = valkDb.DAJGPBLEEOB;
+		LFPHDOFDOOE = valkDb.DAJGPBLEEOB_ModelId;
 		IJBLEJOKEFH_ValkyrieName = MessageManager.Instance.GetMessage("master", "vn_" + GPPEFLKGGGJ_ValkyrieId.ToString("D4"));
 		MJJCKMPICIK_PilotName = MessageManager.Instance.GetMessage("master", "v_pn_" + GPPEFLKGGGJ_ValkyrieId.ToString("D4"));
 		KLMPFGOCBHC_ValkyrieDesc = MessageManager.Instance.GetMessage("master", "v_dsc_" + GPPEFLKGGGJ_ValkyrieId.ToString("D4"));
