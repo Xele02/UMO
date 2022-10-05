@@ -89,7 +89,17 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	public Dictionary<string, int> OHJFBLFELNK { get; private set; } // 0x14C KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
 
 	// // RVA: 0xDA0338 Offset: 0xDA0338 VA: 0xDA0338
-	// public int ADBELGIDIEN(int ANAJIAENLNB, bool GIKLNODJKFK) { }
+	public int ADBELGIDIEN(int ANAJIAENLNB_MusicLevel, bool GIKLNODJKFK_IsLine6)
+	{
+		if(!GIKLNODJKFK_IsLine6)
+		{
+			return JKPKJKFJDGL_Progress[ANAJIAENLNB_MusicLevel - 1];
+		}
+		else
+		{
+			return PIBHLAMOJNH[ANAJIAENLNB_MusicLevel - 1];
+		}
+	}
 
 	// // RVA: 0xDA03C8 Offset: 0xDA03C8 VA: 0xDA03C8
 	// public int MMLNFAJOPCB(int ANAJIAENLNB) { }
@@ -104,13 +114,43 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA04D8 Offset: 0xDA04D8 VA: 0xDA04D8
-	// public int AOGJFPLIOGB(int ANAJIAENLNB, bool GIKLNODJKFK) { }
+	public int AOGJFPLIOGB(int ANAJIAENLNB, bool GIKLNODJKFK)
+	{
+		if (!GIKLNODJKFK)
+		{
+			return OHNJBOFLCOL_DMis[ANAJIAENLNB - 1];
+		}
+		else
+		{
+			return KGJDEFCEEAB[ANAJIAENLNB - 1];
+		}
+	}
 
 	// // RVA: 0xDA0568 Offset: 0xDA0568 VA: 0xDA0568
-	// public int GOLHPPFLJNF(int ANAJIAENLNB, bool GIKLNODJKFK) { }
+	public int GOLHPPFLJNF(int ANAJIAENLNB, bool GIKLNODJKFK)
+	{
+		if(!GIKLNODJKFK)
+		{
+			return HHCDCEOJCIH_DBad[ANAJIAENLNB - 1];
+		}
+		else
+		{
+			return PLMFEFIIBFL[ANAJIAENLNB - 1];
+		}
+	}
 
 	// // RVA: 0xDA05F8 Offset: 0xDA05F8 VA: 0xDA05F8
-	// public int AFDONIMNHEJ(int ANAJIAENLNB, bool GIKLNODJKFK) { }
+	public int AFDONIMNHEJ(int ANAJIAENLNB, bool GIKLNODJKFK)
+	{
+		if (!GIKLNODJKFK)
+		{
+			return IMIMFIKCFMK_Heal[ANAJIAENLNB - 1];
+		}
+		else
+		{
+			return BGKMMAGPAMJ[ANAJIAENLNB - 1];
+		}
+	}
 
 	// // RVA: 0xDA0688 Offset: 0xDA0688 VA: 0xDA0688
 	// public int GFODAIJMBAH(int ANAJIAENLNB, bool GIKLNODJKFK) { }
@@ -186,7 +226,17 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	// public int GFIPALLLPMF(int PMKBJMHIFCM, int EILKGEADKGH) { }
 
 	// // RVA: 0xDA12BC Offset: 0xDA12BC VA: 0xDA12BC
-	// public int GAHIBKLEDBF(int AKNELONELJK, bool GIKLNODJKFK) { }
+	public int GAHIBKLEDBF(int AKNELONELJK_Difficulty, bool GIKLNODJKFK_IsLine6)
+	{
+		if(!GIKLNODJKFK_IsLine6)
+		{
+			return DOAAGIMJOMM[AKNELONELJK_Difficulty];
+		}
+		else
+		{
+			return KMJNLIMMCED[AKNELONELJK_Difficulty];
+		}
+	}
 
 	// // RVA: 0xDA135C Offset: 0xDA135C VA: 0xDA135C
 	// public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }

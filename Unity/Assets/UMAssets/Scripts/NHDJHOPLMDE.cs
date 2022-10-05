@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeApp.Game.Common;
 using XeSys;
 
 public class NHDJHOPLMDE
@@ -116,5 +117,18 @@ public class NHDJHOPLMDE
 	//public bool LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN CNLDPKNLBND, EPIFHEDDJAE.JFEIHHBGFPF OAFPGJLCNFM) { }
 
 	//// RVA: 0x1890E18 Offset: 0x1890E18 VA: 0x1890E18
-	//public bool LAKLFHGMCLI(SeriesAttr.Type AIHCEGFANAM) { }
+	public bool LAKLFHGMCLI(SeriesAttr.Type AIHCEGFANAM)
+	{
+		bool res = false;
+		if(EICJJFIBCEF == EPIFHEDDJAE.NGEDJNHECKN.MGJDKBFHDML/*1*/)
+		{
+			res = false;
+			int v = (int)CHOFDPDFPDC;
+			if ((v - 1) > 4)
+				v = 0;
+			if (v == (int)AIHCEGFANAM && CIEOBFIIPLD > 0)
+				res = true;
+		}
+		return res;
+	}
 }

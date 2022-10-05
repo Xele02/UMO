@@ -244,7 +244,7 @@ public interface IRhythmGameHUD
 	// public abstract void DisablePauseButton();
 
 	// // RVA: -1 Offset: -1 Slot: 78
-	// public abstract void EnablePauseButton();
+	void EnablePauseButton();
 
 	// // RVA: -1 Offset: -1 Slot: 79
 	// public abstract void UpdateBattleLimitTime(int ms);

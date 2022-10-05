@@ -223,7 +223,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ(musicInfo.storyMusicId).KEFGPJBKAOD;
+				wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId).KEFGPJBKAOD_WavId;
 			}
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
 			p.KHEKNNFCAOI_Init(teamInfo.prismValkyrieId, 0, 0);

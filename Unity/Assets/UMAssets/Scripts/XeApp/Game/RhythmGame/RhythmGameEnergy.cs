@@ -1,9 +1,23 @@
 using System;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
 {
 	public class RhythmGameEnergy
 	{
+		public enum Mode
+		{
+			Normal = 0,
+			Subgoal = 1,
+			Goal = 2,
+		}
+
+		private class PilotVoiceTimingData
+		{
+			public int threshold; // 0x8
+			public bool played; // 0xC
+		}
+
 		private int basicValue; // 0x8
 		private float awakenIncreaseRate; // 0xC
 		private float awakenDecreaseRate; // 0x10
@@ -14,25 +28,84 @@ namespace XeApp.Game.RhythmGame
 		private int teamPowerValue; // 0x34
 		private Action<int> onPlayPilotVoice; // 0x38
 		private bool usedForceSubgoal; // 0x3C
-		// private RhythmGameEnergy.PilotVoiceTimingData[] pilotVoiceTimingTable; // 0x40
+		private PilotVoiceTimingData[] pilotVoiceTimingTable = new PilotVoiceTimingData[2] {
+			new PilotVoiceTimingData() { threshold = 50, played = false },
+			new PilotVoiceTimingData() { threshold = 100, played = false }
+		}; // 0x40
 
 		public int subgoalValue { get; private set; } // 0x20
 		public int goalValue { get; private set; } // 0x24
 		public int maxValue { get; private set; } // 0x28
 		public int evaluationNotesNum { get; private set; } // 0x30 
-		// public RhythmGameEnergy.Mode mode { get; set; }// get_mode 0xDC5380 set_mode 0xDC53A8
+		public Mode mode { get { return currentValue < goalValue ? (subgoalValue <= currentValue ? Mode.Subgoal : Mode.Normal) : Mode.Goal; } set { return; } }// 0xDC5380 0xDC53A8
 
 		// // RVA: 0xDC53AC Offset: 0xDC53AC VA: 0xDC53AC
-		// public void Initialize(MusicData musicData, GameSetupData.MusicInfo musicInfo, int teamPowerValue, Action<int> onPlayPilotVoice) { }
+		public void Initialize(MusicData musicData, GameSetupData.MusicInfo musicInfo, int teamPowerValue, Action<int> onPlayPilotVoice)
+		{
+			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game;
+			short wavId = musicData.musicBase.KKPAHLMJKIH_WavId;
+			short variationId = musicData.musicBase.BKJGCEOEPFB_VariationId;
+			if(musicInfo.isFreeMode)
+			{
+				KEODKEGFDLD musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId);
+				if (!musicInfo.IsLine6Mode)
+				{
+					subgoalValue = musicdb.HLKHOFPAOMK_SubGoalFreeModeByDiff[(int)musicInfo.difficultyType];
+					goalValue = musicdb.HLLJIICKNIP_GoalFreeModeByDiff[(int)musicInfo.difficultyType];
+					maxValue = musicdb.FENOHOEIJOE_MaxValueFreeModeByDiff[(int)musicInfo.difficultyType];
+				}
+				else
+				{
+					subgoalValue = musicdb.MAGILDGLOKD_SubGoalFreeModeL6ByDiff[(int)musicInfo.difficultyType];
+					goalValue = musicdb.JEANDFEBLIG_GoalFreeModeL6ByDiff[(int)musicInfo.difficultyType];
+					maxValue = musicdb.KFIDHFOGDPJ_MaxValueFreeModeL6ByDiff[(int)musicInfo.difficultyType];
+				}
+			}
+			else
+			{
+				DJNPIGEFPMF musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
+				subgoalValue = musicdb.HLKHOFPAOMK_SubGoalByDiff[(int)musicInfo.difficultyType];
+				goalValue = musicdb.HLLJIICKNIP_GoalByDiff[(int)musicInfo.difficultyType];
+				maxValue = musicdb.FENOHOEIJOE_MaxValueByDiff[(int)musicInfo.difficultyType];
+			}
+			basicValue = gameDb.LECAOCJCEKF_FCoeff0;
+			awakenIncreaseRate = gameDb.IHIONKFAAED_FCoeff1 / 100.0f;
+			awakenDecreaseRate = gameDb.HHPJIALEPEE_FCoeff2 / 100.0f;
+			specialNotesBonusValue = gameDb.BCCKJLPNJJM_FCoeff3;
+			rateMinValue = gameDb.CIFKMCKFMOA_FCoeff4 / 10000.0f;
+			resultRateTable = new float[gameDb.CPNJJKDKNOO_FPt.Count];
+			for(int i = 0; i < gameDb.CPNJJKDKNOO_FPt.Count; i++)
+			{
+				resultRateTable[i] = gameDb.CPNJJKDKNOO_FPt[i] / 100.0f;
+			}
+			evaluationNotesNum = 0;
+			for(int i = 0; i < musicData.musicScoreData.inputNoteTrack.Count; i++)
+			{
+				if(musicData.valkyrieModeStartMillisec >= musicData.musicScoreData.inputNoteTrack[i].time)
+				{
+					evaluationNotesNum++;
+				}
+			}
+			this.teamPowerValue = teamPowerValue;
+			this.onPlayPilotVoice = onPlayPilotVoice;
+		}
 
 		// // RVA: 0xDC5BAC Offset: 0xDC5BAC VA: 0xDC5BAC
 		public void DisableCallbackPilotVoice()
 		{
-			TodoLogger.Log(0, "TODO");
+			onPlayPilotVoice = null;
 		}
 
 		// // RVA: 0xDC5BB8 Offset: 0xDC5BB8 VA: 0xDC5BB8
-		// public void Reset() { }
+		public void Reset()
+		{
+			usedForceSubgoal = false;
+			currentValue = 0;
+			for(int i = 0; i < pilotVoiceTimingTable.Length; i++)
+			{
+				pilotVoiceTimingTable[i].played = false;
+			}
+		}
 
 		// // RVA: 0xDC5C4C Offset: 0xDC5C4C VA: 0xDC5C4C
 		// public int GetGaugeValue() { }
@@ -57,11 +130,5 @@ namespace XeApp.Game.RhythmGame
 
 		// // RVA: 0xDC62A8 Offset: 0xDC62A8 VA: 0xDC62A8
 		// public bool CalcPossiblityNextMode() { }
-
-		// // RVA: 0xDC6314 Offset: 0xDC6314 VA: 0xDC6314
-		public RhythmGameEnergy()
-		{
-			TodoLogger.Log(0, "TODO");
-		}
 	}
 }

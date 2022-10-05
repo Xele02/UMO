@@ -1,11 +1,17 @@
 using XeApp.Core;
 using UnityEngine;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
 {
 	[RequireComponent(typeof(Animator))] // RVA: 0x650CB8 Offset: 0x650CB8 VA: 0x650CB8
 	public class RNoteObject : PoolObject
 	{
+		public delegate void DelegateOverrideNoteJudged(RNoteObject noteObject, ref RhythmGameConsts.NoteResultEx result);
+		public delegate void NoteJudgedDelegate(RNoteObject noteObject, RhythmGameConsts.NoteResultEx result, RhythmGameConsts.NoteJudgeType type);
+		public delegate void NoteBeyondDelegate(RNoteObject noteObject);
+		public delegate void NotePassedDelegate(RNoteObject noteObject);
+
 		[SerializeField]
 		private RNote rnote; // 0x14
 		// private RhythmGameConsts.NoteResultEx m_note_result_ex = new RhythmGameConsts.NoteResultEx(); // 0x24

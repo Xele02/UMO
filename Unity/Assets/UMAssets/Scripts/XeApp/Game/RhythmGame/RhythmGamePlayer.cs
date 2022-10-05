@@ -952,36 +952,109 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BB22C Offset: 0x9BB22C VA: 0x9BB22C
 		private void StartIntroFade()
 		{
-			TodoLogger.Log(0, "StartIntroFade");
 			uguiFader.Fade(0.5f, RhythmGamePlayer.IntroEndFadeColor, RhythmGamePlayer.IntroEndFadeColor);
+			StartCoroutine(WaitIntroFade());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744AD4 Offset: 0x744AD4 VA: 0x744AD4
 		// // RVA: 0x9BB324 Offset: 0x9BB324 VA: 0x9BB324
-		// private IEnumerator WaitIntroFade() { }
+		private IEnumerator WaitIntroFade()
+		{
+			//0xBF41C0
+			while (uguiFader.isFading)
+				yield return null;
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			{
+				musicIntroObject.End();
+			}
+			else
+			{
+				lowModeBackgroundObject.ChangeCardBg();
+			}
+			uguiFader.Fade(1.0f, 0.0f);
+			if (!setting_mv.m_enable)
+				yield break;
+			while (uguiFader.isFading)
+				yield return null;
+			uiController.Hud.EnablePauseButton();
+		}
 
 		// // RVA: 0x9BB3AC Offset: 0x9BB3AC VA: 0x9BB3AC
 		private void OnPlayPilotVoice(int playVoiceId)
 		{
-			TodoLogger.Log(0, "TODO");
+			RhythmGameVoicePlayer.Result res = voicePlayer.ChangePlayVoice(playVoiceId != 0 ? RhythmGameVoicePlayer.Voice.Wave_100 : RhythmGameVoicePlayer.Voice.Wave_50);
+			if(res == RhythmGameVoicePlayer.Result.None)
+			{
+				PilotVoicePlayer.VoiceCategory catId = PilotVoicePlayer.VoiceCategory.Fwave;
+				if(playVoiceId == 0)
+				{
+					if(resource.enterFoldWaveId_50 > -1)
+					{
+						playVoiceId = resource.enterFoldWaveId_50;
+						catId = PilotVoicePlayer.VoiceCategory.Special;
+					}
+					else
+					{
+						catId = PilotVoicePlayer.VoiceCategory.Fwave;
+					}
+				}
+				else
+				{
+					catId = PilotVoicePlayer.VoiceCategory.Fwave;
+					if(playVoiceId == 1)
+					{
+						if(resource.enterFoldWaveId_100 < 0)
+						{
+							playVoiceId = 1;
+							catId = PilotVoicePlayer.VoiceCategory.Fwave;
+						}
+						else
+						{
+							playVoiceId = resource.enterFoldWaveId_100;
+							catId = PilotVoicePlayer.VoiceCategory.Special;
+						}
+					}
+				}
+				SoundManager.Instance.voPilot.Play(catId, playVoiceId);
+			}
+			uiController.Hud.ShowPilotCutin();
 		}
 
 		// // RVA: 0x9BB5F0 Offset: 0x9BB5F0 VA: 0x9BB5F0
 		private void OnPlayPilotVoice0_FromMV()
 		{
-			TodoLogger.Log(0, "OnPlayPilotVoice0_FromMV");
+			OnPlayPilotVoice(0);
 		}
 
 		// // RVA: 0x9BB5F8 Offset: 0x9BB5F8 VA: 0x9BB5F8
 		private void OnPlayPilotVoice1_FromMV()
 		{
-			TodoLogger.Log(0, "OnPlayPilotVoice1_FromMV");
+			OnPlayPilotVoice(1);
 		}
 
 		// // RVA: 0x9BB600 Offset: 0x9BB600 VA: 0x9BB600
 		private void EndNormalMode()
 		{
-			TodoLogger.Log(0, "EndNormalMode");
+			status.directionMode.type = 0;
+			if (status.energy.mode == 0)
+			{
+				status.internalMode.type = 0;
+			}
+			else if (status.energy.mode > 0)
+			{
+				status.internalMode.isValkyriePlayed = true;
+				status.internalMode.type = RhythmGameMode.Type.Valkyrie;
+			}
+			if (setting.m_mode_vl == Setting.VMode.Normal)
+			{
+				status.internalMode.type = 0;
+			}
+			else if (setting.m_mode_vl == Setting.VMode.Valkyrie)
+			{
+				status.internalMode.isValkyriePlayed = true;
+				status.internalMode.type = RhythmGameMode.Type.Valkyrie;
+			}
+			rNoteOwner.OnChangeGameMode();
 		}
 
 		// // RVA: 0x9BB81C Offset: 0x9BB81C VA: 0x9BB81C

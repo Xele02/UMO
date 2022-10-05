@@ -1095,7 +1095,7 @@ namespace XeApp.Game
 			}
 			else
 			{
-				a = master.IBPAFKKEKNK_Music.FLMLJIKBIMJ(mi.storyMusicId).KEFGPJBKAOD;
+				a = master.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(mi.storyMusicId).KEFGPJBKAOD_WavId;
 			}
 			PNGOLKLFFLH b = new PNGOLKLFFLH();
 			b.KHEKNNFCAOI_Init(ti.prismValkyrieId, ti.valkyrieForm, 0);

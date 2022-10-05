@@ -113,7 +113,18 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAEA018 Offset: 0xAEA018 VA: 0xAEA018
-		// public void End() { }
+		public void End()
+		{
+			if(m_coWaitForAnimationEnd != null)
+			{
+				StopCoroutine(m_coWaitForAnimationEnd);
+			}
+			gameObject.SetActive(false);
+			SetAllActive(false);
+			ReleaseParent();
+			isRunning = false;
+			isTakeoff = false;
+		}
 
 		// // RVA: 0xAEA108 Offset: 0xAEA108 VA: 0xAEA108
 		// public void Pause() { }
@@ -167,7 +178,12 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAEA08C Offset: 0xAEA08C VA: 0xAEA08C
-		// private void ReleaseParent() { }
+		private void ReleaseParent()
+		{
+			if (m_releaseData == null)
+				return;
+			m_valkyrie.transform.SetParent(m_releaseData.valkyrieParent, false);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73940C Offset: 0x73940C VA: 0x73940C
 		// // RVA: 0xAE9F8C Offset: 0xAE9F8C VA: 0xAE9F8C

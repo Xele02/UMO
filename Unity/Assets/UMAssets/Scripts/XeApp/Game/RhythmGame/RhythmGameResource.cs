@@ -80,8 +80,19 @@ namespace XeApp.Game.RhythmGame
 		// public int enteredValkyrieModeVoiceId { get; private set; } 0xBF25DC 0xBF5F9C
 		// public int enterdDivaModeVoiceId { get; private set; } 0xBF5FA0 0xBF6058
 		// public int enterdAwakenDivaModeVoiceId { get; private set; } 0xBF605C 0xBF6114
-		// public int enterFoldWaveId_50 { get; private set; } 0xBF6118 0xBF61D0
-		// public int enterFoldWaveId_100 { get; private set; } 0xBF61D4 0xBF628C
+		public int enterFoldWaveId_50 { get {
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if (param == null)
+					return -1;
+				return param.enterdFoldWaveId_50;
+			} private set { return; } } //0xBF6118 0xBF61D0
+		public int enterFoldWaveId_100 { get
+			{
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if (param == null)
+					return -1;
+				return param.enterdFoldWaveId_100;
+			} private set { return; } } //0xBF61D4 0xBF628C
 		// public bool isUITextureResoucesLoaded { get; private set; } 0xBF6290 0xBF62B0
 		public bool is3DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { } }// 0xBF6490 0xBF64BC
 		public bool is2DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { } } //0xBF64C0 0xBF64EC

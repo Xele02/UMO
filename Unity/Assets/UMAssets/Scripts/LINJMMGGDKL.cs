@@ -1,5 +1,5 @@
 
-public class LINJMMGGDKL
+public class LINJMMGGDKL_SecureInt2
 {
 	private int IPKONDLIDHC; // 0x8
 	private int ENOBDCFHELD; // 0xC
@@ -8,14 +8,14 @@ public class LINJMMGGDKL
 	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF = /*4*/FENCAJJBLBH.EIAPDOGALDK.PNLBHBFOECC; // 0x18
 	public FENCAJJBLBH NMNHBJIAPGG; // 0x1C
 
-	public int DNJEJEANJGL { get { return ENOBDCFHELD ^ DLHDPLPLCAC; } set { 
-		KPOCKNCJBPN();
+	public int DNJEJEANJGL_Value { get { return ENOBDCFHELD ^ DLHDPLPLCAC; } set { 
+		KPOCKNCJBPN_CheckSecure();
 		DLHDPLPLCAC = ENOBDCFHELD ^ value;
 		IPKONDLIDHC = FCEJCHGLFGN ^ value;
 	} } //  JADLONAJDAK 0x1805374  JFNEHIGOBHH 0x1805384
 
 	// // RVA: 0x1805488 Offset: 0x1805488 VA: 0x1805488
-	public LINJMMGGDKL()
+	public LINJMMGGDKL_SecureInt2()
 	{
 		IPKONDLIDHC = 0x3842df11; // Inversed ?
 		ENOBDCFHELD = 0x17458e77;
@@ -31,7 +31,7 @@ public class LINJMMGGDKL
 	// public void DNBGDMBCLMI() { }
 
 	// // RVA: 0x18053B4 Offset: 0x18053B4 VA: 0x18053B4
-	public FENCAJJBLBH KPOCKNCJBPN()
+	public FENCAJJBLBH KPOCKNCJBPN_CheckSecure()
 	{
 		if(NMNHBJIAPGG == null)
 		{
