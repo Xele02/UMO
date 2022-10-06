@@ -19,9 +19,18 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDC3BE4 Offset: 0xDC3BE4 VA: 0xDC3BE4
-		//public void IncreaseCombo() { }
+		public void IncreaseCombo()
+		{
+			current++;
+			if (current <= record)
+				return;
+			record = current;
+		}
 
 		//// RVA: 0xDC3C2C Offset: 0xDC3C2C VA: 0xDC3C2C
-		//public void Zero() { }
+		public void Zero()
+		{
+			current = 0;
+		}
 	}
 }

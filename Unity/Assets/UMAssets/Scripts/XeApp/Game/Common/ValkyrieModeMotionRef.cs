@@ -18,10 +18,10 @@ namespace XeApp.Game.Common
 			[SerializeField]
 			private bool m_hasFailed; // 0xF
 
-			//public bool hasEnter { get; } 0x1CE31A8
-			//public bool hasMain { get; } 0x1CE31B0
-			//public bool hasLeave { get; } 0x1CE31B8
-			//public bool hasFailed { get; } 0x1CE31C0
+			public bool hasEnter { get { return m_hasEnter; } } //0x1CE31A8
+			public bool hasMain { get { return m_hasMain; } } //0x1CE31B0
+			public bool hasLeave { get { return m_hasLeave; } } //0x1CE31B8
+			public bool hasFailed { get { return m_hasFailed; } } //0x1CE31C0
 
 			// RVA: 0x1CE3008 Offset: 0x1CE3008 VA: 0x1CE3008
 			public AnimationData(Animator animator, bool hasEnter, bool hasMain, bool hasLeave, bool hasFailed) : base(animator)

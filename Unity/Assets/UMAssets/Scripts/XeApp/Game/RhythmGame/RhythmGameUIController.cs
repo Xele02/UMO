@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -67,7 +68,10 @@ namespace XeApp.Game.RhythmGame
 		// public void UpdateEnergy(int energy) { }
 
 		// // RVA: 0xC0DCF0 Offset: 0xC0DCF0 VA: 0xC0DCF0
-		// public void UpdateEnemyLife(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback) { }
+		public void UpdateEnemyLife(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback)
+		{
+			TodoLogger.Log(0, "UpdateEnemyLife");
+		}
 
 		// // RVA: 0xC0DDFC Offset: 0xC0DDFC VA: 0xC0DDFC
 		// public void UpdateEnemyDamageResult(int result, Vector3 position) { }

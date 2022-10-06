@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -199,7 +201,22 @@ namespace XeApp.Game.Common
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73C3A8 Offset: 0x73C3A8 VA: 0x73C3A8
 		// // RVA: 0xD2A25C Offset: 0xD2A25C VA: 0xD2A25C
-		// protected IEnumerator Co_WaitAnimationEnd(int stateHash, Action onEnd) { }
+		protected IEnumerator Co_WaitAnimationEnd(int stateHash, Action onEnd)
+		{
+			//0xD2B6D8
+			yield return new WaitForSeconds(0.1f);
+			while (true)
+			{
+				AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+				if(state.shortNameHash != stateHash || (!state.loop && state.normalizedTime >= 1))
+				{
+					break;
+				}
+				yield return null;
+			}
+			if (onEnd != null)
+				onEnd();
+		}
 
 		// // RVA: 0xD2A33C Offset: 0xD2A33C VA: 0xD2A33C
 		public bool OnAwakeEffectEmitStart(string name)

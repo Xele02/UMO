@@ -1069,35 +1069,148 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BBA08 Offset: 0x9BBA08 VA: 0x9BBA08
 		private void StartValkyriePreFade()
 		{
-			TodoLogger.Log(0, "StartValkyriePreFade");
+			if(status.internalMode.type == RhythmGameMode.Type.Valkyrie)
+			{
+				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG())
+				{
+					uguiFader.Fade(0.05f, ValkyrieStartFadeColor, ValkyrieStartFadeColor);
+				}
+			}
 		}
 
 		// // RVA: 0x9BBC4C Offset: 0x9BBC4C VA: 0x9BBC4C
 		private void StartValkyrieMode()
 		{
-			TodoLogger.Log(0, "StartValkyrieMode");
+			logger.log.valkyrieModeData.type = status.internalMode.type;
+			if(status.internalMode.type != RhythmGameMode.Type.Valkyrie)
+			{
+				return;
+			}
+			status.directionMode.type = status.internalMode.type;
+			ReJudgeValkyrieNotes();
 		}
 
 		// // RVA: 0x9BC4A0 Offset: 0x9BC4A0 VA: 0x9BC4A0
 		private void StartValkyrieCutscene()
 		{
-			TodoLogger.Log(0, "StartValkyrieCutscene");
+			if (status.internalMode.type != RhythmGameMode.Type.Valkyrie)
+				return;
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG())
+			{
+				uguiFader.Fade(0.05f, ValkyrieStartFadeColor, ValkyrieStartFadeColor);
+				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+				{
+					valkyrieModeObject.Begin(false);
+					valkyrieObject.SetIBLColor(resource.valkyrieModeResource.paramColor);
+				}
+				else
+				{
+					StartCoroutine(Co_2DModeEnemyUIAnim(currentRawMusicMillisec));
+				}
+			}
+			else
+			{
+				StartCoroutine(Co_2DModeEnemyUIAnim(currentRawMusicMillisec));
+			}
+			uiController.Hud.isBattleLimitTimeRunning = true;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744B4C Offset: 0x744B4C VA: 0x744B4C
 		// // RVA: 0x9BC85C Offset: 0x9BC85C VA: 0x9BC85C
-		// private IEnumerator Co_2DModeEnemyUIAnim(int startRawMusicMillisec) { }
+		private IEnumerator Co_2DModeEnemyUIAnim(int startRawMusicMillisec)
+		{
+			TodoLogger.Log(0, "Co_2DModeEnemyUIAnim");
+			yield break;
+		}
 
 		// // RVA: 0x9BC900 Offset: 0x9BC900 VA: 0x9BC900
 		private void EndValkyrieMode()
 		{
-			TodoLogger.Log(0, "EndValkyrieMode");
+			if(setting.m_mode_dv == Setting.DMode.None)
+			{
+				if (!status.directionMode.isValkyriePlayed)
+					return;
+				status.directionMode.type = RhythmGameMode.Type.None;
+				if(status.enemy.mode == RhythmGameEnemyStatus.Mode.Goal)
+				{
+					status.internalMode.isAwakenDivaPlayed = true;
+					status.directionMode.type = RhythmGameMode.Type.AwakenDiva;
+				}
+				else if(status.enemy.mode == RhythmGameEnemyStatus.Mode.Normal)
+				{
+					status.internalMode.type = RhythmGameMode.Type.None;
+				}
+				else if(status.enemy.mode == RhythmGameEnemyStatus.Mode.Subgoal)
+				{
+					status.internalMode.isDivaPlayed = true;
+					status.directionMode.type = RhythmGameMode.Type.Diva;
+				}
+			}
+			else
+			{
+				status.directionMode.type = RhythmGameMode.Type.None;
+				if(setting.m_mode_dv == Setting.DMode.Normal)
+				{
+					status.internalMode.type = RhythmGameMode.Type.Normal;
+				}
+				else if(setting.m_mode_dv == Setting.DMode.Diva)
+				{
+					status.internalMode.isDivaPlayed = true;
+					status.directionMode.type = RhythmGameMode.Type.Diva;
+				}
+				else if(setting.m_mode_dv == Setting.DMode.DivaAwake)
+				{
+					status.internalMode.isAwakenDivaPlayed = true;
+					status.directionMode.type = RhythmGameMode.Type.AwakenDiva;
+				}
+			}
+			rNoteOwner.OnChangeGameMode();
 		}
 
 		// // RVA: 0x9BCB28 Offset: 0x9BCB28 VA: 0x9BCB28
 		private void EndValkyrieCutscene()
 		{
-			TodoLogger.Log(0, "EndValkyrieCutscene");
+			if (!status.directionMode.isValkyriePlayed)
+				return;
+			bool failed = status.internalMode.type < RhythmGameMode.Type.Diva && !setting_mv.m_enable;
+			uiController.Hud.HideValkyrie(failed);
+			if(setting.m_enable_cutin)
+			{
+				if(failed)
+				{
+					if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Failed) == RhythmGameVoicePlayer.Result.None)
+					{
+						SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Valkyrie, 3);
+					}
+				}
+				else
+				{
+					if(status.internalMode.type == RhythmGameMode.Type.AwakenDiva)
+					{
+						if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Success2) == RhythmGameVoicePlayer.Result.None)
+						{
+							SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Valkyrie, 2);
+						}
+					}
+					else
+					{
+						if (voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Success1) == RhythmGameVoicePlayer.Result.None)
+						{
+							SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Valkyrie, 1);
+						}
+					}
+				}
+			}
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			{
+				valkyrieModeObject.SetFailed(failed);
+				valkyrieModeObject.Leave();
+			}
+			else
+			{
+				StartCoroutine(Co_2DModeChangeBg(currentRawMusicMillisec));
+			}
+			uiController.Hud.isBattleLimitTimeRunning = false;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744BC4 Offset: 0x744BC4 VA: 0x744BC4
@@ -1632,7 +1745,36 @@ namespace XeApp.Game.RhythmGame
 		// private void EnterNoteResult(RhythmGameConsts.NoteResultEx a_result_ex, int trackID) { }
 
 		// // RVA: 0x9BBDAC Offset: 0x9BBDAC VA: 0x9BBDAC
-		// private void ReJudgeValkyrieNotes() { }
+		private void ReJudgeValkyrieNotes()
+		{
+			for(int i = 0; i < preJudgeValkyrieNotes.Count; i++)
+			{
+				RNote.ModeInfo info = preJudgeValkyrieNotes[i].rNote.CurrentModeInfo(status.internalMode);
+				if(preJudgeValkyrieNotes[i].rNote.result == RhythmGameConsts.NoteResult.Great || preJudgeValkyrieNotes[i].rNote.result == RhythmGameConsts.NoteResult.Perfect)
+				{
+					status.comboValkyrie.IncreaseCombo();
+				}
+				else
+				{
+					status.comboValkyrie.Zero();
+				}
+				if(status.IsEnableValkyrieAttack())
+				{
+					bool is3DMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
+					bool showValkyrie = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG();
+					status.enemy.Damage(preJudgeValkyrieNotes[i].rNote.result, preJudgeValkyrieNotes[i].rNote.GetIndexInMode(MusicData.NoteModeType.Valkyrie), status.comboValkyrie.current, 1.0f, 1.0f, info.specialNoteType);
+					uiController.UpdateEnemyLife(status.enemy.currentValue, status.enemy.subgoalValue, status.enemy.goalValue, () =>
+					{
+						//0xBF1B5C
+						if (is3DMode && !showValkyrie)
+							return;
+						valkyrieObject.StartTransformAnimation();
+					});
+					//return ????
+				}
+			}
+			preJudgeValkyrieNotes.Clear();
+		}
 
 		// // RVA: 0x9CA6EC Offset: 0x9CA6EC VA: 0x9CA6EC
 		private void StartPlayMusic(int startTime)

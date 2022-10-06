@@ -87,16 +87,42 @@ namespace XeApp.Game.Common
 		// public void Resume() { }
 
 		// // RVA: 0xEA11C0 Offset: 0xEA11C0 VA: 0xEA11C0
-		// public void StartEnterAnimation(bool isDebug) { }
+		public void StartEnterAnimation(bool isDebug)
+		{
+			animator.playableGraph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
+			if (PlayableExtensions.IsValid<Playable>(animator.playableGraph.GetRootPlayable(0)))
+			{
+				PlayableExtensions.SetTime<Playable>(animator.playableGraph.GetRootPlayable(0), 0);
+			}
+			animator.Play(EnterStateHash, 0, 0.0f);
+			m_isShooted = false;
+			m_resetAnimationBaseTime = true;
+		}
 
 		// // RVA: 0xEA1398 Offset: 0xEA1398 VA: 0xEA1398
-		// public void StartMainAnimation() { }
+		public void StartMainAnimation()
+		{
+			animator.Play(MainStateHash, 0, 0.0f);
+		}
 
 		// // RVA: 0xEA146C Offset: 0xEA146C VA: 0xEA146C
 		// public void StartLeaveAnimation() { }
 
 		// // RVA: 0xEA157C Offset: 0xEA157C VA: 0xEA157C
-		// public void StartTransformAnimation() { }
+		public void StartTransformAnimation()
+		{
+			effectFactories.Disable("EF_damage");
+			animator.SetBool(TransformParamStateHash, true);
+			animator.Play(TransformStateHash, 0, 0.0f);
+			isShootTiming = false;
+			CheckShootAction();
+			isTransforming = true;
+			StartCoroutine(Co_WaitAnimationEnd(TransformStateHash, () =>
+			{
+				//0xEA24C8
+				isTransforming = false;
+			}));
+		}
 
 		// // RVA: 0xEA176C Offset: 0xEA176C VA: 0xEA176C
 		// public void SetShootLock(bool isLock) { }

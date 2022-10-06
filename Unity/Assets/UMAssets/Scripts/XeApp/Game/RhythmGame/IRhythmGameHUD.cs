@@ -124,7 +124,7 @@ public interface IRhythmGameHUD
 	// public abstract void UpdateTargetPosition(Vector3 position);
 
 	// // RVA: -1 Offset: -1 Slot: 38
-	// public abstract void HideValkyrie(bool isFaild);
+	public abstract void HideValkyrie(bool isFaild);
 
 	// // RVA: -1 Offset: -1 Slot: 39
 	void ShowPilotCutin();

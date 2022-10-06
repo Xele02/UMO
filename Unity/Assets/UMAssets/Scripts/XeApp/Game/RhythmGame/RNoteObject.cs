@@ -21,7 +21,7 @@ namespace XeApp.Game.RhythmGame
 		// private List<RNoteObject.NotePassedDelegate> passedEventList = new List<RNoteObject.NotePassedDelegate>(); // 0x34
 		// public Func<RhythmGameConsts.NoteResult> funcForceOverwriteNoteResult; // 0x38
 
-		// public RNote rNote { get; private set; } 0xDAB8FC 0xDADE54
+		public RNote rNote { get { return rnote; } private set { rnote = value;  } } //0xDAB8FC 0xDADE54
 		// public RNotePositionAnimator positionAnimator { get; private set; } // 0x18
 		// public Transform judgePointTransform { get; private set; } // 0x1C
 		// public bool isInScreen { get; private set; } // 0x20

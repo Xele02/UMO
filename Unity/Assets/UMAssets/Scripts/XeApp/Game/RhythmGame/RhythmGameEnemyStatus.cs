@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
@@ -39,7 +40,7 @@ namespace XeApp.Game.RhythmGame
 		public int subgoalValue { get; private set; } // 0x14
 		public int goalValue { get; private set; } // 0x18
 		public int evaluationNotesNum { get; private set; } // 0x20
-		//public Mode mode { get; private set; } 0xDC3D04 0xDC3D2C
+		public Mode mode { get { return (currentValue < goalValue ? (subgoalValue <= currentValue ? Mode.Subgoal : Mode.Normal ) : Mode.Goal); } private set { } } //0xDC3D04 0xDC3D2C
 
 		// RVA: 0xDC3D30 Offset: 0xDC3D30 VA: 0xDC3D30
 		public void Initialize(MusicData musicData, GameSetupData.MusicInfo musicInfo, float supportRate, int valkyrieId)
@@ -128,13 +129,46 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDC4A8C Offset: 0xDC4A8C VA: 0xDC4A8C
-		//public int Damage(RhythmGameConsts.NoteResult result, int notesNumberInMode, int comboCount, float damageBonusRate, float hitBonusRate, RhythmGameConsts.SpecialNoteType spType) { }
+		public int Damage(RhythmGameConsts.NoteResult result, int notesNumberInMode, int comboCount, float damageBonusRate, float hitBonusRate, RhythmGameConsts.SpecialNoteType spType)
+		{
+			int res = 0;
+			if(evaluationNotesNum > 0)
+			{
+				currentValue += CalcDamageValue(result, notesNumberInMode, comboCount, damageBonusRate, hitBonusRate, out res);
+				if (result < RhythmGameConsts.NoteResult.Good || spType != RhythmGameConsts.SpecialNoteType.Attack)
+				{
+					// nothing
+				}
+				else
+				{
+					currentValue += specialNotesBonusValue;
+					res = 3;
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0xDC4B50 Offset: 0xDC4B50 VA: 0xDC4B50
-		//private int CalcDamageValue(RhythmGameConsts.NoteResult result, int notesNumberInMode, int comboCount, float damageBonusRate, float hitBonusRate, out int hitResult) { }
+		private int CalcDamageValue(RhythmGameConsts.NoteResult result, int notesNumberInMode, int comboCount, float damageBonusRate, float hitBonusRate, out int hitResult)
+		{
+			int v = gameMaster.FHHPNFAECCJ(comboCount);
+			float hitRate = CalcHitRate(result, hitBonusRate, out hitResult);
+			int i = 0;
+			for (; i < basicValueStepThresholdList.Count; i++)
+			{
+				if ((notesNumberInMode + 1 - AttackComboCount) < basicValueStepThresholdList[i])
+					break;
+			}
+			return Mathf.RoundToInt(hitRate * v / 100.0f * teamAttack * basicValues[i] / evaluationNotesNum * damageBonusRate);
+		}
 
 		//// RVA: 0xDC4D48 Offset: 0xDC4D48 VA: 0xDC4D48
-		//private float CalcHitRate(RhythmGameConsts.NoteResult result, float hitBonusRate, out int hitResult) { }
+		private float CalcHitRate(RhythmGameConsts.NoteResult result, float hitBonusRate, out int hitResult)
+		{
+			int val = (int)((teamAccuracy * resultRateTable[(int)result] - evadeRate) * hitBonusRate);
+			hitResult = gameMaster.FHFLCJHEEPK(val);
+			return gameMaster.IKIGFABDFMB(val) / 100.0f;
+		}
 
 		//// RVA: 0xDC4E28 Offset: 0xDC4E28 VA: 0xDC4E28
 		//public void ForceDefeat() { }

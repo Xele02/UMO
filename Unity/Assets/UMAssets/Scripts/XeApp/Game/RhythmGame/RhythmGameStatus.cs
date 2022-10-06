@@ -63,7 +63,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC0C3F4 Offset: 0xC0C3F4 VA: 0xC0C3F4
-		// public bool IsEnableValkyrieAttack() { }
+		public bool IsEnableValkyrieAttack()
+		{
+			return comboValkyrie.current >= RhythmGameEnemyStatus.AttackComboCount;
+		}
 
 	}
 }

@@ -109,16 +109,52 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CE3CEC Offset: 0x1CE3CEC VA: 0x1CE3CEC
-		//public void Begin(bool isDebug = False) { }
+		public void Begin(bool isDebug = false)
+		{
+			if(m_coWaitForEnterEnd != null)
+			{
+				StopCoroutine(m_coWaitForEnterEnd);
+			}
+			if(m_coWaitForAnimationEnd != null)
+			{
+				StopCoroutine(m_coWaitForAnimationEnd);
+			}
+			SetAllActive(true);
+			isRunning = true;
+			isShootingPhase = false;
+			m_valkyrie.StartEnterAnimation(isDebug);
+			for(int i = 0; i < m_animators.Count; i++)
+			{
+				if(!m_refData.GetAnimationData(i).hasEnter)
+				{
+					m_animators[i].Play(MainStateHash, 0, 0.0f);
+				}
+				else
+				{
+					m_animators[i].Play(EnterStateHash, 0, 0.0f);
+				}
+			}
+			m_resetAnimationBaseTime = true;
+			m_coWaitForEnterEnd = StartCoroutine(Co_WaitForEnterEnd());
+			m_lockOnTarget.Register(m_valkyrie.instance.transform);
+			isInitialized = true;
+			m_isFailed = false;
+		}
 
 		//// RVA: 0x1CE42B4 Offset: 0x1CE42B4 VA: 0x1CE42B4
-		//public void SetFailed(bool failed) { }
+		public void SetFailed(bool failed)
+		{
+			m_isFailed = failed;
+		}
 
 		//// RVA: 0x1CE42BC Offset: 0x1CE42BC VA: 0x1CE42BC
 		//public void SetShootLock(bool isLock) { }
 
 		//// RVA: 0x1CE42F0 Offset: 0x1CE42F0 VA: 0x1CE42F0
-		//public void Leave() { }
+		public void Leave()
+		{
+			!!!
+		}
 
 		//// RVA: 0x1CE4704 Offset: 0x1CE4704 VA: 0x1CE4704
 		//public void End() { }
@@ -225,7 +261,40 @@ namespace XeApp.Game.Common
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73C8A0 Offset: 0x73C8A0 VA: 0x73C8A0
 		//// RVA: 0x1CE422C Offset: 0x1CE422C VA: 0x1CE422C
-		//private IEnumerator Co_WaitForEnterEnd() { }
+		private IEnumerator Co_WaitForEnterEnd()
+		{
+			//0xD26A90
+			yield return new WaitForSeconds(0.5f);
+			while (true)
+			{
+				AnimatorStateInfo info = m_valkyrie.animator.GetCurrentAnimatorStateInfo(0);
+				if (info.normalizedTime >= 1)
+				{
+					break;
+				}
+				yield return null;
+			}
+			m_valkyrie.StartMainAnimation();
+			for(int i = 0; i < m_animators.Count; i++)
+			{
+				if(m_refData.GetAnimationData(i).hasEnter)
+				{
+					while (true)
+					{
+						AnimatorStateInfo info = m_animators[i].GetCurrentAnimatorStateInfo(0);
+						if (info.normalizedTime >= 1)
+							break;
+						yield return null;
+					}
+					m_animators[i].Play(MainStateHash, 0, 0.0f);
+				}
+			}
+			isShootingPhase = true;
+			if (onBeginShooting != null)
+				onBeginShooting();
+			m_lockOnTarget.Begin(3.0f);
+			m_flightSePlayback = SoundManager.Instance.sePlayerGame.Play(13);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73C918 Offset: 0x73C918 VA: 0x73C918
 		//// RVA: 0x1CE467C Offset: 0x1CE467C VA: 0x1CE467C

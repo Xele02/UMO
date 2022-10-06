@@ -45,15 +45,27 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9A922C Offset: 0x9A922C VA: 0x9A922C
-		//public bool IsNone() { }
+		public bool IsNone()
+		{
+			return type_ == Type.None;
+		}
 
 		//// RVA: 0x9A9240 Offset: 0x9A9240 VA: 0x9A9240
-		//public bool IsNormal() { }
+		public bool IsNormal()
+		{
+			return type_ == Type.Normal;
+		}
 
 		//// RVA: 0x9A9250 Offset: 0x9A9250 VA: 0x9A9250
-		//public bool IsValkyrie() { }
+		public bool IsValkyrie()
+		{
+			return type_ == Type.Valkyrie;
+		}
 
 		//// RVA: 0x9A9264 Offset: 0x9A9264 VA: 0x9A9264
-		//public bool IsDiva() { }
+		public bool IsDiva()
+		{
+			return type_ == Type.Diva || type_ == Type.AwakenDiva;
+		}
 	}
 }

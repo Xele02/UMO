@@ -259,7 +259,10 @@ public class ILDKBCLAFPB
         // public float EBBAAPCHNKL() { }
 
         // // RVA: 0x20361A4 Offset: 0x20361A4 VA: 0x20361A4
-        // public bool AOOKLMAPPLG() { }
+        public bool AOOKLMAPPLG()
+		{
+			return CDGKHMEOEMP_ValkyrieMode == 0;
+		}
 
         // // RVA: 0x20361B8 Offset: 0x20361B8 VA: 0x20361B8
         public void AFMDGKBANPH_SetValkyrieMode(bool IPJMPBANBPP)
