@@ -177,7 +177,7 @@ namespace XeApp.Game.Common
 						}
 						if (m_material_info[i].m_default != null)
 						{
-							m_material_info[i].m_awake.SetColor(m_shader_nameid.m_color_IBL, a_color_param != null ? a_color_param.colorValkyrie : m_material_info[i].m_default_value.m_base_color_IBL);
+							m_material_info[i].m_default.SetColor(m_shader_nameid.m_color_IBL, a_color_param != null ? a_color_param.colorValkyrie : m_material_info[i].m_default_value.m_base_color_IBL);
 						}
 						foreach(var s in m_material_info[i].m_target_renderer)
 						{

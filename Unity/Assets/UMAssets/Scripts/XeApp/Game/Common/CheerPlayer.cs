@@ -35,7 +35,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE654CC Offset: 0xE654CC VA: 0xE654CC
-		// public void RequestChangeCueSheet() { }
+		public void RequestChangeCueSheet()
+		{
+			TodoLogger.Log(0, "CheerPlayer RequestChangeCueSheet");
+		}
 
 		// // RVA: 0xE655EC Offset: 0xE655EC VA: 0xE655EC
 		public bool IsLoaded()

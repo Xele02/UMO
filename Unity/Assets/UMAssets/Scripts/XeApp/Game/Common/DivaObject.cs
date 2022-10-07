@@ -388,7 +388,13 @@ namespace XeApp.Game.Common
 		//public IEnumerator CoroutineWaitLockBoneSpring(int a_index = 0, float a_seconds = 0,1) { }
 
 		//// RVA: 0x1BF4E68 Offset: 0x1BF4E68 VA: 0x1BF4E68
-		//public void AwakenAuraOn() { }
+		public void AwakenAuraOn()
+		{
+			if(awakenAuraSwitcher != null)
+			{
+				awakenAuraSwitcher.Switch(true);
+			}
+		}
 
 		//// RVA: 0x1BF40B4 Offset: 0x1BF40B4 VA: 0x1BF40B4
 		public void AwakenAuraOff()

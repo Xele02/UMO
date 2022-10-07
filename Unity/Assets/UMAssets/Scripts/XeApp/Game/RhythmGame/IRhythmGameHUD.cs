@@ -109,13 +109,13 @@ public interface IRhythmGameHUD
 	// public abstract void ShowValkyrie();
 
 	// // RVA: -1 Offset: -1 Slot: 33
-	// public abstract void ShowEnemyStatus();
+	void ShowEnemyStatus();
 
 	// // RVA: -1 Offset: -1 Slot: 34
-	// public abstract void ShowTargetSight();
+	void ShowTargetSight();
 
 	// // RVA: -1 Offset: -1 Slot: 35
-	// public abstract void ShowHitResult();
+	void ShowHitResult();
 
 	// // RVA: -1 Offset: -1 Slot: 36
 	// public abstract void EnemyDamageResult(int result, Vector3 position);
@@ -124,7 +124,7 @@ public interface IRhythmGameHUD
 	// public abstract void UpdateTargetPosition(Vector3 position);
 
 	// // RVA: -1 Offset: -1 Slot: 38
-	public abstract void HideValkyrie(bool isFaild);
+	void HideValkyrie(bool isFaild);
 
 	// // RVA: -1 Offset: -1 Slot: 39
 	void ShowPilotCutin();
@@ -133,7 +133,7 @@ public interface IRhythmGameHUD
 	void ShowDivaCutin();
 
 	// // RVA: -1 Offset: -1 Slot: 41
-	// public abstract void ShowDiva(bool isSpMode);
+	void ShowDiva(bool isSpMode);
 
 	// // RVA: -1 Offset: -1 Slot: 42
 	// public abstract void EntryLiveSkillCutin(LiveSkill liveSkill, Material skillDescription, Material divaIconMaterial);
@@ -262,7 +262,7 @@ public interface IRhythmGameHUD
 	// public abstract void ChangeFaildEnemyStatus();
 
 	// // RVA: -1 Offset: -1 Slot: 84
-	// public abstract void ShowEnemyCutin();
+	void ShowEnemyCutin();
 
 	// // RVA: -1 Offset: -1 Slot: 85
 	// public abstract void SetPlayerDivaId(int divaId);

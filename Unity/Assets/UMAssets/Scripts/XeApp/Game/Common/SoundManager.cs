@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
 using CriWare;
+using System.Collections.Generic;
 
 namespace XeApp.Game.Common
 {
@@ -132,7 +133,37 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x139654C Offset: 0x139654C VA: 0x139654C
-		// public void RequestEntryRhythmGameCueSheet(UnityAction onLoadedCallback, int forceNoteSe = 0) { }
+		public void RequestEntryRhythmGameCueSheet(UnityAction onLoadedCallback, int forceNoteSe = 0)
+		{
+			RemoveSectionallySECueSheet();
+			List<string> strs = new List<string>();
+			strs.Add("cs_se_game");
+			if(forceNoteSe < 1)
+			{
+				strs.Add("cs_se_notes");
+			}
+			else
+			{
+				strs.Add(string.Format("cs_se_notes_{0:000}", forceNoteSe));
+			}
+			StartCoroutine(Co_InstallProcess(strs.ToArray(), () =>
+			{
+				//0x139764C
+				if(forceNoteSe < 1)
+				{
+					sePlayerLongNotes.cueSheet = "cs_se_notes";
+					sePlayerNotes.cueSheet = "cs_se_notes";
+				}
+				else
+				{
+					string str = string.Format("cs_se_notes_{0:000}", forceNoteSe);
+					sePlayerLongNotes.cueSheet = str;
+					sePlayerNotes.cueSheet = str;
+				}
+				if (onLoadedCallback != null)
+					onLoadedCallback();
+			}));
+		}
 
 		// // RVA: 0x139697C Offset: 0x139697C VA: 0x139697C
 		public void RequestEntryMenuCueSheet(UnityAction onLoadedCallback)
@@ -151,11 +182,44 @@ namespace XeApp.Game.Common
 		// public void RequestEntryMiniGameCueSheet(UnityAction onLoadedCallback) { }
 
 		// // RVA: 0x13967AC Offset: 0x13967AC VA: 0x13967AC
-		// private void RemoveSectionallySECueSheet() { }
+		private void RemoveSectionallySECueSheet()
+		{
+			SoundResource.RemoveCueSheet("cs_se_menu");
+			SoundResource.RemoveCueSheet("cs_se_gacha");
+			SoundResource.RemoveCueSheet("cs_se_game");
+			SoundResource.RemoveCueSheet("cs_se_notes");
+			SoundResource.RemoveCueSheet("cs_se_notes_999");
+			SoundResource.RemoveCueSheet("cs_se_result");
+			SoundResource.RemoveCueSheet("cs_se_adv");
+			SoundResource.RemoveCueSheet("cs_se_raid");
+			SoundResource.RemoveCueSheet("cs_se_minigame");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B030 Offset: 0x73B030 VA: 0x73B030
 		// // RVA: 0x13968D4 Offset: 0x13968D4 VA: 0x13968D4
-		// private IEnumerator Co_InstallProcess(string[] cueSheetList, UnityAction onLoadedCallback) { }
+		private IEnumerator Co_InstallProcess(string[] cueSheetList, UnityAction onLoadedCallback)
+		{
+			//0x1397800
+			bool res = false;
+			for(int i = 0; i < cueSheetList.Length; i++)
+			{
+				res |= SoundResource.InstallCueSheet(cueSheetList[i]);
+			}
+			if(res)
+			{
+				yield return new WaitWhile(() =>
+				{
+					//0x13975B0
+					return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB;
+				});
+			}
+			for(int i = 0; i < cueSheetList.Length; i++)
+			{
+				SoundResource.AddCueSheet(cueSheetList[i]);
+			}
+			if (onLoadedCallback != null)
+				onLoadedCallback();
+		}
 
 		// // RVA: 0x1396FA0 Offset: 0x1396FA0 VA: 0x1396FA0
 		public void SetCategoryVolumeFromMark(CategoryId a_id, int a_mark, bool a_is_slive = false)

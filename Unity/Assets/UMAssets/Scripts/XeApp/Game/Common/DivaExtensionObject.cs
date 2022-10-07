@@ -147,7 +147,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BED8C4 Offset: 0x1BED8C4 VA: 0x1BED8C4
-		//public void ChangeMovieMaterialColor(bool isOn) { }
+		public void ChangeMovieMaterialColor(bool isOn)
+		{
+			isMovieMode = isOn;
+			if(isOn)
+			{
+				ChangeColor(new Color(1, 1, 1), new Color(1, 1, 1), 0.4f);
+			}
+		}
 
 		//// RVA: 0x1BED964 Offset: 0x1BED964 VA: 0x1BED964
 		public void UpdateColorByStageLighting(Color mainColor, Color rimColor, float rimPower)

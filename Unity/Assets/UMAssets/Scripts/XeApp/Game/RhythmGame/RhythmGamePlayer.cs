@@ -588,6 +588,13 @@ namespace XeApp.Game.RhythmGame
 			{
 				TodoLogger.Log(0, "InitializeGameData 2D");
 			}
+			TodoLogger.Log(0, "InitializeGameData");
+			logger.Initialize(new RhythmGamePlayLog());
+			logger.SetValkyrieModeTime(resource.musicData.valkyrieModeStartMillisec, resource.musicData.valkyrieModeLeaveMillisec);
+			logger.SetDivaModeTime(resource.musicData.divaModeStartMillisec, resource.musicData.rhythmGameResultStartMillisec);
+			logger.log.isImpossibleValkyrieMode = !status.energy.CalcPossiblityNextMode();
+			logger.log.isImpossibleDivaMode = !status.enemy.CalcPossiblityNextMode();
+
 			TodoLogger.Log(0, "InitializeGameData UI / Sound Effect");
 			bgmPlayer.source.player.SetStartTime(0);
 			bgmPlayer.source.Stop();
@@ -1215,25 +1222,125 @@ namespace XeApp.Game.RhythmGame
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744BC4 Offset: 0x744BC4 VA: 0x744BC4
 		// // RVA: 0x9BD058 Offset: 0x9BD058 VA: 0x9BD058
-		// private IEnumerator Co_2DModeChangeBg(int startRawMusicMillisec) { }
+		private IEnumerator Co_2DModeChangeBg(int startRawMusicMillisec)
+		{
+			TodoLogger.Log(0, "Co_2DModeChangeBg");
+			yield break;
+		}
 
 		// // RVA: 0x9BD0FC Offset: 0x9BD0FC VA: 0x9BD0FC
 		private void StartDivaMode()
 		{
-			TodoLogger.Log(0, "StartDivaMode");
+			logger.log.divaModeData.type = status.internalMode.type;
+			if (status.internalMode.type < RhythmGameMode.Type.Diva)
+				return;
+			status.directionMode.type = status.internalMode.type;
+			uiController.Hud.ShowDiva(status.internalMode.type == RhythmGameMode.Type.AwakenDiva);
 		}
 
 		// // RVA: 0x9BD384 Offset: 0x9BD384 VA: 0x9BD384
 		private void StartDivaCutscene()
 		{
-			TodoLogger.Log(0, "StartDivaCutscene");
+			if (status.internalMode.type < RhythmGameMode.Type.Diva)
+			{
+				bool is3D = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
+				if(status.internalMode.type == RhythmGameMode.Type.AwakenDiva)
+				{
+					SoundManager.Instance.sePlayerGame.Play(16);
+					if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Diva_Awake) == RhythmGameVoicePlayer.Result.None)
+					{
+						DivaVoicePlayer.VoiceCategory cat = DivaVoicePlayer.VoiceCategory.None;
+						int voice = 0;
+						if(resource.enterdAwakenDivaModeVoiceId < 0)
+						{
+							cat = DivaVoicePlayer.VoiceCategory.GameClear;
+							voice = 1;
+						}
+						else
+						{
+							voice = resource.enterdAwakenDivaModeVoiceId;
+							cat = DivaVoicePlayer.VoiceCategory.GameSpecial;
+						}
+						SoundManager.Instance.voDiva.Play(cat, voice);
+					}
+					if(is3D)
+					{
+						gameDivaObject.AwakenAuraOn();
+					}
+				}
+				else
+				{
+					SoundManager.Instance.sePlayerGame.Play(15);
+					if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Diva) == RhythmGameVoicePlayer.Result.None)
+					{
+						DivaVoicePlayer.VoiceCategory cat = DivaVoicePlayer.VoiceCategory.None;
+						int voice = 0;
+						if (resource.enterdDivaModeVoiceId < 0)
+						{
+							cat = DivaVoicePlayer.VoiceCategory.GameClear;
+							voice = 0;
+						}
+						else
+						{
+							voice = resource.enterdDivaModeVoiceId;
+							cat = DivaVoicePlayer.VoiceCategory.GameSpecial;
+						}
+						SoundManager.Instance.voDiva.Play(cat, voice);
+					}
+					if(is3D)
+					{
+						gameDivaObject.AwakenAuraOff();
+					}
+				}
+				if(IsEnableMovie())
+				{
+					divaModeObject.Begin();
+					divaModeObject.SetPreEndMovieCallback(this.EndDivaPreFade, 0.5f);
+					divaModeObject.onEndMovieCallback = this.EndDivaCutscene;
+					gameDivaObject.ChangeMovieMaterialColor(true);
+					for (int i = 0; i < subDivaObject.Length; i++)
+					{
+						if(subDivaObject[i] != null)
+						{
+							subDivaObject[i].ChangeMovieMaterialColor(true);
+						}
+					}
+					foreach(var d in divaExtensionObjectList)
+					{
+						d.ChangeMovieMaterialColor(true);
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x9BDAA0 Offset: 0x9BDAA0 VA: 0x9BDAA0
-		// private void EndDivaPreFade() { }
+		private void EndDivaPreFade()
+		{
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			{
+				uguiFader.Fade(0.5f, DivaModeEndFadeColor, DivaModeEndFadeColor);
+			}
+		}
 
 		// // RVA: 0x9BDC24 Offset: 0x9BDC24 VA: 0x9BDC24
-		// private void EndDivaCutscene() { }
+		private void EndDivaCutscene()
+		{
+			if(IsEnableMovie())
+			{
+				divaModeObject.End();
+				gameDivaObject.ChangeMovieMaterialColor(false);
+				foreach(var d in divaExtensionObjectList)
+				{
+					d.ChangeMovieMaterialColor(false);
+				}
+				for(int i = 0; i < subDivaObject.Length; i++)
+				{
+					if(subDivaObject[i] != null)
+						subDivaObject[i].ChangeMovieMaterialColor(false);
+				}
+				uguiFader.Fade(0.5f, DivaModeEndFadeColor, DivaModeEndFadeColor);
+			}
+		}
 
 		// // RVA: 0x9BDF60 Offset: 0x9BDF60 VA: 0x9BDF60
 		private void OnStartRhythmGameResult()
@@ -1260,7 +1367,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else if(RhythmGameVoicePlayer.Result.Pilot == res)
 			{
-				Debug.LogError("TODO");
+				uiController.Hud.ShowPilotCutin();
 			}
 			else if(RhythmGameVoicePlayer.Result.None == res)
 			{
@@ -1291,7 +1398,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BEC9C Offset: 0x9BEC9C VA: 0x9BEC9C
 		private void MusicIntroStartPlayerCutInCallbackFor3DMode()
 		{
-			TodoLogger.Log(0, "MusicIntroStartPlayerCutInCallbackFor3DMode");
+			MusicIntroStartPlayerCutInCallback();
 		}
 
 		// // RVA: 0x9BECA0 Offset: 0x9BECA0 VA: 0x9BECA0
@@ -1304,31 +1411,59 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BED6C Offset: 0x9BED6C VA: 0x9BED6C
 		private void ValkyrieModeBeginShootingCallback()
 		{
-			TodoLogger.Log(0, "ValkyrieModeBeginShootingCallback");
+			uiController.Hud.ShowHitResult();
 		}
 
 		// // RVA: 0x9BEE64 Offset: 0x9BEE64 VA: 0x9BEE64
 		private void ValkyrieModeEndAnimationCallback()
 		{
-			TodoLogger.Log(0, "ValkyrieModeEndAnimationCallback");
+			valkyrieModeObject.End();
 		}
 
 		// // RVA: 0x9BEE90 Offset: 0x9BEE90 VA: 0x9BEE90
 		private void ValkyrieModeStartPlayerCutInCallback()
 		{
-			TodoLogger.Log(0, "ValkyrieModeStartPlayerCutInCallback");
+			if (eventFireFlags[0])
+				return;
+			eventFireFlags[0] = true;
+			if (!setting.m_enable_cutin)
+				return;
+			SoundManager.Instance.sePlayerGame.Play(7);
+			if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Start) == RhythmGameVoicePlayer.Result.None)
+			{
+				if(resource.enteredValkyrieModeVoiceId < 0)
+				{
+					SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Valkyrie, 0);
+				}
+				else
+				{
+					SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Special, resource.enteredValkyrieModeVoiceId);
+				}
+			}
+			uiController.Hud.ShowPilotCutin();
 		}
 
 		// // RVA: 0x9BF138 Offset: 0x9BF138 VA: 0x9BF138
 		private void ValkyrieModeStartEnemyCutInCallback()
 		{
-			TodoLogger.Log(0, "ValkyrieModeStartEnemyCutInCallback");
+			if (eventFireFlags[1])
+				return;
+			eventFireFlags[1] = true;
+			if (!setting.m_enable_cutin)
+				return;
+			SoundManager.Instance.sePlayerGame.Play(7);
+			uiController.Hud.ShowEnemyCutin();
 		}
 
 		// // RVA: 0x9BF2F4 Offset: 0x9BF2F4 VA: 0x9BF2F4
 		private void ValkyrieModeStartEnemyLockOnCallback()
 		{
-			TodoLogger.Log(0, "ValkyrieModeStartEnemyLockOnCallback");
+			if (eventFireFlags[2])
+				return;
+			eventFireFlags[2] = true;
+			SoundManager.Instance.sePlayerGame.Play(11);
+			uiController.Hud.ShowEnemyStatus();
+			uiController.Hud.ShowTargetSight();
 		}
 
 		// // RVA: 0x9BF538 Offset: 0x9BF538 VA: 0x9BF538
@@ -1647,6 +1782,26 @@ namespace XeApp.Game.RhythmGame
 			//0xBF3B04
 			TodoLogger.Log(0, "Co_WaitRhytmGameEnd");
 			GameManager.FadeOut(0.4f);
+			/*if(soundCheerOrderer != null)
+			{
+				SoundManager.Instance.sePlayerCheer.FadeOut(1.0f);
+			}
+			noteResultCount = new int[5];
+			rNoteOwner.SetupNoteResultData(noteResultCount, logger);
+			noteResultCount_Excellent = rNoteOwner.GetExcellentResultNoteCount();
+			JGEOBNENMAH.HAJIFNABIFF data;
+			MakeClearSetupData(data, noteResultCount, noteResultCount_Excellent, touchedEventItem);
+			int t_next = 0;
+			if (!isClear)
+			{
+				JGEOBNENMAH.HHCJCDFCLOB.EFHMAKNEGEA(data);
+				t_next = 3;
+			}
+			else
+			{
+
+			}*/
+
 			GotoMenuSceneInSuccess(new int[5], 0);
 			UnityEngine.Debug.Log("Exit Co_WaitRhytmGameEnd");
 			yield break;

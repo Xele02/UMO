@@ -329,16 +329,25 @@ namespace XeApp.Game.Common
 		// public void ForcePrismSetting() { }
 
 		// // RVA: 0xE9D288 Offset: 0xE9D288 VA: 0xE9D288
-		// public int ForceNoteSe() { }
+		public int ForceNoteSe()
+		{
+			return (forcePrism != null && forcePrism.MDKNFOIMCJB > 0) ? forcePrism.MDKNFOIMCJB : 0;
+		}
 
 		// // RVA: 0xE9D2A8 Offset: 0xE9D2A8 VA: 0xE9D2A8
 		// public int ForceNoteType() { }
 
 		// // RVA: 0xE9D2C8 Offset: 0xE9D2C8 VA: 0xE9D2C8
-		// public int ForceDivaVoice() { }
+		public int ForceDivaVoice()
+		{
+			return (forcePrism != null && forcePrism.OOFEIPCLEKJ > 0) ? forcePrism.OOFEIPCLEKJ : 0;
+		}
 
 		// // RVA: 0xE9D2E8 Offset: 0xE9D2E8 VA: 0xE9D2E8
-		// public int ForcePilotVoice() { }
+		public int ForcePilotVoice()
+		{
+			return (forcePrism != null && forcePrism.EDDLJBLJJOE > 0) ? forcePrism.EDDLJBLJJOE : 0;
+		}
 
 		// // RVA: 0xE9D308 Offset: 0xE9D308 VA: 0xE9D308
 		// public int ForceBG() { }

@@ -77,9 +77,42 @@ namespace XeApp.Game.RhythmGame
 			{ // 0xBF5F98
 				return;
 			} }
-		// public int enteredValkyrieModeVoiceId { get; private set; } 0xBF25DC 0xBF5F9C
-		// public int enterdDivaModeVoiceId { get; private set; } 0xBF5FA0 0xBF6058
-		// public int enterdAwakenDivaModeVoiceId { get; private set; } 0xBF605C 0xBF6114
+		public int enteredValkyrieModeVoiceId { get
+			{
+				//0xBF25DC 
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if (param == null)
+					return -1;
+				return param.enterdValkyrieModeVoiceId;
+			}
+			private set { return; } } //0xBF5F9C
+		public int enterdDivaModeVoiceId { get
+			{
+				//0xBF5FA0
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if (param == null)
+					return -1;
+				return param.enterdDivaModeVoiceId;
+			}
+			private set {
+				//0xBF6058
+				return;
+			}
+		}  
+		public int enterdAwakenDivaModeVoiceId { get
+			{
+				//0xBF605C
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if (param == null)
+					return -1;
+				return param.enterdAwakenDivaModeVoiceId;
+			}
+			private set
+			{
+				//0xBF6114
+				return;
+			}
+		}  
 		public int enterFoldWaveId_50 { get {
 				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
 				if (param == null)

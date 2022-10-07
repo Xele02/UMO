@@ -1,3 +1,7 @@
+using System.Text;
+using UnityEngine.Events;
+using XeSys;
+
 namespace XeApp.Game.Common
 {
 	public class DivaVoicePlayer : VoicePlayerBase
@@ -41,13 +45,24 @@ namespace XeApp.Game.Common
 		// public void SetEnable(bool a_enable) { }
 
 		// // RVA: 0x1C09D84 Offset: 0x1C09D84 VA: 0x1C09D84
-		// public static string MakeCueSheetName(int divaId) { }
+		public static string MakeCueSheetName(int divaId)
+		{
+			StringBuilder str = new StringBuilder(32);
+			str.SetFormat("cs_diva_{0:D3}", divaId);
+			return str.ToString();
+		}
 
 		// // RVA: 0x1C09E5C Offset: 0x1C09E5C VA: 0x1C09E5C
-		// public void RequestChangeCueSheet(int divaId, UnityAction onChangeCallback) { }
+		public void RequestChangeCueSheet(int divaId, UnityAction onChangeCallback)
+		{
+			RequestChangeCueSheet(MakeCueSheetName(divaId), onChangeCallback);
+		}
 
 		// // RVA: 0x1C09EF8 Offset: 0x1C09EF8 VA: 0x1C09EF8
-		// public void RequestChangeCueSheetForReplacement(int forceDivaId, UnityAction onChangeCallback) { }
+		public void RequestChangeCueSheetForReplacement(int forceDivaId, UnityAction onChangeCallback)
+		{
+			RequestChangeCueSheet(string.Format("cs_change_diva_{0:D3}", forceDivaId), onChangeCallback);
+		}
 
 		// // RVA: 0x1C09FA0 Offset: 0x1C09FA0 VA: 0x1C09FA0
 		// public void RequestChangeCueSheetForLiveStartMulti(int cuesheet_id, UnityAction onChangeCallback) { }

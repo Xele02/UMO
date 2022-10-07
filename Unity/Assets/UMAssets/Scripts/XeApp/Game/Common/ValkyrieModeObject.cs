@@ -40,15 +40,27 @@ namespace XeApp.Game.Common
 
 		public Action onBeginShooting { private get; set; } // 0x58
 		public Action onEndAnimationCallback { private get; set; } // 0x5C
-		public Action onPlayerCutInStart { set { 
-			m_eventListener.onPlayerCutInStart = value;
-		} } //0x1CE31EC
-		public Action onEnemyCutInStart { set { 
-			m_eventListener.onEnemyCutInStart = value; 
-		} } //0x1CE3214
-		public Action onEnemyLockOnStart { set { 
-			m_eventListener.onEnemyLockOnStart = value;
-		} } //0x1CE323C
+		public Action onPlayerCutInStart
+		{
+			set
+			{
+				m_eventListener.onPlayerCutInStart = value;
+			}
+		} //0x1CE31EC
+		public Action onEnemyCutInStart
+		{
+			set
+			{
+				m_eventListener.onEnemyCutInStart = value;
+			}
+		} //0x1CE3214
+		public Action onEnemyLockOnStart
+		{
+			set
+			{
+				m_eventListener.onEnemyLockOnStart = value;
+			}
+		} //0x1CE323C
 		public bool isRunning { get; private set; } // 0x60
 		public bool isShootingPhase { get; private set; } // 0x61
 		public bool isPause { get; private set; } // 0x62
@@ -78,12 +90,12 @@ namespace XeApp.Game.Common
 			{
 				m_animators.Add(m_refData.GetAnimationData(i).animator);
 			}
-			for(int i = 0; i < m_renderers.Count; i++)
+			for (int i = 0; i < m_renderers.Count; i++)
 			{
 				m_renderers[i].enabled = true;
 			}
 			m_modeCamera.enabled = false;
-			for(int i = 0; i < m_animators.Count; i++)
+			for (int i = 0; i < m_animators.Count; i++)
 			{
 				m_animators[i].enabled = false;
 				m_animators[i].playableGraph.SetTimeUpdateMode(UnityEngine.Playables.DirectorUpdateMode.Manual);
@@ -102,7 +114,7 @@ namespace XeApp.Game.Common
 			yield return null;
 			SetAllActive(false);
 			yield return null;
-			for(int i = 0; i < m_renderers.Count; i++)
+			for (int i = 0; i < m_renderers.Count; i++)
 			{
 				m_renderers[i].enabled = false;
 			}
@@ -111,11 +123,11 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CE3CEC Offset: 0x1CE3CEC VA: 0x1CE3CEC
 		public void Begin(bool isDebug = false)
 		{
-			if(m_coWaitForEnterEnd != null)
+			if (m_coWaitForEnterEnd != null)
 			{
 				StopCoroutine(m_coWaitForEnterEnd);
 			}
-			if(m_coWaitForAnimationEnd != null)
+			if (m_coWaitForAnimationEnd != null)
 			{
 				StopCoroutine(m_coWaitForAnimationEnd);
 			}
@@ -123,9 +135,9 @@ namespace XeApp.Game.Common
 			isRunning = true;
 			isShootingPhase = false;
 			m_valkyrie.StartEnterAnimation(isDebug);
-			for(int i = 0; i < m_animators.Count; i++)
+			for (int i = 0; i < m_animators.Count; i++)
 			{
-				if(!m_refData.GetAnimationData(i).hasEnter)
+				if (!m_refData.GetAnimationData(i).hasEnter)
 				{
 					m_animators[i].Play(MainStateHash, 0, 0.0f);
 				}
@@ -153,11 +165,57 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CE42F0 Offset: 0x1CE42F0 VA: 0x1CE42F0
 		public void Leave()
 		{
-			!!!
+			if (isInitialized)
+			{
+				if (m_coWaitForEnterEnd != null)
+					StopCoroutine(m_coWaitForEnterEnd);
+				isShootingPhase = false;
+				if (!m_isFailed)
+				{
+					m_valkyrie.ForceShootStop();
+					m_valkyrie.StartLeaveAnimation();
+					for (int i = 0; i < m_animators.Count; i++)
+					{
+						if (m_refData.GetAnimationData(i).hasLeave)
+						{
+							m_animators[i].Play(LeaveStateHash, 0, 0.0f);
+						}
+					}
+					m_lockOnTarget.End();
+					m_flightSePlayback.Stop(false);
+				}
+				else
+				{
+					for (int i = 0; i < m_animators.Count; i++)
+					{
+						if (m_refData.GetAnimationData(i).hasFailed)
+						{
+							m_animators[i].Play(FailedStateHash, 0, 0.0f);
+						}
+					}
+					m_lockOnTarget.Pause();
+				}
+				m_coWaitForAnimationEnd = StartCoroutine(Co_WaitForAnimationEnd());
+			}
 		}
 
 		//// RVA: 0x1CE4704 Offset: 0x1CE4704 VA: 0x1CE4704
-		//public void End() { }
+		public void End()
+		{
+			if (!isInitialized)
+				return;
+			m_valkyrie.ForceShootStop();
+			if (m_coWaitForEnterEnd != null)
+				StopCoroutine(m_coWaitForEnterEnd);
+			m_lockOnTarget.End();
+			m_lockOnTarget.Unregister();
+			SetAllActive(false);
+			isRunning = false;
+			isShootingPhase = false;
+			if (m_flightSePlayback.GetStatus() == CriAtomExPlayback.Status.Removed)
+				return;
+			m_flightSePlayback.Stop(false);
+		}
 
 		//// RVA: 0x1CE47E4 Offset: 0x1CE47E4 VA: 0x1CE47E4
 		//public void Pause() { }
@@ -183,14 +241,14 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CE4F9C Offset: 0x1CE4F9C VA: 0x1CE4F9C
 		public void ChangeAnimationTime(double time)
 		{
-			if(m_resetAnimationBaseTime)
+			if (m_resetAnimationBaseTime)
 			{
 				m_animationBaseTime = time;
 				m_resetAnimationBaseTime = false;
 			}
-			if(isRunning)
+			if (isRunning)
 			{
-				for(int i = 0; i < m_animators.Count; i++)
+				for (int i = 0; i < m_animators.Count; i++)
 				{
 					m_animators[i].speed = 1;
 					if (PlayableExtensions.IsValid<Playable>(m_animators[i].playableGraph.GetRootPlayable(0)))
@@ -210,11 +268,11 @@ namespace XeApp.Game.Common
 			m_musicCamera.enabled = !active;
 			m_valkyrie.Activate(active);
 			m_modeCamera.enabled = active;
-			for(int i = 0; i < m_animators.Count; i++)
+			for (int i = 0; i < m_animators.Count; i++)
 			{
 				m_animators[i].enabled = active;
 			}
-			for(int i = 0; i < m_renderers.Count; i++)
+			for (int i = 0; i < m_renderers.Count; i++)
 			{
 				m_renderers[i].enabled = active;
 			}
@@ -233,12 +291,12 @@ namespace XeApp.Game.Common
 			m_effectFactory = m_mainObj.GetComponent<EffectFactoryBase>();
 			m_effectFactory.Instantiate();
 			m_lockOnTarget = m_refData.shootToTarget.gameObject.AddComponent<ValkyrieModeLockOnTarget>();
-			if(resource.changeCameraBeginAnimClip != null)
+			if (resource.changeCameraBeginAnimClip != null)
 			{
 				Animator[] anims = m_mainObj.GetComponentsInChildren<Animator>();
-				for(int i = 0; i < anims.Length; i++)
+				for (int i = 0; i < anims.Length; i++)
 				{
-					if(anims[i].name == "battle_cam")
+					if (anims[i].name == "battle_cam")
 					{
 						AnimatorOverrideController animOverride = new AnimatorOverrideController();
 						animOverride.name = "override_battle_cam";
@@ -275,9 +333,9 @@ namespace XeApp.Game.Common
 				yield return null;
 			}
 			m_valkyrie.StartMainAnimation();
-			for(int i = 0; i < m_animators.Count; i++)
+			for (int i = 0; i < m_animators.Count; i++)
 			{
-				if(m_refData.GetAnimationData(i).hasEnter)
+				if (m_refData.GetAnimationData(i).hasEnter)
 				{
 					while (true)
 					{
@@ -298,6 +356,27 @@ namespace XeApp.Game.Common
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73C918 Offset: 0x73C918 VA: 0x73C918
 		//// RVA: 0x1CE467C Offset: 0x1CE467C VA: 0x1CE467C
-		//private IEnumerator Co_WaitForAnimationEnd() { }
+		private IEnumerator Co_WaitForAnimationEnd()
+		{
+			//0xD266B8
+			yield return new WaitForSeconds(0.5f);
+			for (int i = 0; i < m_animators.Count; i++)
+			{
+				if ((!m_isFailed && m_refData.GetAnimationData(i).hasFailed) || (m_isFailed && m_refData.GetAnimationData(i).hasLeave))
+				{
+					while (true)
+					{
+						AnimatorStateInfo info = m_animators[i].GetCurrentAnimatorStateInfo(i);
+						if (info.loop || info.normalizedTime >= 1)
+						{
+							break;
+						}
+						yield return null;
+					}
+				}
+			}
+			if (onEndAnimationCallback != null)
+				onEndAnimationCallback();
+		}
 	}
 }

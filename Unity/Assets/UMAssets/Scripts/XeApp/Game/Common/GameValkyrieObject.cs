@@ -106,7 +106,11 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEA146C Offset: 0xEA146C VA: 0xEA146C
-		// public void StartLeaveAnimation() { }
+		public void StartLeaveAnimation()
+		{
+			animator.Play(EndStateHash, 0, 0.0f);
+			effectFactories.Disable("EF_damage");
+		}
 
 		// // RVA: 0xEA157C Offset: 0xEA157C VA: 0xEA157C
 		public void StartTransformAnimation()
@@ -128,7 +132,11 @@ namespace XeApp.Game.Common
 		// public void SetShootLock(bool isLock) { }
 
 		// // RVA: 0xEA1760 Offset: 0xEA1760 VA: 0xEA1760
-		// public void ForceShootStop() { }
+		public void ForceShootStop()
+		{
+			isShootTiming = false;
+			CheckShootAction();
+		}
 
 		// // RVA: 0xEA1780 Offset: 0xEA1780 VA: 0xEA1780
 		private void OnShootStartEvent()

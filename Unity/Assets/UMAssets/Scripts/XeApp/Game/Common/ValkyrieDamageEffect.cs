@@ -26,9 +26,12 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CDF848 Offset: 0x1CDF848 VA: 0x1CDF848
 		private void ApplyColor(Color color)
 		{
-			for(int i = 0; i < targetRenderer.Count; i++)
+			if (targetRenderer != null)
 			{
-				targetRenderer[i].material.SetColor("_DamageColor", color);
+				for (int i = 0; i < targetRenderer.Count; i++)
+				{
+					targetRenderer[i].material.SetColor("_DamageColor", color);
+				}
 			}
 		}
 	}

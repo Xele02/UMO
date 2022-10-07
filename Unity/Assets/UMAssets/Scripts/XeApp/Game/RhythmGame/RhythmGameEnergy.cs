@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
@@ -117,7 +118,11 @@ namespace XeApp.Game.RhythmGame
 		// public void ChangeValue(RhythmGameConsts.NoteResult result, float bonusRate, RhythmGameConsts.SpecialNoteType spType) { }
 
 		// // RVA: 0xDC5E68 Offset: 0xDC5E68 VA: 0xDC5E68
-		// private int CalcIncreaseValue(RhythmGameConsts.NoteResult result, float bonusRate, int current) { }
+		private int CalcIncreaseValue(RhythmGameConsts.NoteResult result, float bonusRate, int current)
+		{
+			float change = resultRateTable[(int)result] * teamPowerValue * bonusRate;
+			return Mathf.RoundToInt(CalcNotesBasicValue(change, current) * change);
+		}
 
 		// // RVA: 0xDC6288 Offset: 0xDC6288 VA: 0xDC6288
 		// public void ForceChangePercentage100() { }
@@ -126,9 +131,37 @@ namespace XeApp.Game.RhythmGame
 		// private void PlayPilotVoice() { }
 
 		// // RVA: 0xDC60F0 Offset: 0xDC60F0 VA: 0xDC60F0
-		// private float CalcNotesBasicValue(float change, int current) { }
+		private float CalcNotesBasicValue(float change, int current)
+		{
+			if (evaluationNotesNum < 1)
+				return 0;
+			if(change >= 0)
+			{
+				if(current < subgoalValue)
+				{
+					return basicValue / evaluationNotesNum * Mathf.Max((maxValue - current) * 1.0f / maxValue, rateMinValue);
+				}
+				return basicValue / evaluationNotesNum * Mathf.Max((maxValue - current) * 1.0f / maxValue, rateMinValue) * awakenIncreaseRate;
+			}
+			else
+			{
+				if(current < subgoalValue)
+				{
+					return basicValue / evaluationNotesNum * (current / maxValue);
+				}
+				return basicValue / evaluationNotesNum * (current / maxValue) * awakenDecreaseRate;
+			}
+		}
 
 		// // RVA: 0xDC62A8 Offset: 0xDC62A8 VA: 0xDC62A8
-		// public bool CalcPossiblityNextMode() { }
+		public bool CalcPossiblityNextMode()
+		{
+			int current = 0;
+			for(int i = 0; i < evaluationNotesNum; i++)
+			{
+				current += CalcIncreaseValue(RhythmGameConsts.NoteResult.Perfect, 1.0f, current);
+			}
+			return subgoalValue <= current;
+		}
 	}
 }

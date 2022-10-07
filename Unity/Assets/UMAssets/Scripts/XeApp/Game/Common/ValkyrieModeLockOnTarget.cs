@@ -51,15 +51,29 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CE2958 Offset: 0x1CE2958 VA: 0x1CE2958
-		//public void Pause() { }
+		public void Pause()
+		{
+			m_isPause = true;
+		}
 
 		//// RVA: 0x1CE2964 Offset: 0x1CE2964 VA: 0x1CE2964
 		//public void Resume() { }
 
 		//// RVA: 0x1CE2970 Offset: 0x1CE2970 VA: 0x1CE2970
-		//public void End() { }
+		public void End()
+		{
+			m_isRunning = false;
+			m_isPause = false;
+			if(m_target != null)
+			{
+				m_target.localRotation = m_revertToRot;
+			}
+		}
 
 		//// RVA: 0x1CE2A50 Offset: 0x1CE2A50 VA: 0x1CE2A50
-		//public void Unregister() { }
+		public void Unregister()
+		{
+			m_target = null;
+		}
 	}
 }

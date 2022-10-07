@@ -174,7 +174,16 @@ namespace XeApp.Game.RhythmGame
 		//public void ForceDefeat() { }
 
 		//// RVA: 0xDC4E3C Offset: 0xDC4E3C VA: 0xDC4E3C
-		//public bool CalcPossiblityNextMode() { }
+		public bool CalcPossiblityNextMode()
+		{
+			int current = 0;
+			for(int i = 0; i < evaluationNotesNum; i++)
+			{
+				int a;
+				current += CalcDamageValue(RhythmGameConsts.NoteResult.Perfect, i, i + AttackComboCount, 1.0f, 1.0f, out a);
+			}
+			return subgoalValue <= current;
+		}
 
 		//// RVA: 0xDC4F3C Offset: 0xDC4F3C VA: 0xDC4F3C
 		//public bool SetupEnemyLife(SkillBase skill) { }

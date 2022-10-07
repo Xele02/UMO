@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using XeApp.Game.Common;
+using static XeApp.Game.Common.GameSetupData;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -283,22 +284,99 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC8228 Offset: 0xDC8228 VA: 0xDC8228
 		private void WaitDownloadingData()
 		{
+			TeamInfo team = Database.Instance.gameSetup.teamInfo;
+			MusicInfo music = Database.Instance.gameSetup.musicInfo;
+			int forceDivaVoice = Database.Instance.gameSetup.ForceDivaVoice();
+			int forcePilotVoice = Database.Instance.gameSetup.ForcePilotVoice();
+			int divaNum = music.onStageDivaNum;
+			int musicId = music.prismMusicId;
+			EONOEHOKBEB_Music musicInfoDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
+			int wavId = musicInfoDb.KKPAHLMJKIH_WavId;
+			BJPLLEBHAGO divaInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
+			List<int> prime = new List<int>();
+			for (int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum; i++)
+			{
+				prime.Add(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId).IDDHKOEFJFB);
+			}
+			int stageId = 0;
+			if (music.isFreeMode)
+			{
+				stageId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KEFGPJBKAOD_WavId;
+			}
+			else
+			{
+				stageId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(Database.Instance.gameSetup.musicInfo.storyMusicId).KEFGPJBKAOD_WavId;
+			}
 
-			TodoLogger.Log(0, "WaitDownloadingData");
-			int wavId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KKPAHLMJKIH_WavId;
+			PNGOLKLFFLH p = new PNGOLKLFFLH();
+			p.KHEKNNFCAOI_Init(team.prismValkyrieId, 0, 0);
+			int pilotId = p.OPBPKNHIPPE.PFGJJLGLPAC_PilotId;
+			int intro = musicInfoDb.EECJONKNHNK_Vli;
+			int introSky = musicInfoDb.MNEFKDDCEHE_Vlis;
+			int battle = musicInfoDb.DMKCGNMOCCH_Vlb;
 
-			isPilotSoundLoaded = true;
-			isDivaSoundLoaded = true;
-			isBgmSoundLoaded = true;
-			isGameSESoundLoaded = true;
-			isDivaCosSoundLoaded = true;
-			// setup ennemy info
-
+			isBgmSoundLoaded = false;
+			gamePlayer.bgmPlayer.RequestChangeCueSheet(wavId, () =>
+			{
+				isBgmSoundLoaded = true;
+			});
+			isGameSESoundLoaded = false;
+			SoundManager.Instance.RequestEntryRhythmGameCueSheet(() =>
+			{
+				isGameSESoundLoaded = true;
+			}, Database.Instance.gameSetup.ForceNoteSe());
+			isDivaSoundLoaded = false;
+			if (forceDivaVoice < 1)
+			{
+				SoundManager.Instance.voDiva.RequestChangeCueSheet(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId, () =>
+				{
+					isDivaSoundLoaded = true;
+				});
+			}
+			else
+			{
+				SoundManager.Instance.voDiva.RequestChangeCueSheetForReplacement(forceDivaVoice, () =>
+				{
+					isDivaSoundLoaded = true;
+				});
+			}
+			IsRareBreak = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.GOFAPKBNNCL(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
+			if(IsRareBreak)
+			{
+				isDivaCosSoundLoaded = false;
+				SoundManager.Instance.voDivaCos.RequestChangeCueSheetSole(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId, () =>
+				{
+					isDivaCosSoundLoaded = true;
+				});
+			}
+			isPilotSoundLoaded = false;
+			if(forcePilotVoice < 1)
+			{
+				SoundManager.Instance.voPilot.RequestChangeCueSheet(pilotId, () =>
+				{
+					isPilotSoundLoaded = true;
+				});
+			}
+			else
+			{
+				SoundManager.Instance.voPilot.RequestChangeCueSheetForReplacement(forcePilotVoice, () =>
+				{
+					isPilotSoundLoaded = true;
+				});
+			}
+			SoundManager.Instance.sePlayerCheer.RequestChangeCueSheet();
+			int enemyId = music.enemyInfo.EJNIMIAPJFJ_Id;
+			if(rhythmGameResource.paramResource.m_paramEnemy.Check(Database.Instance.gameSetup, ref enemyId))
+			{
+				int prevLS = music.enemyInfo.EDLACELKJIK_LS;
+				int prevCS = music.enemyInfo.NJOPIPNGANO_CS;
+				music.enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[enemyId - 1]);
+				music.enemyInfo.EDLACELKJIK_LS = prevLS;
+				music.enemyInfo.NJOPIPNGANO_CS = prevCS;
+			}
 			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
-				int intro = 0, introSky = 0;
 				rhythmGameResource.paramResource.m_paramIntro.Check(Database.Instance.gameSetup, ref intro, ref introSky);
-				int battle = 0;
 				rhythmGameResource.paramResource.m_paramBattle.Check(Database.Instance.gameSetup, ref battle);
 				rhythmGameResource.LoadUITextureResouces();
 				rhythmGameResource.divaResource.LoadBasicResource(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId,
@@ -306,18 +384,11 @@ namespace XeApp.Game.RhythmGame
 																	Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismCostumeColorId);
 				rhythmGameResource.divaResource.LoadFacialResource(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId, wavId,
 																		Database.Instance.gameSetup.musicInfo.onStageDivaNum);
-				List<int> prime = new List<int>();
-				for(int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum; i++)
-				{
-					prime.Add(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId).IDDHKOEFJFB);
-				}
 				rhythmGameResource.divaResource.LoadMusicAnimationResource(wavId, GameManager.Instance.GetMultipleDanceOverridePrimeId(prime),
 																		Database.Instance.gameSetup.teamInfo.danceDivaList[0].positionId,
 																		Database.Instance.gameSetup.musicInfo.onStageDivaNum,
 																		Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
 				rhythmGameResource.cameraResource.LoadResource(wavId, GameManager.Instance.GetMultipleDanceOverridePrimeId(prime), Database.Instance.gameSetup.musicInfo.onStageDivaNum);
-				int stageId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KEFGPJBKAOD_WavId;
-				// todo story stageid
 				rhythmGameResource.stageResources.LoadResouces(stageId, rhythmGameResource.GetSpecialStageResourceId);
 				rhythmGameResource.valkyrieResource.LoadResources(Database.Instance.gameSetup.teamInfo.prismValkyrieId, introSky, battle);
 				rhythmGameResource.musicIntroResource.LoadResources(intro, introSky, Database.Instance.gameSetup.teamInfo.prismValkyrieId);
@@ -357,7 +428,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				//2d mode
+				TodoLogger.Log(0, "Load 2d mode");
 			}
 
 			ChangeWaitLoadingDataStatus();
@@ -376,7 +447,7 @@ namespace XeApp.Game.RhythmGame
 				if (!rhythmGameResource.is2DModeAllResoucesLoaded)
 					return;
 			}
-			if (isBgmSoundLoaded && isGameSESoundLoaded && isDivaSoundLoaded && !IsRareBreak && isDivaCosSoundLoaded && isPilotSoundLoaded
+			if (isBgmSoundLoaded && isGameSESoundLoaded && isDivaSoundLoaded && (!IsRareBreak || isDivaCosSoundLoaded) && isPilotSoundLoaded
 				&& SoundManager.Instance.sePlayerCheer.IsLoaded() && FacialNameDatabase.isInitialized)
 			{
 				rhythmGameLoadedAction();
