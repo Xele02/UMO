@@ -40,7 +40,18 @@ namespace XeApp.Game.RhythmGame
 		public int subgoalValue { get; private set; } // 0x14
 		public int goalValue { get; private set; } // 0x18
 		public int evaluationNotesNum { get; private set; } // 0x20
-		public Mode mode { get { return (currentValue < goalValue ? (subgoalValue <= currentValue ? Mode.Subgoal : Mode.Normal ) : Mode.Goal); } private set { } } //0xDC3D04 0xDC3D2C
+		public Mode mode { get 
+		{ 
+			if (RuntimeSettings.CurrentSettings.ForceLiveDivaMode)
+			{
+				return Mode.Subgoal;
+			}
+			if (RuntimeSettings.CurrentSettings.ForceLiveAwakenDivaMode)
+			{
+				return Mode.Goal;
+			}
+			return (currentValue < goalValue ? (subgoalValue <= currentValue ? Mode.Subgoal : Mode.Normal ) : Mode.Goal); } private set { } 
+		} //0xDC3D04 0xDC3D2C
 
 		// RVA: 0xDC3D30 Offset: 0xDC3D30 VA: 0xDC3D30
 		public void Initialize(MusicData musicData, GameSetupData.MusicInfo musicInfo, float supportRate, int valkyrieId)
@@ -98,9 +109,10 @@ namespace XeApp.Game.RhythmGame
 			evaluationNotesNum = evaluationNotesNum + 1 - AttackComboCount;
 			basicValueStepThresholdList = new List<int>();
 			int r = 0;
+			int v = 0;
 			for (int i = 0; i < vals.Length; i++)
 			{
-				int v = evaluationNotesNum / vals.Length + r;
+				v += evaluationNotesNum / vals.Length + r;
 				if (i == 1)
 					r += evaluationNotesNum % vals.Length;
 				basicValueStepThresholdList.Add(v);

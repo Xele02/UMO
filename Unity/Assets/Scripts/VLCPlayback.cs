@@ -257,6 +257,15 @@ public class VLCPlayback : MonoBehaviour
         _mediaPlayer.SetRate(1);
     }
 
+    public long GetTime()
+    {
+        if(_mediaPlayer != null)
+        {
+            return  _mediaPlayer.Time;
+        }
+        return 0;
+    }
+
     public void Stop ()
     {
         Debug.Log ("[VLC] Stopping Player !");

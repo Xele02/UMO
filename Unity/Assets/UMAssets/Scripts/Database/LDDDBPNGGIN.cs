@@ -204,7 +204,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		int res = 0;
 		if(NNDGIAEFMOG.Count > 1)
 		{
-			int var4 = 0;
+			/*int var4 = 0;
 			int index = 0;
 			int var1 = 0;
 			int var6 = -1;
@@ -221,7 +221,13 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 				var1 = var5 + 1;
 				var6++;
 				var7 = var5;
-			} while (var4 < NNDGIAEFMOG.Count / 2);
+			} while (var4 < NNDGIAEFMOG.Count / 2);*/
+			for(res = 0; res < NNDGIAEFMOG.Count / 2; res++)
+			{
+				if(NNDGIAEFMOG[res] >= NANNGLGOFKH)
+					return res;
+			}
+			res--;
 		}
 		return res;
 	}

@@ -100,7 +100,7 @@ public class ILDKBCLAFPB
         // public bool FFKLPNPJLMB { get; }
         // public bool FGJBDPOGMDI { get; }
         public bool CIGAPPFDFKL_Is3D { get { return DDHCLNFPNGK_RenderQuality != 2; } private set {} } //MNJOLLGPMPI 0x2035E64 JCCDFGOGFFA 0x2035E8C
-        // public bool OOCKIFIHJJN { get; private set; } CKJIGBCJGMI 0x2035E78 IBPIBMKAMPE 0x2035E90
+        public bool OOCKIFIHJJN { get { return DDHCLNFPNGK_RenderQuality == 2; } private set {} } //CKJIGBCJGMI 0x2035E78 IBPIBMKAMPE 0x2035E90
 
         // // RVA: 0x2035BF0 Offset: 0x2035BF0 VA: 0x2035BF0
         public void PBCBJAPONBF()
@@ -155,7 +155,10 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035D68 Offset: 0x2035D68 VA: 0x2035D68
-        // public bool KKBJCJNAGDB() { }
+        public bool KKBJCJNAGDB()
+		{
+			return NAGJLEIPAAC_Cutin == 0;
+		}
 
         // // RVA: 0x2035D7C Offset: 0x2035D7C VA: 0x2035D7C
         public bool GLKGAOFHLPN()
@@ -188,7 +191,12 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035DF0 Offset: 0x2035DF0 VA: 0x2035DF0
-        // public bool MIHFCOBBIPJ() { }
+        public bool MIHFCOBBIPJ_GetQuality2d()
+		{
+			if(DDHCLNFPNGK_RenderQuality == 3)
+				return FPJHOLMLDGC_QualityCustom2D == 0;
+			return DDHCLNFPNGK_RenderQuality == 0;
+		}
 
         // // RVA: 0x2035E0C Offset: 0x2035E0C VA: 0x2035E0C
         public bool JLEJPKOMKEJ()

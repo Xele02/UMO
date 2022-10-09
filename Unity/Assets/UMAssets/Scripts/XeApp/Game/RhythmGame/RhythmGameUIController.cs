@@ -37,7 +37,12 @@ namespace XeApp.Game.RhythmGame
 		// public void OnUpdate() { }
 
 		// // RVA: 0xC0CC9C Offset: 0xC0CC9C VA: 0xC0CC9C
-		// public void Initialize(RhythmGameResource resource, RhythmGamePlayer.Setting setting, RhythmGamePlayer.SettingMV mvSetting) { }
+		public void Initialize(RhythmGameResource resource, RhythmGamePlayer.Setting setting, RhythmGamePlayer.SettingMV mvSetting)
+		{
+			TodoLogger.Log(0, "uicontroller Initialize");
+			GameObject ui = Instantiate(resource.uiPrefab);
+			Hud =  ui.GetComponent<IRhythmGameHUD>();
+		}
 
 		// // RVA: 0xC0D81C Offset: 0xC0D81C VA: 0xC0D81C
 		public void BeginIntroAnim(Action callback)

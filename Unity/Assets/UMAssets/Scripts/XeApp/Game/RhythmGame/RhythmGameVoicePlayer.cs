@@ -29,12 +29,15 @@ namespace XeApp.Game.RhythmGame
 		// private MusicVoiceChangerParam m_param; // 0x8
 
 		// // RVA: 0x15518BC Offset: 0x15518BC VA: 0x15518BC
-		// public void Initialize(MusicVoiceChangerParam a_param) { }
+		public void Initialize(MusicVoiceChangerParam a_param)
+		{
+			TodoLogger.Log(0, "Voiceplayer Initialize");
+		}
 
 		// // RVA: 0x15518C4 Offset: 0x15518C4 VA: 0x15518C4
 		public Result ChangePlayVoice(Voice a_voice)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "Voice player ChangePlayVoice");
 			return Result.None;
 		}
 

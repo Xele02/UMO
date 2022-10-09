@@ -67,6 +67,13 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceSongUnlock = true;
 	public bool ForceSimulationOpen = true;
 	public bool ForceTutoSkip = true;
+
+	public bool ForceLiveValkyrieMode = true;
+
+	public bool ForceLiveDivaMode = false;
+
+	public bool ForceLiveAwakenDivaMode = true;
+
 	[Header("Local directory where the android directory with asset bundle is. Accept crypted and decrypted bundle.")]
 	public string DataDirectory;
 	[Header("Web url where the game server is running (answering game request). Leave empty to run with offline simulated webserver.")]

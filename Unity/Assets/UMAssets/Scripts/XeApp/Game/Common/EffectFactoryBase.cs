@@ -188,7 +188,12 @@ namespace XeApp.Game.Common
 			}
 
 			//// RVA: 0x1C0E1F8 Offset: 0x1C0E1F8 VA: 0x1C0E1F8
-			//public void PlayAnim(string anim) { }
+			public void PlayAnim(string anim)
+			{
+				if(!hasAnimator)
+					return;
+				animator.Play(anim);
+			}
 
 			//// RVA: 0x1C0D9BC Offset: 0x1C0D9BC VA: 0x1C0D9BC
 			//public void Pause() { }
@@ -354,7 +359,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0CCD8 Offset: 0x1C0CCD8 VA: 0x1C0CCD8
-		//public void PlayAnim(string id, string anim) { }
+		public void PlayAnim(string id, string anim)
+		{
+			Execute(id, (Instance instance) =>
+			{
+				//0x1C0E1C8
+				instance.PlayAnim(anim);
+			});
+		}
 
 		//// RVA: 0x1C0CDBC Offset: 0x1C0CDBC VA: 0x1C0CDBC
 		//public void Pause() { }

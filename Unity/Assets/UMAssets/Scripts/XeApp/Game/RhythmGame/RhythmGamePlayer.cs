@@ -583,12 +583,18 @@ namespace XeApp.Game.RhythmGame
 				musicCameraObject.AttachCameraDvaBillboard(divaObjects);
 				objectRoot2dLayer.SetActive(false);
 				ApplyDimmer();
+				// L 1161
 			}
 			else
 			{
 				TodoLogger.Log(0, "InitializeGameData 2D");
 			}
 			TodoLogger.Log(0, "InitializeGameData");
+
+			// 1209
+			uiController.Initialize(resource, setting, setting_mv);
+
+			// L1603
 			logger.Initialize(new RhythmGamePlayLog());
 			logger.SetValkyrieModeTime(resource.musicData.valkyrieModeStartMillisec, resource.musicData.valkyrieModeLeaveMillisec);
 			logger.SetDivaModeTime(resource.musicData.divaModeStartMillisec, resource.musicData.rhythmGameResultStartMillisec);
@@ -596,9 +602,16 @@ namespace XeApp.Game.RhythmGame
 			logger.log.isImpossibleDivaMode = !status.enemy.CalcPossiblityNextMode();
 
 			TodoLogger.Log(0, "InitializeGameData UI / Sound Effect");
+			// L1504
 			bgmPlayer.source.player.SetStartTime(0);
 			bgmPlayer.source.Stop();
 			bgmPlayer.source.Pause(false);
+
+			// ...
+
+			// L 1867
+			voicePlayer = new RhythmGameVoicePlayer();
+			voicePlayer.Initialize(resource.TryGetMusicVoiceChangerParam());
 		}
 
 		// // RVA: 0x9B9258 Offset: 0x9B9258 VA: 0x9B9258
@@ -1141,7 +1154,7 @@ namespace XeApp.Game.RhythmGame
 				if(status.enemy.mode == RhythmGameEnemyStatus.Mode.Goal)
 				{
 					status.internalMode.isAwakenDivaPlayed = true;
-					status.directionMode.type = RhythmGameMode.Type.AwakenDiva;
+					status.internalMode.type = RhythmGameMode.Type.AwakenDiva;
 				}
 				else if(status.enemy.mode == RhythmGameEnemyStatus.Mode.Normal)
 				{
@@ -1150,7 +1163,7 @@ namespace XeApp.Game.RhythmGame
 				else if(status.enemy.mode == RhythmGameEnemyStatus.Mode.Subgoal)
 				{
 					status.internalMode.isDivaPlayed = true;
-					status.directionMode.type = RhythmGameMode.Type.Diva;
+					status.internalMode.type = RhythmGameMode.Type.Diva;
 				}
 			}
 			else
@@ -1163,12 +1176,12 @@ namespace XeApp.Game.RhythmGame
 				else if(setting.m_mode_dv == Setting.DMode.Diva)
 				{
 					status.internalMode.isDivaPlayed = true;
-					status.directionMode.type = RhythmGameMode.Type.Diva;
+					status.internalMode.type = RhythmGameMode.Type.Diva;
 				}
 				else if(setting.m_mode_dv == Setting.DMode.DivaAwake)
 				{
 					status.internalMode.isAwakenDivaPlayed = true;
-					status.directionMode.type = RhythmGameMode.Type.AwakenDiva;
+					status.internalMode.type = RhythmGameMode.Type.AwakenDiva;
 				}
 			}
 			rNoteOwner.OnChangeGameMode();

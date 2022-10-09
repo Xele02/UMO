@@ -362,11 +362,11 @@ namespace XeApp.Game.Common
 			yield return new WaitForSeconds(0.5f);
 			for (int i = 0; i < m_animators.Count; i++)
 			{
-				if ((!m_isFailed && m_refData.GetAnimationData(i).hasFailed) || (m_isFailed && m_refData.GetAnimationData(i).hasLeave))
+				if ((m_isFailed && m_refData.GetAnimationData(i).hasFailed) || (!m_isFailed && m_refData.GetAnimationData(i).hasLeave))
 				{
 					while (true)
 					{
-						AnimatorStateInfo info = m_animators[i].GetCurrentAnimatorStateInfo(i);
+						AnimatorStateInfo info = m_animators[i].GetCurrentAnimatorStateInfo(0);
 						if (info.loop || info.normalizedTime >= 1)
 						{
 							break;

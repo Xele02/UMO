@@ -3,6 +3,9 @@ using XeApp.Game.Common;
 using System.Collections.Generic;
 using XeApp.Game.RhythmGame.UI;
 using System.Collections;
+using System.Text;
+using XeApp.Core;
+using XeSys;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -463,22 +466,44 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF8874 Offset: 0xBF8874 VA: 0xBF8874
 		public void LoadUITextureResouces()
 		{
-			TodoLogger.Log(0, "LoadUITextureResouces");
-			isUITextureResoucesLoaded_ = true;
-			uiTextureResources = new UITextureResource();
+			StartCoroutine(LoadingUITextureAllResource());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7452DC Offset: 0x7452DC VA: 0x7452DC
 		// // RVA: 0xBF8898 Offset: 0xBF8898 VA: 0xBF8898
-		// private IEnumerator LoadingUITextureAllResource() { }
+		private IEnumerator LoadingUITextureAllResource()
+		{
+			//0xBFD160
+			uiTextureResources = new UITextureResource();
+			m_pilotTexture = new UiPilotTexture();
+			m_enemyPilotTexture = new UiEnemyPilotTexture();
+			m_enemyRobotTexture = new UiEnemyRobotTexture();
+			isUITextureResoucesLoaded_ = false;
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB())
+			{
+				yield return StartCoroutine(LoadingUIDivaSkillCutinTextureResource());
+				yield return StartCoroutine(LoadingUIACTIVESkillIconTextureResource());
+			}
+			yield return StartCoroutine(LoadingUIPrefab());
+			yield return StartCoroutine(LoadPilotTexture());
+			isUITextureResoucesLoaded_ = true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x745354 Offset: 0x745354 VA: 0x745354
 		// // RVA: 0xBF8944 Offset: 0xBF8944 VA: 0xBF8944
-		// private IEnumerator LoadingUIDivaSkillCutinTextureResource() { }
+		private IEnumerator LoadingUIDivaSkillCutinTextureResource()
+		{
+			TodoLogger.Log(0, "LoadingUIDivaSkillCutinTextureResource");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7453CC Offset: 0x7453CC VA: 0x7453CC
 		// // RVA: 0xBF89F0 Offset: 0xBF89F0 VA: 0xBF89F0
-		// private IEnumerator LoadingUIACTIVESkillIconTextureResource() { }
+		private IEnumerator LoadingUIACTIVESkillIconTextureResource()
+		{
+			TodoLogger.Log(0, "LoadingUIACTIVESkillIconTextureResource");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x745444 Offset: 0x745444 VA: 0x745444
 		// // RVA: 0xBF8A9C Offset: 0xBF8A9C VA: 0xBF8A9C
@@ -486,7 +511,84 @@ namespace XeApp.Game.RhythmGame
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7454BC Offset: 0x7454BC VA: 0x7454BC
 		// // RVA: 0xBF8B94 Offset: 0xBF8B94 VA: 0xBF8B94
-		// private IEnumerator LoadingUIPrefab() { }
+		private IEnumerator LoadingUIPrefab()
+		{
+			GameSetupData.MusicInfo musicInfo; // 0x14
+			StringBuilder bundleName; // 0x18
+			StringBuilder assetName; // 0x1C
+			ILDKBCLAFPB.MPHNGGECENI_Option option; // 0x20
+			Font font; // 0x24
+			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x28
+			AssetBundleLoadAssetOperation operation; // 0x2C
+
+			//0xBFC624
+			musicInfo = Database.Instance.gameSetup.musicInfo;
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			option = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options;
+
+			yield return AssetBundleManager.LoadUnionAssetBundle("gm/if/un.xab");
+			
+			if(option.MIHFCOBBIPJ_GetQuality2d())
+			{
+				bundleName.Set("gm/if/hi.xab");
+				if(musicInfo.IsMvMode)
+					assetName.Set("MvUiRoot");
+				else
+					assetName.Set("UiRoot");
+			}
+			else
+			{
+				bundleName.Set("gm/if/lo.xab");
+				if(musicInfo.IsMvMode)
+					assetName.Set("MvUiRoot");
+				else
+					assetName.Set("UiRoot_Low");
+			}
+			
+			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(GameObject));
+			yield return operation;
+
+			uiPrefab = operation.GetAsset<GameObject>();
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			operation = null;
+
+			if(option.MIHFCOBBIPJ_GetQuality2d())
+				bundleName.SetFormat("gm/if/els/{0:D3}/{0:D3}_{1}.xab", 6, "hi");
+			else
+				bundleName.SetFormat("gm/if/els/{0:D3}/{0:D3}_{1}.xab", 6, "lo");
+
+			assetName.SetFormat("{0:D3}", 6);
+
+			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(GameObject));
+			yield return operation;
+
+			enemySkillPrefab = operation.GetAsset<GameObject>();
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			operation = null;
+
+			bundleName.Set("ly/018.xab");
+			font = GameManager.Instance.GetSystemFont();
+
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_Failed");
+			yield return lytAssetOp;
+			yield return lytAssetOp.InitializeLayoutCoroutine(font,(GameObject instance) => {
+				//0xBF93FC
+				faildUiPrefab = instance;
+			});
+
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_GameComplete");
+			yield return lytAssetOp;
+			yield return lytAssetOp.InitializeLayoutCoroutine(font,(GameObject instance) => {
+				//0xBF9404
+				completeUiPrefab = instance;
+			});
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+		}
 
 		// // RVA: 0xBF8C40 Offset: 0xBF8C40 VA: 0xBF8C40
 		// private string GetDivaSkillCutinTextureBundlePath(int divaId, int costumeModelId, int costumeColorId) { }
@@ -496,7 +598,11 @@ namespace XeApp.Game.RhythmGame
 
 		// [IteratorStateMachineAttribute] // RVA: 0x745534 Offset: 0x745534 VA: 0x745534
 		// // RVA: 0xBF8E24 Offset: 0xBF8E24 VA: 0xBF8E24
-		// private IEnumerator LoadPilotTexture() { }
+		private IEnumerator LoadPilotTexture()
+		{
+			TodoLogger.Log(0, "LoadPilotTexture");
+			yield break;
+		}
 
 		// // RVA: 0xBF8ED0 Offset: 0xBF8ED0 VA: 0xBF8ED0
 		public void LoadSpecialResourceFor2DMode(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)

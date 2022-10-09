@@ -52,25 +52,66 @@ namespace XeApp.Game.Common
 		//public void ResumeAll() { }
 
 		//// RVA: 0x1CE0294 Offset: 0x1CE0294 VA: 0x1CE0294
-		//private string ChangeEffectName(string a_name) { }
+		private string ChangeEffectName(string a_name)
+		{
+			string res = a_name;
+			m_list_change_effect.TryGetValue(a_name, out res);
+			return res;
+		}
 
 		//// RVA: 0x1CE0338 Offset: 0x1CE0338 VA: 0x1CE0338
-		//public void Ev_SwitchToFighter() { }
+		public void Ev_SwitchToFighter()
+		{
+			m_fighter.SetActive(true);
+			m_gerwalk.SetActive(false);
+			m_battroid.SetActive(false);
+			for(int i = 0; i < m_formSwitchListeners.Count; i++)
+			{
+				m_formSwitchListeners[i].ToFighter();
+			}
+		}
 
 		//// RVA: 0x1CE04B0 Offset: 0x1CE04B0 VA: 0x1CE04B0
-		//public void Ev_SwitchToGerwalk() { }
+		public void Ev_SwitchToGerwalk()
+		{
+			m_fighter.SetActive(false);
+			m_gerwalk.SetActive(true);
+			m_battroid.SetActive(false);
+			for(int i = 0; i < m_formSwitchListeners.Count; i++)
+			{
+				m_formSwitchListeners[i].ToGerwalk();
+			}
+		}
 
 		//// RVA: 0x1CE0628 Offset: 0x1CE0628 VA: 0x1CE0628
-		//public void Ev_SwitchToBattroid() { }
+		public void Ev_SwitchToBattroid()
+		{
+			m_fighter.SetActive(false);
+			m_gerwalk.SetActive(false);
+			m_battroid.SetActive(true);
+			for(int i = 0; i < m_formSwitchListeners.Count; i++)
+			{
+				m_formSwitchListeners[i].ToBattroid();
+			}
+		}
 
 		//// RVA: 0x1CE07A0 Offset: 0x1CE07A0 VA: 0x1CE07A0
-		//public void Ev_EffectEmitStart(string name) { }
+		public void Ev_EffectEmitStart(string name)
+		{
+			m_effectFactories.EmitStart(ChangeEffectName(name));
+		}
 
 		//// RVA: 0x1CE07DC Offset: 0x1CE07DC VA: 0x1CE07DC
-		//public void Ev_EffectEmitStop(string name) { }
+		public void Ev_EffectEmitStop(string name)
+		{
+			m_effectFactories.EmitStop(ChangeEffectName(name));
+		}
 
 		//// RVA: 0x1CE0818 Offset: 0x1CE0818 VA: 0x1CE0818
-		//public void Ev_EffectDisable(string name) { }
+		public void Ev_EffectDisable(string name)
+		{
+			m_effectFactories.Disable(ChangeEffectName(name));
+		}
 
 		//// RVA: 0x1CE0854 Offset: 0x1CE0854 VA: 0x1CE0854
 		//public void Ev_AwakeEffectEmitStart(string name) { }
@@ -82,15 +123,33 @@ namespace XeApp.Game.Common
 		//public void Ev_AwakeEffectDisable(string name) { }
 
 		//// RVA: 0x1CE21D4 Offset: 0x1CE21D4 VA: 0x1CE21D4
-		//public void Ev_EffectPlayAnim(string name) { }
+		public void Ev_EffectPlayAnim(string name)
+		{
+			string[] strs = name.Split(new char[1] {'|'});
+			if(strs.Length != 2)
+				return;
+			m_effectFactories.PlayAnim(strs[0], strs[1]);
+		}
 
 		//// RVA: 0x1CE22E4 Offset: 0x1CE22E4 VA: 0x1CE22E4
-		//public void Ev_ShootStart() { }
+		public void Ev_ShootStart()
+		{
+			if(onShootStartEvent != null)
+				onShootStartEvent();
+		}
 
 		//// RVA: 0x1CE22F8 Offset: 0x1CE22F8 VA: 0x1CE22F8
-		//public void Ev_ShootStop() { }
+		public void Ev_ShootStop()
+		{
+			if(onShootStopEvent != null)
+				onShootStopEvent();
+		}
 
 		//// RVA: 0x1CE230C Offset: 0x1CE230C VA: 0x1CE230C
-		//public void Ev_ShootSingle() { }
+		public void Ev_ShootSingle()
+		{
+			if(onShootSingleEvent != null)
+				onShootSingleEvent();
+		}
 	}
 }

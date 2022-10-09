@@ -46,13 +46,42 @@ namespace XeApp.Game.Common
 		{
 			if (!isRunning)
 				return;
-			TodoLogger.Log(0, "DivaModeObject LateUpdate");
+			long time = 0;
+			if(moviePlayer.player.frameInfo != null)
+			{
+				time = (long)((moviePlayer.player.frameInfo.time * 1000000) / moviePlayer.player.frameInfo.tunit);
+			}
+			if(onPreEndMovieCallback != null)
+			{
+				if(time >= preEndCallbackMicroSec && playedMicroSec < preEndCallbackMicroSec)
+				{
+					onPreEndMovieCallback();
+				}
+			}
+			playedMicroSec = time;
 		}
 
 		// RVA: 0x1BF0888 Offset: 0x1BF0888 VA: 0x1BF0888
 		public void Initialize(CriManaMovieController movieController)
 		{
-			TodoLogger.Log(0, "DivaModeObject Initialize");
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OOCKIFIHJJN)
+			{
+				gameObject.SetActive(false);
+			}
+			moviePlayer = movieController;
+			movieController.target = m_movieRenderer;
+			moviePlayer.material.mainTextureScale = new Vector2(-1, -1);
+			moviePlayer.material.mainTextureOffset = new Vector2(1, 1);
+			m_releaseData = new ReleaseData();
+			m_releaseData.cullingMask = m_billboardCamera.cullingMask;
+			m_stretchBillboard = gameObject.AddComponent<CameraStretchBillboard>();
+			m_stretchBillboard.Setup(m_billboardCamera, m_billboardDist, () => {
+				//0x1BF142C
+				return 1.777778f;
+			});
+			m_stretchBillboard.enabled = false;
+			gameObject.SetActive(false);
+			isInitialized = true;
 		}
 
 		//// RVA: 0x1BF0CDC Offset: 0x1BF0CDC VA: 0x1BF0CDC

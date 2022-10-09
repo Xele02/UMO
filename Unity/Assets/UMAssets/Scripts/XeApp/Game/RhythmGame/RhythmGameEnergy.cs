@@ -38,7 +38,14 @@ namespace XeApp.Game.RhythmGame
 		public int goalValue { get; private set; } // 0x24
 		public int maxValue { get; private set; } // 0x28
 		public int evaluationNotesNum { get; private set; } // 0x30 
-		public Mode mode { get { return currentValue < goalValue ? (subgoalValue <= currentValue ? Mode.Subgoal : Mode.Normal) : Mode.Goal; } set { return; } }// 0xDC5380 0xDC53A8
+		public Mode mode { get 
+		{ 
+			if (RuntimeSettings.CurrentSettings.ForceLiveValkyrieMode)
+			{
+				return Mode.Goal;
+			}
+			return currentValue < goalValue ? (subgoalValue <= currentValue ? Mode.Subgoal : Mode.Normal) : Mode.Goal; } set { return; } 
+		}// 0xDC5380 0xDC53A8
 
 		// // RVA: 0xDC53AC Offset: 0xDC53AC VA: 0xDC53AC
 		public void Initialize(MusicData musicData, GameSetupData.MusicInfo musicInfo, int teamPowerValue, Action<int> onPlayPilotVoice)

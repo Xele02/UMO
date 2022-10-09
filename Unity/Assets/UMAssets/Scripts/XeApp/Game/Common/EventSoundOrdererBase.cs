@@ -37,7 +37,13 @@ namespace XeApp.Game.Common
 		//public virtual void PlaySoundById(int id) { }
 
 		//// RVA: 0x1C0F824 Offset: 0x1C0F824 VA: 0x1C0F824 Slot: 8
-		//public virtual void PlaySoundByName(string name) { }
+		public virtual void PlaySoundByName(string name)
+		{
+			if(atomSource != null)
+			{
+				playbackNameDictionary.Add(name, atomSource.Play(name));
+			}
+		}
 
 		//// RVA: 0x1C0F918 Offset: 0x1C0F918 VA: 0x1C0F918 Slot: 9
 		public virtual void PlaySoundByName(string name, bool lowLatency)

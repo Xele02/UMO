@@ -104,7 +104,7 @@ namespace CriWare
 			public bool uiRenderMode { get; set; } // 0x81
 			public bool isFrameAvailable { get { return isFrameInfoAvailable;} } //0x29577DC
 			public MovieInfo movieInfo { get { return isMovieInfoAvailable ? _movieInfo : null; } } //0x29577E4
-			// public FrameInfo frameInfo { get; } 0x29577F8
+			public FrameInfo frameInfo { get { return isFrameInfoAvailable ? _frameInfo : null; } } //0x29577F8
 			public Player.Status status { get {
 				Status st = _nativeStatus;
 				if(wasStopping)

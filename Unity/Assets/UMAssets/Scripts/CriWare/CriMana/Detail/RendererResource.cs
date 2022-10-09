@@ -192,7 +192,7 @@ namespace CriWare.CriMana.Detail
 		#if UNITY_ANDROID
 		protected static extern bool CRIWARED6D2B5F7(int player_id, int num_textures, IntPtr[] tex_ptrs, [In] [Out] FrameInfo frame_info, ref bool frame_drop) { }
 		#else
-		protected static bool CRIWARED6D2B5F7(int player_id, int num_textures, IntPtr[] tex_ptrs, [In] [Out] FrameInfo frame_info, ref bool frame_drop)
+		protected static bool CRIWARED6D2B5F7(int player_id, int num_textures, IntPtr[] tex_ptrs, FrameInfo frame_info, ref bool frame_drop)
 		{
 			return ExternLib.LibCriWare.CRIWARED6D2B5F7(player_id, num_textures, tex_ptrs, frame_info, ref frame_drop);
 		}

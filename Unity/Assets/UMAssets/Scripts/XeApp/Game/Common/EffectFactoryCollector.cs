@@ -91,7 +91,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0EF30 Offset: 0x1C0EF30 VA: 0x1C0EF30
-		//public void PlayAnim(string id, string anim) { }
+		public void PlayAnim(string id, string anim)
+		{
+			for (int i = 0; i < m_collection.Count; i++)
+			{
+				m_collection[i].PlayAnim(id, anim);
+			}
+		}
 
 		//// RVA: 0x1C0F020 Offset: 0x1C0F020 VA: 0x1C0F020
 		//public void PauseAll() { }
