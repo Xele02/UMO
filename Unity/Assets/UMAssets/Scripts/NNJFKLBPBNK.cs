@@ -1,4 +1,5 @@
 
+public class NNJFKLBPBNK { }
 public class NNJFKLBPBNK_SecureString
 {
 	private byte[] DLHDPLPLCAC; // 0x8

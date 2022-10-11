@@ -3,6 +3,7 @@ using XeApp.Game.RhythmGame.UI;
 using XeApp.Game.Common;
 using System.Collections;
 using System.Collections.Generic;
+using XeSys;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -205,10 +206,64 @@ namespace XeApp.Game.RhythmGame
 		// public static GameObject RhythmGameInstantiatePrefab(Object prefab) { }
 
 		// // RVA: 0xDCD510 Offset: 0xDCD510 VA: 0xDCD510
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			GameManager.Instance.RemovePushBackButtonHandler(this.OnPushBackButton);
+		}
 
 		// // RVA: 0xDCD5EC Offset: 0xDCD5EC VA: 0xDCD5EC
-		// private void Update() { }
+		private void Update()
+		{
+			for(int i = 0; i < m_touchAreas.Length; i++)
+			{
+				if(m_touchAreas[i].collider != null)
+				{
+					if (!m_touchAreas[i].isSelected)
+					{
+						for (int fingerId = 0; fingerId < InputManager.fingerCount; fingerId++)
+						{
+							TouchInfoRecord touchInfo = InputManager.Instance.GetTouchInfoRecord(fingerId);
+							if (touchInfo != null)
+							{
+								if (!touchInfo.currentInfo.isIllegal)
+								{
+									if (touchInfo.currentInfo.isBegan)
+									{
+										Vector3 worldPos = m_uiCamera.ScreenToWorldPoint(touchInfo.currentInfo.nativePosition);
+										if (m_touchAreas[i].collider.OverlapPoint(worldPos))
+										{
+											m_touchAreas[i].isSelected = true;
+											m_touchAreas[i].selectedFingerId = fingerId;
+											m_touchAreas[i].pusheEvent.Invoke();
+											break;
+										}
+									}
+								}
+							}
+						}
+					}
+					else
+					{
+						TouchInfoRecord infoRecord = InputManager.Instance.GetTouchInfoRecord(m_touchAreas[i].selectedFingerId);
+						if (infoRecord.currentInfo.isEnded)
+						{
+							Vector3 worldPos = m_uiCamera.ScreenToWorldPoint(infoRecord.currentInfo.nativePosition);
+							if (m_touchAreas[i].collider.OverlapPoint(worldPos))
+							{
+								if (m_touchAreas[i].selectedEvent != null)
+									m_touchAreas[i].selectedEvent.Invoke();
+							}
+							else
+							{
+								if (m_touchAreas[i].exitEvent != null)
+									m_touchAreas[i].exitEvent.Invoke();
+							}
+							m_touchAreas[i].isSelected = false;
+						}
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xDCD5F0 Offset: 0xDCD5F0 VA: 0xDCD5F0
 		// private void UpdateInput() { }
@@ -440,7 +495,10 @@ namespace XeApp.Game.RhythmGame
 		// private IEnumerator WaitEnterAnimeCoroutine(Action end) { }
 
 		// // RVA: 0xDD20C8 Offset: 0xDD20C8 VA: 0xDD20C8
-		// private void OnPushBackButton() { }
+		private void OnPushBackButton()
+		{
+			TodoLogger.Log(0, "Hud OnPushBackButton");
+		}
 
 		// // RVA: 0xDD22C4 Offset: 0xDD22C4 VA: 0xDD22C4
 		// public void OnPauseButtonSelected() { }

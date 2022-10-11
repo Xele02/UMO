@@ -6,6 +6,7 @@ using System.Collections;
 using System.Text;
 using XeApp.Core;
 using XeSys;
+using System;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -235,7 +236,17 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF5ADC Offset: 0xBF5ADC VA: 0xBF5ADC
 		public MusicVoiceChangerParam TryGetMusicVoiceChangerParam()
 		{
-			TodoLogger.Log(0, "TODO");
+			if(musicVoiceChangerResource != null)
+			{
+				if(musicVoiceChangerResource.param != null)
+				{
+					return musicVoiceChangerResource.param;
+				}
+				else if (!throwedVoiceParamChangerParamException)
+				{
+					throw new MusicVoiceChangerParamNotFoundException("wavId=" + musicVoiceChangerResource.wavId + ",assetId=" + musicVoiceChangerResource.assetId);
+				}
+			}
 			return null;
 		}
 
@@ -432,7 +443,16 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF830C Offset: 0xBF830C VA: 0xBF830C
 		private void LoadMusicVoiceChangerResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			TodoLogger.Log(0, "LoadMusicVoiceChangerResource");
+			Destroy(musicVoiceChangerResource);
+			List<MusicDirectionParamBase.ResourceData> resources = musicData.musicParam.CheckMusicVoiceChangerResourceId(settingList);
+			if(resources.Count > 0)
+			{
+				if(resources[0].id > 0)
+				{
+					musicVoiceChangerResource = gameObject.AddComponent<MusicVoiceChangerResource>();
+					musicVoiceChangerResource.LoadResouces(wavId, resources[0].id, stageDivaNum);
+				}
+			}
 		}
 
 		// // RVA: 0xBF8524 Offset: 0xBF8524 VA: 0xBF8524
@@ -493,8 +513,18 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF8944 Offset: 0xBF8944 VA: 0xBF8944
 		private IEnumerator LoadingUIDivaSkillCutinTextureResource()
 		{
+			StringBuilder bundleName; // 0x14
+			StringBuilder assetName; // 0x18
+			GameSetupData.TeamInfo teamInfo; // 0x1C
+			int i; // 0x20
+			AssetBundleLoadAllAssetOperationBase operation; // 0x24
+			int j; // 0x28
+			PPGHMBNIAEC masterSkill; // 0x2C
+			int k; // 0x30
+
 			TodoLogger.Log(0, "LoadingUIDivaSkillCutinTextureResource");
-			yield break;
+			//0xBFBA2C
+			yield return null;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7453CC Offset: 0x7453CC VA: 0x7453CC
@@ -645,4 +675,16 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF9438 Offset: 0xBF9438 VA: 0xBF9438
 		// private bool <Co_LoadSpecialDirectionResourceFor2DMode>b__108_0() { }
 	}
+}
+
+public class MusicVoiceChangerParamNotFoundException : Exception
+{
+	// RVA: 0x17BE9F0 Offset: 0x17BE9F0 VA: 0x17BE9F0
+	public MusicVoiceChangerParamNotFoundException() { }
+
+	// RVA: 0x17BEA74 Offset: 0x17BEA74 VA: 0x17BEA74
+	public MusicVoiceChangerParamNotFoundException(string message) : base(message) { }
+
+	// RVA: 0x17BEB00 Offset: 0x17BEB00 VA: 0x17BEB00
+	public MusicVoiceChangerParamNotFoundException(string message, Exception inner) : base(message, inner) { }
 }
