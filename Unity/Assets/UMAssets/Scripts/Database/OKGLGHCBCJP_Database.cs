@@ -430,7 +430,7 @@ public class OKGLGHCBCJP_Database
 		// {(int)BEOKNKGHFFE_SectionName.KOALKJHIHFC_RareUpItem,() => { return new CKDOOBKOJBB(); } }, //0x149FE58				"rareup_item",
 		{(int)BEOKNKGHFFE_Section.KNMIJOPCJCH_Scene,() => { return new MLIBEPGADJH_Scene(); } }, //0x149FEC4					"scene",
 		// {(int)BEOKNKGHFFE_SectionName.ELBGPMIFOHO_Shop,() => { return new BKPAPCMJKHE(); } }, //0x149FF30				"shop",
-		// {(int)BEOKNKGHFFE_SectionName.ABANJLALLBK_Skill,() => { return new JNKEEAOKNCI(); } }, //0x149FF9C				"skill",
+		{(int)BEOKNKGHFFE_Section.ABANJLALLBK_Skill,() => { return new JNKEEAOKNCI_Skill(); } }, //0x149FF9C				"skill",
 		// {(int)BEOKNKGHFFE_SectionName.HGOGFPOCKFA_Sns,() => { return new BOKMNHAFJHF(); } }, //0x14A0008				"sns",
 		// {(int)BEOKNKGHFFE_SectionName.LCEEHPPLHNC_SpItem,() => { return new PPNFHHPJOKK(); } }, //0x14A0074				"sp_item",
 		// {(int)BEOKNKGHFFE_SectionName.AOPBBHMIEPB_Story,() => { return new LAEGMENIEDB(); } }, //0x14A00E0				"story",
@@ -503,7 +503,7 @@ public class OKGLGHCBCJP_Database
 	// public CKDOOBKOJBB KKIMFMKOHFH { get; private set; } // 0xE4 NFOFMEKFHEA AMANIEHMCLH OHKJEENNABM
 	   public MLIBEPGADJH_Scene ECNHDEHADGL_Scene { get; private set; } // 0xE8 IEIOOBGMFNI ACAKHGDFOPE MINEODNFCJG
 	// public BKPAPCMJKHE IFLGCDGOLOP { get; private set; } // 0xEC LPLEPMGGDMC JPPGBAEFJHD NNMGMDJDAEB
-	// public JNKEEAOKNCI FOFADHAENKC { get; private set; } // 0xF0 EMMJGCNLPIC AIKMDJIOIPO ODHIIKEDPDK
+	public JNKEEAOKNCI_Skill FOFADHAENKC_Skill { get; private set; } // 0xF0 EMMJGCNLPIC AIKMDJIOIPO ODHIIKEDPDK
 	// public BOKMNHAFJHF OMGFKMANMAB { get; private set; } // 0xF4 MFLNAPMHPKD IEFPCCJONCN FJJMCAEKDCM
 	// public PPNFHHPJOKK OOEPHOEFBNL { get; private set; } // 0xF8 GEDHKEFKHEH HCAIIFDMGHF ELGOCAOHJBM
 	// public LAEGMENIEDB OHCIFMDPAPD { get; private set; } // 0xFC OCCBGBFIPFH HLLFEGMBGLE IKHIJOGKIAL
@@ -741,7 +741,7 @@ public class OKGLGHCBCJP_Database
 		// KKIMFMKOHFH = null;
 		ECNHDEHADGL_Scene = null;
 		// IFLGCDGOLOP = null;
-		// FOFADHAENKC = null;
+		FOFADHAENKC_Skill = null;
 		// OMGFKMANMAB = null;
 		// OOEPHOEFBNL = null;
 		// OHCIFMDPAPD = null;
@@ -823,7 +823,7 @@ public class OKGLGHCBCJP_Database
 					// case BEOKNKGHFFE_Section.KOALKJHIHFC_RareUpItem: KKIMFMKOHFH = item; break;
 					case BEOKNKGHFFE_Section.KNMIJOPCJCH_Scene: ECNHDEHADGL_Scene = (MLIBEPGADJH_Scene)item; break;
 					// case BEOKNKGHFFE_Section.ELBGPMIFOHO_Shop: IFLGCDGOLOP = item; break;
-					// case BEOKNKGHFFE_Section.ABANJLALLBK_Skill: FOFADHAENKC = item; break;
+					case BEOKNKGHFFE_Section.ABANJLALLBK_Skill: FOFADHAENKC_Skill = (JNKEEAOKNCI_Skill)item; break;
 					// case BEOKNKGHFFE_Section.HGOGFPOCKFA_Sns: OMGFKMANMAB = item; break;
 					// case BEOKNKGHFFE_Section.LCEEHPPLHNC_SpItem: OOEPHOEFBNL = item; break;
 					// case BEOKNKGHFFE_Section.AOPBBHMIEPB_Story: OHCIFMDPAPD = item; break;
