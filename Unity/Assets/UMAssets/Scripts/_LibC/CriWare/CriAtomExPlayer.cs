@@ -177,8 +177,22 @@ namespace ExternLib
                 {
                     length = (int)reallength;
                 }
-                AudioClip clip = AudioClip.Create(playersList[player].cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int)audioStream.HcaInfo.SamplingRate, isStreaming, (float[] data) => {
-                    //UnityEngine.Debug.Log("Asked new data ("+data.Length+"), cur pos = "+/*curPos+*/" stream pos = "+audioStream.Position);
+				if (source.loop)
+					isStreaming = true; // Length will be unlimited if loop is checked, so force as if streamed
+				//bool debug = playersList[player].cueName == "se_valkyrie_001";
+				bool debug = false;
+				if (debug)
+				{
+					UnityEngine.Debug.Log("A " + reallength);
+					UnityEngine.Debug.Log("A " + playersList[player].cueName);
+					UnityEngine.Debug.Log("A " + length);
+					UnityEngine.Debug.Log("A " + audioStream.HcaInfo.ChannelCount);
+					UnityEngine.Debug.Log("A " + audioStream.HcaInfo.SamplingRate);
+					UnityEngine.Debug.Log("A " + isStreaming);
+				}
+				AudioClip clip = AudioClip.Create(playersList[player].cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int)audioStream.HcaInfo.SamplingRate, isStreaming, (float[] data) => {
+					if(debug)
+						UnityEngine.Debug.Log("Asked new data ("+data.Length+"), cur pos = "+/*curPos+*/" stream pos = "+audioStream.Position);
                     int numLeft = data.Length * 2;
                     byte[] readData = new byte[data.Length * 2];
                     int read = 1;
@@ -186,7 +200,8 @@ namespace ExternLib
                     while(read > 0 && numLeft > 0)
                     {
                         read = audioStream.Read(readData, 0, numLeft);
-                        //UnityEngine.Debug.Log("Read "+read);
+						if(debug)
+							UnityEngine.Debug.Log("Read "+read);
                         for(int i = 0; i < read; i+=2)
                         {
                             data[offset] = bytesToFloat(readData[i], readData[i + 1]);
