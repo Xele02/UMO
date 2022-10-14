@@ -283,7 +283,25 @@ public class FFHPBEPOMAK
 	}
 
 	// // RVA: 0x14E0734 Offset: 0x14E0734 VA: 0x14E0734
-	// public void ELHBGKLLOIO() { }
+	public void ELHBGKLLOIO()
+	{
+		JLJGCBOHJID_Status.Clear();
+		CMCKNKKCNDK_EquippedStatus.Copy(JLJGCBOHJID_Status);
+		if(FGFIBOBAPIA != 0)
+		{
+			CMCKNKKCNDK_EquippedStatus.Add(GCIJNCFDNON.JPCAIAAOOLN(FGFIBOBAPIA, FFKMEFKOBHO, PFCJIKGENEH, AICGALGPFMO, 0));
+		}
+		if(DJICAKGOGFO != null)
+		{
+			for(int i = 0; i < DJICAKGOGFO.Count; i++)
+			{
+				if(DJICAKGOGFO[i] != 0)
+				{
+					CMCKNKKCNDK_EquippedStatus.Add(GCIJNCFDNON.JPCAIAAOOLN(DJICAKGOGFO[i], FGBKIPNGGJM[i], GDJPNDKMKPG[i], HHKFOOFPOJL[i], 0));
+				}
+			}
+		}
+	}
 
 	// // RVA: 0x14E09E8 Offset: 0x14E09E8 VA: 0x14E09E8
 	// public bool OKDIEDCGODF(int BCCHOBPJJKE, bool ILBBPPMLLFM, KDMCFCBMAOI BBEBHGEHMMI, BLHOMPPGBMI NGMPDMCBNJB) { }

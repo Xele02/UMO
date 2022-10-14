@@ -78,11 +78,11 @@ public class AOJGDNFAIJL_PrismData
                 int divaId = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
                 if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId < 1)
                 {
-                    divaId = EOPODFDEMGF.FDBOPFEOENF[0].DIPKCALNIII;
+                    divaId = EOPODFDEMGF.FDBOPFEOENF[0].DIPKCALNIII_Id;
                 }
                 ICAJJLHPMDF_DefaultDivaId = divaId;
                 ADPFDMPMILA_FindCostume(divaId, ref CLDDCHNMLLM_DefaultCostumeId, ref CCEMMCJOPIO_DefaultColorId);
-                AOPLBEPHLID_DefaultValkyrieId = EOPODFDEMGF.FODKKJIDDKN;
+                AOPLBEPHLID_DefaultValkyrieId = EOPODFDEMGF.FODKKJIDDKN_VfId;
                 OOEPMEDAJNJ_TeamSave.PPFNGGCBJKC = DLAEJOBELBH_MusicId;
                 FBGAKINEIPG = OOEPMEDAJNJ_TeamSave.PLALNIIBLOF != 1 ? false : true;
                 OHLCKPIMMFH_ValkyrieMode = OOEPMEDAJNJ_TeamSave.MKKGKKHABEK_ValkyrieMode != 1 ? false : true;

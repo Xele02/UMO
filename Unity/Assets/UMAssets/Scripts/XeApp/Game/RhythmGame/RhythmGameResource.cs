@@ -7,6 +7,8 @@ using System.Text;
 using XeApp.Core;
 using XeSys;
 using System;
+using XeApp.Game.Menu;
+using System.IO;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -522,22 +524,145 @@ namespace XeApp.Game.RhythmGame
 			PPGHMBNIAEC masterSkill; // 0x2C
 			int k; // 0x30
 
-			TodoLogger.Log(0, "LoadingUIDivaSkillCutinTextureResource");
 			//0xBFBA2C
-			yield return null;
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			uiTextureResources.divaSkillCutinMaterials.Clear();
+			uiTextureResources.skillEffectMaterials.Clear();
+			teamInfo = Database.Instance.gameSetup.teamInfo;
+			for(i = 0; i < 3; i++)
+			{
+				if(teamInfo.divaList[i].divaId > 0)
+				{
+					bundleName.Set(GetDivaSkillCutinTextureBundlePath(teamInfo.divaList[i].divaId, teamInfo.divaList[i].costumeModelId, teamInfo.divaList[i].costumeColorId));
+					operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+					yield return operation;
+
+					assetName.SetFormat(GetDivaSkillCutinTextureAssetName(bundleName, false), Array.Empty<object>());
+					Texture tex = operation.GetAsset<Texture>(assetName.ToString());
+
+					assetName.SetFormat(GetDivaSkillCutinTextureAssetName(bundleName, true), Array.Empty<object>());
+					Texture tex2 = operation.GetAsset<Texture>(assetName.ToString());
+
+					AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+
+					Material mat = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+					mat.SetTexture("_MainTex", tex);
+					mat.SetTexture("_MaskTex", tex2);
+
+					uiTextureResources.divaSkillCutinMaterials.Add(mat);
+
+					int[] liveSkills = teamInfo.divaList[i].liveSkillIdList;
+					for (j = 0; j < liveSkills.Length; j++)
+					{
+						if(liveSkills[j] != 0)
+						{
+							masterSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML[liveSkills[j] - 1];
+							for(k = 0; k < masterSkill.EGLDFPILJLG.Length; k++)
+							{
+								if(masterSkill.EGLDFPILJLG[k] != 0)
+								{
+									yield return LoadSkillEffectTextureCoroutine(masterSkill.EGLDFPILJLG[k], bundleName, assetName);
+								}
+							}
+						}
+					}
+				}
+				else
+				{
+					uiTextureResources.divaSkillCutinMaterials.Add(null);
+				}
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7453CC Offset: 0x7453CC VA: 0x7453CC
 		// // RVA: 0xBF89F0 Offset: 0xBF89F0 VA: 0xBF89F0
 		private IEnumerator LoadingUIACTIVESkillIconTextureResource()
 		{
-			TodoLogger.Log(0, "LoadingUIACTIVESkillIconTextureResource");
-			yield break;
+			StringBuilder bundleName; // 0x14
+			StringBuilder assetName; // 0x18
+			int mainSceneId; // 0x1C
+			int activeSkillId; // 0x20
+			AssetBundleLoadAssetOperation operation; // 0x24
+			CDNKOFIELMK md; // 0x28
+			int i; // 0x2C
+			int effectType; // 0x30
+
+			//0xBFAF44
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			uiTextureResources.centerCardTexture = null;
+			mainSceneId = Database.Instance.gameSetup.teamInfo.divaList[0].sceneIdList[0];
+			if (mainSceneId == 0)
+				yield break;
+			GCIJNCFDNON d = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA[mainSceneId - 1];
+			int a = d.CGIELKDLHGE();
+			if (d.JKGFBFPIMGA < 4)
+				a = 1;
+			activeSkillId = Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId;
+			if (activeSkillId < 1)
+				yield break;
+			bundleName.SetFormat("ct/sc/me/02/{0:D6}_{1:D2}.xab", mainSceneId, a);
+			assetName.SetFormat("{0:D6}_{1:D2}", mainSceneId, a);
+
+			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(Texture));
+			yield return operation;
+
+			uiTextureResources.centerCardTexture = operation.GetAsset<Texture>();
+			uiTextureResources.activeSkillIconMaterial = new Material(Shader.Find("MCRS/RhythmUI/RhythmUIVertexColor"));
+			uiTextureResources.activeSkillIconMaterial.SetTexture("_MainTex", uiTextureResources.centerCardTexture);
+
+			int off = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA[mainSceneId - 1].GCLAAGFKPPJ_Aofs;
+			uiTextureResources.activeSkillIconMaterial.SetTextureOffset("_MainTex", new Vector2(0, off * 1.0f / uiTextureResources.centerCardTexture.height));
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+
+			md = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[activeSkillId - 1];
+			for (i = 0; i < 1; i++)
+			{
+				effectType = md.EGLDFPILJLG[i];
+				yield return StartCoroutine(LoadSkillEffectTextureCoroutine(effectType, bundleName, assetName));
+				uiTextureResources.activeSkillEffectMaterial = uiTextureResources.skillEffectMaterials[effectType];
+			}
+			md = null;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x745444 Offset: 0x745444 VA: 0x745444
 		// // RVA: 0xBF8A9C Offset: 0xBF8A9C VA: 0xBF8A9C
-		// private IEnumerator LoadSkillEffectTextureCoroutine(int effectType, StringBuilder bundleName, StringBuilder assetName) { }
+		private IEnumerator LoadSkillEffectTextureCoroutine(int effectType, StringBuilder bundleName, StringBuilder assetName)
+		{
+			AssetBundleLoadAssetOperation bundleOperation; // 0x20
+			Texture colorTex; // 0x24
+
+			//0xBFA8CC
+			if(!uiTextureResources.skillEffectMaterials.ContainsKey(effectType))
+			{
+				bundleName.SetFormat("ct/gm/as/{0:D3}.xab", effectType);
+				assetName.SetFormat("{0:D3}_base", effectType);
+				bundleOperation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(Texture));
+				yield return bundleOperation;
+
+				colorTex = bundleOperation.GetAsset<Texture>();
+
+				assetName.SetFormat("{0:D3}_mask", effectType);
+				bundleOperation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(Texture));
+
+				Texture maskTex = bundleOperation.GetAsset<Texture>();
+
+				Material mat = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+				mat.SetTexture("_MainTex", colorTex);
+				mat.SetTexture("_MaskTex", maskTex);
+
+				uiTextureResources.skillEffectMaterials.Add(effectType, mat);
+
+				for(int i = 0; i < 2; i++)
+				{
+					AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+				}
+				bundleOperation = null;
+				colorTex = null;
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7454BC Offset: 0x7454BC VA: 0x7454BC
 		// // RVA: 0xBF8B94 Offset: 0xBF8B94 VA: 0xBF8B94
@@ -621,10 +746,19 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xBF8C40 Offset: 0xBF8C40 VA: 0xBF8C40
-		// private string GetDivaSkillCutinTextureBundlePath(int divaId, int costumeModelId, int costumeColorId) { }
+		private string GetDivaSkillCutinTextureBundlePath(int divaId, int costumeModelId, int costumeColorId)
+		{
+			return DivaIconTextureCache.GetDivaUpIconPath(divaId, costumeModelId, costumeColorId);
+		}
 
 		// // RVA: 0xBF8CD4 Offset: 0xBF8CD4 VA: 0xBF8CD4
-		// private string GetDivaSkillCutinTextureAssetName(StringBuilder bundlePath, bool isMask) { }
+		private string GetDivaSkillCutinTextureAssetName(StringBuilder bundlePath, bool isMask)
+		{
+			StringBuilder str = new StringBuilder();
+			str.Set(Path.GetFileNameWithoutExtension(bundlePath.ToString()));
+			str.Append(isMask ? "_mask" : "_base");
+			return str.ToString();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x745534 Offset: 0x745534 VA: 0x745534
 		// // RVA: 0xBF8E24 Offset: 0xBF8E24 VA: 0xBF8E24

@@ -251,13 +251,33 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA0E5C Offset: 0xDA0E5C VA: 0xDA0E5C
-	// public int LAGGGIEIPEG(int JKGFBFPIMGA, bool OBKCAELADKD, bool MCCIFLKCNKO) { }
+	public int LAGGGIEIPEG(int JKGFBFPIMGA, bool OBKCAELADKD, bool MCCIFLKCNKO)
+	{
+		if(MCCIFLKCNKO)
+		{
+			return PNDCOGFIGJO_RarFeedLvMax[JKGFBFPIMGA * 2 - 2 | (OBKCAELADKD ? 1 : 0)];
+		}
+		else
+		{
+			return FKLCEJNHKMN_RarLvMax[JKGFBFPIMGA + (OBKCAELADKD ? 1 : 0) - 1];
+		}
+	}
 
 	// // RVA: 0xDA0F2C Offset: 0xDA0F2C VA: 0xDA0F2C
 	// public int GAJPHGOJAAB(int NIGMJFOLJBE, bool MCCIFLKCNKO) { }
 
 	// // RVA: 0xDA0F40 Offset: 0xDA0F40 VA: 0xDA0F40
-	// public byte[] DNMKPAKOJFA(int JKGFBFPIMGA, bool OBKCAELADKD, bool MCCIFLKCNKO) { }
+	public byte[] DNMKPAKOJFA(int JKGFBFPIMGA, bool OBKCAELADKD, bool MCCIFLKCNKO)
+	{
+		if (MCCIFLKCNKO)
+		{
+			return HFHMMOMMFON[JKGFBFPIMGA * 2 - 2 | (OBKCAELADKD ? 1 : 0)];
+		}
+		else
+		{
+			return ODEBNEPEDLN[JKGFBFPIMGA + (OBKCAELADKD ? 1 : 0) - 1];
+		}
+	}
 
 	// // RVA: 0xDA1040 Offset: 0xDA1040 VA: 0xDA1040
 	// public int NBIAKELCBLC(int MJBODMOLOBC, int HLOHIMEAPLH) { }

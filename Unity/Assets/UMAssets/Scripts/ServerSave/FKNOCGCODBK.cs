@@ -34,7 +34,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 		{
 			CIFHILOJJFC data = new CIFHILOJJFC();
 			data.GIDKKHFHALL = i;
-			data.OPFGFINHFCE = CIFHILOJJFC.CBELJGBFLGA;
+			data.OPFGFINHFCE_Name = CIFHILOJJFC.CBELJGBFLGA;
 			AHBBMJANGHE.Add(data);
 		}
 	}
