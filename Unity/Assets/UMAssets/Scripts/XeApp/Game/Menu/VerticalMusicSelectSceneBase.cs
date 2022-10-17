@@ -29,6 +29,7 @@ namespace XeApp.Game.Menu
 				this.overrideEnemyCenterSkill = overrideEnemyCenterSkill;
 				this.overrideEnemyLiveSkill = overrideEnemyLiveSkill;
 				initParam.isDisableBattleEventIntermediateResult = false;
+				initParam.returnTransitionUniqueId = 0;
 			}
 		}
 
@@ -442,7 +443,7 @@ namespace XeApp.Game.Menu
 		{
 			TodoLogger.Log(0, "DecideCurrentMusic");
 			int onStageDivaNum = GetDanceDivaCount();
-			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, 0/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, false, false, "", 0, 0, -1, 0, 0, onStageDivaNum);
+			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, 0/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, true, false, "", 0, 0, -1, 0, 0, onStageDivaNum);
 			Database.Instance.selectedMusic.SetMusicData(selectMusicData);
 			MenuScene.Instance.Call(TransitionList.Type.SIMULATIONLIVE_SETTING, null, true);
 		}

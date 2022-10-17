@@ -1008,7 +1008,10 @@ namespace XeApp.Game
 		// public FFHPBEPOMAK GetHomeDiva() { }
 
 		// // RVA: 0x9A0F5C Offset: 0x9A0F5C VA: 0x9A0F5C
-		// public Camera GetSystemCanvasCamera() { }
+		public Camera GetSystemCanvasCamera()
+		{
+			return systemCanvasCamera;
+		}
 
 		// // RVA: 0x9A0F64 Offset: 0x9A0F64 VA: 0x9A0F64
 		// public void InstantiateCbtWindow() { }

@@ -129,7 +129,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEA176C Offset: 0xEA176C VA: 0xEA176C
-		// public void SetShootLock(bool isLock) { }
+		public void SetShootLock(bool isLock)
+		{
+			isShootLock = isLock;
+		}
 
 		// // RVA: 0xEA1760 Offset: 0xEA1760 VA: 0xEA1760
 		public void ForceShootStop()

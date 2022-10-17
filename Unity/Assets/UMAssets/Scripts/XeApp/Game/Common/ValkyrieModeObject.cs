@@ -160,7 +160,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CE42BC Offset: 0x1CE42BC VA: 0x1CE42BC
-		//public void SetShootLock(bool isLock) { }
+		public void SetShootLock(bool isLock)
+		{
+			m_valkyrie.SetShootLock(isLock);
+		}
 
 		//// RVA: 0x1CE42F0 Offset: 0x1CE42F0 VA: 0x1CE42F0
 		public void Leave()
@@ -224,10 +227,17 @@ namespace XeApp.Game.Common
 		//public void Resume() { }
 
 		//// RVA: 0x1CE4CE0 Offset: 0x1CE4CE0 VA: 0x1CE4CE0
-		//public void GetLockOnTargetPos(out Vector2 result) { }
+		// public void GetLockOnTargetPos(out Vector2 result) { }
 
 		//// RVA: 0x1CE4DA4 Offset: 0x1CE4DA4 VA: 0x1CE4DA4
-		//public void GetLockOnTargetPos(out Vector3 result) { }
+		public void GetLockOnTargetPos(out Vector3 result)
+		{
+			Vector3 vp = m_modeCamera.WorldToViewportPoint(m_refData.lockOnTarget.position);
+			result = vp;
+			result.x = result.x * 2 - 1;
+			result.y = result.y * 2 - 1;
+			result.z = result.z / (m_modeCamera.farClipPlane - m_modeCamera.nearClipPlane);
+		}
 
 		//// RVA: 0x1CE4EC0 Offset: 0x1CE4EC0 VA: 0x1CE4EC0
 		//public void NotifyHit() { }

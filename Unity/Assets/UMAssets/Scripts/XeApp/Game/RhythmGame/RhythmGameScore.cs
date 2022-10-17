@@ -68,12 +68,24 @@ namespace XeApp.Game.RhythmGame
 		//public void IncreaseScore(RhythmGameConsts.NoteResultEx a_result_ex, int combo, float bonusRate, int bonusValue, RhythmGameConsts.SpecialNoteType spType, float a_excellent_score_rate, bool a_enable_combo_bonus = True) { }
 
 		//// RVA: 0xBFED3C Offset: 0xBFED3C VA: 0xBFED3C
-		//public ResultScoreRank.Type CalcCurrentRank() { }
+		public ResultScoreRank.Type CalcCurrentRank()
+		{
+			return (ResultScoreRank.Type)musicLevelData.DLPBHJALHCK_GetRank(currentScore);
+		}
 
 		//// RVA: 0xBFED74 Offset: 0xBFED74 VA: 0xBFED74
 		//public float CalcRatioBetweenUpToNextRank() { }
 
 		//// RVA: 0xBFED94 Offset: 0xBFED94 VA: 0xBFED94
-		//public float CalcRatioBetweenUpToNextRank(ResultScoreRank.Type currentRank) { }
+		public float CalcRatioBetweenUpToNextRank(ResultScoreRank.Type currentRank)
+		{
+			int prevVal = 0;
+			if(currentRank != 0)
+			{
+				prevVal = musicLevelData.KNIFCANOHOC_RankScore[(int)currentRank - 1];
+			}
+			int val = musicLevelData.KNIFCANOHOC_RankScore[(int)currentRank];
+			return (currentScore - prevVal) * 1.0f / (val - prevVal);
+		}
 	}
 }

@@ -61,13 +61,19 @@ namespace XeApp.Game.RhythmGame
 		//private int LimitNoteJudgeValue(int a_limit, int a_value) { }
 
 		//// RVA: 0xDB1384 Offset: 0xDB1384 VA: 0xDB1384
-		//public void Initialize(MusicData muiscData, RhythmGameMode gameMode, BuffEffectOwner buffOwner, RhythmGameSpecialNotesAssigner.AssignInfo a_assing_info, bool a_setting_mv, bool a_notes_seeting_mv, bool a_setting_skip = False) { }
+		public void Initialize(MusicData muiscData, RhythmGameMode gameMode, BuffEffectOwner buffOwner, RhythmGameSpecialNotesAssigner.AssignInfo a_assing_info, bool a_setting_mv, bool a_notes_seeting_mv, bool a_setting_skip = false)
+		{
+			TodoLogger.Log(0, "RNoteOwner Initialize");
+		}
 
 		//// RVA: 0xDB2F30 Offset: 0xDB2F30 VA: 0xDB2F30
 		//private void SetJudgePointTransform() { }
 
 		//// RVA: 0xDB4FF8 Offset: 0xDB4FF8 VA: 0xDB4FF8
-		//public void SetLineAlphaCallback(RNoteLaneManager.LineAlphaCallback callback) { }
+		public void SetLineAlphaCallback(RNoteLaneManager.LineAlphaCallback callback)
+		{
+			TodoLogger.Log(0, "RNoteOwner SetLineAlphaCallback");
+		}
 
 		//// RVA: 0xDB4A58 Offset: 0xDB4A58 VA: 0xDB4A58
 		//public void SetEnableRenderer(bool a_renderer) { }
@@ -82,13 +88,22 @@ namespace XeApp.Game.RhythmGame
 		//public void Resume() { }
 
 		//// RVA: 0xDB6E6C Offset: 0xDB6E6C VA: 0xDB6E6C
-		//public void RemoveAllDelegate() { }
+		public void RemoveAllDelegate()
+		{
+			TodoLogger.Log(0, "RNoteOwner RemoveAllDelegate");
+		}
 
 		//// RVA: 0xDB6E7C Offset: 0xDB6E7C VA: 0xDB6E7C
-		//public void SetDelegateOverrideNoteJudge(RNoteObject.DelegateOverrideNoteJudged a_delegate) { }
+		public void SetDelegateOverrideNoteJudge(RNoteObject.DelegateOverrideNoteJudged a_delegate)
+		{
+			TodoLogger.Log(0, "RNoteOwner SetDelegateOverrideNoteJudge");
+		}
 
 		//// RVA: 0xDB6E84 Offset: 0xDB6E84 VA: 0xDB6E84
-		//public void AddJudgeDelegate(RNoteObject.NoteJudgedDelegate judgedDelegate) { }
+		public void AddJudgeDelegate(RNoteObject.NoteJudgedDelegate judgedDelegate)
+		{
+			TodoLogger.Log(0, "RNoteOwner AddJudgeDelegate");
+		}
 
 		//// RVA: 0xDB6E90 Offset: 0xDB6E90 VA: 0xDB6E90
 		//public void AddBeyondDelegate(RNoteObject.NoteBeyondDelegate beyondDelegate) { }
@@ -97,7 +112,10 @@ namespace XeApp.Game.RhythmGame
 		//public void AddPassedDelegate(RNoteObject.NotePassedDelegate passedDelegate) { }
 
 		//// RVA: 0xDB6EA8 Offset: 0xDB6EA8 VA: 0xDB6EA8
-		//public void OnUpdate(int musicMilliSec) { }
+		public void OnUpdate(int musicMilliSec)
+		{
+			TodoLogger.Log(0, "RNoteOwner OnUpdate");
+		}
 
 		//// RVA: 0xDB7AA4 Offset: 0xDB7AA4 VA: 0xDB7AA4
 		//public void AllocNote(RNote rNote) { }
@@ -171,7 +189,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDBBB60 Offset: 0xDBBB60 VA: 0xDBBB60
 		public void OnChangeGameMode()
 		{
-			TodoLogger.Log(0, "OnChangeGameMode");
+			TodoLogger.Log(0, "RNoteOwner OnChangeGameMode");
 		}
 
 		//// RVA: 0xDBBD00 Offset: 0xDBBD00 VA: 0xDBBD00

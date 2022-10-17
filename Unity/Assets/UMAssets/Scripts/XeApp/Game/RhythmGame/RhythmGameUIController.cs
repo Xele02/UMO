@@ -11,8 +11,8 @@ namespace XeApp.Game.RhythmGame
 		// private List<EffectBundleControllerSimple> m_list_effect = new List<EffectBundleControllerSimple>(); // 0x24
 
 		// public GameUIIntro intro { get; private set; } // 0xC
-		// public GameUIComplete complete { get; private set; } // 0x10
-		// public GameUIFailed failed { get; private set; } // 0x14
+		public GameUIComplete complete { get; private set; } // 0x10
+		public GameUIFailed failed { get; private set; } // 0x14
 		public IRhythmGameHUD Hud { get; private set; } // 0x18
 
 		// // RVA: 0xC0C4F0 Offset: 0xC0C4F0 VA: 0xC0C4F0
@@ -34,7 +34,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC0CC98 Offset: 0xC0CC98 VA: 0xC0CC98
-		// public void OnUpdate() { }
+		public void OnUpdate()
+		{
+			TodoLogger.Log(0, "uicontroller OnUpdate");
+		}
 
 		// // RVA: 0xC0CC9C Offset: 0xC0CC9C VA: 0xC0CC9C
 		public void Initialize(RhythmGameResource resource, RhythmGamePlayer.Setting setting, RhythmGamePlayer.SettingMV mvSetting)
@@ -47,18 +50,21 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0D81C Offset: 0xC0D81C VA: 0xC0D81C
 		public void BeginIntroAnim(Action callback)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "BeginIntroAnim");
 			callback();
 		}
 
 		// // RVA: 0xBF2A8C Offset: 0xBF2A8C VA: 0xBF2A8C
 		public void DeleteIntro()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "DeleteIntro");
 		}
 
 		// // RVA: 0xC0D874 Offset: 0xC0D874 VA: 0xC0D874
-		// public void BeginFailedAnim(Action callback) { }
+		public void BeginFailedAnim(Action callback)
+		{
+			TodoLogger.Log(0, "BeginFailedAnim");
+		}
 
 		// // RVA: 0xC0D8EC Offset: 0xC0D8EC VA: 0xC0D8EC
 		// public void BeginRetryAnim(Action callback) { }
@@ -82,10 +88,16 @@ namespace XeApp.Game.RhythmGame
 		// public void UpdateEnemyDamageResult(int result, Vector3 position) { }
 
 		// // RVA: 0xC0DF08 Offset: 0xC0DF08 VA: 0xC0DF08
-		// public void UpdateCombo(int newCombo) { }
+		public void UpdateCombo(int newCombo)
+		{
+			TodoLogger.Log(0, "UpdateCombo");
+		}
 
 		// // RVA: 0xC0DFE8 Offset: 0xC0DFE8 VA: 0xC0DFE8
-		// public void UpdateBattleCombo(int battleCombo) { }
+		public void UpdateBattleCombo(int battleCombo)
+		{
+			TodoLogger.Log(0, "UpdateBattleCombo");
+		}
 
 		// // RVA: 0xC0E0C8 Offset: 0xC0E0C8 VA: 0xC0E0C8
 		// public void EnterLIVESkill(LiveSkill skill, Material skillDesc, Material material) { }

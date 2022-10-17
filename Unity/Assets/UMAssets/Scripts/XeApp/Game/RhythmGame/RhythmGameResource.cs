@@ -764,8 +764,27 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF8E24 Offset: 0xBF8E24 VA: 0xBF8E24
 		private IEnumerator LoadPilotTexture()
 		{
-			TodoLogger.Log(0, "LoadPilotTexture");
-			yield break;
+			GameSetupData gameSetup; // 0x14
+			MHDFCLCMDKO_Enemy.CJLENGHPIDH_EnemyInfo enemyInfo; // 0x18
+
+			//0xBFA1BC
+			gameSetup = Database.Instance.gameSetup;
+			enemyInfo = gameSetup.musicInfo.GetEnemyInfo();
+
+			yield return StartCoroutine(m_pilotTexture.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[gameSetup.teamInfo.prismValkyrieId - 1].PFGJJLGLPAC));
+			yield return StartCoroutine(m_enemyPilotTexture.Load(enemyInfo.EELBHDJJJHH_Plt));
+			yield return StartCoroutine(m_enemyRobotTexture.Load(enemyInfo.EAHPLCJMPHD_Pic));
+			if (musicVoiceChangerResource == null)
+				yield break;
+			yield return new WaitUntil(() =>
+			{
+				//0xBF940C
+				return musicVoiceChangerResource.isAllLoaded;
+			});
+			if (!isTakeoffDivaVoice)
+				yield break;
+			m_divaTexture = new UiDivaTexture();
+			yield return StartCoroutine(m_divaTexture.Load(gameSetup.teamInfo.divaList[0].prismDivaId, gameSetup.teamInfo.divaList[0].prismCostumeModelId, gameSetup.teamInfo.divaList[0].prismCostumeColorId));
 		}
 
 		// // RVA: 0xBF8ED0 Offset: 0xBF8ED0 VA: 0xBF8ED0
@@ -800,10 +819,6 @@ namespace XeApp.Game.RhythmGame
 		// [CompilerGeneratedAttribute] // RVA: 0x745744 Offset: 0x745744 VA: 0x745744
 		// // RVA: 0xBF9404 Offset: 0xBF9404 VA: 0xBF9404
 		// private void <LoadingUIPrefab>b__102_1(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x745754 Offset: 0x745754 VA: 0x745754
-		// // RVA: 0xBF940C Offset: 0xBF940C VA: 0xBF940C
-		// private bool <LoadPilotTexture>b__105_0() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x745764 Offset: 0x745764 VA: 0x745764
 		// // RVA: 0xBF9438 Offset: 0xBF9438 VA: 0xBF9438

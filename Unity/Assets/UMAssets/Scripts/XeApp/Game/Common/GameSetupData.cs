@@ -167,7 +167,7 @@ namespace XeApp.Game.Common
 			public struct InitFreeMusicParam
 			{
 				public bool isDisableBattleEventIntermediateResult; // 0x0
-				//public TransitionUniqueId returnTransitionUniqueId; // 0x4
+				public TransitionUniqueId returnTransitionUniqueId; // 0x4
 			}
 
 			private int m_prismMusicId; // 0x30
@@ -243,21 +243,48 @@ namespace XeApp.Game.Common
 				int overrideEnemyCenterSkillId = 0, int overrideEnemyLiveSkillId = 0, long mvLimitTime = -1, 
 				long limitTime = 0, int eventUniqueId = 0, int onStageDivaNum = 1, long setupTime = 0)
 			{
-				TodoLogger.Log(0, "SetupInfoByFreeMusic");
 				this.mode = GameMode.Type.FreeBattle;
 				this.freeMusicId = freeMusicId;
-				this.onStageDivaNum = onStageDivaNum;
-				this.IsLine6Mode = isLine6Mode;
-				this.IsMvMode = isMvMode;
+				storyMusicId = 0;
 				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[freeMusicId - 1].DLAEJOBELBH_Id;
 				prismMusicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CIKALPJDGMF_ResolveMusicId(freeMusicId, musicId);
+				this.difficultyType = difficultyType;
+				tutorial = TutorialGameMode.Type.None;
+				this.gameEventType = gameEventType;
+				this.openEventType = openEventType;
+				this.playEventType = playEventType;
+				EventUniqueId = eventUniqueId;
+				this.isEnergyRequired = isEnergyRequired;
+				IsMvMode = isMvMode;
+				IsLine6Mode = isLine6Mode;
+				if(setupTime == 0)
+				{
+					setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				}
+				this.musicLoadText = musicLoadText;
+				this.onStageDivaNum = onStageDivaNum;
+				returnTransitionUniqueId = initParam.returnTransitionUniqueId;
+				this.setupTime = setupTime;
+				this.mvLimitTime = mvLimitTime;
+				LimitTime = limitTime;
+				IsDisableBattleEventIntermediateResult = initParam.isDisableBattleEventIntermediateResult;
+				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
+				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[(isLine6Mode ? musicInfo.PJNFOCDANCE : musicInfo.LHICAKGHIGF)[(int)difficultyType]]);
+				if(overrideEnemyCenterSkillId != 0 || overrideEnemyLiveSkillId != 0)
+				{
+					enemyInfo.EDLACELKJIK_LS = overrideEnemyLiveSkillId;
+					enemyInfo.NJOPIPNGANO_CS = overrideEnemyCenterSkillId;
+				}
 			}
 
 			// // RVA: 0xE9DF78 Offset: 0xE9DF78 VA: 0xE9DF78
 			// public void SetupInfoByTutorial(TutorialGameMode.Type tutorialMode) { }
 
 			// // RVA: 0xE9E308 Offset: 0xE9E308 VA: 0xE9E308
-			// public MHDFCLCMDKO.CJLENGHPIDH GetEnemyInfo() { }
+			public MHDFCLCMDKO_Enemy.CJLENGHPIDH_EnemyInfo GetEnemyInfo()
+			{
+				return enemyInfo;
+			}
 
 			// // RVA: 0xE9E310 Offset: 0xE9E310 VA: 0xE9E310
 			// public void ClearEventType() { }

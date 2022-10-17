@@ -132,7 +132,11 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDC4A74 Offset: 0xDC4A74 VA: 0xDC4A74
-		//public void SetFixDamageParamter(float a_team_atk, float a_team_acc) { }
+		public void SetFixDamageParamter(float a_team_atk, float a_team_acc)
+		{
+			teamAttack = a_team_atk;
+			teamAccuracy = a_team_acc;
+		}
 
 		// RVA: 0xDC4A80 Offset: 0xDC4A80 VA: 0xDC4A80
 		public void Reset()

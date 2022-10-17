@@ -302,7 +302,12 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA135C Offset: 0xDA135C VA: 0xDA135C
-	// public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }
+	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
+	{
+		if (!OHJFBLFELNK.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		return OHJFBLFELNK[LJNAKDMILMC];
+	}
 
 	// // RVA: 0xDA1420 Offset: 0xDA1420 VA: 0xDA1420
 	public LDDDBPNGGIN_Game()

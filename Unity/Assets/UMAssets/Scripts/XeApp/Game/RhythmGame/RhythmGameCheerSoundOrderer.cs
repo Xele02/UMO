@@ -94,7 +94,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDC18EC Offset: 0xDC18EC VA: 0xDC18EC
-		//public void Initialize(MusicScoreData a_score_data) { }
+		public void Initialize(MusicScoreData a_score_data)
+		{
+			TodoLogger.Log(0, "RhythmGameCheerSoundOrderer Initialize");
+		}
 
 		//// RVA: 0xDC212C Offset: 0xDC212C VA: 0xDC212C
 		public void Update(int a_note_msec)
@@ -112,10 +115,16 @@ namespace XeApp.Game.RhythmGame
 		//public void Pause() { }
 
 		//// RVA: 0xDC2864 Offset: 0xDC2864 VA: 0xDC2864
-		//public void Resume() { }
+		public void Resume()
+		{
+			TodoLogger.Log(0, "RhythmGameCheerSoundOrderer Resume");
+		}
 
 		//// RVA: 0xDC188C Offset: 0xDC188C VA: 0xDC188C
-		//public void Stop() { }
+		public void Stop()
+		{
+			TodoLogger.Log(0, "RhythmGameCheerSoundOrderer Stop");
+		}
 
 		//// RVA: 0xDC28C4 Offset: 0xDC28C4 VA: 0xDC28C4
 		//public void Reset() { }

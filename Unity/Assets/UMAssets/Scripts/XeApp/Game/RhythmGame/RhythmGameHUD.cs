@@ -41,7 +41,7 @@ namespace XeApp.Game.RhythmGame
 			HUD_RESULT_ANIM_MAX = 6,
 		}
 
-		//private RhythmGameHudPauseButtonEvent m_pauseButtonEvent = new RhythmGameHudPauseButtonEvent(); // 0xC
+		private RhythmGameHudPauseButtonEvent m_pauseButtonEvent = new RhythmGameHudPauseButtonEvent(); // 0xC
 		[SerializeField]
 		private GameObject m_touchParent; // 0x10
 		[SerializeField]
@@ -191,7 +191,7 @@ namespace XeApp.Game.RhythmGame
 		private const int LifeWarningLevel2 = 30;
 		private const int COMBO_MAX = 999;
 
-		//public RhythmGameHudPauseButtonEvent PauseButton { get; } 0xDCA528
+		public RhythmGameHudPauseButtonEvent PauseButton { get { return m_pauseButtonEvent; } } //0xDCA528
 		public bool isReadyHUD { get; set; } // 0x13C
 		public int CurrentCombo { get; set; } // 0x140
 		public int CurrentBattleCombo { get; set; } // 0x144
@@ -290,7 +290,10 @@ namespace XeApp.Game.RhythmGame
 		// public void PauseButtonClick() { }
 
 		// // RVA: 0xDCE918 Offset: 0xDCE918 VA: 0xDCE918 Slot: 25
-		// public void ChangeHpGaugeFrame(int percent) { }
+		public void ChangeHpGaugeFrame(int percent)
+		{
+			TodoLogger.Log(0, "Hud ChangeHpGaugeFrame");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x74422C Offset: 0x74422C VA: 0x74422C
 		// // RVA: 0xDCEBF8 Offset: 0xDCEBF8 VA: 0xDCEBF8
@@ -300,10 +303,16 @@ namespace XeApp.Game.RhythmGame
 		// public void SetContinue() { }
 
 		// // RVA: 0xDCECD8 Offset: 0xDCECD8 VA: 0xDCECD8 Slot: 27
-		// public void ChangeRankGaugeFrame(ResultScoreRank.Type rankType, float ratio) { }
+		public void ChangeRankGaugeFrame(ResultScoreRank.Type rankType, float ratio)
+		{
+			TodoLogger.Log(0, "Hud ChangeRankGaugeFrame");
+		}
 
 		// // RVA: 0xDCEDD4 Offset: 0xDCEDD4 VA: 0xDCEDD4 Slot: 28
-		// public void ChangeScore(int score, int type) { }
+		public void ChangeScore(int score, int type)
+		{
+			TodoLogger.Log(0, "Hud ChangeScore");
+		}
 
 		// // RVA: 0xDCE840 Offset: 0xDCE840 VA: 0xDCE840 Slot: 29
 		// public void SetFoldWaveGaugeValue(int value) { }
@@ -321,7 +330,10 @@ namespace XeApp.Game.RhythmGame
 		// public void SetBattleCombo(int combo) { }
 
 		// // RVA: 0xDCEF54 Offset: 0xDCEF54 VA: 0xDCEF54 Slot: 34
-		// public void SetItemCount(int kind, int count) { }
+		public void SetItemCount(int kind, int count)
+		{
+			TodoLogger.Log(0, "Hud SetItemCount");
+		}
 
 		// // RVA: 0xDCEF98 Offset: 0xDCEF98 VA: 0xDCEF98 Slot: 35
 		// public void ShowLowEnergy() { }
@@ -355,7 +367,10 @@ namespace XeApp.Game.RhythmGame
 		// private IEnumerator WaitDamgeResultAnimeCoroutine(BattleEvaluateObject obj) { }
 
 		// // RVA: 0xDCFB74 Offset: 0xDCFB74 VA: 0xDCFB74 Slot: 41
-		// public void UpdateTargetPosition(Vector3 position) { }
+		public void UpdateTargetPosition(Vector3 position)
+		{
+			TodoLogger.Log(0, "Hud UpdateTargetPosition");
+		}
 
 		// // RVA: 0xDCF9D0 Offset: 0xDCF9D0 VA: 0xDCF9D0
 		// private Vector3 AdjustUiCameraPosition(Vector3 normalizePosition) { }
@@ -519,7 +534,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD2360 Offset: 0xDD2360 VA: 0xDD2360 Slot: 83
-		// public void UpdateBattleLimitTime(int ms) { }
+		public void UpdateBattleLimitTime(int ms)
+		{
+			TodoLogger.Log(0, "Hud UpdateBattleLimitTime");
+		}
 
 		// // RVA: 0xDD23A0 Offset: 0xDD23A0 VA: 0xDD23A0 Slot: 84
 		// public void UpdateEnemyFrameColor(int damage, int threshold1, int threshold2) { }
@@ -543,7 +561,10 @@ namespace XeApp.Game.RhythmGame
 		// public static bool IsNotKillEnemyPilot(int pilotId) { }
 
 		// // RVA: 0xDD2648 Offset: 0xDD2648 VA: 0xDD2648 Slot: 89
-		// public void SetPlayerDivaId(int divaId) { }
+		public void SetPlayerDivaId(int divaId)
+		{
+			TodoLogger.Log(0, "Hud SetPlayerDivaId");
+		}
 
 		// // RVA: 0xDD267C Offset: 0xDD267C VA: 0xDD267C Slot: 90
 		// public void SetRivalDivaId(int divaId) { }
@@ -559,7 +580,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD2714 Offset: 0xDD2714 VA: 0xDD2714 Slot: 93
-		// public void SetLineAlpha(int lineNo, float alpha) { }
+		public void SetLineAlpha(int lineNo, float alpha)
+		{
+			TodoLogger.Log(0, "Hud SetLineAlpha");
+		}
 
 		// // RVA: 0xDD2750 Offset: 0xDD2750 VA: 0xDD2750 Slot: 94
 		// public bool IsActiveLine(int lineNo) { }
