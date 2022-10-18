@@ -366,7 +366,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 					uint[] array2 = array[i].KFCIJBLDHOK;
 					for(int j = 0; j < array2.Length; j++)
 					{
-						data.KCOHMHFBDKF[i] = (short)array2[j];
+						data.KCOHMHFBDKF[j] = (short)array2[j];
 					}
 				}
 				PEPLECGHBFA.Add(data);
@@ -387,7 +387,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 					uint[] array2 = array[i].KFCIJBLDHOK;
 					for (int j = 0; j < array2.Length; j++)
 					{
-						data.KCOHMHFBDKF[i] = (short)array2[j];
+						data.KCOHMHFBDKF[j] = (short)array2[j];
 					}
 				}
 				PHPGICHCBPM.Add(data);
@@ -408,7 +408,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 					uint[] array2 = array[i].KFCIJBLDHOK;
 					for (int j = 0; j < array2.Length; j++)
 					{
-						data.KCOHMHFBDKF[i] = (short)array2[j];
+						data.KCOHMHFBDKF[j] = (short)array2[j];
 					}
 				}
 				EBKAAEDMIBI.Add(data);
