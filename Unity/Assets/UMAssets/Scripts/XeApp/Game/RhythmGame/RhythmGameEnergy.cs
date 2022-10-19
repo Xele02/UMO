@@ -116,13 +116,39 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDC5C4C Offset: 0xDC5C4C VA: 0xDC5C4C
-		// public int GetGaugeValue() { }
+		public int GetGaugeValue()
+		{
+			float f = 0;
+			if (subgoalValue < currentValue)
+			{
+				f = Mathf.Round((currentValue - subgoalValue) * 1.0f / (goalValue - subgoalValue) * 100) + 100;
+			}
+			else
+			{
+				f = Mathf.Round((currentValue - subgoalValue) * 100);
+			}
+			return (int)f;
+		}
 
 		// // RVA: 0xDC5CC0 Offset: 0xDC5CC0 VA: 0xDC5CC0
 		// private int GetGaugeValue(int current) { }
 
 		// // RVA: 0xDC5D30 Offset: 0xDC5D30 VA: 0xDC5D30
-		// public void ChangeValue(RhythmGameConsts.NoteResult result, float bonusRate, RhythmGameConsts.SpecialNoteType spType) { }
+		public void ChangeValue(RhythmGameConsts.NoteResult result, float bonusRate, RhythmGameConsts.SpecialNoteType spType)
+		{
+			int inc = CalcIncreaseValue(result, bonusRate, currentValue);
+			int bonus = 0;
+			if (result > RhythmGameConsts.NoteResult.Bad && spType == RhythmGameConsts.SpecialNoteType.Fold)
+				bonus = specialNotesBonusValue;
+			inc += currentValue + bonus;
+			if(usedForceSubgoal)
+			{
+				inc = Mathf.Max(inc, currentValue);
+			}
+			currentValue = inc;
+			currentValue = Mathf.Clamp(currentValue, 0, maxValue);
+			PlayPilotVoice();
+		}
 
 		// // RVA: 0xDC5E68 Offset: 0xDC5E68 VA: 0xDC5E68
 		private int CalcIncreaseValue(RhythmGameConsts.NoteResult result, float bonusRate, int current)
@@ -135,7 +161,22 @@ namespace XeApp.Game.RhythmGame
 		// public void ForceChangePercentage100() { }
 
 		// // RVA: 0xDC5F6C Offset: 0xDC5F6C VA: 0xDC5F6C
-		// private void PlayPilotVoice() { }
+		private void PlayPilotVoice()
+		{
+			int f = GetGaugeValue();
+			for (int i = 0; i < pilotVoiceTimingTable.Length; i++)
+			{
+				if (!pilotVoiceTimingTable[i].played && pilotVoiceTimingTable[i].threshold <= f)
+				{
+					pilotVoiceTimingTable[i].played = true;
+					if(onPlayPilotVoice != null)
+					{
+						onPlayPilotVoice(i);
+					}
+					return;
+				}
+			}
+		}
 
 		// // RVA: 0xDC60F0 Offset: 0xDC60F0 VA: 0xDC60F0
 		private float CalcNotesBasicValue(float change, int current)

@@ -102,10 +102,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AE1BC Offset: 0x9AE1BC VA: 0x9AE1BC Slot: 4
-		//public virtual void BeginTouchSave(int lineNo) { }
+		public virtual void BeginTouchSave(int lineNo)
+		{
+			TodoLogger.Log(0, "GamePerformer BeginTouchSave");
+		}
 
 		//// RVA: 0x9AE1C0 Offset: 0x9AE1C0 VA: 0x9AE1C0 Slot: 5
-		//public virtual void EndTouchSave(int lineNo, bool isCheckEndTouch = True) { }
+		public virtual void EndTouchSave(int lineNo, bool isCheckEndTouch = true)
+		{
+			TodoLogger.Log(0, "GamePerformer EndTouchSave");
+		}
 
 		//// RVA: 0x9AE1C4 Offset: 0x9AE1C4 VA: 0x9AE1C4 Slot: 6
 		//protected virtual void BeganTouch(int lineNo, int fingerId) { }

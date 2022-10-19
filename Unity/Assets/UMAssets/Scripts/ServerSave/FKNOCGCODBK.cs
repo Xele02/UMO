@@ -87,10 +87,10 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 								colId = 0;
 							if(divaId != 0 && db != null)
 							{
-								bool cosOk = db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(divaId, cosId);
+								bool cosOk = db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(cosId, divaId);
 								if(!cosOk)
 									cosId = 0;
-								bool colOk = db.MFPNGNMFEAL_Costume.KPHOIIKOEOG_IsColorAvaiable(divaId, cosId, colId);
+								bool colOk = db.MFPNGNMFEAL_Costume.KPHOIIKOEOG_IsColorAvaiable(colId, cosId, divaId);
 								if(!colOk)
 									colId = 0;
 							}
@@ -119,7 +119,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 								}
 								else
 								{
-									if(!db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(a.BEEAIAAJOHD_CId, a.AFNIOJHODAG_ColId))
+									if(!db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(a.DIPKCALNIII_Id, a.BEEAIAAJOHD_CId))
 									{
 										a.BEEAIAAJOHD_CId = 0;
 										a.AFNIOJHODAG_ColId = 0;
@@ -146,10 +146,10 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 								colId = 0;
 							if(divaId != 0 && db != null)
 							{
-								bool cosOk = db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(divaId, cosId);
+								bool cosOk = db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(cosId, divaId);
 								if(!cosOk)
 									cosId = 0;
-								bool colOk = db.MFPNGNMFEAL_Costume.KPHOIIKOEOG_IsColorAvaiable(divaId, cosId, colId);
+								bool colOk = db.MFPNGNMFEAL_Costume.KPHOIIKOEOG_IsColorAvaiable(colId, cosId, divaId);
 								if(!colOk)
 									colId = 0;
 							}
@@ -167,7 +167,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 								}
 								else
 								{
-									if(!db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(d.BEEAIAAJOHD_CosId, d.AFNIOJHODAG_ColId))
+									if(!db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(d.BEEAIAAJOHD_CosId, d.DIPKCALNIII_Id))
 									{
 										d.BEEAIAAJOHD_CosId = 0;
 										d.AFNIOJHODAG_ColId = 0;

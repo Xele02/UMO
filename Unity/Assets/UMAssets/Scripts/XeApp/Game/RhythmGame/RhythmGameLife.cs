@@ -47,7 +47,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9A8D64 Offset: 0x9A8D64 VA: 0x9A8D64
-		//public void HealNotes() { }
+		public void HealNotes()
+		{
+			ChangeLife(healNotesValue, 1.0f);
+		}
 
 		//// RVA: 0x9A8E94 Offset: 0x9A8E94 VA: 0x9A8E94
 		//public void HealPercentage(int percentage) { }
@@ -59,10 +62,31 @@ namespace XeApp.Game.RhythmGame
 		//public void DamageValue(int value) { }
 
 		//// RVA: 0x9A8F98 Offset: 0x9A8F98 VA: 0x9A8F98
-		//public void DamageNotes(RhythmGameConsts.NoteResult type, float damageRate) { }
+		public void DamageNotes(RhythmGameConsts.NoteResult type, float damageRate)
+		{
+			if (isInvincibleCheat)
+				return;
+			if (isInvincibleGameEnd || isInvincibleModeMV)
+				return;
+			if (type == RhythmGameConsts.NoteResult.Miss)
+				ChangeLife(-missDamage, damageRate);
+			else if(type == RhythmGameConsts.NoteResult.Bad)
+				ChangeLife(-badDamage, damageRate);
+		}
 
 		//// RVA: 0x9A8D70 Offset: 0x9A8D70 VA: 0x9A8D70
-		//private void ChangeLife(int value, float rate) { }
+		private void ChangeLife(int value, float rate)
+		{
+			current = (int)Mathf.Clamp(current + Mathf.Round(value * rate), 0, max);
+			if(isLiveSkip)
+			{
+				current = Mathf.Max(1, current);
+			}
+			if (isChanging)
+				changeTargetValue = current;
+			else
+				view = current;
+		}
 
 		//// RVA: 0x9A8FE8 Offset: 0x9A8FE8 VA: 0x9A8FE8
 		//public void Full() { }

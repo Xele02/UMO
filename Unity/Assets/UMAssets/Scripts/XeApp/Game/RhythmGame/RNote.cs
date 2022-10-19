@@ -33,7 +33,7 @@ namespace XeApp.Game.RhythmGame
 		private ModeInfo[] modeInfo = new ModeInfo[7]; // 0x34
 
 		public MusicScoreData.InputNoteInfo noteInfo { get; private set; } // 0x8
-		//public RNote.PassingStatus passingStatus { get; private set; } 0xF628AC 0xF77A28
+		public RNote.PassingStatus passingStatus { get { return passingStatus_; } private set { passingStatus_ = value; } } //0xF628AC 0xF77A28
 		public RhythmGameConsts.NoteResult result { get { return m_result_ex.m_result; } private set { m_result_ex.m_result = value; } } //0xF77A30 0xF77A54
 		//public RhythmGameConsts.NoteResultEx resultEx { get; } 0xF77A7C
 		public RNoteResultJudge resultJudge { get; private set; } // 0x14
@@ -89,7 +89,10 @@ namespace XeApp.Game.RhythmGame
 		//public void Judged(RhythmGameConsts.NoteResultEx a_result_ex) { }
 
 		//// RVA: 0xF77B8C Offset: 0xF77B8C VA: 0xF77B8C
-		//public int GetLineNo() { }
+		public int GetLineNo()
+		{
+			return noteInfo.trackID;
+		}
 
 		//// RVA: 0xF77BB8 Offset: 0xF77BB8 VA: 0xF77BB8
 		public int GetIndexInMode(MusicData.NoteModeType mode)
@@ -156,6 +159,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF77FC4 Offset: 0xF77FC4 VA: 0xF77FC4
-		//public void ResetSlideNoteResult() { }
+		public void ResetSlideNoteResult()
+		{
+			m_result_ex.m_result = RhythmGameConsts.NoteResult.None;
+			resultReset = true;
+		}
 	}
 }

@@ -162,7 +162,27 @@ namespace XeApp.Game.Common
 			}
 
 			//// RVA: 0x1C0E08C Offset: 0x1C0E08C VA: 0x1C0E08C
-			//public void EmitBurst(int count, double syncTime) { }
+			public void EmitBurst(int count, double syncTime)
+			{
+				bool prevActive = gameObject.activeSelf;
+				gameObject.SetActive(true);
+				if(!isPause)
+				{
+					if(hasParticle)
+					{
+						particle.Emit(count);
+					}
+					if(hasAnimator)
+					{
+						if(!prevActive)
+							animator.Rebind();
+						animator.enabled = true;
+						animator.speed = 1;
+					}
+				}
+				isEmit = true;
+				baseTime = syncTime;
+			}
 
 			//// RVA: 0x1C0D888 Offset: 0x1C0D888 VA: 0x1C0D888
 			public void EmitStop()
@@ -336,7 +356,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0C944 Offset: 0x1C0C944 VA: 0x1C0C944
-		//public void EmitBurst(string name, int count) { }
+		public void EmitBurst(string name, int count)
+		{
+			Execute(name, (Instance instance) =>
+			{
+				//0x1C0E030
+				instance.EmitBurst(count, m_syncTime);
+			});
+		}
 
 		//// RVA: 0x1C0CA40 Offset: 0x1C0CA40 VA: 0x1C0CA40
 		public void EmitStop(string name)

@@ -1,16 +1,17 @@
 using UnityEngine;
 using System;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 namespace XeApp.Game.RhythmGame
 {
 	public class RhythmGameUIController : MonoBehaviour
 	{
-		// private List<Animator> m_list_anim = new List<Animator>(); // 0x1C
-		// private List<ParticleSystem> m_list_particle = new List<ParticleSystem>(); // 0x20
-		// private List<EffectBundleControllerSimple> m_list_effect = new List<EffectBundleControllerSimple>(); // 0x24
+		private List<Animator> m_list_anim = new List<Animator>(); // 0x1C
+		private List<ParticleSystem> m_list_particle = new List<ParticleSystem>(); // 0x20
+		private List<EffectBundleControllerSimple> m_list_effect = new List<EffectBundleControllerSimple>(); // 0x24
 
-		// public GameUIIntro intro { get; private set; } // 0xC
+		public GameUIIntro intro { get; private set; } // 0xC
 		public GameUIComplete complete { get; private set; } // 0x10
 		public GameUIFailed failed { get; private set; } // 0x14
 		public IRhythmGameHUD Hud { get; private set; } // 0x18
@@ -42,9 +43,41 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0CC9C Offset: 0xC0CC9C VA: 0xC0CC9C
 		public void Initialize(RhythmGameResource resource, RhythmGamePlayer.Setting setting, RhythmGamePlayer.SettingMV mvSetting)
 		{
-			TodoLogger.Log(0, "uicontroller Initialize");
+			Canvas[] cs = transform.root.Find("Layer-Overlay").GetComponentsInChildren<Canvas>(true);
+			Transform c = null;
+			for(int i = 0; i < cs.Length; i++)
+			{
+				if (cs[i].name == "TopLayoutCanvas")
+				{
+					c = cs[i].transform.GetChild(0);
+					break;
+				}
+			}
 			GameObject ui = Instantiate(resource.uiPrefab);
+			ui.transform.SetParent(transform.root.Find("Layer-UI").GetComponentInChildren<Canvas>(true).transform.GetChild(0).transform, false);
 			Hud =  ui.GetComponent<IRhythmGameHUD>();
+			Hud.isEnableCutin = setting.m_enable_cutin;
+			Hud.isShowNotes = mvSetting.m_show_notes;
+			Hud.Initialize();
+			Hud.SetPlayerSideTexture(resource.m_pilotTexture, resource.m_divaTexture);
+			Hud.SetEnemySideTexture(resource.m_enemyPilotTexture, resource.m_enemyRobotTexture);
+			if(resource.enemySkillPrefab != null)
+			{
+				Hud.SetEnemyLiveSkillEffect(resource.enemySkillPrefab);
+			}
+			intro = GameManager.Instance.GameUIIntro;
+			failed = resource.faildUiPrefab.GetComponent<GameUIFailed>();
+			failed.transform.SetParent(c, false);
+			failed.gameObject.SetActive(false);
+			complete = resource.completeUiPrefab.GetComponent<GameUIComplete>();
+			complete.transform.SetParent(c, false);
+			complete.gameObject.SetActive(false);
+			m_list_anim.Clear();
+			m_list_anim.AddRange(ui.GetComponentsInChildren<Animator>(true));
+			m_list_particle.Clear();
+			m_list_particle.AddRange(ui.GetComponentsInChildren<ParticleSystem>(true));
+			m_list_effect.Clear();
+			m_list_effect.AddRange(ui.GetComponentsInChildren<EffectBundleControllerSimple>(true));
 		}
 
 		// // RVA: 0xC0D81C Offset: 0xC0D81C VA: 0xC0D81C
@@ -76,7 +109,10 @@ namespace XeApp.Game.RhythmGame
 		// public void EndCompleteAnim() { }
 
 		// // RVA: 0xC0DC10 Offset: 0xC0DC10 VA: 0xC0DC10
-		// public void UpdateEnergy(int energy) { }
+		public void UpdateEnergy(int energy)
+		{
+			TodoLogger.Log(0, "UpdateEnergy");
+		}
 
 		// // RVA: 0xC0DCF0 Offset: 0xC0DCF0 VA: 0xC0DCF0
 		public void UpdateEnemyLife(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback)
@@ -85,7 +121,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC0DDFC Offset: 0xC0DDFC VA: 0xC0DDFC
-		// public void UpdateEnemyDamageResult(int result, Vector3 position) { }
+		public void UpdateEnemyDamageResult(int result, Vector3 position)
+		{
+			TodoLogger.Log(0, "UpdateEnemyDamageResult");
+		}
 
 		// // RVA: 0xC0DF08 Offset: 0xC0DF08 VA: 0xC0DF08
 		public void UpdateCombo(int newCombo)

@@ -196,13 +196,11 @@ public class AOJGDNFAIJL_PrismData
                 if(AGBLOHKHHAB_SelectedValkyrieId < 1)
                 {
                     FBAGIDFLHHI_PrismValkyrieId = AOPLBEPHLID_DefaultValkyrieId;
-                    UnityEngine.Debug.LogError(FBAGIDFLHHI_PrismValkyrieId);
                     AGBLOHKHHAB_SelectedValkyrieId = DKNAIAKHHDC_Invalid;
                 }
                 else
                 {
                     FBAGIDFLHHI_PrismValkyrieId = AGBLOHKHHAB_SelectedValkyrieId;
-                    UnityEngine.Debug.LogError(FBAGIDFLHHI_PrismValkyrieId);
                 }
             }
             if(!NAENFAFGMEP_IsMultiDiva)
@@ -511,7 +509,6 @@ public class AOJGDNFAIJL_PrismData
 				return false;
 			AGBLOHKHHAB_SelectedValkyrieId = DKNAIAKHHDC_Invalid;
 			FBAGIDFLHHI_PrismValkyrieId = AOPLBEPHLID_DefaultValkyrieId;
-            UnityEngine.Debug.LogError(FBAGIDFLHHI_PrismValkyrieId);
 			if (OIPCCBHIKIA > 0)
 			{
 				AGBLOHKHHAB_SelectedValkyrieId = MDNHCIKGEAE_ValkyrieList[OIPCCBHIKIA].PPFNGGCBJKC_Id;
@@ -519,7 +516,6 @@ public class AOJGDNFAIJL_PrismData
 			if (AGBLOHKHHAB_SelectedValkyrieId > 0)
             {
 				FBAGIDFLHHI_PrismValkyrieId = AGBLOHKHHAB_SelectedValkyrieId;
-                UnityEngine.Debug.LogError(FBAGIDFLHHI_PrismValkyrieId);
             }
 			return true;
 		}

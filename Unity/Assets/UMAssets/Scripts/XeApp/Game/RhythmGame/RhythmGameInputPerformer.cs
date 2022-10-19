@@ -226,10 +226,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9A3E2C Offset: 0x9A3E2C VA: 0x9A3E2C Slot: 4
-		//public override void BeginTouchSave(int lineNo) { }
+		public override void BeginTouchSave(int lineNo)
+		{
+			TodoLogger.Log(0, "RhythmGameInputPerformer BeginTouchSave");
+		}
 
 		//// RVA: 0x9A4060 Offset: 0x9A4060 VA: 0x9A4060 Slot: 5
-		//public override void EndTouchSave(int lineNo, bool isCheckEndTouch = True) { }
+		public override void EndTouchSave(int lineNo, bool isCheckEndTouch = true)
+		{
+			TodoLogger.Log(0, "RhythmGameInputPerformer EndTouchSave");
+		}
 
 		//// RVA: 0x9A40A4 Offset: 0x9A40A4 VA: 0x9A40A4
 		//public bool CheckTouchFingerId(int finger, int lineNo) { }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
@@ -65,7 +66,29 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xBFE9F8 Offset: 0xBFE9F8 VA: 0xBFE9F8
-		//public void IncreaseScore(RhythmGameConsts.NoteResultEx a_result_ex, int combo, float bonusRate, int bonusValue, RhythmGameConsts.SpecialNoteType spType, float a_excellent_score_rate, bool a_enable_combo_bonus = True) { }
+		public void IncreaseScore(RhythmGameConsts.NoteResultEx a_result_ex, int combo, float bonusRate, int bonusValue, RhythmGameConsts.SpecialNoteType spType, float a_excellent_score_rate, bool a_enable_combo_bonus = true)
+		{
+			float f = 1;
+			if(a_enable_combo_bonus)
+			{
+				int totalCombo = totalComboCount;
+				for (int i = 0; i < comboBonusDataList.Count; i++)
+				{
+					if(combo / totalCombo >= comboBonusDataList[i].ADKDHKMPMHP / 100.0f)
+					{
+						f = comboBonusDataList[i].DHIPGHBJLIL / 100.0f;
+						break;
+					}
+				}
+			}
+			float g = bonusRate - 1 + f - 1 + 1;
+			float s = noteResultBonusRateList[(int)a_result_ex.m_result];
+			float h = spType == RhythmGameConsts.SpecialNoteType.Score && a_result_ex.m_result >= RhythmGameConsts.NoteResult.Good ? scoreNotesValue : 0;
+			nonExcellentScore += Mathf.FloorToInt(f * h * s + s * g * baseNoteScore + 0);
+			if (a_result_ex.m_excellent)
+				s += a_excellent_score_rate;
+			currentScore += Mathf.FloorToInt(f * h * s + g * baseNoteScore * s + 0);
+		}
 
 		//// RVA: 0xBFED3C Offset: 0xBFED3C VA: 0xBFED3C
 		public ResultScoreRank.Type CalcCurrentRank()

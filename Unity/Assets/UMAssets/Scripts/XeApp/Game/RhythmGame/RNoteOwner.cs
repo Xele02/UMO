@@ -127,28 +127,50 @@ namespace XeApp.Game.RhythmGame
 		//public void FreeNote(RNoteObject obj) { }
 
 		//// RVA: 0xDB8BEC Offset: 0xDB8BEC VA: 0xDB8BEC
-		//public bool BeganTouch(int lineNo, int fingerId) { }
+		public bool BeganTouch(int lineNo, int fingerId)
+		{
+			TodoLogger.Log(0, "RNoteOwner BeganTouch");
+			return false;
+		}
 
 		//// RVA: 0xDB5FF8 Offset: 0xDB5FF8 VA: 0xDB5FF8
-		//public void EndedTouch(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss, bool checkLine = False) { }
+		public void EndedTouch(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss, bool checkLine = false)
+		{
+			TodoLogger.Log(0, "RNoteOwner EndedTouch");
+		}
 
 		//// RVA: 0xDB9A9C Offset: 0xDB9A9C VA: 0xDB9A9C
-		//public void ReleaseLine(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss, bool checkLine = False) { }
+		public void ReleaseLine(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss, bool checkLine = false)
+		{
+			TodoLogger.Log(0, "RNoteOwner ReleaseLine");
+		}
 
 		//// RVA: 0xDB9BDC Offset: 0xDB9BDC VA: 0xDB9BDC
-		//public void NextLine(int lineNo0, int lineNo1, int fingerId, bool forceMiss, bool checkLine = False) { }
+		public void NextLine(int lineNo0, int lineNo1, int fingerId, bool forceMiss, bool checkLine = false)
+		{
+			TodoLogger.Log(0, "RNoteOwner NextLine");
+		}
 
 		//// RVA: 0xDB9BE0 Offset: 0xDB9BE0 VA: 0xDB9BE0
-		//public void SwipedTouch(int lineNo, int fingerId, bool isRight, bool isDown, bool isLeft, bool isUp) { }
+		public void SwipedTouch(int lineNo, int fingerId, bool isRight, bool isDown, bool isLeft, bool isUp)
+		{
+			TodoLogger.Log(0, "RNoteOwner SwipedTouch");
+		}
 
 		//// RVA: 0xDBA644 Offset: 0xDBA644 VA: 0xDBA644
 		//private bool IsSuccessFlick(MusicScoreData.InputNoteInfo info, bool[] flag) { }
 
 		//// RVA: 0xDBA7A4 Offset: 0xDBA7A4 VA: 0xDBA7A4
-		//public void NeutralTouch(int lineNo, int fingerId) { }
+		public void NeutralTouch(int lineNo, int fingerId)
+		{
+			TodoLogger.Log(0, "RNoteOwner NeutralTouch");
+		}
 
 		//// RVA: 0xDBAC34 Offset: 0xDBAC34 VA: 0xDBAC34
-		//public void CheckInputCallback(RhythmGameInputPerformer.InputSaver inputSaver) { }
+		public void CheckInputCallback(RhythmGameInputPerformer.InputSaver inputSaver)
+		{
+			TodoLogger.Log(0, "RNoteOwner CheckInputCallback");
+		}
 
 		//// RVA: 0xDBAD54 Offset: 0xDBAD54 VA: 0xDBAD54
 		//private int SinglePoolSortTimeFunc(RNoteSingle a, RNoteSingle b) { }
@@ -160,19 +182,35 @@ namespace XeApp.Game.RhythmGame
 		//private int LongPoolSortLastTimeFunc(RNoteLong a, RNoteLong b) { }
 
 		//// RVA: 0xDBB024 Offset: 0xDBB024 VA: 0xDBB024
-		//public bool IsLongBeganTouched(int lineNo) { }
+		public bool IsLongBeganTouched(int lineNo)
+		{
+			TodoLogger.Log(0, "RNoteOwner IsLongBeganTouched");
+			return false;
+		}
 
 		//// RVA: 0xDB9AF4 Offset: 0xDB9AF4 VA: 0xDB9AF4
-		//public bool IsSlideBeganTouched(int fingerId) { }
+		public bool IsSlideBeganTouched(int fingerId)
+		{
+			TodoLogger.Log(0, "RNoteOwner IsSlideBeganTouched");
+			return false;
+		}
 
 		//// RVA: 0xDBB150 Offset: 0xDBB150 VA: 0xDBB150
 		//public RNoteSlide GetRNoteSlide(RNoteObject startNote) { }
 
 		//// RVA: 0xDBB2AC Offset: 0xDBB2AC VA: 0xDBB2AC
-		//public bool IsLongLastEvaluation(int lineNo) { }
+		public bool IsLongLastEvaluation(int lineNo)
+		{
+			TodoLogger.Log(0, "RNoteOwner IsLongLastEvaluation");
+			return false;
+		}
 
 		//// RVA: 0xDBB458 Offset: 0xDBB458 VA: 0xDBB458
-		//public bool IsSlideLastEvaluation(int fingerId) { }
+		public bool IsSlideLastEvaluation(int fingerId)
+		{
+			TodoLogger.Log(0, "RNoteOwner IsSlideLastEvaluation");
+			return false;
+		}
 
 		//// RVA: 0xDBB66C Offset: 0xDBB66C VA: 0xDBB66C
 		//public void SetupNoteResultData(ref int[] countArray, RhythmGamePlayLogger logger) { }
@@ -205,13 +243,21 @@ namespace XeApp.Game.RhythmGame
 		//public RhythmGameConsts.NoteResult OverwriteCheatNoteResult(RhythmGameConsts.NoteResult result, int lineNo) { }
 
 		//// RVA: 0xDBBEAC Offset: 0xDBBEAC VA: 0xDBBEAC
-		//public bool CheckAllNotesEnd() { }
+		public bool CheckAllNotesEnd()
+		{
+			TodoLogger.Log(0, "RNoteOwner GetNote");
+			return false;
+		}
 
 		//// RVA: 0xDBC000 Offset: 0xDBC000 VA: 0xDBC000
 		//public string SerializeForNotesLog() { }
 
 		//// RVA: 0xDBC188 Offset: 0xDBC188 VA: 0xDBC188
-		//public RNote GetNote(int index) { }
+		public RNote GetNote(int index)
+		{
+			TodoLogger.Log(0, "RNoteOwner GetNote");
+			return null;
+		}
 
 		//// RVA: 0xDBC208 Offset: 0xDBC208 VA: 0xDBC208
 		//public int GetNoteListNum() { }

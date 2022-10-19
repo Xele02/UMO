@@ -316,10 +316,10 @@ public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_ServerSaveBlock
 	{
 		long time = Utility.GetCurrentUnixTime();
 		FBGGEFFJJHB = (int)(time ^ 0x2b50b);
-		BFKKFMILHMO_MaxScCrypted = 0;
-		FCFIANFLKCF_MaxIdCrypted = 0;
-		OBJIGFALAGG_MaxDgCrypted = 0;
-		KGNOMMHMJEB_MaxL6Crypted = 0;
+		AEBENOJEGOJ_MaxSc = 0;
+		JHOIMONJKLG_MaxId = 0;
+		JEENEHPOCFN_MaxDf = 0;
+		NADEAGFJDLL_MaxL6 = 0;
 		APFOBLMCLAO_QCnt = 0;
 		JGDNCEANEBB_LvMaxCnt = 0;
 		DALCINDEJLC_DcTm = 0;

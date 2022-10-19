@@ -200,7 +200,10 @@ namespace XeApp.Game.RhythmGame
 		public bool isBattleLimitTimeRunning { get; set; } // 0x1C8
 
 		// // RVA: 0xDCA580 Offset: 0xDCA580 VA: 0xDCA580 Slot: 17
-		// public void Initialize() { }
+		public void Initialize()
+		{
+			TodoLogger.Log(0, "Hud Initialize");
+		}
 
 		// // RVA: 0xDCD404 Offset: 0xDCD404 VA: 0xDCD404
 		// public static GameObject RhythmGameInstantiatePrefab(Object prefab) { }
@@ -269,13 +272,22 @@ namespace XeApp.Game.RhythmGame
 		// private void UpdateInput() { }
 
 		// // RVA: 0xDCDCEC Offset: 0xDCDCEC VA: 0xDCDCEC Slot: 18
-		// public void SetPlayerSideTexture(UiPilotTexture pilotTexture, UiDivaTexture divaTexture) { }
+		public void SetPlayerSideTexture(UiPilotTexture pilotTexture, UiDivaTexture divaTexture)
+		{
+			TodoLogger.Log(0, "Hud SetPlayerSideTexture");
+		}
 
 		// // RVA: 0xDCDCF8 Offset: 0xDCDCF8 VA: 0xDCDCF8 Slot: 19
-		// public void SetEnemySideTexture(UiEnemyPilotTexture pilotTexture, UiEnemyRobotTexture robotTexture) { }
+		public void SetEnemySideTexture(UiEnemyPilotTexture pilotTexture, UiEnemyRobotTexture robotTexture)
+		{
+			TodoLogger.Log(0, "Hud SetEnemySideTexture");
+		}
 
 		// // RVA: 0xDCDD04 Offset: 0xDCDD04 VA: 0xDCDD04 Slot: 20
-		// public void SetEnemyLiveSkillEffect(GameObject effPrefab) { }
+		public void SetEnemyLiveSkillEffect(GameObject effPrefab)
+		{
+			TodoLogger.Log(0, "Hud SetEnemyLiveSkillEffect");
+		}
 
 		// // RVA: 0xDCDF18 Offset: 0xDCDF18 VA: 0xDCDF18 Slot: 21
 		// public void SetPoisonSkillEffect(int a_bit, bool a_enable) { }
@@ -336,10 +348,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDCEF98 Offset: 0xDCEF98 VA: 0xDCEF98 Slot: 35
-		// public void ShowLowEnergy() { }
+		public void ShowLowEnergy()
+		{
+			TodoLogger.Log(0, "Hud ShowLowEnergy");
+		}
 
 		// // RVA: 0xDCF09C Offset: 0xDCF09C VA: 0xDCF09C Slot: 36
-		// public void ShowValkyrie() { }
+		public void ShowValkyrie()
+		{
+			TodoLogger.Log(0, "Hud ShowValkyrie");
+		}
 
 		// // RVA: 0xDCF36C Offset: 0xDCF36C VA: 0xDCF36C Slot: 37
 		public void ShowEnemyStatus()
@@ -419,13 +437,23 @@ namespace XeApp.Game.RhythmGame
 		// public void EndAcceptOfInput() { }
 
 		// // RVA: 0xDD077C Offset: 0xDD077C VA: 0xDD077C Slot: 51
-		// public bool IsInputAccept() { }
+		public bool IsInputAccept()
+		{
+			TodoLogger.Log(0, "Hud IsInputAccept");
+			return true;
+		}
 
 		// // RVA: 0xDD07AC Offset: 0xDD07AC VA: 0xDD07AC Slot: 52
-		// public void ShowTouchEffect(int trackId, int fingerId) { }
+		public void ShowTouchEffect(int trackId, int fingerId)
+		{
+			TodoLogger.Log(0, "Hud ShowTouchEffect");
+		}
 
 		// // RVA: 0xDD08F8 Offset: 0xDD08F8 VA: 0xDD08F8 Slot: 53
-		// public void HideToucheEffect(int trackId, int fingerId) { }
+		public void HideToucheEffect(int trackId, int fingerId)
+		{
+			TodoLogger.Log(0, "Hud HideToucheEffect");
+		}
 
 		// // RVA: 0xDD0A50 Offset: 0xDD0A50 VA: 0xDD0A50 Slot: 54
 		// public void HideAllToucheEffect() { }
@@ -464,7 +492,10 @@ namespace XeApp.Game.RhythmGame
 		// public void ShowNotesHitEffect(int trackId) { }
 
 		// // RVA: 0xDD12A0 Offset: 0xDD12A0 VA: 0xDD12A0 Slot: 66
-		// public void ShowResultEffect(int lineNumber, RhythmGameConsts.NoteResultEx a_result_ex) { }
+		public void ShowResultEffect(int lineNumber, RhythmGameConsts.NoteResultEx a_result_ex)
+		{
+			TodoLogger.Log(0, "Hud ShowResultEffect");
+		}
 
 		// // RVA: 0xDD17BC Offset: 0xDD17BC VA: 0xDD17BC Slot: 67
 		// public void OnSkillEffect(int lineNumber, int effectType, bool isTopPriority) { }
@@ -586,6 +617,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD2750 Offset: 0xDD2750 VA: 0xDD2750 Slot: 94
-		// public bool IsActiveLine(int lineNo) { }
+		public bool IsActiveLine(int lineNo)
+		{
+			TodoLogger.Log(0, "Hud IsActiveLine");
+			return true;
+		}
 	}
 }

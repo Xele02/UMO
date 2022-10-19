@@ -263,11 +263,50 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEA1D74 Offset: 0xEA1D74 VA: 0xEA1D74
-		// public void DamageStart() { }
+		public void DamageStart()
+		{
+			if(!isDamage)
+			{
+				isDamage = true;
+				effectFactories.EmitStart("EF_damage");
+				CheckShootAction();
+				if(!isTransforming)
+				{
+					int stateHash = 0;
+					if(!battroid.activeSelf)
+					{
+						stateHash = DamageStateHash;
+					}
+					else
+					{
+						stateHash = BattroidDamageStateHash;
+					}
+					animator.Play(stateHash, 0, 0);
+					m_coWaitDamageEnd = StartCoroutine(Co_WaitAnimationEnd(stateHash, () =>
+					{
+						//0xEA24D4
+						m_coWaitDamageEnd = null;
+						isDamage = false;
+						CheckShootAction();
+					}));
+				}
+				else
+				{
+					m_coWaitDamageEnd = StartCoroutine(Co_WaitDamageEffectProcess());
+				}
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73C090 Offset: 0x73C090 VA: 0x73C090
 		// // RVA: 0xEA1F8C Offset: 0xEA1F8C VA: 0xEA1F8C
-		// private IEnumerator Co_WaitDamageEffectProcess() { }
+		private IEnumerator Co_WaitDamageEffectProcess()
+		{
+			//0xEA2578
+			yield return new WaitForSeconds(0.5f);
+			m_coWaitDamageEnd = null;
+			isDamage = false;
+			CheckShootAction();
+		}
 
 		// // RVA: 0xEA2038 Offset: 0xEA2038 VA: 0xEA2038
 		// public void DamageStop() { }

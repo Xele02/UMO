@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using XeApp.Game.Common;
+using XeApp.Game.RhythmGame.UI;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -59,16 +60,16 @@ namespace XeApp.Game.RhythmGame
 		// public abstract RhythmGameHudPauseButtonEvent get_PauseButton();
 
 		// // RVA: -1 Offset: -1 Slot: 13
-		// public abstract void Initialize();
+		void Initialize();
 
 		// // RVA: -1 Offset: -1 Slot: 14
-		// public abstract void SetPlayerSideTexture(UiPilotTexture pilotTexture, UiDivaTexture divaTexture);
+		void SetPlayerSideTexture(UiPilotTexture pilotTexture, UiDivaTexture divaTexture);
 
 		// // RVA: -1 Offset: -1 Slot: 15
-		// public abstract void SetEnemySideTexture(UiEnemyPilotTexture pilotTexture, UiEnemyRobotTexture robotTexture);
+		void SetEnemySideTexture(UiEnemyPilotTexture pilotTexture, UiEnemyRobotTexture robotTexture);
 
 		// // RVA: -1 Offset: -1 Slot: 16
-		// public abstract void SetEnemyLiveSkillEffect(GameObject effPrefab);
+		void SetEnemyLiveSkillEffect(GameObject effPrefab);
 
 		// // RVA: -1 Offset: -1 Slot: 17
 		// public abstract void SetPoisonSkillEffect(int a_bit, bool a_enable);
@@ -113,10 +114,10 @@ namespace XeApp.Game.RhythmGame
 		void SetItemCount(int kind, int count);
 
 		// // RVA: -1 Offset: -1 Slot: 31
-		// public abstract void ShowLowEnergy();
+		void ShowLowEnergy();
 
 		// // RVA: -1 Offset: -1 Slot: 32
-		// public abstract void ShowValkyrie();
+		void ShowValkyrie();
 
 		// // RVA: -1 Offset: -1 Slot: 33
 		void ShowEnemyStatus();
@@ -161,13 +162,13 @@ namespace XeApp.Game.RhythmGame
 		// public abstract void EndAcceptOfInput();
 
 		// // RVA: -1 Offset: -1 Slot: 47
-		// public abstract bool IsInputAccept();
+		bool IsInputAccept();
 
 		// // RVA: -1 Offset: -1 Slot: 48
-		// public abstract void ShowTouchEffect(int trackId, int fingerId);
+		void ShowTouchEffect(int trackId, int fingerId);
 
 		// // RVA: -1 Offset: -1 Slot: 49
-		// public abstract void HideToucheEffect(int trackId, int fingerId);
+		void HideToucheEffect(int trackId, int fingerId);
 
 		// // RVA: -1 Offset: -1 Slot: 50
 		// public abstract void HideAllToucheEffect();
@@ -206,7 +207,7 @@ namespace XeApp.Game.RhythmGame
 		// public abstract void ShowNotesHitEffect(int trackId);
 
 		// // RVA: -1 Offset: -1 Slot: 62
-		// public abstract void ShowResultEffect(int lineNumber, RhythmGameConsts.NoteResultEx a_result_ex);
+		void ShowResultEffect(int lineNumber, RhythmGameConsts.NoteResultEx a_result_ex);
 
 		// // RVA: -1 Offset: -1 Slot: 63
 		// public abstract void OnSkillEffect(int lineNumber, int effectType, bool isTopPriority);
@@ -290,6 +291,6 @@ namespace XeApp.Game.RhythmGame
 		void SetLineAlpha(int lineNo, float alpha);
 
 		// // RVA: -1 Offset: -1 Slot: 90
-		// public abstract bool IsActiveLine(int lineNo);
+		bool IsActiveLine(int lineNo);
 	}
 }

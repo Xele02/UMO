@@ -1,8 +1,8 @@
 
 public class AMCGONHBGGF
 {
-	public int DIPKCALNIII_Id; // 0x8
-	public int BEEAIAAJOHD_CId; // 0xC
+	public int DIPKCALNIII_Id = 1; // 0x8 // UMO default to diva 1 when no save
+	public int BEEAIAAJOHD_CId = 1; // 0xC
 	public int AFNIOJHODAG_ColId; // 0x10
 	public int[] EBDNICPAFLB_SSlot = new int[3]; // 0x14
 

@@ -80,7 +80,25 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 		// // RVA: 0x1971CE4 Offset: 0x1971CE4 VA: 0x1971CE4
 		public void LHPDDGIJKNB()
 		{
-			TodoLogger.Log(0, "TODO");
+			PPFNGGCBJKC = 0;
+			BEBJKJKBOGH_Date = 0;
+			MJBODMOLOBC_Luck = 0;
+			JPIPENJGGDD_Mlt = 0;
+			IELENGDJPHF_Ulk = 0;
+			ANAJIAENLNB_Level = 0;
+			LHMOAJAIJCO_New = false;
+			CDOBCKMHAOK_Inf = 0;
+			DMNIMMGGJJJ_Leaf = 0;
+			DOAAOOHGODJ_PstNew = 0;
+			for(int i = 0; i < PDNIFBEGMHC_Mb.Length; i++)
+			{
+				PDNIFBEGMHC_Mb[i] = 0;
+			}
+			for(int i = 0; i < EMOJHJGHJLN.Length; i++)
+			{
+				EMOJHJGHJLN[i] = 0;
+			}
+			IDBDAPPJOND();
 		}
 
 		// // RVA: 0x196E140 Offset: 0x196E140 VA: 0x196E140

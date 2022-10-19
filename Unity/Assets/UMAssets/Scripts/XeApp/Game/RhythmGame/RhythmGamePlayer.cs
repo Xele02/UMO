@@ -854,7 +854,11 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BAE64 Offset: 0x9BAE64 VA: 0x9BAE64
 		private void BackupSave()
 		{
-			TodoLogger.Log(0, "BackupSave");
+			if (backupSaveData.m_enable)
+				return;
+			backupSaveData.m_enable = true;
+			backupSaveData.m_option = new ILDKBCLAFPB.MPHNGGECENI_Option();
+			backupSaveData.m_option.ODDIHGPONFL_Copy(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options);
 		}
 
 		// // RVA: 0x9BAFE8 Offset: 0x9BAFE8 VA: 0x9BAFE8
@@ -1042,7 +1046,9 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BAA40 Offset: 0x9BAA40 VA: 0x9BAA40
 		private void InitializeSkill()
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer InitializeSkill");
+			if (setting_mv.m_enable)
+				return;
+			TodoLogger.Log(0, "InitializeSkill");
 		}
 
 		// // RVA: 0x9BB22C Offset: 0x9BB22C VA: 0x9BB22C
@@ -1156,7 +1162,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BB81C Offset: 0x9BB81C VA: 0x9BB81C
 		private void StartValkyrieHUD()
 		{
-			TodoLogger.Log(0, "StartValkyrieHUD");
+			if(status.internalMode.type != RhythmGameMode.Type.Valkyrie)
+			{
+				uiController.Hud.ShowLowEnergy();
+				return;
+			}
+			uiController.Hud.ShowValkyrie();
+			SoundManager.Instance.sePlayerGame.Play(8);
 		}
 
 		// // RVA: 0x9BB820 Offset: 0x9BB820 VA: 0x9BB820
@@ -1873,7 +1885,6 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C48F0 Offset: 0x9C48F0 VA: 0x9C48F0
 		private void TutorialClearEndRhythmGame()
 		{
-			Debug.LogError("TODO");
 			TodoLogger.Log(0, "TODO");
 		}
 
@@ -1942,7 +1953,6 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C34EC Offset: 0x9C34EC VA: 0x9C34EC
 		private void GotoTitleSceneInError()
 		{
-			Debug.LogError("TODO");
 			TodoLogger.Log(0, "TODO");
 		}
 
@@ -1970,62 +1980,106 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C6020 Offset: 0x9C6020 VA: 0x9C6020
 		public bool IsActiveLine(int lineNo)
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer lineNo");
-			return true;
+			return uiController.Hud.IsActiveLine(lineNo);
 		}
 
 		// // RVA: 0x9C6120 Offset: 0x9C6120 VA: 0x9C6120
 		public void BeganTouchEventCallback(int lineNo, int fingerId)
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer BeganTouchEventCallback");
+			if (!uiController.Hud.isReadyHUD)
+				return;
+			if(!uiController.Hud.IsInputAccept())
+				return;
+			if (!rNoteOwner.BeganTouch(lineNo, fingerId) && !isVisiblePauseWindow)
+				PlayNotesSE(NoteSEType.Exempt);
+			if(rNoteOwner.IsLongBeganTouched(lineNo) || rNoteOwner.IsSlideBeganTouched(fingerId))
+			{
+				gamePerformer.BeginTouchSave(lineNo);
+			}
+			if (isVisiblePauseWindow)
+				return;
+			uiController.Hud.ShowTouchEffect(lineNo, fingerId);
 		}
 
 		// // RVA: 0x9C651C Offset: 0x9C651C VA: 0x9C651C
 		public void EndedTouchEventCallback(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss)
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer EndedTouchEventCallback");
+			if (!uiController.Hud.isReadyHUD)
+				return;
+			rNoteOwner.EndedTouch(lineNo, lineNo_Begin, fingerId, forceMiss, true);
+			uiController.Hud.HideToucheEffect(lineNo, fingerId);
 		}
 
 		// // RVA: 0x9C6730 Offset: 0x9C6730 VA: 0x9C6730
 		public void ReleaseLineEventCallback(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss)
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer ReleaseLineEventCallback");
+			if (!uiController.Hud.isReadyHUD)
+				return;
+			rNoteOwner.ReleaseLine(lineNo, lineNo_Begin, fingerId, forceMiss, false);
+			uiController.Hud.HideToucheEffect(lineNo, fingerId);
 		}
 
 		// // RVA: 0x9C6940 Offset: 0x9C6940 VA: 0x9C6940
 		public void NextLineEventCallback(int lineNo0, int lineNo1, int fingerId, bool forceMiss)
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer NextLineEventCallback");
+			if (!uiController.Hud.isReadyHUD)
+				return;
+			rNoteOwner.NextLine(lineNo0, lineNo1, fingerId, forceMiss, false);
+			uiController.Hud.HideToucheEffect(lineNo0, fingerId);
 		}
 
 		// // RVA: 0x9C6B50 Offset: 0x9C6B50 VA: 0x9C6B50
 		public void SwipedTouchEventCallback(int lineNo, int fingerId, bool isRight, bool isDown, bool isLeft, bool isUp)
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer SwipedTouchEventCallback");
+			if (!uiController.Hud.isReadyHUD)
+				return;
+			rNoteOwner.SwipedTouch(lineNo, fingerId, isRight, isDown, isLeft, isUp);
+			if(rNoteOwner.IsSlideBeganTouched(fingerId))
+			{
+				rNoteOwner.NeutralTouch(lineNo, fingerId);
+			}
 		}
 
 		// // RVA: 0x9C6D18 Offset: 0x9C6D18 VA: 0x9C6D18
 		public void NeutralTouchEventCallback(int lineNo, int fingerId)
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer NeutralTouchEventCallback");
+			if (!uiController.Hud.isReadyHUD)
+				return;
+			rNoteOwner.NeutralTouch(lineNo, fingerId);
+			if(!rNoteOwner.IsLongLastEvaluation(lineNo))
+			{
+				if (!rNoteOwner.IsSlideLastEvaluation(fingerId))
+					return;
+			}
+			gamePerformer.EndTouchSave(lineNo, false);
 		}
 
 		// // RVA: 0x9C6EE0 Offset: 0x9C6EE0 VA: 0x9C6EE0
 		public void CheckInputCallback(RhythmGameInputPerformer.InputSaver a_saver)
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer CheckInputCallback");
+			if (!uiController.Hud.isReadyHUD)
+				return;
+			rNoteOwner.CheckInputCallback(a_saver);
 		}
 
 		// // RVA: 0x9C7008 Offset: 0x9C7008 VA: 0x9C7008
 		private void RNoteOverwrideJudgedResultDelegate(RNoteObject a_note_obj, ref RhythmGameConsts.NoteResultEx a_result_ex)
 		{
+			if (setting_mv.m_enable)
+				return;
 			TodoLogger.Log(0, "RhythmGamePlayer RNoteOverwrideJudgedResultDelegate");
 		}
 
 		// // RVA: 0x9C71D8 Offset: 0x9C71D8 VA: 0x9C71D8
 		private void RNoteJudgedResultDelegate(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex, RhythmGameConsts.NoteJudgeType a_judge_type)
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer RNoteJudgedResultDelegate");
+			if (!uiController.Hud.isReadyHUD)
+				return;
+			JudgedNoteResult(noteObject, a_result_ex);
+			JudgedNoteEffect(noteObject, a_result_ex);
+			JudgedNoteSound(noteObject, a_result_ex.m_result);
+			gamePerformer.EndTouchSave(noteObject.rNote.GetLineNo(), true);
+			status.life.isInvincibleGameEnd = rNoteOwner.CheckAllNotesEnd();
 		}
 
 		// // RVA: 0x9CA2CC Offset: 0x9CA2CC VA: 0x9CA2CC
@@ -2035,22 +2089,223 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9C73F8 Offset: 0x9C73F8 VA: 0x9C73F8
-		// private void JudgedNoteResult(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex) { }
+		private void JudgedNoteResult(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex)
+		{
+			bool isValk = status.directionMode.type == RhythmGameMode.Type.Valkyrie && noteObject.rNote.modeType == MusicData.NoteModeType.Valkyrie;
+			if (noteObject.rNote.noteInfo.swipe == MusicScoreData.TouchState.SwipeStart)
+				return;
+			if ((a_result_ex.m_result >= RhythmGameConsts.NoteResult.Great && a_result_ex.m_result < RhythmGameConsts.NoteResult.Num) || buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.AutoCombo, noteObject.rNote.GetLineNo()))
+			{
+				status.combo.IncreaseCombo();
+				if (isValk)
+					status.comboValkyrie.IncreaseCombo();
+			}
+			else
+			{
+				if (!buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ComboContinue, noteObject.rNote.GetLineNo()))
+				{
+					status.combo.Zero();
+					if (isValk)
+					{
+						status.comboValkyrie.Zero();
+						if (valkyrieModeObject.isRunning)
+						{
+							valkyrieModeObject.NotifyDamage();
+						}
+					}
+				}
+			}
+			float f = 1.0f;
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ScoreUpPercentage, noteObject.rNote.GetLineNo()))
+			{
+				f = buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.ScoreUpPercentage, noteObject.rNote.GetLineNo(), a_result_ex.m_result) / 100.0f + 1;
+			}
+			if (a_result_ex.m_result == RhythmGameConsts.NoteResult.Perfect)
+			{
+				if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.PerfectScoreUpPercentage, noteObject.rNote.GetLineNo()))
+				{
+					f = buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.PerfectScoreUpPercentage, noteObject.rNote.GetLineNo(), RhythmGameConsts.NoteResult.None) / 100.0f;
+				}
+			}
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ComboBonus, noteObject.rNote.GetLineNo()))
+			{
+				f += buffOwner.CalcComboBonus(status.combo.current, noteObject.rNote.GetLineNo());
+			}
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ScoreUpPercentage_FoldWave, noteObject.rNote.GetLineNo()))
+			{
+				f += buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.ScoreUpPercentage_FoldWave, noteObject.rNote.GetLineNo(), a_result_ex.m_result);
+			}
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ScoreUpPercentage_Intimacy, noteObject.rNote.GetLineNo()))
+			{
+				f += buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.ScoreUpPercentage_Intimacy, noteObject.rNote.GetLineNo(), a_result_ex.m_result);
+			}
+			int a = 0;
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ScoreUpValue, noteObject.rNote.GetLineNo()))
+			{
+				a = buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.ScoreUpValue, noteObject.rNote.GetLineNo(), RhythmGameConsts.NoteResult.None);
+			}
+			status.score.IncreaseScore(a_result_ex, status.combo.current, f, a, noteObject.rNote.CurrentModeInfo(status.internalMode).specialNoteType, m_NoteResultParam_Excellent.m_score_rate, true);
+			if (status.directionMode.type == RhythmGameMode.Type.Normal)
+			{
+				if (noteObject.rNote.modeType == MusicData.NoteModeType.Normal)
+				{
+					status.energy.ChangeValue(a_result_ex.m_result, 1.0f, noteObject.rNote.CurrentModeInfo(status.internalMode).specialNoteType);
+					uiController.UpdateEnergy(status.energy.GetGaugeValue());
+				}
+			}
+			if (isValk)
+			{
+				int damage = status.enemy.Damage(a_result_ex.m_result, noteObject.rNote.GetIndexInMode(MusicData.NoteModeType.Valkyrie), status.comboValkyrie.current, 1.0f, 1.0f, noteObject.rNote.CurrentModeInfo(status.internalMode).specialNoteType);
+				bool is3DMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
+				bool showValkyrie = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG();
+				uiController.UpdateEnemyLife(status.enemy.currentValue, status.enemy.subgoalValue, status.enemy.goalValue, () =>
+				{
+					//0xBF1AFC
+					if (!is3DMode || !showValkyrie)
+						return;
+					valkyrieObject.StartTransformAnimation();
+				});
+				Vector3 pos = new Vector3();
+				if (is3DMode)
+				{
+					valkyrieModeObject.GetLockOnTargetPos(out pos);
+				}
+				uiController.UpdateEnemyDamageResult(damage, pos);
+				if (damage > 0)
+				{
+					valkyrieModeObject.NotifyHit();
+				}
+			}
+			if (a_result_ex.m_result > RhythmGameConsts.NoteResult.Bad)
+			{
+				if (noteObject.rNote.CurrentModeInfo(status.internalMode).specialNoteType == RhythmGameConsts.SpecialNoteType.Heal)
+				{
+					status.life.HealNotes();
+				}
+				if (noteObject.rNote.CurrentModeInfo(status.internalMode).specialNoteType == RhythmGameConsts.SpecialNoteType.CenterLiveSkill)
+				{
+					touchedCenterLiveSkill = true;
+				}
+				if (noteObject.rNote.CurrentModeInfo(status.internalMode).specialNoteType == RhythmGameConsts.SpecialNoteType.EventItem)
+				{
+					touchedEventItem = true;
+				}
+				int itemIdx = noteObject.rNote.CurrentModeInfo(status.internalMode).itemIndex;
+				if (itemIdx > -1)
+				{
+					dropItemList.Add(itemIdx);
+					dropItemRarityCount[~(itemIdx >> 30) & 1]++;
+				}
+			}
+			float f_damage = 1;
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.DamegeUp, noteObject.rNote.GetLineNo()))
+			{
+				f_damage = buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.DamegeUp, noteObject.rNote.GetLineNo(), RhythmGameConsts.NoteResult.None) / 100.0f + 1;
+			}
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ReduceDamage, noteObject.rNote.GetLineNo()))
+			{
+				f = Mathf.Min(buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.ReduceDamage, noteObject.rNote.GetLineNo(), RhythmGameConsts.NoteResult.None) / 100.0f, 1);
+				f_damage = f_damage * (1 - f);
+			}
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.NoDamage, noteObject.rNote.GetLineNo()))
+			{
+				f_damage = 0;
+			}
+			if (Database.Instance.gameSetup.musicInfo.isTutorialOne || Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+				f_damage = 0;
+			if(a_result_ex.m_result == RhythmGameConsts.NoteResult.Miss)
+			{
+				if(noteObject.rNote.noteInfo.longTouch != MusicScoreData.TouchState.Start)
+				{
+					if (noteObject.rNote.noteInfo.longTouch != MusicScoreData.TouchState.Continue)
+					{
+						if (noteObject.rNote.noteInfo.longTouch != MusicScoreData.TouchState.End)
+						{
+							if (rNoteOwner.GetNote(noteObject.rNote.noteInfo.prevIndex).noteInfo.longTouch != MusicScoreData.TouchState.Continue)
+							{
+								status.life.DamageNotes(RhythmGameConsts.NoteResult.Miss, f_damage);
+							}
+						}
+					}
+					else
+					{
+						//LAB_009c88f0
+						status.life.DamageNotes(RhythmGameConsts.NoteResult.Miss, f_damage);
+					}
+				}
+				else
+				{
+					if(noteObject.rNote.noteInfo.isSlide)
+					{
+						if(noteObject.rNote.noteInfo.nextIndex > -1)
+						{
+							if (rNoteOwner.GetNote(noteObject.rNote.noteInfo.nextIndex).noteInfo.longTouch != MusicScoreData.TouchState.Continue)
+							{
+								status.life.DamageNotes(RhythmGameConsts.NoteResult.Miss, f_damage);
+							}
+						}
+					}
+				}
+			}
+			else if(a_result_ex.m_result == RhythmGameConsts.NoteResult.Bad)
+			{
+				status.life.DamageNotes(RhythmGameConsts.NoteResult.Bad, f_damage);
+			}
+			if(status.directionMode.type == RhythmGameMode.Type.Normal)
+			{
+				if(noteObject.rNote.modeType == MusicData.NoteModeType.Valkyrie)
+				{
+					preJudgeValkyrieNotes.Add(noteObject);
+				}
+			}
+			if(noteObject.rNote.noteInfo.isSlide &&
+				a_result_ex.m_result == RhythmGameConsts.NoteResult.Miss && noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.End && 
+				rNoteOwner.GetNote(noteObject.rNote.noteInfo.prevIndex).result == 0 && 
+				(rNoteOwner.GetNote(noteObject.rNote.noteInfo.prevIndex).noteInfo.longTouch == MusicScoreData.TouchState.None || rNoteOwner.GetNote(noteObject.rNote.noteInfo.prevIndex).noteInfo.longTouch == MusicScoreData.TouchState.Continue))
+			{
+				//
+			}
+			else
+			{
+				EnterNoteResult(a_result_ex, noteObject.rNote.noteInfo.trackID);
+			}
+			if(noteObject.rNote.noteInfo.isSlide &&
+				a_result_ex.m_result == RhythmGameConsts.NoteResult.Miss && noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.End &&
+				noteObject.rNote.passingStatus == RNote.PassingStatus.Alive)
+			{
+				noteObject.rNote.ResetSlideNoteResult();
+			}
+			m_bit_note_result = m_bit_note_result | 1 << ((int)a_result_ex.m_result & 0x1f);
+		}
 
 		// // RVA: 0x9C8D08 Offset: 0x9C8D08 VA: 0x9C8D08
-		// private void JudgedNoteEffect(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex) { }
+		private void JudgedNoteEffect(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex)
+		{
+			TodoLogger.Log(0, "JudgedNoteEffect");
+		}
 
 		// // RVA: 0x9C9CC4 Offset: 0x9C9CC4 VA: 0x9C9CC4
-		// private void JudgedNoteSound(RNoteObject noteObject, RhythmGameConsts.NoteResult result) { }
+		private void JudgedNoteSound(RNoteObject noteObject, RhythmGameConsts.NoteResult result)
+		{
+			TodoLogger.Log(0, "JudgedNoteSound");
+		}
 
 		// // RVA: 0x9CA658 Offset: 0x9CA658 VA: 0x9CA658
 		// private void PlayNoteSEByResult(RhythmGameConsts.NoteResult result, bool isFlick) { }
 
 		// // RVA: 0x9C6474 Offset: 0x9C6474 VA: 0x9C6474
-		// private CriAtomExPlayback PlayNotesSE(RhythmGamePlayer.NoteSEType type) { }
+		private CriAtomExPlayback PlayNotesSE(NoteSEType type)
+		{
+			if (isIgnorePlayNotesSE)
+				return new CriAtomExPlayback(CriAtomExPlayback.invalidId);
+			return SoundManager.Instance.sePlayerNotes.Play(noteTouchSEIndex[(int)type]);
+		}
 
 		// // RVA: 0x9CA550 Offset: 0x9CA550 VA: 0x9CA550
-		// private void EnterNoteResult(RhythmGameConsts.NoteResultEx a_result_ex, int trackID) { }
+		private void EnterNoteResult(RhythmGameConsts.NoteResultEx a_result_ex, int trackID)
+		{
+			uiController.Hud.ShowResultEffect(trackID, a_result_ex);
+		}
 
 		// // RVA: 0x9BBDAC Offset: 0x9BBDAC VA: 0x9BBDAC
 		private void ReJudgeValkyrieNotes()

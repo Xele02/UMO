@@ -240,10 +240,22 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CE4EC0 Offset: 0x1CE4EC0 VA: 0x1CE4EC0
-		//public void NotifyHit() { }
+		public void NotifyHit()
+		{
+			if (!isShootingPhase)
+				return;
+			if (m_valkyrie.isShootLock || isHitEffect)
+				return;
+			m_effectFactory.EmitBurst(m_valkyrie.GetHitEffectName(), 1);
+		}
 
 		//// RVA: 0x1CE4F64 Offset: 0x1CE4F64 VA: 0x1CE4F64
-		//public void NotifyDamage() { }
+		public void NotifyDamage()
+		{
+			if (!isShootingPhase)
+				return;
+			m_valkyrie.DamageStart();
+		}
 
 		//// RVA: 0x1CE4220 Offset: 0x1CE4220 VA: 0x1CE4220
 		//private void ResetAnimationBaseTime() { }
