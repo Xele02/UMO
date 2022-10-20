@@ -206,7 +206,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDCD404 Offset: 0xDCD404 VA: 0xDCD404
-		// public static GameObject RhythmGameInstantiatePrefab(Object prefab) { }
+		public static GameObject RhythmGameInstantiatePrefab(Object prefab)
+		{
+			return Instantiate<GameObject>(prefab as GameObject);
+		}
 
 		// // RVA: 0xDCD510 Offset: 0xDCD510 VA: 0xDCD510
 		public void OnDestroy()
@@ -589,7 +592,12 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDCD3E4 Offset: 0xDCD3E4 VA: 0xDCD3E4
-		// public static bool IsNotKillEnemyPilot(int pilotId) { }
+		public static bool IsNotKillEnemyPilot(int pilotId)
+		{
+			if (pilotId != 2)
+				return pilotId == 12;
+			return true;
+		}
 
 		// // RVA: 0xDD2648 Offset: 0xDD2648 VA: 0xDD2648 Slot: 89
 		public void SetPlayerDivaId(int divaId)

@@ -122,7 +122,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x138B334 Offset: 0x138B334 VA: 0x138B334
-		// public static bool IsWideLine() { }
+		public static bool IsWideLine()
+		{
+			return LineNum > 4;
+		}
 
 		// // RVA: 0x138B3BC Offset: 0x138B3BC VA: 0x138B3BC
 		public static bool IsWideLine(int lineNo)

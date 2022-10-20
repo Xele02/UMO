@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Core;
@@ -70,13 +71,13 @@ namespace XeApp.Game.RhythmGame
 		private readonly int damage_OUT_Hash = Animator.StringToHash("damage_OUT"); // 0xBC
 		private readonly int recovery_OUT_Hash = Animator.StringToHash("recovery_OUT"); // 0xC0
 		private readonly int target_site_IN_Hash = Animator.StringToHash("target_site_IN"); // 0xC4
-		//private readonly int UI_rhythm_Push_IN_HashCode = "UI_rhythm_Push_IN"; // 0xC8
-		//private readonly int UI_rhythm_Push_OUT_HashCode = "UI_rhythm_Push_OUT"; // 0xCC
-		//private readonly int UI_rhythm_Long_IN_HashCode = "UI_rhythm_Long_IN"; // 0xD0
-		//private readonly int UI_rhythm_Long_Loop_HashCode = "UI_rhythm_Long_Loop"; // 0xD4
-		//private readonly int UI_rhythm_Long_OUT_HashCode = "UI_rhythm_Long_OUT"; // 0xD8
-		//private readonly int UI_rhythm_Delete_HashCode = "UI_rhythm_Delete"; // 0xDC
-		//private readonly int PerfectResultHashCode = "Mv_Perfect"; // 0xE0
+		private readonly int UI_rhythm_Push_IN_HashCode = "UI_rhythm_Push_IN".GetHashCode(); // 0xC8
+		private readonly int UI_rhythm_Push_OUT_HashCode = "UI_rhythm_Push_OUT".GetHashCode(); // 0xCC
+		private readonly int UI_rhythm_Long_IN_HashCode = "UI_rhythm_Long_IN".GetHashCode(); // 0xD0
+		private readonly int UI_rhythm_Long_Loop_HashCode = "UI_rhythm_Long_Loop".GetHashCode(); // 0xD4
+		private readonly int UI_rhythm_Long_OUT_HashCode = "UI_rhythm_Long_OUT".GetHashCode(); // 0xD8
+		private readonly int UI_rhythm_Delete_HashCode = "UI_rhythm_Delete".GetHashCode(); // 0xDC
+		private readonly int PerfectResultHashCode = "Mv_Perfect".GetHashCode(); // 0xE0
 
 		public RhythmGameHudPauseButtonEvent PauseButton { get { return m_pauseButtonEvent; } } //0x9A9284
 		public bool isReadyHUD { get; set; } // 0x9C
@@ -89,7 +90,86 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9A92EC Offset: 0x9A92EC VA: 0x9A92EC Slot: 17
 		public void Initialize()
 		{
-			TodoLogger.Log(0, "Hud Initialize");
+			GameSetupData.TeamInfo t = Database.Instance.gameSetup.teamInfo;
+			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[t.prismValkyrieId - 1];
+			m_isLowSpec = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MIHFCOBBIPJ_GetQuality2d();
+			m_is2dMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OOCKIFIHJJN;
+			m_isValkyrieOff = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG();
+			GameObject go = RhythmGameHUD.RhythmGameInstantiatePrefab(waterMark);
+			go.transform.SetParent(leftBottom.transform, false);
+			GameObject touch = RhythmGameHUD.RhythmGameInstantiatePrefab(RhythmGameConsts.IsWideLine() ? touchMarkWide : touchMark);
+			touch.transform.SetParent((RhythmGameConsts.IsWideLine() ? bottomWide : bottom).transform, false);
+			touch.SetActive(isShowNotes);
+			m_canvas = GetComponentInParent<Canvas>();
+			m_cameraRectTransform = m_canvas.transform.parent.GetComponent<RectTransform>();
+			Transform tr = touch.transform.Find("MV_notes_line");
+			if(tr != null)
+			{
+				tr.gameObject.SetActive(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.NFMEIILKACN_NotesRoute == 0);
+			}
+			m_faceCutin = GetComponents<FaceCutin>();
+			m_faceCutin[0].Initialize(leftTop.gameObject, 0);
+			m_faceCutin[1].Initialize(RightTop.gameObject, m_is2dMode ? 1 : 0);
+			m_pauseButton = RhythmGameHUD.RhythmGameInstantiatePrefab(pauseButton).GetComponent<PauseButton>();
+			m_pauseButton.transform.SetParent(RightTop.transform, false);
+			Transform[] trs = transform.parent.GetComponentsInChildren<Transform>(true);
+			Transform ts2 = Array.Find(trs, (Transform _) =>
+			{
+				//0x9ACA3C
+				return (RhythmGameConsts.IsWideLine() ? "GameNoteLinesW" : "GameNoteLines") == _.name;
+			});
+			PrefabInstance[] touchP = RhythmGameConsts.IsWideLine() ? touchPrefabWide : touchPrefab;
+			m_touchEffects = new TouchPrefabInstance[touchP.Length];
+			for(int i = 0; i < touchP.Length; i++)
+			{
+				touchP[i].Initialize();
+				m_touchEffects[i] = touchP[i].GetComponentInChildren<TouchPrefabInstance>(true);
+				m_touchEffects[i].Instantiate();
+				m_touchEffects[i].touchEffect.Play(UI_rhythm_Push_OUT_HashCode, 0);
+				m_touchEffects[i].touchEffect.Play(UI_rhythm_Long_OUT_HashCode, 0);
+				m_touchEffects[i].SkillEffect.Initialize();
+				m_touchEffects[i].transform.position = ts2.GetChild(i).position;
+				m_touchEffects[i].slideEffect.transform.localRotation = ts2.GetChild(i).localRotation;
+			}
+			GameObject o = RhythmGameHUD.RhythmGameInstantiatePrefab(m_userStateObject);
+			o.transform.SetParent(center.transform, false);
+			Animator[] anims = o.GetComponentsInChildren<Animator>(true);
+			m_lifeWarningEffect = anims[0];
+			m_lifeRecoveryEffect = anims[1];
+			m_divaModeEffect = anims[2];
+			m_lifeWarningEffect.Play(damage_OUT_Hash, 0, 1.0f);
+			m_lifeRecoveryEffect.Play(recovery_OUT_Hash, 0, 1.0f);
+			m_divaModeEffect.Play(cut_wait_Hash, 0, 0.0f);
+			m_valkyrieTopUi = RhythmGameHUD.RhythmGameInstantiatePrefab(valkyrieTopObject);
+			m_valkyrieTopUi.transform.SetParent(top.transform, false);
+			if(m_isValkyrieOff)
+			{
+				m_valkyrieTopUi.transform.localScale = new Vector3(0.9f, 0.9f, 1.0f);
+				m_valkyrieTopUi.transform.Find("L_partsC_root").gameObject.SetActive(false);
+				m_valkyrieTopUi.transform.Find("R_partsC_root").gameObject.SetActive(false);
+			}
+			m_enemyStatus = m_valkyrieTopUi.GetComponent<EnemyStatus>();
+			m_targetSight = m_valkyrieTopUi.GetComponent<EnemyTargetSight>();
+			m_valkyrieTopAnimator = m_valkyrieTopUi.GetComponent<Animator>();
+			m_enemyStatus.Initialize(RhythmGameHUD.IsNotKillEnemyPilot(valk.PFGJJLGLPAC_PilotId), true);
+			m_targetSight.Initialize();
+			GameObject ts = RhythmGameHUD.RhythmGameInstantiatePrefab(m_targetSightPrefab);
+			ts.transform.SetParent(center.transform, false);
+			m_targetSightMark = ts.GameObject.GetComponent<Animator>();
+			m_targetSightMark.gameObject.SetActive(fase);
+			m_screenTouchArea = GetComponentInChildren<Button>(true);
+			m_screenTouchArea.onClick.AddListener(this.PauseButtonClick); // ?? not sure
+			m_screenTouchArea.interactable = false;
+			if(!isShowNotes)
+			{
+				m_screenTouchArea.GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
+				m_screenTouchArea.GetComponent<RectTransform>().anchorMax = new Vector2(1, 1);
+			}
+			m_pauseButton.gameObject.SetActive(isShowNotes);
+			m_pauseButton.SetOff();
+			m_pauseButton.IsDisable = true;
+			GameManager.Instance.AddPushBackButtonHandler(this.OnPushBackButton);
+
 		}
 
 		//// RVA: 0x9AABA8 Offset: 0x9AABA8 VA: 0x9AABA8

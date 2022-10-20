@@ -771,7 +771,7 @@ namespace XeApp.Game.RhythmGame
 			gameSetup = Database.Instance.gameSetup;
 			enemyInfo = gameSetup.musicInfo.GetEnemyInfo();
 
-			yield return StartCoroutine(m_pilotTexture.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[gameSetup.teamInfo.prismValkyrieId - 1].PFGJJLGLPAC));
+			yield return StartCoroutine(m_pilotTexture.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[gameSetup.teamInfo.prismValkyrieId - 1].PFGJJLGLPAC_PilotId));
 			yield return StartCoroutine(m_enemyPilotTexture.Load(enemyInfo.EELBHDJJJHH_Plt));
 			yield return StartCoroutine(m_enemyRobotTexture.Load(enemyInfo.EAHPLCJMPHD_Pic));
 			if (musicVoiceChangerResource == null)

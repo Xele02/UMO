@@ -9,7 +9,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	{
 		public short[] NLBLLLLBHOP = new short[2]; // 0x8
 		public short PPEGAKEIEGM; // 0xC
-		public short IMGMAKOGIFP; // 0xE
+		public short IMGMAKOGIFP_CryptedPilotId; // 0xE
 		public short IFGMKBKBFJI; // 0x10
 		public short FBGGEFFJJHB; // 0x12
 		public short HNJNKCPDKAL_CryptedModelId; // 0x14
@@ -21,7 +21,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		public int BFFGMECIOIA; // 0x20
 
 		public short GPPEFLKGGGJ_Id { get { return (short)(IFGMKBKBFJI ^ FBGGEFFJJHB); } set { IFGMKBKBFJI = (short)(value ^ FBGGEFFJJHB); } } //0x1BA72D8 PCDKIHHDCHI 0x1BA6D54 LANEIFNCIAA
-		public short PFGJJLGLPAC { get { return (short)(IMGMAKOGIFP ^ FBGGEFFJJHB); } set { IMGMAKOGIFP = (short)(value ^ FBGGEFFJJHB); } } //0x1BA7530 PODJOBBGCNC 0x1BA7178 AMDGADPHLEF
+		public short PFGJJLGLPAC_PilotId { get { return (short)(IMGMAKOGIFP_CryptedPilotId ^ FBGGEFFJJHB); } set { IMGMAKOGIFP_CryptedPilotId = (short)(value ^ FBGGEFFJJHB); } } //0x1BA7530 PODJOBBGCNC 0x1BA7178 AMDGADPHLEF
 		public short DAJGPBLEEOB_ModelId { get { return (short)(HNJNKCPDKAL_CryptedModelId ^ FBGGEFFJJHB); } set { HNJNKCPDKAL_CryptedModelId = (short)(value ^ FBGGEFFJJHB); } } //0x1BA7544 LHPKEPPBKPF 0x1BA6D64 OIOEEEDODJA
 		//public short KINFGHHNFCF { get; set; } 0x1BA7558 BNLKPIIJCDF 0x1BA756C PKEDNGJNJNC
 		//public short NONBCCLGBAO { get; set; } 0x1BA757C AEJBEGKBPCO 0x1BA7590 JPIBPFANBNG
@@ -112,7 +112,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 			CDENCMNHNGA_ValkyrieList[i].GPPEFLKGGGJ_Id = (short)(array[i].PPFNGGCBJKC);
 			CDENCMNHNGA_ValkyrieList[i].DAJGPBLEEOB_ModelId = (short)(array[i].FLNJLKKAFPB);
 			CDENCMNHNGA_ValkyrieList[i].AIHCEGFANAM = (sbyte)array[i].JPFMJHLCMJL;
-			CDENCMNHNGA_ValkyrieList[i].PFGJJLGLPAC = (short)(array[i].HDEBAGHEIKD);
+			CDENCMNHNGA_ValkyrieList[i].PFGJJLGLPAC_PilotId = (short)(array[i].HDEBAGHEIKD);
 			CDENCMNHNGA_ValkyrieList[i].PPEGAKEIEGM = (short)JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			CDENCMNHNGA_ValkyrieList[i].KIDNEIEHOMN = (short)(array[i].FCBJFKGDINH ^ CDENCMNHNGA_ValkyrieList[i].FBGGEFFJJHB);
 			CDENCMNHNGA_ValkyrieList[i].CDDLNKAPCFB = (short)(array[i].NONBCCLGBAO ^ CDENCMNHNGA_ValkyrieList[i].FBGGEFFJJHB);

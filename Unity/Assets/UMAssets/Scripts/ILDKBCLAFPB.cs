@@ -87,7 +87,7 @@ public class ILDKBCLAFPB
         public bool EDDMJEMOAGM_IsNotExcellentDisplaySetting = true; // 0xB8
         public bool CJKKALFPMLA_IsNotDivaModeDivaVisible = true; // 0xB9
         public bool KPFAFLBICLA_IsNotBattleEventInfo = true; // 0xBA
-        public bool MJHEPGIEDDL_IsNotSlideNoteEffect = true; // 0xBB
+        public bool MJHEPGIEDDL_IsSlideNoteEffect = true; // 0xBB
         public int HLABNEIEJPM_SafeAreaDesign; // 0xBC
         public int HJPDHDHMOPF_IsNotForceWideScreen; // 0xC0
         public bool BIEOIPOLFLN_IsNotPlayRecordFirstLaunch = true; // 0xC4
@@ -148,7 +148,7 @@ public class ILDKBCLAFPB
 			EDDMJEMOAGM_IsNotExcellentDisplaySetting = true;
 			CJKKALFPMLA_IsNotDivaModeDivaVisible = true;
 			KPFAFLBICLA_IsNotBattleEventInfo = true;
-			MJHEPGIEDDL_IsNotSlideNoteEffect = true;
+			MJHEPGIEDDL_IsSlideNoteEffect = true;
 			HLABNEIEJPM_SafeAreaDesign = 0;
 			HJPDHDHMOPF_IsNotForceWideScreen = SystemManager.IsForceWideScreen ? 0 : 1;
 			BIEOIPOLFLN_IsNotPlayRecordFirstLaunch = true;
@@ -328,7 +328,7 @@ public class ILDKBCLAFPB
 				ILEKEPJBFDP.EDDMJEMOAGM_IsNotExcellentDisplaySetting == GEPALDIIDPC.EDDMJEMOAGM_IsNotExcellentDisplaySetting &&
 				ILEKEPJBFDP.CJKKALFPMLA_IsNotDivaModeDivaVisible == GEPALDIIDPC.CJKKALFPMLA_IsNotDivaModeDivaVisible &&
 				ILEKEPJBFDP.KPFAFLBICLA_IsNotBattleEventInfo == GEPALDIIDPC.KPFAFLBICLA_IsNotBattleEventInfo &&
-				ILEKEPJBFDP.MJHEPGIEDDL_IsNotSlideNoteEffect == GEPALDIIDPC.MJHEPGIEDDL_IsNotSlideNoteEffect &&
+				ILEKEPJBFDP.MJHEPGIEDDL_IsSlideNoteEffect == GEPALDIIDPC.MJHEPGIEDDL_IsSlideNoteEffect &&
 				ILEKEPJBFDP.HLABNEIEJPM_SafeAreaDesign == GEPALDIIDPC.HLABNEIEJPM_SafeAreaDesign &&
 				ILEKEPJBFDP.HJPDHDHMOPF_IsNotForceWideScreen == GEPALDIIDPC.HJPDHDHMOPF_IsNotForceWideScreen &&
 				ILEKEPJBFDP.BIEOIPOLFLN_IsNotPlayRecordFirstLaunch == GEPALDIIDPC.BIEOIPOLFLN_IsNotPlayRecordFirstLaunch)
@@ -392,7 +392,7 @@ public class ILDKBCLAFPB
 			FMKAONAMGCN.EDDMJEMOAGM_IsNotExcellentDisplaySetting = EDDMJEMOAGM_IsNotExcellentDisplaySetting;
 			FMKAONAMGCN.CJKKALFPMLA_IsNotDivaModeDivaVisible = CJKKALFPMLA_IsNotDivaModeDivaVisible;
 			FMKAONAMGCN.KPFAFLBICLA_IsNotBattleEventInfo = KPFAFLBICLA_IsNotBattleEventInfo;
-			FMKAONAMGCN.MJHEPGIEDDL_IsNotSlideNoteEffect = MJHEPGIEDDL_IsNotSlideNoteEffect;
+			FMKAONAMGCN.MJHEPGIEDDL_IsSlideNoteEffect = MJHEPGIEDDL_IsSlideNoteEffect;
 			FMKAONAMGCN.HLABNEIEJPM_SafeAreaDesign = HLABNEIEJPM_SafeAreaDesign;
 			FMKAONAMGCN.HJPDHDHMOPF_IsNotForceWideScreen = HJPDHDHMOPF_IsNotForceWideScreen;
 			FMKAONAMGCN.BIEOIPOLFLN_IsNotPlayRecordFirstLaunch = BIEOIPOLFLN_IsNotPlayRecordFirstLaunch;
@@ -449,7 +449,7 @@ public class ILDKBCLAFPB
 			res["isExcellentDisplaySetting"] = EDDMJEMOAGM_IsNotExcellentDisplaySetting ? 0 : 1;
 			res["isDivaModeDivaVisible"] = CJKKALFPMLA_IsNotDivaModeDivaVisible ? 0 : 1;
 			res["isBattleEventInfo"] = KPFAFLBICLA_IsNotBattleEventInfo ? 0 : 1;
-			res["isSlideNoteEffect"] = MJHEPGIEDDL_IsNotSlideNoteEffect ? 0 : 1;
+			res["isSlideNoteEffect"] = MJHEPGIEDDL_IsSlideNoteEffect ? 0 : 1;
 			res["safeAreaDesign"] = HLABNEIEJPM_SafeAreaDesign;
 			res["isPlayRecordFirstLaunch"] = BIEOIPOLFLN_IsNotPlayRecordFirstLaunch ? 0 : 1;
 			SystemManager.SetForceWideScreen(HJPDHDHMOPF_IsNotForceWideScreen == 0);
@@ -506,7 +506,7 @@ public class ILDKBCLAFPB
 			EDDMJEMOAGM_IsNotExcellentDisplaySetting = JsonUtil.GetInt(OBHAFLMHAKG, "isExcellentDisplaySetting", 0) == 0;
 			CJKKALFPMLA_IsNotDivaModeDivaVisible = JsonUtil.GetInt(OBHAFLMHAKG, "isDivaModeDivaVisible", 0) == 0;
 			KPFAFLBICLA_IsNotBattleEventInfo = JsonUtil.GetInt(OBHAFLMHAKG, "isBattleEventInfo", 0) == 0;
-			MJHEPGIEDDL_IsNotSlideNoteEffect = JsonUtil.GetInt(OBHAFLMHAKG, "isSlideNoteEffect", 0) == 0;
+			MJHEPGIEDDL_IsSlideNoteEffect = JsonUtil.GetInt(OBHAFLMHAKG, "isSlideNoteEffect", 0) == 0;
 			HLABNEIEJPM_SafeAreaDesign = JsonUtil.GetInt(OBHAFLMHAKG, "safeAreaDesign", 0);
 			BIEOIPOLFLN_IsNotPlayRecordFirstLaunch = JsonUtil.GetInt(OBHAFLMHAKG, "isPlayRecordFirstLaunch", 0) == 0;
 			HJPDHDHMOPF_IsNotForceWideScreen = SystemManager.IsForceWideScreen ? 0 : 1;
