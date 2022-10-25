@@ -192,7 +192,11 @@ namespace XeApp.Game
 		public GameUIIntro GameUIIntro { get { return m_intro; } } // get_GameUIIntro 0x99A27C 
 
 		// // RVA: 0x99A284 Offset: 0x99A284 VA: 0x99A284
-		// public void DeleteIntro() { }
+		public void DeleteIntro()
+		{
+			Destroy(m_intro.gameObject);
+			m_intro = null;
+		}
 
 		// // RVA: 0x9888B0 Offset: 0x9888B0 VA: 0x9888B0
 		public void AddPushBackButtonHandler(GameManager.PushBackButtonHandler handler)
@@ -1034,14 +1038,46 @@ namespace XeApp.Game
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADD38 Offset: 0x6ADD38 VA: 0x6ADD38
 		// // RVA: 0x9A1230 Offset: 0x9A1230 VA: 0x9A1230
-		// private IEnumerator LoadGameIntroCoroutine() { }
+		private IEnumerator LoadGameIntroCoroutine()
+		{
+			AssetBundleLoadLayoutOperationBase layOperation;
+
+			//0x14262B8
+			if(m_intro == null)
+			{
+				layOperation = AssetBundleManager.LoadLayoutAsync("ly/062.xab", "UI_GameIntro");
+				yield return layOperation;
+				yield return layOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+				{
+					//0x9A1D00
+					m_intro = instance.GetComponent<GameUIIntro>();
+					instance.transform.SetParent(popupCanvas.transform, false);
+					instance.transform.SetAsFirstSibling();
+				});
+				AssetBundleManager.UnloadAssetBundle("ly/062.xab", false);
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADDB0 Offset: 0x6ADDB0 VA: 0x6ADDB0
 		// // RVA: 0x9A12B8 Offset: 0x9A12B8 VA: 0x9A12B8
 		public IEnumerator ShowGameIntroCoroutine()
 		{
-			TodoLogger.Log(0, "ShowGameIntroCoroutine");
-			yield break;
+			//0x14265E4
+			yield return StartCoroutine(LoadGameIntroCoroutine());
+			GameManager.Instance.NowLoading.Show();
+			SoundManager.Instance.bgmPlayer.Stop();
+			bool isWait = false;
+			yield return Instance.LoadGameIntroCoroutine();
+			Instance.GameUIIntro.onAnimationEndCallback = () =>
+			{
+				//0x1423DDC
+				isWait = false;
+				Instance.GameUIIntro.onAnimationEndCallback = null;
+			};
+			isWait = true;
+			Instance.GameUIIntro.Enter(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Nam, Database.Instance.gameSetup.musicInfo.musicLoadText);
+			while (isWait)
+				yield return true;
 		}
 
 		// // RVA: 0x9A1340 Offset: 0x9A1340 VA: 0x9A1340
@@ -1198,9 +1234,5 @@ namespace XeApp.Game
 		{
 			TodoLogger.Log(5, "GameManager.SetTransmissionIconPosition()");
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6ADF18 Offset: 0x6ADF18 VA: 0x6ADF18
-		// // RVA: 0x9A1D00 Offset: 0x9A1D00 VA: 0x9A1D00
-		// private void <LoadGameIntroCoroutine>b__299_0(GameObject instance) { }
 	}
 }

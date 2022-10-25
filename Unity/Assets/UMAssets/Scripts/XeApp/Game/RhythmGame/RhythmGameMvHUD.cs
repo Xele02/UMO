@@ -155,8 +155,8 @@ namespace XeApp.Game.RhythmGame
 			m_targetSight.Initialize();
 			GameObject ts = RhythmGameHUD.RhythmGameInstantiatePrefab(m_targetSightPrefab);
 			ts.transform.SetParent(center.transform, false);
-			m_targetSightMark = ts.GameObject.GetComponent<Animator>();
-			m_targetSightMark.gameObject.SetActive(fase);
+			m_targetSightMark = ts.gameObject.GetComponent<Animator>();
+			m_targetSightMark.gameObject.SetActive(false);
 			m_screenTouchArea = GetComponentInChildren<Button>(true);
 			m_screenTouchArea.onClick.AddListener(this.PauseButtonClick); // ?? not sure
 			m_screenTouchArea.interactable = false;
@@ -169,25 +169,26 @@ namespace XeApp.Game.RhythmGame
 			m_pauseButton.SetOff();
 			m_pauseButton.IsDisable = true;
 			GameManager.Instance.AddPushBackButtonHandler(this.OnPushBackButton);
-
 		}
 
 		//// RVA: 0x9AABA8 Offset: 0x9AABA8 VA: 0x9AABA8
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "Hud OnDestroy");
+			GameManager.Instance.RemovePushBackButtonHandler(this.OnPushBackButton);
 		}
 
 		//// RVA: 0x9AAC84 Offset: 0x9AAC84 VA: 0x9AAC84 Slot: 18
 		public void SetPlayerSideTexture(UiPilotTexture pilotTexture, UiDivaTexture divaTexture)
 		{
-			TodoLogger.Log(0, "Hud SetPlayerSideTexture");
+			m_PilotTexture = pilotTexture;
+			m_DivaTexture = divaTexture;
 		}
 
 		//// RVA: 0x9AAC90 Offset: 0x9AAC90 VA: 0x9AAC90 Slot: 19
 		public void SetEnemySideTexture(UiEnemyPilotTexture pilotTexture, UiEnemyRobotTexture robotTexture)
 		{
-			TodoLogger.Log(0, "Hud SetEnemySideTexture");
+			m_EnemyPilotTexture = pilotTexture;
+			m_EnemyRobotTexture = robotTexture;
 		}
 
 		//// RVA: 0x9AAC9C Offset: 0x9AAC9C VA: 0x9AAC9C Slot: 22
@@ -201,7 +202,10 @@ namespace XeApp.Game.RhythmGame
 		//public void Reset() { }
 
 		//// RVA: 0x9AAE70 Offset: 0x9AAE70 VA: 0x9AAE70 Slot: 24
-		//public void PauseButtonClick() { }
+		public void PauseButtonClick()
+		{
+			TodoLogger.Log(0, "Hud PauseButtonClick");
+		}
 
 		//// RVA: 0x9AAF0C Offset: 0x9AAF0C VA: 0x9AAF0C
 		private void OnPushBackButton()
@@ -212,7 +216,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AB0D4 Offset: 0x9AB0D4 VA: 0x9AB0D4 Slot: 20
 		public void SetEnemyLiveSkillEffect(GameObject effPrefab)
 		{
-			TodoLogger.Log(0, "Hud SetEnemyLiveSkillEffect");
+			return;
 		}
 
 		//// RVA: 0x9AB0D8 Offset: 0x9AB0D8 VA: 0x9AB0D8 Slot: 21
@@ -221,7 +225,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AB0DC Offset: 0x9AB0DC VA: 0x9AB0DC Slot: 25
 		public void ChangeHpGaugeFrame(int percent)
 		{
-			TodoLogger.Log(0, "Hud ChangeHpGaugeFrame");
+			return;
 		}
 
 		//// RVA: 0x9AB0E0 Offset: 0x9AB0E0 VA: 0x9AB0E0 Slot: 26
@@ -230,13 +234,13 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AB0E4 Offset: 0x9AB0E4 VA: 0x9AB0E4 Slot: 27
 		public void ChangeRankGaugeFrame(ResultScoreRank.Type rankType, float ratio)
 		{
-			TodoLogger.Log(0, "Hud ChangeRankGaugeFrame");
+			return;
 		}
 
 		//// RVA: 0x9AB0E8 Offset: 0x9AB0E8 VA: 0x9AB0E8 Slot: 28
 		public void ChangeScore(int score, int type)
 		{
-			TodoLogger.Log(0, "Hud ChangeScore");
+			return;
 		}
 
 		//// RVA: 0x9AB0EC Offset: 0x9AB0EC VA: 0x9AB0EC Slot: 29
@@ -257,19 +261,20 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AB100 Offset: 0x9AB100 VA: 0x9AB100 Slot: 34
 		public void SetItemCount(int kind, int count)
 		{
-			TodoLogger.Log(0, "Hud SetItemCount");
+			return;
 		}
 
 		//// RVA: 0x9AB104 Offset: 0x9AB104 VA: 0x9AB104 Slot: 35
 		public void ShowLowEnergy()
 		{
-			TodoLogger.Log(0, "Hud ShowLowEnergy");
+			return;
 		}
 
 		//// RVA: 0x9AB108 Offset: 0x9AB108 VA: 0x9AB108 Slot: 36
 		public void ShowValkyrie()
 		{
-			TodoLogger.Log(0, "Hud ShowValkyrie");
+			m_valkyrieTopUi.SetActive(true);
+			m_enemyStatus.Show();
 		}
 
 		//// RVA: 0x9AB15C Offset: 0x9AB15C VA: 0x9AB15C Slot: 37
@@ -281,13 +286,18 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AB244 Offset: 0x9AB244 VA: 0x9AB244 Slot: 38
 		public void ShowTargetSight()
 		{
-			TodoLogger.Log(0, "Hud ShowTargetSight");
+			if(!m_isValkyrieOff)
+			{
+				m_targetSight.Show();
+				m_targetSightMark.gameObject.SetActive(true);
+				m_targetSightMark.Play(target_site_IN_Hash, 0, 0);
+			}
 		}
 
 		//// RVA: 0x9AB300 Offset: 0x9AB300 VA: 0x9AB300 Slot: 39
 		public void ShowHitResult()
 		{
-			TodoLogger.Log(0, "Hud ShowHitResult");
+			return;
 		}
 
 		//// RVA: 0x9AB304 Offset: 0x9AB304 VA: 0x9AB304 Slot: 40
@@ -296,16 +306,27 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AB308 Offset: 0x9AB308 VA: 0x9AB308 Slot: 41
 		public void UpdateTargetPosition(Vector3 position)
 		{
-			TodoLogger.Log(0, "Hud UpdateTargetPosition");
+			if(!m_isValkyrieOff)
+			{
+				m_targetSight.UpdateTargetPosition(new Vector3(m_cameraRectTransform.sizeDelta.x * position.x * 0.5f, m_cameraRectTransform.sizeDelta.y * position.y * 0.5f - m_cameraRectTransform.sizeDelta.y * 0.5f, 0));
+				m_targetSightMark.transform.localPosition = AdjustUiCameraPosition(position);
+			}
 		}
 
 		//// RVA: 0x9AB4FC Offset: 0x9AB4FC VA: 0x9AB4FC
-		//private Vector3 AdjustUiCameraPosition(Vector3 normalizePosition) { }
+		private Vector3 AdjustUiCameraPosition(Vector3 normalizePosition)
+		{
+			return new Vector3(m_cameraRectTransform.sizeDelta.x * 0.5f * normalizePosition.x, m_cameraRectTransform.sizeDelta.y * 0.5f * normalizePosition.y, 0);
+		}
 
 		//// RVA: 0x9AB618 Offset: 0x9AB618 VA: 0x9AB618 Slot: 42
 		public void HideValkyrie(bool isFaild = false)
 		{
-			TodoLogger.Log(0, "Hud HideValkyrie");
+			m_valkyrieTopUi.SetActive(false);
+			m_targetSightMark.gameObject.SetActive(false);
+			if (!isEnableCutin)
+				return;
+			m_faceCutin[0].Play(0);
 		}
 
 		//// RVA: 0x9AB6F0 Offset: 0x9AB6F0 VA: 0x9AB6F0 Slot: 43
@@ -323,7 +344,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AB918 Offset: 0x9AB918 VA: 0x9AB918 Slot: 45
 		public void ShowDiva(bool isSpMode = false)
 		{
-			TodoLogger.Log(0, "Hud ShowDiva");
+			m_divaModeEffect.Play(cut_IN_MV_Hash, 0, 0);
 		}
 
 		//// RVA: 0x9AB960 Offset: 0x9AB960 VA: 0x9AB960 Slot: 46
@@ -344,20 +365,19 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AB9C8 Offset: 0x9AB9C8 VA: 0x9AB9C8 Slot: 51
 		public bool IsInputAccept()
 		{
-			TodoLogger.Log(0, "Hud IsInputAccept");
-			return true;
+			return m_screenTouchArea.interactable;
 		}
 
 		//// RVA: 0x9AB9F4 Offset: 0x9AB9F4 VA: 0x9AB9F4 Slot: 52
 		public void ShowTouchEffect(int trackId, int fingerId)
 		{
-			TodoLogger.Log(0, "Hud ShowTouchEffect");
+			return;
 		}
 
 		//// RVA: 0x9AB9F8 Offset: 0x9AB9F8 VA: 0x9AB9F8 Slot: 53
 		public void HideToucheEffect(int trackId, int fingerId)
 		{
-			TodoLogger.Log(0, "Hud HideToucheEffect");
+			return;
 		}
 
 		//// RVA: 0x9AB9FC Offset: 0x9AB9FC VA: 0x9AB9FC Slot: 54
@@ -450,13 +470,14 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AC400 Offset: 0x9AC400 VA: 0x9AC400 Slot: 82
 		public void EnablePauseButton()
 		{
-			TodoLogger.Log(0, "Hud EnablePauseButton");
+			m_screenTouchArea.interactable = true;
+			m_pauseButton.IsDisable = false;
 		}
 
 		//// RVA: 0x9AC458 Offset: 0x9AC458 VA: 0x9AC458 Slot: 83
 		public void UpdateBattleLimitTime(int ms)
 		{
-			TodoLogger.Log(0, "Hud UpdateBattleLimitTime");
+			return;
 		}
 
 		//// RVA: 0x9AC45C Offset: 0x9AC45C VA: 0x9AC45C Slot: 84
@@ -480,7 +501,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AC694 Offset: 0x9AC694 VA: 0x9AC694 Slot: 89
 		public void SetPlayerDivaId(int divaId)
 		{
-			TodoLogger.Log(0, "Hud SetPlayerDivaId");
+			return;
 		}
 
 		//// RVA: 0x9AC698 Offset: 0x9AC698 VA: 0x9AC698 Slot: 90
@@ -492,20 +513,18 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AC6A0 Offset: 0x9AC6A0 VA: 0x9AC6A0 Slot: 92
 		public bool IsWarmupEnd()
 		{
-			TodoLogger.Log(0, "Hud IsWarmupEnd");
 			return true;
 		}
 
 		//// RVA: 0x9AC6A8 Offset: 0x9AC6A8 VA: 0x9AC6A8 Slot: 93
 		public void SetLineAlpha(int lineNo, float alpha)
 		{
-			TodoLogger.Log(0, "Hud SetLineAlpha");
+			return;
 		}
 
 		//// RVA: 0x9AC6AC Offset: 0x9AC6AC VA: 0x9AC6AC Slot: 94
 		public bool IsActiveLine(int lineNo)
 		{
-			TodoLogger.Log(0, "Hud IsActiveLine");
 			return true;
 		}
 	}

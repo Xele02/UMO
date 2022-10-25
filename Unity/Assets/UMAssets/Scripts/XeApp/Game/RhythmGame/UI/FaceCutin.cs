@@ -30,6 +30,9 @@ namespace XeApp.Game.RhythmGame.UI
 		//public void SetTexture(string cutMeshName, UiReplaceTexture texture) { }
 
 		//// RVA: 0x155EE48 Offset: 0x155EE48 VA: 0x155EE48
-		//public void Play(int index = 0) { }
+		public void Play(int index = 0)
+		{
+			m_animator.Play(m_stateNameHash[index], 0, 0);
+		}
 	}
 }

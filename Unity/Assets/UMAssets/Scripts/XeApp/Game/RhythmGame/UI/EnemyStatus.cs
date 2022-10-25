@@ -36,7 +36,28 @@ namespace XeApp.Game.RhythmGame.UI
 			public LifeInfo[] m_info = new LifeInfo[INFO_MAX]; // 0x14
 
 			//// RVA: 0x155B9FC Offset: 0x155B9FC VA: 0x155B9FC
-			//public void Initialize(EnemyStatus.LifeType a_type, MeshTile[] a_array_mesh) { }
+			public void Initialize(LifeType a_type, MeshTile[] a_array_mesh)
+			{
+				m_type = a_type;
+				m_gauge = 0;
+				m_index = 0;
+				for(int i = 0; i < INFO_MAX; i++)
+				{
+					m_info[i] = new LifeInfo();
+					m_info[i].m_anim = false;
+					m_info[i].m_now = 0;
+					m_info[i].m_max = 0;
+					m_info[i].m_rate = 1;
+					m_info[i].m_rate_prev = 1;
+					m_info[i].m_mesh = new MeshTile[MESH_MAX];
+					m_info[i].m_mesh[0] = a_array_mesh[i * MESH_MAX];
+					m_info[i].m_mesh[1] = a_array_mesh[i * MESH_MAX + 1];
+					m_info[i].m_renderer = m_info[i].m_mesh[0].GetComponent<Renderer>();
+					m_info[i].m_gaugeAnimeCroutine = null;
+					m_info[i].m_isGaugeAnimation = false;
+					m_info[i].m_gaugeAnimationStartWait = 0.0f;
+				}
+			}
 
 			//// RVA: 0x155C590 Offset: 0x155C590 VA: 0x155C590
 			//public void Update(int a_damage, int a_threshold1) { }
@@ -116,7 +137,24 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x155B578 Offset: 0x155B578 VA: 0x155B578
-		//public void SetupLifeType(EnemyStatus.LifeType a_type) { }
+		public void SetupLifeType(LifeType a_type)
+		{
+			m_life_ctrl.Initialize(a_type, m_gaugeMesh);
+			if(a_type == LifeType.Double)
+			{
+				m_gaugeMesh[0].enabled = true;
+				m_gaugeMesh[1].enabled = true;
+				m_gaugeMesh[2].enabled = true;
+				m_gaugeMesh[3].enabled = true;
+			}
+			else
+			{
+				m_gaugeMesh[0].enabled = true;
+				m_gaugeMesh[1].enabled = true;
+				m_gaugeMesh[2].enabled = false;
+				m_gaugeMesh[3].enabled = false;
+			}
+		}
 
 		//// RVA: 0x155C184 Offset: 0x155C184 VA: 0x155C184
 		//public void SetEnemyRobotTexture(string cutMeshName, UiReplaceTexture enemyRobotTexture) { }
@@ -161,6 +199,11 @@ namespace XeApp.Game.RhythmGame.UI
 		//public void ChangeFaild(int hash) { }
 
 		//// RVA: 0x155D830 Offset: 0x155D830 VA: 0x155D830
-		//public void Show() { }
+		public void Show()
+		{
+			m_rootAnimator.Play(target_time_root_wait_Hash, 0, 0);
+			m_fadeInAnimator.SetBool(ParametersIsEndHash, false);
+			IsChaseMode = false;
+		}
 	}
 }

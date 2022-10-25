@@ -37,7 +37,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0CC98 Offset: 0xC0CC98 VA: 0xC0CC98
 		public void OnUpdate()
 		{
-			TodoLogger.Log(0, "uicontroller OnUpdate");
+			return;
 		}
 
 		// // RVA: 0xC0CC9C Offset: 0xC0CC9C VA: 0xC0CC9C
@@ -83,14 +83,15 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0D81C Offset: 0xC0D81C VA: 0xC0D81C
 		public void BeginIntroAnim(Action callback)
 		{
-			TodoLogger.Log(0, "BeginIntroAnim");
-			callback();
+			intro.DoIntro();
+			intro.onAnimationEndCallback = callback;
 		}
 
 		// // RVA: 0xBF2A8C Offset: 0xBF2A8C VA: 0xBF2A8C
 		public void DeleteIntro()
 		{
-			TodoLogger.Log(0, "DeleteIntro");
+			GameManager.Instance.DeleteIntro();
+			intro = null;
 		}
 
 		// // RVA: 0xC0D874 Offset: 0xC0D874 VA: 0xC0D874
