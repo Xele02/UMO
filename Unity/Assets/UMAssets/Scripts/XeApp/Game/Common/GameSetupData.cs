@@ -362,7 +362,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE9D2A8 Offset: 0xE9D2A8 VA: 0xE9D2A8
-		// public int ForceNoteType() { }
+		public int ForceNoteType()
+		{
+			return (forcePrism != null && forcePrism.JIIOKINLOGM > 0) ? forcePrism.JIIOKINLOGM : 0;
+		}
 
 		// // RVA: 0xE9D2C8 Offset: 0xE9D2C8 VA: 0xE9D2C8
 		public int ForceDivaVoice()

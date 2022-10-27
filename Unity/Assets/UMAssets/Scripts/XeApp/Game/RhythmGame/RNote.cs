@@ -107,10 +107,17 @@ namespace XeApp.Game.RhythmGame
 		//public bool IsInScreenNote(int musicMilliSec, int noteDisplayMilliSec) { }
 
 		//// RVA: 0xF77C00 Offset: 0xF77C00 VA: 0xF77C00
-		//public void SetModeAttr(KLJCBKMHKNK.HHMPIIILOLD modeType, RhythmGameConsts.SpecialNoteType spType) { }
+		public void SetModeAttr(KLJCBKMHKNK.HHMPIIILOLD modeType, RhythmGameConsts.SpecialNoteType spType)
+		{
+			modeInfo[(int)modeType].specialNoteType = spType;
+		}
 
 		//// RVA: 0xF77C60 Offset: 0xF77C60 VA: 0xF77C60
-		//public void SetModeItemInfo(KLJCBKMHKNK.HHMPIIILOLD modeType, int itemId, int itemIndex) { }
+		public void SetModeItemInfo(KLJCBKMHKNK.HHMPIIILOLD modeType, int itemId, int itemIndex)
+		{
+			modeInfo[(int)modeType].itemID = itemId;
+			modeInfo[(int)modeType].itemIndex = itemIndex;
+		}
 
 		//// RVA: 0xF77D14 Offset: 0xF77D14 VA: 0xF77D14
 		public ModeInfo CurrentModeInfo(RhythmGameMode mode)

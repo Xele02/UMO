@@ -728,7 +728,10 @@ public class KEODKEGFDLD
 	}
 
 	// // RVA: 0x19F2E8C Offset: 0x19F2E8C VA: 0x19F2E8C
-	// public short KDIKCKEEPDA(bool GIKLNODJKFK) { }
+	public short KDIKCKEEPDA(bool GIKLNODJKFK)
+	{
+		return GIKLNODJKFK ? CNEMDPMKCPA : KCNHKNKNGNH;
+	}
 
 	// // RVA: 0x19F2EA0 Offset: 0x19F2EA0 VA: 0x19F2EA0
 	// public short ONLFLGPMAAN(bool GIKLNODJKFK) { }

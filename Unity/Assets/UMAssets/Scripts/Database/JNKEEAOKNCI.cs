@@ -48,7 +48,12 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	//public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }
 
 	//// RVA: 0x1B907D0 Offset: 0x1B907D0 VA: 0x1B907D0
-	//public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }
+	public int LPJLEHAJADA_GetIntParam(string LJNAKDMILMC, int KKMJBMKHGNH)
+	{
+		if (!OHJFBLFELNK_IntParam.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		return OHJFBLFELNK_IntParam[LJNAKDMILMC].DNJEJEANJGL_Value;
+	}
 
 	//// RVA: 0x1B908B4 Offset: 0x1B908B4 VA: 0x1B908B4
 	//public EHGAHMIBPIB HJGDBBPDHON(int AOGDKBPNGCI) { }

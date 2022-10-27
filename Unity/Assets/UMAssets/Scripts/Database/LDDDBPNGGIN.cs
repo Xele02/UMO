@@ -956,6 +956,19 @@ public class EGLJKICMCPG
 
 public class KLJCBKMHKNK
 {
+	public enum HHMPIIILOLD
+	{
+		CCAPCGPIIPF = 0,
+		PFIOMNHDHCO = 1,
+		FMLPIOFBCMA = 2,
+		CBHCEDGAGHL = 3,
+		EOMCAODFBCN = 4,
+		FDBLOGGAKOE = 5,
+		MFOJOJCAJOP = 6,
+		JKAPLHFHGKL = 6,
+		AEFCOHJBLPO = 7,
+	}
+
 	public List<EGLJKICMCPG> CDENCMNHNGA = new List<EGLJKICMCPG>(); // 0x8
 	public int PPFNGGCBJKC_Id; // 0xC
 

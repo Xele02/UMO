@@ -49,7 +49,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDAADB0 Offset: 0xDAADB0 VA: 0xDAADB0 Slot: 12
-		// public override void Create() { }
+		public override void Create()
+		{
+			TodoLogger.Log(0, "RNoteLong Create");
+		}
 
 		// // RVA: 0xDAAF50 Offset: 0xDAAF50 VA: 0xDAAF50
 		// public void CheckFree() { }
@@ -109,7 +112,11 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDAD598 Offset: 0xDAD598 VA: 0xDAD598
-		// public void SetEnableRenerer(bool a_enable) { }
+		public void SetEnableRenerer(bool a_enable)
+		{
+			if (renderer != null)
+				renderer.enabled = a_enable;
+		}
 
 		// // RVA: 0xDAD650 Offset: 0xDAD650 VA: 0xDAD650
 		// public void StopAnimation() { }

@@ -6,8 +6,9 @@ namespace XeApp.Game.RhythmGame
 {
 	public class RNoteSingle : PoolObject
 	{
-		// private static string[] baseNotesName; // 0x0
-		// private static List<Vector2>[,] specialNoteUVOffsetList; // 0x4
+		private static string[] baseNotesName = new string[11] { "SingleNote", "LongNote", "FlickNoteL", "FlickNoteU", "FlickNoteR", "SlideNote", "SlideNoteLink", "WingOpenNoteR",
+				"WingOpenNoteL", "WingCloseNoteR", "WingCloseNoteL"}; // 0x0
+		private static List<Vector2>[,] specialNoteUVOffsetList = new List<Vector2>[12, 9]; // 0x4
 		private GameObject[] noteObjects; // 0x14
 		private MeshFilter[] noteMeshFilters; // 0x18
 		private Renderer[] renderer; // 0x1C
@@ -23,10 +24,42 @@ namespace XeApp.Game.RhythmGame
 		// public RhythmGameConsts.NoteResult flickStartResult { get; protected set; } // 0x30
 
 		// // RVA: 0xDB4320 Offset: 0xDB4320 VA: 0xDB4320
-		// public void CreateSpecialNotesUVOffsetList() { }
+		public void CreateSpecialNotesUVOffsetList()
+		{
+			Vector2[] v = new Vector2[9];
+			v[0] = new Vector2(0, 0);
+			v[1] = new Vector2(0.25f, 0);
+			v[2] = new Vector2(0.5f, 0);
+			v[3] = new Vector2(0.75f, 0);
+			v[4] = new Vector2(0.5f, -0.25f);
+			v[5] = new Vector2(0, -0.25f);
+			v[6] = new Vector2(0.25f, -0.25f);
+			v[7] = new Vector2(0.75f, -0.25f);
+			v[8] = new Vector2(0, -0.5f);
+			for(int i = 0; i < baseNotesName.Length; i++)
+			{
+				Transform t = transform.Find(baseNotesName[i]);
+				if(t != null)
+				{
+					MeshFilter ms = t.GetComponent<MeshFilter>();
+					for (int j = 0; j < 9; j++)
+					{
+						List<Vector2> l = new List<Vector2>();
+						specialNoteUVOffsetList[i, j] = l;
+						for(int k = 0; k < ms.mesh.uv.Length; k++)
+						{
+							l.Add(v[j]);
+						}
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xDBDDBC Offset: 0xDBDDBC VA: 0xDBDDBC Slot: 12
-		// public override void Create() { }
+		public override void Create()
+		{
+			TodoLogger.Log(0, "RNoteSingle Create");
+		}
 
 		// // RVA: 0xDBD19C Offset: 0xDBD19C VA: 0xDBD19C
 		// public void CheckFree() { }
@@ -40,7 +73,12 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xDBE5F4 Offset: 0xDBE5F4 VA: 0xDBE5F4
 		private void LateUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			if(noteObject != null)
+			{
+				transform.localPosition = noteObject.transform.localPosition;
+				transform.localRotation = noteObject.transform.localRotation;
+				transform.localScale = noteObject.transform.localScale;
+			}
 		}
 
 		// // RVA: 0xDB9A74 Offset: 0xDB9A74 VA: 0xDB9A74
@@ -70,34 +108,35 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xDBEB78 Offset: 0xDBEB78 VA: 0xDBEB78 Slot: 5
 		protected override void PausableAwake()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0xDBEB7C Offset: 0xDBEB7C VA: 0xDBEB7C Slot: 6
 		protected override void PausableStart()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0xDBEB80 Offset: 0xDBEB80 VA: 0xDBEB80 Slot: 7
 		protected override void PausableUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0xDBEB84 Offset: 0xDBEB84 VA: 0xDBEB84 Slot: 8
 		protected override void PausableInPause()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0xDB5020 Offset: 0xDB5020 VA: 0xDB5020
-		// public void SetEnableRenderer(bool a_enable) { }
-
-		// RVA: 0xDBEB98 Offset: 0xDBEB98 VA: 0xDBEB98
-		static RNoteSingle()
+		public void SetEnableRenderer(bool a_enable)
 		{
-			TodoLogger.Log(0, "static RNoteSingle");
+			for(int i = 0; i < renderer.Length; i++)
+			{
+				if (renderer[i] != null)
+					renderer[i].enabled = a_enable;
+			}
 		}
 	}
 }

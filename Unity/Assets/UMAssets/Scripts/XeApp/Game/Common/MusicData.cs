@@ -288,6 +288,36 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAE6CDC Offset: 0xAE6CDC VA: 0xAE6CDC
-		// public MusicData.NoteModeType GetNotesModeType(MusicScoreData.InputNoteInfo noteInfo) { }
+		public NoteModeType GetNotesModeType(MusicScoreData.InputNoteInfo noteInfo)
+		{
+			NoteModeType res = NoteModeType.None;
+			if(noteInfo.trackID > -1)
+			{
+				res = NoteModeType.Normal;
+				if(noteInfo.time > valkyrieModeJudgeMillisec)
+				{
+					if(noteInfo.time >= valkyrieModeStartMillisec)
+					{
+						if(noteInfo.time <= divaModeJudgeMillisec)
+						{
+							return NoteModeType.Valkyrie;
+						}
+					}
+					if(divaModeStartMillisec < 0)
+					{
+						res = NoteModeType.None;
+					}
+					else
+					{
+						res = NoteModeType.Diva;
+						if(noteInfo.time <= divaModeStartMillisec)
+						{
+							res = NoteModeType.None;
+						}
+					}
+				}
+			}
+			return res;
+		}
 	}
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -63,11 +64,200 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDB1384 Offset: 0xDB1384 VA: 0xDB1384
 		public void Initialize(MusicData muiscData, RhythmGameMode gameMode, BuffEffectOwner buffOwner, RhythmGameSpecialNotesAssigner.AssignInfo a_assing_info, bool a_setting_mv, bool a_notes_seeting_mv, bool a_setting_skip = false)
 		{
-			TodoLogger.Log(0, "RNoteOwner Initialize");
+			musicData = muiscData;
+			musicScoreData = muiscData.musicScoreData;
+			this.gameMode = gameMode;
+			this.buffOwner = buffOwner;
+			neutralCounter = new float[RhythmGameConsts.LineNum];
+			for(int i = 0; i < neutralCounter.Length; i++)
+			{
+				neutralCounter[i] = 0;
+			}
+			lineTouchFingerIds = new int[RhythmGameConsts.LineNum];
+			for(int i = 0; i < lineTouchFingerIds.Length; i++)
+			{
+				lineTouchFingerIds[i] = -1;
+			}
+			SetJudgePointTransform();
+			pausingInputData = new PausingInputData[RhythmGameConsts.LineNum];
+			evaluationOffsetMillisec = new int[RhythmGameConsts.LineNum];
+			LDDDBPNGGIN_Game gameDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game;
+			RNoteResultJudge j1 = new RNoteResultJudge(gameDb.BFDLLHNGICE_TapSt, gameDb.ICNFEDCCODF_TapEd);
+			RNoteResultJudge j2 = new RNoteResultJudge(gameDb.EKONPEGLAND_PrsSt, gameDb.ILIEHCECHOA_PrsEd);
+			RNoteResultJudge j3 = new RNoteResultJudge(gameDb.NPNCNFKCIAE_RelSt, gameDb.HODKHINFHGH_RelEd);
+			RNoteResultJudge j4 = new RNoteResultJudge(gameDb.MNGGGOOCJBM_SFlkSt, gameDb.BLEDLGDGBHI_SFlkEd);
+			RNoteResultJudge j5 = new RNoteResultJudge(gameDb.PLGLPDGAADE_LFlkSt, gameDb.IFHAPIJOCOJ_LFlkEd);
+			RNoteResultJudge j6 = new RNoteResultJudge(gameDb.DDLNCIOPBBB_SlRelSt, gameDb.DDGNKEJKJCK_SlRelEd);
+			RNoteResultJudge j7 = new RNoteResultJudge(gameDb.KDGGKFOAGAE_SlFlkSt, gameDb.FBKOFEHDENI_SlFlkEd);
+			RNoteResultJudge j8 = new RNoteResultJudge(gameDb.KBOIDPDGCLA_PasSt, gameDb.GGAMKBLHGGI_PasEd);
+
+			limitNoteJudgeScaleUp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.LPJLEHAJADA_GetIntParam("limit_note_judge_scale_up", 0);
+			limitNoteJudgeScaleDown = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.LPJLEHAJADA_GetIntParam("limit_note_judge_scale_down", 0);
+
+			for(int i = 0; i < pausingInputData.Length; i++)
+			{
+				pausingInputData[i].release = false;
+				pausingInputData[i].fingerId = -1;
+			}
+
+			int[] ints = new int[4];
+			rNoteList = new List<RNote>(musicScoreData.inputNoteTrack.Count);
+			for(int i = 0; i < musicScoreData.inputNoteTrack.Count; i++)
+			{
+				RNoteResultJudge judgeType = null;
+				if (musicScoreData.inputNoteTrack[i].flick == MusicScoreData.FlickType.None)
+				{
+					judgeType = j2;
+					if(musicScoreData.inputNoteTrack[i].longTouch != MusicScoreData.TouchState.Start)
+					{
+						if(musicScoreData.inputNoteTrack[i].swipe != MusicScoreData.TouchState.Start)
+						{
+							if(musicScoreData.inputNoteTrack[i].longTouch != MusicScoreData.TouchState.End && musicScoreData.inputNoteTrack[i].swipe != MusicScoreData.TouchState.End)
+							{
+								judgeType = j1;
+							}
+							else
+							{
+								judgeType = j3;
+								if (musicScoreData.inputNoteTrack[i].isSlide)
+									judgeType = j6;
+							}
+						}
+					}
+				}
+				else
+				{
+					judgeType = j4;
+					if(musicScoreData.inputNoteTrack[i].longTouch == MusicScoreData.TouchState.End)
+					{
+						judgeType = j5;
+						if (musicScoreData.inputNoteTrack[i].isSlide)
+							judgeType = j7;
+					}
+				}
+				MusicData.NoteModeType modeType = musicData.GetNotesModeType(musicScoreData.inputNoteTrack[i]);
+				rNoteList.Add(new RNote(musicScoreData.inputNoteTrack[i], judgeType, j8, modeType, ints[(int)modeType]));
+				ints[(int)modeType]++;
+			}
+			checkStartNotesIndex = 1;
+			checkEndNotesIndex = 1;
+			assignedCenterLiveSkillNote = false;
+			if(!a_setting_mv)
+			{
+				specialNotesAssigner.Initialize(musicData, a_assing_info, this.OnModeAttrAssign, this.OnModeItemInfoAssign);
+				specialNotesAssigner.Assign(rNoteList);
+			}
+			rNoteSpawner = new RNoteSpawner(this, musicData, rNoteList);
+			rNoteRemover = new RNoteRemover(this, musicData, rNoteList);
+			rNoteLaneManager = new RNoteLaneManager();
+			rNoteLaneManager.Initialize(rNoteList);
+
+			if (objectPool != null)
+				objectPool.Dispose();
+			if (singlePool != null)
+				singlePool.Dispose();
+			if (longPool != null)
+				longPool.Dispose();
+			if (syncPool != null)
+				syncPool.Dispose();
+			if (slidePool != null)
+				slidePool.Dispose();
+			spawnRNoteObjects.Clear();
+			objectPool = new RNoteObjectPool();
+			singlePool = new RNoteSinglePool();
+			longPool = new RNoteLongPool();
+			syncPool = new RNoteSyncPool();
+			slidePool = new RNoteSlidePool();
+
+			int noteType = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KDNKCOAJGCM_NotesType;
+			if (Database.Instance.gameSetup.ForceNoteType() > 0)
+			{
+				noteType = Database.Instance.gameSetup.ForceNoteType();
+			}
+
+			RNoteObject r1 = Resources.Load<RNoteObject>(string.Format("MusicGame/NoteObject_{0:D2}/RNoteObject", noteType));
+			RNoteObject pr1 = Instantiate(r1);
+			RNoteSingle r2 = Resources.Load<RNoteSingle>(string.Format("MusicGame/NoteObject_{0:D2}/rNoteSingle", noteType));
+			RNoteSingle pr2 = Instantiate(r2);
+			RNoteLong r3 = Resources.Load<RNoteLong>(string.Format("MusicGame/NoteObject_{0:D2}/rNoteLong", noteType));
+			RNoteLong pr3 = Instantiate(r3);
+			RNoteSync r4 = Resources.Load<RNoteSync>(string.Format("MusicGame/NoteObject_{0:D2}/rNoteSync", noteType));
+			RNoteSync pr4 = Instantiate(r4);
+			RNoteSlide r5 = Resources.Load<RNoteSlide>(string.Format("MusicGame/NoteObject_{0:D2}/rNoteSlide", noteType));
+			RNoteSlide pr5 = Instantiate(r5);
+
+			RuntimeAnimatorController ctrl = Resources.Load<RuntimeAnimatorController>(RhythmGameConsts.IsWideLine() ? "MusicGame/Animation/GameNotesLineAnimationW" : "MusicGame/Animation/GameNotesLineAnimation");
+			RNotePositionAnimator.InitializeAnim();
+
+			pr1.gameObject.SetActive(true);
+			pr1.positionAnimator.SetRuntimeAnimatorController(ctrl);
+			pr1.positionAnimator.PrecalculationSampleAnim(pr1.gameObject, false);
+			pr1.gameObject.SetActive(false);
+
+			pr2.CreateSpecialNotesUVOffsetList();
+
+			objectPool.Create("RNoteObject_", gameObject, pr1, 50, false);
+			singlePool.Create("RNoteSingle_", gameObject, pr2, 50, false);
+			longPool.Create("RNoteLong_", gameObject, pr3, 15, false);
+			syncPool.Create("RNoteSync_", gameObject, pr4, 15, false);
+			slidePool.Create("RNoteSlide_", gameObject, pr5, 30, false);
+
+			longPool.RootObject.transform.SetLocalPositionZ(100); // XeSys.TransformExtension
+			syncPool.RootObject.transform.SetLocalPositionZ(5);
+			slidePool.RootObject.transform.SetLocalPositionZ(100);
+			if(a_setting_mv)
+			{
+				SetEnableRenderer(a_notes_seeting_mv);
+				for(int i = 0; i < objectPool.list.Count; i++)
+				{
+					objectPool.list[i].funcForceOverwriteNoteResult = () =>
+					{
+						//0xDBC5F8
+						return RhythmGameConsts.NoteResult.Perfect;
+					};
+				}
+			}
+			if(a_setting_skip)
+			{
+				SetEnableRenderer(false);
+				for (int i = 0; i < objectPool.list.Count; i++)
+				{
+					objectPool.list[i].funcForceOverwriteNoteResult = () =>
+					{
+						//0xDBC600
+						return RhythmGameConsts.NoteResult.Perfect;
+					};
+				}
+			}
+			Destroy(pr1.gameObject);
+			Destroy(pr2.gameObject);
+			Destroy(pr3.gameObject);
+			Destroy(pr4.gameObject);
+			Destroy(pr5.gameObject);
 		}
 
 		//// RVA: 0xDB2F30 Offset: 0xDB2F30 VA: 0xDB2F30
-		//private void SetJudgePointTransform() { }
+		private void SetJudgePointTransform()
+		{
+			GameObject judgeObject = null;
+			if(RhythmGameConsts.IsWideLine())
+			{
+				judgePointObjectWide.SetActive(true);
+				judgePointObject.SetActive(false);
+				judgeObject = judgePointObjectWide;
+			}
+			else
+			{
+				judgePointObjectWide.SetActive(false);
+				judgePointObject.SetActive(true);
+				judgeObject = judgePointObject;
+			}
+			judgePointTransforms = new Transform[judgeObject.transform.childCount];
+			for (int i = 0; i < judgePointTransforms.Length; i++)
+			{
+				judgePointTransforms[i] = judgeObject.transform.GetChild(i);
+			}
+		}
 
 		//// RVA: 0xDB4FF8 Offset: 0xDB4FF8 VA: 0xDB4FF8
 		public void SetLineAlphaCallback(RNoteLaneManager.LineAlphaCallback callback)
@@ -76,7 +266,25 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDB4A58 Offset: 0xDB4A58 VA: 0xDB4A58
-		//public void SetEnableRenderer(bool a_renderer) { }
+		public void SetEnableRenderer(bool a_renderer)
+		{
+			foreach(var o in singlePool.list)
+			{
+				o.SetEnableRenderer(a_renderer);
+			}
+			foreach (var o in longPool.list)
+			{
+				o.SetEnableRenerer(a_renderer);
+			}
+			foreach (var o in syncPool.list)
+			{
+				o.SetEnableRenerer(a_renderer);
+			}
+			foreach (var o in slidePool.list)
+			{
+				o.SetEnableRenerer(a_renderer);
+			}
+		}
 
 		//// RVA: 0xDB5204 Offset: 0xDB5204 VA: 0xDB5204
 		//public void Free() { }
@@ -231,10 +439,18 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBBD00 Offset: 0xDBBD00 VA: 0xDBBD00
-		//private void OnModeAttrAssign(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD mode, RhythmGameConsts.SpecialNoteType noteType) { }
+		private void OnModeAttrAssign(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD mode, RhythmGameConsts.SpecialNoteType noteType)
+		{
+			rNoteList[noteIndex].SetModeAttr(mode, noteType);
+			if (noteType == RhythmGameConsts.SpecialNoteType.CenterLiveSkill)
+				assignedCenterLiveSkillNote = true;
+		}
 
 		//// RVA: 0xDBBDBC Offset: 0xDBBDBC VA: 0xDBBDBC
-		//private void OnModeItemInfoAssign(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD mode, int itemId, int itemIndex) { }
+		private void OnModeItemInfoAssign(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD mode, int itemId, int itemIndex)
+		{
+			rNoteList[noteIndex].SetModeItemInfo(mode, itemId, itemIndex);
+		}
 
 		//// RVA: 0xDBBE80 Offset: 0xDBBE80 VA: 0xDBBE80
 		//public int GetRareItemRandomSeed() { }

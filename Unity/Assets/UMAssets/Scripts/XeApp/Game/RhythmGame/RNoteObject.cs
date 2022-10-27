@@ -1,6 +1,8 @@
 using XeApp.Core;
 using UnityEngine;
 using XeApp.Game.Common;
+using System;
+using System.Collections.Generic;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -14,17 +16,17 @@ namespace XeApp.Game.RhythmGame
 
 		[SerializeField]
 		private RNote rnote; // 0x14
-		// private RhythmGameConsts.NoteResultEx m_note_result_ex = new RhythmGameConsts.NoteResultEx(); // 0x24
-		// private RNoteObject.DelegateOverrideNoteJudged delegateOverrideNoteJudgeList; // 0x28
-		// private List<RNoteObject.NoteJudgedDelegate> judgedEventList = new List<RNoteObject.NoteJudgedDelegate>(); // 0x2C
-		// private List<RNoteObject.NoteBeyondDelegate> beyondEventList = new List<RNoteObject.NoteBeyondDelegate>(); // 0x30
-		// private List<RNoteObject.NotePassedDelegate> passedEventList = new List<RNoteObject.NotePassedDelegate>(); // 0x34
-		// public Func<RhythmGameConsts.NoteResult> funcForceOverwriteNoteResult; // 0x38
+		private RhythmGameConsts.NoteResultEx m_note_result_ex = new RhythmGameConsts.NoteResultEx(); // 0x24
+		private DelegateOverrideNoteJudged delegateOverrideNoteJudgeList; // 0x28
+		private List<NoteJudgedDelegate> judgedEventList = new List<NoteJudgedDelegate>(); // 0x2C
+		private List<NoteBeyondDelegate> beyondEventList = new List<NoteBeyondDelegate>(); // 0x30
+		private List<NotePassedDelegate> passedEventList = new List<NotePassedDelegate>(); // 0x34
+		public Func<RhythmGameConsts.NoteResult> funcForceOverwriteNoteResult; // 0x38
 
 		public RNote rNote { get { return rnote; } private set { rnote = value;  } } //0xDAB8FC 0xDADE54
-		// public RNotePositionAnimator positionAnimator { get; private set; } // 0x18
-		// public Transform judgePointTransform { get; private set; } // 0x1C
-		// public bool isInScreen { get; private set; } // 0x20
+		public RNotePositionAnimator positionAnimator { get; private set; } // 0x18
+		public Transform judgePointTransform { get; private set; } // 0x1C
+		public bool isInScreen { get; private set; } // 0x20
 
 		// RVA: 0xDADE84 Offset: 0xDADE84 VA: 0xDADE84
 		public void Awake()

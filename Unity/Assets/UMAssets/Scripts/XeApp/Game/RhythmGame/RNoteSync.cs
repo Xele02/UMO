@@ -24,7 +24,10 @@ namespace XeApp.Game.RhythmGame
 		// private static int[] s_tri; // 0x10
 
 		// // RVA: 0xDC06E4 Offset: 0xDC06E4 VA: 0xDC06E4 Slot: 12
-		// public override void Create() { }
+		public override void Create()
+		{
+			TodoLogger.Log(0, "RNoteSync Create");
+		}
 
 		// // RVA: 0xDBD1E4 Offset: 0xDBD1E4 VA: 0xDBD1E4
 		// public void CheckFree() { }
@@ -75,7 +78,11 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// RVA: 0xDB514C Offset: 0xDB514C VA: 0xDB514C
-		// public void SetEnableRenerer(bool a_enable) { }
+		public void SetEnableRenerer(bool a_enable)
+		{
+			if (renderer != null)
+				renderer.enabled = a_enable;
+		}
 
 		// RVA: 0xDC1340 Offset: 0xDC1340 VA: 0xDC1340
 		public RNoteSync()

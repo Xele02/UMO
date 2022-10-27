@@ -43,7 +43,7 @@ namespace XeApp.Game
 			public int thisIndex { get; internal set; } // 0x24
 			public int wingTrackID { get; internal set; } // 0x28
 			public bool isSlide { get; internal set; } // 0x2C
-			//public bool isWing { get; } 0xC9AF2C
+			public bool isWing { get { return flick != 0 ? wingTrackID > -1 : false; } } //0xC9AF2C
 		}
 
 		public struct EventNoteInfo

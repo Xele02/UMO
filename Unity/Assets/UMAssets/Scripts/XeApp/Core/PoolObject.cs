@@ -14,12 +14,15 @@ namespace XeApp.Core
 		// public virtual void Free() { }
 
 		// // RVA: 0x1D74944 Offset: 0x1D74944 VA: 0x1D74944 Slot: 12
-		// public virtual void Create() { }
+		public virtual void Create()
+		{
+			return;
+		}
 
 		// RVA: 0x1D74948 Offset: 0x1D74948 VA: 0x1D74948 Slot: 13
 		public virtual void Dispose()
 		{
-			TodoLogger.Log(0, "TODO");
+			Destroy(gameObject);
 		}
 	}
 }
