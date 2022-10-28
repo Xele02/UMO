@@ -26,7 +26,10 @@ namespace XeApp.Game.RhythmGame
 		private LineAlphaCallback m_lineAlphaCallback; // 0xC
 
 		//// RVA: 0xDA98E4 Offset: 0xDA98E4 VA: 0xDA98E4
-		//public void SetLineAlphaCallback(RNoteLaneManager.LineAlphaCallback callback) { }
+		public void SetLineAlphaCallback(RNoteLaneManager.LineAlphaCallback callback)
+		{
+			m_lineAlphaCallback = callback;
+		}
 
 		//// RVA: 0xDA98EC Offset: 0xDA98EC VA: 0xDA98EC
 		public void Initialize(List<RNote> noteList)

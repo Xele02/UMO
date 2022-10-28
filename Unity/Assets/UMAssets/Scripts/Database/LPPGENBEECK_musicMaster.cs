@@ -734,10 +734,16 @@ public class KEODKEGFDLD
 	}
 
 	// // RVA: 0x19F2EA0 Offset: 0x19F2EA0 VA: 0x19F2EA0
-	// public short ONLFLGPMAAN(bool GIKLNODJKFK) { }
+	public short ONLFLGPMAAN(bool GIKLNODJKFK)
+	{
+		return GIKLNODJKFK ? AOKEOELIAMH : LGNMFFMDIJP;
+	}
 
 	// // RVA: 0x19F2EB4 Offset: 0x19F2EB4 VA: 0x19F2EB4
-	// public short NCCFJCDMBFO(bool GIKLNODJKFK) { }
+	public short NCCFJCDMBFO(bool GIKLNODJKFK)
+	{
+		return GIKLNODJKFK ? PNILIOGELFK : EFNKJFCJGBB;
+	}
 
 	// // RVA: 0x19F2EC8 Offset: 0x19F2EC8 VA: 0x19F2EC8
 	// public uint CAOGDCBPBAN() { }

@@ -107,7 +107,20 @@ namespace XeApp.Core
 		//*/
 
 		//// RVA: -1 Offset: -1
-		//public T Alloc() { }
+		public T Alloc()
+		{
+			for(int i = 0; i < mList.Count; i++)
+			{
+				int cur = mNext;
+				mNext = XeSys.Math.Repeat(mNext + 1, 0, mList.Count - 1);
+				if (!mList[cur].use)
+				{
+					mList[cur].Alloc();
+					return mList[cur];
+				}
+			}
+			return null;
+		}
 		///* GenericInstMethod :
 		//|
 		//|-RVA: 0x30A5660 Offset: 0x30A5660 VA: 0x30A5660

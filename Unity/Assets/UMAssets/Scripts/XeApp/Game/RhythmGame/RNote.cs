@@ -80,7 +80,12 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF62804 Offset: 0xF62804 VA: 0xF62804
-		//public void Update(int musicTimeMilliSec, int noteDisplayMilliSec, int skillEffect) { }
+		public void Update(int musicTimeMilliSec, int noteDisplayMilliSec, int skillEffect)
+		{
+			gapMilliSec = musicTimeMilliSec - noteInfo.time;
+			positionRate = (gapMilliSec + noteDisplayMilliSec) / noteDisplayMilliSec;
+			passingStatus_ = CalcEvaluation(0) == 0 ? PassingStatus.After : (IsInScreenNote(musicTimeMilliSec, noteDisplayMilliSec) ? PassingStatus.Alive : PassingStatus.Before);
+		}
 
 		//// RVA: 0xF633BC Offset: 0xF633BC VA: 0xF633BC
 		//public void Spawn() { }
@@ -101,10 +106,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF62FB4 Offset: 0xF62FB4 VA: 0xF62FB4
-		//public RhythmGameConsts.NoteResult CalcEvaluation(int skillEffect) { }
+		public RhythmGameConsts.NoteResult CalcEvaluation(int skillEffect)
+		{
+			return resultJudge.CalcEvaluation(gapMilliSec, skillEffect);
+		}
 
 		//// RVA: 0xF77B10 Offset: 0xF77B10 VA: 0xF77B10
-		//public bool IsInScreenNote(int musicMilliSec, int noteDisplayMilliSec) { }
+		public bool IsInScreenNote(int musicMilliSec, int noteDisplayMilliSec)
+		{
+			return noteInfo.time <= noteDisplayMilliSec + musicMilliSec;
+		}
 
 		//// RVA: 0xF77C00 Offset: 0xF77C00 VA: 0xF77C00
 		public void SetModeAttr(KLJCBKMHKNK.HHMPIIILOLD modeType, RhythmGameConsts.SpecialNoteType spType)

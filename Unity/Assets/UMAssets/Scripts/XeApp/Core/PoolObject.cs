@@ -8,7 +8,10 @@ namespace XeApp.Core
 		public int poolIndex { get; set; } // 0x10
 
 		// RVA: 0x1D7492C Offset: 0x1D7492C VA: 0x1D7492C Slot: 10
-		// public virtual void Alloc() { }
+		public virtual void Alloc()
+		{
+			use = true;
+		}
 
 		// // RVA: 0x1D74938 Offset: 0x1D74938 VA: 0x1D74938 Slot: 11
 		// public virtual void Free() { }

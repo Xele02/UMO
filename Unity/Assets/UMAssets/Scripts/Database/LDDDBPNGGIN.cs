@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using XeApp.Game.Common;
 using XeSys;
 
 public class LDDDBPNGGIN { }
@@ -239,7 +240,15 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA0D38 Offset: 0xDA0D38 VA: 0xDA0D38
-	// public KLJCBKMHKNK BBFNPHGDCOF(int PPFNGGCBJKC_Id) { }
+	public KLJCBKMHKNK BBFNPHGDCOF(int PPFNGGCBJKC_Id)
+	{
+		for(int i = 0; i < HPEFFMGGIBC_Spn.Count; i++)
+		{
+			if (HPEFFMGGIBC_Spn[i].PPFNGGCBJKC_Id == PPFNGGCBJKC_Id)
+				return HPEFFMGGIBC_Spn[i];
+		}
+		return HPEFFMGGIBC_Spn[0];
+	}
 
 	// // RVA: 0xDA08F4 Offset: 0xDA08F4 VA: 0xDA08F4
 	public int GENHLFPKOEE(int FBFLDFMFFOH_Rar, bool MCCIFLKCNKO_Feed)
@@ -280,7 +289,25 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA1040 Offset: 0xDA1040 VA: 0xDA1040
-	// public int NBIAKELCBLC(int MJBODMOLOBC, int HLOHIMEAPLH) { }
+	public int NBIAKELCBLC(int MJBODMOLOBC_teamLuck, int HLOHIMEAPLH_Seed)
+	{
+		if (MJBODMOLOBC_teamLuck < 1)
+			MJBODMOLOBC_teamLuck = 0;
+		int v = PNEMPHGJLKG_LuckCoef0 ^ FBGGEFFJJHB;
+		if (MJBODMOLOBC_teamLuck < 251)
+			v += MJBODMOLOBC_teamLuck;
+		int res = v / (NPEECLODIKB_LuckCoef1 ^ FBGGEFFJJHB);
+		int mod = v % (NPEECLODIKB_LuckCoef1 ^ FBGGEFFJJHB);
+		if (mod > 0)
+		{
+			if (HLOHIMEAPLH_Seed < 0)
+				HLOHIMEAPLH_Seed = -HLOHIMEAPLH_Seed;
+			int mod2 = HLOHIMEAPLH_Seed % (NPEECLODIKB_LuckCoef1 ^ FBGGEFFJJHB);
+			if (mod2 < mod)
+				res++;
+		}
+		return res;
+	}
 
 	// // RVA: 0xDA1120 Offset: 0xDA1120 VA: 0xDA1120
 	// public static int NBIAKELCBLC(int MJBODMOLOBC, int HLOHIMEAPLH, int BAFFAONJPCE, int BDMLMGBLGPC) { }
@@ -951,7 +978,14 @@ public class EGLJKICMCPG
 	public short[] MDDMKHJNCBO_RMin; // 0x10
 
 	// RVA: 0x1C4FDBC Offset: 0x1C4FDBC VA: 0x1C4FDBC
-	// public short JNNKKPNGPAA(SpecialNoteAttribute.Type FJFCNGNGIBN) { }
+	public short JNNKKPNGPAA(SpecialNoteAttribute.Type FJFCNGNGIBN)
+	{
+		if(FJFCNGNGIBN < SpecialNoteAttribute.Type.Heal)
+		{
+			return 0;
+		}
+		return MDDMKHJNCBO_RMin[(int)FJFCNGNGIBN - 1];
+	}
 }
 
 public class KLJCBKMHKNK

@@ -8,7 +8,13 @@ namespace XeSys
 		// public static bool Random100(float rate) { }
 
 		// // RVA: 0x238F6BC Offset: 0x238F6BC VA: 0x238F6BC
-		// public static int Repeat(int val, int min, int max) { }
+		public static int Repeat(int val, int min, int max)
+		{
+			int tmp = (max - min) + 1;
+			for (; val < min; val += tmp) ;
+			for (; max < val; val -= tmp) ;
+			return val;
+		}
 
 		// // RVA: 0x238F6E4 Offset: 0x238F6E4 VA: 0x238F6E4
 		// public static float Repeat(float val, float min, float max) { }

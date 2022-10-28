@@ -56,7 +56,10 @@ namespace XeApp.Game.RhythmGame
 		// public void AddPassedEvent(RNoteObject.NotePassedDelegate noteDelegate) { }
 
 		// // RVA: 0xDAE4A0 Offset: 0xDAE4A0 VA: 0xDAE4A0
-		// public void InScreen() { }
+		public void InScreen()
+		{
+			isInScreen = true;
+		}
 
 		// // RVA: 0xDA93DC Offset: 0xDA93DC VA: 0xDA93DC
 		// public bool IsJudged() { }

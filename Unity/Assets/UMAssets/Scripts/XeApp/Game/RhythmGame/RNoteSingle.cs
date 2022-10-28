@@ -1,6 +1,7 @@
 using XeApp.Core;
 using UnityEngine;
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -21,7 +22,7 @@ namespace XeApp.Game.RhythmGame
 		// public RNote rNote { get; private set; } 0xDBAE38 0xDBDDA4
 		// public int touchFingerId { get; set; } 0xDB6E5C 0xDB6E64
 		// public bool isBeganTouched { get; protected set; } 0xDB9A88 0xDBDDA8
-		// public RhythmGameConsts.NoteResult flickStartResult { get; protected set; } // 0x30
+		public RhythmGameConsts.NoteResult flickStartResult { get; protected set; } // 0x30
 
 		// // RVA: 0xDB4320 Offset: 0xDB4320 VA: 0xDB4320
 		public void CreateSpecialNotesUVOffsetList()
@@ -68,7 +69,17 @@ namespace XeApp.Game.RhythmGame
 		// public override void Free() { }
 
 		// // RVA: 0xDB8688 Offset: 0xDB8688 VA: 0xDB8688
-		// public void Initialize(RNoteObject obj, RhythmGameMode gameMode) { }
+		public void Initialize(RNoteObject obj, RhythmGameMode gameMode)
+		{
+			noteObject = obj;
+			touchFingerId_ = -1;
+			flickStartResult = RhythmGameConsts.NoteResult.None;
+			InitializeBasicType();
+			SetupSpecialType(gameMode);
+			obj.AddJudgedEvent(this.JudgedDelegate);
+			obj.AddBeyondEvent(this.BeyondDelegate);
+			obj.AddPassedEvent(this.PassedDelegate);
+		}
 
 		// RVA: 0xDBE5F4 Offset: 0xDBE5F4 VA: 0xDBE5F4
 		private void LateUpdate()
@@ -85,16 +96,82 @@ namespace XeApp.Game.RhythmGame
 		// public void BeginTouch(int fingerId, RhythmGameConsts.NoteResult result) { }
 
 		// // RVA: 0xDBE808 Offset: 0xDBE808 VA: 0xDBE808
-		// private void SetBaseType(RhythmGameConsts.BaseNoteType type) { }
+		private void SetBaseType(RhythmGameConsts.BaseNoteType type)
+		{
+			if (baseNoteObjectType == (int)type)
+				return;
+			if(baseNoteObjectType > -1)
+			{
+				noteObjects[baseNoteObjectType].SetActive(false);
+			}
+			noteObjects[(int)type].SetActive(true);
+			baseNoteObjectType = (int)type;
+		}
 
 		// // RVA: 0xDBE8E4 Offset: 0xDBE8E4 VA: 0xDBE8E4
-		// private void SetSpecialType(RhythmGameConsts.SpecialNoteType spType) { }
+		private void SetSpecialType(RhythmGameConsts.SpecialNoteType spType)
+		{
+			specialNoteObjectType = (int)spType;
+			noteMeshFilters[baseNoteObjectType].mesh.uv3 = specialNoteUVOffsetList[baseNoteObjectType, specialNoteObjectType].ToArray();
+		}
 
 		// // RVA: 0xDBE1BC Offset: 0xDBE1BC VA: 0xDBE1BC
-		// private void InitializeBasicType() { }
+		private void InitializeBasicType()
+		{
+			RhythmGameConsts.BaseNoteType type = RhythmGameConsts.BaseNoteType.Single;
+			if(noteObject.rNote.noteInfo.flick == MusicScoreData.FlickType.None)
+			{
+				if(noteObject.rNote.noteInfo.longTouch != MusicScoreData.TouchState.None)
+				{
+					type = RhythmGameConsts.BaseNoteType.Long;
+					if(noteObject.rNote.noteInfo.isSlide)
+					{
+						type = RhythmGameConsts.BaseNoteType.Slide;
+						if (noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.Continue)
+							type = RhythmGameConsts.BaseNoteType.SlideLink;
+					}
+				}
+			}
+			else
+			{
+				if(noteObject.rNote.noteInfo.isWing)
+				{
+					if (!RhythmGameConsts.IsWingLine(noteObject.rNote.noteInfo.trackID))
+					{
+						type = RhythmGameConsts.BaseNoteType.WingOpenNoteR;
+						if (RhythmGameConsts.IsLeftLine(noteObject.rNote.noteInfo.trackID))
+							type = RhythmGameConsts.BaseNoteType.WingOpenNoteL;
+					}
+					else
+					{
+						type = RhythmGameConsts.BaseNoteType.WingCloseNoteR;
+						if (RhythmGameConsts.IsLeftLine(noteObject.rNote.noteInfo.trackID))
+							type = RhythmGameConsts.BaseNoteType.WingCloseNoteL;
+					}
+				}
+				else
+				{
+					type = RhythmGameConsts.BaseNoteType.FlickL;
+					if(noteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.Left)
+					{
+						type = RhythmGameConsts.BaseNoteType.FlickU;
+						if (noteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.Up)
+						{
+							type = RhythmGameConsts.BaseNoteType.Single;
+							if (noteObject.rNote.noteInfo.flick == MusicScoreData.FlickType.Right)
+								type = RhythmGameConsts.BaseNoteType.FlickR;
+						}
+					}
+				}
+			}
+			SetBaseType(type);
+		}
 
 		// // RVA: 0xDBBC7C Offset: 0xDBBC7C VA: 0xDBBC7C
-		// public void SetupSpecialType(RhythmGameMode gameMode) { }
+		public void SetupSpecialType(RhythmGameMode gameMode)
+		{
+			SetSpecialType(noteObject.rNote.CurrentModeInfo(gameMode).specialNoteType);
+		}
 
 		// // RVA: 0xDBEA88 Offset: 0xDBEA88 VA: 0xDBEA88
 		// private void JudgedDelegate(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex, RhythmGameConsts.NoteJudgeType a_judge_type) { }
