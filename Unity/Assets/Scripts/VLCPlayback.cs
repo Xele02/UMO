@@ -59,6 +59,8 @@ public class VLCPlayback : MonoBehaviour
     bool pauseEditor = false;
     bool pause = false;
 
+    float time = 0;
+
     void Awake()
     {
         //TextureHelper.FlipTextures(transform);
@@ -188,6 +190,7 @@ public class VLCPlayback : MonoBehaviour
         lines = Align(height);
         _mediaPlayer.SetVideoFormat("RV32", width, height, pitch);
         _mediaPlayer.SetVideoCallbacks(this.Lock, null, this.Display);
+        time = 0;
 
         CurrentMappedFile = MemoryMappedFile.CreateOrOpen(mapFileName, pitch * lines);
         CurrentMappedViewAccessor = CurrentMappedFile.CreateViewAccessor();
@@ -259,11 +262,11 @@ public class VLCPlayback : MonoBehaviour
 
     public long GetTime()
     {
-        if(_mediaPlayer != null)
+        /*if(_mediaPlayer != null)
         {
             return  _mediaPlayer.Time;
-        }
-        return 0;
+        }*/
+        return (long)(time * 1000 * 1000);
     }
 
     public void Stop ()
@@ -272,6 +275,7 @@ public class VLCPlayback : MonoBehaviour
 
         playing = false;
         _mediaPlayer?.Stop();
+        time = 0;
         
         // there is no need to dispose every time you stop, but you should do so when you're done using the mediaplayer and this is how:
         // _mediaPlayer?.Dispose(); 
@@ -350,7 +354,8 @@ public class VLCPlayback : MonoBehaviour
             tex.LoadRawTextureData(CurrentMappedViewAccessor.SafeMemoryMappedViewHandle.DangerousGetHandle(), (int)(pitch * lines));
             tex.Apply();
         }
-        //UnityEngine.Debug.Log(m_frameCount);
+        if(state == VLCState.Playing)
+            time += Time.deltaTime;
     }
 
     public Texture2D GetTexture()
@@ -368,14 +373,11 @@ public class VLCPlayback : MonoBehaviour
             CurrentMappedViewAccessor = CurrentMappedFile.CreateViewAccessor();
         }
         Marshal.WriteIntPtr(planes, CurrentMappedViewAccessor.SafeMemoryMappedViewHandle.DangerousGetHandle());
-
         return IntPtr.Zero;
     }
 
-    private int m_frameCount = 0;
     private void Display(IntPtr opaque, IntPtr picture)
     {
-        m_frameCount++;
     }
     uint Align(uint size)
     {

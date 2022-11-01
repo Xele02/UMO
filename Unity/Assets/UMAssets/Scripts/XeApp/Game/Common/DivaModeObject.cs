@@ -135,7 +135,7 @@ namespace XeApp.Game.Common
 		private void SetupMovieTimes()
 		{
 			playedMicroSec = 0;
-			endMicroSec = Mathf.FloorToInt((moviePlayer.player.movieInfo.totalFrames / moviePlayer.player.movieInfo.framerateN / moviePlayer.player.movieInfo.framerateD) * 1000.0f * 1000.0f);
+			endMicroSec = Mathf.FloorToInt((moviePlayer.player.movieInfo.totalFrames * 1.0f / (moviePlayer.player.movieInfo.framerateN * 1.0f / moviePlayer.player.movieInfo.framerateD)) * 1000.0f * 1000.0f);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7380B0 Offset: 0x7380B0 VA: 0x7380B0

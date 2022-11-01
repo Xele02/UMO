@@ -115,9 +115,9 @@ namespace XeApp.Game.RhythmGame
 			public int m_msec_max; // 0x10
 		}
 		
-		public static readonly Color IntroEndFadeColor = new Color(0, 0, 0, 0); // 0x0
-		public static readonly Color ValkyrieStartFadeColor = new Color(0x3f333333,0x3f4ccccd,0x3f4ccccd,0); // 0x10
-		public static readonly Color DivaModeEndFadeColor = new Color(0x3f666666,0x3f666666,0x3f666666,0); // 0x20
+		public static readonly Color IntroEndFadeColor = new Color(0, 0, 0); // 0x0
+		public static readonly Color ValkyrieStartFadeColor = new Color(0.7f,0.8f,0.8f); // 0x10
+		public static readonly Color DivaModeEndFadeColor = new Color(0.9f,0.9f,0.9f); // 0x20
 		public const float DivaModeEndFadeOutSec = 0.5f;
 		public const float DivaModeEndFadeInSec = 0.5f;
 		[SerializeField]
@@ -1054,7 +1054,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BB22C Offset: 0x9BB22C VA: 0x9BB22C
 		private void StartIntroFade()
 		{
-			uguiFader.Fade(0.5f, RhythmGamePlayer.IntroEndFadeColor, RhythmGamePlayer.IntroEndFadeColor);
+			uguiFader.Fade(0.5f, new Color(IntroEndFadeColor.r, IntroEndFadeColor.g, IntroEndFadeColor.b, 0), IntroEndFadeColor);
 			StartCoroutine(WaitIntroFade());
 		}
 
@@ -1181,7 +1181,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG())
 				{
-					uguiFader.Fade(0.05f, ValkyrieStartFadeColor, ValkyrieStartFadeColor);
+					uguiFader.Fade(0.05f, new Color(ValkyrieStartFadeColor.r, ValkyrieStartFadeColor.g, ValkyrieStartFadeColor.b, 0), ValkyrieStartFadeColor);
 				}
 			}
 		}
@@ -1205,7 +1205,7 @@ namespace XeApp.Game.RhythmGame
 				return;
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG())
 			{
-				uguiFader.Fade(0.05f, ValkyrieStartFadeColor, ValkyrieStartFadeColor);
+				uguiFader.Fade(0.05f, ValkyrieStartFadeColor, new Color(ValkyrieStartFadeColor.r, ValkyrieStartFadeColor.g, ValkyrieStartFadeColor.b, 0));
 				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 				{
 					valkyrieModeObject.Begin(false);
@@ -1342,7 +1342,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BD384 Offset: 0x9BD384 VA: 0x9BD384
 		private void StartDivaCutscene()
 		{
-			if (status.internalMode.type < RhythmGameMode.Type.Diva)
+			if (status.internalMode.type >= RhythmGameMode.Type.Diva)
 			{
 				bool is3D = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
 				if(status.internalMode.type == RhythmGameMode.Type.AwakenDiva)
@@ -1419,7 +1419,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
-				uguiFader.Fade(0.5f, DivaModeEndFadeColor, DivaModeEndFadeColor);
+				uguiFader.Fade(0.5f, new Color(DivaModeEndFadeColor.r, DivaModeEndFadeColor.g, DivaModeEndFadeColor.b, 0), DivaModeEndFadeColor);
 			}
 		}
 
@@ -1439,7 +1439,7 @@ namespace XeApp.Game.RhythmGame
 					if(subDivaObject[i] != null)
 						subDivaObject[i].ChangeMovieMaterialColor(false);
 				}
-				uguiFader.Fade(0.5f, DivaModeEndFadeColor, DivaModeEndFadeColor);
+				uguiFader.Fade(0.5f, DivaModeEndFadeColor, new Color(DivaModeEndFadeColor.r, DivaModeEndFadeColor.g, DivaModeEndFadeColor.b, 0));
 			}
 		}
 

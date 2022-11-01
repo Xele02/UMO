@@ -204,7 +204,7 @@ namespace ExternLib
             if(moviePlayers.ContainsKey(player_id) && moviePlayers[player_id].playback != null)
             {
                 frame_info.time = (ulong)moviePlayers[player_id].playback.GetTime();
-                frame_info.tunit = 1000;
+                frame_info.tunit = 1000000;
             }
             frame_drop = false;
             return true;

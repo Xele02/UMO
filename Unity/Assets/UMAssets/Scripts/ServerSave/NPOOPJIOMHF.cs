@@ -83,8 +83,8 @@ public class NPOOPJIOMHF_Prism : KLFDBFMNLBL_ServerSaveBlock
 			data.IAFIKNONLJF_SelectedCostumeColorSoloId = 0;
 			data.EPDPAHNLMKH_SelectedValkyrieSoloId = 0;
 			data.PLALNIIBLOF = 0;
-			data.MKKGKKHABEK_ValkyrieMode = 0;
-			data.JPBJOGBGKGA_DivaMode = 0;
+			data.MKKGKKHABEK_ValkyrieMode = 1; //0; UMO : Default to valkyrie mode
+			data.JPBJOGBGKGA_DivaMode = 1; //0; UMO : Default to diva mode
 			data.NLFMKOJHAHJ_ShowNotes = 1;
 			data.AIPJAKIFMPN_SelectedDiva0Id = 0;
 			data.JMAGFEENOED_SelectedDiva1Id = 0;
