@@ -637,10 +637,21 @@ public class AOJGDNFAIJL_PrismData
         // public void EKACMEKEJLP(AOJGDNFAIJL.AMIECPBIALP CJODFDGPKIA, int AHHJLDLAPAN, int IOPHIHFOOEP) { }
 
         // // RVA: 0xD5E944 Offset: 0xD5E944 VA: 0xD5E944
-        // public AOJCMPIBFHD OOKAOFJBCFD() { }
+        public AOJCMPIBFHD OOKAOFJBCFD()
+        {
+            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.OOKAOFJBCFD(OOEPMEDAJNJ_TeamSave.PPFNGGCBJKC, PFMHBFAKNNL_NumDiva);
+        }
 
         // // RVA: 0xD5EA54 Offset: 0xD5EA54 VA: 0xD5EA54
-        // public bool CPGGFKAINHH() { }
+        public bool CPGGFKAINHH()
+        {
+            AOJCMPIBFHD a = OOKAOFJBCFD();
+            if(a != null)
+            {
+                return a.PLALNIIBLOF == 2;
+            }
+            return false;
+        }
     }
 
 	public const int ALHBMNBOBAE = 5;

@@ -92,7 +92,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA6FE7C Offset: 0xA6FE7C VA: 0xA6FE7C
-		// public void SetPosType(SetDeckMusicInfo.PosType posType) { }
+		public void SetPosType(SetDeckMusicInfo.PosType posType)
+		{
+			TodoLogger.Log(0, "SetPosType");
+		}
 
 		// // RVA: 0xA6FEB0 Offset: 0xA6FEB0 VA: 0xA6FEB0
 		// public void ReStartMusicAttrAnime() { }

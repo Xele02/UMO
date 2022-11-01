@@ -42,17 +42,23 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CD44C Offset: 0x12CD44C VA: 0x12CD44C Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			TodoLogger.Log(0, "OnPreSetCanvas");
 			InitializeUGUIObject();
-
 			GameSetupData.MusicInfo musicInfo = Database.Instance.gameSetup.musicInfo;
-			m_prismUnitInfo.OnClickItem = this.OnClickPrismIetms;
+			m_headButtons.OnClickSettingButton = this.OnClickGameSettingButton;
+			m_prismSettingButtons.OnClickOriginalSettingButton = this.OnClickOriginalSetting;
 			m_valkyrieButton.OnClickValkyrieButton = this.OnClickValkyrieButton;
 			m_playButtons.OnClickPlayButton = this.OnClickPlayButton;
+			m_prismUnitInfo.OnClickItem = this.OnClickPrismIetms;
 			UpdatePrismData(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId, musicInfo);
-			m_prismUnitInfo.UpdateContent(m_prismData, musicInfo);
+			bool hasSettings = CheckExistOriginalSetting(m_prismData);
+			m_headButtons.SetType(SetDeckHeadButtons.Type.SLive);
+			m_prismSettingButtons.UpdateContent(m_prismData, SetDeckPrismSettingButtons.ModeType.SLive, hasSettings);
 			m_valkyrieButton.UpdateContent(m_prismData);
 			m_musicInfo.Set(Database.Instance.selectedMusic.GetSelectedMusicData(), musicInfo, true, SetDeckMusicInfo.BottomType.Description);
+			m_musicInfo.SetPosType(SetDeckMusicInfo.PosType.SLive);
+			m_playButtons.Set(SetDeckPlayButtons.SkipButtoType.Hide, 0, SetDeckPlayButtons.PlayButtonType.Play, 0);
+			m_playButtons.SetPosType(SetDeckPlayButtons.PosType.SLive);
+			m_prismUnitInfo.UpdateContent(m_prismData, musicInfo);
 			base.OnPreSetCanvas();
 		}
 
@@ -233,10 +239,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x12CEEB4 Offset: 0x12CEEB4 VA: 0x12CEEB4
-		// private void OnClickGameSettingButton() { }
+		private void OnClickGameSettingButton()
+		{
+			TodoLogger.Log(0, "OnClickGameSettingButton");
+		}
 
 		// // RVA: 0x12CEF38 Offset: 0x12CEF38 VA: 0x12CEF38
-		// private void OnClickOriginalSetting() { }
+		private void OnClickOriginalSetting()
+		{
+			TodoLogger.Log(0, "OnClickOriginalSetting");
+		}
 
 		// // RVA: 0x12CF0E8 Offset: 0x12CF0E8 VA: 0x12CF0E8
 		private void OnClickValkyrieButton()

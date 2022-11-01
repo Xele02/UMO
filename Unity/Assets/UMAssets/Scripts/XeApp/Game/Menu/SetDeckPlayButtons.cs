@@ -2,6 +2,7 @@ using UnityEngine;
 using XeApp.Game.Common;
 using UnityEngine.UI;
 using System;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -65,7 +66,7 @@ namespace XeApp.Game.Menu
 		// [TooltipAttribute] // RVA: 0x682410 Offset: 0x682410 VA: 0x682410
 		[SerializeField]
 		private Text m_energyText; // 0x38
-		// public Action OnClickSkipButton; // 0x3C
+		public Action OnClickSkipButton; // 0x3C
 		public Action OnClickPlayButton; // 0x40
 
 		public InOutAnime InOut { get { return m_inOut; } } //0xA730C0
@@ -73,23 +74,67 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA730C8 Offset: 0xA730C8 VA: 0xA730C8
 		private void Awake()
 		{
-			TodoLogger.Log(0, "SetDeckPlayButtons Awake");
+			if(m_skipButton != null)
+			{
+				m_skipButton.AddOnClickCallback(() => 
+				{
+					//0xA73628
+					if(OnClickSkipButton != null)
+						OnClickSkipButton();
+				});
+			}
 			if(m_playButton != null)
+			{
 				m_playButton.AddOnClickCallback(() => {
 					//0xA7363C
 					if(OnClickPlayButton != null)
 						OnClickPlayButton();
 				});
+			}
 		}
 
 		// // RVA: 0xA7325C Offset: 0xA7325C VA: 0xA7325C
-		// public void Set(SetDeckPlayButtons.SkipButtoType skipType, int skipRestCount, SetDeckPlayButtons.PlayButtonType playType, int energy) { }
+		public void Set(SetDeckPlayButtons.SkipButtoType skipType, int skipRestCount, SetDeckPlayButtons.PlayButtonType playType, int energy)
+		{
+			MessageBank bank = MessageManager.Instance.GetBank("menu");
+			if(skipType == SkipButtoType.Hide)
+			{
+				m_skipButton.gameObject.SetActive(false);
+				m_skipButtonColorGroup.color = Color.gray;
+			}
+			else
+			{
+				m_skipButton.gameObject.SetActive(true);
+				if(skipType == SkipButtoType.Enable)
+				{
+					m_skipButtonColorGroup.color = Color.white;
+				}
+				else
+				{
+					m_skipButtonColorGroup.color = Color.gray;
+				}
+			}
+			m_skipButtonLockImage.enabled = skipType == SkipButtoType.Lock;
+			m_skipRestCountText.text = string.Format("{0}", skipRestCount); // StringLiteral_17960
+			if(playType == PlayButtonType.Support_AP)
+			{
+				m_playObject.SetActive(false);
+				m_supportObject.SetActive(true);
+			}
+			else
+			{
+				m_playObject.SetActive(true);
+				m_supportObject.SetActive(false);
+			}
+			m_energyObject.SetActive(playType != PlayButtonType.Play);
+			m_energyNameText.text = bank.GetMessageByLabel(playType == PlayButtonType.Play_EN ? "unit_playbutton_en" : "unit_playbutton_ap");
+			m_energyText.text = ""+energy;
+		}
 
 		// // RVA: 0xA735EC Offset: 0xA735EC VA: 0xA735EC
-		// public void SetPosType(SetDeckPlayButtons.PosType posType) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x730CCC Offset: 0x730CCC VA: 0x730CCC
-		// // RVA: 0xA73628 Offset: 0xA73628 VA: 0xA73628
-		// private void <Awake>b__19_0() { }
+		public void SetPosType(SetDeckPlayButtons.PosType posType)
+		{
+			m_posTable.SetPosition((int)posType);
+		}
 	}
 }

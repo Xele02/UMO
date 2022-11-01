@@ -158,7 +158,10 @@ namespace XeApp.Game.Menu
 		// protected void ShowOriginalPrismSettingPopup(int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation, Action okCallBack) { }
 
 		// // RVA: 0x1549810 Offset: 0x1549810 VA: 0x1549810
-		// protected static bool CheckExistOriginalSetting(AOJGDNFAIJL.AMIECPBIALP prismData) { }
+		protected static bool CheckExistOriginalSetting(AOJGDNFAIJL_PrismData.AMIECPBIALP prismData)
+		{
+			return prismData.CPGGFKAINHH();
+		}
 
 		// // RVA: 0x154983C Offset: 0x154983C VA: 0x154983C
 		private void SendPrismChangeLog(int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation)

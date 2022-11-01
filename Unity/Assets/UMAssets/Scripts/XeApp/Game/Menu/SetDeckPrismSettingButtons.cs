@@ -1,5 +1,6 @@
 using UnityEngine;
 using XeApp.Game.Common;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -42,7 +43,7 @@ namespace XeApp.Game.Menu
 		// [TooltipAttribute] // RVA: 0x682810 Offset: 0x682810 VA: 0x682810
 		[SerializeField]
 		private UGUIButton m_originalSettingButton; // 0x30
-		// public Action OnClickOriginalSettingButton; // 0x34
+		public Action OnClickOriginalSettingButton; // 0x34
 		// private AOJGDNFAIJL.AMIECPBIALP m_prismData; // 0x38
 
 		public InOutAnime InOut { get { return m_inOut; } } //0xA73650
@@ -54,7 +55,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA739D8 Offset: 0xA739D8 VA: 0xA739D8
-		// public void UpdateContent(AOJGDNFAIJL.AMIECPBIALP prismData, SetDeckPrismSettingButtons.ModeType modeType, bool isExistOriginalSetting) { }
+		public void UpdateContent(AOJGDNFAIJL_PrismData.AMIECPBIALP prismData, SetDeckPrismSettingButtons.ModeType modeType, bool isExistOriginalSetting)
+		{
+			TodoLogger.Log(0, "SetDeckPrismSettingButtons UpdateContent");
+		}
 
 		// // RVA: 0xA73C14 Offset: 0xA73C14 VA: 0xA73C14
 		// private void ApplyPrismButton(bool isPrismEnable) { }

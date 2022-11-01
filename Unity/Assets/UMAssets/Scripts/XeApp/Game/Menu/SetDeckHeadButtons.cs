@@ -2,6 +2,7 @@ using UnityEngine;
 using XeApp.Game.Common;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -64,7 +65,7 @@ namespace XeApp.Game.Menu
 		// public Action OnClickUnitSetButton; // 0x40
 		// public Action OnClickPrismButton; // 0x44
 		// public Action OnClickUnitButton; // 0x48
-		// public Action OnClickSettingButton; // 0x4C
+		public Action OnClickSettingButton; // 0x4C
 
 		public InOutAnime InOut { get { return m_inOut; } } //0xA6E4A8
 		// public UGUIButton AutoSettingButton { get; } 0xA6E4B0
@@ -76,7 +77,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA6E838 Offset: 0xA6E838 VA: 0xA6E838
-		// public void SetType(SetDeckHeadButtons.Type type) { }
+		public void SetType(SetDeckHeadButtons.Type type)
+		{
+			TodoLogger.Log(0, "SetDeckHeadButtons SetType");
+		}
 
 		// // RVA: 0xA6EDC4 Offset: 0xA6EDC4 VA: 0xA6EDC4
 		// public void SetPrismType(SetDeckHeadButtons.PrismType type) { }
