@@ -9,7 +9,7 @@ public class BEJIKEOAJHN_OptionSLive
 	public int ICGAOAFIHFD_VolBgmRhythm = 15; // 0xC
 	public int FCKEDCKCEFC_VolVoiceRhythm = 15; // 0x10 // init 0x80000000f; inversed?
 	public int IBEINHHMHAC_VolNotesRhythm = 8; // 0x14
-	public int DDHCLNFPNGK_RenderQuality = 1; // 0x18
+	public int DDHCLNFPNGK_RenderQuality = /*1*/0; // 0x18 // UMO : default to high quality
 	public int HHMCIGLCBNG_QualityCustomDiva3D; // 0x1C
 	public int AHLFOHJMGAI_QualityCustomOther3D; // 0x20
 	public int DADIPGPHLDD_EffectCutin = 1; // 0x24
@@ -21,7 +21,8 @@ public class BEJIKEOAJHN_OptionSLive
 		ICGAOAFIHFD_VolBgmRhythm = JsonUtil.GetInt(OBHAFLMHAKG, "volBgmRhythm", 15);
 		FCKEDCKCEFC_VolVoiceRhythm = JsonUtil.GetInt(OBHAFLMHAKG, "volVoiceRhythm", 15);
 		IBEINHHMHAC_VolNotesRhythm = JsonUtil.GetInt(OBHAFLMHAKG, "volNotesRhythm", 11);
-		DDHCLNFPNGK_RenderQuality = JsonUtil.GetInt(OBHAFLMHAKG, "renderQuality", 1);
+		//DDHCLNFPNGK_RenderQuality = JsonUtil.GetInt(OBHAFLMHAKG, "renderQuality", 1);
+		DDHCLNFPNGK_RenderQuality = JsonUtil.GetInt(OBHAFLMHAKG, "renderQuality", 0); // UMO : default to high quality
 		HHMCIGLCBNG_QualityCustomDiva3D = JsonUtil.GetInt(OBHAFLMHAKG, "qualityCustomDiva3D", 0);
 		AHLFOHJMGAI_QualityCustomOther3D = JsonUtil.GetInt(OBHAFLMHAKG, "qualityCustomOther3D", 0);
 		DADIPGPHLDD_EffectCutin = JsonUtil.GetInt(OBHAFLMHAKG, "effectCutin", 1);

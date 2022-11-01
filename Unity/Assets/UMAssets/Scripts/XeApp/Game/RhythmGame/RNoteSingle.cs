@@ -59,14 +59,36 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDBDDBC Offset: 0xDBDDBC VA: 0xDBDDBC Slot: 12
 		public override void Create()
 		{
-			TodoLogger.Log(0, "RNoteSingle Create");
+			noteObjects = new GameObject[11];
+			noteMeshFilters = new MeshFilter[11];
+			renderer = new Renderer[11];
+
+			for(int i = 0; i < 11; i++)
+			{
+				Transform t = transform.Find(baseNotesName[i]);
+				if(t != null)
+				{
+					noteObjects[i] = t.gameObject;
+					noteMeshFilters[i] = noteObjects[i].GetComponent<MeshFilter>();
+					renderer[i] = t.GetComponentInChildren<Renderer>();
+				}
+			}
 		}
 
 		// // RVA: 0xDBD19C Offset: 0xDBD19C VA: 0xDBD19C
-		// public void CheckFree() { }
+		public void CheckFree()
+		{
+			if(!noteObject.IsJudged())
+				return;
+			noteObject.Free();
+		}
 
 		// // RVA: 0xDBE174 Offset: 0xDBE174 VA: 0xDBE174 Slot: 11
-		// public override void Free() { }
+		public override void Free()
+		{
+			base.Free();
+			gameObject.SetActive(false);
+		}
 
 		// // RVA: 0xDB8688 Offset: 0xDB8688 VA: 0xDB8688
 		public void Initialize(RNoteObject obj, RhythmGameMode gameMode)
@@ -174,13 +196,30 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDBEA88 Offset: 0xDBEA88 VA: 0xDBEA88
-		// private void JudgedDelegate(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex, RhythmGameConsts.NoteJudgeType a_judge_type) { }
+		private void JudgedDelegate(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex, RhythmGameConsts.NoteJudgeType a_judge_type)
+		{
+			if(noteObject.rNote.noteInfo.isSlide)
+			{
+				if(noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.Continue)
+				{
+					if(a_result_ex.m_result < RhythmGameConsts.NoteResult.Great)
+						return;
+				}
+			}
+			Free();
+		}
 
 		// // RVA: 0xDBEB70 Offset: 0xDBEB70 VA: 0xDBEB70
-		// private void BeyondDelegate(RNoteObject noteObject) { }
+		private void BeyondDelegate(RNoteObject noteObject)
+		{
+			return;
+		}
 
 		// // RVA: 0xDBEB74 Offset: 0xDBEB74 VA: 0xDBEB74
-		// private void PassedDelegate(RNoteObject noteObject) { }
+		private void PassedDelegate(RNoteObject noteObject)
+		{
+			return;
+		}
 
 		// RVA: 0xDBEB78 Offset: 0xDBEB78 VA: 0xDBEB78 Slot: 5
 		protected override void PausableAwake()

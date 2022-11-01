@@ -168,12 +168,14 @@ namespace XeApp.Game.RhythmGame
 				syncPool.Dispose();
 			if (slidePool != null)
 				slidePool.Dispose();
-			spawnRNoteObjects.Clear();
+			if(spawnRNoteObjects != null)
+				spawnRNoteObjects.Clear();
 			objectPool = new RNoteObjectPool();
 			singlePool = new RNoteSinglePool();
 			longPool = new RNoteLongPool();
 			syncPool = new RNoteSyncPool();
 			slidePool = new RNoteSlidePool();
+			spawnRNoteObjects = new LinkedList<RNoteObject>();
 
 			int noteType = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KDNKCOAJGCM_NotesType;
 			if (Database.Instance.gameSetup.ForceNoteType() > 0)
@@ -337,7 +339,7 @@ namespace XeApp.Game.RhythmGame
 				evaluationOffsetMillisec[i] = LimitNoteJudgeValue(limitNoteJudgeScaleUp, buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.EasyMode, i, RhythmGameConsts.NoteResult.None));
 				evaluationOffsetMillisec[i] -= LimitNoteJudgeValue(limitNoteJudgeScaleDown, buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.HardMode, i, RhythmGameConsts.NoteResult.None));
 			}
-			for(int i = 0; i < rNoteList.Count; i++)
+			for(int i = checkStartNotesIndex; i < rNoteList.Count; i++)
 			{
 				rNoteList[i].Update(musicMilliSec, musicData.noteDisplayMillisec, evaluationOffsetMillisec[rNoteList[i].noteInfo.trackID]);
 				if (rNoteList[i].noteInfo.time > (musicData.noteDisplayMillisec + musicMilliSec))
@@ -384,10 +386,11 @@ namespace XeApp.Game.RhythmGame
 						{
 							RNoteObject[] rn = new RNoteObject[2];
 							rn[0] = res;
-							AllocNoteObject(rNoteList[l[i]], false, rn[1]);
-							PoolObject longNote = !rn[0].rNote.noteInfo.isSlide ? longPool.Alloc() : slidePool.Alloc();
+							AllocNoteObject(rNoteList[l[i]], false, out rn[1]);
+							RNoteLong longNote = !rn[0].rNote.noteInfo.isSlide ? longPool.Alloc() : slidePool.Alloc();
 							if (longNote == null)
 								return;
+							longNote.Initialize(rn);
 							res = rn[1];
 						}
 					}
@@ -420,7 +423,7 @@ namespace XeApp.Game.RhythmGame
 				outputObject.AddJudgedEvent(judgedDelegate);
 				outputObject.AddBeyondEvent(beyondDelegate);
 				outputObject.AddPassedEvent(passedDelegate);
-				outputObject.delegateOverrideNoteJudgeList = delegateOverrideNoteJudgeList;
+				outputObject.SetDelegateOverrideNoteJudge(delegateOverrideNoteJudgeList);
 				spawnRNoteObjects.AddLast(outputObject);
 				rNote.Spawn();
 				return true;
@@ -429,7 +432,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDB8AC8 Offset: 0xDB8AC8 VA: 0xDB8AC8
-		//public void FreeNote(RNoteObject obj) { }
+		public void FreeNote(RNoteObject obj)
+		{
+			if(obj == null)
+				return;
+			if(!obj.IsJudged())
+				return;
+			obj.Passed();
+			spawnRNoteObjects.Remove(obj);
+			obj.Free();
+		}
 
 		//// RVA: 0xDB8BEC Offset: 0xDB8BEC VA: 0xDB8BEC
 		public bool BeganTouch(int lineNo, int fingerId)

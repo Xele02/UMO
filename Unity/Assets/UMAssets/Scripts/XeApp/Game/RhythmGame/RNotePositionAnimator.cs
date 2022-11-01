@@ -76,10 +76,10 @@ namespace XeApp.Game.RhythmGame
 					}
 				}
 			}
-			animData = new AnimData[numLines, stepDivid];
+			animData = new AnimData[numLines, stepDivid + 1];
 			for(int i = 0; i < numLines; i++)
 			{
-				for (int j = 0; j < stepDivid; j++)
+				for (int j = 0; j <= stepDivid; j++)
 				{
 					clips[i].SampleAnimation(samplingObject, 1.0f / stepDivid * clips[i].length * j);
 					animData[i, j].localPosition = samplingObject.transform.localPosition;
@@ -94,19 +94,38 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDAE074 Offset: 0xDAE074 VA: 0xDAE074
-		//public void Initialize(RNote rNote) { }
+		public void Initialize(RNote rNote)
+		{
+			this.rNote = rNote;
+			UpdateTransform();
+		}
 
 		//// RVA: 0xDAE310 Offset: 0xDAE310 VA: 0xDAE310
-		//public bool IsBeyondJudgePoint() { }
+		public bool IsBeyondJudgePoint()
+		{
+			return rNote.positionRate >= 1.0f;
+		}
 
 		//// RVA: 0xDAE1AC Offset: 0xDAE1AC VA: 0xDAE1AC
-		//public void UpdateTransform() { }
+		public void UpdateTransform()
+		{
+			animator.enabled = false;
+			CalcAnimationData(CalcNormalizeAnimationTime(), out animDataWork);
+			animator.transform.localPosition = animDataWork.localPosition;
+			animator.transform.localScale = Vector3.one * animDataWork.localScale;
+		}
 
 		//// RVA: 0xDAD40C Offset: 0xDAD40C VA: 0xDAD40C
-		//public float CalcNormalizeAnimationTime() { }
+		public float CalcNormalizeAnimationTime()
+		{
+			return Mathf.Max(0, rNote.positionRate * justNormalizeTime);
+		}
 
 		//// RVA: 0xDAD4D4 Offset: 0xDAD4D4 VA: 0xDAD4D4
-		//public void CalcAnimationData(float normalize_time, out RNotePositionAnimator.AnimData ad) { }
+		public void CalcAnimationData(float normalize_time, out RNotePositionAnimator.AnimData ad)
+		{
+			CalcAnimationData(rNote.GetLineNo(), normalize_time, out ad);
+		}
 
 		//// RVA: 0xDBC678 Offset: 0xDBC678 VA: 0xDBC678
 		private static void CalcAnimationData(int lineNo, float normalize_time, out AnimData ad)
@@ -119,12 +138,15 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				ad.localPosition = Vector3.Lerp(animData[lineNo, (int)f].localPosition, animData[lineNo, (int)f + 1].localPosition, normalize_time - stepRate * (int)f * stepDivid);
-				ad.localScale = Mathf.Lerp(animData[lineNo, (int)f].localScale, animData[lineNo, (int)f + 1].localScale, normalize_time - stepRate * (int)f * stepDivid);
+				ad.localPosition = Vector3.Lerp(animData[lineNo, (int)f].localPosition, animData[lineNo, (int)f + 1].localPosition, (normalize_time - stepRate * (int)f) * stepDivid);
+				ad.localScale = Mathf.Lerp(animData[lineNo, (int)f].localScale, animData[lineNo, (int)f + 1].localScale, (normalize_time - stepRate * (int)f) * stepDivid);
 			}
 		}
 
 		//// RVA: 0xDBCAE8 Offset: 0xDBCAE8 VA: 0xDBCAE8
-		//public static RNotePositionAnimator.AnimData GetJustAnimationData(int lineNo) { }
+		public static RNotePositionAnimator.AnimData GetJustAnimationData(int lineNo)
+		{
+			return animDataJustTime[lineNo];
+		}
 	}
 }

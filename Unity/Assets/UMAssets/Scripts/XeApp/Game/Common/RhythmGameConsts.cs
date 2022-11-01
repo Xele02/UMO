@@ -81,7 +81,11 @@ namespace XeApp.Game.Common
 			}
 
 			// // RVA: 0x138B4AC Offset: 0x138B4AC VA: 0x138B4AC
-			// public void Copy(RhythmGameConsts.NoteResultEx dest) { }
+			public void Copy(RhythmGameConsts.NoteResultEx dest)
+			{
+				dest.m_result = m_result;
+				dest.m_excellent = m_excellent;
+			}
 		}
 
 		public class NoteResultParam_Excellent

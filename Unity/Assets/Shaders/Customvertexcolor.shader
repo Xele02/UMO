@@ -1,38 +1,11 @@
-Shader "XeSys/Unlit/SplitTextureAdd" {
+Shader "Custom/vertexcolor" {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
-		_MaskTex ("Mask (A)", 2D) = "white" {}
-		_StencilComp ("Stencil Comparison", Float) = 8
-		_Stencil ("Stencil ID", Float) = 0
-		_StencilOp ("Stencil Operation", Float) = 0
-		_StencilWriteMask ("Stencil Write Mask", Float) = 255
-		_StencilReadMask ("Stencil Read Mask", Float) = 255
-		_ColorMask ("Color Mask", Float) = 15
 	}
 	SubShader {
-		LOD 100
-		Tags { "IGNOREPROJECTOR" = "true" "PreviewType" = "Plane" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
+		Tags { "QUEUE" = "Geometry" }
 		Pass {
-			LOD 100
-			Tags { "IGNOREPROJECTOR" = "true" "PreviewType" = "Plane" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
-			Blend SrcAlpha One, SrcAlpha One
-			ColorMask [_ColorMask]
-			ZWrite Off
-			Cull Off
-			Offset -1, -1
-			Stencil {
-				Ref [_Stencil]
-				ReadMask [_StencilReadMask]
-				WriteMask [_StencilWriteMask]
-				Comp [_StencilComp]
-				Pass [_StencilOp]
-				Fail Keep
-				ZFail Keep
-			}
-			Fog {
-				Mode Off
-			}
-
+			Tags { "QUEUE" = "Geometry" }
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -50,26 +23,22 @@ Shader "XeSys/Unlit/SplitTextureAdd" {
 			{
 				float4 position0 : SV_POSITION;
 				float2 texcoord0 : TEXCOORD0;
-				float2 texcoord1 : TEXCOORD1;
-				float4 color0 : COLOR0;
+				float4 color1 : COLOR1;
 			};
 
 			sampler2D _MainTex;
-			sampler2D _MaskTex;
 			float4 _MainTex_ST;
-			float4 _MaskTex_ST;
 
 
 			v2f vert(appdata v)
 			{
 				v2f o;
 				o.texcoord0 = TRANSFORM_TEX(v.texcoord0, _MainTex);
-				o.texcoord1 = TRANSFORM_TEX(v.texcoord0, _MaskTex);
 				o.position0 = UnityObjectToClipPos(v.position0);
-				o.color0 = v.color0;
+				o.color1 = v.color0;
 				return o; 
 			}
-/*			GpuProgramID 1745
+/*			GpuProgramID 24921
 			Program "vp" {
 				SubProgram "gles hw_tier02 " {
 					"!!GLES
@@ -79,14 +48,11 @@ Shader "XeSys/Unlit/SplitTextureAdd" {
 					uniform 	vec4 hlslcc_mtx4x4unity_ObjectToWorld[4];
 					uniform 	vec4 hlslcc_mtx4x4unity_MatrixVP[4];
 					uniform 	vec4 _MainTex_ST;
-					uniform 	vec4 _MaskTex_ST;
 					attribute highp vec4 in_POSITION0;
-					attribute highp vec2 in_TEXCOORD0;
-					attribute mediump vec4 in_COLOR0;
-					varying mediump vec2 vs_TEXCOORD0;
-					mediump  vec4 phase0_Output0_1;
-					varying mediump vec2 vs_TEXCOORD1;
-					varying mediump vec4 vs_COLOR0;
+					attribute highp vec4 in_TEXCOORD0;
+					attribute highp vec4 in_COLOR0;
+					varying highp vec2 vs_TEXCOORD0;
+					varying highp vec4 vs_COLOR1;
 					vec4 u_xlat0;
 					vec4 u_xlat1;
 					void main()
@@ -111,30 +77,18 @@ Shader "XeSys/Unlit/SplitTextureAdd" {
 					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2] * hlslcc_mtx4x4unity_ObjectToWorld[3].zzzz + u_xlat1;
 					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[3] * hlslcc_mtx4x4unity_ObjectToWorld[3].wwww + u_xlat1;
 					    gl_Position = u_xlat1 * in_POSITION0.wwww + u_xlat0;
-					    u_xlat0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
-					    u_xlat0.zw = in_TEXCOORD0.xy * _MaskTex_ST.xy + _MaskTex_ST.zw;
-					    phase0_Output0_1 = u_xlat0;
-					    vs_COLOR0 = in_COLOR0;
-					vs_TEXCOORD0 = phase0_Output0_1.xy;
-					vs_TEXCOORD1 = phase0_Output0_1.zw;
+					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+					    vs_COLOR1 = in_COLOR0;
 					    return;
 					}
 					
 */
 			fixed4 frag(v2f i) : SV_Target
 			{
-				float4 u_xlat0 = float4(0, 0, 0, 0);
-				float u_xlat16_1 = 0;
-				bool u_xlatb2 = false;
-				u_xlat0.w = tex2D(_MaskTex, i.texcoord1.xy).x;
-				u_xlat16_1 = u_xlat0.w + -0.00999999978;
-				u_xlatb2 = u_xlat16_1<0.0;
-				if(((int(u_xlatb2) * -1))!=0)
-				{
-					discard;
-				}
-				u_xlat0.xyz = tex2D(_MainTex, i.texcoord0.xy).xyz;
-				return u_xlat0 * i.color0;
+				float4 u_xlat10_0, SV_Target0;
+				u_xlat10_0 = tex2D(_MainTex, i.texcoord0.xy);
+				SV_Target0 = u_xlat10_0 * i.color1;
+				return SV_Target0;
 			}
 
 /*
@@ -149,22 +103,14 @@ Shader "XeSys/Unlit/SplitTextureAdd" {
 					#endif
 					precision highp int;
 					uniform lowp sampler2D _MainTex;
-					uniform lowp sampler2D _MaskTex;
-					varying mediump vec2 vs_TEXCOORD0;
-					varying mediump vec2 vs_TEXCOORD1;
-					varying mediump vec4 vs_COLOR0;
+					varying highp vec2 vs_TEXCOORD0;
+					varying highp vec4 vs_COLOR1;
 					#define SV_Target0 gl_FragData[0]
-					vec4 u_xlat0;
-					mediump float u_xlat16_1;
-					bool u_xlatb2;
+					lowp vec4 u_xlat10_0;
 					void main()
 					{
-					    u_xlat0.w = texture2D(_MaskTex, vs_TEXCOORD1.xy).x;
-					    u_xlat16_1 = u_xlat0.w + -0.00999999978;
-					    u_xlatb2 = u_xlat16_1<0.0;
-					    if(((int(u_xlatb2) * -1))!=0){discard;}
-					    u_xlat0.xyz = texture2D(_MainTex, vs_TEXCOORD0.xy).xyz;
-					    SV_Target0 = u_xlat0 * vs_COLOR0;
+					    u_xlat10_0 = texture2D(_MainTex, vs_TEXCOORD0.xy);
+					    SV_Target0 = u_xlat10_0 * vs_COLOR1;
 					    return;
 					}
 					
@@ -186,4 +132,5 @@ Shader "XeSys/Unlit/SplitTextureAdd" {
 			ENDCG
 		}
 	}
+	Fallback "Diffuse"
 }

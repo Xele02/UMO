@@ -31,7 +31,7 @@ namespace XeApp.Game.UI
 		private List<Vector2> uvs_; // 0x38
 		private const int MaxIndicesCount = 192;
 		private List<int> indices = new List<int>(192); // 0x3C
-		private readonly int[] baseTriangle = new int[6] { 0, 1, 2, 1, 2, 3 };/*TODO CHECK : Field$< PrivateImplementationDetails > .45B5AE0F399DF3BEADAD423823505C49AB2A03DF*/ // 0x40
+		private readonly int[] baseTriangle = new int[6] { 0, 2, 1, 1, 2, 3 }; // 0x40
 		private float value_ = 0.5f; // 0x44
 
 		//public Rect UvRect { get; set; } 0x191C4E0 0x191C4F0

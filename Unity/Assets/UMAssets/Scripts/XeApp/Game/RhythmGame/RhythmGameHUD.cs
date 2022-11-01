@@ -208,7 +208,9 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCD404 Offset: 0xDCD404 VA: 0xDCD404
 		public static GameObject RhythmGameInstantiatePrefab(Object prefab)
 		{
-			return Instantiate<GameObject>(prefab as GameObject);
+			GameObject obj = Instantiate<GameObject>(prefab as GameObject);;
+			BundleShaderInfo.Instance.FixMaterialShader(obj); // UMO fix
+			return obj;
 		}
 
 		// // RVA: 0xDCD510 Offset: 0xDCD510 VA: 0xDCD510

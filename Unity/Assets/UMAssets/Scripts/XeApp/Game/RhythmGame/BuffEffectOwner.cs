@@ -36,7 +36,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xF69920 Offset: 0xF69920 VA: 0xF69920
 		public BuffEffectOwner()
 		{
-			TodoLogger.Log(0, "BuffEffectOwner()");
+			effectiveBuffList = new EffectiveBuffList();
 		}
 
 		//// RVA: 0xF69A80 Offset: 0xF69A80 VA: 0xF69A80

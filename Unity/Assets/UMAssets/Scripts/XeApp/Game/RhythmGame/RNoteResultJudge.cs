@@ -55,7 +55,8 @@ namespace XeApp.Game.RhythmGame
 				if (Bad[1] + skillEffect >= gapMilliSec)
 					return RhythmGameConsts.NoteResult.Bad;
 
-			return (RhythmGameConsts.NoteResult)((gapMilliSec >> 0x1f) & 7);
+			//return (RhythmGameConsts.NoteResult)((gapMilliSec >> 0x1f) & 7);
+			return gapMilliSec > 0 ? RhythmGameConsts.NoteResult.Miss : RhythmGameConsts.NoteResult.Exempt;
 		}
 	}
 

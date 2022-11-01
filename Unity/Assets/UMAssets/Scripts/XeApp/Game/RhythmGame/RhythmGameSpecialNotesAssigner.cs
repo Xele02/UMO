@@ -74,7 +74,7 @@ namespace XeApp.Game.RhythmGame
 			KLJCBKMHKNK.HHMPIIILOLD[] array = null;
 			if (a == 3)
 			{
-				array = new KLJCBKMHKNK.HHMPIIILOLD[3] { 11B346B425CE4E936F9949CED5EC7C16BD3B2B9C };
+				array = new KLJCBKMHKNK.HHMPIIILOLD[3] { /*2*/KLJCBKMHKNK.HHMPIIILOLD.FMLPIOFBCMA, /*5*/KLJCBKMHKNK.HHMPIIILOLD.FDBLOGGAKOE, /*3*/ KLJCBKMHKNK.HHMPIIILOLD.CBHCEDGAGHL};
 			}
 			else if(a == 2)
 			{
@@ -154,7 +154,7 @@ namespace XeApp.Game.RhythmGame
 
 			EGLJKICMCPG[] ar = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.BBFNPHGDCOF(l[(int)Database.Instance.gameSetup.musicInfo.difficultyType]).CDENCMNHNGA.ToArray();
 			int[] li2 = new int[6];
-			MusicData.NoteModeType[] nt = new MusicData.NoteModeType[6] { BB78C0550E8F09BCD95AC92C66D1BE4F5255FD10 };
+			MusicData.NoteModeType[] nt = new MusicData.NoteModeType[6] { MusicData.NoteModeType.Normal, MusicData.NoteModeType.Valkyrie, MusicData.NoteModeType.Diva, MusicData.NoteModeType.Diva, MusicData.NoteModeType.Valkyrie, MusicData.NoteModeType.Diva };
 			for (int i = 0; i < 6; i++)
 			{
 				int t = li[(int)nt[i]];
@@ -167,7 +167,7 @@ namespace XeApp.Game.RhythmGame
 				li2[i] = v;
 			}
 
-			RhythmGameConsts.SpecialNoteType[] st = new RhythmGameConsts.SpecialNoteType[6] { D49780DCC9EB17A96D48BCA54DECC227BC5AB890 };
+			RhythmGameConsts.SpecialNoteType[] st = new RhythmGameConsts.SpecialNoteType[6] { RhythmGameConsts.SpecialNoteType.None, RhythmGameConsts.SpecialNoteType.Heal, RhythmGameConsts.SpecialNoteType.Score, RhythmGameConsts.SpecialNoteType.NormalItem, RhythmGameConsts.SpecialNoteType.Fold, RhythmGameConsts.SpecialNoteType.Attack };
 			List<AssignedRareItemNoteInfo>[] ari = new List<AssignedRareItemNoteInfo>[4];
 			for(int i = 0; i < ari.Length; i++)
 			{

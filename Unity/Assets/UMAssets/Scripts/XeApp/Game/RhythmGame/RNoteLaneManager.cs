@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using XeApp.Game.Common;
+using UnityEngine;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -74,6 +75,27 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDAA194 Offset: 0xDAA194 VA: 0xDAA194
-		//public void Update(int musicMilliSec) { }
+		public void Update(int musicMilliSec)
+		{
+			for(int i = 0; i < m_keyDataList.Count; i++)
+			{
+				for(int j = 1; j < m_keyDataList[i].Count; i++)
+				{
+					if(m_keyDataList[i][j].m_milliSec < musicMilliSec)
+					{
+						float f = Mathf.Lerp(m_keyDataList[i][j - 1].m_alpha, m_keyDataList[i][j].m_alpha, (musicMilliSec - m_keyDataList[i][j - 1].m_milliSec) / (m_keyDataList[i][j].m_milliSec - m_keyDataList[i][j - 1].m_milliSec));
+						if(RhythmGamePlayer.IsLowQualityMode)
+						{
+							if(f >= 1)
+								f = 1;
+							else
+								f = 0;
+						}
+						m_lineAlphaCallback(i, f);
+						break;
+					}
+				}
+			}
+		}
 	}
 }

@@ -170,7 +170,7 @@ namespace XeApp.Game
 				{
 					InputNoteInfo noteInfo = new InputNoteInfo();
 					noteInfo.time = (int)inputTrack[i]["time"];
-					noteInfo.trackID = (sbyte)inputTrack[i]["trackID"];
+					noteInfo.trackID = (sbyte)(int)inputTrack[i]["trackID"];
 					noteInfo.sync = (TouchState)(int)inputTrack[i]["sync"];
 					noteInfo.syncIndex = (int)inputTrack[i]["syncIndex"];
 					noteInfo.longTouch = (TouchState)(int)inputTrack[i]["longTouch"];

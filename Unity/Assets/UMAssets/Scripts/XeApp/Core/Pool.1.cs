@@ -190,7 +190,16 @@ namespace XeApp.Core
 		//*/
 
 		//// RVA: -1 Offset: -1
-		//public List<T> MakeUsingList(ref List<T> output) { }
+		public List<T> MakeUsingList(ref List<T> output)
+		{
+			output.Clear();
+			for(int i = 0; i < mList.Count; i++)
+			{
+				if(mList[i].use)
+					output.Add(mList[i]);
+			}
+			return output;
+		}
 		///* GenericInstMethod :
 		//|
 		//|-RVA: 0x30A5CE8 Offset: 0x30A5CE8 VA: 0x30A5CE8

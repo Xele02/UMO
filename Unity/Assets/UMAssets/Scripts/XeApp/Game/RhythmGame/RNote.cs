@@ -75,7 +75,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			gapMilliSec = -0x7fffffff;
 			positionRate = 0;
-			passingStatus_ = 0;
+			passingStatus_ = PassingStatus.Before;
 			m_result_ex.Init(RhythmGameConsts.NoteResult.None);
 		}
 
@@ -83,15 +83,21 @@ namespace XeApp.Game.RhythmGame
 		public void Update(int musicTimeMilliSec, int noteDisplayMilliSec, int skillEffect)
 		{
 			gapMilliSec = musicTimeMilliSec - noteInfo.time;
-			positionRate = (gapMilliSec + noteDisplayMilliSec) / noteDisplayMilliSec;
+			positionRate = (gapMilliSec + noteDisplayMilliSec) * 1.0f / noteDisplayMilliSec;
 			passingStatus_ = CalcEvaluation(0) == 0 ? PassingStatus.After : (IsInScreenNote(musicTimeMilliSec, noteDisplayMilliSec) ? PassingStatus.Alive : PassingStatus.Before);
 		}
 
 		//// RVA: 0xF633BC Offset: 0xF633BC VA: 0xF633BC
-		//public void Spawn() { }
+		public void Spawn()
+		{
+			m_result_ex.Init(RhythmGameConsts.NoteResult.None);
+		}
 
 		//// RVA: 0xF77B58 Offset: 0xF77B58 VA: 0xF77B58
-		//public void Judged(RhythmGameConsts.NoteResultEx a_result_ex) { }
+		public void Judged(RhythmGameConsts.NoteResultEx a_result_ex)
+		{
+			a_result_ex.Copy(m_result_ex);
+		}
 
 		//// RVA: 0xF77B8C Offset: 0xF77B8C VA: 0xF77B8C
 		public int GetLineNo()

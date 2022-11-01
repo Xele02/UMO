@@ -8,6 +8,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using XeSys;
+using XeSys.Gfx;
 
 public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 {
@@ -183,6 +184,18 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 			if (projs[i].material != null)
 			{
 				FixMaterialShader(projs[i].material);
+			}
+		}
+		RawImageEx[] rawEx = obj.GetComponentsInChildren<RawImageEx>(true);
+		for(int i = 0; i < rawEx.Length; i++)
+		{
+			if (rawEx[i].MaterialMul != null)
+			{
+				FixMaterialShader(rawEx[i].MaterialMul);
+			}
+			if (rawEx[i].MaterialAdd != null)
+			{
+				FixMaterialShader(rawEx[i].MaterialAdd);
 			}
 		}
 	}

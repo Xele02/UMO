@@ -47,7 +47,11 @@ namespace XeApp.Game.RhythmGame
 		// public bool CheckFree() { }
 
 		// // RVA: 0xDA9418 Offset: 0xDA9418 VA: 0xDA9418 Slot: 11
-		// public override void Free() { }
+		public override void Free()
+		{
+			base.Free();
+			gameObject.SetActive(false);
+		}
 
 		// // RVA: 0xDA9460 Offset: 0xDA9460 VA: 0xDA9460
 		// private void ProcessEventResult(RNoteClusterRenderer.EventResult result) { }

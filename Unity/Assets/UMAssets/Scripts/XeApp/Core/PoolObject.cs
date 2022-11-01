@@ -14,7 +14,10 @@ namespace XeApp.Core
 		}
 
 		// // RVA: 0x1D74938 Offset: 0x1D74938 VA: 0x1D74938 Slot: 11
-		// public virtual void Free() { }
+		public virtual void Free()
+		{
+			use = false;
+		}
 
 		// // RVA: 0x1D74944 Offset: 0x1D74944 VA: 0x1D74944 Slot: 12
 		public virtual void Create()
