@@ -768,7 +768,11 @@ public class CIOECGOMILE
 	// public bool PPDOILECBAD() { }
 
 	// // RVA: 0x1008B14 Offset: 0x1008B14 VA: 0x1008B14
-	// public bool GJACBNJHDHI(int HMFFHLPNMPH, long KNCKIJBOODM) { }
+	public bool GJACBNJHDHI(int HMFFHLPNMPH, long KNCKIJBOODM)
+	{
+		TodoLogger.Log(0, "GJACBNJHDHI");
+		return true;
+	}
 
 	// // RVA: 0x1008ED0 Offset: 0x1008ED0 VA: 0x1008ED0
 	// public bool NKMNJIAGHBB() { }

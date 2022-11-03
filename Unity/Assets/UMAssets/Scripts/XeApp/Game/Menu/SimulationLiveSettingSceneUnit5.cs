@@ -1,5 +1,6 @@
 using System.Collections;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -65,8 +66,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE1A0 Offset: 0x12CE1A0 VA: 0x12CE1A0 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			TodoLogger.Log(0, "IsEndPreSetCanvas");
-			return true;
+			if(!IsApplyWait())
+			{
+				return base.IsEndPreSetCanvas();
+			}
+			return false;
 		}
 
 		// // RVA: 0x12CE228 Offset: 0x12CE228 VA: 0x12CE228 Slot: 18
@@ -211,20 +215,39 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CEB84 Offset: 0x12CEB84 VA: 0x12CEB84
 		private void ClearUGUIObjectListener()
 		{
-			TodoLogger.Log(0, "ClearUGUIObjectListener");
+			m_headButtons.OnClickAutoSettingButton = null;
+			m_headButtons.OnClickUnitSetButton = null;
+			m_headButtons.OnClickPrismButton = null;
+			m_headButtons.OnClickUnitButton = null;
+			m_headButtons.OnClickSettingButton = null;
+			m_prismSettingButtons.OnClickOriginalSettingButton = null;
+			m_valkyrieButton.OnClickValkyrieButton = null;
+			m_valkyrieButton.OnStayValkyrieButton = null;
+			m_musicInfo.OnClickExpectedScoreDescButton = null;
+			m_playButtons.OnClickPlayButton = null;
+			m_playButtons.OnClickSkipButton = null;
+			m_prismUnitInfo.OnClickItem = null;
 		}
 
 		// // RVA: 0x12CECCC Offset: 0x12CECCC VA: 0x12CECCC
 		private void HideUGUIObject()
 		{
-			TodoLogger.Log(0, "HideUGUIObject");
+			m_headButtons.InOut.Leave(0, false, null);
+			m_prismSettingButtons.InOut.Leave(0, false, null);
+			m_valkyrieButton.InOut.Leave(0, false, null);
+			m_musicInfo.InOut.Leave(0, false, null);
+			m_playButtons.InOut.Leave(0, false, null);
+			m_prismUnitInfo.AnimeControl.Hide();
 		}
 
 		// // RVA: 0x12CE1CC Offset: 0x12CE1CC VA: 0x12CE1CC
 		private bool IsApplyWait()
 		{
-			TodoLogger.Log(0, "IsApplyWait");
-			return false;
+			if(!m_valkyrieButton.IsUpdatingContent)
+			{
+				return m_prismUnitInfo.IsUpdatingContent();
+			}
+			return true;
 		}
 
 		// // RVA: 0x12CE7FC Offset: 0x12CE7FC VA: 0x12CE7FC
@@ -272,16 +295,45 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CF308 Offset: 0x12CF308 VA: 0x12CF308
 		private void AdvanceGame()
 		{
-			TodoLogger.Log(0, "AdvanceGame");
-			Database.Instance.gameSetup.SetMvMode(new StatusData(), m_prismData);
-			AdvanceGame(null, null, null, null, false, 9999, 0, null, true);
+			if(!CheckSetAllDiva(m_prismData))
+			{
+				NotSetAllDivaShow();
+				return;
+			}
+			StatusData data = new StatusData();
+			data.fold = 900;
+			data.life = 500;
+			data.soul = 30000;
+			data.vocal = 15000;
+			data.charm = 5000;
+			data.support = 900;
+			Database.Instance.gameSetup.SetMvMode(data, m_prismData);
+			AdvanceGame(data, m_playerData, null, null, false, 0, 0, new JGEOBNENMAH.NEDILFPPCJF(), false);
 		}
 
 		// // RVA: 0x12CF4F8 Offset: 0x12CF4F8 VA: 0x12CF4F8
-		// private bool CheckSetAllDiva(AOJGDNFAIJL.AMIECPBIALP prismData) { }
+		private bool CheckSetAllDiva(AOJGDNFAIJL_PrismData.AMIECPBIALP prismData)
+		{
+			for(int i = 0;  i < Database.Instance.gameSetup.musicInfo.onStageDivaNum; i++)
+			{
+				if (prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i) == 0 || prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(i) == 0)
+					return false;
+			}
+			return prismData.PNDKNFBLKDP_GetPrismValkyrieId() > 0;
+		}
 
 		// // RVA: 0x12CF644 Offset: 0x12CF644 VA: 0x12CF644
-		// private void NotSetAllDivaShow() { }
+		private void NotSetAllDivaShow()
+		{
+			MenuScene.Instance.InputDisable();
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(string.Empty, SizeType.Small, MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_multi_dance_popup_02"), new ButtonInfo[1] {
+				new ButtonInfo() { Type = PopupButton.ButtonType.Positive, Label = PopupButton.ButtonLabel.Ok }
+			}, false, false), (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x12CFFEC
+				MenuScene.Instance.InputEnable();
+			}, null, null, null);
+		}
 
 		// // RVA: 0x12CF9A8 Offset: 0x12CF9A8 VA: 0x12CF9A8
 		private void OnClickPrismIetms(PopupMvModeSelectListContent.SelectTarget target, int divaSlotNumber)

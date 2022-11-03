@@ -140,7 +140,17 @@ namespace XeApp.Game.Common
 		// public static TextPopupSetting CreateMessageBankTextContent(string bankName, string titleLabel, string messageLabel, SizeType size, ButtonInfo[] buttons) { }
 
 		// // RVA: 0x1BC1AB0 Offset: 0x1BC1AB0 VA: 0x1BC1AB0
-		// public static TextPopupSetting CrateTextContent(string title, SizeType size, string Message, ButtonInfo[] buttons, bool scrollable = False, bool isCaption = True) { }
+		public static TextPopupSetting CrateTextContent(string title, SizeType size, string Message, ButtonInfo[] buttons, bool scrollable = false, bool isCaption = true)
+		{
+			TextPopupSetting res = new TextPopupSetting();
+			res.TitleText = title;
+			res.WindowSize = size;
+			res.Buttons = buttons;
+			res.Text = Message;
+			res.Scrollable = scrollable;
+			res.IsCaption = isCaption;
+			return res;
+		}
 
 		// // RVA: 0x1BC1BF4 Offset: 0x1BC1BF4 VA: 0x1BC1BF4
 		// public static void OpenWeekRecoveryWindow(int freeMusicId, Action<int> recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack) { }

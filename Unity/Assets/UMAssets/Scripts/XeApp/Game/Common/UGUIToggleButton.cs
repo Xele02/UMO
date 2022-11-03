@@ -72,11 +72,16 @@ namespace XeApp.Game.Common
 					{
 						SetOff();
 					}
+					else
+					{
+						SetOn();
+					}
 				}
 				else
 				{
 					if (m_isSet)
 						return;
+					SetOn();
 				}
 				m_isClick = true;
 				OnClickEvent();

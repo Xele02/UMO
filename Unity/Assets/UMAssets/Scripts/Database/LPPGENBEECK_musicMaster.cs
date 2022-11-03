@@ -571,7 +571,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 		{
 			AIPEHINPIHC data = new AIPEHINPIHC();
 			data.NMNDNFFJHPJ = (int)array[i].EIIOPABMJFJ;
-			data.GPPEFLKGGGJ = (int)array[i].FODKKJIDDKN;
+			data.GPPEFLKGGGJ_ValkyrieId = (int)array[i].FODKKJIDDKN;
 			for(int j = 0; j < 3; j++)
 			{
 				data.AHHJLDLAPAN[j] = (int)array[i].DIPKCALNIII[j];
@@ -863,7 +863,7 @@ public class AJIKMKFGNCJ
 public class AIPEHINPIHC
 {
 	public int NMNDNFFJHPJ; // 0x8
-	public int GPPEFLKGGGJ; // 0xC
+	public int GPPEFLKGGGJ_ValkyrieId; // 0xC
 	public int[] AHHJLDLAPAN = new int[3]; // 0x10
 	public int[] JPIDIENBGKH = new int[3]; // 0x14
 	public int IOPCBBNHJIP_MusicId; // 0x18

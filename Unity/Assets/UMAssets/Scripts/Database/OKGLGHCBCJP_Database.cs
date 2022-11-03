@@ -335,7 +335,7 @@ public class OKGLGHCBCJP_Database
 		// {(int)BEOKNKGHFFE_SectionName.DBBOBIHPDNA_Bingo,() => { return new JKICPBIIHNE(); } }, //0x149D644				"bingo",
 		{(int)BEOKNKGHFFE_Section.PEIFIFLMIIF_Board,() => { return new KOGHKIODHPA_Board(); } }, //0x149D6B0					"board",
 		{(int)BEOKNKGHFFE_Section.JOMAMMACANH_BonusVC,() => { return new HHJHIFJIKAC_BonusVc(); } }, //0x149D71C				"bonus_vc",
-		// {(int)BEOKNKGHFFE_SectionName.DHMPHBPODCI_CampaignDiva,() => { return new AIPOFGJGPKI(); } }, //0x149D788				"campaign_diva",
+		{(int)BEOKNKGHFFE_Section.DHMPHBPODCI_CampaignDiva,() => { return new AIPOFGJGPKI_CampaignDiva(); } }, //0x149D788				"campaign_diva",
 		// {(int)BEOKNKGHFFE_SectionName.DGPIFKCLAGB_Compo,() => { return new HHPEMHHCKBE(); } }, //0x149D7F4				"compo",
 		// {(int)BEOKNKGHFFE_SectionName.EFHFNMAIEJG_CosItem,() => { return new PLPBJOFICEJ(); } }, //0x149D860				"cos_item",
 		{(int)BEOKNKGHFFE_Section.LOFOAIEMECN_Costume,() => { return new LCLCCHLDNHJ_Costume(); } }, //0x149D8CC					"costume",
@@ -454,7 +454,7 @@ public class OKGLGHCBCJP_Database
 	// public JKICPBIIHNE FPOIPGFFAPE { get; private set; } // 0x20 IGDEDAEJHHE DGFJAPEKHFO GNMGEPPDCKA
 	   public KOGHKIODHPA_Board JEMMMJEJLNL_Board { get; private set; } // 0x24 JCNENMIJKJM LEOMPFKGIDH OJLDODJNICJ
 	   public HHJHIFJIKAC_BonusVc NBKNAAPBFFL_BonusVc { get; private set; } // 0x28 DPLHDEEFDJM ADJIKEFIPJA JNIKDFJOHFA
-	// public AIPOFGJGPKI NGCCGLLLDIB { get; private set; } // 0x2C AKMEDCJEFIM ONFFEFOLNJA KHNFCNCCAJE
+	public AIPOFGJGPKI_CampaignDiva NGCCGLLLDIB_CampaignDiva { get; private set; } // 0x2C AKMEDCJEFIM ONFFEFOLNJA KHNFCNCCAJE
 	// public HHPEMHHCKBE ALFKMKICDPP { get; private set; } // 0x30 EGAMKFEHKOH OFKPEOKIBOP FBMPHCEEOGP
 	// public PLPBJOFICEJ GOGFKAECFIP { get; private set; } // 0x34 MFAKBNOPMAL ONAJMJDFKII OKGBJKKKBJK
 	   public LCLCCHLDNHJ_Costume MFPNGNMFEAL_Costume { get; private set; } // 0x38 BNPFDJNHBIN BHOKMJJHOOK PCDDICJFIEI
@@ -692,7 +692,7 @@ public class OKGLGHCBCJP_Database
 		// FPOIPGFFAPE = null;
 		JEMMMJEJLNL_Board = null;
 		NBKNAAPBFFL_BonusVc = null;
-		// NGCCGLLLDIB = null;
+		NGCCGLLLDIB_CampaignDiva = null;
 		// ALFKMKICDPP = null;
 		// GOGFKAECFIP = null;
 		MFPNGNMFEAL_Costume = null;
@@ -774,7 +774,7 @@ public class OKGLGHCBCJP_Database
 					// case BEOKNKGHFFE_Section.DBBOBIHPDNA_Bingo: FPOIPGFFAPE = item; break;
 					case BEOKNKGHFFE_Section.PEIFIFLMIIF_Board: JEMMMJEJLNL_Board = (KOGHKIODHPA_Board)item; break;
 					case BEOKNKGHFFE_Section.JOMAMMACANH_BonusVC: NBKNAAPBFFL_BonusVc = (HHJHIFJIKAC_BonusVc)item; break;
-					// case BEOKNKGHFFE_Section.DHMPHBPODCI_CampaignDiva: NGCCGLLLDIB = item; break;
+					case BEOKNKGHFFE_Section.DHMPHBPODCI_CampaignDiva: NGCCGLLLDIB_CampaignDiva = (AIPOFGJGPKI_CampaignDiva)item; break;
 					// case BEOKNKGHFFE_Section.DGPIFKCLAGB_Compo: ALFKMKICDPP = item; break;
 					// case BEOKNKGHFFE_Section.EFHFNMAIEJG_CosItem: GOGFKAECFIP = item; break;
 					case BEOKNKGHFFE_Section.LOFOAIEMECN_Costume: MFPNGNMFEAL_Costume = (LCLCCHLDNHJ_Costume)item; break;

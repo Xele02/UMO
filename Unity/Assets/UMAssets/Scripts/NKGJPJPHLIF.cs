@@ -381,7 +381,10 @@ public class NKGJPJPHLIF
 	// public void EFPOACOOAFB(bool FBBNPFFEJBN) { }
 
 	// // RVA: 0xC187C4 Offset: 0xC187C4 VA: 0xC187C4
-	// public void NIJDPPHGHFD(bool FBBNPFFEJBN) { }
+	public void NIJDPPHGHFD(bool FBBNPFFEJBN)
+	{
+		TodoLogger.Log(0, "NIJDPPHGHFD");
+	}
 
 	// // RVA: 0xC18778 Offset: 0xC18778 VA: 0xC18778
 	// public void DCOKFLPPHEB() { }

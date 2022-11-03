@@ -267,5 +267,9 @@ public class JDDGPJDKHNE
 	// public long FNBFIIOCJNF() { }
 
 	// // RVA: 0x1C32774 Offset: 0x1C32774 VA: 0x1C32774
-	// public static string GPLMOKEIOLE() { }
+	public static string GPLMOKEIOLE()
+	{
+		TodoLogger.Log(0, "GPLMOKEIOLE");
+		return "";
+	}
 }

@@ -521,16 +521,28 @@ public class AOJGDNFAIJL_PrismData
 		}
 
         // // RVA: 0xD5D78C Offset: 0xD5D78C VA: 0xD5D78C
-        // public void NFMFFMDHBJO(bool PODBALIIGIK) { }
+        public void NFMFFMDHBJO(bool PODBALIIGIK)
+		{
+			FBGAKINEIPG = PODBALIIGIK;
+		}
 
         // // RVA: 0xD5D794 Offset: 0xD5D794 VA: 0xD5D794
-        // public void EOGMEFOFOBJ(bool PODBALIIGIK) { }
+        public void EOGMEFOFOBJ_SetValkyrieMode(bool PODBALIIGIK)
+		{
+			OHLCKPIMMFH_ValkyrieMode = PODBALIIGIK;
+		}
 
         // // RVA: 0xD5D79C Offset: 0xD5D79C VA: 0xD5D79C
-        // public void FNMFBCGCPGP(bool PODBALIIGIK) { }
+        public void FNMFBCGCPGP_SetDivaMode(bool PODBALIIGIK)
+		{
+			HGEKDNNJAAC_DivaMode = PODBALIIGIK;
+		}
 
         // // RVA: 0xD5D7A4 Offset: 0xD5D7A4 VA: 0xD5D7A4
-        // public void NEJBBHHINLA(bool PODBALIIGIK) { }
+        public void NEJBBHHINLA_SetShowNotes(bool PODBALIIGIK)
+		{
+			DNLCLAOPFPF_ShowNotes = PODBALIIGIK;
+		}
 
         // // RVA: 0xD5D7AC Offset: 0xD5D7AC VA: 0xD5D7AC
         public void LMAAILCIFLF_ApplyInSave()

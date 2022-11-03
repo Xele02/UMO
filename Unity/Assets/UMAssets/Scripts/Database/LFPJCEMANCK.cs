@@ -157,7 +157,17 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0xD6E12C Offset: 0xD6E12C VA: 0xD6E12C
-	// public int MCHKDCGEAOB() { }
+	public int MCHKDCGEAOB()
+	{
+		for(int i = 0; i < KCMFDGNNPIL_Rules.Count; i++)
+		{
+			if(KCMFDGNNPIL_Rules[i].PEOIMDCECDL)
+			{
+				return KCMFDGNNPIL_Rules[i].PAAPNEMBHGN_Day;
+			}
+		}
+		return 1;
+	}
 
 	// RVA: 0xD6E270 Offset: 0xD6E270 VA: 0xD6E270
 	public LFPJCEMANCK_Asset()

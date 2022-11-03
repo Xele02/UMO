@@ -110,7 +110,7 @@ namespace XeApp.Game.Menu
 		public static bool IsAlreadyHome { get; set; } // 0x4
 		public static bool IsFirstTitleFlow { get; set; } // 0x5
 		public static bool ComebackByRestart { get; private set; } // 0x6
-		// public MenuDivaManager divaManager { get; set; } // 0x2C
+		public MenuDivaManager divaManager { get; set; } // 0x2C
 		// public SceneIconTextureCache SceneIconCache { get; } 0xB2DCF8
 		// public DivaIconTextureCache DivaIconCache { get; } 0xB2DD94
 		// public BgTextureCache BgTextureCache { get; } 0xB2DE30
@@ -574,7 +574,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7CE4 Offset: 0x6C7CE4 VA: 0x6C7CE4
 		// // RVA: 0xB31CF4 Offset: 0xB31CF4 VA: 0xB31CF4
-		// private IEnumerator GotoLoginBonsuCorotine() { }
+		private IEnumerator GotoLoginBonsuCorotine()
+		{
+			TodoLogger.Log(0, "GotoLoginBonsuCorotine");
+			yield break;
+		}
 
 		// // RVA: 0xB31DA0 Offset: 0xB31DA0 VA: 0xB31DA0
 		// public void GotoGachaDirection() { }
@@ -811,7 +815,18 @@ namespace XeApp.Game.Menu
 		// public static bool SaveWithAchievement(ulong checkTarget, IMCBBOAFION onSuccess, IMCBBOAFION onError) { }
 
 		// // RVA: 0xB2A834 Offset: 0xB2A834 VA: 0xB2A834
-		// public static bool CheckDatelineAndAssetUpdate() { }
+		public static bool CheckDatelineAndAssetUpdate()
+		{
+			return PGIGNJDPCAH.MNANNMDBHMP(() =>
+			{
+				// 0xB3821C
+				Instance.StartCoroutine(Instance.GotoLoginBonsuCorotine());
+			}, () =>
+			{
+				//0xB382C0
+				Instance.StartCoroutine(Instance.GotoTitleCoroutine());
+			});
+		}
 
 		// // RVA: 0xB35814 Offset: 0xB35814 VA: 0xB35814
 		private bool CheckDatelineAndAssetUpdateInner()

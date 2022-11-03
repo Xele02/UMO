@@ -97,7 +97,11 @@ public class JEPBIIJDGEF_EventInfo
 	// public IKDICBBFBMI LKJGDCBCLKO(string JOPOPMLFINI) { }
 
 	// // RVA: 0x1C3A230 Offset: 0x1C3A230 VA: 0x1C3A230
-	// public IKDICBBFBMI OIKOHACJPCB(int EKANGPODCEP) { }
+	public IKDICBBFBMI_EventBase OIKOHACJPCB(int EKANGPODCEP)
+	{
+		TodoLogger.Log(0, "OIKOHACJPCB");
+		return null;
+	}
 
 	// // RVA: 0x1C3A330 Offset: 0x1C3A330 VA: 0x1C3A330
 	// public IKDICBBFBMI IMJNOBGABHN(int EKANGPODCEP) { }

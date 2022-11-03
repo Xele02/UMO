@@ -62,5 +62,8 @@ public class CNGFKOJANNP
 	// public void BAGMHFKPFIF() { }
 
 	// // RVA: 0x175BB70 Offset: 0x175BB70 VA: 0x175BB70
-	// public void BNGIDMBNILP() { }
+	public void BNGIDMBNILP()
+	{
+		TodoLogger.Log(0, "BNGIDMBNILP (security check)");
+	}
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 using XeApp.Game.Common;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -73,7 +74,7 @@ namespace XeApp.Game.Menu
 		// [TooltipAttribute] // RVA: 0x681F98 Offset: 0x681F98 VA: 0x681F98
 		[SerializeField]
 		private List<Sprite> m_difficulty6LineSprites; // 0x4C
-		// public Action OnClickExpectedScoreDescButton; // 0x50
+		public Action OnClickExpectedScoreDescButton; // 0x50
 
 		public InOutAnime InOut { get { return m_inOut; } } //0xA6F6B0
 		// public SetDeckExpectedScoreGauge ExpectedScoreGauge { get; } 0xA6F6B8

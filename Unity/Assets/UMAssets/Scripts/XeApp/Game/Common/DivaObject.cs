@@ -40,8 +40,8 @@ namespace XeApp.Game.Common
 		protected bool windEnable = true; // 0x88
 
 		public int divaId { get { return divaId_; } private set { divaId_ = value; } } //0x1BE9D38 0x1BF2220
-		//public int modelId { get; private set; } 0x1BF2228 0x1BF2230
-		//public int colorId { get; private set; } 0x1BF2238 0x1BF2240
+		public int modelId { get { return modelId_; } private set { modelId_ = value; } } //0x1BF2228 0x1BF2230
+		public int colorId { get { return colorId_; } private set { colorId_ = value; } } //0x1BF2238 0x1BF2240
 		public int positionId { get { return positionId_; } private set { positionId_ = value; } } //0x1BEBE10 0x1BF2248
 		public GameObject divaPrefab { get { return divaPrefab_; } protected set { divaPrefab_ = value; } } //0x1BED1C4 0x1BF2250
 		public bool isWaitUnlockBoneSpring { get; private set; } // 0x54

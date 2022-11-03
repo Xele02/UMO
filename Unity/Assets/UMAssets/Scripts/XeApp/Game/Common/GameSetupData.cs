@@ -75,7 +75,17 @@ namespace XeApp.Game.Common
 				}
 
 				// // RVA: 0xEA000C Offset: 0xEA000C VA: 0xEA000C
-				// public void SetForcePrismData(AIPEHINPIHC a_prism, int a_index) { }
+				public void SetForcePrismData(AIPEHINPIHC a_prism, int a_index)
+				{
+					if (a_prism.AHHJLDLAPAN.Length <= a_index)
+						return;
+					if(a_prism.AHHJLDLAPAN[a_index] > 0 && a_prism.JPIDIENBGKH[a_index] > 0)
+					{
+						prismDivaId = a_prism.AHHJLDLAPAN[a_index];
+						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA[a_prism.JPIDIENBGKH[a_index] - 1].DAJGPBLEEOB_PrismCostumeModelId;
+						prismCostumeColorId = 0;
+					}
+				}
 
 				// // RVA: 0xEA0730 Offset: 0xEA0730 VA: 0xEA0730
 				// public void SetPositionId(int position_id) { }
@@ -159,7 +169,16 @@ namespace XeApp.Game.Common
 			}
 
 			// // RVA: 0xE9D15C Offset: 0xE9D15C VA: 0xE9D15C
-			// public void SetForcePrismData(AIPEHINPIHC a_prism) { }
+			public void SetForcePrismData(AIPEHINPIHC a_prism)
+			{
+				divaList_[0].SetForcePrismData(a_prism, 0);
+				divaList_[1].SetForcePrismData(a_prism, 1);
+				divaList_[2].SetForcePrismData(a_prism, 2);
+				if(a_prism.GPPEFLKGGGJ_ValkyrieId > 0)
+				{
+					prismValkyrieId = a_prism.GPPEFLKGGGJ_ValkyrieId;
+				}
+			}
 		}
 
 		public class MusicInfo
@@ -287,7 +306,13 @@ namespace XeApp.Game.Common
 			}
 
 			// // RVA: 0xE9E310 Offset: 0xE9E310 VA: 0xE9E310
-			// public void ClearEventType() { }
+			public void ClearEventType()
+			{
+				gameEventType = 0;
+				openEventType = 0;
+				playEventType = 0;
+				EventUniqueId = 0;
+			}
 
 			// // RVA: 0xE9E328 Offset: 0xE9E328 VA: 0xE9E328
 			// public void DebugSetupOnStageDivaNum(int onStageDivaNum) { }
@@ -353,7 +378,22 @@ namespace XeApp.Game.Common
 		// public void SetSelectedDashIndex(int index) { }
 
 		// // RVA: 0xE9CF20 Offset: 0xE9CF20 VA: 0xE9CF20
-		// public void ForcePrismSetting() { }
+		public void ForcePrismSetting()
+		{
+			if(m_musicInfo.freeMusicId > 0)
+			{
+				KEODKEGFDLD masterFreeMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(m_musicInfo.freeMusicId);
+				AIPEHINPIHC a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL.Find((AIPEHINPIHC x) =>
+				{
+					//0xE9D51C
+					return masterFreeMusic.BLDDNEJDFON == x.NMNDNFFJHPJ;
+				});
+				if(a != null)
+				{
+					m_teamInfo.SetForcePrismData(a);
+				}
+			}
+		}
 
 		// // RVA: 0xE9D288 Offset: 0xE9D288 VA: 0xE9D288
 		public int ForceNoteSe()
