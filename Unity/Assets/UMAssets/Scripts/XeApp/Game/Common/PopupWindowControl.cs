@@ -287,13 +287,14 @@ namespace XeApp.Game.Common
 			}
 			else
 			{
-				m_buttonUguiRuntime.Layout.StartAllAnimGoStop(m_buttons.Length.ToString("00"));
+				m_buttonUguiRuntime.Layout.StartAllAnimGoStop(setting.Buttons.Length.ToString("00"));
 				Array.Copy(setting.Buttons, m_tmpButtons, setting.Buttons.Length);
 				Array.Reverse(m_tmpButtons, 0, setting.Buttons.Length);
 			}
-			for(int i = 0; i < m_buttons.Length; i++)
+			for(int i = 0; i < setting.Buttons.Length; i++)
 			{
 				m_buttons[i].SetLabel(this, m_tmpButtons[i].Label/*??*/, m_tmpButtons[i].Type/*??*/);
+				m_buttons[i].SetOff();
 			}
 			m_buttonUguiRuntime.GetComponent<RectTransform>().anchoredPosition = GetContentButtonPosition(setting.WindowSize, setting.IsCaption);
 			m_validButtonCount = m_buttons.Length;
@@ -639,7 +640,7 @@ namespace XeApp.Game.Common
 				{
 					if(m_buttons[i].RootAbsoluteLayout.IsVisible)
 					{
-						isReadyButtons = m_buttons[i].IsReady;
+						isReadyButtons &= m_buttons[i].IsReady;
 					}
 				}
 				if(isReadyButtons)

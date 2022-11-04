@@ -159,8 +159,8 @@ namespace XeApp.Game.Common
 				m_labelView[(int)type - 1].rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
 				m_labelView[(int)type - 1].rectTransform.sizeDelta = new Vector2(uvData.width * m_texUvList.width, uvData.height * m_texUvList.height);
 				m_labelView[(int)type - 1].rectTransform.anchoredPosition = new Vector2(0, 0);
-				IsReady = true;
 			}
+			IsReady = true;
 		}
 	}
 }
