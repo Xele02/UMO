@@ -130,7 +130,10 @@ public class BgControl
 		// public BgTextureType GetCurrentTextureType() { }
 
 		// // RVA: 0x143CBD0 Offset: 0x143CBD0 VA: 0x143CBD0
-		// public int GetCurrentId() { }
+		public int GetCurrentId()
+		{
+			return m_id;
+		}
 
 		// // RVA: 0x143CBD8 Offset: 0x143CBD8 VA: 0x143CBD8
 		public GameAttribute.Type GetCurrentAttr()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using XeApp.Core;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
@@ -12,8 +13,8 @@ namespace XeApp.Game.Menu
 		private GameObject m_userInfoInstance; // 0xC
 		private GameObject m_menuStackInstance; // 0x10
 		private CommonMenuTop m_userInfo; // 0x14
-		// private CommonMenuStack m_menuStack; // 0x18
-		// private List<LayoutUGUIHitOnly> m_buttons = new List<LayoutUGUIHitOnly>(); // 0x1C
+		private CommonMenuStack m_menuStack; // 0x18
+		private List<LayoutUGUIHitOnly> m_buttons = new List<LayoutUGUIHitOnly>(); // 0x1C
 		private int[] m_buttonBlockCount; // 0x20
 		// private UnityEvent m_onChargeMoneyEvent = new UnityEvent(); // 0x24
 		private List<TransitionUniqueId> m_disableTitleBarUniqueScene = new List<TransitionUniqueId>(); // 0x28
@@ -232,7 +233,88 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB2903C Offset: 0xB2903C VA: 0xB2903C
 		public void Show(TransitionList.Type transitionName, TransitionUniqueId uniqueId, CommonMenuStackLabel.LabelType labelType, SceneGroupCategory group, int descId, bool isVisibleBackButton)
 		{
-			TodoLogger.Log(0, "Menu Header Show");
+			int idx;
+			if (m_menuStack != null)
+			{
+				idx = m_disableTitleBarScene.FindIndex((TransitionList.Type x) =>
+				{
+					//0xB2B8F8
+					return transitionName == x;
+				});
+				if (idx < 0)
+				{
+					idx = m_disableTitleBarUniqueScene.FindIndex((TransitionUniqueId x) =>
+					{
+						//0xB2B90C
+						return uniqueId == x;
+					});
+				}
+				if (idx < 0)
+				{
+					if (labelType == CommonMenuStackLabel.LabelType._None)
+						m_menuStack.HideLabel();
+					else
+						m_menuStack.EnterLabel(labelType, group, descId, false);
+					m_menuStackInstance.transform.SetAsLastSibling();
+				}
+				else
+				{
+					m_menuStack.HideLabel();
+				}
+				idx = m_disableBackButtonScene.FindIndex((TransitionList.Type x) =>
+				{
+					//0xB2B920
+					return transitionName == x;
+				});
+				if(idx < 0)
+				{
+					idx = m_disableBackButtonUniqueScene.FindIndex((TransitionUniqueId x) =>
+					{
+						//0xB2B934
+						return uniqueId == x;
+					});
+				}
+				if(idx < 0)
+				{
+					if(isVisibleBackButton)
+					{
+						m_menuStack.EnterBackButton();
+					}
+					else
+					{
+						m_menuStack.LeaveBackButton();
+					}
+				}
+				else
+				{
+					m_menuStack.HideBackButton();
+				}
+			}
+			if (m_userInfoInstance == null)
+				return;
+			idx = m_disableUserInfo.FindIndex((TransitionList.Type x) =>
+			{
+				//0xB2B948
+				return transitionName == x;
+			});
+			if(idx < 0)
+			{
+				idx = m_disableUserInfoUniqueScene.FindIndex((TransitionUniqueId x) =>
+				{
+					//0xB2B95C
+					return uniqueId == x;
+				});
+			}
+			if(idx < 0)
+			{
+				m_userInfoInstance.SetActive(true);
+				m_userInfo.Enter(false);
+				m_userInfoInstance.transform.SetAsLastSibling();
+			}
+			else
+			{
+				m_userInfo.Leave(false);
+			}
 		}
 
 		// // RVA: 0xB29640 Offset: 0xB29640 VA: 0xB29640
@@ -251,9 +333,62 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB298F8 Offset: 0xB298F8 VA: 0xB298F8
 		public IEnumerator Load(MonoBehaviour mb, Font font, UnityAction action)
 		{
-			TodoLogger.Log(0, "MenuHeaderControl Load");
-			action();
-			yield break;
+			LayoutUGUIRuntime runtime;
+			int i;
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0xB2B974
+			i = 0;
+			while(i < assetBundleName.Length / 2)
+			{
+				operation = AssetBundleManager.LoadLayoutAsync(assetBundleName[i * 2], assetBundleName[i * 2 + 1]);
+				yield return operation;
+				mb.StartCoroutine(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+				{
+					//0xB2B010
+					if(instance.name == "UI_MenuTop(Clone)")
+					{
+						m_userInfoInstance = instance;
+					}
+					else if(instance.name == "UI_MenuStack(Clone)")
+					{
+						m_menuStackInstance = instance;
+					}
+				}));
+				operation = null;
+				i++;
+			}
+			while(m_userInfoInstance == null || m_menuStackInstance == null)
+			{
+				yield return null;
+			}
+
+			for(i = 0; i < assetBundleName.Length / 2; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle(assetBundleName[i * 2]);
+			}
+			runtime = m_userInfoInstance.GetComponent<LayoutUGUIRuntime>();
+			while (!runtime.IsReady)
+				yield return null;
+			runtime = m_menuStackInstance.GetComponent<LayoutUGUIRuntime>();
+			while (!runtime.IsReady)
+				yield return null;
+			m_userInfoInstance.transform.SetParent(m_root.transform, false);
+			m_userInfo = m_userInfoInstance.GetComponent<CommonMenuTop>();
+			m_userInfo.OnRecovEne = this.OnClickRecovEne;
+			m_userInfo.OnChargeMoney = this.OnClickChargeMoney;
+			m_userInfoInstance.SetActive(false);
+
+			m_menuStackInstance.transform.SetParent(m_root.transform, false);
+			m_menuStack = m_menuStackInstance.GetComponent<CommonMenuStack>();
+			m_menuStack.HideLabel();
+			m_menuStack.HideBackButton();
+
+			m_buttons.AddRange(m_userInfo.GetComponentsInChildren<LayoutUGUIHitOnly>());
+			m_buttons.AddRange(m_menuStack.GetComponentsInChildren<LayoutUGUIHitOnly>());
+			m_buttonBlockCount = new int[m_buttons.Count];
+			if (action != null)
+				action();
 		}
 
 		// // RVA: 0xB299F0 Offset: 0xB299F0 VA: 0xB299F0
@@ -271,19 +406,21 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB29E8C Offset: 0xB29E8C VA: 0xB29E8C
 		public void ApplyPlayerStatus(IFBCGCCJBHI playerStatus)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "ApplyPlayerStatus");
 		}
 
 		// // RVA: 0xB2A28C Offset: 0xB2A28C VA: 0xB2A28C
-		// private void OnClickRecovEne() { }
+		private void OnClickRecovEne()
+		{
+			TodoLogger.Log(0, "OnClickRecovEne");
+		}
 
 		// // RVA: 0xB2ABA4 Offset: 0xB2ABA4 VA: 0xB2ABA4
-		// private void OnClickChargeMoney() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6C7724 Offset: 0x6C7724 VA: 0x6C7724
-		// // RVA: 0xB2B010 Offset: 0xB2B010 VA: 0xB2B010
-		// private void <Load>b__30_0(GameObject instance) { }
-
+		private void OnClickChargeMoney()
+		{
+			TodoLogger.Log(0, "OnClickChargeMoney");
+		}
+		
 		// [CompilerGeneratedAttribute] // RVA: 0x6C7734 Offset: 0x6C7734 VA: 0x6C7734
 		// // RVA: 0xB2B0D8 Offset: 0xB2B0D8 VA: 0xB2B0D8
 		// private void <OnClickChargeMoney>b__37_0() { }

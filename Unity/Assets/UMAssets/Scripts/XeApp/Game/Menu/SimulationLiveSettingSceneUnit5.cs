@@ -20,8 +20,8 @@ namespace XeApp.Game.Menu
 		private SetDeckUnitInfoSLive m_prismUnitInfo; // 0x90
 		private ConfigMenu m_gameSettingMenu; // 0x94
 		private bool m_isWaitOnPostSetCanvas; // 0x98
-		// private bool m_isWaitActivateScene; // 0x99
-		// private bool m_isWaitExitAnimation; // 0x9A
+		private bool m_isWaitActivateScene; // 0x99
+		private bool m_isWaitExitAnimation; // 0x9A
 
 		// // RVA: 0x12CD360 Offset: 0x12CD360 VA: 0x12CD360
 		private void Awake()
@@ -125,18 +125,32 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE9BC Offset: 0x12CE9BC VA: 0x12CE9BC Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			TodoLogger.Log(0, "OnStartExitAnimation");
+			StartCoroutine(Co_ExitAnimation());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72752C Offset: 0x72752C VA: 0x72752C
 		// // RVA: 0x12CE9E0 Offset: 0x12CE9E0 VA: 0x12CE9E0
-		// private IEnumerator Co_ExitAnimation() { }
+		private IEnumerator Co_ExitAnimation()
+		{
+			//0x12D0288
+			m_isWaitExitAnimation = true;
+			while (IsPlaying())
+				yield return null;
+			m_headButtons.InOut.Leave(false);
+			m_prismSettingButtons.InOut.Leave(false);
+			m_valkyrieButton.InOut.Leave(false);
+			m_prismUnitInfo.AnimeControl.TryLeave();
+			m_musicInfo.InOut.Leave(false);
+			m_playButtons.InOut.Leave(false);
+			while (IsPlaying())
+				yield return null;
+			m_isWaitExitAnimation = false;
+		}
 
 		// // RVA: 0x12CEA8C Offset: 0x12CEA8C VA: 0x12CEA8C Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			TodoLogger.Log(0, "IsEndExitAnimation");
-			return true;
+			return m_isWaitExitAnimation == false;
 		}
 
 		// // RVA: 0x12CEAA0 Offset: 0x12CEAA0 VA: 0x12CEAA0 Slot: 23
@@ -253,12 +267,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE7FC Offset: 0x12CE7FC VA: 0x12CE7FC
 		private bool IsPlaying()
 		{
-			return !m_headButtons.InOut.IsPlaying() &&
-					!m_prismSettingButtons.InOut.IsPlaying() &&
-					!m_valkyrieButton.InOut.IsPlaying() &&
-					!m_musicInfo.InOut.IsPlaying() &&
-					!m_playButtons.InOut.IsPlaying() &&
-					!m_prismUnitInfo.AnimeControl.IsPlaying();
+			return m_headButtons.InOut.IsPlaying() ||
+					m_prismSettingButtons.InOut.IsPlaying() ||
+					m_valkyrieButton.InOut.IsPlaying() ||
+					m_musicInfo.InOut.IsPlaying() ||
+					m_playButtons.InOut.IsPlaying() ||
+					m_prismUnitInfo.AnimeControl.IsPlaying();
 		}
 
 		// // RVA: 0x12CEEB4 Offset: 0x12CEEB4 VA: 0x12CEEB4
@@ -281,7 +295,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x12CFE44
 				m_valkyrieButton.UpdateContent(m_prismData);
-				StartCoroutine(Co_ApplyWait());
+				StartApplyWait();
 			}, null);
 		}
 
@@ -342,12 +356,15 @@ namespace XeApp.Game.Menu
 			{
 				//0x12CFE94
 				m_prismUnitInfo.UpdateContent(m_prismData, Database.Instance.gameSetup.musicInfo);
-				StartCoroutine(Co_ApplyWait());
+				StartApplyWait();
 			}, null);
 		}
 
 		// // RVA: 0x12CFB68 Offset: 0x12CFB68 VA: 0x12CFB68
-		// private void StartApplyWait() { }
+		private void StartApplyWait()
+		{
+			StartCoroutine(Co_ApplyWait());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72761C Offset: 0x72761C VA: 0x72761C
 		// // RVA: 0x12CFB8C Offset: 0x12CFB8C VA: 0x12CFB8C

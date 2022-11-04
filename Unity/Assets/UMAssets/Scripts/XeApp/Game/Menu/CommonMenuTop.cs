@@ -56,8 +56,8 @@ namespace XeApp.Game.Menu
 		private Action m_on_charge_mny; // 0x80
 		private Rect[] m_monthly_coin_rect; // 0x84
 
-		// public Action OnRecovEne { set; } 0x1B4CCC4
-		// public Action OnChargeMoney { set; } 0x1B4CCCC
+		public Action OnRecovEne { set { m_on_recov_ene = value; } } //0x1B4CCC4
+		 public Action OnChargeMoney { set { m_on_charge_mny = value; } } //0x1B4CCCC
 
 		// RVA: 0x1B4CCD4 Offset: 0x1B4CCD4 VA: 0x1B4CCD4
 		private void Update()
@@ -80,10 +80,16 @@ namespace XeApp.Game.Menu
 		// private void UpdateIdle() { }
 
 		// // RVA: 0x1B4D69C Offset: 0x1B4D69C VA: 0x1B4D69C
-		// public void Enter(bool isEnd = False) { }
+		public void Enter(bool isEnd = false)
+		{
+			TodoLogger.Log(0, "Enter common top menu");
+		}
 
 		// // RVA: 0x1B49E30 Offset: 0x1B49E30 VA: 0x1B49E30
-		// public void Leave(bool isEnd = False) { }
+		public void Leave(bool isEnd = false)
+		{
+			TodoLogger.Log(0, "Leave common top menu");
+		}
 
 		// // RVA: 0x1B4D764 Offset: 0x1B4D764 VA: 0x1B4D764
 		// public bool IsPlaying() { }

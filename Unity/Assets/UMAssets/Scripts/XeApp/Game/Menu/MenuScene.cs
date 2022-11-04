@@ -602,7 +602,10 @@ namespace XeApp.Game.Menu
 		// private IEnumerator GotoBunchDownLoadCoroutine() { }
 
 		// // RVA: 0xB32010 Offset: 0xB32010 VA: 0xB32010
-		// public void Return(bool isFading = True) { }
+		public void Return(bool isFading = true)
+		{
+			m_menuTransitionControl.Return(isFading);
+		}
 
 		// // RVA: 0xB32044 Offset: 0xB32044 VA: 0xB32044
 		public void Call(TransitionList.Type next, TransitionArgs args, bool isFading = true)
