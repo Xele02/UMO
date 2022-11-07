@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using XeApp.Core;
 using XeApp.Game.Common;
@@ -259,7 +260,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AB0EC Offset: 0x9AB0EC VA: 0x9AB0EC Slot: 29
-		//public void SetFoldWaveGaugeValue(int value) { }
+		public void SetFoldWaveGaugeValue(int value)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB0F0 Offset: 0x9AB0F0 VA: 0x9AB0F0 Slot: 30
 		//public void HideFoldWaveGauge() { }
@@ -268,10 +272,16 @@ namespace XeApp.Game.RhythmGame
 		//public void UpdateCombo() { }
 
 		//// RVA: 0x9AB0F8 Offset: 0x9AB0F8 VA: 0x9AB0F8 Slot: 32
-		//public void SetCombo(int combo) { }
+		public void SetCombo(int combo)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB0FC Offset: 0x9AB0FC VA: 0x9AB0FC Slot: 33
-		//public void SetBattleCombo(int combo) { }
+		public void SetBattleCombo(int combo)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB100 Offset: 0x9AB100 VA: 0x9AB100 Slot: 34
 		public void SetItemCount(int kind, int count)
@@ -318,7 +328,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AB304 Offset: 0x9AB304 VA: 0x9AB304 Slot: 40
-		//public void EnemyDamageResult(int result, Vector3 position) { }
+		public void EnemyDamageResult(int result, Vector3 position)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB308 Offset: 0x9AB308 VA: 0x9AB308 Slot: 41
 		public void UpdateTargetPosition(Vector3 position)
@@ -380,10 +393,17 @@ namespace XeApp.Game.RhythmGame
 		//public void ShowActiveSkillCutin(string skillname, RhythmGameResource.UITextureResource textureResource) { }
 
 		//// RVA: 0x9AB96C Offset: 0x9AB96C VA: 0x9AB96C Slot: 49
-		//public void CloseSkillCutin() { }
+		public void CloseSkillCutin()
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB970 Offset: 0x9AB970 VA: 0x9AB970 Slot: 50
-		//public void EndAcceptOfInput() { }
+		public void EndAcceptOfInput()
+		{
+			m_screenTouchArea.interactable = false;
+			m_pauseButton.IsDisable = true;
+		}
 
 		//// RVA: 0x9AB9C8 Offset: 0x9AB9C8 VA: 0x9AB9C8 Slot: 51
 		public bool IsInputAccept()
@@ -404,7 +424,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AB9FC Offset: 0x9AB9FC VA: 0x9AB9FC Slot: 54
-		//public void HideAllToucheEffect() { }
+		public void HideAllToucheEffect()
+		{
+			return;
+		}
 
 		//// RVA: 0x9ABA00 Offset: 0x9ABA00 VA: 0x9ABA00 Slot: 55
 		//public void ShowLongNotesTouchEffect(int trackId) { }
@@ -487,7 +510,10 @@ namespace XeApp.Game.RhythmGame
 		//public void RestartActiveSkillButton() { }
 
 		//// RVA: 0x9AC38C Offset: 0x9AC38C VA: 0x9AC38C Slot: 77
-		//public bool IsActiveSkillButtonAcEnd() { }
+		public bool IsActiveSkillButtonAcEnd()
+		{
+			return true;
+		}
 
 		//// RVA: 0x9AC394 Offset: 0x9AC394 VA: 0x9AC394 Slot: 78
 		//public bool IsActiveSkillButtonAcOn() { }
@@ -505,7 +531,10 @@ namespace XeApp.Game.RhythmGame
 		//public void ClearPauseButton() { }
 
 		//// RVA: 0x9AC3D0 Offset: 0x9AC3D0 VA: 0x9AC3D0 Slot: 81
-		//public void DisablePauseButton() { }
+		public void DisablePauseButton()
+		{
+			m_screenTouchArea.interactable = false;
+		}
 
 		//// RVA: 0x9AC400 Offset: 0x9AC400 VA: 0x9AC400 Slot: 82
 		public void EnablePauseButton()
@@ -524,7 +553,17 @@ namespace XeApp.Game.RhythmGame
 		//public void UpdateEnemyFrameColor(int damage, int threshold1, int threshold2) { }
 
 		//// RVA: 0x9AC460 Offset: 0x9AC460 VA: 0x9AC460 Slot: 85
-		//public void UpdateEnemyStatus(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback) { }
+		public void UpdateEnemyStatus(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback)
+		{
+			if(threshold1 <= damage && !IsChaseMode)
+			{
+				SoundManager.Instance.sePlayerGame.Play(18);
+				IsChaseMode = true;
+				m_enemyStatus.TryChaseMode(damage, threshold1, m_isLowSpec, null);
+				if (onChaseModeCallback != null)
+					onChaseModeCallback();
+			}
+		}
 
 		//// RVA: 0x9AC548 Offset: 0x9AC548 VA: 0x9AC548 Slot: 86
 		//public void ChangeEnemyLife(EnemyStatus.LifeType a_type) { }

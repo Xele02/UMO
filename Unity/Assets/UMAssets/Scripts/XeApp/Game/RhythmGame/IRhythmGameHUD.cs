@@ -97,7 +97,7 @@ namespace XeApp.Game.RhythmGame
 		void ChangeScore(int score, int type);
 
 		// // RVA: -1 Offset: -1 Slot: 25
-		// public abstract void SetFoldWaveGaugeValue(int value);
+		void SetFoldWaveGaugeValue(int value);
 
 		// // RVA: -1 Offset: -1 Slot: 26
 		// public abstract void HideFoldWaveGauge();
@@ -106,10 +106,10 @@ namespace XeApp.Game.RhythmGame
 		// public abstract void UpdateCombo();
 
 		// // RVA: -1 Offset: -1 Slot: 28
-		// public abstract void SetCombo(int combo);
+		void SetCombo(int combo);
 
 		// // RVA: -1 Offset: -1 Slot: 29
-		// public abstract void SetBattleCombo(int combo);
+		void SetBattleCombo(int combo);
 
 		// // RVA: -1 Offset: -1 Slot: 30
 		void SetItemCount(int kind, int count);
@@ -130,7 +130,7 @@ namespace XeApp.Game.RhythmGame
 		void ShowHitResult();
 
 		// // RVA: -1 Offset: -1 Slot: 36
-		// public abstract void EnemyDamageResult(int result, Vector3 position);
+		void EnemyDamageResult(int result, Vector3 position);
 
 		// // RVA: -1 Offset: -1 Slot: 37
 		void UpdateTargetPosition(Vector3 position);
@@ -157,10 +157,10 @@ namespace XeApp.Game.RhythmGame
 		// public abstract void ShowActiveSkillCutin(string skillname, RhythmGameResource.UITextureResource textureResource);
 
 		// // RVA: -1 Offset: -1 Slot: 45
-		// public abstract void CloseSkillCutin();
+		void CloseSkillCutin();
 
 		// // RVA: -1 Offset: -1 Slot: 46
-		// public abstract void EndAcceptOfInput();
+		void EndAcceptOfInput();
 
 		// // RVA: -1 Offset: -1 Slot: 47
 		bool IsInputAccept();
@@ -172,7 +172,7 @@ namespace XeApp.Game.RhythmGame
 		void HideToucheEffect(int trackId, int fingerId);
 
 		// // RVA: -1 Offset: -1 Slot: 50
-		// public abstract void HideAllToucheEffect();
+		void HideAllToucheEffect();
 
 		// // RVA: -1 Offset: -1 Slot: 51
 		// public abstract void ShowLongNotesTouchEffect(int trackId);
@@ -241,7 +241,7 @@ namespace XeApp.Game.RhythmGame
 		// public abstract void RestartActiveSkillButton();
 
 		// // RVA: -1 Offset: -1 Slot: 73
-		// public abstract bool IsActiveSkillButtonAcEnd();
+		bool IsActiveSkillButtonAcEnd();
 
 		// // RVA: -1 Offset: -1 Slot: 74
 		// public abstract bool IsActiveSkillButtonAcOn();
@@ -253,7 +253,7 @@ namespace XeApp.Game.RhythmGame
 		// public abstract void ClearPauseButton();
 
 		// // RVA: -1 Offset: -1 Slot: 77
-		// public abstract void DisablePauseButton();
+		void DisablePauseButton();
 
 		// // RVA: -1 Offset: -1 Slot: 78
 		void EnablePauseButton();
@@ -265,7 +265,7 @@ namespace XeApp.Game.RhythmGame
 		// public abstract void UpdateEnemyFrameColor(int damage, int threshold1, int threshold2);
 
 		// // RVA: -1 Offset: -1 Slot: 81
-		// public abstract void UpdateEnemyStatus(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback);
+		void UpdateEnemyStatus(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback);
 
 		// // RVA: -1 Offset: -1 Slot: 82
 		// public abstract void ChangeEnemyLife(EnemyStatus.LifeType a_type);

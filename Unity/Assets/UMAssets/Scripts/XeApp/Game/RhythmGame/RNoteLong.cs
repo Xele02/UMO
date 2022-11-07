@@ -158,13 +158,15 @@ namespace XeApp.Game.RhythmGame
 			if(noteObject.rNote.noteInfo.isSlide)
 			{
 				if(a_result_ex.m_result != RhythmGameConsts.NoteResult.Miss)
-					Free();
+				{
+				}
 				else
 				{
 					if(lastRNoteObject != noteObject)
 					{
 						if(firstRNoteObject != noteObject || a_type == RhythmGameConsts.NoteJudgeType.EndedTouch)
-							Free();
+						{
+						}
 						else
 						{
 							if(lastRNoteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.End)
@@ -193,7 +195,6 @@ namespace XeApp.Game.RhythmGame
 				{
 					if(a_result_ex.m_result != RhythmGameConsts.NoteResult.Miss)
 					{
-						Free();
 					}
 					else
 					{
@@ -213,7 +214,6 @@ namespace XeApp.Game.RhythmGame
 				}
 				else if(a_result_ex.m_result == RhythmGameConsts.NoteResult.None)
 				{
-					Free();
 				}
 				else
 				{

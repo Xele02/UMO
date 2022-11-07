@@ -1446,7 +1446,9 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BDF60 Offset: 0x9BDF60 VA: 0x9BDF60
 		private void OnStartRhythmGameResult()
 		{
-			TodoLogger.Log(0, "OnStartRhythmGameResult");
+			if (Database.Instance.gameSetup.musicInfo.isTutorialOne || Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+				BasicTutorialManager.Instance.HideCursor();
+			uiController.Hud.DisablePauseButton();
 		}
 
 		// // RVA: 0x9B2BA0 Offset: 0x9B2BA0 VA: 0x9B2BA0
@@ -1969,7 +1971,12 @@ namespace XeApp.Game.RhythmGame
 		// private void GotoStorySkip() { }
 
 		// // RVA: 0x9C5BE4 Offset: 0x9C5BE4 VA: 0x9C5BE4
-		// public RhythmGameConsts.ResultComboType CalcComboRank() { }
+		public RhythmGameConsts.ResultComboType CalcComboRank()
+		{
+			if (rNoteOwner.IsAllPerfectResult())
+				return RhythmGameConsts.ResultComboType.PerfectFullCombo;
+			return status.combo.record == totalComboNum ? RhythmGameConsts.ResultComboType.FullCombo : RhythmGameConsts.ResultComboType.Complete;
+		}
 
 		// // RVA: 0x9C44C4 Offset: 0x9C44C4 VA: 0x9C44C4
 		// private void AddInvincibleBuffEffect() { }
@@ -2325,7 +2332,7 @@ namespace XeApp.Game.RhythmGame
 				{
 					bool is3DMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
 					bool showValkyrie = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG();
-					status.enemy.Damage(preJudgeValkyrieNotes[i].rNote.result, preJudgeValkyrieNotes[i].rNote.GetIndexInMode(MusicData.NoteModeType.Valkyrie), status.comboValkyrie.current, 1.0f, 1.0f, info.specialNoteType);
+					int dmg = status.enemy.Damage(preJudgeValkyrieNotes[i].rNote.result, preJudgeValkyrieNotes[i].rNote.GetIndexInMode(MusicData.NoteModeType.Valkyrie), status.comboValkyrie.current, 1.0f, 1.0f, info.specialNoteType);
 					uiController.UpdateEnemyLife(status.enemy.currentValue, status.enemy.subgoalValue, status.enemy.goalValue, () =>
 					{
 						//0xBF1B5C
@@ -2333,7 +2340,12 @@ namespace XeApp.Game.RhythmGame
 							return;
 						valkyrieObject.StartTransformAnimation();
 					});
-					//return ????
+					Vector3 pos = new Vector3(0, 0, 0);
+					if(is3DMode && showValkyrie)
+					{
+						valkyrieModeObject.GetLockOnTargetPos(out pos);
+					}
+					uiController.UpdateEnemyDamageResult(dmg, pos);
 				}
 			}
 			preJudgeValkyrieNotes.Clear();

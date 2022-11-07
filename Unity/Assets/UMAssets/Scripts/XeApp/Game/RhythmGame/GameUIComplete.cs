@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Events;
 using XeApp.Game.Common;
 using XeSys.Gfx;
 
@@ -32,12 +35,19 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xF74874 Offset: 0xF74874 VA: 0xF74874 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.Log(0, "TODO GameUIComplete InitializeFromLayout");
-			return base.InitializeFromLayout(layout, uvMan);
+			m_mainSymbol = CreateSymbol("main", layout);
+			m_completeSymbol = CreateSymbol("complete", layout);
+			m_fullcomboSymbol = CreateSymbol("fullcombo", layout);
+			m_pfullcomboSymbol = CreateSymbol("pfullcombo", layout);
+			Loaded();
+			return true;
 		}
 
 		//// RVA: 0xF709C8 Offset: 0xF709C8 VA: 0xF709C8
-		//public void BeginCompleteAnim(RhythmGameConsts.ResultComboType type) { }
+		public void BeginCompleteAnim(RhythmGameConsts.ResultComboType type)
+		{
+			TodoLogger.Log(0, "BeginCompleteAnim");
+		}
 
 		//// RVA: 0xF749F8 Offset: 0xF749F8 VA: 0xF749F8
 		//public void EndCompleteAnim() { }
@@ -46,11 +56,25 @@ namespace XeApp.Game.RhythmGame
 		//private void UpdateIdle() { }
 
 		//// RVA: 0xF74A34 Offset: 0xF74A34 VA: 0xF74A34
-		//public void BeginCompleteAnimSimulate() { }
+		public void BeginCompleteAnimSimulate()
+		{
+			gameObject.SetActive(true);
+			StartCoroutine(Co_WaitComplateAnimeSimulate(m_completeSymbol.lyt.FrameAnimation.SearchLabelFrame("st_in") / 60.0f, () =>
+			{
+				//0xF751B8
+				leave_completed_event();
+			}));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x746974 Offset: 0x746974 VA: 0x746974
 		//								// RVA: 0xF74B88 Offset: 0xF74B88 VA: 0xF74B88
-		//private IEnumerator Co_WaitComplateAnimeSimulate(float waitSec, UnityAction end) { }
+		private IEnumerator Co_WaitComplateAnimeSimulate(float waitSec, UnityAction end)
+		{
+			//0xF7526C
+			yield return new WaitForSeconds(waitSec);
+			if(end != null)
+				end();
+		}
 
 		//// RVA: 0xF74C5C Offset: 0xF74C5C VA: 0xF74C5C
 		//private void UpdateLeaveWait() { }
@@ -67,10 +91,19 @@ namespace XeApp.Game.RhythmGame
 		//private void remove_leave_completed_event(Action value) { }
 
 		//// RVA: 0xF74F38 Offset: 0xF74F38 VA: 0xF74F38
-		//public void CleanupLeaveCompletedCallback() { }
+		public void CleanupLeaveCompletedCallback()
+		{
+			leave_completed_event = () => {
+				//0xF75260
+				return;
+			};
+		}
 
 		//// RVA: 0xF75068 Offset: 0xF75068 VA: 0xF75068
-		//public void AddLeaveCompletedCallback(Action callback) { }
+		public void AddLeaveCompletedCallback(Action callback)
+		{
+			leave_completed_event += callback;
+		}
 
 		//// RVA: 0xF7506C Offset: 0xF7506C VA: 0xF7506C
 		public void SetCallback_PlayVoice_FullCombo(Action a_cb)
@@ -83,9 +116,5 @@ namespace XeApp.Game.RhythmGame
 		{
 			m_cb_playvoice_clear_perfectfullcombo = a_cb;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x746A0C Offset: 0x746A0C VA: 0x746A0C
-		//							 // RVA: 0xF751B8 Offset: 0xF751B8 VA: 0xF751B8
-		//private void <BeginCompleteAnimSimulate>b__14_0() { }
 	}
 }

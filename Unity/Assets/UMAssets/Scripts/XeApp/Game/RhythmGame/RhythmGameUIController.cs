@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -104,7 +105,18 @@ namespace XeApp.Game.RhythmGame
 		// public void BeginRetryAnim(Action callback) { }
 
 		// // RVA: 0xC0D964 Offset: 0xC0D964 VA: 0xC0D964
-		// public void BeginCompleteAnim(Action callback, RhythmGameConsts.ResultComboType comboRank, bool isMvMode = False) { }
+		public void BeginCompleteAnim(Action callback, RhythmGameConsts.ResultComboType comboRank, bool isMvMode = false)
+		{
+			Hud.CloseSkillCutin();
+			Hud.EndAcceptOfInput();
+			Hud.HideAllToucheEffect();
+			if (isMvMode)
+				complete.BeginCompleteAnimSimulate();
+			else
+				complete.BeginCompleteAnim(comboRank);
+			complete.CleanupLeaveCompletedCallback();
+			complete.AddLeaveCompletedCallback(callback);
+		}
 
 		// // RVA: 0xC0DBE4 Offset: 0xC0DBE4 VA: 0xC0DBE4
 		// public void EndCompleteAnim() { }
@@ -112,31 +124,31 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0DC10 Offset: 0xC0DC10 VA: 0xC0DC10
 		public void UpdateEnergy(int energy)
 		{
-			TodoLogger.Log(0, "UpdateEnergy");
+			Hud.SetFoldWaveGaugeValue(energy);
 		}
 
 		// // RVA: 0xC0DCF0 Offset: 0xC0DCF0 VA: 0xC0DCF0
 		public void UpdateEnemyLife(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback)
 		{
-			TodoLogger.Log(0, "UpdateEnemyLife");
+			Hud.UpdateEnemyStatus(damage, threshold1, threshold2, onChaseModeCallback);
 		}
 
 		// // RVA: 0xC0DDFC Offset: 0xC0DDFC VA: 0xC0DDFC
 		public void UpdateEnemyDamageResult(int result, Vector3 position)
 		{
-			TodoLogger.Log(0, "UpdateEnemyDamageResult");
+			Hud.EnemyDamageResult(result, position);
 		}
 
 		// // RVA: 0xC0DF08 Offset: 0xC0DF08 VA: 0xC0DF08
 		public void UpdateCombo(int newCombo)
 		{
-			TodoLogger.Log(0, "UpdateCombo");
+			Hud.SetCombo(newCombo);
 		}
 
 		// // RVA: 0xC0DFE8 Offset: 0xC0DFE8 VA: 0xC0DFE8
 		public void UpdateBattleCombo(int battleCombo)
 		{
-			TodoLogger.Log(0, "UpdateBattleCombo");
+			Hud.SetBattleCombo(battleCombo);
 		}
 
 		// // RVA: 0xC0E0C8 Offset: 0xC0E0C8 VA: 0xC0E0C8

@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using XeSys;
 using System;
+using UnityEngine.Events;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -336,7 +337,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDCE840 Offset: 0xDCE840 VA: 0xDCE840 Slot: 29
-		// public void SetFoldWaveGaugeValue(int value) { }
+		public void SetFoldWaveGaugeValue(int value)
+		{
+			TodoLogger.Log(0, "Hud SetFoldWaveGaugeValue");
+		}
 
 		// // RVA: 0xDCEE10 Offset: 0xDCEE10 VA: 0xDCEE10 Slot: 30
 		// public void HideFoldWaveGauge() { }
@@ -345,10 +349,16 @@ namespace XeApp.Game.RhythmGame
 		// public void UpdateCombo() { }
 
 		// // RVA: 0xDCD4C0 Offset: 0xDCD4C0 VA: 0xDCD4C0 Slot: 32
-		// public void SetCombo(int combo) { }
+		public void SetCombo(int combo)
+		{
+			TodoLogger.Log(0, "Hud SetCombo");
+		}
 
 		// // RVA: 0xDCEE3C Offset: 0xDCEE3C VA: 0xDCEE3C Slot: 33
-		// public void SetBattleCombo(int combo) { }
+		public void SetBattleCombo(int combo)
+		{
+			TodoLogger.Log(0, "Hud SetBattleCombo");
+		}
 
 		// // RVA: 0xDCEF54 Offset: 0xDCEF54 VA: 0xDCEF54 Slot: 34
 		public void SetItemCount(int kind, int count)
@@ -387,7 +397,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDCF5B8 Offset: 0xDCF5B8 VA: 0xDCF5B8 Slot: 40
-		// public void EnemyDamageResult(int result, Vector3 position) { }
+		public void EnemyDamageResult(int result, Vector3 position)
+		{
+			TodoLogger.Log(0, "Hud EnemyDamageResult");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7442A4 Offset: 0x7442A4 VA: 0x7442A4
 		// // RVA: 0xDCFAEC Offset: 0xDCFAEC VA: 0xDCFAEC
@@ -440,10 +453,16 @@ namespace XeApp.Game.RhythmGame
 		// public void ShowActiveSkillCutin(string skillname, RhythmGameResource.UITextureResource textureResource) { }
 
 		// // RVA: 0xDD06D0 Offset: 0xDD06D0 VA: 0xDD06D0 Slot: 49
-		// public void CloseSkillCutin() { }
+		public void CloseSkillCutin()
+		{
+			TodoLogger.Log(0, "Hud CloseSkillCutin");
+		}
 
 		// // RVA: 0xDD0728 Offset: 0xDD0728 VA: 0xDD0728 Slot: 50
-		// public void EndAcceptOfInput() { }
+		public void EndAcceptOfInput()
+		{
+			TodoLogger.Log(0, "Hud EndAcceptOfInput");
+		}
 
 		// // RVA: 0xDD077C Offset: 0xDD077C VA: 0xDD077C Slot: 51
 		public bool IsInputAccept()
@@ -465,7 +484,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD0A50 Offset: 0xDD0A50 VA: 0xDD0A50 Slot: 54
-		// public void HideAllToucheEffect() { }
+		public void HideAllToucheEffect()
+		{
+			TodoLogger.Log(0, "Hud HideAllToucheEffect");
+		}
 
 		// // RVA: 0xDD0BB8 Offset: 0xDD0BB8 VA: 0xDD0BB8 Slot: 55
 		// public void ShowLongNotesTouchEffect(int trackId) { }
@@ -540,7 +562,11 @@ namespace XeApp.Game.RhythmGame
 		// public void RestartActiveSkillButton() { }
 
 		// // RVA: 0xDD2070 Offset: 0xDD2070 VA: 0xDD2070 Slot: 77
-		// public bool IsActiveSkillButtonAcEnd() { }
+		public bool IsActiveSkillButtonAcEnd()
+		{
+			TodoLogger.Log(0, "Hud IsActiveSkillButtonAcEnd");
+			return false;
+		}
 
 		// // RVA: 0xDD209C Offset: 0xDD209C VA: 0xDD209C Slot: 78
 		// public bool IsActiveSkillButtonAcOn() { }
@@ -565,7 +591,10 @@ namespace XeApp.Game.RhythmGame
 		// public void ClearPauseButton() { }
 
 		// // RVA: 0xDD22F8 Offset: 0xDD22F8 VA: 0xDD22F8 Slot: 81
-		// public void DisablePauseButton() { }
+		public void DisablePauseButton()
+		{
+			TodoLogger.Log(0, "Hud DisablePauseButton");
+		}
 
 		// // RVA: 0xDD2324 Offset: 0xDD2324 VA: 0xDD2324 Slot: 82
 		public void EnablePauseButton()
@@ -583,7 +612,10 @@ namespace XeApp.Game.RhythmGame
 		// public void UpdateEnemyFrameColor(int damage, int threshold1, int threshold2) { }
 
 		// // RVA: 0xDD23A4 Offset: 0xDD23A4 VA: 0xDD23A4 Slot: 85
-		// public void UpdateEnemyStatus(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback) { }
+		public void UpdateEnemyStatus(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback)
+		{
+			TodoLogger.Log(0, "Hud UpdateEnemyStatus");
+		}
 
 		// // RVA: 0xDD248C Offset: 0xDD248C VA: 0xDD248C Slot: 86
 		// public void ChangeEnemyLife(EnemyStatus.LifeType a_type) { }

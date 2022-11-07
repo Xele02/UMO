@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
+using XeApp.Game.Common;
 using XeApp.Game.UI;
 
 namespace XeApp.Game.RhythmGame.UI
@@ -192,14 +194,35 @@ namespace XeApp.Game.RhythmGame.UI
 		//private IEnumerator BackGaugeAnimation(int a_gauge, bool isLowSpec) { }
 
 		//// RVA: 0x155D33C Offset: 0x155D33C VA: 0x155D33C
-		//public void TryChaseMode(int damage, int threshold, bool isLowSpec, UnityAction callback) { }
+		public void TryChaseMode(int damage, int threshold, bool isLowSpec, UnityAction callback)
+		{
+			if(threshold <= damage)
+			{
+				if (IsChaseMode)
+					return;
+				if(!isLowSpec)
+				{
+					m_explosionEffect.Play();
+					m_currentExplosiionEff.Play();
+				}
+				SoundManager.Instance.sePlayerGame.Play(18);
+				PlayChaseEffect();
+				IsChaseMode = true;
+				if (callback != null)
+					callback();
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7470CC Offset: 0x7470CC VA: 0x7470CC
 		//// RVA: 0x155D534 Offset: 0x155D534 VA: 0x155D534
 		//private IEnumerator WaitParticleCoroutine(ParticleSystem particle, Action end) { }
 
 		//// RVA: 0x155D420 Offset: 0x155D420 VA: 0x155D420
-		//private void PlayChaseEffect() { }
+		private void PlayChaseEffect()
+		{
+			m_fadeInAnimator.Play(chance_time_start_Hash, 0, 0);
+			SoundManager.Instance.sePlayerGame.Play(17);
+		}
 
 		//// RVA: 0x155D5E0 Offset: 0x155D5E0 VA: 0x155D5E0
 		public void ShowEnemyIcon()

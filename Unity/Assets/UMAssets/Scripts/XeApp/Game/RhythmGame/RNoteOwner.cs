@@ -539,7 +539,15 @@ namespace XeApp.Game.RhythmGame
 		//public float CalcSuccessNotesRate() { }
 
 		//// RVA: 0xDBBA70 Offset: 0xDBBA70 VA: 0xDBBA70
-		//public bool IsAllPerfectResult() { }
+		public bool IsAllPerfectResult()
+		{
+			for(int i = 1; i < rNoteList.Count; i++)
+			{
+				if (rNoteList[i].result != RhythmGameConsts.NoteResult.Perfect)
+					return false;
+			}
+			return true;
+		}
 
 		//// RVA: 0xDBBB60 Offset: 0xDBBB60 VA: 0xDBBB60
 		public void OnChangeGameMode()

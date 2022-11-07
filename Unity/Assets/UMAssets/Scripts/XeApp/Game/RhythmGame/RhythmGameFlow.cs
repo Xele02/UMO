@@ -465,8 +465,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC9FDC Offset: 0xDC9FDC VA: 0xDC9FDC
 		private void WaitWarmup()
 		{
-			TodoLogger.Log(0, "WaitWarmup hud");
-			//if(uiController.Hud.IsWarmupEnd())
+			if(uiController.Hud.IsWarmupEnd())
 			{
 				GameSaveStart();
 			}
@@ -519,9 +518,8 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCA384 Offset: 0xDCA384 VA: 0xDCA384
 		private void BeginCompleteAnim()
 		{
-			TodoLogger.Log(0, "BeginCompleteAnim");
+			uiController.BeginCompleteAnim(this.ChangeNextSceneStatus, gamePlayer.CalcComboRank(), gamePlayer.setting_mv.m_enable);
 			updater = null;
-			ChangeNextSceneStatus(); // called in RhythmGameUIController$$BeginCompleteAnim
 		}
 
 		// // RVA: 0xDCA4A8 Offset: 0xDCA4A8 VA: 0xDCA4A8

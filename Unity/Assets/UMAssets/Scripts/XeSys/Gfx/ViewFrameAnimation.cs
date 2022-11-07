@@ -78,7 +78,10 @@ namespace XeSys.Gfx
 		// public void SetCustomTimeMapElm(int tmIndex, int elmIndex, float point, float next, float prev) { }
 
 		// // RVA: 0x1EE9E84 Offset: 0x1EE9E84 VA: 0x1EE9E84
-		// public float SearchLabelFrame(string label) { }
+		public float SearchLabelFrame(string label)
+		{
+			return data.SearchLabelFrame(label);
+		}
 
 		// // RVA: 0x1EE8AD0 Offset: 0x1EE8AD0 VA: 0x1EE8AD0
 		// public void StartAnim() { }

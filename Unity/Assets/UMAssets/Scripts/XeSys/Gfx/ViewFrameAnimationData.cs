@@ -78,7 +78,14 @@ namespace XeSys.Gfx
 		// private void SetLabelList(Dictionary<int, string> labelList, float frameSec) { }
 
 		// // RVA: 0x1EE9EB4 Offset: 0x1EE9EB4 VA: 0x1EE9EB4
-		// public float SearchLabelFrame(string label) { }
+		public float SearchLabelFrame(string label)
+		{
+			if(m_LabelIndex.ContainsKey(label))
+			{
+				return m_LabelList[m_LabelIndex[label]].FrameIdx;
+			}
+			return -1;
+		}
 
 		// // RVA: 0x1EE9FD4 Offset: 0x1EE9FD4 VA: 0x1EE9FD4
 		public float SearchLabelTime(string label)
