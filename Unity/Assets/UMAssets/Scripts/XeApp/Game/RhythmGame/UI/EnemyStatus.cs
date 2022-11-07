@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using XeApp.Game.UI;
 
@@ -157,7 +158,15 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x155C184 Offset: 0x155C184 VA: 0x155C184
-		//public void SetEnemyRobotTexture(string cutMeshName, UiReplaceTexture enemyRobotTexture) { }
+		public void SetEnemyRobotTexture(string cutMeshName, UiReplaceTexture enemyRobotTexture)
+		{
+			m_enemyCutRenderer = Array.Find(GetComponentsInChildren<Renderer>(true), (Renderer x) =>
+			{
+				//0x155DBDC
+				return cutMeshName == x.name;
+			});
+			enemyRobotTexture.Set(m_enemyCutRenderer.materials[0]);
+		}
 
 		//// RVA: 0x155C314 Offset: 0x155C314 VA: 0x155C314
 		//public void ResetParam() { }
@@ -193,7 +202,14 @@ namespace XeApp.Game.RhythmGame.UI
 		//private void PlayChaseEffect() { }
 
 		//// RVA: 0x155D5E0 Offset: 0x155D5E0 VA: 0x155D5E0
-		//public void ShowEnemyIcon() { }
+		public void ShowEnemyIcon()
+		{
+			if(!IsChaseMode)
+			{
+				m_fadeInAnimator.Play(target_time_root_Hash, 0, 0);
+			}
+			m_enemyGaugeAnimator.Play(EnemyGaugeInHash, 0, 0);
+		}
 
 		//// RVA: 0x155D728 Offset: 0x155D728 VA: 0x155D728
 		//public void ChangeFaild(int hash) { }

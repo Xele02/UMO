@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace XeApp.Game.RhythmGame.UI
@@ -27,7 +28,15 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x155ECB8 Offset: 0x155ECB8 VA: 0x155ECB8
-		//public void SetTexture(string cutMeshName, UiReplaceTexture texture) { }
+		public void SetTexture(string cutMeshName, UiReplaceTexture texture)
+		{
+			m_cutRenderer = Array.Find(GetComponentsInChildren<MeshRenderer>(true), (MeshRenderer x) =>
+			{
+				//0x155EED0
+				return cutMeshName == x.name;
+			});
+			texture.Set(m_cutRenderer.materials[0]);
+		}
 
 		//// RVA: 0x155EE48 Offset: 0x155EE48 VA: 0x155EE48
 		public void Play(int index = 0)

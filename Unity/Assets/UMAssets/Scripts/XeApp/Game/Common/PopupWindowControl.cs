@@ -211,9 +211,22 @@ namespace XeApp.Game.Common
 			Array.Reverse(m_tabButtons, 0, m_tabButtons.Length);
 			for(int i = 0; i < m_tabButtons.Length; i++)
 			{
+				PopupTabButton button = m_tabButtons[i];
+				int count = m_tabButtons.Length;
 				m_tabButtons[i].AddOnClickCallback(() => {
 					// 0x1BBDFF0
-					TodoLogger.Log(0, "TODO");
+					for(int j = 0; j < count; j++)
+					{
+						m_tabButtons[j].SetOff();
+					}
+					if(SoundManager.Instance.sePlayerBoot != null)
+					{
+						SoundManager.Instance.sePlayerBoot.Play("se_btn_003");
+					}
+					if (m_contentUpdateCallBack == null)
+						return;
+					IPopupContent content = GetComponentInChildren<IPopupContent>(true);
+					m_contentUpdateCallBack(content, button.Label);
 				});
 			}
 			m_scrollRect = GetComponentInChildren<ScrollRect>(true);
@@ -234,7 +247,24 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BB995C Offset: 0x1BB995C VA: 0x1BB995C
 		private void PushBackButton()
 		{
-			TodoLogger.Log(0, "PushBackButton");
+			int idx = 0;
+			if(m_blockCount < 1 && m_validButtonCount > 0)
+			{
+				if (m_backButtonLabel == PopupButton.ButtonLabel.None)
+					idx = m_validButtonCount - 1;
+				else
+				{					
+					for(int i = 0; i < m_validButtonCount; i++)
+					{
+						if(m_buttons[i].Label == m_backButtonLabel)
+						{
+							idx = i;
+						}
+					}
+				}
+				if (!m_buttons[idx].Hidden && !m_buttons[idx].Disable && !m_buttons[idx].IsInputOff && m_buttons[idx].enabled)
+					m_buttons[idx].PerformClick();
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73EBF4 Offset: 0x73EBF4 VA: 0x73EBF4
@@ -293,7 +323,7 @@ namespace XeApp.Game.Common
 			}
 			for(int i = 0; i < setting.Buttons.Length; i++)
 			{
-				m_buttons[i].SetLabel(this, m_tmpButtons[i].Label/*??*/, m_tmpButtons[i].Type/*??*/);
+				m_buttons[i].SetLabel(this, m_tmpButtons[i].Label, m_tmpButtons[i].Type);
 				m_buttons[i].SetOff();
 			}
 			m_buttonUguiRuntime.GetComponent<RectTransform>().anchoredPosition = GetContentButtonPosition(setting.WindowSize, setting.IsCaption);
@@ -609,13 +639,28 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BB113C Offset: 0x1BB113C VA: 0x1BB113C
 		public void InputDisable()
 		{
-			TodoLogger.Log(0, "InputDisable");
+			if(m_blockCount == 0)
+			{
+				ListGraphicObject();
+				for(int i = 0; i < m_inputTargetList.Count; i++)
+				{
+					m_inputTargetList[i].IsInputOff = true;
+				}
+			}
+			m_blockCount++;
 		}
 
 		// // RVA: 0x1BB1264 Offset: 0x1BB1264 VA: 0x1BB1264
 		public void InputEnable()
 		{
-			TodoLogger.Log(0, "InputEnable");
+			m_blockCount--;
+			if (m_blockCount > 0)
+				return;
+			ListGraphicObject();
+			for(int i = 0; i < m_inputTargetList.Count; i++)
+			{
+				m_inputTargetList[i].IsInputOff = false;
+			}
 		}
 
 		// // RVA: 0x1BBB904 Offset: 0x1BBB904 VA: 0x1BBB904
@@ -625,7 +670,10 @@ namespace XeApp.Game.Common
 		// public void ScrollEnable() { }
 
 		// // RVA: 0x1BBB874 Offset: 0x1BBB874 VA: 0x1BBB874
-		// private void ListGraphicObject() { }
+		private void ListGraphicObject()
+		{
+			transform.GetComponentsInChildren<ButtonBase>(true, m_inputTargetList);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73EE4C Offset: 0x73EE4C VA: 0x73EE4C
 		// // RVA: 0x1BBC090 Offset: 0x1BBC090 VA: 0x1BBC090
@@ -667,7 +715,10 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BBC568 Offset: 0x1BBC568 VA: 0x1BBC568
 		public static void PlayPopupButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type, CriAtomSource source)
 		{
-			TodoLogger.Log(0, "PlayPopupButtonSe");
+			if(source != null)
+			{
+				source.Play(type == PopupButton.ButtonType.Negative ? (label != PopupButton.ButtonLabel.Cancel && label != PopupButton.ButtonLabel.Disagree ? "se_btn_001" : "se_btn_002") : "se_btn_001");
+			}
 		}
 
 		// // RVA: 0x1BB8D14 Offset: 0x1BB8D14 VA: 0x1BB8D14

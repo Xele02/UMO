@@ -68,7 +68,10 @@ namespace XeSys
 		}
 
 		// // RVA: 0x1931C18 Offset: 0x1931C18 VA: 0x1931C18
-		// public void StartMeasureAvg() { }
+		public void StartMeasureAvg()
+		{
+			TodoLogger.Log(0, "StartMeasureAvg");
+		}
 
 		// // RVA: 0x1931C34 Offset: 0x1931C34 VA: 0x1931C34
 		public void StopMeasureAvg()

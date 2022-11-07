@@ -2377,7 +2377,8 @@ namespace XeApp.Game.RhythmGame
 			{
 				mcco.PlayMusicAnimation();
 			}
-			TodoLogger.Log(0, "end StartPlayMusic (hud , debugfps)");
+			uiController.Hud.Show(null);
+			DebugFPS.Instance.StartMeasureAvg();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744E94 Offset: 0x744E94 VA: 0x744E94

@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using XeApp.Game.Common;
@@ -75,7 +76,7 @@ namespace XeApp.Game.RhythmGame
 		// public abstract void SetPoisonSkillEffect(int a_bit, bool a_enable);
 
 		// // RVA: -1 Offset: -1 Slot: 18
-		// public abstract void Show(Action end);
+		void Show(Action end);
 
 		// // RVA: -1 Offset: -1 Slot: 19
 		// public abstract void Reset();

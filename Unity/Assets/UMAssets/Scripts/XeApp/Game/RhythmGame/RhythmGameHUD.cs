@@ -4,6 +4,7 @@ using XeApp.Game.Common;
 using System.Collections;
 using System.Collections.Generic;
 using XeSys;
+using System;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -206,7 +207,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDCD404 Offset: 0xDCD404 VA: 0xDCD404
-		public static GameObject RhythmGameInstantiatePrefab(Object prefab)
+		public static GameObject RhythmGameInstantiatePrefab(UnityEngine.Object prefab)
 		{
 			GameObject obj = Instantiate<GameObject>(prefab as GameObject);;
 			BundleShaderInfo.Instance.FixMaterialShader(obj); // UMO fix
@@ -298,7 +299,10 @@ namespace XeApp.Game.RhythmGame
 		// public void SetPoisonSkillEffect(int a_bit, bool a_enable) { }
 
 		// // RVA: 0xDCE0E4 Offset: 0xDCE0E4 VA: 0xDCE0E4 Slot: 22
-		// public void Show(Action endAction) { }
+		public void Show(Action endAction)
+		{
+			TodoLogger.Log(0, "Hud Show");
+		}
 
 		// // RVA: 0xDCE44C Offset: 0xDCE44C VA: 0xDCE44C Slot: 23
 		// public void Reset() { }

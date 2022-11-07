@@ -20,7 +20,10 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x1568EC4 Offset: 0x1568EC4 VA: 0x1568EC4 Slot: 4
-		// public override void Set(Material material) { }
+		public override void Set(Material material)
+		{
+			material.SetTexture("_MainTex", mainTexture);
+		}
 
 		// // RVA: 0x1568F48 Offset: 0x1568F48 VA: 0x1568F48 Slot: 5
 		public override void OnDestory()

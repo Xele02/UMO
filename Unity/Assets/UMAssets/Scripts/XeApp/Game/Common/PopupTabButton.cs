@@ -55,7 +55,7 @@ namespace XeApp.Game.Common
 		private PopupTabButton.ButtonLabel m_label; // 0x8C
 		private static StringBuilder s_stringBuilder = new StringBuilder(64); // 0x0
 
-		// public PopupTabButton.ButtonLabel Label { get; } 0x1BB436C
+		public PopupTabButton.ButtonLabel Label { get { return m_label; } } //0x1BB436C
 
 		// // RVA: 0x1BB4374 Offset: 0x1BB4374 VA: 0x1BB4374 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

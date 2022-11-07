@@ -23,9 +23,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private int m_fingerId = -1; // 0x38
 
 		public EffectBundleController touchEffect { get { return _touchEffect; } } //0x1564568
-		//public EffectBundleControllerSimple resultEffectSimple { get; } 0x1564570
+		public EffectBundleControllerSimple resultEffectSimple { get { return _resultEffectSimple; } } //0x1564570
 		public TouchSkillEffect SkillEffect { get { return _skillEffect; } } //0x1564578
-		//public RandomRotate RandomRotate { get; } 0x1564580
+		public RandomRotate RandomRotate { get { return _randomRotate; } } //0x1564580
 		public TouchSlideEffect slideEffect { get { return _slideEffect; } } //0x1564588
 		//public TouchSlideTipEffect slideTipEffect { get; } 0x1564590
 		//public int FingerId { get; set; } 0x1564598 0x15645A0

@@ -544,7 +544,11 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDBBB60 Offset: 0xDBBB60 VA: 0xDBBB60
 		public void OnChangeGameMode()
 		{
-			TodoLogger.Log(0, "RNoteOwner OnChangeGameMode");
+			singlePool.MakeUsingList(ref activeSingleList);
+			for(int i = 0; i < activeSingleList.Count; i++)
+			{
+				activeSingleList[i].SetupSpecialType(gameMode);
+			}
 		}
 
 		//// RVA: 0xDBBD00 Offset: 0xDBBD00 VA: 0xDBBD00
@@ -570,8 +574,12 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDBBEAC Offset: 0xDBBEAC VA: 0xDBBEAC
 		public bool CheckAllNotesEnd()
 		{
-			TodoLogger.Log(0, "RNoteOwner GetNote");
-			return false;
+			for(int i = rNoteList.Count - RhythmGameConsts.LineNum; i < rNoteList.Count; i++)
+			{
+				if (rNoteList[i].result == RhythmGameConsts.NoteResult.None)
+					return false;
+			}
+			return true;
 		}
 
 		//// RVA: 0xDBC000 Offset: 0xDBC000 VA: 0xDBC000
@@ -580,8 +588,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDBC188 Offset: 0xDBC188 VA: 0xDBC188
 		public RNote GetNote(int index)
 		{
-			TodoLogger.Log(0, "RNoteOwner GetNote");
-			return null;
+			return rNoteList[index];
 		}
 
 		//// RVA: 0xDBC208 Offset: 0xDBC208 VA: 0xDBC208

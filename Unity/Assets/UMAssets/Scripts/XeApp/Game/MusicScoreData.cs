@@ -399,8 +399,13 @@ namespace XeApp.Game
 		// // RVA: 0xC9A7B0 Offset: 0xC9A7B0 VA: 0xC9A7B0
 		public int CalcComboLimit()
 		{
-			TodoLogger.Log(0, "TODO");
-			return 0;
+			int res = 0;
+			for(int i = 0; i < inputNoteTrack.Count; i++)
+			{
+				if (inputNoteTrack[i].swipe != TouchState.SwipeStart)
+					res++;
+			}
+			return res;
 		}
 
 		// // RVA: 0xC9A894 Offset: 0xC9A894 VA: 0xC9A894

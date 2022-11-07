@@ -30,7 +30,7 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: -1 Offset: -1 Slot: 4
-		//public abstract void Set(Material material);
+		public abstract void Set(Material material);
 
 		//// RVA: -1 Offset: -1 Slot: 5
 		public abstract void OnDestory();

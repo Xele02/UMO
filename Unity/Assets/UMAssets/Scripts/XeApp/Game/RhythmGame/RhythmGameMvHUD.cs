@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Core;
@@ -192,11 +193,22 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AAC9C Offset: 0x9AAC9C VA: 0x9AAC9C Slot: 22
-		//public void Show(Action end) { }
+		public void Show(Action end)
+		{
+			StartCoroutine(WaitPauseActiveCroutine(end));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x74462C Offset: 0x74462C VA: 0x74462C
 		//// RVA: 0x9AACC0 Offset: 0x9AACC0 VA: 0x9AACC0
-		//private IEnumerator WaitPauseActiveCroutine(Action end) { }
+		private IEnumerator WaitPauseActiveCroutine(Action end)
+		{
+			//0x9ACB0C
+			yield return null;
+			yield return m_waitForSeconds;
+			isReadyHUD = true;
+			if (end != null)
+				end();
+		}
 
 		//// RVA: 0x9AAD88 Offset: 0x9AAD88 VA: 0x9AAD88 Slot: 23
 		//public void Reset() { }
@@ -204,13 +216,16 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AAE70 Offset: 0x9AAE70 VA: 0x9AAE70 Slot: 24
 		public void PauseButtonClick()
 		{
-			TodoLogger.Log(0, "Hud PauseButtonClick");
+			m_pauseButtonEvent.Invoke(false);
+			m_pauseButton.SetOn();
 		}
 
 		//// RVA: 0x9AAF0C Offset: 0x9AAF0C VA: 0x9AAF0C
 		private void OnPushBackButton()
 		{
-			TodoLogger.Log(0, "Hud OnPushBackButton");
+			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OAKOJGPBAJF_BackKey > 0)
+				return;
+			OnPauseButtonSelected(false);
 		}
 
 		//// RVA: 0x9AB0D4 Offset: 0x9AB0D4 VA: 0x9AB0D4 Slot: 20
@@ -280,7 +295,9 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AB15C Offset: 0x9AB15C VA: 0x9AB15C Slot: 37
 		public void ShowEnemyStatus()
 		{
-			TodoLogger.Log(0, "Hud ShowEnemyStatus");
+			m_enemyStatus.SetEnemyRobotTexture("enemy01_model", m_EnemyRobotTexture);
+			m_enemyStatus.ShowEnemyIcon();
+			m_targetSightMark.gameObject.SetActive(false);
 		}
 
 		//// RVA: 0x9AB244 Offset: 0x9AB244 VA: 0x9AB244 Slot: 38
@@ -332,13 +349,19 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AB6F0 Offset: 0x9AB6F0 VA: 0x9AB6F0 Slot: 43
 		public void ShowPilotCutin()
 		{
-			TodoLogger.Log(0, "Hud ShowPilotCutin");
+			if (!isEnableCutin)
+				return;
+			m_faceCutin[0].SetTexture("alt", m_PilotTexture);
+			m_faceCutin[0].Play(0);
 		}
 
 		//// RVA: 0x9AB804 Offset: 0x9AB804 VA: 0x9AB804 Slot: 44
 		public void ShowDivaCutin()
 		{
-			TodoLogger.Log(0, "Hud ShowDivaCutin");
+			if (!isEnableCutin)
+				return;
+			m_faceCutin[0].SetTexture("alt", m_DivaTexture);
+			m_faceCutin[0].Play(0);
 		}
 
 		//// RVA: 0x9AB918 Offset: 0x9AB918 VA: 0x9AB918 Slot: 45
@@ -419,7 +442,18 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AC0D4 Offset: 0x9AC0D4 VA: 0x9AC0D4 Slot: 66
 		public void ShowResultEffect(int lineNumber, RhythmGameConsts.NoteResultEx a_result_ex)
 		{
-			TodoLogger.Log(0, "Hud ShowResultEffect");
+			if (!isShowNotes)
+				return;
+			RandomRotate r = m_touchEffects[lineNumber].RandomRotate;
+			if(r != null)
+			{
+				r.Do();
+			}
+			EffectBundleControllerSimple e = m_touchEffects[lineNumber].resultEffectSimple;
+			if(e != null)
+			{
+				e.Play(PerfectResultHashCode, 0);
+			}
 		}
 
 		//// RVA: 0x9AC360 Offset: 0x9AC360 VA: 0x9AC360 Slot: 67
@@ -459,7 +493,13 @@ namespace XeApp.Game.RhythmGame
 		//public bool IsActiveSkillButtonAcOn() { }
 
 		//// RVA: 0x9AB00C Offset: 0x9AB00C VA: 0x9AB00C Slot: 79
-		//public void OnPauseButtonSelected(bool a_suspend) { }
+		public void OnPauseButtonSelected(bool a_suspend)
+		{
+			if (!m_screenTouchArea.interactable)
+				return;
+			m_pauseButtonEvent.Invoke(a_suspend);
+			m_pauseButton.SetOn();
+		}
 
 		//// RVA: 0x9AC39C Offset: 0x9AC39C VA: 0x9AC39C Slot: 80
 		//public void ClearPauseButton() { }
@@ -495,7 +535,10 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AC580 Offset: 0x9AC580 VA: 0x9AC580 Slot: 88
 		public void ShowEnemyCutin()
 		{
-			TodoLogger.Log(0, "Hud ShowEnemyCutin");
+			if (!isEnableCutin)
+				return;
+			m_faceCutin[1].SetTexture("vajura", m_EnemyPilotTexture);
+			m_faceCutin[1].Play(0);
 		}
 
 		//// RVA: 0x9AC694 Offset: 0x9AC694 VA: 0x9AC694 Slot: 89

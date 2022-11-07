@@ -29,7 +29,12 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x15627F4 Offset: 0x15627F4 VA: 0x15627F4
-		// public void SetOn() { }
+		public void SetOn()
+		{
+			m_onGameObject.SetActive(true);
+			m_offGameObject.SetActive(false);
+			state = true;
+		}
 
 		//// RVA: 0x1562854 Offset: 0x1562854 VA: 0x1562854
 		//public void SetDisable() { }
