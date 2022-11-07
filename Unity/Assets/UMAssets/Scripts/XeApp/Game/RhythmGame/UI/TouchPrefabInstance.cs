@@ -38,6 +38,7 @@ namespace XeApp.Game.RhythmGame.UI
 			go.transform.SetParent(transform, false);
 
 			go = Instantiate(simpleResultEffectPrefab);
+			BundleShaderInfo.Instance.FixMaterialShader(go);
 			_resultEffectSimple = go.GetComponent<EffectBundleControllerSimple>();
 			go.transform.SetParent(transform, false);
 
