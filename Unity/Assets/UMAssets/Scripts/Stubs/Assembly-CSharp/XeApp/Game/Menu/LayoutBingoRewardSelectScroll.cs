@@ -1,11 +1,28 @@
 using XeSys.Gfx;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace XeApp.Game.Menu
 {
-	public class LayoutBingoRewardSelectScroll : LayoutUGUIScriptBase
+	public class LayoutBingoRewardSelectScroll : LayoutUGUIScriptBase, IBeginDragHandler, IEventSystemHandler, IEndDragHandler, IDragHandler
 	{
     public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+
+		public void OnBeginDrag(PointerEventData eventData)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void OnEndDrag(PointerEventData eventData)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void OnDrag(PointerEventData eventData)
+		{
+			throw new System.NotImplementedException();
+		}
+
 		[SerializeField]
 		private float m_offsetLength;
 		[SerializeField]

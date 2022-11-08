@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace XeApp.Game.Menu
 {
-	public class NoizeTexture : MonoBehaviour
+	public class NoizeTexture : MonoBehaviour, IDisposable
 	{
 		[SerializeField]
 		private Camera m_noizeCamera;
@@ -11,6 +12,12 @@ namespace XeApp.Game.Menu
 		private RenderTexture m_renderTexture;
 		[SerializeField]
 		private RawImage m_image;
+
+		public void Dispose()
+		{
+			throw new NotImplementedException();
+		}
+
 		private void Awake()
 		{
 			UnityEngine.Debug.LogError("Implement Monobehaviour");

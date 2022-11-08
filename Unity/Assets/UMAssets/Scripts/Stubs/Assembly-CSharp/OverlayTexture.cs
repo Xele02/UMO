@@ -1,7 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class OverlayTexture : BaseMeshEffect
+public class OverlayTexture : BaseMeshEffect, IMaterialModifier
 {
 	public enum TextureMode
 	{
@@ -19,6 +19,11 @@ public class OverlayTexture : BaseMeshEffect
 
 	public override void ModifyMesh(VertexHelper vh)
 	{
+	}
+
+	public Material GetModifiedMaterial(Material baseMaterial)
+	{
+		throw new System.NotImplementedException();
 	}
 
 	[SerializeField]

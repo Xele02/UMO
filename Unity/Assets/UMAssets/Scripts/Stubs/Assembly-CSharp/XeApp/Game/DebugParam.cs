@@ -1,9 +1,10 @@
 using XeSys;
 using System.Collections.Generic;
+using System;
 
 namespace XeApp.Game
 {
-	public class DebugParam : Singleton<DebugParam>
+	public class DebugParam : Singleton<DebugParam>, IDisposable
 	{
 		public int menu_divaId;
 		public int menu_divaModelId;
@@ -21,5 +22,10 @@ namespace XeApp.Game
 		public bool recordPlateAllReceive;
 		public bool isSnsSave;
 		public bool isSnsAllText;
+
+		public void Dispose()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

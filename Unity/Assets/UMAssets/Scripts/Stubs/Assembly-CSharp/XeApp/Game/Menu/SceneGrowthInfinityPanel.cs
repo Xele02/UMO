@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace XeApp.Game.Menu
 {
-	public class SceneGrowthInfinityPanel : SceneGrowthPanelBase
+	public class SceneGrowthInfinityPanel : SceneGrowthPanelBase, ISceneGrowthPanel
 	{
 		[SerializeField]
 		private NumberBase m_stockNumber;

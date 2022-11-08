@@ -4,7 +4,7 @@ using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
-	public class SceneGrowthPanel : SceneGrowthPanelBase
+	public class SceneGrowthPanel : SceneGrowthPanelBase, ISceneGrowthPanel
 	{
 		[SerializeField]
 		private RawImageEx m_labelImage;

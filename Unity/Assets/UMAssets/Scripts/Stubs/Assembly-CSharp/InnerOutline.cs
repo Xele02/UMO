@@ -1,7 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class InnerOutline : BaseMeshEffect
+public class InnerOutline : BaseMeshEffect, IMaterialModifier
 {
 	public enum ColorMode
 	{
@@ -12,6 +12,11 @@ public class InnerOutline : BaseMeshEffect
 
 	public override void ModifyMesh(VertexHelper vh)
 	{
+	}
+
+	public Material GetModifiedMaterial(Material baseMaterial)
+	{
+		throw new System.NotImplementedException();
 	}
 
 	[SerializeField]

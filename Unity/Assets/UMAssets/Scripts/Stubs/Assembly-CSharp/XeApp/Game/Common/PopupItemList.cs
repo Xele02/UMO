@@ -1,9 +1,42 @@
+using UnityEngine;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Common
 {
-	public class PopupItemList : LayoutUGUIScriptBase
+	public class PopupItemList : LayoutUGUIScriptBase, IPopupContent
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+		public Transform Parent => throw new System.NotImplementedException();
+
+		public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+
+		public void CallOpenEnd()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void Hide()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public bool IsReady()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public bool IsScrollable()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void Show()
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }
