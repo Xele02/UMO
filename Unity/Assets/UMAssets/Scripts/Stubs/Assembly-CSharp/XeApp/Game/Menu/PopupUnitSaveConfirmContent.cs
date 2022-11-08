@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupUnitSaveConfirmContent : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private UnitSaveConfirmPanel m_confirmPanel;
 

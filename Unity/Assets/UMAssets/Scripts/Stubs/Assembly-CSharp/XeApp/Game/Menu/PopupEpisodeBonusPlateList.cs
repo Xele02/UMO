@@ -9,6 +9,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupEpisodeBonusPlateList : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[Serializable]
 		private struct Setting
 		{

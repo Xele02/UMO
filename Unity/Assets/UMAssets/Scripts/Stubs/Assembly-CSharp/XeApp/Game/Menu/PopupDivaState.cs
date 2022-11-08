@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupDivaState : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private DivaStatusParam m_param;
 		[SerializeField]

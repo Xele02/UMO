@@ -5,6 +5,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupConfigMenu_01 : LayoutPopupConfigBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text m_titleVolume;
 		[SerializeField]

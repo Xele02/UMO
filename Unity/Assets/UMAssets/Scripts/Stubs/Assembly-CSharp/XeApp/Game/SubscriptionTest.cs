@@ -5,6 +5,10 @@ namespace XeApp.Game
 {
 	public class SubscriptionTest : MainSceneBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public Button updateButton;
 		public Button lowPlanPurchaseButton;
 		public Button topPlanPurchaseButton;

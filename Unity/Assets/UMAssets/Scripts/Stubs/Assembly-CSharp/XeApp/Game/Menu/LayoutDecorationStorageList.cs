@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutDecorationStorageList : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[Serializable]
 		public struct StorageListButtonData
 		{

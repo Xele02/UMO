@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutDecorationSpItemListPopup : FlexibleListItemLayout
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private ActionButton m_itemButton;
 		[SerializeField]

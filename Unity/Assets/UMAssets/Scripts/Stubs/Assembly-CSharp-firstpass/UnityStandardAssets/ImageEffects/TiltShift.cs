@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	internal class TiltShift : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum TiltShiftMode
 		{
 			TiltShiftMode = 0,

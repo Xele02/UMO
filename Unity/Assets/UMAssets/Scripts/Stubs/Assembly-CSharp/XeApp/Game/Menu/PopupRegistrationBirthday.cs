@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupRegistrationBirthday : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private GameObject m_YearObj;
 		[SerializeField]

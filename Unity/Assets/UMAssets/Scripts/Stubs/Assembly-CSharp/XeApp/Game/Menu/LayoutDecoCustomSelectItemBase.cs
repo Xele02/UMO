@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutDecoCustomSelectItemBase : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Vector2 m_size;
 		[SerializeField]

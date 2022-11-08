@@ -7,6 +7,10 @@ namespace XeApp.Game
 {
 	internal class DebugCheatMenu : SingletonBehaviour<DebugCheatMenu>, IDisposable
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private GameObject m_root;
 		[SerializeField]

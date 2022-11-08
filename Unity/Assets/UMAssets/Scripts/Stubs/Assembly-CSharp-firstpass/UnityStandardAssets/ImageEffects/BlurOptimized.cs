@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class BlurOptimized : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum BlurType
 		{
 			StandardGauss = 0,

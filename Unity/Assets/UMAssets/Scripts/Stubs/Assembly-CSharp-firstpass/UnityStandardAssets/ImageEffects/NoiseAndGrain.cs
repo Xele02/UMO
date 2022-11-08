@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class NoiseAndGrain : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public float intensityMultiplier;
 		public float generalIntensity;
 		public float blackIntensity;

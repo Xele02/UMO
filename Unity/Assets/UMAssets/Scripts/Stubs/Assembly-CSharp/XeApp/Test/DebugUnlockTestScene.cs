@@ -6,6 +6,10 @@ namespace XeApp.Test
 {
 	public class DebugUnlockTestScene : MainSceneBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Dropdown m_diva_list;
 		[SerializeField]

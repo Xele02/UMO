@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class SceneComparisonPopup : UIBehaviour, IPopupContent, ILayoutUGUIPaste
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private SceneComparisonParam[] m_params;
 		[SerializeField]

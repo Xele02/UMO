@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupEpisodeBonusList : UIBehaviour, IPopupContent, ILayoutUGUIPaste
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private EpisodeLayoutParts[] m_episodeLayoutParts;
 		[SerializeField]

@@ -5,6 +5,10 @@ namespace XeApp.Game.Menu
 {
 	public class GakuyaScene : TransitionRoot
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private float m_divaCameraRotDuration;
 		[SerializeField]

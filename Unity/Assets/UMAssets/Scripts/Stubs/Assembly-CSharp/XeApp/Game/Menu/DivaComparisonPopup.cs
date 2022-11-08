@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class DivaComparisonPopup : UIBehaviour, IPopupContent, ILayoutUGUIPaste
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private DivaComparisonParam[] m_params;
 		[SerializeField]

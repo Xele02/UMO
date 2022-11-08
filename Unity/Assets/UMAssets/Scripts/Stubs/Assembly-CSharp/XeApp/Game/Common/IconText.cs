@@ -6,6 +6,10 @@ namespace XeApp.Game.Common
 {
 	public class IconText : Text
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public IconTextSetting m_setting;
 		public float m_iconScale;
 		public bool IsTextAlpha;

@@ -6,6 +6,10 @@ namespace XeApp.Game.Common
 {
 	public class PopupConfigPreGameContent : UIBehaviour, IPopupContent, ILayoutUGUIPaste
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private LayoutPopupConfigRhythmNotes m_notesUi;
 

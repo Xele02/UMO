@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupRankRangeContent : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private PopupRankRangeRuntime m_popupUi;
 		[SerializeField]

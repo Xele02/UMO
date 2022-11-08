@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupUnitSaveListContent : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private SwapScrollList m_scrollList;
 		[SerializeField]

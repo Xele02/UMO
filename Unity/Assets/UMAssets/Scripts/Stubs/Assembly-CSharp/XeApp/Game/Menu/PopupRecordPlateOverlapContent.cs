@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupRecordPlateOverlapContent : UIBehaviour, IPopupContent, IDisposable
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public Transform Parent => throw new NotImplementedException();
 
 		public void CallOpenEnd()

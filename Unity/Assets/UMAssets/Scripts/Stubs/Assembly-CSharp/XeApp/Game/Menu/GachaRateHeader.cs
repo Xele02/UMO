@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class GachaRateHeader : GachaRateElemBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text m_headerTitle;
 		[SerializeField]

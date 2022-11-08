@@ -5,6 +5,10 @@ namespace XeApp.Game
 {
 	public class DebugCheatMenuSceneGrwothList : DebugCheatUIBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Button leftButton;
 		[SerializeField]

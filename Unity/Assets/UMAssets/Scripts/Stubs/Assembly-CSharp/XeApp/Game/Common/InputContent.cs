@@ -6,6 +6,10 @@ namespace XeApp.Game.Common
 {
 	public class InputContent : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private InputField m_input;
 		[SerializeField]

@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class OfferAllRecvItemPopupContent : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public Transform Parent => throw new System.NotImplementedException();
 
 		public void CallOpenEnd()

@@ -4,5 +4,9 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutGachaBoxResultButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 	}
 }

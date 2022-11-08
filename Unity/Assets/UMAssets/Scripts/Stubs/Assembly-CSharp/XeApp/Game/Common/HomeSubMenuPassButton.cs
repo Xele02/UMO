@@ -6,6 +6,10 @@ namespace XeApp.Game.Common
 {
 	public class HomeSubMenuPassButton : HomeSubMenuButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private SpriteAnime badgeAnim;
 		[SerializeField]

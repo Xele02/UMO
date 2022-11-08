@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	internal class GlobalFog : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public bool distanceFog;
 		public bool excludeFarPixels;
 		public bool useRadialDistance;

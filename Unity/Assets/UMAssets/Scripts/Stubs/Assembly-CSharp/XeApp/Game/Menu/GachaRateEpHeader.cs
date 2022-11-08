@@ -5,6 +5,10 @@ namespace XeApp.Game.Menu
 {
 	public class GachaRateEpHeader : GachaRateElemBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text m_listTitle;
 	}

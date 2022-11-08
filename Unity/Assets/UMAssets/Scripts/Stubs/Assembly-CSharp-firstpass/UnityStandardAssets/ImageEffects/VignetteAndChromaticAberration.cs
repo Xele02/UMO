@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class VignetteAndChromaticAberration : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum AberrationMode
 		{
 			Simple = 0,

@@ -5,6 +5,10 @@ namespace XeApp.Game
 {
 	public class DebugUI_TeamStatus : DebugCheatUIBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Toggle toggle_GetTeamStatus;
 		[SerializeField]

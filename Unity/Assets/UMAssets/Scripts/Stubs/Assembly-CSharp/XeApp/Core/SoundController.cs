@@ -6,6 +6,10 @@ namespace XeApp.Core
 {
 	public class SoundController : SingletonBehaviour<SoundController>
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public int maxSeChannels;
 		public int maxLoopSeChannels;
 		[SerializeField]

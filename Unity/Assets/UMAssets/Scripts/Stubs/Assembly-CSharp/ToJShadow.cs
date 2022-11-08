@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class ToJShadow : BaseMeshEffect
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	public override void ModifyMesh(VertexHelper vh)
 	{
 	}

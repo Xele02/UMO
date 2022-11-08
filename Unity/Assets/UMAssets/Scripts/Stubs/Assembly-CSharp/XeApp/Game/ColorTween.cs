@@ -5,6 +5,10 @@ namespace XeApp.Game
 {
 	public class ColorTween : TweenBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Color m_from;
 		[SerializeField]

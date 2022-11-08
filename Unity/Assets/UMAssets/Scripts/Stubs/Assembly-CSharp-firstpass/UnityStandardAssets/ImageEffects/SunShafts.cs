@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class SunShafts : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum SunShaftsResolution
 		{
 			Low = 0,

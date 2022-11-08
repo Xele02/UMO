@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupFilterSortUGUIParts_Title_H1 : PopupFilterSortUGUIPartsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text m_title_text;
 		[SerializeField]

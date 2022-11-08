@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class SceneGrowthPanel : SceneGrowthPanelBase, ISceneGrowthPanel
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx m_labelImage;
 		[SerializeField]

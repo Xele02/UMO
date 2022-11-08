@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupSceneState : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private SceneStatusParam m_param;
 		[SerializeField]

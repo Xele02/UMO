@@ -6,6 +6,10 @@ namespace XeApp.Game.Common
 {
 	public class GachaDirectionCutinSet : GachaDirectionAnimSetBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[Serializable]
 		public class RefData
 		{

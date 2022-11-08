@@ -6,6 +6,10 @@ namespace XeApp.Game.Title
 {
 	public class TitlePopupSupportContents : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public Transform Parent => throw new System.NotImplementedException();
 
 		public void CallOpenEnd()

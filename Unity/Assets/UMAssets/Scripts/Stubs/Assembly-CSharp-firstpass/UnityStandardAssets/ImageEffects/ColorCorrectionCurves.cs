@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class ColorCorrectionCurves : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum ColorCorrectionMode
 		{
 			Simple = 0,

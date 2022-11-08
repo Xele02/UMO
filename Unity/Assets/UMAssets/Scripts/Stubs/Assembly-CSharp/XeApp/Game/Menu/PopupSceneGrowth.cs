@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupSceneGrowth : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RectTransform m_rectTransform;
 		[SerializeField]

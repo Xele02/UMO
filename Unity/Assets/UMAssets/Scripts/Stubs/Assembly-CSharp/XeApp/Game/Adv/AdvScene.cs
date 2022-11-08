@@ -4,5 +4,9 @@ namespace XeApp.Game.Adv
 {
 	public class AdvScene : MainSceneBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 	}
 }

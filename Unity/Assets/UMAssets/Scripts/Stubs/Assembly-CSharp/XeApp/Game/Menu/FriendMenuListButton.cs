@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class FriendMenuListButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private List<Text> m_listCountValues;
 		[SerializeField]

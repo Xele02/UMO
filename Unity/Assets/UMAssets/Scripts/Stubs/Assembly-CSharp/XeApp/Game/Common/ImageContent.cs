@@ -6,6 +6,10 @@ namespace XeApp.Game.Common
 {
 	public class ImageContent : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx m_image;
 

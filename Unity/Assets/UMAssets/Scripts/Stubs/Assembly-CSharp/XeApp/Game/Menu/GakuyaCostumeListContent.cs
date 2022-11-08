@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class GakuyaCostumeListContent : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private UGUIButton m_button;
 		[SerializeField]

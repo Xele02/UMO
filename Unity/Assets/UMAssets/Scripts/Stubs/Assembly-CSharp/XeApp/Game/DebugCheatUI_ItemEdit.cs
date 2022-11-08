@@ -5,6 +5,10 @@ namespace XeApp.Game
 {
 	public class DebugCheatUI_ItemEdit : DebugCheatUIBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private GameObject category_list;
 		[SerializeField]

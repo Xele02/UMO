@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class Bloom : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum TweakMode
 		{
 			Basic = 0,

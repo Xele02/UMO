@@ -6,6 +6,10 @@ namespace XeApp.Game.Common
 {
 	public class GachaDirectionCardSet : GachaDirectionAnimSetBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[Serializable]
 		private class AttributeSetting
 		{

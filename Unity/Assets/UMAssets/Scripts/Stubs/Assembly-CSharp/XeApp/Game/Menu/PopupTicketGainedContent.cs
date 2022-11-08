@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupTicketGainedContent : UIBehaviour, IPopupContent, ILayoutUGUIPaste
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private PopupTicketGainedRuntime m_popupUi;
 

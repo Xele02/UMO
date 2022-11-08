@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class MusicSelectCDCursor : LayoutLabelScriptBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text m_remainPrefix;
 		[SerializeField]

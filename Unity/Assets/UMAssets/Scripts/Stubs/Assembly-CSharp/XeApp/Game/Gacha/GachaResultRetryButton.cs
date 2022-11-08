@@ -6,6 +6,10 @@ namespace XeApp.Game.Gacha
 {
 	public class GachaResultRetryButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private NumberBase m_consumeNumber;
 		[SerializeField]

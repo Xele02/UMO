@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class RaidBossSelectReelScroller : LayoutLabelScriptBase, IBeginDragHandler, IEventSystemHandler, IEndDragHandler, IDragHandler
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RectTransform m_hitRect;
 		[SerializeField]

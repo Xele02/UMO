@@ -8,6 +8,10 @@ namespace XeApp.Game.Gacha
 {
 	public class PopupGachaLotContent : UIBehaviour, IPopupContent, ILayoutUGUIPaste
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		protected PopupGachaLotRuntime m_popupUi;
 

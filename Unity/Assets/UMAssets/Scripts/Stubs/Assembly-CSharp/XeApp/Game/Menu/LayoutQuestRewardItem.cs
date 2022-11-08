@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutQuestRewardItem : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx m_imageIcon;
 		[SerializeField]

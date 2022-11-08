@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeUpgradeSelectScroller : LayoutLabelScriptBase, IBeginDragHandler, IEventSystemHandler, IEndDragHandler, IDragHandler
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RectTransform m_hitRect;
 		[SerializeField]

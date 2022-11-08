@@ -6,6 +6,10 @@ using System.Collections.Generic;
 
 public class StoryMapScrollTest : MainSceneBase
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	[Serializable]
 	public class TextUIFormat
 	{

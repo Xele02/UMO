@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopUpPresentGetContent : UIBehaviour, IPopupContent, ILayoutUGUIPaste
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public Transform Parent => throw new System.NotImplementedException();
 
 		public void CallOpenEnd()

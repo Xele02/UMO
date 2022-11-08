@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class OverlayTexture : BaseMeshEffect, IMaterialModifier
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	public enum TextureMode
 	{
 		Local = 0,

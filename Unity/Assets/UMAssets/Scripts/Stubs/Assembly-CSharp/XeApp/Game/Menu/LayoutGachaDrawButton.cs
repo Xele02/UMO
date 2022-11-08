@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutGachaDrawButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx m_imageCostIcon;
 		[SerializeField]

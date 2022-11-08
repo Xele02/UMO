@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class InnerBevel : BaseMeshEffect, IMaterialModifier
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	public enum ColorMode
 	{
 		Override = 0,

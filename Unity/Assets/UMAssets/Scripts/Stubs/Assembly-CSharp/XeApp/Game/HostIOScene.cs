@@ -4,5 +4,9 @@ namespace XeApp.Game
 {
 	public class HostIOScene : MainSceneBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 	}
 }

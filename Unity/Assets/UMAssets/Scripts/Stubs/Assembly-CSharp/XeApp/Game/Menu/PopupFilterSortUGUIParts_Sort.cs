@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupFilterSortUGUIParts_Sort : PopupFilterSortUGUIPartsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private int m_columnCount;
 		[SerializeField]

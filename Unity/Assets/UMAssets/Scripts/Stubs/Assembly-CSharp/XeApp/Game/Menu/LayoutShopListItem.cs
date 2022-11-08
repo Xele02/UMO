@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutShopListItem : LayoutShopListElemBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text m_textLimit;
 		[SerializeField]

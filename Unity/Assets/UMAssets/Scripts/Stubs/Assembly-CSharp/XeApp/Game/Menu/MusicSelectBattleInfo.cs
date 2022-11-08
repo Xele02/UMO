@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class MusicSelectBattleInfo : LayoutLabelScriptBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private MusicSelectPlayButton m_playButton;
 		[SerializeField]

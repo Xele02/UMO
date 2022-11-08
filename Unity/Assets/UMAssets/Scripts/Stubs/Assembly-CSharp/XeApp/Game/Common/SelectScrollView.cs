@@ -5,6 +5,10 @@ namespace XeApp.Game.Common
 {
 	public class SelectScrollView : ScrollRect
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public bool isSingleTouch;
 		public AnimationCurve curve;
 		public int m_itemCount;

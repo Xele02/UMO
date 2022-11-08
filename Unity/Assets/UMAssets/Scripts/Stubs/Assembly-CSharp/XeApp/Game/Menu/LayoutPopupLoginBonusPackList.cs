@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupLoginBonusPackList : LayoutPopupLoginBonusPackListBase, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private LayoutUGUIRuntime m_runtime;
 		[SerializeField]

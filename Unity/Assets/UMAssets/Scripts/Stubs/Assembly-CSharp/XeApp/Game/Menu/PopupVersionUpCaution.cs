@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupVersionUpCaution : UIBehaviour, IPopupContent, ILayoutUGUIPaste
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text m_text;
 		[SerializeField]

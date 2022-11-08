@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupFilterSort : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum Scene
 		{
 			None = -1,

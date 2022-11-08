@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutQuestVerticalItem : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private NumberBase m_mol;
 		[SerializeField]

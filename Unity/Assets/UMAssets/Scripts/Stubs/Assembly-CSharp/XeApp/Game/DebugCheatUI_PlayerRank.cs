@@ -5,6 +5,10 @@ namespace XeApp.Game
 {
 	public class DebugCheatUI_PlayerRank : DebugCheatUIBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text text_rank_log;
 		[SerializeField]

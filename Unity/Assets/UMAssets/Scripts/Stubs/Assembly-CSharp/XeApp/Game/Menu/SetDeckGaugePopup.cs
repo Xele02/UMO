@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class SetDeckGaugePopup : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text[] m_nameText;
 		[SerializeField]

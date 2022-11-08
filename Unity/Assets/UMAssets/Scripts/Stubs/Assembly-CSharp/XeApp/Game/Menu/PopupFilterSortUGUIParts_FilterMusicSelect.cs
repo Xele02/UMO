@@ -2,6 +2,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupFilterSortUGUIParts_FilterMusicSelect : PopupFilterSortUGUIPartsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public PopupFilterSortUGUIParts_Sort filterSort;
 		public PopupFilterSortUGUIParts_FilterMusicBookMark filterMusicBookMark;
 		public PopupFilterSortUGUIParts_FilterMusicAttr filterMusicAttr;

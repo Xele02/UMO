@@ -6,6 +6,10 @@ namespace XeApp.Game.Gacha
 {
 	public class GachaResultCard : LayoutLabelScriptBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private int m_cardIndex;
 		[SerializeField]

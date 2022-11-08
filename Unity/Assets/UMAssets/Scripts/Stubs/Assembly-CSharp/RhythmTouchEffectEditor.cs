@@ -5,6 +5,10 @@ using XeApp.Game.RhythmGame.UI;
 
 public class RhythmTouchEffectEditor : MainSceneBase
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	[SerializeField]
 	private RectTransform menuRectTransform;
 	[SerializeField]

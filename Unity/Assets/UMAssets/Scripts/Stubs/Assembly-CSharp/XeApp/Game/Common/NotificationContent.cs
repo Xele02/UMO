@@ -5,6 +5,10 @@ namespace XeApp.Game.Common
 {
 	public class NotificationContent : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private GameObject m_sourcePrefab;
 		[SerializeField]

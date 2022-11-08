@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class DepthOfField : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum BlurType
 		{
 			DiscBlur = 0,

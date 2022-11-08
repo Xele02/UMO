@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupPastRanking : LayoutLabelScriptBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private List<ButtonBase> m_n1Buttons;
 		[SerializeField]

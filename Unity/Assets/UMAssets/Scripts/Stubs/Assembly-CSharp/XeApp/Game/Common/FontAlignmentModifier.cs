@@ -5,6 +5,10 @@ namespace XeApp.Game.Common
 {
 	public class FontAlignmentModifier : BaseMeshEffect, ILayoutUGUIPaste
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
 			throw new System.NotImplementedException();

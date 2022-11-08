@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class DivaChangePopup : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private List<Text> m_divaNameTexts;
 		[SerializeField]

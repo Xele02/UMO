@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class DepthEffect : BaseMeshEffect
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	public override void ModifyMesh(VertexHelper vh)
 	{
 	}

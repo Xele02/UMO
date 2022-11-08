@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutDecorationSelectItemBase : SwapScrollListContent, IPointerDownHandler, IEventSystemHandler, IPointerClickHandler, IDragHandler, IEndDragHandler
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Vector2 m_size;
 		[SerializeField]

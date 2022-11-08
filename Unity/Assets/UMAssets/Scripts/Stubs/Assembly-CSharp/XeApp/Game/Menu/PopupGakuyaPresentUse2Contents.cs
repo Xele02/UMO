@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupGakuyaPresentUse2Contents : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImage m_imagePresent;
 		[SerializeField]

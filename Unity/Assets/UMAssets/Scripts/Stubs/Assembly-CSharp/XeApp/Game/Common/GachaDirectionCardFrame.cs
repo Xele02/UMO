@@ -5,6 +5,10 @@ namespace XeApp.Game.Common
 {
 	public class GachaDirectionCardFrame : GachaDirectionAnimSetBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private List<Texture> m_colorTextureAssets;
 		[SerializeField]

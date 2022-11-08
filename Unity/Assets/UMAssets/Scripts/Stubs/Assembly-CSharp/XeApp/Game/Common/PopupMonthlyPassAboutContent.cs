@@ -5,6 +5,10 @@ namespace XeApp.Game.Common
 {
 	public class PopupMonthlyPassAboutContent : UIBehaviour, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public Transform Parent => throw new System.NotImplementedException();
 
 		public void CallOpenEnd()

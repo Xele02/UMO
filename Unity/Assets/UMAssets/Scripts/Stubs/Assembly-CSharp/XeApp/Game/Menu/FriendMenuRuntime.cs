@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class FriendMenuRuntime : LayoutLabelScriptBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private FriendMenuListButton m_friendListButton;
 		[SerializeField]

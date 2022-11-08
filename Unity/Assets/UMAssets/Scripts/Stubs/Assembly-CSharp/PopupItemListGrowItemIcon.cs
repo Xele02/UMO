@@ -6,6 +6,10 @@ using XeApp.Game.Common;
 
 public class PopupItemListGrowItemIcon : FlexibleListItemLayout
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	[SerializeField]
 	private RawImageEx[] m_iconImages;
 	[SerializeField]

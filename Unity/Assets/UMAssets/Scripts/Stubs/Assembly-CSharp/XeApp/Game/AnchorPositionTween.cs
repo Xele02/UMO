@@ -4,6 +4,10 @@ namespace XeApp.Game
 {
 	public class AnchorPositionTween : TweenBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Vector2 m_from;
 		[SerializeField]

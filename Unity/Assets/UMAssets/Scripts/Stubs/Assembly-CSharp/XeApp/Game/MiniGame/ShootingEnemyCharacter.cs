@@ -6,6 +6,10 @@ namespace XeApp.Game.MiniGame
 {
 	public class ShootingEnemyCharacter : ShootingTask
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[Serializable]
 		public class SpriteEnemyAnim
 		{

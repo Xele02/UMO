@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class DepthOfFieldDeprecated : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum Dof34QualitySetting
 		{
 			OnlyBackground = 1,

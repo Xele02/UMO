@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutDecorationSelectSerif : LayoutDecorationSelectItemBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private List<Text> m_texts;
 	}

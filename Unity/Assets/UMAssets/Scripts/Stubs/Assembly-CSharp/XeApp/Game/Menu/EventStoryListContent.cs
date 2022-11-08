@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class EventStoryListContent : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx m_thumbnail;
 		[SerializeField]

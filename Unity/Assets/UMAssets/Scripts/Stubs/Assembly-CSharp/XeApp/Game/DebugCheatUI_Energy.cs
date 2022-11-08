@@ -5,6 +5,10 @@ namespace XeApp.Game
 {
 	public class DebugCheatUI_Energy : DebugCheatUIBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text info_text;
 		[SerializeField]
