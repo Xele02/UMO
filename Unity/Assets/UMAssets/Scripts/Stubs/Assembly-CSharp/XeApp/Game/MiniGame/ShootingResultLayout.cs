@@ -22,5 +22,9 @@ namespace XeApp.Game.MiniGame
 		private ShootingResultHighScoreUseCommand m_resultHighScoreUseCommand;
 		[SerializeField]
 		private ShootingResultScoreUseCommand m_resultScoreUseCommand;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

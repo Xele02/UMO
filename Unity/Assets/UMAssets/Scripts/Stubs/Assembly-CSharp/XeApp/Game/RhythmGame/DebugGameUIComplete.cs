@@ -9,5 +9,9 @@ namespace XeApp.Game.RhythmGame
 		private GameUIComplete m_game_ui;
 		[SerializeField]
 		private RhythmGameConsts.ResultComboType m_rank;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

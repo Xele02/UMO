@@ -20,5 +20,9 @@ namespace UnityStandardAssets.ImageEffects
 		public float m_MinZ;
 		public Shader m_SSAOShader;
 		public Texture2D m_RandomTexture;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -27,5 +27,9 @@ namespace XeApp.Game.Menu
 		private SetDeckUnitInfoMessageControl m_messageControl;
 		[SerializeField]
 		private GameObject m_tapGuardObject;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

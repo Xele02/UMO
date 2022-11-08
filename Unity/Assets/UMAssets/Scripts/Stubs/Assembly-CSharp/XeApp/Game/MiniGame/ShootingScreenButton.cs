@@ -7,5 +7,9 @@ namespace XeApp.Game.MiniGame
 	{
 		[SerializeField]
 		private ButtonBase m_changeSceneButton;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

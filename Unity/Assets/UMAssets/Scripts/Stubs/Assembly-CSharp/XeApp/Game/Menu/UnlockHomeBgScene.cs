@@ -12,5 +12,9 @@ namespace XeApp.Game.Menu
 		private RawImage[] images;
 		[SerializeField]
 		private Image fadeImg;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

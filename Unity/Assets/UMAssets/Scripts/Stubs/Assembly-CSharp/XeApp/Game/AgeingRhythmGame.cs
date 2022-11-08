@@ -39,5 +39,9 @@ namespace XeApp.Game
 		private Button m_continueButton;
 		[SerializeField]
 		private Text m_continueLabel;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

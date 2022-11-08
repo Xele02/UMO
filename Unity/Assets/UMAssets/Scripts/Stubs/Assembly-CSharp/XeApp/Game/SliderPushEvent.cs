@@ -13,5 +13,9 @@ namespace XeApp.Game
 
 		[SerializeField]
 		public OnSelectEvent onSelectEvent;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

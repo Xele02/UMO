@@ -9,5 +9,9 @@ namespace XeApp.Game.Tutorial
 		private Sprite[] m_faceSpriteList;
 		[SerializeField]
 		private Image m_faceImage;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

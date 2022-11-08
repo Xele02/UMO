@@ -20,5 +20,9 @@ namespace XeApp
 		public Vector2[] m_LeftBottomSlopeLine;
 		[SerializeField]
 		public Vector2[] m_RightBottomSlopeLine;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

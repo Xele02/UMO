@@ -10,5 +10,9 @@ namespace XeSys.uGUI
 		public Sprite sprite1;
 		public Sprite sprite2;
 		public Image swapImage;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

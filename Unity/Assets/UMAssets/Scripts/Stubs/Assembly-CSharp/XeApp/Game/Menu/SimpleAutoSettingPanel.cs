@@ -25,5 +25,9 @@ namespace XeApp.Game.Menu
 		private SelectAttrEvent m_onSelectAttributeEvent;
 		[SerializeField]
 		private SelectStyleEvent m_onSelectStyleEvent;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

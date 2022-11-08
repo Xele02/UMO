@@ -8,5 +8,9 @@ namespace XeApp.Game.Menu
 		private RaidBossPopLayout m_bossPopLayout;
 		[SerializeField]
 		private RaidBossPopLayout m_spBossPopLayout;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -13,5 +13,9 @@ namespace XeApp.Game.Menu
 		private RawImageEx m_kiraEffectImage;
 		[SerializeField]
 		private RawImageEx m_kiraOverlayEffectImage;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

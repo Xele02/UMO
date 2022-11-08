@@ -12,5 +12,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private GameObject m_effectObject;
 		[SerializeField]
 		private Animator m_rankAnime;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -8,5 +8,9 @@ namespace XeApp.Game
 	{
 		[SerializeField]
 		private List<Text> m_textComponents;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

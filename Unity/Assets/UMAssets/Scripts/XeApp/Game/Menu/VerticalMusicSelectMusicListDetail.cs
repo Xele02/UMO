@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE4DC0 Offset: 0xBE4DC0 VA: 0xBE4DC0
 		private void Awake()
 		{
-			TodoLogger.Log(0, "!!!");
+			TodoLogger.Log(0, "Vertical Music Select Music List Detail Awake");
 		}
 
 		// // RVA: 0xBE4F80 Offset: 0xBE4F80 VA: 0xBE4F80

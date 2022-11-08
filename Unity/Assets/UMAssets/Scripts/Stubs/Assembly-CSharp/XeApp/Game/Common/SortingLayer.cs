@@ -8,5 +8,9 @@ namespace XeApp.Game.Common
 		private string m_layerName;
 		[SerializeField]
 		private int m_orderInLayer;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

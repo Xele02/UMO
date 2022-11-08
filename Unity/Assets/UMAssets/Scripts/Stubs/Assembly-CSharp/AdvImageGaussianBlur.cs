@@ -13,4 +13,9 @@ public class AdvImageGaussianBlur : MonoBehaviour
 	[SerializeField]
 	public Vector2 m_uvOffset;
 	public Texture2D m_texture_dst;
+
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement Monobehaviour");
+	}
 }

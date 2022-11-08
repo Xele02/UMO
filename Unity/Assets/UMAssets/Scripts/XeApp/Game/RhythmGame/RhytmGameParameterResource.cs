@@ -20,7 +20,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x1551C0C Offset: 0x1551C0C VA: 0x1551C0C
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "TODO OnDestroy");
 		}
 
 		// // RVA: 0x1551C88 Offset: 0x1551C88 VA: 0x1551C88

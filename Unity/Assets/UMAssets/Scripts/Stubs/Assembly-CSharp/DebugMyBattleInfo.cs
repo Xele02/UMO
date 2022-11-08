@@ -11,4 +11,8 @@ public class DebugMyBattleInfo : MonoBehaviour
 	private Text m_score;
 	[SerializeField]
 	private Text m_gameNum;
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement Monobehaviour");
+	}
 }

@@ -12,5 +12,9 @@ namespace XeApp.Game.Menu
 		public bool IsAloneMotion;
 		public FlexibleLayoutCamera flexCamera;
 		public bool IsDivaLeaveMotion;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

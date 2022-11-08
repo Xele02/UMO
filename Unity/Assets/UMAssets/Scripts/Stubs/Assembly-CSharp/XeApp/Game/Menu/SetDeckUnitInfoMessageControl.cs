@@ -16,5 +16,9 @@ namespace XeApp.Game.Menu
 		private UGUICurveMover.CurveInfo m_inOutCurveInfo;
 		[SerializeField]
 		private float m_dispTimeLength;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

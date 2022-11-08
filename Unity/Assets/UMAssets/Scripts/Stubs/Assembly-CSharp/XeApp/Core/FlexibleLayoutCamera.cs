@@ -13,5 +13,9 @@ namespace XeApp.Core
 		private float baseWidth;
 		[SerializeField]
 		private float baseHeight;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -7,5 +7,9 @@ namespace XeApp.Game.RhythmGame.UI
 	{
 		[SerializeField]
 		private NumericMeshMultiPolygon[] m_itemNumericMesh;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -20,5 +20,9 @@ namespace XeApp.Game.UI
 		private bool m_isUseVertexColor;
 		[SerializeField]
 		private Color m_vertexColor;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

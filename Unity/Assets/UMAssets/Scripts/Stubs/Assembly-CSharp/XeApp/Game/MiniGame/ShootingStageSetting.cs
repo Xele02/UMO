@@ -9,5 +9,9 @@ namespace XeApp.Game.MiniGame
 		public GameObject m_editorRoot;
 		public List<ShootingTask> m_editList;
 		public int stageNum;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -6,5 +6,9 @@ namespace XeApp.Game.Tutorial
 	{
 		[SerializeField]
 		private Rect _highLightRect;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -11,5 +11,9 @@ namespace XeApp.Game
 		public TextMeshProUGUI m_unit;
 		[SerializeField]
 		public List<UGUINumController> m_num;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

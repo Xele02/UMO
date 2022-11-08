@@ -19,5 +19,9 @@ namespace XeApp.Game.Common
 		private float m_intervalCloseWindowMax;
 		[SerializeField]
 		private Color[] m_colorTable;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

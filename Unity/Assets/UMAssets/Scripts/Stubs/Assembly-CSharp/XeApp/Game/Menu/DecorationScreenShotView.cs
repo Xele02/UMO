@@ -21,5 +21,9 @@ namespace XeApp.Game.Menu
 		private RectTransform captureResultPanel;
 		[SerializeField]
 		private Image infomationSprite;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

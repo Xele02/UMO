@@ -30,5 +30,9 @@ namespace XeApp.Game.Menu
 		public UGUICurveMover.CurveInfo m_enterAnimCurveInfo;
 		[SerializeField]
 		public UGUICurveMover.CurveInfo m_leaveAnimCurveInfo;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

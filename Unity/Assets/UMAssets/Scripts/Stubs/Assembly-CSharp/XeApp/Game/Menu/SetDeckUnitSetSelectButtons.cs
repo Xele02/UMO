@@ -13,5 +13,9 @@ namespace XeApp.Game.Menu
 		private UGUIButton m_selectButtonLeft;
 		[SerializeField]
 		private UGUIButton m_selectButtonRight;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

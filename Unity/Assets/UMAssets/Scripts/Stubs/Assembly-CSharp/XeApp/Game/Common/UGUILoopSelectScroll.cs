@@ -21,5 +21,9 @@ namespace XeApp.Game.Common
 		private int m_columnCount;
 		[SerializeField]
 		private bool m_isVertical;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -5,4 +5,8 @@ public class VFEffList : MonoBehaviour
 {
 	[SerializeField]
 	private List<ParticleSystem> effcts;
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement Monobehaviour");
+	}
 }

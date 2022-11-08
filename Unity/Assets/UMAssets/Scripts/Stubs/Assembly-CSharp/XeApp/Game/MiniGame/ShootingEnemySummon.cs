@@ -20,5 +20,9 @@ namespace XeApp.Game.MiniGame
 		private float[] m_summonTime;
 		[SerializeField]
 		private ShootingEnemySummonData[] m_summonDatas;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

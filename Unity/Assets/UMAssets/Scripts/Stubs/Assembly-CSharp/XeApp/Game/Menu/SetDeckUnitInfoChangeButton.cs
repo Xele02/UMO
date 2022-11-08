@@ -9,5 +9,9 @@ namespace XeApp.Game.Menu
 		private InOutAnime m_inOut;
 		[SerializeField]
 		private UGUIButton m_changeButton;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

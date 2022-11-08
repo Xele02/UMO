@@ -33,7 +33,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CCFAD4 Offset: 0x1CCFAD4 VA: 0x1CCFAD4
 		private void Awake()
 		{
-			TodoLogger.Log(5, "TouchParticle Awake");
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
 		}
 
 		// // RVA: 0x1CCFCE0 Offset: 0x1CCFCE0 VA: 0x1CCFCE0

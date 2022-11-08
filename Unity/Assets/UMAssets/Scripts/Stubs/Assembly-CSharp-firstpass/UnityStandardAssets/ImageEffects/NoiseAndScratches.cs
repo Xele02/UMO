@@ -16,5 +16,9 @@ namespace UnityStandardAssets.ImageEffects
 		public Texture scratchTexture;
 		public Shader shaderRGB;
 		public Shader shaderYUV;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

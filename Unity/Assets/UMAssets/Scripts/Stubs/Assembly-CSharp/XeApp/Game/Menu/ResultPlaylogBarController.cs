@@ -20,5 +20,9 @@ namespace XeApp.Game.Menu
 
 		[SerializeField]
 		private GraphColorDataTable[] GraphColorTable;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

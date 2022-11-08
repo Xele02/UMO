@@ -24,5 +24,9 @@ namespace XeApp.Game.Common
 		private Color m_fontColorInochi;
 		[SerializeField]
 		private Color m_fontColorZen;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

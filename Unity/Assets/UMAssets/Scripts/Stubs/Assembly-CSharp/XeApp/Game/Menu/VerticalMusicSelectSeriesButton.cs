@@ -10,5 +10,9 @@ namespace XeApp.Game.Menu
 		private UGUIToggleButton m_toggleButton;
 		[SerializeField]
 		private RawImageEx m_seriesImage;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

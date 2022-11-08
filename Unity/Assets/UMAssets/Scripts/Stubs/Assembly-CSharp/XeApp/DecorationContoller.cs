@@ -6,5 +6,9 @@ namespace XeApp
 	{
 		[SerializeField]
 		public float m_zoomMax;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

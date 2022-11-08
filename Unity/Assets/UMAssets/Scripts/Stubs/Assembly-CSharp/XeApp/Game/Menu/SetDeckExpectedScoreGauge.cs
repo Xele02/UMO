@@ -21,5 +21,9 @@ namespace XeApp.Game.Menu
 		private Image m_rankImage;
 		[SerializeField]
 		private List<Sprite> m_rankSprites;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

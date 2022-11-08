@@ -37,5 +37,9 @@ namespace XeApp.Game.Common
 		protected int m_playIndex;
 		[SerializeField]
 		protected KeyFrame[] m_animeTable;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

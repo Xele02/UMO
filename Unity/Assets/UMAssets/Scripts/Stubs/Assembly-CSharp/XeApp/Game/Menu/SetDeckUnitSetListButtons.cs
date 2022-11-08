@@ -39,5 +39,9 @@ namespace XeApp.Game.Menu
 		private Sprite m_unitButtonDefaultSprite;
 		[SerializeField]
 		private Sprite m_unitButtonSelectingSprite;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -6,5 +6,9 @@ namespace XeApp.Game.Common
 	{
 		[SerializeField]
 		public RectTransform m_root;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -9,5 +9,9 @@ namespace XeApp.Game.Menu
 		public bool IsLayoutAssetLoad;
 		public bool IsGoToHome;
 		public bool IsOrderInduction;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

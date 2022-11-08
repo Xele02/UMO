@@ -42,7 +42,7 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xC9C0B0 Offset: 0xC9C0B0 VA: 0xC9C0B0
 		public void Initialize()
 		{
-			TodoLogger.Log(0, "!!!");
+			TodoLogger.Log(0, "Music Jacket Scroll Initialize");
 		}
 
 		//// RVA: 0xC9C310 Offset: 0xC9C310 VA: 0xC9C310

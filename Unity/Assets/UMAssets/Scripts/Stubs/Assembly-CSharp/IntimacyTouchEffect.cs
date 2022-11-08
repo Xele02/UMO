@@ -8,4 +8,8 @@ public class IntimacyTouchEffect : MonoBehaviour
 	private ParticleSystem m_effectEnd;
 	[SerializeField]
 	private Camera m_systemCanvasCamera;
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement Monobehaviour");
+	}
 }

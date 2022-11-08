@@ -13,5 +13,9 @@ namespace XeApp.Game
 		public List<UGUINumController> m_num;
 		[SerializeField]
 		public List<UGUINumController> m_max;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

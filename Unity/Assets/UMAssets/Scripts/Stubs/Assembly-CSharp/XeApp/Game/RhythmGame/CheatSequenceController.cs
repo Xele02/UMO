@@ -8,5 +8,9 @@ namespace XeApp.Game.RhythmGame
 		private float fasterSpeedValue;
 		[SerializeField]
 		private float skipSecond;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -11,5 +11,9 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private Camera m_camera;
 		public bool isSkip;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -6,5 +6,9 @@ namespace XeApp.Game.MiniGame
 	{
 		[SerializeField]
 		private int buttonId;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

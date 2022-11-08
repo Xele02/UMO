@@ -7,5 +7,9 @@ namespace XeApp.Game.Menu
 	{
 		[SerializeField]
 		private Text m_text;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

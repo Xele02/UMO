@@ -6,5 +6,9 @@ namespace XeSys.Gfx
 	{
 		[SerializeField]
 		public int renderQueue;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -27,5 +27,9 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private List<Vector2> m_position;
 		public bool m_isEnter;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

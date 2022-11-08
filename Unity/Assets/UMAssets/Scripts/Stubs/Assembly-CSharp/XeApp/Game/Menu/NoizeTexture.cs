@@ -11,5 +11,9 @@ namespace XeApp.Game.Menu
 		private RenderTexture m_renderTexture;
 		[SerializeField]
 		private RawImage m_image;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

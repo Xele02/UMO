@@ -8,5 +8,9 @@ namespace XeApp.Game.Menu
 	{
 		public Text m_text;
 		public RawImageEx m_image;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

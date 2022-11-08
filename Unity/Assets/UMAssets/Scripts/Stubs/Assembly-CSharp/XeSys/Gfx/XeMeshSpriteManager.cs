@@ -6,5 +6,9 @@ namespace XeSys.Gfx
 	{
 		[SerializeField]
 		private XeMeshSpriteObject meshSpritePrefab;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -6,5 +6,9 @@ namespace XeApp.Game.Menu
 	{
 		[SerializeField]
 		private Sprite[] sprites;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

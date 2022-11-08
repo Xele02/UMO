@@ -12,5 +12,9 @@ namespace XeApp.Game.Menu
 		private Image m_imageDarkFill;
 		[SerializeField]
 		private Text m_textDarkFill;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -7,5 +7,9 @@ namespace XeApp.Game.Common.uGUI
 	{
 		[SerializeField]
 		private Text[] m_textComponents;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

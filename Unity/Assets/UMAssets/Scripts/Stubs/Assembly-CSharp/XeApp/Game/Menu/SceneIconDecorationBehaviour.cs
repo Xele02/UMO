@@ -14,5 +14,9 @@ namespace XeApp.Game.Menu
 		private AnimeCurveScriptableObject m_animeCurve;
 		[SerializeField]
 		private EpisodeNameParts m_episodeNamePrefab;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

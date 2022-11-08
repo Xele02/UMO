@@ -31,5 +31,9 @@ namespace XeApp.Game.Menu
 		private UGUIButton m_buttonDivaRanking;
 		[SerializeField]
 		private ScrollRect m_scroll;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

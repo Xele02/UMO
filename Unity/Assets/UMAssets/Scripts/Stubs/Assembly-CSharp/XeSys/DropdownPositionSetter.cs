@@ -8,5 +8,9 @@ namespace XeSys
 		public Dropdown dropDown;
 		public Scrollbar scrollbar;
 		public int displayItemCount;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -8,5 +8,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private GameObject m_linePrefab;
 		[SerializeField]
 		private GameObject m_linePrefabWide;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

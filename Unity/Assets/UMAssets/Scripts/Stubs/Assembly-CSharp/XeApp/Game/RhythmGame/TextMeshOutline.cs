@@ -6,5 +6,9 @@ namespace XeApp.Game.RhythmGame
 	{
 		public Color m_outlineColor;
 		public float m_outlineSize;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

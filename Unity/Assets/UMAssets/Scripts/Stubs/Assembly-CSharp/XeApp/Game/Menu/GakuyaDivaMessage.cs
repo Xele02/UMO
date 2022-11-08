@@ -19,5 +19,9 @@ namespace XeApp.Game.Menu
 		private Animator m_animatorPosition;
 		[SerializeField]
 		private List<Color> m_divaColor;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -7,5 +7,9 @@ namespace XeApp.Game
 	{
 		[SerializeField]
 		private Button button_data;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -16,5 +16,9 @@ namespace XeApp.Game.Menu
 		private Image m_SaveTextSprite;
 		[SerializeField]
 		private UnitSetSaveTextScriptableObject m_SaveTextSpriteList;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

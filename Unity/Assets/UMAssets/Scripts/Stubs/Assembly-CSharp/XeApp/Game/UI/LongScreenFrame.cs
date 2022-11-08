@@ -11,5 +11,9 @@ namespace XeApp.Game.UI
 		private Sprite[] frameSprite;
 		[SerializeField]
 		private RawImage[] letterBox;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

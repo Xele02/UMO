@@ -36,5 +36,9 @@ namespace XeApp.Game.Menu
 		private Image backGroundImage;
 		[SerializeField]
 		private RectTransform accountRemoveRoot;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -9,5 +9,9 @@ namespace XeApp.Game.Tutorial
 		private TutorialCharactor m_charactor;
 		[SerializeField]
 		private Text m_messageText;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

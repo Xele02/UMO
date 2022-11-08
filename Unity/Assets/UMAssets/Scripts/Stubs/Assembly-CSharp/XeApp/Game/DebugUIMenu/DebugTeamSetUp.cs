@@ -13,5 +13,9 @@ namespace XeApp.Game.DebugUIMenu
 		private UIDebugLiveCardSelect m_degug_live_card;
 		[SerializeField]
 		private Button m_button;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

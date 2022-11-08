@@ -18,5 +18,9 @@ namespace XeApp.Game.Menu
 		private UGUIToggleButtonGroup m_bgDarkToggleGroup;
 		[SerializeField]
 		private Text m_invalidText;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

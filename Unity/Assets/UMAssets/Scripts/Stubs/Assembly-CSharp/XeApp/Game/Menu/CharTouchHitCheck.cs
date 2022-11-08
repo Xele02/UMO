@@ -6,5 +6,9 @@ namespace XeApp.Game.Menu
 	{
 		[SerializeField]
 		private CharTouchButton m_button;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

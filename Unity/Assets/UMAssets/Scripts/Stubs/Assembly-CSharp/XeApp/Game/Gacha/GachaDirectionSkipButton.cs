@@ -7,5 +7,9 @@ namespace XeApp.Game.Gacha
 	{
 		[SerializeField]
 		private Button m_button;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

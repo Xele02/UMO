@@ -10,5 +10,9 @@ namespace XeSys.uGUI
 		public UnityEvent onLongPressDown;
 		public UnityEvent onLongPress;
 		public UnityEvent onLongPressUp;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

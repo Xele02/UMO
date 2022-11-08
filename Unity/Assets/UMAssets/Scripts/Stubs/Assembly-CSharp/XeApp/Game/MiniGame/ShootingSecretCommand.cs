@@ -18,5 +18,9 @@ namespace XeApp.Game.MiniGame
 		private Command[] m_secretCommand;
 		[SerializeField]
 		private float m_secretResetTimeMax;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

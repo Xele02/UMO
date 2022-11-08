@@ -7,5 +7,9 @@ namespace XeSys.uGUI
 	{
 		public float interval;
 		public UnityEvent onDoubleClick;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

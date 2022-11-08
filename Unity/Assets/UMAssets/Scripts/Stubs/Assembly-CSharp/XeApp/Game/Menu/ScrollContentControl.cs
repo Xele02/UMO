@@ -8,5 +8,9 @@ namespace XeApp.Game.Menu
 		private GameObject m_Content;
 		[SerializeField]
 		private GameObject m_ItemObject;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

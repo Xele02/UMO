@@ -13,5 +13,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private Renderer m_skillDescriptionRenderer;
 		[SerializeField]
 		private TextMeshPro m_text_scoreup;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

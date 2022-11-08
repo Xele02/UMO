@@ -36,5 +36,9 @@ namespace XeApp.Game.Menu
 		private Sprite m_checkStatusButtonSpriteNormal;
 		[SerializeField]
 		private Sprite m_checkStatusButtonSpriteDisplay;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

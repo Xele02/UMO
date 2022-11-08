@@ -8,5 +8,9 @@ namespace XeSys
 		private float fontSize;
 		[SerializeField]
 		private float fontImportSize;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

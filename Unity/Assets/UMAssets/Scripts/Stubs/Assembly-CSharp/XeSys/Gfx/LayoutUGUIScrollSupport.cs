@@ -9,5 +9,9 @@ namespace XeSys.Gfx
 		private ScrollRect m_scrollRect;
 		[SerializeField]
 		private RectTransform m_scrollRange;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -9,5 +9,9 @@ namespace XeApp.Game.MiniGame
 		private InOutAnime m_inOutAnim;
 		[SerializeField]
 		private SpriteAnime m_spriteAnime;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

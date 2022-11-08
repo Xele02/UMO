@@ -11,5 +11,9 @@ namespace XeApp.Game.Common
 		public float m_rate_h;
 		public bool m_enable_v;
 		public bool m_enable_h;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

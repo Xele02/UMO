@@ -6,5 +6,9 @@ namespace XeApp.Game.Menu
 	{
 		[SerializeField]
 		private LayoutPopupPastRanking m_popupUi;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

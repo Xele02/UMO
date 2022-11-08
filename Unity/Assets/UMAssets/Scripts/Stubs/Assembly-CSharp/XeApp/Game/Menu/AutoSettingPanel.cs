@@ -36,5 +36,9 @@ namespace XeApp.Game.Menu
 		private TobbleButtonEvent m_onSelectkeepCenterSkillEvent;
 		[SerializeField]
 		private TobbleButtonEvent m_onSelectCompatibleDivaEvent;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -7,5 +7,9 @@ namespace XeApp.Game.Common
 	{
 		public List<GameObject> inactivateTargetObjects;
 		public bool m_force_enable;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

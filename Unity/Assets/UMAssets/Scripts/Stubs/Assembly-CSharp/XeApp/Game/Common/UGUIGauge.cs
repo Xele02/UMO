@@ -8,5 +8,9 @@ namespace XeApp.Game.Common
 		protected RectTransform m_bandTrans;
 		[SerializeField]
 		protected float m_maxValue;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

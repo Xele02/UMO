@@ -34,5 +34,9 @@ namespace XeApp.Game.Common
 		private Animator m_animatorDigits;
 		[SerializeField]
 		private List<Image> m_imagesNum;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

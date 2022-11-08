@@ -15,7 +15,10 @@ namespace XeApp.Game.Common
 		public bool isAllLoaded { get { return isLoadedMain; } } //0xD27000
 
 		// // RVA: 0xD27008 Offset: 0xD27008 VA: 0xD27008
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			TodoLogger.Log(0, "OnDestroy");
+		}
 
 		// // RVA: 0xD27018 Offset: 0xD27018 VA: 0xD27018
 		public void LoadResources(int id, int valkyrie_id)

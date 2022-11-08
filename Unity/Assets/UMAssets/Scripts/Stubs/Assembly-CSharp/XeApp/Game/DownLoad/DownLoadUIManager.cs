@@ -8,5 +8,9 @@ namespace XeApp.Game.DownLoad
 		private GameObject m_BgRoot;
 		[SerializeField]
 		private GameObject m_UIRoot;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -18,5 +18,9 @@ namespace XeApp.Game.Menu
 		private Text CostumeName;
 		[SerializeField]
 		private Text explanationText;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

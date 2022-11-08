@@ -8,5 +8,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private Animator m_animator;
 		[SerializeField]
 		private BattleCenterRingUvChanger[] m_ringUvChanger;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

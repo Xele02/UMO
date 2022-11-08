@@ -16,5 +16,9 @@ namespace XeApp.Game.Menu
 		private UGUIToggleButtonGroup m_autoGroup;
 		[SerializeField]
 		private AutoTypeToggleEvent m_onAutoTypeEvent;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

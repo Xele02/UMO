@@ -44,5 +44,9 @@ namespace XeApp.Game.Common
 		private List<GameObject> m_memoryRename;
 		[SerializeField]
 		private RefData m_meshRefData;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

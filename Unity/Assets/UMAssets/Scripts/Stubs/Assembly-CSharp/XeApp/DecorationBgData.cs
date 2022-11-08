@@ -42,5 +42,9 @@ namespace XeApp
 		public Vector2[] m_LeftFloorInnerOuterLine;
 		[SerializeField]
 		public Vector2[] m_RightFloorInnerOuterLine;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

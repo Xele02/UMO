@@ -12,5 +12,9 @@ namespace XeApp.Game.Menu
 		private GameObject m_scrollObjet;
 		[SerializeField]
 		private Text m_musicNoneText;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

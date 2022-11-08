@@ -9,5 +9,9 @@ namespace XeApp.Game.Common
 		public Texture battleTexture;
 		public bool isTitleBg;
 		public int baseRare;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

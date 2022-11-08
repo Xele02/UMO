@@ -25,4 +25,8 @@ public class DebugMatchingInfo : MonoBehaviour
 	private Button m_ok;
 	[SerializeField]
 	private Button m_retry;
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement Monobehaviour");
+	}
 }

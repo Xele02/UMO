@@ -8,5 +8,9 @@ namespace XeApp.Game.MiniGame
 		private VirtualPadStick stick;
 		[SerializeField]
 		private VirtualPadButton[] buttons;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

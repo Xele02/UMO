@@ -11,4 +11,8 @@ public class DebugCheatElemButton : MonoBehaviour
 	private Text m_sceneLabel;
 	[SerializeField]
 	private Text m_typeLabel;
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement Monobehaviour");
+	}
 }

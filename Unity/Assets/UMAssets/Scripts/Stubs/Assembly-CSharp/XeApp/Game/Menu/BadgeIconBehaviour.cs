@@ -10,5 +10,9 @@ namespace XeApp.Game.Menu
 		private Text m_text;
 		[SerializeField]
 		private RawImageEx m_image;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

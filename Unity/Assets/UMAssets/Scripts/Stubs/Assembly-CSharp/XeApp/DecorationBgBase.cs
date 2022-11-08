@@ -13,5 +13,9 @@ namespace XeApp
 			public List<Vector2> vertices;
 		}
 
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }
