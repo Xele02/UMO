@@ -94,7 +94,8 @@ namespace XeApp.Game.Common
 
 			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, line6Mode, this.LoadedMusicScoreData, "s_"));
 
-			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, false, this.LoadedMusicScoreData, "s_"));
+			if(musicScoreData == null)
+				yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, false, this.LoadedMusicScoreData, "s_"));
 
 			yield return StartCoroutine(LoadDirectionParam(operation, musicBase.KKPAHLMJKIH_WavId));
 

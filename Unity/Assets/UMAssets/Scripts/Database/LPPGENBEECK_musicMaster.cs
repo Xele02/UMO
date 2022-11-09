@@ -77,10 +77,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 	{
 		int a = 0;
 		if (GIKLNODJKFK_Line6)
-			a = -1000;
-		//??
-		//if(GIKLNODJKFK)
-		// a = (a & NOAKHKMLPFK >> 0x1f) + 1000;
+			a = 1000;
 		int b = BKJGCEOEPFB_VariationId + KKPAHLMJKIH_WavId * 10000 + NOAKHKMLPFK_Difficulty + 1;
 		if(b+a != 0)
 		{
@@ -442,7 +439,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 			for(int j = 0; j < 5; j++)
 			{
 				EONOEHOKBEB_Music m = IAJLOELFHKC_GetMusicInfo(data.DLAEJOBELBH_Id);
-				KLBKPANJCPL_Score k = ALJFMLEJEHH(m.KKPAHLMJKIH_WavId, m.BKJGCEOEPFB_VariationId, i, false, true);
+				KLBKPANJCPL_Score k = ALJFMLEJEHH(m.KKPAHLMJKIH_WavId, m.BKJGCEOEPFB_VariationId, j, false, true);
 				int i1 = 0;
 				int i2 = 0;
 				int i3 = 0;
@@ -454,7 +451,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 				}
 				HDNKOFNBCEO data2 = MGDLFOAKGGF[data.EAEDODGPLEC - 1];
 				data.NHKABAGJCDM(FEEODHDKLFH(i2, i1, i3, data2));
-				KLBKPANJCPL_Score k2 = ALJFMLEJEHH(m.KKPAHLMJKIH_WavId, m.BKJGCEOEPFB_VariationId, i, true, false);
+				KLBKPANJCPL_Score k2 = ALJFMLEJEHH(m.KKPAHLMJKIH_WavId, m.BKJGCEOEPFB_VariationId, j, true, false);
 				if(k2 != null)
 				{
 					data2 = MGDLFOAKGGF[data.LOKLNBLBBFD - 1];
@@ -514,7 +511,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 			for(int j = 0; j < 5; j++)
 			{
 				EONOEHOKBEB_Music music = IAJLOELFHKC_GetMusicInfo(data.DLAEJOBELBH_Id);
-				KLBKPANJCPL_Score score = ALJFMLEJEHH(music.KKPAHLMJKIH_WavId, music.BKJGCEOEPFB_VariationId, i, false, true);
+				KLBKPANJCPL_Score score = ALJFMLEJEHH(music.KKPAHLMJKIH_WavId, music.BKJGCEOEPFB_VariationId, j, false, true);
 				if(score != null)
 				{
 					data.COGKJBAFBKN.Add(FEEODHDKLFH(score.KNIFCANOHOC_Ss, score.NLKEBAOBJCM_Cb, score.OIPCCBHIKIA, NEIBEDCGDEM[0]));
