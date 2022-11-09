@@ -1047,10 +1047,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xBEC300 Offset: 0xBEC300 VA: 0xBEC300 Slot: 59
-		//protected override void OnDecideCurrentMusic(ref VerticalMusicSelectSceneBase.MusicDecideInfo info)
-		//{
-		//	TodoLogger.Log(0, "!!!");
-		//}
+		protected override void OnDecideCurrentMusic(ref MusicDecideInfo info)
+		{
+			return;
+		}
 
 		// // RVA: 0xBEAACC Offset: 0xBEAACC VA: 0xBEAACC
 		private void ApplyMusicInfoNone()
