@@ -83,7 +83,13 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9ADB00 Offset: 0x9ADB00 VA: 0x9ADB00
 		public void AddTouchEvents(RhythmGamePerformer.BeganTouchLineCallback beganTouchEvent, RhythmGamePerformer.EndedTouchLineCallback endedTouchEvent, RhythmGamePerformer.ReleaseLineCallback releaseLineEvent, RhythmGamePerformer.NextLineCallback nextLineEvent, RhythmGamePerformer.SwipedTouchLineCallback swipedTouchEvent, RhythmGamePerformer.NeutralTouchLineCallback neutralTouchEvent, RhythmGamePerformer.BeganTouchSkillCallback skillTouchEvent)
 		{
-			TodoLogger.Log(0, "GamePerformer AddTouchEvents");
+			this.beganTouchEvent += beganTouchEvent;
+			this.endedTouchEvent += endedTouchEvent;
+			this.releaseLineEvent += releaseLineEvent;
+			this.nextLineEvent += nextLineEvent;
+			this.swipedTouchEvent += swipedTouchEvent;
+			this.neutralTouchEvent += neutralTouchEvent;
+			this.skillTouchEvent += skillTouchEvent;
 		}
 
 		//// RVA: 0x9ADB64 Offset: 0x9ADB64 VA: 0x9ADB64
@@ -98,19 +104,19 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AE1B4 Offset: 0x9AE1B4 VA: 0x9AE1B4
 		public void SetActiveLineCallback(RhythmGamePerformer.IsActiveLineCallback callback)
 		{
-			TodoLogger.Log(0, "GamePerformer SetActiveLineCallback");
+			isActiveLineCallback = callback;
 		}
 
 		//// RVA: 0x9AE1BC Offset: 0x9AE1BC VA: 0x9AE1BC Slot: 4
 		public virtual void BeginTouchSave(int lineNo)
 		{
-			TodoLogger.Log(0, "GamePerformer BeginTouchSave");
+			return;
 		}
 
 		//// RVA: 0x9AE1C0 Offset: 0x9AE1C0 VA: 0x9AE1C0 Slot: 5
 		public virtual void EndTouchSave(int lineNo, bool isCheckEndTouch = true)
 		{
-			TodoLogger.Log(0, "GamePerformer EndTouchSave");
+			return;
 		}
 
 		//// RVA: 0x9AE1C4 Offset: 0x9AE1C4 VA: 0x9AE1C4 Slot: 6
@@ -137,7 +143,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AE818 Offset: 0x9AE818 VA: 0x9AE818 Slot: 13
 		public virtual void InitializeTouch()
 		{
-			TodoLogger.Log(0, "GamePerformer InitializeTouch");
+			return;
 		}
 	}
 }

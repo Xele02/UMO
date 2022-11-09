@@ -2288,7 +2288,102 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C8D08 Offset: 0x9C8D08 VA: 0x9C8D08
 		private void JudgedNoteEffect(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex)
 		{
-			TodoLogger.Log(0, "JudgedNoteEffect");
+			bool a = true;
+			if(noteObject.rNote.noteInfo.swipe != MusicScoreData.TouchState.Start)
+			{
+				if(noteObject.rNote.noteInfo.longTouch != MusicScoreData.TouchState.Start)
+				{
+					a = false;
+					if (noteObject.rNote.noteInfo.swipe == MusicScoreData.TouchState.SwipeEnd)
+						a = true;
+				}
+			}
+			bool b = true;
+			if(noteObject.rNote.noteInfo.swipe != MusicScoreData.TouchState.End)
+			{
+				b = false;
+				if (noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.End)
+				{
+					b = true;
+				}
+			}
+			if(noteObject.rNote.noteInfo.isWing && a_result_ex.m_result != RhythmGameConsts.NoteResult.Miss)
+			{
+				if(!RhythmGameConsts.IsLeftLine(noteObject.rNote.noteInfo.wingTrackID))
+				{
+					if(!RhythmGameConsts.IsWingLine(noteObject.rNote.noteInfo.trackID))
+					{
+						uiController.Hud.ShowWingNotesOpenREffect(noteObject.rNote.noteInfo.wingTrackID);
+					}
+					else
+					{
+						uiController.Hud.ShowWingNotesCloseREffect(noteObject.rNote.noteInfo.wingTrackID);
+					}
+				}
+				else if (!RhythmGameConsts.IsWingLine(noteObject.rNote.noteInfo.trackID))
+				{
+					uiController.Hud.ShowWingNotesOpenLEffect(noteObject.rNote.noteInfo.wingTrackID);
+				}
+				else
+				{
+					uiController.Hud.ShowWingNotesCloseLEffect(noteObject.rNote.noteInfo.wingTrackID);
+				}
+			}
+			if (a || noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.Continue)
+			{
+				if (a_result_ex.m_result != RhythmGameConsts.NoteResult.Miss)
+				{
+					if (noteObject.rNote.noteInfo.isSlide)
+					{
+						if (rNoteOwner.GetNote(noteObject.rNote.noteInfo.nextIndex).result == RhythmGameConsts.NoteResult.None)
+						{
+							uiController.Hud.ShowSlideNotesTouchEffect(rNoteOwner.GetNote(noteObject.rNote.noteInfo.nextIndex).noteInfo.trackID);
+							uiController.Hud.ShowSlideNotesTipEffect(rNoteOwner.GetNote(noteObject.rNote.noteInfo.nextIndex).noteInfo.trackID, rNoteOwner.GetRNoteSlide(noteObject));
+						}
+					}
+					else
+					{
+						uiController.Hud.ShowLongNotesTouchEffect(noteObject.rNote.noteInfo.trackID);
+					}
+					uiController.Hud.ShowNotesHitEffect(noteObject.rNote.noteInfo.trackID);
+				}
+				else
+				{
+					if (noteObject.rNote.noteInfo.longTouch != MusicScoreData.TouchState.Continue)
+						return;
+					uiController.Hud.HideSlideNotesTouchEffect(noteObject.rNote.noteInfo.trackID);
+					uiController.Hud.HideSlideNotesTipEffect(noteObject.rNote.noteInfo.trackID);
+					return;
+				}
+			}
+			//LAB_009c97b0
+			if (b || noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.Continue)
+			{
+				if (noteObject.rNote.noteInfo.isSlide)
+				{
+					if (noteObject.rNote.noteInfo.trackID != rNoteOwner.GetNote(noteObject.rNote.noteInfo.nextIndex).noteInfo.trackID)
+					{
+						b = true;
+					}
+					if (b)
+					{
+						uiController.Hud.HideSlideNotesTouchEffect(noteObject.rNote.noteInfo.trackID);
+						uiController.Hud.HideSlideNotesTipEffect(noteObject.rNote.noteInfo.trackID);
+					}
+				}
+				else
+				{
+					uiController.Hud.HideLongNotesTouchEffect(noteObject.rNote.noteInfo.trackID);
+				}
+				if (a_result_ex.m_result == RhythmGameConsts.NoteResult.Miss)
+					return;
+			}
+			else
+			{
+				if (!(noteObject.rNote.noteInfo.swipe != MusicScoreData.TouchState.SwipeStart && a_result_ex.m_result != RhythmGameConsts.NoteResult.Miss))
+					return;
+			}
+			uiController.Hud.ShowNotesHitEffect(noteObject.rNote.noteInfo.trackID);
 		}
 
 		// // RVA: 0x9C9CC4 Offset: 0x9C9CC4 VA: 0x9C9CC4

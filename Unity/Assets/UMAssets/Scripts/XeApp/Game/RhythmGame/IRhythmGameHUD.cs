@@ -175,37 +175,37 @@ namespace XeApp.Game.RhythmGame
 		void HideAllToucheEffect();
 
 		// // RVA: -1 Offset: -1 Slot: 51
-		// public abstract void ShowLongNotesTouchEffect(int trackId);
+		void ShowLongNotesTouchEffect(int trackId);
 
 		// // RVA: -1 Offset: -1 Slot: 52
-		// public abstract void HideLongNotesTouchEffect(int trackId);
+		void HideLongNotesTouchEffect(int trackId);
 
 		// // RVA: -1 Offset: -1 Slot: 53
-		// public abstract void ShowSlideNotesTouchEffect(int trackId);
+		void ShowSlideNotesTouchEffect(int trackId);
 
 		// // RVA: -1 Offset: -1 Slot: 54
-		// public abstract void HideSlideNotesTouchEffect(int trackId);
+		void HideSlideNotesTouchEffect(int trackId);
 
 		// // RVA: -1 Offset: -1 Slot: 55
-		// public abstract void ShowSlideNotesTipEffect(int trackId, RNoteSlide noteSlide);
+		void ShowSlideNotesTipEffect(int trackId, RNoteSlide noteSlide);
 
 		// // RVA: -1 Offset: -1 Slot: 56
-		// public abstract void HideSlideNotesTipEffect(int trackId);
+		void HideSlideNotesTipEffect(int trackId);
 
 		// // RVA: -1 Offset: -1 Slot: 57
-		// public abstract void ShowWingNotesOpenREffect(int trackId);
+		void ShowWingNotesOpenREffect(int trackId);
 
 		// // RVA: -1 Offset: -1 Slot: 58
-		// public abstract void ShowWingNotesOpenLEffect(int trackId);
+		void ShowWingNotesOpenLEffect(int trackId);
 
 		// // RVA: -1 Offset: -1 Slot: 59
-		// public abstract void ShowWingNotesCloseREffect(int trackId);
+		void ShowWingNotesCloseREffect(int trackId);
 
 		// // RVA: -1 Offset: -1 Slot: 60
-		// public abstract void ShowWingNotesCloseLEffect(int trackId);
+		void ShowWingNotesCloseLEffect(int trackId);
 
 		// // RVA: -1 Offset: -1 Slot: 61
-		// public abstract void ShowNotesHitEffect(int trackId);
+		void ShowNotesHitEffect(int trackId);
 
 		// // RVA: -1 Offset: -1 Slot: 62
 		void ShowResultEffect(int lineNumber, RhythmGameConsts.NoteResultEx a_result_ex);

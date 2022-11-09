@@ -19,24 +19,55 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x15649B0 Offset: 0x15649B0 VA: 0x15649B0
-		//public void Initialize() { }
+		public void Initialize()
+		{
+			m_animator.Play(OutStateHash, 0, 1);
+		}
 
 		//// RVA: 0x1566F48 Offset: 0x1566F48 VA: 0x1566F48
-		//public void Show() { }
+		public void Show()
+		{
+			if (RhythmGamePlayer.IsLowQualityMode)
+				return;
+			m_animator.Play(InStateHash);
+		}
 
 		//// RVA: 0x1567048 Offset: 0x1567048 VA: 0x1567048
-		//public void Hide() { }
+		public void Hide()
+		{
+			m_animator.Play(OutStateHash);
+		}
 
 		//// RVA: 0x15670FC Offset: 0x15670FC VA: 0x15670FC
-		//public void ShowWingOpenR() { }
+		public void ShowWingOpenR()
+		{
+			if (RhythmGamePlayer.IsLowQualityMode)
+				return;
+			m_animator.Play(WingOpenRStateHash);
+		}
 
 		//// RVA: 0x15671FC Offset: 0x15671FC VA: 0x15671FC
-		//public void ShowWingOpenL() { }
+		public void ShowWingOpenL()
+		{
+			if (RhythmGamePlayer.IsLowQualityMode)
+				return;
+			m_animator.Play(WingOpenLStateHash);
+		}
 
 		//// RVA: 0x15672FC Offset: 0x15672FC VA: 0x15672FC
-		//public void ShowWingCloseR() { }
+		public void ShowWingCloseR()
+		{
+			if (RhythmGamePlayer.IsLowQualityMode)
+				return;
+			m_animator.Play(WingCloseRStateHash);
+		}
 
 		//// RVA: 0x15673FC Offset: 0x15673FC VA: 0x15673FC
-		//public void ShowWingCloseL() { }
+		public void ShowWingCloseL()
+		{
+			if (RhythmGamePlayer.IsLowQualityMode)
+				return;
+			m_animator.Play(WingCloseLStateHash);
+		}
 	}
 }

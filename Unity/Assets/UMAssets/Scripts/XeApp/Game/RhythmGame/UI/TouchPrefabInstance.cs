@@ -27,7 +27,7 @@ namespace XeApp.Game.RhythmGame.UI
 		public TouchSkillEffect SkillEffect { get { return _skillEffect; } } //0x1564578
 		public RandomRotate RandomRotate { get { return _randomRotate; } } //0x1564580
 		public TouchSlideEffect slideEffect { get { return _slideEffect; } } //0x1564588
-		//public TouchSlideTipEffect slideTipEffect { get; } 0x1564590
+		public TouchSlideTipEffect slideTipEffect { get { return _slideTipEffect; } } //0x1564590
 		//public int FingerId { get; set; } 0x1564598 0x15645A0
 
 		//// RVA: 0x15645A8 Offset: 0x15645A8 VA: 0x15645A8
@@ -48,6 +48,7 @@ namespace XeApp.Game.RhythmGame.UI
 
 			go = Instantiate(slideEffectPrefab);
 			_slideEffect = go.GetComponent<TouchSlideEffect>();
+			_slideEffect.Initialize();
 			go.transform.SetParent(transform, false);
 
 			go = Instantiate(slideTipEffectPrefab);

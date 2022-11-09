@@ -490,37 +490,70 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD0BB8 Offset: 0xDD0BB8 VA: 0xDD0BB8 Slot: 55
-		// public void ShowLongNotesTouchEffect(int trackId) { }
+		public void ShowLongNotesTouchEffect(int trackId)
+		{
+			TodoLogger.Log(0, "Hud ShowLongNotesTouchEffect");
+		}
 
 		// // RVA: 0xDD0CCC Offset: 0xDD0CCC VA: 0xDD0CCC Slot: 56
-		// public void HideLongNotesTouchEffect(int trackId) { }
+		public void HideLongNotesTouchEffect(int trackId)
+		{
+			TodoLogger.Log(0, "Hud HideLongNotesTouchEffect");
+		}
 
 		// // RVA: 0xDD0DE4 Offset: 0xDD0DE4 VA: 0xDD0DE4 Slot: 57
-		// public void ShowSlideNotesTouchEffect(int trackId) { }
+		public void ShowSlideNotesTouchEffect(int trackId)
+		{
+			TodoLogger.Log(0, "Hud ShowSlideNotesTouchEffect");
+		}
 
 		// // RVA: 0xDD0E68 Offset: 0xDD0E68 VA: 0xDD0E68 Slot: 58
-		// public void HideSlideNotesTouchEffect(int trackId) { }
+		public void HideSlideNotesTouchEffect(int trackId)
+		{
+			TodoLogger.Log(0, "Hud HideSlideNotesTouchEffect");
+		}
 
 		// // RVA: 0xDD0EEC Offset: 0xDD0EEC VA: 0xDD0EEC Slot: 59
-		// public void ShowSlideNotesTipEffect(int trackId, RNoteSlide noteSlide) { }
+		public void ShowSlideNotesTipEffect(int trackId, RNoteSlide noteSlide)
+		{
+			TodoLogger.Log(0, "Hud ShowSlideNotesTipEffect");
+		}
 
 		// // RVA: 0xDD0F78 Offset: 0xDD0F78 VA: 0xDD0F78 Slot: 60
-		// public void HideSlideNotesTipEffect(int trackId) { }
+		public void HideSlideNotesTipEffect(int trackId)
+		{
+			TodoLogger.Log(0, "Hud HideSlideNotesTipEffect");
+		}
 
 		// // RVA: 0xDD0FFC Offset: 0xDD0FFC VA: 0xDD0FFC Slot: 61
-		// public void ShowWingNotesOpenREffect(int trackId) { }
+		public void ShowWingNotesOpenREffect(int trackId)
+		{
+			TodoLogger.Log(0, "Hud ShowWingNotesOpenREffect");
+		}
 
 		// // RVA: 0xDD1080 Offset: 0xDD1080 VA: 0xDD1080 Slot: 62
-		// public void ShowWingNotesOpenLEffect(int trackId) { }
+		public void ShowWingNotesOpenLEffect(int trackId)
+		{
+			TodoLogger.Log(0, "Hud ShowWingNotesOpenLEffect");
+		}
 
 		// // RVA: 0xDD1104 Offset: 0xDD1104 VA: 0xDD1104 Slot: 63
-		// public void ShowWingNotesCloseREffect(int trackId) { }
+		public void ShowWingNotesCloseREffect(int trackId)
+		{
+			TodoLogger.Log(0, "Hud ShowWingNotesCloseREffect");
+		}
 
 		// // RVA: 0xDD1188 Offset: 0xDD1188 VA: 0xDD1188 Slot: 64
-		// public void ShowWingNotesCloseLEffect(int trackId) { }
+		public void ShowWingNotesCloseLEffect(int trackId)
+		{
+			TodoLogger.Log(0, "Hud ShowWingNotesCloseLEffect");
+		}
 
 		// // RVA: 0xDD120C Offset: 0xDD120C VA: 0xDD120C Slot: 65
-		// public void ShowNotesHitEffect(int trackId) { }
+		public void ShowNotesHitEffect(int trackId)
+		{
+			TodoLogger.Log(0, "Hud ShowNotesHitEffect");
+		}
 
 		// // RVA: 0xDD12A0 Offset: 0xDD12A0 VA: 0xDD12A0 Slot: 66
 		public void ShowResultEffect(int lineNumber, RhythmGameConsts.NoteResultEx a_result_ex)

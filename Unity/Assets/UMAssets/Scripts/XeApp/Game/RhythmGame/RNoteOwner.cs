@@ -513,7 +513,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBB150 Offset: 0xDBB150 VA: 0xDBB150
-		//public RNoteSlide GetRNoteSlide(RNoteObject startNote) { }
+		public RNoteSlide GetRNoteSlide(RNoteObject startNote)
+		{
+			slidePool.MakeUsingList(ref activeSlideList);
+			for(int i = 0; i < activeSlideList.Count; i++)
+			{
+				if (activeSlideList[i].firstRNoteObject = startNote)
+					return activeSlideList[i];
+			}
+			return null;
+		}
 
 		//// RVA: 0xDBB2AC Offset: 0xDBB2AC VA: 0xDBB2AC
 		public bool IsLongLastEvaluation(int lineNo)

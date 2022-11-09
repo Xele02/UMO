@@ -99,10 +99,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDC0204 Offset: 0xDC0204 VA: 0xDC0204
-		// public void SetTipEffect(TouchSlideTipEffect eff) { }
+		public void SetTipEffect(TouchSlideTipEffect eff)
+		{
+			tipEffect = eff;
+		}
 
 		// // RVA: 0xDC020C Offset: 0xDC020C VA: 0xDC020C
-		// public void ClearTipEffect() { }
+		public void ClearTipEffect()
+		{
+			tipEffect = null;
+		}
 
 		// // RVA: 0xDC0218 Offset: 0xDC0218 VA: 0xDC0218 Slot: 16
 		// public override void Pause() { }

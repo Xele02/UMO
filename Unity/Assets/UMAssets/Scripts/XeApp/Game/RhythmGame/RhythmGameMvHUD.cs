@@ -430,37 +430,93 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9ABA00 Offset: 0x9ABA00 VA: 0x9ABA00 Slot: 55
-		//public void ShowLongNotesTouchEffect(int trackId) { }
+		public void ShowLongNotesTouchEffect(int trackId)
+		{
+			if (!isShowNotes)
+				return;
+			m_touchEffects[trackId].touchEffect.Play(UI_rhythm_Long_IN_HashCode, 0);
+			m_touchEffects[trackId].touchEffect.Play(UI_rhythm_Long_Loop_HashCode, 0);
+		}
 
 		//// RVA: 0x9ABB20 Offset: 0x9ABB20 VA: 0x9ABB20 Slot: 56
-		//public void HideLongNotesTouchEffect(int trackId) { }
+		public void HideLongNotesTouchEffect(int trackId)
+		{
+			if (!isShowNotes)
+				return;
+			if (!m_touchEffects[trackId].touchEffect.IsSameState(UI_rhythm_Long_Loop_HashCode))
+				return;
+			m_touchEffects[trackId].touchEffect.Play(UI_rhythm_Long_OUT_HashCode, 0);
+		}
 
 		//// RVA: 0x9ABC48 Offset: 0x9ABC48 VA: 0x9ABC48 Slot: 57
-		//public void ShowSlideNotesTouchEffect(int trackId) { }
+		public void ShowSlideNotesTouchEffect(int trackId)
+		{
+			if (!isShowNotes)
+				return;
+			m_touchEffects[trackId].slideEffect.Show();
+		}
 
 		//// RVA: 0x9ABCD8 Offset: 0x9ABCD8 VA: 0x9ABCD8 Slot: 58
-		//public void HideSlideNotesTouchEffect(int trackId) { }
+		public void HideSlideNotesTouchEffect(int trackId)
+		{
+			if (!isShowNotes)
+				return;
+			m_touchEffects[trackId].slideEffect.Hide();
+		}
 
 		//// RVA: 0x9ABD68 Offset: 0x9ABD68 VA: 0x9ABD68 Slot: 59
-		//public void ShowSlideNotesTipEffect(int trackId, RNoteSlide noteSlide) { }
+		public void ShowSlideNotesTipEffect(int trackId, RNoteSlide noteSlide)
+		{
+			if (!isShowNotes)
+				return;
+			m_touchEffects[trackId].slideTipEffect.Show(noteSlide);
+		}
 
 		//// RVA: 0x9ABE00 Offset: 0x9ABE00 VA: 0x9ABE00 Slot: 60
-		//public void HideSlideNotesTipEffect(int trackId) { }
+		public void HideSlideNotesTipEffect(int trackId)
+		{
+			if (!isShowNotes)
+				return;
+			m_touchEffects[trackId].slideTipEffect.Hide();
+		}
 
 		//// RVA: 0x9ABE90 Offset: 0x9ABE90 VA: 0x9ABE90 Slot: 61
-		//public void ShowWingNotesOpenREffect(int trackId) { }
+		public void ShowWingNotesOpenREffect(int trackId)
+		{
+			if (!isShowNotes)
+				return;
+			m_touchEffects[trackId].slideEffect.ShowWingOpenR();
+		}
 
 		//// RVA: 0x9ABF20 Offset: 0x9ABF20 VA: 0x9ABF20 Slot: 62
-		//public void ShowWingNotesOpenLEffect(int trackId) { }
+		public void ShowWingNotesOpenLEffect(int trackId)
+		{
+			if (!isShowNotes)
+				return;
+			m_touchEffects[trackId].slideEffect.ShowWingOpenL();
+		}
 
 		//// RVA: 0x9ABFB0 Offset: 0x9ABFB0 VA: 0x9ABFB0 Slot: 63
-		//public void ShowWingNotesCloseREffect(int trackId) { }
+		public void ShowWingNotesCloseREffect(int trackId)
+		{
+			if (!isShowNotes)
+				return;
+			m_touchEffects[trackId].slideEffect.ShowWingCloseR();
+		}
 
 		//// RVA: 0x9AC040 Offset: 0x9AC040 VA: 0x9AC040 Slot: 64
-		//public void ShowWingNotesCloseLEffect(int trackId) { }
+		public void ShowWingNotesCloseLEffect(int trackId)
+		{
+			if (!isShowNotes)
+				return;
+			m_touchEffects[trackId].slideEffect.ShowWingCloseL();
+		}
 
 		//// RVA: 0x9AC0D0 Offset: 0x9AC0D0 VA: 0x9AC0D0 Slot: 65
-		//public void ShowNotesHitEffect(int trackId) { }
+		public void ShowNotesHitEffect(int trackId)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC0D4 Offset: 0x9AC0D4 VA: 0x9AC0D4 Slot: 66
 		public void ShowResultEffect(int lineNumber, RhythmGameConsts.NoteResultEx a_result_ex)

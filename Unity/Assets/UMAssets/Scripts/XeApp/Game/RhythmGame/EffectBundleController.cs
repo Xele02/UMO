@@ -115,7 +115,22 @@ namespace XeApp.Game.RhythmGame
 		//public bool IsSameState(string groupName) { }
 
 		//// RVA: 0xF71CEC Offset: 0xF71CEC VA: 0xF71CEC
-		//public bool IsSameState(int groupHash) { }
+		public bool IsSameState(int groupHash)
+		{
+			int idx;
+			if(m_searchDict.TryGetValue(groupHash, out idx))
+			{
+				for(int i = 0; i < m_params[idx].Animations.Length; i++)
+				{
+					if(m_params[idx].Animations[i].animator != null)
+					{
+						if (m_params[idx].Animations[i].animator.GetCurrentAnimatorStateInfo(m_params[idx].Animations[i].layerIndex).shortNameHash == m_params[idx].Animations[i].hash)
+							return true;
+					}
+				}
+			}
+			return false;
+		}
 
 		//// RVA: 0xF720A0 Offset: 0xF720A0 VA: 0xF720A0
 		//public int GetAnimatorLoopCount(int groupHash) { }

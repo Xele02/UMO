@@ -31,10 +31,26 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x15676A8 Offset: 0x15676A8 VA: 0x15676A8
-		//public void Show(RNoteSlide ns) { }
+		public void Show(RNoteSlide ns)
+		{
+			if(noteSlide == null)
+			{
+				noteSlide = ns;
+				ns.SetTipEffect(this);
+				m_animator.Play(InStateHash, -1, 1);
+			}
+		}
 
 		//// RVA: 0x15677E0 Offset: 0x15677E0 VA: 0x15677E0
-		//public void Hide() { }
+		public void Hide()
+		{
+			if(noteSlide != null)
+			{
+				noteSlide.ClearTipEffect();
+				noteSlide = null;
+				m_animator.Play(OutStateHash, -1, 1);
+			}
+		}
 
 		//// RVA: 0x1567918 Offset: 0x1567918 VA: 0x1567918
 		public void SetPosition(Vector3 pos)
