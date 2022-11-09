@@ -37,6 +37,9 @@ namespace XeApp.Game.RhythmGame.UI
 		//public void Hide() { }
 
 		//// RVA: 0x1567918 Offset: 0x1567918 VA: 0x1567918
-		//public void SetPosition(Vector3 pos) { }
+		public void SetPosition(Vector3 pos)
+		{
+			transform.position = pos;
+		}
 	}
 }

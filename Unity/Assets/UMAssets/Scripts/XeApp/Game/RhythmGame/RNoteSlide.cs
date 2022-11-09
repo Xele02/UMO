@@ -32,7 +32,14 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// RVA: 0xDBF350 Offset: 0xDBF350 VA: 0xDBF350 Slot: 15
-		protected override void UpdateVerticesPosition() { }
+		protected override void UpdateVerticesPosition()
+		{
+			makePoints(lastGapTimeTmp);
+			if(tipEffect != null)
+			{
+				tipEffect.SetPosition(transform.TransformPoint(controlPoints[0].pos));
+			}
+		}
 
 		// // RVA: 0xDBF508 Offset: 0xDBF508 VA: 0xDBF508
 		private void MakeStraightPoints(float width_adjust)
