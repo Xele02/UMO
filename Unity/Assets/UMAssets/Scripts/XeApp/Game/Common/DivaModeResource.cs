@@ -78,7 +78,7 @@ namespace XeApp.Game.Common
 
 			moviePlayer.playOnStart = false;
 			moviePlayer.target = mr;
-			moviePlayer.moviePath = path;
+			moviePlayer.moviePath = FileSystemProxy.ConvertPath(path);
 			
 			yield return null;
 
