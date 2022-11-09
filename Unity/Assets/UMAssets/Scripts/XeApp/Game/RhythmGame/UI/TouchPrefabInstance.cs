@@ -47,11 +47,13 @@ namespace XeApp.Game.RhythmGame.UI
 			go.transform.SetParent(transform, false);
 
 			go = Instantiate(slideEffectPrefab);
+			BundleShaderInfo.Instance.FixMaterialShader(go);
 			_slideEffect = go.GetComponent<TouchSlideEffect>();
 			_slideEffect.Initialize();
 			go.transform.SetParent(transform, false);
 
 			go = Instantiate(slideTipEffectPrefab);
+			BundleShaderInfo.Instance.FixMaterialShader(go);
 			_slideTipEffect = go.GetComponent<TouchSlideTipEffect>();
 			_slideTipEffect.Initialize();
 			go.transform.SetParent(transform, false);

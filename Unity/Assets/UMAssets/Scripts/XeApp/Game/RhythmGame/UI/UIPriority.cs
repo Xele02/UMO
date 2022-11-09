@@ -33,13 +33,12 @@ namespace XeApp.Game.RhythmGame.UI
 		public PrioritySet[] m_particlePrioritySets; // 0x10
 		[SerializeField]
 		public PrioritySet[] m_linePrioritySets; // 0x14
-		private readonly float[] m_zPositionTable = new float[6] { 0, 0, 0, 0, 0, 0/*D8FE3210563748CD705E471FA2B460064F7B9843 */}; // 0x18
+		private readonly float[] m_zPositionTable = new float[6] { -5, 1000, 2950, 2960, 2970, 3000 }; // 0x18
 		private const float m_sortingOrderRange = 200;
 
 		// RVA: 0x1567A14 Offset: 0x1567A14 VA: 0x1567A14
 		private void Start()
 		{
-			UnityEngine.Debug.LogError("Fix m_zPositionTable array");
 			for(int i = 0; i < m_meshPrioritySets.Length; i++)
 			{
 				if (m_meshPrioritySets[i].renderer != null)
