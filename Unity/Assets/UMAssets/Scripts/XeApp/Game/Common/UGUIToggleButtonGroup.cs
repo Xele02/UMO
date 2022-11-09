@@ -26,9 +26,10 @@ namespace XeApp.Game.Common
 		{
 			for(int i = 0; i < m_toggleButtons.Length; i++)
 			{
+				int idx = i;
 				m_toggleButtons[i].AddOnClickCallback(() => {
 					//0x1CDCF64
-					m_onSelectToggleButtonEvent.Invoke(i);
+					m_onSelectToggleButtonEvent.Invoke(idx);
 				});
 			}
 		}

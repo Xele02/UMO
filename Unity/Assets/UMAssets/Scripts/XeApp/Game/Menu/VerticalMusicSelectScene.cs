@@ -271,7 +271,7 @@ namespace XeApp.Game.Menu
 			m_difficultyButtonGroup.OnButtonClickListener = (int index) =>
 			{
 				//0xBF0380
-				TodoLogger.Log(0, "m_difficultyButtonGroup OnButtonClickListener");
+				OnClickDifficultyButton(index);
 			};
 			m_filterButton.OnClickButtonListener = () =>
 			{
@@ -1185,10 +1185,13 @@ namespace XeApp.Game.Menu
 		// private void SetListNo(int no) { }
 
 		// // RVA: 0xBEC314 Offset: 0xBEC314 VA: 0xBEC314 Slot: 57
-		//protected override void OnClickDifficultyButton(int index)
-		//{
-		//	TodoLogger.Log(0, "!!!");
-		//}
+		protected override void OnClickDifficultyButton(int index)
+		{
+			SoundManager.Instance.sePlayerBoot.Play(3);
+			m_musicSelectUISapporter.SetDiffity((Difficulty.Type)index);
+			m_musicList.ChangeDifficult(index);
+			OnChangeFilter();
+		}
 
 		// // RVA: 0xBEC918 Offset: 0xBEC918 VA: 0xBEC918
 		private void OnClickSeriesButton(int index)

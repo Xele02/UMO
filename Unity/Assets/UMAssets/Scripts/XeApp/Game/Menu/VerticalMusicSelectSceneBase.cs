@@ -301,7 +301,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: -1 Offset: -1 Slot: 57
-		// protected abstract void OnClickDifficultyButton(int index);
+		protected abstract void OnClickDifficultyButton(int index);
 
 		// // RVA: 0xAC9360 Offset: 0xAC9360 VA: 0xAC9360
 		protected void DownloadCurrentMusic()

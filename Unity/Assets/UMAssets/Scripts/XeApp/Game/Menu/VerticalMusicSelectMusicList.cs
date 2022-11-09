@@ -91,7 +91,11 @@ namespace XeApp.Game.Menu
 		// public void SetScroll(int listNo) { }
 
 		// // RVA: 0xBE1F34 Offset: 0xBE1F34 VA: 0xBE1F34
-		// public void ChangeDifficult(int diff) { }
+		public void ChangeDifficult(int diff)
+		{
+			m_difficult = diff;
+			m_musicScroll.UpdateListPosition(true);
+		}
 
 		// // RVA: 0xBE1F68 Offset: 0xBE1F68 VA: 0xBE1F68
 		public void SetMusicDataList(List<VerticalMusicDataList.MusicListData> musicList, int listNo, int diff)
