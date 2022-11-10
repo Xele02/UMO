@@ -243,8 +243,8 @@ namespace XeApp.Game
 					info.isSlide = false;
 					if (infoList[info.prevIndex].longTouch == TouchState.Continue)
 						info.isSlide = true;
-					infoList[info.prevIndex].isSlide = info.isSlide;
 				}
+				infoList[info.prevIndex].isSlide = info.isSlide;
 			}
 			else
 			{
