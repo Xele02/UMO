@@ -25,7 +25,10 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x155E828 Offset: 0x155E828 VA: 0x155E828
-		//public void Hide() { }
+		public void Hide()
+		{
+			m_renderer.enabled = false;
+		}
 
 		//// RVA: 0x155E858 Offset: 0x155E858 VA: 0x155E858
 		public void UpdateTargetPosition(Vector3 position)

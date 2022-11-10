@@ -212,7 +212,15 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AAD88 Offset: 0x9AAD88 VA: 0x9AAD88 Slot: 23
-		//public void Reset() { }
+		public void Reset()
+		{
+			IsChaseMode = false;
+			m_screenTouchArea.interactable = false;
+			m_pauseButton.IsDisable = true;
+			m_valkyrieTopUi.SetActive(false);
+			m_targetSight.Hide();
+			m_targetSightMark.gameObject.SetActive(false);
+		}
 
 		//// RVA: 0x9AAE70 Offset: 0x9AAE70 VA: 0x9AAE70 Slot: 24
 		public void PauseButtonClick()
@@ -236,7 +244,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AB0D8 Offset: 0x9AB0D8 VA: 0x9AB0D8 Slot: 21
-		//public void SetPoisonSkillEffect(int a_bit, bool a_enable) { }
+		public void SetPoisonSkillEffect(int a_bit, bool a_enable)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB0DC Offset: 0x9AB0DC VA: 0x9AB0DC Slot: 25
 		public void ChangeHpGaugeFrame(int percent)
@@ -245,7 +256,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AB0E0 Offset: 0x9AB0E0 VA: 0x9AB0E0 Slot: 26
-		//public void SetContinue() { }
+		public void SetContinue()
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB0E4 Offset: 0x9AB0E4 VA: 0x9AB0E4 Slot: 27
 		public void ChangeRankGaugeFrame(ResultScoreRank.Type rankType, float ratio)
@@ -266,10 +280,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AB0F0 Offset: 0x9AB0F0 VA: 0x9AB0F0 Slot: 30
-		//public void HideFoldWaveGauge() { }
+		public void HideFoldWaveGauge()
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB0F4 Offset: 0x9AB0F4 VA: 0x9AB0F4 Slot: 31
-		//public void UpdateCombo() { }
+		public void UpdateCombo()
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB0F8 Offset: 0x9AB0F8 VA: 0x9AB0F8 Slot: 32
 		public void SetCombo(int combo)
@@ -384,13 +404,22 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AB960 Offset: 0x9AB960 VA: 0x9AB960 Slot: 46
-		//public void EntryLiveSkillCutin(LiveSkill liveSkill, Material skillDescription, Material divaIconMaterial) { }
+		public void EntryLiveSkillCutin(LiveSkill liveSkill, Material skillDescription, Material divaIconMaterial)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB964 Offset: 0x9AB964 VA: 0x9AB964 Slot: 47
-		//public void ShowLiveSkillCutin() { }
+		public void ShowLiveSkillCutin()
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB968 Offset: 0x9AB968 VA: 0x9AB968 Slot: 48
-		//public void ShowActiveSkillCutin(string skillname, RhythmGameResource.UITextureResource textureResource) { }
+		public void ShowActiveSkillCutin(string skillname, RhythmGameResource.UITextureResource textureResource)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AB96C Offset: 0x9AB96C VA: 0x9AB96C Slot: 49
 		public void CloseSkillCutin()
@@ -536,34 +565,64 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AC360 Offset: 0x9AC360 VA: 0x9AC360 Slot: 67
-		//public void OnSkillEffect(int lineNumber, int effectType, bool isTopPriority) { }
+		public void OnSkillEffect(int lineNumber, int effectType, bool isTopPriority)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC364 Offset: 0x9AC364 VA: 0x9AC364 Slot: 68
-		//public void OffSkillEffect(int lineNumber, int effectType) { }
+		public void OffSkillEffect(int lineNumber, int effectType)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC368 Offset: 0x9AC368 VA: 0x9AC368 Slot: 69
-		//public void OffTopPrioritySkillEffect(int lineNumber, int effectType) { }
+		public void OffTopPrioritySkillEffect(int lineNumber, int effectType)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC36C Offset: 0x9AC36C VA: 0x9AC36C Slot: 70
-		//public void DrawSkillEffectEnable(int lineNumber, bool flag) { }
+		public void DrawSkillEffectEnable(int lineNumber, bool flag)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC370 Offset: 0x9AC370 VA: 0x9AC370 Slot: 71
-		//public bool IsEnableActiveSkillButton() { }
+		public bool IsEnableActiveSkillButton()
+		{
+			return false;
+		}
 
 		//// RVA: 0x9AC378 Offset: 0x9AC378 VA: 0x9AC378 Slot: 72
-		//public void DecideActiveSkillButton(SkillDuration.Type duration) { }
+		public void DecideActiveSkillButton(SkillDuration.Type duration)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC37C Offset: 0x9AC37C VA: 0x9AC37C Slot: 73
-		//public void EnableActiveSkillButton() { }
+		public void EnableActiveSkillButton()
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC380 Offset: 0x9AC380 VA: 0x9AC380 Slot: 74
-		//public void DisableActiveSkillButton() { }
+		public void DisableActiveSkillButton()
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC384 Offset: 0x9AC384 VA: 0x9AC384 Slot: 75
-		//public void EndActiveSkill() { }
+		public void EndActiveSkill()
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC388 Offset: 0x9AC388 VA: 0x9AC388 Slot: 76
-		//public void RestartActiveSkillButton() { }
+		public void RestartActiveSkillButton()
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC38C Offset: 0x9AC38C VA: 0x9AC38C Slot: 77
 		public bool IsActiveSkillButtonAcEnd()
@@ -572,7 +631,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AC394 Offset: 0x9AC394 VA: 0x9AC394 Slot: 78
-		//public bool IsActiveSkillButtonAcOn() { }
+		public bool IsActiveSkillButtonAcOn()
+		{
+			return true;
+		}
 
 		//// RVA: 0x9AB00C Offset: 0x9AB00C VA: 0x9AB00C Slot: 79
 		public void OnPauseButtonSelected(bool a_suspend)
@@ -584,7 +646,11 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AC39C Offset: 0x9AC39C VA: 0x9AC39C Slot: 80
-		//public void ClearPauseButton() { }
+		public void ClearPauseButton()
+		{
+			m_isSelectedPause = false;
+			m_pauseButton.SetOff();
+		}
 
 		//// RVA: 0x9AC3D0 Offset: 0x9AC3D0 VA: 0x9AC3D0 Slot: 81
 		public void DisablePauseButton()
@@ -606,7 +672,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AC45C Offset: 0x9AC45C VA: 0x9AC45C Slot: 84
-		//public void UpdateEnemyFrameColor(int damage, int threshold1, int threshold2) { }
+		public void UpdateEnemyFrameColor(int damage, int threshold1, int threshold2)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC460 Offset: 0x9AC460 VA: 0x9AC460 Slot: 85
 		public void UpdateEnemyStatus(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback)
@@ -622,10 +691,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AC548 Offset: 0x9AC548 VA: 0x9AC548 Slot: 86
-		//public void ChangeEnemyLife(EnemyStatus.LifeType a_type) { }
+		public void ChangeEnemyLife(EnemyStatus.LifeType a_type)
+		{
+			m_enemyStatus.SetupLifeType(a_type);
+		}
 
 		//// RVA: 0x9AC57C Offset: 0x9AC57C VA: 0x9AC57C Slot: 87
-		//public void ChangeFaildEnemyStatus() { }
+		public void ChangeFaildEnemyStatus()
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC580 Offset: 0x9AC580 VA: 0x9AC580 Slot: 88
 		public void ShowEnemyCutin()
@@ -643,10 +718,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AC698 Offset: 0x9AC698 VA: 0x9AC698 Slot: 90
-		//public void SetRivalDivaId(int divaId) { }
+		public void SetRivalDivaId(int divaId)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC69C Offset: 0x9AC69C VA: 0x9AC69C Slot: 91
-		//public void ShowBattleResult(bool isPlayerWin) { }
+		public void ShowBattleResult(bool isPlayerWin)
+		{
+			return;
+		}
 
 		//// RVA: 0x9AC6A0 Offset: 0x9AC6A0 VA: 0x9AC6A0 Slot: 92
 		public bool IsWarmupEnd()
