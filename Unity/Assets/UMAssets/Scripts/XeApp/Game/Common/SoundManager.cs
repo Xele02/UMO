@@ -18,7 +18,7 @@ namespace XeApp.Game.Common
 			GAME_BGM = 5,
 			GAME_NOTES = 6,
 		}
-		// private CriAtomExLatencyEstimator.EstimatorInfo estimatorInfo; // 0x6C
+		private CriAtomExLatencyEstimator.EstimatorInfo estimatorInfo; // 0x6C
 		public const float MAX_MARK = 20;
 		public const float MAX_VOLUME = 1;
 		public const float MAX_VOLUME_NOTES = 1.35f;
@@ -49,7 +49,7 @@ namespace XeApp.Game.Common
 		public CriAtomSource sePlayerMiniGame { get; private set; } // 0x64
 		public bool isInitialized { get; private set; } // 0x68
 		// public bool isEestimatorInitialized { get; private set; } 0x13959DC 0x13959F0
-		// public int estimatedLatencyMillisec { get; private set; } 0x13959F4 0x1395A0C
+		public int estimatedLatencyMillisec { get { return estimatorInfo.status == CriAtomExLatencyEstimator.Status.Done ? (int)estimatorInfo.estimated_latency : 0; } private set { return; } } //0x13959F4 0x1395A0C
 
 		// // RVA: 0x1395A10 Offset: 0x1395A10 VA: 0x1395A10
 		private void Awake()
@@ -68,8 +68,18 @@ namespace XeApp.Game.Common
 		{
     		UnityEngine.Debug.Log("Enter SurveyLatencyEstimator");
 			//0x1397B84
-			TodoLogger.Log(5, "SoundManager.SurveyLatencyEstimator");
-    		UnityEngine.Debug.Log("Exit SurveyLatencyEstimator");
+			CriAtomExLatencyEstimator.InitializeModule();
+			do
+			{
+				estimatorInfo = CriAtomExLatencyEstimator.GetCurrentInfo();
+				if (estimatorInfo.status == CriAtomExLatencyEstimator.Status.Done)
+					break;
+				yield return new WaitForSeconds(0.1f);
+			} while (true);
+
+			CriAtomExLatencyEstimator.FinalizeModule();
+
+			UnityEngine.Debug.Log("Exit SurveyLatencyEstimator");
 			yield break;
 		}
 

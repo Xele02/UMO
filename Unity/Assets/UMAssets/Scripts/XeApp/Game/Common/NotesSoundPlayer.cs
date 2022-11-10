@@ -28,7 +28,21 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAED6F4 Offset: 0xAED6F4 VA: 0xAED6F4
-		// public void OnJudge(int trackId, int result, bool isLongBegin, bool isLongEnd, bool isLongContinue, bool isFlick, bool isMiss) { }
+		public void OnJudge(int trackId, int result, bool isLongBegin, bool isLongEnd, bool isLongContinue, bool isFlick, bool isMiss)
+		{
+			int val = 0;
+			if (isLongContinue)
+				val |= 0x10;
+			if (isMiss)
+				val |= 8;
+			if (isFlick)
+				val |= 4;
+			val |= result << 0x10;
+			val |= trackId << 0x18;
+			val |= isLongBegin ? 1 : 0;
+			val |= isLongEnd ? 2 : 0;
+			requestBuffer.Add(val);
+		}
 
 		// // RVA: 0xAED7CC Offset: 0xAED7CC VA: 0xAED7CC
 		public void PostSetup(BgmPlayer bgmPlayer, bool isVolumeZero)
@@ -61,6 +75,9 @@ namespace XeApp.Game.Common
 		// public void StopSound() { }
 
 		// // RVA: 0xAEDB38 Offset: 0xAEDB38 VA: 0xAEDB38
-		// public static int LineIDToLineGroup(int trackLineID) { }
+		public static int LineIDToLineGroup(int trackLineID)
+		{
+			return trackLineID < 4 ? trackLineID / 2 : trackLineID & 1;
+		}
 	}
 }

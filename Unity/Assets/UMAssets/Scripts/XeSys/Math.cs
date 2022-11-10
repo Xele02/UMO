@@ -4,6 +4,65 @@ namespace XeSys
 {
 	public class Math
 	{
+		public interface ICurveEvaluator
+		{
+			// RVA: -1 Offset: -1 Slot: 0
+			Vector3 Evaluate(float t);
+		}
+
+		public class CurveBezier3 : ICurveEvaluator
+		{
+			public Vector3 p0 { get; set; } // 0x8
+			public Vector3 p1 { get; set; } // 0x14
+			public Vector3 p2 { get; set; } // 0x20
+			public Vector3 p3 { get; set; } // 0x2C
+
+			// RVA: 0x239134C Offset: 0x239134C VA: 0x239134C
+			public CurveBezier3(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3)
+			{
+				this.p0 = p0;
+				this.p1 = p1;
+				this.p2 = p2;
+				this.p3 = p3;
+			}
+
+			//// RVA: 0x23913B8 Offset: 0x23913B8 VA: 0x23913B8 Slot: 4
+			public Vector3 Evaluate(float t)
+			{
+				TodoLogger.Log(0, "CurveBezier3 Evaluate");
+				return Vector3.zero;
+			}
+
+			//// RVA: 0x23915E0 Offset: 0x23915E0 VA: 0x23915E0
+			public static void CalcCoefficient(float t, out float tA, out float tB, out float tC, out float tD)
+			{
+				t = Mathf.Clamp01(t);
+				tA = t * t * t;
+				tB = 3 * t * t * (1 - t);
+				tC = 3 * t * (1 - t) * (1 - t);
+				tD = (1 - t) * (1 - t) * (1 - t);
+			}
+
+			//// RVA: 0x23916B4 Offset: 0x23916B4 VA: 0x23916B4
+			public static float Evaluate(float t, float p0, float p1, float p2, float p3)
+			{
+				float A, B, C, D;
+				CalcCoefficient(t, out A, out B, out C, out D);
+				return A * p3 + B * p2 + C * p1 + D * p0;
+			}
+
+			//// RVA: 0x2391740 Offset: 0x2391740 VA: 0x2391740
+			public static Vector2 Evaluate(float t, Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3)
+			{
+				float A, B, C, D;
+				CalcCoefficient(t, out A, out B, out C, out D);
+				return p3 * A + p2 * B + p1 * C + p0 * D;
+			}
+
+			//// RVA: 0x2391410 Offset: 0x2391410 VA: 0x2391410
+			//public static Vector3 Evaluate(float t, Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3) { }
+		}
+
 		// // RVA: 0x238F5F4 Offset: 0x238F5F4 VA: 0x238F5F4
 		// public static bool Random100(float rate) { }
 

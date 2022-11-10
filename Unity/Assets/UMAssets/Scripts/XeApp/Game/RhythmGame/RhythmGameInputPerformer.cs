@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using XeSys;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -50,7 +51,17 @@ namespace XeApp.Game.RhythmGame
 			// RVA: 0x9A2FC0 Offset: 0x9A2FC0 VA: 0x9A2FC0
 			public InputSaver(float limitSec)
 			{
-				TodoLogger.Log(0, "InputSaver()");
+				m_limitSec = limitSec;
+				m_saveForLine = new List<bool>(6);
+				for(int i = 0; i < 6; i++)
+				{
+					m_saveForLine.Add(false);
+				}
+				m_finger = new List<FingerData>(InputManager.fingerCount);
+				for(int i = 0; i < InputManager.fingerCount; i++)
+				{
+					m_finger.Add(new FingerData());
+				}
 			}
 
 			//// RVA: 0x9A5DE8 Offset: 0x9A5DE8 VA: 0x9A5DE8
@@ -96,7 +107,22 @@ namespace XeApp.Game.RhythmGame
 			//public void ChangeLimitSec(float limitSec) { }
 
 			//// RVA: 0x9A3E6C Offset: 0x9A3E6C VA: 0x9A3E6C
-			//public void SetLineSave(int lineNo, bool isSave, bool isCheckEndTouch = True) { }
+			public void SetLineSave(int lineNo, bool isSave, bool isCheckEndTouch = true)
+			{
+				bool prevVal = m_saveForLine[lineNo];
+				m_saveForLine[lineNo] = isSave;
+				if(prevVal && isCheckEndTouch && !isSave)
+				{
+					for(int i = 0; i < m_finger.Count; i++)
+					{
+						if(m_finger[i].lineNo == lineNo && lineNo > -1 && m_finger[i].fingerId < 0)
+						{
+							onEndedTouch(lineNo, m_finger[i].lineNo_Begin, m_finger[i].index, true);
+							m_finger[i].Reset();
+						}
+					}
+				}
+			}
 
 			//// RVA: 0x9A40F8 Offset: 0x9A40F8 VA: 0x9A40F8
 			//public RhythmGameInputPerformer.FingerData SearchFinger(int fingerId) { }
@@ -114,14 +140,22 @@ namespace XeApp.Game.RhythmGame
 			// RVA: 0x9A6AA8 Offset: 0x9A6AA8 VA: 0x9A6AA8
 			public FingerData()
 			{
-				TodoLogger.Log(0, "FingerData()");
+				Reset();
 			}
 
 			//// RVA: 0x9A6B14 Offset: 0x9A6B14 VA: 0x9A6B14
 			//public void Setup(int index, int fingerId, int lineNo) { }
 
 			//// RVA: 0x9A6AE8 Offset: 0x9A6AE8 VA: 0x9A6AE8
-			//public void Reset() { }
+			public void Reset()
+			{
+				requestedTimerReset = false;
+				index = -1;
+				fingerId = -1;
+				lineNo = -1;
+				lineNo_Begin = -1;
+				timer = -1;
+			}
 
 			//// RVA: 0x9A4210 Offset: 0x9A4210 VA: 0x9A4210
 			//public bool IsActive() { }
@@ -205,6 +239,7 @@ namespace XeApp.Game.RhythmGame
 		private void Start()
 		{
 			TodoLogger.Log(0, "RhythmGameInputPerformer Start");
+			inputSaver = new InputSaver(longNoteSaveSec);
 		}
 
 		//// RVA: 0x9A3398 Offset: 0x9A3398 VA: 0x9A3398
@@ -216,12 +251,20 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9A38A4 Offset: 0x9A38A4 VA: 0x9A38A4
 		public void InitializeGame(RhythmGamePlayer a_player, RNoteOwner a_rnote_owner, IRhythmGameHUD a_hud, Camera a_ui_camera)
 		{
-			TodoLogger.Log(0, "RhythmGameInputPerformer InitializeGame");
+			refRNoteOwner = a_rnote_owner;
+			refRhytmGamePlayer = a_player;
+			RhythmGameHUD hud = a_hud as RhythmGameHUD;
+			if(hud != null)
+			{
+				TodoLogger.Log(0, "RhythmGameInputPerformer InitializeGame");
+			}
 		}
 
 		//// RVA: 0x9A3CAC Offset: 0x9A3CAC VA: 0x9A3CAC
 		private void Update()
 		{
+			if (!isEnableTouch)
+				return;
 			TodoLogger.Log(0, "RhythmGameInputPerformer Update");
 		}
 
@@ -234,7 +277,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9A4060 Offset: 0x9A4060 VA: 0x9A4060 Slot: 5
 		public override void EndTouchSave(int lineNo, bool isCheckEndTouch = true)
 		{
-			TodoLogger.Log(0, "RhythmGameInputPerformer EndTouchSave");
+			inputSaver.SetLineSave(lineNo, false, isCheckEndTouch);
 		}
 
 		//// RVA: 0x9A40A4 Offset: 0x9A40A4 VA: 0x9A40A4

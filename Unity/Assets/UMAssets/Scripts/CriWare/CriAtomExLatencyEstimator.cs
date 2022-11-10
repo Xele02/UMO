@@ -16,20 +16,29 @@ public static class CriAtomExLatencyEstimator
     }
 
 	// // RVA: 0x289B3F0 Offset: 0x289B3F0 VA: 0x289B3F0
-	// public static void InitializeModule() { }
+	public static void InitializeModule()
+	{
+		TodoLogger.Log(1000, "CriAtomExLatencyEstimator InitializeModule");
+	}
 
 	// // RVA: 0x289B4DC Offset: 0x289B4DC VA: 0x289B4DC
 	public static void FinalizeModule()
-    {
-        TodoLogger.Log(5, "CriAtomExLatencyEstimator FinalizeModule");
+	{
+        TodoLogger.Log(1000, "CriAtomExLatencyEstimator FinalizeModule");
     }
 
 	// // RVA: 0x289B5C4 Offset: 0x289B5C4 VA: 0x289B5C4
 	public static CriAtomExLatencyEstimator.EstimatorInfo GetCurrentInfo()
     {
-        TodoLogger.Log(5, "CriAtomExLatencyEstimator GetCurrentInfo");
-        return new CriAtomExLatencyEstimator.EstimatorInfo();
-    }
+#if UNITY_ANDROID
+		TodoLogger.Log(5, "CriAtomExLatencyEstimator GetCurrentInfo");
+#else
+		EstimatorInfo info = new EstimatorInfo();
+		info.status = Status.Done;
+		info.estimated_latency = 0;
+		return info;
+#endif
+	}
 
 	// // RVA: 0x289B3F8 Offset: 0x289B3F8 VA: 0x289B3F8
 	// private static extern void criAtomLatencyEstimator_Initialize_ANDROID() { }

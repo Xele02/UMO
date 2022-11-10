@@ -26,12 +26,12 @@ namespace XeApp.Game.RhythmGame
 			Diva = 2,
 		}
 
-		// private MusicVoiceChangerParam m_param; // 0x8
+		private MusicVoiceChangerParam m_param; // 0x8
 
 		// // RVA: 0x15518BC Offset: 0x15518BC VA: 0x15518BC
 		public void Initialize(MusicVoiceChangerParam a_param)
 		{
-			TodoLogger.Log(0, "Voiceplayer Initialize");
+			m_param = a_param;
 		}
 
 		// // RVA: 0x15518C4 Offset: 0x15518C4 VA: 0x15518C4

@@ -52,31 +52,31 @@ namespace XeSys
 		// // RVA: 0x1931A48 Offset: 0x1931A48 VA: 0x1931A48
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Debug FPS Awake");
+			TodoLogger.Log(100, "Debug FPS Awake");
 		}
 
 		// // RVA: 0x1931ACC Offset: 0x1931ACC VA: 0x1931ACC
 		private void Start()
 		{
-			TodoLogger.Log(0, "Debug FPS Start");
+			TodoLogger.Log(100, "Debug FPS Start");
 		}
 
 		// // RVA: 0x1931B64 Offset: 0x1931B64 VA: 0x1931B64
 		private void Update()
 		{
-			TodoLogger.Log(0, "Debug FPS Update");
+			TodoLogger.Log(100, "Debug FPS Update");
 		}
 
 		// // RVA: 0x1931C18 Offset: 0x1931C18 VA: 0x1931C18
 		public void StartMeasureAvg()
 		{
-			TodoLogger.Log(0, "StartMeasureAvg");
+			TodoLogger.Log(100, "StartMeasureAvg");
 		}
 
 		// // RVA: 0x1931C34 Offset: 0x1931C34 VA: 0x1931C34
 		public void StopMeasureAvg()
 		{
-			TodoLogger.Log(0, "Debug FPS StopMeasureAvg");
+			TodoLogger.Log(100, "Debug FPS StopMeasureAvg");
 		}
 
 		// [ConditionalAttribute] // RVA: 0x690690 Offset: 0x690690 VA: 0x690690

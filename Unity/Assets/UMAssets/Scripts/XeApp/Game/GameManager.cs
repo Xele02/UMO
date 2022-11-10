@@ -201,7 +201,7 @@ namespace XeApp.Game
 		// // RVA: 0x9888B0 Offset: 0x9888B0 VA: 0x9888B0
 		public void AddPushBackButtonHandler(GameManager.PushBackButtonHandler handler)
 		{
-			TodoLogger.Log(5, "AddPushBackButtonHandler");
+			m_pushBackButtonHandlerList.Insert(0, handler);
 		}
 
 		// // RVA: 0x99A334 Offset: 0x99A334 VA: 0x99A334

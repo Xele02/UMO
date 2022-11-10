@@ -1462,7 +1462,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				TodoLogger.Log(0, "UpdateSkill");
+				TodoLogger.Log(100, "UpdateSkill");
 			}
 		}
 
@@ -2389,11 +2389,60 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C9CC4 Offset: 0x9C9CC4 VA: 0x9C9CC4
 		private void JudgedNoteSound(RNoteObject noteObject, RhythmGameConsts.NoteResult result)
 		{
-			TodoLogger.Log(0, "JudgedNoteSound");
+			bool isLongBegin = true;
+			if (noteObject.rNote.noteInfo.swipe != MusicScoreData.TouchState.Start)
+			{
+				isLongBegin = noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.Start;
+			}
+			bool isLongEnd = true;
+			if (noteObject.rNote.noteInfo.swipe != MusicScoreData.TouchState.End)
+			{
+				isLongEnd = noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.End;
+			}
+			if(NotesSoundPlayer.isNewNoteSoundEnable)
+			{
+				notesSoundPlayer.OnJudge(noteObject.rNote.noteInfo.trackID, (int)result, isLongBegin, isLongEnd, noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.Continue, noteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.None, result == RhythmGameConsts.NoteResult.Miss);
+				return;
+			}
+			if (noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.Continue)
+				isLongBegin = true;
+			if(result != RhythmGameConsts.NoteResult.Miss && isLongBegin)
+			{
+				if(loopSEPlayback[NotesSoundPlayer.LineIDToLineGroup(noteObject.rNote.noteInfo.trackID)].GetStatus() != CriAtomExPlayback.Status.Removed)
+				{
+					loopSEPlayback[NotesSoundPlayer.LineIDToLineGroup(noteObject.rNote.noteInfo.trackID)].Stop();
+				}
+				loopSEPlayback[NotesSoundPlayer.LineIDToLineGroup(noteObject.rNote.noteInfo.trackID)] = PlayNotesSE(NoteSEType.LongLoop);
+				loopSEPlayback[NotesSoundPlayer.LineIDToLineGroup(noteObject.rNote.noteInfo.trackID)].Pause(bgmPlayer.source.IsPaused());
+			}
+			if(result == RhythmGameConsts.NoteResult.Miss || ((int)noteObject.rNote.noteInfo.longTouch ^ 3) == 0 || isLongEnd)
+			{
+				loopSEPlayback[NotesSoundPlayer.LineIDToLineGroup(noteObject.rNote.noteInfo.trackID)].Stop();
+			}
+			PlayNoteSEByResult(result, noteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.None);
 		}
 
 		// // RVA: 0x9CA658 Offset: 0x9CA658 VA: 0x9CA658
-		// private void PlayNoteSEByResult(RhythmGameConsts.NoteResult result, bool isFlick) { }
+		private void PlayNoteSEByResult(RhythmGameConsts.NoteResult result, bool isFlick)
+		{
+			switch(result)
+			{
+				case RhythmGameConsts.NoteResult.Bad:
+					PlayNotesSE(NoteSEType.Bad);
+					break;
+				case RhythmGameConsts.NoteResult.Good:
+					PlayNotesSE(NoteSEType.Good);
+					break;
+				case RhythmGameConsts.NoteResult.Great:
+					PlayNotesSE(isFlick ? NoteSEType.FlickGreat : NoteSEType.Great);
+					break;
+				case RhythmGameConsts.NoteResult.Perfect:
+					PlayNotesSE(isFlick ? NoteSEType.FlickPerfect : NoteSEType.Perfect);
+					break;
+				default:
+					break;
+			}
+		}
 
 		// // RVA: 0x9C6474 Offset: 0x9C6474 VA: 0x9C6474
 		private CriAtomExPlayback PlayNotesSE(NoteSEType type)
@@ -2601,8 +2650,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9B2A88 Offset: 0x9B2A88 VA: 0x9B2A88
 		public int IncludeDeviceLatency(int rawMillisec)
 		{
-			TodoLogger.Log(0, "IncludeDeviceLatency");
-			return rawMillisec;
+			return rawMillisec - SoundManager.Instance.estimatedLatencyMillisec;
 		}
 
 		// // RVA: 0x9B2A7C Offset: 0x9B2A7C VA: 0x9B2A7C

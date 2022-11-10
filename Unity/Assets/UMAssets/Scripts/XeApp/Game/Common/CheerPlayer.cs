@@ -10,7 +10,10 @@ namespace XeApp.Game.Common
 			// public void Play(string a_name) { }
 
 			// // RVA: 0xE65924 Offset: 0xE65924 VA: 0xE65924
-			// public void Stop() { }
+			public void Stop()
+			{
+				StopCue();
+			}
 
 			// // RVA: 0xE65B8C Offset: 0xE65B8C VA: 0xE65B8C
 			// public void ChangeVolume(float sec, float targetVol, Action onEnd) { }
@@ -60,13 +63,27 @@ namespace XeApp.Game.Common
 		// public void Stop(int a_index) { }
 
 		// // RVA: 0xE6592C Offset: 0xE6592C VA: 0xE6592C
-		// public void Stop() { }
+		public void Stop()
+		{
+			if (!m_create)
+				return;
+			for(int i = 0; i < m_player.Length; i++)
+			{
+				m_player[i].Stop();
+			}
+		}
 
 		// // RVA: 0xE659AC Offset: 0xE659AC VA: 0xE659AC
 		// public void Pause() { }
 
 		// // RVA: 0xE65A4C Offset: 0xE65A4C VA: 0xE65A4C
-		// public void Resume() { }
+		public void Resume()
+		{
+			for (int i = 0; i < m_player.Length; i++)
+			{
+				m_player[i].source.Pause(false);
+			}
+		}
 
 		// // RVA: 0xE65AEC Offset: 0xE65AEC VA: 0xE65AEC
 		// public void ChangeVolume(float sec, float targetVol) { }

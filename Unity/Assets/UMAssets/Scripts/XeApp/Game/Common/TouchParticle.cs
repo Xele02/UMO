@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -33,17 +34,33 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CCFAD4 Offset: 0x1CCFAD4 VA: 0x1CCFAD4
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			m_particle_press.Stop();
+			m_transform_press = m_particle_press.GetComponent<Transform>();
+			if (m_particle_pool != null)
+				m_particle_pool.Dispose();
+			m_particle_pool = new TouchParticlePool();
+			m_particle_pool.Create("ParticleObject_", gameObject, m_particle_object, 5, false);
+			m_updater = this.UpdateIdle;
+			m_patricles = GetComponentsInChildren<ParticleSystem>(true);
 		}
 
 		// // RVA: 0x1CCFCE0 Offset: 0x1CCFCE0 VA: 0x1CCFCE0
 		private void Update()
 		{
-			TodoLogger.Log(5, "TouchParticle Update");
+			m_updater();
 		}
 
 		// // RVA: 0x1CCFD0C Offset: 0x1CCFD0C VA: 0x1CCFD0C
-		// private void UpdateIdle() { }
+		private void UpdateIdle()
+		{
+			if(!m_is_touch)
+			{
+				if(!InputManager.Instance.GetCurrentTouchInfo(0).isIllegal)
+				{
+					TodoLogger.Log(0, "Touch particle UpdateIdle");
+				}
+			}
+		}
 
 		// // RVA: 0x1CD02A8 Offset: 0x1CD02A8 VA: 0x1CD02A8
 		// private void UpdateEnterParticlePress() { }

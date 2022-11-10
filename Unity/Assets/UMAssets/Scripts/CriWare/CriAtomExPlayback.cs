@@ -89,13 +89,19 @@ namespace CriWare
 		// public void SetNextBlockIndex(int index) { }
 
 		// // RVA: 0x81E4AC Offset: 0x81E4AC VA: 0x81E4AC
-		// public void Stop() { }
+		public void Stop()
+		{
+			Stop(false);
+		}
 
 		// // RVA: 0x81E4B4 Offset: 0x81E4B4 VA: 0x81E4B4
 		// public void StopWithoutReleaseTime() { }
 
 		// // RVA: 0x81E4BC Offset: 0x81E4BC VA: 0x81E4BC
-		// public void Pause(bool sw) { }
+		public void Pause(bool sw)
+		{
+			TodoLogger.Log(0, "Pause");
+		}
 
 		// // RVA: 0x28A1AE0 Offset: 0x28A1AE0 VA: 0x28A1AE0
 		
