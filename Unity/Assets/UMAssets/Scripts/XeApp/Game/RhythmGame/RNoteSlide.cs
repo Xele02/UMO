@@ -34,7 +34,7 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xDBF350 Offset: 0xDBF350 VA: 0xDBF350 Slot: 15
 		protected override void UpdateVerticesPosition()
 		{
-			makePoints(lastGapTimeTmp);
+			makePoints(width);
 			if(tipEffect != null)
 			{
 				tipEffect.SetPosition(transform.TransformPoint(controlPoints[0].pos));
