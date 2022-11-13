@@ -409,6 +409,7 @@ public class AOJGDNFAIJL_PrismData
 				int divaId = AHHJLDLAPAN_divaId;
 				if (divaId < 1)
 					divaId = ICAJJLHPMDF_DefaultDivaId;
+                UnityEngine.Debug.Log("Select diva "+divaId);
 				bool found = false;
 				if(NAENFAFGMEP_IsMultiDiva)
 				{
@@ -466,6 +467,7 @@ public class AOJGDNFAIJL_PrismData
 		{
 			if (IOPHIHFOOEP_SlotIndex > 4)
 				return;
+            UnityEngine.Debug.Log("Select costume "+JPIDIENBGKH_CostumeId+" "+HEHKNMCDBJJ_ColorId);
 			LGPBDFHDMNA_SelectedCostumeIds[IOPHIHFOOEP_SlotIndex] = JPIDIENBGKH_CostumeId;
 			DJCCKIAJFGH_SelectedCostumeColorIds[IOPHIHFOOEP_SlotIndex] = HEHKNMCDBJJ_ColorId;
 			DLPIKHDNIIE_PrismCostumeIds[IOPHIHFOOEP_SlotIndex] = JPIDIENBGKH_CostumeId;
@@ -509,6 +511,7 @@ public class AOJGDNFAIJL_PrismData
 				return false;
 			AGBLOHKHHAB_SelectedValkyrieId = DKNAIAKHHDC_Invalid;
 			FBAGIDFLHHI_PrismValkyrieId = AOPLBEPHLID_DefaultValkyrieId;
+            UnityEngine.Debug.Log("Select valk "+FBAGIDFLHHI_PrismValkyrieId);
 			if (OIPCCBHIKIA > 0)
 			{
 				AGBLOHKHHAB_SelectedValkyrieId = MDNHCIKGEAE_ValkyrieList[OIPCCBHIKIA].PPFNGGCBJKC_Id;

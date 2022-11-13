@@ -50,7 +50,12 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAF7040 Offset: 0xAF7040 VA: 0xAF7040
 		public void Play(VoiceCategory categoryType, int voiceId)
 		{
-
+			StopCue();
+			if(!m_enable)
+				return;
+			StringBuilder str = new StringBuilder(32);
+			str.AppendFormat("{0}_{1:D3}", categoryPrefix[(int)categoryType], voiceId);
+			PlayCue(str.ToString());
 		}
 
 		// // RVA: 0xAF7200 Offset: 0xAF7200 VA: 0xAF7200

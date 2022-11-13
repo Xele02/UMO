@@ -114,10 +114,25 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CE0854 Offset: 0x1CE0854 VA: 0x1CE0854
-		//public void Ev_AwakeEffectEmitStart(string name) { }
+		public void Ev_AwakeEffectEmitStart(string name)
+		{
+			if(onAwakeEffectStart == null)
+				return;
+			if(onAwakeEffectStart(name))
+			{
+				Ev_EffectEmitStart(name);
+			}
+		}
 
 		//// RVA: 0x1CE10E4 Offset: 0x1CE10E4 VA: 0x1CE10E4
-		//public void Ev_AwakeEffectEmitStop(string name) { }
+		public void Ev_AwakeEffectEmitStop(string name)
+		{
+			Ev_EffectEmitStop(name);
+			if(onAwakeEffectStop != null)
+			{
+				onAwakeEffectStop(name);
+			}
+		}
 
 		//// RVA: 0x1CE195C Offset: 0x1CE195C VA: 0x1CE195C
 		//public void Ev_AwakeEffectDisable(string name) { }

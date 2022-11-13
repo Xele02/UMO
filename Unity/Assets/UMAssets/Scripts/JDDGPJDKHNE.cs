@@ -157,7 +157,7 @@ public class JDDGPJDKHNE
 							PIBMLNOFHHG = PIBMLNOFHHG + 1;
 							if(PIBMLNOFHHG < 30)
 								return;
-							TodoLogger.Log(5, "Check test "+ Utility.GetCurrentUnixTime() + " -  "+ ELFLFGCFPIP+" < 3");
+							TodoLogger.Log(100, "Check test "+ Utility.GetCurrentUnixTime() + " -  "+ ELFLFGCFPIP+" < 3");
 							if(Utility.GetCurrentUnixTime() - ELFLFGCFPIP < 3)
 							{
 								return;

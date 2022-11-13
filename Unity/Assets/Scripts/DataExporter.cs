@@ -174,6 +174,8 @@ class DataExporter
 				Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismCostumeModelId + " - " + Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismCostumeColorId + 
 				" Position : "+Database.Instance.gameSetup.teamInfo.danceDivaList[i].positionId+"\n";
 		}
+		txt += "Valkyrie : "+Database.Instance.gameSetup.teamInfo.prismValkyrieId+"\n";
+		txt += "Difficulty : "+Database.Instance.gameSetup.musicInfo.difficultyType+", Line6 : "+Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 		GUIUtility.systemCopyBuffer = txt;
 	}
 

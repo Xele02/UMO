@@ -74,7 +74,7 @@ namespace XeApp.Game.Common
 		// public static string BundleNameFormat { get; } 0xD2B9D0
 		public GameObject prefab { get; private set; } // 0xC
 		public RuntimeAnimatorController animatorController { get; private set; } // 0x10
-		// public Dictionary<int, Material> materialAwakeHigh { get; private set; } 0xD2BA3C 0xD2BA44
+		public Dictionary<int, Material> materialAwakeHigh { get {return m_materialAwakeHigh; } private set { m_materialAwakeHigh = value; } } //0xD2BA3C 0xD2BA44
 		// public Dictionary<int, Material> materialAwakeLow { get; private set; } 0xD2BA4C 0xD2BA54
 		public bool isLoadedPrefab { get; private set; } // 0x58
 		public bool isAllLoaded { get { return isLoadedPrefab; } } //0xD2BA6C
@@ -203,7 +203,7 @@ namespace XeApp.Game.Common
 			AnimationClip res = null;
 			if (a_motion_sub_id >= 1)
 			{
-				a_sb.SetFormat("val_{0:D4}_{1:D4}{2}", a_model_id, a_motion_sub_id);
+				a_sb.SetFormat("val_{0:D4}_{1:D4}{2}", a_model_id, a_motion_sub_id, a_str1);
 				res = a_op.GetAsset<AnimationClip>(a_sb.ToString());
 			}
 			if(res == null)

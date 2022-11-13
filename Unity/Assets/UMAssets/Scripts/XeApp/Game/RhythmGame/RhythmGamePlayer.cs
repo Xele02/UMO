@@ -1757,7 +1757,10 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C1C84 Offset: 0x9C1C84 VA: 0x9C1C84
 		private void ShowTutorialActiveSkillGuide()
 		{
-			TodoLogger.Log(0, "ShowTutorialActiveSkillGuide");
+			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+			{
+				TodoLogger.Log(0, "ShowTutorialActiveSkillGuide");
+			}
 		}
 
 		// // RVA: 0x9C1D84 Offset: 0x9C1D84 VA: 0x9C1D84

@@ -68,12 +68,20 @@ namespace XeApp.Game.Common
 		// public void RequestChangeCueSheetForLiveStartMulti(int cuesheet_id, UnityAction onChangeCallback) { }
 
 		// // RVA: 0x1C0A048 Offset: 0x1C0A048 VA: 0x1C0A048
-		// public static string MakeCueName(DivaVoicePlayer.VoiceCategory categoryType, int voiceId) { }
+		public static string MakeCueName(DivaVoicePlayer.VoiceCategory categoryType, int voiceId)
+		{
+			StringBuilder str = new StringBuilder(32);
+			str.AppendFormat("{0}_{1:D3}", categoryPrefix[(int)categoryType], voiceId);
+			return str.ToString();
+		}
 
 		// // RVA: 0x1C0A1DC Offset: 0x1C0A1DC VA: 0x1C0A1DC
 		public void Play(VoiceCategory categoryType, int voiceId)
 		{
-			TodoLogger.Log(0, "TODO");
+			StopCue();
+			if(!m_enable)
+				return;
+			PlayCue(MakeCueName(categoryType,voiceId));
 		}
 
 		// // RVA: 0x1C0A298 Offset: 0x1C0A298 VA: 0x1C0A298

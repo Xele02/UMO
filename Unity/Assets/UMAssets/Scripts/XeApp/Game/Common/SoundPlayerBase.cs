@@ -43,7 +43,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1397D64 Offset: 0x1397D64 VA: 0x1397D64 Slot: 6
-		protected virtual void OnAwake() { }
+		protected virtual void OnAwake()
+		{
+			source = gameObject.AddComponent<CriAtomSource>();
+		}
 
 		// // RVA: 0x138F894 Offset: 0x138F894 VA: 0x138F894
 		public bool RequestChangeCueSheet(string cueSheetName, UnityAction onEndCallback)

@@ -825,8 +825,9 @@ namespace XeApp.Game.Menu
 			var operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(MusicDirectionParamBase));
 			yield return operation;
 
-			Database.Instance.gameSetup.teamInfo.prismValkyrieId = 1;
-			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freemusicNum + 1, 0/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, false, false, "", 0, 0, -1, 0, 0, numDiva);
+			Database.Instance.gameSetup.teamInfo.valkyrieId = 0;
+			Database.Instance.gameSetup.teamInfo.prismValkyrieId = 0;
+			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freemusicNum + 1, (Difficulty.Type) UnityEngine.Random.Range(0, (int)Difficulty.Type.Num)/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, true, UnityEngine.Random.Range(0, 2) != 0, "", 0, 0, -1, 0, 0, numDiva);
 			GameSetupData.TeamInfo team = Database.Instance.gameSetup.teamInfo;
 			for(int i = 0; i < 5; i++)
 			{
@@ -963,9 +964,34 @@ namespace XeApp.Game.Menu
 				team.danceDivaList[i].prismCostumeModelId = team.danceDivaList[i].costumeModelId;
 				team.danceDivaList[i].prismCostumeColorId = team.danceDivaList[i].costumeColorId;
 			}
+			if(team.prismValkyrieId == 0)
+			{
+				do
+				{
+					team.prismValkyrieId = UnityEngine.Random.Range(0, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList.Count) + 1;
+				} while(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.PILGJJCABME_IsValkyrieAvaiable(team.prismValkyrieId));
+				UnityEngine.Debug.Log("Fill with Valkyrie "+team.prismValkyrieId);
+			}
+			team.valkyrieId = team.prismValkyrieId;
+
+			Database.Instance.gameSetup.mvInfo.isShowNotes = true;
+			Database.Instance.gameSetup.mvInfo.isModeDiva = true;
+			Database.Instance.gameSetup.mvInfo.isModeValkyrie = true;
+			Database.Instance.gameSetup.ForcePrismSetting();
 
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), true);
 
+			StatusData data = new StatusData();
+			data.fold = 900;
+			data.life = 500;
+			data.soul = 30000;
+			data.vocal = 15000;
+			data.charm = 5000;
+			data.support = 900;
+			Database.Instance.gameSetup.teamInfo.teamStatus = new StatusData();
+			Database.Instance.gameSetup.teamInfo.teamStatus.Copy(data);
+
+			TodoLogger.MinLog = 99;
 			// setup and launch
 			MenuScene.Instance.GotoRhythmGame(false, 0, false);
 

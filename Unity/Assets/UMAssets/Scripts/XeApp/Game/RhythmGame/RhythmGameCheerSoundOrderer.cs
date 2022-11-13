@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
@@ -127,16 +128,46 @@ namespace XeApp.Game.RhythmGame
 			public int current { get; set; } // 0xC
 
 			//// RVA: 0xDC1CC8 Offset: 0xDC1CC8 VA: 0xDC1CC8
-			//public void .ctor(List<MusicScoreData.InputNoteInfo> a_list) { }
+			public AccessorScoreDataInputNote(List<MusicScoreData.InputNoteInfo> a_list)
+			{
+				m_list = a_list;
+			}
 
 			//// RVA: 0xDC20A0 Offset: 0xDC20A0 VA: 0xDC20A0
-			//public bool IsEnd() { }
+			public bool IsEnd()
+			{
+				return m_list.Count <= current;
+			}
 
 			//// RVA: 0xDC1CF0 Offset: 0xDC1CF0 VA: 0xDC1CF0
-			//public MusicScoreData.InputNoteInfo GetAdd() { }
+			public MusicScoreData.InputNoteInfo GetAdd()
+			{
+				if(IsEnd())
+					return null;
+				return m_list[current++];
+			}
 
 			//// RVA: 0xDC1D98 Offset: 0xDC1D98 VA: 0xDC1D98
-			//public MusicScoreData.InputNoteInfo SearchLongEnd(MusicScoreData.InputNoteInfo t_input_st, int t_st) { }
+			public MusicScoreData.InputNoteInfo SearchLongEnd(MusicScoreData.InputNoteInfo t_input_st, int t_st)
+			{
+				for(int i = t_st; i < m_list.Count; i++)
+				{
+					if(m_list[i].longTouch == MusicScoreData.TouchState.End)
+					{
+						if(m_list[i].trackID == t_input_st.trackID)
+						{
+							if(t_input_st.nextIndex == m_list[i].thisIndex)
+							{
+								if(t_input_st.thisIndex == m_list[i].prevIndex)
+								{
+									return m_list[i];
+								}
+							}
+						}
+					}
+				}
+				return null;
+			}
 		}
 
 
@@ -155,7 +186,38 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDC18EC Offset: 0xDC18EC VA: 0xDC18EC
 		public void Initialize(MusicScoreData a_score_data)
 		{
-			TodoLogger.Log(0, "RhythmGameCheerSoundOrderer Initialize");
+			if(a_score_data == null)
+				return;
+			m_socre_data = a_score_data;
+			m_list_loop = new List<EventLoop>();
+			m_list_trigger = new List<EventTrigger>();
+			AccessorScoreDataInputNote a = new AccessorScoreDataInputNote(m_socre_data.inputNoteTrack);
+			a.current = 0;
+			while(!a.IsEnd())
+			{
+				MusicScoreData.InputNoteInfo info = a.GetAdd();
+				if(info.trackID >= 0)
+				{
+					if(info.longTouch == MusicScoreData.TouchState.None)
+					{
+						if(info.sync == MusicScoreData.TouchState.None)
+						{
+							if(info.flick == MusicScoreData.FlickType.None)
+							{
+								m_list_trigger.Add(new EventTrigger(info, this.OnTrigger));
+							}
+						}
+					}
+					if(info.longTouch != MusicScoreData.TouchState.Start)
+					{
+						MusicScoreData.InputNoteInfo infoEnd = a.SearchLongEnd(info, a.current);
+						if(infoEnd != null)
+						{
+							m_list_loop.Add(new EventLoop(info, infoEnd, this.OnLoop));
+						}
+					}
+				}
+			}
 		}
 
 		//// RVA: 0xDC212C Offset: 0xDC212C VA: 0xDC212C
@@ -175,10 +237,37 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDC23E0 Offset: 0xDC23E0 VA: 0xDC23E0
-		//private void OnTrigger(RhythmGameCheerSoundOrderer.EventTrigger a_event) { }
+		private void OnTrigger(RhythmGameCheerSoundOrderer.EventTrigger a_event)
+		{
+			if(a_event.m_info.trackID == 3)
+			{
+				SoundManager.Instance.sePlayerCheer.ChangeVolume(0, Mathf.Clamp(a_event.m_info.value / 100.0f, 0.5f, 0));
+			}
+			else
+			{
+				SoundManager.Instance.sePlayerCheer.Play(a_event.m_info.trackID, a_event.m_info.value);
+			}
+		}
 
 		//// RVA: 0xDC25D8 Offset: 0xDC25D8 VA: 0xDC25D8
-		//private void OnLoop(bool a_enable, RhythmGameCheerSoundOrderer.EventLoop a_event) { }
+		private void OnLoop(bool a_enable, RhythmGameCheerSoundOrderer.EventLoop a_event)
+		{
+			if(a_event.m_st.trackID == 3)
+			{
+				SoundManager.Instance.sePlayerCheer.ChangeVolume(0, Mathf.Clamp(a_event.m_st.value / 100.0f, 0.5f, 0));
+			}
+			else
+			{
+				if(!a_enable)
+				{
+					SoundManager.Instance.sePlayerCheer.Stop();
+				}
+				else
+				{
+					SoundManager.Instance.sePlayerCheer.Play(a_event.m_st.trackID, a_event.m_st.value);
+				}
+			}
+		}
 
 		//// RVA: 0xDC2804 Offset: 0xDC2804 VA: 0xDC2804
 		//public void Pause() { }

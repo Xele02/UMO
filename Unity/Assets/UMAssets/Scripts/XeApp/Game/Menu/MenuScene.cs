@@ -334,7 +334,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB309EC Offset: 0xB309EC VA: 0xB309EC
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			GameManager.Instance.RemovePushBackButtonHandler(this.OnBackButton);
+			m_musicPopupWindowControl.Release();
+			m_helpPopupWindowControl.Release();
+			MenuScene.Instance = null;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C78AC Offset: 0x6C78AC VA: 0x6C78AC

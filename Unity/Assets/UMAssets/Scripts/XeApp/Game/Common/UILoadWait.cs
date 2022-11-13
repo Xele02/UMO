@@ -37,16 +37,19 @@ namespace XeApp.Game.Common
 			gameObject.SetActive(false);
 		}
 
-		// // RVA: 0x1CDEB08 Offset: 0x1CDEB08 VA: 0x1CDEB08
+		// // RVA: g Offset: 0x1CDEB08 VA: 0x1CDEB08
 		public void Show()
 		{
-			TodoLogger.Log(0, "TODO");
+			if(gameObject.activeSelf)
+				return;
+			gameObject.SetActive(true);
+			m_anim.StartChildrenAnimLoop("logo_bot", "loen_bot");
 		}
 
 		// // RVA: 0x1CDEBF8 Offset: 0x1CDEBF8 VA: 0x1CDEBF8
 		public void Hide()
 		{
-			TodoLogger.Log(0, "TODO");
+			gameObject.SetActive(false);
 		}
 	}
 }

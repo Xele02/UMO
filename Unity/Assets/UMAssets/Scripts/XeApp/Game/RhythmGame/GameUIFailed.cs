@@ -23,13 +23,38 @@ namespace XeApp.Game.RhythmGame
 			public Action m_cb_playvoice_game_failed; // 0x14
 
 			//// RVA: 0x7FBC44 Offset: 0x7FBC44 VA: 0x7FBC44
-			//public void .ctor(ViewBase view, string labelName, int seNo, DivaVoicePlayer.VoiceCategory voiceNo) { }
+			public SePlayInfo(ViewBase view, string labelName, int seNo, DivaVoicePlayer.VoiceCategory voiceNo)
+			{
+				this.view = view;
+				frame = view.FrameAnimation.SearchLabelFrame(labelName);
+				this.seNo = seNo;
+				this.voiceNo = voiceNo;
+				isPlayed = false;
+				m_cb_playvoice_game_failed = null;
+			}
 
 			//// RVA: 0x7FBC68 Offset: 0x7FBC68 VA: 0x7FBC68
 			//public void Reset() { }
 
 			//// RVA: 0x7FBC74 Offset: 0x7FBC74 VA: 0x7FBC74
-			//public void Update() { }
+			public void Update()
+			{
+				if(isPlayed)
+					return;
+				if(frame <= view.FrameAnimation.FrameCount)
+				{
+					if(seNo > -1)
+					{
+						SoundManager.Instance.sePlayerGame.Play(seNo);
+					}
+					if(voiceNo != DivaVoicePlayer.VoiceCategory.None)
+					{
+						if(m_cb_playvoice_game_failed != null)
+							m_cb_playvoice_game_failed();
+					}
+					isPlayed = true;
+				}
+			}
 		}
 
 		private AbsoluteLayout m_root; // 0x14
@@ -37,9 +62,9 @@ namespace XeApp.Game.RhythmGame
 		private GameUIFailed.SePlayInfo failedSeInfo; // 0x1C
 		private GameUIFailed.SePlayInfo[] retrySeInfo; // 0x34
 		//[CompilerGeneratedAttribute] // RVA: 0x68EB58 Offset: 0x68EB58 VA: 0x68EB58
-		//private Action failed_completed_event; // 0x38
+		private Action failed_completed_event; // 0x38
 		//[CompilerGeneratedAttribute] // RVA: 0x68EB68 Offset: 0x68EB68 VA: 0x68EB68
-		//private Action retry_completed_event; // 0x3C
+		private Action retry_completed_event; // 0x3C
 
 		//// RVA: 0xF753CC Offset: 0xF753CC VA: 0xF753CC
 		private void Start()
@@ -50,14 +75,44 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xF753D0 Offset: 0xF753D0 VA: 0xF753D0
 		private void Update()
 		{
-			TodoLogger.Log(0, "GameUIFailed Update");
+			if(m_anim == ANIM_TABLE.RETRY)
+			{
+				if(!m_root.IsPlayingAll())
+				{
+					if(retry_completed_event != null)
+						retry_completed_event();
+					gameObject.SetActive(false);
+					m_anim = ANIM_TABLE.NONE;
+				}
+				for(int i = 0; i < retrySeInfo.Length; i++)
+				{
+					retrySeInfo[i].Update();
+				}
+				return;
+			}
+			if(m_anim != ANIM_TABLE.FAILED)
+				return;
+			if(!m_root.IsPlayingAll())
+			{
+				if(failed_completed_event != null)
+					failed_completed_event();
+				m_anim = ANIM_TABLE.NONE;
+			}
+			failedSeInfo.Update();
 		}
 
 		//// RVA: 0xF7561C Offset: 0xF7561C VA: 0xF7561C Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.Log(0, "GameUIFailed InitializeFromLayout");
-			return base.InitializeFromLayout(layout, uvMan);
+			base.InitializeFromLayout(layout, uvMan);
+			m_root = layout.FindViewByExId("root_failed_failed") as AbsoluteLayout;
+			Loaded();
+			failedSeInfo = new SePlayInfo(m_root.GetView(0), "se_failed", 3, DivaVoicePlayer.VoiceCategory.GameFailed);
+			retrySeInfo = new SePlayInfo[3];
+			retrySeInfo[0] = new SePlayInfo(m_root.GetView(0), "se_retry3", 4, DivaVoicePlayer.VoiceCategory.None);
+			retrySeInfo[1] = new SePlayInfo(m_root.GetView(0), "se_retry2", 4, DivaVoicePlayer.VoiceCategory.None);
+			retrySeInfo[2] = new SePlayInfo(m_root.GetView(0), "se_retry1", 4, DivaVoicePlayer.VoiceCategory.None);
+			return true;
 		}
 
 		//// RVA: 0xF759B0 Offset: 0xF759B0 VA: 0xF759B0
