@@ -60,6 +60,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC0BB0 Offset: 0xDC0BB0 VA: 0xDC0BB0 Slot: 11
 		public override void Free()
 		{
+			base.Free();
 			mesh.Clear();
 			gameObject.SetActive(false);
 		}
