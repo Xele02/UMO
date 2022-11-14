@@ -195,30 +195,50 @@ namespace ExternLib
 				UnityEngine.Debug.Log("A " + audioStream.HcaInfo.SamplingRate);
 				UnityEngine.Debug.Log("A " + isStreaming);
 			}
-			AudioClip clip = AudioClip.Create(player.cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int)audioStream.HcaInfo.SamplingRate, isStreaming, (float[] data) => {
-				if(debug)
-					UnityEngine.Debug.Log("Asked new data ("+data.Length+"), cur pos = "+/*curPos+*/" stream pos = "+audioStream.Position);
-                int numLeft = data.Length * 2;
-                byte[] readData = new byte[data.Length * 2];
-                int read = 1;
-                int offset = 0;
-                while(read > 0 && numLeft > 0)
-                {
-                    read = audioStream.Read(readData, 0, numLeft);
-					if(debug)
-						UnityEngine.Debug.Log("Read "+read);
-                    for(int i = 0; i < read; i+=2)
-                    {
-                        data[offset] = bytesToFloat(readData[i], readData[i + 1]);
-                        offset++;
-                    }
-                    numLeft -= read;
-                }
-                //curPos += data.Length;
-            }, (int newPos) =>
+            byte[] readData = null;
+            AudioClip clip = null;
+            //if(isStreaming)
             {
-                audioStream.Seek(newPos * 2, SeekOrigin.Begin);
-            });
+                clip = AudioClip.Create(player.cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int)audioStream.HcaInfo.SamplingRate, isStreaming, (float[] data) => {
+                    if(debug)
+                        UnityEngine.Debug.Log("Asked new data ("+data.Length+"), cur pos = "+/*curPos+*/" stream pos = "+audioStream.Position);
+                    int numLeft = data.Length * 2;
+                    if(readData == null || readData.Length < data.Length * 2)
+                    {
+                        readData = new byte[data.Length * 2];
+                    }
+                    int read = 1;
+                    int offset = 0;
+                    while(read > 0 && numLeft > 0)
+                    {
+                        read = audioStream.Read(readData, 0, numLeft);
+                        if(debug)
+                            UnityEngine.Debug.Log("Read "+read);
+                        for(int i = 0; i < read; i+=2)
+                        {
+                            data[offset] = bytesToFloat(readData[i], readData[i + 1]);
+                            offset++;
+                        }
+                        numLeft -= read;
+                    }
+                    //curPos += data.Length;
+                }, (int newPos) =>
+                {
+                    audioStream.Seek(newPos * 2, SeekOrigin.Begin);
+                });
+            }
+            /*else
+            {
+                clip = AudioClip.Create(player.cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int) audioStream.HcaInfo.SamplingRate, false);
+                float[] samples = new float[clip.samples * clip.channels];
+                byte[] read = new byte[2];
+                for(int i = 0; i < samples.Length; i++)
+                {
+                    audioStream.Read(read, 0, 2);
+                    samples[i] = bytesToFloat(read[0], read[1]);
+                }
+                clip.SetData(samples, 0);
+            }*/
             source.clip = clip;
 			player.status = CriAtomExPlayer.Status.Stop;
             UnityEngine.Debug.Log("Prepared sound "+ player.cueName+" "+ player.cueId);
