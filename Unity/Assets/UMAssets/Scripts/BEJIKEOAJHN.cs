@@ -23,9 +23,11 @@ public class BEJIKEOAJHN_OptionSLive
 		IBEINHHMHAC_VolNotesRhythm = JsonUtil.GetInt(OBHAFLMHAKG, "volNotesRhythm", 11);
 		//DDHCLNFPNGK_RenderQuality = JsonUtil.GetInt(OBHAFLMHAKG, "renderQuality", 1);
 		DDHCLNFPNGK_RenderQuality = JsonUtil.GetInt(OBHAFLMHAKG, "renderQuality", 0); // UMO : default to high quality
+		DDHCLNFPNGK_RenderQuality = 0;
 		HHMCIGLCBNG_QualityCustomDiva3D = JsonUtil.GetInt(OBHAFLMHAKG, "qualityCustomDiva3D", 0);
 		AHLFOHJMGAI_QualityCustomOther3D = JsonUtil.GetInt(OBHAFLMHAKG, "qualityCustomOther3D", 0);
 		DADIPGPHLDD_EffectCutin = JsonUtil.GetInt(OBHAFLMHAKG, "effectCutin", 1);
+		DADIPGPHLDD_EffectCutin = 0;
 	}
 
 	// // RVA: 0xC75848 Offset: 0xC75848 VA: 0xC75848
