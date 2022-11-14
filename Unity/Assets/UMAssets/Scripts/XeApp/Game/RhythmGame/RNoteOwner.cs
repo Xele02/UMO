@@ -518,7 +518,7 @@ namespace XeApp.Game.RhythmGame
 			slidePool.MakeUsingList(ref activeSlideList);
 			for(int i = 0; i < activeSlideList.Count; i++)
 			{
-				if (activeSlideList[i].firstRNoteObject = startNote)
+				if (activeSlideList[i].firstRNoteObject == startNote)
 					return activeSlideList[i];
 			}
 			return null;
