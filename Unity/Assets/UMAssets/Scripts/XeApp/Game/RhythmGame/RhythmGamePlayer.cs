@@ -312,7 +312,9 @@ namespace XeApp.Game.RhythmGame
 			}
 			if(isPauseRequest)
 			{
-				TodoLogger.Log(0, "pause");
+				isPauseRequest = false;
+				rNoteOwner.Pause();
+				Pause();
 			}
 			currentRawMusicMillisec = GetRawMusicMillisec();
 			notesMillisec = currentRawMusicMillisec - noteOffsetMillisec;

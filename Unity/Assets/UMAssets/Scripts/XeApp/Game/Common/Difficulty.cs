@@ -13,12 +13,6 @@ namespace XeApp.Game.Common
 			Illegal = 6,
 		}
 
-		public static readonly string[] Name; // 0x0
-
-		// RVA: 0xE6CF94 Offset: 0xE6CF94 VA: 0xE6CF94
-		static Difficulty()
-		{
-			TodoLogger.Log(0, "TODO");
-		}
+		public static readonly string[] Name = new string[5] { "EASY", "NORMAL", "HARD", "VERY HARD", "EXTREME" }; // 0x0
 	}
 }

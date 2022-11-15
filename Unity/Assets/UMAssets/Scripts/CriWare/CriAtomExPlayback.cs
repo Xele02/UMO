@@ -103,7 +103,7 @@ namespace CriWare
 		// // RVA: 0x81E4BC Offset: 0x81E4BC VA: 0x81E4BC
 		public void Pause(bool sw)
 		{
-			TodoLogger.Log(0, "Pause");
+			criAtomExPlayback_Pause(this.id, sw);
 		}
 
 		// // RVA: 0x28A1AE0 Offset: 0x28A1AE0 VA: 0x28A1AE0
@@ -129,7 +129,14 @@ namespace CriWare
 		#endif
 
 		// // RVA: 0x28A1CF0 Offset: 0x28A1CF0 VA: 0x28A1CF0
-		// private static extern void criAtomExPlayback_Pause(uint id, bool sw) { }
+		#if UNITY_ANDROID
+		private static extern void criAtomExPlayback_Pause(uint id, bool sw);
+		#else
+		private static void criAtomExPlayback_Pause(uint id, bool sw)
+		{
+			ExternLib.LibCriWare.criAtomExPlayback_Pause(id, sw);
+		}
+		#endif
 
 		// // RVA: 0x28A1E18 Offset: 0x28A1E18 VA: 0x28A1E18
 		// private static extern void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode) { }
