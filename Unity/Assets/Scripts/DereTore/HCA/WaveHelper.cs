@@ -50,14 +50,18 @@ namespace DereTore.Exchange.Audio.HCA {
                 if (!BitConverter.IsLittleEndian) {
                     value = DereToreHelper.SwapEndian(value);
                 }
-                var bytes = BitConverter.GetBytes(value);
+                //var bytes = BitConverter.GetBytes(value);
                 var bytesWritten = 0u;
                 for (var i = 0; i < 2; ++i) {
                     if (offset + i > buffer.Length) {
                         break;
                     }
-                    buffer[offset + i] = bytes[i];
-                    ++bytesWritten;
+					//buffer[offset + i] = bytes[i];
+					if (i == 0)
+						buffer[offset + i] = (byte)(value & 0xff);
+					else
+						buffer[offset + i] = (byte)((value >> 8) & 0xff);
+					++bytesWritten;
                 }
                 return bytesWritten;
             }

@@ -153,83 +153,113 @@ namespace ExternLib
             }
 			player.status = CriAtomExPlayer.Status.Prep;
 
-            CriAcbFile file = acbFiles[player.acbPtr];
-            bool isStreaming = false;
-            if(player.cueName != "")
-				player.acbStream = file.GetCueFileStream(player.cueName, out isStreaming);
-            else
-				player.acbStream = file.GetCueFileStream(player.cueId, out isStreaming);
-            if(player.acbStream == null)
-            {
+			bool isStreaming;
+			Stream acbStream;
+			player.audioStream = GetAudioStream(acbFiles[player.acbPtr].file, player.cueName, player.cueId, out isStreaming, out acbStream);
+			if (player.audioStream == null)
+			{
 				player.status = CriAtomExPlayer.Status.Error;
-                return;
-            }
-                
-            var decodeParams = DecodeParams.CreateDefault(0x44C5F5F5, 0x0581B687);
-            var audioParams = AudioParams.CreateDefault();
-            audioParams.InfiniteLoop = true;
-            audioParams.SimulatedLoopCount = 0;
-            audioParams.OutputWaveHeader = false;
+				return;
+			}
+			player.acbStream = acbStream;
 
-            AudioSource source = player.config.source.unityAudioSource;
-                
-            HcaAudioStream audioStream = new HcaAudioStream(player.acbStream, decodeParams, audioParams);
-			player.audioStream = audioStream;
-            int length = System.Int32.MaxValue;
-            source.loop = audioStream.HcaInfo.LoopFlag;
-            long reallength = (audioStream.Length / (2 * audioStream.HcaInfo.ChannelCount));
-            if(reallength < System.Int32.MaxValue)
-            {
-                length = (int)reallength;
-            }
-			if (source.loop)
+			AudioSource source = player.config.source.unityAudioSource;
+			source.loop = player.audioStream.HcaInfo.LoopFlag;
+			string clipName = player.cueName != "" ? "cue_" + player.cueId : player.cueName;
+			AudioClip clip = null;
+			if (!acbFiles[player.acbPtr].cachedAudioClips.TryGetValue(clipName, out clip))
+			{
+				clip = GetClip(player.audioStream, player.cueName, player.cueId, isStreaming);
+			}
+			source.clip = clip;
+			player.status = CriAtomExPlayer.Status.Stop;
+            UnityEngine.Debug.Log("Prepared sound "+ player.cueName+" "+ player.cueId);
+        }
+
+		private static HcaAudioStream GetAudioStream(CriAcbFile acbFile, string cueName, int cueId, out bool isStreaming, out Stream acbStream)
+		{
+			var decodeParams = DecodeParams.CreateDefault(0x44C5F5F5, 0x0581B687);
+			var audioParams = AudioParams.CreateDefault();
+			audioParams.InfiniteLoop = true;
+			audioParams.SimulatedLoopCount = 0;
+			audioParams.OutputWaveHeader = false;
+
+			if (cueName != "")
+				acbStream = acbFile.GetCueFileStream(cueName, out isStreaming);
+			else
+				acbStream = acbFile.GetCueFileStream(cueId, out isStreaming);
+			if (acbStream == null)
+				return null;
+
+			HcaAudioStream audioStream = new HcaAudioStream(acbStream, decodeParams, audioParams);
+			return audioStream;
+		}
+
+		private static AudioClip GetClip(CriAcbFile acbFile, string cueName, int cueId)
+		{
+			bool isStreaming;
+			Stream acbStream;
+			HcaAudioStream audioStream = GetAudioStream(acbFile, cueName, cueId, out isStreaming, out acbStream);
+			return GetClip(audioStream, cueName, cueId, isStreaming);
+		}
+		private static AudioClip GetClip(HcaAudioStream audioStream, string cueName, int cueId, bool isStreaming)
+		{
+			int length = System.Int32.MaxValue;
+			long reallength = (audioStream.Length / (2 * audioStream.HcaInfo.ChannelCount));
+			if (reallength < System.Int32.MaxValue)
+			{
+				length = (int)reallength;
+			}
+			if (audioStream.HcaInfo.LoopFlag)
 				isStreaming = true; // Length will be unlimited if loop is checked, so force as if streamed
-			//bool debug = player.cueName == "se_valkyrie_001";
+									//bool debug = player.cueName == "se_valkyrie_001";
 			bool debug = false;
 			if (debug)
 			{
 				UnityEngine.Debug.Log("A " + reallength);
-				UnityEngine.Debug.Log("A " + player.cueName);
+				UnityEngine.Debug.Log("A " + cueName);
+				UnityEngine.Debug.Log("A " + cueId);
 				UnityEngine.Debug.Log("A " + length);
 				UnityEngine.Debug.Log("A " + audioStream.HcaInfo.ChannelCount);
 				UnityEngine.Debug.Log("A " + audioStream.HcaInfo.SamplingRate);
 				UnityEngine.Debug.Log("A " + isStreaming);
 			}
-            byte[] readData = null;
-            AudioClip clip = null;
-            //if(isStreaming)
+
+			byte[] readData = null;
+			AudioClip clip = null;
+			//if(isStreaming)
+			{
+				clip = AudioClip.Create(cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int)audioStream.HcaInfo.SamplingRate, isStreaming, (float[] data) => {
+					if (debug)
+						UnityEngine.Debug.Log("Asked new data (" + data.Length + "), cur pos = " +/*curPos+*/" stream pos = " + audioStream.Position);
+					int numLeft = data.Length * 2;
+					if (readData == null || readData.Length < data.Length * 2)
+					{
+						readData = new byte[data.Length * 2];
+					}
+					int read = 1;
+					int offset = 0;
+					while (read > 0 && numLeft > 0)
+					{
+						read = audioStream.Read(readData, 0, numLeft);
+						if (debug)
+							UnityEngine.Debug.Log("Read " + read);
+						for (int i = 0; i < read; i += 2)
+						{
+							data[offset] = bytesToFloat(readData[i], readData[i + 1]);
+							offset++;
+						}
+						numLeft -= read;
+					}
+					//curPos += data.Length;
+				}, (int newPos) =>
+				{
+					audioStream.Seek(newPos * 2, SeekOrigin.Begin);
+				});
+			}
+			/*else
             {
-                clip = AudioClip.Create(player.cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int)audioStream.HcaInfo.SamplingRate, isStreaming, (float[] data) => {
-                    if(debug)
-                        UnityEngine.Debug.Log("Asked new data ("+data.Length+"), cur pos = "+/*curPos+*/" stream pos = "+audioStream.Position);
-                    int numLeft = data.Length * 2;
-                    if(readData == null || readData.Length < data.Length * 2)
-                    {
-                        readData = new byte[data.Length * 2];
-                    }
-                    int read = 1;
-                    int offset = 0;
-                    while(read > 0 && numLeft > 0)
-                    {
-                        read = audioStream.Read(readData, 0, numLeft);
-                        if(debug)
-                            UnityEngine.Debug.Log("Read "+read);
-                        for(int i = 0; i < read; i+=2)
-                        {
-                            data[offset] = bytesToFloat(readData[i], readData[i + 1]);
-                            offset++;
-                        }
-                        numLeft -= read;
-                    }
-                    //curPos += data.Length;
-                }, (int newPos) =>
-                {
-                    audioStream.Seek(newPos * 2, SeekOrigin.Begin);
-                });
-            }
-            /*else
-            {
-                clip = AudioClip.Create(player.cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int) audioStream.HcaInfo.SamplingRate, false);
+                clip = AudioClip.Create(cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int) audioStream.HcaInfo.SamplingRate, false);
                 float[] samples = new float[clip.samples * clip.channels];
                 byte[] read = new byte[2];
                 for(int i = 0; i < samples.Length; i++)
@@ -239,23 +269,21 @@ namespace ExternLib
                 }
                 clip.SetData(samples, 0);
             }*/
-            source.clip = clip;
-			player.status = CriAtomExPlayer.Status.Stop;
-            UnityEngine.Debug.Log("Prepared sound "+ player.cueName+" "+ player.cueId);
-        }
+			return clip;
+		}
 
-        public static void criAtomExPlayer_LimitLoopCount(IntPtr player, int count)
+		public static void criAtomExPlayer_LimitLoopCount(IntPtr player, int count)
         {
             TodoLogger.Log(0, "criAtomExPlayer_LimitLoopCount");
         }
         public static IntPtr criAtomExPlayer_GetPlayerParameter(IntPtr player)
         {
-            TodoLogger.Log(0, "criAtomExPlayer_GetPlayerParameter");
+            TodoLogger.Log(100, "criAtomExPlayer_GetPlayerParameter");
             return IntPtr.Zero;
         }
         public static void criAtomExPlayerParameter_RemoveParameter(IntPtr player_parameter, ushort id)
         {
-            TodoLogger.Log(0, "criAtomExPlayerParameter_RemoveParameter");
+            TodoLogger.Log(100, "criAtomExPlayerParameter_RemoveParameter");
         }
         public static uint criAtomExPlayer_Start(IntPtr player)
         {

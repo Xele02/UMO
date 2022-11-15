@@ -3,13 +3,20 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using CriWare;
+using UnityEngine;
 using VGMToolbox.format;
 
 namespace ExternLib
 {
     public static partial class LibCriWare
     {
-        static Dictionary<IntPtr, CriAcbFile> acbFiles = new Dictionary<IntPtr, CriAcbFile>();
+		class AcbData
+		{
+			public CriAcbFile file;
+			public Dictionary<string, AudioClip> cachedAudioClips = new Dictionary<string, AudioClip>();
+		}
+
+        static Dictionary<IntPtr, AcbData> acbFiles = new Dictionary<IntPtr, AcbData>();
         static int acbCount = 0;
 
         public static void criAtomExAcb_Release(IntPtr acb_hn)
@@ -26,7 +33,7 @@ namespace ExternLib
             info = new CriAtomEx.CueInfo();
             if(!acbFiles.ContainsKey(acb_hn))
                 return false;
-            CriAcbFile file = acbFiles[acb_hn];
+            CriAcbFile file = acbFiles[acb_hn].file;
             CriAcbCueRecord cueRecord = file.GetCueRecord(name);
             if(cueRecord == null)
                 return false;
@@ -46,8 +53,9 @@ namespace ExternLib
             {
                 CriAcbFile file = new CriAcbFile(fs, 0, false, awb_path);
                 IntPtr res = new IntPtr(++acbCount);
-                acbFiles[res] = file;
-                return res;
+                acbFiles[res] = new AcbData();
+				acbFiles[res].file = file;
+				return res;
             }
         }
     }
