@@ -47,7 +47,10 @@ namespace CriWare
 		}
 
 		// // RVA: 0x81E418 Offset: 0x81E418 VA: 0x81E418
-		// public void Pause() { }
+		public void Pause()
+		{
+			Pause(true);
+		}
 
 		// // RVA: 0x81E424 Offset: 0x81E424 VA: 0x81E424
 		// public void Resume(CriAtomEx.ResumeMode mode) { }

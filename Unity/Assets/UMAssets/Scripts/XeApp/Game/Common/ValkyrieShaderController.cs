@@ -169,7 +169,40 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xD2AF2C Offset: 0xD2AF2C VA: 0xD2AF2C
-		//public void Pause(bool a_pause) { }
+		public void Pause(bool a_pause)
+		{
+			if(IsEnable())
+			{
+				for(int i = 0; i < m_material_info.Count; i++)
+				{
+					if(m_material_info[i].m_default_value.m_base_speed == 1)
+					{
+						foreach(var t in m_material_info[i].m_target_renderer)
+						{
+							if(!t.m_is_awake)
+							{
+								t.m_renderer.material.SetInt(m_shader_nameid.m_speed, a_pause ? 0 : m_material_info[i].m_default_value.m_base_speed);
+							}
+							else
+							{
+								t.m_renderer.material.SetInt(m_shader_nameid.m_speed, a_pause ? 0 : m_material_info[i].m_default_value.m_awake_speed);
+								t.m_renderer.material.SetInt(m_shader_nameid.m_noise, a_pause ? 0 : m_material_info[i].m_default_value.m_awake_speed_noise);
+							}
+						}
+					}
+					else
+					{
+						foreach (var t in m_material_info[i].m_target_renderer)
+						{
+							if (t.m_is_awake)
+							{
+								t.m_renderer.material.SetInt(m_shader_nameid.m_noise, a_pause ? 0 : m_material_info[i].m_default_value.m_awake_speed_noise);
+							}
+						}
+					}
+				}
+			}
+		}
 
 		//// RVA: 0xD2A988 Offset: 0xD2A988 VA: 0xD2A988
 		public void SetIBLColor(ValkyrieColorParam a_color_param)

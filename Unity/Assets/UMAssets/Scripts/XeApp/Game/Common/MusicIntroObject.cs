@@ -127,7 +127,17 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAEA108 Offset: 0xAEA108 VA: 0xAEA108
-		// public void Pause() { }
+		public void Pause()
+		{
+			if(isInitialized)
+			{
+				for(int i = 0; i < m_animators.Count; i++)
+				{
+					m_animators[i].speed = 0;
+				}
+				isPause = true;
+			}
+		}
 
 		// // RVA: 0xAEA1FC Offset: 0xAEA1FC VA: 0xAEA1FC
 		// public void Resume() { }

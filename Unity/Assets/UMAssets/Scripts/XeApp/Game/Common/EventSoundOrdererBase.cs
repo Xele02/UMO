@@ -100,13 +100,28 @@ namespace XeApp.Game.Common
 		//public bool IsPlayingById(int id) { }
 
 		//// RVA: 0x1C0FD40 Offset: 0x1C0FD40 VA: 0x1C0FD40
-		//public bool IsPlayingByName(string name) { }
+		public bool IsPlayingByName(string name)
+		{
+			CriAtomExPlayback pb;
+			if(playbackNameDictionary.TryGetValue(name, out pb))
+			{
+				return pb.GetStatus() == CriAtomExPlayback.Status.Playing;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1C0FE28 Offset: 0x1C0FE28 VA: 0x1C0FE28
 		//public void PauseSoundById(int id) { }
 
 		//// RVA: 0x1C0FF00 Offset: 0x1C0FF00 VA: 0x1C0FF00
-		//public void PauseSoundByName(string name) { }
+		public void PauseSoundByName(string name)
+		{
+			CriAtomExPlayback pb;
+			if (playbackNameDictionary.TryGetValue(name, out pb))
+			{
+				pb.Pause(true);
+			}
+		}
 
 		//// RVA: 0x1C0FFDC Offset: 0x1C0FFDC VA: 0x1C0FFDC
 		//public void ResumeSoundById(int id) { }

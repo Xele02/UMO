@@ -100,7 +100,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0F020 Offset: 0x1C0F020 VA: 0x1C0F020
-		//public void PauseAll() { }
+		public void PauseAll()
+		{
+			for (int i = 0; i < m_collection.Count; i++)
+			{
+				m_collection[i].Pause();
+			}
+		}
 
 		//// RVA: 0x1C0F0F8 Offset: 0x1C0F0F8 VA: 0x1C0F0F8
 		//public void ResumeAll() { }

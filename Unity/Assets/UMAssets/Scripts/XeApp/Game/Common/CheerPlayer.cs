@@ -110,7 +110,13 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE659AC Offset: 0xE659AC VA: 0xE659AC
-		// public void Pause() { }
+		public void Pause()
+		{
+			for (int i = 0; i < m_player.Length; i++)
+			{
+				m_player[i].source.Pause(true);
+			}
+		}
 
 		// // RVA: 0xE65A4C Offset: 0xE65A4C VA: 0xE65A4C
 		public void Resume()

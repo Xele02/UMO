@@ -194,7 +194,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xD29E54 Offset: 0xD29E54 VA: 0xD29E54
-		// public void Pause() { }
+		public void Pause()
+		{
+			if(animator != null)
+			{
+				animator.speed = 0;
+				effectFactories.PauseAll();
+				eventListener.PauseAll();
+				ShaderPause(true);
+			}
+		}
 
 		// // RVA: 0xD2A158 Offset: 0xD2A158 VA: 0xD2A158
 		// public void Resume() { }
@@ -272,6 +281,23 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xD29F58 Offset: 0xD29F58 VA: 0xD29F58
-		// private void ShaderPause(bool a_pause) { }
+		private void ShaderPause(bool a_pause)
+		{
+			m_valkyrie_shader_ctrl.Pause(a_pause);
+			if (!a_pause)
+			{
+				for (int i = 0; i < m_list_material_vernier.Count; i++)
+				{
+					m_list_material_vernier[i].m_material.SetInt(m_shader_nameid.m_speed, m_list_material_vernier[i].m_speed);
+				}
+			}
+			else
+			{
+				for (int i = 0; i < m_list_material_vernier.Count; i++)
+				{
+					m_list_material_vernier[i].m_material.SetInt(m_shader_nameid.m_speed, 0);
+				}
+			}
+		}
 	}
 }

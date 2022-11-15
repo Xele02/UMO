@@ -14,7 +14,11 @@ namespace XeApp.Game.RhythmGame
 			public bool release; // 0x4
 
 			//// RVA: 0x7FB49C Offset: 0x7FB49C VA: 0x7FB49C
-			//public void Reset() { }
+			public void Reset()
+			{
+				release = false;
+				fingerId = -1;
+			}
 		}
 
 		private MusicData musicData; // 0xC
@@ -298,7 +302,29 @@ namespace XeApp.Game.RhythmGame
 		//public void Free() { }
 
 		//// RVA: 0xDB53E8 Offset: 0xDB53E8 VA: 0xDB53E8
-		//public void Pause() { }
+		public void Pause()
+		{
+			if (isPause)
+				return;
+			isPause = true;
+			if(pausingInputData != null)
+			{
+				for(int i = 0; i < pausingInputData.Length; i++)
+				{
+					pausingInputData[i].Reset();
+				}
+				longPool.MakeUsingList(ref activeLongList);
+				for(int i = 0; i < activeLongList.Count; i++)
+				{
+					activeLongList[i].Pause();
+				}
+				slidePool.MakeUsingList(ref activeSlideList);
+				for(int i = 0; i < activeSlideList.Count; i++)
+				{
+					activeSlideList[i].Pause();
+				}
+			}
+		}
 
 		//// RVA: 0xDB565C Offset: 0xDB565C VA: 0xDB565C
 		//public void Resume() { }

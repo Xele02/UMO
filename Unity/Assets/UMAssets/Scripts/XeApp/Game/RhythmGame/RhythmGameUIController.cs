@@ -3,6 +3,7 @@ using System;
 using UnityEngine.Events;
 using System.Collections.Generic;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -18,7 +19,24 @@ namespace XeApp.Game.RhythmGame
 		public IRhythmGameHUD Hud { get; private set; } // 0x18
 
 		// // RVA: 0xC0C4F0 Offset: 0xC0C4F0 VA: 0xC0C4F0
-		// public void Pause() { }
+		public void Pause()
+		{
+			foreach(var a in m_list_anim)
+			{
+				a.speed = 0;
+			}
+			foreach(var p in m_list_particle)
+			{
+				if(p.IsAlive())
+				{
+					p.Pause();
+				}
+			}
+			foreach(var e in m_list_effect)
+			{
+				e.Pause();
+			}
+		}
 
 		// // RVA: 0xC0C8C0 Offset: 0xC0C8C0 VA: 0xC0C8C0
 		// public void Resume() { }
@@ -102,7 +120,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC0D8EC Offset: 0xC0D8EC VA: 0xC0D8EC
-		// public void BeginRetryAnim(Action callback) { }
+		public void BeginRetryAnim(Action callback)
+		{
+			TodoLogger.Log(0, "BeginRetryAnim");
+		}
 
 		// // RVA: 0xC0D964 Offset: 0xC0D964 VA: 0xC0D964
 		public void BeginCompleteAnim(Action callback, RhythmGameConsts.ResultComboType comboRank, bool isMvMode = false)
@@ -191,19 +212,33 @@ namespace XeApp.Game.RhythmGame
 		// public void ShowSkipConfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
 
 		// // RVA: 0xC10E9C Offset: 0xC10E9C VA: 0xC10E9C
-		// public void ShowMvModePauseWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
+		public void ShowMvModePauseWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
+		{
+			PopupWindowManager.Show(CreateMvModePausePopupSetting(), callback, null, null, null, true, false, false, null, null, this.PlayPopupOpenSe, this.PlayPopupButtonSe);
+		}
 
 		// // RVA: 0xC11608 Offset: 0xC11608 VA: 0xC11608
-		// public void ShowMvModeEndConfirmWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
+		public void ShowMvModeEndConfirmWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
+		{
+			PopupWindowManager.Show(CreateMvModeEndConfirmPopupSetting(), callback, null, null, null, true, false, false, null, null, this.PlayPopupOpenSe, this.PlayPopupButtonSe);
+		}
 
 		// // RVA: 0xC119E0 Offset: 0xC119E0 VA: 0xC119E0
 		// public void ShowEndTutorialWindow(Action callback, bool isRetry) { }
 
 		// // RVA: 0xC11A78 Offset: 0xC11A78 VA: 0xC11A78
-		// private bool PlayPopupOpenSe(PopupWindowControl.SeType type) { }
+		private bool PlayPopupOpenSe(PopupWindowControl.SeType type)
+		{
+			PopupWindowControl.PlayPopupWindowOpenSe(type, SoundManager.Instance.sePlayerGame);
+			return true;
+		}
 
 		// // RVA: 0xC11B30 Offset: 0xC11B30 VA: 0xC11B30
-		// private bool PlayPopupButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type) { }
+		private bool PlayPopupButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type)
+		{
+			PopupWindowControl.PlayPopupButtonSe(label, type, SoundManager.Instance.sePlayerGame);
+			return true;
+		}
 
 		// // RVA: 0xBF1884 Offset: 0xBF1884 VA: 0xBF1884
 		// public void ShowNotesDescriptionTutorialWindow(Action callback) { }
@@ -246,10 +281,32 @@ namespace XeApp.Game.RhythmGame
 		// private PopupSetting CreateSkipPopupsettingForTutorial() { }
 
 		// // RVA: 0xC10FF0 Offset: 0xC10FF0 VA: 0xC10FF0
-		// private PopupSetting CreateMvModePausePopupSetting() { }
+		private PopupSetting CreateMvModePausePopupSetting()
+		{
+			TextPopupSetting setting = new TextPopupSetting();
+			setting.WindowSize = SizeType.Small;
+			setting.BackButtonLabel = PopupButton.ButtonLabel.ReStart;
+			setting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("game_popup_mvpause_title");
+			object[] o = new object[2];
+			o[0] = Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Nam).musicName;
+			o[1] = Difficulty.Name[(int)Database.Instance.gameSetup.musicInfo.difficultyType] + ((Database.Instance.gameSetup.musicInfo.IsLine6Mode) ? "+" : "");
+			setting.Text = PopupWindowManager.FormatTextBank(MessageManager.Instance.GetBank("menu"), "game_popup_mvpause_text", o);
+			setting.Buttons = new ButtonInfo[] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Finish, Type = PopupButton.ButtonType.Negative },
+												new ButtonInfo() { Label = PopupButton.ButtonLabel.ReStart, Type = PopupButton.ButtonType.Positive }};
+			return setting;
+		}
 
 		// // RVA: 0xC1175C Offset: 0xC1175C VA: 0xC1175C
-		// private PopupSetting CreateMvModeEndConfirmPopupSetting() { }
+		private PopupSetting CreateMvModeEndConfirmPopupSetting()
+		{
+			TextPopupSetting setting = new TextPopupSetting();
+			setting.WindowSize = SizeType.Small;
+			setting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("game_mvmode_endtitle_text");
+			setting.Text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("game_mvmode_end_text");
+			setting.Buttons = new ButtonInfo[2] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+												new ButtonInfo() { Label = PopupButton.ButtonLabel.Finish, Type = PopupButton.ButtonType.Positive }};
+			return setting;
+		}
 
 		// // RVA: 0xC11D80 Offset: 0xC11D80 VA: 0xC11D80
 	}

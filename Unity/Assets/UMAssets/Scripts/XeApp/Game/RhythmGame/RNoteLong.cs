@@ -381,7 +381,13 @@ namespace XeApp.Game.RhythmGame
 		// public void StopAnimation() { }
 
 		// // RVA: 0xDAD768 Offset: 0xDAD768 VA: 0xDAD768 Slot: 16
-		// public virtual void Pause() { }
+		public virtual void Pause()
+		{
+			if(animator != null)
+			{
+				animator.speed = 0;
+			}
+		}
 
 		// // RVA: 0xDAD820 Offset: 0xDAD820 VA: 0xDAD820 Slot: 17
 		// public virtual void Resume() { }

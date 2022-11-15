@@ -65,7 +65,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xD2F70C Offset: 0xD2F70C VA: 0xD2F70C
-		//public void PauseShootSound() { }
+		public void PauseShootSound()
+		{
+			if(IsPlayingByName(shootSoundName))
+			{
+				PauseSoundByName(shootSoundName);
+			}
+		}
 
 		//// RVA: 0xD2F750 Offset: 0xD2F750 VA: 0xD2F750
 		//public void ResumeShootSound() { }

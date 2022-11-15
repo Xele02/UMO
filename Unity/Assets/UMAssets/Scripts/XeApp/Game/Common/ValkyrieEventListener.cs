@@ -46,7 +46,10 @@ namespace XeApp.Game.Common
 		//public void Release() { }
 
 		//// RVA: 0x1CE023C Offset: 0x1CE023C VA: 0x1CE023C
-		//public void PauseAll() { }
+		public void PauseAll()
+		{
+			m_effectFactories.PauseAll();
+		}
 
 		//// RVA: 0x1CE0268 Offset: 0x1CE0268 VA: 0x1CE0268
 		//public void ResumeAll() { }

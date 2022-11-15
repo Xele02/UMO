@@ -122,7 +122,11 @@ namespace XeApp.Game.RhythmGame
 		//public void BeginRetryAnim() { }
 
 		//// RVA: 0xF75B84 Offset: 0xF75B84 VA: 0xF75B84
-		//public void ShowBlackCurtainOnly() { }
+		public void ShowBlackCurtainOnly()
+		{
+			gameObject.SetActive(true);
+			m_root.StartAllAnimGoStop("st_stop");
+		}
 
 		//// RVA: 0xF75C30 Offset: 0xF75C30 VA: 0xF75C30
 		//public void HideAll() { }

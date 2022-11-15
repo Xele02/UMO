@@ -81,7 +81,13 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEA0F64 Offset: 0xEA0F64 VA: 0xEA0F64
-		// public void Pause() { }
+		public new void Pause()
+		{
+			if (soundOrderer != null)
+				soundOrderer.PauseShootSound();
+			base.Pause();
+			m_isPause = true;
+		}
 
 		// // RVA: 0xEA1044 Offset: 0xEA1044 VA: 0xEA1044
 		// public void Resume() { }

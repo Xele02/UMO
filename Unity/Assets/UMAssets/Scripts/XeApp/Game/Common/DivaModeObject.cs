@@ -119,7 +119,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF1228 Offset: 0x1BF1228 VA: 0x1BF1228
-		//public void Pause() { }
+		public void Pause()
+		{
+			if(isInitialized)
+			{
+				moviePlayer.Pause(true);
+				isPause = true;
+			}
+		}
 
 		//// RVA: 0x1BF1270 Offset: 0x1BF1270 VA: 0x1BF1270
 		//public void Resume() { }

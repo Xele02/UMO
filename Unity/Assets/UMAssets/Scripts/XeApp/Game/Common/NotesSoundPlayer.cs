@@ -47,11 +47,14 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAED7CC Offset: 0xAED7CC VA: 0xAED7CC
 		public void PostSetup(BgmPlayer bgmPlayer, bool isVolumeZero)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "NotesSoundPlayer PostSetup");
 		}
 
 		// // RVA: 0xAEDFE0 Offset: 0xAEDFE0 VA: 0xAEDFE0
-		// public void Pause() { }
+		public void Pause()
+		{
+			TodoLogger.Log(0, "NotesSoundPlayer Pause");
+		}
 
 		// // RVA: 0xAEDFEC Offset: 0xAEDFEC VA: 0xAEDFEC
 		// public void Resume() { }

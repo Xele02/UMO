@@ -212,7 +212,10 @@ namespace XeApp.Game.RhythmGame
 		//public int GetAnimatorLoopCount(int groupHash) { }
 
 		//// RVA: 0xF739E8 Offset: 0xF739E8 VA: 0xF739E8
-		//public void Pause() { }
+		public void Pause()
+		{
+			m_pause = true;
+		}
 
 		//// RVA: 0xF739F4 Offset: 0xF739F4 VA: 0xF739F4
 		//public void Resume() { }

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using XeApp.Game.Menu;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -107,7 +108,10 @@ namespace XeApp.Game.Common
 		// public static ButtonBase FindTopPopupButton(PopupButton.ButtonType type) { }
 
 		// // RVA: 0x1BC1274 Offset: 0x1BC1274 VA: 0x1BC1274
-		// public static string FormatTextBank(MessageBank bank, string label, object[] args) { }
+		public static string FormatTextBank(MessageBank bank, string label, object[] args)
+		{
+			return string.Format(bank.GetMessageByLabel(label), args);
+		}
 
 		// // RVA: 0x1BC12B8 Offset: 0x1BC12B8 VA: 0x1BC12B8
 		private static int PreCloseEndCallBack()

@@ -381,11 +381,32 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF4CF4 Offset: 0x1BF4CF4 VA: 0x1BF4CF4
-		//public void WaitLockBoneSpring(int a_index = 0, float a_seconds = 0,05) { }
+		public void WaitLockBoneSpring(int a_index = 0, float a_seconds = 0.05f)
+		{
+			if (m_coroutine_wait_lock != null)
+				StopCoroutine(m_coroutine_wait_lock);
+			if (!gameObject.activeSelf)
+				return;
+			m_coroutine_wait_lock = StartCoroutine(CoroutineWaitLockBoneSpring(a_index, a_seconds));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x736534 Offset: 0x736534 VA: 0x736534
 		//// RVA: 0x1BF4D7C Offset: 0x1BF4D7C VA: 0x1BF4D7C
-		//public IEnumerator CoroutineWaitLockBoneSpring(int a_index = 0, float a_seconds = 0,1) { }
+		public IEnumerator CoroutineWaitLockBoneSpring(int a_index = 0, float a_seconds = 0.1f)
+		{
+			//0x1BF7988
+			if(!m_is_wait_lock)
+			{
+				m_is_wait_lock = true;
+				yield return new WaitForSeconds(a_seconds);
+				if(boneSpringController != null)
+				{
+					boneSpringController.Lock(a_index);
+				}
+				m_coroutine_wait_lock = null;
+				m_is_wait_lock = false;
+			}
+		}
 
 		//// RVA: 0x1BF4E68 Offset: 0x1BF4E68 VA: 0x1BF4E68
 		public void AwakenAuraOn()
@@ -409,7 +430,34 @@ namespace XeApp.Game.Common
 		//public void Stop() { }
 
 		//// RVA: 0x1BF4FDC Offset: 0x1BF4FDC VA: 0x1BF4FDC
-		//public void Pause() { }
+		public void Pause()
+		{
+			if(animator != null)
+			{
+				animator.speed = 0;
+				facialBlendAnimMediator.selfAnimator.speed = 0;
+				if(m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+				{
+					m_boneSpringAnim.animator.speed = 0;
+				}
+				if(mikeStandObject != null)
+				{
+					mikeStandObject.animator.speed = 0;
+				}
+				foreach(var a in m_list_pause_animator)
+				{
+					a.speed = 0;
+				}
+				for(int i = 0; i < m_list_pause_particle.Count; i++)
+				{
+					if(m_list_pause_particle[i].isPlaying)
+					{
+						m_list_pause_particle[i].Pause();
+					}
+				}
+				m_valkyrieShaderControlelr.Pause(true);
+			}
+		}
 
 		//// RVA: 0x1BF5474 Offset: 0x1BF5474 VA: 0x1BF5474
 		//public void Resume() { }

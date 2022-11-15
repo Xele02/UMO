@@ -118,7 +118,11 @@ namespace XeApp.Game.Common
 		//public void Stop() { }
 
 		//// RVA: 0x13A8DC8 Offset: 0x13A8DC8 VA: 0x13A8DC8
-		//public void Pause() { }
+		public void Pause()
+		{
+			if (animator != null)
+				animator.speed = 0;
+		}
 
 		//// RVA: 0x13A8E80 Offset: 0x13A8E80 VA: 0x13A8E80
 		//public void Resume() { }

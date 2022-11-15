@@ -315,17 +315,26 @@ namespace ExternLib
             }
         }
         public static void criAtomExPlayer_Pause(IntPtr player, bool sw)
-        {
-            TodoLogger.Log(0, "criAtomExPlayer_Pause");
-        }
+		{
+			if (playersList.ContainsKey(player))
+			{
+				playersList[player].config.source.unityAudioSource.Pause();
+			}
+		}
         public static void criAtomExPlayer_Resume(IntPtr player, CriAtomEx.ResumeMode mode)
-        {
-            TodoLogger.Log(0, "criAtomExPlayer_Resume");
-        }
+		{
+			if (playersList.ContainsKey(player))
+			{
+				playersList[player].config.source.unityAudioSource.UnPause();
+			}
+		}
         public static bool criAtomExPlayer_IsPaused(IntPtr player)
         {
-            TodoLogger.Log(0, "criAtomExPlayer_IsPaused");
-            return false;
+			if (playersList.ContainsKey(player))
+			{
+				return !playersList[player].config.source.unityAudioSource.isPlaying;
+			}
+			return false;
         }
         public static void CheckSoundStatus()
         {

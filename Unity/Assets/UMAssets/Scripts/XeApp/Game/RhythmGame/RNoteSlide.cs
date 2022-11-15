@@ -111,7 +111,11 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDC0218 Offset: 0xDC0218 VA: 0xDC0218 Slot: 16
-		// public override void Pause() { }
+		public override void Pause()
+		{
+			base.Pause();
+			isPause = true;
+		}
 
 		// // RVA: 0xDC0234 Offset: 0xDC0234 VA: 0xDC0234 Slot: 17
 		// public override void Resume() { }

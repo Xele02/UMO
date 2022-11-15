@@ -216,7 +216,32 @@ namespace XeApp.Game.Common
 			}
 
 			//// RVA: 0x1C0D9BC Offset: 0x1C0D9BC VA: 0x1C0D9BC
-			//public void Pause() { }
+			public void Pause()
+			{
+				if(hasParticle)
+				{
+					particle.Pause();
+				}
+				if(particleList != null)
+				{
+					foreach(var p in particleList)
+					{
+						p.Pause();
+					}
+				}
+				if(hasAnimator)
+				{
+					animator.speed = 0;
+				}
+				if(animatorList != null)
+				{
+					foreach(var a in animatorList)
+					{
+						a.speed = 0;
+					}
+				}
+				isPause = true;
+			}
 
 			//// RVA: 0x1C0DC9C Offset: 0x1C0DC9C VA: 0x1C0DC9C
 			//public void Resume() { }
@@ -396,7 +421,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0CDBC Offset: 0x1C0CDBC VA: 0x1C0CDBC
-		//public void Pause() { }
+		public void Pause()
+		{
+			ExecuteAll((Instance instance) =>
+			{
+				//0x1C0D994
+				instance.Pause();
+			});
+		}
 
 		//// RVA: 0x1C0CF00 Offset: 0x1C0CF00 VA: 0x1C0CF00
 		//public void Resume() { }

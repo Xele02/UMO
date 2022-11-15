@@ -270,7 +270,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDC2804 Offset: 0xDC2804 VA: 0xDC2804
-		//public void Pause() { }
+		public void Pause()
+		{
+			SoundManager.Instance.sePlayerCheer.Pause();
+		}
 
 		//// RVA: 0xDC2864 Offset: 0xDC2864 VA: 0xDC2864
 		public void Resume()

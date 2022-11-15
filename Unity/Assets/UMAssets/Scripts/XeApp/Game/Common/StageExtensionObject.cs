@@ -243,7 +243,37 @@ namespace XeApp.Game.Common
 		//public void Stop() { }
 
 		//// RVA: 0x13A29D0 Offset: 0x13A29D0 VA: 0x13A29D0
-		//public void Pause() { }
+		public void Pause()
+		{
+			if (animator != null)
+				animator.speed = 0;
+			for(int i = 0; i < animatorList.Count; i++)
+			{
+				animatorList[i].speed = 0;
+			}
+			for(int i = 0; i < particleList.Count; i++)
+			{
+				if(particleList[i].gameObject.activeInHierarchy)
+				{
+					particleList[i].Pause();
+				}
+			}
+			for(int i = 0; i < divaList.Count; i++)
+			{
+				divaList[i].Pause();
+			}
+			if(moviePlayer != null)
+			{
+				moviePlayer.Pause(true);
+			}
+			for(int i = 0; i < componentList.Count; i++)
+			{
+				componentList[i].Pause();
+			}
+			if (valkyrieShaderController != null)
+				valkyrieShaderController.Pause(true);
+			m_pause = true;
+		}
 
 		//// RVA: 0x13A2E58 Offset: 0x13A2E58 VA: 0x13A2E58
 		//public void Resume() { }
