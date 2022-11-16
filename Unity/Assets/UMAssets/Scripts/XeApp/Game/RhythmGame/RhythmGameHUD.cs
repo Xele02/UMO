@@ -621,7 +621,10 @@ namespace XeApp.Game.RhythmGame
 		// public void OnPauseButtonSelected(bool a_suspend) { }
 
 		// // RVA: 0xDD22CC Offset: 0xDD22CC VA: 0xDD22CC Slot: 80
-		// public void ClearPauseButton() { }
+		public void ClearPauseButton()
+		{
+			TodoLogger.Log(0, "Hud ClearPauseButton");
+		}
 
 		// // RVA: 0xDD22F8 Offset: 0xDD22F8 VA: 0xDD22F8 Slot: 81
 		public void DisablePauseButton()

@@ -127,6 +127,13 @@ namespace XeApp.Game.Common
 		//public void ResumeSoundById(int id) { }
 
 		//// RVA: 0x1C100B8 Offset: 0x1C100B8 VA: 0x1C100B8
-		//public void ResumeSoundByName(string name) { }
+		public void ResumeSoundByName(string name)
+		{
+			CriAtomExPlayback pb;
+			if (playbackNameDictionary.TryGetValue(name, out pb))
+			{
+				pb.Resume(CriAtomEx.ResumeMode.PausedPlayback);
+			}
+		}
 	}
 }

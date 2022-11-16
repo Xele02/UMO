@@ -39,7 +39,24 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC0C8C0 Offset: 0xC0C8C0 VA: 0xC0C8C0
-		// public void Resume() { }
+		public void Resume()
+		{
+			foreach(var a in m_list_anim)
+			{
+				a.speed = 1;
+			}
+			foreach(var p in m_list_particle)
+			{
+				if(p.isPaused)
+				{
+					p.Play();
+				}
+			}
+			foreach(var e in m_list_effect)
+			{
+				e.Resume();
+			}
+		}
 
 		// // RVA: 0xC0CC90 Offset: 0xC0CC90 VA: 0xC0CC90
 		public void OnAwake()
@@ -122,7 +139,9 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0D8EC Offset: 0xC0D8EC VA: 0xC0D8EC
 		public void BeginRetryAnim(Action callback)
 		{
-			TodoLogger.Log(0, "BeginRetryAnim");
+			failed.BeginRetryAnim();
+			failed.CleanupRetryCompletedCallback();
+			failed.AddRetryCompletedCallback(callback);
 		}
 
 		// // RVA: 0xC0D964 Offset: 0xC0D964 VA: 0xC0D964

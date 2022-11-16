@@ -52,7 +52,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CE0268 Offset: 0x1CE0268 VA: 0x1CE0268
-		//public void ResumeAll() { }
+		public void ResumeAll()
+		{
+			m_effectFactories.ResumeAll();
+		}
 
 		//// RVA: 0x1CE0294 Offset: 0x1CE0294 VA: 0x1CE0294
 		private string ChangeEffectName(string a_name)

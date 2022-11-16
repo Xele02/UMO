@@ -175,6 +175,9 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x13A603C Offset: 0x13A603C VA: 0x13A603C Slot: 5
-		// public override void Resume() { }
+		public override void Resume()
+		{
+			m_pause = false;
+		}
 	}
 }

@@ -125,7 +125,11 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x13A8E80 Offset: 0x13A8E80 VA: 0x13A8E80
-		//public void Resume() { }
+		public void Resume()
+		{
+			if (animator != null)
+				animator.speed = 1;
+		}
 
 		//// RVA: 0x13A8B6C Offset: 0x13A8B6C VA: 0x13A8B6C
 		public void ChangeAnimationTime(double time)

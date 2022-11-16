@@ -460,7 +460,34 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF5474 Offset: 0x1BF5474 VA: 0x1BF5474
-		//public void Resume() { }
+		public void Resume()
+		{
+			if(animator != null)
+			{
+				animator.speed = 1;
+				facialBlendAnimMediator.selfAnimator.speed = 1;
+				if(m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+				{
+					m_boneSpringAnim.animator.speed = 1;
+				}
+				if(mikeStandObject != null)
+				{
+					mikeStandObject.animator.speed = 1;
+				}
+				foreach(var a in m_list_pause_animator)
+				{
+					a.speed = 1;
+				}
+				for(int i = 0; i < m_list_pause_particle.Count; i++)
+				{
+					if(m_list_pause_particle[i].isPaused)
+					{
+						m_list_pause_particle[i].Play();
+					}
+				}
+				m_valkyrieShaderControlelr.Pause(false);
+			}
+		}
 
 		//// RVA: 0x1BF590C Offset: 0x1BF590C VA: 0x1BF590C Slot: 7
 		public virtual void ChangeAnimationTime(double time)

@@ -60,5 +60,13 @@ namespace ExternLib
 				criAtomExPlayer_Pause(playbacksList[id].playerPtr, sw);
 			}
         }
+
+		public static void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode)
+		{
+			if (playbacksList.ContainsKey(id) && playersList.ContainsKey(playbacksList[id].playerPtr))
+			{
+				criAtomExPlayer_Resume(playbacksList[id].playerPtr, mode);
+			}
+		}
 	}
 }

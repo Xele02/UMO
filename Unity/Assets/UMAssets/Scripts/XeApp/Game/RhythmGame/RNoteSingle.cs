@@ -20,7 +20,7 @@ namespace XeApp.Game.RhythmGame
 
 		public RNoteObject noteObject { get; private set; } // 0x28
 		// public RNote rNote { get; private set; } 0xDBAE38 0xDBDDA4
-		// public int touchFingerId { get; set; } 0xDB6E5C 0xDB6E64
+		public int touchFingerId { get { return touchFingerId_; } set { touchFingerId_ = value; } } //0xDB6E5C 0xDB6E64
 		// public bool isBeganTouched { get; protected set; } 0xDB9A88 0xDBDDA8
 		public RhythmGameConsts.NoteResult flickStartResult { get; protected set; } // 0x30
 

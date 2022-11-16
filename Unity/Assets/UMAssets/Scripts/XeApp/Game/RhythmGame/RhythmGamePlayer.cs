@@ -1856,7 +1856,13 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9C3628 Offset: 0x9C3628 VA: 0x9C3628
-		// private void ResumeGame() { }
+		private void ResumeGame()
+		{
+			isVisiblePauseWindow = false;
+			uiController.Hud.EnablePauseButton();
+			rNoteOwner.Resume();
+			Play();
+		}
 
 		// // RVA: 0x9C3A48 Offset: 0x9C3A48 VA: 0x9C3A48
 		private void PauseButtonCallback(bool a_suspend)
@@ -1915,7 +1921,21 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C309C Offset: 0x9C309C VA: 0x9C309C
 		private void MvModePauseRetry()
 		{
-			TodoLogger.Log(0, "MvModePauseRetry");
+			ResumeGame();
+			uiController.Hud.ClearPauseButton();
+			uiController.failed.HideAll();
+			gameDivaObject.UnlockBoneSpring(true, 0);
+			for(int i = 0; i < subDivaObject.Length; i++)
+			{
+				if(subDivaObject[i] != null)
+				{
+					subDivaObject[i].UnlockBoneSpring(true, 0);
+				}
+			}
+			foreach(var d in divaExtensionObjectList)
+			{
+				d.UnlockBoneSpring();
+			}
 		}
 
 		// // RVA: 0x9C4254 Offset: 0x9C4254 VA: 0x9C4254
@@ -2713,13 +2733,62 @@ namespace XeApp.Game.RhythmGame
 			{
 				m.Pause();
 			}
-			soundCheerOrderer.Pause();
+			if(soundCheerOrderer != null)
+				soundCheerOrderer.Pause();
 		}
 
 		// // RVA: 0x9B351C Offset: 0x9B351C VA: 0x9B351C
 		public void Resume()
 		{
-			TodoLogger.Log(0, "Resume");
+			bgmPlayer.source.Pause(false);
+			for(int i = 0; i < loopSEPlayback.Length; i++)
+			{
+				loopSEPlayback[i].Pause(false);
+			}
+			if(NotesSoundPlayer.isNewNoteSoundEnable)
+			{
+				notesSoundPlayer.Resume();
+			}
+			uiController.Resume();
+			gameDivaObject.Resume();
+			for(int i = 0; i < subDivaObject.Length; i++)
+			{
+				if(subDivaObject[i] != null)
+				{
+					subDivaObject[i].Resume();
+				}
+			}
+			musicCameraObject.Resume();
+			valkyrieObject.Resume();
+			musicIntroObject.Resume();
+			valkyrieModeObject.Resume();
+			divaModeObject.Resume();
+			foreach(var s in stageLightingObjectList)
+			{
+				s.Resume();
+			}
+			foreach(var s in stageLightingAddObjectList)
+			{
+				s.Resume();
+			}
+			foreach(var s in stageExtensionObjectList)
+			{
+				s.Resume();
+			}
+			foreach(var d in divaExtensionObjectList)
+			{
+				d.Resume();
+			}
+			foreach(var d in divaCutinObjectList)
+			{
+				d.Resume();
+			}
+			foreach(var m in musicCameraCutinObjectList)
+			{
+				m.Resume();
+			}
+			if (soundCheerOrderer != null)
+				soundCheerOrderer.Resume();
 		}
 
 		// // RVA: 0x9CB244 Offset: 0x9CB244 VA: 0x9CB244

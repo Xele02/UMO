@@ -242,7 +242,26 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CE4A4C Offset: 0x1CE4A4C VA: 0x1CE4A4C
-		//public void Resume() { }
+		public void Resume()
+		{
+			if(isInitialized)
+			{
+				for (int i = 0; i < m_animators.Count; i++)
+				{
+					m_animators[i].speed = 1;
+				}
+				m_effectFactory.Resume();
+				m_valkyrie.Resume();
+				if (m_flightSePlayback.GetStatus() == CriAtomExPlayback.Status.Prep)
+					m_flightSePlayback.Resume(CriAtomEx.ResumeMode.PausedPlayback);
+				foreach(var p in m_list_particle)
+				{
+					if (p.isPaused)
+						p.Play();
+				}
+				isPause = false;
+			}
+		}
 
 		//// RVA: 0x1CE4CE0 Offset: 0x1CE4CE0 VA: 0x1CE4CE0
 		// public void GetLockOnTargetPos(out Vector2 result) { }

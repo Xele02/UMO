@@ -74,7 +74,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xD2F750 Offset: 0xD2F750 VA: 0xD2F750
-		//public void ResumeShootSound() { }
+		public void ResumeShootSound()
+		{
+			if (IsPlayingByName(shootSoundName))
+			{
+				ResumeSoundByName(shootSoundName);
+			}
+		}
 
 		//// RVA: 0xD2F794 Offset: 0xD2F794 VA: 0xD2F794
 		public bool IsSingleShot()

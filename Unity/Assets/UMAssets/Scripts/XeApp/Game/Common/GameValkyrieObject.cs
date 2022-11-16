@@ -90,7 +90,14 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEA1044 Offset: 0xEA1044 VA: 0xEA1044
-		// public void Resume() { }
+		public new void Resume()
+		{
+			base.Resume();
+			if (soundOrderer != null)
+				soundOrderer.ResumeShootSound();
+			m_isPause = false;
+			CheckShootAction();
+		}
 
 		// // RVA: 0xEA11C0 Offset: 0xEA11C0 VA: 0xEA11C0
 		public void StartEnterAnimation(bool isDebug)

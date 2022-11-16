@@ -57,7 +57,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAEDFEC Offset: 0xAEDFEC VA: 0xAEDFEC
-		// public void Resume() { }
+		public void Resume()
+		{
+			TodoLogger.Log(0, "NotesSoundPlayer Resume");
+		}
 
 		// // RVA: 0xAEDEC8 Offset: 0xAEDEC8 VA: 0xAEDEC8
 		// private void PlaySE(NotesSoundPlayer.NoteSEType type, int count) { }

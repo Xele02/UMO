@@ -206,7 +206,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xD2A158 Offset: 0xD2A158 VA: 0xD2A158
-		// public void Resume() { }
+		public void Resume()
+		{
+			if(animator != null)
+			{
+				ShaderPause(false);
+				animator.speed = 1;
+				effectFactories.ResumeAll();
+				eventListener.ResumeAll();
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73C3A8 Offset: 0x73C3A8 VA: 0x73C3A8
 		// // RVA: 0xD2A25C Offset: 0xD2A25C VA: 0xD2A25C

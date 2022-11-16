@@ -250,7 +250,7 @@ namespace XeApp.Game.RhythmGame
 		// public abstract void OnPauseButtonSelected(bool a_syspend);
 
 		// // RVA: -1 Offset: -1 Slot: 76
-		// public abstract void ClearPauseButton();
+		void ClearPauseButton();
 
 		// // RVA: -1 Offset: -1 Slot: 77
 		void DisablePauseButton();

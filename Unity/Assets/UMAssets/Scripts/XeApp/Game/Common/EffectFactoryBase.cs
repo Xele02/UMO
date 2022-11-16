@@ -244,7 +244,35 @@ namespace XeApp.Game.Common
 			}
 
 			//// RVA: 0x1C0DC9C Offset: 0x1C0DC9C VA: 0x1C0DC9C
-			//public void Resume() { }
+			public void Resume()
+			{
+				if(hasParticle)
+				{
+					particle.Play();
+					if (!isEmit)
+						particle.Stop();
+				}
+				if(particleList != null)
+				{
+					foreach(var p in particleList)
+					{
+						if(p.isPaused)
+						{
+							p.Play();
+						}
+					}
+				}
+				if (hasAnimator)
+					animator.speed = 1;
+				if(animatorList != null)
+				{
+					foreach(var a in animatorList)
+					{
+						a.speed = 1;
+					}
+				}
+				isPause = false;
+			}
 		}
 
 		[SerializeField]
@@ -431,7 +459,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0CF00 Offset: 0x1C0CF00 VA: 0x1C0CF00
-		//public void Resume() { }
+		public void Resume()
+		{
+			ExecuteAll((Instance instance) =>
+			{
+				//0x1C0DC74
+				instance.Resume();
+			});
+		}
 
 		//// RVA: -1 Offset: -1
 		public void ForEach<T>(string id, Action<T> action)

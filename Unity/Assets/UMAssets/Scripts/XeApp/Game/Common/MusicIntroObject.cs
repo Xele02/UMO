@@ -140,7 +140,17 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAEA1FC Offset: 0xAEA1FC VA: 0xAEA1FC
-		// public void Resume() { }
+		public void Resume()
+		{
+			if(isInitialized)
+			{
+				for(int i = 0; i < m_animators.Count; i++)
+				{
+					m_animators[i].speed = 1;
+				}
+				isPause = false;
+			}
+		}
 
 		// // RVA: 0xAEA2F0 Offset: 0xAEA2F0 VA: 0xAEA2F0
 		public void ChangeAnimationTime(double time)

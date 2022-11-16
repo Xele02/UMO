@@ -53,7 +53,10 @@ namespace CriWare
 		}
 
 		// // RVA: 0x81E424 Offset: 0x81E424 VA: 0x81E424
-		// public void Resume(CriAtomEx.ResumeMode mode) { }
+		public void Resume(CriAtomEx.ResumeMode mode)
+		{
+			criAtomExPlayback_Resume(this.id, mode);
+		}
 
 		// // RVA: 0x81E42C Offset: 0x81E42C VA: 0x81E42C
 		// public bool IsPaused() { }
@@ -139,7 +142,14 @@ namespace CriWare
 		#endif
 
 		// // RVA: 0x28A1E18 Offset: 0x28A1E18 VA: 0x28A1E18
-		// private static extern void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode) { }
+		#if UNITY_ANDROID
+		private static extern void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode) { }
+		#else
+		private static void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode)
+		{
+			ExternLib.LibCriWare.criAtomExPlayback_Resume(id, mode);
+		}
+		#endif
 
 		// // RVA: 0x28A1F40 Offset: 0x28A1F40 VA: 0x28A1F40
 		// private static extern bool criAtomExPlayback_IsPaused(uint id) { }

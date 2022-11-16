@@ -48,7 +48,7 @@ namespace XeApp.Game.RhythmGame
 		private Vector2[] uv; // 0x60
 		private static int[][] s_tri = null; // 0x20
 
-		// public int touchFingerId { get; } 0xDAAA50
+		public int touchFingerId { get { return touchFingerId_; } } //0xDAAA50
 		// public bool isBeganTouched { get; protected set; } 0xDAAA58 0xDAAA6C
 
 		// RVA: 0xDAAA70 Offset: 0xDAAA70 VA: 0xDAAA70
@@ -150,7 +150,17 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDABF40 Offset: 0xDABF40 VA: 0xDABF40
-		// public void BeginTouch(int fingerId) { }
+		public void BeginTouch(int fingerId)
+		{
+			touchFingerId_ = fingerId;
+			if(animator != null)
+			{
+				if(OnStateHash == animator.GetCurrentAnimatorStateInfo(0).shortNameHash || animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+				{
+					animator.Play(OnStateHash, -1, 0);
+				}
+			}
+		}
 
 		// // RVA: 0xDAC130 Offset: 0xDAC130 VA: 0xDAC130
 		private void JudgedDelegate(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex, RhythmGameConsts.NoteJudgeType a_type)
@@ -390,6 +400,12 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDAD820 Offset: 0xDAD820 VA: 0xDAD820 Slot: 17
-		// public virtual void Resume() { }
+		public virtual void Resume()
+		{
+			if(animator != null)
+			{
+				animator.speed = 1;
+			}
+		}
 	}
 }

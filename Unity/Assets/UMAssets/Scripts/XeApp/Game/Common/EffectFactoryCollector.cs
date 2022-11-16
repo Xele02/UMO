@@ -109,7 +109,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0F0F8 Offset: 0x1C0F0F8 VA: 0x1C0F0F8
-		//public void ResumeAll() { }
+		public void ResumeAll()
+		{
+			for (int i = 0; i < m_collection.Count; i++)
+			{
+				m_collection[i].Resume();
+			}
+		}
 
 		//// RVA: -1 Offset: -1
 		public void ForEach<T>(string id, Action<T> action)

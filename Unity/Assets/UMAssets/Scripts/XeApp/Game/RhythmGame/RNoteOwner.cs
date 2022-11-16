@@ -327,7 +327,75 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDB565C Offset: 0xDB565C VA: 0xDB565C
-		//public void Resume() { }
+		public void Resume()
+		{
+			if (!isPause)
+				return;
+			isPause = false;
+			if (pausingInputData == null)
+				return;
+
+			slidePool.MakeUsingList(ref activeSlideList);
+			for (int i = 0; i < activeSlideList.Count; i++)
+			{
+				activeSlideList[i].Resume();
+				if (activeSlideList[i].gameObject.activeSelf && activeSlideList[i].touchFingerId >= 0)
+				{
+					bool cont = true;
+					for (int j = 0; cont && j < pausingInputData.Length; j++)
+					{
+						if (!pausingInputData[j].release && pausingInputData[j].fingerId > -1)
+						{
+							if (NotesSoundPlayer.LineIDToLineGroup(j) == NotesSoundPlayer.LineIDToLineGroup(activeSlideList[i].firstRNoteObject.rNote.noteInfo.trackID))
+							{
+								activeSlideList[i].IsPauseKeep = true;
+								activeSlideList[i].BeginTouch(pausingInputData[j].fingerId);
+								cont = false;
+								break;
+							}
+						}
+					}
+				}
+			}
+			singlePool.MakeUsingList(ref activeSingleList);
+			longPool.MakeUsingList(ref activeLongList);
+			for (int i = 0; i < activeLongList.Count; i++)
+			{
+				activeLongList[i].Resume();
+			}
+			for (int i = 0; i < pausingInputData.Length; i++)
+			{
+				if(pausingInputData[i].fingerId > -1)
+				{
+					if(!pausingInputData[i].release)
+					{
+						lineTouchFingerIds[i] = pausingInputData[i].fingerId;
+						for(int j = 0; j < activeSingleList.Count; j++)
+						{
+							if(activeSingleList[j].touchFingerId == -1 && activeSingleList[j].noteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.None && activeSingleList[j].noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.None && activeSingleList[j].noteObject.gameObject.activeSelf && activeSingleList[j].noteObject.rNote.noteInfo.trackID == i)
+							{
+								activeSingleList[j].touchFingerId = pausingInputData[i].fingerId;
+							}
+						}
+						for (int j = 0; j < activeLongList.Count; j++)
+						{
+							if (activeLongList[j].touchFingerId == -1 && activeLongList[j].firstRNoteObject.gameObject.activeSelf && activeLongList[j].firstRNoteObject.rNote.noteInfo.trackID == i)
+							{
+								activeLongList[j].BeginTouch(pausingInputData[i].fingerId);
+							}
+						}
+					}
+					else
+					{
+						EndedTouch(i, i, pausingInputData[i].fingerId, false, true);
+					}
+				}
+			}
+			for (int i = 0; i < activeSlideList.Count; i++)
+			{
+				activeSlideList[i].IsPauseKeep = false;
+			}
+		}
 
 		//// RVA: 0xDB6E6C Offset: 0xDB6E6C VA: 0xDB6E6C
 		public void RemoveAllDelegate()

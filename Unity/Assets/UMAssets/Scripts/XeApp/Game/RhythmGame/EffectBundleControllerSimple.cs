@@ -218,6 +218,9 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF739F4 Offset: 0xF739F4 VA: 0xF739F4
-		//public void Resume() { }
+		public void Resume()
+		{
+			m_pause = false;
+		}
 	}
 }

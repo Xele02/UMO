@@ -29,7 +29,9 @@ namespace ExternLib
             public Stream acbStream;
             public HcaAudioStream audioStream;
             public uint currentPlayingId = 0;
-        }
+			public bool isPaused = false;
+
+		}
         static Dictionary<IntPtr, PlayerData> playersList = new Dictionary<IntPtr, PlayerData>();
         static List<IntPtr> playersToCheckEnd = new List<IntPtr>();
         static int playerCount = 0;
@@ -319,20 +321,41 @@ namespace ExternLib
 			if (playersList.ContainsKey(player))
 			{
 				playersList[player].config.source.unityAudioSource.Pause();
+				playersList[player].isPaused = true;
+				playersList[player].status = CriAtomExPlayer.Status.Prep;
 			}
 		}
         public static void criAtomExPlayer_Resume(IntPtr player, CriAtomEx.ResumeMode mode)
 		{
 			if (playersList.ContainsKey(player))
 			{
-				playersList[player].config.source.unityAudioSource.UnPause();
+				bool canPlay = false;
+				switch(mode)
+				{
+					case CriAtomEx.ResumeMode.AllPlayback:
+						canPlay = true;
+						break;
+					case CriAtomEx.ResumeMode.PausedPlayback:
+						canPlay = playersList[player].isPaused;
+						break;
+					case CriAtomEx.ResumeMode.PreparedPlayback:
+						canPlay = playersList[player].status == CriAtomExPlayer.Status.Prep;
+						UnityEngine.Debug.LogError("Check");
+						break;
+				}
+				if (canPlay)
+				{
+					playersList[player].config.source.unityAudioSource.UnPause();
+					playersList[player].isPaused = false;
+					playersList[player].status = CriAtomExPlayer.Status.Playing;
+				}
 			}
 		}
         public static bool criAtomExPlayer_IsPaused(IntPtr player)
         {
 			if (playersList.ContainsKey(player))
 			{
-				return !playersList[player].config.source.unityAudioSource.isPlaying;
+				return playersList[player].isPaused;
 			}
 			return false;
         }
@@ -342,7 +365,7 @@ namespace ExternLib
             for(int i = playersToCheckEnd.Count - 1; i >= 0; i--)
             {
                 AudioSource source = playersList[playersToCheckEnd[i]].config.source.unityAudioSource;
-                if(!source.isPlaying)
+                if(!source.isPlaying && !playersList[playersToCheckEnd[i]].isPaused)
                 {
                     playersStopped.Add(playersToCheckEnd[i]);
                 }

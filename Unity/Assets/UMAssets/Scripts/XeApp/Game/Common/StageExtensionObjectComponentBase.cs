@@ -12,6 +12,9 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x13A3440 Offset: 0x13A3440 VA: 0x13A3440 Slot: 5
-		// public virtual void Resume() { }
+		public virtual void Resume()
+		{
+			return;
+		}
 	}
 }
