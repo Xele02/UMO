@@ -2004,7 +2004,15 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C260C Offset: 0x9C260C VA: 0x9C260C
 		private void FailedRhythmGame()
 		{
-			TodoLogger.Log(0, "FailedRhythmGame");
+			if(scene.IsEnableTransionResult())
+			{
+				StartCoroutine(Co_WaitRhytmGameEnd(false));
+				return;
+			}
+			uiController.failed.HideAll();
+			isVisiblePauseWindow = false;
+			rNoteOwner.Resume();
+			uiController.Hud.EnablePauseButton();
 		}
 
 		// // RVA: 0x9C4AC4 Offset: 0x9C4AC4 VA: 0x9C4AC4
