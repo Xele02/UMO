@@ -17,7 +17,9 @@ namespace XeApp.Game.Common
 		// RVA: 0x110AA5C Offset: 0x110AA5C VA: 0x110AA5C
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "LowModeBackgroundResource OnDestroy");
+			introTexture = null;
+			cardTexture = null;
+			battleTexture = null;
 		}
 
 		//// RVA: 0x110AA70 Offset: 0x110AA70 VA: 0x110AA70

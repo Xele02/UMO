@@ -17,7 +17,8 @@ namespace XeApp.Game.Common
 		// // RVA: 0xD27008 Offset: 0xD27008 VA: 0xD27008
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "OnDestroy");
+			isLoadedMain = false;
+			mainPrefab = null;
 		}
 
 		// // RVA: 0xD27018 Offset: 0xD27018 VA: 0xD27018

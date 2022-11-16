@@ -77,7 +77,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CE3298 Offset: 0x1CE3298 VA: 0x1CE3298
 		private void OnDestroy()
 		{
-			TodoLogger.Log(0, "ValkyrieMode Object OnDestroy");
+			m_flightSePlayback.Stop(true);
 		}
 
 		// RVA: 0x1CE32A8 Offset: 0x1CE32A8 VA: 0x1CE32A8

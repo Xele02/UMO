@@ -213,7 +213,7 @@ namespace XeApp.Game
 		// // RVA: 0x988E80 Offset: 0x988E80 VA: 0x988E80
 		public void RemovePushBackButtonHandler(GameManager.PushBackButtonHandler handler)
 		{
-			TodoLogger.Log(5, "RemovePushBackButtonHandler");
+			m_pushBackButtonHandlerList.Remove(handler);
 		}
 
 		// // RVA: 0x98B534 Offset: 0x98B534 VA: 0x98B534
@@ -336,7 +336,7 @@ namespace XeApp.Game
 		// // RVA: 0x99AD3C Offset: 0x99AD3C VA: 0x99AD3C
 		private void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			Font.textureRebuilt -= OnFontTextureRebuilt;
 		}
 
 		// // RVA: 0x99ADD8 Offset: 0x99ADD8 VA: 0x99ADD8

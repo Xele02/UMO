@@ -51,7 +51,18 @@ namespace CriWare
 		// // RVA: 0x2947EC4 Offset: 0x2947EC4 VA: 0x2947EC4 Slot: 7
 		protected override void Dispose(bool disposing)
 		{
-			TodoLogger.Log(0, "TODO");
+			CriDisposableObjectManager.Unregister(this);
+			if(loader != null)
+			{
+				loader.Dispose();
+				loader = null;
+			}
+			if(newBinder != null)
+			{
+				newBinder.Dispose();
+				newBinder = null;
+			}
+			bytes = null;
 		}
 
 		// // RVA: 0x2947F98 Offset: 0x2947F98 VA: 0x2947F98 Slot: 6

@@ -23,6 +23,12 @@ namespace XeApp.Game.Common
 		{
 			public string originalName; // 0x0
 			public AnimationClip overrideClip; // 0x4
+
+			// RVA: 0x7FF09C Offset: 0x7FF09C VA: 0x7FF09C
+			public void Release()
+			{
+				overrideClip = null;
+			}
 		}
 
 		public struct MotionOverrideClipKeyResource
@@ -36,6 +42,14 @@ namespace XeApp.Game.Common
 			public Pair body; // 0x0
 			public Pair face; // 0x8
 			public Pair mouth; // 0x10
+
+			// RVA: 0x7FF3A0 Offset: 0x7FF3A0 VA: 0x7FF3A0
+			public void Release()
+			{
+				body.clip = null;
+				face.clip = null;
+				mouth.clip = null;
+			}
 
 			// RVA: 0x1C09618 Offset: 0x1C09618 VA: 0x1C09618
 			//public static DivaResource.MotionOverrideClipKeyResource Set(string keyFormat, string replaceClipName, int id, AssetBundleLoadAllAssetOperationBase op, StringBuilder strBuilder) { }
@@ -68,6 +82,14 @@ namespace XeApp.Game.Common
 			public AnimationClip bodyClip; // 0x0
 			public AnimationClip faceBlendClip; // 0x4
 			public AnimationClip mouthBlendClip; // 0x8
+
+			// RVA: 0x7FF474 Offset: 0x7FF474 VA: 0x7FF474
+			public void Release()
+			{
+				bodyClip = null;
+				faceBlendClip = null;
+				mouthBlendClip = null;
+			}
 		}
 
 		public struct MenuMotionOverrideResource
@@ -75,6 +97,12 @@ namespace XeApp.Game.Common
 			public struct Reaction
 			{
 				public MotionOverrideResource main; // 0x0
+
+				// RVA: 0x7FF244 Offset: 0x7FF244 VA: 0x7FF244
+				public void Release()
+				{
+					main.Release();
+				}
 			}
 			
 			public struct Talk
@@ -82,11 +110,25 @@ namespace XeApp.Game.Common
 				public MotionOverrideResource begin; // 0x0
 				public MotionOverrideResource main; // 0xC
 				public MotionOverrideResource end; // 0x18
+
+				// RVA: 0x7FF2B4 Offset: 0x7FF2B4 VA: 0x7FF2B4
+				public void Release()
+				{
+					begin.Release();
+					main.Release();
+					end.Release();
+				}
 			}
  
 			public struct Timezone
 			{
 				public MotionOverrideResource main; // 0x0
+
+				// RVA: 0x7FF330 Offset: 0x7FF330 VA: 0x7FF330
+				public void Release()
+				{
+					main.Release();
+				}
 			}
 
 			public MotionOverrideResource idle; // 0x0
@@ -95,6 +137,52 @@ namespace XeApp.Game.Common
 			public List<Timezone> timezone; // 0x14
 			public List<Reaction> present; // 0x18
 			public List<Reaction> simpletalk; // 0x1C
+
+			// RVA: 0x7FF1E0 Offset: 0x7FF1E0 VA: 0x7FF1E0
+			public void Release()
+			{
+				idle.Release();
+				if(talk != null)
+				{
+					for(int i = 0; i < talk.Count; i++)
+					{
+						talk[i].Release();
+					}
+					talk.Clear();
+				}
+				if(reactions != null)
+				{
+					for(int i = 0; i < reactions.Count; i++)
+					{
+						reactions[i].Release();
+					}
+					reactions.Clear();
+				}
+				if(timezone != null)
+				{
+					for(int i = 0; i < timezone.Count; i++)
+					{
+						timezone[i].Release();
+					}
+					timezone.Clear();
+				}
+				if(present != null)
+				{
+					for(int i = 0; i < present.Count; i++)
+					{
+						present[i].Release();
+					}
+					present.Clear();
+				}
+				if(simpletalk != null)
+				{
+					for(int i = 0; i < simpletalk.Count; i++)
+					{
+						simpletalk[i].Release();
+					}
+					simpletalk.Clear();
+				}
+			}
 		}
 
 		public struct ResultMotionOverrideResource
@@ -106,6 +194,18 @@ namespace XeApp.Game.Common
 			public MotionOverrideResource winEnd; // 0x30
 			public MotionOverrideResource loseStart; // 0x3C
 			public MotionOverrideResource loseEnd; // 0x48
+
+			// RVA: 0x7FF54C Offset: 0x7FF54C VA: 0x7FF54C
+			public void Release()
+			{
+				wait.Release();
+				start.Release();
+				end.Release();
+				winStart.Release();
+				winEnd.Release();
+				loseStart.Release();
+				loseEnd.Release();
+			}
 		}
 
 		public struct LoginMotionOverrideResource
@@ -114,10 +214,31 @@ namespace XeApp.Game.Common
 			{
 				public MotionOverrideResource begin; // 0x0
 				public MotionOverrideResource end; // 0xC
+
+				// RVA: 0x7FF168 Offset: 0x7FF168 VA: 0x7FF168
+				public void Release()
+				{
+					begin.Release();
+					end.Release();
+				}
 			}
 
 			public MotionOverrideResource idle; // 0x0
 			public List<Reaction> reactions; // 0xC
+
+			// RVA: 0x7FF104 Offset: 0x7FF104 VA: 0x7FF104
+			public void Release()
+			{
+				idle.Release();
+				if (reactions != null)
+				{
+					for(int i = 0; i < reactions.Count; i++)
+					{
+						reactions[i].Release();
+					}
+					reactions.Clear();
+				}
+			}
 		}
 
 		public struct UnlockMotionOverrideResource
@@ -125,6 +246,14 @@ namespace XeApp.Game.Common
 			public MotionOverrideResource wait; // 0x0
 			public MotionOverrideResource start; // 0xC
 			public MotionOverrideResource end; // 0x18
+
+			// RVA: 0x7FF63C Offset: 0x7FF63C VA: 0x7FF63C
+			public void Release()
+			{
+				wait.Release();
+				start.Release();
+				end.Release();
+			}
 		}
 
 		public struct UnlockCostumeMotionOverrideResource
@@ -132,16 +261,37 @@ namespace XeApp.Game.Common
 			public DivaResource.MotionOverrideResource pose; // 0x0
 			public DivaResource.MotionOverrideResource start; // 0xC
 			public DivaResource.MotionOverrideResource end; // 0x18
+
+			// RVA: 0x7FF5C0 Offset: 0x7FF5C0 VA: 0x7FF5C0
+			public void Release()
+			{
+				pose.Release();
+				start.Release();
+				end.Release();
+			}
 		}
 
 		public struct BoneSpringSuppressResource
 		{
 			public Dictionary<BoneSpringSuppressor.Preset, BoneSpringSuppressParam> presets; // 0x0
+
+			// RVA: 0x7FF038 Offset: 0x7FF038 VA: 0x7FF038
+			public void Release()
+			{
+				if (presets != null)
+					presets.Clear();
+			}
 		}
 
 		public struct BoneSpringResource
 		{
 			public BoneSpringSuppressResource suppress; // 0x0
+
+			// RVA: 0x7FEFD4 Offset: 0x7FEFD4 VA: 0x7FEFD4
+			public void Release()
+			{
+				suppress.Release();
+			}
 		}
 
 		public enum SetupFlags
@@ -254,7 +404,7 @@ namespace XeApp.Game.Common
 			divaAnimatorController = null;
 			facialAnimatorController = null;
 			isLoadedBasicResource = false;
-			boneSpringResource.suppress.presets.Clear();
+			boneSpringResource.Release();
 			if (prefabEffect != null)
 			{
 				prefabEffect.Clear();
@@ -266,16 +416,14 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF82D8 Offset: 0x1BF82D8 VA: 0x1BF82D8
 		public void ReleaseMusicResource()
 		{
-			musicMotionOverrideResource.bodyClip = null;
-			musicMotionOverrideResource.faceBlendClip = null;
-			musicMotionOverrideResource.mouthBlendClip = null;
+			musicMotionOverrideResource.Release();
 			isLoadedARAnimationResource = false;
 			isLoadedMusicAnimationResource = false;
-			//for(int i = 0; i < commonFacialResource.Count; i++)
-			//	commonFacialResource[i].overrideClip = null;
+			for(int i = 0; i < commonFacialResource.Count; i++)
+				commonFacialResource[i].Release();
 			commonFacialResource.Clear();
-			//for(int i = 0; i < specialFacialResource.Count; i++)
-			//	specialFacialResource[i].overrideClip = null;
+			for(int i = 0; i < specialFacialResource.Count; i++)
+				specialFacialResource[i].Release();
 			specialFacialResource.Clear();
 			mikeStandAnimationOverrideClip = null;
 			isLoadedMusicFacialResource = false;
@@ -286,30 +434,31 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF80BC Offset: 0x1BF80BC VA: 0x1BF80BC
 		public void ReleaseMenuResource()
 		{
-			//menuMotionOverride
+			menuMotionOverride.Release();
 			menuVoiceTable = null;
 			menuVoiceTableCos = null;
-			//for(int i = 0; i < commonFacialResource.Count; i++)
-			//	commonFacialResource[i].overrideClip = null;
+			for (int i = 0; i < commonFacialResource.Count; i++)
+				commonFacialResource[i].Release();
 			commonFacialResource.Clear();
-			//for(int i = 0; i < specialFacialResource.Count; i++)
-			//	specialFacialResource[i].overrideClip = null;
+			for(int i = 0; i < specialFacialResource.Count; i++)
+				specialFacialResource[i].Release();
 			specialFacialResource.Clear();
-			//resultMotionOverride
-			//loginMotionOverride
-			//unlockMotionOverride
+			resultMotionOverride.Release();
+			loginMotionOverride.Release();
+			unlockMotionOverride.Release();
 			isLoadedMenuAnimationResource = false;
 		}
 
 		// // RVA: 0x1BF84DC Offset: 0x1BF84DC VA: 0x1BF84DC
 		public void ReleaseSubCostumeResource()
 		{
-			subPrefabEffect.Clear();
 			isLoadedSubCostumeResource = false;
 			subDivaPrefab = null;
+			if (subPrefabEffect != null)
+				subPrefabEffect.Clear();
 			subPrefabEffect = null;
 			subPrefabWind = null;
-			//subBoneSpringResource
+			subBoneSpringResource.Release();
 		}
 
 		// // RVA: 0x1BF85B4 Offset: 0x1BF85B4 VA: 0x1BF85B4

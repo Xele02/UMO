@@ -20,7 +20,11 @@ namespace XeApp.Game.Common
 		private bool isLoadedParam { get; set; } // 0x1A
 
 		// // RVA: 0xAE534C Offset: 0xAE534C VA: 0xAE534C
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			animator = null;
+			clip = null;
+		}
 
 		// // RVA: 0xAE535C Offset: 0xAE535C VA: 0xAE535C
 		public void LoadResource(int wavId, int primeId, int stageDivaNum)

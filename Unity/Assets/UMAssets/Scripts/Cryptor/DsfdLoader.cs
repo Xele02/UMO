@@ -1464,7 +1464,10 @@ namespace Cryptor
         }
 
         // // RVA: 0x2BAE488 Offset: 0x2BAE488 VA: 0x2BAE488
-        // private static extern void dsfd_finalize() { }
+        private static /*extern */void dsfd_finalize()
+		{
+			decryptManager = null;
+		}
 
         // // RVA: 0x2BAE578 Offset: 0x2BAE578 VA: 0x2BAE578
         // private static extern void dsfd_release_results([In] DsfdLoader.DecryptedResultList result) { }
@@ -1510,7 +1513,16 @@ namespace Cryptor
         }
 
         // // RVA: 0x2BAEF20 Offset: 0x2BAEF20 VA: 0x2BAEF20
-        // public static void Terminate() { }
+        public static void Terminate()
+		{
+			if(isInitialized)
+			{
+				dsfd_finalize();
+				isInitialized = false;
+				return;
+			}
+			UnityEngine.Debug.LogWarning("StringLiteral_8280 DsfdLoader not initialized");
+		}
 
         // // RVA: 0x2BAF080 Offset: 0x2BAF080 VA: 0x2BAF080
         public static DsfdLoader.ILoadRequest LoadFile(string filePath)

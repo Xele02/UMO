@@ -130,19 +130,19 @@ namespace CriWare
         // // RVA: 0x294E59C Offset: 0x294E59C VA: 0x294E59C
         public static void InitializeModule(CriFsWebInstaller.ModuleConfig config)
 		{
-			TodoLogger.Log(5, "CriFsWebInstaller InitializeModule");
+			TodoLogger.Log(100, "CriFsWebInstaller InitializeModule");
 		}
 
         // // RVA: 0x294E8A4 Offset: 0x294E8A4 VA: 0x294E8A4
         public static void FinalizeModule()
 		{
-			TodoLogger.Log(5, "CriFsWebInstaller FinalizeModule");
+			TodoLogger.Log(100, "CriFsWebInstaller FinalizeModule");
 		}
 
 		// // RVA: 0x294C460 Offset: 0x294C460 VA: 0x294C460
 		public static void ExecuteMain()
         {
-            TodoLogger.Log(5, "CriFsWebInstaller ExecuteMain");
+            TodoLogger.Log(100, "CriFsWebInstaller ExecuteMain");
         }
 
         // // RVA: 0x294EC08 Offset: 0x294EC08 VA: 0x294EC08

@@ -16,7 +16,11 @@ namespace XeApp.Game.Common
 			public AnimationClip takeoff; // 0x4
 
 			// // RVA: 0x7FB190 Offset: 0x7FB190 VA: 0x7FB190
-			// public void Release() { }
+			public void Release()
+			{
+				idle = null;
+				takeoff = null;
+			}
 		}
  
 		public struct BattleOverrideResource
@@ -32,7 +36,18 @@ namespace XeApp.Game.Common
 			public AnimationClip shootBatroidMain; // 0x20
 
 			// // RVA: 0x7FB114 Offset: 0x7FB114 VA: 0x7FB114
-			// public void Release() { }
+			public void Release()
+			{
+				begin = null;
+				gerwalkMain = null;
+				gerwalkDamage = null;
+				tranfsorm = null;
+				battroidMain = null;
+				battroidDamage = null;
+				battroidEnd = null;
+				shootMain = null;
+				shootBatroidMain = null;
+			}
 		}
 
 		public struct MenuOverrideResource
@@ -41,7 +56,21 @@ namespace XeApp.Game.Common
 			public AnimationClip[] change; // 0x4
 
 			// // RVA: 0x7FB1FC Offset: 0x7FB1FC VA: 0x7FB1FC
-			// public void Release() { }
+			public void Release()
+			{
+				if(wait != null)
+				{
+					for (int i = 0; i < wait.Length; i++)
+						wait[i] = null;
+				}
+				if(change != null)
+				{
+					for(int i = 0; i < change.Length; i++)
+					{
+						change[i] = null;
+					}
+				}
+			}
 		}
 
 		public struct UnlockOverrideResource
@@ -49,7 +78,10 @@ namespace XeApp.Game.Common
 			public AnimationClip unlock; // 0x0
 
 			// // RVA: 0x7FB260 Offset: 0x7FB260 VA: 0x7FB260
-			// public void Release() { }
+			public void Release()
+			{
+				unlock = null;
+			}
 		}
 
 		public struct AppealOverrideResource
@@ -57,7 +89,10 @@ namespace XeApp.Game.Common
 			public AnimationClip appeal; // 0x0
 
 			// // RVA: 0x7FB0AC Offset: 0x7FB0AC VA: 0x7FB0AC
-			// public void Release() { }
+			public void Release()
+			{
+				appeal = null;
+			}
 		}
 
 		private static readonly string[] s_formTypeId = new string[3] { "F", "G", "B" }; // 0x0
@@ -82,7 +117,16 @@ namespace XeApp.Game.Common
 		// // RVA: 0xD2BA74 Offset: 0xD2BA74 VA: 0xD2BA74
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "Valkyrie resource OnDestroy");
+			battleOverrideResource.Release();
+			introOverrideResource.Release();
+			prefab = null;
+			animatorController = null;
+			m_materialAwakeHigh = null;
+			m_materialAwakeLow = null;
+			menuOverrideResource.Release();
+			unlockOverrideResource.Release();
+			appealOverrideResource.Release();
+			isLoadedPrefab = false;
 		}
 
 		// // RVA: 0xD2BBF8 Offset: 0xD2BBF8 VA: 0xD2BBF8

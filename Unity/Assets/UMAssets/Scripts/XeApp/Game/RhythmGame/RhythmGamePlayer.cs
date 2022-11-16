@@ -2048,6 +2048,8 @@ namespace XeApp.Game.RhythmGame
 
 			}*/
 
+			TodoLogger.MinLog = -9999;
+
 			GotoMenuSceneInSuccess(new int[5], 0);
 			UnityEngine.Debug.Log("Exit Co_WaitRhytmGameEnd");
 			yield break;

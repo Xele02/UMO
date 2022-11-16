@@ -31,7 +31,11 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAEA8B4 Offset: 0xAEA8B4 VA: 0xAEA8B4
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "MusicIntroResource OnDestroy");
+			runwayPrefab = null;
+			enviromentPrefab = null;
+			isLoadedRunway = false;
+			isLoadedEnviroment = false;
+			isLoadedAnimator = false;
 		}
 
 		// // RVA: 0xAEA8CC Offset: 0xAEA8CC VA: 0xAEA8CC

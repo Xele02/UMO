@@ -23,7 +23,20 @@ namespace XeApp.Game.RhythmGame
 			public Material activeSkillEffectMaterial; // 0x18
 
 			// // RVA: 0xBF4EDC Offset: 0xBF4EDC VA: 0xBF4EDC
-			// public void Release() { }
+			public void Release()
+			{
+				for(int i = 0; i < divaSkillCutinMaterials.Count; i++)
+				{
+					Destroy(divaSkillCutinMaterials[i]);
+				}
+				if (activeSkillIconMaterial != null)
+					Destroy(activeSkillIconMaterial);
+				skillEffectMaterials.Clear();
+				divaSkillCutinMaterials.Clear();
+				activeSkillIconMaterial = null;
+				activeSkillEffectMaterial = null;
+				centerCardTexture = null;
+			}
 		}
 
 		public MusicData musicData; // 0xC
@@ -204,7 +217,44 @@ namespace XeApp.Game.RhythmGame
 					s.ReleaseMusicResource();
 				}
 			}
-			TodoLogger.Log(0, "RhtythmGameResource finish OnDestroy");
+			if (cameraResource != null)
+				cameraResource.OnDestroy();
+			if (stageResources != null)
+				stageResources.OnDestroy();
+			if (valkyrieResource != null)
+				valkyrieResource.OnDestroy();
+			if (musicIntroResource != null)
+				musicIntroResource.OnDestroy();
+			if (valkyrieModeResource != null)
+				valkyrieModeResource.OnDestroy();
+			if (divaModeResource != null)
+				divaModeResource.OnDestroy();
+			if (uiTextureResources != null)
+				uiTextureResources.Release();
+			if (m_pilotTexture != null)
+				m_pilotTexture.OnDestory();
+			if (m_enemyPilotTexture != null)
+				m_enemyPilotTexture.OnDestory();
+			if (m_enemyRobotTexture != null)
+				m_enemyRobotTexture.OnDestory();
+			for(int i = 0; i < stageLightingResource.Count; i++)
+			{
+				if(stageLightingResource[i] != null)
+				{
+					stageLightingResource[i].OnDestroy();
+				}
+			}
+			if (uiPrefab != null)
+				uiPrefab = null;
+			if (enemySkillPrefab != null)
+				enemySkillPrefab = null;
+			for(int i = 0; i < musicBoneSpringResource.Length; i++)
+			{
+				if (musicBoneSpringResource[i] != null)
+					musicBoneSpringResource[i].OnDestroy();
+			}
+			if (paramResource != null)
+				paramResource.OnDestroy();
 		}
 
 		// // RVA: 0xBF5970 Offset: 0xBF5970 VA: 0xBF5970

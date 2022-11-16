@@ -22,7 +22,10 @@ namespace XeApp.Game.Common
 		} } //0x1BF163C
 
 		// // RVA: 0x1BF1660 Offset: 0x1BF1660 VA: 0x1BF1660
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			moviePlayer = null;
+		}
 
 		// // RVA: 0x1BF166C Offset: 0x1BF166C VA: 0x1BF166C
 		public void LoadResources(int musicId, int qualityId, Func<int> getSpecialMovieId)

@@ -1,4 +1,6 @@
 
+using System;
+
 namespace CriWare
 {
 	public class CriFsRequest : CriDisposable
@@ -13,7 +15,11 @@ namespace CriWare
 		// // RVA: 0x294AEF8 Offset: 0x294AEF8 VA: 0x294AEF8 Slot: 5
 		public override void Dispose()
 		{
-			TodoLogger.Log(0, "TODO");
+			if (isDisposed)
+				return;
+			Dispose(true);
+			isDisposed = true;
+			GC.SuppressFinalize(this);
 		}
 
 		// // RVA: 0x294AFA8 Offset: 0x294AFA8 VA: 0x294AFA8 Slot: 6
@@ -28,7 +34,7 @@ namespace CriWare
 		// // RVA: 0x294B070 Offset: 0x294B070 VA: 0x294B070 Slot: 7
 		protected virtual void Dispose(bool disposing)
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// // RVA: 0x294B074 Offset: 0x294B074 VA: 0x294B074 Slot: 8

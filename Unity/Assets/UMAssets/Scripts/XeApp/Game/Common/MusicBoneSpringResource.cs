@@ -21,7 +21,10 @@ namespace XeApp.Game.Common
 		} private set {} } //0x1118AB4 0x1118AD8
 
 		// // RVA: 0x111878C Offset: 0x111878C VA: 0x111878C
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			clip = null;
+		}
 
 		// // RVA: 0x11187A8 Offset: 0x11187A8 VA: 0x11187A8
 		public void LoadMusicResouces(int wavId, int primeId, int stageDivaNum, int positionId = 0)

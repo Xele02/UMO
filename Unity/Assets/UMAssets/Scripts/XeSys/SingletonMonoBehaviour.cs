@@ -50,7 +50,7 @@ namespace XeSys
 		// RVA: -1 Offset: -1
 		private void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			mApplicationIsQuitting = true;
 		}
 		/* GenericInstMethod :
 		|

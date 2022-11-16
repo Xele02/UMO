@@ -36,8 +36,8 @@ public class MNNCBFONAOL
 	// // RVA: 0x17B1978 Offset: 0x17B1978 VA: 0x17B1978
 	public static void PDENBOEFJGE()
     {
-        TodoLogger.Log(0, "TODO");
-    }
+		DsfdLoader.Terminate();
+	}
 
 	// // RVA: 0x17B17D0 Offset: 0x17B17D0 VA: 0x17B17D0
 	private static byte[] NLPIDMIPIIE()
