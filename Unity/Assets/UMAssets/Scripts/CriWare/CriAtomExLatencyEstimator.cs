@@ -32,6 +32,7 @@ public static class CriAtomExLatencyEstimator
     {
 #if UNITY_ANDROID
 		TodoLogger.Log(5, "CriAtomExLatencyEstimator GetCurrentInfo");
+		return new EstimatorInfo();
 #else
 		EstimatorInfo info = new EstimatorInfo();
 		info.status = Status.Done;

@@ -43,8 +43,10 @@ namespace ExternLib
                 if(playersList[player].acbStream != null)
                 {
                     UnityEngine.Debug.Log("Stop sound "+playersList[player].cueName+" "+playersList[player].cueId);
-                    playersList[player].config.source.unityAudioSource.Stop();
+#if !UNITY_ANDROID
+					playersList[player].config.source.unityAudioSource.Stop();
                     playersList[player].config.source.unityAudioSource.clip = null;
+#endif
                     playersList[player].audioStream = null;
                     playersList[player].acbStream = null;
                     playersList[player].status = CriAtomExPlayer.Status.Stop;
@@ -68,8 +70,10 @@ namespace ExternLib
         public static void criAtomExPlayer_SetVolume(IntPtr player, float volume)
         {
             if(playersList.ContainsKey(player))
-            {
+			{
+#if !UNITY_ANDROID
                 playersList[player].config.source.unityAudioSource.volume = volume;
+#endif
             }
         }
         public static void CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy(IntPtr pool)
@@ -103,7 +107,9 @@ namespace ExternLib
         {
             if(playersList.ContainsKey(player))
             {
-                playersList[player].config.source.unityAudioSource.time = start_time_ms * 1.0f / 1000.0f;
+#if !UNITY_ANDROID
+				playersList[player].config.source.unityAudioSource.time = start_time_ms * 1.0f / 1000.0f;
+#endif
             }
         }
         public static void criAtomExPlayer_UpdateAll(IntPtr player)
@@ -112,9 +118,11 @@ namespace ExternLib
         public static void criAtomExPlayer_Set3dSourceHn(IntPtr player, IntPtr source)
         {
             if(playersList.ContainsKey(player) && srcsList.ContainsKey(source))
-            {
+			{
+#if !UNITY_ANDROID
                 if(playersList[player].config.source.unityAudioSource == srcsList[source].config.source.unityAudioSource)
                     return;
+#endif
             }
             TodoLogger.Log(0, "criAtomExPlayer_Set3dSourceHn");
         }
@@ -130,7 +138,9 @@ namespace ExternLib
                 // Unity : 1 default, 1.05946 ^n, n being semitone.
                 float numSemitone = pitch / 100;
                 float unityVal = Mathf.Pow(1.05946f, numSemitone);
+#if !UNITY_ANDROID
                 playersList[player].config.source.unityAudioSource.pitch = unityVal;
+#endif
             }
         }
 		public static void criAtomExPlayer_SetCueName(IntPtr player, IntPtr acb_hn, string cue_name)
@@ -165,6 +175,7 @@ namespace ExternLib
 			}
 			player.acbStream = acbStream;
 
+#if !UNITY_ANDROID
 			AudioSource source = player.config.source.unityAudioSource;
 			source.loop = player.audioStream.HcaInfo.LoopFlag;
 			string clipName = player.cueName != "" ? "cue_" + player.cueId : player.cueName;
@@ -176,7 +187,8 @@ namespace ExternLib
 			source.clip = clip;
 			player.status = CriAtomExPlayer.Status.Stop;
             UnityEngine.Debug.Log("Prepared sound "+ player.cueName+" "+ player.cueId);
-        }
+#endif
+		}
 
 		private static HcaAudioStream GetAudioStream(CriAcbFile acbFile, string cueName, int cueId, out bool isStreaming, out Stream acbStream)
 		{
@@ -291,7 +303,8 @@ namespace ExternLib
         {
             if(playersList.ContainsKey(player))
             {
-                AudioSource source = playersList[player].config.source.unityAudioSource;
+#if !UNITY_ANDROID
+				AudioSource source = playersList[player].config.source.unityAudioSource;
                 source.Play();
                 UnityEngine.Debug.Log("Play sound "+playersList[player].cueName+" "+playersList[player].cueId);
                 playersList[player].status = CriAtomExPlayer.Status.Playing;
@@ -302,6 +315,7 @@ namespace ExternLib
                 playbacksList[playersList[player].currentPlayingId] = pbinfo;
                 if(!source.loop)
                     playersToCheckEnd.Add(player);
+#endif
                 return playersList[player].currentPlayingId;
             }
             return 0;
@@ -320,7 +334,9 @@ namespace ExternLib
 		{
 			if (playersList.ContainsKey(player))
 			{
+#if !UNITY_ANDROID
 				playersList[player].config.source.unityAudioSource.Pause();
+#endif
 				playersList[player].isPaused = true;
 				playersList[player].status = CriAtomExPlayer.Status.Prep;
 			}
@@ -345,7 +361,9 @@ namespace ExternLib
 				}
 				if (canPlay)
 				{
+#if !UNITY_ANDROID
 					playersList[player].config.source.unityAudioSource.UnPause();
+#endif
 					playersList[player].isPaused = false;
 					playersList[player].status = CriAtomExPlayer.Status.Playing;
 				}
@@ -363,14 +381,16 @@ namespace ExternLib
         {
             List<IntPtr> playersStopped = new List<IntPtr>();
             for(int i = playersToCheckEnd.Count - 1; i >= 0; i--)
-            {
+			{
+#if !UNITY_ANDROID
                 AudioSource source = playersList[playersToCheckEnd[i]].config.source.unityAudioSource;
                 if(!source.isPlaying && !playersList[playersToCheckEnd[i]].isPaused)
                 {
                     playersStopped.Add(playersToCheckEnd[i]);
                 }
-            }
-            for(int i = 0; i < playersStopped.Count; i++)
+#endif
+			}
+			for (int i = 0; i < playersStopped.Count; i++)
             {
                 criAtomExPlayer_Stop(playersStopped[i]);
             }

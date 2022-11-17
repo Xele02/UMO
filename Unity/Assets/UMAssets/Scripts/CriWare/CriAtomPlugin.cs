@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 namespace CriWare {
 	public static class CriAtomPlugin

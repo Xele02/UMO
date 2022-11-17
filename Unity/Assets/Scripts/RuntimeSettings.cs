@@ -38,7 +38,9 @@ class RuntimeSettings : ScriptableObject
 		{
 			if(Directory.Exists(Path.Combine(path, "android")) && Directory.Exists(Path.Combine(path, "db")))
 			{
+#if UNITY_EDITOR
 				if(EditorUtility.DisplayDialog("Game data found", "Game data found in directory "+path+", use it ?", "Yes", "No"))
+#endif
 				{
 					DataDirectory = path;
 					return true;
@@ -51,7 +53,9 @@ class RuntimeSettings : ScriptableObject
 		{
 			if(Directory.Exists(Path.Combine(path, "android")) && Directory.Exists(Path.Combine(path, "db")))
 			{
-				if(EditorUtility.DisplayDialog("Game data found", "Game data found in directory "+path+", use it ?", "Yes", "No"))
+#if UNITY_EDITOR
+				if (EditorUtility.DisplayDialog("Game data found", "Game data found in directory "+path+", use it ?", "Yes", "No"))
+#endif
 				{
 					DataDirectory = path;
 					return true;

@@ -152,9 +152,9 @@ namespace CriWare
 		private static IntPtr criAtomExAcb_LoadAcbFile(CriFsBinder acb_binder, string acb_path, CriFsBinder awb_binder, string awb_path, IntPtr work, int work_size)
 		{
 		#if UNITY_ANDROID
-			IntPtr binderHandle = (binder != null) ? binder.nativeHandle : IntPtr.Zero;
+			IntPtr binderHandle = (acb_binder != null) ? acb_binder.nativeHandle : IntPtr.Zero;
 			IntPtr handle = criAtomExAcb_LoadAcbFile(
-				binderHandle, acbPath, binderHandle, awbPath, IntPtr.Zero, 0);
+				binderHandle, acb_path, binderHandle, awb_path, IntPtr.Zero, 0);
 		#else
 			IntPtr handle = ExternLib.LibCriWare.criAtomExAcb_LoadAcbFile(acb_binder, acb_path, awb_binder, awb_path, work, work_size);
 		#endif
@@ -211,7 +211,7 @@ namespace CriWare
 		{
 		#if UNITY_ANDROID
 			using (var mem = new CriStructMemory<CriAtomEx.CueInfo>()) {
-				bool result = criAtomExAcb_GetCueInfoByName(this.handle, cueName, mem.ptr);
+				bool result = criAtomExAcb_GetCueInfoByName(acb_hn, name, mem.ptr);
 				info = new CriAtomEx.CueInfo(mem.bytes, 0);
 				return result;
 			}

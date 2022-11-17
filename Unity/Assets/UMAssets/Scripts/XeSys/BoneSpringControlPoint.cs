@@ -246,6 +246,7 @@ namespace XeSys
 			}
 		}
 
+#if UNITY_EDITOR
 		private void OnDrawGizmosSelected()
 		{
 			if (UnityEditor.Selection.activeGameObject != this.gameObject) return;
@@ -265,5 +266,6 @@ namespace XeSys
 				}
 			}
 		}
+#endif
 	}
 }

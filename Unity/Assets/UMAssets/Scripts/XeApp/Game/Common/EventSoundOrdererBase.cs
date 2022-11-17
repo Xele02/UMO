@@ -51,13 +51,13 @@ namespace XeApp.Game.Common
 			if (atomSource == null)
 				return;
 #if UNITY_ANDROID
-			bool old = atomSource.androidUseLowLatencyVoicePool();
-			atomSource.androidUseLowLatencyVoicePool(lowLatency);
+			bool old = atomSource.androidUseLowLatencyVoicePool;
+			atomSource.androidUseLowLatencyVoicePool = lowLatency;
 #endif
 			CriAtomExPlayback pb = atomSource.Play(name);
 			playbackNameDictionary.Add(name, pb);
 #if UNITY_ANDROID
-			atomSource.androidUseLowLatencyVoicePool(old);
+			atomSource.androidUseLowLatencyVoicePool = old;
 #endif
 		}
 

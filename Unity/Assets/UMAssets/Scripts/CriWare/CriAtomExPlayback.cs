@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 namespace CriWare
 {
@@ -110,20 +111,20 @@ namespace CriWare
 		}
 
 		// // RVA: 0x28A1AE0 Offset: 0x28A1AE0 VA: 0x28A1AE0
-		
-		#if UNITY_ANDROID
-		private static extern void criAtomExPlayback_Stop(uint id) { }
-		#else
+
+#if UNITY_ANDROID
+		private static extern void criAtomExPlayback_Stop(uint id);
+#else
 		private static void criAtomExPlayback_Stop(uint id)
 		{
 			ExternLib.LibCriWare.criAtomExPlayback_Stop(id);
 		}
-		#endif
+#endif
 
 		// // RVA: 0x28A1BF8 Offset: 0x28A1BF8 VA: 0x28A1BF8
-	
-		#if UNITY_ANDROID
-		private static extern void criAtomExPlayback_StopWithoutReleaseTime(uint id) { }
+
+#if UNITY_ANDROID
+		private static extern void criAtomExPlayback_StopWithoutReleaseTime(uint id);
 		#else
 		private static void criAtomExPlayback_StopWithoutReleaseTime(uint id)
 		{
@@ -134,16 +135,16 @@ namespace CriWare
 		// // RVA: 0x28A1CF0 Offset: 0x28A1CF0 VA: 0x28A1CF0
 		#if UNITY_ANDROID
 		private static extern void criAtomExPlayback_Pause(uint id, bool sw);
-		#else
+#else
 		private static void criAtomExPlayback_Pause(uint id, bool sw)
 		{
 			ExternLib.LibCriWare.criAtomExPlayback_Pause(id, sw);
 		}
-		#endif
+#endif
 
 		// // RVA: 0x28A1E18 Offset: 0x28A1E18 VA: 0x28A1E18
-		#if UNITY_ANDROID
-		private static extern void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode) { }
+#if UNITY_ANDROID
+		private static extern void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode);
 		#else
 		private static void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode)
 		{

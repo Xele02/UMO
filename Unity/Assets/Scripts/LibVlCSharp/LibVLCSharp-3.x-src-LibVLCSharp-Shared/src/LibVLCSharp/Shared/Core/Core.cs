@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -178,7 +178,9 @@ namespace LibVLCSharp.Shared
                 return;
             }
 
-            Initialize();
+#if !UNITY_ANDROID
+			Initialize();
+#endif
         }
 
         static bool LoadNativeLibrary(string nativeLibraryPath, out IntPtr handle)

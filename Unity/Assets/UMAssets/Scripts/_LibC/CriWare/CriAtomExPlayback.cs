@@ -17,11 +17,13 @@ namespace ExternLib
 
         public static long criAtomExPlayback_GetTimeSyncedWithAudio(uint id)
         {
-            if(playbacksList.ContainsKey(id) && playersList.ContainsKey(playbacksList[id].playerPtr))
+#if !UNITY_ANDROID
+			if(playbacksList.ContainsKey(id) && playersList.ContainsKey(playbacksList[id].playerPtr))
             {
                 PlayerData player = playersList[playbacksList[id].playerPtr];
                 return (long)((player.config.source.unityAudioSource.time) * 1000);
             }
+#endif
             return 0;
         }
 

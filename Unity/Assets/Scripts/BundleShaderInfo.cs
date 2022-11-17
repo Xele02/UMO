@@ -4,7 +4,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.UI;
 using XeSys;
@@ -63,7 +65,7 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 				{
 					ShaderInfo info = new ShaderInfo();
 					info.name = System.IO.Path.GetFileNameWithoutExtension(assetName);
-
+#if UNITY_EDITOR
 					string[] shadersList = AssetDatabase.FindAssets(info.name+" t:Shader");
 					foreach(string s in shadersList)
 					{
@@ -73,6 +75,7 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 							break;
 						}
 					}
+#endif
 					if(info.shader == null)
 					{
 						Debug.LogError("shader not found : "+assetName+" : "+info.name);
@@ -100,11 +103,13 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 	public void FixMaterialShaderMat(Material mat)
 	{
 		UnityEngine.Debug.Log("Checking shader for mat "+mat.name+" with shader "+mat.shader.GetInstanceID()+" "+mat.shader.name);
-		if(!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(mat.shader)) && !AssetDatabase.GetAssetPath(mat.shader).Contains("unity default resources"))
+#if UNITY_EDITOR
+		if (!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(mat.shader)) && !AssetDatabase.GetAssetPath(mat.shader).Contains("unity default resources"))
 		{
 			UnityEngine.Debug.Log("Already on disk shader used : "+AssetDatabase.GetAssetPath(mat.shader));
 			return;
 		}
+#endif
 		//if(mat.shader.isSupported)
 		//	return;
 		if(!shaderList.ContainsKey(mat.shader.GetInstanceID()))
@@ -118,7 +123,9 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 					UnityEngine.Debug.Log(mat.shader.name);
 					info = new ShaderInfo();
 					info.shader = shader;
+#if UNITY_EDITOR
 					info.name = System.IO.Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(shader));
+#endif
 				}
 			}
 			if(info != null)
@@ -133,11 +140,15 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 			Shader shader = shaderList[shaderId].shader;
 			if(shader != null)
 			{
+#if UNITY_EDITOR
 				var so = new SerializedObject(mat);
 				int renderQueue = so.FindProperty("m_CustomRenderQueue").intValue;
+#endif
 				mat.shader = shader;
-				if(renderQueue != -1)
+#if UNITY_EDITOR
+				if (renderQueue != -1)
 					mat.renderQueue = renderQueue;
+#endif
 				Debug.Log("Loaded shader "+shaderId+" "+shader.name+" on "+mat.name);
 			}
 			else

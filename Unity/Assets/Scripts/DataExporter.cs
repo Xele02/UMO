@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using XeApp.Game.Common;
 using System.IO;
@@ -8,10 +7,14 @@ using XeApp.Game;
 using XeSys;
 using System;
 using XeApp.Game.Menu;
+#if UNITY_EDITOR
 using UnityEngine.SceneManagement;
+using UnityEditor;
+#endif
 
 class DataExporter
 {
+#if UNITY_EDITOR
 	[MenuItem("UMO/Export Song List", validate = true)]
 	static bool ExportSongListAvaiable()
 	{
@@ -178,5 +181,5 @@ class DataExporter
 		txt += "Difficulty : "+Database.Instance.gameSetup.musicInfo.difficultyType+", Line6 : "+Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 		GUIUtility.systemCopyBuffer = txt;
 	}
-
+#endif
 }
