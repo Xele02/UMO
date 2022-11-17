@@ -32,8 +32,8 @@ namespace XeApp.Core
 		public override IEnumerator InitializeUGUICoroutine(Font font, Action<GameObject> finish)
 		{
 			//0xE11CA8
-#if UNITY_EDITOR
-            BundleShaderInfo.Instance.FixMaterialShader(m_request.asset);
+#if UNITY_EDITOR || UNITY_STANDALONE
+			BundleShaderInfo.Instance.FixMaterialShader(m_request.asset);
 #endif
 			GameObject obj = UnityEngine.Object.Instantiate(m_request.asset as GameObject);
 			Text[] texts  = obj.GetComponentsInChildren<Text>(true);

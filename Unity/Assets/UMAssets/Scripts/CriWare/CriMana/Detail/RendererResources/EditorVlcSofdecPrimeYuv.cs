@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 namespace CriWare.CriMana.Detail
 {
     public static partial class AutoResisterRendererResourceFactories

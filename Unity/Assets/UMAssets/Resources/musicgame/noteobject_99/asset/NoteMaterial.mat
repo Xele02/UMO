@@ -3,6 +3,7 @@
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -19,11 +20,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTypeTex:
-        m_Texture: {fileID: 2800000, guid: 68361fff3666386478aafd84b751abb0, type: 2}
+        m_Texture: {fileID: 2800000, guid: 39af3f281e8c57440b3a8255861063a9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTypeTex:
-        m_Texture: {fileID: 2800000, guid: 633fea67b513abc4ca7ac533e02d5dd8, type: 2}
+        m_Texture: {fileID: 2800000, guid: 65d165e9d26adc84ca54726481b5de57, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpTypeTex:

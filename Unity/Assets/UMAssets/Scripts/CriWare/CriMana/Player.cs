@@ -464,7 +464,7 @@ namespace CriWare
 			// // RVA: 0x295E510 Offset: 0x295E510 VA: 0x295E510
 			public void IssuePluginEvent(Player.CriManaUnityPlayer_RenderEventAction renderEventAction)
 			{
-#if !UNITY_EDITOR
+#if !UNITY_EDITOR && !UNITY_STANDALONE
 #if !(UNITY_IOS || UNITY_TVOS)
 				if (status == Status.Ready || status == Status.Playing)
 				{

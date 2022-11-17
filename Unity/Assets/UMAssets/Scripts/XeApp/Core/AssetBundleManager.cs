@@ -70,7 +70,7 @@ namespace XeApp.Core
 						UnityEngine.Debug.Log("LoadAssetBundle loaded "+assetBundleName);
 						fo.dispose = true;
 						AssetBundle bundle = fo.assetBundle;
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 						BundleShaderInfo.Instance.RegisterShaderIds(bundle, () => {
 #endif
 						LoadedAssetBundle res = new LoadedAssetBundle(bundle);
@@ -81,7 +81,7 @@ namespace XeApp.Core
 						}
 						m_lodingAssetBundle.Remove(assetBundleName);
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 						});
 #endif
 						return true;

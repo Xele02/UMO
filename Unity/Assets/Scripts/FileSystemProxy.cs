@@ -159,4 +159,20 @@ static class FileSystemProxy
 		if (onDone != null)
 			onDone(path);
 	}
+
+#if UNITY_EDITOR
+	[UnityEditor.MenuItem("UMO/TestLoadBundle")]
+	static void TestLoadBundle()
+	{
+		if (GameManager.Instance)
+		{
+			foreach (var k in serverFileList)
+			{
+				string path = ConvertPath(UnityEngine.Application.persistentDataPath + "/data" + k.Value);
+				UnityEngine.Debug.LogError(path);
+				break;
+			}
+		}
+	}
+#endif
 }

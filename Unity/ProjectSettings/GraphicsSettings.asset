@@ -2,6 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!30 &1
 GraphicsSettings:
+  m_ObjectHideFlags: 0
   serializedVersion: 12
   m_Deferred:
     m_Mode: 1
@@ -45,7 +46,6 @@ GraphicsSettings:
   - {fileID: 4800000, guid: 61202c25e3dc9074f8c5d2413ed2c26a, type: 3}
   - {fileID: 4800000, guid: 6fa787a91ffaf374fa575586fef3f639, type: 3}
   - {fileID: 16000, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 16002, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 19, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 65, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 66, guid: 0000000000000000f000000000000000, type: 0}
@@ -62,8 +62,10 @@ GraphicsSettings:
   - {fileID: 10757, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 15309, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 15308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 17000, guid: 0000000000000000f000000000000000, type: 0}
   m_PreloadedShaders: []
-  m_SpritesDefaultMaterial: {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SpritesDefaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000,
+    type: 0}
   m_CustomRenderPipeline: {fileID: 0}
   m_TransparencySortMode: 0
   m_TransparencySortAxis: {x: 0, y: 0, z: 1}

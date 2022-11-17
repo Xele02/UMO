@@ -6,7 +6,7 @@ using Cryptor;
 public class IPGPAGNBBIK : LBHFILLFAGA
 {
 	private DsfdLoader.ILoadRequest COJNCNGHIJC; // 0x4C
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 	bool isInstalling = false;
 #endif
 
@@ -19,7 +19,7 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 	// // RVA: 0x140F66C Offset: 0x140F66C VA: 0x140F66C Slot: 4
 	public override void BDALHEMDIDC_DoStart()
 	{
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 		isInstalling = true;
 		FileSystemProxy.TryInstallFile(HHHEFALNMJO_mPath, (string newPath) =>
 		{
@@ -27,7 +27,7 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 			HHHEFALNMJO_mPath = newPath;
 #endif
 			COJNCNGHIJC = Cryptor.DsfdLoader.LoadFile(HHHEFALNMJO_mPath);
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 		});
 #endif
 	}
@@ -35,7 +35,7 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 	// // RVA: 0x140F6F8 Offset: 0x140F6F8 VA: 0x140F6F8 Slot: 5
 	public override bool GDEMPLAOGKK_IsDone()
 	{
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 		if (isInstalling)
 			return false;
 #endif
@@ -47,7 +47,7 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 	// // RVA: 0x140F7EC Offset: 0x140F7EC VA: 0x140F7EC Slot: 6
 	public override string LKPOPGJLPAJ_GetErrorStr()
 	{
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 		if (isInstalling)
 			return null;
 #endif
@@ -76,7 +76,7 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 	// // RVA: 0x140FA2C Offset: 0x140FA2C VA: 0x140FA2C Slot: 11
 	public override void PAHHAMPDBFP()
 	{
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 		if (isInstalling)
 			return;
 #endif

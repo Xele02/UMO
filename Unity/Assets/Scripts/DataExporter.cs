@@ -181,5 +181,28 @@ class DataExporter
 		txt += "Difficulty : "+Database.Instance.gameSetup.musicInfo.difficultyType+", Line6 : "+Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 		GUIUtility.systemCopyBuffer = txt;
 	}
+
+	[MenuItem("Assets/UMO/Convert Texture to PNG", true)]
+	private static bool CheckConvertTexture()
+	{
+		return Selection.activeObject is Texture;
+	}
+
+	[MenuItem("Assets/UMO/Convert Texture to PNG")]
+	private static void ConvertTexture()
+	{
+		string[] assets = Selection.assetGUIDs;
+		for (int i = 0; i < assets.Length; i++)
+		{
+			string path = AssetDatabase.GUIDToAssetPath(assets[i]);
+			Texture2D tex = AssetDatabase.LoadAssetAtPath(path, typeof(Texture2D)) as Texture2D;
+			if (tex)
+			{
+				string name = path.Replace(".asset", "new.png");
+				Texture2D t = TextureHelper.Copy(tex);
+				File.WriteAllBytes(name, t.EncodeToPNG());
+			}
+		}
+	}
 #endif
 }

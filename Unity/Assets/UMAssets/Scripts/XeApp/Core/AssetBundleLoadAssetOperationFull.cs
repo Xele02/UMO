@@ -24,8 +24,8 @@ namespace XeApp.Core
         {
             if(IsDone())
             {
-#if UNITY_EDITOR
-                BundleShaderInfo.Instance.FixMaterialShader(m_request.asset);
+#if UNITY_EDITOR || UNITY_STANDALONE
+				BundleShaderInfo.Instance.FixMaterialShader(m_request.asset);
 #endif
                 return m_request.asset as T;
             }

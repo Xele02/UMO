@@ -285,7 +285,7 @@ namespace XeApp.Game
 				w = UnityEngine.Screen.height;
 				h = UnityEngine.Screen.width;
 			}
-#if !UNITY_EDITOR
+#if UNITY_ANDROID
 			while(UnityEngine.Screen.orientation == ScreenOrientation.Portrait)
 			{
 				UnityEngine.Screen.orientation = ScreenOrientation.LandscapeLeft;
