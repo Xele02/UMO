@@ -70,19 +70,27 @@ namespace XeApp.Core
 						UnityEngine.Debug.Log("LoadAssetBundle loaded "+assetBundleName);
 						fo.dispose = true;
 						AssetBundle bundle = fo.assetBundle;
+						if(bundle != null)
+						{ 
 #if UNITY_EDITOR || UNITY_STANDALONE
-						BundleShaderInfo.Instance.RegisterShaderIds(bundle, () => {
+							BundleShaderInfo.Instance.RegisterShaderIds(bundle, () => {
 #endif
-						LoadedAssetBundle res = new LoadedAssetBundle(bundle);
-						m_LoadedAssetBundles.Add(assetBundleName, res);
-						if(m_lodingAssetBundle.TryGetValue(assetBundleName, out loadingCount))
-						{
-							res.m_ReferencedCount += loadingCount;
-						}
-						m_lodingAssetBundle.Remove(assetBundleName);
+								LoadedAssetBundle res = new LoadedAssetBundle(bundle);
+								m_LoadedAssetBundles.Add(assetBundleName, res);
+								if(m_lodingAssetBundle.TryGetValue(assetBundleName, out loadingCount))
+								{
+									res.m_ReferencedCount += loadingCount;
+								}
+								m_lodingAssetBundle.Remove(assetBundleName);
 
 #if UNITY_EDITOR || UNITY_STANDALONE
-						});
+							});
+						}
+						else
+						{
+							m_lodingErrors[assetBundleName] = "Load Assetbundle Failed:" + assetBundleName;
+							m_lodingAssetBundle.Remove(assetBundleName);
+						}
 #endif
 						return true;
 					}, 
