@@ -458,5 +458,17 @@ namespace CriWare
 
 		// // RVA: 0x28B6B94 Offset: 0x28B6B94 VA: 0x28B6B94
 		// public void DetachFromAnalyzer(CriAtomExOutputAnalyzer analyzer) { }
+
+		//UMO
+		public void Preload(int cueId)
+		{
+			CriAtomExAcb acb = null;
+			if (!String.IsNullOrEmpty(this.cueSheet))
+			{
+				acb = CriAtom.GetAcb(this.cueSheet);
+			}
+			ExternLib.LibCriWare.PreloadCue(acb.nativeHandle, cueId);
+		}
+		//
 	}
 }

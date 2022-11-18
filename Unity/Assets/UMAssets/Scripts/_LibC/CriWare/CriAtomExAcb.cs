@@ -58,5 +58,17 @@ namespace ExternLib
 				return res;
             }
         }
-    }
+
+		public static void PreloadCue(IntPtr acb_hn, int cueId)
+		{
+			if (!acbFiles.ContainsKey(acb_hn))
+				return;
+			string name = "cue_" + cueId;
+			if(!acbFiles[acb_hn].cachedAudioClips.ContainsKey(name))
+			{
+				acbFiles[acb_hn].cachedAudioClips[name] = GetClip(acbFiles[acb_hn].file, "", cueId);
+			}
+		}
+
+	}
 }

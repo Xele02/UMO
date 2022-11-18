@@ -178,7 +178,7 @@ namespace ExternLib
 #if !UNITY_ANDROID
 			AudioSource source = player.config.source.unityAudioSource;
 			source.loop = player.audioStream.HcaInfo.LoopFlag;
-			string clipName = player.cueName != "" ? "cue_" + player.cueId : player.cueName;
+			string clipName = player.cueName == "" ? "cue_" + player.cueId : player.cueName;
 			AudioClip clip = null;
 			if (!acbFiles[player.acbPtr].cachedAudioClips.TryGetValue(clipName, out clip))
 			{

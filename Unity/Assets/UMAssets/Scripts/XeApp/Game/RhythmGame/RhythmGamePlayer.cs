@@ -471,7 +471,7 @@ namespace XeApp.Game.RhythmGame
 			bgmPlayer.ChangeMusicCue(resource.musicData.musicBase.KKPAHLMJKIH_WavId);
 			musicMillisecLength = bgmPlayer.millisecLength;
 			InitializeMusicScoreEvent();
-			
+
 			GameSetupData.TeamInfo t = Database.Instance.gameSetup.teamInfo;
 			StatusData s = t.teamStatus;
 			RhythmGameStatus.InitializeData initData;
@@ -483,10 +483,10 @@ namespace XeApp.Game.RhythmGame
 			initData.maxLife = s.life;
 			initData.isLiveSkip = false;
 			status = new RhythmGameStatus(initData, this.OnPlayPilotVoice);
-			
-			if(!setting_mv.m_enable)
+
+			if (!setting_mv.m_enable)
 			{
-				if(!setting.m_enable_cutin)
+				if (!setting.m_enable_cutin)
 				{
 					status.energy.DisableCallbackPilotVoice();
 				}
@@ -494,7 +494,7 @@ namespace XeApp.Game.RhythmGame
 			else
 			{
 				status.energy.DisableCallbackPilotVoice();
-				AOJGDNFAIJL_PrismData.AMIECPBIALP a = new AOJGDNFAIJL_PrismData.AMIECPBIALP();				
+				AOJGDNFAIJL_PrismData.AMIECPBIALP a = new AOJGDNFAIJL_PrismData.AMIECPBIALP();
 				a.OBKGEDCKHHE(Database.Instance.gameSetup.musicInfo.prismMusicId, 1 < Database.Instance.gameSetup.musicInfo.onStageDivaNum);
 				int[] difficulties = a.CEMKPBIBOCG(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 				float diff = difficulties[(int)Database.Instance.gameSetup.musicInfo.difficultyType] * 1.0f / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2 + 1;
@@ -519,6 +519,15 @@ namespace XeApp.Game.RhythmGame
 			soundCheerOrderer.Initialize(resource.musicData.cheerScoreData);
 			soundCheerOrderer.Stop();
 			soundCheerOrderer.Resume();
+
+#if UNITY_STANDALONE
+			//UMO
+			for (int i = 0; i < noteTouchSEIndex.Length; i++)
+			{
+				SoundManager.Instance.sePlayerNotes.Preload(noteTouchSEIndex[i]);
+			}
+			//
+#endif
 		}
 
 		// // RVA: 0x9B4D20 Offset: 0x9B4D20 VA: 0x9B4D20
