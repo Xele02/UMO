@@ -401,6 +401,12 @@ namespace XeSys.Gfx
 		// RVA: 0x1F00100 Offset: 0x1F00100 VA: 0x1F00100
 		private void Start()
 		{
+#if UNITY_EDITOR
+			//UMO
+			if (FileSystemProxy.IsTesting)
+				return;
+			//
+#endif
 			if(!m_isLayoutAutoLoad)
 				return;
 			LoadLayout();

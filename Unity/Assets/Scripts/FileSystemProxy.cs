@@ -3,7 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using XeApp.Core;
 using XeApp.Game;
+#if UNITY_EDITOR
+using System.Reflection;
+using System.Linq;
+#endif
 
 static class FileSystemProxy
 {
@@ -166,13 +171,174 @@ static class FileSystemProxy
 	{
 		if (GameManager.Instance)
 		{
-			foreach (var k in serverFileList)
+			GameManager.Instance.StartCoroutine(TestBundleAsync());
+		}
+	}
+
+	public static bool IsTesting = false;
+
+	static T Copy<T>(T src) where T : UnityEngine.Object
+	{
+		if (src is Material)
+			return new Material(src as Material) as T;
+		UnityEngine.Debug.LogError("Can't copy " + src.GetType());
+		return null;
+	}
+
+	static T GetCopyOf<T>(this UnityEngine.Object comp, T other, ExportInfo info) where T : UnityEngine.Object
+	{
+		Type type = comp.GetType();
+		if (type != other.GetType()) return null; // type mis-match
+		BindingFlags flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Default/* | BindingFlags.DeclaredOnly*/;
+		//PropertyInfo[] pinfos = type.GetProperties(flags);
+		// Replace pinfos with this:
+		var pinfos = from property in type.GetProperties(flags)
+					 where !property.CustomAttributes.Any(attribute => attribute.AttributeType == typeof(ObsoleteAttribute))
+					 select property;
+		foreach (var pinfo in pinfos)
+		{
+			if (pinfo.CanWrite)
 			{
-				string path = ConvertPath(UnityEngine.Application.persistentDataPath + "/data" + k.Value);
-				UnityEngine.Debug.LogError(path);
-				break;
+				try
+				{
+					pinfo.SetValue(comp, pinfo.GetValue(other, null), null);
+					if(pinfo.GetValue(comp) is UnityEngine.Object)
+					{
+						string guid;
+						long localId;
+						UnityEngine.Object obj = pinfo.GetValue(comp) as UnityEngine.Object;
+						if (UnityEditor.AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out guid, out localId))
+						{
+							UnityEngine.Debug.LogError("Ext : "+obj.name+" "+guid+" "+localId);
+							if(guid == Guid.Empty.ToString("N"))
+							{
+								if(!info.externalFiles.ContainsKey(localId))
+								{
+									if (obj is Texture2D)
+									{
+										info.externalFiles[localId] = ExportFile(obj as Texture2D, info);
+									}
+									else if(obj is Material)
+									{
+										info.externalFiles[localId] = ExportFile(obj as Material, info);
+									}
+									else
+									{
+										UnityEngine.Debug.LogError("Could save asset of type " +obj.GetType());
+										info.externalFiles[localId] = obj;
+									}
+								}
+								pinfo.SetValue(comp, info.externalFiles[localId]);
+							}
+						}
+					}
+				}
+				catch { } // In case of NotImplementedException being thrown. For some reason specifying that exception didn't seem to catch it, so I didn't catch anything specific.
 			}
 		}
+		FieldInfo[] finfos = type.GetFields(flags);
+		foreach (var finfo in finfos)
+		{
+			finfo.SetValue(comp, finfo.GetValue(other));
+		}
+		return comp as T;
+	}
+
+	static GameObject DuplicateGO(GameObject src, ExportInfo info)
+	{
+		GameObject go = new GameObject(src.name);
+		Component[] cp = src.GetComponents(typeof(Component));
+		for(int i = 0; i < cp.Length; i++)
+		{
+			Component c = go.AddComponent(cp[i].GetType()).GetCopyOf(cp[i], info);
+			if (c is Behaviour && cp[i] is Behaviour)
+			{
+				(c as Behaviour).enabled = (cp[i] as Behaviour).enabled;
+			}
+		}
+		for(int i = 0; i < src.transform.childCount; i++)
+		{
+			GameObject n = DuplicateGO(src.transform.GetChild(i).gameObject, info);
+			n.transform.SetParent(go.transform, false);
+		}
+		go.layer = src.layer;
+		go.SetActive(src.activeSelf);
+		return go;
+	}
+
+	static Texture2D ExportFile(Texture2D tex, ExportInfo info)
+	{
+		Texture2D newTex = TextureHelper.Copy(tex as Texture2D);
+
+		string path = info.Path + tex.name + ".png";
+		File.WriteAllBytes(path, newTex.EncodeToPNG());
+		UnityEditor.AssetDatabase.ImportAsset(path, UnityEditor.ImportAssetOptions.ForceUpdate);
+		var assetImporter = UnityEditor.AssetImporter.GetAtPath(path);
+		assetImporter.AddRemap(new UnityEditor.AssetImporter.SourceAssetIdentifier(newTex), tex);
+		UnityEditor.AssetDatabase.WriteImportSettingsIfDirty(path);
+		UnityEditor.AssetDatabase.ImportAsset(path, UnityEditor.ImportAssetOptions.ForceUpdate);
+		Texture2D res = UnityEditor.AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+		return res;
+
+	}
+
+	static Material ExportFile(Material mat, ExportInfo info)
+	{
+		string p = info.Path + mat.name + ".mat";
+		Material newMat = Copy(mat).GetCopyOf(mat, info);
+		UnityEditor.AssetDatabase.CreateAsset(newMat, p);
+		UnityEditor.AssetDatabase.ImportAsset(p, UnityEditor.ImportAssetOptions.ForceUpdate);
+		Material res = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>(p);
+		return res;
+	}
+
+	class ExportInfo
+	{
+		public string Path;
+		public Dictionary<long, UnityEngine.Object> externalFiles = new Dictionary<long, UnityEngine.Object>();
+	}
+
+	static void SavePrefab(GameObject bundleSource, string name)
+	{
+		UnityEditor.AssetDatabase.CreateFolder("Assets/Test/", name);
+		ExportInfo info = new ExportInfo();
+		info.Path = "Assets/Test/" + name + "/";
+		GameObject prefab = DuplicateGO(bundleSource, info);
+		UnityEditor.PrefabUtility.SaveAsPrefabAsset(prefab, "Assets/Test/" + name + "/" + name + ".prefab");
+	}
+
+	static IEnumerator TestBundleAsync()
+	{
+		/*foreach (var k in serverFileList)
+		{
+			//string path = ConvertPath(UnityEngine.Application.persistentDataPath + "/data" + k.Value);
+			string path = k.Key.Replace("/android/", "");
+			UnityEngine.Debug.LogError(path);
+			yield return AssetBundleManager.LoadAllAssetAsync(path);
+			AssetBundleManager.UnloadAssetBundle(path);
+		}*/
+		IsTesting = true;
+		string s = "ad/am/100601.xab";
+		UnityEngine.Debug.LogError(s);
+		AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(s);
+		yield return operation;
+		GameObject go = operation.GetAsset<GameObject>("100601");
+		go = UnityEngine.Object.Instantiate(go);
+		SavePrefab(go, "100601");
+		yield return null;
+		AssetBundleManager.UnloadAssetBundle(s);
+		s = "ad/am/100602.xab";
+		UnityEngine.Debug.LogError(s);
+		operation = AssetBundleManager.LoadAllAssetAsync(s);
+		yield return operation;
+		go = operation.GetAsset<GameObject>("100602");
+		go = UnityEngine.Object.Instantiate(go);
+		SavePrefab(go, "100602");
+		yield return null;
+		AssetBundleManager.UnloadAssetBundle(s);
+		yield return new WaitForSeconds(1);
+		IsTesting = false;
+		UnityEngine.Debug.LogError("Done");
 	}
 #endif
 }
