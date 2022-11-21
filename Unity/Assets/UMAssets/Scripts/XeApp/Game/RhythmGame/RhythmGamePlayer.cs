@@ -821,6 +821,8 @@ namespace XeApp.Game.RhythmGame
 				setting_mv.m_mode_diva = d.mvInfo.isModeDiva;
 				setting_mv.m_mode_valkyrie = d.mvInfo.isModeValkyrie;
 				setting_mv.m_show_notes = d.mvInfo.isShowNotes;
+				if (RuntimeSettings.CurrentSettings.DisableNoteSound)
+					isIgnorePlayNotesSE = true;
 			}
 			else
 			{

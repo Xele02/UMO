@@ -23,23 +23,23 @@ class RuntimeSettings : ScriptableObject
 
 	public bool IsPathValid()
 	{
-		if(!string.IsNullOrEmpty(DataWebServerURL))
+		if (!string.IsNullOrEmpty(DataWebServerURL))
 			return true;
-		if(!string.IsNullOrEmpty(DataDirectory))
+		if (!string.IsNullOrEmpty(DataDirectory))
 		{
-			if(Directory.Exists(DataDirectory))
+			if (Directory.Exists(DataDirectory))
 			{
-				if(Directory.Exists(Path.Combine(DataDirectory, "android")) && Directory.Exists(Path.Combine(DataDirectory, "db")))
+				if (Directory.Exists(Path.Combine(DataDirectory, "android")) && Directory.Exists(Path.Combine(DataDirectory, "db")))
 					return true;
 			}
 		}
 		string path = Path.GetFullPath("../Tools/Data");
-		if(Directory.Exists(path))
+		if (Directory.Exists(path))
 		{
-			if(Directory.Exists(Path.Combine(path, "android")) && Directory.Exists(Path.Combine(path, "db")))
+			if (Directory.Exists(Path.Combine(path, "android")) && Directory.Exists(Path.Combine(path, "db")))
 			{
 #if UNITY_EDITOR
-				if(EditorUtility.DisplayDialog("Game data found", "Game data found in directory "+path+", use it ?", "Yes", "No"))
+				if (EditorUtility.DisplayDialog("Game data found", "Game data found in directory " + path + ", use it ?", "Yes", "No"))
 #endif
 				{
 					DataDirectory = path;
@@ -49,12 +49,12 @@ class RuntimeSettings : ScriptableObject
 			}
 		}
 		path = Path.GetFullPath("../Data");
-		if(Directory.Exists(path))
+		if (Directory.Exists(path))
 		{
-			if(Directory.Exists(Path.Combine(path, "android")) && Directory.Exists(Path.Combine(path, "db")))
+			if (Directory.Exists(Path.Combine(path, "android")) && Directory.Exists(Path.Combine(path, "db")))
 			{
 #if UNITY_EDITOR
-				if (EditorUtility.DisplayDialog("Game data found", "Game data found in directory "+path+", use it ?", "Yes", "No"))
+				if (EditorUtility.DisplayDialog("Game data found", "Game data found in directory " + path + ", use it ?", "Yes", "No"))
 #endif
 				{
 					DataDirectory = path;
@@ -66,17 +66,22 @@ class RuntimeSettings : ScriptableObject
 		return false;
 	}
 
+	[Header("Profile")]
 	public bool ForceDivaUnlock = true;
 	public bool ForceCostumeUnlock = true;
 	public bool ForceSongUnlock = true;
 	public bool ForceSimulationOpen = true;
 	public bool ForceTutoSkip = true;
 
+	[Header("Live")]
 	public bool ForceLiveValkyrieMode = true;
-
 	public bool ForceLiveDivaMode = false;
-
 	public bool ForceLiveAwakenDivaMode = true;
+
+	[Header("S-Live")]
+	public bool ForceCutin = true;
+	public bool DisableNoteSound = false;
+	public bool DisableWatermark = false;
 
 	[Header("Local directory where the android directory with asset bundle is. Accept crypted and decrypted bundle.")]
 	public string DataDirectory;

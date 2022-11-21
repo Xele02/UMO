@@ -97,8 +97,11 @@ namespace XeApp.Game.RhythmGame
 			m_isLowSpec = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MIHFCOBBIPJ_GetQuality2d();
 			m_is2dMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OOCKIFIHJJN;
 			m_isValkyrieOff = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG();
-			GameObject go = RhythmGameHUD.RhythmGameInstantiatePrefab(waterMark);
-			go.transform.SetParent(leftBottom.transform, false);
+			if (!RuntimeSettings.CurrentSettings.DisableWatermark)
+			{
+				GameObject go = RhythmGameHUD.RhythmGameInstantiatePrefab(waterMark);
+				go.transform.SetParent(leftBottom.transform, false);
+			}
 			GameObject touch = RhythmGameHUD.RhythmGameInstantiatePrefab(RhythmGameConsts.IsWideLine() ? touchMarkWide : touchMark);
 			touch.transform.SetParent((RhythmGameConsts.IsWideLine() ? bottomWide : bottom).transform, false);
 			touch.SetActive(isShowNotes);

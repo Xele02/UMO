@@ -27,7 +27,8 @@ public class BEJIKEOAJHN_OptionSLive
 		HHMCIGLCBNG_QualityCustomDiva3D = JsonUtil.GetInt(OBHAFLMHAKG, "qualityCustomDiva3D", 0);
 		AHLFOHJMGAI_QualityCustomOther3D = JsonUtil.GetInt(OBHAFLMHAKG, "qualityCustomOther3D", 0);
 		DADIPGPHLDD_EffectCutin = JsonUtil.GetInt(OBHAFLMHAKG, "effectCutin", 1);
-		DADIPGPHLDD_EffectCutin = 0;
+		if(RuntimeSettings.CurrentSettings.ForceCutin)
+			DADIPGPHLDD_EffectCutin = 0;
 	}
 
 	// // RVA: 0xC75848 Offset: 0xC75848 VA: 0xC75848
