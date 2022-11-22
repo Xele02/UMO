@@ -794,7 +794,7 @@ namespace XeApp.Game.Menu
 			do
 			{
 				freemusicNum = UnityEngine.Random.Range(0, freemusics.Count);
-			} while(freemusics[freemusicNum].PPEGAKEIEGM != 2);
+			} while(freemusics[freemusicNum].PPEGAKEIEGM_Enabled != 2);
 			UnityEngine.Debug.Log("Select Free Music : "+(freemusicNum + 1));
 
 			int musicId = freemusics[freemusicNum].DLAEJOBELBH_Id;
@@ -808,12 +808,12 @@ namespace XeApp.Game.Menu
 
 			// select num diva
 			int numDiva = 1;
-			if(musicInfo.NJAOOMHCIHL_Dvs != 0 && musicInfo.PECMGDOMLAF_Dvm == 0)
+			if(musicInfo.NJAOOMHCIHL_DivaSolo != 0 && musicInfo.PECMGDOMLAF_DivaMulti == 0)
 				numDiva = 1;
-			else if(musicInfo.NJAOOMHCIHL_Dvs == 0 && musicInfo.PECMGDOMLAF_Dvm != 0)
-				numDiva = musicInfo.PECMGDOMLAF_Dvm;
+			else if(musicInfo.NJAOOMHCIHL_DivaSolo == 0 && musicInfo.PECMGDOMLAF_DivaMulti != 0)
+				numDiva = musicInfo.PECMGDOMLAF_DivaMulti;
 			else
-				numDiva = UnityEngine.Random.Range(0, 2) == 0 ? 1 : musicInfo.PECMGDOMLAF_Dvm;
+				numDiva = UnityEngine.Random.Range(0, 2) == 0 ? 1 : musicInfo.PECMGDOMLAF_DivaMulti;
 			UnityEngine.Debug.Log("Select NumDiva : "+numDiva);
 
 			// load music 

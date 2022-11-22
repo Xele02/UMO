@@ -161,7 +161,7 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035D7C Offset: 0x2035D7C VA: 0x2035D7C
-        public bool GLKGAOFHLPN()
+        public bool GLKGAOFHLPN_IsCutinEnabled()
         {
             return DADIPGPHLDD_EffectCutin == 0;
         }

@@ -386,7 +386,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	public static bool LBHPMGDNPHK(int GHBPLHBNMBK_FreeMusicId, int DEPGBBJMFED_CategoryId)
 	{
 		KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_FreeMusicId);
-		if(musicInfo.PPEGAKEIEGM == 2)
+		if(musicInfo.PPEGAKEIEGM_Enabled == 2)
 		{
 			if(DEPGBBJMFED_CategoryId != -1)
 			{
@@ -444,7 +444,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 			for(int i = 0; i < numSongs; i++)
 			{
 				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[i];
-				if (musicInfo.PPEGAKEIEGM == 2)
+				if (musicInfo.PPEGAKEIEGM_Enabled == 2)
 				{
 					if (musicInfo.GBNOALJPOBM || !JCOJKAHFADL)
 					{

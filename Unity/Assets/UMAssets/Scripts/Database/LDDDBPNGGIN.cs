@@ -289,7 +289,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA1040 Offset: 0xDA1040 VA: 0xDA1040
-	public int NBIAKELCBLC(int MJBODMOLOBC_teamLuck, int HLOHIMEAPLH_Seed)
+	public int NBIAKELCBLC_GetNumItems(int MJBODMOLOBC_teamLuck, int HLOHIMEAPLH_Seed)
 	{
 		if (MJBODMOLOBC_teamLuck < 1)
 			MJBODMOLOBC_teamLuck = 0;

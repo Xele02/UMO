@@ -77,12 +77,12 @@ namespace XeApp.Game.Common
 				// // RVA: 0xEA000C Offset: 0xEA000C VA: 0xEA000C
 				public void SetForcePrismData(AIPEHINPIHC a_prism, int a_index)
 				{
-					if (a_prism.AHHJLDLAPAN.Length <= a_index)
+					if (a_prism.AHHJLDLAPAN_DivaId.Length <= a_index)
 						return;
-					if(a_prism.AHHJLDLAPAN[a_index] > 0 && a_prism.JPIDIENBGKH[a_index] > 0)
+					if(a_prism.AHHJLDLAPAN_DivaId[a_index] > 0 && a_prism.JPIDIENBGKH_CostumeId[a_index] > 0)
 					{
-						prismDivaId = a_prism.AHHJLDLAPAN[a_index];
-						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA[a_prism.JPIDIENBGKH[a_index] - 1].DAJGPBLEEOB_PrismCostumeModelId;
+						prismDivaId = a_prism.AHHJLDLAPAN_DivaId[a_index];
+						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA[a_prism.JPIDIENBGKH_CostumeId[a_index] - 1].DAJGPBLEEOB_PrismCostumeModelId;
 						prismCostumeColorId = 0;
 					}
 				}
@@ -386,7 +386,7 @@ namespace XeApp.Game.Common
 				AIPEHINPIHC a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL.Find((AIPEHINPIHC x) =>
 				{
 					//0xE9D51C
-					return masterFreeMusic.BLDDNEJDFON == x.NMNDNFFJHPJ;
+					return masterFreeMusic.BLDDNEJDFON_ForcePrismId == x.NMNDNFFJHPJ_Id;
 				});
 				if(a != null)
 				{
@@ -398,25 +398,25 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE9D288 Offset: 0xE9D288 VA: 0xE9D288
 		public int ForceNoteSe()
 		{
-			return (forcePrism != null && forcePrism.MDKNFOIMCJB > 0) ? forcePrism.MDKNFOIMCJB : 0;
+			return (forcePrism != null && forcePrism.MDKNFOIMCJB_NoteSe > 0) ? forcePrism.MDKNFOIMCJB_NoteSe : 0;
 		}
 
 		// // RVA: 0xE9D2A8 Offset: 0xE9D2A8 VA: 0xE9D2A8
 		public int ForceNoteType()
 		{
-			return (forcePrism != null && forcePrism.JIIOKINLOGM > 0) ? forcePrism.JIIOKINLOGM : 0;
+			return (forcePrism != null && forcePrism.JIIOKINLOGM_NoteType > 0) ? forcePrism.JIIOKINLOGM_NoteType : 0;
 		}
 
 		// // RVA: 0xE9D2C8 Offset: 0xE9D2C8 VA: 0xE9D2C8
 		public int ForceDivaVoice()
 		{
-			return (forcePrism != null && forcePrism.OOFEIPCLEKJ > 0) ? forcePrism.OOFEIPCLEKJ : 0;
+			return (forcePrism != null && forcePrism.OOFEIPCLEKJ_DivaVoice > 0) ? forcePrism.OOFEIPCLEKJ_DivaVoice : 0;
 		}
 
 		// // RVA: 0xE9D2E8 Offset: 0xE9D2E8 VA: 0xE9D2E8
 		public int ForcePilotVoice()
 		{
-			return (forcePrism != null && forcePrism.EDDLJBLJJOE > 0) ? forcePrism.EDDLJBLJJOE : 0;
+			return (forcePrism != null && forcePrism.EDDLJBLJJOE_PilotVoice > 0) ? forcePrism.EDDLJBLJJOE_PilotVoice : 0;
 		}
 
 		// // RVA: 0xE9D308 Offset: 0xE9D308 VA: 0xE9D308
@@ -427,7 +427,7 @@ namespace XeApp.Game.Common
 		{
 			if(forcePrism != null)
 			{
-				int res = forcePrism.EGMIILFFHMI;
+				int res = forcePrism.EGMIILFFHMI_DivaMode;
 				if(res < 1)
 					res = 0;
 				return res;
@@ -440,7 +440,7 @@ namespace XeApp.Game.Common
 		{
 			if(forcePrism != null)
 			{
-				int res = forcePrism.HFMFGFHPBNB;
+				int res = forcePrism.HFMFGFHPBNB_ValkyrieMode;
 				if(res < 1)
 					res = 0;
 				return res;
@@ -453,7 +453,7 @@ namespace XeApp.Game.Common
 		{
 			if(forcePrism != null)
 			{
-				int res = forcePrism.ENAAKPKFBGN;
+				int res = forcePrism.ENAAKPKFBGN_EffectCutIn;
 				if(res < 1)
 					res = 0;
 				return res;

@@ -311,9 +311,9 @@ namespace XeApp.Game.RhythmGame
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
 			p.KHEKNNFCAOI_Init(team.prismValkyrieId, 0, 0);
 			int pilotId = p.OPBPKNHIPPE.PFGJJLGLPAC_PilotId;
-			int intro = musicInfoDb.EECJONKNHNK_Vli;
-			int introSky = musicInfoDb.MNEFKDDCEHE_Vlis;
-			int battle = musicInfoDb.DMKCGNMOCCH_Vlb;
+			int intro = musicInfoDb.EECJONKNHNK_ValkyrieIntro;
+			int introSky = musicInfoDb.MNEFKDDCEHE_ValkyrieIntroSky;
+			int battle = musicInfoDb.DMKCGNMOCCH_ValkyrieBattle;
 
 			isBgmSoundLoaded = false;
 			gamePlayer.bgmPlayer.RequestChangeCueSheet(wavId, () =>

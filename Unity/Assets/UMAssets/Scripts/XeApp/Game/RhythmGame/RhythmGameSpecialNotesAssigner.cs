@@ -54,15 +54,15 @@ namespace XeApp.Game.RhythmGame
 			rateSet = g.CGLAEOLPEGN;
 			if (g.CGLAEOLPEGN != null && g.GEDOFFFKIFN != null)
 			{
-				itemWeightTable = new List<int>(g.CGLAEOLPEGN.ADKDHKMPMHP_Rat);
+				itemWeightTable = new List<int>(g.CGLAEOLPEGN.ADKDHKMPMHP_Rate);
 				for(int i = 0; i < itemWeightTable.Count; i++)
 				{
-					if(itemSet.FKNBLDPIPMC(i) == 0)
+					if(itemSet.FKNBLDPIPMC_GetItemId(i) == 0)
 					{
 						itemWeightTable[i] = 0;
 					}
 				}
-				itemLotCountList = new int[rateSet.ADKDHKMPMHP_Rat.Count];
+				itemLotCountList = new int[rateSet.ADKDHKMPMHP_Rate.Count];
 			}
 		}
 
@@ -124,20 +124,20 @@ namespace XeApp.Game.RhythmGame
 				AssginFromList(rNoteList, ref l2, RhythmGameConsts.SpecialNoteType.CenterLiveSkill);
 			}
 			rareItemRandSeed = Random.Range(0, 100000);
-			int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.NBIAKELCBLC(Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
+			int numItems = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.NBIAKELCBLC_GetNumItems(Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
 			if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL || Database.Instance.gameSetup.musicInfo.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA)
 			{
-				a = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.NBIAKELCBLC((int)Database.Instance.gameSetup.musicInfo.gameEventType, (int)Database.Instance.gameSetup.musicInfo.openEventType, (int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode, Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
+				numItems = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.NBIAKELCBLC((int)Database.Instance.gameSetup.musicInfo.gameEventType, (int)Database.Instance.gameSetup.musicInfo.openEventType, (int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode, Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
 			}
-			List<DNAEGJGAKEI> ld = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HGLIIPFLMFB_Drop.JMHHEPMILHA(musicinfo, (int)Database.Instance.gameSetup.musicInfo.difficultyType, (int)Database.Instance.gameSetup.musicInfo.gameEventType, (int)Database.Instance.gameSetup.musicInfo.openEventType, a, this.OnRareItemRandomLot, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
-			if (ld == null || ld.Count < 1)
+			List<DNAEGJGAKEI_DropItemInfo> itemsToSpawn = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HGLIIPFLMFB_Drop.JMHHEPMILHA_GetItemsToSpawn(musicinfo, (int)Database.Instance.gameSetup.musicInfo.difficultyType, (int)Database.Instance.gameSetup.musicInfo.gameEventType, (int)Database.Instance.gameSetup.musicInfo.openEventType, numItems, this.OnRareItemRandomLot, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
+			if (itemsToSpawn == null || itemsToSpawn.Count < 1)
 			{
-				a = 0;
+				numItems = 0;
 			}
 			int b = 0;
 			if(!Database.Instance.gameSetup.musicInfo.isTutorialOne)
 			{
-				b = a;
+				b = numItems;
 				if (Database.Instance.gameSetup.musicInfo.isTutorialTwo)
 					b = 0;
 			}
@@ -214,7 +214,7 @@ namespace XeApp.Game.RhythmGame
 					{
 						int v = Random.Range(0, l3.Count);
 						onModeAttrAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
-						onModeItemInfoAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, ld[j].KIJAPOFAGPN, ld[j].OIPCCBHIKIA);
+						onModeItemInfoAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_ItemIdx);
 						l3.RemoveAt(v);
 					}
 				}
@@ -223,7 +223,7 @@ namespace XeApp.Game.RhythmGame
 					for (int j = 0; j < ari[i].Count; j++)
 					{
 						onModeAttrAssignCallback(l3[ari[i][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
-						onModeItemInfoAssignCallback(l3[ari[i][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, ld[j].KIJAPOFAGPN, ld[j].OIPCCBHIKIA);
+						onModeItemInfoAssignCallback(l3[ari[i][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_ItemIdx);
 						l3.RemoveAt(ari[i][j].noteListIndex);
 					}
 				}
@@ -270,7 +270,7 @@ namespace XeApp.Game.RhythmGame
 			if(itemWeightTable != null)
 			{
 				int a = LotsItem(itemWeightTable);
-				onModeItemInfoAssignCallback(noteIndex, mode, itemSet.FKNBLDPIPMC(a), a | 0x40000000);
+				onModeItemInfoAssignCallback(noteIndex, mode, itemSet.FKNBLDPIPMC_GetItemId(a), a | 0x40000000);
 				if(rateSet.DOOGFEGEKLG_Max[a] != 0)
 				{
 					itemLotCountList[a]++;

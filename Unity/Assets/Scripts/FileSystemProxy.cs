@@ -214,19 +214,7 @@ static class FileSystemProxy
 							{
 								if(!info.externalFiles.ContainsKey(localId))
 								{
-									if (obj is Texture2D)
-									{
-										info.externalFiles[localId] = ExportFile(obj as Texture2D, info);
-									}
-									else if(obj is Material)
-									{
-										info.externalFiles[localId] = ExportFile(obj as Material, info);
-									}
-									else
-									{
-										UnityEngine.Debug.LogError("Could save asset of type " +obj.GetType());
-										info.externalFiles[localId] = obj;
-									}
+									info.externalFiles[localId] = ExportFile(obj, info);
 								}
 								pinfo.SetValue(comp, info.externalFiles[localId]);
 							}
@@ -266,30 +254,41 @@ static class FileSystemProxy
 		return go;
 	}
 
-	static Texture2D ExportFile(Texture2D tex, ExportInfo info)
+	static T ExportFile<T>(T data, ExportInfo info) where T : UnityEngine.Object
 	{
-		Texture2D newTex = TextureHelper.Copy(tex as Texture2D);
+		if (data is Texture2D)
+		{
+			Texture2D tex = data as Texture2D;
+			Texture2D newTex = TextureHelper.Copy(tex as Texture2D);
 
-		string path = info.Path + tex.name + ".png";
-		File.WriteAllBytes(path, newTex.EncodeToPNG());
-		UnityEditor.AssetDatabase.ImportAsset(path, UnityEditor.ImportAssetOptions.ForceUpdate);
-		var assetImporter = UnityEditor.AssetImporter.GetAtPath(path);
-		assetImporter.AddRemap(new UnityEditor.AssetImporter.SourceAssetIdentifier(newTex), tex);
-		UnityEditor.AssetDatabase.WriteImportSettingsIfDirty(path);
-		UnityEditor.AssetDatabase.ImportAsset(path, UnityEditor.ImportAssetOptions.ForceUpdate);
-		Texture2D res = UnityEditor.AssetDatabase.LoadAssetAtPath<Texture2D>(path);
-		return res;
-
-	}
-
-	static Material ExportFile(Material mat, ExportInfo info)
-	{
-		string p = info.Path + mat.name + ".mat";
-		Material newMat = Copy(mat).GetCopyOf(mat, info);
-		UnityEditor.AssetDatabase.CreateAsset(newMat, p);
-		UnityEditor.AssetDatabase.ImportAsset(p, UnityEditor.ImportAssetOptions.ForceUpdate);
-		Material res = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>(p);
-		return res;
+			string path = info.Path + tex.name + ".png";
+			File.WriteAllBytes(path, newTex.EncodeToPNG());
+			UnityEditor.AssetDatabase.ImportAsset(path, UnityEditor.ImportAssetOptions.ForceUpdate);
+			var assetImporter = UnityEditor.AssetImporter.GetAtPath(path) as UnityEditor.TextureImporter;
+			assetImporter.mipmapEnabled = tex.mipmapCount > 0;
+			assetImporter.mipMapBias = tex.mipMapBias;
+			assetImporter.sRGBTexture = false;
+			assetImporter.anisoLevel = tex.anisoLevel;
+			UnityEditor.AssetDatabase.WriteImportSettingsIfDirty(path);
+			UnityEditor.AssetDatabase.ImportAsset(path, UnityEditor.ImportAssetOptions.ForceUpdate);
+			Texture2D res = UnityEditor.AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+			return res as T;
+		}
+		else if(data is Material)
+		{
+			Material mat = data as Material;
+			string p = info.Path + mat.name + ".mat";
+			Material newMat = Copy(mat).GetCopyOf(mat, info);
+			UnityEditor.AssetDatabase.CreateAsset(newMat, p);
+			UnityEditor.AssetDatabase.ImportAsset(p, UnityEditor.ImportAssetOptions.ForceUpdate);
+			Material res = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>(p);
+			return res as T;
+		}
+		else
+		{
+			UnityEngine.Debug.LogError("Cannon save type " + data.GetType() + " for asset "+data.name);
+			return data;
+		}
 	}
 
 	class ExportInfo
@@ -298,13 +297,47 @@ static class FileSystemProxy
 		public Dictionary<long, UnityEngine.Object> externalFiles = new Dictionary<long, UnityEngine.Object>();
 	}
 
-	static void SavePrefab(GameObject bundleSource, string name)
+	static void SavePrefab(GameObject bundleSource, ExportInfo info)
 	{
-		UnityEditor.AssetDatabase.CreateFolder("Assets/Test/", name);
-		ExportInfo info = new ExportInfo();
-		info.Path = "Assets/Test/" + name + "/";
 		GameObject prefab = DuplicateGO(bundleSource, info);
-		UnityEditor.PrefabUtility.SaveAsPrefabAsset(prefab, "Assets/Test/" + name + "/" + name + ".prefab");
+		UnityEditor.PrefabUtility.SaveAsPrefabAsset(prefab, info.Path + bundleSource.name + ".prefab");
+	}
+
+	static void ExtractBundle(AssetBundleLoadAllAssetOperationBase operation, string dirName)
+	{
+		UnityEditor.AssetDatabase.CreateFolder("Assets/Test/", dirName);
+		ExportInfo info = new ExportInfo();
+		info.Path = "Assets/Test/" + dirName + "/";
+
+		// save prefabs & associated files
+		operation.ForEach((UnityEngine.Object obj) =>
+		{
+			if(obj is GameObject)
+			{
+				SavePrefab(obj as GameObject, info);
+			}
+		});
+		// save other data in the bundle not used by prefabs
+		operation.ForEach((UnityEngine.Object obj) =>
+		{
+			if (!(obj is GameObject))
+			{
+				string guid;
+				long localId;
+				if (UnityEditor.AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out guid, out localId))
+				{
+					if (guid == Guid.Empty.ToString("N"))
+					{
+						if (!info.externalFiles.ContainsKey(localId))
+						{
+							info.externalFiles[localId] = ExportFile(obj, info);
+						}
+					}
+					else
+						UnityEngine.Debug.LogError(""+obj+" GUID is not null : " +guid);
+				}
+			}
+		});
 	}
 
 	static IEnumerator TestBundleAsync()
@@ -324,7 +357,7 @@ static class FileSystemProxy
 		yield return operation;
 		GameObject go = operation.GetAsset<GameObject>("100601");
 		go = UnityEngine.Object.Instantiate(go);
-		SavePrefab(go, "100601");
+		ExtractBundle(operation, "100601");
 		yield return null;
 		AssetBundleManager.UnloadAssetBundle(s);
 		s = "ad/am/100602.xab";
@@ -333,7 +366,7 @@ static class FileSystemProxy
 		yield return operation;
 		go = operation.GetAsset<GameObject>("100602");
 		go = UnityEngine.Object.Instantiate(go);
-		SavePrefab(go, "100602");
+		ExtractBundle(operation, "100602");
 		yield return null;
 		AssetBundleManager.UnloadAssetBundle(s);
 		yield return new WaitForSeconds(1);
