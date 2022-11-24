@@ -11,37 +11,39 @@ namespace XeApp.Game.Menu
 
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		public bool IsScrollable()
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
+			return true;
 		}
 
 		public void Show()
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		public void Hide()
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		public bool IsReady()
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
+			return true;
 		}
 
 		public void CallOpenEnd()
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		[SerializeField]
 		private ScrollRect m_scrollRect;
 
-		public Transform Parent => throw new System.NotImplementedException();
+		public Transform Parent => null; //throw new System.NotImplementedException();
 	}
 }

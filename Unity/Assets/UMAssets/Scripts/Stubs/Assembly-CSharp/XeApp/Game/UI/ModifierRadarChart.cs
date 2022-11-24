@@ -10,12 +10,12 @@ namespace XeApp.Game.UI
 
 		public void ModifyMesh(Mesh mesh)
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		public void ModifyMesh(VertexHelper verts)
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		[SerializeField]

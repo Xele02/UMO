@@ -13,7 +13,8 @@ namespace XeApp.Game.Menu
 
 		public bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
+			return true;
 		}
 
 		private void Awake()

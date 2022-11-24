@@ -11,12 +11,12 @@ namespace XeSys.uGUI
 
 		public void OnPointerDown(PointerEventData eventData)
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		public void OnPointerUp(PointerEventData eventData)
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		private void Awake()

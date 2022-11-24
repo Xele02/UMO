@@ -11,7 +11,8 @@ namespace XeApp.Game.Menu
 
 		public bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			throw new System.NotImplementedException();
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			return true;
 		}
 
 		private void Awake()
