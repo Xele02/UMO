@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xAC8EA4 Offset: 0xAC8EA4 VA: 0xAC8EA4 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return m_isEndPresetCanvas && !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB;
+			return m_isEndPresetCanvas && !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0xAC8F58 Offset: 0xAC8F58 VA: 0xAC8F58 Slot: 18
@@ -340,7 +340,7 @@ namespace XeApp.Game.Menu
 			lw = ILCCJNDFFOB.HHCJCDFCLOB;
 			pre = 0;
 			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA(musicData.KKPAHLMJKIH_WavId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicData.GHBPLHBNMBK_FreeMusicId).KEFGPJBKAOD_WavId, val, GetDanceDivaCount());
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB)
+			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 			{
 				if(pre < 50)
 				{

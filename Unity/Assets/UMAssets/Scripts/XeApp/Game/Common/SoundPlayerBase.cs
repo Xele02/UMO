@@ -85,7 +85,7 @@ namespace XeApp.Game.Common
 			yield return new WaitWhile(() =>
 			{
 				//0x1395364
-				return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB;
+				return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
 			});
 			ChangeCueSheet(cueSheetName);
 			if (onEndCallback != null)

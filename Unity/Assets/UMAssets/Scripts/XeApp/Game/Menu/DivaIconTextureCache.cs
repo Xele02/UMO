@@ -163,7 +163,11 @@ namespace XeApp.Game.Menu
 		// public void TryInstall(DFKGGBMFFGB playerData) { }
 
 		// // RVA: 0x17E43CC Offset: 0x17E43CC VA: 0x17E43CC
-		// public void TryInstall(int divaId, int modelId, int colorId) { }
+		public void TryInstall(int divaId, int modelId, int colorId)
+		{
+			m_strBuilder.Set(GetIconPath(IconType.SSize, divaId, modelId, colorId));
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+		}
 
 		// // RVA: 0x17E4504 Offset: 0x17E4504 VA: 0x17E4504
 		// public void TryStateDivaIconInstall(int divaId, int modelId, int colorId) { }

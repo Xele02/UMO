@@ -303,7 +303,24 @@ namespace XeApp.Game.Menu
 		// public void TryInstall(DFKGGBMFFGB playerData) { }
 
 		// // RVA: 0x1371A2C Offset: 0x1371A2C VA: 0x1371A2C
-		// public void TryInstall(int sceneId, int evolveId) { }
+		public void TryInstall(int sceneId, int evolveId)
+		{
+			bool isFeed = false;
+			int index = sceneId - 1;
+			int version = 0;
+			int baseRare = 0;
+			if(index >= 0)
+			{
+				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA;
+				if (index < scenes.Count)
+				{
+					baseRare = scenes[index].EKLIPGELKCL_Rarity;
+					version = scenes[index].JIJOGLFOOMN_Aver;
+					isFeed = scenes[index].MCCIFLKCNKO_Feed;
+				}
+			}
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MakeBundlePath(m_strBuilder, sceneId, evolveId, baseRare, version, isFeed).ToString());
+		}
 
 		// // RVA: 0x13715E0 Offset: 0x13715E0 VA: 0x13715E0
 		public StringBuilder MakeBundlePath(StringBuilder strBuilder, int sceneId, int evolvId, int baseRare, int version, bool isFeed)

@@ -1,3 +1,6 @@
+using System.Collections;
+using XeApp.Game.Common;
+
 namespace XeApp.Game.Tutorial
 {
 	public class TutorialProc
@@ -114,7 +117,11 @@ namespace XeApp.Game.Tutorial
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF690 Offset: 0x6AF690 VA: 0x6AF690
 		//// RVA: 0xE4BBA8 Offset: 0xE4BBA8 VA: 0xE4BBA8
-		//public static IEnumerator Co_AssistSelect(ActionButton button) { }
+		public static IEnumerator Co_AssistSelect(ActionButton button)
+		{
+			TodoLogger.Log(0, "Tutorial Co_AssistSelect");
+			yield break;
+		}
 
 		//// RVA: 0xE4BC54 Offset: 0xE4BC54 VA: 0xE4BC54
 		//public static bool IsUnlockTutorialInRank() { }

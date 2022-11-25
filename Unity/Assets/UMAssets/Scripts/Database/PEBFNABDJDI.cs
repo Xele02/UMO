@@ -179,8 +179,8 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 				data.DLGMPHGKDKD_Ofs = (EJABAIAPFLK.GHEPCFJHEEA)array[i].IKNALLJDAFH;
 				data.NHPCKCOPKAM_From = array[i].NHPCKCOPKAM;
 				data.PJFKNNNDMIA_To = array[i].PJFKNNNDMIA;
-				data.DBMKMAPNCCK_Fr = array[i].PLGFGIAHDHJ != 0;
-				data.JJOPBMCLBCB_Ex = array[i].DLAIGBEOGNN != 0;
+				data.DBMKMAPNCCK_OnlyFriends = array[i].PLGFGIAHDHJ != 0;
+				data.JJOPBMCLBCB_ExcludeBan = array[i].DLAIGBEOGNN != 0;
 				data.ADPPAIPFHML_Num = (int)array[i].ADPPAIPFHML;
 				data.MLPLGFLKKLI_Ipp = (int)array[i].MLPLGFLKKLI;
 				BHDJIIHLMDM_Query.Add(data);
@@ -455,8 +455,8 @@ public class EJABAIAPFLK
 	public EJABAIAPFLK.GHEPCFJHEEA DLGMPHGKDKD_Ofs; // 0x10
 	public Nullable<int> NHPCKCOPKAM_From; // 0x14
 	public Nullable<int> PJFKNNNDMIA_To; // 0x1C
-	public bool DBMKMAPNCCK_Fr; // 0x24
-	public bool JJOPBMCLBCB_Ex; // 0x25
+	public bool DBMKMAPNCCK_OnlyFriends; // 0x24
+	public bool JJOPBMCLBCB_ExcludeBan; // 0x25
 	public int MLPLGFLKKLI_Ipp; // 0x28
 	public int ADPPAIPFHML_Num; // 0x2C
 
@@ -464,7 +464,39 @@ public class EJABAIAPFLK
 	// public uint CAOGDCBPBAN() { }
 
 	// // RVA: 0x12EBCB8 Offset: 0x12EBCB8 VA: 0x12EBCB8
-	// public EMOLDNAEDMG MGCBIOALLFE(BBHNACPENDM AHEFHIMGIBI) { }
+	public EMOLDNAEDMG MGCBIOALLFE(BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
+	{
+		int? from = null;
+		int? to = null;
+		switch(DLGMPHGKDKD_Ofs)
+		{
+			case GHEPCFJHEEA.MCIACFOAHID:
+				to = PJFKNNNDMIA_To;
+				from = NHPCKCOPKAM_From;
+				break;
+			case GHEPCFJHEEA.MECKFENAEPJ:
+				from = NHPCKCOPKAM_From;
+				to = PJFKNNNDMIA_To + 1;
+				break;
+			case GHEPCFJHEEA.NDGMFGMHCJM:
+				from = NHPCKCOPKAM_From + AHEFHIMGIBI.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+				if (from < 2)
+					from = 1;
+				to = PJFKNNNDMIA_To + AHEFHIMGIBI.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+				break;
+			case GHEPCFJHEEA.HJNNKCMLGFL:
+				from = NHPCKCOPKAM_From;
+				to = PJFKNNNDMIA_To;
+				break;
+		}
+		EMOLDNAEDMG res = new EMOLDNAEDMG();
+		res.IDLHJIOMJBK_SakashoCriteria = SakashoPlayerCriteria.NewCriteriaFromTo(LJNAKDMILMC_Key, from, to);
+		res.IDLHJIOMJBK_SakashoCriteria.ExcludeAccountBan = JJOPBMCLBCB_ExcludeBan;
+		res.IDLHJIOMJBK_SakashoCriteria.OnlyFriends = DBMKMAPNCCK_OnlyFriends;
+		res.MLPLGFLKKLI_Ipp = MLPLGFLKKLI_Ipp;
+		res.ADPPAIPFHML_Num = ADPPAIPFHML_Num;
+		return res;
+	}
 }
 
 public class BIJMLAPNMAB { }

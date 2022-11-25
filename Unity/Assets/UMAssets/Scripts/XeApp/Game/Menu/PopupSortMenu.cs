@@ -308,7 +308,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x114BC68 Offset: 0x114BC68 VA: 0x114BC68
-		//public static bool IsSerializeFilterOn(int seriase, uint flags) { }
+		public static bool IsSerializeFilterOn(int seriase, uint flags)
+		{
+			if(flags != 0)
+			{
+				return (flags & 1) << (seriase - 1) != 0;
+			}
+			return true;
+		}
 
 		//// RVA: 0x114BD0C Offset: 0x114BD0C VA: 0x114BD0C
 		//public static bool IsCompatibleFilterOn(int divaBit, uint flags) { }
@@ -317,7 +324,14 @@ namespace XeApp.Game.Menu
 		//public static bool IsNotesFilterOn(int notes, uint flags) { }
 
 		//// RVA: 0x114BD58 Offset: 0x114BD58 VA: 0x114BD58
-		//public static bool IsSkillRankFilterOn(int skillRank, int skillRank2, uint flags) { }
+		public static bool IsSkillRankFilterOn(int skillRank, int skillRank2, uint flags)
+		{
+			if(flags != 0)
+			{
+				return ((flags & 1) << skillRank - 1) != 0 || ((flags & 1) << skillRank2 - 1) != 0;
+			}
+			return true;
+		}
 
 		//// RVA: 0x114BD94 Offset: 0x114BD94 VA: 0x114BD94
 		//public static bool IsSkillRankFilterOn(int skillRank, int skillRank2, uint flags, bool isCenterSkill, GCIJNCFDNON scene, EEDKAACNBBG musicData) { }

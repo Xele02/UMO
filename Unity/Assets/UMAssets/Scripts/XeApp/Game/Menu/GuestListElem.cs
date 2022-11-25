@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 		private Func<IiconTexture> sceneIconDelegate { get; set; } // 0x98
 		//private DivaIconTextureCache divaTexCache { get; } 0xE2732C
 		//private SceneIconTextureCache sceneTexCache { get; } 0xE273C8
-		//public ScrollListButton Button { get; } 0xE27464
+		public ScrollListButton Button { get { return m_selectButton; } } //0xE27464
 
 		// RVA: 0xE2746C Offset: 0xE2746C VA: 0xE2746C
 		private void Update()

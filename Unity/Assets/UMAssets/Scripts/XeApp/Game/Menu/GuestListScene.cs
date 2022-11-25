@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 			m_statusChange.Update();
 			if (!m_monitorReloadCoolingTime)
 				return;
-			m_buttonRuntime.SetReloadButtonLock(CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI.CDOBDJFJLPG() > 0);
+			m_buttonRuntime.SetReloadButtonLock(CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.CDOBDJFJLPG() > 0);
 		}
 
 		// RVA: 0xE2A584 Offset: 0xE2A584 VA: 0xE2A584 Slot: 14
@@ -232,7 +232,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				List<IBIGBMDANNM> l = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI.BFDEHIANFOG;
+				List<IBIGBMDANNM> l = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.BFDEHIANFOG;
 				for (int i = 0; i < l.Count; i++)
 				{
 					EAJCBFGKKFA data = new EAJCBFGKKFA();
@@ -256,15 +256,66 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2AFC0 Offset: 0xE2AFC0 VA: 0xE2AFC0
 		private void SearchFriend()
 		{
-			TodoLogger.Log(0, "SearchFriend");
+			PIGBKEIAMPE_FriendManager friendManager = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager;
+			MenuScene.Instance.InputDisable();
+			friends.Clear();
+			EMOLDNAEDMG query = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.BHDJIIHLMDM_Query[1].MGCBIOALLFE(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+			EMOLDNAEDMG query2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.BHDJIIHLMDM_Query[0].MGCBIOALLFE(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+			EMOLDNAEDMG query3 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.BHDJIIHLMDM_Query[2].MGCBIOALLFE(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+			friendManager.CHAILEPDOPJ(query, query2, query3, () =>
+			{
+				//0xE2DFEC
+				UnityEngine.Debug.Log("StringLiteral_16339 got friend : " + friendManager.BFDEHIANFOG.Count);
+				for(int i = 0; i < friendManager.BFDEHIANFOG.Count; i++)
+				{
+					EAJCBFGKKFA data = new EAJCBFGKKFA();
+					data.KHEKNNFCAOI(friendManager.BFDEHIANFOG[i]);
+					friends.Add(data);
+				}
+				StartCoroutine(OnSuccessSearchFriend());
+			}, (CACGCMBKHDI_Request error) =>
+			{
+				//0xE2DF0C
+				UnityEngine.Debug.Log("StringLiteral_16338 Error getting friends");
+				MenuScene.Instance.InputEnable();
+			}, (CACGCMBKHDI_Request error) =>
+			{
+				//0xE2E250
+				TodoLogger.Log(0, "Error friend request");
+			});
+
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E0CD4 Offset: 0x6E0CD4 VA: 0x6E0CD4
 		// RVA: 0xE2AF34 Offset: 0xE2AF34 VA: 0xE2AF34
 		private IEnumerator OnSuccessSearchFriend()
 		{
+			//0xE2F8D0
+			m_guestInfoAllList.Clear();
+			for(int i = 0; i < friends.Count; i++)
+			{
+				GuestListInfo data = new GuestListInfo((short)i, true, Database.Instance.selectedMusic.GetSelectedMusicData(), friends[i]);
+				m_guestInfoAllList.Add(data);
+				data.TryInstall();
+			}
+			waitForFrame.Reset();
+			yield return waitForFrame;
+
+			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				yield return null;
+			SortGuestList();
+			MenuScene.Instance.InputEnable();
+			if(TutorialProc.CanBeginnerAssistSelect())
+			{
+				GuestListElem elem = m_scrollList.ScrollContent.GetComponentInChildren<GuestListElem>(true);
+				if(elem != null)
+				{
+					StartCoroutine(TutorialProc.Co_AssistSelect(elem.Button));
+				}
+			}
+			m_isShowHelp = true;
+
 			TodoLogger.Log(0, "OnSuccessSearchFriend");
-			yield break;
 		}
 
 		// RVA: 0xE2B69C Offset: 0xE2B69C VA: 0xE2B69C
@@ -292,16 +343,60 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xE2BCA8 Offset: 0xE2BCA8 VA: 0xE2BCA8
-		//private void SortGuestList() { }
+		private void SortGuestList()
+		{
+			m_guestInfoAllList.Sort(SortDelegate);
+			m_guestInfoList.Clear();
+			m_guestInfoList.Capacity = m_guestInfoAllList.Count;
+			for(int i = 0; i < m_guestInfoAllList.Count; i++)
+			{
+				if(PopupSortMenu.IsSerializeFilterOn((int)m_guestInfoAllList[i].sceneSeries, m_seriesFilter))
+				{
+					if (PopupSortMenu.IsSkillRankFilterOn(m_guestInfoAllList[i].centerSkillRank, m_guestInfoAllList[i].centerSkillRank2, m_centerSkillFilter))
+					{
+						if (m_assistType == (m_guestInfoAllList[i].sceneAttr < GameAttribute.Type.All ? new AssistItem[4] { AssistItem.None, AssistItem.Yellow, AssistItem.Red, AssistItem.Blue }[(int)m_guestInfoAllList[i].sceneAttr] : AssistItem.Free) 
+							|| m_assistType == AssistItem.None || m_assistType == AssistItem.Free)
+						{
+							m_guestInfoList.Add(m_guestInfoAllList[i]);
+						}
+					}
+				}
+			}
+			if(m_guestInfoList.IsEmpty())
+			{
+				m_windowUi.SetMessageVisible(true);
+				m_windowUi.SetMessage(m_guestInfoAllList.IsEmpty() ? m_guestNotFoundMessage : m_guestAllFilteredMessage);
+			}
+			else
+			{
+				m_windowUi.SetMessageVisible(false);
+			}
+			m_scrollList.SetItemCount(m_guestInfoList.Count);
+			m_scrollList.OnUpdateItem.RemoveAllListeners();
+			m_scrollList.OnUpdateItem.AddListener((int index, SwapScrollListContent content) =>
+			{
+				//0xE2DCA0
+				OnUpdateListItem(index, content as GeneralListContent, m_guestInfoList[index]);
+			});
+			m_scrollList.SetPosition(0, 0, 0, false);
+			m_scrollList.VisibleRegionUpdate();
+		}
 
 		// RVA: 0xE2C45C Offset: 0xE2C45C VA: 0xE2C45C
-		//private int SortDelegate(GuestListInfo a, GuestListInfo b) { }
+		private int SortDelegate(GuestListInfo a, GuestListInfo b)
+		{
+			TodoLogger.Log(0, "SortDelegate");
+			return a.GetHashCode().CompareTo(b.GetHashCode());
+		}
 
 		// RVA: 0xE2C908 Offset: 0xE2C908 VA: 0xE2C908
 		//private int GetBaseRaritySortValue(GuestListInfo a, GuestListInfo b) { }
 
 		// RVA: 0xE2C9C0 Offset: 0xE2C9C0 VA: 0xE2C9C0
-		//private void OnUpdateListItem(int index, GeneralListContent content, GuestListInfo info) { }
+		private void OnUpdateListItem(int index, GeneralListContent content, GuestListInfo info)
+		{
+			TodoLogger.Log(0, "GuestList OnUpdateListItem");
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E0D4C Offset: 0x6E0D4C VA: 0x6E0D4C
 		// RVA: 0xE2A3DC Offset: 0xE2A3DC VA: 0xE2A3DC
@@ -436,9 +531,5 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x6E0ED4 Offset: 0x6E0ED4 VA: 0x6E0ED4
 		//// RVA: 0xE2DC8C Offset: 0xE2DC8C VA: 0xE2DC8C
 		//private bool <OnClickSortNextButton>b__47_0(SortItem _) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0EE4 Offset: 0x6E0EE4 VA: 0x6E0EE4
-		//// RVA: 0xE2DCA0 Offset: 0xE2DCA0 VA: 0xE2DCA0
-		//private void <SortGuestList>b__50_0(int index, SwapScrollListContent content) { }
 	}
 }

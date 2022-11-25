@@ -60,7 +60,7 @@ public class CIOECGOMILE
 	// [ObsoleteAttribute] // RVA: 0x749848 Offset: 0x749848 VA: 0x749848
 	// public FKAFHLIDAFD AEBNIAFEIHC { get; private set; } // CJMMAKNNLGO 0xFF3E08 GGDKCIHDPGP 0xFFA308
 	public AIFIANALLPB KPFKKDDOHCN { get; private set; } // 0x48 CNBPHMJCOGK EJCOPFKKFJA EEAFNGBEHHJ
-	public PIGBKEIAMPE CHNJPFCKFOI { get; private set; } // 0x4C NMPHJGJOODM PPHAPIPAEOJ IDDONPAJKCN
+	public PIGBKEIAMPE_FriendManager CHNJPFCKFOI_FriendManager { get; private set; } // 0x4C NMPHJGJOODM PPHAPIPAEOJ IDDONPAJKCN
 	public List<MCKCJMLOAFP> BBEPLKNMICJ { get; private set; } // 0x50 KCLAFENGONP PCHMJADGBEI MFONKBBKMIJ
 	public MCGNOFMAPBJ BPLOEAHOPFI { get; private set; } // 0x54 KKOIOMJKJJK IFLOIFCLBFJ NGMKCJOPEGH
 	public JKNNIKNKMNJ IOCLFHJLHLE { get; private set; } // 0x58 GIKMDNCDMAA NJGEOHOLOOB CBKHODJCHHG
@@ -125,7 +125,7 @@ public class CIOECGOMILE
 		MNJHBCIIHED = new BBHNACPENDM_ServerSaveData();
 		CCNKAKCBBDJ.HFCOIIHIENB = BBHNACPENDM_ServerSaveData.BDADJONBIBO.LPKPFMHEKEM/*4*/;
 		KPFKKDDOHCN = new AIFIANALLPB();
-		CHNJPFCKFOI = new PIGBKEIAMPE();
+		CHNJPFCKFOI_FriendManager = new PIGBKEIAMPE_FriendManager();
 		LNAHEIEIBOI = false;
 		KONHMOLMOCI = false;
 		BBEPLKNMICJ = new List<MCKCJMLOAFP>();
@@ -316,19 +316,19 @@ public class CIOECGOMILE
 		{
 			if(KPFKKDDOHCN.PLOOEECNHFB)
 			{
-				CHNJPFCKFOI.MFKOGDNNKLP();
-				CHNJPFCKFOI.HHDGOABFEPC(null, null, false);
+				CHNJPFCKFOI_FriendManager.MFKOGDNNKLP();
+				CHNJPFCKFOI_FriendManager.HHDGOABFEPC(null, null, false);
 				//LAB_01011ac0:
 				while(true)
 				{
-					if(CHNJPFCKFOI.PLOOEECNHFB)
+					if(CHNJPFCKFOI_FriendManager.PLOOEECNHFB)
 					{
 						int a = DLMOKNDEMMB.FMPEMFPLPDA_Exp.PCJACJANGCA(AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level);
-						if(a != CHNJPFCKFOI.JPEIBHJIHPI)
+						if(a != CHNJPFCKFOI_FriendManager.JPEIBHJIHPI)
 						{
-							CHNJPFCKFOI.PGPLAOGALHD(a, null, null);
+							CHNJPFCKFOI_FriendManager.PGPLAOGALHD(a, null, null);
 							//LAB_01011bec:
-							while(!CHNJPFCKFOI.PLOOEECNHFB)
+							while(!CHNJPFCKFOI_FriendManager.PLOOEECNHFB)
 							{
 								yield return null;
 							}
@@ -366,7 +366,7 @@ public class CIOECGOMILE
 
 									HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.AGEAPKNODHO();
 									GameManager.Instance.localSave.FBCDKFENOEM();
-									CHNJPFCKFOI.BCEAAAOLGEB();
+									CHNJPFCKFOI_FriendManager.BCEAAAOLGEB();
 									FGDMEFINCEE();
 									if(AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd == 0)
 									{

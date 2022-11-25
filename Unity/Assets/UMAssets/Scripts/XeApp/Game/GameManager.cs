@@ -1202,7 +1202,7 @@ namespace XeApp.Game
 			}
 			List<int>[] res = directionParam.GetSpecialDirectionResourceId(settingList);
 			KDLPEDBKMID.HHCJCDFCLOB.KEILLGAJEPF_AddRhythmResources(wavId, c, a, res[1], res[2], res[4], res[0], res[3], res[8], vidQuality, res[9], mi.onStageDivaNum);
-			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB)
+			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 				yield return null;
 		}
 

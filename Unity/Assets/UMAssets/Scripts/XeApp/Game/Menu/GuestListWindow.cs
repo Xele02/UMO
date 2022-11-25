@@ -58,7 +58,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xE2C420 Offset: 0xE2C420 VA: 0xE2C420
-		//public void SetMessage(string message) { }
+		public void SetMessage(string message)
+		{
+			m_windowMessage.text = message;
+		}
 
 		//// RVA: 0xE2AD5C Offset: 0xE2AD5C VA: 0xE2AD5C
 		public void SetMessageVisible(bool isVisible)
