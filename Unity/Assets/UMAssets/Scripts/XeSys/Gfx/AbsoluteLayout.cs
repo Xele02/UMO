@@ -48,7 +48,20 @@ namespace XeSys.Gfx
 		// public virtual void InsertView(int index, ViewBase child) { }
 
 		// // RVA: 0x203EBD0 Offset: 0x203EBD0 VA: 0x203EBD0
-		// public void RemoveView(ViewBase child) { }
+		public void RemoveView(ViewBase child)
+		{
+			if(child != null)
+			{
+				child.Parent = null;
+				m_List.Remove(child);
+				m_ChildViewMap.Remove(child.ID);
+				m_ChildViewMapForExid.Remove(child.EXID);
+				if(child is AbsoluteLayout)
+				{
+					m_AbsoluteList.Remove(child as AbsoluteLayout);
+				}
+			}
+		}
 
 		// // RVA: 0x203EDE0 Offset: 0x203EDE0 VA: 0x203EDE0
 		public ViewBase GetView(int index)
@@ -564,13 +577,51 @@ namespace XeSys.Gfx
 		// public virtual void SetDrawLayer(int layer) { }
 
 		// // RVA: 0x20426C0 Offset: 0x20426C0 VA: 0x20426C0
-		// public void SetViewMask() { }
+		public void SetViewMask()
+		{
+			SetViewMask(this);
+		}
 
 		// // RVA: 0x20426C8 Offset: 0x20426C8 VA: 0x20426C8
-		// public void SetViewMask(ViewBase maskView) { }
+		public void SetViewMask(ViewBase maskView)
+		{
+			for(int i = 0; i < viewCount; i++)
+			{
+				SetViewMask(maskView, m_List[i]);
+			}
+		}
 
 		// // RVA: 0x204277C Offset: 0x204277C VA: 0x204277C
-		// public void SetViewMask(ViewBase maskView, ViewBase view) { }
+		public void SetViewMask(ViewBase maskView, ViewBase view)
+		{
+			if(view != null)
+			{
+				if(view is AbsoluteLayout)
+				{
+					(view as AbsoluteLayout).SetViewMask(maskView);
+				}
+				else if(view is TextView)
+				{
+					(view as TextView).SetMaskFromView(maskView);
+					(view as TextView).IsMask = true;
+					if(maskView != null)
+					{
+						GameObject t = (view as TextView).GetTextGameObject();
+						if (maskView is ScrollView && t != null)
+							(maskView as ScrollView).AddChildGameObject(t);
+					}
+				}
+				else if(view is SwfView)
+				{
+					(view as SwfView).SetMaskFromView(maskView);
+					(view as SwfView).IsMask = true;
+				}
+				else if(view is ImageView)
+				{
+					(view as ImageView).IsMask = true;
+				}
+			}
+		}
 
 		// // RVA: 0x2042CD0 Offset: 0x2042CD0 VA: 0x2042CD0
 		// public void SetViewMaskEx() { }

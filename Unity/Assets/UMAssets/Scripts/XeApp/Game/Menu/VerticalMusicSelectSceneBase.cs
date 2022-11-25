@@ -426,6 +426,7 @@ namespace XeApp.Game.Menu
 			//0xAD49C0
 			TodoLogger.Log(0, "Co_CheckBoostData");
 			CurrentMusicDecisionCheck(true, null, null, 0);
+			endCallback(isSimulation);
 			yield break;
 		}
 
@@ -535,7 +536,6 @@ namespace XeApp.Game.Menu
 					val = m_eventCtrl.PGIIDPEGGPI;
 				if(!isSimulation)
 				{
-					return; // For now don't lauch Play
 					if (!MenuScene.Instance.TryMusicPeriod(selectMusicData.IHPCKOMBGKJ, val, (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.MNNHHJBBICA_EventType, isSimulation, MenuScene.MusicPeriodMess.MusicSelect))
 					{
 						CheckUnitLive(() =>

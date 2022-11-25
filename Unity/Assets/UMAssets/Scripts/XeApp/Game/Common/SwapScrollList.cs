@@ -36,7 +36,7 @@ namespace XeApp.Game.Common
 		private RawImageEx m_verticalScrollBarImage; // 0x54
 		private RawImageEx m_horizontalScrollBarImage; // 0x58
 
-		//public List<SwapScrollListContent> ScrollObjects { get; } 0x1CCB004
+		public List<SwapScrollListContent> ScrollObjects { get { return m_scrollObjects; } } //0x1CCB004
 		//public int ListTopPosition { get; } 0x1CCB00C
 		public SwapScrollList.SwapScrollUpdateItem OnUpdateItem { get { return m_scrollUpdateItem; } } //0x1CCB014
 		//public RectTransform ScrollContent { get; } 0x1CCB01C
@@ -115,11 +115,14 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CCBCF8 Offset: 0x1CCBCF8 VA: 0x1CCBCF8
 		public void SetContentEscapeMode(bool isEnable)
 		{
-			TodoLogger.Log(0, "!!!");
+			TodoLogger.Log(0, "SetContentEscapeMode");
 		}
 
 		//// RVA: 0x1CCC29C Offset: 0x1CCC29C VA: 0x1CCC29C
-		//public void SetItemCount(int count) { }
+		public void SetItemCount(int count)
+		{
+			TodoLogger.Log(0, "SetItemCount");
+		}
 
 		//// RVA: 0x1CCC864 Offset: 0x1CCC864 VA: 0x1CCC864
 		//public void SetPosition(int position, float xoffset = 0, float yoffset = 0, bool diffUpdate = False) { }
@@ -137,7 +140,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CCDA80 Offset: 0x1CCDA80 VA: 0x1CCDA80
-		//public void VisibleRegionUpdate() { }
+		public void VisibleRegionUpdate()
+		{
+			TodoLogger.Log(0, "VisibleRegionUpdate");
+		}
 
 		//// RVA: 0x1CCD950 Offset: 0x1CCD950 VA: 0x1CCD950
 		//private void ShowItem(SwapScrollListContent item) { }

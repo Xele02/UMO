@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public struct Matrix23
 {
@@ -37,7 +38,17 @@ public struct Matrix23
 	}
 
 	// // RVA: 0x17BDB90 Offset: 0x17BDB90 VA: 0x17BDB90
-	// public static Matrix23 op_Multiply(Matrix23 lhs, Matrix23 rhs) { }
+	public static Matrix23 operator *(Matrix23 lhs, Matrix23 rhs)
+	{
+		Matrix23 res;
+		res._00 = lhs._10 * rhs._00 + lhs._11 * rhs._10;
+		res._01 = lhs._10 * rhs._01 + lhs._11 * rhs._11;
+		res._02 = lhs._10 * rhs._02 + lhs._11 * rhs._12 + lhs._12;
+		res._10 = lhs._00 * rhs._00 + lhs._01 * rhs._10;
+		res._11 = lhs._00 * rhs._01 + lhs._01 * rhs._11;
+		res._12 = lhs._00 * rhs._02 + lhs._01 * rhs._12 + lhs._02;
+		return res;
+	}
 
 	// // RVA: 0x7FD760 Offset: 0x7FD760 VA: 0x7FD760
 	// public Matrix23 MultiplyMatrix(Matrix23 mtx) { }
@@ -46,7 +57,15 @@ public struct Matrix23
 	// public void Copy(Matrix23 src) { }
 
 	// // RVA: 0x7FD7E0 Offset: 0x7FD7E0 VA: 0x7FD7E0
-	// public void Identity() { }
+	public void Identity()
+	{
+		_00 = 1;
+		_01 = 0;
+		_02 = 0;
+		_10 = 0;
+		_11 = 1;
+		_12 = 0;
+	}
 
 	// // RVA: 0x7FD818 Offset: 0x7FD818 VA: 0x7FD818
 	// public void Translate(Vector3 posi) { }
@@ -67,7 +86,15 @@ public struct Matrix23
 	// public void TransRotScale(float transX, float transY, float zrad, Vector2 scale) { }
 
 	// // RVA: 0x7FD8D4 Offset: 0x7FD8D4 VA: 0x7FD8D4
-	// public void TransRotScale(Vector2 trans, float zrad, Vector2 scale) { }
+	public void TransRotScale(Vector2 trans, float zrad, Vector2 scale)
+	{
+		_00 = Mathf.Cos(zrad) * scale.x;
+		_01 = -Mathf.Sin(zrad) * scale.y;
+		_02 = trans.x;
+		_10 = Mathf.Sin(zrad) * scale.x;
+		_11 = Mathf.Sin(zrad) * scale.y;
+		_12 = trans.y;
+	}
 
 	// // RVA: 0x7FD8FC Offset: 0x7FD8FC VA: 0x7FD8FC
 	// public void TransRot(Vector2 posi, float zrad) { }

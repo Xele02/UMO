@@ -4,9 +4,7 @@ namespace XeApp.Game.Menu
 {
 	public class GeneralListElemBase : LayoutLabelScriptBase
 	{
-		private void Awake()
-		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
-		}
+		// RVA: 0xB87990 Offset: 0xB87990 VA: 0xB87990
+		//protected void InvokeSelectItem(int value) { }
 	}
 }

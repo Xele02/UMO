@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Text;
 using XeSys;
 
@@ -15,8 +16,8 @@ namespace XeApp.Game.Menu
 			Num = 4,
 		}
 
-		//private DivaIconTexture m_loadingDivaIcon; // 0x20
-		//private DivaIconTexture m_loadingStatusDivaIcon; // 0x24
+		private DivaIconTexture m_loadingDivaIcon; // 0x20
+		private DivaIconTexture m_loadingStatusDivaIcon; // 0x24
 		private const string DivaSSizeIconPath = "ct/dv/me/01/{0:D2}_{1:D2}.xab";
 		private const string DivaMSizeIconPath = "ct/dv/me/02/{0:D2}_{1:D2}.xab";
 		private const string DivaLSizeIconPath = "ct/dv/me/03/{0:D2}_{1:D2}.xab";
@@ -56,7 +57,36 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5FB8 Offset: 0x6C5FB8 VA: 0x6C5FB8
 		// // RVA: 0x17E375C Offset: 0x17E375C VA: 0x17E375C
-		// public IEnumerator EntryLoadingTexture() { }
+		public IEnumerator EntryLoadingTexture()
+		{
+			//0x17E53EC
+			if (m_loadingDivaIcon != null)
+			{
+				m_loadingDivaIcon.isKeep = false;
+				m_loadingDivaIcon.Release();
+			}
+			if(m_loadingStatusDivaIcon != null)
+			{
+				m_loadingStatusDivaIcon.isKeep = false;
+				m_loadingStatusDivaIcon.Release();
+			}
+			m_loadingDivaIcon = null;
+			m_loadingStatusDivaIcon = null;
+			Load(0, 1, 0, (IiconTexture texture) =>
+			{
+				//0x17E5200
+				m_loadingDivaIcon = texture as DivaIconTexture;
+			});
+			LoadStateIcon(0, 1, 0, (IiconTexture texture) =>
+			{
+				//0x17E52F4
+				m_loadingStatusDivaIcon = texture as DivaIconTexture;
+			});
+			while (m_loadingDivaIcon == null || m_loadingStatusDivaIcon == null)
+				yield return null;
+			m_loadingDivaIcon.isKeep = true;
+			m_loadingStatusDivaIcon.isKeep = true;
+		}
 
 		// // RVA: 0x17E3808 Offset: 0x17E3808 VA: 0x17E3808
 		// public void SetLoadingIcon(RawImageEx image) { }
@@ -73,10 +103,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17E3908 Offset: 0x17E3908 VA: 0x17E3908
-		// public void Load(int id, int modelId, int colorId, Action<IiconTexture> callBack) { }
+		public void Load(int id, int modelId, int colorId, Action<IiconTexture> callBack)
+		{
+			Load(GetIconPath(IconType.SSize, id, modelId, colorId), callBack);
+		}
 
 		// // RVA: 0x17D255C Offset: 0x17D255C VA: 0x17D255C
-		// public void LoadStateIcon(int id, int modelId, int colorId, Action<IiconTexture> callBack) { }
+		public void LoadStateIcon(int id, int modelId, int colorId, Action<IiconTexture> callBack)
+		{
+			Load(GetIconPath(IconType.MSize, id, modelId, colorId), callBack);
+		}
 
 		// // RVA: 0x17E39C0 Offset: 0x17E39C0 VA: 0x17E39C0
 		// public void LoadLobbyIcon(int cosId, int colorId, Action<IiconTexture> callBack) { }
@@ -154,13 +190,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x17E4B28 Offset: 0x17E4B28 VA: 0x17E4B28
 		// public void TryLoadEventGoDivaIcon(int divaId) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6C6030 Offset: 0x6C6030 VA: 0x6C6030
-		// // RVA: 0x17E5200 Offset: 0x17E5200 VA: 0x17E5200
-		// private void <EntryLoadingTexture>b__22_0(IiconTexture texture) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6C6040 Offset: 0x6C6040 VA: 0x6C6040
-		// // RVA: 0x17E52F4 Offset: 0x17E52F4 VA: 0x17E52F4
-		// private void <EntryLoadingTexture>b__22_1(IiconTexture texture) { }
 	}
 }

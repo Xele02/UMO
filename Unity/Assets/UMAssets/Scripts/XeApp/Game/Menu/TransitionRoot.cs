@@ -1291,7 +1291,7 @@ namespace XeApp.Game.Menu
 		// public GameObject bgRoot { get; set; } 0xA9D73C 0xA9D744
 		public TransitionArgs Args { get { return m_args; } set { m_args = value; } } //0xA83E84 0xA9D74C
 		public TransitionArgs ArgsReturn { get { return m_args_return; } set { m_args_return = value; } } //0xA9D754 0xA9D75C
-		// public TransitionList.Type PrevTransition { get; } 0xA7FEC8
+		public TransitionList.Type PrevTransition { get { return m_prevTransition; } } //0xA7FEC8
 		// public TransitionList.Type ParentTransition { get; } 0xA9D764
 		// public TransitionRoot.MenuTransitionControl.TransitionType TransitionType { get; } 0xA9D76C
 		public bool IsRequestGotoTitle { get; set; } // 0x28

@@ -129,7 +129,7 @@ namespace XeSys.Gfx
 		public float ScaleX { get { return m_transformData.m.Scale.x; } set { m_transformData.m.Scale.x = value; } } //0x1EE6458 0x1EE6484
 		public float ScaleY { get { return m_transformData.m.Scale.y; } set { m_transformData.m.Scale.y = value; } } //0x1EE64BC 0x1EE64E8
 		public float Rot { get{ return m_transformData.m.Rot; } set { m_transformData.m.Rot = value; } } //0x1EE6520 0x1EE6544
-		// public Color Col { get; set; } 0x1EE6574 0x1EE65A4
+		public Color Col { get { return m_transformData.m.Color; } set { m_transformData.m.Color = value; } } //0x1EE6574 0x1EE65A4
 		public float CenterX { get { return m_transformData.m.Center.x; } set { m_transformData.m.Center.x = value; } } //0x1EE65E4 0x1EE6610
 		public float CenterY { get { return m_transformData.m.Center.y; } set { m_transformData.m.Center.y = value; } } //0x1EE6648 0x1EE6674
 		public ViewBase.EAlignH AlignH { get { return m_AlignH; } set { m_AlignH = value; } } //0x1EE66AC 0x1EE66B4

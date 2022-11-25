@@ -54,7 +54,16 @@ namespace XeSys.Gfx
 		// public static void AddView(GameObject parentObj, AbsoluteLayout parentView, GameObject childObj) { }
 
 		// // RVA: 0x1EFB344 Offset: 0x1EFB344 VA: 0x1EFB344
-		// public static void RemoveView(GameObject parentObj, AbsoluteLayout parentView, GameObject childObj) { }
+		public static void RemoveView(GameObject parentObj, AbsoluteLayout parentView, GameObject childObj)
+		{
+			childObj.transform.SetParent(null, false);
+			if (parentView == null)
+				return;
+			LayoutUGUIRuntime runtime = childObj.GetComponent<LayoutUGUIRuntime>();
+			if (runtime == null)
+				return;
+			parentView.RemoveView(runtime.Layout.Root);
+		}
 
 		// // RVA: 0x1EFF750 Offset: 0x1EFF750 VA: 0x1EFF750
 		public static Rect MakeUnityUVRect(TexUVData uvData)

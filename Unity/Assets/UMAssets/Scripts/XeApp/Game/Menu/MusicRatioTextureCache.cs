@@ -19,6 +19,9 @@ namespace XeApp.Game.Menu
 		// public void Load(HighScoreRatingRank.Type rank, Action<IiconTexture> callback) { }
 
 		// // RVA: 0x1054190 Offset: 0x1054190 VA: 0x1054190
-		// public void EntryCache() { }
+		public void EntryCache()
+		{
+			TodoLogger.Log(0, "EntryCache");
+		}
 	}
 }

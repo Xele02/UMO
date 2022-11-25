@@ -116,7 +116,7 @@ namespace XeApp.Game
 		private KiraDivaTextureCache m_kiraDivaTextureCache; // 0x130
 		private HomeBgIconBgTextureCache m_homeBgIconTextureCache; // 0x134
 		// [CompilerGeneratedAttribute] // RVA: 0x66266C Offset: 0x66266C VA: 0x66266C
-		private UnityAction<float> UpdateAction; // 0x140
+		public UnityAction<float> UpdateAction; // 0x140
 		// [CompilerGeneratedAttribute] // RVA: 0x6AD9A0 Offset: 0x6AD9A0 VA: 0x6AD9A0
 		// // RVA: 0x99A05C Offset: 0x99A05C VA: 0x99A05C
 		// public void add_UpdateAction(UnityAction<float> value) { }
@@ -621,7 +621,22 @@ namespace XeApp.Game
 		// // RVA: 0x99F6C8 Offset: 0x99F6C8 VA: 0x99F6C8
 		public IEnumerator Co_CacheAppResources()
 		{
-			TodoLogger.Log(0, "Co_CacheAppResources");
+			//0x1423ECC
+			if (IsCacheActive)
+				yield break;
+			StartCoroutine(SceneIconCache.Initialize());
+			StartCoroutine(DivaIconCache.EntryLoadingTexture());
+			MenuResidentTextureCache.EntryCache();
+			MusicRatioTextureCache.EntryCache();
+			IconDecorationCache.Reserve();
+			while (SceneIconCache.IsLoading())
+				yield return null;
+			while (MenuResidentTextureCache.IsLoading())
+				yield return null;
+			while(DivaIconCache.IsLoading())
+				yield return null;
+			while (!IconDecorationCache.IsReady())
+				yield return null;
 			IsCacheActive = true;
 			yield break;
 		}

@@ -374,7 +374,7 @@ namespace XeSys.Gfx
 		// public string UvListPath { get; set; } 0x1EFFD28 0x1EFFD20
 		// public string TexturePath { get; set; } 0x1EFFD38 0x1EFFD30
 		public string AnimListPath { get { return m_animListPath; } set { m_animListPath = value; } } //0x1EFFD40 0x1EFBE20
-		// public Font Font { get; set; } 0x1EFFD48 0x1EFBE28
+		public Font Font { get { return m_font; } set { m_font = value; } } //0x1EFFD48 0x1EFBE28
 		// public bool IsTextureSplit { get; set; } 0x1EFFD50 0x1EFBF00
 		// public bool IsUseImage { get; set; } 0x1EFFD58 0x1EFBF08
 		public string[] UvListPathList { get { return m_uvlistPathList; } set { m_uvlistPathList = value; } } //0x1EFFD60 0x1EFBE10

@@ -356,7 +356,11 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	// public bool MDECFOOCLHG() { }
 
 	// // RVA: 0xCC859C Offset: 0xCC859C VA: 0xCC859C
-	// public bool OANJBOPLCKP() { }
+	public bool OANJBOPLCKP_IsUnit5Enabled()
+	{
+		int val = LPJLEHAJADA("unit5_enable_master_version", 0);
+		return val > 0 && val <= DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
+	}
 
 	// // RVA: 0xCC8668 Offset: 0xCC8668 VA: 0xCC8668
 	// public bool CDOOMPPEINP() { }
