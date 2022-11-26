@@ -5,4 +5,8 @@ public class AnimatorCheck : MainSceneBase
 {
 	[SerializeField]
 	private Transform m_findTo;
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 }

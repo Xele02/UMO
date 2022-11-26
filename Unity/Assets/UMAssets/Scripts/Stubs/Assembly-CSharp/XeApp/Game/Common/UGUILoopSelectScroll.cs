@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace XeApp.Game.Common
 {
-	public class UGUILoopSelectScroll : MonoBehaviour
+	public class UGUILoopSelectScroll : MonoBehaviour, IEndDragHandler, IEventSystemHandler
 	{
 		[SerializeField]
 		private ScrollRect m_scrollRect;
@@ -21,5 +22,15 @@ namespace XeApp.Game.Common
 		private int m_columnCount;
 		[SerializeField]
 		private bool m_isVertical;
+
+		public void OnEndDrag(PointerEventData eventData)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

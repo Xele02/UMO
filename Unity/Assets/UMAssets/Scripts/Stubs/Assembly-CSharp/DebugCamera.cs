@@ -8,4 +8,8 @@ public class DebugCamera : MonoBehaviour
 	private float moveSpeed;
 	[SerializeField]
 	private float rotateSpeed;
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement Monobehaviour");
+	}
 }

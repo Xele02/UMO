@@ -12,5 +12,9 @@ namespace XeApp.Game.Menu
 		private Text[] text;
 		[SerializeField]
 		private ActionButton button;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

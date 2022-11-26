@@ -5,6 +5,10 @@ namespace XeApp.Game.MiniGame
 {
 	public class ShootingEnemyBossCharacter : ShootingEnemyCharacter
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[Serializable]
 		public class PhaseData01
 		{

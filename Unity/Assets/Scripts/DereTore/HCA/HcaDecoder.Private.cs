@@ -84,7 +84,9 @@ namespace DereTore.Exchange.Audio.HCA {
             }
         }
 
-        private int DecodeToWaveR32(byte[] blockData, int blockIndex) {
+		private DataBits DataDecoder = null;
+
+		private int DecodeToWaveR32(byte[] blockData, int blockIndex) {
             var hcaInfo = HcaInfo;
             if (blockData == null) {
                 throw new ArgumentNullException(nameof(blockData));
@@ -97,42 +99,46 @@ namespace DereTore.Exchange.Audio.HCA {
                 throw new HcaException(ErrorMessages.GetChecksumNotMatch(0, checksum), ActionResult.ChecksumNotMatch);
             }
             _cipher.Decrypt(blockData);
-            var d = new DataBits(blockData, hcaInfo.BlockSize);
-            var magic = d.GetBit(16);
+			if (DataDecoder == null)
+				DataDecoder = new DataBits(blockData, hcaInfo.BlockSize);
+			else
+				DataDecoder.Set(blockData, hcaInfo.BlockSize);
+			var d = DataDecoder;
+			var magic = d.GetBit(16);
             if (magic != 0xffff) {
                 throw new HcaException(ErrorMessages.GetMagicNotMatch(0xffff, magic), ActionResult.MagicNotMatch);
             }
             var a = (d.GetBit(9) << 8) - d.GetBit(7);
             var channels = _channels;
             var ath = _ath;
-            string site = null;
+            //string site = null;
 
             try {
                 int i;
 
                 for (i = 0; i < hcaInfo.ChannelCount; ++i) {
-                    site = $"Decode1({i.ToString()})";
+                    //site = $"Decode1({i.ToString()})";
                     channels.Decode1(i, d, hcaInfo.CompR09, a, ath.Table);
                 }
 
                 for (i = 0; i < 8; ++i) {
                     for (var j = 0; j < hcaInfo.ChannelCount; ++j) {
-                        site = $"Decode2({i.ToString()}/{j.ToString()})";
+                        //site = $"Decode2({i.ToString()}/{j.ToString()})";
                         channels.Decode2(j, d);
                     }
 
                     for (var j = 0; j < hcaInfo.ChannelCount; ++j) {
-                        site = $"Decode3({i.ToString()}/{j.ToString()})";
+                        //site = $"Decode3({i.ToString()}/{j.ToString()})";
                         channels.Decode3(j, hcaInfo.CompR09, hcaInfo.CompR08, (uint)(hcaInfo.CompR07 + hcaInfo.CompR06), hcaInfo.CompR05);
                     }
 
                     for (var j = 0; j < hcaInfo.ChannelCount - 1; ++j) {
-                        site = $"Decode4({i.ToString()}/{j.ToString()})";
+                        //site = $"Decode4({i.ToString()}/{j.ToString()})";
                         channels.Decode4(j, j + 1, i, (uint)(hcaInfo.CompR05 - hcaInfo.CompR06), hcaInfo.CompR06, hcaInfo.CompR07);
                     }
 
                     for (var j = 0; j < hcaInfo.ChannelCount; ++j) {
-                        site = $"Decode5({i.ToString()}/{j.ToString()})";
+                       // site = $"Decode5({i.ToString()}/{j.ToString()})";
                         channels.Decode5(j, i);
                     }
                 }
@@ -140,7 +146,7 @@ namespace DereTore.Exchange.Audio.HCA {
                 return blockData.Length;
             } catch (IndexOutOfRangeException ex) {
                 const string message = "Index access exception detected. It is probably because you are using an incorrect HCA key pair while decoding a type 56 HCA file.";
-                var siteInfo = $"Site: {site} @ block {blockIndex.ToString()}";
+				var siteInfo = "Uncomment code";// $"Site: {site} @ block {blockIndex.ToString()}";
                 var err = message + Environment.NewLine + siteInfo;
                 throw new HcaException(err, ActionResult.DecodeFailed, ex);
             }

@@ -13,14 +13,17 @@ namespace XeApp.Game.Menu
 		// RVA: 0x953ED4 Offset: 0x953ED4 VA: 0x953ED4
 		public void Initialize(Transform parent)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "HelpPopupWindowControl Initialize");
 		}
 
 		// // RVA: 0x953FBC Offset: 0x953FBC VA: 0x953FBC
 		// public void Show(MonoBehaviour mb, int id, UnityAction onEnd) { }
 
 		// // RVA: 0x9540D4 Offset: 0x9540D4 VA: 0x9540D4
-		// public void Release() { }
+		public void Release()
+		{
+			TodoLogger.Log(0, "HelpPopupWindowControl Release");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E1DBC Offset: 0x6E1DBC VA: 0x6E1DBC
 		// // RVA: 0x954204 Offset: 0x954204 VA: 0x954204

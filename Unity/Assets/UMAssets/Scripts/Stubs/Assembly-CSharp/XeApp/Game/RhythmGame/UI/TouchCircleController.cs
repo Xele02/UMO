@@ -6,5 +6,9 @@ namespace XeApp.Game.RhythmGame.UI
 	{
 		[SerializeField]
 		private Animator m_touchCircleAnimator;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

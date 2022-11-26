@@ -2,6 +2,7 @@ using UnityEngine;
 using XeApp.Game.Common;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -60,11 +61,11 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		// [TooltipAttribute] // RVA: 0x681764 Offset: 0x681764 VA: 0x681764
 		private UGUIButton m_settingButton; // 0x38
-		// public Action OnClickAutoSettingButton; // 0x3C
-		// public Action OnClickUnitSetButton; // 0x40
-		// public Action OnClickPrismButton; // 0x44
-		// public Action OnClickUnitButton; // 0x48
-		// public Action OnClickSettingButton; // 0x4C
+		public Action OnClickAutoSettingButton; // 0x3C
+		public Action OnClickUnitSetButton; // 0x40
+		public Action OnClickPrismButton; // 0x44
+		public Action OnClickUnitButton; // 0x48
+		public Action OnClickSettingButton; // 0x4C
 
 		public InOutAnime InOut { get { return m_inOut; } } //0xA6E4A8
 		// public UGUIButton AutoSettingButton { get; } 0xA6E4B0
@@ -72,33 +73,96 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA6E4B8 Offset: 0xA6E4B8 VA: 0xA6E4B8
 		private void Awake()
 		{
-			TodoLogger.Log(0, "SetDeckHeadButtons Awake");
+			if(m_autoSettingButton != null)
+			{
+				m_autoSettingButton.AddOnClickCallback(() =>
+				{
+					//0xA6F3CC
+					if (OnClickAutoSettingButton != null)
+						OnClickAutoSettingButton();
+				});
+			}
+			if(m_unitSetButton != null)
+			{
+				m_unitSetButton.AddOnClickCallback(() =>
+				{
+					//0xA6F3E0
+					if (OnClickUnitSetButton != null)
+						OnClickUnitSetButton();
+				});
+			}
+			if(m_prismButton != null)
+			{
+				m_prismButton.AddOnClickCallback(() =>
+				{
+					//0xA6F3F4
+					if (OnClickPrismButton != null)
+						OnClickPrismButton();
+				});
+			}
+			if(m_unitButton != null)
+			{
+				m_unitButton.AddOnClickCallback(() =>
+				{
+					//0xA6F408
+					if (OnClickUnitButton != null)
+						OnClickUnitButton();
+				});
+			}
+			if(m_settingButton != null)
+			{
+				m_settingButton.AddOnClickCallback(() =>
+				{
+					//0xA6F41C
+					if (OnClickSettingButton != null)
+						OnClickSettingButton();
+				});
+			}
 		}
 
 		// // RVA: 0xA6E838 Offset: 0xA6E838 VA: 0xA6E838
-		// public void SetType(SetDeckHeadButtons.Type type) { }
+		public void SetType(Type type)
+		{
+			switch(type)
+			{
+				case Type.TeamSelect:
+					m_autoSettingButton.gameObject.SetActive(true);
+					m_autoSettingButton.Disable = false;
+					m_unitSetButton.gameObject.SetActive(true);
+					m_unitSetButton.Disable = false;
+					m_prismButton.gameObject.SetActive(true);
+					m_unitButton.gameObject.SetActive(false);
+					m_settingButton.gameObject.SetActive(true);
+					break;
+				case Type.Prism:
+					m_autoSettingButton.gameObject.SetActive(true);
+					m_autoSettingButton.Disable = true;
+					m_unitSetButton.gameObject.SetActive(true);
+					m_unitSetButton.Disable = true;
+					m_prismButton.gameObject.SetActive(false);
+					m_unitButton.gameObject.SetActive(true);
+					m_settingButton.gameObject.SetActive(true);
+					break;
+				case Type.TeamEdit:
+					m_autoSettingButton.gameObject.SetActive(true);
+					m_autoSettingButton.Disable = false;
+					m_unitSetButton.gameObject.SetActive(true);
+					m_unitSetButton.Disable = false;
+					m_prismButton.gameObject.SetActive(false);
+					m_unitButton.gameObject.SetActive(false);
+					m_settingButton.gameObject.SetActive(false);
+					break;
+				case Type.SLive:
+					m_autoSettingButton.gameObject.SetActive(false);
+					m_unitSetButton.gameObject.SetActive(false);
+					m_prismButton.gameObject.SetActive(false);
+					m_unitButton.gameObject.SetActive(false);
+					m_settingButton.gameObject.SetActive(true);
+					break;
+			}
+		}
 
 		// // RVA: 0xA6EDC4 Offset: 0xA6EDC4 VA: 0xA6EDC4
 		// public void SetPrismType(SetDeckHeadButtons.PrismType type) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x730C4C Offset: 0x730C4C VA: 0x730C4C
-		// // RVA: 0xA6F3CC Offset: 0xA6F3CC VA: 0xA6F3CC
-		// private void <Awake>b__23_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x730C5C Offset: 0x730C5C VA: 0x730C5C
-		// // RVA: 0xA6F3E0 Offset: 0xA6F3E0 VA: 0xA6F3E0
-		// private void <Awake>b__23_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x730C6C Offset: 0x730C6C VA: 0x730C6C
-		// // RVA: 0xA6F3F4 Offset: 0xA6F3F4 VA: 0xA6F3F4
-		// private void <Awake>b__23_2() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x730C7C Offset: 0x730C7C VA: 0x730C7C
-		// // RVA: 0xA6F408 Offset: 0xA6F408 VA: 0xA6F408
-		// private void <Awake>b__23_3() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x730C8C Offset: 0x730C8C VA: 0x730C8C
-		// // RVA: 0xA6F41C Offset: 0xA6F41C VA: 0xA6F41C
-		// private void <Awake>b__23_4() { }
 	}
 }

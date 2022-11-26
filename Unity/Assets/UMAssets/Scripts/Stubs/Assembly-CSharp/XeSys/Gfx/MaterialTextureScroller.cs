@@ -12,5 +12,9 @@ namespace XeSys.Gfx
 		}
 
 		public ScrollInfo scroll;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -1,8 +1,12 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class InnerOutline : BaseMeshEffect
+public class InnerOutline : BaseMeshEffect, IMaterialModifier
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	public enum ColorMode
 	{
 		Override = 0,
@@ -12,6 +16,11 @@ public class InnerOutline : BaseMeshEffect
 
 	public override void ModifyMesh(VertexHelper vh)
 	{
+	}
+
+	public Material GetModifiedMaterial(Material baseMaterial)
+	{
+		throw new System.NotImplementedException();
 	}
 
 	[SerializeField]

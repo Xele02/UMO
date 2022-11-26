@@ -10,5 +10,9 @@ namespace XeApp.Game.MiniGame
 		private ShootingTitleTouchScreenLayout m_titleTouchScreen;
 		[SerializeField]
 		private ShootingTitleUseCommandLayout m_titleUseCommand;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

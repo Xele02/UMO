@@ -10,5 +10,9 @@ namespace XeApp.Game.Common
 		private UGUICommonInfoWindow m_infoWindow;
 		[SerializeField]
 		private InOutAnime m_inOutAnime;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

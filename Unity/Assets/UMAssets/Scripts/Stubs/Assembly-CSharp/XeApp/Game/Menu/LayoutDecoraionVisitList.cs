@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	internal class LayoutDecoraionVisitList : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private ButtonBase m_divaIcon;
 		[SerializeField]

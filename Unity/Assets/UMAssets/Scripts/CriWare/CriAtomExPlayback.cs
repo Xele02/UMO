@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 namespace CriWare
 {
@@ -36,13 +37,27 @@ namespace CriWare
 		}
 
 		// // RVA: 0x81E410 Offset: 0x81E410 VA: 0x81E410
-		// public void Stop(bool ignoresReleaseTime) { }
+		public void Stop(bool ignoresReleaseTime)
+		{
+			if (!CriAtomPlugin.IsLibraryInitialized())
+				return;
+			if (ignoresReleaseTime)
+				criAtomExPlayback_StopWithoutReleaseTime(id);
+			else
+				criAtomExPlayback_Stop(id);
+		}
 
 		// // RVA: 0x81E418 Offset: 0x81E418 VA: 0x81E418
-		// public void Pause() { }
+		public void Pause()
+		{
+			Pause(true);
+		}
 
 		// // RVA: 0x81E424 Offset: 0x81E424 VA: 0x81E424
-		// public void Resume(CriAtomEx.ResumeMode mode) { }
+		public void Resume(CriAtomEx.ResumeMode mode)
+		{
+			criAtomExPlayback_Resume(this.id, mode);
+		}
 
 		// // RVA: 0x81E42C Offset: 0x81E42C VA: 0x81E42C
 		// public bool IsPaused() { }
@@ -81,25 +96,61 @@ namespace CriWare
 		// public void SetNextBlockIndex(int index) { }
 
 		// // RVA: 0x81E4AC Offset: 0x81E4AC VA: 0x81E4AC
-		// public void Stop() { }
+		public void Stop()
+		{
+			Stop(false);
+		}
 
 		// // RVA: 0x81E4B4 Offset: 0x81E4B4 VA: 0x81E4B4
 		// public void StopWithoutReleaseTime() { }
 
 		// // RVA: 0x81E4BC Offset: 0x81E4BC VA: 0x81E4BC
-		// public void Pause(bool sw) { }
+		public void Pause(bool sw)
+		{
+			criAtomExPlayback_Pause(this.id, sw);
+		}
 
 		// // RVA: 0x28A1AE0 Offset: 0x28A1AE0 VA: 0x28A1AE0
-		// private static extern void criAtomExPlayback_Stop(uint id) { }
+
+#if UNITY_ANDROID
+		private static extern void criAtomExPlayback_Stop(uint id);
+#else
+		private static void criAtomExPlayback_Stop(uint id)
+		{
+			ExternLib.LibCriWare.criAtomExPlayback_Stop(id);
+		}
+#endif
 
 		// // RVA: 0x28A1BF8 Offset: 0x28A1BF8 VA: 0x28A1BF8
-		// private static extern void criAtomExPlayback_StopWithoutReleaseTime(uint id) { }
+
+#if UNITY_ANDROID
+		private static extern void criAtomExPlayback_StopWithoutReleaseTime(uint id);
+		#else
+		private static void criAtomExPlayback_StopWithoutReleaseTime(uint id)
+		{
+			ExternLib.LibCriWare.criAtomExPlayback_StopWithoutReleaseTime(id);
+		}
+		#endif
 
 		// // RVA: 0x28A1CF0 Offset: 0x28A1CF0 VA: 0x28A1CF0
-		// private static extern void criAtomExPlayback_Pause(uint id, bool sw) { }
+		#if UNITY_ANDROID
+		private static extern void criAtomExPlayback_Pause(uint id, bool sw);
+#else
+		private static void criAtomExPlayback_Pause(uint id, bool sw)
+		{
+			ExternLib.LibCriWare.criAtomExPlayback_Pause(id, sw);
+		}
+#endif
 
 		// // RVA: 0x28A1E18 Offset: 0x28A1E18 VA: 0x28A1E18
-		// private static extern void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode) { }
+#if UNITY_ANDROID
+		private static extern void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode);
+		#else
+		private static void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode)
+		{
+			ExternLib.LibCriWare.criAtomExPlayback_Resume(id, mode);
+		}
+		#endif
 
 		// // RVA: 0x28A1F40 Offset: 0x28A1F40 VA: 0x28A1F40
 		// private static extern bool criAtomExPlayback_IsPaused(uint id) { }

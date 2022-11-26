@@ -20,5 +20,9 @@ namespace XeApp.Game.Common
 		private AnimeCurveScriptableObject m_animeCurve;
 		[SerializeField]
 		private float m_animeLengthSec;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -35,7 +35,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x110A89C Offset: 0x110A89C VA: 0x110A89C
-		// public void ChangeCardBg() { }
+		public void ChangeCardBg()
+		{
+			TodoLogger.Log(0, "TODO");
+		}
 
 		// // RVA: 0x110A924 Offset: 0x110A924 VA: 0x110A924
 		// public void ChangeBattleBg() { }

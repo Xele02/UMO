@@ -17,11 +17,13 @@ namespace ExternLib
 
         public static long criAtomExPlayback_GetTimeSyncedWithAudio(uint id)
         {
-            if(playbacksList.ContainsKey(id) && playersList.ContainsKey(playbacksList[id].playerPtr))
+#if !UNITY_ANDROID
+			if(playbacksList.ContainsKey(id) && playersList.ContainsKey(playbacksList[id].playerPtr))
             {
                 PlayerData player = playersList[playbacksList[id].playerPtr];
                 return (long)((player.config.source.unityAudioSource.time) * 1000);
             }
+#endif
             return 0;
         }
 
@@ -37,5 +39,36 @@ namespace ExternLib
             }
             return CriAtomExPlayback.Status.Removed;
         }
-    }
+
+		public static void criAtomExPlayback_Stop(uint id)
+		{
+			if (playbacksList.ContainsKey(id) && playersList.ContainsKey(playbacksList[id].playerPtr))
+			{
+				criAtomExPlayer_Stop(playbacksList[id].playerPtr);
+			}
+		}
+		public static void criAtomExPlayback_StopWithoutReleaseTime(uint id)
+		{
+			if (playbacksList.ContainsKey(id) && playersList.ContainsKey(playbacksList[id].playerPtr))
+			{
+				criAtomExPlayer_StopWithoutReleaseTime(playbacksList[id].playerPtr);
+			}
+		}
+
+        public static void criAtomExPlayback_Pause(uint id, bool sw)
+        {
+			if (playbacksList.ContainsKey(id) && playersList.ContainsKey(playbacksList[id].playerPtr))
+			{
+				criAtomExPlayer_Pause(playbacksList[id].playerPtr, sw);
+			}
+        }
+
+		public static void criAtomExPlayback_Resume(uint id, CriAtomEx.ResumeMode mode)
+		{
+			if (playbacksList.ContainsKey(id) && playersList.ContainsKey(playbacksList[id].playerPtr))
+			{
+				criAtomExPlayer_Resume(playbacksList[id].playerPtr, mode);
+			}
+		}
+	}
 }

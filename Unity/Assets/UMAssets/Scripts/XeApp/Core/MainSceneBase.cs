@@ -7,7 +7,7 @@ using XeApp.Game;
 
 namespace XeApp.Core
 {
-	public class MainSceneBase : MonoBehaviour
+	public class MainSceneBase : MonoBehaviour, IScene
 	{
 		private static string mPrevSceneName; // 0x0
 		[SerializeField]

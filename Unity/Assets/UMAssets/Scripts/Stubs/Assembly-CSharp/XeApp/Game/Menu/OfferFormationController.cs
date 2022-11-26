@@ -6,5 +6,9 @@ namespace XeApp.Game.Menu
 	{
 		public bool IsAssetLoad;
 		public int selectFormation;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 namespace CriWare.CriMana.Detail
 {
     public static partial class AutoResisterRendererResourceFactories
@@ -156,9 +156,9 @@ namespace CriWare.CriMana.Detail
         // RVA: 0x2954458 Offset: 0x2954458 VA: 0x2954458 Slot: 12
         public override bool UpdateFrame(int playerId, FrameInfo frameInfo, ref bool frameDrop)
         {
-            /*int numTexture = hasAlpha ? 4 : 3;
-            bool res = RendererResource.CRIWARED6D2B5F7(playerId, numTexture, null, frameInfo, ref frameDrop);
-            if(res && !frameDrop)
+            //int numTexture = hasAlpha ? 4 : 3;
+            bool res = RendererResource.CRIWARED6D2B5F7(playerId, 1, null, frameInfo, ref frameDrop);
+            /*if(res && !frameDrop)
             {
                 UpdateMovieTextureST(frameInfo.dispWidth, frameInfo.dispHeight);
             }

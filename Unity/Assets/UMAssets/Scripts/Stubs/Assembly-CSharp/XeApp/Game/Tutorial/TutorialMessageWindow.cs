@@ -23,5 +23,9 @@ namespace XeApp.Game.Tutorial
 		private ColorTween[] m_colorTweens;
 		[SerializeField]
 		private float m_messageSpeed;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

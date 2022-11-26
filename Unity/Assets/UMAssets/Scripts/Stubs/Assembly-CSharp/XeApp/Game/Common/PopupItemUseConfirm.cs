@@ -4,9 +4,40 @@ using UnityEngine.UI;
 
 namespace XeApp.Game.Common
 {
-	public class PopupItemUseConfirm : LayoutUGUIScriptBase
+	public class PopupItemUseConfirm : LayoutUGUIScriptBase, IPopupContent
 	{
     public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+
+		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public bool IsScrollable()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void Show()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void Hide()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public bool IsReady()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void CallOpenEnd()
+		{
+			throw new System.NotImplementedException();
+		}
+
 		[SerializeField]
 		private RawImageEx m_imageIcon;
 		[SerializeField]
@@ -27,5 +58,7 @@ namespace XeApp.Game.Common
 		private Text m_textCaution_3;
 		[SerializeField]
 		private Text m_textPeriod;
+
+		public Transform Parent => throw new System.NotImplementedException();
 	}
 }

@@ -345,7 +345,7 @@ namespace XeApp.Game.Menu
 		{
 			foreach(var r in rewards)
 			{
-				if (r.CMCKNKKCNDK == 0)
+				if (r.CMCKNKKCNDK_Achieved == 0)
 					return false;
 			}
 			return true;

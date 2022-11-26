@@ -20,5 +20,9 @@ namespace XeApp.Game.Menu
 		private UGUIButton cancelButton;
 		[SerializeField]
 		private Image backGroundImage;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

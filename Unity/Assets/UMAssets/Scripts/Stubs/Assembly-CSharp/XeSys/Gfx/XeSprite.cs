@@ -1,6 +1,6 @@
 namespace XeSys.Gfx
 {
-	public class XeSprite
+	public class XeSprite : IRenderElement
 	{
 	}
 }

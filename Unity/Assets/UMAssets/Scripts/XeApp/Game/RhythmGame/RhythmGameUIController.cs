@@ -1,24 +1,62 @@
 using UnityEngine;
 using System;
+using UnityEngine.Events;
+using System.Collections.Generic;
+using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.RhythmGame
 {
 	public class RhythmGameUIController : MonoBehaviour
 	{
-		// private List<Animator> m_list_anim = new List<Animator>(); // 0x1C
-		// private List<ParticleSystem> m_list_particle = new List<ParticleSystem>(); // 0x20
-		// private List<EffectBundleControllerSimple> m_list_effect = new List<EffectBundleControllerSimple>(); // 0x24
+		private List<Animator> m_list_anim = new List<Animator>(); // 0x1C
+		private List<ParticleSystem> m_list_particle = new List<ParticleSystem>(); // 0x20
+		private List<EffectBundleControllerSimple> m_list_effect = new List<EffectBundleControllerSimple>(); // 0x24
 
-		// public GameUIIntro intro { get; private set; } // 0xC
-		// public GameUIComplete complete { get; private set; } // 0x10
-		// public GameUIFailed failed { get; private set; } // 0x14
+		public GameUIIntro intro { get; private set; } // 0xC
+		public GameUIComplete complete { get; private set; } // 0x10
+		public GameUIFailed failed { get; private set; } // 0x14
 		public IRhythmGameHUD Hud { get; private set; } // 0x18
 
 		// // RVA: 0xC0C4F0 Offset: 0xC0C4F0 VA: 0xC0C4F0
-		// public void Pause() { }
+		public void Pause()
+		{
+			foreach(var a in m_list_anim)
+			{
+				a.speed = 0;
+			}
+			foreach(var p in m_list_particle)
+			{
+				if(p.IsAlive())
+				{
+					p.Pause();
+				}
+			}
+			foreach(var e in m_list_effect)
+			{
+				e.Pause();
+			}
+		}
 
 		// // RVA: 0xC0C8C0 Offset: 0xC0C8C0 VA: 0xC0C8C0
-		// public void Resume() { }
+		public void Resume()
+		{
+			foreach(var a in m_list_anim)
+			{
+				a.speed = 1;
+			}
+			foreach(var p in m_list_particle)
+			{
+				if(p.isPaused)
+				{
+					p.Play();
+				}
+			}
+			foreach(var e in m_list_effect)
+			{
+				e.Resume();
+			}
+		}
 
 		// // RVA: 0xC0CC90 Offset: 0xC0CC90 VA: 0xC0CC90
 		public void OnAwake()
@@ -33,50 +71,125 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC0CC98 Offset: 0xC0CC98 VA: 0xC0CC98
-		// public void OnUpdate() { }
+		public void OnUpdate()
+		{
+			return;
+		}
 
 		// // RVA: 0xC0CC9C Offset: 0xC0CC9C VA: 0xC0CC9C
-		// public void Initialize(RhythmGameResource resource, RhythmGamePlayer.Setting setting, RhythmGamePlayer.SettingMV mvSetting) { }
+		public void Initialize(RhythmGameResource resource, RhythmGamePlayer.Setting setting, RhythmGamePlayer.SettingMV mvSetting)
+		{
+			Canvas[] cs = transform.root.Find("Layer-Overlay").GetComponentsInChildren<Canvas>(true);
+			Transform c = null;
+			for(int i = 0; i < cs.Length; i++)
+			{
+				if (cs[i].name == "TopLayoutCanvas")
+				{
+					c = cs[i].transform.GetChild(0);
+					break;
+				}
+			}
+			GameObject ui = Instantiate(resource.uiPrefab);
+			ui.transform.SetParent(transform.root.Find("Layer-UI").GetComponentInChildren<Canvas>(true).transform.GetChild(0).transform, false);
+			Hud =  ui.GetComponent<IRhythmGameHUD>();
+			Hud.isEnableCutin = setting.m_enable_cutin;
+			Hud.isShowNotes = mvSetting.m_show_notes;
+			Hud.Initialize();
+			Hud.SetPlayerSideTexture(resource.m_pilotTexture, resource.m_divaTexture);
+			Hud.SetEnemySideTexture(resource.m_enemyPilotTexture, resource.m_enemyRobotTexture);
+			if(resource.enemySkillPrefab != null)
+			{
+				Hud.SetEnemyLiveSkillEffect(resource.enemySkillPrefab);
+			}
+			intro = GameManager.Instance.GameUIIntro;
+			failed = resource.faildUiPrefab.GetComponent<GameUIFailed>();
+			failed.transform.SetParent(c, false);
+			failed.gameObject.SetActive(false);
+			complete = resource.completeUiPrefab.GetComponent<GameUIComplete>();
+			complete.transform.SetParent(c, false);
+			complete.gameObject.SetActive(false);
+			m_list_anim.Clear();
+			m_list_anim.AddRange(ui.GetComponentsInChildren<Animator>(true));
+			m_list_particle.Clear();
+			m_list_particle.AddRange(ui.GetComponentsInChildren<ParticleSystem>(true));
+			m_list_effect.Clear();
+			m_list_effect.AddRange(ui.GetComponentsInChildren<EffectBundleControllerSimple>(true));
+		}
 
 		// // RVA: 0xC0D81C Offset: 0xC0D81C VA: 0xC0D81C
 		public void BeginIntroAnim(Action callback)
 		{
-			TodoLogger.Log(0, "TODO");
-			callback();
+			intro.DoIntro();
+			intro.onAnimationEndCallback = callback;
 		}
 
 		// // RVA: 0xBF2A8C Offset: 0xBF2A8C VA: 0xBF2A8C
 		public void DeleteIntro()
 		{
-			TodoLogger.Log(0, "TODO");
+			GameManager.Instance.DeleteIntro();
+			intro = null;
 		}
 
 		// // RVA: 0xC0D874 Offset: 0xC0D874 VA: 0xC0D874
-		// public void BeginFailedAnim(Action callback) { }
+		public void BeginFailedAnim(Action callback)
+		{
+			TodoLogger.Log(0, "BeginFailedAnim");
+		}
 
 		// // RVA: 0xC0D8EC Offset: 0xC0D8EC VA: 0xC0D8EC
-		// public void BeginRetryAnim(Action callback) { }
+		public void BeginRetryAnim(Action callback)
+		{
+			failed.BeginRetryAnim();
+			failed.CleanupRetryCompletedCallback();
+			failed.AddRetryCompletedCallback(callback);
+		}
 
 		// // RVA: 0xC0D964 Offset: 0xC0D964 VA: 0xC0D964
-		// public void BeginCompleteAnim(Action callback, RhythmGameConsts.ResultComboType comboRank, bool isMvMode = False) { }
+		public void BeginCompleteAnim(Action callback, RhythmGameConsts.ResultComboType comboRank, bool isMvMode = false)
+		{
+			Hud.CloseSkillCutin();
+			Hud.EndAcceptOfInput();
+			Hud.HideAllToucheEffect();
+			if (isMvMode)
+				complete.BeginCompleteAnimSimulate();
+			else
+				complete.BeginCompleteAnim(comboRank);
+			complete.CleanupLeaveCompletedCallback();
+			complete.AddLeaveCompletedCallback(callback);
+		}
 
 		// // RVA: 0xC0DBE4 Offset: 0xC0DBE4 VA: 0xC0DBE4
 		// public void EndCompleteAnim() { }
 
 		// // RVA: 0xC0DC10 Offset: 0xC0DC10 VA: 0xC0DC10
-		// public void UpdateEnergy(int energy) { }
+		public void UpdateEnergy(int energy)
+		{
+			Hud.SetFoldWaveGaugeValue(energy);
+		}
 
 		// // RVA: 0xC0DCF0 Offset: 0xC0DCF0 VA: 0xC0DCF0
-		// public void UpdateEnemyLife(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback) { }
+		public void UpdateEnemyLife(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback)
+		{
+			Hud.UpdateEnemyStatus(damage, threshold1, threshold2, onChaseModeCallback);
+		}
 
 		// // RVA: 0xC0DDFC Offset: 0xC0DDFC VA: 0xC0DDFC
-		// public void UpdateEnemyDamageResult(int result, Vector3 position) { }
+		public void UpdateEnemyDamageResult(int result, Vector3 position)
+		{
+			Hud.EnemyDamageResult(result, position);
+		}
 
 		// // RVA: 0xC0DF08 Offset: 0xC0DF08 VA: 0xC0DF08
-		// public void UpdateCombo(int newCombo) { }
+		public void UpdateCombo(int newCombo)
+		{
+			Hud.SetCombo(newCombo);
+		}
 
 		// // RVA: 0xC0DFE8 Offset: 0xC0DFE8 VA: 0xC0DFE8
-		// public void UpdateBattleCombo(int battleCombo) { }
+		public void UpdateBattleCombo(int battleCombo)
+		{
+			Hud.SetBattleCombo(battleCombo);
+		}
 
 		// // RVA: 0xC0E0C8 Offset: 0xC0E0C8 VA: 0xC0E0C8
 		// public void EnterLIVESkill(LiveSkill skill, Material skillDesc, Material material) { }
@@ -118,19 +231,33 @@ namespace XeApp.Game.RhythmGame
 		// public void ShowSkipConfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
 
 		// // RVA: 0xC10E9C Offset: 0xC10E9C VA: 0xC10E9C
-		// public void ShowMvModePauseWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
+		public void ShowMvModePauseWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
+		{
+			PopupWindowManager.Show(CreateMvModePausePopupSetting(), callback, null, null, null, true, false, false, null, null, this.PlayPopupOpenSe, this.PlayPopupButtonSe);
+		}
 
 		// // RVA: 0xC11608 Offset: 0xC11608 VA: 0xC11608
-		// public void ShowMvModeEndConfirmWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
+		public void ShowMvModeEndConfirmWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
+		{
+			PopupWindowManager.Show(CreateMvModeEndConfirmPopupSetting(), callback, null, null, null, true, false, false, null, null, this.PlayPopupOpenSe, this.PlayPopupButtonSe);
+		}
 
 		// // RVA: 0xC119E0 Offset: 0xC119E0 VA: 0xC119E0
 		// public void ShowEndTutorialWindow(Action callback, bool isRetry) { }
 
 		// // RVA: 0xC11A78 Offset: 0xC11A78 VA: 0xC11A78
-		// private bool PlayPopupOpenSe(PopupWindowControl.SeType type) { }
+		private bool PlayPopupOpenSe(PopupWindowControl.SeType type)
+		{
+			PopupWindowControl.PlayPopupWindowOpenSe(type, SoundManager.Instance.sePlayerGame);
+			return true;
+		}
 
 		// // RVA: 0xC11B30 Offset: 0xC11B30 VA: 0xC11B30
-		// private bool PlayPopupButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type) { }
+		private bool PlayPopupButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type)
+		{
+			PopupWindowControl.PlayPopupButtonSe(label, type, SoundManager.Instance.sePlayerGame);
+			return true;
+		}
 
 		// // RVA: 0xBF1884 Offset: 0xBF1884 VA: 0xBF1884
 		// public void ShowNotesDescriptionTutorialWindow(Action callback) { }
@@ -173,10 +300,32 @@ namespace XeApp.Game.RhythmGame
 		// private PopupSetting CreateSkipPopupsettingForTutorial() { }
 
 		// // RVA: 0xC10FF0 Offset: 0xC10FF0 VA: 0xC10FF0
-		// private PopupSetting CreateMvModePausePopupSetting() { }
+		private PopupSetting CreateMvModePausePopupSetting()
+		{
+			TextPopupSetting setting = new TextPopupSetting();
+			setting.WindowSize = SizeType.Small;
+			setting.BackButtonLabel = PopupButton.ButtonLabel.ReStart;
+			setting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("game_popup_mvpause_title");
+			object[] o = new object[2];
+			o[0] = Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Nam).musicName;
+			o[1] = Difficulty.Name[(int)Database.Instance.gameSetup.musicInfo.difficultyType] + ((Database.Instance.gameSetup.musicInfo.IsLine6Mode) ? "+" : "");
+			setting.Text = PopupWindowManager.FormatTextBank(MessageManager.Instance.GetBank("menu"), "game_popup_mvpause_text", o);
+			setting.Buttons = new ButtonInfo[] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Finish, Type = PopupButton.ButtonType.Negative },
+												new ButtonInfo() { Label = PopupButton.ButtonLabel.ReStart, Type = PopupButton.ButtonType.Positive }};
+			return setting;
+		}
 
 		// // RVA: 0xC1175C Offset: 0xC1175C VA: 0xC1175C
-		// private PopupSetting CreateMvModeEndConfirmPopupSetting() { }
+		private PopupSetting CreateMvModeEndConfirmPopupSetting()
+		{
+			TextPopupSetting setting = new TextPopupSetting();
+			setting.WindowSize = SizeType.Small;
+			setting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("game_mvmode_endtitle_text");
+			setting.Text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("game_mvmode_end_text");
+			setting.Buttons = new ButtonInfo[2] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+												new ButtonInfo() { Label = PopupButton.ButtonLabel.Finish, Type = PopupButton.ButtonType.Positive }};
+			return setting;
+		}
 
 		// // RVA: 0xC11D80 Offset: 0xC11D80 VA: 0xC11D80
 	}

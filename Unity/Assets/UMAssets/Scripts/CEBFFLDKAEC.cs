@@ -1,4 +1,5 @@
 
+public class CEBFFLDKAEC { }
 public class CEBFFLDKAEC_SecureInt
 {
 	private int IPKONDLIDHC; // 0x8

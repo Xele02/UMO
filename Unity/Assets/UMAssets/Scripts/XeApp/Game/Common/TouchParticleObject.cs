@@ -19,7 +19,15 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CD09BC Offset: 0x1CD09BC VA: 0x1CD09BC
 		private void Awake()
 		{
-			TodoLogger.Log(0, "TODO");
+			m_particle_touch.Stop();
+			m_transform_touch = m_particle_touch.GetComponent<Transform>();
+			m_transform_circle = m_touch_circle.GetComponent<Transform>();
+			MeshRenderer[] mr = GetComponentsInChildren<MeshRenderer>();
+			for(int i = 0; i < mr.Length; i++)
+			{
+				mr[i].sortingOrder = 200;
+			}
+			gameObject.SetActive(false);
 		}
 
 		// RVA: 0x1CD0B3C Offset: 0x1CD0B3C VA: 0x1CD0B3C

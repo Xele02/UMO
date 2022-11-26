@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class GeneralListButtonRuntime : LayoutLabelScriptBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private TextureListSupport m_texListSupport;
 		[SerializeField]

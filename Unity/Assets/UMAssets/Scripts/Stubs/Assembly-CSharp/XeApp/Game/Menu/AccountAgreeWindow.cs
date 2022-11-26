@@ -28,5 +28,9 @@ namespace XeApp.Game.Menu
 		private UGUIButton consentButton;
 		[SerializeField]
 		private Image backGroundImage;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

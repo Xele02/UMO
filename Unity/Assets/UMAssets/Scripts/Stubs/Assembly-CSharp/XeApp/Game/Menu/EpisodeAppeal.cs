@@ -14,5 +14,9 @@ namespace XeApp.Game.Menu
 		private TextMesh m_pilotNameTextPrefab;
 		public bool IsSkip;
 		public bool IsAppeal;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

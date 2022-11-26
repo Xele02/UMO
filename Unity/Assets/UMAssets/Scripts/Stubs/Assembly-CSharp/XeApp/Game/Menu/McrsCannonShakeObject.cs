@@ -9,5 +9,9 @@ namespace XeApp.Game.Menu
 		public float Speed;
 		public float Duration;
 		public float Scale;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -43,7 +43,7 @@ namespace XeApp.Game
 			public int thisIndex { get; internal set; } // 0x24
 			public int wingTrackID { get; internal set; } // 0x28
 			public bool isSlide { get; internal set; } // 0x2C
-			//public bool isWing { get; } 0xC9AF2C
+			public bool isWing { get { return flick != 0 ? wingTrackID > -1 : false; } } //0xC9AF2C
 		}
 
 		public struct EventNoteInfo
@@ -170,7 +170,7 @@ namespace XeApp.Game
 				{
 					InputNoteInfo noteInfo = new InputNoteInfo();
 					noteInfo.time = (int)inputTrack[i]["time"];
-					noteInfo.trackID = (sbyte)inputTrack[i]["trackID"];
+					noteInfo.trackID = (sbyte)(int)inputTrack[i]["trackID"];
 					noteInfo.sync = (TouchState)(int)inputTrack[i]["sync"];
 					noteInfo.syncIndex = (int)inputTrack[i]["syncIndex"];
 					noteInfo.longTouch = (TouchState)(int)inputTrack[i]["longTouch"];
@@ -243,8 +243,8 @@ namespace XeApp.Game
 					info.isSlide = false;
 					if (infoList[info.prevIndex].longTouch == TouchState.Continue)
 						info.isSlide = true;
-					infoList[info.prevIndex].isSlide = info.isSlide;
 				}
+				infoList[info.prevIndex].isSlide = info.isSlide;
 			}
 			else
 			{
@@ -399,8 +399,13 @@ namespace XeApp.Game
 		// // RVA: 0xC9A7B0 Offset: 0xC9A7B0 VA: 0xC9A7B0
 		public int CalcComboLimit()
 		{
-			TodoLogger.Log(0, "TODO");
-			return 0;
+			int res = 0;
+			for(int i = 0; i < inputNoteTrack.Count; i++)
+			{
+				if (inputNoteTrack[i].swipe != TouchState.SwipeStart)
+					res++;
+			}
+			return res;
 		}
 
 		// // RVA: 0xC9A894 Offset: 0xC9A894 VA: 0xC9A894

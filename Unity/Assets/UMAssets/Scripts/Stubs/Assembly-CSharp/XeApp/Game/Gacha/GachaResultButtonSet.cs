@@ -7,6 +7,10 @@ namespace XeApp.Game.Gacha
 {
 	public class GachaResultButtonSet : LayoutLabelScriptBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private GachaResultRetryButton m_retryButton;
 		[SerializeField]

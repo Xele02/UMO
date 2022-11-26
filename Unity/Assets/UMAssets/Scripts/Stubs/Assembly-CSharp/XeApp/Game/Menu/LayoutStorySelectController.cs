@@ -1,6 +1,12 @@
+using System;
+
 namespace XeApp.Game.Menu
 {
-	public class LayoutStorySelectController
+	public class LayoutStorySelectController : IDisposable
 	{
+		public void Dispose()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

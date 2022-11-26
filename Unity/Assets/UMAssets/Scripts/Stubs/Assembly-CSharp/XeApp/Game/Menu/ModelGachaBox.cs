@@ -37,5 +37,9 @@ namespace XeApp.Game.Menu
 		private Material m_effect;
 		[SerializeField]
 		private BoxTexture[] m_textures;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

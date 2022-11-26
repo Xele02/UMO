@@ -17,5 +17,9 @@ namespace XeApp.Game.Menu
 		private Text m_textDescription;
 		[SerializeField]
 		private ScrollRect m_scroll;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

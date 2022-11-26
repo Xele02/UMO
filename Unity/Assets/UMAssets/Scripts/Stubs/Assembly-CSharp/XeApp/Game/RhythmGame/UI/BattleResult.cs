@@ -10,5 +10,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private MeshRenderer _playerMesh;
 		[SerializeField]
 		private MeshRenderer _rivalMesh;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

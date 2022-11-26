@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class Tonemapping : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum TonemapperType
 		{
 			SimpleReinhard = 0,

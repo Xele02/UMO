@@ -14,5 +14,9 @@ namespace XeApp.Game.Common
 		private GameObject m_textSource;
 		[SerializeField]
 		private GameObject m_buttonSource;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -6,6 +6,10 @@ namespace XeApp.Game.Common
 {
 	public class BannerScrollViewContent : SelectScrollViewContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		protected RawImageEx m_imageBanner;
 		[SerializeField]

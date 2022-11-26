@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class ScreenOverlay : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum OverlayBlendMode
 		{
 			Additive = 0,

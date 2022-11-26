@@ -17,5 +17,9 @@ namespace XeApp.Game.MiniGame
 		private UGUIFader fadePlane;
 		[SerializeField]
 		private RectTransform m_mainSceenSize;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

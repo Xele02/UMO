@@ -34,7 +34,7 @@ namespace XeSys.Gfx
 		// public float AnimCount { get; set; } 0x1EE958C 0x1EE9594
 		// public float TimeScale { get; set; } 0x1EE5EA4 0x1EE5EF8
 		// public float FrameSec { get; set; } 0x1EE959C 0x1EE95A4
-		// public int FrameCount { get; private set; } 0x1EE95AC 0x1EE95C4
+		public int FrameCount { get { return (int)(m_AnimCount / m_FrameSec); } private set { return; } } //0x1EE95AC 0x1EE95C4
 		// public float BaseX { get; set; } 0x1EE95C8 0x1EE95D0
 		// public float BaseY { get; set; } 0x1EE95D8 0x1EE95E0
 		// public int FrameNum { get; } 0x1EE95E8
@@ -78,7 +78,10 @@ namespace XeSys.Gfx
 		// public void SetCustomTimeMapElm(int tmIndex, int elmIndex, float point, float next, float prev) { }
 
 		// // RVA: 0x1EE9E84 Offset: 0x1EE9E84 VA: 0x1EE9E84
-		// public float SearchLabelFrame(string label) { }
+		public float SearchLabelFrame(string label)
+		{
+			return data.SearchLabelFrame(label);
+		}
 
 		// // RVA: 0x1EE8AD0 Offset: 0x1EE8AD0 VA: 0x1EE8AD0
 		// public void StartAnim() { }

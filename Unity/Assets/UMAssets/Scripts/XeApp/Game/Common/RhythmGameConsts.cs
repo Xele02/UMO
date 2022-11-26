@@ -74,10 +74,18 @@ namespace XeApp.Game.Common
 			public bool m_excellent; // 0xC
 
 			// // RVA: 0x138B49C Offset: 0x138B49C VA: 0x138B49C
-			// public void Init(RhythmGameConsts.NoteResult a_result) { }
+			public void Init(NoteResult a_result)
+			{
+				m_excellent = false;
+				m_result = a_result;
+			}
 
 			// // RVA: 0x138B4AC Offset: 0x138B4AC VA: 0x138B4AC
-			// public void Copy(RhythmGameConsts.NoteResultEx dest) { }
+			public void Copy(RhythmGameConsts.NoteResultEx dest)
+			{
+				dest.m_result = m_result;
+				dest.m_excellent = m_excellent;
+			}
 		}
 
 		public class NoteResultParam_Excellent
@@ -118,7 +126,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x138B334 Offset: 0x138B334 VA: 0x138B334
-		// public static bool IsWideLine() { }
+		public static bool IsWideLine()
+		{
+			return LineNum > 4;
+		}
 
 		// // RVA: 0x138B3BC Offset: 0x138B3BC VA: 0x138B3BC
 		public static bool IsWideLine(int lineNo)

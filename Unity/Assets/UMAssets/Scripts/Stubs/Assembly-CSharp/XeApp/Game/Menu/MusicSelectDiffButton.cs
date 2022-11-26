@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class MusicSelectDiffButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum IconType
 		{
 			ILLEGAL = 0,

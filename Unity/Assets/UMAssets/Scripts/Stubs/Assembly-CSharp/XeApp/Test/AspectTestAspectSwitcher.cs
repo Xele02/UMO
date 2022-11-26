@@ -6,6 +6,10 @@ namespace XeApp.Test
 {
 	public class AspectTestAspectSwitcher : MainSceneBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Button prevButton;
 		[SerializeField]

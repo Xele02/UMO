@@ -35,5 +35,9 @@ namespace XeSys
 		public AxisData adX;
 		public AxisData adY;
 		public AxisData adZ;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

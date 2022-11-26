@@ -15,5 +15,9 @@ namespace XeApp.Game.Menu
 
 		[SerializeField]
 		private List<EventGoDivaCamera.OffsetSetting> m_offsetSettings;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

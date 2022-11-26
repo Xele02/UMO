@@ -1,3 +1,7 @@
+using System.Text;
+using UnityEngine.Events;
+using XeSys;
+
 namespace XeApp.Game.Common
 {
 	public class PilotVoicePlayer : VoicePlayerBase
@@ -25,10 +29,20 @@ namespace XeApp.Game.Common
 		// public void SetEnable(bool a_enable) { }
 
 		// // RVA: 0xAF6DB0 Offset: 0xAF6DB0 VA: 0xAF6DB0
-		// public void RequestChangeCueSheet(int pilotId, UnityAction onChangeCallback) { }
+		public void RequestChangeCueSheet(int pilotId, UnityAction onChangeCallback)
+		{
+			StringBuilder str = new StringBuilder(32);
+			str.SetFormat("cs_pilot_{0:D3}", pilotId);
+			RequestChangeCueSheet(str.ToString(), onChangeCallback);
+		}
 
 		// // RVA: 0xAF6EA4 Offset: 0xAF6EA4 VA: 0xAF6EA4
-		// public void RequestChangeCueSheetForReplacement(int forceId, UnityAction onChangeCallback) { }
+		public void RequestChangeCueSheetForReplacement(int forceId, UnityAction onChangeCallback)
+		{
+			StringBuilder str = new StringBuilder(32);
+			str.SetFormat("cs_change_pilot_{0:D3}", forceId);
+			RequestChangeCueSheet(str.ToString(), onChangeCallback);
+		}
 
 		// // RVA: 0xAF6F98 Offset: 0xAF6F98 VA: 0xAF6F98
 		// public void RequestChangeCueSheet_offer(int valkrieyId, UnityAction onChangeCallback) { }
@@ -36,7 +50,12 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAF7040 Offset: 0xAF7040 VA: 0xAF7040
 		public void Play(VoiceCategory categoryType, int voiceId)
 		{
-
+			StopCue();
+			if(!m_enable)
+				return;
+			StringBuilder str = new StringBuilder(32);
+			str.AppendFormat("{0}_{1:D3}", categoryPrefix[(int)categoryType], voiceId);
+			PlayCue(str.ToString());
 		}
 
 		// // RVA: 0xAF7200 Offset: 0xAF7200 VA: 0xAF7200

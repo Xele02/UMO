@@ -6,6 +6,10 @@ namespace XeApp.Game.Common
 {
 	public class NotificationPanel : UIBehaviour
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text m_titleText;
 		[SerializeField]

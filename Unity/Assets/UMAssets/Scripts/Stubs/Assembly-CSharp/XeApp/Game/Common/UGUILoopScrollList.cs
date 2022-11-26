@@ -6,6 +6,10 @@ namespace XeApp.Game.Common
 {
 	public class UGUILoopScrollList : ScrollRect
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Vector2 m_contentSize;
 		[SerializeField]

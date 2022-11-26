@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class MusicSelectSeriesButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private int m_logoTextureIndex;
 		[SerializeField]

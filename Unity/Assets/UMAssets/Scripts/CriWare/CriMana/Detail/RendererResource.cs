@@ -189,24 +189,24 @@ namespace CriWare.CriMana.Detail
 		}
 
 		// // RVA: 0x2951E18 Offset: 0x2951E18 VA: 0x2951E18
-		#if UNITY_ANDROID
-		protected static extern bool CRIWARED6D2B5F7(int player_id, int num_textures, IntPtr[] tex_ptrs, [In] [Out] FrameInfo frame_info, ref bool frame_drop) { }
-		#else
-		protected static bool CRIWARED6D2B5F7(int player_id, int num_textures, IntPtr[] tex_ptrs, [In] [Out] FrameInfo frame_info, ref bool frame_drop)
+#if UNITY_ANDROID
+		protected static extern bool CRIWARED6D2B5F7(int player_id, int num_textures, IntPtr[] tex_ptrs, [In] [Out] FrameInfo frame_info, ref bool frame_drop);
+#else
+		protected static bool CRIWARED6D2B5F7(int player_id, int num_textures, IntPtr[] tex_ptrs, FrameInfo frame_info, ref bool frame_drop)
 		{
 			return ExternLib.LibCriWare.CRIWARED6D2B5F7(player_id, num_textures, tex_ptrs, frame_info, ref frame_drop);
 		}
-		#endif
+#endif
 
 		// // RVA: 0x2952028 Offset: 0x2952028 VA: 0x2952028
-		#if UNITY_ANDROID
-		protected static extern bool CRIWARE14DB4020(int player_id, int num_textures, [In] [Out] IntPtr[] tex_ptrs) { }
-		#else
+#if UNITY_ANDROID
+		protected static extern bool CRIWARE14DB4020(int player_id, int num_textures, [In] [Out] IntPtr[] tex_ptrs);
+#else
 		protected static bool CRIWARE14DB4020(int player_id, int num_textures, [In] [Out] IntPtr[] tex_ptrs)
 		{
 			return ExternLib.LibCriWare.CRIWARE14DB4020(player_id, num_textures, tex_ptrs);
 		}
-		#endif
+#endif
 
 		// // RVA: 0x2952150 Offset: 0x2952150 VA: 0x2952150
 		// protected static extern bool CRIWAREDD310F2E(int player_id, int num_textures, [In] [Out] IntPtr[] tex_ptrs) { }
@@ -215,8 +215,8 @@ namespace CriWare.CriMana.Detail
 		// protected static extern bool CRIWARED8906FFD(int player_id, int num_textures, [In] [Out] IntPtr[] tex_ptrs) { }
 
 		// // RVA: 0x29517C0 Offset: 0x29517C0 VA: 0x29517C0
-		#if UNITY_ANDROID
-		protected static extern sbyte CRIWARE9BAE0415(int player_id) { }
+#if UNITY_ANDROID
+		protected static extern sbyte CRIWARE9BAE0415(int player_id);
 		#else
 		protected static sbyte CRIWARE9BAE0415(int player_id)
 		{

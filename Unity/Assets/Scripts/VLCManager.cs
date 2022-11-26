@@ -20,7 +20,9 @@ public class VLCManager : SingletonMonoBehaviour<VLCManager>
     {
         if(_libVLC == null)
         {
-            Core.Initialize(Application.dataPath+"/Scripts/LibVlCSharp/LibVLC/x64/");
+#if !UNITY_ANDROID
+			Core.Initialize(Application.dataPath+"/Scripts/LibVlCSharp/LibVLC/x64/");
+#endif
 
             _libVLC = new LibVLC(enableDebugLogs: true);
 

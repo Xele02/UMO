@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class BloomAndFlares : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public TweakMode34 tweakMode;
 		public BloomScreenBlendMode screenBlendMode;
 		public HDRBloomMode hdr;

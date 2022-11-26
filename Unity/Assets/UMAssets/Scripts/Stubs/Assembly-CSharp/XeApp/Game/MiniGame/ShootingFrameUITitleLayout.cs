@@ -8,5 +8,9 @@ namespace XeApp.Game.MiniGame
 		private ShootingBackBotton m_backButton;
 		[SerializeField]
 		private ShootingHelpBotton m_helpButton;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

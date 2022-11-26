@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class OfferAllRecvItemPopup : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text m_cautionText;
 		[SerializeField]

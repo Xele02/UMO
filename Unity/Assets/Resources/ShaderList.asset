@@ -1,0 +1,303 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f742a31f79010a444bccf854b26a7538, type: 3}
+  m_Name: ShaderList
+  m_EditorClassIdentifier: 
+  shaderList:
+  - fileName: crimanasoftdeceditoryuv
+    internalName: CriMana/SofdecEditorYuv
+    shader: {fileID: 4800000, guid: 00e5ffb2cf8d27aa7b5eb58bc4c03a81, type: 3}
+  - fileName: customvertexcolor
+    internalName: Custom/vertexcolor
+    shader: {fileID: 4800000, guid: 283f8fc321ad3924798d56dc1459fd74, type: 3}
+  - fileName: diva_additive
+    internalName: MCRS/Diva/Additive
+    shader: {fileID: 4800000, guid: c7699bf93c890aea0a4554e07aea2747, type: 3}
+  - fileName: diva_opaque_high
+    internalName: MCRS/Diva/Opaque_High
+    shader: {fileID: 4800000, guid: afab4b1e33cb1fe5fa5118818f025e95, type: 3}
+  - fileName: diva_opaque_mike
+    internalName: MCRS/Diva/Opaque_Mike
+    shader: {fileID: 4800000, guid: 22d729aa46ae973fa899dcc2cd72f37a, type: 3}
+  - fileName: diva_opaque_nolight
+    internalName: MCRS/Diva/Opaque_NoLight
+    shader: {fileID: 4800000, guid: 9dc28c4d08944a349acda6e9e907f786, type: 3}
+  - fileName: diva_opaque_outline_high
+    internalName: MCRS/Diva/Opaque_Outline_High
+    shader: {fileID: 4800000, guid: 896ec1a9dcd803a3a9d2be18d45877fa, type: 3}
+  - fileName: diva_trans_eye
+    internalName: MCRS/Diva/Trans_Eye
+    shader: {fileID: 4800000, guid: 0b7632bbef8a675138034a0aa9431c36, type: 3}
+  - fileName: diva_trans_eye_alpha
+    internalName: MCRS/Diva/Trans_Eye_Alpha
+    shader: {fileID: 4800000, guid: 273fe74fef702c3b7836d36aef917c79, type: 3}
+  - fileName: diva_trans_high
+    internalName: MCRS/Diva/Trans_High
+    shader: {fileID: 4800000, guid: 99b86360c3ece47ce98fbbceb3b81210, type: 3}
+  - fileName: diva_trans_high_alpha
+    internalName: MCRS/Diva/Trans_High_Alpha
+    shader: {fileID: 4800000, guid: fd70fd290e74f4dd4a782e85303248d5, type: 3}
+  - fileName: diva_trans_high_culloff
+    internalName: MCRS/Diva/Trans_High_CullOff
+    shader: {fileID: 4800000, guid: 3fd6119374d2ecca3bfe089a8afdbe51, type: 3}
+  - fileName: diva_trans_nolight
+    internalName: MCRS/Diva/Trans_NoLight
+    shader: {fileID: 4800000, guid: 4de447faba7713d148f3a0c14e9b05a0, type: 3}
+  - fileName: diva_trans_outline_high_alpha
+    internalName: MCRS/Diva/Trans_Outline_High_Alpha
+    shader: {fileID: 4800000, guid: 71d81249a959f7739a9e31a7cf704b5d, type: 3}
+  - fileName: effect_additive
+    internalName: MCRS/Effect/Additive
+    shader: {fileID: 4800000, guid: cdd3c62bf513a6ed6a8001d8642fefdf, type: 3}
+  - fileName: effect_additiveoverexposed
+    internalName: MCRS/Effect/AdditiveOverexposed
+    shader: {fileID: 4800000, guid: 55b8fe2748c4e28afbea1e077063ca74, type: 3}
+  - fileName: effect_blend
+    internalName: MCRS/Effect/Blend
+    shader: {fileID: 4800000, guid: ce5f0617dbb0ff929a99dcbf79dd11b1, type: 3}
+  - fileName: effect_blendoverexposed
+    internalName: MCRS/Effect/BlendOverexposed
+    shader: {fileID: 4800000, guid: 0e9acfd5ca155068fbc2a429ff88d2a0, type: 3}
+  - fileName: effect_multipliedalphablend
+    internalName: MCRS/Effect/MultipliedAlphaBlend
+    shader: {fileID: 4800000, guid: e0d1823a732c485e3a655c988aefdf48, type: 3}
+  - fileName: effect_multiply
+    internalName: MCRS/Effect/Multiply
+    shader: {fileID: 4800000, guid: d879c99a9cf86112e8c0ff90ce0a1136, type: 3}
+  - fileName: effect_simpleadditive
+    internalName: MCRS/Effect/SimpleAdditive
+    shader: {fileID: 4800000, guid: d5c20f6b1b19eaa4482208b5d8ed9565, type: 3}
+  - fileName: kuma_shader
+    internalName: Shader Forge/NewShader
+    shader: {fileID: 4800000, guid: dd2a815fb530c43e6b287209048771fa, type: 3}
+  - fileName: rhythmuiaddcolor
+    internalName: MCRS/RhythmUI/RhythmUIAddColor
+    shader: {fileID: 4800000, guid: 16534ba0af7b84b438125e4ce11e6d41, type: 3}
+  - fileName: rhythmuiaddvertexcolor
+    internalName: MCRS/RhythmUI/RhythmUIAddVertexColor
+    shader: {fileID: 4800000, guid: eb2d7c892efe3a747a14a064595ad7f1, type: 3}
+  - fileName: rhythmuicolor
+    internalName: MCRS/RhythmUI/RhythmUIColor
+    shader: {fileID: 4800000, guid: 57bc2cc21d132cc46b6ab8c9b65586b0, type: 3}
+  - fileName: rhythmuipilotcutin
+    internalName: MCRS/RhythmUI/RhythmUIPilotCutin
+    shader: {fileID: 4800000, guid: 494e938301a6dab489039ba530dc0220, type: 3}
+  - fileName: rhythmuivertexcolor
+    internalName: MCRS/RhythmUI/RhythmUIVertexColor
+    shader: {fileID: 4800000, guid: 3e8e37f578138e8b2b2e53db890aa0aa, type: 3}
+  - fileName: rhythmuivertexcolor_maskblend
+    internalName: MCRS/RhythmUI/RhythmUIVertexColor_MaskBlend
+    shader: {fileID: 4800000, guid: a7827d5de4830244b960ec7b8aeefecd, type: 3}
+  - fileName: stage_additive
+    internalName: MCRS/Stage/Additive
+    shader: {fileID: 4800000, guid: 4eb5d7b0c69c6f24a8e7e0b586031b23, type: 3}
+  - fileName: stage_additivedst
+    internalName: MCRS/Stage/AdditiveDst
+    shader: {fileID: 4800000, guid: 40e199181cb139a4ab7366c769fed68f, type: 3}
+  - fileName: stage_cutout_culloff
+    internalName: MCRS/Stage/Cutout_Culloff
+    shader: {fileID: 4800000, guid: 9ee2206c51b70388887be7a289f7c635, type: 3}
+  - fileName: stage_opaque_fakelit
+    internalName: MCRS/Stage/Opaque_FakeLit
+    shader: {fileID: 4800000, guid: 1086565b3662f7ff1ae41591769e738d, type: 3}
+  - fileName: stage_opaque_fakelit_cubemap
+    internalName: MCRS/Stage/Opaque_FakeLit_Cubemap
+    shader: {fileID: 4800000, guid: 3f72715cff8ecaa919c86af46e188ac7, type: 3}
+  - fileName: stage_opaque_unlit
+    internalName: MCRS/Stage/Opaque_Unlit
+    shader: {fileID: 4800000, guid: 906de06c81ffd5a9c8a24553cedb60b1, type: 3}
+  - fileName: stage_psyllium
+    internalName: MCRS/Stage/Psyllium
+    shader: {fileID: 4800000, guid: 171e727fe5e45642bb1767cc6c99b9c7, type: 3}
+  - fileName: stage_psyllium_multi
+    internalName: MCRS/Stage/PsylliumMulti
+    shader: {fileID: 4800000, guid: 7c08dd1227f47a87c8224ea86ba75384, type: 3}
+  - fileName: stage_psyllium_multi5
+    internalName: MCRS/Stage/PsylliumMulti5
+    shader: {fileID: 4800000, guid: 796b45f3b9af50e0ab7cd5e910638bbd, type: 3}
+  - fileName: stage_psyllium_multi5_culloff
+    internalName: MCRS/Stage/PsylliumMulti5_CullOff
+    shader: {fileID: 4800000, guid: 5a2f58025f80022f089adcdffdc69b18, type: 3}
+  - fileName: stage_psyllium_multi_culloff
+    internalName: MCRS/Stage/PsylliumMulti_CullOff
+    shader: {fileID: 4800000, guid: 859817290fc71f1ccae7655807d74a92, type: 3}
+  - fileName: stage_trans_fakelit
+    internalName: MCRS/Stage/Trans_Fakelit
+    shader: {fileID: 4800000, guid: 676a55c8848ee060b871c17892408468, type: 3}
+  - fileName: stage_trans_fakelit_cubemap
+    internalName: MCRS/Stage/Trans_FakeLit_Cubemap
+    shader: {fileID: 4800000, guid: 48396b0fd9c58895ba67f82b98c58164, type: 3}
+  - fileName: stage_trans_unlit
+    internalName: MCRS/Stage/Trans_Unlit
+    shader: {fileID: 4800000, guid: 7a0ad94167ba6607eb636104b9e41678, type: 3}
+  - fileName: vernier
+    internalName: Shader Forge/vernier
+    shader: {fileID: 4800000, guid: b197e0e2a9e77884ca98e2a4d3e91d04, type: 3}
+  - fileName: vf1j_shader
+    internalName: Shader Forge/NewShader
+    shader: {fileID: 4800000, guid: dc65b237de9cf4e5c914fe787b0b86f8, type: 3}
+  - fileName: xesystransparentcolculloff
+    internalName: XeSys/TransparentColCullOff
+    shader: {fileID: 4800000, guid: 20ad34aa2ad305d4d997768402f11810, type: 3}
+  - fileName: tmp_bitmap
+    internalName: TextMeshPro/Bitmap
+    shader: {fileID: 4800000, guid: 128e987d567d4e2c824d754223b3f3b0, type: 3}
+  - fileName: tmp_bitmap-custom-atlas
+    internalName: TextMeshPro/Bitmap Custom Atlas
+    shader: {fileID: 4800000, guid: 48bb5f55d8670e349b6e614913f9d910, type: 3}
+  - fileName: tmp_bitmap-mobile
+    internalName: TextMeshPro/Mobile/Bitmap
+    shader: {fileID: 4800000, guid: 1e3b057af24249748ff873be7fafee47, type: 3}
+  - fileName: tmp_sdf
+    internalName: TextMeshPro/Distance Field
+    shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
+  - fileName: tmp_sdf overlay
+    internalName: TextMeshPro/Distance Field Overlay
+    shader: {fileID: 4800000, guid: dd89cf5b9246416f84610a006f916af7, type: 3}
+  - fileName: tmp_sdf-mobile
+    internalName: TextMeshPro/Mobile/Distance Field
+    shader: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
+  - fileName: tmp_sdf-mobile masking
+    internalName: TextMeshPro/Mobile/Distance Field - Masking
+    shader: {fileID: 4800000, guid: bc1ede39bf3643ee8e493720e4259791, type: 3}
+  - fileName: tmp_sdf-mobile overlay
+    internalName: TextMeshPro/Mobile/Distance Field Overlay
+    shader: {fileID: 4800000, guid: a02a7d8c237544f1962732b55a9aebf1, type: 3}
+  - fileName: tmp_sdf-surface
+    internalName: TextMeshPro/Distance Field (Surface)
+    shader: {fileID: 4800000, guid: f7ada0af4f174f0694ca6a487b8f543d, type: 3}
+  - fileName: tmp_sdf-surface-mobile
+    internalName: TextMeshPro/Mobile/Distance Field (Surface)
+    shader: {fileID: 4800000, guid: 85187c2149c549c5b33f0cdb02836b17, type: 3}
+  - fileName: tmp_sprite
+    internalName: TextMeshPro/Sprite
+    shader: {fileID: 4800000, guid: cf81c85f95fe47e1a27f6ae460cf182c, type: 3}
+  - fileName: adv_effect_additiveoverlay
+    internalName: Adv/Effect/AdditiveOverlay
+    shader: {fileID: 4800000, guid: 4fff516194191df45b71cac8eefcdcf8, type: 3}
+  - fileName: adv_effect_additivetransparent
+    internalName: 
+    shader: {fileID: 4800000, guid: 9d8f0a4fa4658cb46be9ec1f7609d982, type: 3}
+  - fileName: adv_effect_gaussianblur
+    internalName: 
+    shader: {fileID: 4800000, guid: 63106a1830ff2914abb50f857e0b5298, type: 3}
+  - fileName: androidh264rgb
+    internalName: 
+    shader: {fileID: 4800000, guid: 21ce16747c1cfdd4aa1cf59b4f6fe0c6, type: 3}
+  - fileName: androidh264supportcheck
+    internalName: 
+    shader: {fileID: 4800000, guid: bfa1983c52d6904429c325af2e652a9d, type: 3}
+  - fileName: androidsofdecprimeyuv
+    internalName: 
+    shader: {fileID: 4800000, guid: 48ddacf70f85d864ea861001f4de200b, type: 3}
+  - fileName: iosh264yuv
+    internalName: 
+    shader: {fileID: 4800000, guid: 00663d8967e76844ca42b1e9ce8305df, type: 3}
+  - fileName: osxh264yuv
+    internalName: 
+    shader: {fileID: 4800000, guid: b32b62a8ca5ddd54e91cf2eb113a3e6b, type: 3}
+  - fileName: sofdecprimergb
+    internalName: 
+    shader: {fileID: 4800000, guid: 85a23b24c88905f4faaa45b3c718377d, type: 3}
+  - fileName: sofdecprimeyuv
+    internalName: 
+    shader: {fileID: 4800000, guid: c645e961434f2174c971d1c6ec1a34b9, type: 3}
+  - fileName: ui-unlit-transcoloredblur
+    internalName: 
+    shader: {fileID: 4800000, guid: f6379fc9a7c2514488736c56c6ca900c, type: 3}
+  - fileName: meshspriteadd
+    internalName: 
+    shader: {fileID: 4800000, guid: a52d8e9e3d205a542a789b96db54ae9f, type: 3}
+  - fileName: meshspritedefault
+    internalName: 
+    shader: {fileID: 4800000, guid: 0a0ce8fb05c86bb41b107ab0ee1c9dc9, type: 3}
+  - fileName: meshspritemonochrome
+    internalName: 
+    shader: {fileID: 4800000, guid: 2002dad43b874c04483f1e2f5ca6b871, type: 3}
+  - fileName: particleadditive
+    internalName: 
+    shader: {fileID: 4800000, guid: 54b713a6162957d4f8be8076fc197892, type: 3}
+  - fileName: spriteshader
+    internalName: 
+    shader: {fileID: 4800000, guid: 848418b3bfed6c842a1da48a70da0df9, type: 3}
+  - fileName: spritezmask
+    internalName: 
+    shader: {fileID: 4800000, guid: 4bbd5bbbe9afe8b46adc3819b4b80bb5, type: 3}
+  - fileName: ui-unlit-blurmasktransparent
+    internalName: 
+    shader: {fileID: 4800000, guid: 4de9920bae7229f499a5f6d060e190cd, type: 3}
+  - fileName: ui-unlit-splittexture
+    internalName: XeSys/Unlit/SplitTexture
+    shader: {fileID: 4800000, guid: ee3e6c9419334604ba0b00730d5cc2c4, type: 3}
+  - fileName: ui-unlit-splittextureadd
+    internalName: XeSys/Unlit/SplitTextureAdd
+    shader: {fileID: 4800000, guid: c2ab31865d7677e488f8239726efe25e, type: 3}
+  - fileName: ui-unlit-transparent
+    internalName: XeSys/Unlit/Transparent
+    shader: {fileID: 4800000, guid: 1dc0ddf1d1b62754ca7dd9c2a4b84f94, type: 3}
+  - fileName: ui-unlit-transparentadd
+    internalName: 
+    shader: {fileID: 4800000, guid: 79d239a585d70ad45a426add30e0edbb, type: 3}
+  - fileName: diva_opaque_low
+    internalName: 
+    shader: {fileID: 4800000, guid: 1c7488733c04dd746aff4a46d0bec580, type: 3}
+  - fileName: diva_trans_low
+    internalName: MCRS/Diva/Trans_Low
+    shader: {fileID: 4800000, guid: 2932bcae71414844f83ef72404bea458, type: 3}
+  - fileName: mcrsdivaopaque_outline_low
+    internalName: 
+    shader: {fileID: 4800000, guid: 74d014d5d1f021343bd703cbfa62485b, type: 3}
+  - fileName: mcrseffectblend
+    internalName: 
+    shader: {fileID: 4800000, guid: d7d5be9873eac8d428b553f1a22a6751, type: 3}
+  - fileName: mcrsgamenotes
+    internalName: MCRS/Game/Notes
+    shader: {fileID: 4800000, guid: 68df8da0fb6419144950b9cfdd660988, type: 3}
+  - fileName: mcrsrhythmuirhythmuivertexcolor
+    internalName: 
+    shader: {fileID: 4800000, guid: 9db2500d380d38345863f82a5363723e, type: 3}
+  - fileName: mcrssplittexture_bias
+    internalName: 
+    shader: {fileID: 4800000, guid: bc80ac520f02f5a4fb1ee035d8a166dc, type: 3}
+  - fileName: mcrsuiandroidscreenframe
+    internalName: MCRS/UI/AndroidScreenFrame
+    shader: {fileID: 4800000, guid: 297a8d36877396d44a65d1093a77a337, type: 3}
+  - fileName: mcrsvalkyrie_low
+    internalName: 
+    shader: {fileID: 4800000, guid: 94a38964792fa7e4bbbff8977b38a028, type: 3}
+  - fileName: mcrsvalkyriemulti_high_0
+    internalName: 
+    shader: {fileID: 4800000, guid: 2a94c884d43c73647bcc0115e32dd6af, type: 3}
+  - fileName: mcrsvalkyriemulti_low
+    internalName: 
+    shader: {fileID: 4800000, guid: 61202c25e3dc9074f8c5d2413ed2c26a, type: 3}
+  - fileName: projectorcolormultiply
+    internalName: Projector/ColorMultiply
+    shader: {fileID: 4800000, guid: c7126b3ee133b774691555f7880acf63, type: 3}
+  - fileName: ui-unlit-splittextureaddrgb16_a8
+    internalName: MCRS/SplitTextureAddRGB16A8
+    shader: {fileID: 4800000, guid: 3c79bfe540815a34f8bf83b3093cc5c4, type: 3}
+  - fileName: ui-unlit-splittexturergb16_a8
+    internalName: MCRS/SplitTextureRGB16A8
+    shader: {fileID: 4800000, guid: 56af1d087c79bc84490c5ebbd91cc49c, type: 3}
+  - fileName: unlit_valkyrie_high
+    internalName: MCRS/Valkyrie_High
+    shader: {fileID: 4800000, guid: 14338853a7735684782532605d6a4daf, type: 3}
+  - fileName: unlit_valkyrie_multi_high
+    internalName: MCRS/ValkyrieMulti_High
+    shader: {fileID: 4800000, guid: 6fa787a91ffaf374fa575586fef3f639, type: 3}
+  - fileName: xesysfade
+    internalName: 
+    shader: {fileID: 4800000, guid: 90cb3f189132ac74792bc19705ef931e, type: 3}
+  - fileName: tmp_sdf internal ssd
+    internalName: Hidden/TextMeshPro/Internal/Distance Field SSD
+    shader: {fileID: 4800000, guid: ce4ec0f498d1b1a4f90fe94e115b6f9a, type: 3}

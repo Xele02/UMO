@@ -126,7 +126,7 @@ namespace CriWare
         // // RVA: 0x2BA8F68 Offset: 0x2BA8F68 VA: 0x2BA8F68
         #if UNITY_ANDROID
         [DllImport(pluginName, CallingConvention = pluginCallingConvention)]
-        public static extern int criWareUnity_GetVersionNumber();
+        public static extern int CRIWARED1CDE3A7_criWareUnity_GetVersionNumber();
         #else
         public static int CRIWARED1CDE3A7_criWareUnity_GetVersionNumber()
         {

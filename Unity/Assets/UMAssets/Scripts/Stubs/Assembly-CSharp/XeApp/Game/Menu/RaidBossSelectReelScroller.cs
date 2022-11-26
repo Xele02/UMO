@@ -1,10 +1,15 @@
 using XeSys.Gfx;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace XeApp.Game.Menu
 {
-	public class RaidBossSelectReelScroller : LayoutLabelScriptBase
+	public class RaidBossSelectReelScroller : LayoutLabelScriptBase, IBeginDragHandler, IEventSystemHandler, IEndDragHandler, IDragHandler
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RectTransform m_hitRect;
 		[SerializeField]
@@ -17,5 +22,20 @@ namespace XeApp.Game.Menu
 		private float m_flickTime;
 		[SerializeField]
 		private float m_flickLength;
+
+		public void OnBeginDrag(PointerEventData eventData)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void OnDrag(PointerEventData eventData)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void OnEndDrag(PointerEventData eventData)
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }

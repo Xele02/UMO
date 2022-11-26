@@ -461,7 +461,12 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3966C Offset: 0xA3966C VA: 0xA3966C
-			// public void Return(bool isFading = True) { }
+			public void Return(bool isFading = true)
+			{
+				m_transitionType = TransitionType.Return;
+				DirtyChangeScene = true;
+				m_next = new TransitionInfo();
+			}
 
 			// // RVA: 0xA39384 Offset: 0xA39384 VA: 0xA39384
 			private void ChangeCall(TransitionList.Type nextTransition, bool isFading = true, TransitionArgs args = null)
@@ -1025,17 +1030,16 @@ namespace XeApp.Game.Menu
 				{
 					if(m_transitionType == TransitionType.Return)
 					{
-						TodoLogger.Log(0, "Play bgm Sound");
+						SoundManager.Instance.bgmPlayer.ContinuousPlay(m_next.bgmId, 1.0f);
 					}
-					else
+					else if(isGroupChange)
 					{
-						TodoLogger.Log(0, "Play bgm Sound");
+						SoundManager.Instance.bgmPlayer.ContinuousPlay(sceneGroupCategoryBgmId[(int)m_next.groupCategory], 1.0f);
 					}
-					TodoLogger.Log(0, "Play bgm Sound");
 				}
-				TodoLogger.Log(0, "Play bgm Sound");
+				m_next.bgmId = SoundManager.Instance.bgmPlayer.currentBgmId;
 				//LAB_00a401d4
-				while(GameManager.Instance.fullscreenFader.isFading)
+				while (GameManager.Instance.fullscreenFader.isFading)
 					yield return null;
 				while(!m_currentRoot.IsEndEnterAnimation())
 					yield return null;
@@ -1226,6 +1230,7 @@ namespace XeApp.Game.Menu
 				stack.descId = m_current.descId;
 				stack.bgmId = SoundManager.Instance.bgmPlayer.currentBgmId;
 				stack.bgType = m_bgControl.GetCurrentType();
+				stack.bgId = m_bgControl.GetCurrentId();
 				stack.bgAttr = (int)m_bgControl.GetCurrentAttr();
 				stack.storyBgParam = m_bgControl.OutputStoryBgParam(m_current.groupCategory == SceneGroupCategory.STORY);
 				stack.args = m_currentRoot.GetCallArgs();

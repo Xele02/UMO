@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class OfferSelectContent : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum OrderButtonState
 		{
 			ORDER = 0,

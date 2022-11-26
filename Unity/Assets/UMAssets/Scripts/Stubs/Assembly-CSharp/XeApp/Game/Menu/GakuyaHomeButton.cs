@@ -9,5 +9,9 @@ namespace XeApp.Game.Menu
 		private UGUIEnterLeave m_enterLeaveControl;
 		[SerializeField]
 		private UGUIButton m_buttonHome;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

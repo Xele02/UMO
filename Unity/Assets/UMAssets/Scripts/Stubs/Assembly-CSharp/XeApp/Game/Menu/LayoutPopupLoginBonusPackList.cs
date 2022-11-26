@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 namespace XeApp.Game.Menu
 {
-	public class LayoutPopupLoginBonusPackList : LayoutPopupLoginBonusPackListBase
+	public class LayoutPopupLoginBonusPackList : LayoutPopupLoginBonusPackListBase, IPopupContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private LayoutUGUIRuntime m_runtime;
 		[SerializeField]
@@ -23,5 +27,37 @@ namespace XeApp.Game.Menu
 		private Text m_textDesc;
 		[SerializeField]
 		private Text m_textOmake;
+
+		public Transform Parent => throw new System.NotImplementedException();
+
+		public void CallOpenEnd()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void Hide()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public bool IsReady()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public bool IsScrollable()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void Show()
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }

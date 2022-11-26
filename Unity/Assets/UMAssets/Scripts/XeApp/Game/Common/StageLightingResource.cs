@@ -20,7 +20,14 @@ namespace XeApp.Game.Common
 		public bool isAllLoaded { get { return isUnused || isLoadedAnim; } private set {} } //0x1CC7D9C 0x1CC7DC0
 
 		// // RVA: 0x1CC79E0 Offset: 0x1CC79E0 VA: 0x1CC79E0
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			clip = null;
+			for(int i = 0; i < MAX_CLIP_ADD; i++)
+			{
+				clip_add[i] = null;
+			}
+		}
 
 		// // RVA: 0x1CC7AD4 Offset: 0x1CC7AD4 VA: 0x1CC7AD4
 		public void LoadResouces(int wavId, int assetId, int stageDivaNum)

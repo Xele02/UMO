@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class MusicSelectCDJacket : LayoutLabelScriptBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx m_jacketImage;
 		[SerializeField]

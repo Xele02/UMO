@@ -9,5 +9,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private EffectBundleController m_effectController;
 		[SerializeField]
 		private Animator m_skillButtonAnimator;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

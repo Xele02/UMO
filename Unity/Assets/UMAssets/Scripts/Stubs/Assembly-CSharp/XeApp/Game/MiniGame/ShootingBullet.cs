@@ -5,6 +5,10 @@ namespace XeApp.Game.MiniGame
 {
 	public class ShootingBullet : ShootingTask
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private BulletId m_bulletId;
 		[SerializeField]

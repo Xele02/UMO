@@ -12,5 +12,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private GameObject m_heartMarkObject;
 		[SerializeField]
 		private GameObject m_normalHeartMark;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

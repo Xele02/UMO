@@ -111,8 +111,8 @@ namespace CriWare
 		// private static extern void CRIWARE476CEB30(int graphics_api, bool graphics_multi_threaded, int num_decoders, int num_of_max_entries) { }
 
 		// // RVA: 0x29656C0 Offset: 0x29656C0 VA: 0x29656C0
-		#if UNITY_ANDROID
-		private static extern void CRIWARE9CF52E96() { }
+#if UNITY_ANDROID
+		private static extern void CRIWARE9CF52E96_criManaUnity_Initialize();
 		#else
 		private static void CRIWARE9CF52E96_criManaUnity_Initialize()
 		{
@@ -131,8 +131,8 @@ namespace CriWare
 		}
 
 		// // RVA: 0x29658B8 Offset: 0x29658B8 VA: 0x29658B8
-		#if UNITY_ANDROID
-		private static extern void CRIWAREDC8B0D52() { }
+#if UNITY_ANDROID
+		private static extern void CRIWAREDC8B0D52_criManaUnity_Finalize();
 		#else
 		private static void CRIWAREDC8B0D52_criManaUnity_Finalize()
 		{

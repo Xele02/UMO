@@ -11,4 +11,8 @@ public class ScreensRecoder : MonoBehaviour
 	public string baseFilename;
 	public int framerate;
 	public int endFrameno;
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement Monobehaviour");
+	}
 }

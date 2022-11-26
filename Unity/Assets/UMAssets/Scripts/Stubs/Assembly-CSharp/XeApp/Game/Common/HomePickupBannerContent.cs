@@ -6,6 +6,10 @@ namespace XeApp.Game.Common
 {
 	public class HomePickupBannerContent : UGUILoopScrollContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx m_imageBanner;
 		[SerializeField]

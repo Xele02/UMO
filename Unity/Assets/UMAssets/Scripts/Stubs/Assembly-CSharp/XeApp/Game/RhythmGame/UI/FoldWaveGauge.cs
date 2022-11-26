@@ -17,5 +17,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private GameObject m_circleEffectPrefab;
 		[SerializeField]
 		private FoldWaveGaugeCircleUvChanger m_circleUvChange;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

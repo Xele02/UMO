@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class RankingListElemBase : GeneralListElemBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx m_divaIconImage;
 		[SerializeField]

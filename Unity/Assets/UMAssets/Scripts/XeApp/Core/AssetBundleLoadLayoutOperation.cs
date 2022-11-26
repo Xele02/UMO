@@ -41,10 +41,10 @@ namespace XeApp.Core
         public override IEnumerator InitializeLayoutCoroutine(Font font, Action<GameObject> finish)
         {
             UnityEngine.Debug.Log("Enter InitializeLayoutCoroutine "+m_AssetName);
-            //UnityEngine.Debug.Log("Enter InitializeLayoutCoroutine request : "+m_request);
-            //0xE110FC
-#if UNITY_EDITOR
-            BundleShaderInfo.Instance.FixMaterialShader(m_request.asset);
+			//UnityEngine.Debug.Log("Enter InitializeLayoutCoroutine request : "+m_request);
+			//0xE110FC
+#if UNITY_EDITOR || UNITY_STANDALONE
+			BundleShaderInfo.Instance.FixMaterialShader(m_request.asset);
 #endif
             GameObject instance = UnityEngine.Object.Instantiate<GameObject>(m_request.asset as GameObject);
             LayoutUGUIRuntime[] runtimes = instance.GetComponentsInChildren<LayoutUGUIRuntime>(true);

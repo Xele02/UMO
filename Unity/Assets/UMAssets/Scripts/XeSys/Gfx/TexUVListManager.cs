@@ -139,7 +139,7 @@ namespace XeSys.Gfx
 			}
 			TextAsset asset = req.asset as TextAsset;
 			data = TexUVList.NewInstance();
-			if(data != null)
+			if(asset != null)
 			{
 				data.Initialize(asset.bytes, texture);
 			}

@@ -56,5 +56,9 @@ namespace XeApp.Game.Menu
 		public Animator m_anim;
 		[SerializeField]
 		public ScrollRect m_scroll;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

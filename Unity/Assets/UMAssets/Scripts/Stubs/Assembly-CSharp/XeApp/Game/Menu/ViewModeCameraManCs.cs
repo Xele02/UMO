@@ -6,5 +6,9 @@ namespace XeApp.Game.Menu
 	{
 		public float ROT_SPEED_RATE_PER_PIXEL_Y;
 		public float ROT_SPEED_DIVA;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

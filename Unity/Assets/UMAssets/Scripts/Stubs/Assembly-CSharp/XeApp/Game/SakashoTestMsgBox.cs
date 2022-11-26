@@ -13,5 +13,9 @@ namespace XeApp.Game
 		public Button btnLeft;
 		[SerializeField]
 		public Button btnRight;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

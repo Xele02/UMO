@@ -6,5 +6,9 @@ namespace XeApp.Game.Menu
 	{
 		public float m_CameraDistance;
 		public bool IsInfluence;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -24,5 +24,9 @@ namespace XeApp.Game
 		public bool isOpened;
 		public bool doTimeoutEmulaton;
 		public bool emulateDoAction;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

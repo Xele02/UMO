@@ -2,7 +2,7 @@ using System;
 
 namespace XeApp.Core
 {
-	public abstract class SubSceneBase
+	public abstract class SubSceneBase : IScene
 	{
 		protected abstract bool useFadeIn { get; } //Slot: 9
 		protected abstract bool useFadeOut { get; }  //Slot: 10

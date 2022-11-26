@@ -65,5 +65,9 @@ namespace XeApp.Game.Menu
 		private UGUIButton m_supportButton;
 		[SerializeField]
 		private GameObject m_supportLock;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

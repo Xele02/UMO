@@ -15,5 +15,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private Animator m_animator;
 		[SerializeField]
 		private Animator m_effAnimator;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

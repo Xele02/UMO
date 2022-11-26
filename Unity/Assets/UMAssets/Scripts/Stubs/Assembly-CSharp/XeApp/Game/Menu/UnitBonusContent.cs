@@ -9,6 +9,10 @@ namespace XeApp.Game.Menu
 {
 	internal class UnitBonusContent : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[Serializable]
 		public class BonusCell
 		{

@@ -8,5 +8,9 @@ namespace XeApp.Game.Common
 		private Transform m_elementRoot;
 		[SerializeField]
 		private Transform m_quartzRoot;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

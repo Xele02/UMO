@@ -39,7 +39,8 @@ namespace CriWare
 		// // RVA: 0x2BAAC10 Offset: 0x2BAAC10 VA: 0x2BAAC10 Slot: 5
 		protected override void OnDisable()
 		{
-			TodoLogger.Log(0, "TODO");
+			base.OnDisable();
+			TodoLogger.Log(100, "CriWareErrorHandler OnDisable");
 		}
 
 		// // RVA: 0x2BAAC9C Offset: 0x2BAAC9C VA: 0x2BAAC9C

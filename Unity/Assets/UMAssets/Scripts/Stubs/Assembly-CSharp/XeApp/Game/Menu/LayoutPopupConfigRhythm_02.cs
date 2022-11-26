@@ -4,6 +4,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupConfigRhythm_02 : LayoutPopupConfigBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private GameObject m_notesPos;
 		[SerializeField]

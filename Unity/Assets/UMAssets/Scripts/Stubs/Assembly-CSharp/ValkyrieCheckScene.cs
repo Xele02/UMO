@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class ValkyrieCheckScene : MainSceneBase
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	[SerializeField]
 	private GameValkyrieObject valkyrieObject;
 	[SerializeField]

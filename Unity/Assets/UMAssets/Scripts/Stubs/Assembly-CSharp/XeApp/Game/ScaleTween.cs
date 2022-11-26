@@ -4,6 +4,10 @@ namespace XeApp.Game
 {
 	public class ScaleTween : TweenBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Vector3 m_from;
 		[SerializeField]

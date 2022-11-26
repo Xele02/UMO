@@ -34,7 +34,7 @@ public class PNGOLKLFFLH
 		this.GPPEFLKGGGJ_ValkyrieId = GPPEFLKGGGJ_ValkyrieId;
 		NPHOIEOPIJO = BEBJKJKBOGH;
 		AIHCEGFANAM = valkDb.AIHCEGFANAM;
-		LFPHDOFDOOE = valkDb.DAJGPBLEEOB;
+		LFPHDOFDOOE = valkDb.DAJGPBLEEOB_ModelId;
 		IJBLEJOKEFH_ValkyrieName = MessageManager.Instance.GetMessage("master", "vn_" + GPPEFLKGGGJ_ValkyrieId.ToString("D4"));
 		MJJCKMPICIK_PilotName = MessageManager.Instance.GetMessage("master", "v_pn_" + GPPEFLKGGGJ_ValkyrieId.ToString("D4"));
 		KLMPFGOCBHC_ValkyrieDesc = MessageManager.Instance.GetMessage("master", "v_dsc_" + GPPEFLKGGGJ_ValkyrieId.ToString("D4"));
@@ -42,7 +42,7 @@ public class PNGOLKLFFLH
 		GJHJBLCPPKE_FormNames[1] = "" + IJBLEJOKEFH_ValkyrieName + "(G)";
 		GJHJBLCPPKE_FormNames[2] = "" + IJBLEJOKEFH_ValkyrieName + "(B)";
 		OELFCIKFMLL(IGBFFCLMAMM_Form);
-		OPBPKNHIPPE.KHEKNNFCAOI_Init(valkDb.PFGJJLGLPAC);
+		OPBPKNHIPPE.KHEKNNFCAOI_Init(valkDb.PFGJJLGLPAC_PilotId);
 		var saveValk = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JJFFBDLIOCF_Valkyrie.CNGNBKNBKGI_ValkList[GPPEFLKGGGJ_ValkyrieId - 1];
 		FJODMPGPDDD = saveValk.FJODMPGPDDD;
 		KELFCMEOPPM = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.HFAMPKLFFEJ_FindEpisodeForReward(GPPEFLKGGGJ_ValkyrieId);

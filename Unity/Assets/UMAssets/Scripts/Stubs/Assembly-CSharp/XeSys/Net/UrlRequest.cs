@@ -1,6 +1,12 @@
+using System;
+
 namespace XeSys.Net
 {
-	public class UrlRequest
+	public class UrlRequest : IDisposable
 	{
+		public void Dispose()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

@@ -3,6 +3,12 @@ using XeApp.Game.Common;
 using System.Collections.Generic;
 using XeApp.Game.RhythmGame.UI;
 using System.Collections;
+using System.Text;
+using XeApp.Core;
+using XeSys;
+using System;
+using XeApp.Game.Menu;
+using System.IO;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -17,7 +23,20 @@ namespace XeApp.Game.RhythmGame
 			public Material activeSkillEffectMaterial; // 0x18
 
 			// // RVA: 0xBF4EDC Offset: 0xBF4EDC VA: 0xBF4EDC
-			// public void Release() { }
+			public void Release()
+			{
+				for(int i = 0; i < divaSkillCutinMaterials.Count; i++)
+				{
+					Destroy(divaSkillCutinMaterials[i]);
+				}
+				if (activeSkillIconMaterial != null)
+					Destroy(activeSkillIconMaterial);
+				skillEffectMaterials.Clear();
+				divaSkillCutinMaterials.Clear();
+				activeSkillIconMaterial = null;
+				activeSkillEffectMaterial = null;
+				centerCardTexture = null;
+			}
 		}
 
 		public MusicData musicData; // 0xC
@@ -77,11 +96,55 @@ namespace XeApp.Game.RhythmGame
 			{ // 0xBF5F98
 				return;
 			} }
-		// public int enteredValkyrieModeVoiceId { get; private set; } 0xBF25DC 0xBF5F9C
-		// public int enterdDivaModeVoiceId { get; private set; } 0xBF5FA0 0xBF6058
-		// public int enterdAwakenDivaModeVoiceId { get; private set; } 0xBF605C 0xBF6114
-		// public int enterFoldWaveId_50 { get; private set; } 0xBF6118 0xBF61D0
-		// public int enterFoldWaveId_100 { get; private set; } 0xBF61D4 0xBF628C
+		public int enteredValkyrieModeVoiceId { get
+			{
+				//0xBF25DC 
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if (param == null)
+					return -1;
+				return param.enterdValkyrieModeVoiceId;
+			}
+			private set { return; } } //0xBF5F9C
+		public int enterdDivaModeVoiceId { get
+			{
+				//0xBF5FA0
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if (param == null)
+					return -1;
+				return param.enterdDivaModeVoiceId;
+			}
+			private set {
+				//0xBF6058
+				return;
+			}
+		}  
+		public int enterdAwakenDivaModeVoiceId { get
+			{
+				//0xBF605C
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if (param == null)
+					return -1;
+				return param.enterdAwakenDivaModeVoiceId;
+			}
+			private set
+			{
+				//0xBF6114
+				return;
+			}
+		}  
+		public int enterFoldWaveId_50 { get {
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if (param == null)
+					return -1;
+				return param.enterdFoldWaveId_50;
+			} private set { return; } } //0xBF6118 0xBF61D0
+		public int enterFoldWaveId_100 { get
+			{
+				MusicVoiceChangerParam param = TryGetMusicVoiceChangerParam();
+				if (param == null)
+					return -1;
+				return param.enterdFoldWaveId_100;
+			} private set { return; } } //0xBF61D4 0xBF628C
 		// public bool isUITextureResoucesLoaded { get; private set; } 0xBF6290 0xBF62B0
 		public bool is3DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { } }// 0xBF6490 0xBF64BC
 		public bool is2DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { } } //0xBF64C0 0xBF64EC
@@ -154,7 +217,44 @@ namespace XeApp.Game.RhythmGame
 					s.ReleaseMusicResource();
 				}
 			}
-			TodoLogger.Log(0, "RhtythmGameResource finish OnDestroy");
+			if (cameraResource != null)
+				cameraResource.OnDestroy();
+			if (stageResources != null)
+				stageResources.OnDestroy();
+			if (valkyrieResource != null)
+				valkyrieResource.OnDestroy();
+			if (musicIntroResource != null)
+				musicIntroResource.OnDestroy();
+			if (valkyrieModeResource != null)
+				valkyrieModeResource.OnDestroy();
+			if (divaModeResource != null)
+				divaModeResource.OnDestroy();
+			if (uiTextureResources != null)
+				uiTextureResources.Release();
+			if (m_pilotTexture != null)
+				m_pilotTexture.OnDestory();
+			if (m_enemyPilotTexture != null)
+				m_enemyPilotTexture.OnDestory();
+			if (m_enemyRobotTexture != null)
+				m_enemyRobotTexture.OnDestory();
+			for(int i = 0; i < stageLightingResource.Count; i++)
+			{
+				if(stageLightingResource[i] != null)
+				{
+					stageLightingResource[i].OnDestroy();
+				}
+			}
+			if (uiPrefab != null)
+				uiPrefab = null;
+			if (enemySkillPrefab != null)
+				enemySkillPrefab = null;
+			for(int i = 0; i < musicBoneSpringResource.Length; i++)
+			{
+				if (musicBoneSpringResource[i] != null)
+					musicBoneSpringResource[i].OnDestroy();
+			}
+			if (paramResource != null)
+				paramResource.OnDestroy();
 		}
 
 		// // RVA: 0xBF5970 Offset: 0xBF5970 VA: 0xBF5970
@@ -188,7 +288,17 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF5ADC Offset: 0xBF5ADC VA: 0xBF5ADC
 		public MusicVoiceChangerParam TryGetMusicVoiceChangerParam()
 		{
-			TodoLogger.Log(0, "TODO");
+			if(musicVoiceChangerResource != null)
+			{
+				if(musicVoiceChangerResource.param != null)
+				{
+					return musicVoiceChangerResource.param;
+				}
+				else if (!throwedVoiceParamChangerParamException)
+				{
+					throw new MusicVoiceChangerParamNotFoundException("wavId=" + musicVoiceChangerResource.wavId + ",assetId=" + musicVoiceChangerResource.assetId);
+				}
+			}
 			return null;
 		}
 
@@ -385,7 +495,16 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF830C Offset: 0xBF830C VA: 0xBF830C
 		private void LoadMusicVoiceChangerResource(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			TodoLogger.Log(0, "LoadMusicVoiceChangerResource");
+			Destroy(musicVoiceChangerResource);
+			List<MusicDirectionParamBase.ResourceData> resources = musicData.musicParam.CheckMusicVoiceChangerResourceId(settingList);
+			if(resources.Count > 0)
+			{
+				if(resources[0].id > 0)
+				{
+					musicVoiceChangerResource = gameObject.AddComponent<MusicVoiceChangerResource>();
+					musicVoiceChangerResource.LoadResouces(wavId, resources[0].id, stageDivaNum);
+				}
+			}
 		}
 
 		// // RVA: 0xBF8524 Offset: 0xBF8524 VA: 0xBF8524
@@ -419,40 +538,304 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF8874 Offset: 0xBF8874 VA: 0xBF8874
 		public void LoadUITextureResouces()
 		{
-			TodoLogger.Log(0, "LoadUITextureResouces");
-			isUITextureResoucesLoaded_ = true;
-			uiTextureResources = new UITextureResource();
+			StartCoroutine(LoadingUITextureAllResource());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7452DC Offset: 0x7452DC VA: 0x7452DC
 		// // RVA: 0xBF8898 Offset: 0xBF8898 VA: 0xBF8898
-		// private IEnumerator LoadingUITextureAllResource() { }
+		private IEnumerator LoadingUITextureAllResource()
+		{
+			//0xBFD160
+			uiTextureResources = new UITextureResource();
+			m_pilotTexture = new UiPilotTexture();
+			m_enemyPilotTexture = new UiEnemyPilotTexture();
+			m_enemyRobotTexture = new UiEnemyRobotTexture();
+			isUITextureResoucesLoaded_ = false;
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB())
+			{
+				yield return StartCoroutine(LoadingUIDivaSkillCutinTextureResource());
+				yield return StartCoroutine(LoadingUIACTIVESkillIconTextureResource());
+			}
+			yield return StartCoroutine(LoadingUIPrefab());
+			yield return StartCoroutine(LoadPilotTexture());
+			isUITextureResoucesLoaded_ = true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x745354 Offset: 0x745354 VA: 0x745354
 		// // RVA: 0xBF8944 Offset: 0xBF8944 VA: 0xBF8944
-		// private IEnumerator LoadingUIDivaSkillCutinTextureResource() { }
+		private IEnumerator LoadingUIDivaSkillCutinTextureResource()
+		{
+			StringBuilder bundleName; // 0x14
+			StringBuilder assetName; // 0x18
+			GameSetupData.TeamInfo teamInfo; // 0x1C
+			int i; // 0x20
+			AssetBundleLoadAllAssetOperationBase operation; // 0x24
+			int j; // 0x28
+			PPGHMBNIAEC masterSkill; // 0x2C
+			int k; // 0x30
+
+			//0xBFBA2C
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			uiTextureResources.divaSkillCutinMaterials.Clear();
+			uiTextureResources.skillEffectMaterials.Clear();
+			teamInfo = Database.Instance.gameSetup.teamInfo;
+			for(i = 0; i < 3; i++)
+			{
+				if(teamInfo.divaList[i].divaId > 0)
+				{
+					bundleName.Set(GetDivaSkillCutinTextureBundlePath(teamInfo.divaList[i].divaId, teamInfo.divaList[i].costumeModelId, teamInfo.divaList[i].costumeColorId));
+					operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+					yield return operation;
+
+					assetName.SetFormat(GetDivaSkillCutinTextureAssetName(bundleName, false), Array.Empty<object>());
+					Texture tex = operation.GetAsset<Texture>(assetName.ToString());
+
+					assetName.SetFormat(GetDivaSkillCutinTextureAssetName(bundleName, true), Array.Empty<object>());
+					Texture tex2 = operation.GetAsset<Texture>(assetName.ToString());
+
+					AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+
+					Material mat = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+					mat.SetTexture("_MainTex", tex);
+					mat.SetTexture("_MaskTex", tex2);
+
+					uiTextureResources.divaSkillCutinMaterials.Add(mat);
+
+					int[] liveSkills = teamInfo.divaList[i].liveSkillIdList;
+					for (j = 0; j < liveSkills.Length; j++)
+					{
+						if(liveSkills[j] != 0)
+						{
+							masterSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML[liveSkills[j] - 1];
+							for(k = 0; k < masterSkill.EGLDFPILJLG.Length; k++)
+							{
+								if(masterSkill.EGLDFPILJLG[k] != 0)
+								{
+									yield return LoadSkillEffectTextureCoroutine(masterSkill.EGLDFPILJLG[k], bundleName, assetName);
+								}
+							}
+						}
+					}
+				}
+				else
+				{
+					uiTextureResources.divaSkillCutinMaterials.Add(null);
+				}
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7453CC Offset: 0x7453CC VA: 0x7453CC
 		// // RVA: 0xBF89F0 Offset: 0xBF89F0 VA: 0xBF89F0
-		// private IEnumerator LoadingUIACTIVESkillIconTextureResource() { }
+		private IEnumerator LoadingUIACTIVESkillIconTextureResource()
+		{
+			StringBuilder bundleName; // 0x14
+			StringBuilder assetName; // 0x18
+			int mainSceneId; // 0x1C
+			int activeSkillId; // 0x20
+			AssetBundleLoadAssetOperation operation; // 0x24
+			CDNKOFIELMK md; // 0x28
+			int i; // 0x2C
+			int effectType; // 0x30
+
+			//0xBFAF44
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			uiTextureResources.centerCardTexture = null;
+			mainSceneId = Database.Instance.gameSetup.teamInfo.divaList[0].sceneIdList[0];
+			if (mainSceneId == 0)
+				yield break;
+			GCIJNCFDNON d = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA[mainSceneId - 1];
+			int a = d.CGIELKDLHGE();
+			if (d.JKGFBFPIMGA < 4)
+				a = 1;
+			activeSkillId = Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId;
+			if (activeSkillId < 1)
+				yield break;
+			bundleName.SetFormat("ct/sc/me/02/{0:D6}_{1:D2}.xab", mainSceneId, a);
+			assetName.SetFormat("{0:D6}_{1:D2}", mainSceneId, a);
+
+			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(Texture));
+			yield return operation;
+
+			uiTextureResources.centerCardTexture = operation.GetAsset<Texture>();
+			uiTextureResources.activeSkillIconMaterial = new Material(Shader.Find("MCRS/RhythmUI/RhythmUIVertexColor"));
+			uiTextureResources.activeSkillIconMaterial.SetTexture("_MainTex", uiTextureResources.centerCardTexture);
+
+			int off = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA[mainSceneId - 1].GCLAAGFKPPJ_Aofs;
+			uiTextureResources.activeSkillIconMaterial.SetTextureOffset("_MainTex", new Vector2(0, off * 1.0f / uiTextureResources.centerCardTexture.height));
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+
+			md = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[activeSkillId - 1];
+			for (i = 0; i < 1; i++)
+			{
+				effectType = md.EGLDFPILJLG[i];
+				yield return StartCoroutine(LoadSkillEffectTextureCoroutine(effectType, bundleName, assetName));
+				uiTextureResources.activeSkillEffectMaterial = uiTextureResources.skillEffectMaterials[effectType];
+			}
+			md = null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x745444 Offset: 0x745444 VA: 0x745444
 		// // RVA: 0xBF8A9C Offset: 0xBF8A9C VA: 0xBF8A9C
-		// private IEnumerator LoadSkillEffectTextureCoroutine(int effectType, StringBuilder bundleName, StringBuilder assetName) { }
+		private IEnumerator LoadSkillEffectTextureCoroutine(int effectType, StringBuilder bundleName, StringBuilder assetName)
+		{
+			AssetBundleLoadAssetOperation bundleOperation; // 0x20
+			Texture colorTex; // 0x24
+
+			//0xBFA8CC
+			if(!uiTextureResources.skillEffectMaterials.ContainsKey(effectType))
+			{
+				bundleName.SetFormat("ct/gm/as/{0:D3}.xab", effectType);
+				assetName.SetFormat("{0:D3}_base", effectType);
+				bundleOperation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(Texture));
+				yield return bundleOperation;
+
+				colorTex = bundleOperation.GetAsset<Texture>();
+
+				assetName.SetFormat("{0:D3}_mask", effectType);
+				bundleOperation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(Texture));
+
+				Texture maskTex = bundleOperation.GetAsset<Texture>();
+
+				Material mat = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+				mat.SetTexture("_MainTex", colorTex);
+				mat.SetTexture("_MaskTex", maskTex);
+
+				uiTextureResources.skillEffectMaterials.Add(effectType, mat);
+
+				for(int i = 0; i < 2; i++)
+				{
+					AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+				}
+				bundleOperation = null;
+				colorTex = null;
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7454BC Offset: 0x7454BC VA: 0x7454BC
 		// // RVA: 0xBF8B94 Offset: 0xBF8B94 VA: 0xBF8B94
-		// private IEnumerator LoadingUIPrefab() { }
+		private IEnumerator LoadingUIPrefab()
+		{
+			GameSetupData.MusicInfo musicInfo; // 0x14
+			StringBuilder bundleName; // 0x18
+			StringBuilder assetName; // 0x1C
+			ILDKBCLAFPB.MPHNGGECENI_Option option; // 0x20
+			Font font; // 0x24
+			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x28
+			AssetBundleLoadAssetOperation operation; // 0x2C
+
+			//0xBFC624
+			musicInfo = Database.Instance.gameSetup.musicInfo;
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			option = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options;
+
+			yield return AssetBundleManager.LoadUnionAssetBundle("gm/if/un.xab");
+			
+			if(option.MIHFCOBBIPJ_GetQuality2d())
+			{
+				bundleName.Set("gm/if/hi.xab");
+				if(musicInfo.IsMvMode)
+					assetName.Set("MvUiRoot");
+				else
+					assetName.Set("UiRoot");
+			}
+			else
+			{
+				bundleName.Set("gm/if/lo.xab");
+				if(musicInfo.IsMvMode)
+					assetName.Set("MvUiRoot");
+				else
+					assetName.Set("UiRoot_Low");
+			}
+			
+			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(GameObject));
+			yield return operation;
+
+			uiPrefab = operation.GetAsset<GameObject>();
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			operation = null;
+
+			if(option.MIHFCOBBIPJ_GetQuality2d())
+				bundleName.SetFormat("gm/if/els/{0:D3}/{0:D3}_{1}.xab", 6, "hi");
+			else
+				bundleName.SetFormat("gm/if/els/{0:D3}/{0:D3}_{1}.xab", 6, "lo");
+
+			assetName.SetFormat("{0:D3}", 6);
+
+			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(GameObject));
+			yield return operation;
+
+			enemySkillPrefab = operation.GetAsset<GameObject>();
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			operation = null;
+
+			bundleName.Set("ly/018.xab");
+			font = GameManager.Instance.GetSystemFont();
+
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_Failed");
+			yield return lytAssetOp;
+			yield return lytAssetOp.InitializeLayoutCoroutine(font,(GameObject instance) => {
+				//0xBF93FC
+				faildUiPrefab = instance;
+			});
+
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_GameComplete");
+			yield return lytAssetOp;
+			yield return lytAssetOp.InitializeLayoutCoroutine(font,(GameObject instance) => {
+				//0xBF9404
+				completeUiPrefab = instance;
+			});
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+		}
 
 		// // RVA: 0xBF8C40 Offset: 0xBF8C40 VA: 0xBF8C40
-		// private string GetDivaSkillCutinTextureBundlePath(int divaId, int costumeModelId, int costumeColorId) { }
+		private string GetDivaSkillCutinTextureBundlePath(int divaId, int costumeModelId, int costumeColorId)
+		{
+			return DivaIconTextureCache.GetDivaUpIconPath(divaId, costumeModelId, costumeColorId);
+		}
 
 		// // RVA: 0xBF8CD4 Offset: 0xBF8CD4 VA: 0xBF8CD4
-		// private string GetDivaSkillCutinTextureAssetName(StringBuilder bundlePath, bool isMask) { }
+		private string GetDivaSkillCutinTextureAssetName(StringBuilder bundlePath, bool isMask)
+		{
+			StringBuilder str = new StringBuilder();
+			str.Set(Path.GetFileNameWithoutExtension(bundlePath.ToString()));
+			str.Append(isMask ? "_mask" : "_base");
+			return str.ToString();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x745534 Offset: 0x745534 VA: 0x745534
 		// // RVA: 0xBF8E24 Offset: 0xBF8E24 VA: 0xBF8E24
-		// private IEnumerator LoadPilotTexture() { }
+		private IEnumerator LoadPilotTexture()
+		{
+			GameSetupData gameSetup; // 0x14
+			MHDFCLCMDKO_Enemy.CJLENGHPIDH_EnemyInfo enemyInfo; // 0x18
+
+			//0xBFA1BC
+			gameSetup = Database.Instance.gameSetup;
+			enemyInfo = gameSetup.musicInfo.GetEnemyInfo();
+
+			yield return StartCoroutine(m_pilotTexture.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[gameSetup.teamInfo.prismValkyrieId - 1].PFGJJLGLPAC_PilotId));
+			yield return StartCoroutine(m_enemyPilotTexture.Load(enemyInfo.EELBHDJJJHH_Plt));
+			yield return StartCoroutine(m_enemyRobotTexture.Load(enemyInfo.EAHPLCJMPHD_Pic));
+			if (musicVoiceChangerResource == null)
+				yield break;
+			yield return new WaitUntil(() =>
+			{
+				//0xBF940C
+				return musicVoiceChangerResource.isAllLoaded;
+			});
+			if (!isTakeoffDivaVoice)
+				yield break;
+			m_divaTexture = new UiDivaTexture();
+			yield return StartCoroutine(m_divaTexture.Load(gameSetup.teamInfo.divaList[0].prismDivaId, gameSetup.teamInfo.divaList[0].prismCostumeModelId, gameSetup.teamInfo.divaList[0].prismCostumeColorId));
+		}
 
 		// // RVA: 0xBF8ED0 Offset: 0xBF8ED0 VA: 0xBF8ED0
 		public void LoadSpecialResourceFor2DMode(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
@@ -487,12 +870,20 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF9404 Offset: 0xBF9404 VA: 0xBF9404
 		// private void <LoadingUIPrefab>b__102_1(GameObject instance) { }
 
-		// [CompilerGeneratedAttribute] // RVA: 0x745754 Offset: 0x745754 VA: 0x745754
-		// // RVA: 0xBF940C Offset: 0xBF940C VA: 0xBF940C
-		// private bool <LoadPilotTexture>b__105_0() { }
-
 		// [CompilerGeneratedAttribute] // RVA: 0x745764 Offset: 0x745764 VA: 0x745764
 		// // RVA: 0xBF9438 Offset: 0xBF9438 VA: 0xBF9438
 		// private bool <Co_LoadSpecialDirectionResourceFor2DMode>b__108_0() { }
 	}
+}
+
+public class MusicVoiceChangerParamNotFoundException : Exception
+{
+	// RVA: 0x17BE9F0 Offset: 0x17BE9F0 VA: 0x17BE9F0
+	public MusicVoiceChangerParamNotFoundException() { }
+
+	// RVA: 0x17BEA74 Offset: 0x17BEA74 VA: 0x17BEA74
+	public MusicVoiceChangerParamNotFoundException(string message) : base(message) { }
+
+	// RVA: 0x17BEB00 Offset: 0x17BEB00 VA: 0x17BEB00
+	public MusicVoiceChangerParamNotFoundException(string message, Exception inner) : base(message, inner) { }
 }

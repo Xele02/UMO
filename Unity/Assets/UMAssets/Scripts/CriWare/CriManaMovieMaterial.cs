@@ -127,7 +127,12 @@ namespace CriWare
 		}
 
 		// // RVA: 0x2963238 Offset: 0x2963238 VA: 0x2963238
-		// public void Pause(bool sw) { }
+		public void Pause(bool sw)
+		{
+			if (wasDisabled)
+				wasPausedOnDisable = sw;
+			player.Pause(sw);
+		}
 
 		// // RVA: 0x2963278 Offset: 0x2963278 VA: 0x2963278 Slot: 8
 		protected virtual void OnMaterialAvailableChanged()

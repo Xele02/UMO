@@ -4,6 +4,10 @@ namespace XeApp.Game.Common
 {
 	public class ToggleButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private short m_gropId;
 		[SerializeField]

@@ -18,7 +18,10 @@ namespace XeApp.Game.Common
 
 
 		// // RVA: 0x1CC94D0 Offset: 0x1CC94D0 VA: 0x1CC94D0
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			prefab = null;
+		}
 
 		// // RVA: 0x1CC94EC Offset: 0x1CC94EC VA: 0x1CC94EC
 		public void LoadResouces(int stageId, Func<int> getSpecialStageId)

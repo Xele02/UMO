@@ -32,5 +32,9 @@ namespace XeApp.Game.Menu
 		private List<GakuyaCurtain.DivaSettingInfo> m_divaSettinfInfos;
 		[SerializeField]
 		private List<Sprite> m_messageSprites;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -27,5 +27,9 @@ namespace XeApp.Game.Menu
 		private Image m_musicExpGaugeBandHeadImage;
 		[SerializeField]
 		private Image m_musicExpGaugeMaxImage;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

@@ -5,4 +5,8 @@ public class PopupMvModeLackDivaLayout : MonoBehaviour
 {
 	[SerializeField]
 	private UGUISwapScrollList m_scrollList;
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement Monobehaviour");
+	}
 }

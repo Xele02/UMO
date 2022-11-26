@@ -135,10 +135,18 @@ namespace XeApp.Game.Common
 		// public void Stop() { }
 
 		// // RVA: 0xAE4AB4 Offset: 0xAE4AB4 VA: 0xAE4AB4
-		// public void Pause() { }
+		public void Pause()
+		{
+			if (animator != null)
+				animator.speed = 0;
+		}
 
 		// // RVA: 0xAE4B6C Offset: 0xAE4B6C VA: 0xAE4B6C
-		// public void Resume() { }
+		public void Resume()
+		{
+			if (animator != null)
+				animator.speed = 1;
+		}
 
 		// // RVA: 0xAE46D0 Offset: 0xAE46D0 VA: 0xAE46D0
 		public void ChangeAnimationTime(double time)

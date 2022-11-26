@@ -10,5 +10,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private GameObject m_markEffectParticle;
 		[SerializeField]
 		private GameObject[] m_gaugeParticles;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

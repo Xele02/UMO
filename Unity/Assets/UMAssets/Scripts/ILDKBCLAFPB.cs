@@ -87,7 +87,7 @@ public class ILDKBCLAFPB
         public bool EDDMJEMOAGM_IsNotExcellentDisplaySetting = true; // 0xB8
         public bool CJKKALFPMLA_IsNotDivaModeDivaVisible = true; // 0xB9
         public bool KPFAFLBICLA_IsNotBattleEventInfo = true; // 0xBA
-        public bool MJHEPGIEDDL_IsNotSlideNoteEffect = true; // 0xBB
+        public bool MJHEPGIEDDL_IsSlideNoteEffect = true; // 0xBB
         public int HLABNEIEJPM_SafeAreaDesign; // 0xBC
         public int HJPDHDHMOPF_IsNotForceWideScreen; // 0xC0
         public bool BIEOIPOLFLN_IsNotPlayRecordFirstLaunch = true; // 0xC4
@@ -100,7 +100,7 @@ public class ILDKBCLAFPB
         // public bool FFKLPNPJLMB { get; }
         // public bool FGJBDPOGMDI { get; }
         public bool CIGAPPFDFKL_Is3D { get { return DDHCLNFPNGK_RenderQuality != 2; } private set {} } //MNJOLLGPMPI 0x2035E64 JCCDFGOGFFA 0x2035E8C
-        // public bool OOCKIFIHJJN { get; private set; } CKJIGBCJGMI 0x2035E78 IBPIBMKAMPE 0x2035E90
+        public bool OOCKIFIHJJN { get { return DDHCLNFPNGK_RenderQuality == 2; } private set {} } //CKJIGBCJGMI 0x2035E78 IBPIBMKAMPE 0x2035E90
 
         // // RVA: 0x2035BF0 Offset: 0x2035BF0 VA: 0x2035BF0
         public void PBCBJAPONBF()
@@ -148,14 +148,17 @@ public class ILDKBCLAFPB
 			EDDMJEMOAGM_IsNotExcellentDisplaySetting = true;
 			CJKKALFPMLA_IsNotDivaModeDivaVisible = true;
 			KPFAFLBICLA_IsNotBattleEventInfo = true;
-			MJHEPGIEDDL_IsNotSlideNoteEffect = true;
+			MJHEPGIEDDL_IsSlideNoteEffect = true;
 			HLABNEIEJPM_SafeAreaDesign = 0;
 			HJPDHDHMOPF_IsNotForceWideScreen = SystemManager.IsForceWideScreen ? 0 : 1;
 			BIEOIPOLFLN_IsNotPlayRecordFirstLaunch = true;
 		}
 
         // // RVA: 0x2035D68 Offset: 0x2035D68 VA: 0x2035D68
-        // public bool KKBJCJNAGDB() { }
+        public bool KKBJCJNAGDB()
+		{
+			return NAGJLEIPAAC_Cutin == 0;
+		}
 
         // // RVA: 0x2035D7C Offset: 0x2035D7C VA: 0x2035D7C
         public bool GLKGAOFHLPN()
@@ -180,10 +183,20 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035DD4 Offset: 0x2035DD4 VA: 0x2035DD4
-        // public bool DKECHCHOMEL() { }
+        public bool DKECHCHOMEL_GetValkyrieQuality()
+		{
+			if (DDHCLNFPNGK_RenderQuality == 3)
+				return AHLFOHJMGAI_QualityCustomOther3D == 0;
+			return DDHCLNFPNGK_RenderQuality == 0;
+		}
 
         // // RVA: 0x2035DF0 Offset: 0x2035DF0 VA: 0x2035DF0
-        // public bool MIHFCOBBIPJ() { }
+        public bool MIHFCOBBIPJ_GetQuality2d()
+		{
+			if(DDHCLNFPNGK_RenderQuality == 3)
+				return FPJHOLMLDGC_QualityCustom2D == 0;
+			return DDHCLNFPNGK_RenderQuality == 0;
+		}
 
         // // RVA: 0x2035E0C Offset: 0x2035E0C VA: 0x2035E0C
         public bool JLEJPKOMKEJ()
@@ -254,7 +267,10 @@ public class ILDKBCLAFPB
         // public float EBBAAPCHNKL() { }
 
         // // RVA: 0x20361A4 Offset: 0x20361A4 VA: 0x20361A4
-        // public bool AOOKLMAPPLG() { }
+        public bool AOOKLMAPPLG()
+		{
+			return CDGKHMEOEMP_ValkyrieMode == 0;
+		}
 
         // // RVA: 0x20361B8 Offset: 0x20361B8 VA: 0x20361B8
         public void AFMDGKBANPH_SetValkyrieMode(bool IPJMPBANBPP)
@@ -312,7 +328,7 @@ public class ILDKBCLAFPB
 				ILEKEPJBFDP.EDDMJEMOAGM_IsNotExcellentDisplaySetting == GEPALDIIDPC.EDDMJEMOAGM_IsNotExcellentDisplaySetting &&
 				ILEKEPJBFDP.CJKKALFPMLA_IsNotDivaModeDivaVisible == GEPALDIIDPC.CJKKALFPMLA_IsNotDivaModeDivaVisible &&
 				ILEKEPJBFDP.KPFAFLBICLA_IsNotBattleEventInfo == GEPALDIIDPC.KPFAFLBICLA_IsNotBattleEventInfo &&
-				ILEKEPJBFDP.MJHEPGIEDDL_IsNotSlideNoteEffect == GEPALDIIDPC.MJHEPGIEDDL_IsNotSlideNoteEffect &&
+				ILEKEPJBFDP.MJHEPGIEDDL_IsSlideNoteEffect == GEPALDIIDPC.MJHEPGIEDDL_IsSlideNoteEffect &&
 				ILEKEPJBFDP.HLABNEIEJPM_SafeAreaDesign == GEPALDIIDPC.HLABNEIEJPM_SafeAreaDesign &&
 				ILEKEPJBFDP.HJPDHDHMOPF_IsNotForceWideScreen == GEPALDIIDPC.HJPDHDHMOPF_IsNotForceWideScreen &&
 				ILEKEPJBFDP.BIEOIPOLFLN_IsNotPlayRecordFirstLaunch == GEPALDIIDPC.BIEOIPOLFLN_IsNotPlayRecordFirstLaunch)
@@ -376,7 +392,7 @@ public class ILDKBCLAFPB
 			FMKAONAMGCN.EDDMJEMOAGM_IsNotExcellentDisplaySetting = EDDMJEMOAGM_IsNotExcellentDisplaySetting;
 			FMKAONAMGCN.CJKKALFPMLA_IsNotDivaModeDivaVisible = CJKKALFPMLA_IsNotDivaModeDivaVisible;
 			FMKAONAMGCN.KPFAFLBICLA_IsNotBattleEventInfo = KPFAFLBICLA_IsNotBattleEventInfo;
-			FMKAONAMGCN.MJHEPGIEDDL_IsNotSlideNoteEffect = MJHEPGIEDDL_IsNotSlideNoteEffect;
+			FMKAONAMGCN.MJHEPGIEDDL_IsSlideNoteEffect = MJHEPGIEDDL_IsSlideNoteEffect;
 			FMKAONAMGCN.HLABNEIEJPM_SafeAreaDesign = HLABNEIEJPM_SafeAreaDesign;
 			FMKAONAMGCN.HJPDHDHMOPF_IsNotForceWideScreen = HJPDHDHMOPF_IsNotForceWideScreen;
 			FMKAONAMGCN.BIEOIPOLFLN_IsNotPlayRecordFirstLaunch = BIEOIPOLFLN_IsNotPlayRecordFirstLaunch;
@@ -433,7 +449,7 @@ public class ILDKBCLAFPB
 			res["isExcellentDisplaySetting"] = EDDMJEMOAGM_IsNotExcellentDisplaySetting ? 0 : 1;
 			res["isDivaModeDivaVisible"] = CJKKALFPMLA_IsNotDivaModeDivaVisible ? 0 : 1;
 			res["isBattleEventInfo"] = KPFAFLBICLA_IsNotBattleEventInfo ? 0 : 1;
-			res["isSlideNoteEffect"] = MJHEPGIEDDL_IsNotSlideNoteEffect ? 0 : 1;
+			res["isSlideNoteEffect"] = MJHEPGIEDDL_IsSlideNoteEffect ? 0 : 1;
 			res["safeAreaDesign"] = HLABNEIEJPM_SafeAreaDesign;
 			res["isPlayRecordFirstLaunch"] = BIEOIPOLFLN_IsNotPlayRecordFirstLaunch ? 0 : 1;
 			SystemManager.SetForceWideScreen(HJPDHDHMOPF_IsNotForceWideScreen == 0);
@@ -452,6 +468,7 @@ public class ILDKBCLAFPB
 			NAGJLEIPAAC_Cutin = JsonUtil.GetInt(OBHAFLMHAKG, "cutin", 0);
 			DADIPGPHLDD_EffectCutin = JsonUtil.GetInt(OBHAFLMHAKG, "effectCutin", 0);
 			DDHCLNFPNGK_RenderQuality = JsonUtil.GetInt(OBHAFLMHAKG, "renderQuality", 1);
+			DDHCLNFPNGK_RenderQuality = 0; // UMO : default to full quality for now
 			GEPLOFLHAOL_NeedInitRenderQuality = JsonUtil.GetInt(OBHAFLMHAKG, "needInitRenderQuality", 0);
 			LMDACNNJDOE_VolSeRhythm = JsonUtil.GetInt(OBHAFLMHAKG, "volSeRhythm", 0xf);
 			ICGAOAFIHFD_VolBgmRhythm = JsonUtil.GetInt(OBHAFLMHAKG, "volBgmRhythm", 0xf);
@@ -490,7 +507,7 @@ public class ILDKBCLAFPB
 			EDDMJEMOAGM_IsNotExcellentDisplaySetting = JsonUtil.GetInt(OBHAFLMHAKG, "isExcellentDisplaySetting", 0) == 0;
 			CJKKALFPMLA_IsNotDivaModeDivaVisible = JsonUtil.GetInt(OBHAFLMHAKG, "isDivaModeDivaVisible", 0) == 0;
 			KPFAFLBICLA_IsNotBattleEventInfo = JsonUtil.GetInt(OBHAFLMHAKG, "isBattleEventInfo", 0) == 0;
-			MJHEPGIEDDL_IsNotSlideNoteEffect = JsonUtil.GetInt(OBHAFLMHAKG, "isSlideNoteEffect", 0) == 0;
+			MJHEPGIEDDL_IsSlideNoteEffect = JsonUtil.GetInt(OBHAFLMHAKG, "isSlideNoteEffect", 0) == 0;
 			HLABNEIEJPM_SafeAreaDesign = JsonUtil.GetInt(OBHAFLMHAKG, "safeAreaDesign", 0);
 			BIEOIPOLFLN_IsNotPlayRecordFirstLaunch = JsonUtil.GetInt(OBHAFLMHAKG, "isPlayRecordFirstLaunch", 0) == 0;
 			HJPDHDHMOPF_IsNotForceWideScreen = SystemManager.IsForceWideScreen ? 0 : 1;

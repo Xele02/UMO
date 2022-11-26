@@ -17,5 +17,9 @@ namespace XeApp.Game.RhythmGame
 		private CRIAtomMemoryPoolInfo memPoolInfo;
 		[SerializeField]
 		private UGUIFader uguiFader;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

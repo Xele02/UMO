@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x16558B8 Offset: 0x16558B8 VA: 0x16558B8
 		public static string MakeIconBundleName(int valkyrie, int form)
 		{
-			return string.Format("ct/vl/01/{0:D2}_{1:D2}.xab", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[valkyrie - 1].DAJGPBLEEOB, form + 1);
+			return string.Format("ct/vl/01/{0:D2}_{1:D2}.xab", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[valkyrie - 1].DAJGPBLEEOB_ModelId, form + 1);
 		}
 
 		// // RVA: 0x1655A8C Offset: 0x1655A8C VA: 0x1655A8C

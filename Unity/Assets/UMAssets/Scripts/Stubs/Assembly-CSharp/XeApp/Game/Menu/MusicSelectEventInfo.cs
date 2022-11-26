@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class MusicSelectEventInfo : LayoutLabelScriptBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private NumberBase m_curTicketCount;
 		[SerializeField]

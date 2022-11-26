@@ -5,6 +5,10 @@ namespace XeApp.Core
 {
 	public class CustomInputModule : PointerInputModule
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public override void Process()
 		{
 		}

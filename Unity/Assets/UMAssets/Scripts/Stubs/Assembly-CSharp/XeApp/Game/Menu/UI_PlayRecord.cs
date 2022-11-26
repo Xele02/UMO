@@ -40,5 +40,9 @@ namespace XeApp.Game.Menu
 		public Status m_status;
 		public DispInfo m_current;
 		public List<CanvasGroup> m_list_canvas_group;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

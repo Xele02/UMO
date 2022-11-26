@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupGachaLotFewRuntime : PopupGachaLotRuntime
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx m_needLabelImage;
 		[SerializeField]

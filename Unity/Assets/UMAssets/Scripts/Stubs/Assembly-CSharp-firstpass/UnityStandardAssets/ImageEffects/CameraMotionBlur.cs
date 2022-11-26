@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class CameraMotionBlur : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum MotionBlurFilter
 		{
 			CameraMotion = 0,

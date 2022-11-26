@@ -44,7 +44,12 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAF50B0 Offset: 0xAF50B0 VA: 0xAF50B0
-		// public void Release() { }
+		public void Release()
+		{
+			m_data_int.Clear();
+			m_data_str.Clear();
+			isCreate = false;
+		}
 
 		// // RVA: 0xAF515C Offset: 0xAF515C VA: 0xAF515C Slot: 4
 		public virtual void OnCreated()

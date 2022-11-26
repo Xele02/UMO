@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class RaidActSelectOptionButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum OptionType
 		{
 			Ranking = 0,

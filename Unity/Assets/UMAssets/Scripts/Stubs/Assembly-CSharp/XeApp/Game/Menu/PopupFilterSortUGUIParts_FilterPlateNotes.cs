@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupFilterSortUGUIParts_FilterPlateNotes : PopupFilterSortUGUIPartsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private UGUIToggleButton[] m_btn;
 		[SerializeField]

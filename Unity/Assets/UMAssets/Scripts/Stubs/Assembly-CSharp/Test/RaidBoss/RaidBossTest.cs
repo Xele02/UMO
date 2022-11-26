@@ -6,6 +6,10 @@ namespace Test.RaidBoss
 {
 	public class RaidBossTest : MainSceneBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text text;
 		[SerializeField]

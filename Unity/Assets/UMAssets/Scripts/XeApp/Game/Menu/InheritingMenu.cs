@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace XeApp.Game.Menu
 {
-	public class InheritingMenu : MonoBehaviour
+	public class InheritingMenu : MonoBehaviour, IDisposable
 	{
 		// private PopupSnsContent m_snsContent; // 0xC
 		// private PopupSnsInheritingContent m_snsInheritingContent; // 0x10
@@ -91,7 +92,10 @@ namespace XeApp.Game.Menu
 		// public void PopupShowSnsSuccess(InheritingMenu.eSnsType snsType, bool isLink = False) { }
 
 		// // RVA: 0x13E02A8 Offset: 0x13E02A8 VA: 0x13E02A8 Slot: 4
-		// public void Dispose() { }
+		public void Dispose()
+		{
+			TodoLogger.Log(0, "Displose");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E5AE4 Offset: 0x6E5AE4 VA: 0x6E5AE4
 		// // RVA: 0x13E034C Offset: 0x13E034C VA: 0x13E034C

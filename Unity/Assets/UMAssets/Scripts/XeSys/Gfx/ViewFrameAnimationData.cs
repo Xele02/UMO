@@ -78,7 +78,14 @@ namespace XeSys.Gfx
 		// private void SetLabelList(Dictionary<int, string> labelList, float frameSec) { }
 
 		// // RVA: 0x1EE9EB4 Offset: 0x1EE9EB4 VA: 0x1EE9EB4
-		// public float SearchLabelFrame(string label) { }
+		public float SearchLabelFrame(string label)
+		{
+			if(m_LabelIndex.ContainsKey(label))
+			{
+				return m_LabelList[m_LabelIndex[label]].FrameIdx;
+			}
+			return -1;
+		}
 
 		// // RVA: 0x1EE9FD4 Offset: 0x1EE9FD4 VA: 0x1EE9FD4
 		public float SearchLabelTime(string label)
@@ -231,13 +238,30 @@ namespace XeSys.Gfx
 			}
 			if((m_AnimFlag & 2) != 0)
 			{
-				/*if((m_AnimFlag & 0xc) == 0xc)
+				if((m_AnimFlag & 0xc) == 0xc)
 				{
-					vt.m.Move = CurveBezier3(rate,m_FrameDataList[Base].TransFormData.m.Move,m_FrameDataList[Base].TransFormData.s.MoveBezierNext, m_FrameDataList[Target].TransFormData.s.MoveBezierPrev, m_FrameDataList[Target].TransFormData.m.Move);
-				}*/
-				TodoLogger.Log(0, "TODO");
-				// L370
-				vt.m.Move = Vector2.Lerp(m_FrameDataList[Base].TransFormData.m.Move, m_FrameDataList[Target].TransFormData.m.Move, rate);
+					vt.m.Move = Math.CurveBezier3.Evaluate(rate,m_FrameDataList[Base].TransFormData.m.Move,m_FrameDataList[Base].TransFormData.MoveBezierNext, m_FrameDataList[Target].TransFormData.MoveBezierPrev, m_FrameDataList[Target].TransFormData.m.Move);
+				}
+				else
+				{
+					if((m_AnimFlag & 4) == 0)
+					{
+						if((m_AnimFlag & 8) == 0)
+						{
+							vt.m.Move = Vector2.Lerp(m_FrameDataList[Base].TransFormData.m.Move, m_FrameDataList[Target].TransFormData.m.Move, rate);
+						}
+						else
+						{
+							vt.m.Move.x = Mathf.Lerp(m_FrameDataList[Base].TransFormData.m.Move.x, m_FrameDataList[Target].TransFormData.m.Move.x, rate);
+							vt.m.Move.y = Math.CurveBezier3.Evaluate(rate, m_FrameDataList[Base].TransFormData.m.Move.y, m_FrameDataList[Base].TransFormData.MoveBezierNextY, m_FrameDataList[Target].TransFormData.MoveBezierPrevY, m_FrameDataList[Target].TransFormData.m.Move.y);
+						}
+					}
+					else
+					{
+						vt.m.Move.x = Math.CurveBezier3.Evaluate(rate, m_FrameDataList[Base].TransFormData.m.Move.x, m_FrameDataList[Base].TransFormData.MoveBezierNextX, m_FrameDataList[Target].TransFormData.MoveBezierPrevX, m_FrameDataList[Target].TransFormData.m.Move.x);
+						vt.m.Move.y = Mathf.Lerp(m_FrameDataList[Base].TransFormData.m.Move.y, m_FrameDataList[Target].TransFormData.m.Move.y, rate);
+					}
+				}
 				isUpdateSRT = true;
 			}
 			if((m_AnimFlag & 16) != 0)

@@ -9,7 +9,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 	private int LGADCGFMLLD; // 0x50
 	private AssetBundleCreateRequest NMNCMNNPNCI; // 0x54
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 	bool m_DownloadingFile = false;
 #endif
 	// RVA: 0xC70568 Offset: 0xC70568 VA: 0xC70568
@@ -28,7 +28,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 		}
 		else
 		{
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 			m_DownloadingFile = true;
 			FileSystemProxy.TryInstallFile(HHHEFALNMJO_mPath, (string newPath) =>
 			{
@@ -45,7 +45,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 	// // RVA: 0xC70770 Offset: 0xC70770 VA: 0xC70770 Slot: 5
 	public override bool GDEMPLAOGKK_IsDone()
 	{
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 		if (m_DownloadingFile)
 			return false;
 #endif
@@ -67,7 +67,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 	// // RVA: 0xC707CC Offset: 0xC707CC VA: 0xC707CC Slot: 9
 	public override bool MLMEOLAEJEL_DoLoadData()
 	{
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
 		if (m_DownloadingFile)
 			return false;
 #endif
@@ -103,6 +103,41 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 					}
 				}
 				UnityEngine.Debug.Log("Bundle decrypted, start load in memory");
+				//#region UMO
+				// Convert android bundle to Window / Linux bundle
+				//#if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN || UNITY_STANDALONE_LINUX || UNITY_EDITOR_LINUX
+#if !UNITY_EDITOR && (UNITY_STANDALONE_WIN || UNITY_STANDALONE_LINUX) // Load Bug with stage bundle
+				int pos = -1;
+				// search for 2018 engine tag
+				int valCnt = 0;
+				for(int i = 0; i < data.Length - 5; i++)
+				{
+					if (data[i] == '2' && data[i + 1] == '0' && data[i + 2] == '1' && data[i + 3] == '8' && data[i + 4] == '.')
+					{
+						valCnt++;
+						if(valCnt == 2)
+						{
+							pos = i;
+							for (; data[pos] != 0; pos++)
+								;
+							pos++;
+							if (data[pos] != 13)
+								pos = -1;
+							break;
+						}
+					}
+				}
+
+				if (pos == -1)
+					UnityEngine.Debug.LogError("Asset bundle " + HHHEFALNMJO_mPath + " is not in android format");
+				else
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
+					data[pos] = 19;
+#elif UNITY_STANDALONE_LINUX || UNITY_EDITOR_LINUX
+					data[pos] = 17;
+#endif
+#endif
+				//#endregion
 				NMNCMNNPNCI = AssetBundle.LoadFromMemoryAsync(data);
 				LGADCGFMLLD = 1;
 				return false;

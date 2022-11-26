@@ -13,24 +13,27 @@ namespace CriWare
 		public uint bindId { get; private set; } // 0x2C
 
 		// // RVA: 0x2943FE4 Offset: 0x2943FE4 VA: 0x2943FE4
-		// public void .ctor(CriFsBindRequest.BindType type, CriFsBinder targetBinder, CriFsBinder srcBinder, string path) { }
+		public CriFsBindRequest(CriFsBindRequest.BindType type, CriFsBinder targetBinder, CriFsBinder srcBinder, string path)
+		{
+			TodoLogger.Log(0, "CriFsBindRequest");
+		}
 
 		// // RVA: 0x2944354 Offset: 0x2944354 VA: 0x2944354 Slot: 6
 		public override void Stop()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "CriFsBindRequest Stop");
 		}
 
 		// // RVA: 0x2944358 Offset: 0x2944358 VA: 0x2944358 Slot: 8
 		public override void Update()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "CriFsBindRequest Update");
 		}
 
 		// // RVA: 0x29444CC Offset: 0x29444CC VA: 0x29444CC Slot: 7
 		protected override void Dispose(bool disposing)
 		{
-			TodoLogger.Log(0, "TODO");
+			CriDisposableObjectManager.Unregister(this);
 		}
 	}
 }

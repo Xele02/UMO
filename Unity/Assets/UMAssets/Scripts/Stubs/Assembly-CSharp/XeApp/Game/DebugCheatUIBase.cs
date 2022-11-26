@@ -17,5 +17,9 @@ namespace XeApp.Game
 
 		[SerializeField]
 		private Condition m_menuCondition;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

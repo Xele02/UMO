@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class EdgeDetection : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum EdgeDetectMode
 		{
 			TriangleDepthNormals = 0,

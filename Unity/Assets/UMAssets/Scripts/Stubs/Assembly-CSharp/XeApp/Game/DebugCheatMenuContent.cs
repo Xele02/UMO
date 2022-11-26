@@ -27,5 +27,9 @@ namespace XeApp.Game
 		private Toggle m_menuFoldoutToggle;
 		[SerializeField]
 		private List<DebugCheatMenuContent.MenuElem> m_menuElems;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

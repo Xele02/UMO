@@ -1,11 +1,16 @@
 using XeSys;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace XeApp.Game
 {
-	internal class DebugCheatMenu : SingletonBehaviour<DebugCheatMenu>
+	internal class DebugCheatMenu : SingletonBehaviour<DebugCheatMenu>, IDisposable
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private GameObject m_root;
 		[SerializeField]
@@ -36,5 +41,10 @@ namespace XeApp.Game
 		private Text m_memoryText;
 		[SerializeField]
 		private Text m_advertisingIdText;
+
+		public void Dispose()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

@@ -19,5 +19,9 @@ namespace XeApp.Game.Common
 		private RectTransform m_fillTransMaxLeft;
 		[SerializeField]
 		private RectTransform m_fillTransMaxRight;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

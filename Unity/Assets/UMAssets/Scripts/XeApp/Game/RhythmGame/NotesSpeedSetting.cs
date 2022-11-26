@@ -14,8 +14,8 @@ namespace XeApp.Game.RhythmGame
 			[SerializeField]
 			private int m_dispTime; // 0xC
 
-			//public int Speed { get; } 0xF7796C
-			//public int DispTime { get; } 0xF77998
+			public int Speed { get { return m_speed; } } //0xF7796C
+			public int DispTime { get { return m_dispTime; } } //0xF77998
 		}
 
 		private const int OUT_OF_RANGE_ADJUST_MILLISEC = 25;
@@ -25,8 +25,23 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xF6D988 Offset: 0xF6D988 VA: 0xF6D988
 		public int CalcNoteDispTime(int speed)
 		{
-			TodoLogger.Log(0, "CalcNoteDispTime");
-			return -1;
+			if(m_items[0].Speed <= speed)
+			{
+				if(m_items[m_items.Count - 1].Speed >= speed)
+				{
+					int idx = m_items.FindIndex(0, (NotesSpeedSetting.Item item) => {
+						// 0xF779A8
+						return item.Speed <= speed;
+					});
+					int idx2 = m_items.FindIndex(idx + 1, (NotesSpeedSetting.Item item) => {
+						// 0xF779E0
+						return speed <= item.Speed;
+					});
+					return Mathf.RoundToInt(Mathf.Lerp(m_items[idx].DispTime, m_items[idx2].DispTime, (speed - m_items[idx].Speed) / (m_items[idx2].Speed - m_items[idx].Speed)));
+				}
+				return m_items[m_items.Count - 1].DispTime;
+			}
+			return m_items[0].DispTime;
 		}
 
 		//// RVA: 0xF6DD30 Offset: 0xF6DD30 VA: 0xF6DD30

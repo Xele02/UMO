@@ -1,30 +1,40 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.SceneManagement;
+using UnityEditor;
+#endif
 using System.IO;
 
 public class UMOStart : MonoBehaviour
 {
+#if UNITY_EDITOR
 	[MenuItem("UMO/Start Game", validate = true)]
+#endif
 	static bool StartGameAvaiable()
 	{
 		return !Application.isPlaying;
 	}
 
+#if UNITY_EDITOR
 	[MenuItem("UMO/Start Game")]
+#endif
 	static void StartGameMenu()
 	{
         StartGameMenuInternal();
     }
 
+#if UNITY_EDITOR
 	[MenuItem("UMO/Start Auto SLive Viewer (Experimental)", validate = true)]
+#endif
 	static bool StartSLiveAvaiable()
 	{
 		return !Application.isPlaying;
 	}
 
+#if UNITY_EDITOR
 	[MenuItem("UMO/Start Auto SLive Viewer (Experimental)")]
+#endif
 	static void StartSLive()
 	{
         RuntimeSettings.CurrentSettings.SLiveViewerRequest = true;
@@ -39,15 +49,18 @@ public class UMOStart : MonoBehaviour
         }
         else
         {
-            if(!EditorApplication.isPlaying)
+#if UNITY_EDITOR
+			if(!EditorApplication.isPlaying)
                 StartGameEditor();
-            return true;
+#endif
+			return true;
         }
     }
 
     static bool TrySelectDirectory()
-    {
-        if(EditorUtility.DisplayDialog("Game Data error", "Game data directory ("+RuntimeSettings.CurrentSettings.DataDirectory+") is not setup correctly and no game data was found in the default directories. Please select the directory containing game directories \"android\" and \"db\".", "Select directory", "Cancel"))
+	{
+#if UNITY_EDITOR
+		if (EditorUtility.DisplayDialog("Game Data error", "Game data directory ("+RuntimeSettings.CurrentSettings.DataDirectory+") is not setup correctly and no game data was found in the default directories. Please select the directory containing game directories \"android\" and \"db\".", "Select directory", "Cancel"))
         {
             string path = EditorUtility.OpenFolderPanel("Select Game data directory", Application.dataPath, "");
             if(!string.IsNullOrEmpty(path))
@@ -58,26 +71,31 @@ public class UMOStart : MonoBehaviour
                 return StartGameMenuInternal();
             }
         }
-        return false;
+#endif
+		return false;
     }
 
     static void StartGameEditor()
-    {
-        if(EditorSceneManager.GetActiveScene().name != "Start")
+	{
+#if UNITY_EDITOR
+		if (EditorSceneManager.GetActiveScene().name != "Start")
             EditorSceneManager.OpenScene("Assets/Scenes/Start.unity", OpenSceneMode.Single);
-        EditorApplication.isPlaying = true;
-    }
+		EditorApplication.isPlaying = true;
+#endif
+	}
 
-    bool hasSwitched = false;
+	bool hasSwitched = false;
     bool canStart = false;
     void Start()
     {
         if(!RuntimeSettings.CurrentSettings.IsPathValid())
         {
             if(!TrySelectDirectory())
-            {
-                EditorApplication.isPlaying = false;
-                return;
+			{
+#if UNITY_EDITOR
+				EditorApplication.isPlaying = false;
+#endif
+				return;
             }
         }
         canStart = true;

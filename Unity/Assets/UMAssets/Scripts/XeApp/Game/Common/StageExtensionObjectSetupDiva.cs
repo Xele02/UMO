@@ -24,9 +24,15 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0x13A2E28 Offset: 0x13A2E28 VA: 0x13A2E28
-		//public void Pause() { }
+		public void Pause()
+		{
+			m_bsp_ctrl.Lock(0);
+		}
 
 		//// RVA: 0x13A32B0 Offset: 0x13A32B0 VA: 0x13A32B0
-		//public void Resume() { }
+		public void Resume()
+		{
+			m_bsp_ctrl.Unlock(0);
+		}
 	}
 }

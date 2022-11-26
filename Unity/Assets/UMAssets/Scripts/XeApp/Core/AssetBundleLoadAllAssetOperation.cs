@@ -48,8 +48,8 @@ namespace XeApp.Core
             {
                 if(m_request.allAssets[i].name == assetName)
                 {
-#if UNITY_EDITOR
-                    BundleShaderInfo.Instance.FixMaterialShader(m_request.allAssets[i]);
+#if UNITY_EDITOR || UNITY_STANDALONE
+					BundleShaderInfo.Instance.FixMaterialShader(m_request.allAssets[i]);
 #endif
                     if(m_request.allAssets[i] is T)
                         return m_request.allAssets[i] as T;

@@ -11,5 +11,9 @@ namespace XeApp.Game.Menu
 		private UGUIButton m_buttonOk;
 		[SerializeField]
 		private UGUIButton m_buttonPreview;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

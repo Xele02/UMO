@@ -20,7 +20,18 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x1551C0C Offset: 0x1551C0C VA: 0x1551C0C
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			if (m_paramValkyrieAwake != null)
+				m_paramValkyrieAwake.Release();
+			if (m_paramValkyrieChangeExplosion != null)
+				m_paramValkyrieChangeExplosion.Release();
+			if (m_paramIntro != null)
+				m_paramIntro.Release();
+			if (m_paramBattle != null)
+				m_paramBattle.Release();
+			if (m_paramEnemy != null)
+				m_paramEnemy.Release();
+			isRequestLoad = false;
+			isLoaded = false;
 		}
 
 		// // RVA: 0x1551C88 Offset: 0x1551C88 VA: 0x1551C88

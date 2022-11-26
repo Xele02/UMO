@@ -47,7 +47,11 @@ namespace XeApp.Game.RhythmGame
 		// public bool CheckFree() { }
 
 		// // RVA: 0xDA9418 Offset: 0xDA9418 VA: 0xDA9418 Slot: 11
-		// public override void Free() { }
+		public override void Free()
+		{
+			base.Free();
+			gameObject.SetActive(false);
+		}
 
 		// // RVA: 0xDA9460 Offset: 0xDA9460 VA: 0xDA9460
 		// private void ProcessEventResult(RNoteClusterRenderer.EventResult result) { }
@@ -64,25 +68,25 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xDA95A8 Offset: 0xDA95A8 VA: 0xDA95A8 Slot: 5
 		protected override void PausableAwake()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0xDA95AC Offset: 0xDA95AC VA: 0xDA95AC Slot: 6
 		protected override void PausableStart()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0xDA95B0 Offset: 0xDA95B0 VA: 0xDA95B0 Slot: 7
 		protected override void PausableUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0xDA95B4 Offset: 0xDA95B4 VA: 0xDA95B4 Slot: 8
 		protected override void PausableInPause()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 	}
 }

@@ -7,5 +7,9 @@ namespace XeApp.Game.Menu
 	{
 		[SerializeField]
 		private MacrossCannonObject mcrsCannonObject;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

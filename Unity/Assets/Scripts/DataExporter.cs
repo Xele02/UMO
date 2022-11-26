@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using XeApp.Game.Common;
 using System.IO;
@@ -8,10 +7,14 @@ using XeApp.Game;
 using XeSys;
 using System;
 using XeApp.Game.Menu;
+#if UNITY_EDITOR
 using UnityEngine.SceneManagement;
+using UnityEditor;
+#endif
 
 class DataExporter
 {
+#if UNITY_EDITOR
 	[MenuItem("UMO/Export Song List", validate = true)]
 	static bool ExportSongListAvaiable()
 	{
@@ -174,7 +177,32 @@ class DataExporter
 				Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismCostumeModelId + " - " + Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismCostumeColorId + 
 				" Position : "+Database.Instance.gameSetup.teamInfo.danceDivaList[i].positionId+"\n";
 		}
+		txt += "Valkyrie : "+Database.Instance.gameSetup.teamInfo.prismValkyrieId+"\n";
+		txt += "Difficulty : "+Database.Instance.gameSetup.musicInfo.difficultyType+", Line6 : "+Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 		GUIUtility.systemCopyBuffer = txt;
 	}
 
+	[MenuItem("Assets/UMO/Convert Texture to PNG", true)]
+	private static bool CheckConvertTexture()
+	{
+		return Selection.activeObject is Texture;
+	}
+
+	[MenuItem("Assets/UMO/Convert Texture to PNG")]
+	private static void ConvertTexture()
+	{
+		string[] assets = Selection.assetGUIDs;
+		for (int i = 0; i < assets.Length; i++)
+		{
+			string path = AssetDatabase.GUIDToAssetPath(assets[i]);
+			Texture2D tex = AssetDatabase.LoadAssetAtPath(path, typeof(Texture2D)) as Texture2D;
+			if (tex)
+			{
+				string name = path.Replace(".asset", "new.png");
+				Texture2D t = TextureHelper.Copy(tex);
+				File.WriteAllBytes(name, t.EncodeToPNG());
+			}
+		}
+	}
+#endif
 }

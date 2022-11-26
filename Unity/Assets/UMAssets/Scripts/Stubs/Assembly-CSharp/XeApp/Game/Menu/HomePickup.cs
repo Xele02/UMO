@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class HomePickup : LayoutLabelScriptBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private ActionButton m_closeButton;
 		[SerializeField]

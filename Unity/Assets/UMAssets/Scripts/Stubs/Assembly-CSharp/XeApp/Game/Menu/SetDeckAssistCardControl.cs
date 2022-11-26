@@ -24,5 +24,9 @@ namespace XeApp.Game.Menu
 		private GameObject m_tapGuardObject;
 		[SerializeField]
 		private List<Sprite> m_rivalRankSprite;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

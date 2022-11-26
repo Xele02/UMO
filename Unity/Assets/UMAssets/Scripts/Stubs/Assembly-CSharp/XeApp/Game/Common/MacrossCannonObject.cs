@@ -14,5 +14,9 @@ namespace XeApp.Game.Common
 		private LayerMask m_overrideCullingMask;
 		[SerializeField]
 		private CameraClearFlags m_overrideClearFlags;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

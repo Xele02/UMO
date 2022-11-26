@@ -11,5 +11,9 @@ namespace UnityStandardAssets.ImageEffects
 		public Shader shaderReduce;
 		public Shader shaderAdapt;
 		public Shader shaderApply;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

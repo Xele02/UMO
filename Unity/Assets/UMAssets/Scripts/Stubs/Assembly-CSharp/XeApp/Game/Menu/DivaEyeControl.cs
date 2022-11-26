@@ -23,5 +23,9 @@ namespace XeApp.Game.Menu
 
 		[SerializeField]
 		private EyeUVData m_uvData;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

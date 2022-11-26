@@ -18,5 +18,9 @@ namespace XeApp.Game.Common
 		private HomeBingoButton m_buttonBingo;
 		[SerializeField]
 		private CanvasGroup m_canvasGroup;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

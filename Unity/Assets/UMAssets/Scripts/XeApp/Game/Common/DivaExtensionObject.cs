@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -147,7 +148,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BED8C4 Offset: 0x1BED8C4 VA: 0x1BED8C4
-		//public void ChangeMovieMaterialColor(bool isOn) { }
+		public void ChangeMovieMaterialColor(bool isOn)
+		{
+			isMovieMode = isOn;
+			if(isOn)
+			{
+				ChangeColor(new Color(1, 1, 1), new Color(1, 1, 1), 0.4f);
+			}
+		}
 
 		//// RVA: 0x1BED964 Offset: 0x1BED964 VA: 0x1BED964
 		public void UpdateColorByStageLighting(Color mainColor, Color rimColor, float rimPower)
@@ -214,20 +222,75 @@ namespace XeApp.Game.Common
 		//public void Stop() { }
 
 		//// RVA: 0x1BEE38C Offset: 0x1BEE38C VA: 0x1BEE38C
-		//public void Pause() { }
+		public void Pause()
+		{
+			if (animator != null)
+				animator.speed = 0;
+			for(int i = 0; i < animatorList.Count; i++)
+			{
+				animatorList[i].speed = 0;
+			}
+			for(int i = 0; i < particleList.Count; i++)
+			{
+				if (particleList[i].gameObject.activeInHierarchy)
+					particleList[i].Pause();
+			}
+			m_pause = true;
+		}
 
 		//// RVA: 0x1BEE5EC Offset: 0x1BEE5EC VA: 0x1BEE5EC
-		//public void Resume() { }
+		public void Resume()
+		{
+			if (animator != null)
+				animator.speed = 1;
+			for(int i = 0; i < animatorList.Count; i++)
+			{
+				animatorList[i].speed = 1;
+			}
+			for(int i = 0; i < particleList.Count; i++)
+			{
+				if (particleList[i].gameObject.activeInHierarchy)
+					particleList[i].Play(false);
+			}
+			m_pause = false;
+		}
 
 		//// RVA: 0x1BEE84C Offset: 0x1BEE84C VA: 0x1BEE84C
-		//public void LockBoneSpring(int a_index = 0, float a_seconds = 0,05) { }
+		public void LockBoneSpring(int a_index = 0, float a_seconds = 0.05f)
+		{
+			if (m_coroutine_bsc_lock != null)
+				StopCoroutine(m_coroutine_bsc_lock);
+			if (!gameObject.activeSelf)
+				return;
+			m_coroutine_bsc_lock = StartCoroutine(CoroutineWaitLockBoneSpring(a_index, a_seconds));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x737C50 Offset: 0x737C50 VA: 0x737C50
 		//// RVA: 0x1BEE8D4 Offset: 0x1BEE8D4 VA: 0x1BEE8D4
-		//public IEnumerator CoroutineWaitLockBoneSpring(int a_index = 0, float a_seconds = 0,1) { }
+		public IEnumerator CoroutineWaitLockBoneSpring(int a_index = 0, float a_seconds = 0.1f)
+		{
+			//0x1BEED70
+			if(!m_is_bsc_lock)
+			{
+				m_is_bsc_lock = true;
+				yield return new WaitForSeconds(a_seconds);
+				for(int i = 0; i < bscList.Count; i++)
+				{
+					bscList[i].Lock(a_index);
+				}
+				m_coroutine_bsc_lock = null;
+				m_is_bsc_lock = false;
+			}
+		}
 
 		//// RVA: 0x1BEE9C0 Offset: 0x1BEE9C0 VA: 0x1BEE9C0
-		//public void UnlockBoneSpring() { }
+		public void UnlockBoneSpring()
+		{
+			for(int i = 0; i < bscList.Count; i++)
+			{
+				bscList[i].Unlock(0);
+			}
+		}
 
 		//// RVA: 0x1BEDD7C Offset: 0x1BEDD7C VA: 0x1BEDD7C
 		public void ChangeAnimationTime(double time)

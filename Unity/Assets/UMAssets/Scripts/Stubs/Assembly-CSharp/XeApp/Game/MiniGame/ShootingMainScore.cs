@@ -9,5 +9,9 @@ namespace XeApp.Game.MiniGame
 		private UGUINumController m_number;
 		[SerializeField]
 		private InOutAnime m_inOutCount;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

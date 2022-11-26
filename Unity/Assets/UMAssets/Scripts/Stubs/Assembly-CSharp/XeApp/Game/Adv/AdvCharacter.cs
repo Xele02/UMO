@@ -28,5 +28,9 @@ namespace XeApp.Game.Adv
 		private Material auraMaterialSource;
 		[SerializeField]
 		private Material prismMaterialSource;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

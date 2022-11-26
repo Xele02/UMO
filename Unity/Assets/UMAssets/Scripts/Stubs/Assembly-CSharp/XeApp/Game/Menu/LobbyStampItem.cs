@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class LobbyStampItem : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx m_charaStampIcon;
 		[SerializeField]

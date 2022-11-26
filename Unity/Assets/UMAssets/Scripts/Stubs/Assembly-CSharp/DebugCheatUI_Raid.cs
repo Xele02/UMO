@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DebugCheatUI_Raid : DebugCheatUIBase
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	[SerializeField]
 	private Text m_apInfoText;
 	[SerializeField]

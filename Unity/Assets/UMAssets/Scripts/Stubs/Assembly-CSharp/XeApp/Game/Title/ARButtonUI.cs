@@ -7,5 +7,9 @@ namespace XeApp.Game.Title
 	{
 		[SerializeField]
 		private Button m_gotoARButton;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

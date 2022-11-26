@@ -103,7 +103,26 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xC37444 Offset: 0xC37444 VA: 0xC37444
-		// public bool IsUpdatingContent() { }
+		public bool IsUpdatingContent()
+		{
+			foreach(SetDeckDivaCardControl d in m_divas)
+			{
+				if(d != null)
+				{
+					if (d.IsLoading)
+						return true;
+				}
+			}
+			foreach(SetDeckDivaCardControl d in m_additionDivas)
+			{
+				if(d != null)
+				{
+					if(d.IsLoading)
+						return true;
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0xC3739C Offset: 0xC3739C VA: 0xC3739C
 		private SetDeckDivaCardControl GetDivaControlBySlotNumber(int divaSlotNumber)

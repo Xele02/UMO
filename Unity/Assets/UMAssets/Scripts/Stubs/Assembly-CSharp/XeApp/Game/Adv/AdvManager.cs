@@ -29,5 +29,9 @@ namespace XeApp.Game.Adv
 		private float FADE_TIME;
 		[SerializeField]
 		private AdvVoicePlayer m_advVoicePlayer;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

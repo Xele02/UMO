@@ -28,7 +28,7 @@ public class OKGLGHCBCJP_Database
 		ACGFJFNPLKB_Diva2 = 17,
 		PKDKLHJLEFA_Drop = 18,
 		PGHFPIMIOKE_Emblem = 19,
-		CNGPLGIMJBB_Energy = 20,
+		CNGPLGIMJBB_Enemy = 20,
 		JBFFIPCOGEC_EnergyItem = 21,
 		BBDKHAMANCB_Episode = 22,
 		MIOOJINHHFO_EpiItem = 23,
@@ -153,7 +153,7 @@ public class OKGLGHCBCJP_Database
 		BEOKNKGHFFE_Section.ACGFJFNPLKB_Diva2,
 		BEOKNKGHFFE_Section.PKDKLHJLEFA_Drop,
 		BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem,
-		BEOKNKGHFFE_Section.CNGPLGIMJBB_Energy,
+		BEOKNKGHFFE_Section.CNGPLGIMJBB_Enemy,
 		BEOKNKGHFFE_Section.JBFFIPCOGEC_EnergyItem,
 		BEOKNKGHFFE_Section.BBDKHAMANCB_Episode,
 		BEOKNKGHFFE_Section.MIOOJINHHFO_EpiItem,
@@ -334,8 +334,8 @@ public class OKGLGHCBCJP_Database
 		 {(int)BEOKNKGHFFE_Section.PICOGHJNOJA_Asset,() => { return new LFPJCEMANCK_Asset(); } }, //0x149D5D8				"asset",
 		// {(int)BEOKNKGHFFE_SectionName.DBBOBIHPDNA_Bingo,() => { return new JKICPBIIHNE(); } }, //0x149D644				"bingo",
 		{(int)BEOKNKGHFFE_Section.PEIFIFLMIIF_Board,() => { return new KOGHKIODHPA_Board(); } }, //0x149D6B0					"board",
-		// {(int)BEOKNKGHFFE_SectionName.JOMAMMACANH_BonusVC,() => { return new HHJHIFJIKAC(); } }, //0x149D71C				"bonus_vc",
-		// {(int)BEOKNKGHFFE_SectionName.DHMPHBPODCI_CampaignDiva,() => { return new AIPOFGJGPKI(); } }, //0x149D788				"campaign_diva",
+		{(int)BEOKNKGHFFE_Section.JOMAMMACANH_BonusVC,() => { return new HHJHIFJIKAC_BonusVc(); } }, //0x149D71C				"bonus_vc",
+		{(int)BEOKNKGHFFE_Section.DHMPHBPODCI_CampaignDiva,() => { return new AIPOFGJGPKI_CampaignDiva(); } }, //0x149D788				"campaign_diva",
 		// {(int)BEOKNKGHFFE_SectionName.DGPIFKCLAGB_Compo,() => { return new HHPEMHHCKBE(); } }, //0x149D7F4				"compo",
 		// {(int)BEOKNKGHFFE_SectionName.EFHFNMAIEJG_CosItem,() => { return new PLPBJOFICEJ(); } }, //0x149D860				"cos_item",
 		{(int)BEOKNKGHFFE_Section.LOFOAIEMECN_Costume,() => { return new LCLCCHLDNHJ_Costume(); } }, //0x149D8CC					"costume",
@@ -347,9 +347,9 @@ public class OKGLGHCBCJP_Database
 		// {(int)BEOKNKGHFFE_SectionName.DHMEFNNJANH_DecoStamp,() => { return new IHFIAFDLAAK(); } }, //0x149DB54				"deco_stamp",
 		{(int)BEOKNKGHFFE_Section.CNENKCCMEFL_Diva,() => { return new HPBPIOPPDCB_Diva(); } }, //0x149DBC0				"diva",
 		{(int)BEOKNKGHFFE_Section.ACGFJFNPLKB_Diva2,() => { return new HMIJOOPHJLB_Diva2(); } }, //0x149DC2C				"diva2",
-		// {(int)BEOKNKGHFFE_SectionName.PKDKLHJLEFA_Drop,() => { return new NBPHJDCOECH(); } }, //0x149DC98				"drop",
-		// {(int)BEOKNKGHFFE_SectionName.PGHFPIMIOKE_Emblem,() => { return new IHGBPAJMJFK(); } }, //0x149DD04				"emblem",
-		// {(int)BEOKNKGHFFE_SectionName.CNGPLGIMJBB_Energy,() => { return new MHDFCLCMDKO(); } }, //0x149DD70				"enemy",
+		{(int)BEOKNKGHFFE_Section.PKDKLHJLEFA_Drop,() => { return new NBPHJDCOECH_Drop(); } }, //0x149DC98				"drop",
+		{(int)BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem,() => { return new IHGBPAJMJFK_Emblem(); } }, //0x149DD04				"emblem",
+		{(int)BEOKNKGHFFE_Section.CNGPLGIMJBB_Enemy,() => { return new MHDFCLCMDKO_Enemy(); } }, //0x149DD70				"enemy",
 		// {(int)BEOKNKGHFFE_SectionName.JBFFIPCOGEC_EnergyItem,() => { return new JKDKODAPGBJ(); } }, //0x149DDDC				"energy_item",
 		{(int)BEOKNKGHFFE_Section.BBDKHAMANCB_Episode,() => { return new KMOGDEOKHPG_Episode(); } }, //0x149DE48				"episode",
 		// {(int)BEOKNKGHFFE_SectionName.MIOOJINHHFO_EpiItem,() => { return new KIICLPJJBNL(); } }, //0x149DEB4				"epi_item",
@@ -410,14 +410,14 @@ public class OKGLGHCBCJP_Database
 		// {(int)BEOKNKGHFFE_SectionName.FPFHPCDNIDN_GachaLimit,() => { return new BIHCALIAJII(); } }, //0x149F5E8				"gacha_limit",
 		{(int)BEOKNKGHFFE_Section.OJFINMGAFPG_GachaTicket,() => { return new PMDCIJMMNGK_GachaTicket(); } }, //0x149F654					"gacha_ticket",
 		{(int)BEOKNKGHFFE_Section.HJBCLCJIAMN_Game,() => { return new LDDDBPNGGIN_Game(); } }, //0x149F6C0					"game",
-		// {(int)BEOKNKGHFFE_SectionName.JOMKJEEEGLM_GrowItem,() => { return new KEEKEFEPKFN(); } }, //0x149F72C				"grow_item",
+		{(int)BEOKNKGHFFE_Section.JOMKJEEEGLM_GrowItem,() => { return new KEEKEFEPKFN_GrowItem(); } }, //0x149F72C				"grow_item",
 		// {(int)BEOKNKGHFFE_SectionName.MGLIHABHABA_HelpBrowser,() => { return new KCDJCKCKKFM(); } }, //0x149F798				"help_browser",
 		// {(int)BEOKNKGHFFE_SectionName.JHIAPFBBCCJ_HomeBg,() => { return new ALJHJDHNFFB(); } }, //0x149F804				"home_bg",
 		// {(int)BEOKNKGHFFE_SectionName.FLANCIJMJHP_HomePickup,() => { return new JJCJKALEIAC(); } }, //0x149F870				"home_pickup",
 		// {(int)BEOKNKGHFFE_SectionName.BKGFKGIGJNL_HomeVoice,() => { return new NPCCDMKJBMM(); } }, //0x149F8DC				"home_voice",
 		// {(int)BEOKNKGHFFE_SectionName.NLIJGKHKMII_RichBanner,() => { return new JKMLBONMAHD(); } }, //0x149F948				"rich_banner",
 		{(int)BEOKNKGHFFE_Section.CLAMLDCILJO_Intimacy,() => { return new GJALOMELEHD_Intimacy(); } }, //0x149F9B4					"intimacy",
-		// {(int)BEOKNKGHFFE_SectionName.FONDIJMKCAJ_LimitOver,() => { return new LLKLAKGKNLD(); } }, //0x149FA20				"limit_over",
+		{(int)BEOKNKGHFFE_Section.FONDIJMKCAJ_LimitOver,() => { return new LLKLAKGKNLD_LimitOver(); } }, //0x149FA20				"limit_over",
 		// {(int)BEOKNKGHFFE_SectionName.KPBNAHEIJIC_LimitedItem,() => { return new EGLOKAEIHCB(); } }, //0x149FA8C				"limited_item",
 		// {(int)BEOKNKGHFFE_SectionName.ECEDGCHFCEF_Medal,() => { return new HHFFOACILKG(); } }, //0x149FAF8				"medal",
 		{(int)BEOKNKGHFFE_Section.HOBIIBFBMKJ_MonthlyPass,() => { return new KBCCGHLCFNO_MonthlyPass(); } }, //0x149FB64					"monthly_pass",
@@ -430,7 +430,7 @@ public class OKGLGHCBCJP_Database
 		// {(int)BEOKNKGHFFE_SectionName.KOALKJHIHFC_RareUpItem,() => { return new CKDOOBKOJBB(); } }, //0x149FE58				"rareup_item",
 		{(int)BEOKNKGHFFE_Section.KNMIJOPCJCH_Scene,() => { return new MLIBEPGADJH_Scene(); } }, //0x149FEC4					"scene",
 		// {(int)BEOKNKGHFFE_SectionName.ELBGPMIFOHO_Shop,() => { return new BKPAPCMJKHE(); } }, //0x149FF30				"shop",
-		// {(int)BEOKNKGHFFE_SectionName.ABANJLALLBK_Skill,() => { return new JNKEEAOKNCI(); } }, //0x149FF9C				"skill",
+		{(int)BEOKNKGHFFE_Section.ABANJLALLBK_Skill,() => { return new JNKEEAOKNCI_Skill(); } }, //0x149FF9C				"skill",
 		// {(int)BEOKNKGHFFE_SectionName.HGOGFPOCKFA_Sns,() => { return new BOKMNHAFJHF(); } }, //0x14A0008				"sns",
 		// {(int)BEOKNKGHFFE_SectionName.LCEEHPPLHNC_SpItem,() => { return new PPNFHHPJOKK(); } }, //0x14A0074				"sp_item",
 		// {(int)BEOKNKGHFFE_SectionName.AOPBBHMIEPB_Story,() => { return new LAEGMENIEDB(); } }, //0x14A00E0				"story",
@@ -453,8 +453,8 @@ public class OKGLGHCBCJP_Database
 	   public LFPJCEMANCK_Asset IELDDHJMFKN_Asset { get; private set; } // 0x1C POIPNMNLPII LDEGIHHDKIM OPKDGNFPLMJ
 	// public JKICPBIIHNE FPOIPGFFAPE { get; private set; } // 0x20 IGDEDAEJHHE DGFJAPEKHFO GNMGEPPDCKA
 	   public KOGHKIODHPA_Board JEMMMJEJLNL_Board { get; private set; } // 0x24 JCNENMIJKJM LEOMPFKGIDH OJLDODJNICJ
-	// public HHJHIFJIKAC NBKNAAPBFFL { get; private set; } // 0x28 DPLHDEEFDJM ADJIKEFIPJA JNIKDFJOHFA
-	// public AIPOFGJGPKI NGCCGLLLDIB { get; private set; } // 0x2C AKMEDCJEFIM ONFFEFOLNJA KHNFCNCCAJE
+	   public HHJHIFJIKAC_BonusVc NBKNAAPBFFL_BonusVc { get; private set; } // 0x28 DPLHDEEFDJM ADJIKEFIPJA JNIKDFJOHFA
+	public AIPOFGJGPKI_CampaignDiva NGCCGLLLDIB_CampaignDiva { get; private set; } // 0x2C AKMEDCJEFIM ONFFEFOLNJA KHNFCNCCAJE
 	// public HHPEMHHCKBE ALFKMKICDPP { get; private set; } // 0x30 EGAMKFEHKOH OFKPEOKIBOP FBMPHCEEOGP
 	// public PLPBJOFICEJ GOGFKAECFIP { get; private set; } // 0x34 MFAKBNOPMAL ONAJMJDFKII OKGBJKKKBJK
 	   public LCLCCHLDNHJ_Costume MFPNGNMFEAL_Costume { get; private set; } // 0x38 BNPFDJNHBIN BHOKMJJHOOK PCDDICJFIEI
@@ -466,9 +466,9 @@ public class OKGLGHCBCJP_Database
 	// public IHFIAFDLAAK GAPONCJOKAC { get; private set; } // 0x50 NCNFBFCCPGG OJGMINMADBB NEPJLJDPKKN
 	   public HPBPIOPPDCB_Diva MGFMPKLLGHE_Diva { get; private set; } // 0x54 ONCMJNDIMPD // ODGINDHEIBJ GIFOPLEGJCI
 	   public HMIJOOPHJLB_Diva2 OAINIGNLJKC_Diva2 { get; private set; } // 0x58 EFGHBGKGCDI KNBBENGMPJL MAPJOGCOBCF
-	// public NBPHJDCOECH HGLIIPFLMFB { get; private set; } // 0x5C DNBKBMJEDFG GEHKLFKNGDK DAEJHNBAAHD
-	// public IHGBPAJMJFK LBNBNAFGMDE { get; private set; } // 0x60 DOKBBBOMOIP AEKIOLPFPCO PMEOIDAFOLD
-	// public MHDFCLCMDKO OPFBEAJJMJB { get; private set; } // 0x64 DMKMEHGHLAL EDGAJGHMGOK AIBFBDMGEAL
+	public NBPHJDCOECH_Drop HGLIIPFLMFB_Drop { get; private set; } // 0x5C DNBKBMJEDFG GEHKLFKNGDK DAEJHNBAAHD
+	public IHGBPAJMJFK_Emblem LBNBNAFGMDE_Emblem { get; private set; } // 0x60 DOKBBBOMOIP AEKIOLPFPCO PMEOIDAFOLD
+	public MHDFCLCMDKO_Enemy OPFBEAJJMJB_Enemy { get; private set; } // 0x64 DMKMEHGHLAL EDGAJGHMGOK AIBFBDMGEAL
 	// public JKDKODAPGBJ KOPOGNLKAEN { get; private set; } // 0x68 DACOHEDKLPD AEOJDBAPOEN PABHKGHLLLJ
 	// public KIICLPJJBNL NEGGMILDEEF { get; private set; } // 0x6C EEAPHFKEOOP EPDABADJFBH CFGCGOGNBMM
 	public KMOGDEOKHPG_Episode MOLEPBNJAGE_Episode { get; private set; } // 0x70 PKELMNGHNJI GJAGLJAIAGC ECGGGFGFEOH
@@ -483,14 +483,14 @@ public class OKGLGHCBCJP_Database
 	// public BIHCALIAJII OINLLHOMEAK { get; private set; } // 0x94 NFNMMHLNOME ACMDICBGLLH AECOJNDBPPA
 	   public PMDCIJMMNGK_GachaTicket GKMAHADAAFI_GachaTicket { get; private set; } // 0x98 CDPNLBODAFG MIOKEFPFJPL JCGBPLBDCED
 	   public LDDDBPNGGIN_Game HNMMJINNHII_Game { get; private set; } // 0x9C OEGOKKFEMLN // NNKOOANMMJN FDBLNEBHBKD
-	// public KEEKEFEPKFN NKDGLGCAPEI { get; private set; } // 0xA0 OEBKCKBOHDC GKNAKMMFPJG FPNMNKOHIDL
+	public KEEKEFEPKFN_GrowItem NKDGLGCAPEI_GrowItem { get; private set; } // 0xA0 OEBKCKBOHDC GKNAKMMFPJG FPNMNKOHIDL
 	// public KCDJCKCKKFM LOJAMHAADBF { get; private set; } // 0xA4 PHJBEOHOPNK BEONJGJAHHA GKIMOCCMPNE
 	// public ALJHJDHNFFB PFEKKPABPKL { get; private set; } // 0xA8 ODEEPLDCIDD CJNCHHCJDLG EJKAKGDGDOJ
 	// public JJCJKALEIAC NFDHMGGLEPN { get; private set; } // 0xAC GGHPDLEFLAF KFBIAJPDFOL BLPBJMIOOHJ
 	// public NPCCDMKJBMM MGIMEEEALPK { get; private set; } // 0xB0 IIGKAHAPDCK EMOJEAIPDCL KJJAAHMMPDD
 	// public JKMLBONMAHD MLGEHCJPAFB { get; private set; } // 0xB4 DIOBCOIDGBL KLENJIKKNGL MCEKLAONFOO
 	   public GJALOMELEHD_Intimacy KDIALKDKBGE_Intimacy { get; private set; } // 0xB8 AJILIAMLKCN OHOFMNKPACI AJNFIOMEBPE
-	// public LLKLAKGKNLD HDGOHBFKKDM { get; private set; } // 0xBC GOCPJPDCIFF HNHCBNDJBIL OMHPACMOBMD
+	public LLKLAKGKNLD_LimitOver HDGOHBFKKDM_LimitOver { get; private set; } // 0xBC GOCPJPDCIFF HNHCBNDJBIL OMHPACMOBMD
 	// public EGLOKAEIHCB IHPFCIJKFIC { get; private set; } // 0xC0 DLCGGEGFOFM BKAPBBKJELI MINMKCJFHDG
 	// public HHFFOACILKG ICICKEBMEFA { get; private set; } // 0xC4 BLEKIIHCAEL ECAMAOEFEJK IEOJCBOIKPN
 	   public KBCCGHLCFNO_MonthlyPass MEGJDBJCEOC_MonthlyPass { get; private set; } // 0xC8 LAJCNNENFPJ MIALNGOCOPJ NABHFEAEHFH
@@ -503,7 +503,7 @@ public class OKGLGHCBCJP_Database
 	// public CKDOOBKOJBB KKIMFMKOHFH { get; private set; } // 0xE4 NFOFMEKFHEA AMANIEHMCLH OHKJEENNABM
 	   public MLIBEPGADJH_Scene ECNHDEHADGL_Scene { get; private set; } // 0xE8 IEIOOBGMFNI ACAKHGDFOPE MINEODNFCJG
 	// public BKPAPCMJKHE IFLGCDGOLOP { get; private set; } // 0xEC LPLEPMGGDMC JPPGBAEFJHD NNMGMDJDAEB
-	// public JNKEEAOKNCI FOFADHAENKC { get; private set; } // 0xF0 EMMJGCNLPIC AIKMDJIOIPO ODHIIKEDPDK
+	public JNKEEAOKNCI_Skill FOFADHAENKC_Skill { get; private set; } // 0xF0 EMMJGCNLPIC AIKMDJIOIPO ODHIIKEDPDK
 	// public BOKMNHAFJHF OMGFKMANMAB { get; private set; } // 0xF4 MFLNAPMHPKD IEFPCCJONCN FJJMCAEKDCM
 	// public PPNFHHPJOKK OOEPHOEFBNL { get; private set; } // 0xF8 GEDHKEFKHEH HCAIIFDMGHF ELGOCAOHJBM
 	// public LAEGMENIEDB OHCIFMDPAPD { get; private set; } // 0xFC OCCBGBFIPFH HLLFEGMBGLE IKHIJOGKIAL
@@ -691,8 +691,8 @@ public class OKGLGHCBCJP_Database
 		IELDDHJMFKN_Asset = null;
 		// FPOIPGFFAPE = null;
 		JEMMMJEJLNL_Board = null;
-		// NBKNAAPBFFL = null;
-		// NGCCGLLLDIB = null;
+		NBKNAAPBFFL_BonusVc = null;
+		NGCCGLLLDIB_CampaignDiva = null;
 		// ALFKMKICDPP = null;
 		// GOGFKAECFIP = null;
 		MFPNGNMFEAL_Costume = null;
@@ -704,9 +704,9 @@ public class OKGLGHCBCJP_Database
 		// GAPONCJOKAC = null;
 		MGFMPKLLGHE_Diva = null;
 		OAINIGNLJKC_Diva2 = null;
-		// HGLIIPFLMFB = null;
-		// LBNBNAFGMDE = null;
-		// OPFBEAJJMJB = null;
+		HGLIIPFLMFB_Drop = null;
+		LBNBNAFGMDE_Emblem = null;
+		OPFBEAJJMJB_Enemy = null;
 		// KOPOGNLKAEN = null;
 		// NEGGMILDEEF = null;
 		MOLEPBNJAGE_Episode = null;
@@ -721,14 +721,14 @@ public class OKGLGHCBCJP_Database
 		// OINLLHOMEAK = null;
 		GKMAHADAAFI_GachaTicket = null;
 		HNMMJINNHII_Game = null;
-		// NKDGLGCAPEI = null;
+		NKDGLGCAPEI_GrowItem = null;
 		// LOJAMHAADBF = null;
 		// PFEKKPABPKL = null;
 		// NFDHMGGLEPN = null;
 		// MGIMEEEALPK = null;
 		// MLGEHCJPAFB = null;
 		KDIALKDKBGE_Intimacy = null;
-		// HDGOHBFKKDM = null;
+		HDGOHBFKKDM_LimitOver = null;
 		// IHPFCIJKFIC = null;
 		// ICICKEBMEFA = null;
 		MEGJDBJCEOC_MonthlyPass = null;
@@ -741,7 +741,7 @@ public class OKGLGHCBCJP_Database
 		// KKIMFMKOHFH = null;
 		ECNHDEHADGL_Scene = null;
 		// IFLGCDGOLOP = null;
-		// FOFADHAENKC = null;
+		FOFADHAENKC_Skill = null;
 		// OMGFKMANMAB = null;
 		// OOEPHOEFBNL = null;
 		// OHCIFMDPAPD = null;
@@ -773,8 +773,8 @@ public class OKGLGHCBCJP_Database
 					case BEOKNKGHFFE_Section.PICOGHJNOJA_Asset: IELDDHJMFKN_Asset = (LFPJCEMANCK_Asset)item; break;
 					// case BEOKNKGHFFE_Section.DBBOBIHPDNA_Bingo: FPOIPGFFAPE = item; break;
 					case BEOKNKGHFFE_Section.PEIFIFLMIIF_Board: JEMMMJEJLNL_Board = (KOGHKIODHPA_Board)item; break;
-					// case BEOKNKGHFFE_Section.JOMAMMACANH_BonusVC: NBKNAAPBFFL = item; break;
-					// case BEOKNKGHFFE_Section.DHMPHBPODCI_CampaignDiva: NGCCGLLLDIB = item; break;
+					case BEOKNKGHFFE_Section.JOMAMMACANH_BonusVC: NBKNAAPBFFL_BonusVc = (HHJHIFJIKAC_BonusVc)item; break;
+					case BEOKNKGHFFE_Section.DHMPHBPODCI_CampaignDiva: NGCCGLLLDIB_CampaignDiva = (AIPOFGJGPKI_CampaignDiva)item; break;
 					// case BEOKNKGHFFE_Section.DGPIFKCLAGB_Compo: ALFKMKICDPP = item; break;
 					// case BEOKNKGHFFE_Section.EFHFNMAIEJG_CosItem: GOGFKAECFIP = item; break;
 					case BEOKNKGHFFE_Section.LOFOAIEMECN_Costume: MFPNGNMFEAL_Costume = (LCLCCHLDNHJ_Costume)item; break;
@@ -786,9 +786,9 @@ public class OKGLGHCBCJP_Database
 					// case BEOKNKGHFFE_Section.DHMEFNNJANH_DecoStamp: GAPONCJOKAC = item; break;
 					case BEOKNKGHFFE_Section.CNENKCCMEFL_Diva: MGFMPKLLGHE_Diva = (HPBPIOPPDCB_Diva)item; break;
 					case BEOKNKGHFFE_Section.ACGFJFNPLKB_Diva2: OAINIGNLJKC_Diva2 = (HMIJOOPHJLB_Diva2)item; break;
-					// case BEOKNKGHFFE_Section.PKDKLHJLEFA_Drop: HGLIIPFLMFB = item; break;
-					// case BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem: LBNBNAFGMDE = item; break;
-					// case BEOKNKGHFFE_Section.CNGPLGIMJBB_Energy: OPFBEAJJMJB = item; break;
+					case BEOKNKGHFFE_Section.PKDKLHJLEFA_Drop: HGLIIPFLMFB_Drop = (NBPHJDCOECH_Drop)item; break;
+					case BEOKNKGHFFE_Section.PGHFPIMIOKE_Emblem: LBNBNAFGMDE_Emblem = (IHGBPAJMJFK_Emblem)item; break;
+					case BEOKNKGHFFE_Section.CNGPLGIMJBB_Enemy: OPFBEAJJMJB_Enemy = (MHDFCLCMDKO_Enemy)item; break;
 					// case BEOKNKGHFFE_Section.JBFFIPCOGEC_EnergyItem: KOPOGNLKAEN = item; break;
 					case BEOKNKGHFFE_Section.BBDKHAMANCB_Episode: MOLEPBNJAGE_Episode = (KMOGDEOKHPG_Episode)item; break;
 					// case BEOKNKGHFFE_Section.MIOOJINHHFO_EpiItem: NEGGMILDEEF = item; break;
@@ -803,14 +803,14 @@ public class OKGLGHCBCJP_Database
 					// case BEOKNKGHFFE_Section.FPFHPCDNIDN_GachaLimit: OINLLHOMEAK = item; break;
 					case BEOKNKGHFFE_Section.OJFINMGAFPG_GachaTicket: GKMAHADAAFI_GachaTicket = (PMDCIJMMNGK_GachaTicket)item; break;
 					case BEOKNKGHFFE_Section.HJBCLCJIAMN_Game: HNMMJINNHII_Game = (LDDDBPNGGIN_Game)item; break;
-					// case BEOKNKGHFFE_Section.JOMKJEEEGLM_GrowItem: NKDGLGCAPEI = item; break;
+					case BEOKNKGHFFE_Section.JOMKJEEEGLM_GrowItem: NKDGLGCAPEI_GrowItem = (KEEKEFEPKFN_GrowItem)item; break;
 					// case BEOKNKGHFFE_Section.MGLIHABHABA_HelpBrowser: LOJAMHAADBF = item; break;
 					// case BEOKNKGHFFE_Section.JHIAPFBBCCJ_HomeBg: PFEKKPABPKL = item; break;
 					// case BEOKNKGHFFE_Section.FLANCIJMJHP_HomePickup: NFDHMGGLEPN = item; break;
 					// case BEOKNKGHFFE_Section.BKGFKGIGJNL_HomeVoice: MGIMEEEALPK = item; break;
 					// case BEOKNKGHFFE_Section.NLIJGKHKMII_RichBanner: MLGEHCJPAFB = item; break;
 					case BEOKNKGHFFE_Section.CLAMLDCILJO_Intimacy: KDIALKDKBGE_Intimacy = (GJALOMELEHD_Intimacy)item; break;
-					// case BEOKNKGHFFE_Section.FONDIJMKCAJ_LimitOver: HDGOHBFKKDM = item; break;
+					case BEOKNKGHFFE_Section.FONDIJMKCAJ_LimitOver: HDGOHBFKKDM_LimitOver = (LLKLAKGKNLD_LimitOver)item; break;
 					// case BEOKNKGHFFE_Section.KPBNAHEIJIC_LimitedItem: IHPFCIJKFIC = item; break;
 					// case BEOKNKGHFFE_Section.ECEDGCHFCEF_Medal: ICICKEBMEFA = item; break;
 					case BEOKNKGHFFE_Section.HOBIIBFBMKJ_MonthlyPass: MEGJDBJCEOC_MonthlyPass = (KBCCGHLCFNO_MonthlyPass)item; break;
@@ -823,7 +823,7 @@ public class OKGLGHCBCJP_Database
 					// case BEOKNKGHFFE_Section.KOALKJHIHFC_RareUpItem: KKIMFMKOHFH = item; break;
 					case BEOKNKGHFFE_Section.KNMIJOPCJCH_Scene: ECNHDEHADGL_Scene = (MLIBEPGADJH_Scene)item; break;
 					// case BEOKNKGHFFE_Section.ELBGPMIFOHO_Shop: IFLGCDGOLOP = item; break;
-					// case BEOKNKGHFFE_Section.ABANJLALLBK_Skill: FOFADHAENKC = item; break;
+					case BEOKNKGHFFE_Section.ABANJLALLBK_Skill: FOFADHAENKC_Skill = (JNKEEAOKNCI_Skill)item; break;
 					// case BEOKNKGHFFE_Section.HGOGFPOCKFA_Sns: OMGFKMANMAB = item; break;
 					// case BEOKNKGHFFE_Section.LCEEHPPLHNC_SpItem: OOEPHOEFBNL = item; break;
 					// case BEOKNKGHFFE_Section.AOPBBHMIEPB_Story: OHCIFMDPAPD = item; break;

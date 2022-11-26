@@ -38,5 +38,9 @@ namespace XeApp.Game
 		private InputField inputField_RankingRank;
 		[SerializeField]
 		private Toggle toggel_RankingRank;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

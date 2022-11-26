@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class SkewEffect : BaseMeshEffect
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	public enum SkewMode
 	{
 		TextArea = 0,

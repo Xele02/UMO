@@ -17,5 +17,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private GameObject m_normalTimeModel;
 		[SerializeField]
 		private MeshFilter m_colonMesh;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

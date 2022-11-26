@@ -8,6 +8,10 @@ namespace XeApp.Game.Menu
 {
 	public class UnitCheckWindow : UnitSetSettingButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private StayButton m_valkyrieButton;
 		[SerializeField]

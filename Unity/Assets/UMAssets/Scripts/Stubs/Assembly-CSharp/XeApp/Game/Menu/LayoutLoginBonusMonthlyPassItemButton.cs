@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutLoginBonusMonthlyPassItemButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx m_imageItem;
 		[SerializeField]

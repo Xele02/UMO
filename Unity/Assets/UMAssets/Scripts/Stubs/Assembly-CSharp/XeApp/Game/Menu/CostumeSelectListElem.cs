@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeSelectListElem : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		public Text m_text_status;
 		[SerializeField]

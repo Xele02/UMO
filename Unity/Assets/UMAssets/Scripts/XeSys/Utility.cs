@@ -194,6 +194,10 @@ namespace XeSys
 		// public static string MakeMMSSsssTimeBySec(float sec) { }
 
 		// // RVA: 0x23AAC90 Offset: 0x23AAC90 VA: 0x23AAC90
-		// public static long RoundDownDayUnixTime(long unixtime, int offset = 0) { }
+		public static long RoundDownDayUnixTime(long unixtime, int offset = 0)
+		{
+			DateTime d = GetLocalDateTime(unixtime);
+			return GetTargetUnixTime(d.Year, d.Month, d.Day, 0, 0, 0);
+		}
 	}
 }

@@ -64,7 +64,15 @@ namespace XeApp.Game.Common
 		// RVA: 0xE62014 Offset: 0xE62014 VA: 0xE62014
 		private void OnDestroy()
 		{
-			TodoLogger.Log(0, "BoneSpringAnimObject OnDestroy");
+			if(m_list_preset != null)
+			{
+				for(int i = 0; i < m_list_preset.Count; i++)
+				{
+					m_list_preset[i].m_preset_obj.transform.SetParent(null);
+					Destroy(m_list_preset[i].m_preset_obj);
+				}
+				m_list_preset.Clear();
+			}
 		}
 
 		// RVA: 0xE62168 Offset: 0xE62168 VA: 0xE62168

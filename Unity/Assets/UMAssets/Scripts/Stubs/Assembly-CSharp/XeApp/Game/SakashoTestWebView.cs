@@ -6,6 +6,10 @@ namespace XeApp.Game
 {
 	public class SakashoTestWebView : UIBehaviour
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public string url;
 		[SerializeField]
 		private Button buttonGoBack;

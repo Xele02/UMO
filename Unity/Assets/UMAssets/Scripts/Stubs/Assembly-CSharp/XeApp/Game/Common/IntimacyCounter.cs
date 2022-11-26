@@ -13,5 +13,9 @@ namespace XeApp.Game.Common
 		private Text m_textTime;
 		[SerializeField]
 		private InOutAnime m_inOutCount;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

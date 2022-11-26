@@ -25,4 +25,8 @@ public class DebugBattleResultInfo : MonoBehaviour
 	private Text m_totalPoint;
 	[SerializeField]
 	private Text m_rank;
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement Monobehaviour");
+	}
 }

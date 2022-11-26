@@ -6,5 +6,9 @@ namespace XeApp.Game.MiniGame
 	{
 		[SerializeField]
 		private ShootingPauseBotton m_pauseButton;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

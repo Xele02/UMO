@@ -4,6 +4,10 @@ namespace XeApp.Game.MiniGame
 {
 	public class ShootingPlayerCharacter : ShootingTask
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private ShootingPlayerHpLayout m_hpLayout;
 		[SerializeField]

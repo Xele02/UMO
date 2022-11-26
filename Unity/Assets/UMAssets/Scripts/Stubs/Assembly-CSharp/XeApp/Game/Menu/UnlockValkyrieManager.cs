@@ -7,5 +7,9 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private ScriptableObject m_CameraParam;
 		public bool IsAnimEnd;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

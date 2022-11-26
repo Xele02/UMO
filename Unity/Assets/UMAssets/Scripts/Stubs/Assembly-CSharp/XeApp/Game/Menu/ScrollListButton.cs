@@ -5,6 +5,10 @@ namespace XeApp.Game.Menu
 {
 	public class ScrollListButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private bool root_parent;
 		[SerializeField]

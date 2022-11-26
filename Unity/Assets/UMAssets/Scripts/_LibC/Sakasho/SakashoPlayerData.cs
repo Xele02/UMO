@@ -25,7 +25,12 @@ namespace ExternLib
             {
                 string str = (string)names[i];
                 message += @"
-        """+str+@""":{}"+(i != names.HNBFOAJIIAL_Count -1 ? "," : "");
+        """+str+@""":{";
+				if(str == "common")
+				{
+					message += "\"mv_ticket\":999";
+				}
+				message += @"}"+(i != names.HNBFOAJIIAL_Count -1 ? "," : "");
             }
             message += @"
     }

@@ -157,7 +157,7 @@ public class JDDGPJDKHNE
 							PIBMLNOFHHG = PIBMLNOFHHG + 1;
 							if(PIBMLNOFHHG < 30)
 								return;
-							TodoLogger.Log(5, "Check test");
+							TodoLogger.Log(100, "Check test "+ Utility.GetCurrentUnixTime() + " -  "+ ELFLFGCFPIP+" < 3");
 							if(Utility.GetCurrentUnixTime() - ELFLFGCFPIP < 3)
 							{
 								return;
@@ -267,5 +267,9 @@ public class JDDGPJDKHNE
 	// public long FNBFIIOCJNF() { }
 
 	// // RVA: 0x1C32774 Offset: 0x1C32774 VA: 0x1C32774
-	// public static string GPLMOKEIOLE() { }
+	public static string GPLMOKEIOLE()
+	{
+		TodoLogger.Log(0, "GPLMOKEIOLE");
+		return "";
+	}
 }

@@ -7,7 +7,7 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xF6B558 Offset: 0xF6B558 VA: 0xF6B558
 		public void Disable()
 		{
-			TodoLogger.Log(0, "TODO");
+			gameObject.SetActive(false);
 		}
 	}
 }

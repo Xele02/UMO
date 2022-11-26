@@ -4,10 +4,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.UI;
 using XeSys;
+using XeSys.Gfx;
 
 public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 {
@@ -17,14 +20,16 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 		public Shader shader;
 	}
     private  Dictionary<int,ShaderInfo> shaderList = new Dictionary<int, ShaderInfo>();
+	private HashSet<int> usedShaderList = new HashSet<int>();
 	private HashSet<string> alreadyParsedBundle = new HashSet<string>();
 	private bool isInitialized = false;
+	ShaderList shaderListResource;
 
-    public void Start()
+	public void Start()
     {
         UnityEngine.Object.DontDestroyOnLoad(this);
 		isInitialized = true;
-
+		shaderListResource = Resources.Load<ShaderList>("ShaderList");
 	}
 
 	public bool IsInitialized { get { return isInitialized; } }
@@ -62,13 +67,12 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 				{
 					ShaderInfo info = new ShaderInfo();
 					info.name = System.IO.Path.GetFileNameWithoutExtension(assetName);
-
-					string[] shadersList = AssetDatabase.FindAssets(info.name+" t:Shader");
-					foreach(string s in shadersList)
+					foreach(ShaderList.ShaderInfo i in shaderListResource.shaderList)
 					{
-						if(System.IO.Path.GetFileNameWithoutExtension(AssetDatabase.GUIDToAssetPath(s)).ToLower() == info.name.ToLower())
+						if(i.fileName == info.name.ToLower())
 						{
-							info.shader = AssetDatabase.LoadAssetAtPath<Shader>(AssetDatabase.GUIDToAssetPath(s));
+							info.shader = i.shader;
+							usedShaderList.Add(info.shader.GetInstanceID());
 							break;
 						}
 					}
@@ -99,11 +103,14 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 	public void FixMaterialShaderMat(Material mat)
 	{
 		UnityEngine.Debug.Log("Checking shader for mat "+mat.name+" with shader "+mat.shader.GetInstanceID()+" "+mat.shader.name);
-		if(!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(mat.shader)) && !AssetDatabase.GetAssetPath(mat.shader).Contains("unity default resources"))
+//#if UNITY_EDITOR
+		if(usedShaderList.Contains(mat.shader.GetInstanceID()))
+		//if (!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(mat.shader)) && !AssetDatabase.GetAssetPath(mat.shader).Contains("unity default resources"))
 		{
-			UnityEngine.Debug.Log("Already on disk shader used : "+AssetDatabase.GetAssetPath(mat.shader));
+			UnityEngine.Debug.Log("Already on disk shader used : "+mat.shader.name);
 			return;
 		}
+//#endif
 		//if(mat.shader.isSupported)
 		//	return;
 		if(!shaderList.ContainsKey(mat.shader.GetInstanceID()))
@@ -117,12 +124,21 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 					UnityEngine.Debug.Log(mat.shader.name);
 					info = new ShaderInfo();
 					info.shader = shader;
+/*#if UNITY_EDITOR
 					info.name = System.IO.Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(shader));
+#endif*/
+					info.name = "UnknownShader "+shader.GetInstanceID()+" "+ shader.name;
+					foreach(var i in shaderListResource.shaderList)
+					{
+						if (i.shader == shader)
+							info.name = i.fileName;
+					}
 				}
 			}
 			if(info != null)
 			{
 				shaderList.Add(mat.shader.GetInstanceID(), info);
+				usedShaderList.Add(info.shader.GetInstanceID());
 				Debug.Log("Loaded game shader "+mat.shader.GetInstanceID()+" "+info.name);
 			}
 		}
@@ -132,11 +148,15 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 			Shader shader = shaderList[shaderId].shader;
 			if(shader != null)
 			{
+#if UNITY_EDITOR
 				var so = new SerializedObject(mat);
 				int renderQueue = so.FindProperty("m_CustomRenderQueue").intValue;
+#endif
 				mat.shader = shader;
-				if(renderQueue != -1)
+#if UNITY_EDITOR
+				if (renderQueue != -1)
 					mat.renderQueue = renderQueue;
+#endif
 				Debug.Log("Loaded shader "+shaderId+" "+shader.name+" on "+mat.name);
 			}
 			else
@@ -183,6 +203,18 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 			if (projs[i].material != null)
 			{
 				FixMaterialShader(projs[i].material);
+			}
+		}
+		RawImageEx[] rawEx = obj.GetComponentsInChildren<RawImageEx>(true);
+		for(int i = 0; i < rawEx.Length; i++)
+		{
+			if (rawEx[i].MaterialMul != null)
+			{
+				FixMaterialShader(rawEx[i].MaterialMul);
+			}
+			if (rawEx[i].MaterialAdd != null)
+			{
+				FixMaterialShader(rawEx[i].MaterialAdd);
 			}
 		}
 	}

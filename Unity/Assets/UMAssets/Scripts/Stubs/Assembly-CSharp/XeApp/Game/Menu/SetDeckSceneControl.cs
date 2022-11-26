@@ -19,5 +19,9 @@ namespace XeApp.Game.Menu
 		private SetDeckSceneStatusControl m_statucControl;
 		[SerializeField]
 		private MusicAttrIconScriptableObject m_attrIconEffectSprites;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

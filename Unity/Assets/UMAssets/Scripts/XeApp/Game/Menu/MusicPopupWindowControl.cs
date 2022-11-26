@@ -16,11 +16,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x104BB44 Offset: 0x104BB44 VA: 0x104BB44
 		public void Initialize(Transform parent)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "MusicPopupWindowControl Initialize");
 		}
 
 		// // RVA: 0x104BE40 Offset: 0x104BE40 VA: 0x104BE40
-		// public void Release() { }
+		public void Release()
+		{
+			TodoLogger.Log(0, "MusicPopupWindowControl Release");
+		}
 
 		// // RVA: 0x104C020 Offset: 0x104C020 VA: 0x104C020
 		// public void Show(MonoBehaviour mb, MusicPopupWindowControl.CallType type, int musicId, EJKBKMBJMGL enemyData, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callBack, bool isSLive = False) { }

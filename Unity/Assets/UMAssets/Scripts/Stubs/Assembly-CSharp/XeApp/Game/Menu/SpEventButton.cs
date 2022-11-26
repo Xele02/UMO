@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class SpEventButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private LayoutUGUIRuntime m_runtime;
 		[SerializeField]

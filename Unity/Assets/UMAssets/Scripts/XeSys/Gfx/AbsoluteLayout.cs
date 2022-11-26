@@ -51,7 +51,12 @@ namespace XeSys.Gfx
 		// public void RemoveView(ViewBase child) { }
 
 		// // RVA: 0x203EDE0 Offset: 0x203EDE0 VA: 0x203EDE0
-		// public ViewBase GetView(int index) { }
+		public ViewBase GetView(int index)
+		{
+			if(viewCount <= index)
+				return null;
+			return m_List[index];
+		}
 
 		// // RVA: 0x203EE78 Offset: 0x203EE78 VA: 0x203EE78 Slot: 19
 		public virtual void SettingTexture(TexUVListManager texManager)
@@ -326,10 +331,37 @@ namespace XeSys.Gfx
 		// public void StartAllAnimInverseGoStop(string Label) { }
 
 		// // RVA: 0x2040E20 Offset: 0x2040E20 VA: 0x2040E20
-		// private bool IsPlayingAll(List<ViewBase> listView) { }
+		private bool IsPlayingAll(List<ViewBase> listView)
+		{
+			bool res = true;
+			if(!IsPlaying())
+			{
+				for(int i = 0; i < listView.Count; i++)
+				{
+					if(listView[i].enabled)
+					{
+						if(listView[i] is AbsoluteLayout)
+						{
+							if((listView[i] as AbsoluteLayout).IsPlayingAll())
+								return true;
+						}
+						else
+						{
+							if(listView[i].IsPlaying())
+								return true;
+						}
+					}
+				}
+				res = false;
+			}
+			return res;
+		}
 
 		// // RVA: 0x2040F90 Offset: 0x2040F90 VA: 0x2040F90
-		// public bool IsPlayingAll() { }
+		public bool IsPlayingAll()
+		{
+			return IsPlayingAll(m_List);
+		}
 
 		// [ObsoleteAttribute] // RVA: 0x692554 Offset: 0x692554 VA: 0x692554
 		// // RVA: 0x2040F98 Offset: 0x2040F98 VA: 0x2040F98

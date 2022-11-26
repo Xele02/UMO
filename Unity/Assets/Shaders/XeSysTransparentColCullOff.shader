@@ -1,0 +1,131 @@
+Shader "XeSys/TransparentColCullOff" {
+	Properties {
+		_MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
+		_Color ("Main Color", Vector) = (1,1,1,1)
+	}
+	SubShader {
+		LOD 100
+		Tags { "IGNOREPROJECTOR" = "true" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
+		Pass {
+			LOD 100
+			Tags { "IGNOREPROJECTOR" = "true" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
+			Blend SrcAlpha OneMinusSrcAlpha, SrcAlpha OneMinusSrcAlpha
+			ZWrite Off
+			Cull Off
+			Fog {
+				Mode Off
+			}
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+
+			#include "UnityCG.cginc"
+
+			struct appdata
+			{
+				float4 position0 : POSITION;
+				float2 texcoord0 : TEXCOORD0;
+			};
+
+			struct v2f
+			{
+				float4 position0 : SV_POSITION;
+				float2 texcoord0 : TEXCOORD0;
+				float4 color0 : COLOR0;
+			};
+
+			sampler2D _MainTex;
+			float4 _MainTex_ST;
+			float4 _Color;
+
+
+			v2f vert(appdata v)
+			{
+				v2f o;
+				o.texcoord0 = TRANSFORM_TEX(v.texcoord0, _MainTex);
+				o.position0 = UnityObjectToClipPos(v.position0);
+				o.color0 = float4(0.0, 0.0, 0.0, 1.0);
+				return o; 
+			}
+/*			GpuProgramID 14739
+			Program "vp" {
+				SubProgram "gles hw_tier02 " {
+					"!!GLES
+					#ifdef VERTEX
+					#version 100
+					
+					uniform 	vec4 hlslcc_mtx4x4unity_ObjectToWorld[4];
+					uniform 	vec4 hlslcc_mtx4x4unity_MatrixVP[4];
+					uniform 	vec4 _MainTex_ST;
+					attribute highp vec3 in_POSITION0;
+					attribute highp vec3 in_TEXCOORD0;
+					varying mediump vec4 vs_COLOR0;
+					varying highp vec2 vs_TEXCOORD0;
+					vec4 u_xlat0;
+					vec4 u_xlat1;
+					void main()
+					{
+					    vs_COLOR0 = vec4(0.0, 0.0, 0.0, 1.0);
+					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+					    u_xlat0 = in_POSITION0.yyyy * hlslcc_mtx4x4unity_ObjectToWorld[1];
+					    u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[0] * in_POSITION0.xxxx + u_xlat0;
+					    u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[2] * in_POSITION0.zzzz + u_xlat0;
+					    u_xlat0 = u_xlat0 + hlslcc_mtx4x4unity_ObjectToWorld[3];
+					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat0.xxxx + u_xlat1;
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat0.zzzz + u_xlat1;
+					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat0.wwww + u_xlat1;
+					    return;
+					}
+					
+*/
+			fixed4 frag(v2f i) : SV_Target
+			{
+				float4 u_xlat10_0, SV_Target0;
+				u_xlat10_0 = tex2D(_MainTex, i.texcoord0.xy);
+				SV_Target0 = u_xlat10_0 * _Color;
+				return SV_Target0;
+			}
+
+/*
+					#endif
+					#ifdef FRAGMENT
+					#version 100
+					
+					#ifdef GL_FRAGMENT_PRECISION_HIGH
+					    precision highp float;
+					#else
+					    precision mediump float;
+					#endif
+					precision highp int;
+					uniform 	mediump vec4 _Color;
+					uniform lowp sampler2D _MainTex;
+					varying highp vec2 vs_TEXCOORD0;
+					#define SV_Target0 gl_FragData[0]
+					lowp vec4 u_xlat10_0;
+					void main()
+					{
+					    u_xlat10_0 = texture2D(_MainTex, vs_TEXCOORD0.xy);
+					    SV_Target0 = u_xlat10_0 * _Color;
+					    return;
+					}
+					
+					#endif"
+				}
+			}
+			Program "fp" {
+				SubProgram "gles hw_tier00 " {
+					"!!GLES"
+				}
+				SubProgram "gles hw_tier01 " {
+					"!!GLES"
+				}
+				SubProgram "gles hw_tier02 " {
+					"!!GLES"
+				}
+			}
+*/
+			ENDCG
+		}
+	}
+}

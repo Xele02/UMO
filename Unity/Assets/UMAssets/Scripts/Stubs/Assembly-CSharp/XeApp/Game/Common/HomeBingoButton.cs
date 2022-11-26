@@ -12,5 +12,9 @@ namespace XeApp.Game.Common
 		private GameObject m_iconBegginer;
 		[SerializeField]
 		private InOutAnime m_inOutAnime;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

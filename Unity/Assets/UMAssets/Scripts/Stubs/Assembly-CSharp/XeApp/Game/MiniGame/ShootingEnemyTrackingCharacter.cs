@@ -4,6 +4,10 @@ namespace XeApp.Game.MiniGame
 {
 	public class ShootingEnemyTrackingCharacter : ShootingEnemyCharacter
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private int m_angleLimit;
 		[SerializeField]

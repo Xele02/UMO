@@ -44,7 +44,12 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1CD3378 Offset: 0x1CD3378 VA: 0x1CD3378
-		// public void Leave() { }
+		public void Leave()
+		{
+			m_isShown = false;
+			m_animatorEnterLeave.CrossFade(LeaveAnimeName, 0);
+			m_isJustAnimaStart = true;
+		}
 
 		// // RVA: 0x1CD3440 Offset: 0x1CD3440 VA: 0x1CD3440
 		public void TryEnter()
@@ -55,7 +60,11 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1CD3450 Offset: 0x1CD3450 VA: 0x1CD3450
-		// public void TryLeave() { }
+		public void TryLeave()
+		{
+			if (m_isShown)
+				Leave();
+		}
 
 		// // RVA: 0x1CD31CC Offset: 0x1CD31CC VA: 0x1CD31CC
 		public void Show()

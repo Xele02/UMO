@@ -27,5 +27,9 @@ namespace XeSys.Net
 		private float emulationWait;
 		[SerializeField]
 		private TestMode testMode;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

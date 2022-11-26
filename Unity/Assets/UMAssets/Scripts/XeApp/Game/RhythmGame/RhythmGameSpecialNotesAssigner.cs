@@ -1,5 +1,7 @@
 using UnityEngine.Events;
 using System.Collections.Generic;
+using XeApp.Game.Common;
+using UnityEngine;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -20,44 +22,334 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		private AssignInfo m_assign_info = new AssignInfo(); // 0x8
-		//private UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, RhythmGameConsts.SpecialNoteType> onModeAttrAssignCallback; // 0xC
-		//private UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, int, int> onModeItemInfoAssignCallback; // 0x10
+		private UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, RhythmGameConsts.SpecialNoteType> onModeAttrAssignCallback; // 0xC
+		private UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, int, int> onModeItemInfoAssignCallback; // 0x10
 		private int notesCount; // 0x14
 		private List<int>[] modeNotesIndices; // 0x18
-		//private HNJKJCDDIMG itemSet; // 0x1C
-		//private OPGDJANLKBM rateSet; // 0x20
+		private HNJKJCDDIMG_SetInfo itemSet; // 0x1C
+		private OPGDJANLKBM_RateInfo rateSet; // 0x20
 		private List<int> itemWeightTable; // 0x24
 		private int rareItemRandSeed; // 0x28
 		private int[] itemLotCountList; // 0x2C
 
 		// // RVA: 0xC08F90 Offset: 0xC08F90 VA: 0xC08F90
-		// public void Initialize(MusicData musicData, RhythmGameSpecialNotesAssigner.AssignInfo a_assign_info, UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, RhythmGameConsts.SpecialNoteType> onModeAttrAssignCallback, UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, int, int> onModeItemInfoAssignCallback) { }
+		public void Initialize(MusicData musicData, AssignInfo a_assign_info, UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, RhythmGameConsts.SpecialNoteType> onModeAttrAssignCallback, UnityAction<int, KLJCBKMHKNK.HHMPIIILOLD, int, int> onModeItemInfoAssignCallback)
+		{
+			this.onModeItemInfoAssignCallback = onModeItemInfoAssignCallback;
+			this.onModeAttrAssignCallback = onModeAttrAssignCallback;
+			m_assign_info = a_assign_info;
+			modeNotesIndices = new List<int>[4];
+			for(int i = 0; i < 4; i++)
+			{
+				modeNotesIndices[i] = new List<int>();
+			}
+			for(int i = 0; i < musicData.musicScoreData.inputNoteTrack.Count; i++)
+			{
+				modeNotesIndices[(int)musicData.GetNotesModeType(musicData.musicScoreData.inputNoteTrack[i])].Add(i);
+			}
+			notesCount = musicData.musicScoreData.inputNoteTrack.Count;
+			GDMKJMAFJAG g = new GDMKJMAFJAG();
+			g.KHEKNNFCAOI(GetDropItemSet(), GetDropRateSet());
+			itemSet = g.GEDOFFFKIFN;
+			rateSet = g.CGLAEOLPEGN;
+			if (g.CGLAEOLPEGN != null && g.GEDOFFFKIFN != null)
+			{
+				itemWeightTable = new List<int>(g.CGLAEOLPEGN.ADKDHKMPMHP_Rat);
+				for(int i = 0; i < itemWeightTable.Count; i++)
+				{
+					if(itemSet.FKNBLDPIPMC(i) == 0)
+					{
+						itemWeightTable[i] = 0;
+					}
+				}
+				itemLotCountList = new int[rateSet.ADKDHKMPMHP_Rat.Count];
+			}
+		}
 
 		// // RVA: 0xC09A1C Offset: 0xC09A1C VA: 0xC09A1C
-		// private void AssginFromList(List<RNote> rNoteList, ref List<int>[] a_temp_note_list, RhythmGameConsts.SpecialNoteType a_type, int a_index = -1) { }
+		private void AssginFromList(List<RNote> rNoteList, ref List<int>[] a_temp_note_list, RhythmGameConsts.SpecialNoteType a_type, int a_index = -1)
+		{
+			int a = Random.Range(1, 4);
+			int b = Random.Range(0, a_temp_note_list[a].Count);
+			KLJCBKMHKNK.HHMPIIILOLD[] array = null;
+			if (a == 3)
+			{
+				array = new KLJCBKMHKNK.HHMPIIILOLD[3] { /*2*/KLJCBKMHKNK.HHMPIIILOLD.FMLPIOFBCMA, /*5*/KLJCBKMHKNK.HHMPIIILOLD.FDBLOGGAKOE, /*3*/ KLJCBKMHKNK.HHMPIIILOLD.CBHCEDGAGHL};
+			}
+			else if(a == 2)
+			{
+				array = new KLJCBKMHKNK.HHMPIIILOLD[2] { /*1*/KLJCBKMHKNK.HHMPIIILOLD.PFIOMNHDHCO, /*4*/KLJCBKMHKNK.HHMPIIILOLD.EOMCAODFBCN };
+			}
+			else if(a == 1)
+			{
+				array = new KLJCBKMHKNK.HHMPIIILOLD[1];
+			}
+			if(array != null)
+			{
+				for(int i = 0; i < array.Length; i++)
+				{
+					onModeAttrAssignCallback(a_temp_note_list[a][b], array[i], a_type);
+				}
+			}
+			a_temp_note_list[a].RemoveAt(b);
+		}
 
 		// // RVA: 0xC09D54 Offset: 0xC09D54 VA: 0xC09D54
-		// public void Assign(List<RNote> rNoteList) { }
+		public void Assign(List<RNote> rNoteList)
+		{
+			if (Database.Instance.gameSetup.musicInfo.isStoryMode)
+				return;
+			KEODKEGFDLD musicinfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId);
+			short[] l = Database.Instance.gameSetup.musicInfo.IsLine6Mode ? musicinfo.DPJDHKIIJIJ : musicinfo.OCOGIADDNDN;
+			if (l[(int)Database.Instance.gameSetup.musicInfo.difficultyType] < 1)
+				return;
+			List<int>[] l2 = new List<int>[4];
+			for(int i = 0; i < l2.Length; i++)
+			{
+				l2[i] = new List<int>(modeNotesIndices[i]);
+				for(int j = l2[i].Count - 1; j >= 0; j--)
+				{
+					if(rNoteList[l2[i][j]].noteInfo.longTouch == MusicScoreData.TouchState.Continue)
+					{
+						l2[i].RemoveAt(j);
+					}
+				}
+			}
+			if(m_assign_info.m_event_item)
+			{
+				AssginFromList(rNoteList, ref l2, RhythmGameConsts.SpecialNoteType.EventItem);
+			}
+			if(m_assign_info.m_center_live_skill)
+			{
+				AssginFromList(rNoteList, ref l2, RhythmGameConsts.SpecialNoteType.CenterLiveSkill);
+			}
+			rareItemRandSeed = Random.Range(0, 100000);
+			int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.NBIAKELCBLC(Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
+			if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL || Database.Instance.gameSetup.musicInfo.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA)
+			{
+				a = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.NBIAKELCBLC((int)Database.Instance.gameSetup.musicInfo.gameEventType, (int)Database.Instance.gameSetup.musicInfo.openEventType, (int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode, Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
+			}
+			List<DNAEGJGAKEI> ld = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HGLIIPFLMFB_Drop.JMHHEPMILHA(musicinfo, (int)Database.Instance.gameSetup.musicInfo.difficultyType, (int)Database.Instance.gameSetup.musicInfo.gameEventType, (int)Database.Instance.gameSetup.musicInfo.openEventType, a, this.OnRareItemRandomLot, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
+			if (ld == null || ld.Count < 1)
+			{
+				a = 0;
+			}
+			int b = 0;
+			if(!Database.Instance.gameSetup.musicInfo.isTutorialOne)
+			{
+				b = a;
+				if (Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+					b = 0;
+			}
+			int c = (b * 0x55555556) >> 0x20;
+			c = (c - c >> 0x1f);
+			b = b + c * -3;
+			int[] li = new int[4];
+			li[1] = c + (b > 0 ? 1 : 0);
+			int d = c;
+			if (b > 1)
+				d++;
+			li[2] = d;
+			li[3] = c;
+
+			EGLJKICMCPG[] ar = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.BBFNPHGDCOF(l[(int)Database.Instance.gameSetup.musicInfo.difficultyType]).CDENCMNHNGA.ToArray();
+			int[] li2 = new int[6];
+			MusicData.NoteModeType[] nt = new MusicData.NoteModeType[6] { MusicData.NoteModeType.Normal, MusicData.NoteModeType.Valkyrie, MusicData.NoteModeType.Diva, MusicData.NoteModeType.Diva, MusicData.NoteModeType.Valkyrie, MusicData.NoteModeType.Diva };
+			for (int i = 0; i < 6; i++)
+			{
+				int t = li[(int)nt[i]];
+				li[(int)nt[i]] = Mathf.Min(li[(int)nt[i]], l2[(int)nt[i]].Count);
+
+				int v = Mathf.Clamp((int)(ar[i].PHGLKBPLFDH_RMax / 100.0f * l2[(int)nt[i]].Count), ar[i].MPPANPOOIIB_NMin, ar[i].GKPPCFMBANO_NMax);
+				t = (t - l2[(int)nt[i]].Count) + v;
+				if (t > 0)
+					v = v - t;
+				li2[i] = v;
+			}
+
+			RhythmGameConsts.SpecialNoteType[] st = new RhythmGameConsts.SpecialNoteType[6] { RhythmGameConsts.SpecialNoteType.None, RhythmGameConsts.SpecialNoteType.Heal, RhythmGameConsts.SpecialNoteType.Score, RhythmGameConsts.SpecialNoteType.NormalItem, RhythmGameConsts.SpecialNoteType.Fold, RhythmGameConsts.SpecialNoteType.Attack };
+			List<AssignedRareItemNoteInfo>[] ari = new List<AssignedRareItemNoteInfo>[4];
+			for(int i = 0; i < ari.Length; i++)
+			{
+				ari[i] = new List<AssignedRareItemNoteInfo>(li[i]);
+			}
+
+			int[,] li3 = new int[6, 6];
+			int sum = 0;
+			for(int i = 0; i < 6; i++)
+			{
+				List<int> l3 = new List<int>(li2[(int)nt[i]]);
+				for(int j = 0; j < 5; j++)
+				{
+					if(ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)(j + 1)) > -1)
+					{
+						sum += ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)(j + 1)) + Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[j + 1] / 10;
+					}
+				}
+				for (int j = 0; j < 5; j++)
+				{
+					int m = 0;
+					if (ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)(j + 1)) < 0)
+					{
+						//nothing
+					}
+					else
+					{
+						if(sum < 100 || (j + 1) == ar[i].DAPGDCPDCNA_Pri)
+						{
+							//LAB_00c0b118
+							m = Mathf.RoundToInt((Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[j + 1] / 10 + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)(j + 1))) / 100 * li2[i]);
+						}
+						else
+						{
+							int n = (Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[ar[i].DAPGDCPDCNA_Pri] / 10 + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)ar[i].DAPGDCPDCNA_Pri));
+							m = (Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[j + 1] / 10 + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)ar[i].DAPGDCPDCNA_Pri)) / (sum - n) * (li2[i] - Mathf.RoundToInt(n / 100 * li2[i]));
+						}
+					}
+					li3[j + 1, i] = m;
+				}
+				if (ari[i].Count < 1)
+				{
+					for (int j = 0; j < li[i]; j++)
+					{
+						int v = Random.Range(0, l3.Count);
+						onModeAttrAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
+						onModeItemInfoAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, ld[j].KIJAPOFAGPN, ld[j].OIPCCBHIKIA);
+						l3.RemoveAt(v);
+					}
+				}
+				else
+				{
+					for (int j = 0; j < ari[i].Count; j++)
+					{
+						onModeAttrAssignCallback(l3[ari[i][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
+						onModeItemInfoAssignCallback(l3[ari[i][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, ld[j].KIJAPOFAGPN, ld[j].OIPCCBHIKIA);
+						l3.RemoveAt(ari[i][j].noteListIndex);
+					}
+				}
+				int s = 1;
+				for(; s < 6; s++)
+				{
+					if(s == 3 && itemWeightTable == null)
+					{
+						s = 4;
+						continue;
+					}
+					for(int j = 0; j < li3[s ,i]; j++)
+					{
+						int t = Random.Range(0, l3.Count);
+						onModeAttrAssignCallback(l3[t], (KLJCBKMHKNK.HHMPIIILOLD)i, st[s]);
+						if (s == 3)
+							AllotItemNotes(l3[t], (KLJCBKMHKNK.HHMPIIILOLD)i);
+						l3.RemoveAt(t);
+					}
+				}
+			}
+			if(notesCount > 1)
+			{
+				for(int i = 1; i < notesCount; i++)
+				{
+					onModeAttrAssignCallback(i, KLJCBKMHKNK.HHMPIIILOLD.JKAPLHFHGKL/*6*/, RhythmGameConsts.SpecialNoteType.NormalItem);
+					AllotItemNotes(i, /*6*/KLJCBKMHKNK.HHMPIIILOLD.JKAPLHFHGKL);
+				}
+			}
+		}
 
 		// // RVA: 0xC0BFB8 Offset: 0xC0BFB8 VA: 0xC0BFB8
-		// private int OnRareItemRandomLot() { }
+		private int OnRareItemRandomLot()
+		{
+			return Random.Range(0, 152);
+		}
 
 		// // RVA: 0xC0BFCC Offset: 0xC0BFCC VA: 0xC0BFCC
 		// public int GetRareItemRandomSeed() { }
 
 		// // RVA: 0xC0BD90 Offset: 0xC0BD90 VA: 0xC0BD90
-		// private void AllotItemNotes(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD mode) { }
+		private void AllotItemNotes(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD mode)
+		{
+			if(itemWeightTable != null)
+			{
+				int a = LotsItem(itemWeightTable);
+				onModeItemInfoAssignCallback(noteIndex, mode, itemSet.FKNBLDPIPMC(a), a | 0x40000000);
+				if(rateSet.DOOGFEGEKLG_Max[a] != 0)
+				{
+					itemLotCountList[a]++;
+					if(rateSet.DOOGFEGEKLG_Max[a] <= itemLotCountList[a])
+					{
+						itemWeightTable[a] = 0;
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xC0BFD4 Offset: 0xC0BFD4 VA: 0xC0BFD4
-		// private int LotsItem(List<int> weightTable) { }
+		private int LotsItem(List<int> weightTable)
+		{
+			if(weightTable != null)
+			{
+				int num = weightTable.Count;
+				if (num < 1)
+					num = 1;
+				else
+				{
+					int sum = 0;
+					for(int i = 0; i <weightTable.Count; i++)
+					{
+						sum += weightTable[i];
+					}
+					num = sum + 1;
+				}
+				int v = Random.Range(1, num);
+				for(int i = 0; i < weightTable.Count; i++)
+				{
+					if (v <= weightTable[i])
+						return i;
+					v -= weightTable[i];
+				}
+			}
+			return -1;
+		}
 
 		// // RVA: 0xC0C154 Offset: 0xC0C154 VA: 0xC0C154
 		// private float GetItemDropRate() { }
 
 		// // RVA: 0xC09714 Offset: 0xC09714 VA: 0xC09714
-		// private OPGDJANLKBM GetDropRateSet() { }
+		private OPGDJANLKBM_RateInfo GetDropRateSet()
+		{
+			int v = 0;
+			if (Database.Instance.gameSetup.musicInfo.isFreeMode)
+			{
+				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KDIKCKEEPDA(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
+				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null && JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false) != null)
+				{
+					TodoLogger.Log(0, "GetDropItemSet event");
+				}
+				v += (int)Database.Instance.gameSetup.musicInfo.difficultyType;
+			}
+			else
+			{
+				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(Database.Instance.gameSetup.musicInfo.storyMusicId).KCNHKNKNGNH;
+			}
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HGLIIPFLMFB_Drop.KPDHGNEILPO(v);
+		}
 
 		// // RVA: 0xC09410 Offset: 0xC09410 VA: 0xC09410
-		// private HNJKJCDDIMG GetDropItemSet() { }
+		private HNJKJCDDIMG_SetInfo GetDropItemSet()
+		{
+			int v = 0;
+			if(Database.Instance.gameSetup.musicInfo.isFreeMode)
+			{
+				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).MGLDIOILOFF;
+				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null && JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false) != null)
+				{
+					TodoLogger.Log(0, "GetDropItemSet event");
+				}
+			}
+			else
+			{
+				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(Database.Instance.gameSetup.musicInfo.storyMusicId).MGLDIOILOFF;
+			}
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HGLIIPFLMFB_Drop.NMGAAKPJPLB(v);
+		}
 	}
 }

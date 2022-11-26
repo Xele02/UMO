@@ -13,5 +13,9 @@ namespace XeSys.Gfx
 		public bool reverse;
 		public bool enableScale;
 		public int startSliceOffset;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

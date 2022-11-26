@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 					item.ListIndex = i;
 					item.IsSet = costumeList[i].CBLHLEKLLDE_IsSet;
 					m_scrollItem.Add(item);
-					GameManager.Instance.DivaIconCache.TryStateDivaUpIconInstall(divaId, item.CostumeData.DAJGPBLEEOB, item.ColorId);
+					GameManager.Instance.DivaIconCache.TryStateDivaUpIconInstall(divaId, item.CostumeData.DAJGPBLEEOB_PrismCostumeId, item.ColorId);
 					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, costumeId), colorId);
 				}
 			}
@@ -273,7 +273,7 @@ namespace XeApp.Game.Menu
 			listLayout.SetListIndex(listItem.ListIndex);
 			listLayout.HideTexture();
 			listLayout.SetName(text);
-			GameManager.Instance.DivaIconCache.LoadDivaUpIco(listItem.CostumeData.AHHJLDLAPAN_DivaId, listItem.CostumeData.DAJGPBLEEOB, listItem.ColorId, (IiconTexture texture) =>
+			GameManager.Instance.DivaIconCache.LoadDivaUpIco(listItem.CostumeData.AHHJLDLAPAN_DivaId, listItem.CostumeData.DAJGPBLEEOB_PrismCostumeId, listItem.ColorId, (IiconTexture texture) =>
 			{
 				//0x169C1D8
 				if (listLayout.ListIndex != listItem.ListIndex)

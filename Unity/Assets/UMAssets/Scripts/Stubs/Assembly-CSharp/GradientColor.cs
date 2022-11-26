@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class GradientColor : BaseMeshEffect
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	public enum GradientMode
 	{
 		Local = 0,

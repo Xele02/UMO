@@ -5,6 +5,10 @@ namespace XeApp.Game.Menu
 {
 	public class PopupFilterSortUGUIParts_PlateFilter : PopupFilterSortUGUIPartsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		public PopupFilterSortUGUIParts_FilterPlateRarity filterRarity;
 		[SerializeField]

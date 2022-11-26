@@ -101,7 +101,11 @@ public class FECDBKKBAHO
     }
 
 	// // RVA: 0xFD0494 Offset: 0xFD0494 VA: 0xFD0494
-	// public bool JCENJHBMDIP(int KKPAHLMJKIH, long JHNMKKNEENE, long CKPIHCGOEDP) { }
+	public bool JCENJHBMDIP(int KKPAHLMJKIH, long JHNMKKNEENE, long CKPIHCGOEDP)
+	{
+		TodoLogger.Log(0, "JCENJHBMDIP");
+		return false;
+	}
 
 	// // RVA: 0xFD0724 Offset: 0xFD0724 VA: 0xFD0724
 	// public void IKOFAKDLDJE() { }

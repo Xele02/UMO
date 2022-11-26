@@ -2,10 +2,11 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using XeApp.Game.Common;
+using UnityEngine.UI;
 
 namespace XeApp.Game.Menu
 {
-	public class StripeEffectModifier : MonoBehaviour
+	public class StripeEffectModifier : MonoBehaviour, IMeshModifier
 	{
 		[Serializable]
 		public class BandParam
@@ -30,5 +31,19 @@ namespace XeApp.Game.Menu
 		public UGUICurveMover.CurveInfo m_enterAnimCurveInfo;
 		[SerializeField]
 		public UGUICurveMover.CurveInfo m_leaveAnimCurveInfo;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
+
+		public void ModifyMesh(Mesh mesh)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void ModifyMesh(VertexHelper verts)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

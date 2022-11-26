@@ -32,23 +32,23 @@ namespace XeApp.Game.Menu
 			achievedScoreNum = 0;
 			achievedComboNum = 0;
 			achievedClearCountNum = 0;
-			for(int i = 0; i < rewardData.PDONJHCHBAE.Count; i++)
+			for(int i = 0; i < rewardData.PDONJHCHBAE_ScoreReward.Count; i++)
 			{
-				if(rewardData.PDONJHCHBAE[i].CMCKNKKCNDK != 0)
+				if(rewardData.PDONJHCHBAE_ScoreReward[i].CMCKNKKCNDK_Achieved != 0)
 				{
 					achievedScoreNum++;
 				}
 			}
-			for (int i = 0; i < rewardData.HFPMKBAANFO.Count; i++)
+			for (int i = 0; i < rewardData.HFPMKBAANFO_ComboReward.Count; i++)
 			{
-				if (rewardData.HFPMKBAANFO[i].CMCKNKKCNDK != 0)
+				if (rewardData.HFPMKBAANFO_ComboReward[i].CMCKNKKCNDK_Achieved != 0)
 				{
 					achievedComboNum++;
 				}
 			}
-			for (int i = 0; i < rewardData.IOCLNNCJFKA.Count; i++)
+			for (int i = 0; i < rewardData.IOCLNNCJFKA_ClearReward.Count; i++)
 			{
-				if (rewardData.IOCLNNCJFKA[i].CMCKNKKCNDK != 0)
+				if (rewardData.IOCLNNCJFKA_ClearReward[i].CMCKNKKCNDK_Achieved != 0)
 				{
 					achievedClearCountNum++;
 				}

@@ -10,5 +10,9 @@ namespace XeApp.Game.RhythmGame.UI
 		private Animator m_comboAnimator;
 		[SerializeField]
 		private Animator m_attackUpRootAnimator;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

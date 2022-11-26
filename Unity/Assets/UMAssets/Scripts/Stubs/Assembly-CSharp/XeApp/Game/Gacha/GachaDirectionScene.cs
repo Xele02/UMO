@@ -8,6 +8,10 @@ namespace XeApp.Game.Gacha
 {
 	public class GachaDirectionScene : MainSceneBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[Serializable]
 		private class Setting
 		{

@@ -5,6 +5,10 @@ namespace XeApp.Game.Menu
 {
 	public class SceneGrowthRoad : SceneGrowthPanelBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public enum Type
 		{
 			Normal = 0,

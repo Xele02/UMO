@@ -7,6 +7,10 @@ namespace XeApp.Game.Menu
 {
 	public class RegulationButton : ActionButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private Text m_textAttr;
 		[SerializeField]

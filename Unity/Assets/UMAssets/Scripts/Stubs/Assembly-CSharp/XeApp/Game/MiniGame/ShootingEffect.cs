@@ -5,6 +5,10 @@ namespace XeApp.Game.MiniGame
 {
 	public class ShootingEffect : ShootingTask
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private EffectId m_effectId;
 		[SerializeField]

@@ -7,12 +7,17 @@ namespace DereTore.Exchange.Audio.HCA {
         }
 
         public DataBits(byte[] data, uint size) {
-            _data = data;
-            _size = size * 8 - 16;
-            _bit = 0;
+			Set(data, size);
         }
 
-        public int CheckBit(int bitSize) {
+		public void Set(byte[] data, uint size)
+		{
+			_data = data;
+			_size = size * 8 - 16;
+			_bit = 0;
+		}
+
+		public int CheckBit(int bitSize) {
             var v = 0;
 
             if (_bit + bitSize <= _size) {
@@ -50,8 +55,8 @@ namespace DereTore.Exchange.Audio.HCA {
 
         private static readonly int[] Mask = { 0xffffff, 0x7fffff, 0x3fffff, 0x1fffff, 0x0fffff, 0x07ffff, 0x03ffff, 0x01ffff };
 
-        private readonly byte[] _data;
-        private readonly uint _size;
+        private byte[] _data;
+        private uint _size;
         private int _bit;
 
     }

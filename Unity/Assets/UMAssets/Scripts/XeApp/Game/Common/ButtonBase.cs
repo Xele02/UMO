@@ -124,11 +124,8 @@ namespace XeApp.Game.Common
 					m_selectionState = ButtonBase.SelectState.Decide;
 					IsEventProcessed = true;
 					ChangeTranstionState();
-					if(OnClickEvent != null)
-					{
-						OnClickEvent();
-						m_isClick = true;
-					}
+					PerformClick();
+					m_isClick = true;
 				}
 			}
 		}
@@ -264,7 +261,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE649CC Offset: 0xE649CC VA: 0xE649CC
-		// public void PerformClick() { }
+		public void PerformClick()
+		{
+			OnClickEvent();
+		}
 
 		// // RVA: 0xE63A6C Offset: 0xE63A6C VA: 0xE63A6C
 		private void ChangeTranstionState()

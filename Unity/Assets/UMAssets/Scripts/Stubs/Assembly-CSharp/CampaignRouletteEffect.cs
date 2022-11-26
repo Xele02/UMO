@@ -8,4 +8,8 @@ public class CampaignRouletteEffect : MonoBehaviour
 	private GameObject m_effectNormal;
 	[SerializeField]
 	private Camera m_systemCanvasCamera;
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement Monobehaviour");
+	}
 }

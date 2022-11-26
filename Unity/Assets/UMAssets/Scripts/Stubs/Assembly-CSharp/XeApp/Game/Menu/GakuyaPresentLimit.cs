@@ -9,5 +9,9 @@ namespace XeApp.Game.Menu
 		private Text m_presetLimitText;
 		[SerializeField]
 		private Text m_prefixText;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

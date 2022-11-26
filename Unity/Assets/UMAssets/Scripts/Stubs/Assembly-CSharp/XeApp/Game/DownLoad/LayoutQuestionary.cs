@@ -14,5 +14,9 @@ namespace XeApp.Game.DownLoad
 		private LayoutUGUIHitOnly m_inputBlocker;
 		[SerializeField]
 		private Button m_messageTouchArea;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

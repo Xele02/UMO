@@ -6,5 +6,9 @@ namespace XeApp.Game.Menu
 	{
 		[SerializeField]
 		private GameObject divaPrefab;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

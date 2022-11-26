@@ -4,6 +4,10 @@ namespace XeApp.Game.MiniGame
 {
 	public class ShootingEnemyLaserCharacte : ShootingEnemyCharacter
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private float m_readyLength;
 		[SerializeField]

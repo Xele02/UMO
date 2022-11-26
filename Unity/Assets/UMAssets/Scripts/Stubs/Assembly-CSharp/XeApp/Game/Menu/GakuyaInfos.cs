@@ -69,5 +69,9 @@ namespace XeApp.Game.Menu
 		private Color m_colorNormal;
 		[SerializeField]
 		private Color m_colorLock;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

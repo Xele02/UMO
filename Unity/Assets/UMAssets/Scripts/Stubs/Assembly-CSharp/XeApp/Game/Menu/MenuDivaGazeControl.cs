@@ -39,6 +39,10 @@ namespace XeApp.Game.Menu
 			Z = 2,
 			Num = 3,
 		}
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 
 	}
 }

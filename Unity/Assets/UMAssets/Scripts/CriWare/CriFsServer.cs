@@ -42,7 +42,13 @@ namespace CriWare
         // RVA: 0x294BF04 Offset: 0x294BF04 VA: 0x294BF04
         private void OnDestroy()
         {
-            TodoLogger.Log(0, "TODO");
+            if(_instance == this)
+			{
+				foreach(var r in requestList)
+				{
+					r.Dispose();
+				}
+			}
         }
 
         // // RVA: 0x294C138 Offset: 0x294C138 VA: 0x294C138 Slot: 6

@@ -4,6 +4,10 @@ namespace XeApp.Game.Menu
 {
 	public class SceneSelectListScene : TransitionRoot
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private EquipmentScene m_equipmentScene;
 		[SerializeField]

@@ -6,6 +6,10 @@ namespace XeApp.Game.Menu
 {
 	public class PlayLogSkillIconContent : SwapScrollListContent
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private RawImageEx[] m_LiveSkillIconImages;
 		[SerializeField]

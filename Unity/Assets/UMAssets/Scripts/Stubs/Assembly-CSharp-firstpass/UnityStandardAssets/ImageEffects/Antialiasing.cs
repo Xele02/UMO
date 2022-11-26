@@ -4,6 +4,10 @@ namespace UnityStandardAssets.ImageEffects
 {
 	public class Antialiasing : PostEffectsBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		public AAMode mode;
 		public bool showGeneratedNormals;
 		public float offsetScale;

@@ -7,5 +7,9 @@ namespace XeApp.Game.MiniGame
 	{
 		[SerializeField]
 		private Text m_scoreText;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

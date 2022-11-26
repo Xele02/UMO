@@ -24,5 +24,9 @@ namespace XeApp.Game.UI
 		private int specialCaracterColumn;
 		[SerializeField]
 		private int specialCaracterRow;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

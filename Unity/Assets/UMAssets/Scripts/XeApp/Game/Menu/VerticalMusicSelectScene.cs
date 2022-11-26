@@ -271,7 +271,7 @@ namespace XeApp.Game.Menu
 			m_difficultyButtonGroup.OnButtonClickListener = (int index) =>
 			{
 				//0xBF0380
-				TodoLogger.Log(0, "m_difficultyButtonGroup OnButtonClickListener");
+				OnClickDifficultyButton(index);
 			};
 			m_filterButton.OnClickButtonListener = () =>
 			{
@@ -1047,10 +1047,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xBEC300 Offset: 0xBEC300 VA: 0xBEC300 Slot: 59
-		//protected override void OnDecideCurrentMusic(ref VerticalMusicSelectSceneBase.MusicDecideInfo info)
-		//{
-		//	TodoLogger.Log(0, "!!!");
-		//}
+		protected override void OnDecideCurrentMusic(ref MusicDecideInfo info)
+		{
+			return;
+		}
 
 		// // RVA: 0xBEAACC Offset: 0xBEAACC VA: 0xBEAACC
 		private void ApplyMusicInfoNone()
@@ -1185,10 +1185,13 @@ namespace XeApp.Game.Menu
 		// private void SetListNo(int no) { }
 
 		// // RVA: 0xBEC314 Offset: 0xBEC314 VA: 0xBEC314 Slot: 57
-		//protected override void OnClickDifficultyButton(int index)
-		//{
-		//	TodoLogger.Log(0, "!!!");
-		//}
+		protected override void OnClickDifficultyButton(int index)
+		{
+			SoundManager.Instance.sePlayerBoot.Play(3);
+			m_musicSelectUISapporter.SetDiffity((Difficulty.Type)index);
+			m_musicList.ChangeDifficult(index);
+			OnChangeFilter();
+		}
 
 		// // RVA: 0xBEC918 Offset: 0xBEC918 VA: 0xBEC918
 		private void OnClickSeriesButton(int index)
@@ -1522,19 +1525,19 @@ namespace XeApp.Game.Menu
 				data.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, (int)difficulty, isLine6Mode, musicData.MNNHHJBBICA_EventType);
 				if((filterBit & 1) != 0)
 				{
-					if (PopupSortMenu.IsAllRewardAchievedFilter(data.PDONJHCHBAE))
+					if (PopupSortMenu.IsAllRewardAchievedFilter(data.PDONJHCHBAE_ScoreReward))
 						return false;
 				}
 				if((filterBit & 2) != 0)
 				{
-					if (PopupSortMenu.IsAllRewardAchievedFilter(data.HFPMKBAANFO))
+					if (PopupSortMenu.IsAllRewardAchievedFilter(data.HFPMKBAANFO_ComboReward))
 						return false;
 				}
 				if ((filterBit & 4) == 0)
 					return true;
 				else
 				{
-					if (PopupSortMenu.IsAllRewardAchievedFilter(data.IOCLNNCJFKA))
+					if (PopupSortMenu.IsAllRewardAchievedFilter(data.IOCLNNCJFKA_ClearReward))
 						return false;
 				}
 			}

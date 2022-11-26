@@ -15,5 +15,9 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private UGUIButton[] m_bookMarakButton;
 		public int m_nameMaxLength;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

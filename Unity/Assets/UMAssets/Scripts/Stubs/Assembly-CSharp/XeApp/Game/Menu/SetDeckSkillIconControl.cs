@@ -14,5 +14,9 @@ namespace XeApp.Game.Menu
 		private Sprite m_aSkillSprite;
 		[SerializeField]
 		private SpriteAnime m_effectAnime;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

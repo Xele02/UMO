@@ -12,5 +12,9 @@ namespace XeApp
 		private int divaId;
 		[SerializeField]
 		private int divaModelId;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

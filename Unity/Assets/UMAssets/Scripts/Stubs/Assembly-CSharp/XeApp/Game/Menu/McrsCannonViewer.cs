@@ -11,5 +11,9 @@ namespace XeApp.Game.Menu
 		private McrsCannonShakeObject m_mcrsCannonShakePrefab;
 		[SerializeField]
 		private ButtonBase m_hitCheck;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

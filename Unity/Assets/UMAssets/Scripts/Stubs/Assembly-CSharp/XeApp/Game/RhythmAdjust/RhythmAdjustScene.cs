@@ -7,6 +7,10 @@ namespace XeApp.Game.RhythmAdjust
 {
 	public class RhythmAdjustScene : MainSceneBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private List<RNote> rNoteList;
 		[SerializeField]

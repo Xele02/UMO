@@ -19,7 +19,10 @@ namespace XeApp.Game.Common
 		public bool isAllLoaded { get { return isUnused || isLoaded; } private set {} } //0x111A5A4 0x111A5C8
 
 		// // RVA: 0x111A2C0 Offset: 0x111A2C0 VA: 0x111A2C0
-		// public void OnDestroy() { }
+		public void OnDestroy()
+		{
+			clip = null;
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x73A10C Offset: 0x73A10C VA: 0x73A10C
 		// // RVA: 0x111A2CC Offset: 0x111A2CC VA: 0x111A2CC

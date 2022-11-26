@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class CurveEffect : BaseMeshEffect
 {
+	private void Awake()
+	{
+		UnityEngine.Debug.LogError("Implement monobehaviour");
+	}
 	public enum CurveMode
 	{
 		TextArea = 0,

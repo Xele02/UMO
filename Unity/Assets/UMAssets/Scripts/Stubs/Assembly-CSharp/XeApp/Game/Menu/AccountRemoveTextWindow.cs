@@ -11,5 +11,9 @@ namespace XeApp.Game.Menu
 		private Text contentText;
 		[SerializeField]
 		private Image backGroundImage;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

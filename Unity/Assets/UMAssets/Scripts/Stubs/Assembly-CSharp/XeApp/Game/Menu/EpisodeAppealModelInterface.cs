@@ -32,5 +32,9 @@ namespace XeApp.Game.Menu
 		private EpisodeAppealVoiceDelayParam m_pilotVoiceDelayTime;
 		[SerializeField]
 		private EpisodeAppealDivaAdjustParam m_adjustParam;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

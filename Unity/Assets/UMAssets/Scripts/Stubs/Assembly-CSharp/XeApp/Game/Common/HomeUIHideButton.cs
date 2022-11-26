@@ -10,5 +10,9 @@ namespace XeApp.Game.Common
 		private ButtonBase m_buttonShow;
 		[SerializeField]
 		private InOutAnime m_inOutAnime;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

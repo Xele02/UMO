@@ -10,6 +10,15 @@ namespace XeSys
 		MOVED = 2,
 		ILLEGAL = 3,
 	}
+	
+	public enum TouchSwipeDirection
+	{
+		None = 0,
+		Up = 1,
+		Down = 2,
+		Left = 3,
+		Right = 4,
+	}
 
 	public class TouchInfo
 	{
@@ -21,10 +30,10 @@ namespace XeSys
 		public Vector3 nativePosition { get; set; } // 0x2C
 		// public float x { get; } 0x23A0454
 		// public float y { get; } 0x23A045C
-		// public bool isBegan { get; } 0x23A6690
+		public bool isBegan { get { return state == TouchState.BEGAN; } } //0x23A6690
 		// public bool isMoved { get; } 0x23A66A4
-		// public bool isEnded { get; } 0x2389C4C
-		// public bool isIllegal { get; } 0x23A66B8
+		public bool isEnded { get { return state == TouchState.ENDED; } } //0x2389C4C
+		public bool isIllegal { get { return state == TouchState.ILLEGAL; } } //0x23A66B8
 
 		// // RVA: 0x23A66CC Offset: 0x23A66CC VA: 0x23A66CC
 		public TouchInfo()

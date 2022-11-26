@@ -5,6 +5,10 @@ namespace XeApp.Game
 {
 	public class DebugCheatUI_Event : DebugCheatUIBase
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private InputField inputField_Point;
 		[SerializeField]

@@ -4,6 +4,10 @@ namespace XeApp.Game.Common
 {
 	public class UGUIToggleObjectSwapButton : UGUIToggleButton
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private GameObject m_checkObj;
 		[SerializeField]

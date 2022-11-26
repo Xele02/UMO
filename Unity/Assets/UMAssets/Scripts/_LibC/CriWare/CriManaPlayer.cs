@@ -199,9 +199,13 @@ namespace ExternLib
             return 0;
         }
 
-        public static bool CRIWARED6D2B5F7(int player_id, int num_textures, IntPtr[] tex_ptrs, [In] [Out] FrameInfo frame_info, ref bool frame_drop)
+        public static bool CRIWARED6D2B5F7(int player_id, int num_textures, IntPtr[] tex_ptrs, FrameInfo frame_info, ref bool frame_drop)
         {
-            frame_info = new FrameInfo();
+            if(moviePlayers.ContainsKey(player_id) && moviePlayers[player_id].playback != null)
+            {
+                frame_info.time = (ulong)moviePlayers[player_id].playback.GetTime();
+                frame_info.tunit = 1000000;
+            }
             frame_drop = false;
             return true;
         }

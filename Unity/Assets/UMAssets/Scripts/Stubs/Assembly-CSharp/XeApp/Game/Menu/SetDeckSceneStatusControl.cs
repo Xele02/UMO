@@ -48,5 +48,9 @@ namespace XeApp.Game.Menu
 		private Sprite m_episodeNameBackSpriteNormal;
 		[SerializeField]
 		private Sprite m_episodeNameBackSpriteBonus;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

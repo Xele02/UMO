@@ -211,7 +211,12 @@ namespace XeSys
 		}
 
 		// // RVA: 0x1EF7798 Offset: 0x1EF7798 VA: 0x1EF7798
-		// public TouchInfo GetCurrentTouchInfo(int fingerId) { }
+		public TouchInfo GetCurrentTouchInfo(int fingerId)
+		{
+			if (GetTouchInfoRecord(fingerId) == null)
+				return null;
+			return touchInfoRecords[fingerId].currentInfo;
+		}
 
 		// // RVA: 0x1EF729C Offset: 0x1EF729C VA: 0x1EF729C
 		// public TouchInfo GetBeganTouchInfo(int fingerId) { }

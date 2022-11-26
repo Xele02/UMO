@@ -5,6 +5,10 @@ namespace XeApp.Game.Menu
 {
 	public class DecoScene : TransitionRoot
 	{
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement monobehaviour");
+		}
 		[SerializeField]
 		private DecorationScreenShotView m_screenShotViewPrefab;
 		[SerializeField]

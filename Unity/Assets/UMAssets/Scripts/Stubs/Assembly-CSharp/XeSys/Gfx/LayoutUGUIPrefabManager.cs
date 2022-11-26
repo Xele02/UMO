@@ -15,5 +15,9 @@ namespace XeSys.Gfx
 
 		public LayoutUGUIRuntime[] m_prefabList;
 		public PrefabData[] m_prefabData;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }

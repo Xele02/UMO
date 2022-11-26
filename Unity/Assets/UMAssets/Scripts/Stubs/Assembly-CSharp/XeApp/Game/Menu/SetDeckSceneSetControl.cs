@@ -14,5 +14,9 @@ namespace XeApp.Game.Menu
 		private DivaColorSetScriptableObject m_divaColors;
 		[SerializeField]
 		private Color m_emptyColor;
+		private void Awake()
+		{
+			UnityEngine.Debug.LogError("Implement Monobehaviour");
+		}
 	}
 }
