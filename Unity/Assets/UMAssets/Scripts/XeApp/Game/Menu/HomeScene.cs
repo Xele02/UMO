@@ -991,7 +991,7 @@ namespace XeApp.Game.Menu
 			Database.Instance.gameSetup.teamInfo.teamStatus = new StatusData();
 			Database.Instance.gameSetup.teamInfo.teamStatus.Copy(data);
 
-			TodoLogger.MinLog = 99;
+			//TodoLogger.MinLog = 99;
 			// setup and launch
 			MenuScene.Instance.GotoRhythmGame(false, 0, false);
 
