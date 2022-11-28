@@ -319,7 +319,10 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF1F2AC Offset: 0xF1F2AC VA: 0xF1F2AC
-	// public void EBKCPELHDKN() { }
+	public void EBKCPELHDKN_InitWithBaseAndPublicStatus()
+	{
+		KHEKNNFCAOI_Init(/*5*/EFBHIFFOKAB_FlagBase | NBCOGOPBDAB_FlagPublicStatus);
+	}
 
 	// // RVA: 0xF1F2CC Offset: 0xF1F2CC VA: 0xF1F2CC
 	// public void LKBHDMOBOGN() { }

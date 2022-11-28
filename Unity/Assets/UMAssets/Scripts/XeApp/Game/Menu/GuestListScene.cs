@@ -314,8 +314,6 @@ namespace XeApp.Game.Menu
 				}
 			}
 			m_isShowHelp = true;
-
-			TodoLogger.Log(0, "OnSuccessSearchFriend");
 		}
 
 		// RVA: 0xE2B69C Offset: 0xE2B69C VA: 0xE2B69C

@@ -461,7 +461,7 @@ public class JLKEOGLJNOD
 					f.HCDGELDHFHB();
 					JLJGCBOHJID.Add(f.CMCKNKKCNDK_EquippedStatus);
 					a.DIPKCALNIII_Id = f.AHHJLDLAPAN_DivaId;
-					a.BEEAIAAJOHD_CId = f.JPIDIENBGKH;
+					a.BEEAIAAJOHD_CId = f.JPIDIENBGKH_CostumeId;
 					a.AFNIOJHODAG_ColId = f.EKFONBFDAAP_ColorId;
 					a.EBDNICPAFLB_SSlot[0] = f.FGFIBOBAPIA;
 					a.EBDNICPAFLB_SSlot[1] = f.DJICAKGOGFO[0];
@@ -484,7 +484,7 @@ public class JLKEOGLJNOD
 				else
 				{
 					d.DIPKCALNIII_Id = f.AHHJLDLAPAN_DivaId;
-					d.BEEAIAAJOHD_CosId = f.JPIDIENBGKH;
+					d.BEEAIAAJOHD_CosId = f.JPIDIENBGKH_CostumeId;
 					d.AFNIOJHODAG_ColId = f.EKFONBFDAAP_ColorId;
 				}
 			}
@@ -519,7 +519,7 @@ public class JLKEOGLJNOD
 						f.ELHBGKLLOIO();
 					JLJGCBOHJID.Add(f.CMCKNKKCNDK_EquippedStatus);
 					a.DIPKCALNIII_Id = f.AHHJLDLAPAN_DivaId;
-					a.BEEAIAAJOHD_CId = f.JPIDIENBGKH;
+					a.BEEAIAAJOHD_CId = f.JPIDIENBGKH_CostumeId;
 					a.AFNIOJHODAG_ColId = f.EKFONBFDAAP_ColorId;
 					a.EBDNICPAFLB_SSlot[0] = f.FGFIBOBAPIA;
 					a.EBDNICPAFLB_SSlot[1] = f.DJICAKGOGFO[0];
@@ -542,7 +542,7 @@ public class JLKEOGLJNOD
 				else
 				{
 					d.DIPKCALNIII_Id = f.AHHJLDLAPAN_DivaId;
-					d.BEEAIAAJOHD_CosId = f.JPIDIENBGKH;
+					d.BEEAIAAJOHD_CosId = f.JPIDIENBGKH_CostumeId;
 					d.AFNIOJHODAG_ColId = f.EKFONBFDAAP_ColorId;
 				}
 			}

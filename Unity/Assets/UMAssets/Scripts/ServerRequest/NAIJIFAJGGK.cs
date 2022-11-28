@@ -33,7 +33,7 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
 	// // RVA: 0x17C0114 Offset: 0x17C0114 VA: 0x17C0114 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        EBGACDGNCAA = SakashoPlayerData.LoadPlayerData(HHIHCJKLJFF_BlockToRequest.ToArray(), this.DCKLDDCAJAP, this.MEOCKCJBDAD);
+        EBGACDGNCAA_CallContext = SakashoPlayerData.LoadPlayerData(HHIHCJKLJFF_BlockToRequest.ToArray(), this.DCKLDDCAJAP, this.MEOCKCJBDAD);
     }
 
 	// // RVA: 0x17C0260 Offset: 0x17C0260 VA: 0x17C0260 Slot: 13

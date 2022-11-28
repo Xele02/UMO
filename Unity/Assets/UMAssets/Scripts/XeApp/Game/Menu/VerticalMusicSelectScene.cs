@@ -979,8 +979,8 @@ namespace XeApp.Game.Menu
 			m_eventBanner.ChangeEventBanner(m_eventId);
 			GHLGEECLCMH data = new GHLGEECLCMH();
 			data.KHEKNNFCAOI(null, null);
-			m_musicSelectUISapporter.SetUtaRateIcon(data.LLNHMMBFPMA);
-			m_musicSelectUISapporter.SetUtaRateRating(data.ECMFBEHEGEH);
+			m_musicSelectUISapporter.SetUtaRateIcon(data.LLNHMMBFPMA_ScoreRatingRanking);
+			m_musicSelectUISapporter.SetUtaRateRating(data.ECMFBEHEGEH_MusicRatio);
 			SetMusicTab(m_musicTab);
 		}
 

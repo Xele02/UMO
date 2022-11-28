@@ -15,7 +15,7 @@ public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
 	// RVA: 0x174328C Offset: 0x174328C VA: 0x174328C Slot: 12
 	public override void DHLDNIEELHO()
     {
-		EBGACDGNCAA = SakashoMaster.GetMasters(DFDLAIGFDAH.ToArray(), this.DCKLDDCAJAP, this.MEOCKCJBDAD);
+		EBGACDGNCAA_CallContext = SakashoMaster.GetMasters(DFDLAIGFDAH.ToArray(), this.DCKLDDCAJAP, this.MEOCKCJBDAD);
     } // Prepare request
 
 	// RVA: 0x174339C Offset: 0x174339C VA: 0x174339C Slot: 13

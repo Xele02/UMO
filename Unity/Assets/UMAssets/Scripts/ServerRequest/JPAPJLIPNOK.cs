@@ -13,7 +13,7 @@ public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_Request
 	// RVA: 0x1BA5024 Offset: 0x1BA5024 VA: 0x1BA5024 Slot: 12
 	public override void DHLDNIEELHO() 
     {
-        EBGACDGNCAA = SakashoAsset.GetAssetList(FPCIBJLJOFI_Type, this.DCKLDDCAJAP, this.MEOCKCJBDAD);
+        EBGACDGNCAA_CallContext = SakashoAsset.GetAssetList(FPCIBJLJOFI_Type, this.DCKLDDCAJAP, this.MEOCKCJBDAD);
     }
 
 	// RVA: 0x1BA5110 Offset: 0x1BA5110 VA: 0x1BA5110 Slot: 13

@@ -220,7 +220,7 @@ public class CIOECGOMILE
 		}
 
 		UnityEngine.Debug.Log(str.ToString());
-		ILCCJNDFFOB.HHCJCDFCLOB.NJEIHFPKOMG(!(BPOJOBICBAC.NPNNPNAIONN || b) ? 1 : 0, (int)BPOJOBICBAC.CJMFJOMECKI, str.ToString());
+		ILCCJNDFFOB.HHCJCDFCLOB.NJEIHFPKOMG(!(BPOJOBICBAC.NPNNPNAIONN || b) ? 1 : 0, (int)BPOJOBICBAC.CJMFJOMECKI_ErrorId, str.ToString());
 		if(BPOJOBICBAC.NPNNPNAIONN || b)
 		{
 			// private CIOECGOMILE.<>c__DisplayClass119_0 OPLBFCEPDCH; // 0x14
@@ -321,14 +321,14 @@ public class CIOECGOMILE
 				//LAB_01011ac0:
 				while(true)
 				{
-					if(CHNJPFCKFOI_FriendManager.PLOOEECNHFB)
+					if(CHNJPFCKFOI_FriendManager.PLOOEECNHFB_IsSuccess)
 					{
 						int a = DLMOKNDEMMB.FMPEMFPLPDA_Exp.PCJACJANGCA(AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level);
 						if(a != CHNJPFCKFOI_FriendManager.JPEIBHJIHPI)
 						{
 							CHNJPFCKFOI_FriendManager.PGPLAOGALHD(a, null, null);
 							//LAB_01011bec:
-							while(!CHNJPFCKFOI_FriendManager.PLOOEECNHFB)
+							while(!CHNJPFCKFOI_FriendManager.PLOOEECNHFB_IsSuccess)
 							{
 								yield return null;
 							}

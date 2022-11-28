@@ -59,11 +59,11 @@ namespace XeApp.Game.Menu
 			lastLogin = fri.PCEGKKLKFNO.AJECHDLMKOE_LastLogin;
 			musicRatio = fri.BJGOPOEAAIC_MusicRatio;
 			scoreRatingRank = fri.AGJIIKKOKFJ_ScoreRatingRank;
-			if(fri.JIGONEMPPNP != null)
+			if(fri.JIGONEMPPNP_Diva != null)
 			{
-				divaId = fri.JIGONEMPPNP.AHHJLDLAPAN_DivaId;
-				divaModelId = fri.JIGONEMPPNP.FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId;
-				divaColorId = fri.JIGONEMPPNP.EKFONBFDAAP_ColorId;
+				divaId = fri.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId;
+				divaModelId = fri.JIGONEMPPNP_Diva.FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId;
+				divaColorId = fri.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
 			}
 			emblemId = fri.NDOLELKAJNL.MDPKLNFFDBO_EmblemId;
 			isKira = false;
@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 				limitOverCount = g.MKHFCGPJPFI_LimitOverCount;
 			}
 			isDivaLoad = false;
-			Friend = fri.PCEGKKLKFNO.LHMDABPNDDH == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ;
+			Friend = fri.PCEGKKLKFNO.LHMDABPNDDH_Type == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
 		}
 
 		//// RVA: 0xE28CD8 Offset: 0xE28CD8 VA: 0xE28CD8
