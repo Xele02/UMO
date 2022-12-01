@@ -22,7 +22,11 @@ namespace XeApp.Game.Tutorial
 		//public static IEnumerator Co_TutorialAutoUnitSetting(ButtonBase autoSettingButton, Func<bool> waitAutoSettingWindowFunc) { }
 
 		//// RVA: 0xE4A008 Offset: 0xE4A008 VA: 0xE4A008
-		//public static bool CanUnit5Help(GameSetupData.MusicInfo musicInfo) { }
+		public static bool CanUnit5Help(GameSetupData.MusicInfo musicInfo)
+		{
+			TodoLogger.Log(0, "Tutorial CanUnit5Help");
+			return false;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AEE20 Offset: 0x6AEE20 VA: 0x6AEE20
 		//// RVA: 0xE4A170 Offset: 0xE4A170 VA: 0xE4A170

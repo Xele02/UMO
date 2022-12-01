@@ -17,10 +17,10 @@ namespace XeSys.Gfx
 		private LayoutElement m_contentLayout; // 0x34
 
 		//public ScrollRect scrollRect { get; private set; } 0x1F04E58 0x1F04E60
-		//public Vector2 ContentSize { get; set; } 0x1F0543C 0x1F05450
+		public Vector2 ContentSize { get { return m_contentSize; } set { m_contentSize = value; UpdateContent(); } } //0x1F0543C 0x1F05450
 		//public float ContentWidth { get; set; } 0x1F05CB0 0x1F05CB8
 		//public float ContentHeight { get; set; } 0x1F05CC0 0x1F05CC8
-		//public Vector2 RangeSize { get; } 0x1F05CD0
+		public Vector2 RangeSize { get { return m_range; } } //0x1F05CD0
 		//public float RangeHeight { get; set; } 0x1F05CE4 0x1F05CEC
 
 		// RVA: 0x1F04E64 Offset: 0x1F04E64 VA: 0x1F04E64
@@ -60,13 +60,62 @@ namespace XeSys.Gfx
 		}
 
 		//// RVA: 0x1F0545C Offset: 0x1F0545C VA: 0x1F0545C
-		//private void UpdateContent() { }
+		private void UpdateContent()
+		{
+			m_contentLayout.minWidth = m_contentSize.x;
+			m_contentLayout.minHeight = m_contentSize.y;
+			m_scrollRect.vertical = m_range.y < m_contentSize.y;
+			m_scrollRect.horizontal = m_range.x < m_contentSize.x;
+			float h = 0;
+			if (m_scrollRect.verticalScrollbar != null)
+			{
+				m_scrollRect.verticalScrollbar.gameObject.SetActive(m_scrollRect.vertical);
+				m_scrollRect.verticalScrollbar.gameObject.GetComponent<Scrollbar>().enabled = m_scrollRect.vertical;
+				h = (m_scrollRect.verticalScrollbar.transform as RectTransform).sizeDelta.x;
+				(m_scrollRect.verticalScrollbar.transform as RectTransform).sizeDelta = new Vector2(h, m_range.y);
+			}
+			if (m_scrollRect.horizontalScrollbar != null)
+			{
+				m_scrollRect.horizontalScrollbar.gameObject.SetActive(m_scrollRect.horizontal);
+				m_scrollRect.horizontalScrollbar.gameObject.GetComponent<Scrollbar>().enabled = m_scrollRect.horizontal;
+				float v = (m_scrollRect.horizontalScrollbar.transform as RectTransform).sizeDelta.x;
+				h = (m_scrollRect.horizontalScrollbar.transform as RectTransform).sizeDelta.y;
+				(m_scrollRect.horizontalScrollbar.transform as RectTransform).sizeDelta = new Vector2(m_range.x, v);
+				if (m_scrollRect.horizontal && m_scrollRect.vertical)
+				{
+					h = (m_scrollRect.verticalScrollbar.transform as RectTransform).sizeDelta.x;
+					(m_scrollRect.verticalScrollbar.transform as RectTransform).sizeDelta = new Vector2(h, m_range.y - h);
+					(m_scrollRect.horizontalScrollbar.transform as RectTransform).sizeDelta = new Vector2(m_range.x - h, h);
+				}
+			}
+			(m_scrollRect.transform as RectTransform).sizeDelta = new Vector2(m_range.x < m_contentSize.x ? m_defaultRange.x - h : m_defaultRange.x, m_range.y < m_contentSize.y ? m_defaultRange.y - h : m_defaultRange.y);
+		}
 
 		//// RVA: 0x1F05D00 Offset: 0x1F05D00 VA: 0x1F05D00
-		//public void AddView(GameObject obj, float offsetX, float offsetY) { }
+		public void AddView(GameObject obj, float offsetX, float offsetY)
+		{
+			LayoutUGUIUtility.AddView(m_scrollRange.gameObject, m_scrollView, obj);
+			RectTransform r = obj.transform as RectTransform;
+			r.anchorMin = new Vector2(0, 1);
+			r.anchorMax = r.anchorMin;
+			r.pivot = r.anchorMin;
+			r.anchoredPosition += new Vector2(offsetX, -offsetY);
+		}
 
 		//// RVA: 0x1F05F9C Offset: 0x1F05F9C VA: 0x1F05F9C
-		//public void BeginAddView() { }
+		public void BeginAddView()
+		{
+			m_contentLayout = m_scrollRange.gameObject.GetComponent<LayoutElement>();
+			Initialize();
+			if(m_parentLUR == null)
+			{
+				m_parentLUR = LayoutUGUIUtility.GetParentRuntime(transform);
+			}
+			if(m_scrollView == null)
+			{
+				m_scrollView = m_parentLUR.FindViewBase(m_scrollRect.transform as RectTransform) as ScrollView;
+			}
+		}
 
 		//// RVA: 0x1F061F4 Offset: 0x1F061F4 VA: 0x1F061F4
 		//public void AddViewV(GameObject obj, float sizeX, float sizeY) { }
@@ -75,7 +124,10 @@ namespace XeSys.Gfx
 		//public void AddViewH(GameObject obj, float sizeX, float sizeY) { }
 
 		//// RVA: 0x1F06390 Offset: 0x1F06390 VA: 0x1F06390
-		//public void EndAddView() { }
+		public void EndAddView()
+		{
+			UpdateContent();
+		}
 
 		//// RVA: 0x1F06394 Offset: 0x1F06394 VA: 0x1F06394
 		//public void EndAddView(Vector2 size) { }

@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 		public Action OnClickExpectedScoreDescButton; // 0x50
 
 		public InOutAnime InOut { get { return m_inOut; } } //0xA6F6B0
-		// public SetDeckExpectedScoreGauge ExpectedScoreGauge { get; } 0xA6F6B8
+		public SetDeckExpectedScoreGauge ExpectedScoreGauge { get { return m_expectedScoreGauge; } } //0xA6F6B8
 
 		// // RVA: 0xA6F6C0 Offset: 0xA6F6C0 VA: 0xA6F6C0
 		private void Awake()

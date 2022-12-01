@@ -6,6 +6,13 @@ namespace XeApp.Game.Common
 {
 	public class PopupSkipTicketUseConfirm : LayoutUGUIScriptBase, IPopupContent
 	{
+		public enum ConsumeItem
+		{
+			Energy = 0,
+			LiveTicket = 1,
+			Ap = 2,
+		}
+
     public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
