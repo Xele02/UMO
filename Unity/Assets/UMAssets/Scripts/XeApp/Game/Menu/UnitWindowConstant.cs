@@ -1,6 +1,8 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -41,7 +43,11 @@ namespace XeApp.Game.Menu
 		//public static void SetLiveSkillDetails(Text text, string descript) { }
 
 		//// RVA: 0x124C89C Offset: 0x124C89C VA: 0x124C89C
-		//public static void SetInvalidText(Text text, TextAnchor anchor = 4) { }
+		public static void SetInvalidText(Text text, TextAnchor anchor = TextAnchor.MiddleCenter)
+		{
+			text.alignment = anchor;
+			text.text = TextConstant.InvalidText;
+		}
 
 		//// RVA: 0x1254A50 Offset: 0x1254A50 VA: 0x1254A50
 		//public static void SetStatusValue(Text[] texts, int value, int topIndex, bool isSign = False) { }
@@ -53,6 +59,9 @@ namespace XeApp.Game.Menu
 		//public static void SetLuckText(Text text, int luck) { }
 
 		//// RVA: 0x1254BA8 Offset: 0x1254BA8 VA: 0x1254BA8
-		//public static string MakeLuckText(int luck) { }
+		public static string MakeLuckText(int luck)
+		{
+			return string.Format(luck > 0 ? "+{0}" : "{0}", luck);
+		}
 	}
 }

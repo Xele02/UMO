@@ -83,16 +83,137 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x136A8A0 Offset: 0x136A8A0 VA: 0x136A8A0
-		//private bool IsMaxLevel(GCIJNCFDNON sceneData) { }
+		private bool IsMaxLevel(GCIJNCFDNON sceneData)
+		{
+			return sceneData.CIEOBFIIPLD_SceneLevel > IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA, true, sceneData.MCCIFLKCNKO);
+		}
 
 		//// RVA: 0x136A9DC Offset: 0x136A9DC VA: 0x136A9DC
-		//public void Change(GCIJNCFDNON sceneData, DisplayType type) { }
+		public void Change(GCIJNCFDNON sceneData, DisplayType type)
+		{
+			if (sceneData == null)
+			{
+				SetActive(false);
+				return;
+			}
+			SetActive(true);
+			int val = 0;
+			bool isVisible = false;
+			bool isShowLevel = false;
+			bool isMax = false;
+			switch (type)
+			{
+				case DisplayType.Total:
+					val = sceneData.CMCKNKKCNDK_Status.Total;
+					break;
+				case DisplayType.Soul:
+					val = sceneData.CMCKNKKCNDK_Status.soul;
+					break;
+				case DisplayType.Vocal:
+					val = sceneData.CMCKNKKCNDK_Status.vocal;
+					break;
+				case DisplayType.Charm:
+					val = sceneData.CMCKNKKCNDK_Status.charm;
+					break;
+				case DisplayType.Get:
+				case DisplayType.Rarity:
+				case DisplayType.Level:
+				case DisplayType.Luck:
+					val = sceneData.CIEOBFIIPLD_SceneLevel;
+					break;
+				case DisplayType.Life:
+					val = sceneData.CMCKNKKCNDK_Status.life;
+					break;
+				case DisplayType.Support:
+					val = sceneData.CMCKNKKCNDK_Status.support;
+					break;
+				case DisplayType.Fold:
+					val = sceneData.CMCKNKKCNDK_Status.fold;
+					break;
+				case DisplayType.ActiveSkill:
+					{
+						int icon = 0;
+						int icon2 = 0;
+						bool isActive = false;
+						if (sceneData.HGONFBDIBPM < 1)
+						{
+							isActive = true;
+						}
+						else
+						{
+							icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[sceneData.HGONFBDIBPM - 1].MKPJBDFDHOL[0];
+							icon2 = 0;
+						}
+						m_sceneIconDecrationBehaviour.SetSkillIcon(icon, icon2, isActive);
+						isVisible = false;
+						m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
+						return;
+					}
+				case DisplayType.LiveSkill:
+					{
+						int icon = sceneData.FILPDDHMKEJ(false, 0, 0);
+						int icon2 = 0;
+						bool isActive = false;
+						if (icon < 1)
+						{
+							icon = 0;
+							icon2 = 0;
+							isActive = false;
+						}
+						icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML[icon - 1].MKPJBDFDHOL[0];
+						icon2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML[icon - 1].MKPJBDFDHOL[1];
+						m_sceneIconDecrationBehaviour.SetSkillIcon(icon, icon2, isActive);
+						isVisible = false;
+						m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
+						return;
+					}
+				case DisplayType.RecoveryNotes:
+				case DisplayType.ItemNotes:
+				case DisplayType.ScoreUpNotes:
+				case DisplayType.SupportNotes:
+				case DisplayType.FoldNotes:
+					val = sceneData.CMCKNKKCNDK_Status.spNoteExpected[(int)type - 12];
+					isShowLevel = true;
+					isMax = IsMaxLevel(sceneData);
+					break;
+				case DisplayType.EpisodePoint:
+					m_sceneIconDecrationBehaviour.SetFraction(sceneData.CGJCEHGFHMA(), sceneData.JLNGOOGHCNA());
+					isVisible = true;
+					m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
+					return;
+				case DisplayType.EpisodeName:
+					m_sceneIconDecrationBehaviour.SetEpisode(sceneData.KELFCMEOPPM_EpisodeId, sceneData.CIEOBFIIPLD_SceneLevel, IsMaxLevel(sceneData), sceneData.MCCIFLKCNKO);
+					return;
+				case DisplayType.SecretBoard:
+					val = sceneData.JPIPENJGGDD - 1;
+					if(val < 1)
+					{
+						val = 0;
+					}
+					break;
+				case DisplayType.LuckyLeaf:
+					m_sceneIconDecrationBehaviour.SetLuckyLeafCount(sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MNODFKEOPGK());
+					return;
+				case DisplayType.MusicExp:
+					m_sceneIconDecrationBehaviour.SetSpecialNoteAttribute((SpecialNoteAttribute.Type) sceneData.IGPMJPPAILL, sceneData.KMFADKEKPOM);
+					return;
+			}
+			m_sceneIconDecrationBehaviour.SetValue(val, isShowLevel, isMax, sceneData.MCCIFLKCNKO);
+			isVisible = true;
+			m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
+		}
 
 		//// RVA: 0x136CE10 Offset: 0x136CE10 VA: 0x136CE10
 		//private int GetRareToFrameUvIndex(int rare) { }
 
 		//// RVA: 0x136B128 Offset: 0x136B128 VA: 0x136B128
-		//public void SetActive(bool isActive) { }
+		public void SetActive(bool isActive)
+		{
+			if(m_frontObject != null)
+			{
+				m_frontObject.Runtime.gameObject.SetActive(isActive);
+			}
+		}
 
 		//// RVA: 0x136CEB0 Offset: 0x136CEB0 VA: 0x136CEB0
 		//public bool IsActive() { }

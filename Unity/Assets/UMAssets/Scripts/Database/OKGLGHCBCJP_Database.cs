@@ -444,7 +444,7 @@ public class OKGLGHCBCJP_Database
 		{(int)BEOKNKGHFFE_Section.NPLKLHDPLEO_ValSkill,() => { return new GKFMJAHKEMA_ValSkill(); } }, //0x14A0440				"val_skill",
 		{(int)BEOKNKGHFFE_Section.EEPIDKPPLJI_Valkyrie,() => { return new JPIANKEOOMB_Valkyrie(); } }, //0x14A04AC				"valkyrie",
 		// {(int)BEOKNKGHFFE_SectionName.LJKEOODGGJF_VcItem,() => { return new DKJMDIFAKKD(); } }, //0x14A0518				"vc_item",
-		// {(int)BEOKNKGHFFE_SectionName.NPOPGPFPLOL_HighscoreRating,() => { return new HGPEFPFODHO(); } }, //0x14A0584				"highscore_rating",
+		{(int)BEOKNKGHFFE_Section.NPOPGPFPLOL_HighscoreRating,() => { return new HGPEFPFODHO_HighScoreRanking(); } }, //0x14A0584				"highscore_rating",
 		// {(int)BEOKNKGHFFE_SectionName.AHKEJPLNAJK_LimitedCompoItem,() => { return new JHAAHJNEBOG(); } }, //0x14A05F0				"limited_compo_item"
 	}; // 0x8
 
@@ -515,7 +515,7 @@ public class OKGLGHCBCJP_Database
 	// public INDEPDKCJDD FBGKBGNIHGC { get; private set; } // 0x114 MOPJLGOMNLJ BAGFGFIMNLH KPAEENCFPIH
 	public GKFMJAHKEMA_ValSkill DIAEPFPGPEP_ValSkill { get; private set; } // 0x118 BCDPCPEGMHC MOJPFJFKFPG IMCKGLCKPED
 	public JPIANKEOOMB_Valkyrie PEOALFEGNDH_Valkyrie { get; private set; } // 0x11C IOEEBHMLNFN HFDLJDHDCED MJFJKMCBIHC
-	// public HGPEFPFODHO DCNNPEDOGOG { get; private set; } // 0x120 DGEJGGLIBPK DDMLBAIOIHC ADFIKFDMPAN
+	public HGPEFPFODHO_HighScoreRanking DCNNPEDOGOG_HighScoreRanking { get; private set; } // 0x120 DGEJGGLIBPK DDMLBAIOIHC ADFIKFDMPAN
 	// public ILLPGHGGKLL LINHIDCNAMG { get; private set; } // 0x124 CKMGPFOBCMH FAIKNJFGDIB MLLLCNLNJBI
 	// public PJANOOPJIDE KIBMNCOLJNC { get; private set; } // 0x128 KNIHEPFNDKP FDIFJJONAEA MLKGAOGFOPI
 	// public JHAAHJNEBOG MBAGKLJDKMH { get; private set; } // 0x12C HKMFFDNMOBN BDENFILNIID BHGPHONEKGL
@@ -753,7 +753,7 @@ public class OKGLGHCBCJP_Database
 		// FBGKBGNIHGC = null;
 		DIAEPFPGPEP_ValSkill = null;
 		PEOALFEGNDH_Valkyrie = null;
-		// DCNNPEDOGOG = null;
+		DCNNPEDOGOG_HighScoreRanking = null;
 		// LINHIDCNAMG = null;
 		// KIBMNCOLJNC = null;
 		// MBAGKLJDKMH = null;
@@ -837,7 +837,7 @@ public class OKGLGHCBCJP_Database
 					case BEOKNKGHFFE_Section.NPLKLHDPLEO_ValSkill: DIAEPFPGPEP_ValSkill = (GKFMJAHKEMA_ValSkill)item; break;
 					case BEOKNKGHFFE_Section.EEPIDKPPLJI_Valkyrie: PEOALFEGNDH_Valkyrie = (JPIANKEOOMB_Valkyrie)item; break;
 					// case BEOKNKGHFFE_Section.LJKEOODGGJF_VcItem: KCCDBKIOLDJ = item; break;
-					// case BEOKNKGHFFE_Section.NPOPGPFPLOL_HighscoreRating: DCNNPEDOGOG = item; break;
+					case BEOKNKGHFFE_Section.NPOPGPFPLOL_HighscoreRating: DCNNPEDOGOG_HighScoreRanking = (HGPEFPFODHO_HighScoreRanking)item; break;
 					// case BEOKNKGHFFE_Section.AHKEJPLNAJK_LimitedCompoItem: MBAGKLJDKMH = item; break;
 					default: TodoLogger.Log(0, "TODO" + INBBCDGDMLC[i]); break;
 				}

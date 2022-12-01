@@ -77,7 +77,27 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EF92D0 Offset: 0x1EF92D0 VA: 0x1EF92D0
-		// public void GoToFrame(LabelPreset preset, AbsoluteLayout layout, int frame) { }
+		public void GoToFrame(LabelPreset preset, AbsoluteLayout layout, int frame)
+		{
+			switch (preset.type)
+			{
+				case LabelPreset.Type.Table:
+				case LabelPreset.Type.Frame:
+					layout.StartSiblingAnimGoStop(frame, frame);
+					break;
+				case LabelPreset.Type.FrameAll:
+					layout.StartAllAnimGoStop(frame, frame);
+					layout.StartSiblingAnimGoStop(frame, frame);
+					break;
+				case LabelPreset.Type.TableChildren:
+				case LabelPreset.Type.FrameChildren:
+					layout.StartChildrenAnimGoStop(frame, frame);
+					break;
+				default:
+					UnityEngine.Debug.LogError("undefined PresetType : " + preset.type);
+					break;
+			}
+		}
 
 		// // RVA: 0x1EF9500 Offset: 0x1EF9500 VA: 0x1EF9500
 		// public void GoToLabelFrame(LabelPreset preset, AbsoluteLayout layout, int frame) { }

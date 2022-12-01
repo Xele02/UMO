@@ -87,7 +87,14 @@ namespace XeSys.Gfx
 		// public void StartAnim() { }
 
 		// // RVA: 0x1EE8B4C Offset: 0x1EE8B4C VA: 0x1EE8B4C
-		// public void StartAnimGoStop(int start, int end) { }
+		public void StartAnimGoStop(int start, int end)
+		{
+			m_Action = AnimAction.stop;
+			m_IsAnimEnd = false;
+			m_startTime = start * m_FrameSec;
+			m_endTime = end * m_FrameSec;
+			m_AnimCount = m_startTime;
+		}
 
 		// // RVA: 0x1EE9FB8 Offset: 0x1EE9FB8 VA: 0x1EE9FB8
 		// public void StartAnimGoStopTime(float start, float end) { }
@@ -131,7 +138,14 @@ namespace XeSys.Gfx
 		// public void StartAnimLoop(int start, int end) { }
 
 		// // RVA: 0x1EE8E14 Offset: 0x1EE8E14 VA: 0x1EE8E14
-		// public void StartAnimLoop(int current, int start, int end) { }
+		public void StartAnimLoop(int current, int start, int end)
+		{
+			m_Action = AnimAction.loop;
+			m_IsAnimEnd = false;
+			m_startTime = start * m_FrameSec;
+			m_endTime = end * m_FrameSec;
+			m_AnimCount = current * m_FrameSec;
+		}
 
 		// // RVA: 0x1EE8E94 Offset: 0x1EE8E94 VA: 0x1EE8E94
 		public void StartAnimLoop(string startLabel, string endLabel)

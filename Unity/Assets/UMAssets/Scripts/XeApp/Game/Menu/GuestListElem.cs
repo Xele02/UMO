@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Game.Common;
 using System;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -110,7 +111,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xE27830 Offset: 0xE27830 VA: 0xE27830
-		//public void ToggleMusicRatio(SortItem sortItem) { }
+		public void ToggleMusicRatio(SortItem sortItem)
+		{
+			m_symbolPlayerRank.GoToFrame("rank", sortItem == SortItem.HighScoreRating ? 1 : 0);
+		}
 
 		//// RVA: 0xE278C4 Offset: 0xE278C4 VA: 0xE278C4
 		//public bool IsPlayingStatus() { }
@@ -128,10 +132,36 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xE27948 Offset: 0xE27948 VA: 0xE27948
-		//public void SetDivaIconDelegate(Func<IiconTexture> iconDelegate) { }
+		public void SetDivaIconDelegate(Func<IiconTexture> iconDelegate)
+		{
+			divaIconDelegate = iconDelegate;
+			if (iconDelegate == null)
+				return;
+			IiconTexture tex = iconDelegate();
+			if (tex != null)
+			{
+				SetDivaIcon(tex);
+				divaIconDelegate = null;
+				return;
+			}
+			GameManager.Instance.DivaIconCache.SetLoadingIcon(m_divaIconImage);
+		}
 
 		//// RVA: 0xE27A58 Offset: 0xE27A58 VA: 0xE27A58
-		//public void SetSceneIconDelegate(Func<IiconTexture> iconDelegate) { }
+		public void SetSceneIconDelegate(Func<IiconTexture> iconDelegate)
+		{
+			sceneIconDelegate = iconDelegate;
+			if (iconDelegate == null)
+				return;
+			IiconTexture tex = iconDelegate();
+			if(tex != null)
+			{
+				SetSceneIcon(tex, m_isKira);
+				sceneIconDelegate = null;
+				return;
+			}
+			GameManager.Instance.SceneIconCache.SetLoadingTexture(m_sceneIconImage);
+		}
 
 		//// RVA: 0xE27534 Offset: 0xE27534 VA: 0xE27534
 		public void SetDivaIcon(IiconTexture iconTex)
@@ -147,63 +177,148 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xE27B6C Offset: 0xE27B6C VA: 0xE27B6C
-		//public void SetName(string name) { }
+		public void SetName(string name)
+		{
+			m_nameText.text = name;
+		}
 
 		//// RVA: 0xE27BA8 Offset: 0xE27BA8 VA: 0xE27BA8
-		//public void SetLevel(string level) { }
+		public void SetLevel(string level)
+		{
+			m_levelText.text = level;
+		}
 
 		//// RVA: 0xE27BE4 Offset: 0xE27BE4 VA: 0xE27BE4
-		//public void SetTotal(string total) { }
+		public void SetTotal(string total)
+		{
+			m_totalText.text = total;
+		}
 
 		//// RVA: 0xE27C20 Offset: 0xE27C20 VA: 0xE27C20
-		//public void SetLife(string life) { }
+		public void SetLife(string life)
+		{
+			m_lifeText.text = life;
+		}
 
 		//// RVA: 0xE27C5C Offset: 0xE27C5C VA: 0xE27C5C
-		//public void SetLuck(string luck) { }
+		public void SetLuck(string luck)
+		{
+			m_luckText.text = luck;
+		}
 
 		//// RVA: 0xE27C98 Offset: 0xE27C98 VA: 0xE27C98
-		//public void SetSkill(string skill) { }
+		public void SetSkill(string skill)
+		{
+			if(string.IsNullOrEmpty(skill))
+			{
+				UnitWindowConstant.SetInvalidText(m_skillText, TextAnchor.MiddleCenter);
+				return;
+			}
+			m_skillText.alignment = TextAnchor.MiddleLeft;
+			m_skillText.text = skill;
+		}
 
 		//// RVA: 0xE27D8C Offset: 0xE27D8C VA: 0xE27D8C
-		//public void SetSkillLevel(int level) { }
+		public void SetSkillLevel(int level)
+		{
+			if (level > 0)
+			{
+				m_skillLevelText.text = level.ToString();
+			}
+			else
+				m_skillLevelText.text = "";
+		}
 
 		//// RVA: 0xE27E90 Offset: 0xE27E90 VA: 0xE27E90
-		//public void SetSkillRank(SkillRank.Type rank) { }
+		public void SetSkillRank(SkillRank.Type rank)
+		{
+			GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankImage, rank);
+		}
 
 		//// RVA: 0xE27F60 Offset: 0xE27F60 VA: 0xE27F60
-		//public void SetSkillMask(GuestListElem.SkillMask mask) { }
+		public void SetSkillMask(SkillMask mask)
+		{
+			if(mask == SkillMask.MisMatchSeries)
+			{
+				m_layoutSkillMask.StartChildrenAnimGoStop("01");
+			}
+			else if(mask == SkillMask.MisMatchAttr)
+			{
+				m_layoutSkillMask.StartChildrenAnimGoStop("03");
+			}
+			else
+			{
+				m_layoutSkillMask.StartChildrenAnimGoStop("02");
+			}
+			m_layoutSkillMask.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
+			m_layoutSkillMask.UpdateAll(m_identity, Color.white);
+		}
 
 		//// RVA: 0xE280FC Offset: 0xE280FC VA: 0xE280FC
-		//public void SetSupport(string support) { }
+		public void SetSupport(string support)
+		{
+			m_supportText.text = support;
+		}
 
 		//// RVA: 0xE28138 Offset: 0xE28138 VA: 0xE28138
-		//public void SetFold(string fold) { }
+		public void SetFold(string fold)
+		{
+			m_foldText.text = fold;
+		}
 
 		//// RVA: 0xE28174 Offset: 0xE28174 VA: 0xE28174
-		//public void SetSoul(string soul) { }
+		public void SetSoul(string soul)
+		{
+			m_soulText.text = soul;
+		}
 
 		//// RVA: 0xE281B0 Offset: 0xE281B0 VA: 0xE281B0
-		//public void SetVoice(string voice) { }
+		public void SetVoice(string voice)
+		{
+			m_voiceText.text = voice;
+		}
 
 		//// RVA: 0xE281EC Offset: 0xE281EC VA: 0xE281EC
-		//public void SetCharm(string charm) { }
+		public void SetCharm(string charm)
+		{
+			m_charmText.text = charm;
+		}
 
 		//// RVA: 0xE28228 Offset: 0xE28228 VA: 0xE28228
-		//public void SetMusicRatio(string ratio) { }
+		public void SetMusicRatio(string ratio)
+		{
+			m_musicRatioText.text = ratio;
+		}
 
 		//// RVA: 0xE28264 Offset: 0xE28264 VA: 0xE28264
-		//public void SetMusicRank(HighScoreRatingRank.Type rank) { }
+		public void SetMusicRank(HighScoreRatingRank.Type rank)
+		{
+			GameManager.Instance.MusicRatioTextureCache.Load(rank, (IiconTexture texture) =>
+			{
+				//0xE28750
+				if(texture != null)
+				{
+					(texture as MusicRatioTextureCache.MusicRatioTexture).Set(m_musicRatioIconImage, rank);
+				}
+			});
+		}
 
 		//// RVA: 0xE283CC Offset: 0xE283CC VA: 0xE283CC
-		//public void SetMusicRateRank(IBIGBMDANNM a_friend_data) { }
+		public void SetMusicRateRank(IBIGBMDANNM a_friend_data)
+		{
+			m_musicRateRankText.text = OEGIPPCADNA.GEEFFAEGHAH(OEGIPPCADNA.BFKAHKBKBJE(a_friend_data.AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, a_friend_data.AJECHDLMKOE_LastLogin), true);
+		}
 
 		//// RVA: 0xE284A8 Offset: 0xE284A8 VA: 0xE284A8
-		//public void SetKira(bool isKira) { }
+		public void SetKira(bool isKira)
+		{
+			m_isKira = isKira;
+		}
 
 		//// RVA: 0xE284B0 Offset: 0xE284B0 VA: 0xE284B0
 		private void OnClickSelectCallback()
 		{
-			TodoLogger.Log(0, "OnClickSelectCallback");
+			InvokeSelectItem(0);
 		}
 
 		//// RVA: 0xE284BC Offset: 0xE284BC VA: 0xE284BC

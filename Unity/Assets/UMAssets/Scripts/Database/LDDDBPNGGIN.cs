@@ -157,7 +157,26 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	// public int GFODAIJMBAH(int ANAJIAENLNB, bool GIKLNODJKFK) { }
 
 	// // RVA: 0xDA0798 Offset: 0xDA0798 VA: 0xDA0798
-	// public byte[] CEKGFNKJDCF(KOGHKIODHPA JEMMMJEJLNL, int JPIPENJGGDD, int AOPBAOJIOGO, int ILABPFOMEAG, int JKGFBFPIMGA, bool MCCIFLKCNKO) { }
+	public byte[] CEKGFNKJDCF(KOGHKIODHPA_Board JEMMMJEJLNL, int JPIPENJGGDD, int AOPBAOJIOGO, int ILABPFOMEAG, int JKGFBFPIMGA, bool MCCIFLKCNKO)
+	{
+		int i = GENHLFPKOEE(JKGFBFPIMGA, MCCIFLKCNKO);
+		if (JPIPENJGGDD < i)
+			i = JPIPENJGGDD;
+		if(i - 1 < 1)
+		{
+			return new byte[50];
+		}
+		else
+		{
+			int b = JEMMMJEJLNL.NENHCPMDAGM(i - 1, AOPBAOJIOGO, ILABPFOMEAG);
+			byte[] res = new byte[50];
+			for(int j = 0; j < b; j++)
+			{
+				res[j >> 3] |= (byte)(1 << (j & 7));
+			}
+			return res;
+		}
+	}
 
 	// // RVA: 0xDA0984 Offset: 0xDA0984 VA: 0xDA0984
 	public byte[] KLIGCACGHHN(KOGHKIODHPA_Board JEMMMJEJLNL_BoardDb, int AOPBAOJIOGO_Sb, int ILABPFOMEAG_Va, int JKGFBFPIMGA_Rar, bool MCCIFLKCNKO_Feed)

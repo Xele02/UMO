@@ -1,4 +1,6 @@
 
+using XeSys;
+
 public class PIGBBNDPPJC
 {
 	public string OPFGFINHFCE; // 0x8
@@ -60,7 +62,10 @@ public class PIGBBNDPPJC
 	//public static int GMDHJBGLBEI(int KELFCMEOPPM, BBHNACPENDM AHEFHIMGIBI) { }
 
 	//// RVA: 0x16D0FEC Offset: 0x16D0FEC VA: 0x16D0FEC
-	//public static string EJOJNFDHDHN(int KELFCMEOPPM) { }
+	public static string EJOJNFDHDHN(int KELFCMEOPPM)
+	{
+		return MessageManager.Instance.GetMessage("master", "ep_nm_" + KELFCMEOPPM.ToString("D4"));
+	}
 
 	//// RVA: 0x16D10C4 Offset: 0x16D10C4 VA: 0x16D10C4
 	//public static string FKKHNDDGKJB(int KELFCMEOPPM) { }

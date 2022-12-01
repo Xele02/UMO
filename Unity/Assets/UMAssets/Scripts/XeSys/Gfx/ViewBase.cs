@@ -274,7 +274,10 @@ namespace XeSys.Gfx
 		// public void StartAnim() { }
 
 		// // RVA: 0x1EE8AF0 Offset: 0x1EE8AF0 VA: 0x1EE8AF0
-		// public void StartAnimGoStop(int start, int end) { }
+		public void StartAnimGoStop(int start, int end)
+		{
+			m_FrameAnimation.StartAnimGoStop(start, end);
+		}
 
 		// // RVA: 0x1EE8B84 Offset: 0x1EE8B84 VA: 0x1EE8B84
 		public void StartAnimGoStop(string startLabel, string endLabel)
@@ -292,7 +295,10 @@ namespace XeSys.Gfx
 		// public void StartAnimLoop(int start, int end) { }
 
 		// // RVA: 0x1EE8DA4 Offset: 0x1EE8DA4 VA: 0x1EE8DA4
-		// public void StartAnimLoop(int current, int start, int end) { }
+		public void StartAnimLoop(int current, int start, int end)
+		{
+			m_FrameAnimation.StartAnimLoop(current, start, end);
+		}
 
 		// // RVA: 0x1EE8E5C Offset: 0x1EE8E5C VA: 0x1EE8E5C
 		public void StartAnimLoop(string startLabel, string endLabel)

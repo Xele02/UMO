@@ -205,7 +205,10 @@ namespace XeApp.Game.Menu
 		// public void ReleaseKiraMaterial() { }
 
 		// // RVA: 0x136EBA4 Offset: 0x136EBA4 VA: 0x136EBA4
-		// public void SetLoadingTexture(RawImageEx image) { }
+		public void SetLoadingTexture(RawImageEx image)
+		{
+			m_loadingTexture.Set(image);
+		}
 
 		// // RVA: 0x1370DF8 Offset: 0x1370DF8 VA: 0x1370DF8 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)

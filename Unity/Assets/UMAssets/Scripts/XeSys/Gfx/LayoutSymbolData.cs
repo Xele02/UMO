@@ -22,7 +22,10 @@ namespace XeSys.Gfx
         }
 
         // // RVA: 0x1EFAA98 Offset: 0x1EFAA98 VA: 0x1EFAA98
-        // public void GoToFrame(string presetName, int frame) { }
+        public void GoToFrame(string presetName, int frame)
+		{
+			parent.GoToFrame(FindPreset(presetName), lyt, frame);
+		}
 
         // // RVA: 0x1EFAAE4 Offset: 0x1EFAAE4 VA: 0x1EFAAE4
         // public void GoToLabelFrame(string presetName, int frame = 0) { }

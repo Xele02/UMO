@@ -90,13 +90,19 @@ namespace XeApp.Game.Common
 		// public Rect GetDifficultyUvRect(Difficulty.Type diff) { }
 
 		// // RVA: 0x1104420 Offset: 0x1104420 VA: 0x1104420
-		// public Rect GetSkillRankUvRect(SkillRank.Type rank) { }
+		public Rect GetSkillRankUvRect(SkillRank.Type rank)
+		{
+			return m_skillRankRects[(int)rank];
+		}
 
 		// // RVA: 0x11044A8 Offset: 0x11044A8 VA: 0x11044A8
 		// public Rect GetLiveSkillTypeUvRect(LiveSkillType.Type skillType) { }
 
 		// // RVA: 0x1104530 Offset: 0x1104530 VA: 0x1104530
-		// public void SetImageSkillRank(RawImageEx image, SkillRank.Type rank) { }
+		public void SetImageSkillRank(RawImageEx image, SkillRank.Type rank)
+		{
+			image.uvRect = GetSkillRankUvRect(rank);
+		}
 
 		// // RVA: 0x1104580 Offset: 0x1104580 VA: 0x1104580
 		// public void SetImageLiveSkillType(RawImageEx image, LiveSkillType.Type skillType) { }

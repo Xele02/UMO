@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Text;
 using XeSys;
+using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
 {
@@ -89,7 +90,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17E3808 Offset: 0x17E3808 VA: 0x17E3808
-		// public void SetLoadingIcon(RawImageEx image) { }
+		public void SetLoadingIcon(RawImageEx image)
+		{
+			m_loadingDivaIcon.Set(image);
+		}
 
 		// // RVA: 0x17E3844 Offset: 0x17E3844 VA: 0x17E3844
 		// public void SetStatusLoadingIcon(RawImageEx image) { }

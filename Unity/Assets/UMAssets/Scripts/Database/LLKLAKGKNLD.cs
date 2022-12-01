@@ -53,7 +53,26 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 	//public int ELFPIODODFF(int JKGFBFPIMGA) { }
 
 	//// RVA: 0x180E628 Offset: 0x180E628 VA: 0x180E628
-	//public int JNLLKKHJCAD(int JKGFBFPIMGA, int MJBODMOLOBC) { }
+	public int JNLLKKHJCAD(int JKGFBFPIMGA, int MJBODMOLOBC)
+	{
+		int res = 0;
+		if(AJHBAOCLNDF_Enabled == 2)
+		{
+			if(JKGFBFPIMGA == 4)
+			{
+				res = LOCCHKJGJDJ[MJBODMOLOBC];
+			}
+			else
+			{
+				if(JKGFBFPIMGA >= 5)
+				{
+					res = BMEHMMIPELI[MJBODMOLOBC];
+				}
+			}
+			res = res ^ FBGGEFFJJHB;
+		}
+		return res;
+	}
 
 	//// RVA: 0x180E7A4 Offset: 0x180E7A4 VA: 0x180E7A4
 	//public int BKCAECPCELG() { }

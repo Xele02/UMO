@@ -34,7 +34,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14BD94C Offset: 0x14BD94C VA: 0x14BD94C
-		// public void LoadEmblem(int emblemId, Action<IiconTexture> callback) { }
+		public void LoadEmblem(int emblemId, Action<IiconTexture> callback)
+		{
+			Load(MakeEmblemIconTexturePath(emblemId), callback);
+		}
 
 		// // RVA: 0x14BDA14 Offset: 0x14BDA14 VA: 0x14BDA14
 		public void TryInstallEmblem(int emblemId)

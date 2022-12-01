@@ -118,16 +118,38 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xE28CD8 Offset: 0xE28CD8 VA: 0xE28CD8
-		//public IiconTexture GetGuestDivaIconTex() { }
+		public IiconTexture GetGuestDivaIconTex()
+		{
+			if(DivaIconTexture == null && !isDivaLoad)
+			{
+				GameManager.Instance.DivaIconCache.Load(divaId, divaModelId, divaColorId, GuestIconLoadCallback);
+				isDivaLoad = true;
+			}
+			return DivaIconTexture;
+		}
 
 		//// RVA: 0xE28E28 Offset: 0xE28E28 VA: 0xE28E28
-		//public IiconTexture GetGuestSceneIconTex() { }
+		public IiconTexture GetGuestSceneIconTex()
+		{
+			if(SceneIconTexture == null && !isSceneLoad)
+			{
+				GameManager.Instance.SceneIconCache.Load(sceneId, sceneRank, GuestSceneIconLoadCallback);
+				isSceneLoad = true;
+			}
+			return SceneIconTexture;
+		}
 
 		//// RVA: 0xE28F74 Offset: 0xE28F74 VA: 0xE28F74
-		//public void GuestIconLoadCallback(IiconTexture tex) { }
+		public void GuestIconLoadCallback(IiconTexture tex)
+		{
+			DivaIconTexture = tex;
+		}
 
 		//// RVA: 0xE28F7C Offset: 0xE28F7C VA: 0xE28F7C
-		//public void GuestSceneIconLoadCallback(IiconTexture tex) { }
+		public void GuestSceneIconLoadCallback(IiconTexture tex)
+		{
+			SceneIconTexture = tex;
+		}
 
 		//// RVA: 0xE28F84 Offset: 0xE28F84 VA: 0xE28F84
 		//public bool IsReady() { }

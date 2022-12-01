@@ -14,13 +14,13 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD6B438 Offset: 0xD6B438 VA: 0xD6B438
 	public LFHGFLJLGFB_FavoritePlayer()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(0, "LFHGFLJLGFB_FavoritePlayer()");
 	}
 
 	// // RVA: 0xD6B4DC Offset: 0xD6B4DC VA: 0xD6B4DC Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(0, "LFHGFLJLGFB_FavoritePlayer KMBPACJNEOF");
 	}
 
 	// // RVA: 0xD6B5B0 Offset: 0xD6B5B0 VA: 0xD6B5B0
@@ -39,7 +39,11 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	// public int OKAOABMKPGP(int OIPCCBHIKIA) { }
 
 	// // RVA: 0xD6B9E8 Offset: 0xD6B9E8 VA: 0xD6B9E8
-	// public bool FFKIDMKHIOE(int PPFNGGCBJKC) { }
+	public bool FFKIDMKHIOE(int PPFNGGCBJKC)
+	{
+		TodoLogger.Log(0, "LFHGFLJLGFB_FavoritePlayer FFKIDMKHIOE");
+		return false;
+	}
 
 	// // RVA: 0xD6BAF0 Offset: 0xD6BAF0 VA: 0xD6BAF0
 	// public void OKIOKKEJCOH() { }
@@ -50,7 +54,7 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD6BE50 Offset: 0xD6BE50 VA: 0xD6BE50 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(0, "LFHGFLJLGFB_FavoritePlayer IIEMACPEEBJ_Deserialize");
 		return true;
 	}
 

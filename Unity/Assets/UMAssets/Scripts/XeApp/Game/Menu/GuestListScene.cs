@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		private List<EAJCBFGKKFA> friends = new List<EAJCBFGKKFA>(100); // 0x7C
 		private List<GuestListInfo> m_guestInfoAllList = new List<GuestListInfo>(); // 0x80
 		private List<GuestListInfo> m_guestInfoList = new List<GuestListInfo>(); // 0x84
-		//private TeamSlectSceneArgs m_teamSelectSceneArgs = new TeamSlectSceneArgs(); // 0x88
+		private TeamSlectSceneArgs m_teamSelectSceneArgs = new TeamSlectSceneArgs(); // 0x88
 		private string m_guestNotFoundMessage; // 0x8C
 		private string m_guestAllFilteredMessage; // 0x90
 		private ElemStatusChange m_statusChange = new ElemStatusChange(); // 0x94
@@ -153,7 +153,11 @@ namespace XeApp.Game.Menu
 		//private bool CheckTransitByReturn() { }
 
 		// RVA: 0xE2A9C8 Offset: 0xE2A9C8 VA: 0xE2A9C8
-		//protected bool CheckEventLimit() { }
+		protected bool CheckEventLimit()
+		{
+			TodoLogger.Log(0, "CheckEventLimit()");
+			return false;
+		}
 
 		// RVA: 0xE2AD40 Offset: 0xE2AD40 VA: 0xE2AD40
 		//private AssistItem GameAttributeToAssisItem(GameAttribute.Type attr) { }
@@ -250,7 +254,14 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2B498 Offset: 0xE2B498 VA: 0xE2B498
 		private void OnSelectListItem(int value, SwapScrollListContent content)
 		{
-			TodoLogger.Log(0, "OnSelectListItem");
+			if (value == 1)
+			{
+				TodoLogger.Log(0, "OnSelectListItem");
+			}
+			else if(value == 0)
+			{
+				OnClickElemButton(content.Index);
+			}
 		}
 
 		// RVA: 0xE2AFC0 Offset: 0xE2AFC0 VA: 0xE2AFC0
@@ -317,7 +328,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xE2B69C Offset: 0xE2B69C VA: 0xE2B69C
-		//private void OnClickElemButton(int elemIndex) { }
+		private void OnClickElemButton(int elemIndex)
+		{
+			SoundManager.Instance.sePlayerBoot.Play(1);
+			if(!CheckEventLimit())
+			{
+				GameManager.Instance.SelectedGuestData = m_guestInfoList[elemIndex].friend;
+				MenuScene.Instance.Call(TransitionList.Type.TEAM_SELECT, m_teamSelectSceneArgs, true);
+			}
+		}
 
 		// RVA: 0xE2B87C Offset: 0xE2B87C VA: 0xE2B87C
 		private void OnClickSortButton()
@@ -393,7 +412,54 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2C9C0 Offset: 0xE2C9C0 VA: 0xE2C9C0
 		private void OnUpdateListItem(int index, GeneralListContent content, GuestListInfo info)
 		{
-			TodoLogger.Log(0, "GuestList OnUpdateListItem");
+			GuestListElem elem = content.GetElemUI<GuestListElem>();
+			elem.SetName(info.name);
+			elem.SetLevel(info.playerRank.ToString());
+			elem.SetTotal(info.total.ToString());
+			elem.SetSkill(info.skill);
+			elem.SetSkillLevel(info.skillLevel);
+			elem.SetSkillRank(info.skillRank);
+			elem.SetLife(info.life.ToString());
+			elem.SetLuck(UnitWindowConstant.MakeLuckText(info.luck));
+			elem.SetSoul(info.soul.ToString());
+			elem.SetVoice(info.voice.ToString());
+			elem.SetCharm(info.charm.ToString());
+			elem.SetFold(info.fold.ToString());
+			elem.SetSupport(info.support.ToString());
+			elem.SetMusicRatio(info.musicRatio.ToString());
+			elem.SetMusicRank(info.scoreRatingRank);
+			elem.SetMusicRateRank(info.friend.PCEGKKLKFNO);
+			elem.ToggleMusicRatio(m_sortType);
+			elem.SetKira(info.isKira);
+			if(info.sceneId < 1)
+			{
+				elem.SetSkillMask(GuestListElem.SkillMask.None);
+			}
+			else
+			{
+				GCIJNCFDNON g = new GCIJNCFDNON();
+				g.KHEKNNFCAOI(info.sceneId, null, null);
+				if(g.KAFAAPEBCPD(Database.Instance.gameSetup.musicInfo.musicId))
+				{
+					elem.SetSkillMask(GuestListElem.SkillMask.None);
+				}
+				else if(g.JDAEAJNJBGI(Database.Instance.gameSetup.musicInfo.musicId))
+				{
+					elem.SetSkillMask(GuestListElem.SkillMask.MisMatchSeries);
+				}
+				else
+				{
+					elem.SetSkillMask(GuestListElem.SkillMask.MisMatchAttr);
+				}
+			}
+			elem.SetDivaIconDelegate(info.GetGuestDivaIconTex);
+			elem.SetSceneIconDelegate(info.GetGuestSceneIconTex);
+			DivaIconDecoration di = m_divaDecos[m_elems.IndexOf(elem)];
+			di.SetActive(true);
+			di.Change(info.friend.JIGONEMPPNP_Diva, info.friend, DisplayType.Level, info.friend.KHGKPKDBMOH());
+			SceneIconDecoration si = m_sceneDecos[m_elems.IndexOf(elem)];
+			si.SetActive(true);
+			si.Change(info.friend.KHGKPKDBMOH(), m_sortType == SortItem.Episode ? DisplayType.EpisodeName : DisplayType.Level);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E0D4C Offset: 0x6E0D4C VA: 0x6E0D4C

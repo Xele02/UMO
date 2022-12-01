@@ -26,7 +26,7 @@ public class VLCManager : SingletonMonoBehaviour<VLCManager>
 
             _libVLC = new LibVLC(enableDebugLogs: true);
 
-            Application.SetStackTraceLogType(LogType.Log, StackTraceLogType.None);
+            //Application.SetStackTraceLogType(LogType.Log, StackTraceLogType.None);
             //_libVLC.Log += (s, e) => UnityEngine.Debug.Log(e.FormattedLog); // enable this for logs in the editor
         }
     }

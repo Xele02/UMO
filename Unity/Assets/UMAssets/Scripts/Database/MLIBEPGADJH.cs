@@ -201,7 +201,65 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 		}
 
 		// // RVA: 0x19628E8 Offset: 0x19628E8 VA: 0x19628E8
-		// public int NGGBHLCKJGO(KOGHKIODHPA JEMMMJEJLNL, byte[] KBOLNIBLIND, byte[] ODKMKEHJOCK, int JPIPENJGGDD, int JPJNKNOJBMM, int MBLGJDKKLPO) { }
+		public int NGGBHLCKJGO(KOGHKIODHPA_Board JEMMMJEJLNL, byte[] KBOLNIBLIND, byte[] ODKMKEHJOCK, int JPIPENJGGDD, int JPJNKNOJBMM, int MBLGJDKKLPO)
+		{
+			int res = 0;
+			if(KBOLNIBLIND != null)
+			{
+				DMPDJFAGCPN d = JEMMMJEJLNL.FDCDIHIIJJM_GetLayout(BJNBBEMBMIK_Bd);
+				if(d != null)
+				{
+					for(int i = 0; i < d.PDKGMFHIFML_Pl.Count; i++)
+					{
+						int idx = i >> 3;
+						if(idx < KBOLNIBLIND.Length)
+						{
+							if(((1 << (i & 7)) & KBOLNIBLIND[idx]) != 0)
+							{
+								AFIFDLOAKGI a = JEMMMJEJLNL.DDGNLCJGFJF(d.PDKGMFHIFML_Pl[i].JBGEEPFKIGG);
+								if(a != null && a.INDDJNMPONH == 18)
+								{
+									res += GDHGEECAJGI[i];
+								}
+							}
+						}
+					}
+				}
+			}
+			if(ODKMKEHJOCK != null)
+			{
+				KOGHKIODHPA_Board.ADPMJDMFEIK data = new KOGHKIODHPA_Board.ADPMJDMFEIK();
+				data.KHEKNNFCAOI_Init(JEMMMJEJLNL, AOPBAOJIOGO_Sb, 0, JPIPENJGGDD, JPJNKNOJBMM, ILABPFOMEAG_Va, FKDCCLPGKDK_Ma);
+				if(data.EEDDJLLIOBD != null)
+				{
+					List<AFIFDLOAKGI> l = data.NKBGIKPCLMI(false);
+					if(l.Count > 0)
+					{
+						if (l.Count - 1 > 0)
+						{
+							for (int i = 0; i < l.Count - 1; i++)
+							{
+								if (l[i] != null && l[i].INDDJNMPONH == 18)
+								{
+									if (((1 << (i & 7)) & ODKMKEHJOCK[i >> 3]) != 0)
+									{
+										res += l[i].MKNDAOHGOAK;
+									}
+								}
+							}
+						}
+						if(MBLGJDKKLPO > 0)
+						{
+							if(l[l.Count - 1]!= null && l[l.Count - 1].INDDJNMPONH == 20)
+							{
+								res += l.Count * MBLGJDKKLPO;
+							}
+						}
+					}
+				}
+			}
+			return res;
+		}
 
 		// // RVA: 0x1962D3C Offset: 0x1962D3C VA: 0x1962D3C
 		public int AGOEDLNOHND(KOGHKIODHPA_Board JEMMMJEJLNL, byte[] ODKMKEHJOCK, int JPIPENJGGDD_Mlt, int JPJNKNOJBMM)

@@ -114,7 +114,45 @@ namespace XeApp.Game.Menu
 		//public void Change(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData, DisplayType type) { }
 
 		//// RVA: 0x17E2640 Offset: 0x17E2640 VA: 0x17E2640
-		//public void Change(FFHPBEPOMAK divaData, EAJCBFGKKFA friendPlayerData, DisplayType type, GCIJNCFDNON assistMainScene) { }
+		public void Change(FFHPBEPOMAK divaData, EAJCBFGKKFA friendPlayerData, DisplayType type, GCIJNCFDNON assistMainScene)
+		{
+			int luck = 0;
+			if(assistMainScene != null)
+			{
+				luck = assistMainScene.MJBODMOLOBC_Luck;
+			}
+			if(friendPlayerData.HDJOHAJPGBA_SubScene != null)
+			{
+				for(int i = 0; i < friendPlayerData.HDJOHAJPGBA_SubScene.Count; i++)
+				{
+					if(friendPlayerData.HDJOHAJPGBA_SubScene[i] != null)
+					{
+						//??
+					}
+				}
+			}
+			if(m_divaFriendIconDecrationBehaviour != null)
+			{
+				bool isFriend = false;
+				bool isFav = false;
+				isFriend = friendPlayerData.PDIPANKOKOL_FriendType == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
+				if (friendPlayerData.PCEGKKLKFNO == null || !(friendPlayerData.PCEGKKLKFNO is IFICNCAHIGI) || !(friendPlayerData.PCEGKKLKFNO as IFICNCAHIGI).BBNAEPGAMMA)
+				{
+					isFav = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friendPlayerData.MLPEHNBNOGD_Id);
+				}
+				else
+				{
+					isFav = true;
+				}
+				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(isFriend, isFav);
+				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(friendPlayerData.NDOLELKAJNL.MDPKLNFFDBO_EmblemId);
+				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL.HMFFHLPNMPH);
+			}
+			m_status.Clear();
+			m_status.Add(divaData.CMCKNKKCNDK_EquippedStatus);
+			Change(divaData, null, luck, 0, type);
+			TodoLogger.Log(0, "?? rarity");
+		}
 
 		//// RVA: 0x17E29F8 Offset: 0x17E29F8 VA: 0x17E29F8
 		//public void Change(FFHPBEPOMAK divaData, DisplayType type) { }
@@ -126,7 +164,70 @@ namespace XeApp.Game.Menu
 		//public void FadeFrienFanAnimationSetFrame(int frame) { }
 
 		//// RVA: 0x17E2380 Offset: 0x17E2380 VA: 0x17E2380
-		//private void Change(FFHPBEPOMAK divaData, StatusData statusData, int luck, int rarity, DisplayType type) { }
+		private void Change(FFHPBEPOMAK divaData, StatusData statusData, int luck, int rarity, DisplayType type)
+		{
+			if (divaData == null)
+			{
+				SetActive(false);
+				return;
+			}
+			SetActive(true);
+			bool isSign = false;
+			bool bVar1 = false;
+			if (type <= DisplayType.SecretBoard)
+			{
+				isSign = true;
+				switch(type)
+				{
+					case DisplayType.Total:
+						luck = m_status.Total;
+						break;
+					case DisplayType.Soul:
+						luck = m_status.soul;
+						break;
+					case DisplayType.Vocal:
+						luck = m_status.vocal;
+						break;
+					case DisplayType.Charm:
+						luck = m_status.charm;
+						break;
+					default:
+						bVar1 = true;
+						luck = divaData.CIEOBFIIPLD_Level;
+						isSign = false;
+						break;
+					case DisplayType.Life:
+						luck = m_status.life;
+						break;
+					case DisplayType.Luck:
+						isSign = true;
+						break;
+					case DisplayType.Support:
+						luck = m_status.support;
+						break;
+					case DisplayType.Fold:
+						luck = m_status.fold;
+						break;
+					case DisplayType.RecoveryNotes:
+					case DisplayType.ItemNotes:
+					case DisplayType.ScoreUpNotes:
+					case DisplayType.SupportNotes:
+					case DisplayType.FoldNotes:
+						luck = m_status.spNoteExpected[(int)type - 12];
+						break;
+					case DisplayType.EpisodePoint:
+						luck = divaData.CIEOBFIIPLD_Level;
+						break;
+				}
+			}
+			if (m_divaIconDecorationBehaviour != null)
+			{
+				if (!bVar1)
+					m_divaIconDecorationBehaviour.SetValue(luck, isSign);
+				else
+					m_divaIconDecorationBehaviour.SetLevel(luck);
+			}
+		}
 
 		//// RVA: 0x17E2128 Offset: 0x17E2128 VA: 0x17E2128
 		//public static int GetEquipmentRarity(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData) { }
@@ -138,7 +239,17 @@ namespace XeApp.Game.Menu
 		//public static int GetEquipmentLuck(List<GCIJNCFDNON> sceneList) { }
 
 		//// RVA: 0x17D4F90 Offset: 0x17D4F90 VA: 0x17D4F90
-		//public void SetActive(bool isActive) { }
+		public void SetActive(bool isActive)
+		{
+			if(m_frontObject != null)
+			{
+				m_frontObject.Runtime.gameObject.SetActive(isActive);
+			}
+			if(m_friendObject != null)
+			{
+				m_friendObject.Runtime.gameObject.SetActive(isActive);
+			}
+		}
 
 		//// RVA: 0x17E3048 Offset: 0x17E3048 VA: 0x17E3048
 		//public bool IsActive() { }
