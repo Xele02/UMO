@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 		private SetDeckParamCalculator m_unitSetParamCalculator = new SetDeckParamCalculator(); // 0xE4
 		private JLKEOGLJNOD m_viewUnitData; // 0xE8
 		private EEDKAACNBBG m_viewMusicData; // 0xEC
-		private EJKBKMBJMGL m_viewEnemyData; // 0xF0
+		private EJKBKMBJMGL_EnemyData m_viewEnemyData; // 0xF0
 		private int m_divaDispTypeIndex; // 0xF4
 		private int m_sceneDispTypeIndex; // 0xF8
 		private int m_useLiveSkipTicketCount; // 0xFC
@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 
 		//private int UseLiveSkipTicketCount { get; set; } 0xA80220 0xA80234
 		//private int UnitSetIndex { get; set; } 0xA80248 0xA8031C
-		//private EAJCBFGKKFA m_viewFriendPlayerData { get; } 0xA803F4
+		private EAJCBFGKKFA m_viewFriendPlayerData { get { return GameManager.Instance.SelectedGuestData; } } //0xA803F4
 		//private bool IsEnableUnitInfoChange { get; } 0xA80490
 
 		// RVA: 0xA804A4 Offset: 0xA804A4 VA: 0xA804A4 Slot: 4
@@ -178,17 +178,20 @@ namespace XeApp.Game.Menu
 			m_musicInfo.OnClickExpectedScoreDescButton = OnShowScoreInfoPopup;
 			m_musicInfo.ExpectedScoreGauge.OnClickMinusButton = () =>
 			{
-				Method$XeApp.Game.Menu.TeamSelectSceneUnit5.<>c__DisplayClass85_0.<OnPreSetCanvas>b__0()
+				//0xA936A4
+				OnClickAnyButtons();
 			};
 			m_musicInfo.ExpectedScoreGauge.OnClickPlusButton = () =>
 			{
-				Method$XeApp.Game.Menu.TeamSelectSceneUnit5.<>c__DisplayClass85_0.<OnPreSetCanvas>b__1()
+				//0xA936CC
+				OnClickAnyButtons();
 			};
 			m_playButtons.OnClickPlayButton = OnPlayButton;
 			m_playButtons.OnClickSkipButton = OnSkipButton;
-			m_unitSetListButtons.OnClickUnitButton = () =>
+			m_unitSetListButtons.OnClickUnitButton = (int no, JLKEOGLJNOD data) =>
 			{
-				Method$XeApp.Game.Menu.TeamSelectSceneUnit5.<>c__DisplayClass85_0.<OnPreSetCanvas>b__2()
+				//0xA936F4
+				OnClickAnyButtons();
 			};
 			m_unitSetListButtons.OnChangeUnit = OnChangeUnitSetSelect;
 			m_unitSetListButtons.OnStartChangePage = OnStartChangeUnitSetPage;
@@ -196,11 +199,13 @@ namespace XeApp.Game.Menu
 			m_unitSetCloseButton.OnClickCloseButton = OnClickUnitSetCloseButton;
 			m_unitSetSelectButtons.OnClickSelectButtonLeft = () =>
 			{
-				Method$XeApp.Game.Menu.TeamSelectSceneUnit5.<>c__DisplayClass85_0.<OnPreSetCanvas>b__3()
+				//0xA9371C
+				OnClickUnitSetSelectButton(-1);
 			};
 			m_unitSetSelectButtons.OnClickSelectButtonRight = () =>
 			{
-				Method$XeApp.Game.Menu.TeamSelectSceneUnit5.<>c__DisplayClass85_0.<OnPreSetCanvas>b__4()
+				//0xA93748
+				OnClickUnitSetSelectButton(1);
 			};
 			m_unitSetInfo.OnClickDiva = null;
 			m_unitSetInfo.OnStayDiva = null;
@@ -222,7 +227,7 @@ namespace XeApp.Game.Menu
 				TodoLogger.Log(0, "TODO Event");
 			}
 			m_viewMusicData = Database.Instance.selectedMusic.GetSelectedMusicData();
-			m_viewEnemyData = Database.Instance.selectedMusic.GetEnemyData();
+			m_viewEnemyData = Database.Instance.selectedMusic.GetEnemyData(Database.Instance.gameSetup.musicInfo.difficultyType);
 			m_viewEnemyData.NPEKPHAFMGE(Database.Instance.gameSetup.musicInfo.enemyInfo.NJOPIPNGANO_CS, Database.Instance.gameSetup.musicInfo.enemyInfo.EDLACELKJIK_LS);
 			UpdatePrismData(m_viewMusicData.DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo);
 			m_isRaidEvent = Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid;
@@ -243,13 +248,15 @@ namespace XeApp.Game.Menu
 			m_viewUnitData = m_playerData.DPLBHAIKPGL(m_isGoDivaEvent);
 			int divaSortItem = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.BICLOMKLAOF_unitWindowDivaDispItem;
 			int sceneSortItem = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.LEAPMNHODPJ_unitWindowDispItem;
-			m_divaDispTypeIndex = PopupSortMenu.UnitDivaSortItem.FindIndex(() =>
+			m_divaDispTypeIndex = PopupSortMenu.UnitDivaSortItem.FindIndex((SortItem x) =>
 			{
-				Method$XeApp.Game.Menu.TeamSelectSceneUnit5.<>c__DisplayClass85_0.<OnPreSetCanvas>b__5()
+				//0xA93774
+				return divaSortItem == (int)x;
 			});
-			m_sceneDispTypeIndex = PopupSortMenu.UnitSortItem.FindIndex(() =>
+			m_sceneDispTypeIndex = PopupSortMenu.UnitSortItem.FindIndex((SortItem x) =>
 			{
-				Method$XeApp.Game.Menu.TeamSelectSceneUnit5.<>c__DisplayClass85_0.<OnPreSetCanvas>b__6()
+				//0xA93788
+				return sceneSortItem == (int)x;
 			});
 			UpdateParamCalculator();
 			if(m_updateBaseScoreRatio)
@@ -264,7 +271,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					m_unitInfo.AssistControl.UpdateContent(m_unitInfo.AssistControl.m_viewFriendPlayerData, m_viewMusicData);
+					m_unitInfo.AssistControl.UpdateContent(m_viewFriendPlayerData, m_viewMusicData);
 				}
 			}
 			m_musicInfo.Set(m_viewMusicData, Database.Instance.gameSetup.musicInfo, false, SetDeckMusicInfo.BottomType.ExpectedScoreGauge);
@@ -508,7 +515,14 @@ namespace XeApp.Game.Menu
 		//private bool CheckUseAssist() { }
 
 		//// RVA: 0xA8406C Offset: 0xA8406C VA: 0xA8406C
-		//private void UpdateEpisodeBonusList() { }
+		private void UpdateEpisodeBonusList()
+		{
+			if (((int)Database.Instance.gameSetup.musicInfo.gameEventType | 4) == 4)
+				return;
+			if (m_eventCtrl == null)
+				return;
+			TodoLogger.Log(0, "Event");
+		}
 
 		//// RVA: 0xA86E48 Offset: 0xA86E48 VA: 0xA86E48
 		//private void UpdateEpisodeBonusList(int unitSetIndex) { }
@@ -532,7 +546,12 @@ namespace XeApp.Game.Menu
 		//private int GetSkipRestCount() { }
 
 		//// RVA: 0xA841B4 Offset: 0xA841B4 VA: 0xA841B4
-		//private void UpdateParamCalculator() { }
+		private void UpdateParamCalculator()
+		{
+			m_paramCalculator.Calc(Database.Instance.gameSetup.musicInfo, m_playerData, m_viewUnitData,
+				m_viewMusicData, m_viewFriendPlayerData, m_viewEnemyData, Database.Instance.bonusData.EffectiveEpisodeBonus, 
+				m_isRaidEvent);
+		}
 
 		//// RVA: 0xA8520C Offset: 0xA8520C VA: 0xA8520C
 		//private void ApplyDispType(TeamSelectSceneUnit5.DispType dispType) { }
@@ -797,7 +816,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA909A8 Offset: 0xA909A8 VA: 0xA909A8
-		//private void OnClickUnitSetSelectButton(int tick) { }
+		private void OnClickUnitSetSelectButton(int tick)
+		{
+			TodoLogger.Log(0, "OnClickUnitSetSelectButton");
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F76C Offset: 0x72F76C VA: 0x72F76C
 		//// RVA: 0xA90A28 Offset: 0xA90A28 VA: 0xA90A28
@@ -838,7 +860,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA89EAC Offset: 0xA89EAC VA: 0xA89EAC
-		//private void OnClickAnyButtons() { }
+		private void OnClickAnyButtons()
+		{
+			TodoLogger.Log(0, "OnClickAnyButtons");
+		}
 
 		// RVA: 0xA91658 Offset: 0xA91658 VA: 0xA91658 Slot: 28
 		protected override TransitionArgs GetCallArgsReturn()

@@ -29,9 +29,37 @@ namespace XeApp.Game.Common
 		//public BKKMNPEEILG GetGhostData() { }
 
 		// RVA: 0x1391CAC Offset: 0x1391CAC VA: 0x1391CAC
-		//public EJKBKMBJMGL GetEnemyData(Difficulty.Type difficulty) { }
+		public EJKBKMBJMGL_EnemyData GetEnemyData(Difficulty.Type difficulty)
+		{
+			if(selectedMusic != null)
+			{
+				if (selectedMusic is LIEJFHMGNIA)
+					return (selectedMusic as LIEJFHMGNIA).HPBPDHPIBGN;
+				if (selectedMusic is IBJAKJJICBC)
+					return (selectedMusic as IBJAKJJICBC).MGJKEJHEBPO_DiffInfos[(int)difficulty].HPBPDHPIBGN_EnemyData;
+			}
+			return null;
+		}
 
 		// RVA: 0x1391DD8 Offset: 0x1391DD8 VA: 0x1391DD8
-		//public int GetNeedEnergy(Difficulty.Type difficulty, bool isLine6) { }
+		public int GetNeedEnergy(Difficulty.Type difficulty, bool isLine6)
+		{
+			if(selectedMusic != null)
+			{
+				if (selectedMusic is IBJAKJJICBC)
+				{
+					MKIKFJKPEHK data = new MKIKFJKPEHK();
+					if(!data.DPICLLJJPAC(selectedMusic as IBJAKJJICBC, (int)difficulty, isLine6))
+					{
+						return (selectedMusic as IBJAKJJICBC).MGJKEJHEBPO_DiffInfos[(int)difficulty].BPLOEAHOPFI_Energy;
+					}
+					if(Database.Instance.gameSetup.SelectedDashIndex > -1)
+					{
+						return data.KLOOIJIDKGO[Database.Instance.gameSetup.SelectedDashIndex];
+					}
+				}
+			}
+			return 0;
+		}
 	}
 }

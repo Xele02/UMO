@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 		//[TooltipAttribute] // RVA: 0x680B04 Offset: 0x680B04 VA: 0x680B04
 		private DivaColorSetScriptableObject m_divaColors; // 0x4C
 		public Action OnClickDivaButton; // 0x50
-		//public Action OnStayDivaButton; // 0x54
+		public Action OnStayDivaButton; // 0x54
 		public Action OnClickCostumeButton; // 0x58
 		private FFHPBEPOMAK m_divaData; // 0x5C
 		//private DFKGGBMFFGB m_playerData; // 0x60
@@ -134,7 +134,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA68D84 Offset: 0xA68D84 VA: 0xA68D84
-		//public void SetForAssist(FFHPBEPOMAK divaData) { }
+		public void SetForAssist(FFHPBEPOMAK divaData)
+		{
+			m_divaData = divaData;
+			SetDivaImageAndColor(divaData, false);
+			if (m_divaFrontImage != null)
+				m_divaFrontImage.gameObject.SetActive(false);
+			if (m_divaStatus != null)
+				m_divaStatus.gameObject.SetActive(false);
+			if (m_costumeButton != null)
+				m_costumeButton.gameObject.SetActive(false);
+		}
 
 		//// RVA: 0xA6B6E0 Offset: 0xA6B6E0 VA: 0xA6B6E0
 		//public void SetStatusDisplayType(DisplayType type) { }

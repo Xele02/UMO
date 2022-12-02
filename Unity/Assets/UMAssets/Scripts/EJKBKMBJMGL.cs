@@ -27,7 +27,10 @@ public class EJKBKMBJMGL_EnemyData
 	}
 
 	//// RVA: 0x12F3BD0 Offset: 0x12F3BD0 VA: 0x12F3BD0
-	//public void NPEKPHAFMGE(int DCOALMMJDJK, int KKPLDFNDFDE) { }
+	public void NPEKPHAFMGE(int DCOALMMJDJK, int KKPLDFNDFDE)
+	{
+		TodoLogger.Log(0, "NPEKPHAFMGE enemyData");
+	}
 
 	//// RVA: 0x12F3D94 Offset: 0x12F3D94 VA: 0x12F3D94
 	//public void CCFGGCGKECF() { }
