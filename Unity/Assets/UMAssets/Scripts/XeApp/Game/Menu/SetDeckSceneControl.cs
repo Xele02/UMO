@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if (IsMatchMusicAttr(m_sceneData))
+				if (IsMatchMusicAttr(m_sceneData, musicId))
 				{
 					m_attrIconEffectImage.enabled = true;
 					m_attrIconEffectImage.sprite = GetAttrIconSprite(m_sceneData.JGJFIJOCPAG_SceneAttr);
@@ -138,10 +138,17 @@ namespace XeApp.Game.Menu
 		//public void SetStatusDisplayForRival() { }
 
 		//// RVA: 0xA74344 Offset: 0xA74344 VA: 0xA74344
-		//private Sprite GetAttrIconSprite(int attr) { }
+		private Sprite GetAttrIconSprite(int attr)
+		{
+			return m_attrIconEffectSprites.GetMusicAttrIconSprite(attr);
+		}
 
 		//// RVA: 0xA741F4 Offset: 0xA741F4 VA: 0xA741F4
-		//private bool IsMatchMusicAttr(GCIJNCFDNON sceneData, int musicId) { }
+		private bool IsMatchMusicAttr(GCIJNCFDNON sceneData, int musicId)
+		{
+			EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
+			return CMMKCEPBIHI.OJNOJNEKBKH(m != null ? m.FKDCCLPGKDK_Ma : 0, sceneData.JGJFIJOCPAG_SceneAttr);
+		}
 		
 	}
 }

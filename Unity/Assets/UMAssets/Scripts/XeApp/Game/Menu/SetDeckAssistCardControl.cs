@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA685AC Offset: 0xA685AC VA: 0xA685AC
 		private void SetScene(FFHPBEPOMAK divaData, GCIJNCFDNON sceneData, EEDKAACNBBG musicData)
 		{
-			m_scene.Set(divaData != null ? divaData.AHHJLDLAPAN_DivaId : 0, 1, sceneData, musicData != null ? musicData.DLAEJOBELBH_MusicId : 0);
+			m_scene.Set(divaData != null ? divaData.AHHJLDLAPAN_DivaId : 0, SetDeckSceneControl.SkillType.Live, sceneData, musicData != null ? musicData.DLAEJOBELBH_MusicId : 0);
 		}
 	}
 }

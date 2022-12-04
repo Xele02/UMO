@@ -12,11 +12,11 @@ namespace XeApp.Game.Menu
 		//private AEGLGBOGDHH m_unitSkillCalcResult; // 0x18
 		private StatusData m_baseStatus = new StatusData(); // 0x48
 		private StatusData m_addStatus = new StatusData(); // 0x4C
-		private static StatusData m_tmpStatus; // 0x0
+		private static StatusData m_tmpStatus = new StatusData(); // 0x0
 		private int m_baseLuck; // 0x50
 		private int m_addLuck; // 0x54
 		private LimitOverStatusData m_limitOverStatus = new LimitOverStatusData(); // 0x58
-		private static LimitOverStatusData m_tmpLimitOverStatus; // 0x4
+		private static LimitOverStatusData m_tmpLimitOverStatus = new LimitOverStatusData(); // 0x4
 		private bool m_isEnableEpisodeBonus; // 0x5C
 		private int m_episodeBonusPoint; // 0x60
 		//private CFHDKAFLNEP m_subPlate; // 0x64
@@ -76,8 +76,5 @@ namespace XeApp.Game.Menu
 
 		//// RVA: 0xA71FAC Offset: 0xA71FAC VA: 0xA71FAC
 		//private static bool CanBonusEpisode(List<IKDICBBFBMI.GNPOABJANKO> list, out int bonusPoint) { }
-
-		// RVA: 0xA73014 Offset: 0xA73014 VA: 0xA73014
-		private static void .cctor() { }
 	}
 }

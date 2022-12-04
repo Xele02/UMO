@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 namespace XeApp.Game.Common
 {
@@ -84,13 +85,13 @@ namespace XeApp.Game.Common
 		//public bool IsPlaying() { }
 
 		//// RVA: 0x1102D14 Offset: 0x1102D14 VA: 0x1102D14
-		public void Play(int index = 0, Action<KeyFrameAnime, int> callback)
+		public void Play(int index = 0, Action<KeyFrameAnime, int> callback = null)
 		{
 			Play(m_playType, index, callback);
 		}
 
 		//// RVA: 0x1102D54 Offset: 0x1102D54 VA: 0x1102D54
-		public void Play(PlayType type, int index = 0, Action<KeyFrameAnime, int> callback)
+		public void Play(PlayType type, int index = 0, Action<KeyFrameAnime, int> callback = null)
 		{
 			if(index > -1)
 			{
@@ -121,6 +122,7 @@ namespace XeApp.Game.Common
 						{
 							m_animStartTime = Time.time;
 						}
+						m_animCoroutine = StartCoroutine(Co_Animation(index));
 					}
 					return;
 				}
@@ -130,12 +132,88 @@ namespace XeApp.Game.Common
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73D0A4 Offset: 0x73D0A4 VA: 0x73D0A4
 		//// RVA: 0x11030B4 Offset: 0x11030B4 VA: 0x11030B4
-		//private IEnumerator Co_Animation(int index) { }
+		private IEnumerator Co_Animation(int index)
+		{
+			float start; // 0x18
+			KeyFrameAnime.KeyFrame prev; // 0x1C
+			KeyFrameAnime.KeyFrame next; // 0x20
+			float time; // 0x24
+			float wait; // 0x28
+			float speed; // 0x2C
+
+			//0x1103504
+			m_playIndex = index;
+			start = m_animStartTime;
+			while(true)
+			{
+				prev = m_animeTable[m_playIndex];
+				int nextIndex = m_playIndex + 1;
+				if(nextIndex >= m_animeTable.Length)
+					nextIndex = 0;
+				next = m_animeTable[nextIndex];
+				if(prev.sprite != null)
+				{
+					SetSprite(prev.sprite);
+				}
+				if(m_animCallback != null)
+					m_animCallback(this, m_playIndex);
+				if(prev.time <= 0)
+				{
+					yield return null;
+					continue;
+				}
+				wait = prev.time / 1000.0f;
+				speed = 1.0f / wait;
+				while(prev.time <= wait)
+				{
+					time = Mathf.Clamp(Time.time - start, 0, wait);
+					if(prev.lerp)
+					{
+						float t = time * speed;
+						SetPosition((next.pos - prev.pos) * t + prev.pos);
+						SetPosition((next.scale - prev.scale) * t + prev.scale);
+						SetEulerAngles(new Vector3(GetEulerAngles().x, GetEulerAngles().y, prev.angle + t * (next.angle - prev.angle)));
+						SetColor((next.color - prev.color) * t + prev.color);
+					}
+					yield return null;
+				}
+				SetPosition(next.pos);
+				SetScale(next.scale);
+				SetEulerAngles(new Vector3(GetEulerAngles().x, GetEulerAngles().y, next.angle));
+				SetColor(next.color);
+				if(m_smoothSeams)
+				{
+					start = Time.time - ((Time.time - start) - wait);
+				}
+				else
+				{
+					start = Time.time;
+				}
+				m_playIndex++;
+				if(m_animeTable.Length <= m_playIndex)
+				{
+					m_playIndex = 0;
+					if(m_playType == PlayType.Once)
+					{
+						m_animCoroutine = null;
+						yield break;
+					}
+				}
+				if(m_animCoroutine == null)
+					yield break;
+				prev = null;
+				next = null;
+			}
+		}
 
 		//// RVA: 0x110317C Offset: 0x110317C VA: 0x110317C
-		public void Stop(bool immediate = False)
+		public void Stop(bool immediate = false)
 		{
-
+			if(immediate && m_animCoroutine != null)
+			{
+				StopCoroutine(m_animCoroutine);
+			}
+			m_animCoroutine = null;
 		}
 
 		//// RVA: 0x11031B4 Offset: 0x11031B4 VA: 0x11031B4
@@ -145,30 +223,30 @@ namespace XeApp.Game.Common
 		protected abstract void Init();
 
 		//// RVA: -1 Offset: -1 Slot: 5
-		//protected abstract void SetSprite(Sprite sprite);
+		protected abstract void SetSprite(Sprite sprite);
 
 		//// RVA: -1 Offset: -1 Slot: 6
 		//protected abstract Vector3 GetPosition();
 
 		//// RVA: -1 Offset: -1 Slot: 7
-		//protected abstract void SetPosition(Vector3 pos);
+		protected abstract void SetPosition(Vector3 pos);
 
 		//// RVA: -1 Offset: -1 Slot: 8
 		//protected abstract Vector3 GetScale();
 
 		//// RVA: -1 Offset: -1 Slot: 9
-		//protected abstract void SetScale(Vector3 scale);
+		protected abstract void SetScale(Vector3 scale);
 
 		//// RVA: -1 Offset: -1 Slot: 10
-		//protected abstract Vector3 GetEulerAngles();
+		protected abstract Vector3 GetEulerAngles();
 
 		//// RVA: -1 Offset: -1 Slot: 11
-		//protected abstract void SetEulerAngles(Vector3 eangle);
+		protected abstract void SetEulerAngles(Vector3 eangle);
 
 		//// RVA: -1 Offset: -1 Slot: 12
 		//protected abstract Color GetColor();
 
 		//// RVA: -1 Offset: -1 Slot: 13
-		//protected abstract void SetColor(Color color);
+		protected abstract void SetColor(Color color);
 	}
 }
