@@ -103,7 +103,7 @@ namespace XeApp.Game.Menu
 		private bool m_isGoDivaBonus; // 0x14E
 
 		//private int UseLiveSkipTicketCount { get; set; } 0xA80220 0xA80234
-		//private int UnitSetIndex { get; set; } 0xA80248 0xA8031C
+		private int UnitSetIndex { get { return m_isGoDivaEvent ? UnitSetSelectIndex_GoDiva : UnitSetSelectIndex_Normal; } set { if (m_isGoDivaEvent) UnitSetSelectIndex_GoDiva = value; UnitSetSelectIndex_Normal = value; } } //0xA80248 0xA8031C
 		private EAJCBFGKKFA m_viewFriendPlayerData { get { return GameManager.Instance.SelectedGuestData; } } //0xA803F4
 		//private bool IsEnableUnitInfoChange { get; } 0xA80490
 
@@ -320,7 +320,13 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F1CC Offset: 0x72F1CC VA: 0x72F1CC
 		//// RVA: 0xA856C0 Offset: 0xA856C0 VA: 0xA856C0
-		//private IEnumerator Co_OnPostSetCanvas() { }
+		private IEnumerator Co_OnPostSetCanvas()
+		{
+			//0xA954EC
+			m_isWaitOnPostSetCanvas = true;
+			yield return null;
+			m_isWaitOnPostSetCanvas = false;
+		}
 
 		// RVA: 0xA8576C Offset: 0xA8576C VA: 0xA8576C Slot: 19
 		protected override bool IsEndPostSetCanvas()
@@ -336,7 +342,15 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F244 Offset: 0x72F244 VA: 0x72F244
 		//// RVA: 0xA857AC Offset: 0xA857AC VA: 0xA857AC
-		//private IEnumerator Co_EnterAnimation() { }
+		private IEnumerator Co_EnterAnimation()
+		{
+			//0xA9479C
+			m_isWaitEnterAnimation = true;
+			SetTitleInOut(DispType.CurrentUnit, m_dispType);
+			SetInactiveUnnecessaryContent(m_dispType);
+			yield return Co_EnterContents(m_dispType);
+			m_isWaitEnterAnimation = false;
+		}
 
 		// RVA: 0xA85858 Offset: 0xA85858 VA: 0xA85858 Slot: 10
 		protected override bool IsEndEnterAnimation()
@@ -352,7 +366,17 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F2BC Offset: 0x72F2BC VA: 0x72F2BC
 		//// RVA: 0xA85890 Offset: 0xA85890 VA: 0xA85890
-		//private IEnumerator Co_ExitAnimation() { }
+		private IEnumerator Co_ExitAnimation()
+		{
+			//0xA94E40
+			m_isWaitExitAnimation = true;
+			while (IsPlayingContents())
+				yield return null;
+			LeaveContents();
+			while (IsPlayingContents())
+				yield return null;
+			m_isWaitExitAnimation = false;
+		}
 
 		// RVA: 0xA8593C Offset: 0xA8593C VA: 0xA8593C Slot: 13
 		protected override bool IsEndExitAnimation()
@@ -375,7 +399,45 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F334 Offset: 0x72F334 VA: 0x72F334
 		//// RVA: 0xA85980 Offset: 0xA85980 VA: 0xA85980
-		//protected IEnumerator OpenSceneCoroutine() { }
+		protected IEnumerator OpenSceneCoroutine()
+		{
+			int i;
+
+			//0xA967A0
+			if (IsPlayingContents())
+				yield return null;
+			i = 0;
+			yield return null;
+			i++;
+			while(i <= 4)
+				yield return null;
+			bool isWait = false;
+			m_gameSettingMenu = ConfigMenu.Create(null);
+			if(ConfigManager.gotoTimingScene)
+			{
+				if(!GameManager.Instance.IsTutorial)
+				{
+					isWait = true;
+					m_gameSettingMenu.ShowPopupRhythm(null, (PopupButton.ButtonLabel label) =>
+					{
+						//0xA937A4
+						isWait = false;
+					});
+					while (isWait)
+						yield return null;
+				}
+			}
+			MenuScene.Instance.TryShowPopupWindow(this, GameManager.Instance.ViewPlayerData, m_viewMusicData, false, m_transitionName, UpdateContent);
+			if(m_isShowSubPlate)
+			{
+				m_isShowSubPlate = false;
+				if(PrevTransition == TransitionList.Type.SCENE_GROWTH)
+				{
+					ShowSubPlateWindow(true);
+				}
+			}
+			m_isWaitOpenScene = false;
+		}
 
 		// RVA: 0xA85A40 Offset: 0xA85A40 VA: 0xA85A40 Slot: 23
 		protected override void OnActivateScene()
@@ -391,7 +453,24 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F3AC Offset: 0x72F3AC VA: 0x72F3AC
 		//// RVA: 0xA85A64 Offset: 0xA85A64 VA: 0xA85A64
-		//private IEnumerator Co_ShowHelp() { }
+		private IEnumerator Co_ShowHelp()
+		{
+			//0xA95604
+			m_isWaitActivateScene = true;
+			if(TutorialProc.CanAutoSettingHelp())
+			{
+				TodoLogger.Log(0, "Co_ShowHelp");
+			}
+			if(TutorialProc.CanUnit5Help(Database.Instance.gameSetup.musicInfo))
+			{
+				TodoLogger.Log(0, "Co_ShowHelp");
+			}
+			MenuScene.Instance.InputDisable();
+			yield return TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition);
+			MenuScene.Instance.InputEnable();
+			GameManager.Instance.AddPushBackButtonHandler(OnBackButton);
+			m_isWaitActivateScene = false;
+		}
 
 		// RVA: 0xA85B24 Offset: 0xA85B24 VA: 0xA85B24 Slot: 14
 		protected override void OnDestoryScene()
@@ -463,21 +542,21 @@ namespace XeApp.Game.Menu
 			m_prismUnitInfo = m_prismUnitInfoObject.instanceObject.GetComponentInChildren<SetDeckUnitInfoSLive>();
 			m_statusWindow = m_statusWindowObject.instanceObject.GetComponentInChildren<SetDeckStatusWindow>();
 
-			m_headButtonsObject.SetParent(transform);
-			m_unitStatusObject.SetParent(transform);
-			m_valkyrieButtonObject.SetParent(transform);
-			m_unitInfoChangeButtonObject.SetParent(transform);
-			m_unitInfoObject.SetParent(transform);
-			m_musicInfoObject.SetParent(transform);
-			m_playButtonsObject.SetParent(transform);
-			m_unitSetListButtonsObject.SetParent(transform);
-			m_unitSetCloseButtonObject.SetParent(transform);
-			m_unitSetSelectButtonsObject.SetParent(transform);
-			m_unitSetInfoObject.SetParent(transform);
-			m_loadSaveButtonsObject.SetParent(transform);
-			m_prismSettingButtonsObject.SetParent(transform);
-			m_prismUnitInfoObject.SetParent(transform);
-			m_statusWindowObject.SetParent(transform);
+			m_headButtonsObject.SetParent(transform, null);
+			m_unitStatusObject.SetParent(transform, null);
+			m_valkyrieButtonObject.SetParent(transform, null);
+			m_unitInfoChangeButtonObject.SetParent(transform, null);
+			m_unitInfoObject.SetParent(transform, null);
+			m_musicInfoObject.SetParent(transform, null);
+			m_playButtonsObject.SetParent(transform, null);
+			m_unitSetListButtonsObject.SetParent(transform, null);
+			m_unitSetCloseButtonObject.SetParent(transform, null);
+			m_unitSetSelectButtonsObject.SetParent(transform, null);
+			m_unitSetInfoObject.SetParent(transform, null);
+			m_loadSaveButtonsObject.SetParent(transform, null);
+			m_prismSettingButtonsObject.SetParent(transform, null);
+			m_prismUnitInfoObject.SetParent(transform, null);
+			m_statusWindowObject.SetParent(transform, null);
 
 			m_unitSetInfo.transform.SetAsLastSibling();
 			m_prismUnitInfo.transform.SetAsLastSibling();
@@ -500,16 +579,117 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA85D5C Offset: 0xA85D5C VA: 0xA85D5C
-		//private void FinalizeUGUIObject() { }
+		private void FinalizeUGUIObject()
+		{
+			ClearUGUIObjectListener();
+			HideUGUIObject();
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckHeadButtons", m_headButtonsObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckUnitStatus", m_unitStatusObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckValkyrieButton", m_valkyrieButtonObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckUnitInfoChangeButton", m_unitInfoChangeButtonObject);
+			if(!IsStoryMode() && m_transitionName != TransitionList.Type.GODIVA_TEAM_SELECT)
+			{
+				GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckUnitInfo_Select", m_unitInfoObject);
+			}
+			else
+			{
+				GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckUnitInfo_Edit", m_unitInfoObject);
+			}
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckMusicInfo", m_musicInfoObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckPlayButtons", m_playButtonsObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckUnitSetListButtons", m_unitSetListButtonsObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckUnitSetCloseButton", m_unitSetCloseButtonObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckUnitSetSelectButtons", m_unitSetSelectButtonsObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckUnitInfo_Edit", m_unitSetInfoObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckLoadSaveButtons", m_loadSaveButtonsObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckPrismSettingButtons", m_prismSettingButtonsObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckUnitInfo_SLive", m_prismUnitInfoObject);
+			GameManager.Instance.LayoutObjectCache.ReturnUGUIInstance("SetDeckStatusWindow", m_statusWindowObject);
+			m_loadSaveButtonsObject = null;
+			m_prismSettingButtonsObject = null;
+			m_prismUnitInfoObject = null;
+			m_statusWindowObject = null;
+			m_unitSetCloseButtonObject = null;
+			m_unitSetSelectButtonsObject = null;
+			m_unitSetInfoObject = null;
+			m_loadSaveButtonsObject = null;
+			m_headButtonsObject = null;
+			m_unitStatusObject = null;
+			m_valkyrieButtonObject = null;
+			m_unitInfoChangeButtonObject = null;
+			m_unitInfoObject = null;
+			m_musicInfoObject = null;
+			m_playButtonsObject = null;
+			m_unitSetListButtonsObject = null;
+		}
 
 		//// RVA: 0xA864C0 Offset: 0xA864C0 VA: 0xA864C0
-		//private void ClearUGUIObjectListener() { }
+		private void ClearUGUIObjectListener()
+		{
+			m_headButtons.OnClickAutoSettingButton = null;
+			m_headButtons.OnClickUnitSetButton = null;
+			m_headButtons.OnClickPrismButton = null;
+			m_headButtons.OnClickUnitButton = null;
+			m_headButtons.OnClickSettingButton = null;
+			m_unitStatus.OnClickNameEditButton = null;
+			m_unitStatus.OnClickCheckStatusButton = null;
+			m_unitStatus.OnClickDispTypeButton = null;
+			m_unitStatus.OnClickEpisodeBonusButton = null;
+			m_valkyrieButton.OnClickValkyrieButton = null;
+			m_valkyrieButton.OnStayValkyrieButton = null;
+			m_unitInfoChangeButton.OnClickChangeButton = null;
+			m_unitInfo.OnClickDiva = null;
+			m_unitInfo.OnStayDiva = null;
+			m_unitInfo.OnClickCostume = null;
+			m_unitInfo.OnClickScene = null;
+			m_unitInfo.OnStayScene = null;
+			m_musicInfo.OnClickExpectedScoreDescButton = null;
+			m_playButtons.OnClickPlayButton = null;
+			m_playButtons.OnClickSkipButton = null;
+			m_unitSetListButtons.OnChangeUnit = null;
+			m_unitSetListButtons.OnStartChangePage = null;
+			m_unitSetListButtons.OnEndChangePage = null;
+			m_unitSetCloseButton.OnClickCloseButton = null;
+			m_unitSetSelectButtons.OnClickSelectButtonLeft = null;
+			m_unitSetSelectButtons.OnClickSelectButtonRight = null;
+			m_unitSetInfo.OnClickDiva = null;
+			m_unitSetInfo.OnStayDiva = null;
+			m_unitSetInfo.OnClickCostume = null;
+			m_unitSetInfo.OnClickScene = null;
+			m_unitSetInfo.OnStayScene = null;
+			m_loadSaveButtons.OnClickLoadButton = null;
+			m_loadSaveButtons.OnClickSaveButton = null;
+			m_prismSettingButtons.OnClickOriginalSettingButton = null;
+			m_prismUnitInfo.OnClickItem = null;
+		}
 
 		//// RVA: 0xA86860 Offset: 0xA86860 VA: 0xA86860
-		//private void HideUGUIObject() { }
+		private void HideUGUIObject()
+		{
+			m_headButtons.InOut.Leave(0, false, null);
+			m_unitStatus.InOut.Leave(0, false, null);
+			m_valkyrieButton.InOut.Leave(0, false, null);
+			m_unitInfoChangeButton.InOut.Leave(0, false, null);
+			m_unitInfo.AnimeControl.Hide();
+			m_musicInfo.InOut.Leave(0, false, null);
+			m_playButtons.InOut.Leave(0, false, null);
+			m_unitSetListButtons.InOut.Leave(0, false, null);
+			m_unitSetCloseButton.InOut.Leave(0, false, null);
+			m_unitSetSelectButtons.InOutLeft.Leave(0, false, null);
+			m_unitSetSelectButtons.InOutRight.Leave(0, false, null);
+			m_unitSetInfo.AnimeControl.Hide();
+			m_loadSaveButtons.InOut.Leave(0, false, null);
+			m_prismSettingButtons.InOut.Leave(0, false, null);
+			m_prismUnitInfo.AnimeControl.Hide();
+			m_statusWindow.InOut.Leave(0, false, null);
+			m_unitStatus.SetCheckStatusButtonState(SetDeckUnitStatus.CheckStatusButtonState.Normal);
+		}
 
 		//// RVA: 0xA86D6C Offset: 0xA86D6C VA: 0xA86D6C
-		//private bool IsStoryMode() { }
+		private bool IsStoryMode()
+		{
+			return Database.Instance.selectedMusic.GetSelectedMusicData() is LIEJFHMGNIA;
+		}
 
 		//// RVA: 0xA86490 Offset: 0xA86490 VA: 0xA86490
 		//private bool CheckUseAssist() { }
@@ -528,22 +708,77 @@ namespace XeApp.Game.Menu
 		//private void UpdateEpisodeBonusList(int unitSetIndex) { }
 
 		//// RVA: 0xA86FA0 Offset: 0xA86FA0 VA: 0xA86FA0
-		//private void UpdateUnitBonus() { }
+		private void UpdateUnitBonus()
+		{
+			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+			{
+				TodoLogger.Log(0, "Event");
+			}
+		}
 
 		//// RVA: 0xA8711C Offset: 0xA8711C VA: 0xA8711C
-		//private void UpdateUnitBonus(int unitSetIndex) { }
+		private void UpdateUnitBonus(int unitSetIndex)
+		{
+			if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+			{
+				TodoLogger.Log(0, "Event");
+			}
+		}
 
 		//// RVA: 0xA847FC Offset: 0xA847FC VA: 0xA847FC
-		//private SetDeckPlayButtons.PlayButtonType CheckPlayButtonType(GameSetupData.MusicInfo musicInfo) { }
+		private SetDeckPlayButtons.PlayButtonType CheckPlayButtonType(GameSetupData.MusicInfo musicInfo)
+		{
+			if(musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
+			{
+				TodoLogger.Log(0, "Event");
+			}
+			if (!musicInfo.isEnergyRequired)
+				return SetDeckPlayButtons.PlayButtonType.Play;
+			if (m_isRaidEvent)
+				return SetDeckPlayButtons.PlayButtonType.Play_EN;
+			return SetDeckPlayButtons.PlayButtonType.Play_AP;
+		}
 
 		//// RVA: 0xA84314 Offset: 0xA84314 VA: 0xA84314
-		//private TeamSelectSceneUnit5.SkipStatusType CehckSkipStatus(long consumeTime) { }
+		private SkipStatusType CehckSkipStatus(long consumeTime)
+		{
+			SkipStatusType res = SkipStatusType.Story;
+			if (!IsStoryMode())
+			{
+				if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
+				{
+					TodoLogger.Log(0, "Event");
+				}
+				TodoLogger.Log(0, "Event");
+				res = SkipStatusType.Boost;
+				if(Database.Instance.gameSetup.SelectedDashIndex < 1)
+				{
+					res = SkipStatusType.Lock;
+					if((Database.Instance.selectedMusic.GetSelectedMusicData() as IBJAKJJICBC).JHLDFOLFNGB(Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode))
+					{
+						res = SkipStatusType.Limit;
+						if(!CIOECGOMILE.HHCJCDFCLOB.PPDOILECBAD())
+						{
+							res = SkipStatusType.LackTicket;
+							if(CIOECGOMILE.HHCJCDFCLOB.HDKICOHCCJB(consumeTime))
+							{
+								res = SkipStatusType.Enable;
+							}
+						}
+					}
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0xA84714 Offset: 0xA84714 VA: 0xA84714
 		//private SetDeckPlayButtons.SkipButtoType ConvertSkipButtonType(TeamSelectSceneUnit5.SkipStatusType skipStatus) { }
 
 		//// RVA: 0xA84730 Offset: 0xA84730 VA: 0xA84730
-		//private int GetSkipRestCount() { }
+		private int GetSkipRestCount()
+		{
+			return CIOECGOMILE.HHCJCDFCLOB.PPADGJPHDAD() - CIOECGOMILE.HHCJCDFCLOB.PIEPAMPMODI();
+		}
 
 		//// RVA: 0xA841B4 Offset: 0xA841B4 VA: 0xA841B4
 		private void UpdateParamCalculator()
@@ -554,16 +789,73 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA8520C Offset: 0xA8520C VA: 0xA8520C
-		//private void ApplyDispType(TeamSelectSceneUnit5.DispType dispType) { }
+		private void ApplyDispType(DispType dispType)
+		{
+			if(dispType == DispType.Prism)
+			{
+				m_headButtons.SetType(SetDeckHeadButtons.Type.Prism);
+				m_unitStatus.SetUnitNameEditButtonEnable(true);
+				m_unitStatus.SetCheckStatusButtonEnable(false);
+			}
+			else if(dispType == DispType.UnitSet)
+			{
+				m_unitStatus.SetUnitNameEditButtonEnable(false);
+				m_unitStatus.SetCheckStatusButtonEnable(true);
+			}
+			else if(dispType == DispType.CurrentUnit)
+			{
+				m_headButtons.SetType(SetDeckHeadButtons.Type.TeamSelect);
+				m_unitStatus.SetUnitNameEditButtonEnable(true);
+				m_unitStatus.SetCheckStatusButtonEnable(true);
+			}
+		}
 
 		//// RVA: 0xA84DA4 Offset: 0xA84DA4 VA: 0xA84DA4
-		//private void ApplyCurrentUnitContent(bool forPrism = False) { }
+		private void ApplyCurrentUnitContent(bool forPrism = false)
+		{
+			UpdateEpisodeBonusList();
+			UpdateUnitBonus();
+			UpdateParamCalculator();
+			m_unitStatus.UpdateContent(m_paramCalculator);
+			m_unitStatus.SetUnitName(m_viewUnitData.BHKALCOAHHO_Name);
+			if(!forPrism)
+			{
+				m_valkyrieButton.UpdateContent(m_viewUnitData, m_viewMusicData);
+			}
+			m_valkyrieButton.SetTapGuard(false);
+			m_unitInfo.UpdateContent(m_playerData, m_viewUnitData, m_paramCalculator, m_viewMusicData, Database.Instance.gameSetup.musicInfo, m_isGoDivaEvent);
+			m_unitInfo.SetStatusDispalyType(UnitDivaSortItem[m_divaDispTypeIndex], UnitDivaSortItem[m_sceneDispTypeIndex]);
+			SetExpectedScoreGauge();
+			m_statusWindow.UpdateContent(m_playerData, m_viewUnitData, m_viewMusicData, m_viewEnemyData, m_viewFriendPlayerData, 0, m_isGoDivaEvent);
+			m_musicInfo.ReStartMusicAttrAnime();
+		}
 
 		//// RVA: 0xA84920 Offset: 0xA84920 VA: 0xA84920
-		//private void ApplyUnitSetContent(int unitSetIndex) { }
+		private void ApplyUnitSetContent(int unitSetIndex)
+		{
+			UpdateEpisodeBonusList(unitSetIndex);
+			UpdateUnitBonus(unitSetIndex);
+			m_unitSetParamCalculator.Calc(Database.Instance.gameSetup.musicInfo, m_playerData, m_playerData.JKIJFGGMNAN_GetUnit(unitSetIndex, m_isGoDivaEvent), m_viewMusicData, m_viewFriendPlayerData, m_viewEnemyData, Database.Instance.bonusData.EffectiveEpisodeBonus, m_isRaidEvent);
+			m_unitStatus.UpdateContent(m_unitSetParamCalculator);
+			JLKEOGLJNOD viewUnitData = m_playerData.JKIJFGGMNAN_GetUnit(unitSetIndex);
+			m_unitStatus.SetUnitName(viewUnitData.BHKALCOAHHO_Name);
+			m_valkyrieButton.UpdateContent(viewUnitData, m_viewMusicData);
+			m_valkyrieButton.SetTapGuard(true);
+			m_unitSetInfo.UpdateContent(m_playerData, viewUnitData, m_unitSetParamCalculator, m_viewMusicData, Database.Instance.gameSetup.musicInfo, m_isGoDivaEvent);
+			m_unitSetInfo.SetStatusdisplayType(UnitDivaSortItem[m_divaDispTypeIndex], UnitSortItem[m_sceneDispTypeIndex]);
+			SetExpectedScoreGauge();
+			m_statusWindow.UpdateContent(m_playerData, viewUnitData, m_viewMusicData, m_viewEnemyData, m_viewFriendPlayerData, 0, m_isGoDivaEvent);
+			m_loadSaveButtons.SetType(!viewUnitData.EIGKIHENKNC);
+			m_musicInfo.ReStartMusicAttrAnime();
+		}
 
 		//// RVA: 0xA850FC Offset: 0xA850FC VA: 0xA850FC
-		//private void ApplyPrismUnitContent() { }
+		private void ApplyPrismUnitContent()
+		{
+			m_valkyrieButton.UpdateContent(m_prismData);
+			m_valkyrieButton.SetTapGuard(false);
+			m_prismUnitInfo.UpdateContent(m_prismData, Database.Instance.gameSetup.musicInfo);
+		}
 
 		//// RVA: 0xA872A0 Offset: 0xA872A0 VA: 0xA872A0
 		//private void SetExpectedScoreGauge() { }
@@ -572,14 +864,29 @@ namespace XeApp.Game.Menu
 		//private void ApplyUnitContent(TeamSelectSceneUnit5.DispType dispType) { }
 
 		//// RVA: 0xA87534 Offset: 0xA87534 VA: 0xA87534
-		//private void UpdateContent() { }
+		private void UpdateContent()
+		{
+			ApplyUnitContent(m_dispType);
+		}
 
 		//// RVA: 0xA8548C Offset: 0xA8548C VA: 0xA8548C
-		//private bool IsApplyWait() { }
+		private bool IsApplyWait()
+		{
+			return m_valkyrieButton.IsUpdatingContent || m_unitInfo.IsUpdatingContent() || m_unitSetInfo.IsUpdatingContent() || m_prismUnitInfo.IsUpdatingContent();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F424 Offset: 0x72F424 VA: 0x72F424
 		//// RVA: 0xA875CC Offset: 0xA875CC VA: 0xA875CC
-		//private IEnumerator Co_EnterContents(TeamSelectSceneUnit5.DispType dispType) { }
+		private IEnumerator Co_EnterContents(DispType dispType)
+		{
+			//0xA94974
+			SetActiveNecessaryContent(dispType);
+			LeaveUnnecessaryContent(dispType);
+			EnterNecessaryContent(dispType);
+			while (IsPlayingContents())
+				yield return null;
+			SetInactiveUnnecessaryContent(dispType);
+		}
 
 		//// RVA: 0xA87694 Offset: 0xA87694 VA: 0xA87694
 		//private void EnterNecessaryContent(TeamSelectSceneUnit5.DispType dispType) { }
@@ -591,26 +898,113 @@ namespace XeApp.Game.Menu
 		//private void SetActiveNecessaryContent(TeamSelectSceneUnit5.DispType dispType) { }
 
 		//// RVA: 0xA8895C Offset: 0xA8895C VA: 0xA8895C
-		//private void SetInactiveUnnecessaryContent(TeamSelectSceneUnit5.DispType dispType) { }
+		private void SetInactiveUnnecessaryContent(TeamSelectSceneUnit5.DispType dispType)
+		{
+			if (dispType == DispType.Prism)
+			{
+				m_unitStatus.gameObject.SetActive(false);
+				m_unitInfoChangeButton.gameObject.SetActive(false);
+				m_unitInfo.gameObject.SetActive(false);
+				m_unitSetListButtons.gameObject.SetActive(false);
+				m_unitSetCloseButton.gameObject.SetActive(false);
+				m_unitSetSelectButtons.gameObject.SetActive(false);
+				m_unitSetInfo.gameObject.SetActive(false);
+				m_loadSaveButtons.gameObject.SetActive(false);
+			}
+			else
+			{
+				if (dispType == DispType.UnitSet)
+				{
+					m_headButtons.gameObject.SetActive(false);
+					m_unitInfo.gameObject.SetActive(false);
+					m_playButtons.gameObject.SetActive(false);
+				}
+				else
+				{
+					m_unitSetListButtons.gameObject.SetActive(false);
+					m_unitSetCloseButton.gameObject.SetActive(false);
+					m_unitSetSelectButtons.gameObject.SetActive(false);
+					m_unitSetInfo.gameObject.SetActive(false);
+					m_loadSaveButtons.gameObject.SetActive(false);
+				}
+				m_prismSettingButtons.gameObject.SetActive(false);
+				m_prismUnitInfo.gameObject.SetActive(false);
+			}
+			if (!m_isGoDivaEvent)
+				return;
+			m_unitInfoChangeButton.gameObject.SetActive(false);
+		}
 
 		//// RVA: 0xA88E24 Offset: 0xA88E24 VA: 0xA88E24
-		//private void LeaveContents() { }
+		private void LeaveContents()
+		{
+			m_headButtons.InOut.Leave(false);
+			m_unitStatus.InOut.Leave(false);
+			m_valkyrieButton.InOut.Leave(false);
+			m_unitInfoChangeButton.InOut.Leave(false);
+			m_unitInfo.AnimeControl.TryLeave();
+			m_musicInfo.InOut.Leave(false);
+			m_playButtons.InOut.Leave(false);
+			m_unitSetListButtons.InOut.Leave(false);
+			m_unitSetCloseButton.InOut.Leave(false);
+			m_unitSetSelectButtons.InOutLeft.Leave(false);
+			m_unitSetSelectButtons.InOutRight.Leave(false);
+			m_unitSetInfo.AnimeControl.TryLeave();
+			m_unitSetInfo.MessageControl.Leave();
+			m_loadSaveButtons.InOut.Leave(false);
+			m_prismSettingButtons.InOut.Leave(false);
+			m_prismUnitInfo.AnimeControl.TryLeave();
+			m_statusWindow.InOut.Leave(false);
+			m_unitStatus.SetCheckStatusButtonState(SetDeckUnitStatus.CheckStatusButtonState.Normal);
+		}
 
 		//// RVA: 0xA89300 Offset: 0xA89300 VA: 0xA89300
-		//private bool IsPlayingContents() { }
+		private bool IsPlayingContents()
+		{
+			return m_headButtons.InOut.IsPlaying() || m_unitStatus.InOut.IsPlaying() || m_valkyrieButton.InOut.IsPlaying() ||
+				m_unitInfoChangeButton.InOut.IsPlaying() || m_unitInfo.AnimeControl.IsPlaying() || m_musicInfo.InOut.IsPlaying() ||
+				m_playButtons.InOut.IsPlaying() || m_unitSetListButtons.InOut.IsPlaying() || m_unitSetCloseButton.InOut.IsPlaying() ||
+				m_unitSetSelectButtons.InOutLeft.IsPlaying() || m_unitSetSelectButtons.InOutRight.IsPlaying() || m_unitSetInfo.AnimControl.IsPlaying() ||
+				m_loadSaveButtons.InOut.IsPlaying() || m_prismSettingButtons.InOut.IsPlaying() || m_prismUnitInfo.AnimeControl.IsPlaying() ||
+				m_statusWindow.InOut.IsPlaying();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F49C Offset: 0x72F49C VA: 0x72F49C
 		//// RVA: 0xA89790 Offset: 0xA89790 VA: 0xA89790
 		//private IEnumerator Co_SwitchContents(TeamSelectSceneUnit5.DispType dispType) { }
 
 		//// RVA: 0xA89858 Offset: 0xA89858 VA: 0xA89858
-		//private void SetTitleInOut(TeamSelectSceneUnit5.DispType prevType, TeamSelectSceneUnit5.DispType nextType) { }
+		private void SetTitleInOut(DispType prevType, DispType nextType)
+		{
+			if ((prevType != DispType.UnitSet) == (nextType != DispType.UnitSet))
+				return;
+			if(nextType == DispType.UnitSet)
+			{
+				MenuScene.Instance.HelpButton.TryLeave();
+				MenuScene.Instance.HeaderMenu.MenuStack.LeaveBackButton(false);
+				MenuScene.Instance.HeaderMenu.MenuStack.LeaveLabel(false);
+				return;
+			}
+			MenuScene.Instance.HelpButton.TryEnter();
+			MenuScene.Instance.HeaderMenu.MenuStack.EnterBackButton(false);
+			MenuScene.Instance.HeaderMenu.MenuStack.EnterLabel(false);
+		}
 
 		//// RVA: 0xA89B58 Offset: 0xA89B58 VA: 0xA89B58
 		//private bool IsUseTitle(TeamSelectSceneUnit5.DispType dispType) { }
 
 		//// RVA: 0xA85328 Offset: 0xA85328 VA: 0xA85328
-		//private void ApplyPrismSettingButton(AOJGDNFAIJL.AMIECPBIALP prismData) { }
+		private void ApplyPrismSettingButton(AOJGDNFAIJL_PrismData.AMIECPBIALP prismData)
+		{
+			if(prismData.OFHMEAJBIEL())
+			{
+				m_headButtons.SetPrismType(prismData.FBGAKINEIPG ? 0 : 1);
+			}
+			else
+			{
+				m_headButtons.SetPrismType(2);
+			}
+		}
 
 		//// RVA: 0xA89B68 Offset: 0xA89B68 VA: 0xA89B68
 		private void OnPlayButton()
@@ -705,7 +1099,10 @@ namespace XeApp.Game.Menu
 		//private void OnClickSubPlateButton() { }
 
 		//// RVA: 0xA8EC70 Offset: 0xA8EC70 VA: 0xA8EC70
-		//private void ShowSubPlateWindow(bool isReShow = False) { }
+		private void ShowSubPlateWindow(bool isReShow = false)
+		{
+			TodoLogger.Log(0, "ShowSubPlateWindow");
+		}
 
 		//// RVA: 0xA8EEE0 Offset: 0xA8EEE0 VA: 0xA8EEE0
 		private void OnSelectDiva(int slotNumber, FFHPBEPOMAK divaData)
@@ -877,13 +1274,40 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA917F4 Offset: 0xA917F4 VA: 0xA917F4
-		//private bool CheckTutorialCondition(TutorialConditionId conditionId) { }
+		private bool CheckTutorialCondition(TutorialConditionId conditionId)
+		{
+			return conditionId == TutorialConditionId.Condition73;
+		}
 
 		//// RVA: 0xA91804 Offset: 0xA91804 VA: 0xA91804
 		//private bool CheckTutorialCondition_forSwitchDispType(TutorialConditionId conditionId) { }
 
 		//// RVA: 0xA918F8 Offset: 0xA918F8 VA: 0xA918F8
-		//private void OnBackButton() { }
+		private void OnBackButton()
+		{
+			if(MenuScene.Instance.GetInputDisableCount() < 1)
+			{
+				if(MenuScene.Instance.GetRaycastDisableCount() < 1)
+				{
+					if(!GameManager.Instance.IsTutorial())
+					{
+						if(!MenuScene.Instance.IsRequestChangeScene)
+						{
+							if (MenuScene.Instance.DirtyChangeScene)
+								return;
+							if(m_dispType == DispType.UnitSet)
+							{
+								OnClickUnitSetCloseButton();
+								return;
+							}
+							SoundManager.Instance.sePlayerBoot.Play(0);
+							MenuScene.SaveRequest();
+							MenuScene.Instance.Return(true);
+						}
+					}
+				}
+			}
+		}
 
 		//[CompilerGeneratedAttribute] // RVA: 0x72F85C Offset: 0x72F85C VA: 0x72F85C
 		//// RVA: 0xA9203C Offset: 0xA9203C VA: 0xA9203C

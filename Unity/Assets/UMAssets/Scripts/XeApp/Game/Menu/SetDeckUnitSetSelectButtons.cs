@@ -21,8 +21,8 @@ namespace XeApp.Game.Menu
 		public Action OnClickSelectButtonLeft; // 0x1C
 		public Action OnClickSelectButtonRight; // 0x20
 
-		//public InOutAnime InOutLeft { get; } 0xC39C64
-		//public InOutAnime InOutRight { get; } 0xC39C6C
+		public InOutAnime InOutLeft { get { return m_inOutLeft; } } //0xC39C64
+		public InOutAnime InOutRight { get { return m_inOutRight; } } //0xC39C6C
 
 		// RVA: 0xC39C74 Offset: 0xC39C74 VA: 0xC39C74
 		private void Awake()

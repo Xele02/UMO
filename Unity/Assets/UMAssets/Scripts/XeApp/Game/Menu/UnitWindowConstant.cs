@@ -8,6 +8,20 @@ namespace XeApp.Game.Menu
 {
 	public static class UnitWindowConstant // TypeDefIndex: 16497
 	{
+		public enum OperationMode
+		{
+			Edit = 0,
+			Check = 0,
+			Detail = 1,
+			Max = 2,
+		}
+
+		public enum DispMode
+		{
+			Unit = 0,
+			SkillDetails = 1,
+		}
+
 		public static readonly Dictionary<int, DisplayType> SortItemToDisplayType = new Dictionary<int, DisplayType>()
 		{
 			{ 0, DisplayType.Total }, { 1, DisplayType.Soul}, {2, DisplayType.Vocal}, { 3, DisplayType.Charm}, { 4, DisplayType.Get}, { 5, DisplayType.Level},

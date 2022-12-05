@@ -14,7 +14,7 @@ namespace XeApp.Game.Menu
 		private UGUIButton m_closeButton; // 0x10
 		public Action OnClickCloseButton; // 0x14
 
-		//public InOutAnime InOut { get; } 0xC37F0C
+		public InOutAnime InOut { get { return m_inOut; } } //0xC37F0C
 
 		// RVA: 0xC37F14 Offset: 0xC37F14 VA: 0xC37F14
 		private void Awake()

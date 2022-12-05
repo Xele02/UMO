@@ -3,6 +3,7 @@ using System;
 using XeApp.Game.Common;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -65,7 +66,7 @@ namespace XeApp.Game.Menu
 		private bool m_isPageSwitching; // 0x58
 		private Coroutine m_pageSwitchCoroutine; // 0x5C
 
-		//public InOutAnime InOut { get; } 0xC38020
+		public InOutAnime InOut { get { return m_inOut; } } //0xC38020
 		//public int CurrentIndex { get; } 0xC38028
 		//public JLKEOGLJNOD CurrentUnitData { get; } 0xC38030
 		//public int UnitCount { get; } 0xC380E0
@@ -95,7 +96,19 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC38388 Offset: 0xC38388 VA: 0xC38388
-		//public void UpdateContent(DFKGGBMFFGB viewPlayerData, bool isGoDiva, int selectIndex) { }
+		public void UpdateContent(DFKGGBMFFGB viewPlayerData, bool isGoDiva, int selectIndex)
+		{
+			m_isGoDiva = isGoDiva;
+			m_viewPlayerData = viewPlayerData;
+			m_unitCount = m_viewPlayerData.DDMBOKCCLBD_GetUnits(isGoDiva).Count;
+			m_pageCount = (m_unitCount - 1) / UnitButtonCount + 1;
+			m_unitIndex = Mathf.Clamp(selectIndex, 0, m_unitCount - 1);
+			m_pageNo = m_unitIndex / UnitButtonCount;
+			m_pageButton.gameObject.SetActive(m_pageCount > 1);
+			ApplyPageButton(m_pageNo, m_pageCount);
+			ApplyUnitButtonStatus(m_pageNo);
+			ApplyUnitButtonSelect(m_unitButtons, m_pageNo, m_unitIndex);
+		}
 
 		//// RVA: 0xC38970 Offset: 0xC38970 VA: 0xC38970
 		//public void UpdateContent(DFKGGBMFFGB viewPlayerData, bool isGoDiva) { }
@@ -129,16 +142,52 @@ namespace XeApp.Game.Menu
 		//private void CallOnChangeUnit() { }
 
 		//// RVA: 0xC38564 Offset: 0xC38564 VA: 0xC38564
-		//private void ApplyPageButton(int pageNo, int pageCount) { }
+		private void ApplyPageButton(int pageNo, int pageCount)
+		{
+			m_pageButtonText.text = string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_unitset_page"), pageNo + 1, pageCount);
+		}
 
 		//// RVA: 0xC3894C Offset: 0xC3894C VA: 0xC3894C
-		//private void ApplyUnitButtonSelect(int unitIndex) { }
+		private void ApplyUnitButtonSelect(int unitIndex)
+		{
+			ApplyUnitButtonSelect(m_unitButtons, m_pageNo, unitIndex);
+		}
 
 		//// RVA: 0xC39204 Offset: 0xC39204 VA: 0xC39204
-		//private void ApplyUnitButtonSelect(List<SetDeckUnitSetListButtons.UnitButtonElement> buttons, int pageNo, int unitIndex) { }
+		private void ApplyUnitButtonSelect(List<UnitButtonElement> buttons, int pageNo, int unitIndex)
+		{
+			for (int i = 0; i < UnitButtonCount; i++)
+			{
+				if(-pageNo * UnitButtonCount + unitIndex == i)
+				{
+					buttons[i].m_buttonImage.sprite = m_unitButtonSelectingSprite;
+					buttons[i].m_nameScroll.StartScroll();
+				}
+				else
+				{
+					buttons[i].m_buttonImage.sprite = m_unitButtonDefaultSprite;
+					buttons[i].m_nameScroll.StopScroll();
+					buttons[i].m_nameScroll.ResetScroll();
+				}
+			}
+		}
 
 		//// RVA: 0xC386B0 Offset: 0xC386B0 VA: 0xC386B0
-		//private void ApplyUnitButtonStatus(int pageNo) { }
+		private void ApplyUnitButtonStatus(int pageNo)
+		{
+			for(int i = 0; i < UnitButtonCount; i++)
+			{
+				JLKEOGLJNOD unit = GetUnitData(UnitButtonCount * pageNo + i);
+				if(unit.EIGKIHENKNC)
+				{
+					m_unitButtons[i].m_nameText.text = unit.BHKALCOAHHO_Name;
+				}
+				else
+				{
+					m_unitButtons[i].m_nameText.text = string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_unitset_dummy_name"), i + UnitButtonCount * pageNo + 1);
+				}
+			}
+		}
 
 		//// RVA: 0xC39474 Offset: 0xC39474 VA: 0xC39474
 		//private void ApplyUnitButtonStatus(List<SetDeckUnitSetListButtons.UnitButtonElement> buttons, int pageNo) { }
@@ -156,7 +205,10 @@ namespace XeApp.Game.Menu
 		//private JLKEOGLJNOD GetUnitData(int buttonNo, int pageNo) { }
 
 		//// RVA: 0xC39138 Offset: 0xC39138 VA: 0xC39138
-		//private JLKEOGLJNOD GetUnitData(int unitIndex) { }
+		private JLKEOGLJNOD GetUnitData(int unitIndex)
+		{
+			return m_viewPlayerData.JKIJFGGMNAN_GetUnit(unitIndex, m_isGoDiva);
+		}
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x730F0C Offset: 0x730F0C VA: 0x730F0C
 		//// RVA: 0xC39780 Offset: 0xC39780 VA: 0xC39780

@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 		private EJKBKMBJMGL m_viewEnemyData; // 0xC
 		private NHDJHOPLMDE m_viewValkyrieAbilityData; // 0x10
 		private GCIJNCFDNON m_mainScene; // 0x14
-		//private AEGLGBOGDHH m_unitSkillCalcResult; // 0x18
+		private AEGLGBOGDHH m_unitSkillCalcResult; // 0x18
 		private StatusData m_baseStatus = new StatusData(); // 0x48
 		private StatusData m_addStatus = new StatusData(); // 0x4C
 		private static StatusData m_tmpStatus = new StatusData(); // 0x0
@@ -22,17 +22,19 @@ namespace XeApp.Game.Menu
 		//private CFHDKAFLNEP m_subPlate; // 0x64
 		private JGEOBNENMAH.NEDILFPPCJF m_logParams = new JGEOBNENMAH.NEDILFPPCJF(); // 0x6C
 
-		//public bool IsEmptyUnit { get; } 0xA6FF7C
-		//public AEGLGBOGDHH SkillCalcResult { get; } 0xA6FF94
-		//public StatusData BaseStatus { get; } 0xA6FFB4
-		//public StatusData AddStatus { get; } 0xA6FFBC
+		public bool IsEmptyUnit { get { return m_viewUnitData != null && m_viewUnitData.EIGKIHENKNC; } } //0xA6FF7C
+		public AEGLGBOGDHH SkillCalcResult { get {
+				return m_unitSkillCalcResult;
+			} } //0xA6FF94
+		public StatusData BaseStatus { get { return m_baseStatus; } } //0xA6FFB4
+		public StatusData AddStatus { get { return m_addStatus; } } //0xA6FFBC
 		//public LimitOverStatusData LimitOverStatus { get; } 0xA6FFC4
 		//public NHDJHOPLMDE ValkyrieAbilityData { get; } 0xA6FFCC
 		//public JGEOBNENMAH.NEDILFPPCJF LogParams { get; } 0xA6FFD4
 		//public CFHDKAFLNEP SubPlateResult { get; } 0xA6FFDC
 		//public bool IsEnableEnemySkill { get; } 0xA6FFF0
-		//public bool IsEnableEpisodeBonus { get; } 0xA7002C
-		//public int EpisodeBonusPoint { get; } 0xA70034
+		public bool IsEnableEpisodeBonus { get { return m_isEnableEpisodeBonus; } } //0xA7002C
+		public int EpisodeBonusPoint { get { return m_episodeBonusPoint; } } //0xA70034
 
 		// RVA: 0xA7003C Offset: 0xA7003C VA: 0xA7003C
 		public SetDeckParamCalculator()

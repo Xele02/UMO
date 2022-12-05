@@ -14,7 +14,7 @@ namespace XeApp.Game.Menu
 		private UGUIButton m_changeButton; // 0x10
 		public Action OnClickChangeButton; // 0x14
 
-		//public InOutAnime InOut { get; } 0xC359C4
+		public InOutAnime InOut { get { return m_inOut; } } //0xC359C4
 		//public UGUIButton ChangeButton { get; } 0xC359CC
 
 		// RVA: 0xC359D4 Offset: 0xC359D4 VA: 0xC359D4

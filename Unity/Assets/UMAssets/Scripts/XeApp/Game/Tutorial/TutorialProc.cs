@@ -12,7 +12,11 @@ namespace XeApp.Game.Tutorial
 		private const int HavePlateCount = 3;
 
 		//// RVA: 0xE49B54 Offset: 0xE49B54 VA: 0xE49B54
-		//public static bool CanAutoSettingHelp() { }
+		public static bool CanAutoSettingHelp()
+		{
+			TodoLogger.Log(0, "Tutorial CanAutoSettingHelp");
+			return false;
+		}
 
 		//// RVA: 0xE49E78 Offset: 0xE49E78 VA: 0xE49E78
 		//public static bool CanAutoSettingNavi() { }

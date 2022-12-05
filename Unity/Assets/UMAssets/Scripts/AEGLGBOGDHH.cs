@@ -1,0 +1,62 @@
+
+public enum MKHCIKICBOI
+{
+	BICPBLMPBPH = 1,
+	GPCMMGOCPHC = 2,
+	LGOHMPBLPKA = 4,
+	ECHJOKLBHEJ = 8,
+	AHJNCHAONGN = 16,
+	ONBNGGDFAJK = 32,
+	OHOKFCJNFDO = 64,
+	MKADAMIGMPO = 7,
+}
+
+public struct AEGLGBOGDHH
+{
+	public EDMIONMCICN[] GJLJJDIDODK; // 0x0
+	public EDMIONMCICN JPMGNPAHGIB; // 0x4
+	//public CFHDKAFLNEP CLCIOEHGFNI; // 0x28
+
+	//// RVA: 0x7FCFC4 Offset: 0x7FCFC4 VA: 0x7FCFC4
+	//public void OBKGEDCKHHE() { }
+
+	//// RVA: 0x7FCFCC Offset: 0x7FCFCC VA: 0x7FCFCC
+	//public void JCHLONCMPAJ() { }
+
+	//// RVA: 0x7FCFD4 Offset: 0x7FCFD4 VA: 0x7FCFD4
+	//public void GEEDEOHGMOM(ref StatusData MGFGADBHOFJ) { }
+
+	//// RVA: 0x7FCFDC Offset: 0x7FCFDC VA: 0x7FCFDC
+	//public void DDPJACNMPEJ(ref StatusData MGFGADBHOFJ) { }
+
+	//// RVA: 0x7FCFE4 Offset: 0x7FCFE4 VA: 0x7FCFE4
+	//public int COCIPAJKDAF() { }
+
+	//// RVA: 0x7FCFEC Offset: 0x7FCFEC VA: 0x7FCFEC
+	//public void DIJOPLHIMBO(JGEOBNENMAH.NEDILFPPCJF BGDCOKFCCBO, StatusData HFEMKGEOHJL, StatusData PDIPANKOKOL, int IFCPCIHJANL, int LCIPPBOFPOB) { }
+
+	//// RVA: 0x7FD014 Offset: 0x7FD014 VA: 0x7FD014
+	//public int ABEDECHGFAG(JLKEOGLJNOD HEDKFICAPIJ) { }
+
+	//// RVA: 0x7FD01C Offset: 0x7FD01C VA: 0x7FD01C
+	public bool IJACIMIPBBK_IsBufftarget(MKHCIKICBOI ICPDDMIBEIL)
+	{
+		for (int i = 0; i < GJLJJDIDODK.Length; i++)
+		{
+			if ((GJLJJDIDODK[i].LGGLFAECCBK & ICPDDMIBEIL) != 0)
+				return true;
+		}
+		return (JPMGNPAHGIB.LGGLFAECCBK & ICPDDMIBEIL) != 0;
+	}
+
+	//// RVA: 0x7FD024 Offset: 0x7FD024 VA: 0x7FD024
+	public bool ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI ICPDDMIBEIL)
+	{
+		for(int i = 0; i < GJLJJDIDODK.Length; i++)
+		{
+			if ((GJLJJDIDODK[i].NOEFMBAIAMP & ICPDDMIBEIL) != 0)
+				return true;
+		}
+		return (JPMGNPAHGIB.NOEFMBAIAMP & ICPDDMIBEIL) != 0;
+	}
+}

@@ -251,7 +251,17 @@ public class IBJAKJJICBC : EEDKAACNBBG
 	}
 
 	// // RVA: 0x12148D4 Offset: 0x12148D4 VA: 0x12148D4
-	// public bool JHLDFOLFNGB(Difficulty.Type AKNELONELJK, bool NGKGFBLFEGH) { }
+	public bool JHLDFOLFNGB(Difficulty.Type AKNELONELJK, bool NGKGFBLFEGH)
+	{
+		bool res = false;
+		if((int)AKNELONELJK < MGJKEJHEBPO_DiffInfos.Count)
+		{
+			int score = MGJKEJHEBPO_DiffInfos[(int)AKNELONELJK].KNIFCANOHOC_Score;
+			if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_FreeMusicId).EMJCHPDJHEI(NGKGFBLFEGH, (int)AKNELONELJK).DLPBHJALHCK_GetRank(score) == 4)
+				return true;
+		}
+		return res;
+	}
 
 	// // RVA: 0x1214AE0 Offset: 0x1214AE0 VA: 0x1214AE0
 	public void KHEKNNFCAOI(int GHBPLHBNMBK, bool HCIKDFECJGE = false, int NLKONOBBDJK = 0, int IOFOHHOJCBE = 0, long JHNMKKNEENE = 0, bool PJLNJJIBFBN = false, bool LICNKMNIKBF = false, bool GIKLNODJKFK = false)

@@ -28,25 +28,65 @@ namespace XeApp.Game.Menu
 		public int HomeDiva { get; private set; } // 0x14
 
 		// // RVA: 0x1B575B0 Offset: 0x1B575B0 VA: 0x1B575B0
-		// public void Initialize() { }
+		public void Initialize()
+		{
+			Option = new ILDKBCLAFPB.MPHNGGECENI_Option();
+			Notification = new ILDKBCLAFPB.JDBOPCADICO_Notification();
+			OptionSLive = new BEJIKEOAJHN_OptionSLive();
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.ODDIHGPONFL_Copy(Option);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification.ODDIHGPONFL_Copy(Notification);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.ODDIHGPONFL_Copy(OptionSLive);
+			SetHomeDivaValue();
+		}
 
 		// // RVA: 0x1B57828 Offset: 0x1B57828 VA: 0x1B57828
-		// private void SetHomeDivaValue() { }
+		private void SetHomeDivaValue()
+		{
+			HomeDiva = Option.BBIOMNCILMC_HomeDivaId > 0 ? 1 : 0;
+			m_optionHomeDiva = Option.BBIOMNCILMC_HomeDivaId > 0 ? 1 : 0;
+		}
 
 		// // RVA: 0x1B5788C Offset: 0x1B5788C VA: 0x1B5788C Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// // RVA: 0x1B57890 Offset: 0x1B57890 VA: 0x1B57890
-		// private static void SetScreenOrientation(int type) { }
+		private static void SetScreenOrientation(int type)
+		{
+			if(type == 2)
+			{
+				Screen.autorotateToLandscapeLeft = false;
+				Screen.autorotateToLandscapeRight = false;
+				Screen.autorotateToPortrait = false;
+				Screen.autorotateToPortraitUpsideDown = false;
+				Screen.orientation = ScreenOrientation.LandscapeRight;
+			}
+			else if(type == 1)
+			{
+				Screen.autorotateToLandscapeLeft = false;
+				Screen.autorotateToLandscapeRight = false;
+				Screen.autorotateToPortrait = false;
+				Screen.autorotateToPortraitUpsideDown = false;
+				Screen.orientation = ScreenOrientation.LandscapeLeft;
+			}
+			else
+			{
+				Screen.autorotateToLandscapeLeft = true;
+				Screen.autorotateToLandscapeRight = true;
+				Screen.autorotateToPortrait = false;
+				Screen.autorotateToPortraitUpsideDown = false;
+				Screen.orientation = ScreenOrientation.AutoRotation;
+			}
+		}
 
 		// // RVA: 0x1B57958 Offset: 0x1B57958 VA: 0x1B57958
 		public static void SetUserData()
 		{
-			TodoLogger.Log(5, "ConfigManager SetUserData");
 			ILDKBCLAFPB.MPHNGGECENI_Option defaultOption = new ILDKBCLAFPB.MPHNGGECENI_Option();
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.ODDIHGPONFL_Copy(defaultOption);
+			SetScreenOrientation(defaultOption.CJFAJNMADBA_ScreenRotation);
 			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.MENU_BGM, defaultOption.HOMPENLIHCK_VolBgm, false);
 			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.MENU_SE, defaultOption.BGLLCLEDHKK_VolSe, false);
 			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.MENU_VOICE, defaultOption.CNCIMBGLKOB_VolVoice, false);

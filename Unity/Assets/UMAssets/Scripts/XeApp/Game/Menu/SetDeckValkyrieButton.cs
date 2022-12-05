@@ -54,7 +54,52 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xC3AAAC Offset: 0xC3AAAC VA: 0xC3AAAC
-		// public void UpdateContent(JLKEOGLJNOD viewUnitData, EEDKAACNBBG viewMusicData) { }
+		public void UpdateContent(JLKEOGLJNOD viewUnitData, EEDKAACNBBG viewMusicData)
+		{
+			m_viewValkyrieAbilityData = null;
+			if(viewMusicData != null && viewUnitData.JOKFNBLEILN != null)
+			{
+				NHDJHOPLMDE data = new NHDJHOPLMDE(viewUnitData.JOKFNBLEILN.GPPEFLKGGGJ_ValkyrieId, 0);
+				if(data != null)
+				{
+					if(data.LAKLFHGMCLI((SeriesAttr.Type)viewMusicData.AIHCEGFANAM_Serie))
+					{
+						m_viewValkyrieAbilityData = data;
+					}
+				}
+			}
+			m_abilityImage.enabled = false;
+			if(m_viewValkyrieAbilityData != null)
+			{
+				bool en = true;
+				if(m_viewValkyrieAbilityData.KINFGHHNFCF < 1)
+				{
+					en = false;
+					if(m_viewValkyrieAbilityData.NONBCCLGBAO > 0)
+					{
+						en = true;
+					}
+				}
+				m_abilityImage.enabled = en;
+			}
+			bool b = false;
+			if(!viewUnitData.EIGKIHENKNC)
+			{
+				if (viewUnitData.JOKFNBLEILN != null)
+					b = true;
+			}
+			if (!b)
+			{
+				m_emptyImage.gameObject.SetActive(true);
+				m_valkyrieImage.gameObject.SetActive(false);
+			}
+			else
+			{
+				m_emptyImage.gameObject.SetActive(false);
+				m_valkyrieImage.gameObject.SetActive(true);
+				SetValkyrieImage(viewUnitData.JOKFNBLEILN.GPPEFLKGGGJ_ValkyrieId);
+			}
+		}
 
 		// // RVA: 0xC3AEE8 Offset: 0xC3AEE8 VA: 0xC3AEE8
 		// public void UpdateContent(JLKEOGLJNOD viewUnitData) { }

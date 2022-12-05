@@ -713,7 +713,11 @@ namespace XeApp.Game.Menu
 		// public void ShowSceneStatusPopupWindow(GCIJNCFDNON scene, DFKGGBMFFGB playerData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isFriend = False, bool isReward = False, SceneStatusParam.PageSave pageSave = 1, bool isDisableZoom = False) { }
 
 		// // RVA: 0xB32A3C Offset: 0xB32A3C VA: 0xB32A3C
-		// public void TryShowPopupWindow(TransitionRoot root, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName, Action closeCallBack) { }
+		public void TryShowPopupWindow(TransitionRoot root, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName, Action closeCallBack)
+		{
+			closeCallBack();
+			TodoLogger.Log(0, "TryShowPopupWindow");
+		}
 
 		// // RVA: 0xB32BA0 Offset: 0xB32BA0 VA: 0xB32BA0
 		// public void ShowSortWindow(PopupSortMenu.SortPlace place, UnityAction<PopupSortMenu> okCallBack, Action endCallBack) { }

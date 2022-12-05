@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		public EventOnClickScene OnClickScene; // 0x30
 		public EventOnClickScene OnStayScene; // 0x34
 
-		//public SetDeckUnitInfoAnimeControl AnimeControl { get; } 0xC30B88
+		public SetDeckUnitInfoAnimeControl AnimeControl { get { return m_animeControl; } } //0xC30B88
 		public bool ExistAssistControl { get { return m_assist != null; } } //0xC30B90
 		public SetDeckAssistCardControl AssistControl { get { return m_assist; } } //0xC30C1C
 		//public bool ExistMessageControl { get; } 0xC30C24

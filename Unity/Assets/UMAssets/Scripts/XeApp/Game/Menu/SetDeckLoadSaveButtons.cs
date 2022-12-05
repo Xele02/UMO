@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		public Action OnClickSaveButton; // 0x20
 		public Action OnClickLoadButton; // 0x24
 
-		//public InOutAnime InOut { get; } 0xA6F430
+		public InOutAnime InOut { get { return m_inOut; } } //0xA6F430
 
 		// RVA: 0xA6F438 Offset: 0xA6F438 VA: 0xA6F438
 		private void Awake()

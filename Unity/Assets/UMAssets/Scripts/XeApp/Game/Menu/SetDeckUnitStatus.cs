@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 		public Action OnClickCheckStatusButton; // 0x50
 		public Action OnClickDispTypeButton; // 0x54
 
-		//public InOutAnime InOut { get; } 0xC39E68
+		public InOutAnime InOut { get { return m_inOut; } } //0xC39E68
 
 		// RVA: 0xC39E70 Offset: 0xC39E70 VA: 0xC39E70
 		private void Awake()
@@ -112,16 +112,50 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC3A344 Offset: 0xC3A344 VA: 0xC3A344
-		//public void UpdateContent(SetDeckParamCalculator paramCalculator) { }
+		public void UpdateContent(SetDeckParamCalculator paramCalculator)
+		{
+			if(paramCalculator.IsEmptyUnit)
+			{
+				m_invalidTotalText.gameObject.SetActive(true);
+				m_totalStatus.gameObject.SetActive(false);
+			}
+			else
+			{
+				m_invalidTotalText.gameObject.SetActive(false);
+				m_totalStatus.gameObject.SetActive(true);
+				m_totalStatus.Set(paramCalculator.BaseStatus.Total, paramCalculator.AddStatus.Total, false, paramCalculator.SkillCalcResult.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO), paramCalculator.SkillCalcResult.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO), null, 0);
+			}
+			if(paramCalculator.IsEnableEpisodeBonus)
+			{
+				m_episodeBonusObject.SetActive(true);
+				m_episodeBonusText.text = paramCalculator.EpisodeBonusPoint.ToString() + "%";
+			}
+			else
+			{
+				m_episodeBonusObject.SetActive(false);
+			}
+		}
 
 		//// RVA: 0xC3A6F8 Offset: 0xC3A6F8 VA: 0xC3A6F8
-		//public void SetUnitName(string name) { }
+		public void SetUnitName(string name)
+		{
+			if(m_unitNameText != null)
+			{
+				m_unitNameText.text = name;
+			}
+		}
 
 		//// RVA: 0xC3A7BC Offset: 0xC3A7BC VA: 0xC3A7BC
-		//public void SetUnitNameEditButtonEnable(bool isEnable) { }
+		public void SetUnitNameEditButtonEnable(bool isEnable)
+		{
+			m_nameEditButton.Disable = !isEnable;
+		}
 
 		//// RVA: 0xC3A7F0 Offset: 0xC3A7F0 VA: 0xC3A7F0
-		//public void SetCheckStatusButtonEnable(bool isEnable) { }
+		public void SetCheckStatusButtonEnable(bool isEnable)
+		{
+			m_checkStatusButton.Disable = !isEnable;
+		}
 
 		//// RVA: 0xC3A1C8 Offset: 0xC3A1C8 VA: 0xC3A1C8
 		public void SetCheckStatusButtonState(CheckStatusButtonState state)

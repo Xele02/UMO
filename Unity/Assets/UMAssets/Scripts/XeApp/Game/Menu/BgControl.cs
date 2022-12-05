@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		LobbyMain = 13,
 		_Num = 14,
 	}
-public class BgControl
+	public class BgControl
 	{ 
 		public enum BgTextureFlag
 		{
@@ -481,14 +481,24 @@ public class BgControl
 		}
 
 		// // RVA: 0x143EB70 Offset: 0x143EB70 VA: 0x143EB70
-		// public void StorytBgReturn() { }
+		public void StorytBgReturn()
+		{
+			if(storyBgParam.isCategoryStory)
+			{
+				TodoLogger.Log(0, "StorytBgReturn");
+			}
+			storyBgLoading = false;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5CB0 Offset: 0x6C5CB0 VA: 0x6C5CB0
 		// // RVA: 0x143ED60 Offset: 0x143ED60 VA: 0x143ED60
 		// public IEnumerator SetStoryBgTexture(int map, Action callback) { }
 
 		// // RVA: 0x143EE40 Offset: 0x143EE40 VA: 0x143EE40
-		// public bool IsLoadingStoryBg() { }
+		public bool IsLoadingStoryBg()
+		{
+			return storyBgLoading;
+		}
 
 		// // RVA: 0x143EE48 Offset: 0x143EE48 VA: 0x143EE48
 		// public void StoryBgShow() { }

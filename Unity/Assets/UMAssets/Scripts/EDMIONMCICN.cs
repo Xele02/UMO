@@ -10,8 +10,8 @@ public struct EDMIONMCICN
 	public StatusData IMLGBMGIACC; // 0x10
 	public StatusData AJINBLGCBMM; // 0x14
 	public StatusData[] FEGNMIGJMDM; // 0x18
-	//public MKHCIKICBOI LGGLFAECCBK; // 0x1C
-	//public MKHCIKICBOI NOEFMBAIAMP; // 0x20
+	public MKHCIKICBOI LGGLFAECCBK; // 0x1C
+	public MKHCIKICBOI NOEFMBAIAMP; // 0x20
 
 	// RVA: 0x7FC8FC Offset: 0x7FC8FC VA: 0x7FC8FC
 	public void OBKGEDCKHHE()
