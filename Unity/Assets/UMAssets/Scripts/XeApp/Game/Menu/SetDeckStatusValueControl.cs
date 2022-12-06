@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA76B38 Offset: 0xA76B38 VA: 0xA76B38
 		public void Set(int baseValue, int adjustValue, bool isSign, bool isBuffTarget, bool isDebuffTarget, string normalColorCode, int maxNum = 0)
 		{
-
+			!!!
 		}
 
 		//// RVA: 0xA770B8 Offset: 0xA770B8 VA: 0xA770B8

@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 
 		//public bool IsLoading { get; } 0xA6828C
 		public GCIJNCFDNON SceneData { get { return m_sceneData; } } //0xA74080
-		//public UGUIStayButton SceneButton { get; } 0xA74088
+		public UGUIStayButton SceneButton { get { return m_sceneButton; } } //0xA74088
 		//private bool IsEmpty { get; } 0xA74090
 
 		// RVA: 0xA740A4 Offset: 0xA740A4 VA: 0xA740A4
@@ -129,13 +129,36 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA743C0 Offset: 0xA743C0 VA: 0xA743C0
-		//public void SetEmpty() { }
+		public void SetEmpty()
+		{
+			Set(0, SkillType.Live, null, 0);
+		}
 
 		//// RVA: 0xA68CB8 Offset: 0xA68CB8 VA: 0xA68CB8
-		//public void SetStatusDisplayType(DisplayType type) { }
+		public void SetStatusDisplayType(DisplayType type)
+		{
+			if(m_sceneData == null)
+			{
+				m_statucControl.SetOff();
+			}
+			else
+			{
+				m_statucControl.Set(m_sceneData, type, m_divaId, m_musicId);
+			}
+		}
 
 		//// RVA: 0xA68D30 Offset: 0xA68D30 VA: 0xA68D30
-		//public void SetStatusDisplayForRival() { }
+		public void SetStatusDisplayForRival()
+		{
+			if(m_sceneData == null)
+			{
+				m_statucControl.SetOff();
+			}
+			else
+			{
+				m_statucControl.SetForRival(m_sceneData);
+			}
+		}
 
 		//// RVA: 0xA74344 Offset: 0xA74344 VA: 0xA74344
 		private Sprite GetAttrIconSprite(int attr)

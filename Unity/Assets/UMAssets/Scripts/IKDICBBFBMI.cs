@@ -27,7 +27,7 @@ public abstract class IKDICBBFBMI_EventBase
 
 	public class GNPOABJANKO
 	{
-		public int KELFCMEOPPM; // 0x8
+		public int KELFCMEOPPM_EpisodeId; // 0x8
 		public bool JKDJCFEBDHC; // 0xC
 		public int HEDODOBGPPM; // 0x10
 	}

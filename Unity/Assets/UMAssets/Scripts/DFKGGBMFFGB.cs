@@ -8,7 +8,7 @@ public class DFKGGBMFFGB
 	private OKGLGHCBCJP_Database LKMHPJKIFDN_Database; // 0xC
 	private bool BNFDBPPOAOE; // 0x10
 	public List<FFHPBEPOMAK> NBIGLBMHEDC = new List<FFHPBEPOMAK>(); // 0x14
-	public List<GCIJNCFDNON> OPIBAPEGCLA = new List<GCIJNCFDNON>(); // 0x18
+	public List<GCIJNCFDNON> OPIBAPEGCLA_Scenes = new List<GCIJNCFDNON>(); // 0x18
 	public List<JLKEOGLJNOD> EHGGOAGEGIM_UnitsNormal; // 0x1C
 	public JLKEOGLJNOD NPFCMHCCDDH; // 0x20
 	public List<JLKEOGLJNOD> HDCBAOKMFAH_UnitsGoDiva; // 0x24
@@ -30,7 +30,7 @@ public class DFKGGBMFFGB
 		LDEGEHAEALK_ServerSave = NIMOGBDCMLJ_ServerSave;
 		LKMHPJKIFDN_Database = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
 		NBIGLBMHEDC.Clear();
-		OPIBAPEGCLA.Clear();
+		OPIBAPEGCLA_Scenes.Clear();
 		if(LDEGEHAEALK_ServerSave.PNLOINMCCKH_Scene != null)
 		{
 			int num = LDEGEHAEALK_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA.Count;
@@ -44,7 +44,7 @@ public class DFKGGBMFFGB
 				MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = LDEGEHAEALK_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[i];
 				GCIJNCFDNON data = new GCIJNCFDNON();
 				data.KHEKNNFCAOI(dbScene.BCCHOBPJJKE_Id, saveScene.PDNIFBEGMHC_Mb, saveScene.EMOJHJGHJLN, saveScene.JPIPENJGGDD_Mlt, saveScene.IELENGDJPHF_Ulk, saveScene.MJBODMOLOBC_Luck, saveScene.LHMOAJAIJCO_New, saveScene.BEBJKJKBOGH_Date, saveScene.DMNIMMGGJJJ_Leaf);
-				OPIBAPEGCLA.Add(data);
+				OPIBAPEGCLA_Scenes.Add(data);
 			}
 		}
 		if(LDEGEHAEALK_ServerSave.DGCJCAHIAPP_Diva != null)
@@ -100,7 +100,7 @@ public class DFKGGBMFFGB
 			for(int i = 1; i < 16; i++)
 			{
 				JLKEOGLJNOD data = new JLKEOGLJNOD();
-				data.KHEKNNFCAOI_Init(i, OPIBAPEGCLA, LDEGEHAEALK_ServerSave);
+				data.KHEKNNFCAOI_Init(i, OPIBAPEGCLA_Scenes, LDEGEHAEALK_ServerSave);
 				EHGGOAGEGIM_UnitsNormal.Add(data);
 			}
 		}
@@ -191,12 +191,12 @@ public class DFKGGBMFFGB
 	// // RVA: 0x197FD98 Offset: 0x197FD98 VA: 0x197FD98
 	public void HMCMKKNLBII(int AHHJLDLAPAN)
 	{
-		LEIGKLOGCPF.MDMJCIAJBKG(AHHJLDLAPAN, 0, OPIBAPEGCLA, NBIGLBMHEDC, LDEGEHAEALK_ServerSave);
+		LEIGKLOGCPF.MDMJCIAJBKG(AHHJLDLAPAN, 0, OPIBAPEGCLA_Scenes, NBIGLBMHEDC, LDEGEHAEALK_ServerSave);
 		HDCBAOKMFAH_UnitsGoDiva.Clear();
 		for(int i = 0; i < 5; i++)
 		{
 			JLKEOGLJNOD data = new JLKEOGLJNOD();
-			data.ALIMIMCBKFH(AHHJLDLAPAN, i + 1, OPIBAPEGCLA, LDEGEHAEALK_ServerSave);
+			data.ALIMIMCBKFH(AHHJLDLAPAN, i + 1, OPIBAPEGCLA_Scenes, LDEGEHAEALK_ServerSave);
 			HDCBAOKMFAH_UnitsGoDiva.Add(data);
 		}
 	}

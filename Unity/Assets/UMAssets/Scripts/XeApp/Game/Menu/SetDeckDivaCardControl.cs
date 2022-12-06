@@ -73,10 +73,10 @@ namespace XeApp.Game.Menu
 		public Action OnStayDivaButton; // 0x54
 		public Action OnClickCostumeButton; // 0x58
 		private FFHPBEPOMAK m_divaData; // 0x5C
-		//private DFKGGBMFFGB m_playerData; // 0x60
-		//private int m_musicId; // 0x64
-		//private bool m_isStory; // 0x68
-		//private bool m_isGoDivaSub; // 0x69
+		private DFKGGBMFFGB m_playerData; // 0x60
+		private int m_musicId; // 0x64
+		private bool m_isStory; // 0x68
+		private bool m_isGoDivaSub; // 0x69
 		private int m_divaTextureLoadingCount; // 0x6C
 		private int m_costumeTextureLoadingCount; // 0x70
 
@@ -113,7 +113,41 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6A3A8 Offset: 0xA6A3A8 VA: 0xA6A3A8
-		//public void Set(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData, bool isCenter, bool isGoDiva, int musicId = 0, bool isStory = False) { }
+		public void Set(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData, bool isCenter, bool isGoDiva, int musicId = 0, bool isStory = false)
+		{
+			m_divaData = divaData;
+			m_playerData = playerData;
+			m_musicId = musicId;
+			m_isStory = isStory;
+			m_isGoDivaSub = isGoDiva & !isCenter;
+			SetDivaImageAndColor(divaData, divaData != null ? isGoDiva : false);
+			if (m_divaStatus != null)
+			{
+				if (m_divaData != null)
+				{
+					m_divaStatus.gameObject.SetActive(true);
+					m_divaStatus.SetSkill(m_divaData, m_playerData, isCenter, m_musicId);
+					m_divaFrontImage.enabled = true;
+				}
+				else
+				{
+					m_divaStatus.gameObject.SetActive(false);
+					m_divaFrontImage.enabled = false;
+				}
+			}
+			if(m_divaData == null || m_isGoDivaSub)
+			{
+				m_costumeButton.gameObject.SetActive(false);
+			}
+			else
+			{
+				m_costumeButton.gameObject.SetActive(true);
+			}
+			if(m_divaData != null && !m_isGoDivaSub)
+			{
+				SetCostumeImage(m_divaData);
+			}
+		}
 
 		//// RVA: 0xA6B4F8 Offset: 0xA6B4F8 VA: 0xA6B4F8
 		public void SetForPrism(FFHPBEPOMAK divaData)
@@ -147,7 +181,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6B6E0 Offset: 0xA6B6E0 VA: 0xA6B6E0
-		//public void SetStatusDisplayType(DisplayType type) { }
+		public void SetStatusDisplayType(DisplayType type)
+		{
+			if(m_divaStatus != null && m_divaData != null)
+			{
+				m_divaStatus.SetDispType(type, m_divaData, m_playerData, m_musicId, m_isStory, m_isGoDivaSub);
+			}
+		}
 
 		//// RVA: 0xA6A2EC Offset: 0xA6A2EC VA: 0xA6A2EC
 		public void SetShowMultiIcon(bool isShow)

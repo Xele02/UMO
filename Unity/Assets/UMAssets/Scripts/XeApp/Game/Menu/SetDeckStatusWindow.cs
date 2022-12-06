@@ -3,6 +3,7 @@ using XeApp.Game.Common;
 using UnityEngine.UI;
 using XeSys.Gfx;
 using System.Text;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -132,7 +133,7 @@ namespace XeApp.Game.Menu
 		private Common.ScrollText[] m_scrollTexts; // 0xAC
 
 		public InOutAnime InOut { get { return m_inOut; } } //0xA77690
-		//public CFHDKAFLNEP SubPlateResult { get; set; } // 0xB0
+		public CFHDKAFLNEP SubPlateResult { get; set; } // 0xB0
 
 		// RVA: 0xA776B8 Offset: 0xA776B8 VA: 0xA776B8
 		private void Awake()
@@ -176,7 +177,159 @@ namespace XeApp.Game.Menu
 		//private void SetInvalidText(bool isInvalid) { }
 
 		//// RVA: 0xA79A40 Offset: 0xA79A40 VA: 0xA79A40
-		//public void UpdateContent(DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD viewUnitData, EEDKAACNBBG viewMusicData, EJKBKMBJMGL enemyData, EAJCBFGKKFA viewFriendData, UnitWindowConstant.OperationMode opMode, bool isGoDiva) { }
+		public void UpdateContent(DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD viewUnitData, EEDKAACNBBG viewMusicData, EJKBKMBJMGL enemyData, EAJCBFGKKFA viewFriendData, UnitWindowConstant.OperationMode opMode, bool isGoDiva)
+		{
+			ResetScrollText();
+			m_operationMode = opMode;
+			bool isInvalid = true;
+			for(int i = 0; i < viewUnitData.BCJEAJPLGMB.Count; i++)
+			{
+				if (viewUnitData.BCJEAJPLGMB[i] != null)
+				{
+					isInvalid = false;
+					break;
+				}
+			}
+			int luck = 0;
+			for (int i = 0; i < viewUnitData.BCJEAJPLGMB.Count; i++)
+			{
+				luck += DivaIconDecoration.GetEquipmentLuck(viewUnitData.BCJEAJPLGMB[i], viewPlayerData);
+			}
+			int luck2 = 0;
+			AEGLGBOGDHH res;
+			CalcStatus(ref m_baseStatus, ref m_addStatus, out luck2, viewPlayerData, viewUnitData, viewMusicData, viewFriendData, enemyData, out res);
+			m_addStatus.Add(m_baseStatus);
+			if(SubPlateResult.CDOCOLOKCJK())
+			{
+				SetSubPlateParam();
+				m_supportButton.Disable = false;
+				m_supportLock.SetActive(false);
+			}
+			else
+			{
+				SetInvalidSubPlate();
+				m_supportButton.Disable = true;
+				m_supportLock.SetActive(true);
+			}
+			CalcLimitBrake(viewUnitData, viewPlayerData, viewMusicData, viewFriendData);
+			SetInvalidText(isInvalid);
+			if(isInvalid)
+			{
+				m_supportButton.Disable = true;
+				return;
+			}
+			if (SubPlateResult.CDOCOLOKCJK())
+			{
+				m_status[0].Set(m_baseStatus.Total - SubPlateResult.CMCKNKKCNDK.Total, m_addStatus.Total - SubPlateResult.CMCKNKKCNDK.Total, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#"+ColorExtension.HexStringRGBA(m_normalColorCode), 26);
+				m_status[1].Set(m_baseStatus.soul - SubPlateResult.CMCKNKKCNDK.soul, m_addStatus.soul - SubPlateResult.CMCKNKKCNDK.soul, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[2].Set(m_baseStatus.vocal - SubPlateResult.CMCKNKKCNDK.vocal, m_addStatus.vocal - SubPlateResult.CMCKNKKCNDK.vocal, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[3].Set(m_baseStatus.charm - SubPlateResult.CMCKNKKCNDK.charm, m_addStatus.charm - SubPlateResult.CMCKNKKCNDK.charm, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			}
+			else
+			{
+				SetInvalidSubPlate();
+				m_status[0].Set(m_baseStatus.Total, m_addStatus.Total, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 26);
+				m_status[1].Set(m_baseStatus.soul, m_addStatus.soul, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[2].Set(m_baseStatus.vocal, m_addStatus.vocal, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[3].Set(m_baseStatus.charm, m_addStatus.charm, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			}
+			m_status[4].Set(m_baseStatus.life, m_addStatus.life, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			m_status[7].Set(luck, luck + luck2, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			m_status[5].Set(m_baseStatus.support, m_addStatus.support, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			m_status[6].Set(m_baseStatus.fold, m_addStatus.fold, false, res.FUN_015bb7a0(7), res.FUN_015bb834(7), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			if(viewFriendData == null)
+			{
+				m_notesTexts[0].text = m_baseStatus.spNoteExpected[1].ToString();
+				m_notesTexts[2].text = m_baseStatus.spNoteExpected[3].ToString();
+				m_notesTexts[1].text = m_baseStatus.spNoteExpected[2].ToString();
+				m_notesTexts[3].text = m_baseStatus.spNoteExpected[4].ToString();
+				m_notesTexts[4].text = m_baseStatus.spNoteExpected[5].ToString();
+			}
+			else
+			{
+				m_tmpStatus.Clear();
+				if(viewFriendData.KHGKPKDBMOH() != null)
+				{
+					m_tmpStatus.Copy(viewFriendData.KHGKPKDBMOH().CMCKNKKCNDK_Status);
+				}
+				m_notesTexts[0].text = (m_baseStatus.spNoteExpected[1] - m_tmpStatus.spNoteExpected[1]).ToString();
+				m_notesTexts[2].text = (m_baseStatus.spNoteExpected[3] - m_tmpStatus.spNoteExpected[3]).ToString();
+				m_notesTexts[1].text = (m_baseStatus.spNoteExpected[2] - m_tmpStatus.spNoteExpected[2]).ToString();
+				m_notesTexts[3].text = (m_baseStatus.spNoteExpected[4] - m_tmpStatus.spNoteExpected[4]).ToString();
+				m_notesTexts[4].text = (m_baseStatus.spNoteExpected[5] - m_tmpStatus.spNoteExpected[5]).ToString();
+			}
+			SetLimitBreakValue(m_limitOverStatus, viewMusicData != null);
+			m_centerSkillNonActive[1].SetActive(false);
+			m_centerSkillNonActive[0].SetActive(false);
+			m_centerSkill[1].SetActive(false);
+			m_centerSkill[0].SetActive(false);
+			m_centerSkillRegulationButton.gameObject.SetActive(false);
+			for(int i = 0; i < m_centerSkillRegulation.Length; i++)
+			{
+				m_centerSkillRegulation[i].SetActive(false);
+			}
+			m_mainScene = null;
+			FFHPBEPOMAK f = viewUnitData.BCJEAJPLGMB[0];
+			if (f != null)
+			{
+				if(f.FGFIBOBAPIA_SceneId > 0)
+				{
+					m_mainScene = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1];
+				}
+			}
+			if(m_mainScene != null)
+			{
+				m_centerSkill[1].SetActive(m_mainScene.MEOOLHNNMHL(false, 0, 0) != 0);
+				m_centerSkill[0].SetActive(m_mainScene.MEOOLHNNMHL(true, 0, 0) != 0);
+				if(m_centerSkill[1].activeSelf && !m_centerSkill[0].activeSelf)
+				{
+					m_centerSkill[1].transform.parent.SetSiblingIndex(1);
+					m_centerSkill[0].transform.parent.SetSiblingIndex(2);
+				}
+				else
+				{
+					m_centerSkill[1].transform.parent.SetSiblingIndex(2);
+					m_centerSkill[0].transform.parent.SetSiblingIndex(1);
+				}
+				if(viewMusicData == null)
+				{
+					if(m_mainScene.IFBJBPEBAFH(null, false))
+					{
+						m_centerSkillRegulation[1].SetActive(true);
+					}
+					if(m_mainScene.IFBJBPEBAFH(null, true))
+					{
+						m_centerSkillRegulation[1].SetActive(true);
+					}
+					if(m_mainScene.ABIOBCMPEHM() == 2)
+					{
+						m_centerSkillRegulation[1].SetActive(true);
+					}
+					if(m_mainScene.FCGHOLNFDDF(null, false))
+					{
+						m_centerSkillRegulation[2].SetActive(true);
+					}
+					if (m_mainScene.FCGHOLNFDDF(null, true))
+					{
+						m_centerSkillRegulation[2].SetActive(true);
+					}
+				}
+				else
+				{
+					int a = m_mainScene.MEOOLHNNMHL(false, viewMusicData.FKDCCLPGKDK_JacketAttr, viewMusicData.AIHCEGFANAM_Serie);
+					if (a > 0)
+					{
+						if(m_mainScene.IFBJBPEBAFH(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(viewMusicData.DLAEJOBELBH_MusicId), false))
+						{
+							m_centerSkillRegulation[1].SetActive(true);
+							// L1555
+							!!!!
+						}
+					}
+				}
+			}
+			//LAB_00a7ce24
+		}
 
 		//// RVA: 0xA7D6A0 Offset: 0xA7D6A0 VA: 0xA7D6A0
 		//public void CalcStatus(ref StatusData baseStatus, ref StatusData addStatus, out int luck, DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD unitData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendPlayerData, EJKBKMBJMGL viewEnemyData, out AEGLGBOGDHH result) { }
@@ -189,8 +342,5 @@ namespace XeApp.Game.Menu
 
 		//// RVA: 0xA7D604 Offset: 0xA7D604 VA: 0xA7D604
 		//private void ResetScrollText() { }
-
-		// RVA: 0xA7DF00 Offset: 0xA7DF00 VA: 0xA7DF00
-		public void .ctor() { }
 	}
 }

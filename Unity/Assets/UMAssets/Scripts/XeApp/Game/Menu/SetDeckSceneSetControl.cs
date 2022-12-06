@@ -24,7 +24,18 @@ namespace XeApp.Game.Menu
 		public List<SetDeckSceneControl> Scenes { get { return m_scenes; } } //0xA74B90
 
 		//// RVA: 0xA74B98 Offset: 0xA74B98 VA: 0xA74B98
-		//public void SetColor(int divaId) { }
+		public void SetColor(int divaId)
+		{
+			if(divaId < 1)
+			{
+				m_backImage.color = new Color(m_emptyColor.r, m_emptyColor.g, m_emptyColor.b, m_backImage.color.a);
+			}
+			else
+			{
+				Color col = m_divaColors.GetDivaColor(divaId);
+				m_backImage.color = new Color(col.r, col.g, col.b, m_backImage.color.a);
+			}
+		}
 
 		//// RVA: 0xA74CF4 Offset: 0xA74CF4 VA: 0xA74CF4
 		//private Color ColorAlphaMarge(Color targetColor, float a) { }

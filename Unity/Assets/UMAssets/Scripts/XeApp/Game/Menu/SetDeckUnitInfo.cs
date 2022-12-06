@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -127,10 +128,159 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC318F8 Offset: 0xC318F8 VA: 0xC318F8
-		//public void UpdateContent(DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD viewUnitData, SetDeckParamCalculator paramCalculator, EEDKAACNBBG viewMusicData, GameSetupData.MusicInfo musicInfo, bool isGoDiva) { }
+		public void UpdateContent(DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD viewUnitData, SetDeckParamCalculator paramCalculator, EEDKAACNBBG viewMusicData, GameSetupData.MusicInfo musicInfo, bool isGoDiva)
+		{
+			int musicId = 0;
+			if (viewMusicData != null)
+				musicId = viewMusicData.DLAEJOBELBH_MusicId;
+			bool isStoryMode = false;
+			if (musicInfo != null)
+				isStoryMode = musicInfo.isStoryMode;
+			if(m_divaInfos != null)
+			{
+				for(int i = 0; i < viewUnitData.BCJEAJPLGMB.Count && i < m_divaInfos.Count; i++)
+				{
+					FFHPBEPOMAK unitDiva = viewUnitData.BCJEAJPLGMB[i];
+					DivaInfo diva = m_divaInfos[i];
+					if(diva.m_divaControl != null)
+					{
+						diva.m_divaControl.Set(unitDiva, viewPlayerData, i == 0, isGoDiva, musicId, isStoryMode);
+					}
+					if(diva.m_sceneSetControl != null)
+					{
+						diva.m_sceneSetControl.SetColor(unitDiva != null ? unitDiva.AHHJLDLAPAN_DivaId : 0);
+						if(diva.m_sceneSetControl.Scenes.Count > 0 && diva.m_sceneSetControl.Scenes[0] != null)
+						{
+							if (unitDiva == null)
+							{
+								diva.m_sceneSetControl.Scenes[0].SetEmpty();
+								diva.m_sceneSetControl.Scenes[0].SceneButton.Disable = true;
+							}
+							else
+							{
+								if(unitDiva.FGFIBOBAPIA_SceneId < 1)
+								{
+									diva.m_sceneSetControl.Scenes[0].SetEmpty();
+								}
+								else
+								{
+									diva.m_sceneSetControl.Scenes[0].Set(unitDiva.AHHJLDLAPAN_DivaId, i != 0 ? SetDeckSceneControl.SkillType.Live : SetDeckSceneControl.SkillType.Active, viewPlayerData.OPIBAPEGCLA_Scenes[unitDiva.FGFIBOBAPIA_SceneId - 1]);
+								}
+								diva.m_sceneSetControl.Scenes[0].SceneButton.Disable = false;
+							}
+						}
+						for(int j = 0; j < diva.m_sceneSetControl.Scenes.Count; j++)
+						{
+							if(diva.m_sceneSetControl.Scenes[j] != null)
+							{
+								if (unitDiva == null)
+								{
+									diva.m_sceneSetControl.Scenes[j].SetEmpty();
+									diva.m_sceneSetControl.Scenes[j].SceneButton.Disable = true;
+								}
+								else
+								{
+									if(unitDiva.DJICAKGOGFO[j] < 1)
+									{
+										diva.m_sceneSetControl.Scenes[j].SetEmpty();
+									}
+									else
+									{
+										diva.m_sceneSetControl.Scenes[0].Set(unitDiva.AHHJLDLAPAN_DivaId, SetDeckSceneControl.SkillType.Live, viewPlayerData.OPIBAPEGCLA_Scenes[unitDiva.DJICAKGOGFO[j] - 1]);
+									}
+									diva.m_sceneSetControl.Scenes[j].SceneButton.Disable = false;
+								}
+							}
+						}
+					}
+				}
+			}
+			if(m_additionDivas != null)
+			{
+				for(int i = 0; i < m_additionDivas.Count; i++)
+				{
+					if(m_additionDivas[i] != null)
+					{
+						if(viewUnitData.CMOPCCAJAAO.Count > i)
+						{
+							m_additionDivas[i].Set(viewUnitData.CMOPCCAJAAO[i], viewPlayerData, false, isGoDiva, musicId, isStoryMode);
+						}
+						else
+						{
+							m_additionDivas[i].Set(null, viewPlayerData, false, isGoDiva, musicId, isStoryMode);
+						}
+					}
+				}
+			}
+			if(musicInfo == null)
+			{
+				SetMultiIconMemberCount(0);
+				if(m_additionDivas != null)
+				{
+					foreach(var d in m_additionDivas)
+					{
+						if(d != null)
+						{
+							d.SetImp(SetDeckDivaCardControl.ImpType.Off);
+						}
+					}
+				}
+			}
+			else
+			{
+				SetMultiIconMemberCount(musicInfo.onStageDivaNum >= 2 ? musicInfo.onStageDivaNum : 0);
+				if(m_additionDivas != null)
+				{
+					for(int i = 0; i < m_additionDivas.Count; i++)
+					{
+						if(m_additionDivas[i] != null)
+						{
+							m_additionDivas[i].SetImp(musicInfo.onStageDivaNum - 3 <= i ? SetDeckDivaCardControl.ImpType.NoMessage : SetDeckDivaCardControl.ImpType.Off);
+						}
+					}
+				}
+			}
+		}
 
 		//// RVA: 0xC32AEC Offset: 0xC32AEC VA: 0xC32AEC
-		//public void SetStatusDisplayType(SortItem divaItem, SortItem sceneItem) { }
+		public void SetStatusDisplayType(SortItem divaItem, SortItem sceneItem)
+		{
+			DisplayType disp;
+			if(!UnitWindowConstant.SortItemToDisplayType.TryGetValue((int)divaItem, out disp))
+			{
+				disp = DisplayType.Level;
+			}
+			DisplayType sceneDisp;
+			if (!UnitWindowConstant.SortItemToDisplayType.TryGetValue((int)sceneItem, out sceneDisp))
+			{
+				sceneDisp = DisplayType.Level;
+			}
+			for(int i = 0; i < m_divaInfos.Count; i++)
+			{
+				if(m_divaInfos[i].m_divaControl != null)
+				{
+					m_divaInfos[i].m_divaControl.SetStatusDisplayType(disp);
+				}
+				if(m_divaInfos[i].m_sceneSetControl != null)
+				{
+					for(int j = 0; j < m_divaInfos[i].m_sceneSetControl.Scenes.Count; j++)
+					{
+						DisplayType d = sceneDisp;
+						if (sceneItem == SortItem.Skill)
+						{
+							d = DisplayType.LiveSkill;
+							if (i == 0 || j == 0)
+								d = DisplayType.ActiveSkill;
+						}
+						m_divaInfos[i].m_sceneSetControl.Scenes[j].SetStatusDisplayType(d);
+					}
+				}
+			}
+			if(ExistAssistControl)
+			{
+				m_assist.SetSkillStatusDisplayType(sceneItem == SortItem.Skill ? DisplayType.Level : sceneDisp);
+			}
+		}
 
 		//// RVA: 0xC32EF0 Offset: 0xC32EF0 VA: 0xC32EF0
 		//public bool IsUpdatingContent() { }
@@ -233,6 +383,31 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC32884 Offset: 0xC32884 VA: 0xC32884
-		//private void SetMultiIconMemberCount(int memberCount) { }
+		private void SetMultiIconMemberCount(int memberCount)
+		{
+			if(m_divaInfos != null)
+			{
+				for(int i = 0; i < m_divaInfos.Count; i++)
+				{
+					if(m_divaInfos[i] != null)
+					{
+						if(m_divaInfos[i].m_divaControl != null)
+						{
+							m_divaInfos[i].m_divaControl.SetShowMultiIcon(i < memberCount && i < 3);
+						}
+					}
+				}
+			}
+			if(m_additionDivas != null)
+			{
+				for(int i = 0; i < m_additionDivas.Count; i++)
+				{
+					if(m_additionDivas[i] != null)
+					{
+						m_additionDivas[i].SetShowMultiIcon(i + 3 < memberCount);
+					}
+				}
+			}
+		}
 	}
 }

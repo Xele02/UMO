@@ -26,7 +26,16 @@ public struct EDMIONMCICN
 	//public void BEDINMCPENB(ref StatusData MGFGADBHOFJ) { }
 
 	//// RVA: 0x7FC914 Offset: 0x7FC914 VA: 0x7FC914
-	//public void IMLOCECFHGK(ref StatusData MGFGADBHOFJ) { }
+	public void IMLOCECFHGK(ref StatusData MGFGADBHOFJ)
+	{
+		MGFGADBHOFJ.Clear();
+		MGFGADBHOFJ.Add(IMLGBMGIACC);
+		MGFGADBHOFJ.Add(AJINBLGCBMM);
+		for(int i = 0; i < OBCPFDNKLMM.Length; i++)
+		{
+			MGFGADBHOFJ.Add(FEGNMIGJMDM[i]);
+		}
+	}
 
 	//// RVA: 0x7FC91C Offset: 0x7FC91C VA: 0x7FC91C
 	//public int JGBCNKPOOFO() { }

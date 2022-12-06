@@ -78,7 +78,17 @@ namespace XeApp.Game.Menu
 		//public void SetImp(SetDeckDivaCardControl.ImpType type) { }
 
 		//// RVA: 0xA68C74 Offset: 0xA68C74 VA: 0xA68C74
-		//public void SetSkillStatusDisplayType(DisplayType type) { }
+		public void SetSkillStatusDisplayType(DisplayType type)
+		{
+			if(m_viewFriendData!= null)
+			{
+				m_scene.SetStatusDisplayType(type);
+			}
+			else
+			{
+				m_scene.SetStatusDisplayForRival();
+			}
+		}
 
 		//// RVA: 0xA684F4 Offset: 0xA684F4 VA: 0xA684F4
 		private void SetDiva(FFHPBEPOMAK divaData)

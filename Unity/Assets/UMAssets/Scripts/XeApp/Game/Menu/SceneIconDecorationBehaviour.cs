@@ -133,7 +133,7 @@ namespace XeApp.Game.Menu
 				a = (Database.Instance.bonusData.EffectiveEpisodeBonus.FindIndex((IKDICBBFBMI_EventBase.GNPOABJANKO x) =>
 				{
 					//0x136DEC8
-					return x.KELFCMEOPPM == episodeId;
+					return x.KELFCMEOPPM_EpisodeId == episodeId;
 				}) >> 0x1f) ^ 1;
 				str = PIGBBNDPPJC.EJOJNFDHDHN(episodeId);
 			}

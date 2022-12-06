@@ -824,7 +824,7 @@ namespace XeApp.Game.Menu
 			}
 			m_valkyrieButton.SetTapGuard(false);
 			m_unitInfo.UpdateContent(m_playerData, m_viewUnitData, m_paramCalculator, m_viewMusicData, Database.Instance.gameSetup.musicInfo, m_isGoDivaEvent);
-			m_unitInfo.SetStatusDispalyType(UnitDivaSortItem[m_divaDispTypeIndex], UnitDivaSortItem[m_sceneDispTypeIndex]);
+			m_unitInfo.SetStatusDisplayType(PopupSortMenu.UnitDivaSortItem[m_divaDispTypeIndex], PopupSortMenu.UnitDivaSortItem[m_sceneDispTypeIndex]);
 			SetExpectedScoreGauge();
 			m_statusWindow.UpdateContent(m_playerData, m_viewUnitData, m_viewMusicData, m_viewEnemyData, m_viewFriendPlayerData, 0, m_isGoDivaEvent);
 			m_musicInfo.ReStartMusicAttrAnime();
@@ -842,7 +842,7 @@ namespace XeApp.Game.Menu
 			m_valkyrieButton.UpdateContent(viewUnitData, m_viewMusicData);
 			m_valkyrieButton.SetTapGuard(true);
 			m_unitSetInfo.UpdateContent(m_playerData, viewUnitData, m_unitSetParamCalculator, m_viewMusicData, Database.Instance.gameSetup.musicInfo, m_isGoDivaEvent);
-			m_unitSetInfo.SetStatusdisplayType(UnitDivaSortItem[m_divaDispTypeIndex], UnitSortItem[m_sceneDispTypeIndex]);
+			m_unitSetInfo.SetStatusdisplayType(PopupSortMenu.UnitDivaSortItem[m_divaDispTypeIndex], PopupSortMenu.UnitSortItem[m_sceneDispTypeIndex]);
 			SetExpectedScoreGauge();
 			m_statusWindow.UpdateContent(m_playerData, viewUnitData, m_viewMusicData, m_viewEnemyData, m_viewFriendPlayerData, 0, m_isGoDivaEvent);
 			m_loadSaveButtons.SetType(!viewUnitData.EIGKIHENKNC);
@@ -858,7 +858,20 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA872A0 Offset: 0xA872A0 VA: 0xA872A0
-		//private void SetExpectedScoreGauge() { }
+		private void SetExpectedScoreGauge()
+		{
+			int[] score = new int[10];
+			int[] rank = new int[5];
+			for(int i = 0; i < 10; i++)
+			{
+				score[i] = CMMKCEPBIHI.NDNOLJACLLC(i);
+			}
+			for(int i = 0; i < rank.Length; i++)
+			{
+				rank[i] = CMMKCEPBIHI.GPCKPNJGANO(i);
+			}
+			m_musicInfo.ExpectedScoreGauge.Set(CMMKCEPBIHI.CKNLMMGELDF(), 0, rank, score);
+		}
 
 		//// RVA: 0xA874DC Offset: 0xA874DC VA: 0xA874DC
 		//private void ApplyUnitContent(TeamSelectSceneUnit5.DispType dispType) { }
