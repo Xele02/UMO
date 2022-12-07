@@ -117,7 +117,21 @@ namespace XeApp.Game.Menu
 		//public void ChangeSelect(int selectIndex, Action onEnd) { }
 
 		//// RVA: 0xC38A98 Offset: 0xC38A98 VA: 0xC38A98
-		//public void ResetUnitNameScroll() { }
+		public void ResetUnitNameScroll()
+		{
+			foreach(var u in m_unitButtons)
+			{
+				u.m_nameScroll.ResetScroll();
+			}
+			foreach(var s in m_switchUnitButtonsBefore)
+			{
+				s.m_nameScroll.ResetScroll();
+			}
+			foreach (var s in m_switchUnitButtonsAfter)
+			{
+				s.m_nameScroll.ResetScroll();
+			}
+		}
 
 		//// RVA: 0xC38E68 Offset: 0xC38E68 VA: 0xC38E68
 		private void OnClickPageButtonFunc()

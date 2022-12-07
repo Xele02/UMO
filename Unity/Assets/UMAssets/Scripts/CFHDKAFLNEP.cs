@@ -34,7 +34,10 @@ public struct CFHDKAFLNEP
 	public StatusData CMCKNKKCNDK; // 0x4
 
 	//// RVA: 0x7FC4CC Offset: 0x7FC4CC VA: 0x7FC4CC
-	//public void OBKGEDCKHHE() { }
+	public void OBKGEDCKHHE()
+	{
+		TodoLogger.Log(0, "OBKGEDCKHHE");
+	}
 
 	//// RVA: 0x7FC4D4 Offset: 0x7FC4D4 VA: 0x7FC4D4
 	//public void JCHLONCMPAJ() { }
@@ -42,7 +45,8 @@ public struct CFHDKAFLNEP
 	//// RVA: 0x7FC4DC Offset: 0x7FC4DC VA: 0x7FC4DC
 	public bool CDOCOLOKCJK()
 	{
-
+		TodoLogger.Log(0, "CDOCOLOKCJK");
+		return false;
 	}
 
 	//// RVA: 0x7FC4E4 Offset: 0x7FC4E4 VA: 0x7FC4E4

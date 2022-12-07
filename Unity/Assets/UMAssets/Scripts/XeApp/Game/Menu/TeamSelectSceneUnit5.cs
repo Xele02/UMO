@@ -705,7 +705,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA86E48 Offset: 0xA86E48 VA: 0xA86E48
-		//private void UpdateEpisodeBonusList(int unitSetIndex) { }
+		private void UpdateEpisodeBonusList(int unitSetIndex)
+		{
+			if ((int)Database.Instance.gameSetup.musicInfo.gameEventType == 0)
+				return;
+			if (m_eventCtrl == null)
+				return;
+			TodoLogger.Log(0, "Event");
+		}
 
 		//// RVA: 0xA86FA0 Offset: 0xA86FA0 VA: 0xA86FA0
 		private void UpdateUnitBonus()
@@ -842,10 +849,10 @@ namespace XeApp.Game.Menu
 			m_valkyrieButton.UpdateContent(viewUnitData, m_viewMusicData);
 			m_valkyrieButton.SetTapGuard(true);
 			m_unitSetInfo.UpdateContent(m_playerData, viewUnitData, m_unitSetParamCalculator, m_viewMusicData, Database.Instance.gameSetup.musicInfo, m_isGoDivaEvent);
-			m_unitSetInfo.SetStatusdisplayType(PopupSortMenu.UnitDivaSortItem[m_divaDispTypeIndex], PopupSortMenu.UnitSortItem[m_sceneDispTypeIndex]);
+			m_unitSetInfo.SetStatusDisplayType(PopupSortMenu.UnitDivaSortItem[m_divaDispTypeIndex], PopupSortMenu.UnitSortItem[m_sceneDispTypeIndex]);
 			SetExpectedScoreGauge();
 			m_statusWindow.UpdateContent(m_playerData, viewUnitData, m_viewMusicData, m_viewEnemyData, m_viewFriendPlayerData, 0, m_isGoDivaEvent);
-			m_loadSaveButtons.SetType(!viewUnitData.EIGKIHENKNC);
+			m_loadSaveButtons.SetType(viewUnitData.EIGKIHENKNC ? SetDeckLoadSaveButtons.ModeType.Overwrite : SetDeckLoadSaveButtons.ModeType.NewSave);
 			m_musicInfo.ReStartMusicAttrAnime();
 		}
 
@@ -861,20 +868,34 @@ namespace XeApp.Game.Menu
 		private void SetExpectedScoreGauge()
 		{
 			int[] score = new int[10];
-			int[] rank = new int[5];
+			float[] rank = new float[5];
 			for(int i = 0; i < 10; i++)
 			{
-				score[i] = CMMKCEPBIHI.NDNOLJACLLC(i);
+				score[i] = CMMKCEPBIHI.NDNOLJACLLC((CMMKCEPBIHI.NOJENDEDECD)i);
 			}
 			for(int i = 0; i < rank.Length; i++)
 			{
-				rank[i] = CMMKCEPBIHI.GPCKPNJGANO(i);
+				rank[i] = CMMKCEPBIHI.GPCKPNJGANO((ResultScoreRank.Type)i);
 			}
-			m_musicInfo.ExpectedScoreGauge.Set(CMMKCEPBIHI.CKNLMMGELDF(), 0, rank, score);
+			m_musicInfo.ExpectedScoreGauge.Set(CMMKCEPBIHI.KHCOOPDAGOE, 0, rank, score);
 		}
 
 		//// RVA: 0xA874DC Offset: 0xA874DC VA: 0xA874DC
-		//private void ApplyUnitContent(TeamSelectSceneUnit5.DispType dispType) { }
+		private void ApplyUnitContent(DispType dispType)
+		{
+			if(dispType == DispType.Prism)
+			{
+				ApplyPrismUnitContent();
+			}
+			else if(dispType == DispType.CurrentUnit)
+			{
+				ApplyCurrentUnitContent();
+			}
+			else if(dispType == DispType.UnitSet)
+			{
+				ApplyUnitSetContent(UnitSetIndex);
+			}
+		}
 
 		//// RVA: 0xA87534 Offset: 0xA87534 VA: 0xA87534
 		private void UpdateContent()
@@ -902,13 +923,130 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA87694 Offset: 0xA87694 VA: 0xA87694
-		//private void EnterNecessaryContent(TeamSelectSceneUnit5.DispType dispType) { }
+		private void EnterNecessaryContent(DispType dispType)
+		{
+			SetDeckUnitInfoAnimeControl.DispType deckDisp = (SetDeckUnitInfoAnimeControl.DispType)GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ECNAIALHHBO_UnitMenu.BLABFAMKLIN_UnitInfoDispType;
+			if (m_isGoDivaEvent)
+				deckDisp = SetDeckUnitInfoAnimeControl.DispType.Skill;
+			if(dispType == DispType.Prism)
+			{
+				m_headButtons.InOut.Enter();
+				m_valkyrieButton.InOut.Enter();
+				m_musicInfo.InOut.Enter();
+				m_playButtons.InOut.Enter();
+				m_prismSettingButtons.InOut.Enter();
+				m_prismUnitInfo.AnimeControl.TryEnter();
+			}
+			else if(dispType == DispType.UnitSet)
+			{
+				m_unitStatus.InOut.Enter();
+				m_valkyrieButton.InOut.Enter();
+				if(!m_isGoDivaEvent)
+				{
+					m_unitInfoChangeButton.InOut.Enter();
+				}
+				m_musicInfo.InOut.Enter();
+				m_unitSetListButtons.InOut.Enter();
+				m_unitSetListButtons.ResetUnitNameScroll();
+				m_unitSetCloseButton.InOut.Enter();
+				m_unitSetSelectButtons.InOutLeft.Enter();
+				m_unitSetSelectButtons.InOutRight.Enter();
+				m_unitSetInfo.AnimeControl.TryEnter(deckDisp);
+				m_loadSaveButtons.InOut.Enter();
+			}
+			else if(dispType == DispType.CurrentUnit)
+			{
+				m_headButtons.InOut.Enter();
+				m_unitStatus.InOut.Enter();
+				m_valkyrieButton.InOut.Enter();
+				if(!m_isGoDivaEvent)
+				{
+					m_unitInfoChangeButton.InOut.Enter();
+				}
+				m_unitInfo.AnimeControl.TryEnter();
+				m_musicInfo.InOut.Enter();
+				m_playButtons.InOut.Enter();
+			}
+		}
 
 		//// RVA: 0xA87E3C Offset: 0xA87E3C VA: 0xA87E3C
-		//private void LeaveUnnecessaryContent(TeamSelectSceneUnit5.DispType dispType) { }
+		private void LeaveUnnecessaryContent(DispType dispType)
+		{
+			if(dispType != DispType.Prism)
+			{
+				if(dispType == DispType.UnitSet)
+				{
+					m_headButtons.InOut.Leave(false);
+					m_unitInfo.AnimeControl.TryLeave();
+					m_playButtons.InOut.Leave(false);
+				}
+				else if(dispType == DispType.CurrentUnit)
+				{
+					m_unitSetListButtons.InOut.Leave(false);
+					m_unitSetCloseButton.InOut.Leave(false);
+					m_unitSetSelectButtons.InOutLeft.Leave(false);
+					m_unitSetSelectButtons.InOutRight.Leave(false);
+					m_unitSetInfo.AnimeControl.TryLeave();
+					m_loadSaveButtons.InOut.Leave(false);
+					m_prismSettingButtons.InOut.Leave(false);
+					m_prismUnitInfo.AnimeControl.TryLeave();
+				}
+			}
+			else
+			{
+				m_unitStatus.InOut.Leave(false);
+				m_unitInfoChangeButton.InOut.Leave(false);
+				m_unitInfo.AnimeControl.TryLeave();
+				m_unitSetListButtons.InOut.Leave(false);
+				m_unitSetCloseButton.InOut.Leave(false);
+				m_unitSetSelectButtons.InOutLeft.Leave(false);
+				m_unitSetSelectButtons.InOutRight.Leave(false);
+				m_unitSetInfo.AnimeControl.TryLeave();
+				m_loadSaveButtons.InOut.Leave(false);
+			}
+		}
 
 		//// RVA: 0xA883BC Offset: 0xA883BC VA: 0xA883BC
-		//private void SetActiveNecessaryContent(TeamSelectSceneUnit5.DispType dispType) { }
+		private void SetActiveNecessaryContent(DispType dispType)
+		{
+			if(dispType == DispType.Prism)
+			{
+				m_headButtons.gameObject.SetActive(true);
+				m_valkyrieButton.gameObject.SetActive(true);
+				m_musicInfo.gameObject.SetActive(true);
+				m_playButtons.gameObject.SetActive(true);
+				m_prismSettingButtons.gameObject.SetActive(true);
+				m_prismUnitInfo.gameObject.SetActive(true);
+			}
+			else if(dispType == DispType.UnitSet)
+			{
+				m_unitStatus.gameObject.SetActive(true);
+				m_valkyrieButton.gameObject.SetActive(true);
+				if(!m_isGoDivaEvent)
+				{
+					m_unitInfoChangeButton.gameObject.SetActive(true);
+				}
+				m_musicInfo.gameObject.SetActive(true);
+				m_unitSetListButtons.gameObject.SetActive(true);
+				m_unitSetCloseButton.gameObject.SetActive(true);
+				m_unitSetSelectButtons.gameObject.SetActive(true);
+				m_unitSetInfo.gameObject.SetActive(true);
+				m_loadSaveButtons.gameObject.SetActive(true);
+			}
+			else if(dispType == DispType.CurrentUnit)
+			{
+				m_headButtons.gameObject.SetActive(true);
+				m_unitStatus.gameObject.SetActive(true);
+				m_valkyrieButton.gameObject.SetActive(true);
+				if(!m_isGoDivaEvent)
+				{
+					m_unitInfoChangeButton.gameObject.SetActive(true);
+				}
+				m_unitInfo.gameObject.SetActive(true);
+				m_musicInfo.gameObject.SetActive(true);
+				m_playButtons.gameObject.SetActive(true);
+			}
+		}
 
 		//// RVA: 0xA8895C Offset: 0xA8895C VA: 0xA8895C
 		private void SetInactiveUnnecessaryContent(TeamSelectSceneUnit5.DispType dispType)
@@ -977,7 +1115,7 @@ namespace XeApp.Game.Menu
 			return m_headButtons.InOut.IsPlaying() || m_unitStatus.InOut.IsPlaying() || m_valkyrieButton.InOut.IsPlaying() ||
 				m_unitInfoChangeButton.InOut.IsPlaying() || m_unitInfo.AnimeControl.IsPlaying() || m_musicInfo.InOut.IsPlaying() ||
 				m_playButtons.InOut.IsPlaying() || m_unitSetListButtons.InOut.IsPlaying() || m_unitSetCloseButton.InOut.IsPlaying() ||
-				m_unitSetSelectButtons.InOutLeft.IsPlaying() || m_unitSetSelectButtons.InOutRight.IsPlaying() || m_unitSetInfo.AnimControl.IsPlaying() ||
+				m_unitSetSelectButtons.InOutLeft.IsPlaying() || m_unitSetSelectButtons.InOutRight.IsPlaying() || m_unitSetInfo.AnimeControl.IsPlaying() ||
 				m_loadSaveButtons.InOut.IsPlaying() || m_prismSettingButtons.InOut.IsPlaying() || m_prismUnitInfo.AnimeControl.IsPlaying() ||
 				m_statusWindow.InOut.IsPlaying();
 		}

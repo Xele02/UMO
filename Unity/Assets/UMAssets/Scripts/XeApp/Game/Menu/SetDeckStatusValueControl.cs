@@ -1,6 +1,8 @@
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
+using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -42,11 +44,106 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA76B38 Offset: 0xA76B38 VA: 0xA76B38
 		public void Set(int baseValue, int adjustValue, bool isSign, bool isBuffTarget, bool isDebuffTarget, string normalColorCode, int maxNum = 0)
 		{
-			!!!
+			strBuilder.Clear();
+			if (normalColorCode == null)
+				normalColorCode = StatusTextColor.NormalColor;
+			if (isBuffTarget)
+				normalColorCode = StatusTextColor.UpColor;
+			else if(isDebuffTarget)
+				normalColorCode = StatusTextColor.DebuffColor;
+			else if(adjustValue - baseValue < 0)
+				normalColorCode = StatusTextColor.DownColor;
+			m_baseTextColor = ColorConvert.Convert(normalColorCode);
+			if(isSign)
+			{
+				if (adjustValue < 0)
+					strBuilder.Append("-");
+				else if (adjustValue > 0)
+					strBuilder.Append("+");
+			}
+			if (maxNum != 0)
+				adjustValue = Mathf.Min(adjustValue, maxNum);
+			strBuilder.Append(Mathf.Abs(adjustValue));
+			m_valueText.text = strBuilder.ToString();
+			m_valueText.color = m_baseTextColor;
+			m_crossFadeTime = 0;
+			m_isCrossFade = false;
+			if (isBuffTarget && isDebuffTarget)
+			{
+				m_arrowImage.enabled = true;
+				m_enemyImage.enabled = true;
+				m_isCrossFade = true;
+			}
+			else if(isBuffTarget)
+			{
+				m_arrowImage.enabled = true;
+				m_arrowImage.color = IconColorOn;
+				m_enemyImage.enabled = false;
+			}
+			else
+			{
+				m_arrowImage.enabled = false;
+				if (isDebuffTarget)
+				{
+					m_enemyImage.enabled = true;
+					m_enemyImage.color = IconColorOn;
+				}
+				else
+				{
+					m_enemyImage.enabled = false;
+				}
+			}
+			if (m_animeLengthSec <= 0)
+				m_animeLengthSec = 2;
+			UpdateCrossFade(0);
 		}
 
 		//// RVA: 0xA770B8 Offset: 0xA770B8 VA: 0xA770B8
-		//public void Set(string baseValue, bool isDown, bool isBuffTarget, bool isDebuffTarget, string normalColorCode) { }
+		public void Set(string baseValue, bool isDown, bool isBuffTarget, bool isDebuffTarget, string normalColorCode)
+		{
+			strBuilder.Clear();
+			if (normalColorCode == null)
+				normalColorCode = StatusTextColor.NormalColor;
+			if (isBuffTarget)
+				normalColorCode = StatusTextColor.UpColor;
+			else if (isDebuffTarget)
+				normalColorCode = "#"+m_enemyTextColor.HexStringRGBA();
+			else if (isDown)
+				normalColorCode = StatusTextColor.DownColor;
+			m_baseTextColor = ColorConvert.Convert(normalColorCode);
+			m_valueText.text = baseValue;
+			m_valueText.color = m_baseTextColor;
+			m_crossFadeTime = 0;
+			m_isCrossFade = false;
+			if (isBuffTarget && isDebuffTarget)
+			{
+				m_arrowImage.enabled = true;
+				m_enemyImage.enabled = true;
+				m_isCrossFade = true;
+			}
+			else if(isBuffTarget)
+			{
+				m_arrowImage.enabled = true;
+				m_arrowImage.color = IconColorOn;
+				m_enemyImage.enabled = false;
+			}
+			else
+			{
+				m_arrowImage.enabled = false;
+				if(isDebuffTarget)
+				{
+					m_enemyImage.enabled = true;
+					m_enemyImage.color = IconColorOn;
+				}
+				else
+				{
+					m_enemyImage.enabled = false;
+				}
+			}
+			if (m_animeLengthSec <= 0)
+				m_animeLengthSec = 2;
+			UpdateCrossFade(0);
+		}
 
 		//// RVA: 0xA767A8 Offset: 0xA767A8 VA: 0xA767A8
 		private void UpdateCrossFade(float deltaTime)

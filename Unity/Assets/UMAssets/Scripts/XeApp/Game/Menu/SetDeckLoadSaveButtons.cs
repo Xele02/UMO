@@ -7,6 +7,11 @@ namespace XeApp.Game.Menu
 {
 	public class SetDeckLoadSaveButtons : MonoBehaviour
 	{
+		public enum ModeType
+		{
+			NewSave = 0,
+			Overwrite = 1,
+		}
 		[SerializeField]
 		//[TooltipAttribute] // RVA: 0x6817C0 Offset: 0x6817C0 VA: 0x6817C0
 		private InOutAnime m_inOut; // 0xC
@@ -51,6 +56,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6F5CC Offset: 0xA6F5CC VA: 0xA6F5CC
-		//public void SetType(SetDeckLoadSaveButtons.ModeType type) { }
+		public void SetType(ModeType type)
+		{
+			m_SaveTextSprite.sprite = m_SaveTextSpriteList.GetSaveTextSprite((int)type);
+			if(type == ModeType.Overwrite)
+			{
+				m_loadButton.Disable = false;
+			}
+			else
+			{
+				m_loadButton.Disable = true;
+			}
+		}
 	}
 }

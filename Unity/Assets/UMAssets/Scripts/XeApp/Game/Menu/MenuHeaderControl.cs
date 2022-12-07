@@ -218,7 +218,7 @@ namespace XeApp.Game.Menu
 		private string[] assetBundleName = new string[4] { "ly/004.xab", "UI_MenuTop", "ly/034.xab", "UI_MenuStack" }; // 0x40
 
 		public CommonMenuTop MenuTop { get { return m_userInfo; } } //0xB26CA4
-		// public CommonMenuStack MenuStack { get; } 0xB26CAC
+		public CommonMenuStack MenuStack { get { return m_menuStack; } } //0xB26CAC
 		// public UnityEvent OnChargeMoney { get; } 0xB26CB4
 
 		// // RVA: 0xB26CBC Offset: 0xB26CBC VA: 0xB26CBC

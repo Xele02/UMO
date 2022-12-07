@@ -40,7 +40,7 @@ namespace XeApp.Game.Menu
 		public OnClickFriendButton OnClickFriend; // 0x30
 		private EAJCBFGKKFA m_viewFriendData; // 0x34
 
-		//public bool IsLoading { get; } 0xA68204
+		public bool IsLoading { get { return m_divaCard.IsLoading || m_scene.IsLoading; } } //0xA68204
 
 		// RVA: 0xA682A0 Offset: 0xA682A0 VA: 0xA682A0
 		private void Awake()

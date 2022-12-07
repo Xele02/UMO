@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		private SetDeckSceneControl.SkillType m_skillTyoe; // 0x38
 		private int m_sceneTextureLoadingCount; // 0x3C
 
-		//public bool IsLoading { get; } 0xA6828C
+		public bool IsLoading { get { return m_sceneTextureLoadingCount > 0; } } //0xA6828C
 		public GCIJNCFDNON SceneData { get { return m_sceneData; } } //0xA74080
 		public UGUIStayButton SceneButton { get { return m_sceneButton; } } //0xA74088
 		//private bool IsEmpty { get; } 0xA74090

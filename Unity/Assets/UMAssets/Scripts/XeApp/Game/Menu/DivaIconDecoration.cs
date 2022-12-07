@@ -233,7 +233,24 @@ namespace XeApp.Game.Menu
 		//public static int GetEquipmentRarity(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData) { }
 
 		//// RVA: 0x17D4D5C Offset: 0x17D4D5C VA: 0x17D4D5C
-		//public static int GetEquipmentLuck(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData) { }
+		public static int GetEquipmentLuck(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData)
+		{
+			if (divaData == null)
+				return 0;
+			int res = 0;
+			if (IconDecoreation.IsValidSceneId(divaData.FGFIBOBAPIA_SceneId))
+			{
+				res += playerData.OPIBAPEGCLA_Scenes[IconDecoreation.GetSceneId(divaData.FGFIBOBAPIA_SceneId)].MJBODMOLOBC_Luck;
+			}
+			for(int i = 0; i < divaData.DJICAKGOGFO.Count; i++)
+			{
+				if (IconDecoreation.IsValidSceneId(divaData.DJICAKGOGFO[i]))
+				{
+					res += playerData.OPIBAPEGCLA_Scenes[IconDecoreation.GetSceneId(divaData.DJICAKGOGFO[i])].MJBODMOLOBC_Luck;
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0x17E2F34 Offset: 0x17E2F34 VA: 0x17E2F34
 		//public static int GetEquipmentLuck(List<GCIJNCFDNON> sceneList) { }

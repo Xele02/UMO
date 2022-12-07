@@ -97,10 +97,16 @@ namespace XeApp.Game.Menu
 		// private void Hide() { }
 
 		// // RVA: 0xE30EB0 Offset: 0xE30EB0 VA: 0xE30EB0
-		// public void TryEnter() { }
+		public void TryEnter()
+		{
+			TodoLogger.Log(0, "TryEnter");
+		}
 
 		// // RVA: 0xE30F5C Offset: 0xE30F5C VA: 0xE30F5C
-		// public void TryLeave() { }
+		public void TryLeave()
+		{
+			TodoLogger.Log(0, "TryLeave");
+		}
 
 		// // RVA: 0xE31008 Offset: 0xE31008 VA: 0xE31008
 		// public void SetEnable() { }

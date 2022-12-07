@@ -82,7 +82,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1102D44 Offset: 0x1102D44 VA: 0x1102D44
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_animCoroutine != null;
+		}
 
 		//// RVA: 0x1102D14 Offset: 0x1102D14 VA: 0x1102D14
 		public void Play(int index = 0, Action<KeyFrameAnime, int> callback = null)

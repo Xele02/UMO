@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		public bool ExistAssistControl { get { return m_assist != null; } } //0xC30B90
 		public SetDeckAssistCardControl AssistControl { get { return m_assist; } } //0xC30C1C
 		//public bool ExistMessageControl { get; } 0xC30C24
-		//public SetDeckUnitInfoMessageControl MessageControl { get; } 0xC30CB0
+		public SetDeckUnitInfoMessageControl MessageControl { get { return m_messageControl; } } //0xC30CB0
 		//public UGUIStayButton CenterMainSceneButton { get; } 0xC30CB8
 		//public UGUIStayButton SecondDivaButton { get; } 0xC30DB8
 
@@ -283,7 +283,30 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC32EF0 Offset: 0xC32EF0 VA: 0xC32EF0
-		//public bool IsUpdatingContent() { }
+		public bool IsUpdatingContent()
+		{
+			foreach(var d in m_divaInfos)
+			{
+				if(d.m_divaControl != null && d.m_divaControl.IsLoading)
+					return true;
+				if(d.m_sceneSetControl != null)
+				{
+					foreach(var s  in d.m_sceneSetControl.Scenes)
+					{
+						if (s != null && s.IsLoading)
+							return true;
+					}
+				}
+			}
+			foreach(var d in m_additionDivas)
+			{
+				if (d != null && d.IsLoading)
+					return true;
+			}
+			if (m_assist != null && m_assist.IsLoading)
+				return true;
+			return false;
+		}
 
 		//// RVA: 0xC31824 Offset: 0xC31824 VA: 0xC31824
 		public void SetTapGuard(bool isEnable)
