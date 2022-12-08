@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
 public class LLKLAKGKNLD { }
 public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
@@ -86,7 +87,10 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x180E924 Offset: 0x180E924 VA: 0x180E924
-	//public void MNHPPJFNPCG(ref LimitOverStatusData DNNHDJPNIAK, int JKGFBFPIMGA, int MJBODMOLOBC, int DCMJPFFBINO) { }
+	public void MNHPPJFNPCG(ref LimitOverStatusData DNNHDJPNIAK, int JKGFBFPIMGA, int MJBODMOLOBC, int DCMJPFFBINO)
+	{
+		TodoLogger.Log(0, "MNHPPJFNPCG");
+	}
 
 	// RVA: 0x180ECDC Offset: 0x180ECDC VA: 0x180ECDC
 	public LLKLAKGKNLD_LimitOver()

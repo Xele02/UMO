@@ -532,7 +532,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA7D6A0 Offset: 0xA7D6A0 VA: 0xA7D6A0
-		public void CalcStatus(ref StatusData baseStatus, ref StatusData addStatus, out int luck, DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD unitData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendPlayerData, EJKBKMBJMGL viewEnemyData, out AEGLGBOGDHH result)
+		public void CalcStatus(ref StatusData baseStatus, ref StatusData addStatus, out int luck, DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD unitData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendPlayerData, EJKBKMBJMGL_EnemyData viewEnemyData, out AEGLGBOGDHH result)
 		{
 			baseStatus.Clear();
 			addStatus.Clear();

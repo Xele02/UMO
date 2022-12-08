@@ -169,7 +169,7 @@ namespace XeApp.Game.Menu
 								diva.m_sceneSetControl.Scenes[0].SceneButton.Disable = false;
 							}
 						}
-						for(int j = 0; j < diva.m_sceneSetControl.Scenes.Count; j++)
+						for(int j = 1; j < diva.m_sceneSetControl.Scenes.Count; j++)
 						{
 							if(diva.m_sceneSetControl.Scenes[j] != null)
 							{
@@ -180,13 +180,13 @@ namespace XeApp.Game.Menu
 								}
 								else
 								{
-									if(unitDiva.DJICAKGOGFO[j] < 1)
+									if(unitDiva.DJICAKGOGFO[j - 1] < 1)
 									{
 										diva.m_sceneSetControl.Scenes[j].SetEmpty();
 									}
 									else
 									{
-										diva.m_sceneSetControl.Scenes[0].Set(unitDiva.AHHJLDLAPAN_DivaId, SetDeckSceneControl.SkillType.Live, viewPlayerData.OPIBAPEGCLA_Scenes[unitDiva.DJICAKGOGFO[j] - 1]);
+										diva.m_sceneSetControl.Scenes[j].Set(unitDiva.AHHJLDLAPAN_DivaId, SetDeckSceneControl.SkillType.Live, viewPlayerData.OPIBAPEGCLA_Scenes[unitDiva.DJICAKGOGFO[j - 1] - 1]);
 									}
 									diva.m_sceneSetControl.Scenes[j].SceneButton.Disable = false;
 								}

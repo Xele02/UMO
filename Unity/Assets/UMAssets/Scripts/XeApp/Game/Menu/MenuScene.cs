@@ -881,10 +881,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB37B00 Offset: 0xB37B00 VA: 0xB37B00
-		// public int GetInputDisableCount() { }
+		public int GetInputDisableCount()
+		{
+			return m_inputDisableCount;
+		}
 
 		// // RVA: 0xB37B08 Offset: 0xB37B08 VA: 0xB37B08
-		// public int GetRaycastDisableCount() { }
+		public int GetRaycastDisableCount()
+		{
+			return m_raycastDisableCount;
+		}
 
 		// // RVA: 0xB37B10 Offset: 0xB37B10 VA: 0xB37B10
 		// public Vector3 GetDivaCameraRotByScene(TransitionList.Type type) { }

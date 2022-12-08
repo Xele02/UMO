@@ -250,10 +250,16 @@ public class AOJGDNFAIJL_PrismData
 		}
 
         // // RVA: 0xD5B430 Offset: 0xD5B430 VA: 0xD5B430
-        // public bool OFHMEAJBIEL() { }
+        public bool OFHMEAJBIEL_IsPrismUnlocked()
+		{
+			return DPHIJENPBCJ_GetPrismLevelRequired() <= LDEGEHAEALK_Save.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+		}
 
         // // RVA: 0xD5B494 Offset: 0xD5B494 VA: 0xD5B494
-        // public int DPHIJENPBCJ() { }
+        public int DPHIJENPBCJ_GetPrismLevelRequired()
+		{
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("prism_player_level", 9999);
+		}
 
         // // RVA: 0xD5B584 Offset: 0xD5B584 VA: 0xD5B584
         public List<AOJGDNFAIJL_PrismData.LLHDHKLACJA_SelectDivaInfo> IANKDOFJLGB_GetDivasForSlot(int IOPHIHFOOEP_SlotIndex)

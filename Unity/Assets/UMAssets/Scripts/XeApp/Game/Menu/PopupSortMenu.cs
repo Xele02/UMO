@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 		//public AssistItem AssistItem { get; set; } 0x1149B14 0x1149B1C
 		public static List<SortItem> UnitSortItem { get { return UnitSortItemList; } } //0x1149B24 
 		public static List<SortItem> UnitDivaSortItem { get { return UnitDivaSortItemList; } }  //0x1149BB0
-		//public static List<SortItem> SceneSortItem { get; } 0x1149C3C
+		public static List<SortItem> SceneSortItem { get { return SceneSortItemList; } } //0x1149C3C
 		//public static List<SortItem> MusicSelectSortItem { get; } 0x1149CC8
 		//public static List<SortItem> ShopSortItem { get; } 0x1149D54
 		

@@ -3,6 +3,7 @@ using XeApp.Game.Common;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -163,6 +164,36 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA6EDC4 Offset: 0xA6EDC4 VA: 0xA6EDC4
-		// public void SetPrismType(SetDeckHeadButtons.PrismType type) { }
+		public void SetPrismType(PrismType type)
+		{
+			m_prismButtonColor.color = type == PrismType.Lock ? Color.gray : Color.white;
+			if (type == PrismType.ON)
+			{
+				m_prismOnOffText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_head_prism_btton_on");
+				foreach (var a in m_prismOnEffectAnimes)
+				{
+					a.gameObject.SetActive(true);
+					a.Stop();
+					if (a.gameObject.activeInHierarchy)
+					{
+						a.Play();
+					}
+				}
+				m_prismOnImage.gameObject.SetActive(true);
+				m_prismOffImage.gameObject.SetActive(false);
+			}
+			else
+			{
+				m_prismOnOffText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_head_prism_btton_off");
+				foreach (var a in m_prismOnEffectAnimes)
+				{
+					a.gameObject.SetActive(false);
+					a.Stop();
+				}
+				m_prismOnImage.gameObject.SetActive(false);
+				m_prismOffImage.gameObject.SetActive(true);
+			}
+			m_prismLockImage.enabled = type == PrismType.Lock;
+		}
 	}
 }
