@@ -247,7 +247,6 @@ namespace XeApp.Game.Menu
 			bool feed = false;
 			IconTextureType iconTextureType = IconTextureType.Texture;
 			int baseRare = 0;
-			bool found = false;
 			if (index > -1)
 			{
 				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA;
@@ -256,14 +255,13 @@ namespace XeApp.Game.Menu
 					baseRare = scenes[index].EKLIPGELKCL_Rarity;
 					version = scenes[index].JIJOGLFOOMN_Aver;
 					feed = scenes[index].MCCIFLKCNKO_Feed;
-					found = true;
 				}
 			}
 			if(!feed)
 			{
 				iconTextureType = (IsPlateAnimation() && baseRare > 5) ? IconTextureType.Material : IconTextureType.Texture;
 			}
-			Load(MakeBundlePath(m_strBuilder, id, rank, baseRare, version, found).ToString(), iconTextureType, callBack);
+			Load(MakeBundlePath(m_strBuilder, id, rank, baseRare, version, feed).ToString(), iconTextureType, callBack);
 		}
 
 		// // RVA: 0x13637A4 Offset: 0x13637A4 VA: 0x13637A4

@@ -108,6 +108,7 @@ namespace XeApp.Game.Menu
 				{
 					if(info.Operation.IsError())
 					{
+						UnityEngine.Debug.LogError("Error loading icon bundle "+info.Path);
 						m_loadingAssetBundle.Remove(i);
 						AssetBundleManager.UnloadAssetBundle(info.Path, false);
 					}
