@@ -6,6 +6,22 @@ namespace XeApp.Game.Menu
 {
 	public class SceneIconScrollContent : SwapScrollListContent
 	{
+		public enum IconFlagBitIndex
+		{
+			New = 0,
+			Unit = 1,
+			Set = 2,
+			Episode = 3,
+			HomeBg = 4,
+		}
+
+		public enum SkillIconType
+		{
+			None = 0,
+			Active = 1,
+			Live = 2,
+		}
+
 		private void Awake()
 		{
 			UnityEngine.Debug.LogError("Implement monobehaviour");

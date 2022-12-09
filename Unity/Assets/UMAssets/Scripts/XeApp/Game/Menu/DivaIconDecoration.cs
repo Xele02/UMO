@@ -111,7 +111,38 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17D2EC0 Offset: 0x17D2EC0 VA: 0x17D2EC0
-		//public void Change(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData, DisplayType type) { }
+		public void Change(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData, DisplayType type)
+		{
+			int luck = 0;
+			if(divaData != null)
+			{
+				if(IconDecoreation.IsValidSceneId(divaData.FGFIBOBAPIA_SceneId))
+				{
+					luck = playerData.OPIBAPEGCLA_Scenes[IconDecoreation.GetSceneId(divaData.FGFIBOBAPIA_SceneId)].MJBODMOLOBC_Luck;
+				}
+				if(m_divaIconDecorationBehaviour != null)
+				{
+					for(int i = 0; i < divaData.DJICAKGOGFO.Count; i++)
+					{
+						if (IconDecoreation.IsValidSceneId(divaData.DJICAKGOGFO[i]))
+						{
+							luck += playerData.OPIBAPEGCLA_Scenes[IconDecoreation.GetSceneId(divaData.DJICAKGOGFO[i])].MJBODMOLOBC_Luck;
+						}
+					}
+				}
+			}
+			if(m_divaFriendIconDecrationBehaviour != null)
+			{
+				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(false, false);
+				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(playerData.NDOLELKAJNL.MDPKLNFFDBO_EmblemId);
+				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(playerData.NDOLELKAJNL.HMFFHLPNMPH);
+			}
+			CMMKCEPBIHI.AECDJDIJJKD(ref m_calcStatusResult, divaData, null, playerData, null, null, null);
+			m_status.Clear();
+			m_calcStatusResult.IMLOCECFHGK(ref m_status);
+			m_status.Add(divaData.CMCKNKKCNDK_EquippedStatus);
+			Change(divaData, null, luck, 0, type);
+		}
 
 		//// RVA: 0x17E2640 Offset: 0x17E2640 VA: 0x17E2640
 		public void Change(FFHPBEPOMAK divaData, EAJCBFGKKFA friendPlayerData, DisplayType type, GCIJNCFDNON assistMainScene)

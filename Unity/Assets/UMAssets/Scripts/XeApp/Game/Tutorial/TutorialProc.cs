@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using XeApp.Game.Common;
 
@@ -91,7 +92,11 @@ namespace XeApp.Game.Tutorial
 		//public static IEnumerator Co_PlateGrowth(ActionButton button) { }
 
 		//// RVA: 0xE4B020 Offset: 0xE4B020 VA: 0xE4B020
-		//public static bool CanDivaSelect(int missionId) { }
+		public static bool CanDivaSelect(int missionId)
+		{
+			TodoLogger.Log(0, "CanDivaSelect");
+			return false;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF438 Offset: 0x6AF438 VA: 0x6AF438
 		//// RVA: 0xE4B22C Offset: 0xE4B22C VA: 0xE4B22C
@@ -107,7 +112,11 @@ namespace XeApp.Game.Tutorial
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF5A0 Offset: 0x6AF5A0 VA: 0x6AF5A0
 		//// RVA: 0xE4B430 Offset: 0xE4B430 VA: 0xE4B430
-		//public static IEnumerator Co_DivaSelectList(StayButton button, Func<bool> waitFunc) { }
+		public static IEnumerator Co_DivaSelectList(StayButton button, Func<bool> waitFunc)
+		{
+			TodoLogger.Log(0, "Co_DivaSelectList");
+			yield return null;
+		}
 
 		//// RVA: 0xE4B4F8 Offset: 0xE4B4F8 VA: 0xE4B4F8
 		//public static bool CanDivaSelectAfter(int missionId) { }

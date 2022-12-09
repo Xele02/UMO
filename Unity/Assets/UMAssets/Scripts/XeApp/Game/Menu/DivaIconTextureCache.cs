@@ -96,7 +96,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17E3844 Offset: 0x17E3844 VA: 0x17E3844
-		// public void SetStatusLoadingIcon(RawImageEx image) { }
+		public void SetStatusLoadingIcon(RawImageEx image)
+		{
+			m_loadingStatusDivaIcon.Set(image);
+		}
 
 		// // RVA: 0x17E3880 Offset: 0x17E3880 VA: 0x17E3880 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
@@ -164,7 +167,17 @@ namespace XeApp.Game.Menu
 		// public static string MakeTutorialIconPath(int charId) { }
 
 		// // RVA: 0x17E425C Offset: 0x17E425C VA: 0x17E425C
-		// public void TryInstall(DFKGGBMFFGB playerData) { }
+		public void TryInstall(DFKGGBMFFGB playerData)
+		{
+			for(int i = 0; i < playerData.NBIGLBMHEDC.Count; i++)
+			{
+				if(playerData.NBIGLBMHEDC[i].FJODMPGPDDD)
+				{
+					TryInstall(playerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC[i].FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId, 0);
+					TryStateDivaIconInstall(playerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC[i].FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId, 0);
+				}
+			}
+		}
 
 		// // RVA: 0x17E43CC Offset: 0x17E43CC VA: 0x17E43CC
 		public void TryInstall(int divaId, int modelId, int colorId)
@@ -174,7 +187,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17E4504 Offset: 0x17E4504 VA: 0x17E4504
-		// public void TryStateDivaIconInstall(int divaId, int modelId, int colorId) { }
+		public void TryStateDivaIconInstall(int divaId, int modelId, int colorId)
+		{
+			m_strBuilder.Set(GetIconPath(IconType.MSize, divaId, modelId, colorId));
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+		}
 
 		// // RVA: 0x17E463C Offset: 0x17E463C VA: 0x17E463C
 		public void TryStateDivaUpIconInstall(int divaId, int modelId, int colorId)
