@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 		private SkipStatusType m_skipStatus; // 0x10C
 		private bool m_isWaitEnterAnimation; // 0x110
 		private bool m_isWaitExitAnimation; // 0x111
-		//private TeamSelectDivaListArgs m_selectDivaListArgs = new TeamSelectDivaListArgs(); // 0x114
+		private TeamSelectDivaListArgs m_selectDivaListArgs = new TeamSelectDivaListArgs(); // 0x114
 		//private CostumeChangeDivaArgs m_costumeChangeDivaArgs = new CostumeChangeDivaArgs(); // 0x118
 		//private TeamSelectSceneListArgs m_selectSceneListArgs = new TeamSelectSceneListArgs(); // 0x11C
 		//private CIKHPBBNEIM m_viewEpisodeBonus = new CIKHPBBNEIM(); // 0x120
@@ -409,8 +409,11 @@ namespace XeApp.Game.Menu
 			i = 0;
 			yield return null;
 			i++;
-			while(i <= 4)
+			while (i <= 4)
+			{
+				i++;
 				yield return null;
+			}
 			bool isWait = false;
 			m_gameSettingMenu = ConfigMenu.Create(null);
 			if(ConfigManager.gotoTimingScene)
@@ -1258,7 +1261,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8EEE0 Offset: 0xA8EEE0 VA: 0xA8EEE0
 		private void OnSelectDiva(int slotNumber, FFHPBEPOMAK divaData)
 		{
-			TodoLogger.Log(0, "OnSelectDiva");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play(1);
+			m_selectDivaListArgs.slot = slotNumber;
+			m_selectDivaListArgs.viewPlayerData = m_playerData;
+			m_selectDivaListArgs.viewMusicBaseData = m_viewMusicData;
+			MenuScene.Instance.Call(TransitionList.Type.DIVA_SELECT_LIST, m_selectDivaListArgs, true);
 		}
 
 		//// RVA: 0xA8F050 Offset: 0xA8F050 VA: 0xA8F050
