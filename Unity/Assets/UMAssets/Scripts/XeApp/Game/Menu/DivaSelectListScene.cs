@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		private DivaSortExecutor m_divaSortExecutor = new DivaSortExecutor(); // 0x94
 		private SortItem m_sortType; // 0x98
 		private int m_selectedSlot; // 0x9C
-		private byte m_order = ListSortButtonGroup.DefaultSortOrder; // 0xA0
+		private byte m_order = (byte)ListSortButtonGroup.DefaultSortOrder; // 0xA0
 		private bool m_isOpenEndConfirmPopup; // 0xA1
 		private bool m_isWaitHelp; // 0xA2
 		private readonly DisplayType[] m_displayTypeTbl = new DisplayType[11] {
@@ -121,22 +121,22 @@ namespace XeApp.Game.Menu
 			m_sortGroupButton.OnListSortEvent.RemoveAllListeners();
 			m_sortGroupButton.OnListSortEvent.AddListener(OnSort);
 			m_sortGroupButton.SetVisibleLimitOverListButton(false);
-			m_divaSelectList.m_onRemoveEvent.RemoveAllListeners();
-			m_divaSelectList.m_onRemoveEvent.AddListener(OnRemove);
-			m_divaSelectList.m_onSelectDivaEvent.RemoveAllListeners();
-			m_divaSelectList.m_onSelectDivaEvent.AddListener(OnSelectDiva);
-			m_divaSelectList.m_onShowDivaStatusEvent.RemoveAllListeners();
-			m_divaSelectList.m_onShowDivaStatusEvent.AddListener(OnShowDivaStatus);
-			m_divaSelectList.m_onShowSelectedDivaSceneStatus.RemoveAllListeners();
-			m_divaSelectList.m_onShowSelectedDivaSceneStatus.AddListener(OnShowSelectedDivaSceneStatus);
+			m_divaSelectList.OnRemoveEvent.RemoveAllListeners();
+			m_divaSelectList.OnRemoveEvent.AddListener(OnRemove);
+			m_divaSelectList.OnSelectDivaEvent.RemoveAllListeners();
+			m_divaSelectList.OnSelectDivaEvent.AddListener(OnSelectDiva);
+			m_divaSelectList.OnShowDivaStatusEvent.RemoveAllListeners();
+			m_divaSelectList.OnShowDivaStatusEvent.AddListener(OnShowDivaStatus);
+			m_divaSelectList.OnShowSelectedDivaSceneStatus.RemoveAllListeners();
+			m_divaSelectList.OnShowSelectedDivaSceneStatus.AddListener(OnShowSelectedDivaSceneStatus);
 			m_sortType = (SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.ONPAMDMIEKM_divaSortItem;
 			m_order = (byte)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.HNGHNBNPCHO_divaSortOrder;
 			Listup(m_selectedDiva == null ? 0 : m_selectedDiva.AHHJLDLAPAN_DivaId);
 			m_divaSortExecutor.Execute(m_divaSortIdList, m_sortType, m_order);
-			m_sortGroupButton.UpdateContent(m_sortType, m_order, false, false);
+			m_sortGroupButton.UpdateContent(m_sortType, (ListSortButtonGroup.SortOrder)m_order, false, false);
 			m_divaSelectList.Initialize();
 			m_divaSelectList.UpdateContent(m_selectedDiva, m_divaSortIdList, m_selectedSlot, m_musicData);
-			m_divaSelectList.UpdateDecoration(m_selectedDiva, ?? , UnitWindowConstant.SortItemToDisplayType[(int)m_sortType]);
+			m_divaSelectList.UpdateDecoration(m_selectedDiva, m_divaSortIdList, UnitWindowConstant.SortItemToDisplayType[(int)m_sortType]);
 			m_divaSelectList.Wait();
 			GameManager.Instance.DivaIconCache.TryInstall(PlayerData);
 		}
@@ -235,22 +235,40 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17F03E0 Offset: 0x17F03E0 VA: 0x17F03E0
-		//private void OnSort(SortItem item, ListSortButtonGroup.SortOrder order, bool isBonus) { }
+		private void OnSort(SortItem item, ListSortButtonGroup.SortOrder order, bool isBonus)
+		{
+			TodoLogger.Log(0, "OnSort");
+		}
 
 		//// RVA: 0x17F0670 Offset: 0x17F0670 VA: 0x17F0670
-		//private void OnRemove() { }
+		private void OnRemove()
+		{
+			TodoLogger.Log(0, "OnRemove");
+		}
 
 		//// RVA: 0x17F077C Offset: 0x17F077C VA: 0x17F077C
-		//private void OnSelectDiva(int sortListIndex) { }
+		private void OnSelectDiva(int sortListIndex)
+		{
+			TodoLogger.Log(0, "OnSelectDiva");
+		}
 
 		//// RVA: 0x17F0A14 Offset: 0x17F0A14 VA: 0x17F0A14
-		//private void OnShowDivaStatus(int sortListIndex) { }
+		private void OnShowDivaStatus(int sortListIndex)
+		{
+			TodoLogger.Log(0, "OnShowDivaStatus");
+		}
 
 		//// RVA: 0x17F0C8C Offset: 0x17F0C8C VA: 0x17F0C8C
-		//private void OnShowSelectedDivaSceneStatus(int slot) { }
+		private void OnShowSelectedDivaSceneStatus(int slot)
+		{
+			TodoLogger.Log(0, "OnShowSelectedDivaSceneStatus");
+		}
 
 		//// RVA: 0x17F0E9C Offset: 0x17F0E9C VA: 0x17F0E9C
-		//private void UpdateContent() { }
+		private void UpdateContent()
+		{
+			m_divaSelectList.UpdateDecoration(m_selectedDiva, m_divaSortIdList, UnitWindowConstant.SortItemToDisplayType[(int)m_sortType]);
+		}
 
 		//// RVA: 0x17EFBA8 Offset: 0x17EFBA8 VA: 0x17EFBA8
 		//private bool IsAddDiva(int slotNumber) { }

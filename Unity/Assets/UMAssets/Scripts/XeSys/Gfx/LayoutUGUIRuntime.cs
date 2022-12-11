@@ -11,6 +11,7 @@ namespace XeSys.Gfx
 	public class DebugLinkInfo : MonoBehaviour
 	{
 		public string LayoutId;
+		public string LayoutExId;
 		public string shaderName;
 
 		void Update()
@@ -636,6 +637,7 @@ namespace XeSys.Gfx
 					continue;
 				#if UNITY_EDITOR
 				rt.gameObject.AddComponent<DebugLinkInfo>().LayoutId = view.ID;
+				rt.gameObject.AddComponent<DebugLinkInfo>().LayoutExId = view.EXID;
 				#endif
 				if(rt.name.Contains("ScrollbarH") || rt.name.Contains("ScrollbarV"))
 				{

@@ -373,5 +373,19 @@ namespace XeSys.Gfx
 
 		// // RVA: 0x1EE9448 Offset: 0x1EE9448 VA: 0x1EE9448 Slot: 15
 		// public virtual void Serialize(List<SerializableView> list, int parent) { }
+
+
+		static public void GetDebugHierarchy(ViewBase v, int a, ref string res)
+		{
+			for(int i = 0; i < a; i++) res += " ";
+			res += v.GetType().ToString()+" "+v.ID+" "+v.EXID+"\n";
+			if(v is AbsoluteLayout)
+			{
+				for(int i = 0; i < (v as AbsoluteLayout).viewCount; i++)
+				{
+					GetDebugHierarchy((v as AbsoluteLayout)[i], a + 1, ref res);
+				}
+			}
+		}
 	}
 }

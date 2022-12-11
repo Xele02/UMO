@@ -83,7 +83,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E87AC Offset: 0x17E87AC VA: 0x17E87AC
-		//public void InitializeDecoration() { }
+		public void InitializeDecoration()
+		{
+			for(int i = 0; i < m_sceneIconDecoration.Length; i++)
+			{
+				m_sceneIconDecoration[i].Initialize(m_sceneIconImages[i].gameObject, SceneIconDecoration.Size.M, null, null);
+			}
+			m_divaIconDecoration.Initialize(m_divaIconImage.gameObject, DivaIconDecoration.Size.M, true, false, null, null);
+		}
 
 		//// RVA: 0x17E8A7C Offset: 0x17E8A7C VA: 0x17E8A7C
 		public void ReleaseDecoration()

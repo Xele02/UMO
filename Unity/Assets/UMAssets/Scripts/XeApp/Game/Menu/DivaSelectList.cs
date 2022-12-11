@@ -57,10 +57,10 @@ namespace XeApp.Game.Menu
 		private StringBuilder m_strBuilder = new StringBuilder(64); // 0x78
 		private DisplayType m_displayType; // 0x7C
 
-		//public UnityEvent OnRemoveEvent { get; } 0x17E7C24
-		//public SelectDivaEvent OnSelectDivaEvent { get; } 0x17E7C2C
-		//public SelectDivaEvent OnShowDivaStatusEvent { get; } 0x17E7C34
-		//public SelecteDivaSceneSelectEvent OnShowSelectedDivaSceneStatus { get; } 0x17E7C3C
+		public UnityEvent OnRemoveEvent { get { return m_onRemoveEvent; } } //0x17E7C24
+		public SelectDivaEvent OnSelectDivaEvent { get { return m_onSelectDivaEvent; } } //0x17E7C2C
+		public SelectDivaEvent OnShowDivaStatusEvent { get { return m_onShowDivaStatusEvent; } } //0x17E7C34
+		public SelecteDivaSceneSelectEvent OnShowSelectedDivaSceneStatus { get { return m_onShowSelectedDivaSceneStatus; } } //0x17E7C3C
 
 		// RVA: 0x17E7C44 Offset: 0x17E7C44 VA: 0x17E7C44 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -127,7 +127,19 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E8508 Offset: 0x17E8508 VA: 0x17E8508
-		//public void Initialize() { }
+		public void Initialize()
+		{
+			m_divaIconDecoration.Initialize(m_selectDivaIconImage.gameObject, DivaIconDecoration.Size.S, true, false, null, null);
+			for(int i = 0; i < m_divaListIcon.Count; i++)
+			{
+				m_divaListIcon[i].InitializeDecoration();
+			}
+			for(int i = 0; i < m_sceneIconDecraitons.Length; i++)
+			{
+				m_sceneIconDecraitons[i] = new SceneIconDecoration();
+				m_sceneIconDecraitons[i].Initialize(m_selectDivaSceneImages[i].gameObject, SceneIconDecoration.Size.M, null,null);
+			}
+		}
 
 		//// RVA: 0x17E8908 Offset: 0x17E8908 VA: 0x17E8908
 		public void Release()
@@ -154,7 +166,122 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E8DB4 Offset: 0x17E8DB4 VA: 0x17E8DB4
-		//public void UpdateContent(FFHPBEPOMAK selectedDiva, List<int> sortDivaIndexList, int slotNo, EEDKAACNBBG musicData) { }
+		public void UpdateContent(FFHPBEPOMAK selectedDiva, List<int> sortDivaIndexList, int slotNo, EEDKAACNBBG musicData)
+		{
+			m_sortDivaList = sortDivaIndexList;
+			m_musicData = musicData;
+			m_isSelectedCenterDiva = slotNo == 0;
+			if(selectedDiva == null)
+			{
+				MenuScene.Instance.DivaIconCache.Load(0, 0, 0, (IiconTexture texture) => {
+					//0x17EC528
+					texture.Set(m_selectDivaIconImage);
+				});
+				m_divaIconDecoration.SetActive(false);
+				m_selectDivaCenterIconImage.enabled = false;
+				for(int i = 0; i < m_selectDivaSceneImages.Length; i++)
+				{
+					int index = i;
+					GameManager.Instance.SceneIconCache.Load(0, 0, (IiconTexture texture) => {
+						//0x17EC864
+						texture.Set(m_selectDivaSceneImages[index]);
+						SceneIconTextureCache.ChangeKiraMaterial(m_selectDivaSceneImages[index], texture as IconTexture, false);
+					});
+					m_sceneIconDecraitons[i].SetActive(false);
+
+				}
+				for(int i = 0; i < m_compatibleAnimeLayout.Length; i++)
+				{
+					m_compatibleAnimeLayout[i].StartChildrenAnimGoStop("st_non");
+				}
+				m_compatibleFlags = 0;
+			}
+			else
+			{
+				MenuScene.Instance.DivaIconCache.Load(selectedDiva.AHHJLDLAPAN_DivaId, selectedDiva.FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId, selectedDiva.EKFONBFDAAP_ColorId, (IiconTexture texture) => {
+					//0x17EC448
+					texture.Set(m_selectDivaIconImage);
+				});
+				m_selectDivaCenterIconImage.enabled = m_isSelectedCenterDiva;
+				for(int i = 0; i < 3; i++)
+				{
+					int index = i;
+					m_skillIconLayout[i].StartChildrenAnimGoStop("01");
+					GCIJNCFDNON scene = null;
+					if(i == 0)
+					{
+						if(selectedDiva.FGFIBOBAPIA_SceneId > 0)
+						{
+							scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectedDiva.FGFIBOBAPIA_SceneId - 1];
+						}
+						else
+						{
+							if(selectedDiva.DJICAKGOGFO[i - 1] > 0)
+							{
+								scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectedDiva.DJICAKGOGFO[i - 1] - 1];
+							}
+						}
+					}
+					bool isKira = scene != null ? scene.MBMFJILMOBP() : false;
+					GameManager.Instance.SceneIconCache.Load(scene != null ? scene.BCCHOBPJJKE_SceneId : 0, scene != null ? scene.CGIELKDLHGE() : 0, (IiconTexture texture) => {
+						//0x17EC68C
+						texture.Set(m_selectDivaSceneImages[index]);
+						SceneIconTextureCache.ChangeKiraMaterial(m_selectDivaSceneImages[index], texture as IconTexture, isKira);
+					});
+					m_sceneIconDecraitons[i].SetActive(scene != null && scene.BCCHOBPJJKE_SceneId > 0);
+					if(i == 0 && m_isSelectedCenterDiva)
+					{
+						if(scene != null && scene.HGONFBDIBPM > 0)
+						{
+							if(!SetDeckSkillIconControl.CheckMatchActiveSkill(scene))
+							{
+								m_skillIconLayout[0].StartChildrenAnimGoStop("02");
+							}
+							m_compatibleFlags |= (sbyte)((0x1000000 << i) >> 0x18);
+							SetSkillTypeIcon(SceneIconScrollContent.SkillIconType.Active, i * 2);
+						}
+						else
+						{
+							m_compatibleFlags &= (sbyte)~((0x1000000 << i) >> 0x18);
+							m_compatibleAnimeLayout[i].StartChildrenAnimGoStop("st_non");
+						}
+					}
+					else
+					{
+						if(scene != null && scene.DCLLIDMKNGO(selectedDiva.AHHJLDLAPAN_DivaId) && scene.FILPDDHMKEJ(false, 0, 0) > 0)
+						{
+							if(!SetDeckSkillIconControl.CheckMatchLiveSkill(scene, selectedDiva.AHHJLDLAPAN_DivaId, musicData != null ? musicData.DLAEJOBELBH_MusicId : 0))
+							{
+								m_skillIconLayout[i].StartChildrenAnimGoStop("02");
+							}
+							m_compatibleFlags |= (sbyte)((0x1000000 << i) >> 0x18);
+							SetSkillTypeIcon(SceneIconScrollContent.SkillIconType.Live, i * 2);
+						}
+						else
+						{
+							m_compatibleFlags &= (sbyte)~((0x1000000 << i) >> 0x18);
+							m_compatibleAnimeLayout[i].StartChildrenAnimGoStop("st_non");
+						}
+					}
+				}
+			}
+			if(m_removeButton != null)
+			{
+				m_removeButton.ClearOnClickCallback();
+				m_removeButton.AddOnClickCallback(OnRemoveButton);
+				if(selectedDiva == null || GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB[0].AHHJLDLAPAN_DivaId == selectedDiva.AHHJLDLAPAN_DivaId)
+				{
+					m_removeButton.Dark = true;
+				}
+				else
+				{
+					m_removeButton.Dark = false;
+				}
+			}
+			m_scrollList.SetItemCount(sortDivaIndexList.Count);
+			m_scrollList.SetPosition(0, 0, 0, false);
+			m_scrollList.VisibleRegionUpdate();
+		}
 
 		//// RVA: 0x17E9E6C Offset: 0x17E9E6C VA: 0x17E9E6C
 		private void UpdateScrollContent(int index, SwapScrollListContent content)
@@ -249,7 +376,40 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EBA50 Offset: 0x17EBA50 VA: 0x17EBA50
-		//public void UpdateDecoration(FFHPBEPOMAK selectDiva, List<int> sortIndexList, DisplayType type) { }
+		public void UpdateDecoration(FFHPBEPOMAK selectDiva, List<int> sortIndexList, DisplayType type)
+		{
+			m_displayType = type;
+			m_scrollList.VisibleRegionUpdate();
+			if(selectDiva != null)
+			{
+				m_divaIconDecoration.Change(selectDiva, GameManager.Instance.ViewPlayerData, type);
+				for(int i = 0; i < m_sceneIconDecraitons.Length; i++)
+				{
+					if(i == 0)
+					{
+						if(selectDiva.FGFIBOBAPIA_SceneId > 0)
+						{
+							GCIJNCFDNON scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectDiva.FGFIBOBAPIA_SceneId - 1];
+							if(scene != null)
+							{
+								m_sceneIconDecraitons[i].Change(scene, type);
+							}
+						}
+					}
+					else
+					{
+						if(selectDiva.DJICAKGOGFO[i - 1] > 0)
+						{
+							GCIJNCFDNON scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectDiva.DJICAKGOGFO[i - 1] - 1];
+							if(scene != null)
+							{
+								m_sceneIconDecraitons[i].Change(scene, type);
+							}
+						}
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x17EAADC Offset: 0x17EAADC VA: 0x17EAADC
 		private bool IsUnitMember(JLKEOGLJNOD unitData, int divaId)
@@ -287,7 +447,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EBD34 Offset: 0x17EBD34 VA: 0x17EBD34
-		//private void OnRemoveButton() { }
+		private void OnRemoveButton()
+		{
+			TodoLogger.Log(0, "OnRemoveButton");
+		}
 
 		//// RVA: 0x17EBD60 Offset: 0x17EBD60 VA: 0x17EBD60
 		private void OnSelectDiva(int listIndex)
@@ -311,16 +474,28 @@ namespace XeApp.Game.Menu
 		//private void OnShowSelectedDivaSelectScene(int slot) { }
 
 		//// RVA: 0x17EBF5C Offset: 0x17EBF5C VA: 0x17EBF5C
-		//public void Wait() { }
+		public void Wait()
+		{
+			m_animationLayout.StartChildrenAnimGoStop("st_wait", "st_wait");
+		}
 
 		//// RVA: 0x17EBFDC Offset: 0x17EBFDC VA: 0x17EBFDC
-		//public void Show() { }
+		public void Show()
+		{
+			m_animationLayout.StartChildrenAnimGoStop("st_wait", "st_in");
+		}
 
 		//// RVA: 0x17EC068 Offset: 0x17EC068 VA: 0x17EC068
-		//public void Hide() { }
+		public void Hide()
+		{
+			m_animationLayout.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		//// RVA: 0x17EC0F4 Offset: 0x17EC0F4 VA: 0x17EC0F4
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_animationLayout.IsPlaying();
+		}
 
 		//// RVA: 0x17E8CEC Offset: 0x17E8CEC VA: 0x17E8CEC
 		protected void UpdateCompatibleAnime(float dt)
@@ -339,7 +514,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E9C50 Offset: 0x17E9C50 VA: 0x17E9C50
-		//private void SetSkillTypeIcon(SceneIconScrollContent.SkillIconType type, int index) { }
+		private void SetSkillTypeIcon(SceneIconScrollContent.SkillIconType type, int index)
+		{
+			m_skillIconImages[index].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(type == SceneIconScrollContent.SkillIconType.Active ? "sel_card_icon_skill_01" : "sel_card_icon_skill_02"));
+			m_skillIconImages[index + 1].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(type == SceneIconScrollContent.SkillIconType.Active ? "sel_card_icon_skill_01" : "sel_card_icon_skill_02"));
+		}
 
 		//// RVA: 0x17EC120 Offset: 0x17EC120 VA: 0x17EC120
 		public StayButton GetNavigationDivaListButton()
@@ -347,13 +526,5 @@ namespace XeApp.Game.Menu
 			TodoLogger.Log(0, "GetNavigationDivaListButton");
 			return null;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E7C4C Offset: 0x6E7C4C VA: 0x6E7C4C
-		//// RVA: 0x17EC448 Offset: 0x17EC448 VA: 0x17EC448
-		//private void <UpdateContent>b__40_0(IiconTexture texture) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E7C5C Offset: 0x6E7C5C VA: 0x6E7C5C
-		//// RVA: 0x17EC528 Offset: 0x17EC528 VA: 0x17EC528
-		//private void <UpdateContent>b__40_1(IiconTexture texture) { }
 	}
 }
