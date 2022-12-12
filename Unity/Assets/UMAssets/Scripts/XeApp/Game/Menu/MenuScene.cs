@@ -704,7 +704,10 @@ namespace XeApp.Game.Menu
 		// public void ShowOfferNotice(UnityAction pushAction) { }
 
 		// // RVA: 0xB327F0 Offset: 0xB327F0 VA: 0xB327F0
-		// public void ShowDivaStatusPopupWindow(FFHPBEPOMAK diva, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isChangeScene = True, bool isCloseOnly = False, int divaSlotNumber = -1, bool isGoDiva = False) { }
+		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK diva, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isChangeScene = true, bool isCloseOnly = false, int divaSlotNumber = -1, bool isGoDiva = false)
+		{
+			TodoLogger.Log(0, "ShowDivaStatusPopupWindow");
+		}
 
 		// // RVA: 0xB32898 Offset: 0xB32898 VA: 0xB32898
 		// public void ShowFriendDivaStatusPopupWindow(EAJCBFGKKFA friendData, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isChangeScene = False) { }

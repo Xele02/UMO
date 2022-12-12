@@ -141,7 +141,16 @@ namespace XeApp.Game.Common
 		// public static void Close(PopupWindowControl ignoreControl, Action endCallBack) { }
 
 		// // RVA: 0x1BC190C Offset: 0x1BC190C VA: 0x1BC190C
-		// public static TextPopupSetting CreateMessageBankTextContent(string bankName, string titleLabel, string messageLabel, SizeType size, ButtonInfo[] buttons) { }
+		public static TextPopupSetting CreateMessageBankTextContent(string bankName, string titleLabel, string messageLabel, SizeType size, ButtonInfo[] buttons)
+		{
+			TextPopupSetting res = new TextPopupSetting();
+			res.TitleText = string.IsNullOrEmpty(titleLabel) ? "" : MessageManager.Instance.GetBank(bankName).GetMessageByLabel(titleLabel);
+			res.IsCaption = !string.IsNullOrEmpty(titleLabel);
+			res.WindowSize = size;
+			res.Buttons = buttons;
+			res.Text = MessageManager.Instance.GetBank(bankName).GetMessageByLabel(messageLabel);
+			return res;
+		}
 
 		// // RVA: 0x1BC1AB0 Offset: 0x1BC1AB0 VA: 0x1BC1AB0
 		public static TextPopupSetting CrateTextContent(string title, SizeType size, string Message, ButtonInfo[] buttons, bool scrollable = false, bool isCaption = true)

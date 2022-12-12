@@ -76,16 +76,16 @@ namespace XeApp.Game.Menu
 				}
 			}
 			m_mainScene = null;
-			FFHPBEPOMAK f = viewUnitData.BCJEAJPLGMB[0];
+			FFHPBEPOMAK f = viewUnitData.BCJEAJPLGMB_MainDivas[0];
 			if(f != null && f.FGFIBOBAPIA_SceneId > 0)
 			{
 				m_mainScene = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1];
 			}
 			m_baseLuck = 0;
 			m_addLuck = 0;
-			for(int i = 0; i < viewUnitData.BCJEAJPLGMB.Count; i++)
+			for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
-				m_baseLuck += DivaIconDecoration.GetEquipmentLuck(viewUnitData.BCJEAJPLGMB[i], viewPlayerData);
+				m_baseLuck += DivaIconDecoration.GetEquipmentLuck(viewUnitData.BCJEAJPLGMB_MainDivas[i], viewPlayerData);
 			}
 			CalcStatusForUnitCheck(ref m_baseStatus, ref m_addStatus, out m_addLuck, m_baseLuck, musicInfo, viewPlayerData, viewMusicData, viewFriendData, viewEnemyData, out m_unitSkillCalcResult, out m_subPlate, viewUnitData, ref m_logParams);
 			m_addStatus.Add(m_baseStatus);
@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA706B8 Offset: 0xA706B8 VA: 0xA706B8
 		private static void CalcStatusForUnitCheck(ref StatusData baseStatus, ref StatusData addStatus, out int luck, int baseLuck, GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB viewPlayerData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendPlayerData, EJKBKMBJMGL_EnemyData viewEnemyData, out AEGLGBOGDHH result, out CFHDKAFLNEP subPlate, JLKEOGLJNOD viewUnitData, ref JGEOBNENMAH.NEDILFPPCJF logParams)
 		{
-			FFHPBEPOMAK f = viewUnitData.BCJEAJPLGMB[0];
+			FFHPBEPOMAK f = viewUnitData.BCJEAJPLGMB_MainDivas[0];
 			baseStatus.Clear();
 			addStatus.Clear();
 			luck = 0;
@@ -189,9 +189,9 @@ namespace XeApp.Game.Menu
 				logParams.HHNPILDOHKP[i] = result.GJLJJDIDODK[i].IMLGBMGIACC.charm;
 				logParams.MHPLFJHDIEP[i] = result.GJLJJDIDODK[i].IMLGBMGIACC.vocal;
 			}
-			for(int i = 0; i < viewUnitData.BCJEAJPLGMB.Count; i++)
+			for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
-				f = viewUnitData.BCJEAJPLGMB[i];
+				f = viewUnitData.BCJEAJPLGMB_MainDivas[i];
 				if (f == null)
 				{
 					logParams.EEKANKOEJIL[i] = 0;
@@ -220,23 +220,23 @@ namespace XeApp.Game.Menu
 		private static void CalcLimitBrakeForUnitCheck(ref LimitOverStatusData limitOverStatus, JLKEOGLJNOD viewUnitData, DFKGGBMFFGB viewPlayerData, EEDKAACNBBG musicData, EAJCBFGKKFA friendData)
 		{
 			limitOverStatus.Clear();
-			for(int i = 0; i < viewUnitData.BCJEAJPLGMB.Count; i++)
+			for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
 				m_tmpLimitOverStatus.Clear();
-				if(viewUnitData.BCJEAJPLGMB[i] != null)
+				if(viewUnitData.BCJEAJPLGMB_MainDivas[i] != null)
 				{
-					if(viewUnitData.BCJEAJPLGMB[i].FGFIBOBAPIA_SceneId != 0)
+					if(viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId != 0)
 					{
-						GCIJNCFDNON g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB[i].FGFIBOBAPIA_SceneId - 1];
+						GCIJNCFDNON g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId - 1];
 						IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA, g.MJBODMOLOBC_Luck, g.MKHFCGPJPFI_LimitOverCount);
 						AdjustOverLimit(m_tmpLimitOverStatus, g, musicData);
 						limitOverStatus.Add(m_tmpLimitOverStatus);
 					}
-					for(int j = 0; j < viewUnitData.BCJEAJPLGMB[i].DJICAKGOGFO.Count; j++)
+					for(int j = 0; j < viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds.Count; j++)
 					{
-						if (viewUnitData.BCJEAJPLGMB[i].DJICAKGOGFO[j] > 0)
+						if (viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] > 0)
 						{
-							GCIJNCFDNON g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB[i].DJICAKGOGFO[j] - 1];
+							GCIJNCFDNON g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] - 1];
 							IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA, g.MJBODMOLOBC_Luck, g.MKHFCGPJPFI_LimitOverCount);
 							AdjustOverLimit(m_tmpLimitOverStatus, g, musicData);
 							limitOverStatus.Add(m_tmpLimitOverStatus);

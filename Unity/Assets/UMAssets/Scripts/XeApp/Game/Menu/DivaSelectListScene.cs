@@ -80,7 +80,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EE254 Offset: 0x17EE254 VA: 0x17EE254
-		//private void ReturnScene() { }
+		private void ReturnScene()
+		{
+			MenuScene.SaveRequest();
+			MenuScene.Instance.Return(true);
+		}
 
 		//// RVA: 0x17EE2FC Offset: 0x17EE2FC VA: 0x17EE2FC
 		private void Listup(int selectedDivaId)
@@ -102,10 +106,52 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EE550 Offset: 0x17EE550 VA: 0x17EE550
-		//private DivaSelectListScene.RemoveDivaState ValidateRemoveDiva() { }
+		private RemoveDivaState ValidateRemoveDiva()
+		{
+			FFHPBEPOMAK f = GetDivaDataBySlotNumber(m_args.slot);
+			if(f != null)
+			{
+				return m_args.slot < 1 ? RemoveDivaState.CenterDiva : RemoveDivaState.Ok;
+			}
+			return RemoveDivaState.EmptySlot;
+		}
 
 		//// RVA: 0x17EE5E8 Offset: 0x17EE5E8 VA: 0x17EE5E8
-		//private bool TeamSettingDivaButton(int index) { }
+		private bool TeamSettingDivaButton(int index)
+		{
+			FFHPBEPOMAK d = GetDivaDataBySlotNumber(PlayerData.NPFCMHCCDDH, m_args.slot);
+			FFHPBEPOMAK afterDiva = null;
+			if (index < 0)
+			{
+				RemoveDivaState removeState = ValidateRemoveDiva();
+				if(removeState != RemoveDivaState.Ok)
+				{
+					if (removeState != RemoveDivaState.CenterDiva)
+						return false;
+					PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "popup_title_03", "popup_text_02", SizeType.Middle, new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } }), null, null, null, null);
+					return true;
+				}
+				ShowComparisonPopupWindow(d, null, PlayerData.NPFCMHCCDDH, m_args.slot, m_musicData);
+			}
+			else
+			{
+				afterDiva = PlayerData.NBIGLBMHEDC[index];
+				if (d == null)
+				{
+					FFHPBEPOMAK f = PlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
+					if(f != null)
+					{
+						if(afterDiva.AHHJLDLAPAN_DivaId == f.AHHJLDLAPAN_DivaId)
+						{
+							PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "popup_title_02", "popup_text_03", SizeType.Middle, new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } }), null, null, null, null);
+							return true;
+						}
+					}
+				}
+			}
+			ShowComparisonPopupWindow(d, afterDiva, PlayerData.NPFCMHCCDDH, m_args.slot, m_musicData);
+			return true;
+		}
 
 		//// RVA: 0x17EF090 Offset: 0x17EF090 VA: 0x17EF090 Slot: 16
 		protected override void OnPreSetCanvas()
@@ -174,10 +220,72 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EEBEC Offset: 0x17EEBEC VA: 0x17EEBEC
-		//private void ShowComparisonPopupWindow(FFHPBEPOMAK beforeDiva, FFHPBEPOMAK afterDiva, JLKEOGLJNOD unit, int slot, EEDKAACNBBG musicData) { }
+		private void ShowComparisonPopupWindow(FFHPBEPOMAK beforeDiva, FFHPBEPOMAK afterDiva, JLKEOGLJNOD unit, int slot, EEDKAACNBBG musicData)
+		{
+			if(IsAddDiva(slot))
+			{
+				m_divaChangePopupSetting.AfterDiva = afterDiva;
+				m_divaChangePopupSetting.BeforeDiva = beforeDiva;
+			}
+			else
+			{
+				m_divaComparisonPopupSetting.AfterDiva = afterDiva;
+				m_divaComparisonPopupSetting.BeforeDiva = beforeDiva;
+				m_divaComparisonPopupSetting.IsCenterDiva = slot == 0;
+				m_divaComparisonPopupSetting.PlayerData = PlayerData;
+				m_divaComparisonPopupSetting.MusicData = m_musicData;
+			}
+			m_divaComparisonPopupSetting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative},
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive}
+			};
+			m_isOpenEndConfirmPopup = false;
+			PopupWindowManager.Show(m_divaComparisonPopupSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1264CAC
+				ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD("StringLiteral_15651", 0, false, false, 1);
+				SwapDiva(unit, beforeDiva, afterDiva, slot);
+				if(afterDiva != null)
+				{
+					ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.GNLPMEDLIJJ/*44*/, 2, false);
+				}
+				unit.HCDGELDHFHB();
+				ReturnScene();
+			}, null, null, () =>
+			{
+				//0x1264E5C
+				m_isOpenEndConfirmPopup = true;
+			});
+		}
 
 		//// RVA: 0x17EFC68 Offset: 0x17EFC68 VA: 0x17EFC68
-		//private void SwapDiva(JLKEOGLJNOD unitData, FFHPBEPOMAK beforeDiva, FFHPBEPOMAK afterDiva, int slotNumber) { }
+		private void SwapDiva(JLKEOGLJNOD unitData, FFHPBEPOMAK beforeDiva, FFHPBEPOMAK afterDiva, int slotNumber)
+		{
+			for(int i = 0; i < unitData.BCJEAJPLGMB_MainDivas.Count; i++)
+			{
+				if(afterDiva != null && unitData.BCJEAJPLGMB_MainDivas[i] != null && unitData.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId == afterDiva.AHHJLDLAPAN_DivaId)
+				{
+					SetDivaDataBySlotNumber(unitData, beforeDiva, i);
+					SetDivaDataBySlotNumber(unitData, afterDiva, slotNumber);
+					return;
+				}
+			}
+			int found = -1;
+			for(int i = 0; i < unitData.CMOPCCAJAAO_AddDivas.Count; i++)
+			{
+				if (afterDiva != null && unitData.CMOPCCAJAAO_AddDivas[i] != null && unitData.CMOPCCAJAAO_AddDivas[i].AHHJLDLAPAN_DivaId == afterDiva.AHHJLDLAPAN_DivaId)
+				{
+					found = unitData.BCJEAJPLGMB_MainDivas.Count + i;
+					break;
+				}
+			}
+			if(found > -1)
+			{
+				SetDivaDataBySlotNumber(unitData, beforeDiva, found);
+			}
+			SetDivaDataBySlotNumber(unitData, afterDiva, slotNumber);
+		}
 
 		//// RVA: 0x17F0060 Offset: 0x17F0060 VA: 0x17F0060 Slot: 17
 		protected override bool IsEndPreSetCanvas()
@@ -249,7 +357,18 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17F077C Offset: 0x17F077C VA: 0x17F077C
 		private void OnSelectDiva(int sortListIndex)
 		{
-			TodoLogger.Log(0, "OnSelectDiva");
+			if(!MenuScene.Instance.DirtyChangeScene)
+			{
+				SoundManager.Instance.sePlayerBoot.Play(3);
+				if(m_transitionName == TransitionList.Type.DIVA_SELECT_LIST)
+				{
+					TeamSettingDivaButton(m_divaSortIdList[sortListIndex]);
+				}
+				else
+				{
+					MenuScene.Instance.ShowDivaStatusPopupWindow(PlayerData.NBIGLBMHEDC[sortListIndex], PlayerData, m_musicData, false, TransitionList.Type.UNDEFINED, UpdateContent, true, false, -1, false);
+				}
+			}
 		}
 
 		//// RVA: 0x17F0A14 Offset: 0x17F0A14 VA: 0x17F0A14
@@ -271,18 +390,21 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EFBA8 Offset: 0x17EFBA8 VA: 0x17EFBA8
-		//private bool IsAddDiva(int slotNumber) { }
+		private bool IsAddDiva(int slotNumber)
+		{
+			return PlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas.Count <= slotNumber;
+		}
 
 		//// RVA: 0x17EEA80 Offset: 0x17EEA80 VA: 0x17EEA80
 		private FFHPBEPOMAK GetDivaDataBySlotNumber(JLKEOGLJNOD unitData, int slotNumber)
 		{
-			if (slotNumber < unitData.BCJEAJPLGMB.Count)
+			if (slotNumber < unitData.BCJEAJPLGMB_MainDivas.Count)
 			{
-				return unitData.BCJEAJPLGMB[slotNumber];
+				return unitData.BCJEAJPLGMB_MainDivas[slotNumber];
 			}
 			else
 			{
-				return unitData.CMOPCCAJAAO[slotNumber - unitData.BCJEAJPLGMB.Count];
+				return unitData.CMOPCCAJAAO_AddDivas[slotNumber - unitData.BCJEAJPLGMB_MainDivas.Count];
 			}
 		}
 
@@ -293,7 +415,21 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EFEE0 Offset: 0x17EFEE0 VA: 0x17EFEE0
-		//private void SetDivaDataBySlotNumber(JLKEOGLJNOD unitData, FFHPBEPOMAK divaData, int slotNumber) { }
+		private void SetDivaDataBySlotNumber(JLKEOGLJNOD unitData, FFHPBEPOMAK divaData, int slotNumber)
+		{
+			if(unitData != null)
+			{
+				if (slotNumber < unitData.BCJEAJPLGMB_MainDivas.Count)
+				{
+					unitData.BCJEAJPLGMB_MainDivas[slotNumber] = divaData;
+				}
+				else
+				{
+					slotNumber -= unitData.BCJEAJPLGMB_MainDivas.Count;
+					unitData.CMOPCCAJAAO_AddDivas[slotNumber] = divaData;
+				}
+			}
+		}
 
 		//// RVA: 0x17F0F90 Offset: 0x17F0F90 VA: 0x17F0F90
 		//private bool CheckTutorialCondition(TutorialConditionId conditionId) { }

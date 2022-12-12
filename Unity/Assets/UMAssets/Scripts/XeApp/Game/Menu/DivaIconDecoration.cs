@@ -122,11 +122,11 @@ namespace XeApp.Game.Menu
 				}
 				if(m_divaIconDecorationBehaviour != null)
 				{
-					for(int i = 0; i < divaData.DJICAKGOGFO.Count; i++)
+					for(int i = 0; i < divaData.DJICAKGOGFO_SubSceneIds.Count; i++)
 					{
-						if (IconDecoreation.IsValidSceneId(divaData.DJICAKGOGFO[i]))
+						if (IconDecoreation.IsValidSceneId(divaData.DJICAKGOGFO_SubSceneIds[i]))
 						{
-							luck += playerData.OPIBAPEGCLA_Scenes[IconDecoreation.GetSceneId(divaData.DJICAKGOGFO[i])].MJBODMOLOBC_Luck;
+							luck += playerData.OPIBAPEGCLA_Scenes[IconDecoreation.GetSceneId(divaData.DJICAKGOGFO_SubSceneIds[i])].MJBODMOLOBC_Luck;
 						}
 					}
 				}
@@ -273,11 +273,11 @@ namespace XeApp.Game.Menu
 			{
 				res += playerData.OPIBAPEGCLA_Scenes[IconDecoreation.GetSceneId(divaData.FGFIBOBAPIA_SceneId)].MJBODMOLOBC_Luck;
 			}
-			for(int i = 0; i < divaData.DJICAKGOGFO.Count; i++)
+			for(int i = 0; i < divaData.DJICAKGOGFO_SubSceneIds.Count; i++)
 			{
-				if (IconDecoreation.IsValidSceneId(divaData.DJICAKGOGFO[i]))
+				if (IconDecoreation.IsValidSceneId(divaData.DJICAKGOGFO_SubSceneIds[i]))
 				{
-					res += playerData.OPIBAPEGCLA_Scenes[IconDecoreation.GetSceneId(divaData.DJICAKGOGFO[i])].MJBODMOLOBC_Luck;
+					res += playerData.OPIBAPEGCLA_Scenes[IconDecoreation.GetSceneId(divaData.DJICAKGOGFO_SubSceneIds[i])].MJBODMOLOBC_Luck;
 				}
 			}
 			return res;

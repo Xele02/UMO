@@ -194,9 +194,9 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					if(divaData.DJICAKGOGFO[i - 1] > 0)
+					if(divaData.DJICAKGOGFO_SubSceneIds[i - 1] > 0)
 					{
-						scene = playerData.OPIBAPEGCLA_Scenes[divaData.DJICAKGOGFO[i - 1] - 1];
+						scene = playerData.OPIBAPEGCLA_Scenes[divaData.DJICAKGOGFO_SubSceneIds[i - 1] - 1];
 					}
 				}
 				if (scene == null)

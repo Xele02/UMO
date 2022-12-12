@@ -214,12 +214,12 @@ namespace XeApp.Game.Menu
 						{
 							scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectedDiva.FGFIBOBAPIA_SceneId - 1];
 						}
-						else
+					}
+					else
+					{
+						if (selectedDiva.DJICAKGOGFO_SubSceneIds[i - 1] > 0)
 						{
-							if(selectedDiva.DJICAKGOGFO[i - 1] > 0)
-							{
-								scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectedDiva.DJICAKGOGFO[i - 1] - 1];
-							}
+							scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectedDiva.DJICAKGOGFO_SubSceneIds[i - 1] - 1];
 						}
 					}
 					bool isKira = scene != null ? scene.MBMFJILMOBP() : false;
@@ -269,7 +269,7 @@ namespace XeApp.Game.Menu
 			{
 				m_removeButton.ClearOnClickCallback();
 				m_removeButton.AddOnClickCallback(OnRemoveButton);
-				if(selectedDiva == null || GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB[0].AHHJLDLAPAN_DivaId == selectedDiva.AHHJLDLAPAN_DivaId)
+				if(selectedDiva == null || GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId == selectedDiva.AHHJLDLAPAN_DivaId)
 				{
 					m_removeButton.Dark = true;
 				}
@@ -327,7 +327,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					int sceneId = f.DJICAKGOGFO[i - 1];
+					int sceneId = f.DJICAKGOGFO_SubSceneIds[i - 1];
 					bool isActivate = true;
 					bool isKira = false;
 					bool isCompatible = false;
@@ -398,9 +398,9 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						if(selectDiva.DJICAKGOGFO[i - 1] > 0)
+						if(selectDiva.DJICAKGOGFO_SubSceneIds[i - 1] > 0)
 						{
-							GCIJNCFDNON scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectDiva.DJICAKGOGFO[i - 1] - 1];
+							GCIJNCFDNON scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectDiva.DJICAKGOGFO_SubSceneIds[i - 1] - 1];
 							if(scene != null)
 							{
 								m_sceneIconDecraitons[i].Change(scene, type);
@@ -414,19 +414,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17EAADC Offset: 0x17EAADC VA: 0x17EAADC
 		private bool IsUnitMember(JLKEOGLJNOD unitData, int divaId)
 		{
-			for (int i = 0; i < unitData.BCJEAJPLGMB.Count; i++)
+			for (int i = 0; i < unitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
-				if (unitData.BCJEAJPLGMB[i] != null)
+				if (unitData.BCJEAJPLGMB_MainDivas[i] != null)
 				{
-					if (unitData.BCJEAJPLGMB[i].AHHJLDLAPAN_DivaId == divaId)
+					if (unitData.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId == divaId)
 						return true;
 				}
 			}
-			for(int i = 0; i < unitData.CMOPCCAJAAO.Count; i++)
+			for(int i = 0; i < unitData.CMOPCCAJAAO_AddDivas.Count; i++)
 			{
-				if (unitData.CMOPCCAJAAO[i] != null)
+				if (unitData.CMOPCCAJAAO_AddDivas[i] != null)
 				{
-					if (unitData.CMOPCCAJAAO[i].AHHJLDLAPAN_DivaId == divaId)
+					if (unitData.CMOPCCAJAAO_AddDivas[i].AHHJLDLAPAN_DivaId == divaId)
 						return true;
 				}
 			}
@@ -436,11 +436,11 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17EA958 Offset: 0x17EA958 VA: 0x17EA958
 		private bool IsCenter(JLKEOGLJNOD unitData, int divaId)
 		{
-			for(int i = 0; i < unitData.BCJEAJPLGMB.Count; i++)
+			for(int i = 0; i < unitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
-				if(unitData.BCJEAJPLGMB[i] != null)
+				if(unitData.BCJEAJPLGMB_MainDivas[i] != null)
 				{
-					return i == 0 && unitData.BCJEAJPLGMB[i].AHHJLDLAPAN_DivaId == divaId;
+					return i == 0 && unitData.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId == divaId;
 				}
 			}
 			return false;

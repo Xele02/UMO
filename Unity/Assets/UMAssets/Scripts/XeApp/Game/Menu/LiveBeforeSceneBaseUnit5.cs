@@ -87,26 +87,26 @@ namespace XeApp.Game.Menu
 			{
 				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId == 0)
 				{
-					if(unitData.BCJEAJPLGMB[0] != null)
+					if(unitData.BCJEAJPLGMB_MainDivas[0] != null)
 					{
-						if (unitData.BCJEAJPLGMB[0].AHHJLDLAPAN_DivaId != MenuScene.Instance.divaManager.DivaId)
+						if (unitData.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId != MenuScene.Instance.divaManager.DivaId)
 							return true;
-						if (unitData.BCJEAJPLGMB[0].FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId != MenuScene.Instance.divaManager.ModelId)
+						if (unitData.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId != MenuScene.Instance.divaManager.ModelId)
 							return true;
-						return unitData.BCJEAJPLGMB[0].EKFONBFDAAP_ColorId != MenuScene.Instance.divaManager.ColorId;
+						return unitData.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId != MenuScene.Instance.divaManager.ColorId;
 					}
 				}
 				else
 				{
-					for(int i = 0; i < unitData.BCJEAJPLGMB.Count; i++)
+					for(int i = 0; i < unitData.BCJEAJPLGMB_MainDivas.Count; i++)
 					{
-						if (unitData.BCJEAJPLGMB[i] != null)
+						if (unitData.BCJEAJPLGMB_MainDivas[i] != null)
 						{
-							if (unitData.BCJEAJPLGMB[i].AHHJLDLAPAN_DivaId == MenuScene.Instance.divaManager.DivaId)
+							if (unitData.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId == MenuScene.Instance.divaManager.DivaId)
 							{
-								if (unitData.BCJEAJPLGMB[i].FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId != MenuScene.Instance.divaManager.ModelId)
+								if (unitData.BCJEAJPLGMB_MainDivas[i].FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId != MenuScene.Instance.divaManager.ModelId)
 									return true;
-								if (unitData.BCJEAJPLGMB[0].EKFONBFDAAP_ColorId != MenuScene.Instance.divaManager.ColorId)
+								if (unitData.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId != MenuScene.Instance.divaManager.ColorId)
 									return true;
 							}
 						}

@@ -138,9 +138,9 @@ namespace XeApp.Game.Menu
 				isStoryMode = musicInfo.isStoryMode;
 			if(m_divaInfos != null)
 			{
-				for(int i = 0; i < viewUnitData.BCJEAJPLGMB.Count && i < m_divaInfos.Count; i++)
+				for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count && i < m_divaInfos.Count; i++)
 				{
-					FFHPBEPOMAK unitDiva = viewUnitData.BCJEAJPLGMB[i];
+					FFHPBEPOMAK unitDiva = viewUnitData.BCJEAJPLGMB_MainDivas[i];
 					DivaInfo diva = m_divaInfos[i];
 					if(diva.m_divaControl != null)
 					{
@@ -180,13 +180,13 @@ namespace XeApp.Game.Menu
 								}
 								else
 								{
-									if(unitDiva.DJICAKGOGFO[j - 1] < 1)
+									if(unitDiva.DJICAKGOGFO_SubSceneIds[j - 1] < 1)
 									{
 										diva.m_sceneSetControl.Scenes[j].SetEmpty();
 									}
 									else
 									{
-										diva.m_sceneSetControl.Scenes[j].Set(unitDiva.AHHJLDLAPAN_DivaId, SetDeckSceneControl.SkillType.Live, viewPlayerData.OPIBAPEGCLA_Scenes[unitDiva.DJICAKGOGFO[j - 1] - 1]);
+										diva.m_sceneSetControl.Scenes[j].Set(unitDiva.AHHJLDLAPAN_DivaId, SetDeckSceneControl.SkillType.Live, viewPlayerData.OPIBAPEGCLA_Scenes[unitDiva.DJICAKGOGFO_SubSceneIds[j - 1] - 1]);
 									}
 									diva.m_sceneSetControl.Scenes[j].SceneButton.Disable = false;
 								}
@@ -201,9 +201,9 @@ namespace XeApp.Game.Menu
 				{
 					if(m_additionDivas[i] != null)
 					{
-						if(viewUnitData.CMOPCCAJAAO.Count > i)
+						if(viewUnitData.CMOPCCAJAAO_AddDivas.Count > i)
 						{
-							m_additionDivas[i].Set(viewUnitData.CMOPCCAJAAO[i], viewPlayerData, false, isGoDiva, musicId, isStoryMode);
+							m_additionDivas[i].Set(viewUnitData.CMOPCCAJAAO_AddDivas[i], viewPlayerData, false, isGoDiva, musicId, isStoryMode);
 						}
 						else
 						{

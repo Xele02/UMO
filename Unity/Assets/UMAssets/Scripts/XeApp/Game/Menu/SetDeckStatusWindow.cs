@@ -256,18 +256,18 @@ namespace XeApp.Game.Menu
 			ResetScrollText();
 			m_operationMode = opMode;
 			bool isInvalid = true;
-			for(int i = 0; i < viewUnitData.BCJEAJPLGMB.Count; i++)
+			for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
-				if (viewUnitData.BCJEAJPLGMB[i] != null)
+				if (viewUnitData.BCJEAJPLGMB_MainDivas[i] != null)
 				{
 					isInvalid = false;
 					break;
 				}
 			}
 			int luck = 0;
-			for (int i = 0; i < viewUnitData.BCJEAJPLGMB.Count; i++)
+			for (int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
-				luck += DivaIconDecoration.GetEquipmentLuck(viewUnitData.BCJEAJPLGMB[i], viewPlayerData);
+				luck += DivaIconDecoration.GetEquipmentLuck(viewUnitData.BCJEAJPLGMB_MainDivas[i], viewPlayerData);
 			}
 			int luck2 = 0;
 			AEGLGBOGDHH res;
@@ -343,7 +343,7 @@ namespace XeApp.Game.Menu
 				m_centerSkillRegulation[i].SetActive(false);
 			}
 			m_mainScene = null;
-			FFHPBEPOMAK f = viewUnitData.BCJEAJPLGMB[0];
+			FFHPBEPOMAK f = viewUnitData.BCJEAJPLGMB_MainDivas[0];
 			if (f != null)
 			{
 				if(f.FGFIBOBAPIA_SceneId > 0)

@@ -106,7 +106,7 @@ namespace XeApp.Game.Common
 					item.Pivot = new Vector2(0.0f, 1.0f);
 					item.Size = m_contentRect;
 					item.Index = idx;
-					item.AnchoredPosition = new Vector2(m_contentRect.x * j + m_leftTopPosition.x, m_contentRect.y * i + m_leftTopPosition.y);
+					item.AnchoredPosition = new Vector2(m_contentRect.x * j + m_leftTopPosition.x, -(m_contentRect.y * i + m_leftTopPosition.y));
 					item.transform.SetParent(m_scrollRect.content, false);
 				}
 				for(int j = 0; j < m_columnCount; j++)
@@ -260,7 +260,7 @@ namespace XeApp.Game.Common
 				for(int j = otherCnt, k = 0; j > 0; j--, k++)
 				{
 					m_scrollObjects[i * otherCnt + k].Index = i * otherCnt + k;
-					m_scrollObjects[i * otherCnt + k].AnchoredPosition = new Vector2(m_contentRect.x * (m_isVertical ? k : i) + m_leftTopPosition.x, m_contentRect.y * (m_isVertical ? i : k) - m_leftTopPosition.y);
+					m_scrollObjects[i * otherCnt + k].AnchoredPosition = new Vector2(m_contentRect.x * (m_isVertical ? k : i) + m_leftTopPosition.x, -(m_contentRect.y * (m_isVertical ? i : k) + m_leftTopPosition.y));
 					m_scrollObjects[i * otherCnt + k].RectTransform.SetSiblingIndex(i * otherCnt + j);
 				}
 			}

@@ -52,15 +52,15 @@ namespace XeApp.Game.Menu
 			{
 				m_skillIcons[0].Set(divaData.AHHJLDLAPAN_DivaId, isCenter ? SetDeckSkillIconControl.SkillType.Active : SetDeckSkillIconControl.SkillType.Live, playerData.OPIBAPEGCLA_Scenes[divaData.FGFIBOBAPIA_SceneId - 1], musicId);
 			}
-			for(int i = 0; i < divaData.DJICAKGOGFO.Count; i++)
+			for(int i = 0; i < divaData.DJICAKGOGFO_SubSceneIds.Count; i++)
 			{
-				if(divaData.DJICAKGOGFO[i] < 1)
+				if(divaData.DJICAKGOGFO_SubSceneIds[i] < 1)
 				{
 					m_skillIcons[i + 1].Set(divaData.AHHJLDLAPAN_DivaId, SetDeckSkillIconControl.SkillType.Live, null, musicId);
 				}
 				else
 				{
-					m_skillIcons[i + 1].Set(divaData.AHHJLDLAPAN_DivaId, SetDeckSkillIconControl.SkillType.Live, playerData.OPIBAPEGCLA_Scenes[divaData.DJICAKGOGFO[i] - 1], musicId);
+					m_skillIcons[i + 1].Set(divaData.AHHJLDLAPAN_DivaId, SetDeckSkillIconControl.SkillType.Live, playerData.OPIBAPEGCLA_Scenes[divaData.DJICAKGOGFO_SubSceneIds[i] - 1], musicId);
 				}
 			}
 		}
