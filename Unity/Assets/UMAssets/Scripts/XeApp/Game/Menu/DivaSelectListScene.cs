@@ -244,6 +244,8 @@ namespace XeApp.Game.Menu
 			PopupWindowManager.Show(m_divaComparisonPopupSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x1264CAC
+				if (type == PopupButton.ButtonType.Negative)
+					return;
 				ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD("StringLiteral_15651", 0, false, false, 1);
 				SwapDiva(unit, beforeDiva, afterDiva, slot);
 				if(afterDiva != null)
