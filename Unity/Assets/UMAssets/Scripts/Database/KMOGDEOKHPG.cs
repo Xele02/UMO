@@ -12,7 +12,34 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	// public HMGPODKEFBA KIJAHKCDLAF(int PPFNGGCBJKC) { }
 
 	// // RVA: 0x111E6C8 Offset: 0x111E6C8 VA: 0x111E6C8
-	// public int NNFJBBFBIEN(int JPIDIENBGKH) { }
+	public int NNFJBBFBIEN(int JPIDIENBGKH)
+	{
+		int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, JPIDIENBGKH);
+		for(int i = 0; i < LFAAEPAAEMB_Rewards.Count; i++)
+		{
+			if(LFAAEPAAEMB_Rewards[i].KIJAPOFAGPN_Item == itemId)
+			{
+				int IAPEBMMOLMM_RewardId = LFAAEPAAEMB_Rewards[i].EIHOBHDKCDB_RewardId;
+				for(int j = 0; j < BBAJKJPKOHD_EpisodeList.Count; j++)
+				{
+					if(BBAJKJPKOHD_EpisodeList[j].PPEGAKEIEGM == 2)
+					{
+						int idx = BBAJKJPKOHD_EpisodeList[j].HHJGBJCIFON_Rewards.FindIndex((short GHPLINIACBB) =>
+						{
+							//0x11203DC
+							return IAPEBMMOLMM_RewardId == GHPLINIACBB;
+						});
+						if(idx > -1)
+						{
+							return BBAJKJPKOHD_EpisodeList[j].KELFCMEOPPM;
+						}
+					}
+				}
+				return 0;
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0x111E9EC Offset: 0x111E9EC VA: 0x111E9EC
 	public int HFAMPKLFFEJ_FindEpisodeForReward(int GPPEFLKGGGJ)

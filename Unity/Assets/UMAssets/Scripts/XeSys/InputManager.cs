@@ -153,7 +153,16 @@ namespace XeSys
 		}
 
 		// // RVA: 0x1EF6D64 Offset: 0x1EF6D64 VA: 0x1EF6D64
-		// public int GetInScreenTouchCount() { }
+		public int GetInScreenTouchCount()
+		{
+			int res = 0;
+			for (int i = 0; i < touchCount; i++)
+			{
+				if (IsTouchPositionInScreen(GetBeganTouchInfo(i).GetSceneInnerPosition()))
+					res++;
+			}
+			return res;
+		}
 
 		// // RVA: 0x1EF7318 Offset: 0x1EF7318 VA: 0x1EF7318
 		public TouchInfoRecord GetFirstInScreenTouchRecord()
@@ -219,7 +228,13 @@ namespace XeSys
 		}
 
 		// // RVA: 0x1EF729C Offset: 0x1EF729C VA: 0x1EF729C
-		// public TouchInfo GetBeganTouchInfo(int fingerId) { }
+		public TouchInfo GetBeganTouchInfo(int fingerId)
+		{
+			TouchInfoRecord r = GetTouchInfoRecord(fingerId);
+			if (r == null)
+				return null;
+			return touchInfoRecords[fingerId].beganInfo;
+		}
 
 		// // RVA: 0x1EF7814 Offset: 0x1EF7814 VA: 0x1EF7814
 		// public TouchInfo GetEndedTouchInfo(int fingerId) { }

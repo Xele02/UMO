@@ -320,7 +320,7 @@ public class AOJGDNFAIJL_PrismData
 					if (OMNDNNFANCK_PrismDivaIds[IOPHIHFOOEP_SlotIndex] == cosInfo.AHHJLDLAPAN_PrismDivaId) //???
 					{
 						int val3 = 0;
-						if(RuntimeSettings.CurrentSettings.ForceCostumeUnlock || LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB[i].CGKAEMGLHNK())
+						if(RuntimeSettings.CurrentSettings.ForceCostumeUnlock || LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB[i].CGKAEMGLHNK_Possessed())
 						{
 							val3 = LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB[i].BEEAIAAJOHD_CostumeId;
 						}

@@ -255,7 +255,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				m_divaTextureLoadingCount++;
-				GameManager.Instance.EpisodeIconCache.LoadDivaBustupTexture(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId, divaData.EKFONBFDAAP_ColorId, (IiconTexture texture, Rect rect) => {
+				GameManager.Instance.EpisodeIconCache.LoadDivaBustupTexture(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, divaData.EKFONBFDAAP_ColorId, (IiconTexture texture, Rect rect) => {
 					//0xA6BCE4
 					texture.Set(m_divaImage);
 					m_divaImage.uvRect = rect;
@@ -272,7 +272,7 @@ namespace XeApp.Game.Menu
 		private void SetCostumeImage(FFHPBEPOMAK divaData)
 		{
 			m_costumeTextureLoadingCount++;
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId);
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId);
 			if(cosInfo != null)
 			{
 				GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, cosInfo.JPIDIENBGKH_CostumeId), divaData.EKFONBFDAAP_ColorId, (IiconTexture icon) =>

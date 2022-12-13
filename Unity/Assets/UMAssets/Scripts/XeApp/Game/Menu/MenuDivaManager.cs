@@ -121,7 +121,16 @@ namespace XeApp.Game.Menu
 		//public IEnumerator Co_WaitTransition() { }
 
 		//// RVA: 0xEB3CD8 Offset: 0xEB3CD8 VA: 0xEB3CD8
-		//public void SetActive(bool active, bool isIdle = True) { }
+		public void SetActive(bool active, bool isIdle = true)
+		{
+			if(divaObject != null)
+			{
+				divaObject.VisibleRendererComponent(active);
+				if (!active || !isIdle)
+					return;
+				OnIdle("");
+			}
+		}
 
 		//// RVA: 0xECB00C Offset: 0xECB00C VA: 0xECB00C
 		//public void SetEnableDivaEffect(bool a_enable, bool a_save_ignore = False) { }
@@ -145,10 +154,16 @@ namespace XeApp.Game.Menu
 		//public bool isWaitUnlockBoneSpring() { }
 
 		//// RVA: 0xECB4C0 Offset: 0xECB4C0 VA: 0xECB4C0
-		//public void LockBoneSpring() { }
+		public void LockBoneSpring()
+		{
+			divaObject.LockBoneSpring(0);
+		}
 
 		//// RVA: 0xECB4F0 Offset: 0xECB4F0 VA: 0xECB4F0
-		//public void UnlockBoneSpring() { }
+		public void UnlockBoneSpring()
+		{
+			divaObject.UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0xEB9EF0 Offset: 0xEB9EF0 VA: 0xEB9EF0
 		//public void OnIdle(string stateName = "") { }

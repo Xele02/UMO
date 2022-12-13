@@ -8,24 +8,24 @@ public class CKFGMNAIBNG
 	public int FBGGEFFJJHB; // 0xC
 	public string OPFGFINHFCE; // 0x10
 	public string GMOBAMGOLHB; // 0x14
-	public string FCEGELPJAMH; // 0x18
+	public string FCEGELPJAMH_Status; // 0x18
 	private short[] EOGIFMAPOPA; // 0x1C
-	public bool[] EJODLFBKFDK; // 0x20
+	public bool[] EJODLFBKFDK_ColNewflags; // 0x20
 	public bool FJODMPGPDDD; // 0x24
 	public int HCFNIMFOOPF; // 0x28
 	public int NNAPJKPBBKI; // 0x2C
-	public int HNJNKCPDKAL_PrismCostumeId; // 0x30
-	public int CGIGOFKGCII; // 0x34
-	public int HFJLOKDMJHI; // 0x38
-	public int LMMCLBNCBIO; // 0x3C
+	public int HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId; // 0x30
+	public int CGIGOFKGCII_CryptedDivaId; // 0x34
+	public int HFJLOKDMJHI_CryptedCostumeId; // 0x38
+	public int LMMCLBNCBIO_CryptedLevel; // 0x3C
 	public int NPCEOIJLNGB; // 0x40
 
 	// public int ENMAEBJGEKL { get; set; } 0x107DE8C FHIMMFAEDIP 0x107DE9C CPEAMPGOMCB
 	// public int DEOBDFOPLHG { get; set; } 0x107DEAC LHFCGJBCDEE 0x107DEBC OAGOCCBEFPD
-	public int DAJGPBLEEOB_PrismCostumeId { get { return FBGGEFFJJHB ^ HNJNKCPDKAL_PrismCostumeId; } set { HNJNKCPDKAL_PrismCostumeId = FBGGEFFJJHB ^ value; } } //0x107DECC LHPKEPPBKPF 0x107DEDC OIOEEEDODJA
-	public int AHHJLDLAPAN_DivaId { get { return CGIGOFKGCII ^ FBGGEFFJJHB; } set { CGIGOFKGCII = FBGGEFFJJHB ^ value; } } //0x107DEEC IPKDLMIDMHH 0x107DEFC IENNENMKEFO
-	public int JPIDIENBGKH_CostumeId { get { return HFJLOKDMJHI ^ FBGGEFFJJHB; } set { HFJLOKDMJHI = FBGGEFFJJHB ^ value; } } //0x107DF0C PHLLMIGCPCB 0x107DF1C BLBNMENMCIF
-	// public int GKIKAABHAAD { get; set; } 0x107DF2C JNDLKKLLAMO 0x107DF3C PBOBJNPNBHG
+	public int DAJGPBLEEOB_PrismCostumeId { get { return FBGGEFFJJHB ^ HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId; } set { HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId = FBGGEFFJJHB ^ value; } } //0x107DECC LHPKEPPBKPF 0x107DEDC OIOEEEDODJA
+	public int AHHJLDLAPAN_DivaId { get { return CGIGOFKGCII_CryptedDivaId ^ FBGGEFFJJHB; } set { CGIGOFKGCII_CryptedDivaId = FBGGEFFJJHB ^ value; } } //0x107DEEC IPKDLMIDMHH 0x107DEFC IENNENMKEFO
+	public int JPIDIENBGKH_CostumeId { get { return HFJLOKDMJHI_CryptedCostumeId ^ FBGGEFFJJHB; } set { HFJLOKDMJHI_CryptedCostumeId = FBGGEFFJJHB ^ value; } } //0x107DF0C PHLLMIGCPCB 0x107DF1C BLBNMENMCIF
+	public int GKIKAABHAAD_Level { get { return LMMCLBNCBIO_CryptedLevel ^ FBGGEFFJJHB; } set { LMMCLBNCBIO_CryptedLevel = FBGGEFFJJHB ^ value; } } //0x107DF2C JNDLKKLLAMO 0x107DF3C PBOBJNPNBHG
 	// public int EGLDFPILJLG { get; set; } 0x107DF4C JACADMEJOAH 0x107DF5C MMDBFGAFINM
 	// public bool LFLNFHKOIIM { get; }
 
@@ -42,9 +42,9 @@ public class CKFGMNAIBNG
         ECNEBGLPECK = LPDNKHAIOLH.CEIBAFOCNCA() & 0x7fff;
         HCFNIMFOOPF = FBGGEFFJJHB;
         NNAPJKPBBKI = FBGGEFFJJHB;
-        HNJNKCPDKAL_PrismCostumeId = FBGGEFFJJHB;
-        HFJLOKDMJHI = FBGGEFFJJHB;
-        LMMCLBNCBIO = FBGGEFFJJHB;
+        HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId = FBGGEFFJJHB;
+        HFJLOKDMJHI_CryptedCostumeId = FBGGEFFJJHB;
+        LMMCLBNCBIO_CryptedLevel = FBGGEFFJJHB;
         NPCEOIJLNGB = FBGGEFFJJHB;
     }
 
@@ -55,7 +55,7 @@ public class CKFGMNAIBNG
         LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB(AHHJLDLAPAN_DivaId, JPIDIENBGKH_CostumeId);
 		this.AHHJLDLAPAN_DivaId = AHHJLDLAPAN_DivaId;
 		this.JPIDIENBGKH_CostumeId = JPIDIENBGKH_CostumeId;
-		HNJNKCPDKAL_PrismCostumeId = FBGGEFFJJHB ^ cosInfo.DAJGPBLEEOB_PrismCostumeModelId;
+		HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId = FBGGEFFJJHB ^ cosInfo.DAJGPBLEEOB_PrismCostumeModelId;
 	}
 
 	// // RVA: 0x107EB24 Offset: 0x107EB24 VA: 0x107EB24
@@ -75,13 +75,13 @@ public class CKFGMNAIBNG
 	// public bool LMHEGNBODJG() { }
 
 	// // RVA: 0x107EFCC Offset: 0x107EFCC VA: 0x107EFCC
-	public string HCPCHEPCFEA(int LEHGKNOCLBG)
+	public string HCPCHEPCFEA_GetCostumeName(int LEHGKNOCLBG)
 	{
 		if (LEHGKNOCLBG == 0)
 			return OPFGFINHFCE;
 		MessageBank bank = MessageManager.Instance.GetBank("master");
 		StringBuilder str = new StringBuilder(16);
-		str.SetFormat("cos_{0:D4}_{1:D2}", (FBGGEFFJJHB ^ HFJLOKDMJHI), LEHGKNOCLBG);
+		str.SetFormat("cos_{0:D4}_{1:D2}", (FBGGEFFJJHB ^ HFJLOKDMJHI_CryptedCostumeId), LEHGKNOCLBG);
 		return bank.GetMessageByLabel(str.ToString());
 	}
 

@@ -12,6 +12,11 @@ using System;
 
 namespace XeApp.Game.Menu
 {
+	public enum BgPriority
+	{
+		Bottom = 0,
+		TopMost = 1,
+	}
 	public enum BgTextureType
 	{
 		Normal = 0,
@@ -76,7 +81,7 @@ namespace XeApp.Game.Menu
 		private BgTextureType m_textureType; // 0x18
 		private int m_id; // 0x1C
 		private GameAttribute.Type m_attr; // 0x20
-		// private BgPriority m_priority; // 0x24
+		private BgPriority m_priority; // 0x24
 		private BgControl.BgTexture m_bgTexture; // 0x28
 		private StringBuilder m_strBuilder = new StringBuilder(128); // 0x2C
 		private static IndexableDictionary<string, BgControl.BgTexture> m_cachedTextures = new IndexableDictionary<string, BgTexture>(8); // 0x0
@@ -411,10 +416,17 @@ namespace XeApp.Game.Menu
 		// public void DestroyCacheBg() { }
 
 		// // RVA: 0x143E354 Offset: 0x143E354 VA: 0x143E354
-		// public void SetPriority(BgPriority priority) { }
+		public void SetPriority(BgPriority priority)
+		{
+			m_priority = priority;
+			ApplyPriority();
+		}
 
 		// // RVA: 0x143E35C Offset: 0x143E35C VA: 0x143E35C
-		// private void ApplyPriority() { }
+		private void ApplyPriority()
+		{
+			TodoLogger.Log(0, "BgControl.ApplyPriority");
+		}
 
 		// // RVA: 0x143E400 Offset: 0x143E400 VA: 0x143E400
 		// private bool CheckEqualBg(BgTextureType textureType, int id) { }

@@ -173,8 +173,8 @@ namespace XeApp.Game.Menu
 			{
 				if(playerData.NBIGLBMHEDC[i].FJODMPGPDDD)
 				{
-					TryInstall(playerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC[i].FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId, 0);
-					TryStateDivaIconInstall(playerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC[i].FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId, 0);
+					TryInstall(playerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 0);
+					TryStateDivaIconInstall(playerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 0);
 				}
 			}
 		}

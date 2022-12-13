@@ -268,7 +268,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				text = MessageManager.Instance.GetMessage("menu", "mvmode_setting_popup_text_001_001");
-				text = string.Format(text, listItem.CostumeData.HCPCHEPCFEA(listItem.ColorId));
+				text = string.Format(text, listItem.CostumeData.HCPCHEPCFEA_GetCostumeName(listItem.ColorId));
 			}
 			listLayout.SetListIndex(listItem.ListIndex);
 			listLayout.HideTexture();

@@ -24,7 +24,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 		public List<int> LDPGNKBFJOM; // 0x4C
 
 		public int BEEAIAAJOHD_CostumeId { get { return BJHHOBEMBJG ^ FBGGEFFJJHB; } set { BJHHOBEMBJG = FBGGEFFJJHB ^ value; } } //0x14F81D4 DIIBIOEMHAI 0x14F9084 JIHEDMEFKAF
-		public bool CADENLBDAEB { get; set; } // 0xC HMFLCAALEKM KJGFPPLHLAB ILJHLPMDHPO
+		public bool CADENLBDAEB_IsNew { get; set; } // 0xC HMFLCAALEKM KJGFPPLHLAB ILJHLPMDHPO
 		// public long BEBJKJKBOGH { get; set; } 0x14F98EC DIAPHCJBPFD 0x14F9EEC IHAIKPNEEJE
 		public int ANAJIAENLNB { get { return MBCPMFPKNBA ^ FBGGEFFJJHB; } set {
 				DKOGOBKOGBM = value ^ 0x6871471;
@@ -53,7 +53,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 		{
 			FBGGEFFJJHB = LPDNKHAIOLH.CEIBAFOCNCA();
 			BJHHOBEMBJG = FBGGEFFJJHB;
-			CADENLBDAEB = false;
+			CADENLBDAEB_IsNew = false;
 			DKOGOBKOGBM = 0x06871471;
 			//BFLIINDAAAA = 0xf978eb8e;
 			IOJOBGHPLIE = 0x06871471;
@@ -68,7 +68,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// // RVA: 0x14F7038 Offset: 0x14F7038 VA: 0x14F7038
-		public bool CGKAEMGLHNK()
+		public bool CGKAEMGLHNK_Possessed()
 		{
 			TodoLogger.Log(0, "TODO");
 			return false;

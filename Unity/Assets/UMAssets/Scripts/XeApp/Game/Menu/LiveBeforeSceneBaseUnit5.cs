@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 					{
 						if (unitData.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId != MenuScene.Instance.divaManager.DivaId)
 							return true;
-						if (unitData.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId != MenuScene.Instance.divaManager.ModelId)
+						if (unitData.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId != MenuScene.Instance.divaManager.ModelId)
 							return true;
 						return unitData.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId != MenuScene.Instance.divaManager.ColorId;
 					}
@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 						{
 							if (unitData.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId == MenuScene.Instance.divaManager.DivaId)
 							{
-								if (unitData.BCJEAJPLGMB_MainDivas[i].FFKMJNHFFFL.DAJGPBLEEOB_PrismCostumeId != MenuScene.Instance.divaManager.ModelId)
+								if (unitData.BCJEAJPLGMB_MainDivas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId != MenuScene.Instance.divaManager.ModelId)
 									return true;
 								if (unitData.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId != MenuScene.Instance.divaManager.ColorId)
 									return true;

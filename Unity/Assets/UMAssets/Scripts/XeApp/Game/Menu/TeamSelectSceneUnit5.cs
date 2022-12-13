@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 		private bool m_isWaitEnterAnimation; // 0x110
 		private bool m_isWaitExitAnimation; // 0x111
 		private TeamSelectDivaListArgs m_selectDivaListArgs = new TeamSelectDivaListArgs(); // 0x114
-		//private CostumeChangeDivaArgs m_costumeChangeDivaArgs = new CostumeChangeDivaArgs(); // 0x118
+		private CostumeChangeDivaArgs m_costumeChangeDivaArgs = new CostumeChangeDivaArgs(); // 0x118
 		//private TeamSelectSceneListArgs m_selectSceneListArgs = new TeamSelectSceneListArgs(); // 0x11C
 		//private CIKHPBBNEIM m_viewEpisodeBonus = new CIKHPBBNEIM(); // 0x120
 		private PopupFilterSortUGUIInitParam m_dispTypePopupParam = new PopupFilterSortUGUIInitParam(); // 0x124
@@ -1278,7 +1278,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8F1CC Offset: 0xA8F1CC VA: 0xA8F1CC
 		private void OnSelectCostume(int slotNumber, FFHPBEPOMAK divaData)
 		{
-			TodoLogger.Log(0, "OnSelectCostume");
+			OnClickAnyButtons();
+			if(slotNumber > -1)
+			{
+				SoundManager.Instance.sePlayerBoot.Play(1);
+				m_costumeChangeDivaArgs.DivaId = divaData.AHHJLDLAPAN_DivaId;
+				m_costumeChangeDivaArgs.is_godiva = m_isGoDivaEvent;
+				MenuScene.Instance.Call(TransitionList.Type.COSTUME_SELECT, m_costumeChangeDivaArgs, true);
+			}
 		}
 
 		//// RVA: 0xA8F334 Offset: 0xA8F334 VA: 0xA8F334

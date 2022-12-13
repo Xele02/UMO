@@ -1292,7 +1292,7 @@ namespace XeApp.Game.Menu
 		public TransitionArgs Args { get { return m_args; } set { m_args = value; } } //0xA83E84 0xA9D74C
 		public TransitionArgs ArgsReturn { get { return m_args_return; } set { m_args_return = value; } } //0xA9D754 0xA9D75C
 		public TransitionList.Type PrevTransition { get { return m_prevTransition; } } //0xA7FEC8
-		// public TransitionList.Type ParentTransition { get; } 0xA9D764
+		public TransitionList.Type ParentTransition { get { return m_parentTransition; } } //0xA9D764
 		// public TransitionRoot.MenuTransitionControl.TransitionType TransitionType { get; } 0xA9D76C
 		public bool IsRequestGotoTitle { get; set; } // 0x28
 		public bool IsReady { get; protected set; } // 0x29

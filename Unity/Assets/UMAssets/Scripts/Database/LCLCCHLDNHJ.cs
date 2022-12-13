@@ -46,7 +46,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
         public bool EODICFLJAKO { get; set; } // 0x18 LLGHLILPKEE FDPHJPGGGMN KHDBHGJILNO
         public int AGBPBDODKBK { get; set; } // 0x1C JAGMGICOACE MCPPGDMHLDF HDJEMHFEAIF
         public int HMCOGDICFNB { get; set; } // 0x20 JGFCPGCGANG IIIBNFKOKFK KBGHKPPMEPD
-		public int LLLCMHENKKN { get { return FBGGEFFJJHB ^ GNOPCJKEIIN; } set { GNOPCJKEIIN = FBGGEFFJJHB ^ value; } } //NEBKEFLJPDI 0xD9DDD4 AOCHKIMBJPE 0xD9CE34
+		public int LLLCMHENKKN_LevelMax { get { return FBGGEFFJJHB ^ GNOPCJKEIIN; } set { GNOPCJKEIIN = FBGGEFFJJHB ^ value; } } //NEBKEFLJPDI 0xD9DDD4 AOCHKIMBJPE 0xD9CE34
 		public int HGBJODBCJDA { get; set; } // 0x28 BIOFHCKLKMD EEEJDDFGNGP IBPCBFIDHPH
         public int EGLDFPILJLG { get; set; } // 0x30 DBDGBOGOJOJ // JACADMEJOAH 0xD9DE74 MMDBFGAFINM 0xD9CED8
         public bool GLEEPAFMPLO { get { 
@@ -96,7 +96,10 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
         // public int MHIKGGMOPOJ(int HEHKNMCDBJJ) { }
 
         // // RVA: 0xD9D6EC Offset: 0xD9D6EC VA: 0xD9D6EC
-        // public short[] CHDBGFLFPNC() { }
+        public short[] CHDBGFLFPNC_GetAvaiableColors()
+		{
+			return KKLPLPGBOFD_GetAvaiableColor(LLLCMHENKKN_LevelMax);
+		}
 
         // // RVA: 0xD9E5E0 Offset: 0xD9E5E0 VA: 0xD9E5E0
         // public void NNIKNCGNDHK(int ANAJIAENLNB, StatusData CMCKNKKCNDK) { }
@@ -250,7 +253,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 				data.IIELLEPEEFH = array[i].MDEBEGADHOH;
 				data.AGBPBDODKBK = array[i].GMOOKMONMMD;
 				data.HMCOGDICFNB = array[i].DOJAMIPOKBD;
-				data.LLLCMHENKKN = array[i].GOFFPLJKIIB;
+				data.LLLCMHENKKN_LevelMax = array[i].GOFFPLJKIIB;
 				data.HGBJODBCJDA = array[i].NFEJAAOAFPG;
 				data.BJGNGNPHCBA = new ILODJKFJJDO.FBKPFMKPMAF[array[i].BFIFIDKOJGD.Length];
 				data.EGLDFPILJLG = array[i].JBPJAGOJMFA;
@@ -269,7 +272,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 				}
 				if(JKAECBCNHAN(array[i].JILNNPKFKEK, 2, 0) < 2)
 				{
-					data.LLLCMHENKKN = 0;
+					data.LLLCMHENKKN_LevelMax = 0;
 				}
 			}
 			ECFLPFIJGGC[] array2 = BGMLCPNJPMD.EIDOFLACDGH;
@@ -349,7 +352,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 		ILODJKFJJDO cos = LBDOLHGDIEB(AHHJLDLAPAN_DivaId, JPIDIENBGKH_CostumeId);
 		if(cos != null)
 		{
-			short[] data = cos.KKLPLPGBOFD_GetAvaiableColor(cos.LLLCMHENKKN);
+			short[] data = cos.KKLPLPGBOFD_GetAvaiableColor(cos.LLLCMHENKKN_LevelMax);
 			for(int i = 0; i < data.Length; i++)
 			{
 				if (data[i] == PPKEBOEJAKH_ColorId)

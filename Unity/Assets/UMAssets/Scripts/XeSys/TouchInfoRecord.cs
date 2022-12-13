@@ -29,7 +29,12 @@ namespace XeSys
         }
 
         // // RVA: 0x23A6B80 Offset: 0x23A6B80 VA: 0x23A6B80
-        // public TouchInfo FindRecentInfo(int frameFromLatest) { }
+        public TouchInfo FindRecentInfo(int frameFromLatest)
+		{
+			if (frameFromLatest >= recentInfos.Length)
+				return null;
+			return recentInfos[recentInfos.Length - frameFromLatest];
+		}
 
         // // RVA: 0x23A6C0C Offset: 0x23A6C0C VA: 0x23A6C0C
         public void Update(TouchPhase phase, Vector3 pos)

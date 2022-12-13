@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using XeSys;
 
 public class PIGBBNDPPJC
@@ -41,10 +42,38 @@ public class PIGBBNDPPJC
 	//public void AFGOBPPKFBF() { }
 
 	//// RVA: 0x16D2190 Offset: 0x16D2190 VA: 0x16D2190
-	//public static List<PIGBBNDPPJC> FKDIMODKKJD(bool DHFLBNAHGDF = False) { }
+	public static List<PIGBBNDPPJC> FKDIMODKKJD_GetAvaiableEpisodes(bool DHFLBNAHGDF = false)
+	{
+		List<PIGBBNDPPJC> res = new List<PIGBBNDPPJC>(500);
+		for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList.Count; i++)
+		{
+			HMGPODKEFBA_EpisodeInfo dbEp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.BBAJKJPKOHD_EpisodeList[i];
+			OCLHKHAMDHF_Episode.JEHNEEBBDBO_EpisodeInfo saveEp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[i];
+			if(dbEp.PPEGAKEIEGM == 2)
+			{
+				if(!DHFLBNAHGDF)
+				{
+					if (saveEp.BEBJKJKBOGH_Date == 0)
+						continue;
+				}
+				PIGBBNDPPJC data = new PIGBBNDPPJC();
+				data.KHEKNNFCAOI(i + 1);
+				res.Add(data);
+			}
+		}
+		CEAIGKOGLIN(res);
+		return res;
+	}
 
 	//// RVA: 0x16D24CC Offset: 0x16D24CC VA: 0x16D24CC
-	//public static void CEAIGKOGLIN(List<PIGBBNDPPJC> NNDGIAEFMOG) { }
+	public static void CEAIGKOGLIN(List<PIGBBNDPPJC> NNDGIAEFMOG)
+	{
+		NNDGIAEFMOG.Sort((PIGBBNDPPJC HKICMNAACDA, PIGBBNDPPJC BNKHBCBJBKI) =>
+		{
+			//0x16D365C
+			return HKICMNAACDA.FKMAEKNOLJB - BNKHBCBJBKI.FKMAEKNOLJB;
+		});
+	}
 
 	//// RVA: 0x16D2620 Offset: 0x16D2620 VA: 0x16D2620
 	//public int HADPDBAGEIB(int BNGHLLCONJM, int HMFFHLPNMPH) { }
