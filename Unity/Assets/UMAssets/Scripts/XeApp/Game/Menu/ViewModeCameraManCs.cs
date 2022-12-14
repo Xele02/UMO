@@ -295,13 +295,20 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xAE2EC8 Offset: 0xAE2EC8 VA: 0xAE2EC8
-		public void SetOperationType(ViewModeCameraManCs.OperationType ope)
+		public void SetOperationType(OperationType ope)
 		{
-			m_operationType = type;
+			m_operationType = ope;
 		}
 
 		//// RVA: 0xAE2ED0 Offset: 0xAE2ED0 VA: 0xAE2ED0
-		//public void Restore() { }
+		public void Restore()
+		{
+			m_state = 2;
+			m_time = 0;
+			m_targetPosition = transform.localPosition;
+			m_targetRotation = transform.localRotation;
+			m_targetFov = m_camera.fieldOfView;
+		}
 
 		//// RVA: 0xAE2FA0 Offset: 0xAE2FA0 VA: 0xAE2FA0
 		//public void Reinstate() { }
@@ -316,10 +323,16 @@ namespace XeApp.Game.Menu
 		//public void StartUpdate() { }
 
 		//// RVA: 0xAE30E0 Offset: 0xAE30E0 VA: 0xAE30E0
-		//public bool IsEntered() { }
+		public bool IsEntered()
+		{
+			return m_state > 0;
+		}
 
 		//// RVA: 0xAE30F4 Offset: 0xAE30F4 VA: 0xAE30F4
-		//public bool IsFinished() { }
+		public bool IsFinished()
+		{
+			return m_endFlag;
+		}
 
 		//// RVA: 0xAE30FC Offset: 0xAE30FC VA: 0xAE30FC
 		//public int GetState() { }

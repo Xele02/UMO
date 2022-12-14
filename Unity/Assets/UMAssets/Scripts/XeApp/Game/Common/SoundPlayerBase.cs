@@ -122,7 +122,17 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1388CCC Offset: 0x1388CCC VA: 0x1388CCC
-		// public bool RemoveCueSheet() { }
+		public bool RemoveCueSheet()
+		{
+			if(source != null)
+			{
+				SoundResource.RemoveCueSheet(source.cueSheet);
+				source.cueSheet = "";
+				source.cueName = "";
+				return true;
+			}
+			return false;
+		}
 
 		// // RVA: 0x138FF6C Offset: 0x138FF6C VA: 0x138FF6C
 		protected bool PlayCue(string cueName)

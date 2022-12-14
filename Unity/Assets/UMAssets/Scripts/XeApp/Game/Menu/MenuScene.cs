@@ -644,7 +644,10 @@ namespace XeApp.Game.Menu
 		// public TransitionRoot GetCurrentTransitionRoot() { }
 
 		// // RVA: 0xB32234 Offset: 0xB32234 VA: 0xB32234
-		// public TransitionInfo GetNextScene() { }
+		public TransitionInfo GetNextScene()
+		{
+			return m_menuTransitionControl.GetNextScene();
+		}
 
 		// // RVA: 0xB32260 Offset: 0xB32260 VA: 0xB32260
 		// public bool IsTransition() { }

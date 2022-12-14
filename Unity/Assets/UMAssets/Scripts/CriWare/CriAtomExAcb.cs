@@ -68,10 +68,23 @@ namespace CriWare
 		// public bool GetCueInfo(int cueId, out CriAtomEx.CueInfo info) { }
 
 		// // RVA: 0x288A9EC Offset: 0x288A9EC VA: 0x288A9EC
-		// public bool GetCueInfoByIndex(int index, out CriAtomEx.CueInfo info) { }
+		public bool GetCueInfoByIndex(int index, out CriAtomEx.CueInfo info)
+		{
+			bool res = criAtomExAcb_GetCueInfoByIndex(handle, index, out info);
+			return res;
+		}
 
 		// // RVA: 0x288AD00 Offset: 0x288AD00 VA: 0x288AD00
-		// public CriAtomEx.CueInfo[] GetCueInfoList() { }
+		public CriAtomEx.CueInfo[] GetCueInfoList()
+		{
+			int cnt = criAtomExAcb_GetNumCues(handle);
+			CriAtomEx.CueInfo[] res = new CriAtomEx.CueInfo[cnt];
+			for(int i = 0; i < res.Length; i++)
+			{
+				GetCueInfoByIndex(i, out res[i]);
+			}
+			return res;
+		}
 
 		// // RVA: 0x288AEEC Offset: 0x288AEEC VA: 0x288AEEC
 		// public bool GetWaveFormInfo(string cueName, out CriAtomEx.WaveformInfo info) { }
@@ -176,7 +189,14 @@ namespace CriWare
 		#endif
 
 		// // RVA: 0x288ADD8 Offset: 0x288ADD8 VA: 0x288ADD8
-		// private static extern int criAtomExAcb_GetNumCues(IntPtr acb_hn) { }
+		#if UNITY_ANDROID
+		private static extern int criAtomExAcb_GetNumCues(IntPtr acb_hn);
+		#else
+		private static int criAtomExAcb_GetNumCues(IntPtr acb_hn)
+		{
+			return ExternLib.LibCriWare.criAtomExAcb_GetNumCues(acb_hn);
+		}
+		#endif
 
 		// // RVA: 0x288A288 Offset: 0x288A288 VA: 0x288A288
 		// private static extern bool criAtomExAcb_ExistsId(IntPtr acb_hn, int id) { }
@@ -224,7 +244,21 @@ namespace CriWare
 		// private static extern bool criAtomExAcb_GetCueInfoById(IntPtr acb_hn, int id, IntPtr info) { }
 
 		// // RVA: 0x288AC08 Offset: 0x288AC08 VA: 0x288AC08
-		// private static extern bool criAtomExAcb_GetCueInfoByIndex(IntPtr acb_hn, int index, IntPtr info) { }
+		#if UNITY_ANDROID
+		private static extern bool criAtomExAcb_GetCueInfoByIndex(IntPtr acb_hn, int index, IntPtr info);
+		#endif
+		private static bool criAtomExAcb_GetCueInfoByIndex(IntPtr acb_hn, int index, out CriAtomEx.CueInfo info)
+		{
+		#if UNITY_ANDROID
+			using (var mem = new CriStructMemory<CriAtomEx.CueInfo>()) {
+				bool result = criAtomExAcb_GetCueInfoByIndex(acb_hn, index, mem.ptr);
+				info = new CriAtomEx.CueInfo(mem.bytes, 0);
+				return result;
+			}
+		#else
+			return ExternLib.LibCriWare.criAtomExAcb_GetCueInfoByIndex(acb_hn, index, out info);
+		#endif
+		}
 
 		// // RVA: 0x288B548 Offset: 0x288B548 VA: 0x288B548
 		// private static extern int criAtomExAcb_GetNumCuePlayingCountByName(IntPtr acb_hn, string name) { }

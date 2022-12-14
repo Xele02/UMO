@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using System.Collections;
+using XeApp.Core;
 
 namespace XeApp.Game.Menu
 {
@@ -82,16 +84,71 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CCD2C Offset: 0x6CCD2C VA: 0x6CCD2C
 		//// RVA: 0x1646F70 Offset: 0x1646F70 VA: 0x1646F70
-		//public IEnumerator Co_LoadListContent() { }
+		public IEnumerator Co_LoadListContent()
+		{
+			Font font; // 0x18
+			string bundleName; // 0x1C
+			AssetBundleLoadLayoutOperationBase lytOp; // 0x20
+
+			//0x16DE0C4
+			font = GameManager.Instance.GetSystemFont();
+			bundleName = "ly/044.xab";
+			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_cos_list_layout_root");
+			yield return lytOp;
+
+			GameObject t_source = null;
+			yield return lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0x16DE098
+				t_source = instance;
+			});
+
+			LayoutUGUIRuntime runtime = t_source.GetComponent<LayoutUGUIRuntime>();
+			for(int i = 0; i < m_swapScrollList.ColumnCount * m_swapScrollList.RowCount; i++)
+			{
+				GameObject inst = Instantiate(t_source);
+				LayoutUGUIRuntime instRun = inst.GetComponent<LayoutUGUIRuntime>();
+				instRun.Layout = runtime.Layout.DeepClone();
+				instRun.LoadLayout();
+				CostumeSelectListElem elem = inst.GetComponent<CostumeSelectListElem>();
+				elem.m_parent = this;
+				elem.m_cb_try += CB_Try;
+				elem.m_cb_getinfo += CB_GetInfo;
+				m_swapScrollList.AddScrollObject(elem);
+			}
+			yield return null;
+			m_swapScrollList.Apply();
+			Destroy(t_source);
+			t_source = null;
+			AssetBundleManager.UnloadAssetBundle(bundleName);
+			if(m_swapScrollList != null)
+			{
+				m_swapScrollList.OnUpdateItem.RemoveAllListeners();
+				m_swapScrollList.OnUpdateItem.AddListener(CB_UpdateList);
+			}
+		}
 
 		//// RVA: 0x1646FF8 Offset: 0x1646FF8 VA: 0x1646FF8
-		//private void CB_UpdateList(int index, SwapScrollListContent content) { }
+		private void CB_UpdateList(int index, SwapScrollListContent content)
+		{
+			CostumeSelectListElem elem = content as CostumeSelectListElem;
+			if(elem != null)
+			{
+				elem.SetItem(index, m_diva_id, m_list_item[index]);
+			}
+		}
 
 		//// RVA: 0x164713C Offset: 0x164713C VA: 0x164713C
-		//private void CB_Try(int a_index) { }
+		private void CB_Try(int a_index)
+		{
+			TodoLogger.Log(0, "CB_Try");
+		}
 
 		//// RVA: 0x1647298 Offset: 0x1647298 VA: 0x1647298
-		//private void CB_GetInfo(int a_index) { }
+		private void CB_GetInfo(int a_index)
+		{
+			TodoLogger.Log(0, "CB_GetInfo");
+		}
 
 		//// RVA: 0x164730C Offset: 0x164730C VA: 0x164730C
 		private void CB_CostumeChange()
@@ -291,6 +348,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1648714 Offset: 0x1648714 VA: 0x1648714
-		//public void DestroyNewMark() { }
+		public void DestroyNewMark()
+		{
+			for (int i = 0; i < m_swapScrollList.ScrollObjects.Count; i++)
+			{
+				(m_swapScrollList.ScrollObjects[i] as CostumeSelectListElem).DestroyNewIcon();
+			}
+		}
 	}
 }

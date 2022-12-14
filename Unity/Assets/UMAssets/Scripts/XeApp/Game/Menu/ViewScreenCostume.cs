@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 			if(m_gazeControl == null)
 			{
 				MenuDivaObject mdo = MenuScene.Instance.divaManager.GetComponentInChildren<MenuDivaObject>(true);
-				m_gazeControl = mdo.StartGameControl();
+				m_gazeControl = mdo.StartGazeControl();
 				m_gazeControl.TargetObj = m_cameraObj;
 			}
 		}

@@ -1,6 +1,8 @@
 using XeApp.Game.Menu;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Text;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -44,20 +46,122 @@ namespace XeApp.Game.Common
 		// RVA: 0x110F3D8 Offset: 0x110F3D8 VA: 0x110F3D8 Slot: 6
 		protected override void SetupCustomComponents(DivaResource resource)
 		{
-			!!!
+			facialBlendAnimMediator = GetComponentInChildren<MenuFacialBlendAnimMediator>();
+			facialBlendAnimMediator.Initialize(resource, divaPrefab);
+			facialBlendAnimMediator.SetEyeMeshUvRate(ObjParam.GetEyeMeshUvRate(divaId));
+			if(boneSpringController != null)
+			{
+				boneSpringController.Lock(0);
+			}
+			Transform t = divaPrefab.transform.Find("joint_root/hips");
+			if(t != null)
+			{
+				adjustScaler = t.gameObject.GetComponent<ObjectPositionAdjuster>();
+				if(adjustScaler == null)
+				{
+					adjustScaler = t.gameObject.AddComponent<ObjectPositionAdjuster>();
+				}
+				adjustScaler.Initialize(ObjParam.GetHipScaleFactor(divaId), true, true, true);
+			}
+			SetActiveFoundChildren(divaPrefab.transform, "game", false);
+			Transform mesh = divaPrefab.transform.Find("mesh_root");
+			Renderer[] rs = mesh.GetComponentsInChildren<Renderer>();
+			for(int i = 0; i < rs.Length; i++)
+			{
+				for(int j = 0; j < rs[i].materials.Length; j++)
+				{
+					if(rs[i].materials[j].shader.name == "MCRS/Diva/Opaque_Outline_High")
+					{
+						rs[i].materials[j].SetFloat("_EdgeThickness", 35);
+					}
+				}
+			}
+			animator.playableGraph.SetTimeUpdateMode(UnityEngine.Playables.DirectorUpdateMode.GameTime);
+			facialBlendAnimMediator.selfAnimator.playableGraph.SetTimeUpdateMode(UnityEngine.Playables.DirectorUpdateMode.GameTime);
+			rendererDict.Clear();
+			Idle("");
 		}
 
 		// RVA: 0x110FB80 Offset: 0x110FB80 VA: 0x110FB80 Slot: 5
-		protected override void OverrideCustomAnimation(DivaResource resource) {!!! }
+		protected override void OverrideCustomAnimation(DivaResource resource)
+		{
+			StringBuilder str = new StringBuilder(64);
+			overrideController["diva_cmn_menu_idle_body"] = resource.menuMotionOverride.idle.bodyClip;
+			for(int i = 0; i < resource.menuMotionOverride.reactions.Count; i++)
+			{
+				str.SetFormat("diva_cmn_menu_reaction{0:D2}_body", i + 1);
+				overrideController[str.ToString()] = resource.menuMotionOverride.reactions[i].main.bodyClip;
+			}
+			for (int i = 0; i < resource.menuMotionOverride.talk.Count; i++)
+			{
+				str.SetFormat("diva_cmn_menu_talk{0:D2}_start_body", i + 1);
+				overrideController[str.ToString()] = resource.menuMotionOverride.talk[i].begin.bodyClip;
+				str.SetFormat("diva_cmn_menu_talk{0:D2}_body", i + 1);
+				overrideController[str.ToString()] = resource.menuMotionOverride.talk[i].main.bodyClip;
+				str.SetFormat("diva_cmn_menu_talk{0:D2}_end_body", i + 1);
+				overrideController[str.ToString()] = resource.menuMotionOverride.talk[i].end.bodyClip;
+			}
+			for (int i = 0; i < resource.menuMotionOverride.simpletalk.Count; i++)
+			{
+				str.SetFormat("diva_cmn_menu_simple_talk{0:D2}_body", i + 1);
+				overrideController[str.ToString()] = resource.menuMotionOverride.simpletalk[i].main.bodyClip;
+			}
+			for (int i = 0; i < resource.menuMotionOverride.timezone.Count; i++)
+			{
+				str.SetFormat("diva_cmn_menu_timezone{0:D2}_body", i + 1);
+				overrideController[str.ToString()] = resource.menuMotionOverride.timezone[i].main.bodyClip;
+			}
+			overrideController["diva_cmn_result_wait_loop_body"] = resource.resultMotionOverride.wait.bodyClip;
+			overrideController["diva_cmn_result_start_body"] = resource.resultMotionOverride.start.bodyClip;
+			overrideController["diva_cmn_result_end_loop_body"] = resource.resultMotionOverride.end.bodyClip;
+			overrideController["diva_cmn_result_win_start_body"] = resource.resultMotionOverride.winStart.bodyClip;
+			overrideController["diva_cmn_result_win_end_loop_body"] = resource.resultMotionOverride.winEnd.bodyClip;
+			overrideController["diva_cmn_result_lose_start_body"] = resource.resultMotionOverride.loseStart.bodyClip;
+			overrideController["diva_cmn_result_lose_end_loop_body"] = resource.resultMotionOverride.loseEnd.bodyClip;
+			overrideController["diva_cmn_login_idle_body"] = resource.loginMotionOverride.idle.bodyClip;
+			for (int i = 0; i < resource.loginMotionOverride.reactions.Count; i++)
+			{
+				str.SetFormat("diva_cmn_login_reaction{0:D2}_begin_body", i + 1);
+				overrideController[str.ToString()] = resource.loginMotionOverride.reactions[i].begin.bodyClip;
+				str.SetFormat("diva_cmn_login_reaction{0:D2}_end_body", i + 1);
+				overrideController[str.ToString()] = resource.loginMotionOverride.reactions[i].end.bodyClip;
+			}
+			overrideController["diva_cmn_join_start_body"] = resource.unlockMotionOverride.start.bodyClip;
+			overrideController["diva_cmn_join_loop_body"] = resource.unlockMotionOverride.end.bodyClip;
+			overrideController["diva_cmn_costume_start_body"] = resource.unlockCostumeMotionOverride.start.bodyClip;
+			overrideController["diva_cmn_costume_pose_body"] = resource.unlockCostumeMotionOverride.pose.bodyClip;
+			overrideController["diva_cmn_costume_loop_body"] = resource.unlockCostumeMotionOverride.end.bodyClip;
+			for(int i = 0; i < DivaResource.MAX_PRESENT; i++)
+			{
+				str.SetFormat("diva_cmn_menu_present{0:D2}_body", i + 1);
+				overrideController[str.ToString()] = resource.menuMotionOverride.present[i].main.bodyClip;
+			}
+		}
 
 		// RVA: 0x11108D8 Offset: 0x11108D8 VA: 0x11108D8
-		private void LateUpdate() {!!! }
+		private void LateUpdate()
+		{
+			if(isStopFrame)
+			{
+				transform.localPosition = new Vector3(0, 0, 0);
+				transform.localEulerAngles = new Vector3(0, 0, 0);
+				transform.localScale = new Vector3(1, 1, 1);
+				isStopFrame = false;
+			}
+		}
 
 		//// RVA: 0x1110A10 Offset: 0x1110A10 VA: 0x1110A10
 		//private void ChangeVisibilityCallback(bool isVisible) { }
 
 		//// RVA: 0x110FAA8 Offset: 0x110FAA8 VA: 0x110FAA8
-		//public void Idle(string stateName = "") { }
+		public void Idle(string stateName = "")
+		{
+			if (string.IsNullOrEmpty(stateName))
+				stateName = "idle";
+			Anim_Play(stateName, 0);
+			animator.speed = 1;
+			StartCoroutine(WaitUnlockBoneSpring(0));
+		}
 
 		//// RVA: 0x1110B60 Offset: 0x1110B60 VA: 0x1110B60
 		//public void IdleCrossFade(string stateName = "") { }
@@ -139,7 +243,10 @@ namespace XeApp.Game.Common
 		//public void SimpleTalk(int type) { }
 
 		//// RVA: 0x1111E58 Offset: 0x1111E58 VA: 0x1111E58
-		//public void SetAnimInteger(string paramName, int value) { }
+		public void SetAnimInteger(string paramName, int value)
+		{
+			Anim_SetInteger(paramName, value);
+		}
 
 		//// RVA: 0x1111E60 Offset: 0x1111E60 VA: 0x1111E60
 		//public void ReactionLoopBreak() { }
@@ -160,18 +267,43 @@ namespace XeApp.Game.Common
 		//public void StopAnimationPresent() { }
 		
 		//// RVA: 0x111263C Offset: 0x111263C VA: 0x111263C
-		//public MenuDivaGazeControl StartGazeControl() { }
+		public MenuDivaGazeControl StartGazeControl()
+		{
+			MenuDivaGazeControl res = GetComponent<MenuDivaGazeControl>();
+			if(res == null)
+			{
+				res = gameObject.AddComponent<MenuDivaGazeControl>();
+				res.ControlData = gazeControlData;
+				res.Initialize();
+			}
+			return res;
+		}
 
 		//// RVA: 0x1112774 Offset: 0x1112774 VA: 0x1112774
-		//public void FinishGazeControl() { }
+		public void FinishGazeControl()
+		{
+			MenuDivaGazeControl res = GetComponent<MenuDivaGazeControl>();
+			if (res != null)
+			{
+				Destroy(res);
+			}
+		}
 
 		//// RVA: 0x1112858 Offset: 0x1112858 VA: 0x1112858
 		//public void ChangeCostumeTexture(List<Material> mtlList, int colorId) { }
 
 		// RVA: 0x1112E2C Offset: 0x1112E2C VA: 0x1112E2C Slot: 8
-		protected override void SetupEffectObject(List<GameObject> a_effect) {!!! }
+		protected override void SetupEffectObject(List<GameObject> a_effect)
+		{
+			base.SetupEffectObject(a_effect);
+			SetEnableEffect(true, false);
+		}
 
 		// RVA: 0x1112E58 Offset: 0x1112E58 VA: 0x1112E58 Slot: 9
-		protected override void SetupWind(GameObject a_wind, DivaResource.BoneSpringResource a_resource) { !!!}
+		protected override void SetupWind(GameObject a_wind, DivaResource.BoneSpringResource a_resource)
+		{
+			base.SetupWind(a_wind, a_resource);
+			SetEnableWind(false, false);
+		}
 	}
 }

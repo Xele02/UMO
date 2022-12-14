@@ -255,7 +255,17 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF4288 Offset: 0x1BF4288 VA: 0x1BF4288
-		//public void VisibleRendererComponent(bool enable) { }
+		public void VisibleRendererComponent(bool enable)
+		{
+			animator.enabled = enable;
+			foreach(var r in renderers)
+			{
+				r.enabled = enable;
+			}
+			adjustScaler.enabled = enable;
+			SetActiveEffect(enable);
+			SetActiveWind(enable);
+		}
 
 		//// RVA: 0x1BF466C Offset: 0x1BF466C VA: 0x1BF466C
 		//public void ChangeMaterial(DivaResource outerResource, int colorId) { }
@@ -517,7 +527,20 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF5C50 Offset: 0x1BF5C50 VA: 0x1BF5C50
-		//protected void Anim_Play(string stateName, double time = 0) { }
+		protected void Anim_Play(string stateName, double time = 0)
+		{
+			animator.Play(stateName, 0);
+			facialBlendAnimMediator.selfAnimator.Play(stateName, 0);
+			facialBlendAnimMediator.selfAnimator.Play(stateName, 1);
+			if(m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+			{
+				m_boneSpringAnim.animator.Play(stateName);
+			}
+			if(mikeStandObject != null)
+			{
+				mikeStandObject.animator.Play(stateName, 0);
+			}
+		}
 
 		//// RVA: 0x1BF5ED0 Offset: 0x1BF5ED0 VA: 0x1BF5ED0
 		//protected void Anim_CrossFadeInFixedTime(string stateName, float fixedTime = 0) { }
@@ -526,7 +549,19 @@ namespace XeApp.Game.Common
 		//protected void Anim_SetBool(string name, bool value) { }
 
 		//// RVA: 0x1BF63C8 Offset: 0x1BF63C8 VA: 0x1BF63C8
-		//protected void Anim_SetInteger(string name, int value) { }
+		protected void Anim_SetInteger(string name, int value)
+		{
+			animator.SetInteger(name, value);
+			facialBlendAnimMediator.selfAnimator.SetInteger(name, value);
+			if(m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+			{
+				m_boneSpringAnim.animator.SetInteger(name, value);
+			}
+			if(mikeStandObject != null)
+			{
+				mikeStandObject.animator.SetInteger(name, value);
+			}
+		}
 
 		//// RVA: 0x1BF6608 Offset: 0x1BF6608 VA: 0x1BF6608
 		//protected void Anim_SetTrigger(string name) { }

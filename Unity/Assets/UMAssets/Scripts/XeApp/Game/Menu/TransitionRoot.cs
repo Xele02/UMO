@@ -565,7 +565,10 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA39A08 Offset: 0xA39A08 VA: 0xA39A08
-			// public TransitionInfo GetNextScene() { }
+			public TransitionInfo GetNextScene()
+			{
+				return m_next;
+			}
 
 			// // RVA: 0xA39A10 Offset: 0xA39A10 VA: 0xA39A10
 			// public TransitionRoot GetCurrentTransitionRoot() { }

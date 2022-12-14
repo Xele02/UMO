@@ -28,7 +28,15 @@ namespace ExternLib
             }
         }
 
-        public static bool criAtomExAcb_GetCueInfoByName(IntPtr acb_hn, string name, out CriAtomEx.CueInfo info)
+		public static int criAtomExAcb_GetNumCues(IntPtr acb_hn)
+		{
+			if (!acbFiles.ContainsKey(acb_hn))
+				return 0;
+			CriAcbFile file = acbFiles[acb_hn].file;
+			return file.CueList.Length;
+		}
+
+		public static bool criAtomExAcb_GetCueInfoByName(IntPtr acb_hn, string name, out CriAtomEx.CueInfo info)
         {
             info = new CriAtomEx.CueInfo();
             if(!acbFiles.ContainsKey(acb_hn))
@@ -42,7 +50,22 @@ namespace ExternLib
             return true;
         }
 
-        public static IntPtr criAtomExAcb_LoadAcbFile(CriFsBinder acb_binder, string acb_path, CriFsBinder awb_binder, string awb_path, IntPtr work, int work_size)
+		public static bool criAtomExAcb_GetCueInfoByIndex(IntPtr acb_hn, int index, out CriAtomEx.CueInfo info)
+		{
+			info = new CriAtomEx.CueInfo();
+			if (!acbFiles.ContainsKey(acb_hn))
+				return false;
+			CriAcbFile file = acbFiles[acb_hn].file;
+			CriAcbCueRecord cueRecord = file.GetCueRecord(index);
+			if (cueRecord == null)
+				return false;
+			info.length = cueRecord.LengthMilli;
+			TodoLogger.Log(0, "finish criAtomExAcb_GetCueInfoByIndex");
+			return true;
+		}
+
+
+		public static IntPtr criAtomExAcb_LoadAcbFile(CriFsBinder acb_binder, string acb_path, CriFsBinder awb_binder, string awb_path, IntPtr work, int work_size)
         {
             if(acb_binder != null || awb_binder != null)
             {

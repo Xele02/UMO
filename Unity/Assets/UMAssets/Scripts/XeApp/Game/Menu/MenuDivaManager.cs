@@ -166,10 +166,21 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEB9EF0 Offset: 0xEB9EF0 VA: 0xEB9EF0
-		//public void OnIdle(string stateName = "") { }
+		public void OnIdle(string stateName = "")
+		{
+			if(divaObject != null)
+			{
+				DivaTransformReset();
+				divaObject.Idle(stateName);
+			}
+		}
 
 		//// RVA: 0xECB524 Offset: 0xECB524 VA: 0xECB524
-		//public void DivaTransformReset() { }
+		public void DivaTransformReset()
+		{
+			transform.position = position;
+			transform.rotation = Quaternion.identity;
+		}
 
 		//// RVA: 0xECB630 Offset: 0xECB630 VA: 0xECB630
 		//public void OverrideAnimations(List<DivaResource.MotionOverrideClipKeyResource> resource) { }
@@ -178,7 +189,13 @@ namespace XeApp.Game.Menu
 		//public void OverrideAnimations(List<DivaResource.MotionOverrideSingleResource> resource) { }
 
 		//// RVA: 0xECB7A8 Offset: 0xECB7A8 VA: 0xECB7A8
-		//public void SetAnimParamInteger(string paramName, int value) { }
+		public void SetAnimParamInteger(string paramName, int value)
+		{
+			if(divaObject != null)
+			{
+				divaObject.SetAnimInteger(paramName, value);
+			}
+		}
 
 		//// RVA: 0xEB470C Offset: 0xEB470C VA: 0xEB470C
 		//public string GetMessageByLabel(string label) { }
