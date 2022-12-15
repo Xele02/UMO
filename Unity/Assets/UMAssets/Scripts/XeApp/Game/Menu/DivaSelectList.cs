@@ -449,7 +449,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17EBD34 Offset: 0x17EBD34 VA: 0x17EBD34
 		private void OnRemoveButton()
 		{
-			TodoLogger.Log(0, "OnRemoveButton");
+			TodoLogger.LogNotImplemented("OnRemoveButton");
 		}
 
 		//// RVA: 0x17EBD60 Offset: 0x17EBD60 VA: 0x17EBD60

@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1647298 Offset: 0x1647298 VA: 0x1647298
 		private void CB_GetInfo(int a_index)
 		{
-			TodoLogger.Log(0, "CB_GetInfo");
+			TodoLogger.LogNotImplemented("CB_GetInfo");
 		}
 
 		//// RVA: 0x164730C Offset: 0x164730C VA: 0x164730C
@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1647338 Offset: 0x1647338 VA: 0x1647338
 		private void CB_CostumeBuild()
 		{
-			TodoLogger.Log(0, "CB_CostumeBuild");
+			TodoLogger.LogNotImplemented("CB_CostumeBuild");
 		}
 
 		//// RVA: 0x164734C Offset: 0x164734C VA: 0x164734C

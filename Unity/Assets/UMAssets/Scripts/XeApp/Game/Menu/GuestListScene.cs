@@ -256,7 +256,7 @@ namespace XeApp.Game.Menu
 		{
 			if (value == 1)
 			{
-				TodoLogger.Log(0, "OnSelectListItem");
+				TodoLogger.LogNotImplemented("OnSelectListItem");
 			}
 			else if(value == 0)
 			{
@@ -341,7 +341,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2B87C Offset: 0xE2B87C VA: 0xE2B87C
 		private void OnClickSortButton()
 		{
-			TodoLogger.Log(0, "OnClickSortButton");
+			TodoLogger.LogNotImplemented("OnClickSortButton");
 		}
 
 		// RVA: 0xE2B9C4 Offset: 0xE2B9C4 VA: 0xE2B9C4
@@ -350,13 +350,13 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2C1DC Offset: 0xE2C1DC VA: 0xE2C1DC
 		private void OnClickOrderButton()
 		{
-			TodoLogger.Log(0, "OnClickOrderButton");
+			TodoLogger.LogNotImplemented("OnClickOrderButton");
 		}
 
 		// RVA: 0xE2C378 Offset: 0xE2C378 VA: 0xE2C378
 		private void OnClickReloadButton()
 		{
-			TodoLogger.Log(0, "OnClickReloadButton");
+			TodoLogger.LogNotImplemented("OnClickReloadButton");
 		}
 
 		// RVA: 0xE2BCA8 Offset: 0xE2BCA8 VA: 0xE2BCA8
@@ -476,7 +476,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2D2C8 Offset: 0xE2D2C8 VA: 0xE2D2C8
 		private void OnShowAssistSelectButton()
 		{
-			TodoLogger.Log(0, "GuestList OnShowAssistSelectButton");
+			TodoLogger.LogNotImplemented("GuestList OnShowAssistSelectButton");
 		}
 
 		// RVA: 0xE2D41C Offset: 0xE2D41C VA: 0xE2D41C Slot: 28

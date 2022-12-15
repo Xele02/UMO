@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC38E68 Offset: 0xC38E68 VA: 0xC38E68
 		private void OnClickPageButtonFunc()
 		{
-			TodoLogger.Log(0, "OnClickPageButtonFunc");
+			TodoLogger.LogNotImplemented("OnClickPageButtonFunc");
 		}
 
 		//// RVA: 0xC38A24 Offset: 0xC38A24 VA: 0xC38A24
@@ -149,7 +149,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC39034 Offset: 0xC39034 VA: 0xC39034
 		private void OnClickUnitButtonFunc(int buttonNo)
 		{
-			TodoLogger.Log(0, "OnClickUnitButtonFunc");
+			TodoLogger.LogNotImplemented("OnClickUnitButtonFunc");
 		}
 
 		//// RVA: 0xC3917C Offset: 0xC3917C VA: 0xC3917C

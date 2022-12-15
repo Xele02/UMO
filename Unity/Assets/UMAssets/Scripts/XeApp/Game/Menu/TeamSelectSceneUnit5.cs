@@ -1163,13 +1163,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA89B68 Offset: 0xA89B68 VA: 0xA89B68
 		private void OnPlayButton()
 		{
-			TodoLogger.Log(0, "OnPlayButton");
+			TodoLogger.LogNotImplemented("OnPlayButton");
 		}
 
 		//// RVA: 0xA8C708 Offset: 0xA8C708 VA: 0xA8C708
 		private void OnSkipButton()
 		{
-			TodoLogger.Log(0, "OnSkipButton");
+			TodoLogger.LogNotImplemented("OnSkipButton");
 		}
 
 		//// RVA: 0xA8A680 Offset: 0xA8A680 VA: 0xA8A680
@@ -1200,19 +1200,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8D67C Offset: 0xA8D67C VA: 0xA8D67C
 		private void OnChangeUnitName()
 		{
-			TodoLogger.Log(0, "OnChangeUnitName");
+			TodoLogger.LogNotImplemented("OnChangeUnitName");
 		}
 
 		//// RVA: 0xA8DCDC Offset: 0xA8DCDC VA: 0xA8DCDC
 		private void OnShowEpisodeBonusScenePopup()
 		{
-			TodoLogger.Log(0, "OnShowEpisodeBonusScenePopup");
+			TodoLogger.LogNotImplemented("OnShowEpisodeBonusScenePopup");
 		}
 
 		//// RVA: 0xA8E110 Offset: 0xA8E110 VA: 0xA8E110
 		private void OnShowStatusWindow()
 		{
-			TodoLogger.Log(0, "OnShowStatusWindow");
+			TodoLogger.LogNotImplemented("OnShowStatusWindow");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F58C Offset: 0x72F58C VA: 0x72F58C
@@ -1222,7 +1222,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8E294 Offset: 0xA8E294 VA: 0xA8E294
 		private void OnShowChangeStatusButton()
 		{
-			TodoLogger.Log(0, "OnShowChangeStatusButton");
+			TodoLogger.LogNotImplemented("OnShowChangeStatusButton");
 		}
 
 		//// RVA: 0xA8E3E8 Offset: 0xA8E3E8 VA: 0xA8E3E8
@@ -1231,19 +1231,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8E530 Offset: 0xA8E530 VA: 0xA8E530
 		private void OnClickValkyrieButton()
 		{
-			TodoLogger.Log(0, "OnClickValkyrieButton");
+			TodoLogger.LogNotImplemented("OnClickValkyrieButton");
 		}
 
 		//// RVA: 0xA8E814 Offset: 0xA8E814 VA: 0xA8E814
 		private void OnStayValkyrieButton()
 		{
-			TodoLogger.Log(0, "OnStayValkyrieButton");
+			TodoLogger.LogNotImplemented("OnStayValkyrieButton");
 		}
 
 		//// RVA: 0xA8EA34 Offset: 0xA8EA34 VA: 0xA8EA34
 		private void OnClickUnitInfoChangeButton()
 		{
-			TodoLogger.Log(0, "OnClickUnitInfoChangeButton");
+			TodoLogger.LogNotImplemented("OnClickUnitInfoChangeButton");
 		}
 
 		//// RVA: 0xA83E8C Offset: 0xA83E8C VA: 0xA83E8C
@@ -1272,7 +1272,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8F050 Offset: 0xA8F050 VA: 0xA8F050
 		private void OnShowDivaStatus(int slotNumber, FFHPBEPOMAK divaData)
 		{
-			TodoLogger.Log(0, "OnShowDivaStatus");
+			TodoLogger.LogNotImplemented("OnShowDivaStatus");
 		}
 
 		//// RVA: 0xA8F1CC Offset: 0xA8F1CC VA: 0xA8F1CC
@@ -1291,31 +1291,31 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8F334 Offset: 0xA8F334 VA: 0xA8F334
 		private void OnSelectScene(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK divaData, GCIJNCFDNON sceneData)
 		{
-			TodoLogger.Log(0, "OnSelectScene");
+			TodoLogger.LogNotImplemented("OnSelectScene");
 		}
 
 		//// RVA: 0xA8F5B4 Offset: 0xA8F5B4 VA: 0xA8F5B4
 		private void OnShowSceneStatus(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK divaData, GCIJNCFDNON sceneData)
 		{
-			TodoLogger.Log(0, "OnShowSceneStatus");
+			TodoLogger.LogNotImplemented("OnShowSceneStatus");
 		}
 
 		//// RVA: 0xA8F73C Offset: 0xA8F73C VA: 0xA8F73C
 		private void OnShowFriendDivaStatus(EAJCBFGKKFA friendData)
 		{
-			TodoLogger.Log(0, "OnShowFriendDivaStatus");
+			TodoLogger.LogNotImplemented("OnShowFriendDivaStatus");
 		}
 
 		//// RVA: 0xA8F89C Offset: 0xA8F89C VA: 0xA8F89C
 		private void OnShowScoreInfoPopup()
 		{
-			TodoLogger.Log(0, "OnShowScoreInfoPopup");
+			TodoLogger.LogNotImplemented("OnShowScoreInfoPopup");
 		}
 
 		//// RVA: 0xA8FB84 Offset: 0xA8FB84 VA: 0xA8FB84
 		private void OnClickAutoSettingButton()
 		{
-			TodoLogger.Log(0, "OnClickAutoSettingButton");
+			TodoLogger.LogNotImplemented("OnClickAutoSettingButton");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F604 Offset: 0x72F604 VA: 0x72F604
@@ -1325,7 +1325,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA90044 Offset: 0xA90044 VA: 0xA90044
 		private void OnClickUnitSetButton()
 		{
-			TodoLogger.Log(0, "OnClickUnitSetButton");
+			TodoLogger.LogNotImplemented("OnClickUnitSetButton");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F67C Offset: 0x72F67C VA: 0x72F67C
@@ -1339,49 +1339,49 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA90214 Offset: 0xA90214 VA: 0xA90214
 		private void OnClickPrismSettingButton()
 		{
-			TodoLogger.Log(0, "OnClickPrismSettingButton");
+			TodoLogger.LogNotImplemented("OnClickPrismSettingButton");
 		}
 
 		//// RVA: 0xA90564 Offset: 0xA90564 VA: 0xA90564
 		private void OnClickUnitSettingButton()
 		{
-			TodoLogger.Log(0, "OnClickUnitSettingButton");
+			TodoLogger.LogNotImplemented("OnClickUnitSettingButton");
 		}
 
 		//// RVA: 0xA905E0 Offset: 0xA905E0 VA: 0xA905E0
 		private void OnClickGameSettingButton()
 		{
-			TodoLogger.Log(0, "OnClickGameSettingButton");
+			TodoLogger.LogNotImplemented("OnClickGameSettingButton");
 		}
 
 		//// RVA: 0xA90668 Offset: 0xA90668 VA: 0xA90668
 		private void OnChangeUnitSetSelect(int unitSetIndex, JLKEOGLJNOD unitData)
 		{
-			TodoLogger.Log(0, "OnChangeUnitSetSelect");
+			TodoLogger.LogNotImplemented("OnChangeUnitSetSelect");
 		}
 
 		//// RVA: 0xA9079C Offset: 0xA9079C VA: 0xA9079C
 		private void OnStartChangeUnitSetPage()
 		{
-			TodoLogger.Log(0, "OnStartChangeUnitSetPage");
+			TodoLogger.LogNotImplemented("OnStartChangeUnitSetPage");
 		}
 
 		//// RVA: 0xA90890 Offset: 0xA90890 VA: 0xA90890
 		private void OnEndChangeUnitSetPage()
 		{
-			TodoLogger.Log(0, "OnEndChangeUnitSetPage");
+			TodoLogger.LogNotImplemented("OnEndChangeUnitSetPage");
 		}
 
 		//// RVA: 0xA9092C Offset: 0xA9092C VA: 0xA9092C
 		private void OnClickUnitSetCloseButton()
 		{
-			TodoLogger.Log(0, "OnClickUnitSetCloseButton");
+			TodoLogger.LogNotImplemented("OnClickUnitSetCloseButton");
 		}
 
 		//// RVA: 0xA909A8 Offset: 0xA909A8 VA: 0xA909A8
 		private void OnClickUnitSetSelectButton(int tick)
 		{
-			TodoLogger.Log(0, "OnClickUnitSetSelectButton");
+			TodoLogger.LogNotImplemented("OnClickUnitSetSelectButton");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F76C Offset: 0x72F76C VA: 0x72F76C
@@ -1391,13 +1391,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA90AF0 Offset: 0xA90AF0 VA: 0xA90AF0
 		private void OnUnitSetLoad()
 		{
-			TodoLogger.Log(0, "OnUnitSetLoad");
+			TodoLogger.LogNotImplemented("OnUnitSetLoad");
 		}
 
 		//// RVA: 0xA90D30 Offset: 0xA90D30 VA: 0xA90D30
 		private void OnUnitSetSave()
 		{
-			TodoLogger.Log(0, "OnUnitSetSave");
+			TodoLogger.LogNotImplemented("OnUnitSetSave");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F7E4 Offset: 0x72F7E4 VA: 0x72F7E4
@@ -1413,13 +1413,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA912FC Offset: 0xA912FC VA: 0xA912FC
 		private void OnClickOriginalSetting()
 		{
-			TodoLogger.Log(0, "OnClickOriginalSetting");
+			TodoLogger.LogNotImplemented("OnClickOriginalSetting");
 		}
 
 		//// RVA: 0xA914E0 Offset: 0xA914E0 VA: 0xA914E0
 		private void OnClickPrismItems(PopupMvModeSelectListContent.SelectTarget target, int divaSlotNumber)
 		{
-			TodoLogger.Log(0, "OnClickPrismItems");
+			TodoLogger.LogNotImplemented("OnClickPrismItems");
 		}
 
 		//// RVA: 0xA89EAC Offset: 0xA89EAC VA: 0xA89EAC

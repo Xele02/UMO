@@ -376,13 +376,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17F0A14 Offset: 0x17F0A14 VA: 0x17F0A14
 		private void OnShowDivaStatus(int sortListIndex)
 		{
-			TodoLogger.Log(0, "OnShowDivaStatus");
+			TodoLogger.LogNotImplemented("OnShowDivaStatus");
 		}
 
 		//// RVA: 0x17F0C8C Offset: 0x17F0C8C VA: 0x17F0C8C
 		private void OnShowSelectedDivaSceneStatus(int slot)
 		{
-			TodoLogger.Log(0, "OnShowSelectedDivaSceneStatus");
+			TodoLogger.LogNotImplemented("OnShowSelectedDivaSceneStatus");
 		}
 
 		//// RVA: 0x17F0E9C Offset: 0x17F0E9C VA: 0x17F0E9C

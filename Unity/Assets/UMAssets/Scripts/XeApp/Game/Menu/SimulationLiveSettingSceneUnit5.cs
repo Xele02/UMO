@@ -278,13 +278,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CEEB4 Offset: 0x12CEEB4 VA: 0x12CEEB4
 		private void OnClickGameSettingButton()
 		{
-			TodoLogger.Log(0, "OnClickGameSettingButton");
+			TodoLogger.LogNotImplemented("OnClickGameSettingButton");
 		}
 
 		// // RVA: 0x12CEF38 Offset: 0x12CEF38 VA: 0x12CEF38
 		private void OnClickOriginalSetting()
 		{
-			TodoLogger.Log(0, "OnClickOriginalSetting");
+			TodoLogger.LogNotImplemented("OnClickOriginalSetting");
 		}
 
 		// // RVA: 0x12CF0E8 Offset: 0x12CF0E8 VA: 0x12CF0E8

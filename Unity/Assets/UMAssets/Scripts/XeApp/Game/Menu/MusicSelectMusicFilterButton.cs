@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 		{
 			m_button.AddOnClickCallback(() => {
 				//0x16792BC
-				TodoLogger.Log(0, "MusicSelectMusicFilterButton Click");
+				TodoLogger.LogNotImplemented("MusicSelectMusicFilterButton Click");
 			});
 		}
 

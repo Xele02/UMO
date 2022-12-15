@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA780B8 Offset: 0xA780B8 VA: 0xA780B8
 		private void OnShowCenterSkillDetails()
 		{
-			TodoLogger.Log(0, "OnShowCenterSkillDetails");
+			TodoLogger.LogNotImplemented("OnShowCenterSkillDetails");
 		}
 
 		//// RVA: 0xA7886C Offset: 0xA7886C VA: 0xA7886C
@@ -194,7 +194,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA78FC4 Offset: 0xA78FC4 VA: 0xA78FC4
 		private void OnShowSubPlateWindowButton()
 		{
-			TodoLogger.Log(0, "OnShowSubPlateWindowButton");
+			TodoLogger.LogNotImplemented("OnShowSubPlateWindowButton");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x730D9C Offset: 0x730D9C VA: 0x730D9C

@@ -381,13 +381,13 @@ namespace XeApp.Game.Menu
 
 			m_eventDetailButton.AddOnClickCallback(() => {
 				//0x1673ECC
-				TodoLogger.Log(0, "EventDetaliButton click");
+				TodoLogger.LogNotImplemented("EventDetaliButton click");
 			});
 			for(int i = 0; i < m_cdSelectButtons.Count; i++)
 			{
 				m_cdSelectButtons[i].onSelectButton = (int offset) => {
 					//0x1673EE0
-					TodoLogger.Log(0, "click m_cdSelectButtons");
+					TodoLogger.LogNotImplemented("click m_cdSelectButtons");
 				};
 
 			}
@@ -434,7 +434,7 @@ namespace XeApp.Game.Menu
 
 			m_playButton.AddOnClickCallback(() => {
 				//0x1673F54
-				TodoLogger.Log(0, "Play button click");
+				TodoLogger.LogNotImplemented("Play button click");
 			});
 			StartCoroutine(Co_Initialize());
 			return true;

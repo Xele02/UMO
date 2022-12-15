@@ -218,17 +218,17 @@ namespace XeApp.Game.Menu
 			m_musicList.MusicScrollView.CenterItem.OnMusicInfoButtonClickListener = () =>
 			{
 				//0xBF01A0
-				TodoLogger.Log(0, "OnMusicInfoButtonClickListener");
+				TodoLogger.LogNotImplemented("OnMusicInfoButtonClickListener");
 			};
 			m_musicList.MusicScrollView.CenterItem.OnEnemyInfoButtonClickListener = () =>
 			{
 				//0xBF01F0
-				TodoLogger.Log(0, "OnEnemyInfoButtonClickListener");
+				TodoLogger.LogNotImplemented("OnEnemyInfoButtonClickListener");
 			};
 			m_musicList.MusicScrollView.CenterItem.OnRankingButtonClickListener = () =>
 			{
 				//0xBF0240
-				TodoLogger.Log(0, "OnRankingButtonClickListener");
+				TodoLogger.LogNotImplemented("OnRankingButtonClickListener");
 			};
 			m_musicList.MusicScrollView.OnScrollStartEvent.RemoveAllListeners();
 			m_musicList.MusicScrollView.OnScrollStartEvent.AddListener(() =>
@@ -251,22 +251,22 @@ namespace XeApp.Game.Menu
 			m_musicDetail.OnMusicBookMarkButtonClickListener = () =>
 			{
 				//0xBF02D0
-				TodoLogger.Log(0, "OnMusicBookMarkButtonClickListener");
+				TodoLogger.LogNotImplemented("OnMusicBookMarkButtonClickListener");
 			};
 			m_musicDetail.OnJacketButtonClickListener = () =>
 			{
 				//0xBF036C
-				TodoLogger.Log(0, "OnJacketButtonClickListener");
+				TodoLogger.LogNotImplemented("OnJacketButtonClickListener");
 			};
 			m_musicDetail.OnEventDetailClickListener = () =>
 			{
 				//0xBF0370
-				TodoLogger.Log(0, "OnEventDetailClickListener");
+				TodoLogger.LogNotImplemented("OnEventDetailClickListener");
 			};
 			m_musicDetail.OnEventRewardClickListener = () =>
 			{
 				//0xBF0378
-				TodoLogger.Log(0, "OnEventRewardClickListener");
+				TodoLogger.LogNotImplemented("OnEventRewardClickListener");
 			};
 			m_difficultyButtonGroup.OnButtonClickListener = (int index) =>
 			{
@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 			m_filterButton.OnClickButtonListener = () =>
 			{
 				//0xBF0390
-				TodoLogger.Log(0, "m_filterButton OnClickButtonListener");
+				TodoLogger.LogNotImplemented("m_filterButton OnClickButtonListener");
 			};
 			m_seriesButtonGroup.OnButtonClickListener = (int index) =>
 			{
@@ -305,12 +305,12 @@ namespace XeApp.Game.Menu
 			m_utaRate.onClickButton = () =>
 			{
 				//0xBF0554
-				TodoLogger.Log(0, "m_utaRate onClickButton");
+				TodoLogger.LogNotImplemented("m_utaRate onClickButton");
 			};
 			m_eventBanner.OnButtonClickListener = () =>
 			{
 				//0xBF05C0
-				TodoLogger.Log(0, "m_eventBanner OnButtonClickListener");
+				TodoLogger.LogNotImplemented("m_eventBanner OnButtonClickListener");
 			};
 			m_choiceMusicTab.OnButtonClickListener = (bool index) =>
 			{
@@ -320,23 +320,23 @@ namespace XeApp.Game.Menu
 			m_orderButton.OnClickButtonListener = () =>
 			{
 				//0xBF0698
-				TodoLogger.Log(0, "m_orderButton OnClickButtonListener");
+				TodoLogger.LogNotImplemented("m_orderButton OnClickButtonListener");
 			};
 			m_jacketScroll.OnClickJacketButtonListener = (int freeMusicId) =>
 			{
 				//0xBF06B8
-				TodoLogger.Log(0, "m_jacketScroll OnClickJacketButtonListener");
+				TodoLogger.LogNotImplemented("m_jacketScroll OnClickJacketButtonListener");
 			};
 			m_jacketScroll.OnClickCloseButtonListener = () =>
 			{
 				//0xBF06BC
-				TodoLogger.Log(0, "m_jacketScroll OnClickCloseButtonListener");
+				TodoLogger.LogNotImplemented("m_jacketScroll OnClickCloseButtonListener");
 			};
 			m_jacketScroll.scrollList.OnUpdateItem.RemoveAllListeners();
 			m_jacketScroll.scrollList.OnUpdateItem.AddListener((int index, SwapScrollListContent content) =>
 			{
 				//0xBF06C0
-				TodoLogger.Log(0, "m_jacketScroll scrollList OnUpdateItem");
+				TodoLogger.LogNotImplemented("m_jacketScroll scrollList OnUpdateItem");
 			});
 			m_musicList.MusicScrollView.ScrollEnable(true);
 			ApplyCommonInfo();

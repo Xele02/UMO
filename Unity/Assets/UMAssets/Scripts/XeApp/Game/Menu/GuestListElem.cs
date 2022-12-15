@@ -324,7 +324,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xE284BC Offset: 0xE284BC VA: 0xE284BC
 		private void OnClickProfileCallback()
 		{
-			TodoLogger.Log(0, "OnClickProfileCallback");
+			TodoLogger.LogNotImplemented("OnClickProfileCallback");
 		}
 
 		// RVA: 0xE284C8 Offset: 0xE284C8 VA: 0xE284C8 Slot: 5

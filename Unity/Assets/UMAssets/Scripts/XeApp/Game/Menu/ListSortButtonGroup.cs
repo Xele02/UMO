@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1541EDC Offset: 0x1541EDC VA: 0x1541EDC
 		private void OnShowSortList()
 		{
-			TodoLogger.Log(0, "OnShowSortList");
+			TodoLogger.LogNotImplemented("OnShowSortList");
 		}
 
 		// // RVA: 0x154221C Offset: 0x154221C VA: 0x154221C
@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x15425CC Offset: 0x15425CC VA: 0x15425CC
 		private void OnChangeOrder()
 		{
-			TodoLogger.Log(0, "OnChangeOrder");
+			TodoLogger.LogNotImplemented("OnChangeOrder");
 		}
 
 		// // RVA: 0x15426CC Offset: 0x15426CC VA: 0x15426CC
@@ -143,13 +143,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x15427B8 Offset: 0x15427B8 VA: 0x15427B8
 		private void OnSelectedToggleButton(int index)
 		{
-			TodoLogger.Log(0, "OnSelectedToggleButton");
+			TodoLogger.LogNotImplemented("OnSelectedToggleButton");
 		}
 
 		// // RVA: 0x15427F0 Offset: 0x15427F0 VA: 0x15427F0
 		private void OnPopupLimitOverList()
 		{
-			TodoLogger.Log(0, "OnPopupLimitOverList");
+			TodoLogger.LogNotImplemented("OnPopupLimitOverList");
 		}
 
 		// // RVA: 0x154286C Offset: 0x154286C VA: 0x154286C

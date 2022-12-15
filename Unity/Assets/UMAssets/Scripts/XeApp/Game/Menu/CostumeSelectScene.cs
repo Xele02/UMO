@@ -522,7 +522,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E07CC Offset: 0x16E07CC VA: 0x16E07CC
 		private void OnClickViewOn()
 		{
-			TodoLogger.Log(0, "OnClickViewOn");
+			TodoLogger.LogNotImplemented("OnClickViewOn");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD22C Offset: 0x6CD22C VA: 0x6CD22C
@@ -567,7 +567,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E0AC4 Offset: 0x16E0AC4 VA: 0x16E0AC4
 		private void CB_GetInfo(int a_index)
 		{
-			TodoLogger.Log(0, "CB_GetInfo");
+			TodoLogger.LogNotImplemented("CB_GetInfo");
 		}
 
 		//// RVA: 0x16E0B40 Offset: 0x16E0B40 VA: 0x16E0B40
@@ -684,7 +684,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E189C Offset: 0x16E189C VA: 0x16E189C
 		private void CB_CostumeBuild()
 		{
-			TodoLogger.Log(0, "CB_CostumeBuild");
+			TodoLogger.LogNotImplemented("CB_CostumeBuild");
 		}
 	}
 }

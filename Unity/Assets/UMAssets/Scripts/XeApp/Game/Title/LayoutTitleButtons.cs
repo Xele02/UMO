@@ -49,7 +49,7 @@ namespace XeApp.Game.Title
 				{
 					m_Inheriting.AddOnClickCallback(() => {
 						//0xE3612C
-						TodoLogger.Log(0, "TODO");
+						TodoLogger.LogNotImplemented("MenuBarPrefab Inheriting");
 					});
 				}
 			}
@@ -57,7 +57,7 @@ namespace XeApp.Game.Title
 			{
 				m_Support.AddOnClickCallback(() => {
 					//0xE36198
-					TodoLogger.Log(0, "TODO");
+					TodoLogger.LogNotImplemented("LayoutTitleButtons.Support");
 				});
 			}
 		}

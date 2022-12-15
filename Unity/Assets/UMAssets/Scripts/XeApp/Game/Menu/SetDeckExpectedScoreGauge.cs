@@ -171,6 +171,9 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6DB38 Offset: 0xA6DB38 VA: 0xA6DB38
-		private void OnClickMinusButtonFunc() { }
+		private void OnClickMinusButtonFunc()
+		{
+			TodoLogger.LogNotImplemented("OnClickMinusButtonFunc");
+		}
 	}
 }

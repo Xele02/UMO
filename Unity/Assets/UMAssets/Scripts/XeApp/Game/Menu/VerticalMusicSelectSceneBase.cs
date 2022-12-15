@@ -753,7 +753,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAD03FC Offset: 0xAD03FC VA: 0xAD03FC
 		protected void OnClickRewardButton(Action openRewardWindowFunc)
 		{
-			TodoLogger.Log(0, "OnClickRewardButton");
+			TodoLogger.LogNotImplemented("OnClickRewardButton");
 		}
 
 		// // RVA: 0xAD0524 Offset: 0xAD0524 VA: 0xAD0524
