@@ -434,7 +434,22 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD04C Offset: 0x6CD04C VA: 0x6CD04C
 		//// RVA: 0x16E05BC Offset: 0x16E05BC VA: 0x16E05BC
-		//private IEnumerator Co_CostumeSaveAndSceneReturn() { }
+		private IEnumerator Co_CostumeSaveAndSceneReturn()
+		{
+			//0x1641CB8
+			bool isWait = true;
+			MenuScene.Instance.InputDisable();
+			MenuScene.Save(() =>
+			{
+				//0x16E1E24
+				isWait = false;
+			}, null);
+			while (isWait)
+				yield return null;
+			MenuScene.Instance.Return(true);
+			yield return null;
+			MenuScene.Instance.InputEnable();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD0C4 Offset: 0x6CD0C4 VA: 0x6CD0C4
 		//// RVA: 0x16E0650 Offset: 0x16E0650 VA: 0x16E0650
@@ -558,14 +573,113 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E0B40 Offset: 0x16E0B40 VA: 0x16E0B40
 		private void CB_CostumeChange()
 		{
-			TodoLogger.Log(0, "CB_CostumeChange");
+			CostumeSelectListWin.ItemInfo item = m_cos_list_win.GetSelectItem();
+			if(item.m_is_have)
+			{
+				SoundManager.Instance.sePlayerBoot.Play(3);
+				m_costume_id = item.m_cos_id;
+				m_costume_model_id = item.m_cos_model_id;
+				m_costume_color = item.m_cos_color;
+				FFHPBEPOMAK divaInfo;
+				if (!m_is_godiva)
+				{
+					divaInfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_diva_index];
+				}
+				else
+				{
+					divaInfo = null;
+					TodoLogger.Log(0, "CB_CostumeChange divaGo");
+				}
+				if(m_transitionName == TransitionList.Type.COSTUME_SELECT)
+				{
+					m_costume_window.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("popup_title_02");
+					m_costume_window.WindowSize = SizeType.Large;
+					m_costume_window.Buttons = new ButtonInfo[2] {
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+					};
+					m_costume_window.SetParent(transform);
+					m_costume_window.beforeData = divaInfo;
+					m_costume_window.afterData = item.m_view_diva;
+					m_costume_window.afterData.JEIGPGNJJCP_SetCostumeColor(item.m_cos_color);
+					PopupWindowManager.Show(m_costume_window, ChangeCostume, ChangeTabContens, null, null);
+				}
+			}
 		}
 
 		//// RVA: 0x16E1138 Offset: 0x16E1138 VA: 0x16E1138
-		//private void ChangeCostume(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void ChangeCostume(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if (type != PopupButton.ButtonType.Positive)
+				return;
+			CostumeSelectListWin.ItemInfo item = m_cos_list_win.GetSelectItem();
+			if (!item.m_is_have)
+				return;
+			item.m_view_diva.LEHDLBJJBNC();
+			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
+			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
+			FFHPBEPOMAK currentDiva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_diva_index];
+			int divaId = currentDiva.AHHJLDLAPAN_DivaId;
+			int oldCostumeId = 0;
+			int oldColorId = 0;
+			int oldHomeCostumeId = 0;
+			int oldHomeColorId = 0;
+			int newCostumeId = 0;
+			int newColorId = 0;
+			int newHomeCostumeId = 0;
+			int newHomeColorId = 0;
+			if (m_transitionName == TransitionList.Type.COSTUME_SELECT)
+			{
+				oldCostumeId = currentDiva.JPIDIENBGKH_CostumeId;
+				oldColorId = currentDiva.EKFONBFDAAP_ColorId;
+				oldHomeCostumeId = currentDiva.KIIMFCFMMDN_HomeCostumeId;
+				oldHomeColorId = currentDiva.JFFLFIMIMOI_HomeColorId;
+				GameManager.Instance.ViewPlayerData.HOOJOFACOEK_SetCostume(divaId, m_costume_id, m_costume_color);
+				bool homeSync = false;
+				if(m_costume_window.costumeInfoWindow.IsHomeCostumeReflect)
+				{
+					GameManager.Instance.ViewPlayerData.OPDBFHFKKJN_SetHomeCostume(divaId, m_costume_id, m_costume_color);
+					homeSync = true;
+				}
+				newCostumeId = currentDiva.JPIDIENBGKH_CostumeId;
+				newColorId = currentDiva.EKFONBFDAAP_ColorId;
+				newHomeCostumeId = currentDiva.KIIMFCFMMDN_HomeCostumeId;
+				newHomeColorId = currentDiva.JFFLFIMIMOI_HomeColorId;
+				if(homeSync)
+				{
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId = divaId;
+				}
+			}
+			bool b = false;
+			if(oldCostumeId != newCostumeId || oldColorId != newColorId)
+			{
+				ILCCJNDFFOB.HHCJCDFCLOB.DBIDGHMFLIC(divaId, oldCostumeId, newCostumeId, oldColorId, newColorId);
+				b = true;
+			}
+			if(oldHomeCostumeId != newHomeCostumeId || oldHomeColorId != newHomeColorId)
+			{
+				ILCCJNDFFOB.HHCJCDFCLOB.CJCJNKOPIKB(divaId, oldHomeCostumeId, newHomeCostumeId, oldHomeColorId, newHomeColorId);
+				b = true;
+			}
+			if (b)
+			{
+				if (GNGMCIAIKMA.HHCJCDFCLOB != null)
+				{
+					GNGMCIAIKMA.HHCJCDFCLOB.GJENEJOANEL(DKFJADMCNPI.NLKCMNHOBAI.HOOJOFACOEK/*7*/, divaId, 1, null);
+					GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA(null, -1);
+				}
+			}
+
+			//LAB_016e1740
+			m_cos_list_win.Exit();
+			StartCoroutine(Co_CostumeSaveAndSceneReturn());
+		}
 
 		//// RVA: 0x16E17A4 Offset: 0x16E17A4 VA: 0x16E17A4
-		//private void ChangeTabContens(IPopupContent content, PopupTabButton.ButtonLabel label) { }
+		private void ChangeTabContens(IPopupContent content, PopupTabButton.ButtonLabel label)
+		{
+			(content as PopupTabContents).ChangeContents((int)label);
+		}
 
 		//// RVA: 0x16E189C Offset: 0x16E189C VA: 0x16E189C
 		private void CB_CostumeBuild()

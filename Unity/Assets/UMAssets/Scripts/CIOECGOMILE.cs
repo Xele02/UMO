@@ -456,6 +456,7 @@ public class CIOECGOMILE
 	public bool AIKJMHBDABF(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG, List<long> AMOMNBEAHBF)
 	{
 		TodoLogger.Log(0, "TODO");
+		BHFHGFKBOHH();
 		return false;
 	}
 

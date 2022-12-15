@@ -819,7 +819,23 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB353C4 Offset: 0xB353C4 VA: 0xB353C4
-		// public static void Save(IMCBBOAFION onSuccess, DJBHIFLHJLK onError) { }
+		public static void Save(IMCBBOAFION onSuccess, DJBHIFLHJLK onError)
+		{
+			if(!GameManager.Instance.IsTutorial)
+			{
+				CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF(() =>
+				{
+					//0xB38814
+					JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+					if (onSuccess != null)
+						onSuccess();
+				}, () =>
+				{
+					//0xB3885C
+					TodoLogger.Log(0, "Save error");
+				}, null);
+			}
+		}
 
 		// // RVA: 0xB355A0 Offset: 0xB355A0 VA: 0xB355A0
 		private void ChangeGroupCategory(SceneGroupCategory prevCategory, SceneGroupCategory nextCategory)

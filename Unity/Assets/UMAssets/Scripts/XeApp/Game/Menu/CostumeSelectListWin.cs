@@ -156,7 +156,9 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x164730C Offset: 0x164730C VA: 0x164730C
 		private void CB_CostumeChange()
 		{
-			TodoLogger.Log(0, "CB_CostumeChange");
+			DisableNewMark(m_index_try);
+			if (m_cb_cos_change != null)
+				m_cb_cos_change();
 		}
 
 		//// RVA: 0x1647338 Offset: 0x1647338 VA: 0x1647338
@@ -333,7 +335,10 @@ namespace XeApp.Game.Menu
 		//public void Leave() { }
 
 		//// RVA: 0x1648474 Offset: 0x1648474 VA: 0x1648474
-		//public void Exit() { }
+		public void Exit()
+		{
+			m_swapScrollList.enabled = false;
+		}
 
 		//// RVA: 0x16471E0 Offset: 0x16471E0 VA: 0x16471E0
 		public void DisableNewMark(int a_index)

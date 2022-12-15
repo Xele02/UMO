@@ -704,10 +704,29 @@ namespace XeApp.Game.Common
 		// public PopupButton FindButton(PopupButton.ButtonType type) { }
 
 		// // RVA: 0x1BBC234 Offset: 0x1BBC234 VA: 0x1BBC234
-		// public void ForceChangeScrollPosition(float value) { }
+		public void ForceChangeScrollPosition(float value)
+		{
+			m_scrollRect.verticalScrollbar.value = value;
+		}
 
 		// // RVA: 0x1BBC288 Offset: 0x1BBC288 VA: 0x1BBC288
-		// public void ResetScroll(PopupSetting setting, IPopupContent content, float scrollPosition = 1) { }
+		public void ResetScroll(PopupSetting setting, IPopupContent content, float scrollPosition = 1)
+		{
+			m_scrollRect.content = setting.Content.GetComponent<RectTransform>();
+			if (content.IsScrollable())
+			{
+				m_scrollRect.enabled = true;
+				m_scrollRect.verticalScrollbar.gameObject.SetActive(true);
+				m_rectMask.enabled = true;
+			}
+			else
+			{
+				m_scrollRect.enabled = false;
+				m_scrollRect.verticalScrollbar.gameObject.SetActive(false);
+				m_rectMask.enabled = false;
+			}
+			ForceChangeScrollPosition(scrollPosition);
+		}
 
 		// // RVA: 0x1BBC534 Offset: 0x1BBC534 VA: 0x1BBC534
 		// public void StopScrollMovement() { }
