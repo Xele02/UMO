@@ -70,7 +70,9 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 		// // RVA: 0x14F7038 Offset: 0x14F7038 VA: 0x14F7038
 		public bool CGKAEMGLHNK_Possessed()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "CGKAEMGLHNK_Possessed");
+			if (RuntimeSettings.CurrentSettings.ForceCostumeUnlock)
+				return true;
 			return false;
 		}
 

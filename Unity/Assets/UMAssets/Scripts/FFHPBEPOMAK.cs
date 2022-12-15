@@ -90,7 +90,10 @@ public class FFHPBEPOMAK
 	public FFHPBEPOMAK.CLKBDNBMJCO IHANGGCHPAL { get; private set; } = new FFHPBEPOMAK.CLKBDNBMJCO(); // 0x74 DCLILLHDINA NIBJBLCDIHD MBAKEDKIJDG
 
 	// RVA: 0x14DE1BC Offset: 0x14DE1BC VA: 0x14DE1BC
-	// public void LEHDLBJJBNC() { }
+	public void LEHDLBJJBNC()
+	{
+		TodoLogger.Log(0, "LEHDLBJJBNC");
+	}
 
 	// RVA: 0x14DE4E0 Offset: 0x14DE4E0 VA: 0x14DE4E0
 	public void KHEKNNFCAOI(int AHHJLDLAPAN_DivaId, BBHNACPENDM_ServerSaveData NIMOGBDCMLJ, bool OJEBNBLHPNP = false)
@@ -452,7 +455,7 @@ public class FFHPBEPOMAK
 						}
 						else
 						{
-							if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[a - 1].BEBJKJKBOGH_Date != 0)
+							if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[a - 1].BEBJKJKBOGH_Date != 0 || RuntimeSettings.CurrentSettings.ForceCardsUnlock)
 							{
 								FFHPBEPOMAK data = new FFHPBEPOMAK();
 								data.KHEKNNFCAOI(AHHJLDLAPAN, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, false);

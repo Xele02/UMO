@@ -70,6 +70,7 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceDivaUnlock = true;
 	public bool ForceCostumeUnlock = true;
 	public bool ForceSongUnlock = true;
+	public bool ForceCardsUnlock = true;
 	public bool ForceSimulationOpen = true;
 	public bool ForceTutoSkip = true;
 

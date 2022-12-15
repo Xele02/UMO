@@ -121,6 +121,21 @@ namespace XeApp.Game.Common
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operationDiva;
 
+			strBuilder.SetFormat("diva_{0:D3}_menu_idle_body", m_loadedDivaId);
+			overrideClipList.Add(new MotionOverrideSingleResource("diva_cmn_simple_idle_body", operationDiva.GetAsset<AnimationClip>(strBuilder.ToString()), MotionOverrideSingleResource.Target.Body));
+
+			strBuilder.SetFormat("diva_{0:D3}_menu_idle_face", m_loadedDivaId);
+			overrideClipList.Add(new MotionOverrideSingleResource("diva_cmn_simple_idle_face", operationDiva.GetAsset<AnimationClip>(strBuilder.ToString()), MotionOverrideSingleResource.Target.Face));
+
+			strBuilder.SetFormat("diva_{0:D3}_menu_idle_body", m_loadedDivaId);
+			overrideClipList.Add(new MotionOverrideSingleResource("diva_cmn_simple_idle_mouth", operationDiva.GetAsset<AnimationClip>(strBuilder.ToString()), MotionOverrideSingleResource.Target.Mouth));
+
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+
+			bundleName.SetFormat("dv/cl/cs/{0:D3}.xab", m_loadedDivaId);
+			operationDiva = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operationDiva;
+
 			strBuilder.SetFormat("diva_{0:D3}_start_body", m_loadedDivaId);
 			overrideClipList.Add(new MotionOverrideSingleResource("diva_cmn_simple_loop_start_body", operationDiva.GetAsset<AnimationClip>(strBuilder.ToString()), MotionOverrideSingleResource.Target.Body));
 

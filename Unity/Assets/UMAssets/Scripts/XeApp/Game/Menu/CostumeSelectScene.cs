@@ -537,7 +537,16 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E09A4 Offset: 0x16E09A4 VA: 0x16E09A4
 		private void CB_Try(int a_index)
 		{
-			TodoLogger.Log(0, "CB_Try");
+			SoundManager.Instance.sePlayerBoot.Play(3);
+			CostumeSelectListWin.ItemInfo item = m_cos_list_win.GetItem(a_index);
+			if(item.m_is_new)
+			{
+				item.m_is_new = false;
+				item.m_view_diva.LEHDLBJJBNC();
+			}
+			m_pushedTrying = true;
+			m_next_costume_model_id = item.m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+			m_next_costume_color = item.m_cos_color;
 		}
 
 		//// RVA: 0x16E0AC4 Offset: 0x16E0AC4 VA: 0x16E0AC4

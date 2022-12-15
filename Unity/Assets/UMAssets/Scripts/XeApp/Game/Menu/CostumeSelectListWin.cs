@@ -141,7 +141,10 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x164713C Offset: 0x164713C VA: 0x164713C
 		private void CB_Try(int a_index)
 		{
-			TodoLogger.Log(0, "CB_Try");
+			DisableNewMark(a_index);
+			m_index_try = a_index;
+			m_swapScrollList.VisibleRegionUpdate();
+			m_cb_try.Invoke(a_index);
 		}
 
 		//// RVA: 0x1647298 Offset: 0x1647298 VA: 0x1647298
@@ -284,6 +287,7 @@ namespace XeApp.Game.Menu
 					i++;
 				}
 			}
+			m_list_item.Clear();
 			m_list_item.AddRange(l1);
 			m_list_item.AddRange(l2);
 			if(a_first_transition)
@@ -313,7 +317,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1648288 Offset: 0x1648288 VA: 0x1648288
-		//public CostumeSelectListWin.ItemInfo GetItem(int a_index) { }
+		public ItemInfo GetItem(int a_index)
+		{
+			return m_list_item[a_index];
+		}
 
 		//// RVA: 0x1648308 Offset: 0x1648308 VA: 0x1648308
 		public void Enter()
@@ -329,7 +336,22 @@ namespace XeApp.Game.Menu
 		//public void Exit() { }
 
 		//// RVA: 0x16471E0 Offset: 0x16471E0 VA: 0x16471E0
-		//public void DisableNewMark(int a_index) { }
+		public void DisableNewMark(int a_index)
+		{
+			ItemInfo item = GetItem(a_index);
+			if (!item.m_is_new)
+				return;
+			if(item.m_cos_color == 0)
+			{
+				item.m_view_diva.LEHDLBJJBNC();
+			}
+			else
+			{
+				item.m_view_diva.FFKMJNHFFFL_Costume.PDADHMIODCA(item.m_cos_color, false);
+			}
+			item.m_is_new = false;
+			m_swapScrollList.VisibleRegionUpdate();
+		}
 
 		//// RVA: 0x16484A4 Offset: 0x16484A4 VA: 0x16484A4
 		public void HiddenButtonCostumeUpgrade(bool a_hidden)
