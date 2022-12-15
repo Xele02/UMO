@@ -276,6 +276,11 @@ namespace XeApp.Game.Common
 		//public void OverrideAnimations(List<DivaResource.MotionOverrideClipKeyResource> resource) { }
 
 		//// RVA: 0x1C11E8C Offset: 0x1C11E8C VA: 0x1C11E8C
-		//public void OverrideAnimations(DivaResource.MotionOverrideSingleResource resource) { }
+		public void OverrideAnimations(DivaResource.MotionOverrideSingleResource resource)
+		{
+			if (resource.target != DivaResource.MotionOverrideSingleResource.Target.Face && resource.target != DivaResource.MotionOverrideSingleResource.Target.Mouth)
+				return;
+			overrideController[resource.name] = resource.clip;
+		}
 	}
 }

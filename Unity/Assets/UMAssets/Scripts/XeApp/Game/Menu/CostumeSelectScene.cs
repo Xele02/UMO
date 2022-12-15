@@ -468,7 +468,8 @@ namespace XeApp.Game.Menu
 			divaResource.ReleaseCostume();
 			StartCoroutine(divaResource.Co_LoadCostume(m_costume_model_id, () =>
 			{
-				Method$XeApp.Game.Menu.CostumeSelectScene.<>c__DisplayClass56_0.<CoroutineDivaModel>b__0()
+				//0x16E1E84
+				isWait = false;
 			}));
 			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 				yield return null;
@@ -479,9 +480,9 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.divaManager.OverrideAnimations(divaResource.overrideClipList);
 			if(divaResource.materialList.Count > 0)
 			{
-				MenuScene.Instance.divaManager.ChangeCostumeTexture(divaResource.materialList[m_costume_color]);
+				MenuScene.Instance.divaManager.ChangeCostumeTexture(divaResource.materialList[m_costume_color], m_costume_color);
 			}
-			while (MenuScene.Instance.divaManager.IsLoading())
+			while (MenuScene.Instance.divaManager.IsLoading)
 				yield return null;
 			MenuScene.Instance.divaManager.OnIdle("simple_idle");
 			if(isTrying)
@@ -515,7 +516,20 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD2A4 Offset: 0x6CD2A4 VA: 0x6CD2A4
 		//// RVA: 0x16E08EC Offset: 0x16E08EC VA: 0x16E08EC
-		//private IEnumerator Co_WaitDiva() { }
+		private IEnumerator Co_WaitDiva()
+		{
+			//0x16E5338
+			while (voicePlayBack.GetStatus() != CriAtomExPlayback.Status.Removed)
+				yield return null;
+			MenuScene.Instance.divaManager.SetAnimParamInteger("menu_simpleLoopStart_State", 2);
+			int hash = Animator.StringToHash("simple_idle");
+			while (!MenuScene.Instance.divaManager.IsCurrentBodyState(hash))
+				yield return null;
+			MenuScene.Instance.divaManager.SetAnimParamInteger("menu_simpleLoopStart_State", 0);
+			divaWaitCoroutine = null;
+			yield return new WaitForSeconds(0.1f);
+			GameManager.Instance.SetFPS(30);
+		}
 
 		//// RVA: 0x16E0998 Offset: 0x16E0998 VA: 0x16E0998
 		//private void SetNextCostume(int modelId, int colorId) { }

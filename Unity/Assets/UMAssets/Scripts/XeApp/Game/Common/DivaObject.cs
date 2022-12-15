@@ -152,7 +152,20 @@ namespace XeApp.Game.Common
 		//public void OverrideAnimations(List<DivaResource.MotionOverrideClipKeyResource> resource) { }
 
 		//// RVA: 0x1BF3E4C Offset: 0x1BF3E4C VA: 0x1BF3E4C
-		//public void OverrideAnimations(List<DivaResource.MotionOverrideSingleResource> resource) { }
+		public void OverrideAnimations(List<DivaResource.MotionOverrideSingleResource> resource)
+		{
+			for(int i = 0; i < resource.Count; i++)
+			{
+				if(resource[i].target == DivaResource.MotionOverrideSingleResource.Target.Body)
+				{
+					overrideController[resource[i].name] = resource[i].clip;
+				}
+				else
+				{
+					facialBlendAnimMediator.OverrideAnimations(resource[i]);
+				}
+			}
+		}
 
 		//// RVA: 0x1BF4048 Offset: 0x1BF4048 VA: 0x1BF4048
 		//public void OverrideAnimation(ref DivaResource.MotionOverrideClipKeyResource resource) { }
@@ -271,7 +284,18 @@ namespace XeApp.Game.Common
 		//public void ChangeMaterial(DivaResource outerResource, int colorId) { }
 
 		//// RVA: 0x1BF4670 Offset: 0x1BF4670 VA: 0x1BF4670
-		//public void SetEnableRenderer(bool enable) { }
+		public void SetEnableRenderer(bool enable)
+		{
+			foreach(var r in renderers)
+			{
+				if(r != null)
+				{
+					r.enabled = enable;
+				}
+			}
+			SetActiveEffect(enable);
+			SetActiveWind(enable);
+		}
 
 		//// RVA: 0x1BF4828 Offset: 0x1BF4828 VA: 0x1BF4828
 		public void Release()

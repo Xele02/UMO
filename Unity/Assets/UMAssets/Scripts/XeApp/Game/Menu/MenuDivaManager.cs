@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Game.Common;
 using XeSys;
@@ -99,10 +100,27 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECAA24 Offset: 0xECAA24 VA: 0xECAA24
-		//public void Load(DivaResource outerResource, int divaId, int modelId, int colorId, bool defaultVisible = True) { }
+		public void Load(DivaResource outerResource, int divaId, int modelId, int colorId, bool defaultVisible = true)
+		{
+			IsLoading = true;
+			if(divaObject == null)
+			{
+				GameObject g = Instantiate(divaPrefab);
+				g.transform.parent = gameObject.transform;
+				divaObject = g.GetComponent<MenuDivaObject>();
+			}
+			divaMenuParam = resource.divaMenuParam;
+			divaObject.Initialize(outerResource, divaId, false);
+			divaObject.SetEnableRenderer(defaultVisible);
+			ApplyCameraPos(divaId, 0);
+			IsLoading = false;
+		}
 
 		//// RVA: 0xECAE44 Offset: 0xECAE44 VA: 0xECAE44
-		//public void ChangeCostumeTexture(List<Material> mtlList, int colorId) { }
+		public void ChangeCostumeTexture(List<Material> mtlList, int colorId)
+		{
+			divaObject.ChangeCostumeTexture(mtlList, colorId);
+		}
 
 		//// RVA: 0xECAE80 Offset: 0xECAE80 VA: 0xECAE80
 		//public void IdleCrossFade(string stateName = "") { }
@@ -114,7 +132,10 @@ namespace XeApp.Game.Menu
 		//public void PlayFacialBlendAnimator(string stateName, int layerIndex) { }
 
 		//// RVA: 0xECAF2C Offset: 0xECAF2C VA: 0xECAF2C
-		//public bool IsCurrentBodyState(int hash) { }
+		public bool IsCurrentBodyState(int hash)
+		{
+			return divaObject.IsCurrentBodyState(hash);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C700C Offset: 0x6C700C VA: 0x6C700C
 		//// RVA: 0xECAF60 Offset: 0xECAF60 VA: 0xECAF60
@@ -145,7 +166,11 @@ namespace XeApp.Game.Menu
 		//public bool GetEnableDivaWind() { }
 
 		//// RVA: 0xECB1EC Offset: 0xECB1EC VA: 0xECB1EC
-		//public void SetEnableRenderer(bool visible) { }
+		public void SetEnableRenderer(bool visible)
+		{
+			if (divaObject != null)
+				divaObject.SetEnableRenderer(visible);
+		}
 
 		//// RVA: 0xECB2A8 Offset: 0xECB2A8 VA: 0xECB2A8
 		//public void SetPosition(Vector3 position) { }
@@ -186,7 +211,11 @@ namespace XeApp.Game.Menu
 		//public void OverrideAnimations(List<DivaResource.MotionOverrideClipKeyResource> resource) { }
 
 		//// RVA: 0xECB6EC Offset: 0xECB6EC VA: 0xECB6EC
-		//public void OverrideAnimations(List<DivaResource.MotionOverrideSingleResource> resource) { }
+		public void OverrideAnimations(List<DivaResource.MotionOverrideSingleResource> resource)
+		{
+			if (divaObject != null)
+				divaObject.OverrideAnimations(resource);
+		}
 
 		//// RVA: 0xECB7A8 Offset: 0xECB7A8 VA: 0xECB7A8
 		public void SetAnimParamInteger(string paramName, int value)
@@ -220,7 +249,15 @@ namespace XeApp.Game.Menu
 		//public bool IsChangingCameraRot() { }
 
 		//// RVA: 0xECAC40 Offset: 0xECAC40 VA: 0xECAC40
-		//public void ApplyCameraPos(int divaId, DivaMenuParam.CameraPosType type = 0) { }
+		public void ApplyCameraPos(int divaId, DivaMenuParam.CameraPosType type = 0)
+		{
+			Vector3 localPos = divaCamera.transform.localPosition;
+			if(divaMenuParam != null)
+			{
+				localPos.y = divaMenuParam.CameraPosY(type)[divaId - 1];
+			}
+			divaCamera.transform.localPosition = localPos;
+		}
 
 		//// RVA: 0xECBB4C Offset: 0xECBB4C VA: 0xECBB4C
 		//public void SwitchCameraRender(DivaCameraRenderSwitch renderSwitch) { }

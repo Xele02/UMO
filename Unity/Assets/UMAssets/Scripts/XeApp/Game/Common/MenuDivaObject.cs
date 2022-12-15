@@ -173,7 +173,10 @@ namespace XeApp.Game.Common
 		//public void PlayFacialBlendAnimator(string stateName, int layerIndex) { }
 
 		//// RVA: 0x1110D28 Offset: 0x1110D28 VA: 0x1110D28
-		//public bool IsCurrentBodyState(int hash) { }
+		public bool IsCurrentBodyState(int hash)
+		{
+			return animator.GetCurrentAnimatorStateInfo(0).shortNameHash == hash;
+		}
 
 		//// RVA: 0x1110DB4 Offset: 0x1110DB4 VA: 0x1110DB4
 		//public void Result() { }
@@ -290,7 +293,38 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1112858 Offset: 0x1112858 VA: 0x1112858
-		//public void ChangeCostumeTexture(List<Material> mtlList, int colorId) { }
+		public void ChangeCostumeTexture(List<Material> mtlList, int colorId)
+		{
+			colorId_ = colorId;
+			if(rendererDict.Count == 0)
+			{
+				StringBuilder str = new StringBuilder(64);
+				divaPrefab.GetComponentsInChildren(rendererComponentList);
+				for(int i = 0; i < rendererComponentList.Count; i++)
+				{
+					str.Set(rendererComponentList[i].material.name);
+					str.Replace(" (Instance)", "");
+					List<Renderer> r_;
+					if(!rendererDict.TryGetValue(str.ToString().GetHashCode(), out r_))
+					{
+						r_ = new List<Renderer>();
+						rendererDict.Add(str.ToString().GetHashCode(), r_);
+					}
+					r_.Add(rendererComponentList[i]);
+				}
+			}
+			for (int i = 0; i < mtlList.Count; i++)
+			{
+				List<Renderer> r_;
+				if (rendererDict.TryGetValue(mtlList[i].name.GetHashCode(), out r_))
+				{
+					for(int j = 0; j < r_.Count; j++)
+					{
+						r_[j].material = mtlList[i];
+					}
+				}
+			}
+		}
 
 		// RVA: 0x1112E2C Offset: 0x1112E2C VA: 0x1112E2C Slot: 8
 		protected override void SetupEffectObject(List<GameObject> a_effect)

@@ -103,7 +103,4 @@ public class MOEALEGLGCH
 	//[IteratorStateMachineAttribute] // RVA: 0x740704 Offset: 0x740704 VA: 0x740704
 	//// RVA: 0x17B5D1C Offset: 0x17B5D1C VA: 0x17B5D1C
 	//private IEnumerator FOALKNNPKHG(int AHHJLDLAPAN, int CBGMGJLLDOO, IMCBBOAFION BHFHGFKBOHH) { }
-
-	// RVA: 0x17B5DFC Offset: 0x17B5DFC VA: 0x17B5DFC
-	public void .ctor() { }
 }

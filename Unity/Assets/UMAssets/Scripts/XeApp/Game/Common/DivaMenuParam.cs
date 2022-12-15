@@ -5,6 +5,13 @@ namespace XeApp.Game.Common
 {
 	public class DivaMenuParam : ScriptableObject
 	{
+		public enum CameraPosType
+		{
+			Default = 0,
+			BattleResult = 1,
+			_Num = 2,
+		}
+
 		[SerializeField]
 		private List<int> m_reactionWeights; // 0xC
 		[SerializeField]
@@ -15,6 +22,11 @@ namespace XeApp.Game.Common
 		public IList<int> ReactionWeights { get { return m_reactionWeights; } } // get_ReactionWeights 0x1BF00FC 
 
 		// // RVA: 0x1BF0104 Offset: 0x1BF0104 VA: 0x1BF0104
-		// public IList<float> CameraPosY(DivaMenuParam.CameraPosType type) { }
+		public IList<float> CameraPosY(DivaMenuParam.CameraPosType type)
+		{
+			if (type == CameraPosType.BattleResult)
+				return m_battleResultCameraPosY;
+			return m_cameraPosY;
+		}
 	}
 }

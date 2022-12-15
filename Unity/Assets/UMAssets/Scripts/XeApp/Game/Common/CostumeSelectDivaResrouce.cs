@@ -169,7 +169,7 @@ namespace XeApp.Game.Common
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 
-			assetName.SetFormat("diva_{0:D3}_cos_{1:D3}_prefab", m_loadedColorId, modelId);
+			assetName.SetFormat("diva_{0:D3}_cos_{1:D3}_prefab", m_loadedDivaId, modelId);
 			divaPrefab = operation.GetAsset<GameObject>(assetName.ToString());
 
 			List<Material> mtlList = new List<Material>();
@@ -242,8 +242,11 @@ namespace XeApp.Game.Common
 			}
 			materialList.Clear();
 			divaPrefab = null;
-			prefabEffect.Clear();
-			prefabEffect = null;
+			if (prefabEffect != null)
+			{
+				prefabEffect.Clear();
+				prefabEffect = null;
+			}
 			boneSpringResource.Release();
 		}
 
