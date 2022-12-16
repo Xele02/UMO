@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using XeApp.Game.Common;
@@ -1197,7 +1198,31 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA89B68 Offset: 0xA89B68 VA: 0xA89B68
 		private void OnPlayButton()
 		{
-			TodoLogger.LogNotImplemented("OnPlayButton");
+			OnClickAnyButtons();
+			//NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			SoundManager.Instance.sePlayerBoot.Play(1);
+			m_useLiveSkipTicketCount = 3257895;
+			UpdatePrismData(m_viewMusicData.DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo);
+			if(!CheckSetAllDiva())
+			{
+				NotSetAllDivaShow();
+				return;
+			}
+			m_isDoSkip = IsForceSkip();
+			if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DCJKPJFIJKH_IsNotesSpeedAutoRejected())
+			{
+				if(!m_isDoSkip)
+				{
+					PreGameSettingShow(AdvanceGame);
+					return;
+				}
+			}
+			else if(!m_isDoSkip)
+			{
+				AdvanceGame();
+				return;
+			}
+			PreGameSkipShow(AdvanceGame);
 		}
 
 		//// RVA: 0xA8C708 Offset: 0xA8C708 VA: 0xA8C708
@@ -1207,29 +1232,166 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA8A680 Offset: 0xA8A680 VA: 0xA8A680
-		//private void PreGameSkipShow(Action onContinue) { }
+		private void PreGameSkipShow(Action onContinue)
+		{
+			TodoLogger.Log(0, "PreGameSkipShow");
+			onContinue();
+		}
 
 		//// RVA: 0xA8C374 Offset: 0xA8C374 VA: 0xA8C374
-		//private void PreGameSettingShow(Action onContinue) { }
+		private void PreGameSettingShow(Action onContinue)
+		{
+			PopupConfigPreGameSetting setting = new PopupConfigPreGameSetting();
+			setting.WindowSize = SizeType.Large;
+			setting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("config_text_21");
+			setting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			MenuScene.Instance.InputDisable();
+			PopupWindowManager.Show(setting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xA92F08
+				bool isSave = type == PopupButton.ButtonType.Positive;
+				bool isPositive = isSave;
+				ConfigManager.Instance.ApplyValue(isSave, () =>
+				{
+					//0xA93044
+					MenuScene.Instance.InputEnable();
+					if (!isPositive)
+						return;
+					if (!ConfigManager.Instance.GetNotesSpeedAutoRejected())
+					{
+						if(onContinue != null)
+						{
+							onContinue();
+						}
+						return;
+					}
+					SettingCompleteShow(onContinue);
+				});
+			}, null, null, null);
+		}
 
 		//// RVA: 0xA8B940 Offset: 0xA8B940 VA: 0xA8B940
-		//private void AdvanceGame() { }
+		private void AdvanceGame()
+		{
+			bool isNotUpdate = false;
+			if(m_isRaidEvent)
+			{
+				TodoLogger.Log(0, "Event raid");
+			}
+			Database.Instance.gameSetup.teamInfo.SetupInfo(m_paramCalculator.AddStatus, m_playerData, 0, m_viewMusicData, m_viewFriendPlayerData, m_paramCalculator.LimitOverStatus, m_prismData, m_isGoDivaEvent);
+			AdvanceGame(m_paramCalculator.AddStatus, m_playerData, m_viewFriendPlayerData, m_paramCalculator.LimitOverStatus, m_isDoSkip, m_useLiveSkipTicketCount ^ 3257895, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), m_paramCalculator.LogParams, isNotUpdate);
+		}
 
 		//// RVA: 0xA8D2EC Offset: 0xA8D2EC VA: 0xA8D2EC
-		//private void SettingCompleteShow(Action onClose) { }
+		private void SettingCompleteShow(Action onClose)
+		{
+			TextPopupSetting setting = PopupWindowManager.CrateTextContent("", SizeType.Small, MessageManager.Instance.GetBank("menu").GetMessageByLabel("config_text_67"), new ButtonInfo[1] {
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, false);
+			MenuScene.Instance.InputDisable();
+			PopupWindowManager.Show(setting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xA935B4
+				MenuScene.Instance.InputEnable();
+				if (onClose != null)
+					onClose();
+			}, null, null, null);
+		}
 
 		//// RVA: 0xA89EF8 Offset: 0xA89EF8 VA: 0xA89EF8
-		//private bool CheckSetAllDiva() { }
+		private bool CheckSetAllDiva()
+		{
+			bool valid = true;
+			if (m_prismData.FBGAKINEIPG)
+			{
+				for(int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum; i++)
+				{
+					valid &= m_prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i) > 0 && m_prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(i) > 0;
+				}
+				valid &= m_prismData.PNDKNFBLKDP_GetPrismValkyrieId() > 0;
+			}
+			else
+			{
+				int divaNum = Mathf.Min(Database.Instance.gameSetup.musicInfo.onStageDivaNum, 3);
+				for(int i = 0; i < divaNum; i++)
+				{
+					valid &= m_playerData.DPLBHAIKPGL(m_isGoDivaEvent).BCJEAJPLGMB_MainDivas[i] != null;
+				}
+				for(int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum - divaNum; i++)
+				{
+					valid &= m_playerData.DPLBHAIKPGL(m_isGoDivaEvent).CMOPCCAJAAO_AddDivas[i] != null;
+				}
+			}
+			return valid;
+		}
 
 		//// RVA: 0xA8A228 Offset: 0xA8A228 VA: 0xA8A228
-		//private void NotSetAllDivaShow() { }
+		private void NotSetAllDivaShow()
+		{
+			TextPopupSetting setting = PopupWindowManager.CrateTextContent("", SizeType.Small, MessageManager.Instance.GetBank("menu").GetMessageByLabel(m_prismData.FBGAKINEIPG ? "unit_multi_dance_popup_01" : "unit_multi_dance_popup_00"), new ButtonInfo[1] {
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, false);
+			MenuScene.Instance.InputDisable();
+			PopupWindowManager.Show(setting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xA92044
+				StartCoroutine(Co_SwitchDivaSelectDisplay());
+				MenuScene.Instance.InputEnable();
+			}, null, null, null);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F514 Offset: 0x72F514 VA: 0x72F514
 		//// RVA: 0xA8D5D0 Offset: 0xA8D5D0 VA: 0xA8D5D0
-		//private IEnumerator Co_SwitchDivaSelectDisplay() { }
+		private IEnumerator Co_SwitchDivaSelectDisplay()
+		{
+			//0xA963E0
+			if(m_prismData.FBGAKINEIPG)
+			{
+				if (m_dispType != DispType.Prism)
+					yield return Co_SwitchContents(DispType.Prism);
+			}
+			else
+			{
+				bool switched = false;
+				if(Database.Instance.gameSetup.musicInfo.onStageDivaNum > 3)
+				{
+					int type = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ECNAIALHHBO_UnitMenu.BLABFAMKLIN_UnitInfoDispType;
+					if (type != 1)
+					{
+						ChangeUnitInfoDispType();
+						switched = true;
+					}
+				}
+				if(m_dispType == DispType.CurrentUnit)
+				{
+					if(switched)
+					{
+						m_unitInfo.AnimeControl.ChangeDispType(SetDeckUnitInfoAnimeControl.DispType.Divas);
+					}
+				}
+				else
+				{
+					yield return Co_SwitchContents(DispType.CurrentUnit);
+				}
+			}
+		}
 
 		//// RVA: 0xA8A504 Offset: 0xA8A504 VA: 0xA8A504
-		//private bool IsForceSkip() { }
+		private bool IsForceSkip()
+		{
+			if(m_viewMusicData != null)
+			{
+				if(m_viewMusicData is IBJAKJJICBC && Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
+				{
+					TodoLogger.Log(0, "Event");
+				}
+			}
+			return false;
+		}
 
 		//// RVA: 0xA8D67C Offset: 0xA8D67C VA: 0xA8D67C
 		private void OnChangeUnitName()
@@ -1268,6 +1430,10 @@ namespace XeApp.Game.Menu
 			OnClickAnyButtons();
 			if (m_dispType == DispType.CurrentUnit)
 			{
+				//TMP
+				TodoLogger.LogNotImplemented("OnClickValkyrieButton");
+				return;
+				// TMP
 				SoundManager.Instance.sePlayerBoot.Play(3);
 				ValkyrieDataArgs arg = new ValkyrieDataArgs();
 				arg.isGoDiva = m_isGoDivaEvent;
@@ -1620,11 +1786,7 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x72F85C Offset: 0x72F85C VA: 0x72F85C
 		//// RVA: 0xA9203C Offset: 0xA9203C VA: 0xA9203C
 		//private bool <Co_ShowHelp>b__101_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F86C Offset: 0x72F86C VA: 0x72F86C
-		//// RVA: 0xA92044 Offset: 0xA92044 VA: 0xA92044
-		//private void <NotSetAllDivaShow>b__144_0(PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x72F87C Offset: 0x72F87C VA: 0x72F87C
 		//// RVA: 0xA920FC Offset: 0xA920FC VA: 0xA920FC
 		//private void <OnChangeUnitName>b__147_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }

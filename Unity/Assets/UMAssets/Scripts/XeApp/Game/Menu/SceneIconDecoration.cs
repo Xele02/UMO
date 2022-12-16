@@ -135,13 +135,13 @@ namespace XeApp.Game.Menu
 						int icon = 0;
 						int icon2 = 0;
 						bool isActive = false;
-						if (sceneData.HGONFBDIBPM < 1)
+						if (sceneData.HGONFBDIBPM_ActiveSkillId < 1)
 						{
 							isActive = true;
 						}
 						else
 						{
-							icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[sceneData.HGONFBDIBPM - 1].MKPJBDFDHOL[0];
+							icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[sceneData.HGONFBDIBPM_ActiveSkillId - 1].MKPJBDFDHOL[0];
 							icon2 = 0;
 						}
 						m_sceneIconDecrationBehaviour.SetSkillIcon(icon, icon2, isActive);

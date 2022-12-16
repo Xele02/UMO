@@ -890,16 +890,28 @@ public class PPGHMBNIAEC
 	//private void DKGNGLBCPKA(ref string IAPANOCEMBI, int GBMHFDKCFGB, int AOGDKBPNGCI) { }
 
 	//// RVA: 0xDF76D0 Offset: 0xDF76D0 VA: 0xDF76D0
-	//public bool AANDPLGPDEI() { }
+	public bool AANDPLGPDEI()
+	{
+		return CEFHDLLAPDH > 0;
+	}
 
 	//// RVA: 0xDF76E4 Offset: 0xDF76E4 VA: 0xDF76E4
-	//public bool HDPIEILADDH(int DLAEJOBELBH) { }
+	public bool HDPIEILADDH(int DLAEJOBELBH)
+	{
+		return CEFHDLLAPDH == DLAEJOBELBH;
+	}
 
 	//// RVA: 0xDF76F8 Offset: 0xDF76F8 VA: 0xDF76F8
-	//public bool HCGDJAFINMH() { }
+	public bool HCGDJAFINMH()
+	{
+		return NFIBKOACELP > 0;
+	}
 
 	//// RVA: 0xDF770C Offset: 0xDF770C VA: 0xDF770C
-	//public bool OEJNKFONOGJ(int FJFCNGNGIBN) { }
+	public bool OEJNKFONOGJ(int FJFCNGNGIBN)
+	{
+		return NFIBKOACELP == FJFCNGNGIBN;
+	}
 }
 
 public class EDPDCLMMBPL

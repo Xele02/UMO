@@ -28,9 +28,9 @@ namespace XeApp.Game.Menu
 			} } //0xA6FF94
 		public StatusData BaseStatus { get { return m_baseStatus; } } //0xA6FFB4
 		public StatusData AddStatus { get { return m_addStatus; } } //0xA6FFBC
-		//public LimitOverStatusData LimitOverStatus { get; } 0xA6FFC4
+		public LimitOverStatusData LimitOverStatus { get { return m_limitOverStatus; } } //0xA6FFC4
 		//public NHDJHOPLMDE ValkyrieAbilityData { get; } 0xA6FFCC
-		//public JGEOBNENMAH.NEDILFPPCJF LogParams { get; } 0xA6FFD4
+		public JGEOBNENMAH.NEDILFPPCJF LogParams { get { return m_logParams; } } //0xA6FFD4
 		//public CFHDKAFLNEP SubPlateResult { get; } 0xA6FFDC
 		//public bool IsEnableEnemySkill { get; } 0xA6FFF0
 		public bool IsEnableEpisodeBonus { get { return m_isEnableEpisodeBonus; } } //0xA7002C
@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				logParams.IFHMFONMGPE = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].DDEDANKHHPN_SkillLevel;
-				logParams.AKNKIOKELEP = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].PNHJPCPFNFI;
+				logParams.AKNKIOKELEP = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].PNHJPCPFNFI_ActiveSkillLevel;
 			}
 			int b = 0;
 			for(int i = 0; i < 10; i++)

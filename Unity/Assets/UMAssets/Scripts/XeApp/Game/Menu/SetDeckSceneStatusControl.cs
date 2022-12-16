@@ -228,9 +228,9 @@ namespace XeApp.Game.Menu
 			{
 				int a = 0;
 				Color col = IconColorOff;
-				if(sceneData.HGONFBDIBPM >= 1)
+				if(sceneData.HGONFBDIBPM_ActiveSkillId >= 1)
 				{
-					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[sceneData.HGONFBDIBPM - 1].MKPJBDFDHOL[0];
+					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[sceneData.HGONFBDIBPM_ActiveSkillId - 1].MKPJBDFDHOL[0];
 					col = IconColorOn;
 				}
 				m_activeIconImage.enabled = true;

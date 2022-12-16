@@ -403,8 +403,8 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 			data.GBNOALJPOBM = b;
 			for(int j = 0; j < array[i].CFJKNAIOEAN.Length; j++)
 			{
-				data.OCOGIADDNDN[j] = (short)array[i].CFJKNAIOEAN[j];
-				data.DPJDHKIIJIJ[j] = (short)array[i].BODBNFFIOJN[j];
+				data.OCOGIADDNDN_SpNoteByDiff[j] = (short)array[i].CFJKNAIOEAN[j];
+				data.DPJDHKIIJIJ_SpNotesByDiff6Line[j] = (short)array[i].BODBNFFIOJN[j];
 			}
 			for (int j = 0; j < array[i].BKEIOLFMMDH.Length; j++)
 			{
@@ -671,14 +671,14 @@ public class EONOEHOKBEB_Music
 
 public class KEODKEGFDLD
 {
-	public short[] OCOGIADDNDN = new short[5]; // 0x34
+	public short[] OCOGIADDNDN_SpNoteByDiff = new short[5]; // 0x34
 	public short[] LHICAKGHIGF = new short[5]; // 0x38
 	public int[] HLKHOFPAOMK_SubGoalFreeModeByDiff = new int[5]; // 0x3C
 	public int[] HLLJIICKNIP_GoalFreeModeByDiff = new int[5]; // 0x40
 	public int[] FENOHOEIJOE_MaxValueFreeModeByDiff = new int[5]; // 0x44
 	public int[] LJPKLMJPLAC = new int[5]; // 0x48
 	public int[] MALHPBKPIDE = new int[5]; // 0x4C
-	public short[] DPJDHKIIJIJ = new short[5]; // 0x50
+	public short[] DPJDHKIIJIJ_SpNotesByDiff6Line = new short[5]; // 0x50
 	public short[] PJNFOCDANCE = new short[5]; // 0x54
 	public int[] MAGILDGLOKD_SubGoalFreeModeL6ByDiff = new int[5]; // 0x58
 	public int[] JEANDFEBLIG_GoalFreeModeL6ByDiff = new int[5]; // 0x5C

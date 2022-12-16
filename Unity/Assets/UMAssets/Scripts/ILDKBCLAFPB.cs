@@ -235,7 +235,10 @@ public class ILDKBCLAFPB
         // public bool IFLFCLIHCOA() { }
 
         // // RVA: 0x2035F2C Offset: 0x2035F2C VA: 0x2035F2C
-        // public bool DCJKPJFIJKH() { }
+        public bool DCJKPJFIJKH_IsNotesSpeedAutoRejected()
+		{
+			return JJDENMHGOIH_NotesSpeedAutoRejected == 1;
+		}
 
         // // RVA: 0x2035F3C Offset: 0x2035F3C VA: 0x2035F3C
         public int HBCHGGNOOCD_GetNotesDisplayTiming(Difficulty.Type FEOKKEPAIBB, bool JCOJKAHFADL_IsLine6)

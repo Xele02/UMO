@@ -100,28 +100,28 @@ namespace XeApp.Game.RhythmGame
 			if (Database.Instance.gameSetup.musicInfo.isStoryMode)
 				return;
 			KEODKEGFDLD musicinfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId);
-			short[] l = Database.Instance.gameSetup.musicInfo.IsLine6Mode ? musicinfo.DPJDHKIIJIJ : musicinfo.OCOGIADDNDN;
-			if (l[(int)Database.Instance.gameSetup.musicInfo.difficultyType] < 1)
+			short[] specialNoteByDifficulty = Database.Instance.gameSetup.musicInfo.IsLine6Mode ? musicinfo.DPJDHKIIJIJ_SpNotesByDiff6Line : musicinfo.OCOGIADDNDN_SpNoteByDiff;
+			if (specialNoteByDifficulty[(int)Database.Instance.gameSetup.musicInfo.difficultyType] < 1)
 				return;
-			List<int>[] l2 = new List<int>[4];
-			for(int i = 0; i < l2.Length; i++)
+			List<int>[] validNotesIdxByModeType = new List<int>[4];
+			for(int i = 0; i < validNotesIdxByModeType.Length; i++)
 			{
-				l2[i] = new List<int>(modeNotesIndices[i]);
-				for(int j = l2[i].Count - 1; j >= 0; j--)
+				validNotesIdxByModeType[i] = new List<int>(modeNotesIndices[i]);
+				for(int j = validNotesIdxByModeType[i].Count - 1; j >= 0; j--)
 				{
-					if(rNoteList[l2[i][j]].noteInfo.longTouch == MusicScoreData.TouchState.Continue)
+					if(rNoteList[validNotesIdxByModeType[i][j]].noteInfo.longTouch == MusicScoreData.TouchState.Continue)
 					{
-						l2[i].RemoveAt(j);
+						validNotesIdxByModeType[i].RemoveAt(j);
 					}
 				}
 			}
 			if(m_assign_info.m_event_item)
 			{
-				AssginFromList(rNoteList, ref l2, RhythmGameConsts.SpecialNoteType.EventItem);
+				AssginFromList(rNoteList, ref validNotesIdxByModeType, RhythmGameConsts.SpecialNoteType.EventItem);
 			}
 			if(m_assign_info.m_center_live_skill)
 			{
-				AssginFromList(rNoteList, ref l2, RhythmGameConsts.SpecialNoteType.CenterLiveSkill);
+				AssginFromList(rNoteList, ref validNotesIdxByModeType, RhythmGameConsts.SpecialNoteType.CenterLiveSkill);
 			}
 			rareItemRandSeed = Random.Range(0, 100000);
 			int numItems = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.NBIAKELCBLC_GetNumItems(Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
@@ -142,43 +142,43 @@ namespace XeApp.Game.RhythmGame
 					b = 0;
 			}
 			int c = (b * 0x55555556) >> 0x20;
-			c = (c - c >> 0x1f);
+			c = c - (c >> 0x1f);
 			b = b + c * -3;
-			int[] li = new int[4];
-			li[1] = c + (b > 0 ? 1 : 0);
+			int[] numItemsByMode = new int[4];
+			numItemsByMode[1] = c + (b > 0 ? 1 : 0); // normal
 			int d = c;
 			if (b > 1)
 				d++;
-			li[2] = d;
-			li[3] = c;
+			numItemsByMode[2] = d; // valk
+			numItemsByMode[3] = c; // diva
 
-			EGLJKICMCPG[] ar = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.BBFNPHGDCOF(l[(int)Database.Instance.gameSetup.musicInfo.difficultyType]).CDENCMNHNGA.ToArray();
+			EGLJKICMCPG[] ar = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.BBFNPHGDCOF(specialNoteByDifficulty[(int)Database.Instance.gameSetup.musicInfo.difficultyType]).CDENCMNHNGA.ToArray();
 			int[] li2 = new int[6];
 			MusicData.NoteModeType[] nt = new MusicData.NoteModeType[6] { MusicData.NoteModeType.Normal, MusicData.NoteModeType.Valkyrie, MusicData.NoteModeType.Diva, MusicData.NoteModeType.Diva, MusicData.NoteModeType.Valkyrie, MusicData.NoteModeType.Diva };
 			for (int i = 0; i < 6; i++)
 			{
-				int t = li[(int)nt[i]];
-				li[(int)nt[i]] = Mathf.Min(li[(int)nt[i]], l2[(int)nt[i]].Count);
+				int t = numItemsByMode[(int)nt[i]];
+				numItemsByMode[(int)nt[i]] = Mathf.Min(numItemsByMode[(int)nt[i]], validNotesIdxByModeType[(int)nt[i]].Count);
 
-				int v = Mathf.Clamp((int)(ar[i].PHGLKBPLFDH_RMax / 100.0f * l2[(int)nt[i]].Count), ar[i].MPPANPOOIIB_NMin, ar[i].GKPPCFMBANO_NMax);
-				t = (t - l2[(int)nt[i]].Count) + v;
+				int v = Mathf.Clamp((int)(ar[i].PHGLKBPLFDH_RMax / 100.0f * validNotesIdxByModeType[(int)nt[i]].Count), ar[i].MPPANPOOIIB_NMin, ar[i].GKPPCFMBANO_NMax);
+				t = (numItemsByMode[(int)nt[i]] - validNotesIdxByModeType[(int)nt[i]].Count) + v;
 				if (t > 0)
 					v = v - t;
 				li2[i] = v;
 			}
 
-			RhythmGameConsts.SpecialNoteType[] st = new RhythmGameConsts.SpecialNoteType[6] { RhythmGameConsts.SpecialNoteType.None, RhythmGameConsts.SpecialNoteType.Heal, RhythmGameConsts.SpecialNoteType.Score, RhythmGameConsts.SpecialNoteType.NormalItem, RhythmGameConsts.SpecialNoteType.Fold, RhythmGameConsts.SpecialNoteType.Attack };
-			List<AssignedRareItemNoteInfo>[] ari = new List<AssignedRareItemNoteInfo>[4];
-			for(int i = 0; i < ari.Length; i++)
+			RhythmGameConsts.SpecialNoteType[] specialNoteType = new RhythmGameConsts.SpecialNoteType[6] { RhythmGameConsts.SpecialNoteType.None, RhythmGameConsts.SpecialNoteType.Heal, RhythmGameConsts.SpecialNoteType.Score, RhythmGameConsts.SpecialNoteType.NormalItem, RhythmGameConsts.SpecialNoteType.Fold, RhythmGameConsts.SpecialNoteType.Attack };
+			List<AssignedRareItemNoteInfo>[] assignedRareItemsByMode = new List<AssignedRareItemNoteInfo>[4];
+			for(int i = 0; i < assignedRareItemsByMode.Length; i++)
 			{
-				ari[i] = new List<AssignedRareItemNoteInfo>(li[i]);
+				assignedRareItemsByMode[i] = new List<AssignedRareItemNoteInfo>(numItemsByMode[i]);
 			}
 
 			int[,] li3 = new int[6, 6];
 			int sum = 0;
 			for(int i = 0; i < 6; i++)
 			{
-				List<int> l3 = new List<int>(li2[(int)nt[i]]);
+				List<int> l3 = new List<int>(validNotesIdxByModeType[(int)nt[i]]);
 				for(int j = 0; j < 5; j++)
 				{
 					if(ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)(j + 1)) > -1)
@@ -208,9 +208,9 @@ namespace XeApp.Game.RhythmGame
 					}
 					li3[j + 1, i] = m;
 				}
-				if (ari[i].Count < 1)
+				if (assignedRareItemsByMode[(int)nt[i]].Count < 1)
 				{
-					for (int j = 0; j < li[i]; j++)
+					for (int j = 0; j < numItemsByMode[(int)nt[i]]; j++)
 					{
 						int v = Random.Range(0, l3.Count);
 						onModeAttrAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
@@ -220,15 +220,15 @@ namespace XeApp.Game.RhythmGame
 				}
 				else
 				{
-					for (int j = 0; j < ari[i].Count; j++)
+					for (int j = 0; j < assignedRareItemsByMode[(int)nt[i]].Count; j++)
 					{
-						onModeAttrAssignCallback(l3[ari[i][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
-						onModeItemInfoAssignCallback(l3[ari[i][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_ItemIdx);
-						l3.RemoveAt(ari[i][j].noteListIndex);
+						onModeAttrAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
+						onModeItemInfoAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_ItemIdx);
+						l3.RemoveAt(assignedRareItemsByMode[(int)nt[i]][j].noteListIndex);
 					}
 				}
 				int s = 1;
-				for(; s < 6; s++)
+				for(; s <= 5; s++)
 				{
 					if(s == 3 && itemWeightTable == null)
 					{
@@ -238,7 +238,7 @@ namespace XeApp.Game.RhythmGame
 					for(int j = 0; j < li3[s ,i]; j++)
 					{
 						int t = Random.Range(0, l3.Count);
-						onModeAttrAssignCallback(l3[t], (KLJCBKMHKNK.HHMPIIILOLD)i, st[s]);
+						onModeAttrAssignCallback(l3[t], (KLJCBKMHKNK.HHMPIIILOLD)i, specialNoteType[s]);
 						if (s == 3)
 							AllotItemNotes(l3[t], (KLJCBKMHKNK.HHMPIIILOLD)i);
 						l3.RemoveAt(t);

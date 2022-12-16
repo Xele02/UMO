@@ -148,7 +148,11 @@ namespace XeApp.Game.Menu
 		// public void SetNotesSpeedAllApply(bool allApply) { }
 
 		// // RVA: 0x1B58864 Offset: 0x1B58864 VA: 0x1B58864
-		// public bool GetNotesSpeedAutoRejected() { }
+		public bool GetNotesSpeedAutoRejected()
+		{
+			TodoLogger.Log(0, "GetNotesSpeedAutoRejected");
+			return false;
+		}
 
 		// // RVA: 0x1B58890 Offset: 0x1B58890 VA: 0x1B58890
 		// public void SetNotesSpeedAutoRejected(bool reject) { }
@@ -293,7 +297,34 @@ namespace XeApp.Game.Menu
 		// public void ApplyDecoNotification() { }
 
 		// // RVA: 0x1B5A35C Offset: 0x1B5A35C VA: 0x1B5A35C
-		// public void ApplyValue(bool isSave = True, Action callback) { }
+		public void ApplyValue(bool isSave = true, Action callback = null)
+		{
+			if (callback != null)
+				callback();
+			TodoLogger.Log(0, "ApplyValue");
+			/*if(!isSave)
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.ODDIHGPONFL_Copy(Option);
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification.ODDIHGPONFL_Copy(Notification);
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.ODDIHGPONFL_Copy(OptionSLive);
+				SetHomeDivaValue();
+			}
+			SetVolume(2, Option.HOMPENLIHCK_VolBgm);
+			SetVolume(5, Option.ICGAOAFIHFD_VolBgmRhythm);
+			SetVolume(0, Option.BGLLCLEDHKK_VolSe);
+			SetVolume(3, Option.LMDACNNJDOE_VolSeRhythm);
+			SetVolume(6, Option.IBEINHHMHAC_VolNotesRhythm);
+			SetVolume(1, Option.CNCIMBGLKOB_VolVoice);
+			SetVolume(4, Option.FCKEDCKCEFC_VolVoiceRhythm);
+
+			Option.CJFAJNMADBA_ScreenRotation = Option.CJFAJNMADBA_ScreenRotation;
+
+			GameManager.Instance.SetLongscreenFrameColor(Option.HLABNEIEJPM_SafeAreaDesign);
+			if(isSave)
+			{
+				SetOrientationInner GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality
+			}*/
+		}
 
 		// // RVA: 0x1B5D114 Offset: 0x1B5D114 VA: 0x1B5D114
 		// public float ParamDefault(ConfigManager.eParamDefaultType type) { }

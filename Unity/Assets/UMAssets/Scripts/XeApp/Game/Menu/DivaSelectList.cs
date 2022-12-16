@@ -231,7 +231,7 @@ namespace XeApp.Game.Menu
 					m_sceneIconDecraitons[i].SetActive(scene != null && scene.BCCHOBPJJKE_SceneId > 0);
 					if(i == 0 && m_isSelectedCenterDiva)
 					{
-						if(scene != null && scene.HGONFBDIBPM > 0)
+						if(scene != null && scene.HGONFBDIBPM_ActiveSkillId > 0)
 						{
 							if(!SetDeckSkillIconControl.CheckMatchActiveSkill(scene))
 							{
@@ -319,7 +319,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							isCompatible = scene.HGONFBDIBPM > 0;
+							isCompatible = scene.HGONFBDIBPM_ActiveSkillId > 0;
 							isActivate = SetDeckSkillIconControl.CheckMatchActiveSkill(scene);
 						}
 					}

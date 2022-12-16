@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 				else if(skillType == SkillType.Active && CheckMatchActiveSkill(sceneData))
 				{
 					m_skillIconImage.enabled = true;
-					if(sceneData.HGONFBDIBPM < 1)
+					if(sceneData.HGONFBDIBPM_ActiveSkillId < 1)
 					{
 						m_skillIconImage.color = IconColorOff;
 					}
@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 						m_skillIconImage.color = IconColorOn;
 					}
 					m_skillIconImage.sprite = m_aSkillSprite;
-					SetEffectEnable(sceneData.HGONFBDIBPM > 0);
+					SetEffectEnable(sceneData.HGONFBDIBPM_ActiveSkillId > 0);
 				}
 			}
 		}
@@ -73,7 +73,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA76570 Offset: 0xA76570 VA: 0xA76570
 		public static bool CheckMatchActiveSkill(GCIJNCFDNON sceneData)
 		{
-			return sceneData.HGONFBDIBPM > 0;
+			return sceneData.HGONFBDIBPM_ActiveSkillId > 0;
 		}
 
 		//// RVA: 0xA765A0 Offset: 0xA765A0 VA: 0xA765A0
