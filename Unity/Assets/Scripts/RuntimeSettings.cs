@@ -73,6 +73,7 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceCardsUnlock = true;
 	public bool ForceSimulationOpen = true;
 	public bool ForceTutoSkip = true;
+	public int ForcePlayerLevel = 90;
 
 	[Header("Live")]
 	public bool ForceLiveValkyrieMode = true;

@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 		public static bool IsFirstTitleFlow { get; set; } // 0x5
 		public static bool ComebackByRestart { get; private set; } // 0x6
 		public MenuDivaManager divaManager { get; set; } // 0x2C
-		// public SceneIconTextureCache SceneIconCache { get; } 0xB2DCF8
+		public SceneIconTextureCache SceneIconCache { get { return GameManager.Instance.SceneIconCache; } } //0xB2DCF8
 		public DivaIconTextureCache DivaIconCache { get { return GameManager.Instance.DivaIconCache; } } //0xB2DD94
 		// public BgTextureCache BgTextureCache { get; } 0xB2DE30
 		// public ItemTextureCache ItemTextureCache { get; } 0xB2DECC

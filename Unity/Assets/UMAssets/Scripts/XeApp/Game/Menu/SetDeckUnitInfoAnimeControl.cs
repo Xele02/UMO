@@ -122,7 +122,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC3524C Offset: 0xC3524C VA: 0xC3524C
-		//public void ChangeDispType(SetDeckUnitInfoAnimeControl.DispType dispType) { }
+		public void ChangeDispType(DispType dispType)
+		{
+			string name = GetChangeAnimeStateName(m_currentDispType, dispType);
+			if (name.Length < 1)
+				return;
+			m_animator.CrossFade(name, 0);
+			m_currentDispType = dispType;
+			m_isShown = true;
+			m_isJustAnimeStart = true;
+		}
 
 		//// RVA: 0xC353C4 Offset: 0xC353C4 VA: 0xC353C4
 		//public void QuickChangeDispType(SetDeckUnitInfoAnimeControl.DispType dispType) { }
@@ -140,6 +149,9 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC352C8 Offset: 0xC352C8 VA: 0xC352C8
-		//private string GetChangeAnimeStateName(SetDeckUnitInfoAnimeControl.DispType prevDispType, SetDeckUnitInfoAnimeControl.DispType nextDispType) { }
+		private string GetChangeAnimeStateName(DispType prevDispType, DispType nextDispType)
+		{
+			return ChangeAnimeStateNames[(int)prevDispType][(int)nextDispType];
+		}
 	}
 }

@@ -1125,7 +1125,41 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F49C Offset: 0x72F49C VA: 0x72F49C
 		//// RVA: 0xA89790 Offset: 0xA89790 VA: 0xA89790
-		//private IEnumerator Co_SwitchContents(TeamSelectSceneUnit5.DispType dispType) { }
+		private IEnumerator Co_SwitchContents(DispType dispType)
+		{
+			DispType prevDispType;
+			int waitCount;
+
+			//0xA95E14
+			MenuScene.Instance.RaycastDisable();
+			prevDispType = m_dispType;
+			m_dispType = dispType;
+			SetActiveNecessaryContent(dispType);
+			ApplyDispType(dispType);
+			ApplyPrismSettingButton(m_prismData);
+			ApplyUnitContent(dispType);
+			while (IsApplyWait())
+				yield return null;
+			while (m_statusWindow.InOut.IsPlaying())
+				yield return null;
+			m_statusWindow.InOut.Leave(false);
+			m_unitStatus.SetCheckStatusButtonState(SetDeckUnitStatus.CheckStatusButtonState.Normal);
+			m_unitSetInfo.MessageControl.Leave();
+			SetTitleInOut(prevDispType, dispType);
+			LeaveUnnecessaryContent(dispType);
+			waitCount = 0;
+			while(waitCount < m_switchDispTypeWaitFrame)
+			{
+				waitCount++;
+				yield return null;
+			}
+			EnterNecessaryContent(dispType);
+			while (IsPlayingContents())
+				yield return null;
+			SetInactiveUnnecessaryContent(dispType);
+			yield return TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition_forSwitchDispType);
+			MenuScene.Instance.RaycastEnable();
+		}
 
 		//// RVA: 0xA89858 Offset: 0xA89858 VA: 0xA89858
 		private void SetTitleInOut(DispType prevType, DispType nextType)
@@ -1231,7 +1265,23 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8E530 Offset: 0xA8E530 VA: 0xA8E530
 		private void OnClickValkyrieButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickValkyrieButton");
+			OnClickAnyButtons();
+			if (m_dispType == DispType.CurrentUnit)
+			{
+				SoundManager.Instance.sePlayerBoot.Play(3);
+				ValkyrieDataArgs arg = new ValkyrieDataArgs();
+				arg.isGoDiva = m_isGoDivaEvent;
+				MenuScene.Instance.Call(TransitionList.Type.VALKYRIE_SELECT, arg, true);
+			}
+			else if(m_dispType == DispType.Prism)
+			{
+				SoundManager.Instance.sePlayerBoot.Play(3);
+				ShowPrismSelectPopup(PopupMvModeSelectListContent.SelectTarget.Valkyrie, 0, m_viewMusicData != null ? m_viewMusicData.DLAEJOBELBH_MusicId : 0, Database.Instance.gameSetup.musicInfo, false, () =>
+				{
+					//0xA92574
+					ApplyPrismUnitContent();
+				}, null);
+			}
 		}
 
 		//// RVA: 0xA8E814 Offset: 0xA8E814 VA: 0xA8E814
@@ -1243,11 +1293,27 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8EA34 Offset: 0xA8EA34 VA: 0xA8EA34
 		private void OnClickUnitInfoChangeButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickUnitInfoChangeButton");
+			OnClickAnyButtons();
+			if(m_dispType == DispType.CurrentUnit)
+			{
+				SoundManager.Instance.sePlayerBoot.Play(3);
+				m_unitInfo.AnimeControl.ChangeDispType(ChangeUnitInfoDispType());
+			}
+			else if(m_dispType == DispType.Prism)
+			{
+				SoundManager.Instance.sePlayerBoot.Play(3);
+				m_unitSetInfo.AnimeControl.ChangeDispType(ChangeUnitInfoDispType());
+			}
 		}
 
 		//// RVA: 0xA83E8C Offset: 0xA83E8C VA: 0xA83E8C
-		//private SetDeckUnitInfoAnimeControl.DispType ChangeUnitInfoDispType() { }
+		private SetDeckUnitInfoAnimeControl.DispType ChangeUnitInfoDispType()
+		{
+			int type = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ECNAIALHHBO_UnitMenu.BLABFAMKLIN_UnitInfoDispType;
+			type = (type + 1) % (int)SetDeckUnitInfoAnimeControl.DispType.Num;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ECNAIALHHBO_UnitMenu.BLABFAMKLIN_UnitInfoDispType = type;
+			return (SetDeckUnitInfoAnimeControl.DispType)type;
+		}
 
 		//// RVA: 0xA8EC04 Offset: 0xA8EC04 VA: 0xA8EC04
 		//private void OnClickSubPlateButton() { }
@@ -1325,27 +1391,89 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA90044 Offset: 0xA90044 VA: 0xA90044
 		private void OnClickUnitSetButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickUnitSetButton");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play(3);
+			StartCoroutine(Co_EnterUnitSet());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F67C Offset: 0x72F67C VA: 0x72F67C
 		//// RVA: 0xA900BC Offset: 0xA900BC VA: 0xA900BC
-		//private IEnumerator Co_EnterUnitSet() { }
+		private IEnumerator Co_EnterUnitSet()
+		{
+			//0xA94B18
+			MenuScene.Instance.RaycastDisable();
+			yield return Co_DownloadUnitSetResources();
+			yield return Co_SwitchContents(DispType.UnitSet);
+			m_unitSetInfo.MessageControl.Enter(m_playerData.JKIJFGGMNAN_GetUnit(UnitSetIndex, m_isGoDivaEvent).EIGKIHENKNC ? SetDeckUnitInfoMessageControl.DispType.Keep : SetDeckUnitInfoMessageControl.DispType.OneShot);
+			MenuScene.Instance.RaycastEnable();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F6F4 Offset: 0x72F6F4 VA: 0x72F6F4
 		//// RVA: 0xA90168 Offset: 0xA90168 VA: 0xA90168
-		//private IEnumerator Co_DownloadUnitSetResources() { }
+		private IEnumerator Co_DownloadUnitSetResources()
+		{
+			//0xA93E80
+			for(int i = 0; i < m_playerData.DDMBOKCCLBD_GetUnits(m_isGoDivaEvent).Count; i++)
+			{
+				JLKEOGLJNOD unit = m_playerData.JKIJFGGMNAN_GetUnit(i, m_isGoDivaEvent);
+				for(int j = 0; j < unit.BCJEAJPLGMB_MainDivas.Count; j++)
+				{
+					FFHPBEPOMAK diva = unit.BCJEAJPLGMB_MainDivas[i];
+					if(diva != null)
+					{
+						MenuScene.Instance.DivaIconCache.TryInstall(diva.AHHJLDLAPAN_DivaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, diva.EKFONBFDAAP_ColorId);
+						if(diva.FGFIBOBAPIA_SceneId > 0)
+						{
+							GCIJNCFDNON sceneInfo = m_playerData.OPIBAPEGCLA_Scenes[diva.FGFIBOBAPIA_SceneId - 1];
+							MenuScene.Instance.SceneIconCache.TryInstall(sceneInfo.BCCHOBPJJKE_SceneId, sceneInfo.CGIELKDLHGE());
+						}
+						for(int k = 0; k < diva.DJICAKGOGFO_SubSceneIds.Count; k++)
+						{
+							if (diva.DJICAKGOGFO_SubSceneIds[k] > 0)
+							{
+								GCIJNCFDNON sceneInfo = m_playerData.OPIBAPEGCLA_Scenes[diva.DJICAKGOGFO_SubSceneIds[i] - 1];
+								MenuScene.Instance.SceneIconCache.TryInstall(sceneInfo.BCCHOBPJJKE_SceneId, sceneInfo.CGIELKDLHGE());
+							}
+						}
+					}
+				}
+				for (int j = 0; j < unit.CMOPCCAJAAO_AddDivas.Count; j++)
+				{
+					FFHPBEPOMAK diva = unit.CMOPCCAJAAO_AddDivas[i];
+					if (diva != null)
+					{
+						MenuScene.Instance.DivaIconCache.TryInstall(diva.AHHJLDLAPAN_DivaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, diva.EKFONBFDAAP_ColorId);
+					}
+				}
+			}
+			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				yield return null;
+		}
 
 		//// RVA: 0xA90214 Offset: 0xA90214 VA: 0xA90214
 		private void OnClickPrismSettingButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickPrismSettingButton");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play(3);
+			UpdatePrismData(m_viewMusicData.DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo);
+			if(m_prismData.OFHMEAJBIEL_IsPrismUnlocked())
+			{
+				StartCoroutine(Co_SwitchContents(DispType.Prism));
+				return;
+			}
+			m_textPopupSetting.IsCaption = false;
+			m_textPopupSetting.Text = string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("popup_prism_unlock_text"), m_prismData.DPHIJENPBCJ_GetPrismLevelRequired());
+			m_textPopupSetting.WindowSize = SizeType.Small;
+			m_textPopupSetting.Buttons = m_textPopupOkButtons;
+			PopupWindowManager.Show(m_textPopupSetting, null, null, null, null);
 		}
 
 		//// RVA: 0xA90564 Offset: 0xA90564 VA: 0xA90564
 		private void OnClickUnitSettingButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickUnitSettingButton");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play(3);
+			StartCoroutine(Co_SwitchContents(DispType.CurrentUnit));
 		}
 
 		//// RVA: 0xA905E0 Offset: 0xA905E0 VA: 0xA905E0
@@ -1419,13 +1547,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA914E0 Offset: 0xA914E0 VA: 0xA914E0
 		private void OnClickPrismItems(PopupMvModeSelectListContent.SelectTarget target, int divaSlotNumber)
 		{
-			TodoLogger.LogNotImplemented("OnClickPrismItems");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play(3);
+			ShowPrismSelectPopup(target, divaSlotNumber, m_viewMusicData != null ? m_viewMusicData.DLAEJOBELBH_MusicId : 0, Database.Instance.gameSetup.musicInfo, false, () =>
+			{
+				//0xA92978
+				ApplyPrismUnitContent();
+			}, null);
 		}
 
 		//// RVA: 0xA89EAC Offset: 0xA89EAC VA: 0xA89EAC
 		private void OnClickAnyButtons()
 		{
-			TodoLogger.Log(0, "OnClickAnyButtons");
+			m_unitSetInfo.MessageControl.Leave();
 		}
 
 		// RVA: 0xA91658 Offset: 0xA91658 VA: 0xA91658 Slot: 28
@@ -1446,7 +1580,15 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA91804 Offset: 0xA91804 VA: 0xA91804
-		//private bool CheckTutorialCondition_forSwitchDispType(TutorialConditionId conditionId) { }
+		private bool CheckTutorialCondition_forSwitchDispType(TutorialConditionId conditionId)
+		{
+			int v = UnitSetSelectIndex_Normal;
+			if (conditionId == TutorialConditionId.Condition60)
+				v = UnitSetSelectIndex_GoDiva;
+			if (conditionId != TutorialConditionId.Condition60 || v != 2)
+				return false;
+			return CheckExistOriginalSetting(m_prismData);
+		}
 
 		//// RVA: 0xA918F8 Offset: 0xA918F8 VA: 0xA918F8
 		private void OnBackButton()
@@ -1490,11 +1632,7 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x72F88C Offset: 0x72F88C VA: 0x72F88C
 		//// RVA: 0xA922A0 Offset: 0xA922A0 VA: 0xA922A0
 		//private void <OnShowChangeStatusButton>b__151_0(PopupFilterSortUGUI content) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F89C Offset: 0x72F89C VA: 0x72F89C
-		//// RVA: 0xA92574 Offset: 0xA92574 VA: 0xA92574
-		//private void <OnClickValkyrieButton>b__153_0() { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x72F8AC Offset: 0x72F8AC VA: 0x72F8AC
 		//// RVA: 0xA92578 Offset: 0xA92578 VA: 0xA92578
 		//private void <ShowSubPlateWindow>b__158_0() { }
@@ -1530,9 +1668,5 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x72F92C Offset: 0x72F92C VA: 0x72F92C
 		//// RVA: 0xA92974 Offset: 0xA92974 VA: 0xA92974
 		//private void <OnClickOriginalSetting>b__185_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F93C Offset: 0x72F93C VA: 0x72F93C
-		//// RVA: 0xA92978 Offset: 0xA92978 VA: 0xA92978
-		//private void <OnClickPrismItems>b__186_0() { }
 	}
 }

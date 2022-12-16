@@ -214,7 +214,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x971848 Offset: 0x971848 VA: 0x971848
 		private IEnumerator Co_OnPostSetCanvas()
 		{
-			UnityEngine.Debug.LogError("Co_OnPostSetCanvas");
+			TodoLogger.Log(0, "Co_OnPostSetCanvas");
 			m_isInitIntimacy = true;
 			yield return null;
 		}

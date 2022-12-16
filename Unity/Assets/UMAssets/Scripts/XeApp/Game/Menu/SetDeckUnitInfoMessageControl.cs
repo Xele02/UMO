@@ -1,6 +1,7 @@
 using UnityEngine;
 using XeApp.Game.Common;
 using UnityEngine.UI;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -100,7 +101,22 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC36298 Offset: 0xC36298 VA: 0xC36298
-		//public void Enter(SetDeckUnitInfoMessageControl.DispType dispType, SetDeckUnitInfoMessageControl.MessageType messageType = 0) { }
+		public void Enter(DispType dispType, MessageType messageType = 0)
+		{
+			m_allObject.SetActive(true);
+			m_dispType = dispType;
+			m_messageType = messageType;
+			m_dispTimeCount = 0;
+			ApplyMessage(messageType);
+			if(m_statusType > StatusType.Enter)
+			{
+				m_colorGroup.color = HideColor;
+			}
+			m_colorGroup.SetMaterialDirty();
+			m_inOutCuveMover.Setup(ref m_inOutCurveInfo);
+			m_inOutCuveMover.Play(false);
+			m_statusType = StatusType.Enter;
+		}
 
 		//// RVA: 0xC36544 Offset: 0xC36544 VA: 0xC36544
 		//public void Show(SetDeckUnitInfoMessageControl.DispType dispType, SetDeckUnitInfoMessageControl.MessageType messageType = 0) { }
@@ -129,6 +145,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC36448 Offset: 0xC36448 VA: 0xC36448
-		//private void ApplyMessage(SetDeckUnitInfoMessageControl.MessageType messageType) { }
+		private void ApplyMessage(MessageType messageType)
+		{
+			if (messageType != MessageType.UnitSetHelp)
+				return;
+			m_messageText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_unitset_description");
+		}
 	}
 }

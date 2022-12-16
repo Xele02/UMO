@@ -18,6 +18,7 @@ public static class TodoLogger
 		s.Text = "Not implemented\n"+str;
 		s.WindowSize = SizeType.Large;
 		s.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } };
+		UnityEngine.Debug.LogError("Not Implemented " + str);
 		PopupWindowManager.Show(s, null, null, null, null);
 	}
 }
