@@ -134,14 +134,15 @@ namespace XeApp.Game.RhythmGame
 			{
 				numItems = 0;
 			}
-			int b = 0;
+			int numToSpawn = 0;
 			if(!Database.Instance.gameSetup.musicInfo.isTutorialOne)
 			{
-				b = numItems;
+				numToSpawn = numItems;
 				if (Database.Instance.gameSetup.musicInfo.isTutorialTwo)
-					b = 0;
+					numToSpawn = 0;
 			}
-			int c = (b * 0x55555556) >> 0x20;
+
+			/*int c = (b * 0x55555556) >> 0x20;
 			c = c - (c >> 0x1f);
 			b = b + c * -3;
 			int[] numItemsByMode = new int[4];
@@ -150,7 +151,14 @@ namespace XeApp.Game.RhythmGame
 			if (b > 1)
 				d++;
 			numItemsByMode[2] = d; // valk
-			numItemsByMode[3] = c; // diva
+			numItemsByMode[3] = c; // diva*/
+			int part = numToSpawn / 3;
+			int rest = numToSpawn - 3 * part;
+			int[] numItemsByMode = new int[4];
+			numItemsByMode[1] = part + (rest > 0 ? 1 : 0);
+			numItemsByMode[2] = part + (rest > 1 ? 1 : 0);
+			numItemsByMode[3] = part;
+			UnityEngine.Debug.Log("Items to spawn : "+numToSpawn+" "+numItemsByMode[1]+ " "+numItemsByMode[2]+" "+numItemsByMode[3]);
 
 			EGLJKICMCPG[] ar = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.BBFNPHGDCOF(specialNoteByDifficulty[(int)Database.Instance.gameSetup.musicInfo.difficultyType]).CDENCMNHNGA.ToArray();
 			int[] li2 = new int[6];

@@ -81,7 +81,7 @@ public class ILDKBCLAFPB
         public int LBIKGDHCICB_NotesSpeedAllApply; // 0xA0
         public int JJDENMHGOIH_NotesSpeedAutoRejected; // 0xA4
         public int KDNKCOAJGCM_NotesType = 1; // 0xA8
-        public int BBIOMNCILMC_HomeDivaId = 1; // 0xAC // Hack default init diva id for new save
+        public int BBIOMNCILMC_HomeDivaId; // 0xAC
         public bool GDLAPBKCBFP_IsHomeDivaWindow = true; // 0xB0
         public int BAGJHPGGCCI_PlayLogGraphType; // 0xB4
         public bool EDDMJEMOAGM_IsNotExcellentDisplaySetting = true; // 0xB8
@@ -138,6 +138,7 @@ public class ILDKBCLAFPB
 			JJDENMHGOIH_NotesSpeedAutoRejected = 0;
 			KDNKCOAJGCM_NotesType = 1;
 			BBIOMNCILMC_HomeDivaId = 0;
+			BBIOMNCILMC_HomeDivaId = 1; // Hack UMO
 			ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode = false;
 			GEPLOFLHAOL_NeedInitRenderQuality = 0;
 			OJAJHIMOIEC_NoteOffset = 0;
@@ -505,6 +506,7 @@ public class ILDKBCLAFPB
 			JJDENMHGOIH_NotesSpeedAutoRejected = JsonUtil.GetInt(OBHAFLMHAKG, "notesSpeedAutoRejected", 0);
 			KDNKCOAJGCM_NotesType = JsonUtil.GetInt(OBHAFLMHAKG, "notesType", 1);
 			BBIOMNCILMC_HomeDivaId = JsonUtil.GetInt(OBHAFLMHAKG, "homeDivaId", 0);
+			BBIOMNCILMC_HomeDivaId = 1; // Hack UMO
 			GDLAPBKCBFP_IsHomeDivaWindow = JsonUtil.GetInt(OBHAFLMHAKG, "isHomeDivaWindow", 0) != 0;
 			BAGJHPGGCCI_PlayLogGraphType = JsonUtil.GetInt(OBHAFLMHAKG, "playLogGraphType", 0);
 			EDDMJEMOAGM_IsNotExcellentDisplaySetting = JsonUtil.GetInt(OBHAFLMHAKG, "isExcellentDisplaySetting", 0) == 0;

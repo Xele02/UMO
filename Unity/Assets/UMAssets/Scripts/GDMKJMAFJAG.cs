@@ -24,6 +24,7 @@ public class GDMKJMAFJAG
 				l.Add(new List<int>());
 			}
 			GEDOFFFKIFN = new HNJKJCDDIMG_SetInfo();
+			GEDOFFFKIFN.ODDIHGPONFL(FOPEBIFPPCJ);
 			CGLAEOLPEGN = new OPGDJANLKBM_RateInfo();
 			CGLAEOLPEGN.ODDIHGPONFL(GOIIICHHHCL);
 			for (int i = 0; i < 20; i++)
@@ -117,10 +118,20 @@ public class HNJKJCDDIMG_SetInfo
 	}
 
 	//// RVA: 0x15FC3E8 Offset: 0x15FC3E8 VA: 0x15FC3E8
-	//public int KAINPNMMAEK() { }
+	public int KAINPNMMAEK()
+	{
+		return PNFIBNJIOAN_Items.Count;
+	}
 
 	//// RVA: 0x15FC460 Offset: 0x15FC460 VA: 0x15FC460
-	//public void ODDIHGPONFL(HNJKJCDDIMG GPBJHKLFCEP) { }
+	public void ODDIHGPONFL(HNJKJCDDIMG_SetInfo GPBJHKLFCEP)
+	{
+		LIHEBNPAIFI_SId = GPBJHKLFCEP.LIHEBNPAIFI_SId;
+		for(int i = 0; i < GPBJHKLFCEP.KAINPNMMAEK(); i++)
+		{
+			OEFHMMJFEKC_SetItemId(i, GPBJHKLFCEP.FKNBLDPIPMC_GetItemId(i));
+		}
+	}
 }
 
 public class OPGDJANLKBM_RateInfo // TypeDefIndex: 9725
