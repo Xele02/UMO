@@ -100,7 +100,7 @@ public class ILDKBCLAFPB
         // public bool FFKLPNPJLMB { get; }
         // public bool FGJBDPOGMDI { get; }
         public bool CIGAPPFDFKL_Is3D { get { return DDHCLNFPNGK_RenderQuality != 2; } private set {} } //MNJOLLGPMPI 0x2035E64 JCCDFGOGFFA 0x2035E8C
-        public bool OOCKIFIHJJN { get { return DDHCLNFPNGK_RenderQuality == 2; } private set {} } //CKJIGBCJGMI 0x2035E78 IBPIBMKAMPE 0x2035E90
+        public bool OOCKIFIHJJN_Is2DMode { get { return DDHCLNFPNGK_RenderQuality == 2; } private set {} } //CKJIGBCJGMI 0x2035E78 IBPIBMKAMPE 0x2035E90
 
         // // RVA: 0x2035BF0 Offset: 0x2035BF0 VA: 0x2035BF0
         public void PBCBJAPONBF()
@@ -271,7 +271,7 @@ public class ILDKBCLAFPB
         // public float EBBAAPCHNKL() { }
 
         // // RVA: 0x20361A4 Offset: 0x20361A4 VA: 0x20361A4
-        public bool AOOKLMAPPLG()
+        public bool AOOKLMAPPLG_IsValkyrieModeEnabled()
 		{
 			return CDGKHMEOEMP_ValkyrieMode == 0;
 		}

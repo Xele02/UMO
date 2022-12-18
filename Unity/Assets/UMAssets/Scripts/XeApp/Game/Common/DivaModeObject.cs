@@ -64,7 +64,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1BF0888 Offset: 0x1BF0888 VA: 0x1BF0888
 		public void Initialize(CriManaMovieController movieController)
 		{
-			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OOCKIFIHJJN)
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OOCKIFIHJJN_Is2DMode)
 			{
 				gameObject.SetActive(false);
 			}

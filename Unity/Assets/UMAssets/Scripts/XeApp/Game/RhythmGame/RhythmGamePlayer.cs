@@ -408,7 +408,7 @@ namespace XeApp.Game.RhythmGame
 					if(uiController.Hud.isBattleLimitTimeRunning)
 					{
 						Vector3 pos = Vector3.zero;
-						if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D && GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG())
+						if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D && GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled())
 						{							
 							valkyrieModeObject.GetLockOnTargetPos(out pos);
 							valkyrieModeObject.SetShootLock(!status.IsEnableValkyrieAttack());
@@ -1192,7 +1192,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(status.internalMode.type == RhythmGameMode.Type.Valkyrie)
 			{
-				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG())
+				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled())
 				{
 					uguiFader.Fade(0.05f, new Color(ValkyrieStartFadeColor.r, ValkyrieStartFadeColor.g, ValkyrieStartFadeColor.b, 0), ValkyrieStartFadeColor);
 				}
@@ -1216,7 +1216,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (status.internalMode.type != RhythmGameMode.Type.Valkyrie)
 				return;
-			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG())
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled())
 			{
 				uguiFader.Fade(0.05f, ValkyrieStartFadeColor, new Color(ValkyrieStartFadeColor.r, ValkyrieStartFadeColor.g, ValkyrieStartFadeColor.b, 0));
 				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
@@ -2291,7 +2291,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				int damage = status.enemy.Damage(a_result_ex.m_result, noteObject.rNote.GetIndexInMode(MusicData.NoteModeType.Valkyrie), status.comboValkyrie.current, 1.0f, 1.0f, noteObject.rNote.CurrentModeInfo(status.internalMode).specialNoteType);
 				bool is3DMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
-				bool showValkyrie = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG();
+				bool showValkyrie = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled();
 				uiController.UpdateEnemyLife(status.enemy.currentValue, status.enemy.subgoalValue, status.enemy.goalValue, () =>
 				{
 					//0xBF1AFC
@@ -2602,7 +2602,7 @@ namespace XeApp.Game.RhythmGame
 				if(status.IsEnableValkyrieAttack())
 				{
 					bool is3DMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
-					bool showValkyrie = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG();
+					bool showValkyrie = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled();
 					int dmg = status.enemy.Damage(preJudgeValkyrieNotes[i].rNote.result, preJudgeValkyrieNotes[i].rNote.GetIndexInMode(MusicData.NoteModeType.Valkyrie), status.comboValkyrie.current, 1.0f, 1.0f, info.specialNoteType);
 					uiController.UpdateEnemyLife(status.enemy.currentValue, status.enemy.subgoalValue, status.enemy.goalValue, () =>
 					{

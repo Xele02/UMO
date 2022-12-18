@@ -147,12 +147,12 @@ namespace XeApp.Game.RhythmGame
 		private BattleResult m_battleResult; // 0x138
 		private int m_currentEnemyDmageIndex; // 0x148
 		private readonly float[] ResultScoreRankAngleTbl = new float[5] { 0, 0.4f, 0.6f, 0.8f, 1 }; // 0x150
-		// private readonly int UI_rhythm_Push_IN_HashCode = "UI_rhythm_Push_IN"; // 0x154
-		// private readonly int UI_rhythm_Push_OUT_HashCode = "UI_rhythm_Push_OUT"; // 0x158
-		// private readonly int UI_rhythm_Long_IN_HashCode = "UI_rhythm_Long_IN"; // 0x15C
-		// private readonly int UI_rhythm_Long_Loop_HashCode = "UI_rhythm_Long_Loop"; // 0x160
-		// private readonly int UI_rhythm_Long_OUT_HashCode = "UI_rhythm_Long_OUT"; // 0x164
-		// private readonly int UI_rhythm_Delete_HashCode = "UI_rhythm_Delete"; // 0x168
+		private readonly int UI_rhythm_Push_IN_HashCode = "UI_rhythm_Push_IN".GetHashCode(); // 0x154
+		private readonly int UI_rhythm_Push_OUT_HashCode = "UI_rhythm_Push_OUT".GetHashCode(); // 0x158
+		private readonly int UI_rhythm_Long_IN_HashCode = "UI_rhythm_Long_IN".GetHashCode(); // 0x15C
+		private readonly int UI_rhythm_Long_Loop_HashCode = "UI_rhythm_Long_Loop".GetHashCode(); // 0x160
+		private readonly int UI_rhythm_Long_OUT_HashCode = "UI_rhythm_Long_OUT".GetHashCode(); // 0x164
+		private readonly int UI_rhythm_Delete_HashCode = "UI_rhythm_Delete".GetHashCode(); // 0x168
 		private readonly int C_under_UI_Hash = Animator.StringToHash("C_under_UI"); // 0x16C
 		private readonly int C_top_UI_B_OUT_HASH = Animator.StringToHash("C_top_UI_B_OUT"); // 0x170
 		private readonly int UI_D_loop_Hash = Animator.StringToHash("UI_D_loop"); // 0x174
@@ -204,7 +204,191 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCA580 Offset: 0xDCA580 VA: 0xDCA580 Slot: 17
 		public void Initialize()
 		{
-			TodoLogger.Log(0, "Hud Initialize");
+			GameSetupData.TeamInfo team = Database.Instance.gameSetup.teamInfo;
+			GameSetupData.MusicInfo music = Database.Instance.gameSetup.musicInfo;
+			m_isLowSpec = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MIHFCOBBIPJ_GetQuality2d();
+			m_is2dMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OOCKIFIHJJN_Is2DMode;
+			m_isValkyrieOff = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled();
+			int pilotId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[team.prismValkyrieId - 1].PFGJJLGLPAC_PilotId;
+			m_canvas = GetComponentInParent<Canvas>();
+			m_cameraRectTransform = m_canvas.GetComponent<RectTransform>();
+			m_uiCamera = m_canvas.worldCamera;
+			m_touchEffects = new TouchPrefabInstance[RhythmGameConsts.LineNum];
+			string noteLinesName = RhythmGameConsts.IsWideLine() ? "GameNoteLinesW" : "GameNoteLines";
+			Transform lineT = System.Array.Find(transform.parent.GetComponentsInChildren<Transform>(), (Transform _) => {
+				//0x9A1E40
+				return _.name == noteLinesName;
+			});
+			for(int i = 0; i < m_touchEffects.Length; i++)
+			{
+				GameObject g = Instantiate(m_touchPrefab);
+				g.transform.SetParent(m_touchParent.transform, false);
+				m_touchEffects[i] = g.GetComponent<TouchPrefabInstance>();
+				m_touchEffects[i].Instantiate();
+				m_touchEffects[i].touchEffect.Play(UI_rhythm_Push_OUT_HashCode, 0);
+				m_touchEffects[i].touchEffect.Play(UI_rhythm_Long_OUT_HashCode, 0);
+				m_touchEffects[i].SkillEffect.Initialize();
+				m_touchEffects[i].gameObject.transform.position = lineT.transform.GetChild(i).transform.position;
+				m_touchEffects[i].gameObject.transform.localScale = Vector3.one;
+				Vector3 p = m_touchEffects[i].gameObject.transform.localPosition;
+				p.z += TouchEffectZOffsetTbl.Length > i ? TouchEffectZOffsetTbl[i] : 0;
+				m_touchEffects[i].gameObject.transform.localPosition = p;
+				m_touchEffects[i].slideEffect.transform.localRotation = lineT.transform.localRotation;
+			}
+			GameObject b = RhythmGameInstantiatePrefab(bottomPrefab);
+			b.transform.SetParent(anchorRoots[2].transform, false);
+			m_combo = b.GetComponentInChildren<ComboNumber>(true);
+			m_score = b.GetComponentInChildren<ScoreNumber>(true);
+			m_item = b.GetComponentInChildren<DropItemNumber>(true);
+			m_lifeGauge = b.GetComponentInChildren<LifeGauge>(true);
+			m_rankGauge = b.GetComponentInChildren<RankGauge>(true);
+			m_activeSkillButton = b.GetComponentInChildren<ActiveSkillButton>(true);
+			m_mainGaugeAnimator = b.GetComponent<Animator>();
+			m_touchCircleController = b.GetComponent<TouchCircleController>();
+			m_laneController = b.GetComponent<LaneController>();
+			m_laneController.Instantiate(RhythmGameConsts.IsWideLine());
+			m_bottomGameObjectInstance = b;
+			
+			GameObject rt = RhythmGameInstantiatePrefab(rightTopPrefab);
+			rt.transform.SetParent(anchorRoots[4].transform, false);
+			m_foldWaveGauge = rt.GetComponent<FoldWaveGauge>();
+			m_pauseButton = rt.GetComponent<PauseButton>();
+
+			GameObject lt = RhythmGameInstantiatePrefab(leftTopPrefab);
+			lt.transform.SetParent(anchorRoots[3].transform, false);
+			m_liveSkillCutin = lt.GetComponentInChildren<SkillCutin>(true);
+
+			GameObject c = RhythmGameInstantiatePrefab(centerPrefab);
+			c.transform.SetParent(anchorRoots[1].transform, false);
+			m_activeSkillCutin = c.GetComponent<ActiveSkillCutin>();
+
+			GameObject le = RhythmGameInstantiatePrefab(lowEnergyPrefab);
+			m_lowEnergyAnimator = le.GetComponent<Animator>();
+			le.transform.SetParent(anchorRoots[1].transform, false);
+			m_lowEnergyAnimator.Play(OUT_Hash, 0, 1);
+
+			m_valkyrieBottomUi = RhythmGameInstantiatePrefab(RhythmGameConsts.IsWideLine() ? valkyrieBottomWidePrefab : valkyrieBottomPrefab);
+			m_valkyeriBottomEffectController = m_valkyrieBottomUi.GetComponent<EffectBundleController>();
+			m_valkyrieBottomUi.transform.SetParent(anchorRoots[2].transform);
+			m_battleCombo = m_valkyrieBottomUi.GetComponent<BattleCombo>();
+
+			m_valkyrieTimer = RhythmGameInstantiatePrefab(valkyrieTimer);
+			m_battleTimeCount = m_valkyrieTimer.GetComponent<BattleTimeCounter>();
+			m_valkyrieTimer.SetActive(false);
+
+			m_valkyrieCenterUi = RhythmGameInstantiatePrefab(valkyrieCenterPrefab);
+			m_valkyrieCenterEffectAnimator = m_valkyrieCenterUi.GetComponent<BattleCenterUiAnimeControl>();
+			m_valkyrieCenterUi.transform.SetParent(anchorRoots[1].transform, false);
+			m_valkyrieCenterEffectAnimator.Initialize();
+
+			if(!m_isValkyrieOff)
+			{
+				m_valkyrieTopUi = RhythmGameInstantiatePrefab(m_is2dMode ? valkyrieTop2dPrefab : valkyrieTopPrefab);
+				m_valkyrieTimer.transform.SetParent(anchorRoots[2].transform, false);
+				m_valkyrieTimer.transform.localPosition = new Vector3(0, 246.0257f, 0);
+			}
+			else
+			{
+				m_valkyrieTopUi = RhythmGameInstantiatePrefab(valkyrieTopPrefab);
+				int[] vals = new int[3];
+				vals[0] = "ringS_model".GetHashCode();
+				vals[1] = "ringM_model".GetHashCode();
+				vals[2] = "ringL_model".GetHashCode();
+				MeshRendererDict dict = m_valkyrieCenterUi.GetComponent<MeshRendererDict>();
+				for(int i = 0; i < 3; i++)
+				{
+					Renderer r = dict.GetRenderer(vals[i]);
+					if(r != null)
+					{
+						r.enabled = false;
+					}
+				}
+				m_valkyrieTimer.transform.SetParent(anchorRoots[0].transform, false);
+				m_valkyrieTimer.transform.localPosition = new Vector3(-390, -48, 0);
+				m_valkyrieTopUi.transform.localScale = new Vector3(0.9f, 0.9f, 1);
+				m_valkyrieTopUi.transform.Find("L_partsC_root").gameObject.SetActive(false);
+				m_valkyrieTopUi.transform.Find("R_partsC_root").gameObject.SetActive(false);
+			}
+			m_enemyStatus = m_valkyrieTopUi.GetComponent<EnemyStatus>();
+			m_targetSight = m_valkyrieTopUi.GetComponent<EnemyTargetSight>();
+			m_valkyrieTopAnimator = m_valkyrieTopUi.GetComponent<Animator>();
+			m_valkyrieTopUi.transform.SetParent(anchorRoots[0].transform, false);
+
+			GameObject ts = RhythmGameInstantiatePrefab(m_targetSightPrefab);
+			ts.transform.SetParent(anchorRoots[1].transform, false);
+			m_targetSightMark = ts.GetComponent<Animator>();
+
+			m_battleEvaluatePool.Initialize(!m_is2dMode && !m_isValkyrieOff ? anchorRoots[1] : anchorRoots[0], m_battleEvaluatePrefab, m_isValkyrieOff);
+			m_battleEvaluatePool.RootObject.SetActive(false);
+			m_enemyStatus.Initialize(pilotId == 2 || pilotId == 12, false);
+			m_targetSight.Initialize();
+			m_valkyrieBottomUi.SetActive(false);
+			m_valkyrieCenterUi.SetActive(false);
+			m_valkyrieTopUi.SetActive(false);
+			m_targetSightMark.gameObject.SetActive(false);
+			m_faceCutin = GetComponents<FaceCutin>();
+			m_faceCutin[0].Initialize(anchorRoots[3], 0);
+			m_faceCutin[1].Initialize(anchorRoots[4], m_is2dMode ? 1 : 0);
+
+			GameObject us = RhythmGameInstantiatePrefab(m_userStateObject);
+			us.transform.SetParent(anchorRoots[1].transform, false);
+			Animator[] ans = us.GetComponentsInChildren<Animator>(true);
+			m_lifeWarningEffect = ans[0];
+			m_lifeRecoveryEffect = ans[1];
+			m_divaModeEffect = ans[2];
+			m_lifeWarningEffect.Play(damage_OUT_Hash, 0, 1);
+			m_lifeRecoveryEffect.Play(recovery_OUT_Hash, 0, 1);
+			m_divaModeEffect.Play(cut_wait_Hash, 0, 0);
+
+			m_divaBottomUi = RhythmGameInstantiatePrefab(RhythmGameConsts.IsWideLine() ? divaBottomWidePrefab : divaBottomPrefab);
+			m_divaBottomUiAnimator = m_divaBottomUi.GetComponent<Animator>();
+			m_divaBottomUi.transform.SetParent(anchorRoots[2].transform, false);
+			m_divaBottomUi.SetActive(false);
+
+			if(!m_is2dMode)
+			{
+				m_divaTopUi = RhythmGameInstantiatePrefab(divaToptPrefab);
+				m_divaTopUiAnimator = m_divaTopUi.GetComponent<Animator>();
+				m_divaTopUi.transform.SetParent(anchorRoots[0].transform, false);
+				m_divaTopUi.SetActive(false);
+
+				GameObject dmo = RhythmGameInstantiatePrefab(divaModeBeltPrefab);
+				dmo.transform.SetParent(anchorRoots[0].transform, false);
+				m_divaModeBeltAnimator = dmo.GetComponent<Animator>();
+				dmo.SetActive(false);
+			}
+			GameObject br = RhythmGameInstantiatePrefab(battleResultPrefab);
+			br.transform.SetParent(anchorRoots[2].transform, false);
+			m_battleResult = br.GetComponent<BattleResult>();
+
+			if(music.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
+			{
+				m_battleResult.SetWarmup();
+			}
+			m_liveSkillCutin.Initialize();
+			m_activeSkillCutin.Initialize();
+			m_lifeGauge.Initialize();
+			m_lifeGauge.SetValue(1, false);
+			m_rankGauge.Initialize();
+			m_rankGauge.SetValue(0);
+			m_foldWaveGauge.Initialize();
+			m_foldWaveGauge.SetValue(0, false, m_isLowSpec);
+			m_foldWaveGauge.gameObject.SetActive(false);
+			m_battleCombo.Initialize();
+			m_pauseButton.SetOff();
+			m_pauseButton.IsDisable = true;
+			isReadyHUD = false;
+			CurrentCombo = -1;
+			CurrentBattleCombo = -1;
+			SetCombo(0);
+			m_touchCircleController.gameObject.SetActive(false);
+			m_bottomGameObjectInstance.SetActive(true);
+			GameManager.Instance.AddPushBackButtonHandler(OnPushBackButton);
+			m_laneController.SetVisibility(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.NFMEIILKACN_NotesRoute == 0);
+			if(GameManager.Instance.IsTutorial)
+			{
+				TodoLogger.Log(0, "Tutorial");
+			}
 		}
 
 		// // RVA: 0xDCD404 Offset: 0xDCD404 VA: 0xDCD404

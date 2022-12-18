@@ -10,7 +10,14 @@ namespace XeApp.Game.RhythmGame.UI
 		// private static readonly int[] AnimationHashTable; // 0x0
 
 		// // RVA: 0x15592D0 Offset: 0x15592D0 VA: 0x15592D0
-		// public void SetValkyrieOffPriority() { }
+		public void SetValkyrieOffPriority()
+		{
+			UIPriority ps = GetComponent<UIPriority>();
+			for(int i = 0; i < ps.m_meshPrioritySets.Length; i++)
+			{
+				ps.m_meshPrioritySets[i].priority = 0;
+			}
+		}
 
 		// // RVA: 0x155968C Offset: 0x155968C VA: 0x155968C
 		// public void Play(int index) { }
