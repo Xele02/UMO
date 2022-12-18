@@ -21,7 +21,7 @@ namespace XeApp.Game.RhythmGame.UI
 		private static readonly int _rivalWinTriggerHash = Animator.StringToHash("RivalWin"); // 0xC
 		private static readonly int _idleStateHash = Animator.StringToHash("Idle"); // 0x10
 
-		// public bool IsWaitWarmup { get; } 0x1559B54
+		public bool IsWaitWarmup { get { return _isWaitWarmup; } } //0x1559B54
 
 		// RVA: 0x1559B5C Offset: 0x1559B5C VA: 0x1559B5C
 		private void Awake()

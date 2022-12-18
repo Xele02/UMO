@@ -126,7 +126,17 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x15601F8 Offset: 0x15601F8 VA: 0x15601F8
-		// public void ShowGauge() { }
+		public void ShowGauge()
+		{
+			m_meshParent.SetActive(true);
+			m_mainAnimator.Play(FoldGaugeInHash, 0, 0);
+			m_mainAnimator.Play(BattleInEffectHash, 5, 0);
+			m_mainAnimator.Play(FaugeParticleEffectStateHash, 4, 0);
+			m_mainAnimator.SetLayerWeight(2, 0);
+			m_gaugeAnimator.Play(FgaugeAlphaIdle_Hash, 1, 0);
+			SetValue(m_value, false, false);
+			m_isHide = false;
+		}
 
 		// // RVA: 0x15603F8 Offset: 0x15603F8 VA: 0x15603F8
 		// public void GaugeFlash() { }

@@ -28,7 +28,7 @@ namespace XeApp.Game.RhythmGame.UI
 			Animator.StringToHash("combo_lv3_kaijo_OFF"), Animator.StringToHash("combo_lv4_kaijo_OFF")
 		}; // 0x14
 		private static readonly int LoopEndTriggerHash = Animator.StringToHash("LoopEnd"); // 0x18
-		private static readonly int ComboMax = -1; // 0x1C
+		private static readonly int ComboMax = ComboLevelAnimeStates.Length - 1; // 0x1C
 
 		// RVA: 0x155870C Offset: 0x155870C VA: 0x155870C
 		public void Initialize()
@@ -42,12 +42,30 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x15588C8 Offset: 0x15588C8 VA: 0x15588C8
-		// public void Show() { }
+		public void Show()
+		{
+			return;
+		}
 
 		// // RVA: 0x15588CC Offset: 0x15588CC VA: 0x15588CC
 		// public void Hide(bool isFaild = False) { }
 
 		// // RVA: 0x1558B98 Offset: 0x1558B98 VA: 0x1558B98
-		// public bool UpdateCombo(int combo) { }
+		public bool UpdateCombo(int combo)
+		{
+			int c = Mathf.Clamp(combo, 0, ComboMax);
+			bool max = false;
+			m_comboAnimator.Play(ComboLevelAnimeStates[c]);
+			if(c == ComboMax)
+			{
+				max = true;
+				if(m_comboRootAnimator != null)
+				{
+					m_comboRootAnimator.Play(combo_lvMAX_add_Hash, 0, 0);
+				}
+			}
+			m_prevLevel = c;
+			return max;
+		}
 	}
 }

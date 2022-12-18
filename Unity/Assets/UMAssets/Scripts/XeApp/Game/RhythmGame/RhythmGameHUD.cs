@@ -465,19 +465,24 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCDCEC Offset: 0xDCDCEC VA: 0xDCDCEC Slot: 18
 		public void SetPlayerSideTexture(UiPilotTexture pilotTexture, UiDivaTexture divaTexture)
 		{
-			TodoLogger.Log(0, "Hud SetPlayerSideTexture");
+			m_PilotTexture = pilotTexture;
+			m_DivaTexture = divaTexture;
 		}
 
 		// // RVA: 0xDCDCF8 Offset: 0xDCDCF8 VA: 0xDCDCF8 Slot: 19
 		public void SetEnemySideTexture(UiEnemyPilotTexture pilotTexture, UiEnemyRobotTexture robotTexture)
 		{
-			TodoLogger.Log(0, "Hud SetEnemySideTexture");
+			m_EnemyPilotTexture = pilotTexture;
+			m_EnemyRobotTexture = robotTexture;
 		}
 
 		// // RVA: 0xDCDD04 Offset: 0xDCDD04 VA: 0xDCDD04 Slot: 20
 		public void SetEnemyLiveSkillEffect(GameObject effPrefab)
 		{
-			TodoLogger.Log(0, "Hud SetEnemyLiveSkillEffect");
+			GameObject o = RhythmGameInstantiatePrefab(effPrefab);
+			o.transform.SetParent(anchorRoots[2].transform, false);
+			o.SetActive(false);
+			m_permanencyEnemySkillList.Add(new EnemySkillEffect() { effectType = SkillBuffEffect.Type.Poison, bitUseFlag = 0, effectAnimator = o.GetComponent<Animator>() });
 		}
 
 		// // RVA: 0xDCDF18 Offset: 0xDCDF18 VA: 0xDCDF18 Slot: 21
@@ -486,7 +491,22 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCE0E4 Offset: 0xDCE0E4 VA: 0xDCE0E4 Slot: 22
 		public void Show(Action endAction)
 		{
-			TodoLogger.Log(0, "Hud Show");
+			m_bottomGameObjectInstance.SetActive(false);
+			m_foldWaveGauge.gameObject.SetActive(true);
+			m_touchCircleController.gameObject.SetActive(true);
+			m_foldWaveGauge.ShowGauge();
+			m_activeSkillButton.Disable();
+			for(int i = 0; i < m_permanencyEnemySkillList.Count; i++)
+			{
+				if(m_permanencyEnemySkillList[i].effectType == SkillBuffEffect.Type.Poison)
+				{
+					if((m_permanencyEnemySkillList[i].bitUseFlag & 1) != 0)
+					{
+						m_permanencyEnemySkillList[i].effectAnimator.gameObject.SetActive(true);
+					}
+				}
+			}
+			StartCoroutine(WaitEnterAnimeCoroutine(endAction));
 		}
 
 		// // RVA: 0xDCE44C Offset: 0xDCE44C VA: 0xDCE44C Slot: 23
@@ -498,12 +518,56 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCE918 Offset: 0xDCE918 VA: 0xDCE918 Slot: 25
 		public void ChangeHpGaugeFrame(int percent)
 		{
-			TodoLogger.Log(0, "Hud ChangeHpGaugeFrame");
+			m_lifeGauge.SetValue(percent / 100.0f, false);
+			if(m_prevLife != percent)
+			{
+				if(m_prevLife < percent)
+				{
+					if(!m_isContinue)
+					{
+						if(m_lifeRecoveryEffect.GetCurrentAnimatorStateInfo(0).shortNameHash == recovery_OUT_Hash && 
+							m_lifeRecoveryEffect.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+						{
+							m_lifeRecoveryEffect.Play(recovery_IN_Hash);
+							m_lifeRecoveryEffect.SetBool(LoopEnd_Hash, false);
+						}
+						if(WaitRecoveryFunc != null)
+						{
+							StopCoroutine(WaitRecoveryFunc);
+						}
+						WaitRecoveryFunc = WaitRecoveryCoroutine();
+						StartCoroutine(WaitRecoveryFunc);
+					}
+				}
+				if(!m_isContinue)
+				{
+					if(percent < 31)
+					{
+						if(m_lifeWarningEffect.GetBool(LoopEnd_Hash) || 
+							m_lifeWarningEffect.GetCurrentAnimatorStateInfo(0).shortNameHash == damage_OUT_Hash)
+						{
+							m_lifeWarningEffect.Play(damage_IN_Hash);
+							m_lifeWarningEffect.SetBool(LoopEnd_Hash, false);
+							m_prevLife = percent;
+							return;
+						}
+					}
+					m_lifeWarningEffect.SetBool(LoopEnd_Hash, true);
+				}
+			}
+			if(percent == 100 && m_isContinue)
+				m_isContinue = false;
+			m_prevLife = percent;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x74422C Offset: 0x74422C VA: 0x74422C
 		// // RVA: 0xDCEBF8 Offset: 0xDCEBF8 VA: 0xDCEBF8
-		// private IEnumerator WaitRecoveryCoroutine() { }
+		private IEnumerator WaitRecoveryCoroutine()
+		{
+			//0x9A28FC
+			yield return null;
+			m_lifeRecoveryEffect.SetBool(LoopEnd_Hash, true);
+		}
 
 		// // RVA: 0xDCEC80 Offset: 0xDCEC80 VA: 0xDCEC80 Slot: 26
 		// public void SetContinue() { }
@@ -511,13 +575,19 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCECD8 Offset: 0xDCECD8 VA: 0xDCECD8 Slot: 27
 		public void ChangeRankGaugeFrame(ResultScoreRank.Type rankType, float ratio)
 		{
-			TodoLogger.Log(0, "Hud ChangeRankGaugeFrame");
+			float val = 1;
+			if(rankType != ResultScoreRank.Type.SS)
+			{
+				val = ResultScoreRankAngleTbl[(int)rankType] + (ResultScoreRankAngleTbl[(int)rankType + 1] - ResultScoreRankAngleTbl[(int)rankType]) * ratio;
+			}
+			m_rankGauge.SetRunk(rankType);
+			m_rankGauge.SetValue(val);
 		}
 
 		// // RVA: 0xDCEDD4 Offset: 0xDCEDD4 VA: 0xDCEDD4 Slot: 28
 		public void ChangeScore(int score, int type)
 		{
-			TodoLogger.Log(0, "Hud ChangeScore");
+			m_score.SetValue(score, type);
 		}
 
 		// // RVA: 0xDCE840 Offset: 0xDCE840 VA: 0xDCE840 Slot: 29
@@ -535,19 +605,29 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCD4C0 Offset: 0xDCD4C0 VA: 0xDCD4C0 Slot: 32
 		public void SetCombo(int combo)
 		{
-			TodoLogger.Log(0, "Hud SetCombo");
+			if(combo > 999)
+				combo = 999;
+			if(CurrentCombo == combo)
+				return;
+			CurrentCombo = combo;
+			m_combo.SetValue(combo, 0);
 		}
 
 		// // RVA: 0xDCEE3C Offset: 0xDCEE3C VA: 0xDCEE3C Slot: 33
 		public void SetBattleCombo(int combo)
 		{
-			TodoLogger.Log(0, "Hud SetBattleCombo");
+			if(CurrentBattleCombo == combo)
+				return;
+			CurrentBattleCombo = combo;
+			bool max = m_battleCombo.UpdateCombo(combo);
+			m_mainGaugeAnimator.SetBool(MainGaugeIsMaxParamHash, max);
+			m_valkyrieCenterEffectAnimator.SetComboMax(max);
 		}
 
 		// // RVA: 0xDCEF54 Offset: 0xDCEF54 VA: 0xDCEF54 Slot: 34
 		public void SetItemCount(int kind, int count)
 		{
-			TodoLogger.Log(0, "Hud SetItemCount");
+			m_item.SetValue(kind == 0 ? 1 : 0, count);
 		}
 
 		// // RVA: 0xDCEF98 Offset: 0xDCEF98 VA: 0xDCEF98 Slot: 35
@@ -758,16 +838,41 @@ namespace XeApp.Game.RhythmGame
 		// public void DrawSkillEffectEnable(int lineNumber, bool flag) { }
 
 		// // RVA: 0xDD19F4 Offset: 0xDD19F4 VA: 0xDD19F4 Slot: 71
-		// public bool IsEnableActiveSkillButton() { }
+		public bool IsEnableActiveSkillButton()
+		{
+			return m_activeSkillButton.IsEnable;
+		}
 
 		// // RVA: 0xDD1A20 Offset: 0xDD1A20 VA: 0xDD1A20 Slot: 72
 		// public void DecideActiveSkillButton(SkillDuration.Type duration) { }
 
 		// // RVA: 0xDD1A54 Offset: 0xDD1A54 VA: 0xDD1A54
-		// private void ApplyActiveSkillButtonUv() { }
+		private void ApplyActiveSkillButtonUv()
+		{
+			if(Database.Instance.gameSetup.teamInfo.divaList != null)
+			{
+				if(Database.Instance.gameSetup.teamInfo.divaList[0] != null)
+				{
+					if(Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId < 1)
+						return;
+					m_activeSkillButton.ApplySkillUv(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId - 1].EGLDFPILJLG[0]);
+				}
+			}
+		}
 
 		// // RVA: 0xDD1DB4 Offset: 0xDD1DB4 VA: 0xDD1DB4 Slot: 73
-		// public void EnableActiveSkillButton() { }
+		public void EnableActiveSkillButton()
+		{
+			if(Database.Instance.gameSetup.teamInfo.divaList != null)
+			{
+				if(Database.Instance.gameSetup.teamInfo.divaList[0] != null)
+				{
+					if(Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId < 1)
+						return;
+					m_activeSkillButton.Enable();
+				}
+			}
+		}
 
 		// // RVA: 0xDD1FEC Offset: 0xDD1FEC VA: 0xDD1FEC Slot: 74
 		// public void DisableActiveSkillButton() { }
@@ -790,7 +895,23 @@ namespace XeApp.Game.RhythmGame
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744394 Offset: 0x744394 VA: 0x744394
 		// // RVA: 0xDCE3A8 Offset: 0xDCE3A8 VA: 0xDCE3A8
-		// private IEnumerator WaitEnterAnimeCoroutine(Action end) { }
+		private IEnumerator WaitEnterAnimeCoroutine(Action end)
+		{
+			Animator animator;
+
+			//0x9A25DC
+			animator = m_bottomGameObjectInstance.GetComponent<Animator>();
+			animator.SetTrigger(GameStartUiTrigger);
+			ApplyActiveSkillButtonUv();
+			yield return null;
+			while(animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+				yield return null;
+			EnableActiveSkillButton();
+			m_pauseButton.IsDisable = false;
+			isReadyHUD = true;
+			if(end != null)
+				end();
+		}
 
 		// // RVA: 0xDD20C8 Offset: 0xDD20C8 VA: 0xDD20C8
 		private void OnPushBackButton()
@@ -872,8 +993,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDD26E4 Offset: 0xDD26E4 VA: 0xDD26E4 Slot: 92
 		public bool IsWarmupEnd()
 		{
-			TodoLogger.Log(0, "Hud IsWarmupEnd");
-			return true;
+			return !m_battleResult.IsWaitWarmup;
 		}
 
 		// // RVA: 0xDD2714 Offset: 0xDD2714 VA: 0xDD2714 Slot: 93

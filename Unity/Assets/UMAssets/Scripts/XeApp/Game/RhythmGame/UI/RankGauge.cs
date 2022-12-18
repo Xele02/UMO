@@ -1,4 +1,5 @@
 using UnityEngine;
+using XeApp.Game.Common;
 using XeApp.Game.UI;
 
 namespace XeApp.Game.RhythmGame.UI
@@ -40,7 +41,18 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x1562B9C Offset: 0x1562B9C VA: 0x1562B9C
-		// public void SetRunk(ResultScoreRank.Type rank) { }
+		public void SetRunk(ResultScoreRank.Type rank)
+		{
+			if(stateNameTable[(int)rank] != m_playStateName)
+			{
+				m_rankAnime.Play(stateNameTable[(int)rank], 0, 0);
+				m_playStateName = stateNameTable[(int)rank];
+				if(m_effectAnime != null)
+				{
+					m_effectAnime.Play(rank == ResultScoreRank.Type.SS ? loopAnimeHash : ChangeAnimeHash, 0, 0);
+				}
+			}
+		}
 
 		// // RVA: 0x1562CF0 Offset: 0x1562CF0 VA: 0x1562CF0
 		public void SetValue(float value)

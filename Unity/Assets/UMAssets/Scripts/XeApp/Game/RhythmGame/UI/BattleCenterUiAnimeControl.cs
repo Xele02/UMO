@@ -28,7 +28,10 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x1558468 Offset: 0x1558468 VA: 0x1558468
-		// public void SetComboMax(bool isMax) { }
+		public void SetComboMax(bool isMax)
+		{
+			m_animator.SetBool(AnimatorParamIsMax, isMax);
+		}
 
 		// // RVA: 0x15584A4 Offset: 0x15584A4 VA: 0x15584A4
 		// public void Show() { }
