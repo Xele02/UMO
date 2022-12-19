@@ -77,7 +77,7 @@ namespace XeApp.Game.UI
 			m_vertexColors.Clear();
 			m_indices.Clear();
 			m_vertices.Add(new Vector3(0, 0, 0));
-			m_uvs.Add(new Vector2(m_value + m_uvRect.width * 0.5f, m_uvRect.y + m_uvRect.height * 0.5f));
+			m_uvs.Add(new Vector2(m_uvRect.x + m_uvRect.width * 0.5f, m_uvRect.y + m_uvRect.height * 0.5f));
 			m_vertexColors.Add(m_vertexColor);
 
 			float endAngle = m_angleEnd * m_value;
@@ -96,7 +96,7 @@ namespace XeApp.Game.UI
 					float f1 = c * 0 - s * -1;
 					float f2 = s * 0 + c * -1;
 					m_vertices.Add(new Vector3(f1 * m_width / 2, f2 * m_height / 2, 0));
-					m_uvs.Add(new Vector2(m_uvRect.x + (f1 + 1) * 0.5f + m_uvRect.width, m_uvRect.y + (f2 + 1) * 0.5f * m_uvRect.height));
+					m_uvs.Add(new Vector2(m_uvRect.x + (f1 + 1) * 0.5f * m_uvRect.width, m_uvRect.y + (f2 + 1) * 0.5f * m_uvRect.height));
 					m_vertexColors.Add(m_vertexColor);
 				}
 			}

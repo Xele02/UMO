@@ -3,6 +3,7 @@ using TMPro;
 using XeApp.Game.Common;
 using System.Collections.Generic;
 using System.Collections;
+using System;
 
 namespace XeApp.Game.RhythmGame.UI
 {
@@ -61,7 +62,16 @@ namespace XeApp.Game.RhythmGame.UI
 		// public void Show() { }
 
 		// // RVA: 0x1563438 Offset: 0x1563438 VA: 0x1563438
-		// public void Close(Action endCallback) { }
+		public void Close(Action endCallback)
+		{
+			if (m_coroutine != null)
+				StopCoroutine(m_coroutine);
+			m_animator.enabled = true;
+			m_isPlaying = false;
+			m_skillQueue.Clear();
+			m_coroutine = CloseAnimeCoroutine(endCallback);
+			StartCoroutine(m_coroutine);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7473C4 Offset: 0x7473C4 VA: 0x7473C4
 		// // RVA: 0x1563390 Offset: 0x1563390 VA: 0x1563390
@@ -75,6 +85,23 @@ namespace XeApp.Game.RhythmGame.UI
 
 		// [IteratorStateMachineAttribute] // RVA: 0x74743C Offset: 0x74743C VA: 0x74743C
 		// // RVA: 0x1563518 Offset: 0x1563518 VA: 0x1563518
-		// private IEnumerator CloseAnimeCoroutine(Action endCallback) { }
+		private IEnumerator CloseAnimeCoroutine(Action endCallback)
+		{
+			//0x1563B18
+			while (m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < NormalizedCloseFrame)
+				yield return null;
+			float f = NormalizedCloseFrame;
+			if(m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < NormalizedOpenEndFrame &&
+				m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime / 0.1818182f < 1.0f)
+			{
+				f += m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime / 0.1818182f * 0.1818182f;
+			}
+			m_animator.Play(InAnimeStateName, 0, f);
+			yield return null;
+			while (m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+				yield return null;
+			if (endCallback != null)
+				endCallback();
+		}
 	}
 }

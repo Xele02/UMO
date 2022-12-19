@@ -82,6 +82,10 @@ namespace XeApp.Game.RhythmGame
 			{
 				current = Mathf.Max(1, current);
 			}
+			if(RuntimeSettings.CurrentSettings.IsInvincibleCheat)
+			{
+				current = Mathf.Max(current, 1);
+			}
 			if (isChanging)
 				changeTargetValue = current;
 			else

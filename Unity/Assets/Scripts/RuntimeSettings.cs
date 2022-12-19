@@ -74,6 +74,7 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceSimulationOpen = true;
 	public bool ForceTutoSkip = true;
 	public int ForcePlayerLevel = 90;
+	public bool IsInvincibleCheat = false;
 
 	[Header("Live")]
 	public bool ForceLiveValkyrieMode = true;

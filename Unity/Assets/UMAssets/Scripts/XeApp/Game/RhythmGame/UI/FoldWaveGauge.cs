@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using XeApp.Game.Common;
 using XeApp.Game.UI;
@@ -139,26 +140,69 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x15603F8 Offset: 0x15603F8 VA: 0x15603F8
-		// public void GaugeFlash() { }
+		public void GaugeFlash()
+		{
+			if (m_isHide)
+				return;
+			StartCoroutine(ColorAnimeCoroutine(m_renderers[m_currentGauge]));
+		}
 
 		// // RVA: 0x1560510 Offset: 0x1560510 VA: 0x1560510
-		// public void ShowEffect(int result) { }
+		public void ShowEffect(int result)
+		{
+			if (m_isHide)
+				return;
+			m_circleEffectController.Play(CircleEffectGroupHashTbl[result], 0);
+			m_randomCircleEffect.Do();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x747234 Offset: 0x747234 VA: 0x747234
 		// // RVA: 0x1560468 Offset: 0x1560468 VA: 0x1560468
-		// private IEnumerator ColorAnimeCoroutine(Renderer renderer) { }
+		private IEnumerator ColorAnimeCoroutine(Renderer renderer)
+		{
+			//0x155E26C
+			m_materialPropertyBlock.SetColor(m_addColorShaderId, new Color(FlashColor, FlashColor, FlashColor, 0));
+			renderer.SetPropertyBlock(m_materialPropertyBlock);
+			yield return null;
+			m_materialPropertyBlock.SetColor(m_addColorShaderId, Color.black);
+			renderer.SetPropertyBlock(m_materialPropertyBlock);
+		}
 
 		// // RVA: 0x15607AC Offset: 0x15607AC VA: 0x15607AC
-		// public void HideGauge() { }
+		public void HideGauge()
+		{
+			m_meshParent.SetActive(false);
+			m_isHide = true;
+		}
 
 		// // RVA: 0x15607E8 Offset: 0x15607E8 VA: 0x15607E8
-		// public void Success(bool isValkyrieOff) { }
+		public void Success(bool isValkyrieOff)
+		{
+			m_mainAnimator.SetTrigger(isValkyrieOff ? NoValkyrieSuccess : SuccessParamHash);
+			StartCoroutine(WaitSuccessAnimationCoroutine());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7472AC Offset: 0x7472AC VA: 0x7472AC
 		// // RVA: 0x15608F8 Offset: 0x15608F8 VA: 0x15608F8
-		// private IEnumerator WaitSuccessAnimationCoroutine() { }
+		private IEnumerator WaitSuccessAnimationCoroutine()
+		{
+			//0x1561428
+			yield return null;
+			while (m_mainAnimator.GetCurrentAnimatorStateInfo(5).normalizedTime < 1)
+				yield return null;
+			HideGauge();
+		}
 
 		// // RVA: 0x15609A4 Offset: 0x15609A4 VA: 0x15609A4
-		// public void Faild() { }
+		public void Faild()
+		{
+			m_mainAnimator.SetTrigger(FailedParamHash);
+			m_meshTiles[1].Value = m_meshTiles[0].Value;
+			m_meshTiles[1].UvRect = uvTbl[uvTbl.Length - 1];
+			m_meshTiles[1].gameObject.SetActive(true);
+			m_circleUvChange.UpdateUv(FoldWaveGaugeCircleUvChanger.UvType.Purple);
+			m_gaugeAnimator.Play(FgaugeAlphaOut_Hash, 1, 0);
+			m_isHide = true;
+		}
 	}
 }

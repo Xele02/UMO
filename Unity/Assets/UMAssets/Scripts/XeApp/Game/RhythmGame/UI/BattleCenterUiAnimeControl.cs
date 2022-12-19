@@ -34,15 +34,28 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x15584A4 Offset: 0x15584A4 VA: 0x15584A4
-		// public void Show() { }
+		public void Show()
+		{
+			m_animator.Play(AnimatorStateIn, 0, 0);
+			m_animator.Play(AnimatorStateFailed, 3, 1);
+		}
 
 		// // RVA: 0x1558520 Offset: 0x1558520 VA: 0x1558520
-		// public void Hide() { }
+		public void Hide()
+		{
+			m_animator.Play(AnimatorStateOut, 0, 0);
+		}
 
 		// // RVA: 0x1558568 Offset: 0x1558568 VA: 0x1558568
-		// public void TargetLost() { }
+		public void TargetLost()
+		{
+			m_animator.Play(AnimatorStateFailed, 3, 0);
+		}
 
 		// // RVA: 0x15585B0 Offset: 0x15585B0 VA: 0x15585B0
-		// public bool IsPlayingTargetLost() { }
+		public bool IsPlayingTargetLost()
+		{
+			return m_animator.GetCurrentAnimatorStateInfo(3).normalizedTime < 1;
+		}
 	}
 }

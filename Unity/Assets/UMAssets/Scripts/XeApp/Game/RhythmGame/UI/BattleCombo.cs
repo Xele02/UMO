@@ -48,7 +48,16 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x15588CC Offset: 0x15588CC VA: 0x15588CC
-		// public void Hide(bool isFaild = False) { }
+		public void Hide(bool isFaild = false)
+		{
+			for(int i = 0; i < ComboLevelAnimeStates.Length; i++)
+			{
+				if(i > 0 && m_comboAnimator.GetCurrentAnimatorStateInfo(0).shortNameHash == ComboLevelAnimeStates[i])
+				{
+					m_comboAnimator.Play(isFaild ? ComboLevelFaildCloseAnimeStates[i] : ComboLevelCloseAnimeStates[i], 0, 0);
+				}
+			}
+		}
 
 		// // RVA: 0x1558B98 Offset: 0x1558B98 VA: 0x1558B98
 		public bool UpdateCombo(int combo)

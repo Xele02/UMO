@@ -180,9 +180,9 @@ namespace XeApp.Game.RhythmGame
 			Animator.StringToHash("green_faild"), Animator.StringToHash("lightgreen_faild"), Animator.StringToHash("yellow_faild"),
 			Animator.StringToHash("orange_faild"), Animator.StringToHash("red_faild")
 		}; // 0x1BC
-		// private readonly int[] ResultAnimationStateTable = new int[6] {
-		// 	"Miss", "Bad", "Good", "Great", "Perfect", "Excellent"
-		// }; // 0x1C0
+		private readonly int[] ResultAnimationStateTable = new int[6] {
+			"Miss".GetHashCode(), "Bad".GetHashCode(), "Good".GetHashCode(), "Great".GetHashCode(), "Perfect".GetHashCode(), "Excellent".GetHashCode()
+		}; // 0x1C0
 		private readonly float[] TouchEffectZOffsetTbl = new float[6] { -2, -1, -1, -2, -3, -3 }; // 0x1C4
 		private static readonly int DivaModeSwitchSpModeAnimatorParam = Animator.StringToHash("IsSpMode"); // 0x0
 		private static readonly int DivaModeSwitchNormalModeAnimatorParam = Animator.StringToHash("IsSpMode"); // 0x4
@@ -593,7 +593,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCE840 Offset: 0xDCE840 VA: 0xDCE840 Slot: 29
 		public void SetFoldWaveGaugeValue(int value)
 		{
-			TodoLogger.Log(0, "Hud SetFoldWaveGaugeValue");
+			m_foldWaveGauge.SetValue(value, false, m_isLowSpec);
 		}
 
 		// // RVA: 0xDCEE10 Offset: 0xDCEE10 VA: 0xDCEE10 Slot: 30
@@ -633,78 +633,209 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCEF98 Offset: 0xDCEF98 VA: 0xDCEF98 Slot: 35
 		public void ShowLowEnergy()
 		{
-			TodoLogger.Log(0, "Hud ShowLowEnergy");
+			if(!GameManager.Instance.IsTutorial)
+			{
+				m_lowEnergyAnimator.Play(OUT_Hash, 0, 0);
+			}
+			m_foldWaveGauge.Faild();
 		}
 
 		// // RVA: 0xDCF09C Offset: 0xDCF09C VA: 0xDCF09C Slot: 36
 		public void ShowValkyrie()
 		{
-			TodoLogger.Log(0, "Hud ShowValkyrie");
+			m_valkyrieTopUi.SetActive(true);
+			m_valkyrieCenterUi.SetActive(true);
+			m_valkyrieCenterEffectAnimator.Show();
+			m_valkyrieBottomUi.SetActive(true);
+			m_mainGaugeAnimator.SetTrigger(MainGaugeGoBattleParamHash);
+			m_mainGaugeAnimator.SetBool(MainGaugeIsMaxParamHash, false);
+			m_foldWaveGauge.Success(m_isValkyrieOff);
+			m_enemyStatus.Show();
+			m_battleCombo.Show();
+			m_battleTimeCount.gameObject.SetActive(true);
+			m_battleTimeCount.Show();
+			m_battleEvaluatePool.RootObject.SetActive(false);
+			m_currentEnemyDmageIndex = EnemyFrameColorAnimeStateHash.Length - 1;
+			SetCombo(CurrentCombo);
 		}
 
 		// // RVA: 0xDCF36C Offset: 0xDCF36C VA: 0xDCF36C Slot: 37
 		public void ShowEnemyStatus()
 		{
-			TodoLogger.Log(0, "Hud ShowEnemyStatus");
+			m_enemyStatus.SetEnemyRobotTexture("enemy01_model", m_EnemyRobotTexture);
+			m_enemyStatus.ShowEnemyIcon();
+			m_targetSightMark.gameObject.SetActive(false);
 		}
 
 		// // RVA: 0xDCF454 Offset: 0xDCF454 VA: 0xDCF454 Slot: 38
 		public void ShowTargetSight()
 		{
-			TodoLogger.Log(0, "Hud ShowTargetSight");
+			if(!m_is2dMode && !m_isValkyrieOff)
+			{
+				m_targetSight.Show();
+				m_targetSightMark.gameObject.SetActive(true);
+				m_targetSightMark.Play(target_site_IN_Hash, 0, 0);
+			}
 		}
 
 		// // RVA: 0xDCF51C Offset: 0xDCF51C VA: 0xDCF51C Slot: 39
 		public void ShowHitResult()
 		{
-			TodoLogger.Log(0, "Hud ShowHitResult");
+			m_battleEvaluatePool.RootObject.SetActive(true);
 		}
 
 		// // RVA: 0xDCF5B8 Offset: 0xDCF5B8 VA: 0xDCF5B8 Slot: 40
 		public void EnemyDamageResult(int result, Vector3 position)
 		{
-			TodoLogger.Log(0, "Hud EnemyDamageResult");
+			if(m_battleEvaluatePool.RootObject.activeSelf)
+			{
+				BattleEvaluateObject o = m_battleEvaluatePool.Alloc();
+				if(o != null)
+				{
+					o.gameObject.SetActive(true);
+					o.Play(result);
+					Vector3 v;
+					if (m_isValkyrieOff)
+					{
+						if(!m_is2dMode)
+						{
+							v = AdjustUiCameraPosition(position);
+						}
+						else
+						{
+							v = m_valkyrieTopAnimator.transform.localPosition;
+							v += new Vector3(74, -206, 0);
+						}
+					}
+					else
+					{
+						v = m_valkyrieTopAnimator.transform.localPosition + new Vector3(400, -130, 0);
+					}
+					o.transform.localPosition = v;
+					StartCoroutine(WaitDamgeResultAnimeCoroutine(o));
+				}
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7442A4 Offset: 0x7442A4 VA: 0x7442A4
 		// // RVA: 0xDCFAEC Offset: 0xDCFAEC VA: 0xDCFAEC
-		// private IEnumerator WaitDamgeResultAnimeCoroutine(BattleEvaluateObject obj) { }
+		private IEnumerator WaitDamgeResultAnimeCoroutine(BattleEvaluateObject obj)
+		{
+			//0x9A2448
+			while (obj.IsPlaying())
+				yield return null;
+			obj.Free();
+			obj.gameObject.SetActive(false);
+		}
 
 		// // RVA: 0xDCFB74 Offset: 0xDCFB74 VA: 0xDCFB74 Slot: 41
 		public void UpdateTargetPosition(Vector3 position)
 		{
-			TodoLogger.Log(0, "Hud UpdateTargetPosition");
+			if(!m_is2dMode && !m_isValkyrieOff)
+			{
+				m_targetSight.UpdateTargetPosition(new Vector3(m_cameraRectTransform.sizeDelta.x * position.x * 0.5f, m_cameraRectTransform.sizeDelta.y * position.y * 0.5f, 0));
+				m_targetSightMark.transform.localPosition = AdjustUiCameraPosition(position);
+			}
 		}
 
 		// // RVA: 0xDCF9D0 Offset: 0xDCF9D0 VA: 0xDCF9D0
-		// private Vector3 AdjustUiCameraPosition(Vector3 normalizePosition) { }
+		private Vector3 AdjustUiCameraPosition(Vector3 normalizePosition)
+		{
+			return new Vector3(normalizePosition.x * m_cameraRectTransform.sizeDelta.x * 0.5f, normalizePosition.y * m_cameraRectTransform.sizeDelta.x * 0.5f, 0);
+		}
 
 		// // RVA: 0xDCFD7C Offset: 0xDCFD7C VA: 0xDCFD7C Slot: 42
 		public void HideValkyrie(bool isFaild = false)
 		{
-			TodoLogger.Log(0, "Hud HideValkyrie");
+			if(isFaild)
+			{
+				StartCoroutine(FaildValkyrieCoroutine());
+			}
+			else
+			{
+				m_valkyrieTopUi.SetActive(false);
+				m_valkyrieCenterUi.SetActive(false);
+				m_targetSightMark.gameObject.SetActive(false);
+				if(isEnableCutin)
+				{
+					m_faceCutin[0].Play(0);
+				}
+				m_valkyeriBottomEffectController.Play("Success_IN");
+				m_mainGaugeAnimator.SetBool(MainGaugeIsMaxParamHash, true);
+				m_battleCombo.Hide(false);
+			}
+			m_battleEvaluatePool.RootObject.SetActive(false);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x74431C Offset: 0x74431C VA: 0x74431C
 		// // RVA: 0xDCFFEC Offset: 0xDCFFEC VA: 0xDCFFEC
-		// private IEnumerator FaildValkyrieCoroutine() { }
+		private IEnumerator FaildValkyrieCoroutine()
+		{
+			//0x9A1EA0
+			m_valkyrieCenterEffectAnimator.TargetLost();
+			if(isEnableCutin)
+			{
+				m_faceCutin[0].Play(1);
+			}
+			ChangeFaildEnemyStatus();
+			m_targetSight.Hide();
+			m_targetSightMark.Play(target_site_OUT_Hash, 0, 0);
+			yield return null;
+			while (m_valkyrieCenterEffectAnimator.IsPlayingTargetLost())
+				yield return null;
+			m_valkyrieCenterEffectAnimator.Hide();
+			m_valkyeriBottomEffectController.Play("Faild");
+			m_battleCombo.Hide(true);
+			m_valkyrieTopAnimator.Play(C_top_UI_B_OUT_HASH, 0, 0);
+			yield return null;
+			while (m_valkyeriBottomEffectController.IsPlaying("Faild"))
+				yield return null;
+			m_valkyrieTopAnimator.gameObject.SetActive(false);
+			m_valkyrieCenterEffectAnimator.gameObject.SetActive(false);
+			m_valkyeriBottomEffectController.gameObject.SetActive(false);
+			m_valkyrieTimer.SetActive(false);
+			m_targetSight.gameObject.SetActive(false);
+			m_targetSightMark.gameObject.SetActive(false);
+			m_mainGaugeAnimator.SetBool(MainGaugeIsMaxParamHash, true);
+		}
 
 		// // RVA: 0xDD0074 Offset: 0xDD0074 VA: 0xDD0074 Slot: 43
 		public void ShowPilotCutin()
 		{
-			TodoLogger.Log(0, "Hud ShowPilotCutin");
+			if (!isEnableCutin)
+				return;
+			m_faceCutin[0].SetTexture("alt", m_PilotTexture);
+			m_faceCutin[0].Play(0);
 		}
 
 		// // RVA: 0xDD0188 Offset: 0xDD0188 VA: 0xDD0188 Slot: 44
 		public void ShowDivaCutin()
 		{
-			TodoLogger.Log(0, "Hud ShowDivaCutin");
+			if (!isEnableCutin)
+				return;
+			m_faceCutin[0].SetTexture("alt", m_DivaTexture);
+			m_faceCutin[0].Play(0);
 		}
 
 		// // RVA: 0xDD029C Offset: 0xDD029C VA: 0xDD029C Slot: 45
 		public void ShowDiva(bool isSpMode = false)
 		{
-			TodoLogger.Log(0, "Hud ShowDiva");
+			m_divaBottomUi.SetActive(true);
+			m_divaBottomUiAnimator.Play(isSpMode ? change_SPdiva_mode : change_diva_mode_Hash, 0, 0);
+			m_touchCircleController.Play(diva_button_ON_Hash, 0);
+			m_valkyeriBottomEffectController.gameObject.SetActive(false);
+			if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OOCKIFIHJJN_Is2DMode)
+			{
+				m_divaTopUi.SetActive(true);
+				m_divaTopUiAnimator.Play(isSpMode ? change_SPdiva_mode : change_diva_mode_Hash, 0, 0);
+				m_divaModeBeltAnimator.gameObject.SetActive(true);
+				m_divaModeBeltAnimator.SetBool(DivaModeSwitchSpModeAnimatorParam, isSpMode);
+				m_divaModeBeltAnimator.SetBool(DivaModeSwitchNormalModeAnimatorParam, !isSpMode);
+			}
+			if(!m_is2dMode)
+			{
+				m_divaModeEffect.Play(isSpMode ? cut_IN_SP_Hash : cut_IN_Hash, 0, 0);
+			}
 		}
 
 		// // RVA: 0xDD0608 Offset: 0xDD0608 VA: 0xDD0608 Slot: 46
@@ -719,110 +850,150 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDD06D0 Offset: 0xDD06D0 VA: 0xDD06D0 Slot: 49
 		public void CloseSkillCutin()
 		{
-			TodoLogger.Log(0, "Hud CloseSkillCutin");
+			m_liveSkillCutin.Close(null);
+			m_activeSkillCutin.Close(null);
 		}
 
 		// // RVA: 0xDD0728 Offset: 0xDD0728 VA: 0xDD0728 Slot: 50
 		public void EndAcceptOfInput()
 		{
-			TodoLogger.Log(0, "Hud EndAcceptOfInput");
+			m_pauseButton.IsDisable = true;
+			m_activeSkillButton.Disable();
 		}
 
 		// // RVA: 0xDD077C Offset: 0xDD077C VA: 0xDD077C Slot: 51
 		public bool IsInputAccept()
 		{
-			TodoLogger.Log(0, "Hud IsInputAccept");
-			return true;
+			return !m_pauseButton.IsDisable;
 		}
 
 		// // RVA: 0xDD07AC Offset: 0xDD07AC VA: 0xDD07AC Slot: 52
 		public void ShowTouchEffect(int trackId, int fingerId)
 		{
-			TodoLogger.Log(0, "Hud ShowTouchEffect");
+			if (m_touchEffects[trackId].FingerId > -1)
+				return;
+			m_touchEffects[trackId].touchEffect.Play(UI_rhythm_Push_IN_HashCode, 0);
+			m_touchEffects[trackId].FingerId = fingerId;
 		}
 
 		// // RVA: 0xDD08F8 Offset: 0xDD08F8 VA: 0xDD08F8 Slot: 53
 		public void HideToucheEffect(int trackId, int fingerId)
 		{
-			TodoLogger.Log(0, "Hud HideToucheEffect");
+			if (trackId < 0)
+				return;
+			if (m_touchEffects[trackId].FingerId != fingerId)
+				return;
+			m_touchEffects[trackId].touchEffect.Play(UI_rhythm_Push_OUT_HashCode, 0);
+			m_touchEffects[trackId].FingerId = -1;
 		}
 
 		// // RVA: 0xDD0A50 Offset: 0xDD0A50 VA: 0xDD0A50 Slot: 54
 		public void HideAllToucheEffect()
 		{
-			TodoLogger.Log(0, "Hud HideAllToucheEffect");
+			for(int i = 0; i < m_touchEffects.Length; i++)
+			{
+				if(m_touchEffects[i].FingerId > -1)
+				{
+					m_touchEffects[i].touchEffect.Play(UI_rhythm_Push_OUT_HashCode, 0);
+					m_touchEffects[i].FingerId = -1;
+				}
+			}
 		}
 
 		// // RVA: 0xDD0BB8 Offset: 0xDD0BB8 VA: 0xDD0BB8 Slot: 55
 		public void ShowLongNotesTouchEffect(int trackId)
 		{
-			TodoLogger.Log(0, "Hud ShowLongNotesTouchEffect");
+			m_touchEffects[trackId].touchEffect.Play(UI_rhythm_Long_IN_HashCode, 0);
+			m_touchEffects[trackId].touchEffect.Play(UI_rhythm_Long_Loop_HashCode, 0);
 		}
 
 		// // RVA: 0xDD0CCC Offset: 0xDD0CCC VA: 0xDD0CCC Slot: 56
 		public void HideLongNotesTouchEffect(int trackId)
 		{
-			TodoLogger.Log(0, "Hud HideLongNotesTouchEffect");
+			if (!m_touchEffects[trackId].touchEffect.IsSameState(UI_rhythm_Long_Loop_HashCode))
+				return;
+			m_touchEffects[trackId].touchEffect.Play(UI_rhythm_Long_OUT_HashCode, 0);
 		}
 
 		// // RVA: 0xDD0DE4 Offset: 0xDD0DE4 VA: 0xDD0DE4 Slot: 57
 		public void ShowSlideNotesTouchEffect(int trackId)
 		{
-			TodoLogger.Log(0, "Hud ShowSlideNotesTouchEffect");
+			m_touchEffects[trackId].slideEffect.Show();
 		}
 
 		// // RVA: 0xDD0E68 Offset: 0xDD0E68 VA: 0xDD0E68 Slot: 58
 		public void HideSlideNotesTouchEffect(int trackId)
 		{
-			TodoLogger.Log(0, "Hud HideSlideNotesTouchEffect");
+			m_touchEffects[trackId].slideEffect.Hide();
 		}
 
 		// // RVA: 0xDD0EEC Offset: 0xDD0EEC VA: 0xDD0EEC Slot: 59
 		public void ShowSlideNotesTipEffect(int trackId, RNoteSlide noteSlide)
 		{
-			TodoLogger.Log(0, "Hud ShowSlideNotesTipEffect");
+			m_touchEffects[trackId].slideTipEffect.Show(noteSlide);
 		}
 
 		// // RVA: 0xDD0F78 Offset: 0xDD0F78 VA: 0xDD0F78 Slot: 60
 		public void HideSlideNotesTipEffect(int trackId)
 		{
-			TodoLogger.Log(0, "Hud HideSlideNotesTipEffect");
+			m_touchEffects[trackId].slideTipEffect.Hide();
 		}
 
 		// // RVA: 0xDD0FFC Offset: 0xDD0FFC VA: 0xDD0FFC Slot: 61
 		public void ShowWingNotesOpenREffect(int trackId)
 		{
-			TodoLogger.Log(0, "Hud ShowWingNotesOpenREffect");
+			m_touchEffects[trackId].slideEffect.ShowWingOpenR();
 		}
 
 		// // RVA: 0xDD1080 Offset: 0xDD1080 VA: 0xDD1080 Slot: 62
 		public void ShowWingNotesOpenLEffect(int trackId)
 		{
-			TodoLogger.Log(0, "Hud ShowWingNotesOpenLEffect");
+			m_touchEffects[trackId].slideEffect.ShowWingOpenL();
 		}
 
 		// // RVA: 0xDD1104 Offset: 0xDD1104 VA: 0xDD1104 Slot: 63
 		public void ShowWingNotesCloseREffect(int trackId)
 		{
-			TodoLogger.Log(0, "Hud ShowWingNotesCloseREffect");
+			m_touchEffects[trackId].slideEffect.ShowWingCloseR();
 		}
 
 		// // RVA: 0xDD1188 Offset: 0xDD1188 VA: 0xDD1188 Slot: 64
 		public void ShowWingNotesCloseLEffect(int trackId)
 		{
-			TodoLogger.Log(0, "Hud ShowWingNotesCloseLEffect");
+			m_touchEffects[trackId].slideEffect.ShowWingCloseL();
 		}
 
 		// // RVA: 0xDD120C Offset: 0xDD120C VA: 0xDD120C Slot: 65
 		public void ShowNotesHitEffect(int trackId)
 		{
-			TodoLogger.Log(0, "Hud ShowNotesHitEffect");
+			m_touchEffects[trackId].touchEffect.Play(UI_rhythm_Delete_HashCode, 0);
 		}
 
 		// // RVA: 0xDD12A0 Offset: 0xDD12A0 VA: 0xDD12A0 Slot: 66
 		public void ShowResultEffect(int lineNumber, RhythmGameConsts.NoteResultEx a_result_ex)
 		{
-			TodoLogger.Log(0, "Hud ShowResultEffect");
+			int idx = (int)a_result_ex.m_result;
+			if(a_result_ex.m_excellent)
+			{
+				if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.EDDMJEMOAGM_IsNotExcellentDisplaySetting)
+					idx = 5;
+			}
+			if(m_touchEffects[lineNumber].RandomRotate != null)
+			{
+				m_touchEffects[lineNumber].RandomRotate.Do();
+			}
+			if(m_touchEffects[lineNumber].resultEffectSimple != null)
+			{
+				m_touchEffects[lineNumber].resultEffectSimple.Play(ResultAnimationStateTable[idx], 0);
+			}
+			if(a_result_ex.m_result > RhythmGameConsts.NoteResult.Bad)
+			{
+				if(!m_isLowSpec)
+				{
+					m_foldWaveGauge.GaugeFlash();
+				}
+				m_foldWaveGauge.ShowEffect((int)a_result_ex.m_result);
+			}
 		}
 
 		// // RVA: 0xDD17BC Offset: 0xDD17BC VA: 0xDD17BC Slot: 67
@@ -886,8 +1057,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDD2070 Offset: 0xDD2070 VA: 0xDD2070 Slot: 77
 		public bool IsActiveSkillButtonAcEnd()
 		{
-			TodoLogger.Log(0, "Hud IsActiveSkillButtonAcEnd");
-			return false;
+			return m_activeSkillButton.IsStateAcEnd();
 		}
 
 		// // RVA: 0xDD209C Offset: 0xDD209C VA: 0xDD209C Slot: 78
@@ -916,37 +1086,50 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDD20C8 Offset: 0xDD20C8 VA: 0xDD20C8
 		private void OnPushBackButton()
 		{
-			TodoLogger.Log(0, "Hud OnPushBackButton");
+			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OAKOJGPBAJF_BackKey > 0)
+				return;
+			OnPauseButtonSelected(false);
 		}
 
 		// // RVA: 0xDD22C4 Offset: 0xDD22C4 VA: 0xDD22C4
 		// public void OnPauseButtonSelected() { }
 
 		// // RVA: 0xDD21C8 Offset: 0xDD21C8 VA: 0xDD21C8 Slot: 79
-		// public void OnPauseButtonSelected(bool a_suspend) { }
+		public void OnPauseButtonSelected(bool a_suspend)
+		{
+			if (m_pauseButton.IsOn)
+				return;
+			if (m_pauseButton.IsDisable)
+				return;
+			m_pauseButton.SetOn();
+			m_pauseButtonEvent.Invoke(a_suspend);
+			HideAllToucheEffect();
+		}
 
 		// // RVA: 0xDD22CC Offset: 0xDD22CC VA: 0xDD22CC Slot: 80
 		public void ClearPauseButton()
 		{
-			TodoLogger.Log(0, "Hud ClearPauseButton");
+			m_pauseButton.SetOff();
 		}
 
 		// // RVA: 0xDD22F8 Offset: 0xDD22F8 VA: 0xDD22F8 Slot: 81
 		public void DisablePauseButton()
 		{
-			TodoLogger.Log(0, "Hud DisablePauseButton");
+			m_pauseButton.SetDisable();
 		}
 
 		// // RVA: 0xDD2324 Offset: 0xDD2324 VA: 0xDD2324 Slot: 82
 		public void EnablePauseButton()
 		{
-			TodoLogger.Log(0, "Hud EnablePauseButton");
+			m_pauseButton.SetEnable();
 		}
 
 		// // RVA: 0xDD2360 Offset: 0xDD2360 VA: 0xDD2360 Slot: 83
 		public void UpdateBattleLimitTime(int ms)
 		{
-			TodoLogger.Log(0, "Hud UpdateBattleLimitTime");
+			if (!isBattleLimitTimeRunning)
+				return;
+			m_battleTimeCount.UpdateTime(ms);
 		}
 
 		// // RVA: 0xDD23A0 Offset: 0xDD23A0 VA: 0xDD23A0 Slot: 84
@@ -955,19 +1138,29 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDD23A4 Offset: 0xDD23A4 VA: 0xDD23A4 Slot: 85
 		public void UpdateEnemyStatus(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback)
 		{
-			TodoLogger.Log(0, "Hud UpdateEnemyStatus");
+			m_enemyStatus.UpdateEnemyLifeGauge(damage, threshold1, m_isLowSpec);
+			m_enemyStatus.TryChaseMode(damage, threshold1, m_isLowSpec, onChaseModeCallback);
+			if (!m_enemyStatus.IsChaseMode)
+				return;
+			m_battleTimeCount.Finish();
 		}
 
 		// // RVA: 0xDD248C Offset: 0xDD248C VA: 0xDD248C Slot: 86
 		// public void ChangeEnemyLife(EnemyStatus.LifeType a_type) { }
 
 		// // RVA: 0xDD24C0 Offset: 0xDD24C0 VA: 0xDD24C0 Slot: 87
-		// public void ChangeFaildEnemyStatus() { }
+		public void ChangeFaildEnemyStatus()
+		{
+			m_enemyStatus.ChangeFaild(EnemyFaildFrameColorAnimeStateHash[EnemyFaildFrameColorAnimeStateHash.Length - 1]);
+		}
 
 		// // RVA: 0xDD2534 Offset: 0xDD2534 VA: 0xDD2534 Slot: 88
 		public void ShowEnemyCutin()
 		{
-			TodoLogger.Log(0, "Hud ShowEnemyCutin");
+			if (!isEnableCutin)
+				return;
+			m_faceCutin[1].SetTexture("vajura", m_EnemyPilotTexture);
+			m_faceCutin[1].Play(0);
 		}
 
 		// // RVA: 0xDCD3E4 Offset: 0xDCD3E4 VA: 0xDCD3E4
@@ -981,7 +1174,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDD2648 Offset: 0xDD2648 VA: 0xDD2648 Slot: 89
 		public void SetPlayerDivaId(int divaId)
 		{
-			TodoLogger.Log(0, "Hud SetPlayerDivaId");
+			m_battleResult.SetPlayerDivaId(divaId);
 		}
 
 		// // RVA: 0xDD267C Offset: 0xDD267C VA: 0xDD267C Slot: 90
@@ -999,14 +1192,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDD2714 Offset: 0xDD2714 VA: 0xDD2714 Slot: 93
 		public void SetLineAlpha(int lineNo, float alpha)
 		{
-			TodoLogger.Log(0, "Hud SetLineAlpha");
+			m_laneController.SetLineAlpha(lineNo, alpha);
 		}
 
 		// // RVA: 0xDD2750 Offset: 0xDD2750 VA: 0xDD2750 Slot: 94
 		public bool IsActiveLine(int lineNo)
 		{
-			TodoLogger.Log(0, "Hud IsActiveLine");
-			return true;
+			return m_laneController.IsActiveLine(lineNo);
 		}
 	}
 }

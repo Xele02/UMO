@@ -61,7 +61,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF70E20 Offset: 0xF70E20 VA: 0xF70E20
-		//public void Play(string groupName) { }
+		public void Play(string groupName)
+		{
+			Play(groupName.GetHashCode(), 0);
+		}
 
 		//// RVA: 0xF6075C Offset: 0xF6075C VA: 0xF6075C
 		public void Play(int groupHash, float normalizeTime = 0)
@@ -106,10 +109,37 @@ namespace XeApp.Game.RhythmGame
 		//public void Stop(int groupHash) { }
 
 		//// RVA: 0xF716C0 Offset: 0xF716C0 VA: 0xF716C0
-		//public bool IsPlaying(string groupName) { }
+		public bool IsPlaying(string groupName)
+		{
+			return IsPlaying(groupName.GetHashCode());
+		}
 
 		//// RVA: 0xF71704 Offset: 0xF71704 VA: 0xF71704
-		//public bool IsPlaying(int groupHash) { }
+		public bool IsPlaying(int groupHash)
+		{
+			int idx;
+			if (m_searchDict.TryGetValue(groupHash, out idx))
+			{
+				for (int i = 0; i < m_params[idx].Animations.Length; i++)
+				{
+					if (m_params[idx].Animations[i].animator != null)
+					{
+						if (m_params[idx].Animations[i].animator.GetCurrentAnimatorStateInfo(m_params[idx].Animations[i].layerIndex).shortNameHash == m_params[idx].Animations[i].hash
+							 && m_params[idx].Animations[i].animator.GetCurrentAnimatorStateInfo(m_params[idx].Animations[i].layerIndex).normalizedTime < 1)
+							return true;
+					}
+				}
+				for (int i = 0; i < m_params[idx].particles.Length; i++)
+				{
+					if(m_params[idx].particles[i].particle != null)
+					{
+						if(m_params[idx].particles[i].particle.isPlaying)
+							return true;
+					}
+				}
+			}
+			return false;
+		}
 
 		//// RVA: 0xF71CA8 Offset: 0xF71CA8 VA: 0xF71CA8
 		//public bool IsSameState(string groupName) { }

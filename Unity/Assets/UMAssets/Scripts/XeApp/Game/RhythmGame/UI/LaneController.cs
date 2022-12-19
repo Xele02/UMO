@@ -73,7 +73,10 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x1561F60 Offset: 0x1561F60 VA: 0x1561F60
-		// public void SetLineAlpha(int lineNo, float alpha) { }
+		public void SetLineAlpha(int lineNo, float alpha)
+		{
+			m_setActive(lineNo, alpha);
+		}
 
 		// // RVA: 0x1561FE8 Offset: 0x1561FE8 VA: 0x1561FE8
 		private bool IsActiveLineNormal(int lineNo)
@@ -88,6 +91,9 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x1561FF8 Offset: 0x1561FF8 VA: 0x1561FF8
-		// public bool IsActiveLine(int lineNo) { }
+		public bool IsActiveLine(int lineNo)
+		{
+			return m_isActive(lineNo);
+		}
 	}
 }

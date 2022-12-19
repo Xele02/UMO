@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 namespace XeApp.Game.RhythmGame.UI
 {
@@ -47,6 +48,20 @@ namespace XeApp.Game.RhythmGame.UI
 		// public void Show(string name, RhythmGameResource.UITextureResource textureResource, Action endCallback) { }
 
 		// // RVA: 0x1557EB8 Offset: 0x1557EB8 VA: 0x1557EB8
-		// public void Close(Action endCallback) { }
+		public void Close(Action endCallback)
+		{
+			if(m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+			{
+				float f = NormalizedCloseFrame;
+				if(m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < NormalizedOpenEndFrame &&
+					m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime / 0.3548387f < 1)
+				{
+					f += m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime / 0.3548387f * 0.3548387f;
+					m_animator.Play(InAnimeStateName, 0, f);
+				}
+				if(endCallback != null)
+					endCallback();
+			}
+		}
 	}
 }

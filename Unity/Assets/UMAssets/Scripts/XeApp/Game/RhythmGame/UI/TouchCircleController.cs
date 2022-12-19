@@ -14,6 +14,9 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x1564404 Offset: 0x1564404 VA: 0x1564404
-		// public void Play(int stateHash, float normalizedTime) { }
+		public void Play(int stateHash, float normalizedTime)
+		{
+			m_touchCircleAnimator.Play(stateHash, 0, normalizedTime);
+		}
 	}
 }

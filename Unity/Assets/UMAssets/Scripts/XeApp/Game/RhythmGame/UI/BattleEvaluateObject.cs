@@ -7,7 +7,9 @@ namespace XeApp.Game.RhythmGame.UI
 	{
 		[SerializeField]
 		private Animator _animator; // 0x14
-		// private static readonly int[] AnimationHashTable; // 0x0
+		private static readonly int[] AnimationHashTable = new int[4] { Animator.StringToHash("target_MISS"),
+			Animator.StringToHash("HIT"), Animator.StringToHash("target_HITS"), Animator.StringToHash("target_CRITICAL")
+		}; // 0x0
 
 		// // RVA: 0x15592D0 Offset: 0x15592D0 VA: 0x15592D0
 		public void SetValkyrieOffPriority()
@@ -20,10 +22,16 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x155968C Offset: 0x155968C VA: 0x155968C
-		// public void Play(int index) { }
+		public void Play(int index)
+		{
+			_animator.Play(AnimationHashTable[index]);
+		}
 
 		// // RVA: 0x155978C Offset: 0x155978C VA: 0x155978C
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return _animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1;
+		}
 
 		// RVA: 0x1559820 Offset: 0x1559820 VA: 0x1559820 Slot: 5
 		protected override void PausableAwake()
@@ -47,12 +55,6 @@ namespace XeApp.Game.RhythmGame.UI
 		protected override void PausableInPause()
 		{
 			TodoLogger.Log(0, "TODO");
-		}
-
-		// RVA: 0x1559838 Offset: 0x1559838 VA: 0x1559838
-		static BattleEvaluateObject()
-		{
-			TodoLogger.Log(0, "static BattleEvaluateObject");
 		}
 	}
 }

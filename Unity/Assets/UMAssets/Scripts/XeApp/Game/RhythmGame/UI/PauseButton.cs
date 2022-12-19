@@ -18,7 +18,7 @@ namespace XeApp.Game.RhythmGame.UI
 				_isDisable = value;
 				ChangeMode();
 			} } //0x15626F8 0x1562784
-		//public bool IsOn { get; } 0x156278C
+		public bool IsOn { get { return state; } } //0x156278C
 
 		//// RVA: 0x1562794 Offset: 0x1562794 VA: 0x1562794
 		public void SetOff()
@@ -37,10 +37,16 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x1562854 Offset: 0x1562854 VA: 0x1562854
-		//public void SetDisable() { }
+		public void SetDisable()
+		{
+			state = true;
+		}
 
 		//// RVA: 0x1562860 Offset: 0x1562860 VA: 0x1562860
-		//public void SetEnable() { }
+		public void SetEnable()
+		{
+			state = false;
+		}
 
 		//// RVA: 0x1562714 Offset: 0x1562714 VA: 0x1562714
 		private void ChangeMode()

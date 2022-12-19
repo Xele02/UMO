@@ -111,7 +111,10 @@ namespace XeApp.Game.RhythmGame.UI
 		// public void Restart() { }
 
 		// // RVA: 0x1556CC8 Offset: 0x1556CC8 VA: 0x1556CC8
-		// public bool IsStateAcEnd() { }
+		public bool IsStateAcEnd()
+		{
+			return m_skillButtonAnimator.GetCurrentAnimatorStateInfo(0).shortNameHash == AnimatorStateAcEnd;
+		}
 
 		// // RVA: 0x1556DDC Offset: 0x1556DDC VA: 0x1556DDC
 		// public bool IsStateAcOn() { }

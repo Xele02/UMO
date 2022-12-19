@@ -28,7 +28,7 @@ namespace XeApp.Game.RhythmGame.UI
 		public RandomRotate RandomRotate { get { return _randomRotate; } } //0x1564580
 		public TouchSlideEffect slideEffect { get { return _slideEffect; } } //0x1564588
 		public TouchSlideTipEffect slideTipEffect { get { return _slideTipEffect; } } //0x1564590
-		//public int FingerId { get; set; } 0x1564598 0x15645A0
+		public int FingerId { get { return m_fingerId; } set { m_fingerId = value; } } //0x1564598 0x15645A0
 
 		//// RVA: 0x15645A8 Offset: 0x15645A8 VA: 0x15645A8
 		public void Instantiate()
