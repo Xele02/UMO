@@ -238,8 +238,28 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9A2B24 Offset: 0x9A2B24 VA: 0x9A2B24
 		private void Start()
 		{
-			TodoLogger.Log(0, "RhythmGameInputPerformer Start");
+			touchLineNo = new List<int>(InputManager.fingerCount);
+			touchLineNo.Add(-1);
+			touchLineNo.Add(-1);
+			touchLineNo.Add(-1);
+			touchLineNo.Add(-1);
 			inputSaver = new InputSaver(longNoteSaveSec);
+			inputSaver.onBeganTouch = BeganTouch;
+			inputSaver.onEndedTouch = EndedTouch;
+			inputSaver.onReleaseLine = ReleaseLine;
+			inputSaver.onNextLine = NextLine;
+			inputSaver.onSwipedTouch = SwipedTouch;
+			inputSaver.onNeutralTouch = NeutralTouch;
+			if(fingerInfoList == null)
+			{
+				fingerInfoList = new FingerInfo[InputManager.fingerCount];
+				for(int i = 0; i < fingerInfoList.Length; i++)
+				{
+					fingerInfoList[i] = new FingerInfo();
+				}
+			}
+			touchPushRects = new RectTransform[0];
+			touchReleaseRects = new RectTransform[0];
 		}
 
 		//// RVA: 0x9A3398 Offset: 0x9A3398 VA: 0x9A3398

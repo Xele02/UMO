@@ -120,22 +120,40 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AE1C4 Offset: 0x9AE1C4 VA: 0x9AE1C4 Slot: 6
-		//protected virtual void BeganTouch(int lineNo, int fingerId) { }
+		protected virtual void BeganTouch(int lineNo, int fingerId)
+		{
+			beganTouchEvent(lineNo, fingerId);
+		}
 
 		//// RVA: 0x9AE1FC Offset: 0x9AE1FC VA: 0x9AE1FC Slot: 7
-		//protected virtual void EndedTouch(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss) { }
+		protected virtual void EndedTouch(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss)
+		{
+			endedTouchEvent(lineNo, lineNo_Begin, fingerId, forceMiss);
+		}
 
 		//// RVA: 0x9AE24C Offset: 0x9AE24C VA: 0x9AE24C Slot: 8
-		//protected virtual void ReleaseLine(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss) { }
+		protected virtual void ReleaseLine(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss)
+		{
+			releaseLineEvent(lineNo, lineNo_Begin, fingerId, forceMiss);
+		}
 
 		//// RVA: 0x9AE29C Offset: 0x9AE29C VA: 0x9AE29C Slot: 9
-		//protected virtual void NextLine(int lineNo0, int lineNo1, int fingerId, bool forceMiss) { }
+		protected virtual void NextLine(int lineNo0, int lineNo1, int fingerId, bool forceMiss)
+		{
+			nextLineEvent(lineNo0, lineNo1, fingerId, forceMiss);
+		}
 
 		//// RVA: 0x9AE2EC Offset: 0x9AE2EC VA: 0x9AE2EC Slot: 10
-		//protected virtual void SwipedTouch(int lineNo, int fingerId, bool isRight, bool isDown, bool isLeft, bool isUp) { }
+		protected virtual void SwipedTouch(int lineNo, int fingerId, bool isRight, bool isDown, bool isLeft, bool isUp)
+		{
+			swipedTouchEvent(lineNo, fingerId, isRight, isDown, isLeft, isUp);
+		}
 
 		//// RVA: 0x9AE34C Offset: 0x9AE34C VA: 0x9AE34C Slot: 11
-		//protected virtual void NeutralTouch(int lineNo, int fingerId) { }
+		protected virtual void NeutralTouch(int lineNo, int fingerId)
+		{
+			neutralTouchEvent(lineNo, fingerId);
+		}
 
 		//// RVA: 0x9AE384 Offset: 0x9AE384 VA: 0x9AE384 Slot: 12
 		//protected virtual void BeganSkillTouch(TouchSwipeDirection swipeDir) { }
