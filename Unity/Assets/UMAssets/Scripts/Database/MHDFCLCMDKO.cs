@@ -8,7 +8,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
         public int EJNIMIAPJFJ_Id; // 0x8
         public int EAHPLCJMPHD_Pic; // 0xC
         public int EELBHDJJJHH_Plt; // 0x10
-        public int EDLACELKJIK_LS; // 0x14
+        public int EDLACELKJIK_LiveSkill; // 0x14
         public int NJOPIPNGANO_CS; // 0x18
         public int ADMMEMNGKEN_Avo; // 0x1C
 
@@ -24,7 +24,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 			EJNIMIAPJFJ_Id = GPBJHKLFCEP.EJNIMIAPJFJ_Id;
 			EAHPLCJMPHD_Pic = GPBJHKLFCEP.EAHPLCJMPHD_Pic;
 			EELBHDJJJHH_Plt = GPBJHKLFCEP.EELBHDJJJHH_Plt;
-			EDLACELKJIK_LS = GPBJHKLFCEP.EDLACELKJIK_LS;
+			EDLACELKJIK_LiveSkill = GPBJHKLFCEP.EDLACELKJIK_LiveSkill;
 			NJOPIPNGANO_CS = GPBJHKLFCEP.NJOPIPNGANO_CS;
 			ADMMEMNGKEN_Avo = GPBJHKLFCEP.ADMMEMNGKEN_Avo;
 		}
@@ -82,7 +82,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 			data.EJNIMIAPJFJ_Id = (int)array[i].PPFNGGCBJKC;
 			data.EAHPLCJMPHD_Pic = (int)array[i].HANMDEBPBHG;
 			data.EELBHDJJJHH_Plt = (int)array[i].HDEBAGHEIKD;
-			data.EDLACELKJIK_LS = (int)array[i].LNKKMBCDPHH;
+			data.EDLACELKJIK_LiveSkill = (int)array[i].LNKKMBCDPHH;
 			data.NJOPIPNGANO_CS = (int)array[i].AKOJJJLPCKA;
 			data.ADMMEMNGKEN_Avo = (int)array[i].DFOIEJOKDKJ;
 			CKADCLJDCJK_EnemyList.Add(data);

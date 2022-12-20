@@ -95,16 +95,39 @@ namespace XeSys
         }
 
         // // RVA: 0x23A7004 Offset: 0x23A7004 VA: 0x23A7004
-        // public float GetRecentDeltaDistance(int frame) { }
+        public float GetRecentDeltaDistance(int frame)
+		{
+			TouchInfo info = FindRecentInfo(frame);
+			if(info.state != TouchState.ILLEGAL && currentInfo.state != TouchState.ILLEGAL)
+			{
+				return (info.position - currentInfo.position).magnitude;
+			}
+			return 0;
+		}
 
         // // RVA: 0x23A7160 Offset: 0x23A7160 VA: 0x23A7160
-        // public bool IsFlick(int frame, float distanceRate) { }
+        public bool IsFlick(int frame, float distanceRate)
+		{
+			return distanceRate <= GetRecentDeltaDistance(frame) / new Vector2(Screen.width, Screen.height).sqrMagnitude;
+		}
 
         // // RVA: 0x23A720C Offset: 0x23A720C VA: 0x23A720C
         // public int GetSwipeAngleType(int divCount, bool isHalfOffset = True) { }
 
         // // RVA: 0x23A735C Offset: 0x23A735C VA: 0x23A735C
-        // public int GetFlickAngleType(int divCount, int frame, float distanceRate, bool isHalfOffset = True) { }
+        public int GetFlickAngleType(int divCount, int frame, float distanceRate, bool isHalfOffset = true)
+		{
+			int res = -1;
+			TouchInfo info = FindRecentInfo(frame);
+			if (info.state != TouchState.ILLEGAL)
+			{
+				if (currentInfo.state != TouchState.ILLEGAL && IsFlick(frame, distanceRate))
+				{
+					res = Math.CalcAngleType(divCount, info.position, currentInfo.position, isHalfOffset);
+				}
+			}
+			return res;
+		}
 
         // // RVA: 0x23A7474 Offset: 0x23A7474 VA: 0x23A7474
         // public float GetSwipeRadian() { }

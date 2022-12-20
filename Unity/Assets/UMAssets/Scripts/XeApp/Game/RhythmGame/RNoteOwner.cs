@@ -703,7 +703,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBC208 Offset: 0xDBC208 VA: 0xDBC208
-		//public int GetNoteListNum() { }
+		public int GetNoteListNum()
+		{
+			return rNoteList.Count;
+		}
 
 		//// RVA: 0xDBC280 Offset: 0xDBC280 VA: 0xDBC280
 		//public void UpdateObjectPool() { }

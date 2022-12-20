@@ -141,7 +141,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[sceneData.HGONFBDIBPM_ActiveSkillId - 1].MKPJBDFDHOL[0];
+							icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1].MKPJBDFDHOL[0];
 							icon2 = 0;
 						}
 						m_sceneIconDecrationBehaviour.SetSkillIcon(icon, icon2, isActive);
@@ -160,8 +160,8 @@ namespace XeApp.Game.Menu
 							icon2 = 0;
 							isActive = false;
 						}
-						icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML[icon - 1].MKPJBDFDHOL[0];
-						icon2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML[icon - 1].MKPJBDFDHOL[1];
+						icon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[icon - 1].MKPJBDFDHOL[0];
+						icon2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[icon - 1].MKPJBDFDHOL[1];
 						m_sceneIconDecrationBehaviour.SetSkillIcon(icon, icon2, isActive);
 						isVisible = false;
 						m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);

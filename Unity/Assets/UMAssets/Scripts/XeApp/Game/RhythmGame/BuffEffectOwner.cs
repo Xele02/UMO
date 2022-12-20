@@ -1,5 +1,11 @@
+using UnityEngine.Events;
+
 namespace XeApp.Game.RhythmGame
 {
+	public class BuffEffectPoisonEvent : UnityEvent<BuffEffect>
+	{
+	}
+
 	public class BuffEffectOwner
 	{
 		public delegate void OnActiveBuffEffectEvent(BuffEffect buff);
@@ -12,26 +18,10 @@ namespace XeApp.Game.RhythmGame
 
 		private OnActiveBuffEffectEvent onActiveEvent; // 0xC
 		private OnRemoveBuffEffectEvent onRemoveEvent; // 0x10
-		//public BuffEffectPoisonEvent poisonEvent = new BuffEffectPoisonEvent(); // 0x14
+		public BuffEffectPoisonEvent poisonEvent = new BuffEffectPoisonEvent(); // 0x14
 		private StMasterData m_master_data; // 0x18
 
 		public EffectiveBuffList effectiveBuffList { get; private set; } // 0x8
-
-		//[CompilerGeneratedAttribute] // RVA: 0x7465D4 Offset: 0x7465D4 VA: 0x7465D4
-		//							 // RVA: 0xF694F0 Offset: 0xF694F0 VA: 0xF694F0
-		//private void add_onActiveEvent(BuffEffectOwner.OnActiveBuffEffectEvent value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x7465E4 Offset: 0x7465E4 VA: 0x7465E4
-		//							 // RVA: 0xF695FC Offset: 0xF695FC VA: 0xF695FC
-		//private void remove_onActiveEvent(BuffEffectOwner.OnActiveBuffEffectEvent value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x7465F4 Offset: 0x7465F4 VA: 0x7465F4
-		//							 // RVA: 0xF69708 Offset: 0xF69708 VA: 0xF69708
-		//private void add_onRemoveEvent(BuffEffectOwner.OnRemoveBuffEffectEvent value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x746604 Offset: 0x746604 VA: 0x746604
-		//							 // RVA: 0xF69814 Offset: 0xF69814 VA: 0xF69814
-		//private void remove_onRemoveEvent(BuffEffectOwner.OnRemoveBuffEffectEvent value) { }
 
 		//// RVA: 0xF69920 Offset: 0xF69920 VA: 0xF69920
 		public BuffEffectOwner()
@@ -40,16 +30,25 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF69A80 Offset: 0xF69A80 VA: 0xF69A80
-		//public void Initialize() { }
+		public void Initialize()
+		{
+			m_master_data.m_skill_combo_value_0 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("skill_combo_bonus_value0", 0);
+		}
 
 		//// RVA: 0xF69B78 Offset: 0xF69B78 VA: 0xF69B78
-		//public void AddActiveEvent(BuffEffectOwner.OnActiveBuffEffectEvent activeDelegate) { }
+		public void AddActiveEvent(OnActiveBuffEffectEvent activeDelegate)
+		{
+			onActiveEvent += activeDelegate;
+		}
 
 		//// RVA: 0xF69B7C Offset: 0xF69B7C VA: 0xF69B7C
 		//public void ClearActiveEvent() { }
 
 		//// RVA: 0xF69B88 Offset: 0xF69B88 VA: 0xF69B88
-		//public void AddRemoveEvent(BuffEffectOwner.OnRemoveBuffEffectEvent removeDelegate) { }
+		public void AddRemoveEvent(OnRemoveBuffEffectEvent removeDelegate)
+		{
+			onRemoveEvent += removeDelegate;
+		}
 
 		//// RVA: 0xF69B8C Offset: 0xF69B8C VA: 0xF69B8C
 		//public void ClearRemoveEvent() { }
@@ -58,7 +57,18 @@ namespace XeApp.Game.RhythmGame
 		//public void AddBuff(BuffEffect buffEffect) { }
 
 		//// RVA: 0xF6A46C Offset: 0xF6A46C VA: 0xF6A46C
-		//public void ClearAll() { }
+		public void ClearAll()
+		{
+			for(var f = effectiveBuffList.First; f != null; f = f.Next)
+			{
+				if (onRemoveEvent != null)
+					onRemoveEvent(f.Value, f.Value.ownerDivaPlaceIndex);
+			}
+			effectiveBuffList.Clear();
+			onActiveEvent = null;
+			onRemoveEvent = null;
+			poisonEvent.RemoveAllListeners();
+		}
 
 		//// RVA: 0xF6AE38 Offset: 0xF6AE38 VA: 0xF6AE38
 		//public void OnUpdate(BuffDurationCheckParameter checkParameter) { }
@@ -72,8 +82,9 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xF6B118 Offset: 0xF6B118 VA: 0xF6B118
 		public float CalcComboBonus(int a_combo, int a_line_no)
 		{
-			TodoLogger.Log(0, "CalcComboBonus");
-			return 0;
+			if (m_master_data.m_skill_combo_value_0 < 1)
+				return 0;
+			return (effectiveBuffList.GetEffectValue(Common.SkillBuffEffect.Type.ComboBonus, a_line_no, Common.RhythmGameConsts.NoteResult.None) / 100.0f * (a_combo / m_master_data.m_skill_combo_value_0));
 		}
 	}
 }

@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeSys;
+using XeApp.Game.Common.uGUI;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -222,13 +223,29 @@ namespace XeApp.Game.RhythmGame
 		// public void ShowReconfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
 
 		// // RVA: 0xC0FBD8 Offset: 0xC0FBD8 VA: 0xC0FBD8
-		// public void ShowPauseWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
+		public void ShowPauseWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
+		{
+			PopupWindowManager.Show(CreatePausePopupsetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+		}
 
 		// // RVA: 0xC104CC Offset: 0xC104CC VA: 0xC104CC
-		// public void ShowRetireConfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
+		public void ShowRetireConfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
+		{
+			if (Database.Instance.gameSetup.musicInfo.isFreeMode)
+			{
+				PopupWindowManager.Show(CreateRetirePopupsetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+			}
+			else
+			{
+				PopupWindowManager.Show(CreateRetirePopupsettingForStory(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+			}
+		}
 
 		// // RVA: 0xC10730 Offset: 0xC10730 VA: 0xC10730
-		// public void ShowSkipConfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
+		public void ShowSkipConfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
+		{
+			TodoLogger.Log(0, "ShowSkipConfirmationWindow");
+		}
 
 		// // RVA: 0xC10E9C Offset: 0xC10E9C VA: 0xC10E9C
 		public void ShowMvModePauseWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
@@ -276,7 +293,27 @@ namespace XeApp.Game.RhythmGame
 		// private IEnumerator Co_Show6LineDescriptionTutorialWindow(Action callback) { }
 
 		// // RVA: 0xC0FD2C Offset: 0xC0FD2C VA: 0xC0FD2C
-		// private PopupSetting CreatePausePopupsetting() { }
+		private PopupSetting CreatePausePopupsetting()
+		{
+			TextPopupSetting res = new TextPopupSetting();
+			res.WindowSize = SizeType.Small;
+			res.BackButtonLabel = PopupButton.ButtonLabel.ReStart;
+			res.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("game_popup_pause_title");
+			int ma = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).FKDCCLPGKDK_Ma;
+			string diff = Difficulty.Name[(int)Database.Instance.gameSetup.musicInfo.difficultyType];
+			if (Database.Instance.gameSetup.musicInfo.IsLine6Mode)
+				diff += "+";
+			object[] o = new object[2] { RichTextUtility.MakeColorTagString(Database.Instance.musicText.Get(ma).musicName, GameAttributeTextColor.Colors[ma - 1]),
+				diff };
+			res.Text = PopupWindowManager.FormatTextBank(MessageManager.Instance.GetBank("common"), "game_popup_pause_text", o);
+			res.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = !Database.Instance.gameSetup.musicInfo.isTutorialOne && !Database.Instance.gameSetup.musicInfo.isTutorialTwo && !Database.Instance.gameSetup.musicInfo.isStoryMode ? PopupButton.ButtonLabel.Retire : PopupButton.ButtonLabel.Skip, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.ReStart, Type = PopupButton.ButtonType.Positive }
+			};
+
+			return res;
+		}
 
 		// // RVA: 0xC0E7B0 Offset: 0xC0E7B0 VA: 0xC0E7B0
 		// private PopupSetting CreateConfirmationSetting(DJBHIFLHJLK errorGotoTitle) { }
@@ -288,10 +325,34 @@ namespace XeApp.Game.RhythmGame
 		// private PopupSetting CreateConfirmationSettingForStory() { }
 
 		// // RVA: 0xC0F5DC Offset: 0xC0F5DC VA: 0xC0F5DC
-		// private PopupSetting CreateRetirePopupsetting() { }
+		private PopupSetting CreateRetirePopupsetting()
+		{
+			TextPopupSetting res = new TextPopupSetting();
+			res.WindowSize = SizeType.Small;
+			res.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("game_popup_retire_title");
+			res.Text = MessageManager.Instance.GetBank("common").GetMessageByLabel(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva ? "game_popup_retire_text_godiva" : (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle ? "game_popup_retire_text_battle" : "game_popup_retire_text"));
+			res.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retire, Type = PopupButton.ButtonType.Positive}
+			};
+			return res;
+		}
 
 		// // RVA: 0xC0F954 Offset: 0xC0F954 VA: 0xC0F954
-		// private PopupSetting CreateRetirePopupsettingForStory() { }
+		private PopupSetting CreateRetirePopupsettingForStory()
+		{
+			TextPopupSetting res = new TextPopupSetting();
+			res.WindowSize = SizeType.Small;
+			res.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("game_popup_retire_title");
+			res.Text = MessageManager.Instance.GetBank("common").GetMessageByLabel("game_popup_retire_story_text");
+			res.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retire, Type = PopupButton.ButtonType.Positive}
+			};
+			return res;
+		}
 
 		// // RVA: 0xC10994 Offset: 0xC10994 VA: 0xC10994
 		// private PopupSetting CreateSkipPopupsettingForStory() { }

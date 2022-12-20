@@ -12,7 +12,7 @@ namespace XeApp.Game.RhythmGame
 		//public SkillType.Type skillType { get; } 0xF68F90
 		public int effectValue { get { return initialParameter.effectValue; } private set { return; } } //0xF68F98 0xF68FA0
 		public int lineTarget { get { return initialParameter.lineTarget; } private set { return; } } //0xF68FA4 0xF68FAC
-		//public int ownerDivaPlaceIndex { get; private set; } 0xF68FB0 0xF68FB8
+		public int ownerDivaPlaceIndex { get { return initialParameter.ownerDivaPlaceIndex; } private set { return; } } //0xF68FB0 0xF68FB8
 		//public bool isTopPriorityDisplay { get; private set; } 0xF68FBC 0xF68FC4
 		public BuffEffectDuration duration { get; private set; } // 0x30
 

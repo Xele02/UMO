@@ -1026,7 +1026,7 @@ namespace XeApp.Game.RhythmGame
 				{
 					if(Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId < 1)
 						return;
-					m_activeSkillButton.ApplySkillUv(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId - 1].EGLDFPILJLG[0]);
+					m_activeSkillButton.ApplySkillUv(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId - 1].EGLDFPILJLG[0]);
 				}
 			}
 		}
@@ -1046,7 +1046,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD1FEC Offset: 0xDD1FEC VA: 0xDD1FEC Slot: 74
-		// public void DisableActiveSkillButton() { }
+		public void DisableActiveSkillButton()
+		{
+			m_activeSkillButton.Disable();
+		}
 
 		// // RVA: 0xDD2018 Offset: 0xDD2018 VA: 0xDD2018 Slot: 75
 		// public void EndActiveSkill() { }

@@ -91,13 +91,29 @@ namespace XeSys
 		// public static Vector3 NoClampLerp(Vector3 start, Vector3 end, float t) { }
 
 		// // RVA: 0x238FDF0 Offset: 0x238FDF0 VA: 0x238FDF0
-		// public static float CalcRadian(Vector2 start, Vector2 end) { }
+		public static float CalcRadian(Vector2 start, Vector2 end)
+		{
+			return Mathf.Atan2(end.y - start.y, end.x - start.x);
+		}
 
 		// // RVA: 0x238FEA0 Offset: 0x238FEA0 VA: 0x238FEA0
 		// public static float CalcDegree(Vector2 start, Vector2 end) { }
 
 		// // RVA: 0x238FECC Offset: 0x238FECC VA: 0x238FECC
-		// public static int CalcAngleType(int divCount, Vector2 start, Vector2 end, bool isHalfOffset) { }
+		public static int CalcAngleType(int divCount, Vector2 start, Vector2 end, bool isHalfOffset)
+		{
+			if (divCount == 0)
+				return 0;
+			else
+			{
+				float f = CalcRadian(start, end);
+				if (isHalfOffset)
+					f += 2 * Mathf.PI / divCount * 0.5f;
+				if (f < 0)
+					f += 2* Mathf.PI;
+				return Mathf.RoundToInt(f / (2 * Mathf.PI) * divCount);
+			}
+		}
 
 		// // RVA: 0x238FF60 Offset: 0x238FF60 VA: 0x238FF60
 		public static float CalcNearDistancePointToLine(Vector3 point, Vector3 lineStart, Vector3 lineEnd, out float lineNearestTargetRate)

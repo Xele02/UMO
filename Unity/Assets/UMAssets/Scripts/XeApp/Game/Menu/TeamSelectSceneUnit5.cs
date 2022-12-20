@@ -229,7 +229,7 @@ namespace XeApp.Game.Menu
 			}
 			m_viewMusicData = Database.Instance.selectedMusic.GetSelectedMusicData();
 			m_viewEnemyData = Database.Instance.selectedMusic.GetEnemyData(Database.Instance.gameSetup.musicInfo.difficultyType);
-			m_viewEnemyData.NPEKPHAFMGE(Database.Instance.gameSetup.musicInfo.enemyInfo.NJOPIPNGANO_CS, Database.Instance.gameSetup.musicInfo.enemyInfo.EDLACELKJIK_LS);
+			m_viewEnemyData.NPEKPHAFMGE(Database.Instance.gameSetup.musicInfo.enemyInfo.NJOPIPNGANO_CS, Database.Instance.gameSetup.musicInfo.enemyInfo.EDLACELKJIK_LiveSkill);
 			UpdatePrismData(m_viewMusicData.DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo);
 			m_isRaidEvent = Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid;
 			if(TutorialProc.CanUnit5Help(Database.Instance.gameSetup.musicInfo))
@@ -1277,7 +1277,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8B940 Offset: 0xA8B940 VA: 0xA8B940
 		private void AdvanceGame()
 		{
-			TodoLogger.MinLog = 99;
+			TodoLogger.MinLog = 9999;
 			bool isNotUpdate = false;
 			if(m_isRaidEvent)
 			{

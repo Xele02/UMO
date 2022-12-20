@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 				Color col = IconColorOff;
 				if(sceneData.HGONFBDIBPM_ActiveSkillId >= 1)
 				{
-					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[sceneData.HGONFBDIBPM_ActiveSkillId - 1].MKPJBDFDHOL[0];
+					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1].MKPJBDFDHOL[0];
 					col = IconColorOn;
 				}
 				m_activeIconImage.enabled = true;
@@ -250,8 +250,8 @@ namespace XeApp.Game.Menu
 				int iconId = 0;
 				if (sceneData.FILPDDHMKEJ(false, 0, 0) > 0)
 				{
-					iconId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML[sceneData.FILPDDHMKEJ(false, 0, 0) - 1].MKPJBDFDHOL[0];
-					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML[sceneData.FILPDDHMKEJ(false, 0, 0) - 1].MKPJBDFDHOL[1];
+					iconId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneData.FILPDDHMKEJ(false, 0, 0) - 1].MKPJBDFDHOL[0];
+					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneData.FILPDDHMKEJ(false, 0, 0) - 1].MKPJBDFDHOL[1];
 				}
 				Color col = IconColorOn;
 				if(!CheckMatchLiveSkill(sceneData, divaId, musicId))

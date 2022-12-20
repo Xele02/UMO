@@ -607,7 +607,7 @@ namespace XeApp.Game.RhythmGame
 					{
 						if(liveSkills[j] != 0)
 						{
-							masterSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML[liveSkills[j] - 1];
+							masterSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkills[j] - 1];
 							for(k = 0; k < masterSkill.EGLDFPILJLG.Length; k++)
 							{
 								if(masterSkill.EGLDFPILJLG[k] != 0)
@@ -667,7 +667,7 @@ namespace XeApp.Game.RhythmGame
 
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 
-			md = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[activeSkillId - 1];
+			md = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[activeSkillId - 1];
 			for (i = 0; i < 1; i++)
 			{
 				effectType = md.EGLDFPILJLG[i];

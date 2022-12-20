@@ -104,7 +104,7 @@ namespace XeApp.Game.Common
 				{
 					if (a_l_skill_id < 1)
 						return false;
-					PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML[a_l_skill_id - 1];
+					PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[a_l_skill_id - 1];
 					if (skill.AANDPLGPDEI())
 					{
 						if (!skill.HDPIEILADDH(musicData.DLAEJOBELBH_MusicId))
@@ -423,7 +423,7 @@ namespace XeApp.Game.Common
 				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[(isLine6Mode ? musicInfo.PJNFOCDANCE : musicInfo.LHICAKGHIGF)[(int)difficultyType]]);
 				if(overrideEnemyCenterSkillId != 0 || overrideEnemyLiveSkillId != 0)
 				{
-					enemyInfo.EDLACELKJIK_LS = overrideEnemyLiveSkillId;
+					enemyInfo.EDLACELKJIK_LiveSkill = overrideEnemyLiveSkillId;
 					enemyInfo.NJOPIPNGANO_CS = overrideEnemyCenterSkillId;
 				}
 			}

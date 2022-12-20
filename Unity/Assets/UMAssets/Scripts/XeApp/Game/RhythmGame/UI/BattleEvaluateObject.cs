@@ -36,25 +36,25 @@ namespace XeApp.Game.RhythmGame.UI
 		// RVA: 0x1559820 Offset: 0x1559820 VA: 0x1559820 Slot: 5
 		protected override void PausableAwake()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0x1559824 Offset: 0x1559824 VA: 0x1559824 Slot: 6
 		protected override void PausableStart()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0x1559828 Offset: 0x1559828 VA: 0x1559828 Slot: 7
 		protected override void PausableUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0x155982C Offset: 0x155982C VA: 0x155982C Slot: 8
 		protected override void PausableInPause()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 	}
 }

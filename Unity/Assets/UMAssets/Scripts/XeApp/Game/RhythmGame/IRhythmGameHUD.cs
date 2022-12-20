@@ -232,7 +232,7 @@ namespace XeApp.Game.RhythmGame
 		// public abstract void EnableActiveSkillButton();
 
 		// // RVA: -1 Offset: -1 Slot: 70
-		// public abstract void DisableActiveSkillButton();
+		void DisableActiveSkillButton();
 
 		// // RVA: -1 Offset: -1 Slot: 71
 		// public abstract void EndActiveSkill();

@@ -1061,7 +1061,21 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (setting_mv.m_enable)
 				return;
-			TodoLogger.Log(0, "InitializeSkill");
+			skillOwner.status = status;
+			skillOwner.CreateList();
+			skillOwner.onFullfillLiveSkill = OnFullfillLiveSkill;
+			skillOwner.onFullfillEnemySkill = OnFullfillEnemySkill;
+			skillOwner.onFullfillActiveSkill = OnFullfillActiveSkill;
+			buffOwner.ClearAll();
+			buffOwner.Initialize();
+			buffOwner.AddActiveEvent(OnActiveBuffEffect);
+			buffOwner.AddRemoveEvent(OnRemoveBuffEffect);
+			buffOwner.poisonEvent.AddListener(OnPosionSkillDamageCallback);
+			uiController.Hud.DisableActiveSkillButton();
+			skillTouched = false;
+			touchedCenterLiveSkill = false;
+			touchedEventItem = false;
+			skillOwner.CheckFirstTrigger();
 		}
 
 		// // RVA: 0x9BB22C Offset: 0x9BB22C VA: 0x9BB22C
@@ -1480,7 +1494,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9BE618 Offset: 0x9BE618 VA: 0x9BE618
-		// private void OnPosionSkillDamageCallback(BuffEffect buff) { }
+		private void OnPosionSkillDamageCallback(BuffEffect buff)
+		{
+			TodoLogger.Log(0, "OnPosionSkillDamageCallback");
+		}
 
 		// // RVA: 0x9BE84C Offset: 0x9BE84C VA: 0x9BE84C
 		private void MusicIntroStartPlayerCutInCallback()
@@ -1595,13 +1612,22 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9BF538 Offset: 0x9BF538 VA: 0x9BF538
-		// private void OnFullfillLiveSkill(LiveSkill skill) { }
+		private void OnFullfillLiveSkill(LiveSkill skill)
+		{
+			TodoLogger.Log(0, "OnFullfillLiveSkill");
+		}
 
 		// // RVA: 0x9BFCCC Offset: 0x9BFCCC VA: 0x9BFCCC
-		// private void OnFullfillActiveSkill(ActiveSkill skill) { }
+		private void OnFullfillActiveSkill(ActiveSkill skill)
+		{
+			TodoLogger.Log(0, "OnFullfillActiveSkill");
+		}
 
 		// // RVA: 0x9C0468 Offset: 0x9C0468 VA: 0x9C0468
-		// private void OnFullfillEnemySkill(EnemySkill skill) { }
+		private void OnFullfillEnemySkill(EnemySkill skill)
+		{
+			TodoLogger.Log(0, "OnFullfillEnemySkill");
+		}
 
 		// // RVA: 0x9C03D8 Offset: 0x9C03D8 VA: 0x9C03D8
 		// private void OnActiveSkill_End() { }
@@ -1610,10 +1636,16 @@ namespace XeApp.Game.RhythmGame
 		// private void OnActiveSkill_Update(int a_notes_msec) { }
 
 		// // RVA: 0x9C0648 Offset: 0x9C0648 VA: 0x9C0648
-		// private void OnActiveBuffEffect(BuffEffect buff) { }
+		private void OnActiveBuffEffect(BuffEffect buff)
+		{
+			TodoLogger.Log(0, "OnActiveBuffEffect");
+		}
 
 		// // RVA: 0x9C07AC Offset: 0x9C07AC VA: 0x9C07AC
-		// private void OnRemoveBuffEffect(BuffEffect buff, int ownerDivaPlaceIndex) { }
+		private void OnRemoveBuffEffect(BuffEffect buff, int ownerDivaPlaceIndex)
+		{
+			TodoLogger.Log(0, "OnRemoveBuffEffect");
+		}
 
 		// // RVA: 0x9C0A20 Offset: 0x9C0A20 VA: 0x9C0A20
 		// private bool MiddleScoreJudge(int idx, int score) { }
@@ -1786,13 +1818,49 @@ namespace XeApp.Game.RhythmGame
 		// private void ReconfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 
 		// // RVA: 0x9C27B4 Offset: 0x9C27B4 VA: 0x9C27B4
-		// private void PauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void PauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if(type != PopupButton.ButtonType.Negative)
+			{
+				GameManager.Instance.SetTouchEffectVisible(false);
+				GameManager.Instance.SetTouchEffectMode(false);
+				uiController.BeginRetryAnim(PauseRetryAnimCompletedCallBack);
+			}
+			else
+			{
+				if(!Database.Instance.gameSetup.musicInfo.isTutorialOne && 
+					!Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+				{
+					if (!Database.Instance.gameSetup.musicInfo.isStoryMode)
+					{
+						uiController.ShowRetireConfirmationWindow(PauseRetireConfirmationWindowCallBack);
+						return;
+					}
+					uiController.ShowSkipConfirmationWindow(SkipStoryPauseWindowCallBack);
+					return;
+				}
+				uiController.ShowSkipConfirmationWindow(SkipTutorialWindowCallBack);
+			}
+		}
 
 		// // RVA: 0x9C2A9C Offset: 0x9C2A9C VA: 0x9C2A9C
-		// private void PauseRetireConfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void PauseRetireConfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if(type == PopupButton.ButtonType.Negative)
+			{
+				uiController.ShowPauseWindow(PauseWindowCallBack);
+			}
+			else
+			{
+				FailedRhythmGame();
+			}
+		}
 
 		// // RVA: 0x9C2B68 Offset: 0x9C2B68 VA: 0x9C2B68
-		// private void SkipTutorialWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void SkipTutorialWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			TodoLogger.Log(0, "SkipTutorialWindowCallBack");
+		}
 
 		// // RVA: 0x9C2D30 Offset: 0x9C2D30 VA: 0x9C2D30
 		// private void EndTutorialWindowCallBack() { }
@@ -1801,7 +1869,10 @@ namespace XeApp.Game.RhythmGame
 		// private void SkipStoryWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 
 		// // RVA: 0x9C2E00 Offset: 0x9C2E00 VA: 0x9C2E00
-		// private void SkipStoryPauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void SkipStoryPauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			TodoLogger.Log(0, "SkipStoryPauseWindowCallBack");
+		}
 
 		// // RVA: 0x9C2ECC Offset: 0x9C2ECC VA: 0x9C2ECC
 		private void MvModePauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
@@ -1878,7 +1949,11 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C3A48 Offset: 0x9C3A48 VA: 0x9C3A48
 		private void PauseButtonCallback(bool a_suspend)
 		{
-			TodoLogger.Log(0, "Rhythmgameplayer PauseButtonCallback");
+			PauseGame(true);
+			GameManager.Instance.SetTouchEffectVisible(true);
+			GameManager.Instance.SetTouchEffectMode(true);
+			uiController.failed.ShowBlackCurtainOnly();
+			uiController.ShowPauseWindow(PauseWindowCallBack);
 		}
 
 		// // RVA: 0x9C3BCC Offset: 0x9C3BCC VA: 0x9C3BCC
@@ -1927,7 +2002,11 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9C4154 Offset: 0x9C4154 VA: 0x9C4154
-		// private void PauseRetryAnimCompletedCallBack() { }
+		private void PauseRetryAnimCompletedCallBack()
+		{
+			ResumeGame();
+			uiController.Hud.ClearPauseButton();
+		}
 
 		// // RVA: 0x9C309C Offset: 0x9C309C VA: 0x9C309C
 		private void MvModePauseRetry()

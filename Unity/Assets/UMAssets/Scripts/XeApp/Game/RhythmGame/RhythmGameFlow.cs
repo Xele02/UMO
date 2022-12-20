@@ -368,10 +368,10 @@ namespace XeApp.Game.RhythmGame
 			int enemyId = music.enemyInfo.EJNIMIAPJFJ_Id;
 			if(rhythmGameResource.paramResource.m_paramEnemy.Check(Database.Instance.gameSetup, ref enemyId))
 			{
-				int prevLS = music.enemyInfo.EDLACELKJIK_LS;
+				int prevLS = music.enemyInfo.EDLACELKJIK_LiveSkill;
 				int prevCS = music.enemyInfo.NJOPIPNGANO_CS;
 				music.enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[enemyId - 1]);
-				music.enemyInfo.EDLACELKJIK_LS = prevLS;
+				music.enemyInfo.EDLACELKJIK_LiveSkill = prevLS;
 				music.enemyInfo.NJOPIPNGANO_CS = prevCS;
 			}
 			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
