@@ -426,6 +426,9 @@ namespace XeApp.Game.RhythmGame
 				touchPushRects[i] = t.Find("HitRect" + (i + 1)).GetComponent<RectTransform>();
 				touchReleaseRects[i] = t2.Find("HitRect" + (i + 1)).GetComponent<RectTransform>();
 			}
+			#region UMO
+			InputManager.Instance.InitializeLineCoords(touchPushRects);
+			#endregion
 		}
 
 		//// RVA: 0x9A3754 Offset: 0x9A3754 VA: 0x9A3754 Slot: 13

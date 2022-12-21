@@ -90,6 +90,9 @@ namespace XeSys
 			else
 			{
 				MouseAction();
+				#region UMO
+				KeyboardAction();
+				#endregion
 			}
 		}
 
@@ -250,5 +253,77 @@ namespace XeSys
 
 		// // RVA: 0x1EF793C Offset: 0x1EF793C VA: 0x1EF793C
 		// public void Debug() { }
+
+		#region UMO
+		Vector2[] lineTouchCoords = null;
+
+		private static Rect GetScreenPositionFromRect(RectTransform rt, Camera camera)
+		{
+			// getting the world corners
+			var corners = new Vector3[4];
+			rt.GetWorldCorners(corners);
+
+			// getting the screen corners
+			for (var i = 0; i < corners.Length; i++)
+				corners[i] = camera.WorldToScreenPoint(corners[i]);
+
+			// getting the top left position of the transform
+			var position = (Vector2)corners[1];
+			// inverting the y axis values, making the top left corner = 0.
+			position.y = Screen.height - position.y;
+			// calculate the siz, width and height, in pixle format
+			var size = corners[2] - corners[0];
+
+			return new Rect(position, size);
+		}
+
+		public void InitializeLineCoords(RectTransform[] rects)
+		{
+			lineTouchCoords = new Vector2[rects.Length];
+			for(int i = 0; i < lineTouchCoords.Length; i++)
+			{
+				Canvas canvas = rects[i].GetComponentInParent<Canvas>();
+				lineTouchCoords[i] = GetScreenPositionFromRect(rects[i], canvas.worldCamera).center;
+			}
+		}
+
+		void KeyboardAction()
+		{
+			/*
+			TouchInfoRecord info = touchInfoRecords[0];
+			touchCount = 0;
+			TouchPhase phase = TouchPhase.Began;
+			Vector2 position = Vector2.zero;
+			if(Input.GetMouseButtonDown(0))
+			{
+				phase = TouchPhase.Began;
+				position = Input.mousePosition;
+			}
+			else if(Input.GetMouseButtonUp(0))
+			{
+				position = Input.mousePosition;
+				phase = TouchPhase.Ended;
+			}
+			else if(Input.GetMouseButton(0))
+			{
+				position = Input.mousePosition;
+				phase = TouchPhase.Stationary;
+			}
+			else
+			{
+				info.UpdateReleased();
+				MousePinchAction();
+				return;
+			}
+			info.Update(phase, position);
+			MousePinchAction();
+			*/
+			TouchInfoRecord info = null;
+			if (Input.GetKeyDown(KeyCode.S))
+			{
+
+			}
+		}
+		#endregion
 	}
 }
