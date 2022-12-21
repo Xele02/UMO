@@ -159,7 +159,14 @@ namespace XeApp.Game.RhythmGame
 			}
 
 			//// RVA: 0x9A6170 Offset: 0x9A6170 VA: 0x9A6170
-			//public void OnReleased(int fingerId) { }
+			public void OnReleased(int fingerId)
+			{
+				FingerData info = SearchFinger(fingerId);
+				if (info != null)
+				{
+					info.OnReleased();
+				}
+			}
 
 			//// RVA: 0x9A6268 Offset: 0x9A6268 VA: 0x9A6268
 			public void OnSwiped(int lineNo, int fingerId, bool isRight, bool isDown, bool isLeft, bool isUp)
@@ -190,7 +197,15 @@ namespace XeApp.Game.RhythmGame
 			//public bool UpdateLineNo(int fingerId, int lineNo) { }
 
 			//// RVA: 0x9A8400 Offset: 0x9A8400 VA: 0x9A8400
-			//public bool IsActive(int fingerId) { }
+			public bool IsActive(int fingerId)
+			{
+				FingerData data = SearchFinger(fingerId);
+				if (data != null)
+				{
+					return data.lineNo > -1;
+				}
+				return false;
+			}
 
 			//// RVA: 0x9A70B0 Offset: 0x9A70B0 VA: 0x9A70B0
 			private bool IsSave(int fingerId)
@@ -316,7 +331,10 @@ namespace XeApp.Game.RhythmGame
 			//public bool IsReleased() { }
 
 			//// RVA: 0x9A6B4C Offset: 0x9A6B4C VA: 0x9A6B4C
-			//public void OnReleased() { }
+			public void OnReleased()
+			{
+				fingerId = -1;
+			}
 
 			//// RVA: 0x9A6B58 Offset: 0x9A6B58 VA: 0x9A6B58
 			//public bool IsInSave(float limitSec) { }
@@ -362,42 +380,12 @@ namespace XeApp.Game.RhythmGame
 		[SerializeField] // RVA: 0x68DCC8 Offset: 0x68DCC8 VA: 0x68DCC8
 		private List<Vector2> touchRectScreenPos; // 0x68
 
-		public int longNoteSaveFrame { get; set; }
+		//public int longNoteSaveFrame { get; set; } 0x9A2A9C 0x9A2AA4
 		[HideInInspector]
 		public RNoteOwner refRNoteOwner { get; set; } // 0x44
 		[HideInInspector]
 		public RhythmGamePlayer refRhytmGamePlayer { get; set; } // 0x48
 		public DelegateCheckInput delegateCheckInput { get; set; } // 0x6C
-
-		//// RVA: 0x9A2A9C Offset: 0x9A2A9C VA: 0x9A2A9C
-		//public int get_longNoteSaveFrame() { }
-
-		//// RVA: 0x9A2AA4 Offset: 0x9A2AA4 VA: 0x9A2AA4
-		//public void set_longNoteSaveFrame(int value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743DDC Offset: 0x743DDC VA: 0x743DDC
-		//							 // RVA: 0x9A2AF4 Offset: 0x9A2AF4 VA: 0x9A2AF4
-		//public RNoteOwner get_refRNoteOwner() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743DEC Offset: 0x743DEC VA: 0x743DEC
-		//							 // RVA: 0x9A2AFC Offset: 0x9A2AFC VA: 0x9A2AFC
-		//public void set_refRNoteOwner(RNoteOwner value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743DFC Offset: 0x743DFC VA: 0x743DFC
-		//							 // RVA: 0x9A2B04 Offset: 0x9A2B04 VA: 0x9A2B04
-		//public RhythmGamePlayer get_refRhytmGamePlayer() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743E0C Offset: 0x743E0C VA: 0x743E0C
-		//							 // RVA: 0x9A2B0C Offset: 0x9A2B0C VA: 0x9A2B0C
-		//public void set_refRhytmGamePlayer(RhythmGamePlayer value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743E1C Offset: 0x743E1C VA: 0x743E1C
-		//							 // RVA: 0x9A2B14 Offset: 0x9A2B14 VA: 0x9A2B14
-		//public RhythmGameInputPerformer.DelegateCheckInput get_delegateCheckInput() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743E2C Offset: 0x743E2C VA: 0x743E2C
-		//							 // RVA: 0x9A2B1C Offset: 0x9A2B1C VA: 0x9A2B1C
-		//public void set_delegateCheckInput(RhythmGameInputPerformer.DelegateCheckInput value) { }
 
 		//// RVA: 0x9A2B24 Offset: 0x9A2B24 VA: 0x9A2B24
 		private void Start()
@@ -427,10 +415,26 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9A3398 Offset: 0x9A3398 VA: 0x9A3398
-		//private void UpdateTouchRect(GameObject parent) { }
+		private void UpdateTouchRect(GameObject parent)
+		{
+			Transform t = parent.transform.Find("PushRect");
+			Transform t2 = parent.transform.Find("ReleaseRect");
+			touchPushRects = new RectTransform[t.childCount];
+			touchReleaseRects = new RectTransform[t2.childCount];
+			for (int i = 0; i < t.childCount; i++)
+			{
+				touchPushRects[i] = t.Find("HitRect" + (i + 1)).GetComponent<RectTransform>();
+				touchReleaseRects[i] = t2.Find("HitRect" + (i + 1)).GetComponent<RectTransform>();
+			}
+		}
 
 		//// RVA: 0x9A3754 Offset: 0x9A3754 VA: 0x9A3754 Slot: 13
-		//public override void InitializeTouch() { }
+		public override void InitializeTouch()
+		{
+			UpdateTouchRect(RhythmGameConsts.IsWideLine() ? rectParentW : rectParent);
+			swipeDistanceRate = 0.003f;
+			touchPriorityThreshold = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("note_touch_priority_change_offset", 180);
+		}
 
 		//// RVA: 0x9A38A4 Offset: 0x9A38A4 VA: 0x9A38A4
 		public void InitializeGame(RhythmGamePlayer a_player, RNoteOwner a_rnote_owner, IRhythmGameHUD a_hud, Camera a_ui_camera)
@@ -545,7 +549,7 @@ namespace XeApp.Game.RhythmGame
 			if(info.isEnded)
 			{
 				if (fingerData != null)
-					fingerId = -1;
+					fingerData.OnReleased();
 			}
 			else
 			{

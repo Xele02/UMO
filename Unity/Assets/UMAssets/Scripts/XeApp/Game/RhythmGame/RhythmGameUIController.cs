@@ -193,25 +193,43 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC0E0C8 Offset: 0xC0E0C8 VA: 0xC0E0C8
-		// public void EnterLIVESkill(LiveSkill skill, Material skillDesc, Material material) { }
+		public void EnterLIVESkill(LiveSkill skill, Material skillDesc, Material material)
+		{
+			Hud.EntryLiveSkillCutin(skill, skillDesc, material);
+		}
 
 		// // RVA: 0xC0E1C4 Offset: 0xC0E1C4 VA: 0xC0E1C4
-		// public void ShowLIVESkill() { }
+		public void ShowLIVESkill()
+		{
+			Hud.ShowLiveSkillCutin();
+		}
 
 		// // RVA: 0xC0E29C Offset: 0xC0E29C VA: 0xC0E29C
-		// public void AddBuffEffect(BuffEffect buff, int line) { }
+		public void AddBuffEffect(BuffEffect buff, int line)
+		{
+			Hud.OnSkillEffect(line, (int)buff.effectType, buff.isTopPriorityDisplay);
+		}
 
 		// // RVA: 0xC0E3E0 Offset: 0xC0E3E0 VA: 0xC0E3E0
-		// public void DeleteBuffEffect(BuffEffect buff, int line) { }
+		public void DeleteBuffEffect(BuffEffect buff, int line)
+		{
+			Hud.OffSkillEffect(line, (int)buff.effectType);
+		}
 
 		// // RVA: 0xC0E4E8 Offset: 0xC0E4E8 VA: 0xC0E4E8
-		// public void DeleteBuffEffectTopPriorityFlagOnly(BuffEffect buff, int line) { }
+		public void DeleteBuffEffectTopPriorityFlagOnly(BuffEffect buff, int line)
+		{
+			Hud.OffTopPrioritySkillEffect(line, (int)buff.effectType);
+		}
 
 		// // RVA: 0xC0E5F0 Offset: 0xC0E5F0 VA: 0xC0E5F0
 		// public void DrawBuffEffectEnable(int line, bool flag) { }
 
 		// // RVA: 0xC0E6D8 Offset: 0xC0E6D8 VA: 0xC0E6D8
-		// public void EndActiveSkill() { }
+		public void EndActiveSkill()
+		{
+			Hud.EndActiveSkill();
+		}
 
 		// // RVA: 0xBF2FC4 Offset: 0xBF2FC4 VA: 0xBF2FC4
 		// public void ShowConfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback, DJBHIFLHJLK errorGotoTitle) { }

@@ -202,6 +202,27 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDC4F3C Offset: 0xDC4F3C VA: 0xDC4F3C
-		//public bool SetupEnemyLife(SkillBase skill) { }
+		public bool SetupEnemyLife(SkillBase skill)
+		{
+			if(skill != null)
+			{
+				LiveSkillBase ls = skill as LiveSkillBase;
+				if(ls != null)
+				{
+					if(skill.buffEffectValue > 0)
+					{
+						int diff = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
+						if (Database.Instance.gameSetup.musicInfo.IsLine6Mode)
+						{
+							diff = Mathf.Clamp(diff - 2, 0, 7) + 5;
+						}
+						subgoalValue = Mathf.RoundToInt(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.BGDOCIBFLBM_EnemyBuffs[skill.buffEffectValue - 1].OMIMBPNKOKE_SubGoalPercent[diff] * 0.01f * subgoalValue);
+						goalValue = Mathf.RoundToInt(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.BGDOCIBFLBM_EnemyBuffs[skill.buffEffectValue - 1].HGIOBLMAAEO_GoalPercent[diff] * 0.01f * goalValue);
+						return true;
+					}
+				}
+			}
+			return false;
+		}
 	}
 }

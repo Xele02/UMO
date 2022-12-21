@@ -6,6 +6,14 @@ namespace XeApp.Game.RhythmGame
 	{
 	}
 
+	public struct BuffDurationCheckParameter
+	{
+		public float musicTime; // 0x0
+		public bool isValkyrieMode; // 0x4
+		public RhythmGameMode.Type modeType; // 0x8
+		public int bitNoteResult; // 0xC
+	}
+
 	public class BuffEffectOwner
 	{
 		public delegate void OnActiveBuffEffectEvent(BuffEffect buff);
@@ -54,7 +62,13 @@ namespace XeApp.Game.RhythmGame
 		//public void ClearRemoveEvent() { }
 
 		//// RVA: 0xF69B98 Offset: 0xF69B98 VA: 0xF69B98
-		//public void AddBuff(BuffEffect buffEffect) { }
+		public void AddBuff(BuffEffect buffEffect)
+		{
+			buffEffect.OnPerSecondPoisonEffect = poisonEvent;
+			effectiveBuffList.AddLast(buffEffect);
+			if (onActiveEvent != null)
+				onActiveEvent(buffEffect);
+		}
 
 		//// RVA: 0xF6A46C Offset: 0xF6A46C VA: 0xF6A46C
 		public void ClearAll()
@@ -71,7 +85,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF6AE38 Offset: 0xF6AE38 VA: 0xF6AE38
-		//public void OnUpdate(BuffDurationCheckParameter checkParameter) { }
+		public void OnUpdate(BuffDurationCheckParameter checkParameter) { }
 
 		//// RVA: 0xF6AF30 Offset: 0xF6AF30 VA: 0xF6AF30
 		//private void UpdateBuff(LinkedListNode<BuffEffect> buffNode, BuffDurationCheckParameter checkParameter) { }

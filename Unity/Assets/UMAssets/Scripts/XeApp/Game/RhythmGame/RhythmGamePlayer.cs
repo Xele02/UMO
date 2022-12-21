@@ -1489,14 +1489,50 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				TodoLogger.Log(100, "UpdateSkill");
+				skillOwner.CheckTrigger(new SkillTriggerParameter()
+				{
+					musicTime = musicMillisec / 1000.0f,
+					currentLifeRate = status.life.current * 1.0f / status.life.max,
+					currentCombo = status.combo.current,
+					currentScore = status.score.currentScore,
+					valkyeriModeEndTimeMs = resource.musicData.valkyrieModeLeaveMillisec,
+					modeType = status.directionMode.type,
+					touchedSkill = skillTouched,
+					touchedCenterLiveSkillNote = touchedCenterLiveSkill
+				}, buffOwner);
+				OnActiveSkill_Update(musicMillisec);
 			}
+			buffOwner.OnUpdate(new BuffDurationCheckParameter()
+			{
+				musicTime = musicMillisec / 1000.0f,
+				isValkyrieMode = false,
+				modeType = status.directionMode.type,
+				bitNoteResult = m_bit_note_result
+			});
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.Poison, -1))
+			{
+				uiController.Hud.SetPoisonSkillEffect(0, true);
+			}
+			else
+			{
+				uiController.Hud.SetPoisonSkillEffect(0, false);
+			}
+			uiController.ShowLIVESkill();
 		}
 
 		// // RVA: 0x9BE618 Offset: 0x9BE618 VA: 0x9BE618
 		private void OnPosionSkillDamageCallback(BuffEffect buff)
 		{
-			TodoLogger.Log(0, "OnPosionSkillDamageCallback");
+			float f = 1;
+			if(buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ReduceDamage, -1))
+			{
+				f = 1 - Mathf.Min(buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.ReduceDamage, -1, RhythmGameConsts.NoteResult.None) / 100.0f, 1);
+			}
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.NoDamage, -1))
+			{
+				f = 0;
+			}
+			status.life.DamageValue(Mathf.RoundToInt(f * buff.effectValue));
 		}
 
 		// // RVA: 0x9BE84C Offset: 0x9BE84C VA: 0x9BE84C
@@ -1614,37 +1650,162 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BF538 Offset: 0x9BF538 VA: 0x9BF538
 		private void OnFullfillLiveSkill(LiveSkill skill)
 		{
-			TodoLogger.Log(0, "OnFullfillLiveSkill");
+			if(skill.SkillIndex == 0)
+			{
+				liveSkillActivateCountList[skill.ownerSlotPlaceIndex + skill.ownerDivaPlaceIndex * 3]++;
+			}
+			AddSkillLog(skill, false);
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB_CutInEnabled())
+			{
+				uiController.EnterLIVESkill(skill, resource.uiTextureResources.skillEffectMaterials[(int)skill.buffEffectType], resource.uiTextureResources.divaSkillCutinMaterials[skill.ownerDivaPlaceIndex]);
+			}
+			if (skill.durationType == SkillDuration.Type.Instant)
+				ActivateInstantBuff(skill);
 		}
 
 		// // RVA: 0x9BFCCC Offset: 0x9BFCCC VA: 0x9BFCCC
 		private void OnFullfillActiveSkill(ActiveSkill skill)
 		{
-			TodoLogger.Log(0, "OnFullfillActiveSkill");
+			AddSkillLog(skill, true);
+			SoundManager.Instance.sePlayerGame.Play(22);
+			if(gameFlow.IsRareBreak)
+			{
+				SoundManager.Instance.voDivaCos.Play(DivaCosVoicePlayer.Category.ActiveSkill, 0);
+			}
+			else
+			{
+				if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.ActiveSkill) == 0)
+				{
+					SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.GameActiveSkill, 0);
+				}
+			}
+			uiController.Hud.DecideActiveSkillButton(skill.durationType);
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB_CutInEnabled())
+			{
+				int a = 0;
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave != null)
+				{
+					a = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[Database.Instance.gameSetup.teamInfo.danceDivaList[0].sceneIdList[0] - 1].JPIPENJGGDD_Mlt;
+				}
+				uiController.Hud.ShowActiveSkillCutin(GameMessageManager.GetSceneCardName(Database.Instance.gameSetup.teamInfo.danceDivaList[0].sceneIdList[0], a, ""), resource.uiTextureResources);
+			}
+			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+			{
+				BasicTutorialManager.Instance.HideCursor();
+			}
+			if(skill.durationType == SkillDuration.Type.Instant)
+			{
+				ActivateInstantBuff(skill);
+				OnActiveSkill_End();
+			}
 		}
 
 		// // RVA: 0x9C0468 Offset: 0x9C0468 VA: 0x9C0468
 		private void OnFullfillEnemySkill(EnemySkill skill)
 		{
-			TodoLogger.Log(0, "OnFullfillEnemySkill");
+			if(skill.masterSkill.CPNAGMFCIJK_TriggerType == (int)SkillTrigger.Type.FirstCheck)
+			{
+				if(skill.buffEffectType == SkillBuffEffect.Type.EnemyLifeUp)
+				{
+					if (!status.enemy.SetupEnemyLife(skill))
+						return;
+					uiController.Hud.ChangeEnemyLife(UI.EnemyStatus.LifeType.Double);
+				}
+			}
+			else if(skill.durationType == SkillDuration.Type.Instant)
+			{
+				ActivateInstantBuff(skill);
+			}
 		}
 
 		// // RVA: 0x9C03D8 Offset: 0x9C03D8 VA: 0x9C03D8
-		// private void OnActiveSkill_End() { }
+		private void OnActiveSkill_End()
+		{
+			if (!skillOwner.activeSkill.IsRestart())
+				return;
+			activeSkillRestartTimer.m_step = ActiveSkillRestartTimer.Step.WaitEnd;
+			activeSkillRestartTimer.m_msec_st = notesMillisec;
+		}
 
 		// // RVA: 0x9BE160 Offset: 0x9BE160 VA: 0x9BE160
-		// private void OnActiveSkill_Update(int a_notes_msec) { }
+		private void OnActiveSkill_Update(int a_notes_msec)
+		{
+			if(activeSkillRestartTimer.m_step == ActiveSkillRestartTimer.Step.WaitEnd)
+			{
+				if(uiController.Hud.IsActiveSkillButtonAcEnd())
+				{
+					activeSkillRestartTimer.m_step = ActiveSkillRestartTimer.Step.WaitTime;
+					activeSkillRestartTimer.m_msec_st = a_notes_msec;
+					activeSkillRestartTimer.m_msec_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("activeskill_cool_time", 0);
+					return;
+				}
+			}
+			else
+			{
+				if(activeSkillRestartTimer.m_step == ActiveSkillRestartTimer.Step.WaitTime)
+				{
+					if(Mathf.Abs(a_notes_msec - activeSkillRestartTimer.m_msec_st) > activeSkillRestartTimer.m_msec_max)
+					{
+						uiController.Hud.RestartActiveSkillButton();
+						activeSkillRestartTimer.m_step = ActiveSkillRestartTimer.Step.WaitRestart;
+						return;
+					}
+				}
+				else if(activeSkillRestartTimer.m_step == ActiveSkillRestartTimer.Step.WaitRestart)
+				{
+					if(uiController.Hud.IsActiveSkillButtonAcOn())
+					{
+						skillOwner.activeSkill.Restart();
+						skillTouched = false;
+						activeSkillRestartTimer.m_step = ActiveSkillRestartTimer.Step.None;
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x9C0648 Offset: 0x9C0648 VA: 0x9C0648
 		private void OnActiveBuffEffect(BuffEffect buff)
 		{
-			TodoLogger.Log(0, "OnActiveBuffEffect");
+			for(int i = 0; i < RhythmGameConsts.LineNum; i++)
+			{
+				if((buff.lineTarget & (1 << i)) > 0)
+				{
+					uiController.AddBuffEffect(buff, i);
+				}
+			}
+			if (buff.effectType != SkillBuffEffect.Type.AllItemNotes)
+				return;
+			status.internalMode.isAllItemMode = true;
+			rNoteOwner.OnChangeGameMode();
 		}
 
 		// // RVA: 0x9C07AC Offset: 0x9C07AC VA: 0x9C07AC
 		private void OnRemoveBuffEffect(BuffEffect buff, int ownerDivaPlaceIndex)
 		{
-			TodoLogger.Log(0, "OnRemoveBuffEffect");
+			for(int i = 0; i < RhythmGameConsts.LineNum; i++)
+			{
+				if((buff.lineTarget & (1 << i)) > 0)
+				{
+					if(!buffOwner.effectiveBuffList.IsConatinEffectType(buff.effectType, i))
+					{
+						uiController.DeleteBuffEffect(buff, i);
+					}
+					if(buff.isTopPriorityDisplay)
+					{
+						uiController.DeleteBuffEffectTopPriorityFlagOnly(buff, i);
+					}
+				}
+			}
+			if(buff.skillType == SkillType.Type.ActiveSkill)
+			{
+				uiController.EndActiveSkill();
+				OnActiveSkill_End();
+			}
+			if(buff.effectType == SkillBuffEffect.Type.AllItemNotes)
+			{
+				status.internalMode.isAllItemMode = false;
+				rNoteOwner.OnChangeGameMode();
+			}
 		}
 
 		// // RVA: 0x9C0A20 Offset: 0x9C0A20 VA: 0x9C0A20
@@ -1660,10 +1821,41 @@ namespace XeApp.Game.RhythmGame
 		// private int GetBattleResultVoiceCueId(BattleEventResultVoice.ResultVoiceIndex index) { }
 
 		// // RVA: 0x9BFB50 Offset: 0x9BFB50 VA: 0x9BFB50
-		// private void ActivateInstantBuff(SkillBase skill) { }
+		private void ActivateInstantBuff(SkillBase skill)
+		{
+			if(skill.buffEffectType == SkillBuffEffect.Type.HealLifePercentage)
+			{
+				status.life.HealPercentage(skill.buffEffectValue);
+			}
+			else if(skill.buffEffectType == SkillBuffEffect.Type.HealLifeValue)
+			{
+				status.life.HealValue(skill.buffEffectValue);
+			}
+			else if (skill.buffEffectType == SkillBuffEffect.Type.EffectValueUp)
+			{
+				skillOwner.LiveSkillEffectValueUp(skill);
+			}
+		}
 
 		// // RVA: 0x9BF8B4 Offset: 0x9BF8B4 VA: 0x9BF8B4
-		// private void AddSkillLog(SkillBase skill, bool isActiveSkill) { }
+		private void AddSkillLog(SkillBase skill, bool isActiveSkill)
+		{
+			RhythmGamePlayLog.SkillData data = new RhythmGamePlayLog.SkillData();
+			data.skillId = skill.skillId;
+			data.skillLevel = skill.skillLevel;
+			data.skillType = skill.buffEffectType;
+			data.sceneId = -1;
+			if(skill.ownerDivaIndex > -1)
+			{
+				if(skill.ownerSlotIndex > -1)
+				{
+					data.sceneId = Database.Instance.gameSetup.teamInfo.divaList[skill.ownerDivaIndex].sceneIdList[skill.ownerSlotIndex];
+				}
+			}
+			data.isActive = isActiveSkill;
+			data.millisec = currentRawMusicMillisec - noteOffsetMillisec;
+			logger.AddSkillData(data);
+		}
 
 		// // RVA: 0x9C10B4 Offset: 0x9C10B4 VA: 0x9C10B4
 		private void LoadedRhythmGame()
@@ -2280,7 +2472,21 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (setting_mv.m_enable)
 				return;
-			TodoLogger.Log(0, "RhythmGamePlayer RNoteOverwrideJudgedResultDelegate");
+			if(buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.OverwritePerfect, a_note_obj.rNote.GetLineNo()))
+			{
+				if (a_result_ex.m_result == RhythmGameConsts.NoteResult.Bad || a_result_ex.m_result == RhythmGameConsts.NoteResult.Good || a_result_ex.m_result == RhythmGameConsts.NoteResult.Great)
+				{
+					a_result_ex.m_result = RhythmGameConsts.NoteResult.Perfect;
+				}
+			}
+			if(a_result_ex.m_result == RhythmGameConsts.NoteResult.Perfect)
+			{
+				if(m_NoteResultParam_Excellent.m_note_judge_rate * 100000.0f < UnityEngine.Random.Range(0, 100000))
+				{
+					return;
+				}
+				a_result_ex.m_excellent = true;
+			}
 		}
 
 		// // RVA: 0x9C71D8 Offset: 0x9C71D8 VA: 0x9C71D8
@@ -2298,7 +2504,17 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9CA2CC Offset: 0x9CA2CC VA: 0x9CA2CC
 		public void SkillTouchEventCallback(TouchSwipeDirection swipeDir)
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer SkillTouchEventCallback");
+			if(!isVisiblePauseWindow && !skillTouched)
+			{
+				if(uiController.Hud.isReadyHUD)
+				{
+					if(uiController.Hud.IsInputAccept())
+					{
+						if (uiController.Hud.IsEnableActiveSkillButton())
+							skillTouched = true;
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x9C73F8 Offset: 0x9C73F8 VA: 0x9C73F8

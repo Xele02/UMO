@@ -156,7 +156,7 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035D68 Offset: 0x2035D68 VA: 0x2035D68
-        public bool KKBJCJNAGDB()
+        public bool KKBJCJNAGDB_CutInEnabled()
 		{
 			return NAGJLEIPAAC_Cutin == 0;
 		}

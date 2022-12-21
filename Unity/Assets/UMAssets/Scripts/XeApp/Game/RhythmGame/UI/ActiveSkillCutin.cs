@@ -45,7 +45,14 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x1557CBC Offset: 0x1557CBC VA: 0x1557CBC
-		// public void Show(string name, RhythmGameResource.UITextureResource textureResource, Action endCallback) { }
+		public void Show(string name, RhythmGameResource.UITextureResource textureResource, Action endCallback)
+		{
+			m_skillNameText.text = name;
+			m_renderer.material = textureResource.activeSkillIconMaterial;
+			descriptMaterial.SetTexture("_MainTex", textureResource.activeSkillEffectMaterial.GetTexture("_MainTex"));
+			descriptMaterial.SetTexture("_MaskTex", textureResource.activeSkillEffectMaterial.GetTexture("_MaskTex"));
+			m_animator.Play(InAnimeStateName, 0, 0);
+		}
 
 		// // RVA: 0x1557EB8 Offset: 0x1557EB8 VA: 0x1557EB8
 		public void Close(Action endCallback)

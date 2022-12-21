@@ -551,7 +551,7 @@ namespace XeApp.Game.RhythmGame
 			m_enemyPilotTexture = new UiEnemyPilotTexture();
 			m_enemyRobotTexture = new UiEnemyRobotTexture();
 			isUITextureResoucesLoaded_ = false;
-			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB())
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB_CutInEnabled())
 			{
 				yield return StartCoroutine(LoadingUIDivaSkillCutinTextureResource());
 				yield return StartCoroutine(LoadingUIACTIVESkillIconTextureResource());
@@ -608,11 +608,11 @@ namespace XeApp.Game.RhythmGame
 						if(liveSkills[j] != 0)
 						{
 							masterSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkills[j] - 1];
-							for(k = 0; k < masterSkill.EGLDFPILJLG.Length; k++)
+							for(k = 0; k < masterSkill.EGLDFPILJLG_SkillBuffEffect.Length; k++)
 							{
-								if(masterSkill.EGLDFPILJLG[k] != 0)
+								if(masterSkill.EGLDFPILJLG_SkillBuffEffect[k] != 0)
 								{
-									yield return LoadSkillEffectTextureCoroutine(masterSkill.EGLDFPILJLG[k], bundleName, assetName);
+									yield return LoadSkillEffectTextureCoroutine(masterSkill.EGLDFPILJLG_SkillBuffEffect[k], bundleName, assetName);
 								}
 							}
 						}
@@ -670,7 +670,7 @@ namespace XeApp.Game.RhythmGame
 			md = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[activeSkillId - 1];
 			for (i = 0; i < 1; i++)
 			{
-				effectType = md.EGLDFPILJLG[i];
+				effectType = md.EGLDFPILJLG_BuffEffectType[i];
 				yield return StartCoroutine(LoadSkillEffectTextureCoroutine(effectType, bundleName, assetName));
 				uiTextureResources.activeSkillEffectMaterial = uiTextureResources.skillEffectMaterials[effectType];
 			}

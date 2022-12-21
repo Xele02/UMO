@@ -580,7 +580,16 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDBAC34 Offset: 0xDBAC34 VA: 0xDBAC34
 		public void CheckInputCallback(RhythmGameInputPerformer.InputSaver inputSaver)
 		{
-			TodoLogger.Log(0, "RNoteOwner CheckInputCallback");
+			for(int i = 0; i < lineTouchFingerIds.Length; i++)
+			{
+				if(lineTouchFingerIds[i] != -1)
+				{
+					if(!inputSaver.IsActive(lineTouchFingerIds[i]))
+					{
+						lineTouchFingerIds[i] = -1;
+					}
+				}
+			}
 		}
 
 		//// RVA: 0xDBAD54 Offset: 0xDBAD54 VA: 0xDBAD54

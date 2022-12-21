@@ -17,7 +17,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AF1AC Offset: 0x9AF1AC VA: 0x9AF1AC
-		//public void AddSkillData(RhythmGamePlayLog.SkillData data) { }
+		public void AddSkillData(RhythmGamePlayLog.SkillData data)
+		{
+			log.skillDataList.Add(data);
+		}
 
 		//// RVA: 0x9AF274 Offset: 0x9AF274 VA: 0x9AF274
 		//public void AddNoteData(RhythmGamePlayLog.NoteData data) { }

@@ -5,15 +5,15 @@ namespace XeApp.Game.RhythmGame
 	public class BuffEffect
 	{
 		private BuffEffectInitialParameter initialParameter; // 0x8
-		//public BuffEffectPoisonEvent OnPerSecondPoisonEffect; // 0x34
+		public BuffEffectPoisonEvent OnPerSecondPoisonEffect; // 0x34
 		private int perSecondCount; // 0x38
 
 		public SkillBuffEffect.Type effectType { get { return initialParameter.effectType; } private set { return; } } //0xF68F84 0xF68F8C
-		//public SkillType.Type skillType { get; } 0xF68F90
+		public SkillType.Type skillType { get { return initialParameter.skillType; } } //0xF68F90
 		public int effectValue { get { return initialParameter.effectValue; } private set { return; } } //0xF68F98 0xF68FA0
 		public int lineTarget { get { return initialParameter.lineTarget; } private set { return; } } //0xF68FA4 0xF68FAC
 		public int ownerDivaPlaceIndex { get { return initialParameter.ownerDivaPlaceIndex; } private set { return; } } //0xF68FB0 0xF68FB8
-		//public bool isTopPriorityDisplay { get; private set; } 0xF68FBC 0xF68FC4
+		public bool isTopPriorityDisplay { get { return initialParameter.isTopPriorityDisplay; } private set { return; } } //0xF68FBC 0xF68FC4
 		public BuffEffectDuration duration { get; private set; } // 0x30
 
 		// RVA: 0xF68FD8 Offset: 0xF68FD8 VA: 0xF68FD8

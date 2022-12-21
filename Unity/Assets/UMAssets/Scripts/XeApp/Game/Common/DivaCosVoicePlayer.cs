@@ -45,7 +45,12 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE6D92C Offset: 0xE6D92C VA: 0xE6D92C
-		//public static string MakeCueName(DivaCosVoicePlayer.Category categoryType, int voiceId) { }
+		public static string MakeCueName(Category categoryType, int voiceId)
+		{
+			StringBuilder str = new StringBuilder(32);
+			str.AppendFormat("{0}_{1:D3}", categoryPrefix[(int)categoryType], voiceId);
+			return str.ToString();
+		}
 
 		//// RVA: 0xE6DAC0 Offset: 0xE6DAC0 VA: 0xE6DAC0
 		//public static string MakeCueName_GameStart(int a_sub1, int a_sub2) { }
@@ -69,7 +74,12 @@ namespace XeApp.Game.Common
 		//public void RequestChangeCueSheetUnit(int a_divaId, int a_divaId2, UnityAction onChangeCallback) { }
 
 		//// RVA: 0xE6DFEC Offset: 0xE6DFEC VA: 0xE6DFEC
-		//public void Play(DivaCosVoicePlayer.Category categoryType, int voiceId) { }
+		public void Play(Category categoryType, int voiceId)
+		{
+			if (!m_enable)
+				return;
+			PlayCue(MakeCueName(categoryType, voiceId));
+		}
 
 		//// RVA: 0xE6E0A0 Offset: 0xE6E0A0 VA: 0xE6E0A0
 		//public void Stop() { }

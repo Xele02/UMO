@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Game.Common;
 using XeApp.Game.RhythmGame;
 
 namespace XeApp.Game.RhythmGame.UI
@@ -84,7 +85,14 @@ namespace XeApp.Game.RhythmGame.UI
 		// private IEnumerator ChangeToEnable() { }
 
 		// // RVA: 0x15567F8 Offset: 0x15567F8 VA: 0x15567F8
-		// public void SetDecide(SkillDuration.Type duration) { }
+		public void SetDecide(SkillDuration.Type duration)
+		{
+			m_isDurationTime = duration != SkillDuration.Type.Instant;
+			m_skillButtonAnimator.SetTrigger(AnimatorParamSkillOn);
+			if (m_isDurationTime)
+				return;
+			m_skillButtonAnimator.SetTrigger(AnimatorParamEnd);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x746D14 Offset: 0x746D14 VA: 0x746D14
 		// // RVA: 0x1556944 Offset: 0x1556944 VA: 0x1556944
@@ -95,7 +103,12 @@ namespace XeApp.Game.RhythmGame.UI
 		// private IEnumerator WaitLoopAnimation() { }
 
 		// // RVA: 0x1556A9C Offset: 0x1556A9C VA: 0x1556A9C
-		// public void End() { }
+		public void End()
+		{
+			m_isDurationTime = false;
+			IsEnable = false;
+			m_skillButtonAnimator.SetTrigger(AnimatorParamEnd);
+		}
 
 		// // RVA: 0x1556488 Offset: 0x1556488 VA: 0x1556488
 		public void Disable()
@@ -108,7 +121,11 @@ namespace XeApp.Game.RhythmGame.UI
 		// public void SetOn() { }
 
 		// // RVA: 0x1556C0C Offset: 0x1556C0C VA: 0x1556C0C
-		// public void Restart() { }
+		public void Restart()
+		{
+			m_skillButtonAnimator.SetTrigger(AnimatorParamButtonOn);
+			IsEnable = true;
+		}
 
 		// // RVA: 0x1556CC8 Offset: 0x1556CC8 VA: 0x1556CC8
 		public bool IsStateAcEnd()
@@ -117,6 +134,9 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x1556DDC Offset: 0x1556DDC VA: 0x1556DDC
-		// public bool IsStateAcOn() { }
+		public bool IsStateAcOn()
+		{
+			return m_skillButtonAnimator.GetCurrentAnimatorStateInfo(0).shortNameHash == AnimatorStateAcOn;
+		}
 	}
 }

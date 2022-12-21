@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using UnityEngine;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -14,7 +16,7 @@ namespace XeApp.Game.RhythmGame
 		public bool touchedCenterLiveSkillNote; // 0x19
 	}
 
-	public class SkillBase
+	public abstract class SkillBase
 	{
 		public struct Param
 		{
@@ -29,24 +31,35 @@ namespace XeApp.Game.RhythmGame
 		protected Param parameter; // 0x8
 		protected List<SkillTriggerBase> triggers = new List<SkillTriggerBase>(); // 0x20
 
-		//public int skillId { get; private set; } 0x155252C 0x1552534
-		//public int skillLevel { get; private set; } 0x1552538 0x1552540
-		//public int ownerDivaIndex { get; set; } 0x1552544 0x155254C
-		//public int ownerSlotIndex { get; set; } 0x1552550 0x1552558
+		public int skillId { get { return parameter.id; } private set { return; } } //0x155252C 0x1552534
+		public int skillLevel { get { return parameter.level; } private set { return; } } //0x1552538 0x1552540
+		public int ownerDivaIndex { get { return parameter.ownerDivaIndex; } set { return; } } //0x1552544 0x155254C
+		public int ownerSlotIndex { get { return parameter.ownerSlotIndex; } set { return; } } //0x1552550 0x1552558
 		protected int skillIndex { get { return parameter.id - 1; } set { return; } } //0x155255C 0x1552568
 		protected int skillLevelIndex { get { return parameter.level - 1; } set { return; } } //0x155256C 0x1552578
 		public bool centerPlate { get { return parameter.centerPlate; } set { return; } } //0x155257C 0x1552584
 		//public SkillTrigger.Type triggerType { get; } 0x1552588
-		//public abstract SkillBuffEffect.Type buffEffectType { get; }  Slot: 4
-		//public abstract int buffEffectValue { get; }  Slot: 5
-		//public abstract SkillDuration.Type durationType { get; }  Slot: 6
-		//public abstract int durationValue { get; } Slot: 7
-		//public abstract int lineTarget { get; }  Slot: 8
-		//public int SkillIndex { get; } 0x1552618
+		public abstract SkillBuffEffect.Type buffEffectType { get; }//  Slot: 4
+		public abstract int buffEffectValue { get; } // Slot: 5
+		public abstract SkillDuration.Type durationType { get; } // Slot: 6
+		public abstract int durationValue { get; } //Slot: 7
+		public abstract int lineTarget { get; }  //Slot: 8
+		public int SkillIndex { get { return parameter.skillIndex; } } //0x1552618
 		public virtual List<SkillBase> listEffectValueUp { get; private set; } // 0x24
 
 		//// RVA: 0x1552630 Offset: 0x1552630 VA: 0x1552630
-		//public int CalcEffectValueUp(int a_base_value) { }
+		public int CalcEffectValueUp(int a_base_value)
+		{
+			if(listEffectValueUp != null)
+			{
+				int valBase = a_base_value;
+				for (int i = 0; i < listEffectValueUp.Count; i++)
+				{
+					a_base_value += Mathf.RoundToInt(listEffectValueUp[i].buffEffectValue / 100.0f * valBase);
+				}
+			}
+			return a_base_value;
+		}
 
 		//// RVA: 0x1552794 Offset: 0x1552794 VA: 0x1552794
 		public void Initialize(Param param)

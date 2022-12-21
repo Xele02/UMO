@@ -486,7 +486,28 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDCDF18 Offset: 0xDCDF18 VA: 0xDCDF18 Slot: 21
-		// public void SetPoisonSkillEffect(int a_bit, bool a_enable) { }
+		public void SetPoisonSkillEffect(int a_bit, bool a_enable)
+		{
+			for(int i = 0; i < m_permanencyEnemySkillList.Count; i++)
+			{
+				if(m_permanencyEnemySkillList[i].effectType == SkillBuffEffect.Type.Poison)
+				{
+					uint oldValue = m_permanencyEnemySkillList[i].bitUseFlag;
+					if (a_enable)
+						m_permanencyEnemySkillList[i].bitUseFlag |= (byte)(1 << a_bit);
+					else
+						m_permanencyEnemySkillList[i].bitUseFlag &= (byte)~(1 << a_bit);
+					if((oldValue != 0) != (m_permanencyEnemySkillList[i].bitUseFlag != 0))
+					{
+						m_permanencyEnemySkillList[i].effectAnimator.gameObject.SetActive(m_permanencyEnemySkillList[i].bitUseFlag != 0);
+						if(m_permanencyEnemySkillList[i].effectType == SkillBuffEffect.Type.Poison && isReadyHUD)
+						{
+							m_permanencyEnemySkillList[i].effectAnimator.Play(poison_loop_Hash);
+						}
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xDCE0E4 Offset: 0xDCE0E4 VA: 0xDCE0E4 Slot: 22
 		public void Show(Action endAction)
@@ -839,13 +860,22 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD0608 Offset: 0xDD0608 VA: 0xDD0608 Slot: 46
-		// public void EntryLiveSkillCutin(LiveSkill liveSkill, Material skillDescription, Material divaIconMaterial) { }
+		public void EntryLiveSkillCutin(LiveSkill liveSkill, Material skillDescription, Material divaIconMaterial)
+		{
+			m_liveSkillCutin.Show(liveSkill, divaIconMaterial, skillDescription);
+		}
 
 		// // RVA: 0xDD0658 Offset: 0xDD0658 VA: 0xDD0658 Slot: 47
-		// public void ShowLiveSkillCutin() { }
+		public void ShowLiveSkillCutin()
+		{
+			m_liveSkillCutin.Show();
+		}
 
 		// // RVA: 0xDD0684 Offset: 0xDD0684 VA: 0xDD0684 Slot: 48
-		// public void ShowActiveSkillCutin(string skillname, RhythmGameResource.UITextureResource textureResource) { }
+		public void ShowActiveSkillCutin(string skillname, RhythmGameResource.UITextureResource textureResource)
+		{
+			m_activeSkillCutin.Show(skillname, textureResource, null);
+		}
 
 		// // RVA: 0xDD06D0 Offset: 0xDD06D0 VA: 0xDD06D0 Slot: 49
 		public void CloseSkillCutin()
@@ -997,13 +1027,22 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD17BC Offset: 0xDD17BC VA: 0xDD17BC Slot: 67
-		// public void OnSkillEffect(int lineNumber, int effectType, bool isTopPriority) { }
+		public void OnSkillEffect(int lineNumber, int effectType, bool isTopPriority)
+		{
+			m_touchEffects[lineNumber].SkillEffect.OnSkillBit(effectType, isTopPriority);
+		}
 
 		// // RVA: 0xDD1850 Offset: 0xDD1850 VA: 0xDD1850 Slot: 68
-		// public void OffSkillEffect(int lineNumber, int effectType) { }
+		public void OffSkillEffect(int lineNumber, int effectType)
+		{
+			m_touchEffects[lineNumber].SkillEffect.OffSkillBit(effectType);
+		}
 
 		// // RVA: 0xDD18DC Offset: 0xDD18DC VA: 0xDD18DC Slot: 69
-		// public void OffTopPrioritySkillEffect(int lineNumber, int effectType) { }
+		public void OffTopPrioritySkillEffect(int lineNumber, int effectType)
+		{
+			m_touchEffects[lineNumber].SkillEffect.OffTopPrioritySkillBit(effectType);
+		}
 
 		// // RVA: 0xDD1968 Offset: 0xDD1968 VA: 0xDD1968 Slot: 70
 		// public void DrawSkillEffectEnable(int lineNumber, bool flag) { }
@@ -1015,7 +1054,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD1A20 Offset: 0xDD1A20 VA: 0xDD1A20 Slot: 72
-		// public void DecideActiveSkillButton(SkillDuration.Type duration) { }
+		public void DecideActiveSkillButton(SkillDuration.Type duration)
+		{
+			m_activeSkillButton.SetDecide(duration);
+		}
 
 		// // RVA: 0xDD1A54 Offset: 0xDD1A54 VA: 0xDD1A54
 		private void ApplyActiveSkillButtonUv()
@@ -1026,7 +1068,7 @@ namespace XeApp.Game.RhythmGame
 				{
 					if(Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId < 1)
 						return;
-					m_activeSkillButton.ApplySkillUv(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId - 1].EGLDFPILJLG[0]);
+					m_activeSkillButton.ApplySkillUv(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId - 1].EGLDFPILJLG_BuffEffectType[0]);
 				}
 			}
 		}
@@ -1052,10 +1094,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD2018 Offset: 0xDD2018 VA: 0xDD2018 Slot: 75
-		// public void EndActiveSkill() { }
+		public void EndActiveSkill()
+		{
+			m_activeSkillButton.End();
+		}
 
 		// // RVA: 0xDD2044 Offset: 0xDD2044 VA: 0xDD2044 Slot: 76
-		// public void RestartActiveSkillButton() { }
+		public void RestartActiveSkillButton()
+		{
+			m_activeSkillButton.Restart();
+		}
 
 		// // RVA: 0xDD2070 Offset: 0xDD2070 VA: 0xDD2070 Slot: 77
 		public bool IsActiveSkillButtonAcEnd()
@@ -1064,7 +1112,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD209C Offset: 0xDD209C VA: 0xDD209C Slot: 78
-		// public bool IsActiveSkillButtonAcOn() { }
+		public bool IsActiveSkillButtonAcOn()
+		{
+			return m_activeSkillButton.IsStateAcOn();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744394 Offset: 0x744394 VA: 0x744394
 		// // RVA: 0xDCE3A8 Offset: 0xDCE3A8 VA: 0xDCE3A8
@@ -1149,7 +1200,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD248C Offset: 0xDD248C VA: 0xDD248C Slot: 86
-		// public void ChangeEnemyLife(EnemyStatus.LifeType a_type) { }
+		public void ChangeEnemyLife(EnemyStatus.LifeType a_type)
+		{
+			m_enemyStatus.SetupLifeType(a_type);
+		}
 
 		// // RVA: 0xDD24C0 Offset: 0xDD24C0 VA: 0xDD24C0 Slot: 87
 		public void ChangeFaildEnemyStatus()

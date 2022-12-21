@@ -1,5 +1,6 @@
 using UnityEngine;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -53,13 +54,33 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9A8E94 Offset: 0x9A8E94 VA: 0x9A8E94
-		//public void HealPercentage(int percentage) { }
+		public void HealPercentage(int percentage)
+		{
+			changeRequiredTime = 0.5f;
+			changeBeganValue = view;
+			changeBeganTime = TimeWrapper.time;
+			isChanging = true;
+			ChangeLife(max, percentage / 100.0f);
+		}
 
 		//// RVA: 0x9A8F20 Offset: 0x9A8F20 VA: 0x9A8F20
-		//public void HealValue(int value) { }
+		public void HealValue(int value)
+		{
+			changeRequiredTime = 0.5f;
+			changeBeganValue = view;
+			changeBeganTime = TimeWrapper.time;
+			isChanging = true;
+			ChangeLife(value, 1.0f);
+		}
 
 		//// RVA: 0x9A8F68 Offset: 0x9A8F68 VA: 0x9A8F68
-		//public void DamageValue(int value) { }
+		public void DamageValue(int value)
+		{
+			if(!isInvincibleCheat && !isInvincibleGameEnd && !isInvincibleModeMV)
+			{
+				ChangeLife(-value, 1);
+			}
+		}
 
 		//// RVA: 0x9A8F98 Offset: 0x9A8F98 VA: 0x9A8F98
 		public void DamageNotes(RhythmGameConsts.NoteResult type, float damageRate)

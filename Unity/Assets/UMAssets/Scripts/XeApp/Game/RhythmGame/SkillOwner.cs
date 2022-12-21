@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
@@ -36,9 +37,9 @@ namespace XeApp.Game.RhythmGame
 					if (skillId > 0)
 					{
 						PPGHMBNIAEC skillInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[skillId - 1];
-						for(int k = 0; k < skillInfo.EGLDFPILJLG.Length; k++)
+						for(int k = 0; k < skillInfo.EGLDFPILJLG_SkillBuffEffect.Length; k++)
 						{
-							if(skillInfo.EGLDFPILJLG[k] != 0)
+							if(skillInfo.EGLDFPILJLG_SkillBuffEffect[k] != 0)
 							{
 								LiveSkill sk = new LiveSkill();
 								sk.Initialize(new SkillBase.Param() {
@@ -58,9 +59,9 @@ namespace XeApp.Game.RhythmGame
 			if(Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId > 0)
 			{
 				CDNKOFIELMK skillInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId - 1];
-				for (int k = 0; k < skillInfo.EGLDFPILJLG.Length; k++)
+				for (int k = 0; k < skillInfo.EGLDFPILJLG_BuffEffectType.Length; k++)
 				{
-					if (skillInfo.EGLDFPILJLG[k] != 0)
+					if (skillInfo.EGLDFPILJLG_BuffEffectType[k] != 0)
 					{
 						ActiveSkill sk = new ActiveSkill();
 						sk.Initialize(new SkillBase.Param()
@@ -96,7 +97,34 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x1553A0C Offset: 0x1553A0C VA: 0x1553A0C
-		//public void CheckTrigger(SkillTriggerParameter triggerParam, BuffEffectOwner buffOwner) { }
+		public void CheckTrigger(SkillTriggerParameter triggerParam, BuffEffectOwner buffOwner)
+		{
+			for(int i = 0; i < skillList.Count; i++)
+			{
+				if(skillList[i].IsFulfill(triggerParam))
+				{
+					if(skillList[i].durationType != SkillDuration.Type.Instant)
+					{
+						CreateBuffEffect(i, triggerParam, buffOwner);
+					}
+					if(skillList[i] is LiveSkill && (!skillList[i].centerPlate || (skillList[i] as LiveSkill).CheckModeForDurationType(triggerParam.modeType)))
+					{
+						if (onFullfillLiveSkill != null)
+							onFullfillLiveSkill(skillList[i] as LiveSkill);
+					}
+					if(skillList[i] is ActiveSkill)
+					{
+						if (onFullfillActiveSkill != null)
+							onFullfillActiveSkill(skillList[i] as ActiveSkill);
+					}
+					if (skillList[i] is EnemySkill)
+					{
+						if (onFullfillEnemySkill != null)
+							onFullfillEnemySkill(skillList[i] as EnemySkill);
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x15540E0 Offset: 0x15540E0 VA: 0x15540E0
 		public void CheckFirstTrigger()
@@ -122,12 +150,84 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x1554270 Offset: 0x1554270 VA: 0x1554270
-		//public void LiveSkillEffectValueUp(SkillBase a_exec_skill) { }
+		public void LiveSkillEffectValueUp(SkillBase a_exec_skill)
+		{
+			if(a_exec_skill != null)
+			{
+				LiveSkill ls = a_exec_skill as LiveSkill;
+				if(ls != null)
+				{
+					for(int i = 0; i < skillList.Count; i++)
+					{
+						if(skillList[i] != null && skillList[i] is LiveSkill)
+						{
+							LiveSkill ls2 = skillList[i] as LiveSkill;
+							if(ls2 != a_exec_skill)
+							{
+								if(ls.targetSkillType != 0)
+								{
+									if (ls.targetSkillType != ls2.skillType)
+										continue;
+								}
+								if(ls.CheckGroupForEffectId(ls2.buffEffectType))
+								{
+									ls2.listEffectValueUp.Add(a_exec_skill);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x1553D24 Offset: 0x1553D24 VA: 0x1553D24
-		//private void CreateBuffEffect(int index, SkillTriggerParameter triggerParam, BuffEffectOwner buffOwner) { }
+		private void CreateBuffEffect(int index, SkillTriggerParameter triggerParam, BuffEffectOwner buffOwner)
+		{
+			SkillType.Type st = SkillType.Type.Illegal;
+			if (skillList[index] is EnemySkill)
+				st = SkillType.Type.EnemyLiveSkill;
+			if (skillList[index] is ActiveSkill)
+				st = SkillType.Type.ActiveSkill;
+			if (skillList[index] is LiveSkill)
+				st = SkillType.Type.LiveSkill;
+			BuffEffectInitialParameter param = new BuffEffectInitialParameter()
+			{
+				skillType = st,
+				effectType = skillList[index].buffEffectType,
+				effectValue = CalcBuffEffectValue(skillList[index]),
+				durationType = skillList[index].durationType,
+				durationValue = skillList[index].durationValue,
+				valkyeriModeEndTimeMs = triggerParam.valkyeriModeEndTimeMs,
+				lineTarget = skillList[index].lineTarget != 15 ? skillList[index].lineTarget : (RhythmGameConsts.IsWideLine() ? 255 : 15),
+				ownerDivaPlaceIndex = index,
+				musicTime = triggerParam.musicTime,
+				isTopPriorityDisplay = false,
+			};
+			buffOwner.AddBuff(new BuffEffect(param));
+			if (!(skillList[index] is LiveSkill))
+				return;
+			(skillList[index] as LiveSkill).buffEffectValue_SkillCutin = param.effectValue;
+		}
 
 		//// RVA: 0x15544D4 Offset: 0x15544D4 VA: 0x15544D4
-		//private int CalcBuffEffectValue(SkillBase a_skill) { }
+		private int CalcBuffEffectValue(SkillBase a_skill)
+		{
+			int res = a_skill.buffEffectValue;
+			if(a_skill is LiveSkill)
+			{
+				LiveSkill ls = a_skill as LiveSkill;
+				if(ls.buffEffectType == SkillBuffEffect.Type.ScoreUpPercentage_FoldWave)
+				{
+					res = (status.energy.GetGaugeValue() / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).HLMMBNCIIAC[ls.skillLevel - 1]) * IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).HLMMBNCIIAC[ls.skillLevel - 1];
+					res = a_skill.CalcEffectValueUp(Mathf.Min(res, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).DOOGFEGEKLG));
+				}
+				else if (ls.buffEffectType == SkillBuffEffect.Type.ScoreUpPercentage_Intimacy)
+				{
+					res = (Database.Instance.gameSetup.teamInfo.divaList[a_skill.ownerDivaIndex].intimacyLv / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).KCOHMHFBDKF[ls.skillLevel - 1]) * IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).HLMMBNCIIAC[ls.skillLevel - 1];
+					res = a_skill.CalcEffectValueUp(Mathf.Min(res, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).DOOGFEGEKLG));
+				}
+			}
+			return res;
+		}
 	}
 }
