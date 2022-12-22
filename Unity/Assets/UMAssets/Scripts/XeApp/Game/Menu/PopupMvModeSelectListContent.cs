@@ -1,3 +1,4 @@
+using mcrs;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -218,7 +219,7 @@ namespace XeApp.Game.Menu
 				//0x169BE20
 				if(scrollItem.IsSet)
 					return;
-				SoundManager.Instance.sePlayerBoot.Play(3);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				for(int i = 0; i < m_scrollItem.Count; i++)
 				{
 					ScrollListItem sitem = m_scrollItem[i] as ScrollListItem;

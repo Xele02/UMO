@@ -8,6 +8,7 @@ using System;
 using XeApp.Game.Tutorial;
 using XeSys;
 using CriWare;
+using mcrs;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -200,7 +201,17 @@ namespace XeApp.Game.RhythmGame
 		private List<int> liveSkillActivateCountList = new List<int>(XeApp.Game.Common.TeamConst.TeamSceneNum); // 0x158
 		private RhythmGamePlayLogger logger = new RhythmGamePlayLogger(); // 0x15C
 		private int m_bit_note_result; // 0x160
-		private int[] noteTouchSEIndex = new int[8] {4, 5, 3, 2, 1, 0, 7, 6}; // Field$<PrivateImplementationDetails>.B97719DD67FEBE5083885CEEA340284B07BE6023; // 0x164
+		private int[] noteTouchSEIndex = new int[8] 
+		{
+			(int)cs_se_notes.SE_NOTES_004,
+			(int)cs_se_notes.SE_NOTES_005,
+			(int)cs_se_notes.SE_NOTES_003,
+			(int)cs_se_notes.SE_NOTES_002,
+			(int)cs_se_notes.SE_NOTES_001,
+			(int)cs_se_notes.SE_NOTES_000,
+			(int)cs_se_notes.SE_NOTES_007,
+			(int)cs_se_notes.SE_NOTES_006
+		}; // Field$<PrivateImplementationDetails>.B97719DD67FEBE5083885CEEA340284B07BE6023; // 0x164
 		private const int BattleEventVoiceNum = 3;
 		private ActiveSkillRestartTimer activeSkillRestartTimer = new ActiveSkillRestartTimer(); // 0x168
 		public static bool IsLowQualityMode; // 0x30
@@ -1195,7 +1206,7 @@ namespace XeApp.Game.RhythmGame
 				return;
 			}
 			uiController.Hud.ShowValkyrie();
-			SoundManager.Instance.sePlayerGame.Play(8);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_009);
 		}
 
 		// // RVA: 0x9BB820 Offset: 0x9BB820 VA: 0x9BB820
@@ -1374,7 +1385,7 @@ namespace XeApp.Game.RhythmGame
 				bool is3D = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
 				if(status.internalMode.type == RhythmGameMode.Type.AwakenDiva)
 				{
-					SoundManager.Instance.sePlayerGame.Play(16);
+					SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_017);
 					if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Diva_Awake) == RhythmGameVoicePlayer.Result.None)
 					{
 						DivaVoicePlayer.VoiceCategory cat = DivaVoicePlayer.VoiceCategory.None;
@@ -1398,7 +1409,7 @@ namespace XeApp.Game.RhythmGame
 				}
 				else
 				{
-					SoundManager.Instance.sePlayerGame.Play(15);
+					SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_011);
 					if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Diva) == RhythmGameVoicePlayer.Result.None)
 					{
 						DivaVoicePlayer.VoiceCategory cat = DivaVoicePlayer.VoiceCategory.None;
@@ -1609,7 +1620,7 @@ namespace XeApp.Game.RhythmGame
 			eventFireFlags[0] = true;
 			if (!setting.m_enable_cutin)
 				return;
-			SoundManager.Instance.sePlayerGame.Play(7);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_008);
 			if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Start) == RhythmGameVoicePlayer.Result.None)
 			{
 				if(resource.enteredValkyrieModeVoiceId < 0)
@@ -1632,7 +1643,7 @@ namespace XeApp.Game.RhythmGame
 			eventFireFlags[1] = true;
 			if (!setting.m_enable_cutin)
 				return;
-			SoundManager.Instance.sePlayerGame.Play(7);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_008);
 			uiController.Hud.ShowEnemyCutin();
 		}
 
@@ -1642,7 +1653,7 @@ namespace XeApp.Game.RhythmGame
 			if (eventFireFlags[2])
 				return;
 			eventFireFlags[2] = true;
-			SoundManager.Instance.sePlayerGame.Play(11);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_013);
 			uiController.Hud.ShowEnemyStatus();
 			uiController.Hud.ShowTargetSight();
 		}
@@ -1667,7 +1678,7 @@ namespace XeApp.Game.RhythmGame
 		private void OnFullfillActiveSkill(ActiveSkill skill)
 		{
 			AddSkillLog(skill, true);
-			SoundManager.Instance.sePlayerGame.Play(22);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_VALKYRIE_001);
 			if(gameFlow.IsRareBreak)
 			{
 				SoundManager.Instance.voDivaCos.Play(DivaCosVoicePlayer.Category.ActiveSkill, 0);

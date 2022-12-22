@@ -16,6 +16,7 @@ using XeApp.Game.AR;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using mcrs;
 
 public class IOGKADECKOP
 {
@@ -88,7 +89,7 @@ public class IOGKADECKOP
 		
 		NOFPJPHIPBD.Buttons.CallbackClear();
 		NOFPJPHIPBD.LbButtons.CallbackClear();
-		SoundManager.Instance.sePlayerBoot.Play(8);
+		SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_TITLE_000);
 		NOFPJPHIPBD.ScreenTap.ClearCallback();
 		NOFPJPHIPBD.Screen.TapAnim();
 		DANMJLOBLIE.StartCoroutine(PFEKBBONCJJ_Coroutine_GameStart());

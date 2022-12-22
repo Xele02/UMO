@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -470,7 +471,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACAA10 Offset: 0xACAA10 VA: 0xACAA10
 		protected void OnClickPlayButton(bool isSimulation)
 		{
-			SoundManager.Instance.sePlayerBoot.Play(1);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			GameManager.Instance.CloseSnsNotice();
 			GameManager.Instance.CloseOfferNotice();
 			if(!CheckEventLimit())

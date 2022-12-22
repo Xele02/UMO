@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -1200,7 +1201,7 @@ namespace XeApp.Game.Menu
 		{
 			OnClickAnyButtons();
 			//NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-			SoundManager.Instance.sePlayerBoot.Play(1);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			m_useLiveSkipTicketCount = 3257895;
 			UpdatePrismData(m_viewMusicData.DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo);
 			if(!CheckSetAllDiva())
@@ -1435,14 +1436,14 @@ namespace XeApp.Game.Menu
 				TodoLogger.LogNotImplemented("OnClickValkyrieButton");
 				return;
 				// TMP
-				SoundManager.Instance.sePlayerBoot.Play(3);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				ValkyrieDataArgs arg = new ValkyrieDataArgs();
 				arg.isGoDiva = m_isGoDivaEvent;
 				MenuScene.Instance.Call(TransitionList.Type.VALKYRIE_SELECT, arg, true);
 			}
 			else if(m_dispType == DispType.Prism)
 			{
-				SoundManager.Instance.sePlayerBoot.Play(3);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				ShowPrismSelectPopup(PopupMvModeSelectListContent.SelectTarget.Valkyrie, 0, m_viewMusicData != null ? m_viewMusicData.DLAEJOBELBH_MusicId : 0, Database.Instance.gameSetup.musicInfo, false, () =>
 				{
 					//0xA92574
@@ -1463,12 +1464,12 @@ namespace XeApp.Game.Menu
 			OnClickAnyButtons();
 			if(m_dispType == DispType.CurrentUnit)
 			{
-				SoundManager.Instance.sePlayerBoot.Play(3);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				m_unitInfo.AnimeControl.ChangeDispType(ChangeUnitInfoDispType());
 			}
 			else if(m_dispType == DispType.Prism)
 			{
-				SoundManager.Instance.sePlayerBoot.Play(3);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				m_unitSetInfo.AnimeControl.ChangeDispType(ChangeUnitInfoDispType());
 			}
 		}
@@ -1495,7 +1496,7 @@ namespace XeApp.Game.Menu
 		private void OnSelectDiva(int slotNumber, FFHPBEPOMAK divaData)
 		{
 			OnClickAnyButtons();
-			SoundManager.Instance.sePlayerBoot.Play(1);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			m_selectDivaListArgs.slot = slotNumber;
 			m_selectDivaListArgs.viewPlayerData = m_playerData;
 			m_selectDivaListArgs.viewMusicBaseData = m_viewMusicData;
@@ -1514,7 +1515,7 @@ namespace XeApp.Game.Menu
 			OnClickAnyButtons();
 			if(slotNumber > -1)
 			{
-				SoundManager.Instance.sePlayerBoot.Play(1);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 				m_costumeChangeDivaArgs.DivaId = divaData.AHHJLDLAPAN_DivaId;
 				m_costumeChangeDivaArgs.is_godiva = m_isGoDivaEvent;
 				MenuScene.Instance.Call(TransitionList.Type.COSTUME_SELECT, m_costumeChangeDivaArgs, true);
@@ -1559,7 +1560,7 @@ namespace XeApp.Game.Menu
 		private void OnClickUnitSetButton()
 		{
 			OnClickAnyButtons();
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			StartCoroutine(Co_EnterUnitSet());
 		}
 
@@ -1621,7 +1622,7 @@ namespace XeApp.Game.Menu
 		private void OnClickPrismSettingButton()
 		{
 			OnClickAnyButtons();
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			UpdatePrismData(m_viewMusicData.DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo);
 			if(m_prismData.OFHMEAJBIEL_IsPrismUnlocked())
 			{
@@ -1639,7 +1640,7 @@ namespace XeApp.Game.Menu
 		private void OnClickUnitSettingButton()
 		{
 			OnClickAnyButtons();
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			StartCoroutine(Co_SwitchContents(DispType.CurrentUnit));
 		}
 
@@ -1715,7 +1716,7 @@ namespace XeApp.Game.Menu
 		private void OnClickPrismItems(PopupMvModeSelectListContent.SelectTarget target, int divaSlotNumber)
 		{
 			OnClickAnyButtons();
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			ShowPrismSelectPopup(target, divaSlotNumber, m_viewMusicData != null ? m_viewMusicData.DLAEJOBELBH_MusicId : 0, Database.Instance.gameSetup.musicInfo, false, () =>
 			{
 				//0xA92978
@@ -1775,7 +1776,7 @@ namespace XeApp.Game.Menu
 								OnClickUnitSetCloseButton();
 								return;
 							}
-							SoundManager.Instance.sePlayerBoot.Play(0);
+							SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_000);
 							MenuScene.SaveRequest();
 							MenuScene.Instance.Return(true);
 						}

@@ -69,7 +69,7 @@ namespace XeSys
 			touchInfoRecords = new TouchInfoRecord[fingerCount];
 			for(int i = 0; i < fingerCount; i++)
 			{
-				touchInfoRecords[i] = new TouchInfoRecord(i, fingerCount);
+				touchInfoRecords[i] = new TouchInfoRecord(i, recordFrameSize);
 			}
 		}
 
@@ -90,9 +90,7 @@ namespace XeSys
 			else
 			{
 				MouseAction();
-				#region UMO
 				KeyboardAction();
-				#endregion
 			}
 		}
 
@@ -254,76 +252,90 @@ namespace XeSys
 		// // RVA: 0x1EF793C Offset: 0x1EF793C VA: 0x1EF793C
 		// public void Debug() { }
 
-		#region UMO
-		Vector2[] lineTouchCoords = null;
-
-		private static Rect GetScreenPositionFromRect(RectTransform rt, Camera camera)
+		// UMO
+		public class KeyTouchInfoRecord : TouchInfoRecord
 		{
-			// getting the world corners
-			var corners = new Vector3[4];
-			rt.GetWorldCorners(corners);
-
-			// getting the screen corners
-			for (var i = 0; i < corners.Length; i++)
-				corners[i] = camera.WorldToScreenPoint(corners[i]);
-
-			// getting the top left position of the transform
-			var position = (Vector2)corners[1];
-			// inverting the y axis values, making the top left corner = 0.
-			position.y = Screen.height - position.y;
-			// calculate the siz, width and height, in pixle format
-			var size = corners[2] - corners[0];
-
-			return new Rect(position, size);
-		}
-
-		public void InitializeLineCoords(RectTransform[] rects)
-		{
-			lineTouchCoords = new Vector2[rects.Length];
-			for(int i = 0; i < lineTouchCoords.Length; i++)
+			public enum KeyType
 			{
-				Canvas canvas = rects[i].GetComponentInParent<Canvas>();
-				lineTouchCoords[i] = GetScreenPositionFromRect(rects[i], canvas.worldCamera).center;
+				Line1Touch,
+				Line2Touch,
+				Line3Touch,
+				Line4Touch,
+				Line5Touch,
+				Line6Touch,
+				ActiveSkillTouch,
+				Num,
+
+				None = -1
 			}
+
+			public KeyType keyType;
+
+			public KeyTouchInfoRecord(KeyType keyType, int id, int recentCapacity)
+				: base(id, recentCapacity)
+			{
+				this.keyType = keyType;
+			}
+
 		}
+
+		List<KeyTouchInfoRecord> keysInfo = new List<KeyTouchInfoRecord>();
 
 		void KeyboardAction()
 		{
-			/*
-			TouchInfoRecord info = touchInfoRecords[0];
-			touchCount = 0;
-			TouchPhase phase = TouchPhase.Began;
-			Vector2 position = Vector2.zero;
-			if(Input.GetMouseButtonDown(0))
-			{
-				phase = TouchPhase.Began;
-				position = Input.mousePosition;
-			}
-			else if(Input.GetMouseButtonUp(0))
-			{
-				position = Input.mousePosition;
-				phase = TouchPhase.Ended;
-			}
-			else if(Input.GetMouseButton(0))
-			{
-				position = Input.mousePosition;
-				phase = TouchPhase.Stationary;
-			}
-			else
-			{
-				info.UpdateReleased();
-				MousePinchAction();
-				return;
-			}
-			info.Update(phase, position);
-			MousePinchAction();
-			*/
-			TouchInfoRecord info = null;
-			if (Input.GetKeyDown(KeyCode.S))
-			{
+			List<KeyCode> keysTocheck = new List<KeyCode>();
+			keysTocheck.Add(RuntimeSettings.CurrentSettings.Lane1Touch);
+			keysTocheck.Add(RuntimeSettings.CurrentSettings.Lane2Touch);
+			keysTocheck.Add(RuntimeSettings.CurrentSettings.Lane3Touch);
+			keysTocheck.Add(RuntimeSettings.CurrentSettings.Lane4Touch);
+			keysTocheck.Add(RuntimeSettings.CurrentSettings.Lane5Touch);
+			keysTocheck.Add(RuntimeSettings.CurrentSettings.Lane6Touch);
+			keysTocheck.Add(RuntimeSettings.CurrentSettings.ActiveSkillTouch);
 
+			if(keysInfo.Count == 0)
+			{
+				for(int i = 0; i < (int)KeyTouchInfoRecord.KeyType.Num; i++)
+				{
+					KeyTouchInfoRecord keyTouchInfo = new KeyTouchInfoRecord((KeyTouchInfoRecord.KeyType)i, i, recordFrameSize);
+					keysInfo.Add(keyTouchInfo);
+				}
+			}
+
+			for(int i = 0; i < keysTocheck.Count; i++)
+			{
+				KeyTouchInfoRecord keyTouchInfo = keysInfo[i];
+				TouchPhase phase = TouchPhase.Began;
+				Vector2 position = Vector2.zero;
+				if (Input.GetKeyDown(keysTocheck[i]))
+				{
+					phase = TouchPhase.Began;
+				}
+				else if (Input.GetKeyUp(keysTocheck[i]))
+				{
+					phase = TouchPhase.Ended;
+				}
+				else if (Input.GetKey(keysTocheck[i]))
+				{
+					phase = TouchPhase.Stationary;
+				}
+				else
+				{
+					keyTouchInfo.UpdateReleased();
+					continue;
+				}
+				keyTouchInfo.Update(phase, position);
 			}
 		}
-		#endregion
+
+		public KeyTouchInfoRecord GetKeyTouchInfoRecord(KeyTouchInfoRecord.KeyType type)
+		{
+			if(keysInfo.Count > 0)
+			{
+				return keysInfo[(int)type];
+			}
+			return null;
+		}
+
+		// END UMO
 	}
 }

@@ -39,6 +39,7 @@ namespace XeSys
         // // RVA: 0x23A6C0C Offset: 0x23A6C0C VA: 0x23A6C0C
         public void Update(TouchPhase phase, Vector3 pos)
         {
+			UnityEngine.Debug.LogError(id + " " + phase);
             if(phase == TouchPhase.Stationary)
                 UpdateStationary(pos);
             else if(phase == TouchPhase.Ended)
@@ -49,8 +50,10 @@ namespace XeSys
 
         // // RVA: 0x23A6E88 Offset: 0x23A6E88 VA: 0x23A6E88
         public void UpdateReleased()
-        {
-            currentInfo.Initialize();
+		{
+			if(!currentInfo.isIllegal)
+				UnityEngine.Debug.LogError(id + " Released ");
+			currentInfo.Initialize();
             beganInfo.Initialize();
             endedInfo.Initialize();
             UpdateRecent();

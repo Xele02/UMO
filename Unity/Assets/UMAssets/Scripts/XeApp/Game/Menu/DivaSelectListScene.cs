@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -361,7 +362,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				SoundManager.Instance.sePlayerBoot.Play(3);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				if(m_transitionName == TransitionList.Type.DIVA_SELECT_LIST)
 				{
 					TeamSettingDivaButton(m_divaSortIdList[sortListIndex]);

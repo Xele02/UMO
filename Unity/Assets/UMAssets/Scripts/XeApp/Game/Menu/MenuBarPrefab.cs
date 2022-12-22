@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using XeApp.Core;
 using XeApp.Game.Common;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -168,12 +169,12 @@ namespace XeApp.Game.Menu
 				return;
 			}
 			mMenuButtons[3].buttonAnimeDisable = false;
-			int cueId = 6;
+			int cueId = (int)cs_se_boot.SE_BTN_005;
 			if(IsTopLevelScene(SceneGroupCategory.FREE, TransitionList.Type.MUSIC_SELECT))
 			{
 				MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, null, true, 0);
 				MenuScene.Instance.StatusWindowControl.ResetHistory();
-				cueId = 0;
+				cueId = (int)cs_se_boot.SE_BTN_000;
 			}
 			SoundManager.Instance.sePlayerBoot.Play(cueId);
 

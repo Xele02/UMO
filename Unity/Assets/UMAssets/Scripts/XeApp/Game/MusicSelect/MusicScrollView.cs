@@ -2,6 +2,7 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 using System;
 using XeApp.Game.Common;
+using mcrs;
 
 namespace XeApp.Game.MusicSelect
 {
@@ -177,7 +178,7 @@ namespace XeApp.Game.MusicSelect
 				{
 					if(_itemCount != 0)
 					{
-						SoundManager.Instance.sePlayerMenu.Play(77);
+						SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_PLAYRECORD_000);
 					}
 							
 					if (OnUpdateCenter != null)

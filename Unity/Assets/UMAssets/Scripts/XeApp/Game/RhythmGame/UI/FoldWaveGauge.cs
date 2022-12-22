@@ -1,3 +1,4 @@
+using mcrs;
 using System.Collections;
 using UnityEngine;
 using XeApp.Game.Common;
@@ -119,7 +120,7 @@ namespace XeApp.Game.RhythmGame.UI
 			if(m_value < value && m_prevGaugeLevel != v)
 			{
 				m_gaugeEffect.ShowHighlight(false);
-				SoundManager.Instance.sePlayerGame.Play(27);
+				SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_022);
 			}
 			m_value = value;
 			m_prevGaugeLevel = v;

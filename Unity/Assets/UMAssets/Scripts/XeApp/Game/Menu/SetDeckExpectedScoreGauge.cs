@@ -3,6 +3,7 @@ using XeApp.Game.Common;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -165,7 +166,7 @@ namespace XeApp.Game.Menu
 		{
 			if (OnClickPlusButton != null)
 				OnClickPlusButton();
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			UnitExpectedScore.baseGaugeScale += UnitExpectedScore.defaultAddGaugeRatio;
 			UpdateScore();
 		}

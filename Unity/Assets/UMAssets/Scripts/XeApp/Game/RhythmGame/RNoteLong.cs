@@ -388,7 +388,14 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDAD650 Offset: 0xDAD650 VA: 0xDAD650
-		// public void StopAnimation() { }
+		public void StopAnimation()
+		{
+			if(animator != null)
+			{
+				animator.Play(OffStateHash, -1, 1);
+			}
+			touchFingerId_ = -1;
+		}
 
 		// // RVA: 0xDAD768 Offset: 0xDAD768 VA: 0xDAD768 Slot: 16
 		public virtual void Pause()

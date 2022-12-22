@@ -1,4 +1,5 @@
 using CriWare;
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -552,7 +553,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E09A4 Offset: 0x16E09A4 VA: 0x16E09A4
 		private void CB_Try(int a_index)
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			CostumeSelectListWin.ItemInfo item = m_cos_list_win.GetItem(a_index);
 			if(item.m_is_new)
 			{
@@ -576,7 +577,7 @@ namespace XeApp.Game.Menu
 			CostumeSelectListWin.ItemInfo item = m_cos_list_win.GetSelectItem();
 			if(item.m_is_have)
 			{
-				SoundManager.Instance.sePlayerBoot.Play(3);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				m_costume_id = item.m_cos_id;
 				m_costume_model_id = item.m_cos_model_id;
 				m_costume_color = item.m_cos_color;

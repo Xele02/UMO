@@ -1,3 +1,4 @@
+using mcrs;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -330,7 +331,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2B69C Offset: 0xE2B69C VA: 0xE2B69C
 		private void OnClickElemButton(int elemIndex)
 		{
-			SoundManager.Instance.sePlayerBoot.Play(1);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			if(!CheckEventLimit())
 			{
 				GameManager.Instance.SelectedGuestData = m_guestInfoList[elemIndex].friend;

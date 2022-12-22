@@ -4,6 +4,7 @@ using XeApp.Game.Common;
 using System.Collections.Generic;
 using System.Collections;
 using System;
+using mcrs;
 
 namespace XeApp.Game.RhythmGame.UI
 {
@@ -149,7 +150,7 @@ namespace XeApp.Game.RhythmGame.UI
 				m_renderer.material = stackValue.material;
 				m_skillDescriptionRenderer.material = stackValue.effectTypeMtl[0].effectTypeMtl;
 				SetBuffEffectValue(stackValue.effectTypeMtl[0].effectType, stackValue.effectTypeMtl[0].bufEffectValue);
-				SoundManager.Instance.sePlayerGame.Play(21);
+				SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_VALKYRIE_000);
 				m_animator.Play(InAnimeStateName, 0, 0);
 				yield return null;
 

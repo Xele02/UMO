@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -685,7 +686,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(threshold1 <= damage && !IsChaseMode)
 			{
-				SoundManager.Instance.sePlayerGame.Play(18);
+				SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_019);
 				IsChaseMode = true;
 				m_enemyStatus.TryChaseMode(damage, threshold1, m_isLowSpec, null);
 				if (onChaseModeCallback != null)

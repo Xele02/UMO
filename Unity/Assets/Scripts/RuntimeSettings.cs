@@ -81,6 +81,14 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceLiveDivaMode = false;
 	public bool ForceLiveAwakenDivaMode = true;
 
+	public KeyCode Lane1Touch = KeyCode.S;
+	public KeyCode Lane2Touch = KeyCode.D;
+	public KeyCode Lane3Touch = KeyCode.F;
+	public KeyCode Lane4Touch = KeyCode.H;
+	public KeyCode Lane5Touch = KeyCode.J;
+	public KeyCode Lane6Touch = KeyCode.K;
+	public KeyCode ActiveSkillTouch = KeyCode.Space;
+
 	[Header("S-Live")]
 	public bool ForceCutin = true;
 	public bool DisableNoteSound = false;

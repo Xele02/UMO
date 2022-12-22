@@ -316,6 +316,7 @@ namespace XeApp.Game.RhythmGame
 			//// RVA: 0x9A6AE8 Offset: 0x9A6AE8 VA: 0x9A6AE8
 			public void Reset()
 			{
+				UnityEngine.Debug.LogError("Reset Input");
 				requestedTimerReset = false;
 				index = -1;
 				fingerId = -1;
@@ -426,9 +427,6 @@ namespace XeApp.Game.RhythmGame
 				touchPushRects[i] = t.Find("HitRect" + (i + 1)).GetComponent<RectTransform>();
 				touchReleaseRects[i] = t2.Find("HitRect" + (i + 1)).GetComponent<RectTransform>();
 			}
-			#region UMO
-			InputManager.Instance.InitializeLineCoords(touchPushRects);
-			#endregion
 		}
 
 		//// RVA: 0x9A3754 Offset: 0x9A3754 VA: 0x9A3754 Slot: 13
@@ -498,14 +496,128 @@ namespace XeApp.Game.RhythmGame
 					}
 				}
 			}
+			for(int i = 0; i < (int)InputManager.KeyTouchInfoRecord.KeyType.Num; i++)
+			{
+				InputManager.KeyTouchInfoRecord record = InputManager.Instance.GetKeyTouchInfoRecord((InputManager.KeyTouchInfoRecord.KeyType)i);
+				if (record != null)
+				{
+					if (!record.currentInfo.isIllegal)
+					{
+						CheckInputFromKeyTouchInfo(record, i);
+					}
+				}
+			}
 			inputSaver.TimerUpdate();
 			if (delegateCheckInput != null)
 				delegateCheckInput(inputSaver);
 		}
 
+		private void CheckInputFromKeyTouchInfo(InputManager.KeyTouchInfoRecord tir, int touchId)
+		{
+			int line = -1;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line1Touch)
+				line = 4;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line2Touch)
+				line = 0;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line3Touch)
+				line = 1;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line4Touch)
+				line = 2;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line5Touch)
+				line = 3;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line6Touch)
+				line = 5;
+
+			TouchInfo info = tir.currentInfo;
+
+			int fingerId = -1;
+			int avaiableFingerId = -1;
+			for (int i = 0; i < InputManager.fingerCount; i++)
+			{
+				if(inputSaver.SearchFinger(i) == null)
+				{
+					avaiableFingerId = i;
+				}
+				else if(inputSaver.SearchFinger(i).lineNo == line)
+				{
+					fingerId = i;
+					break;
+				}
+			}
+			if (fingerId == -1)
+				fingerId = avaiableFingerId;
+
+			if (line != -1)
+			{ 
+				if (isActiveLineCallback(line))
+				{
+					if (info.isBegan || info.isMoved)
+					{
+						int noteTime = System.Int32.MaxValue;
+						for (int idx = refRNoteOwner.checkStartNotesIndex; idx < refRNoteOwner.GetNoteListNum(); idx++)
+						{
+							if (refRNoteOwner.GetNote(idx).GetLineNo() == line)
+							{
+								if (refRNoteOwner.GetNote(idx).result == RhythmGameConsts.NoteResult.None)
+								{
+									noteTime = refRNoteOwner.GetNote(idx).noteInfo.time;
+									break;
+								}
+							}
+						}
+						fingerInfoList[fingerId].SetJudgeLineInfo(line, noteTime);
+					}
+					int a = fingerInfoList[fingerId].JudgeLineCandidate(refRhytmGamePlayer.notesMillisec, info.nativePosition, touchRectScreenPos, touchPriorityThreshold);
+					if (info.isBegan)
+					{
+						if (a > 0)
+							line = a;
+						inputSaver.OnTouched(fingerId, line);
+					}
+				}
+			}
+			fingerInfoList[fingerId].ResetJudgeLineInfo();
+			FingerData fingerData = inputSaver.SearchFinger(fingerId);
+			if (info.isEnded)
+			{
+				if (fingerData != null)
+					fingerData.OnReleased();
+			}
+			else
+			{
+				if (info.isMoved && fingerData != null)
+				{
+					if (fingerData.lineNo_Begin > -1)
+					{
+						if (isActiveLineCallback.Invoke(fingerData.lineNo_Begin))
+						{
+							inputSaver.OnMoved(fingerId, RectTransformUtility.RectangleContainsScreenPoint(touchReleaseRects[fingerData.lineNo_Begin], info.nativePosition));
+						}
+					}
+					if (fingerData.lineNo > -1)
+					{
+						int flick = tir.GetFlickAngleType(12, 1, swipeDistanceRate, false);
+						if (flick < 0)
+						{
+							inputSaver.OnNeutral(fingerData.lineNo, fingerId);
+						}
+						else
+						{
+							inputSaver.OnSwiped(fingerData.lineNo, fingerId, flick <= 1 || flick >= 10, flick >= 1 && flick <= 4, flick >= 4 && flick <= 7, flick >= 7 && flick <= 10);
+						}
+					}
+				}
+				if (RectTransformUtility.RectangleContainsScreenPoint(touchSkillRect, info.nativePosition) && info.isBegan)
+				{
+					BeganSkillTouch(TouchSwipeDirection.None);
+				}
+			}
+		}
+
 		//// RVA: 0x9A422C Offset: 0x9A422C VA: 0x9A422C
 		private void CheckInputFromTouchInfo(TouchInfoRecord tir, int fingerId)
 		{
+			UnityEngine.Debug.LogError("Check " + fingerId+" "+tir.currentInfo.state);
 			bool b = false;
 			int line = -1;
 			TouchInfo info = tir.currentInfo;
@@ -551,6 +663,7 @@ namespace XeApp.Game.RhythmGame
 			FingerData fingerData = inputSaver.SearchFinger(fingerId);
 			if(info.isEnded)
 			{
+				UnityEngine.Debug.LogError(fingerData != null);
 				if (fingerData != null)
 					fingerData.OnReleased();
 			}

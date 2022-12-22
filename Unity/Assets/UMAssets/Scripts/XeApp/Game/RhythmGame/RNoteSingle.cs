@@ -115,7 +115,11 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDB9A74 Offset: 0xDB9A74 VA: 0xDB9A74
-		// public void BeginTouch(int fingerId, RhythmGameConsts.NoteResult result) { }
+		public void BeginTouch(int fingerId, RhythmGameConsts.NoteResult result)
+		{
+			touchFingerId = fingerId;
+			flickStartResult = result;
+		}
 
 		// // RVA: 0xDBE808 Offset: 0xDBE808 VA: 0xDBE808
 		private void SetBaseType(RhythmGameConsts.BaseNoteType type)

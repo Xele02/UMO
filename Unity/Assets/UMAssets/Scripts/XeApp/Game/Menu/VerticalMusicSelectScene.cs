@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -245,7 +246,7 @@ namespace XeApp.Game.Menu
 			m_musicDetail.OnUnitButtonClickListener = (int index) =>
 			{
 				//0xBF02CC
-				SoundManager.Instance.sePlayerBoot.Play(3);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				m_musicSelectUISapporter.SetUnitButton(index, selectMusicData);
 			};
 			m_musicDetail.OnMusicBookMarkButtonClickListener = () =>
@@ -1187,7 +1188,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEC314 Offset: 0xBEC314 VA: 0xBEC314 Slot: 57
 		protected override void OnClickDifficultyButton(int index)
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_musicSelectUISapporter.SetDiffity((Difficulty.Type)index);
 			m_musicList.ChangeDifficult(index);
 			OnChangeFilter();
@@ -1196,7 +1197,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEC918 Offset: 0xBEC918 VA: 0xBEC918
 		private void OnClickSeriesButton(int index)
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_musicSelectUISapporter.SetSeries((MusicSelectConsts.SeriesType)index);
 			OnChangeFilter();
 		}
@@ -1233,7 +1234,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBECBEC Offset: 0xBECBEC VA: 0xBECBEC
 		private void OnClickLine6Button()
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			int selectFreeMusicId = 0;
 			OHCAABOMEOF.KGOGMKMBCPP_EventType selectEventCategory = 0;
 			if(selectMusicData != null)
@@ -1280,7 +1281,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBED05C Offset: 0xBED05C VA: 0xBED05C
 		private void OnClickMusicTabButton(bool isNormal)
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_musicTab = isNormal ? VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal : VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
 			SetMusicTab(m_musicTab);
 			int songId;

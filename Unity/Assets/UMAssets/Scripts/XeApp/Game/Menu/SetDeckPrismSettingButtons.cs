@@ -1,6 +1,7 @@
 using UnityEngine;
 using XeApp.Game.Common;
 using System;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -159,7 +160,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA73D44 Offset: 0xA73D44 VA: 0xA73D44
 		private void OnClickPrismButtonFunc()
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_prismData.NFMFFMDHBJO(m_prismButton.IsOn);
 			m_prismData.LMAAILCIFLF_ApplyInSave();
 		}
@@ -167,7 +168,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA73E08 Offset: 0xA73E08 VA: 0xA73E08
 		private void OnClickValkyrieModeButtonFunc()
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_prismData.EOGMEFOFOBJ_SetValkyrieMode(m_valkyrieModeButton.IsOn);
 			m_prismData.LMAAILCIFLF_ApplyInSave();
 		}
@@ -175,7 +176,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA73ECC Offset: 0xA73ECC VA: 0xA73ECC
 		private void OnClickNotesButtonFunc()
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_prismData.NEJBBHHINLA_SetShowNotes(m_notesButton.IsOn);
 			m_prismData.LMAAILCIFLF_ApplyInSave();
 		}
@@ -183,7 +184,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA73F90 Offset: 0xA73F90 VA: 0xA73F90
 		private void OnClickDivaSpModeButtonFunc()
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_prismData.FNMFBCGCPGP_SetDivaMode(m_divaSpModeButton.IsOn);
 			m_prismData.LMAAILCIFLF_ApplyInSave();
 		}

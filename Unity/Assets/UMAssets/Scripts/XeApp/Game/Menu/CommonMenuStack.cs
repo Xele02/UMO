@@ -1,6 +1,7 @@
 using XeSys.Gfx;
 using XeApp.Game.Common;
 using UnityEngine;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -94,7 +95,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1B4AA38 Offset: 0x1B4AA38 VA: 0x1B4AA38
 		private void OnClickBackButton()
 		{
-			SoundManager.Instance.sePlayerBoot.Play(0);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_000);
 			MenuScene.SaveRequest();
 			MenuScene.Instance.Return(true);
 		}

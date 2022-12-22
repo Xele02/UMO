@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -321,7 +322,7 @@ namespace XeApp.Game.RhythmGame.UI
 					m_explosionEffect.Play();
 					m_currentExplosiionEff.Play();
 				}
-				SoundManager.Instance.sePlayerGame.Play(18);
+				SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_019);
 				PlayChaseEffect();
 				IsChaseMode = true;
 				if (callback != null)
@@ -337,7 +338,7 @@ namespace XeApp.Game.RhythmGame.UI
 		private void PlayChaseEffect()
 		{
 			m_fadeInAnimator.Play(chance_time_start_Hash, 0, 0);
-			SoundManager.Instance.sePlayerGame.Play(17);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_018);
 		}
 
 		//// RVA: 0x155D5E0 Offset: 0x155D5E0 VA: 0x155D5E0
