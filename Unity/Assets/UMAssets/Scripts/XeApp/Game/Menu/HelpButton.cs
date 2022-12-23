@@ -61,7 +61,10 @@ namespace XeApp.Game.Menu
 		// public void ShowMusicSelectHelpButton() { }
 
 		// // RVA: 0xE30C6C Offset: 0xE30C6C VA: 0xE30C6C
-		// public void ShowResultHelpButton() { }
+		public void ShowResultHelpButton()
+		{
+			TodoLogger.Log(0, "ShowResultHelpButton HelpButton");
+		}
 
 		// // RVA: 0xE30CB4 Offset: 0xE30CB4 VA: 0xE30CB4
 		// public void ShowRaidResultHelpButton() { }

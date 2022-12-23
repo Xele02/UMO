@@ -191,7 +191,7 @@ namespace XeApp.Core
 		// // RVA: 0x1D73E4C Offset: 0x1D73E4C VA: 0x1D73E4C
 		protected void NextScene(string nextSceneName)
 		{
-			mPrevSceneName = SceneManager.GetActiveScene().ToString();
+			mPrevSceneName = SceneManager.GetActiveScene().name;
 			mNextSceneName = nextSceneName;
 		}
 

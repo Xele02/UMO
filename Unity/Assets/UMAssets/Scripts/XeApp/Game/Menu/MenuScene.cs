@@ -298,8 +298,36 @@ namespace XeApp.Game.Menu
 				}
 			}
 
-			TodoLogger.Log(0, "init from RhythmGame");
-			// L 415
+			if(GameManager.Instance.IsTutorial)
+			{
+				TodoLogger.Log(0, "init from Tutorial");
+				// L 415
+			}
+			else
+			{
+				if (!Database.Instance.gameSetup.musicInfo.isFreeMode)
+				{
+					TodoLogger.Log(0, "init from story mode");
+					// L529
+				}
+				if(!Database.Instance.gameResult.IsClear())
+				{
+					TodoLogger.Log(0, "init from free mode fail");
+					// L558
+				}
+				// L746
+				info.isDivaActive = true;
+				if(Database.Instance.gameSetup.musicInfo.IsMvMode)
+				{
+					info.category = SceneGroupCategory.SIMULATIONLIVE_RESULT;
+					info.nextName = TransitionList.Type.SIMULATIONLIVE_RESULT;
+					info.uniqueId = TransitionUniqueId.SIMULATIONLIVERESULT;
+					return;
+				}
+			}
+			info.category = SceneGroupCategory.RESULT;
+			info.nextName = TransitionList.Type.RESULT;
+			info.uniqueId = TransitionUniqueId.RESULT;
 
 		}
 

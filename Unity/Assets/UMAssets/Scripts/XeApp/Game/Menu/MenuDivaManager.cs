@@ -10,10 +10,10 @@ namespace XeApp.Game.Menu
 		public interface ControlDelegater
 		{
 			//// RVA: -1 Offset: -1 Slot: 0
-			//public abstract void BeginControl(MenuDivaManager divaManager, MenuDivaObject divaObject);
+			void BeginControl(MenuDivaManager divaManager, MenuDivaObject divaObject);
 
 			//// RVA: -1 Offset: -1 Slot: 1
-			//public abstract void EndControl();
+			void EndControl();
 		}
 		[SerializeField]
 		private GameObject divaPrefab; // 0xC
@@ -282,13 +282,26 @@ namespace XeApp.Game.Menu
 		//public void ReleaseSub() { }
 
 		//// RVA: 0xEB536C Offset: 0xEB536C VA: 0xEB536C
-		//public void BeginControl(MenuDivaControlBase control) { }
+		public void BeginControl(MenuDivaControlBase control)
+		{
+			divaControl = control;
+			control.BeginControl(this, divaObject);
+		}
 
 		//// RVA: 0xEB50F4 Offset: 0xEB50F4 VA: 0xEB50F4
-		//public void EndControl(MenuDivaControlBase control) { }
+		public void EndControl(MenuDivaControlBase control)
+		{
+			control.EndControl();
+			divaControl = null;
+		}
 
 		//// RVA: 0xECBEA8 Offset: 0xECBEA8 VA: 0xECBEA8
-		//public bool Compare(int divaId, int modelId, int colorId) { }
+		public bool Compare(int divaId, int modelId, int colorId)
+		{
+			if (resource.LoadedDivaId == divaId && resource.LoadedModelId == modelId && resource.LoadedColorId == colorId)
+				return true;
+			return false;
+		}
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x6C7174 Offset: 0x6C7174 VA: 0x6C7174
 		//// RVA: 0xECC008 Offset: 0xECC008 VA: 0xECC008

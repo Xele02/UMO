@@ -594,7 +594,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE9D388 Offset: 0xE9D388 VA: 0xE9D388
-		// public int ForceSLiveResultSerifWindow() { }
+		public int ForceSLiveResultSerifWindow()
+		{
+			if(forcePrism != null)
+			{
+				if (forcePrism.IHLDBMMOCHF_ForceSLiveResultSerifWindow < 1)
+					return 0;
+				return forcePrism.IHLDBMMOCHF_ForceSLiveResultSerifWindow;
+			}
+			return 0;
+		}
 
 	}
 }

@@ -40,7 +40,10 @@ namespace XeApp.Game.Common
 		//public void Reset() { }
 
 		//// RVA: 0xE9C918 Offset: 0xE9C918 VA: 0xE9C918
-		//public bool IsClear() { }
+		public bool IsClear()
+		{
+			return isClear;
+		}
 
 		//// RVA: 0xE9C920 Offset: 0xE9C920 VA: 0xE9C920
 		//public bool IsGameOver() { }

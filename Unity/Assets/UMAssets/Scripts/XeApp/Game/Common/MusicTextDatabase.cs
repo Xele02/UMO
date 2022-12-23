@@ -19,7 +19,7 @@ namespace XeApp.Game.Common
 			public string bannerId; // 0x2C
 			public string dAnmStoreURL; // 0x30
 
-			// public bool isEnableBuyURL { get; } 0xAECF24
+			public bool isEnableBuyURL { get { return !string.IsNullOrEmpty(buyURL); } } //0xAECF24
 		}
 
 		private static string s_path = "message_music_jp"; // 0x0

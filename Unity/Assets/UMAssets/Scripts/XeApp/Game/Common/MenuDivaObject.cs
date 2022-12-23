@@ -179,7 +179,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1110DB4 Offset: 0x1110DB4 VA: 0x1110DB4
-		//public void Result() { }
+		public void Result()
+		{
+			Anim_SetBool("res_breakTalkLoop", false);
+			Anim_SetBool("res_goStart", false);
+			Anim_Play("wait_loop", 0);
+			isStopFrame = true;
+			StartCoroutine(WaitUnlockBoneSpring(0));
+		}
 
 		//// RVA: 0x1110E98 Offset: 0x1110E98 VA: 0x1110E98
 		//public void ResultAnimStart(bool specialAnim) { }

@@ -583,7 +583,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 			data.EGMIILFFHMI_DivaMode = (int)array[i].EGMIILFFHMI;
 			data.HFMFGFHPBNB_ValkyrieMode = (int)array[i].HFMFGFHPBNB;
 			data.ENAAKPKFBGN_EffectCutIn = (int)array[i].ENAAKPKFBGN;
-			data.IHLDBMMOCHF = (int)array[i].IHLDBMMOCHF;
+			data.IHLDBMMOCHF_ForceSLiveResultSerifWindow = (int)array[i].IHLDBMMOCHF;
 			HBJDIFMCGAL.Add(data);
 		}
 		return true;
@@ -872,7 +872,7 @@ public class AIPEHINPIHC
 	public int EGMIILFFHMI_DivaMode; // 0x30
 	public int HFMFGFHPBNB_ValkyrieMode; // 0x34
 	public int ENAAKPKFBGN_EffectCutIn; // 0x38
-	public int IHLDBMMOCHF; // 0x3C
+	public int IHLDBMMOCHF_ForceSLiveResultSerifWindow; // 0x3C
 }
 
 public class AOJCMPIBFHD
