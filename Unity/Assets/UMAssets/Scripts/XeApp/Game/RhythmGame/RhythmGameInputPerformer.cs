@@ -134,7 +134,7 @@ namespace XeApp.Game.RhythmGame
 					return;
 				if (m_finger[i] == null)
 					return;
-				m_finger[i].Setup(i, lineNo, fingerId);
+				m_finger[i].Setup(i, fingerId, lineNo);
 				onBeganTouch(lineNo, i);
 
 			}
@@ -232,6 +232,7 @@ namespace XeApp.Game.RhythmGame
 				{
 					if(m_finger[i].lineNo > -1)
 					{
+						//UnityEngine.Debug.LogError(m_finger[i].lineNo + " " + m_finger[i].fingerId + " " + m_finger[i].timer + " " + m_limitSec + " " + m_saveForLine[m_finger[i].lineNo]);
 						if(m_finger[i].fingerId < 0)
 						{
 							if(m_finger[i].timer < m_limitSec)
@@ -261,6 +262,7 @@ namespace XeApp.Game.RhythmGame
 			public void SetLineSave(int lineNo, bool isSave, bool isCheckEndTouch = true)
 			{
 				bool prevVal = m_saveForLine[lineNo];
+				//UnityEngine.Debug.LogError("SetLineSave " + lineNo + " " + isSave + " " + isCheckEndTouch);
 				m_saveForLine[lineNo] = isSave;
 				if(prevVal && isCheckEndTouch && !isSave)
 				{
@@ -316,7 +318,7 @@ namespace XeApp.Game.RhythmGame
 			//// RVA: 0x9A6AE8 Offset: 0x9A6AE8 VA: 0x9A6AE8
 			public void Reset()
 			{
-				UnityEngine.Debug.LogError("Reset Input");
+				//UnityEngine.Debug.LogError("Reset Input");
 				requestedTimerReset = false;
 				index = -1;
 				fingerId = -1;
@@ -334,6 +336,7 @@ namespace XeApp.Game.RhythmGame
 			//// RVA: 0x9A6B4C Offset: 0x9A6B4C VA: 0x9A6B4C
 			public void OnReleased()
 			{
+				//UnityEngine.Debug.LogError("OnReleased");
 				fingerId = -1;
 			}
 
@@ -343,6 +346,7 @@ namespace XeApp.Game.RhythmGame
 			//// RVA: 0x9A6B74 Offset: 0x9A6B74 VA: 0x9A6B74
 			public void RequestTimerReset()
 			{
+				//UnityEngine.Debug.LogError("RequestTimerReset");
 				requestedTimerReset = true;
 			}
 
@@ -350,9 +354,13 @@ namespace XeApp.Game.RhythmGame
 			public void TimerElapse(float deltaTime)
 			{
 				if (!requestedTimerReset)
+				{
 					timer += deltaTime;
+					//UnityEngine.Debug.LogError("TimerElapse add "+timer);
+				}
 				else
 				{
+					//UnityEngine.Debug.LogError("TimerElapse reset");
 					timer = 0;
 					requestedTimerReset = false;
 				}
@@ -617,7 +625,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9A422C Offset: 0x9A422C VA: 0x9A422C
 		private void CheckInputFromTouchInfo(TouchInfoRecord tir, int fingerId)
 		{
-			UnityEngine.Debug.LogError("Check " + fingerId+" "+tir.currentInfo.state);
+			//UnityEngine.Debug.LogError("Check " + fingerId+" "+tir.currentInfo.state);
 			bool b = false;
 			int line = -1;
 			TouchInfo info = tir.currentInfo;
@@ -663,7 +671,7 @@ namespace XeApp.Game.RhythmGame
 			FingerData fingerData = inputSaver.SearchFinger(fingerId);
 			if(info.isEnded)
 			{
-				UnityEngine.Debug.LogError(fingerData != null);
+				//UnityEngine.Debug.LogError(fingerId+" "+(fingerData != null));
 				if (fingerData != null)
 					fingerData.OnReleased();
 			}
