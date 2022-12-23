@@ -299,6 +299,7 @@ namespace XeApp.Game.Menu
 			}
 
 			TodoLogger.Log(0, "init from RhythmGame");
+			// L 415
 
 		}
 

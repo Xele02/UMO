@@ -599,23 +599,38 @@ namespace XeApp.Game.RhythmGame
 					{
 						if (isActiveLineCallback.Invoke(fingerData.lineNo_Begin))
 						{
-							inputSaver.OnMoved(fingerId, RectTransformUtility.RectangleContainsScreenPoint(touchReleaseRects[fingerData.lineNo_Begin], info.nativePosition));
+							inputSaver.OnMoved(fingerId, true);
 						}
 					}
 					if (fingerData.lineNo > -1)
 					{
 						int flick = tir.GetFlickAngleType(12, 1, swipeDistanceRate, false);
-						if (flick < 0)
+						if(flick == -2)
+						{
+							for (int idx = refRNoteOwner.checkStartNotesIndex; idx < refRNoteOwner.GetNoteListNum(); idx++)
+							{
+								if (refRNoteOwner.GetNote(idx).GetLineNo() == line)
+								{
+									if (refRNoteOwner.GetNote(idx).result == RhythmGameConsts.NoteResult.None && refRNoteOwner.GetNote(idx).noteInfo.flick == MusicScoreData.FlickType.None)
+									{
+										flick = -1;
+									}
+									break;
+								}
+							}
+						}
+						if (flick == -1)
 						{
 							inputSaver.OnNeutral(fingerData.lineNo, fingerId);
 						}
 						else
 						{
-							inputSaver.OnSwiped(fingerData.lineNo, fingerId, flick <= 1 || flick >= 10, flick >= 1 && flick <= 4, flick >= 4 && flick <= 7, flick >= 7 && flick <= 10);
+							inputSaver.OnNeutral(fingerData.lineNo, fingerId); // First send a neutral to simulate 2 frame move
+							inputSaver.OnSwiped(fingerData.lineNo, fingerId, flick == -2 || flick <= 1 || flick >= 10, flick == -2 || flick >= 1 && flick <= 4, flick == -2 || flick >= 4 && flick <= 7, flick == -2 || flick >= 7 && flick <= 10);
 						}
 					}
 				}
-				if (RectTransformUtility.RectangleContainsScreenPoint(touchSkillRect, info.nativePosition) && info.isBegan)
+				if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.ActiveSkillTouch && info.isBegan)
 				{
 					BeganSkillTouch(TouchSwipeDirection.None);
 				}

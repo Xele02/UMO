@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeSys;
 using XeApp.Core;
+using System.Text;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -859,7 +860,7 @@ namespace XeApp.Game.RhythmGame
 				}
 				return;
 			}
-			if(neutralCounter[fingerId] > 0)
+			if(neutralCounter[fingerId] >= 0)
 			{
 				neutralCounter[fingerId] -= Time.deltaTime;
 			}
@@ -990,10 +991,28 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBB66C Offset: 0xDBB66C VA: 0xDBB66C
-		//public void SetupNoteResultData(ref int[] countArray, RhythmGamePlayLogger logger) { }
+		public void SetupNoteResultData(ref int[] countArray, RhythmGamePlayLogger logger)
+		{
+			for(int i = 1; i < rNoteList.Count; i++)
+			{
+				if(rNoteList[i].result < RhythmGameConsts.NoteResult.Num)
+				{
+					countArray[(int)rNoteList[i].result]++;
+					logger.AddNoteData(new RhythmGamePlayLog.NoteData() { result = rNoteList[i].result, millisec = rNoteList[i].noteInfo.time });
+				}
+			}
+		}
 
 		//// RVA: 0xDBB848 Offset: 0xDBB848 VA: 0xDBB848
-		//public int GetExcellentResultNoteCount() { }
+		public int GetExcellentResultNoteCount()
+		{
+			int res = 0;
+			for(int i = 0; i < rNoteList.Count; i++)
+			{
+				res += rNoteList[i].resultEx.m_excellent ? 1 : 0;
+			}
+			return res;
+		}
 
 		//// RVA: 0xDBB948 Offset: 0xDBB948 VA: 0xDBB948
 		//public float CalcSuccessNotesRate() { }
@@ -1034,7 +1053,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBBE80 Offset: 0xDBBE80 VA: 0xDBBE80
-		//public int GetRareItemRandomSeed() { }
+		public int GetRareItemRandomSeed()
+		{
+			return specialNotesAssigner.GetRareItemRandomSeed();
+		}
 
 		//// RVA: 0xDB9A80 Offset: 0xDB9A80 VA: 0xDB9A80
 		//public RhythmGameConsts.NoteResult OverwriteCheatNoteResult(RhythmGameConsts.NoteResult result, int lineNo) { }
@@ -1051,7 +1073,21 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBC000 Offset: 0xDBC000 VA: 0xDBC000
-		//public string SerializeForNotesLog() { }
+		public string SerializeForNotesLog()
+		{
+			StringBuilder str = new StringBuilder(3000);
+			bool comma = false;
+			for(int i = 0; i < rNoteList.Count; i++)
+			{
+				if(rNoteList[i].result < RhythmGameConsts.NoteResult.Num)
+				{
+					if (comma)
+						str.Append(',');
+					str.Append(rNoteList[i].result);
+				}
+			}
+			return str.ToString();
+		}
 
 		//// RVA: 0xDBC188 Offset: 0xDBC188 VA: 0xDBC188
 		public RNote GetNote(int index)

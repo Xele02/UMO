@@ -45,7 +45,7 @@ namespace XeApp.Game.UI
 				System.Array.Copy(meshFilters[i].mesh.uv, baseUvs[i], baseUvs[i].Length);
 				System.Array.Copy(meshFilters[i].mesh.uv, writeUvs[i], writeUvs[i].Length);
 			}
-			MaxValue = -1;
+			MaxValue = System.Int32.MaxValue;
 			SetNumber(0, 0);
 			width = meshFilters[0].mesh.bounds.max.x - meshFilters[0].mesh.bounds.min.x;
 			if(rootObject != null)

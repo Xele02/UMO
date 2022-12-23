@@ -2283,7 +2283,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C48F0 Offset: 0x9C48F0 VA: 0x9C48F0
 		private void TutorialClearEndRhythmGame()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "TutorialClearEndRhythmGame");
 		}
 
 		// // RVA: 0x9C4A70 Offset: 0x9C4A70 VA: 0x9C4A70
@@ -2319,17 +2319,17 @@ namespace XeApp.Game.RhythmGame
 			int noteResultCount_Excellent;
 			UnityEngine.Debug.Log("Enter Co_WaitRhytmGameEnd");
 			//0xBF3B04
-			TodoLogger.Log(0, "Co_WaitRhytmGameEnd");
+
 			GameManager.FadeOut(0.4f);
-			/*if(soundCheerOrderer != null)
+			if(soundCheerOrderer != null)
 			{
 				SoundManager.Instance.sePlayerCheer.FadeOut(1.0f);
 			}
 			noteResultCount = new int[5];
-			rNoteOwner.SetupNoteResultData(noteResultCount, logger);
+			rNoteOwner.SetupNoteResultData(ref noteResultCount, logger);
 			noteResultCount_Excellent = rNoteOwner.GetExcellentResultNoteCount();
 			JGEOBNENMAH.HAJIFNABIFF data;
-			MakeClearSetupData(data, noteResultCount, noteResultCount_Excellent, touchedEventItem);
+			MakeClearSetupData(out data, noteResultCount, noteResultCount_Excellent, touchedEventItem ? 1 : 0);
 			int t_next = 0;
 			if (!isClear)
 			{
@@ -2338,33 +2338,131 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
+				JGEOBNENMAH.HHCJCDFCLOB.EFHPJGACNLK(data, () =>
+				{
+					//0xBF1ADC
+					t_next = 2;
+				}, () =>
+				{
+					//0xBF1AE8
+					t_next = 1;
+				});
+			}
+			GameManager.Instance.SetTouchEffectVisible(false);
+			GameManager.Instance.SetTouchEffectMode(false);
 
-			}*/
+			while (t_next == 0)
+				yield return null;
+
+			if(soundCheerOrderer != null)
+			{
+				while (SoundManager.Instance.sePlayerCheer.IsPlaying())
+					yield return null;
+				while(SoundManager.Instance.sePlayerCheer.IsFading())
+					yield return null;
+			}
+			if(t_next == 3)
+			{
+				GotoMenuSceneInFailed();
+			}
+			else if(t_next == 2)
+			{
+				GotoMenuSceneInSuccess(noteResultCount, noteResultCount_Excellent);
+			}
+			else if(t_next == 1)
+			{
+				GotoTitleSceneInError();
+			}
 
 			TodoLogger.MinLog = -9999;
 
-			GotoMenuSceneInSuccess(new int[5], 0);
 			UnityEngine.Debug.Log("Exit Co_WaitRhytmGameEnd");
 			yield break;
 		}
 
 		// // RVA: 0x9C4B8C Offset: 0x9C4B8C VA: 0x9C4B8C
-		// private void MakeClearSetupData(out JGEOBNENMAH.HAJIFNABIFF clearSetup, int[] noteResultCount, int noteResultCount_Excellent, int noteResultCount_EventItem) { }
+		private void MakeClearSetupData(out JGEOBNENMAH.HAJIFNABIFF clearSetup, int[] noteResultCount, int noteResultCount_Excellent, int noteResultCount_EventItem)
+		{
+			RhythmGameConsts.ResultComboType comboRank = CalcComboRank();
+			clearSetup = new JGEOBNENMAH.HAJIFNABIFF();
+			clearSetup.KLCIIHKFPPO_StoryMusicId = Database.Instance.gameSetup.musicInfo.storyMusicId;
+			clearSetup.GHBPLHBNMBK_FreeMusicId = Database.Instance.gameSetup.musicInfo.freeMusicId;
+			clearSetup.AKNELONELJK_Difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
+			clearSetup.LFGNLKKFOCD_IsLine6 = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
+			clearSetup.MNNHHJBBICA_GameEventType = (int)Database.Instance.gameSetup.musicInfo.gameEventType;
+			clearSetup.MFJKNCACBDG_OpenEventType = (int)Database.Instance.gameSetup.musicInfo.openEventType;
+			clearSetup.OEILJHENAHN_PlayEventType = (int)Database.Instance.gameSetup.musicInfo.playEventType;
+			clearSetup.KNIFCANOHOC_Score = status.score.currentScore;
+			clearSetup.EACPIDGGPPO_ExcellentScore = status.score.currentScore - status.score.nonExcellentScore;
+			clearSetup.NLKEBAOBJCM_MaxCombo = status.combo.record;
+			clearSetup.LCOHGOIDMDF_ComboRank = (int)comboRank;
+			clearSetup.MJBODMOLOBC_TeamLuck = Database.Instance.gameSetup.teamInfo.teamLuck;
+			clearSetup.DGMPBPMDBEC_DropItemList = new List<int>(dropItemList);
+			clearSetup.JNNDFGPMEDA_EnergyLeft = status.energy.GetGaugeValue();
+			clearSetup.JKPPKAHPPKH_LifeLeft = status.life.current;
+			clearSetup.IPEKDLNEOFI_TeamLife = Database.Instance.gameSetup.teamInfo.teamStatus.life;
+			clearSetup.HBKBKHACHHI_TeamSoul = Database.Instance.gameSetup.teamInfo.teamStatus.soul;
+			clearSetup.GMECIBOJCFF_TeamVocal = Database.Instance.gameSetup.teamInfo.teamStatus.vocal;
+			clearSetup.MIMLMJGGNJH_TeamCharm = Database.Instance.gameSetup.teamInfo.teamStatus.charm;
+			clearSetup.BFHPKJEKJNN_TeamSupport = Database.Instance.gameSetup.teamInfo.teamStatus.support;
+			clearSetup.DDBEJNGJIPF_Fold = Database.Instance.gameSetup.teamInfo.teamStatus.fold;
+			clearSetup.JBCKLEMCEBD_LiveSkillActivateCount = new List<int>(liveSkillActivateCountList);
+			clearSetup.CPNOKMINILL_SkillDataList = new List<RhythmGamePlayLog.SkillData>(logger.log.skillDataList);
+			clearSetup.JEKDIEFPEON_RareItemRandomSeed = rNoteOwner.GetRareItemRandomSeed();
+			clearSetup.OOOGNIPJMDE_HadDivaMode = logger.log.divaModeData.type == RhythmGameMode.Type.Diva;
+			clearSetup.HGEKDNNJAAC_HadAwakenDivaMode = logger.log.divaModeData.type == RhythmGameMode.Type.AwakenDiva;
+			clearSetup.KNCBNGCDMII_HadValkyrieMode = logger.log.valkyrieModeData.type == RhythmGameMode.Type.Valkyrie;
+			clearSetup.EHCFOHAABDA_EnemyLeft = status.enemy.currentValue;
+			clearSetup.HNHCIGMKPDC = new List<int>();
+			clearSetup.OJDDNGGBJOG_AverageFPS = (int)DebugFPS.Instance.avgFPS;
+			clearSetup.BIIGPMLBOOD_MinFPS = (int)DebugFPS.Instance.minFPS;
+			clearSetup.FJCIPNCOBNA_SerializedNoteResultInfo = rNoteOwner.SerializeForNotesLog();
+			clearSetup.FDNEPIEMMFN_AssignedCenterLiveSkillNote = rNoteOwner.assignedCenterLiveSkillNote ? 1 : 0;
+			clearSetup.HJIECNDECNO_TouchedCenterLiveSkill = touchedCenterLiveSkill ? 1 : 0;
+			clearSetup.OBOPMHBPCFE_MvMode = Database.Instance.gameSetup.musicInfo.IsMvMode;
+			for(int i = 0; i < 3; i++)
+			{
+				clearSetup.HNHCIGMKPDC.Add(Database.Instance.gameSetup.teamInfo.danceDivaList[i].divaId);
+			}
+			for(int i = 0; i < logger.log.skillDataList.Count; i++)
+			{
+				if(logger.log.skillDataList[i].isActive)
+				{
+					clearSetup.BCGBODDEFKP_NumSkillActive++;
+					clearSetup.IHDIJODHCGD_LastSkillMillisec = logger.log.skillDataList[i].millisec;
+				}
+			}
+			clearSetup.GLGLFDAPNIF_ContinueCount = continueCount;
+			clearSetup.OJFNDOIFOOE_NoteResultCount = new List<int>(noteResultCount);
+			clearSetup.FEGLNPOFDJC_ExcellentCount = noteResultCount_Excellent;
+			clearSetup.OOPEJLMNIAH_EventItemCount = noteResultCount_EventItem;
+			clearSetup.JPJMALBLKDI_Tutorial = (int)Database.Instance.gameSetup.musicInfo.tutorial;
+			clearSetup.NFFDIGEJHGL_ServerTime = JGEOBNENMAH.HHCJCDFCLOB.GJIICCJMDIF_GetServerTime();
+			clearSetup.PMCGHPOGLGM_IsSkip = false;
+			clearSetup.KAIPAEILJHO_TicketCount = 0;
+			if(status.score.CheckFalisification() != null)
+				clearSetup.NMNHBJIAPGG_CheckFalsification = status.score.CheckFalisification();
+			if(status.combo.CheckFalisification() != null)
+				clearSetup.NMNHBJIAPGG_CheckFalsification = status.combo.CheckFalisification();
+		}
 
 		// // RVA: 0x9C5C78 Offset: 0x9C5C78 VA: 0x9C5C78
 		private void GotoMenuSceneInSuccess(int[] noteResultCount, int noteResultCount_Excellent)
 		{
-			TodoLogger.Log(0, "GotoMenuSceneInSuccess");
+			Database.Instance.gameResult.Setup(true, false, noteResultCount, logger.log, noteResultCount_Excellent);
 			scene.GotoMenuScene();
 		}
 
 		// // RVA: 0x9C5D68 Offset: 0x9C5D68 VA: 0x9C5D68
-		// private void GotoMenuSceneInFailed() { }
+		private void GotoMenuSceneInFailed()
+		{
+			TodoLogger.Log(0, "GotoMenuSceneInFailed");
+		}
 
 		// // RVA: 0x9C34EC Offset: 0x9C34EC VA: 0x9C34EC
 		private void GotoTitleSceneInError()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "GotoTitleSceneInError");
 		}
 
 		// // RVA: 0x9C5F68 Offset: 0x9C5F68 VA: 0x9C5F68

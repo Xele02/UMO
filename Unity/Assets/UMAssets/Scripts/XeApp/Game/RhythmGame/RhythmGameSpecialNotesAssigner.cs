@@ -270,7 +270,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC0BFCC Offset: 0xC0BFCC VA: 0xC0BFCC
-		// public int GetRareItemRandomSeed() { }
+		public int GetRareItemRandomSeed()
+		{
+			return rareItemRandSeed;
+		}
 
 		// // RVA: 0xC0BD90 Offset: 0xC0BD90 VA: 0xC0BD90
 		private void AllotItemNotes(int noteIndex, KLJCBKMHKNK.HHMPIIILOLD mode)

@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using XeSys;
 using XeApp.Game.Menu;
+using XeApp.Game.RhythmGame;
 
 public class JGEOBNENMAH
 {
@@ -56,7 +57,7 @@ public class JGEOBNENMAH
 		public int MNNHHJBBICA_GameEventType; // 0x14
 		public int MFJKNCACBDG_OpenEventType; // 0x18
 		public int OEILJHENAHN_PlayEventType; // 0x1C
-		public int JPJMALBLKDI; // 0x20
+		public int JPJMALBLKDI_Tutorial; // 0x20
 		public bool LFGNLKKFOCD_IsLine6; // 0x24
 		public bool OBOPMHBPCFE_MvMode; // 0x25
 		public long FMBLKADNICN_MvTimeLimit; // 0x28
@@ -72,42 +73,42 @@ public class JGEOBNENMAH
 		public const int ICHDNOBHIKG = 268435456;
 		public const int HFGMKEIHLJL = 536870912;
 		public const int PNBIOIMJDCG = 1073741824;
-		public long NFFDIGEJHGL; // 0x48
-		public int KNIFCANOHOC; // 0x50
-		public int EACPIDGGPPO; // 0x54
-		public int NLKEBAOBJCM; // 0x58
-		public int MJBODMOLOBC; // 0x5C
-		public int LCOHGOIDMDF; // 0x60
-		public List<int> DGMPBPMDBEC; // 0x64
+		public long NFFDIGEJHGL_ServerTime; // 0x48
+		public int KNIFCANOHOC_Score; // 0x50
+		public int EACPIDGGPPO_ExcellentScore; // 0x54
+		public int NLKEBAOBJCM_MaxCombo; // 0x58
+		public int MJBODMOLOBC_TeamLuck; // 0x5C
+		public int LCOHGOIDMDF_ComboRank; // 0x60
+		public List<int> DGMPBPMDBEC_DropItemList; // 0x64
 		public List<int> HNHCIGMKPDC; // 0x68
-		public List<int> OJFNDOIFOOE; // 0x6C
-		public int FEGLNPOFDJC; // 0x70
-		public int OOPEJLMNIAH; // 0x74
-		public int FDNEPIEMMFN; // 0x78
-		public int HJIECNDECNO; // 0x7C
-		public List<int> JBCKLEMCEBD; // 0x80
-		public int JEKDIEFPEON; // 0x84
-		public bool OOOGNIPJMDE; // 0x88
-		public bool HGEKDNNJAAC; // 0x89
-		public bool KNCBNGCDMII; // 0x8A
-		public int BCGBODDEFKP; // 0x8C
-		public int JNNDFGPMEDA; // 0x90
-		public int JKPPKAHPPKH; // 0x94
-		public int EHCFOHAABDA; // 0x98
-		public int OJDDNGGBJOG; // 0x9C
-		public int BIIGPMLBOOD; // 0xA0
+		public List<int> OJFNDOIFOOE_NoteResultCount; // 0x6C
+		public int FEGLNPOFDJC_ExcellentCount; // 0x70
+		public int OOPEJLMNIAH_EventItemCount; // 0x74
+		public int FDNEPIEMMFN_AssignedCenterLiveSkillNote; // 0x78
+		public int HJIECNDECNO_TouchedCenterLiveSkill; // 0x7C
+		public List<int> JBCKLEMCEBD_LiveSkillActivateCount; // 0x80
+		public int JEKDIEFPEON_RareItemRandomSeed; // 0x84
+		public bool OOOGNIPJMDE_HadDivaMode; // 0x88
+		public bool HGEKDNNJAAC_HadAwakenDivaMode; // 0x89
+		public bool KNCBNGCDMII_HadValkyrieMode; // 0x8A
+		public int BCGBODDEFKP_NumSkillActive; // 0x8C
+		public int JNNDFGPMEDA_EnergyLeft; // 0x90
+		public int JKPPKAHPPKH_LifeLeft; // 0x94
+		public int EHCFOHAABDA_EnemyLeft; // 0x98
+		public int OJDDNGGBJOG_AverageFPS; // 0x9C
+		public int BIIGPMLBOOD_MinFPS; // 0xA0
 		public int DEAHHPAPDNC; // 0xA4
-		public int GLGLFDAPNIF; // 0xA8
-		public int IHDIJODHCGD; // 0xAC
-		public int IPEKDLNEOFI; // 0xB0
-		public int HBKBKHACHHI; // 0xB4
-		public int GMECIBOJCFF; // 0xB8
-		public int MIMLMJGGNJH; // 0xBC
-		public int BFHPKJEKJNN; // 0xC0
-		public int DDBEJNGJIPF; // 0xC4
-		// public List<RhythmGamePlayLog.SkillData> CPNOKMINILL; // 0xC8
-		public string FJCIPNCOBNA; // 0xCC
-		// public FENCAJJBLBH NMNHBJIAPGG; // 0xD0
+		public int GLGLFDAPNIF_ContinueCount; // 0xA8
+		public int IHDIJODHCGD_LastSkillMillisec; // 0xAC
+		public int IPEKDLNEOFI_TeamLife; // 0xB0
+		public int HBKBKHACHHI_TeamSoul; // 0xB4
+		public int GMECIBOJCFF_TeamVocal; // 0xB8
+		public int MIMLMJGGNJH_TeamCharm; // 0xBC
+		public int BFHPKJEKJNN_TeamSupport; // 0xC0
+		public int DDBEJNGJIPF_Fold; // 0xC4
+		public List<RhythmGamePlayLog.SkillData> CPNOKMINILL_SkillDataList; // 0xC8
+		public string FJCIPNCOBNA_SerializedNoteResultInfo; // 0xCC
+		public FENCAJJBLBH NMNHBJIAPGG_CheckFalsification; // 0xD0
 		public bool OPEBKHLLMPH; // 0xD4
 
 		// // RVA: 0xB16360 Offset: 0xB16360 VA: 0xB16360
@@ -163,7 +164,7 @@ public class JGEOBNENMAH
 	public bool HKHCCJCGAKK; // 0x91
 	private int HLJJPCPAOBD; // 0x94
 	public int ECHONOJEPHP; // 0x98
-	public long NFFDIGEJHGL; // 0xA0
+	public long NFFDIGEJHGL_ServerTime; // 0xA0
 	public string NKGFGDGFGFM = ""; // 0xA8
 	public int KIHLOJGPFII; // 0xAC
 	public int ACMMDAHKCIF; // 0xB0
@@ -187,7 +188,10 @@ public class JGEOBNENMAH
 	// public int FCLGIPFPIPH { get; set; } // GHFOOLBCDBM 0xB025A8 EFACKLMPIOD 0xB025BC
 
 	// // RVA: 0xB02578 Offset: 0xB02578 VA: 0xB02578
-	// public long GJIICCJMDIF() { }
+	public long GJIICCJMDIF_GetServerTime()
+	{
+		return NFFDIGEJHGL_ServerTime;
+	}
 
 	// // RVA: 0xB025D0 Offset: 0xB025D0 VA: 0xB025D0
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
@@ -221,7 +225,7 @@ public class JGEOBNENMAH
 		ACMMDAHKCIF = 0x341b34c8; //??
 		JKEPHFPCKMD = 0;
 		NMLNPELGLPN = 0;
-		if(KEOCOHOFPNK.JPJMALBLKDI > 0)
+		if(KEOCOHOFPNK.JPJMALBLKDI_Tutorial > 0)
 		{
 			PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.ONHOCOBCINO);
 			NKGFGDGFGFM = JDDGPJDKHNE.GPLMOKEIOLE();
@@ -256,12 +260,12 @@ public class JGEOBNENMAH
 					}
 				}
 				//LAB_00b10684
-				NFFDIGEJHGL = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				NFFDIGEJHGL_ServerTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 				if(AGDEBBENNCK.OBOPMHBPCFE_MvMode)
 				{
 					if(AGDEBBENNCK.FMBLKADNICN_MvTimeLimit > 0)
 					{
-						if (AGDEBBENNCK.FMBLKADNICN_MvTimeLimit < NFFDIGEJHGL)
+						if (AGDEBBENNCK.FMBLKADNICN_MvTimeLimit < NFFDIGEJHGL_ServerTime)
 						{
 							//LAB_00b112b8
 							JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(IGBGKGAIJPL, false);
@@ -270,7 +274,7 @@ public class JGEOBNENMAH
 						}
 					}
 				}
-				FOPBGEGCJCJ = Utility.RoundDownDayUnixTime(NFFDIGEJHGL, 1209600);
+				FOPBGEGCJCJ = Utility.RoundDownDayUnixTime(NFFDIGEJHGL_ServerTime, 1209600);
 				CIOECGOMILE LGAALOEKCAC = CIOECGOMILE.HHCJCDFCLOB;
 				if(AGDEBBENNCK.MNNHHJBBICA_GameEventType != 0)
 				{
@@ -300,7 +304,7 @@ public class JGEOBNENMAH
 				}
 				if(AGDEBBENNCK.GHBPLHBNMBK_FreeMusicId > 0)
 				{
-					HMMFHMHENAO = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NGCCGLLLDIB_CampaignDiva.MDKOCDHIDMA(NFFDIGEJHGL);
+					HMMFHMHENAO = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NGCCGLLLDIB_CampaignDiva.MDKOCDHIDMA(NFFDIGEJHGL_ServerTime);
 				}
 				bool b = false;
 				int t = 1;
@@ -323,7 +327,7 @@ public class JGEOBNENMAH
 				if(GNGMCIAIKMA.HHCJCDFCLOB != null)
 				{
 					HAJIFNABIFF h = new HAJIFNABIFF();
-					h.KNIFCANOHOC = -1;
+					h.KNIFCANOHOC_Score = -1;
 					h.OEILJHENAHN_PlayEventType = AGDEBBENNCK.OEILJHENAHN_PlayEventType;
 					h.OBOPMHBPCFE_MvMode = AGDEBBENNCK.OBOPMHBPCFE_MvMode;
 					GNGMCIAIKMA.HHCJCDFCLOB.GJENEJOANEL(/*15*/DKFJADMCNPI.NLKCMNHOBAI.GJPEANBALKF, 0, t, h);
@@ -393,11 +397,20 @@ public class JGEOBNENMAH
 	}
 
 	// // RVA: 0xB03AB4 Offset: 0xB03AB4 VA: 0xB03AB4
-	// public void EFHPJGACNLK(JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
+	public void EFHPJGACNLK(HAJIFNABIFF OMNOFMEBLAD, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
+	{
+		N.a.StartCoroutine(IILJJMAEPCI_GameClear(OMNOFMEBLAD, BHFHGFKBOHH, MOBEEPPKFLG));
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B63F8 Offset: 0x6B63F8 VA: 0x6B63F8
 	// // RVA: 0xB03B1C Offset: 0xB03B1C VA: 0xB03B1C
-	// private IEnumerator IILJJMAEPCI_GameClear(JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
+	private IEnumerator IILJJMAEPCI_GameClear(HAJIFNABIFF OMNOFMEBLAD, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
+	{
+		//0xB0C53C
+		TodoLogger.Log(0, "IILJJMAEPCI_GameClear");
+		yield return null;
+		BHFHGFKBOHH();
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B6470 Offset: 0x6B6470 VA: 0x6B6470
 	// // RVA: 0xB03C14 Offset: 0xB03C14 VA: 0xB03C14
@@ -410,7 +423,10 @@ public class JGEOBNENMAH
 	// private void IBEIMGHLPPJ(FOCPLKMMCAL JNLKJCDFFMM, JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD) { }
 
 	// // RVA: 0xB0756C Offset: 0xB0756C VA: 0xB0756C
-	// public void EFHMAKNEGEA(JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD) { }
+	public void EFHMAKNEGEA(HAJIFNABIFF OMNOFMEBLAD)
+	{
+		TodoLogger.Log(0, "EFHMAKNEGEA");
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B64E8 Offset: 0x6B64E8 VA: 0x6B64E8
 	// // RVA: 0xB08A04 Offset: 0xB08A04 VA: 0xB08A04

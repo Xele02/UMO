@@ -23,7 +23,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AF274 Offset: 0x9AF274 VA: 0x9AF274
-		//public void AddNoteData(RhythmGamePlayLog.NoteData data) { }
+		public void AddNoteData(RhythmGamePlayLog.NoteData data)
+		{
+			log.noteDataList.Add(data);
+		}
 
 		//// RVA: 0x9AF310 Offset: 0x9AF310 VA: 0x9AF310
 		public void SetValkyrieModeTime(int beginMillisec, int endMillisec)

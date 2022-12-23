@@ -24,7 +24,23 @@ namespace XeApp.Game.RhythmGame
 		public float scoreNotesValue { get { return scoreNotesValue_.DNJEJEANJGL_Value; } private set { scoreNotesValue_.DNJEJEANJGL_Value = value; } } //0xBFE0CC 0xBFE0F8
 
 		//// RVA: 0xBFE12C Offset: 0xBFE12C VA: 0xBFE12C
-		//public FENCAJJBLBH CheckFalisification() { }
+		public FENCAJJBLBH CheckFalisification()
+		{
+			FENCAJJBLBH res = currentScore_.NMNHBJIAPGG;
+			if (res == null)
+			{
+				res = nonExcellentScore_.NMNHBJIAPGG;
+				if(res == null)
+				{
+					res = totalComboCount_.NMNHBJIAPGG;
+					if(res == null)
+					{
+						res = scoreNotesValue_.NMNHBJIAPGG;
+					}
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0xBFE1B8 Offset: 0xBFE1B8 VA: 0xBFE1B8
 		public void Initialize(MusicData musicData, int teamScoreBonusValue)

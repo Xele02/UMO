@@ -54,7 +54,7 @@ namespace XeApp.Game.RhythmGame.UI
 			{
 				if(i > 0 && m_comboAnimator.GetCurrentAnimatorStateInfo(0).shortNameHash == ComboLevelAnimeStates[i])
 				{
-					m_comboAnimator.Play(isFaild ? ComboLevelFaildCloseAnimeStates[i] : ComboLevelCloseAnimeStates[i], 0, 0);
+					m_comboAnimator.Play(isFaild ? ComboLevelFaildCloseAnimeStates[i - 1] : ComboLevelCloseAnimeStates[i - 1], 0, 0);
 				}
 			}
 		}

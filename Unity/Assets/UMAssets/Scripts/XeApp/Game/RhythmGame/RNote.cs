@@ -35,7 +35,7 @@ namespace XeApp.Game.RhythmGame
 		public MusicScoreData.InputNoteInfo noteInfo { get; private set; } // 0x8
 		public RNote.PassingStatus passingStatus { get { return passingStatus_; } private set { passingStatus_ = value; } } //0xF628AC 0xF77A28
 		public RhythmGameConsts.NoteResult result { get { return m_result_ex.m_result; } private set { m_result_ex.m_result = value; } } //0xF77A30 0xF77A54
-		//public RhythmGameConsts.NoteResultEx resultEx { get; } 0xF77A7C
+		public RhythmGameConsts.NoteResultEx resultEx { get { return m_result_ex; } } //0xF77A7C
 		public RNoteResultJudge resultJudge { get; private set; } // 0x14
 		public RNoteResultJudge passJudge { get; private set; } // 0x18
 		public bool resultReset { get; private set; } // 0x1C
