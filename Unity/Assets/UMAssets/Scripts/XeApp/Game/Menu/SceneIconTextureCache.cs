@@ -18,7 +18,12 @@ namespace XeApp.Game.Menu
 		public Material KiraEnableMaterial { get; set; } // 0x20
 
 		// RVA: 0x13704C0 Offset: 0x13704C0 VA: 0x13704C0 Slot: 15
-		//public override void Release() { }
+		public override void Release()
+		{
+			base.Release();
+			if(KiraEnableMaterial != null)
+				KiraEnableMaterial = null;
+		}
 
 		// RVA: 0x1370564 Offset: 0x1370564 VA: 0x1370564 Slot: 16
 		public override void Set(RawImageEx image)
@@ -77,7 +82,12 @@ namespace XeApp.Game.Menu
 		public Material KiraEnableMaterial { get; set; } // 0x20
 
 		// RVA: 0x1378790 Offset: 0x1378790 VA: 0x1378790 Slot: 15
-		//public override void Release() { }
+		public override void Release()
+		{
+			base.Release();
+			if(KiraEnableMaterial != null)
+				KiraEnableMaterial = null;
+		}
 
 		// RVA: 0x1378834 Offset: 0x1378834 VA: 0x1378834 Slot: 16
 		public override void Set(RawImageEx image)

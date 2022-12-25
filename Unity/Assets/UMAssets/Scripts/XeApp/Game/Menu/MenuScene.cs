@@ -113,10 +113,10 @@ namespace XeApp.Game.Menu
 		public MenuDivaManager divaManager { get; set; } // 0x2C
 		public SceneIconTextureCache SceneIconCache { get { return GameManager.Instance.SceneIconCache; } } //0xB2DCF8
 		public DivaIconTextureCache DivaIconCache { get { return GameManager.Instance.DivaIconCache; } } //0xB2DD94
-		// public BgTextureCache BgTextureCache { get; } 0xB2DE30
-		// public ItemTextureCache ItemTextureCache { get; } 0xB2DECC
+		public BgTextureCache BgTextureCache { get { return GameManager.Instance.BgTextureCache; } } //0xB2DE30
+		public ItemTextureCache ItemTextureCache { get { return GameManager.Instance.ItemTextureCache; } } //0xB2DECC
 		// public MenuResidentTextureCache MenuResidentTextureCache { get; } 0xB2DF68
-		// public MusicJacketTextureCache MusicJacketTextureCache { get; } 0xB2E004
+		public MusicJacketTextureCache MusicJacketTextureCache { get { return GameManager.Instance.MusicJacketTextureCache; } } //0xB2E004
 		// public UnitPopupWindowControl UnitSaveWindowControl { get; } 0xB2E0A0
 		public StatusWindowControl StatusWindowControl { get { return m_statusWindowControl; } } //0xB2E0A8
 		// public MusicPopupWindowControl MusicPopupWindowControl { get; } 0xB2E0B0
@@ -525,7 +525,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30CD0 Offset: 0xB30CD0 VA: 0xB30CD0
 		public void SetActiveDivaModel(bool active, bool isIdle = true)
 		{
-			TodoLogger.Log(0, "SetActiveDivaModel");
+			divaManager.SetActive(active, isIdle);
 		}
 
 		// // RVA: 0xB30D0C Offset: 0xB30D0C VA: 0xB30D0C
@@ -534,7 +534,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30D6C Offset: 0xB30D6C VA: 0xB30D6C Slot: 14
 		protected override bool DoUpdateLeave()
 		{
-			TodoLogger.Log(0, "DoUpdateLeave");
+			DivaIconCache.Clear();
+			BgTextureCache.Clear();
+			ItemTextureCache.Clear();
+			MusicJacketTextureCache.Clear();
+			m_menuTransitionControl.MenuFooter.Release();
 			MenuUpdater.updater = null;
 			return true;
 		}

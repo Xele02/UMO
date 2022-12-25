@@ -30,7 +30,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13DBE18 Offset: 0x13DBE18 VA: 0x13DBE18 Slot: 4
-		// public virtual void Clear() { }
+		public virtual void Clear()
+		{
+			for(int i = 0; i < m_iconTextureCache.Count; i++)
+			{
+				m_iconTextureCache[i].Release();
+			}
+			m_iconTextureCache.Clear();
+			m_loadingAssetBundle.Clear();
+		}
 
 		// // RVA: -1 Offset: -1 Slot: 5
 		// public abstract void Terminated();
