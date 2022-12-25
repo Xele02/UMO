@@ -441,10 +441,13 @@ public class BBHNACPENDM_ServerSaveData
 				{
 					save_id = JsonUtil.GetLong(jsonData, AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id, 0);
 				}
-				data.FJMOAAPNCJI = save_id;
+				data.FJMOAAPNCJI_SaveId = save_id;
 				if(data.IIEMACPEEBJ_Deserialize(AAEDAEHIONI) == false)
+				{
+					UnityEngine.Debug.LogError("Failed to deserialize "+OPFGFINHFCE_Name+" wih data "+AAEDAEHIONI[OPFGFINHFCE_Name].EJCOJCGIBNG_ToJson());
 					return false;
-				data.LLBJFFFJEPJ = true;
+				}
+				data.LLBJFFFJEPJ_Deseralized = true;
 				if(!jsonData.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id/*save_id*/))
 				{
 					data.KFKDMBPNLJK_BlockInvalid = true;

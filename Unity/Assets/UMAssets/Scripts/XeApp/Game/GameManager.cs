@@ -1024,7 +1024,15 @@ namespace XeApp.Game
 		// public void DeleteViewPlayerData() { }
 
 		// // RVA: 0x9A0E04 Offset: 0x9A0E04 VA: 0x9A0E04
-		// public FFHPBEPOMAK GetHomeDiva() { }
+		public FFHPBEPOMAK GetHomeDiva()
+		{
+			FFHPBEPOMAK res = m_viewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
+			if(localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId > 0)
+			{
+				res = m_viewPlayerData.NBIGLBMHEDC[localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
+			}
+			return res;
+		}
 
 		// // RVA: 0x9A0F5C Offset: 0x9A0F5C VA: 0x9A0F5C
 		public Camera GetSystemCanvasCamera()
@@ -1172,7 +1180,7 @@ namespace XeApp.Game
 			List<int> l = new List<int>();
 			for (int i = 0; i < mi.onStageDivaNum; i++)
 			{
-				l.Add(master.MGFMPKLLGHE_Diva.GCINIJEMHFK(ti.danceDivaList[i].prismDivaId).IDDHKOEFJFB);
+				l.Add(master.MGFMPKLLGHE_Diva.GCINIJEMHFK(ti.danceDivaList[i].prismDivaId).IDDHKOEFJFB_BodyId);
 			}
 			int c = GameManager.Instance.GetMultipleDanceOverridePrimeId(l);
 			int basaraPos = directionParam.basaraPositionId;

@@ -1,4 +1,8 @@
 
+using System.Collections;
+using UnityEngine;
+using XeApp.Game.Common;
+
 namespace XeApp.Game.Menu
 {
 	public class ResultDivaControl : MenuDivaControlBase
@@ -27,7 +31,20 @@ namespace XeApp.Game.Menu
 		//public void RequestResultAnimStart(ResultScoreRank.Type scoreRank) { }
 
 		//// RVA: 0xCFF7B4 Offset: 0xCFF7B4 VA: 0xCFF7B4
-		//public void OnSimulationResultAnimStart() { }
+		public void OnSimulationResultAnimStart()
+		{
+			DivaObject.ResultAnimStart(DivaResultMotion.UseResultSpecial(DivaObject.divaId, ResultScoreRank.Type.S));
+			int voice = Database.Instance.gameSetup.ForceDivaVoice();
+			if(voice < 1)
+			{
+				SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Result, 3);
+				return;
+			}
+			SoundManager.Instance.voDiva.RequestChangeCueSheetForReplacement(voice, () => {
+				//0xCFFD20
+				SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Result, 3);
+			});
+		}
 
 		//// RVA: 0xCFFA08 Offset: 0xCFFA08 VA: 0xCFFA08
 		public void RequestSimulationResultAnimStart()
@@ -38,7 +55,18 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6EAC Offset: 0x6C6EAC VA: 0x6C6EAC
 		//// RVA: 0xCFF728 Offset: 0xCFF728 VA: 0xCFF728
-		//private IEnumerator Coroutine_RequestResultAnimStart() { }
+		private IEnumerator Coroutine_RequestResultAnimStart()
+		{
+			//0xCFFEAC
+			yield return new WaitWhile(() => {
+				//0xCFFD7C
+				return SoundManager.Instance.voDiva.isPlaying;
+			});
+			if(DivaObject != null)
+			{
+				DivaObject.ResultReactionLoopBreak();
+			}
+		}
 
 		//// RVA: 0xCFFA54 Offset: 0xCFFA54 VA: 0xCFFA54
 		//public void OnBattleResultAnimStart(bool isWin) { }

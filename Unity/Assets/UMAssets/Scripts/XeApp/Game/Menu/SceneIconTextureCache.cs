@@ -326,7 +326,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13715E0 Offset: 0x13715E0 VA: 0x13715E0
 		public StringBuilder MakeBundlePath(StringBuilder strBuilder, int sceneId, int evolvId, int baseRare, int version, bool isFeed)
 		{
-			return MakeBundlePath(strBuilder, sceneId, evolvId, isFeed && IsPlateAnimation() && baseRare > 0, version);
+			return MakeBundlePath(strBuilder, sceneId, evolvId, !isFeed && IsPlateAnimation() && baseRare > 5, version);
 		}
 
 		// // RVA: 0x1371D6C Offset: 0x1371D6C VA: 0x1371D6C

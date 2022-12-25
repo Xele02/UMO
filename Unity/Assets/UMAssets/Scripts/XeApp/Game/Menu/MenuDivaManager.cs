@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Game.Common;
@@ -76,14 +77,101 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECA8B0 Offset: 0xECA8B0 VA: 0xECA8B0
-		//public void Load(int divaId, int modelId, int colorId, DivaResource.MenuFacialType facialType, bool defaultVisible = True) { }
+		public void Load(int divaId, int modelId, int colorId, DivaResource.MenuFacialType facialType, bool defaultVisible = true)
+		{
+			IsLoading = true;
+			StartCoroutine(Coroutine_Load(divaId, modelId, colorId, facialType, defaultVisible));
+		}
 
 		//// RVA: 0xEB9C30 Offset: 0xEB9C30 VA: 0xEB9C30
-		//public void Load(DFKGGBMFFGB playerData, DivaResource.MenuFacialType facialType, bool defaultVisible = True) { }
+		public void Load(DFKGGBMFFGB playerData, DivaResource.MenuFacialType facialType, bool defaultVisible = true)
+		{
+			IsLoading = true;
+			FFHPBEPOMAK divaInfo = playerData.DPLBHAIKPGL(false).BCJEAJPLGMB_MainDivas[0];
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId > 0)
+			{
+				divaInfo = playerData.NBIGLBMHEDC[GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
+			}
+			StartCoroutine(Coroutine_Load(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.EOJIGHEFIAA_GetHomeDivaPrismCostumeId(), divaInfo.LHGJHJLGPBE_GetHomeDivaColorId(), facialType, defaultVisible));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6F94 Offset: 0x6C6F94 VA: 0x6C6F94
 		//// RVA: 0xECA8F8 Offset: 0xECA8F8 VA: 0xECA8F8
-		//private IEnumerator Coroutine_Load(int divaId, int modelId, int colorId, DivaResource.MenuFacialType facialType, bool defaultVisible = True) { }
+		private IEnumerator Coroutine_Load(int divaId, int modelId, int colorId, DivaResource.MenuFacialType facialType, bool defaultVisible = true)
+		{
+			MenuScene menuSceneInstance;
+
+			//0xECC624
+			if(divaObject == null)
+			{
+				GameObject go = Instantiate(divaPrefab);
+				go.transform.parent = gameObject.transform;
+				divaObject = go.GetComponent<MenuDivaObject>();
+			}
+			fullName = MessageManager.Instance.GetBank("master").GetMessageByLabel("diva_"+divaId.ToString("D2"));
+			messageBank = MessageManager.Instance.GetBank(MessageLoader.DivaIdToSheet(divaId).ToString());
+			ResultScoreRank.Type scoreRank = ResultScoreRank.Type.Illegal;
+			if(facialType == DivaResource.MenuFacialType.Result)
+			{
+				NGJOPPIGCPM data = new NGJOPPIGCPM();
+				data.KHEKNNFCAOI(Database.Instance.gameSetup.musicInfo.freeMusicId,
+					Database.Instance.gameSetup.musicInfo.difficultyType,
+					Database.Instance.gameSetup.EnableLiveSkip,
+					Database.Instance.gameSetup.musicInfo.IsLine6Mode,
+					(int)Database.Instance.gameSetup.musicInfo.gameEventType
+				);
+				scoreRank = ResultScoreRank.Type.S;
+				if(!Database.Instance.gameSetup.musicInfo.IsMvMode)
+				{
+					scoreRank = (ResultScoreRank.Type)data.PENICOGGNLF;
+				}
+			}
+			resource.LoadBasicResource(divaId, modelId, colorId);
+			resource.LoadMenuResource(divaId, modelId, facialType, scoreRank);
+			yield return new WaitUntil(() => {
+				//0xECC03C
+				return resource.isMenuAllLoaded;
+			});
+			divaMenuParam = resource.divaMenuParam;
+			divaObject.Initialize(resource, divaId, false);
+			divaObject.SetEnableRenderer(defaultVisible);
+			voiceTable = resource.menuVoiceTable;
+			voiceTableCos = resource.menuVoiceTableCos;
+			menuSceneInstance = MenuScene.Instance;
+			if(menuSceneInstance != null)
+			{
+				menuSceneInstance.RaycastDisable();
+			}
+			bool isEndedChangeCueSheet = false;
+			SoundManager.Instance.voDiva.RequestChangeCueSheet(divaId, () => {
+				//0xECC07C
+				isEndedChangeCueSheet = true;
+			});
+			yield return new WaitUntil(() => {
+				//0xECC088
+				return isEndedChangeCueSheet;
+			});
+			if(resource.menuVoiceTableCos != null)
+			{
+				bool isEndedChangeCosCueSeet = false;
+				SoundManager.Instance.voDivaCos.RequestChangeCueSheetSole(divaId, () => {
+					//0xECC098
+					isEndedChangeCosCueSeet = true;
+				});
+				yield return new WaitUntil(() => {
+					//0xECC0A4
+					return isEndedChangeCosCueSeet;
+				});
+			}
+			if(menuSceneInstance != null)
+			{
+				menuSceneInstance.RaycastEnable();
+			}
+			ApplyCameraPos(divaId, DivaMenuParam.CameraPosType.Default);
+			SetEnableDivaEffect(GetEnableDivaEffect(), false);
+			SetEnableDivaWind(GetEnableDivaWind(), false);
+			IsLoading = false;
+		}
 
 		//// RVA: 0xEB9BA8 Offset: 0xEB9BA8 VA: 0xEB9BA8
 		public void Release(bool isModelChange)
@@ -91,8 +179,7 @@ namespace XeApp.Game.Menu
 			messageBank = null;
 			if(isModelChange)
 			{
-				TodoLogger.Log(0, "Menudivamanager reenable release when diva is loaded");
-				//resource.ReleaseBasicResource();
+				resource.ReleaseBasicResource();
 			}
 			if (!resource.isLoadedMenuAnimationResource)
 				return;
@@ -154,16 +241,34 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECB00C Offset: 0xECB00C VA: 0xECB00C
-		//public void SetEnableDivaEffect(bool a_enable, bool a_save_ignore = False) { }
+		public void SetEnableDivaEffect(bool a_enable, bool a_save_ignore = false)
+		{
+			if(divaObject != null)
+			{
+				divaObject.SetEnableEffect(a_enable, a_save_ignore);
+			}
+		}
 
 		//// RVA: 0xECB0D0 Offset: 0xECB0D0 VA: 0xECB0D0
-		//public bool GetEnableDivaEffect() { }
+		public bool GetEnableDivaEffect()
+		{
+			return divaObject.GetEnableEffect();
+		}
 
 		//// RVA: 0xECB0FC Offset: 0xECB0FC VA: 0xECB0FC
-		//public void SetEnableDivaWind(bool a_enable, bool a_save_ignore = False) { }
+		public void SetEnableDivaWind(bool a_enable, bool a_save_ignore = false)
+		{
+			if(divaObject != null)
+			{
+				divaObject.SetEnableWind(a_enable, a_save_ignore);
+			}
+		}
 
 		//// RVA: 0xECB1C0 Offset: 0xECB1C0 VA: 0xECB1C0
-		//public bool GetEnableDivaWind() { }
+		public bool GetEnableDivaWind()
+		{
+			return divaObject.GetEnableWind();
+		}
 
 		//// RVA: 0xECB1EC Offset: 0xECB1EC VA: 0xECB1EC
 		public void SetEnableRenderer(bool visible)
@@ -176,7 +281,10 @@ namespace XeApp.Game.Menu
 		//public void SetPosition(Vector3 position) { }
 
 		//// RVA: 0xECB408 Offset: 0xECB408 VA: 0xECB408
-		//public bool isWaitUnlockBoneSpring() { }
+		public bool isWaitUnlockBoneSpring()
+		{
+			return divaObject != null && divaObject.isWaitUnlockBoneSpring;
+		}
 
 		//// RVA: 0xECB4C0 Offset: 0xECB4C0 VA: 0xECB4C0
 		public void LockBoneSpring()

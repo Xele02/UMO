@@ -70,7 +70,10 @@ namespace XeApp.Game.Menu
 		// public void ShowRaidResultHelpButton() { }
 
 		// // RVA: 0xE30CFC Offset: 0xE30CFC VA: 0xE30CFC
-		// public void HideResultHelpButton() { }
+		public void HideResultHelpButton()
+		{
+			TodoLogger.Log(0, "HideResultHelpButton HelpButton");
+		}
 
 		// // RVA: 0xE30D00 Offset: 0xE30D00 VA: 0xE30D00
 		// public void ShowMissiontEventHelpButton() { }

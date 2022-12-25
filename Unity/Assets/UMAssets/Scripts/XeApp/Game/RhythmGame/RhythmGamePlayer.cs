@@ -882,7 +882,7 @@ namespace XeApp.Game.RhythmGame
 				return;
 			backupSaveData.m_enable = true;
 			backupSaveData.m_option = new ILDKBCLAFPB.MPHNGGECENI_Option();
-			backupSaveData.m_option.ODDIHGPONFL_Copy(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.ODDIHGPONFL_Copy(backupSaveData.m_option);
 		}
 
 		// // RVA: 0x9BAFE8 Offset: 0x9BAFE8 VA: 0x9BAFE8

@@ -52,16 +52,17 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
 	// // RVA: 0x17C0330 Offset: 0x17C0330 VA: 0x17C0330
 	private void DIAMDBHBKBH()
     {
-        NFEAMMJIMPG_Result = new PHAKFFBNNEI_PlayerDataResult();
+        PHAKFFBNNEI_PlayerDataResult tmp = new PHAKFFBNNEI_PlayerDataResult();
         EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
-        NFEAMMJIMPG_Result.BIOGKIEECGN_CreatedAt = JsonUtil.GetLong(jsonData["created_at"]);
-        NFEAMMJIMPG_Result.IFNLEKOILPM_UpdatedAt = JsonUtil.GetLong(jsonData["updated_at"]);
-        NFEAMMJIMPG_Result.MLGKDBJLNBM_DataStatus = (sbyte)JsonUtil.GetInt(jsonData["data_status"]);
+        tmp.BIOGKIEECGN_CreatedAt = JsonUtil.GetLong(jsonData["created_at"]);
+        tmp.IFNLEKOILPM_UpdatedAt = JsonUtil.GetLong(jsonData["updated_at"]);
+        tmp.MLGKDBJLNBM_DataStatus = (sbyte)JsonUtil.GetInt(jsonData["data_status"]);
         DLKLLHPLANH = false;
         if(IJMPLDBGMHC_OnDataReceived != null)
         {
             DLKLLHPLANH = !IJMPLDBGMHC_OnDataReceived(HHIHCJKLJFF_BlockToRequest, JsonUtil.GetObject(jsonData, "player"));
         }
         GC.Collect();
+        NFEAMMJIMPG_Result = tmp;
     }
 }

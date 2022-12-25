@@ -37,7 +37,14 @@ namespace XeApp.Game.Common
 		//public void SetupForTutorialTow() { }
 
 		//// RVA: 0xE9C8D8 Offset: 0xE9C8D8 VA: 0xE9C8D8
-		//public void Reset() { }
+		public void Reset()
+		{
+			isClear = false;
+			isGameOver = false;
+			noteResultCount.Initialize();
+			gameLog = null;
+			tutorialOneResult = 0;
+		}
 
 		//// RVA: 0xE9C918 Offset: 0xE9C918 VA: 0xE9C918
 		public bool IsClear()

@@ -155,14 +155,21 @@ namespace XeApp.Game.Common
 			currentBgmId = -1;
 			string sheetName = string.Empty;
 			ConvertBgmIdToCueSheetName(bgmId, ref sheetName);
-			ChangeCueSheet(sheetName);
-			if (SoundResource.isSecureCueSheet(sheetName))
-				isPlayedSecureMusic = true;
-			string cueName = string.Empty;
-			ConvertBgmIdToCueName(bgmId, ref cueName);
-			PlayCue(cueName);
-			ChangeVolume(0, volume, null);
-			currentBgmId = bgmId;
+			// Try catch added for UMO for download mode when bgm wasn't preloaded, until download at start works.
+			try
+			{
+				ChangeCueSheet(sheetName);
+				if (SoundResource.isSecureCueSheet(sheetName))
+					isPlayedSecureMusic = true;
+				string cueName = string.Empty;
+				ConvertBgmIdToCueName(bgmId, ref cueName);
+				PlayCue(cueName);
+				ChangeVolume(0, volume, null);
+				currentBgmId = bgmId;
+			} catch (Exception e)
+			{
+				UnityEngine.Debug.LogError("Could not plsy bgm : "+e.ToString());
+			}
 		}
 
 		// // RVA: 0xE61848 Offset: 0xE61848 VA: 0xE61848

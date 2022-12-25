@@ -960,12 +960,17 @@ namespace XeApp.Game.Menu
 				{
 					if(!GameManager.Instance.divaResource.isMenuAllLoaded && !isNotAutoLoad)
 					{
-						TodoLogger.Log(0, "Load diva menu");
-						//L777
+						MenuDivaManager divaManager = MenuScene.Instance.divaManager;
+						DFKGGBMFFGB data = new DFKGGBMFFGB();
+						data.KHEKNNFCAOI_Init(null, false);
+						divaManager.Load(data, DivaResource.MenuFacialType.Home, true);
 						// to 16
+						while(divaManager.IsLoading)
+							yield return null;
 					}
 					// to 17
-					TodoLogger.Log(0, "Load diva menu");
+					while(MenuScene.Instance.divaManager.isWaitUnlockBoneSpring())
+						yield return null;
 				}
 				m_remainDivaOneTimeFlag = false;
 				bool idleDivaModel = false;
@@ -979,8 +984,7 @@ namespace XeApp.Game.Menu
 				bool activeDivaModel = false;
 				if(m_next.name == TransitionList.Type.HOME || m_next.name == TransitionList.Type.HOME_BG_SELECT)
 				{
-					TodoLogger.Log(0, "check activate diva");
-					//L876
+					activeDivaModel = JKHEOEEPBMJ.NMKPJJLAONP_GetShowHomeDiva();
 				}
 				else
 				{
@@ -991,6 +995,7 @@ namespace XeApp.Game.Menu
 				if(isDivaActivate)
 				{
 					TodoLogger.Log(0, "setup diva");
+					//900
 					divaActivated = isDivaActivate;
 				}
 				if((isNotAutoLoad || divaActivated) == false)

@@ -199,7 +199,7 @@ public class CIOECGOMILE
 		NAIJIFAJGGK_RequestLoadPlayerData BPOJOBICBAC = OKDOIAEGADK.IFFNCAFNEAG_AddRequest<NAIJIFAJGGK_RequestLoadPlayerData>(new NAIJIFAJGGK_RequestLoadPlayerData());
 		BPOJOBICBAC.HHIHCJKLJFF_BlockToRequest = AHEFHIMGIBI_ServerSave.KPIDBPEKMFD_GetBlockList();
 		BPOJOBICBAC.IJMPLDBGMHC_OnDataReceived = AHEFHIMGIBI_ServerSave.IIEMACPEEBJ_Load;
-		yield return BPOJOBICBAC.GDPDELLNOBO(N.a);
+		yield return BPOJOBICBAC.GDPDELLNOBO_WaitDone(N.a);
 
 		StringBuilder str = new StringBuilder();
 		bool firstDone = false;
@@ -212,11 +212,11 @@ public class CIOECGOMILE
 			}
 			str.Append(AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks[i].JIKKNHIAEKG_BlockName);
 			str.Append(":");
-			str.Append(AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks[i].LLBJFFFJEPJ);
+			str.Append(AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks[i].LLBJFFFJEPJ_Deseralized);
 			str.Append(":");
-			str.Append(AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks[i].FJMOAAPNCJI);
+			str.Append(AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks[i].FJMOAAPNCJI_SaveId);
 			firstDone = true;
-			b = b | !AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks[i].LLBJFFFJEPJ;
+			b = b | !AHEFHIMGIBI_ServerSave.MGJKEJHEBPO_Blocks[i].LLBJFFFJEPJ_Deseralized;
 		}
 
 		UnityEngine.Debug.Log(str.ToString());
@@ -260,7 +260,7 @@ public class CIOECGOMILE
 
 		DOLDMCAMEOD_RequestRemainingForCurrencyIds GHPOKNKDBGO = OKDOIAEGADK.IFFNCAFNEAG_AddRequest<DOLDMCAMEOD_RequestRemainingForCurrencyIds>(new DOLDMCAMEOD_RequestRemainingForCurrencyIds());
 		GHPOKNKDBGO.CGCFENMHJIM = NFGNKHONICJ();
-		yield return GHPOKNKDBGO.GDPDELLNOBO(N.a);
+		yield return GHPOKNKDBGO.GDPDELLNOBO_WaitDone(N.a);
 
 		//goto LAB_01011f20;
 		//3

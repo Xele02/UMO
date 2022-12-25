@@ -189,10 +189,19 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1110E98 Offset: 0x1110E98 VA: 0x1110E98
-		//public void ResultAnimStart(bool specialAnim) { }
+		public void ResultAnimStart(bool specialAnim)
+		{
+			Anim_SetBool("res_breakTalkLoop", false);
+			Anim_SetBool("res_goStart", true);
+			facialBlendAnimMediator.selfAnimator.Play(specialAnim ? "start" : "lip_sync", 1);
+			facialBlendAnimMediator.selfAnimator.Play("start", 0);
+		}
 
 		//// RVA: 0x1110FE8 Offset: 0x1110FE8 VA: 0x1110FE8
-		//public void ResultReactionLoopBreak() { }
+		public void ResultReactionLoopBreak()
+		{
+			Anim_SetBool("res_breakTalkLoop", true);
+		}
 
 		//// RVA: 0x1111054 Offset: 0x1111054 VA: 0x1111054
 		//public void BattleResult() { }

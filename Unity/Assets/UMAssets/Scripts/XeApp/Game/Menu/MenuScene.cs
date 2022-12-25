@@ -468,15 +468,58 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30C08 Offset: 0xB30C08 VA: 0xB30C08
 		private IEnumerator CoroutineDivaModel(UnityAction finish)
 		{
-			// private DivaResource.MenuFacialType <divaFacialType>5__2; // 0x18
-			// private int <divaId>5__3; // 0x1C
-			// private int <modelId>5__4; // 0x20
-			// private int <colorId>5__5; // 0x24
-			// private bool <isResult>5__6; // 0x28
+			DivaResource.MenuFacialType divaFacialType; // 0x18
+			int divaId; // 0x1C
+			int modelId; // 0x20
+			int colorId; // 0x24
+			bool isResult; // 0x28
+
 			//0xB3980C
-			TodoLogger.Log(0, "TODO");
-			finish();
-			yield break;
+			divaFacialType = DivaResource.MenuFacialType.Home;
+			FFHPBEPOMAK divaInfo = GameManager.Instance.GetHomeDiva();
+			divaId = divaInfo.AHHJLDLAPAN_DivaId;
+			modelId = divaInfo.EOJIGHEFIAA_GetHomeDivaPrismCostumeId();
+			colorId = divaInfo.LHGJHJLGPBE_GetHomeDivaColorId();
+			isResult = false;
+			if(GameManager.Instance.IsTutorial)
+			{
+				TodoLogger.Log(0, "Tutorial");
+			}
+			else
+			{
+				isResult = true;
+				if(MainSceneBase.prevSceneName != "RhythmGame" && 
+					MainSceneBase.prevSceneName != "RhythmGameSkip")
+				{
+					isResult = false;
+				}
+			}
+			isResult &= Database.Instance.gameResult.IsClear();
+			isResult &= Database.Instance.gameSetup.musicInfo.isFreeMode;
+			while(divaManager == null)
+				yield return null;
+			if(!isResult)
+			{
+				if(!divaManager.Compare(divaId, modelId, colorId))
+				{
+					divaManager.Release(true);
+				}
+			}
+			else
+			{
+				divaFacialType = DivaResource.MenuFacialType.Result;
+				if(!GameManager.Instance.IsTutorial)
+				{
+					divaId = Database.Instance.gameSetup.teamInfo.divaList[0].prismDivaId;
+					modelId = Database.Instance.gameSetup.teamInfo.divaList[0].prismCostumeModelId;
+					colorId = Database.Instance.gameSetup.teamInfo.divaList[0].prismCostumeColorId;
+				}
+			}
+			divaManager.Load(divaId, modelId, colorId, divaFacialType, true);
+			while(divaManager.IsLoading)
+				yield return null;
+			if(finish != null)
+				finish();
 		}
 
 		// // RVA: 0xB30CD0 Offset: 0xB30CD0 VA: 0xB30CD0

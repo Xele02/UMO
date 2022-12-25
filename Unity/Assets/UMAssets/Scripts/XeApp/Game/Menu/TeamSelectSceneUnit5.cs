@@ -1559,6 +1559,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA90044 Offset: 0xA90044 VA: 0xA90044
 		private void OnClickUnitSetButton()
 		{
+			TodoLogger.LogNotImplemented("OnClickUnitSetButton");
+			return;
 			OnClickAnyButtons();
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			StartCoroutine(Co_EnterUnitSet());
@@ -1586,7 +1588,7 @@ namespace XeApp.Game.Menu
 				JLKEOGLJNOD unit = m_playerData.JKIJFGGMNAN_GetUnit(i, m_isGoDivaEvent);
 				for(int j = 0; j < unit.BCJEAJPLGMB_MainDivas.Count; j++)
 				{
-					FFHPBEPOMAK diva = unit.BCJEAJPLGMB_MainDivas[i];
+					FFHPBEPOMAK diva = unit.BCJEAJPLGMB_MainDivas[j];
 					if(diva != null)
 					{
 						MenuScene.Instance.DivaIconCache.TryInstall(diva.AHHJLDLAPAN_DivaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, diva.EKFONBFDAAP_ColorId);
@@ -1599,7 +1601,7 @@ namespace XeApp.Game.Menu
 						{
 							if (diva.DJICAKGOGFO_SubSceneIds[k] > 0)
 							{
-								GCIJNCFDNON sceneInfo = m_playerData.OPIBAPEGCLA_Scenes[diva.DJICAKGOGFO_SubSceneIds[i] - 1];
+								GCIJNCFDNON sceneInfo = m_playerData.OPIBAPEGCLA_Scenes[diva.DJICAKGOGFO_SubSceneIds[k] - 1];
 								MenuScene.Instance.SceneIconCache.TryInstall(sceneInfo.BCCHOBPJJKE_SceneId, sceneInfo.CGIELKDLHGE());
 							}
 						}
@@ -1607,7 +1609,7 @@ namespace XeApp.Game.Menu
 				}
 				for (int j = 0; j < unit.CMOPCCAJAAO_AddDivas.Count; j++)
 				{
-					FFHPBEPOMAK diva = unit.CMOPCCAJAAO_AddDivas[i];
+					FFHPBEPOMAK diva = unit.CMOPCCAJAAO_AddDivas[j];
 					if (diva != null)
 					{
 						MenuScene.Instance.DivaIconCache.TryInstall(diva.AHHJLDLAPAN_DivaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, diva.EKFONBFDAAP_ColorId);

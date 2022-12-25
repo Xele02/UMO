@@ -11,6 +11,11 @@ namespace ExternLib
             EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
             EDOHBJAPLPF_JsonData names = jsonData["names"];
 
+            string account_info = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath+"/../../Data/RequestPlayerAccount.json"));
+            EDOHBJAPLPF_JsonData jsonRes = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(account_info);
+
+            jsonRes["common"]["mv_ticket"] = 999;
+
             // Hack directly send response
             string message =
 @"{
@@ -25,12 +30,9 @@ namespace ExternLib
             {
                 string str = (string)names[i];
                 message += @"
-        """+str+@""":{";
-				if(str == "common")
-				{
-					message += "\"mv_ticket\":999";
-				}
-				message += @"}"+(i != names.HNBFOAJIIAL_Count -1 ? "," : "");
+        """+str+@""":";
+				message += jsonRes[str].EJCOJCGIBNG_ToJson();
+				message += @""+(i != names.HNBFOAJIIAL_Count -1 ? "," : "");
             }
             message += @"
     }

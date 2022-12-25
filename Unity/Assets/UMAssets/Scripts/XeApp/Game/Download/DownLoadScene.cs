@@ -49,6 +49,7 @@ namespace XeApp.Game.DownLoad
 
 			yield return StartCoroutine(Co_InitializeUnionDataProc());
 
+			GameManager.Instance.CreateViewPlayerData();
 			NextScene("Menu");
 
 			TodoLogger.Log(0, "TODO");

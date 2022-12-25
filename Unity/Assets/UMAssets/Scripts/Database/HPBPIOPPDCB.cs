@@ -71,8 +71,8 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 				BJPLLEBHAGO data = CDENCMNHNGA[i];
 				data.AHHJLDLAPAN = (sbyte)array[i].PPFNGGCBJKC;
 				data.AIHCEGFANAM = (sbyte)array[i].JPFMJHLCMJL;
-				data.IDDHKOEFJFB = (sbyte)array[i].JIBNPJCIALH;
-				data.FPMGHDKACOF = (sbyte)array[i].OKADDOIJGNB;
+				data.IDDHKOEFJFB_BodyId = (sbyte)array[i].JIBNPJCIALH;
+				data.FPMGHDKACOF_PersonalityId = (sbyte)array[i].OKADDOIJGNB;
 				data.PPEGAKEIEGM = (sbyte)JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 				data.DOAJJALOKLI = (sbyte)array[i].KLCMKLPIDDJ;
 				data.PKNONBBKCCP = (sbyte)array[i].BAOFEFFADPD;

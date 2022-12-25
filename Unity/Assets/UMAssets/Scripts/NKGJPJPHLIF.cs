@@ -321,7 +321,7 @@ public class NKGJPJPHLIF
 		}
 		HHEIANIHCNH_RequestPlayerStatus FFEEIONIBFF = IBLPICFDGOF.IFFNCAFNEAG_AddRequest<HHEIANIHCNH_RequestPlayerStatus>(new HHEIANIHCNH_RequestPlayerStatus());
 		FFEEIONIBFF.EOPCHGLLONF = MKFJAGGLEFL;
-		yield return FFEEIONIBFF.GDPDELLNOBO(N.a);
+		yield return FFEEIONIBFF.GDPDELLNOBO_WaitDone(N.a);
 
 		//1
 

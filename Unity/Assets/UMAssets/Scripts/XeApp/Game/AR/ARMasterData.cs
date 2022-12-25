@@ -186,7 +186,7 @@ namespace XeApp.Game.AR
 					return true;
 				};
 			}
-			yield return req.GDPDELLNOBO(N.a);
+			yield return req.GDPDELLNOBO_WaitDone(N.a);
 
 			if(req.NPNNPNAIONN)
 			{

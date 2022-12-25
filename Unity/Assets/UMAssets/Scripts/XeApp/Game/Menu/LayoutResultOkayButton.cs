@@ -37,7 +37,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18DD174 Offset: 0x18DD174 VA: 0x18DD174
-		//public void SetupCallback(Action onFinished, Action onClick) { }
+		public void SetupCallback(Action onFinished, Action onClick)
+		{
+			this.onFinished = onFinished;
+			this.onClick = onClick;
+		}
 
 		//// RVA: 0x18E4B68 Offset: 0x18E4B68 VA: 0x18E4B68
 		//public void CleanupCallback() { }
@@ -76,11 +80,24 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x18E4F30 Offset: 0x18E4F30 VA: 0x18E4F30
 		public void OnButtonClick()
 		{
-			TodoLogger.LogNotImplemented("LayoutResultOkayButton.OnButtonClick");
+			if(onClick != null)
+			{
+				onClick();
+				MenuScene.Instance.HelpButton.HideResultHelpButton();
+				isHelpButtonEnter = false;
+				GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);
+			}
 		}
 
 		//// RVA: 0x18E509C Offset: 0x18E509C VA: 0x18E509C
-		//private void OnBackButton() { }
+		private void OnBackButton()
+		{
+			if(!actionButton.enabled)
+				return;
+			if(actionButton.IsInputOff)
+				return;
+			actionButton.PerformClick();
+		}
 
 		//// RVA: 0x18E5120 Offset: 0x18E5120 VA: 0x18E5120
 		private void OnAnimationFinished()

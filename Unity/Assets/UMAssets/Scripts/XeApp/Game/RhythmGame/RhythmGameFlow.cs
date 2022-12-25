@@ -296,7 +296,7 @@ namespace XeApp.Game.RhythmGame
 			List<int> prime = new List<int>();
 			for (int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum; i++)
 			{
-				prime.Add(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId).IDDHKOEFJFB);
+				prime.Add(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId).IDDHKOEFJFB_BodyId);
 			}
 			int stageId = 0;
 			if (music.isFreeMode)

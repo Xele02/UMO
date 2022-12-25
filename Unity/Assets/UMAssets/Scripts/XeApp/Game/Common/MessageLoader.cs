@@ -137,6 +137,9 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x111713C Offset: 0x111713C VA: 0x111713C
-		// public static MessageLoader.eSheet DivaIdToSheet(int divaId) { }
+		public static MessageLoader.eSheet DivaIdToSheet(int divaId)
+		{
+			return (MessageLoader.eSheet)(divaId + 3);
+		}
 	}
 }

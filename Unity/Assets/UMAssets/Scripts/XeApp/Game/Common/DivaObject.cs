@@ -698,7 +698,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF74CC Offset: 0x1BF74CC VA: 0x1BF74CC
-		//public bool GetEnableEffect() { }
+		public bool GetEnableEffect()
+		{
+			return effectEnable;
+		}
 
 		//// RVA: 0x1BF74D4 Offset: 0x1BF74D4 VA: 0x1BF74D4 Slot: 9
 		protected virtual void SetupWind(GameObject a_prefab_wind, DivaResource.BoneSpringResource a_resource)
@@ -761,6 +764,9 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF7834 Offset: 0x1BF7834 VA: 0x1BF7834
-		//public bool GetEnableWind() { }
+		public bool GetEnableWind()
+		{
+			return windEnable;
+		}
 	}
 }
