@@ -254,6 +254,8 @@ namespace XeApp.Game.Menu
 			{
 				fromRhythmGame = prevSceneName == "RhythmGameSkip";
 			}
+			if(RuntimeSettings.CurrentSettings.SLiveViewer)
+				fromRhythmGame = false;
 			GameManager.Instance.SetTouchEffectVisible(true);
 			GameManager.Instance.SetTouchEffectMode(false);
 			if(fromRhythmGame == false)
