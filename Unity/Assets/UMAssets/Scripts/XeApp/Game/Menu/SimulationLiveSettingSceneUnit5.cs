@@ -310,7 +310,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CF308 Offset: 0x12CF308 VA: 0x12CF308
 		private void AdvanceGame()
 		{
-			TodoLogger.MinLog = 9999;
+			//TodoLogger.MinLog = 99;
 			if (!CheckSetAllDiva(m_prismData))
 			{
 				NotSetAllDivaShow();

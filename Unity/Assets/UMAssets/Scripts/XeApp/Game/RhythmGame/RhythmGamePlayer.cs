@@ -2374,7 +2374,7 @@ namespace XeApp.Game.RhythmGame
 				GotoTitleSceneInError();
 			}
 
-			TodoLogger.MinLog = -9999;
+			//TodoLogger.MinLog = -9999;
 
 			UnityEngine.Debug.Log("Exit Co_WaitRhytmGameEnd");
 			yield break;

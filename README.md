@@ -1,13 +1,13 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 0.1.3**
+**Current version : 0.3**
 
 Fonctionality : 
 * Basic loading of the game with default profile
 * Main menu : Only Music button works.
-* Music menu : Scroll to select music and select number of diva.
-* Diva select menu : Selection of diva & costume.
-* Rhythm Game : No gameplay (planned for 0.4). Songs where checked and should be bug free. Valkyrie / diva mode and note display planned for 0.3.
+* Music menu : Music selection. Number of diva / difficulty / 4-6 lane. Use SLive button to launch.
+* Diva select menu : Selection of diva, costume & valkyrie.
+* Rhythm Game : S-Live implemented. No gameplay (planned for 0.4). Songs where checked and should be bug free.
 
 # Requirement
 
