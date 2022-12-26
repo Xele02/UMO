@@ -869,11 +869,19 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C80A4 Offset: 0x6C80A4 VA: 0x6C80A4
 		// // RVA: 0xB34E68 Offset: 0xB34E68 VA: 0xB34E68
-		// public IEnumerator ShowReceiveRewardWindowCoroutine() { }
+		public IEnumerator ShowReceiveRewardWindowCoroutine()
+		{
+			TodoLogger.Log(0, "ShowReceiveRewardWindowCoroutine");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C811C Offset: 0x6C811C VA: 0x6C811C
 		// // RVA: 0xB34F14 Offset: 0xB34F14 VA: 0xB34F14
-		// public IEnumerator ShowMissionStepupWindowCoroutine() { }
+		public IEnumerator ShowMissionStepupWindowCoroutine()
+		{
+			TodoLogger.Log(0, "ShowMissionStepupWindowCoroutine");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C8194 Offset: 0x6C8194 VA: 0x6C8194
 		// // RVA: 0xB34FC0 Offset: 0xB34FC0 VA: 0xB34FC0

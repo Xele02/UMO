@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using XeSys.Gfx;
@@ -69,7 +70,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18DF894 Offset: 0x18DF894 VA: 0x18DF894
-		//public void StartBeginAnim() { }
+		public void StartBeginAnim()
+		{
+			layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
+			StartCoroutine(Co_PlayingStartPopupAnim());
+		}
 
 		//// RVA: 0x18DF9C4 Offset: 0x18DF9C4 VA: 0x18DF9C4
 		public void StartAlreadyAnim()
@@ -78,7 +83,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18DFA50 Offset: 0x18DFA50 VA: 0x18DFA50
-		//public void SkipAnim() { }
+		public void SkipAnim()
+		{
+			StartAlreadyAnim();
+		}
 
 		//// RVA: 0x18DFA54 Offset: 0x18DFA54 VA: 0x18DFA54
 		public void ChangeTitle(TitleType type)
@@ -104,10 +112,16 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x71C064 Offset: 0x71C064 VA: 0x71C064
 		//// RVA: 0x18DF938 Offset: 0x18DF938 VA: 0x18DF938
-		//private IEnumerator Co_PlayingStartPopupAnim() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x71C0DC Offset: 0x71C0DC VA: 0x71C0DC
-		//// RVA: 0x18DFD14 Offset: 0x18DFD14 VA: 0x18DFD14
-		//private bool <Co_PlayingStartPopupAnim>b__15_0() { }
+		private IEnumerator Co_PlayingStartPopupAnim()
+		{
+			//0x18DFF70
+			yield return new WaitWhile(() => {
+				//0x18DFD14
+				return layoutRoot.IsPlayingChildren();
+			});
+			StartAlreadyAnim();
+			if(onFinished != null)
+				onFinished();
+		}
 	}
 }

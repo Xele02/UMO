@@ -7,8 +7,8 @@ namespace XeApp.Game.Menu
 		private LayoutResultHeaderTitle layoutTitle; // 0xC
 		private LayoutResultOkayButton layoutOkay; // 0x10
 
-		//public LayoutResultHeaderTitle LayoutHeaderTitle { get; private set; } 0xCFEAFC 0xCFEB04
-		//public LayoutResultOkayButton LayoutOkayButton { get; private set; } 0xCFEB08 0xCFEB10
+		public LayoutResultHeaderTitle LayoutHeaderTitle { get { return layoutTitle; } private set { return; } } //0xCFEAFC 0xCFEB04
+		public LayoutResultOkayButton LayoutOkayButton { get { return layoutOkay; } private set { return; } } //0xCFEB08 0xCFEB10
 
 		// RVA: 0xCFEB14 Offset: 0xCFEB14 VA: 0xCFEB14
 		private void Awake()
@@ -30,7 +30,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCFEC98 Offset: 0xCFEC98 VA: 0xCFEC98
-		//public void ChangeViewForScoreResult() { }
+		public void ChangeViewForScoreResult()
+		{
+			layoutTitle.gameObject.SetActive(true);
+			layoutTitle.ChangeTitle(LayoutResultHeaderTitle.TitleType.LIVE);
+			layoutTitle.SetSkipCount(0);
+			layoutOkay.gameObject.SetActive(true);
+			layoutOkay.InitAnim();
+		}
 
 		//// RVA: 0xCFED98 Offset: 0xCFED98 VA: 0xCFED98
 		//public void ChangeViewForSkipResult(int count) { }
@@ -39,13 +46,28 @@ namespace XeApp.Game.Menu
 		//public void ChangeViewForSupportResult() { }
 
 		//// RVA: 0xCFEF9C Offset: 0xCFEF9C VA: 0xCFEF9C
-		//public void ChangeViewForDivaResult() { }
+		public void ChangeViewForDivaResult()
+		{
+			layoutTitle.gameObject.SetActive(true);
+			layoutTitle.StartAlreadyAnim();
+			layoutOkay.gameObject.SetActive(true);
+			layoutOkay.InitAnim();
+		}
 
 		//// RVA: 0xCFF074 Offset: 0xCFF074 VA: 0xCFF074
-		//public void StartEndDivaResultAnim() { }
+		public void StartEndDivaResultAnim()
+		{
+			layoutOkay.StartEndAnim();
+		}
 
 		//// RVA: 0xCFF0A0 Offset: 0xCFF0A0 VA: 0xCFF0A0
-		//public void ChangeViewForDropResult() { }
+		public void ChangeViewForDropResult()
+		{
+			layoutTitle.gameObject.SetActive(true);
+			layoutTitle.StartAlreadyAnim();
+			layoutOkay.gameObject.SetActive(true);
+			layoutOkay.InitAnim();
+		}
 
 		//// RVA: 0xCFF178 Offset: 0xCFF178 VA: 0xCFF178
 		//public void ChangeViewForRaidResult() { }

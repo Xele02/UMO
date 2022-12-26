@@ -444,7 +444,7 @@ public class IBJAKJJICBC : EEDKAACNBBG
 			if(data != null)
 			{
 				type = data.HIDHLFCBIDE_EventType;
-				if(type != OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA)
+				if(type != OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 					type = 0;
 			}
 			//LAB_0121a02c:

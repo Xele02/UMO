@@ -47,7 +47,12 @@ namespace XeApp.Game.Menu
 		//public void CleanupCallback() { }
 
 		//// RVA: 0x18E4B78 Offset: 0x18E4B78 VA: 0x18E4B78
-		//public void InitAnim() { }
+		public void InitAnim()
+		{
+			layoutRoot.StartChildrenAnimGoStop("st_wait");
+			actionButton.enabled = false;
+			GameManager.Instance.AddPushBackButtonHandler(OnBackButton);
+		}
 
 		//// RVA: 0x18DEA8C Offset: 0x18DEA8C VA: 0x18DEA8C
 		public void StartBeginAnim(bool showHelpButton = true)
@@ -59,7 +64,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18DEB44 Offset: 0x18DEB44 VA: 0x18DEB44
-		//public void StartEndAnim() { }
+		public void StartEndAnim()
+		{
+			layoutRoot.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x71C6C4 Offset: 0x71C6C4 VA: 0x71C6C4
 		//// RVA: 0x18E4CA8 Offset: 0x18E4CA8 VA: 0x18E4CA8
@@ -75,7 +83,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18E4E88 Offset: 0x18E4E88 VA: 0x18E4E88
-		//public void SkipAnim() { }
+		public void SkipAnim()
+		{
+			layoutRoot.StartChildrenAnimGoStop("st_in");
+			actionButton.enabled = true;
+			EnterHelpButton();
+		}
 
 		//// RVA: 0x18E4F30 Offset: 0x18E4F30 VA: 0x18E4F30
 		public void OnButtonClick()

@@ -90,7 +90,11 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BC05E8 Offset: 0x1BC05E8 VA: 0x1BC05E8
-		// public static bool IsActivePopupWindow() { }
+		public static bool IsActivePopupWindow()
+		{
+			TodoLogger.Log(0, "IsActivePopupWindow");
+			return false;
+		}
 
 		// // RVA: 0x1BC080C Offset: 0x1BC080C VA: 0x1BC080C
 		// public static bool IsOpenPopupWindow() { }
