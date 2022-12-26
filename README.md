@@ -1,13 +1,19 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 0.3**
+**Current version : 0.4 Alpha**
 
 Fonctionality : 
 * Basic loading of the game with default profile
 * Main menu : Only Music button works.
-* Music menu : Music selection. Number of diva / difficulty / 4-6 lane. Use SLive button to launch.
-* Diva select menu : Selection of diva, costume & valkyrie.
-* Rhythm Game : S-Live implemented. No gameplay (planned for 0.4). Songs where checked and should be bug free.
+* Music menu : Music selection. Number of diva / difficulty / 4-6 lane.
+* S-Live :
+  * Diva select menu : Selection of diva, costume & valkyrie.
+* Playing song :
+  * Only 1 to 3 diva song are playable due to a current bug in te diva selection list. Diva selection system is very limited.
+  * Use key S-D-F-H-J-K for the 6 lanes, and D-F-H-J for 4 lanes songs. Slide note are automatically valided on hit. Lane change on 6 lane mode don't work. Key can be changed in the config asset in Resources/EditorRuntimeSettings.
+  * Valkyrie & Diva mode are visually buggued.
+  * There is a invincible mode activated by default to compensate the low level team selectable without cards.
+* Very basic result screen for the flow.
 
 # Requirement
 
