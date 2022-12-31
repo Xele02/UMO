@@ -103,6 +103,8 @@ namespace XeApp.Game.RhythmGame
 			nonExcellentScore += Mathf.FloorToInt(f * h * s + s * g * baseNoteScore + 0);
 			if (a_result_ex.m_excellent)
 				s += a_excellent_score_rate;
+			if(RuntimeSettings.CurrentSettings.AddBigScore)
+				s += 1500;
 			currentScore += Mathf.FloorToInt(f * h * s + g * baseNoteScore * s + 0);
 		}
 

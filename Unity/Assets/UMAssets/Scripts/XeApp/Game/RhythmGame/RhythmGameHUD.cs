@@ -185,7 +185,7 @@ namespace XeApp.Game.RhythmGame
 		}; // 0x1C0
 		private readonly float[] TouchEffectZOffsetTbl = new float[6] { -2, -1, -1, -2, -3, -3 }; // 0x1C4
 		private static readonly int DivaModeSwitchSpModeAnimatorParam = Animator.StringToHash("IsSpMode"); // 0x0
-		private static readonly int DivaModeSwitchNormalModeAnimatorParam = Animator.StringToHash("IsSpMode"); // 0x4
+		private static readonly int DivaModeSwitchNormalModeAnimatorParam = Animator.StringToHash("IsNormalMode"); // 0x4
 		private static readonly int MainGaugeGoBattleParamHash = Animator.StringToHash("GoBattle"); // 0x8
 		private static readonly int MainGaugeIsMaxParamHash = Animator.StringToHash("IsMax"); // 0xC
 		private static readonly int GameStartUiTrigger = Animator.StringToHash("Start"); // 0x10
@@ -269,7 +269,7 @@ namespace XeApp.Game.RhythmGame
 
 			m_valkyrieBottomUi = RhythmGameInstantiatePrefab(RhythmGameConsts.IsWideLine() ? valkyrieBottomWidePrefab : valkyrieBottomPrefab);
 			m_valkyeriBottomEffectController = m_valkyrieBottomUi.GetComponent<EffectBundleController>();
-			m_valkyrieBottomUi.transform.SetParent(anchorRoots[2].transform);
+			m_valkyrieBottomUi.transform.SetParent(anchorRoots[2].transform, false);
 			m_battleCombo = m_valkyrieBottomUi.GetComponent<BattleCombo>();
 
 			m_valkyrieTimer = RhythmGameInstantiatePrefab(valkyrieTimer);
@@ -754,7 +754,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(!m_is2dMode && !m_isValkyrieOff)
 			{
-				m_targetSight.UpdateTargetPosition(new Vector3(m_cameraRectTransform.sizeDelta.x * position.x * 0.5f, m_cameraRectTransform.sizeDelta.y * position.y * 0.5f, 0));
+				m_targetSight.UpdateTargetPosition(new Vector3(m_cameraRectTransform.sizeDelta.x * position.x * 0.5f, m_cameraRectTransform.sizeDelta.y * position.y * 0.5f - m_cameraRectTransform.sizeDelta.y * 0.5f, 0));
 				m_targetSightMark.transform.localPosition = AdjustUiCameraPosition(position);
 			}
 		}
@@ -762,7 +762,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDCF9D0 Offset: 0xDCF9D0 VA: 0xDCF9D0
 		private Vector3 AdjustUiCameraPosition(Vector3 normalizePosition)
 		{
-			return new Vector3(normalizePosition.x * m_cameraRectTransform.sizeDelta.x * 0.5f, normalizePosition.y * m_cameraRectTransform.sizeDelta.x * 0.5f, 0);
+			return new Vector3(normalizePosition.x * m_cameraRectTransform.sizeDelta.x * 0.5f, normalizePosition.y * m_cameraRectTransform.sizeDelta.y * 0.5f, 0);
 		}
 
 		// // RVA: 0xDCFD7C Offset: 0xDCFD7C VA: 0xDCFD7C Slot: 42

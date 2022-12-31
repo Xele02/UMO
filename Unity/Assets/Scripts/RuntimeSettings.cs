@@ -81,6 +81,8 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceLiveDivaMode = false;
 	public bool ForceLiveAwakenDivaMode = true;
 
+	public bool AddBigScore = false;
+
 	public KeyCode Lane1Touch = KeyCode.S;
 	public KeyCode Lane2Touch = KeyCode.D;
 	public KeyCode Lane3Touch = KeyCode.F;

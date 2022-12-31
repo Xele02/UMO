@@ -39,6 +39,21 @@ namespace XeApp.Game.RhythmGame.UI
 		// RVA: 0x1567A14 Offset: 0x1567A14 VA: 0x1567A14
 		private void Start()
 		{
+			Apply();
+		}
+
+		//// RVA: 0x1567A18 Offset: 0x1567A18 VA: 0x1567A18
+		private int CalcSortingOrder(UIPriority.Priority priority, float offset)
+		{
+			float f = (offset + 100) * 200;
+			if(priority != Priority.Default)
+				return Mathf.RoundToInt(f / 200) - Mathf.RoundToInt((int)priority * 200);
+			return Mathf.RoundToInt(f / 200);
+		}
+
+		//// RVA: 0x15593BC Offset: 0x15593BC VA: 0x15593BC
+		public void Apply()
+		{
 			for(int i = 0; i < m_meshPrioritySets.Length; i++)
 			{
 				if (m_meshPrioritySets[i].renderer != null)
@@ -56,12 +71,6 @@ namespace XeApp.Game.RhythmGame.UI
 			}
 		}
 
-		//// RVA: 0x1567A18 Offset: 0x1567A18 VA: 0x1567A18
-		//private int CalcSortingOrder(UIPriority.Priority priority, float offset) { }
-
-		//// RVA: 0x15593BC Offset: 0x15593BC VA: 0x15593BC
-		//public void Apply() { }
-
 		//// RVA: 0x1567A74 Offset: 0x1567A74 VA: 0x1567A74
 		private void Apply(ref UIPriority.PrioritySet set)
 		{
@@ -73,7 +82,7 @@ namespace XeApp.Game.RhythmGame.UI
 				set.renderer.sortingLayerName = "Forward";
 			else
 				set.renderer.sortingLayerName = "Back";
-			set.renderer.sortingOrder = set.priority == Priority.Default ? Mathf.RoundToInt((set.offset + 100) * 200.0f / 200.0f) : Mathf.RoundToInt((set.offset + 100) * 200.0f / 200.0f - (int)set.priority * 200.0f);
+			set.renderer.sortingOrder = CalcSortingOrder(set.priority, set.offset);
 		}
 	}
 }

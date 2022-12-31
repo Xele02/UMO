@@ -171,17 +171,17 @@ namespace XeApp.Game.RhythmGame.UI
 			m_life_ctrl.Initialize(a_type, m_gaugeMesh);
 			if(a_type == LifeType.Double)
 			{
-				m_gaugeMesh[0].enabled = true;
-				m_gaugeMesh[1].enabled = true;
-				m_gaugeMesh[2].enabled = true;
-				m_gaugeMesh[3].enabled = true;
+				m_gaugeMesh[0].GetComponent<Renderer>().enabled = true;
+				m_gaugeMesh[1].GetComponent<Renderer>().enabled = true;
+				m_gaugeMesh[2].GetComponent<Renderer>().enabled = true;
+				m_gaugeMesh[3].GetComponent<Renderer>().enabled = true;
 			}
 			else
 			{
-				m_gaugeMesh[0].enabled = true;
-				m_gaugeMesh[1].enabled = true;
-				m_gaugeMesh[2].enabled = false;
-				m_gaugeMesh[3].enabled = false;
+				m_gaugeMesh[0].GetComponent<Renderer>().enabled = true;
+				m_gaugeMesh[1].GetComponent<Renderer>().enabled = true;
+				m_gaugeMesh[2].GetComponent<Renderer>().enabled = false;
+				m_gaugeMesh[3].GetComponent<Renderer>().enabled = false;
 			}
 		}
 
@@ -287,7 +287,7 @@ namespace XeApp.Game.RhythmGame.UI
 				{
 					if(!isLowSpec)
 					{
-						t_mesh_back.Value += Time.deltaTime;
+						t_mesh_back.Value -= Time.deltaTime * 0.25f;
 						if(t_mesh_front.Value <= t_mesh_back.Value)
 						{
 							yield return null;

@@ -19,6 +19,8 @@ namespace XeApp.Game.RhythmGame.UI
 			{
 				ps.m_meshPrioritySets[i].priority = 0;
 			}
+			ps.Apply();
+			
 		}
 
 		// // RVA: 0x155968C Offset: 0x155968C VA: 0x155968C

@@ -56,7 +56,7 @@ namespace XeApp.Game.RhythmGame.UI
 		//// RVA: 0x155A6CC Offset: 0x155A6CC VA: 0x155A6CC
 		public void UpdateTime(int ms)
 		{
-			if (!m_isFinish)
+			if (m_isFinish)
 				return;
 			m_numericMesh.SetNumber(ms / 100, ms < 5000 ? 1 : 0);
 			m_colonMesh.mesh.uv = ms < 5000 ? m_dengerColonUvs : m_baseColonUvs;

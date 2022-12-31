@@ -125,7 +125,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				f = Mathf.Round((currentValue - subgoalValue) * 100);
+				f = Mathf.Round((currentValue * 1.0f / subgoalValue) * 100);
 			}
 			return (int)f;
 		}
