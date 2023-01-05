@@ -37,6 +37,7 @@ namespace XeApp.Game.Menu
             if(image == null)
                 return;
             image.material = Material;
+            image.MaterialMul = Material;
             image.texture = BaseTexture;
             image.material.SetTexture("_MainTex", BaseTexture);
             image.material.SetTexture("_MaskTex", MaskTexture);
