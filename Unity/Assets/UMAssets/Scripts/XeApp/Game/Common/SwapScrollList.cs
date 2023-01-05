@@ -178,7 +178,7 @@ namespace XeApp.Game.Common
 				f = (f * b) + (a == 0 ? 0 : f);
 				f += Mathf.Abs(2 * m_leftTopPosition.x);
 				m_scrollRect.content.sizeDelta = new Vector2(f, s.y);
-				m_scrollRect.horizontal = s.x < f;
+				m_scrollRect.horizontal = r.sizeDelta.x < f;
 				if(m_scrollRect.horizontalScrollbar != null)
 				{
 					m_scrollRect.horizontalScrollbar.interactable = m_scrollRect.horizontal;
@@ -196,7 +196,7 @@ namespace XeApp.Game.Common
 				f = (f * b) + (a == 0 ? 0 : f);
 				f += Mathf.Abs(2 * m_leftTopPosition.y);
 				m_scrollRect.content.sizeDelta = new Vector2(s.x, f);
-				m_scrollRect.vertical = s.y < f;
+				m_scrollRect.vertical = r.sizeDelta.y < f;
 				if (m_scrollRect.verticalScrollbar != null)
 				{
 					m_scrollRect.verticalScrollbar.interactable = m_scrollRect.horizontal;
