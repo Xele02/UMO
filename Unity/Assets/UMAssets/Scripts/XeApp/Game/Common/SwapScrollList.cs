@@ -220,7 +220,7 @@ namespace XeApp.Game.Common
 			{
 				if(ScrollRectTransfom.sizeDelta.x <= m_scrollRect.content.sizeDelta.x)
 				{
-					v.x = xoffset - m_contentRect.x * position;
+					v.x = xoffset - ItemSize * position;
 					if (v.x <= (ScrollRectTransfom.sizeDelta.x - m_scrollRect.content.sizeDelta.x))
 						v.x = ScrollRectTransfom.sizeDelta.x - m_scrollRect.content.sizeDelta.x;
 				}
@@ -229,7 +229,7 @@ namespace XeApp.Game.Common
 			{
 				if(ScrollRectTransfom.sizeDelta.y <= m_scrollRect.content.sizeDelta.y)
 				{
-					v.y = yoffset + m_contentRect.y * position;
+					v.y = yoffset + ItemSize * position;
 					if (m_scrollRect.content.sizeDelta.y - ScrollRectTransfom.sizeDelta.y < v.y)
 						v.y = m_scrollRect.content.sizeDelta.y - ScrollRectTransfom.sizeDelta.y;
 				}
@@ -237,25 +237,22 @@ namespace XeApp.Game.Common
 			m_scrollRect.content.anchoredPosition = v;
 			m_listTopPosition = 0;
 			m_diffPrePosition = 0;
-			int cnt = m_isVertical ? m_rowCount : m_columnCount;
+			int itemCount = m_isVertical ? m_rowCount : m_columnCount;
 			int otherCnt = m_isVertical ? m_columnCount : m_rowCount;
 			if (diffUpdate)
 			{
-				float scrollMergin = ScrollMergin;
-				float anchorPos = AnchoredPosition;
-				float contentsize = ItemSize;
-				while (-(contentsize + contentsize * cnt) <= scrollMergin + anchorPos - m_diffPrePosition)
+				while (-(ItemSize + ItemSize * itemCount) > ScrollMergin + AnchoredPosition - m_diffPrePosition)
 				{
 					m_listTopPosition++;
-					m_diffPrePosition -= contentsize;
+					m_diffPrePosition -= ItemSize;
 				}
-				while(-(contentsize * cnt) <= scrollMergin + anchorPos - m_diffPrePosition)
+				while(-(ItemSize * itemCount) <= ScrollMergin + AnchoredPosition - m_diffPrePosition)
 				{
 					m_listTopPosition--;
-					m_diffPrePosition += contentsize;
+					m_diffPrePosition += ItemSize;
 				}
 			}
-			for(int i = 0; i < cnt; i++)
+			for(int i = 0; i < itemCount; i++)
 			{
 				for(int j = otherCnt, k = 0; j > 0; j--, k++)
 				{
@@ -281,21 +278,23 @@ namespace XeApp.Game.Common
 				if(m_scrollObjects.Count > 0)
 				{
 					int cnt = 0;
+					float diff = m_diffPrePosition;
+					int listTop = m_listTopPosition;
 					if (ScrollMergin + AnchoredPosition - m_diffPrePosition < -ItemSize)
 					{
-						float diff = m_diffPrePosition;
 						do
 						{
 							diff -= ItemSize;
 							cnt++;
 						} while (ScrollMergin + AnchoredPosition - diff < -ItemSize);
+						listTop += cnt;
 					}
 					int itemCount = m_isVertical ? m_rowCount : m_columnCount;
 					int otherCnt = m_isVertical ? m_columnCount : m_rowCount;
 					if (cnt > itemCount)
 					{
-						m_diffPrePosition += ItemSize * itemCount;
-						m_listTopPosition += cnt;
+						m_diffPrePosition = diff + ItemSize * itemCount;
+						m_listTopPosition = listTop - itemCount;
 					}
 					while(-ItemSize > (ScrollMergin + AnchoredPosition - m_diffPrePosition))
 					{
@@ -305,19 +304,20 @@ namespace XeApp.Game.Common
 							SwapScrollListContent item = m_scrollObjects[0];
 							m_scrollObjects.RemoveAt(0);
 							m_scrollObjects.Add(item);
+							float a = ItemSize * itemCount + ItemSize * m_listTopPosition;
 							Vector2 v;
 							if(!m_isVertical)
 							{
-								v.x = ItemSize + ScrollMergin;
+								v.x = a + ScrollMergin;
 								v.y = item.AnchoredPosition.y;
 							}
 							else
 							{
-								v.y = -(ItemSize + ScrollMergin);
+								v.y = -(a + ScrollMergin);
 								v.x = item.AnchoredPosition.x;
 							}
 							item.AnchoredPosition = v;
-							item.Index = (m_listTopPosition + cnt) * otherCnt + i;
+							item.Index = (m_listTopPosition + itemCount) * otherCnt + i;
 							if(item.Index < m_itemCount)
 							{
 								ShowItem(item);
@@ -332,21 +332,22 @@ namespace XeApp.Game.Common
 						}
 						m_listTopPosition++;
 					}
+					diff = m_diffPrePosition;
+					listTop = m_listTopPosition;
 					if(0 <= (ScrollMergin + AnchoredPosition - m_diffPrePosition))
 					{
-						float diff = m_diffPrePosition;
 						cnt = 0;
 						do
 						{
 							diff += ItemSize;
 							cnt++;
 						} while (0 <= (ScrollMergin + AnchoredPosition - diff));
+						listTop -= cnt;
 					}
 					if(itemCount < cnt)
 					{
-						m_listTopPosition -= cnt;
-						m_listTopPosition += itemCount;
-						m_diffPrePosition -= ItemSize * itemCount;
+						m_listTopPosition = listTop + itemCount;
+						m_diffPrePosition = diff - ItemSize * itemCount;
 					}
 					while (0 <= (ScrollMergin + AnchoredPosition - m_diffPrePosition))
 					{
