@@ -13,7 +13,7 @@ namespace XeApp.Game.Menu
 {
 	public class SceneIconTexture : IconTexture
 	{
-		public static readonly Rect IconUv = new Rect(0, 0.203125f, 1, 1); // 0x0
+		public static readonly Rect IconUv = new Rect(0, 0.203125f, 1, 0.59375f); // 0x0
 
 		public Material KiraEnableMaterial { get; set; } // 0x20
 
