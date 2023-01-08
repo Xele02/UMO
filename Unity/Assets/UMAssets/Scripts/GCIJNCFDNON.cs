@@ -82,7 +82,10 @@ public class GCIJNCFDNON
 	// public void LEHDLBJJBNC() { }
 
 	// // RVA: 0x16AB6C8 Offset: 0x16AB6C8 VA: 0x16AB6C8
-	// public bool CGKAEMGLHNK() { }
+	public bool CGKAEMGLHNK()
+	{
+		return NPHOIEOPIJO != 0;
+	}
 
 	// // RVA: 0x16AB6D8 Offset: 0x16AB6D8 VA: 0x16AB6D8
 	// public bool KMJLJBOLEMC() { }
@@ -94,7 +97,7 @@ public class GCIJNCFDNON
 	// public bool JFDLBEOGGID() { }
 
 	// // RVA: 0x16AB830 Offset: 0x16AB830 VA: 0x16AB830
-	public int CGIELKDLHGE()
+	public int CGIELKDLHGE_GetEvolveId()
 	{
 		TodoLogger.Log(0, "Not sure ? ");
 		if (JPIPENJGGDD <= 0 && IJIKIPDKCPP <= 1 && !JOKJBMJBLBB)

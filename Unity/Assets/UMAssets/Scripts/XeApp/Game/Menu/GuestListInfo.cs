@@ -88,7 +88,7 @@ namespace XeApp.Game.Menu
 				sceneId = g.BCCHOBPJJKE_SceneId;
 				episodeId = g.KELFCMEOPPM_EpisodeId;
 				sceneRarity = g.EKLIPGELKCL_SceneRarity;
-				sceneRank = g.CGIELKDLHGE();
+				sceneRank = g.CGIELKDLHGE_GetEvolveId();
 				sceneLevel = g.CIEOBFIIPLD_SceneLevel;
 				sceneAttr = (GameAttribute.Type)g.JGJFIJOCPAG_SceneAttr;
 				sceneSeries = g.AIHCEGFANAM_SceneSeries;

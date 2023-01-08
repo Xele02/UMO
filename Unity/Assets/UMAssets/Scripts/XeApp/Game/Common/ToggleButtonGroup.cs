@@ -36,8 +36,29 @@ namespace XeApp.Game.Common
 			return base.InitializeFromLayout(layout, uvMan);
 		}
 
-		// // RVA: 0x1CCF400 Offset: 0x1CCF400 VA: 0x1CCF400
-		// public void SelectGroupButton(ToggleButton button) { }
+        public ToggleButton[] GetM_toggleButtons()
+        {
+            return m_toggleButtons;
+        }
+
+        // // RVA: 0x1CCF400 Offset: 0x1CCF400 VA: 0x1CCF400
+        public void SelectGroupButton(ToggleButton button, ToggleButton[] m_toggleButtons)
+		{
+			for(int i = 0; i < m_toggleButtons.Length; i++)
+			{
+				if(m_toggleButtons[i] == button)
+				{
+					m_toggleButtons[i].SetOn();
+				}
+				else
+				{
+					if(!m_toggleButtons[i].Disable && !m_toggleButtons[i].Hidden)
+					{
+						m_toggleButtons[i].SetOff();
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x1CCF85C Offset: 0x1CCF85C VA: 0x1CCF85C
 		public void SelectGroupButton(int index)

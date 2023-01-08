@@ -12,8 +12,8 @@ public class PIGBBNDPPJC
 	public int FKMAEKNOLJB; // 0x1C
 	public int FGOGPCMHPIN; // 0x20
 	public int JJJNKGBCFMI; // 0x24
-	public int ABLHIAEDJAI; // 0x28
-	public int DMHDNKILKGI; // 0x2C
+	public int ABLHIAEDJAI_CurrentPoint; // 0x28
+	public int DMHDNKILKGI_MaxPoint; // 0x2C
 	public int LEGAKDFPPHA; // 0x30
 	public int KIJAPOFAGPN; // 0x34
 	public bool CCBKMCLDGAD; // 0x38

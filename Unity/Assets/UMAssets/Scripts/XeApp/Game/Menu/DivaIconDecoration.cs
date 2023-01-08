@@ -47,7 +47,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17D2C14 Offset: 0x17D2C14 VA: 0x17D2C14
-		//public void Initialize(GameObject parent, DivaIconDecoration.Size size, AbsoluteLayout parentLayout, GameObject positionParent) { }
+		public void Initialize(GameObject parent, DivaIconDecoration.Size size, AbsoluteLayout parentLayout, GameObject positionParent)
+		{
+			Initialize(parent, size, true, false, parentLayout, positionParent);
+		}
 
 		//// RVA: 0x17E1718 Offset: 0x17E1718 VA: 0x17E1718
 		public void Initialize(GameObject parent, Size size, bool useDiva, bool useFriend, AbsoluteLayout parentLayout, GameObject positionParent)

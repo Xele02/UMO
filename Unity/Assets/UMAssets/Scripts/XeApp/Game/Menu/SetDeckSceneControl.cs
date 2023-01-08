@@ -97,7 +97,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				GameManager.Instance.SceneIconCache.Load(m_sceneData.BCCHOBPJJKE_SceneId, m_sceneData.CGIELKDLHGE(), (IiconTexture texture) =>
+				GameManager.Instance.SceneIconCache.Load(m_sceneData.BCCHOBPJJKE_SceneId, m_sceneData.CGIELKDLHGE_GetEvolveId(), (IiconTexture texture) =>
 				{
 					//0xA748E0
 					m_sceneTextureLoadingCount--;

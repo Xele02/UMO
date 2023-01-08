@@ -8,6 +8,23 @@ namespace XeApp.Game.Menu
 {
 	public class ProfilMenuLayout : LayoutUGUIScriptBase
 	{
+		public enum InfoType
+		{
+			PLAYER = 0,
+			SCENE = 1,
+			STATS = 2,
+			ASSIST = 3,
+		}
+
+		public enum ButtonType
+		{
+			None = 0,
+			Fan = 1,
+			Fan_NoLobby = 2,
+			Raid = 3,
+			Raid_Result = 4,
+		}
+
     public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_player_name;

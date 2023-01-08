@@ -87,15 +87,16 @@ namespace XeApp.Game.Menu
 					int tmpSceneSlotNumber = 0;
 					foreach (var s in d.m_sceneSetControl.Scenes)
 					{
+						int tmpSceneSlotNumber_ = tmpSceneSlotNumber;
 						s.OnClickSceneButton = () =>
 						{
 							//0xC349A0
-							OnClickSceneButton(tmpDivaSlotNumber, tmpSceneSlotNumber);
+							OnClickSceneButton(tmpDivaSlotNumber, tmpSceneSlotNumber_);
 						};
 						s.OnStaySceneButton = () =>
 						{
 							//0xC349D4
-							OnStaySceneButton(tmpDivaSlotNumber, tmpSceneSlotNumber);
+							OnStaySceneButton(tmpDivaSlotNumber, tmpSceneSlotNumber_);
 						};
 						tmpSceneSlotNumber++;
 					}

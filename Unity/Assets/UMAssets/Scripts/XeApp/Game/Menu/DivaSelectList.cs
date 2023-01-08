@@ -223,7 +223,7 @@ namespace XeApp.Game.Menu
 						}
 					}
 					bool isKira = scene != null ? scene.MBMFJILMOBP() : false;
-					GameManager.Instance.SceneIconCache.Load(scene != null ? scene.BCCHOBPJJKE_SceneId : 0, scene != null ? scene.CGIELKDLHGE() : 0, (IiconTexture texture) => {
+					GameManager.Instance.SceneIconCache.Load(scene != null ? scene.BCCHOBPJJKE_SceneId : 0, scene != null ? scene.CGIELKDLHGE_GetEvolveId() : 0, (IiconTexture texture) => {
 						//0x17EC68C
 						texture.Set(m_selectDivaSceneImages[index]);
 						SceneIconTextureCache.ChangeKiraMaterial(m_selectDivaSceneImages[index], texture as IconTexture, isKira);
@@ -302,7 +302,7 @@ namespace XeApp.Game.Menu
 					{
 						GCIJNCFDNON scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[sceneId - 1];
 						sceneId = scene.BCCHOBPJJKE_SceneId;
-						rank = scene.CGIELKDLHGE();
+						rank = scene.CGIELKDLHGE_GetEvolveId();
 						isKira = scene.MBMFJILMOBP();
 						if (!m_isSelectedCenterDiva)
 						{

@@ -646,7 +646,7 @@ namespace XeApp.Game.RhythmGame
 			if (mainSceneId == 0)
 				yield break;
 			GCIJNCFDNON d = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[mainSceneId - 1];
-			int a = d.CGIELKDLHGE();
+			int a = d.CGIELKDLHGE_GetEvolveId();
 			if (d.JKGFBFPIMGA < 4)
 				a = 1;
 			activeSkillId = Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId;

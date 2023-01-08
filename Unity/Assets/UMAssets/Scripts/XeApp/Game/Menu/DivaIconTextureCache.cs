@@ -155,7 +155,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17E4044 Offset: 0x17E4044 VA: 0x17E4044
-		// public void LoadEventGoDivaIcon(int id, Action<IiconTexture> callBack) { }
+		public void LoadEventGoDivaIcon(int id, Action<IiconTexture> callBack)
+		{
+			Load(string.Format(DivaEventGoDivaIconPath, id), callBack);
+		}
 
 		// // RVA: 0x17E40EC Offset: 0x17E40EC VA: 0x17E40EC
 		// public void LoadEventGoDivaIcon(int id, DivaIconTextureCache.GoDivaIconType type, Action<IiconTexture> callBack) { }

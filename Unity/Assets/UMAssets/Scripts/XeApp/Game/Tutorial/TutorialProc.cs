@@ -89,7 +89,11 @@ namespace XeApp.Game.Tutorial
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF3C0 Offset: 0x6AF3C0 VA: 0x6AF3C0
 		//// RVA: 0xE4AF98 Offset: 0xE4AF98 VA: 0xE4AF98
-		//public static IEnumerator Co_PlateGrowth(ActionButton button) { }
+		public static IEnumerator Co_PlateGrowth(ActionButton button)
+		{
+			TodoLogger.Log(0, "Co_PlateGrowth");
+			yield return null;
+		}
 
 		//// RVA: 0xE4B020 Offset: 0xE4B020 VA: 0xE4B020
 		public static bool CanDivaSelect(int missionId)

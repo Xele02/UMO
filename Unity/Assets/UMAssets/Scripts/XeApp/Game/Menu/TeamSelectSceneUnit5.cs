@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 		private bool m_isWaitExitAnimation; // 0x111
 		private TeamSelectDivaListArgs m_selectDivaListArgs = new TeamSelectDivaListArgs(); // 0x114
 		private CostumeChangeDivaArgs m_costumeChangeDivaArgs = new CostumeChangeDivaArgs(); // 0x118
-		//private TeamSelectSceneListArgs m_selectSceneListArgs = new TeamSelectSceneListArgs(); // 0x11C
+		private TeamSelectSceneListArgs m_selectSceneListArgs = new TeamSelectSceneListArgs(); // 0x11C
 		//private CIKHPBBNEIM m_viewEpisodeBonus = new CIKHPBBNEIM(); // 0x120
 		private PopupFilterSortUGUIInitParam m_dispTypePopupParam = new PopupFilterSortUGUIInitParam(); // 0x124
 		private PopupEpisodeBonusListSetting m_episodeBonusPopupSetting = new PopupEpisodeBonusListSetting(); // 0x128
@@ -1525,7 +1525,21 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8F334 Offset: 0xA8F334 VA: 0xA8F334
 		private void OnSelectScene(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK divaData, GCIJNCFDNON sceneData)
 		{
-			TodoLogger.LogNotImplemented("OnSelectScene");
+			OnClickAnyButtons();
+			if(divaSlotNumber > -1)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				m_selectSceneListArgs.divaSlotIndex = divaSlotNumber;
+				m_selectSceneListArgs.divaData = divaData;
+				m_selectSceneListArgs.defaultSelectScene = sceneSlotNumber;
+				m_selectSceneListArgs.scelectType = 0;
+				m_selectSceneListArgs.friendPlayerData = m_viewFriendPlayerData;
+				m_selectSceneListArgs.musicBaseData = m_viewMusicData;
+				m_selectSceneListArgs.enemyData = m_viewEnemyData;
+				m_selectSceneListArgs.difficulty = Database.Instance.gameSetup.musicInfo.difficultyType;
+				m_selectSceneListArgs.isGoDiva = m_isGoDivaEvent;
+				MenuScene.Instance.Call(TransitionList.Type.SCENE_SELECT, m_selectSceneListArgs, true);
+			}
 		}
 
 		//// RVA: 0xA8F5B4 Offset: 0xA8F5B4 VA: 0xA8F5B4
@@ -1595,14 +1609,14 @@ namespace XeApp.Game.Menu
 						if(diva.FGFIBOBAPIA_SceneId > 0)
 						{
 							GCIJNCFDNON sceneInfo = m_playerData.OPIBAPEGCLA_Scenes[diva.FGFIBOBAPIA_SceneId - 1];
-							MenuScene.Instance.SceneIconCache.TryInstall(sceneInfo.BCCHOBPJJKE_SceneId, sceneInfo.CGIELKDLHGE());
+							MenuScene.Instance.SceneIconCache.TryInstall(sceneInfo.BCCHOBPJJKE_SceneId, sceneInfo.CGIELKDLHGE_GetEvolveId());
 						}
 						for(int k = 0; k < diva.DJICAKGOGFO_SubSceneIds.Count; k++)
 						{
 							if (diva.DJICAKGOGFO_SubSceneIds[k] > 0)
 							{
 								GCIJNCFDNON sceneInfo = m_playerData.OPIBAPEGCLA_Scenes[diva.DJICAKGOGFO_SubSceneIds[k] - 1];
-								MenuScene.Instance.SceneIconCache.TryInstall(sceneInfo.BCCHOBPJJKE_SceneId, sceneInfo.CGIELKDLHGE());
+								MenuScene.Instance.SceneIconCache.TryInstall(sceneInfo.BCCHOBPJJKE_SceneId, sceneInfo.CGIELKDLHGE_GetEvolveId());
 							}
 						}
 					}

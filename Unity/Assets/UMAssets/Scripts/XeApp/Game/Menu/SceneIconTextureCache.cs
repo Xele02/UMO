@@ -311,7 +311,16 @@ namespace XeApp.Game.Menu
 		// public void ChangeKiraMaterial_holo(RawImageEx _image) { }
 
 		// // RVA: 0x13718E8 Offset: 0x13718E8 VA: 0x13718E8
-		// public void TryInstall(DFKGGBMFFGB playerData) { }
+		public void TryInstall(DFKGGBMFFGB playerData)
+		{
+			for(int i = 0; i < playerData.OPIBAPEGCLA_Scenes.Count; i++)
+			{
+				if(playerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK())
+				{
+					TryInstall(playerData.OPIBAPEGCLA_Scenes[i].BCCHOBPJJKE_SceneId, playerData.OPIBAPEGCLA_Scenes[i].CGIELKDLHGE_GetEvolveId());
+				}
+			}
+		}
 
 		// // RVA: 0x1371A2C Offset: 0x1371A2C VA: 0x1371A2C
 		public void TryInstall(int sceneId, int evolveId)

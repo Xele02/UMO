@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Text;
 using XeApp.Game;
 using XeApp.Game.Common;
+using XeApp.Game.Menu;
 using XeSys;
 
 public class FFHPBEPOMAK
@@ -74,7 +75,15 @@ public class FFHPBEPOMAK
 	public CKFGMNAIBNG FFKMJNHFFFL_Costume = new CKFGMNAIBNG(); // 0x5C
 	public CKFGMNAIBNG EGAFMGDFFCH_HomeDivaCostume = new CKFGMNAIBNG(); // 0x60
 	private BBHNACPENDM_ServerSaveData LDEGEHAEALK; // 0x78
-	// public static DisplayType[] HBBPOMBJJNG = new DisplayType[8] { 0, 1, 2, 3, 7, 8, 9, 10 }; // 0x0
+	public static DisplayType[] HBBPOMBJJNG = new DisplayType[8] { 
+		DisplayType.Total, 
+		DisplayType.Soul, 
+		DisplayType.Vocal, 
+		DisplayType.Charm, 
+		DisplayType.Life, 
+		DisplayType.Luck, 
+		DisplayType.Support, 
+		DisplayType.Fold }; // 0x0
 
 	public StatusData JLJGCBOHJID_Status { get; private set; } = new StatusData(); // 0x1C MHGEJIKLJOP CKAOBJJCOFO MKFJBBFNFPD
 	public StatusData CMCKNKKCNDK_EquippedStatus { get; private set; } = new StatusData(); // 0x20 CLCJNFNMNBH CNKGOPKANGF CHJGGLFGALP

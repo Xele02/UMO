@@ -140,7 +140,7 @@ namespace XeApp.Game.Menu
 			int f = Mathf.Clamp(Mathf.RoundToInt(UnitExpectedScore.baseGaugeScale * 10) * 10, -50, 50);
 			if(gaugeText != null)
 			{
-				gaugeText.text = string.Format("{0}|n%", f == 0 ? string.Format("StringLiteral_20369 {0}", 0) : f.ToString("+#;-#;"));
+				gaugeText.text = string.Format("{0}\n%", f == 0 ? string.Format("StringLiteral_20369 {0}", 0) : f.ToString("+#;-#;"));
 			}
 			if(plusButton != null)
 			{

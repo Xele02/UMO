@@ -42,7 +42,7 @@ namespace XeApp.Game.Common
 		public RectTransform ScrollContent { get { return m_scrollRect.content; } } //0x1CCB01C
 		public int ScrollObjectCount { get { return m_rowCount * m_columnCount; } } //0x1CCB048
 		//public bool IsEnableScroll { get; } 0x1CCB058
-		//public Vector2 LeftTopPosition { get; } 0x1CCB0B4
+		public Vector2 LeftTopPosition { get { return m_leftTopPosition; } } //0x1CCB0B4
 		//public Vector2 ContentSize { get; } 0x1CCB0C8
 		public int RowCount { get { return m_rowCount; } } //0x1CCB0DC
 		public int ColumnCount { get { return m_columnCount; } } //0x1CCB0E4
@@ -268,7 +268,10 @@ namespace XeApp.Game.Common
 		//public void ApplyContentCenterAlign() { }
 
 		//// RVA: 0x1CCD864 Offset: 0x1CCD864 VA: 0x1CCD864
-		//public void ResetScrollVelocity() { }
+		public void ResetScrollVelocity()
+		{
+			m_scrollRect.velocity = Vector2.zero;
+		}
 
 		//// RVA: 0x1CCCD6C Offset: 0x1CCCD6C VA: 0x1CCCD6C
 		private void UpdateScrollCb(Vector2 position)

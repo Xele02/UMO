@@ -71,8 +71,8 @@ namespace XeApp.Game.Menu
  
 		public static SortOrder DefaultSortOrder { get { return SortOrder.Big; } } //0x154163C
 		public ListSortEvent OnListSortEvent { get { return m_onListSortEvent; } } //0x1541644
-		// public UnityEvent OnLimitOverListEvent { get; } 0x154164C
-		// public PopupSortMenu.SortPlace SortPlace { set; } 0x1541688
+		public UnityEvent OnLimitOverListEvent { get { return m_onLimitOverListEvent; } } //0x154164C
+		public PopupSortMenu.SortPlace SortPlace { set { m_sortPlace = value; } } //0x1541688
 		public int SelectedDivaId { get; set; } // 0x64
 		public int SelectedAttrId { get; set; } // 0x68
 
@@ -102,7 +102,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1541B70 Offset: 0x1541B70 VA: 0x1541B70
-		// public void OnSortButton(PopupFilterSort.Scene sceneType) { }
+		public void OnSortButton(PopupFilterSort.Scene sceneType)
+		{
+			m_sceneType = sceneType;
+			m_sortListButton.ClearOnClickCallback();
+			m_sortListButton.AddOnClickCallback(OnShowFilterSortPopup);
+		}
 
 		// // RVA: 0x1541C58 Offset: 0x1541C58 VA: 0x1541C58
 		public void UpdateContent(SortItem item, ListSortButtonGroup.SortOrder order, bool isBonus, bool isBonusFilter)
@@ -126,7 +131,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x154221C Offset: 0x154221C VA: 0x154221C
-		// private void OnShowFilterSortPopup() { }
+		private void OnShowFilterSortPopup()
+		{
+			TodoLogger.LogNotImplemented("OnShowFilterSortPopup");
+		}
 
 		// // RVA: 0x154236C Offset: 0x154236C VA: 0x154236C
 		// private void OnSendSortItem() { }
