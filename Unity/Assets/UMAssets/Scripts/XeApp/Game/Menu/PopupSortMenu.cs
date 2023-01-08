@@ -295,7 +295,14 @@ namespace XeApp.Game.Menu
 		//public static bool IsHaveFilterOn(bool have, uint flags) { }
 
 		//// RVA: 0x114BB20 Offset: 0x114BB20 VA: 0x114BB20
-		//public static bool IsRarityFilterOn(int rare, uint flags) { }
+		public static bool IsRarityFilterOn(int rare, uint flags)
+		{
+			if(flags != 0)
+			{
+				return (flags & 1) << (rare - 1) != 0;
+			}
+			return true;
+		}
 
 		//// RVA: 0x114BBC4 Offset: 0x114BBC4 VA: 0x114BBC4
 		public static bool IsAttributeFilterOn(int attr, uint flags)
@@ -318,10 +325,20 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x114BD0C Offset: 0x114BD0C VA: 0x114BD0C
-		//public static bool IsCompatibleFilterOn(int divaBit, uint flags) { }
+		public static bool IsCompatibleFilterOn(int divaBit, uint flags)
+		{
+			return flags == 0 || (flags & divaBit) != 0;
+		}
 
 		//// RVA: 0x114BD28 Offset: 0x114BD28 VA: 0x114BD28
-		//public static bool IsNotesFilterOn(int notes, uint flags) { }
+		public static bool IsNotesFilterOn(int notes, uint flags)
+		{
+			if(flags != 0)
+			{
+				return ((notes == 0 ? 32 : 1 << (notes - 1)) & flags) != 0;
+			}
+			return true;
+		}
 
 		//// RVA: 0x114BD58 Offset: 0x114BD58 VA: 0x114BD58
 		public static bool IsSkillRankFilterOn(int skillRank, int skillRank2, uint flags)
@@ -334,22 +351,74 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x114BD94 Offset: 0x114BD94 VA: 0x114BD94
-		//public static bool IsSkillRankFilterOn(int skillRank, int skillRank2, uint flags, bool isCenterSkill, GCIJNCFDNON scene, EEDKAACNBBG musicData) { }
+		public static bool IsSkillRankFilterOn(int skillRank, int skillRank2, uint flags, bool isCenterSkill, GCIJNCFDNON scene, EEDKAACNBBG musicData)
+		{
+			int s2 = 1 << (skillRank2 - 1);
+			int s1 = 1 << (skillRank - 1);
+			if(musicData == null)
+			{
+				if(flags == 0)
+					return true;
+				if((s1 & flags) != 0)
+					return true;
+			}
+			else
+			{
+				int jacketAttr = musicData.FKDCCLPGKDK_JacketAttr;
+				int serie = musicData.AIHCEGFANAM_Serie;
+				int a = 0;
+				int b = 0;
+				if(isCenterSkill)
+				{
+					a = scene.MEOOLHNNMHL(false, jacketAttr, serie);
+					b = scene.MEOOLHNNMHL(true, 0, 0);
+				}
+				else
+				{
+					a = scene.FILPDDHMKEJ(false, jacketAttr, serie);
+					b = scene.FILPDDHMKEJ(true, 0, 0);
+				}
+				if(flags == 0)
+					return true;
+				if(a != b)
+					s2 = s1;
+				if(a < 1)
+					s2 = s1;
+			}
+			return (s2 & flags) != 0;
+		}
 
 		//// RVA: 0x114BEEC Offset: 0x114BEEC VA: 0x114BEEC
-		//public static bool IsSkillRangeFilterOn(int skillRange, uint flags) { }
+		public static bool IsSkillRangeFilterOn(int skillRange, uint flags)
+		{
+			return flags == 0 || (flags & (1 << (skillRange - 1))) != 0;
+		}
 
 		//// RVA: 0x114BF18 Offset: 0x114BF18 VA: 0x114BF18
 		//public static bool IsInteriorTypeFilterOn(int interiorType, uint flags) { }
 
 		//// RVA: 0x114BFBC Offset: 0x114BFBC VA: 0x114BFBC
-		//public static bool IsCenterSkillFilterOn(GCIJNCFDNON scene, ulong flags) { }
+		public static bool IsCenterSkillFilterOn(GCIJNCFDNON scene, ulong flags)
+		{
+			if(flags == 0)
+				return true;
+			TodoLogger.Log(0, "IsCenterSkillFilterOn");
+			return true;
+		}
 
 		//// RVA: 0x114C748 Offset: 0x114C748 VA: 0x114C748
-		//public static bool IsActiveSkillFilterOn(GCIJNCFDNON scene, ulong flags) { }
+		public static bool IsActiveSkillFilterOn(GCIJNCFDNON scene, ulong flags)
+		{
+			TodoLogger.Log(0, "IsActiveSkillFilterOn");
+			return true;
+		}
 
 		//// RVA: 0x114CC6C Offset: 0x114CC6C VA: 0x114CC6C
-		//public static bool IsLiveSkillFilterOn(GCIJNCFDNON scene, ulong flags) { }
+		public static bool IsLiveSkillFilterOn(GCIJNCFDNON scene, ulong flags)
+		{
+			TodoLogger.Log(0, "IsLiveSkillFilterOn");
+			return true;
+		}
 
 		//// RVA: 0x114D304 Offset: 0x114D304 VA: 0x114D304
 		//public static bool IsMusicLevelFilter(int levelMin, int levelMax, IBJAKJJICBC musicData, Difficulty.Type difficulty) { }

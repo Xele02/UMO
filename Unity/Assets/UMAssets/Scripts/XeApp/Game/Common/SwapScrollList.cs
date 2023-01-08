@@ -43,7 +43,7 @@ namespace XeApp.Game.Common
 		public int ScrollObjectCount { get { return m_rowCount * m_columnCount; } } //0x1CCB048
 		//public bool IsEnableScroll { get; } 0x1CCB058
 		public Vector2 LeftTopPosition { get { return m_leftTopPosition; } } //0x1CCB0B4
-		//public Vector2 ContentSize { get; } 0x1CCB0C8
+		public Vector2 ContentSize { get { return m_contentRect; } } //0x1CCB0C8
 		public int RowCount { get { return m_rowCount; } } //0x1CCB0DC
 		public int ColumnCount { get { return m_columnCount; } } //0x1CCB0E4
 		//public ScrollRect ScrollRect { get; } 0x1CCB0EC

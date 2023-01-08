@@ -168,10 +168,77 @@ namespace XeApp.Game.Menu
 		// private void ReturnScene() { }
 
 		// // RVA: 0x13806CC Offset: 0x13806CC VA: 0x13806CC
-		// private void Listup(uint rarityFilterBit = 4294967295, uint attributeFilterBit = 4294967295, uint seriaseFilterBit = 4294967295, uint compatibleFilterBit = 4294967295, uint lskillRangeFilerBit = 4294967295, uint cskillRankFilerBit = 4294967295, uint askillRankFilerBit = 4294967295, uint lskillRankFilerBit = 4294967295, ulong cskillFilerBit = 18446744073709551615, ulong askillFilerBit = 18446744073709551615, ulong lskillFilerBit = 18446744073709551615, uint notesFilterBit = 4294967295, int episodeId = 0, bool isBonus = False, int rarityRestriction = -1) { }
+		private void Listup(uint rarityFilterBit = 4294967295, uint attributeFilterBit = 4294967295, uint seriaseFilterBit = 4294967295, uint compatibleFilterBit = 4294967295, uint lskillRangeFilerBit = 4294967295, uint cskillRankFilerBit = 4294967295, uint askillRankFilerBit = 4294967295, uint lskillRankFilerBit = 4294967295, ulong cskillFilerBit = 18446744073709551615, ulong askillFilerBit = 18446744073709551615, ulong lskillFilerBit = 18446744073709551615, uint notesFilterBit = 4294967295, int episodeId = 0, bool isBonus = false, int rarityRestriction = -1)
+		{
+			m_sceneIndexList.Clear();
+			MLIBEPGADJH_Scene sceneDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
+			if(m_transitionName == TransitionList.Type.HOME_BG_SELECT || 
+				m_transitionName == TransitionList.Type.ASSIST_SELECT ||
+				m_transitionName == TransitionList.Type.SCENE_SELECT)
+			{
+				m_sceneIndexList.Add(-1);
+			}
+			for(int i = 0; i < PlayerData.OPIBAPEGCLA_Scenes.Count; i++)
+			{
+				GCIJNCFDNON scene = PlayerData.OPIBAPEGCLA_Scenes[i];
+				if(sceneDb.FGNJBMPDBLO_IsSceneValid(scene.BCCHOBPJJKE_SceneId))
+				{
+					if(scene.CGKAEMGLHNK() || RuntimeSettings.CurrentSettings.ForceCardsUnlock)
+					{
+						if(episodeId == 0)
+						{
+							if(!scene.MCCIFLKCNKO)
+							{
+								if(isBonus)
+								{
+									if(Database.Instance.bonusData.EffectiveEpisodeBonus.Find((IKDICBBFBMI_EventBase.GNPOABJANKO x) => {
+										//0xA56EB4
+										return scene.KELFCMEOPPM_EpisodeId == x.KELFCMEOPPM_EpisodeId;
+									}) == null)
+									{
+										continue;
+									}
+								}
+								if(PopupSortMenu.IsRarityFilterOn(scene.EKLIPGELKCL_SceneRarity, rarityFilterBit) && 
+									PopupSortMenu.IsAttributeFilterOn(scene.JGJFIJOCPAG_SceneAttr, attributeFilterBit) && 
+									PopupSortMenu.IsSerializeFilterOn((int)scene.AIHCEGFANAM_SceneSeries, seriaseFilterBit) && 
+									PopupSortMenu.IsCompatibleFilterOn(scene.AOLIJKMIJJE, compatibleFilterBit) && 
+									PopupSortMenu.IsNotesFilterOn(scene.IGPMJPPAILL, notesFilterBit) && 
+									PopupSortMenu.IsSkillRangeFilterOn(scene.BJJNCCGPBGN, lskillRangeFilerBit) && 
+									PopupSortMenu.IsSkillRankFilterOn(scene.DHEFMEGKKDN_CenterSkillRank, scene.FFDCGHDNDFJ_CenterSkillRank2, cskillRankFilerBit, true, scene, m_musicBaseData) &&
+									PopupSortMenu.IsSkillRankFilterOn(scene.BEKGEAMJGEN, scene.BEKGEAMJGEN, askillRankFilerBit) && 
+									PopupSortMenu.IsSkillRankFilterOn(scene.OAHMFMJIENM, scene.ELNJADBILOM, lskillRankFilerBit, false, scene, m_musicBaseData) && 
+									PopupSortMenu.IsCenterSkillFilterOn(scene, cskillFilerBit) &&
+									PopupSortMenu.IsActiveSkillFilterOn(scene, askillFilerBit) && 
+									PopupSortMenu.IsLiveSkillFilterOn(scene, lskillFilerBit)
+								)
+								{
+									if(m_rarityRestriction > 0)
+									{
+										if(scene.JKGFBFPIMGA < m_rarityRestriction)
+											continue;
+									}
+									m_sceneIndexList.Add(i);
+								}
+							}
+						}
+						else
+						{
+							if(episodeId == scene.KELFCMEOPPM_EpisodeId)
+							{
+								m_sceneIndexList.Add(i);
+							}
+						}
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x1381204 Offset: 0x1381204 VA: 0x1381204
-		// private void SortImpl() { }
+		private void SortImpl()
+		{
+			TodoLogger.Log(0, "SortImpl");
+		}
 
 		// // RVA: 0x138131C Offset: 0x138131C VA: 0x138131C
 		// private int DefaultSortCb(int left, int right) { }
@@ -632,7 +699,106 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1384A14 Offset: 0x1384A14 VA: 0x1384A14
 		private void Sort(bool isBonus, bool isPlateMission = false)
 		{
-			TodoLogger.Log(0, "Sort");
+			uint rarityFilterBit;
+			uint attributeFilterBit;
+			uint seriaseFilterBit;
+			uint compatibleFilterBit;
+			uint lskillRangeFilerBit;
+			uint cskillRankFilerBit;
+			uint askillRankFilerBit;
+			uint lskillRankFilerBit;
+			ulong cskillFilerBit;
+			ulong askillFilerBit;
+			ulong lskillFilerBit;
+			uint notesFilterBit;
+
+			if(!isPlateMission)
+			{
+				ILDKBCLAFPB.IJDOCJCLAIL_SortProprty sortProp = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty;
+
+				if(TransitionName == TransitionList.Type.SCENE_SELECT)
+				{
+					rarityFilterBit = (uint)sortProp.FFAKMECDMFC_sceneSelectRarityFilter;
+					attributeFilterBit = (uint)sortProp.LMPKAPBCIFD_sceneSelectAttributeFilter;
+					seriaseFilterBit = (uint)sortProp.MNNCLIFBAOA_sceneSelectSeriaseFilter;
+					cskillRankFilerBit = (uint)sortProp.BPFPFOJNFLC_sceneSelectCenterSkillRankFilter;
+					compatibleFilterBit = (uint)sortProp.NPFGKBKKCFL_sceneSelectCompatibleFilter;
+					cskillFilerBit = (ulong)sortProp.IHECEFMGKHO_sceneSelectCenterSkillFilter;
+					askillFilerBit = (ulong)sortProp.POJHGOJDOND_sceneSelectActiveSkillFilter;
+					lskillFilerBit = (ulong)sortProp.OCKOEPFNGJG_sceneSelectLiveSkillFilter;
+					notesFilterBit = (uint)sortProp.DMKHBHDGABG_sceneSelectNotesExpectedFilter;
+					lskillRangeFilerBit = (uint)sortProp.IMFEPOFGPHN_sceneSelectLiveSkillRangeFilter;
+					askillRankFilerBit = (uint)sortProp.BIBBAIFCGLD_sceneSelectActiveSkillRankFilter;
+					lskillRankFilerBit = (uint)sortProp.AIPJDIPBDEA_sceneSelectLiveSkillRankFilter;
+					if(sortProp.JACFDEKLDCK_isCompatibleDivaCheck > 0)
+					{
+						compatibleFilterBit = (uint)(1 << (m_divaData.AHHJLDLAPAN_DivaId - 1));
+					}
+				}
+				else if(TransitionName == TransitionList.Type.HOME_BG_SELECT)
+				{
+					seriaseFilterBit = (uint)sortProp.GIDCHFBCBML_SelectHomeBG.HBEFGKLLMEC_FilterSeries;
+					notesFilterBit = 0;
+					lskillFilerBit = 0;
+					rarityFilterBit = (uint)sortProp.GIDCHFBCBML_SelectHomeBG.PLNMMHPILLO_FilterRarity;
+					askillRankFilerBit = 0;
+					cskillRankFilerBit = 0;
+					askillFilerBit = 0;
+					cskillFilerBit = 0;
+					lskillRankFilerBit = 0;
+					lskillRangeFilerBit = 0;
+					compatibleFilterBit = 0;
+					attributeFilterBit = 0;
+				}
+				else if(TransitionName == TransitionList.Type.ASSIST_SELECT)
+				{
+					attributeFilterBit = (uint)(m_assistSlotIndex == 0 ? sortProp.OFFBGLDDBHC_sceneAssistAttributeFilter : 1 << (m_assistSlotIndex - 1));
+					seriaseFilterBit = (uint)sortProp.POPIEDDJGBA_sceneAssistSeriaseFilter;
+					notesFilterBit = (uint)sortProp.GJFPKDOBIPH_sceneAssistCenterSkillFilter;
+					lskillFilerBit = 0;
+					rarityFilterBit = 0;
+					askillRankFilerBit = 0;
+					cskillRankFilerBit = 0;
+					askillFilerBit = 0;
+					cskillFilerBit = 0;
+					lskillRankFilerBit = 0;
+					lskillRangeFilerBit = 0;
+					compatibleFilterBit = 0;
+				}
+				else
+				{
+					rarityFilterBit = (uint)sortProp.HMJNAGNIEJB_sceneListRarityFilter;
+					attributeFilterBit = (uint)sortProp.HFGAILIOFAN_sceneListAttributeFilter;
+					seriaseFilterBit = (uint)sortProp.AKFPHKLCHAA_sceneListSeriaseFilter;
+					cskillRankFilerBit = (uint)sortProp.MECEGIJIGBN_sceneListCenterSkillRankFilter;
+					compatibleFilterBit = (uint)sortProp.PHCEMKLNJLH_sceneListCompatibleFilter;
+					lskillRangeFilerBit = (uint)sortProp.LALFKJDFPOD_sceneListLiveSkillRangeFilter;
+					askillRankFilerBit = (uint)sortProp.ALFGELGDIGC_sceneListActiveSkillRankFilter;
+					lskillRankFilerBit = (uint)sortProp.HKFPBAFALHO_sceneListLiveSkillRankFilter;
+					cskillFilerBit = (ulong)sortProp.IOBABMJPAAE_sceneListCenterSkillFilter;
+					askillFilerBit = (ulong)sortProp.GIPNFAFFNLF_sceneListActiveSkillFilter;
+					lskillFilerBit = (ulong)sortProp.BOMCDAIEFLN_sceneListLiveSkillFilter;
+					notesFilterBit = (uint)sortProp.MCJBFHMJECO_sceneListNotesExpectedFilter;
+				}
+			}
+			else
+			{
+				attributeFilterBit = 0;
+				seriaseFilterBit = 0;
+				notesFilterBit = 0;
+				lskillFilerBit = 0;
+				rarityFilterBit = 0;
+				askillRankFilerBit = 0;
+				cskillRankFilerBit = 0;
+				askillFilerBit = 0;
+				cskillFilerBit = 0;
+				lskillRankFilerBit = 0;
+				lskillRangeFilerBit = 0;
+				compatibleFilterBit = 0;
+			}
+
+			Listup(rarityFilterBit, attributeFilterBit, seriaseFilterBit, compatibleFilterBit, lskillRangeFilerBit, cskillRankFilerBit, askillRankFilerBit, lskillRankFilerBit, cskillFilerBit, askillFilerBit, lskillFilerBit, notesFilterBit, m_episodeId, isBonus);
+			SortImpl();
 		}
 
 		// // RVA: 0x1386738 Offset: 0x1386738 VA: 0x1386738

@@ -297,7 +297,7 @@ namespace XeApp.Game.Menu
 					int idxLine = index / m_scrollList.ColumnCount;
 					int idxCol = index % m_scrollList.ColumnCount;
 					content.RectTransform.localPosition = new Vector3(
-						content.RectTransform.localPosition.x * idxCol + m_scrollList.LeftTopPosition.x,
+						m_scrollList.ContentSize.x * idxCol + m_scrollList.LeftTopPosition.x,
 						content.RectTransform.localPosition.y, content.RectTransform.localPosition.z
 					);
 					decoration.SetActive(true);
@@ -330,6 +330,8 @@ namespace XeApp.Game.Menu
 			});
 			int idx = sortListIndexList.FindIndex((int x) => {
 				//0x137F3D8
+				if(x < 0)
+					return false;
 				return sceneList[x].BCCHOBPJJKE_SceneId == selectedSceneId;
 			});
 			int position = 0;
