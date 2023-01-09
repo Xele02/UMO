@@ -36,7 +36,15 @@ public struct CFHDKAFLNEP
 	//// RVA: 0x7FC4CC Offset: 0x7FC4CC VA: 0x7FC4CC
 	public void OBKGEDCKHHE()
 	{
-		TodoLogger.Log(0, "OBKGEDCKHHE");
+		KOGBMDOONFA = new OCNHGDCPJDG[LCLCCHLDNHJ_Costume.GFIKOEEBIJP, 3];
+		for (int i = 0; i < KOGBMDOONFA.GetLength(0); i++)
+		{
+			for (int j = 0; j < KOGBMDOONFA.GetLength(1); j++)
+			{
+				KOGBMDOONFA[i, j] = new OCNHGDCPJDG();
+			}
+		}
+		CMCKNKKCNDK = new StatusData();
 	}
 
 	//// RVA: 0x7FC4D4 Offset: 0x7FC4D4 VA: 0x7FC4D4

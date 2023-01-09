@@ -177,10 +177,10 @@ public class GCIJNCFDNON
 			if (h != null)
 			{
 				KFCIIMBBNCD k = KDDDDMMMBHE(s, h.HEKHODDJHAO_P1);
-				if (k != null && k.OAFPGJLCNFM - 6 < 6 && k.OAFPGJLCNFM - 6 >= 0)
+				if (k != null && k.OAFPGJLCNFM_CenterSkillCondition - 6 < 6 && k.OAFPGJLCNFM_CenterSkillCondition - 6 >= 0)
 					return true;
 				k = KDDDDMMMBHE(s, h.AKGNPLBDKLN_P2);
-				if (k != null && k.OAFPGJLCNFM - 6 < 6 && k.OAFPGJLCNFM - 6 >= 0)
+				if (k != null && k.OAFPGJLCNFM_CenterSkillCondition - 6 < 6 && k.OAFPGJLCNFM_CenterSkillCondition - 6 >= 0)
 					return true;
 			}
 		}
@@ -200,7 +200,7 @@ public class GCIJNCFDNON
 			KFCIIMBBNCD k = KDDDDMMMBHE(s, h.HEKHODDJHAO_P1);
 			if (k == null)
 				return SeriesAttr.Type.None;
-			switch(k.OAFPGJLCNFM - 6)
+			switch(k.OAFPGJLCNFM_CenterSkillCondition - 6)
 			{
 				case 0:
 					return SeriesAttr.Type.Delta;
@@ -220,7 +220,7 @@ public class GCIJNCFDNON
 			k = KDDDDMMMBHE(s, h.AKGNPLBDKLN_P2);
 			if (k == null)
 				return SeriesAttr.Type.None;
-			switch (k.OAFPGJLCNFM - 6)
+			switch (k.OAFPGJLCNFM_CenterSkillCondition - 6)
 			{
 				case 0:
 					return SeriesAttr.Type.Delta;
@@ -294,11 +294,11 @@ public class GCIJNCFDNON
 				if(h != null)
 				{
 					KFCIIMBBNCD k = KDDDDMMMBHE(j, h.HEKHODDJHAO_P1);
-					if (k != null && k.OAFPGJLCNFM - 1 < 4 && k.OAFPGJLCNFM - 1 >= 0)
+					if (k != null && k.OAFPGJLCNFM_CenterSkillCondition - 1 < 4 && k.OAFPGJLCNFM_CenterSkillCondition - 1 >= 0)
 						return true;
 					k = KDDDDMMMBHE(j, h.AKGNPLBDKLN_P2);
 					if (k != null)
-						return k.OAFPGJLCNFM - 1 < 4 && k.OAFPGJLCNFM - 1 >= 0;
+						return k.OAFPGJLCNFM_CenterSkillCondition - 1 < 4 && k.OAFPGJLCNFM_CenterSkillCondition - 1 >= 0;
 				}
 			}
 		}
@@ -319,11 +319,11 @@ public class GCIJNCFDNON
 				if (h != null)
 				{
 					KFCIIMBBNCD k = KDDDDMMMBHE(j, h.HEKHODDJHAO_P1);
-					if (k != null && k.OAFPGJLCNFM - 1 < 4 && k.OAFPGJLCNFM - 1 >= 0)
-						return (GameAttribute.Type)k.OAFPGJLCNFM;
+					if (k != null && k.OAFPGJLCNFM_CenterSkillCondition - 1 < 4 && k.OAFPGJLCNFM_CenterSkillCondition - 1 >= 0)
+						return (GameAttribute.Type)k.OAFPGJLCNFM_CenterSkillCondition;
 					k = KDDDDMMMBHE(j, h.AKGNPLBDKLN_P2);
-					if (k != null && k.OAFPGJLCNFM - 1 < 4 && k.OAFPGJLCNFM - 1 >= 0)
-						return (GameAttribute.Type)k.OAFPGJLCNFM;
+					if (k != null && k.OAFPGJLCNFM_CenterSkillCondition - 1 < 4 && k.OAFPGJLCNFM_CenterSkillCondition - 1 >= 0)
+						return (GameAttribute.Type)k.OAFPGJLCNFM_CenterSkillCondition;
 				}
 			}
 		}

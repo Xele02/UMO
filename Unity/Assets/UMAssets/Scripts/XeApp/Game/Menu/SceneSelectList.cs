@@ -395,7 +395,7 @@ namespace XeApp.Game.Menu
 				}
 				m_scoreGaugeLayout.StartChildrenAnimGoStop("01");
 				float f = m_scoreGauge.UpdateScoreGaugeRatio(m_gaugeRateText, m_scorePlusButton, m_scoreMinusButton);
-				m_scoreGauge.SetScore(CMMKCEPBIHI.KHCOOPDAGOE, CMMKCEPBIHI.FDLECNKJCGG, rankPosition, scoreParams, f);
+				m_scoreGauge.SetScore(CMMKCEPBIHI.KHCOOPDAGOE_ScoreRank, CMMKCEPBIHI.FDLECNKJCGG_GaugeRatio, rankPosition, scoreParams, f);
 			}
 		}
 

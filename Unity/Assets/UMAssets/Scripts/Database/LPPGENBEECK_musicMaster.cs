@@ -73,7 +73,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x10CFC50 Offset: 0x10CFC50 VA: 0x10CFC50
-	public KLBKPANJCPL_Score ALJFMLEJEHH(int KKPAHLMJKIH_WavId, int BKJGCEOEPFB_VariationId, int NOAKHKMLPFK_Difficulty, bool GIKLNODJKFK_Line6 = false, bool IOOOMNMAGAH = true)
+	public KLBKPANJCPL_Score ALJFMLEJEHH_GetMusicScore(int KKPAHLMJKIH_WavId, int BKJGCEOEPFB_VariationId, int NOAKHKMLPFK_Difficulty, bool GIKLNODJKFK_Line6 = false, bool IOOOMNMAGAH = true)
 	{
 		int a = 0;
 		if (GIKLNODJKFK_Line6)
@@ -93,7 +93,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 			if (!IOOOMNMAGAH)
 				return null;
 			UnityEngine.Debug.LogWarning(string.Format("<color=red>not found Line6 Score Master:{0} -> use Line4:{1}</color>",b ,b+a));
-			return ALJFMLEJEHH(KKPAHLMJKIH_WavId, BKJGCEOEPFB_VariationId, NOAKHKMLPFK_Difficulty, false, true);
+			return ALJFMLEJEHH_GetMusicScore(KKPAHLMJKIH_WavId, BKJGCEOEPFB_VariationId, NOAKHKMLPFK_Difficulty, false, true);
 		}
 		return null;
 	}
@@ -439,7 +439,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 			for(int j = 0; j < 5; j++)
 			{
 				EONOEHOKBEB_Music m = IAJLOELFHKC_GetMusicInfo(data.DLAEJOBELBH_Id);
-				KLBKPANJCPL_Score k = ALJFMLEJEHH(m.KKPAHLMJKIH_WavId, m.BKJGCEOEPFB_VariationId, j, false, true);
+				KLBKPANJCPL_Score k = ALJFMLEJEHH_GetMusicScore(m.KKPAHLMJKIH_WavId, m.BKJGCEOEPFB_VariationId, j, false, true);
 				int i1 = 0;
 				int i2 = 0;
 				int i3 = 0;
@@ -451,7 +451,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 				}
 				HDNKOFNBCEO data2 = MGDLFOAKGGF[data.EAEDODGPLEC_RewardBaseId - 1];
 				data.NHKABAGJCDM(FEEODHDKLFH(i2, i1, i3, data2));
-				KLBKPANJCPL_Score k2 = ALJFMLEJEHH(m.KKPAHLMJKIH_WavId, m.BKJGCEOEPFB_VariationId, j, true, false);
+				KLBKPANJCPL_Score k2 = ALJFMLEJEHH_GetMusicScore(m.KKPAHLMJKIH_WavId, m.BKJGCEOEPFB_VariationId, j, true, false);
 				if(k2 != null)
 				{
 					data2 = MGDLFOAKGGF[data.LOKLNBLBBFD_Reward6LineBaseId - 1];
@@ -511,7 +511,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 			for(int j = 0; j < 5; j++)
 			{
 				EONOEHOKBEB_Music music = IAJLOELFHKC_GetMusicInfo(data.DLAEJOBELBH_Id);
-				KLBKPANJCPL_Score score = ALJFMLEJEHH(music.KKPAHLMJKIH_WavId, music.BKJGCEOEPFB_VariationId, j, false, true);
+				KLBKPANJCPL_Score score = ALJFMLEJEHH_GetMusicScore(music.KKPAHLMJKIH_WavId, music.BKJGCEOEPFB_VariationId, j, false, true);
 				if(score != null)
 				{
 					data.COGKJBAFBKN.Add(FEEODHDKLFH(score.KNIFCANOHOC_Ss, score.NLKEBAOBJCM_Cb, score.OIPCCBHIKIA, NEIBEDCGDEM[0]));

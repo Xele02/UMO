@@ -16,7 +16,10 @@ public struct CGCBEHANFJO
 	}
 
 	// RVA: 0x7FC634 Offset: 0x7FC634 VA: 0x7FC634
-	//public int PJCKMKEJCEL() { }
+	public int PJCKMKEJCEL()
+	{
+		return LDLHPACIIAB + MKMIEGPOKGG + EACDINDLGLF;
+	}
 }
 public struct EDMIONMCICN
 {

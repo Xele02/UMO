@@ -369,9 +369,9 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 			{
 				KFCIIMBBNCD data = new KFCIIMBBNCD();
 				data.MJMPANIBFED = (int)array[i].MJMPANIBFED;
-				data.GJLFANGDGCL = (byte)array[i].AGNHPHEJKMK;
+				data.GJLFANGDGCL_CenterSkillTarget = (byte)array[i].AGNHPHEJKMK;
 				data.INDDJNMPONH = (byte)array[i].GBJFNGCDKPM;
-				data.OAFPGJLCNFM = (int)array[i].ODMJFHDIGLP & 0xff;
+				data.OAFPGJLCNFM_CenterSkillCondition = (int)array[i].ODMJFHDIGLP & 0xff;
 				data.BBFKKANELFP = (byte)array[i].BBFKKANELFP;
 				{
 					uint[] array2 = array[i].KFCIJBLDHOK;
@@ -390,9 +390,9 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 			{
 				KFCIIMBBNCD data = new KFCIIMBBNCD();
 				data.MJMPANIBFED = (int)array[i].MJMPANIBFED;
-				data.GJLFANGDGCL = (byte)array[i].AGNHPHEJKMK;
+				data.GJLFANGDGCL_CenterSkillTarget = (byte)array[i].AGNHPHEJKMK;
 				data.INDDJNMPONH = (byte)array[i].GBJFNGCDKPM;
-				data.OAFPGJLCNFM = (int)array[i].ODMJFHDIGLP & 0xff;
+				data.OAFPGJLCNFM_CenterSkillCondition = (int)array[i].ODMJFHDIGLP & 0xff;
 				data.BBFKKANELFP = 0;
 				{
 					uint[] array2 = array[i].KFCIJBLDHOK;
@@ -411,9 +411,9 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 			{
 				KFCIIMBBNCD data = new KFCIIMBBNCD();
 				data.MJMPANIBFED = (int)array[i].MJMPANIBFED;
-				data.GJLFANGDGCL = (byte)array[i].AGNHPHEJKMK;
+				data.GJLFANGDGCL_CenterSkillTarget = (byte)array[i].AGNHPHEJKMK;
 				data.INDDJNMPONH = (byte)array[i].GBJFNGCDKPM;
-				data.OAFPGJLCNFM = (int)array[i].ODMJFHDIGLP & 0xff;
+				data.OAFPGJLCNFM_CenterSkillCondition = (int)array[i].ODMJFHDIGLP & 0xff;
 				data.BBFKKANELFP = 0;
 				{
 					uint[] array2 = array[i].KFCIJBLDHOK;
@@ -819,9 +819,9 @@ public class KFCIIMBBNCD
 {
 	public int MJMPANIBFED; // 0x8
 	public short[] KCOHMHFBDKF = new short[5]; // 0xC
-	public byte GJLFANGDGCL; // 0x10
+	public byte GJLFANGDGCL_CenterSkillTarget; // 0x10
 	public byte INDDJNMPONH; // 0x11
-	public int OAFPGJLCNFM; // 0x14
+	public int OAFPGJLCNFM_CenterSkillCondition; // 0x14
 	public byte BBFKKANELFP; // 0x18
 
 	//// RVA: 0x19FC87C Offset: 0x19FC87C VA: 0x19FC87C
