@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using mcrs;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
@@ -256,10 +258,26 @@ namespace XeApp.Game.Menu
 		// private int GetSameEvaluationValue3(GCIJNCFDNON left, GCIJNCFDNON right) { }
 
 		// // RVA: 0x13821CC Offset: 0x13821CC VA: 0x13821CC
-		// private void AttachScene(int slot, FFHPBEPOMAK divaData, GCIJNCFDNON sceneData) { }
+		private void AttachScene(int slot, FFHPBEPOMAK divaData, GCIJNCFDNON sceneData)
+		{
+			if(slot == 0)
+			{
+				divaData.OKDIEDCGODF(sceneData.BCCHOBPJJKE_SceneId, false, PlayerData.HJBAALOOKMO, PlayerData.POJLFHIAGID);
+			}
+			else
+			{
+				divaData.IFFMDJHENHB(slot - 1, sceneData.BCCHOBPJJKE_SceneId, false, PlayerData.HJBAALOOKMO, PlayerData.POJLFHIAGID);
+			}
+		}
 
 		// // RVA: 0x1382318 Offset: 0x1382318 VA: 0x1382318
-		// private void DetachScene(int slot, FFHPBEPOMAK divaData) { }
+		private void DetachScene(int slot, FFHPBEPOMAK divaData)
+		{
+			if(slot != 0)
+				divaData.BCEJOOCGBFG(slot - 1, false);
+			else
+				divaData.MNBNLONEDPF(false);
+		}
 
 		// // RVA: 0x138236C Offset: 0x138236C VA: 0x138236C
 		// private void AttachSceneGodiva(int slot, FFHPBEPOMAK divaData, JLKEOGLJNOD unitData, GCIJNCFDNON sceneData) { }
@@ -277,10 +295,92 @@ namespace XeApp.Game.Menu
 		// private int GetEquSceneId(int selectedSlot, FFHPBEPOMAK divaData) { }
 
 		// // RVA: 0x1382560 Offset: 0x1382560 VA: 0x1382560
-		// private void ShowComparisonPopupWindow(GCIJNCFDNON beforeScene, GCIJNCFDNON afterScene, FFHPBEPOMAK diva) { }
+		private void ShowComparisonPopupWindow(GCIJNCFDNON beforeScene, GCIJNCFDNON afterScene, FFHPBEPOMAK diva)
+		{
+			if(afterScene != null)
+			{
+				afterScene.CADENLBDAEB = false;
+			}
+			Action ac = null;
+			if(GameManager.Instance.IsTutorial)
+				ac = SetTutorialPopupDecide;
+
+			m_sceneComparisonPopupSetting.Buttons = new ButtonInfo[2] {
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			m_sceneComparisonPopupSetting.AfterScene = afterScene;
+			m_sceneComparisonPopupSetting.BeforeScene = beforeScene;
+			m_sceneComparisonPopupSetting.PlayerData = PlayerData;
+			m_sceneComparisonPopupSetting.DivaData = diva;
+			m_sceneComparisonPopupSetting.SceneSlotIndex = m_selectedEquipmentSlotIndex;
+			m_sceneComparisonPopupSetting.DivaSlot = m_selectedDivaSlotIndex;
+			m_sceneComparisonPopupSetting.FriendPlayerData = m_friendPlayerData;
+			m_sceneComparisonPopupSetting.MusicBaseData = m_musicBaseData;
+			m_sceneComparisonPopupSetting.EnemyData = m_enemyData;
+			m_sceneComparisonPopupSetting.Difficulty = m_difficulty;
+			m_sceneComparisonPopupSetting.SetParent(transform);
+			m_sceneComparisonPopupSetting.IsGoDiva = m_isGoDivaEvent;
+			PopupWindowManager.Show(m_sceneComparisonPopupSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) => {
+				//0xA56F08
+				if(type != PopupButton.ButtonType.Negative)
+				{
+					int musicId = 0;
+					if(m_musicBaseData != null)
+					{
+						musicId = m_musicBaseData.DLAEJOBELBH_MusicId;
+					}
+					DisplayType displayType;
+					UnitWindowConstant.SortItemToDisplayType.TryGetValue((int)m_sortType, out displayType);
+					if(m_assistViewData == null)
+					{
+						if(!m_isGoDivaEvent)
+						{
+							if(afterScene == null)
+							{
+								DetachScene(m_selectedEquipmentSlotIndex, diva);
+							}
+							else
+							{
+								AttachScene(m_selectedEquipmentSlotIndex, diva, afterScene);
+							}
+							m_equipmentScene.UpdateContent(PlayerData, diva, IsCenterDiva(), musicId, false);
+							m_equipmentScene.SelectSlot(m_selectedEquipmentSlotIndex);
+							m_equipmentScene.ChangeIcon(PlayerData, diva, displayType, IsCenterDiva(), false);
+							diva.HCDGELDHFHB();
+							PlayerData.DPLBHAIKPGL(false).HCDGELDHFHB();
+							m_sceneSelectList.UpdateRemoveButton(m_divaData, m_selectedEquipmentSlotIndex);
+							if(m_musicBaseData != null)
+							{
+								CMMKCEPBIHI.EFCNOOFFMIL(PlayerData, m_friendPlayerData, m_musicBaseData, m_enemyData, m_difficulty, Database.Instance.gameSetup.musicInfo.IsLine6Mode, m_isGoDivaEvent);
+							}
+							m_sceneSelectList.UpdateScore(m_musicBaseData);
+							if(!GameManager.Instance.IsTutorial)
+							{
+								ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO, 2, false);
+							}
+							ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD("StringLiteral_15651", 0, false, false, 1);
+						}
+						else
+						{
+							TodoLogger.Log(0, "GoDiva");
+						}
+					}
+					else
+					{
+						TodoLogger.Log(0, "Assist");
+					}
+					m_sceneSelectList.UpdateRegion();
+					m_sceneSelectList.UpdateScore();
+				}
+			}, null, null, ac);
+		}
 
 		// // RVA: 0x1382B50 Offset: 0x1382B50 VA: 0x1382B50
-		// private void ShowSelectHomeBgPopupWindow(SceneSelectHomeBgLayout.SetBgType bgType, GCIJNCFDNON sceneData) { }
+		private void ShowSelectHomeBgPopupWindow(SceneSelectHomeBgLayout.SetBgType bgType, GCIJNCFDNON sceneData)
+		{
+			TodoLogger.LogNotImplemented("ShowSelectHomeBgPopupWindow");
+		}
 
 		// RVA: 0x1382D3C Offset: 0x1382D3C VA: 0x1382D3C Slot: 16
 		protected override void OnPreSetCanvas()
@@ -651,7 +751,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1385C64 Offset: 0x1385C64 VA: 0x1385C64
-		// private void SetTutorialPopupDecide() { }
+		private void SetTutorialPopupDecide()
+		{
+			TodoLogger.Log(0, "Tutorial");
+		}
 
 		// // RVA: 0x13844DC Offset: 0x13844DC VA: 0x13844DC
 		private void SetDefaultSortParamFromLocalSave()
@@ -807,7 +910,52 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x138677C Offset: 0x138677C VA: 0x138677C
 		private void OnSelectListScene(int listIndex)
 		{
-			TodoLogger.LogNotImplemented("OnSelectListScene");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			GCIJNCFDNON sceneInfo = PlayerData.OPIBAPEGCLA_Scenes[m_sceneIndexList[listIndex]];
+			if(TransitionName == TransitionList.Type.SCENE_SELECT)
+			{
+				GCIJNCFDNON beforeScene = null;
+				if(m_selectedEquipmentSlotIndex == 0)
+				{
+					if(m_divaData.FGFIBOBAPIA_SceneId > 0)
+					{
+						beforeScene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.FGFIBOBAPIA_SceneId - 1];
+					}
+				}
+				else
+				{
+					if(m_divaData.DJICAKGOGFO_SubSceneIds[m_selectedDivaSlotIndex - 1] > 0)
+					{
+						beforeScene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.DJICAKGOGFO_SubSceneIds[m_selectedDivaSlotIndex - 1] - 1];
+					}
+				}
+				ShowComparisonPopupWindow(beforeScene, sceneInfo, m_divaData);
+			}
+			else if(TransitionName == TransitionList.Type.ASSIST_SELECT)
+			{
+				GCIJNCFDNON beforeScene = m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex);
+				if(beforeScene.BCCHOBPJJKE_SceneId < 1)
+					beforeScene = null;
+				ShowComparisonPopupWindow(beforeScene, sceneInfo, null);
+			}
+			else if(TransitionName == TransitionList.Type.HOME_BG_SELECT)
+			{
+				SceneSelectHomeBgLayout.SetBgType bgType = SceneSelectHomeBgLayout.SetBgType.EvoleOnly;
+				if(!sceneInfo.JOKJBMJBLBB)
+				{
+					bgType = SceneSelectHomeBgLayout.SetBgType.Evole;
+					if(sceneInfo.CGIELKDLHGE_GetEvolveId() == 1)
+						bgType = SceneSelectHomeBgLayout.SetBgType.Undeveloped;
+				}
+				ShowSelectHomeBgPopupWindow(bgType, sceneInfo);
+			}
+			else
+			{
+				sceneInfo.CADENLBDAEB = false;
+				sceneInfo.LEHDLBJJBNC_SetNotNew();
+				m_selectedSceneId = sceneInfo.BCCHOBPJJKE_SceneId;
+				MenuScene.Instance.Call(TransitionList.Type.SCENE_GROWTH, new SceneGrowthSceneArgs(sceneInfo, m_isBeginner), true);
+			}
 		}
 
 		// // RVA: 0x1386BFC Offset: 0x1386BFC VA: 0x1386BFC
@@ -850,7 +998,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1387310 Offset: 0x1387310 VA: 0x1387310
 		private void OnSelectEquipmentScene(int equipmentSlotIndex)
 		{
-			TodoLogger.LogNotImplemented("OnSelectEquipmentScene");
+			if(m_selectedEquipmentSlotIndex == equipmentSlotIndex)
+				return;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_selectedEquipmentSlotIndex = equipmentSlotIndex;
+			m_equipmentScene.SelectSlot(equipmentSlotIndex);
+			m_sceneSelectList.UpdateRemoveButton(m_divaData, m_selectedEquipmentSlotIndex);
+			m_sceneSelectList.SetSelectedSlot(m_selectedEquipmentSlotIndex);
 		}
 
 		// // RVA: 0x13873F4 Offset: 0x13873F4 VA: 0x13873F4
@@ -876,7 +1030,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x138508C Offset: 0x138508C VA: 0x138508C
-		// private bool IsCenterDiva() { }
+		private bool IsCenterDiva()
+		{
+			return m_selectedDivaSlotIndex == 0;
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x72E24C Offset: 0x72E24C VA: 0x72E24C
 		// // RVA: 0x1387B68 Offset: 0x1387B68 VA: 0x1387B68

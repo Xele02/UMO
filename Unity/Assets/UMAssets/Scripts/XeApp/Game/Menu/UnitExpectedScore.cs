@@ -85,7 +85,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12464DC Offset: 0x12464DC VA: 0x12464DC
-		//public void UpdateScore(float viewRatio) { }
+		public void UpdateScore(float viewRatio)
+		{
+			if(m_scoreParams == null)
+				return;
+			m_viewRatio = viewRatio;
+			SetScore(m_scoreRank, m_gaugeRatio, m_rankPosition, m_scoreParams, viewRatio);
+		}
 
 		//// RVA: 0x12463A0 Offset: 0x12463A0 VA: 0x12463A0
 		public void SetScoreRank(ResultScoreRank.Type scoreRank)

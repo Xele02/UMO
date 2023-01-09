@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeSys;
 
+public delegate bool KDMCFCBMAOI(int AHHJLDLAPAN, int LGBDBBFEPGL, int BCCHOBPJJKE);
+public delegate bool BLHOMPPGBMI(int AHHJLDLAPAN, int LGBDBBFEPGL, int BCCHOBPJJKE);
 public class DFKGGBMFFGB
 {
 	private BBHNACPENDM_ServerSaveData LDEGEHAEALK_ServerSave; // 0x8
@@ -147,10 +149,40 @@ public class DFKGGBMFFGB
 	// public bool IFFMDJHENHB(int AHHJLDLAPAN, int IMJIADPJJMM, int BCCHOBPJJKE, bool ILBBPPMLLFM, KDMCFCBMAOI BBEBHGEHMMI, BLHOMPPGBMI NGMPDMCBNJB) { }
 
 	// // RVA: 0x198038C Offset: 0x198038C VA: 0x198038C
-	// public bool POJLFHIAGID(int AHHJLDLAPAN, int LGBDBBFEPGL, int BCCHOBPJJKE) { }
+	public bool POJLFHIAGID(int AHHJLDLAPAN, int LGBDBBFEPGL, int BCCHOBPJJKE)
+	{
+		if(LGBDBBFEPGL == 2)
+		{
+			NBIGLBMHEDC[AHHJLDLAPAN - 1].IFFMDJHENHB(1, BCCHOBPJJKE, false, null, null);
+		}
+		else if(LGBDBBFEPGL == 1)
+		{
+			NBIGLBMHEDC[AHHJLDLAPAN - 1].IFFMDJHENHB(0, BCCHOBPJJKE, false, null, null);
+		}
+		else if(LGBDBBFEPGL == 0)
+		{
+			NBIGLBMHEDC[AHHJLDLAPAN - 1].OKDIEDCGODF(BCCHOBPJJKE, false, null, null);
+		}
+		return true;
+	}
 
 	// // RVA: 0x1980528 Offset: 0x1980528 VA: 0x1980528
-	// public bool HJBAALOOKMO(int AHHJLDLAPAN, int LGBDBBFEPGL, int BCCHOBPJJKE) { }
+	public bool HJBAALOOKMO(int AHHJLDLAPAN, int LGBDBBFEPGL, int BCCHOBPJJKE)
+	{
+		if(LGBDBBFEPGL == 2)
+		{
+			NBIGLBMHEDC[AHHJLDLAPAN - 1].BCEJOOCGBFG(1, false);
+		}
+		else if(LGBDBBFEPGL == 1)
+		{
+			NBIGLBMHEDC[AHHJLDLAPAN - 1].BCEJOOCGBFG(0, false);
+		}
+		else if(LGBDBBFEPGL == 0)
+		{
+			NBIGLBMHEDC[AHHJLDLAPAN - 1].MNBNLONEDPF(false);
+		}
+		return true;
+	}
 
 	// // RVA: 0x1980698 Offset: 0x1980698 VA: 0x1980698
 	// public void LCCKKHFEIGH(int IMJIADPJJMM) { }

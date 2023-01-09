@@ -400,7 +400,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137CE80 Offset: 0x137CE80 VA: 0x137CE80
-		// public void UpdateScore() { }
+		public void UpdateScore()
+		{
+			m_scoreGauge.UpdateScore(m_scoreGauge.UpdateScoreGaugeRatio(m_gaugeRateText, m_scorePlusButton, m_scoreMinusButton));
+		}
 
 		// // RVA: 0x137C5A4 Offset: 0x137C5A4 VA: 0x137C5A4
 		private int GetListCount(List<int> list)
@@ -486,14 +489,23 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x137D614 Offset: 0x137D614 VA: 0x137D614
 		private void OnSelectListItem(int value, SwapScrollListContent content)
 		{
-			TodoLogger.LogNotImplemented("OnSelectListItem");
+			if(value != 0)
+				OnShowSceneStatus(content.Index);
+			else
+				OnSelectScene(content.Index);
 		}
 
 		// // RVA: 0x137D664 Offset: 0x137D664 VA: 0x137D664
-		// private void OnSelectScene(int listIndex) { }
+		private void OnSelectScene(int listIndex)
+		{
+			m_onSelectSceneEvent.Invoke(listIndex);
+		}
 
 		// // RVA: 0x137D6E4 Offset: 0x137D6E4 VA: 0x137D6E4
-		// private void OnShowSceneStatus(int listIndex) { }
+		private void OnShowSceneStatus(int listIndex)
+		{
+			TodoLogger.LogNotImplemented("OnShowSceneStatus");
+		}
 
 		// // RVA: 0x137D764 Offset: 0x137D764 VA: 0x137D764
 		private void OnPushScoreRate(float addRatio)

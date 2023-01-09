@@ -381,7 +381,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF0DDF8 Offset: 0xF0DDF8 VA: 0xF0DDF8
 		private void OnSelectSlot(int slotIndex)
 		{
-			TodoLogger.LogNotImplemented("OnSelectSlot");
+			m_onSelectSlotEvent.Invoke(slotIndex);
 		}
 
 		// // RVA: 0xF0DE78 Offset: 0xF0DE78 VA: 0xF0DE78

@@ -79,7 +79,10 @@ public class GCIJNCFDNON
 	}
 
 	// // RVA: 0x16AB598 Offset: 0x16AB598 VA: 0x16AB598
-	// public void LEHDLBJJBNC() { }
+	public void LEHDLBJJBNC_SetNotNew()
+	{
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[BCCHOBPJJKE_SceneId - 1].LHMOAJAIJCO_New = false;
+	}
 
 	// // RVA: 0x16AB6C8 Offset: 0x16AB6C8 VA: 0x16AB6C8
 	public bool CGKAEMGLHNK()
