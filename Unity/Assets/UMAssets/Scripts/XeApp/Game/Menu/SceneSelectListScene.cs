@@ -924,9 +924,9 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					if(m_divaData.DJICAKGOGFO_SubSceneIds[m_selectedDivaSlotIndex - 1] > 0)
+					if(m_divaData.DJICAKGOGFO_SubSceneIds[m_selectedEquipmentSlotIndex - 1] > 0)
 					{
-						beforeScene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.DJICAKGOGFO_SubSceneIds[m_selectedDivaSlotIndex - 1] - 1];
+						beforeScene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.DJICAKGOGFO_SubSceneIds[m_selectedEquipmentSlotIndex - 1] - 1];
 					}
 				}
 				ShowComparisonPopupWindow(beforeScene, sceneInfo, m_divaData);
