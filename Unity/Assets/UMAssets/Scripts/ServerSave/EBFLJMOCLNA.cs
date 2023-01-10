@@ -156,7 +156,12 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x14F8720 Offset: 0x14F8720 VA: 0x14F8720
-	// public int[,] GODGHFDMAHF() { }
+	public int[,] GODGHFDMAHF()
+	{
+		int[,] res = new int[LCLCCHLDNHJ_Costume.GFIKOEEBIJP, 3];
+		TodoLogger.Log(0, "GODGHFDMAHF");
+		return res;
+	}
 
 	// // RVA: 0x14F8ADC Offset: 0x14F8ADC VA: 0x14F8ADC
 	// public int AAKEPLHPLPL(LCLCCHLDNHJ MFPNGNMFEAL, int NDKJCDGHPLD, int IIELLEPEEFH) { }

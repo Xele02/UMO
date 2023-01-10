@@ -6,7 +6,7 @@ public struct CFHDKAFLNEP
 	public struct OCNHGDCPJDG
 	{
 		public int PBPOLELIPJI_Id; // 0x0
-		public int IFFKEMEOFAE; // 0x4
+		public int IFFKEMEOFAE_EvolveId; // 0x4
 		public int OEOIHIIIMCK_Add; // 0x8
 		public int ADKDHKMPMHP_Rate; // 0xC
 		public int KHDDPKHPJID; // 0x10
@@ -21,7 +21,14 @@ public struct CFHDKAFLNEP
 		//public bool DFIGPDCBAPB { get; } 0x7FC5EC
 
 		//// RVA: 0x7FC600 Offset: 0x7FC600 VA: 0x7FC600
-		//public void JCHLONCMPAJ() { }
+		public void JCHLONCMPAJ()
+		{
+			PBPOLELIPJI_Id = 0;
+			IFFKEMEOFAE_EvolveId = 0;
+			OEOIHIIIMCK_Add = 0;
+			ADKDHKMPMHP_Rate = 0;
+			OGHIOHAACIB = false;
+		}
 
 		// RVA: 0x7FC618 Offset: 0x7FC618 VA: 0x7FC618 Slot: 3
 		public override string ToString()
@@ -48,12 +55,29 @@ public struct CFHDKAFLNEP
 	}
 
 	//// RVA: 0x7FC4D4 Offset: 0x7FC4D4 VA: 0x7FC4D4
-	//public void JCHLONCMPAJ() { }
+	public void JCHLONCMPAJ()
+	{
+		for(int i = 0; i < KOGBMDOONFA.GetLength(0); i++)
+		{
+			for(int j = 0; j < KOGBMDOONFA.GetLength(1); j++)
+			{
+				KOGBMDOONFA[i, j].JCHLONCMPAJ();
+			}
+		}
+		CMCKNKKCNDK.Clear();
+	}
 
 	//// RVA: 0x7FC4DC Offset: 0x7FC4DC VA: 0x7FC4DC
 	public bool CDOCOLOKCJK()
 	{
-		TodoLogger.Log(0, "CDOCOLOKCJK");
+		for(int i = 0; i < KOGBMDOONFA.GetLength(0); i++)
+		{
+			for(int j = 0; j < KOGBMDOONFA.GetLength(1); j++)
+			{
+				if(KOGBMDOONFA[i, j].ADKDHKMPMHP_Rate > 0)
+					return true;
+			}
+		}
 		return false;
 	}
 
