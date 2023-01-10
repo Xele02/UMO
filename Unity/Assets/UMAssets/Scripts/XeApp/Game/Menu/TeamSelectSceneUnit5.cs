@@ -1278,7 +1278,6 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8B940 Offset: 0xA8B940 VA: 0xA8B940
 		private void AdvanceGame()
 		{
-			TodoLogger.MinLog = 9999;
 			bool isNotUpdate = false;
 			if(m_isRaidEvent)
 			{

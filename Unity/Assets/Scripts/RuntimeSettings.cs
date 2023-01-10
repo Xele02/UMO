@@ -106,4 +106,8 @@ class RuntimeSettings : ScriptableObject
 
 	public bool SLiveViewerRequest { get; set; }
 	public bool SLiveViewer { get; set; }
+
+	[Header("Debug")]
+
+	public int MinLog = -9999;
 }
