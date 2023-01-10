@@ -336,6 +336,7 @@ namespace XeApp.Game.Menu
 					{
 						GCIJNCFDNON scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[sceneId - 1];
 						sceneId = scene.BCCHOBPJJKE_SceneId;
+						rank = scene.CGIELKDLHGE_GetEvolveId();
 						isActivate = false;
 						if(scene.DCLLIDMKNGO(f.AHHJLDLAPAN_DivaId))
 						{
