@@ -42,7 +42,21 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	public List<ALECCMCNIBG> KGICDMIJGDF_TargetSkillEffects { get; private set; } // 0x6C LHIOCOLMMNP ENACPBCEBLF KPCDPMGBPAG
 
 	//// RVA: 0x1B904EC Offset: 0x1B904EC VA: 0x1B904EC
-	//public bool JBGPIPLAAIA(int GPBNFOMEDCG, int LFAFFMFOFEG) { }
+	public bool JBGPIPLAAIA(int GPBNFOMEDCG, int LFAFFMFOFEG)
+	{
+		for(int i = 0; i < KGICDMIJGDF_TargetSkillEffects.Count; i++)
+		{
+			if(GPBNFOMEDCG != -1 && GPBNFOMEDCG == KGICDMIJGDF_TargetSkillEffects[i].PPFNGGCBJKC_Id)
+			{
+				for(int j = 0; j < KGICDMIJGDF_TargetSkillEffects[i].LGFLNOJDHHC_SkillBuffEffects.Length; j++)
+				{
+					if (KGICDMIJGDF_TargetSkillEffects[i].LGFLNOJDHHC_SkillBuffEffects[j] == LFAFFMFOFEG)
+						return true;
+				}
+			}
+		}
+		return false;
+	}
 
 	//// RVA: 0x1B906EC Offset: 0x1B906EC VA: 0x1B906EC
 	//public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }

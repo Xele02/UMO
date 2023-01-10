@@ -114,7 +114,7 @@ public class GCIJNCFDNON
 	// // RVA: 0x16AB860 Offset: 0x16AB860 VA: 0x16AB860
 	public bool DCLLIDMKNGO(int AHHJLDLAPAN)
 	{
-		return (AOLIJKMIJJE & (1 << ((AHHJLDLAPAN + 0x1f) & 0x1f))) != 0;
+		return (AOLIJKMIJJE & (1 << (AHHJLDLAPAN - 1))) != 0;
 	}
 
 	// // RVA: 0x16AB880 Offset: 0x16AB880 VA: 0x16AB880
