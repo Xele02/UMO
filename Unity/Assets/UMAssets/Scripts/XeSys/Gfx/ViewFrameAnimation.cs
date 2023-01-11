@@ -52,6 +52,8 @@ namespace XeSys.Gfx
 		// public bool IsColAnim { get; set; } 0x1EE9928 0x1EE6F5C
 		// public bool IsAlphaAnim { get; set; } 0x1EE9950 0x1EE9978
 		// public bool IsCenterAnim { get; set; } 0x1EE99B0 0x1EE6F94
+		public FrameData[] F { get { return data.F; } }
+		public int FrameDataCount { get { return data.FrameDataCount; } }
 
 		// RVA: 0x1EE99D8 Offset: 0x1EE99D8 VA: 0x1EE99D8
 		// public void .ctor(int frameNum) { }

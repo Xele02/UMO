@@ -10,9 +10,28 @@ namespace XeSys.Gfx
 	#if UNITY_EDITOR
 	public class DebugLinkInfo : MonoBehaviour
 	{
+		public GameObject InitializedFrom;
+		[Header("View")]
+		public ViewBase View;
 		public string LayoutId;
 		public string LayoutExId;
+		[Header("Render")]
 		public string shaderName;
+		[Header("Animation")]
+		public bool EnableDebugAnim;
+		public int MaxFrame;
+		public int SetFrame = -1;
+		public FrameData[] FrameData;
+
+		public void Init(ViewBase view, LayoutUGUIRuntime runtime)
+		{
+			View = view;
+			LayoutId = view.ID;
+			LayoutExId = view.EXID;
+			InitializedFrom = runtime.gameObject;
+			MaxFrame = view.FrameAnimation.FrameDataCount;
+			FrameData = view.FrameAnimation.F;
+		}
 
 		void Update()
 		{
@@ -22,6 +41,13 @@ namespace XeSys.Gfx
 				if(img.material != null)
 				{
 					shaderName = ""+img.material.shader.GetInstanceID();
+				}
+			}
+			if(EnableDebugAnim)
+			{
+				if(SetFrame != -1)
+				{
+					View.StartAnimGoStop(SetFrame, SetFrame);
 				}
 			}
 		}
@@ -636,8 +662,7 @@ namespace XeSys.Gfx
 				if(view == null)
 					continue;
 				#if UNITY_EDITOR
-				rt.gameObject.AddComponent<DebugLinkInfo>().LayoutId = view.ID;
-				rt.gameObject.AddComponent<DebugLinkInfo>().LayoutExId = view.EXID;
+				rt.gameObject.AddComponent<DebugLinkInfo>().Init(view, this);
 				#endif
 				if(rt.name.Contains("ScrollbarH") || rt.name.Contains("ScrollbarV"))
 				{
