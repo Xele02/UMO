@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x136A8A0 Offset: 0x136A8A0 VA: 0x136A8A0
 		private bool IsMaxLevel(GCIJNCFDNON sceneData)
 		{
-			return sceneData.CIEOBFIIPLD_SceneLevel > IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA, true, sceneData.MCCIFLKCNKO);
+			return sceneData.CIEOBFIIPLD_SceneLevel > IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed);
 		}
 
 		//// RVA: 0x136A9DC Offset: 0x136A9DC VA: 0x136A9DC
@@ -182,7 +182,7 @@ namespace XeApp.Game.Menu
 					m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
 					return;
 				case DisplayType.EpisodeName:
-					m_sceneIconDecrationBehaviour.SetEpisode(sceneData.KELFCMEOPPM_EpisodeId, sceneData.CIEOBFIIPLD_SceneLevel, IsMaxLevel(sceneData), sceneData.MCCIFLKCNKO);
+					m_sceneIconDecrationBehaviour.SetEpisode(sceneData.KELFCMEOPPM_EpisodeId, sceneData.CIEOBFIIPLD_SceneLevel, IsMaxLevel(sceneData), sceneData.MCCIFLKCNKO_Feed);
 					return;
 				case DisplayType.SecretBoard:
 					val = sceneData.JPIPENJGGDD - 1;
@@ -195,10 +195,10 @@ namespace XeApp.Game.Menu
 					m_sceneIconDecrationBehaviour.SetLuckyLeafCount(sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MNODFKEOPGK());
 					return;
 				case DisplayType.MusicExp:
-					m_sceneIconDecrationBehaviour.SetSpecialNoteAttribute((SpecialNoteAttribute.Type) sceneData.IGPMJPPAILL, sceneData.KMFADKEKPOM);
+					m_sceneIconDecrationBehaviour.SetSpecialNoteAttribute((SpecialNoteAttribute.Type) sceneData.IGPMJPPAILL_Note, sceneData.KMFADKEKPOM_Nx);
 					return;
 			}
-			m_sceneIconDecrationBehaviour.SetValue(val, isShowLevel, isMax, sceneData.MCCIFLKCNKO);
+			m_sceneIconDecrationBehaviour.SetValue(val, isShowLevel, isMax, sceneData.MCCIFLKCNKO_Feed);
 			isVisible = true;
 			m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
 		}

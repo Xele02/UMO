@@ -183,7 +183,7 @@ public class KDHGBOOECKC
 	private bool LONBOKLFGMI; // 0x48
 	// private List<KDHGBOOECKC.NOCAJFGHDPC> JGPJCOCHJFJ; // 0x4C
 	private const int LOKDKGIBOMF = 604800;
-	private string[] JPJADDADKDA = new string[5] { "StringLiteral_12148", "StringLiteral_12149", "StringLiteral_12150", "StringLiteral_12151", "StringLiteral_12152" }; // 0x64
+	private string[] JPJADDADKDA = new string[5] { JpStringLiterals.StringLiteral_12148, JpStringLiterals.StringLiteral_12149, JpStringLiterals.StringLiteral_12150, JpStringLiterals.StringLiteral_12151, JpStringLiterals.StringLiteral_12152 }; // 0x64
 
 	public static KDHGBOOECKC HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
 	public KDHGBOOECKC.NKMCJCAJIGD NKMMJACCHEH { get; private set; } // 0x50 HFADJHMDDMB LJJDDFEFJNC GLBKBOAABOM

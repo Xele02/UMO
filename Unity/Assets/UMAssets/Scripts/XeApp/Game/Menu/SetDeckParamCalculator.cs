@@ -155,12 +155,12 @@ namespace XeApp.Game.Menu
 				logParams.IFHMFONMGPE = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].DDEDANKHHPN_SkillLevel;
 				logParams.AKNKIOKELEP = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].PNHJPCPFNFI_ActiveSkillLevel;
 			}
-			int b = 0;
+			int totalScore = 0;
 			for(int i = 0; i < 10; i++)
 			{
-				b += CMMKCEPBIHI.NDNOLJACLLC((CMMKCEPBIHI.NOJENDEDECD)i);
+				totalScore += CMMKCEPBIHI.NDNOLJACLLC((CMMKCEPBIHI.NOJENDEDECD)i);
 			}
-			logParams.NDKKNEIDCFF = b;
+			logParams.NDKKNEIDCFF_TotalScoreExpected = totalScore;
 			logParams.LPKBGBLIDCE = 0;
 			logParams.OIKJEAEJOME = 0;
 			logParams.LCFAJIELMMF = 0;
@@ -228,7 +228,7 @@ namespace XeApp.Game.Menu
 					if(viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId != 0)
 					{
 						GCIJNCFDNON g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId - 1];
-						IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA, g.MJBODMOLOBC_Luck, g.MKHFCGPJPFI_LimitOverCount);
+						IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_Luck, g.MKHFCGPJPFI_LimitOverCount);
 						AdjustOverLimit(m_tmpLimitOverStatus, g, musicData);
 						limitOverStatus.Add(m_tmpLimitOverStatus);
 					}
@@ -237,7 +237,7 @@ namespace XeApp.Game.Menu
 						if (viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] > 0)
 						{
 							GCIJNCFDNON g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] - 1];
-							IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA, g.MJBODMOLOBC_Luck, g.MKHFCGPJPFI_LimitOverCount);
+							IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_Luck, g.MKHFCGPJPFI_LimitOverCount);
 							AdjustOverLimit(m_tmpLimitOverStatus, g, musicData);
 							limitOverStatus.Add(m_tmpLimitOverStatus);
 						}
@@ -246,7 +246,7 @@ namespace XeApp.Game.Menu
 			}
 			if (friendData == null || friendData.KHGKPKDBMOH() == null)
 				return;
-			IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, friendData.KHGKPKDBMOH().JKGFBFPIMGA, friendData.KHGKPKDBMOH().MJBODMOLOBC_Luck, friendData.KHGKPKDBMOH().MKHFCGPJPFI_LimitOverCount);
+			IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, friendData.KHGKPKDBMOH().JKGFBFPIMGA_Rarity, friendData.KHGKPKDBMOH().MJBODMOLOBC_Luck, friendData.KHGKPKDBMOH().MKHFCGPJPFI_LimitOverCount);
 			AdjustOverLimit(m_tmpLimitOverStatus, friendData.KHGKPKDBMOH(), musicData);
 			limitOverStatus.Add(m_tmpLimitOverStatus);
 		}

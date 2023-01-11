@@ -130,7 +130,7 @@ namespace XeApp.Game.Common
 					return;
 				}
 			}
-			Debug.Log("StringLiteral_14032");
+			Debug.Log(JpStringLiterals.StringLiteral_14032);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73D0A4 Offset: 0x73D0A4 VA: 0x73D0A4

@@ -77,7 +77,7 @@ namespace XeApp.Game.Common
 							{
 								int skillId = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].FILPDDHMKEJ(false, musicData != null ? musicData.FKDCCLPGKDK_JacketAttr : 0, musicData != null ? musicData.AIHCEGFANAM_Serie : 0);
 								bool lives = CheckLiveSkill(musicData, skillId);
-								bool b = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].DCLLIDMKNGO(divaId);
+								bool b = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].DCLLIDMKNGO_IsDivaCompatible(divaId);
 								bool c = i != 0 || index != 0;
 								if (c)
 									b = b & lives;
@@ -282,7 +282,7 @@ namespace XeApp.Game.Common
 						centerLiveSkillRate_ = limitOverStatus.centerLiveSkillRate_SameMusicAttr + limitOverStatus.centerLiveSkillRate + limitOverStatus.centerLiveSkillRate_SameSeriesAttr;
 					}
 				}
-				UnityEngine.Debug.Log(string.Concat(new object[6] { "StringLiteral_13975", excellentRate_ ^ 0xda76a15, ", StringLiteral_13976", excellentScoreAdd_ ^ 0xc0ae7, ", StringLiteral_13977", centerLiveSkillRate_ ^ 0x768078 }));
+				UnityEngine.Debug.Log(string.Concat(new object[6] { JpStringLiterals.StringLiteral_13975, excellentRate_ ^ 0xda76a15, ", " + JpStringLiterals.StringLiteral_13976, excellentScoreAdd_ ^ 0xc0ae7, ", " + JpStringLiterals.StringLiteral_13977, centerLiveSkillRate_ ^ 0x768078 }));
 			}
 
 			// // RVA: 0xE9CDAC Offset: 0xE9CDAC VA: 0xE9CDAC

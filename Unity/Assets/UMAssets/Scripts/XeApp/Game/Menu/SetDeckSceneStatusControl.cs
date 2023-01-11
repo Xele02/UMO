@@ -323,7 +323,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_luckyLeafObject != null)
 			{
-				m_luckyLeafText.text = string.Format("StringLiteral_14007 {0}", count);
+				m_luckyLeafText.text = string.Format(JpStringLiterals.StringLiteral_14007, count);
 				m_luckyLeafPosTbl.SetPosition(0);
 				m_paramCrossFader.Stop(0);
 			}
@@ -332,7 +332,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA74F9C Offset: 0xA74F9C VA: 0xA74F9C
 		private bool IsMaxLevel(GCIJNCFDNON sceneData)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA, true, sceneData.MCCIFLKCNKO) < sceneData.CIEOBFIIPLD_SceneLevel;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed) < sceneData.CIEOBFIIPLD_SceneLevel;
 		}
 
 		// // RVA: 0xA76218 Offset: 0xA76218 VA: 0xA76218
@@ -349,7 +349,7 @@ namespace XeApp.Game.Menu
 		{
 			if (sceneData.FILPDDHMKEJ(false, 0, 0) > 0)
 			{
-				if(sceneData.DCLLIDMKNGO(divaId))
+				if(sceneData.DCLLIDMKNGO_IsDivaCompatible(divaId))
 				{
 					if(musicId > 0)
 					{

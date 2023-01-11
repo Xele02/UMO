@@ -127,7 +127,7 @@ public class BBHNACPENDM_ServerSaveData
 	public const ulong HMBMFBEOLGP_FlagAddMusic =				(ulong)1 << 51;
 	public const ulong FCOIEIKLEIC_FlagGachaLimit =				(ulong)1 << CDBDHHBOBNI_GachaLimit;
 	public static string[] OHNJJIMGKGK_Names = new string[53] {"base", "common", "public_status", "alldata", "diva", "record_music", "scene", "story_record",
-														"unit", "costume", "episode", "valkyrie", "sns", "event_collection", "free_score_max", "StringLiteral_9555",
+														"unit", "costume", "episode", "valkyrie", "sns", "event_collection", "free_score_max", JpStringLiterals.StringLiteral_9555,
 														"quest", "counter", "emblem", "event_score", "adventure", "event_battle", "event_battle_player",
 														"prism", "shop", "event_mission", "event_sp", "event_box_gacha", "ticket", "ar_marker", "event_april_fool",
 														"offer", "monthly_pass", "rareup_item", "limited_item", "save_hash", "bingo", "event_raid", "event_raid_lobby", 

@@ -215,7 +215,7 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 										if(!(JEMMMJEJLNL.GJLBMELKHEM[dbScene.ILABPFOMEAG_Va - 1].JPJNKNOJBMM <= j || m != 0))
 										{
 											m = 0;
-											if(JEMMMJEJLNL.DDGNLCJGFJF(a.PDKGMFHIFML_Pl[k].JBGEEPFKIGG).INDDJNMPONH == 19)
+											if(JEMMMJEJLNL.DDGNLCJGFJF(a.PDKGMFHIFML_Pl[k].JBGEEPFKIGG).INDDJNMPONH_StatType == 19)
 											{
 												m = 1;
 											}

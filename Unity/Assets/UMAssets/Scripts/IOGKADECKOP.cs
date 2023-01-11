@@ -758,7 +758,7 @@ public class IOGKADECKOP
 				NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.FNLNIKFNHAM_ForceRename = true;
 				string str1 = NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_Cont;
 				Debug.LogError("TODO CHECK");
-				if(str1 == "StringLiteral_9806") // StringLiteral_9806 UTF8?
+				if(str1 == JpStringLiterals.StringLiteral_9806)
 				{
 					NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.AFPONJEJKCO_RenameDate = 0;
 				}

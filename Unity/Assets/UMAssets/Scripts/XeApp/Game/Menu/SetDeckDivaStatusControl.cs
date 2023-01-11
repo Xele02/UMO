@@ -121,7 +121,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA6C448 Offset: 0xA6C448 VA: 0xA6C448
 		private void SetInvalidStatusValue()
 		{
-			m_statusValueText.text = "StringLiteral_20367";
+			m_statusValueText.text = JpStringLiterals.StringLiteral_20367;
 		}
 
 		//// RVA: 0xA6C414 Offset: 0xA6C414 VA: 0xA6C414
@@ -157,7 +157,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA6C520 Offset: 0xA6C520 VA: 0xA6C520
 		private void SetInvalidMusicExp()
 		{
-			m_musicExpLevelText.text = "StringLiteral_20367";
+			m_musicExpLevelText.text = JpStringLiterals.StringLiteral_20367;
 			m_musicExpGauge.CurrentValue = 0;
 			m_musicExpGaugeBandObject.SetActive(false);
 			m_musicExpGaugeMaxImage.gameObject.SetActive(false);

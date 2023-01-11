@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 				if(v != 0)
 				{
 					int v2 = g.MEOOLHNNMHL(true, 0, 0);
-					skill = v == v2 ? g.EFELCLMJEOL : g.PFHJFIHGCKP;
+					skill = v == v2 ? g.EFELCLMJEOL_CenterSkillName2 : g.PFHJFIHGCKP_CenterSkillName1;
 					skillLevel = g.DDEDANKHHPN_SkillLevel;
 					skillRank = (SkillRank.Type)(v == v2 ? g.FFDCGHDNDFJ_CenterSkillRank2 : g.DHEFMEGKKDN_CenterSkillRank);
 				}

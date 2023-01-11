@@ -40,11 +40,11 @@ public class CIOECGOMILE
 	private bool NEPILJAJFCC; // 0xAC
 	private bool NFLGAPBIGAD; // 0xAD
 	private bool GPOGFJFGNCA; // 0xAE
-	private static string OHPLHJNCLPH = "StringLiteral_9793"; // 0x18
-	private static string CPBCGKAKDIA = "StringLiteral_9794"; // 0x1C
+	private static string OHPLHJNCLPH = JpStringLiterals.StringLiteral_9793; // 0x18
+	private static string CPBCGKAKDIA = JpStringLiterals.StringLiteral_9794; // 0x1C
 	private static string AJICGGJJNCA = "AP"; // 0x20
-	private static string FNBPIOCLODC = "StringLiteral_9796"; // 0x24
-	private static string FBDLJDOLMNI = "StringLiteral_9797"; // 0x28
+	private static string FNBPIOCLODC = JpStringLiterals.StringLiteral_9796; // 0x24
+	private static string FBDLJDOLMNI = JpStringLiterals.StringLiteral_9797; // 0x28
 
 	public static CIOECGOMILE HHCJCDFCLOB { get; private set; }  // 0x0 LGMPACEDIJF // NKACBOEHELJ OKPMHKNCNAL
 	public BBHNACPENDM_ServerSaveData AHEFHIMGIBI_ServerSave { get; private set; }  // 0x8 LCHHPGMCKJD // GNMGJMDJEGI LGLGNHAMNIK

@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 				if(skillType == SkillType.Live)
 				{
 					int a = sceneData.FILPDDHMKEJ(false, 0, 0);
-					if(a > 0 && sceneData.DCLLIDMKNGO(divaId))
+					if(a > 0 && sceneData.DCLLIDMKNGO_IsDivaCompatible(divaId))
 					{
 						bool b = CheckMatchLiveSkill(sceneData, divaId, musicId);
 						m_skillIconImage.enabled = true;
@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 		{
 			if(sceneData.FILPDDHMKEJ(false, 0, 0) > 0)
 			{
-				if(sceneData.DCLLIDMKNGO(divaId))
+				if(sceneData.DCLLIDMKNGO_IsDivaCompatible(divaId))
 				{
 					if(musicId > 0)
 					{

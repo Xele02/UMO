@@ -494,12 +494,12 @@ namespace XeApp.Game.Menu
 					{
 						GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_centerSkillRankImage[1], (SkillRank.Type)m_mainScene.DHEFMEGKKDN_CenterSkillRank);
 						m_centerSkillEffectText[1].text = m_mainScene.IHLINMFMCDN(false);
-						m_centerSkillNameText[1].text = m_mainScene.PFHJFIHGCKP;
+						m_centerSkillNameText[1].text = m_mainScene.PFHJFIHGCKP_CenterSkillName1;
 						if(aa > 0)
 						{
 							GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_centerSkillRankImage[0], (SkillRank.Type)m_mainScene.FFDCGHDNDFJ_CenterSkillRank2);
 							m_centerSkillEffectText[0].text = m_mainScene.IHLINMFMCDN(true);
-							m_centerSkillNameText[0].text = m_mainScene.EFELCLMJEOL;
+							m_centerSkillNameText[0].text = m_mainScene.EFELCLMJEOL_CenterSkillName2;
 						}
 					}
 				}
@@ -523,8 +523,8 @@ namespace XeApp.Game.Menu
 			else
 			{
 				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_activeSkillRankImage, (SkillRank.Type) m_mainScene.BEKGEAMJGEN);
-				m_activeSkillEffectText.text = m_mainScene.PCMEMHPDABG().Replace("StringLiteral_20382", string.Format("<color={0}>StringLiteral_20383</color>", SystemTextColor.ImportantColor));
-				m_activeSkillNameText.text = m_mainScene.ILCLGGPHHJO;
+				m_activeSkillEffectText.text = m_mainScene.PCMEMHPDABG().Replace(JpStringLiterals.StringLiteral_20382, string.Format(" <color={0}>StringLiteral_20383</color>", SystemTextColor.ImportantColor));
+				m_activeSkillNameText.text = m_mainScene.ILCLGGPHHJO_ActiveSkillName;
 				m_activeSkillLevelText.text = string.Format("Lv{0}", m_mainScene.PNHJPCPFNFI_ActiveSkillLevel);
 				m_activeSkill.SetActive(true);
 				m_activeSkillInvalid.SetActive(false);

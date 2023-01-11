@@ -247,7 +247,7 @@ namespace XeApp.Game.Menu
 				//0x1264CAC
 				if (type == PopupButton.ButtonType.Negative)
 					return;
-				ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD("StringLiteral_15651", 0, false, false, 1);
+				ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD(JpStringLiterals.StringLiteral_15651, 0, false, false, 1);
 				SwapDiva(unit, beforeDiva, afterDiva, slot);
 				if(afterDiva != null)
 				{

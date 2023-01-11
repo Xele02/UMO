@@ -277,7 +277,7 @@ namespace XeApp.Game.Menu
 			friendManager.CHAILEPDOPJ(query, query2, query3, () =>
 			{
 				//0xE2DFEC
-				UnityEngine.Debug.Log("StringLiteral_16339 got friend : " + friendManager.BFDEHIANFOG.Count);
+				UnityEngine.Debug.Log(JpStringLiterals.StringLiteral_16339 + friendManager.BFDEHIANFOG.Count);
 				for(int i = 0; i < friendManager.BFDEHIANFOG.Count; i++)
 				{
 					EAJCBFGKKFA data = new EAJCBFGKKFA();
@@ -288,7 +288,7 @@ namespace XeApp.Game.Menu
 			}, (CACGCMBKHDI_Request error) =>
 			{
 				//0xE2DF0C
-				UnityEngine.Debug.Log("StringLiteral_16338 Error getting friends");
+				UnityEngine.Debug.Log(JpStringLiterals.StringLiteral_16338);
 				MenuScene.Instance.InputEnable();
 			}, (CACGCMBKHDI_Request error) =>
 			{

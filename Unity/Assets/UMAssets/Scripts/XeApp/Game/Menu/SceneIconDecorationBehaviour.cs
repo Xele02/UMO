@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 			m_texts[1].enabled = value > 0 && isVisible;
 			m_texts[1].color = new Color(1, 1, 1, 1);
 
-			m_strBuilder.SetFormat("StringLiteral_20290 {0}", leafCount);
+			m_strBuilder.SetFormat(JpStringLiterals.StringLiteral_20290, leafCount);
 			m_texts[4].text = m_strBuilder.ToString();
 			m_texts[4].enabled = leafCount > 0 && isVisible;
 			if(m_texts[4].enabled)
@@ -170,7 +170,7 @@ namespace XeApp.Game.Menu
 			{
 				m_skillImages[i].enabled = false;
 			}
-			m_strBuilder.SetFormat("StringLiteral_20290 {0}", leafCount);
+			m_strBuilder.SetFormat(JpStringLiterals.StringLiteral_20290, leafCount);
 			m_texts[0].text = m_strBuilder.ToString();
 			m_texts[0].enabled = leafCount > 0;
 			isShowLeaf = false;

@@ -19,8 +19,8 @@ public class NHPDPKHMFEP
 	
 	private const long HEJACPECLEH = 9223372036854775807;
 	public static bool KKCKPHAFBDO = false; // 0x4
-	public static string JHGKHBGAJJJ = "StringLiteral_9874"; // 0x8
-	public static string JKKDACNKPCP = "StringLiteral_9874"; // 0xC
+	public static string JHGKHBGAJJJ = JpStringLiterals.StringLiteral_9874; // 0x8
+	public static string JKKDACNKPCP = JpStringLiterals.StringLiteral_9874; // 0xC
 	public CJDLIFEENBF KCKKCNPGMDC; // 0x8
 	private bool HNNAJBJCNEJ; // 0xC
 	// private JAILOEFCNJP.BEBLECKOAPK MKBOKLLDCFI; // 0x10

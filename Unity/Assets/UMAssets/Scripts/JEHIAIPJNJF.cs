@@ -283,16 +283,16 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 				string logTxt = "";
 				if(KJIGCCPJBFK_List.Count == 0)
 				{
-					//logTxt = "StringLiteral_11859";
+					//logTxt = JpStringLiterals.StringLiteral_11859;
 				}
 				else
 				{
-					//logTxt = "StringLiteral_11860" + EMAEFFGBFIB;
+					//logTxt = JpStringLiterals.StringLiteral_11860 + EMAEFFGBFIB;
 					EMAEFFGBFIB = EMAEFFGBFIB + 1;
 					if(EMAEFFGBFIB < GKJDDNOBIPM)
 						return;
-					// log StringLiteral_11861
-					// log StringLiteral_11862
+					// log JpStringLiterals.StringLiteral_11861
+					// log JpStringLiterals.StringLiteral_11862
 					int numInstaller = KJIGCCPJBFK_List.Count;
 					while(KJIGCCPJBFK_List.Count > 0)
 					{
@@ -307,8 +307,8 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 						}
 						CICJCFPNCNO.Add(wi);
 					}
-					//log StringLiteral_11863
-					for(int i = 0; i < numInstaller; i++)
+					//log JpStringLiterals.StringLiteral_11863
+					for (int i = 0; i < numInstaller; i++)
 					{
 						CriFsWebInstaller installer = new CriFsWebInstaller();
 						JEHIAIPJNJF_FileDownloader.AFGDFAJEBFA_DldInfo info = new JEHIAIPJNJF_FileDownloader.AFGDFAJEBFA_DldInfo();

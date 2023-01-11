@@ -7,7 +7,7 @@ public class JHHBAFKMBDL
 	private static bool KKOBJLMKOJH = false; // 0x4
 	public static JHHBAFKMBDL HHCJCDFCLOB; // 0x8
 	private Func<bool> HDGDDJDCNGE; // 0x8
-	private static string[] ECLAOLBGCDD = new string[6] {"<color=red>\n(", ")</color>", "saka_error", "0000", "update_error", "StringLiteral_11992"}; // 0xC
+	private static string[] ECLAOLBGCDD = new string[6] {"<color=red>\n(", ")</color>", "saka_error", "0000", "update_error", JpStringLiterals.StringLiteral_11992}; // 0xC
 
 	// // RVA: 0xB1DEA0 Offset: 0xB1DEA0 VA: 0xB1DEA0
 	public void IJBGPAENLJA_Start(MonoBehaviour DANMJLOBLIE)

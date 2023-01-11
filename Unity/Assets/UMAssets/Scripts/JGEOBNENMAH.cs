@@ -30,7 +30,7 @@ public class JGEOBNENMAH
 		public int APPEPDLOPAA; // 0x48
 		public int LHBINHCMEDA; // 0x4C
 		public int BPNAAEDJGPC; // 0x50
-		public int NDKKNEIDCFF; // 0x54
+		public int NDKKNEIDCFF_TotalScoreExpected; // 0x54
 		public int IFHMFONMGPE; // 0x58
 		public int AKNKIOKELEP; // 0x5C
 		public int LPKBGBLIDCE; // 0x60

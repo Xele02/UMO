@@ -158,7 +158,7 @@ namespace XeApp.Game.Common
 				}
 				else
 				{
-					LogError(string.Format("StringLiteral_13620 {0}", type));
+					LogError(string.Format(JpStringLiterals.StringLiteral_13620, type));
 				}
 			}
 			else

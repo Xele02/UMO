@@ -248,7 +248,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						if(scene != null && scene.DCLLIDMKNGO(selectedDiva.AHHJLDLAPAN_DivaId) && scene.FILPDDHMKEJ(false, 0, 0) > 0)
+						if(scene != null && scene.DCLLIDMKNGO_IsDivaCompatible(selectedDiva.AHHJLDLAPAN_DivaId) && scene.FILPDDHMKEJ(false, 0, 0) > 0)
 						{
 							if(!SetDeckSkillIconControl.CheckMatchLiveSkill(scene, selectedDiva.AHHJLDLAPAN_DivaId, musicData != null ? musicData.DLAEJOBELBH_MusicId : 0))
 							{
@@ -307,7 +307,7 @@ namespace XeApp.Game.Menu
 						if (!m_isSelectedCenterDiva)
 						{
 							isCompatible = false;
-							if (scene.DCLLIDMKNGO(f.AHHJLDLAPAN_DivaId))
+							if (scene.DCLLIDMKNGO_IsDivaCompatible(f.AHHJLDLAPAN_DivaId))
 							{
 								isCompatible = false;
 								if (scene.FILPDDHMKEJ(false, 0, 0) > 0)
@@ -338,7 +338,7 @@ namespace XeApp.Game.Menu
 						sceneId = scene.BCCHOBPJJKE_SceneId;
 						rank = scene.CGIELKDLHGE_GetEvolveId();
 						isActivate = false;
-						if(scene.DCLLIDMKNGO(f.AHHJLDLAPAN_DivaId))
+						if(scene.DCLLIDMKNGO_IsDivaCompatible(f.AHHJLDLAPAN_DivaId))
 						{
 							isActivate = false;
 							if (scene.FILPDDHMKEJ(false, 0, 0) > 0)

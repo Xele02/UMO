@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 			}).ToArray();
 			scrollSupporter = t.Find("sw_item_area (AbsoluteLayout)/item_area (ScrollView)").GetComponent<LayoutUGUIScrollSupport>();
 			layoutZeroItem = layoutMain.FindViewById("sw_nonitem_in_anim") as AbsoluteLayout;
-			t.Find("sw_nonitem_in_anim (AbsoluteLayout)/sw_nonitem (AbsoluteLayout)/nonitem (TextView)").GetComponent<Text>().text = "StringLiteral_17777";
+			t.Find("sw_nonitem_in_anim (AbsoluteLayout)/sw_nonitem (AbsoluteLayout)/nonitem (TextView)").GetComponent<Text>().text = JpStringLiterals.StringLiteral_17777;
 			layoutUCRoot = layoutMain.FindViewById("sw_getuc_set") as AbsoluteLayout;
 			numberTotalUC = t.Find("sw_getuc_set (AbsoluteLayout)").Find("sw_getuc_anim (AbsoluteLayout)/swnum_uc (AbsoluteLayout)").GetComponent<NumberBase>();
 			textConvertUC = t.Find("sw_getuc_set (AbsoluteLayout)").Find("sw_ucitemtxt (AbsoluteLayout)/ucitem (TextView)").GetComponent<Text>();

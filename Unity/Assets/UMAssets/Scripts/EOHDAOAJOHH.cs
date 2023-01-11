@@ -7,7 +7,7 @@ public class EOHDAOAJOHH
 	private static sbyte[] AKCBIJHIOGH = new sbyte[0x18] {0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x01, 0x01, 0x02, 0x02, 0x02, 0x02,
   0x03, 0x03, 0x03, 0x03, 0x04, 0x04, 0x04, 0x04, 0x05, 0x05, 0x05, 0x05}; // 0x4
 	// private OJIHOFLJOMK KGCCNEBMHMM; // 0x8
-	private static string[] OBAFHIJBOJP = new string[3] {"StringLiteral_10309", "StringLiteral_10309", "StringLiteral_10310"}; // 0xC
+	private static string[] OBAFHIJBOJP = new string[3] {JpStringLiterals.StringLiteral_10309, JpStringLiterals.StringLiteral_10309, JpStringLiterals.StringLiteral_10310}; // 0xC
 	private const long KMBNMDMFDMB = 5;
 
 	// public static int OOLEIEJLHGJ { get; } // KCGOAPBNDPP 0xFB756C

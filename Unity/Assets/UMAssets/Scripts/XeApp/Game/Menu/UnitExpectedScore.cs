@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 			{
 				if(a == 0)
 				{
-					gaugeText.text = string.Format("{0}\n%", string.Format("StringLiteral_20369{0}", 0));
+					gaugeText.text = string.Format("{0}\n%", string.Format(JpStringLiterals.StringLiteral_20369, 0));
 				}
 				else
 				{

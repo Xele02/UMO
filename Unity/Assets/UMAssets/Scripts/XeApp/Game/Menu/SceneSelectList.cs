@@ -316,7 +316,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							if(sceneInfo.DCLLIDMKNGO(divaData.AHHJLDLAPAN_DivaId))
+							if(sceneInfo.DCLLIDMKNGO_IsDivaCompatible(divaData.AHHJLDLAPAN_DivaId))
 							{
 								if(sceneInfo.FILPDDHMKEJ(false, 0, 0) > 0)
 									isCompatible = true;
@@ -442,7 +442,7 @@ namespace XeApp.Game.Menu
 			int res = sceneData.CADENLBDAEB ? 1 : 0;
 			if(IsUnitScene(playerData, sceneData, isGoDiva))
 				res |= 2;
-			if(sceneData.MCCIFLKCNKO)
+			if(sceneData.MCCIFLKCNKO_Feed)
 				res |= 8;
 			if(sceneData.BCCHOBPJJKE_SceneId == JKHEOEEPBMJ.AGHGOOBIGDI_GetHomeSceneId())
 				res |= 16;

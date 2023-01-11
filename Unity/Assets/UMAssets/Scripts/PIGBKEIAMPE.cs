@@ -63,8 +63,13 @@ public class PIGBKEIAMPE_FriendManager
 	private long GBLOMHMEMIC; // 0x70
 	private bool LNHFLJBGGJB_IsSearching; // 0x78
 	private uint PMBEODGMMBB = 0x15ab17a1; // 0x7C
-	private static string[] ANELGKCJBAA = new string[5] { "StringLiteral_13101", "StringLiteral_13102", "StringLiteral_13103",
-                                                        "StringLiteral_13104", "StringLiteral_13105" }; // 0x14
+	private static string[] ANELGKCJBAA = new string[5] {
+		JpStringLiterals.StringLiteral_13101,
+		JpStringLiterals.StringLiteral_13102,
+		JpStringLiterals.StringLiteral_13103,
+		JpStringLiterals.StringLiteral_13104,
+		JpStringLiterals.StringLiteral_13105
+	}; // 0x14
 	public static bool DDNKBFMAHIB = false; // 0x18
 
 	public bool PLOOEECNHFB_IsSuccess { get; private set; } // 0x8 MGFBAEDOIDD JFOKBBLFMLD EDBGNGILAKA
@@ -320,8 +325,8 @@ public class PIGBKEIAMPE_FriendManager
 							IBIGBMDANNM data2 = new IBIGBMDANNM();
 							data2.AHEFHIMGIBI_ServerData = data;
 							data2.MLPEHNBNOGD_Id = -1;
-							data2.LBODHBDOMGK = "StringLiteral_9806";
-							data2.LFKJNMFFCLH_LastLoginString = "StringLiteral_13106";
+							data2.LBODHBDOMGK = JpStringLiterals.StringLiteral_9806;
+							data2.LFKJNMFFCLH_LastLoginString = JpStringLiterals.StringLiteral_13106;
 							data2.PDJEMLMOEPF_DivaId = 1;
 							data2.FCKJJGIMPPI = 1;
 							throw new SerchGuestNotFoundException("from=" + PFDAJGNEBJM.IDLHJIOMJBK_SakashoCriteria.NumberFrom + ",to=" + PFDAJGNEBJM.IDLHJIOMJBK_SakashoCriteria.NumberTo);

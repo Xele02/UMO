@@ -1500,7 +1500,7 @@ namespace Cryptor
             {
                 if(isInitialized)
                 {
-                    Debug.LogWarning("StringLiteral_8278 (dsfd alread initialzed ?");
+                    Debug.LogWarning(JpStringLiterals.StringLiteral_8278);
                     return false;
                 }
                 isInitialized = true;
@@ -1521,7 +1521,7 @@ namespace Cryptor
 				isInitialized = false;
 				return;
 			}
-			UnityEngine.Debug.LogWarning("StringLiteral_8280 DsfdLoader not initialized");
+			UnityEngine.Debug.LogWarning(JpStringLiterals.StringLiteral_8280);
 		}
 
         // // RVA: 0x2BAF080 Offset: 0x2BAF080 VA: 0x2BAF080

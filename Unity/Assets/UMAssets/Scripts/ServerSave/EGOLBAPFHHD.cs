@@ -324,9 +324,9 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	private byte[] KEIIOKGGEOJ_ShowAnketo = new byte[8]; // 0x234
 	private byte[] NOMENBABPBK_ShowUnitLiveAdd = new byte[500]; // 0x238
 	private byte[] DJEBJLIHDJH_ShowLine6Add = new byte[250]; // 0x23C
-	public static string PMOJBGHJALI = "StringLiteral_10040"; // 0x0
-	public static string ILDBPMEIMFP = "StringLiteral_10041"; // 0x4
-	public static string EIIGCNIGEMI = "StringLiteral_10042"; // 0x8
+	public static string PMOJBGHJALI = JpStringLiterals.StringLiteral_10040; // 0x0
+	public static string ILDBPMEIMFP = JpStringLiterals.StringLiteral_10041; // 0x4
+	public static string EIIGCNIGEMI = JpStringLiterals.StringLiteral_10042; // 0x8
 	private string LKLIDCMCCCG_MusicBookmarkName1 = PMOJBGHJALI; // 0x240
 	private string CHNPJHGCAOP_MusicBookmarkName2 = ILDBPMEIMFP; // 0x244
 	private string JMIHCFPDPFP_MusicBookmarkName3 = EIIGCNIGEMI; // 0x248

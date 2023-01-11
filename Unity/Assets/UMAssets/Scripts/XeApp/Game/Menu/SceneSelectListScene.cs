@@ -189,7 +189,7 @@ namespace XeApp.Game.Menu
 					{
 						if(episodeId == 0)
 						{
-							if(!scene.MCCIFLKCNKO)
+							if(!scene.MCCIFLKCNKO_Feed)
 							{
 								if(isBonus)
 								{
@@ -204,8 +204,8 @@ namespace XeApp.Game.Menu
 								if(PopupSortMenu.IsRarityFilterOn(scene.EKLIPGELKCL_SceneRarity, rarityFilterBit) && 
 									PopupSortMenu.IsAttributeFilterOn(scene.JGJFIJOCPAG_SceneAttr, attributeFilterBit) && 
 									PopupSortMenu.IsSerializeFilterOn((int)scene.AIHCEGFANAM_SceneSeries, seriaseFilterBit) && 
-									PopupSortMenu.IsCompatibleFilterOn(scene.AOLIJKMIJJE, compatibleFilterBit) && 
-									PopupSortMenu.IsNotesFilterOn(scene.IGPMJPPAILL, notesFilterBit) && 
+									PopupSortMenu.IsCompatibleFilterOn(scene.AOLIJKMIJJE_DivaCompatible, compatibleFilterBit) && 
+									PopupSortMenu.IsNotesFilterOn(scene.IGPMJPPAILL_Note, notesFilterBit) && 
 									PopupSortMenu.IsSkillRangeFilterOn(scene.BJJNCCGPBGN, lskillRangeFilerBit) && 
 									PopupSortMenu.IsSkillRankFilterOn(scene.DHEFMEGKKDN_CenterSkillRank, scene.FFDCGHDNDFJ_CenterSkillRank2, cskillRankFilerBit, true, scene, m_musicBaseData) &&
 									PopupSortMenu.IsSkillRankFilterOn(scene.BEKGEAMJGEN, scene.BEKGEAMJGEN, askillRankFilerBit) && 
@@ -217,7 +217,7 @@ namespace XeApp.Game.Menu
 								{
 									if(m_rarityRestriction > 0)
 									{
-										if(scene.JKGFBFPIMGA < m_rarityRestriction)
+										if(scene.JKGFBFPIMGA_Rarity < m_rarityRestriction)
 											continue;
 									}
 									m_sceneIndexList.Add(i);
@@ -359,7 +359,7 @@ namespace XeApp.Game.Menu
 							{
 								ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO, 2, false);
 							}
-							ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD("StringLiteral_15651", 0, false, false, 1);
+							ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD(JpStringLiterals.StringLiteral_15651, 0, false, false, 1);
 						}
 						else
 						{
@@ -941,7 +941,7 @@ namespace XeApp.Game.Menu
 			else if(TransitionName == TransitionList.Type.HOME_BG_SELECT)
 			{
 				SceneSelectHomeBgLayout.SetBgType bgType = SceneSelectHomeBgLayout.SetBgType.EvoleOnly;
-				if(!sceneInfo.JOKJBMJBLBB)
+				if(!sceneInfo.JOKJBMJBLBB_Single)
 				{
 					bgType = SceneSelectHomeBgLayout.SetBgType.Evole;
 					if(sceneInfo.CGIELKDLHGE_GetEvolveId() == 1)

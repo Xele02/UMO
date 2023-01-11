@@ -31,7 +31,7 @@ namespace XeApp.Game.Common
 			}
 			if(multi > 0)
 			{
-				orgName = "StringLiteral_13959" + orgName;
+				orgName = JpStringLiterals.StringLiteral_13959 + orgName;
 			}
 			return orgName;
 		}

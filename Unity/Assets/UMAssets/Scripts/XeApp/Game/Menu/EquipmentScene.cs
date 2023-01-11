@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						if(!sceneInfo.DCLLIDMKNGO(divaId))
+						if(!sceneInfo.DCLLIDMKNGO_IsDivaCompatible(divaId))
 						{
 							SetSkillTypeIcon(SceneIconScrollContent.SkillIconType.Live, i * 2);
 						}
