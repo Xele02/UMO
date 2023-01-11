@@ -61,7 +61,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			totalComboCount = musicData.musicScoreData.CalcComboLimit();
 			musicLevel = db.IBPAFKKEKNK_Music.ALJFMLEJEHH_GetMusicScore(wavId, variationId, (int)diff, line6, true).ANAJIAENLNB_F_pt;
-			musicLevelBonusRate = db.HNMMJINNHII_Game.ADBELGIDIEN(musicLevel, line6) / 1000.0f;
+			musicLevelBonusRate = db.HNMMJINNHII_Game.ADBELGIDIEN_GetProgress(musicLevel, line6) / 1000.0f;
 			baseNoteScore = musicLevelBonusRate * teamScoreBonusValue / totalComboCount;
 			scoreNotesValue = musicLevelBonusRate * teamScoreBonusValue / db.HNMMJINNHII_Game.GAHIBKLEDBF((int)diff, line6);
 			currentScore = 0;

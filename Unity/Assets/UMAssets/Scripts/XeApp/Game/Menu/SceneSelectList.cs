@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using XeSys;
 using System.Collections;
 using XeApp.Core;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -394,8 +395,8 @@ namespace XeApp.Game.Menu
 					rankPosition[i] = CMMKCEPBIHI.GPCKPNJGANO((ResultScoreRank.Type)i);
 				}
 				m_scoreGaugeLayout.StartChildrenAnimGoStop("01");
-				float f = m_scoreGauge.UpdateScoreGaugeRatio(m_gaugeRateText, m_scorePlusButton, m_scoreMinusButton);
-				m_scoreGauge.SetScore(CMMKCEPBIHI.KHCOOPDAGOE_ScoreRank, CMMKCEPBIHI.FDLECNKJCGG_GaugeRatio, rankPosition, scoreParams, f);
+				float viewratio = m_scoreGauge.UpdateScoreGaugeRatio(m_gaugeRateText, m_scorePlusButton, m_scoreMinusButton);
+				m_scoreGauge.SetScore(CMMKCEPBIHI.KHCOOPDAGOE_ScoreRank, CMMKCEPBIHI.FDLECNKJCGG_GaugeRatio, rankPosition, scoreParams, viewratio);
 			}
 		}
 
@@ -510,7 +511,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x137D764 Offset: 0x137D764 VA: 0x137D764
 		private void OnPushScoreRate(float addRatio)
 		{
-			TodoLogger.LogNotImplemented("OnPushScoreRate");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			UnitExpectedScore.baseGaugeScale += addRatio;
+			float viewRatio = m_scoreGauge.UpdateScoreGaugeRatio(m_gaugeRateText, m_scorePlusButton, m_scoreMinusButton);
+			m_scoreGauge.UpdateScore(viewRatio);
 		}
 
 		// // RVA: 0x137D858 Offset: 0x137D858 VA: 0x137D858

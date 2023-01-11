@@ -50,7 +50,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	private List<int> OHNJBOFLCOL_DMis { get; set; } // 0x38 JDBEGBDCANJ PCAHFKBLGBJ JFAEDDLHHHL
 	private List<int> HHCDCEOJCIH_DBad { get; set; } // 0x3C DONDJBIKOCG EKPHGCGNCGI LLJMJOEFGLP
 	private List<int> IMIMFIKCFMK_Heal { get; set; } // 0x40 DJAGACPHFMG JJLBDIGMIFG DJPJFOHDGPL
-	private List<int> PIBHLAMOJNH { get; set; } // 0x44 NOBIPOAKIBM JFMJEIEAFMA MPKGHIGNGDK
+	private List<int> PIBHLAMOJNH_Progress6Line { get; set; } // 0x44 NOBIPOAKIBM JFMJEIEAFMA MPKGHIGNGDK
 	private List<int> CAIAODFECPC { get; set; } // 0x48 NDDBGDLPCDF LJINEDABLGC LEOCPDDOCKJ
 	private List<int> KGJDEFCEEAB { get; set; } // 0x4C PEDJMMGILOO JDDGFDDHIOE NPJPJJNFPIF
 	private List<int> PLMFEFIIBFL { get; set; } // 0x50 JFPBFCMFLFN NCNPOOEDFKJ LBMIPPEIKIM
@@ -90,7 +90,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	public Dictionary<string, int> OHJFBLFELNK { get; private set; } // 0x14C KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
 
 	// // RVA: 0xDA0338 Offset: 0xDA0338 VA: 0xDA0338
-	public int ADBELGIDIEN(int ANAJIAENLNB_MusicLevel, bool GIKLNODJKFK_IsLine6)
+	public int ADBELGIDIEN_GetProgress(int ANAJIAENLNB_MusicLevel, bool GIKLNODJKFK_IsLine6)
 	{
 		if(!GIKLNODJKFK_IsLine6)
 		{
@@ -98,7 +98,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		}
 		else
 		{
-			return PIBHLAMOJNH[ANAJIAENLNB_MusicLevel - 1];
+			return PIBHLAMOJNH_Progress6Line[ANAJIAENLNB_MusicLevel - 1];
 		}
 	}
 
@@ -364,7 +364,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		PDNEMDIEGFB_JudgeCoef = new List<int>(5);
 		HPEFFMGGIBC_Spn = new List<KLJCBKMHKNK>();
 		JKPKJKFJDGL_Progress = new List<int>(25);
-		PIBHLAMOJNH = new List<int>(25);
+		PIBHLAMOJNH_Progress6Line = new List<int>(25);
 		EKONPEGLAND_PrsSt = new List<int>();
 		ILIEHCECHOA_PrsEd = new List<int>();
 		NPNCNFKCIAE_RelSt = new List<int>();
@@ -524,14 +524,14 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 			}
 		}
 		JKPKJKFJDGL_Progress.Clear();
-		PIBHLAMOJNH.Clear();
+		PIBHLAMOJNH_Progress6Line.Clear();
 		{
 			uint[] array1 = reader.GPCCCPHPDNL;
 			uint[] array2 = reader.BOFDLPNBGOJ;
 			for(int i = 0;i < array1.Length; i++)
 			{
 				JKPKJKFJDGL_Progress.Add((int)array1[i]);
-				PIBHLAMOJNH.Add((int)array2[i]);
+				PIBHLAMOJNH_Progress6Line.Add((int)array2[i]);
 			}
 		}
 		{

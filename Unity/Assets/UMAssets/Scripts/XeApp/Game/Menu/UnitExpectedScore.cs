@@ -139,7 +139,7 @@ namespace XeApp.Game.Menu
 			{
 				minusButton.Disable = a < -49;
 			}
-			return Mathf.Max(0.0001f, defaultAddGaugeRatio + baseGaugeRatio);
+			return Mathf.Max(0.0001f, baseGaugeScale + baseGaugeRatio);
 		}
 
 		//// RVA: 0x12468F4 Offset: 0x12468F4 VA: 0x12468F4 Slot: 5
