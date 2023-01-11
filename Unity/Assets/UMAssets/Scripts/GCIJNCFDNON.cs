@@ -85,8 +85,13 @@ public class GCIJNCFDNON
 	}
 
 	// // RVA: 0x16AB6C8 Offset: 0x16AB6C8 VA: 0x16AB6C8
-	public bool CGKAEMGLHNK()
+	public bool CGKAEMGLHNK_IsUnlocked(bool checkCheat = false)
 	{
+		if(checkCheat && RuntimeSettings.CurrentSettings.ForceCardsUnlock)
+		{
+			MLIBEPGADJH_Scene.KKLDOOJBJMN k = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA[BCCHOBPJJKE_SceneId - 1];
+			return k.PPEGAKEIEGM_En == 2;
+		}
 		return NPHOIEOPIJO != 0;
 	}
 

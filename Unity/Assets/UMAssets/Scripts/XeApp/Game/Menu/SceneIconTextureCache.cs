@@ -315,7 +315,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < playerData.OPIBAPEGCLA_Scenes.Count; i++)
 			{
-				if(playerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK() || RuntimeSettings.CurrentSettings.ForceCardsUnlock)
+				if(playerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked(true))
 				{
 					TryInstall(playerData.OPIBAPEGCLA_Scenes[i].BCCHOBPJJKE_SceneId, playerData.OPIBAPEGCLA_Scenes[i].CGIELKDLHGE_GetEvolveId());
 				}

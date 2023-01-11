@@ -185,7 +185,7 @@ namespace XeApp.Game.Menu
 				GCIJNCFDNON scene = PlayerData.OPIBAPEGCLA_Scenes[i];
 				if(sceneDb.FGNJBMPDBLO_IsSceneValid(scene.BCCHOBPJJKE_SceneId))
 				{
-					if(scene.CGKAEMGLHNK() || RuntimeSettings.CurrentSettings.ForceCardsUnlock)
+					if(scene.CGKAEMGLHNK_IsUnlocked(true))
 					{
 						if(episodeId == 0)
 						{

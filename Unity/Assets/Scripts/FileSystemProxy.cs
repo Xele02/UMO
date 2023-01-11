@@ -31,6 +31,7 @@ static class FileSystemProxy
 			}
 			else
 			{
+				UnityEngine.Debug.LogError("Error finding file source name "+url);
 				return "";
 			}
 		}

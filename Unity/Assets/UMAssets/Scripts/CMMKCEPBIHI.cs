@@ -581,7 +581,7 @@ public static class CMMKCEPBIHI
 				int enabled = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA[sceneInfo.BCCHOBPJJKE_SceneId - 1].PPEGAKEIEGM_En;
 				if(enabled == 2)
 				{
-					if((sceneInfo.CGKAEMGLHNK() || RuntimeSettings.CurrentSettings.ForceCardsUnlock) && !sceneInfo.MCCIFLKCNKO_Feed)
+					if(sceneInfo.CGKAEMGLHNK_IsUnlocked(true) && !sceneInfo.MCCIFLKCNKO_Feed)
 					{
 						bool isSub = false;
 						for(int j = 0; j < MLAFAACKKBG.BCJEAJPLGMB_MainDivas.Count; j++)
