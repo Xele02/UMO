@@ -1431,10 +1431,6 @@ namespace XeApp.Game.Menu
 			OnClickAnyButtons();
 			if (m_dispType == DispType.CurrentUnit)
 			{
-				//TMP
-				TodoLogger.LogNotImplemented("OnClickValkyrieButton");
-				return;
-				// TMP
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				ValkyrieDataArgs arg = new ValkyrieDataArgs();
 				arg.isGoDiva = m_isGoDivaEvent;
