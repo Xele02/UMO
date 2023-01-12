@@ -71,6 +71,7 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceCostumeUnlock = true;
 	public bool ForceSongUnlock = true;
 	public bool ForceCardsUnlock = true;
+	public bool ForceValkyrieUnlock = true;
 	public bool ForceSimulationOpen = true;
 	public bool ForceTutoSkip = true;
 	public int ForcePlayerLevel = 90;

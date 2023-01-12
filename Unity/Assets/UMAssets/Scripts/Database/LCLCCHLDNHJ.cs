@@ -249,7 +249,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 				data.DAJGPBLEEOB_PrismCostumeModelId = (short)array[i].LKMHPJKIFDN;
 				data.HGHFFJKGNCO = (int)array[i].DLAIGBEOGNN;
 				data.EODICFLJAKO = array[i].DBHPPMPNCKF > 0;
-				data.PPEGAKEIEGM = JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, array[i].DBHPPMPNCKF);
+				data.PPEGAKEIEGM = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, array[i].DBHPPMPNCKF);
 				data.IIELLEPEEFH = array[i].MDEBEGADHOH;
 				data.AGBPBDODKBK = array[i].GMOOKMONMMD;
 				data.HMCOGDICFNB = array[i].DOJAMIPOKBD;
@@ -270,7 +270,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 					data2.KBOLNIBLIND = array[i].GMKDHMPGLFL[j];
 					data.BJGNGNPHCBA[j] = data2;
 				}
-				if(JKAECBCNHAN(array[i].JILNNPKFKEK, 2, 0) < 2)
+				if(JKAECBCNHAN_IsEnabled(array[i].JILNNPKFKEK, 2, 0) < 2)
 				{
 					data.LLLCMHENKKN_LevelMax = 0;
 				}

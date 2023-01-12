@@ -324,7 +324,19 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0BEE0 Offset: 0x1C0BEE0 VA: 0x1C0BEE0
-		//public void Instantiate(string name) { }
+		public void Instantiate(string name)
+		{
+			for (int i = 0; i < m_settings.Count; i++)
+			{
+				if(m_settings[i].GetEffectName() == name)
+				{
+					Instance instance = Instantiate(m_settings[i]);
+					instance.ApplySkinnedMesh(m_skinnedMesh);
+					OnInstantiate(instance);
+					m_instances.Add(instance);
+				}
+			}
+		}
 
 		//// RVA: 0x1C0C0B4 Offset: 0x1C0C0B4 VA: 0x1C0C0B4
 		//public void Release() { }

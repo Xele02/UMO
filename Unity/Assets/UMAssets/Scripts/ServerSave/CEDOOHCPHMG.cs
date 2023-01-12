@@ -203,7 +203,7 @@ public class MPBEHHIAGOI
 		CIFHILOJJFC data = JKNGLJNEEPO;
 		data.FODKKJIDDKN_VfId = 1;
 		data.OPFGFINHFCE_Name = CIFHILOJJFC.CBELJGBFLGA;
-		data.GCCNMFHELCB = 0;
+		data.GCCNMFHELCB_Form = 0;
 		for(int i = 0; i < data.FDBOPFEOENF.Count; i++)
 		{
 			data.FDBOPFEOENF[i].DIPKCALNIII_Id = AHHJLDLAPAN;

@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 		private Text m_NoTextLayout; // 0xAC
 		private TexUVList m_valkyrie_pack; // 0xB0
 
-		// public bool HasAbility { get; set; } 0x1537050 0x1537058
+		public bool HasAbility { get { return false; } set { m_HideAbilityLayout.enabled = !value; } } //0x1537050 0x1537058
 
 		// RVA: 0x1537094 Offset: 0x1537094 VA: 0x1537094
 		private void Start()
@@ -144,19 +144,54 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1537424 Offset: 0x1537424 VA: 0x1537424
-		// public void SetName(string valkyrieName, string pilotName, string AttackText, string HitText) { }
+		public void SetName(string valkyrieName, string pilotName, string AttackText, string HitText)
+		{
+			m_ValkyrieNameText.text = valkyrieName;
+			m_PilotNameText.text = pilotName;
+			m_AttackText.text = AttackText;
+			m_HitText.text = HitText;
+		}
 
 		// // RVA: 0x15374F4 Offset: 0x15374F4 VA: 0x15374F4
-		// public void SetAbility(string abilityName, string abilityLevel, string description) { }
+		public void SetAbility(string abilityName, string abilityLevel, string description)
+		{
+			m_AbilityNameText.text = abilityName;
+			m_ChangeAnimNameText.text = abilityName;
+			m_AbilityLevelText.text = "Lv" + abilityLevel;
+			m_ChangeAnimLevelText.text = "Lv" + abilityLevel;
+			m_AbilityDescriptionText.text = description;
+			m_ChangeAnimDescText.text = description;
+		}
 
 		// // RVA: 0x1537674 Offset: 0x1537674 VA: 0x1537674
 		// public void SetDefaultText(string _NoText) { }
 
 		// // RVA: 0x15376B0 Offset: 0x15376B0 VA: 0x15376B0
-		// public void SetPilotTexture(int pilotId) { }
+		public void SetPilotTexture(int pilotId)
+		{
+			m_PilotImage.enabled = false;
+			MenuScene.Instance.InputDisable();
+			int m_pilotId = pilotId;
+			GameManager.Instance.PilotTextureCache.Load(pilotId, (IiconTexture texture) =>
+			{
+				//0x1539BC0
+				if(m_pilotId == pilotId)
+				{
+					texture.Set(m_PilotImage);
+					m_PilotImage.enabled = true;
+				}
+				MenuScene.Instance.InputEnable();
+			});
+		}
 
 		// // RVA: 0x15378BC Offset: 0x15378BC VA: 0x15378BC
-		// public void SetArrowEnable(bool enable) { }
+		public void SetArrowEnable(bool enable)
+		{
+			m_ArrowButtonL.enabled = enable;
+			m_ArrowButtonR.enabled = enable;
+			m_ArrowImageL.enabled = enable;
+			m_ArrowImageR.enabled = enable;
+		}
 
 		// // RVA: 0x1537960 Offset: 0x1537960 VA: 0x1537960
 		// public void SetSelectBtnDisable(bool IsDisable) { }
@@ -175,16 +210,25 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1537B0C Offset: 0x1537B0C VA: 0x1537B0C
-		// public void SetDetachBtnHidden(bool IsHidden) { }
+		public void SetDetachBtnHidden(bool IsHidden)
+		{
+			m_DetachButton.Hidden = IsHidden;
+		}
 
 		// // RVA: 0x1537B40 Offset: 0x1537B40 VA: 0x1537B40
 		// public void SetDetachBtnDisable(bool IsDisable) { }
 
 		// // RVA: 0x1537B74 Offset: 0x1537B74 VA: 0x1537B74
-		// public void SetAtkArrowEnable(bool isEnable) { }
+		public void SetAtkArrowEnable(bool isEnable)
+		{
+			m_atkUpArrow.enabled = isEnable;
+		}
 
 		// // RVA: 0x1537BA8 Offset: 0x1537BA8 VA: 0x1537BA8
-		// public void SetHitArrowEnable(bool isEnable) { }
+		public void SetHitArrowEnable(bool isEnable)
+		{
+			m_hitUpArrow.enabled = isEnable;
+		}
 
 		// // RVA: 0x1537BDC Offset: 0x1537BDC VA: 0x1537BDC
 		// public void ApplySelectValkyrieImage(List<PNGOLKLFFLH> list, int select) { }
@@ -199,10 +243,37 @@ namespace XeApp.Game.Menu
 		// public void ApplySelectValkyrieImage(List<HEFCLPGPMLK.ANKPCIEKPAH> list, int select) { }
 
 		// // RVA: 0x1538700 Offset: 0x1538700 VA: 0x1538700
-		// public void ValkyrieImageDefault() { }
+		public void ValkyrieImageDefault()
+		{
+			for(int i = 0; i < m_ValkyrieImageData.Length; i++)
+			{
+				m_ValkyrieImageData[i].anim.StartChildrenAnimGoStop("st_wait");
+			}
+		}
 
 		// // RVA: 0x15387F0 Offset: 0x15387F0 VA: 0x15387F0
-		// public bool SubValkyrieEnable(int listCount) { }
+		public bool SubValkyrieEnable(int listCount)
+		{
+			bool res = false;
+			if(listCount < 2)
+			{
+				for(int i = 0; i < m_ValkyrieImageData.Length; i++)
+				{
+					m_ValkyrieImageData[i].is_enable = false;
+					m_ValkyrieImageData[i].anim.StartChildrenAnimGoStop("st_act_01");
+				}
+			}
+			else
+			{
+				for(int i = 0; i < m_ValkyrieImageData.Length; i++)
+				{
+					m_ValkyrieImageData[i].is_enable = true;
+				}
+				res = true;
+			}
+			SetArrowEnable(res);
+			return res;
+		}
 
 		// // RVA: 0x15389D8 Offset: 0x15389D8 VA: 0x15389D8
 		public void SetTransformTouchAreaCallback(Action callback)
@@ -232,7 +303,10 @@ namespace XeApp.Game.Menu
 		// public void Leave() { }
 
 		// // RVA: 0x1538ED0 Offset: 0x1538ED0 VA: 0x1538ED0
-		// public void SetIconState(string label) { }
+		public void SetIconState(string label)
+		{
+			m_SetIconAnim.StartChildrenAnimGoStop(label);
+		}
 
 		// // RVA: 0x1538F04 Offset: 0x1538F04 VA: 0x1538F04
 		// public bool IsPlaying() { }

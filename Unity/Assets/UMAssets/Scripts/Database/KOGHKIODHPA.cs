@@ -388,7 +388,7 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.JPJNKNOJBMM = array[i].ALMNMBDELDB;
 			data.JBGEEPFKIGG = array[i].JBGEEPFKIGG;
-			data.PPEGAKEIEGM = JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
+			data.PPEGAKEIEGM = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			data.GMDCKJBIOGL = new List<CEBFFLDKAEC_SecureInt>();
 			for(int j = 0; j < array[i].JFJFMFNMPPF.Length; j++)
 			{

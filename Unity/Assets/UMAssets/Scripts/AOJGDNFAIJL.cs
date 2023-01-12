@@ -387,7 +387,7 @@ public class AOJGDNFAIJL_PrismData
 				else
 					val = val - 1;
 				JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbValk = valkDb.CDENCMNHNGA_ValkyrieList[val];
-				if (dbValk.PPEGAKEIEGM == 2 && valk.FJODMPGPDDD)
+				if (dbValk.PPEGAKEIEGM_Enabled == 2 && valk.FJODMPGPDDD)
 				{
 					if(dbValk.GPPEFLKGGGJ_Id == valk.FODKKJIDDKN_Id)
 					{

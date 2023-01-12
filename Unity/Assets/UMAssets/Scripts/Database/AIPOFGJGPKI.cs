@@ -71,7 +71,7 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 		{
 			KBLBMGDILAI data = new KBLBMGDILAI();
 			data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
-			data.PPEGAKEIEGM = JKAECBCNHAN(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PPEGAKEIEGM = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.PDBPFJJCADD = array[i].PDBPFJJCADD;
 			data.FDBNFFNFOND = array[i].FDBNFFNFOND;
 			data.BMFACNFNCKC = array[i].BMFACNFNCKC;

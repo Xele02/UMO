@@ -122,8 +122,8 @@ namespace XeApp.Game.RhythmGame
 			int v2 = 0;
 			if(data.LAKLFHGMCLI((SeriesAttr.Type)musicData.musicBase.AIHCEGFANAM_SerieId))
 			{
-				v1 = data.NONBCCLGBAO;
-				v2 = data.KINFGHHNFCF;
+				v1 = data.NONBCCLGBAO_Hit;
+				v2 = data.KINFGHHNFCF_Atk;
 			}
 			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo vInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[valkyrieId - 1];
 			teamAttack = (v2 + vInfo.OJHINEMKMOP(0)) * supportRate;

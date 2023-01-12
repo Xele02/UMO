@@ -1834,7 +1834,7 @@ public static class CMMKCEPBIHI
 			}
 			FOMKBDKKODO.Add(b);
 		}
-		JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[HEDKFICAPIJ.JOKFNBLEILN.GPPEFLKGGGJ_ValkyrieId - 1];
+		JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[HEDKFICAPIJ.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId - 1];
 		int dd = 0;
 		int p = 0;
 		for(int i = 0; i < v; i++)

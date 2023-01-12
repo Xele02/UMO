@@ -376,7 +376,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 		{
 			KEODKEGFDLD data = GEAANLPDJBP_FreeMusicDatas[i];
 			data.GHBPLHBNMBK = (short)array[i].EHDDADDKMFI;
-			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
+			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			data.IJEKNCDIIAE = array[i].IJEKNCDIIAE;
 			data.DEPGBBJMFED_CategoryId = (sbyte)array[i].DMEDKJPOLCH;
 			data.EKANGPODCEP = (int)array[i].LHKFKIKEJHN;
@@ -479,7 +479,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 			data.MHPAFEEPBNJ = (int)array[i].NHBLDIPBHNF;
 			data.KCNHKNKNGNH = (int)array[i].GPNOEFHGOJG;
 			data.MGLDIOILOFF = (int)array[i].PAIIHEJIGKO;
-			data.PPEGAKEIEGM = (byte)JKAECBCNHAN(1, (int)array[i].PLALNIIBLOF, 0);
+			data.PPEGAKEIEGM = (byte)JKAECBCNHAN_IsEnabled(1, (int)array[i].PLALNIIBLOF, 0);
 			for(int j = 0; j < array[i].CFJKNAIOEAN.Length; j++)
 			{
 				data.OCOGIADDNDN[j] = (short)array[i].CFJKNAIOEAN[j];
@@ -597,7 +597,7 @@ public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 		{
 			AOJCMPIBFHD data = new AOJCMPIBFHD();
 			data.IJEKNCDIIAE = (int)array[i].IJEKNCDIIAE;
-			data.PLALNIIBLOF = JKAECBCNHAN(data.IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(data.IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			data.DLAEJOBELBH_Id = (int)array[i].KLMIFEKNBLL;
 			for(int j = 0; j < array[i].DIPKCALNIII.Length; j++)
 			{

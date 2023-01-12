@@ -8,7 +8,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	public class KJPIDJOMODA_ValkyrieInfo
 	{
 		public short[] NLBLLLLBHOP = new short[2]; // 0x8
-		public short PPEGAKEIEGM; // 0xC
+		public short PPEGAKEIEGM_Enabled; // 0xC
 		public short IMGMAKOGIFP_CryptedPilotId; // 0xE
 		public short IFGMKBKBFJI; // 0x10
 		public short FBGGEFFJJHB; // 0x12
@@ -25,9 +25,9 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		public short DAJGPBLEEOB_ModelId { get { return (short)(HNJNKCPDKAL_CryptedModelId ^ FBGGEFFJJHB); } set { HNJNKCPDKAL_CryptedModelId = (short)(value ^ FBGGEFFJJHB); } } //0x1BA7544 LHPKEPPBKPF 0x1BA6D64 OIOEEEDODJA
 		//public short KINFGHHNFCF { get; set; } 0x1BA7558 BNLKPIIJCDF 0x1BA756C PKEDNGJNJNC
 		//public short NONBCCLGBAO { get; set; } 0x1BA757C AEJBEGKBPCO 0x1BA7590 JPIBPFANBNG
-		public short BMIJDLBGFNP { get { return (short)(AENGKBBMPGM ^ FBGGEFFJJHB); } } //0x1BA75A0 NIHGHMNFOAO
+		public short BMIJDLBGFNP_SkillId { get { return (short)(AENGKBBMPGM ^ FBGGEFFJJHB); } } //0x1BA75A0 NIHGHMNFOAO
 		//public int MIHAHCEANII { get; set; } 0x1BA7434 FOKDFFJIDDI 0x1BA7188 KMILCNKADIO
-		//public bool IPJMPBANBPP { get; } 0x1BA75B4 IJMCHOOIMBB
+		public bool IPJMPBANBPP_IsEnabled { get { return PPEGAKEIEGM_Enabled == 2; } } //0x1BA75B4 IJMCHOOIMBB
 
 		//// RVA: 0x1BA75C8 Offset: 0x1BA75C8 VA: 0x1BA75C8
 		public bool ENIGAEMEAOP(int KNDKMLNLPJO)
@@ -113,7 +113,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 			CDENCMNHNGA_ValkyrieList[i].DAJGPBLEEOB_ModelId = (short)(array[i].FLNJLKKAFPB);
 			CDENCMNHNGA_ValkyrieList[i].AIHCEGFANAM = (sbyte)array[i].JPFMJHLCMJL;
 			CDENCMNHNGA_ValkyrieList[i].PFGJJLGLPAC_PilotId = (short)(array[i].HDEBAGHEIKD);
-			CDENCMNHNGA_ValkyrieList[i].PPEGAKEIEGM = (short)JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
+			CDENCMNHNGA_ValkyrieList[i].PPEGAKEIEGM_Enabled = (short)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			CDENCMNHNGA_ValkyrieList[i].KIDNEIEHOMN = (short)(array[i].FCBJFKGDINH ^ CDENCMNHNGA_ValkyrieList[i].FBGGEFFJJHB);
 			CDENCMNHNGA_ValkyrieList[i].CDDLNKAPCFB = (short)(array[i].NONBCCLGBAO ^ CDENCMNHNGA_ValkyrieList[i].FBGGEFFJJHB);
 			CDENCMNHNGA_ValkyrieList[i].AENGKBBMPGM = (short)(array[i].BMIJDLBGFNP ^ CDENCMNHNGA_ValkyrieList[i].FBGGEFFJJHB);
@@ -142,7 +142,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	{
 		if(GPPEFLKGGGJ > 0 && GPPEFLKGGGJ < CDENCMNHNGA_ValkyrieList.Count)
 		{
-			if (CDENCMNHNGA_ValkyrieList[GPPEFLKGGGJ - 1].PPEGAKEIEGM == 2)
+			if (CDENCMNHNGA_ValkyrieList[GPPEFLKGGGJ - 1].PPEGAKEIEGM_Enabled == 2)
 				return CDENCMNHNGA_ValkyrieList[GPPEFLKGGGJ - 1].GPPEFLKGGGJ_Id == GPPEFLKGGGJ;
 		}
 		return false;

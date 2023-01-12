@@ -664,7 +664,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 		{
 			AFLHKMDNHID data = new AFLHKMDNHID();
 			data.PPFNGGCBJKC = (int)array[i].PPFNGGCBJKC;
-			data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.MKDDOJOADMF = (int)array[i].MKDDOJOADMF;
 			data.GJLFANGDGCL = new byte[2];
 			data.GJLFANGDGCL[0] = (byte)array[i].GNPACBPKKCP;
@@ -700,7 +700,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 		{
 			CCINPCJDFJG data = new CCINPCJDFJG();
 			data.PPFNGGCBJKC = (int)array[i].PPFNGGCBJKC;
-			data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.MKDDOJOADMF = (int)array[i].MKDDOJOADMF;
 			data.EGLDFPILJLG = new byte[2];
 			data.EGLDFPILJLG[0] = (byte)array[i].JKOIOLGLNFO;
@@ -733,7 +733,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 		{
 			FCNGHAJPMEA data = new FCNGHAJPMEA();
 			data.PPFNGGCBJKC = (int)array[i].PPFNGGCBJKC;
-			data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.MKDDOJOADMF = (int)array[i].MKDDOJOADMF;
 			data.NEHDLDEHFCD = array[i].PFOIIAGCKON;
 			data.EGLDFPILJLG = new byte[2];

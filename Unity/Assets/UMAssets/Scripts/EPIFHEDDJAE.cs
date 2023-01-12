@@ -1,4 +1,4 @@
-﻿
+
 public class EPIFHEDDJAE
 {
 	public enum NGEDJNHECKN
@@ -16,7 +16,7 @@ public class EPIFHEDDJAE
 		FIFJJFPHOEM = 3,
 	}
 
-	public enum JFEIHHBGFPF
+	public enum JFEIHHBGFPF_AbilityCondition
 	{
 		HJNNKCMLGFL = 0,
 		KLHDILNPGBB = 1,

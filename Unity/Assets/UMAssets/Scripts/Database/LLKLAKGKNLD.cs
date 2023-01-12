@@ -183,7 +183,7 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 				OHJFBLFELNK.Add(array[i].LJNAKDMILMC, data);
 			}
 		}
-		AJHBAOCLNDF_Enabled = JKAECBCNHAN(LPJLEHAJADA("master_mver", 0), LPJLEHAJADA("master_en", 0), 0);
+		AJHBAOCLNDF_Enabled = JKAECBCNHAN_IsEnabled(LPJLEHAJADA("master_mver", 0), LPJLEHAJADA("master_en", 0), 0);
 		return true;
 	}
 

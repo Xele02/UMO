@@ -73,7 +73,7 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 		{
 			MNGJPJBCMBH data = new MNGJPJBCMBH();
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
-			data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.PDBPFJJCADD = array[i].PDBPFJJCADD;
 			data.EGBOHDFBAPB = array[i].EGBOHDFBAPB;
 			data.KMENGHEAIOC = array[i].KMENGHEAIOC;

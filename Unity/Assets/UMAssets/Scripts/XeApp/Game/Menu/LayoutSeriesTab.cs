@@ -49,13 +49,46 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x193E214 Offset: 0x193E214 VA: 0x193E214
-		// public void ApplySelectSeriesButton(int SelectSeries) { }
+		public void ApplySelectSeriesButton(int SelectSeries)
+		{
+			for(int i = 0; i < m_SeriesButtons.Count; i++)
+			{
+				if(!m_SeriesButtons[(int)s_SeriesButtonIndex[i] - 1].Disable)
+				{
+					if(SelectSeries == i)
+					{
+						m_SeriesButtons[(int)s_SeriesButtonIndex[i] - 1].enabled = false;
+						m_SeriesButtons[(int)s_SeriesButtonIndex[i] - 1].SetOn();
+					}
+					else
+					{
+						m_SeriesButtons[(int)s_SeriesButtonIndex[i] - 1].enabled = true;
+						m_SeriesButtons[(int)s_SeriesButtonIndex[i] - 1].SetOff();
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x193E4BC Offset: 0x193E4BC VA: 0x193E4BC
-		// public void ChangeSelectSeries(int _type, ref int SelectSeries, ref int Select) { }
+		public void ChangeSelectSeries(int _type, ref int SelectSeries, ref int Select)
+		{
+			if (SelectSeries + 1 != _type)
+				Select = 0;
+			SelectSeries = _type - 1;
+			int start = ConvertSeriesAttrIndex((SeriesAttr.Type)_type);
+			m_SeriesBtnTypeAnim.StartChildrenAnimGoStop(start, start);
+		}
 
 		// // RVA: 0x193E524 Offset: 0x193E524 VA: 0x193E524
-		// private int ConvertSeriesAttrIndex(SeriesAttr.Type type) { }
+		private int ConvertSeriesAttrIndex(SeriesAttr.Type type)
+		{
+			for(int i = 0; i < s_SeriesButtonIndex.Length; i++)
+			{
+				if (s_SeriesButtonIndex[i] == type)
+					return i;
+			}
+			return 0;
+		}
 
 		// // RVA: 0x193E66C Offset: 0x193E66C VA: 0x193E66C
 		public void SetSeriesIcon()
@@ -84,7 +117,10 @@ namespace XeApp.Game.Menu
 		// public void Leave() { }
 
 		// // RVA: 0x193EAA8 Offset: 0x193EAA8 VA: 0x193EAA8
-		// public void ButtonDisable(int seriesIndex, bool IsDisable) { }
+		public void ButtonDisable(int seriesIndex, bool IsDisable)
+		{
+			m_SeriesButtons[seriesIndex].Disable = IsDisable;
+		}
 
 		// // RVA: 0x193EBCC Offset: 0x193EBCC VA: 0x193EBCC
 		// public bool IsPlaying() { }

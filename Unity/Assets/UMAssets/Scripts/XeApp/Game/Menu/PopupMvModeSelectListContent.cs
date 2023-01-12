@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 					item.ListIndex = i;
 					item.IsSet = l[i].CBLHLEKLLDE_IsSet;
 					m_scrollItem.Add(item);
-					GameManager.Instance.PilotTextureCache.TryInstall(item.ValkyrieData.OPBPKNHIPPE.PFGJJLGLPAC_PilotId);
+					GameManager.Instance.PilotTextureCache.TryInstall(item.ValkyrieData.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId);
 					GameManager.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, l[i].PPFNGGCBJKC_Id), 0);
 				}
 			}
@@ -302,12 +302,12 @@ namespace XeApp.Game.Menu
 			else
 			{
 				text = MessageManager.Instance.GetMessage("menu", "mvmode_setting_popup_text_002_001");
-				text = string.Format(text, listItem.ValkyrieData.IJBLEJOKEFH_ValkyrieName, listItem.ValkyrieData.MJJCKMPICIK_PilotName, listItem.ValkyrieData.OPBPKNHIPPE.OPFGFINHFCE_Name);
+				text = string.Format(text, listItem.ValkyrieData.IJBLEJOKEFH_ValkyrieName, listItem.ValkyrieData.MJJCKMPICIK_PilotName, listItem.ValkyrieData.OPBPKNHIPPE_Pilot.OPFGFINHFCE_Name);
 			}
 			listLayout.SetListIndex(listItem.ListIndex);
 			listLayout.HideTexture();
 			listLayout.SetName(text);
-			GameManager.Instance.PilotTextureCache.Load(listItem.ValkyrieData.OPBPKNHIPPE.PFGJJLGLPAC_PilotId, (IiconTexture texture) =>
+			GameManager.Instance.PilotTextureCache.Load(listItem.ValkyrieData.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId, (IiconTexture texture) =>
 			{
 				//0x169C288
 				if (listLayout.ListIndex != listItem.ListIndex)

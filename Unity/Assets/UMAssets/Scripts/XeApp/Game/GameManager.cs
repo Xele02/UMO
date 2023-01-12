@@ -1173,7 +1173,7 @@ namespace XeApp.Game
 				cond.divaId = ti.danceDivaList[i].prismDivaId;
 				cond.costumeModelId = ti.danceDivaList[i].prismCostumeModelId;
 				cond.valkyrieId = ti.prismValkyrieId;
-				cond.pilotId = b.OPBPKNHIPPE.PFGJJLGLPAC_PilotId;
+				cond.pilotId = b.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId;
 				cond.positionId = ti.danceDivaList[i].positionId;
 				settingList.Add(cond);
 			}

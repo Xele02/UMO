@@ -9,7 +9,7 @@ public class CIFHILOJJFC
 	public List<AMCGONHBGGF> FDBOPFEOENF; // 0x10
 	public List<DKDMLOBCPFC> KAKGHFFOAEJ; // 0x14
 	public int FODKKJIDDKN_VfId = 1; // 0x18 // UMO add, default to 1 when no save
-	public int GCCNMFHELCB; // 0x1C
+	public int GCCNMFHELCB_Form; // 0x1C
 	public static string CBELJGBFLGA = JpStringLiterals.StringLiteral_9767; // 0x0 
 
 	// // RVA: 0xFF5340 Offset: 0xFF5340 VA: 0xFF5340

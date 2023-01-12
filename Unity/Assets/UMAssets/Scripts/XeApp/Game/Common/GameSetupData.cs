@@ -257,10 +257,10 @@ namespace XeApp.Game.Common
 				}
 				valkyrieId = 1;
 				int form = 0;
-				if (unit.JOKFNBLEILN != null)
+				if (unit.JOKFNBLEILN_Valkyrie != null)
 				{
-					valkyrieId = unit.JOKFNBLEILN.GPPEFLKGGGJ_ValkyrieId;
-					form = unit.JOKFNBLEILN.GCCNMFHELCB_Form;
+					valkyrieId = unit.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId;
+					form = unit.JOKFNBLEILN_Valkyrie.GCCNMFHELCB_Form;
 				}
 				prismValkyrieId = valkyrieId;
 				valkyrieForm = form;

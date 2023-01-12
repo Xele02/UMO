@@ -268,10 +268,46 @@ namespace XeApp.Game.Menu
 		// private int ConvertSeriesAttrIndex(SeriesAttr.Type type) { }
 
 		// // RVA: 0x165A5EC Offset: 0x165A5EC VA: 0x165A5EC
-		// private void ResetValkyrieData() { }
+		private void ResetValkyrieData()
+		{
+			m_ValkyrieList = PNGOLKLFFLH.FKDIMODKKJD();
+			PNGOLKLFFLH valk = m_UnitData.JOKFNBLEILN_Valkyrie;
+			if(valk == null)
+			{
+				if(m_ValkyrieList.Count > 0)
+				{
+					m_UnitData.LDPCJAKOKHB(m_ValkyrieList[0].GPPEFLKGGGJ_ValkyrieId, -1);
+				}
+			}
+			for(int i = 0; i < m_SeriesValkyrieList.Length; i++)
+			{
+				m_SeriesValkyrieList[i].Clear();
+			}
+			for(int i = 0; i < m_ValkyrieList.Count; i++)
+			{
+				m_SeriesValkyrieList[m_ValkyrieList[i].AIHCEGFANAM_Serie].Add(m_ValkyrieList[i]);
+			}
+			int id = m_UnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId;
+			SelectSeries = m_ValkyrieList.Find((PNGOLKLFFLH _) =>
+			{
+				//0x165FD88
+				return _.GPPEFLKGGGJ_ValkyrieId == id;
+			}).AIHCEGFANAM_Serie;
+			Select = m_ValkyrieList.FindIndex((PNGOLKLFFLH _) =>
+			{
+				//0x165FDC0
+				return _.GPPEFLKGGGJ_ValkyrieId == id;
+			});
+		}
 
 		// // RVA: 0x165AA98 Offset: 0x165AA98 VA: 0x165AA98
-		// private void ResetSeriesButtonState() { }
+		private void ResetSeriesButtonState()
+		{
+			for(int i = 0; i < 5; i++)
+			{
+				m_SeriesTab.ButtonDisable(i, m_SeriesValkyrieList[i].Count == 0);
+			}
+		}
 
 		// // RVA: 0x165AB88 Offset: 0x165AB88 VA: 0x165AB88
 		private void UpdateInit()
@@ -309,14 +345,102 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x165B004 Offset: 0x165B004 VA: 0x165B004
-		// private void ApplyAbility() { }
+		private void ApplyAbility()
+		{
+			PNGOLKLFFLH valk = m_SeriesValkyrieList[SelectSeries][Select];
+			ALEKLHIANJN data = new ALEKLHIANJN(valk.GPPEFLKGGGJ_ValkyrieId, valk.CNLIAMIIJID_AbilityLevel);
+			m_layoutValSelect.HasAbility = valk.CNLIAMIIJID_AbilityLevel > 0;
+			m_layoutValSelect.SetAbility(data.OPFGFINHFCE_SkillName, data.CHHADJECKNL_GetLevel(), data.DMBDNIEEMCB_GetDesc(false));
+		}
 
 		// // RVA: 0x165B274 Offset: 0x165B274 VA: 0x165B274
-		// private EPIFHEDDJAE.JFEIHHBGFPF GetAbilityCondition() { }
+		private EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition GetAbilityCondition()
+		{
+			if(ParentTransition == TransitionList.Type.TEAM_SELECT)
+			{
+				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null &&
+					Database.Instance.gameSetup.musicInfo != null)
+				{
+					int serie = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.musicId).AIHCEGFANAM_SerieId;
+					if (serie >= 1 && serie <= 4)
+						return 0;
+					return (EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition)serie;
+				}
+			}
+			return EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.HJNNKCMLGFL/*0*/;
+		}
 
 		// // RVA: 0x165B3F8 Offset: 0x165B3F8 VA: 0x165B3F8
-		// private void ApplySelectValkyrie() { }
+		private void ApplySelectValkyrie()
+		{
+			PNGOLKLFFLH valk = m_SeriesValkyrieList[SelectSeries][Select];
+			NHDJHOPLMDE data = new NHDJHOPLMDE(valk.GPPEFLKGGGJ_ValkyrieId, 0);
+			m_layoutValSelect.SetAtkArrowEnable(false);
+			m_layoutValSelect.SetHitArrowEnable(false);
+			string atkText = valk.KINFGHHNFCF_Atk.ToString();
+			string hitText = valk.NONBCCLGBAO_Hit.ToString();
+			if (data.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.MGJDKBFHDML/*1*/, GetAbilityCondition()))
+			{
+				if(data.KINFGHHNFCF_Atk > 0)
+				{
+					atkText = "<color=#008200>" + (data.KINFGHHNFCF_Atk + valk.KINFGHHNFCF_Atk) + "</color>";
+					m_layoutValSelect.SetAtkArrowEnable(true);
+				}
+				if(data.NONBCCLGBAO_Hit > 0)
+				{
+					hitText = "<color=#008200>" + (data.NONBCCLGBAO_Hit + valk.NONBCCLGBAO_Hit) + "</color>";
+					m_layoutValSelect.SetHitArrowEnable(true);
+				}
+			}
+			m_layoutValSelect.SetName(valk.IJBLEJOKEFH_ValkyrieName, valk.OPBPKNHIPPE_Pilot.OPFGFINHFCE_Name, atkText, hitText);
+			ApplyAbility();
+			m_layoutValSelect.SetPilotTexture(valk.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId);
+			m_layoutValSelect.SetIconState(valk.GPPEFLKGGGJ_ValkyrieId == m_UnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId ? "01" : "02");
+			m_SwaipTouch.enabled = m_layoutValSelect.SubValkyrieEnable(m_SeriesValkyrieList[SelectSeries].Count);
+			if (!valk.FJODMPGPDDD)
+			{
+				if (m_viewValkyrieModeObj != null)
+				{
+					ViewScreenValkyrie v = m_viewValkyrieModeObj.GetComponent<ViewScreenValkyrie>();
+					if (v != null)
+						v.Hide();
+				}
+				m_layoutValSelect.SetSelectBtnDisable(true);
+				HideViewButton();
+				m_IsPlayEpAnim = true;
+			}
+			else
+			{
 
+				if (m_viewValkyrieModeObj != null)
+				{
+					ViewScreenValkyrie v = m_viewValkyrieModeObj.GetComponent<ViewScreenValkyrie>();
+					if (v != null)
+					{
+						v.Show();
+						if(v.GetValkyrieId() == valk.GPPEFLKGGGJ_ValkyrieId)
+						{
+							if(!m_viewSceneFlag)
+								v.ChangeFormType(valk.GCCNMFHELCB_Form, false);
+							else
+							{
+								valk.GCCNMFHELCB_Form = v.GetFormType();
+								v.ChangeValkyrie(valk.GCCNMFHELCB_Form, valk.GCCNMFHELCB_Form);
+							}
+						}
+						else
+						{
+							v.ChangeValkyrie(valk.GPPEFLKGGGJ_ValkyrieId, valk.GCCNMFHELCB_Form);
+						}
+						if (!v.IsChangeValkyrie())
+							ShowViewButton();
+					}
+				}
+				m_layoutValSelect.SetSelectBtnDisable(false);
+				m_IsPlayEpAnim = false;
+			}
+		}
+	
 		// // RVA: 0x165BF3C Offset: 0x165BF3C VA: 0x165BF3C
 		// private void ReplaceValkyrie() { }
 
@@ -335,24 +459,27 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < m_ValkyrieList.Count; i++)
 			{
 				loading_count++;
-				MenuScene.Instance.ValkyrieIconCache.Load(ValkyrieIconTextureCache.MakePortraitIconBundleName(m_ValkyrieList[i].GPPEFLKGGGJ_ValkyrieId, () => {
-					Method$XeApp.Game.Menu.ValkyrieSelectScene.<>c__DisplayClass57_0.<Co_Initialize>b__1()
-				}));
+				MenuScene.Instance.ValkyrieIconCache.Load(ValkyrieIconTextureCache.MakePortraitIconBundleName(m_ValkyrieList[i].GPPEFLKGGGJ_ValkyrieId, 0), (IiconTexture texture) => {
+					//0x165FE00
+					loading_count--;
+				});
 				loading_count++;
-				GameManager.Instance.PilotTextureCache.Load(m_ValkyrieList[i].OPBPKNHIPPE.PFGJJLGLPAC_PilotId, () => {
-					Method$XeApp.Game.Menu.ValkyrieSelectScene.<>c__DisplayClass57_0.<Co_Initialize>b__2()
+				GameManager.Instance.PilotTextureCache.Load(m_ValkyrieList[i].OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId, (IiconTexture texture) => {
+					//0x165FE10
+					loading_count--;
 				});
 			}
 			yield return new WaitWhile(() => {
-				Method$XeApp.Game.Menu.ValkyrieSelectScene.<>c__DisplayClass57_0.<Co_Initialize>b__0()
+			//0x165FE20
+				return loading_count > 0;
 			});
 
 			m_EpisodeList = PIGBBNDPPJC.FKDIMODKKJD_GetAvaiableEpisodes(true);
 			ResetSeriesButtonState();
-			m_SeriesTab.ChangeSelectSeries(SelectSeries + 1, out SelectSeries, out Select);
+			m_SeriesTab.ChangeSelectSeries(SelectSeries + 1, ref SelectSeries, ref Select);
 			m_SeriesTab.ApplySelectSeriesButton(SelectSeries);
 			m_layoutValSelect.ValkyrieImageDefault();
-			m_layoutValSelect.SetDetachBtnHidden();
+			m_layoutValSelect.SetDetachBtnHidden(true);
 			ApplySelectValkyrie();
 			m_layoutValSelect.ApplySelectValkyrieImage(m_SeriesValkyrieList[SelectSeries], Select);
 			m_layoutValSelect.SetDefaultText(MessageManager.Instance.GetBank("menu").GetMessageByLabel("valkyrie_tuneup_skill_not"));

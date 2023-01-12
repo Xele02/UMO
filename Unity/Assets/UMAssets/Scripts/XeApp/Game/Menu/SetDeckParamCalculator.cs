@@ -63,7 +63,7 @@ namespace XeApp.Game.Menu
 			m_viewValkyrieAbilityData = null;
 			m_mainScene = null;
 			m_episodeBonusPoint = 0;
-			PNGOLKLFFLH p = viewUnitData.JOKFNBLEILN;
+			PNGOLKLFFLH p = viewUnitData.JOKFNBLEILN_Valkyrie;
 			if(p != null)
 			{
 				NHDJHOPLMDE n = new NHDJHOPLMDE(p.GPPEFLKGGGJ_ValkyrieId, 0);

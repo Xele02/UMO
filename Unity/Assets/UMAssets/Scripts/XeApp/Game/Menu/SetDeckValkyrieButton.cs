@@ -57,9 +57,9 @@ namespace XeApp.Game.Menu
 		public void UpdateContent(JLKEOGLJNOD viewUnitData, EEDKAACNBBG viewMusicData)
 		{
 			m_viewValkyrieAbilityData = null;
-			if(viewMusicData != null && viewUnitData.JOKFNBLEILN != null)
+			if(viewMusicData != null && viewUnitData.JOKFNBLEILN_Valkyrie != null)
 			{
-				NHDJHOPLMDE data = new NHDJHOPLMDE(viewUnitData.JOKFNBLEILN.GPPEFLKGGGJ_ValkyrieId, 0);
+				NHDJHOPLMDE data = new NHDJHOPLMDE(viewUnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId, 0);
 				if(data != null)
 				{
 					if(data.LAKLFHGMCLI((SeriesAttr.Type)viewMusicData.AIHCEGFANAM_Serie))
@@ -72,10 +72,10 @@ namespace XeApp.Game.Menu
 			if(m_viewValkyrieAbilityData != null)
 			{
 				bool en = true;
-				if(m_viewValkyrieAbilityData.KINFGHHNFCF < 1)
+				if(m_viewValkyrieAbilityData.KINFGHHNFCF_Atk < 1)
 				{
 					en = false;
-					if(m_viewValkyrieAbilityData.NONBCCLGBAO > 0)
+					if(m_viewValkyrieAbilityData.NONBCCLGBAO_Hit > 0)
 					{
 						en = true;
 					}
@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 			bool b = false;
 			if(!viewUnitData.EIGKIHENKNC)
 			{
-				if (viewUnitData.JOKFNBLEILN != null)
+				if (viewUnitData.JOKFNBLEILN_Valkyrie != null)
 					b = true;
 			}
 			if (!b)
@@ -97,7 +97,7 @@ namespace XeApp.Game.Menu
 			{
 				m_emptyImage.gameObject.SetActive(false);
 				m_valkyrieImage.gameObject.SetActive(true);
-				SetValkyrieImage(viewUnitData.JOKFNBLEILN.GPPEFLKGGGJ_ValkyrieId);
+				SetValkyrieImage(viewUnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId);
 			}
 		}
 

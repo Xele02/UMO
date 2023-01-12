@@ -59,7 +59,7 @@ public abstract class DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1989E1C Offset: 0x1989E1C VA: 0x1989E1C
-	public int JKAECBCNHAN(int IJEKNCDIIAE_AssetMasterVersion, int PLALNIIBLOF_MasterEnable, int DBHPPMPNCKF = 0)
+	public int JKAECBCNHAN_IsEnabled(int IJEKNCDIIAE_AssetMasterVersion, int PLALNIIBLOF_MasterEnable, int DBHPPMPNCKF = 0)
 	{
 		if(DBHPPMPNCKF != 0)
 		{
