@@ -112,9 +112,9 @@ public class DFKGGBMFFGB
 				LEIGKLOGCPF = new JLKEOGLJNOD();
 			if (HDCBAOKMFAH_UnitsGoDiva == null)
 				HDCBAOKMFAH_UnitsGoDiva = new List<JLKEOGLJNOD>();
-			int a = NPFCMHCCDDH.PDJEMLMOEPF;
-			if (a == 0)
-				a = 1;
+			int centerDivaId = NPFCMHCCDDH.PDJEMLMOEPF_CenterDivaId;
+			if (centerDivaId == 0)
+				centerDivaId = 1;
 			IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ);
 			if (evt != null)
 			{
@@ -122,7 +122,7 @@ public class DFKGGBMFFGB
 				//??
 				//if(MANPIONIGNO_EventGoDiva evt.PMHLJAIGBGK)
 			}
-			HMCMKKNLBII(a);
+			HMCMKKNLBII(centerDivaId);
 		}
 		{
 			NDOLELKAJNL = new IAPDFOPPGND();

@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < UnitButtonCount; i++)
 			{
 				JLKEOGLJNOD unit = GetUnitData(UnitButtonCount * pageNo + i);
-				if(unit.EIGKIHENKNC)
+				if(unit.EIGKIHENKNC_HasDivaSet)
 				{
 					m_unitButtons[i].m_nameText.text = unit.BHKALCOAHHO_Name;
 				}

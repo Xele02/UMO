@@ -22,7 +22,7 @@ namespace XeApp.Game.Menu
 		private CFHDKAFLNEP m_subPlate; // 0x64
 		private JGEOBNENMAH.NEDILFPPCJF m_logParams = new JGEOBNENMAH.NEDILFPPCJF(); // 0x6C
 
-		public bool IsEmptyUnit { get { return m_viewUnitData != null && m_viewUnitData.EIGKIHENKNC; } } //0xA6FF7C
+		public bool IsEmptyUnit { get { return m_viewUnitData != null && m_viewUnitData.EIGKIHENKNC_HasDivaSet; } } //0xA6FF7C
 		public AEGLGBOGDHH SkillCalcResult { get {
 				return m_unitSkillCalcResult;
 			} } //0xA6FF94
@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 			addStatus.Clear();
 			luck = 0;
 			//viewUnitData.CMCKNKKCNDK ??
-			baseStatus.Copy(viewUnitData.JLJGCBOHJID);
+			baseStatus.Copy(viewUnitData.JLJGCBOHJID_Status);
 			result = new AEGLGBOGDHH();
 			result.OBKGEDCKHHE();
 			result.JCHLONCMPAJ();
@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 			result.GEEDEOHGMOM(ref addStatus);
 			subPlate = result.CLCIOEHGFNI;
 			m_tmpStatus.Clear();
-			if(viewUnitData.EIGKIHENKNC)
+			if(viewUnitData.EIGKIHENKNC_HasDivaSet)
 			{
 				CMMKCEPBIHI.BKBMHJBFDOG();
 			}
@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 				luck += viewFriendPlayerData.KHGKPKDBMOH().MJBODMOLOBC_Luck;
 				baseStatus.Add(m_tmpStatus);
 			}
-			result.DIJOPLHIMBO(logParams, viewUnitData.JLJGCBOHJID, m_tmpStatus, baseLuck, friendLuck);
+			result.DIJOPLHIMBO(logParams, viewUnitData.JLJGCBOHJID_Status, m_tmpStatus, baseLuck, friendLuck);
 			if(f == null || f.FGFIBOBAPIA_SceneId < 1)
 			{
 				logParams.IFHMFONMGPE = 0;

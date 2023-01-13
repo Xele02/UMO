@@ -537,7 +537,7 @@ namespace XeApp.Game.Menu
 			baseStatus.Clear();
 			addStatus.Clear();
 			luck = 0;
-			baseStatus.Copy(unitData.JLJGCBOHJID);
+			baseStatus.Copy(unitData.JLJGCBOHJID_Status);
 			result = new AEGLGBOGDHH();
 			result.OBKGEDCKHHE();
 			result.JCHLONCMPAJ();

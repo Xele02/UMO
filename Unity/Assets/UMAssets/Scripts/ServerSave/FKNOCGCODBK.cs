@@ -94,7 +94,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 								if(!colOk)
 									colId = 0;
 							}
-							AMCGONHBGGF a = MEFHDDNABLM.FDBOPFEOENF[i];
+							AMCGONHBGGF a = MEFHDDNABLM.FDBOPFEOENF_MainDivas[i];
 							a.DIPKCALNIII_Id = divaId;
 							a.BEEAIAAJOHD_CId = cosId;
 							a.AFNIOJHODAG_ColId = colId;
@@ -153,7 +153,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 								if(!colOk)
 									colId = 0;
 							}
-							DKDMLOBCPFC d = MEFHDDNABLM.KAKGHFFOAEJ[j];
+							DKDMLOBCPFC d = MEFHDDNABLM.KAKGHFFOAEJ_AddDivas[j];
 							d.DIPKCALNIII_Id = divaId;
 							d.BEEAIAAJOHD_CosId = cosId;
 							d.AFNIOJHODAG_ColId = colId;
