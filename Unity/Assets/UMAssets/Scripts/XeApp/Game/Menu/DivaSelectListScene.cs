@@ -149,8 +149,8 @@ namespace XeApp.Game.Menu
 						}
 					}
 				}
+				ShowComparisonPopupWindow(d, afterDiva, PlayerData.NPFCMHCCDDH, m_args.slot, m_musicData);
 			}
-			ShowComparisonPopupWindow(d, afterDiva, PlayerData.NPFCMHCCDDH, m_args.slot, m_musicData);
 			return true;
 		}
 
@@ -223,10 +223,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17EEBEC Offset: 0x17EEBEC VA: 0x17EEBEC
 		private void ShowComparisonPopupWindow(FFHPBEPOMAK beforeDiva, FFHPBEPOMAK afterDiva, JLKEOGLJNOD unit, int slot, EEDKAACNBBG musicData)
 		{
+			PopupSetting set = null;
 			if(IsAddDiva(slot))
 			{
 				m_divaChangePopupSetting.AfterDiva = afterDiva;
 				m_divaChangePopupSetting.BeforeDiva = beforeDiva;
+				set = m_divaChangePopupSetting;
 			}
 			else
 			{
@@ -235,14 +237,15 @@ namespace XeApp.Game.Menu
 				m_divaComparisonPopupSetting.IsCenterDiva = slot == 0;
 				m_divaComparisonPopupSetting.PlayerData = PlayerData;
 				m_divaComparisonPopupSetting.MusicData = m_musicData;
+				set = m_divaComparisonPopupSetting;
 			}
-			m_divaComparisonPopupSetting.Buttons = new ButtonInfo[2]
+			set.Buttons = new ButtonInfo[2]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative},
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive}
 			};
 			m_isOpenEndConfirmPopup = false;
-			PopupWindowManager.Show(m_divaComparisonPopupSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			PopupWindowManager.Show(set, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x1264CAC
 				if (type == PopupButton.ButtonType.Negative)
