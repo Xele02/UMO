@@ -327,8 +327,8 @@ namespace XeApp.Game.Menu
 			{
 				//0x165FD88
 				return _.GPPEFLKGGGJ_ValkyrieId == id;
-			}).AIHCEGFANAM_Serie;
-			Select = m_ValkyrieList.FindIndex((PNGOLKLFFLH _) =>
+			}).AIHCEGFANAM_Serie - 1;
+			Select = m_SeriesValkyrieList[SelectSeries].FindIndex((PNGOLKLFFLH _) =>
 			{
 				//0x165FDC0
 				return _.GPPEFLKGGGJ_ValkyrieId == id;
