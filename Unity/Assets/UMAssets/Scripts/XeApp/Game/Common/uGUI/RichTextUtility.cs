@@ -1,4 +1,5 @@
 using System.Text;
+using UnityEngine.UI;
 using XeSys;
 
 namespace XeApp.Game.Common.uGUI
@@ -15,7 +16,12 @@ namespace XeApp.Game.Common.uGUI
 		}
 
 		//// RVA: 0xD3946C Offset: 0xD3946C VA: 0xD3946C
-		//public static void ChangeColor(Text uguiText, string htmlFormatColor) { }
+		public static void ChangeColor(Text uguiText, string htmlFormatColor)
+		{
+			if (!uguiText.supportRichText)
+				return;
+			uguiText.text = MakeColorTagString(uguiText.text, htmlFormatColor);
+		}
 
 		//// RVA: 0xD39558 Offset: 0xD39558 VA: 0xD39558
 		//public static string MakeSizeTagString(string str, int size) { }

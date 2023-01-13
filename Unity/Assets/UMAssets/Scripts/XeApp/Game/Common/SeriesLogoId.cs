@@ -20,5 +20,14 @@ namespace XeApp.Game.Common
 			Illegal = 13,
 		}
 
+		private static readonly Type[] tbl = new Type[6] {
+			Type.None, Type.DeltaTV, Type.FrontiaTV, Type.SevenTV, Type.FirstTV, Type.PulsTV
+		}; // 0x0
+
+		// RVA: 0x1392164 Offset: 0x1392164 VA: 0x1392164
+		public static Type ConvertFromAttr(SeriesAttr.Type logo)
+		{
+			return tbl[(int)logo];
+		}
 	}
 }
