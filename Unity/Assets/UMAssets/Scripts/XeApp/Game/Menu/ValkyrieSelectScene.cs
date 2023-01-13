@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using mcrs;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
@@ -228,7 +229,7 @@ namespace XeApp.Game.Menu
 			AssetBundleLoadLayoutOperationBase operation;
 
 			//0x16617C4
-			if(m_episodePop != null)
+			if(m_episodePop == null)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_val_terms_window_all_layout_root");
 				yield return operation;
@@ -243,10 +244,22 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1659F8C Offset: 0x1659F8C VA: 0x1659F8C
-		// private void ShowViewButton() { }
+		private void ShowViewButton()
+		{
+			if(m_IsDispViewBtn)
+				return;
+			m_ViewBtnAnim.StartChildrenAnimGoStop("go_in", "st_in");
+			m_IsDispViewBtn = true;
+		}
 
 		// // RVA: 0x165A02C Offset: 0x165A02C VA: 0x165A02C
-		// private void HideViewButton() { }
+		private void HideViewButton()
+		{
+			if(!m_IsDispViewBtn)
+				return;
+			m_ViewBtnAnim.StartChildrenAnimGoStop("go_out", "st_out");
+			m_IsDispViewBtn = false;
+		}
 
 		// // RVA: 0x165A0CC Offset: 0x165A0CC VA: 0x165A0CC
 		// public void ShowLoadingEffect() { }
@@ -256,7 +269,29 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733D84 Offset: 0x733D84 VA: 0x733D84
 		// // RVA: 0x165A3CC Offset: 0x165A3CC VA: 0x165A3CC
-		// private IEnumerator Co_PlayNoticeAnim() { }
+		private IEnumerator Co_PlayNoticeAnim()
+		{
+			//0x1661F2C
+			m_layoutValSelect.NoticeAnimEnter();
+			m_IsDispNotice = true;
+			yield return null;
+			yield return new WaitWhile(() => {
+				//0x165FB34
+				return m_layoutValSelect.NoticeAnimIsPlaying();
+			});
+			while(!m_IsSceneActivate)
+				yield return null;
+			if(!m_IsDispNotice)
+				yield break;
+			float wait_time = DISP_NOTICE_TIME;
+			yield return new WaitWhile(() => {
+				//0x165FD44
+				wait_time -= Time.deltaTime;
+				return wait_time >= 0;
+			});
+			m_layoutValSelect.NoticeAnimLeave();
+			m_IsDispNotice = false;
+		}
 
 		// RVA: 0x165A478 Offset: 0x165A478 VA: 0x165A478
 		public void Update()
@@ -285,7 +320,7 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < m_ValkyrieList.Count; i++)
 			{
-				m_SeriesValkyrieList[m_ValkyrieList[i].AIHCEGFANAM_Serie].Add(m_ValkyrieList[i]);
+				m_SeriesValkyrieList[m_ValkyrieList[i].AIHCEGFANAM_Serie - 1].Add(m_ValkyrieList[i]);
 			}
 			int id = m_UnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId;
 			SelectSeries = m_ValkyrieList.Find((PNGOLKLFFLH _) =>
@@ -397,7 +432,7 @@ namespace XeApp.Game.Menu
 			m_layoutValSelect.SetPilotTexture(valk.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId);
 			m_layoutValSelect.SetIconState(valk.GPPEFLKGGGJ_ValkyrieId == m_UnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId ? "01" : "02");
 			m_SwaipTouch.enabled = m_layoutValSelect.SubValkyrieEnable(m_SeriesValkyrieList[SelectSeries].Count);
-			if (!valk.FJODMPGPDDD)
+			if (!valk.FJODMPGPDDD_Unlocked)
 			{
 				if (m_viewValkyrieModeObj != null)
 				{
@@ -442,7 +477,10 @@ namespace XeApp.Game.Menu
 		}
 	
 		// // RVA: 0x165BF3C Offset: 0x165BF3C VA: 0x165BF3C
-		// private void ReplaceValkyrie() { }
+		private void ReplaceValkyrie()
+		{
+			m_UnitData.LDPCJAKOKHB(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].GCCNMFHELCB_Form);
+		}
 
 		// // RVA: 0x165C07C Offset: 0x165C07C VA: 0x165C07C
 		// private bool IsPlayingAll() { }
@@ -523,9 +561,25 @@ namespace XeApp.Game.Menu
 			if(m_viewValkyrieModeObj == null)
 			{
 				m_viewValkyrieModeObj = ViewScreenValkyrie.Create(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].GCCNMFHELCB_Form, () => {
-					Method$XeApp.Game.Menu.ValkyrieSelectScene.<OnStartEnterAnimation>b__60_0()
+					//0x165FB70
+					if(m_EffectInstance != null)
+					{
+						m_EffectInstance.SetActive(true);
+						m_layoutValSelect.SetActiveTransform(m_EffectInstance.activeSelf, false);
+						HideViewButton();
+						MenuScene.Instance.InputDisable();
+					}
 				}, () => {
-					Method$XeApp.Game.Menu.ValkyrieSelectScene.<OnStartEnterAnimation>b__60_1()
+					//0x165FB74
+					if(m_EffectInstance != null)
+					{
+						m_EffectInstance.SetActive(false);
+						m_layoutValSelect.SetActiveTransform(m_EffectInstance.activeSelf,true);
+						ShowViewButton();
+						MenuScene.Instance.InputEnable();
+						m_SwaipTouch.ResetValue();
+						m_SwaipTouch.ResetInputState();
+					}
 				}, true);
 			}
 			m_is_ValkrieTouch = true;
@@ -602,7 +656,30 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x165CC94 Offset: 0x165CC94 VA: 0x165CC94
-		// private void ChangeSelectValkyrie(LayoutValkyrieSelect.Direction dir) { }
+		private void ChangeSelectValkyrie(LayoutValkyrieSelect.Direction dir)
+		{
+			if(m_SeriesValkyrieList[SelectSeries].Count < 2)
+				return;
+			m_SeriesValkyrieList[SelectSeries][Select].OELFCIKFMLL(0);
+			if(dir == LayoutValkyrieSelect.Direction.RIGHT)
+			{
+				Select++;
+				if(Select >= m_SeriesValkyrieList[SelectSeries].Count)
+				{
+					Select = Select - m_SeriesValkyrieList[SelectSeries].Count;
+				}
+			}
+			else if(dir == LayoutValkyrieSelect.Direction.LEFT)
+			{
+				Select--;
+				if(Select < 0)
+				{
+					Select += m_SeriesValkyrieList[SelectSeries].Count;
+				}
+			}
+			ApplySelectValkyrie();
+			m_Updater = UpdateChangeAnim_Start;
+		}
 
 		// // RVA: 0x165CEAC Offset: 0x165CEAC VA: 0x165CEAC
 		private void UpdateIdle()
@@ -611,39 +688,81 @@ namespace XeApp.Game.Menu
 			{
 				if(m_SwaipTouch.IsStop())
 					return;
-				if(m_SwaipTouch.IsSwaip(1))
+				if(m_SwaipTouch.IsSwaip(SwaipTouch.Direction.RIGHT))
 				{
-					ChangeSelectValkyrie(0);
+					ChangeSelectValkyrie(LayoutValkyrieSelect.Direction.LEFT);
 				}
-				if(m_SwaipTouch.IsSwaip(2))
+				if(m_SwaipTouch.IsSwaip(SwaipTouch.Direction.LEFT))
 				{
-					ChangeSelectValkyrie(1);
+					ChangeSelectValkyrie(LayoutValkyrieSelect.Direction.RIGHT);
 				}
-				if(m_SwaipTouch.IsFlickNoSwaip(1))
+				if(m_SwaipTouch.IsFlickNoSwaip(SwaipTouch.Direction.RIGHT))
 				{
-					ChangeSelectValkyrie(0);
+					ChangeSelectValkyrie(LayoutValkyrieSelect.Direction.LEFT);
 				}
-				if(m_SwaipTouch.IsFlickNoSwaip(2))
+				if(m_SwaipTouch.IsFlickNoSwaip(SwaipTouch.Direction.LEFT))
 				{
-					ChangeSelectValkyrie(1);
+					ChangeSelectValkyrie(LayoutValkyrieSelect.Direction.RIGHT);
 				}
 			}
 		}
 
 		// // RVA: 0x165D04C Offset: 0x165D04C VA: 0x165D04C
-		// private void UpdateChangeAnim_Start() { }
+		private void UpdateChangeAnim_Start()
+		{
+			MenuScene.Instance.InputDisable();
+			m_layoutValSelect.SetActiveTransform(m_EffectInstance.activeSelf, false);
+			m_layoutValSelect.FadeOutValkyrieImage(LayoutValkyrieSelect.Direction.LEFT);
+			m_layoutValSelect.FadeOutValkyrieImage(LayoutValkyrieSelect.Direction.RIGHT);
+			if(m_IsDispEpPop)
+			{
+				m_episodePop.Leave();
+				m_IsDispEpPop = false;
+			}
+			m_Updater = UpdateChangeAnim_Wait;
+		}
 
 		// // RVA: 0x165D1F0 Offset: 0x165D1F0 VA: 0x165D1F0
-		// private void UpdateChangeAnim_Wait() { }
+		private void UpdateChangeAnim_Wait()
+		{
+			if(!m_layoutValSelect.ValkyrieImageIsPlaying())
+			{
+				if(m_episodePop.IsPlaying())
+					return;
+				m_layoutValSelect.ApplySelectValkyrieImage(m_SeriesValkyrieList[SelectSeries], Select);
+                PIGBBNDPPJC epData = GetEpisodeData(m_SeriesValkyrieList[SelectSeries][Select].KELFCMEOPPM_EpisodeId);
+                m_episodePop.SetEpisodeText(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_01"), string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_02"), epData != null ? epData.OPFGFINHFCE : ""));
+				m_layoutValSelect.FadeInValkyrieImage(LayoutValkyrieSelect.Direction.LEFT);
+				m_layoutValSelect.FadeInValkyrieImage(LayoutValkyrieSelect.Direction.RIGHT);
+				m_episodePop.SetEpisodeValkyrieImage(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, 0);
+				if(m_IsPlayEpAnim)
+				{
+					m_episodePop.Enter();
+					m_IsDispEpPop = true;
+				}
+				m_Updater = UpdateChangeAnim_End;
+			}
+		}
 
 		// // RVA: 0x165D6D4 Offset: 0x165D6D4 VA: 0x165D6D4
-		// private void UpdateChangeAnim_End() { }
+		private void UpdateChangeAnim_End()
+		{
+			if(!m_layoutValSelect.ValkyrieImageIsPlaying())
+			{
+				if(m_episodePop.IsPlaying())
+					return;
+				MenuScene.Instance.InputEnable();
+				m_SwaipTouch.ResetValue();
+				m_SwaipTouch.ResetInputState();
+				m_layoutValSelect.SetActiveTransform(m_EffectInstance.activeSelf, true);
+				m_Updater = UpdateIdle;
+			}
+		}
 
 		// // RVA: 0x165D88C Offset: 0x165D88C VA: 0x165D88C
 		private void OnClickArrowButtonL()
 		{
-			TodoLogger.LogNotImplemented("OnClickArrowButtonL");
-			/*if(!m_SwaipTouch.IsMoveFlickDistance() && !m_viewSceneFlag)
+			if(!m_SwaipTouch.IsMoveFlickDistance() && !m_viewSceneFlag)
 			{
 				if(InputManager.Instance.GetInScreenTouchCount() < 2)
 				{
@@ -651,32 +770,94 @@ namespace XeApp.Game.Menu
 					{
 						if(IsLoadedValkyrie())
 						{
-							ChangeSelectValkyrie(0);
+							ChangeSelectValkyrie(LayoutValkyrieSelect.Direction.LEFT);
 							SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 						}
 					}
 				}
-			}*/
+			}
 		}
 
 		// // RVA: 0x165DB58 Offset: 0x165DB58 VA: 0x165DB58
 		private void OnClickArrowButtonR()
 		{
-			TodoLogger.LogNotImplemented("OnClickArrowButtonR");
+			if(!m_SwaipTouch.IsMoveFlickDistance() && !m_viewSceneFlag)
+			{
+				if(InputManager.Instance.GetInScreenTouchCount() < 2)
+				{
+					if(!MenuScene.Instance.DirtyChangeScene)
+					{
+						if(IsLoadedValkyrie())
+						{
+							ChangeSelectValkyrie(LayoutValkyrieSelect.Direction.RIGHT);
+							SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+						}
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x165DCF8 Offset: 0x165DCF8 VA: 0x165DCF8
 		private void OnClickSelectButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickSelectButton");
+			if(!m_SwaipTouch.IsMoveFlickDistance() && !m_viewSceneFlag)
+			{
+				if(InputManager.Instance.GetInScreenTouchCount() < 2)
+				{
+					if(!MenuScene.Instance.DirtyChangeScene && IsLoadedValkyrie())
+					{
+						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+						m_PopupSetting.Buttons = new ButtonInfo[2] {
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+						};
+						m_PopupSetting.before_data = m_UnitData.JOKFNBLEILN_Valkyrie;
+						m_PopupSetting.after_data = m_SeriesValkyrieList[SelectSeries][Select];
+						NHDJHOPLMDE n = new NHDJHOPLMDE(m_PopupSetting.before_data.GPPEFLKGGGJ_ValkyrieId, 0);
+						m_PopupSetting.before_data_ab = n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.MGJDKBFHDML, GetAbilityCondition()) ? n : null;
+						n = new NHDJHOPLMDE(m_PopupSetting.after_data.GPPEFLKGGGJ_ValkyrieId, 0);
+						m_PopupSetting.after_data_ab = n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.MGJDKBFHDML, GetAbilityCondition()) ? n : null;
+						SoundManager.Instance.voPilot.RequestChangeCueSheet(m_PopupSetting.after_data.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId, () => {
+							//0x165FD34
+							return;
+						});
+						PopupWindowManager.Show(m_PopupSetting, OnClickPopupButton, null, null, null);
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x165E470 Offset: 0x165E470 VA: 0x165E470
-		// private void OnClickPopupButton(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void OnClickPopupButton(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if(label != PopupButton.ButtonLabel.Ok)
+				return;
+			m_is_ValkrieTouch = false;
+			StartCoroutine(Co_DecideValkyrie());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733E74 Offset: 0x733E74 VA: 0x733E74
 		// // RVA: 0x165E4A8 Offset: 0x165E4A8 VA: 0x165E4A8
-		// private IEnumerator Co_DecideValkyrie() { }
+		private IEnumerator Co_DecideValkyrie()
+		{
+			//0x165FE38
+			MenuScene.Instance.InputDisable();
+			SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Select, 0);
+			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
+			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
+			int oldValk = m_UnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId;
+			ReplaceValkyrie();
+			int newValk = m_UnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId;
+			if(oldValk != newValk)
+			{
+				ILCCJNDFFOB.HHCJCDFCLOB.EEPIDKPPLJI(oldValk, newValk);
+			}
+			MenuScene.SaveRequest();
+			m_viewSceneFlag = false;
+			yield return new WaitForSeconds(0.5f);
+			MenuScene.Instance.Return(true);
+			MenuScene.Instance.InputEnable();
+		}
 
 		// // RVA: 0x165E554 Offset: 0x165E554 VA: 0x165E554
 		private void OnClickViewButton()
@@ -687,7 +868,23 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x165E788 Offset: 0x165E788 VA: 0x165E788
 		private void OnClickSeriesButton(SeriesAttr.Type type)
 		{
-			TodoLogger.LogNotImplemented("OnClickSeriesButton");
+			if(InputManager.Instance.GetInScreenTouchCount() < 2)
+			{
+				if(!MenuScene.Instance.DirtyChangeScene)
+				{
+					if(IsLoadedValkyrie())
+					{
+						if(!m_SwaipTouch.IsMoveFlickDistance() && !m_viewSceneFlag)
+						{
+							SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+							m_SeriesTab.ChangeSelectSeries((int)type, ref SelectSeries, ref Select);
+							ApplySelectValkyrie();
+							m_SeriesTab.ApplySelectSeriesButton((int)type - 1);
+							m_Updater = UpdateChangeAnim_Start;
+						}
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x165E9C8 Offset: 0x165E9C8 VA: 0x165E9C8
@@ -697,34 +894,79 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x165D5BC Offset: 0x165D5BC VA: 0x165D5BC
-		// private PIGBBNDPPJC GetEpisodeData(int id) { }
+		private PIGBBNDPPJC GetEpisodeData(int id)
+		{
+			for(int i = 0; i < m_EpisodeList.Count; i++)
+			{
+				if(m_EpisodeList[i].KELFCMEOPPM_Id == id)
+				{
+					return m_EpisodeList[i];
+				}
+			}
+			return null;
+		}
 
 		// // RVA: 0x165EFA4 Offset: 0x165EFA4 VA: 0x165EFA4
 		private void OnClickTransformation()
 		{
-			TodoLogger.LogNotImplemented("OnClickTransformation");
+			if(m_viewValkyrieModeObj != null)
+			{
+				ViewScreenValkyrie v = m_viewValkyrieModeObj.GetComponent<ViewScreenValkyrie>();
+				if(v != null)
+				{
+					if(v.IsShow() && m_is_ValkrieTouch)
+					{
+						if(!m_SwaipTouch.IsSwaiping())
+						{
+							if(!m_SwaipTouch.IsMoveFlickDistance() && !m_viewSceneFlag)
+							{
+								if(InputManager.Instance.GetInScreenTouchCount() < 2)
+								{
+									if(!MenuScene.Instance.DirtyChangeScene)
+									{
+										int nextForm = m_SeriesValkyrieList[SelectSeries][Select].GCCNMFHELCB_Form;
+										nextForm++;
+										if(nextForm > 2)
+											nextForm -= 3;
+										m_SeriesValkyrieList[SelectSeries][Select].OELFCIKFMLL(nextForm);
+										v.ChangeFormType(nextForm, true);
+										SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VALKYRIE_000);
+										m_layoutValSelect.SetActiveTransform(m_EffectInstance.activeSelf, false);
+										m_SwaipTouch.Stop(true);
+										StartCoroutine(v.Co_WaitEnableTransformation(() => {
+											//0x165FB78
+											m_SwaipTouch.ResetValue();
+											m_SwaipTouch.ResetInputState();
+											m_layoutValSelect.SetActiveTransform(m_EffectInstance.activeSelf, true);
+											m_SwaipTouch.Stop(false);
+										}));
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x165C7E0 Offset: 0x165C7E0 VA: 0x165C7E0
-		// private void SetActiveSwaipTouch(bool is_active) { }
+		private void SetActiveSwaipTouch(bool is_active)
+		{
+			m_SwaipTouch.enabled = m_SeriesValkyrieList[SelectSeries].Count < 2 ? false : is_active;
+		}
 
 		// // RVA: 0x165DA2C Offset: 0x165DA2C VA: 0x165DA2C
-		// private bool IsLoadedValkyrie() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x733F3C Offset: 0x733F3C VA: 0x733F3C
-		// // RVA: 0x165FB34 Offset: 0x165FB34 VA: 0x165FB34
-		// private bool <Co_PlayNoticeAnim>b__46_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x733F8C Offset: 0x733F8C VA: 0x733F8C
-		// // RVA: 0x165FB70 Offset: 0x165FB70 VA: 0x165FB70
-		// private void <OnStartEnterAnimation>b__60_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x733F9C Offset: 0x733F9C VA: 0x733F9C
-		// // RVA: 0x165FB74 Offset: 0x165FB74 VA: 0x165FB74
-		// private void <OnStartEnterAnimation>b__60_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x733FAC Offset: 0x733FAC VA: 0x733FAC
-		// // RVA: 0x165FB78 Offset: 0x165FB78 VA: 0x165FB78
-		// private void <OnClickTransformation>b__82_0() { }
+		private bool IsLoadedValkyrie()
+		{
+			if(m_viewValkyrieModeObj != null)
+			{
+				ViewScreenValkyrie v = m_viewValkyrieModeObj.GetComponent<ViewScreenValkyrie>();
+				if(v != null)
+				{
+					return v.IsLoaded();
+				}
+			}
+			return false;
+		}
 	}
 }

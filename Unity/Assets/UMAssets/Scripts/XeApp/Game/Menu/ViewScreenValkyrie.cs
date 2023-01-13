@@ -122,48 +122,166 @@ namespace XeApp.Game.Menu
 			if(v != null)
 			{
 				v.SetTargetObject(m_valkyrieObj.gameObject);
-				v.SetOperationType(0);
+				v.SetOperationType(ViewModeCameraMan.OperationType.VERTICAL_ROT_X);
 				v.SetDefaultAngle(0, m_valkyriePoseAngle);
-				!!!
+				for(int i = 0; i < 3; i++)
+				{
+					SkinnedMeshRenderer smr;
+					if(i == 2)
+					{
+						smr = m_valkyrieObj.battroid.GetComponentInChildren<SkinnedMeshRenderer>();
+					}
+					else if(i == 1)
+					{
+						smr = m_valkyrieObj.gerwalk.GetComponentInChildren<SkinnedMeshRenderer>();
+					}
+					else
+					{
+						smr = m_valkyrieObj.fighter.GetComponentInChildren<SkinnedMeshRenderer>();
+					}
+					if(smr != null)
+					{
+						v.SetValkyrieRenderer((FKGMGBHBNOC.HPJOCKGKNCC_Form)i, smr);
+					}
+				}
 			}
+			ChangeFormType(m_nextForm, false);
+			HideLoadingEffect();
+			m_loading = false;
 		}
 
 		//// RVA: 0x1CE7CB8 Offset: 0x1CE7CB8 VA: 0x1CE7CB8
-		//public void Show() { }
+		public void Show()
+		{
+			if(m_valkyrieObj != null)
+			{
+				Renderer[] rs = m_valkyrieObj.GetComponentsInChildren<Renderer>();
+				for(int i = 0; i < rs.Length; i++)
+				{
+					rs[i].enabled = true;
+				}
+			}
+		}
 
 		//// RVA: 0x1CE7DE4 Offset: 0x1CE7DE4 VA: 0x1CE7DE4
-		//public void Hide() { }
+		public void Hide()
+		{
+			if(m_valkyrieObj != null)
+			{
+				Renderer[] rs = m_valkyrieObj.GetComponentsInChildren<Renderer>();
+				for(int i = 0; i < rs.Length; i++)
+				{
+					rs[i].enabled = false;
+				}
+			}
+		}
 
 		//// RVA: 0x1CE7F10 Offset: 0x1CE7F10 VA: 0x1CE7F10
-		//public bool IsShow() { }
+		public bool IsShow()
+		{
+			Renderer[] rs = m_valkyrieObj.GetComponentsInChildren<Renderer>();
+			for(int i = 0; i < rs.Length; i++)
+			{
+				if(rs[i].enabled)
+					return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1CE8000 Offset: 0x1CE8000 VA: 0x1CE8000
-		//public bool IsLoaded() { }
+		public bool IsLoaded()
+		{
+			return m_is_loaded;
+		}
 
 		//// RVA: 0x1CE8008 Offset: 0x1CE8008 VA: 0x1CE8008
-		//public bool IsChangeValkyrie() { }
+		public bool IsChangeValkyrie()
+		{
+			return m_vfId != m_nextVfId;
+		}
 
 		//// RVA: 0x1CE8020 Offset: 0x1CE8020 VA: 0x1CE8020
-		//public void ChangeValkyrie(int vfid, int form) { }
+		public void ChangeValkyrie(int vfid, int form)
+		{
+			m_nextVfId = vfid;
+			m_nextForm = form;
+		}
 
 		//// RVA: 0x1CE802C Offset: 0x1CE802C VA: 0x1CE802C
-		//public void ChangeFormType(int formType, bool changeAnimFlag) { }
+		public void ChangeFormType(int formType, bool changeAnimFlag)
+		{
+			if(m_valkyrieObj != null)
+			{
+				SkinnedMeshRenderer smr;
+				if(formType == 1)
+					smr = m_valkyrieObj.gerwalk.GetComponentInChildren<SkinnedMeshRenderer>();
+				else if(formType == 0)
+					smr = m_valkyrieObj.fighter.GetComponentInChildren<SkinnedMeshRenderer>();
+				else
+					smr = m_valkyrieObj.battroid.GetComponentInChildren<SkinnedMeshRenderer>();
+				if(changeAnimFlag)
+				{
+					m_valkyrieObj.Change(formType);
+					m_valkyrieObj.GetChangeAnimLength();
+				}
+				else
+				{
+					m_valkyrieObj.SetForm(formType);
+				}
+				ViewModeCameraMan v = m_cameraObj.GetComponent<ViewModeCameraMan>();
+				if(v != null)
+				{
+					v.SetValkyrieForm(formType, changeAnimFlag);
+				}
+				m_currentForm = formType;
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73441C Offset: 0x73441C VA: 0x73441C
 		//// RVA: 0x1CE829C Offset: 0x1CE829C VA: 0x1CE829C
-		//public IEnumerator Co_WaitEnableTransformation(Action ChangeFormEndCallBack) { }
+		public IEnumerator Co_WaitEnableTransformation(Action ChangeFormEndCallBack)
+		{
+			//0x1CE8858
+			MenuScene.Instance.RaycastDisable();
+			float t = 0;
+			if(m_valkyrieObj != null)
+				t = GetChangeWaitTime();
+			yield return new WaitForSeconds(t);
+			MenuScene.Instance.RaycastEnable();
+			ChangeFormEndCallBack();
+
+		}
 
 		//// RVA: 0x1CE8364 Offset: 0x1CE8364 VA: 0x1CE8364
-		//public int GetValkyrieId() { }
+		public int GetValkyrieId()
+		{
+			return m_vfId;
+		}
 
 		//// RVA: 0x1CE836C Offset: 0x1CE836C VA: 0x1CE836C
-		//public int GetFormType() { }
+		public int GetFormType()
+		{
+			return m_currentForm;
+		}
 
 		//// RVA: 0x1CE8374 Offset: 0x1CE8374 VA: 0x1CE8374
-		//public float GetChangeWaitTime() { }
+		public float GetChangeWaitTime()
+		{
+			return VALKYRIE_TRANSFORM_WAIT_TIME;
+		}
 
 		//// RVA: 0x1CE8400 Offset: 0x1CE8400 VA: 0x1CE8400
-		//public static GameObject Create(int vfId, int form, Action _ShowLodingEffect, Action _HideLodingEffect, bool _IsCameraMan = True) { }
+		public static GameObject Create(int vfId, int form, Action _ShowLodingEffect, Action _HideLodingEffect, bool _IsCameraMan = true)
+		{
+			GameObject go = new GameObject("View Mode Valkyrie");
+			ViewScreenValkyrie v = go.AddComponent<ViewScreenValkyrie>();
+			v.m_vfId = vfId;
+			v.m_form = form;
+			v.ShowLoadingEffect = _ShowLodingEffect;
+			v.HideLoadingEffect = _HideLodingEffect;
+			v.IsCreateCameraMan = _IsCameraMan;
+			return go;
+		}
 
 		//// RVA: 0x1CE85B8 Offset: 0x1CE85B8 VA: 0x1CE85B8
 		//public void ValkyrieChenge(int NextVfId, int NextForm) { }
@@ -176,7 +294,7 @@ namespace XeApp.Game.Menu
 		{
 			if(obj!= null)
 			{
-				Destroy(obj);
+				UnityEngine.Object.Destroy(obj);
 			}
 		}
 	}

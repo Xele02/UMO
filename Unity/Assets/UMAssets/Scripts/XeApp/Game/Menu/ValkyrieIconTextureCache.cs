@@ -27,7 +27,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1655A58 Offset: 0x1655A58 VA: 0x1655A58
-		// public void LoadPortraitIcon(int valkyrie, int form, Action<IiconTexture> callBack) { }
+		public void LoadPortraitIcon(int valkyrie, int form, Action<IiconTexture> callBack)
+		{
+			Load(MakePortraitIconBundleName(valkyrie, form), callBack);
+		}
 
 		// // RVA: 0x1655C2C Offset: 0x1655C2C VA: 0x1655C2C
 		// public void TryInstallPortraitIcon(int valkyrie) { }

@@ -2105,7 +2105,10 @@ public class ILDKBCLAFPB
 		// public bool LANDKPMJEFB(int PPFNGGCBJKC) { }
 
 		// // RVA: 0x201BAF8 Offset: 0x201BAF8 VA: 0x201BAF8
-		// public void EDEDFDDIOKO(int PPFNGGCBJKC) { }
+		public void EDEDFDDIOKO(int PPFNGGCBJKC)
+		{
+			KGMLFAFPOKP[PPFNGGCBJKC >> 5] |= 1 << (PPFNGGCBJKC & 0x1f);
+		}
 
 		// // RVA: 0x2025554 Offset: 0x2025554 VA: 0x2025554
 		// public void GIBNLEBILNO(int PPFNGGCBJKC) { }

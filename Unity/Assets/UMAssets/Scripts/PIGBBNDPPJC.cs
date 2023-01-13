@@ -6,7 +6,7 @@ public class PIGBBNDPPJC
 {
 	public string OPFGFINHFCE; // 0x8
 	public string KLMPFGOCBHC; // 0xC
-	public int KELFCMEOPPM; // 0x10
+	public int KELFCMEOPPM_Id; // 0x10
 	public int EAHPLCJMPHD; // 0x14
 	public bool CADENLBDAEB; // 0x18
 	public int FKMAEKNOLJB; // 0x1C

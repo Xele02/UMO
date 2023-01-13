@@ -108,13 +108,19 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x193E98C Offset: 0x193E98C VA: 0x193E98C
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_SeriesBtnAnim.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		// // RVA: 0x193EA18 Offset: 0x193EA18 VA: 0x193EA18
 		// public void Show() { }
 
 		// // RVA: 0x193EA1C Offset: 0x193EA1C VA: 0x193EA1C
-		// public void Leave() { }
+		public void Leave()
+		{
+			m_SeriesBtnAnim.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		// // RVA: 0x193EAA8 Offset: 0x193EAA8 VA: 0x193EAA8
 		public void ButtonDisable(int seriesIndex, bool IsDisable)
@@ -123,7 +129,18 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x193EBCC Offset: 0x193EBCC VA: 0x193EBCC
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			bool res = m_SeriesBtnAnim.IsPlayingChildren();
+			if(m_LogoImages != null)
+			{
+				for(int i = 0; i < m_LogoImages.Count; i++)
+				{
+					res |= !m_LogoImages[i].enabled;
+				}
+			}
+			return res;
+		}
 
 		// RVA: 0x193ECE4 Offset: 0x193ECE4 VA: 0x193ECE4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

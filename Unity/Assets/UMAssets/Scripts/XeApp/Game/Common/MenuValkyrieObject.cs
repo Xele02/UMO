@@ -86,10 +86,32 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1114FE4 Offset: 0x1114FE4 VA: 0x1114FE4
-		//public void Change(int form) { }
+		public void Change(int form)
+		{
+			if(m_coChangeFinish != null)
+			{
+				StopCoroutine(m_coChangeFinish);
+				m_coChangeFinish = null;
+			}
+			form = (form + 2) % 3;
+			if(m_form != form)
+			{
+				SetForm(form);
+				m_form = form;
+			}
+			animator.Play(ChangeStateHash[m_form], -1, 0);
+			m_coChangeFinish = StartCoroutine(Co_WaitAnimationEnd(ChangeStateHash[m_form], () => {
+				//0x1115A30
+				m_coChangeFinish = null;
+				SetForm((m_form + 1) % 3);
+			}));
+		}
 
 		//// RVA: 0x11151FC Offset: 0x11151FC VA: 0x11151FC
-		//public float GetChangeAnimLength() { }
+		public float GetChangeAnimLength()
+		{
+			return m_animClipLen_Change[m_form];
+		}
 
 		//// RVA: 0x1115244 Offset: 0x1115244 VA: 0x1115244
 		//public void Unlock() { }
@@ -102,10 +124,6 @@ namespace XeApp.Game.Common
 
 		//// RVA: 0x111553C Offset: 0x111553C VA: 0x111553C
 		//public bool IsPlayingUnlockAnim() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x73C178 Offset: 0x73C178 VA: 0x73C178
-		//// RVA: 0x1115A30 Offset: 0x1115A30 VA: 0x1115A30
-		//private void <Change>b__23_0() { }
 
 		//[CompilerGeneratedAttribute] // RVA: 0x73C188 Offset: 0x73C188 VA: 0x73C188
 		//// RVA: 0x1115A5C Offset: 0x1115A5C VA: 0x1115A5C
