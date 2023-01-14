@@ -18,7 +18,29 @@ namespace XeApp.Game.Menu
 			public Material MaterialAdd { get; set; } // 0x20
 
 			// RVA: 0x10541E0 Offset: 0x10541E0 VA: 0x10541E0
-			public void Set(RawImageEx image, HighScoreRatingRank.Type rank) { }
+			public void Set(RawImageEx image, HighScoreRatingRank.Type rank)
+			{
+				if(Material != null)
+				{
+					if(image != null)
+					{
+						image.material = Material;
+						image.MaterialMul = Material;
+						image.MaterialAdd = MaterialAdd;
+						image.texture = BaseTexture;
+						image.MaterialMul.SetTexture("_MainTex", BaseTexture);
+						image.MaterialMul.SetTexture("_MaskTex", MaskTexture);
+						image.MaterialAdd.SetTexture("_MainTex", BaseTexture);
+						image.MaterialAdd.SetTexture("_MaskTex", MaskTexture);
+					}
+				}
+				float w = Width / BaseTexture.width;
+				float h = Height / BaseTexture.height;
+				int idx = ((int)rank - 1) % Unit;
+				image.uvRect = new Rect(w * (idx % Column), 
+				1 - h * (idx / Row) - h, 
+				w, h);
+			}
 		}
 
 		private const int IconCount = 2;

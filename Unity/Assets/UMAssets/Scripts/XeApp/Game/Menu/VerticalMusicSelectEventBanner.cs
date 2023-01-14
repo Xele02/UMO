@@ -9,6 +9,14 @@ namespace XeApp.Game.Menu
 {
 	public class VerticalMusicSelectEventBanner : MonoBehaviour
 	{
+		public enum ButtonType
+		{
+			Enable = 0,
+			Disable = 1,
+			Period = 2,
+			Counting = 3,
+		}
+
 		[SerializeField]
 		private CanvasGroup m_canvasGroup; // 0xC
 		[SerializeField]
@@ -85,7 +93,33 @@ namespace XeApp.Game.Menu
 		// public void SetLimitTimeLabel(string label) { }
 
 		// // RVA: 0xBDD500 Offset: 0xBDD500 VA: 0xBDD500
-		// public void SetType(VerticalMusicSelectEventBanner.ButtonType type) { }
+		public void SetType(ButtonType type)
+		{
+			m_eventBunnerImage.gameObject.SetActive(false);
+			m_countingObj.gameObject.SetActive(false);
+			m_limitTime.gameObject.SetActive(false);
+			m_openObj.gameObject.SetActive(false);
+			m_canvasGroup.alpha = 0;
+			m_canvasGroup.blocksRaycasts = false;
+			if(type != ButtonType.Counting)
+			{
+				if(type != ButtonType.Enable)
+					return;
+				m_eventBunnerImage.gameObject.SetActive(true);
+				m_limitTime.gameObject.SetActive(true);
+				m_openObj.gameObject.SetActive(true);
+				m_canvasGroup.alpha = 1;
+				m_canvasGroup.blocksRaycasts = true;
+			}
+			else
+			{
+				m_canvasGroup.alpha = 1;
+				m_canvasGroup.blocksRaycasts = true;
+				m_eventBunnerImage.gameObject.SetActive(true);
+				m_limitTime.gameObject.SetActive(true);
+				m_countingObj.gameObject.SetActive(true);
+			}
+		}
 
 		// // RVA: 0xBDD8A8 Offset: 0xBDD8A8 VA: 0xBDD8A8
 		// public void SetTicketCount(int count) { }

@@ -89,10 +89,10 @@ namespace XeApp.Game.Menu
 			return selectMusicData.GHBPLHBNMBK_FreeMusicId;
 		} } //0xAC8BAC
 		// protected int gameEventType { get; } 0xAC8C00
-		// protected int m_eventTicketId { get; set; } // 0x9C
+		protected int m_eventTicketId { get; set; } // 0x9C
 		protected KGCNCBOKCBA.GNENJEHKMHD m_eventStatus { get; set; } // 0xA0
 		protected bool m_isEventTimeLimit { get; set; } // 0xA4
-		// private bool m_muteSelectionSe { get; set; } // 0xA5
+		private bool m_muteSelectionSe { get; set; } // 0xA5
 		private bool m_requestFadeOutBgm { get; set; } // 0xA6
 		private int m_changeToTrialBgmId { get; set; } // 0xA8
 		// private float bgmFadeOutSec { get; } 0xAC8CAC

@@ -24,7 +24,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDDC60 Offset: 0xBDDC60 VA: 0xBDDC60
-		// public void SetEnable(bool isEnable) { }
+		public void SetEnable(bool isEnable)
+		{
+			m_canvasGroup.alpha = isEnable ? 1 : 0;
+		}
 
 		// // RVA: 0xBDDCAC Offset: 0xBDDCAC VA: 0xBDDCAC
 		// public void SetItemNum(int itemNum) { }
