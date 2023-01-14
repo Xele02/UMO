@@ -328,7 +328,7 @@ namespace XeApp.Game.Common
 			}
 			m_buttonUguiRuntime.GetComponent<RectTransform>().anchoredPosition = GetContentButtonPosition(setting.WindowSize, setting.IsCaption);
 			m_validButtonCount = m_buttons.Length;
-			m_tabButtonUguiRuntime.gameObject.SetActive(m_buttons.Length != 0);
+			m_tabButtonUguiRuntime.gameObject.SetActive(setting.Tabs.Length != 0);
 			if(setting.Tabs.Length != 0)
 			{
 				AbsoluteLayout layout = m_tabButtonUguiRuntime.Layout.Root[0] as AbsoluteLayout;

@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 				m_params[i].InitializeDecoration();
 				m_params[i].UpdateDecoration(DisplayType.Level);
 			}
-			m_infoButton.SetPage(m_params[0].GetDisplayIndex(), m_params[0].GetDisplayMax());
+			m_infoButton.SetPage(m_params[0].GetDisplayIndex() + 1, m_params[0].GetDisplayMax());
 			gameObject.SetActive(true);
 		}
 

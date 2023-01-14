@@ -34,14 +34,14 @@ namespace XeSys.Gfx
 		// public float AnimCount { get; set; } 0x1EE958C 0x1EE9594
 		// public float TimeScale { get; set; } 0x1EE5EA4 0x1EE5EF8
 		// public float FrameSec { get; set; } 0x1EE959C 0x1EE95A4
-		public int FrameCount { get { return (int)(m_AnimCount / m_FrameSec); } private set { return; } } //0x1EE95AC 0x1EE95C4
+		public int FrameCount { get { return Mathf.RoundToInt(m_AnimCount / m_FrameSec); } private set { return; } } //0x1EE95AC 0x1EE95C4
 		// public float BaseX { get; set; } 0x1EE95C8 0x1EE95D0
 		// public float BaseY { get; set; } 0x1EE95D8 0x1EE95E0
 		// public int FrameNum { get; } 0x1EE95E8
 		// public string ID { get; set; } 0x1EE9614 0x1EE9640
 		// public TimeMap AnimTimeMap { get; } 0x1EE9670
 		// public int LabelCount { get; } 0x1EE969C
-		// public LabelData[] LabelList { get; } 0x1EE9700
+		public LabelData[] LabelList { get { return data.m_LabelList; } } //0x1EE9700
 		// public bool IsPosAnim { get; set; } 0x1EE9724 0x1EE6E7C
 		// public bool IsMoveAnim { get; set; } 0x1EE9790 0x1EE97B8
 		// public bool IsMoveBezierX { get; set; } 0x1EE97F0 0x1EE9818

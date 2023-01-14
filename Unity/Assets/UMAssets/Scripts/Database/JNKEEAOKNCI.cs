@@ -913,7 +913,7 @@ public class PPGHMBNIAEC
 			}
 			for(int i = 0; i < 2; i++)
 			{
-				short a = PHAGNOHBMCM_DurationByIndexAndLevel[CIEOBFIIPLD - 1, 2];
+				short a = PHAGNOHBMCM_DurationByIndexAndLevel[2, CIEOBFIIPLD - 1];
 				str.Replace(i == 0 ? "[dv]" : "[dv2]", a.ToString());
 			}
 			return str.Replace("[tv]", LFGFBMJNBKN_ConfigValue[CIEOBFIIPLD - 1].ToString());

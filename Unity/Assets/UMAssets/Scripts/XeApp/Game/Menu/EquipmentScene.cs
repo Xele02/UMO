@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 			m_slotSceneLayout = m_sceneIconCursor[0].FindViewByExId("sw_cmn_scene_icon_anim_cmn_scene_icon01") as AbsoluteLayout;
 			float t = m_compatibleAnimeLayout[0][0].FrameAnimation.SearchLabelFrame("loen_act");
 			float t2 = m_compatibleAnimeLayout[0][0].FrameAnimation.SearchLabelFrame("logo_act");
-			m_comAnimeParam.Initialize(t, t2);
+			m_comAnimeParam.Initialize(t2, t);
 			m_uvManager = uvMan;
 			m_compatibleFlag = 0;
 			return true;
@@ -174,7 +174,7 @@ namespace XeApp.Game.Menu
 						//0xF0E524
 						OnShowSceneStatus(loopIndex);
 					});
-					if(i == 0 || isCenter)
+					if(i == 0 && isCenter)
 					{
 						SetSkillTypeIcon(SceneIconScrollContent.SkillIconType.Active, 0);
 						if(!SetDeckSkillIconControl.CheckMatchActiveSkill(sceneInfo))
@@ -195,6 +195,9 @@ namespace XeApp.Game.Menu
 						if(!sceneInfo.DCLLIDMKNGO_IsDivaCompatible(divaId))
 						{
 							SetSkillTypeIcon(SceneIconScrollContent.SkillIconType.Live, i * 2);
+							m_skillIconLayout[i].StartChildrenAnimGoStop("01");
+							m_compatibleAnimeLayout[i].StartChildrenAnimGoStop("st_non");
+							m_compatibleFlag &= (sbyte)~((0x1000000 << i) >> 0x18);
 						}
 						else
 						{

@@ -23,14 +23,22 @@ namespace XeSys.Gfx
 		public int SetFrame = -1;
 		public FrameData[] FrameData;
 
+		public LabelData[] LabelList;
+		public int CurrentFrame;
+		public bool HasView;
+
 		public void Init(ViewBase view, LayoutUGUIRuntime runtime)
 		{
 			View = view;
 			LayoutId = view.ID;
 			LayoutExId = view.EXID;
 			InitializedFrom = runtime.gameObject;
-			MaxFrame = view.FrameAnimation.FrameDataCount;
-			FrameData = view.FrameAnimation.F;
+			if(view.FrameAnimation != null)
+			{
+				MaxFrame = view.FrameAnimation.FrameDataCount;
+				FrameData = view.FrameAnimation.F;
+				LabelList = view.FrameAnimation.LabelList;
+			}
 		}
 
 		void Update()
@@ -49,6 +57,11 @@ namespace XeSys.Gfx
 				{
 					View.StartAnimGoStop(SetFrame, SetFrame);
 				}
+			}
+			HasView = View != null;
+			if(View != null && View.FrameAnimation != null)
+			{
+				CurrentFrame = View.FrameAnimation.FrameCount;
 			}
 		}
 	}

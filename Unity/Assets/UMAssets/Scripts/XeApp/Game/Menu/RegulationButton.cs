@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 		{
 			m_runtime = GetComponentInParent<LayoutUGUIRuntime>();
 			m_uvMan = uvMan;
-			m_layoutTable = m_runtime.FindViewBase(transform as RectTransform) as AbsoluteLayout;
+			m_layoutTable = m_runtime.FindViewBase(transform.parent as RectTransform) as AbsoluteLayout;
 			IsMisMatchMusic = false;
 			m_layoutTable.StartChildrenAnimGoStop("02");
 			Hidden = true;

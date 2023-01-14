@@ -35,6 +35,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x13DE00C Offset: 0x13DE00C VA: 0x13DE00C
 		public void SetPage(int num, int max)
 		{
+			pageNum = num;
+			pageMax = max;
 			m_textPage[0].text = pageNum.ToString();
 			m_textPage[1].text = pageMax.ToString();
 		}

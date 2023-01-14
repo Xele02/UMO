@@ -82,12 +82,15 @@ namespace XeApp.Game.Menu
 				AbsoluteLayout s = root.FindViewByExId(str.ToString()) as AbsoluteLayout;
 				if (s == null)
 					break;
+				s = s.FindViewByExId("sw_skill_swtbl_skill_type") as AbsoluteLayout;
+				if (s == null)
+					break;
 				l.Add(s);
 			}
 			if(l.Count < 1)
 			{
 				m_typeLayouts = new AbsoluteLayout[1];
-				l[0] = root.FindViewByExId(m_typeLayoutExId) as AbsoluteLayout;
+				m_typeLayouts[0] = root.FindViewByExId(m_typeLayoutExId) as AbsoluteLayout;
 			}
 			else
 			{
