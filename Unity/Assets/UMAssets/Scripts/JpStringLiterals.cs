@@ -97,6 +97,7 @@ class JpStringLiterals
 	public const string StringLiteral_11862 = "バッチインストーラ　停止処理が完了しなかったインストールモジュール数 {0}"; // 0x03bb4410
 	public const string StringLiteral_11863 = "バッチインストーラ　放棄した分、インストールモジュールを生成 {0}"; // 0x03bb4414
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
+	public const string StringLiteral_12038 = "…"; // 0x03bb46d0
 	public const string StringLiteral_12148 = "Ⅰ"; // 0x03bb4888
 	public const string StringLiteral_12149 = "Ⅱ"; // 0x03bb488c
 	public const string StringLiteral_12150 = "Ⅲ"; // 0x03bb4890

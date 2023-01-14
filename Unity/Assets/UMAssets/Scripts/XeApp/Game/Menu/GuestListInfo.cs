@@ -92,10 +92,10 @@ namespace XeApp.Game.Menu
 				sceneLevel = g.CIEOBFIIPLD_SceneLevel;
 				sceneAttr = (GameAttribute.Type)g.JGJFIJOCPAG_SceneAttr;
 				sceneSeries = g.AIHCEGFANAM_SceneSeries;
-				int v = g.MEOOLHNNMHL(false, musicData == null ? 0 : musicData.FKDCCLPGKDK_JacketAttr, musicData == null ? 0 : musicData.AIHCEGFANAM_Serie);
+				int v = g.MEOOLHNNMHL_GetSkillId(false, musicData == null ? 0 : musicData.FKDCCLPGKDK_JacketAttr, musicData == null ? 0 : musicData.AIHCEGFANAM_Serie);
 				if(v != 0)
 				{
-					int v2 = g.MEOOLHNNMHL(true, 0, 0);
+					int v2 = g.MEOOLHNNMHL_GetSkillId(true, 0, 0);
 					skill = v == v2 ? g.EFELCLMJEOL_CenterSkillName2 : g.PFHJFIHGCKP_CenterSkillName1;
 					skillLevel = g.DDEDANKHHPN_SkillLevel;
 					skillRank = (SkillRank.Type)(v == v2 ? g.FFDCGHDNDFJ_CenterSkillRank2 : g.DHEFMEGKKDN_CenterSkillRank);

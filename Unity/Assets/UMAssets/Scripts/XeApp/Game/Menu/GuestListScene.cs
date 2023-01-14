@@ -440,11 +440,11 @@ namespace XeApp.Game.Menu
 			{
 				GCIJNCFDNON g = new GCIJNCFDNON();
 				g.KHEKNNFCAOI(info.sceneId, null, null);
-				if(g.KAFAAPEBCPD(Database.Instance.gameSetup.musicInfo.musicId))
+				if(g.KAFAAPEBCPD_IsMatchCenterSkillMusicAttr(Database.Instance.gameSetup.musicInfo.musicId))
 				{
 					elem.SetSkillMask(GuestListElem.SkillMask.None);
 				}
-				else if(g.JDAEAJNJBGI(Database.Instance.gameSetup.musicInfo.musicId))
+				else if(g.JDAEAJNJBGI_IsMatchCenterSkillSerie(Database.Instance.gameSetup.musicInfo.musicId))
 				{
 					elem.SetSkillMask(GuestListElem.SkillMask.MisMatchSeries);
 				}

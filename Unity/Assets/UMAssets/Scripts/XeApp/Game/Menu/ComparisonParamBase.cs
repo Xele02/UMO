@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using XeApp.Game.Common;
 using XeSys;
+using XeApp.Game.Common.uGUI;
 
 namespace XeApp.Game.Menu
 {
@@ -89,7 +90,26 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B511F4 Offset: 0x1B511F4 VA: 0x1B511F4
-		//protected void ComparisonValue(Text text, int befor, int after, int arrowIndex) { }
+		protected void ComparisonValue(Text text, int befor, int after, int arrowIndex)
+		{
+			if(befor < after)
+			{
+				RichTextUtility.ChangeColor(text, StatusTextColor.UpColor);
+				m_arrowImages[arrowIndex].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_cmnTexUvList.GetUVData("cmn_status_icon_up"));
+			}
+			else if(befor == after)
+			{
+				RichTextUtility.ChangeColor(text, StatusTextColor.NormalColor);
+				m_arrowImages[arrowIndex].enabled = false;
+				return;
+			}
+			else
+			{
+				RichTextUtility.ChangeColor(text, StatusTextColor.DownColor);
+				m_arrowImages[arrowIndex].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_cmnTexUvList.GetUVData("cmn_status_icon_down"));
+			}
+			m_arrowImages[arrowIndex].enabled = true;
+		}
 
 		//// RVA: 0x1B515E4 Offset: 0x1B515E4 VA: 0x1B515E4
 		protected void SetSkillType(int pos, SkillType.Type type)
@@ -98,19 +118,34 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B5169C Offset: 0x1B5169C VA: 0x1B5169C
-		//protected void SetSkillRank(int pos, SkillRank.Type rank, int index = 0) { }
+		protected void SetSkillRank(int pos, SkillRank.Type rank, int index = 0)
+		{
+			m_skillInfos[pos].SetSkillRank(rank, index);
+		}
 
 		//// RVA: 0x1B51834 Offset: 0x1B51834 VA: 0x1B51834
-		//protected void SetSkillLevel(int pos, int level, int index = 0) { }
+		protected void SetSkillLevel(int pos, int level, int index = 0)
+		{
+			m_skillInfos[pos].SetSkillLevel(level, index);
+		}
 
 		//// RVA: 0x1B51A68 Offset: 0x1B51A68 VA: 0x1B51A68
-		//protected void SetSkillDescription(int pos, string description, int index = 0) { }
+		protected void SetSkillDescription(int pos, string description, int index = 0)
+		{
+			m_skillInfos[pos].SetSkillDescription(description, index);
+		}
 
 		//// RVA: 0x1B51E34 Offset: 0x1B51E34 VA: 0x1B51E34
-		//protected void SetSkillCrossFade(int pos, bool enable) { }
+		protected void SetSkillCrossFade(int pos, bool enable)
+		{
+			m_skillInfos[pos].SetSkillCrossFade(enable);
+		}
 
 		//// RVA: 0x1B51F34 Offset: 0x1B51F34 VA: 0x1B51F34
-		//public void SetSkillMask(int pos, ComparisonSkillInfo.SkillMask mask) { }
+		public void SetSkillMask(int pos, ComparisonSkillInfo.SkillMask mask)
+		{
+			m_skillInfos[pos].SetSkillMask(mask);
+		}
 
 		//// RVA: 0x1B5110C Offset: 0x1B5110C VA: 0x1B5110C
 		protected void UpdateText(int pos, int index)
@@ -143,7 +178,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B5228C Offset: 0x1B5228C VA: 0x1B5228C
-		//protected void SetLoaded() { }
+		protected void SetLoaded()
+		{
+			m_flags |= (byte)Flags.ImageLoaded;
+		}
 
 		//// RVA: 0x1B5229C Offset: 0x1B5229C VA: 0x1B5229C
 		private void OnPushDetails(ComparisonSkillInfo info, int index)

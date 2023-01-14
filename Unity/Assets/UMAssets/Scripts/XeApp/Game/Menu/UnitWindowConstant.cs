@@ -51,7 +51,75 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1252E90 Offset: 0x1252E90 VA: 0x1252E90
-		//public static bool SetSkillDetails(Text text, string descript, int lineCount = 1) { }
+		public static bool SetSkillDetails(Text text, string descript, int lineCount = 1)
+		{
+			text.horizontalOverflow = HorizontalWrapMode.Wrap;
+			text.verticalOverflow = VerticalWrapMode.Overflow;
+			text.resizeTextForBestFit = false;
+
+			int startIndex = descript.Length;
+			Vector2 size = text.rectTransform.sizeDelta;
+			TextGenerationSettings settings = text.GetGenerationSettings(size);
+			TextGenerator textGen = text.cachedTextGenerator;
+			/*for(int i = 20; i > 0; i--)
+			{
+				//??
+			}*/
+			text.text = descript;
+			/*for(int i = 20; i > 0; i--)
+			{
+				//??
+			}*/
+			textGen.Populate(text.text, settings);
+			textGen.GetLines(m_uiLineInfo);
+			if(lineCount < m_uiLineInfo.Count)
+			{
+				startIndex = Mathf.Max(0, m_uiLineInfo[lineCount].startCharIdx - 3);
+				char[] c = descript.Substring(startIndex).ToCharArray();
+				int j = 0;
+				for(int i = 0; i < c.Length; i++)
+				{
+					if(c[i] == '<')
+					{
+						if(c[i + 1] == '/')
+							j++;
+						else
+							j--;
+					}
+				}
+				if(j > 0)
+				{
+					c = descript.Substring(0, startIndex).ToCharArray();
+					for(int i = c.Length - 1; i >= 0; i--)
+					{
+						if(c[i] == '<')
+						{
+							j--;
+							startIndex = i;
+							if(j == 0)
+								break;
+						}
+					}
+				}
+				c = descript.Substring(startIndex).ToCharArray();
+				for(int i = 0; i < c.Length; i++)
+				{
+					if(c[i] == '<')
+						break;
+					if(c[i] == '>')
+					{
+						startIndex += i + 1;
+						break;
+					}
+				}
+			}
+			text.text = descript.Substring(0, Mathf.Min(descript.Length, startIndex));
+			if(text.text.Length < descript.Length)
+			{
+				text.text += JpStringLiterals.StringLiteral_12038;
+			}
+			return text.text.Length < descript.Length;
+		}
 
 		//// RVA: 0x12549E0 Offset: 0x12549E0 VA: 0x12549E0
 		//public static void SetLiveSkillDetails(Text text, string descript) { }
@@ -70,7 +138,10 @@ namespace XeApp.Game.Menu
 		//public static void SetButtonLabel(RawImageEx image, TexUVData uvData, TexUVList texUvList) { }
 
 		//// RVA: 0x1254AF8 Offset: 0x1254AF8 VA: 0x1254AF8
-		//public static void SetLuckText(Text text, int luck) { }
+		public static void SetLuckText(Text text, int luck)
+		{
+			text.text = MakeLuckText(luck);
+		}
 
 		//// RVA: 0x1254BA8 Offset: 0x1254BA8 VA: 0x1254BA8
 		public static string MakeLuckText(int luck)

@@ -353,9 +353,9 @@ namespace XeApp.Game.Menu
 			}
 			if(m_mainScene != null)
 			{
-				var ab = m_mainScene.MEOOLHNNMHL(false, 0, 0);
+				var ab = m_mainScene.MEOOLHNNMHL_GetSkillId(false, 0, 0);
 				m_centerSkill[1].SetActive(ab != 0);
-				var aa = m_mainScene.MEOOLHNNMHL(true, 0, 0);
+				var aa = m_mainScene.MEOOLHNNMHL_GetSkillId(true, 0, 0);
 				if (aa == ab)
 					aa = 0;
 				m_centerSkill[0].SetActive(aa != 0);
@@ -369,50 +369,50 @@ namespace XeApp.Game.Menu
 					m_centerSkill[1].transform.parent.SetSiblingIndex(2);
 					m_centerSkill[0].transform.parent.SetSiblingIndex(1);
 				}
-				int g = m_mainScene.MEOOLHNNMHL(false, 0, 0);
+				int g = m_mainScene.MEOOLHNNMHL_GetSkillId(false, 0, 0);
 				if(viewMusicData == null)
 				{
-					if(m_mainScene.IFBJBPEBAFH(null, false))
+					if(m_mainScene.IFBJBPEBAFH_HasCenterSkillCondSerie(null, false))
 					{
 						m_centerSkillRegulation[1].SetActive(true);
 					}
-					if(m_mainScene.IFBJBPEBAFH(null, true))
+					if(m_mainScene.IFBJBPEBAFH_HasCenterSkillCondSerie(null, true))
 					{
 						m_centerSkillRegulation[1].SetActive(true);
 					}
-					if(m_mainScene.ABIOBCMPEHM() == SkillSwitchPatternCondition.Type.SeriesAttr_Scn)
+					if(m_mainScene.ABIOBCMPEHM_SkillSwitchPatternCondition() == SkillSwitchPatternCondition.Type.SeriesAttr_Scn)
 					{
 						m_centerSkillRegulation[1].SetActive(true);
 					}
-					if(m_mainScene.FCGHOLNFDDF(null, false))
+					if(m_mainScene.FCGHOLNFDDF_HasCenterSkillCondMusicAttr(null, false))
 					{
 						m_centerSkillRegulation[2].SetActive(true);
 					}
-					if (m_mainScene.FCGHOLNFDDF(null, true))
+					if (m_mainScene.FCGHOLNFDDF_HasCenterSkillCondMusicAttr(null, true))
 					{
 						m_centerSkillRegulation[2].SetActive(true);
 					}
 				}
 				else
 				{
-					int a = m_mainScene.MEOOLHNNMHL(false, viewMusicData.FKDCCLPGKDK_JacketAttr, viewMusicData.AIHCEGFANAM_Serie);
+					int a = m_mainScene.MEOOLHNNMHL_GetSkillId(false, viewMusicData.FKDCCLPGKDK_JacketAttr, viewMusicData.AIHCEGFANAM_Serie);
 					g = a;
 					if (a > 0)
 					{
 						EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(viewMusicData.DLAEJOBELBH_MusicId);
-						if (m_mainScene.IFBJBPEBAFH(m, false))
+						if (m_mainScene.IFBJBPEBAFH_HasCenterSkillCondSerie(m, false))
 						{
 							m_centerSkillRegulation[1].SetActive(true);
-							if(!m_mainScene.JDAEAJNJBGI(viewMusicData.DLAEJOBELBH_MusicId))
+							if(!m_mainScene.JDAEAJNJBGI_IsMatchCenterSkillSerie(viewMusicData.DLAEJOBELBH_MusicId))
 							{
 								m_centerSkillNonActive[1].SetActive(true);
 								m_centerSkillRegulationText[1].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_series_n");
 							}
 						}
-						if(aa != 0 && m_mainScene.IFBJBPEBAFH(m, true))
+						if(aa != 0 && m_mainScene.IFBJBPEBAFH_HasCenterSkillCondSerie(m, true))
 						{
 							m_centerSkillRegulation[1].SetActive(true);
-							if(!m_mainScene.JDAEAJNJBGI(viewMusicData.DLAEJOBELBH_MusicId))
+							if(!m_mainScene.JDAEAJNJBGI_IsMatchCenterSkillSerie(viewMusicData.DLAEJOBELBH_MusicId))
 							{
 								m_centerSkillNonActive[0].SetActive(true);
 								m_centerSkillRegulationText[0].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_series_n");
@@ -423,7 +423,7 @@ namespace XeApp.Game.Menu
 								m_centerSkillRegulationText[1].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_series_y");
 							}
 						}
-						if(m_mainScene.FCGHOLNFDDF(m, false))
+						if(m_mainScene.FCGHOLNFDDF_HasCenterSkillCondMusicAttr(m, false))
 						{
 							m_centerSkillRegulation[2].SetActive(true);
 							if(!m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, false))
@@ -432,10 +432,10 @@ namespace XeApp.Game.Menu
 								m_centerSkillRegulationText[1].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_attr");
 							}
 						}
-						if(aa != 0 && m_mainScene.FCGHOLNFDDF(m, true))
+						if(aa != 0 && m_mainScene.FCGHOLNFDDF_HasCenterSkillCondMusicAttr(m, true))
 						{
 							m_centerSkillRegulation[2].SetActive(true);
-							if(m_mainScene.ABIOBCMPEHM() == SkillSwitchPatternCondition.Type.SeriesAttr_Scn)
+							if(m_mainScene.ABIOBCMPEHM_SkillSwitchPatternCondition() == SkillSwitchPatternCondition.Type.SeriesAttr_Scn)
 							{
 								m_centerSkillRegulation[1].SetActive(true);
 								if(m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SceneSeries != m.AIHCEGFANAM_SerieId)
@@ -493,12 +493,12 @@ namespace XeApp.Game.Menu
 					if(ab > 0)
 					{
 						GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_centerSkillRankImage[1], (SkillRank.Type)m_mainScene.DHEFMEGKKDN_CenterSkillRank);
-						m_centerSkillEffectText[1].text = m_mainScene.IHLINMFMCDN(false);
+						m_centerSkillEffectText[1].text = m_mainScene.IHLINMFMCDN_GetCenterSkillDesc(false);
 						m_centerSkillNameText[1].text = m_mainScene.PFHJFIHGCKP_CenterSkillName1;
 						if(aa > 0)
 						{
 							GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_centerSkillRankImage[0], (SkillRank.Type)m_mainScene.FFDCGHDNDFJ_CenterSkillRank2);
-							m_centerSkillEffectText[0].text = m_mainScene.IHLINMFMCDN(true);
+							m_centerSkillEffectText[0].text = m_mainScene.IHLINMFMCDN_GetCenterSkillDesc(true);
 							m_centerSkillNameText[0].text = m_mainScene.EFELCLMJEOL_CenterSkillName2;
 						}
 					}
@@ -522,8 +522,8 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_activeSkillRankImage, (SkillRank.Type) m_mainScene.BEKGEAMJGEN);
-				m_activeSkillEffectText.text = m_mainScene.PCMEMHPDABG().Replace(JpStringLiterals.StringLiteral_20382, string.Format(" <color={0}>StringLiteral_20383</color>", SystemTextColor.ImportantColor));
+				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_activeSkillRankImage, (SkillRank.Type) m_mainScene.BEKGEAMJGEN_ActiveSkillRank);
+				m_activeSkillEffectText.text = m_mainScene.PCMEMHPDABG_GetActiveSkillDesc().Replace(JpStringLiterals.StringLiteral_20382, string.Format(" <color={0}>StringLiteral_20383</color>", SystemTextColor.ImportantColor));
 				m_activeSkillNameText.text = m_mainScene.ILCLGGPHHJO_ActiveSkillName;
 				m_activeSkillLevelText.text = string.Format("Lv{0}", m_mainScene.PNHJPCPFNFI_ActiveSkillLevel);
 				m_activeSkill.SetActive(true);

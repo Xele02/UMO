@@ -85,14 +85,14 @@ namespace XeApp.Game.Menu
 				{
 					if(musicId > 0)
 					{
-						if(sceneData.PKPCDAAHJGP())
+						if(sceneData.PKPCDAAHJGP_HasLiveSkillCondMusic())
 						{
-							if (!sceneData.ADDCCPKEFOC(musicId))
+							if (!sceneData.ADDCCPKEFOC_IsMatchLiveSkillMusic(musicId))
 								return false;
 						}
-						if(sceneData.GOEFBDNFNAA())
+						if(sceneData.GOEFBDNFNAA_HasLiveSkillCondAttr())
 						{
-							return sceneData.JEDMBJEICBB(musicId, false);
+							return sceneData.JEDMBJEICBB_IsLiveSkillMatchAttr(musicId, false);
 						}
 					}
 					return true;

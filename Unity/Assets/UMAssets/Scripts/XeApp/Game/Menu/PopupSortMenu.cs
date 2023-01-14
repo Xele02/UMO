@@ -370,8 +370,8 @@ namespace XeApp.Game.Menu
 				int b = 0;
 				if(isCenterSkill)
 				{
-					a = scene.MEOOLHNNMHL(false, jacketAttr, serie);
-					b = scene.MEOOLHNNMHL(true, 0, 0);
+					a = scene.MEOOLHNNMHL_GetSkillId(false, jacketAttr, serie);
+					b = scene.MEOOLHNNMHL_GetSkillId(true, 0, 0);
 				}
 				else
 				{

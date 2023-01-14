@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 		public Action<ComparisonSkillInfo, int> OnPushDetailsEvent; // 0x50
 		public Action OnPushRegulationEvent; // 0x54
 
-		//public RegulationButton RegulationButton { get; } 0x1B56550
+		public RegulationButton RegulationButton { get { return m_regulationButton; } } //0x1B56550
 
 		// RVA: 0x1B56558 Offset: 0x1B56558 VA: 0x1B56558 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -131,19 +131,86 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B5170C Offset: 0x1B5170C VA: 0x1B5170C
-		//public void SetSkillRank(SkillRank.Type rank, int index = 0) { }
+		public void SetSkillRank(SkillRank.Type rank, int index = 0)
+		{
+			if(m_rankImages.Length <= index)
+				return;
+			GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_rankImages[index], rank);
+		}
 
 		//// RVA: 0x1B518A4 Offset: 0x1B518A4 VA: 0x1B518A4
-		//public void SetSkillLevel(int level, int index = 0) { }
+		public void SetSkillLevel(int level, int index = 0)
+		{
+			if(index < m_levelTexts.Length)
+			{
+				if(level == 0)
+					m_levelTexts[index].text = "";
+				else
+				{
+					m_levelTexts[index].alignment = m_nameTextAnchor;
+					m_levelTexts[index].text = string.Format("Lv{0}", level);
+				}
+			}
+		}
 
 		//// RVA: 0x1B51AD8 Offset: 0x1B51AD8 VA: 0x1B51AD8
-		//public void SetSkillDescription(string description, int index = 0) { }
+		public void SetSkillDescription(string description, int index = 0)
+		{
+			if(m_detailsTexts.Length <= index)
+				return;
+			if(string.IsNullOrEmpty(description))
+			{
+				UnitWindowConstant.SetInvalidText(m_detailsTexts[index], TextAnchor.UpperCenter);
+				m_descDetailsImage[index].enabled = false;
+				m_descDetailsButton[index + 1].Disable = true;
+			}
+			else
+			{
+				m_detailsTexts[index].alignment = m_detailsTextAnchor;
+				m_detailsTexts[index].horizontalOverflow = HorizontalWrapMode.Wrap;
+				bool b = UnitWindowConstant.SetSkillDetails(m_detailsTexts[index], description, 2);
+				m_descDetailsImage[index].enabled = b;
+				m_descDetailsButton[index + 1].Disable = !b;
+			}
+		}
 
 		//// RVA: 0x1B51E9C Offset: 0x1B51E9C VA: 0x1B51E9C
-		//public void SetSkillCrossFade(bool enable) { }
+		public void SetSkillCrossFade(bool enable)
+		{
+			if(enable)
+				m_skillCrossFade.StartAllAnimLoop("logo_act");
+			else
+				m_skillCrossFade.StartAllAnimGoStop("st_wait");
+		}
 
 		//// RVA: 0x1B51F9C Offset: 0x1B51F9C VA: 0x1B51F9C
-		//public void SetSkillMask(ComparisonSkillInfo.SkillMask mask) { }
+		public void SetSkillMask(SkillMask mask)
+		{
+			switch(mask)
+			{
+				case SkillMask.NoCompatible:
+					m_maskLayout.StartChildrenAnimGoStop("01");
+					break;
+				case SkillMask.MainSlot:
+					m_maskLayout.StartChildrenAnimGoStop("02");
+					break;
+				case SkillMask.MisMatchMusic:
+					m_maskLayout.StartChildrenAnimGoStop("06");
+					break;
+				case SkillMask.NoCenterDiva:
+					m_maskLayout.StartChildrenAnimGoStop("04");
+					break;
+				case SkillMask.MisMatchSeries:
+					m_maskLayout.StartChildrenAnimGoStop("07");
+					break;
+				case SkillMask.MisMatchAttr:
+					m_maskLayout.StartChildrenAnimGoStop("08");
+					break;
+				default:
+					m_maskLayout.StartChildrenAnimGoStop("05");
+					break;
+			}
+		}
 
 		//// RVA: 0x1B570C4 Offset: 0x1B570C4 VA: 0x1B570C4
 		private void OnPushDetails()

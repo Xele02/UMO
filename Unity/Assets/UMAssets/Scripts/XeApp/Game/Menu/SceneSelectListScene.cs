@@ -208,8 +208,8 @@ namespace XeApp.Game.Menu
 									PopupSortMenu.IsNotesFilterOn(scene.IGPMJPPAILL_Note, notesFilterBit) && 
 									PopupSortMenu.IsSkillRangeFilterOn(scene.BJJNCCGPBGN, lskillRangeFilerBit) && 
 									PopupSortMenu.IsSkillRankFilterOn(scene.DHEFMEGKKDN_CenterSkillRank, scene.FFDCGHDNDFJ_CenterSkillRank2, cskillRankFilerBit, true, scene, m_musicBaseData) &&
-									PopupSortMenu.IsSkillRankFilterOn(scene.BEKGEAMJGEN, scene.BEKGEAMJGEN, askillRankFilerBit) && 
-									PopupSortMenu.IsSkillRankFilterOn(scene.OAHMFMJIENM, scene.ELNJADBILOM, lskillRankFilerBit, false, scene, m_musicBaseData) && 
+									PopupSortMenu.IsSkillRankFilterOn(scene.BEKGEAMJGEN_ActiveSkillRank, scene.BEKGEAMJGEN_ActiveSkillRank, askillRankFilerBit) && 
+									PopupSortMenu.IsSkillRankFilterOn(scene.OAHMFMJIENM_LiveSkillRank, scene.ELNJADBILOM_LiveSkillRank2, lskillRankFilerBit, false, scene, m_musicBaseData) && 
 									PopupSortMenu.IsCenterSkillFilterOn(scene, cskillFilerBit) &&
 									PopupSortMenu.IsActiveSkillFilterOn(scene, askillFilerBit) && 
 									PopupSortMenu.IsLiveSkillFilterOn(scene, lskillFilerBit)
