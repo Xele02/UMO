@@ -70,7 +70,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 				long val2 = time * 0x96a + 2;
 				BJPLLEBHAGO data = CDENCMNHNGA[i];
 				data.AHHJLDLAPAN = (sbyte)array[i].PPFNGGCBJKC;
-				data.AIHCEGFANAM = (sbyte)array[i].JPFMJHLCMJL;
+				data.AIHCEGFANAM_Attr = (sbyte)array[i].JPFMJHLCMJL;
 				data.IDDHKOEFJFB_BodyId = (sbyte)array[i].JIBNPJCIALH;
 				data.FPMGHDKACOF_PersonalityId = (sbyte)array[i].OKADDOIJGNB;
 				data.PPEGAKEIEGM = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);

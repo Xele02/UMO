@@ -167,16 +167,16 @@ namespace XeApp.Game.Menu
 			logParams.JJDKFJACLMD = 0;
 			for(int i = 0; i < result.GJLJJDIDODK.Length; i++)
 			{
-				logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].BJABFKMIJHB.soul + result.GJLJJDIDODK[i].AJINBLGCBMM.soul;
-				logParams.LCFAJIELMMF += result.GJLJJDIDODK[i].BJABFKMIJHB.charm + result.GJLJJDIDODK[i].AJINBLGCBMM.charm;
-				logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].BJABFKMIJHB.vocal + result.GJLJJDIDODK[i].AJINBLGCBMM.vocal;
-				logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].BJABFKMIJHB.life + result.GJLJJDIDODK[i].AJINBLGCBMM.life;
-				for(int j = 0; j < result.GJLJJDIDODK[i].OBCPFDNKLMM.Length; j++)
+				logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.soul + result.GJLJJDIDODK[i].AJINBLGCBMM.soul;
+				logParams.LCFAJIELMMF += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.charm + result.GJLJJDIDODK[i].AJINBLGCBMM.charm;
+				logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.vocal + result.GJLJJDIDODK[i].AJINBLGCBMM.vocal;
+				logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.life + result.GJLJJDIDODK[i].AJINBLGCBMM.life;
+				for(int j = 0; j < result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes.Length; j++)
 				{
-					logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].OBCPFDNKLMM[j].soul;
-					logParams.LCFAJIELMMF += result.GJLJJDIDODK[i].OBCPFDNKLMM[j].charm;
-					logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].OBCPFDNKLMM[j].vocal;
-					logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].OBCPFDNKLMM[j].life;
+					logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].soul;
+					logParams.LCFAJIELMMF += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].charm;
+					logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].vocal;
+					logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].life;
 				}
 				for (int j = 0; j < result.GJLJJDIDODK[i].FEGNMIGJMDM.Length; j++)
 				{

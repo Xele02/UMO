@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 			{
 				m_invalidTotalText.gameObject.SetActive(false);
 				m_totalStatus.gameObject.SetActive(true);
-				m_totalStatus.Set(paramCalculator.BaseStatus.Total, paramCalculator.AddStatus.Total, false, paramCalculator.SkillCalcResult.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO), paramCalculator.SkillCalcResult.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO), null, 0);
+				m_totalStatus.Set(paramCalculator.BaseStatus.Total, paramCalculator.AddStatus.Total, false, paramCalculator.SkillCalcResult.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), paramCalculator.SkillCalcResult.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), null, 0);
 			}
 			if(paramCalculator.IsEnableEpisodeBonus)
 			{

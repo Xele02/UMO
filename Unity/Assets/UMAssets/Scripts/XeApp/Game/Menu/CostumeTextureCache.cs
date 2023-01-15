@@ -1,4 +1,6 @@
 
+using System;
+
 namespace XeApp.Game.Menu
 {
 	public class CostumeIconTexture : IconTexture
@@ -26,7 +28,10 @@ namespace XeApp.Game.Menu
 		// public void Load(int cosId, int colorId, Action<IiconTexture> callBack) { }
 
 		// // RVA: 0x16E8948 Offset: 0x16E8948 VA: 0x16E8948
-		// public void Load(int divaId, int modelId, int colorId, Action<IiconTexture> callBack) { }
+		public void Load(int divaId, int modelId, int colorId, Action<IiconTexture> callBack)
+		{
+			Load(MakeCostumeTexturePath(divaId, modelId, colorId), callBack);
+		}
 
 		// // RVA: 0x16DF598 Offset: 0x16DF598 VA: 0x16DF598
 		public static string MakeCostumeTexturePath(int divaId, int modelId, int colorId)

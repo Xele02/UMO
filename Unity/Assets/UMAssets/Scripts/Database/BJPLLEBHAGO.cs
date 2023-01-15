@@ -82,7 +82,7 @@ public class BJPLLEBHAGO
 	public sbyte PKNONBBKCCP; // 0xE
 	public List<EPPOHFLMDBC> CMCKNKKCNDK = new List<EPPOHFLMDBC>(); // 0x14
 
-	public sbyte AIHCEGFANAM { get; set; } // 0x8 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
+	public sbyte AIHCEGFANAM_Attr { get; set; } // 0x8 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
 	public sbyte AHHJLDLAPAN { get; set; } // 0x9 AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
 	public sbyte IDDHKOEFJFB_BodyId { get; set; }  // 0xA KEOMNKLLNFJ // ADCMNNJMGKO KOFCMDMLAHC 
 	public sbyte FPMGHDKACOF_PersonalityId { get; set; } // 0xB AJHJBOKOPAJ // ALJDJOFDKDJ FPFJHHIANFD

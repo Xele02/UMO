@@ -3,29 +3,29 @@ using XeApp.Game.Common;
 
 public struct CGCBEHANFJO
 {
-	public int LDLHPACIIAB; // 0x0
-	public int MKMIEGPOKGG; // 0x4
-	public int EACDINDLGLF; // 0x8
+	public int LDLHPACIIAB_Soul; // 0x0
+	public int MKMIEGPOKGG_Vocal; // 0x4
+	public int EACDINDLGLF_Charm; // 0x8
 
 	// RVA: 0x7FC620 Offset: 0x7FC620 VA: 0x7FC620
 	public void JCHLONCMPAJ()
 	{
-		LDLHPACIIAB = 0;
-		MKMIEGPOKGG = 0;
-		EACDINDLGLF = 0;
+		LDLHPACIIAB_Soul = 0;
+		MKMIEGPOKGG_Vocal = 0;
+		EACDINDLGLF_Charm = 0;
 	}
 
 	// RVA: 0x7FC634 Offset: 0x7FC634 VA: 0x7FC634
 	public int PJCKMKEJCEL()
 	{
-		return LDLHPACIIAB + MKMIEGPOKGG + EACDINDLGLF;
+		return LDLHPACIIAB_Soul + MKMIEGPOKGG_Vocal + EACDINDLGLF_Charm;
 	}
 }
 public struct EDMIONMCICN
 {
 	public StatusData ELFAIDEBLJB; // 0x0
-	public StatusData BJABFKMIJHB; // 0x4
-	public StatusData[] OBCPFDNKLMM; // 0x8
+	public StatusData BJABFKMIJHB_StatusMainScene; // 0x4
+	public StatusData[] OBCPFDNKLMM_StatusSubScenes; // 0x8
 	public CGCBEHANFJO[] MCBLDOECHEK; // 0xC
 	public StatusData IMLGBMGIACC; // 0x10
 	public StatusData AJINBLGCBMM; // 0x14
@@ -37,15 +37,15 @@ public struct EDMIONMCICN
 	public void OBKGEDCKHHE()
 	{
 		ELFAIDEBLJB = new StatusData();
-		BJABFKMIJHB = new StatusData();
-		OBCPFDNKLMM = new StatusData[2];
+		BJABFKMIJHB_StatusMainScene = new StatusData();
+		OBCPFDNKLMM_StatusSubScenes = new StatusData[2];
 		MCBLDOECHEK = new CGCBEHANFJO[3];
 		IMLGBMGIACC = new StatusData();
 		AJINBLGCBMM = new StatusData();
 		FEGNMIGJMDM = new StatusData[2];
 		for(int i = 0; i < 2; i++)
 		{
-			OBCPFDNKLMM[i] = new StatusData();
+			OBCPFDNKLMM_StatusSubScenes[i] = new StatusData();
 			FEGNMIGJMDM[i] = new StatusData();
 		}
 		JCHLONCMPAJ();
@@ -55,12 +55,12 @@ public struct EDMIONMCICN
 	public void JCHLONCMPAJ()
 	{
 		ELFAIDEBLJB.Clear();
-		BJABFKMIJHB.Clear();
+		BJABFKMIJHB_StatusMainScene.Clear();
 		IMLGBMGIACC.Clear();
 		AJINBLGCBMM.Clear();
 		for(int i = 0; i < 2; i++)
 		{
-			OBCPFDNKLMM[i].Clear();
+			OBCPFDNKLMM_StatusSubScenes[i].Clear();
 			FEGNMIGJMDM[i].Clear();
 		}
 		for(int i = 0; i < 3; i++)
@@ -76,10 +76,10 @@ public struct EDMIONMCICN
 	{
 		MGFGADBHOFJ.Clear();
 		MGFGADBHOFJ.Add(ELFAIDEBLJB);
-		MGFGADBHOFJ.Add(BJABFKMIJHB);
-		for(int i = 0; i < OBCPFDNKLMM.Length; i++)
+		MGFGADBHOFJ.Add(BJABFKMIJHB_StatusMainScene);
+		for(int i = 0; i < OBCPFDNKLMM_StatusSubScenes.Length; i++)
 		{
-			MGFGADBHOFJ.Add(OBCPFDNKLMM[i]);
+			MGFGADBHOFJ.Add(OBCPFDNKLMM_StatusSubScenes[i]);
 		}
 	}
 
@@ -89,7 +89,7 @@ public struct EDMIONMCICN
 		MGFGADBHOFJ.Clear();
 		MGFGADBHOFJ.Add(IMLGBMGIACC);
 		MGFGADBHOFJ.Add(AJINBLGCBMM);
-		for(int i = 0; i < OBCPFDNKLMM.Length; i++)
+		for(int i = 0; i < OBCPFDNKLMM_StatusSubScenes.Length; i++)
 		{
 			MGFGADBHOFJ.Add(FEGNMIGJMDM[i]);
 		}
