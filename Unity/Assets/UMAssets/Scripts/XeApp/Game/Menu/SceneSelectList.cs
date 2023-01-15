@@ -520,7 +520,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x137D858 Offset: 0x137D858 VA: 0x137D858
 		private void OnRemoveScene()
 		{
-			TodoLogger.LogNotImplemented("OnRemoveScene");
+			m_onRemoveSceneEvent.Invoke();
 		}
 
 		// // RVA: 0x137D884 Offset: 0x137D884 VA: 0x137D884

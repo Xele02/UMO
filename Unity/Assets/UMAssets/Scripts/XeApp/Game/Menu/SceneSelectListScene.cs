@@ -961,14 +961,35 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1386BFC Offset: 0x1386BFC VA: 0x1386BFC
 		private void OnRemoveScene()
 		{
-			TodoLogger.LogNotImplemented("OnRemoveScene");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(m_assistViewData == null && m_isHomeSceneBg)
+			{
+				RemoveHomeBgPopupWindow();
+			}
+			else
+			{
+				RemoveScenePopupWindow();
+			}
 		}
 
 		// // RVA: 0x1386C84 Offset: 0x1386C84 VA: 0x1386C84
-		// private void RemoveScenePopupWindow() { }
+		private void RemoveScenePopupWindow()
+		{
+			if(m_assistViewData == null)
+			{
+				ShowComparisonPopupWindow(PlayerData.OPIBAPEGCLA_Scenes[(m_selectedEquipmentSlotIndex == 0 ? m_divaData.FGFIBOBAPIA_SceneId : m_divaData.DJICAKGOGFO_SubSceneIds[m_selectedEquipmentSlotIndex - 1]) - 1], null, m_divaData);
+			}
+			else
+			{
+				ShowComparisonPopupWindow(m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex), null, m_divaData);
+			}
+		}
 
 		// // RVA: 0x1386DEC Offset: 0x1386DEC VA: 0x1386DEC
-		// private void RemoveHomeBgPopupWindow() { }
+		private void RemoveHomeBgPopupWindow()
+		{
+			TodoLogger.LogNotImplemented("RemoveHomeBgPopupWindow");
+		}
 
 		// // RVA: 0x1386EC0 Offset: 0x1386EC0 VA: 0x1386EC0
 		private void OnShowListSceneStatus(int listIndex)
