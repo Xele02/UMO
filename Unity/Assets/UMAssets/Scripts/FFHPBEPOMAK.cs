@@ -70,7 +70,7 @@ public class FFHPBEPOMAK
 	public int AICGALGPFMO; // 0x3C
 	public List<int> HHKFOOFPOJL = new List<int>(); // 0x40
 	public bool JLKPGDEKPEO_IsHave; // 0x58
-	public bool CPGDEPMPMFK; // 0x59
+	public bool CPGDEPMPMFK_EpisodeUnlocked; // 0x59
 	public bool MBFADDHOEOK_IsNew; // 0x5A
 	public CKFGMNAIBNG FFKMJNHFFFL_Costume = new CKFGMNAIBNG(); // 0x5C
 	public CKFGMNAIBNG EGAFMGDFFCH_HomeDivaCostume = new CKFGMNAIBNG(); // 0x60
@@ -165,7 +165,7 @@ public class FFHPBEPOMAK
 			KELFCMEOPPM_EpisodeId = 0;
 			MBFADDHOEOK_IsNew = false;
 			JLKPGDEKPEO_IsHave = false;
-			CPGDEPMPMFK = false;
+			CPGDEPMPMFK_EpisodeUnlocked = false;
 		}
 		else
 		{
@@ -498,20 +498,20 @@ public class FFHPBEPOMAK
 				{
 					KELFCMEOPPM_EpisodeId = 0;
 					MBFADDHOEOK_IsNew = false;
-					JLKPGDEKPEO_IsHave = false; // ?? not sure
-					CPGDEPMPMFK = true;
+					JLKPGDEKPEO_IsHave = true;
+					CPGDEPMPMFK_EpisodeUnlocked = false;
 				}
 				else
 				{
 					KELFCMEOPPM_EpisodeId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.NNFJBBFBIEN(JPIDIENBGKH_CostumeId);
 					JLKPGDEKPEO_IsHave = LDEGEHAEALK.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[JPIDIENBGKH_CostumeId - 1].CGKAEMGLHNK_Possessed();
 					MBFADDHOEOK_IsNew = LDEGEHAEALK.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[JPIDIENBGKH_CostumeId - 1].CADENLBDAEB_IsNew;
-					CPGDEPMPMFK = false;
+					CPGDEPMPMFK_EpisodeUnlocked = false;
 					if(KELFCMEOPPM_EpisodeId != 0)
 					{
 						if(LDEGEHAEALK.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[KELFCMEOPPM_EpisodeId - 1].BEBJKJKBOGH_Date != 0)
 						{
-							CPGDEPMPMFK = true;
+							CPGDEPMPMFK_EpisodeUnlocked = true;
 						}
 					}
 				}
