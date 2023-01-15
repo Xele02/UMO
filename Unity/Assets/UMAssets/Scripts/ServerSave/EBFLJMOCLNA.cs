@@ -14,7 +14,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 		public int MBCPMFPKNBA; // 0x20
 		public int JJBEDMKNPFF; // 0x24
 		public int AADPAJOLEEF; // 0x28
-		public int LPNLLCCFHEI; // 0x2C
+		public int LPNLLCCFHEI_IsNewColorFlags_Crypted; // 0x2C
 		public long JMFGGKLPKOM; // 0x30
 		public int DKOGOBKOGBM; // 0x38
 		public int BFLIINDAAAA; // 0x3C
@@ -63,7 +63,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 			MBCPMFPKNBA = FBGGEFFJJHB;
 			JJBEDMKNPFF = ~FBGGEFFJJHB;
 			AADPAJOLEEF = FBGGEFFJJHB;
-			LPNLLCCFHEI = FBGGEFFJJHB;
+			LPNLLCCFHEI_IsNewColorFlags_Crypted = FBGGEFFJJHB;
 			JMFGGKLPKOM = 0x6871471;
 		}
 
@@ -98,7 +98,10 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 		// public void GLHANCMGNDM(int ANAJIAENLNB) { }
 
 		// // RVA: 0x14FDD20 Offset: 0x14FDD20 VA: 0x14FDD20
-		// public bool EJODLFBKFDK(int HEHKNMCDBJJ) { }
+		public bool EJODLFBKFDK_IsNewColor(int HEHKNMCDBJJ_ColorId)
+		{
+			return ((LPNLLCCFHEI_IsNewColorFlags_Crypted ^ FBGGEFFJJHB) & (1 << (HEHKNMCDBJJ_ColorId - 1))) != 0;
+		}
 
 		// // RVA: 0x14FDD48 Offset: 0x14FDD48 VA: 0x14FDD48
 		// public void PDADHMIODCA(int HEHKNMCDBJJ, bool JKDJCFEBDHC) { }
@@ -109,11 +112,14 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	// public const int PADPOGKDNDP = 500;
 	private int JLFONLABECA; // 0x28
 
-	public List<EBFLJMOCLNA_Costume.ILFJDCICIKN> FABAGMLEKIB { get; private set; } = new List<ILFJDCICIKN>(500); // 0x24 PICMGGDAMCD NGJACJFHBKM NEHGIPDDKNG
+	public List<EBFLJMOCLNA_Costume.ILFJDCICIKN> FABAGMLEKIB_List { get; private set; } = new List<ILFJDCICIKN>(500); // 0x24 PICMGGDAMCD NGJACJFHBKM NEHGIPDDKNG
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x14F6B90 Offset: 0x14F6B90 VA: 0x14F6B90
-	// public EBFLJMOCLNA.ILFJDCICIKN EEOADCECNOM(int PPFNGGCBJKC) { }
+	public EBFLJMOCLNA_Costume.ILFJDCICIKN EEOADCECNOM_GetCostume(int PPFNGGCBJKC)
+	{
+		return FABAGMLEKIB_List[PPFNGGCBJKC - 1];
+	}
 
 	// // RVA: 0x14F6C10 Offset: 0x14F6C10 VA: 0x14F6C10
 	// public bool MLBBKNLPBBD(int OIPCCBHIKIA) { }
@@ -178,12 +184,12 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14F8F54 Offset: 0x14F8F54 VA: 0x14F8F54 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		FABAGMLEKIB.Clear();
+		FABAGMLEKIB_List.Clear();
 		for(int i = 1; i < 501; i++)
 		{
 			ILFJDCICIKN data = new ILFJDCICIKN();
 			data.BJHHOBEMBJG = data.FBGGEFFJJHB ^ i;
-			FABAGMLEKIB.Add(data);
+			FABAGMLEKIB_List.Add(data);
 		}
 		JLFONLABECA = 0;
 	}

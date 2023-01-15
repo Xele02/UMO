@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 				data.m_index = i;
 				data.m_name = f_.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(0);
 				data.m_name_base = f_.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(0);
-				data.m_status = f_.FFKMJNHFFFL_Costume.FCEGELPJAMH_Status;
+				data.m_status = f_.FFKMJNHFFFL_Costume.FCEGELPJAMH_SkillDesc;
 				data.m_cos_id = f_.FFKMJNHFFFL_Costume.JPIDIENBGKH_CostumeId;
 				data.m_cos_model_id = f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
 				data.m_cos_color = 0;
@@ -233,7 +233,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 				i++;
-				short[] cols = cosInfo.CHDBGFLFPNC_GetAvaiableColors();
+				short[] cols = cosInfo.CHDBGFLFPNC_GetAllAvaiableColors();
 				short[] avaiableCols = cosInfo.KKLPLPGBOFD_GetAvaiableColor(f_.FFKMJNHFFFL_Costume.GKIKAABHAAD_Level);
 				for (int j = 0; j < cols.Length; j++)
 				{
@@ -243,7 +243,7 @@ namespace XeApp.Game.Menu
 					dataCol.m_index = i;
 					dataCol.m_name = f_.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(cols[j]);
 					dataCol.m_name_base = f_.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(0);
-					dataCol.m_status = f_.FFKMJNHFFFL_Costume.FCEGELPJAMH_Status;
+					dataCol.m_status = f_.FFKMJNHFFFL_Costume.FCEGELPJAMH_SkillDesc;
 					dataCol.m_cos_id = f_.FFKMJNHFFFL_Costume.JPIDIENBGKH_CostumeId;
 					dataCol.m_cos_model_id = f_.FFKMJNHFFFL_Costume.HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId;
 					dataCol.m_cos_color = cols[j];

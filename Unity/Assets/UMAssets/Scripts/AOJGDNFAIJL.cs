@@ -309,9 +309,9 @@ public class AOJGDNFAIJL_PrismData
 			HJDEMKCNHJF_CostumeListBySlot[IOPHIHFOOEP_SlotIndex].Clear();
 			HJDEMKCNHJF_CostumeListBySlot[IOPHIHFOOEP_SlotIndex].Add(info);
 
-			for(int i = 0; i < LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB.Count; i++)
+			for(int i = 0; i < LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB_List.Count; i++)
 			{
-				int val = LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB[i].BEEAIAAJOHD_CostumeId;
+				int val = LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[i].BEEAIAAJOHD_CostumeId;
 				if (val > 0)
 					val--;
 				LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA[val];
@@ -320,9 +320,9 @@ public class AOJGDNFAIJL_PrismData
 					if (OMNDNNFANCK_PrismDivaIds[IOPHIHFOOEP_SlotIndex] == cosInfo.AHHJLDLAPAN_PrismDivaId) //???
 					{
 						int val3 = 0;
-						if(LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB[i].CGKAEMGLHNK_Possessed())
+						if(LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[i].CGKAEMGLHNK_Possessed())
 						{
-							val3 = LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB[i].BEEAIAAJOHD_CostumeId;
+							val3 = LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[i].BEEAIAAJOHD_CostumeId;
 						}
 						else
 						{
@@ -344,7 +344,7 @@ public class AOJGDNFAIJL_PrismData
 								}
 							}
 							HJDEMKCNHJF_CostumeListBySlot[IOPHIHFOOEP_SlotIndex].Add(info2);
-							short[] colorList = cosInfo.KKLPLPGBOFD_GetAvaiableColor(LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB[i].ANAJIAENLNB);
+							short[] colorList = cosInfo.KKLPLPGBOFD_GetAvaiableColor(LDEGEHAEALK_Save.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[i].ANAJIAENLNB);
 							for (int j = 0; j < colorList.Length; j++)
 							{
 								BGCLFIILKIG_SelectCostumeInfo info3 = new BGCLFIILKIG_SelectCostumeInfo();
