@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 			UnitExpectedScore.baseGaugeScale = 0;
 		}
 
-		//// RVA: g Offset: 0xA6CFD0 VA: 0xA6CFD0
+		//// RVA: 0xA6CFD0 Offset: 0xA6CFD0 VA: 0xA6CFD0
 		public void Set(ResultScoreRank.Type scoreRank, float gaugeRatio, float[] rankPosition, int[] scoreParams)
 		{
 			float viewRatio = UpdateScoreGaugeRatio(m_scaleText, m_plusButton, m_minusButton);
@@ -88,6 +88,7 @@ namespace XeApp.Game.Menu
 			m_scoreRank = scoreRank;
 			m_rankPosition = rankPosition;
 			m_viewRatio = viewRatio;
+			m_scoreParams = scoreParams;
 			float t = 0;
 			for(int i = 0; i < scoreParams.Length; i++)
 			{
@@ -95,6 +96,7 @@ namespace XeApp.Game.Menu
 			}
 			int[] vals = new int[m_scoreGauges.Count];
 			float r = gaugeRatio / m_viewRatio;
+			float f2 = 0;
 			for(int i = 0; i < scoreParams.Length && i < vals.Length; i++)
 			{
 				if(scoreParams[i] < 1)
@@ -105,16 +107,18 @@ namespace XeApp.Game.Menu
 				{
 					float v = scoreParams[i] / (t / r);
 					float max = m_scoreGauges[i].MaxValue * 0.5f;
-					vals[i] = Mathf.RoundToInt(Mathf.Clamp(max * (t + v), 0, max));
-					float v2 = Mathf.Clamp(t * max, 0, max);
-					if(v >= 0)
+					vals[i] = Mathf.RoundToInt(Mathf.Clamp(max * (f2 + v), 0, max));
+					float v2 = Mathf.Clamp(f2 * max, 0, max);
+					f2 += v;
+					if (v >= 0)
 					{
 						if(vals[i] == Mathf.RoundToInt(v2))
 						{
 							for(int j = i; j >= 0; j--)
 							{
-								gaugeRatio = max;
-								vals[i] = Mathf.RoundToInt(Mathf.Clamp(vals[i] - 1, 0, max));
+								if (j - 1 < 0)
+									break;
+								vals[j - 1] = Mathf.Clamp(vals[j - 1] - 1, 0, (int)max);
 							}
 						}
 					}
@@ -175,7 +179,11 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA6DB38 Offset: 0xA6DB38 VA: 0xA6DB38
 		private void OnClickMinusButtonFunc()
 		{
-			TodoLogger.LogNotImplemented("OnClickMinusButtonFunc");
+			if (OnClickMinusButton != null)
+				OnClickMinusButton();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			UnitExpectedScore.baseGaugeScale -= UnitExpectedScore.defaultAddGaugeRatio;
+			UpdateScore();
 		}
 	}
 }

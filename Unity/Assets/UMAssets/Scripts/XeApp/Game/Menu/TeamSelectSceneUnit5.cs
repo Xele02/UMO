@@ -882,7 +882,7 @@ namespace XeApp.Game.Menu
 			{
 				rank[i] = CMMKCEPBIHI.GPCKPNJGANO((ResultScoreRank.Type)i);
 			}
-			m_musicInfo.ExpectedScoreGauge.Set(CMMKCEPBIHI.KHCOOPDAGOE_ScoreRank, 0, rank, score);
+			m_musicInfo.ExpectedScoreGauge.Set(CMMKCEPBIHI.KHCOOPDAGOE_ScoreRank, CMMKCEPBIHI.FDLECNKJCGG_GaugeRatio, rank, score);
 		}
 
 		//// RVA: 0xA874DC Offset: 0xA874DC VA: 0xA874DC
