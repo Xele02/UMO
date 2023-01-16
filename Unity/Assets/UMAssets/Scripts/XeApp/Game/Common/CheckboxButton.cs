@@ -29,7 +29,11 @@ namespace XeApp.Game.Common
 			{
 				if(!Disable && !Hidden)
 				{
+#if UNITY_ANDROID
 					if(eventData.pointerId == 0)
+#else
+					if (eventData.pointerId == -1)
+#endif
 					{
 						m_isChecked = !m_isChecked;
 						if(m_isChecked)
