@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xC3AAAC Offset: 0xC3AAAC VA: 0xC3AAAC
-		public void UpdateContent(JLKEOGLJNOD viewUnitData, EEDKAACNBBG viewMusicData)
+		public void UpdateContent(JLKEOGLJNOD_TeamInfo viewUnitData, EEDKAACNBBG_MusicData viewMusicData)
 		{
 			m_viewValkyrieAbilityData = null;
 			if(viewMusicData != null && viewUnitData.JOKFNBLEILN_Valkyrie != null)

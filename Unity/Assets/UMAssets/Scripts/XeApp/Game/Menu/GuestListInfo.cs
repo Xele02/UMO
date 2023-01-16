@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 		//public IiconTexture SceneTexture { get; } 0xE28830
 
 		// RVA: 0xE28838 Offset: 0xE28838 VA: 0xE28838
-		public GuestListInfo(short titleIndex, bool isAvailable, EEDKAACNBBG musicData, EAJCBFGKKFA fri)
+		public GuestListInfo(short titleIndex, bool isAvailable, EEDKAACNBBG_MusicData musicData, EAJCBFGKKFA_FriendInfo fri)
 		{
 			SetFriListInfo(titleIndex, isAvailable, fri);
 			playerRank = fri.ILOJAJNCPEC_Rank;
@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 			skill = "";
 			skillLevel = 0;
 			skillRank = SkillRank.Type.None;
-			GCIJNCFDNON g = fri.KHGKPKDBMOH();
+			GCIJNCFDNON_SceneInfo g = fri.KHGKPKDBMOH();
 			if (g == null)
 			{
 				total = 0;

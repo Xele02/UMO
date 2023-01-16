@@ -262,7 +262,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137BF7C Offset: 0x137BF7C VA: 0x137BF7C
-		public void UpdateRemoveButton(GCIJNCFDNON sceneData)
+		public void UpdateRemoveButton(GCIJNCFDNON_SceneInfo sceneData)
 		{
 			m_removeButton.Disable = sceneData == null ? true : sceneData.BCCHOBPJJKE_SceneId < 1;
 		}
@@ -278,7 +278,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137C000 Offset: 0x137C000 VA: 0x137C000
-		public void UpdateContent(DFKGGBMFFGB playerData, FFHPBEPOMAK_DivaInfo divaData, int musicId, List<GCIJNCFDNON> sceneList, List<int> sortListIndexList, int selectedSceneId, DisplayType type, int dispRow, TransitionList.Type transitionType, bool isGoDiva)
+		public void UpdateContent(DFKGGBMFFGB_PlayerInfo playerData, FFHPBEPOMAK_DivaInfo divaData, int musicId, List<GCIJNCFDNON_SceneInfo> sceneList, List<int> sortListIndexList, int selectedSceneId, DisplayType type, int dispRow, TransitionList.Type transitionType, bool isGoDiva)
 		{
 			m_dispType = type;
 			m_scrollList.SetItemCount(sortListIndexList.Count);
@@ -305,7 +305,7 @@ namespace XeApp.Game.Menu
 					bool isActivate = true;
                     SceneIconScrollContent.SkillIconType iconType = SceneIconScrollContent.SkillIconType.None;
 					bool isCompatible = false;
-					GCIJNCFDNON sceneInfo = sceneList[idx_];
+					GCIJNCFDNON_SceneInfo sceneInfo = sceneList[idx_];
 					if(divaData != null)
 					{
 						if(((isGoDiva && IsCenterDiva(playerData.DPLBHAIKPGL(false), divaData)) || DivaSlot == 0) && m_selectedSlotNumber == 0)
@@ -359,7 +359,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137C66C Offset: 0x137C66C VA: 0x137C66C
-		public void UpdateScore(EEDKAACNBBG musicBaseData)
+		public void UpdateScore(EEDKAACNBBG_MusicData musicBaseData)
 		{
 			if(m_scoreGaugeLayout != null)
 			{
@@ -418,7 +418,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137CEFC Offset: 0x137CEFC VA: 0x137CEFC
-		private bool IsCenterDiva(JLKEOGLJNOD unitData, FFHPBEPOMAK_DivaInfo divaData)
+		private bool IsCenterDiva(JLKEOGLJNOD_TeamInfo unitData, FFHPBEPOMAK_DivaInfo divaData)
 		{
 			if(unitData != null && divaData != null)
 			{
@@ -437,7 +437,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137D038 Offset: 0x137D038 VA: 0x137D038
-		public static uint GetSceneIconBitFlag(DFKGGBMFFGB playerData, GCIJNCFDNON sceneData, bool isGoDiva)
+		public static uint GetSceneIconBitFlag(DFKGGBMFFGB_PlayerInfo playerData, GCIJNCFDNON_SceneInfo sceneData, bool isGoDiva)
 		{
 			int res = sceneData.CADENLBDAEB ? 1 : 0;
 			if(IsUnitScene(playerData, sceneData, isGoDiva))
@@ -450,7 +450,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137D138 Offset: 0x137D138 VA: 0x137D138
-		public static bool IsUnitScene(DFKGGBMFFGB playerData, GCIJNCFDNON sceneData, bool isGoDiva)
+		public static bool IsUnitScene(DFKGGBMFFGB_PlayerInfo playerData, GCIJNCFDNON_SceneInfo sceneData, bool isGoDiva)
 		{
 			List<FFHPBEPOMAK_DivaInfo> l = playerData.DPLBHAIKPGL(isGoDiva).BCJEAJPLGMB_MainDivas;
 			for(int i = 0; i < l.Count; i++)
@@ -468,7 +468,7 @@ namespace XeApp.Game.Menu
 		// public static bool IsSetScene(DFKGGBMFFGB playerData, GCIJNCFDNON sceneData) { }
 
 		// // RVA: 0x137D32C Offset: 0x137D32C VA: 0x137D32C
-		public static bool IsDivaEquipScene(FFHPBEPOMAK_DivaInfo divaData, List<GCIJNCFDNON> sceneList, GCIJNCFDNON sceneData)
+		public static bool IsDivaEquipScene(FFHPBEPOMAK_DivaInfo divaData, List<GCIJNCFDNON_SceneInfo> sceneList, GCIJNCFDNON_SceneInfo sceneData)
 		{
 			for(int i = 0; i < 3; i++)
 			{

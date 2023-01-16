@@ -28,7 +28,7 @@ namespace XeApp.Game.Menu
 		private static readonly Color IconColorOff = Color.gray; // 0x10
 
 		// RVA: 0xA6BF08 Offset: 0xA6BF08 VA: 0xA6BF08
-		public void Set(int divaId, SkillType skillType, GCIJNCFDNON sceneData, int musicId = 0)
+		public void Set(int divaId, SkillType skillType, GCIJNCFDNON_SceneInfo sceneData, int musicId = 0)
 		{
 			m_skillIconImage.enabled = false;
 			SetEffectEnable(false);
@@ -71,13 +71,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA76570 Offset: 0xA76570 VA: 0xA76570
-		public static bool CheckMatchActiveSkill(GCIJNCFDNON sceneData)
+		public static bool CheckMatchActiveSkill(GCIJNCFDNON_SceneInfo sceneData)
 		{
 			return sceneData.HGONFBDIBPM_ActiveSkillId > 0;
 		}
 
 		//// RVA: 0xA765A0 Offset: 0xA765A0 VA: 0xA765A0
-		public static bool CheckMatchLiveSkill(GCIJNCFDNON sceneData, int divaId, int musicId)
+		public static bool CheckMatchLiveSkill(GCIJNCFDNON_SceneInfo sceneData, int divaId, int musicId)
 		{
 			if(sceneData.FILPDDHMKEJ(false, 0, 0) > 0)
 			{

@@ -1,5 +1,5 @@
 
-public class LIEJFHMGNIA : EEDKAACNBBG
+public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 {
 	public class AGDCEJNCPDE
 	{

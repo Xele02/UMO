@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_animationLayout; // 0x4C
 		private AbsoluteLayout[] m_compatibleAnimeLayout; // 0x50
 		private AbsoluteLayout[] m_skillIconLayout; // 0x54
-		private EEDKAACNBBG m_musicData; // 0x58
+		private EEDKAACNBBG_MusicData m_musicData; // 0x58
 		private sbyte m_compatibleFlags; // 0x5C
 		private bool m_isSelectedCenterDiva; // 0x5D
 		private CompatibleLayoutAnimeParam m_comAnimeParam; // 0x60
@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E8DB4 Offset: 0x17E8DB4 VA: 0x17E8DB4
-		public void UpdateContent(FFHPBEPOMAK_DivaInfo selectedDiva, List<int> sortDivaIndexList, int slotNo, EEDKAACNBBG musicData)
+		public void UpdateContent(FFHPBEPOMAK_DivaInfo selectedDiva, List<int> sortDivaIndexList, int slotNo, EEDKAACNBBG_MusicData musicData)
 		{
 			m_sortDivaList = sortDivaIndexList;
 			m_musicData = musicData;
@@ -207,7 +207,7 @@ namespace XeApp.Game.Menu
 				{
 					int index = i;
 					m_skillIconLayout[i].StartChildrenAnimGoStop("01");
-					GCIJNCFDNON scene = null;
+					GCIJNCFDNON_SceneInfo scene = null;
 					if(i == 0)
 					{
 						if(selectedDiva.FGFIBOBAPIA_SceneId > 0)
@@ -300,7 +300,7 @@ namespace XeApp.Game.Menu
 					int rank = 0;
 					if (sceneId >= 1)
 					{
-						GCIJNCFDNON scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[sceneId - 1];
+						GCIJNCFDNON_SceneInfo scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[sceneId - 1];
 						sceneId = scene.BCCHOBPJJKE_SceneId;
 						rank = scene.CGIELKDLHGE_GetEvolveId();
 						isKira = scene.MBMFJILMOBP();
@@ -334,7 +334,7 @@ namespace XeApp.Game.Menu
 					int rank = 0;
 					if (sceneId > 0)
 					{
-						GCIJNCFDNON scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[sceneId - 1];
+						GCIJNCFDNON_SceneInfo scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[sceneId - 1];
 						sceneId = scene.BCCHOBPJJKE_SceneId;
 						rank = scene.CGIELKDLHGE_GetEvolveId();
 						isActivate = false;
@@ -390,7 +390,7 @@ namespace XeApp.Game.Menu
 					{
 						if(selectDiva.FGFIBOBAPIA_SceneId > 0)
 						{
-							GCIJNCFDNON scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectDiva.FGFIBOBAPIA_SceneId - 1];
+							GCIJNCFDNON_SceneInfo scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectDiva.FGFIBOBAPIA_SceneId - 1];
 							if(scene != null)
 							{
 								m_sceneIconDecraitons[i].Change(scene, type);
@@ -401,7 +401,7 @@ namespace XeApp.Game.Menu
 					{
 						if(selectDiva.DJICAKGOGFO_SubSceneIds[i - 1] > 0)
 						{
-							GCIJNCFDNON scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectDiva.DJICAKGOGFO_SubSceneIds[i - 1] - 1];
+							GCIJNCFDNON_SceneInfo scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectDiva.DJICAKGOGFO_SubSceneIds[i - 1] - 1];
 							if(scene != null)
 							{
 								m_sceneIconDecraitons[i].Change(scene, type);
@@ -413,7 +413,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EAADC Offset: 0x17EAADC VA: 0x17EAADC
-		private bool IsUnitMember(JLKEOGLJNOD unitData, int divaId)
+		private bool IsUnitMember(JLKEOGLJNOD_TeamInfo unitData, int divaId)
 		{
 			for (int i = 0; i < unitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
@@ -435,7 +435,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EA958 Offset: 0x17EA958 VA: 0x17EA958
-		private bool IsCenter(JLKEOGLJNOD unitData, int divaId)
+		private bool IsCenter(JLKEOGLJNOD_TeamInfo unitData, int divaId)
 		{
 			for(int i = 0; i < unitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{

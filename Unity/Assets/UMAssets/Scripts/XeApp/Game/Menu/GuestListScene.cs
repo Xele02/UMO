@@ -28,7 +28,7 @@ namespace XeApp.Game.Menu
 		private uint m_seriesFilter; // 0x70
 		private uint m_centerSkillFilter; // 0x74
 		private bool m_saveDataDirty; // 0x78
-		private List<EAJCBFGKKFA> friends = new List<EAJCBFGKKFA>(100); // 0x7C
+		private List<EAJCBFGKKFA_FriendInfo> friends = new List<EAJCBFGKKFA_FriendInfo>(100); // 0x7C
 		private List<GuestListInfo> m_guestInfoAllList = new List<GuestListInfo>(); // 0x80
 		private List<GuestListInfo> m_guestInfoList = new List<GuestListInfo>(); // 0x84
 		private TeamSlectSceneArgs m_teamSelectSceneArgs = new TeamSlectSceneArgs(); // 0x88
@@ -240,7 +240,7 @@ namespace XeApp.Game.Menu
 				List<IBIGBMDANNM> l = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.BFDEHIANFOG;
 				for (int i = 0; i < l.Count; i++)
 				{
-					EAJCBFGKKFA data = new EAJCBFGKKFA();
+					EAJCBFGKKFA_FriendInfo data = new EAJCBFGKKFA_FriendInfo();
 					data.KHEKNNFCAOI(l[i]);
 					friends.Add(data);
 				}
@@ -280,7 +280,7 @@ namespace XeApp.Game.Menu
 				UnityEngine.Debug.Log(JpStringLiterals.StringLiteral_16339 + friendManager.BFDEHIANFOG.Count);
 				for(int i = 0; i < friendManager.BFDEHIANFOG.Count; i++)
 				{
-					EAJCBFGKKFA data = new EAJCBFGKKFA();
+					EAJCBFGKKFA_FriendInfo data = new EAJCBFGKKFA_FriendInfo();
 					data.KHEKNNFCAOI(friendManager.BFDEHIANFOG[i]);
 					friends.Add(data);
 				}
@@ -438,7 +438,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				GCIJNCFDNON g = new GCIJNCFDNON();
+				GCIJNCFDNON_SceneInfo g = new GCIJNCFDNON_SceneInfo();
 				g.KHEKNNFCAOI(info.sceneId, null, null);
 				if(g.KAFAAPEBCPD_IsMatchCenterSkillMusicAttr(Database.Instance.gameSetup.musicInfo.musicId))
 				{

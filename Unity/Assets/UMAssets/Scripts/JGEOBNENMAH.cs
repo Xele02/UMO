@@ -118,8 +118,8 @@ public class JGEOBNENMAH
 	
 	public class EDHCNKBMLGI : PDNNOFFFDAG
 	{
-		public JLKEOGLJNOD OALJNDABDHK; // 0x44
-		public EAJCBFGKKFA NHPGGBCKLHC_FriendData; // 0x48
+		public JLKEOGLJNOD_TeamInfo OALJNDABDHK; // 0x44
+		public EAJCBFGKKFA_FriendInfo NHPGGBCKLHC_FriendData; // 0x48
 
 		//public FFHPBEPOMAK GNLFLDMNBGG { get; } 0xB162D0 KHAFJOIGEAK
 	}
@@ -127,7 +127,7 @@ public class JGEOBNENMAH
 
 	public static bool PNLJLBEHIBN; // 0x4
 	private EDHCNKBMLGI AGDEBBENNCK; // 0x8
-	public EAJCBFGKKFA NHPGGBCKLHC; // 0xC
+	public EAJCBFGKKFA_FriendInfo NHPGGBCKLHC; // 0xC
 	// public List<IELJJAAJAOE> DCELMKFJHPG = new List<IELJJAAJAOE>(); // 0x10
 	public int PFHMFKKDMBM; // 0x14
 	public int LBLOIOMNEIH; // 0x18

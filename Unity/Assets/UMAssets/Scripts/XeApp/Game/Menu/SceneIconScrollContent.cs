@@ -88,7 +88,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x136E44C Offset: 0x136E44C VA: 0x136E44C
-		public void UpdateContent(GCIJNCFDNON sceneData, uint iconFlagBit, bool isCompatible, SceneIconScrollContent.SkillIconType iconType, TransitionList.Type transitionType, bool isActivate)
+		public void UpdateContent(GCIJNCFDNON_SceneInfo sceneData, uint iconFlagBit, bool isCompatible, SceneIconScrollContent.SkillIconType iconType, TransitionList.Type transitionType, bool isActivate)
 		{
 			m_sceneId = (short)sceneData.BCCHOBPJJKE_SceneId;
 			int sceneId = m_sceneId;

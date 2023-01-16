@@ -36,14 +36,14 @@ namespace XeApp.Game.Menu
 		private MusicAttrIconScriptableObject m_attrIconEffectSprites; // 0x20
 		public Action OnClickSceneButton; // 0x24
 		public Action OnStaySceneButton; // 0x28
-		private GCIJNCFDNON m_sceneData; // 0x2C
+		private GCIJNCFDNON_SceneInfo m_sceneData; // 0x2C
 		private int m_divaId; // 0x30
 		private int m_musicId; // 0x34
 		private SetDeckSceneControl.SkillType m_skillTyoe; // 0x38
 		private int m_sceneTextureLoadingCount; // 0x3C
 
 		public bool IsLoading { get { return m_sceneTextureLoadingCount > 0; } } //0xA6828C
-		public GCIJNCFDNON SceneData { get { return m_sceneData; } } //0xA74080
+		public GCIJNCFDNON_SceneInfo SceneData { get { return m_sceneData; } } //0xA74080
 		public UGUIStayButton SceneButton { get { return m_sceneButton; } } //0xA74088
 		//private bool IsEmpty { get; } 0xA74090
 
@@ -78,7 +78,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA68F94 Offset: 0xA68F94 VA: 0xA68F94
-		public void Set(int divaId, SkillType skillType, GCIJNCFDNON sceneData, int musicId = 0)
+		public void Set(int divaId, SkillType skillType, GCIJNCFDNON_SceneInfo sceneData, int musicId = 0)
 		{
 			m_divaId = divaId;
 			m_sceneData = sceneData;
@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA741F4 Offset: 0xA741F4 VA: 0xA741F4
-		private bool IsMatchMusicAttr(GCIJNCFDNON sceneData, int musicId)
+		private bool IsMatchMusicAttr(GCIJNCFDNON_SceneInfo sceneData, int musicId)
 		{
 			EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
 			return CMMKCEPBIHI.OJNOJNEKBKH(m != null ? m.FKDCCLPGKDK_Ma : 0, sceneData.JGJFIJOCPAG_SceneAttr);

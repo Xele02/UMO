@@ -4,7 +4,7 @@ using UnityEngine.Events;
 namespace XeApp.Game.Menu
 {
 	[Serializable]
-	public class FriendSelectEvent : UnityEvent<EAJCBFGKKFA>
+	public class FriendSelectEvent : UnityEvent<EAJCBFGKKFA_FriendInfo>
 	{
 	}
 }

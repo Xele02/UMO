@@ -76,7 +76,7 @@ namespace XeApp.Game
 		[HideInInspector]
 		public CriAtom criAtom; // 0x74
 		public string ar_session_id; // 0x78
-		private DFKGGBMFFGB m_viewPlayerData; // 0x7C
+		private DFKGGBMFFGB_PlayerInfo m_viewPlayerData; // 0x7C
 		private FadeYielder m_fadeYielder = new FadeYielder(); // 0x88
 		private Canvas popupCanvas; // 0x90
 		private Canvas fadeCanvas; // 0x94
@@ -143,8 +143,8 @@ namespace XeApp.Game
 		public int screenHeight { get; set; } // 0x5C
 		public bool IsSystemInitialized { get; set; } // 0x70
 		public bool IsUnionDataInitialized { get; set; } // 0x71
-		public DFKGGBMFFGB ViewPlayerData { get { return m_viewPlayerData; } } // get_ViewPlayerData 0x989990
-		public EAJCBFGKKFA SelectedGuestData { get; set; } // 0x80
+		public DFKGGBMFFGB_PlayerInfo ViewPlayerData { get { return m_viewPlayerData; } } // get_ViewPlayerData 0x989990
+		public EAJCBFGKKFA_FriendInfo SelectedGuestData { get; set; } // 0x80
 		public bool IsTutorial { get; set; } // 0x84
 		public FadeYielder WaitFadeYielder { get { return m_fadeYielder; } } // get_WaitFadeYielder 0x999E7C 
 		public Canvas PopupCanvas { get { return popupCanvas; } } // get_PopupCanvas 0x999E84 
@@ -1006,7 +1006,7 @@ namespace XeApp.Game
 		public void CreateViewPlayerData()
 		{
 			if(m_viewPlayerData == null)
-				m_viewPlayerData = new DFKGGBMFFGB();
+				m_viewPlayerData = new DFKGGBMFFGB_PlayerInfo();
 			m_viewPlayerData.KHEKNNFCAOI_Init(null, false);
 			TodoLogger.Log(0, "CreateViewPlayerData");
 			//JKIJLMMLNPL.DJNPDEOLNHD();

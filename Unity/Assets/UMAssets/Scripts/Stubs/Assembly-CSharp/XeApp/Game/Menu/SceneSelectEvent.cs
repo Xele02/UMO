@@ -4,7 +4,7 @@ using UnityEngine.Events;
 namespace XeApp.Game.Menu
 {
 	[Serializable]
-	public class SceneSelectEvent : UnityEvent<int, int, FFHPBEPOMAK_DivaInfo, GCIJNCFDNON>
+	public class SceneSelectEvent : UnityEvent<int, int, FFHPBEPOMAK_DivaInfo, GCIJNCFDNON_SceneInfo>
 	{
 	}
 }

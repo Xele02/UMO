@@ -104,8 +104,8 @@ namespace XeApp.Game.Menu
 			EDMIONMCICN eA = new EDMIONMCICN();
 			eB.OBKGEDCKHHE_Reset();
 			eA.OBKGEDCKHHE_Reset();
-			CMMKCEPBIHI.AECDJDIJJKD(ref eB, beforeData, null, GameManager.Instance.ViewPlayerData, null, null, null);
-			CMMKCEPBIHI.AECDJDIJJKD(ref eA, afterData, null, GameManager.Instance.ViewPlayerData, null, null, null);
+			CMMKCEPBIHI.AECDJDIJJKD_ApplySkills(ref eB, beforeData, null, GameManager.Instance.ViewPlayerData, null, null, null);
+			CMMKCEPBIHI.AECDJDIJJKD_ApplySkills(ref eA, afterData, null, GameManager.Instance.ViewPlayerData, null, null, null);
 			eB.IMLOCECFHGK(ref stB);
 			eA.IMLOCECFHGK(ref stA);
 			StatusData[] sts = new StatusData[2];

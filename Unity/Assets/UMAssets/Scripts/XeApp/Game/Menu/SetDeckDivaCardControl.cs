@@ -73,7 +73,7 @@ namespace XeApp.Game.Menu
 		public Action OnStayDivaButton; // 0x54
 		public Action OnClickCostumeButton; // 0x58
 		private FFHPBEPOMAK_DivaInfo m_divaData; // 0x5C
-		private DFKGGBMFFGB m_playerData; // 0x60
+		private DFKGGBMFFGB_PlayerInfo m_playerData; // 0x60
 		private int m_musicId; // 0x64
 		private bool m_isStory; // 0x68
 		private bool m_isGoDivaSub; // 0x69
@@ -113,7 +113,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6A3A8 Offset: 0xA6A3A8 VA: 0xA6A3A8
-		public void Set(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB playerData, bool isCenter, bool isGoDiva, int musicId = 0, bool isStory = false)
+		public void Set(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData, bool isCenter, bool isGoDiva, int musicId = 0, bool isStory = false)
 		{
 			m_divaData = divaData;
 			m_playerData = playerData;

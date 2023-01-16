@@ -26,12 +26,12 @@ public struct EDMIONMCICN
 	public StatusData ELFAIDEBLJB; // 0x0
 	public StatusData BJABFKMIJHB_StatusMainScene; // 0x4
 	public StatusData[] OBCPFDNKLMM_StatusSubScenes; // 0x8
-	public CGCBEHANFJO[] MCBLDOECHEK; // 0xC
+	public CGCBEHANFJO[] MCBLDOECHEK_MatchMusicAttrStatus; // 0xC
 	public StatusData IMLGBMGIACC; // 0x10
-	public StatusData AJINBLGCBMM; // 0x14
-	public StatusData[] FEGNMIGJMDM; // 0x18
-	public MKHCIKICBOI LGGLFAECCBK; // 0x1C
-	public MKHCIKICBOI NOEFMBAIAMP; // 0x20
+	public StatusData AJINBLGCBMM_StatusCostumeMainScene; // 0x14
+	public StatusData[] FEGNMIGJMDM_CostumeSubScene; // 0x18
+	public MKHCIKICBOI LGGLFAECCBK_BonusTypeFlag; // 0x1C
+	public MKHCIKICBOI NOEFMBAIAMP_MalusTypeFlag; // 0x20
 
 	// RVA: 0x7FC8FC Offset: 0x7FC8FC VA: 0x7FC8FC
 	public void OBKGEDCKHHE_Reset()
@@ -39,36 +39,36 @@ public struct EDMIONMCICN
 		ELFAIDEBLJB = new StatusData();
 		BJABFKMIJHB_StatusMainScene = new StatusData();
 		OBCPFDNKLMM_StatusSubScenes = new StatusData[2];
-		MCBLDOECHEK = new CGCBEHANFJO[3];
+		MCBLDOECHEK_MatchMusicAttrStatus = new CGCBEHANFJO[3];
 		IMLGBMGIACC = new StatusData();
-		AJINBLGCBMM = new StatusData();
-		FEGNMIGJMDM = new StatusData[2];
+		AJINBLGCBMM_StatusCostumeMainScene = new StatusData();
+		FEGNMIGJMDM_CostumeSubScene = new StatusData[2];
 		for(int i = 0; i < 2; i++)
 		{
 			OBCPFDNKLMM_StatusSubScenes[i] = new StatusData();
-			FEGNMIGJMDM[i] = new StatusData();
+			FEGNMIGJMDM_CostumeSubScene[i] = new StatusData();
 		}
-		JCHLONCMPAJ();
+		JCHLONCMPAJ_Reset();
 	}
 
 	//// RVA: 0x7FC904 Offset: 0x7FC904 VA: 0x7FC904
-	public void JCHLONCMPAJ()
+	public void JCHLONCMPAJ_Reset()
 	{
 		ELFAIDEBLJB.Clear();
 		BJABFKMIJHB_StatusMainScene.Clear();
 		IMLGBMGIACC.Clear();
-		AJINBLGCBMM.Clear();
+		AJINBLGCBMM_StatusCostumeMainScene.Clear();
 		for(int i = 0; i < 2; i++)
 		{
 			OBCPFDNKLMM_StatusSubScenes[i].Clear();
-			FEGNMIGJMDM[i].Clear();
+			FEGNMIGJMDM_CostumeSubScene[i].Clear();
 		}
 		for(int i = 0; i < 3; i++)
 		{
-			MCBLDOECHEK[i].JCHLONCMPAJ();
+			MCBLDOECHEK_MatchMusicAttrStatus[i].JCHLONCMPAJ();
 		}
-		LGGLFAECCBK = 0;
-		NOEFMBAIAMP = 0;
+		LGGLFAECCBK_BonusTypeFlag = 0;
+		NOEFMBAIAMP_MalusTypeFlag = 0;
 	}
 
 	//// RVA: 0x7FC90C Offset: 0x7FC90C VA: 0x7FC90C
@@ -88,10 +88,10 @@ public struct EDMIONMCICN
 	{
 		MGFGADBHOFJ.Clear();
 		MGFGADBHOFJ.Add(IMLGBMGIACC);
-		MGFGADBHOFJ.Add(AJINBLGCBMM);
+		MGFGADBHOFJ.Add(AJINBLGCBMM_StatusCostumeMainScene);
 		for(int i = 0; i < OBCPFDNKLMM_StatusSubScenes.Length; i++)
 		{
-			MGFGADBHOFJ.Add(FEGNMIGJMDM[i]);
+			MGFGADBHOFJ.Add(FEGNMIGJMDM_CostumeSubScene[i]);
 		}
 	}
 

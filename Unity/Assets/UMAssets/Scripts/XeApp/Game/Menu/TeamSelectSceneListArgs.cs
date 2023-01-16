@@ -15,8 +15,8 @@ namespace XeApp.Game.Menu
         public SceneSelectType scelectType; // 0x10
         public FFHPBEPOMAK_DivaInfo divaData; // 0x14
         public bool isGoDiva; // 0x18
-        public EAJCBFGKKFA friendPlayerData; // 0x1C
-        public EEDKAACNBBG musicBaseData; // 0x20
+        public EAJCBFGKKFA_FriendInfo friendPlayerData; // 0x1C
+        public EEDKAACNBBG_MusicData musicBaseData; // 0x20
         public EJKBKMBJMGL_EnemyData enemyData; // 0x24
         public Difficulty.Type difficulty; // 0x28
     }

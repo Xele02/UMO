@@ -103,7 +103,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF0B97C Offset: 0xF0B97C VA: 0xF0B97C
-		public void UpdateContent(DFKGGBMFFGB playerData, FFHPBEPOMAK_DivaInfo divaData, bool isCenter, int musicId, bool isGoDiva)
+		public void UpdateContent(DFKGGBMFFGB_PlayerInfo playerData, FFHPBEPOMAK_DivaInfo divaData, bool isCenter, int musicId, bool isGoDiva)
 		{
 			m_slotTypeLayout.StartChildrenAnimGoStop("01");
 			m_centerIconImage.enabled = isCenter;
@@ -145,7 +145,7 @@ namespace XeApp.Game.Menu
 				{
 					sceneId = divaData.DJICAKGOGFO_SubSceneIds[i - 1];
 				}
-				GCIJNCFDNON sceneInfo = null;
+				GCIJNCFDNON_SceneInfo sceneInfo = null;
 				if(sceneId > 0)
 				{
 					sceneInfo = playerData.OPIBAPEGCLA_Scenes[sceneId - 1];
@@ -225,7 +225,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF0CA8C Offset: 0xF0CA8C VA: 0xF0CA8C
-		public void UpdateAssistContent(DFKGGBMFFGB playerData, GCIJNCFDNON sceneData, int slot)
+		public void UpdateAssistContent(DFKGGBMFFGB_PlayerInfo playerData, GCIJNCFDNON_SceneInfo sceneData, int slot)
 		{
 			m_slotTypeLayout.StartChildrenAnimGoStop("02");
 			switch(slot)
@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF0D1FC Offset: 0xF0D1FC VA: 0xF0D1FC
-		public void UpdateHomeBgSceneContent(GCIJNCFDNON sceneData, int evolveId)
+		public void UpdateHomeBgSceneContent(GCIJNCFDNON_SceneInfo sceneData, int evolveId)
 		{
 			m_slotTypeLayout.StartChildrenAnimGoStop("02");
 			m_slotAttrLayout.StartChildrenAnimGoStop("05");
@@ -306,7 +306,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF0D744 Offset: 0xF0D744 VA: 0xF0D744
-		public void ChangeIcon(DFKGGBMFFGB playerData, FFHPBEPOMAK_DivaInfo divaData, DisplayType type, bool isCenter, bool isGoDiva)
+		public void ChangeIcon(DFKGGBMFFGB_PlayerInfo playerData, FFHPBEPOMAK_DivaInfo divaData, DisplayType type, bool isCenter, bool isGoDiva)
 		{
 			m_divaIconDecoration.Change(divaData, playerData, type);
 			bool isActive = true;
@@ -325,7 +325,7 @@ namespace XeApp.Game.Menu
 			m_divaIconDecoration.SetActive(isActive);
 			for(int i = 0; i < divaData.DJICAKGOGFO_SubSceneIds.Count + 1; i++)
 			{
-				GCIJNCFDNON sceneInfo = null;
+				GCIJNCFDNON_SceneInfo sceneInfo = null;
 				if(i == 0)
 				{
 					if(divaData.FGFIBOBAPIA_SceneId > 0)
@@ -341,7 +341,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF0DB8C Offset: 0xF0DB8C VA: 0xF0DB8C
-		public void ChangeIcon(GCIJNCFDNON sceneData, DisplayType type, int index)
+		public void ChangeIcon(GCIJNCFDNON_SceneInfo sceneData, DisplayType type, int index)
 		{
 			if(sceneData == null)
 				return;

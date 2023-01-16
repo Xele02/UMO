@@ -39,7 +39,7 @@ namespace XeApp.Game.Menu
 		private Action m_updater; // 0x78
 		private LayoutUGUIRuntime m_runtime; // 0x7C
 		private FFHPBEPOMAK_DivaInfo m_selectedDiva; // 0x80
-		private EEDKAACNBBG m_musicData; // 0x84
+		private EEDKAACNBBG_MusicData m_musicData; // 0x84
 		private StringBuilder m_strBuilder = new StringBuilder(64); // 0x88
 		private TeamSelectDivaListArgs m_args; // 0x8C
 		private GameObject m_popupContent; // 0x90
@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 			DisplayType.Level, DisplayType.Life, DisplayType.Support, DisplayType.Fold, DisplayType.Luck
 		}; // 0xA4
 
-		private DFKGGBMFFGB PlayerData { get { return GameManager.Instance.ViewPlayerData; } } //0x17EE0F8
+		private DFKGGBMFFGB_PlayerInfo PlayerData { get { return GameManager.Instance.ViewPlayerData; } } //0x17EE0F8
 		//public bool IsEnableRelease { get; } 0x17EE194
 
 		// RVA: 0x17EE1A8 Offset: 0x17EE1A8 VA: 0x17EE1A8
@@ -221,7 +221,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EEBEC Offset: 0x17EEBEC VA: 0x17EEBEC
-		private void ShowComparisonPopupWindow(FFHPBEPOMAK_DivaInfo beforeDiva, FFHPBEPOMAK_DivaInfo afterDiva, JLKEOGLJNOD unit, int slot, EEDKAACNBBG musicData)
+		private void ShowComparisonPopupWindow(FFHPBEPOMAK_DivaInfo beforeDiva, FFHPBEPOMAK_DivaInfo afterDiva, JLKEOGLJNOD_TeamInfo unit, int slot, EEDKAACNBBG_MusicData musicData)
 		{
 			PopupSetting set = null;
 			if(IsAddDiva(slot))
@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EFC68 Offset: 0x17EFC68 VA: 0x17EFC68
-		private void SwapDiva(JLKEOGLJNOD unitData, FFHPBEPOMAK_DivaInfo beforeDiva, FFHPBEPOMAK_DivaInfo afterDiva, int slotNumber)
+		private void SwapDiva(JLKEOGLJNOD_TeamInfo unitData, FFHPBEPOMAK_DivaInfo beforeDiva, FFHPBEPOMAK_DivaInfo afterDiva, int slotNumber)
 		{
 			for(int i = 0; i < unitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
@@ -402,7 +402,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EEA80 Offset: 0x17EEA80 VA: 0x17EEA80
-		private FFHPBEPOMAK_DivaInfo GetDivaDataBySlotNumber(JLKEOGLJNOD unitData, int slotNumber)
+		private FFHPBEPOMAK_DivaInfo GetDivaDataBySlotNumber(JLKEOGLJNOD_TeamInfo unitData, int slotNumber)
 		{
 			if (slotNumber < unitData.BCJEAJPLGMB_MainDivas.Count)
 			{
@@ -421,7 +421,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EFEE0 Offset: 0x17EFEE0 VA: 0x17EFEE0
-		private void SetDivaDataBySlotNumber(JLKEOGLJNOD unitData, FFHPBEPOMAK_DivaInfo divaData, int slotNumber)
+		private void SetDivaDataBySlotNumber(JLKEOGLJNOD_TeamInfo unitData, FFHPBEPOMAK_DivaInfo divaData, int slotNumber)
 		{
 			if(unitData != null)
 			{

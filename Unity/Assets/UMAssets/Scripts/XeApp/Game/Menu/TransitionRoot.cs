@@ -961,7 +961,7 @@ namespace XeApp.Game.Menu
 					if(!GameManager.Instance.divaResource.isMenuAllLoaded && !isNotAutoLoad)
 					{
 						MenuDivaManager divaManager = MenuScene.Instance.divaManager;
-						DFKGGBMFFGB data = new DFKGGBMFFGB();
+						DFKGGBMFFGB_PlayerInfo data = new DFKGGBMFFGB_PlayerInfo();
 						data.KHEKNNFCAOI_Init(null, false);
 						divaManager.Load(data, DivaResource.MenuFacialType.Home, true);
 						// to 16

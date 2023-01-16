@@ -83,13 +83,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x136A8A0 Offset: 0x136A8A0 VA: 0x136A8A0
-		private bool IsMaxLevel(GCIJNCFDNON sceneData)
+		private bool IsMaxLevel(GCIJNCFDNON_SceneInfo sceneData)
 		{
 			return sceneData.CIEOBFIIPLD_SceneLevel > IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed);
 		}
 
 		//// RVA: 0x136A9DC Offset: 0x136A9DC VA: 0x136A9DC
-		public void Change(GCIJNCFDNON sceneData, DisplayType type)
+		public void Change(GCIJNCFDNON_SceneInfo sceneData, DisplayType type)
 		{
 			if (sceneData == null)
 			{

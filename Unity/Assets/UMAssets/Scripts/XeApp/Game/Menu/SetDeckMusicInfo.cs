@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA6F828 Offset: 0xA6F828 VA: 0xA6F828
-		public void Set(EEDKAACNBBG viewMusicData, GameSetupData.MusicInfo musicInfo, bool isMvMode, SetDeckMusicInfo.BottomType bottomType)
+		public void Set(EEDKAACNBBG_MusicData viewMusicData, GameSetupData.MusicInfo musicInfo, bool isMvMode, SetDeckMusicInfo.BottomType bottomType)
 		{
 			TodoLogger.Log(0, "Music Info Set");
 			m_musicNameText.text = Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicInfo.freeMusicId, musicInfo.musicId).KNMGEEFGDNI_Nam).musicName;

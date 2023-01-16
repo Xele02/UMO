@@ -4,7 +4,7 @@ namespace XeApp.Game.Menu
 	{
 		private bool isNew = true; // 0xE
 		protected bool isLoad; // 0xF
-		public EAJCBFGKKFA friend; // 0x10
+		public EAJCBFGKKFA_FriendInfo friend; // 0x10
 		public string name = ""; // 0x14
 
 		//public bool IsNew { get; } 0xDE6CB8
@@ -19,7 +19,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xDE6D7C Offset: 0xDE6D7C VA: 0xDE6D7C
-		public void SetFriListInfo(int Index, bool isAvailable, EAJCBFGKKFA fr)
+		public void SetFriListInfo(int Index, bool isAvailable, EAJCBFGKKFA_FriendInfo fr)
 		{
 			IsAvailable = isAvailable;
 			ListIndex = Index;

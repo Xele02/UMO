@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 		private StatusData m_tmpStatus = new StatusData(); // 0x94
 		private StringBuilder m_strBuilder = new StringBuilder(64); // 0x98
 		private UnitWindowConstant.OperationMode m_operationMode; // 0x9C
-		private GCIJNCFDNON m_mainScene; // 0xA0
+		private GCIJNCFDNON_SceneInfo m_mainScene; // 0xA0
 		private LimitOverStatusData m_limitOverStatus = new LimitOverStatusData(); // 0xA4
 		private LimitOverStatusData m_tmpLimitOverStatus = new LimitOverStatusData(); // 0xA8
 		private Common.ScrollText[] m_scrollTexts; // 0xAC
@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA7886C Offset: 0xA7886C VA: 0xA7886C
-		private void CalcLimitBrake(JLKEOGLJNOD viewUnitData, DFKGGBMFFGB viewPlayerData, EEDKAACNBBG musicData, EAJCBFGKKFA friendData)
+		private void CalcLimitBrake(JLKEOGLJNOD_TeamInfo viewUnitData, DFKGGBMFFGB_PlayerInfo viewPlayerData, EEDKAACNBBG_MusicData musicData, EAJCBFGKKFA_FriendInfo friendData)
 		{
 			TodoLogger.Log(0, "CalcLimitBrake");
 		}
@@ -251,7 +251,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA79A40 Offset: 0xA79A40 VA: 0xA79A40
-		public void UpdateContent(DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD viewUnitData, EEDKAACNBBG viewMusicData, EJKBKMBJMGL_EnemyData enemyData, EAJCBFGKKFA viewFriendData, UnitWindowConstant.OperationMode opMode, bool isGoDiva)
+		public void UpdateContent(DFKGGBMFFGB_PlayerInfo viewPlayerData, JLKEOGLJNOD_TeamInfo viewUnitData, EEDKAACNBBG_MusicData viewMusicData, EJKBKMBJMGL_EnemyData enemyData, EAJCBFGKKFA_FriendInfo viewFriendData, UnitWindowConstant.OperationMode opMode, bool isGoDiva)
 		{
 			ResetScrollText();
 			m_operationMode = opMode;
@@ -532,7 +532,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA7D6A0 Offset: 0xA7D6A0 VA: 0xA7D6A0
-		public void CalcStatus(ref StatusData baseStatus, ref StatusData addStatus, out int luck, DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD unitData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendPlayerData, EJKBKMBJMGL_EnemyData viewEnemyData, out AEGLGBOGDHH result)
+		public void CalcStatus(ref StatusData baseStatus, ref StatusData addStatus, out int luck, DFKGGBMFFGB_PlayerInfo viewPlayerData, JLKEOGLJNOD_TeamInfo unitData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendPlayerData, EJKBKMBJMGL_EnemyData viewEnemyData, out AEGLGBOGDHH result)
 		{
 			baseStatus.Clear();
 			addStatus.Clear();

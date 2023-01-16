@@ -21,7 +21,7 @@ namespace XeApp.Game.Menu
 		private LayoutUGUIRuntime m_runtime; // 0x8C
 		private TexUVListManager m_uvMan; // 0x90
 		private AbsoluteLayout m_layoutTable; // 0x94
-		private GCIJNCFDNON m_sceneData; // 0x98
+		private GCIJNCFDNON_SceneInfo m_sceneData; // 0x98
 
 		public bool IsMisMatchMusic { get; set; } // 0x80
 		public bool IsMisMatchSeries { get; set; } // 0x81
@@ -40,7 +40,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xCFAC48 Offset: 0xCFAC48 VA: 0xCFAC48
-		public void Setup(int musicId, Type type, GCIJNCFDNON sceneData)
+		public void Setup(int musicId, Type type, GCIJNCFDNON_SceneInfo sceneData)
 		{
 			m_sceneData = sceneData;
 			IsMisMatchMusic = false;

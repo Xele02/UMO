@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		// private TextPopupSetting m_textSetPrizmPopup = new TextPopupSetting(); // 0x5C
 		// private PopupMvModeLackDivaSetting m_lackDivaSetting = new PopupMvModeLackDivaSetting(); // 0x60
 
-		protected DFKGGBMFFGB m_playerData { get { return GameManager.Instance.ViewPlayerData; } } //0x1547368
+		protected DFKGGBMFFGB_PlayerInfo m_playerData { get { return GameManager.Instance.ViewPlayerData; } } //0x1547368
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72E4B4 Offset: 0x72E4B4 VA: 0x72E4B4
 		// // RVA: 0x1547404 Offset: 0x1547404 VA: 0x1547404
@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x154760C Offset: 0x154760C VA: 0x154760C
-		protected bool IsDifferHomeDivaModel(JLKEOGLJNOD unitData, GameSetupData.TeamInfo teamInfo, bool isGotoGame)
+		protected bool IsDifferHomeDivaModel(JLKEOGLJNOD_TeamInfo unitData, GameSetupData.TeamInfo teamInfo, bool isGotoGame)
 		{
 			if(!isGotoGame)
 			{
@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1547C0C Offset: 0x1547C0C VA: 0x1547C0C
-		protected void AdvanceGame(StatusData teamUnitStatus, DFKGGBMFFGB playerData, EAJCBFGKKFA friendData, LimitOverStatusData limitOverData, bool isSkip, int ticketCount, long consumeTime, JGEOBNENMAH.NEDILFPPCJF log, bool isNotUpdateProfile)
+		protected void AdvanceGame(StatusData teamUnitStatus, DFKGGBMFFGB_PlayerInfo playerData, EAJCBFGKKFA_FriendInfo friendData, LimitOverStatusData limitOverData, bool isSkip, int ticketCount, long consumeTime, JGEOBNENMAH.NEDILFPPCJF log, bool isNotUpdateProfile)
 		{
 			if (MenuScene.CheckDatelineAndAssetUpdate())
 				return;

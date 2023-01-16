@@ -5,10 +5,10 @@ namespace XeApp.Game.Menu
 {
 	public class SetDeckParamCalculator
 	{
-		private JLKEOGLJNOD m_viewUnitData; // 0x8
+		private JLKEOGLJNOD_TeamInfo m_viewUnitData; // 0x8
 		private EJKBKMBJMGL_EnemyData m_viewEnemyData; // 0xC
 		private NHDJHOPLMDE m_viewValkyrieAbilityData; // 0x10
-		private GCIJNCFDNON m_mainScene; // 0x14
+		private GCIJNCFDNON_SceneInfo m_mainScene; // 0x14
 		private AEGLGBOGDHH m_unitSkillCalcResult; // 0x18
 		private StatusData m_baseStatus = new StatusData(); // 0x48
 		private StatusData m_addStatus = new StatusData(); // 0x4C
@@ -53,7 +53,7 @@ namespace XeApp.Game.Menu
 		//public void Reset() { }
 
 		//// RVA: 0xA7015C Offset: 0xA7015C VA: 0xA7015C
-		public void Calc(GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD viewUnitData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendData, EJKBKMBJMGL_EnemyData viewEnemyData, List<IKDICBBFBMI_EventBase.GNPOABJANKO> bonusList, bool isRaid = false)
+		public void Calc(GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB_PlayerInfo viewPlayerData, JLKEOGLJNOD_TeamInfo viewUnitData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendData, EJKBKMBJMGL_EnemyData viewEnemyData, List<IKDICBBFBMI_EventBase.GNPOABJANKO> bonusList, bool isRaid = false)
 		{
 			m_addLuck = 0;
 			m_baseLuck = 0;
@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 		//public void Calc(DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD viewUnitData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendData) { }
 
 		//// RVA: 0xA706B8 Offset: 0xA706B8 VA: 0xA706B8
-		private static void CalcStatusForUnitCheck(ref StatusData baseStatus, ref StatusData addStatus, out int luck, int baseLuck, GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB viewPlayerData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendPlayerData, EJKBKMBJMGL_EnemyData viewEnemyData, out AEGLGBOGDHH result, out CFHDKAFLNEP subPlate, JLKEOGLJNOD viewUnitData, ref JGEOBNENMAH.NEDILFPPCJF logParams)
+		private static void CalcStatusForUnitCheck(ref StatusData baseStatus, ref StatusData addStatus, out int luck, int baseLuck, GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB_PlayerInfo viewPlayerData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendPlayerData, EJKBKMBJMGL_EnemyData viewEnemyData, out AEGLGBOGDHH result, out CFHDKAFLNEP subPlate, JLKEOGLJNOD_TeamInfo viewUnitData, ref JGEOBNENMAH.NEDILFPPCJF logParams)
 		{
 			FFHPBEPOMAK_DivaInfo f = viewUnitData.BCJEAJPLGMB_MainDivas[0];
 			baseStatus.Clear();
@@ -167,10 +167,10 @@ namespace XeApp.Game.Menu
 			logParams.JJDKFJACLMD = 0;
 			for(int i = 0; i < result.GJLJJDIDODK.Length; i++)
 			{
-				logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.soul + result.GJLJJDIDODK[i].AJINBLGCBMM.soul;
-				logParams.LCFAJIELMMF += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.charm + result.GJLJJDIDODK[i].AJINBLGCBMM.charm;
-				logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.vocal + result.GJLJJDIDODK[i].AJINBLGCBMM.vocal;
-				logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.life + result.GJLJJDIDODK[i].AJINBLGCBMM.life;
+				logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.soul + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.soul;
+				logParams.LCFAJIELMMF += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.charm + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.charm;
+				logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.vocal + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.vocal;
+				logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].BJABFKMIJHB_StatusMainScene.life + result.GJLJJDIDODK[i].AJINBLGCBMM_StatusCostumeMainScene.life;
 				for(int j = 0; j < result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes.Length; j++)
 				{
 					logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].soul;
@@ -178,12 +178,12 @@ namespace XeApp.Game.Menu
 					logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].vocal;
 					logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].OBCPFDNKLMM_StatusSubScenes[j].life;
 				}
-				for (int j = 0; j < result.GJLJJDIDODK[i].FEGNMIGJMDM.Length; j++)
+				for (int j = 0; j < result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene.Length; j++)
 				{
-					logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].FEGNMIGJMDM[j].soul;
-					logParams.LCFAJIELMMF += result.GJLJJDIDODK[i].FEGNMIGJMDM[j].charm;
-					logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].FEGNMIGJMDM[j].vocal;
-					logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].FEGNMIGJMDM[j].life;
+					logParams.LPKBGBLIDCE += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].soul;
+					logParams.LCFAJIELMMF += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].charm;
+					logParams.OIKJEAEJOME += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].vocal;
+					logParams.JJDKFJACLMD += result.GJLJJDIDODK[i].FEGNMIGJMDM_CostumeSubScene[j].life;
 				}
 				logParams.IPPIIBLLDDG[i] = result.GJLJJDIDODK[i].IMLGBMGIACC.soul;
 				logParams.HHNPILDOHKP[i] = result.GJLJJDIDODK[i].IMLGBMGIACC.charm;
@@ -217,7 +217,7 @@ namespace XeApp.Game.Menu
 		//private static void CalcStatusForUnitEdit(ref StatusData baseStatus, ref StatusData addStatus, out int luck, DFKGGBMFFGB viewPlayerData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendPlayerData, out AEGLGBOGDHH result, out CFHDKAFLNEP subPlate, JLKEOGLJNOD viewUnitData) { }
 
 		//// RVA: 0xA718A8 Offset: 0xA718A8 VA: 0xA718A8
-		private static void CalcLimitBrakeForUnitCheck(ref LimitOverStatusData limitOverStatus, JLKEOGLJNOD viewUnitData, DFKGGBMFFGB viewPlayerData, EEDKAACNBBG musicData, EAJCBFGKKFA friendData)
+		private static void CalcLimitBrakeForUnitCheck(ref LimitOverStatusData limitOverStatus, JLKEOGLJNOD_TeamInfo viewUnitData, DFKGGBMFFGB_PlayerInfo viewPlayerData, EEDKAACNBBG_MusicData musicData, EAJCBFGKKFA_FriendInfo friendData)
 		{
 			limitOverStatus.Clear();
 			for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count; i++)
@@ -227,7 +227,7 @@ namespace XeApp.Game.Menu
 				{
 					if(viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId != 0)
 					{
-						GCIJNCFDNON g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId - 1];
+						GCIJNCFDNON_SceneInfo g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId - 1];
 						IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_Luck, g.MKHFCGPJPFI_LimitOverCount);
 						AdjustOverLimit(m_tmpLimitOverStatus, g, musicData);
 						limitOverStatus.Add(m_tmpLimitOverStatus);
@@ -236,7 +236,7 @@ namespace XeApp.Game.Menu
 					{
 						if (viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] > 0)
 						{
-							GCIJNCFDNON g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] - 1];
+							GCIJNCFDNON_SceneInfo g = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] - 1];
 							IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, g.JKGFBFPIMGA_Rarity, g.MJBODMOLOBC_Luck, g.MKHFCGPJPFI_LimitOverCount);
 							AdjustOverLimit(m_tmpLimitOverStatus, g, musicData);
 							limitOverStatus.Add(m_tmpLimitOverStatus);
@@ -255,7 +255,7 @@ namespace XeApp.Game.Menu
 		//private static void CalcLimitBrakeForUnitEdit(ref LimitOverStatusData limitOverStatus, JLKEOGLJNOD viewUnitData, DFKGGBMFFGB viewPlayerData) { }
 
 		//// RVA: 0xA72EB0 Offset: 0xA72EB0 VA: 0xA72EB0
-		private static void AdjustOverLimit(LimitOverStatusData status, GCIJNCFDNON sceneData, EEDKAACNBBG musicData)
+		private static void AdjustOverLimit(LimitOverStatusData status, GCIJNCFDNON_SceneInfo sceneData, EEDKAACNBBG_MusicData musicData)
 		{
 			if((int)sceneData.AIHCEGFANAM_SceneSeries != musicData.AIHCEGFANAM_Serie)
 			{

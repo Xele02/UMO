@@ -645,7 +645,7 @@ namespace XeApp.Game.RhythmGame
 			mainSceneId = Database.Instance.gameSetup.teamInfo.divaList[0].sceneIdList[0];
 			if (mainSceneId == 0)
 				yield break;
-			GCIJNCFDNON d = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[mainSceneId - 1];
+			GCIJNCFDNON_SceneInfo d = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[mainSceneId - 1];
 			int a = d.CGIELKDLHGE_GetEvolveId();
 			if (d.JKGFBFPIMGA_Rarity < 4)
 				a = 1;
@@ -662,7 +662,7 @@ namespace XeApp.Game.RhythmGame
 			uiTextureResources.activeSkillIconMaterial = new Material(Shader.Find("MCRS/RhythmUI/RhythmUIVertexColor"));
 			uiTextureResources.activeSkillIconMaterial.SetTexture("_MainTex", uiTextureResources.centerCardTexture);
 
-			int off = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA[mainSceneId - 1].GCLAAGFKPPJ_Aofs;
+			int off = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[mainSceneId - 1].GCLAAGFKPPJ_Aofs;
 			uiTextureResources.activeSkillIconMaterial.SetTextureOffset("_MainTex", new Vector2(0, off * 1.0f / uiTextureResources.centerCardTexture.height));
 
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);

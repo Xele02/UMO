@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class SetDeckAssistCardControl : MonoBehaviour
 	{
-		public delegate void OnClickFriendButton(EAJCBFGKKFA viewFriendData);
+		public delegate void OnClickFriendButton(EAJCBFGKKFA_FriendInfo viewFriendData);
 
 		//[TooltipAttribute] // RVA: 0x680198 Offset: 0x680198 VA: 0x680198
 		[SerializeField]
@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 		[SerializeField] // RVA: 0x680474 Offset: 0x680474 VA: 0x680474
 		private List<Sprite> m_rivalRankSprite; // 0x2C
 		public OnClickFriendButton OnClickFriend; // 0x30
-		private EAJCBFGKKFA m_viewFriendData; // 0x34
+		private EAJCBFGKKFA_FriendInfo m_viewFriendData; // 0x34
 
 		public bool IsLoading { get { return m_divaCard.IsLoading || m_scene.IsLoading; } } //0xA68204
 
@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA68384 Offset: 0xA68384 VA: 0xA68384
-		public void UpdateContent(EAJCBFGKKFA friendData, EEDKAACNBBG musicData)
+		public void UpdateContent(EAJCBFGKKFA_FriendInfo friendData, EEDKAACNBBG_MusicData musicData)
 		{
 			m_viewFriendData = friendData;
 			SetDiva(friendData.JIGONEMPPNP_Diva);
@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA685AC Offset: 0xA685AC VA: 0xA685AC
-		private void SetScene(FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON sceneData, EEDKAACNBBG musicData)
+		private void SetScene(FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON_SceneInfo sceneData, EEDKAACNBBG_MusicData musicData)
 		{
 			m_scene.Set(divaData != null ? divaData.AHHJLDLAPAN_DivaId : 0, SetDeckSceneControl.SkillType.Live, sceneData, musicData != null ? musicData.DLAEJOBELBH_MusicId : 0);
 		}

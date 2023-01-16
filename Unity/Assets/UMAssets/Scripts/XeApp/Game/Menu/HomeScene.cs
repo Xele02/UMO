@@ -802,7 +802,7 @@ namespace XeApp.Game.Menu
 			var musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[musicId - 1];
 			UnityEngine.Debug.Log("Wav Id : "+musicInfo.KKPAHLMJKIH_WavId);
 
-			EEDKAACNBBG song = new EEDKAACNBBG();
+			EEDKAACNBBG_MusicData song = new EEDKAACNBBG_MusicData();
 			song.KHEKNNFCAOI(musicInfo.DLAEJOBELBH_Id);
 			UnityEngine.Debug.Log("Music Name : "+song.NEDBBJDAFBH_MusicName);
 

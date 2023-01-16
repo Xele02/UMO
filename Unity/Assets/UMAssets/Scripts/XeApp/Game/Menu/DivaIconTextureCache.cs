@@ -170,7 +170,7 @@ namespace XeApp.Game.Menu
 		// public static string MakeTutorialIconPath(int charId) { }
 
 		// // RVA: 0x17E425C Offset: 0x17E425C VA: 0x17E425C
-		public void TryInstall(DFKGGBMFFGB playerData)
+		public void TryInstall(DFKGGBMFFGB_PlayerInfo playerData)
 		{
 			for(int i = 0; i < playerData.NBIGLBMHEDC.Count; i++)
 			{

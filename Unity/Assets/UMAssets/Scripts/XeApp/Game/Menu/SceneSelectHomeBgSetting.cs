@@ -7,8 +7,8 @@ namespace XeApp.Game.Menu
     public class SceneSelectHomeBgSetting : PopupSetting // TypeDefIndex: 16168
     {
         public SceneSelectHomeBgLayout.SetBgType BgType { get; set; } // 0x34
-        public GCIJNCFDNON SceneData { get; set; } // 0x38
-        public GCIJNCFDNON HomeBgSceneData { get; set; } // 0x3C
+        public GCIJNCFDNON_SceneInfo SceneData { get; set; } // 0x38
+        public GCIJNCFDNON_SceneInfo HomeBgSceneData { get; set; } // 0x3C
         public int SceneBgRare { get; set; } // 0x40
         public SceneSelectHomeBgLayout SceneSelectHomeBgLayout { get; set; } // 0x44
         public override string PrefabPath { get { return ""; } } //0x137A870

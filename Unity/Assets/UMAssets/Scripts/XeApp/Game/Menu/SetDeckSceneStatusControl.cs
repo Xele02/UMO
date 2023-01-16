@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA743EC Offset: 0xA743EC VA: 0xA743EC
-		public void Set(GCIJNCFDNON sceneData, DisplayType type, int divaId, int musicId)
+		public void Set(GCIJNCFDNON_SceneInfo sceneData, DisplayType type, int divaId, int musicId)
 		{
 			SetOff();
 			switch(type)
@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA74800 Offset: 0xA74800 VA: 0xA74800
-		public void SetForRival(GCIJNCFDNON sceneData)
+		public void SetForRival(GCIJNCFDNON_SceneInfo sceneData)
 		{
 			SetOff();
 			SetLevelEnable(true);
@@ -222,7 +222,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA752E8 Offset: 0xA752E8 VA: 0xA752E8
-		private void ApplySkillIconActive(GCIJNCFDNON sceneData)
+		private void ApplySkillIconActive(GCIJNCFDNON_SceneInfo sceneData)
 		{
 			if(m_skillIconObject != null)
 			{
@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA756E8 Offset: 0xA756E8 VA: 0xA756E8
-		private void ApplySkillIconLive(GCIJNCFDNON sceneData, int divaId, int musicId)
+		private void ApplySkillIconLive(GCIJNCFDNON_SceneInfo sceneData, int divaId, int musicId)
 		{
 			if(m_skillIconObject != null)
 			{
@@ -330,7 +330,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA74F9C Offset: 0xA74F9C VA: 0xA74F9C
-		private bool IsMaxLevel(GCIJNCFDNON sceneData)
+		private bool IsMaxLevel(GCIJNCFDNON_SceneInfo sceneData)
 		{
 			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed) < sceneData.CIEOBFIIPLD_SceneLevel;
 		}
@@ -345,7 +345,7 @@ namespace XeApp.Game.Menu
 		// private bool CheckMatchActiveSkill(GCIJNCFDNON sceneData) { }
 
 		// // RVA: 0xA7624C Offset: 0xA7624C VA: 0xA7624C
-		private bool CheckMatchLiveSkill(GCIJNCFDNON sceneData, int divaId, int musicId)
+		private bool CheckMatchLiveSkill(GCIJNCFDNON_SceneInfo sceneData, int divaId, int musicId)
 		{
 			if (sceneData.FILPDDHMKEJ(false, 0, 0) > 0)
 			{

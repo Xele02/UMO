@@ -36,7 +36,7 @@ public class JKHEOEEPBMJ
 	// public static bool HDOOGKNLOGI() { }
 
 	// // RVA: 0x135FF90 Offset: 0x135FF90 VA: 0x135FF90
-	public static GCIJNCFDNON AIEDAEPONAB_GetHomeSceneInfo(DFKGGBMFFGB AHEFHIMGIBI)
+	public static GCIJNCFDNON_SceneInfo AIEDAEPONAB_GetHomeSceneInfo(DFKGGBMFFGB_PlayerInfo AHEFHIMGIBI)
 	{
 		int id = AGHGOOBIGDI_GetHomeSceneId();
 		if(AHEFHIMGIBI == null)

@@ -22,8 +22,8 @@ namespace XeApp.Game.Menu
 		}; // 0x0
 		private static readonly float DISP_NOTICE_TIME = 1; // 0x4
 		private AbsoluteLayout m_ViewBtnAnim; // 0x48
-		private DFKGGBMFFGB m_PlayerData; // 0x4C
-		private JLKEOGLJNOD m_UnitData; // 0x50
+		private DFKGGBMFFGB_PlayerInfo m_PlayerData; // 0x4C
+		private JLKEOGLJNOD_TeamInfo m_UnitData; // 0x50
 		private List<PNGOLKLFFLH> m_ValkyrieList; // 0x54
 		private List<PNGOLKLFFLH>[] m_SeriesValkyrieList = new List<PNGOLKLFFLH>[5]; // 0x58
 		private List<PIGBBNDPPJC> m_EpisodeList; // 0x5C

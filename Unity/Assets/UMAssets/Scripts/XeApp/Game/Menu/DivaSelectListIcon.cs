@@ -179,12 +179,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EB710 Offset: 0x17EB710 VA: 0x17EB710
-		public void UpdateDocoration(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB playerData, DisplayType type)
+		public void UpdateDocoration(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData, DisplayType type)
 		{
 			m_divaIconDecoration.Change(divaData, playerData, type);
 			for(int i = 0; i < m_sceneIconDecoration.Length; i++)
 			{
-				GCIJNCFDNON scene = null;
+				GCIJNCFDNON_SceneInfo scene = null;
 				if (i == 0)
 				{
 					if(divaData.FGFIBOBAPIA_SceneId > 0)

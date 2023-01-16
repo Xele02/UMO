@@ -259,7 +259,7 @@ namespace XeApp.Game.Menu
 			int baseRare = 0;
 			if (index > -1)
 			{
-				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA;
+				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList;
 				if(index < scenes.Count)
 				{
 					baseRare = scenes[index].EKLIPGELKCL_Rarity;
@@ -311,7 +311,7 @@ namespace XeApp.Game.Menu
 		// public void ChangeKiraMaterial_holo(RawImageEx _image) { }
 
 		// // RVA: 0x13718E8 Offset: 0x13718E8 VA: 0x13718E8
-		public void TryInstall(DFKGGBMFFGB playerData)
+		public void TryInstall(DFKGGBMFFGB_PlayerInfo playerData)
 		{
 			for(int i = 0; i < playerData.OPIBAPEGCLA_Scenes.Count; i++)
 			{
@@ -331,7 +331,7 @@ namespace XeApp.Game.Menu
 			int baseRare = 0;
 			if(index >= 0)
 			{
-				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA;
+				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList;
 				if (index < scenes.Count)
 				{
 					baseRare = scenes[index].EKLIPGELKCL_Rarity;

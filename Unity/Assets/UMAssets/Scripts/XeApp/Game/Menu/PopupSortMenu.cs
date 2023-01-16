@@ -351,7 +351,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x114BD94 Offset: 0x114BD94 VA: 0x114BD94
-		public static bool IsSkillRankFilterOn(int skillRank, int skillRank2, uint flags, bool isCenterSkill, GCIJNCFDNON scene, EEDKAACNBBG musicData)
+		public static bool IsSkillRankFilterOn(int skillRank, int skillRank2, uint flags, bool isCenterSkill, GCIJNCFDNON_SceneInfo scene, EEDKAACNBBG_MusicData musicData)
 		{
 			int s2 = 1 << (skillRank2 - 1);
 			int s1 = 1 << (skillRank - 1);
@@ -398,7 +398,7 @@ namespace XeApp.Game.Menu
 		//public static bool IsInteriorTypeFilterOn(int interiorType, uint flags) { }
 
 		//// RVA: 0x114BFBC Offset: 0x114BFBC VA: 0x114BFBC
-		public static bool IsCenterSkillFilterOn(GCIJNCFDNON scene, ulong flags)
+		public static bool IsCenterSkillFilterOn(GCIJNCFDNON_SceneInfo scene, ulong flags)
 		{
 			if(flags == 0)
 				return true;
@@ -407,14 +407,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x114C748 Offset: 0x114C748 VA: 0x114C748
-		public static bool IsActiveSkillFilterOn(GCIJNCFDNON scene, ulong flags)
+		public static bool IsActiveSkillFilterOn(GCIJNCFDNON_SceneInfo scene, ulong flags)
 		{
 			TodoLogger.Log(0, "IsActiveSkillFilterOn");
 			return true;
 		}
 
 		//// RVA: 0x114CC6C Offset: 0x114CC6C VA: 0x114CC6C
-		public static bool IsLiveSkillFilterOn(GCIJNCFDNON scene, ulong flags)
+		public static bool IsLiveSkillFilterOn(GCIJNCFDNON_SceneInfo scene, ulong flags)
 		{
 			TodoLogger.Log(0, "IsLiveSkillFilterOn");
 			return true;

@@ -37,7 +37,7 @@ class DataExporter
 				if (Serie == "1") Serie = "Macross Delta";
 				bool divaSolo = false;
 				int numMulti = -1;
-				EEDKAACNBBG song = new EEDKAACNBBG();
+				EEDKAACNBBG_MusicData song = new EEDKAACNBBG_MusicData();
 				song.KHEKNNFCAOI(MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_Id);
 
 				for (int k = 0; k < 7; k++)

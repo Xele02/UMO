@@ -1,6 +1,8 @@
 using XeApp.Game.Common;
 
-public class EEDKAACNBBG
+[System.Obsolete("Use EEDKAACNBBG_MusicData", true)]
+public class EEDKAACNBBG { }
+public class EEDKAACNBBG_MusicData
 {
 	private const int FBGGEFFJJHB = 0x7daf3c5a;
 	public int KOPBFHIBOJJ_MusicIdCrypted = FBGGEFFJJHB; // 0x8

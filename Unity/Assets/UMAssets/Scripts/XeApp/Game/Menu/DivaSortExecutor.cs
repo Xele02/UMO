@@ -4,13 +4,13 @@ namespace XeApp.Game.Menu
 {
 	public class DivaSortExecutor
 	{
-		private DFKGGBMFFGB m_playerData; // 0x8
+		private DFKGGBMFFGB_PlayerInfo m_playerData; // 0x8
 
 		public SortItem SortType { get; private set; } // 0xC
 		public byte SortOrder { get; private set; } // 0x10
 
 		// RVA: 0x1266554 Offset: 0x1266554 VA: 0x1266554
-		public void Initialize(DFKGGBMFFGB playerData)
+		public void Initialize(DFKGGBMFFGB_PlayerInfo playerData)
 		{
 			m_playerData = playerData;
 		}

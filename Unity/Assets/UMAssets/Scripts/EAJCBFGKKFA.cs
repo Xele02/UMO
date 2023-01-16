@@ -2,12 +2,14 @@ using System.Collections.Generic;
 using XeApp.Game;
 using XeApp.Game.Common;
 
-public class EAJCBFGKKFA
+[System.Obsolete("Use EAJCBFGKKFA_FriendInfo", true)]
+public class EAJCBFGKKFA { }
+public class EAJCBFGKKFA_FriendInfo
 {
 	public FFHPBEPOMAK_DivaInfo JIGONEMPPNP_Diva; // 0x8
-	public GCIJNCFDNON AFBMEMCHJCL_MainScene; // 0xC
+	public GCIJNCFDNON_SceneInfo AFBMEMCHJCL_MainScene; // 0xC
 	public EEMGHIINEHN.OPANFJDIEGH MGMFOJPNDGA; // 0x10
-	public List<GCIJNCFDNON> HDJOHAJPGBA_SubScene; // 0x14
+	public List<GCIJNCFDNON_SceneInfo> HDJOHAJPGBA_SubScene; // 0x14
 	public IBIGBMDANNM PCEGKKLKFNO; // 0x18
 	public IAPDFOPPGND NDOLELKAJNL; // 0x1C
 	public IBIGBMDANNM.LJJOIIAEICI PDIPANKOKOL_FriendType; // 0x20
@@ -27,9 +29,9 @@ public class EAJCBFGKKFA
 	public List<IAPDFOPPGND> ALJGLDBFFGJ; // 0x58
 
 	// RVA: 0x14F0834 Offset: 0x14F0834 VA: 0x14F0834
-	public EAJCBFGKKFA()
+	public EAJCBFGKKFA_FriendInfo()
 	{
-		HDJOHAJPGBA_SubScene = new List<GCIJNCFDNON>();
+		HDJOHAJPGBA_SubScene = new List<GCIJNCFDNON_SceneInfo>();
 	}
 
 	// RVA: 0x14F08C8 Offset: 0x14F08C8 VA: 0x14F08C8
@@ -41,7 +43,7 @@ public class EAJCBFGKKFA
 		}
 		else
 		{
-			AFBMEMCHJCL_MainScene = new GCIJNCFDNON();
+			AFBMEMCHJCL_MainScene = new GCIJNCFDNON_SceneInfo();
 			JNMFKOHFAFB_PublicStatus.KNHIPBADANI card = NIMOGBDCMLJ.AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus.AFBMEMCHJCL_MScene;
 			AFBMEMCHJCL_MainScene.KHEKNNFCAOI(
 				card.PPFNGGCBJKC_Id,
@@ -66,7 +68,7 @@ public class EAJCBFGKKFA
 			}
 			else
 			{
-				GCIJNCFDNON data = new GCIJNCFDNON();
+				GCIJNCFDNON_SceneInfo data = new GCIJNCFDNON_SceneInfo();
 				data.KHEKNNFCAOI(card.PPFNGGCBJKC_Id, card.PDNIFBEGMHC_Mb, card.EMOJHJGHJLN_Sb, card.JPIPENJGGDD_Mlt,
 					card.JPIPENJGGDD_Mlt, card.MJBODMOLOBC_Luck, false, 0, card.DMNIMMGGJJJ_Leaf);
 				HDJOHAJPGBA_SubScene.Add(data);
@@ -121,7 +123,7 @@ public class EAJCBFGKKFA
 	//public void KLJNFJJMJMC(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG, bool OJEBNBLHPNP = False) { }
 
 	//// RVA: 0x14F1970 Offset: 0x14F1970 VA: 0x14F1970
-	public GCIJNCFDNON KHGKPKDBMOH()
+	public GCIJNCFDNON_SceneInfo KHGKPKDBMOH()
 	{
 		int a = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GDMIGCCMEEF_GuestSelect.NPEEPPCPEPE_assistItem;
 		if (a < 4)

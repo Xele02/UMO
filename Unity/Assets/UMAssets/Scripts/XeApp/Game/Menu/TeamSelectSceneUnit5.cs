@@ -68,8 +68,8 @@ namespace XeApp.Game.Menu
 		private SetDeckStatusWindow m_statusWindow; // 0xDC
 		private SetDeckParamCalculator m_paramCalculator = new SetDeckParamCalculator(); // 0xE0
 		private SetDeckParamCalculator m_unitSetParamCalculator = new SetDeckParamCalculator(); // 0xE4
-		private JLKEOGLJNOD m_viewUnitData; // 0xE8
-		private EEDKAACNBBG m_viewMusicData; // 0xEC
+		private JLKEOGLJNOD_TeamInfo m_viewUnitData; // 0xE8
+		private EEDKAACNBBG_MusicData m_viewMusicData; // 0xEC
 		private EJKBKMBJMGL_EnemyData m_viewEnemyData; // 0xF0
 		private int m_divaDispTypeIndex; // 0xF4
 		private int m_sceneDispTypeIndex; // 0xF8
@@ -106,7 +106,7 @@ namespace XeApp.Game.Menu
 
 		//private int UseLiveSkipTicketCount { get; set; } 0xA80220 0xA80234
 		private int UnitSetIndex { get { return m_isGoDivaEvent ? UnitSetSelectIndex_GoDiva : UnitSetSelectIndex_Normal; } set { if (m_isGoDivaEvent) UnitSetSelectIndex_GoDiva = value; UnitSetSelectIndex_Normal = value; } } //0xA80248 0xA8031C
-		private EAJCBFGKKFA m_viewFriendPlayerData { get { return GameManager.Instance.SelectedGuestData; } } //0xA803F4
+		private EAJCBFGKKFA_FriendInfo m_viewFriendPlayerData { get { return GameManager.Instance.SelectedGuestData; } } //0xA803F4
 		//private bool IsEnableUnitInfoChange { get; } 0xA80490
 
 		// RVA: 0xA804A4 Offset: 0xA804A4 VA: 0xA804A4 Slot: 4
@@ -190,7 +190,7 @@ namespace XeApp.Game.Menu
 			};
 			m_playButtons.OnClickPlayButton = OnPlayButton;
 			m_playButtons.OnClickSkipButton = OnSkipButton;
-			m_unitSetListButtons.OnClickUnitButton = (int no, JLKEOGLJNOD data) =>
+			m_unitSetListButtons.OnClickUnitButton = (int no, JLKEOGLJNOD_TeamInfo data) =>
 			{
 				//0xA936F4
 				OnClickAnyButtons();
@@ -849,7 +849,7 @@ namespace XeApp.Game.Menu
 			UpdateUnitBonus(unitSetIndex);
 			m_unitSetParamCalculator.Calc(Database.Instance.gameSetup.musicInfo, m_playerData, m_playerData.JKIJFGGMNAN_GetUnit(unitSetIndex, m_isGoDivaEvent), m_viewMusicData, m_viewFriendPlayerData, m_viewEnemyData, Database.Instance.bonusData.EffectiveEpisodeBonus, m_isRaidEvent);
 			m_unitStatus.UpdateContent(m_unitSetParamCalculator);
-			JLKEOGLJNOD viewUnitData = m_playerData.JKIJFGGMNAN_GetUnit(unitSetIndex);
+			JLKEOGLJNOD_TeamInfo viewUnitData = m_playerData.JKIJFGGMNAN_GetUnit(unitSetIndex);
 			m_unitStatus.SetUnitName(viewUnitData.BHKALCOAHHO_Name);
 			m_valkyrieButton.UpdateContent(viewUnitData, m_viewMusicData);
 			m_valkyrieButton.SetTapGuard(true);
@@ -1518,7 +1518,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA8F334 Offset: 0xA8F334 VA: 0xA8F334
-		private void OnSelectScene(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON sceneData)
+		private void OnSelectScene(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON_SceneInfo sceneData)
 		{
 			OnClickAnyButtons();
 			if(divaSlotNumber > -1)
@@ -1538,13 +1538,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA8F5B4 Offset: 0xA8F5B4 VA: 0xA8F5B4
-		private void OnShowSceneStatus(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON sceneData)
+		private void OnShowSceneStatus(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON_SceneInfo sceneData)
 		{
 			TodoLogger.LogNotImplemented("OnShowSceneStatus");
 		}
 
 		//// RVA: 0xA8F73C Offset: 0xA8F73C VA: 0xA8F73C
-		private void OnShowFriendDivaStatus(EAJCBFGKKFA friendData)
+		private void OnShowFriendDivaStatus(EAJCBFGKKFA_FriendInfo friendData)
 		{
 			TodoLogger.LogNotImplemented("OnShowFriendDivaStatus");
 		}
@@ -1594,7 +1594,7 @@ namespace XeApp.Game.Menu
 			//0xA93E80
 			for(int i = 0; i < m_playerData.DDMBOKCCLBD_GetUnits(m_isGoDivaEvent).Count; i++)
 			{
-				JLKEOGLJNOD unit = m_playerData.JKIJFGGMNAN_GetUnit(i, m_isGoDivaEvent);
+				JLKEOGLJNOD_TeamInfo unit = m_playerData.JKIJFGGMNAN_GetUnit(i, m_isGoDivaEvent);
 				for(int j = 0; j < unit.BCJEAJPLGMB_MainDivas.Count; j++)
 				{
 					FFHPBEPOMAK_DivaInfo diva = unit.BCJEAJPLGMB_MainDivas[j];
@@ -1603,14 +1603,14 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.DivaIconCache.TryInstall(diva.AHHJLDLAPAN_DivaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, diva.EKFONBFDAAP_ColorId);
 						if(diva.FGFIBOBAPIA_SceneId > 0)
 						{
-							GCIJNCFDNON sceneInfo = m_playerData.OPIBAPEGCLA_Scenes[diva.FGFIBOBAPIA_SceneId - 1];
+							GCIJNCFDNON_SceneInfo sceneInfo = m_playerData.OPIBAPEGCLA_Scenes[diva.FGFIBOBAPIA_SceneId - 1];
 							MenuScene.Instance.SceneIconCache.TryInstall(sceneInfo.BCCHOBPJJKE_SceneId, sceneInfo.CGIELKDLHGE_GetEvolveId());
 						}
 						for(int k = 0; k < diva.DJICAKGOGFO_SubSceneIds.Count; k++)
 						{
 							if (diva.DJICAKGOGFO_SubSceneIds[k] > 0)
 							{
-								GCIJNCFDNON sceneInfo = m_playerData.OPIBAPEGCLA_Scenes[diva.DJICAKGOGFO_SubSceneIds[k] - 1];
+								GCIJNCFDNON_SceneInfo sceneInfo = m_playerData.OPIBAPEGCLA_Scenes[diva.DJICAKGOGFO_SubSceneIds[k] - 1];
 								MenuScene.Instance.SceneIconCache.TryInstall(sceneInfo.BCCHOBPJJKE_SceneId, sceneInfo.CGIELKDLHGE_GetEvolveId());
 							}
 						}
@@ -1662,7 +1662,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA90668 Offset: 0xA90668 VA: 0xA90668
-		private void OnChangeUnitSetSelect(int unitSetIndex, JLKEOGLJNOD unitData)
+		private void OnChangeUnitSetSelect(int unitSetIndex, JLKEOGLJNOD_TeamInfo unitData)
 		{
 			TodoLogger.LogNotImplemented("OnChangeUnitSetSelect");
 		}

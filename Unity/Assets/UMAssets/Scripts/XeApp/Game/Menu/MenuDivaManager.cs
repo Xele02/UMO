@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEB9C30 Offset: 0xEB9C30 VA: 0xEB9C30
-		public void Load(DFKGGBMFFGB playerData, DivaResource.MenuFacialType facialType, bool defaultVisible = true)
+		public void Load(DFKGGBMFFGB_PlayerInfo playerData, DivaResource.MenuFacialType facialType, bool defaultVisible = true)
 		{
 			IsLoading = true;
 			FFHPBEPOMAK_DivaInfo divaInfo = playerData.DPLBHAIKPGL(false).BCJEAJPLGMB_MainDivas[0];

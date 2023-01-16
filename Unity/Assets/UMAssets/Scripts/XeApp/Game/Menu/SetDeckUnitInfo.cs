@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 
 		public delegate void EventOnClickDiva(int divaSlotNumber, FFHPBEPOMAK_DivaInfo divaData);
 		public delegate void EventOnClickCostume(int divaSlotNumber, FFHPBEPOMAK_DivaInfo divaData);
-		public delegate void EventOnClickScene(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON sceneData);
+		public delegate void EventOnClickScene(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON_SceneInfo sceneData);
 
 		//[TooltipAttribute] // RVA: 0x684144 Offset: 0x684144 VA: 0x684144
 		[SerializeField]
@@ -129,7 +129,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC318F8 Offset: 0xC318F8 VA: 0xC318F8
-		public void UpdateContent(DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD viewUnitData, SetDeckParamCalculator paramCalculator, EEDKAACNBBG viewMusicData, GameSetupData.MusicInfo musicInfo, bool isGoDiva)
+		public void UpdateContent(DFKGGBMFFGB_PlayerInfo viewPlayerData, JLKEOGLJNOD_TeamInfo viewUnitData, SetDeckParamCalculator paramCalculator, EEDKAACNBBG_MusicData viewMusicData, GameSetupData.MusicInfo musicInfo, bool isGoDiva)
 		{
 			int musicId = 0;
 			if (viewMusicData != null)
@@ -388,7 +388,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC341FC Offset: 0xC341FC VA: 0xC341FC
-		private GCIJNCFDNON GetSceneDataBySlotNumber(int divaSlotNumber, int sceneSlotNumber)
+		private GCIJNCFDNON_SceneInfo GetSceneDataBySlotNumber(int divaSlotNumber, int sceneSlotNumber)
 		{
 			if(m_divaInfos != null && divaSlotNumber < m_divaInfos.Count)
 			{

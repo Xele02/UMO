@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeSys;
 
-public class IBJAKJJICBC : EEDKAACNBBG
+public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 {
 	public enum AAADDDFCKLF
 	{

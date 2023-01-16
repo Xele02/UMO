@@ -13,7 +13,7 @@ public class EEMGHIINEHN
 
 	public class OPANFJDIEGH
 	{
-		public GCIJNCFDNON[] JOHLGBDOLNO = new GCIJNCFDNON[4]; // 0x8
+		public GCIJNCFDNON_SceneInfo[] JOHLGBDOLNO = new GCIJNCFDNON_SceneInfo[4]; // 0x8
 		public string JCJNKBKMJFK_Name; // 0xC
 
 		// RVA: 0x1C4A128 Offset: 0x1C4A128 VA: 0x1C4A128
@@ -21,7 +21,7 @@ public class EEMGHIINEHN
 		{
 			for(int i = 0; i < JOHLGBDOLNO.Length; i++)
 			{
-				JOHLGBDOLNO[i] = new GCIJNCFDNON();
+				JOHLGBDOLNO[i] = new GCIJNCFDNON_SceneInfo();
 			}
 		}
 
@@ -78,7 +78,7 @@ public class EEMGHIINEHN
 	//public EEMGHIINEHN.OPANFJDIEGH IOKHHOCMNKA() { }
 
 	//// RVA: 0x1C4B204 Offset: 0x1C4B204 VA: 0x1C4B204
-	public GCIJNCFDNON ELBLMMPEKPH(int IGNIIEBMFIN, int IMJIADPJJMM)
+	public GCIJNCFDNON_SceneInfo ELBLMMPEKPH(int IGNIIEBMFIN, int IMJIADPJJMM)
 	{
 		return NPDOIBMDEGK[IGNIIEBMFIN].JOHLGBDOLNO[IMJIADPJJMM];
 	}

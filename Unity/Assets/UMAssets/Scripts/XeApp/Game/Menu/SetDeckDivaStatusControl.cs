@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		private StatusData m_status = new StatusData(); // 0x58
 
 		//// RVA: 0xA6AE5C Offset: 0xA6AE5C VA: 0xA6AE5C
-		public void SetSkill(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB playerData, bool isCenter, int musicId = 0)
+		public void SetSkill(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData, bool isCenter, int musicId = 0)
 		{
 			if(divaData.FGFIBOBAPIA_SceneId < 1)
 			{
@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6B7E0 Offset: 0xA6B7E0 VA: 0xA6B7E0
-		public void SetDispType(DisplayType type, FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB playerData, int musicId, bool isStory, bool isGoDivaSub)
+		public void SetDispType(DisplayType type, FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData, int musicId, bool isStory, bool isGoDivaSub)
 		{
 			SetStatusTextEnable(false);
 			SetMusicExpEnable(false);
@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 				}
 				return;
 			}
-			CMMKCEPBIHI.AECDJDIJJKD(ref m_calcStatusResult, divaData, null, playerData, null, null, null);
+			CMMKCEPBIHI.AECDJDIJJKD_ApplySkills(ref m_calcStatusResult, divaData, null, playerData, null, null, null);
 			m_status.Clear();
 			m_calcStatusResult.IMLOCECFHGK(ref m_status);
 			m_status.Add(divaData.CMCKNKKCNDK_EquippedStatus);
@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6C630 Offset: 0xA6C630 VA: 0xA6C630
-		private void SetMusicExp(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB playerData, int musicId)
+		private void SetMusicExp(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData, int musicId)
 		{
 			if (musicId < 1)
 				SetInvalidMusicExp();

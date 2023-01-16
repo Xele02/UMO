@@ -2,7 +2,7 @@ namespace XeApp.Game.Common
 {
 	public class SelectedMusicData
 	{
-		private EEDKAACNBBG selectedMusic; // 0x8
+		private EEDKAACNBBG_MusicData selectedMusic; // 0x8
 		//private BKKMNPEEILG ghostData; // 0xC
 		private int selectedFreeMusicId; // 0x10
 
@@ -20,7 +20,7 @@ namespace XeApp.Game.Common
 		//public void SetGhostData(BKKMNPEEILG ghostData) { }
 
 		// RVA: 0x1391C9C Offset: 0x1391C9C VA: 0x1391C9C
-		public EEDKAACNBBG GetSelectedMusicData()
+		public EEDKAACNBBG_MusicData GetSelectedMusicData()
 		{
 			return selectedMusic;
 		}

@@ -53,11 +53,11 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		//[TooltipAttribute] // RVA: 0x684B9C Offset: 0x684B9C VA: 0x684B9C
 		private Sprite m_unitButtonSelectingSprite; // 0x2C
-		public Action<int, JLKEOGLJNOD> OnClickUnitButton; // 0x30
-		public Action<int, JLKEOGLJNOD> OnChangeUnit; // 0x34
+		public Action<int, JLKEOGLJNOD_TeamInfo> OnClickUnitButton; // 0x30
+		public Action<int, JLKEOGLJNOD_TeamInfo> OnChangeUnit; // 0x34
 		public Action OnStartChangePage; // 0x38
 		public Action OnEndChangePage; // 0x3C
-		private DFKGGBMFFGB m_viewPlayerData; // 0x40
+		private DFKGGBMFFGB_PlayerInfo m_viewPlayerData; // 0x40
 		private bool m_isGoDiva; // 0x44
 		private int m_unitCount; // 0x48
 		private int m_pageCount; // 0x4C
@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC38388 Offset: 0xC38388 VA: 0xC38388
-		public void UpdateContent(DFKGGBMFFGB viewPlayerData, bool isGoDiva, int selectIndex)
+		public void UpdateContent(DFKGGBMFFGB_PlayerInfo viewPlayerData, bool isGoDiva, int selectIndex)
 		{
 			m_isGoDiva = isGoDiva;
 			m_viewPlayerData = viewPlayerData;
@@ -191,7 +191,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < UnitButtonCount; i++)
 			{
-				JLKEOGLJNOD unit = GetUnitData(UnitButtonCount * pageNo + i);
+				JLKEOGLJNOD_TeamInfo unit = GetUnitData(UnitButtonCount * pageNo + i);
 				if(unit.EIGKIHENKNC_HasDivaSet)
 				{
 					m_unitButtons[i].m_nameText.text = unit.BHKALCOAHHO_Name;
@@ -219,7 +219,7 @@ namespace XeApp.Game.Menu
 		//private JLKEOGLJNOD GetUnitData(int buttonNo, int pageNo) { }
 
 		//// RVA: 0xC39138 Offset: 0xC39138 VA: 0xC39138
-		private JLKEOGLJNOD GetUnitData(int unitIndex)
+		private JLKEOGLJNOD_TeamInfo GetUnitData(int unitIndex)
 		{
 			return m_viewPlayerData.JKIJFGGMNAN_GetUnit(unitIndex, m_isGoDiva);
 		}

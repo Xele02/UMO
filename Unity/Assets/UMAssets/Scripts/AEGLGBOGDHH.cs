@@ -68,10 +68,10 @@ public struct AEGLGBOGDHH
 	{
 		for (int i = 0; i < GJLJJDIDODK.Length; i++)
 		{
-			if ((GJLJJDIDODK[i].LGGLFAECCBK & ICPDDMIBEIL) != 0)
+			if ((GJLJJDIDODK[i].LGGLFAECCBK_BonusTypeFlag & ICPDDMIBEIL) != 0)
 				return true;
 		}
-		return (JPMGNPAHGIB.LGGLFAECCBK & ICPDDMIBEIL) != 0;
+		return (JPMGNPAHGIB.LGGLFAECCBK_BonusTypeFlag & ICPDDMIBEIL) != 0;
 	}
 
 	//// RVA: 0x7FD024 Offset: 0x7FD024 VA: 0x7FD024
@@ -79,9 +79,9 @@ public struct AEGLGBOGDHH
 	{
 		for(int i = 0; i < GJLJJDIDODK.Length; i++)
 		{
-			if ((GJLJJDIDODK[i].NOEFMBAIAMP & ICPDDMIBEIL) != 0)
+			if ((GJLJJDIDODK[i].NOEFMBAIAMP_MalusTypeFlag & ICPDDMIBEIL) != 0)
 				return true;
 		}
-		return (JPMGNPAHGIB.NOEFMBAIAMP & ICPDDMIBEIL) != 0;
+		return (JPMGNPAHGIB.NOEFMBAIAMP_MalusTypeFlag & ICPDDMIBEIL) != 0;
 	}
 }

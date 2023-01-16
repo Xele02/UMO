@@ -50,8 +50,8 @@ namespace XeApp.Game.Menu
 		private bool m_isEnableBonus; // 0x96
 		private int m_dispRowCount = 3; // 0x98
 		private int m_rarityRestriction = -1; // 0x9C
-		private EAJCBFGKKFA m_friendPlayerData; // 0xA0
-		private EEDKAACNBBG m_musicBaseData; // 0xA4
+		private EAJCBFGKKFA_FriendInfo m_friendPlayerData; // 0xA0
+		private EEDKAACNBBG_MusicData m_musicBaseData; // 0xA4
 		private EJKBKMBJMGL_EnemyData m_enemyData; // 0xA8
 		private Difficulty.Type m_difficulty; // 0xAC
 		private EEMGHIINEHN m_assistViewData; // 0xB0
@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 		private bool m_isHomeSceneBg; // 0xBC
 		private bool m_isGoDivaEvent; // 0xBD
 
-		private DFKGGBMFFGB PlayerData { get { return GameManager.Instance.ViewPlayerData; } } //0x1380250
+		private DFKGGBMFFGB_PlayerInfo PlayerData { get { return GameManager.Instance.ViewPlayerData; } } //0x1380250
 
 		// RVA: 0x13802EC Offset: 0x13802EC VA: 0x13802EC Slot: 5
 		protected override void Start()
@@ -182,7 +182,7 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < PlayerData.OPIBAPEGCLA_Scenes.Count; i++)
 			{
-				GCIJNCFDNON scene = PlayerData.OPIBAPEGCLA_Scenes[i];
+				GCIJNCFDNON_SceneInfo scene = PlayerData.OPIBAPEGCLA_Scenes[i];
 				if(sceneDb.FGNJBMPDBLO_IsSceneValid(scene.BCCHOBPJJKE_SceneId))
 				{
 					if(scene.CGKAEMGLHNK_IsUnlocked(true))
@@ -258,7 +258,7 @@ namespace XeApp.Game.Menu
 		// private int GetSameEvaluationValue3(GCIJNCFDNON left, GCIJNCFDNON right) { }
 
 		// // RVA: 0x13821CC Offset: 0x13821CC VA: 0x13821CC
-		private void AttachScene(int slot, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON sceneData)
+		private void AttachScene(int slot, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON_SceneInfo sceneData)
 		{
 			if(slot == 0)
 			{
@@ -295,7 +295,7 @@ namespace XeApp.Game.Menu
 		// private int GetEquSceneId(int selectedSlot, FFHPBEPOMAK divaData) { }
 
 		// // RVA: 0x1382560 Offset: 0x1382560 VA: 0x1382560
-		private void ShowComparisonPopupWindow(GCIJNCFDNON beforeScene, GCIJNCFDNON afterScene, FFHPBEPOMAK_DivaInfo diva)
+		private void ShowComparisonPopupWindow(GCIJNCFDNON_SceneInfo beforeScene, GCIJNCFDNON_SceneInfo afterScene, FFHPBEPOMAK_DivaInfo diva)
 		{
 			if(afterScene != null)
 			{
@@ -377,7 +377,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1382B50 Offset: 0x1382B50 VA: 0x1382B50
-		private void ShowSelectHomeBgPopupWindow(SceneSelectHomeBgLayout.SetBgType bgType, GCIJNCFDNON sceneData)
+		private void ShowSelectHomeBgPopupWindow(SceneSelectHomeBgLayout.SetBgType bgType, GCIJNCFDNON_SceneInfo sceneData)
 		{
 			TodoLogger.LogNotImplemented("ShowSelectHomeBgPopupWindow");
 		}
@@ -911,10 +911,10 @@ namespace XeApp.Game.Menu
 		private void OnSelectListScene(int listIndex)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			GCIJNCFDNON sceneInfo = PlayerData.OPIBAPEGCLA_Scenes[m_sceneIndexList[listIndex]];
+			GCIJNCFDNON_SceneInfo sceneInfo = PlayerData.OPIBAPEGCLA_Scenes[m_sceneIndexList[listIndex]];
 			if(TransitionName == TransitionList.Type.SCENE_SELECT)
 			{
-				GCIJNCFDNON beforeScene = null;
+				GCIJNCFDNON_SceneInfo beforeScene = null;
 				if(m_selectedEquipmentSlotIndex == 0)
 				{
 					if(m_divaData.FGFIBOBAPIA_SceneId > 0)
@@ -933,7 +933,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(TransitionName == TransitionList.Type.ASSIST_SELECT)
 			{
-				GCIJNCFDNON beforeScene = m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex);
+				GCIJNCFDNON_SceneInfo beforeScene = m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex);
 				if(beforeScene.BCCHOBPJJKE_SceneId < 1)
 					beforeScene = null;
 				ShowComparisonPopupWindow(beforeScene, sceneInfo, null);
