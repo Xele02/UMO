@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use NFMHCLHEMHB_Bingo", true)]
 public class NFMHCLHEMHB { }
 public class NFMHCLHEMHB_Bingo : KLFDBFMNLBL_ServerSaveBlock
 {

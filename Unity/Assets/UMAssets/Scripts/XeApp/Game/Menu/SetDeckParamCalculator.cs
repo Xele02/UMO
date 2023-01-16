@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			m_mainScene = null;
-			FFHPBEPOMAK f = viewUnitData.BCJEAJPLGMB_MainDivas[0];
+			FFHPBEPOMAK_DivaInfo f = viewUnitData.BCJEAJPLGMB_MainDivas[0];
 			if(f != null && f.FGFIBOBAPIA_SceneId > 0)
 			{
 				m_mainScene = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1];
@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA706B8 Offset: 0xA706B8 VA: 0xA706B8
 		private static void CalcStatusForUnitCheck(ref StatusData baseStatus, ref StatusData addStatus, out int luck, int baseLuck, GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB viewPlayerData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendPlayerData, EJKBKMBJMGL_EnemyData viewEnemyData, out AEGLGBOGDHH result, out CFHDKAFLNEP subPlate, JLKEOGLJNOD viewUnitData, ref JGEOBNENMAH.NEDILFPPCJF logParams)
 		{
-			FFHPBEPOMAK f = viewUnitData.BCJEAJPLGMB_MainDivas[0];
+			FFHPBEPOMAK_DivaInfo f = viewUnitData.BCJEAJPLGMB_MainDivas[0];
 			baseStatus.Clear();
 			addStatus.Clear();
 			luck = 0;
@@ -126,7 +126,7 @@ namespace XeApp.Game.Menu
 			m_tmpStatus.Clear();
 			if(viewUnitData.EIGKIHENKNC_HasDivaSet)
 			{
-				CMMKCEPBIHI.BKBMHJBFDOG();
+				CMMKCEPBIHI.BKBMHJBFDOG_Reset();
 			}
 			else
 			{
@@ -158,7 +158,7 @@ namespace XeApp.Game.Menu
 			int totalScore = 0;
 			for(int i = 0; i < 10; i++)
 			{
-				totalScore += CMMKCEPBIHI.NDNOLJACLLC((CMMKCEPBIHI.NOJENDEDECD)i);
+				totalScore += CMMKCEPBIHI.NDNOLJACLLC_GetScore((CMMKCEPBIHI.NOJENDEDECD_ScoreType)i);
 			}
 			logParams.NDKKNEIDCFF_TotalScoreExpected = totalScore;
 			logParams.LPKBGBLIDCE = 0;

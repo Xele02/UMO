@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeSys;
 
+[System.Obsolete("Use EGOLBAPFHHD_Common", true)]
 public class EGOLBAPFHHD { }
 public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 {

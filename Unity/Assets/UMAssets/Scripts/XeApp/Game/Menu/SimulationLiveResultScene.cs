@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC5014C Offset: 0xC5014C VA: 0xC5014C
 		private void EnterSerifWindow()
 		{
-			FFHPBEPOMAK divaInfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[MenuScene.Instance.divaManager.DivaId - 1];
+			FFHPBEPOMAK_DivaInfo divaInfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[MenuScene.Instance.divaManager.DivaId - 1];
 			m_serifWindow.SetTitle(divaInfo.OPFGFINHFCE_DivaName);
 			StringBuilder str = new StringBuilder();
 			str.Clear();

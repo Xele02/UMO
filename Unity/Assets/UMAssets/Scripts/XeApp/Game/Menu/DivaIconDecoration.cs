@@ -30,20 +30,20 @@ namespace XeApp.Game.Menu
 		public DivaIconDecoration(GameObject parent, Size size, AbsoluteLayout parentLayout, GameObject positionParent)
 		{
 			Initialize(parent, size, true, false, parentLayout, positionParent);
-			m_calcStatusResult.OBKGEDCKHHE();
+			m_calcStatusResult.OBKGEDCKHHE_Reset();
 		}
 
 		//// RVA: 0x17E1650 Offset: 0x17E1650 VA: 0x17E1650
 		public DivaIconDecoration(GameObject parent, Size size, bool useDiva, bool useFriend, AbsoluteLayout parentLayout, GameObject positionParent)
 		{
 			Initialize(parent, size, useDiva, useFriend, parentLayout, positionParent);
-			m_calcStatusResult.OBKGEDCKHHE();
+			m_calcStatusResult.OBKGEDCKHHE_Reset();
 		}
 
 		//// RVA: 0x17D60A4 Offset: 0x17D60A4 VA: 0x17D60A4
 		public DivaIconDecoration()
 		{
-			m_calcStatusResult.OBKGEDCKHHE();
+			m_calcStatusResult.OBKGEDCKHHE_Reset();
 		}
 
 		//// RVA: 0x17D2C14 Offset: 0x17D2C14 VA: 0x17D2C14
@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17D2EC0 Offset: 0x17D2EC0 VA: 0x17D2EC0
-		public void Change(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData, DisplayType type)
+		public void Change(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB playerData, DisplayType type)
 		{
 			int luck = 0;
 			if(divaData != null)
@@ -148,7 +148,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E2640 Offset: 0x17E2640 VA: 0x17E2640
-		public void Change(FFHPBEPOMAK divaData, EAJCBFGKKFA friendPlayerData, DisplayType type, GCIJNCFDNON assistMainScene)
+		public void Change(FFHPBEPOMAK_DivaInfo divaData, EAJCBFGKKFA friendPlayerData, DisplayType type, GCIJNCFDNON assistMainScene)
 		{
 			int luck = 0;
 			if(assistMainScene != null)
@@ -198,7 +198,7 @@ namespace XeApp.Game.Menu
 		//public void FadeFrienFanAnimationSetFrame(int frame) { }
 
 		//// RVA: 0x17E2380 Offset: 0x17E2380 VA: 0x17E2380
-		private void Change(FFHPBEPOMAK divaData, StatusData statusData, int luck, int rarity, DisplayType type)
+		private void Change(FFHPBEPOMAK_DivaInfo divaData, StatusData statusData, int luck, int rarity, DisplayType type)
 		{
 			if (divaData == null)
 			{
@@ -267,7 +267,7 @@ namespace XeApp.Game.Menu
 		//public static int GetEquipmentRarity(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData) { }
 
 		//// RVA: 0x17D4D5C Offset: 0x17D4D5C VA: 0x17D4D5C
-		public static int GetEquipmentLuck(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData)
+		public static int GetEquipmentLuck(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB playerData)
 		{
 			if (divaData == null)
 				return 0;

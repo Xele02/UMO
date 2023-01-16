@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using XeApp.Game;
 using XeApp.Game.Common;
 
+[System.Obsolete("Use AOJGDNFAIJL_PrismData", true)]
+public class AOJGDNFAIJL { }
 public class AOJGDNFAIJL_PrismData
 {
     public class LLHDHKLACJA_SelectDivaInfo

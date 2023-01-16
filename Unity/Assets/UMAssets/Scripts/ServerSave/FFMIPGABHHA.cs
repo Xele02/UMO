@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use FFMIPGABHHA_SaveHash", true)]
 public class FFMIPGABHHA { }
 public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 {

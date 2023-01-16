@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E8DB4 Offset: 0x17E8DB4 VA: 0x17E8DB4
-		public void UpdateContent(FFHPBEPOMAK selectedDiva, List<int> sortDivaIndexList, int slotNo, EEDKAACNBBG musicData)
+		public void UpdateContent(FFHPBEPOMAK_DivaInfo selectedDiva, List<int> sortDivaIndexList, int slotNo, EEDKAACNBBG musicData)
 		{
 			m_sortDivaList = sortDivaIndexList;
 			m_musicData = musicData;
@@ -287,7 +287,7 @@ namespace XeApp.Game.Menu
 		private void UpdateScrollContent(int index, SwapScrollListContent content)
 		{
 			DivaSelectListIcon data = content as DivaSelectListIcon;
-			FFHPBEPOMAK f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_sortDivaList[index]];
+			FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_sortDivaList[index]];
 			data.SetDivaIcon(f.AHHJLDLAPAN_DivaId, f.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, f.EKFONBFDAAP_ColorId, IsCenter(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, f.AHHJLDLAPAN_DivaId), IsUnitMember(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, f.AHHJLDLAPAN_DivaId));
 			for(int i = 0; i < 3; i++)
 			{
@@ -377,7 +377,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EBA50 Offset: 0x17EBA50 VA: 0x17EBA50
-		public void UpdateDecoration(FFHPBEPOMAK selectDiva, List<int> sortIndexList, DisplayType type)
+		public void UpdateDecoration(FFHPBEPOMAK_DivaInfo selectDiva, List<int> sortIndexList, DisplayType type)
 		{
 			m_displayType = type;
 			m_scrollList.VisibleRegionUpdate();

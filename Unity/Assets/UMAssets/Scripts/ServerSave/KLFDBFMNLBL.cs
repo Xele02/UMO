@@ -1,6 +1,7 @@
 
 using System;
 
+[System.Obsolete("Use KLFDBFMNLBL_ServerSaveBlock", true)]
 public abstract class KLFDBFMNLBL { }
 public abstract class KLFDBFMNLBL_ServerSaveBlock
 {

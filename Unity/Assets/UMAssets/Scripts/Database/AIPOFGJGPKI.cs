@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use AIPOFGJGPKI_CampaignDiva", true)]
 public class AIPOFGJGPKI { }
 public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 {

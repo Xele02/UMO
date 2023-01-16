@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use KNKDBNFMAKF_EventSp", true)]
 public class KNKDBNFMAKF { }
 public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 {

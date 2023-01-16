@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use HHDEBNFMIMH_Adventure", true)]
 public class HHDEBNFMIMH { }
 public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 {

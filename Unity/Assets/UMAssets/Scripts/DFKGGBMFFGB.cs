@@ -9,7 +9,7 @@ public class DFKGGBMFFGB
 	private BBHNACPENDM_ServerSaveData LDEGEHAEALK_ServerSave; // 0x8
 	private OKGLGHCBCJP_Database LKMHPJKIFDN_Database; // 0xC
 	private bool BNFDBPPOAOE; // 0x10
-	public List<FFHPBEPOMAK> NBIGLBMHEDC = new List<FFHPBEPOMAK>(); // 0x14
+	public List<FFHPBEPOMAK_DivaInfo> NBIGLBMHEDC = new List<FFHPBEPOMAK_DivaInfo>(); // 0x14
 	public List<GCIJNCFDNON> OPIBAPEGCLA_Scenes = new List<GCIJNCFDNON>(); // 0x18
 	public List<JLKEOGLJNOD> EHGGOAGEGIM_UnitsNormal; // 0x1C
 	public JLKEOGLJNOD NPFCMHCCDDH; // 0x20
@@ -86,7 +86,7 @@ public class DFKGGBMFFGB
 						}
 					}
 				}
-				FFHPBEPOMAK data = new FFHPBEPOMAK();
+				FFHPBEPOMAK_DivaInfo data = new FFHPBEPOMAK_DivaInfo();
 				data.KHEKNNFCAOI(LKMHPJKIFDN_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA[i].AHHJLDLAPAN, LDEGEHAEALK_ServerSave, false);
 				NBIGLBMHEDC.Add(data);
 			}

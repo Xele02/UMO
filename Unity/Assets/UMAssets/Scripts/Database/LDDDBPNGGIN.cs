@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeSys;
 
+[System.Obsolete("Use LDDDBPNGGIN_Game", true)]
 public class LDDDBPNGGIN { }
 public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 {
@@ -981,6 +982,8 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 }
 
+[System.Obsolete("Use JANMKFAKHIC_ComboBonus", true)]
+public class JANMKFAKHIC { }
 public class JANMKFAKHIC_ComboBonus
 {
 	public int ADKDHKMPMHP; // 0x8

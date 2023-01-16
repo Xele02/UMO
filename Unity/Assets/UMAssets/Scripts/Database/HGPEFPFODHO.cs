@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use HGPEFPFODHO_HighScoreRanking", true)]
 public class HGPEFPFODHO { }
 public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 {

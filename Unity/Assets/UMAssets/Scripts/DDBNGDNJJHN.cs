@@ -1,6 +1,8 @@
 
 using System;
 
+[System.Obsolete("Use DDBNGDNJJHN_SecureFloat", true)]
+public class DDBNGDNJJHN { }
 public class DDBNGDNJJHN_SecureFloat
 {
 	private int FCEJCHGLFGN; // 0x8

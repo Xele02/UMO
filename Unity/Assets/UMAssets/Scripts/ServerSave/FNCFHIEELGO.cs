@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use FNCFHIEELGO_DecoVisit", true)]
 public class FNCFHIEELGO { }
 public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_ServerSaveBlock
 {

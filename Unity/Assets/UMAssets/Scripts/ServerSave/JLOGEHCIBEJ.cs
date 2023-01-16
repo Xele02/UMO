@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use JLOGEHCIBEJ_EventRaid", true)]
 public class JLOGEHCIBEJ { }
 public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 {

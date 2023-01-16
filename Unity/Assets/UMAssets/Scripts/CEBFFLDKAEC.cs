@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use CEBFFLDKAEC_SecureInt", true)]
 public class CEBFFLDKAEC { }
 public class CEBFFLDKAEC_SecureInt
 {

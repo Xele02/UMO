@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use GJALOMELEHD_Intimacy", true)]
 public class GJALOMELEHD { }
 public class GJALOMELEHD_Intimacy : DIHHCBACKGG_DbSection
 {

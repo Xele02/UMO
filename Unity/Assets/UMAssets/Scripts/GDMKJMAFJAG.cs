@@ -85,6 +85,8 @@ public class GDMKJMAFJAG
 	}
 }
 
+[System.Obsolete("Use HNJKJCDDIMG_SetInfo", true)]
+public class HNJKJCDDIMG { }
 public class HNJKJCDDIMG_SetInfo
 {
 	public static int FBGGEFFJJHB = 0x317f5543; // 0x0
@@ -134,7 +136,9 @@ public class HNJKJCDDIMG_SetInfo
 	}
 }
 
-public class OPGDJANLKBM_RateInfo // TypeDefIndex: 9725
+[System.Obsolete("Use OPGDJANLKBM_RateInfo", true)]
+public class OPGDJANLKBM { }
+public class OPGDJANLKBM_RateInfo
 {
 	public int BFOLFCOBBJD_RId; // 0x8
 	public List<int> HMFFHLPNMPH_Cnt; // 0xC

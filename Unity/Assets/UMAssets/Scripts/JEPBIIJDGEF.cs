@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete("Use JEPBIIJDGEF_EventInfo", true)]
 public class JEPBIIJDGEF { }
 public class JEPBIIJDGEF_EventInfo
 {

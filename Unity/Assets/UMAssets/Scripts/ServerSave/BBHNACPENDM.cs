@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using XeSys;
 using XeApp;
 
+[System.Obsolete("Use BBHNACPENDM_ServerSaveData", true)]
 public class BBHNACPENDM { }
 public class BBHNACPENDM_ServerSaveData
 {

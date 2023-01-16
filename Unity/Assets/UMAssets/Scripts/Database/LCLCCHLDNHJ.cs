@@ -4,6 +4,7 @@ using System.Text;
 using XeApp.Game.Common;
 using XeSys;
 
+[System.Obsolete("Use LCLCCHLDNHJ_Costume", true)]
 public class LCLCCHLDNHJ { }
 public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 {

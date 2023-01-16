@@ -650,7 +650,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xB5148C Offset: 0xB5148C VA: 0xB5148C Slot: 15
 		protected override void OnDeleteCache()
 		{
-			FFHPBEPOMAK divaInfo = GameManager.Instance.GetHomeDiva();
+			FFHPBEPOMAK_DivaInfo divaInfo = GameManager.Instance.GetHomeDiva();
 			if(MenuScene.Instance.divaManager.Compare(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.EOJIGHEFIAA_GetHomeDivaPrismCostumeId(), divaInfo.LHGJHJLGPBE_GetHomeDivaColorId()))
 			{
 				return;
@@ -1017,7 +1017,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB54280 Offset: 0xB54280 VA: 0xB54280
 		private int GetNowDivaId()
 		{
-			FFHPBEPOMAK divaInfo = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva).BCJEAJPLGMB_MainDivas[0];
+			FFHPBEPOMAK_DivaInfo divaInfo = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva).BCJEAJPLGMB_MainDivas[0];
 			int res = 10;
 			if(divaInfo != null)
 				res = divaInfo.AHHJLDLAPAN_DivaId;

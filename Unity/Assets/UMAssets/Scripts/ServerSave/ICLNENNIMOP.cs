@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use ICLNENNIMOP_FreeScoreMax", true)]
 public class ICLNENNIMOP { }
 public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 {

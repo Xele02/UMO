@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Obsolete("Use HHEIANIHCNH_RequestPlayerStatus", true)]
 public class HHEIANIHCNH { }
 public class HHEIANIHCNH_RequestPlayerStatus : CACGCMBKHDI_Request
 {

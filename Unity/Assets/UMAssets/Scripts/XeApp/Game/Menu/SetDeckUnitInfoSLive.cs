@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private List<SetDeckDivaCardControl> m_additionDivas; // 0x14
 		public SetDeckUnitInfoSLive.EventOnClickItem OnClickItem; // 0x18
-		private List<FFHPBEPOMAK> m_divaDatas = new List<FFHPBEPOMAK>(); // 0x1C
+		private List<FFHPBEPOMAK_DivaInfo> m_divaDatas = new List<FFHPBEPOMAK_DivaInfo>(); // 0x1C
 
 		public UGUIEnterLeave AnimeControl { get { return m_animeControl; } } //0xC36818
 
@@ -72,11 +72,11 @@ namespace XeApp.Game.Menu
 			int numDiva = Mathf.Clamp(musicInfo.onStageDivaNum, 1, maxDiva);
 			for(int i = m_divaDatas.Count; i < maxDiva; i++)
 			{
-				m_divaDatas.Add(new FFHPBEPOMAK());
+				m_divaDatas.Add(new FFHPBEPOMAK_DivaInfo());
 			}
 			for(int i = 0; i < numDiva; i++)
 			{
-				FFHPBEPOMAK divaData = null;
+				FFHPBEPOMAK_DivaInfo divaData = null;
 				if (prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i) > 0)
 				{
 					m_divaDatas[i].KHEKNNFCAOI(prismData.PNBKLGKCKGO_GetPrismDivaIdForSlot(i), 0, prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(i), prismData.DOIGAGAAAOP_GetPrismCostumeColorIdForSlot(i), null, null, false);
@@ -142,7 +142,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xC37C74 Offset: 0xC37C74 VA: 0xC37C74
 		private void OnClickCostumeButton(int divaSlotNumber)
 		{
-			FFHPBEPOMAK divaData = GetDivaControlBySlotNumber(divaSlotNumber).DivaData;
+			FFHPBEPOMAK_DivaInfo divaData = GetDivaControlBySlotNumber(divaSlotNumber).DivaData;
 			if(divaData != null && OnClickItem != null)
 			{
 				OnClickItem(PopupMvModeSelectListContent.SelectTarget.Costume, divaSlotNumber);

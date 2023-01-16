@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use BCGFHLIEKLJ_DecoItem", true)]
 public class BCGFHLIEKLJ { }
 public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 {

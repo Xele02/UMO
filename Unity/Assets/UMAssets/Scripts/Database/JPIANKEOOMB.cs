@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using XeSys;
 
+[System.Obsolete("Use JPIANKEOOMB_Valkyrie", true)]
 public class JPIANKEOOMB { }
 public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 {

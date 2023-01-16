@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		}
 
 		protected DivaIconDecoration m_divaIconDecoration = new DivaIconDecoration(); // 0x50
-		protected FFHPBEPOMAK m_divaData; // 0x54
+		protected FFHPBEPOMAK_DivaInfo m_divaData; // 0x54
 		protected DFKGGBMFFGB m_playerData; // 0x58
 		protected EEDKAACNBBG m_musicData; // 0x5C
 		protected StringBuilder m_strBuilder = new StringBuilder(64); // 0x60
@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17D3390 Offset: 0x17D3390 VA: 0x17D3390
-		public void UpdateContent(FFHPBEPOMAK divaData, FFHPBEPOMAK comparisonDiva, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isCenterDiva)
+		public void UpdateContent(FFHPBEPOMAK_DivaInfo divaData, FFHPBEPOMAK_DivaInfo comparisonDiva, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isCenterDiva)
 		{
 			m_divaData = divaData;
 			m_playerData = playerData;

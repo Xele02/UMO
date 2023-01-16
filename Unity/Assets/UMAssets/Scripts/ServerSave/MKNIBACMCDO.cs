@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use MKNIBACMCDO_AssistPlate", true)]
 public class MKNIBACMCDO { }
 public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_ServerSaveBlock
 {

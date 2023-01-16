@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XeSys;
 
+[System.Obsolete("Use JJOPEDJCCJK_Exp", true)]
 public class JJOPEDJCCJK { }
 public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 {

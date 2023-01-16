@@ -2,6 +2,7 @@ using System.Collections.Generic;
 
 public delegate int MMBLPLOGFLG();
 
+[System.Obsolete("Use NBPHJDCOECH_Drop", true)]
 public class NBPHJDCOECH { }
 public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 {

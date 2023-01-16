@@ -26,7 +26,7 @@ namespace XeApp.Game.Menu
 			public string m_name; // 0x28
 			public string m_name_base; // 0x2C
 			public string m_status; // 0x30
-			public FFHPBEPOMAK m_view_diva; // 0x34
+			public FFHPBEPOMAK_DivaInfo m_view_diva; // 0x34
 			public ItemInfo m_src_item; // 0x38
 		}
 
@@ -171,17 +171,17 @@ namespace XeApp.Game.Menu
 		public void CreateItem(int a_diva_id, bool a_first_transition = true, TransitionList.Type transition = TransitionList.Type.COSTUME_SELECT, bool a_debug = false, bool isGoDiva = false)
 		{
 			m_diva_id = a_diva_id;
-			FFHPBEPOMAK selectedCostume = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_diva_id - 1];
+			FFHPBEPOMAK_DivaInfo selectedCostume = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_diva_id - 1];
 			List<ItemInfo> l1 = new List<ItemInfo>();
 			List<ItemInfo> l2 = new List<ItemInfo>();
-			List<FFHPBEPOMAK> fl;
+			List<FFHPBEPOMAK_DivaInfo> fl;
 			if(isGoDiva)
 			{
-				fl = FFHPBEPOMAK.OOJFGDKBOHK(a_diva_id, a_debug);
+				fl = FFHPBEPOMAK_DivaInfo.OOJFGDKBOHK(a_diva_id, a_debug);
 			}
 			else
 			{
-				fl = FFHPBEPOMAK.DNAIGDHCILM_GetCostumeList(a_diva_id, a_debug);
+				fl = FFHPBEPOMAK_DivaInfo.DNAIGDHCILM_GetCostumeList(a_diva_id, a_debug);
 			}
 			int i = 0;
 			foreach(var f_ in fl)

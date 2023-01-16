@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use LIFGJMIHHKM_LimitedItem", true)]
 public class LIFGJMIHHKM { }
 public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 {

@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use KDLBHAKPLPH_ArMarker", true)]
 public class KDLBHAKPLPH { }
 public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_ServerSaveBlock
 {

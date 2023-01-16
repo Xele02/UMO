@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use FNBIIGJJGKA_Counter", true)]
 public class FNBIIGJJGKA {}
 public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 {

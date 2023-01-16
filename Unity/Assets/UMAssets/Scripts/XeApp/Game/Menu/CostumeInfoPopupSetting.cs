@@ -6,8 +6,8 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeInfoPopupSetting : PopupSetting
 	{
-		public FFHPBEPOMAK beforeData { get; set; } // 0x34
-		public FFHPBEPOMAK afterData { get; set; } // 0x38
+		public FFHPBEPOMAK_DivaInfo beforeData { get; set; } // 0x34
+		public FFHPBEPOMAK_DivaInfo afterData { get; set; } // 0x38
 		public CostumeInfoWindow costumeInfoWindow { get; set; } // 0x3C
 		public override string PrefabPath { get { return "Menu/Prefab/PopupWindow/root_sel_costume_pop_layout_root"; } } //0x162E250
 		public override string BundleName { get { return "ly/044.xab"; } } //0x162E2AC

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use MHDFCLCMDKO_Enemy", true)]
 public class MHDFCLCMDKO { }
 public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 {

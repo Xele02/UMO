@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use LGIDLHLBFFJ_MonthlyPass", true)]
 public class LGIDLHLBFFJ { }
 public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 {

@@ -478,7 +478,7 @@ namespace XeApp.Game.Menu
 
 			//0xB3980C
 			divaFacialType = DivaResource.MenuFacialType.Home;
-			FFHPBEPOMAK divaInfo = GameManager.Instance.GetHomeDiva();
+			FFHPBEPOMAK_DivaInfo divaInfo = GameManager.Instance.GetHomeDiva();
 			divaId = divaInfo.AHHJLDLAPAN_DivaId;
 			modelId = divaInfo.EOJIGHEFIAA_GetHomeDivaPrismCostumeId();
 			colorId = divaInfo.LHGJHJLGPBE_GetHomeDivaColorId();
@@ -785,7 +785,7 @@ namespace XeApp.Game.Menu
 		// public void ShowOfferNotice(UnityAction pushAction) { }
 
 		// // RVA: 0xB327F0 Offset: 0xB327F0 VA: 0xB327F0
-		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK diva, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isChangeScene = true, bool isCloseOnly = false, int divaSlotNumber = -1, bool isGoDiva = false)
+		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK_DivaInfo diva, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isChangeScene = true, bool isCloseOnly = false, int divaSlotNumber = -1, bool isGoDiva = false)
 		{
 			TodoLogger.Log(0, "ShowDivaStatusPopupWindow");
 		}

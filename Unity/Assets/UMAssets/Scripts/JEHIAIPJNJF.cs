@@ -7,6 +7,8 @@ using System.Threading;
 using System.IO;
 using CriWare;
 
+[System.Obsolete("Use JEHIAIPJNJF_FileDownloader", true)]
+public class JEHIAIPJNJF { }
 public class JEHIAIPJNJF_FileDownloader : IDisposable
 {
     public enum NKLKJEOKIFO_Status
@@ -19,7 +21,6 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
         DNCJBLFALPA = 5,
     }
 
-	public class HCJPJKCIBDL_ { }
 
 	public class HCJPJKCIBDL_DldFileInfo
     {

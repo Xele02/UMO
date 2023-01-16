@@ -343,7 +343,7 @@ namespace XeApp.Game.Menu
 				m_centerSkillRegulation[i].SetActive(false);
 			}
 			m_mainScene = null;
-			FFHPBEPOMAK f = viewUnitData.BCJEAJPLGMB_MainDivas[0];
+			FFHPBEPOMAK_DivaInfo f = viewUnitData.BCJEAJPLGMB_MainDivas[0];
 			if (f != null)
 			{
 				if(f.FGFIBOBAPIA_SceneId > 0)

@@ -91,9 +91,9 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x162E6BC Offset: 0x162E6BC VA: 0x162E6BC
-		public void SetCostumeData(FFHPBEPOMAK beforeData, FFHPBEPOMAK afterData)
+		public void SetCostumeData(FFHPBEPOMAK_DivaInfo beforeData, FFHPBEPOMAK_DivaInfo afterData)
 		{
-			FFHPBEPOMAK[] list = new FFHPBEPOMAK[2];
+			FFHPBEPOMAK_DivaInfo[] list = new FFHPBEPOMAK_DivaInfo[2];
 			list[0] = beforeData;
 			list[1] = afterData;
 			StatusData stB = new StatusData();
@@ -102,8 +102,8 @@ namespace XeApp.Game.Menu
 			stA.Clear();
 			EDMIONMCICN eB = new EDMIONMCICN();
 			EDMIONMCICN eA = new EDMIONMCICN();
-			eB.OBKGEDCKHHE();
-			eA.OBKGEDCKHHE();
+			eB.OBKGEDCKHHE_Reset();
+			eA.OBKGEDCKHHE_Reset();
 			CMMKCEPBIHI.AECDJDIJJKD(ref eB, beforeData, null, GameManager.Instance.ViewPlayerData, null, null, null);
 			CMMKCEPBIHI.AECDJDIJJKD(ref eA, afterData, null, GameManager.Instance.ViewPlayerData, null, null, null);
 			eB.IMLOCECFHGK(ref stB);

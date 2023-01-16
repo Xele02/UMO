@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using XeSys;
 
+[System.Obsolete("Use JDDGGJCGOPA_RecordMusic", true)]
 public class JDDGGJCGOPA { }
 public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 {

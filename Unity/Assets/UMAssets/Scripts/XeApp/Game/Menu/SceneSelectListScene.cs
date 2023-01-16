@@ -26,7 +26,7 @@ namespace XeApp.Game.Menu
 		private SceneComparisonPopupSetting m_sceneComparisonPopupSetting; // 0x5C
 		private SceneSelectHomeBgSetting m_sceneSelectHomeBgSetting; // 0x60
 		private PopupLimitOverList m_limitOverList; // 0x64
-		private FFHPBEPOMAK m_divaData; // 0x68
+		private FFHPBEPOMAK_DivaInfo m_divaData; // 0x68
 		private PIGBBNDPPJC m_episodeData = new PIGBBNDPPJC(); // 0x6C
 		private int m_selectedEquipmentSlotIndex; // 0x70
 		private int m_selectedDivaSlotIndex; // 0x74
@@ -258,7 +258,7 @@ namespace XeApp.Game.Menu
 		// private int GetSameEvaluationValue3(GCIJNCFDNON left, GCIJNCFDNON right) { }
 
 		// // RVA: 0x13821CC Offset: 0x13821CC VA: 0x13821CC
-		private void AttachScene(int slot, FFHPBEPOMAK divaData, GCIJNCFDNON sceneData)
+		private void AttachScene(int slot, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON sceneData)
 		{
 			if(slot == 0)
 			{
@@ -271,7 +271,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1382318 Offset: 0x1382318 VA: 0x1382318
-		private void DetachScene(int slot, FFHPBEPOMAK divaData)
+		private void DetachScene(int slot, FFHPBEPOMAK_DivaInfo divaData)
 		{
 			if(slot != 0)
 				divaData.BCEJOOCGBFG(slot - 1, false);
@@ -295,7 +295,7 @@ namespace XeApp.Game.Menu
 		// private int GetEquSceneId(int selectedSlot, FFHPBEPOMAK divaData) { }
 
 		// // RVA: 0x1382560 Offset: 0x1382560 VA: 0x1382560
-		private void ShowComparisonPopupWindow(GCIJNCFDNON beforeScene, GCIJNCFDNON afterScene, FFHPBEPOMAK diva)
+		private void ShowComparisonPopupWindow(GCIJNCFDNON beforeScene, GCIJNCFDNON afterScene, FFHPBEPOMAK_DivaInfo diva)
 		{
 			if(afterScene != null)
 			{

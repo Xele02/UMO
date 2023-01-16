@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use EJKBKMBJMGL_EnemyData", true)]
 public class EJKBKMBJMGL { }
 public class EJKBKMBJMGL_EnemyData
 {

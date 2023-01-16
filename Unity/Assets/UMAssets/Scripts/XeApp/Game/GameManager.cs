@@ -1024,9 +1024,9 @@ namespace XeApp.Game
 		// public void DeleteViewPlayerData() { }
 
 		// // RVA: 0x9A0E04 Offset: 0x9A0E04 VA: 0x9A0E04
-		public FFHPBEPOMAK GetHomeDiva()
+		public FFHPBEPOMAK_DivaInfo GetHomeDiva()
 		{
-			FFHPBEPOMAK res = m_viewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
+			FFHPBEPOMAK_DivaInfo res = m_viewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
 			if(localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId > 0)
 			{
 				res = m_viewPlayerData.NBIGLBMHEDC[localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];

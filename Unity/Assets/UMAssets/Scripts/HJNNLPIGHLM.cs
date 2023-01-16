@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use HJNNLPIGHLM_EventCollection", true)]
 public class HJNNLPIGHLM { }
 public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex: 8979
 {

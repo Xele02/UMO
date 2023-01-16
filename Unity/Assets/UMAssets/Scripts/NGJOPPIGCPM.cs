@@ -27,8 +27,8 @@ public class NGJOPPIGCPM
 	public int NOCGJFJNADE = 0x7daf3c5a; // 0x34
 	public sbyte APMFDBAODEM = JFOFMKBJBBE; // 0x38
 	public sbyte AOBEEDHDHOL = JFOFMKBJBBE; // 0x39
-	public JDDGGJCGOPA LCKMBHDMPIP; // 0x3C
-	public JDDGGJCGOPA OEELDFNNLKK; // 0x40
+	public JDDGGJCGOPA_RecordMusic LCKMBHDMPIP; // 0x3C
+	public JDDGGJCGOPA_RecordMusic OEELDFNNLKK; // 0x40
 	public int ABCAPIDDPID = 0x7daf3c5a; // 0x44
 	public int HKEGJMFNLFM = 0x7daf3c5a; // 0x48
 	public int DMBHMNCBJLG = 0x7daf3c5a; // 0x4C

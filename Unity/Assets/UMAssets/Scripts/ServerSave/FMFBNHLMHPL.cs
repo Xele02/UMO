@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use FMFBNHLMHPL_EventAprilFool", true)]
 public class FMFBNHLMHPL { }
 public class FMFBNHLMHPL_EventAprilFool : KLFDBFMNLBL_ServerSaveBlock
 {

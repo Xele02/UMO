@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use NKOBMDPHNGP_EventRaidLobby", true)]
 public class NKOBMDPHNGP { }
 public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 {

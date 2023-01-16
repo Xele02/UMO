@@ -1,5 +1,7 @@
 using System;
 
+[System.Obsolete("Use EDOHBJAPLPF_JsonData", true)]
+public class IKFDGFEAJPL { }
 public class IKFDGFEAJPL_JsonException : ApplicationException
 {
 	// RVA: 0x8E451C Offset: 0x8E451C VA: 0x8E451C

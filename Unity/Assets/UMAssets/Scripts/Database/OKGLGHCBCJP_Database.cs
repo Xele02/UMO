@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using System.Text;
 
+[System.Obsolete("Use OKGLGHCBCJP_Database", true)]
 public class OKGLGHCBCJP{}
 public class OKGLGHCBCJP_Database
 {

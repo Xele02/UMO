@@ -53,7 +53,7 @@ namespace XeApp.Game.RhythmGame
 			bool line6 = setup.musicInfo.IsLine6Mode;
 			if(setup.musicInfo.isStoryMode)
 			{
-				musicLevelData = db.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(setup.musicInfo.storyMusicId).COGKJBAFBKN[(int)diff];
+				musicLevelData = db.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(setup.musicInfo.storyMusicId).COGKJBAFBKN_ByDiff[(int)diff];
 			}
 			else
 			{

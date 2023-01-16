@@ -13,7 +13,7 @@ namespace XeApp.Game.Menu
         public int divaSlotIndex; // 0x8
         public int defaultSelectScene; // 0xC
         public SceneSelectType scelectType; // 0x10
-        public FFHPBEPOMAK divaData; // 0x14
+        public FFHPBEPOMAK_DivaInfo divaData; // 0x14
         public bool isGoDiva; // 0x18
         public EAJCBFGKKFA friendPlayerData; // 0x1C
         public EEDKAACNBBG musicBaseData; // 0x20

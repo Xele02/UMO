@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 		public Action OnClickDivaButton; // 0x50
 		public Action OnStayDivaButton; // 0x54
 		public Action OnClickCostumeButton; // 0x58
-		private FFHPBEPOMAK m_divaData; // 0x5C
+		private FFHPBEPOMAK_DivaInfo m_divaData; // 0x5C
 		private DFKGGBMFFGB m_playerData; // 0x60
 		private int m_musicId; // 0x64
 		private bool m_isStory; // 0x68
@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 		private int m_costumeTextureLoadingCount; // 0x70
 
 		public bool IsLoading { get { return m_divaTextureLoadingCount > 0 || m_costumeTextureLoadingCount > 0; } } //0xA68268
-		public FFHPBEPOMAK DivaData { get { return m_divaData; } } //0xA6A0C0
+		public FFHPBEPOMAK_DivaInfo DivaData { get { return m_divaData; } } //0xA6A0C0
 		public UGUIStayButton DivaButton { get { return m_divaButton; } } //0xA6A0C8
 		//private bool IsEmpty { get; } 0xA6A0D0
 
@@ -113,7 +113,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6A3A8 Offset: 0xA6A3A8 VA: 0xA6A3A8
-		public void Set(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData, bool isCenter, bool isGoDiva, int musicId = 0, bool isStory = false)
+		public void Set(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB playerData, bool isCenter, bool isGoDiva, int musicId = 0, bool isStory = false)
 		{
 			m_divaData = divaData;
 			m_playerData = playerData;
@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6B4F8 Offset: 0xA6B4F8 VA: 0xA6B4F8
-		public void SetForPrism(FFHPBEPOMAK divaData)
+		public void SetForPrism(FFHPBEPOMAK_DivaInfo divaData)
 		{
 			m_divaData = divaData;
 			SetDivaImageAndColor(divaData, false);
@@ -168,7 +168,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA68D84 Offset: 0xA68D84 VA: 0xA68D84
-		public void SetForAssist(FFHPBEPOMAK divaData)
+		public void SetForAssist(FFHPBEPOMAK_DivaInfo divaData)
 		{
 			m_divaData = divaData;
 			SetDivaImageAndColor(divaData, false);
@@ -227,7 +227,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6A648 Offset: 0xA6A648 VA: 0xA6A648
-		private void SetDivaImageAndColor(FFHPBEPOMAK divaData, bool isGoDivaSub = false)
+		private void SetDivaImageAndColor(FFHPBEPOMAK_DivaInfo divaData, bool isGoDivaSub = false)
 		{
 			if(divaData == null)
 			{
@@ -269,7 +269,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6B280 Offset: 0xA6B280 VA: 0xA6B280
-		private void SetCostumeImage(FFHPBEPOMAK divaData)
+		private void SetCostumeImage(FFHPBEPOMAK_DivaInfo divaData)
 		{
 			m_costumeTextureLoadingCount++;
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using XeApp.Game.Common;
 
+[System.Obsolete("Use LLKLAKGKNLD_LimitOver", true)]
 public class LLKLAKGKNLD { }
 public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 {

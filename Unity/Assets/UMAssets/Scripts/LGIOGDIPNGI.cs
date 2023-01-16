@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use LGIOGDIPNGI_RareUpItem", true)]
 public class LGIOGDIPNGI { }
 public class LGIOGDIPNGI_RareUpItem : NKFJNAANPNP
 {

@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 		private RawImageEx m_releaseInvalidImage; // 0x74
 		private Action m_updater; // 0x78
 		private LayoutUGUIRuntime m_runtime; // 0x7C
-		private FFHPBEPOMAK m_selectedDiva; // 0x80
+		private FFHPBEPOMAK_DivaInfo m_selectedDiva; // 0x80
 		private EEDKAACNBBG m_musicData; // 0x84
 		private StringBuilder m_strBuilder = new StringBuilder(64); // 0x88
 		private TeamSelectDivaListArgs m_args; // 0x8C
@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17EE550 Offset: 0x17EE550 VA: 0x17EE550
 		private RemoveDivaState ValidateRemoveDiva()
 		{
-			FFHPBEPOMAK f = GetDivaDataBySlotNumber(m_args.slot);
+			FFHPBEPOMAK_DivaInfo f = GetDivaDataBySlotNumber(m_args.slot);
 			if(f != null)
 			{
 				return m_args.slot < 1 ? RemoveDivaState.CenterDiva : RemoveDivaState.Ok;
@@ -120,8 +120,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17EE5E8 Offset: 0x17EE5E8 VA: 0x17EE5E8
 		private bool TeamSettingDivaButton(int index)
 		{
-			FFHPBEPOMAK d = GetDivaDataBySlotNumber(PlayerData.NPFCMHCCDDH, m_args.slot);
-			FFHPBEPOMAK afterDiva = null;
+			FFHPBEPOMAK_DivaInfo d = GetDivaDataBySlotNumber(PlayerData.NPFCMHCCDDH, m_args.slot);
+			FFHPBEPOMAK_DivaInfo afterDiva = null;
 			if (index < 0)
 			{
 				RemoveDivaState removeState = ValidateRemoveDiva();
@@ -139,7 +139,7 @@ namespace XeApp.Game.Menu
 				afterDiva = PlayerData.NBIGLBMHEDC[index];
 				if (d == null)
 				{
-					FFHPBEPOMAK f = PlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
+					FFHPBEPOMAK_DivaInfo f = PlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
 					if(f != null)
 					{
 						if(afterDiva.AHHJLDLAPAN_DivaId == f.AHHJLDLAPAN_DivaId)
@@ -221,7 +221,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EEBEC Offset: 0x17EEBEC VA: 0x17EEBEC
-		private void ShowComparisonPopupWindow(FFHPBEPOMAK beforeDiva, FFHPBEPOMAK afterDiva, JLKEOGLJNOD unit, int slot, EEDKAACNBBG musicData)
+		private void ShowComparisonPopupWindow(FFHPBEPOMAK_DivaInfo beforeDiva, FFHPBEPOMAK_DivaInfo afterDiva, JLKEOGLJNOD unit, int slot, EEDKAACNBBG musicData)
 		{
 			PopupSetting set = null;
 			if(IsAddDiva(slot))
@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EFC68 Offset: 0x17EFC68 VA: 0x17EFC68
-		private void SwapDiva(JLKEOGLJNOD unitData, FFHPBEPOMAK beforeDiva, FFHPBEPOMAK afterDiva, int slotNumber)
+		private void SwapDiva(JLKEOGLJNOD unitData, FFHPBEPOMAK_DivaInfo beforeDiva, FFHPBEPOMAK_DivaInfo afterDiva, int slotNumber)
 		{
 			for(int i = 0; i < unitData.BCJEAJPLGMB_MainDivas.Count; i++)
 			{
@@ -402,7 +402,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EEA80 Offset: 0x17EEA80 VA: 0x17EEA80
-		private FFHPBEPOMAK GetDivaDataBySlotNumber(JLKEOGLJNOD unitData, int slotNumber)
+		private FFHPBEPOMAK_DivaInfo GetDivaDataBySlotNumber(JLKEOGLJNOD unitData, int slotNumber)
 		{
 			if (slotNumber < unitData.BCJEAJPLGMB_MainDivas.Count)
 			{
@@ -415,13 +415,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17EE5B4 Offset: 0x17EE5B4 VA: 0x17EE5B4
-		private FFHPBEPOMAK GetDivaDataBySlotNumber(int slotNumber)
+		private FFHPBEPOMAK_DivaInfo GetDivaDataBySlotNumber(int slotNumber)
 		{
 			return GetDivaDataBySlotNumber(PlayerData.NPFCMHCCDDH, slotNumber);
 		}
 
 		//// RVA: 0x17EFEE0 Offset: 0x17EFEE0 VA: 0x17EFEE0
-		private void SetDivaDataBySlotNumber(JLKEOGLJNOD unitData, FFHPBEPOMAK divaData, int slotNumber)
+		private void SetDivaDataBySlotNumber(JLKEOGLJNOD unitData, FFHPBEPOMAK_DivaInfo divaData, int slotNumber)
 		{
 			if(unitData != null)
 			{

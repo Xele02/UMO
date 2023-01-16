@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using XeApp.Game.Common;
 
+[System.Obsolete("Use EBFLJMOCLNA_Costume", true)]
 public class EBFLJMOCLNA { }
 public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 {

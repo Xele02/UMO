@@ -32,6 +32,8 @@ public class IBJAKJJICBC : EEDKAACNBBG
 		public int OOCBPMNHLPM_MusicId; // 0x30
 	}
 
+	[System.Obsolete("Use ANJLFFPBAEF_DifficultyInfo", true)]
+	public class ANJLFFPBAEF { }
 	public class ANJLFFPBAEF_DifficultyInfo
 	{
 		private const int FBGGEFFJJHB_Key = 0x7daf3c5a;

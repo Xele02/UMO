@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use CANAFALMGLI_EventPresentCampaign", true)]
 public class CANAFALMGLI { }
 public class CANAFALMGLI_EventPresentCampaign : IKDICBBFBMI_EventBase
 {

@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use ODPNBADOFAN_Quest", true)]
 public class ODPNBADOFAN { }
 public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 {

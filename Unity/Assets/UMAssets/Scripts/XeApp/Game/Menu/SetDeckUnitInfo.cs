@@ -18,9 +18,9 @@ namespace XeApp.Game.Menu
 			public SetDeckSceneSetControl m_sceneSetControl; // 0xC
 		}
 
-		public delegate void EventOnClickDiva(int divaSlotNumber, FFHPBEPOMAK divaData);
-		public delegate void EventOnClickCostume(int divaSlotNumber, FFHPBEPOMAK divaData);
-		public delegate void EventOnClickScene(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK divaData, GCIJNCFDNON sceneData);
+		public delegate void EventOnClickDiva(int divaSlotNumber, FFHPBEPOMAK_DivaInfo divaData);
+		public delegate void EventOnClickCostume(int divaSlotNumber, FFHPBEPOMAK_DivaInfo divaData);
+		public delegate void EventOnClickScene(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON sceneData);
 
 		//[TooltipAttribute] // RVA: 0x684144 Offset: 0x684144 VA: 0x684144
 		[SerializeField]
@@ -141,7 +141,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count && i < m_divaInfos.Count; i++)
 				{
-					FFHPBEPOMAK unitDiva = viewUnitData.BCJEAJPLGMB_MainDivas[i];
+					FFHPBEPOMAK_DivaInfo unitDiva = viewUnitData.BCJEAJPLGMB_MainDivas[i];
 					DivaInfo diva = m_divaInfos[i];
 					if(diva.m_divaControl != null)
 					{
@@ -364,7 +364,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC335FC Offset: 0xC335FC VA: 0xC335FC
-		private FFHPBEPOMAK GetDivaDataBySlotNumber(int divaSlotNumber)
+		private FFHPBEPOMAK_DivaInfo GetDivaDataBySlotNumber(int divaSlotNumber)
 		{
 			if(m_divaInfos != null)
 			{

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use DEKKMGAFJCG_Diva", true)]
 public class DEKKMGAFJCG { }
 public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 {

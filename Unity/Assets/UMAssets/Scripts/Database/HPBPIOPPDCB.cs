@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using XeSys;
 
+[System.Obsolete("Use HPBPIOPPDCB_Diva", true)]
 public class HPBPIOPPDCB { }
 public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 {

@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use CEDOOHCPHMG_UnitGoDiva", true)]
 public class CEDOOHCPHMG { }
 public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_ServerSaveBlock
 {

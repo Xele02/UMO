@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use MMPBPOIFDAF_Scene", true)]
 public class MMPBPOIFDAF { }
 public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 {

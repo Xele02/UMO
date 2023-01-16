@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use DIHHCBACKGG_DbSection", true)]
 public abstract class DIHHCBACKGG { }
 public abstract class DIHHCBACKGG_DbSection
 {

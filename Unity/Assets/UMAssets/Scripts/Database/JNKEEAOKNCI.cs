@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using XeApp.Game.Common;
 
+[System.Obsolete("Use JNKEEAOKNCI_Skill", true)]
 public class JNKEEAOKNCI { }
 public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 {

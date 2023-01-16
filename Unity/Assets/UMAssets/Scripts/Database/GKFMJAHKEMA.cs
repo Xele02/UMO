@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use GKFMJAHKEMA_ValSkill", true)]
 public class GKFMJAHKEMA { }
 public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 {

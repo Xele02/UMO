@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use JOHKNBEFHHP_TitleBanner", true)]
 public class JOHKNBEFHHP { }
 public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG_DbSection
 {

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use KBCCGHLCFNO_MonthlyPass", true)]
 public class KBCCGHLCFNO { }
 public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
 {

@@ -30,12 +30,12 @@ namespace XeApp.Game.Menu
 
 		private class ScrollDivaListItem : ScrollListItem
 		{
-			public FFHPBEPOMAK DivaData { get; private set; } // 0x24
+			public FFHPBEPOMAK_DivaInfo DivaData { get; private set; } // 0x24
 
 			// RVA: 0x1699EEC Offset: 0x1699EEC VA: 0x1699EEC
 			public ScrollDivaListItem(int divaId)
 			{ 
-				DivaData = new FFHPBEPOMAK();
+				DivaData = new FFHPBEPOMAK_DivaInfo();
 				DivaData.KHEKNNFCAOI(divaId, null, false);
 			}
 		}
@@ -82,7 +82,7 @@ namespace XeApp.Game.Menu
 		private PopupWindowControl m_control; // 0x2C
 		private PNGOLKLFFLH m_valkyrieData = new PNGOLKLFFLH(); // 0x30
 		private CKFGMNAIBNG m_costumeData = new CKFGMNAIBNG(); // 0x34
-		private FFHPBEPOMAK m_divaData = new FFHPBEPOMAK(); // 0x38
+		private FFHPBEPOMAK_DivaInfo m_divaData = new FFHPBEPOMAK_DivaInfo(); // 0x38
 
 		public Transform Parent { get { return m_parent; } }//0x169BB80
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[System.Obsolete("Use CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt", true)]
 public class CNABKDIKIOB { }
 public class CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt : CACGCMBKHDI_Request
 {

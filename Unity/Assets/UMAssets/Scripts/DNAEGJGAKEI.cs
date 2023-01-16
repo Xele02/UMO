@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use DNAEGJGAKEI_DropItemInfo", true)]
 public class DNAEGJGAKEI { }
 public class DNAEGJGAKEI_DropItemInfo
 {

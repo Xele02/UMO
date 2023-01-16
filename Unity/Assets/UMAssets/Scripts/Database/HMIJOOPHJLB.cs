@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using XeSys;
 
+[System.Obsolete("Use HMIJOOPHJLB_Diva2", true)]
+public class HMIJOOPHJLB { }
 public class HMIJOOPHJLB_Diva2 : DIHHCBACKGG_DbSection
 {
 	public static bool DINNDBNPNFK; // 0x0

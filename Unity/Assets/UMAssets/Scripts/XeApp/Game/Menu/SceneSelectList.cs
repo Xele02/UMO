@@ -252,7 +252,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137BE58 Offset: 0x137BE58 VA: 0x137BE58
-		public void UpdateRemoveButton(FFHPBEPOMAK divaData, int sceneSlotIndex)
+		public void UpdateRemoveButton(FFHPBEPOMAK_DivaInfo divaData, int sceneSlotIndex)
 		{
 			if(divaData == null)
 				return;
@@ -278,7 +278,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137C000 Offset: 0x137C000 VA: 0x137C000
-		public void UpdateContent(DFKGGBMFFGB playerData, FFHPBEPOMAK divaData, int musicId, List<GCIJNCFDNON> sceneList, List<int> sortListIndexList, int selectedSceneId, DisplayType type, int dispRow, TransitionList.Type transitionType, bool isGoDiva)
+		public void UpdateContent(DFKGGBMFFGB playerData, FFHPBEPOMAK_DivaInfo divaData, int musicId, List<GCIJNCFDNON> sceneList, List<int> sortListIndexList, int selectedSceneId, DisplayType type, int dispRow, TransitionList.Type transitionType, bool isGoDiva)
 		{
 			m_dispType = type;
 			m_scrollList.SetItemCount(sortListIndexList.Count);
@@ -388,7 +388,7 @@ namespace XeApp.Game.Menu
 				float[] rankPosition = new float[5];
 				for(int i = 0; i < 10; i++)
 				{
-					scoreParams[i] = CMMKCEPBIHI.NDNOLJACLLC((CMMKCEPBIHI.NOJENDEDECD)i);
+					scoreParams[i] = CMMKCEPBIHI.NDNOLJACLLC_GetScore((CMMKCEPBIHI.NOJENDEDECD_ScoreType)i);
 				}
 				for(int i = 0; i < 5; i++)
 				{
@@ -418,7 +418,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137CEFC Offset: 0x137CEFC VA: 0x137CEFC
-		private bool IsCenterDiva(JLKEOGLJNOD unitData, FFHPBEPOMAK divaData)
+		private bool IsCenterDiva(JLKEOGLJNOD unitData, FFHPBEPOMAK_DivaInfo divaData)
 		{
 			if(unitData != null && divaData != null)
 			{
@@ -452,7 +452,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x137D138 Offset: 0x137D138 VA: 0x137D138
 		public static bool IsUnitScene(DFKGGBMFFGB playerData, GCIJNCFDNON sceneData, bool isGoDiva)
 		{
-			List<FFHPBEPOMAK> l = playerData.DPLBHAIKPGL(isGoDiva).BCJEAJPLGMB_MainDivas;
+			List<FFHPBEPOMAK_DivaInfo> l = playerData.DPLBHAIKPGL(isGoDiva).BCJEAJPLGMB_MainDivas;
 			for(int i = 0; i < l.Count; i++)
 			{
 				if(l[i] != null)
@@ -468,7 +468,7 @@ namespace XeApp.Game.Menu
 		// public static bool IsSetScene(DFKGGBMFFGB playerData, GCIJNCFDNON sceneData) { }
 
 		// // RVA: 0x137D32C Offset: 0x137D32C VA: 0x137D32C
-		public static bool IsDivaEquipScene(FFHPBEPOMAK divaData, List<GCIJNCFDNON> sceneList, GCIJNCFDNON sceneData)
+		public static bool IsDivaEquipScene(FFHPBEPOMAK_DivaInfo divaData, List<GCIJNCFDNON> sceneList, GCIJNCFDNON sceneData)
 		{
 			for(int i = 0; i < 3; i++)
 			{

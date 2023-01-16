@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use BMIODFJCGAJ_EventBattlePlayer", true)]
 public class BMIODFJCGAJ { }
 public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 {

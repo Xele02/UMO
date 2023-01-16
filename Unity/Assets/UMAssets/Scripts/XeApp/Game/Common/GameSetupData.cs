@@ -43,7 +43,7 @@ namespace XeApp.Game.Common
 				}
 
 				// // RVA: 0xE9F6C0 Offset: 0xE9F6C0 VA: 0xE9F6C0
-				public void SetupInfo(FFHPBEPOMAK viewDivaData, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, AOJGDNFAIJL_PrismData.AMIECPBIALP prismData, int index, int positionId = 1)
+				public void SetupInfo(FFHPBEPOMAK_DivaInfo viewDivaData, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, AOJGDNFAIJL_PrismData.AMIECPBIALP prismData, int index, int positionId = 1)
 				{
 					Initialize();
 					this.positionId = positionId;

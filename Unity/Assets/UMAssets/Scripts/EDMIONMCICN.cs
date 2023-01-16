@@ -16,7 +16,7 @@ public struct CGCBEHANFJO
 	}
 
 	// RVA: 0x7FC634 Offset: 0x7FC634 VA: 0x7FC634
-	public int PJCKMKEJCEL()
+	public int PJCKMKEJCEL_Total()
 	{
 		return LDLHPACIIAB_Soul + MKMIEGPOKGG_Vocal + EACDINDLGLF_Charm;
 	}
@@ -34,7 +34,7 @@ public struct EDMIONMCICN
 	public MKHCIKICBOI NOEFMBAIAMP; // 0x20
 
 	// RVA: 0x7FC8FC Offset: 0x7FC8FC VA: 0x7FC8FC
-	public void OBKGEDCKHHE()
+	public void OBKGEDCKHHE_Reset()
 	{
 		ELFAIDEBLJB = new StatusData();
 		BJABFKMIJHB_StatusMainScene = new StatusData();
@@ -72,7 +72,7 @@ public struct EDMIONMCICN
 	}
 
 	//// RVA: 0x7FC90C Offset: 0x7FC90C VA: 0x7FC90C
-	public void BEDINMCPENB(ref StatusData MGFGADBHOFJ)
+	public void BEDINMCPENB_SetupStatus(ref StatusData MGFGADBHOFJ)
 	{
 		MGFGADBHOFJ.Clear();
 		MGFGADBHOFJ.Add(ELFAIDEBLJB);

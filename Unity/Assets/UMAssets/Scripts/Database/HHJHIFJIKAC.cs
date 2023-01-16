@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use HHJHIFJIKAC_BonusVc", true)]
 public class HHJHIFJIKAC { }
 public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 {

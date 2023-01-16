@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use NPOOPJIOMHF_Prism", true)]
 public class NPOOPJIOMHF { }
 public class NPOOPJIOMHF_Prism : KLFDBFMNLBL_ServerSaveBlock
 {

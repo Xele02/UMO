@@ -15,6 +15,7 @@ public class SerchGuestNotFoundException : Exception
 	public SerchGuestNotFoundException(string message, Exception inner) : base(message, inner) { }
 }
 
+[System.Obsolete("Use PIGBKEIAMPE_FriendManager", true)]
 public class PIGBKEIAMPE { }
 public class PIGBKEIAMPE_FriendManager
 {

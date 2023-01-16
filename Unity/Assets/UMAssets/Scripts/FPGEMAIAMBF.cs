@@ -82,7 +82,7 @@ public class FPGEMAIAMBF
 		for(int i = 0; i < 4; i++)
 		{
 			LOIJICNJMKA lo = new LOIJICNJMKA();
-			lo.FCDKJAKLGMB = otherInfo2.NLKEBAOBJCM[i];
+			lo.FCDKJAKLGMB = otherInfo2.NLKEBAOBJCM_RankCombo[i];
 			lo.CMCKNKKCNDK_Achieved = i < rewardComboList[AKNELONELJK_Difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
 			lo.GONNICAJNLK(i + 8, rewardInfo);
 			HFPMKBAANFO_ComboReward.Add(lo);

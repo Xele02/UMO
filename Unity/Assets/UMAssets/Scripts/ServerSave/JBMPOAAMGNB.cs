@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use JBMPOAAMGNB_Base", true)]
 public class JBMPOAAMGNB { }
 public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 {

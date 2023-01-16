@@ -30,8 +30,8 @@ namespace XeApp.Game.Menu
 				return -1;
 			if(right < 0)
 				return 1;
-			FFHPBEPOMAK fl = m_playerData.NBIGLBMHEDC[left];
-			FFHPBEPOMAK fr = m_playerData.NBIGLBMHEDC[right];
+			FFHPBEPOMAK_DivaInfo fl = m_playerData.NBIGLBMHEDC[left];
+			FFHPBEPOMAK_DivaInfo fr = m_playerData.NBIGLBMHEDC[right];
 			int val1 = 0;
 			int val2 = 0;
 			if(SortType <= SortItem.FoldNotes)

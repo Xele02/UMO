@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use LGGPBMPINDL_EventRaidPlayer", true)]
 public class LGGPBMPINDL { }
 public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 {

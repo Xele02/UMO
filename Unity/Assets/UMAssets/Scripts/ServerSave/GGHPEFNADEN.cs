@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use GGHPEFNADEN_Ticket", true)]
 public class GGHPEFNADEN { }
 public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 {

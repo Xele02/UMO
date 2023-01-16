@@ -4765,7 +4765,8 @@ public class FLGABCAPFEC<T> // TypeDefIndex: 7782
 	//*/
 }
 
-// Namespace: 
+[System.Obsolete("Use DJJGOGFPCEA_Home", true)]
+public class DJJGOGFPCEA { }
 public class DJJGOGFPCEA_Home : FLGABCAPFEC<long>
 {
 	public enum MBLAHPBHIIA

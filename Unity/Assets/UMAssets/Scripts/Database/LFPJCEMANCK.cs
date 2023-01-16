@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
+[System.Obsolete("Use DFHCLGPLJCP_Rules", true)]
 public class DFHCLGPLJCP { }
 public class DFHCLGPLJCP_Rules
 {
@@ -39,6 +40,7 @@ public class DFHCLGPLJCP_Rules
 	}
 }
 
+[System.Obsolete("Use NLEFIGMHGCO_MVerList", true)]
 public class NLEFIGMHGCO { }
 public class NLEFIGMHGCO_MVerList
 {
@@ -71,7 +73,7 @@ public class PKKHIEAEDPC
 	public string CJEKGLGBIHF; // 0x24
 }
 
-
+[System.Obsolete("Use LFPJCEMANCK_Asset", true)]
 public class LFPJCEMANCK { }
 public class LFPJCEMANCK_Asset : DIHHCBACKGG_DbSection
 {

@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 
+[System.Obsolete("Use BEEINMBNKNM_Encryption", true)]
 public class BEEINMBNKNM {}
 public class BEEINMBNKNM_Encryption
 {

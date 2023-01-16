@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use FKNOCGCODBK_Unit", true)]
 public class FKNOCGCODBK { }
 public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 {

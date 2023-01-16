@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use KMOGDEOKHPG_Episode", true)]
 public class KMOGDEOKHPG {}
 public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 {
@@ -180,6 +181,8 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
     }
 }
 
+[System.Obsolete("Use HMGPODKEFBA_EpisodeInfo", true)]
+public class HMGPODKEFBA { }
 public class HMGPODKEFBA_EpisodeInfo
 {
 	public short KELFCMEOPPM; // 0x8
@@ -198,6 +201,7 @@ public class HMGPODKEFBA_EpisodeInfo
 	// public uint CAOGDCBPBAN() { }
 }
 
+[System.Obsolete("Use FMLIFJBPFNA_Step", true)]
 public class FMLIFJBPFNA { }
 public class FMLIFJBPFNA_Step
 {
@@ -209,6 +213,7 @@ public class FMLIFJBPFNA_Step
 	// public uint CAOGDCBPBAN() { }
 }
 
+[System.Obsolete("Use JNIKPOIKFAC_Reward", true)]
 public class JNIKPOIKFAC { }
 public class JNIKPOIKFAC_Reward
 {

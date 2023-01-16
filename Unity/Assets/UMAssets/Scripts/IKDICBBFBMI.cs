@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use IKDICBBFBMI_EventBase", true)]
 public abstract class IKDICBBFBMI { }
 public abstract class IKDICBBFBMI_EventBase
 {

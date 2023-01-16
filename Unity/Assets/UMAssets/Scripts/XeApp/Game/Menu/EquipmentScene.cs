@@ -103,7 +103,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF0B97C Offset: 0xF0B97C VA: 0xF0B97C
-		public void UpdateContent(DFKGGBMFFGB playerData, FFHPBEPOMAK divaData, bool isCenter, int musicId, bool isGoDiva)
+		public void UpdateContent(DFKGGBMFFGB playerData, FFHPBEPOMAK_DivaInfo divaData, bool isCenter, int musicId, bool isGoDiva)
 		{
 			m_slotTypeLayout.StartChildrenAnimGoStop("01");
 			m_centerIconImage.enabled = isCenter;
@@ -306,16 +306,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF0D744 Offset: 0xF0D744 VA: 0xF0D744
-		public void ChangeIcon(DFKGGBMFFGB playerData, FFHPBEPOMAK divaData, DisplayType type, bool isCenter, bool isGoDiva)
+		public void ChangeIcon(DFKGGBMFFGB playerData, FFHPBEPOMAK_DivaInfo divaData, DisplayType type, bool isCenter, bool isGoDiva)
 		{
 			m_divaIconDecoration.Change(divaData, playerData, type);
 			bool isActive = true;
 			if(isGoDiva && !isCenter)
 			{
 				isActive = false;
-				for(int i = 0; i < FFHPBEPOMAK.HBBPOMBJJNG.Length; i++)
+				for(int i = 0; i < FFHPBEPOMAK_DivaInfo.HBBPOMBJJNG.Length; i++)
 				{
-					if(FFHPBEPOMAK.HBBPOMBJJNG[i] == type)
+					if(FFHPBEPOMAK_DivaInfo.HBBPOMBJJNG[i] == type)
 					{
 						isActive = true;
 						break;

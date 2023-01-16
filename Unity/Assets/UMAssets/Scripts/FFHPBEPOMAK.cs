@@ -5,7 +5,9 @@ using XeApp.Game.Common;
 using XeApp.Game.Menu;
 using XeSys;
 
-public class FFHPBEPOMAK
+[System.Obsolete("Use FFHPBEPOMAK_DivaInfo", true)]
+public class FFHPBEPOMAK { }
+public class FFHPBEPOMAK_DivaInfo
 {
 	public class CLKBDNBMJCO
 	{
@@ -97,7 +99,7 @@ public class FFHPBEPOMAK
 	public List<int> PKLPGBKKFOL { get; private set; } // 0x68 IOKGPGPGGPL ODHMENNBBML JLIFOJJIDIG
 	public List<int> HMBECPGHPOE { get; private set; } // 0x6C BAMGHOCFIIG HDJMNMAPPAJ GBMDLJBJILK
 	public List<int> FOHEIOLPAOG { get; private set; } // 0x70 IEPHLHPLBGB BEFACAKCODI HMAHEFFHNIO
-	public FFHPBEPOMAK.CLKBDNBMJCO IHANGGCHPAL { get; private set; } = new FFHPBEPOMAK.CLKBDNBMJCO(); // 0x74 DCLILLHDINA NIBJBLCDIHD MBAKEDKIJDG
+	public FFHPBEPOMAK_DivaInfo.CLKBDNBMJCO IHANGGCHPAL { get; private set; } = new FFHPBEPOMAK_DivaInfo.CLKBDNBMJCO(); // 0x74 DCLILLHDINA NIBJBLCDIHD MBAKEDKIJDG
 
 	// RVA: 0x14DE1BC Offset: 0x14DE1BC VA: 0x14DE1BC
 	public void LEHDLBJJBNC()
@@ -581,9 +583,9 @@ public class FFHPBEPOMAK
 	// public static int PFAGNJEPBCB(int AHHJLDLAPAN, int JPIDIENBGKH) { }
 
 	// // RVA: 0x14E2810 Offset: 0x14E2810 VA: 0x14E2810
-	public static List<FFHPBEPOMAK> DNAIGDHCILM_GetCostumeList(int AHHJLDLAPAN, bool OJEBNBLHPNP = false)
+	public static List<FFHPBEPOMAK_DivaInfo> DNAIGDHCILM_GetCostumeList(int AHHJLDLAPAN, bool OJEBNBLHPNP = false)
 	{
-		List<FFHPBEPOMAK> res = new List<FFHPBEPOMAK>();
+		List<FFHPBEPOMAK_DivaInfo> res = new List<FFHPBEPOMAK_DivaInfo>();
 		for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA.Count; i++)
 		{
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA[i];
@@ -595,7 +597,7 @@ public class FFHPBEPOMAK
 					if(cosInfo.DAJGPBLEEOB_PrismCostumeModelId == 1 || OJEBNBLHPNP)
 					{
 						//LAB_014e2d4c
-						FFHPBEPOMAK data = new FFHPBEPOMAK();
+						FFHPBEPOMAK_DivaInfo data = new FFHPBEPOMAK_DivaInfo();
 						data.KHEKNNFCAOI(AHHJLDLAPAN, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, false);
 						data.HOOJOFACOEK_SetCostume(cosInfo.JPIDIENBGKH_CostumeId, 0, true, OJEBNBLHPNP);
 						data.JFIPEKCDKLG(cosInfo.JPIDIENBGKH_CostumeId, 0, OJEBNBLHPNP);
@@ -608,7 +610,7 @@ public class FFHPBEPOMAK
 						{
 							if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[costumeId - 1].CGKAEMGLHNK_Possessed())
 							{
-								FFHPBEPOMAK data = new FFHPBEPOMAK();
+								FFHPBEPOMAK_DivaInfo data = new FFHPBEPOMAK_DivaInfo();
 								data.KHEKNNFCAOI(AHHJLDLAPAN, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, false);
 								data.HOOJOFACOEK_SetCostume(cosInfo.JPIDIENBGKH_CostumeId, 0, true, OJEBNBLHPNP);
 								data.JFIPEKCDKLG(cosInfo.JPIDIENBGKH_CostumeId, 0, OJEBNBLHPNP);
@@ -619,7 +621,7 @@ public class FFHPBEPOMAK
 						{
 							if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[a - 1].BEBJKJKBOGH_Date != 0 || RuntimeSettings.CurrentSettings.ForceCardsUnlock)
 							{
-								FFHPBEPOMAK data = new FFHPBEPOMAK();
+								FFHPBEPOMAK_DivaInfo data = new FFHPBEPOMAK_DivaInfo();
 								data.KHEKNNFCAOI(AHHJLDLAPAN, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, false);
 								data.HOOJOFACOEK_SetCostume(cosInfo.JPIDIENBGKH_CostumeId, 0, true, OJEBNBLHPNP);
 								data.JFIPEKCDKLG(cosInfo.JPIDIENBGKH_CostumeId, 0, OJEBNBLHPNP);
@@ -634,9 +636,9 @@ public class FFHPBEPOMAK
 	}
 
 	// // RVA: 0x14E2F68 Offset: 0x14E2F68 VA: 0x14E2F68
-	public static List<FFHPBEPOMAK> OOJFGDKBOHK(int AHHJLDLAPAN, bool OJEBNBLHPNP = false)
+	public static List<FFHPBEPOMAK_DivaInfo> OOJFGDKBOHK(int AHHJLDLAPAN, bool OJEBNBLHPNP = false)
 	{
 		TodoLogger.Log(0, "OOJFGDKBOHK");
-		return new List<FFHPBEPOMAK>();
+		return new List<FFHPBEPOMAK_DivaInfo>();
 	}
 }

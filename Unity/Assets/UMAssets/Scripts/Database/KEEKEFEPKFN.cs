@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using XeSys;
 
+[System.Obsolete("Use KEEKEFEPKFN_GrowItem", true)]
 public class KEEKEFEPKFN { }
 public class KEEKEFEPKFN_GrowItem : DIHHCBACKGG_DbSection
 {

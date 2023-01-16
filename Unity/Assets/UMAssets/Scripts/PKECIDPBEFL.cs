@@ -39,9 +39,9 @@ public class PKECIDPBEFL
 	public List<int> MEGNAIJPBFF = new List<int>(); // 0x28
 	// public List<string> OHNJJIMGKGK = new List<string>(); // 0x2C
 	public bool CHDDDCCHJJH; // 0x30
-	public EDOHBJAPLPF HJDBGMMPPEF; // 0x34
+	public EDOHBJAPLPF_JsonData HJDBGMMPPEF; // 0x34
 	public List<PBJPACKDIIB.IFCOFHAFMON> CFLLEDGILPK = new List<PBJPACKDIIB.IFCOFHAFMON>(); // 0x38
-	public EDOHBJAPLPF LAEMKLPEIAK; // 0x3C
+	public EDOHBJAPLPF_JsonData LAEMKLPEIAK; // 0x3C
 	public string ECAOENGDBMI; // 0x40
 	private long AFNACNGGLBD; // 0x48
 	private long IPOONAJLNMD; // 0x50

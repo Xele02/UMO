@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use HAEDCCLHEMN_EventBattle", true)]
 public class HAEDCCLHEMN { }
 public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 {

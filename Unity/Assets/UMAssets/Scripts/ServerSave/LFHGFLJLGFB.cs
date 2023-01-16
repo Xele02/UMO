@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use LFHGFLJLGFB_FavoritePlayer", true)]
 public class LFHGFLJLGFB { }
 public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 {

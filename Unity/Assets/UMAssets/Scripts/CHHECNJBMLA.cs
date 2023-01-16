@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use CHHECNJBMLA_EventBoxGacha", true)]
 public class CHHECNJBMLA { }
 public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 {

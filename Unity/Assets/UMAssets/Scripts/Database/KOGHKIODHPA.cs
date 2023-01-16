@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using XeSys;
 
+[System.Obsolete("Use KOGHKIODHPA_Board", true)]
 public class KOGHKIODHPA { }
 public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 {

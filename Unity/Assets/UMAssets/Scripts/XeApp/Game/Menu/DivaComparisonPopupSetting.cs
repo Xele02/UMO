@@ -13,8 +13,8 @@ namespace XeApp.Game.Menu
 		public override bool IsPreload { get { return true; } } //0x17D6C84
 		public override GameObject Content { get { return m_content; } } //0x17D6C8C
 		public DFKGGBMFFGB PlayerData { get; set; } // 0x34
-		public FFHPBEPOMAK AfterDiva { get; set; } // 0x38
-		public FFHPBEPOMAK BeforeDiva { get; set; } // 0x3C
+		public FFHPBEPOMAK_DivaInfo AfterDiva { get; set; } // 0x38
+		public FFHPBEPOMAK_DivaInfo BeforeDiva { get; set; } // 0x3C
 		public EEDKAACNBBG MusicData { get; set; } // 0x40
 		public bool IsCenterDiva { get; set; } // 0x44
 		public DisplayType DisplayType { get; set; } // 0x48

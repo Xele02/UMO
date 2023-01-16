@@ -15,7 +15,7 @@ namespace XeApp.Game.Menu
         public DFKGGBMFFGB PlayerData { get; set; } // 0x34
         public GCIJNCFDNON AfterScene { get; set; } // 0x38
         public GCIJNCFDNON BeforeScene { get; set; } // 0x3C
-        public FFHPBEPOMAK DivaData { get; set; } // 0x40
+        public FFHPBEPOMAK_DivaInfo DivaData { get; set; } // 0x40
         public int SceneSlotIndex { get; set; } // 0x44
         public int DivaSlot { get; set; } // 0x48
         public DisplayType DisplayType { get; set; } // 0x4C

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeSys;
 
+[System.Obsolete("Use MLIBEPGADJH_Scene", true)]
 public class MLIBEPGADJH { }
 public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 {

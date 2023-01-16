@@ -1,6 +1,7 @@
 
 using XeSys;
 
+[System.Obsolete("Use BEJIKEOAJHN_OptionSLive", true)]
 public class BEJIKEOAJHN {}
 public class BEJIKEOAJHN_OptionSLive
 {

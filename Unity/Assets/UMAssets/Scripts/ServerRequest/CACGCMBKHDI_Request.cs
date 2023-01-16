@@ -10,7 +10,7 @@ public class IDNNDIHDLGA
 	public string KLMPFGOCBHC; // 0x8
 }
 
-
+[System.Obsolete("Use CACGCMBKHDI_Request", true)]
 public abstract class CACGCMBKHDI {}
 public abstract class CACGCMBKHDI_Request
 {

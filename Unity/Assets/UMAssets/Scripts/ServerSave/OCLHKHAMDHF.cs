@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using XeSys;
 
+[System.Obsolete("Use OCLHKHAMDHF_Episode", true)]
 public class OCLHKHAMDHF { }
 public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 {

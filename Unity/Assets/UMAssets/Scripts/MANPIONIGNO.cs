@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use MANPIONIGNO_EventGoDiva", true)]
 public class MANPIONIGNO { }
 public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 {

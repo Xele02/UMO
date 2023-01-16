@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use NDBFKHKMMCE_DecoItem", true)]
 public class NDBFKHKMMCE { }
 public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 {

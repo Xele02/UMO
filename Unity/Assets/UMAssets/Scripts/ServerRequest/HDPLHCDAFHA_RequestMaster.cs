@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public delegate bool FAPJEIOBPDG(List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
 
+[System.Obsolete("Use HDPLHCDAFHA_RequestMaster", true)]
 public class HDPLHCDAFHA{}
 public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
 {

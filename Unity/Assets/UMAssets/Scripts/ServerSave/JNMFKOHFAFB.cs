@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using XeSys;
 
+[System.Obsolete("Use JNMFKOHFAFB_PublicStatus", true)]
 public class JNMFKOHFAFB { }
 public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_ServerSaveBlock
 {

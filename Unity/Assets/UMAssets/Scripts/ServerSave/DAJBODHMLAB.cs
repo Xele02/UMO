@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use DAJBODHMLAB_DecoPublicSet", true)]
 public class DAJBODHMLAB { }
 public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 {

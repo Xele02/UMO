@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete("Use DOLDMCAMEOD_RequestRemainingForCurrencyIds", true)]
 public class DOLDMCAMEOD { }
 public class DOLDMCAMEOD_RequestRemainingForCurrencyIds : CACGCMBKHDI_Request
 {

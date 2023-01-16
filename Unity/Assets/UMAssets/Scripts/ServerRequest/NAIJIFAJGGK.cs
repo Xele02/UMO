@@ -5,6 +5,7 @@ using XeSys;
 
 public delegate bool LDDPADICHHB(List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
 
+[System.Obsolete("Use NAIJIFAJGGK_RequestLoadPlayerData", true)]
 public class NAIJIFAJGGK { }
 public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
 {

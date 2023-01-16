@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 		private PopupSkipTicketUseConfirmSetting m_skipTicketPopupSetting = new PopupSkipTicketUseConfirmSetting(); // 0x140
 		private ButtonInfo[] m_skipTicketPopupButtons = new ButtonInfo[2] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 																			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } }; // 0x144
-		private IKDICBBFBMI m_eventCtrl; // 0x148
+		private IKDICBBFBMI_EventBase m_eventCtrl; // 0x148
 		private bool m_isRaidEvent; // 0x14C
 		private bool m_isGoDivaEvent; // 0x14D
 		private bool m_isGoDivaBonus; // 0x14E
@@ -876,7 +876,7 @@ namespace XeApp.Game.Menu
 			float[] rank = new float[5];
 			for(int i = 0; i < 10; i++)
 			{
-				score[i] = CMMKCEPBIHI.NDNOLJACLLC((CMMKCEPBIHI.NOJENDEDECD)i);
+				score[i] = CMMKCEPBIHI.NDNOLJACLLC_GetScore((CMMKCEPBIHI.NOJENDEDECD_ScoreType)i);
 			}
 			for(int i = 0; i < rank.Length; i++)
 			{
@@ -1488,7 +1488,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA8EEE0 Offset: 0xA8EEE0 VA: 0xA8EEE0
-		private void OnSelectDiva(int slotNumber, FFHPBEPOMAK divaData)
+		private void OnSelectDiva(int slotNumber, FFHPBEPOMAK_DivaInfo divaData)
 		{
 			OnClickAnyButtons();
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
@@ -1499,13 +1499,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA8F050 Offset: 0xA8F050 VA: 0xA8F050
-		private void OnShowDivaStatus(int slotNumber, FFHPBEPOMAK divaData)
+		private void OnShowDivaStatus(int slotNumber, FFHPBEPOMAK_DivaInfo divaData)
 		{
 			TodoLogger.LogNotImplemented("OnShowDivaStatus");
 		}
 
 		//// RVA: 0xA8F1CC Offset: 0xA8F1CC VA: 0xA8F1CC
-		private void OnSelectCostume(int slotNumber, FFHPBEPOMAK divaData)
+		private void OnSelectCostume(int slotNumber, FFHPBEPOMAK_DivaInfo divaData)
 		{
 			OnClickAnyButtons();
 			if(slotNumber > -1)
@@ -1518,7 +1518,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA8F334 Offset: 0xA8F334 VA: 0xA8F334
-		private void OnSelectScene(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK divaData, GCIJNCFDNON sceneData)
+		private void OnSelectScene(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON sceneData)
 		{
 			OnClickAnyButtons();
 			if(divaSlotNumber > -1)
@@ -1538,7 +1538,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA8F5B4 Offset: 0xA8F5B4 VA: 0xA8F5B4
-		private void OnShowSceneStatus(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK divaData, GCIJNCFDNON sceneData)
+		private void OnShowSceneStatus(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON sceneData)
 		{
 			TodoLogger.LogNotImplemented("OnShowSceneStatus");
 		}
@@ -1597,7 +1597,7 @@ namespace XeApp.Game.Menu
 				JLKEOGLJNOD unit = m_playerData.JKIJFGGMNAN_GetUnit(i, m_isGoDivaEvent);
 				for(int j = 0; j < unit.BCJEAJPLGMB_MainDivas.Count; j++)
 				{
-					FFHPBEPOMAK diva = unit.BCJEAJPLGMB_MainDivas[j];
+					FFHPBEPOMAK_DivaInfo diva = unit.BCJEAJPLGMB_MainDivas[j];
 					if(diva != null)
 					{
 						MenuScene.Instance.DivaIconCache.TryInstall(diva.AHHJLDLAPAN_DivaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, diva.EKFONBFDAAP_ColorId);
@@ -1618,7 +1618,7 @@ namespace XeApp.Game.Menu
 				}
 				for (int j = 0; j < unit.CMOPCCAJAAO_AddDivas.Count; j++)
 				{
-					FFHPBEPOMAK diva = unit.CMOPCCAJAAO_AddDivas[j];
+					FFHPBEPOMAK_DivaInfo diva = unit.CMOPCCAJAAO_AddDivas[j];
 					if (diva != null)
 					{
 						MenuScene.Instance.DivaIconCache.TryInstall(diva.AHHJLDLAPAN_DivaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, diva.EKFONBFDAAP_ColorId);

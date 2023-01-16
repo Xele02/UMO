@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use PKLLAKCBPAH_DecoPublicInfo", true)]
 public class PKLLAKCBPAH { }
 public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 {

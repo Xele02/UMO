@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[System.Obsolete("Use JPAPJLIPNOK_RequestAssetList", true)]
 public class JPAPJLIPNOK { }
 public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_Request
 {

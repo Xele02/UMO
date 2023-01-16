@@ -3,6 +3,7 @@ using XeSys;
 using System;
 using System.Text;
 
+[System.Obsolete("Use PEBFNABDJDI_System", true)]
 public class PEBFNABDJDI { }
 public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 {
@@ -499,6 +500,7 @@ public class EJABAIAPFLK
 	}
 }
 
+[System.Obsolete("Use BIJMLAPNMAB_SceneSwitch", true)]
 public class BIJMLAPNMAB { }
 public class BIJMLAPNMAB_SceneSwitch
 {

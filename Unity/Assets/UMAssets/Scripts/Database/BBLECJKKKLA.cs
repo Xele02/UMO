@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use BBLECJKKKLA_DecoSetItem", true)]
 public class BBLECJKKKLA { }
 public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 {
