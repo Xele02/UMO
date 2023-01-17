@@ -2,7 +2,7 @@
 using XeApp.Game.Common;
 
 [System.Obsolete("Use HPODBOHGGDH_SkillInfo", true)]
-public struct HPODBOHGGDH
+public struct HPODBOHGGDH { }
 public struct HPODBOHGGDH_SkillInfo
 {
 	public int ENMAEBJGEKL_Id; // 0x0

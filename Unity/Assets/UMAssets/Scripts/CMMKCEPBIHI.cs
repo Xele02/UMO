@@ -1382,7 +1382,7 @@ public static class CMMKCEPBIHI
 		int res = 0;
 		for(int i = 0; i < skillInfo.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 		{
-			int a = CKNDJNOFFGP(skillInfo, i, COIODGJDJEJ.AADFFCIDJCB_LiveSkillLevel, NENDFGDMJDN);
+			int a = CKNDJNOFFGP_GetSkillValue(skillInfo, i, COIODGJDJEJ.AADFFCIDJCB_LiveSkillLevel, NENDFGDMJDN);
 			int b = IGDGGMIMLDN(a, DJLNOAMJECI, GMFMMDAKENC, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], skillInfo.FLJHGGKIOJH_SkillType, POMOLHBFAPM, HEDKFICAPIJ);
 			int c = MEAHJKCBGFE(FLKGCONIFEE, KHDDPKHPJID, DJLNOAMJECI, GMFMMDAKENC, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], a + b, (SkillDuration.Type)skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[i, COIODGJDJEJ.AADFFCIDJCB_LiveSkillLevel - 1], (SkillTrigger.Type)skillInfo.CPNAGMFCIJK_TriggerType, skillInfo.LFGFBMJNBKN_ConfigValue[COIODGJDJEJ.AADFFCIDJCB_LiveSkillLevel - 1], skillInfo.ELEPHBOKIGK_LimitCount[0], POMOLHBFAPM, KIFJKGDBDBH);
 			res += c;
@@ -1414,7 +1414,7 @@ public static class CMMKCEPBIHI
 								{
 									for (int j = 0; j < info.EGLDFPILJLG_SkillBuffEffect.Length; j++)
 									{
-										int a = CKNDJNOFFGP(info, j, sceneInfo.AADFFCIDJCB_LiveSkillLevel, divaInfo);
+										int a = CKNDJNOFFGP_GetSkillValue(info, j, sceneInfo.AADFFCIDJCB_LiveSkillLevel, divaInfo);
 										int b = IGDGGMIMLDN(a, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], info.FLJHGGKIOJH_SkillType, POMOLHBFAPM_Score, HEDKFICAPIJ_Team);
 										int c = CPPANAJNEDJ(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[j, sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, info.LFGFBMJNBKN_ConfigValue[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, HGEKDNNJAAC, OOOGNIPJMDE, OHLCKPIMMFH);
 										int d = MCKHJBNJFJH(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[j, sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, sceneInfo.AADFFCIDJCB_LiveSkillLevel, POMOLHBFAPM_Score, HGEKDNNJAAC, false);
@@ -1442,7 +1442,7 @@ public static class CMMKCEPBIHI
 									{
 										for (int j = 0; j < info.EGLDFPILJLG_SkillBuffEffect.Length; j++)
 										{
-											int a = CKNDJNOFFGP(info, j, sceneInfo.AADFFCIDJCB_LiveSkillLevel, divaInfo);
+											int a = CKNDJNOFFGP_GetSkillValue(info, j, sceneInfo.AADFFCIDJCB_LiveSkillLevel, divaInfo);
 											int b = IGDGGMIMLDN(a, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], info.FLJHGGKIOJH_SkillType, POMOLHBFAPM_Score, HEDKFICAPIJ_Team);
 											int c = CPPANAJNEDJ(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[j, sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, info.LFGFBMJNBKN_ConfigValue[sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, HGEKDNNJAAC, OOOGNIPJMDE, OHLCKPIMMFH);
 											int d = MCKHJBNJFJH(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)info.EGLDFPILJLG_SkillBuffEffect[j], b + sceneInfo.AADFFCIDJCB_LiveSkillLevel, (SkillDuration.Type)info.FPMFEKIPFPI_DurationType[j], info.PHAGNOHBMCM_DurationByIndexAndLevel[j, sceneInfo.AADFFCIDJCB_LiveSkillLevel - 1], (SkillTrigger.Type)info.CPNAGMFCIJK_TriggerType, sceneInfo.AADFFCIDJCB_LiveSkillLevel, POMOLHBFAPM_Score, HGEKDNNJAAC, false);
@@ -1618,7 +1618,7 @@ public static class CMMKCEPBIHI
 				int rate = (MEMCOJHNEIP.centerLiveSkillRate + MEMCOJHNEIP.centerLiveSkillRate_SameMusicAttr + MEMCOJHNEIP.centerLiveSkillRate_SameSeriesAttr);
 				for (int i = 0; i < skillInfo.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 				{
-					int a = CKNDJNOFFGP(skillInfo, i, s.AADFFCIDJCB_LiveSkillLevel, HEDKFICAPIJ_Team.BCJEAJPLGMB_MainDivas[0]);
+					int a = CKNDJNOFFGP_GetSkillValue(skillInfo, i, s.AADFFCIDJCB_LiveSkillLevel, HEDKFICAPIJ_Team.BCJEAJPLGMB_MainDivas[0]);
 					int b = IGDGGMIMLDN(a, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], skillInfo.FLJHGGKIOJH_SkillType, POMOLHBFAPM_Score, HEDKFICAPIJ_Team);
 					int c = CPPANAJNEDJ(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type) skillInfo.EGLDFPILJLG_SkillBuffEffect[i], a + b, (SkillDuration.Type) skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[i, s.AADFFCIDJCB_LiveSkillLevel - 1], (SkillTrigger.Type) skillInfo.CPNAGMFCIJK_TriggerType, skillInfo.LFGFBMJNBKN_ConfigValue[s.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, HGEKDNNJAAC, OOOGNIPJMDE, OHLCKPIMMFH);
 					int g = MCKHJBNJFJH(KHDDPKHPJID, DJLNOAMJECI_PlayerData, GMFMMDAKENC_MusicData, (SkillBuffEffect.Type)skillInfo.EGLDFPILJLG_SkillBuffEffect[i], a + b, (SkillDuration.Type)skillInfo.FPMFEKIPFPI_DurationType[i], skillInfo.PHAGNOHBMCM_DurationByIndexAndLevel[i, s.AADFFCIDJCB_LiveSkillLevel - 1], (SkillTrigger.Type)skillInfo.CPNAGMFCIJK_TriggerType, skillInfo.LFGFBMJNBKN_ConfigValue[s.AADFFCIDJCB_LiveSkillLevel - 1], POMOLHBFAPM_Score, HGEKDNNJAAC, false);
@@ -2025,7 +2025,7 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x1093648 Offset: 0x1093648 VA: 0x1093648
-	private static int CKNDJNOFFGP(PPGHMBNIAEC KMHPOGKCHHK, int AOGDKBPNGCI, int GBMHFDKCFGB, FFHPBEPOMAK_DivaInfo HIDAJBOHJKH)
+	private static int CKNDJNOFFGP_GetSkillValue(PPGHMBNIAEC KMHPOGKCHHK, int AOGDKBPNGCI, int GBMHFDKCFGB, FFHPBEPOMAK_DivaInfo HIDAJBOHJKH)
 	{
 		int v = KMHPOGKCHHK.NKGHBKFMFCI_BuffValueByIndexAndLevel[AOGDKBPNGCI, GBMHFDKCFGB - 1];
 		if (KMHPOGKCHHK.EGLDFPILJLG_SkillBuffEffect[(int)AOGDKBPNGCI] != (int)SkillBuffEffect.Type.ScoreUpPercentage_Intimacy)
@@ -2036,11 +2036,11 @@ public static class CMMKCEPBIHI
 			}
 			return v;
 		}
-		JJOELIOGMKK j = new JJOELIOGMKK();
+		JJOELIOGMKK_DivaIntimacyInfo j = new JJOELIOGMKK_DivaIntimacyInfo();
 		j.KHEKNNFCAOI(HIDAJBOHJKH.AHHJLDLAPAN_DivaId);
 		j.HCDGELDHFHB(false);
 		EHGAHMIBPIB s = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(v);
-		return Mathf.Min(j.HEKJGCMNJAB / s.KCOHMHFBDKF_Value1[GBMHFDKCFGB - 1] * s.HLMMBNCIIAC_Value2[GBMHFDKCFGB - 1], s.DOOGFEGEKLG_ValueMax);
+		return Mathf.Min(j.HEKJGCMNJAB_CurrentLevel / s.KCOHMHFBDKF_Value1[GBMHFDKCFGB - 1] * s.HLMMBNCIIAC_Value2[GBMHFDKCFGB - 1], s.DOOGFEGEKLG_ValueMax);
 	}
 
 	// // RVA: 0x109477C Offset: 0x109477C VA: 0x109477C

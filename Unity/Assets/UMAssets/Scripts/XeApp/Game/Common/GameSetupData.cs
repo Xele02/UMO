@@ -56,10 +56,10 @@ namespace XeApp.Game.Common
 						divaId = viewDivaData.AHHJLDLAPAN_DivaId;
 						costumeModelId = viewDivaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
 						costumeColorId = viewDivaData.EKFONBFDAAP_ColorId;
-						JJOELIOGMKK d = new JJOELIOGMKK();
+						JJOELIOGMKK_DivaIntimacyInfo d = new JJOELIOGMKK_DivaIntimacyInfo();
 						d.KHEKNNFCAOI(divaId);
 						d.HCDGELDHFHB(false);
-						intimacyLv = d.HEKJGCMNJAB;
+						intimacyLv = d.HEKJGCMNJAB_CurrentLevel;
 						if(prismData == null || !prismData.FBGAKINEIPG)
 						{
 							prismDivaId = divaId;
