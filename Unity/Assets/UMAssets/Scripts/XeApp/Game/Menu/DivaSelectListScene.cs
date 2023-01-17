@@ -357,7 +357,15 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17F0670 Offset: 0x17F0670 VA: 0x17F0670
 		private void OnRemove()
 		{
-			TodoLogger.Log(0, "OnRemove");
+			if(!MenuScene.Instance.DirtyChangeScene)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				if(m_transitionName != TransitionList.Type.DIVA_SELECT_LIST)
+				{
+					return;
+				}
+				TeamSettingDivaButton(-1);
+			}
 		}
 
 		//// RVA: 0x17F077C Offset: 0x17F077C VA: 0x17F077C
