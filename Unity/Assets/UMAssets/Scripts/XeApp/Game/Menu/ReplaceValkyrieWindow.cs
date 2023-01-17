@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Game.Common;
 using XeApp.Game.Common.uGUI;
@@ -29,7 +30,8 @@ namespace XeApp.Game.Menu
 			for (int i = 0; i < 2; i++)
 			{
 				m_StatusLayout[i] = new StatusLayout();
-				RawImageEx[] ims = transform.Find("sw_val_status_all (AbsoluteLayout)/" + "sw_card_status_" + (i == 0 ? "l" : "r") + " (AbsoluteLayout)").GetComponentsInChildren<RawImageEx>();
+				Transform t = transform.Find("sw_val_status_all (AbsoluteLayout)/" + "sw_card_status_" + (i == 0 ? "l" : "r") + " (AbsoluteLayout)");
+				RawImageEx[] ims = t.GetComponentsInChildren<RawImageEx>();
 				m_StatusLayout[i].logo_image = ims.Where((RawImageEx _) =>
 				{
 					//0xCFE47C
@@ -53,7 +55,7 @@ namespace XeApp.Game.Menu
 						return _.name == "cmn_status_icon_up_hit (ImageView)";
 					}).First();
 				}
-				Text[] txts = transform.GetComponentsInChildren<Text>();
+				Text[] txts = t.GetComponentsInChildren<Text>();
 				m_StatusLayout[i].valkyrie_name = txts.Where((Text _) =>
 				{
 					//0xCFE67C
@@ -118,10 +120,10 @@ namespace XeApp.Game.Menu
 				{
 					m_StatusLayout[i].attack_value.text = (data.KINFGHHNFCF_Atk + data_ab.KINFGHHNFCF_Atk).ToString();
 					m_StatusLayout[i].hit_value.text = (data.NONBCCLGBAO_Hit + data_ab.NONBCCLGBAO_Hit).ToString();
-					ApplyComparisonValue(before.KINFGHHNFCF_Atk + (before_ab != null ? before_ab.KINFGHHNFCF_Atk : 0), after.KINFGHHNFCF_Atk + (after_ab != null ? after_ab.KINFGHHNFCF_Atk : 0), m_StatusLayout[i].attack_value, m_CompIconAtk);
-					ApplyComparisonValue(before.NONBCCLGBAO_Hit + (before_ab != null ? before_ab.NONBCCLGBAO_Hit : 0), after.NONBCCLGBAO_Hit + (after_ab != null ? after_ab.NONBCCLGBAO_Hit : 0), m_StatusLayout[i].hit_value, m_CompIconHit);
 				}
 			}
+			ApplyComparisonValue(before.KINFGHHNFCF_Atk + (before_ab != null ? before_ab.KINFGHHNFCF_Atk : 0), after.KINFGHHNFCF_Atk + (after_ab != null ? after_ab.KINFGHHNFCF_Atk : 0), m_StatusLayout[1].attack_value, m_CompIconAtk);
+			ApplyComparisonValue(before.NONBCCLGBAO_Hit + (before_ab != null ? before_ab.NONBCCLGBAO_Hit : 0), after.NONBCCLGBAO_Hit + (after_ab != null ? after_ab.NONBCCLGBAO_Hit : 0), m_StatusLayout[1].hit_value, m_CompIconHit);
 		}
 
 		//// RVA: 0xCFE05C Offset: 0xCFE05C VA: 0xCFE05C
