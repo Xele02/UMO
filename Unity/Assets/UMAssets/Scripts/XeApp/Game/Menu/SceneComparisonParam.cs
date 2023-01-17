@@ -133,7 +133,180 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x15A0264 Offset: 0x15A0264 VA: 0x15A0264
 		public void UpdateContent(Style style, GCIJNCFDNON_SceneInfo sceneData, GCIJNCFDNON_SceneInfo comparisonScene, DFKGGBMFFGB_PlayerInfo playerData, FFHPBEPOMAK_DivaInfo divaData, int slotIndex, int divaSlot, int musicId = 0, bool isGoDiva = false)
 		{
-			!!!
+			m_sceneData = sceneData;
+			m_playerData = playerData;
+			m_musicId = musicId;
+			SetStyle(style);
+			for(int i = 0; i < m_arrowImages.Length; i++)
+			{
+				m_arrowImages[i].enabled = false;
+			}
+			m_skillDispMax = 3;
+			m_isMainSlot = slotIndex == 0;
+			m_isCenterDiva = IsCenterDiva(playerData.DPLBHAIKPGL_GetTeam(isGoDiva), divaData, divaSlot, isGoDiva);
+			m_skillDispIndex = 0;
+			if(style != Style.Assist)
+			{
+				if(m_isCenterDiva)
+				{
+					if(!m_isMainSlot)
+						m_skillDispIndex = 2;
+				}
+				else
+				{
+					m_skillDispIndex = 2;
+				}
+			}
+			if(sceneData == null)
+			{
+				for(int i = 0; i < m_paramTexts.Length; i++)
+				{
+					m_paramTexts[i].text = "0";
+				}
+			}
+			else
+			{
+				m_paramTexts[0].text = sceneData.CMCKNKKCNDK_Status.Total.ToString();
+				m_paramTexts[1].text = sceneData.CMCKNKKCNDK_Status.soul.ToString();
+				m_paramTexts[2].text = sceneData.CMCKNKKCNDK_Status.vocal.ToString();
+				m_paramTexts[3].text = sceneData.CMCKNKKCNDK_Status.charm.ToString();
+				m_paramTexts[4].text = sceneData.CMCKNKKCNDK_Status.life.ToString();
+				UnitWindowConstant.SetLuckText(m_paramTexts[5], sceneData.MJBODMOLOBC_Luck);
+				m_paramTexts[6].text = sceneData.CMCKNKKCNDK_Status.support.ToString();
+				m_paramTexts[7].text = sceneData.CMCKNKKCNDK_Status.fold.ToString();
+			}
+			if(m_arrowImages.Length != 0)
+			{
+				if(comparisonScene == null)
+				{
+					if(sceneData != null)
+					{
+						ComparisonValue(m_paramTexts[0], 0, sceneData.CMCKNKKCNDK_Status.Total, 0);
+						ComparisonValue(m_paramTexts[1], 0, sceneData.CMCKNKKCNDK_Status.soul, 1);
+						ComparisonValue(m_paramTexts[2], 0, sceneData.CMCKNKKCNDK_Status.vocal, 2);
+						ComparisonValue(m_paramTexts[3], 0, sceneData.CMCKNKKCNDK_Status.charm, 3);
+						ComparisonValue(m_paramTexts[4], 0, sceneData.CMCKNKKCNDK_Status.life, 4);
+						ComparisonValue(m_paramTexts[5], 0, sceneData.MJBODMOLOBC_Luck, 5);
+						ComparisonValue(m_paramTexts[6], 0, sceneData.CMCKNKKCNDK_Status.support, 6);
+						ComparisonValue(m_paramTexts[7], 0, sceneData.CMCKNKKCNDK_Status.fold, 7);
+					}
+				}
+				else
+				{
+					if(sceneData == null)
+					{
+						ComparisonValue(m_paramTexts[0], comparisonScene.CMCKNKKCNDK_Status.Total, 0, 0);
+						ComparisonValue(m_paramTexts[1], comparisonScene.CMCKNKKCNDK_Status.soul, 0, 1);
+						ComparisonValue(m_paramTexts[2], comparisonScene.CMCKNKKCNDK_Status.vocal, 0, 2);
+						ComparisonValue(m_paramTexts[3], comparisonScene.CMCKNKKCNDK_Status.charm, 0, 3);
+						ComparisonValue(m_paramTexts[4], comparisonScene.CMCKNKKCNDK_Status.life, 0, 4);
+						ComparisonValue(m_paramTexts[5], comparisonScene.MJBODMOLOBC_Luck, 0, 5);
+						ComparisonValue(m_paramTexts[6], comparisonScene.CMCKNKKCNDK_Status.support, 0, 6);
+						ComparisonValue(m_paramTexts[7], comparisonScene.CMCKNKKCNDK_Status.fold, 0, 7);
+					}
+					else
+					{
+						ComparisonValue(m_paramTexts[0], comparisonScene.CMCKNKKCNDK_Status.Total, sceneData.CMCKNKKCNDK_Status.Total, 0);
+						ComparisonValue(m_paramTexts[1], comparisonScene.CMCKNKKCNDK_Status.soul, sceneData.CMCKNKKCNDK_Status.soul, 1);
+						ComparisonValue(m_paramTexts[2], comparisonScene.CMCKNKKCNDK_Status.vocal, sceneData.CMCKNKKCNDK_Status.vocal, 2);
+						ComparisonValue(m_paramTexts[3], comparisonScene.CMCKNKKCNDK_Status.charm, sceneData.CMCKNKKCNDK_Status.charm, 3);
+						ComparisonValue(m_paramTexts[4], comparisonScene.CMCKNKKCNDK_Status.life, sceneData.CMCKNKKCNDK_Status.life, 4);
+						ComparisonValue(m_paramTexts[5], comparisonScene.MJBODMOLOBC_Luck, sceneData.MJBODMOLOBC_Luck, 5);
+						ComparisonValue(m_paramTexts[6], comparisonScene.CMCKNKKCNDK_Status.support, sceneData.CMCKNKKCNDK_Status.support, 6);
+						ComparisonValue(m_paramTexts[7], comparisonScene.CMCKNKKCNDK_Status.fold, sceneData.CMCKNKKCNDK_Status.fold, 7);
+					}
+				}
+			}
+			m_flags = 0;
+			if(sceneData == null)
+			{
+				MenuScene.Instance.SceneIconCache.Load(0, 0, (IiconTexture texture) => {
+					//0x15A34CC
+					texture.Set(m_iconImage);
+					SceneIconTextureCache.ChangeKiraMaterial(m_iconImage, texture as IconTexture, false);
+					SetLoaded();
+				});
+				m_sceneIconDecoration.SetActive(false);
+				UnitWindowConstant.SetInvalidText(m_nameText, TextAnchor.MiddleCenter);
+				for(int i = 0; i < m_notes.Length; i++)
+				{
+					m_notes[i].SetNotesInvalid();
+				}
+				for(int i = 0; i < m_skillInfos.Length; i++)
+				{
+					SetSkillLevel(i, 0, 0);
+					SetSkillDescription(i, null, 0);
+					SetSkillMisMatchMask(i, SkillDiapIndex.None);
+				}
+				if(((int)style & 0xfffffffe) != 4)
+				{
+					for(int i = 0; i < m_skillInfos.Length; i++)
+					{
+						UpdateText(i, i);
+						UpdateSkillText(i, i);
+					}
+				}
+			}
+			else
+			{
+				MenuScene.Instance.SceneIconCache.Load(sceneData.BCCHOBPJJKE_SceneId, sceneData.CGIELKDLHGE_GetEvolveId(), (IiconTexture texture) => {
+					//0x15A364C
+					texture.Set(m_iconImage);
+					SceneIconTextureCache.ChangeKiraMaterial(m_iconImage, texture as IconTexture, sceneData.MBMFJILMOBP());
+					SetLoaded();
+				});
+				m_sceneIconDecoration.SetActive(true);
+				m_nameText.text = GameMessageManager.GetSceneCardName(sceneData);
+				m_nameText.alignment = TextAnchor.MiddleLeft;
+				for(int i = 0; i < m_paramTexts.Length; i++)
+				{
+					m_paramTexts[i].alignment = TextAnchor.MiddleRight;
+				}
+				int numNote = 0;
+				if(divaData != null)
+				{
+					numNote = divaData.CMCKNKKCNDK_EquippedStatus.spNoteExpected.Length;
+				}
+				int numNoteDisp = m_notes.Length;
+				int cnt = 0;
+				for(int i = 1; i < numNote && cnt < numNoteDisp; i++)
+				{
+					if(sceneData.CMCKNKKCNDK_Status.spNoteExpected[i] > 0)
+					{
+						m_notes[cnt].SetNotesValue(sceneData.CMCKNKKCNDK_Status.spNoteExpected[i]);
+						m_notes[cnt].SetNotesIcon((SpecialNoteAttribute.Type)i);
+						cnt++;
+					}
+				}
+				for(; cnt < numNoteDisp; cnt++)
+				{
+					m_notes[cnt].SetNotesInvalid();
+				}
+				m_isNoCompatible = !sceneData.DCLLIDMKNGO_IsDivaCompatible(divaData != null ? divaData.AHHJLDLAPAN_DivaId : 0);
+				if(style == Style.Assist)
+				{
+					m_skillMisMatchMask = false;
+					UpdateText(0, m_skillDispIndex);
+					UpdateSkillText(0, m_skillDispIndex);
+				}
+				else
+				{
+					m_skillMisMatchMask = true;
+					if(style != Style.None)
+					{
+						for(int i = 0; i < m_skillInfos.Length; i++)
+						{
+							UpdateText(i, i);
+							UpdateSkillText(i, i);
+						}
+					}
+					else
+					{
+						UpdateText(0, m_skillDispIndex);
+						UpdateSkillText(0, m_skillDispIndex);
+					}
+				}
+			}
 		}
 
 		//// RVA: 0x15A267C Offset: 0x15A267C VA: 0x15A267C Slot: 6
@@ -199,7 +372,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(index == 1)
 			{
-				if(m_sceneData == null || m_sceneData.HGONFBDIBPM_ActiveSkillId < 1)
+				if(m_sceneData != null && m_sceneData.HGONFBDIBPM_ActiveSkillId > 0)
 				{
 					SetSkillLevel(pos, m_sceneData.PNHJPCPFNFI_ActiveSkillLevel, 0);
 					SetSkillRank(pos, (SkillRank.Type)m_sceneData.BEKGEAMJGEN_ActiveSkillRank, 0);

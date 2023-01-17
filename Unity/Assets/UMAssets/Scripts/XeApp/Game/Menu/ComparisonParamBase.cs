@@ -166,7 +166,19 @@ namespace XeApp.Game.Menu
 		public abstract void UpdateDecoration(DisplayType type);
 
 		//// RVA: 0x1B52128 Offset: 0x1B52128 VA: 0x1B52128
-		//protected bool IsCenterDiva(JLKEOGLJNOD unitData, FFHPBEPOMAK divaData, int divaSlot, bool isGoDiva) { }
+		protected bool IsCenterDiva(JLKEOGLJNOD_TeamInfo unitData, FFHPBEPOMAK_DivaInfo divaData, int divaSlot, bool isGoDiva)
+		{
+			if(isGoDiva)
+			{
+				if(divaSlot == 0)
+					return true;
+			}
+			else if(divaData != null)
+			{
+				return unitData.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId == divaData.AHHJLDLAPAN_DivaId;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1B52220 Offset: 0x1B52220 VA: 0x1B52220
 		//protected bool IsMainSlot(FFHPBEPOMAK divaData, GCIJNCFDNON sceneData) { }

@@ -5,6 +5,7 @@ using XeSys.Gfx;
 using UnityEngine.UI;
 using XeSys;
 using mcrs;
+using System.Collections.Generic;
 
 namespace XeApp.Game.Menu
 {
@@ -186,9 +187,60 @@ namespace XeApp.Game.Menu
 		{
 			if(attachPos != null)
 			{
-
+				JLKEOGLJNOD_TeamInfo team = vpd.DPLBHAIKPGL_GetTeam(isGoDiva);
+				GCIJNCFDNON_SceneInfo sceneInfo = null;
+				if(attachPos.BCCHOBPJJKE_SceneId > 0)
+				{
+					sceneInfo = vpd.OPIBAPEGCLA_Scenes[attachPos.BCCHOBPJJKE_SceneId - 1];
+					for(int i = 0; i < team.BCJEAJPLGMB_MainDivas.Count; i++)
+					{
+						FFHPBEPOMAK_DivaInfo divaInfo = team.BCJEAJPLGMB_MainDivas[i];
+						if(divaInfo != null)
+						{
+							if(attachPos.AHHJLDLAPAN_DivaId == divaInfo.AHHJLDLAPAN_DivaId && attachPos.NGEADPGADLI_DivaSlot == i)
+							{
+								GCIJNCFDNON_SceneInfo divaScene = null;
+								if(divaInfo.FGFIBOBAPIA_SceneId > 0)
+								{
+									divaScene = vpd.OPIBAPEGCLA_Scenes[divaInfo.FGFIBOBAPIA_SceneId - 1];
+								}
+								GCIJNCFDNON_SceneInfo divaScene2 = null;
+								if(divaInfo.DJICAKGOGFO_SubSceneIds[0] > 0)
+								{
+									divaScene2 = vpd.OPIBAPEGCLA_Scenes[divaInfo.DJICAKGOGFO_SubSceneIds[0] - 1];
+								}
+								GCIJNCFDNON_SceneInfo divaScene3 = null;
+								if(divaInfo.DJICAKGOGFO_SubSceneIds[1] > 0)
+								{
+									divaScene3 = vpd.OPIBAPEGCLA_Scenes[divaInfo.DJICAKGOGFO_SubSceneIds[1] - 1];
+								}
+								if(attachPos.LGBDBBFEPGL_SceneSlotIdx == 2)
+								{
+									divaInfo.KHEKNNFCAOI(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.CIEOBFIIPLD_Level, divaInfo.JPIDIENBGKH_CostumeId, 
+										divaInfo.EKFONBFDAAP_ColorId, divaScene, new List<GCIJNCFDNON_SceneInfo>() { divaScene2, sceneInfo }, true);
+								}
+								else if(attachPos.LGBDBBFEPGL_SceneSlotIdx == 1)
+								{
+									divaInfo.KHEKNNFCAOI(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.CIEOBFIIPLD_Level, divaInfo.JPIDIENBGKH_CostumeId, 
+										divaInfo.EKFONBFDAAP_ColorId, divaScene, new List<GCIJNCFDNON_SceneInfo>() { sceneInfo, divaScene3 }, true);
+								}
+								else if(attachPos.LGBDBBFEPGL_SceneSlotIdx == 0)
+								{
+									divaInfo.KHEKNNFCAOI(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.CIEOBFIIPLD_Level, divaInfo.JPIDIENBGKH_CostumeId, 
+										divaInfo.EKFONBFDAAP_ColorId, sceneInfo, new List<GCIJNCFDNON_SceneInfo>() { divaScene2, divaScene3 }, true);
+								}
+								if(isGoDiva)
+								{
+									if(i == 0)
+										divaInfo.HCDGELDHFHB();
+									else
+										divaInfo.ELHBGKLLOIO();
+								}
+							}
+						}
+					}
+				}
 			}
-			!!
 		}
 
 		//// RVA: 0x15A5054 Offset: 0x15A5054 VA: 0x15A5054

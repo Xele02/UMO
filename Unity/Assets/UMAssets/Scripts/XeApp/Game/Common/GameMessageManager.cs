@@ -37,7 +37,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE9907C Offset: 0xE9907C VA: 0xE9907C
-		//public static string GetSceneCardName(GCIJNCFDNON sceneData) { }
+		public static string GetSceneCardName(GCIJNCFDNON_SceneInfo sceneData)
+		{
+			return GetSceneCardName(sceneData.BCCHOBPJJKE_SceneId, sceneData.JPIPENJGGDD, sceneData.OPFGFINHFCE_SceneName);
+		}
 
 		//// RVA: 0xE99144 Offset: 0xE99144 VA: 0xE99144
 		//public static void MakeCenterSkillDescription(ref StringBuilder strBuilder, int rank, string description) { }
