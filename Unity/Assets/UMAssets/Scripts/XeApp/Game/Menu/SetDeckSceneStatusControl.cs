@@ -248,10 +248,10 @@ namespace XeApp.Game.Menu
 			{
 				int a = 0;
 				int iconId = 0;
-				if (sceneData.FILPDDHMKEJ(false, 0, 0) > 0)
+				if (sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) > 0)
 				{
-					iconId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneData.FILPDDHMKEJ(false, 0, 0) - 1].MKPJBDFDHOL[0];
-					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneData.FILPDDHMKEJ(false, 0, 0) - 1].MKPJBDFDHOL[1];
+					iconId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) - 1].MKPJBDFDHOL[0];
+					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) - 1].MKPJBDFDHOL[1];
 				}
 				Color col = IconColorOn;
 				if(!CheckMatchLiveSkill(sceneData, divaId, musicId))
@@ -347,7 +347,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA7624C Offset: 0xA7624C VA: 0xA7624C
 		private bool CheckMatchLiveSkill(GCIJNCFDNON_SceneInfo sceneData, int divaId, int musicId)
 		{
-			if (sceneData.FILPDDHMKEJ(false, 0, 0) > 0)
+			if (sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) > 0)
 			{
 				if(sceneData.DCLLIDMKNGO_IsDivaCompatible(divaId))
 				{

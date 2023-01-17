@@ -76,7 +76,7 @@ public class AOJGDNFAIJL_PrismData
             if(LDEGEHAEALK_Save != null)
             {
                 OOEPMEDAJNJ_TeamSave = LDEGEHAEALK_Save.GHDDPJBBEOC_Prism.GCINIJEMHFK_GetTeamForSong(DLAEJOBELBH_MusicId);
-                EOPODFDEMGF = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva).DJPFJGKGOOF_ScoreTeam;
+                EOPODFDEMGF = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva).DJPFJGKGOOF_ScoreTeam;
                 int divaId = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
                 if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId < 1)
                 {

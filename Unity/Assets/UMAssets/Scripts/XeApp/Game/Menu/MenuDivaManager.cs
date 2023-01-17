@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 		public void Load(DFKGGBMFFGB_PlayerInfo playerData, DivaResource.MenuFacialType facialType, bool defaultVisible = true)
 		{
 			IsLoading = true;
-			FFHPBEPOMAK_DivaInfo divaInfo = playerData.DPLBHAIKPGL(false).BCJEAJPLGMB_MainDivas[0];
+			FFHPBEPOMAK_DivaInfo divaInfo = playerData.DPLBHAIKPGL_GetTeam(false).BCJEAJPLGMB_MainDivas[0];
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId > 0)
 			{
 				divaInfo = playerData.NBIGLBMHEDC[GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];

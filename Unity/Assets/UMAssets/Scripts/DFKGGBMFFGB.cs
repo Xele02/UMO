@@ -244,7 +244,7 @@ public class DFKGGBMFFGB_PlayerInfo
 	}
 
 	// // RVA: 0x19814C8 Offset: 0x19814C8 VA: 0x19814C8
-	public JLKEOGLJNOD_TeamInfo DPLBHAIKPGL(bool CMEOKJMCEBH = false)
+	public JLKEOGLJNOD_TeamInfo DPLBHAIKPGL_GetTeam(bool CMEOKJMCEBH = false)
 	{
 		if(CMEOKJMCEBH)
 			return LEIGKLOGCPF;

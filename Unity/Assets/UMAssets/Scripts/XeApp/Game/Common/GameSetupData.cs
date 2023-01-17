@@ -75,7 +75,7 @@ namespace XeApp.Game.Common
 							sceneIdList[i] = vals[i];
 							if(vals[i] > 0)
 							{
-								int skillId = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].FILPDDHMKEJ(false, musicData != null ? musicData.FKDCCLPGKDK_JacketAttr : 0, musicData != null ? musicData.AIHCEGFANAM_Serie : 0);
+								int skillId = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].FILPDDHMKEJ_GetLiveSkillId(false, musicData != null ? musicData.FKDCCLPGKDK_JacketAttr : 0, musicData != null ? musicData.AIHCEGFANAM_Serie : 0);
 								bool lives = CheckLiveSkill(musicData, skillId);
 								bool b = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].DCLLIDMKNGO_IsDivaCompatible(divaId);
 								bool c = i != 0 || index != 0;
@@ -223,16 +223,16 @@ namespace XeApp.Game.Common
 			{
 				Initialize();
 				StatusData status = new StatusData();
-				JLKEOGLJNOD_TeamInfo unit = playerData.DPLBHAIKPGL(isGoDiva);
+				JLKEOGLJNOD_TeamInfo unit = playerData.DPLBHAIKPGL_GetTeam(isGoDiva);
 				int luck = 0;
 				if (!isGoDiva)
 				{
 					for(int i = 0; i < unit.BCJEAJPLGMB_MainDivas.Count; i++)
 					{
-						divaList_[i].SetupInfo(playerData.DPLBHAIKPGL(isGoDiva).BCJEAJPLGMB_MainDivas[i], playerData, musicData, prismData, i, i + 1);
-						if(playerData.DPLBHAIKPGL(isGoDiva).BCJEAJPLGMB_MainDivas[i] != null)
+						divaList_[i].SetupInfo(playerData.DPLBHAIKPGL_GetTeam(isGoDiva).BCJEAJPLGMB_MainDivas[i], playerData, musicData, prismData, i, i + 1);
+						if(playerData.DPLBHAIKPGL_GetTeam(isGoDiva).BCJEAJPLGMB_MainDivas[i] != null)
 						{
-							luck += DivaIconDecoration.GetEquipmentLuck(playerData.DPLBHAIKPGL(isGoDiva).BCJEAJPLGMB_MainDivas[i], playerData);
+							luck += DivaIconDecoration.GetEquipmentLuck(playerData.DPLBHAIKPGL_GetTeam(isGoDiva).BCJEAJPLGMB_MainDivas[i], playerData);
 						}
 					}
 				}

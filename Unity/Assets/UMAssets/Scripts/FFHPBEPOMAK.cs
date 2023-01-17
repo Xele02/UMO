@@ -337,7 +337,7 @@ public class FFHPBEPOMAK_DivaInfo
 					return false;
 				if(ILBBPPMLLFM)
 					return false;
-				if(!BBEBHGEHMMI.Invoke(d.AHHJLDLAPAN, d.LGBDBBFEPGL, d.BCCHOBPJJKE))
+				if(!BBEBHGEHMMI.Invoke(d.AHHJLDLAPAN_DivaId, d.LGBDBBFEPGL_SceneSlotIdx, d.BCCHOBPJJKE_SceneId))
 					return false;
 			}
 			if(!ILBBPPMLLFM)
@@ -361,7 +361,7 @@ public class FFHPBEPOMAK_DivaInfo
 				HCDGELDHFHB();
 				if(NGMPDMCBNJB != null && d != null && oldSlot != 0)
 				{
-					NGMPDMCBNJB(d.AHHJLDLAPAN, d.LGBDBBFEPGL, oldSlot);
+					NGMPDMCBNJB(d.AHHJLDLAPAN_DivaId, d.LGBDBBFEPGL_SceneSlotIdx, oldSlot);
 				}
 			}
 		}
@@ -417,7 +417,7 @@ public class FFHPBEPOMAK_DivaInfo
 					return false;
 				if(ILBBPPMLLFM)
 					return false;
-				if(!BBEBHGEHMMI(d.AHHJLDLAPAN, d.LGBDBBFEPGL, d.BCCHOBPJJKE))
+				if(!BBEBHGEHMMI(d.AHHJLDLAPAN_DivaId, d.LGBDBBFEPGL_SceneSlotIdx, d.BCCHOBPJJKE_SceneId))
 					return false;
 			}
 			DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo saveDiva = LDEGEHAEALK.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[AHHJLDLAPAN_DivaId - 1];
@@ -439,7 +439,7 @@ public class FFHPBEPOMAK_DivaInfo
 			HCDGELDHFHB();
 			if(NGMPDMCBNJB != null && d != null && oldSlot != 0)
 			{
-				NGMPDMCBNJB(d.AHHJLDLAPAN, d.LGBDBBFEPGL, oldSlot);
+				NGMPDMCBNJB(d.AHHJLDLAPAN_DivaId, d.LGBDBBFEPGL_SceneSlotIdx, oldSlot);
 			}
 		}
 		return true;

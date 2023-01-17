@@ -531,7 +531,7 @@ namespace XeApp.Game.Menu
 		{
 			base.OnPreSetCanvas();
 			m_isGoDiva = (Args as ValkyrieDataArgs).isGoDiva;
-			m_UnitData = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL(m_isGoDiva);
+			m_UnitData = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(m_isGoDiva);
 			MenuScene.Instance.BgControl.SetPriority(BgPriority.TopMost);
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO(2);
 			m_IsSceneActivate = false;

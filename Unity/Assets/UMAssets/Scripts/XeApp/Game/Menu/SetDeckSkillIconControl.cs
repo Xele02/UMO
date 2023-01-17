@@ -36,7 +36,7 @@ namespace XeApp.Game.Menu
 			{
 				if(skillType == SkillType.Live)
 				{
-					int a = sceneData.FILPDDHMKEJ(false, 0, 0);
+					int a = sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
 					if(a > 0 && sceneData.DCLLIDMKNGO_IsDivaCompatible(divaId))
 					{
 						bool b = CheckMatchLiveSkill(sceneData, divaId, musicId);
@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA765A0 Offset: 0xA765A0 VA: 0xA765A0
 		public static bool CheckMatchLiveSkill(GCIJNCFDNON_SceneInfo sceneData, int divaId, int musicId)
 		{
-			if(sceneData.FILPDDHMKEJ(false, 0, 0) > 0)
+			if(sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) > 0)
 			{
 				if(sceneData.DCLLIDMKNGO_IsDivaCompatible(divaId))
 				{

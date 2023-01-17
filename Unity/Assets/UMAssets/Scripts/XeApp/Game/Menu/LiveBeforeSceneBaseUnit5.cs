@@ -73,7 +73,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x15474B0 Offset: 0x15474B0 VA: 0x15474B0 Slot: 15
 		protected override void OnDeleteCache()
 		{
-			if (!IsDifferHomeDivaModel(m_playerData.DPLBHAIKPGL(false), Database.Instance.gameSetup.teamInfo, m_isGotoGame))
+			if (!IsDifferHomeDivaModel(m_playerData.DPLBHAIKPGL_GetTeam(false), Database.Instance.gameSetup.teamInfo, m_isGotoGame))
 			{
 				return;
 			}
@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 			h.KLCIIHKFPPO_StoryMusicId = mi.storyMusicId;
 			h.AKNELONELJK_Difficulty = (int)mi.difficultyType;
 			h.LFGNLKKFOCD_IsLine6 = mi.IsLine6Mode;
-			h.OALJNDABDHK = playerData.DPLBHAIKPGL(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva);
+			h.OALJNDABDHK = playerData.DPLBHAIKPGL_GetTeam(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva);
 			h.NHPGGBCKLHC_FriendData = friendData;
 			h.MNNHHJBBICA_GameEventType = (int)mi.gameEventType;
 			h.MFJKNCACBDG_OpenEventType = (int)mi.openEventType;

@@ -151,7 +151,7 @@ namespace XeApp.Game.Menu
 					}
 				case DisplayType.LiveSkill:
 					{
-						int icon = sceneData.FILPDDHMKEJ(false, 0, 0);
+						int icon = sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
 						int icon2 = 0;
 						bool isActive = false;
 						if (icon < 1)

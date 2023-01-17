@@ -370,13 +370,13 @@ namespace XeApp.Game.Menu
 				int b = 0;
 				if(isCenterSkill)
 				{
-					a = scene.MEOOLHNNMHL_GetSkillId(false, jacketAttr, serie);
-					b = scene.MEOOLHNNMHL_GetSkillId(true, 0, 0);
+					a = scene.MEOOLHNNMHL_GetCenterSkillId(false, jacketAttr, serie);
+					b = scene.MEOOLHNNMHL_GetCenterSkillId(true, 0, 0);
 				}
 				else
 				{
-					a = scene.FILPDDHMKEJ(false, jacketAttr, serie);
-					b = scene.FILPDDHMKEJ(true, 0, 0);
+					a = scene.FILPDDHMKEJ_GetLiveSkillId(false, jacketAttr, serie);
+					b = scene.FILPDDHMKEJ_GetLiveSkillId(true, 0, 0);
 				}
 				if(flags == 0)
 					return true;

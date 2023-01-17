@@ -348,7 +348,7 @@ namespace XeApp.Game.Menu
 							m_equipmentScene.SelectSlot(m_selectedEquipmentSlotIndex);
 							m_equipmentScene.ChangeIcon(PlayerData, diva, displayType, IsCenterDiva(), false);
 							diva.HCDGELDHFHB();
-							PlayerData.DPLBHAIKPGL(false).HCDGELDHFHB();
+							PlayerData.DPLBHAIKPGL_GetTeam(false).HCDGELDHFHB();
 							m_sceneSelectList.UpdateRemoveButton(m_divaData, m_selectedEquipmentSlotIndex);
 							if(m_musicBaseData != null)
 							{

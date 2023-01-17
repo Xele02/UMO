@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 					GCIJNCFDNON_SceneInfo sceneInfo = sceneList[idx_];
 					if(divaData != null)
 					{
-						if(((isGoDiva && IsCenterDiva(playerData.DPLBHAIKPGL(false), divaData)) || DivaSlot == 0) && m_selectedSlotNumber == 0)
+						if(((isGoDiva && IsCenterDiva(playerData.DPLBHAIKPGL_GetTeam(false), divaData)) || DivaSlot == 0) && m_selectedSlotNumber == 0)
 						{
 							isCompatible = sceneInfo.HGONFBDIBPM_ActiveSkillId > 0;
 							isActivate = SetDeckSkillIconControl.CheckMatchActiveSkill(sceneInfo);
@@ -318,7 +318,7 @@ namespace XeApp.Game.Menu
 						{
 							if(sceneInfo.DCLLIDMKNGO_IsDivaCompatible(divaData.AHHJLDLAPAN_DivaId))
 							{
-								if(sceneInfo.FILPDDHMKEJ(false, 0, 0) > 0)
+								if(sceneInfo.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) > 0)
 									isCompatible = true;
 							}
 							isActivate = SetDeckSkillIconControl.CheckMatchLiveSkill(sceneInfo, divaData.AHHJLDLAPAN_DivaId, musicId);
@@ -452,7 +452,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x137D138 Offset: 0x137D138 VA: 0x137D138
 		public static bool IsUnitScene(DFKGGBMFFGB_PlayerInfo playerData, GCIJNCFDNON_SceneInfo sceneData, bool isGoDiva)
 		{
-			List<FFHPBEPOMAK_DivaInfo> l = playerData.DPLBHAIKPGL(isGoDiva).BCJEAJPLGMB_MainDivas;
+			List<FFHPBEPOMAK_DivaInfo> l = playerData.DPLBHAIKPGL_GetTeam(isGoDiva).BCJEAJPLGMB_MainDivas;
 			for(int i = 0; i < l.Count; i++)
 			{
 				if(l[i] != null)

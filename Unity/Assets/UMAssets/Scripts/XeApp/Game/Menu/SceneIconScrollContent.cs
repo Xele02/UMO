@@ -148,7 +148,7 @@ namespace XeApp.Game.Menu
 				}
 				if(!isActivate)
 				{
-					if(sceneData.FILPDDHMKEJ(false, 0, 0) > 0)
+					if(sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) > 0)
 					{
 						m_skillIconLayout.StartChildrenAnimGoStop("02");
 					}

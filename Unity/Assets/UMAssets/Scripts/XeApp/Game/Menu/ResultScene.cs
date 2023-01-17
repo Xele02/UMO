@@ -1017,7 +1017,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB54280 Offset: 0xB54280 VA: 0xB54280
 		private int GetNowDivaId()
 		{
-			FFHPBEPOMAK_DivaInfo divaInfo = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva).BCJEAJPLGMB_MainDivas[0];
+			FFHPBEPOMAK_DivaInfo divaInfo = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva).BCJEAJPLGMB_MainDivas[0];
 			int res = 10;
 			if(divaInfo != null)
 				res = divaInfo.AHHJLDLAPAN_DivaId;

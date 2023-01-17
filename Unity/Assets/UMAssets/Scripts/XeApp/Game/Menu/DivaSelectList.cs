@@ -248,7 +248,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						if(scene != null && scene.DCLLIDMKNGO_IsDivaCompatible(selectedDiva.AHHJLDLAPAN_DivaId) && scene.FILPDDHMKEJ(false, 0, 0) > 0)
+						if(scene != null && scene.DCLLIDMKNGO_IsDivaCompatible(selectedDiva.AHHJLDLAPAN_DivaId) && scene.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) > 0)
 						{
 							if(!SetDeckSkillIconControl.CheckMatchLiveSkill(scene, selectedDiva.AHHJLDLAPAN_DivaId, musicData != null ? musicData.DLAEJOBELBH_MusicId : 0))
 							{
@@ -310,7 +310,7 @@ namespace XeApp.Game.Menu
 							if (scene.DCLLIDMKNGO_IsDivaCompatible(f.AHHJLDLAPAN_DivaId))
 							{
 								isCompatible = false;
-								if (scene.FILPDDHMKEJ(false, 0, 0) > 0)
+								if (scene.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) > 0)
 								{
 									isActivate = SetDeckSkillIconControl.CheckMatchLiveSkill(scene, f.AHHJLDLAPAN_DivaId, m_musicData != null ? m_musicData.DLAEJOBELBH_MusicId : 0);
 									isCompatible = true;
@@ -341,7 +341,7 @@ namespace XeApp.Game.Menu
 						if(scene.DCLLIDMKNGO_IsDivaCompatible(f.AHHJLDLAPAN_DivaId))
 						{
 							isActivate = false;
-							if (scene.FILPDDHMKEJ(false, 0, 0) > 0)
+							if (scene.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) > 0)
 							{
 								isActivate = true;
 							}

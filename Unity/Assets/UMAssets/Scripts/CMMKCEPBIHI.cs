@@ -129,11 +129,11 @@ public static class CMMKCEPBIHI
 				int skillSceneId = 0;
 				if(KKHIDFKKFJE_MusicData == null)
 				{
-					skillSceneId = sceneInfo.MEOOLHNNMHL_GetSkillId(false, 0, 0);
+					skillSceneId = sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
 				}
 				else
 				{
-					skillSceneId = sceneInfo.MEOOLHNNMHL_GetSkillId(false, KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE_MusicData.AIHCEGFANAM_Serie);
+					skillSceneId = sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE_MusicData.AIHCEGFANAM_Serie);
 				}
 				if(skillSceneId != 0)
 				{
@@ -149,11 +149,11 @@ public static class CMMKCEPBIHI
 			int skillSceneId = 0;
 			if(KKHIDFKKFJE_MusicData == null)
 			{
-				skillSceneId = sceneInfo.MEOOLHNNMHL_GetSkillId(false, 0, 0);
+				skillSceneId = sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
 			}
 			else
 			{
-				skillSceneId = sceneInfo.MEOOLHNNMHL_GetSkillId(false, KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE_MusicData.AIHCEGFANAM_Serie);
+				skillSceneId = sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE_MusicData.AIHCEGFANAM_Serie);
 			}
 			if(skillSceneId != 0)
 			{
@@ -233,11 +233,11 @@ public static class CMMKCEPBIHI
 					int a = 0;
 					if(KKHIDFKKFJE_MusicData == null)
 					{
-						a = sceneInfo.MEOOLHNNMHL_GetSkillId(false, 0, 0);
+						a = sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
 					}
 					else
 					{
-						a = sceneInfo.MEOOLHNNMHL_GetSkillId(false, KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE_MusicData.AIHCEGFANAM_Serie);
+						a = sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE_MusicData.AIHCEGFANAM_Serie);
 					}
 					if(a != 0)
 					{
@@ -248,7 +248,7 @@ public static class CMMKCEPBIHI
 			}
 			if(PCEGKKLKFNO_FriendData.KHGKPKDBMOH() != null)
 			{
-				int a = PCEGKKLKFNO_FriendData.KHGKPKDBMOH().MEOOLHNNMHL_GetSkillId(false, KKHIDFKKFJE_MusicData == null ? 0 : KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE_MusicData == null ? 0 : KKHIDFKKFJE_MusicData.AIHCEGFANAM_Serie);
+				int a = PCEGKKLKFNO_FriendData.KHGKPKDBMOH().MEOOLHNNMHL_GetCenterSkillId(false, KKHIDFKKFJE_MusicData == null ? 0 : KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE_MusicData == null ? 0 : KKHIDFKKFJE_MusicData.AIHCEGFANAM_Serie);
 				if(a != 0)
 				{
 					data.EDEDFDDIOKO_Set(a, PCEGKKLKFNO_FriendData.KHGKPKDBMOH().DDEDANKHHPN_SkillLevel, PCEGKKLKFNO_FriendData.KHGKPKDBMOH().AIHCEGFANAM_SceneSeries);
@@ -782,12 +782,12 @@ public static class CMMKCEPBIHI
 					sceneInfo = AHEFHIMGIBI.OPIBAPEGCLA_Scenes[divaInfo.FGFIBOBAPIA_SceneId - 1];
 					if(KKHIDFKKFJE == null)
 					{
-						if(sceneInfo.MEOOLHNNMHL_GetSkillId(false, 0, 0) == 0)
+						if(sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0) == 0)
 							sceneInfo = null;
 					}
 					else
 					{
-						if(sceneInfo.MEOOLHNNMHL_GetSkillId(false, KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE.AIHCEGFANAM_Serie) == 0)
+						if(sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE.AIHCEGFANAM_Serie) == 0)
 							sceneInfo = null;
 					}
 				}
@@ -801,12 +801,12 @@ public static class CMMKCEPBIHI
 			{
 				if(KKHIDFKKFJE == null)
 				{
-					if(sceneInfo2.MEOOLHNNMHL_GetSkillId(false, 0, 0) == 0)
+					if(sceneInfo2.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0) == 0)
 						sceneInfo2 = null;
 				}
 				else
 				{
-					if(sceneInfo2.MEOOLHNNMHL_GetSkillId(false, KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE.AIHCEGFANAM_Serie) == 0)
+					if(sceneInfo2.MEOOLHNNMHL_GetCenterSkillId(false, KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr, KKHIDFKKFJE.AIHCEGFANAM_Serie) == 0)
 						sceneInfo2 = null;
 				}
 			}
@@ -868,7 +868,7 @@ public static class CMMKCEPBIHI
 							int e = 0;
 							if(sceneInfo != null)
 							{
-								int a = sceneInfo.MEOOLHNNMHL_GetSkillId(false, KKHIDFKKFJE != null ? KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr : 0, KKHIDFKKFJE != null ? KKHIDFKKFJE.AIHCEGFANAM_Serie : 0);
+								int a = sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, KKHIDFKKFJE != null ? KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr : 0, KKHIDFKKFJE != null ? KKHIDFKKFJE.AIHCEGFANAM_Serie : 0);
 								st2.Clear();
 								MHPBLAEDJOC(ref st2, sceneInfo3, KKHIDFKKFJE, a, sceneInfo.DDEDANKHHPN_SkillLevel, MLAFAACKKBG);
 								e = HDLKMMHKOKE[j].Invoke(st2);
@@ -876,7 +876,7 @@ public static class CMMKCEPBIHI
 							}
 							if(sceneInfo2 != null)
 							{
-								int a = sceneInfo2.MEOOLHNNMHL_GetSkillId(false, KKHIDFKKFJE != null ? KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr : 0, KKHIDFKKFJE != null ? KKHIDFKKFJE.AIHCEGFANAM_Serie : 0);
+								int a = sceneInfo2.MEOOLHNNMHL_GetCenterSkillId(false, KKHIDFKKFJE != null ? KKHIDFKKFJE.FKDCCLPGKDK_JacketAttr : 0, KKHIDFKKFJE != null ? KKHIDFKKFJE.AIHCEGFANAM_Serie : 0);
 								st2.Clear();
 								MHPBLAEDJOC(ref st2, sceneInfo3, KKHIDFKKFJE, a, sceneInfo2.DDEDANKHHPN_SkillLevel, MLAFAACKKBG);
 								int d = HDLKMMHKOKE[j].Invoke(st2);
@@ -1067,7 +1067,7 @@ public static class CMMKCEPBIHI
 	// // RVA: 0x108C3B0 Offset: 0x108C3B0 VA: 0x108C3B0
 	public static void EFCNOOFFMIL(DFKGGBMFFGB_PlayerInfo DJLNOAMJECI_PlayerData, EAJCBFGKKFA_FriendInfo ALOBLKOHIKD_FriendData, EEDKAACNBBG_MusicData GMFMMDAKENC_MusicData, EJKBKMBJMGL_EnemyData BGJGFPPDNEP_EnemyData, Difficulty.Type AKNELONELJK_Difficulty, bool PDLCNDBOMAN_IsLine6, bool CMEOKJMCEBH_IsGoDivaEvent)
 	{
-		EFCNOOFFMIL(DJLNOAMJECI_PlayerData, DJLNOAMJECI_PlayerData.DPLBHAIKPGL(CMEOKJMCEBH_IsGoDivaEvent), ALOBLKOHIKD_FriendData, GMFMMDAKENC_MusicData, BGJGFPPDNEP_EnemyData, AKNELONELJK_Difficulty, PDLCNDBOMAN_IsLine6);
+		EFCNOOFFMIL(DJLNOAMJECI_PlayerData, DJLNOAMJECI_PlayerData.DPLBHAIKPGL_GetTeam(CMEOKJMCEBH_IsGoDivaEvent), ALOBLKOHIKD_FriendData, GMFMMDAKENC_MusicData, BGJGFPPDNEP_EnemyData, AKNELONELJK_Difficulty, PDLCNDBOMAN_IsLine6);
 	}
 
 	// // RVA: 0x108C488 Offset: 0x108C488 VA: 0x108C488
@@ -1352,7 +1352,7 @@ public static class CMMKCEPBIHI
 	{
 		if(LAPAEBEIAFK != null)
 		{
-			int skillId = LAPAEBEIAFK.FILPDDHMKEJ(false, GMFMMDAKENC != null ? GMFMMDAKENC.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC != null ? GMFMMDAKENC.AIHCEGFANAM_Serie : 0);
+			int skillId = LAPAEBEIAFK.FILPDDHMKEJ_GetLiveSkillId(false, GMFMMDAKENC != null ? GMFMMDAKENC.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC != null ? GMFMMDAKENC.AIHCEGFANAM_Serie : 0);
 			if(skillId > 0)
 			{
 				if(LAPAEBEIAFK.DCLLIDMKNGO_IsDivaCompatible(JCFNFJJKPAM.AHHJLDLAPAN_DivaId))
@@ -1404,7 +1404,7 @@ public static class CMMKCEPBIHI
 					GCIJNCFDNON_SceneInfo sceneInfo = DJLNOAMJECI_PlayerData.OPIBAPEGCLA_Scenes[divaInfo.FGFIBOBAPIA_SceneId - 1];
 					if (sceneInfo != null)
 					{
-						int skillId = sceneInfo.FILPDDHMKEJ(false, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.AIHCEGFANAM_Serie : 0);
+						int skillId = sceneInfo.FILPDDHMKEJ_GetLiveSkillId(false, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.AIHCEGFANAM_Serie : 0);
 						if (skillId > 0 && sceneInfo.DCLLIDMKNGO_IsDivaCompatible(divaInfo.AHHJLDLAPAN_DivaId))
 						{
 							PPGHMBNIAEC info = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[skillId - 1];
@@ -1432,7 +1432,7 @@ public static class CMMKCEPBIHI
 						GCIJNCFDNON_SceneInfo sceneInfo = DJLNOAMJECI_PlayerData.OPIBAPEGCLA_Scenes[divaInfo.DJICAKGOGFO_SubSceneIds[k] - 1];
 						if (sceneInfo != null)
 						{
-							int skillId = sceneInfo.FILPDDHMKEJ(false, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.AIHCEGFANAM_Serie : 0);
+							int skillId = sceneInfo.FILPDDHMKEJ_GetLiveSkillId(false, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.AIHCEGFANAM_Serie : 0);
 							if (skillId > 0 && sceneInfo.DCLLIDMKNGO_IsDivaCompatible(divaInfo.AHHJLDLAPAN_DivaId))
 							{
 								PPGHMBNIAEC info = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[skillId - 1];
@@ -1611,7 +1611,7 @@ public static class CMMKCEPBIHI
 		int e = 0;
 		if (s != null)
 		{
-			int skillId = s.FILPDDHMKEJ(false, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.AIHCEGFANAM_Serie : 0);
+			int skillId = s.FILPDDHMKEJ_GetLiveSkillId(false, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC_MusicData != null ? GMFMMDAKENC_MusicData.AIHCEGFANAM_Serie : 0);
 			if(skillId > 0)
 			{
 				PPGHMBNIAEC skillInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[skillId - 1];
@@ -1655,7 +1655,7 @@ public static class CMMKCEPBIHI
 			//0x175A624
 			if (PNLOINMCCKH != null)
 			{
-				int skillId = PNLOINMCCKH.FILPDDHMKEJ(false, GMFMMDAKENC != null ? GMFMMDAKENC.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC != null ? GMFMMDAKENC.AIHCEGFANAM_Serie : 0);
+				int skillId = PNLOINMCCKH.FILPDDHMKEJ_GetLiveSkillId(false, GMFMMDAKENC != null ? GMFMMDAKENC.FKDCCLPGKDK_JacketAttr : 0, GMFMMDAKENC != null ? GMFMMDAKENC.AIHCEGFANAM_Serie : 0);
 				if(skillId > 0)
 				{
 					if(PNLOINMCCKH.DCLLIDMKNGO_IsDivaCompatible(FDBOPFEOENF.AHHJLDLAPAN_DivaId))

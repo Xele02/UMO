@@ -353,9 +353,9 @@ namespace XeApp.Game.Menu
 			}
 			if(m_mainScene != null)
 			{
-				var ab = m_mainScene.MEOOLHNNMHL_GetSkillId(false, 0, 0);
+				var ab = m_mainScene.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
 				m_centerSkill[1].SetActive(ab != 0);
-				var aa = m_mainScene.MEOOLHNNMHL_GetSkillId(true, 0, 0);
+				var aa = m_mainScene.MEOOLHNNMHL_GetCenterSkillId(true, 0, 0);
 				if (aa == ab)
 					aa = 0;
 				m_centerSkill[0].SetActive(aa != 0);
@@ -369,7 +369,7 @@ namespace XeApp.Game.Menu
 					m_centerSkill[1].transform.parent.SetSiblingIndex(2);
 					m_centerSkill[0].transform.parent.SetSiblingIndex(1);
 				}
-				int g = m_mainScene.MEOOLHNNMHL_GetSkillId(false, 0, 0);
+				int g = m_mainScene.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
 				if(viewMusicData == null)
 				{
 					if(m_mainScene.IFBJBPEBAFH_HasCenterSkillCondSerie(null, false))
@@ -395,7 +395,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					int a = m_mainScene.MEOOLHNNMHL_GetSkillId(false, viewMusicData.FKDCCLPGKDK_JacketAttr, viewMusicData.AIHCEGFANAM_Serie);
+					int a = m_mainScene.MEOOLHNNMHL_GetCenterSkillId(false, viewMusicData.FKDCCLPGKDK_JacketAttr, viewMusicData.AIHCEGFANAM_Serie);
 					g = a;
 					if (a > 0)
 					{

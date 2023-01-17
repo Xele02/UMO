@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							int liveSkillId = sceneInfo.FILPDDHMKEJ(false, 0, 0);
+							int liveSkillId = sceneInfo.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
 							if(musicId > 0 && liveSkillId > 0)
 							{
 								if(!SetDeckSkillIconControl.CheckMatchLiveSkill(sceneInfo, divaId, musicId))

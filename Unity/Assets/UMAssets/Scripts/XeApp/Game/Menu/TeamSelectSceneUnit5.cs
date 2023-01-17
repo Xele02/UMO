@@ -247,7 +247,7 @@ namespace XeApp.Game.Menu
 				TodoLogger.Log(0, "Todo Event");
 			}
 			UpdateEpisodeBonusList();
-			m_viewUnitData = m_playerData.DPLBHAIKPGL(m_isGoDivaEvent);
+			m_viewUnitData = m_playerData.DPLBHAIKPGL_GetTeam(m_isGoDivaEvent);
 			int divaSortItem = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.BICLOMKLAOF_unitWindowDivaDispItem;
 			int sceneSortItem = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.LEAPMNHODPJ_unitWindowDispItem;
 			m_divaDispTypeIndex = PopupSortMenu.UnitDivaSortItem.FindIndex((SortItem x) =>
@@ -1320,11 +1320,11 @@ namespace XeApp.Game.Menu
 				int divaNum = Mathf.Min(Database.Instance.gameSetup.musicInfo.onStageDivaNum, 3);
 				for(int i = 0; i < divaNum; i++)
 				{
-					valid &= m_playerData.DPLBHAIKPGL(m_isGoDivaEvent).BCJEAJPLGMB_MainDivas[i] != null;
+					valid &= m_playerData.DPLBHAIKPGL_GetTeam(m_isGoDivaEvent).BCJEAJPLGMB_MainDivas[i] != null;
 				}
 				for(int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum - divaNum; i++)
 				{
-					valid &= m_playerData.DPLBHAIKPGL(m_isGoDivaEvent).CMOPCCAJAAO_AddDivas[i] != null;
+					valid &= m_playerData.DPLBHAIKPGL_GetTeam(m_isGoDivaEvent).CMOPCCAJAAO_AddDivas[i] != null;
 				}
 			}
 			return valid;
