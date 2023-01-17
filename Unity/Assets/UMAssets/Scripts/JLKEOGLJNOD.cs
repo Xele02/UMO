@@ -604,7 +604,7 @@ public class JLKEOGLJNOD_TeamInfo
 						res.NGEADPGADLI_DivaSlot = i;
 						return res;
 					}
-					for(int j = 0; j < divaInfo.DJICAKGOGFO_SubSceneIds.Count; i++)
+					for(int j = 0; j < divaInfo.DJICAKGOGFO_SubSceneIds.Count; j++)
 					{
 						if(divaInfo.DJICAKGOGFO_SubSceneIds[j] == BCCHOBPJJKE_SceneId)
 						{
