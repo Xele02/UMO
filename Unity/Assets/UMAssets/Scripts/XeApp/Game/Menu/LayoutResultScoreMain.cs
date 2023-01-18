@@ -40,7 +40,7 @@ namespace XeApp.Game.Menu
 		public bool m_isSkiped; // 0x11
 		private Matrix23 m_identity; // 0x14
 		public Action onFinished; // 0x2C
-		private NGJOPPIGCPM viewData; // 0x30
+		private NGJOPPIGCPM_ResultData viewData; // 0x30
 		private GameResultData resultData; // 0x34
 		private AbsoluteLayout layoutMainAnim; // 0x38
 		private AbsoluteLayout[] layoutExcellentAnim = new AbsoluteLayout[3]; // 0x3C

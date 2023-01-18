@@ -259,7 +259,7 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 				var freemusiclist = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas;
 				for(int i = 0; i < freemusiclist.Count; i++)
 				{
-					KEODKEGFDLD musicData = freemusiclist[i];
+					KEODKEGFDLD_FreeMusicInfo musicData = freemusiclist[i];
 					string k = POFDDFCGEGP + (i + 1);
 					if(OILEIIEIBHP.BBAJPINMOEP_Contains(k))
 					{

@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 		private NumberBase[] numSingRankAfter; // 0x58
 		private TexUVListManager m_uvMan; // 0x5C
 		private ActionButton singRateInfoBtn; // 0x60
-		private NGJOPPIGCPM viewResultData; // 0x64
+		private NGJOPPIGCPM_ResultData viewResultData; // 0x64
 		public Action onFinished; // 0x68
 		private Coroutine m_coroutine; // 0x6C
 		private bool isSkiped; // 0x70

@@ -50,8 +50,8 @@ class DataExporter
 							numMulti = k + 1;
 					}
 				}
-				bool valid = MusicDb.GEAANLPDJBP_FreeMusicDatas.Find((KEODKEGFDLD data) => {
-					return data.DLAEJOBELBH_Id == MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_Id && data.PPEGAKEIEGM_Enabled == 2;
+				bool valid = MusicDb.GEAANLPDJBP_FreeMusicDatas.Find((KEODKEGFDLD_FreeMusicInfo data) => {
+					return data.DLAEJOBELBH_MusicId == MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_Id && data.PPEGAKEIEGM_Enabled == 2;
 				}) != null;
 				fileOutput += "|" + i + "|" + MusicDb.EPMMNEFADAP_Musics[i].KKPAHLMJKIH_WavId + "|" + Title + "|" + Serie + "|" + (divaSolo ? "X" : "") + "|" + (numMulti != -1 ? numMulti.ToString() : "") + "|" + (valid ? "X" : "") + "\n";
 			}

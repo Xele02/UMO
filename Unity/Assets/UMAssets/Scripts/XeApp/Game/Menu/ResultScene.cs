@@ -69,35 +69,78 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4E7E4 Offset: 0xB4E7E4 VA: 0xB4E7E4
 		private void InitParam()
 		{
-			//L200
+			NGJOPPIGCPM_ResultData resultData = new NGJOPPIGCPM_ResultData();
+			resultData.KHEKNNFCAOI(Database.Instance.gameSetup.musicInfo.freeMusicId,
+							Database.Instance.gameSetup.musicInfo.difficultyType,
+							Database.Instance.gameSetup.EnableLiveSkip,
+							Database.Instance.gameSetup.musicInfo.IsLine6Mode, 
+							(int)Database.Instance.gameSetup.musicInfo.gameEventType);
+			FPGEMAIAMBF_RewardData rewardData = new FPGEMAIAMBF_RewardData();
+			rewardData.CHOHLJOJKNJ(Database.Instance.gameSetup.musicInfo.freeMusicId,
+								(int)Database.Instance.gameSetup.musicInfo.difficultyType,
+								Database.Instance.gameSetup.musicInfo.IsLine6Mode,
+								(int)Database.Instance.gameSetup.musicInfo.gameEventType);
+			PopupAchieveRewardSetting rewardSetting = null;
+			if (PopupAchieveRewardContent.CheckAchieve(rewardData))
+			{
+				rewardSetting = new PopupAchieveRewardSetting();
+				rewardSetting.mode = LayoutPopupAchieveReward.eMode.Result;
+				rewardSetting.selectMusicId = Database.Instance.gameSetup.musicInfo.musicId;
+				rewardSetting.selectFreeMusicId = Database.Instance.gameSetup.musicInfo.freeMusicId;
+				rewardSetting.diff = Database.Instance.gameSetup.musicInfo.difficultyType;
+				rewardSetting.viewFreeReward = rewardData;
+				rewardSetting.gameEventType = (int)Database.Instance.gameSetup.musicInfo.gameEventType;
+				rewardSetting.isLine6Mode = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
+			}
+			BPOJMOOIIFI_PlayerLevelData playerLevelData = new BPOJMOOIIFI_PlayerLevelData();
+			playerLevelData.KHEKNNFCAOI();
 			scoreLayoutInitParam = new ResultScoreLayoutController.InitParam()
 			{
 				divaId = Database.Instance.gameSetup.teamInfo.divaList[0].divaId,
 				difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType,
 				isLine6Mode = Database.Instance.gameSetup.musicInfo.IsLine6Mode,
-				//viewPlayerLevelUpData = 
-				//viewResultData = 
+				viewPlayerLevelUpData = playerLevelData,
+				viewResultData = resultData,
 				layoutOkayButton = null,
-				resultData = Database.Instance.gameResult
-				//achieveRewardSetting = 
+				resultData = Database.Instance.gameResult,
+				achieveRewardSetting = rewardSetting
 			};
-			//L261
+			GNIFOHMFDMO_DivaResultData divaResultData = new GNIFOHMFDMO_DivaResultData();
+			divaResultData.KHEKNNFCAOI(Database.Instance.gameSetup.musicInfo.freeMusicId, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 			divaLayoutInitParam = new ResultDivaLayoutController.InitParam()
 			{
-				//viewDivaResultData = 
+				viewDivaResultData = divaResultData,
 				layoutOkayButton = null
 			};
-			MOLKENLNCPE dropData = new MOLKENLNCPE();
+			MOLKENLNCPE_DropData dropData = new MOLKENLNCPE_DropData();
 			dropData.KHEKNNFCAOI();
 			dropLayoutInitParam = new ResultDropLayoutController.InitParam()
 			{
 				viewDropResultData = dropData,
-				viewFriendPlayerData = JGEOBNENMAH.HHCJCDFCLOB.NHPGGBCKLHC,
+				viewFriendPlayerData = JGEOBNENMAH.HHCJCDFCLOB.NHPGGBCKLHC_FriendPlayerData,
 				layoutOkayButton = null
 			};
-			//312
-			TodoLogger.Log(0, "InitParam");
-		
+			eventType = JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType;
+			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
+			{
+				TodoLogger.Log(0, "InitParam Event");
+			}
+			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+			{
+				TodoLogger.Log(0, "InitParam Event");
+			}
+			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
+			{
+				TodoLogger.Log(0, "InitParam Event");
+			}
+			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+			{
+				TodoLogger.Log(0, "InitParam Event");
+			}
+			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
+			{
+				TodoLogger.Log(0, "InitParam Event");
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7227BC Offset: 0x7227BC VA: 0x7227BC

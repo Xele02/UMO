@@ -61,7 +61,7 @@ namespace XeApp.Game.RhythmGame
 			int enemyId = 0;
 			if(musicInfo.isFreeMode)
 			{
-				KEODKEGFDLD musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId);
+				KEODKEGFDLD_FreeMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId);
 				if(!musicInfo.IsLine6Mode)
 				{
 					subgoalValue = musicdb.LJPKLMJPLAC[(int)musicInfo.difficultyType];
@@ -77,7 +77,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				DJNPIGEFPMF musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
+				DJNPIGEFPMF_StoryMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
 				subgoalValue = musicdb.LJPKLMJPLAC[(int)musicInfo.difficultyType];
 				goalValue = musicdb.MALHPBKPIDE[(int)musicInfo.difficultyType];
 				enemyId = musicdb.LHICAKGHIGF[(int)musicInfo.difficultyType];

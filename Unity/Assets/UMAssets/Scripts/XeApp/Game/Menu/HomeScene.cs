@@ -797,7 +797,7 @@ namespace XeApp.Game.Menu
 			} while(freemusics[freemusicNum].PPEGAKEIEGM_Enabled != 2);
 			UnityEngine.Debug.Log("Select Free Music : "+(freemusicNum + 1));
 
-			int musicId = freemusics[freemusicNum].DLAEJOBELBH_Id;
+			int musicId = freemusics[freemusicNum].DLAEJOBELBH_MusicId;
 			UnityEngine.Debug.Log("Music Id : "+musicId);
 			var musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[musicId - 1];
 			UnityEngine.Debug.Log("Wav Id : "+musicInfo.KKPAHLMJKIH_WavId);

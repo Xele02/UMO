@@ -424,7 +424,7 @@ namespace XeApp.Game.Menu
 		//public static bool IsMusicLevelFilter(int levelMin, int levelMax, IBJAKJJICBC musicData, Difficulty.Type difficulty) { }
 
 		//// RVA: 0x114D450 Offset: 0x114D450 VA: 0x114D450
-		public static bool IsAllRewardAchievedFilter(List<FPGEMAIAMBF.LOIJICNJMKA> rewards)
+		public static bool IsAllRewardAchievedFilter(List<FPGEMAIAMBF_RewardData.LOIJICNJMKA> rewards)
 		{
 			foreach(var r in rewards)
 			{

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using XeApp.Game.Common;
 
-public class MOLKENLNCPE
+[System.Obsolete("Use MOLKENLNCPE_DropData", true)]
+public class MOLKENLNCPE { }
+public class MOLKENLNCPE_DropData
 {
     public class CEFIOPJKEIC
     {
@@ -24,7 +26,7 @@ public class MOLKENLNCPE
         // public string LDBPEIMINJB() { }
     }
 
-	public List<MOLKENLNCPE.CEFIOPJKEIC> HBHMAKNGKFK = new List<CEFIOPJKEIC>(8); // 0x8
+	public List<MOLKENLNCPE_DropData.CEFIOPJKEIC> HBHMAKNGKFK = new List<CEFIOPJKEIC>(8); // 0x8
 	public int POPPPGMKOHN; // 0xC
 	public int ELKAMCOPCDO; // 0x10
 	public int MFNCONLNBPB; // 0x14

@@ -85,7 +85,7 @@ namespace XeApp.Game.MusicSelect
 		{
 			string musicTimeFormat = MessageManager.Instance.GetBank("menu").GetMessageByLabel("vertical_music_select_music_time");
 			List<VerticalMusicDataList.MusicListData> res = new List<VerticalMusicDataList.MusicListData>();
-			FPGEMAIAMBF b = new FPGEMAIAMBF();
+			FPGEMAIAMBF_RewardData b = new FPGEMAIAMBF_RewardData();
 			for(int i = 0; i < viewMusicDataList.Count; i++)
 			{
 				List<MusicRewardStat> rewardList = new List<MusicRewardStat>();
@@ -190,8 +190,8 @@ namespace XeApp.Game.MusicSelect
 				}
 				else
 				{
-					KEODKEGFDLD freeMusicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[musicData.GHBPLHBNMBK_FreeMusicId - 1];
-					EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicData.GHBPLHBNMBK_FreeMusicId, freeMusicInfo.DLAEJOBELBH_Id);
+					KEODKEGFDLD_FreeMusicInfo freeMusicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[musicData.GHBPLHBNMBK_FreeMusicId - 1];
+					EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicData.GHBPLHBNMBK_FreeMusicId, freeMusicInfo.DLAEJOBELBH_MusicId);
 					string musicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName;
 					string vocalName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).vocalName;
 					int seconds = 0;

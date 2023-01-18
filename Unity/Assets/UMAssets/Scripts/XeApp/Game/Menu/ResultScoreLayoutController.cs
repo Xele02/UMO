@@ -17,8 +17,8 @@ namespace XeApp.Game.Menu
 			public int divaId; // 0x8
 			public int difficulty; // 0xC
 			public bool isLine6Mode; // 0x10
-			// public BPOJMOOIIFI viewPlayerLevelUpData; // 0x14
-			public NGJOPPIGCPM viewResultData; // 0x18
+			public BPOJMOOIIFI_PlayerLevelData viewPlayerLevelUpData; // 0x14
+			public NGJOPPIGCPM_ResultData viewResultData; // 0x18
 			public GameResultData resultData; // 0x1C
 			public LayoutResultHeaderTitle layoutHeaderTitle; // 0x20
 			public LayoutResultOkayButton layoutOkayButton; // 0x24

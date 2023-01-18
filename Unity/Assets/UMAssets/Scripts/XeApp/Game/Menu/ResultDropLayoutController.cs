@@ -12,7 +12,7 @@ namespace XeApp.Game.Menu
 	{
 		public class InitParam
 		{
-			public MOLKENLNCPE viewDropResultData; // 0x8
+			public MOLKENLNCPE_DropData viewDropResultData; // 0x8
 			public EAJCBFGKKFA_FriendInfo viewFriendPlayerData; // 0xC
 			public LayoutResultOkayButton layoutOkayButton; // 0x10
 			public List<LayoutResultDropItem> layoutItemList; // 0x14

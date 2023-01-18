@@ -77,7 +77,10 @@ namespace XeApp.Game.Common
 		//public void CalcUtaRateForLog(JDDGGJCGOPA rec, int freeMusicId, int lastDifficulty, int lastRatingScore) { }
 
 		//// RVA: 0xEA5310 Offset: 0xEA5310 VA: 0xEA5310
-		//public void CalcUtaRate(List<JNMFKOHFAFB.LBGEDDJKOKF> hsRatings) { }
+		public void CalcUtaRate(List<JNMFKOHFAFB_PublicStatus.LBGEDDJKOKF> hsRatings)
+		{
+			TodoLogger.Log(0, "TODO CalcUtaRate");
+		}
 
 		//// RVA: 0xEA3F80 Offset: 0xEA3F80 VA: 0xEA3F80
 		//private void UpdatePublicStatus() { }
@@ -107,7 +110,12 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA5F18 Offset: 0xEA5F18 VA: 0xEA5F18
-		//public int GetUtaRateAttr(int attr = 0) { }
+		public int GetUtaRateAttr(int attr = 0)
+		{
+			if (attr != 0)
+				return 0;
+			return rateAttr[0];
+		}
 
 		//// RVA: 0xEA5F6C Offset: 0xEA5F6C VA: 0xEA5F6C
 		//public int GetUtaRateTotal(List<JNMFKOHFAFB.LBGEDDJKOKF> hsRatingInfoList) { }

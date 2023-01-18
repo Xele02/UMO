@@ -323,7 +323,7 @@ public class CIOECGOMILE
 				{
 					if(CHNJPFCKFOI_FriendManager.PLOOEECNHFB_IsSuccess)
 					{
-						int a = DLMOKNDEMMB.FMPEMFPLPDA_Exp.PCJACJANGCA(AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level);
+						int a = DLMOKNDEMMB.FMPEMFPLPDA_Exp.PCJACJANGCA_GetFriendForLevel(AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level);
 						if(a != CHNJPFCKFOI_FriendManager.JPEIBHJIHPI)
 						{
 							CHNJPFCKFOI_FriendManager.PGPLAOGALHD(a, null, null);

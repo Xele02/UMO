@@ -1004,7 +1004,7 @@ namespace XeApp.Game.Menu
 			GHLGEECLCMH data = new GHLGEECLCMH();
 			data.KHEKNNFCAOI(null, null);
 			m_musicSelectUISapporter.SetUtaRateIcon(data.LLNHMMBFPMA_ScoreRatingRanking);
-			m_musicSelectUISapporter.SetUtaRateRating(data.ECMFBEHEGEH_MusicRatio);
+			m_musicSelectUISapporter.SetUtaRateRating(data.ECMFBEHEGEH_UtaRateTotal);
 			SetMusicTab(m_musicTab);
 		}
 
@@ -1545,7 +1545,7 @@ namespace XeApp.Game.Menu
 		{
 			if(filterBit != 0)
 			{
-				FPGEMAIAMBF data = new FPGEMAIAMBF();
+				FPGEMAIAMBF_RewardData data = new FPGEMAIAMBF_RewardData();
 				data.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, (int)difficulty, isLine6Mode, musicData.MNNHHJBBICA_EventType);
 				if((filterBit & 1) != 0)
 				{

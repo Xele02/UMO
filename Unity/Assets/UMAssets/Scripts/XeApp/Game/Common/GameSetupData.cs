@@ -143,7 +143,7 @@ namespace XeApp.Game.Common
 				}
 
 				// // RVA: 0xEA000C Offset: 0xEA000C VA: 0xEA000C
-				public void SetForcePrismData(AIPEHINPIHC a_prism, int a_index)
+				public void SetForcePrismData(AIPEHINPIHC_ForcedSettingInfo a_prism, int a_index)
 				{
 					if (a_prism.AHHJLDLAPAN_DivaId.Length <= a_index)
 						return;
@@ -301,7 +301,7 @@ namespace XeApp.Game.Common
 			}
 
 			// // RVA: 0xE9D15C Offset: 0xE9D15C VA: 0xE9D15C
-			public void SetForcePrismData(AIPEHINPIHC a_prism)
+			public void SetForcePrismData(AIPEHINPIHC_ForcedSettingInfo a_prism)
 			{
 				divaList_[0].SetForcePrismData(a_prism, 0);
 				divaList_[1].SetForcePrismData(a_prism, 1);
@@ -397,7 +397,7 @@ namespace XeApp.Game.Common
 				this.mode = GameMode.Type.FreeBattle;
 				this.freeMusicId = freeMusicId;
 				storyMusicId = 0;
-				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[freeMusicId - 1].DLAEJOBELBH_Id;
+				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[freeMusicId - 1].DLAEJOBELBH_MusicId;
 				prismMusicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CIKALPJDGMF_ResolveMusicId(freeMusicId, musicId);
 				this.difficultyType = difficultyType;
 				tutorial = TutorialGameMode.Type.None;
@@ -419,7 +419,7 @@ namespace XeApp.Game.Common
 				this.mvLimitTime = mvLimitTime;
 				LimitTime = limitTime;
 				IsDisableBattleEventIntermediateResult = initParam.isDisableBattleEventIntermediateResult;
-				KEODKEGFDLD musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
+				KEODKEGFDLD_FreeMusicInfo musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
 				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[(isLine6Mode ? musicInfo.PJNFOCDANCE : musicInfo.LHICAKGHIGF)[(int)difficultyType]]);
 				if(overrideEnemyCenterSkillId != 0 || overrideEnemyLiveSkillId != 0)
 				{
@@ -466,7 +466,7 @@ namespace XeApp.Game.Common
 		public TeamInfo teamInfo { get { return m_teamInfo; } set {} } // get_teamInfo 0xE9C9EC  set_teamInfo 0xE9C9F4
 		public MusicInfo musicInfo { get { return m_musicInfo; } set {} } // get_musicInfo 0xE9C9F8 set_musicInfo 0xE9CA00
 		public MvInfo mvInfo { get { return m_mvInfo; } set {} } // get_mvInfo 0xE9CA04 set_mvInfo 0xE9CA0C
-		public AIPEHINPIHC forcePrism { get; set; } // 0x14
+		public AIPEHINPIHC_ForcedSettingInfo forcePrism { get; set; } // 0x14
 		public bool EnableLiveSkip { get; set; } // 0x19
 		public int LiveSkipTicketCount { get; set; } // 0x1C
 		public bool IsNotUpdateProfile { get; set; } // 0x20
@@ -514,8 +514,8 @@ namespace XeApp.Game.Common
 		{
 			if(m_musicInfo.freeMusicId > 0)
 			{
-				KEODKEGFDLD masterFreeMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(m_musicInfo.freeMusicId);
-				AIPEHINPIHC a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL.Find((AIPEHINPIHC x) =>
+				KEODKEGFDLD_FreeMusicInfo masterFreeMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(m_musicInfo.freeMusicId);
+				AIPEHINPIHC_ForcedSettingInfo a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL_ForcedSettings.Find((AIPEHINPIHC_ForcedSettingInfo x) =>
 				{
 					//0xE9D51C
 					return masterFreeMusic.BLDDNEJDFON_ForcePrismId == x.NMNDNFFJHPJ_Id;
