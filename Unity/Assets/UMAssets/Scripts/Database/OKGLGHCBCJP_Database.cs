@@ -949,7 +949,18 @@ public class OKGLGHCBCJP_Database
 	// public bool ALKOAPJCNFD(long JHNMKKNEENE) { }
 
 	// // RVA: 0x1496410 Offset: 0x1496410 VA: 0x1496410
-	// public int PFAKPFKJJKA() { }
+	public int PFAKPFKJJKA()
+	{
+		int res = 0;
+		for(int i = 0; i < MGJKEJHEBPO_SectionList.Count; i++)
+		{
+			if(MGJKEJHEBPO_SectionList[i].HHPOFCILDGN != MGJKEJHEBPO_SectionList[i].CAOGDCBPBAN())
+			{
+				res |= 1 << (i & 0x1f);
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0x1496570 Offset: 0x1496570 VA: 0x1496570
 	public void IDBDAPPJOND()

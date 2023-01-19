@@ -415,7 +415,10 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x1C51384 Offset: 0x1C51384 VA: 0x1C51384
-	// public void ENEMPFLFEHP(int OEOIHIIIMCK) { }
+	public void ENEMPFLFEHP_AddUc(int OEOIHIIIMCK)
+	{
+		NFHLDFJIBKI_HaveUc = NFHLDFJIBKI_HaveUc + OEOIHIIIMCK < 99999999 ? NFHLDFJIBKI_HaveUc + OEOIHIIIMCK : 99999999;
+	}
 
 	// // RVA: 0x1C513B4 Offset: 0x1C513B4 VA: 0x1C513B4
 	// public void LLEGCIMFPGD(int CHIHFGDIBJM) { }

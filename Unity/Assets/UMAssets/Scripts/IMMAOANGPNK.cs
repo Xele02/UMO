@@ -370,7 +370,15 @@ public class IMMAOANGPNK
 	// private void PDKNJAEGNIL() { }
 
 	// // RVA: 0x9FC4CC Offset: 0x9FC4CC VA: 0x9FC4CC
-	// public void PFAKPFKJJKA() { }
+	public void PFAKPFKJJKA()
+	{
+		if(LNAHEIEIBOI_Initialized)
+		{
+			if (ENEBEGGOHFP != 0)
+				return;
+			ENEBEGGOHFP = NKEBMCIMJND_Database.PFAKPFKJJKA();
+		}
+	}
 
 	// // RVA: 0x9FC518 Offset: 0x9FC518 VA: 0x9FC518
 	private void BBHOKHCDBFI(CBBJHPBGBAJ_Archive GBEGLNMFLIE)

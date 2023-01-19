@@ -75,7 +75,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	public List<int> KBOIDPDGCLA_PasSt { get; private set; } // 0x98 IIBNBENEJLN CACNGONAKFC ACBFJKBJOFF
 	public List<int> GGAMKBLHGGI_PasEd { get; private set; } // 0x9C MMJCJMDBMAN NKHPAMBMGHH LNEJKJBKJAD
 	private List<int> FIDHHBBINNB_Uc { get; set; } // 0xA0 DAGAJKBDICH KKMEKEPJKIN NLHFPGKEDAE
-	private List<int> MPADAMHJBKK { get; set; } // 0xA4 FAALLDIADNK OHAIBAGEBPI LELJPMEAKCL
+	private List<int> MPADAMHJBKK_UcLine6 { get; set; } // 0xA4 FAALLDIADNK OHAIBAGEBPI LELJPMEAKCL
 	public List<int> CPNJJKDKNOO_FPt { get; private set; } // 0xA8 DDFBBNIDJCC OHAGJJCHEHB HHICCPAOIDC
 	public List<int> EONACOOGKCA_BPt { get; private set; } // 0xC0 NKENGKNNLBO PJPCHAFPLOL DHPBCABKIMB
 	public List<sbyte> LLDJIAKLOGC_RarMltMax { get; private set; } // 0xE4 AAPBDKJMMMC CPONLDIPHBC OAFDONJGICP
@@ -155,7 +155,13 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA0688 Offset: 0xDA0688 VA: 0xDA0688
-	// public int GFODAIJMBAH(int ANAJIAENLNB, bool GIKLNODJKFK) { }
+	public int GFODAIJMBAH_GetUc(int ANAJIAENLNB_FPt, bool GIKLNODJKFK_IsLine6)
+	{
+		if (GIKLNODJKFK_IsLine6)
+			return MPADAMHJBKK_UcLine6[ANAJIAENLNB_FPt - 1];
+		else
+			return FIDHHBBINNB_Uc[ANAJIAENLNB_FPt - 1];
+	}
 
 	// // RVA: 0xDA0798 Offset: 0xDA0798 VA: 0xDA0798
 	public byte[] CEKGFNKJDCF(KOGHKIODHPA_Board JEMMMJEJLNL, int JPIPENJGGDD, int AOPBAOJIOGO, int ILABPFOMEAG, int JKGFBFPIMGA, bool MCCIFLKCNKO)
@@ -394,7 +400,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		KGJDEFCEEAB = new List<int>(25);
 		PLMFEFIIBFL = new List<int>(25);
 		BGKMMAGPAMJ = new List<int>(25);
-		MPADAMHJBKK = new List<int>(25);
+		MPADAMHJBKK_UcLine6 = new List<int>(25);
 		HLKHOFPAOMK_VIn = new List<int>(25);
 		HLLJIICKNIP_VAw = new List<int>(25);
 		FENOHOEIJOE_VMax = new List<int>(25);
@@ -463,7 +469,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		KGJDEFCEEAB.Clear();
 		PLMFEFIIBFL.Clear();
 		BGKMMAGPAMJ.Clear();
-		MPADAMHJBKK.Clear();
+		MPADAMHJBKK_UcLine6.Clear();
 		HLKHOFPAOMK_VIn.Clear();
 		HLLJIICKNIP_VAw.Clear();
 		FENOHOEIJOE_VMax.Clear();
@@ -713,7 +719,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 			for (int i = 0; i < array1.Length; i++)
 			{
 				FIDHHBBINNB_Uc.Add((int)array1[i]);
-				MPADAMHJBKK.Add((int)array2[i]);
+				MPADAMHJBKK_UcLine6.Add((int)array2[i]);
 			}
 		}
 		{

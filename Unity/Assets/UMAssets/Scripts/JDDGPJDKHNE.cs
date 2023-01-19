@@ -37,7 +37,11 @@ public class JDDGPJDKHNE
 	public static JDDGPJDKHNE HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF NKACBOEHELJ 0x1C30854 OKPMHKNCNAL 0x1C308B8
 
 	// // RVA: 0x1C3091C Offset: 0x1C3091C VA: 0x1C3091C
-	// public void CDIFNFCHDCC() { }
+	public void CDIFNFCHDCC()
+	{
+		EGEPCEGMDOH = true;
+		FBCJICEPLED.Clear();
+	}
 
 	// // RVA: 0x1C30950 Offset: 0x1C30950 VA: 0x1C30950
 	// public void FECGDGCNGGN() { }

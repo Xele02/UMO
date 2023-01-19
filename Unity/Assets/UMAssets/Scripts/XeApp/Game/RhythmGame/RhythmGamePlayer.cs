@@ -2413,7 +2413,7 @@ namespace XeApp.Game.RhythmGame
 			clearSetup.HGEKDNNJAAC_HadAwakenDivaMode = logger.log.divaModeData.type == RhythmGameMode.Type.AwakenDiva;
 			clearSetup.KNCBNGCDMII_HadValkyrieMode = logger.log.valkyrieModeData.type == RhythmGameMode.Type.Valkyrie;
 			clearSetup.EHCFOHAABDA_EnemyLeft = status.enemy.currentValue;
-			clearSetup.HNHCIGMKPDC = new List<int>();
+			clearSetup.HNHCIGMKPDC_DivaIds = new List<int>();
 			clearSetup.OJDDNGGBJOG_AverageFPS = (int)DebugFPS.Instance.avgFPS;
 			clearSetup.BIIGPMLBOOD_MinFPS = (int)DebugFPS.Instance.minFPS;
 			clearSetup.FJCIPNCOBNA_SerializedNoteResultInfo = rNoteOwner.SerializeForNotesLog();
@@ -2422,7 +2422,7 @@ namespace XeApp.Game.RhythmGame
 			clearSetup.OBOPMHBPCFE_MvMode = Database.Instance.gameSetup.musicInfo.IsMvMode;
 			for(int i = 0; i < 3; i++)
 			{
-				clearSetup.HNHCIGMKPDC.Add(Database.Instance.gameSetup.teamInfo.danceDivaList[i].divaId);
+				clearSetup.HNHCIGMKPDC_DivaIds.Add(Database.Instance.gameSetup.teamInfo.danceDivaList[i].divaId);
 			}
 			for(int i = 0; i < logger.log.skillDataList.Count; i++)
 			{

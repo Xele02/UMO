@@ -10,7 +10,7 @@ namespace XeApp.Game.Menu
 	{
 		public class InitParam
 		{
-			// public GNIFOHMFDMO viewDivaResultData; // 0x8
+			public GNIFOHMFDMO_DivaResultData viewDivaResultData; // 0x8
 			public LayoutResultOkayButton layoutOkayButton; // 0xC
 		}
 
