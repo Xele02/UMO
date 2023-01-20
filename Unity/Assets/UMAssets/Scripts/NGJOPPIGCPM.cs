@@ -96,8 +96,8 @@ public class NGJOPPIGCPM_ResultData
 		}
 		LCKMBHDMPIP_SaveRecordMusic = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LCKMBHDMPIP_RecordMusic;
 		OEELDFNNLKK_SaveRecordMusic2 = CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData.LCKMBHDMPIP_RecordMusic;
-		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo1 = LCKMBHDMPIP_SaveRecordMusic.FAMANJGJANN_MusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
-		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo2 = OEELDFNNLKK_SaveRecordMusic2.FAMANJGJANN_MusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
+		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo1 = LCKMBHDMPIP_SaveRecordMusic.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
+		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo2 = OEELDFNNLKK_SaveRecordMusic2.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
 		if(MNNHHJBBICA_GameEventType == 2)
 		{
 			TodoLogger.Log(0, "Event");

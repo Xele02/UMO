@@ -88,13 +88,13 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA5AFC Offset: 0xEA5AFC VA: 0xEA5AFC
 		public static int GetUtaRate(JDDGGJCGOPA_RecordMusic rec, int free_music_id)
 		{
-			JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo info = rec.FAMANJGJANN_MusicInfo.Find((JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo x) =>
+			JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo info = rec.FAMANJGJANN_FreeMusicInfo.Find((JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo x) =>
 			{
 				//0xEA7684
 				return free_music_id == x.FDMENECIKEL;
 			});
 			int coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
-			int val = info.IFNDLIGGGHP_HsrSc;
+			int val = info.IFNDLIGGGHP_HighScoreScore;
 			if (val > 0)
 				return val / coef;
 			return 0;

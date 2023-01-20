@@ -79,7 +79,10 @@ public class NAKMCMEPAGH
 	// public void MOOJGMJFOKK() { }
 
 	// // RVA: 0x17C08A0 Offset: 0x17C08A0 VA: 0x17C08A0
-	// public void LLKJHBIPCOP() { }
+	public void LLKJHBIPCOP()
+	{
+		TodoLogger.Log(0, "LLKJHBIPCOP");
+	}
 
 	// // RVA: 0x17C08BC Offset: 0x17C08BC VA: 0x17C08BC
 	// public void KPNLMLPFKMJ(int MHKJEBNOPIM) { }

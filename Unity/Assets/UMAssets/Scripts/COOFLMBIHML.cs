@@ -16,8 +16,15 @@ public class COOFLMBIHML
 	private int DBOFPMOMPFH; // 0xC
 
 	//// RVA: 0x1765828 Offset: 0x1765828 VA: 0x1765828
-	//public void KHEKNNFCAOI(int FKDCCLPGKDK, OKGLGHCBCJP LKMHPJKIFDN, bool ECMMLBJNEKG = False) { }
+	public void KHEKNNFCAOI(int FKDCCLPGKDK, OKGLGHCBCJP_Database LKMHPJKIFDN, bool ECMMLBJNEKG = false)
+	{
+		TodoLogger.Log(0, "KHEKNNFCAOI");
+	}
 
 	//// RVA: 0x1766118 Offset: 0x1766118 VA: 0x1766118
-	//public int NEHHNEPPIBK() { }
+	public int NEHHNEPPIBK()
+	{
+		TodoLogger.Log(0, "NEHHNEPPIBK");
+		return 0;
+	}
 }

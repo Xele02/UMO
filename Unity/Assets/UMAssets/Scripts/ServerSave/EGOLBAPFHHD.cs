@@ -424,7 +424,43 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// public void LLEGCIMFPGD(int CHIHFGDIBJM) { }
 
 	// // RVA: 0x1C51410 Offset: 0x1C51410 VA: 0x1C51410
-	// public int ANGGCMBPKKC(int OEOIHIIIMCK, JJOPEDJCCJK FMPEMFPLPDA, PEBFNABDJDI GDEKCOOBLMA) { }
+	public int ANGGCMBPKKC_AddExp(int OEOIHIIIMCK_Exp, JJOPEDJCCJK_Exp FMPEMFPLPDA_dbExp, PEBFNABDJDI_System GDEKCOOBLMA_dbSystem)
+	{
+		if(FMPEMFPLPDA_dbExp != null && GDEKCOOBLMA_dbSystem != null)
+		{
+			CHBDMJBEENG c = GDEKCOOBLMA_dbSystem.NGHKJOEDLIP;
+			if(c != null)
+			{
+				int cplvl = c.PIAMMJNADJH_Plv;
+				int exp = EOHDMCMHBKJ_Exp;
+				int expPrev = exp;
+				int level = KIECDDFNCAN_Level;
+				int levelPrev = level;
+				while (OEOIHIIIMCK_Exp > 0)
+				{
+					if(cplvl <= level)
+					{
+						exp = 0;
+						level = cplvl;
+						break;
+					}
+					int d = FMPEMFPLPDA_dbExp.NDFGMMKGBAA_GetPExp(level);
+					exp = OEOIHIIIMCK_Exp + expPrev;
+					if (exp < d)
+						break;
+					level++;
+					exp = 0;
+					if ((d - expPrev) > 0)
+						OEOIHIIIMCK_Exp -= (d - expPrev);
+					expPrev = exp;
+				}
+				EOHDMCMHBKJ_Exp = exp;
+				KIECDDFNCAN_Level = level;
+				return level - levelPrev;
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0x1C51560 Offset: 0x1C51560 VA: 0x1C51560
 	public void IGGDICEACIK()

@@ -87,5 +87,8 @@ public class MCGNOFMAPBJ
 	// public bool FCEMLLDEJFL(bool MDNODGAFHJN = True, bool DDGFCOPPBBN = True) { }
 
 	// // RVA: 0x130D520 Offset: 0x130D520 VA: 0x130D520
-	// public void GFOAJNICANO(int GDDFDGNEACK) { }
+	public void GFOAJNICANO(int GDDFDGNEACK)
+	{
+		TodoLogger.Log(0, "GFOAJNICANO");
+	}
 }

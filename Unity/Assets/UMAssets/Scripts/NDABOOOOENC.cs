@@ -60,7 +60,10 @@ public class NDABOOOOENC
 	// public void NKFNJMEELMP(List<int> PKDKPCOOPLL) { }
 
 	// // RVA: 0x1ADCBE8 Offset: 0x1ADCBE8 VA: 0x1ADCBE8
-	// public void NKFNJMEELMP() { }
+	public void NKFNJMEELMP()
+	{
+		TodoLogger.Log(0, "NKFNJMEELMP");
+	}
 
 	// // RVA: 0x1ADCF50 Offset: 0x1ADCF50 VA: 0x1ADCF50
 	// public void FBHNMIHJGCO() { }

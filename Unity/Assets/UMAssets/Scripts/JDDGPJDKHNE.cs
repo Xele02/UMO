@@ -44,7 +44,10 @@ public class JDDGPJDKHNE
 	}
 
 	// // RVA: 0x1C30950 Offset: 0x1C30950 VA: 0x1C30950
-	// public void FECGDGCNGGN() { }
+	public void FECGDGCNGGN()
+	{
+		EGEPCEGMDOH = false;
+	}
 
 	// // RVA: 0x1C3095C Offset: 0x1C3095C VA: 0x1C3095C
 	private string MKKOKHPMCHB()
@@ -125,11 +128,14 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C31ED4 Offset: 0x1C31ED4 VA: 0x1C31ED4
 	public void NFNLGGHMEAM()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(0, "NFNLGGHMEAM");
 	}
 
 	// // RVA: 0x1C32174 Offset: 0x1C32174 VA: 0x1C32174
-	// public void FOKEGEOKGDG() { }
+	public void FOKEGEOKGDG()
+	{
+		TodoLogger.Log(0, "FOKEGEOKGDG");
+	}
 
 	// // RVA: 0x1C3142C Offset: 0x1C3142C VA: 0x1C3142C
 	public void BLKLMNNOMGH()

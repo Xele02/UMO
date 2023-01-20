@@ -146,7 +146,10 @@ public class PKECIDPBEFL
     }
 
 	// // RVA: 0x93DABC Offset: 0x93DABC VA: 0x93DABC
-	// public void IJLKLIHFMBG() { }
+	public void IJLKLIHFMBG()
+	{
+		TodoLogger.Log(0, "IJLKLIHFMBG");
+	}
 
 	// // RVA: 0x93DD14 Offset: 0x93DD14 VA: 0x93DD14
 	public void PEHBBKFGLNO()
