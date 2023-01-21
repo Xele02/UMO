@@ -1,0 +1,32 @@
+{{Music
+ |Name=ROCK'N'ROLL FIRE
+ |ID=142
+ |Cov=143
+ |Cd=29
+ |Nam=136
+ |Div=136
+ |Ma=3
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=143
+ |VariationId=0
+ |Dsc=136
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=3
+ |OfficialName=ROCK'N'ROLL FIRE
+ |VocalName=Fire Bomber
+ |Description=作品：マクロス ダイナマイト7<br /><br />歌手：Fire Bomber<br /><br />作詞：K.INOJO<br />作曲：須藤英樹
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S1001667272/single?ds=1002161349
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

@@ -1,0 +1,32 @@
+{{Music
+ |Name=比較用譜面
+ |ID=112
+ |Cov=113
+ |Cd=1
+ |Nam=107
+ |Div=107
+ |Ma=1
+ |SerieId=1
+ |SerieLogoId=1
+ |WavId=113
+ |VariationId=0
+ |Dsc=107
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=比較用譜面
+ |VocalName=
+ |Description=作品：<br /><br />歌手：<br /><br />作詞：<br />作曲：
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=
+ |BannerId=
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

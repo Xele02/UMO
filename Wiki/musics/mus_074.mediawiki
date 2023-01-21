@@ -1,0 +1,32 @@
+{{Music
+ |Name=妖精
+ |ID=74
+ |Cov=72
+ |Cd=6
+ |Nam=72
+ |Div=72
+ |Ma=3
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=72
+ |VariationId=0
+ |Dsc=72
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=3
+ |OfficialName=妖精
+ |VocalName=シェリル・ノーム starring May'n
+ |Description=作品：マクロスF<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：真名杏樹<br />作曲：菅野よう子
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S20177071/single?ds=34295882
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

@@ -1,0 +1,32 @@
+{{Music
+ |Name=シンデレラ
+ |ID=58
+ |Cov=56
+ |Cd=31
+ |Nam=56
+ |Div=56
+ |Ma=2
+ |SerieId=4
+ |SerieLogoId=4
+ |WavId=56
+ |VariationId=0
+ |Dsc=56
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=2
+ |OfficialName=シンデレラ
+ |VocalName=飯島真理
+ |Description=作品：超時空要塞マクロス<br /><br />歌手：飯島真理<br /><br />作詞：飯島真理<br />作曲：飯島真理
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S20268897/single?ds=1004617760
+ |BannerId=1
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

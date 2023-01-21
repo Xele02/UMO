@@ -1,0 +1,32 @@
+{{Music
+ |Name=ホシキラ
+ |ID=77
+ |Cov=75
+ |Cd=10
+ |Nam=75
+ |Div=75
+ |Ma=1
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=75
+ |VariationId=0
+ |Dsc=75
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=ホシキラ
+ |VocalName=ランカ・リー＝中島愛
+ |Description=作品：劇場版マクロスF〜サヨナラノツバサ〜<br /><br />歌手：ランカ・リー＝中島愛<br /><br />作詞：Gabriela Robin<br />作曲：菅野よう子
+ |StoryTitle=「──だけど、私は信じている」
+ |StoryDesc=バジュラが星を後にしてからひと月、人々は残された<br />大地を踏みしめ、新しい生活を始めようとしていた。<br /><br />ランカはアルトが無事に帰ってくること、そして命を<br />燃やして歌い、長い眠りについたシェリルが再び目を<br />覚ますことを信じ、残されたこの星と共に歌い続ける。
+ |BuyURL=http://recochoku.jp/song/S21029019/single?ds=1004680147
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

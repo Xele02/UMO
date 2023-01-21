@@ -1,0 +1,32 @@
+{{Music
+ |Name=Dancing in the Moonlight
+ |ID=98
+ |Cov=99
+ |Cd=21
+ |Nam=95
+ |Div=95
+ |Ma=4
+ |SerieId=1
+ |SerieLogoId=1
+ |WavId=99
+ |VariationId=0
+ |Dsc=95
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=4
+ |OfficialName=Dancing in the Moonlight
+ |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：劇場版マクロスΔ激情のワルキューレ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：北川勝利、acane_madder<br />作曲：北川勝利
+ |StoryTitle=「私は好きな歌を歌いたい、1分でも1秒でも長く！」
+ |StoryDesc=戦闘中ワルキューレ以外のフォールドレセプターの<br />反応を確認したデルタ小隊のハヤテは、貨物船の中で<br />密航中であったフレイアと運命的な出会いを果たした。<br /><br />その後、ハヤテの手助けもありワルキューレとなった<br />フレイアは、激動する世界を相手に歌を響かせていく。
+ |BuyURL=http://recochoku.jp/song/S1006375753/
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

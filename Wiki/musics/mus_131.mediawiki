@@ -1,0 +1,32 @@
+{{Music
+ |Name=SWEET FANTASY
+ |ID=131
+ |Cov=132
+ |Cd=3
+ |Nam=125
+ |Div=125
+ |Ma=3
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=132
+ |VariationId=0
+ |Dsc=125
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=3
+ |OfficialName=SWEET FANTASY
+ |VocalName=Fire Bomber
+ |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：M.MEG<br />作曲：大槻啓之
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S21997098/single?ds=34295744
+ |BannerId=2
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

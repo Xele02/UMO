@@ -1,0 +1,32 @@
+{{Music
+ |Name=恋のマホウ
+ |ID=147
+ |Cov=148
+ |Cd=29
+ |Nam=141
+ |Div=141
+ |Ma=1
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=148
+ |VariationId=0
+ |Dsc=141
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=恋のマホウ
+ |VocalName=Fire Bomber
+ |Description=作品：マクロス ダイナマイト7<br /><br />歌手：Fire Bomber<br /><br />作詞：M.MEG<br />作曲：湯川とうべん
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S1001667269/single?ds=1002161349
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

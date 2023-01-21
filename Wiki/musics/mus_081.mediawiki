@@ -1,0 +1,32 @@
+{{Music
+ |Name=GIRAFFE BLUES〜Kaname Solo Requiem〜
+ |ID=81
+ |Cov=78
+ |Cd=18
+ |Nam=77
+ |Div=77
+ |Ma=3
+ |SerieId=1
+ |SerieLogoId=1
+ |WavId=78
+ |VariationId=0
+ |Dsc=77
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=3
+ |OfficialName=GIRAFFE BLUES〜Kaname Solo Requiem〜
+ |VocalName=ワルキューレ　カナメΔ安野希世乃<br />美雲ΔJUNNA　フレイアΔ鈴木みのり
+ |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　カナメΔ安野希世乃　美雲ΔJUNNA<br />　　　フレイアΔ鈴木みのり<br /><br />作詞：菜穂<br />作曲：h-wonder
+ |StoryTitle=「私の歌を、大切に思ってくれる人がいる」
+ |StoryDesc=メッサーの魂が海に還り、光クラゲになれるよう<br />クラゲ送りを行うケイオスのメンバーとワルキューレ。<br /><br />メッサーの機体から見つかったという端末には、<br />デルタ小隊のフライトログが残されていたという。<br />そこには最後まで仲間を想い続ける彼の姿があった。
+ |BuyURL=http://recochoku.jp/song/S1004071720/single?ds=1005893452
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

@@ -1,0 +1,32 @@
+{{Music
+ |Name=不確定性☆COSMIC MOVEMENT
+ |ID=79
+ |Cov=24
+ |Cd=14
+ |Nam=24
+ |Div=24
+ |Ma=1
+ |SerieId=1
+ |SerieLogoId=1
+ |WavId=77
+ |VariationId=0
+ |Dsc=24
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=不確定性☆COSMIC MOVEMENT
+ |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：深川琴美、六ツ見純代、渡邊亜希子、姉田ウ夢ヤ<br />作曲：姉田ウ夢ヤ
+ |StoryTitle=「リンゴ大好き、フレイア・ヴィオン14歳！」
+ |StoryDesc=惑星ランドールでのワクチンライブ。<br /><br />フレイアは、憧れだったワルキューレのメンバーとして<br />迎える初めてのライブに緊張を隠すことができない。<br />一方のハヤテも、これが入隊してから初めてのライブ。<br />2人の衝撃デビューステージは一体どうなるのか…？
+ |BuyURL=https://recochoku.jp/song/S1003321337/
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

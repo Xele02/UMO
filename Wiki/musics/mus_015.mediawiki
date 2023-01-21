@@ -1,0 +1,32 @@
+{{Music
+ |Name=ユニバーサル・バニー
+ |ID=15
+ |Cov=15
+ |Cd=9
+ |Nam=15
+ |Div=15
+ |Ma=1
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=15
+ |VariationId=0
+ |Dsc=15
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=ユニバーサル・バニー
+ |VocalName=シェリル・ノーム starring May'n
+ |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：しほり、PA-NON、Gabriela Robin<br />作曲：菅野よう子
+ |StoryTitle=「グレイス、わたしはシェリルよ」
+ |StoryDesc=マクロス・フロンティア船団を訪れたシェリル・ノーム。<br /><br />絢爛豪華なライブステージに立つ彼女にフロンティア<br />船団のファンは歓喜に包まれる。その会場には、偶然にも<br />これから関わることとなるランカとアルトの姿もあった。<br />シェリルの魅力たっぷりのステージが今、始まる！
+ |BuyURL=https://recochoku.jp/song/S20279291/single?ds=34296067
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

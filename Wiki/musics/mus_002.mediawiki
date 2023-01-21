@@ -1,0 +1,32 @@
+{{Music
+ |Name=PLANET DANCE
+ |ID=2
+ |Cov=2
+ |Cd=3
+ |Nam=2
+ |Div=2
+ |Ma=1
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=2
+ |VariationId=0
+ |Dsc=2
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=2
+ |Exp=1
+ |OfficialName=PLANET DANCE
+ |VocalName=Fire Bomber
+ |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：K.INOJO<br />作曲：須藤英樹
+ |StoryTitle=「待たせたな！」
+ |StoryDesc=マクロス7船団の片隅で人気を博し始めているバンド、<br />Fire Bomber。メンバー全員が高い技術を持っている。<br /><br />しかし、メインボーカルの熱気バサラという男が曲者<br />だった。この日もバサラはライブに遅刻したばかりか、<br />なんとはるか上空からステージ上に降り立ってみせた。
+ |BuyURL=https://recochoku.jp/song/S22001139/
+ |BannerId=2
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

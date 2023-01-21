@@ -1,0 +1,32 @@
+{{Music
+ |Name=いけないボーダーライン
+ |ID=20
+ |Cov=20
+ |Cd=11
+ |Nam=20
+ |Div=20
+ |Ma=3
+ |SerieId=1
+ |SerieLogoId=1
+ |WavId=20
+ |VariationId=0
+ |Dsc=20
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=3
+ |OfficialName=いけないボーダーライン
+ |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：西直紀<br />作曲：コモリタミノル
+ |StoryTitle=「ルンルン、ルンルン、ルンピカー！」
+ |StoryDesc=惑星アル・シャハルでのヴァール鎮圧ライブの最中、<br />正体不明の戦闘機部隊がワルキューレを襲う。<br /><br />敵の猛攻に対しても毅然と歌い続けるワルキューレ。<br />それに触発されたかのように、辺境の惑星から<br />飛び出してきた少女は戦場へと駆け出していく。
+ |BuyURL=https://recochoku.jp/song/S1002571428/
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

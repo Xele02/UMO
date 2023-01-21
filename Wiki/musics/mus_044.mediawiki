@@ -1,0 +1,32 @@
+{{Music
+ |Name=God Bless You
+ |ID=44
+ |Cov=42
+ |Cd=16
+ |Nam=42
+ |Div=42
+ |Ma=2
+ |SerieId=1
+ |SerieLogoId=1
+ |WavId=42
+ |VariationId=0
+ |Dsc=42
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=2
+ |OfficialName=God Bless You
+ |VocalName=ワルキューレ　フレイアΔ鈴木みのり　美雲ΔJUNNA<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　フレイアΔ鈴木みのり　美雲ΔJUNNA<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：北川勝利<br />作曲：北川勝利
+ |StoryTitle=「もしかしてこの雪、ハヤテが降らせて…」
+ |StoryDesc=ウィンダミアとの戦争は拡大の一途を辿り、<br />フレイアの心境にも少なからず影響を及ぼしていた。<br /><br />そんなフレイアを励ますべく、誕生日のサプライズを<br />企画する一同。それぞれが思い思いのプレゼントを準備<br />するなか、ハヤテは何やら特別な装置を用意して…？
+ |BuyURL=https://recochoku.jp/song/S1003536997/
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

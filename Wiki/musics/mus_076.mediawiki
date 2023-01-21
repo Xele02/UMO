@@ -1,0 +1,32 @@
+{{Music
+ |Name=永遠
+ |ID=76
+ |Cov=74
+ |Cd=9
+ |Nam=74
+ |Div=74
+ |Ma=1
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=74
+ |VariationId=0
+ |Dsc=74
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=永遠
+ |VocalName=シェリル・ノーム starring May'n
+ |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：Gabriela Robin<br />作曲：菅野よう子
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S20279295/single?ds=34296067
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

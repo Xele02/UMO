@@ -1,0 +1,32 @@
+{{Music
+ |Name=pink monsoon
+ |ID=46
+ |Cov=44
+ |Cd=9
+ |Nam=44
+ |Div=44
+ |Ma=2
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=44
+ |VariationId=0
+ |Dsc=44
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=2
+ |OfficialName=pink monsoon
+ |VocalName=シェリル・ノーム starring May'n
+ |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：Gabriela Robin<br />作曲：菅野よう子
+ |StoryTitle=「わたしは違うわ。ぜーんぶ生まれたままよ」
+ |StoryDesc=フロンティア船団でつかの間の休息を満喫する<br />シェリル…と、それに付き合わされるアルト。<br /><br />「銀河の妖精」としては見せることのない、<br />シェリルの自然な魅力にあてられる。だが<br />それすらも、彼女が持つ多くの武器の1つに過ぎない。
+ |BuyURL=https://recochoku.jp/song/S20271889/single?ds=34296067
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

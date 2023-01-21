@@ -1,0 +1,32 @@
+{{Music
+ |Name=禁断のエリクシア
+ |ID=64
+ |Cov=62
+ |Cd=10
+ |Nam=62
+ |Div=62
+ |Ma=3
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=62
+ |VariationId=0
+ |Dsc=62
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=3
+ |OfficialName=禁断のエリクシア
+ |VocalName=シェリル・ノーム starring May'n
+ |Description=作品：劇場版マクロスF〜サヨナラノツバサ〜<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：Gabriela Robin<br />作曲：菅野よう子
+ |StoryTitle=「歌は命だと思ってた」
+ |StoryDesc=バジュラの襲撃から3か月の時が経ったフロンティア<br />では、シェリルのライブが開催されようとしていた。<br /><br />無残に破壊されていた街並みも復興し、その一角に<br />設けられた特別ステージに人々が集まっていた。<br />まるでこのひと時は、戦いの傷跡を忘れるかのように。
+ |BuyURL=https://recochoku.jp/song/S21029017/
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

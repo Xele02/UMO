@@ -1,0 +1,32 @@
+{{Music
+ |Name=唇の凍傷
+ |ID=138
+ |Cov=139
+ |Cd=32
+ |Nam=132
+ |Div=132
+ |Ma=3
+ |SerieId=1
+ |SerieLogoId=1
+ |WavId=139
+ |VariationId=0
+ |Dsc=132
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=0
+ |DivaMulti=5
+ |Exp=3
+ |OfficialName=唇の凍傷
+ |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：劇場版マクロスΔ 絶対LIVE!!!!!!<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：椿山日南子<br />作曲：椿山日南子
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S1012579859/single?ds=1018736694
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

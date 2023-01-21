@@ -1,0 +1,32 @@
+{{Music
+ |Name=SEVENTH MOON
+ |ID=48
+ |Cov=46
+ |Cd=3
+ |Nam=46
+ |Div=46
+ |Ma=1
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=46
+ |VariationId=0
+ |Dsc=46
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=SEVENTH MOON
+ |VocalName=Fire Bomber
+ |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：K.INOJO<br />作曲：河内淳貴
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S22001142/
+ |BannerId=2
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

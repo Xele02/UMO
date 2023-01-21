@@ -1,0 +1,32 @@
+{{Music
+ |Name=What 'bout my star?
+ |ID=9
+ |Cov=9
+ |Cd=6
+ |Nam=9
+ |Div=9
+ |Ma=1
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=9
+ |VariationId=0
+ |Dsc=9
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=What 'bout my star?
+ |VocalName=シェリル・ノーム starring May'n
+ |Description=作品：マクロスF<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：hal<br />作曲：菅野よう子
+ |StoryTitle=「結構いいところね、フロンティアって」
+ |StoryDesc=ライブのためにマクロス・フロンティア船団を訪れた<br />「銀河の妖精」シェリル・ノーム。<br /><br />イヤリングの行方を追って、アルトと再会した彼女は、<br />ライブでは見られない無邪気な表情でアルトの手を引き<br />フロンティアの街を満喫する。<br />
+ |BuyURL=https://recochoku.jp/song/S22001446/
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

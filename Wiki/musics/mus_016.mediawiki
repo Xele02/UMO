@@ -1,0 +1,32 @@
+{{Music
+ |Name=トライアングラー（fight on stage）
+ |ID=16
+ |Cov=16
+ |Cd=6
+ |Nam=16
+ |Div=16
+ |Ma=2
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=16
+ |VariationId=0
+ |Dsc=16
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=2
+ |Exp=2
+ |OfficialName=トライアングラー（fight on stage）
+ |VocalName=ランカ・リー＝中島愛、シェリル・ノーム starring May'n
+ |Description=作品：マクロスF<br /><br />歌手：ランカ・リー＝中島愛、<br />　　　シェリル・ノーム starring May'n<br /><br />作詞：Gabriela Robin<br />作曲：菅野よう子
+ |StoryTitle=「俺を、バルキリーに乗せろ！」
+ |StoryDesc=大小数千隻の宇宙船で構成されているフロンティア船団。<br />そこで偶然にも出会ってしまった早乙女アルト、<br />シェリル・ノーム、ランカ・リー。<br /><br />超時空生命体バジュラとの戦闘、そして恋に翻弄され<br />ながらも、3人の出会いが船団の運命を大きく変える。
+ |BuyURL=https://recochoku.jp/song/S20177066/
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

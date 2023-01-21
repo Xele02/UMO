@@ -1,0 +1,32 @@
+{{Music
+ |Name=ワルキューレのバースデイソング
+ |ID=111
+ |Cov=112
+ |Cd=16
+ |Nam=106
+ |Div=106
+ |Ma=4
+ |SerieId=1
+ |SerieLogoId=1
+ |WavId=112
+ |VariationId=0
+ |Dsc=106
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=4
+ |OfficialName=ワルキューレのバースデイソング
+ |VocalName=ワルキューレ　美雲ΔJUNNA　カナメΔ安野希世乃<br />レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　カナメΔ安野希世乃<br />　　　レイナΔ東山奈央　マキナΔ西田望見<br /><br />作詞：Happy Field<br />作曲：Happy Field
+ |StoryTitle=「どんなものか知りたかったから」
+ |StoryDesc=フレイアのサプライズパーティーの準備が進む中、<br />美雲にも声を掛けていたカナメ。普段の美雲とは違う<br />含みのある返事に、カナメは美雲の変化を感じていた。<br /><br />そしてサプライズ当日、パーティーに現れた美雲は<br />仲間たちとともにフレイアへ歌を贈ったのであった。
+ |BuyURL=https://recochoku.jp/song/S1003536998/single?ds=1004922775
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

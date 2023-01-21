@@ -1,0 +1,32 @@
+{{Music
+ |Name=ルンがピカッと光ったら
+ |ID=80
+ |Cov=80
+ |Cd=12
+ |Nam=23
+ |Div=23
+ |Ma=4
+ |SerieId=1
+ |SerieLogoId=1
+ |WavId=80
+ |VariationId=0
+ |Dsc=23
+ |Strt=10
+ |ValkyrieBattle=3
+ |ValkyrieIntro=4
+ |ValkyrieIntroSky=3
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=4
+ |OfficialName=ルンがピカッと光ったら
+ |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：西直紀<br />作曲：コモリタミノル
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S1003285168/
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

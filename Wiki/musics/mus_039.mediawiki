@@ -1,0 +1,32 @@
+{{Music
+ |Name=ギラギラサマー (^ω^)ノ
+ |ID=39
+ |Cov=37
+ |Cd=9
+ |Nam=37
+ |Div=37
+ |Ma=2
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=37
+ |VariationId=0
+ |Dsc=37
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=2
+ |OfficialName=ギラギラサマー (^ω^)ノ
+ |VocalName=シェリル・ノーム starring May'n
+ |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：Gabriela Robin、富永恵介<br />作曲：菅野よう子
+ |StoryTitle=「わたしの肌を守りなさい！」
+ |StoryDesc=慰安旅行のためマヤン島を訪れたS.M.Sのメンバー。<br />みな水着に着替え、戦いを忘れてリゾートを満喫していた。<br /><br />空も海も風も、気候はまさに夏真っ盛り。<br />街頭ではシェリルのCMが大々的に放映されていて、<br />照りつける太陽に負けない存在感を放っていた。
+ |BuyURL=https://recochoku.jp/song/S20279292/
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

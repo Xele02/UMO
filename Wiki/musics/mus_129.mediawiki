@@ -1,0 +1,32 @@
+{{Music
+ |Name=Songbird
+ |ID=129
+ |Cov=130
+ |Cd=17
+ |Nam=123
+ |Div=123
+ |Ma=3
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=130
+ |VariationId=0
+ |Dsc=123
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=3
+ |OfficialName=Songbird
+ |VocalName=ランカ・リー＝中島愛
+ |Description=作品：マクロスF<br /><br />歌手：ランカ・リー＝中島愛<br /><br />作詞：銀色夏生<br />作曲：菅野よう子
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S20370422/single?ds=34093409
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

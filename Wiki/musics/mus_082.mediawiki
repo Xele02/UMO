@@ -1,0 +1,32 @@
+{{Music
+ |Name=宇宙兄弟船
+ |ID=82
+ |Cov=79
+ |Cd=1
+ |Nam=78
+ |Div=78
+ |Ma=1
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=79
+ |VariationId=0
+ |Dsc=78
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=宇宙兄弟船
+ |VocalName=
+ |Description=楽曲詳細 078
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=
+ |BannerId=
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

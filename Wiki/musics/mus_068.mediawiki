@@ -1,0 +1,32 @@
+{{Music
+ |Name=SUBMARINE STREET
+ |ID=68
+ |Cov=66
+ |Cd=3
+ |Nam=66
+ |Div=66
+ |Ma=4
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=66
+ |VariationId=0
+ |Dsc=66
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=4
+ |OfficialName=SUBMARINE STREET
+ |VocalName=Fire Bomber
+ |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：K.INOJO<br />作曲：福田俊哉
+ |StoryTitle=「今日こそ絶対目覚めさせてやるぜ！」
+ |StoryDesc=バサラとの接触により、プロトデビルンのシビルは<br />エネルギーを失い、植物プラントの中で眠りについた。<br /><br />彼女を目覚めさせるために、バサラは歌い続けた。<br />何度も何度も、夜な夜な植物プラントへと足を運び、<br />周りの者に不審がられようとも、歌い続けたのだった。
+ |BuyURL=https://recochoku.jp/song/S20141951/
+ |BannerId=2
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

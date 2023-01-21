@@ -1,0 +1,32 @@
+{{Music
+ |Name=ルンに花咲く恋もある
+ |ID=122
+ |Cov=123
+ |Cd=30
+ |Nam=116
+ |Div=116
+ |Ma=3
+ |SerieId=1
+ |SerieLogoId=1
+ |WavId=123
+ |VariationId=0
+ |Dsc=116
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=3
+ |OfficialName=ルンに花咲く恋もある
+ |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：劇場版マクロスΔ 絶対LIVE!!!!!!<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：西直紀<br />作曲：コモリタミノル
+ |StoryTitle=「考えとる暇があったら飛び続けんきゃね！」
+ |StoryDesc=歌に恋に自らの人生をかけて突き進んでいくフレイア。<br />花のように短い人生であろうとも、幸せを掴むと<br />覚悟を決めたならば、考えているような暇はないのだ。<br /><br />ピカピカ光るルンとともに咲き誇る恋の花は、今日も、<br />そしてこれからも大好きな人の隣で幸せを歌い続ける。
+ |BuyURL=https://recochoku.jp/song/S1009147843/single?ds=1013650104
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

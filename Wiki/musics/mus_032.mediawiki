@@ -1,0 +1,32 @@
+{{Music
+ |Name=POWER TO THE DREAM
+ |ID=32
+ |Cov=32
+ |Cd=4
+ |Nam=32
+ |Div=32
+ |Ma=1
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=32
+ |VariationId=0
+ |Dsc=32
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=POWER TO THE DREAM
+ |VocalName=Fire Bomber
+ |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：K.INOJO<br />作曲：福山芳樹
+ |StoryTitle=「俺の歌を、俺より先に歌い出すとは…」
+ |StoryDesc=バサラの歌に宿るサウンドエナジー。<br />その力は、敵味方問わず多くの者の心を変えていった。<br /><br />大勢の敵に襲われて窮地に陥るバサラたち。そのとき、<br />敵であったはずのギギルがバサラの歌を歌い始めた。<br />その歌声は、拙くも熱い心を感じさせるものだった。
+ |BuyURL=https://recochoku.jp/song/S20141957/single?ds=34295745
+ |BannerId=2
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

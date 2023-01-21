@@ -1,0 +1,32 @@
+{{Music
+ |Name=君に届け→
+ |ID=132
+ |Cov=133
+ |Cd=4
+ |Nam=126
+ |Div=126
+ |Ma=1
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=133
+ |VariationId=0
+ |Dsc=126
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=君に届け→
+ |VocalName=Fire Bomber
+ |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：M.MEG<br />作曲：M.PROJECT
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S20141956/single?ds=34295745
+ |BannerId=2
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

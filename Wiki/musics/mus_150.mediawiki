@@ -1,0 +1,32 @@
+{{Music
+ |Name=PILLOW DREAM
+ |ID=150
+ |Cov=151
+ |Cd=1
+ |Nam=144
+ |Div=144
+ |Ma=1
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=151
+ |VariationId=0
+ |Dsc=144
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=PILLOW DREAM
+ |VocalName=
+ |Description=
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=
+ |BannerId=
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

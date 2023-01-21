@@ -1,0 +1,32 @@
+{{Music
+ |Name=サヨナラノツバサ 〜 the end of triangle
+ |ID=157
+ |Cov=158
+ |Cd=36
+ |Nam=151
+ |Div=151
+ |Ma=3
+ |SerieId=1
+ |SerieLogoId=1
+ |WavId=158
+ |VariationId=0
+ |Dsc=151
+ |Strt=10
+ |ValkyrieBattle=2
+ |ValkyrieIntro=2
+ |ValkyrieIntroSky=2
+ |DivaSolo=0
+ |DivaMulti=2
+ |Exp=3
+ |OfficialName=サヨナラノツバサ 〜 the end of triangle
+ |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：コラボアルバム「デカルチャー!!ミクスチャー!!!!!」<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：Gabriela Robin、河森正治<br />作曲：菅野よう子
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S1014281203/single?ds=1021144642
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

@@ -1,0 +1,32 @@
+{{Music
+ |Name=Welcome To My FanClub's Night!
+ |ID=13
+ |Cov=13
+ |Cd=6
+ |Nam=13
+ |Div=13
+ |Ma=2
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=13
+ |VariationId=0
+ |Dsc=13
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=2
+ |OfficialName=Welcome To My FanClub's Night!
+ |VocalName=シェリル・ノーム starring May'n
+ |Description=作品：マクロスF<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：hal<br />作曲：菅野よう子
+ |StoryTitle=「いいから、このまま飛んで！」
+ |StoryDesc=歓声で湧き立つライブの最中、シェリルは突如として<br />ステージの上から飛び降りてしまう。<br /><br />落下していくシェリルを慌てて救助したアルトは、<br />彼女の大胆な行動と発想に目を見開く。<br />混乱の中、ライブは無事に成功するのだろうか…？
+ |BuyURL=https://recochoku.jp/song/S22001444/
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

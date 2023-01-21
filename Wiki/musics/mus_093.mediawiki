@@ -1,0 +1,32 @@
+{{Music
+ |Name=MY FRIENDS
+ |ID=93
+ |Cov=91
+ |Cd=1
+ |Nam=90
+ |Div=90
+ |Ma=3
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=91
+ |VariationId=0
+ |Dsc=90
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=3
+ |OfficialName=MY FRIENDS
+ |VocalName=Fire Bomber
+ |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：M.MEG<br />作曲：川野美紀
+ |StoryTitle=「歌いたいときに歌うんじゃないの？」
+ |StoryDesc=女性ボーカルとしてFire Bomberに参加したミレーヌ。<br />最初はバサラの態度に納得できず、度々衝突していた。<br /><br />後に理解を深め、お互いを認め合うバサラとミレーヌ。<br />更にガムリンとの出会いを経たことで、彼女の心は<br />2人の異性の間で大きく揺れ動くことになる。
+ |BuyURL=http://recochoku.jp/song/S14204280/single?ds=34294998
+ |BannerId=2
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

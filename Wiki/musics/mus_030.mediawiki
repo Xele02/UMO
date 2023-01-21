@@ -1,0 +1,32 @@
+{{Music
+ |Name=放課後オーバーフロウ
+ |ID=30
+ |Cov=30
+ |Cd=10
+ |Nam=30
+ |Div=30
+ |Ma=2
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=30
+ |VariationId=0
+ |Dsc=30
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=2
+ |OfficialName=放課後オーバーフロウ
+ |VocalName=ランカ・リー＝中島愛
+ |Description=作品：劇場版マクロスF〜サヨナラノツバサ〜<br /><br />歌手：ランカ・リー＝中島愛<br /><br />作詞：Gabriela Robin<br />作曲：菅野よう子
+ |StoryTitle=「私…アルト君が好きです！」
+ |StoryDesc=バジュラ本星を独占しようとするフロンティア軍に対し、<br />単独で決戦を挑むマクロス・クォーターとS.M.S。<br /><br />ランカはバジュラと対話するため戦場に歌を響かせる。<br />歌う新曲は彼女が初めて作詞をさせてもらった曲で、<br />大切な人への想いが込められた曲だった。
+ |BuyURL=http://recochoku.jp/song/S21014248/single?ds=1004680147
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

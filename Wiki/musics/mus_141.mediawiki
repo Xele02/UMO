@@ -1,0 +1,32 @@
+{{Music
+ |Name=ランナー -デュエット・バージョン-
+ |ID=141
+ |Cov=142
+ |Cd=31
+ |Nam=135
+ |Div=135
+ |Ma=1
+ |SerieId=4
+ |SerieLogoId=4
+ |WavId=142
+ |VariationId=0
+ |Dsc=135
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=0
+ |DivaMulti=2
+ |Exp=1
+ |OfficialName=ランナー -デュエット・バージョン-
+ |VocalName=藤原 誠 ／ 飯島 真理
+ |Description=作品：超時空要塞マクロス<br /><br />歌手：藤原 誠 ／ 飯島 真理<br /><br />作詞：阿佐茜<br />作曲：羽田健太郎
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=
+ |BannerId=1
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

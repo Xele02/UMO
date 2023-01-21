@@ -1,0 +1,32 @@
+{{Music
+ |Name=イゾラド
+ |ID=83
+ |Cov=81
+ |Cd=9
+ |Nam=79
+ |Div=79
+ |Ma=2
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=81
+ |VariationId=0
+ |Dsc=79
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=2
+ |OfficialName=イゾラド
+ |VocalName=シェリル・ノーム starring May'n
+ |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：山田稔明<br />作曲：菅野よう子
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S20279293/single?ds=34296067
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

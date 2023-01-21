@@ -1,0 +1,32 @@
+{{Music
+ |Name=サイレントでなんかいられない
+ |ID=94
+ |Cov=92
+ |Cd=17
+ |Nam=91
+ |Div=91
+ |Ma=1
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=92
+ |VariationId=0
+ |Dsc=91
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=0
+ |DivaMulti=2
+ |Exp=1
+ |OfficialName=サイレントでなんかいられない
+ |VocalName=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
+ |Description=作品：マクロスF<br /><br />歌手：シェリル・ノーム starring May'n、<br />　　　ランカ・リー＝中島愛<br /><br />作詞：一倉宏<br />作曲：菅野よう子
+ |StoryTitle=「わぁ…」「綺麗…」
+ |StoryDesc=銀色に空が輝き、陽気なキャロルが街に流れ始めれば<br />クリスマスを待ちわびる人々の声が聞こえてくる。<br /><br />特製の衣装を身に纏い着々とパーティーの準備を進める<br />シェリル・ノームとランカ・リーの2人。彼女たちなら<br />厳かなクリスマスも、最高に賑やかな物にするはずだ。
+ |BuyURL=http://recochoku.jp/song/S20370423/single?ds=34093409
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

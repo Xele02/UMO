@@ -1,0 +1,32 @@
+{{Music
+ |Name=…だけどベイビー！！
+ |ID=106
+ |Cov=107
+ |Cd=1
+ |Nam=101
+ |Div=101
+ |Ma=1
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=107
+ |VariationId=0
+ |Dsc=101
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=…だけどベイビー！！
+ |VocalName=チエ・カジウラ
+ |Description=作品：マクロス7<br /><br />歌手：チエ・カジウラ<br /><br />作詞：chie<br />作曲：KANAME
+ |StoryTitle=「ガキって言葉大嫌いなの！」
+ |StoryDesc=自由奔放な性格で、子供扱いされることを嫌っている<br />ミレーヌ。それは両親に対しても同じで、子供扱いに<br />対する反発心から、1人暮らしを始めてしまうほどだ。<br /><br />そんな性格を表しているかのように、歌の内容も恋愛に<br />直情的だったりするのだが、本人の自覚はというと…？
+ |BuyURL=http://recochoku.jp/song/S21997182/single?ds=34294998
+ |BannerId=2
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

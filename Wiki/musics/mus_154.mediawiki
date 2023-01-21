@@ -1,0 +1,32 @@
+{{Music
+ |Name=0-G Love【MIRROR ver.】
+ |ID=154
+ |Cov=155
+ |Cd=1
+ |Nam=148
+ |Div=148
+ |Ma=1
+ |SerieId=4
+ |SerieLogoId=4
+ |WavId=155
+ |VariationId=0
+ |Dsc=148
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=0-G Love（ミラー）
+ |VocalName=
+ |Description=
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=
+ |BannerId=
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

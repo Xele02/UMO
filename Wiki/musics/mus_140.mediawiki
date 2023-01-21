@@ -1,0 +1,32 @@
+{{Music
+ |Name=時の迷宮
+ |ID=140
+ |Cov=141
+ |Cd=35
+ |Nam=134
+ |Div=134
+ |Ma=1
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=141
+ |VariationId=0
+ |Dsc=134
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=時の迷宮
+ |VocalName=ランカ・リー＝中島愛、シェリル・ノーム starring May'n
+ |Description=作品：劇場短編マクロスF ～時の迷宮～<br /><br />歌手：ランカ・リー＝中島愛、<br />　　　シェリル・ノーム starring May'n<br /><br />作詞：菅野よう子・児玉雨子<br />作曲：菅野よう子
+ |StoryTitle=
+ |StoryDesc=
+ |BuyURL=https://recochoku.jp/song/S1012782376/single?ds=1019050243
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

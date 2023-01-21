@@ -1,0 +1,32 @@
+{{Music
+ |Name=ランカと Brand New Peach
+ |ID=101
+ |Cov=102
+ |Cd=23
+ |Nam=87
+ |Div=87
+ |Ma=1
+ |SerieId=2
+ |SerieLogoId=2
+ |WavId=102
+ |VariationId=0
+ |Dsc=87
+ |Strt=10
+ |ValkyrieBattle=5
+ |ValkyrieIntro=9999
+ |ValkyrieIntroSky=9999
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=1
+ |OfficialName=ランカと Brand New Peach
+ |VocalName=ランカ・リー＝中島愛
+ |Description=作品：マクロスF<br /><br />歌手：ランカ・リー＝中島愛<br /><br />作詞：ROBIN ROBINSON<br />作曲：菅野よう子
+ |StoryTitle=「アルト君がいてくれたから…」
+ |StoryDesc=今や売れっ子として忙しい日々を過ごすランカ。<br />こうして憧れのステージに立てたのも、アルトが<br />背中を押してくれたおかげだとランカは感じていた。<br /><br />そして、ランカの心の中で芽生える甘く切ない感情。<br />ランカがそれを理解するのは、もう少しだけ後の話…
+ |BuyURL=http://recochoku.jp/song/S1007350869/single?ds=1010848272
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

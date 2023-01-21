@@ -1,0 +1,32 @@
+{{Music
+ |Name=愛・おぼえていますか
+ |ID=11
+ |Cov=11
+ |Cd=1
+ |Nam=11
+ |Div=11
+ |Ma=2
+ |SerieId=4
+ |SerieLogoId=4
+ |WavId=11
+ |VariationId=0
+ |Dsc=11
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=2
+ |OfficialName=愛・おぼえていますか
+ |VocalName=飯島真理
+ |Description=作品：超時空要塞マクロス 愛・おぼえていますか<br /><br />歌手：飯島真理<br /><br />作詞：安井かずみ<br />作曲：加藤和彦
+ |StoryTitle=「わたし、歌うわ。思いっきり！」
+ |StoryDesc=最終決戦の最中、輝からミンメイへ託されたのは、<br />古い記録に残されていた楽曲だった。<br /><br />輝の言葉によって迷いを振り切ったミンメイは、<br />戦場にその身をさらして静かに歌い始める。<br />遥か昔、誰かが歌った色あせることのないラブソングを。
+ |BuyURL=https://recochoku.jp/song/S20268933/single?ds=34294998
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

@@ -1,0 +1,32 @@
+{{Music
+ |Name=私の彼はパイロット（PartⅠ）
+ |ID=19
+ |Cov=19
+ |Cd=2
+ |Nam=19
+ |Div=19
+ |Ma=2
+ |SerieId=4
+ |SerieLogoId=4
+ |WavId=19
+ |VariationId=0
+ |Dsc=19
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=2
+ |OfficialName=私の彼はパイロット（PartⅠ）
+ |VocalName=飯島真理
+ |Description=作品：超時空要塞マクロス<br /><br />歌手：飯島真理<br /><br />作詞：阿佐茜<br />作曲：羽田健太郎
+ |StoryTitle=「歌ってくれないか？みんなのために」
+ |StoryDesc=ゼントラーディとの戦争で傷ついた故郷。<br />そのあまりの惨状に涙を流すミンメイ。<br /><br />そんなミンメイに対して、考えがあると告げる輝。<br />その考えというのが、後に「ミンメイ・アタック」の<br />名で語られることとなる伝説的な作戦だった。
+ |BuyURL=https://recochoku.jp/song/S14225870/
+ |BannerId=1
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]

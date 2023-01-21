@@ -1,0 +1,32 @@
+{{Music
+ |Name=ANGEL VOICE
+ |ID=113
+ |Cov=114
+ |Cd=1
+ |Nam=108
+ |Div=108
+ |Ma=2
+ |SerieId=3
+ |SerieLogoId=3
+ |WavId=114
+ |VariationId=0
+ |Dsc=108
+ |Strt=10
+ |ValkyrieBattle=1
+ |ValkyrieIntro=1
+ |ValkyrieIntroSky=1
+ |DivaSolo=1
+ |DivaMulti=1
+ |Exp=2
+ |OfficialName=ANGEL VOICE
+ |VocalName=Fire Bomber
+ |Description=作品：マクロス ダイナマイト7<br /><br />歌手：Fire Bomber<br /><br />作詞：K.INOJO<br />作曲：菅野よう子
+ |StoryTitle=「歌った…！クジラが！」
+ |StoryDesc=密漁団母艦が発射した反応弾を飲み込み、その爆発にも<br />悠然と耐えた白い銀河クジラの生命力。その姿に改めて<br />感動したバサラは、再び銀河クジラの前で歌い始める。<br /><br />そして、バサラの歌に呼応するかのように銀河クジラは<br />鳴き声を上げた。そう、まるで歌っているかのように…
+ |BuyURL=https://recochoku.jp/song/S14224300/single?ds=34294998
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Music]]
+[[Category:Generated]]
+[[Category:Version_v_0.1]]
