@@ -122,7 +122,7 @@ public class FOCPLKMMCAL
 	public bool HNNPBABEPBP(JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD, EAJCBFGKKFA_FriendInfo IPGFALGDLHN_FriendInfo)
 	{
 		TodoLogger.Log(0, "HNNPBABEPBP");
-		return false;
+		return true;
 	}
 
 	//// RVA: 0x13E9200 Offset: 0x13E9200 VA: 0x13E9200

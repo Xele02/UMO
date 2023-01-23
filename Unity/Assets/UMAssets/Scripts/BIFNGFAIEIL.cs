@@ -1,16 +1,29 @@
 
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+
 public class BIFNGFAIEIL
 {
 	public static int AEGKCNDEHDO; // 0x4
 	//private PJKPGLKHGIP BNEGNOBCHGP = new PJKPGLKHGIP(); // 0x8
-	private string ELLBAAFKDCH; // 0xC
-	private string BOFPFGNHBAJ; // 0x10
+	private string ELLBAAFKDCH_FilePath; // 0xC
+	private string BOFPFGNHBAJ_SavePath; // 0x10
 	private int MLJGJMGNNPP; // 0x14
 
 	public static BIFNGFAIEIL HHCJCDFCLOB { get; private set; } // 0x0 NKACBOEHELJ OKPMHKNCNAL
 
 	//// RVA: 0xC7FF90 Offset: 0xC7FF90 VA: 0xC7FF90
-	//public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
+	{
+		HHCJCDFCLOB = this;
+		CIOECGOMILE.HHCJCDFCLOB.BJCPJPLPDIH.Add(LEPNMDBJAIE);
+		CIOECGOMILE.HHCJCDFCLOB.BFHJLPDOEPB.Add(KGMNAMKNADC);
+		BOFPFGNHBAJ_SavePath = Application.persistentDataPath + "/SaveData";
+		if (!Directory.Exists(BOFPFGNHBAJ_SavePath))
+			Directory.CreateDirectory(BOFPFGNHBAJ_SavePath);
+		ELLBAAFKDCH_FilePath = BOFPFGNHBAJ_SavePath + "/snscache.bin";
+	}
 
 	//// RVA: 0xC801A4 Offset: 0xC801A4 VA: 0xC801A4
 	//public static void BLICHJOLKAO() { }
@@ -25,10 +38,16 @@ public class BIFNGFAIEIL
 	//public JNNDPBFDEAM.PBOLAGAGMMD MMCALIAHFNI(long JHNMKKNEENE, int AJIDLAGFPGM, bool FBBNPFFEJBN) { }
 
 	//// RVA: 0xC80F54 Offset: 0xC80F54 VA: 0xC80F54
-	//public void LEPNMDBJAIE(List<string> OHNJJIMGKGK) { }
+	public void LEPNMDBJAIE(List<string> OHNJJIMGKGK)
+	{
+		TodoLogger.Log(0, "LEPNMDBJAIE");
+	}
 
 	//// RVA: 0xC810DC Offset: 0xC810DC VA: 0xC810DC
-	//public void KGMNAMKNADC() { }
+	public void KGMNAMKNADC()
+	{
+		TodoLogger.Log(0, "KGMNAMKNADC");
+	}
 
 	//// RVA: 0xC81108 Offset: 0xC81108 VA: 0xC81108
 	//public bool FMHMCMIAOAC() { }

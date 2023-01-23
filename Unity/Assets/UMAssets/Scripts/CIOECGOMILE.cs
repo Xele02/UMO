@@ -8,6 +8,8 @@ using XeApp.Game;
 
 public class CIOECGOMILE
 {
+	public delegate void LHGEIKBCBBP(List<string> OHNJJIMGKGK);
+
 	private FENCAJJBLBH DCLNIAMEGLA; // 0x1C
 	private bool DICMPMEEIJL; // 0x20
 	private bool JNDDNFEINEH; // 0x21
@@ -27,11 +29,11 @@ public class CIOECGOMILE
 	// public JKNGJFOBADP JANMJPOKLFL = new JKNGJFOBADP(); // 0x88
 	// public JKNGJFOBADP EBEGGFECPOE = new JKNGJFOBADP(); // 0x8C
 	private StringBuilder DGMPLJFDOHF = new StringBuilder(); // 0x90
-	// public List<CIOECGOMILE.LHGEIKBCBBP> BJCPJPLPDIH = new List<CIOECGOMILE.LHGEIKBCBBP>(); // 0x94
+	public List<LHGEIKBCBBP> BJCPJPLPDIH = new List<LHGEIKBCBBP>(); // 0x94
 	public bool JHOKIPPIHII; // 0x98
 	public List<string> PMHLJAIGBGK; // 0x9C
 	public List<int> FMEDFGOMNBK; // 0xA0
-	// public BBHNACPENDM.EMHDCKMFCGE KDLBAGCENNC; // 0xA4
+	public BBHNACPENDM_ServerSaveData.EMHDCKMFCGE KDLBAGCENNC; // 0xA4
 	public List<Action> BFHJLPDOEPB = new List<Action>(); // 0xA8
 	private static string AMIPEDALBJP = "episode_key_{0:0000}_{1:00}"; // 0x8
 	private static string AIFFODKHLJE = "free_key_{0:000}_{1:0}_{2:00}"; // 0xC
@@ -456,6 +458,9 @@ public class CIOECGOMILE
 	public bool AIKJMHBDABF(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG, List<long> AMOMNBEAHBF)
 	{
 		TodoLogger.Log(0, "AIKJMHBDABF");
+		PMHLJAIGBGK = new List<string>();
+		FMEDFGOMNBK = new List<int>();
+		KDLBAGCENNC = new BBHNACPENDM_ServerSaveData.EMHDCKMFCGE(null, null, false, 0);
 		BHFHGFKBOHH();
 		return false;
 	}
@@ -464,6 +469,9 @@ public class CIOECGOMILE
 	public bool LOOCNGEPAMI(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG, int HJBLIJOGNPC)
 	{
 		TodoLogger.Log(0, "LOOCNGEPAMI");
+		PMHLJAIGBGK = new List<string>();
+		FMEDFGOMNBK = new List<int>();
+		KDLBAGCENNC = new BBHNACPENDM_ServerSaveData.EMHDCKMFCGE(null, null, false, 0);
 		BHFHGFKBOHH();
 		return false;
 	}
@@ -492,6 +500,9 @@ public class CIOECGOMILE
 	public bool BMKEBEJJKBE(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG, ulong FIBPIDELFBB)
 	{
 		TodoLogger.Log(0, "BMKEBEJJKBE");
+		PMHLJAIGBGK = new List<string>();
+		FMEDFGOMNBK = new List<int>();
+		KDLBAGCENNC = new BBHNACPENDM_ServerSaveData.EMHDCKMFCGE(null, null, false, 0);
 		BHFHGFKBOHH();
 		return false;
 	}

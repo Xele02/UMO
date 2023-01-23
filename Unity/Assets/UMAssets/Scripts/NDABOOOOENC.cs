@@ -1,4 +1,6 @@
 
+using System.Collections.Generic;
+
 public class NDABOOOOENC
 {
 	private static string[] JIMKNDJMCID = new string[31] {"", "CgkIt5LD99oYEAIQAQ", "CgkIt5LD99oYEAIQAg", "CgkIt5LD99oYEAIQAw", "CgkIt5LD99oYEAIQBA", "CgkIt5LD99oYEAIQBQ", 
@@ -54,7 +56,11 @@ public class NDABOOOOENC
 	// public void GLHANCMGNDM(int PPFNGGCBJKC, double JBGEEPFKIGG = 100) { }
 
 	// // RVA: 0x1ADC758 Offset: 0x1ADC758 VA: 0x1ADC758
-	// public List<int> HHKNOHKGAHP() { }
+	public List<int> HHKNOHKGAHP()
+	{
+		TodoLogger.Log(0, "HHKNOHKGAHP");
+		return new List<int>();
+	}
 
 	// // RVA: 0x1ADCB04 Offset: 0x1ADCB04 VA: 0x1ADCB04
 	// public void NKFNJMEELMP(List<int> PKDKPCOOPLL) { }
