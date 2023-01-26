@@ -486,12 +486,12 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 								// set vars
 								b = false;
 								val = 0;
-								if (!LBHPMGDNPHK(musicInfo.GHBPLHBNMBK, DEPGBBJMFED_Serie))
+								if (!LBHPMGDNPHK(musicInfo.GHBPLHBNMBK_FreeMusicId, DEPGBBJMFED_Serie))
 									continue;
 							}
 						}
 						IBJAKJJICBC songInfo = new IBJAKJJICBC();
-						songInfo.KHEKNNFCAOI(musicInfo.GHBPLHBNMBK, b, time.Millisecond/*??*/, val, JHNMKKNEENE_Date, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.FPGDAPAILAK_ExtremeUnlock == 2, false, JCOJKAHFADL);
+						songInfo.KHEKNNFCAOI(musicInfo.GHBPLHBNMBK_FreeMusicId, b, time.Millisecond/*??*/, val, JHNMKKNEENE_Date, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.FPGDAPAILAK_ExtremeUnlock == 2, false, JCOJKAHFADL);
 						songInfo.MFJKNCACBDG = (int)type;
 						songInfo.GDLNCHCPMCK_HasBoost = b2;
 						if(EHBPHDPHPKF)

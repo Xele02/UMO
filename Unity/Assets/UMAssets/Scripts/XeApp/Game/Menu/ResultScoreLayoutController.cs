@@ -66,6 +66,7 @@ namespace XeApp.Game.Menu
 			layoutPlayerRank = transform.Find("PlayerRank").GetComponent<LayoutResultPlayerRank>();
 			popupAchieveReward = new ResultPopupAchieveReward();
 			playlog = Database.Instance.gameResult.gameLog;
+			layoutPlaylog.playlog = playlog;
 			playlogGraphParts = transform.Find("PlaylogGraphParts").GetComponent<LayoutResultPlaylogGraphParts>();
 			if(isInTutorial)
 			{

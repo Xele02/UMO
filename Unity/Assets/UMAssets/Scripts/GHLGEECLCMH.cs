@@ -5,7 +5,7 @@ public class GHLGEECLCMH
 {
 	private HighScoreRating JPJHBJAHPFP_HsRating; // 0x8
 	private HighScoreRating HOHNHJEFCBF_PrevHsRating; // 0xC
-	private NGJOPPIGCPM_ResultData.DFJMELLLNLH HBLFKGAKHHN; // 0x30
+	private NGJOPPIGCPM_ResultData.DFJMELLLNLH HBLFKGAKHHN_RankState; // 0x30
 	private int MIIAIBIGKOD_RankNum; // 0x34
 
 	public HighScoreRatingRank.Type LLNHMMBFPMA_ScoreRatingRanking { get; private set; } // 0x10 EFILGAFDFOD FBMPLMNOLFC KBAOHMCAJIO
@@ -23,7 +23,7 @@ public class GHLGEECLCMH
 		JNMFKOHFAFB_PublicStatus st = NIMOGBDCMLJ.AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus;
 		JPJHBJAHPFP_HsRating = new HighScoreRating();
 		HOHNHJEFCBF_PrevHsRating = new HighScoreRating();
-		HBLFKGAKHHN = 0;
+		HBLFKGAKHHN_RankState = 0;
 		MIIAIBIGKOD_RankNum = 0;
 		JPJHBJAHPFP_HsRating.CalcUtaRate(st.AEIADFODLMC_HsRating);
 		HOHNHJEFCBF_PrevHsRating.CalcUtaRate(st.AEIADFODLMC_HsRating);
@@ -52,7 +52,7 @@ public class GHLGEECLCMH
 	{
 		JPJHBJAHPFP_HsRating = new HighScoreRating();
 		HOHNHJEFCBF_PrevHsRating = new HighScoreRating();
-		HBLFKGAKHHN = 0;
+		HBLFKGAKHHN_RankState = 0;
 		MIIAIBIGKOD_RankNum = 0;
 		HFEFAGMKPKH_UtaRateAttr = new int[1];
 		OJFCIAJEJCI_PrevUtaRateAttr = new int[1];
@@ -77,9 +77,9 @@ public class GHLGEECLCMH
 	}
 
 	//// RVA: 0xAA63B8 Offset: 0xAA63B8 VA: 0xAA63B8
-	public NGJOPPIGCPM_ResultData.DFJMELLLNLH AGKAOEEFAAH()
+	public NGJOPPIGCPM_ResultData.DFJMELLLNLH AGKAOEEFAAH_GetRankState()
 	{
-		return HBLFKGAKHHN;
+		return HBLFKGAKHHN_RankState;
 	}
 
 	//// RVA: 0xAA63C0 Offset: 0xAA63C0 VA: 0xAA63C0
@@ -100,7 +100,7 @@ public class GHLGEECLCMH
 	//// RVA: 0xAA6C20 Offset: 0xAA6C20 VA: 0xAA6C20
 	public void GLAHMLIFAPB(int KIMIHIBGONK_FreeMusicId, int FJFCNGNGIBN = 0)
 	{
-		HBLFKGAKHHN = 0;
+		HBLFKGAKHHN_RankState = 0;
 		MIIAIBIGKOD_RankNum = 0;
 		int idx = 0;
 		for(int i = 0; i < JPJHBJAHPFP_HsRating.hsRatingMusicData.Length; i++)
@@ -129,7 +129,7 @@ public class GHLGEECLCMH
 			if (JPJHBJAHPFP_HsRating.hsRatingMusicData[9, FJFCNGNGIBN].Score < ADKDHKMPMHP_UtaRate)
 				val = NGJOPPIGCPM_ResultData.DFJMELLLNLH.HHLBGKEDNGH;
 		}
-		HBLFKGAKHHN = val;
+		HBLFKGAKHHN_RankState = val;
 		MIIAIBIGKOD_RankNum = JPJHBJAHPFP_HsRating.hsRatingMusicData[idx, FJFCNGNGIBN].RankNum;
 	}
 }

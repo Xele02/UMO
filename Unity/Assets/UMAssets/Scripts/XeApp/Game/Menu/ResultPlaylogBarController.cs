@@ -71,7 +71,7 @@ namespace XeApp.Game.Menu
 			{
 				m_ResultDataList[(int)list[i].result].count++;
 			}
-			for(int i = 0; i < 9; i++)
+			for(int i = 0; i < 5; i++)
 			{
 				m_ResultDataList[i].image.enabled = m_ResultDataList[i].count > 0;
 				m_ResultDataList[i].image.material = new Material(m_ResultDataList[i].image.material);

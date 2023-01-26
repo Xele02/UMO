@@ -147,7 +147,7 @@ public class NGJOPPIGCPM_ResultData
 		GHLGEECLCMH data2 = new GHLGEECLCMH();
 		data2.KHEKNNFCAOI(GHBPLHBNMBK_FreeMusicId, LCKMBHDMPIP_SaveRecordMusic, OEELDFNNLKK_SaveRecordMusic2);
 		data2.GLAHMLIFAPB(GHBPLHBNMBK_FreeMusicId, 0);
-		JLBJIIBGCOE_RankState = data2.AGKAOEEFAAH();
+		JLBJIIBGCOE_RankState = data2.AGKAOEEFAAH_GetRankState();
 		HIBKLIFIBKA_RankNum = data2.LGPGIGPHJJB_GetRankNum();
 		IHEKLEFBAEL_PrevUtaRate = data2.KNLMOBHBPII_PrevUtaRate;
 		JAFCLELELID_PrevScoreRatingRanking = data2.KIPEPDKGCCG_PrevScoreRatingRanking;

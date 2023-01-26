@@ -143,10 +143,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E1ADC Offset: 0x18E1ADC VA: 0x18E1ADC
 		private void SetRankingUV(NGJOPPIGCPM_ResultData.DFJMELLLNLH rankState)
 		{
-			TexUVData data = m_uvMan.GetUVData(rankState == NGJOPPIGCPM_ResultData.DFJMELLLNLH.HJNNKCMLGFL ? "" : (rankState == NGJOPPIGCPM_ResultData.DFJMELLLNLH.HHLBGKEDNGH ? "g_r_rankin_bg" : "g_r_rankin_bg02"));
-			for(int i = 0; i < imageSingRankBg.Length; i++)
+			if (rankState != NGJOPPIGCPM_ResultData.DFJMELLLNLH.HJNNKCMLGFL)
 			{
-				imageSingRankBg[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(data);
+				TexUVData data = m_uvMan.GetUVData(rankState == NGJOPPIGCPM_ResultData.DFJMELLLNLH.HHLBGKEDNGH ? "g_r_rankin_bg" : "g_r_rankin_bg02");
+				for (int i = 0; i < imageSingRankBg.Length; i++)
+				{
+					imageSingRankBg[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(data);
+				}
 			}
 		}
 
