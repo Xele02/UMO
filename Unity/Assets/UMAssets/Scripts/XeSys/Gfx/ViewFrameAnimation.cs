@@ -37,7 +37,7 @@ namespace XeSys.Gfx
 		public int FrameCount { get { return Mathf.RoundToInt(m_AnimCount / m_FrameSec); } private set { return; } } //0x1EE95AC 0x1EE95C4
 		// public float BaseX { get; set; } 0x1EE95C8 0x1EE95D0
 		// public float BaseY { get; set; } 0x1EE95D8 0x1EE95E0
-		// public int FrameNum { get; } 0x1EE95E8
+		public int FrameNum { get { return data.FrameNum; } } //0x1EE95E8
 		// public string ID { get; set; } 0x1EE9614 0x1EE9640
 		// public TimeMap AnimTimeMap { get; } 0x1EE9670
 		// public int LabelCount { get; } 0x1EE969C

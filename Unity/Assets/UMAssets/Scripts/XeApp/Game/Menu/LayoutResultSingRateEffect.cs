@@ -80,7 +80,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D1840C Offset: 0x1D1840C VA: 0x1D1840C
-		// public void Setup(HighScoreRatingRank.Type type) { }
+		public void Setup(HighScoreRatingRank.Type type)
+		{
+			TextSingRank.text = HighScoreRatingRank.GetRankName(type);
+			SetSingRankIcon(type);
+		}
 
 		// // RVA: 0x1D18978 Offset: 0x1D18978 VA: 0x1D18978
 		// public void SetupCallback(Action onClick, Action onFinished) { }
@@ -143,7 +147,23 @@ namespace XeApp.Game.Menu
 		// private void TouchScreen() { }
 
 		// // RVA: 0x1D18468 Offset: 0x1D18468 VA: 0x1D18468
-		// private void SetSingRankIcon(HighScoreRatingRank.Type type) { }
+		private void SetSingRankIcon(HighScoreRatingRank.Type type)
+		{
+			if(((int)type - 1) <= SingRankArray.Length)
+			{
+				int sheetNum = ((int)type - 1) / 20;
+				for(int i = 0; i < ImageSingRank.Length; i++)
+				{
+					ImageSingRank[i].material = m_icon_texture[sheetNum].mat_mul;
+					ImageSingRank[i].alphaTexture = m_icon_texture[sheetNum].tex_mask;
+					ImageSingRank[i].MaterialMul = m_icon_texture[sheetNum].mat_mul;
+					ImageSingRank[i].MaterialAdd = m_icon_texture[sheetNum].mat_add;
+					ImageSingRank[i].texture = m_icon_texture[sheetNum].tex_base;
+					ImageSingRank[i].TextureName = m_icon_texture[sheetNum].name;
+					ImageSingRank[i].uvRect = SingRankArray[(int)type - 1];
+				}
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71E43C Offset: 0x71E43C VA: 0x71E43C
 		// // RVA: 0x1D18B5C Offset: 0x1D18B5C VA: 0x1D18B5C

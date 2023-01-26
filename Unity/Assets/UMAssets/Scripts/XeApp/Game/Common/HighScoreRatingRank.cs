@@ -1,3 +1,5 @@
+using XeSys;
+
 namespace XeApp.Game.Common
 {
 	public class HighScoreRatingRank
@@ -9,7 +11,10 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0xEA7758 Offset: 0xEA7758 VA: 0xEA7758
-		//public static string GetRankName(HighScoreRatingRank.Type type) { }
+		public static string GetRankName(HighScoreRatingRank.Type type)
+		{
+			return MessageManager.Instance.GetMessage("master", "rat_name_" + ((int)type).ToString("D4")).Replace(JpStringLiterals.StringLiteral_12037, "").Replace(" ", "");
+		}
 
 		//// RVA: 0xEA78B4 Offset: 0xEA78B4 VA: 0xEA78B4
 		//public static string GetRankName(int id) { }

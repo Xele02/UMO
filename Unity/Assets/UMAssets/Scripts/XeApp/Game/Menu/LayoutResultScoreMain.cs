@@ -5,6 +5,7 @@ using CriWare;
 using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Game.Common;
+using XeSys;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
@@ -169,7 +170,29 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D12198 Offset: 0x1D12198 VA: 0x1D12198
-		// public void Setup(NGJOPPIGCPM viewData, GameResultData resultData) { }
+		public void Setup(NGJOPPIGCPM_ResultData viewData, GameResultData resultData)
+		{
+			this.viewData = viewData;
+			this.resultData = resultData;
+			for (int i = 0; i < 5; i++)
+			{
+				numberNoteResultCountList[i].SetNumber(0, 0);
+			}
+			numberNoteResultCountList[5].SetNumber(resultData.GetNoteExcellentCount(), 0);
+			numberBonus.SetNumber(viewData.GPMILOPNBPA_Bonus, 0);
+			numberCombo.SetNumber(0, 0);
+			numberScore.SetNumber(0, 0);
+			numberHighScore.SetNumber(viewData.HMDHDKLDPFK_PrevScore, 0);
+			if(IsPerfectFullCombo())
+			{
+				layoutComboMarkTbl.StartChildrenAnimGoStop("pfc");
+			}
+			layoutComboRankAnim.StartChildrenAnimGoStop(viewData.ILNBLNECEKB_RankCombo, viewData.ILNBLNECEKB_RankCombo);
+			for(int i = 0; i < layoutScoreRankIconList.Length; i++)
+			{
+				layoutScoreRankIconList[i].StartChildrenAnimGoStop("st_wait");
+			}
+		}
 
 		// // RVA: 0x1D1253C Offset: 0x1D1253C VA: 0x1D1253C
 		// public void ChangeViewForSkipResult() { }
@@ -194,53 +217,322 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_StartAnim()
 		{
 			//0x1D17478
-			TodoLogger.Log(0, "Co_StartAnim");
-			yield return null;
+			yield return Co_WaitForSeconds(0.5f, true);
+			yield return Co_CountUpNotes();
+			yield return Co_CountUpCombo();
+			yield return Co_FullComboAnim();
+			yield return Co_EnterComboRank();
+			yield return Co_CountUpScore();
+			yield return Co_HighScoreAnim();
+			yield return Co_ScoreRankAnim();
 			if(onFinished != null)
 				onFinished();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71D94C Offset: 0x71D94C VA: 0x71D94C
 		// // RVA: 0x1D127B8 Offset: 0x1D127B8 VA: 0x1D127B8
-		// private IEnumerator Co_CountUpNotes() { }
+		private IEnumerator Co_CountUpNotes()
+		{
+			//0x1D15BC8
+			layoutMainAnim.StartChildrenAnimGoStop("go_score", "st_score");
+			yield return Co_WaitFrame(layoutMainAnim, countStartFrameList[6], true);
+			bool countUpEnd = false;
+			List<float> l = new List<float>();
+			NumberAnimationUtility.MakeAccelerationTimeList(10, 0.3f, 0.02f, ref l);
+			PlayCountUpLoopSE();
+			SetCountUpValue(CountType.Score, l, (int value) =>
+			{
+				//0x1D146D8
+				numberScore.SetNumber(value, 0);
+			}, () =>
+			{
+				//0x1D1472C
+				return m_isSkiped;
+			}, () =>
+			{
+				//0x1D14750
+				countUpEnd = true;
+			});
+			while (!countUpEnd)
+				yield return null;
+			countUpSEPlayback.Stop();
+			if(!viewData.PMCGHPOGLGM_EnableLiveSkip)
+			{
+				if(viewData.HMDHDKLDPFK_PrevScore < viewData.GCAPLLEIAAI_HighScore)
+				{
+					numberHighScore.SetNumber(viewData.GCAPLLEIAAI_HighScore, 0);
+				}
+			}
+		}
 
 		// // RVA: 0x1D12864 Offset: 0x1D12864 VA: 0x1D12864
-		// private void SetCountUpValue(LayoutResultScoreMain.CountType type, List<float> timerList, Action<int> onChangeNumberCakllback, Func<bool> onSkiped, Action onFinished) { }
+		private void SetCountUpValue(CountType type, List<float> timerList, Action<int> onChangeNumberCakllback, Func<bool> onSkiped, Action onFinished)
+		{
+			RhythmGameConsts.NoteResult res = RhythmGameConsts.NoteResult.None;
+			int count = 0;
+			switch(type)
+			{
+				case CountType.Perfect:
+					res = RhythmGameConsts.NoteResult.Perfect;
+					count = resultData.GetNoteTypeCount(res);
+					break;
+				case CountType.Great:
+					res = RhythmGameConsts.NoteResult.Great;
+					count = resultData.GetNoteTypeCount(res);
+					break;
+				case CountType.Good:
+					res = RhythmGameConsts.NoteResult.Good;
+					count = resultData.GetNoteTypeCount(res);
+					break;
+				case CountType.Bad:
+					res = RhythmGameConsts.NoteResult.Bad;
+					count = resultData.GetNoteTypeCount(res);
+					break;
+				case CountType.Miss:
+					res = RhythmGameConsts.NoteResult.Miss;
+					count = resultData.GetNoteTypeCount(res);
+					break;
+				case CountType.Combo:
+					count = viewData.PBGLMBMEKAA_ComboCount;
+					break;
+				case CountType.Score:
+					count = viewData.GCAPLLEIAAI_HighScore;
+					break;
+				default:
+					count = 0;
+					break;
+			}
+			StartCoroutine(Co_FakeCountup(count, timerList, onChangeNumberCakllback, onSkiped, onFinished));
+			if(res != RhythmGameConsts.NoteResult.None && OnCountupNoteResult != null)
+			{
+				OnCountupNoteResult(res, CalcNoteResultCountUpTime(count, timerList));
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71D9C4 Offset: 0x71D9C4 VA: 0x71D9C4
 		// // RVA: 0x1D12A80 Offset: 0x1D12A80 VA: 0x1D12A80
-		// private IEnumerator Co_FakeCountup(int targetNumber, List<float> countTimeList, Action<int> onChangeNumberCakllback, Func<bool> onSkiped, Action onFinished) { }
+		private IEnumerator Co_FakeCountup(int targetNumber, List<float> countTimeList, Action<int> onChangeNumberCakllback, Func<bool> onSkiped, Action onFinished)
+		{
+			Coroutine co;
+
+			//0x1D16238
+			bool isEnd = false;
+			co = StartCoroutine(NumberAnimationUtility.Co_FakeCountup(targetNumber, countTimeList, onChangeNumberCakllback, () =>
+			{
+				//0x1D14638
+				isEnd = true;
+			}, null));
+			while(!onSkiped() && !isEnd)
+			{
+				yield return null;
+			}
+
+			if (onFinished != null)
+			{
+				onFinished();
+			}
+			if(co != null)
+			{
+				StopCoroutine(co);
+				co = null;
+			}
+			onChangeNumberCakllback(targetNumber);
+
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DA3C Offset: 0x71DA3C VA: 0x71DA3C
 		// // RVA: 0x1D12CA4 Offset: 0x1D12CA4 VA: 0x1D12CA4
-		// private IEnumerator Co_CountUpCombo() { }
+		private IEnumerator Co_CountUpCombo()
+		{
+			//0x1D14760
+			layoutMainAnim.StartChildrenAnimGoStop("go_combo", "st_combo");
+			yield return Co_WaitFrame(layoutMainAnim, countStartFrameList[5], true);
+			bool countUpEnd = false;
+			List<float> f = new List<float>();
+			NumberAnimationUtility.MakeAccelerationTimeList(10, 0.3f, 0.02f, ref f);
+			PlayCountUpLoopSE();
+			SetCountUpValue(CountType.Combo, f, (int value) =>
+			{
+				//0x1D1464C
+				numberCombo.SetNumber(value, 0);
+			}, () =>
+			{
+				//0x1D146A0
+				return m_isSkiped;
+			}, () =>
+			{
+				//0x1D146C4
+				countUpEnd = true;
+			});
+			while (!countUpEnd)
+				yield return null;
+			countUpSEPlayback.Stop();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DAB4 Offset: 0x71DAB4 VA: 0x71DAB4
 		// // RVA: 0x1D12D50 Offset: 0x1D12D50 VA: 0x1D12D50
-		// private IEnumerator Co_FullComboAnim() { }
+		private IEnumerator Co_FullComboAnim()
+		{
+			//0x1D16518
+			if(!IsPerfectFullCombo())
+			{
+				if(!IsFullCombo())
+				{
+					PlaySound(1, true);
+					yield return Co_WaitForSeconds(0.3f, true);
+				}
+				else
+				{
+					layoutFullComboMarkAnim.StartChildrenAnimGoStop("go_in", "st_in");
+					PlaySound(2, true);
+					yield return Co_WaitAnim(layoutFullComboMarkAnim, true);
+					layoutFullComboMarkAnim.StartChildrenAnimLoop("logo_act", "loen_act");
+				}
+			}
+			else
+			{
+				layoutPerfectFullComboMarkAnim.StartChildrenAnimGoStop("go_in", "st_in");
+				PlaySound(2, true);
+				yield return Co_WaitAnim(layoutPerfectFullComboMarkAnim, true);
+				layoutPerfectFullComboMarkAnim.StartChildrenAnimLoop("logo_act", "loen_act");
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DB2C Offset: 0x71DB2C VA: 0x71DB2C
 		// // RVA: 0x1D12DFC Offset: 0x1D12DFC VA: 0x1D12DFC
-		// private IEnumerator Co_EnterComboRank() { }
+		private IEnumerator Co_EnterComboRank()
+		{
+			//0x1D160B4
+			layoutMainAnim.StartChildrenAnimGoStop("go_comborank", "st_comborank");
+			yield return Co_WaitAnim(layoutMainAnim, true);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DBA4 Offset: 0x71DBA4 VA: 0x71DBA4
 		// // RVA: 0x1D12EA8 Offset: 0x1D12EA8 VA: 0x1D12EA8
-		// private IEnumerator Co_CountUpScore() { }
+		private IEnumerator Co_CountUpScore()
+		{
+			//0x1D15BC8
+			layoutMainAnim.StartChildrenAnimGoStop("go_score", "st_score");
+			yield return Co_WaitFrame(layoutMainAnim, countStartFrameList[6], true);
+			bool countUpEnd = false;
+			List<float> f = new List<float>();
+			NumberAnimationUtility.MakeAccelerationTimeList(10, 0.3f, 0.02f, ref f);
+			PlayCountUpLoopSE();
+			SetCountUpValue(CountType.Score, f, (int value) =>
+			{
+				//0x1D146D8
+				numberScore.SetNumber(value, 0);
+			}, () =>
+			{
+				//0x1D1472C
+				return m_isSkiped;
+			}, () =>
+			{
+				//0x1D14750
+				countUpEnd = true;
+			});
+			while (!countUpEnd)
+				yield return null;
+			countUpSEPlayback.Stop();
+			if(!viewData.PMCGHPOGLGM_EnableLiveSkip)
+			{
+				if(viewData.GCAPLLEIAAI_HighScore < viewData.HMDHDKLDPFK_PrevScore)
+				{
+					numberHighScore.SetNumber(viewData.GCAPLLEIAAI_HighScore, 0);
+				}
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DC1C Offset: 0x71DC1C VA: 0x71DC1C
 		// // RVA: 0x1D12F54 Offset: 0x1D12F54 VA: 0x1D12F54
-		// private IEnumerator Co_HighScoreAnim() { }
+		private IEnumerator Co_HighScoreAnim()
+		{
+			//0x1D16888
+			if(viewData.HHPIAKKJBJD_IsBetterScore)
+			{
+				layoutHighScoreMarkAnim.StartChildrenAnimGoStop("go_in", "st_in");
+				PlaySound(3, true);
+				yield return Co_WaitAnim(layoutHighScoreMarkAnim, true);
+
+				if (!IsPerfectFullCombo())
+				{
+					if (!IsFullCombo())
+					{
+						layoutHighScoreMarkAnim.StartChildrenAnimLoop("logo_act", "loen_act");
+						yield break;
+					}
+				}
+				AbsoluteLayout l = IsPerfectFullCombo() ? layoutPerfectFullComboMarkAnim : layoutFullComboMarkAnim;
+				int a = l.GetView(0).FrameAnimation.FrameCount;
+				float f = layoutHighScoreMarkAnim.GetView(0).FrameAnimation.SearchLabelFrame("logo_act");
+				float f2 = layoutHighScoreMarkAnim.GetView(0).FrameAnimation.SearchLabelFrame("loen_act");
+				layoutHighScoreMarkAnim.StartChildrenAnimLoop(a + 1, Mathf.RoundToInt(f), Mathf.RoundToInt(f2));
+			}
+			else
+			{
+				PlaySound(1);
+			}
+
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DC94 Offset: 0x71DC94 VA: 0x71DC94
 		// // RVA: 0x1D13000 Offset: 0x1D13000 VA: 0x1D13000
-		// private IEnumerator Co_ScoreRankAnim() { }
+		private IEnumerator Co_ScoreRankAnim()
+		{
+			//0x1D16EA0
+			layoutMainAnim.StartChildrenAnimGoStop("go_rank");
+			layoutScoreRankTable.StartChildrenAnimGoStop(viewData.PENICOGGNLF_RankScore, viewData.PENICOGGNLF_RankScore);
+			layoutScoreRankIconList[viewData.PENICOGGNLF_RankScore].StartChildrenAnimGoStop("go_in", "st_in");
+			yield return Co_WaitForSeconds(0.5f, true);
+			PlayJingle();
+			yield return Co_WaitAnim(layoutScoreRankIconList[viewData.PENICOGGNLF_RankScore], true);
+			layoutScoreRankIconList[viewData.PENICOGGNLF_RankScore].StartChildrenAnimLoop("logo_act", "loen_act");
+			if(resultData.GetNoteExcellentCount() > 0)
+			{
+				layoutExcellentAnim[0].StartChildrenAnimLoop("logo_act", "loen_act");
+				layoutExcellentAnim[1].StartChildrenAnimLoop("logo_act", "loen_act");
+				layoutExcellentAnim[2].StartChildrenAnimLoop("logo_act", "loen_act");
+			}
+			if (viewData.PENICOGGNLF_RankScore != 4)
+				yield break;
+			yield return Co_WaitForSeconds(0.5f, true);
+		}
 
 		// // RVA: 0x1D12B8C Offset: 0x1D12B8C VA: 0x1D12B8C
-		// private float CalcNoteResultCountUpTime(int count, List<float> timerList) { }
+		private float CalcNoteResultCountUpTime(int count, List<float> timerList)
+		{
+			float res = 0;
+			if(count > 0)
+			{
+				int i = 0;
+				do
+				{
+					if (timerList.Count <= i)
+						return res;
+					res += timerList[i];
+					i++;
+					count /= 10;
+				} while (count > 9);
+			}
+			return res;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DD0C Offset: 0x71DD0C VA: 0x71DD0C
 		// // RVA: 0x1D130AC Offset: 0x1D130AC VA: 0x1D130AC
-		// private IEnumerator Co_WaitForSeconds(float wait, bool enableSkip = True) { }
+		private IEnumerator Co_WaitForSeconds(float wait, bool enableSkip = true)
+		{
+			float time;
+
+			//0x1D178FC
+			time = 0;
+			while(!enableSkip || !(enableSkip && m_isSkiped))
+			{
+				time += TimeWrapper.deltaTime;
+				if(time >= wait)
+					yield break;
+				yield return null;
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DD84 Offset: 0x71DD84 VA: 0x71DD84
 		// // RVA: 0x1D13198 Offset: 0x1D13198 VA: 0x1D13198
@@ -248,28 +540,93 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DDFC Offset: 0x71DDFC VA: 0x71DDFC
 		// // RVA: 0x1D13290 Offset: 0x1D13290 VA: 0x1D13290
-		// private IEnumerator Co_WaitFrame(AbsoluteLayout layout, int frame, bool enableSkip = True) { }
+		private IEnumerator Co_WaitFrame(AbsoluteLayout layout, int frame, bool enableSkip = true)
+		{
+			//0x1D17A3C
+			while(!enableSkip || !(enableSkip && m_isSkiped))
+			{
+				if (layout.GetView(0).FrameAnimation.FrameCount >= frame)
+					yield break;
+				yield return null;
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DE74 Offset: 0x71DE74 VA: 0x71DE74
 		// // RVA: 0x1D13388 Offset: 0x1D13388 VA: 0x1D13388
-		// private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip = True) { }
+		private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip = true)
+		{
+			//0x1D176F8
+			while(true)
+			{
+				if (!layout.IsPlayingChildren())
+					yield break;
+				if (!m_isSkiped || (m_isSkiped && !enableSkip))
+				{
+					yield return null;
+				}
+				else
+				{
+					layout.UpdateAllAnimation(2 * TimeWrapper.deltaTime, false);
+					layout.Update(m_identity, Color.white);
+				}
+			}
+
+		}
 
 		// // RVA: 0x1D13468 Offset: 0x1D13468 VA: 0x1D13468
-		// private void PlaySound(int cueId, bool enableSkip = True) { }
+		private void PlaySound(int cueId, bool enableSkip = true)
+		{
+			if (m_isSkiped && enableSkip)
+				return;
+			SoundManager.Instance.sePlayerResult.Play(cueId);
+		}
 
 		// // RVA: 0x1D134D4 Offset: 0x1D134D4 VA: 0x1D134D4
-		// private void PlayJingle() { }
+		private void PlayJingle()
+		{
+			switch(viewData.PENICOGGNLF_RankScore)
+			{
+				case 0:
+					PlaySound(23, true);
+					break;
+				case 1:
+					PlaySound(22, true);
+					break;
+				case 2:
+					PlaySound(21, true);
+					break;
+				case 3:
+					PlaySound(20, true);
+					break;
+				case 4:
+					PlaySound(19, true);
+					break;
+				default:
+					break;
+			}
+		}
 
 		// // RVA: 0x1D13570 Offset: 0x1D13570 VA: 0x1D13570
-		// private void PlayCountUpLoopSE() { }
+		private void PlayCountUpLoopSE()
+		{
+			if (countUpSEPlayback.GetStatus() == CriAtomExPlayback.Status.Playing)
+				return;
+			countUpSEPlayback = SoundManager.Instance.sePlayerResultLoop.Play(0);
+		}
 
 		// // RVA: 0x1D135E4 Offset: 0x1D135E4 VA: 0x1D135E4
 		// private void StopCountUpLoopSE() { }
 
 		// // RVA: 0x1D135F0 Offset: 0x1D135F0 VA: 0x1D135F0
-		// private bool IsFullCombo() { }
+		private bool IsFullCombo()
+		{
+			return viewData.DACPGGLFLJG_FullComboType == 1;
+		}
 
 		// // RVA: 0x1D12500 Offset: 0x1D12500 VA: 0x1D12500
-		// private bool IsPerfectFullCombo() { }
+		private bool IsPerfectFullCombo()
+		{
+			return viewData.DACPGGLFLJG_FullComboType == 2;
+		}
 	}
 }

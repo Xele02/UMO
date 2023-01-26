@@ -126,15 +126,24 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB50B48 Offset: 0xB50B48 VA: 0xB50B48
-		public void Setup(ResultScoreLayoutController.InitParam initParam)
+		public void Setup(InitParam initParam)
 		{
 			this.initParam = initParam;
 			layoutHeaderTitle = initParam.layoutHeaderTitle;
 			layoutOkayButton = initParam.layoutOkayButton;
-			TodoLogger.Log(0, "Setup");
+			layoutMusicInfo.Setup(initParam.viewResultData, initParam.difficulty, initParam.isLine6Mode);
+			layoutScoreMain.Setup(initParam.viewResultData, initParam.resultData);
+			layoutPlayerRank.Setup(initParam.viewPlayerLevelUpData);
+			m_singRankrateEffect.Setup(initParam.viewResultData.PFEIDJKAOLH_ScoreRatingRanking);
+			m_singRankrateEffectIcon.Setup(initParam.viewResultData.PFEIDJKAOLH_ScoreRatingRanking);
+			m_isRankUpScoreRating = initParam.viewResultData.BEFGMPGFGHA_IsBetterScoreRatingRanking;
 			layoutPlaylog.onDetailButton = OnClickPlaylogDetailButton;
 			layoutOkayButton.onClick = OnClickOkayButton;
-			TodoLogger.Log(0, "Setup");
+			popupAchieveReward.Setup(initParam.achieveRewardSetting, initParam.viewPlayerLevelUpData.LDHOOPGDBJC_IsLevelUp);
+			if(!isInTutorial)
+			{
+				layoutPlaylog.Setup(playlogGraphParts, initParam.viewResultData);
+			}
 			divaControl.OnResultStart();
 		}
 

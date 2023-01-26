@@ -114,6 +114,7 @@ class JpStringLiterals
 	public const string StringLiteral_12333 = "歌晶石セットE"; // 0x03bb4b6c
 	public const string StringLiteral_12334 = "歌晶石セットF"; // 0x03bb4b70
 	public const string StringLiteral_12335 = "歌晶石セットG"; // 0x03bb4b74
+	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
 	public const string StringLiteral_12839 = "プロローグ開始"; // 0x03bb5354
 	public const string StringLiteral_12840 = "アセットDL 0%"; // 0x03bb5358
 	public const string StringLiteral_12841 = "アセットDL 10%"; // 0x03bb535c

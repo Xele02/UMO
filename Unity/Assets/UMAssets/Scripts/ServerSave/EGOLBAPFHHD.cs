@@ -431,7 +431,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 			CHBDMJBEENG c = GDEKCOOBLMA_dbSystem.NGHKJOEDLIP;
 			if(c != null)
 			{
-				int cplvl = c.PIAMMJNADJH_Plv;
+				int cplvl = c.PIAMMJNADJH_PlayerMaxLevel;
 				int exp = EOHDMCMHBKJ_Exp;
 				int expPrev = exp;
 				int level = KIECDDFNCAN_Level;
@@ -444,7 +444,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 						level = cplvl;
 						break;
 					}
-					int d = FMPEMFPLPDA_dbExp.NDFGMMKGBAA_GetPExp(level);
+					int d = FMPEMFPLPDA_dbExp.NDFGMMKGBAA_GetExpForPlayerLevel(level);
 					exp = OEOIHIIIMCK_Exp + expPrev;
 					if (exp < d)
 						break;

@@ -14,7 +14,7 @@ namespace XeApp.Game.Menu
 	{
 		private static readonly int LevelDigitNum = 3; // 0x0
 		private JJOPEDJCCJK_Exp expMaster; // 0x14
-		// private BPOJMOOIIFI viewLevelupData; // 0x18
+		private BPOJMOOIIFI_PlayerLevelData viewLevelupData; // 0x18
 		public Action onFinished; // 0x1C
 		private AbsoluteLayout layoutRoot; // 0x20
 		private AbsoluteLayout layoutExpType; // 0x24
@@ -100,7 +100,19 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18E61BC Offset: 0x18E61BC VA: 0x18E61BC
-		// public void Setup(BPOJMOOIIFI viewPlayerLevelupData) { }
+		public void Setup(BPOJMOOIIFI_PlayerLevelData viewPlayerLevelupData)
+		{
+			viewLevelupData = viewPlayerLevelupData;
+			if(viewPlayerLevelupData.OJBGOOBBMFP > 0)
+			{
+				layoutExpBonus.StartChildrenAnimGoStop("01");
+				numberExpBonus.SetNumber(viewPlayerLevelupData.OJBGOOBBMFP, 0);
+			}
+			else
+			{
+				layoutExpBonus.StartChildrenAnimGoStop("02");
+			}
+		}
 
 		// // RVA: 0x18E62AC Offset: 0x18E62AC VA: 0x18E62AC
 		public void SkipAnim()
@@ -119,22 +131,97 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_StartAnim()
 		{
 			//0x18E8424
-			TodoLogger.Log(0, "Co_StartAnim");
-			yield return null;
-			if(onFinished != null)
-				onFinished();
+			if(IsLevelMax(viewLevelupData.APIIHFJGEAO_Level))
+			{
+				m_isSkiped = true;
+				if (onFinished != null)
+					onFinished();
+			}
+			else
+			{
+				int restAcquiredExp = viewLevelupData.FDNEEPFGPLH_GainExp;
+				currentGaugePercentage = CalcExpPercentage(viewLevelupData.APIIHFJGEAO_Level, viewLevelupData.ALBCEALLGJG_PrevExp);
+				ChangePlayerLevel(viewLevelupData.APIIHFJGEAO_Level);
+				ChangeCurrentExp(viewLevelupData.APIIHFJGEAO_Level, currentGaugePercentage, viewLevelupData.ALBCEALLGJG_PrevExp);
+				ChangeRequiredPlayerExp(viewLevelupData.APIIHFJGEAO_Level);
+				layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
+				yield return Co_WaitAnim(layoutRoot, true);
+				yield return Co_ExpIncreaseAnim();
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C814 Offset: 0x71C814 VA: 0x71C814
 		// // RVA: 0x18E638C Offset: 0x18E638C VA: 0x18E638C
-		// private IEnumerator Co_ExpIncreaseAnim() { }
+		private IEnumerator Co_ExpIncreaseAnim()
+		{
+			float startExp; // 0x14
+			float endExp; // 0x18
+			int currentFrameLevel; // 0x1C
+			float currentTime; // 0x20
+			float timeLength; // 0x24
+			float sectionExp; // 0x28
+			float gaugePercentage; // 0x2C
+
+			//0x18E75E8
+			PlayCountUpLoopSE();
+			startExp = viewLevelupData.ALBCEALLGJG_PrevExp + expMaster.DGPJNADIFNE_GetExpUpToPlayerLevel(viewLevelupData.APIIHFJGEAO_Level);
+			endExp = startExp + viewLevelupData.FDNEEPFGPLH_GainExp;
+			currentFrameLevel = viewLevelupData.APIIHFJGEAO_Level;
+			currentTime = 0;
+			timeLength = 3;
+			while(true)
+			{
+				int oldFrameLevel = currentFrameLevel;
+				currentTime += TimeWrapper.deltaTime;
+				float f = XeSys.Math.Tween.EasingInOutCubic(startExp, endExp, currentTime / timeLength);
+				sectionExp = expMaster.ANADOECHNEO_GetLevelAndExp(f, out currentFrameLevel);
+				gaugePercentage = CalcExpPercentage(currentFrameLevel, sectionExp);
+				ChangeCurrentExp(currentFrameLevel, gaugePercentage, -1);
+				if(oldFrameLevel < currentFrameLevel)
+				{
+					isLevelupFirst = true;
+					if (IsLevelMax(currentFrameLevel))
+					{
+						yield return Co_LevelMaxProcess(currentFrameLevel);
+					}
+					else
+					{
+						StartLevelupAnimation(currentFrameLevel);
+						ChangeRequiredPlayerExp(currentFrameLevel);
+					}
+					//LAB_018e78b4
+					layoutOldExpGauge.StartAnimGoStop(0, 0);
+					layoutEffectOutGauge.StartAnimGoStop(0, 0);
+				}
+				if (IsLevelMax(currentFrameLevel) || timeLength < currentTime)
+					break;
+				if(!m_isSkiped)
+				{
+					yield return null;
+				}
+			}
+			ChangeCurrentExp(currentFrameLevel, gaugePercentage, Mathf.RoundToInt(sectionExp));
+			numberCurrentExp.SetNumber(viewLevelupData.GLAJCLEAKJJ_Exp, 0);
+			countUpSEPlayback.Stop();
+			if (onFinished != null)
+				onFinished();
+		}
 
 		// // RVA: 0x18E6438 Offset: 0x18E6438 VA: 0x18E6438
 		// private void LevelupProcess(int playerLevel) { }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C88C Offset: 0x71C88C VA: 0x71C88C
 		// // RVA: 0x18E6724 Offset: 0x18E6724 VA: 0x18E6724
-		// private IEnumerator Co_LevelMaxProcess(int playerLevel) { }
+		private IEnumerator Co_LevelMaxProcess(int playerLevel)
+		{
+			//0x18E7D5C
+			countUpSEPlayback.Stop();
+			ChangeCurrentExp(playerLevel - 1, 100, -1);
+			StartLevelupAnimation(playerLevel);
+			yield return null;
+			yield return Co_WaitAnim(layoutLevelUp, true);
+			ChangeRequiredPlayerExp(playerLevel);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C904 Offset: 0x71C904 VA: 0x71C904
 		// // RVA: 0x18E67EC Offset: 0x18E67EC VA: 0x18E67EC
@@ -152,13 +239,24 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18E645C Offset: 0x18E645C VA: 0x18E645C
-		// private void StartLevelupAnimation(int playerLevel) { }
+		private void StartLevelupAnimation(int playerLevel)
+		{
+			PlaySound(5, true);
+			ChangePlayerLevel(playerLevel);
+			layoutLevelUp.StartChildrenAnimGoStop("go_in", "st_in");
+			layoutLevelupLeftEffect.StartChildrenAnimGoStop("go_in", "st_in");
+			layoutLevelupRightEffect.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		// // RVA: 0x18E69C4 Offset: 0x18E69C4 VA: 0x18E69C4
 		// private void OnButtonClickedPlayerRankup(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 
 		// // RVA: 0x18E68AC Offset: 0x18E68AC VA: 0x18E68AC
-		// private void ChangePlayerLevel(int playerLevel) { }
+		private void ChangePlayerLevel(int playerLevel)
+		{
+			layoutLevelupRightEffect = layoutLevelupRightEffects[playerLevel.ToString().Length - 1];
+			numberPlayerLevel.SetNumber(playerLevel, 0);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C97C Offset: 0x71C97C VA: 0x71C97C
 		// // RVA: 0x18E69C8 Offset: 0x18E69C8 VA: 0x18E69C8
@@ -170,36 +268,114 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E6A9C Offset: 0x18E6A9C VA: 0x18E6A9C
 		public void StopFinishGaugeAnim()
 		{
-			TodoLogger.Log(0, "StopFinishGaugeAnim");
+			if(GaugeAnimFinishCoroutine != null)
+			{
+				StopCoroutine(GaugeAnimFinishCoroutine);
+				GaugeAnimFinishCoroutine = null;
+			}
+			ChangeOldExp(viewLevelupData.IANDPFDFAKP_Level2, CalcExpPercentage(viewLevelupData.IANDPFDFAKP_Level2, viewLevelupData.GLAJCLEAKJJ_Exp));
 		}
 
 		// // RVA: 0x18E6B84 Offset: 0x18E6B84 VA: 0x18E6B84
-		// private void ChangeOldExp(int playerLevel, float gaugePercentage) { }
+		private void ChangeOldExp(int playerLevel, float gaugePercentage)
+		{
+			int f = CalcGaugeFrame(playerLevel, gaugePercentage);
+			layoutOldExpGauge.StartAnimGoStop(f, f);
+			layoutEffectOutGauge.StartAnimGoStop(f, f);
+		}
 
 		// // RVA: 0x18E6D2C Offset: 0x18E6D2C VA: 0x18E6D2C
-		// private void ChangeCurrentExp(int playerLevel, float gaugePercentage, int sectionExp = -1) { }
+		private void ChangeCurrentExp(int playerLevel, float gaugePercentage, int sectionExp = -1)
+		{
+			int f = CalcGaugeFrame(playerLevel, gaugePercentage);
+			layoutExpGauge.StartChildrenAnimGoStop(f, f);
+			if(!IsLevelMax(playerLevel))
+			{
+				if(!isLevelupFirst)
+				{
+					ChangeOldExp(viewLevelupData.APIIHFJGEAO_Level, CalcExpPercentage(viewLevelupData.APIIHFJGEAO_Level, viewLevelupData.ALBCEALLGJG_PrevExp));
+				}
+				else
+				{
+					layoutOldExpGauge.StartAnimGoStop(0, 0);
+					layoutEffectOutGauge.StartAnimGoStop(0, 0);
+				}
+			}
+			if (IsLevelMax(playerLevel))
+				return;
+			if(sectionExp < 0)
+			{
+				sectionExp = Mathf.RoundToInt(gaugePercentage / 100.0f * expMaster.NDFGMMKGBAA_GetExpForPlayerLevel(playerLevel));
+			}
+			numberCurrentExp.SetNumber(sectionExp, 0);
+		}
 
 		// // RVA: 0x18E6588 Offset: 0x18E6588 VA: 0x18E6588
-		// private void ChangeRequiredPlayerExp(int playerLevel) { }
+		private void ChangeRequiredPlayerExp(int playerLevel)
+		{
+			if(!IsLevelMax(playerLevel))
+			{
+				layoutExpType.StartChildrenAnimGoStop("st_normal");
+				numberRequiredExp.SetNumber(expMaster.NDFGMMKGBAA_GetExpForPlayerLevel(playerLevel), 0);
+			}
+			else
+			{
+				layoutExpType.StartChildrenAnimGoStop("st_max");
+				layoutExpGauge.StartChildrenAnimGoStop(layoutExpGauge.GetView(0).FrameAnimation.FrameNum + 1, layoutExpGauge.GetView(0).FrameAnimation.FrameNum + 1);
+			}
+		}
 
 		// // RVA: 0x18E6B28 Offset: 0x18E6B28 VA: 0x18E6B28
-		// private float CalcExpPercentage(int playerLevel, float exp) { }
+		private float CalcExpPercentage(int playerLevel, float exp)
+		{
+			return exp / expMaster.NDFGMMKGBAA_GetExpForPlayerLevel(playerLevel) * 100.0f;
+		}
 
 		// // RVA: 0x18E701C Offset: 0x18E701C VA: 0x18E701C
 		// private float CalcExpValue(int playerLevel, float percentage) { }
 
 		// // RVA: 0x18E6BEC Offset: 0x18E6BEC VA: 0x18E6BEC
-		// private int CalcGaugeFrame(int playerLevel, float gaugePercentage) { }
+		private int CalcGaugeFrame(int playerLevel, float gaugePercentage)
+		{
+			if (IsLevelMax(playerLevel))
+				gaugePercentage = 100;
+			return Mathf.RoundToInt(Mathf.Clamp(gaugePercentage, 0, 100) * layoutExpGauge.GetView(0).FrameAnimation.FrameNum + 1 / 100);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C9F4 Offset: 0x71C9F4 VA: 0x71C9F4
 		// // RVA: 0x18E7078 Offset: 0x18E7078 VA: 0x18E7078
-		// private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip = True) { }
+		private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip = true)
+		{
+			//0x18E8728
+			while(true)
+			{
+				if (!layout.IsPlayingChildren())
+					yield break;
+				if(!m_isSkiped || (m_isSkiped && !enableSkip))
+				{
+					yield return null;
+				}
+				else
+				{
+					layout.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
+					layout.UpdateAll(m_identity, Color.white);
+				}
+			}
+		}
 
 		// // RVA: 0x18E7158 Offset: 0x18E7158 VA: 0x18E7158
-		// private void PlaySound(int cueId, bool enableSkip = True) { }
+		private void PlaySound(int cueId, bool enableSkip = true)
+		{
+			if (m_isSkiped && enableSkip)
+				return;
+			SoundManager.Instance.sePlayerResult.Play(cueId);
+		}
 
 		// // RVA: 0x18E71C4 Offset: 0x18E71C4 VA: 0x18E71C4
-		// private void PlayCountUpLoopSE() { }
+		private void PlayCountUpLoopSE()
+		{
+			countUpSEPlayback = SoundManager.Instance.sePlayerResultLoop.Play(4);
+		}
 
 		// // RVA: 0x18E7224 Offset: 0x18E7224 VA: 0x18E7224
 		// private void StopCountUpLoopSE() { }
@@ -208,7 +384,10 @@ namespace XeApp.Game.Menu
 		// private void PlayLevelUpSE() { }
 
 		// // RVA: 0x18E6F0C Offset: 0x18E6F0C VA: 0x18E6F0C
-		// private bool IsLevelMax(int level) { }
+		private bool IsLevelMax(int level)
+		{
+			return level >= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.PIAMMJNADJH_PlayerMaxLevel;
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x71CA6C Offset: 0x71CA6C VA: 0x71CA6C
 		// // RVA: 0x18E7354 Offset: 0x18E7354 VA: 0x18E7354
