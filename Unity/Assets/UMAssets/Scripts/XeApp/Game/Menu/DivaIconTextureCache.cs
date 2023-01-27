@@ -125,7 +125,10 @@ namespace XeApp.Game.Menu
 		// public void LoadLobbyIcon(int cosId, int colorId, Action<IiconTexture> callBack) { }
 
 		// // RVA: 0x17E061C Offset: 0x17E061C VA: 0x17E061C
-		// public void LoadPortraitIcon(int id, int modelId, int colorId, Action<IiconTexture> callBack) { }
+		public void LoadPortraitIcon(int id, int modelId, int colorId, Action<IiconTexture> callBack)
+		{
+			Load(GetIconPath(IconType.LSize, id, modelId, colorId), callBack);
+		}
 
 		// // RVA: 0x17E3B88 Offset: 0x17E3B88 VA: 0x17E3B88
 		// public void LoadStoryIcon(int id, int modelId, Action<IiconTexture> callBack) { }

@@ -503,10 +503,19 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x2041B58 Offset: 0x2041B58 VA: 0x2041B58
-		// public void StartChildrenAnimLoop(int start, int end) { }
+		public void StartChildrenAnimLoop(int start, int end)
+		{
+			StartChildrenAnimLoop(m_List, start, end);
+		}
 
 		// // RVA: 0x2041B7C Offset: 0x2041B7C VA: 0x2041B7C
-		// private void StartChildrenAnimLoop(List<ViewBase> listView, int start, int end) { }
+		private void StartChildrenAnimLoop(List<ViewBase> listView, int start, int end)
+		{
+			for (int i = 0; i < listView.Count; i++)
+			{
+				listView[i].StartAnimLoop(start, end);
+			}
+		}
 
 		// // RVA: 0x2041C68 Offset: 0x2041C68 VA: 0x2041C68
 		public void StartChildrenAnimLoop(int current, int start, int end)
@@ -554,10 +563,19 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x2041F80 Offset: 0x2041F80 VA: 0x2041F80
-		// public void FinishAnimLoop() { }
+		public void FinishAnimLoop()
+		{
+			FinishAnimLoop(m_List);
+		}
 
 		// // RVA: 0x2041F88 Offset: 0x2041F88 VA: 0x2041F88
-		// private void FinishAnimLoop(List<ViewBase> listView) { }
+		private void FinishAnimLoop(List<ViewBase> listView)
+		{
+			for (int i = 0; i < listView.Count; i++)
+			{
+				listView[i].FinishAnimLoop();
+			}
+		}
 
 		// // RVA: 0x204205C Offset: 0x204205C VA: 0x204205C
 		private bool IsPlayingChildren(List<ViewBase> listView)

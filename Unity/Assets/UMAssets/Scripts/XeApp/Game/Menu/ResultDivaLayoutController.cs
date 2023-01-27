@@ -3,6 +3,7 @@ using System.Collections;
 using mcrs;
 using UnityEngine;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -46,24 +47,23 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xD00448 Offset: 0xD00448 VA: 0xD00448
-		public void PreloadDivaIcon(ResultDivaLayoutController.InitParam initParam)
+		public void PreloadDivaIcon(InitParam initParam)
 		{
-			TodoLogger.Log(0, "PreloadDivaIcon");
+			layoutDiva.PreloadDivaIcon(initParam.viewDivaResultData);
 		}
 
 		// // RVA: 0xD00490 Offset: 0xD00490 VA: 0xD00490
 		public bool IsPreloadedDivaIcon()
 		{
-			TodoLogger.Log(0, "IsPreloadedDivaIcon");
-			return true;
+			return layoutDiva.IsPreloadedDivaIcon();
 		}
 
 		// // RVA: 0xD004BC Offset: 0xD004BC VA: 0xD004BC
 		public void Setup(ResultDivaLayoutController.InitParam initParam)
 		{
 			layoutDiva.onFinished = OnFinishedDivaMainAnim;
-			TodoLogger.Log(0, "Setup");
-
+			layoutDiva.Setup(initParam.viewDivaResultData);
+			layoutPoint.Setup(initParam.viewDivaResultData);
 			layoutOkayButton = initParam.layoutOkayButton;
 			layoutOkayButton.SetupCallback(OnFinishedOkayButtonLayoutAnim, OnClickOkayButton);
 		}
@@ -90,8 +90,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD00760 Offset: 0xD00760 VA: 0xD00760
 		public void StartEndAnim(Action endAnimCallback)
 		{
-			TodoLogger.Log(0, "StartEndAnim");
-			endAnimCallback();
+			layoutDiva.StartEndAnim(endAnimCallback);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x721384 Offset: 0x721384 VA: 0x721384
@@ -100,14 +99,38 @@ namespace XeApp.Game.Menu
 		{
 			//0xD00A6C
 			StartBeginAnim();
-			TodoLogger.Log(0, "Co_StartPointCount");
+			while (!layoutDiva.IsEnter())
+				yield return null;
+			layoutPoint.StartBeginAnim();
 			yield return null;
+			while (layoutPoint.IsOpenWindow())
+				yield return null;
+			int i = 0;
+			while(i < WAIT_ENTER_POINY_FRAME)
+			{
+				yield return null;
+				i++;
+			}
+			layoutDiva.StartExpAnim();
 		}
 
 		// // RVA: 0xD002EC Offset: 0xD002EC VA: 0xD002EC
 		private void CheckSkipStep()
 		{
-			TodoLogger.Log(0, "CheckSkipStep");
+			if(isStarted && !isSkiped)
+			{
+				if(InputManager.Instance.GetInScreenTouchCount() > 0 && ResultScene.IsScreenTouch())
+				{
+					if (layoutDiva.IsLevelupPopupProcess)
+						return;
+					if (countPointWindowCoroutine != null)
+						StopCoroutine(countPointWindowCoroutine);
+					layoutDiva.SkipBeginAnim();
+					layoutPoint.Skip();
+					isSkiped = true;
+					isExecSkip = true;
+				}
+			}
 		}
 
 		// // RVA: 0xD007B4 Offset: 0xD007B4 VA: 0xD007B4

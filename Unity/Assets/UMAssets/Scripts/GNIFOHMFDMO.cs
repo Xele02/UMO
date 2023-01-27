@@ -18,7 +18,7 @@ public class GNIFOHMFDMO_DivaResultData
 		public int PKLPGBKKFOL; // 0x38
 		public double NFJFBOBJONF_PrevExpFrag; // 0x40
 		public double DKLBOOEIKKL_ExpFrag; // 0x48
-		public double MECHKMMEIPP; // 0x50
+		public double MECHKMMEIPP_PrevExp; // 0x50
 		public double KNCMFPIODKJ_ExpFragDiff; // 0x58
 		public double FADHHKOGJIP; // 0x60
 		public int AJCEIPJDMEC_PrevDivaLevel; // 0x68
@@ -26,28 +26,34 @@ public class GNIFOHMFDMO_DivaResultData
 		public int PAOGPLDOMMI; // 0x70
 		public KDOMGMCGHDC.HJNMIKNAMFH EEHOJJNJJAI; // 0x74
 		public KDOMGMCGHDC.HJNMIKNAMFH OJLEDBKKMLN; // 0x78
-		public int DACHHLHPAAB; // 0x7C
+		public int DACHHLHPAAB_BonusExp; // 0x7C
 	}
 
 	public int AKNELONELJK; // 0x8
-	public int OGFBKCGGPBC; // 0xC
+	public int OGFBKCGGPBC_DiffPoint; // 0xC
 	public int GCAPLLEIAAI_LastScore; // 0x10
 	public int FFEBMCAKOHK; // 0x14
-	public int BMGKGDPKJFA; // 0x18
-	public int CBCIFACJGHI; // 0x1C
+	public int BMGKGDPKJFA_Point; // 0x18
+	public int CBCIFACJGHI_Exp; // 0x1C
 	public int DLAEJOBELBH_MusicId; // 0x20
 	private int DHJAFJKALCA_ForcedMusicId; // 0x24
 	public bool LFGNLKKFOCD_Is6Line; // 0x28
-	public int HGHMMDOEGEF; // 0x2C
-	public List<IKODHMDOMMP> NAIHIJAJPNK; // 0x30
+	public int HGHMMDOEGEF_ExpBonus; // 0x2C
+	public List<IKODHMDOMMP> NAIHIJAJPNK_Divas; // 0x30
 
 	//public int IOPCBBNHJIP { get; set; } 0x1E56110 PJKILEHFBHA 0x1E56124 BOBNBADBNGG
 
 	//// RVA: 0x1E5612C Offset: 0x1E5612C VA: 0x1E5612C
-	//public KDOMGMCGHDC.HJNMIKNAMFH LNHIFELKOJF(int AAIKJJHPEEL, int BAKLKJLPLOJ) { }
+	public KDOMGMCGHDC.HJNMIKNAMFH LNHIFELKOJF_GetPrevInfo(int AAIKJJHPEEL_DivaIdx, int BAKLKJLPLOJ_MusicLevel)
+	{
+		return KDOMGMCGHDC.ODIAFJCPIFO(DLAEJOBELBH_MusicId, NAIHIJAJPNK_Divas[AAIKJJHPEEL_DivaIdx].AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData, BAKLKJLPLOJ_MusicLevel);
+	}
 
 	//// RVA: 0x1E56244 Offset: 0x1E56244 VA: 0x1E56244
-	//public int HMHJOEMJOKE() { }
+	public int HMHJOEMJOKE_GetCenterDivaBonus()
+	{
+		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("center_diva_bonus", 0);
+	}
 
 	//// RVA: 0x1E56334 Offset: 0x1E56334 VA: 0x1E56334
 	public void KHEKNNFCAOI(int GHBPLHBNMBK_FreeMusicId, bool GIKLNODJKFK_IsLine6)
@@ -62,17 +68,17 @@ public class GNIFOHMFDMO_DivaResultData
 		if (forcedSetting != null)
 			DHJAFJKALCA_ForcedMusicId = forcedSetting.IOPCBBNHJIP_MusicId;
 		AKNELONELJK = JGEOBNENMAH.HHCJCDFCLOB.LBLOIOMNEIH_Difficulty;
-		OGFBKCGGPBC = JGEOBNENMAH.HHCJCDFCLOB.NGDDIIDJFNG;
+		OGFBKCGGPBC_DiffPoint = JGEOBNENMAH.HHCJCDFCLOB.NGDDIIDJFNG;
 		GCAPLLEIAAI_LastScore = JGEOBNENMAH.HHCJCDFCLOB.GCAPLLEIAAI_LastScore;
 		FFEBMCAKOHK = JGEOBNENMAH.HHCJCDFCLOB.LKGONGDLJBH + 100;
-		BMGKGDPKJFA = JGEOBNENMAH.HHCJCDFCLOB.MKEPHNGLHDL;
+		BMGKGDPKJFA_Point = JGEOBNENMAH.HHCJCDFCLOB.MKEPHNGLHDL;
 		LFGNLKKFOCD_Is6Line = GIKLNODJKFK_IsLine6;
-		CBCIFACJGHI = JGEOBNENMAH.HHCJCDFCLOB.CBCIFACJGHI;
-		HGHMMDOEGEF = JGEOBNENMAH.HHCJCDFCLOB.HGHMMDOEGEF;
+		CBCIFACJGHI_Exp = JGEOBNENMAH.HHCJCDFCLOB.CBCIFACJGHI;
+		HGHMMDOEGEF_ExpBonus = JGEOBNENMAH.HHCJCDFCLOB.HGHMMDOEGEF;
 		JJOPEDJCCJK_Exp dbExp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp;
 		DEKKMGAFJCG_Diva saveDiva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva;
 		DEKKMGAFJCG_Diva prevSaveDiva = CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData.DGCJCAHIAPP_Diva;
-		NAIHIJAJPNK = new List<IKODHMDOMMP>(5);
+		NAIHIJAJPNK_Divas = new List<IKODHMDOMMP>(5);
 		for(int i = 0; i < JGEOBNENMAH.HHCJCDFCLOB.AMJFOGHBFKJ_DivaIds.Count; i++)
 		{
 			IKODHMDOMMP data = new IKODHMDOMMP();
@@ -92,7 +98,7 @@ public class GNIFOHMFDMO_DivaResultData
 				data.NFJFBOBJONF_PrevExpFrag = prevSaveDivaInfo.ACABEFKBBEN_ExpFrag;
 				data.DKLBOOEIKKL_ExpFrag = saveDivaInfo.ACABEFKBBEN_ExpFrag;
 				data.FADHHKOGJIP = 0;
-				data.MECHKMMEIPP = data.NFJFBOBJONF_PrevExpFrag;
+				data.MECHKMMEIPP_PrevExp = data.NFJFBOBJONF_PrevExpFrag;
 				data.KNCMFPIODKJ_ExpFragDiff = data.DKLBOOEIKKL_ExpFrag - data.NFJFBOBJONF_PrevExpFrag;
 				data.AJCEIPJDMEC_PrevDivaLevel = prevSaveDivaInfo.OKMELNIIMMO_GetDivaLevel();
 				data.JPGEAFPDHDE_DivaLevel = saveDivaInfo.OKMELNIIMMO_GetDivaLevel();
@@ -107,9 +113,9 @@ public class GNIFOHMFDMO_DivaResultData
 						b = 1;
 					if (Database.Instance.gameSetup.LiveSkipTicketCount < 2)
 						b = 1;
-					data.DACHHLHPAAB = a * b;
+					data.DACHHLHPAAB_BonusExp = a * b;
 				}
-				NAIHIJAJPNK.Add(data);
+				NAIHIJAJPNK_Divas.Add(data);
 			}
 		}
 	}

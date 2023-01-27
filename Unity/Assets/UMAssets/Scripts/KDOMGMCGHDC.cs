@@ -6,8 +6,8 @@ public class KDOMGMCGHDC
 {
 	public class HJNMIKNAMFH
 	{
-		public bool HHBJAEOIGIH; // 0x8
-		public bool NBHEBLNHOJO; // 0x9
+		public bool HHBJAEOIGIH_IsLocked; // 0x8
+		public bool NBHEBLNHOJO_IsMax; // 0x9
 		public int LHBDCGFOKCA_DivaId; // 0xC
 		public int CEFHDLLAPDH_MusicId; // 0x10
 		public int KDGIHMCBLND_MusicLevel; // 0x14
@@ -31,8 +31,8 @@ public class KDOMGMCGHDC
 		res.KDGIHMCBLND_MusicLevel = 0;
 		res.CEFHDLLAPDH_MusicId = 0;
 		res.LHBDCGFOKCA_DivaId = 0;
-		res.HHBJAEOIGIH = false;
-		res.NBHEBLNHOJO = false;
+		res.HHBJAEOIGIH_IsLocked = false;
+		res.NBHEBLNHOJO_IsMax = false;
 
 		res.PBGFIOONCMB_NextLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel + 1);
 		res.PMBFNFOCNAJ_CurLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel);
@@ -44,7 +44,7 @@ public class KDOMGMCGHDC
 			{
 				if(saveDiva.LGKFMLIOPKL_GetDivaInfo(h.LHBDCGFOKCA_DivaId).OKMELNIIMMO_GetDivaLevel() < h.KDGIHMCBLND_MusicLevel)
 				{
-					res.HHBJAEOIGIH = true;
+					res.HHBJAEOIGIH_IsLocked = true;
 					res.KDGIHMCBLND_MusicLevel = h.KDGIHMCBLND_MusicLevel;
 					res.LHBDCGFOKCA_DivaId = h.LHBDCGFOKCA_DivaId;
 					res.PBGFIOONCMB_NextLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel);
@@ -57,7 +57,7 @@ public class KDOMGMCGHDC
 				int currentMusicLevel = saveDiva.LGKFMLIOPKL_GetDivaInfo(h.LHBDCGFOKCA_DivaId).ANAJIAENLNB_Levels[h.CEFHDLLAPDH_MusicId - 1];
 				if(currentMusicLevel < h.KDGIHMCBLND_MusicLevel)
 				{
-					res.HHBJAEOIGIH = true;
+					res.HHBJAEOIGIH_IsLocked = true;
 					res.KDGIHMCBLND_MusicLevel = h.KDGIHMCBLND_MusicLevel;
 					res.LHBDCGFOKCA_DivaId = h.LHBDCGFOKCA_DivaId;
 					res.CEFHDLLAPDH_MusicId = h.CEFHDLLAPDH_MusicId;
@@ -70,7 +70,7 @@ public class KDOMGMCGHDC
 		if(res.EHBAJPHFDOK_NextLevel > 8)
 		{
 			res.EHBAJPHFDOK_NextLevel = 8;
-			res.NBHEBLNHOJO = true;
+			res.NBHEBLNHOJO_IsMax = true;
 			res.PBGFIOONCMB_NextLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(res.EHBAJPHFDOK_NextLevel);
 			res.PMBFNFOCNAJ_CurLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(res.EHBAJPHFDOK_NextLevel - 1);
 		}
@@ -85,7 +85,7 @@ public class KDOMGMCGHDC
 		do
 		{
 			res = ODIAFJCPIFO(DLAEJOBELBH_MusicId, AHHJLDLAPAN_DivaId, AHEFHIMGIBI_SaveData, level);
-		} while (!res.NBHEBLNHOJO && !res.HHBJAEOIGIH && level++ < 8);
+		} while (!res.NBHEBLNHOJO_IsMax && !res.HHBJAEOIGIH_IsLocked && level++ < 8);
 		return res;
 	}
 
