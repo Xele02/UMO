@@ -1,5 +1,4 @@
-{{Music
- |Name=愛は流れる
+{{Database/Music/MusicInfo
  |ID=85
  |Cov=83
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=2
- |OfficialName=愛は流れる
- |VocalName=飯島真理
- |Description=作品：超時空要塞マクロス<br /><br />歌手：飯島真理<br /><br />作詞：阿佐茜<br />作曲：羽田健太郎
- |StoryTitle=「1人ぼっちじゃないんだから」
- |StoryDesc=戦闘中被弾した輝は地球に降下、そのまま取り残され<br />ていた未沙の救出へと向かった。戦場ではミンメイの<br />歌と共に、マクロスが敵旗艦への最後の突撃に挑む。<br /><br />生き残った輝と未沙は地上でミンメイの歌を耳にし、<br />無事地球へ帰還するマクロスの姿を目にしたのだった。
- |BuyURL=http://recochoku.jp/song/S14225850/single?ds=34294998
- |BannerId=1
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

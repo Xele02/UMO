@@ -1,5 +1,4 @@
-{{Music
- |Name=NEVER SAY DIE
+{{Database/Music/MusicInfo
  |ID=149
  |Cov=150
  |Cd=29
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=NEVER SAY DIE
- |VocalName=Fire Bomber
- |Description=作品：マクロス ダイナマイト7<br /><br />歌手：Fire Bomber<br /><br />作詞：石川雅敏<br />作曲：南部昌江
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S1001667271/hires_single?ds=1004652463
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

@@ -1,5 +1,4 @@
-{{Music
- |Name=ノーザンクロス【MIRROR ver.】
+{{Database/Music/MusicInfo
  |ID=136
  |Cov=137
  |Cd=6
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=ノーザンクロス
- |VocalName=シェリル・ノーム starring May'n
- |Description=作品：マクロスF<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：岩里祐穂、Gabriela Robin<br />作曲：菅野よう子
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S22001426/
- |BannerId=3
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

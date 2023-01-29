@@ -1,0 +1,19 @@
+{{Texts/Music
+ |ID=72
+ |MusicName=妖精
+ |OfficialName=妖精
+ |VocalName=シェリル・ノーム starring May'n
+ |VocalNameLF=シェリル・ノーム starring May'n
+ |Description=作品：マクロスF
+
+歌手：シェリル・ノーム starring May'n
+
+作詞：真名杏樹
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S20177071/single?ds=34295882
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

@@ -1,0 +1,27 @@
+{{Texts/Music
+ |ID=69
+ |MusicName=涙目爆発音
+ |OfficialName=涙目爆発音
+ |VocalName=ワルキューレ　カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |VocalNameLF=ワルキューレ　カナメΔ安野希世乃
+レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：マクロスΔ
+
+歌手：ワルキューレ
+　　　カナメΔ安野希世乃　レイナΔ東山奈央
+　　　マキナΔ西田望見
+
+作詞：堂島孝平
+作曲：堂島孝平
+ |BuyURL=https://recochoku.jp/song/S1003536999/
+ |StoryDesc=カナメとレイナの2人に第1回オーディションを通った
+マキナを含む3人が加わり始動したワルキューレ。
+
+彼女たちは何度も戦場に出向いたが、初めは
+力を発揮できず失敗続きだった。それでも彼女たち
+は歌い続け、やがて唯一無二の存在に成長していく。
+ |StoryTitle=「私たちの歌は、届かなかった」
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Generated]]

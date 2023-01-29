@@ -1,5 +1,4 @@
-{{Music
- |Name=シェリルの宇宙兄弟船
+{{Database/Music/MusicInfo
  |ID=88
  |Cov=86
  |Cd=24
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=3
- |OfficialName=シェリルの宇宙兄弟船
- |VocalName=シェリル・ノーム starring May'n
- |Description=作品：マクロスF<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：一倉宏<br />作曲：菅野よう子
- |StoryTitle=「あなたは演じることをやめられない」
- |StoryDesc=早乙女矢三郎。アルトにとって兄弟子にあたる人物で、<br />彼が「兄さん」と呼ぶ早乙女一門の歌舞伎役者である。<br /><br />矢三郎はアルトに役者として戻ってくることを望んだ。<br />それは精進をしても得られない役者としての血筋と、<br />自身を超えるアルトの才能を惜しんでのことであった。
- |BuyURL=http://recochoku.jp/song/S20165222/single?ds=34295832
- |BannerId=3
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

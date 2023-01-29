@@ -1,5 +1,4 @@
-{{Music
- |Name=PILLOW DREAM
+{{Database/Music/MusicInfo
  |ID=150
  |Cov=151
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=PILLOW DREAM
- |VocalName=
- |Description=
- |StoryTitle=
- |StoryDesc=
- |BuyURL=
- |BannerId=
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

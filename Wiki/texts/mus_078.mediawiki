@@ -1,0 +1,14 @@
+{{Texts/Music
+ |ID=78
+ |MusicName=宇宙兄弟船
+ |OfficialName=宇宙兄弟船
+ |VocalName=
+ |VocalNameLF=
+ |Description=楽曲詳細 078
+ |BuyURL=
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

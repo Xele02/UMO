@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=86
+ |MusicName=ゴ～～ジャス
+ |OfficialName=ゴ～～ジャス
+ |VocalName=シェリル・ノーム starring May'n
+ |VocalNameLF=シェリル・ノーム starring May'n
+ |Description=作品：マクロスF
+
+歌手：シェリル・ノーム starring May'n
+
+作詞：ROBIN ROBINSON
+作曲：菅野よう子
+ |BuyURL=http://recochoku.jp/song/S1004648352/
+ |StoryDesc=異国の地でエキゾチックな衣装に身を包んだシェリル。
+美しく妖艶なその姿は、見る者すべてを誘惑していく。
+
+舞台という魔物にとらわれ、虜となった彼女の情熱と
+欲求はとどまることを知らない。いつかその身が果てる
+その瞬間まで、彼女は輝き続けるのだろう。
+ |StoryTitle=「私はステージ…舞台っていう魔物にとらわれた虜…」
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

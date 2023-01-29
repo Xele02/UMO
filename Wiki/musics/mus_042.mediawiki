@@ -1,5 +1,4 @@
-{{Music
- |Name=0-G Love
+{{Database/Music/MusicInfo
  |ID=42
  |Cov=40
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=0-G Love
- |VocalName=飯島真理
- |Description=作品：超時空要塞マクロス<br /><br />歌手：飯島真理<br /><br />作詞：阿佐茜<br />作曲：羽田健太郎
- |StoryTitle=「嬉しい。わたしの歌、聴いてくれてるの？」
- |StoryDesc=ゼントラーディ軍との戦闘が始まり、その混乱の中で<br />輝とミンメイの2人は閉鎖区画に閉じ込められてしまう。<br /><br />救助を待ちながらしばし生活を共にする2人。<br />初めはただのファンと歌手であった2人だが、お互いの<br />ことを知ってその仲は少しずつ縮まっていくのだった。
- |BuyURL=https://recochoku.jp/song/S14225800/single?ds=34294998
- |BannerId=1
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

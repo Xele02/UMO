@@ -1,5 +1,4 @@
-{{Music
- |Name=1・2・3・4・5・6・7 NIGHTS
+{{Database/Music/MusicInfo
  |ID=153
  |Cov=154
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=1・2・3・4・5・6・7 NIGHTS
- |VocalName=
- |Description=
- |StoryTitle=
- |StoryDesc=
- |BuyURL=
- |BannerId=
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

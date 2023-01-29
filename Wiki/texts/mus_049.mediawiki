@@ -1,0 +1,25 @@
+{{Texts/Music
+ |ID=49
+ |MusicName=dシュディスタb
+ |OfficialName=dシュディスタb
+ |VocalName=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
+ |VocalNameLF=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
+ |Description=作品：劇場版マクロスF〜サヨナラノツバサ〜
+
+歌手：シェリル・ノーム starring May'n、
+　　　ランカ・リー＝中島愛
+
+作詞：hal
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S21029020/
+ |StoryDesc=才能を秘めながら歌手に憧れる少女ランカと、
+トップシンガーとして常に輝き続けてきたシェリル。
+
+数奇な運命から出会いを果たした2人は、それぞれの
+想いを胸に歌い、踊り、観客を魅了してきた。そして
+今、2人の歌声は1つのステージ上で交わり始める。
+ |StoryTitle=「いくわよ、ランカちゃん！」「はい！」
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

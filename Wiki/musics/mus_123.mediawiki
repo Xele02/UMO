@@ -1,5 +1,4 @@
-{{Music
- |Name=HEART & SOUL
+{{Database/Music/MusicInfo
  |ID=123
  |Cov=124
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=HEART & SOUL
- |VocalName=EMILIA with BASARA NEKKI
- |Description=作品：マクロス7<br /><br />歌手：EMILIA with BASARA NEKKI<br /><br />作詞：K.INOJO<br />作曲：川野美紀
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S20141966/single?ds=34294998
- |BannerId=2
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

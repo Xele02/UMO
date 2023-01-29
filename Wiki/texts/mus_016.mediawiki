@@ -1,0 +1,25 @@
+{{Texts/Music
+ |ID=16
+ |MusicName=トライアングラー（fight on stage）
+ |OfficialName=トライアングラー（fight on stage）
+ |VocalName=ランカ・リー＝中島愛、シェリル・ノーム starring May'n
+ |VocalNameLF=ランカ・リー＝中島愛、シェリル・ノーム starring May'n
+ |Description=作品：マクロスF
+
+歌手：ランカ・リー＝中島愛、
+　　　シェリル・ノーム starring May'n
+
+作詞：Gabriela Robin
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S20177066/
+ |StoryDesc=大小数千隻の宇宙船で構成されているフロンティア船団。
+そこで偶然にも出会ってしまった早乙女アルト、
+シェリル・ノーム、ランカ・リー。
+
+超時空生命体バジュラとの戦闘、そして恋に翻弄され
+ながらも、3人の出会いが船団の運命を大きく変える。
+ |StoryTitle=「俺を、バルキリーに乗せろ！」
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

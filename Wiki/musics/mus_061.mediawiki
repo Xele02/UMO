@@ -1,5 +1,4 @@
-{{Music
- |Name=ヴァージンストーリー
+{{Database/Music/MusicInfo
  |ID=61
  |Cov=59
  |Cd=26
@@ -18,15 +17,5 @@
  |DivaSolo=0
  |DivaMulti=2
  |Exp=1
- |OfficialName=ヴァージンストーリー
- |VocalName=Fire Bomber
- |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：K.INOJO<br />作曲：COZZI
- |StoryTitle=「Fire Bomberはちゃんとここにいる！」
- |StoryDesc=かつてプロトデビルンを撃退し、マクロス7船団を<br />救った伝説のロックバンド、Fire Bomber。その後の<br />活動は不明な点が多く、幻の存在とさえ噂されていた。<br /><br />そんな中、Fire Bomberの新曲がリリースされたという<br />衝撃のニュースが銀河ネットワークを駆け巡ったのだ。
- |BuyURL=http://recochoku.jp/song/S21527072/single?ds=33378781
- |BannerId=2
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

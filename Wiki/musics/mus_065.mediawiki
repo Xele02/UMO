@@ -1,5 +1,4 @@
-{{Music
- |Name=風は予告なく吹く
+{{Database/Music/MusicInfo
  |ID=65
  |Cov=63
  |Cd=27
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=2
- |OfficialName=風は予告なく吹く
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：坂本真綾<br />作曲：北川勝利
- |StoryTitle=「歌は兵器なんかじゃない！」
- |StoryDesc=ハヤテの病室の前で佇むフレイアとミラージュ。<br />お互い言葉は交わさずとも胸に抱く想いは同じだった。<br /><br />そこにベルガーが現れ、あの暴走したヴォルドールを<br />見ていたと語る。そして自身の仮説を確信したとして、<br />歌こそ究極の兵器ではないのかと説き始めたのだった。
- |BuyURL=http://recochoku.jp/song/S1003400948/single?ds=1004716533
- |BannerId=4
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

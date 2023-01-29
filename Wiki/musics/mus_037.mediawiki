@@ -1,5 +1,4 @@
-{{Music
- |Name=一度だけの恋なら
+{{Database/Music/MusicInfo
  |ID=37
  |Cov=22
  |Cd=12
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=2
- |OfficialName=一度だけの恋なら
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：唐沢美帆、加藤裕介<br />作曲：加藤裕介
- |StoryTitle=「私は、好きな歌を歌いたい！」
- |StoryDesc=ワルキューレに憧れて、故郷を飛び出したフレイア。<br /><br />見事に夢を叶え、ワルキューレのメンバーとして<br />ヴァール症候群から多くの人を救う立場となった少女は、<br />ただ歌うことが好きだからという気持ちだけではなく、<br />いつしか歌うことの意味を考え始める。
- |BuyURL=https://recochoku.jp/song/S1003285196/
- |BannerId=4
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

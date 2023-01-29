@@ -1,5 +1,4 @@
-{{Music
- |Name=ファミリーマート・コスモス
+{{Database/Music/MusicInfo
  |ID=40
  |Cov=38
  |Cd=15
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=ファミリーマート・コスモス
- |VocalName=ランカ・リー＝中島愛
- |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜<br /><br />歌手：ランカ・リー＝中島愛<br /><br />作詞：一倉宏<br />作曲：菅野よう子
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S22001940/
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

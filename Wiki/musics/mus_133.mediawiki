@@ -1,5 +1,4 @@
-{{Music
- |Name=ライオン【MIRROR ver.】
+{{Database/Music/MusicInfo
  |ID=133
  |Cov=134
  |Cd=6
@@ -18,15 +17,5 @@
  |DivaSolo=0
  |DivaMulti=2
  |Exp=1
- |OfficialName=ライオン
- |VocalName=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
- |Description=作品：マクロスF<br /><br />歌手：シェリル・ノーム starring May'n、<br />　　　ランカ・リー＝中島愛<br /><br />作詞：Gabriela Robin<br />作曲：菅野よう子
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S20167577/
- |BannerId=3
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

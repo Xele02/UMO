@@ -1,5 +1,4 @@
-{{Music
- |Name=0-G Love【MIRROR ver.】
+{{Database/Music/MusicInfo
  |ID=154
  |Cov=155
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=0-G Love（ミラー）
- |VocalName=
- |Description=
- |StoryTitle=
- |StoryDesc=
- |BuyURL=
- |BannerId=
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

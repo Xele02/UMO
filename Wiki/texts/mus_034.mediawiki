@@ -1,0 +1,28 @@
+{{Texts/Music
+ |ID=34
+ |MusicName=僕らの戦場
+ |OfficialName=僕らの戦場
+ |VocalName=ワルキューレ　美雲ΔJUNNA フレイアΔ鈴木みのり カナメΔ安野希世乃 レイナΔ東山奈央 マキナΔ西田望見
+ |VocalNameLF=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり
+カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：マクロスΔ
+
+歌手：ワルキューレ
+　　　美雲ΔJUNNA　フレイアΔ鈴木みのり
+　　　カナメΔ安野希世乃　レイナΔ東山奈央
+　　　マキナΔ西田望見
+
+作詞：唐沢美帆、加藤裕介
+作曲：加藤裕介
+ |BuyURL=https://recochoku.jp/song/S1003321336/
+ |StoryDesc=デルタ小隊への正式入隊がかかった最終試験の日。
+ハヤテはミラージュとの模擬戦に苦しんでいた。
+
+その時、窮地に陥っていたハヤテに向かって歌い出す
+フレイア。すると、まるでその力に後押しされるように
+ハヤテの機体は力強く空へと舞い上がった。
+ |StoryTitle=「まだ試験は終わってないぜ、教官殿！」
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Generated]]

@@ -1,0 +1,19 @@
+{{Texts/Music
+ |ID=149
+ |MusicName=シルバームーン・レッドムーン【MIRROR ver.】
+ |OfficialName=シルバームーン・レッドムーン
+ |VocalName=飯島真理
+ |VocalNameLF=飯島真理
+ |Description=作品：超時空要塞マクロス
+
+歌手：飯島真理
+
+作詞：阿佐茜
+作曲：羽田健太郎
+ |BuyURL=https://recochoku.jp/song/S14225880/single?ds=34294998
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=1
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
+}}
+[[Category:Generated]]

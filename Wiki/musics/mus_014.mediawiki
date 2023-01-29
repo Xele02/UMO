@@ -1,5 +1,4 @@
-{{Music
- |Name=TRY AGAIN
+{{Database/Music/MusicInfo
  |ID=14
  |Cov=14
  |Cd=4
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=3
- |OfficialName=TRY AGAIN
- |VocalName=Fire Bomber
- |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：K.INOJO、福山恭子<br />作曲：福山芳樹
- |StoryTitle=「山よ！銀河よ！俺の歌を聞けぇっ！！」
- |StoryDesc=Fire Bomberのボーカル、熱気バサラの歌声には、<br />サウンドエナジーと呼ばれる力が特に強く宿っていた。<br /><br />ファイヤーバルキリーを駆り、戦場で歌い続けるバサラ。<br />戦いを嫌い、異星人とさえ歌によって通じ合えると信じる<br />男の歌声は、熾烈な争いを終わらせる鍵となるか…？
- |BuyURL=https://recochoku.jp/song/S20141960/single?ds=34295745
- |BannerId=2
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

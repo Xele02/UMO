@@ -1,0 +1,14 @@
+{{Texts/Music
+ |ID=144
+ |MusicName=PILLOW DREAM
+ |OfficialName=PILLOW DREAM
+ |VocalName=
+ |VocalNameLF=
+ |Description=
+ |BuyURL=
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

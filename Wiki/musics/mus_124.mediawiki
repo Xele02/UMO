@@ -1,5 +1,4 @@
-{{Music
- |Name=いけないボーダーライン Another ver.
+{{Database/Music/MusicInfo
  |ID=124
  |Cov=125
  |Cd=11
@@ -18,15 +17,5 @@
  |DivaSolo=0
  |DivaMulti=2
  |Exp=1
- |OfficialName=いけないボーダーライン
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：西直紀<br />作曲：コモリタミノル
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S1002571428/
- |BannerId=4
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

@@ -1,5 +1,4 @@
-{{Music
- |Name=オベリスク
+{{Database/Music/MusicInfo
  |ID=60
  |Cov=58
  |Cd=9
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=オベリスク
- |VocalName=シェリル・ノーム starring May'n
- |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：Gabriela Robin<br />作曲：菅野よう子
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S20279296/
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

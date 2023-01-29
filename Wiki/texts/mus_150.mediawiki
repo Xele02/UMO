@@ -1,0 +1,19 @@
+{{Texts/Music
+ |ID=150
+ |MusicName=Glow in the dark（高難度ver.）
+ |OfficialName=Glow in the dark
+ |VocalName=Yami_Q_ray
+ |VocalNameLF=Yami_Q_ray
+ |Description=作品：劇場版マクロスΔ 絶対LIVE!!!!!!
+
+歌手：Yami_Q_ray
+
+作詞：太渡辺未来・西田恵美
+作曲：渡辺未来
+ |BuyURL=https://recochoku.jp/song/S1012616085/single?ds=1018793481
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

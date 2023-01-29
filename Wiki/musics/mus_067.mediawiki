@@ -1,5 +1,4 @@
-{{Music
- |Name=REMEMBER 16
+{{Database/Music/MusicInfo
  |ID=67
  |Cov=65
  |Cd=3
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=3
- |OfficialName=REMEMBER 16
- |VocalName=Fire Bomber
- |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：K.INOJO<br />作曲：河内淳貴
- |StoryTitle=「このまま、二度と子供や妻に会えなかったら…」
- |StoryDesc=作り掛けの曲を完成させる切っ掛けを閃いたバサラ。<br />救援部隊をシビルが襲撃したため一旦は中断するも、<br />シティ7の夕陽を前に再び曲作りを開始するのだった。<br /><br />一方、夕陽の公園でフィジカの妻と子供の姿を見つけた<br />ガムリンは、愕然とする光景を目の当たりにしていた。
- |BuyURL=https://recochoku.jp/song/S20141949/
- |BannerId=2
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

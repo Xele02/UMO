@@ -1,5 +1,4 @@
-{{Music
- |Name=宇宙兄弟船
+{{Database/Music/MusicInfo
  |ID=82
  |Cov=79
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=宇宙兄弟船
- |VocalName=
- |Description=楽曲詳細 078
- |StoryTitle=
- |StoryDesc=
- |BuyURL=
- |BannerId=
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

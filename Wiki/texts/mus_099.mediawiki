@@ -1,0 +1,25 @@
+{{Texts/Music
+ |ID=99
+ |MusicName=星間飛行～Freyja Ver.～
+ |OfficialName=星間飛行～Freyja Ver.～
+ |VocalName=ワルキューレ　フレイアΔ鈴木みのり
+ |VocalNameLF=ワルキューレ　フレイアΔ鈴木みのり
+ |Description=作品：マクロスΔ
+
+歌手：ワルキューレ
+　　　フレイアΔ鈴木みのり
+
+作詞：松本隆
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S1004071724/single?ds=1005893452
+ |StoryDesc=フレイアが幼少の頃、よく行く遊び場所の近くに地球
+から来た軍人がいっぱい居たという。フレイアはそこで
+音楽プレーヤーを貰い、地球の歌を知ることができた。
+
+その後に起こる独立戦争を歌に支えられて乗り越えた
+フレイアは、歌が持つ力を心で感じ取っていったのだ。
+ |StoryTitle=「なんかようわからんけど、歌ってすごいって思った」
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Generated]]

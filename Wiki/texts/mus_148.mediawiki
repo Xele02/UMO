@@ -1,0 +1,14 @@
+{{Texts/Music
+ |ID=148
+ |MusicName=0-G Love【MIRROR ver.】
+ |OfficialName=0-G Love（ミラー）
+ |VocalName=
+ |VocalNameLF=
+ |Description=
+ |BuyURL=
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

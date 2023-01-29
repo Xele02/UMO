@@ -1,5 +1,4 @@
-{{Music
- |Name=FLASH IN THE DARK
+{{Database/Music/MusicInfo
  |ID=128
  |Cov=129
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=FLASH IN THE DARK
- |VocalName=EMILIA
- |Description=作品：劇場版マクロス7 銀河がオレを呼んでいる!<br /><br />歌手：EMILIA<br /><br />作詞：K.INOJO<br />作曲：茂村泰彦
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S20141965/single?ds=34294998
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

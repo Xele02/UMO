@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=28
+ |MusicName=ねこ日記
+ |OfficialName=ねこ日記
+ |VocalName=ランカ・リー＝中島愛
+ |VocalNameLF=ランカ・リー＝中島愛
+ |Description=作品：マクロスF
+
+歌手：ランカ・リー＝中島愛
+
+作詞：一倉宏
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S20155998/
+ |StoryDesc=惑星ガリア4でのサプライズライブを終え、
+夕焼けの空を静かに飛ぶアルトとランカ。
+
+ランカが命の危険も顧みずアルトに伝えたかったこと、
+それは誕生日を祝う言葉だった。恥ずかしそうに
+笑いあったあと、ランカは想いをこめて歌いだす…
+ |StoryTitle=「このまま、どこまでも飛んでいきたい気分」
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

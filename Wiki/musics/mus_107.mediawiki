@@ -1,5 +1,4 @@
-{{Music
- |Name=NEW FRONTIER
+{{Database/Music/MusicInfo
  |ID=107
  |Cov=108
  |Cd=29
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=2
- |OfficialName=NEW FRONTIER
- |VocalName=Fire Bomber
- |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：石川雅敏<br />作曲：河内淳貴
- |StoryTitle=「お前はなぜこの星に来た」
- |StoryDesc=巨大な白い銀河クジラとの決闘に挑み続けるグラハムと<br />銀河クジラに歌を聞かせたいバサラ。全く違う目的の<br />2人だが、その間には奇妙な友情が芽生え始めていた。<br /><br />なぜこの星に来たというグラハムの問いに、バサラは<br />風だと答えた。気持ちのいい風が流れていたのだと。
- |BuyURL=http://recochoku.jp/song/S1001667274/single?ds=1004652463
- |BannerId=2
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

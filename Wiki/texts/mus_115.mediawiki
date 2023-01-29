@@ -1,0 +1,19 @@
+{{Texts/Music
+ |ID=115
+ |MusicName=Merry Christmas without You
+ |OfficialName=Merry Christmas without You
+ |VocalName=frontier stars
+ |VocalNameLF=frontier stars
+ |Description=作品：マクロスF
+
+歌手：frontier stars
+
+作詞：山田稔明
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S20370428/single?ds=34093409
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

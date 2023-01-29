@@ -1,0 +1,28 @@
+{{Texts/Music
+ |ID=25
+ |MusicName=恋! ハレイション THE WAR
+ |OfficialName=恋! ハレイション THE WAR
+ |VocalName=ワルキューレ　美雲ΔJUNNA フレイアΔ鈴木みのり カナメΔ安野希世乃 レイナΔ東山奈央 マキナΔ西田望見
+ |VocalNameLF=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり
+カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：マクロスΔ
+
+歌手：ワルキューレ
+　　　美雲ΔJUNNA　フレイアΔ鈴木みのり
+　　　カナメΔ安野希世乃　レイナΔ東山奈央
+　　　マキナΔ西田望見
+
+作詞：深川琴美、姉田ウ夢ヤ
+作曲：姉田ウ夢ヤ
+ |BuyURL=https://recochoku.jp/song/S1002982209/
+ |StoryDesc=ヴァール症候群の脅威に毅然と立ち向かう
+戦術音楽ユニット、ワルキューレ。
+
+惑星アル・シャハルでフレイアとハヤテが目撃したのは
+戦場で歌う彼女たちとデルタ小隊の姿だった。彼女たちの
+歌はヴァール症候群を鎮めることができるのだろうか…？
+ |StoryTitle=「聴かせてあげる、女神の歌を！」
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Generated]]

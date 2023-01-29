@@ -1,5 +1,4 @@
-{{Music
- |Name=What 'bout my star?@Formo
+{{Database/Music/MusicInfo
  |ID=73
  |Cov=71
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=What 'bout my star?@Formo
- |VocalName=
- |Description=楽曲詳細 071
- |StoryTitle=
- |StoryDesc=
- |BuyURL=
- |BannerId=3
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

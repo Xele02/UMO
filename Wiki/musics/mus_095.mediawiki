@@ -1,5 +1,4 @@
-{{Music
- |Name=INFORMATION HIGH
+{{Database/Music/MusicInfo
  |ID=95
  |Cov=93
  |Cd=25
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=4
- |OfficialName=INFORMATION HIGH
- |VocalName=SHARON APPLE
- |Description=作品：マクロスプラス<br /><br />歌手：SHARON APPLE<br /><br />作詞：DAI＆KEN=GO→<br />作曲：CMJK
- |StoryTitle=（仮）
- |StoryDesc=（仮）
- |BuyURL=http://recochoku.jp/song/S21997125/single?ds=1004652917
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

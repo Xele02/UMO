@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=96
+ |MusicName=天使になっちゃった
+ |OfficialName=天使になっちゃった
+ |VocalName=シェリル・ノーム starring May'n
+ |VocalNameLF=シェリル・ノーム starring May'n
+ |Description=作品：マクロスF
+
+歌手：シェリル・ノーム starring May'n
+
+作詞：Gabriela Robin
+作曲：菅野よう子
+ |BuyURL=http://recochoku.jp/song/S20271890/single?ds=230054163
+ |StoryDesc=ホテルで撮影した写真を眺めていたシェリルは、1枚の
+写真を前に手を止めてしまう。映されたアルトの姿に
+シェリルは胸を甘く締め付けられるのを感じていた。
+
+美形だけど生意気で、危険を顧みず何度も助けてくれた
+優しい青年にシェリルの心は大きく揺さぶられていく。
+ |StoryTitle=「不思議の国…かぁ」
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

@@ -1,0 +1,19 @@
+{{Texts/Music
+ |ID=112
+ |MusicName=PARADE
+ |OfficialName=PARADE
+ |VocalName=Fire Bomber
+ |VocalNameLF=Fire Bomber
+ |Description=作品：マクロス ダイナマイト7
+
+歌手：Fire Bomber
+
+作詞：K.INOJO
+作曲：川野美紀
+ |BuyURL=https://recochoku.jp/song/S14204260/single?ds=1002161349
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

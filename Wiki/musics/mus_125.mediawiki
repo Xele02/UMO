@@ -1,5 +1,4 @@
-{{Music
- |Name=僕らの戦場【MIRROR ver.】
+{{Database/Music/MusicInfo
  |ID=125
  |Cov=126
  |Cd=14
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=僕らの戦場
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：唐沢美帆、加藤裕介<br />作曲：加藤裕介
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S1003321336/
- |BannerId=4
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

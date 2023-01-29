@@ -1,5 +1,4 @@
-{{Music
- |Name=破滅の純情
+{{Database/Music/MusicInfo
  |ID=75
  |Cov=73
  |Cd=19
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=2
- |OfficialName=破滅の純情
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：西直紀<br />作曲：コモリタミノル
- |StoryTitle=「システムが…暴走してる！」
- |StoryDesc=惑星ヴォルドールにて古代システム破壊のため行った<br />戦術ライブだが、システムの暴走と異常な共鳴反応を<br />起こすフレイアとハヤテのため、強制的に中断された。<br /><br />しかし、遺跡との共鳴で覚醒した美雲は再び歌い始め、<br />より共鳴を強めていく。そして、限界を超えた遺跡は…
- |BuyURL=http://recochoku.jp/song/S1003537107/single?ds=1004922849
- |BannerId=4
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

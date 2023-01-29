@@ -1,5 +1,4 @@
-{{Music
- |Name=恋はドッグファイト （FIRST LIVE in アトランティスドーム）
+{{Database/Music/MusicInfo
  |ID=66
  |Cov=64
  |Cd=10
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=2
- |OfficialName=恋はドッグファイト （FIRST LIVE in アトランティスドーム）
- |VocalName=ランカ・リー＝中島愛
- |Description=作品：劇場版マクロスF〜サヨナラノツバサ〜<br /><br />歌手：ランカ・リー＝中島愛<br /><br />作詞：黒河影次<br />作曲：菅野よう子
- |StoryTitle=
- |StoryDesc=
- |BuyURL=http://recochoku.jp/song/S21025879/single?ds=1004680147
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

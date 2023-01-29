@@ -1,5 +1,4 @@
-{{Music
- |Name=NEO STREAM Another ver.
+{{Database/Music/MusicInfo
  |ID=127
  |Cov=128
  |Cd=14
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=NEO STREAM
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：西田恵美<br />作曲：渡辺未来
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S1003321335/single?ds=1004688106
- |BannerId=4
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

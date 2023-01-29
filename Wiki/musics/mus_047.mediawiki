@@ -1,5 +1,4 @@
-{{Music
- |Name=虹いろ・クマクマ
+{{Database/Music/MusicInfo
  |ID=47
  |Cov=45
  |Cd=10
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=4
- |OfficialName=虹いろ・クマクマ
- |VocalName=ランカ・リー＝中島愛
- |Description=作品：劇場版マクロスF〜サヨナラノツバサ〜<br /><br />歌手：ランカ・リー＝中島愛<br /><br />作詞：Gabriela Robin<br />作曲：菅野よう子
- |StoryTitle=「来週末、私のファーストライブの招待状です！」
- |StoryDesc=ずっと夢見ていた歌手としてデビューしたランカ。<br />ついに、ファーストライブの開催が決定した。<br /><br />憧れのシェリルに招待状を手渡し、ライブの当日を<br />迎える。まるで魔法のように派手な演出がステージを<br />彩ると、歌と観客が一体となって会場を揺らした。
- |BuyURL=https://recochoku.jp/song/S21025878/
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=75
+ |MusicName=ホシキラ
+ |OfficialName=ホシキラ
+ |VocalName=ランカ・リー＝中島愛
+ |VocalNameLF=ランカ・リー＝中島愛
+ |Description=作品：劇場版マクロスF〜サヨナラノツバサ〜
+
+歌手：ランカ・リー＝中島愛
+
+作詞：Gabriela Robin
+作曲：菅野よう子
+ |BuyURL=http://recochoku.jp/song/S21029019/single?ds=1004680147
+ |StoryDesc=バジュラが星を後にしてからひと月、人々は残された
+大地を踏みしめ、新しい生活を始めようとしていた。
+
+ランカはアルトが無事に帰ってくること、そして命を
+燃やして歌い、長い眠りについたシェリルが再び目を
+覚ますことを信じ、残されたこの星と共に歌い続ける。
+ |StoryTitle=「──だけど、私は信じている」
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

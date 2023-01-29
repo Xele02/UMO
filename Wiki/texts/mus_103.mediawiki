@@ -1,0 +1,19 @@
+{{Texts/Music
+ |ID=103
+ |MusicName=愛・おぼえていますか【MIRROR ver.】
+ |OfficialName=愛・おぼえていますか
+ |VocalName=飯島真理
+ |VocalNameLF=飯島真理
+ |Description=作品：超時空要塞マクロス 愛・おぼえていますか
+
+歌手：飯島真理
+
+作詞：安井かずみ
+作曲：加藤和彦
+ |BuyURL=https://recochoku.jp/song/S20268933/single?ds=34294998
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

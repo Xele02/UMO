@@ -1,0 +1,16 @@
+{{Database/Costume/CostumeInfo
+ |ID=182
+ |DivaId=10
+ |PrismCostumeId=2
+ |Enabled=2
+ |SkillId=10
+ |EODICFLJAKO=False
+ |AGBPBDODKBK=1
+ |HMCOGDICFNB=1
+ |LevelMax=4
+ |HGBJODBCJDA=4
+ |EGLDFPILJLG=0
+ |GLEEPAFMPLO=True
+ |IIELLEPEEFH=1
+}}
+[[Category:Generated]]

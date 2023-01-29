@@ -1,0 +1,14 @@
+{{Texts/Music
+ |ID=71
+ |MusicName=What 'bout my star?@Formo
+ |OfficialName=What 'bout my star?@Formo
+ |VocalName=
+ |VocalNameLF=
+ |Description=楽曲詳細 071
+ |BuyURL=
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

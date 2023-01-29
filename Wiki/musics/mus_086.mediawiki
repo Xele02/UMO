@@ -1,5 +1,4 @@
-{{Music
- |Name=SUNSET BEACH
+{{Database/Music/MusicInfo
  |ID=86
  |Cov=84
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=SUNSET BEACH
- |VocalName=飯島真理
- |Description=作品：超時空要塞マクロス<br /><br />歌手：飯島真理<br /><br />作詞：阿佐茜<br />作曲：羽田健太郎
- |StoryTitle=「いいものを見せてあげようか」
- |StoryDesc=プロの歌手であるミンメイも、プライベートでは<br />年頃の女の子。スキャンダルに落ち込みもするし、<br />無邪気に遊びまわりたい気持ちもある。<br /><br />そんなミンメイを想う輝は、彼女の願いを叶えるために<br />バルキリーで宇宙へと連れ出したのであった。
- |BuyURL=https://recochoku.jp/song/S14225820/single?ds=34294998
- |BannerId=1
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

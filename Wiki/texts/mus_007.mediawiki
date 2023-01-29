@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=7
+ |MusicName=射手座☆午後九時Don't be late
+ |OfficialName=射手座☆午後九時Don't be late
+ |VocalName=シェリル・ノーム starring May'n
+ |VocalNameLF=シェリル・ノーム starring May'n
+ |Description=作品：マクロスF
+
+歌手：シェリル・ノーム starring May'n
+
+作詞：佐藤大、hal、Gabriela Robin、マイクスギヤマ
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S20125287/single?ds=34295739
+ |StoryDesc=フロンティア船団での最後のライブに励むシェリルは
+心配してくれたファンへの想いを静かに語り始めた。
+
+そしていつもの決め台詞とともに、この曲を
+歌い出す。ファンの気持ちを裏切らないシェリルの
+歌に、会場のボルテージは最高潮に達する。
+ |StoryTitle=「わたしの歌を聴けぇ！」
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

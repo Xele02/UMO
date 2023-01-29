@@ -1,0 +1,25 @@
+{{Texts/Music
+ |ID=33
+ |MusicName=サヨナラノツバサ 〜 the end of triangle
+ |OfficialName=サヨナラノツバサ 〜 the end of triangle
+ |VocalName=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
+ |VocalNameLF=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
+ |Description=作品：劇場版マクロスF〜サヨナラノツバサ〜
+
+歌手：シェリル・ノーム starring May'n、
+　　　ランカ・リー＝中島愛
+
+作詞：Gabriela Robin、河森正治
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S21029018/
+ |StoryDesc=ランカとシェリル。2人の歌姫は、それぞれの運命に
+立ち向かい、最後まで歌い続けることを決意した。
+
+バジュラに心を伝えるため。歌で銀河を震わせるため。
+そして何より、誰よりも大切な人のため。
+彼女たちの歌声は、この空をはばたくツバサとなった。
+ |StoryTitle=「翼に風を！」「銀河に歌を！」
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=70
+ |MusicName=愛・おぼえていますか〜bless the little queen
+ |OfficialName=愛・おぼえていますか〜bless the little queen
+ |VocalName=ランカ・リー＝中島愛
+ |VocalNameLF=ランカ・リー＝中島愛
+ |Description=作品：マクロスF
+
+歌手：ランカ・リー＝中島愛
+
+作詞：安井かずみ
+作曲：加藤和彦
+ |BuyURL=http://recochoku.jp/song/S20177073/single?ds=34295882
+ |StoryDesc=バジュラ本星への降下を開始したフロンティア船団。
+全てが上手くいくと思われたその時、宙域にランカの
+歌声が響き渡り、バジュラは連携を取り戻していく。
+
+バジュラの猛攻によって劣勢を強いられる新統合軍
+と移民船団。ランカは本当に人類の敵となったのか…？
+ |StoryTitle=「惑星の守り手に、これ以上相応しい歌は無いわね」
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

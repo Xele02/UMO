@@ -1,5 +1,4 @@
-{{Music
- |Name=Absolute 5
+{{Database/Music/MusicInfo
  |ID=78
  |Cov=76
  |Cd=16
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=3
- |OfficialName=Absolute 5
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：喜介<br />作曲：渡辺拓也
- |StoryTitle=「大丈夫、私たちならできる！」
- |StoryDesc=美雲を囚われ、メンバーを欠いたワルキューレ。<br />それでもプロトカルチャーのシステムを破壊するため、<br />4人での戦術ライブを強行する。<br /><br />敵の激しい抵抗の中、ワルキューレは歌声を響かせる。<br />気配を隠し、静かに狙いを定める存在にも気付かずに…
- |BuyURL=http://recochoku.jp/song/S1003537005/single?ds=1004922775
- |BannerId=4
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

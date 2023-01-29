@@ -1,5 +1,4 @@
-{{Music
- |Name=突撃ラブハート [Duet Version]
+{{Database/Music/MusicInfo
  |ID=17
  |Cov=17
  |Cd=3
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=2
  |Exp=2
- |OfficialName=突撃ラブハート [Duet Version]
- |VocalName=Fire Bomber
- |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：K.INOJO<br />作曲：河内淳貴
- |StoryTitle=「ついにこのときが来たぜ！」
- |StoryDesc=移民先を求めて銀河を航行していたマクロス7船団だが、<br />突如として凶悪な兵器を使用する敵の襲撃をうける。<br /><br />戦火が拡大していく最中、1人の男が戦場に飛び出した。<br />その男は無謀にも、敵を目の前にして歌を歌い出す。<br />赤いバルキリーを駆るこの男、その名は熱気バサラ。
- |BuyURL=https://recochoku.jp/song/S22001140/single?ds=34295744
- |BannerId=2
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

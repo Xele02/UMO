@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=61
+ |MusicName=マクロス
+ |OfficialName=マクロス
+ |VocalName=藤原誠
+ |VocalNameLF=藤原誠
+ |Description=作品：超時空要塞マクロス
+
+歌手：藤原誠
+
+作詞：阿佐茜
+作曲：羽田健太郎
+ |BuyURL=https://recochoku.jp/song/S14224830/
+ |StoryDesc=ゼントラーディ軍との星間戦争に巻き込まれた
+マクロス。約5万人の民間人を乗せた艦は広い宇宙の
+彼方に投げ出されてしまう。
+
+民間人だった一条輝は軍隊に抵抗を感じながらも、
+ミンメイを守るために軍への入隊を決意したのだった。
+ |StoryTitle=「バルキリー・スカル大隊発進！」
+ |BannerId=1
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
+}}
+[[Category:Generated]]

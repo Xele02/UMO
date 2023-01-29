@@ -1,5 +1,4 @@
-{{Music
- |Name=比較用譜面
+{{Database/Music/MusicInfo
  |ID=112
  |Cov=113
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=比較用譜面
- |VocalName=
- |Description=作品：<br /><br />歌手：<br /><br />作詞：<br />作曲：
- |StoryTitle=
- |StoryDesc=
- |BuyURL=
- |BannerId=
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

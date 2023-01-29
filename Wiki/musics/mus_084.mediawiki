@@ -1,5 +1,4 @@
-{{Music
- |Name=ランナー -リンミンメイ･バージョン-
+{{Database/Music/MusicInfo
  |ID=84
  |Cov=82
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=2
- |OfficialName=ランナー -リンミンメイ･バージョン-
- |VocalName=飯島真理
- |Description=作品：超時空要塞マクロス<br /><br />歌手：飯島真理<br /><br />作詞：阿佐茜<br />作曲：羽田健太郎
- |StoryTitle=「ありがとう、ミンメイ」
- |StoryDesc=最初は偶然の出会いだった輝とミンメイ。ともに<br />窮地を乗り越えた2人は徐々に交友を深めていく。<br /><br />そして、軍へ入隊した輝と、芸能界に入ったミンメイ。<br />いつしか疎遠となっていく2人の関係だが、かつての<br />青春と思い出は、時を経た今でも色褪せることはない。
- |BuyURL=http://recochoku.jp/song/S20139671/
- |BannerId=1
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

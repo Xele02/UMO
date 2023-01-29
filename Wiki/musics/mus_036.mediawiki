@@ -1,5 +1,4 @@
-{{Music
- |Name=シルバームーン・レッドムーン
+{{Database/Music/MusicInfo
  |ID=36
  |Cov=36
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=2
- |OfficialName=シルバームーン・レッドムーン
- |VocalName=飯島真理
- |Description=作品：超時空要塞マクロス<br /><br />歌手：飯島真理<br /><br />作詞：阿佐茜<br />作曲：羽田健太郎
- |StoryTitle=「まるで、生きてるみたいね」
- |StoryDesc=度重なる戦闘と、長く苦しい旅路の果てに、<br />遂にマクロスは地球への帰還を果たす。<br /><br />失ったものの多さに悲しむ乗員たち。それに寄り添う<br />ように流れるのは、ミンメイの歌だった。<br />姿は見えずとも、彼女の歌声は常に傍にある。
- |BuyURL=https://recochoku.jp/song/S14225880/single?ds=34294998
- |BannerId=1
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=5
+ |MusicName=私の彼はパイロット
+ |OfficialName=私の彼はパイロット
+ |VocalName=ランカ・リー＝中島愛
+ |VocalNameLF=ランカ・リー＝中島愛
+ |Description=作品：マクロスF
+
+歌手：ランカ・リー＝中島愛
+
+作詞：阿佐茜
+作曲：羽田健太郎
+ |BuyURL=https://recochoku.jp/song/S22001448/
+ |StoryDesc=ミス・マクロス・フロンティアの舞台上で、
+自分の出番を待ちながら緊張を隠せずにいるランカ。
+
+しかし自分の夢のため、歌が好きだという想いをこめ、
+かのリン・ミンメイの名曲を歌い始めた。
+ここから彼女のシンデレラストーリーが始まる！
+ |StoryTitle=「ランカ・リーです、よろしくお願いします！」
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

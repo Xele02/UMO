@@ -1,0 +1,28 @@
+{{Texts/Music
+ |ID=24
+ |MusicName=不確定性☆COSMIC MOVEMENT
+ |OfficialName=不確定性☆COSMIC MOVEMENT
+ |VocalName=ワルキューレ　美雲ΔJUNNA フレイアΔ鈴木みのり カナメΔ安野希世乃 レイナΔ東山奈央 マキナΔ西田望見
+ |VocalNameLF=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり
+カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：マクロスΔ
+
+歌手：ワルキューレ
+　　　美雲ΔJUNNA　フレイアΔ鈴木みのり
+　　　カナメΔ安野希世乃　レイナΔ東山奈央
+　　　マキナΔ西田望見
+
+作詞：深川琴美、六ツ見純代、渡邊亜希子、姉田ウ夢ヤ
+作曲：姉田ウ夢ヤ
+ |BuyURL=https://recochoku.jp/song/S1003321337/
+ |StoryDesc=惑星ランドールでのワクチンライブ。
+
+フレイアは、憧れだったワルキューレのメンバーとして
+迎える初めてのライブに緊張を隠すことができない。
+一方のハヤテも、これが入隊してから初めてのライブ。
+2人の衝撃デビューステージは一体どうなるのか…？
+ |StoryTitle=「リンゴ大好き、フレイア・ヴィオン14歳！」
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Generated]]

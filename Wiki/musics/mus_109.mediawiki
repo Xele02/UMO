@@ -1,5 +1,4 @@
-{{Music
- |Name=天使の絵の具【MIRROR ver.】
+{{Database/Music/MusicInfo
  |ID=109
  |Cov=110
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=天使の絵の具
- |VocalName=飯島真理
- |Description=作品：超時空要塞マクロス 愛・おぼえていますか<br /><br />歌手：飯島真理<br /><br />作詞：飯島真理<br />作曲：飯島真理
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S20268934/single?ds=34294998
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

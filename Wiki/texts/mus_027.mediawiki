@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=27
+ |MusicName=アイモ
+ |OfficialName=アイモ
+ |VocalName=ランカ・リー＝中島愛
+ |VocalNameLF=ランカ・リー＝中島愛
+ |Description=作品：マクロスF
+
+歌手：ランカ・リー＝中島愛
+
+作詞：Gabriela Robin
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S20154453/
+ |StoryDesc=みんなに自分の歌を届けたいと語ったランカは、
+遠まわしながらも励ましてくれたアルトに、
+自分の歌を聴いてほしいと告げる。
+
+不安の解けたランカの歌声は、穏やかな風と共に
+アルトの心を包み込む。
+ |StoryTitle=「私、みんなに伝えたいの！」
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

@@ -1,5 +1,4 @@
-{{Music
- |Name=会えないとき
+{{Database/Music/MusicInfo
  |ID=148
  |Cov=149
  |Cd=9
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=会えないとき
- |VocalName=シェリル・ノーム starring May'n
- |Description=作品：マクロスF<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：Gabriela Robin<br />作曲：菅野よう子
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S20279294/
- |BannerId=3
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

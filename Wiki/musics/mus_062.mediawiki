@@ -1,5 +1,4 @@
-{{Music
- |Name=LOVE! THUNDER GLOW
+{{Database/Music/MusicInfo
  |ID=62
  |Cov=60
  |Cd=16
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=2
- |OfficialName=LOVE! THUNDER GLOW
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br /><br />作詞：サエキけんぞう<br />作曲：SiZK、Stephen McNair
- |StoryTitle=「怖れている？この私が……？」
- |StoryDesc=遺跡のシステムを破壊し人々を救出するため、再び<br />ヴォルドールへ潜入したデルタ小隊とワルキューレ。<br /><br />異常な波形で歌うフレイアと共鳴し暴走するハヤテ。<br />遺跡のシステムが起動し、周囲が混乱に包まれる中、<br />美雲の脳裏には恐怖の記憶と遥か昔の光景が甦り…
- |BuyURL=http://recochoku.jp/song/S1003537003/single?ds=1004922775
- |BannerId=4
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

@@ -1,5 +1,4 @@
-{{Music
- |Name=つらみ現在進行形
+{{Database/Music/MusicInfo
  |ID=152
  |Cov=153
  |Cd=32
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=3
- |OfficialName=つらみ現在進行形
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：劇場版マクロスΔ 絶対LIVE!!!!!!<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：堂島孝平<br />作曲：櫻澤ヒカル
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S1012579857/single?ds=1018736694
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

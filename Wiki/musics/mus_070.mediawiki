@@ -1,5 +1,4 @@
-{{Music
- |Name=ワルキューレがとまらない
+{{Database/Music/MusicInfo
  |ID=70
  |Cov=68
  |Cd=18
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=ワルキューレがとまらない
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：唐沢美帆、加藤裕介<br />作曲：加藤裕介
- |StoryTitle=「ワルキューレを最高にいいグループにしてやろうって」
- |StoryDesc=戦術音楽ユニットとして結成されて以来、多くの試練を<br />乗り越えて活動を続けてきたワルキューレ。<br /><br />たくさんの人の想いを背負って歌っている彼女たち。<br />日々成長を続け、とどまることを知らないその歌声は、<br />今日も銀河中の人々の心に響き続けている。
- |BuyURL=https://recochoku.jp/song/S1004034569/
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

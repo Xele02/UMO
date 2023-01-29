@@ -1,0 +1,25 @@
+{{Texts/Music
+ |ID=88
+ |MusicName=Good job！
+ |OfficialName=Good job！
+ |VocalName=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
+ |VocalNameLF=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
+ |Description=作品：マクロスF
+
+歌手：シェリル・ノーム starring May'n、
+　　　ランカ・リー＝中島愛
+
+作詞：ROBIN ROBINSON
+作曲：菅野よう子
+ |BuyURL=http://recochoku.jp/song/S1007350870/single?ds=1010848272
+ |StoryDesc=シェリル・ノームとランカ・リー。
+今を時めく歌姫である彼女たちは
+今宵もスペシャルなライブを用意してくれた。
+
+日々進化を続ける彼女たちの挑戦は、
+終わることなく次のステージへと羽ばたいていく。
+ |StoryTitle=「私たちの歌を聴けー！！」
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

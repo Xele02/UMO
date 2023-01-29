@@ -1,5 +1,4 @@
-{{Music
- |Name=ドッグ・ファイター
+{{Database/Music/MusicInfo
  |ID=114
  |Cov=115
  |Cd=20
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=4
- |OfficialName=ドッグ・ファイター
- |VocalName=--------------------
- |Description=作品：超時空要塞マクロス<br /><br />作曲：羽田健太郎
- |StoryTitle=「全機散開して、逆加速に移れいっ！」
- |StoryDesc=異星人からの襲撃に対し、可変戦闘機「バルキリー」を<br />駆って迎撃へと向かう統合軍の若きパイロットたち。<br />一条輝もスカル小隊の隊員として敵の襲撃を迎え撃つ。<br /><br />バルキリー隊が一斉発射したミサイルが戦端を開くと、<br />宇宙空間を舞台にしたドッグファイトの幕が上がった。
- |BuyURL=https://recochoku.jp/song/S14235080/single?ds=34295719
- |BannerId=1
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

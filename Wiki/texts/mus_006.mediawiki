@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=6
+ |MusicName=ニンジーン Loves you yeah!
+ |OfficialName=ニンジーン Loves you yeah!
+ |VocalName=ランカ・リー＝中島愛
+ |VocalNameLF=ランカ・リー＝中島愛
+ |Description=作品：マクロスF
+
+歌手：ランカ・リー＝中島愛
+
+作詞：一倉宏
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S20154467/single?ds=34295882
+ |StoryDesc=大好きな歌を歌うため、憧れのシェリルに近づくために
+デビューしたてのランカはさまざまな仕事をこなす。しかし
+その仕事は夢に見たものとは程遠いものばかりだった。
+
+とあるショッピングモールの片隅でニンジンの被り物を
+被ったランカは、一生懸命、CMソングを歌う。
+ |StoryTitle=「7種のビタミン大集合！」
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

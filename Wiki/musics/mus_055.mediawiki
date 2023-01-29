@@ -1,5 +1,4 @@
-{{Music
- |Name=おにゃの子☆girl
+{{Database/Music/MusicInfo
  |ID=55
  |Cov=53
  |Cd=16
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=2
  |Exp=2
- |OfficialName=おにゃの子☆girl
- |VocalName=ワルキューレ　マキナΔ西田望見　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　マキナΔ西田望見　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br /><br />作詞：かせきさいだぁ<br />作曲：TeddyLoid
- |StoryTitle=「これはマキマキからのプレゼント！」
- |StoryDesc=銀河ネットワークに配信されたワルキューレのライブ<br />映像…と、販売目的の映像コンテンツ（有料）。<br /><br />商売上手なアラドの策略はさておき、その魅力で<br />ファンを魅了するマキナ。乙女チックな演出に彩られた<br />ソロライブは、男女問わず人気を博している。
- |BuyURL=https://recochoku.jp/song/S1003537004/
- |BannerId=4
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

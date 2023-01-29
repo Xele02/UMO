@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=100
+ |MusicName=ねこ日記【MIRROR ver.】
+ |OfficialName=ねこ日記
+ |VocalName=ランカ・リー＝中島愛
+ |VocalNameLF=ランカ・リー＝中島愛
+ |Description=作品：マクロスF
+
+歌手：ランカ・リー＝中島愛
+
+作詞：一倉宏
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S20155998/
+ |StoryDesc=下積みを重ねながら、ついに歌手としてデビューする
+ことができたランカ。1人でも多くの人に知ってもらう
+ため、街頭で精力的にプロモーションを行うのだった。
+
+その後、映画への出演が決まり一躍人気のアイドルと
+なったランカ。地道な活動こそが夢を繋いだのである。
+ |StoryTitle=「この度、私デビューします」
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

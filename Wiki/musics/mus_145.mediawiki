@@ -1,5 +1,4 @@
-{{Music
- |Name=What 'bout my star? @Formo
+{{Database/Music/MusicInfo
  |ID=145
  |Cov=146
  |Cd=6
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=2
- |OfficialName=What 'bout my star? @Formo
- |VocalName=ランカ・リー＝中島愛、シェリル・ノーム starring May'n
- |Description=作品：マクロスF<br /><br />歌手：シェリル・ノーム starring May'n、<br />　　　ランカ・リー＝中島愛<br /><br />作詞：hal<br />作曲：菅野よう子
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S20154452/single?ds=34295882
- |BannerId=3
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

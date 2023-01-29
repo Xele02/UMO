@@ -1,5 +1,4 @@
-{{Music
- |Name=Hear The Universe
+{{Database/Music/MusicInfo
  |ID=49
  |Cov=47
  |Cd=16
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=2
  |Exp=3
- |OfficialName=Hear The Universe
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：岩里祐穂<br />作曲：Rasmus Faber
- |StoryTitle=「クラゲを隠すならクラゲの群れってやつだ」
- |StoryDesc=星団全体にウィンダミアの支配が広がり、<br />ワクチンライブを行えなくなってしまったワルキューレ。<br /><br />そこでワルキューレがとった作戦は、ライブの映像を<br />配信することだった。特殊なコンピュータウィルスが<br />含まれた映像データは瞬く間に銀河中へと広がっていく。
- |BuyURL=https://recochoku.jp/song/S1003537000/
- |BannerId=4
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

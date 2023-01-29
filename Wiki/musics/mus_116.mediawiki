@@ -1,5 +1,4 @@
-{{Music
- |Name=LIGHT THE LIGHT
+{{Database/Music/MusicInfo
  |ID=116
  |Cov=117
  |Cd=4
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=3
- |OfficialName=LIGHT THE LIGHT
- |VocalName=Fire Bomber
- |Description=作品：マクロス7<br /><br />歌手：Fire Bomber<br /><br />作詞：K.INOJO<br />作曲：TSUKASA
- |StoryTitle=「みんな歌うのよ、心を込めて！」
- |StoryDesc=力の暴走によって、際限なくスピリチアを奪い尽くす<br />化物となったゲペルニッチを前に、人々は最後の力を<br />振り絞りながら歌い続けることで必死の抵抗を試みる。<br /><br />いつしか歌声も途絶え、銀河が闇へと閉ざされかけた<br />その時、穢れなき歌とともにスピリチアが光を放った。
- |BuyURL=https://recochoku.jp/song/S20141959/single?ds=34295745
- |BannerId=2
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

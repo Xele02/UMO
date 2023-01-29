@@ -1,0 +1,19 @@
+{{Texts/Music
+ |ID=46
+ |MusicName=SEVENTH MOON
+ |OfficialName=SEVENTH MOON
+ |VocalName=Fire Bomber
+ |VocalNameLF=Fire Bomber
+ |Description=作品：マクロス7
+
+歌手：Fire Bomber
+
+作詞：K.INOJO
+作曲：河内淳貴
+ |BuyURL=https://recochoku.jp/song/S22001142/
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=2
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597
+}}
+[[Category:Generated]]

@@ -1,0 +1,10 @@
+{{Database/Diva/DivaInfo
+ |Attr=1
+ |ID=2
+ |BodyId=1
+ |PersonalityId=1
+ |Enabled=2
+ |LIOGKHIGJKN=23
+ |HomeBgId=11
+}}
+[[Category:Generated]]

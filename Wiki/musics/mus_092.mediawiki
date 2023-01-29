@@ -1,5 +1,4 @@
-{{Music
- |Name=チェンジ!!!!!
+{{Database/Music/MusicInfo
  |ID=92
  |Cov=90
  |Cd=21
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=5
  |Exp=2
- |OfficialName=チェンジ!!!!!
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：劇場版マクロスΔ激情のワルキューレ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：岩里祐穂<br />作曲：Rasmus Faber
- |StoryTitle=「駄目ならクビよ？」
- |StoryDesc=初ライブの直前、美雲の厳しい言葉に真剣な顔を見せる<br />フレイア。未だ成果を出せていないフレイアだったが…<br /><br />ハヤテたちデルタ小隊が見守る中、眩惑的なステージが<br />始まる。レッスンの時とはうって変わり、ステージ上で<br />輝きを放つフレイアの姿にハヤテは目を離せずにいた。
- |BuyURL=http://recochoku.jp/song/S1006375754/
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

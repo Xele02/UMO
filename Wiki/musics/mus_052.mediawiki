@@ -1,5 +1,4 @@
-{{Music
- |Name=絶対零度θノヴァティック
+{{Database/Music/MusicInfo
  |ID=52
  |Cov=50
  |Cd=19
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=3
- |OfficialName=絶対零度θノヴァティック
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：マクロスΔ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：図司純子<Eidy>、河嶋晃一<Eidy><br />作曲：図司純子<Eidy>、河嶋晃一<Eidy>、<br />　　　Mitsunori Ikeda
- |StoryTitle=「美雲さんは何故、どんな想いで歌うんですか？」
- |StoryDesc=星の歌い手として覚醒した美雲は、<br />ロイドに操られるがままに仲間たちへと牙をむく。<br /><br />残されたワルキューレの面々は、美雲の心を呼び覚ます<br />ために全力で歌い続けた。戦火が更に激しさを<br />増しても、ワルキューレの絆が途切れることはない。
- |BuyURL=https://recochoku.jp/song/S1003537133/
- |BannerId=4
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

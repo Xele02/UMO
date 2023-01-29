@@ -1,0 +1,29 @@
+{{Texts/Music
+ |ID=41
+ |MusicName=Silent Hacker
+ |OfficialName=Silent Hacker
+ |VocalName=ワルキューレ　レイナΔ東山奈央 美雲ΔJUNNA フレイアΔ鈴木みのり カナメΔ安野希世乃 マキナΔ西田望見
+ |VocalNameLF=ワルキューレ　レイナΔ東山奈央　美雲ΔJUNNA
+フレイアΔ鈴木みのり　カナメΔ安野希世乃
+マキナΔ西田望見
+ |Description=作品：マクロスΔ
+
+歌手：ワルキューレ
+　　　レイナΔ東山奈央　美雲ΔJUNNA
+　　　フレイアΔ鈴木みのり　カナメΔ安野希世乃
+　　　マキナΔ西田望見
+
+作詞：鈴木さえ子、TOMISIRO
+作曲：鈴木さえ子、TOMISIRO
+ |BuyURL=https://recochoku.jp/song/S1003537002/
+ |StoryDesc=ウィンダミア軍に占領された惑星ヴォルドールで、
+ワルキューレの潜入ミッションが開始される。
+
+多数の艦船による防衛網に対して、レイナによる
+ハッキングが開始された。高度な軍事システムが
+相手でも、レイナは余裕の笑みを浮かべて見せた。
+ |StoryTitle=「相手にとって不足なし」
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Generated]]

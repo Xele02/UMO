@@ -1,5 +1,4 @@
-{{Music
- |Name=ユニバーサル・バニー【MIRROR ver.】
+{{Database/Music/MusicInfo
  |ID=134
  |Cov=135
  |Cd=9
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=3
- |OfficialName=ユニバーサル・バニー
- |VocalName=シェリル・ノーム starring May'n
- |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：しほり、PA-NON、Gabriela Robin<br />作曲：菅野よう子
- |StoryTitle=
- |StoryDesc=
- |BuyURL=https://recochoku.jp/song/S20279291/single?ds=34296067
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

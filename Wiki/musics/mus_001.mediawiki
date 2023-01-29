@@ -1,5 +1,4 @@
-{{Music
- |Name=天使の絵の具
+{{Database/Music/MusicInfo
  |ID=1
  |Cov=1
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=3
- |OfficialName=天使の絵の具
- |VocalName=飯島真理
- |Description=作品：超時空要塞マクロス 愛・おぼえていますか<br /><br />歌手：飯島真理<br /><br />作詞：飯島真理<br />作曲：飯島真理
- |StoryTitle=「ワン、トゥー、スリー、フォー…」
- |StoryDesc=激しい戦争と恋に思い悩みながらも、その歌声で無事に<br />戦いを終結へと導いたミンメイ。<br /><br />すべてが終わったあと、溢れんばかりの歓声の中にいる<br />彼女は歌手としての誇りに満ちた表情でステージに<br />立っていた。そして、ゆっくりと歌を口ずさむ…
- |BuyURL=https://recochoku.jp/song/S20268934/single?ds=34294998
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

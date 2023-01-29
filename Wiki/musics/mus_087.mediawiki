@@ -1,5 +1,4 @@
-{{Music
- |Name=ワルキューレは裏切らない
+{{Database/Music/MusicInfo
  |ID=87
  |Cov=85
  |Cd=21
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=4
- |OfficialName=ワルキューレは裏切らない
- |VocalName=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：劇場版マクロスΔ激情のワルキューレ<br /><br />歌手：ワルキューレ<br />　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br />　　　カナメΔ安野希世乃　レイナΔ東山奈央<br />　　　マキナΔ西田望見<br /><br />作詞：喜介<br />作曲：渡辺拓也
- |StoryTitle=「届けなきゃ…私の歌……届けなきゃ！」
- |StoryDesc=ウィンダミアとの最終決戦。ロイド達の攻撃により<br />意識を失うハヤテ達に歌を届けに空へ飛びこんでいく。<br /><br />たとえ、どんなに絶望的な状況でも、決して希望を<br />諦めずに歌い続ける。それが彼女達の強さであり、<br />力なのだろう。
- |BuyURL=https://recochoku.jp/song/S1006375755/
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

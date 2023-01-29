@@ -1,5 +1,4 @@
-{{Music
- |Name=やさしさSAYONARA
+{{Database/Music/MusicInfo
  |ID=53
  |Cov=51
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=2
- |OfficialName=やさしさSAYONARA
- |VocalName=飯島真理
- |Description=作品：超時空要塞マクロス<br /><br />歌手：飯島真理<br /><br />作詞：阿佐茜<br />作曲：羽田健太郎
- |StoryTitle=「もう、歌をやめるなんて言わない」
- |StoryDesc=戦争は終結したものの、異星人や外宇宙の存在を知った<br />人類は、遥かな宇宙移民の旅へ出発しようとしていた。<br /><br />過去への執着をやめ、もう一度自分の歌と一緒に<br />生きていくことを決めたミンメイ。輝、そして未沙へ<br />別れを告げて、彼女はまだ見ぬどこかへと歩き始めた。
- |BuyURL=https://recochoku.jp/song/S14225830/
- |BannerId=1
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

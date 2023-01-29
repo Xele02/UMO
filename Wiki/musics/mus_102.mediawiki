@@ -1,5 +1,4 @@
-{{Music
- |Name=小白竜【MIRROR ver.】
+{{Database/Music/MusicInfo
  |ID=102
  |Cov=103
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=3
- |OfficialName=小白竜
- |VocalName=飯島真理
- |Description=作品：超時空要塞マクロス<br /><br />歌手：飯島真理<br /><br />作詞：阿佐茜<br />作曲：羽田健太郎
- |StoryTitle=「…そういや明日、小白竜の初日か」
- |StoryDesc=地球を追放されたも同然となったマクロスであったが、<br />マクロスで生活する民間人のバイタリティは、ついに<br />カンフー映画「小白竜」を艦内で完成させたのだった。<br /><br />そして公開初日、盗み見ていたゼントラーディたちは、<br />超能力を思わせる描写に大きな誤解を抱くことになる。
- |BuyURL=https://recochoku.jp/song/S14225840/single?ds=34294998
- |BannerId=1
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

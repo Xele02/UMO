@@ -1,0 +1,28 @@
+{{Texts/Music
+ |ID=93
+ |MusicName=ようこそ! ワルキューレ・ワールドへ
+ |OfficialName=ようこそ! ワルキューレ・ワールドへ
+ |VocalName=ワルキューレ　美雲ΔJUNNA フレイアΔ鈴木みのり カナメΔ安野希世乃 レイナΔ東山奈央 マキナΔ西田望見
+ |VocalNameLF=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり
+カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：マクロスΔ
+
+歌手：ワルキューレ
+　　　美雲ΔJUNNA　フレイアΔ鈴木みのり
+　　　カナメΔ安野希世乃　レイナΔ東山奈央
+　　　マキナΔ西田望見
+
+作詞：根元歳三
+作曲：西脇辰弥、Wilhelm Richard Wagner
+ |BuyURL=http://recochoku.jp/song/S1004034570/single?ds=1005893452
+ |StoryDesc=半ばドッキリのような抜き打ちの試験にて見事合格を
+掴み取り、女神の世界へと足を踏み入れたフレイア。
+
+そして、フレイアを加え5人となったワルキューレは、
+今日もステージで女神の歌声を響かせながら、観客を
+めくるめくワルキューレ・ワールドへと誘っていく。
+ |StoryTitle=「Welcome to Waltüre World！」
+ |BannerId=4
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867
+}}
+[[Category:Generated]]

@@ -1,5 +1,4 @@
-{{Music
- |Name=インフィニティ #7
+{{Database/Music/MusicInfo
  |ID=100
  |Cov=101
  |Cd=6
@@ -18,15 +17,5 @@
  |DivaSolo=0
  |DivaMulti=2
  |Exp=1
- |OfficialName=インフィニティ #7
- |VocalName=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
- |Description=作品：マクロスF<br /><br />歌手：シェリル・ノーム starring May'n、<br />　　　ランカ・リー＝中島愛<br /><br />作詞：岩里祐穂<br />作曲：菅野よう子
- |StoryTitle=「あなたにも一緒に歌ってほしいの」
- |StoryDesc=最後の曲だけはある人たちのために歌いたいという<br />シェリルの言葉に、アルトが戦場にいるのを知りながら<br />それでも気丈に歌い続けていたことに気付いたランカ。<br /><br />ランカは一緒に歌ってほしいというシェリルの願いに<br />応え、共に戦っているアルトのために歌声を響かせた。
- |BuyURL=http://recochoku.jp/song/S20192201/single?ds=34295882
- |BannerId=3
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

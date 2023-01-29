@@ -1,0 +1,24 @@
+{{Texts/Music
+ |ID=10
+ |MusicName=インフィニティ
+ |OfficialName=インフィニティ
+ |VocalName=シェリル・ノーム starring May'n
+ |VocalNameLF=シェリル・ノーム starring May'n
+ |Description=作品：マクロスF
+
+歌手：シェリル・ノーム starring May'n
+
+作詞：岩里祐穂
+作曲：菅野よう子
+ |BuyURL=https://recochoku.jp/song/S20154470/
+ |StoryDesc=シェリルのフロンティア船団ラストライブの最中、
+船外ではバジュラとの壮絶な戦闘が勃発していた。
+
+ライブの最後を飾る楽曲を前に、シェリルは
+特別な想いをこめて歌うことを宣言する。
+彼女の祈りは、宇宙で戦う彼らに届くのか…？
+ |StoryTitle=「ちょっとわがまま言わせてもらってもいいかな？」
+ |BannerId=3
+ |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
+}}
+[[Category:Generated]]

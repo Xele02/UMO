@@ -1,0 +1,19 @@
+{{Texts/Music
+ |ID=136
+ |MusicName=ROCK'N'ROLL FIRE
+ |OfficialName=ROCK'N'ROLL FIRE
+ |VocalName=Fire Bomber
+ |VocalNameLF=Fire Bomber
+ |Description=作品：マクロス ダイナマイト7
+
+歌手：Fire Bomber
+
+作詞：K.INOJO
+作曲：須藤英樹
+ |BuyURL=https://recochoku.jp/song/S1001667272/single?ds=1002161349
+ |StoryDesc=
+ |StoryTitle=
+ |BannerId=0
+ |AnmStoreURL=
+}}
+[[Category:Generated]]

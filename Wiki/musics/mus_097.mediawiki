@@ -1,5 +1,4 @@
-{{Music
- |Name=マイ・ビューティフル・プレイス
+{{Database/Music/MusicInfo
  |ID=97
  |Cov=98
  |Cd=1
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=1
- |OfficialName=マイ・ビューティフル・プレイス
- |VocalName=飯島真理
- |Description=作品：超時空要塞マクロス<br /><br />歌手：飯島真理<br /><br />作詞：阿佐茜<br />作曲：羽田健太郎
- |StoryTitle=「いつか、きっと戻れると思うんです」
- |StoryDesc=統合政府の出した決定は、24時間以内の地球圏外への<br />出撃だった。そしてそれは5万6千人のマクロス市民を<br />巻き添えにしなければならないことを意味していた…<br /><br />離れていく地球を背にし、想いを込めて歌うミンメイ。<br />いつか再び故郷が迎え入れてくれることを願いながら…
- |BuyURL=http://recochoku.jp/song/S14225890/single?ds=34294998
- |BannerId=1
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

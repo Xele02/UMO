@@ -1,5 +1,4 @@
-{{Music
- |Name=ノーザンクロス
+{{Database/Music/MusicInfo
  |ID=18
  |Cov=18
  |Cd=6
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=1
  |Exp=3
- |OfficialName=ノーザンクロス
- |VocalName=シェリル・ノーム starring May'n
- |Description=作品：マクロスF<br /><br />歌手：シェリル・ノーム starring May'n<br /><br />作詞：岩里祐穂、Gabriela Robin<br />作曲：菅野よう子
- |StoryTitle=「今あるのは音楽と、そしてわたし」
- |StoryDesc=バジュラの襲撃にさらされるフロンティア船団。<br />終わりの見えない恐怖に人々の心は弱まる一方だった。<br /><br />絶望に暮れる人々。希望の象徴として扱われるランカ。<br />そんな中、シェリルは、自分の歌で絶望を照らしてみせると<br />決意する。彼女の歌声は、戦場に何をもたらすのか…？
- |BuyURL=https://recochoku.jp/song/S22001426/
- |BannerId=3
- |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]

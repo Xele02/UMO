@@ -1,5 +1,4 @@
-{{Music
- |Name=Get it on ～光速クライmax
+{{Database/Music/MusicInfo
  |ID=57
  |Cov=55
  |Cd=10
@@ -18,15 +17,5 @@
  |DivaSolo=1
  |DivaMulti=2
  |Exp=1
- |OfficialName=Get it on ～光速クライmax
- |VocalName=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
- |Description=作品：劇場版マクロスF〜サヨナラノツバサ〜<br /><br />歌手：シェリル・ノーム starring May'n、<br />　　　ランカ・リー＝中島愛<br /><br />作詞：Gabriela Robin、Tim Jensen<br />作曲：菅野よう子
- |StoryTitle=「みんな、脱出するわよ！」
- |StoryDesc=スパイ容疑で監獄に囚われてしまったシェリル。<br />S.M.Sは極秘の救出作戦を決行する。<br /><br />そしてついに、ステージへの帰還を果たした。<br />ランカと対面すると少しだけ迷った素振りを見せたが、<br />マイクを受け取れば、そこにはいつもの彼女がいた。
- |BuyURL=https://recochoku.jp/song/S21025880/
- |BannerId=0
- |AnmStoreURL=
 }}
-[[Category:Music]]
 [[Category:Generated]]
-[[Category:Version_v_0.2]]
