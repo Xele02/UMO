@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout goDivaDisableLayoutRoot; // 0x68
 
 		public bool IsLevelup { get; private set; } // 0x5E
-		// public bool IsLevelupPopupProcess { get; private set; } 0x1883F34 0x1883F3C
+		public bool IsLevelupPopupProcess { get { return isLevelupPopupProcess; } private set { isLevelupPopupProcess = value; } } //0x1883F34 0x1883F3C
 
 		// RVA: 0x1883F44 Offset: 0x1883F44 VA: 0x1883F44
 		private void Awake()
@@ -296,18 +296,87 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18882E8 Offset: 0x18882E8 VA: 0x18882E8
-		// public void SkipBeginAnim() { }
+		public void SkipBeginAnim()
+		{
+			if(!isFinished && !isLevelupPopupProcess)
+			{
+				isSkiped = true;
+				StopAllCoroutines();
+				countMusicExpUpSEPlayback.Stop();
+				countDivaExpUpSEPlayback.Stop();
+				layoutRoot.StartChildrenAnimGoStop("st_in");
+				GetCenterBonusLayout().StartChildrenAnimGoStop("st_out");
+				musicLevelLayout.layoutRoot.StartChildrenAnimGoStop("st_in");
+				musicLevelLayout.layoutEffectRoot.StartChildrenAnimGoStop("st_out");
+				for(int i = 0; i < 3; i++)
+				{
+					GNIFOHMFDMO_DivaResultData.IKODHMDOMMP info = viewResultDivaData.NAIHIJAJPNK_Divas[i];
+					if(info.AHHJLDLAPAN_DivaId > 0)
+					{
+						DivaLayout dl = divaLayouts[i];
+						float f = CalcMusicLevelExpSectionPercentage(info.AIMAJDEJDLM_MusicLevel, ToSectionMusicLevelExp(info.AIMAJDEJDLM_MusicLevel, (float)info.CFDGFLNIMCL_MusicExp));
+						if(info.IIHHAFPPFCP_PrevMusicLevel < info.AIMAJDEJDLM_MusicLevel)
+						{
+							dl.isMusicLevelup = true;
+						}
+						SetMusicLevel(i, info.AIMAJDEJDLM_MusicLevel);
+						ChangeCurrentMusicLevelExp(i, info.AIMAJDEJDLM_MusicLevel, f);
+						f = CalcDivaLevelExpSectionPercentage(info.JPGEAFPDHDE_DivaLevel, ToSectionDivaLevelExp(info.JPGEAFPDHDE_DivaLevel, (int)info.DKLBOOEIKKL_ExpFrag));
+						if(info.AJCEIPJDMEC_PrevDivaLevel < info.JPGEAFPDHDE_DivaLevel)
+						{
+							dl.isDivaLevelup = true;
+						}
+						SetDivaLevelNumber(i, info.JPGEAFPDHDE_DivaLevel);
+						SetDivaLevelNecessaryExp(i, info.JPGEAFPDHDE_DivaLevel);
+						ChangeCurrentDivaLevelExp(i, info.JPGEAFPDHDE_DivaLevel, f);
+						int nextXp = expMaster.IECLHMBPEIJ_GetMusicExp(info.AIMAJDEJDLM_MusicLevel + 1);
+						dl.numberMusicLevelNextExp.SetNumber(nextXp, 0);
+						dl.layoutMuisicLevelEffectRoot.StartChildrenAnimGoStop("st_out");
+						dl.layoutDivaLevelEffect1.StartChildrenAnimGoStop("st_in");
+						dl.layoutDivaLevelEffectRoot2.StartChildrenAnimGoStop("st_out");
+						for(int j = 0; j < dl.layoutDivaLevelEffect3.Length; j++)
+						{
+							dl.layoutDivaLevelEffect3[j].StartChildrenAnimGoStop("st_in");
+						}
+						dl.layoutDivaLevelEffectRoot4.StartChildrenAnimGoStop("st_out");
+						dl.layoutDivaExpGaugeEffect.StartChildrenAnimGoStop("st_out");
+						dl.layoutMusicLevelUpBackShadow.StartChildrenAnimGoStop("st_out", "st_out");
+						if(info.DACHHLHPAAB_BonusExp > 0)
+						{
+							dl.layoutMusicLevelBonus.StartChildrenAnimGoStop(isMusicBonuslook ? "st_out" : "st_in");
+						}
+						dl.layoutIntimacy.StartChildrenAnimGoStop("st_out");
+					}
+				}
+				StartCoroutine(Co_StartLevelupPopupProcess(onFinished));
+				isFinished = true;
+			}
+		}
 
 		// // RVA: 0x1888A70 Offset: 0x1888A70 VA: 0x1888A70
 		public void StartGaugeFinishAnim()
 		{
-			!!! TodoLogger.Log(0, "StartGaugeFinishAnim");
+			GaugeAnimFinishCoroutine = StartCoroutine(Co_GaugeFinishAnim());
 		}
 
 		// // RVA: 0x1888B24 Offset: 0x1888B24 VA: 0x1888B24
 		public void StopGaugeFinishAnim()
 		{
-			!!! TodoLogger.Log(0, "StopGaugeFinishAnim");
+			if(GaugeAnimFinishCoroutine != null)
+			{
+				StopCoroutine(GaugeAnimFinishCoroutine);
+				GaugeAnimFinishCoroutine = null;
+			}
+			for(int i = 0; i < 3; i++)
+			{
+				divaLayouts[i].layoutMusicLevelOldExpGauge.StartAllAnimGoStop("st_out", "st_out");
+				divaLayouts[i].layoutMusicLevelEffectIn.StartAllAnimGoStop("st_in", "st_in");
+				divaLayouts[i].layoutMusicLevelEffectOut.StartAllAnimGoStop("st_out", "st_out");
+				divaLayouts[i].layoutDivaOldExpGauge.StartAllAnimGoStop("st_out", "st_out");
+				divaLayouts[i].layoutDivaExpGaugeEffectIn.StartAllAnimGoStop("st_in", "st_in");
+				divaLayouts[i].layoutDivaExpGaugeEffectOut.StartAllAnimGoStop("st_out", "st_out");
+				divaLayouts[i].layoutMusicLevelBonus.StartAllAnimGoStop("st_out", "st_out");
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x717874 Offset: 0x717874 VA: 0x717874
@@ -534,7 +603,28 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x717ACC Offset: 0x717ACC VA: 0x717ACC
 		// // RVA: 0x18889C8 Offset: 0x18889C8 VA: 0x18889C8
-		// private IEnumerator Co_StartLevelupPopupProcess(Action finishCb) { }
+		private IEnumerator Co_StartLevelupPopupProcess(Action finishCb)
+		{
+			int divaIndex;
+
+			//0x188DF48
+			if(!isLevelupPopupProcess)
+			{
+				isLevelupPopupProcess = true;
+				divaIndex = 0;
+				for(; divaIndex < 3; divaIndex++)
+				{
+					if(viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex].AJCEIPJDMEC_PrevDivaLevel < viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex].JPGEAFPDHDE_DivaLevel)
+					{
+						IsLevelup = true;
+						yield return StartCoroutine(Co_ShowLevelupPopup(divaIndex));
+					}
+				}
+				isLevelupPopupProcess = false;
+				if (finishCb != null)
+					finishCb();
+			}
+		}
 
 		// // RVA: 0x1888980 Offset: 0x1888980 VA: 0x1888980
 		private AbsoluteLayout GetCenterBonusLayout()
@@ -693,7 +783,40 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x717E14 Offset: 0x717E14 VA: 0x717E14
 		// // RVA: 0x1888A98 Offset: 0x1888A98 VA: 0x1888A98
-		// private IEnumerator Co_GaugeFinishAnim() { }
+		private IEnumerator Co_GaugeFinishAnim()
+		{
+			int frame;
+
+			//0x188C7B8
+			frame = 0;
+			while(true)
+			{
+				if (!PopupWindowManager.IsOpenPopupWindow())
+				{
+					frame++;
+				}
+				if (frame < 45)
+					yield return null;
+				else
+					break;
+			}
+			for(int i = 0; i < 3; i++)
+			{
+				divaLayouts[i].layoutMusicLevelOldExpGauge.StartAllAnimGoStop("go_out", "st_out");
+				divaLayouts[i].layoutMusicLevelEffectIn.StartAllAnimGoStop("go_in", "st_in");
+				divaLayouts[i].layoutMusicLevelEffectOut.StartAllAnimGoStop("go_out", "st_out");
+				if(divaLayouts[i].isMusicLevelup)
+				{
+					divaLayouts[i].layoutDivaOldExpGauge.StartAllAnimGoStop("go_out", "st_out");
+					divaLayouts[i].layoutDivaExpGaugeEffectIn.StartAllAnimGoStop("go_in", "st_in");
+					divaLayouts[i].layoutDivaExpGaugeEffectOut.StartAllAnimGoStop("go_out", "st_out");
+				}
+				if(viewResultDivaData.NAIHIJAJPNK_Divas[i].DACHHLHPAAB_BonusExp > 0 && !isMusicBonuslook)
+				{
+					divaLayouts[i].layoutMusicLevelBonus.StartChildrenAnimGoStop("go_out", "st_out");
+				}
+			}
+		}
 
 		// // RVA: 0x18895CC Offset: 0x18895CC VA: 0x18895CC
 		private void StartMusicLevelup(int divaIndex, int nextMusicLevel, bool isShow)
@@ -715,22 +838,138 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1889894 Offset: 0x1889894 VA: 0x1889894
 		private IEnumerator Co_DivaLevelExpIncreaseAnim(int divaIndex)
 		{
+			DivaLayout dl; // 0x18
+			float startExp; // 0x1C
+			float endExp; // 0x20
+			int currentFrameLevel; // 0x24
+			Coroutine coGuideAnim; // 0x28
+			float currentTime; // 0x2C
+			float timeLength; // 0x30
 
+			//0x188B6F0
+			dl = divaLayouts[divaIndex];
+			if (viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex].KNCMFPIODKJ_ExpFragDiff == 0)
+				yield break;
+			startExp = (float)viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex].NFJFBOBJONF_PrevExpFrag;
+			endExp = (float)viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex].DKLBOOEIKKL_ExpFrag;
+			currentFrameLevel = viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex].AJCEIPJDMEC_PrevDivaLevel;
+
+			dl.layoutDivaLevelEffectRoot2.StartChildrenAnimGoStop("go_fix", "st_fix");
+			dl.layoutMusicLevelUpBackShadow.StartChildrenAnimGoStop("go_out", "st_out");
+			dl.layoutDivaLevelEffectRoot4.StartChildrenAnimGoStop("go_in", "st_in");
+			dl.layoutDivaLevelEffect4.StartChildrenAnimLoop("anim", "lo_anim");
+			coGuideAnim = StartCoroutine(Co_PlayDivaIncreaseGuideAnim(divaIndex));
+			dl.layoutDivaExpGaugeEffect.StartChildrenAnimGoStop("go_in", "st_in");
+			StartCoroutine(Co_GaugeEffectAnimStartWait(dl.layoutDivaExpGaugeEffect));
+
+			currentTime = 0;
+			timeLength = 2;
+
+			while(true)
+			{
+				float prevTime = currentTime;
+				currentTime += TimeWrapper.deltaTime;
+				int level = currentFrameLevel;
+				float r = XeSys.Math.Tween.EasingInOutCubic(startExp, endExp, currentTime / timeLength);
+				float v = expMaster.OLJFPKPHCJD_GetDivaExpAndLevel(r, out currentFrameLevel);
+				ChangeCurrentDivaLevelExp(divaIndex, currentFrameLevel, CalcDivaLevelExpSectionPercentage(currentFrameLevel, v));
+				if(level < currentFrameLevel)
+				{
+					dl.isDivaLevelup = true;
+					StartDivaLevelup(divaIndex, currentFrameLevel);
+				}
+				if(coGuideAnim != null && timeLength - 1 <= currentTime)
+				{
+					dl.layoutDivaLevelEffectRoot2.StartChildrenAnimGoStop("go_out", "st_out");
+					StopCoroutine(coGuideAnim);
+				}
+				if(timeLength <= currentTime)
+				{
+					break;
+				}
+				else
+				{
+					yield return null;
+				}
+			}
+			dl.layoutDivaLevelEffectRoot4.StartChildrenAnimGoStop("go_out", "st_out");
+			dl.layoutDivaExpGaugeEffect.FinishAnimLoop();
+			StartCoroutine(Co_GaugeEffectAnimFinishLoopWait(dl.layoutDivaExpGaugeEffect));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x717F04 Offset: 0x717F04 VA: 0x717F04
 		// // RVA: 0x188995C Offset: 0x188995C VA: 0x188995C
-		// private IEnumerator Co_PlayDivaIncreaseGuideAnim(int divaIndex) { }
+		private IEnumerator Co_PlayDivaIncreaseGuideAnim(int divaIndex)
+		{
+			DivaLayout dl; // 0x18
+			int currentIndex; // 0x1C
+
+			//0x188D854
+			dl = divaLayouts[divaIndex];
+			currentIndex = 0;
+			dl.layoutDivaLevelEffect3[0].StartChildrenAnimGoStop("go_in", "st_in");
+			while(true)
+			{
+				if(dl.layoutDivaLevelEffect3[currentIndex].GetView(0).FrameAnimation.FrameCount >= 15 && dl.layoutDivaLevelEffect3[currentIndex].GetView(0).FrameAnimation.FrameCount < 21)
+				{
+					currentIndex = (currentIndex + 1) % dl.layoutDivaLevelEffect3.Length;
+					dl.layoutDivaLevelEffect3[currentIndex].StartChildrenAnimGoStop("go_in", "st_in");
+				}
+				yield return null;
+			}
+		}
 
 		// // RVA: 0x1889A24 Offset: 0x1889A24 VA: 0x1889A24
-		// private void StartDivaLevelup(int divaIndex, int nextDivaLevel) { }
+		private void StartDivaLevelup(int divaIndex, int nextDivaLevel)
+		{
+			DivaLayout dl = divaLayouts[divaIndex];
+			GNIFOHMFDMO_DivaResultData.IKODHMDOMMP info = viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex];
+			SetDivaLevelNumber(divaIndex, nextDivaLevel);
+			SetDivaLevelNecessaryExp(divaIndex, nextDivaLevel);
+			dl.layoutDivaLevelUp.StartChildrenAnimGoStop("go_in", "st_in");
+			dl.layoutDivaOldExpGauge.StartAnimGoStop(0, 0);
+			dl.layoutDivaExpGaugeEffectOut.StartAnimGoStop(0, 0);
+			PlayDivaExpLevelUpSE();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x717F7C Offset: 0x717F7C VA: 0x717F7C
 		// // RVA: 0x1889C10 Offset: 0x1889C10 VA: 0x1889C10
-		// private IEnumerator Co_ShowLevelupPopup(int divaIndex) { }
+		private IEnumerator Co_ShowLevelupPopup(int divaIndex)
+		{
+			//0x188DBEC
+			ShowLevelupPopup(divaIndex);
+			yield return new WaitUntil(() =>
+			{
+				//0x188B2B4
+				return PopupWindowManager.IsActivePopupWindow();
+			});
+			yield return new WaitWhile(() =>
+			{
+				//0x188B330
+				return PopupWindowManager.IsActivePopupWindow();
+			});
+		}
 
 		// // RVA: 0x1889CD8 Offset: 0x1889CD8 VA: 0x1889CD8
-		// private void ShowLevelupPopup(int divaIndex) { }
+		private void ShowLevelupPopup(int divaIndex)
+		{
+			GNIFOHMFDMO_DivaResultData.IKODHMDOMMP info = viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex];
+			FFHPBEPOMAK_DivaInfo prev = new FFHPBEPOMAK_DivaInfo();
+			FFHPBEPOMAK_DivaInfo next = new FFHPBEPOMAK_DivaInfo();
+			prev.KHEKNNFCAOI(info.AHHJLDLAPAN_DivaId, info.AJCEIPJDMEC_PrevDivaLevel, 0, 0, null, null, true);
+			next.KHEKNNFCAOI(info.AHHJLDLAPAN_DivaId, info.JPGEAFPDHDE_DivaLevel, 0, 0, null, null, true);
+			PopupDivaLevelupSetting setting = new PopupDivaLevelupSetting();
+			setting.TitleText = "";
+			setting.IsCaption = false;
+			setting.WindowSize = SizeType.Middle;
+			setting.beforeDivaData = prev;
+			setting.afterDivaData = next;
+			setting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Type = PopupButton.ButtonType.Positive, Label = PopupButton.ButtonLabel.Ok }
+			};
+			PopupWindowManager.Show(setting, null, null, null, null);
+		}
 
 		// // RVA: 0x188A068 Offset: 0x188A068 VA: 0x188A068
 		private bool IsGetBonus()
@@ -745,11 +984,29 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x717FF4 Offset: 0x717FF4 VA: 0x717FF4
 		// // RVA: 0x188A134 Offset: 0x188A134 VA: 0x188A134
-		// private IEnumerator Co_GaugeEffectAnimStartWait(AbsoluteLayout layoutGaugeEffect) { }
+		private IEnumerator Co_GaugeEffectAnimStartWait(AbsoluteLayout layoutGaugeEffect)
+		{
+			//0x188C594
+			yield return new WaitWhile(() =>
+			{
+				//0x188B54C
+				return layoutGaugeEffect.IsPlayingChildren();
+			});
+			layoutGaugeEffect.StartChildrenAnimLoop("logo_addition", "loen_addition");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71806C Offset: 0x71806C VA: 0x71806C
 		// // RVA: 0x188A1E0 Offset: 0x188A1E0 VA: 0x188A1E0
-		// private IEnumerator Co_GaugeEffectAnimFinishLoopWait(AbsoluteLayout layoutGaugeEffect) { }
+		private IEnumerator Co_GaugeEffectAnimFinishLoopWait(AbsoluteLayout layoutGaugeEffect)
+		{
+			//0x188C370
+			yield return new WaitWhile(() =>
+			{
+				//0x188B580
+				return layoutGaugeEffect.IsPlayingChildren();
+			});
+			layoutGaugeEffect.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		// // RVA: 0x1886998 Offset: 0x1886998 VA: 0x1886998
 		private void StartLoadDivaIcon(int divaIndex, int divaId, int costumeId, int colorId)
@@ -943,7 +1200,10 @@ namespace XeApp.Game.Menu
 		// private void StopDivaExpCountUpLoopSE() { }
 
 		// // RVA: 0x1889BB8 Offset: 0x1889BB8 VA: 0x1889BB8
-		// private void PlayDivaExpLevelUpSE() { }
+		private void PlayDivaExpLevelUpSE()
+		{
+			SoundManager.Instance.sePlayerResult.Play(15);
+		}
 
 		// // RVA: 0x188AA80 Offset: 0x188AA80 VA: 0x188AA80
 		private void OnClickLockButton(int divaIndex)

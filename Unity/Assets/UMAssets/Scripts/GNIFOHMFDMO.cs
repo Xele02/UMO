@@ -115,8 +115,8 @@ public class GNIFOHMFDMO_DivaResultData
 						b = 1;
 					data.DACHHLHPAAB_BonusExp = a * b;
 				}
-				NAIHIJAJPNK_Divas.Add(data);
 			}
+			NAIHIJAJPNK_Divas.Add(data);
 		}
 	}
 

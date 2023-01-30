@@ -56,7 +56,18 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1D8B510 Offset: 0x1D8B510 VA: 0x1D8B510
-		//public void Skip() { }
+		public void Skip()
+		{
+			if(m_coroutine != null)
+			{
+				StopCoroutine(m_coroutine);
+			}
+			m_is_open_window = false;
+			countScoreSEPlayback.Stop();
+			m_layout_root.StartChildrenAnimGoStop("st_out", "st_out");
+			m_layout_score_anim.StartChildrenAnimGoStop("st_out", "st_out");
+			SetTotalScore(viewResultDivaData.BMGKGDPKJFA_Point);
+		}
 
 		//// RVA: 0x1D8B6C0 Offset: 0x1D8B6C0 VA: 0x1D8B6C0
 		//private void UpdateIdle() { }

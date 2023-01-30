@@ -155,7 +155,23 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	// public int EMJCHPDJHEI(int LKIFDCEKDCK) { }
 
 	// // RVA: 0x1355B30 Offset: 0x1355B30 VA: 0x1355B30
-	// public float OLJFPKPHCJD(float MEKJFFHMKOB, out int CIEOBFIIPLD) { }
+	public float OLJFPKPHCJD_GetDivaExpAndLevel(float MEKJFFHMKOB, out int CIEOBFIIPLD)
+	{
+		int res = 0;
+		int b = 0;
+		CIEOBFIIPLD = 0;
+		for (int i = 0; i < LMFNPINMOGK_Diva.Count; i++)
+		{
+			CIEOBFIIPLD = i;
+			int v = LMFNPINMOGK_Diva[i] ^ JNIHDCMHINF_DivaKey[i];
+			res = b;
+			if (MEKJFFHMKOB <= v)
+				break;
+			b = v;
+		}
+		CIEOBFIIPLD = CIEOBFIIPLD + 1;
+		return MEKJFFHMKOB - res;
+	}
 
 	// // RVA: 0x1355CB0 Offset: 0x1355CB0 VA: 0x1355CB0
 	// public int IOCHHEEDIJD(int OLDOFEONEPD) { }

@@ -79,25 +79,54 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC031C Offset: 0x1BC031C VA: 0x1BC031C
 		public static bool IsReady()
 		{
-			TodoLogger.Log(5, "PopupWindowManager.IsReady");
+			if (s_controls == null)
+			{
+				s_controls = FindObjectsOfType<PopupWindowControl>();
+			}
+			for (int i = 0; i < s_controls.Length; i++)
+			{
+				if (!s_controls[i].IsReady())
+					return false;
+			}
 			return true;
 		}
 
 		// // RVA: 0x1BC0540 Offset: 0x1BC0540 VA: 0x1BC0540
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			s_controls = null;
+			s_popupIndexStack = null;
 		}
 
 		// // RVA: 0x1BC05E8 Offset: 0x1BC05E8 VA: 0x1BC05E8
 		public static bool IsActivePopupWindow()
 		{
-			TodoLogger.Log(0, "IsActivePopupWindow");
+			if (s_controls == null)
+			{
+				s_controls = FindObjectsOfType<PopupWindowControl>();
+			}
+			for (int i = 0; i < s_controls.Length; i++)
+			{
+				if (s_controls[i].IsActivePopupWindow())
+					return true;
+			}
 			return false;
 		}
 
 		// // RVA: 0x1BC080C Offset: 0x1BC080C VA: 0x1BC080C
-		// public static bool IsOpenPopupWindow() { }
+		public static bool IsOpenPopupWindow()
+		{
+			if(s_controls == null)
+			{
+				s_controls = FindObjectsOfType<PopupWindowControl>();
+			}
+			for(int i = 0; i < s_controls.Length; i++)
+			{
+				if (s_controls[i].IsOpenPopupWindow())
+					return true;
+			}
+			return false;
+		}
 
 		// // RVA: 0x1BC0A30 Offset: 0x1BC0A30 VA: 0x1BC0A30
 		// public static void SetInputState(bool isEnable) { }

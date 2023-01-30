@@ -284,7 +284,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BB9B18 Offset: 0x1BB9B18 VA: 0x1BB9B18
-		// public bool IsReady() { }
+		public bool IsReady()
+		{
+			return m_isReady;
+		}
 
 		// // RVA: 0x1BB9B20 Offset: 0x1BB9B20 VA: 0x1BB9B20
 		private bool IsLoadedLayout()
@@ -497,10 +500,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BBB660 Offset: 0x1BBB660 VA: 0x1BBB660
-		// public bool IsActivePopupWindow() { }
+		public bool IsActivePopupWindow()
+		{
+			return m_isActive;
+		}
 
 		// // RVA: 0x1BBB668 Offset: 0x1BBB668 VA: 0x1BBB668
-		// public bool IsOpenPopupWindow() { }
+		public bool IsOpenPopupWindow()
+		{
+			return m_isOpenWindow;
+		}
 
 		// // RVA: 0x1BBB670 Offset: 0x1BBB670 VA: 0x1BBB670
 		public void SetButtonHiddenEnable(bool enable)
