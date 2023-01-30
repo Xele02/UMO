@@ -8,15 +8,15 @@ public class MOLKENLNCPE_DropData
 {
     public class CEFIOPJKEIC
     {
-        public int KIJAPOFAGPN; // 0x8
+        public int KIJAPOFAGPN_ItemId; // 0x8
         public int MHFBCINOJEE; // 0xC
-        // public EKLNMHFCAOI.FKGCBLHOOCL HHACNFODNEF; // 0x10
+        public EKLNMHFCAOI.FKGCBLHOOCL_Category HHACNFODNEF; // 0x10
         public string JDMIKEEIJFP; // 0x14
         public int HMFFHLPNMPH; // 0x18
         public int DJJGNDCMNHF; // 0x1C
-        public int LIDBKCIMCKE; // 0x20
-        public bool BAKFIPIFDLE; // 0x24
-        public bool PHJHJGDLPED; // 0x25
+        public int LIDBKCIMCKE_Rarity; // 0x20
+        public bool BAKFIPIFDLE_IsEventRareItem; // 0x24
+        public bool PHJHJGDLPED_IsRareItem; // 0x25
         public bool LHEDLDEMPPG; // 0x26
         public int JPIPENJGGDD; // 0x28
         public int ONDODHPHOOF; // 0x2C

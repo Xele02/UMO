@@ -57,13 +57,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xD01550 Offset: 0xD01550 VA: 0xD01550
-		public void Setup(ResultDropLayoutController.InitParam initParam)
+		public void Setup(InitParam initParam)
 		{
 			layoutOkayButton = initParam.layoutOkayButton;
 			layoutOkayButton.SetupCallback(OnFinishedOkayButton, OnClickOkayButton);
-			TodoLogger.Log(0, "Setup");
+			for(int i = 0; i < initParam.layoutItemList.Count; i++)
+			{
+				initParam.layoutItemList[i].Setup(initParam.viewDropResultData.HBHMAKNGKFK[i], initParam.viewDropResultData.DCBDCHPKLCN != ResultScoreRank.Type.C);
+			}
+			isEnableFriendInfo = initParam.viewFriendPlayerData != null;
+			layoutFriendInfo.Setup(initParam.viewFriendPlayerData);
+			layoutDropMain.Setup(initParam.viewDropResultData, initParam.layoutItemList);
 			layoutDropMain.onFinished = OnFinishedDropAnim;
 			layoutFriendInfo.onFinished = OnFinishedFriendAnim;
+			layoutFriendInfo.onClickSendFriendRequestCallback = OnClickSendFriendRequest;
 		}
 
 		// // RVA: 0xD018B0 Offset: 0xD018B0 VA: 0xD018B0
@@ -173,7 +180,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xD01F14 Offset: 0xD01F14 VA: 0xD01F14
-		// private void OnClickSendFriendRequest() { }
+		private void OnClickSendFriendRequest()
+		{
+			TodoLogger.LogNotImplemented("OnClickSendFriendRequest");
+		}
 
 		// // RVA: 0xD01F84 Offset: 0xD01F84 VA: 0xD01F84
 		// private bool CheckTutorialCodition(TutorialConditionId conditionId) { }
