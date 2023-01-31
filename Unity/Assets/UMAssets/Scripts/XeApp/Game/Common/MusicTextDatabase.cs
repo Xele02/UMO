@@ -5,18 +5,31 @@ namespace XeApp.Game.Common
 {
 	public class MusicTextDatabase
 	{
+
+		[WikiPage(title : "Texts/Music/{ID:D3}", filename : "texts/mus_{ID:D3}", templateName : "Texts/Music")]
 		public class TextInfo
 		{
+			[WikiProperty("ID")]
 			public int id; // 0x8
+			[WikiProperty("MusicName")]
 			public string musicName; // 0xC
+			[WikiProperty("OfficialName")]
 			public string officialName; // 0x10
+			[WikiProperty("VocalName")]
 			public string vocalName; // 0x14
+			[WikiProperty("VocalNameLF")]
 			public string vocalNameLF; // 0x18
+			[WikiProperty("Description")]
 			public string description; // 0x1C
+			[WikiProperty("BuyURL")]
 			public string buyURL; // 0x20
+			[WikiProperty("StoryDesc")]
 			public string storyDesc; // 0x24
+			[WikiProperty("StoryTitle")]
 			public string storyTitle; // 0x28
+			[WikiProperty("BannerId")]
 			public string bannerId; // 0x2C
+			[WikiProperty("AnmStoreURL")]
 			public string dAnmStoreURL; // 0x30
 
 			public bool isEnableBuyURL { get { return !string.IsNullOrEmpty(buyURL); } } //0xAECF24

@@ -76,18 +76,26 @@ public class EPPOHFLMDBC
 	// public uint CAOGDCBPBAN() { }
 }
 
+[WikiPage(title : "Database/Diva/Diva_{ID:D3}", filename : "diva/dv_{ID:D3}", templateName : "Database/Diva/DivaInfo")]
 public class BJPLLEBHAGO
 {
 	public sbyte DOAJJALOKLI; // 0xD
 	public sbyte PKNONBBKCCP; // 0xE
 	public List<EPPOHFLMDBC> CMCKNKKCNDK = new List<EPPOHFLMDBC>(); // 0x14
 
+	[WikiProperty("Attr")]
 	public sbyte AIHCEGFANAM_Attr { get; set; } // 0x8 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
+	[WikiProperty("ID")]
 	public sbyte AHHJLDLAPAN { get; set; } // 0x9 AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
+	[WikiProperty("BodyId")]
 	public sbyte IDDHKOEFJFB_BodyId { get; set; }  // 0xA KEOMNKLLNFJ // ADCMNNJMGKO KOFCMDMLAHC 
+	[WikiProperty("PersonalityId")]
 	public sbyte FPMGHDKACOF_PersonalityId { get; set; } // 0xB AJHJBOKOPAJ // ALJDJOFDKDJ FPFJHHIANFD
+	[WikiProperty("Enabled")]
 	public sbyte PPEGAKEIEGM { get; set; } // 0xC NEKLJCCBECB KPOEEPIMMJP NCIEAFEDPBH
+	[WikiProperty("LIOGKHIGJKN")]
 	public ushort LIOGKHIGJKN { get; set; } // 0x10 DGLBKOGGKHO JNBPCHKDNMD MLPEHHGEEIB
+	[WikiProperty("HomeBgId")]
 	public ushort CMBCBNEODPD { get; set; } // 0x12 CLHDIBCIJBB EIMFDHBOECI OJMIHHIIBPI
 
 	// // RVA: 0xC85E00 Offset: 0xC85E00 VA: 0xC85E00

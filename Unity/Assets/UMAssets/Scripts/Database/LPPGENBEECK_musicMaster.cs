@@ -4,6 +4,8 @@ using XeApp.Game.Common;
 
 [System.Obsolete("Use LPPGENBEECK_musicMaster", true)]
 public class LPPGENBEECK {}
+
+//[WikiPageAttribute("Database/Musics", "db_musics", "Database/Musics")]
 public class LPPGENBEECK_musicMaster : DIHHCBACKGG_DbSection
 {
 	private List<HMJHLLPBCLD> OHLOHGGCCMD; // 0x30
@@ -645,25 +647,44 @@ public class KLBKPANJCPL_Score
 
 [System.Obsolete("Use EONOEHOKBEB_Music", true)]
 public class EONOEHOKBEB{}
+[WikiPage(title : "Database/Music/MusicInfo_{ID:D3}", filename : "musics/mus_{ID:D3}", templateName : "Database/Music/MusicInfo")]
 public class EONOEHOKBEB_Music
 {
+	[WikiProperty("ID")]
 	public short DLAEJOBELBH_Id { get; set; } // CKJALIDGGOH // 0x8 MPGNHBOBFBD EPEMOAEGPLI
+	[WikiProperty("Cov", pageValidChecker: new object[] {typeof(WikiValidNotEqual), 0})]
 	public short JNCPEGJGHOG_Cov { get; set; } // LABOODIMOII // 0xA HHEADMHBBPB GOFFKDDNACG
+	[WikiProperty("Cd")]
 	public short NNHOBFBCIIJ_Cd { get; set; } // GKMKHKHFBEI // 0xC AOBMNDMGGIO NIMNBBDNJMC
+	[WikiProperty("Nam", addExport:"MusicText")]
 	public short KNMGEEFGDNI_Nam { get; set; } // JELJHGCOAFJ // 0xE HKEFEIOCKLP OCOGGADKEHD
+	[WikiProperty("Div")]
 	public short NODKIFGGMGP_Div { get; set; } // PNBJIFJHCBL // 0x10 APAOBAGKCPC LKDECIOADPO
+	[WikiProperty("Ma")]
 	public sbyte FKDCCLPGKDK_Ma { get; set; } // KLMKEFEMHOC // 0x12 FBADKBMGIBP NCNMMABFHGN
+	[WikiProperty("SerieId")]
 	public sbyte AIHCEGFANAM_SerieId { get; set; } // FJOGAAMLJMA // 0x13 ANEJPLENMAL HEHDOGFEIOL
+	[WikiProperty("SerieLogoId")]
 	public sbyte EMIKBGHIOMN_SerieLogoId { get; set; } // CCEIEDMCHLA // 0x14 BJGJCKFOBCA OAKIKBEEACC
+	[WikiProperty("WavId")]
 	public short KKPAHLMJKIH_WavId { get; set; } // EOPNGHAFEMB // 0x16 ENODDPDBIPA HOAKFLEAEOH
+	[WikiProperty("VariationId")]
 	public short BKJGCEOEPFB_VariationId { get; set; } // PJKCKOJHKEM // 0x18 FNEBPBJBIIP OIDGLNHNGJB
+	[WikiProperty("Dsc")]
 	public short GHICLBNHNGJ_Dsc { get; set; } // IHIHAAJLBHK // 0x1A OLKANNICFLL MHEEIDDKIJH
+	[WikiProperty("Strt")]
 	public short AABILPMIOFN_Strt { get; set; } // HJBLBCKELMF // 0x1C GACMKBLPOIB LKFFBLEIPIP
+	[WikiProperty("ValkyrieBattle")]
 	public short DMKCGNMOCCH_ValkyrieBattle { get; set; } // LKKNIADKGAE // 0x1E PEBOPIIJCOM NOGOFLKEEMP
+	[WikiProperty("ValkyrieIntro")]
 	public short EECJONKNHNK_ValkyrieIntro { get; set; } // GEOMFEFKOLF // 0x20 KJKNOCBOHFC DONMAGEIEJF
+	[WikiProperty("ValkyrieIntroSky")]
 	public short MNEFKDDCEHE_ValkyrieIntroSky { get; set; } // EDBCILCIAEL // 0x22 MCDMIOFGCDF KIECJGPAHGO
+	[WikiProperty("DivaSolo")]
 	public short NJAOOMHCIHL_DivaSolo { get; set; } // GHHLJOCPEAE // 0x24 OJBDKKDLFDD CMMJPNDAJDG
+	[WikiProperty("DivaMulti")]
 	public short PECMGDOMLAF_DivaMulti { get; set; } // ADLPNCIONGK // 0x26 MDIFJJACKBC JKMNGNMPONF
+	[WikiProperty("Exp")]
 	public short ACPKFNNONMH_Exp { get; set; } // LEDNEEKHDPM // 0x28 IOOMEBAFGFK DPMAFCKJJPM
 
 	// RVA: 0xFBDFFC Offset: 0xFBDFFC VA: 0xFBDFFC

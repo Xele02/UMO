@@ -8,7 +8,7 @@ using XeSys;
 public class LCLCCHLDNHJ { }
 public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 {
-
+	[WikiPage(title : "Database/Diva/Diva_{DivaId:D3}/Costume_{ID:D3}", filename : "costume/cs_{ID:D3}", templateName : "Database/Costume/CostumeInfo")]
     public class ILODJKFJJDO
     {
 		public class FBKPFMKPMAF
@@ -39,23 +39,36 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
         private static StringBuilder FAEDHJHCEFJ = new StringBuilder(); // 0x4
         private int GEJGMGDAKAM; // 0x38
 
+		[WikiProperty("ID")]
         public int JPIDIENBGKH_CostumeId { get; set; } // 0x8 CPCGNLOMIJL PHLLMIGCPCB BLBNMENMCIF
+		[WikiProperty("DivaId")]
         public short AHHJLDLAPAN_PrismDivaId { get; set; } // 0xC AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
+		[WikiProperty("PrismCostumeId")]
         public short DAJGPBLEEOB_PrismCostumeModelId { get; set; } // 0xE ABHFCJKBJKD LHPKEPPBKPF OIOEEEDODJA
+		[WikiProperty("Enabled", pageValidChecker: new object[] {typeof(WikiValidNotEqual), 0})]
 		public int PPEGAKEIEGM { get { return FBGGEFFJJHB ^ OIFAFKDMEEJ; } set { OIFAFKDMEEJ = FBGGEFFJJHB ^ value; } } //KPOEEPIMMJP 0xD9D5B8 NCIEAFEDPBH 0xD9CCEC
+		[WikiProperty("SkillId")]
 		public int HGHFFJKGNCO_SkillId { get; set; } // 0x14 EJPLGMFLNMN JNGLBKKJFLF DHHJKJFHILD
+		[WikiProperty("EODICFLJAKO")]
         public bool EODICFLJAKO { get; set; } // 0x18 LLGHLILPKEE FDPHJPGGGMN KHDBHGJILNO
+		[WikiProperty("AGBPBDODKBK")]
         public int AGBPBDODKBK { get; set; } // 0x1C JAGMGICOACE MCPPGDMHLDF HDJEMHFEAIF
+		[WikiProperty("HMCOGDICFNB")]
         public int HMCOGDICFNB { get; set; } // 0x20 JGFCPGCGANG IIIBNFKOKFK KBGHKPPMEPD
+		[WikiProperty("LevelMax")]
 		public int LLLCMHENKKN_LevelMax { get { return FBGGEFFJJHB ^ GNOPCJKEIIN; } set { GNOPCJKEIIN = FBGGEFFJJHB ^ value; } } //NEBKEFLJPDI 0xD9DDD4 AOCHKIMBJPE 0xD9CE34
+		[WikiProperty("HGBJODBCJDA")]
 		public int HGBJODBCJDA { get; set; } // 0x28 BIOFHCKLKMD EEEJDDFGNGP IBPCBFIDHPH
+		[WikiProperty("EGLDFPILJLG")]
         public int EGLDFPILJLG { get; set; } // 0x30 DBDGBOGOJOJ // JACADMEJOAH 0xD9DE74 MMDBFGAFINM 0xD9CED8
+		[WikiProperty("GLEEPAFMPLO")]
         public bool GLEEPAFMPLO { get { 
             if(MEDNOBOLCEL == 0)
                 ILBDHNHFJHL();
             return MEDNOBOLCEL == 2;
          } } // PFAFGGBOFBG 0xD9DE7C
         // public bool IPJMPBANBPP { get; } // IJMCHOOIMBB 0xD9E064
+		[WikiProperty("IIELLEPEEFH")]
         public int IIELLEPEEFH { get { return FBGGEFFJJHB ^ GEJGMGDAKAM; } set { GEJGMGDAKAM = FBGGEFFJJHB ^ value; } } // NCOENDMPNPL 0xD9D88C ADBAAPIBKKL 0xD9CD88
 
         // // RVA: 0xD9D284 Offset: 0xD9D284 VA: 0xD9D284
