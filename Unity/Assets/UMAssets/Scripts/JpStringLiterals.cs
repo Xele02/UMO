@@ -103,6 +103,7 @@ class JpStringLiterals
 	public const string StringLiteral_12150 = "Ⅲ"; // 0x03bb4890
 	public const string StringLiteral_12151 = "Ⅳ"; // 0x03bb4894
 	public const string StringLiteral_12152 = "Ⅴ"; // 0x03bb4898
+	public const string StringLiteral_12215 = "ロック解除条件"; // 0x03bb4994
 	public const string StringLiteral_12326 = "おまけ付初心者セット"; // 0x03bb4b50
 	public const string StringLiteral_12327 = "お得セットA"; // 0x03bb4b54
 	public const string StringLiteral_12328 = "お得セットB"; // 0x03bb4b58
@@ -113,6 +114,7 @@ class JpStringLiterals
 	public const string StringLiteral_12333 = "歌晶石セットE"; // 0x03bb4b6c
 	public const string StringLiteral_12334 = "歌晶石セットF"; // 0x03bb4b70
 	public const string StringLiteral_12335 = "歌晶石セットG"; // 0x03bb4b74
+	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
 	public const string StringLiteral_12839 = "プロローグ開始"; // 0x03bb5354
 	public const string StringLiteral_12840 = "アセットDL 0%"; // 0x03bb5358
 	public const string StringLiteral_12841 = "アセットDL 10%"; // 0x03bb535c
@@ -235,7 +237,10 @@ class JpStringLiterals
 	public const string StringLiteral_15651 = "手動"; // 0x03bb7f44
 	public const string StringLiteral_16338 = "ユーザーリスト 失敗"; // 0x03bb8a00
 	public const string StringLiteral_16339 = "ユーザーフレンドリスト 成功 "; // 0x03bb8a04
+	public const string StringLiteral_17754 = "(＋{0})"; // 0x03bba020
 	public const string StringLiteral_17777 = "獲得したアイテムはありません。"; // 0x03bba07c
+	public const string StringLiteral_17787 = "％"; // 0x03bba0a4
+	public const string StringLiteral_17788 = "(UCアイテムは {0}UC に変換されました)"; // 0x03bba0a8
 	public const string StringLiteral_20290 = "l×{0}"; // 0x03bbc7c0
 	public const string StringLiteral_20367 = "ー"; // 0x03bbc8f4
 	public const string StringLiteral_20369 = "±{0}"; // 0x03bbc8fc

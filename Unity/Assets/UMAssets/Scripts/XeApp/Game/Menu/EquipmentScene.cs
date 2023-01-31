@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 					MenuScene.Instance.SceneIconCache.Load(sceneInfo.BCCHOBPJJKE_SceneId, sceneInfo.CGIELKDLHGE_GetEvolveId(), (IiconTexture texture) => {
 						//0xF0E32C
 						texture.Set(m_sceneIconImages[loopIndex]);
-						SceneIconTextureCache.ChangeKiraMaterial(m_sceneIconImages[loopIndex], texture as IconTexture, sceneInfo.MBMFJILMOBP());
+						SceneIconTextureCache.ChangeKiraMaterial(m_sceneIconImages[loopIndex], texture as IconTexture, sceneInfo.MBMFJILMOBP_IsKira());
 					});
 					m_sceneIconDecoration[i].SetActive(true);
 					m_sceneButtons[i].AddOnStayCallback(() => {
@@ -262,7 +262,7 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.SceneIconCache.Load(sceneData.BCCHOBPJJKE_SceneId, sceneData.CGIELKDLHGE_GetEvolveId(), (IiconTexture texture) => {
 					//0xF0E724
 					texture.Set(m_sceneIconImages[loopIndex]);
-					SceneIconTextureCache.ChangeKiraMaterial(m_sceneIconImages[loopIndex], texture as IconTexture, sceneData.MBMFJILMOBP());
+					SceneIconTextureCache.ChangeKiraMaterial(m_sceneIconImages[loopIndex], texture as IconTexture, sceneData.MBMFJILMOBP_IsKira());
 				});
 				m_sceneIconDecoration[0].SetActive(true);
 				m_sceneButtons[0].AddOnStayCallback(() => {

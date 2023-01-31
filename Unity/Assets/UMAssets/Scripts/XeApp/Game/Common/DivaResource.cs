@@ -515,7 +515,7 @@ namespace XeApp.Game.Common
 			IMMAOANGPNK a = IMMAOANGPNK.HHCJCDFCLOB;
 			OKGLGHCBCJP_Database o = a.NKEBMCIMJND_Database;
 			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL_Costume;
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO cos_master = l.NLIBHNJNJAN(divaId, modelId);
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos_master = l.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId);
 			bundleName.SetFormat("dv/ca/cmn.xab", "");
 			
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
@@ -546,7 +546,7 @@ namespace XeApp.Game.Common
 			mikePrefab = operation.GetAsset<GameObject>(assetName.ToString());
 			
 			List<Material> matList = new List<Material>(16);
-			if(cos_master.GLEEPAFMPLO)
+			if(cos_master.GLEEPAFMPLO_HasTextureBundle)
 			{
 				operation.ForEach(mat => {
 					if(mat is Material)
@@ -557,7 +557,7 @@ namespace XeApp.Game.Common
 			}
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
-			if(cos_master.GLEEPAFMPLO)
+			if(cos_master.GLEEPAFMPLO_HasTextureBundle)
 			{
 				bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}_{2:D2}.xab", divaId, modelId, colorId);
 				operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
@@ -647,7 +647,7 @@ namespace XeApp.Game.Common
 			IMMAOANGPNK im = IMMAOANGPNK.HHCJCDFCLOB;
 			OKGLGHCBCJP_Database o = im.NKEBMCIMJND_Database;
 			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL_Costume;
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO a = l.NLIBHNJNJAN(divaId, modelId);
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo a = l.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId);
 			int e = a.EGLDFPILJLG;
 			if(e == 0)
 			{
@@ -840,7 +840,7 @@ namespace XeApp.Game.Common
 				IMMAOANGPNK i = IMMAOANGPNK.HHCJCDFCLOB;
 				OKGLGHCBCJP_Database o = i.NKEBMCIMJND_Database;
 				HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE_Diva;
-				BJPLLEBHAGO b = h.GCINIJEMHFK(divaId);
+				BJPLLEBHAGO_DivaInfo b = h.GCINIJEMHFK_GetInfo(divaId);
 				int ms = b.IDDHKOEFJFB_BodyId;
 				yield return StartCoroutine(Co_LoadMikeStandResource(ms));
 			}
@@ -1044,7 +1044,7 @@ namespace XeApp.Game.Common
 			IMMAOANGPNK im = IMMAOANGPNK.HHCJCDFCLOB;
 			OKGLGHCBCJP_Database o = im.NKEBMCIMJND_Database;
 			HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE_Diva;
-			BJPLLEBHAGO b = h.GCINIJEMHFK(divaId);
+			BJPLLEBHAGO_DivaInfo b = h.GCINIJEMHFK_GetInfo(divaId);
 			int personalityId = b.FPMGHDKACOF_PersonalityId;
 			
 			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
@@ -1181,7 +1181,7 @@ namespace XeApp.Game.Common
 			divaBundleName = new StringBuilder();
 			typeBundleName = new StringBuilder();
 			assetName = new StringBuilder();
-			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(divaId).FPMGHDKACOF_PersonalityId;
+			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId;
 			divaBundleName.SetFormat("dv/ty/{0:D3}.xab", divaParam.ChangePersonalityId(modelId, personalityId));
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
 			yield return operationDiva;
@@ -1375,7 +1375,7 @@ namespace XeApp.Game.Common
 
 			AssetBundleManager.UnloadAssetBundle(divaBundleName.ToString());
 
-			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(divaId).FPMGHDKACOF_PersonalityId;
+			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId;
 			bundleName = new StringBuilder();
 			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
@@ -1448,7 +1448,7 @@ namespace XeApp.Game.Common
 			divaBundleName = new StringBuilder();
 			assetName = new StringBuilder();
 
-			bodyId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(divaId).IDDHKOEFJFB_BodyId;
+			bodyId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).IDDHKOEFJFB_BodyId;
 			divaBundleName.SetFormat("dv/bt/{0:D3}.xab", bodyId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
 			yield return operationDiva;

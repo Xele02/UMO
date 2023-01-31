@@ -252,7 +252,7 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.SceneIconCache.Load(sceneData.BCCHOBPJJKE_SceneId, sceneData.CGIELKDLHGE_GetEvolveId(), (IiconTexture texture) => {
 					//0x15A364C
 					texture.Set(m_iconImage);
-					SceneIconTextureCache.ChangeKiraMaterial(m_iconImage, texture as IconTexture, sceneData.MBMFJILMOBP());
+					SceneIconTextureCache.ChangeKiraMaterial(m_iconImage, texture as IconTexture, sceneData.MBMFJILMOBP_IsKira());
 					SetLoaded();
 				});
 				m_sceneIconDecoration.SetActive(true);

@@ -37,10 +37,17 @@ public class JDDGPJDKHNE
 	public static JDDGPJDKHNE HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF NKACBOEHELJ 0x1C30854 OKPMHKNCNAL 0x1C308B8
 
 	// // RVA: 0x1C3091C Offset: 0x1C3091C VA: 0x1C3091C
-	// public void CDIFNFCHDCC() { }
+	public void CDIFNFCHDCC()
+	{
+		EGEPCEGMDOH = true;
+		FBCJICEPLED.Clear();
+	}
 
 	// // RVA: 0x1C30950 Offset: 0x1C30950 VA: 0x1C30950
-	// public void FECGDGCNGGN() { }
+	public void FECGDGCNGGN()
+	{
+		EGEPCEGMDOH = false;
+	}
 
 	// // RVA: 0x1C3095C Offset: 0x1C3095C VA: 0x1C3095C
 	private string MKKOKHPMCHB()
@@ -121,11 +128,14 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C31ED4 Offset: 0x1C31ED4 VA: 0x1C31ED4
 	public void NFNLGGHMEAM()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(0, "NFNLGGHMEAM");
 	}
 
 	// // RVA: 0x1C32174 Offset: 0x1C32174 VA: 0x1C32174
-	// public void FOKEGEOKGDG() { }
+	public void FOKEGEOKGDG()
+	{
+		TodoLogger.Log(0, "FOKEGEOKGDG");
+	}
 
 	// // RVA: 0x1C3142C Offset: 0x1C3142C VA: 0x1C3142C
 	public void BLKLMNNOMGH()

@@ -13,15 +13,15 @@ public class EEMGHIINEHN
 
 	public class OPANFJDIEGH
 	{
-		public GCIJNCFDNON_SceneInfo[] JOHLGBDOLNO = new GCIJNCFDNON_SceneInfo[4]; // 0x8
+		public GCIJNCFDNON_SceneInfo[] JOHLGBDOLNO_AssistScenes = new GCIJNCFDNON_SceneInfo[4]; // 0x8
 		public string JCJNKBKMJFK_Name; // 0xC
 
 		// RVA: 0x1C4A128 Offset: 0x1C4A128 VA: 0x1C4A128
 		public OPANFJDIEGH()
 		{
-			for(int i = 0; i < JOHLGBDOLNO.Length; i++)
+			for(int i = 0; i < JOHLGBDOLNO_AssistScenes.Length; i++)
 			{
-				JOHLGBDOLNO[i] = new GCIJNCFDNON_SceneInfo();
+				JOHLGBDOLNO_AssistScenes[i] = new GCIJNCFDNON_SceneInfo();
 			}
 		}
 
@@ -29,11 +29,11 @@ public class EEMGHIINEHN
 		public void LDHHJFHGGMA(BBHNACPENDM_ServerSaveData LDEGEHAEALK)
 		{
 			JNMFKOHFAFB_PublicStatus.ONCMONJIPCD assist = LDEGEHAEALK.MHEAEGMIKIE_PublicStatus.MGMFOJPNDGA_AssistData;
-			for(int i = 0; i < JOHLGBDOLNO.Length; i++)
+			for(int i = 0; i < JOHLGBDOLNO_AssistScenes.Length; i++)
 			{
 				if(assist.JOHLGBDOLNO_DataList[i].PPFNGGCBJKC_Id > 0)
 				{
-					JOHLGBDOLNO[i].KHEKNNFCAOI(assist.JOHLGBDOLNO_DataList[i].PPFNGGCBJKC_Id,
+					JOHLGBDOLNO_AssistScenes[i].KHEKNNFCAOI(assist.JOHLGBDOLNO_DataList[i].PPFNGGCBJKC_Id,
 						assist.JOHLGBDOLNO_DataList[i].PDNIFBEGMHC_Mb,
 						assist.JOHLGBDOLNO_DataList[i].EMOJHJGHJLN_Sb,
 						assist.JOHLGBDOLNO_DataList[i].JPIPENJGGDD_Mlt, 1,
@@ -80,7 +80,7 @@ public class EEMGHIINEHN
 	//// RVA: 0x1C4B204 Offset: 0x1C4B204 VA: 0x1C4B204
 	public GCIJNCFDNON_SceneInfo ELBLMMPEKPH(int IGNIIEBMFIN, int IMJIADPJJMM)
 	{
-		return NPDOIBMDEGK[IGNIIEBMFIN].JOHLGBDOLNO[IMJIADPJJMM];
+		return NPDOIBMDEGK[IGNIIEBMFIN].JOHLGBDOLNO_AssistScenes[IMJIADPJJMM];
 	}
 
 	//// RVA: 0x1C4AA20 Offset: 0x1C4AA20 VA: 0x1C4AA20

@@ -102,7 +102,7 @@ namespace XeApp.Game.Menu
 					//0xA748E0
 					m_sceneTextureLoadingCount--;
 					texture.Set(m_sceneImage);
-					SceneIconTextureCache.ChangeKiraMaterial(m_sceneImage, texture as IconTexture, m_sceneData.MBMFJILMOBP());
+					SceneIconTextureCache.ChangeKiraMaterial(m_sceneImage, texture as IconTexture, m_sceneData.MBMFJILMOBP_IsKira());
 				});
 			}
 			if(m_sceneData == null)

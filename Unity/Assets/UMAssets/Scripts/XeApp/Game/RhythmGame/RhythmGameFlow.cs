@@ -292,11 +292,11 @@ namespace XeApp.Game.RhythmGame
 			int musicId = music.prismMusicId;
 			EONOEHOKBEB_Music musicInfoDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
 			int wavId = musicInfoDb.KKPAHLMJKIH_WavId;
-			BJPLLEBHAGO divaInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
+			BJPLLEBHAGO_DivaInfo divaInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
 			List<int> prime = new List<int>();
 			for (int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum; i++)
 			{
-				prime.Add(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId).IDDHKOEFJFB_BodyId);
+				prime.Add(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId).IDDHKOEFJFB_BodyId);
 			}
 			int stageId = 0;
 			if (music.isFreeMode)

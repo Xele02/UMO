@@ -63,6 +63,171 @@ namespace XeSys
 			//public static Vector3 Evaluate(float t, Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3) { }
 		}
 
+		
+		public class Tween
+		{
+			public enum EasingFunc
+			{
+				Liner = 0,
+				InQuad = 1,
+				OutQuad = 2,
+				InOutQuad = 3,
+				InCubic = 4,
+				OutCubic = 5,
+				InOutCubic = 6,
+				InQuart = 7,
+				OutQuart = 8,
+				InOutQuart = 9,
+				InQuint = 10,
+				OutQuint = 11,
+				InOutQuint = 12,
+				InSine = 13,
+				OutSine = 14,
+				InOutSine = 15,
+				InExpo = 16,
+				OutExpo = 17,
+				InOutExpo = 18,
+				InCirc = 19,
+				OutCirc = 20,
+				InOutCirc = 21,
+				InBack = 22,
+				OutBack = 23,
+				InOutBack = 24,
+				InBounce = 25,
+				OutBounce = 26,
+				InOutBounce = 27,
+				InElastic = 28,
+				OutElastic = 29,
+				InOutElastic = 30,
+			}
+
+
+			private const float RAD90 = 1.570796f;
+			private const float RAD180 = 3.141593f;
+			public static float S = 1.70158f; // 0x0
+			private const float BOUNCE_T = 2.75f;
+
+			//// RVA: 0x2394C40 Offset: 0x2394C40 VA: 0x2394C40
+			//public static float Evaluate(Math.Tween.EasingFunc type, float start, float end, float t) { }
+
+			//// RVA: 0x2396A6C Offset: 0x2396A6C VA: 0x2396A6C
+			//public static Vector3 Evaluate(Math.Tween.EasingFunc type, Vector3 start, Vector3 end, float t) { }
+
+			//// RVA: 0x2396B78 Offset: 0x2396B78 VA: 0x2396B78
+			//public static Vector2 Evaluate(Math.Tween.EasingFunc efunc, Vector2 start, Vector2 end, float t) { }
+
+			//// RVA: 0x2396C58 Offset: 0x2396C58 VA: 0x2396C58
+			//public static Color Evaluate(Math.Tween.EasingFunc efunc, Color start, Color end, float t) { }
+
+			//// RVA: 0x2395638 Offset: 0x2395638 VA: 0x2395638
+			//public static float EasingLerp(float start, float end, float t) { }
+
+			//// RVA: 0x2395658 Offset: 0x2395658 VA: 0x2395658
+			//public static float EasingInQuad(float start, float end, float t) { }
+
+			//// RVA: 0x239567C Offset: 0x239567C VA: 0x239567C
+			//public static float EasingOutQuad(float start, float end, float t) { }
+
+			//// RVA: 0x23956AC Offset: 0x23956AC VA: 0x23956AC
+			//public static float EasingInOutQuad(float start, float end, float t) { }
+
+			//// RVA: 0x2395708 Offset: 0x2395708 VA: 0x2395708
+			//public static float EasingInCubic(float start, float end, float t) { }
+
+			//// RVA: 0x2395730 Offset: 0x2395730 VA: 0x2395730
+			//public static float EasingOutCubic(float start, float end, float t) { }
+
+			//// RVA: 0x2395764 Offset: 0x2395764 VA: 0x2395764
+			public static float EasingInOutCubic(float start, float end, float t)
+			{
+				float f2 = t * 2;
+				float f = (end - start) * 0.5f;
+				if(t >= 0.5f)
+				{
+					start += f;
+					f2 = 2 - f2;
+					f2 = f * (1 - f2 * f2 * f2);
+				}
+				else
+				{
+					f2 = f2 * f2 * f * f2;
+				}
+				return f2 * start;
+			}
+
+			//// RVA: 0x2395980 Offset: 0x2395980 VA: 0x2395980
+			//public static float EasingInSine(float start, float end, float t) { }
+
+			//// RVA: 0x2395A38 Offset: 0x2395A38 VA: 0x2395A38
+			//public static float EasingOutSine(float start, float end, float t) { }
+
+			//// RVA: 0x2395AEC Offset: 0x2395AEC VA: 0x2395AEC
+			//public static float EasingInOutSine(float start, float end, float t) { }
+
+			//// RVA: 0x23957C8 Offset: 0x23957C8 VA: 0x23957C8
+			//public static float EasingInQuart(float start, float end, float t) { }
+
+			//// RVA: 0x23957F0 Offset: 0x23957F0 VA: 0x23957F0
+			//public static float EasingOutQuart(float start, float end, float t) { }
+
+			//// RVA: 0x2395824 Offset: 0x2395824 VA: 0x2395824
+			//public static float EasingInOutQuart(float start, float end, float t) { }
+
+			//// RVA: 0x2395894 Offset: 0x2395894 VA: 0x2395894
+			//public static float EasingInQuint(float start, float end, float t) { }
+
+			//// RVA: 0x23958C4 Offset: 0x23958C4 VA: 0x23958C4
+			//public static float EasingOutQuint(float start, float end, float t) { }
+
+			//// RVA: 0x2395904 Offset: 0x2395904 VA: 0x2395904
+			//public static float EasingInOutQuint(float start, float end, float t) { }
+
+			//// RVA: 0x2395BB0 Offset: 0x2395BB0 VA: 0x2395BB0
+			//public static float EasingInExpo(float start, float end, float t) { }
+
+			//// RVA: 0x2395C68 Offset: 0x2395C68 VA: 0x2395C68
+			//public static float EasingOutExpo(float start, float end, float t) { }
+
+			//// RVA: 0x2395D20 Offset: 0x2395D20 VA: 0x2395D20
+			//public static float EasingInOutExpo(float start, float end, float t) { }
+
+			//// RVA: 0x2395E74 Offset: 0x2395E74 VA: 0x2395E74
+			//public static float EasingInCirc(float start, float end, float t) { }
+
+			//// RVA: 0x2395F48 Offset: 0x2395F48 VA: 0x2395F48
+			//public static float EasingOutCirc(float start, float end, float t) { }
+
+			//// RVA: 0x2396018 Offset: 0x2396018 VA: 0x2396018
+			//public static float EasingInOutCirc(float start, float end, float t) { }
+
+			//// RVA: 0x2396144 Offset: 0x2396144 VA: 0x2396144
+			//public static float EasingInBack(float start, float end, float t) { }
+
+			//// RVA: 0x2396210 Offset: 0x2396210 VA: 0x2396210
+			//public static float EasingOutBack(float start, float end, float t) { }
+
+			//// RVA: 0x23962E4 Offset: 0x23962E4 VA: 0x23962E4
+			//public static float EasingInOutBack(float start, float end, float t) { }
+
+			//// RVA: 0x23964C4 Offset: 0x23964C4 VA: 0x23964C4
+			//public static float EasingOutBounce(float start, float end, float t) { }
+
+			//// RVA: 0x239640C Offset: 0x239640C VA: 0x239640C
+			//public static float EasingInBounce(float start, float end, float t) { }
+
+			//// RVA: 0x239658C Offset: 0x239658C VA: 0x239658C
+			//public static float EasingInOutBounce(float start, float end, float t) { }
+
+			//// RVA: 0x239669C Offset: 0x239669C VA: 0x239669C
+			//public static float EasingInElastic(float start, float end, float t) { }
+
+			//// RVA: 0x23967B4 Offset: 0x23967B4 VA: 0x23967B4
+			//public static float EasingOutElastic(float start, float end, float t) { }
+
+			//// RVA: 0x23968C8 Offset: 0x23968C8 VA: 0x23968C8
+			//public static float EasingInOutElastic(float start, float end, float t) { }
+		}
+
 		// // RVA: 0x238F5F4 Offset: 0x238F5F4 VA: 0x238F5F4
 		// public static bool Random100(float rate) { }
 

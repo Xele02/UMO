@@ -50,7 +50,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 		public int ACABEFKBBEN_ExpFrag { get; set; } // 0x68 AJBEODMJGDN OFECNFINKEH NLFNBNNJJJC
 
 		// // RVA: 0x197B9A8 Offset: 0x197B9A8 VA: 0x197B9A8
-		public int OKMELNIIMMO()
+		public int OKMELNIIMMO_GetDivaLevel()
 		{
 			return HEBKEJBDCBH_DivaLevel;
 		}
@@ -281,7 +281,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 							info.EBDNICPAFLB_SSlot[j] = 0;
 						}
 					}
-					int v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp.IECLHMBPEIJ(1);
+					int v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp.IECLHMBPEIJ_GetMusicExp(1);
 					for (int j = 0; j < 300; j++)
 					{
 						if(info.ANAJIAENLNB_Levels[j] == 1)

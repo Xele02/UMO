@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 			{
 				UnityEngine.Debug.Log(divaId+" "+modelId+" "+colorId);
 				m_strBuilder.SetFormat(DivaBustupTexturePath, divaId, modelId);
-				if(!KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH(m_strBuilder.ToString()))
+				if(!KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(m_strBuilder.ToString()))
 				{
 					int id = FindEpisodeIdFromModelId(divaId, modelId);
 					if(id == 0)
@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 						JNIKPOIKFAC_Reward reward = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.LFAAEPAAEMB_Rewards[a];
 						if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_Item) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 						{
-							if (EKLNMHFCAOI.DEACAHNLMNI_getItemId(reward.KIJAPOFAGPN_Item) == IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN(divaId, modelId).JPIDIENBGKH_CostumeId)
+							if (EKLNMHFCAOI.DEACAHNLMNI_getItemId(reward.KIJAPOFAGPN_Item) == IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId).JPIDIENBGKH_CostumeId)
 							{
 								return episode.KELFCMEOPPM;
 							}

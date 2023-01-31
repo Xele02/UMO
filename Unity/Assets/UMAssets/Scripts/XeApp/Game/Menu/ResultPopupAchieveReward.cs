@@ -20,7 +20,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB4E094 Offset: 0xB4E094 VA: 0xB4E094
-		// public void Setup(PopupAchieveRewardSetting setting, bool levelup) { }
+		public void Setup(PopupAchieveRewardSetting setting, bool levelup)
+		{
+			TodoLogger.Log(0, "ResultPopupAchieveReward.Setup");
+		}
 
 		// // RVA: 0xB4E1E8 Offset: 0xB4E1E8 VA: 0xB4E1E8
 		// public bool IsShowed() { }

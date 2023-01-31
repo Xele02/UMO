@@ -82,10 +82,10 @@ static class WikiGenerator
                 UnityEngine.Debug.LogError("Export left : "+total);
             });
         }*/
-        for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA.Count; i++)
+        for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes.Count; i++)
         {
-            LCLCCHLDNHJ_Costume.ILODJKFJJDO cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA[i];
-            if(cos.PPEGAKEIEGM == 2)
+            LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[i];
+            if(cos.PPEGAKEIEGM_Enabled == 2)
             {
                 for(int j = 0; j < (int)DivaIconTextureCache.IconType.Num; j++)
                 {
@@ -147,7 +147,7 @@ static class WikiGenerator
 
         int total = 0;
 
-        LPPGENBEECK_musicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
+        LPPGENBEECK_MusicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
 		for (int i = 0; i < MusicDb.EPMMNEFADAP_Musics.Count; i++)
 		{
 			if (MusicDb.EPMMNEFADAP_Musics[i].JNCPEGJGHOG_Cov > 0)
@@ -216,8 +216,8 @@ static class WikiGenerator
         List<System.Object> toExport = new List<System.Object>();
 
         toExport.AddRange(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics);
-        toExport.AddRange(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA);
-        toExport.AddRange(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA);
+        toExport.AddRange(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas);
+        toExport.AddRange(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes);
 
 		while(toExport.Count > 0)
 		{
@@ -272,88 +272,6 @@ static class WikiGenerator
 		}
     }
 
-    static private void UpdateMusics(string basePath, EDOHBJAPLPF_JsonData pages)
-    {
-        basePath += "/musics/";
-
-        Debug.LogError("Export music");
-
-        CleanDirectory(basePath);
-
-        LPPGENBEECK_musicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
-		for (int i = 0; i < MusicDb.EPMMNEFADAP_Musics.Count; i++)
-		{
-		    string fileOutput = "";
-			if (MusicDb.EPMMNEFADAP_Musics[i].JNCPEGJGHOG_Cov > 0)
-			{
-                MusicTextDatabase.TextInfo t = Database.Instance.musicText.Get(MusicDb.EPMMNEFADAP_Musics[i].KNMGEEFGDNI_Nam);
-				string Title = t.musicName;
-                EONOEHOKBEB_Music m = MusicDb.EPMMNEFADAP_Musics[i];
-
-                string fileName = "mus_" + MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_Id.ToString("000") + ".mediawiki";
-
-                int wavId = MusicDb.EPMMNEFADAP_Musics[i].KKPAHLMJKIH_WavId;
-                int var = MusicDb.EPMMNEFADAP_Musics[i].BKJGCEOEPFB_VariationId;
-
-                fileOutput =    "{{Music\n";
-                fileOutput +=   " |Name="+Title+"\n";
-                fileOutput +=   " |ID="+m.DLAEJOBELBH_Id+"\n";
-                fileOutput +=   " |Cov="+m.JNCPEGJGHOG_Cov+"\n";
-                fileOutput +=   " |Cd="+m.NNHOBFBCIIJ_Cd+"\n";
-                fileOutput +=   " |Nam="+m.KNMGEEFGDNI_Nam+"\n";
-                fileOutput +=   " |Div="+m.NODKIFGGMGP_Div+"\n";
-                fileOutput +=   " |Ma="+m.FKDCCLPGKDK_Ma+"\n";
-                fileOutput +=   " |SerieId="+m.AIHCEGFANAM_SerieId+"\n";
-                fileOutput +=   " |SerieLogoId="+m.EMIKBGHIOMN_SerieLogoId+"\n";
-                fileOutput +=   " |WavId="+m.KKPAHLMJKIH_WavId+"\n";
-                fileOutput +=   " |VariationId="+m.BKJGCEOEPFB_VariationId+"\n";
-                fileOutput +=   " |Dsc="+m.GHICLBNHNGJ_Dsc+"\n";
-                fileOutput +=   " |Strt="+m.AABILPMIOFN_Strt+"\n";
-                fileOutput +=   " |ValkyrieBattle="+m.DMKCGNMOCCH_ValkyrieBattle+"\n";
-                fileOutput +=   " |ValkyrieIntro="+m.EECJONKNHNK_ValkyrieIntro+"\n";
-                fileOutput +=   " |ValkyrieIntroSky="+m.MNEFKDDCEHE_ValkyrieIntroSky+"\n";
-                fileOutput +=   " |DivaSolo="+m.NJAOOMHCIHL_DivaSolo+"\n";
-                fileOutput +=   " |DivaMulti="+m.PECMGDOMLAF_DivaMulti+"\n";
-                fileOutput +=   " |Exp="+m.ACPKFNNONMH_Exp+"\n";
-
-                fileOutput +=   " |OfficialName="+t.officialName+"\n";
-                fileOutput +=   " |VocalName="+t.vocalNameLF.Replace("\n","<br />")+"\n";
-                fileOutput +=   " |Description="+t.description.Replace("\n","<br />")+"\n";
-                fileOutput +=   " |StoryTitle="+t.storyTitle+"\n";
-                fileOutput +=   " |StoryDesc="+t.storyDesc.Replace("\n","<br />")+"\n";
-                fileOutput +=   " |BuyURL="+t.buyURL+"\n";
-                fileOutput +=   " |BannerId="+t.bannerId+"\n";
-                fileOutput +=   " |AnmStoreURL="+t.dAnmStoreURL+"\n";
-                fileOutput +=   "}}\n";
-
-                EDOHBJAPLPF_JsonData pageInfo = new EDOHBJAPLPF_JsonData();
-                pageInfo["name"] = Title+" (Music "+MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_Id+")";
-                pageInfo["namespace"] = "NS_MAIN";
-                pageInfo["url"] = "https://raw.githubusercontent.com/Xele02/UMO/Wiki/Wiki/musics/"+fileName;
-                pages.Add(pageInfo);
-
-				/*bool divaSolo = false;
-				int numMulti = -1;
-				EEDKAACNBBG_MusicData song = new EEDKAACNBBG_MusicData();
-				song.KHEKNNFCAOI(MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_Id);
-
-				for (int k = 0; k < 7; k++)
-				{
-					if ((song.BNCMJNMIDIN_AvaiableDivaModes & (1 << k)) != 0)
-					{
-						if (k == 0)
-							divaSolo = true;
-						else
-							numMulti = k + 1;
-					}
-				}*/
-
-                fileOutput += "[[Category:Music]]\n[[Category:Generated]]\n";
-
-		        File.WriteAllText(basePath + fileName, fileOutput);
-			}
-		}
-    }
 }
 #endif
 

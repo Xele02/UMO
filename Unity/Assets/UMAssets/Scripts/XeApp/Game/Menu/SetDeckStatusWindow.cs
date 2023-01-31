@@ -322,9 +322,9 @@ namespace XeApp.Game.Menu
 			else
 			{
 				m_tmpStatus.Clear();
-				if(viewFriendData.KHGKPKDBMOH() != null)
+				if(viewFriendData.KHGKPKDBMOH_GetAssistScene() != null)
 				{
-					m_tmpStatus.Copy(viewFriendData.KHGKPKDBMOH().CMCKNKKCNDK_Status);
+					m_tmpStatus.Copy(viewFriendData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status);
 				}
 				m_notesTexts[0].text = (m_baseStatus.spNoteExpected[1] - m_tmpStatus.spNoteExpected[1]).ToString();
 				m_notesTexts[2].text = (m_baseStatus.spNoteExpected[3] - m_tmpStatus.spNoteExpected[3]).ToString();
@@ -547,12 +547,12 @@ namespace XeApp.Game.Menu
 			result.GEEDEOHGMOM(ref addStatus);
 			SubPlateResult = result.CLCIOEHGFNI;
 			m_tmpStatus.Clear();
-			if(viewFriendPlayerData == null || viewFriendPlayerData.KHGKPKDBMOH() == null)
+			if(viewFriendPlayerData == null || viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene() == null)
 			{
 				return;
 			}
-			m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH().CMCKNKKCNDK_Status);
-			luck += viewFriendPlayerData.KHGKPKDBMOH().MJBODMOLOBC_Luck;
+			m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status);
+			luck += viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck;
 			baseStatus.Add(m_tmpStatus);
 		}
 

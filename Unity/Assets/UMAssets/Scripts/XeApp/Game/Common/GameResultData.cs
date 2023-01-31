@@ -56,9 +56,15 @@ namespace XeApp.Game.Common
 		//public bool IsGameOver() { }
 
 		//// RVA: 0xE9C928 Offset: 0xE9C928 VA: 0xE9C928
-		//public int GetNoteTypeCount(RhythmGameConsts.NoteResult noteResultType) { }
+		public int GetNoteTypeCount(RhythmGameConsts.NoteResult noteResultType)
+		{
+			return noteResultCount[(int)noteResultType];
+		}
 
 		//// RVA: 0xE9C970 Offset: 0xE9C970 VA: 0xE9C970
-		//public int GetNoteExcellentCount() { }
+		public int GetNoteExcellentCount()
+		{
+			return noteResultCount_Excellent;
+		}
 	}
 }

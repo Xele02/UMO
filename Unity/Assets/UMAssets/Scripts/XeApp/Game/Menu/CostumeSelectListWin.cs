@@ -197,7 +197,7 @@ namespace XeApp.Game.Menu
 				data.m_cos_model_id = f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
 				data.m_cos_color = 0;
 				data.m_lv = f_.FFKMJNHFFFL_Costume.GKIKAABHAAD_Level;
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB(a_diva_id, data.m_cos_id);
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(a_diva_id, data.m_cos_id);
 				data.m_lv_max = cosInfo.LLLCMHENKKN_LevelMax;
 				data.m_is_have = f_.JLKPGDEKPEO_IsHave;
 				data.m_is_new = f_.MBFADDHOEOK_IsNew;

@@ -17,8 +17,8 @@ namespace XeApp.Game.Menu
 			public int divaId; // 0x8
 			public int difficulty; // 0xC
 			public bool isLine6Mode; // 0x10
-			// public BPOJMOOIIFI viewPlayerLevelUpData; // 0x14
-			public NGJOPPIGCPM viewResultData; // 0x18
+			public BPOJMOOIIFI_PlayerLevelData viewPlayerLevelUpData; // 0x14
+			public NGJOPPIGCPM_ResultData viewResultData; // 0x18
 			public GameResultData resultData; // 0x1C
 			public LayoutResultHeaderTitle layoutHeaderTitle; // 0x20
 			public LayoutResultOkayButton layoutOkayButton; // 0x24
@@ -66,6 +66,7 @@ namespace XeApp.Game.Menu
 			layoutPlayerRank = transform.Find("PlayerRank").GetComponent<LayoutResultPlayerRank>();
 			popupAchieveReward = new ResultPopupAchieveReward();
 			playlog = Database.Instance.gameResult.gameLog;
+			layoutPlaylog.playlog = playlog;
 			playlogGraphParts = transform.Find("PlaylogGraphParts").GetComponent<LayoutResultPlaylogGraphParts>();
 			if(isInTutorial)
 			{
@@ -126,15 +127,24 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB50B48 Offset: 0xB50B48 VA: 0xB50B48
-		public void Setup(ResultScoreLayoutController.InitParam initParam)
+		public void Setup(InitParam initParam)
 		{
 			this.initParam = initParam;
 			layoutHeaderTitle = initParam.layoutHeaderTitle;
 			layoutOkayButton = initParam.layoutOkayButton;
-			TodoLogger.Log(0, "Setup");
+			layoutMusicInfo.Setup(initParam.viewResultData, initParam.difficulty, initParam.isLine6Mode);
+			layoutScoreMain.Setup(initParam.viewResultData, initParam.resultData);
+			layoutPlayerRank.Setup(initParam.viewPlayerLevelUpData);
+			m_singRankrateEffect.Setup(initParam.viewResultData.PFEIDJKAOLH_ScoreRatingRanking);
+			m_singRankrateEffectIcon.Setup(initParam.viewResultData.PFEIDJKAOLH_ScoreRatingRanking);
+			m_isRankUpScoreRating = initParam.viewResultData.BEFGMPGFGHA_IsBetterScoreRatingRanking;
 			layoutPlaylog.onDetailButton = OnClickPlaylogDetailButton;
 			layoutOkayButton.onClick = OnClickOkayButton;
-			TodoLogger.Log(0, "Setup");
+			popupAchieveReward.Setup(initParam.achieveRewardSetting, initParam.viewPlayerLevelUpData.LDHOOPGDBJC_IsLevelUp);
+			if(!isInTutorial)
+			{
+				layoutPlaylog.Setup(playlogGraphParts, initParam.viewResultData);
+			}
 			divaControl.OnResultStart();
 		}
 

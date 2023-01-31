@@ -46,13 +46,13 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	public List<JANMKFAKHIC_ComboBonus> KGHLOJNCFDO_ComboBonus { get; private set; } // 0x24 KGEFOIBPACG KHDCLBNDLPL IKNIJILKKCC
 	public List<int> PDNEMDIEGFB_JudgeCoef { get; private set; } // 0x28 JLOJENKKFFK MNANHEAKBBM BAKOHDPHEDO
 	private List<int> JKPKJKFJDGL_Progress { get; set; } // 0x2C OJIPOCNKJBD KDPCOHLOEPI EOHDGCNIFDD
-	private List<int> OBLDNPMODOM_SSta { get; set; } // 0x30 NPILHIHHEAI BBNCEDBIOPA BNDHBJKKLDJ
-	private List<int> COKBDFIMOPM_FSta { get; set; } // 0x34 LGJFNFMPHFC CFGNDJEJLBG MENCEALDKFL
+	private List<int> OBLDNPMODOM_StoryStamina { get; set; } // 0x30 NPILHIHHEAI BBNCEDBIOPA BNDHBJKKLDJ
+	private List<int> COKBDFIMOPM_Stamina { get; set; } // 0x34 LGJFNFMPHFC CFGNDJEJLBG MENCEALDKFL
 	private List<int> OHNJBOFLCOL_DMis { get; set; } // 0x38 JDBEGBDCANJ PCAHFKBLGBJ JFAEDDLHHHL
 	private List<int> HHCDCEOJCIH_DBad { get; set; } // 0x3C DONDJBIKOCG EKPHGCGNCGI LLJMJOEFGLP
 	private List<int> IMIMFIKCFMK_Heal { get; set; } // 0x40 DJAGACPHFMG JJLBDIGMIFG DJPJFOHDGPL
 	private List<int> PIBHLAMOJNH_Progress6Line { get; set; } // 0x44 NOBIPOAKIBM JFMJEIEAFMA MPKGHIGNGDK
-	private List<int> CAIAODFECPC { get; set; } // 0x48 NDDBGDLPCDF LJINEDABLGC LEOCPDDOCKJ
+	private List<int> CAIAODFECPC_Stamine6L { get; set; } // 0x48 NDDBGDLPCDF LJINEDABLGC LEOCPDDOCKJ
 	private List<int> KGJDEFCEEAB { get; set; } // 0x4C PEDJMMGILOO JDDGFDDHIOE NPJPJJNFPIF
 	private List<int> PLMFEFIIBFL { get; set; } // 0x50 JFPBFCMFLFN NCNPOOEDFKJ LBMIPPEIKIM
 	private List<int> BGKMMAGPAMJ { get; set; } // 0x54 NHPCFCHGJHA KBBMCHCEDDL DGBENIFCADE
@@ -75,7 +75,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	public List<int> KBOIDPDGCLA_PasSt { get; private set; } // 0x98 IIBNBENEJLN CACNGONAKFC ACBFJKBJOFF
 	public List<int> GGAMKBLHGGI_PasEd { get; private set; } // 0x9C MMJCJMDBMAN NKHPAMBMGHH LNEJKJBKJAD
 	private List<int> FIDHHBBINNB_Uc { get; set; } // 0xA0 DAGAJKBDICH KKMEKEPJKIN NLHFPGKEDAE
-	private List<int> MPADAMHJBKK { get; set; } // 0xA4 FAALLDIADNK OHAIBAGEBPI LELJPMEAKCL
+	private List<int> MPADAMHJBKK_UcLine6 { get; set; } // 0xA4 FAALLDIADNK OHAIBAGEBPI LELJPMEAKCL
 	public List<int> CPNJJKDKNOO_FPt { get; private set; } // 0xA8 DDFBBNIDJCC OHAGJJCHEHB HHICCPAOIDC
 	public List<int> EONACOOGKCA_BPt { get; private set; } // 0xC0 NKENGKNNLBO PJPCHAFPLOL DHPBCABKIMB
 	public List<sbyte> LLDJIAKLOGC_RarMltMax { get; private set; } // 0xE4 AAPBDKJMMMC CPONLDIPHBC OAFDONJGICP
@@ -104,15 +104,18 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA03C8 Offset: 0xDA03C8 VA: 0xDA03C8
-	// public int MMLNFAJOPCB(int ANAJIAENLNB) { }
+	public int MMLNFAJOPCB_GetStoryEnergy(int ANAJIAENLNB_FPt)
+	{
+		return OBLDNPMODOM_StoryStamina[ANAJIAENLNB_FPt - 1];
+	}
 
 	// // RVA: 0xDA0448 Offset: 0xDA0448 VA: 0xDA0448
-	public int HHEEPBJNAKA_GetEnergy(int ANAJIAENLNB, bool GIKLNODJKFK)
+	public int HHEEPBJNAKA_GetEnergy(int ANAJIAENLNB_FPt, bool GIKLNODJKFK)
 	{
 		if (!GIKLNODJKFK)
-			return COKBDFIMOPM_FSta[ANAJIAENLNB - 1];
+			return COKBDFIMOPM_Stamina[ANAJIAENLNB_FPt - 1];
 		else
-			return CAIAODFECPC[ANAJIAENLNB - 1];
+			return CAIAODFECPC_Stamine6L[ANAJIAENLNB_FPt - 1];
 	}
 
 	// // RVA: 0xDA04D8 Offset: 0xDA04D8 VA: 0xDA04D8
@@ -155,7 +158,13 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA0688 Offset: 0xDA0688 VA: 0xDA0688
-	// public int GFODAIJMBAH(int ANAJIAENLNB, bool GIKLNODJKFK) { }
+	public int GFODAIJMBAH_GetUc(int ANAJIAENLNB_FPt, bool GIKLNODJKFK_IsLine6)
+	{
+		if (GIKLNODJKFK_IsLine6)
+			return MPADAMHJBKK_UcLine6[ANAJIAENLNB_FPt - 1];
+		else
+			return FIDHHBBINNB_Uc[ANAJIAENLNB_FPt - 1];
+	}
 
 	// // RVA: 0xDA0798 Offset: 0xDA0798 VA: 0xDA0798
 	public byte[] CEKGFNKJDCF(KOGHKIODHPA_Board JEMMMJEJLNL, int JPIPENJGGDD, int AOPBAOJIOGO, int ILABPFOMEAG, int JKGFBFPIMGA, bool MCCIFLKCNKO)
@@ -384,17 +393,17 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		FBKOFEHDENI_SlFlkEd = new List<int>();
 		KBOIDPDGCLA_PasSt = new List<int>();
 		GGAMKBLHGGI_PasEd = new List<int>();
-		OBLDNPMODOM_SSta = new List<int>(25);
-		COKBDFIMOPM_FSta = new List<int>(25);
+		OBLDNPMODOM_StoryStamina = new List<int>(25);
+		COKBDFIMOPM_Stamina = new List<int>(25);
 		OHNJBOFLCOL_DMis = new List<int>(25);
 		HHCDCEOJCIH_DBad = new List<int>(25);
 		IMIMFIKCFMK_Heal = new List<int>(25);
 		FIDHHBBINNB_Uc = new List<int>(25);
-		CAIAODFECPC = new List<int>(25);
+		CAIAODFECPC_Stamine6L = new List<int>(25);
 		KGJDEFCEEAB = new List<int>(25);
 		PLMFEFIIBFL = new List<int>(25);
 		BGKMMAGPAMJ = new List<int>(25);
-		MPADAMHJBKK = new List<int>(25);
+		MPADAMHJBKK_UcLine6 = new List<int>(25);
 		HLKHOFPAOMK_VIn = new List<int>(25);
 		HLLJIICKNIP_VAw = new List<int>(25);
 		FENOHOEIJOE_VMax = new List<int>(25);
@@ -453,17 +462,17 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		FBKOFEHDENI_SlFlkEd.Clear();
 		KBOIDPDGCLA_PasSt.Clear();
 		GGAMKBLHGGI_PasEd.Clear();
-		OBLDNPMODOM_SSta.Clear();
-		COKBDFIMOPM_FSta.Clear();
+		OBLDNPMODOM_StoryStamina.Clear();
+		COKBDFIMOPM_Stamina.Clear();
 		OHNJBOFLCOL_DMis.Clear();
 		HHCDCEOJCIH_DBad.Clear();
 		IMIMFIKCFMK_Heal.Clear();
 		FIDHHBBINNB_Uc.Clear();
-		CAIAODFECPC.Clear();
+		CAIAODFECPC_Stamine6L.Clear();
 		KGJDEFCEEAB.Clear();
 		PLMFEFIIBFL.Clear();
 		BGKMMAGPAMJ.Clear();
-		MPADAMHJBKK.Clear();
+		MPADAMHJBKK_UcLine6.Clear();
 		HLKHOFPAOMK_VIn.Clear();
 		HLLJIICKNIP_VAw.Clear();
 		FENOHOEIJOE_VMax.Clear();
@@ -668,7 +677,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 			uint[] array = reader.KNDKMLHAONN;
 			for(int i = 0; i < array.Length; i++)
 			{
-				OBLDNPMODOM_SSta.Add((int)array[i]);
+				OBLDNPMODOM_StoryStamina.Add((int)array[i]);
 			}
 		}
 		{
@@ -676,8 +685,8 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 			uint[] array2 = reader.BPGOIALMEBD;
 			for (int i = 0; i < array1.Length; i++)
 			{
-				COKBDFIMOPM_FSta.Add((int)array1[i]);
-				CAIAODFECPC.Add((int)array2[i]);
+				COKBDFIMOPM_Stamina.Add((int)array1[i]);
+				CAIAODFECPC_Stamine6L.Add((int)array2[i]);
 			}
 		}
 		{
@@ -713,7 +722,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 			for (int i = 0; i < array1.Length; i++)
 			{
 				FIDHHBBINNB_Uc.Add((int)array1[i]);
-				MPADAMHJBKK.Add((int)array2[i]);
+				MPADAMHJBKK_UcLine6.Add((int)array2[i]);
 			}
 		}
 		{

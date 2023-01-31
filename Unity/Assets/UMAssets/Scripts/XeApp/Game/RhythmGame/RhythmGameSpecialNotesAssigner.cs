@@ -99,7 +99,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (Database.Instance.gameSetup.musicInfo.isStoryMode)
 				return;
-			KEODKEGFDLD musicinfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId);
+			KEODKEGFDLD_FreeMusicInfo musicinfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId);
 			short[] specialNoteByDifficulty = Database.Instance.gameSetup.musicInfo.IsLine6Mode ? musicinfo.DPJDHKIIJIJ_SpNotesByDiff6Line : musicinfo.OCOGIADDNDN_SpNoteByDiff;
 			if (specialNoteByDifficulty[(int)Database.Instance.gameSetup.musicInfo.difficultyType] < 1)
 				return;

@@ -133,15 +133,15 @@ namespace XeApp.Game.Menu
 				CMMKCEPBIHI.EFCNOOFFMIL(viewPlayerData, viewUnitData, viewFriendPlayerData, viewMusicData, viewEnemyData, musicInfo.difficultyType, musicInfo.IsLine6Mode);
 			}
 			int friendLuck = 0;
-			if(viewFriendPlayerData != null && viewFriendPlayerData.KHGKPKDBMOH() != null)
+			if(viewFriendPlayerData != null && viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene() != null)
 			{
-				m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH().CMCKNKKCNDK_Status);
+				m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status);
 				for(int i = 0; i < m_tmpStatus.spNoteExpected.Length; i++)
 				{
 					m_tmpStatus.spNoteExpected[i] = 0;
 				}
-				friendLuck = viewFriendPlayerData.KHGKPKDBMOH().MJBODMOLOBC_Luck;
-				luck += viewFriendPlayerData.KHGKPKDBMOH().MJBODMOLOBC_Luck;
+				friendLuck = viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck;
+				luck += viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck;
 				baseStatus.Add(m_tmpStatus);
 			}
 			result.DIJOPLHIMBO(logParams, viewUnitData.JLJGCBOHJID_Status, m_tmpStatus, baseLuck, friendLuck);
@@ -244,10 +244,10 @@ namespace XeApp.Game.Menu
 					}
 				}
 			}
-			if (friendData == null || friendData.KHGKPKDBMOH() == null)
+			if (friendData == null || friendData.KHGKPKDBMOH_GetAssistScene() == null)
 				return;
-			IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, friendData.KHGKPKDBMOH().JKGFBFPIMGA_Rarity, friendData.KHGKPKDBMOH().MJBODMOLOBC_Luck, friendData.KHGKPKDBMOH().MKHFCGPJPFI_LimitOverCount);
-			AdjustOverLimit(m_tmpLimitOverStatus, friendData.KHGKPKDBMOH(), musicData);
+			IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, friendData.KHGKPKDBMOH_GetAssistScene().JKGFBFPIMGA_Rarity, friendData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck, friendData.KHGKPKDBMOH_GetAssistScene().MKHFCGPJPFI_LimitOverCount);
+			AdjustOverLimit(m_tmpLimitOverStatus, friendData.KHGKPKDBMOH_GetAssistScene(), musicData);
 			limitOverStatus.Add(m_tmpLimitOverStatus);
 		}
 

@@ -103,7 +103,7 @@ namespace XeApp.Game.Menu
 				if(m_evolveId != evolveId)
 					return;
 				texture.Set(m_sceneIconImage);
-				SceneIconTextureCache.ChangeKiraMaterial(m_sceneIconImage, texture as IconTexture, sceneData.MBMFJILMOBP());
+				SceneIconTextureCache.ChangeKiraMaterial(m_sceneIconImage, texture as IconTexture, sceneData.MBMFJILMOBP_IsKira());
 			});
 			m_sceneIconButton.ClearOnClickCallback();
 			m_sceneIconButton.ClearOnStayCallback();

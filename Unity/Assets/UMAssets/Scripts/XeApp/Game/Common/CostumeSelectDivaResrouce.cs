@@ -161,13 +161,13 @@ namespace XeApp.Game.Common
 		//								// RVA: 0xE68E0C Offset: 0xE68E0C VA: 0xE68E0C
 		public IEnumerator Co_LoadCostume(int modelId, UnityAction coroutineEnd)
 		{
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO cosMaster; // 0x24
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosMaster; // 0x24
 			AssetBundleLoadAllAssetOperationBase operation; // 0x28
 			int i; // 0x2C
 
 			//0xE69F54
-			cosMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN(m_loadedDivaId, modelId);
-			if(cosMaster.GLEEPAFMPLO)
+			cosMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(m_loadedDivaId, modelId);
+			if(cosMaster.GLEEPAFMPLO_HasTextureBundle)
 			{
 				for(i = 0; i < 2; i++)
 				{
@@ -188,7 +188,7 @@ namespace XeApp.Game.Common
 			divaPrefab = operation.GetAsset<GameObject>(assetName.ToString());
 
 			List<Material> mtlList = new List<Material>();
-			if (cosMaster.GLEEPAFMPLO)
+			if (cosMaster.GLEEPAFMPLO_HasTextureBundle)
 			{
 				mtlList.Clear();
 				operation.ForEach((Object obj) =>
@@ -202,7 +202,7 @@ namespace XeApp.Game.Common
 			}
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 
-			if (cosMaster.GLEEPAFMPLO)
+			if (cosMaster.GLEEPAFMPLO_HasTextureBundle)
 			{
 				for (i = 0; i < 2; i++)
 				{

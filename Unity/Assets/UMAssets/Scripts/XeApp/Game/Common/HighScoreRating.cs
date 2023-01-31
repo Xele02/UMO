@@ -70,28 +70,129 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA2F84 Offset: 0xEA2F84 VA: 0xEA2F84
 		public void CalcUtaRate(JDDGGJCGOPA_RecordMusic rec, bool pubUpd = false)
 		{
-			TodoLogger.Log(0, "TODO CalcUtaRate");
+			BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+			if (rec == null)
+				rec = serverData.LCKMBHDMPIP_RecordMusic;
+			int rating_coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
+			List<HSRatingData>[] l = new List<HSRatingData>[1];
+			l[0] = new List<HSRatingData>();
+			l[0].Clear();
+			rateAttr[0] = 0;
+			rateTotal = 0;
+			for(int i = 0; i < rec.FAMANJGJANN_FreeMusicInfo.Count; i++)
+			{
+				KEODKEGFDLD_FreeMusicInfo info = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(rec.FAMANJGJANN_FreeMusicInfo[i].FDMENECIKEL_FreeMusicId);
+				if(info != null && info.PPEGAKEIEGM_Enabled == 2 && info.DEPGBBJMFED_CategoryId != 5)
+				{
+					if(rec.FAMANJGJANN_FreeMusicInfo[i].IFNDLIGGGHP_HighScoreScore > 0)
+					{
+						HSRatingData data = new HSRatingData();
+						data.FreeMusicId = info.GHBPLHBNMBK_FreeMusicId;
+						data.Difficulty = rec.FAMANJGJANN_FreeMusicInfo[i].NOCLBJAGNHD_HighScoreDiff;
+						data.Score = rec.FAMANJGJANN_FreeMusicInfo[i].IFNDLIGGGHP_HighScoreScore / rating_coef;
+						data.RawScore = rec.FAMANJGJANN_FreeMusicInfo[i].IFNDLIGGGHP_HighScoreScore;
+						data.isLine6 = rec.FAMANJGJANN_FreeMusicInfo[i].AOGEGMMBGEN_HighScoreLine6;
+						l[0].Add(data);
+					}
+				}
+			}
+			if(l[0].Count > 0)
+			{
+				l[0].Sort((HSRatingData a, HSRatingData b) =>
+				{
+					//0xEA759C
+					if (a.Score != b.Score)
+						return a.Score.CompareTo(b.Score);
+					return a.FreeMusicId.CompareTo(b.FreeMusicId);
+				});
+				rateAttr[0] = 0;
+				int cnt = l[0].Count;
+				if (cnt > 9)
+					cnt = 10;
+				int score = 0;
+				for (int i = 1; i <= cnt; i++)
+				{
+					rateAttr[0] += l[0][i].Score;
+					hsRatingMusicData[i - 1, 0].FreeMusicId = l[0][i].FreeMusicId;
+					hsRatingMusicData[i - 1, 0].Difficulty = l[0][i].Difficulty;
+					hsRatingMusicData[i - 1, 0].Score = l[0][i].Score;
+					hsRatingMusicData[i - 1, 0].RawScore = l[0][i].RawScore;
+					hsRatingMusicData[i - 1, 0].isLine6 = l[0][i].isLine6;
+					int rank = 0;
+					if(score < 1 || hsRatingMusicData[i - 1, 0].Score != score)
+					{
+						rank = i;
+					}
+					else
+					{
+						rank = hsRatingMusicData[i - 2, 0].RankNum;
+					}
+					hsRatingMusicData[i - 1, 0].RankNum = rank;
+					score = hsRatingMusicData[i - 1, 0].Score;
+				}
+				rateTotal += rateAttr[0];
+			}
+			if (pubUpd)
+				UpdatePublicStatus();
 		}
 
 		//// RVA: 0xEA4408 Offset: 0xEA4408 VA: 0xEA4408
 		//public void CalcUtaRateForLog(JDDGGJCGOPA rec, int freeMusicId, int lastDifficulty, int lastRatingScore) { }
 
 		//// RVA: 0xEA5310 Offset: 0xEA5310 VA: 0xEA5310
-		//public void CalcUtaRate(List<JNMFKOHFAFB.LBGEDDJKOKF> hsRatings) { }
+		public void CalcUtaRate(List<JNMFKOHFAFB_PublicStatus.LBGEDDJKOKF> hsRatings)
+		{
+			int coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
+			rateAttr[0] = 0;
+			rateTotal = 0;
+			if(hsRatings.Count > 0)
+			{
+				rateAttr[0] = 0;
+				int score = 0;
+				int curRank = 1;
+				for(int i = 0; i < 10; i++)
+				{
+					if(hsRatings[0].BDCAICINCKK_GetScore(i) > 0)
+					{
+						rateAttr[0] += hsRatings[0].BDCAICINCKK_GetScore(i);
+						hsRatingMusicData[i, 0].FreeMusicId = hsRatings[0].MLKHJPBAFCO_GetFreeMusicId(i);
+						hsRatingMusicData[i, 0].Difficulty = hsRatings[0].FFACBDAJJJP_GetDifficulty(i);
+						hsRatingMusicData[i, 0].Score = hsRatings[0].BDCAICINCKK_GetScore(i);
+						hsRatingMusicData[i, 0].isLine6 = hsRatings[0].MJKFDJIPMMB_GetL6(i);
+						int rank = 0;
+						if(score < 1 || hsRatingMusicData[i, 0].Score != score)
+						{
+							rank = curRank;
+						}
+						else
+						{
+							rank = hsRatingMusicData[i - 1, 0].RankNum;
+						}
+						hsRatingMusicData[i, 0].RankNum = rank;
+						score = hsRatingMusicData[i, 0].Score;
+						curRank++;
+					}
+				}
+				rateTotal += rateAttr[0];
+			}
+		}
 
 		//// RVA: 0xEA3F80 Offset: 0xEA3F80 VA: 0xEA3F80
-		//private void UpdatePublicStatus() { }
+		private void UpdatePublicStatus()
+		{
+			TodoLogger.Log(0, "TODO UpdatePublicStatus");
+		}
 
 		//// RVA: 0xEA5AFC Offset: 0xEA5AFC VA: 0xEA5AFC
 		public static int GetUtaRate(JDDGGJCGOPA_RecordMusic rec, int free_music_id)
 		{
-			JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo info = rec.FAMANJGJANN_MusicInfo.Find((JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo x) =>
+			JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo info = rec.FAMANJGJANN_FreeMusicInfo.Find((JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo x) =>
 			{
 				//0xEA7684
-				return free_music_id == x.FDMENECIKEL;
+				return free_music_id == x.FDMENECIKEL_FreeMusicId;
 			});
 			int coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
-			int val = info.IFNDLIGGGHP_HsrSc;
+			int val = info.IFNDLIGGGHP_HighScoreScore;
 			if (val > 0)
 				return val / coef;
 			return 0;
@@ -107,7 +208,12 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA5F18 Offset: 0xEA5F18 VA: 0xEA5F18
-		//public int GetUtaRateAttr(int attr = 0) { }
+		public int GetUtaRateAttr(int attr = 0)
+		{
+			if (attr != 0)
+				return 0;
+			return rateAttr[0];
+		}
 
 		//// RVA: 0xEA5F6C Offset: 0xEA5F6C VA: 0xEA5F6C
 		//public int GetUtaRateTotal(List<JNMFKOHFAFB.LBGEDDJKOKF> hsRatingInfoList) { }
@@ -115,18 +221,27 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA606C Offset: 0xEA606C VA: 0xEA606C
 		public int GetUtaRateTotal()
 		{
-			TodoLogger.Log(0, "TODO GetUtaRateTotal");
-			return 0;
+			int ratelimit = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.LPJLEHAJADA("uta_rate_total_limit", 99999);
+			if (rateTotal <= ratelimit)
+				return rateTotal;
+			return ratelimit;
 		}
 
 		//// RVA: 0xEA6180 Offset: 0xEA6180 VA: 0xEA6180
-		//public static HighScoreRatingRank.Type GetUtaGrade(int total) { }
+		public static HighScoreRatingRank.Type GetUtaGrade(int total)
+		{
+			for(int i = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Count - 1; i >= 0;  i--)
+			{
+				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO[i].ADKDHKMPMHP <= total)
+					return (HighScoreRatingRank.Type)(i + 1);
+			}
+			return HighScoreRatingRank.Type.Be;
+		}
 
 		//// RVA: 0xEA6324 Offset: 0xEA6324 VA: 0xEA6324
 		public HighScoreRatingRank.Type GetUtaGrade()
 		{
-			TodoLogger.Log(0, "TODO GetUtaGrade");
-			return HighScoreRatingRank.Type.None;
+			return GetUtaGrade(GetUtaRateTotal());
 		}
 
 		//// RVA: 0xEA6338 Offset: 0xEA6338 VA: 0xEA6338

@@ -55,7 +55,6 @@ public abstract class DIHHCBACKGG_DbSection
 	// // RVA: 0x198B6F0 Offset: 0x198B6F0 VA: 0x198B6F0 Slot: 11
 	public virtual uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(0, "TODO");
 		return 0;
 	}
 

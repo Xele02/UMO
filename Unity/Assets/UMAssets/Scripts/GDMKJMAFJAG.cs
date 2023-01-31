@@ -120,7 +120,7 @@ public class HNJKJCDDIMG_SetInfo
 	}
 
 	//// RVA: 0x15FC3E8 Offset: 0x15FC3E8 VA: 0x15FC3E8
-	public int KAINPNMMAEK()
+	public int KAINPNMMAEK_GetItemsCount()
 	{
 		return PNFIBNJIOAN_Items.Count;
 	}
@@ -129,7 +129,7 @@ public class HNJKJCDDIMG_SetInfo
 	public void ODDIHGPONFL(HNJKJCDDIMG_SetInfo GPBJHKLFCEP)
 	{
 		LIHEBNPAIFI_SId = GPBJHKLFCEP.LIHEBNPAIFI_SId;
-		for(int i = 0; i < GPBJHKLFCEP.KAINPNMMAEK(); i++)
+		for(int i = 0; i < GPBJHKLFCEP.KAINPNMMAEK_GetItemsCount(); i++)
 		{
 			OEFHMMJFEKC_SetItemId(i, GPBJHKLFCEP.FKNBLDPIPMC_GetItemId(i));
 		}

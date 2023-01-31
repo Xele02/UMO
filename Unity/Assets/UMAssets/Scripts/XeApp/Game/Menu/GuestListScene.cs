@@ -457,10 +457,10 @@ namespace XeApp.Game.Menu
 			elem.SetSceneIconDelegate(info.GetGuestSceneIconTex);
 			DivaIconDecoration di = m_divaDecos[m_elems.IndexOf(elem)];
 			di.SetActive(true);
-			di.Change(info.friend.JIGONEMPPNP_Diva, info.friend, DisplayType.Level, info.friend.KHGKPKDBMOH());
+			di.Change(info.friend.JIGONEMPPNP_Diva, info.friend, DisplayType.Level, info.friend.KHGKPKDBMOH_GetAssistScene());
 			SceneIconDecoration si = m_sceneDecos[m_elems.IndexOf(elem)];
 			si.SetActive(true);
-			si.Change(info.friend.KHGKPKDBMOH(), m_sortType == SortItem.Episode ? DisplayType.EpisodeName : DisplayType.Level);
+			si.Change(info.friend.KHGKPKDBMOH_GetAssistScene(), m_sortType == SortItem.Episode ? DisplayType.EpisodeName : DisplayType.Level);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E0D4C Offset: 0x6E0D4C VA: 0x6E0D4C

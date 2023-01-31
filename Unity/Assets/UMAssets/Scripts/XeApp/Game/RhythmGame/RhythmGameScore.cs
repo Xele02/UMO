@@ -111,7 +111,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xBFED3C Offset: 0xBFED3C VA: 0xBFED3C
 		public ResultScoreRank.Type CalcCurrentRank()
 		{
-			return (ResultScoreRank.Type)musicLevelData.DLPBHJALHCK_GetRank(currentScore);
+			return (ResultScoreRank.Type)musicLevelData.DLPBHJALHCK_GetScoreRank(currentScore);
 		}
 
 		//// RVA: 0xBFED74 Offset: 0xBFED74 VA: 0xBFED74

@@ -113,7 +113,7 @@ namespace XeApp.Game.Menu
 			ResultScoreRank.Type scoreRank = ResultScoreRank.Type.Illegal;
 			if(facialType == DivaResource.MenuFacialType.Result)
 			{
-				NGJOPPIGCPM data = new NGJOPPIGCPM();
+				NGJOPPIGCPM_ResultData data = new NGJOPPIGCPM_ResultData();
 				data.KHEKNNFCAOI(Database.Instance.gameSetup.musicInfo.freeMusicId,
 					Database.Instance.gameSetup.musicInfo.difficultyType,
 					Database.Instance.gameSetup.EnableLiveSkip,
@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 				scoreRank = ResultScoreRank.Type.S;
 				if(!Database.Instance.gameSetup.musicInfo.IsMvMode)
 				{
-					scoreRank = (ResultScoreRank.Type)data.PENICOGGNLF;
+					scoreRank = (ResultScoreRank.Type)data.PENICOGGNLF_RankScore;
 				}
 			}
 			resource.LoadBasicResource(divaId, modelId, colorId);

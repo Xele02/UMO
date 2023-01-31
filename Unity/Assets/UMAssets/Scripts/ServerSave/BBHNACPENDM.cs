@@ -14,6 +14,33 @@ public class BBHNACPENDM_ServerSaveData
 		AFGALHECDIJ = 3,
 		LPKPFMHEKEM = 4
 	}
+	 
+	public class EMHDCKMFCGE
+	{
+		public long MCKEOKFMLAH; // 0x8
+		public EDOHBJAPLPF_JsonData OBHAFLMHAKG; // 0x10
+		public string BAKAGKBPOMJ; // 0x14
+		public bool BLOCFLFHCFJ; // 0x18
+		public List<string> KFGDPMNCCFO; // 0x1C
+
+		public string DLENPPIJNPA { get; }
+		public bool CHBFPFLGELK { get; }
+
+		// RVA: 0xF20530 Offset: 0xF20530 VA: 0xF20530
+		public EMHDCKMFCGE(EDOHBJAPLPF_JsonData HIEGIHHJNAL, List<string> OHNJJIMGKGK, bool LDNHNDGCPJO, long MCKEOKFMLAH)
+		{
+			KFGDPMNCCFO = OHNJJIMGKGK;
+			this.MCKEOKFMLAH = MCKEOKFMLAH;
+			OBHAFLMHAKG = HIEGIHHJNAL;
+			BLOCFLFHCFJ = LDNHNDGCPJO;
+		}
+
+		//// RVA: 0xF2AC9C Offset: 0xF2AC9C VA: 0xF2AC9C
+		//public string PBNINEMAOPB() { }
+
+		//// RVA: 0xF2AD7C Offset: 0xF2AD7C VA: 0xF2AD7C
+		//public bool LHIACHALIFC() { }
+	}
 
 	private delegate KLFDBFMNLBL_ServerSaveBlock FFECIIHJDJA_CreateBlockDelegate();
 	

@@ -52,7 +52,22 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D1A42C Offset: 0x1D1A42C VA: 0x1D1A42C
-		// public void Setup(HighScoreRatingRank.Type type) { }
+		public void Setup(HighScoreRatingRank.Type type)
+		{
+			for(int i = 0; i < ImageSingRankSmall.Length; i++)
+			{
+				int small_index = i;
+				GameManager.Instance.MusicRatioTextureCache.Load(type, (IiconTexture texture) =>
+				{
+					//0x1D1AA88
+					MusicRatioTextureCache.MusicRatioTexture t = texture as MusicRatioTextureCache.MusicRatioTexture;
+					if(t != null)
+					{
+						t.Set(ImageSingRankSmall[small_index], type);
+					}
+				});
+			}
+		}
 
 		// // RVA: 0x1D1A654 Offset: 0x1D1A654 VA: 0x1D1A654
 		// public void SetupCallback(Action onFinished) { }
