@@ -10,14 +10,14 @@ public class MOLKENLNCPE_DropData
     {
         public int KIJAPOFAGPN_ItemId; // 0x8
         public int MHFBCINOJEE; // 0xC
-        public EKLNMHFCAOI.FKGCBLHOOCL_Category HHACNFODNEF; // 0x10
+        public EKLNMHFCAOI.FKGCBLHOOCL_Category HHACNFODNEF_Category; // 0x10
         public string JDMIKEEIJFP; // 0x14
         public int HMFFHLPNMPH; // 0x18
-        public int DJJGNDCMNHF; // 0x1C
+        public int DJJGNDCMNHF_BonusCount; // 0x1C
         public int LIDBKCIMCKE_Rarity; // 0x20
         public bool BAKFIPIFDLE_IsEventRareItem; // 0x24
         public bool PHJHJGDLPED_IsRareItem; // 0x25
-        public bool LHEDLDEMPPG; // 0x26
+        public bool LHEDLDEMPPG_IsNew; // 0x26
         public int JPIPENJGGDD; // 0x28
         public int ONDODHPHOOF; // 0x2C
         public int ABIFFLDIAMM; // 0x30
@@ -27,14 +27,14 @@ public class MOLKENLNCPE_DropData
     }
 
 	public List<MOLKENLNCPE_DropData.CEFIOPJKEIC> HBHMAKNGKFK = new List<CEFIOPJKEIC>(8); // 0x8
-	public int POPPPGMKOHN; // 0xC
+	public int POPPPGMKOHN_EventRareItemNum; // 0xC
 	public int ELKAMCOPCDO; // 0x10
-	public int MFNCONLNBPB; // 0x14
-	public int OOEFNNNFOLF; // 0x18
-	public ResultScoreRank.Type DCBDCHPKLCN; // 0x1C
+	public int MFNCONLNBPB_RareItemNum; // 0x14
+	public int OOEFNNNFOLF_NormalItemNum; // 0x18
+	public ResultScoreRank.Type DCBDCHPKLCN_Rank; // 0x1C
 	public float JKLNANHPJLO; // 0x20
-	public int MJBODMOLOBC; // 0x24
-	public int PBIHLJKLHGJ; // 0x28
+	public int MJBODMOLOBC_Luck; // 0x24
+	public int PBIHLJKLHGJ_UCNumber; // 0x28
 	public int ADHABBGDFPK; // 0x2C
 
 	// // RVA: 0x17B8400 Offset: 0x17B8400 VA: 0x17B8400

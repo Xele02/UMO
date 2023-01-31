@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 			skill = "";
 			skillLevel = 0;
 			skillRank = SkillRank.Type.None;
-			GCIJNCFDNON_SceneInfo g = fri.KHGKPKDBMOH();
+			GCIJNCFDNON_SceneInfo g = fri.KHGKPKDBMOH_GetAssistScene();
 			if (g == null)
 			{
 				total = 0;
@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 				charm = g.CMCKNKKCNDK_Status.charm;
 				fold = g.CMCKNKKCNDK_Status.fold;
 				support = g.CMCKNKKCNDK_Status.support;
-				isKira = g.MBMFJILMOBP();
+				isKira = g.MBMFJILMOBP_IsKira();
 				centerSkillRank = g.DHEFMEGKKDN_CenterSkillRank;
 				centerSkillRank2 = g.FFDCGHDNDFJ_CenterSkillRank2;
 				limitOverCount = g.MKHFCGPJPFI_LimitOverCount;

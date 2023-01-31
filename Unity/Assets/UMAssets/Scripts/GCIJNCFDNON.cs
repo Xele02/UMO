@@ -52,7 +52,7 @@ public class GCIJNCFDNON_SceneInfo
 	public int MJBODMOLOBC_Luck; // 0xA4
 	public int CIEOBFIIPLD_SceneLevel; // 0xA8
 	public int MKHFCGPJPFI_LimitOverCount; // 0xAC
-	public int MCOMAOELHOG; // 0xB0
+	public int MCOMAOELHOG_IsKira; // 0xB0
 	public bool CADENLBDAEB; // 0xB4
 	public long NPHOIEOPIJO; // 0xB8
 	public DMPDJFAGCPN DKFCPBEOBHB_Layout; // 0xC0
@@ -75,9 +75,9 @@ public class GCIJNCFDNON_SceneInfo
 	// public string BGJNIABLBDB() { }
 
 	// // RVA: 0x16AB494 Offset: 0x16AB494 VA: 0x16AB494
-	public bool MBMFJILMOBP()
+	public bool MBMFJILMOBP_IsKira()
 	{
-		return GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GACNKPOMOFA_IsDrawKira >= 0 && MCOMAOELHOG == 1;
+		return GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GACNKPOMOFA_IsDrawKira >= 0 && MCOMAOELHOG_IsKira == 1;
 	}
 
 	// // RVA: 0x16AB598 Offset: 0x16AB598 VA: 0x16AB598
@@ -457,7 +457,7 @@ public class GCIJNCFDNON_SceneInfo
 		this.CADENLBDAEB = CADENLBDAEB;
 		this.IELENGDJPHF = IELENGDJPHF == 0 ? (JOKJBMJBLBB_Single ? 1 : 0) : IELENGDJPHF;
 		MKHFCGPJPFI_LimitOverCount = BLHGJPIFKCL;
-		MCOMAOELHOG = 0;
+		MCOMAOELHOG_IsKira = 0;
 		JNNHIDMNBFG(OPFGFINHFCE_SceneName, BLHGJPIFKCL);
 		CIEOBFIIPLD_SceneLevel = KBOLNIBLIND == null ? 1 : CEDHHAGBIBA.OGPFNHOKONH(KBOLNIBLIND);
 		PFHJFIHGCKP_CenterSkillName1 = bank.GetMessageByLabel("c_nm_" + MEOOLHNNMHL_GetCenterSkillId(false, 0, 0).ToString("D4"));

@@ -63,7 +63,7 @@ namespace XeApp.Game.Menu
 		{
 			m_viewFriendData = friendData;
 			SetDiva(friendData.JIGONEMPPNP_Diva);
-			SetScene(friendData.JIGONEMPPNP_Diva, friendData.KHGKPKDBMOH(), musicData);
+			SetScene(friendData.JIGONEMPPNP_Diva, friendData.KHGKPKDBMOH_GetAssistScene(), musicData);
 			m_assistIconObject.SetActive(true);
 			m_rivalIconObject.SetActive(false);
 			m_rivalRankImage.gameObject.SetActive(false);

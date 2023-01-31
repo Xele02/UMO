@@ -63,7 +63,7 @@ namespace XeApp.Game.Menu
 			layoutOkayButton.SetupCallback(OnFinishedOkayButton, OnClickOkayButton);
 			for(int i = 0; i < initParam.layoutItemList.Count; i++)
 			{
-				initParam.layoutItemList[i].Setup(initParam.viewDropResultData.HBHMAKNGKFK[i], initParam.viewDropResultData.DCBDCHPKLCN != ResultScoreRank.Type.C);
+				initParam.layoutItemList[i].Setup(initParam.viewDropResultData.HBHMAKNGKFK[i], initParam.viewDropResultData.DCBDCHPKLCN_Rank != ResultScoreRank.Type.C);
 			}
 			isEnableFriendInfo = initParam.viewFriendPlayerData != null;
 			layoutFriendInfo.Setup(initParam.viewFriendPlayerData);

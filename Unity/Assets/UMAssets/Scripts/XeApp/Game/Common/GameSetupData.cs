@@ -251,9 +251,9 @@ namespace XeApp.Game.Common
 						danceDivaList_[i + divaList_.Length].SetupInfo(unit.CMOPCCAJAAO_AddDivas[i], playerData, musicData, prismData, i + divaList_.Length, i + divaList_.Length + 1);
 					}
 				}
-				if(friendData != null && friendData.KHGKPKDBMOH() != null)
+				if(friendData != null && friendData.KHGKPKDBMOH_GetAssistScene() != null)
 				{
-					luck += friendData.KHGKPKDBMOH().MJBODMOLOBC_Luck;
+					luck += friendData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck;
 				}
 				valkyrieId = 1;
 				int form = 0;

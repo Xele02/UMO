@@ -86,10 +86,10 @@ public class FOCPLKMMCAL
 					EMLKKEHCKMI(OMNOFMEBLAD, music, true);
 					int sceneId = 0;
 					int c = 0;
-					if(IPGFALGDLHN_FriendInfo != null && IPGFALGDLHN_FriendInfo.KHGKPKDBMOH() != null)
+					if(IPGFALGDLHN_FriendInfo != null && IPGFALGDLHN_FriendInfo.KHGKPKDBMOH_GetAssistScene() != null)
 					{
-						sceneId = IPGFALGDLHN_FriendInfo.KHGKPKDBMOH().BCCHOBPJJKE_SceneId;
-						c = IPGFALGDLHN_FriendInfo.KHGKPKDBMOH().JPIPENJGGDD;
+						sceneId = IPGFALGDLHN_FriendInfo.KHGKPKDBMOH_GetAssistScene().BCCHOBPJJKE_SceneId;
+						c = IPGFALGDLHN_FriendInfo.KHGKPKDBMOH_GetAssistScene().JPIPENJGGDD;
 					}
 					if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 6)
 					{

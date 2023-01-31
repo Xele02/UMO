@@ -1,7 +1,10 @@
 using System;
+using System.Collections;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Game.Common;
+using XeSys;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
@@ -58,7 +61,65 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D8EBB8 Offset: 0x1D8EBB8 VA: 0x1D8EBB8
-		// public void Setup(EAJCBFGKKFA friendData) { }
+		public void Setup(EAJCBFGKKFA_FriendInfo friendData)
+		{
+			isSetupFinished = false;
+			if(friendData != null)
+			{
+				StringBuilder str = new StringBuilder();
+				str.SetFormat("RANK {0}", friendData.ILOJAJNCPEC_Rank);
+				textPlayerName.text = friendData.LBODHBDOMGK_Name;
+				textPlayerRank.text = str.ToString();
+				if(friendData.PDIPANKOKOL_FriendType == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend)
+				{
+					HiddenFriendRequestButton();
+				}
+				int divaId = 0;
+				int costumeId = 0;
+				int colorId = 0;
+				if(friendData.JIGONEMPPNP_Diva != null)
+				{
+					divaId = friendData.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId;
+					costumeId = friendData.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+					colorId = friendData.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
+				}
+				MenuScene.Instance.DivaIconCache.Load(divaId, costumeId, colorId, (IiconTexture iconTexture) =>
+				{
+					//0x1D8F49C
+					iconTexture.Set(imageDiva);
+				});
+				bool isKira = false;
+				int sceneId = 0;
+				int sceneRank = 0;
+				if(friendData.KHGKPKDBMOH_GetAssistScene() != null)
+				{
+					sceneId = friendData.KHGKPKDBMOH_GetAssistScene().BCCHOBPJJKE_SceneId;
+					sceneRank = friendData.KHGKPKDBMOH_GetAssistScene().CGIELKDLHGE_GetEvolveId();
+					isKira = friendData.KHGKPKDBMOH_GetAssistScene().MBMFJILMOBP_IsKira();
+				}
+				MenuScene.Instance.SceneIconCache.Load(sceneId, sceneRank, (IiconTexture iconTexture) =>
+				{
+					//0x1D8F590
+					iconTexture.Set(imageScene);
+					SceneIconTextureCache.ChangeKiraMaterial(imageScene, iconTexture as IconTexture, isKira);
+				});
+				divaIconDecoration = new DivaIconDecoration(imageDiva.gameObject, DivaIconDecoration.Size.S, layoutDivaImage, null);
+				divaIconDecoration.Change(friendData.JIGONEMPPNP_Diva, friendData, DisplayType.Level, friendData.AFBMEMCHJCL_MainScene);
+				sceneIconDecoration = new SceneIconDecoration(imageScene.gameObject, SceneIconDecoration.Size.S, layoutSceneImage, null);
+				sceneIconDecoration.Change(friendData.KHGKPKDBMOH_GetAssistScene(), DisplayType.Level);
+				HighScoreRatingRank.Type rank = friendData.AGJIIKKOKFJ_ScoreRatingRank;
+				textSingRank.text = friendData.BJGOPOEAAIC_MusicRatio.ToString();
+				GameManager.Instance.MusicRatioTextureCache.Load(rank, (IiconTexture texture) =>
+				{
+					//0x1D8F6F8
+					if(texture != null)
+					{
+						(texture as MusicRatioTextureCache.MusicRatioTexture).Set(imageSingRank, rank);
+					}
+				});
+				isSetupFinished = true;
+			}
+		}
 
 		// // RVA: 0x1D8F208 Offset: 0x1D8F208 VA: 0x1D8F208
 		public void Release()
@@ -72,20 +133,34 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D8F240 Offset: 0x1D8F240 VA: 0x1D8F240
 		public void StartBeginAnim()
 		{
-			TodoLogger.Log(0, "StartBeginAnim");
-			if(onFinished != null)
-				onFinished();
+			if (!isSetupFinished)
+				return;
+			layoutRootAnim.StartChildrenAnimGoStop("go_in", "st_in");
+			StartCoroutine(Co_PlayingAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7190D4 Offset: 0x7190D4 VA: 0x7190D4
 		// // RVA: 0x1D8F2F0 Offset: 0x1D8F2F0 VA: 0x1D8F2F0
-		// private IEnumerator Co_PlayingAnim() { }
+		private IEnumerator Co_PlayingAnim()
+		{
+			//0x1D8F7D4
+			yield return new WaitWhile(() =>
+			{
+				//0x1D8F470
+				return layoutRootAnim.IsPlayingChildren();
+			});
+			if (onFinished != null)
+				onFinished();
+		}
 
 		// // RVA: 0x1D8F39C Offset: 0x1D8F39C VA: 0x1D8F39C
 		// public void SkipBeginAnim() { }
 
 		// // RVA: 0x1D8F1D8 Offset: 0x1D8F1D8 VA: 0x1D8F1D8
-		// public void HiddenFriendRequestButton() { }
+		public void HiddenFriendRequestButton()
+		{
+			sendFriendRequest.Hidden = true;
+		}
 
 		// // RVA: 0x1D8F424 Offset: 0x1D8F424 VA: 0x1D8F424
 		// public void DisableFriendRequestButton() { }
@@ -95,9 +170,5 @@ namespace XeApp.Game.Menu
 		{
 			TodoLogger.LogNotImplemented("OnClickSendFriendRequest");
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71914C Offset: 0x71914C VA: 0x71914C
-		// // RVA: 0x1D8F470 Offset: 0x1D8F470 VA: 0x1D8F470
-		// private bool <Co_PlayingAnim>b__22_0() { }
 	}
 }

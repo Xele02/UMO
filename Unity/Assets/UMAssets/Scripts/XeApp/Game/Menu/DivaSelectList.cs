@@ -222,7 +222,7 @@ namespace XeApp.Game.Menu
 							scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[selectedDiva.DJICAKGOGFO_SubSceneIds[i - 1] - 1];
 						}
 					}
-					bool isKira = scene != null ? scene.MBMFJILMOBP() : false;
+					bool isKira = scene != null ? scene.MBMFJILMOBP_IsKira() : false;
 					GameManager.Instance.SceneIconCache.Load(scene != null ? scene.BCCHOBPJJKE_SceneId : 0, scene != null ? scene.CGIELKDLHGE_GetEvolveId() : 0, (IiconTexture texture) => {
 						//0x17EC68C
 						texture.Set(m_selectDivaSceneImages[index]);
@@ -303,7 +303,7 @@ namespace XeApp.Game.Menu
 						GCIJNCFDNON_SceneInfo scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[sceneId - 1];
 						sceneId = scene.BCCHOBPJJKE_SceneId;
 						rank = scene.CGIELKDLHGE_GetEvolveId();
-						isKira = scene.MBMFJILMOBP();
+						isKira = scene.MBMFJILMOBP_IsKira();
 						if (!m_isSelectedCenterDiva)
 						{
 							isCompatible = false;
@@ -347,7 +347,7 @@ namespace XeApp.Game.Menu
 							}
 						}
 						isCompatible = false;
-						isKira = scene.MBMFJILMOBP();
+						isKira = scene.MBMFJILMOBP_IsKira();
 						if (isActivate)
 						{
 							isActivate = SetDeckSkillIconControl.CheckMatchLiveSkill(scene, f.AHHJLDLAPAN_DivaId, m_musicData != null ? m_musicData.DLAEJOBELBH_MusicId : 0);

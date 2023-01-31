@@ -237,7 +237,10 @@ class JpStringLiterals
 	public const string StringLiteral_15651 = "手動"; // 0x03bb7f44
 	public const string StringLiteral_16338 = "ユーザーリスト 失敗"; // 0x03bb8a00
 	public const string StringLiteral_16339 = "ユーザーフレンドリスト 成功 "; // 0x03bb8a04
+	public const string StringLiteral_17754 = "(＋{0})"; // 0x03bba020
 	public const string StringLiteral_17777 = "獲得したアイテムはありません。"; // 0x03bba07c
+	public const string StringLiteral_17787 = "％"; // 0x03bba0a4
+	public const string StringLiteral_17788 = "(UCアイテムは {0}UC に変換されました)"; // 0x03bba0a8
 	public const string StringLiteral_20290 = "l×{0}"; // 0x03bbc7c0
 	public const string StringLiteral_20367 = "ー"; // 0x03bbc8f4
 	public const string StringLiteral_20369 = "±{0}"; // 0x03bbc8fc
