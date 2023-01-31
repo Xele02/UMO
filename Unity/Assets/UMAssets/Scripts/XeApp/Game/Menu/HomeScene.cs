@@ -946,11 +946,11 @@ namespace XeApp.Game.Menu
 				}
 				if(team.danceDivaList[i].costumeModelId == 0)
 				{
-                    LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = null;
+                    LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = null;
 					do
 					{
 						team.danceDivaList[i].costumeModelId = UnityEngine.Random.Range(1, 50);
-						cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN(team.danceDivaList[i].divaId, team.danceDivaList[i].costumeModelId);
+						cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(team.danceDivaList[i].divaId, team.danceDivaList[i].costumeModelId);
 					} while(cosInfo.DAJGPBLEEOB_PrismCostumeModelId != team.danceDivaList[i].costumeModelId || 
 						excludedCostume.Contains(team.danceDivaList[i].divaId * 1000 + team.danceDivaList[i].costumeModelId)
 						|| (excludedCostumePos.ContainsKey(team.danceDivaList[i].divaId * 1000 + team.danceDivaList[i].costumeModelId) && 

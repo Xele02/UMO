@@ -1180,7 +1180,7 @@ namespace XeApp.Game
 			List<int> l = new List<int>();
 			for (int i = 0; i < mi.onStageDivaNum; i++)
 			{
-				l.Add(master.MGFMPKLLGHE_Diva.GCINIJEMHFK(ti.danceDivaList[i].prismDivaId).IDDHKOEFJFB_BodyId);
+				l.Add(master.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(ti.danceDivaList[i].prismDivaId).IDDHKOEFJFB_BodyId);
 			}
 			int c = GameManager.Instance.GetMultipleDanceOverridePrimeId(l);
 			int basaraPos = directionParam.basaraPositionId;

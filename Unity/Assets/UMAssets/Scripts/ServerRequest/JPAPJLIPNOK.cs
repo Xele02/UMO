@@ -64,7 +64,7 @@ public class IKAHKDKIGNA
     }
 
 	// // RVA: 0x8DB8C0 Offset: 0x8DB8C0 VA: 0x8DB8C0
-	public bool PPCCFNAPHCH(string CKDFCDDOBDH)
+	public bool PPCCFNAPHCH_FileExists(string CKDFCDDOBDH)
 	{
 		for(int i = 0; i < KGHAJGGMPKL_Files.Count; i++)
 		{

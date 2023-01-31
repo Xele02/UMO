@@ -137,7 +137,7 @@ namespace XeApp.Game.Common
 					}
 					if(prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(index) > 0)
 					{
-						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA[prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(index) - 1].DAJGPBLEEOB_PrismCostumeModelId;
+						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(index) - 1].DAJGPBLEEOB_PrismCostumeModelId;
 						prismCostumeColorId = prismData.DOIGAGAAAOP_GetPrismCostumeColorIdForSlot(index);
 					}
 				}
@@ -150,7 +150,7 @@ namespace XeApp.Game.Common
 					if(a_prism.AHHJLDLAPAN_DivaId[a_index] > 0 && a_prism.JPIDIENBGKH_CostumeId[a_index] > 0)
 					{
 						prismDivaId = a_prism.AHHJLDLAPAN_DivaId[a_index];
-						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA[a_prism.JPIDIENBGKH_CostumeId[a_index] - 1].DAJGPBLEEOB_PrismCostumeModelId;
+						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[a_prism.JPIDIENBGKH_CostumeId[a_index] - 1].DAJGPBLEEOB_PrismCostumeModelId;
 						prismCostumeColorId = 0;
 					}
 				}

@@ -18,7 +18,7 @@ public class FPGEMAIAMBF_RewardData
 		public int FCDKJAKLGMB_TargetValue; // 0x8
 		public KPGOMKPPJEE CMCKNKKCNDK_Achieved; // 0xC
 		public string JDMIKEEIJFP = ""; // 0x10
-		public int KIJAPOFAGPN = 0; // 0x14
+		public int KIJAPOFAGPN_GlobalItemId = 0; // 0x14
 		public short MHFBCINOJEE_ItemId; // 0x18
 		public byte HHACNFODNEF_Category; // 0x1A
 		public int JDLJPNMLFID = 0; // 0x1C
@@ -29,11 +29,11 @@ public class FPGEMAIAMBF_RewardData
 		// RVA: 0x13FAEB0 Offset: 0x13FAEB0 VA: 0x13FAEB0
 		public void GONNICAJNLK(int EIBBIJNFMDJ, HDNKOFNBCEO_RewardInfo LIFCHFOPHDH)
 		{
-			KIJAPOFAGPN = LIFCHFOPHDH.FKNBLDPIPMC(EIBBIJNFMDJ);
-			MHFBCINOJEE_ItemId = (short)EKLNMHFCAOI.DEACAHNLMNI_getItemId(KIJAPOFAGPN);
-			HHACNFODNEF_Category = (byte)EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(KIJAPOFAGPN);
+			KIJAPOFAGPN_GlobalItemId = LIFCHFOPHDH.FKNBLDPIPMC_GetGlobalId(EIBBIJNFMDJ);
+			MHFBCINOJEE_ItemId = (short)EKLNMHFCAOI.DEACAHNLMNI_getItemId(KIJAPOFAGPN_GlobalItemId);
+			HHACNFODNEF_Category = (byte)EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(KIJAPOFAGPN_GlobalItemId);
 			JDLJPNMLFID = LIFCHFOPHDH.KAINPNMMAEK(EIBBIJNFMDJ);
-			JDMIKEEIJFP = MessageManager.Instance.GetBank("master").GetMessageByLabel(EKLNMHFCAOI.FKMCHHDOAAB(KIJAPOFAGPN));
+			JDMIKEEIJFP = MessageManager.Instance.GetBank("master").GetMessageByLabel(EKLNMHFCAOI.FKMCHHDOAAB(KIJAPOFAGPN_GlobalItemId));
 		}
 	}
 
