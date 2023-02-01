@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x18DF9C4 Offset: 0x18DF9C4 VA: 0x18DF9C4
 		public void StartAlreadyAnim()
 		{
-			layoutRoot.StartChildrenAnimGoStop("logo_act", "loen_act");
+			layoutRoot.StartChildrenAnimLoop("logo_act", "loen_act");
 		}
 
 		//// RVA: 0x18DFA50 Offset: 0x18DFA50 VA: 0x18DFA50

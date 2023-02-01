@@ -145,6 +145,14 @@ namespace XeApp.Game.Common
 			return false;
 		}
 
+		protected void Preload(string cueName)
+		{
+			if(source != null)
+			{
+				source.Preload(cueName);
+			}
+		}
+
 		// // RVA: 0x13987A4 Offset: 0x13987A4 VA: 0x13987A4
 		// protected bool PlayCue(int cueId) { }
 

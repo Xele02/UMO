@@ -463,6 +463,182 @@ namespace XeApp.Game.RhythmGame
 			InitializeCheatOption();
 			InitializeMusicData();
 			InitializeGameData();
+
+
+#if UNITY_STANDALONE
+			//UMO
+			// Preload note sounds
+			for (int i = 0; i < noteTouchSEIndex.Length; i++)
+			{
+				SoundManager.Instance.sePlayerNotes.Preload(noteTouchSEIndex[i]);
+			}
+			// From valkyrie event, not sure if dynamic by valkyrie / ground
+			SoundManager.Instance.sePlayerGame.Preload("se_game_006");
+			SoundManager.Instance.sePlayerGame.Preload("se_game_012");
+			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_000");
+			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_001");
+			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_002");
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_009);
+			// Preload pilot voice
+			if (setting.m_enable_cutin)
+			{
+				RhythmGameVoicePlayer.Result res = voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.TakeOff);
+				if (RhythmGameVoicePlayer.Result.None == res)
+				{
+					if (resource.isTakeoffDivaVoice)
+					{
+						SoundManager.Instance.voDiva.Preload(DivaVoicePlayer.VoiceCategory.GameSpecial, resource.takeoffVoiceId);
+					}
+					else
+					{
+						int voiceId = resource.takeoffVoiceId;
+						PilotVoicePlayer.VoiceCategory categoryId = PilotVoicePlayer.VoiceCategory.Start;
+						if (voiceId < 0)
+						{
+							categoryId = PilotVoicePlayer.VoiceCategory.Start;
+							voiceId = 0;
+						}
+						else
+						{
+							categoryId = PilotVoicePlayer.VoiceCategory.Special;
+						}
+						SoundManager.Instance.voPilot.Preload(categoryId, voiceId);
+					}
+				}
+			}
+			//Preload active skill sounds
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_VALKYRIE_001);
+			if (gameFlow.IsRareBreak)
+			{
+				SoundManager.Instance.voDivaCos.Preload(DivaCosVoicePlayer.Category.ActiveSkill, 0);
+			}
+			else
+			{
+				if (voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.ActiveSkill) == 0)
+				{
+					SoundManager.Instance.voDiva.Preload(DivaVoicePlayer.VoiceCategory.GameActiveSkill, 0);
+				}
+			}
+			// Preload skill cutin
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_VALKYRIE_000);
+			// Preload voice pilot
+			for (int playVoiceId = 0; playVoiceId <= 1; playVoiceId++)
+			{
+				RhythmGameVoicePlayer.Result res = voicePlayer.PreloadPlayVoice(playVoiceId != 0 ? RhythmGameVoicePlayer.Voice.Wave_100 : RhythmGameVoicePlayer.Voice.Wave_50);
+				if (res == RhythmGameVoicePlayer.Result.None)
+				{
+					PilotVoicePlayer.VoiceCategory catId = PilotVoicePlayer.VoiceCategory.Fwave;
+					if (playVoiceId == 0)
+					{
+						if (resource.enterFoldWaveId_50 > -1)
+						{
+							playVoiceId = resource.enterFoldWaveId_50;
+							catId = PilotVoicePlayer.VoiceCategory.Special;
+						}
+						else
+						{
+							catId = PilotVoicePlayer.VoiceCategory.Fwave;
+						}
+					}
+					else
+					{
+						catId = PilotVoicePlayer.VoiceCategory.Fwave;
+						if (playVoiceId == 1)
+						{
+							if (resource.enterFoldWaveId_100 < 0)
+							{
+								playVoiceId = 1;
+								catId = PilotVoicePlayer.VoiceCategory.Fwave;
+							}
+							else
+							{
+								playVoiceId = resource.enterFoldWaveId_100;
+								catId = PilotVoicePlayer.VoiceCategory.Special;
+							}
+						}
+					}
+					SoundManager.Instance.voPilot.Preload(catId, playVoiceId);
+				}
+			}
+			// valkyriemode start
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_008);
+			if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Start) == RhythmGameVoicePlayer.Result.None)
+			{
+				if (resource.enteredValkyrieModeVoiceId < 0)
+				{
+					SoundManager.Instance.voPilot.Preload(PilotVoicePlayer.VoiceCategory.Valkyrie, 0);
+				}
+				else
+				{
+					SoundManager.Instance.voPilot.Preload(PilotVoicePlayer.VoiceCategory.Special, resource.enteredValkyrieModeVoiceId);
+				}
+			}
+			// enemy lock
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_013);
+			// shoot
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_016);
+			// valkyrie mode end
+			if (setting.m_enable_cutin)
+			{
+				// fail
+				if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Failed) == RhythmGameVoicePlayer.Result.None)
+				{
+					SoundManager.Instance.voPilot.Preload(PilotVoicePlayer.VoiceCategory.Valkyrie, 3);
+				}
+				// awaken
+				if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Success2) == RhythmGameVoicePlayer.Result.None)
+				{
+					SoundManager.Instance.voPilot.Preload(PilotVoicePlayer.VoiceCategory.Valkyrie, 2);
+				}
+				// diva
+				if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Success1) == RhythmGameVoicePlayer.Result.None)
+				{
+					SoundManager.Instance.voPilot.Preload(PilotVoicePlayer.VoiceCategory.Valkyrie, 1);
+				}
+			}
+			// start diva cutscene
+			// awaken
+			{
+				SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_017);
+				if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Diva_Awake) == RhythmGameVoicePlayer.Result.None)
+				{
+					DivaVoicePlayer.VoiceCategory cat = DivaVoicePlayer.VoiceCategory.None;
+					int voice = 0;
+					if (resource.enterdAwakenDivaModeVoiceId < 0)
+					{
+						cat = DivaVoicePlayer.VoiceCategory.GameClear;
+						voice = 1;
+					}
+					else
+					{
+						voice = resource.enterdAwakenDivaModeVoiceId;
+						cat = DivaVoicePlayer.VoiceCategory.GameSpecial;
+					}
+					SoundManager.Instance.voDiva.Preload(cat, voice);
+				}
+			}
+			// normal
+			{
+				SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_011);
+				if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Diva) == RhythmGameVoicePlayer.Result.None)
+				{
+					DivaVoicePlayer.VoiceCategory cat = DivaVoicePlayer.VoiceCategory.None;
+					int voice = 0;
+					if (resource.enterdDivaModeVoiceId < 0)
+					{
+						cat = DivaVoicePlayer.VoiceCategory.GameClear;
+						voice = 0;
+					}
+					else
+					{
+						voice = resource.enterdDivaModeVoiceId;
+						cat = DivaVoicePlayer.VoiceCategory.GameSpecial;
+					}
+					SoundManager.Instance.voDiva.Preload(cat, voice);
+				}
+			}
+			//
+#endif
 		}
 
 		// // RVA: 0x9B3F80 Offset: 0x9B3F80 VA: 0x9B3F80
@@ -530,15 +706,6 @@ namespace XeApp.Game.RhythmGame
 			soundCheerOrderer.Initialize(resource.musicData.cheerScoreData);
 			soundCheerOrderer.Stop();
 			soundCheerOrderer.Resume();
-
-#if UNITY_STANDALONE
-			//UMO
-			for (int i = 0; i < noteTouchSEIndex.Length; i++)
-			{
-				SoundManager.Instance.sePlayerNotes.Preload(noteTouchSEIndex[i]);
-			}
-			//
-#endif
 		}
 
 		// // RVA: 0x9B4D20 Offset: 0x9B4D20 VA: 0x9B4D20

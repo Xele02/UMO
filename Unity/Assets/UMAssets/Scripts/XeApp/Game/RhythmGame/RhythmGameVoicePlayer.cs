@@ -60,6 +60,31 @@ namespace XeApp.Game.RhythmGame
 			return Result.None;
 		}
 
+		//UMO
+		public Result PreloadPlayVoice(Voice a_voice)
+		{
+			if (m_param != null)
+			{
+				int v = GetChangeVoiceId(a_voice, m_param.m_voice_diva);
+				if (v < 0)
+				{
+					v = GetChangeVoiceId(a_voice, m_param.m_voice_pilot);
+					if (v > -1)
+					{
+						SoundManager.Instance.voPilot.Preload(PilotVoicePlayer.VoiceCategory.Change, v);
+						return Result.Pilot;
+					}
+				}
+				else
+				{
+					SoundManager.Instance.voDiva.Preload(DivaVoicePlayer.VoiceCategory.Change, v);
+					return Result.Diva;
+				}
+			}
+			return Result.None;
+		}
+		//
+
 		// // RVA: 0x1551A68 Offset: 0x1551A68 VA: 0x1551A68
 		public int GetChangeVoiceId(RhythmGameVoicePlayer.Voice a_voice, MusicVoiceChangerParam.VoiceList a_list)
 		{

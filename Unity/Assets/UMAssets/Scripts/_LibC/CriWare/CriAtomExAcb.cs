@@ -89,7 +89,19 @@ namespace ExternLib
 			string name = "cue_" + cueId;
 			if(!acbFiles[acb_hn].cachedAudioClips.ContainsKey(name))
 			{
+				//UnityEngine.Debug.LogError("Cache sound " + name+" in player "+ acb_hn.ToString());
 				acbFiles[acb_hn].cachedAudioClips[name] = GetClip(acbFiles[acb_hn].file, "", cueId);
+			}
+		}
+		public static void PreloadCue(IntPtr acb_hn, string cueName)
+		{
+			if (!acbFiles.ContainsKey(acb_hn))
+				return;
+			string name = cueName;
+			if (!acbFiles[acb_hn].cachedAudioClips.ContainsKey(name))
+			{
+				//UnityEngine.Debug.LogError("Cache sound " + name + " in player " + acb_hn.ToString());
+				acbFiles[acb_hn].cachedAudioClips[name] = GetClip(acbFiles[acb_hn].file, cueName, -1);
 			}
 		}
 
