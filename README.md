@@ -9,7 +9,7 @@ Fonctionality :
 * S-Live :
   * Diva select menu : Selection of diva, costume & valkyrie.
 * Playing song :
-  * Selecting diva/valkyrie and cards, everything is unlocked but at level 1
+  * Selecting diva/valkyrie and cards, everything is unlocked but at level 1. Expected score is partially working and values can be wrong.
   * Use key S-D-F-H-J-K for the 6 lanes, and D-F-H-J for 4 lanes songs. Slide note are automatically valided on hit. Lane change on 6 lane mode don't work. Key can be changed in the config asset in Resources/EditorRuntimeSettings.
   * There is a invincible mode activated by default to compensate the low level team selectable.
 * Very basic result screen for the flow.
