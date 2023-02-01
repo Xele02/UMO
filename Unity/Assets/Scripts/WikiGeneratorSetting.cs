@@ -65,23 +65,12 @@ static class WikiGenerator
 
         basePath += "/images/diva/";
 
+        Debug.LogError("Export diva");
+
+        CleanDirectory(basePath);
+
         int total = 0;
 
-        /*for(int i = 0; i < 10; i++)
-        {
-            int divaId = i + 1;
-            total++;
-            GameManager.Instance.DivaIconCache.LoadDivaUpIco(divaId, 1, 0, (IiconTexture texture) =>
-            {
-                Material mat = new Material(Shader.Find("MCRS/SplitTextureRGB16A8"));
-                mat.SetTexture("_MainTex", texture.BaseTexture);
-                mat.SetTexture("_MaskTex", texture.MaskTexture);
-                Texture2D tex = TextureHelper.Copy(texture.BaseTexture, -1, -1, mat);
-                File.WriteAllBytes(basePath + string.Format("dv_{0:D2}_ps", divaId) + ".png", tex.EncodeToPNG());
-                total--;
-                UnityEngine.Debug.LogError("Export left : "+total);
-            });
-        }*/
         for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes.Count; i++)
         {
             LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[i];
@@ -115,6 +104,7 @@ static class WikiGenerator
                     short[] cols = cos.CHDBGFLFPNC_GetAllAvaiableColors();
                     for(int k = 0; k < cols.Length; k++)
                     {
+                        total++;
                         int col = cols[k];
                         GameManager.Instance.DivaIconCache.Load(DivaIconTextureCache.GetIconPath((DivaIconTextureCache.IconType)type, divaId, costume, col), (IiconTexture texture) =>
                         {
@@ -130,10 +120,6 @@ static class WikiGenerator
                 }
             }
         }
-
-        Debug.LogError("Export music");
-
-        CleanDirectory(basePath);
     }
 
     [MenuItem("UMO/Generate Wiki/Images/Music")]
@@ -146,6 +132,10 @@ static class WikiGenerator
         basePath += "/images/music/";
 
         int total = 0;
+
+        Debug.LogError("Export music");
+
+        CleanDirectory(basePath);
 
         LPPGENBEECK_MusicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
 		for (int i = 0; i < MusicDb.EPMMNEFADAP_Musics.Count; i++)
@@ -166,10 +156,6 @@ static class WikiGenerator
                 });
             }
         }
-
-        Debug.LogError("Export music");
-
-        CleanDirectory(basePath);
     }
 
     [MenuItem("UMO/Generate Wiki/Files")]
