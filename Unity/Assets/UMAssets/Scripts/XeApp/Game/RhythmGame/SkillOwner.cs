@@ -64,6 +64,7 @@ namespace XeApp.Game.RhythmGame
 					if (skillInfo.EGLDFPILJLG_BuffEffectType[k] != 0)
 					{
 						ActiveSkill sk = new ActiveSkill();
+						activeSkill = sk;
 						sk.Initialize(new SkillBase.Param()
 						{
 							id = Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId,
