@@ -57,22 +57,92 @@ namespace XeApp.Game.Common
 			{
 				if(!InputManager.Instance.GetCurrentTouchInfo(0).isIllegal)
 				{
-					TodoLogger.Log(0, "Touch particle UpdateIdle");
+					Vector3 pos = TouchPosition();
+					TouchParticleObject part = m_particle_pool.Alloc();
+					if(part == null)
+					{
+						part = m_particle_pool.AllocForce();
+					}
+					part.Enter(pos);
+					m_transform_press.position = pos;
+					m_is_touch = true;
+					m_frame = 0;
+					m_old_pos = pos;
+					m_updater = UpdateEnterParticlePress;
 				}
 			}
 		}
 
 		// // RVA: 0x1CD02A8 Offset: 0x1CD02A8 VA: 0x1CD02A8
-		// private void UpdateEnterParticlePress() { }
+		private void UpdateEnterParticlePress()
+		{
+			if (InputManager.Instance.GetCurrentTouchInfo(0).isIllegal)
+			{
+				m_particle_press.Stop();
+				m_is_touch = false;
+				m_is_acceleration = false;
+				m_updater = UpdateIdle;
+			}
+			else
+			{
+				Vector3 pos = TouchPosition();
+				m_transform_press.transform.position = pos;
+				Vector3 diff = m_old_pos - pos;
+				if (m_frame < 1)
+					m_frame++;
+				bool b = diff.magnitude < MAGNITUDE_MIN;
+				if(!m_is_acceleration)
+				{
+					if(!b || m_frame - 1 >= 0)
+					{
+						m_particle_press.Play();
+						m_is_acceleration = true;
+					}
+				}
+				else if(b)
+				{
+					m_particle_press.Stop();
+					m_is_acceleration = false;
+				}
+				m_old_pos = pos;
+			}
+		}
 
 		// // RVA: 0x1CCFF48 Offset: 0x1CCFF48 VA: 0x1CCFF48
-		// private Vector3 TouchPosition() { }
+		private Vector3 TouchPosition()
+		{
+			if(InputManager.Instance.GetCurrentTouchInfo(0).isIllegal)
+			{
+				m_updater = UpdateStop;
+			}
+			Vector3 pos = InputManager.Instance.GetCurrentTouchInfo(0).nativePosition;
+			pos.z = 1;
+			return m_camera.ScreenToWorldPoint(pos);
+		}
 
 		// // RVA: 0x1CD0560 Offset: 0x1CD0560 VA: 0x1CD0560
-		// private void UpdateStop() { }
+		private void UpdateStop()
+		{
+			m_particle_press.Stop();
+			m_is_touch = false;
+			m_updater = UpdateIdle;
+		}
 
 		// // RVA: 0x1CD0610 Offset: 0x1CD0610 VA: 0x1CD0610
-		// public void Stop() { }
+		public void Stop()
+		{
+			m_particle_press.Stop();
+			m_is_touch = false;
+			m_updater = UpdateIdle;
+			if(m_particle_pool != null)
+			{
+				m_particle_pool.MakeUsingList(ref m_useParticlePoolList);
+				for (int i = 0; i < m_useParticlePoolList.Count; i++)
+				{
+					m_useParticlePoolList[i].Stop();
+				}
+			}
+		}
 
 		// // RVA: 0x1CD07C8 Offset: 0x1CD07C8 VA: 0x1CD07C8
 		// public void SetTouchEffectMode(bool isRhythmGame) { }

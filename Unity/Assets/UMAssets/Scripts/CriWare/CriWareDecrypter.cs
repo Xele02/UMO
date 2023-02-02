@@ -12,7 +12,7 @@ public class CriWareDecrypter
 	// // RVA: 0x2BA95B4 Offset: 0x2BA95B4 VA: 0x2BA95B4
 	public static bool Initialize(string key, string authenticationFile, bool enableAtomDecryption, bool enableManaDecryption)
     {
-        TodoLogger.Log(5, "CriWareDecrypter Initialize");
+        TodoLogger.Log(TodoLogger.CriWareDecrypter, "CriWareDecrypter.Initialize");
         return false;
     }
 

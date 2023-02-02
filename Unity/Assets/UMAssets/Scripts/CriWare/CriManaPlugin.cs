@@ -18,7 +18,8 @@ namespace CriWare
 		// // RVA: 0x29649FC Offset: 0x29649FC VA: 0x29649FC
 		public static void SetConfigParameters(bool graphicsMultiThreaded, int num_decoders, int max_num_of_entries)
 		{
-			TodoLogger.Log(5, "CriManaPlugin SetConfigParameters");
+			enabledMultithreadedRendering = graphicsMultiThreaded;
+			TodoLogger.Log(TodoLogger.CriManaPlugin, "CriManaPlugin.SetConfigParameters");
 		}
 
 		// // RVA: 0x2964C3C Offset: 0x2964C3C VA: 0x2964C3C
@@ -40,7 +41,7 @@ namespace CriWare
 		// // RVA: 0x2964F50 Offset: 0x2964F50 VA: 0x2964F50
 		public static void SetConfigAdditonalParameters_ANDROID(bool use_h264_playback)
 		{
-			TodoLogger.Log(5, "CriManaPlugin SetConfigAdditonalParameters_ANDROID");
+			TodoLogger.Log(TodoLogger.CriManaPlugin, "CriManaPlugin.SetConfigAdditonalParameters_ANDROID");
 		}
 
 		// // RVA: 0x2965224 Offset: 0x2965224 VA: 0x2965224

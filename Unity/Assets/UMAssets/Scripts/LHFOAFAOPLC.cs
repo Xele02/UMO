@@ -12,7 +12,7 @@ public class LHFOAFAOPLC
             GameObject go = GameObject.Find("Adjust");
             if(go != null)
             {
-                TodoLogger.Log(5, "LHFOAFAOPLC.KHEKNNFCAOI Lib adjust");
+                TodoLogger.Log(TodoLogger.Adjust, "LHFOAFAOPLC.KHEKNNFCAOI_Init Lib adjust");
                 BAFFAONJPCE = true;
             }
         }

@@ -50,7 +50,6 @@ namespace XeSys
 		// // RVA: 0x2036834 Offset: 0x2036834 VA: 0x2036834
 		public static GameObject Create(DebugTextRenderer prefab)
 		{
-			TodoLogger.Log(5, "DebugTextRenderer.Create");
 			return null;
 		}
 

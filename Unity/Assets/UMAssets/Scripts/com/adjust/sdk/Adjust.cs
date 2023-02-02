@@ -19,7 +19,10 @@ namespace com.adjust.sdk
 		// // RVA: 0x274CC30 Offset: 0x274CC30 VA: 0x274CC30
 		private void Awake()
 		{
-			TodoLogger.Log(5, "Adjust Awake");
+			DontDestroyOnLoad(transform.gameObject);
+			if (startManually)
+				return;
+			TodoLogger.Log(TodoLogger.Adjust, "Adjust.Awake");
 		}
 
 		// // RVA: 0x274D108 Offset: 0x274D108 VA: 0x274D108

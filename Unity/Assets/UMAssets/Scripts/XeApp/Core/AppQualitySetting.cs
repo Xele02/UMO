@@ -39,10 +39,12 @@ namespace XeApp.Core
 		// private static void RepostQulityLevel(int index) { }
 
 		// // RVA: 0xE0DAC8 Offset: 0xE0DAC8 VA: 0xE0DAC8
-		public static AppQualitySetting.DeviceSpec GetDeviceSpec()
+		public static DeviceSpec GetDeviceSpec()
 		{
-			TodoLogger.Log(5, "GetDeviceSpec");
-			return AppQualitySetting.DeviceSpec.High;
+#if UNITY_ANDROID
+			TodoLogger.Log(TodoLogger.AppQualitySetting, "AppQualitySetting.GetDeviceSpec");
+#endif
+			return DeviceSpec.High;
 		}
 
 		// // RVA: 0xE0E27C Offset: 0xE0E27C VA: 0xE0E27C

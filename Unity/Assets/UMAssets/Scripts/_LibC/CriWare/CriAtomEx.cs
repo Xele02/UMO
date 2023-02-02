@@ -8,7 +8,7 @@ namespace ExternLib
     {
         public static bool criAtomEx_RegisterAcfFile(CriFsBinder binder, string path, IntPtr work, int workSize)
         {
-            TodoLogger.Log(5, "criAtomEx_RegisterAcfFile");
+            TodoLogger.Log(TodoLogger.CriAtomExLib, "CriAtomExLib.criAtomEx_RegisterAcfFile");
             return true;
         }
 

@@ -153,7 +153,9 @@ namespace CriWare
 				if(config.androidDeviceReadBitrate == 0)
 					config.androidDeviceReadBitrate = 50000000;
 			}
+#if UNITY_ANDROID
 			CriFsPlugin.SetConfigAdditionalParameters_ANDROID(config.androidDeviceReadBitrate);
+#endif
 			CriFsPlugin.InitializeLibrary();
 			if(config.userAgentString.Length != 0)
 			{

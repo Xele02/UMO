@@ -128,9 +128,17 @@ namespace CriWare
         // public bool GetCRC32(out uint ret_val) { }
 
         // // RVA: 0x294E59C Offset: 0x294E59C VA: 0x294E59C
-        public static void InitializeModule(CriFsWebInstaller.ModuleConfig config)
+        public static void InitializeModule(ModuleConfig config)
 		{
-			TodoLogger.Log(100, "CriFsWebInstaller InitializeModule");
+			if(isInitialized)
+			{
+				UnityEngine.Debug.LogError("[CRIWARE] CriFsWebInstaller module is already initialized.");
+				return;
+			}
+
+			TodoLogger.Log(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.InitializeModule");
+			isCrcEnabled = config.crcEnabled;
+			isInitialized = true;
 		}
 
         // // RVA: 0x294E8A4 Offset: 0x294E8A4 VA: 0x294E8A4

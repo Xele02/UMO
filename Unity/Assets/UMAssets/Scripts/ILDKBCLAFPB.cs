@@ -3582,7 +3582,7 @@ public class ILDKBCLAFPB
         // // RVA: 0x201B1B0 Offset: 0x201B1B0 VA: 0x201B1B0
         public void NFDEBEJFNGD(string DLENPPIJNPA)
         {
-            UnityEngine.Debug.LogError(DLENPPIJNPA);
+            Debug.Log(DLENPPIJNPA);
             KHEKNNFCAOI_Init(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(DLENPPIJNPA));
         }
 

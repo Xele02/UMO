@@ -219,7 +219,7 @@ namespace XeApp.Game
 		// // RVA: 0x98B534 Offset: 0x98B534 VA: 0x98B534
 		public void ClearPushBackButtonHandler()
 		{
-			TodoLogger.Log(5, "GameManager.ClearPushBackButtonHandler()");
+			m_pushBackButtonHandlerList.Clear();
 		}
 
 		// // RVA: 0x99A3B4 Offset: 0x99A3B4 VA: 0x99A3B4
@@ -388,7 +388,12 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x99B250 Offset: 0x99B250 VA: 0x99B250
-		// public void OnPushBackButton() { }
+		public void OnPushBackButton()
+		{
+			if (m_pushBackButtonHandlerList.IsEmpty())
+				return;
+			m_pushBackButtonHandlerList[0].Invoke();
+		}
 
 		// // RVA: 0x99A938 Offset: 0x99A938 VA: 0x99A938
 		private void Initialize()
@@ -596,25 +601,144 @@ namespace XeApp.Game
 		// // RVA: 0x99E7FC Offset: 0x99E7FC VA: 0x99E7FC
 		public void SetDispLongScreenFrame(bool isShow)
 		{
-			TodoLogger.Log(5, "GameManager.SetDispLongScreenFrame");
+			if(SystemManager.isLongScreenDevice)
+			{
+				if(LongScreenFrameInstance != null)
+				{
+					LongScreenFrameInstance.SetActive(isShow);
+				}
+			}
 		}
 
 		// // RVA: 0x99E908 Offset: 0x99E908 VA: 0x99E908
-		// public void SetLongScreenFrameColor(int colorNo) { }
+		public void SetLongScreenFrameColor(int colorNo)
+		{
+			if(SystemManager.isLongScreenDevice)
+			{
+				if(SystemManager.HasSafeArea)
+				{
+					if(LongScreenFrame != null)
+					{
+						LongScreenFrame.SetFrameSprite(colorNo);
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x99EA40 Offset: 0x99EA40 VA: 0x99EA40
-		// public void ResetResetLetterBox() { }
+		public void ResetResetLetterBox()
+		{
+			if(SystemManager.isLongScreenDevice)
+			{
+				if(SystemManager.HasSafeArea)
+				{
+					if(LongScreenFrame != null)
+					{
+						LongScreenFrame.ReasetLetterBox();
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x99EB70 Offset: 0x99EB70 VA: 0x99EB70
 		private void ReInitScreen()
 		{
-			TodoLogger.Log(5, "GameManager.ReInitScreen");
+			Rect r = XeSafeArea.GetRect();
+			SystemManager.rawSafeAreaRect = r;
+			Rect r2 = XeSafeArea.GetScreenArea();
+			SystemManager.rawScreenAreaRect = r2;
+			SystemManager.Instance.UpdateScreenSize();
+			SystemManager.rawAppScreenRect = new Rect(0, 0, Screen.width, Screen.height);
+			screenSizeType = Q.B();
+			Debug.Log("SetupResolution:screenSizeType=" + screenSizeType);
+			float baseWidth;
+			float baseHeight;
+			if (screenSizeType == 0)
+			{
+				if(SystemManager.isLongScreenDevice)
+				{
+					Debug.Log("SetupResolution:AppEnv");
+					baseWidth = 1184;
+					baseHeight = 792;
+				}
+				else
+				{
+					Debug.Log("SetupResolution:AppEnv");
+					baseWidth = 1184;
+					baseHeight = 666;
+				}
+			}
+			else
+			{
+				Debug.Log("SetupResolution:XGA");
+				baseWidth = bx[screenSizeType - 1];
+				baseHeight = by[screenSizeType - 1];
+			}
+			SetupResolution(baseWidth, baseHeight);
+			UpdateInputArea(false);
+			if(systemLayoutCanvas != null)
+			{
+				FlexibleCanvasLayoutChanger fl = systemLayoutCanvas.gameObject.GetComponent<FlexibleCanvasLayoutChanger>();
+				if(fl != null)
+				{
+					fl.UpdateForLongScreenDevice();
+					fl.CanvasScalerModeCheck();
+				}
+			}
+			if(popupCanvas != null)
+			{
+				FlexibleCanvasLayoutChanger fl = systemLayoutCanvas.gameObject.GetComponent<FlexibleCanvasLayoutChanger>();
+				if (fl != null)
+				{
+					fl.UpdateForLongScreenDevice();
+					fl.CanvasScalerModeCheck();
+				}
+			}
+			if (SystemManager.isLongScreenDevice)
+			{
+				if(SystemManager.HasSafeArea)
+				{
+					SetLongScreenFrameColor(localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HLABNEIEJPM_SafeAreaDesign);
+				}
+				else
+				{
+					ResetResetLetterBox();
+				}
+			}
 		}
 
 		// // RVA: 0x99F2B4 Offset: 0x99F2B4 VA: 0x99F2B4
 		public void UpdateInputArea(bool isAr)
 		{
-			TodoLogger.Log(5, "GameManager.UpdateInputArea");
+			if(isAr)
+			{
+				SystemManager.rawAppScreenRect = new Rect(0, 0, AppResolutionWidth, AppResolutionHeight);
+			}
+			else
+			{
+				if(!SystemManager.isLongScreenDevice)
+				{
+					SystemManager.rawAppScreenRect = new Rect(0, 0, AppResolutionWidth, AppResolutionHeight);
+				}
+				else
+				{
+					if(SystemManager.HasSafeArea)
+					{
+						Rect safe = XeSafeArea.GetRect();
+						float safeWidth169 = safe.height * 16.0f / 9.0f;
+						float marginX = (safe.width - safeWidth169) * 0.5f;
+						SystemManager.rawAppScreenRect = new Rect(
+							AppResolutionWidth / SystemManager.rawScreenAreaRect.width * (marginX + safe.x), 
+							AppResolutionHeight / SystemManager.rawScreenAreaRect.height * safe.y, 
+							safeWidth169 * AppResolutionWidth / SystemManager.rawScreenAreaRect.width, 
+							AppResolutionHeight / SystemManager.rawScreenAreaRect.height * SystemManager.rawSafeAreaRect.height);
+					}
+					else
+					{
+						SystemManager.rawAppScreenRect = new Rect(0, 0, Screen.width, Screen.height);
+					}
+				}
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADC18 Offset: 0x6ADC18 VA: 0x6ADC18
@@ -655,7 +779,76 @@ namespace XeApp.Game
 		// // RVA: 0x99DE40 Offset: 0x99DE40 VA: 0x99DE40
 		public void SetupResolution(float baseWidth, float baseHeight)
 		{
-			TodoLogger.Log(5, "SetupResolution");
+			float nativeX = SystemManager.NativeScreenSize.x;
+			float nativeY = SystemManager.NativeScreenSize.y;
+			float sX = nativeX;
+			if(SystemManager.isLongScreenDevice)
+			{
+				sX = nativeY * 16.0f / 9.0f;
+			}
+			float f = SystemManager.rawSafeAreaRect.y;
+			float f2 = baseHeight / nativeY;
+			if (f < 0)
+			{
+				f = baseHeight;
+				if(SystemManager.isLongScreenDevice)
+				{
+					f /= nativeY;
+				}
+				else
+				{
+					if (1 - nativeY / baseHeight <= 1 - sX / baseWidth)
+						f = baseHeight / nativeY;
+					else
+						f = baseWidth / sX;
+					f2 = f;
+				}
+			}
+			else
+			{
+				if(!SystemManager.isLongScreenDevice)
+				{
+					if (1 - nativeY / baseHeight <= 1 - sX / baseWidth)
+						f = baseHeight / nativeY;
+					else
+						f = baseWidth / sX;
+					f2 = f;
+				}
+				else
+				{
+					f = (SystemManager.rawSafeAreaRect.y * baseHeight) / (SystemManager.rawScreenAreaRect.height - SystemManager.rawSafeAreaRect.y) + baseHeight;
+					f /= nativeY;
+				}
+			}
+			// not sure of those 2 min
+			float r2 = Mathf.Min(f2, 1);
+			float r = Mathf.Min(f, 1);
+			float width = Mathf.RoundToInt(sX * r);
+			float height = Mathf.RoundToInt(nativeY * r);
+			SystemManager.longScreenReferenceResolution = new Vector2(sX * r2, nativeY * r2);
+			if (SystemManager.isLongScreenDevice)
+				width = nativeX * height / nativeY;
+			ResolutionWidth = SystemManager.NativeScreenSize.x;
+			ResolutionHeight = SystemManager.NativeScreenSize.y;
+			object[] obj = new object[5];
+			obj[0] = "Screen.SetResolution(";
+			obj[1] = width;
+			obj[2] = ",";
+			obj[3] = height;
+			obj[4] = ") start";
+			Debug.Log(string.Concat(obj));
+			Screen.SetResolution(Mathf.RoundToInt(width), Mathf.RoundToInt(height), true);
+			obj = new object[5];
+			obj[0] = "Screen.SetResolution(";
+			obj[1] = width;
+			obj[2] = ",";
+			obj[3] = height;
+			obj[4] = ") end";
+			Debug.Log(string.Concat(obj));
+			SystemManager.longScreenSizeWithSafeArea = new Vector2(width, height);
+			AppResolutionWidth = width;
+			AppResolutionHeight = height;
+			ResetResetLetterBox();
 		}
 
 		// // RVA: 0x99F750 Offset: 0x99F750 VA: 0x99F750
@@ -664,7 +857,31 @@ namespace XeApp.Game
 		// // RVA: 0x99FB5C Offset: 0x99FB5C VA: 0x99FB5C
 		public void RevertResolution()
 		{
-			TodoLogger.Log(5, "GameMAnager.RevertResolution()");
+			Resolution res = Screen.currentResolution;
+			float x = AppResolutionWidth;
+			float y = AppResolutionHeight;
+			if (x < y)
+			{
+				AppResolutionWidth = y;
+				AppResolutionHeight = x;
+			}
+			if (AppResolutionWidth == res.width && AppResolutionHeight == res.height)
+			{
+				// Nothing
+			}
+			else
+			{
+				object[] obj = new object[5];
+				obj[0] = "ReSetupResolution(";
+				obj[1] = AppResolutionWidth;
+				obj[2] = ",";
+				obj[3] = AppResolutionHeight;
+				obj[4] = ")";
+				Debug.Log(string.Concat(obj));
+				Screen.SetResolution((int)AppResolutionWidth, (int)AppResolutionHeight, true);
+			}
+			UpdateInputArea(false);
+			ResetResetLetterBox();
 		}
 
 		// // RVA: 0x99FF14 Offset: 0x99FF14 VA: 0x99FF14
@@ -975,7 +1192,9 @@ namespace XeApp.Game
 		// // RVA: 0x9A0294 Offset: 0x9A0294 VA: 0x9A0294
 		public void SetTouchEffectVisible(bool isVisible)
 		{
-			TodoLogger.Log(5, "SetTouchEffectVisible");
+			if (!isVisible)
+				m_touchParticle.Stop();
+			m_touchParticle.gameObject.SetActive(isVisible);
 		}
 
 		// // RVA: 0x9A0C6C Offset: 0x9A0C6C VA: 0x9A0C6C
@@ -1255,7 +1474,21 @@ namespace XeApp.Game
 		// // RVA: 0x9A1958 Offset: 0x9A1958 VA: 0x9A1958
 		public void SetTransmissionIconPosition(bool isARMode)
 		{
-			TodoLogger.Log(5, "GameManager.SetTransmissionIconPosition()");
+			if(transmissionIcon != null)
+			{
+				Vector2 pos = transmissionIcon.GetComponent<RectTransform>().anchoredPosition;
+				Vector2 pos2 = pos;
+				if (isARMode)
+				{
+					pos = new Vector2(0, -150);
+				}
+				else
+				{
+					pos = Vector2.zero;
+				}
+				transmissionIcon.GetComponent<RectTransform>().anchoredPosition = pos;
+				transmissionIcon.GetComponent<RectTransform>().anchoredPosition = pos2;
+			}
 		}
 	}
 }

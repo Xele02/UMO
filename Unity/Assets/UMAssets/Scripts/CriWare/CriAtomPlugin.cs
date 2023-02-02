@@ -35,61 +35,62 @@ namespace CriWare {
 		// // RVA: 0x28B181C Offset: 0x28B181C VA: 0x28B181C
 		public static void SetConfigParameters(int max_virtual_voices, int max_voice_limit_groups, int max_categories, int max_sequence_events_per_frame, int max_beatsync_callbacks_per_frame, int max_cuelink_callbacks_per_frame, int num_standard_memory_voices, int num_standard_streaming_voices, int num_hca_mx_memory_voices, int num_hca_mx_streaming_voices, int output_sampling_rate, int num_asr_output_channels, bool uses_in_game_preview, float server_frequency, int max_parameter_blocks, int categories_per_playback, int num_buses, bool vr_mode)
 		{
-			TodoLogger.Log(5, "TODO");
+			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CriAtomPlugin.SetConfigParameters");
+			isConfigured = true;
 		}
 
 		// // RVA: 0x28B1B0C Offset: 0x28B1B0C VA: 0x28B1B0C
 		public static void SetConfigMonitorParametes(int max_preview_objects, int communication_buffer_size, int playback_position_update_interval)
 		{
-			TodoLogger.Log(5, "SetConfigMonitorParametes");
+			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CriAtomPlugin.SetConfigMonitorParametes");
 		}
 
 		// // RVA: 0x28B1CB4 Offset: 0x28B1CB4 VA: 0x28B1CB4
 		public static void SetConfigAdditionalParameters_PC(long buffering_time_pc)
 		{
-			TodoLogger.Log(5, "SetConfigAdditionalParameters_PC");
+			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CriAtomPlugin.SetConfigAdditionalParameters_PC");
 		}
 
 		// // RVA: 0x28B1E4C Offset: 0x28B1E4C VA: 0x28B1E4C
 		public static void SetConfigAdditionalParameters_LINUX(CriAtomConfig.LinuxOutput output, int pulse_latency_usec)
 		{
-			TodoLogger.Log(5, "SetConfigAdditionalParameters_LINUX");
+			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CriAtomPlugin.SetConfigAdditionalParameters_LINUX");
 		}
 
 		// // RVA: 0x28B1FE4 Offset: 0x28B1FE4 VA: 0x28B1FE4
 		public static void SetConfigAdditionalParameters_IOS(bool enable_sonicsync, uint buffering_time_ios, bool override_ipod_music_ios)
 		{
-			TodoLogger.Log(5, "SetConfigAdditionalParameters_IOS");
+			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CriAtomPlugin.SetConfigAdditionalParameters_IOS");
 		}
 
 		// // RVA: 0x28B218C Offset: 0x28B218C VA: 0x28B218C
 		public static void SetConfigAdditionalParameters_ANDROID(bool enable_sonicsync, int num_low_delay_memory_voices, int num_low_delay_streaming_voices, int sound_buffering_time, int sound_start_buffering_time, bool use_fast_mixer, bool use_aaudio)
 		{
-			TodoLogger.Log(5, "SetConfigAdditionalParameters_ANDROID");
+			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CriAtomPlugin.SetConfigAdditionalParameters_ANDROID");
 		}
 
 		// // RVA: 0x28B284C Offset: 0x28B284C VA: 0x28B284C
 		public static void SetConfigAdditionalParameters_VITA(int num_atrac9_memory_voices, int num_atrac9_streaming_voices, int num_mana_decoders)
 		{
-			TodoLogger.Log(5, "SetConfigAdditionalParameters_VITA");
+			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CriAtomPlugin.SetConfigAdditionalParameters_VITA");
 		}
 
 		// // RVA: 0x28B2850 Offset: 0x28B2850 VA: 0x28B2850
 		public static void SetConfigAdditionalParameters_PS4(int num_atrac9_memory_voices, int num_atrac9_streaming_voices, bool use_audio3d, int num_audio3d_memory_voices, int num_audio3d_streaming_voices)
 		{
-			TodoLogger.Log(5, "SetConfigAdditionalParameters_PS4");
+			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CriAtomPlugin.SetConfigAdditionalParameters_PS4");
 		}
 
 		// // RVA: 0x28B2854 Offset: 0x28B2854 VA: 0x28B2854
 		public static void SetConfigAdditionalParameters_SWITCH(int num_opus_memory_voices, int num_opus_streaming_voices, bool init_socket)
 		{
-			TodoLogger.Log(5, "SetConfigAdditionalParameters_SWITCH");
+			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CriAtomPlugin.SetConfigAdditionalParameters_SWITCH");
 		}
 
 		// // RVA: 0x28B2858 Offset: 0x28B2858 VA: 0x28B2858
 		public static void SetConfigAdditionalParameters_WEBGL(int num_webaudio_voices)
 		{
-			TodoLogger.Log(5, "SetConfigAdditionalParameters_WEBGL");
+			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CriAtomPlugin.SetConfigAdditionalParameters_WEBGL");
 		}
 
 		// // RVA: 0x28B285C Offset: 0x28B285C VA: 0x28B285C
@@ -98,8 +99,12 @@ namespace CriWare {
 		// // RVA: 0x28B29F4 Offset: 0x28B29F4 VA: 0x28B29F4
 		public static int GetRequiredMaxVirtualVoices(CriAtomConfig atomConfig)
 		{
-			TodoLogger.Log(5, "GetRequiredMaxVirtualVoices");
-			return 20;
+			return atomConfig.standardVoicePoolConfig.streamingVoices + atomConfig.standardVoicePoolConfig.memoryVoices +
+				atomConfig.hcaMxVoicePoolConfig.memoryVoices + atomConfig.hcaMxVoicePoolConfig.streamingVoices
+#if UNITY_ANDROID
+				+ atomConfig.androidLowLatencyStandardVoicePoolConfig.memoryVoices + atomConfig.androidLowLatencyStandardVoicePoolConfig.streamingVoices
+#endif
+				;
 		}
 
 		// // RVA: 0x28B2AB8 Offset: 0x28B2AB8 VA: 0x28B2AB8
@@ -132,13 +137,13 @@ namespace CriWare {
 				}
 			}
 
-			#if UNITY_EDITOR
+#if UNITY_EDITOR
 			if (UnityEngine.Application.isPlaying) {
 				CriAtomServer.CreateInstance();
 			}
-			#else
+#else
 			CriAtomServer.CreateInstance();
-			#endif
+#endif
 
 			CriAtomListener.CreateDummyNativeListener();
 		}
@@ -232,48 +237,48 @@ namespace CriWare {
 		// private static extern void CRIWARE1DC61BE9(bool flag) { }
 
 		// // RVA: 0x28B3160 Offset: 0x28B3160 VA: 0x28B3160
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		private static extern void CRIWARE6B0DCA88_criAtomUnity_Initialize();
-		#else
+#else
 		private static void CRIWARE6B0DCA88_criAtomUnity_Initialize()
 		{
 			ExternLib.LibCriWare.CRIWARE6B0DCA88_criAtomUnity_Initialize();
 		}
-		#endif
+#endif
 
 		// // RVA: 0x28B3388 Offset: 0x28B3388 VA: 0x28B3388
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		public static extern bool CRIWARE73A63785_criAtomUnity_IsInitialized();
-		#else
+#else
 		public static bool CRIWARE73A63785_criAtomUnity_IsInitialized()
 		{
 			return ExternLib.LibCriWare.CRIWARE73A63785_criAtomUnity_IsInitialized();
 		}
-		#endif
+#endif
 
 		// // RVA: 0x28B35D0 Offset: 0x28B35D0 VA: 0x28B35D0
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		public static extern bool CRIWARE111A4C56_criAtomUnity_Finalize();
-		#else
+#else
 		private static void CRIWARE111A4C56_criAtomUnity_Finalize()
 		{
 			ExternLib.LibCriWare.CRIWARE111A4C56_criAtomUnity_Finalize();
 		}
-		#endif
+#endif
 
 		// // RVA: 0x28B3780 Offset: 0x28B3780 VA: 0x28B3780
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		private static extern void CRIWARE59269F98_criAtomUnity_Pause(bool pause);
-		#else
+#else
 		private static void CRIWARE59269F98_criAtomUnity_Pause(bool pause)
 		{
 			ExternLib.LibCriWare.CRIWARE59269F98_criAtomUnity_Pause(pause);
 		}
-		#endif
+#endif
 
 		// // RVA: 0x28B3E00 Offset: 0x28B3E00 VA: 0x28B3E00
 		// public static extern uint CRIWARE5C7A47BE() { }
@@ -288,51 +293,51 @@ namespace CriWare {
 		// public static extern void CRIWAREC42CD834(IntPtr cbfunc) { }
 
 		// // RVA: 0x28B4230 Offset: 0x28B4230 VA: 0x28B4230
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		public static extern void CRIWARE148BE2F8_criAtomUnitySequencer_ExecuteQueuedEventCallbacks();
-		#else
+#else
 		public static void CRIWARE148BE2F8_criAtomUnitySequencer_ExecuteQueuedEventCallbacks()
 		{
 			ExternLib.LibCriWare.CRIWARE148BE2F8_criAtomUnitySequencer_ExecuteQueuedEventCallbacks();
 		}
-		#endif
+#endif
 
 		// // RVA: 0x28B4328 Offset: 0x28B4328 VA: 0x28B4328
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		public static extern void CRIWARE2DDFB51C_criAtomUnity_SetBeatSyncCallback(IntPtr cbfunc);
-		#else
+#else
 		public static void CRIWARE2DDFB51C_criAtomUnity_SetBeatSyncCallback(IntPtr cbfunc)
 		{
 			ExternLib.LibCriWare.CRIWARE2DDFB51C_criAtomUnity_SetBeatSyncCallback(cbfunc);
 		}
-		#endif
+#endif
 
 		// // RVA: 0x28B4430 Offset: 0x28B4430 VA: 0x28B4430
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		public static extern void CRIWARE75F073A2_criAtomUnity_ExecuteQueuedBeatSyncCallbacks();
-		#else
+#else
 		public static void CRIWARE75F073A2_criAtomUnity_ExecuteQueuedBeatSyncCallbacks()
 		{
 			ExternLib.LibCriWare.CRIWARE75F073A2_criAtomUnity_ExecuteQueuedBeatSyncCallbacks();
 		}
-		#endif
+#endif
 
 		// // RVA: 0x28B4528 Offset: 0x28B4528 VA: 0x28B4528
 		// public static extern void criAtomUnity_SetCueLinkCallback(IntPtr cbfunc) { }
 
 		// // RVA: 0x28B4608 Offset: 0x28B4608 VA: 0x28B4608
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		public static extern void criAtomUnity_ExecuteQueuedCueLinkCallbacks();
-		#else
+#else
 		public static void criAtomUnity_ExecuteQueuedCueLinkCallbacks()
 		{
 			ExternLib.LibCriWare.criAtomUnity_ExecuteQueuedCueLinkCallbacks();
 		}
-		#endif
+#endif
 
 		// // RVA: 0x28B28E8 Offset: 0x28B28E8 VA: 0x28B28E8
 		// private static extern void CRIWAREBF5EE548(int sampling_rate_for_memory, int sampling_rate_for_streaming) { }
@@ -347,17 +352,17 @@ namespace CriWare {
 		// public static extern void CRIWARE3284CFDB(IntPtr acb_hn, CriAtomPlugin.CallbackFromNativeDelegate func, IntPtr obj) { }
 
 		// // RVA: 0x28B3AB0 Offset: 0x28B3AB0 VA: 0x28B3AB0
-		#if UNITY_ANDROID
+#if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		public static extern ushort CRIWARE2178C0A8(int id);
-		#endif
+#endif
 		public static ushort CRIWARE2178C0A8_criAtomUnity_GetNativeParameterId(int id)
 		{
-			#if UNITY_ANDROID
+#if UNITY_ANDROID
 				return CRIWARE2178C0A8(id);
-			#else
+#else
 				return ExternLib.LibCriWare.CRIWARE2178C0A8_criAtomUnity_GetNativeParameterId(id);
-			#endif
+#endif
 		}
 	}
 }
