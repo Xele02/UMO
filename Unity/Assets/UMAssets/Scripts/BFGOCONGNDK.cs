@@ -50,7 +50,7 @@ public class BFGOCONGNDK
 			}
 		}
 
-        TodoLogger.Log(5, "TODO");
+        TodoLogger.Log(TodoLogger._Todo, "BFGOCONGNDK.PCODDPDFLHK Implement when sys/05 is saved.");
 		MBGHLLHFNHH = true;
     }
 

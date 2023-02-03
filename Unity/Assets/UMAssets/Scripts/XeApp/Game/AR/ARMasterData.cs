@@ -208,7 +208,7 @@ namespace XeApp.Game.AR
 
 			string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl + found.MFBMBPJAADA_FileName);
 			string dest = FileSystemProxy.ConvertPath(BBGDKLLEPIB.OGCDNCDMLCA + found.OIEAICNAMNB_LocalFileName);
-			UnityEngine.Debug.LogError("Dld from "+src+" to "+dest);
+			UnityEngine.Debug.Log("Dld from "+src+" to "+dest);
 
 			string dir = Path.GetDirectoryName(dest);
 			if(!Directory.Exists(dir))
@@ -219,7 +219,7 @@ namespace XeApp.Game.AR
 			{
 				if(CalcMD5(dest) == found.POEGMFKLFJG_Hash)
 				{
-					UnityEngine.Debug.LogError("File match, don't dld");
+					UnityEngine.Debug.Log("File match, don't dld");
     				UnityEngine.Debug.Log("Exit Coroutine_Download");
 					yield break;
 				}

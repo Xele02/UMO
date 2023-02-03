@@ -70,19 +70,42 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA97504 Offset: 0xA97504 VA: 0xA97504
 		private void Start()
 		{
-			TodoLogger.Log(0, "TODO");
+			RectTransform rt = gameObject.AddComponent<RectTransform>();
+			rt.anchorMin = new Vector2(0, 0);
+			rt.anchorMax = new Vector2(1, 1);
+			rt.anchoredPosition = new Vector2(0, 0);
+			rt.sizeDelta = new Vector2(0, 0);
+			m_waitLoading = new WaitWhile(() =>
+			{
+				//0xA9A030
+				return m_isLoding;
+			});
 		}
 
 		// // RVA: 0xA97708 Offset: 0xA97708 VA: 0xA97708
 		private void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			if(m_window != null)
+			{
+				Destroy(m_window.gameObject);
+				m_window = null;
+			}
+			if(m_musicInfo != null)
+			{
+				Destroy(m_musicInfo.gameObject);
+				m_musicInfo = null;
+			}
+			if (m_tipsTextureCache != null)
+			{
+				m_tipsTextureCache.Terminated();
+				m_tipsTextureCache = null;
+			}
 		}
 
 		// // RVA: 0xA978D0 Offset: 0xA978D0 VA: 0xA978D0
 		private void Update()
 		{
-			TodoLogger.Log(5, "Tips update");
+			m_tipsTextureCache.Update();
 		}
 
 		// // RVA: 0xA978FC Offset: 0xA978FC VA: 0xA978FC
@@ -164,10 +187,6 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xA98584 Offset: 0xA98584 VA: 0xA98584
 		// private long GetServerUnixTime() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73568C Offset: 0x73568C VA: 0x73568C
-		// // RVA: 0xA9A030 Offset: 0xA9A030 VA: 0xA9A030
-		// private bool <Start>b__30_0() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x73569C Offset: 0x73569C VA: 0x73569C
 		// // RVA: 0xA9A038 Offset: 0xA9A038 VA: 0xA9A038

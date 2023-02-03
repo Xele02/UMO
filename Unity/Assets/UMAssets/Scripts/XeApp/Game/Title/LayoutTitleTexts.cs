@@ -35,7 +35,7 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE3B2DC Offset: 0xE3B2DC VA: 0xE3B2DC Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.Log(0, "TODO");
+			Loaded();
 			return true;
 		}
 	}

@@ -415,7 +415,7 @@ public class NKGJPJPHLIF
 		// // RVA:  Offset: 0xC1AA34 VA: 0xC1AA34
 		// internal void HPCLPPCILDO(CACGCMBKHDI JIPCHHHLOMM) { }
 
-		UnityEngine.Debug.LogError("Check "+IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()+" "+GOEPLCHCCBC);
+		TodoLogger.Log(TodoLogger.ToCheck, "Check "+IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()+" "+GOEPLCHCCBC);
 		if((IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() - GOEPLCHCCBC) < 1799 && !FBBNPFFEJBN)
 		{
 			if(BHFHGFKBOHH != null)
