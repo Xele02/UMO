@@ -264,8 +264,8 @@ public class PJKLMCGEJMK
                     }
                 }
             }
-            
-            UnityEngine.Debug.LogError("Check "+ADKIDBJCAJA.CKOOCBJGHBI +" "+JDIBBDGNFKH);
+
+			TodoLogger.Log(TodoLogger.ToCheck, "Check "+ADKIDBJCAJA.CKOOCBJGHBI +" "+JDIBBDGNFKH);
             
             bool enterIf = ADKIDBJCAJA.CKOOCBJGHBI - JDIBBDGNFKH >= 0;
             if(!enterIf)

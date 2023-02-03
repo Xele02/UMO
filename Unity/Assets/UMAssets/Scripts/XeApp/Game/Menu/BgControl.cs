@@ -120,7 +120,23 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1429568 Offset: 0x1429568 VA: 0x1429568
-		// public static void ForceDestoryTexture() { }
+		public static void ForceDestoryTexture()
+		{
+			for(int i = 0; i < m_cachedTextures.Count; i++)
+			{
+				if(m_cachedTextures[i].texture != null)
+				{
+					Resources.UnloadAsset(m_cachedTextures[i].texture);
+					m_cachedTextures[i].texture = null;
+				}
+				if (m_cachedTextures[i].material != null)
+				{
+					Resources.UnloadAsset(m_cachedTextures[i].material);
+					m_cachedTextures[i].material = null;
+				}
+			}
+			m_cachedTextures.Clear();
+		}
 
 		// // RVA: 0x143CBB8 Offset: 0x143CBB8 VA: 0x143CBB8
 		// public GameObject GetCurrent() { }

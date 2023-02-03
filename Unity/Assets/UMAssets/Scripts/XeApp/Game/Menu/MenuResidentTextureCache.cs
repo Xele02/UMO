@@ -5,7 +5,10 @@ namespace XeApp.Game.Menu
 	public class MenuResidentTextureCache : IconTextureCache
 	{
 		// RVA: 0xB2D630 Offset: 0xB2D630 VA: 0xB2D630 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// RVA: 0xB2D638 Offset: 0xB2D638 VA: 0xB2D638 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)

@@ -21,6 +21,12 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1CD217C Offset: 0x1CD217C VA: 0x1CD217C
-		// public void Release() { }
+		public void Release()
+		{
+			if (!IsReady)
+				return;
+			AssetBundleManager.UnloadAssetBundle("ly/cmn.xab", false);
+			IsReady = false;
+		}
 	}
 }

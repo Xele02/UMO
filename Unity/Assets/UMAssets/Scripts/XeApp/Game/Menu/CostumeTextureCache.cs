@@ -14,7 +14,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x16E8DAC Offset: 0x16E8DAC VA: 0x16E8DAC Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// // RVA: 0x16E8DB4 Offset: 0x16E8DB4 VA: 0x16E8DB4 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)

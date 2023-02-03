@@ -14,7 +14,10 @@ namespace XeApp.Game.Menu
 		// public void SetUseCardUv(bool useCardUv) { }
 
 		// // RVA: 0x15A6624 Offset: 0x15A6624 VA: 0x15A6624 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// RVA: 0x15A6634 Offset: 0x15A6634 VA: 0x15A6634 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)

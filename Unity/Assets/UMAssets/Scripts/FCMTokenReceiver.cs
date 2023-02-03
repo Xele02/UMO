@@ -11,6 +11,12 @@ public class FCMTokenReceiver : MonoBehaviour
 	public void Start()
 	{
 		TodoLogger.Log(TodoLogger.FCMTokenReceiver, "FCMTokenReceiver.Start");
+		{
+			//Method$FCMTokenReceiver.<Start>b__4_0()
+			// Hack cause Firebase not coded
+			isDpendencyChecked = true;
+			InitializeFirebase();
+		}
 	}
 
 	// RVA: 0xFC75EC Offset: 0xFC75EC VA: 0xFC75EC
@@ -22,7 +28,16 @@ public class FCMTokenReceiver : MonoBehaviour
 	}
 
 	//// RVA: 0xFC7718 Offset: 0xFC7718 VA: 0xFC7718
-	//private void InitializeFirebase() { }
+	private void InitializeFirebase()
+	{
+		if (isInitialized)
+			return;
+		TodoLogger.Log(TodoLogger.FCMTokenReceiver, "FCMTokenReceiver.InitializeFirebase");
+		//Hack
+		fcmToken = "aa";
+		//
+		isInitialized = true;
+	}
 
 	//// RVA: 0xFC794C Offset: 0xFC794C VA: 0xFC794C
 	//public void OnTokenReceived(object sender, TokenReceivedEventArgs token) { }

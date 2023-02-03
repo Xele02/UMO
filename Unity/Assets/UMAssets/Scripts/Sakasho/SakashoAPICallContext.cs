@@ -16,7 +16,7 @@ public class SakashoAPICallContext
     }
 
 	// // RVA: 0x30784D0 Offset: 0x30784D0 VA: 0x30784D0
-	public static void Initialize(SakashoAPICallContext.CancelAPICallDelegate cancelAPICallDelegate)
+	public static void Initialize(CancelAPICallDelegate cancelAPICallDelegate)
 	{
 		if(initialized)
 			return;
@@ -30,10 +30,12 @@ public class SakashoAPICallContext
 	// // RVA: 0x30785CC Offset: 0x30785CC VA: 0x30785CC
 	public bool CancelAPICall()
     {
-        TodoLogger.Log(0, "TODO");
-        return false;
+		return cancelAPICallDelegate(CallId);
     }
 
 	// // RVA: 0x3078AF4 Offset: 0x3078AF4 VA: 0x3078AF4
-	// public bool IsCancellable() { }
+	public bool IsCancellable()
+	{
+		return CallId > 0;
+	}
 }

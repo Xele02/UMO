@@ -25,14 +25,14 @@ public class SakashoSystem
 	// public static bool Initialize(SakashoSystem.ServerMode serverMode, string gameId, string commonKey) { }
 
 	// // RVA: 0x2E6B32C Offset: 0x2E6B32C VA: 0x2E6B32C
-	public static bool Initialize(SakashoSystem.ServerMode serverMode, string gameId, string commonKey, SakashoSystem.PaymentType paymentType)
+	public static bool Initialize(ServerMode serverMode, string gameId, string commonKey, PaymentType paymentType)
 	{
-		if(SakashoSystem.UnitySakashoSystemInitialize("Unity", "1.88.1", (int)serverMode, gameId, commonKey, (int)paymentType))
+		if(UnitySakashoSystemInitialize("Unity", "1.88.1", (int)serverMode, gameId, commonKey, (int)paymentType))
 		{
-			SakashoSystem.UnitySetCallbackReceiverName(SakashoCallbackRegistry.GameObjectName);
+			UnitySetCallbackReceiverName(SakashoCallbackRegistry.GameObjectName);
 			SakashoAPICallContext.Initialize((int callId) => {
 				//0x2E6BEBC
-				return SakashoSystem.CancelAPICall(callId);
+				return CancelAPICall(callId);
 			});
 			return true;
 		}
@@ -63,8 +63,13 @@ public class SakashoSystem
 	// // RVA: 0x2E6BCC4 Offset: 0x2E6BCC4 VA: 0x2E6BCC4
 	public static bool CancelAPICall(int callId)
 	{
-		TodoLogger.Log(0, "TODO");
-		return true;
+		if(callId > 0)
+		{
+			SakashoSystemCancelAPICall(callId);
+			SakashoAPIBase.RemoveCallbackByCallId(callId);
+			return true;
+		}
+		return false;
 	}
 
 	// // RVA: 0x2E6BDDC Offset: 0x2E6BDDC VA: 0x2E6BDDC
@@ -101,5 +106,8 @@ public class SakashoSystem
 	// private static extern string SakashoSystemGetConnectingGameId() { }
 
 	// // RVA: 0x2E6BD00 Offset: 0x2E6BD00 VA: 0x2E6BD00
-	// private static extern void SakashoSystemCancelAPICall(int callId) { }
+	private static /*extern */void SakashoSystemCancelAPICall(int callId)
+	{
+		ExternLib.LibSakasho.SakashoSystemCancelAPICall(callId);
+	}
 }

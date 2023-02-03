@@ -25,7 +25,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1105AFC Offset: 0x1105AFC VA: 0x1105AFC
-		//public void Release() { }
+		public void Release()
+		{
+			for(int i = 0; i < m_poolList.Count; i++)
+			{
+				Object.Destroy(m_poolList[i].Runtime.gameObject);
+			}
+			m_poolList.Clear();
+		}
 
 		//// RVA: 0x1105C4C Offset: 0x1105C4C VA: 0x1105C4C
 		public void Entry(string bundleName, string prefabName, Font font, MonoBehaviour mb)

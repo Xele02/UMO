@@ -48,7 +48,24 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB2C5A0 Offset: 0xB2C5A0 VA: 0xB2C5A0
-		//public void ReleaseAll() { }
+		public void ReleaseAll()
+		{
+			for(int i = 0; i < m_layoutInstancePool.Count; i++)
+			{
+				m_layoutInstancePool[i].Release();
+			}
+			for(int i = 0; i < m_uguiInstancePool.Count; i++)
+			{
+				m_uguiInstancePool[i].Release();
+			}
+			for(int i = 0; i < m_dependencyBundleMap.Count; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle(m_dependencyBundleMap[i], false);
+			}
+			m_dependencyBundleMap.Clear();
+			m_layoutInstancePool.Clear();
+			m_uguiInstancePool.Clear();
+		}
 
 		//// RVA: 0xB2C838 Offset: 0xB2C838 VA: 0xB2C838
 		public bool IsLoadedObject(string assetName)

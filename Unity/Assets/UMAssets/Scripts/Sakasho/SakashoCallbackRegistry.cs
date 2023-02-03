@@ -59,7 +59,15 @@ public class SakashoCallbackRegistry
     }
 
 	// // RVA: 0x3078110 Offset: 0x3078110 VA: 0x3078110
-	// public static void RemoveCallbackByCallId(int callId) { }
+	public static void RemoveCallbackByCallId(int callId)
+	{
+		Monitor.Enter(lockObject);
+		if(callbackIdFromCallId.ContainsKey(callId))
+		{
+			RemoveCallback(callbackIdFromCallId[callId]);
+		}
+		Monitor.Exit(lockObject);
+	}
 
 	// // RVA: 0x3077DFC Offset: 0x3077DFC VA: 0x3077DFC
 	public static void SetCallbackIdPair(int callbackId, int callId)

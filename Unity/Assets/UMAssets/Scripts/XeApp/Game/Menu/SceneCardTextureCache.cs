@@ -24,7 +24,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x159F030 Offset: 0x159F030 VA: 0x159F030 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6DCC6C Offset: 0x6DCC6C VA: 0x6DCC6C
 		// // RVA: 0x159F038 Offset: 0x159F038 VA: 0x159F038

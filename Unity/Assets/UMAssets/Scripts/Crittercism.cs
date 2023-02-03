@@ -4,7 +4,7 @@ public static class Crittercism
 	// RVA: 0x17683DC Offset: 0x17683DC VA: 0x17683DC
 	public static void SetUsername(string username)
     {
-        TodoLogger.Log(5, "Crittercism SetUsername");
+        TodoLogger.Log(TodoLogger.Crashlytics, "Crittercism.SetUsername");
     }
 
 	// [ConditionalAttribute] // RVA: 0x68FEFC Offset: 0x68FEFC VA: 0x68FEFC

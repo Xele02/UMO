@@ -12,7 +12,10 @@ namespace XeApp.Game.Tutorial
 		}
 
 		// // RVA: 0xE45F14 Offset: 0xE45F14 VA: 0xE45F14 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// // RVA: 0xE45F1C Offset: 0xE45F1C VA: 0xE45F1C
 		// public void Load(int imageId, Action<IiconTexture> cb) { }

@@ -70,7 +70,7 @@ namespace XeApp.Game.Tutorial
 		// private TutorialPointer m_pointer; // 0x18
 		// private List<ButtonBase> m_buttonList; // 0x1C
 		private StringBuilder m_strBuilder; // 0x20
-		// private TutorialMessageWindow m_messageWindow; // 0x24
+		private TutorialMessageWindow m_messageWindow; // 0x24
 		private int[,] m_charaTextRowColCountTable; // 0x28
 
 		// // RVA: 0xE3D1B0 Offset: 0xE3D1B0 VA: 0xE3D1B0
@@ -87,7 +87,25 @@ namespace XeApp.Game.Tutorial
 		// public IEnumerator PreDownLoadTextureResource(BasicTutorialMessageId id) { }
 
 		// // RVA: 0xE3D578 Offset: 0xE3D578 VA: 0xE3D578 Slot: 6
-		// public virtual void Release() { }
+		public virtual void Release()
+		{
+			if(m_messageWindow != null)
+			{
+				Destroy(m_messageWindow.gameObject);
+				m_messageWindow = null;
+			}
+			if(m_blackImageInstance != null)
+			{
+				Destroy(m_blackImageInstance.gameObject);
+				m_blackImageInstance = null;
+				m_highLight = null;
+			}
+			if(m_cursorInstance != null)
+			{
+				Destroy(m_cursorInstance.gameObject);
+				m_cursorInstance = null;
+			}
+		}
 
 		// // RVA: 0xE3D7CC Offset: 0xE3D7CC VA: 0xE3D7CC
 		// public static void SetupFirstTutorialLog() { }

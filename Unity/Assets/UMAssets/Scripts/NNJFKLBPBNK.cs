@@ -21,7 +21,7 @@ public class NNJFKLBPBNK_SecureString
             IPKONDLIDHC = null;
             return;
         }
-        DLHDPLPLCAC = CEDHHAGBIBA.IHDGCICCPIG(value);
+        DLHDPLPLCAC = CEDHHAGBIBA.IHDGCICCPIG_StringToByte(value);
         IPKONDLIDHC = new byte[DLHDPLPLCAC.Length];
         for(int i = 0; i < DLHDPLPLCAC.Length; i++)
         {

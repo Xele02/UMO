@@ -5,7 +5,13 @@ namespace ExternLib
     {
         public static void SakashoSystemResume()
         {
-            TodoLogger.Log(5, "SakashoSystemResume");
+            TodoLogger.Log(TodoLogger.SakashoSystem, "LibSakasho.SakashoSystemResume");
         }
-    }
+
+		public static void SakashoSystemCancelAPICall(int callId)
+		{
+			TodoLogger.Log(TodoLogger.SakashoSystem, "LibSakasho.SakashoSystemCancelAPICall");
+		}
+
+	}
 }

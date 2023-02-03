@@ -23,7 +23,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CD93D8 Offset: 0x1CD93D8 VA: 0x1CD93D8
-		//public void Release() { }
+		public void Release()
+		{
+			for(int i = 0; i < m_poolList.Count; i++)
+			{
+				Object.Destroy(m_poolList[i].instanceObject.gameObject);
+			}
+			m_poolList.Clear();
+		}
 
 		//// RVA: 0x1CD9528 Offset: 0x1CD9528 VA: 0x1CD9528
 		public void Entry(string bundleName, string prefabName, Font font, MonoBehaviour mb)

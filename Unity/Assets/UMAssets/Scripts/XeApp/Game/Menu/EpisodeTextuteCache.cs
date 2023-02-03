@@ -30,7 +30,10 @@ namespace XeApp.Game.Menu
 		// public static Rect ImageUv { get; } 0xF09714
 
 		// RVA: 0xF097A8 Offset: 0xF097A8 VA: 0xF097A8 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// RVA: 0xF097B0 Offset: 0xF097B0 VA: 0xF097B0 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)

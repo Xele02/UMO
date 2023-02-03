@@ -74,7 +74,10 @@ public class NKGJPJPHLIF
 	public int AFJEOKGBCNA_NumReplies { get; private set; } // 0xAC BLKAENELKCD AFEOFCFFAHA 0xC16A4C HHLMPHKALAF 0xC16A54
 
 	// // RVA: 0xC16608 Offset: 0xC16608 VA: 0xC16608
-	// public int CAFHLEFMMGD() { }
+	public int CAFHLEFMMGD()
+	{
+		return MDAMJIGBOLD;
+	}
 
 	// // RVA: 0xC16610 Offset: 0xC16610 VA: 0xC16610
 	// public bool KKMCBNKDDPN(int MLPEHNBNOGD) { }
@@ -188,7 +191,7 @@ public class NKGJPJPHLIF
 			//KGHFJJKMCIH.NNHHILCHAEF(EJIGAABBKCM.EAADBLJMIPP);
 
 			LEJDPOCMFPL = new NDABOOOOENC();
-			LEJDPOCMFPL.IJBGPAENLJA();
+			LEJDPOCMFPL.IJBGPAENLJA_Init();
 
 			HECNGABHNDJ = new LAPFLEEAACL[5];
 			HECNGABHNDJ[0] = new LAPFLEEAACL(/*2*/HHJHIFJIKAC_BonusVc.IJFKAIHFJLF.JEPMLKCJCPK);
@@ -578,7 +581,7 @@ public class NKGJPJPHLIF
 			string key = "z3b7Ps5DJk9D"+version+"MSxK7XD3khiD";
 			MD5 md5 = MD5.Create();
 			byte[] hash = md5.ComputeHash(Encoding.UTF8.GetBytes(key));
-			UnityEngine.Debug.LogError("hash : "+BitConverter.ToString(hash));
+			UnityEngine.Debug.Log("hash : "+BitConverter.ToString(hash));
 			md5.Clear();
 			StringBuilder str = new StringBuilder();
 			str.Append("h");
@@ -586,7 +589,7 @@ public class NKGJPJPHLIF
 			{
 					str.Append(hash[i].ToString("x2"));
 			}
-			UnityEngine.Debug.LogError("NHNHGIJCGFG : "+AppInfo.buildOption+" "+str.ToString()+" "+key);
+			UnityEngine.Debug.Log("NHNHGIJCGFG : "+AppInfo.buildOption+" "+str.ToString()+" "+key);
 			return AppInfo.buildOption == str.ToString();
 	}
 

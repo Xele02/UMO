@@ -169,7 +169,11 @@ namespace XeApp.Game.Menu
 		public static int IsKiraShaderParam; // 0x0
 
 		// // RVA: 0x1370C64 Offset: 0x1370C64 VA: 0x1370C64 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			m_loadingTexture = null;
+			Clear();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C62B0 Offset: 0x6C62B0 VA: 0x6C62B0
 		// // RVA: 0x1370C74 Offset: 0x1370C74 VA: 0x1370C74

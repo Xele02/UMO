@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 		private List<TipsControl.ListupInfo> m_listUpList = new List<TipsControl.ListupInfo>(); // 0x28
 		private List<int> m_historyList = new List<int>(); // 0x2C
 		// private List<TipsData> m_tipsList = new List<TipsData>(); // 0x30
-		// private TipsTextureCache m_tipsTextureCache = new TipsTextureCache(0); // 0x34
+		private TipsTextureCache m_tipsTextureCache = new TipsTextureCache(); // 0x34
 		private WaitWhile m_waitLoading; // 0x38
 		private int m_totalWeight; // 0x3C
 		public const int TipsMax = 3;
@@ -86,7 +86,18 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA978FC Offset: 0xA978FC VA: 0xA978FC
-		// public void Release() { }
+		public new void Release()
+		{
+			if (!IsInitialized)
+				return;
+			m_tipsTextureCache.Terminated();
+			Destroy(m_window.gameObject);
+			Destroy(m_musicInfo.gameObject);
+			m_musicInfo = null;
+			m_window = null;
+			IsInitialized = false;
+			m_historyList.Clear();
+		}
 
 		// // RVA: 0xA97A3C Offset: 0xA97A3C VA: 0xA97A3C
 		// public void LoadResource() { }

@@ -65,6 +65,8 @@ class JpStringLiterals
 	public const string StringLiteral_10176 = "期限有無アイテム"; // 0x03bb29b8
 	public const string StringLiteral_10177 = "ホーム背景"; // 0x03bb29bc
 	public const string StringLiteral_10178 = "ガチャ天井アイテム"; // 0x03bb29c0
+	public const string StringLiteral_10282 = "AP全回復"; //0x03bb2b60
+	public const string StringLiteral_10294 = "超時空SNS"; // 0x03bb2b90
 	public const string StringLiteral_10309 = "エナジー回復"; // 0x03bb2bcc
 	public const string StringLiteral_10310 = "エナジーが全回復しました！"; // 0x03bb2bd0
 	public const string StringLiteral_11062 = "ライフ"; // 0x03bb3790
@@ -97,6 +99,7 @@ class JpStringLiterals
 	public const string StringLiteral_11862 = "バッチインストーラ　停止処理が完了しなかったインストールモジュール数 {0}"; // 0x03bb4410
 	public const string StringLiteral_11863 = "バッチインストーラ　放棄した分、インストールモジュールを生成 {0}"; // 0x03bb4414
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
+	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
 	public const string StringLiteral_12038 = "…"; // 0x03bb46d0
 	public const string StringLiteral_12148 = "Ⅰ"; // 0x03bb4888
 	public const string StringLiteral_12149 = "Ⅱ"; // 0x03bb488c
@@ -114,7 +117,17 @@ class JpStringLiterals
 	public const string StringLiteral_12333 = "歌晶石セットE"; // 0x03bb4b6c
 	public const string StringLiteral_12334 = "歌晶石セットF"; // 0x03bb4b70
 	public const string StringLiteral_12335 = "歌晶石セットG"; // 0x03bb4b74
-	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
+	public const string StringLiteral_12532 = "GPGSログインボタンを表示"; // 0x03bb4e88
+	public const string StringLiteral_12533 = "GPGSログインボタンを表示しない"; // 0x03bb4e8c
+	public const string StringLiteral_12534 = "GPGSセーブデータが存在しない"; // 0x03bb4e90
+	public const string StringLiteral_12540 = "ログイン継続"; // 0x03bb4ea8
+	public const string StringLiteral_12541 = "ログアウトされた"; // 0x03bb4eac
+	public const string StringLiteral_12573 = "GPGSログイン成功"; // 0x03bb4f2c
+	public const string StringLiteral_12574 = "GPGSログイン失敗"; // 0x03bb4f30
+	public const string StringLiteral_12692 = "エナジー全回復"; // 0x03bb5108
+	public const string StringLiteral_12693 = "お知らせ"; // 0x03bb510c
+	public const string StringLiteral_12695 = "デコルチャーモード"; // 0x03bb5114
+	public const string StringLiteral_12696 = "期限付きアイテム"; // 0x03bb5118
 	public const string StringLiteral_12839 = "プロローグ開始"; // 0x03bb5354
 	public const string StringLiteral_12840 = "アセットDL 0%"; // 0x03bb5358
 	public const string StringLiteral_12841 = "アセットDL 10%"; // 0x03bb535c

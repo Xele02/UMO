@@ -89,7 +89,17 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1104010 Offset: 0x1104010 VA: 0x1104010
-		// public void Release() { }
+		public void Release()
+		{
+			if (!IsReady)
+				return;
+			m_unionTextureDict.Clear();
+			m_unionTextureUVDict.Clear();
+			m_gameAttributeRects.Clear();
+			m_difficultyRects.Clear();
+			AssetBundleManager.UnloadAssetBundle("ly/ct.xab", false);
+			IsReady = false;
+		}
 
 		// // RVA: 0x1104168 Offset: 0x1104168 VA: 0x1104168
 		public TexUVList GetTexUvList(string path)

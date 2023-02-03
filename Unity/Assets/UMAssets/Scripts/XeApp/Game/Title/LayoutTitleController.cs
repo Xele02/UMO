@@ -123,10 +123,16 @@ namespace XeApp.Game.Title
 		public IEnumerator LoadLayoutTexts(Action callback)
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutTexts");
-			TodoLogger.Log(5, "LoadLayoutTexts");
-    		UnityEngine.Debug.Log("Exit LoadLayoutTexts");
-			callback();
-			yield break;
+			//0xE39254
+			yield return LoadLayoutBase("Layout/title/root_title_id_version_layout_root", (GameObject instance) =>
+			{
+				//0xE37C20
+				Texts = instance.GetComponent<LayoutTitleTexts>();
+				titleObjectList.Add(instance);
+				if (callback != null)
+					callback();
+			});
+			UnityEngine.Debug.Log("Exit LoadLayoutTexts");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B3340 Offset: 0x6B3340 VA: 0x6B3340
@@ -134,10 +140,16 @@ namespace XeApp.Game.Title
 		public IEnumerator LoadLayoutCopyRight(Action callback)
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutCopyRight");
-			TodoLogger.Log(5, "LoadLayoutCopyRight");
-    		UnityEngine.Debug.Log("Exit LoadLayoutCopyRight");
-			callback();
-			yield break;
+			//0xE388A0
+			yield return LoadLayoutBase("Layout/title/root_title_right_layout_root", (GameObject instance) =>
+			{
+				//0xE37D14
+				CopyRight = instance.GetComponent<LayoutTitleCopyRight>();
+				titleObjectList.Add(instance);
+				if (callback != null)
+					callback();
+			});
+			UnityEngine.Debug.Log("Exit LoadLayoutCopyRight");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B33B8 Offset: 0x6B33B8 VA: 0x6B33B8
@@ -185,10 +197,18 @@ namespace XeApp.Game.Title
 		public IEnumerator LoadLayoutArButton(Action callback)
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutArButton");
-			TodoLogger.Log(5, "LoadLayoutArButton");
-    		UnityEngine.Debug.Log("Exit LoadLayoutArButton");
-			callback();
-			yield break;
+			//0xE38238
+			yield return LoadLayoutBase("Layout/title/root_title_ar_btn_layout_root", (GameObject instance) =>
+			{
+				//0xE37814
+				ArButton = instance.GetComponent<LayoutTitleArButton>();
+				titleObjectList.Add(instance);
+			});
+			while (!ArButton.IsLoaded())
+				yield return null;
+			if (callback != null)
+				callback();
+			UnityEngine.Debug.Log("Exit LoadLayoutArButton");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B3520 Offset: 0x6B3520 VA: 0x6B3520
@@ -196,10 +216,17 @@ namespace XeApp.Game.Title
 		public IEnumerator LoadLayoutMonthlyPass(Action callback)
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutMonthlyPass");
-			TodoLogger.Log(5, "LoadLayoutMonthlyPass");
-    		UnityEngine.Debug.Log("Exit LoadLayoutMonthlyPass");
-			callback();
-			yield break;
+			//0xE38C78
+			yield return LoadLayoutBase("Layout/sel_inheriting/root_inh_pop_04_layout_root", (GameObject instance) =>
+			{
+				//0xE378C0
+				MonthlyPass = instance.GetComponent<LayoutMonthlyPassTakeover>();
+			});
+			while (!MonthlyPass.IsLoaded())
+				yield return null;
+			if (callback != null)
+				callback();
+			UnityEngine.Debug.Log("Exit LoadLayoutMonthlyPass");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B3598 Offset: 0x6B3598 VA: 0x6B3598
@@ -255,13 +282,5 @@ namespace XeApp.Game.Title
 		// [CompilerGeneratedAttribute] // RVA: 0x6B3610 Offset: 0x6B3610 VA: 0x6B3610
 		// // RVA: 0xE37768 Offset: 0xE37768 VA: 0xE37768
 		// private void <LoadLayoutTitleLogo>b__63_0(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B3620 Offset: 0x6B3620 VA: 0x6B3620
-		// // RVA: 0xE37814 Offset: 0xE37814 VA: 0xE37814
-		// private void <LoadLayoutArButton>b__64_0(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B3630 Offset: 0x6B3630 VA: 0x6B3630
-		// // RVA: 0xE378C0 Offset: 0xE378C0 VA: 0xE378C0
-		// private void <LoadLayoutMonthlyPass>b__65_0(GameObject instance) { }
 	}
 }

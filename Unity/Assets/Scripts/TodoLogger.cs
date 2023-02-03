@@ -3,19 +3,34 @@ using XeApp.Game.Common;
 
 public static class TodoLogger
 {
-	public static int NonVisible = 99999999;
-	public static int CriWareErrorHandler = NonVisible;
-	public static int CriFsPlugin = NonVisible;
-	public static int CriAtomPlugin = NonVisible;
-	public static int CriManaPlugin = NonVisible;
-	public static int CriWareDecrypter = NonVisible;
-	public static int CriAtomExLib = NonVisible;
-	public static int AppQualitySetting = NonVisible;
-	public static int SecureLibAPI = NonVisible;
-	public static int FCMTokenReceiver = NonVisible;
-	public static int CriAtomExLatencyEstimator = NonVisible;
-	public static int CriFsWebInstaller = NonVisible;
-	public static int Adjust = NonVisible;
+	public static int _NonVisible = 99999999;
+
+	// Can ignore
+	public static int CriWareErrorHandler = _NonVisible;
+	public static int CriFsPlugin = _NonVisible;
+	public static int CriAtomPlugin = _NonVisible;
+	public static int CriManaPlugin = _NonVisible;
+	public static int CriWareDecrypter = _NonVisible;
+	public static int CriAtomExLib = _NonVisible;
+	public static int AppQualitySetting = _NonVisible;
+	public static int SecureLibAPI = _NonVisible;
+	public static int FCMTokenReceiver = _NonVisible;
+	public static int CriAtomExLatencyEstimator = _NonVisible;
+	public static int CriFsWebInstaller = _NonVisible;
+	public static int Adjust = _NonVisible;
+	public static int AppInfo = _NonVisible;
+	public static int CriFsLoader = _NonVisible;
+	public static int SakashoSystem = _NonVisible;
+	public static int Playgames = _NonVisible;
+	public static int Crashlytics = _NonVisible;
+	public static int StorageSupport = _NonVisible;
+	public static int ManaAd = _NonVisible;
+	public static int AndroidNotification = _NonVisible;
+
+	// Need to implement at some point
+	public static int _Todo = 99999999;
+	public static int CriAtomVolumes = _Todo;
+	public static int ToCheck = _Todo;
 
 	public static void Log(int priority, string str)
 	{

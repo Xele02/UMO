@@ -232,7 +232,7 @@ public class IOGKADECKOP
 			}
 			if(IOSBridge.GetOSMajorVersion() < 14)
 			{
-        		UnityEngine.Debug.LogError("Exit  Error DFLFHJHBKOC_CoroutineAppBoot");
+        		UnityEngine.Debug.Log("Exit  Error DFLFHJHBKOC_CoroutineAppBoot");
 				yield break;
 			}
 			bool HFPLKFCPHDK = true;

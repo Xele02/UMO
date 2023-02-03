@@ -2,8 +2,17 @@ namespace XeApp.Game.Menu
 {
 	public class TipsTextureCache : IconTextureCache
 	{
+		// RVA: 0xA99FAC Offset: 0xA99FAC VA: 0xA99FAC
+		public TipsTextureCache() : base(0)
+		{
+			return;
+		}
+
 		// // RVA: 0xA9C044 Offset: 0xA9C044 VA: 0xA9C044 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// // RVA: 0xA9C04C Offset: 0xA9C04C VA: 0xA9C04C Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)

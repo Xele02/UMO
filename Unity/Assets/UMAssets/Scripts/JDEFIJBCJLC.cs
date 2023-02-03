@@ -19,7 +19,7 @@ public class JDEFIJBCJLC_EncryptedString
 				DLHDPLPLCAC = null;
 			else
 			{
-				DLHDPLPLCAC = CEDHHAGBIBA.IHDGCICCPIG(value);
+				DLHDPLPLCAC = CEDHHAGBIBA.IHDGCICCPIG_StringToByte(value);
 			}
 		} }
 

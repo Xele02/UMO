@@ -15,6 +15,7 @@ using System.IO;
 using CriWare;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using XeApp.Game.Tutorial;
 
 namespace XeApp.Game
 {
@@ -247,9 +248,64 @@ namespace XeApp.Game
 		{
     		UnityEngine.Debug.Log("Enter UnloadAllAssets");
 			//0x1428C74
-			TodoLogger.Log(5, "GameManager.UnloadAllAssets");
-    		UnityEngine.Debug.Log("Exit UnloadAllAssets");
-			yield break;
+			m_layoutObjectCache.ReleaseAll();
+			BgControl.ForceDestoryTexture();
+			sceneIconTextureCache.Terminated();
+			menuResidentTextureCache.Terminated();
+			divaIconTextureCache.Terminated();
+			bgTextureCache.Terminated();
+			itemTextureCache.Terminated();
+			musicJacketTextureCache.Terminated();
+			valkyrieIconTextureCache.Terminated();
+			costumeTextureCache.Terminated();
+			eventBannerTextureCache.Terminated();
+			pilotTextureCache.Terminated();
+			questEventTextureCache.Terminated();
+			snsIconCache.Terminated();
+			episodeIconCache.Terminated();
+			gachaProductIconCache.Terminated();
+			denomIconCache.Terminated();
+			m_storyImageCache.Terminated();
+			musicRatioTextureCache.Terminated();
+			m_subPlateIconCache.Terminated();
+			m_lobbyTextureCache.Terminated();
+			m_decorationItemTextureCache.Terminated();
+			m_raidBossTextureCache.Terminated();
+			m_kiraDivaTextureCache.Terminated();
+			m_homeBgIconTextureCache.Terminated();
+			unionTextureManager.Release();
+			uguiCommonManager.Release();
+			IsUnionDataInitialized = false;
+			TipsControl.Instance.Release();
+			if(BasicTutorialManager.HasInstanced)
+			{
+				BasicTutorialManager.Instance.Release();
+			}
+			if(TutorialManager.HasInstanced)
+			{
+				TutorialManager.Instance.Release();
+			}
+			if(divaResource != null)
+			{
+				divaResource.ReleaseAll();
+			}
+			for(int i = 0; i < subDivaResource.Length; i++)
+			{
+				if (subDivaResource[i] != null)
+					subDivaResource[i].ReleaseAll();
+			}
+			iconDecorationCache.Release();
+			FacialNameDatabase.Release();
+			if(m_snsNotification != null)
+			{
+				Destroy(m_snsNotification.gameObject);
+				m_snsNotification = null;
+			}
+			yield return AssetBundleManager.UnloadAllAssetBundle();
+			yield return Resources.UnloadUnusedAssets();
+			IsCacheActive = false;
+
+			UnityEngine.Debug.Log("Exit UnloadAllAssets");
 		}
 
 		// // RVA: 0x99A82C Offset: 0x99A82C VA: 0x99A82C
@@ -464,7 +520,7 @@ namespace XeApp.Game
 				yield return null;
 
 			KDLPEDBKMID.HHCJCDFCLOB.OEPPEGHGNNO = this.InstallEvent;
-			NDABOOOOENC.HHCJCDFCLOB.NCDLCIPGPNC();
+			NDABOOOOENC.HHCJCDFCLOB.NCDLCIPGPNC_Login();
 			IsSystemInitialized = true;
     		UnityEngine.Debug.Log("Exit InitializeSystemCoroutine");
 		}
@@ -887,7 +943,11 @@ namespace XeApp.Game
 		// // RVA: 0x99FF14 Offset: 0x99FF14 VA: 0x99FF14
 		public void SetupResolutionDefault()
 		{
-			TodoLogger.Log(5, "SetupResolutionDefault");
+			if (Q.B() == screenSizeType)
+				return;
+			screenSizeType = Q.B();
+			if (screenSizeType > 0 && screenSizeType <= bx.Length)
+				SetupResolution(bx[screenSizeType - 1], by[screenSizeType - 1]);
 		}
 
 		// // RVA: 0x9A0068 Offset: 0x9A0068 VA: 0x9A0068
@@ -896,8 +956,8 @@ namespace XeApp.Game
 		// // RVA: 0x99E7D4 Offset: 0x99E7D4 VA: 0x99E7D4
 		public void SetFPS(int fps)
 		{
-			UnityEngine.QualitySettings.vSyncCount = 0;
-			UnityEngine.Application.targetFrameRate = fps;
+			QualitySettings.vSyncCount = 0;
+			Application.targetFrameRate = fps;
 		}
 
 		// // RVA: 0x9A01BC Offset: 0x9A01BC VA: 0x9A01BC
@@ -1089,7 +1149,10 @@ namespace XeApp.Game
 		// // RVA: 0x9A0758 Offset: 0x9A0758 VA: 0x9A0758
 		public void ResetSystemCanvasCamera()
 		{
-			TodoLogger.Log(5, "GameManager.ResetSystemCanvasCamera");
+			systemCanvasCamera.orthographicSize = 5;
+			systemCanvasCamera.nearClipPlane = 0.3f;
+			systemCanvasCamera.farClipPlane = 1000;
+			systemCanvasCamera.depth = 99;
 		}
 
 		// // RVA: 0x99B4B0 Offset: 0x99B4B0 VA: 0x99B4B0

@@ -158,7 +158,19 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1398490 Offset: 0x1398490 VA: 0x1398490
 		public static void DecCacheClear()
 		{
-			TodoLogger.Log(5, "SoundResource DecCacheClear");
+			StringBuilder str = new StringBuilder();
+			for(int i = 0; i < decryptDirs.Length; i++)
+			{
+				str.Length = 0;
+				str.Append(KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath);
+				str.Append('/');
+				str.Append(decryptDirs[i]);
+				if(Directory.Exists(str.ToString()))
+				{
+					//Directory.Delete(str.ToString(), true);
+					UnityEngine.Debug.Log("Would have deleted "+str.ToString()+" dir recursively");
+				}
+			}
 		}
 
 		// // RVA: 0x139A8E0 Offset: 0x139A8E0 VA: 0x139A8E0

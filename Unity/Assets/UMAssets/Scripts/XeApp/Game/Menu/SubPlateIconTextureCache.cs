@@ -3,7 +3,10 @@ namespace XeApp.Game.Menu
 	public class SubPlateIconTextureCache : IconTextureCache
 	{
 		// // RVA: 0x1A9D7EC Offset: 0x1A9D7EC VA: 0x1A9D7EC Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// // RVA: 0x1A9D7F4 Offset: 0x1A9D7F4 VA: 0x1A9D7F4 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)

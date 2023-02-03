@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
+using System.Collections;
 
 namespace XeApp.Core
 {
@@ -209,7 +210,19 @@ namespace XeApp.Core
 
 		// [IteratorStateMachineAttribute] // RVA: 0x747C54 Offset: 0x747C54 VA: 0x747C54
 		// // RVA: 0xE133B0 Offset: 0xE133B0 VA: 0xE133B0
-		// public static IEnumerator UnloadAllAssetBundle() { }
+		public static IEnumerator UnloadAllAssetBundle()
+		{
+			//0x1D6B054
+			while (m_InProgressOperations.Count > 0)
+				yield return null;
+			m_lodingErrors.Clear();
+			foreach(var k in m_LoadedAssetBundles)
+			{
+				k.Value.m_AssetBundle.Unload(true);
+			}
+			m_LoadedAssetBundles.Clear();
+			m_InProgressOperations.Clear();
+		}
 
 		// [ConditionalAttribute] // RVA: 0x747CCC Offset: 0x747CCC VA: 0x747CCC
 		// // RVA: 0xE13420 Offset: 0xE13420 VA: 0xE13420

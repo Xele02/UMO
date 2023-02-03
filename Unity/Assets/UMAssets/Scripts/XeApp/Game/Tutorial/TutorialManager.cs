@@ -1,16 +1,18 @@
 using System;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.Events;
 using XeSys;
 
 namespace XeApp.Game.Tutorial
 {
 	public class TutorialManager : SingletonBehaviour<TutorialManager>
 	{
-		// private GameObject m_tutorialSetInstance; // 0xC
-		// private bool m_isWait; // 0x10
-		// private TutorialWindow m_window; // 0x14
-		// private UnityAction m_closeCallBack; // 0x18
-		// public static int forceShowTipsId; // 0x0
+		private GameObject m_tutorialSetInstance; // 0xC
+		private bool m_isWait; // 0x10
+		private TutorialWindow m_window; // 0x14
+		private UnityAction m_closeCallBack; // 0x18
+		public static int forceShowTipsId; // 0x0
 
 		// // RVA: 0xE4604C Offset: 0xE4604C VA: 0xE4604C
 		// public static void Initialize() { }
@@ -19,7 +21,15 @@ namespace XeApp.Game.Tutorial
 		// public void PreLoadResource(UnityAction finishCb, bool isAppendLayout = False) { }
 
 		// // RVA: 0xE462C8 Offset: 0xE462C8 VA: 0xE462C8 Slot: 6
-		// public virtual void Release() { }
+		public virtual void Release()
+		{
+			if(m_tutorialSetInstance != null)
+			{
+				Destroy(m_tutorialSetInstance.gameObject);
+				m_window = null;
+				m_tutorialSetInstance = null;
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE758 Offset: 0x6AE758 VA: 0x6AE758
 		// // RVA: 0xE463C4 Offset: 0xE463C4 VA: 0xE463C4

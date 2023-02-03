@@ -54,7 +54,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17E3714 Offset: 0x17E3714 VA: 0x17E3714 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			if (m_loadingDivaIcon != null)
+				m_loadingDivaIcon.isKeep = false;
+			if (m_loadingStatusDivaIcon != null)
+				m_loadingStatusDivaIcon.isKeep = false;
+			Clear();
+			m_loadingDivaIcon = null;
+			m_loadingStatusDivaIcon = null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5FB8 Offset: 0x6C5FB8 VA: 0x6C5FB8
 		// // RVA: 0x17E375C Offset: 0x17E375C VA: 0x17E375C

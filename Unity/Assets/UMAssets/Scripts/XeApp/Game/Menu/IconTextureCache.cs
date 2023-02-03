@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: -1 Offset: -1 Slot: 5
-		// public abstract void Terminated();
+		public abstract void Terminated();
 
 		// // RVA: 0x13DBFC0 Offset: 0x13DBFC0 VA: 0x13DBFC0 Slot: 6
 		public virtual void Load(string path, Action<IiconTexture> callBack)
