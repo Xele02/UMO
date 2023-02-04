@@ -1,0 +1,1099 @@
+{{Database/Diva/DivaInfo
+ |Attr=3
+ |ID=8
+ |BodyId=1
+ |PersonalityId=3
+ |Enabled=2
+ |LIOGKHIGJKN=0
+ |HomeBgId=13
+}}
+{{DivaStat
+ |Level=0
+ |Life=9999
+ |Soul=180
+ |Vocal=180
+ |Charm=240
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=1
+ |Life=9999
+ |Soul=180
+ |Vocal=180
+ |Charm=265
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=2
+ |Life=9999
+ |Soul=200
+ |Vocal=180
+ |Charm=265
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=3
+ |Life=9999
+ |Soul=200
+ |Vocal=200
+ |Charm=265
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=4
+ |Life=9999
+ |Soul=200
+ |Vocal=200
+ |Charm=290
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=5
+ |Life=9999
+ |Soul=220
+ |Vocal=200
+ |Charm=290
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=6
+ |Life=9999
+ |Soul=220
+ |Vocal=220
+ |Charm=290
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=7
+ |Life=9999
+ |Soul=220
+ |Vocal=220
+ |Charm=315
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=8
+ |Life=9999
+ |Soul=240
+ |Vocal=220
+ |Charm=315
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=9
+ |Life=9999
+ |Soul=240
+ |Vocal=240
+ |Charm=315
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=10
+ |Life=9999
+ |Soul=240
+ |Vocal=240
+ |Charm=340
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=11
+ |Life=9999
+ |Soul=260
+ |Vocal=240
+ |Charm=340
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=12
+ |Life=9999
+ |Soul=260
+ |Vocal=260
+ |Charm=340
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=13
+ |Life=9999
+ |Soul=260
+ |Vocal=260
+ |Charm=365
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=14
+ |Life=9999
+ |Soul=280
+ |Vocal=260
+ |Charm=365
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=15
+ |Life=9999
+ |Soul=280
+ |Vocal=280
+ |Charm=365
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=16
+ |Life=9999
+ |Soul=280
+ |Vocal=280
+ |Charm=390
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=17
+ |Life=9999
+ |Soul=300
+ |Vocal=280
+ |Charm=390
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=18
+ |Life=9999
+ |Soul=300
+ |Vocal=300
+ |Charm=390
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=19
+ |Life=9999
+ |Soul=300
+ |Vocal=300
+ |Charm=415
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=20
+ |Life=9999
+ |Soul=320
+ |Vocal=300
+ |Charm=415
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=21
+ |Life=9999
+ |Soul=320
+ |Vocal=320
+ |Charm=415
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=22
+ |Life=9999
+ |Soul=320
+ |Vocal=320
+ |Charm=440
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=23
+ |Life=9999
+ |Soul=340
+ |Vocal=320
+ |Charm=440
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=24
+ |Life=9999
+ |Soul=340
+ |Vocal=340
+ |Charm=440
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=25
+ |Life=9999
+ |Soul=340
+ |Vocal=340
+ |Charm=465
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=26
+ |Life=9999
+ |Soul=360
+ |Vocal=340
+ |Charm=465
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=27
+ |Life=9999
+ |Soul=360
+ |Vocal=360
+ |Charm=465
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=28
+ |Life=9999
+ |Soul=360
+ |Vocal=360
+ |Charm=490
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=29
+ |Life=9999
+ |Soul=380
+ |Vocal=360
+ |Charm=490
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=30
+ |Life=9999
+ |Soul=380
+ |Vocal=380
+ |Charm=490
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=31
+ |Life=9999
+ |Soul=380
+ |Vocal=380
+ |Charm=515
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=32
+ |Life=9999
+ |Soul=400
+ |Vocal=380
+ |Charm=515
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=33
+ |Life=9999
+ |Soul=400
+ |Vocal=400
+ |Charm=515
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=34
+ |Life=9999
+ |Soul=400
+ |Vocal=400
+ |Charm=540
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=35
+ |Life=9999
+ |Soul=420
+ |Vocal=400
+ |Charm=540
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=36
+ |Life=9999
+ |Soul=420
+ |Vocal=420
+ |Charm=540
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=37
+ |Life=9999
+ |Soul=420
+ |Vocal=420
+ |Charm=565
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=38
+ |Life=9999
+ |Soul=440
+ |Vocal=420
+ |Charm=565
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=39
+ |Life=9999
+ |Soul=440
+ |Vocal=440
+ |Charm=565
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=40
+ |Life=9999
+ |Soul=440
+ |Vocal=440
+ |Charm=590
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=41
+ |Life=9999
+ |Soul=460
+ |Vocal=440
+ |Charm=590
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=42
+ |Life=9999
+ |Soul=460
+ |Vocal=460
+ |Charm=590
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=43
+ |Life=9999
+ |Soul=460
+ |Vocal=460
+ |Charm=615
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=44
+ |Life=9999
+ |Soul=480
+ |Vocal=460
+ |Charm=615
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=45
+ |Life=9999
+ |Soul=480
+ |Vocal=480
+ |Charm=615
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=46
+ |Life=9999
+ |Soul=480
+ |Vocal=480
+ |Charm=640
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=47
+ |Life=9999
+ |Soul=500
+ |Vocal=480
+ |Charm=640
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=48
+ |Life=9999
+ |Soul=500
+ |Vocal=500
+ |Charm=640
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=49
+ |Life=9999
+ |Soul=500
+ |Vocal=500
+ |Charm=665
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=50
+ |Life=9999
+ |Soul=520
+ |Vocal=500
+ |Charm=665
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=51
+ |Life=9999
+ |Soul=520
+ |Vocal=520
+ |Charm=665
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=52
+ |Life=9999
+ |Soul=520
+ |Vocal=520
+ |Charm=690
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=53
+ |Life=9999
+ |Soul=540
+ |Vocal=520
+ |Charm=690
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=54
+ |Life=9999
+ |Soul=540
+ |Vocal=540
+ |Charm=690
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=55
+ |Life=9999
+ |Soul=540
+ |Vocal=540
+ |Charm=715
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=56
+ |Life=9999
+ |Soul=560
+ |Vocal=540
+ |Charm=715
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=57
+ |Life=9999
+ |Soul=560
+ |Vocal=560
+ |Charm=715
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=58
+ |Life=9999
+ |Soul=560
+ |Vocal=560
+ |Charm=740
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=59
+ |Life=9999
+ |Soul=580
+ |Vocal=560
+ |Charm=740
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=60
+ |Life=9999
+ |Soul=580
+ |Vocal=580
+ |Charm=740
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=61
+ |Life=9999
+ |Soul=580
+ |Vocal=580
+ |Charm=765
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=62
+ |Life=9999
+ |Soul=600
+ |Vocal=580
+ |Charm=765
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=63
+ |Life=9999
+ |Soul=600
+ |Vocal=600
+ |Charm=765
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=64
+ |Life=9999
+ |Soul=600
+ |Vocal=600
+ |Charm=790
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=65
+ |Life=9999
+ |Soul=620
+ |Vocal=600
+ |Charm=790
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=66
+ |Life=9999
+ |Soul=620
+ |Vocal=620
+ |Charm=790
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=67
+ |Life=9999
+ |Soul=620
+ |Vocal=620
+ |Charm=815
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=68
+ |Life=9999
+ |Soul=640
+ |Vocal=620
+ |Charm=815
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=69
+ |Life=9999
+ |Soul=640
+ |Vocal=640
+ |Charm=815
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=70
+ |Life=9999
+ |Soul=640
+ |Vocal=640
+ |Charm=840
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=71
+ |Life=9999
+ |Soul=660
+ |Vocal=640
+ |Charm=840
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=72
+ |Life=9999
+ |Soul=660
+ |Vocal=660
+ |Charm=840
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=73
+ |Life=9999
+ |Soul=660
+ |Vocal=660
+ |Charm=865
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=74
+ |Life=9999
+ |Soul=680
+ |Vocal=660
+ |Charm=865
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=75
+ |Life=9999
+ |Soul=680
+ |Vocal=680
+ |Charm=865
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=76
+ |Life=9999
+ |Soul=680
+ |Vocal=680
+ |Charm=890
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=77
+ |Life=9999
+ |Soul=700
+ |Vocal=680
+ |Charm=890
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=78
+ |Life=9999
+ |Soul=700
+ |Vocal=700
+ |Charm=890
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=79
+ |Life=9999
+ |Soul=700
+ |Vocal=700
+ |Charm=915
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=80
+ |Life=9999
+ |Soul=720
+ |Vocal=700
+ |Charm=915
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=81
+ |Life=9999
+ |Soul=720
+ |Vocal=720
+ |Charm=915
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=82
+ |Life=9999
+ |Soul=720
+ |Vocal=720
+ |Charm=940
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=83
+ |Life=9999
+ |Soul=740
+ |Vocal=720
+ |Charm=940
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=84
+ |Life=9999
+ |Soul=740
+ |Vocal=740
+ |Charm=940
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=85
+ |Life=9999
+ |Soul=740
+ |Vocal=740
+ |Charm=965
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=86
+ |Life=9999
+ |Soul=760
+ |Vocal=740
+ |Charm=965
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=87
+ |Life=9999
+ |Soul=760
+ |Vocal=760
+ |Charm=965
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=88
+ |Life=9999
+ |Soul=760
+ |Vocal=760
+ |Charm=990
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=89
+ |Life=9999
+ |Soul=780
+ |Vocal=760
+ |Charm=990
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=90
+ |Life=9999
+ |Soul=780
+ |Vocal=780
+ |Charm=990
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=91
+ |Life=9999
+ |Soul=780
+ |Vocal=780
+ |Charm=1015
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=92
+ |Life=9999
+ |Soul=800
+ |Vocal=780
+ |Charm=1015
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=93
+ |Life=9999
+ |Soul=800
+ |Vocal=800
+ |Charm=1015
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=94
+ |Life=9999
+ |Soul=800
+ |Vocal=800
+ |Charm=1040
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=95
+ |Life=9999
+ |Soul=820
+ |Vocal=800
+ |Charm=1040
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=96
+ |Life=9999
+ |Soul=820
+ |Vocal=820
+ |Charm=1040
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=97
+ |Life=9999
+ |Soul=820
+ |Vocal=820
+ |Charm=1065
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=98
+ |Life=9999
+ |Soul=840
+ |Vocal=820
+ |Charm=1065
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=99
+ |Life=9999
+ |Soul=840
+ |Vocal=840
+ |Charm=1065
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=100
+ |Life=9999
+ |Soul=840
+ |Vocal=840
+ |Charm=1090
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=101
+ |Life=9999
+ |Soul=860
+ |Vocal=840
+ |Charm=1090
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=102
+ |Life=9999
+ |Soul=860
+ |Vocal=860
+ |Charm=1090
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=103
+ |Life=9999
+ |Soul=860
+ |Vocal=860
+ |Charm=1115
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=104
+ |Life=9999
+ |Soul=880
+ |Vocal=860
+ |Charm=1115
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=105
+ |Life=9999
+ |Soul=880
+ |Vocal=880
+ |Charm=1115
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=106
+ |Life=9999
+ |Soul=880
+ |Vocal=880
+ |Charm=1140
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=107
+ |Life=9999
+ |Soul=900
+ |Vocal=880
+ |Charm=1140
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=108
+ |Life=9999
+ |Soul=900
+ |Vocal=900
+ |Charm=1140
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=109
+ |Life=9999
+ |Soul=900
+ |Vocal=900
+ |Charm=1165
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=110
+ |Life=9999
+ |Soul=920
+ |Vocal=900
+ |Charm=1165
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=111
+ |Life=9999
+ |Soul=920
+ |Vocal=920
+ |Charm=1165
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=112
+ |Life=9999
+ |Soul=920
+ |Vocal=920
+ |Charm=1190
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=113
+ |Life=9999
+ |Soul=940
+ |Vocal=920
+ |Charm=1190
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=114
+ |Life=9999
+ |Soul=940
+ |Vocal=940
+ |Charm=1190
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=115
+ |Life=9999
+ |Soul=940
+ |Vocal=940
+ |Charm=1215
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=116
+ |Life=9999
+ |Soul=960
+ |Vocal=940
+ |Charm=1215
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=117
+ |Life=9999
+ |Soul=960
+ |Vocal=960
+ |Charm=1215
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=118
+ |Life=9999
+ |Soul=960
+ |Vocal=960
+ |Charm=1240
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=119
+ |Life=9999
+ |Soul=980
+ |Vocal=960
+ |Charm=1240
+ |Fold=50
+ |Support=60
+}}
+{{DivaStat
+ |Level=120
+ |Life=9999
+ |Soul=980
+ |Vocal=980
+ |Charm=1240
+ |Fold=50
+ |Support=60
+}}
+[[Category:Generated]]

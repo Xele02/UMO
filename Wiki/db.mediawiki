@@ -1,0 +1,4 @@
+{{Database
+ |Section=Database/Costume;Database/Diva;Database/Music
+}}
+[[Category:Generated]]
