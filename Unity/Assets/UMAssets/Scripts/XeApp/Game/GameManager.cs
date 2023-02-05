@@ -330,7 +330,7 @@ namespace XeApp.Game
 		// // RVA: 0x99AD18 Offset: 0x99AD18 VA: 0x99AD18
 		private void Start()
 		{
-			StartCoroutine(Co_InitScreen());
+			this.StartCoroutineWatched(Co_InitScreen());
 		}
 
 		// // RVA: 0x99AD3C Offset: 0x99AD3C VA: 0x99AD3C
@@ -425,7 +425,7 @@ namespace XeApp.Game
 				return;
 			
 			OnBootInitialize();
-			StartCoroutine(InitializeSystemCoroutine());
+			this.StartCoroutineWatched(InitializeSystemCoroutine());
 		}
 
 		// // RVA: 0x99DC34 Offset: 0x99DC34 VA: 0x99DC34
@@ -469,7 +469,7 @@ namespace XeApp.Game
 		{
 			if(IsUnionDataInitialized)
 				return;
-			StartCoroutine(UnionDataCoroutine());
+			this.StartCoroutineWatched(UnionDataCoroutine());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADBA0 Offset: 0x6ADBA0 VA: 0x6ADBA0
@@ -478,17 +478,17 @@ namespace XeApp.Game
 		{
 			//0x14281D8
 			MessageLoader.Instance.defaultInstallSource = MessageLoader.InstallSource.LocalStorage;
-			yield return AssetBundleManager.LoadUnionAssetBundle("handmade/shader.xab");
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle("handmade/shader.xab"));
 			Shader.WarmupAllShaders();
-			yield return AssetBundleManager.LoadUnionAssetBundle("handmade/cmnparam.xab");
-			yield return AssetBundleManager.LoadUnionAssetBundle("ct/sc/ef.xab");
-			yield return AssetBundleManager.LoadUnionAssetBundle("dc/cmn.xab");
-			yield return UnionTextureManager.LoadUnionTexture();
-			yield return uguiCommonManager.Load();
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle("handmade/cmnparam.xab"));
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle("ct/sc/ef.xab"));
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle("dc/cmn.xab"));
+			yield return Co.R(UnionTextureManager.LoadUnionTexture());
+			yield return Co.R(uguiCommonManager.Load());
 			if(!FacialNameDatabase.isInitialized)
 			{
 				AssetBundleLoadAssetOperation bootAssetOperation = AssetBundleManager.LoadAssetAsync("bt.xab", "facial_name_list", typeof(TextAsset));
-				yield return bootAssetOperation;
+				yield return Co.R(bootAssetOperation);
 				FacialNameDatabase.Create(bootAssetOperation.GetAsset<TextAsset>());
 				AssetBundleManager.UnloadAssetBundle("bt.xab");
 			}
@@ -624,8 +624,8 @@ namespace XeApp.Game
 			//0x1423ECC
 			if (IsCacheActive)
 				yield break;
-			StartCoroutine(SceneIconCache.Initialize());
-			StartCoroutine(DivaIconCache.EntryLoadingTexture());
+			this.StartCoroutineWatched(SceneIconCache.Initialize());
+			this.StartCoroutineWatched(DivaIconCache.EntryLoadingTexture());
 			MenuResidentTextureCache.EntryCache();
 			MusicRatioTextureCache.EntryCache();
 			IconDecorationCache.Reserve();
@@ -1069,14 +1069,14 @@ namespace XeApp.Game
 			if(m_intro == null)
 			{
 				layOperation = AssetBundleManager.LoadLayoutAsync("ly/062.xab", "UI_GameIntro");
-				yield return layOperation;
-				yield return layOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+				yield return Co.R(layOperation);
+				yield return Co.R(layOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
 				{
 					//0x9A1D00
 					m_intro = instance.GetComponent<GameUIIntro>();
 					instance.transform.SetParent(popupCanvas.transform, false);
 					instance.transform.SetAsFirstSibling();
-				});
+				}));
 				AssetBundleManager.UnloadAssetBundle("ly/062.xab", false);
 			}
 		}
@@ -1086,11 +1086,11 @@ namespace XeApp.Game
 		public IEnumerator ShowGameIntroCoroutine()
 		{
 			//0x14265E4
-			yield return StartCoroutine(LoadGameIntroCoroutine());
+			yield return this.StartCoroutineWatched(LoadGameIntroCoroutine());
 			GameManager.Instance.NowLoading.Show();
 			SoundManager.Instance.bgmPlayer.Stop();
 			bool isWait = false;
-			yield return Instance.LoadGameIntroCoroutine();
+			yield return Co.R(Instance.LoadGameIntroCoroutine());
 			Instance.GameUIIntro.onAnimationEndCallback = () =>
 			{
 				//0x1423DDC
@@ -1100,7 +1100,7 @@ namespace XeApp.Game
 			isWait = true;
 			Instance.GameUIIntro.Enter(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).KNMGEEFGDNI_Nam, Database.Instance.gameSetup.musicInfo.musicLoadText);
 			while (isWait)
-				yield return true;
+				yield return null;
 		}
 
 		// // RVA: 0x9A1340 Offset: 0x9A1340 VA: 0x9A1340
@@ -1141,11 +1141,11 @@ namespace XeApp.Game
 			bundleName.SetFormat("mc/{0}/sc.xab", waveName);
 			assetName.SetFormat("p_{0:D4}", wavId);
 			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(MusicDirectionParamBase));
-			yield return operation;
+			yield return Co.R(operation);
 			directionParam = operation.GetAsset<MusicDirectionParamBase>();
 			assetName.SetFormat("bp_{0:D4}", wavId);
 			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(MusicDirectionBoolParam));
-			yield return operation;
+			yield return Co.R(operation);
 			directionParam.BoolParam = operation.GetAsset<MusicDirectionBoolParam>();
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 
