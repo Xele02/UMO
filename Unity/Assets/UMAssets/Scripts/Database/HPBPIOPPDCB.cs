@@ -3,6 +3,7 @@ using XeSys;
 
 [System.Obsolete("Use HPBPIOPPDCB_Diva", true)]
 public class HPBPIOPPDCB { }
+[WikiPage(title : "Database/Diva", filename : "db/diva", templateName : "Database/Diva")]
 public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 {
 	public static bool DINNDBNPNFK; // 0x0
@@ -10,6 +11,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 	public const int AGBLDFIFLBJ = 10;
 	public const int DNLFNEFLNED = 200;
 	public int AGNCAAFGLBE_MaxLevels; // 0x20
+	[WikiProperty()]
 	public List<BJPLLEBHAGO_DivaInfo> CDENCMNHNGA_Divas = new List<BJPLLEBHAGO_DivaInfo>(10); // 0x24
 
 	// // RVA: 0x160846C Offset: 0x160846C VA: 0x160846C

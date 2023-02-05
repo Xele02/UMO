@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ using UnityEngine;
 using XeApp.Game;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
+using XeSys;
 
 [CreateAssetMenu(fileName = "WikiGeneratorSetting", menuName = "ScriptableObjects/WikiGeneratorSetting", order = 1)]
 class WikiGeneratorSetting : ScriptableObject
@@ -37,6 +39,7 @@ class WikiGeneratorSetting : ScriptableObject
 #if UNITY_EDITOR
 static class WikiGenerator
 {
+    public static string CurrentVersion = "";
     static private bool CheckStart()
     {
         string basePath = WikiGeneratorSetting.CurrentSettings.OutputPath;
@@ -161,11 +164,16 @@ static class WikiGenerator
     [MenuItem("UMO/Generate Wiki/Files")]
     static public void GenerateWiki()
     {
+        GameManager.Instance.StartCoroutine(GenerateWikiCoroutine());
+    }
+
+    static IEnumerator GenerateWikiCoroutine()
+    {
         if(!CheckStart())
-            return;
+            yield break;
         string basePath = WikiGeneratorSetting.CurrentSettings.OutputPath;
 
-        string version = "v_0.3";
+        CurrentVersion = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
 
         EDOHBJAPLPF_JsonData pageExchangeData = new EDOHBJAPLPF_JsonData();
         pageExchangeData["publisher"] = "Xele";
@@ -175,11 +183,11 @@ static class WikiGenerator
         pageExchangeData["packages"] = new EDOHBJAPLPF_JsonData();
         pageExchangeData["packages"]["UMO"] = new EDOHBJAPLPF_JsonData();
         pageExchangeData["packages"]["UMO"]["globalID"] = "umo.dataset";
-        pageExchangeData["packages"]["UMO"]["version"] = version;
+        pageExchangeData["packages"]["UMO"]["version"] = CurrentVersion;
         pageExchangeData["packages"]["UMO"]["pages"] = new EDOHBJAPLPF_JsonData();
 
 
-        UpdatePages(basePath, pageExchangeData["packages"]["UMO"]["pages"]);
+        yield return UpdatePages(basePath, pageExchangeData["packages"]["UMO"]["pages"]);
 
         File.WriteAllText(basePath + "page-exchange.json", pageExchangeData.EJCOJCGIBNG_ToJson());
 
@@ -195,76 +203,205 @@ static class WikiGenerator
         Directory.CreateDirectory(path);
     }
 
-    static private void UpdatePages(string basePath, EDOHBJAPLPF_JsonData pages)
+    static public IEnumerator CheckTime(WikiIteratorContext ctxt)
+    {
+        if(Time.realtimeSinceStartup - ctxt.updateTime > 1)
+        {
+            UnityEngine.Debug.LogError(""+ctxt.numTodo+"/"+ctxt.numDone);
+            ctxt.updateTime = Time.realtimeSinceStartup;
+            yield return null;
+        }
+    }
+
+    static private IEnumerator UpdatePages(string basePath, EDOHBJAPLPF_JsonData pages)
     {
         Debug.LogError("Export pages");
         
-        List<System.Object> toExport = new List<System.Object>();
+        WikiIteratorContext ctx = new WikiIteratorContext();
+        ctx.toExport.Add(new Tuple<object, string>(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, null));
+        ctx.toExport.Add(new Tuple<object, string>(MessageManager.Instance, null));
+        ctx.basePath = basePath;
+        ctx.pages = pages;
 
-        toExport.AddRange(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics);
-        toExport.AddRange(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas);
-        toExport.AddRange(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes);
-
-		while(toExport.Count > 0)
+        ctx.numTodo += ctx.toExport.Count;
+		while(ctx.toExport.Count > 0)
 		{
-            System.Object obj = toExport[0];
-            toExport.RemoveAt(0);
+            Tuple<object, string> obj = ctx.toExport[0];
+            ctx.toExport.RemoveAt(0);
 
-            Type t = obj.GetType();
+            Type t = obj.Item1.GetType();
 
-		    string fileOutput = "";
             WikiPageAttribute pageAttr = t.GetCustomAttributes(typeof(WikiPageAttribute), true).FirstOrDefault() as WikiPageAttribute;
             if(pageAttr == null)
                 continue;
 
-            string fileName = pageAttr.GetFileName(obj)+".mediawiki";
+            yield return CheckTime(ctx);
 
-            string templateName = pageAttr.GetTemplateName(obj);
-            string title = pageAttr.GetTitle(obj);
-            fileOutput += "{{"+templateName+"\n";
-
-            bool pageValid = true;
-            WikiPageAttribute.ForEachWikiMember(obj, (WikiPropertyAttribute propAttr, System.Object val) =>
-            {
-                if(!propAttr.IsPageValid(obj))
-                {
-                    pageValid = false;
-                    return false;;
-                }
-                return true;
-            });
-            if(!pageValid)
-                continue;
-                
-            
-            WikiPageAttribute.ForEachWikiMember(obj, (WikiPropertyAttribute propAttr, System.Object val) =>
-            {
-                fileOutput += " |"+propAttr.name+"="+val.ToString()+"\n";
-                propAttr.InsertAddExport(obj, ref toExport);
-                return true;
-            });
-
-            fileOutput +=   "}}\n";
-            fileOutput += "[[Category:Generated]]\n";
-
-            EDOHBJAPLPF_JsonData pageInfo = new EDOHBJAPLPF_JsonData();
-            pageInfo["name"] = title;
-            pageInfo["namespace"] = "NS_MAIN";
-            pageInfo["url"] = "https://raw.githubusercontent.com/Xele02/UMO/Wiki/Wiki/"+fileName;
-            pages.Add(pageInfo);
-
-            Directory.CreateDirectory(Path.GetDirectoryName(basePath + fileName));
-            File.WriteAllText(basePath + fileName, fileOutput);
+            pageAttr.Export(obj.Item1, obj.Item2, ctx);
+            ctx.numDone++;
 		}
+
+        yield break;
     }
 
 }
 #endif
 
+public static class WikiUtils
+{
+
+    public static System.Reflection.BindingFlags flags = System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Static;
+
+    public static void ForEachWikiMember(System.Object obj, Func<WikiPropertyAttribute, System.Object, bool> func, WikiIteratorContext ctx)
+    {
+        bool cont = true;
+        Type t = obj.GetType();
+        foreach(var p in t.GetFields(flags))
+        {
+            if(cont)
+            {
+                WikiPropertyAttribute propAttr = p.GetCustomAttributes(typeof(WikiPropertyAttribute), true).FirstOrDefault() as WikiPropertyAttribute;
+                if(propAttr != null)
+                {
+                    if(!func(propAttr, p.GetValue(obj)))
+                        cont = false;
+                }
+            }
+        }
+        foreach(var p in t.GetProperties(flags))
+        {
+            if(cont)
+            {
+                WikiPropertyAttribute propAttr = p.GetCustomAttributes(typeof(WikiPropertyAttribute), true).FirstOrDefault() as WikiPropertyAttribute;
+                if(propAttr != null)
+                {
+                    if(!func(propAttr, p.GetValue(obj)))
+                        cont = false;
+                }
+            }
+        }
+    }
+
+    static Regex replaceFindRe = new Regex(@"\{(\w*?)(:\w+)?\}", RegexOptions.Compiled);
+
+    public static string ReplaceParams(System.Object obj, string text, WikiIteratorContext ctx)
+    {
+        text = text.Replace("IdFromParent", ctx.parent);
+        string q = replaceFindRe.Replace(text, delegate(Match match)
+        {
+            string key = match.Groups[1].Value;
+            ForEachWikiMember(obj, (WikiPropertyAttribute propAttr, System.Object val) => {
+                if(propAttr.name == key)
+                {
+                    key = string.Format("{0"+match.Groups[2].Value+"}", val);
+                    return false;
+                }
+                return true;
+            }, null);
+            return key;
+        });
+        return q;
+    }
+
+}
+
+public class WikiIteratorContext
+{
+    public float updateTime;
+    public int numTodo;
+    public int numDone;
+
+    public List<Tuple<System.Object, string>> toExport = new List<Tuple<System.Object, string>>();
+    public string basePath;
+    public EDOHBJAPLPF_JsonData pages;
+
+    public string subObjectTxt = "";
+
+    public Dictionary<string, List<string>> properties = new Dictionary<string, List<string>>();
+    public string parent;
+
+}
+
+public class WikiContainerAttribute : System.Attribute
+{
+    public WikiPropertyAttribute FindProperty(object obj, string name)
+    {
+        WikiPropertyAttribute res = null;
+        WikiUtils.ForEachWikiMember(obj, (WikiPropertyAttribute propAttr, System.Object val) =>
+        {
+            if(propAttr.GetMemberName() == name)
+                res = propAttr;
+            return res == null;
+        }, null);
+        return res;
+    }
+
+    public bool CanExtract(object obj)
+    {
+        bool isValid = true;
+        WikiUtils.ForEachWikiMember(obj, (WikiPropertyAttribute propAttr, System.Object val) =>
+        {
+            if(!propAttr.IsContainerCheckValid(obj))
+            {
+                isValid = false;
+                return false;;
+            }
+            return true;
+        }, null);
+        return isValid;
+    }
+
+}
+
+[System.AttributeUsage(System.AttributeTargets.Class |  
+                       System.AttributeTargets.Struct)  
+] 
+public class WikiSubobjectAttribute : WikiContainerAttribute
+{
+    public string name;
+
+    public WikiSubobjectAttribute(string name = null)
+    {
+        this.name = name;
+    }
+
+    public void Export(object obj, object parentValue, WikiIteratorContext ctx, Action<string> cb)
+    {
+        if(!CanExtract(obj))
+            return;
+        string fileOutput = "{{"+name+"\n";
+
+        Dictionary<string, List<string>> properties = ctx.properties; 
+        ctx.properties = new Dictionary<string, List<string>>();
+
+        WikiUtils.ForEachWikiMember(obj, (WikiPropertyAttribute propAttr, System.Object val) =>
+        {
+            propAttr.Export(obj, val, ctx);
+            return true;
+        }, ctx);
+
+        foreach(var k in ctx.properties)
+        {
+            if(k.Value.Count > 0)
+                fileOutput += " |"+k.Key+"="+string.Join(";", k.Value).Replace("\n","<br/>")+"\n";
+        }
+
+        if(parentValue != null)
+        {
+            fileOutput += " | Has Parent="+parentValue.ToString()+"\n";
+        }
+
+        fileOutput +=   "}}\n";
+        ctx.subObjectTxt += fileOutput;
+        ctx.properties = properties;
+        cb(null);
+    }
+}
+
 [System.AttributeUsage(System.AttributeTargets.Class |  
                        System.AttributeTargets.Struct)  
 ]  
-public class WikiPageAttribute : System.Attribute  
+public class WikiPageAttribute : WikiContainerAttribute
 {  
     public string title;
     public string filename;
@@ -277,64 +414,66 @@ public class WikiPageAttribute : System.Attribute
         this.templateName = templateName;
     }
 
-    public static System.Reflection.BindingFlags flags = System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Static;
-
-    public static void ForEachWikiMember(System.Object obj, Func<WikiPropertyAttribute, System.Object, bool> func)
+    public string GetFileName(System.Object obj, WikiIteratorContext ctx)
     {
-        Type t = obj.GetType();
-        foreach(var p in t.GetFields(flags))
+        return WikiUtils.ReplaceParams(obj, filename, ctx);
+    }
+
+    public string GetTemplateName(System.Object obj, WikiIteratorContext ctx)
+    {
+        return WikiUtils.ReplaceParams(obj, templateName, ctx);
+    }
+
+    public string GetTitle(System.Object obj, WikiIteratorContext ctx)
+    {
+        return WikiUtils.ReplaceParams(obj, title, ctx);
+    }
+
+    public void Export(object obj, string parentProp, WikiIteratorContext ctx, Action<string> onDone = null)
+    {
+        if(!CanExtract(obj))
+            return;
+        if(parentProp != null)
         {
-            WikiPropertyAttribute propAttr = p.GetCustomAttributes(typeof(WikiPropertyAttribute), true).FirstOrDefault() as WikiPropertyAttribute;
-            if(propAttr != null)
-            {
-                if(!func(propAttr, p.GetValue(obj)))
-                    return;
-            }
+            ctx.parent = parentProp;
         }
-        foreach(var p in t.GetProperties(flags))
+
+        string fileName = GetFileName(obj, ctx)+".mediawiki";
+
+        string fileOutput = "";
+        string templateName = GetTemplateName(obj, ctx);
+        string title = GetTitle(obj, ctx);
+        fileOutput += "{{"+templateName+"\n";
+
+        ctx.subObjectTxt = "";
+        ctx.properties = new Dictionary<string, List<string>>();
+
+        WikiUtils.ForEachWikiMember(obj, (WikiPropertyAttribute propAttr, System.Object val) => {
+            propAttr.Export(obj, val, ctx);
+            return true;
+        }, ctx);
+
+        foreach(var k in ctx.properties)
         {
-            WikiPropertyAttribute propAttr = p.GetCustomAttributes(typeof(WikiPropertyAttribute), true).FirstOrDefault() as WikiPropertyAttribute;
-            if(propAttr != null)
-            {
-                if(!func(propAttr, p.GetValue(obj)))
-                    return;
-            }
+            if(k.Value.Count > 0)
+                fileOutput += " |"+k.Key+"="+string.Join(";", k.Value).Replace("\n","<br/>")+"\n";
         }
-    }
 
-    Regex replaceFindRe = new Regex(@"\{(\w*?)(:\w+)?\}", RegexOptions.Compiled);
+        fileOutput +=   "}}\n";
+        fileOutput += ctx.subObjectTxt;
+        fileOutput += "[[Category:Generated]]\n";
 
-    private string ReplaceParams(System.Object obj, string text)
-    {
-        string q = replaceFindRe.Replace(text, delegate(Match match)
-        {
-            string key = match.Groups[1].Value;
-            ForEachWikiMember(obj, (WikiPropertyAttribute propAttr, System.Object val) => {
-                if(propAttr.name == key)
-                {
-                    key = string.Format("{0"+match.Groups[2].Value+"}", val);
-                    return false;
-                }
-                return true;
-            });
-            return key;
-        });
-        return q;
-    }
+        EDOHBJAPLPF_JsonData pageInfo = new EDOHBJAPLPF_JsonData();
+        pageInfo["name"] = title;
+        pageInfo["namespace"] = "NS_MAIN";
+        pageInfo["url"] = "https://raw.githubusercontent.com/Xele02/UMO/Wiki/Wiki/"+fileName;
+        ctx.pages.Add(pageInfo);
 
-    public string GetFileName(System.Object obj)
-    {
-        return ReplaceParams(obj, filename);
-    }
+        Directory.CreateDirectory(Path.GetDirectoryName(ctx.basePath + fileName));
+        File.WriteAllText(ctx.basePath + fileName, fileOutput);
 
-    public string GetTemplateName(System.Object obj)
-    {
-        return ReplaceParams(obj, templateName);
-    }
-
-    public string GetTitle(System.Object obj)
-    {
-        return ReplaceParams(obj, title);
+        if(onDone != null)
+            onDone(title);
     }
 }
 
@@ -350,48 +489,153 @@ public static class WikiValidNotEqual
 public class WikiPropertyAttribute : System.Attribute  
 {
     public string name;
-    object[] pageValidChecker;
+    object[] containerValidChecker;
     string memberName;
     string addExport;
+    string parentId;
   
-    public WikiPropertyAttribute(string name, object[] pageValidChecker = null, string addExport = null, [CallerMemberName] string memberName = "")  
+
+    public string GetMemberName() { return memberName; }
+    public WikiPropertyAttribute(string name = null, object[] containerValidChecker = null, string addExport = null, string parentId = null, [CallerMemberName] string memberName = "")  
     {  
         this.name = name;
-        this.pageValidChecker = pageValidChecker;
+        this.containerValidChecker = containerValidChecker;
         this.memberName = memberName;
         this.addExport = addExport;
+        this.parentId = parentId;
     }
 
-    public bool IsPageValid(System.Object obj)
+    public bool IsContainerCheckValid(System.Object obj)
     {
-        if(pageValidChecker != null)
+        if(containerValidChecker != null)
         {
-            if((bool)(pageValidChecker[0] as Type).GetMethod("IsValid").Invoke(null, new object[] {obj, GetValue(obj), pageValidChecker }) == false)
+            if((bool)(containerValidChecker[0] as Type).GetMethod("IsValid").Invoke(null, new object[] {obj, GetValue(obj), containerValidChecker }) == false)
                 return false;
         }
         return true;
     }
 
-    public void InsertAddExport(System.Object obj, ref List<System.Object> toExport)
+    public void ExportValue(object parent, object propValue, WikiIteratorContext ctx, Action<string> cb)
+    {
+        InsertAddExport(parent, ctx);
+        string fileOutput = null;
+        WikiSubobjectAttribute subAttr = propValue.GetType().GetCustomAttributes(typeof(WikiSubobjectAttribute), true).FirstOrDefault() as WikiSubobjectAttribute;
+        if(subAttr != null)
+        {
+            object parentValue = null;
+            if(parentId != null)
+            {
+                WikiContainerAttribute contAttr = parent.GetType().GetCustomAttributes(typeof(WikiContainerAttribute), true).FirstOrDefault() as WikiContainerAttribute;
+                if(contAttr != null)
+                {
+                    WikiPropertyAttribute prop = contAttr.FindProperty(parent, parentId);
+                    if(prop != null)
+                        parentValue = prop.GetValue(parent);
+                }
+            }
+            subAttr.Export(propValue, parentValue, ctx, (string res) => {fileOutput = res;});
+        }
+        else
+        {
+            WikiPageAttribute pageAttr = propValue.GetType().GetCustomAttributes(typeof(WikiPageAttribute), true).FirstOrDefault() as WikiPageAttribute;
+            if(pageAttr != null)
+            {
+                //pageAttr.Export(propValue, ctx, (string res) => { fileOutput = res; });
+                fileOutput = pageAttr.GetTitle(propValue, ctx);
+                ctx.toExport.Add(new Tuple<object, string>(propValue, ctx.parent));
+                ctx.numTodo++;
+            }
+            else
+            {
+                fileOutput = propValue.ToString();
+            }
+        }
+        cb(fileOutput);
+    }
+
+    private void AddToExport(object res, WikiIteratorContext ctx)
+    {
+        if(name == null)
+            return;
+        if(res == null)
+            return;
+        if(!ctx.properties.ContainsKey(name))
+            ctx.properties.Add(name, new List<string>());
+        ctx.properties[name].Add(res.ToString());
+    }
+
+    public void Export(object parent, object propValue, WikiIteratorContext ctx)
+    {
+        if(propValue is System.Array)
+        {
+            UnityEngine.Debug.LogError("Todo System.Array");
+        }
+        else if(propValue.GetType().IsGenericType && propValue is IDictionary)
+        {
+            // Dictionary are axtracted with subobject
+            IDictionary valDic = propValue as IDictionary;
+            ICollection valKeys = valDic.Keys;
+            foreach(var k in valKeys)
+            {
+                string v = null;
+                ctx.parent = k.ToString();
+                ExportValue(parent, valDic[k], ctx, (string val) => {
+                    v = val;
+                });
+                if(name != null && v != null)
+                {
+                    ctx.subObjectTxt += @"
+{{"+name+@":
+ | Key="+k.ToString()+@"
+ | Value="+valDic[k].ToString().Replace("\n","<br/>")+@"
+}}
+                    ";
+                }
+            }
+        }
+        else if(propValue.GetType().IsGenericType && propValue is IList)
+        {
+            IList valList = propValue as IList;
+            for(int i = 0; i < valList.Count; i++)
+            {
+                ExportValue(parent, valList[i], ctx, (string val) => {
+                    AddToExport(val, ctx);
+                });
+            }
+        }
+        else
+        {
+            ExportValue(parent, propValue, ctx, (string val) => {
+                AddToExport(val, ctx);
+            });
+
+        }
+    }
+
+    public void InsertAddExport(System.Object obj, WikiIteratorContext ctx)
     { 
         if(addExport != null)
         {
             if(addExport == "MusicText")
             {
-                toExport.Add(Database.Instance.musicText.Get(System.Convert.ToInt32(GetValue(obj))));
+                ctx.toExport.Add(new Tuple<object, string>(Database.Instance.musicText.Get(System.Convert.ToInt32(GetValue(obj))), null));
+                ctx.numTodo ++;
             }
         }
     }
 
     public System.Object GetValue(System.Object obj)
     {
-        System.Reflection.FieldInfo field = obj.GetType().GetField(memberName, WikiPageAttribute.flags);
+        System.Reflection.FieldInfo field = obj.GetType().GetField(memberName, WikiUtils.flags);
         if(field != null)
             return field.GetValue(obj);
         
-        System.Reflection.PropertyInfo prop = obj.GetType().GetProperty(memberName, WikiPageAttribute.flags);
+        System.Reflection.PropertyInfo prop = obj.GetType().GetProperty(memberName, WikiUtils.flags);
         if(prop != null)
             return prop.GetValue(obj);
+
+        UnityEngine.Debug.LogError("Property "+memberName+" not found");
+
         return null;
     }
 }  

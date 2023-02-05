@@ -5,8 +5,10 @@ using System.Text;
 
 namespace XeSys
 {
+	[WikiPage(title:"Texts/Bank/{IdFromParent}", filename : "texts/bank/bnk_{IdFromParent}", templateName:"Texts/Bank/BankData")]
 	public class MessageBank : IDisposable
 	{
+		[WikiProperty(name:"Texts/Bank/BankValue")]
 		private Dictionary<string, string> msgDic { get; set; } // 0x8
 		private List<string> labelList { get; set; } // 0xC
 		// public int count { get; } // 0x2396E00

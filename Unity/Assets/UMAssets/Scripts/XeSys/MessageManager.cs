@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 namespace XeSys
 {
+	[WikiPage(title:"Texts/Bank", filename : "texts/bank", templateName:"Texts/Bank")]
 	public class MessageManager : Singleton<MessageManager>, IDisposable
 	{
+		[WikiProperty()]
 		private Dictionary<string, MessageBank> msgBankDic { get; set; } // 0x8
 
 		// RVA: 0x23978E0 Offset: 0x23978E0 VA: 0x23978E0

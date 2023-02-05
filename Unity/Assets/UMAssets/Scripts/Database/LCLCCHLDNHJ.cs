@@ -6,9 +6,10 @@ using XeSys;
 
 [System.Obsolete("Use LCLCCHLDNHJ_Costume", true)]
 public class LCLCCHLDNHJ { }
+[WikiPage(title : "Database/Costume", filename : "db/costume", templateName : "Database/Costume")]
 public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 {
-    [WikiPage(title : "Database/Diva/Diva_{DivaId:D3}/Costume_{ID:D3}", filename : "costume/cs_{ID:D3}", templateName : "Database/Costume/CostumeInfo")]
+    [WikiPage(title : "Database/Costume/Costume_{ID:D3}", filename : "db/costume/cs_{ID:D3}", templateName : "Database/Costume/CostumeInfo")]
     public class ILODJKFJJDO_CostumeInfo
     {
 		public class FBKPFMKPMAF_LevelInfo
@@ -45,7 +46,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
         public short AHHJLDLAPAN_PrismDivaId { get; set; } // 0xC AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
 		[WikiProperty("PrismCostumeId")]
         public short DAJGPBLEEOB_PrismCostumeModelId { get; set; } // 0xE ABHFCJKBJKD LHPKEPPBKPF OIOEEEDODJA
-		[WikiProperty("Enabled", pageValidChecker: new object[] {typeof(WikiValidNotEqual), 0})]
+		[WikiProperty("Enabled", containerValidChecker: new object[] {typeof(WikiValidNotEqual), 0})]
 		public int PPEGAKEIEGM_Enabled { get { return FBGGEFFJJHB_Key ^ OIFAFKDMEEJ_EnabledCrypted; } set { OIFAFKDMEEJ_EnabledCrypted = FBGGEFFJJHB_Key ^ value; } } //KPOEEPIMMJP 0xD9D5B8 NCIEAFEDPBH 0xD9CCEC
 		[WikiProperty("SkillId")]
 		public int HGHFFJKGNCO_SkillId { get; set; } // 0x14 EJPLGMFLNMN JNGLBKKJFLF DHHJKJFHILD
@@ -171,6 +172,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 	public static readonly int GFIKOEEBIJP = GameAttribute.ArrayNum - 1; // 0x0
 	public string HDIDJNCGICK = ""; // 0x34
 
+	[WikiProperty()]
 	public List<ILODJKFJJDO_CostumeInfo> CDENCMNHNGA_Costumes { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 	public Dictionary<int, int[]> MBLNIECELNK { get; private set; } // 0x24 GHJIJLGHBLA EHAONDMIOFL CAJNIOACOCP
 	public Dictionary<int, int[]> AKKDOIJNMBH { get; private set; } // 0x28 MJPHOOLJKJE HJMAIPELMAH JJOIDPBEEOH

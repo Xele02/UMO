@@ -5,6 +5,7 @@ using System.Text;
 
 [System.Obsolete("Use OKGLGHCBCJP_Database", true)]
 public class OKGLGHCBCJP{}
+[WikiPage(title:"Database", filename : "db", templateName:"Database")]
 public class OKGLGHCBCJP_Database
 {
 	public enum BEOKNKGHFFE_Section
@@ -458,6 +459,7 @@ public class OKGLGHCBCJP_Database
 	public AIPOFGJGPKI_CampaignDiva NGCCGLLLDIB_CampaignDiva { get; private set; } // 0x2C AKMEDCJEFIM ONFFEFOLNJA KHNFCNCCAJE
 	// public HHPEMHHCKBE ALFKMKICDPP { get; private set; } // 0x30 EGAMKFEHKOH OFKPEOKIBOP FBMPHCEEOGP
 	// public PLPBJOFICEJ GOGFKAECFIP { get; private set; } // 0x34 MFAKBNOPMAL ONAJMJDFKII OKGBJKKKBJK
+	[WikiProperty(name:"Section")]
 	   public LCLCCHLDNHJ_Costume MFPNGNMFEAL_Costume { get; private set; } // 0x38 BNPFDJNHBIN BHOKMJJHOOK PCDDICJFIEI
 	   public NDBFKHKMMCE_DecoItem EPAHOAKPAJJ_DecoItem { get; private set; } // 0x3C LKAKMHGBHKJ JHPEPALKAMJ BHEAGEGHAJB
 	// public JEPMHCPBIGD CIGBHCHOPEO { get; private set; } // 0x40 BONFHNBALOL GNIGMPDFEPP LFDFGOBDAMF
@@ -465,6 +467,7 @@ public class OKGLGHCBCJP_Database
 	   public BBLECJKKKLA_DecoSetItem MJALLIOHKEJ_DecoSetItem { get; private set; } // 0x48 ABEMGBAJEBL BABMGOIFCOH GIIEMCFFDBD
 	// public NEGELNMPEPH BGKKOOGPEFD { get; private set; } // 0x4C AAPCGHFOHFC BALCOIHEDMF BKGBCKMOMGN
 	// public IHFIAFDLAAK GAPONCJOKAC { get; private set; } // 0x50 NCNFBFCCPGG OJGMINMADBB NEPJLJDPKKN
+	[WikiProperty(name:"Section")]
 	   public HPBPIOPPDCB_Diva MGFMPKLLGHE_Diva { get; private set; } // 0x54 ONCMJNDIMPD // ODGINDHEIBJ GIFOPLEGJCI
 	   public HMIJOOPHJLB_Diva2 OAINIGNLJKC_Diva2 { get; private set; } // 0x58 EFGHBGKGCDI KNBBENGMPJL MAPJOGCOBCF
 	public NBPHJDCOECH_Drop HGLIIPFLMFB_Drop { get; private set; } // 0x5C DNBKBMJEDFG GEHKLFKNGDK DAEJHNBAAHD
@@ -495,6 +498,7 @@ public class OKGLGHCBCJP_Database
 	// public EGLOKAEIHCB IHPFCIJKFIC { get; private set; } // 0xC0 DLCGGEGFOFM BKAPBBKJELI MINMKCJFHDG
 	public HHFFOACILKG_Medal ICICKEBMEFA_Medal { get; private set; } // 0xC4 BLEKIIHCAEL ECAMAOEFEJK IEOJCBOIKPN
 	   public KBCCGHLCFNO_MonthlyPass MEGJDBJCEOC_MonthlyPass { get; private set; } // 0xC8 LAJCNNENFPJ MIALNGOCOPJ NABHFEAEHFH
+	   [WikiProperty(name:"Section")]
 	   public LPPGENBEECK_MusicMaster IBPAFKKEKNK_Music { get; private set; } // 0xCC CKFEJCIKLAE AHENIIKNNJF HMKLOBHNMMI
 	// public GJAEGCMKMEK NEGKEEAFKHP { get; private set; } // 0xD0 NFCPFDJHNFE HEMDMBJABPN EJFOCHNEPKD
 	// public LGHIPHEDCNC LBCMJGOOHLJ { get; private set; } // 0xD4 NAAKJHEPHGP NFGKMIAHJHD FMJANBICBME

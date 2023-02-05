@@ -5,7 +5,7 @@ using XeApp.Game.Common;
 [System.Obsolete("Use LPPGENBEECK_musicMaster", true)]
 public class LPPGENBEECK {}
 
-//[WikiPageAttribute("Database/Musics", "db_musics", "Database/Musics")]
+[WikiPage(title : "Database/Music", filename : "db/music", templateName : "Database/Music")]
 public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 {
 	private List<HMJHLLPBCLD> OHLOHGGCCMD; // 0x30
@@ -15,6 +15,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 	public List<AIPEHINPIHC_ForcedSettingInfo> HBJDIFMCGAL_ForcedSettings; // 0x40
 	public List<AOJCMPIBFHD> DBBLKLCCHFC; // 0x44
 
+	[WikiProperty()]
 	public List<EONOEHOKBEB_Music> EPMMNEFADAP_Musics { get; private set; }// 0x20 // EONBIDEIFIA   HPBDACIJFEM DCLKBPALLLD
 	public List<KEODKEGFDLD_FreeMusicInfo> GEAANLPDJBP_FreeMusicDatas { get; private set; } // 0x24 BJHOBLKDBKK ONBBLMFKDMA IIGCCMELFCO
 	public List<DJNPIGEFPMF_StoryMusicInfo> CLHIABAKKJM_StoryMusicData { get; private set; } // 0x28 LECLIAKPOBM  PNNMFKPPDBI CHBJKIFMECH
@@ -656,12 +657,12 @@ public class KLBKPANJCPL_Score
 
 [System.Obsolete("Use EONOEHOKBEB_Music", true)]
 public class EONOEHOKBEB{}
-[WikiPage(title : "Database/Music/MusicInfo_{ID:D3}", filename : "musics/mus_{ID:D3}", templateName : "Database/Music/MusicInfo")]
+[WikiPage(title : "Database/Music/MusicInfo_{ID:D3}", filename : "db/music/mus_{ID:D3}", templateName : "Database/Music/MusicInfo")]
 public class EONOEHOKBEB_Music
 {
 	[WikiProperty("ID")]
 	public short DLAEJOBELBH_Id { get; set; } // CKJALIDGGOH // 0x8 MPGNHBOBFBD EPEMOAEGPLI
-	[WikiProperty("Cov", pageValidChecker: new object[] {typeof(WikiValidNotEqual), 0})]
+	[WikiProperty("Cov", containerValidChecker: new object[] {typeof(WikiValidNotEqual), 0})]
 	public short JNCPEGJGHOG_Cov { get; set; } // LABOODIMOII // 0xA HHEADMHBBPB GOFFKDDNACG
 	[WikiProperty("Cd")]
 	public short NNHOBFBCIIJ_Cd { get; set; } // GKMKHKHFBEI // 0xC AOBMNDMGGIO NIMNBBDNJMC

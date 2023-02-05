@@ -2,6 +2,7 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use EPPOHFLMDBC_DivaStats", true)]
 public class EPPOHFLMDBC { }
+[WikiSubobject(name : "DivaStat")]
 public class EPPOHFLMDBC_DivaStats
 {
 	public int FBGGEFFJJHB_Key = 0x1a915b; // 0x8
@@ -13,12 +14,19 @@ public class EPPOHFLMDBC_DivaStats
 	public int EAJBBFLFDHI_FoldCrypted; // 0x20
 	public int EHDLPKCCJIA_SupportCrypted; // 0x24
 
+	[WikiProperty("Level")]
 	public int ANAJIAENLNB_Level { get { return FBGGEFFJJHB_Key ^ MBCPMFPKNBA_LevelCrypted; } set { MBCPMFPKNBA_LevelCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC14D4 MMOMNMBKHJF 0xFC14E4 FEHNFGPFINK
+	[WikiProperty("Life", containerValidChecker: new object[] {typeof(WikiValidNotEqual), 0})]
 	public int HFIDCMNFBJG_Life { get { return FBGGEFFJJHB_Key ^ DBJFLJIMONP_LifeCrypted; } set { DBJFLJIMONP_LifeCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC14F4 CMDOHPBAFCO 0xFC1504 BJBDGCMJNEO
+	[WikiProperty("Soul")]
 	public int PFJCOCPKABN_Soul { get { return FBGGEFFJJHB_Key ^ NDKJOJLCJBI_SoulCrypted; } set { NDKJOJLCJBI_SoulCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1514 EJPPLFNLAAO 0xFC1524 NEMMJEJENFD
+	[WikiProperty("Vocal")]
 	public int JFJDLEMNKFE_Vocal { get { return FBGGEFFJJHB_Key ^ GLMAGOANCLM_VocalCrypted; } set { GLMAGOANCLM_VocalCrypted = FBGGEFFJJHB_Key ^ value; } }// 0xFC1534 GCMPLDKECFM 0xFC1544 CEHKELOHIBD
+	[WikiProperty("Charm")]
 	public int GDOLPGBLMEA_Charm { get { return FBGGEFFJJHB_Key ^ CHINMGJCEDH_CharmCrypted; } set { CHINMGJCEDH_CharmCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1554 LEHDODJMICA 0xFC1564 IKPOCJDOOGA
+	[WikiProperty("Fold")]
 	public int ONDFNOOICLE_Fold { get { return FBGGEFFJJHB_Key ^ EAJBBFLFDHI_FoldCrypted; } set { EAJBBFLFDHI_FoldCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1574 OGGOHKCANFG 0xFC1584 BKMHMPEBNPE
+	[WikiProperty("Support")]
 	public int HCFOMFDPGEC_Support { get { return FBGGEFFJJHB_Key ^ EHDLPKCCJIA_SupportCrypted; } set { EHDLPKCCJIA_SupportCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1594 GGIDKCOMCJL 0xFC15A4 LAIHOHGICJD
 
 	// // RVA: 0xFC15B4 Offset: 0xFC15B4 VA: 0xFC15B4
@@ -80,11 +88,12 @@ public class EPPOHFLMDBC_DivaStats
 
 [System.Obsolete("Use BJPLLEBHAGO_DivaInfo", true)]
 public class BJPLLEBHAGO { }
-[WikiPage(title : "Database/Diva/Diva_{ID:D3}", filename : "diva/dv_{ID:D3}", templateName : "Database/Diva/DivaInfo")]
+[WikiPage(title : "Database/Diva/Diva_{ID:D3}", filename : "db/diva/dv_{ID:D3}", templateName : "Database/Diva/DivaInfo")]
 public class BJPLLEBHAGO_DivaInfo
 {
 	public sbyte DOAJJALOKLI; // 0xD
 	public sbyte PKNONBBKCCP; // 0xE
+	[WikiProperty("StatsByLevel", parentId : "ID")]
 	public List<EPPOHFLMDBC_DivaStats> CMCKNKKCNDK_StatsByLevel = new List<EPPOHFLMDBC_DivaStats>(); // 0x14
 
 	[WikiProperty("Attr")]
