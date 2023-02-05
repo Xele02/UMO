@@ -4,12 +4,7 @@
  |OfficialName=比較用譜面
  |VocalName=
  |VocalNameLF=
- |Description=作品：
-
-歌手：
-
-作詞：
-作曲：
+ |Description=作品：<br/><br/>歌手：<br/><br/>作詞：<br/>作曲：
  |BuyURL=
  |StoryDesc=
  |StoryTitle=

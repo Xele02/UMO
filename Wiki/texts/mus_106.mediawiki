@@ -3,23 +3,10 @@
  |MusicName=ワルキューレのバースデイソング
  |OfficialName=ワルキューレのバースデイソング
  |VocalName=ワルキューレ　美雲ΔJUNNA カナメΔ安野希世乃 レイナΔ東山奈央 マキナΔ西田望見
- |VocalNameLF=ワルキューレ　美雲ΔJUNNA　カナメΔ安野希世乃
-レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：マクロスΔ
-
-歌手：ワルキューレ
-　　　美雲ΔJUNNA　カナメΔ安野希世乃
-　　　レイナΔ東山奈央　マキナΔ西田望見
-
-作詞：Happy Field
-作曲：Happy Field
+ |VocalNameLF=ワルキューレ　美雲ΔJUNNA　カナメΔ安野希世乃<br/>レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：マクロスΔ<br/><br/>歌手：ワルキューレ<br/>　　　美雲ΔJUNNA　カナメΔ安野希世乃<br/>　　　レイナΔ東山奈央　マキナΔ西田望見<br/><br/>作詞：Happy Field<br/>作曲：Happy Field
  |BuyURL=https://recochoku.jp/song/S1003536998/single?ds=1004922775
- |StoryDesc=フレイアのサプライズパーティーの準備が進む中、
-美雲にも声を掛けていたカナメ。普段の美雲とは違う
-含みのある返事に、カナメは美雲の変化を感じていた。
-
-そしてサプライズ当日、パーティーに現れた美雲は
-仲間たちとともにフレイアへ歌を贈ったのであった。
+ |StoryDesc=フレイアのサプライズパーティーの準備が進む中、<br/>美雲にも声を掛けていたカナメ。普段の美雲とは違う<br/>含みのある返事に、カナメは美雲の変化を感じていた。<br/><br/>そしてサプライズ当日、パーティーに現れた美雲は<br/>仲間たちとともにフレイアへ歌を贈ったのであった。
  |StoryTitle=「どんなものか知りたかったから」
  |BannerId=4
  |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20867

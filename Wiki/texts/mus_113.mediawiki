@@ -3,17 +3,8 @@
  |MusicName=未来はオンナのためにある
  |OfficialName=未来はオンナのためにある
  |VocalName=ワルキューレ　美雲ΔJUNNA フレイアΔ鈴木みのり カナメΔ安野希世乃 レイナΔ東山奈央 マキナΔ西田望見
- |VocalNameLF=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり
-カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
- |Description=作品：劇場版マクロスΔ 絶対LIVE!!!!!!
-
-歌手：ワルキューレ
-　　　美雲ΔJUNNA　フレイアΔ鈴木みのり
-　　　カナメΔ安野希世乃　レイナΔ東山奈央
-　　　マキナΔ西田望見
-
-作詞：岩里祐穂
-作曲：齋藤大
+ |VocalNameLF=ワルキューレ　美雲ΔJUNNA　フレイアΔ鈴木みのり<br/>カナメΔ安野希世乃　レイナΔ東山奈央　マキナΔ西田望見
+ |Description=作品：劇場版マクロスΔ 絶対LIVE!!!!!!<br/><br/>歌手：ワルキューレ<br/>　　　美雲ΔJUNNA　フレイアΔ鈴木みのり<br/>　　　カナメΔ安野希世乃　レイナΔ東山奈央<br/>　　　マキナΔ西田望見<br/><br/>作詞：岩里祐穂<br/>作曲：齋藤大
  |BuyURL=https://recochoku.jp/song/S1009147844/single?ds=1013650104
  |StoryDesc=
  |StoryTitle=

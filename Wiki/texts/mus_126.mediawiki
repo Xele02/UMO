@@ -4,12 +4,7 @@
  |OfficialName=君に届け→
  |VocalName=Fire Bomber
  |VocalNameLF=Fire Bomber
- |Description=作品：マクロス7
-
-歌手：Fire Bomber
-
-作詞：M.MEG
-作曲：M.PROJECT
+ |Description=作品：マクロス7<br/><br/>歌手：Fire Bomber<br/><br/>作詞：M.MEG<br/>作曲：M.PROJECT
  |BuyURL=https://recochoku.jp/song/S20141956/single?ds=34295745
  |StoryDesc=
  |StoryTitle=

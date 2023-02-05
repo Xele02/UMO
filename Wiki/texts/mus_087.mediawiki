@@ -4,19 +4,9 @@
  |OfficialName=ランカと Brand New Peach
  |VocalName=ランカ・リー＝中島愛
  |VocalNameLF=ランカ・リー＝中島愛
- |Description=作品：マクロスF
-
-歌手：ランカ・リー＝中島愛
-
-作詞：ROBIN ROBINSON
-作曲：菅野よう子
+ |Description=作品：マクロスF<br/><br/>歌手：ランカ・リー＝中島愛<br/><br/>作詞：ROBIN ROBINSON<br/>作曲：菅野よう子
  |BuyURL=http://recochoku.jp/song/S1007350869/single?ds=1010848272
- |StoryDesc=今や売れっ子として忙しい日々を過ごすランカ。
-こうして憧れのステージに立てたのも、アルトが
-背中を押してくれたおかげだとランカは感じていた。
-
-そして、ランカの心の中で芽生える甘く切ない感情。
-ランカがそれを理解するのは、もう少しだけ後の話…
+ |StoryDesc=今や売れっ子として忙しい日々を過ごすランカ。<br/>こうして憧れのステージに立てたのも、アルトが<br/>背中を押してくれたおかげだとランカは感じていた。<br/><br/>そして、ランカの心の中で芽生える甘く切ない感情。<br/>ランカがそれを理解するのは、もう少しだけ後の話…
  |StoryTitle=「アルト君がいてくれたから…」
  |BannerId=0
  |AnmStoreURL=

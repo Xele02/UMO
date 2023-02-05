@@ -1,0 +1,508 @@
+{{Texts/Bank/BankData
+}}
+
+{{Texts/Bank/BankValue:
+ | Key=talk_time_01
+ | Value=この衣装、似合っとる？<br/>どうかねぇ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_02
+ | Value=頑張るのはええけど、<br/>あんまり無理しちゃいけんよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_03
+ | Value=おぉ～、いい風が吹いとる～
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_04
+ | Value=レッスンは大変やけど、<br/>頑張るかんね～！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_05
+ | Value=ウィンダミアのリンゴを食べて、<br/>元気100倍！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_06
+ | Value=あれ？<br/>どこに行ったんかねぇ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_07
+ | Value=♪～
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_08
+ | Value=歌は元気！<br/>…うーん、<br/>もうちょっと元気よくかね…？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_01
+ | Value=おはようさん。い～い朝やねぇ～
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_02
+ | Value=今日も元気に歌うかんね！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_03
+ | Value=うーん、お腹が減ってきたんよ…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_04
+ | Value=ふわぁ～…<br/>もうこんな時間やんかぁ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_05
+ | Value=ぶっちゃぶちゃ眠いんよ…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_01
+ | Value=おかえり！<br/>ずーっと待っとったんやで！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_02
+ | Value=待っとったよ！<br/>今日も頑張るかんね！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_birthday_01
+ | Value=結婚なんてせん！…って、<br/>え？祝ってくれるん？<br/>わぁ、あんがと～！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_01
+ | Value=今年も、いっぱい、いっぱい、<br/>いーっぱい好きな歌を歌いたい！<br/>大好きなみんなと！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_02
+ | Value=うう…特製リンゴ型チョコ、<br/>ハヤテに『クラゲ型だろー？』って<br/>言われたんよ…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_03
+ | Value=今日は節分だから、<br/>みんなと豆まきするんよ！<br/>今年の鬼は、ハヤテ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_04
+ | Value=マキナさんお手製の<br/>ワルキューレひな人形、<br/>ぶっちゃきゃわわなんよ～！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_05
+ | Value=気を使わんでもええのに…<br/>あんがとう
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_06
+ | Value=さてと、どんな嘘をつこうかねぇ～！<br/>うっひっひー！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_07
+ | Value=実家に帰る人が多いんやね…<br/>ウィンダミアのみんな、<br/>元気にしとるかな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_08
+ | Value=もし私が結婚するとしたら…<br/>そうやねぇ、優しくて、明るくて、<br/>一緒にいて楽しい人かね！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_09
+ | Value=短冊に願いごとを書けばいいんよね<br/>…あ！もう、勝手に見ちゃいけーん！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_10
+ | Value=夏ってこんなに暑いんやね…<br/>ごりごり…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_11
+ | Value=お祭りの色。<br/>ぽわぽわ、きらきら、夢の色…<br/>なんだか歌いたくなってきたんよ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_12
+ | Value=水に映るお月様を見るのが<br/>オツなんよ、知っとった？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_13
+ | Value=うう…レイナさんに悪戯されて、<br/>えらい目にあったんよ…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_14
+ | Value=文化祭…？ああ、でっかるちゃーな<br/>お祭りってことやね！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_15
+ | Value=ホワイトクリスマスにならんかねぇ…<br/>雪が降ったら、きっと素敵な思い出に<br/>なると思うんよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_16
+ | Value=今年も今日でおしまいなんやね…<br/>ちょっとさみしいような、<br/>また来年が楽しみなような…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_17
+ | Value=ハーフミリオンってやつやね！<br/>もっともっと、<br/>ぶっちゃ頑張るかんね～！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_18
+ | Value=いっぱい歌を聴いてくれて、<br/>ほんとに、ほんとにありがとね！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_19
+ | Value=200万ダウンロード！<br/>ごりごりー！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_20
+ | Value=1周年やね！いつも応援あんがとー！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_01
+ | Value=ん、なんか用かねぇ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_02
+ | Value=もー、あんまりツンツンしたら<br/>いかんよー
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_03
+ | Value=だから、触るなって<br/>言っとろーにぃ！エッチ～！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_04
+ | Value=この衣装、似合っとる？<br/>どうかねぇ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_05
+ | Value=頑張るのはええけど、<br/>あんまり無理しちゃいけんよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_06
+ | Value=おぉ～、いい風が吹いとる～
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_07
+ | Value=ん？<br/>ルンがそんなに気になるんかね？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_08
+ | Value=わわわ！そんなに撫でたら<br/>髪がぐしゃぐしゃになるやろー！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_01
+ | Value=ほい！これが欲しかったんやろ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_02
+ | Value=次も楽しみにしとってよ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_01
+ | Value=ワルキューレの一員として、<br/>シミュレーションでもライブでも<br/>ごりごり張り切って歌うかんね！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_01
+ | Value=おおお！なかなかやねぇ～
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_02
+ | Value=ふっふーん、<br/>私もちゃんと成長しとるんよ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_03
+ | Value=ん～！<br/>ルンがルンルンしてきた～！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_01
+ | Value=ルンルン！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_02
+ | Value=ええね～！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_03
+ | Value=うひひひひ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_01
+ | Value=あんがとね！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_02
+ | Value=お腹がすいて思いっきり歌えん…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_03
+ | Value=はぁ…どこかに<br/>おいしいリンゴ、落ちてないかねぇ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_04
+ | Value=そろそろごはんの時間やね！<br/>裸喰娘娘に行ってみようかね？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_05
+ | Value=う～ん…<br/>なーんか元気が出ないんよね…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_06
+ | Value=暇やねぇ…<br/>何か楽しいことでもないかねぇ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_07
+ | Value=もっと、こう…ごりごりーって<br/>気分になりたいんよね！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_08
+ | Value=身だしなみが大事って<br/>言われたんやけど<br/>どうすればいいんかねぇ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_09
+ | Value=おしゃれなもんを身につけると<br/>元気が出るって聞いたんやけど…<br/>本当かね？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_10
+ | Value=いい天気やねぇ…<br/>こういうときはちょっと着飾って<br/>出かけたくなるんよね！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_11
+ | Value=ええね～！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_01
+ | Value=ほぁっ！？<br/>なななな、なんね！？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_02
+ | Value=ほいほいー？<br/>呼んだかね？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_03
+ | Value=うひひ～。<br/>もしかして…<br/>構ってほしいんかね～？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_04
+ | Value=ん～！<br/>ルンがルンルンしてきた～！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_05
+ | Value=元気かねっ？<br/>…うんうん！<br/>元気なのが一番やね！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_06
+ | Value=にひひ～。<br/>この衣装、ぶっちゃかわええやろ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_07
+ | Value=うう…<br/>そんなに見つめられると、<br/>恥ずかしいんよ…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_08
+ | Value=ハヤテはどこにいったんかねぇ…？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_09
+ | Value=も～！あんまりツンツンすると、<br/>怒るかんね～！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_10
+ | Value=よかったら、<br/>一緒にリンゴを食べんかね～？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_21
+ | Value=フレイアBD
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_22
+ | Value=美雲さんの誕生日…<br/>思い出に残るように、ぶっちゃ<br/>ごりごりなパーティーにせんと！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_23
+ | Value=カナメさん、お誕生日おめでとう<br/>ございます！プレゼントのお酒、<br/>おいしいといいんやけど…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_24
+ | Value=マキナさん、お誕生日おめでとう<br/>ございます！いつも優しい<br/>マキナさんが大好きです！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_25
+ | Value=誕生日のレイナさん本人よりも、<br/>マキナさんのほうがぶっちゃ<br/>テンション高いんよ…！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_26
+ | Value=ランカさん、お誕生日おめでとう<br/>ございます！今度、パインケーキの<br/>作り方教えてください！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_27
+ | Value=シェリルさんへのお誕生日プレゼント<br/>は、美雲さんと一緒に考えたんよ！<br/>喜んでくれるかねぇ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_28
+ | Value=ミラージュさんと一緒に、<br/>ミレーヌさんへの誕生日プレゼントを<br/>選んでるんやけど…何がいいかねぇ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_29
+ | Value=バサラさんのお誕生日祝いに、<br/>私と美雲さんで、バサラさんの<br/>名曲を歌うことにしたんよ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_30
+ | Value=娘々特製ミンメイさん<br/>バースデーケーキ…！<br/>ぶっちゃおいしそうやねぇ…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_31
+ | Value=ハヤテ…誕生日プレゼント、<br/>喜んでくれるかね？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_32
+ | Value=今日はミラージュさんのお誕生日！<br/>ほんにほんに、<br/>おめでとうございます！　
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_33
+ | Value=メッサー
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_34
+ | Value=アラド
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_35
+ | Value=チャック
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_36
+ | Value=アルト
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_37
+ | Value=オズマ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_38
+ | Value=レイ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_39
+ | Value=輝
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_40
+ | Value=ガムリン
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_41
+ | Value=未沙
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_42
+ | Value=私たちが映画になるんよ！<br/>一緒に見に行かんかね！？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_43
+ | Value=いっぱいいっぱい、い～っぱい<br/>遊んでくれて、本当にあんがとう！<br/>あなたのこと、絶対忘れないんよ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_44
+ | Value=リンゴを食べるときは私のことも<br/>思い出してくれると嬉しいんよ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_45
+ | Value=シェリルさんはぶっちゃ奇麗で、<br/>ランカさんはごりごり可愛くて…<br/>本当に素敵な人たちやったねぇ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_46
+ | Value=バサラさんとミレーヌさん、2人とも<br/>ぶっちゃ熱い人たちだったんよ！<br/>私たちも負けとれんね、ファイアー！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_47
+ | Value=ミンメイさんともこれでお別れなん<br/>やね…ミンメイさんと一緒に<br/>歌えたなんて、本当に夢みたいなんよ
+}}
+                    [[Category:Generated]]

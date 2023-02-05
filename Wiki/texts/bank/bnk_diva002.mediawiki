@@ -1,0 +1,508 @@
+{{Texts/Bank/BankData
+}}
+
+{{Texts/Bank/BankValue:
+ | Key=talk_time_01
+ | Value=女神の歌で、<br/>あなたに力をあげるわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_02
+ | Value=ほら、<br/>早く私を楽しませてごらんなさい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_03
+ | Value=身体のケアは大事よ。<br/>特に喉は、しっかりしないとね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_04
+ | Value=人はなぜ、歌を歌うのかしら？<br/>そして、私も…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_05
+ | Value=私のことを知りたいの？<br/>なら、私の歌を聴きなさい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_06
+ | Value=…どこに行ったのかしらね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_07
+ | Value=あら…<br/>あんなところにウミネコ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_08
+ | Value=女神もたまには暇を感じたくなるのよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_01
+ | Value=おはよう。<br/>お目覚めはいかが？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_02
+ | Value=輝く太陽のように、<br/>力強く歌いましょうか
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_03
+ | Value=一緒に休憩する？<br/>フフフ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_04
+ | Value=きれいな夜ね。<br/>まだまだ歌えるわよ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_05
+ | Value=もう眠るわ。<br/>体調管理が大事なの
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_01
+ | Value=一度女神に魅せられたら、<br/>逃れられないものよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_02
+ | Value=今日も頑張りなさい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_birthday_01
+ | Value=私、誕生日なんて<br/>祝ってもらったことがないの
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_01
+ | Value=不思議ね、年が明ける瞬間って。<br/>何もかも、新しくなったような<br/>気分になるわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_02
+ | Value=今日はバレンタイン。<br/>甘いチョコレートとともに、<br/>愛を伝えあう日…なんですって
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_03
+ | Value=節分ね。<br/>豆まきをするといっていたけど、<br/>楽しいのかしら？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_04
+ | Value=ひな祭り、ね…<br/>どんな祭りになるのか楽しみだわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_05
+ | Value=お返し？せっかくだから<br/>もらってあげるわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_06
+ | Value=実は、私、カナメの妹なの。<br/>なんて嘘よ、<br/>今日はエイプリルフールだもの
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_07
+ | Value=休みというのは、<br/>気の向くままに過ごすものよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_08
+ | Value=ウェディングドレスを着たら、<br/>みんな寂しそうな顔をしていたの。<br/>何故かしら
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_09
+ | Value=星は歌う。離れ離れになった<br/>恋人たちの悲しき歌を…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_10
+ | Value=スイカ割り、ビーチフラッグ…<br/>面白いわね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_11
+ | Value=ミラージュがそわそわしながら<br/>お祭りに行ったわ。<br/>ふふっ、楽しみにしてたのね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_12
+ | Value=月見団子？…ひとつだけいただくわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_13
+ | Value=マキナが仮装用の衣装を用意して<br/>くれるそうよ。どんなハロウィンに<br/>なるのかしら
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_14
+ | Value=戦場でも文化祭でも、<br/>ライブなら全力で歌うだけよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_15
+ | Value=メリークリスマス。<br/>空に雪降る神秘の夜…<br/>素敵な聖夜が訪れるといいわね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_16
+ | Value=来年はどんな出会いがあって、<br/>どんな思い出が紡がれるのかしら
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_17
+ | Value=すごい数の観客…<br/>でも、まだ終わりじゃないわよ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_18
+ | Value=100万人の期待、<br/>私が応えてみせるわ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_19
+ | Value=200万ダウンロード…<br/>面白くなってきたじゃない
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_20
+ | Value=一周年を迎えられたのも、<br/>あなたのおかげね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_01
+ | Value=あら、どうしたの？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_02
+ | Value=まあ、なかなかいい度胸じゃない
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_03
+ | Value=ふふっ、おいたがすぎるわよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_04
+ | Value=女神の歌で、<br/>あなたに力をあげるわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_05
+ | Value=ほら、<br/>早く私を楽しませてごらんなさい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_06
+ | Value=身体のケアは大事よ。<br/>特に喉は、しっかりしないとね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_07
+ | Value=何か用？<br/>話くらいなら聞いてあげるわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_08
+ | Value=…撫でられるって<br/>不思議な気持ちね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_01
+ | Value=女神からのおくりものよ、<br/>受け取って
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_02
+ | Value=きっとあなたの力になってくれるわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_01
+ | Value=なかなかいいライブだったわ。<br/>シミュレーションというのも、<br/>たまには悪くないものね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_01
+ | Value=努力は報われる。<br/>そう言うでしょう？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_02
+ | Value=自分の世界が少しずつ広がるのは<br/>不思議な気分ね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_03
+ | Value=『特別』って響き…<br/>惹かれるものがあるわよね？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_01
+ | Value=ふふっ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_02
+ | Value=いいわね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_03
+ | Value=上出来だわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_01
+ | Value=ありがとう
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_02
+ | Value=ここにはまだ食べたことないものが<br/>たくさんあるわね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_03
+ | Value=たまには、いつもと違うものを<br/>食べてみようかしら
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_04
+ | Value=食事の時間ね。<br/>少しだけ休憩しようかしら
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_05
+ | Value=元気がない…？<br/>自分じゃよくわからないわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_06
+ | Value=ふふっ、いつもと違う<br/>楽しいことをしてみたいわね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_07
+ | Value=気分転換…っていうものをするには<br/>どうすればいいのかしら
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_08
+ | Value=こう見えて、香りや肌触りには<br/>気を使っているの
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_09
+ | Value=おしゃれなものを持つと<br/>気分が変わると聞いたわ…<br/>そういうもの？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_10
+ | Value=あまり買い物はしないけれど、<br/>たまには悪くないわね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_11
+ | Value=いいわね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_01
+ | Value=私を呼んだ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_02
+ | Value=女神の歌声を聞きたいの？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_03
+ | Value=少し話相手になってくれる？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_04
+ | Value=…クラゲチップスって<br/>美味しいのかしら
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_05
+ | Value=水は冷たい。風は涼しい。<br/>人の手は…あたたかい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_06
+ | Value=今日も女神の歌を、<br/>銀河に響かせるわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_07
+ | Value=魅力的な衣装は、<br/>歌を魅せるためにある<br/>…そうでしょう？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_08
+ | Value=暇なら、一緒に海に行く？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_09
+ | Value=まだまだ、<br/>私について来られるでしょう？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_10
+ | Value=ふふ。もっと話しましょう？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_21
+ | Value=フレイアのバースデーパーティーの<br/>準備…今年は、私も参加してみよう<br/>かしら
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_22
+ | Value=美雲
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_23
+ | Value=カナメ、誕生日おめでとう。<br/>みんな色々準備をしているようね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_24
+ | Value=マキナ、誕生日おめでとう。<br/>今日はあなたの選んだ服を着てあげる
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_25
+ | Value=レイナの誕生日パーティー、<br/>今年もマキナがすごく<br/>張り切っていたわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_26
+ | Value=ランカ、誕生日おめでとう。<br/>にぎやかな一日になりそうね。
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_27
+ | Value=シェリル…ランカとアルトに<br/>祝われて、とても幸せそうね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_28
+ | Value=ねぇ、ガムリン。ミレーヌの誕生日を<br/>祝い損ねないように気をつけなさい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_29
+ | Value=ガムリン、バサラへの誕生日<br/>プレゼントを考えているみたいね。<br/>何を贈るつもりなのかしら
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_30
+ | Value=今日のミンメイの歌声、<br/>とても綺麗な色をしているわ。<br/>愛に満ちた星雲の色…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_31
+ | Value=ハヤテ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_32
+ | Value=ミラージュ。誕生日おめでとう<br/>あなたにはいつも感謝しているわ<br/>…本当よ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_33
+ | Value=誕生日おめでとう、メッサー。<br/>…祝われるのは苦手、<br/>って顔してるわね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_34
+ | Value=アラド
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_35
+ | Value=チャック
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_36
+ | Value=アルト
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_37
+ | Value=オズマ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_38
+ | Value=レイ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_39
+ | Value=輝
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_40
+ | Value=ガムリン
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_41
+ | Value=未沙
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_42
+ | Value=私たちが映画になるらしいわ。<br/>なかなか興味深いわね
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_43
+ | Value=私たちがここまでやってこれたのも、<br/>すべてあなたのおかげよ。…ふふっ<br/>嘘なんかじゃないわ、本当のことよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_44
+ | Value=私、あなたのこと尊敬してるのよ。<br/>これだけの歌姫たちを支えたなんて、<br/>並大抵のことじゃない…そうでしょ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_45
+ | Value=別れることになったとしても、<br/>私たちの繋がりは決して消えない。<br/>そう、歌は死なない…いい言葉ね。
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_46
+ | Value=ミラージュはミレーヌとずいぶん<br/>話し込んでいたみたいね。<br/>やっぱり寂しいんじゃないかしら。
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_47
+ | Value=時空を超えて再び銀河のために歌った<br/>ミンメイ。彼女は納得しないでしょう<br/>けど、紛れもなく伝説の歌姫だったわ
+}}
+                    [[Category:Generated]]

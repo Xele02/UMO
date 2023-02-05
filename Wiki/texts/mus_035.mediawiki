@@ -4,19 +4,9 @@
  |OfficialName=DYNAMITE EXPLOSION
  |VocalName=Fire Bomber
  |VocalNameLF=Fire Bomber
- |Description=作品：マクロス ダイナマイト7
-
-歌手：Fire Bomber
-
-作詞：古屋敏之
-作曲：福山芳樹
+ |Description=作品：マクロス ダイナマイト7<br/><br/>歌手：Fire Bomber<br/><br/>作詞：古屋敏之<br/>作曲：福山芳樹
  |BuyURL=https://recochoku.jp/song/S14204250/single?ds=34294998
- |StoryDesc=メンバーに黙ってマクロス7船団を去り、
-あてもない銀河放浪の旅に出ていたバサラ。
-
-惑星ゾラの地で出会った「銀河クジラ」と、それを
-取り巻くゾラ人たち。銀河の辺境で様々なアクシデントに
-見舞われながらも、バサラはいつもどおり歌い始める。
+ |StoryDesc=メンバーに黙ってマクロス7船団を去り、<br/>あてもない銀河放浪の旅に出ていたバサラ。<br/><br/>惑星ゾラの地で出会った「銀河クジラ」と、それを<br/>取り巻くゾラ人たち。銀河の辺境で様々なアクシデントに<br/>見舞われながらも、バサラはいつもどおり歌い始める。
  |StoryTitle=「クジラか…いい音させやがるぜ！」
  |BannerId=0
  |AnmStoreURL=

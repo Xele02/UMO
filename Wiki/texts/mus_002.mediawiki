@@ -4,19 +4,9 @@
  |OfficialName=PLANET DANCE
  |VocalName=Fire Bomber
  |VocalNameLF=Fire Bomber
- |Description=作品：マクロス7
-
-歌手：Fire Bomber
-
-作詞：K.INOJO
-作曲：須藤英樹
+ |Description=作品：マクロス7<br/><br/>歌手：Fire Bomber<br/><br/>作詞：K.INOJO<br/>作曲：須藤英樹
  |BuyURL=https://recochoku.jp/song/S22001139/
- |StoryDesc=マクロス7船団の片隅で人気を博し始めているバンド、
-Fire Bomber。メンバー全員が高い技術を持っている。
-
-しかし、メインボーカルの熱気バサラという男が曲者
-だった。この日もバサラはライブに遅刻したばかりか、
-なんとはるか上空からステージ上に降り立ってみせた。
+ |StoryDesc=マクロス7船団の片隅で人気を博し始めているバンド、<br/>Fire Bomber。メンバー全員が高い技術を持っている。<br/><br/>しかし、メインボーカルの熱気バサラという男が曲者<br/>だった。この日もバサラはライブに遅刻したばかりか、<br/>なんとはるか上空からステージ上に降り立ってみせた。
  |StoryTitle=「待たせたな！」
  |BannerId=2
  |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597

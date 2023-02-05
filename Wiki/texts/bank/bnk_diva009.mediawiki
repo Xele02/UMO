@@ -1,0 +1,508 @@
+{{Texts/Bank/BankData
+}}
+
+{{Texts/Bank/BankValue:
+ | Key=talk_time_01
+ | Value=あー、腹減った。<br/>なんかねーかな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_02
+ | Value=俺の歌を聞けば、<br/>いつだってパワーが湧いてくるぜ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_03
+ | Value=散歩ってのもいいもんだぜ。<br/>いいフレーズが浮かんでくるんだ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_04
+ | Value=難しいことなんて<br/>考えてねーで、歌おうぜ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_05
+ | Value=俺は好きな時に歌うぜ。<br/>時間や場所なんて関係ねぇ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_06
+ | Value=おい、返事くらいしろよ。<br/>ライブが始まるぞ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_07
+ | Value=…んー<br/>…この音だとどうもしっくりこねぇな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_08
+ | Value=なんだ？ミレーヌが呼んでんのか？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_01
+ | Value=んん…<br/>まだこんな時間かよ…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_02
+ | Value=さ、今日も1日、熱くいくぜ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_03
+ | Value=飯食わねえと、<br/>ライブはできねぇぞ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_04
+ | Value=今日も俺の歌、<br/>聞いてくれたのか？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_05
+ | Value=ん～…、なんか違うな…<br/>おっ、いたのかよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_01
+ | Value=やっぱり、<br/>俺の歌が忘れられなかったのか？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_02
+ | Value=今日も気合入れていくぜ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_birthday_01
+ | Value=ん？俺の誕生日プレゼント？<br/>…へぇ、嬉しいねぇ。ありがとよ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_01
+ | Value=正月休み？へっ、関係ねぇな。<br/>盆も正月も俺は歌うだけだ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_02
+ | Value=ミレーヌがチョコを作ったんだと。<br/>お前も一緒に食うか？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_03
+ | Value=節分ねぇ…そんなに興味ねぇな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_04
+ | Value=なんだかいい匂いがするな…<br/>桃の花の匂いか？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_05
+ | Value=ホワイトデーか。そういや、<br/>ガムリンがお返しがどうのって<br/>話してたな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_06
+ | Value=今日はエイプリルフールだな。<br/>ミレーヌがバレバレの嘘を<br/>ついてたぜ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_07
+ | Value=ゴールデンウィークって<br/>何がゴールデンなんだ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_08
+ | Value=ミレーヌがウェディングドレス<br/>見てニヤけっぱなしなんだ。<br/>お前にはまだ早いってーの
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_09
+ | Value=星が綺麗だな…こういう日は、<br/>星を眺めながら歌うに限る
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_10
+ | Value=歌でスイカを割る？<br/>いいぜ、試してみようじゃねぇか！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_11
+ | Value=花火の音って、いいビートだよな。<br/>嫌いじゃないぜ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_12
+ | Value=月を見ながら作曲すると、<br/>結構はかどるんだぜ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_13
+ | Value=俺の歌でド派手なハロウィンに<br/>してやるぜ！<br/>トリック・オア・ファイヤー！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_14
+ | Value=文化の祭りって何かって？<br/>んなもん、俺の歌を聞けばわかるぜ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_15
+ | Value=サンタの格好でライブすることに<br/>なったんだけどよ…髭がギターに<br/>ひっかかって、やりづれぇぞ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_16
+ | Value=年越しの準備はできてるか？<br/>来年も燃えるぜ！ファイヤー！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_17
+ | Value=オーディエンスが大勢いるな！<br/>いいね、燃えてきたぜー！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_18
+ | Value=オーディエンス100万人か！<br/>サイッコーだぜ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_19
+ | Value=200万ダウンロード達成！<br/>やったぜ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_20
+ | Value=何周年だろうと関係ねぇよ、<br/>俺は歌うだけだ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_01
+ | Value=なんだ、<br/>俺の歌が聞きたいのか？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_02
+ | Value=おいおい、<br/>くすぐったいじゃねーか。
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_03
+ | Value=何だってんだ、この気持ち。<br/>熱いぜ…！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_04
+ | Value=あー、腹減った。<br/>なんかねーかな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_05
+ | Value=俺の歌を聞けば、<br/>いつだってパワーが湧いてくるぜ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_06
+ | Value=散歩ってのもいいもんだぜ。<br/>いいフレーズが浮かんでくるんだ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_07
+ | Value=なんだよ、くすぐってぇな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_08
+ | Value=そうだな…<br/>お前の好きな歌、教えてくれよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_01
+ | Value=ほらよ、<br/>こいつを受け取ってくれ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_02
+ | Value=プレゼントってやつだ<br/>好きに使ってくれよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_01
+ | Value=やっぱ、歌は生で聞くもんだぜ！<br/>俺のハートを感じたけりゃ、<br/>次のライブも楽しみにしててくれ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_01
+ | Value=へぇ…なかなかやるじゃねぇか
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_02
+ | Value=…お前の熱いハート、<br/>しっかり伝わったぜ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_03
+ | Value=スペシャルなプレゼントだ。<br/>今回だけだぞ？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_01
+ | Value=いいねぇ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_02
+ | Value=燃えるぜ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_03
+ | Value=へへっ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_01
+ | Value=ありがとよ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_02
+ | Value=腹減ったな…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_03
+ | Value=なんつーか、こう…<br/>刺激のあるもんが食いてぇな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_04
+ | Value=食いたいときに食う。<br/>細かいことは気にしねぇぜ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_05
+ | Value=調子が出ねぇ気がするな…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_06
+ | Value=たまには気分を変えてみるってのも<br/>悪くねぇな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_07
+ | Value=気分転換ってやつでもしてみるか
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_08
+ | Value=身だしなみねぇ…<br/>そんなに大事なことか？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_09
+ | Value=俺の部屋？<br/>別に何も置いてねぇよ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_10
+ | Value=身の回りに気を使えって<br/>ミレーヌがうるせぇんだよな…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_11
+ | Value=いいねぇ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_01
+ | Value=よう、なんか用か？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_02
+ | Value=なぁ、ライブに行こうぜ。<br/>歌いてぇんだ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_03
+ | Value=ハイタッチか？いいぜ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_04
+ | Value=部屋にこもって新曲でも書くか…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_05
+ | Value=俺の部屋に来たい？いいけど、<br/>レモネードぐらいしかねぇぞ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_06
+ | Value=レイのやつ、また俺のバルキリーを<br/>持っていきやがった…<br/>早く返せっての
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_07
+ | Value=衣装なんてなんでもいいが、<br/>ずっと同じってのも飽きてくるな。<br/>刺激が欲しいぜ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_08
+ | Value=あんた、暇か？<br/>なら、俺の歌を聞いていけ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_09
+ | Value=退屈そうだな。なら、<br/>俺がハートをビンビンにしてやるぜ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_10
+ | Value=面白ぇやつだな…<br/>あんたと歌ってみたいぜ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_21
+ | Value=フレイアの誕生日パーティーを見て<br/>きたんだけどよ。裸喰娘娘の料理…<br/>うまそうだったな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_22
+ | Value=ワルキューレの奴ら、美雲に<br/>バースデーソングをプレゼント<br/>したらしいぜ。最高じゃねぇか…！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_23
+ | Value=カナメ、誕生日なんだってな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_24
+ | Value=マキナの誕生日だったのか…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_25
+ | Value=今日はレイナの誕生日なんだと。<br/>後で一曲、祝いの曲でも<br/>歌ってやるか
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_26
+ | Value=今日はランカの誕生日なのか？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_27
+ | Value=シェリルの奴、<br/>今日は一段とギラギラしてるな。<br/>最高の歌声じゃねぇか！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_28
+ | Value=ミレーヌがずっとニヤニヤ<br/>してるんだ。誕生日がそんなに<br/>嬉しいのか？ったく…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_29
+ | Value=バサラ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_30
+ | Value=ミンメイのバースデーライブには、<br/>たくさんの人が集まるらしい。<br/>あいつの歌がそうさせるんだろうな…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_31
+ | Value=ハヤテ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_32
+ | Value=ミラージュ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_33
+ | Value=メッサー
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_34
+ | Value=アラド
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_35
+ | Value=チャック
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_36
+ | Value=アルト
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_37
+ | Value=オズマ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_38
+ | Value=レイへの誕生日プレゼントは、<br/>ミレーヌとビヒーダに任せて…<br/>俺は記念の新曲でも書くか
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_39
+ | Value=輝
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_40
+ | Value=ミレーヌから、ガムリンの誕生日<br/>プレゼントを考えろって言われたん<br/>だけどよ…俺が考えるのか？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_41
+ | Value=未沙
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_42
+ | Value=俺たちの映画が公開されるんだと
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_43
+ | Value=思えばずいぶんと世話になったな。<br/>お前とのセッション、最高だったぜ！<br/>またいつかやろうな！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_44
+ | Value=ガムリンもお前のことを褒めてたぜ。<br/>これまでの協力に感謝しますってな。<br/>あいつもほんと生真面目だよな
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_45
+ | Value=バジュラやウィンダミアの奴らにも、<br/>俺の歌を聞かせてやりてぇな。<br/>ま、次の楽しみってことにしとくか。
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_46
+ | Value=銀河を見て、時空を超えて…へへっ、<br/>次は何が起きるのか楽しみだぜ。<br/>その前にまた旅にでも出るか
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_47
+ | Value=ミレーヌのやつが最後にミンメイに<br/>挨拶しようってうるせぇんだ。まぁ、<br/>世話になったし、行ってくるか…
+}}
+                    [[Category:Generated]]

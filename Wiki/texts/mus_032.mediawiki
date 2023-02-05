@@ -4,19 +4,9 @@
  |OfficialName=POWER TO THE DREAM
  |VocalName=Fire Bomber
  |VocalNameLF=Fire Bomber
- |Description=作品：マクロス7
-
-歌手：Fire Bomber
-
-作詞：K.INOJO
-作曲：福山芳樹
+ |Description=作品：マクロス7<br/><br/>歌手：Fire Bomber<br/><br/>作詞：K.INOJO<br/>作曲：福山芳樹
  |BuyURL=https://recochoku.jp/song/S20141957/single?ds=34295745
- |StoryDesc=バサラの歌に宿るサウンドエナジー。
-その力は、敵味方問わず多くの者の心を変えていった。
-
-大勢の敵に襲われて窮地に陥るバサラたち。そのとき、
-敵であったはずのギギルがバサラの歌を歌い始めた。
-その歌声は、拙くも熱い心を感じさせるものだった。
+ |StoryDesc=バサラの歌に宿るサウンドエナジー。<br/>その力は、敵味方問わず多くの者の心を変えていった。<br/><br/>大勢の敵に襲われて窮地に陥るバサラたち。そのとき、<br/>敵であったはずのギギルがバサラの歌を歌い始めた。<br/>その歌声は、拙くも熱い心を感じさせるものだった。
  |StoryTitle=「俺の歌を、俺より先に歌い出すとは…」
  |BannerId=2
  |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597

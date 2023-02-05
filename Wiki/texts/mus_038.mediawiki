@@ -4,12 +4,7 @@
  |OfficialName=ファミリーマート・コスモス
  |VocalName=ランカ・リー＝中島愛
  |VocalNameLF=ランカ・リー＝中島愛
- |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜
-
-歌手：ランカ・リー＝中島愛
-
-作詞：一倉宏
-作曲：菅野よう子
+ |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜<br/><br/>歌手：ランカ・リー＝中島愛<br/><br/>作詞：一倉宏<br/>作曲：菅野よう子
  |BuyURL=https://recochoku.jp/song/S22001940/
  |StoryDesc=
  |StoryTitle=

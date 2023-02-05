@@ -4,13 +4,7 @@
  |OfficialName=ライオン
  |VocalName=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
  |VocalNameLF=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
- |Description=作品：マクロスF
-
-歌手：シェリル・ノーム starring May'n、
-　　　ランカ・リー＝中島愛
-
-作詞：Gabriela Robin
-作曲：菅野よう子
+ |Description=作品：マクロスF<br/><br/>歌手：シェリル・ノーム starring May'n、<br/>　　　ランカ・リー＝中島愛<br/><br/>作詞：Gabriela Robin<br/>作曲：菅野よう子
  |BuyURL=https://recochoku.jp/song/S20167577/
  |StoryDesc=
  |StoryTitle=

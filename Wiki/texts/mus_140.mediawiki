@@ -4,12 +4,7 @@
  |OfficialName=WANNA BE AN ANGEL
  |VocalName=新居昭乃
  |VocalNameLF=新居昭乃
- |Description=作品：マクロスプラス
-
-歌手：新居昭乃
-
-作詞：Gabriela Robin
-作曲：菅野よう子
+ |Description=作品：マクロスプラス<br/><br/>歌手：新居昭乃<br/><br/>作詞：Gabriela Robin<br/>作曲：菅野よう子
  |BuyURL=https://recochoku.jp/song/S20139679/single?ds=1004680085
  |StoryDesc=
  |StoryTitle=

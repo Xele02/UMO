@@ -4,12 +4,7 @@
  |OfficialName=SWEET FANTASY
  |VocalName=Fire Bomber
  |VocalNameLF=Fire Bomber
- |Description=作品：マクロス7
-
-歌手：Fire Bomber
-
-作詞：M.MEG
-作曲：大槻啓之
+ |Description=作品：マクロス7<br/><br/>歌手：Fire Bomber<br/><br/>作詞：M.MEG<br/>作曲：大槻啓之
  |BuyURL=https://recochoku.jp/song/S21997098/single?ds=34295744
  |StoryDesc=
  |StoryTitle=

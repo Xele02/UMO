@@ -4,19 +4,9 @@
  |OfficialName=やさしさSAYONARA
  |VocalName=飯島真理
  |VocalNameLF=飯島真理
- |Description=作品：超時空要塞マクロス
-
-歌手：飯島真理
-
-作詞：阿佐茜
-作曲：羽田健太郎
+ |Description=作品：超時空要塞マクロス<br/><br/>歌手：飯島真理<br/><br/>作詞：阿佐茜<br/>作曲：羽田健太郎
  |BuyURL=https://recochoku.jp/song/S14225830/
- |StoryDesc=戦争は終結したものの、異星人や外宇宙の存在を知った
-人類は、遥かな宇宙移民の旅へ出発しようとしていた。
-
-過去への執着をやめ、もう一度自分の歌と一緒に
-生きていくことを決めたミンメイ。輝、そして未沙へ
-別れを告げて、彼女はまだ見ぬどこかへと歩き始めた。
+ |StoryDesc=戦争は終結したものの、異星人や外宇宙の存在を知った<br/>人類は、遥かな宇宙移民の旅へ出発しようとしていた。<br/><br/>過去への執着をやめ、もう一度自分の歌と一緒に<br/>生きていくことを決めたミンメイ。輝、そして未沙へ<br/>別れを告げて、彼女はまだ見ぬどこかへと歩き始めた。
  |StoryTitle=「もう、歌をやめるなんて言わない」
  |BannerId=1
  |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626

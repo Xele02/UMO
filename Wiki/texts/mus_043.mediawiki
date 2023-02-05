@@ -4,19 +4,9 @@
  |OfficialName=HOLY LONELY LIGHT [Duet Version]
  |VocalName=Fire Bomber
  |VocalNameLF=Fire Bomber
- |Description=作品：マクロス7
-
-歌手：Fire Bomber
-
-作詞：K.INOJO
-作曲：須藤英樹
+ |Description=作品：マクロス7<br/><br/>歌手：Fire Bomber<br/><br/>作詞：K.INOJO<br/>作曲：須藤英樹
  |BuyURL=https://recochoku.jp/song/S22001145/single?ds=34295745
- |StoryDesc=戦闘の影響か、突然声が出なくなってしまい、
-一切歌うことができなくなってしまったバサラ。
-
-そんな状況で強大なプロトデビルンの襲撃が発生し、
-船団は窮地に陥ってしまう。そんななか、必死に
-歌おうとするバサラのためにミレーヌは奮闘する。
+ |StoryDesc=戦闘の影響か、突然声が出なくなってしまい、<br/>一切歌うことができなくなってしまったバサラ。<br/><br/>そんな状況で強大なプロトデビルンの襲撃が発生し、<br/>船団は窮地に陥ってしまう。そんななか、必死に<br/>歌おうとするバサラのためにミレーヌは奮闘する。
  |StoryTitle=「あたしの歌をどうしてもバサラに届けたいの！」
  |BannerId=2
  |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597

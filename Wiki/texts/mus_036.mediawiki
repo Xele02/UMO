@@ -4,19 +4,9 @@
  |OfficialName=シルバームーン・レッドムーン
  |VocalName=飯島真理
  |VocalNameLF=飯島真理
- |Description=作品：超時空要塞マクロス
-
-歌手：飯島真理
-
-作詞：阿佐茜
-作曲：羽田健太郎
+ |Description=作品：超時空要塞マクロス<br/><br/>歌手：飯島真理<br/><br/>作詞：阿佐茜<br/>作曲：羽田健太郎
  |BuyURL=https://recochoku.jp/song/S14225880/single?ds=34294998
- |StoryDesc=度重なる戦闘と、長く苦しい旅路の果てに、
-遂にマクロスは地球への帰還を果たす。
-
-失ったものの多さに悲しむ乗員たち。それに寄り添う
-ように流れるのは、ミンメイの歌だった。
-姿は見えずとも、彼女の歌声は常に傍にある。
+ |StoryDesc=度重なる戦闘と、長く苦しい旅路の果てに、<br/>遂にマクロスは地球への帰還を果たす。<br/><br/>失ったものの多さに悲しむ乗員たち。それに寄り添う<br/>ように流れるのは、ミンメイの歌だった。<br/>姿は見えずとも、彼女の歌声は常に傍にある。
  |StoryTitle=「まるで、生きてるみたいね」
  |BannerId=1
  |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626

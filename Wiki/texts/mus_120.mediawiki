@@ -4,12 +4,7 @@
  |OfficialName=私の彼はパイロット（PartⅡ）
  |VocalName=飯島真理
  |VocalNameLF=飯島真理
- |Description=作品：超時空要塞マクロス
-
-歌手：飯島真理
-
-作詞：阿佐茜
-作曲：羽田健太郎
+ |Description=作品：超時空要塞マクロス<br/><br/>歌手：飯島真理<br/><br/>作詞：阿佐茜<br/>作曲：羽田健太郎
  |BuyURL=https://recochoku.jp/song/S20139669/single?ds=34294998
  |StoryDesc=
  |StoryTitle=

@@ -4,19 +4,9 @@
  |OfficialName=ANGEL VOICE
  |VocalName=Fire Bomber
  |VocalNameLF=Fire Bomber
- |Description=作品：マクロス ダイナマイト7
-
-歌手：Fire Bomber
-
-作詞：K.INOJO
-作曲：菅野よう子
+ |Description=作品：マクロス ダイナマイト7<br/><br/>歌手：Fire Bomber<br/><br/>作詞：K.INOJO<br/>作曲：菅野よう子
  |BuyURL=https://recochoku.jp/song/S14224300/single?ds=34294998
- |StoryDesc=密漁団母艦が発射した反応弾を飲み込み、その爆発にも
-悠然と耐えた白い銀河クジラの生命力。その姿に改めて
-感動したバサラは、再び銀河クジラの前で歌い始める。
-
-そして、バサラの歌に呼応するかのように銀河クジラは
-鳴き声を上げた。そう、まるで歌っているかのように…
+ |StoryDesc=密漁団母艦が発射した反応弾を飲み込み、その爆発にも<br/>悠然と耐えた白い銀河クジラの生命力。その姿に改めて<br/>感動したバサラは、再び銀河クジラの前で歌い始める。<br/><br/>そして、バサラの歌に呼応するかのように銀河クジラは<br/>鳴き声を上げた。そう、まるで歌っているかのように…
  |StoryTitle=「歌った…！クジラが！」
  |BannerId=0
  |AnmStoreURL=

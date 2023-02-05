@@ -4,12 +4,7 @@
  |OfficialName=ダイナム超合金
  |VocalName=ランカ・リー＝中島愛
  |VocalNameLF=ランカ・リー＝中島愛
- |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜
-
-歌手：ランカ・リー＝中島愛
-
-作詞：黒河影次
-作曲：菅野よう子
+ |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜<br/><br/>歌手：ランカ・リー＝中島愛<br/><br/>作詞：黒河影次<br/>作曲：菅野よう子
  |BuyURL=https://recochoku.jp/song/S20287673/single?ds=34296088
  |StoryDesc=
  |StoryTitle=

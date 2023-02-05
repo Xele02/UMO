@@ -4,19 +4,9 @@
  |OfficialName=Welcome To My FanClub's Night!
  |VocalName=シェリル・ノーム starring May'n
  |VocalNameLF=シェリル・ノーム starring May'n
- |Description=作品：マクロスF
-
-歌手：シェリル・ノーム starring May'n
-
-作詞：hal
-作曲：菅野よう子
+ |Description=作品：マクロスF<br/><br/>歌手：シェリル・ノーム starring May'n<br/><br/>作詞：hal<br/>作曲：菅野よう子
  |BuyURL=https://recochoku.jp/song/S22001444/
- |StoryDesc=歓声で湧き立つライブの最中、シェリルは突如として
-ステージの上から飛び降りてしまう。
-
-落下していくシェリルを慌てて救助したアルトは、
-彼女の大胆な行動と発想に目を見開く。
-混乱の中、ライブは無事に成功するのだろうか…？
+ |StoryDesc=歓声で湧き立つライブの最中、シェリルは突如として<br/>ステージの上から飛び降りてしまう。<br/><br/>落下していくシェリルを慌てて救助したアルトは、<br/>彼女の大胆な行動と発想に目を見開く。<br/>混乱の中、ライブは無事に成功するのだろうか…？
  |StoryTitle=「いいから、このまま飛んで！」
  |BannerId=3
  |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494

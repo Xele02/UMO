@@ -1,0 +1,508 @@
+{{Texts/Bank/BankData
+}}
+
+{{Texts/Bank/BankValue:
+ | Key=talk_time_01
+ | Value=休む時は思いっきり休む…<br/>だら～ん…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_02
+ | Value=猫カフェがあるなら、<br/>ウミネコカフェもあるはず
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_03
+ | Value=クラゲは生がいい。<br/>調理不要
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_04
+ | Value=ゲームは1日1時間…<br/>守れる？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_05
+ | Value=私にハッキング<br/>できないものなんて、ない
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_06
+ | Value=私から逃げようなんて、甘い。<br/>居場所の特定は得意
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_07
+ | Value=♪～
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_08
+ | Value=…！マキナのピンチ？<br/>行かなくちゃ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_01
+ | Value=朝。今日もがんばる。<br/>いっしょに
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_02
+ | Value=裸喰娘娘、行こう。<br/>お昼ご飯たべよう
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_03
+ | Value=夕日、まっかっか
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_04
+ | Value=晩ごはん…<br/>クラゲの丸焼きがいい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_05
+ | Value=まだ、起きてるの。<br/>寝なきゃ、明日にひびく
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_01
+ | Value=久しぶり…待ってた
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_02
+ | Value=今日もよろしく
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_birthday_01
+ | Value=誕生日、祝ってくれるの？<br/>…なら、クラゲのケーキ、<br/>食べてみたい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_01
+ | Value=おせち料理、食べた。<br/>おもちはもちもち…クセになりそう
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_02
+ | Value=マキナと一緒にチョコ作って、<br/>食べさせあいっこ。<br/>ふふ…完璧なバレンタイン！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_03
+ | Value=今日はみんなで豆まき。<br/>カナメが一番はしゃいでた
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_04
+ | Value=今日はひな祭り。<br/>人形には興味ないけどマキナの<br/>ひな祭り特別衣装は気になる
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_05
+ | Value=ホワイトチョコレートクラゲ、<br/>おいしそう
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_06
+ | Value=もう不要なハッキングはしない。<br/>…もちろん、嘘
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_07
+ | Value=クラゲいっぱい買った。<br/>連休のために買いだめした
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_08
+ | Value=…マキナの花嫁姿、<br/>想像して泣いた
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_09
+ | Value=フレイアが書いた短冊、発見…！　<br/>ほうほう、なるほどなるほど…！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_10
+ | Value=夏は、涼しい部屋で<br/>マキナとゆったり…推奨
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_11
+ | Value=お祭りに行きたい。<br/>屋台料理、食べ尽くすべし…！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_12
+ | Value=望遠鏡持ってきた。<br/>これでウサギを探そう
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_13
+ | Value=美雲に悪戯、大成功。<br/>美雲の悲鳴、モアラブリー！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_14
+ | Value=お祭りなら、どこかに<br/>クラゲのお店があるはず。<br/>探してくる
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_15
+ | Value=マキナサンタのプレゼント、<br/>今年も期待大…！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_16
+ | Value=きっと来年も、いい年になる。<br/>…しよう。一緒に
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_17
+ | Value=ハーフミリオン突破…<br/>上出来
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_18
+ | Value=なんと、ミリオン突破…<br/>みんな、ありがとう
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_19
+ | Value=200万ダウンロード…<br/>まだまだこれから
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_20
+ | Value=1周年…胸がチクチク
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_01
+ | Value=…どうか、した？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_02
+ | Value=そんなにツンツンして、<br/>楽しい？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_03
+ | Value=さわりすぎ…<br/>ちょっとしつこい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_04
+ | Value=休む時は思いっきり休む…<br/>だら～ん…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_05
+ | Value=猫カフェがあるなら、<br/>ウミネコカフェもあるはず
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_06
+ | Value=クラゲは生がいい。<br/>調理不要
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_07
+ | Value=からかうのは<br/>やめた方がいい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_08
+ | Value=…撫でられるのは<br/>不思議な気分
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_01
+ | Value=あげる…もちろんタダで
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_02
+ | Value=存分に役立ててほしい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_01
+ | Value=シミュレーションの結果、<br/>予想以上に良好だった。<br/>データもたくさん集まった
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_01
+ | Value=…いい感じ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_02
+ | Value=まだまだ成長期
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_03
+ | Value=プレミアムなお知らせ…！　<br/>ドキドキ！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_01
+ | Value=グッド
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_02
+ | Value=エクセレント
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_03
+ | Value=バッチグー
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_01
+ | Value=感謝
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_02
+ | Value=空腹…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_03
+ | Value=クラゲは生で丸のみ。<br/>今はクラゲの事しか考えられない…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_04
+ | Value=今日も1日がんばった。<br/>そろそろ食事の時間
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_05
+ | Value=胸がちくって<br/>するようなこと…したい
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_06
+ | Value=退屈。刺激を要求する
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_07
+ | Value=気分を変えるには…<br/>やっぱりハッキング？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_08
+ | Value=きゃわわなものがほしい。<br/>マキナに渡す
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_09
+ | Value=おしゃれ…は興味なし。<br/>でも、勧められたら考える
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_10
+ | Value=日常に変化を求めたくなる。<br/>そんなときもある
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_11
+ | Value=エクセレント
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_01
+ | Value=…？何？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_02
+ | Value=別にびっくりしてない
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_03
+ | Value=私は甘くない女。<br/>ツンツンするなら、ツンツンし返す
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_04
+ | Value=もしかして…構ってほしい？
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_05
+ | Value=はっ！マキナが私を探してる！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_06
+ | Value=今日の衣装も、なかなかラブリー
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_07
+ | Value=たまには髪型を変えるのもアリ…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_08
+ | Value=みんなの歌声、<br/>チクチクして気持ちいい。<br/>私ももっと、歌いたい！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_09
+ | Value=ヒマヒマなら、<br/>私の悪戯に付き合うべし
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_10
+ | Value=人生、楽しんだ者勝ち。<br/>あなたも楽しむべし
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_21
+ | Value=これよりハヤテの尾行を開始する。<br/>フレイアの誕生日プレゼント、<br/>いったい何を選ぶのやら…！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_22
+ | Value=美雲への誕生日プレゼントは、<br/>開けてびっくり、玉手箱…！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_23
+ | Value=カナメ、誕生日おめでとう。<br/>…いつも、ありがと
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_24
+ | Value=マキナ、誕生日おめでとう。<br/>マキナは本当に大事な存在。<br/>大好き
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_25
+ | Value=レイナ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_26
+ | Value=ランカ、誕生日おめでとう。<br/>キモカワなプレゼント、用意した
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_27
+ | Value=今日のシェリルはとっても無邪気。<br/>新たな魅力、発見！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_28
+ | Value=情報によると、今日はグババが<br/>いつにも増してミレーヌに<br/>べったりらしい。きゃわわ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_29
+ | Value=バサラは誕生日なのに、<br/>今日も部屋にこもって<br/>歌を歌っているらしい…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_30
+ | Value=ミンメイのバースデーパーティーは、<br/>元祖娘々が会場らしい。潜入希望…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_31
+ | Value=ハヤテ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_32
+ | Value=ミラージュ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_33
+ | Value=メッサー
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_34
+ | Value=アラド
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_35
+ | Value=マリアンヌたちと、チャックの<br/>サプライズバースデーパーティーを<br/>計画中…極秘ミッション…！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_36
+ | Value=アルト
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_37
+ | Value=オズマ
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_38
+ | Value=今日はレイの誕生日らしい。<br/>名前が似てるから、<br/>なんだか不思議な親近感…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_39
+ | Value=輝
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_40
+ | Value=ガムリン
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_41
+ | Value=未沙
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_42
+ | Value=私たちの映画が始まるらしい。<br/>ドキドキ、ワクワク…
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_43
+ | Value=本当に、刺激的な毎日だった。<br/>忘れられない、忘れたくない…<br/>この思い出は、永久保存版
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_44
+ | Value=ふっふっふ…歌にクラゲ、まだ語り<br/>つくせてないことがいっぱいある。<br/>あなたにもたっぷり付き合ってもらう
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_45
+ | Value=ランカとのキモカワ談義に、<br/>シェリルとの、恋バナ…<br/>いつかまた、一緒に話したい。
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_46
+ | Value=本物のバサラに出会えたし、<br/>ミレーヌともマブダチになれた…<br/>時空を超えた出会いに感謝…！
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_47
+ | Value=私だけのリン・ミンメイ物語。<br/>ドラマじゃない、本物のミンメイとの<br/>思い出の記録…激エモ…！
+}}
+                    [[Category:Generated]]

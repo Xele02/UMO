@@ -4,12 +4,7 @@
  |OfficialName=Merry Christmas without You
  |VocalName=frontier stars
  |VocalNameLF=frontier stars
- |Description=作品：マクロスF
-
-歌手：frontier stars
-
-作詞：山田稔明
-作曲：菅野よう子
+ |Description=作品：マクロスF<br/><br/>歌手：frontier stars<br/><br/>作詞：山田稔明<br/>作曲：菅野よう子
  |BuyURL=https://recochoku.jp/song/S20370428/single?ds=34093409
  |StoryDesc=
  |StoryTitle=

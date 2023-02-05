@@ -4,19 +4,9 @@
  |OfficialName=私の彼はパイロット（PartⅠ）
  |VocalName=飯島真理
  |VocalNameLF=飯島真理
- |Description=作品：超時空要塞マクロス
-
-歌手：飯島真理
-
-作詞：阿佐茜
-作曲：羽田健太郎
+ |Description=作品：超時空要塞マクロス<br/><br/>歌手：飯島真理<br/><br/>作詞：阿佐茜<br/>作曲：羽田健太郎
  |BuyURL=https://recochoku.jp/song/S14225870/
- |StoryDesc=ゼントラーディとの戦争で傷ついた故郷。
-そのあまりの惨状に涙を流すミンメイ。
-
-そんなミンメイに対して、考えがあると告げる輝。
-その考えというのが、後に「ミンメイ・アタック」の
-名で語られることとなる伝説的な作戦だった。
+ |StoryDesc=ゼントラーディとの戦争で傷ついた故郷。<br/>そのあまりの惨状に涙を流すミンメイ。<br/><br/>そんなミンメイに対して、考えがあると告げる輝。<br/>その考えというのが、後に「ミンメイ・アタック」の<br/>名で語られることとなる伝説的な作戦だった。
  |StoryTitle=「歌ってくれないか？みんなのために」
  |BannerId=1
  |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20626

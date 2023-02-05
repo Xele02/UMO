@@ -4,13 +4,7 @@
  |OfficialName=いけないボーダーライン
  |VocalName=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
  |VocalNameLF=シェリル・ノーム starring May'n、ランカ・リー＝中島愛
- |Description=作品：コラボアルバム「デカルチャー!!ミクスチャー!!!!!」
-
-歌手：シェリル・ノーム starring May'n、
-　　　ランカ・リー＝中島愛
-
-作詞：西直紀
-作曲：コモリタミノル
+ |Description=作品：コラボアルバム「デカルチャー!!ミクスチャー!!!!!」<br/><br/>歌手：シェリル・ノーム starring May'n、<br/>　　　ランカ・リー＝中島愛<br/><br/>作詞：西直紀<br/>作曲：コモリタミノル
  |BuyURL=https://recochoku.jp/song/S1014281205/single?ds=1021144642
  |StoryDesc=
  |StoryTitle=

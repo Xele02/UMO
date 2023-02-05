@@ -4,19 +4,9 @@
  |OfficialName=ギラギラサマー (^ω^)ノ
  |VocalName=シェリル・ノーム starring May'n
  |VocalNameLF=シェリル・ノーム starring May'n
- |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜
-
-歌手：シェリル・ノーム starring May'n
-
-作詞：Gabriela Robin、富永恵介
-作曲：菅野よう子
+ |Description=作品：劇場版マクロスF〜イツワリノウタヒメ〜<br/><br/>歌手：シェリル・ノーム starring May'n<br/><br/>作詞：Gabriela Robin、富永恵介<br/>作曲：菅野よう子
  |BuyURL=https://recochoku.jp/song/S20279292/
- |StoryDesc=慰安旅行のためマヤン島を訪れたS.M.Sのメンバー。
-みな水着に着替え、戦いを忘れてリゾートを満喫していた。
-
-空も海も風も、気候はまさに夏真っ盛り。
-街頭ではシェリルのCMが大々的に放映されていて、
-照りつける太陽に負けない存在感を放っていた。
+ |StoryDesc=慰安旅行のためマヤン島を訪れたS.M.Sのメンバー。<br/>みな水着に着替え、戦いを忘れてリゾートを満喫していた。<br/><br/>空も海も風も、気候はまさに夏真っ盛り。<br/>街頭ではシェリルのCMが大々的に放映されていて、<br/>照りつける太陽に負けない存在感を放っていた。
  |StoryTitle=「わたしの肌を守りなさい！」
  |BannerId=0
  |AnmStoreURL=

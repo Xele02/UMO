@@ -4,12 +4,7 @@
  |OfficialName=HEART & SOUL
  |VocalName=EMILIA with BASARA NEKKI
  |VocalNameLF=EMILIA with BASARA NEKKI
- |Description=作品：マクロス7
-
-歌手：EMILIA with BASARA NEKKI
-
-作詞：K.INOJO
-作曲：川野美紀
+ |Description=作品：マクロス7<br/><br/>歌手：EMILIA with BASARA NEKKI<br/><br/>作詞：K.INOJO<br/>作曲：川野美紀
  |BuyURL=https://recochoku.jp/song/S20141966/single?ds=34294998
  |StoryDesc=
  |StoryTitle=

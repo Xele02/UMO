@@ -4,12 +4,7 @@
  |OfficialName=ランナー -デュエット・バージョン-
  |VocalName=藤原 誠 ／ 飯島 真理
  |VocalNameLF=藤原 誠 ／ 飯島 真理
- |Description=作品：超時空要塞マクロス
-
-歌手：藤原 誠 ／ 飯島 真理
-
-作詞：阿佐茜
-作曲：羽田健太郎
+ |Description=作品：超時空要塞マクロス<br/><br/>歌手：藤原 誠 ／ 飯島 真理<br/><br/>作詞：阿佐茜<br/>作曲：羽田健太郎
  |BuyURL=
  |StoryDesc=
  |StoryTitle=

@@ -4,12 +4,7 @@
  |OfficialName=アナタノオト
  |VocalName=ランカ・リー＝中島愛
  |VocalNameLF=ランカ・リー＝中島愛
- |Description=作品：マクロスF
-
-歌手：ランカ・リー＝中島愛
-
-作詞：真名杏樹
-作曲：菅野よう子
+ |Description=作品：マクロスF<br/><br/>歌手：ランカ・リー＝中島愛<br/><br/>作詞：真名杏樹<br/>作曲：菅野よう子
  |BuyURL=https://recochoku.jp/song/S20177069/
  |StoryDesc=
  |StoryTitle=

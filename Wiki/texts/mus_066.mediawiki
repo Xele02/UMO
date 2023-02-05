@@ -4,19 +4,9 @@
  |OfficialName=SUBMARINE STREET
  |VocalName=Fire Bomber
  |VocalNameLF=Fire Bomber
- |Description=作品：マクロス7
-
-歌手：Fire Bomber
-
-作詞：K.INOJO
-作曲：福田俊哉
+ |Description=作品：マクロス7<br/><br/>歌手：Fire Bomber<br/><br/>作詞：K.INOJO<br/>作曲：福田俊哉
  |BuyURL=https://recochoku.jp/song/S20141951/
- |StoryDesc=バサラとの接触により、プロトデビルンのシビルは
-エネルギーを失い、植物プラントの中で眠りについた。
-
-彼女を目覚めさせるために、バサラは歌い続けた。
-何度も何度も、夜な夜な植物プラントへと足を運び、
-周りの者に不審がられようとも、歌い続けたのだった。
+ |StoryDesc=バサラとの接触により、プロトデビルンのシビルは<br/>エネルギーを失い、植物プラントの中で眠りについた。<br/><br/>彼女を目覚めさせるために、バサラは歌い続けた。<br/>何度も何度も、夜な夜な植物プラントへと足を運び、<br/>周りの者に不審がられようとも、歌い続けたのだった。
  |StoryTitle=「今日こそ絶対目覚めさせてやるぜ！」
  |BannerId=2
  |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597

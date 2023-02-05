@@ -4,12 +4,7 @@
  |OfficialName=FLASH IN THE DARK
  |VocalName=EMILIA
  |VocalNameLF=EMILIA
- |Description=作品：劇場版マクロス7 銀河がオレを呼んでいる!
-
-歌手：EMILIA
-
-作詞：K.INOJO
-作曲：茂村泰彦
+ |Description=作品：劇場版マクロス7 銀河がオレを呼んでいる!<br/><br/>歌手：EMILIA<br/><br/>作詞：K.INOJO<br/>作曲：茂村泰彦
  |BuyURL=https://recochoku.jp/song/S20141965/single?ds=34294998
  |StoryDesc=
  |StoryTitle=

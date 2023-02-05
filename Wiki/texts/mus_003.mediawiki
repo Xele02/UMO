@@ -4,19 +4,9 @@
  |OfficialName=MY SOUL FOR YOU
  |VocalName=Fire Bomber featuring BASARA NEKKI
  |VocalNameLF=Fire Bomber featuring BASARA NEKKI
- |Description=作品：マクロス7
-
-歌手：Fire Bomber featuring BASARA NEKKI
-
-作詞：K.INOJO
-作曲：福山芳樹
+ |Description=作品：マクロス7<br/><br/>歌手：Fire Bomber featuring BASARA NEKKI<br/><br/>作詞：K.INOJO<br/>作曲：福山芳樹
  |BuyURL=https://recochoku.jp/song/S20141862/single?ds=34294998
- |StoryDesc=一度は戦場で歌ってみせ、敵に歌を聞かせようとした
-バサラであったが、その試みはうまくいかなかった。
-
-だが、たとえ周囲の人間になんと言われようとも、
-熱気バサラという男は簡単に諦めたりはしない。
-今日もまた、新しい楽曲の制作に打ち込んでいた。
+ |StoryDesc=一度は戦場で歌ってみせ、敵に歌を聞かせようとした<br/>バサラであったが、その試みはうまくいかなかった。<br/><br/>だが、たとえ周囲の人間になんと言われようとも、<br/>熱気バサラという男は簡単に諦めたりはしない。<br/>今日もまた、新しい楽曲の制作に打ち込んでいた。
  |StoryTitle=「この次はやってみせるぜ」
  |BannerId=2
  |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20597

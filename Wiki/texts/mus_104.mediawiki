@@ -4,12 +4,7 @@
  |OfficialName=天使の絵の具
  |VocalName=飯島真理
  |VocalNameLF=飯島真理
- |Description=作品：超時空要塞マクロス 愛・おぼえていますか
-
-歌手：飯島真理
-
-作詞：飯島真理
-作曲：飯島真理
+ |Description=作品：超時空要塞マクロス 愛・おぼえていますか<br/><br/>歌手：飯島真理<br/><br/>作詞：飯島真理<br/>作曲：飯島真理
  |BuyURL=https://recochoku.jp/song/S20268934/single?ds=34294998
  |StoryDesc=
  |StoryTitle=

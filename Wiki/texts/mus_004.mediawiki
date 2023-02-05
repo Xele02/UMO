@@ -4,19 +4,9 @@
  |OfficialName=星間飛行
  |VocalName=ランカ・リー＝中島愛
  |VocalNameLF=ランカ・リー＝中島愛
- |Description=作品：マクロスF
-
-歌手：ランカ・リー＝中島愛
-
-作詞：松本隆
-作曲：菅野よう子
+ |Description=作品：マクロスF<br/><br/>歌手：ランカ・リー＝中島愛<br/><br/>作詞：松本隆<br/>作曲：菅野よう子
  |BuyURL=https://recochoku.jp/song/S20155997/
- |StoryDesc=デビューライブ前日、戦火に包まれる惑星ガリア4。
-アルトのため、そしてシェリルのために
-バルキリーに乗って空の彼方から舞い降りるランカ。
-
-決意のこもった「超時空シンデレラ」の歌声は、
-戦いに飢えた兵士たちの心に届くのか…？
+ |StoryDesc=デビューライブ前日、戦火に包まれる惑星ガリア4。<br/>アルトのため、そしてシェリルのために<br/>バルキリーに乗って空の彼方から舞い降りるランカ。<br/><br/>決意のこもった「超時空シンデレラ」の歌声は、<br/>戦いに飢えた兵士たちの心に届くのか…？
  |StoryTitle=「みんな抱きしめて、銀河の果てまで！」
  |BannerId=3
  |AnmStoreURL=https://anime.dmkt-sp.jp/animestore/ci_pc?workId=20494
