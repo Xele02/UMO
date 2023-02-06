@@ -244,7 +244,7 @@ public class NKGJPJPHLIF
 	// // RVA: 0xC17E9C Offset: 0xC17E9C VA: 0xC17E9C
 	public void ODLGKIJCHGH(IMCBBOAFION KLMFJJCNBIP)
 	{
-			N.a.StartCoroutine(MAMKIDBAINA_Coroutine_InitializeSystem(KLMFJJCNBIP));
+			N.a.StartCoroutineWatched(MAMKIDBAINA_Coroutine_InitializeSystem(KLMFJJCNBIP));
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B9838 Offset: 0x6B9838 VA: 0x6B9838
@@ -263,7 +263,7 @@ public class NKGJPJPHLIF
 		if(s == null)
 		{
 				List<NKCNFFPLIAN> NCAAFGHKNAN = NKCNFFPLIAN.PCODDPDFLHK();
-				yield return N.a.StartCoroutine(EEOJBAHJAIN_Coroutine_Nil());
+				yield return N.a.StartCoroutineWatched(EEOJBAHJAIN_Coroutine_Nil());
 
 				string LNOLGFLNAAI = AppEnv.sakashoConnectTargetType[(int)AppEnv.GetSakashoConnectTarget()];
 				if(NMMCABJNNLH < CNAINDDMPDL.Length)
@@ -301,7 +301,7 @@ public class NKGJPJPHLIF
 	// // RVA: 0xC17FB4 Offset: 0xC17FB4 VA: 0xC17FB4
 	public void HGJKAEOLMJN(IMCBBOAFION KLMFJJCNBIP, DJBHIFLHJLK JGKOLBLPMPG, bool MKFJAGGLEFL = true, bool FBBNPFFEJBN = false)
 	{
-			N.a.StartCoroutine(PFKIHFCAPNC_Coroutine_InitializePlayerToken(KLMFJJCNBIP, JGKOLBLPMPG, MKFJAGGLEFL, FBBNPFFEJBN));
+			N.a.StartCoroutineWatched(PFKIHFCAPNC_Coroutine_InitializePlayerToken(KLMFJJCNBIP, JGKOLBLPMPG, MKFJAGGLEFL, FBBNPFFEJBN));
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B98B0 Offset: 0x6B98B0 VA: 0x6B98B0

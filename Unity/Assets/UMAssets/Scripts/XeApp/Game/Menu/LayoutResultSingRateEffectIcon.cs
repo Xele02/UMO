@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 				//0x1D1AA08
 				return _.name == "swtexc_cmn_musicrate (ImageView)";
 			}).ToArray();
-			StartCoroutine(Co_Load());
+			this.StartCoroutineWatched(Co_Load());
 			return true;
 		}
 
@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 		public void Enter()
 		{
 			is_open = true;
-			StartCoroutine(Co_WaitEnter());
+			this.StartCoroutineWatched(Co_WaitEnter());
 		}
 
 		// // RVA: 0x1D1A720 Offset: 0x1D1A720 VA: 0x1D1A720
@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_Load()
 		{
 			//0x1D1ABC4
-			yield return StartCoroutine(LoadIconTexture());
+			yield return this.StartCoroutineWatched(LoadIconTexture());
 			Loaded();
 		}
 

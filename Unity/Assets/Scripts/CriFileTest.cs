@@ -57,7 +57,7 @@ class CriFileTest : MonoBehaviour
             foreach(MemoryStream s in demux.ExtractedMemoryStream)
             {
                 //UnityEngine.Debug.Log(s);
-                StartCoroutine(PlayVideo(s));
+                this.StartCoroutineWatched(PlayVideo(s));
                 break;
             }
         }

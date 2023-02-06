@@ -458,7 +458,7 @@ namespace XeApp.Game.Menu
 			}
 			if(gameObject.activeInHierarchy)
 			{
-				StartCoroutine(Co_LoadItemImages(list));
+				this.StartCoroutineWatched(Co_LoadItemImages(list));
 			}
 		}
 

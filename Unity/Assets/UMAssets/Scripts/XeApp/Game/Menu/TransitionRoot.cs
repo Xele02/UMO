@@ -591,19 +591,19 @@ namespace XeApp.Game.Menu
 			{
 				//0xA410DC
 				int loadCount = 0;
-				mb.StartCoroutine(m_bgControl.Load(() => {
+				mb.StartCoroutineWatched(m_bgControl.Load(() => {
 					//0xA3D740
 					loadCount++;
 				}));
-				mb.StartCoroutine(m_menuBarControl.Load(m_font, () => {
+				mb.StartCoroutineWatched(m_menuBarControl.Load(m_font, () => {
 					//0xA3D750
 					loadCount++;
 				}));
-				mb.StartCoroutine(m_titleBarControl.Load(mb, m_font, () => {
+				mb.StartCoroutineWatched(m_titleBarControl.Load(mb, m_font, () => {
 					//0xA3D760
 					loadCount++;
 				}));
-				mb.StartCoroutine(Co_LoadHelpButton(() => {
+				mb.StartCoroutineWatched(Co_LoadHelpButton(() => {
 					//0xA3D770
 					loadCount++;
 				}));

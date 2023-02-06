@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E62B8 Offset: 0x18E62B8 VA: 0x18E62B8
 		public void StartAnim()
 		{
-			m_coroutine = StartCoroutine(Co_StartAnim());
+			m_coroutine = this.StartCoroutineWatched(Co_StartAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C79C Offset: 0x71C79C VA: 0x71C79C

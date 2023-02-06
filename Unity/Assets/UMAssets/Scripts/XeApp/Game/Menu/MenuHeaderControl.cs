@@ -343,7 +343,7 @@ namespace XeApp.Game.Menu
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(assetBundleName[i * 2], assetBundleName[i * 2 + 1]);
 				yield return operation;
-				mb.StartCoroutine(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+				mb.StartCoroutineWatched(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
 				{
 					//0xB2B010
 					if(instance.name == "UI_MenuTop(Clone)")

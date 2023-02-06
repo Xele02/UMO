@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 			m_pickupTexCache = new HomePickupTextureCahce();
 			m_bannerTexCache = new HomeBannerTextureCache();
 			m_divaControl = new HomeDivaControl();
-			StartCoroutine(Co_Loading());
+			this.StartCoroutineWatched(Co_Loading());
 			if(m_pop_pass_ctrl != null)
 				return;
 			m_pop_pass_ctrl = gameObject.AddComponent<PopPassController>();
@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 			});
 			m_isInitRaidLobby = false;
 			TodoLogger.Log(5, "Raid");
-			/*MenuScene.Instance.LobbyButtonControl.StartCoroutine(MenuScene.Instance.LobbyButtonControl.InitRaidLobby(() => {
+			/*MenuScene.Instance.LobbyButtonControl.StartCoroutineWatched(MenuScene.Instance.LobbyButtonControl.InitRaidLobby(() => {
 				//0x13C790C*/
 				m_isInitRaidLobby = true;
 			/*}, () => {
@@ -182,7 +182,7 @@ namespace XeApp.Game.Menu
 			
 			if(CGFNKMNBNBN.DGCIHGPOMCI(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()))
 			{
-				StartCoroutine(Co_ChangeBg());
+				this.StartCoroutineWatched(Co_ChangeBg());
 			}
 			TodoLogger.Log(5, "end OnPreSetCanvas");
 			// MenuScene.Instance.LobbyButtonControl.Wait();
@@ -207,7 +207,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x971824 Offset: 0x971824 VA: 0x971824 Slot: 18
 		protected override void OnPostSetCanvas()
 		{
-			StartCoroutine(Co_OnPostSetCanvas());
+			this.StartCoroutineWatched(Co_OnPostSetCanvas());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3264 Offset: 0x6E3264 VA: 0x6E3264
@@ -241,7 +241,7 @@ namespace XeApp.Game.Menu
 			m_sceneUiEnable = true;
 			if(GameManager.Instance.IsTutorial)
 				return;
-			StartCoroutine(Co_SceneIntroduce());
+			this.StartCoroutineWatched(Co_SceneIntroduce());
 		}
 
 		// RVA: 0x971B2C Offset: 0x971B2C VA: 0x971B2C Slot: 24
@@ -775,7 +775,7 @@ namespace XeApp.Game.Menu
 
 		private void LoadSLive()
 		{
-			StartCoroutine(LoadSLiveCoroutine());
+			this.StartCoroutineWatched(LoadSLiveCoroutine());
 			m_updater = this.LoadSLiveWait;
 		}
 

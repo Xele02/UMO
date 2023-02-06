@@ -160,7 +160,7 @@ namespace XeApp.Game.Common
 				stateName = "idle";
 			Anim_Play(stateName, 0);
 			animator.speed = 1;
-			StartCoroutine(WaitUnlockBoneSpring(0));
+			this.StartCoroutineWatched(WaitUnlockBoneSpring(0));
 		}
 
 		//// RVA: 0x1110B60 Offset: 0x1110B60 VA: 0x1110B60
@@ -185,7 +185,7 @@ namespace XeApp.Game.Common
 			Anim_SetBool("res_goStart", false);
 			Anim_Play("wait_loop", 0);
 			isStopFrame = true;
-			StartCoroutine(WaitUnlockBoneSpring(0));
+			this.StartCoroutineWatched(WaitUnlockBoneSpring(0));
 		}
 
 		//// RVA: 0x1110E98 Offset: 0x1110E98 VA: 0x1110E98

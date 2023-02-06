@@ -198,7 +198,7 @@ namespace XeApp.Game.Menu
 			{
 				TipsControl.Instance.Show(numTips);
 			}
-			StartCoroutine(InitializeCoroutine());
+			this.StartCoroutineWatched(InitializeCoroutine());
 		}
 
 		// // RVA: 0xB305FC Offset: 0xB305FC VA: 0xB305FC Slot: 12
@@ -217,7 +217,7 @@ namespace XeApp.Game.Menu
 					}
 					if (m_menuTransitionControl.DirtyChangeScene && !m_isInTransition)
 					{
-						StartCoroutine(ChangeTransitionCoroutine());
+						this.StartCoroutineWatched(ChangeTransitionCoroutine());
 						if (m_playerStatusData != null)
 						{
 							m_playerStatusData.FBANBDCOEJL();
@@ -352,7 +352,7 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.CloseSnsNotice();
 			if(!CheckDatelineAndAssetUpdateInner())
 			{
-				yield return StartCoroutine(m_menuTransitionControl.ChangeTransition());
+				yield return this.StartCoroutineWatched(m_menuTransitionControl.ChangeTransition());
 				GameManager.Instance.AddLastBackButtonHandler(this.OnBackButton);
 			}
 			else
@@ -380,11 +380,11 @@ namespace XeApp.Game.Menu
 			m_isSceneEnter = true;
 			bool isWait = true;
 
-			StartCoroutine(CoroutineDivaModel(() => {
+			this.StartCoroutineWatched(CoroutineDivaModel(() => {
 				//0xB38588
 				isWait = false;
 			}));
-			yield return StartCoroutine(CoroutineSystemResource());
+			yield return this.StartCoroutineWatched(CoroutineSystemResource());
 
 			while(isWait)
 				yield return null;
@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 			SetActiveDivaModel(m_sceneCamebackInfo.isDivaActive, true);
 			if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.GotoTitle)
 			{
-				StartCoroutine(GotoTitleCoroutine());
+				this.StartCoroutineWatched(GotoTitleCoroutine());
 			}
 			else if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.RetryGame)
 			{
@@ -428,32 +428,32 @@ namespace XeApp.Game.Menu
 			//0xB39FF8
 			int reqCount = 0;
 			int loadCount = 0;
-			StartCoroutine(m_menuTransitionControl.Initialize(this, () => {
+			this.StartCoroutineWatched(m_menuTransitionControl.Initialize(this, () => {
 				//0xB3859C
 				loadCount++;
 			}));
 			reqCount++;
-			StartCoroutine(m_statusWindowControl.Initialize(gameObject, () => {
+			this.StartCoroutineWatched(m_statusWindowControl.Initialize(gameObject, () => {
 				//0xB385AC
 				loadCount++;
 			}));
 			reqCount++;
-			StartCoroutine(m_sortWindowControl.Initialize(gameObject, () => {
+			this.StartCoroutineWatched(m_sortWindowControl.Initialize(gameObject, () => {
 				//0xB385BC
 				loadCount++;
 			}));
 			reqCount++;
-			StartCoroutine(m_popupFilterSortWindowContrl.Initialize(gameObject, () => {
+			this.StartCoroutineWatched(m_popupFilterSortWindowContrl.Initialize(gameObject, () => {
 				//0xB385CC
 				loadCount++;
 			}));
 			reqCount++;
-			StartCoroutine(m_unitSaveWindowControl.Initialize(gameObject, () => {
+			this.StartCoroutineWatched(m_unitSaveWindowControl.Initialize(gameObject, () => {
 				//0xB385DC
 				loadCount++;
 			}));
 			reqCount++;
-			StartCoroutine(GameManager.Instance.Co_CacheAppResources());
+			this.StartCoroutineWatched(GameManager.Instance.Co_CacheAppResources());
 			while(!GameManager.Instance.IsCacheActive)
 				yield return null;
 			while(loadCount != reqCount)
@@ -462,7 +462,7 @@ namespace XeApp.Game.Menu
 			m_menuTransitionControl.MenuFooter.Initialize();
 			if(!GameManager.Instance.IsTutorial)
 			{
-				StartCoroutine(m_lobbyButtonControl.Co_LoadLayout(m_uiRootObject));
+				this.StartCoroutineWatched(m_lobbyButtonControl.Co_LoadLayout(m_uiRootObject));
 			}
 		}
 
@@ -568,7 +568,7 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.ChangePopupPriority(true);
 
 			TodoLogger.Log(0, "GotoRhythmGame");
-			StartCoroutine(GotoRhythmGameCorotine(() => {
+			this.StartCoroutineWatched(GotoRhythmGameCorotine(() => {
 				return m_menuTransitionControl.DestroyTransion();
 			}, false));
 		}
@@ -938,11 +938,11 @@ namespace XeApp.Game.Menu
 			return PGIGNJDPCAH.MNANNMDBHMP(() =>
 			{
 				// 0xB3821C
-				Instance.StartCoroutine(Instance.GotoLoginBonsuCorotine());
+				Instance.StartCoroutineWatched(Instance.GotoLoginBonsuCorotine());
 			}, () =>
 			{
 				//0xB382C0
-				Instance.StartCoroutine(Instance.GotoTitleCoroutine());
+				Instance.StartCoroutineWatched(Instance.GotoTitleCoroutine());
 			});
 		}
 

@@ -145,13 +145,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D948BC Offset: 0x1D948BC VA: 0x1D948BC
 		public void StartBeginAnim()
 		{
-			StartCoroutine(Co_PlayingRootAnim());
+			this.StartCoroutineWatched(Co_PlayingRootAnim());
 		}
 
 		// // RVA: 0x1D9496C Offset: 0x1D9496C VA: 0x1D9496C
 		public void StartEndAnim(Action endCallback)
 		{
-			StartCoroutine(Co_EndPlayingAnim(endCallback));
+			this.StartCoroutineWatched(Co_EndPlayingAnim(endCallback));
 		}
 
 		// // RVA: 0x1D94A38 Offset: 0x1D94A38 VA: 0x1D94A38
@@ -176,11 +176,11 @@ namespace XeApp.Game.Menu
 			StartZeroItemAnim();
 			if(!is_evenRareDrop)
 			{
-				StartCoroutine(Co_PlayingRareItemDropNumAnim());
+				this.StartCoroutineWatched(Co_PlayingRareItemDropNumAnim());
 			}
 			else
 			{
-				StartCoroutine(Co_PlayingEventRareItemDropNumAnim());
+				this.StartCoroutineWatched(Co_PlayingEventRareItemDropNumAnim());
 			}
 		}
 
@@ -215,7 +215,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				StartCoroutine(Co_PlayingRareItemDropNumAnim());
+				this.StartCoroutineWatched(Co_PlayingRareItemDropNumAnim());
 			}
 		}
 
@@ -246,7 +246,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				StartCoroutine(Co_PlayingNomralItemDropNumAnim());
+				this.StartCoroutineWatched(Co_PlayingNomralItemDropNumAnim());
 			}
 		}
 
@@ -287,14 +287,14 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				StartCoroutine(Co_AutoScrolling(1, nextItemMoveSec, StartBeginAnim));
+				this.StartCoroutineWatched(Co_AutoScrolling(1, nextItemMoveSec, StartBeginAnim));
 			}
 		}
 
 		// // RVA: 0x1D960B4 Offset: 0x1D960B4 VA: 0x1D960B4
 		private void StartNormalItemDropNumAnim()
 		{
-			StartCoroutine(Co_PlayingNomralItemDropNumAnim());
+			this.StartCoroutineWatched(Co_PlayingNomralItemDropNumAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71951C Offset: 0x71951C VA: 0x71951C
@@ -347,14 +347,14 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				StartCoroutine(Co_AutoScrolling(1, nextItemMoveSec, StartBeginAnim));
+				this.StartCoroutineWatched(Co_AutoScrolling(1, nextItemMoveSec, StartBeginAnim));
 			}
 		}
 
 		// // RVA: 0x1D962FC Offset: 0x1D962FC VA: 0x1D962FC
 		public void StartNormalItemBonusAnim()
 		{
-			StartCoroutine(Co_PlayingNormalItemBonusAnim());
+			this.StartCoroutineWatched(Co_PlayingNormalItemBonusAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x719594 Offset: 0x719594 VA: 0x719594
@@ -487,7 +487,7 @@ namespace XeApp.Game.Menu
 		public void StartUCAnim()
 		{
 			SetupUCAnimTable();
-			StartCoroutine(Co_PlayingUCAnim());
+			this.StartCoroutineWatched(Co_PlayingUCAnim());
 		}
 
 		// // RVA: 0x1D955DC Offset: 0x1D955DC VA: 0x1D955DC
@@ -508,7 +508,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_PlayingUCAnim()
 		{
 			//0x1D98E88
-			StartCoroutine(Co_AutoScrolling(0, backItemMoveSec, null));
+			this.StartCoroutineWatched(Co_AutoScrolling(0, backItemMoveSec, null));
 			yield return null;
 			EnterMainStep(MainAnimStep.UC);
 			yield return null;
@@ -521,7 +521,7 @@ namespace XeApp.Game.Menu
 			List<float> fl = new List<float>();
 			NumberAnimationUtility.MakeAccelerationTimeList(10, 0.3f, 0.02f, ref fl);
 			PlayCountUpLoopSE();
-			yield return StartCoroutine(NumberAnimationUtility.Co_FakeCountup(viewDrop.PBIHLJKLHGJ_UCNumber, fl, OnChangeUCNumber, null, null));
+			yield return this.StartCoroutineWatched(NumberAnimationUtility.Co_FakeCountup(viewDrop.PBIHLJKLHGJ_UCNumber, fl, OnChangeUCNumber, null, null));
 			countUpSEPlayback.Stop();
 			if(viewDrop.ADHABBGDFPK != 0)
 			{

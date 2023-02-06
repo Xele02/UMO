@@ -78,7 +78,7 @@ namespace XeApp.Game.Menu
 				layoutScoreMain.OnCountupNoteResult = OnCountupNoteResult;
 				layoutScoreMain.OnFinishCountupNoteResult = OnFinishCountupNoteResult;
 			}
-			StartCoroutine(Co_LoadSingRankRateEffectLayout());
+			this.StartCoroutineWatched(Co_LoadSingRankRateEffectLayout());
 			MenuScene.Instance.divaManager.BeginControl(divaControl);
 		}
 
@@ -173,11 +173,11 @@ namespace XeApp.Game.Menu
 						layoutPlayerRank.SkipAnim();
 						if(!isInTutorial)
 						{
-							StartCoroutine(Co_StartPlayerRankAnim());
+							this.StartCoroutineWatched(Co_StartPlayerRankAnim());
 						}
 						if(m_coroutine != null)
 							return;
-						m_coroutine = StartCoroutine(Co_StartAnim());
+						m_coroutine = this.StartCoroutineWatched(Co_StartAnim());
 					}
 				}
 			}
@@ -186,7 +186,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB50EAC Offset: 0xB50EAC VA: 0xB50EAC
 		public void StartAnim()
 		{
-			m_coroutine = StartCoroutine(Co_StartAnim());
+			m_coroutine = this.StartCoroutineWatched(Co_StartAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x723A24 Offset: 0x723A24 VA: 0x723A24

@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x16DE9F8 Offset: 0x16DE9F8 VA: 0x16DE9F8 Slot: 5
 		protected override void Start()
 		{
-			StartCoroutine(Co_LoadResources());
+			this.StartCoroutineWatched(Co_LoadResources());
 		}
 
 		// RVA: 0x16DEAA8 Offset: 0x16DEAA8 VA: 0x16DEAA8
@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 			m_costume_color = m_next_costume_color;
 			MenuScene.Instance.divaManager.SetActive(false);
 			m_model_loaded = false;
-			StartCoroutine(CoroutineDivaModel(m_pushedTrying, false));
+			this.StartCoroutineWatched(CoroutineDivaModel(m_pushedTrying, false));
 		}
 
 		// RVA: 0x16DF084 Offset: 0x16DF084 VA: 0x16DF084 Slot: 16
@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 			}
-			StartCoroutine(Co_LoadDivaResource(m_diva_id));
+			this.StartCoroutineWatched(Co_LoadDivaResource(m_diva_id));
 		}
 
 		// RVA: 0x16DF764 Offset: 0x16DF764 VA: 0x16DF764 Slot: 17
@@ -482,7 +482,7 @@ namespace XeApp.Game.Menu
 			yield return Resources.UnloadUnusedAssets();
 			bool isWait = true;
 			divaResource.ReleaseCostume();
-			StartCoroutine(divaResource.Co_LoadCostume(m_costume_model_id, () =>
+			this.StartCoroutineWatched(divaResource.Co_LoadCostume(m_costume_model_id, () =>
 			{
 				//0x16E1E84
 				isWait = false;
@@ -512,7 +512,7 @@ namespace XeApp.Game.Menu
 				voicePlayIndex++;
 				if (voiceQueCount <= voicePlayIndex)
 					voicePlayIndex = 0;
-				divaWaitCoroutine = StartCoroutine(Co_WaitDiva());
+				divaWaitCoroutine = this.StartCoroutineWatched(Co_WaitDiva());
 			}
 			yield return new WaitForSeconds(0.1f);
 			MenuScene.Instance.divaManager.SetEnableRenderer(true);
@@ -673,7 +673,7 @@ namespace XeApp.Game.Menu
 
 			//LAB_016e1740
 			m_cos_list_win.Exit();
-			StartCoroutine(Co_CostumeSaveAndSceneReturn());
+			this.StartCoroutineWatched(Co_CostumeSaveAndSceneReturn());
 		}
 
 		//// RVA: 0x16E17A4 Offset: 0x16E17A4 VA: 0x16E17A4

@@ -93,7 +93,7 @@ namespace XeApp.Game.Title
 			SwitchButtonLabel(eButtonType.Support);
 			SwitchButtonLabel(eButtonType.Inheriting);
 			m_Inheriting.ClearOnClickCallback();
-			StartCoroutine(InheritingDark());
+			this.StartCoroutineWatched(InheritingDark());
 			Loaded();
 			return true;
 		}

@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		protected Coroutine StartCoroutine(IEnumerator routine)
 		{
 			if (DivaManager != null)
-				return DivaManager.StartCoroutine(routine);
+				return DivaManager.StartCoroutineWatched(routine);
 			return null;
 		}
 

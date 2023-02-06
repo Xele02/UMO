@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 							return;
 						if(!layoutDropMain.IsOpenPopupRecordPlate())
 						{
-							StartCoroutine(CO_Skip());
+							this.StartCoroutineWatched(CO_Skip());
 						}
 					}
 				}

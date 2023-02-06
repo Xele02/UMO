@@ -108,7 +108,7 @@ namespace XeApp.Game.Common
 					m_animators[i].CrossFadeInFixedTime(TakeoffStateHash, TakeoffFadeDuration, 0, 0);
 				}
 			}
-			m_coWaitForAnimationEnd = StartCoroutine(Co_WaitForAnimationEnd());
+			m_coWaitForAnimationEnd = this.StartCoroutineWatched(Co_WaitForAnimationEnd());
 			isTakeoff = true;
 		}
 

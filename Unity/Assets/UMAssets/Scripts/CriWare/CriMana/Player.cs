@@ -519,7 +519,7 @@ namespace CriWare
 					}
 					else
 					{
-						playerHolder.StartCoroutine(IssuePluginUpdatesForFrames(frameCount, playerHolder, true, playerId));
+						playerHolder.StartCoroutineWatched(IssuePluginUpdatesForFrames(frameCount, playerHolder, true, playerId));
 					}
 				}
 				cuePointCallback = null;

@@ -116,7 +116,7 @@ namespace XeApp.Game.Common
 					target = rect.sizeDelta;
 					break;
 			}
-			m_animCoroutine = StartCoroutine(Co_Animation(start, target, animTime, (Vector2 vec) => {
+			m_animCoroutine = this.StartCoroutineWatched(Co_Animation(start, target, animTime, (Vector2 vec) => {
 				//0x10FFFC0
 				if (inType < InType.Scaling)
 				{
@@ -189,7 +189,7 @@ namespace XeApp.Game.Common
 					target = rect.sizeDelta + new Vector2(0, -moveAmount);
 					break;
 			}
-			m_animCoroutine = StartCoroutine(Co_Animation(start, target, animTime, (Vector2 vec) => {
+			m_animCoroutine = this.StartCoroutineWatched(Co_Animation(start, target, animTime, (Vector2 vec) => {
 				//0x110011C
 				if(inType < InType.Scaling)
 				{
@@ -227,7 +227,7 @@ namespace XeApp.Game.Common
 				}
 				state = State.Leave;
 				RectTransform rect = (transform as RectTransform);
-				m_animCoroutine = StartCoroutine(Co_Animation(rect.anchoredPosition, m_leavePos, animTime, (Vector2 vec) =>
+				m_animCoroutine = this.StartCoroutineWatched(Co_Animation(rect.anchoredPosition, m_leavePos, animTime, (Vector2 vec) =>
 				{
 					//0x1100278
 					if (inType < InType.Scaling)
@@ -263,7 +263,7 @@ namespace XeApp.Game.Common
 					StopCoroutine(m_animCoroutine);
 				state = State.Enter;
 				RectTransform rect = transform as RectTransform;
-				m_animCoroutine = StartCoroutine(Co_Animation(rect.anchoredPosition, m_enterPos, animTime, (Vector2 vec) =>
+				m_animCoroutine = this.StartCoroutineWatched(Co_Animation(rect.anchoredPosition, m_enterPos, animTime, (Vector2 vec) =>
 				{
 					//0x11003D4
 					if(inType < InType.Scaling)

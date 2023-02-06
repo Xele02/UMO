@@ -27,7 +27,7 @@ namespace XeSys
 		// // RVA: 0x239F314 Offset: 0x239F314 VA: 0x239F314
 		private void Start()
 		{
-			StartCoroutine("LoadLevel");
+			this.StartCoroutineWatched("LoadLevel");
 		}
 
 		// // RVA: 0x239F37C Offset: 0x239F37C VA: 0x239F37C

@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 			base.Awake();
 			m_isSimulationLive = false;
 			SetupViewMusicData();
-			StartCoroutine(Co_LoadResources());
+			this.StartCoroutineWatched(Co_LoadResources());
 		}
 
 		// RVA: 0xF39DC4 Offset: 0xF39DC4 VA: 0xF39DC4 Slot: 16
@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF39F0C Offset: 0xF39F0C VA: 0xF39F0C Slot: 18
 		protected override void OnPostSetCanvas()
 		{
-			StartCoroutine(Co_Initialize());
+			this.StartCoroutineWatched(Co_Initialize());
 		}
 
 		// RVA: 0xF39F40 Offset: 0xF39F40 VA: 0xF39F40 Slot: 19
@@ -149,7 +149,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF39F48 Offset: 0xF39F48 VA: 0xF39F48 Slot: 23
 		protected override void OnActivateScene()
 		{
-			StartCoroutine(Co_OnActivateScene());
+			this.StartCoroutineWatched(Co_OnActivateScene());
 		}
 
 		// RVA: 0xF39F7C Offset: 0xF39F7C VA: 0xF39F7C Slot: 24

@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD00678 Offset: 0xD00678 VA: 0xD00678
 		public void StartCountPoint()
 		{
-			countPointWindowCoroutine = StartCoroutine(Co_StartPointCount());
+			countPointWindowCoroutine = this.StartCoroutineWatched(Co_StartPointCount());
 		}
 
 		// // RVA: 0xD0072C Offset: 0xD0072C VA: 0xD0072C
@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD007B4 Offset: 0xD007B4 VA: 0xD007B4
 		private void OnFinishedDivaMainAnim()
 		{
-			StartCoroutine(Co_TryShowTutorial(OnShowOkayButton));
+			this.StartCoroutineWatched(Co_TryShowTutorial(OnShowOkayButton));
 			layoutDiva.StartGaugeFinishAnim();
 			isSkiped = true;
 		}

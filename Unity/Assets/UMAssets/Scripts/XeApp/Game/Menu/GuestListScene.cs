@@ -53,7 +53,7 @@ namespace XeApp.Game.Menu
 					m_elems[i].SwapStatus(false);
 				}
 			};
-			StartCoroutine(Co_LoadResources());
+			this.StartCoroutineWatched(Co_LoadResources());
 		}
 
 		// RVA: 0xE29350 Offset: 0xE29350 VA: 0xE29350 Slot: 16
@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 			base.OnActivateScene();
 			m_isShowHelp = false;
 			InitializeList();
-			StartCoroutine(Co_ShowHelp());
+			this.StartCoroutineWatched(Co_ShowHelp());
 		}
 
 		// RVA: 0xE2A468 Offset: 0xE2A468 VA: 0xE2A468
@@ -245,7 +245,7 @@ namespace XeApp.Game.Menu
 					friends.Add(data);
 				}
 				MenuScene.Instance.InputDisable();
-				StartCoroutine(OnSuccessSearchFriend());
+				this.StartCoroutineWatched(OnSuccessSearchFriend());
 			}
 		}
 
@@ -284,7 +284,7 @@ namespace XeApp.Game.Menu
 					data.KHEKNNFCAOI(friendManager.BFDEHIANFOG[i]);
 					friends.Add(data);
 				}
-				StartCoroutine(OnSuccessSearchFriend());
+				this.StartCoroutineWatched(OnSuccessSearchFriend());
 			}, (CACGCMBKHDI_Request error) =>
 			{
 				//0xE2DF0C
@@ -322,7 +322,7 @@ namespace XeApp.Game.Menu
 				GuestListElem elem = m_scrollList.ScrollContent.GetComponentInChildren<GuestListElem>(true);
 				if(elem != null)
 				{
-					StartCoroutine(TutorialProc.Co_AssistSelect(elem.Button));
+					this.StartCoroutineWatched(TutorialProc.Co_AssistSelect(elem.Button));
 				}
 			}
 			m_isShowHelp = true;

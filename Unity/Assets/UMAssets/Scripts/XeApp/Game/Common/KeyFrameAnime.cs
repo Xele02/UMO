@@ -125,7 +125,7 @@ namespace XeApp.Game.Common
 						{
 							m_animStartTime = Time.time;
 						}
-						m_animCoroutine = StartCoroutine(Co_Animation(index));
+						m_animCoroutine = this.StartCoroutineWatched(Co_Animation(index));
 					}
 					return;
 				}

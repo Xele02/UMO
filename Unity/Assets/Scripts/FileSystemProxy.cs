@@ -101,7 +101,7 @@ static class FileSystemProxy
 		{
 			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataWebServerURL))
 			{
-				GameManager.Instance.StartCoroutine(TryInstallFileCoroutine(path, onDone));
+				GameManager.Instance.StartCoroutineWatched(TryInstallFileCoroutine(path, onDone));
 				return;
 			}
 		}
@@ -172,7 +172,7 @@ static class FileSystemProxy
 	{
 		if (GameManager.Instance)
 		{
-			GameManager.Instance.StartCoroutine(TestBundleAsync());
+			GameManager.Instance.StartCoroutineWatched(TestBundleAsync());
 		}
 	}
 

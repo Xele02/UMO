@@ -436,7 +436,7 @@ namespace XeApp.Game.Menu
 				//0x1673F54
 				TodoLogger.LogNotImplemented("Play button click");
 			});
-			StartCoroutine(Co_Initialize());
+			this.StartCoroutineWatched(Co_Initialize());
 			return true;
 		}
 

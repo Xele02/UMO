@@ -116,7 +116,7 @@ namespace XeApp.Game.RhythmGame.UI
 			if (m_isPlaying)
 				return;
 			m_coroutine = ShowAnimeCoroutine(null);
-			StartCoroutine(m_coroutine);
+			this.StartCoroutineWatched(m_coroutine);
 		}
 
 		// // RVA: 0x1563438 Offset: 0x1563438 VA: 0x1563438
@@ -128,7 +128,7 @@ namespace XeApp.Game.RhythmGame.UI
 			m_isPlaying = false;
 			m_skillQueue.Clear();
 			m_coroutine = CloseAnimeCoroutine(endCallback);
-			StartCoroutine(m_coroutine);
+			this.StartCoroutineWatched(m_coroutine);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7473C4 Offset: 0x7473C4 VA: 0x7473C4

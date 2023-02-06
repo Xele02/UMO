@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 			if (!isSetupFinished)
 				return;
 			layoutRootAnim.StartChildrenAnimGoStop("go_in", "st_in");
-			StartCoroutine(Co_PlayingAnim());
+			this.StartCoroutineWatched(Co_PlayingAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7190D4 Offset: 0x7190D4 VA: 0x7190D4

@@ -25,7 +25,7 @@ namespace XeApp.Game.Common
 		public void LoadResources(int id, int valkyrie_id)
 		{
 			isLoadedMain = false;
-			StartCoroutine(Co_LoadResources(id, valkyrie_id));
+			this.StartCoroutineWatched(Co_LoadResources(id, valkyrie_id));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73CB00 Offset: 0x73CB00 VA: 0x73CB00

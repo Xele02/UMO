@@ -39,7 +39,7 @@ namespace XeApp.Game.Menu
 			m_valkyrieRes = gameObject.AddComponent<ValkyrieResource>();
 			m_nextVfId = m_vfId;
 			m_nextForm = m_form;
-			StartCoroutine(Co_loadAssets());
+			this.StartCoroutineWatched(Co_loadAssets());
 		}
 
 		// RVA: 0x1CE79B8 Offset: 0x1CE79B8 VA: 0x1CE79B8
@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 				{
 					Destroy(m_valkyrieObj.gameObject);
 				}
-				StartCoroutine(Co_loadAssets());
+				this.StartCoroutineWatched(Co_loadAssets());
 				m_life = 0;
 				return;
 			}

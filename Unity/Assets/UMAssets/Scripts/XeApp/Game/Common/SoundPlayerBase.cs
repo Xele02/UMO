@@ -68,7 +68,7 @@ namespace XeApp.Game.Common
 			}
 			if(SoundResource.InstallCueSheet(cueSheetName))
 			{
-				StartCoroutine(Co_InstallProcess(cueSheetName, onEndCallback));
+				this.StartCoroutineWatched(Co_InstallProcess(cueSheetName, onEndCallback));
 				return true;
 			}
 			ChangeCueSheet(cueSheetName);
@@ -206,7 +206,7 @@ namespace XeApp.Game.Common
 				}
 				source.volume = 1.0f;
 			}
-			fadeCoroutine = StartCoroutine(Co_FadeOut(sec, onStop));
+			fadeCoroutine = this.StartCoroutineWatched(Co_FadeOut(sec, onStop));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B258 Offset: 0x73B258 VA: 0x73B258
@@ -231,7 +231,7 @@ namespace XeApp.Game.Common
 				StopCoroutine(fadeCoroutine);
 			if (changeVolume != null)
 				StopCoroutine(changeVolume);
-			fadeCoroutine = StartCoroutine(Co_ChangeVolume(sec, targetVol, onEnd));
+			fadeCoroutine = this.StartCoroutineWatched(Co_ChangeVolume(sec, targetVol, onEnd));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B2D0 Offset: 0x73B2D0 VA: 0x73B2D0

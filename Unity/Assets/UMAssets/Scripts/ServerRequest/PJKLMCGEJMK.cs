@@ -96,7 +96,7 @@ public class PJKLMCGEJMK
             return;
 
         CMCKNKKCNDK_Status = PJKLMCGEJMK.AHADNLCOPOL.HIHKPNBDNJC_Running;
-        N.a.StartCoroutine(NBCKHIAINIM_Coroutine_Execute(FCICFIAOLAM_RequestList[0]));
+        N.a.StartCoroutineWatched(NBCKHIAINIM_Coroutine_Execute(FCICFIAOLAM_RequestList[0]));
         LCIGLIDJILJ_updater = this.JADLLIFCGLG_CheckRequest;
     }
 
@@ -129,7 +129,7 @@ public class PJKLMCGEJMK
         }
         else
         {
-            N.a.StartCoroutine(NBCKHIAINIM_Coroutine_Execute(FCICFIAOLAM_RequestList[0]));
+            N.a.StartCoroutineWatched(NBCKHIAINIM_Coroutine_Execute(FCICFIAOLAM_RequestList[0]));
             LCIGLIDJILJ_updater = this.JADLLIFCGLG_CheckRequest;
         }
     }
@@ -375,7 +375,7 @@ public class PJKLMCGEJMK
                     if(val != KPKEOIJHIMN.GIDACIOHFNN.NHHHCIINJKO && (val == KPKEOIJHIMN.GIDACIOHFNN.DNKAABNOOBF || NAJENHKNJLN))
                     {
                         CMCKNKKCNDK_Status = /*2*/PJKLMCGEJMK.AHADNLCOPOL.OGBMKAILHMF;
-                        yield return N.a.StartCoroutine(AOMMJNJGFEL(ADKIDBJCAJA, val));
+                        yield return N.a.StartCoroutineWatched(AOMMJNJGFEL(ADKIDBJCAJA, val));
                         // To 8
                         KADMOOOMMJF = true;
                         ADKIDBJCAJA.NPNNPNAIONN = true;
@@ -424,7 +424,7 @@ public class PJKLMCGEJMK
                     }
                 }
                 bool APGOAMNGFFF = false;
-                yield return N.a.StartCoroutine(MELKAFEGNMD(ADKIDBJCAJA, ADKIDBJCAJA.CJMFJOMECKI_ErrorId, errorResponse, errorJSon, () => {
+                yield return N.a.StartCoroutineWatched(MELKAFEGNMD(ADKIDBJCAJA, ADKIDBJCAJA.CJMFJOMECKI_ErrorId, errorResponse, errorJSon, () => {
                     //0x933250
                     APGOAMNGFFF = true;
                 }));
@@ -440,7 +440,7 @@ public class PJKLMCGEJMK
             }
             else
             {
-                yield return N.a.StartCoroutine(GGOECCJJPFN(ADKIDBJCAJA));
+                yield return N.a.StartCoroutineWatched(GGOECCJJPFN(ADKIDBJCAJA));
                 // To3
                 KADMOOOMMJF = true;
                 ADKIDBJCAJA.NPNNPNAIONN = true;

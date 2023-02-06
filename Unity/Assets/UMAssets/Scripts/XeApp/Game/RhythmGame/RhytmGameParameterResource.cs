@@ -38,7 +38,7 @@ namespace XeApp.Game.RhythmGame
 		public void LoadResource()
 		{
 			isRequestLoad = true;
-			StartCoroutine(Co_LoadResource());
+			this.StartCoroutineWatched(Co_LoadResource());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x74640C Offset: 0x74640C VA: 0x74640C

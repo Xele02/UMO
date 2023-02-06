@@ -262,7 +262,7 @@ namespace XeApp.Game.Common
 				StopCoroutine(m_coroutine_bsc_lock);
 			if (!gameObject.activeSelf)
 				return;
-			m_coroutine_bsc_lock = StartCoroutine(CoroutineWaitLockBoneSpring(a_index, a_seconds));
+			m_coroutine_bsc_lock = this.StartCoroutineWatched(CoroutineWaitLockBoneSpring(a_index, a_seconds));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x737C50 Offset: 0x737C50 VA: 0x737C50

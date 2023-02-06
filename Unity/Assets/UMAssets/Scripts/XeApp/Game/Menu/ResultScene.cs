@@ -332,7 +332,7 @@ namespace XeApp.Game.Menu
 			if(TransitionType == MenuTransitionControl.TransitionType.Return)
 				return;
 			InitParam();
-			StartCoroutine(Co_LoadLayout());
+			this.StartCoroutineWatched(Co_LoadLayout());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722C6C Offset: 0x722C6C VA: 0x722C6C
@@ -341,9 +341,9 @@ namespace XeApp.Game.Menu
 		{
 			UnityEngine.Debug.Log("Enter Co_LoadLayout");
 			//0xB5D5E0
-			yield return StartCoroutine(Co_LoadCommonLayout());
-			yield return StartCoroutine(Co_PopupAchieveRewardLayout());
-			yield return StartCoroutine(Co_LoadScoreLayout());
+			yield return this.StartCoroutineWatched(Co_LoadCommonLayout());
+			yield return this.StartCoroutineWatched(Co_PopupAchieveRewardLayout());
+			yield return this.StartCoroutineWatched(Co_LoadScoreLayout());
 			UnityEngine.Debug.Log("Exit Co_LoadLayout");
 		}
 
@@ -428,7 +428,7 @@ namespace XeApp.Game.Menu
 		private void EndScoreResult()
 		{
 			GameManager.Instance.fullscreenFader.Fade(0.2f, new Color(Color.white.r, Color.white.g, Color.white.b, 1));
-			StartCoroutine(Co_EndScoreResult());
+			this.StartCoroutineWatched(Co_EndScoreResult());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722CE4 Offset: 0x722CE4 VA: 0x722CE4
@@ -448,32 +448,32 @@ namespace XeApp.Game.Menu
 			});
 			if(!isInTutorial)
 			{
-				yield return StartCoroutine(Co_LoadDivaLayout());
+				yield return this.StartCoroutineWatched(Co_LoadDivaLayout());
 			}
-			yield return StartCoroutine(Co_LoadDropLayout());
+			yield return this.StartCoroutineWatched(Co_LoadDropLayout());
 			isEventCollection = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection;
 			if(isEventCollection)
-				yield return StartCoroutine(Co_LoadEvent01Layout());
+				yield return this.StartCoroutineWatched(Co_LoadEvent01Layout());
 			isEventMission = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest;
 			if(isEventMission)
 			{
-				yield return StartCoroutine(Co_LoadEvent02Layout());
+				yield return this.StartCoroutineWatched(Co_LoadEvent02Layout());
 			}
 			isEventBattle = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle;
 			if(isEventBattle)
 			{
-				yield return StartCoroutine(Co_LoadEvent03Layout());
+				yield return this.StartCoroutineWatched(Co_LoadEvent03Layout());
 			}
 			isEventRaid = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid;
 			if(isEventRaid)
 			{
-				yield return StartCoroutine(Co_LoadRaidLayout());
+				yield return this.StartCoroutineWatched(Co_LoadRaidLayout());
 			}
 			isEventGoDiva = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva;
 			if(isEventGoDiva)
 			{
 				divaLayoutController.SetGoDivaLayout();
-				yield return StartCoroutine(Co_LoadGoDivaLayout());
+				yield return this.StartCoroutineWatched(Co_LoadGoDivaLayout());
 			}
 			
 			yield return new WaitForSeconds(0.5f);
@@ -633,7 +633,7 @@ namespace XeApp.Game.Menu
 			{
 				while(GameManager.Instance.fullscreenFader.isFading)
 					yield return null;
-				StartCoroutine(Co_MountMenuScene(false));
+				this.StartCoroutineWatched(Co_MountMenuScene(false));
 			}
 			MenuScene.Instance.InputEnable();
 		}
@@ -660,7 +660,7 @@ namespace XeApp.Game.Menu
 		private void OnClickDivaResultOkayButton()
 		{
 			MenuScene.Instance.InputDisable();
-			StartCoroutine(Co_EndDivaResult());
+			this.StartCoroutineWatched(Co_EndDivaResult());
 		}
 
 		// // RVA: 0xB513BC Offset: 0xB513BC VA: 0xB513BC
@@ -729,7 +729,7 @@ namespace XeApp.Game.Menu
 		private void OnClickDropResultOkayButton()
 		{
 			MenuScene.Instance.InputDisable();
-			StartCoroutine(Co_EndDropResult());
+			this.StartCoroutineWatched(Co_EndDropResult());
 		}
 
 		// // RVA: 0xB51978 Offset: 0xB51978 VA: 0xB51978
@@ -783,7 +783,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(isGoDivaEventOpen)
 			{
-				StartCoroutine(Co_InitGoDivaResult());
+				this.StartCoroutineWatched(Co_InitGoDivaResult());
 			}
 			else if(isBattleEventOpen)
 			{
@@ -797,7 +797,7 @@ namespace XeApp.Game.Menu
 			{
 				while(GameManager.Instance.fullscreenFader.isFading)
 					yield return null;
-				StartCoroutine(Co_MountMenuScene(false));
+				this.StartCoroutineWatched(Co_MountMenuScene(false));
 			}
 			MenuScene.Instance.InputEnable();
 		}

@@ -109,7 +109,7 @@ public class UMOStart : MonoBehaviour
         {
             RuntimeSettings.CurrentSettings.SLiveViewer = false;
         }
-		StartCoroutine(FileSystemProxy.InitServerFileList());
+		this.StartCoroutineWatched(FileSystemProxy.InitServerFileList());
     }
     
     void Update()

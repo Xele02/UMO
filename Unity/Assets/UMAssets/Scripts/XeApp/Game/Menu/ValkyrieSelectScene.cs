@@ -67,8 +67,8 @@ namespace XeApp.Game.Menu
 			m_PopupSetting.WindowSize = SizeType.Large;
 			m_PopupSetting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("popup_valkyrie_select_title");
 			m_PopupSetting.SetParent(transform);
-			StartCoroutine(Co_LoadEffect());
-			StartCoroutine(Co_LayoutAssetLoad());
+			this.StartCoroutineWatched(Co_LoadEffect());
+			this.StartCoroutineWatched(Co_LayoutAssetLoad());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733A3C Offset: 0x733A3C VA: 0x733A3C
@@ -535,7 +535,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.BgControl.SetPriority(BgPriority.TopMost);
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO(2);
 			m_IsSceneActivate = false;
-			StartCoroutine(Co_Initialize());
+			this.StartCoroutineWatched(Co_Initialize());
 		}
 
 		// RVA: 0x165C43C Offset: 0x165C43C VA: 0x165C43C Slot: 17
@@ -557,7 +557,7 @@ namespace XeApp.Game.Menu
 			{
 				ShowViewButton();
 			}
-			StartCoroutine(Co_PlayNoticeAnim());
+			this.StartCoroutineWatched(Co_PlayNoticeAnim());
 			if(m_viewValkyrieModeObj == null)
 			{
 				m_viewValkyrieModeObj = ViewScreenValkyrie.Create(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].GCCNMFHELCB_Form, () => {
@@ -833,7 +833,7 @@ namespace XeApp.Game.Menu
 			if(label != PopupButton.ButtonLabel.Ok)
 				return;
 			m_is_ValkrieTouch = false;
-			StartCoroutine(Co_DecideValkyrie());
+			this.StartCoroutineWatched(Co_DecideValkyrie());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733E74 Offset: 0x733E74 VA: 0x733E74
@@ -933,7 +933,7 @@ namespace XeApp.Game.Menu
 										SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VALKYRIE_000);
 										m_layoutValSelect.SetActiveTransform(m_EffectInstance.activeSelf, false);
 										m_SwaipTouch.Stop(true);
-										StartCoroutine(v.Co_WaitEnableTransformation(() => {
+										this.StartCoroutineWatched(v.Co_WaitEnableTransformation(() => {
 											//0x165FB78
 											m_SwaipTouch.ResetValue();
 											m_SwaipTouch.ResetInputState();

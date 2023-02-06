@@ -54,7 +54,7 @@ public class NMFABEKNBKJ
 	// // RVA: 0x1CAB858 Offset: 0x1CAB858 VA: 0x1CAB858
 	public void OJKIKODJJCD(IMCBBOAFION PONEMLJPAOE, IMCBBOAFION CNJANCCFBIL)
     {
-		N.a.StartCoroutine(LAGOJPPLDOH_Corotuine_BootInitilaize_FCM(PONEMLJPAOE, CNJANCCFBIL));
+		N.a.StartCoroutineWatched(LAGOJPPLDOH_Corotuine_BootInitilaize_FCM(PONEMLJPAOE, CNJANCCFBIL));
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BA83C Offset: 0x6BA83C VA: 0x6BA83C
@@ -81,7 +81,7 @@ public class NMFABEKNBKJ
 			yield return null;
 		}
 		bool KOMKKBDABJP = false;
-		yield return N.a.StartCoroutine(KGGHPICPOAA_Corotuine_GetFCMTokens(() =>
+		yield return N.a.StartCoroutineWatched(KGGHPICPOAA_Corotuine_GetFCMTokens(() =>
 		{
 			//0x1CACDE8
 			KOMKKBDABJP = true;
@@ -94,7 +94,7 @@ public class NMFABEKNBKJ
 		{
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification.ILNIHDCCOEO_EventReceive == 0)
 			{
-				N.a.StartCoroutine(LODINIOCACA_Corotuine_Block_FCM(() =>
+				N.a.StartCoroutineWatched(LODINIOCACA_Corotuine_Block_FCM(() =>
 				{
 					//0x1CACD2C
 					return;
@@ -102,7 +102,7 @@ public class NMFABEKNBKJ
 			}
 			else
 			{
-				N.a.StartCoroutine(PELPMECLNNB_Corotuine_Accept_FCM(() => 
+				N.a.StartCoroutineWatched(PELPMECLNNB_Corotuine_Accept_FCM(() => 
 				{
 					//0x1CACD28
 					return;

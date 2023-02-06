@@ -200,7 +200,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9AAC9C Offset: 0x9AAC9C VA: 0x9AAC9C Slot: 22
 		public void Show(Action end)
 		{
-			StartCoroutine(WaitPauseActiveCroutine(end));
+			this.StartCoroutineWatched(WaitPauseActiveCroutine(end));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x74462C Offset: 0x74462C VA: 0x74462C

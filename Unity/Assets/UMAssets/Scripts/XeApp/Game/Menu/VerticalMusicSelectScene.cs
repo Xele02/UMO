@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 				TryInstall(str, m_originalEventMusicDataList[i]);
 			}
 			m_isChangeBg = false;
-			StartCoroutine(Co_SetupBg(BgType.VerticalMusic, GetChangeBgId(selectMusicListData), false, () => {
+			this.StartCoroutineWatched(Co_SetupBg(BgType.VerticalMusic, GetChangeBgId(selectMusicListData), false, () => {
 				//0xBF00B8
 				m_isChangeBg = true;
 			}));
@@ -1067,7 +1067,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.ACGKEJKPFIA_SetSelectedSong(musicTab != VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal, songId, eventType);
-			StartCoroutine(Co_ChangeBg(BgType.VerticalMusic, GetChangeBgId(selectMusicListData), null, true));
+			this.StartCoroutineWatched(Co_ChangeBg(BgType.VerticalMusic, GetChangeBgId(selectMusicListData), null, true));
 		}
 
 		// RVA: 0xBEC300 Offset: 0xBEC300 VA: 0xBEC300 Slot: 59
@@ -1276,7 +1276,7 @@ namespace XeApp.Game.Menu
 			m_musicSelectUISapporter.isLine6Mode = !m_musicSelectUISapporter.isLine6Mode;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.HPDBEKAGKOD_SetIsLine6Mode(m_musicSelectUISapporter.isLine6Mode);
 			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-			StartCoroutine(m_musicList.Co_UpdateAnim(() =>
+			this.StartCoroutineWatched(m_musicList.Co_UpdateAnim(() =>
 			{
 				//0xAC29B8
 				SetFreeMusicIdByListNo(selectFreeMusicId, selectEventCategory);
@@ -1313,7 +1313,7 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.ABGEMNAHALF_SetIsEventTab(m_musicTab == VerticalMusicSelecChoiceMusicListTab.MusicTab.Event);
 			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			SetFreeMusicIdByListNo(songId, eventType);
-			StartCoroutine(m_musicList.Co_UpdateAnim(this.OnChangeFilter));
+			this.StartCoroutineWatched(m_musicList.Co_UpdateAnim(this.OnChangeFilter));
 		}
 
 		// // RVA: 0xBED3D0 Offset: 0xBED3D0 VA: 0xBED3D0

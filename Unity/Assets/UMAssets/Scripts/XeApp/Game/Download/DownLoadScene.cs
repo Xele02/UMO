@@ -32,7 +32,7 @@ namespace XeApp.Game.DownLoad
 		// RVA: 0x11BE4B4 Offset: 0x11BE4B4 VA: 0x11BE4B4 Slot: 12
 		protected override bool DoUpdateEnter()
 		{
-			StartCoroutine(Co_MainProc());
+			this.StartCoroutineWatched(Co_MainProc());
 			return base.DoUpdateEnter();
 		}
 
@@ -45,9 +45,9 @@ namespace XeApp.Game.DownLoad
 		{
 			UnityEngine.Debug.Log("Enter Co_MainProc");
 			//0x11BFC54 
-			yield return StartCoroutine(Co_InitializeQuestionary());
+			yield return this.StartCoroutineWatched(Co_InitializeQuestionary());
 
-			yield return StartCoroutine(Co_InitializeUnionDataProc());
+			yield return this.StartCoroutineWatched(Co_InitializeUnionDataProc());
 
 			GameManager.Instance.CreateViewPlayerData();
 			NextScene("Menu");

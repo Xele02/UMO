@@ -37,7 +37,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1105C4C Offset: 0x1105C4C VA: 0x1105C4C
 		public void Entry(string bundleName, string prefabName, Font font, MonoBehaviour mb)
 		{
-			mb.StartCoroutine(LoadLayout(bundleName, prefabName, font));
+			mb.StartCoroutineWatched(LoadLayout(bundleName, prefabName, font));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73CCF0 Offset: 0x73CCF0 VA: 0x73CCF0

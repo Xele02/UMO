@@ -56,7 +56,7 @@ namespace XeApp.Game.Common
 		{
 			Instance = this;
 			isInitialized = false;
-			StartCoroutine(SurveyLatencyEstimator());
+			this.StartCoroutineWatched(SurveyLatencyEstimator());
 
 			// Added, force an audio listener on this gameObject so sound work always
 			gameObject.AddComponent<AudioListener>();
@@ -156,7 +156,7 @@ namespace XeApp.Game.Common
 			{
 				strs.Add(string.Format("cs_se_notes_{0:000}", forceNoteSe));
 			}
-			StartCoroutine(Co_InstallProcess(strs.ToArray(), () =>
+			this.StartCoroutineWatched(Co_InstallProcess(strs.ToArray(), () =>
 			{
 				//0x139764C
 				if(forceNoteSe < 1)

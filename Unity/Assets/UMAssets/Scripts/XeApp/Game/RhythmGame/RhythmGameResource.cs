@@ -344,7 +344,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			isInitializedSpecialStageResource = false;
 			specialDirectionMovieId_ = -1;
-			StartCoroutine(Co_LoadSpecialDirectionResource(wavId, stageDivaNum, settingList));
+			this.StartCoroutineWatched(Co_LoadSpecialDirectionResource(wavId, stageDivaNum, settingList));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7451EC Offset: 0x7451EC VA: 0x7451EC
@@ -538,7 +538,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF8874 Offset: 0xBF8874 VA: 0xBF8874
 		public void LoadUITextureResouces()
 		{
-			StartCoroutine(LoadingUITextureAllResource());
+			this.StartCoroutineWatched(LoadingUITextureAllResource());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7452DC Offset: 0x7452DC VA: 0x7452DC
@@ -553,11 +553,11 @@ namespace XeApp.Game.RhythmGame
 			isUITextureResoucesLoaded_ = false;
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB_CutInEnabled())
 			{
-				yield return StartCoroutine(LoadingUIDivaSkillCutinTextureResource());
-				yield return StartCoroutine(LoadingUIACTIVESkillIconTextureResource());
+				yield return this.StartCoroutineWatched(LoadingUIDivaSkillCutinTextureResource());
+				yield return this.StartCoroutineWatched(LoadingUIACTIVESkillIconTextureResource());
 			}
-			yield return StartCoroutine(LoadingUIPrefab());
-			yield return StartCoroutine(LoadPilotTexture());
+			yield return this.StartCoroutineWatched(LoadingUIPrefab());
+			yield return this.StartCoroutineWatched(LoadPilotTexture());
 			isUITextureResoucesLoaded_ = true;
 		}
 
@@ -671,7 +671,7 @@ namespace XeApp.Game.RhythmGame
 			for (i = 0; i < 1; i++)
 			{
 				effectType = md.EGLDFPILJLG_BuffEffectType[i];
-				yield return StartCoroutine(LoadSkillEffectTextureCoroutine(effectType, bundleName, assetName));
+				yield return this.StartCoroutineWatched(LoadSkillEffectTextureCoroutine(effectType, bundleName, assetName));
 				uiTextureResources.activeSkillEffectMaterial = uiTextureResources.skillEffectMaterials[effectType];
 			}
 			md = null;
@@ -821,9 +821,9 @@ namespace XeApp.Game.RhythmGame
 			gameSetup = Database.Instance.gameSetup;
 			enemyInfo = gameSetup.musicInfo.GetEnemyInfo();
 
-			yield return StartCoroutine(m_pilotTexture.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[gameSetup.teamInfo.prismValkyrieId - 1].PFGJJLGLPAC_PilotId));
-			yield return StartCoroutine(m_enemyPilotTexture.Load(enemyInfo.EELBHDJJJHH_Plt));
-			yield return StartCoroutine(m_enemyRobotTexture.Load(enemyInfo.EAHPLCJMPHD_Pic));
+			yield return this.StartCoroutineWatched(m_pilotTexture.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[gameSetup.teamInfo.prismValkyrieId - 1].PFGJJLGLPAC_PilotId));
+			yield return this.StartCoroutineWatched(m_enemyPilotTexture.Load(enemyInfo.EELBHDJJJHH_Plt));
+			yield return this.StartCoroutineWatched(m_enemyRobotTexture.Load(enemyInfo.EAHPLCJMPHD_Pic));
 			if (musicVoiceChangerResource == null)
 				yield break;
 			yield return new WaitUntil(() =>
@@ -834,7 +834,7 @@ namespace XeApp.Game.RhythmGame
 			if (!isTakeoffDivaVoice)
 				yield break;
 			m_divaTexture = new UiDivaTexture();
-			yield return StartCoroutine(m_divaTexture.Load(gameSetup.teamInfo.divaList[0].prismDivaId, gameSetup.teamInfo.divaList[0].prismCostumeModelId, gameSetup.teamInfo.divaList[0].prismCostumeColorId));
+			yield return this.StartCoroutineWatched(m_divaTexture.Load(gameSetup.teamInfo.divaList[0].prismDivaId, gameSetup.teamInfo.divaList[0].prismCostumeModelId, gameSetup.teamInfo.divaList[0].prismCostumeColorId));
 		}
 
 		// // RVA: 0xBF8ED0 Offset: 0xBF8ED0 VA: 0xBF8ED0

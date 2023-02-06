@@ -168,7 +168,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E1E08 Offset: 0x18E1E08 VA: 0x18E1E08
 		public void StartSingRankUpAnim()
 		{
-			m_coroutine = StartCoroutine(Co_StartSingRankUpAnim());
+			m_coroutine = this.StartCoroutineWatched(Co_StartSingRankUpAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C13C Offset: 0x71C13C VA: 0x71C13C
@@ -181,13 +181,13 @@ namespace XeApp.Game.Menu
 			//0x18E4074
 			if(viewResultData.BPGDOBCMDBP_CategoryId != 5)
 			{
-				coRank = StartCoroutine(Co_AnimRankIn());
+				coRank = this.StartCoroutineWatched(Co_AnimRankIn());
 				yield return new WaitForSeconds(0.2f);
-				coRankTotal = StartCoroutine(Co_AnimRankTotalIn());
+				coRankTotal = this.StartCoroutineWatched(Co_AnimRankTotalIn());
 				yield return coRank;
 				yield return coRankTotal;
-				coRank = StartCoroutine(Co_AnimRankUp());
-				coRankTotal = StartCoroutine(Co_AnimRankTotalUp());
+				coRank = this.StartCoroutineWatched(Co_AnimRankUp());
+				coRankTotal = this.StartCoroutineWatched(Co_AnimRankTotalUp());
 				yield return coRank;
 				yield return coRankTotal;
 				if(viewResultData.JLBJIIBGCOE_RankState != NGJOPPIGCPM_ResultData.DFJMELLLNLH.HJNNKCMLGFL)
@@ -367,7 +367,7 @@ namespace XeApp.Game.Menu
 			isSkiped = true;
 			if(m_coroutine != null)
 				return;
-			m_coroutine = StartCoroutine(Co_StartSingRankUpAnim());
+			m_coroutine = this.StartCoroutineWatched(Co_StartSingRankUpAnim());
 		}
 
 		// // RVA: 0x18E2324 Offset: 0x18E2324 VA: 0x18E2324

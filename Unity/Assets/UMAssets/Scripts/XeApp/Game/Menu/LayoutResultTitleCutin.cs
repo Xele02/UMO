@@ -26,7 +26,7 @@ namespace XeApp.Game.Menu
 		public void StartAnim()
 		{
 			layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
-			m_coroutine = StartCoroutine(Co_PlayingStartPopupAnim());
+			m_coroutine = this.StartCoroutineWatched(Co_PlayingStartPopupAnim());
 		}
 
 		// // RVA: 0x1D1BDAC Offset: 0x1D1BDAC VA: 0x1D1BDAC

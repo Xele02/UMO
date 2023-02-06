@@ -100,7 +100,7 @@ namespace XeApp.Game.Common
 				m_form = form;
 			}
 			animator.Play(ChangeStateHash[m_form], -1, 0);
-			m_coChangeFinish = StartCoroutine(Co_WaitAnimationEnd(ChangeStateHash[m_form], () => {
+			m_coChangeFinish = this.StartCoroutineWatched(Co_WaitAnimationEnd(ChangeStateHash[m_form], () => {
 				//0x1115A30
 				m_coChangeFinish = null;
 				SetForm((m_form + 1) % 3);

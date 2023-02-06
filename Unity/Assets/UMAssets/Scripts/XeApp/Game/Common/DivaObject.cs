@@ -387,7 +387,7 @@ namespace XeApp.Game.Common
 		{
 			if(!a_fix)
 			{
-				StartCoroutine(WaitUnlockBoneSpring(a_index));
+				this.StartCoroutineWatched(WaitUnlockBoneSpring(a_index));
 				return;
 			}
 			if(boneSpringController != null)
@@ -421,7 +421,7 @@ namespace XeApp.Game.Common
 				StopCoroutine(m_coroutine_wait_lock);
 			if (!gameObject.activeSelf)
 				return;
-			m_coroutine_wait_lock = StartCoroutine(CoroutineWaitLockBoneSpring(a_index, a_seconds));
+			m_coroutine_wait_lock = this.StartCoroutineWatched(CoroutineWaitLockBoneSpring(a_index, a_seconds));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x736534 Offset: 0x736534 VA: 0x736534

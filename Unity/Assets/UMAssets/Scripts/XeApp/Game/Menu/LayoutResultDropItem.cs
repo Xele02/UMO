@@ -229,7 +229,7 @@ namespace XeApp.Game.Menu
 					layoutNumStateTable.StartChildrenAnimGoStop(m_is_bonus ? "01" : "02", m_is_bonus ? "01" : "02");
 					normalItem.layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
 					shadowAnime.StartChildrenAnimGoStop("go_in", "st_in");
-					StartCoroutine(Co_PlayingAnim(normalItem.layoutRoot, normalAnimEndRate));
+					this.StartCoroutineWatched(Co_PlayingAnim(normalItem.layoutRoot, normalAnimEndRate));
 					PlayNormalItemSE();
 				}
 				else
@@ -238,7 +238,7 @@ namespace XeApp.Game.Menu
 					layoutNumStateTable.StartChildrenAnimGoStop("02", "02");
 					rareItem.layoutRoot.StartChildrenAnimGoStop("go_hiraki", "st_hiraki");
 					shadowAnime.StartChildrenAnimGoStop("go_hiraki", "st_hiraki");
-					StartCoroutine(Co_PlayingAnim(rareItem.layoutRoot, rareAnimEndRate));
+					this.StartCoroutineWatched(Co_PlayingAnim(rareItem.layoutRoot, rareAnimEndRate));
 					PlayRareItemSE();
 				}
 			}
@@ -248,7 +248,7 @@ namespace XeApp.Game.Menu
 				layoutNumStateTable.StartChildrenAnimGoStop("02", "02");
 				eventRareItem.layoutRoot.StartChildrenAnimGoStop("go_hiraki", "st_hiraki");
 				shadowAnime.StartChildrenAnimGoStop("go_hiraki", "st_hiraki");
-				StartCoroutine(Co_PlayingAnim(eventRareItem.layoutRoot, rareAnimEndRate));
+				this.StartCoroutineWatched(Co_PlayingAnim(eventRareItem.layoutRoot, rareAnimEndRate));
 				PlayRareItemSE();
 			}
 			if (itemInfo == null)
@@ -346,7 +346,7 @@ namespace XeApp.Game.Menu
 				prevInput = GameManager.Instance.InputEnabled;
 				GameManager.Instance.InputEnabled = true;
 				isOpenRecordPlateInfo = true;
-				StartCoroutine(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Result, () =>
+				this.StartCoroutineWatched(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Result, () =>
 				{
 					//0x1D92CC8
 					isOpenRecordPlateInfo = false;

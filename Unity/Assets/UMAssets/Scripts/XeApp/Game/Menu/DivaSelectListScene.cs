@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x17EE1A8 Offset: 0x17EE1A8 VA: 0x17EE1A8
 		private void Start()
 		{
-			StartCoroutine(InitializeCoroutine());
+			this.StartCoroutineWatched(InitializeCoroutine());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72D89C Offset: 0x72D89C VA: 0x72D89C
@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 			m_divaChangePopupSetting = new DivaChangePopupSetting();
 			m_divaChangePopupSetting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("popup_title_02");
 			m_divaChangePopupSetting.WindowSize = SizeType.Middle;
-			yield return StartCoroutine(m_divaSelectList.LoadDivaIconPanelCoroutine());
+			yield return this.StartCoroutineWatched(m_divaSelectList.LoadDivaIconPanelCoroutine());
 			IsReady = true;
 		}
 
@@ -304,13 +304,13 @@ namespace XeApp.Game.Menu
 		{
 			if(!m_args.isFromBeginner)
 			{
-				StartCoroutine(Co_ShowHelp());
+				this.StartCoroutineWatched(Co_ShowHelp());
 			}
 			else if(!TutorialProc.CanDivaSelect(m_args.beginnerMissionId))
 			{
 				return;
 			}
-			StartCoroutine(TutorialProc.Co_DivaSelectList(m_divaSelectList.GetNavigationDivaListButton(), () =>
+			this.StartCoroutineWatched(TutorialProc.Co_DivaSelectList(m_divaSelectList.GetNavigationDivaListButton(), () =>
 			{
 				//0x17F1110
 				return m_isOpenEndConfirmPopup;

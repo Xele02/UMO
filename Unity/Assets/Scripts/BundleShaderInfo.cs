@@ -36,7 +36,7 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 
 	public void RegisterShaderIds(AssetBundle shaderBundle2, Action onCompleted)
 	{
-		StartCoroutine(Co_RegisterShaderIds(shaderBundle2, onCompleted));
+		this.StartCoroutineWatched(Co_RegisterShaderIds(shaderBundle2, onCompleted));
 	}
 
 	public IEnumerator Co_RegisterShaderIds(AssetBundle shaderBundle2, Action onCompleted)

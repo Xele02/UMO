@@ -527,7 +527,7 @@ namespace XeApp.Game.RhythmGame
 					}
 				}
 			}
-			StartCoroutine(WaitEnterAnimeCoroutine(endAction));
+			this.StartCoroutineWatched(WaitEnterAnimeCoroutine(endAction));
 		}
 
 		// // RVA: 0xDCE44C Offset: 0xDCE44C VA: 0xDCE44C Slot: 23
@@ -557,7 +557,7 @@ namespace XeApp.Game.RhythmGame
 							StopCoroutine(WaitRecoveryFunc);
 						}
 						WaitRecoveryFunc = WaitRecoveryCoroutine();
-						StartCoroutine(WaitRecoveryFunc);
+						this.StartCoroutineWatched(WaitRecoveryFunc);
 					}
 				}
 				if(!m_isContinue)
@@ -733,7 +733,7 @@ namespace XeApp.Game.RhythmGame
 						v = m_valkyrieTopAnimator.transform.localPosition + new Vector3(400, -130, 0);
 					}
 					o.transform.localPosition = v;
-					StartCoroutine(WaitDamgeResultAnimeCoroutine(o));
+					this.StartCoroutineWatched(WaitDamgeResultAnimeCoroutine(o));
 				}
 			}
 		}
@@ -770,7 +770,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(isFaild)
 			{
-				StartCoroutine(FaildValkyrieCoroutine());
+				this.StartCoroutineWatched(FaildValkyrieCoroutine());
 			}
 			else
 			{

@@ -134,7 +134,7 @@ namespace XeApp.Game.Common
 			isShootTiming = false;
 			CheckShootAction();
 			isTransforming = true;
-			StartCoroutine(Co_WaitAnimationEnd(TransformStateHash, () =>
+			this.StartCoroutineWatched(Co_WaitAnimationEnd(TransformStateHash, () =>
 			{
 				//0xEA24C8
 				isTransforming = false;
@@ -295,7 +295,7 @@ namespace XeApp.Game.Common
 						stateHash = BattroidDamageStateHash;
 					}
 					animator.Play(stateHash, 0, 0);
-					m_coWaitDamageEnd = StartCoroutine(Co_WaitAnimationEnd(stateHash, () =>
+					m_coWaitDamageEnd = this.StartCoroutineWatched(Co_WaitAnimationEnd(stateHash, () =>
 					{
 						//0xEA24D4
 						m_coWaitDamageEnd = null;
@@ -305,7 +305,7 @@ namespace XeApp.Game.Common
 				}
 				else
 				{
-					m_coWaitDamageEnd = StartCoroutine(Co_WaitDamageEffectProcess());
+					m_coWaitDamageEnd = this.StartCoroutineWatched(Co_WaitDamageEffectProcess());
 				}
 			}
 		}

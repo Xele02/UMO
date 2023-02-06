@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x13802EC Offset: 0x13802EC VA: 0x13802EC Slot: 5
 		protected override void Start()
 		{
-			StartCoroutine(InitializeCoroutine());
+			this.StartCoroutineWatched(InitializeCoroutine());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72E0C4 Offset: 0x72E0C4 VA: 0x72E0C4
@@ -155,7 +155,7 @@ namespace XeApp.Game.Menu
 			{
 				while(!m_sceneSelectList.IsLoaded())
 					yield return null;
-				yield return StartCoroutine(m_sceneSelectList.LoadScrollObjectCoroutine(TransitionName));
+				yield return this.StartCoroutineWatched(m_sceneSelectList.LoadScrollObjectCoroutine(TransitionName));
 			}
 			IsReady = true;
 		}
@@ -721,7 +721,7 @@ namespace XeApp.Game.Menu
 								button.ClearOnStayCallback();
 								if(m_missionId == 5)
 								{
-									StartCoroutine(TutorialProc.Co_PlateGrowth(button));
+									this.StartCoroutineWatched(TutorialProc.Co_PlateGrowth(button));
 									m_isBeginner = false;
 								}
 								else

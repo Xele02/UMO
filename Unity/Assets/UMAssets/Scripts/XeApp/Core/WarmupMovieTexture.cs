@@ -34,7 +34,7 @@ namespace XeApp.Core
 				return 1.777778f;
 			});
 			this.onFinish = onFinish;
-			StartCoroutine(Co_PreRender());
+			this.StartCoroutineWatched(Co_PreRender());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x748820 Offset: 0x748820 VA: 0x748820

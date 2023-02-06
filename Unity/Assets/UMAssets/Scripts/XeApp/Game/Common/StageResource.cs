@@ -27,7 +27,7 @@ namespace XeApp.Game.Common
 		public void LoadResouces(int stageId, Func<int> getSpecialStageId)
 		{
 			isLoadedPrefab = false;
-			StartCoroutine(Co_LoadResouces(stageId, getSpecialStageId));
+			this.StartCoroutineWatched(Co_LoadResouces(stageId, getSpecialStageId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B5C0 Offset: 0x73B5C0 VA: 0x73B5C0

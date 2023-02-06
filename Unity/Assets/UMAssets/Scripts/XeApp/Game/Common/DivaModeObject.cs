@@ -99,7 +99,7 @@ namespace XeApp.Game.Common
 			moviePlayer.Play();
 			SetupMovieTimes();
 			isRunning = true;
-			m_coWaitForMovieEnd = StartCoroutine(Co_WaitForMovieEnd());
+			m_coWaitForMovieEnd = this.StartCoroutineWatched(Co_WaitForMovieEnd());
 			isInitialized = true;
 		}
 

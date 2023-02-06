@@ -21,7 +21,7 @@ namespace XeApp.Game.Common
 		{
 			m_anim = layout.FindViewByExId("root_cmn_load_now_sw_cmn_load_now_anim") as AbsoluteLayout;
 			Loaded();
-			StartCoroutine(WaitLayoutUGUICoroutine());
+			this.StartCoroutineWatched(WaitLayoutUGUICoroutine());
 			return true;
 		}
 

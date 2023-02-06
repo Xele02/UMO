@@ -10,9 +10,14 @@ public static class MonoBehaviourExtensions
 {
     public static Coroutine StartCoroutineWatched(this MonoBehaviour owner, IEnumerator coroutine)
     {
-        Coroutine c = owner.StartCoroutine(CoroutineWatcher.Instance.Run(coroutine));
+        Coroutine c = owner.StartCoroutineWatched(CoroutineWatcher.Instance.Run(coroutine));
         return c;
-    }
+	}
+	public static Coroutine StartCoroutineWatched(this MonoBehaviour owner, string FuncName)
+	{
+		Coroutine c = owner.StartCoroutineWatched(FuncName);
+		return c;
+	}
 }
 
 public static class Co

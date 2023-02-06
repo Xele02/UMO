@@ -54,7 +54,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				m_symbolSub.StartAnim(label);
 			}
-			m_coWaitEnterEnd = StartCoroutine(Co_WaitEnterEnd(isInactive));
+			m_coWaitEnterEnd = this.StartCoroutineWatched(Co_WaitEnterEnd(isInactive));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x746ACC Offset: 0x746ACC VA: 0x746ACC

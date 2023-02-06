@@ -122,7 +122,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1117058 Offset: 0x1117058 VA: 0x1117058
 		public YieldInstruction WaitForDone(MonoBehaviour mb)
 		{
-			return mb.StartCoroutine(CheckDone());
+			return mb.StartCoroutineWatched(CheckDone());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x739AB4 Offset: 0x739AB4 VA: 0x739AB4

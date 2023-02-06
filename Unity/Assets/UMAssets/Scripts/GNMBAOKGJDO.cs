@@ -17,7 +17,7 @@ public class GNMBAOKGJDO
 		NPNNPNAIONN = false;
 		UnityEngine.Debug.Log("start Coroutine_Load="+CJEKGLGBIHF);
         
-		N.a.StartCoroutine(ODDEPBIJHOE_Coroutine_Load(CJEKGLGBIHF));
+		N.a.StartCoroutineWatched(ODDEPBIJHOE_Coroutine_Load(CJEKGLGBIHF));
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BA184 Offset: 0x6BA184 VA: 0x6BA184

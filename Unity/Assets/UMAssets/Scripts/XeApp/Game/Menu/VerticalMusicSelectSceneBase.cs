@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 		protected override void Awake()
 		{
 			base.Awake();
-			StartCoroutine(Co_Awake());
+			this.StartCoroutineWatched(Co_Awake());
 		}
 
 		// // RVA: 0xAC8D74 Offset: 0xAC8D74 VA: 0xAC8D74
@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
 		protected override void OnPreSetCanvas()
 		{
 			LoadUnitLiveSaveData();
-			StartCoroutine(Co_OnPreSetCanvas());
+			this.StartCoroutineWatched(Co_OnPreSetCanvas());
 		}
 
 		// RVA: 0xAC8EA4 Offset: 0xAC8EA4 VA: 0xAC8EA4 Slot: 17
@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xAC8F58 Offset: 0xAC8F58 VA: 0xAC8F58 Slot: 18
 		protected override void OnPostSetCanvas()
 		{
-			StartCoroutine(Co_OnPostSetCanvas());
+			this.StartCoroutineWatched(Co_OnPostSetCanvas());
 		}
 
 		// RVA: 0xAC8F8C Offset: 0xAC8F8C VA: 0xAC8F8C Slot: 19
@@ -146,7 +146,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xAC8F94 Offset: 0xAC8F94 VA: 0xAC8F94 Slot: 23
 		protected override void OnActivateScene()
 		{
-			StartCoroutine(Co_ActivateScene());
+			this.StartCoroutineWatched(Co_ActivateScene());
 		}
 
 		// RVA: 0xAC8FC8 Offset: 0xAC8FC8 VA: 0xAC8FC8 Slot: 24
@@ -277,7 +277,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC91E0 Offset: 0xAC91E0 VA: 0xAC91E0
 		private void CheckUnitLive(Action endCallback)
 		{
-			GameManager.Instance.StartCoroutine(Co_CheckUnitLive(endCallback));
+			GameManager.Instance.StartCoroutineWatched(Co_CheckUnitLive(endCallback));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6A04 Offset: 0x6F6A04 VA: 0x6F6A04
@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 		protected void DownloadCurrentMusic()
 		{
 			m_unitLiveLocalSaveData.HJMKBCFJOOH(false);
-			StartCoroutine(Co_DownloadMusic(selectMusicData));
+			this.StartCoroutineWatched(Co_DownloadMusic(selectMusicData));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6A7C Offset: 0x6F6A7C VA: 0x6F6A7C
@@ -373,7 +373,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC948C Offset: 0xAC948C VA: 0xAC948C
 		private void CheckSimulationLive(Action<bool> endCallBack)
 		{
-			GameManager.Instance.StartCoroutine(Co_CheckSimulationLive(endCallBack));
+			GameManager.Instance.StartCoroutineWatched(Co_CheckSimulationLive(endCallBack));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6AF4 Offset: 0x6F6AF4 VA: 0x6F6AF4
@@ -417,7 +417,7 @@ namespace XeApp.Game.Menu
 		private void CheckBoostData(bool isSimulation, Action<bool> endCallback, Action cancelCallback)
 		{
 			TodoLogger.Log(0, "CheckBoostData");
-			StartCoroutine(Co_CheckBoostData(isSimulation, endCallback, cancelCallback));
+			this.StartCoroutineWatched(Co_CheckBoostData(isSimulation, endCallback, cancelCallback));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6B6C Offset: 0x6F6B6C VA: 0x6F6B6C

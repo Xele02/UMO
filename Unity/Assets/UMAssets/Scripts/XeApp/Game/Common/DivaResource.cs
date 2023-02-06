@@ -486,7 +486,7 @@ namespace XeApp.Game.Common
 			m_loadedColorId = colorId;
 			if(isLoadedBasicResource)
 				return;
-			StartCoroutine(Co_LoadBasicResource(divaId, modelId, colorId));
+			this.StartCoroutineWatched(Co_LoadBasicResource(divaId, modelId, colorId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73666C Offset: 0x73666C VA: 0x73666C
@@ -782,7 +782,7 @@ namespace XeApp.Game.Common
 		{
 			this.positionId = positionId;
 			if(!isLoadedMusicAnimationResource)
-				StartCoroutine(Co_LoadMusicAnimationResource(wavId, primeId, positionId, divaNum, divaId));
+				this.StartCoroutineWatched(Co_LoadMusicAnimationResource(wavId, primeId, positionId, divaNum, divaId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736868 Offset: 0x736868 VA: 0x736868
@@ -842,7 +842,7 @@ namespace XeApp.Game.Common
 				HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE_Diva;
 				BJPLLEBHAGO_DivaInfo b = h.GCINIJEMHFK_GetInfo(divaId);
 				int ms = b.IDDHKOEFJFB_BodyId;
-				yield return StartCoroutine(Co_LoadMikeStandResource(ms));
+				yield return this.StartCoroutineWatched(Co_LoadMikeStandResource(ms));
 			}
 			isLoadedMusicAnimationResource = true;
     		UnityEngine.Debug.Log("Exit Co_LoadMusicAnimationResource");
@@ -907,7 +907,7 @@ namespace XeApp.Game.Common
 		{
 			if(!isLoadedMusicFacialResource)
 			{
-				StartCoroutine(Co_LoadFacialResource(divaId, wavId, stageDivaNum));
+				this.StartCoroutineWatched(Co_LoadFacialResource(divaId, wavId, stageDivaNum));
 			}
 		}
 
@@ -996,7 +996,7 @@ namespace XeApp.Game.Common
 		{
 			if(!isLoadedMenuAnimationResource)
 			{
-				StartCoroutine(Co_LoadMenuResource(divaId, modelId, facialType, scoreRank));
+				this.StartCoroutineWatched(Co_LoadMenuResource(divaId, modelId, facialType, scoreRank));
 			}
 		}
 
@@ -1007,12 +1007,12 @@ namespace XeApp.Game.Common
     		UnityEngine.Debug.Log("Enter Co_LoadMenuResource");
 			//0x1C03944
 			
-			yield return StartCoroutine(Co_LoadCharacter(divaId));
-			yield return StartCoroutine(Co_LoadFacialClip(divaId, facialType));
-			yield return StartCoroutine(Co_LoadLoginAction(divaId));
-			yield return StartCoroutine(Co_LoadResultAction(divaId, modelId, scoreRank));
-			yield return StartCoroutine(Co_LoadUnlockDivaAction(divaId));
-			yield return StartCoroutine(Co_LoadUnlockCostumeDivaAction(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadCharacter(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadFacialClip(divaId, facialType));
+			yield return this.StartCoroutineWatched(Co_LoadLoginAction(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadResultAction(divaId, modelId, scoreRank));
+			yield return this.StartCoroutineWatched(Co_LoadUnlockDivaAction(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadUnlockCostumeDivaAction(divaId));
 			isLoadedMenuAnimationResource = true;
     		UnityEngine.Debug.Log("Exit Co_LoadMenuResource");
 		}

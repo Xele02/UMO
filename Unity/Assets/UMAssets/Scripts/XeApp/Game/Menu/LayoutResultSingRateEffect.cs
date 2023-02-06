@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 				str.AppendFormat("musicrate_{0:D2}", i + 1);
 				SingRankArray[i] = LayoutUGUIUtility.MakeUnityUVRect(uvMan.GetUVData(str.ToString()));
 			}
-			StartCoroutine(Co_Load());
+			this.StartCoroutineWatched(Co_Load());
 			return true;
 		}
 
@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 			is_open = true;
 			if(animCoroutine != null)
 				return;
-			animCoroutine = StartCoroutine(Co_WaitEnter());
+			animCoroutine = this.StartCoroutineWatched(Co_WaitEnter());
 		}
 
 		// // RVA: 0x1D18A50 Offset: 0x1D18A50 VA: 0x1D18A50
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_Load()
 		{
 			//0x1D18EBC
-			yield return StartCoroutine(LoadIconTexture());
+			yield return this.StartCoroutineWatched(LoadIconTexture());
 			Loaded();
 		}
 

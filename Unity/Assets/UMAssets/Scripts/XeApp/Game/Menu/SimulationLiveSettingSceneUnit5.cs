@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		{
 			SetupPrismPopupSetting();
 			m_gameSettingMenu = ConfigMenu.Create(null);
-			StartCoroutine(Co_LoadResource());
+			this.StartCoroutineWatched(Co_LoadResource());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72743C Offset: 0x72743C VA: 0x72743C
@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE228 Offset: 0x12CE228 VA: 0x12CE228 Slot: 18
 		protected override void OnPostSetCanvas()
 		{
-			StartCoroutine(Co_OnPostSetCanvas());
+			this.StartCoroutineWatched(Co_OnPostSetCanvas());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7274B4 Offset: 0x7274B4 VA: 0x7274B4
@@ -126,7 +126,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE9BC Offset: 0x12CE9BC VA: 0x12CE9BC Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			StartCoroutine(Co_ExitAnimation());
+			this.StartCoroutineWatched(Co_ExitAnimation());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72752C Offset: 0x72752C VA: 0x72752C
@@ -365,7 +365,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CFB68 Offset: 0x12CFB68 VA: 0x12CFB68
 		private void StartApplyWait()
 		{
-			StartCoroutine(Co_ApplyWait());
+			this.StartCoroutineWatched(Co_ApplyWait());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72761C Offset: 0x72761C VA: 0x72761C

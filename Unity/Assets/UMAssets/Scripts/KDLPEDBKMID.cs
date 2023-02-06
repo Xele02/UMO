@@ -150,7 +150,7 @@ public class KDLPEDBKMID
 						return;
 				}
 				LFPOPKJMGKA = true;
-				N.a.StartCoroutine(EOFJPNPFGDM_Coroutine_Install());
+				N.a.StartCoroutineWatched(EOFJPNPFGDM_Coroutine_Install());
 				LCIGLIDJILJ = this.OCGLHHHMILH;
 			}
 		}

@@ -26,7 +26,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAECF54 Offset: 0xAECF54 VA: 0xAECF54
 		public void LoadResouces(int wavId, int assetId, int stageDivaNum)
 		{
-			StartCoroutine(Co_LoadAllResouces(wavId, assetId, stageDivaNum));
+			this.StartCoroutineWatched(Co_LoadAllResouces(wavId, assetId, stageDivaNum));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73CBE8 Offset: 0x73CBE8 VA: 0x73CBE8

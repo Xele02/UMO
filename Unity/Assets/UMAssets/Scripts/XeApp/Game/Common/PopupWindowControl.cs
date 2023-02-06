@@ -232,7 +232,7 @@ namespace XeApp.Game.Common
 			m_scrollRect = GetComponentInChildren<ScrollRect>(true);
 			m_rectMask = m_scrollRect.GetComponent<Mask>();
 			m_maskImage = m_scrollRect.GetComponent<Image>();
-			StartCoroutine(WaitLoadLayout());
+			this.StartCoroutineWatched(WaitLoadLayout());
 		}
 
 		// // RVA: 0x1BB956C Offset: 0x1BB956C VA: 0x1BB956C
@@ -360,7 +360,7 @@ namespace XeApp.Game.Common
 			}
 			else if(m_setting.IsAssetBundle)
 			{
-				StartCoroutine(LoadResourceAssetBundleCoroutine());
+				this.StartCoroutineWatched(LoadResourceAssetBundleCoroutine());
 			}
 			else
 			{
@@ -377,7 +377,7 @@ namespace XeApp.Game.Common
 				InputEnable();
 				m_inputTargetList.Clear();
 			};
-			StartCoroutine(ClosePopupWindow(endCallBack, button));
+			this.StartCoroutineWatched(ClosePopupWindow(endCallBack, button));
 		}
 
 		// // RVA: 0x1BBB25C Offset: 0x1BBB25C VA: 0x1BBB25C
@@ -460,7 +460,7 @@ namespace XeApp.Game.Common
 				InputEnable();
 			};
 			GameManager.Instance.AddPushBackButtonHandler(this.PushBackButton);
-			StartCoroutine(ShowPopupWindow());
+			this.StartCoroutineWatched(ShowPopupWindow());
 		}
 
 		// // RVA: 0x1BBA6D0 Offset: 0x1BBA6D0 VA: 0x1BBA6D0
@@ -559,7 +559,7 @@ namespace XeApp.Game.Common
 			{
 				m_scrollRect.enabled = true;
 			}
-			yield return StartCoroutine(PlayPopupWindowAnim());
+			yield return this.StartCoroutineWatched(PlayPopupWindowAnim());
 			m_isAnimation = false;
 			if(m_openEndCallBack != null)
 			{
@@ -595,7 +595,7 @@ namespace XeApp.Game.Common
 				}
 			}
 			m_isOpenWindow = false;
-			yield return StartCoroutine(PlayPopupWindowAnim());
+			yield return this.StartCoroutineWatched(PlayPopupWindowAnim());
 			m_isAnimation = false;
 			SetActiveImage(false);
 			ReleaseResource();

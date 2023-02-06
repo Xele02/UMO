@@ -186,7 +186,7 @@ namespace XeApp.Game.Menu
 		public void LoadAssetBundle()
 		{
 			IsLoadBundle = false;
-			GameManager.Instance.StartCoroutine(UnionBundle());
+			GameManager.Instance.StartCoroutineWatched(UnionBundle());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C634 Offset: 0x70C634 VA: 0x70C634

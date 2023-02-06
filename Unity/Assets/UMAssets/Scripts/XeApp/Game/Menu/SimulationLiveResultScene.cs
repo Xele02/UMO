@@ -22,7 +22,7 @@ namespace XeApp.Game.Menu
 		private void Awake()
 		{
 			MenuScene.Instance.divaManager.BeginControl(divaControl);
-			StartCoroutine(CO_ResourceLoad());
+			this.StartCoroutineWatched(CO_ResourceLoad());
 		}
 
 		// RVA: 0xC4F708 Offset: 0xC4F708 VA: 0xC4F708 Slot: 9
@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 			m_resultInfo.OnClickMusicButton = OnClickMusicButton;
 			m_resultInfo.OnClickAnimeStoreButton = OnClickAnimeStoreButton;
 			divaControl.OnResultStart();
-			StartCoroutine(CO_WaitDiva());
+			this.StartCoroutineWatched(CO_WaitDiva());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x726DAC Offset: 0x726DAC VA: 0x726DAC
@@ -142,9 +142,9 @@ namespace XeApp.Game.Menu
 		private IEnumerator CO_ResourceLoad()
 		{
 			//0x12C9FEC
-			yield return StartCoroutine(CO_LoadResultInfo());
-			yield return StartCoroutine(Co_LoadCommonLayout());
-			yield return StartCoroutine(CO_LoadSerifWindow());
+			yield return this.StartCoroutineWatched(CO_LoadResultInfo());
+			yield return this.StartCoroutineWatched(Co_LoadCommonLayout());
+			yield return this.StartCoroutineWatched(CO_LoadSerifWindow());
 			yield return new WaitWhile(() =>
 			{
 				//0xC50D1C

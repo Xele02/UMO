@@ -12,7 +12,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
     {
         PLOOEECNHFB = false;
         BIOFMLDLNKD = false;
-        N.a.StartCoroutine(ODDEPBIJHOE_Load(CJEKGLGBIHF_path));
+        N.a.StartCoroutineWatched(ODDEPBIJHOE_Load(CJEKGLGBIHF_path));
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BA26C Offset: 0x6BA26C VA: 0x6BA26C

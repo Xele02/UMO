@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 		protected override void OnPostSetCanvas()
 		{
 			base.OnPostSetCanvas();
-			StartCoroutine(MainFlow());
+			this.StartCoroutineWatched(MainFlow());
 		}
 
 		// RVA: 0x127D774 Offset: 0x127D774 VA: 0x127D774 Slot: 19

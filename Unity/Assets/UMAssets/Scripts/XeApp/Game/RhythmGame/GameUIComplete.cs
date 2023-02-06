@@ -84,7 +84,7 @@ namespace XeApp.Game.RhythmGame
 		public void BeginCompleteAnimSimulate()
 		{
 			gameObject.SetActive(true);
-			StartCoroutine(Co_WaitComplateAnimeSimulate(m_completeSymbol.lyt.FrameAnimation.SearchLabelFrame("st_in") / 60.0f, () =>
+			this.StartCoroutineWatched(Co_WaitComplateAnimeSimulate(m_completeSymbol.lyt.FrameAnimation.SearchLabelFrame("st_in") / 60.0f, () =>
 			{
 				//0xF751B8
 				leave_completed_event();

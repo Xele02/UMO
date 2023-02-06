@@ -60,7 +60,7 @@ namespace XeSys
 			lazyCount = 0;
 			IsBurstEnable = true;
 			InitializeRange(processes, -1, -1, 0, processes.Length);
-			StartCoroutine(IdleCoroutine());
+			this.StartCoroutineWatched(IdleCoroutine());
 		}
 
 		// // RVA: g Offset: 0x1EF2CD4 VA: 0x1EF2CD4

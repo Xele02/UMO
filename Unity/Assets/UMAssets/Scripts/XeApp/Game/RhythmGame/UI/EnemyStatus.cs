@@ -225,7 +225,7 @@ namespace XeApp.Game.RhythmGame.UI
 				{
 					if(!isLowSpec)
 					{
-						StartCoroutine(ColorAnimeCoroutine(info.m_renderer));
+						this.StartCoroutineWatched(ColorAnimeCoroutine(info.m_renderer));
 					}
 					if(!info.m_isGaugeAnimation)
 					{
@@ -233,7 +233,7 @@ namespace XeApp.Game.RhythmGame.UI
 						{
 							StopCoroutine(info.m_gaugeAnimeCroutine);
 						}
-						info.m_gaugeAnimeCroutine = StartCoroutine(BackGaugeAnimation(a_gauge, isLowSpec));
+						info.m_gaugeAnimeCroutine = this.StartCoroutineWatched(BackGaugeAnimation(a_gauge, isLowSpec));
 					}
 				}
 			}

@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 		public void StartBeginAnim(bool showHelpButton = true)
 		{
 			layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
-			StartCoroutine(Co_PlayingAnim());
+			this.StartCoroutineWatched(Co_PlayingAnim());
 			if (showHelpButton)
 				EnterHelpButton();
 		}

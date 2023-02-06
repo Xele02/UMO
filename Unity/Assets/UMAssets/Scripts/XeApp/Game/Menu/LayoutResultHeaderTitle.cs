@@ -73,7 +73,7 @@ namespace XeApp.Game.Menu
 		public void StartBeginAnim()
 		{
 			layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
-			StartCoroutine(Co_PlayingStartPopupAnim());
+			this.StartCoroutineWatched(Co_PlayingStartPopupAnim());
 		}
 
 		//// RVA: 0x18DF9C4 Offset: 0x18DF9C4 VA: 0x18DF9C4

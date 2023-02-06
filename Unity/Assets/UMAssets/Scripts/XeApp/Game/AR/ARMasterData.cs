@@ -30,7 +30,7 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBBA78C Offset: 0xBBA78C VA: 0xBBA78C
 		public void StartInstall(IMCBBOAFION onSuccess, DJBHIFLHJLK onError)
 		{
-			N.a.StartCoroutine(Coroutine_Install(onSuccess, onError));
+			N.a.StartCoroutineWatched(Coroutine_Install(onSuccess, onError));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741AC4 Offset: 0x741AC4 VA: 0x741AC4

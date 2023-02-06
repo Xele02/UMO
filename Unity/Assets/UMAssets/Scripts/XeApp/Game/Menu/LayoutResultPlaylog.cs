@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 			layoutDetailButton = layout.FindViewById("sw_btn_log_detail") as AbsoluteLayout;
 			layoutDetailButton.enabled = false;
 			if(!isStartInitialize)
-				StartCoroutine(Co_Initialize(layout, uvMan));
+				this.StartCoroutineWatched(Co_Initialize(layout, uvMan));
 			return IsLoaded();
 		}
 
@@ -344,7 +344,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!is_skip)
 			{
-				StartCoroutine(Co_EnterGraphParts());
+				this.StartCoroutineWatched(Co_EnterGraphParts());
 			}
 			else
 			{
@@ -364,7 +364,7 @@ namespace XeApp.Game.Menu
 		{
 			if(showHintId > -1 && !isShowHit)
 			{
-				StartCoroutine(Co_EnterHint());
+				this.StartCoroutineWatched(Co_EnterHint());
 				isShowHit = true;
 				return;
 			}

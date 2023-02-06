@@ -35,7 +35,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x111A2DC Offset: 0x111A2DC VA: 0x111A2DC
 		public void LoadResouces(int wavId, int assetId, int stageDivaNum)
 		{
-			StartCoroutine(Co_LoadAllResouces(wavId, assetId, stageDivaNum));
+			this.StartCoroutineWatched(Co_LoadAllResouces(wavId, assetId, stageDivaNum));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A12C Offset: 0x73A12C VA: 0x73A12C
@@ -45,8 +45,8 @@ namespace XeApp.Game.Common
 			//0x111A648
 			isLoaded = false;
 			isUnused = false;
-			yield return StartCoroutine(Co_LoadBasicResouces());
-			yield return StartCoroutine(Co_LoadMusicResouces(wavId, assetId, stageDivaNum));
+			yield return this.StartCoroutineWatched(Co_LoadBasicResouces());
+			yield return this.StartCoroutineWatched(Co_LoadMusicResouces(wavId, assetId, stageDivaNum));
 			isLoaded = true;
 		}
 

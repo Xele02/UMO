@@ -1260,7 +1260,7 @@ namespace XeApp.Game.RhythmGame
 		private void StartIntroFade()
 		{
 			uguiFader.Fade(0.5f, new Color(IntroEndFadeColor.r, IntroEndFadeColor.g, IntroEndFadeColor.b, 0), IntroEndFadeColor);
-			StartCoroutine(WaitIntroFade());
+			this.StartCoroutineWatched(WaitIntroFade());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744AD4 Offset: 0x744AD4 VA: 0x744AD4
@@ -1418,12 +1418,12 @@ namespace XeApp.Game.RhythmGame
 				}
 				else
 				{
-					StartCoroutine(Co_2DModeEnemyUIAnim(currentRawMusicMillisec));
+					this.StartCoroutineWatched(Co_2DModeEnemyUIAnim(currentRawMusicMillisec));
 				}
 			}
 			else
 			{
-				StartCoroutine(Co_2DModeEnemyUIAnim(currentRawMusicMillisec));
+				this.StartCoroutineWatched(Co_2DModeEnemyUIAnim(currentRawMusicMillisec));
 			}
 			uiController.Hud.isBattleLimitTimeRunning = true;
 		}
@@ -1521,7 +1521,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				StartCoroutine(Co_2DModeChangeBg(currentRawMusicMillisec));
+				this.StartCoroutineWatched(Co_2DModeChangeBg(currentRawMusicMillisec));
 			}
 			uiController.Hud.isBattleLimitTimeRunning = false;
 		}
@@ -2058,7 +2058,7 @@ namespace XeApp.Game.RhythmGame
 			// // RVA: 0x9CCB30 Offset: 0x9CCB30 VA: 0x9CCB30
 			// private void <StartRhythmGame>b__274_0() { }
 			uiController.BeginIntroAnim(() => {
-				StartCoroutine(Co_StartMusic());
+				this.StartCoroutineWatched(Co_StartMusic());
 				uiController.DeleteIntro();
 			});
 		}
@@ -2426,7 +2426,7 @@ namespace XeApp.Game.RhythmGame
 		private void GameStartErrorToTitleAction()
 		{
 			XeApp.Game.GameManager.FadeOut();
-			StartCoroutine(Co_FadeOutAndExit());
+			this.StartCoroutineWatched(Co_FadeOutAndExit());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744DA4 Offset: 0x744DA4 VA: 0x744DA4
@@ -2458,7 +2458,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(!scene.IsEnableTransionResult())
 				return;
-			StartCoroutine(Co_WaitRhytmGameEnd(true));
+			this.StartCoroutineWatched(Co_WaitRhytmGameEnd(true));
 		}
 
 		// // RVA: 0x9C260C Offset: 0x9C260C VA: 0x9C260C
@@ -2466,7 +2466,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(scene.IsEnableTransionResult())
 			{
-				StartCoroutine(Co_WaitRhytmGameEnd(false));
+				this.StartCoroutineWatched(Co_WaitRhytmGameEnd(false));
 				return;
 			}
 			uiController.failed.HideAll();
@@ -3265,7 +3265,7 @@ namespace XeApp.Game.RhythmGame
 				}
 				else
 				{
-					StartCoroutine(WaitMusicPlayCoroutine(val));
+					this.StartCoroutineWatched(WaitMusicPlayCoroutine(val));
 				}
 			}
 			else

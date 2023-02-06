@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 			layoutScoreRankIconList[4] = layout.FindViewByExId("swtbl_rank_score_sw_rank_score_ss") as AbsoluteLayout;
 			layoutLeafNum = layout.FindViewById("swtbl_btn_luc") as AbsoluteLayout;
 			layoutComboRankAnim = layout.FindViewById("swtbl_rank_cmb") as AbsoluteLayout;
-			StartCoroutine(Co_Loading());
+			this.StartCoroutineWatched(Co_Loading());
 			return true;
  		}
 
@@ -209,7 +209,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D126E8 Offset: 0x1D126E8 VA: 0x1D126E8
 		public void StartAnim()
 		{
-			StartCoroutine(Co_StartAnim());
+			this.StartCoroutineWatched(Co_StartAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71D8D4 Offset: 0x71D8D4 VA: 0x71D8D4
@@ -302,7 +302,7 @@ namespace XeApp.Game.Menu
 					count = 0;
 					break;
 			}
-			StartCoroutine(Co_FakeCountup(count, timerList, onChangeNumberCakllback, onSkiped, onFinished));
+			this.StartCoroutineWatched(Co_FakeCountup(count, timerList, onChangeNumberCakllback, onSkiped, onFinished));
 			if(res != RhythmGameConsts.NoteResult.None && OnCountupNoteResult != null)
 			{
 				OnCountupNoteResult(res, CalcNoteResultCountUpTime(count, timerList));
@@ -317,7 +317,7 @@ namespace XeApp.Game.Menu
 
 			//0x1D16238
 			bool isEnd = false;
-			co = StartCoroutine(NumberAnimationUtility.Co_FakeCountup(targetNumber, countTimeList, onChangeNumberCakllback, () =>
+			co = this.StartCoroutineWatched(NumberAnimationUtility.Co_FakeCountup(targetNumber, countTimeList, onChangeNumberCakllback, () =>
 			{
 				//0x1D14638
 				isEnd = true;

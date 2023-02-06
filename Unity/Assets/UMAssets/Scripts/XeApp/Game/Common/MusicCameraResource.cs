@@ -30,11 +30,11 @@ namespace XeApp.Game.Common
 		public void LoadResource(int wavId, int primeId, int stageDivaNum)
 		{
 			isLoadedParam = false;
-			StartCoroutine(Co_LoadParam(wavId, stageDivaNum));
+			this.StartCoroutineWatched(Co_LoadParam(wavId, stageDivaNum));
 			isLoadedAnimator = false;
-			StartCoroutine(Co_LoadAnimator());
+			this.StartCoroutineWatched(Co_LoadAnimator());
 			isLoadedMusicClip = false;
-			StartCoroutine(Co_LoadMusicClipResouces(wavId, primeId, stageDivaNum));
+			this.StartCoroutineWatched(Co_LoadMusicClipResouces(wavId, primeId, stageDivaNum));
 
 		}
 

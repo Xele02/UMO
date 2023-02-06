@@ -170,7 +170,7 @@ public class CIOECGOMILE
 	// // RVA: 0xFFB7A8 Offset: 0xFFB7A8 VA: 0xFFB7A8
 	public void ODJCMJBNDOK(IMCBBOAFION BHFHGFKBOHH, IMCBBOAFION FLENFOEFHPL, DJBHIFLHJLK MOBEEPPKFLG, bool JKJEFPNIPFO = false)
 	{
-		N.a.StartCoroutine(ODDEPBIJHOE_Coroutine_Load(BHFHGFKBOHH,FLENFOEFHPL,MOBEEPPKFLG,JKJEFPNIPFO));
+		N.a.StartCoroutineWatched(ODDEPBIJHOE_Coroutine_Load(BHFHGFKBOHH,FLENFOEFHPL,MOBEEPPKFLG,JKJEFPNIPFO));
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B7B58 Offset: 0x6B7B58 VA: 0x6B7B58
@@ -335,7 +335,7 @@ public class CIOECGOMILE
 								yield return null;
 							}
 						}	
-						yield return N.a.StartCoroutine(EKKCGGHIFEG_GetFriendCounts(MOBEEPPKFLG));
+						yield return N.a.StartCoroutineWatched(EKKCGGHIFEG_GetFriendCounts(MOBEEPPKFLG));
 						// to 8
 						MCLANEJGNHD_GetSystemProducts();
 						// goto LAB_01011c88;

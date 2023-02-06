@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 				ConfigManager.Instance.Initialize();
 			}
 			c.CreateLoadingObject();
-			c.StartCoroutine(c.LoadUnionAssetBundle());
+			c.StartCoroutineWatched(c.LoadUnionAssetBundle());
 			return c;
 		}
 

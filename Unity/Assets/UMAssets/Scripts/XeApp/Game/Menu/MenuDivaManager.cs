@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 		public void Load(int divaId, int modelId, int colorId, DivaResource.MenuFacialType facialType, bool defaultVisible = true)
 		{
 			IsLoading = true;
-			StartCoroutine(Coroutine_Load(divaId, modelId, colorId, facialType, defaultVisible));
+			this.StartCoroutineWatched(Coroutine_Load(divaId, modelId, colorId, facialType, defaultVisible));
 		}
 
 		//// RVA: 0xEB9C30 Offset: 0xEB9C30 VA: 0xEB9C30
@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 			{
 				divaInfo = playerData.NBIGLBMHEDC[GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
 			}
-			StartCoroutine(Coroutine_Load(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.EOJIGHEFIAA_GetHomeDivaPrismCostumeId(), divaInfo.LHGJHJLGPBE_GetHomeDivaColorId(), facialType, defaultVisible));
+			this.StartCoroutineWatched(Coroutine_Load(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.EOJIGHEFIAA_GetHomeDivaPrismCostumeId(), divaInfo.LHGJHJLGPBE_GetHomeDivaColorId(), facialType, defaultVisible));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6F94 Offset: 0x6C6F94 VA: 0x6C6F94

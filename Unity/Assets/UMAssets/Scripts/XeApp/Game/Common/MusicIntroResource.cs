@@ -43,7 +43,7 @@ namespace XeApp.Game.Common
 		{
 			isLoadedRunway = false;
 			isLoadedEnviroment = false;
-			StartCoroutine(Co_LoadResources(runwayId, enviromentId, valkyrieId));
+			this.StartCoroutineWatched(Co_LoadResources(runwayId, enviromentId, valkyrieId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7395B4 Offset: 0x7395B4 VA: 0x7395B4

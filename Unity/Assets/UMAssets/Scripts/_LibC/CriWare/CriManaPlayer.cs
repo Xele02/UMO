@@ -53,7 +53,7 @@ namespace ExternLib
                     {
                         moviePlayers[player_id].playback.ms = s;
                         moviePlayers[player_id].playback.SetLoop(moviePlayers[player_id].loop);
-                        moviePlayers[player_id].playback.StartCoroutine(moviePlayers[player_id].playback.Prepare());
+                        moviePlayers[player_id].playback.StartCoroutineWatched(moviePlayers[player_id].playback.Prepare());
                         break;
                     }
                 }

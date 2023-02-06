@@ -103,7 +103,7 @@ class DataExporter
 	[MenuItem("UMO/Export Song Effect Enabler List")]
 	static void ExportSongEffectEnablerList()
 	{
-		BundleShaderInfo.Instance.StartCoroutine(ExtractEffectList());
+		BundleShaderInfo.Instance.StartCoroutineWatched(ExtractEffectList());
 	}
 
 	static public IEnumerator ExtractEffectList()

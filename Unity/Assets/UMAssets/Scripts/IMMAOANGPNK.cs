@@ -49,7 +49,7 @@ public class IMMAOANGPNK
 	// // RVA: 0x9FB9FC Offset: 0x9FB9FC VA: 0x9FB9FC
 	public void BAHKPIADOBI(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		N.a.StartCoroutine(MHEKMICKGDM_LoadFromStorage(BHFHGFKBOHH, MOBEEPPKFLG));
+		N.a.StartCoroutineWatched(MHEKMICKGDM_LoadFromStorage(BHFHGFKBOHH, MOBEEPPKFLG));
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B75F8 Offset: 0x6B75F8 VA: 0x6B75F8
@@ -106,7 +106,7 @@ public class IMMAOANGPNK
 				}
 				if(GBEGLNMFLIE.NPNNPNAIONN == true)
 				{
-					yield return N.a.StartCoroutine(LGFPCADOCAA_ShowError());
+					yield return N.a.StartCoroutineWatched(LGFPCADOCAA_ShowError());
 					MOBEEPPKFLG();
 					GBEGLNMFLIE = null;
         			UnityEngine.Debug.LogError("Exit  Error MHEKMICKGDM_LoadFromStorage");
@@ -150,7 +150,7 @@ public class IMMAOANGPNK
 				
 				if(!HBODCMLFDOB)
 				{
-					yield return N.a.StartCoroutine(LGFPCADOCAA_ShowError());
+					yield return N.a.StartCoroutineWatched(LGFPCADOCAA_ShowError());
 					MOBEEPPKFLG();
         			UnityEngine.Debug.LogError("Exit  Error MHEKMICKGDM_LoadFromStorage");
 					yield break;
@@ -327,7 +327,7 @@ public class IMMAOANGPNK
 				yield break;
 			}
 		}
-		yield return N.a.StartCoroutine(LGFPCADOCAA_ShowError());
+		yield return N.a.StartCoroutineWatched(LGFPCADOCAA_ShowError());
 		MOBEEPPKFLG();
         UnityEngine.Debug.LogError("Exit  Error MHEKMICKGDM_LoadFromStorage");
 	}

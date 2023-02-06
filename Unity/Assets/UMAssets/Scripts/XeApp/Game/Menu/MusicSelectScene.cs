@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 			{
 				NKGJPJPHLIF.DPCCNOCAHGC = false;
 			}
-			StartCoroutine(Co_SetupBg());
+			this.StartCoroutineWatched(Co_SetupBg());
 			bool changeUi = true;
 			MenuScene.Instance.LobbyButtonControl.OnStartTutorial = () => {
 				//0x1685B28

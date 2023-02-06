@@ -121,7 +121,7 @@ namespace XeSys.File
 					}
 					CEKHMLAEKIK.Clear();
 					NFABHMNAODN = IFDILJEGCLD.IADCGKMLFFE_Execute;
-					StartCoroutine(IALIHGPHLPH_Execute());
+					this.StartCoroutineWatched(IALIHGPHLPH_Execute());
 				}
 			}
 		}

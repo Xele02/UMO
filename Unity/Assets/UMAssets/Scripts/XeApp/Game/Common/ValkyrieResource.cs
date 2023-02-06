@@ -133,7 +133,7 @@ namespace XeApp.Game.Common
 		public void LoadResources(int valkyrieId, int envId, int battleId)
 		{
 			isLoadedPrefab = false;
-			StartCoroutine(Co_LoadResources(valkyrieId, envId, battleId));
+			this.StartCoroutineWatched(Co_LoadResources(valkyrieId, envId, battleId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73C4D0 Offset: 0x73C4D0 VA: 0x73C4D0
@@ -262,7 +262,7 @@ namespace XeApp.Game.Common
 		public void LoadResourcesForMenu(int valkyrieId)
 		{
 			isLoadedPrefab = false;
-			StartCoroutine(Co_LoadResourcesMenu(valkyrieId));
+			this.StartCoroutineWatched(Co_LoadResourcesMenu(valkyrieId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73C548 Offset: 0x73C548 VA: 0x73C548

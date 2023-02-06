@@ -133,7 +133,7 @@ public abstract class CACGCMBKHDI_Request
     // // RVA: 0x18F2BE4 Offset: 0x18F2BE4 VA: 0x18F2BE4
     public YieldInstruction GDPDELLNOBO_WaitDone(MonoBehaviour DANMJLOBLIE)
     {
-        return DANMJLOBLIE.StartCoroutine(HOHLIBIOPOM_CheckDone());
+        return DANMJLOBLIE.StartCoroutineWatched(HOHLIBIOPOM_CheckDone());
     }
 
     // [IteratorStateMachineAttribute] // RVA: 0x6C3DB0 Offset: 0x6C3DB0 VA: 0x6C3DB0

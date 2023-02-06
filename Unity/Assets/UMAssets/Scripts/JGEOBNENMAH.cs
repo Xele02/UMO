@@ -217,7 +217,7 @@ public class JGEOBNENMAH
 	// // RVA: 0xB02650 Offset: 0xB02650 VA: 0xB02650
 	public void OLDDILMKJND(EDHCNKBMLGI KEOCOHOFPNK, IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP DBCEPOAHNBH, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK AOCANKOMKFG, DJBHIFLHJLK IGBGKGAIJPL, JGEOBNENMAH.NNEICCOGCLL INLLNIEEHAN)
 	{
-		N.a.StartCoroutine(PFEKBBONCJJ_Coroutine_GameStart(KEOCOHOFPNK, BHFHGFKBOHH, DBCEPOAHNBH, NIMPEHIECJH, AOCANKOMKFG, IGBGKGAIJPL, INLLNIEEHAN));
+		N.a.StartCoroutineWatched(PFEKBBONCJJ_Coroutine_GameStart(KEOCOHOFPNK, BHFHGFKBOHH, DBCEPOAHNBH, NIMPEHIECJH, AOCANKOMKFG, IGBGKGAIJPL, INLLNIEEHAN));
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B6308 Offset: 0x6B6308 VA: 0x6B6308
@@ -414,7 +414,7 @@ public class JGEOBNENMAH
 	// // RVA: 0xB03AB4 Offset: 0xB03AB4 VA: 0xB03AB4
 	public void EFHPJGACNLK(HAJIFNABIFF OMNOFMEBLAD, IMCBBOAFION BHFHGFKBOHH_CbSuccess, DJBHIFLHJLK MOBEEPPKFLG_CbError)
 	{
-		N.a.StartCoroutine(IILJJMAEPCI_GameClear(OMNOFMEBLAD, BHFHGFKBOHH_CbSuccess, MOBEEPPKFLG_CbError));
+		N.a.StartCoroutineWatched(IILJJMAEPCI_GameClear(OMNOFMEBLAD, BHFHGFKBOHH_CbSuccess, MOBEEPPKFLG_CbError));
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B63F8 Offset: 0x6B63F8 VA: 0x6B63F8
@@ -428,7 +428,7 @@ public class JGEOBNENMAH
 		if(IMMAOANGPNK.HHCJCDFCLOB.ENEBEGGOHFP != 0)
 		{
 			UnityEngine.Debug.LogError("Exit Error IILJJMAEPCI_GameClear");
-			yield return N.a.StartCoroutine(EHNDCODOBBL_Coroutine_Falsification(null, MOBEEPPKFLG_CbError));
+			yield return N.a.StartCoroutineWatched(EHNDCODOBBL_Coroutine_Falsification(null, MOBEEPPKFLG_CbError));
 			yield break;
 		}
 		else
@@ -437,19 +437,19 @@ public class JGEOBNENMAH
 			if (check != null)
 			{
 				UnityEngine.Debug.LogError("Exit Error IILJJMAEPCI_GameClear");
-				yield return N.a.StartCoroutine(EHNDCODOBBL_Coroutine_Falsification(check, MOBEEPPKFLG_CbError));
+				yield return N.a.StartCoroutineWatched(EHNDCODOBBL_Coroutine_Falsification(check, MOBEEPPKFLG_CbError));
 				yield break;
 			}
 			else if (OMNOFMEBLAD.NMNHBJIAPGG_CheckFalsification != null)
 			{
 				UnityEngine.Debug.LogError("Exit Error IILJJMAEPCI_GameClear");
-				yield return N.a.StartCoroutine(EHNDCODOBBL_Coroutine_Falsification(OMNOFMEBLAD.NMNHBJIAPGG_CheckFalsification, MOBEEPPKFLG_CbError));
+				yield return N.a.StartCoroutineWatched(EHNDCODOBBL_Coroutine_Falsification(OMNOFMEBLAD.NMNHBJIAPGG_CheckFalsification, MOBEEPPKFLG_CbError));
 				yield break;
 			}
 			else if (OMNOFMEBLAD.OBOPMHBPCFE_MvMode)
 			{
 				UnityEngine.Debug.LogError("Exit IILJJMAEPCI_GameClear");
-				yield return N.a.StartCoroutine(PJEBPAKPANP_Coroutine_SimulationEnd(OMNOFMEBLAD, BHFHGFKBOHH_CbSuccess, MOBEEPPKFLG_CbError));
+				yield return N.a.StartCoroutineWatched(PJEBPAKPANP_Coroutine_SimulationEnd(OMNOFMEBLAD, BHFHGFKBOHH_CbSuccess, MOBEEPPKFLG_CbError));
 				yield break;
 			}
 			else
@@ -751,7 +751,7 @@ public class JGEOBNENMAH
 							BEKAMBBOLBO = false;
 							CNAIDEAFAAM = false;
 							JDDGPJDKHNE.HHCJCDFCLOB.FECGDGCNGGN();
-							yield return N.a.StartCoroutine(PLKLMBHENKB_NewSave(false, () =>
+							yield return N.a.StartCoroutineWatched(PLKLMBHENKB_NewSave(false, () =>
 							{
 								//0xB0AB14
 								BEKAMBBOLBO = true;
@@ -1033,7 +1033,7 @@ public class JGEOBNENMAH
 		LFDFPBEAAFA.PEHBBKFGLNO();
 		if(LFDFPBEAAFA.GKMONHIBHCL)
 		{
-			N.a.StartCoroutine(ODBDMBAFOIN_Coroutine_Recover(BHFHGFKBOHH, AOCANKOMKFG));
+			N.a.StartCoroutineWatched(ODBDMBAFOIN_Coroutine_Recover(BHFHGFKBOHH, AOCANKOMKFG));
 			return;
 		}
 		LFDFPBEAAFA.OJCJPCHFPGO();

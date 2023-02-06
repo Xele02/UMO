@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 					{
 						for(int i = 0; i < 5; i++)
 						{
-							StartCoroutine(Co_ChangeGraphAnim(m_ResultDataList[i].image, 0, 0));
+							this.StartCoroutineWatched(Co_ChangeGraphAnim(m_ResultDataList[i].image, 0, 0));
 						}
 						return;
 					}
@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 			{
 				if(m_ResultDataList[i].count != 0)
 				{
-					StartCoroutine(Co_ChangeGraphAnim(m_ResultDataList[i].image, m_ResultCount * 1.0f / f * m_BarSize.y, time));
+					this.StartCoroutineWatched(Co_ChangeGraphAnim(m_ResultDataList[i].image, m_ResultCount * 1.0f / f * m_BarSize.y, time));
 					m_ResultCount -= m_ResultDataList[i].count;
 					//a = Mathf.Max(a, m_ResultCount * 1.0f / f * m_BarSize.y);
 				}

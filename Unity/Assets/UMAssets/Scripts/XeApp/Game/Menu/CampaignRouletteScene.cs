@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 		protected override void Awake()
 		{
 			base.Awake();
-			StartCoroutine(Co_InitializeLayout());
+			this.StartCoroutineWatched(Co_InitializeLayout());
 		}
 
 		// RVA: 0x10A5628 Offset: 0x10A5628 VA: 0x10A5628

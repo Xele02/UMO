@@ -133,7 +133,7 @@ namespace XeApp.Game.Menu
 			m_valkyriePopupSetting.SetParent(transform);
 			m_valkyriePopupSetting.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative } };
 			SetupPrismPopupSetting();
-			StartCoroutine(Co_LoadResource());
+			this.StartCoroutineWatched(Co_LoadResource());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F154 Offset: 0x72F154 VA: 0x72F154
@@ -317,7 +317,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xA8569C Offset: 0xA8569C VA: 0xA8569C Slot: 18
 		protected override void OnPostSetCanvas()
 		{
-			StartCoroutine(Co_OnPostSetCanvas());
+			this.StartCoroutineWatched(Co_OnPostSetCanvas());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F1CC Offset: 0x72F1CC VA: 0x72F1CC
@@ -339,7 +339,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xA85788 Offset: 0xA85788 VA: 0xA85788 Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			StartCoroutine(Co_EnterAnimation());
+			this.StartCoroutineWatched(Co_EnterAnimation());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F244 Offset: 0x72F244 VA: 0x72F244
@@ -363,7 +363,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xA8586C Offset: 0xA8586C VA: 0xA8586C Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			StartCoroutine(Co_ExitAnimation());
+			this.StartCoroutineWatched(Co_ExitAnimation());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F2BC Offset: 0x72F2BC VA: 0x72F2BC
@@ -390,7 +390,7 @@ namespace XeApp.Game.Menu
 		protected override void OnOpenScene()
 		{
 			m_isWaitOpenScene = true;
-			StartCoroutine(OpenSceneCoroutine());
+			this.StartCoroutineWatched(OpenSceneCoroutine());
 		}
 
 		// RVA: 0xA85A0C Offset: 0xA85A0C VA: 0xA85A0C Slot: 22
@@ -447,7 +447,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xA85A40 Offset: 0xA85A40 VA: 0xA85A40 Slot: 23
 		protected override void OnActivateScene()
 		{
-			StartCoroutine(Co_ShowHelp());
+			this.StartCoroutineWatched(Co_ShowHelp());
 		}
 
 		// RVA: 0xA85AF0 Offset: 0xA85AF0 VA: 0xA85AF0 Slot: 24
@@ -1340,7 +1340,7 @@ namespace XeApp.Game.Menu
 			PopupWindowManager.Show(setting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0xA92044
-				StartCoroutine(Co_SwitchDivaSelectDisplay());
+				this.StartCoroutineWatched(Co_SwitchDivaSelectDisplay());
 				MenuScene.Instance.InputEnable();
 			}, null, null, null);
 		}
@@ -1572,7 +1572,7 @@ namespace XeApp.Game.Menu
 			return;
 			OnClickAnyButtons();
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			StartCoroutine(Co_EnterUnitSet());
+			this.StartCoroutineWatched(Co_EnterUnitSet());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F67C Offset: 0x72F67C VA: 0x72F67C
@@ -1637,7 +1637,7 @@ namespace XeApp.Game.Menu
 			UpdatePrismData(m_viewMusicData.DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo);
 			if(m_prismData.OFHMEAJBIEL_IsPrismUnlocked())
 			{
-				StartCoroutine(Co_SwitchContents(DispType.Prism));
+				this.StartCoroutineWatched(Co_SwitchContents(DispType.Prism));
 				return;
 			}
 			m_textPopupSetting.IsCaption = false;
@@ -1652,7 +1652,7 @@ namespace XeApp.Game.Menu
 		{
 			OnClickAnyButtons();
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			StartCoroutine(Co_SwitchContents(DispType.CurrentUnit));
+			this.StartCoroutineWatched(Co_SwitchContents(DispType.CurrentUnit));
 		}
 
 		//// RVA: 0xA905E0 Offset: 0xA905E0 VA: 0xA905E0

@@ -55,7 +55,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE62A8 Offset: 0xAE62A8 VA: 0xAE62A8
 		public void LoadData(int musicId, int difficultyId, int stageDivaNum, bool line6Mode)
 		{
-			StartCoroutine(Co_LoadData(musicId, difficultyId, stageDivaNum, line6Mode));
+			this.StartCoroutineWatched(Co_LoadData(musicId, difficultyId, stageDivaNum, line6Mode));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A424 Offset: 0x73A424 VA: 0x73A424
@@ -78,7 +78,7 @@ namespace XeApp.Game.Common
 
 			musicBase = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
 			noteDisplayMillisec = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HBCHGGNOOCD_GetNotesDisplayTiming((XeApp.Game.Common.Difficulty.Type)difficultyId, false);
-			yield return StartCoroutine(LoadScoreTarFile(musicId));
+			yield return this.StartCoroutineWatched(LoadScoreTarFile(musicId));
 
 			StringBuilder bundleName = new StringBuilder();
 
@@ -88,16 +88,16 @@ namespace XeApp.Game.Common
 			AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
 
-			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, -1, line6Mode, this.LoadedCommonScoreData, "s_"));
+			yield return this.StartCoroutineWatched(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, -1, line6Mode, this.LoadedCommonScoreData, "s_"));
 
-			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, -1, line6Mode, this.LoadedCheerScoreData, "mv_"));
+			yield return this.StartCoroutineWatched(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, -1, line6Mode, this.LoadedCheerScoreData, "mv_"));
 
-			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, line6Mode, this.LoadedMusicScoreData, "s_"));
+			yield return this.StartCoroutineWatched(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, line6Mode, this.LoadedMusicScoreData, "s_"));
 
 			if(musicScoreData == null)
-				yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, false, this.LoadedMusicScoreData, "s_"));
+				yield return this.StartCoroutineWatched(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, false, this.LoadedMusicScoreData, "s_"));
 
-			yield return StartCoroutine(LoadDirectionParam(operation, musicBase.KKPAHLMJKIH_WavId));
+			yield return this.StartCoroutineWatched(LoadDirectionParam(operation, musicBase.KKPAHLMJKIH_WavId));
 
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
 			RhythmGameConsts.SetWide(musicScoreData.isWideTrack);
