@@ -25,24 +25,24 @@ namespace XeApp.Game.RhythmGame.UI
 			bundlePath.Set(DivaIconTextureCache.GetDivaUpIconPath(divaId, modelId, colorId));
 			assetName.Set(Path.GetFileNameWithoutExtension(bundlePath.ToString()));
 			assetName.Append("_base");
-			yield return Load(bundlePath.ToString(), assetName.ToString(), (Texture2D tex) =>
+			yield return Co.R(Load(bundlePath.ToString(), assetName.ToString(), (Texture2D tex) =>
 			{
 				//0x15681AC
 				mainTexture = tex;
-			});
+			}));
 			assetName.Replace("_base", "_mask");
-			yield return Load(bundlePath.ToString(), assetName.ToString(), (Texture2D tex) =>
+			yield return Co.R(Load(bundlePath.ToString(), assetName.ToString(), (Texture2D tex) =>
 			{
 				//0x15681B4
 				maskTexture = tex;
-			});
+			}));
 			bundlePath.SetFormat("gm/if/un.xab", Array.Empty<object>());
 			assetName.SetFormat("diva_cutin_bg_01", Array.Empty<object>());
-			yield return Load(bundlePath.ToString(), assetName.ToString(), (Texture2D tex) =>
+			yield return Co.R(Load(bundlePath.ToString(), assetName.ToString(), (Texture2D tex) =>
 			{
 				//0x15681BC
 				bgTexture = tex;
-			});
+			}));
 		}
 
 		// // RVA: 0x156800C Offset: 0x156800C VA: 0x156800C Slot: 4

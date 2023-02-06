@@ -102,13 +102,13 @@ namespace XeApp.Game.Menu
 			{
 				LayoutUGUIRuntime runtime = null;
 				lytOperation = AssetBundleManager.LoadLayoutAsync("ly/014.xab", "root_sel_chara_icon_layout_root");
-				yield return lytOperation;
+				yield return Co.R(lytOperation);
 
-				yield return lytOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+				yield return Co.R(lytOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
 				{
 					//0x17EC610
 					runtime = instance.GetComponent<LayoutUGUIRuntime>();
-				});
+				}));
 				for(int i = 0; i < m_scrollList.ScrollObjectCount - 1; i++)
 				{
 					LayoutUGUIRuntime inst = Instantiate(runtime);

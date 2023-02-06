@@ -283,9 +283,9 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadResources()
 		{
 			//0x16E3B38
-			yield return Co_LoadLayout();
-			yield return Co_LoadEffect();
-			yield return Co_LoadPopupWindow();
+			yield return Co.R(Co_LoadLayout());
+			yield return Co.R(Co_LoadEffect());
+			yield return Co.R(Co_LoadPopupWindow());
 			if(m_touch_disable_obj == null)
 			{
 				m_touch_disable_obj = new GameObject("Panel");
@@ -315,26 +315,26 @@ namespace XeApp.Game.Menu
 			bundleName = "ly/044.xab";
 			bundleLoadCount = 0;
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_cos_win_layout_root");
-			yield return lytOp;
+			yield return Co.R(lytOp);
 
-			yield return lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
 			{
 				//0x16E1B1C
 				instance.transform.SetParent(transform, false);
 				m_cos_list_win = instance.GetComponent<CostumeSelectListWin>();
-			});
+			}));
 			bundleLoadCount++;
-			yield return m_cos_list_win.Co_LoadListContent();
+			yield return Co.R(m_cos_list_win.Co_LoadListContent());
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName, "ViewModeViewOn");
-			yield return lytOp;
+			yield return Co.R(lytOp);
 
-			yield return lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
 			{
 				//0x16E1BEC
 				m_view_on = instance.GetComponent<CostumeSelectViewOn>();
 				instance.transform.SetParent(transform, false);
-			});
+			}));
 
 			bundleLoadCount++;
 			for(int i = 0; i < bundleLoadCount; i++)
@@ -368,7 +368,7 @@ namespace XeApp.Game.Menu
 			bundleName = "ef/cmn.xab";
 			assetName = "model_loading";
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName);
-			yield return operation;
+			yield return Co.R(operation);
 
 			m_EffectPrefab = operation.GetAsset<GameObject>(assetName);
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
@@ -396,8 +396,8 @@ namespace XeApp.Game.Menu
 			});
 			voicePlayIndex = 0;
 			divaResource.Initialize(divaId);
-			yield return divaResource.Co_LoadBasicResource();
-			yield return divaResource.Co_LoadMotion();
+			yield return Co.R(divaResource.Co_LoadBasicResource());
+			yield return Co.R(divaResource.Co_LoadMotion());
 			while (isWaitLoadCueSheet)
 				yield return null;
 			CriAtomCueSheet cueSheet = CriAtom.GetCueSheet(voicePlayer.source.cueSheet);
@@ -420,14 +420,14 @@ namespace XeApp.Game.Menu
 
 			//0x16E37AC
 			operation = AssetBundleManager.LoadLayoutAsync(m_costume_window.BundleName, m_costume_window.AssetName);
-			yield return operation;
+			yield return Co.R(operation);
 
-			yield return operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
 			{
 				//0x16E1CC4
 				m_costume_window.SetContent(instance);
 				m_costume_window.costumeInfoWindow = instance.GetComponent<CostumeInfoWindow>();
-			});
+			}));
 
 			m_costume_window.SetParent(transform);
 			AssetBundleManager.UnloadAssetBundle(m_costume_window.BundleName, false);

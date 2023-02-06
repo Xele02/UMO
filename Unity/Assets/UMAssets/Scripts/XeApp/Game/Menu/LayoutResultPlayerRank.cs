@@ -145,8 +145,8 @@ namespace XeApp.Game.Menu
 				ChangeCurrentExp(viewLevelupData.APIIHFJGEAO_Level, currentGaugePercentage, viewLevelupData.ALBCEALLGJG_PrevExp);
 				ChangeRequiredPlayerExp(viewLevelupData.APIIHFJGEAO_Level);
 				layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
-				yield return Co_WaitAnim(layoutRoot, true);
-				yield return Co_ExpIncreaseAnim();
+				yield return Co.R(Co_WaitAnim(layoutRoot, true));
+				yield return Co.R(Co_ExpIncreaseAnim());
 			}
 		}
 
@@ -182,7 +182,7 @@ namespace XeApp.Game.Menu
 					isLevelupFirst = true;
 					if (IsLevelMax(currentFrameLevel))
 					{
-						yield return Co_LevelMaxProcess(currentFrameLevel);
+						yield return Co.R(Co_LevelMaxProcess(currentFrameLevel));
 					}
 					else
 					{
@@ -219,7 +219,7 @@ namespace XeApp.Game.Menu
 			ChangeCurrentExp(playerLevel - 1, 100, -1);
 			StartLevelupAnimation(playerLevel);
 			yield return null;
-			yield return Co_WaitAnim(layoutLevelUp, true);
+			yield return Co.R(Co_WaitAnim(layoutLevelUp, true));
 			ChangeRequiredPlayerExp(playerLevel);
 		}
 

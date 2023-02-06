@@ -622,12 +622,12 @@ namespace XeApp.Game.Menu
 			{
 				//0xA4067C
 				AssetBundleLoadLayoutOperationBase op = AssetBundleManager.LoadLayoutAsync("ly/092.xab", "roo_cmn_help_question_btn_layout_root");
-				yield return op;
-				yield return op.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+				yield return Co.R(op);
+				yield return Co.R(op.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 					//0xA3D408;
 					instance.transform.SetParent(m_uiRootObject.transform, false);
 					m_helpButton = instance.GetComponent<HelpButton>();
-				});
+				}));
 				if(finish != null)
 					finish();
 				AssetBundleManager.UnloadAssetBundle("ly/092.xab");
@@ -685,16 +685,16 @@ namespace XeApp.Game.Menu
 				{
 					if(!string.IsNullOrEmpty(assetBundle.textureBundlePath))
 					{
-						yield return AssetBundleManager.LoadUnionAssetBundle(assetBundleNames[(int)transitionName].textureBundlePath);
+						yield return Co.R(AssetBundleManager.LoadUnionAssetBundle(assetBundleNames[(int)transitionName].textureBundlePath));
 						//to 3
 					}
 					// goto LAB_00a41be4
 					AssetBundleLoadLayoutOperationBase operation = AssetBundleManager.LoadLayoutAsync(assetBundle.bundlePath, GetPrefabName(transitionName));
-					yield return operation;
-					yield return operation.InitializeLayoutCoroutine(m_font, (GameObject layout) => {
+					yield return Co.R(operation);
+					yield return Co.R(operation.InitializeLayoutCoroutine(m_font, (GameObject layout) => {
 						//0xA3D788
 						instance = layout;
-					});
+					}));
 					instance.SetActive(true);
 					root = instance.GetComponent<TransitionRoot>();
 					while(!root.IsReady)
@@ -740,7 +740,7 @@ namespace XeApp.Game.Menu
 				{
 					m_currentRoot.OnDestoryScene();
 				}
-				yield return DeleteCache(SceneCacheCategory.TITLE);
+				yield return Co.R(DeleteCache(SceneCacheCategory.TITLE));
 			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8E3C Offset: 0x6C8E3C VA: 0x6C8E3C
@@ -903,14 +903,14 @@ namespace XeApp.Game.Menu
 				}
 				if(isCacheChange)
 				{
-					yield return DeleteCache(SceneCacheCategory.TITLE);
+					yield return Co.R(DeleteCache(SceneCacheCategory.TITLE));
 					// to 9
 					yield return Resources.UnloadUnusedAssets();
 					// to 10
 				}
 				if(!TryGetRoot(0, m_next.name, out m_currentRoot))
 				{
-					yield return RegisterCache(SceneCacheCategory.TITLE, m_next.name);
+					yield return Co.R(RegisterCache(SceneCacheCategory.TITLE, m_next.name));
 					// to 11
 					m_currentRoot = m_instanceCacheDict.GetValue((int)m_next.name);
 				}
@@ -930,7 +930,7 @@ namespace XeApp.Game.Menu
 				{
 					m_bgControl.ReserveFade(0.1f, Color.black);
 				}
-				yield return m_bgControl.ChangeBgCoroutine(m_next.bgType, m_next.bgId, m_next.groupCategory, m_next.name, m_next.bgAttr);
+				yield return Co.R(m_bgControl.ChangeBgCoroutine(m_next.bgType, m_next.bgId, m_next.groupCategory, m_next.name, m_next.bgAttr));
 				// to 12
 				TransitionList.Type lastSceneName = TransitionList.Type.NUM;
 				if(m_current != null)
@@ -1056,7 +1056,7 @@ namespace XeApp.Game.Menu
 				m_currentRoot.OnOpenScene();
 				while(!m_currentRoot.IsEndOpenScene())
 					yield return null;
-				yield return TutorialManager.TryShowTutorialCoroutine(m_currentRoot.CheckTutorialFunc);
+				yield return Co.R(TutorialManager.TryShowTutorialCoroutine(m_currentRoot.CheckTutorialFunc));
 				//to 0x17
 				MenuScene.Instance.InputEnable();
 				MenuScene.Instance.RaycastEnable();

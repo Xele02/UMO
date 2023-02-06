@@ -26,7 +26,7 @@ class CriFileTest : MonoBehaviour
     {
         //pb.videoPath = s;
         pb.ms = s;
-        yield return pb.Prepare();
+        yield return Co.R(pb.Prepare());
         pb.PlayPause();
         yield break;
     }

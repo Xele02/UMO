@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 			layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
 			SoundManager.Instance.sePlayerResult.Play(39); // ?? no 39
 			yield return null;
-			yield return Co_WaitAnim("hide");
+			yield return Co.R(Co_WaitAnim("hide"));
 			if(onChange != null)
 				onChange();
 			yield return new WaitWhile(() => {
@@ -148,19 +148,19 @@ namespace XeApp.Game.Menu
 				str.AppendFormat("musicrate_{0:D2}_", i + 1);
 				name = str.ToString();
 				operation = AssetBundleManager.LoadAssetAsync(BundleName, name + "pack_base", typeof(Texture));
-				yield return operation;
+				yield return Co.R(operation);
 				m_icon_texture[i].tex_base = operation.GetAsset<Texture>();
 				AssetBundleManager.UnloadAssetBundle(BundleName, false);
 				operation = AssetBundleManager.LoadAssetAsync(BundleName, name + "pack_mask", typeof(Texture));
-				yield return operation;
+				yield return Co.R(operation);
 				m_icon_texture[i].tex_mask = operation.GetAsset<Texture>();
 				AssetBundleManager.UnloadAssetBundle(BundleName, false);
 				operation = AssetBundleManager.LoadAssetAsync(BundleName, name + "pack_add", typeof(Material));
-				yield return operation;
+				yield return Co.R(operation);
 				m_icon_texture[i].mat_add = operation.GetAsset<Material>();
 				AssetBundleManager.UnloadAssetBundle(BundleName, false);
 				operation = AssetBundleManager.LoadAssetAsync(BundleName, name + "pack_mul", typeof(Material));
-				yield return operation;
+				yield return Co.R(operation);
 				m_icon_texture[i].mat_mul = operation.GetAsset<Material>();
 				m_icon_texture[i].name = name + "pack";
 				AssetBundleManager.UnloadAssetBundle(BundleName, false);

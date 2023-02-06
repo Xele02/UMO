@@ -46,7 +46,7 @@ namespace XeApp.Game.Common
 			bundleName.SetFormat("mc/{0}/dr/vo/{1:D3}.xab", wavName, assetId);
 
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			assetName.SetFormat("dr_vo_{0:D3}", assetId);
 			param = operation.GetAsset<MusicVoiceChangerParam>(assetName.ToString());

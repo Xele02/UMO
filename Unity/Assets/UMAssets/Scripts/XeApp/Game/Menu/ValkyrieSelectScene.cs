@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 			bundleName = "ef/cmn.xab";
 			assetName = "model_loading";
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName);
-			yield return operation;
+			yield return Co.R(operation);
 
 			m_EffectPrefab = operation.GetAsset<GameObject>(assetName);
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
@@ -101,12 +101,12 @@ namespace XeApp.Game.Menu
 			m_IsLoadLayout = false;
 			bundleName = "ly/045.xab";
 			systemFont = GameManager.Instance.GetSystemFont();
-			yield return AssetBundleManager.LoadUnionAssetBundle(bundleName);
-			yield return Co_LoadAssetsLayoutValkyrieSelect(bundleName, systemFont);
-			yield return Co_LoadAssetsLayoutSeriesButton(bundleName, systemFont);
-			yield return Co_LoadAssetsLayoutCircle(bundleName, systemFont);
-			yield return Co_LoadAssetsViewButton(bundleName, systemFont);
-			yield return Co_LoadAssetsPopUp(bundleName, systemFont);
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle(bundleName));
+			yield return Co.R(Co_LoadAssetsLayoutValkyrieSelect(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsLayoutSeriesButton(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsLayoutCircle(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsViewButton(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsPopUp(bundleName, systemFont));
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 
 			while(m_layoutValSelect == null)
@@ -133,12 +133,12 @@ namespace XeApp.Game.Menu
 			if(m_layoutValSelect == null)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_valkyrie01_layout_root");
-				yield return operation;
-				yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+				yield return Co.R(operation);
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 					//0x165F544
 					instance.transform.SetParent(transform, false);
 					m_layoutValSelect = instance.GetComponent<LayoutValkyrieSelect>();
-				});
+				}));
 
 				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
@@ -159,12 +159,12 @@ namespace XeApp.Game.Menu
 			if(m_SeriesTab == null)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_val_btn_layout_root");
-				yield return operation;
-				yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+				yield return Co.R(operation);
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 					//0x165F614
 					instance.transform.SetParent(transform, false);
 					m_SeriesTab = instance.GetComponent<LayoutSeriesTab>();
-				});
+				}));
 				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
 			}
@@ -184,11 +184,11 @@ namespace XeApp.Game.Menu
 			if(m_circle == null)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_val_circle_layout_root");
-				yield return operation;
-				yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+				yield return Co.R(operation);
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 					//0x165F6E4
 					m_circle = instance.GetComponent<LayoutBackGroundCircle>();
-				});
+				}));
 				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
 			}
@@ -204,8 +204,8 @@ namespace XeApp.Game.Menu
 			if(m_ViewBtnAnim == null)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_val_btn_view_layout_root");
-				yield return operation;
-				yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+				yield return Co.R(operation);
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 					//0x165F760
 					instance.transform.SetParent(transform, false);
 					LayoutUGUIRuntime runtime = instance.GetComponent<LayoutUGUIRuntime>();
@@ -216,7 +216,7 @@ namespace XeApp.Game.Menu
 						return _.name == "sw_sel_val_view_btn_anim (AbsoluteLayout)";
 					}).First();
 					m_ViewButton.AddOnClickCallback(OnClickViewButton);
-				});
+				}));
 				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
 			}
@@ -232,12 +232,12 @@ namespace XeApp.Game.Menu
 			if(m_episodePop == null)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_val_terms_window_all_layout_root");
-				yield return operation;
-				yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+				yield return Co.R(operation);
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 					//0x165FA64
 					instance.transform.SetParent(transform, false);
 					m_episodePop = instance.GetComponent<LayoutEpisodePopup>();
-				});
+				}));
 				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
 			}

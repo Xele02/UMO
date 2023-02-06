@@ -412,7 +412,7 @@ namespace XeApp.Game.Common
 					isShowNowLoding = true;
 				}
 			}
-			yield return m_setting.LoadAssetBundlePrefab(m_setting.m_parent);
+			yield return Co.R(m_setting.LoadAssetBundlePrefab(m_setting.m_parent));
 			if(isShowNowLoding)
 			{
 				GameManager.Instance.NowLoading.Hide();

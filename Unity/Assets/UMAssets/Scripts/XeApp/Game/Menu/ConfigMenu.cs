@@ -98,7 +98,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1B63224
 			IsLoadBundle = false;
-			yield return AssetBundleManager.LoadUnionAssetBundle("ly/072.xab");
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle("ly/072.xab"));
 			IsLoadBundle = true;
 		}
 

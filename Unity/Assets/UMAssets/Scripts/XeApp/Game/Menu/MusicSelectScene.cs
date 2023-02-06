@@ -200,10 +200,10 @@ namespace XeApp.Game.Menu
 				NKGJPJPHLIF.DPCCNOCAHGC = true;
 			}
 			bool isError = false;
-			yield return MenuScene.Instance.LobbyButtonControl.Co_CheckNewMark(() => {
+			yield return Co.R(MenuScene.Instance.LobbyButtonControl.Co_CheckNewMark(() => {
 				//0x1685BD0
 				isError = true;
-			});
+			}));
 			if(isError)
 			{
 				GotoTitle();
@@ -534,93 +534,94 @@ namespace XeApp.Game.Menu
 			int bundleLoadCount = 0;
 			bundleName.Set("ly/038.xab");
 			AssetBundleLoadLayoutOperationBase lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_MusicInfo");
-			yield return lytOp;
-			yield return lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
+			yield return Co.R(lytOp);
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
 				//0x1684F88
 				instance.transform.SetParent(transform, false);
 				m_musicInfo = instance.GetComponent<MusicSelectMusicInfo>();
-			});
+			}));
 			bundleLoadCount++;
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_SeriesInfo");
-			yield return lytOp;
-			yield return lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
+			yield return Co.R(lytOp);
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
 				//0x1685058
 				instance.transform.SetParent(transform, false);
 				m_seriesInfo = instance.GetComponent<MusicSelectSeriesInfo>();
-			});
+			}));
 			bundleLoadCount++;
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_MusicCD");
-			yield return lytOp;
-			yield return lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
+			yield return Co.R(lytOp);
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
 				//0x1685128
 				instance.transform.SetParent(transform, false);
 				m_cdSelect = instance.GetComponent<MusicSelectCDSelect>();
-			});
+			}));
 			bundleLoadCount++;
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_MusicCDArrow");
-			yield return lytOp;
-			yield return lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
+			yield return Co.R(lytOp);
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
 				//0x16851F8
 				instance.transform.SetParent(transform, false);
 				m_cdArrow = instance.GetComponent<MusicSelectCDArrow>();
-			});
+			}));
 			bundleLoadCount++;
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ButtonSet");
-			yield return lytOp;
-			yield return lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
+			yield return Co.R(lytOp);
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
 				//0x16852C8
 				instance.transform.SetParent(transform, false);
 				m_buttonSet = instance.GetComponent<MusicSelectButtonSet>();
-			});
+			}));
 			bundleLoadCount++;
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_EventBanner");
-			yield return lytOp;
-			yield return lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
+			yield return Co.R(lytOp);
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
 				//0x1685398
 				instance.transform.SetParent(transform, false);
 				m_eventBanner = instance.GetComponent<MusicSelectEventBanner>();
-			});
+			}));
 			bundleLoadCount++;
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_SLiveButton");
-			yield return lytOp;
-			yield return lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
+			yield return Co.R(lytOp);
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
 				//0x1685468
 				instance.transform.SetParent(transform, false);
 				m_sliveButton = instance.GetComponent<MusicSelectSLiveButton>();
-			});
+			}));
 			bundleLoadCount++;
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_SLiveItem");
-			yield return lytOp;
-			yield return lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
+			yield return Co.R(lytOp);
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
 				//0x1685538
 				instance.transform.SetParent(transform, false);
 				m_sliveItem = instance.GetComponent<MusicSelectSLiveItem>();
-			});
+			}));
 			bundleLoadCount++;
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_MusicRate");
-			yield return lytOp;
-			yield return lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
+			yield return Co.R(lytOp);
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
 				//0x1685608
 				instance.transform.SetParent(transform, false);
 				m_musicRate = instance.GetComponent<MusicSelectMusicRate>();
-			});
+			}));
 			bundleLoadCount++;
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_LineButton");
-			yield return lytOp;
-			yield return lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
+			yield return Co.R(lytOp);
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
+			{
 				//0x16856D8
 				instance.transform.SetParent(transform, false);
 				m_lineButton = instance.GetComponent<MusicSelectLineButton>();
-			});
+			}));
 			bundleLoadCount++;
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UGUI_FilterButton");
@@ -641,12 +642,12 @@ namespace XeApp.Game.Menu
 			bundleLoadCount = 0;
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_sel_me3_fever_limit_layout_root");
-			yield return lytOp;
-			yield return lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
+			yield return Co.R(lytOp);
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) => {
 				//0x1685878
 				instance.transform.SetParent(transform, false);
 				m_feverLimit = instance.GetComponent<LayoutEventGoDivaFeverLimit>();
-			});
+			}));
 			bundleLoadCount++;
 
 			for(int i = 0; i < bundleLoadCount; i++)

@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_PlayingStartPopupAnim()
 		{
 			//0x1D1BED0
-			yield return Co_WaitAnim(layoutRoot, true);
+			yield return Co.R(Co_WaitAnim(layoutRoot, true));
 			if(onFinished != null)
 				onFinished();
 		}

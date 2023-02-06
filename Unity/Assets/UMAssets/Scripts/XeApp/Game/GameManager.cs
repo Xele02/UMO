@@ -301,7 +301,7 @@ namespace XeApp.Game
 				Destroy(m_snsNotification.gameObject);
 				m_snsNotification = null;
 			}
-			yield return AssetBundleManager.UnloadAllAssetBundle();
+			yield return Co.R(AssetBundleManager.UnloadAllAssetBundle());
 			yield return Resources.UnloadUnusedAssets();
 			IsCacheActive = false;
 

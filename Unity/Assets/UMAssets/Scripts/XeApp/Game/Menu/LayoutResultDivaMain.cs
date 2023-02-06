@@ -481,7 +481,7 @@ namespace XeApp.Game.Menu
 			});
 			if (IsGetBonus())
 			{
-				yield return Co_StartMusicLevelBonusExpAnim();
+				yield return Co.R(Co_StartMusicLevelBonusExpAnim());
 			}
 			musicLevelLayout.layoutRoot.FinishAnimLoop();
 			musicLevelLayout.layoutEffectRoot.StartChildrenAnimGoStop("go_out", "st_out");

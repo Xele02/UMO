@@ -342,7 +342,7 @@ namespace XeApp.Game.Menu
 			while(i < assetBundleName.Length / 2)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(assetBundleName[i * 2], assetBundleName[i * 2 + 1]);
-				yield return operation;
+				yield return Co.R(operation);
 				mb.StartCoroutineWatched(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
 				{
 					//0xB2B010

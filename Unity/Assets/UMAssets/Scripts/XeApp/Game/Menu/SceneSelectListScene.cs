@@ -80,13 +80,13 @@ namespace XeApp.Game.Menu
 			if(m_sortButtonGroup != null)
 				yield break;
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_card_btn_layout_root");
-			yield return operation;
-			yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+			yield return Co.R(operation);
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 				//0x138794C
 				instance.transform.SetParent(transform, false);
 				m_sortButtonGroup = instance.GetComponentInChildren<ListSortButtonGroup>(true);
 				m_sortButtonGroup.SortPlace = m_sortPlace;
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 			operation = null;
 		}
@@ -108,13 +108,13 @@ namespace XeApp.Game.Menu
 			if(m_sceneSelectList != null)
 				yield break;
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_window01_layout_root");
-			yield return operation;
-			yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+			yield return Co.R(operation);
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 				//0x1387A48
 				instance.transform.SetParent(transform, false);
 				m_equipmentScene = instance.GetComponentInChildren<EquipmentScene>(true);
 				m_sceneSelectList = instance.GetComponentInChildren<SceneSelectList>(true);
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 			operation = null;
 		}
@@ -129,9 +129,9 @@ namespace XeApp.Game.Menu
 			//0xA58CBC
 			bundleName = "ly/014.xab";
 			systemFont = GameManager.Instance.GetSystemFont();
-			yield return AssetBundleManager.LoadUnionAssetBundle(bundleName);
-			yield return Co_SelectWindowLayout(bundleName, systemFont);
-			yield return Co_SceneSortButtonLayout(bundleName, systemFont);
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle(bundleName));
+			yield return Co.R(Co_SelectWindowLayout(bundleName, systemFont));
+			yield return Co.R(Co_SceneSortButtonLayout(bundleName, systemFont));
 			if(m_transitionName == TransitionList.Type.ASSIST_SELECT ||
 				m_transitionName == TransitionList.Type.SCENE_SELECT)
 			{

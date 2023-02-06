@@ -135,7 +135,7 @@ static class FileSystemProxy
 
 	static IEnumerator TryInstallFileCoroutine(string path, Action<string> onDone)
 	{
-		yield return InitServerFileList();
+		yield return Co.R(InitServerFileList());
 		path = path.Replace("\\", "/");
 		string relativePath = path;
 		int pos = path.IndexOf("/android/");
@@ -355,7 +355,7 @@ static class FileSystemProxy
 		string s = "ad/am/100601.xab";
 		UnityEngine.Debug.LogError(s);
 		AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(s);
-		yield return operation;
+		yield return Co.R(operation);
 		GameObject go = operation.GetAsset<GameObject>("100601");
 		go = UnityEngine.Object.Instantiate(go);
 		ExtractBundle(operation, "100601");
@@ -364,7 +364,7 @@ static class FileSystemProxy
 		s = "ad/am/100602.xab";
 		UnityEngine.Debug.LogError(s);
 		operation = AssetBundleManager.LoadAllAssetAsync(s);
-		yield return operation;
+		yield return Co.R(operation);
 		go = operation.GetAsset<GameObject>("100602");
 		go = UnityEngine.Object.Instantiate(go);
 		ExtractBundle(operation, "100602");

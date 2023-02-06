@@ -60,7 +60,7 @@ namespace XeApp.Game.Common
 			if(KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(bundleName.ToString()))
 			{
 				operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-				yield return operation;
+				yield return Co.R(operation);
 				if(!operation.IsError())
 				{
 					assetName.SetFormat("game_cmn_bs_animator", Array.Empty<object>());
@@ -87,7 +87,7 @@ namespace XeApp.Game.Common
 			if(KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(bundleName.ToString()))
 			{
 				operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-				yield return operation;
+				yield return Co.R(operation);
 				if(!operation.IsError())
 				{
 					if(positionId == 0)

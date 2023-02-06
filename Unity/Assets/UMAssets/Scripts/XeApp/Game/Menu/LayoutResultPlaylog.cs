@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 			isStartInitialize = true;
 			bundle_name = PopupPlaylogDetail.BUNDLE_NAME;
 			operation = AssetBundleManager.LoadAssetAsync(bundle_name, "PlaylogBarObj", typeof(GameObject));
-			yield return operation;
+			yield return Co.R(operation);
 
 			GameObject g = operation.GetAsset<GameObject>();
 			parent = transform.Find(GRAPH_PARENT_OBJ);

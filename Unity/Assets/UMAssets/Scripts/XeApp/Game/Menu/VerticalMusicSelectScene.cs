@@ -185,13 +185,13 @@ namespace XeApp.Game.Menu
 				{
 					if((int)VerticalMusicSelectScene.CategoryToNewSeriesBgId[i] > -1)
 					{
-						yield return bgControl.CacheBg(BgType.VerticalMusic, (int)CategoryToNewSeriesBgId[i]);
+						yield return Co.R(bgControl.CacheBg(BgType.VerticalMusic, (int)CategoryToNewSeriesBgId[i]));
 					}
 				}
-				yield return bgControl.CacheBg(BgType.VerticalMusic, noMusicCategoryId);
+				yield return Co.R(bgControl.CacheBg(BgType.VerticalMusic, noMusicCategoryId));
 			}
 			m_isBgCached = true;
-			yield return Co_ChangeBg(bgType, bgId, endCallBack, isFade);
+			yield return Co.R(Co_ChangeBg(bgType, bgId, endCallBack, isFade));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F5F9C Offset: 0x6F5F9C VA: 0x6F5F9C
@@ -371,7 +371,7 @@ namespace XeApp.Game.Menu
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
 				MenuScene.Instance.InputDisable();
-				yield return Co_ShowScoreRankingPopup();
+				yield return Co.R(Co_ShowScoreRankingPopup());
 				MenuScene.Instance.InputEnable();
 			}
 			TodoLogger.Log(0, "DirtyChangeScene stuff");
@@ -397,117 +397,117 @@ namespace XeApp.Game.Menu
 			int bundleCount = 0;
 
 			AssetBundleLoadUGUIOperationBase uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectMusicDetail");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF08B4
 				instance.transform.SetParent(transform, false);
 				m_musicDetail = instance.GetComponentInChildren<VerticalMusicSelectMusicDetail>();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectMusicList");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF0984
 				instance.transform.SetParent(transform, false);
 				m_musicList = instance.GetComponentInChildren<VerticalMusicSelectMusicList>();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectUtaRate");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF0A54
 				instance.transform.SetParent(transform, false);
 				m_utaRate = instance.GetComponentInChildren<VerticalMusicSelectUtaRate>();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectDifficulty");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF0B24
 				instance.transform.SetParent(transform, false);
 				m_difficultyButtonGroup = instance.GetComponentInChildren<VerticalMusicSelectDifficultyButtonGroup>();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectLine6Button");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF0BF4
 				instance.transform.SetParent(transform, false);
 				m_line6Button = instance.GetComponentInChildren<VerticalMusicSelecLine6Button>();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectEventItem");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF0CC4
 				instance.transform.SetParent(transform, false);
 				m_eventItem = instance.GetComponentInChildren<VerticalMusicSelectEventItem>();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectSimulationButton");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF0D94
 				instance.transform.SetParent(transform, false);
 				m_simulationButton = instance.GetComponentInChildren<VerticalMusicSelctSimulationButton>();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectPlayButton");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF0E64
 				instance.transform.SetParent(transform, false);
 				m_playButton = instance.GetComponentInChildren<VerticalMusicSelectPlayButton>();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelecChoiceMusicListTab");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF0F34
 				instance.transform.SetParent(transform, false);
 				m_choiceMusicTab = instance.GetComponentInChildren<VerticalMusicSelecChoiceMusicListTab>();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "AllSelect");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF1004
 				instance.transform.SetParent(transform, false);
 				instance.SetActive(false);
 				m_jacketScroll = instance.GetComponentInChildren<MusicJecketScrollView>();
-			});
+			}));
 			bundleCount++;
 
 			GameObject baseContent = null;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "AllSelectJuketButton");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xAC2BC4
 				baseContent = instance;
 				MusicJacketScrollItem item = instance.GetComponentInChildren<MusicJacketScrollItem>();
 				item.SetVisible(false);
 				m_jacketScroll.scrollList.AddScrollObject(item);
-			});
+			}));
 			bundleCount++;
 
 			for (int i = m_jacketScroll.scrollList.ScrollObjectCount - 1; i != 0; i--)
@@ -520,43 +520,43 @@ namespace XeApp.Game.Menu
 			m_jacketScroll.Initialize();
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectFilterButton");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF1114
 				instance.transform.SetParent(transform, false);
 				m_filterButton = instance.GetComponentInChildren<VerticalMusicSelectMusicFilterButton>();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectSeries");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF11E4
 				instance.transform.SetParent(transform, false);
 				m_seriesButtonGroup = instance.GetComponentInChildren<VerticalMusicSelectSeriesButtonGroup > ();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectSortOrderButton");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF12B4
 				instance.transform.SetParent(transform, false);
 				m_orderButton = instance.GetComponentInChildren<VerticalMusicSelectSortOrder>();
-			});
+			}));
 			bundleCount++;
 
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "VerticalMusicSelectEventBunner");
-			yield return uguiOp;
-			yield return uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOp);
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xBF1384
 				instance.transform.SetParent(transform, false);
 				m_eventBanner = instance.GetComponentInChildren<VerticalMusicSelectEventBanner>();
-			});
+			}));
 			bundleCount++;
 
 			for(int i = 0; i < bundleCount; i++)

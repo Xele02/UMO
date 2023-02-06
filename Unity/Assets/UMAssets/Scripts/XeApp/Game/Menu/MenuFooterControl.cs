@@ -180,10 +180,10 @@ namespace XeApp.Game.Menu
 		public IEnumerator Load(Font font, UnityAction action)
 		{
 			//0xB269E8
-			yield return MenuBarPrefab.Load(m_root.transform, font, (MenuBarPrefab instance) => {
+			yield return Co.R(MenuBarPrefab.Load(m_root.transform, font, (MenuBarPrefab instance) => {
 				//0xED3528
 				m_menuBar = instance;
-			});
+			}));
 			m_buttons = m_menuBar.GetComponentsInChildren<LayoutUGUIHitOnly>(true);
 			m_actionButtons = m_menuBar.GetComponentsInChildren<ActionButton>(true);
 			m_menuBar.gameObject.SetActive(false);

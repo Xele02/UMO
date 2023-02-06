@@ -86,7 +86,7 @@ namespace XeApp.Game.Common
 			bundleName.SetFormat("mc/{0}/sc.xab", wavDir);
 
 			AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			yield return this.StartCoroutineWatched(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, -1, line6Mode, this.LoadedCommonScoreData, "s_"));
 

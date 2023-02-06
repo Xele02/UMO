@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		protected IEnumerator CreateUGUIObjectCache()
 		{
 			//0x154B8E8
-			yield return AssetBundleManager.LoadUnionAssetBundle("ly/013.xab");
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle("ly/013.xab"));
 			int loadCount = 0;
 			int reqCount = 0;
 			for(int i = 0; i < m_prefabCacheParams.Length; i++)

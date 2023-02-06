@@ -60,7 +60,7 @@ namespace XeApp.Game.Common
 			assetName = new StringBuilder();
 			bundleName.SetFormat("mc/cmn/dr/li.xab", Array.Empty<object>());
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			assetName.SetFormat("dr_li_cmn_animator", Array.Empty<object>());
 			animatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
@@ -80,7 +80,7 @@ namespace XeApp.Game.Common
 			string wavName = GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/dr/li/{1:D3}.xab", stageDivaNum, 1, assetId, false);
 			bundleName.SetFormat("mc/{0}/dr/li/{1:D3}.xab", wavName, assetId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			assetName.SetFormat("dr_li_{0:D3}", assetId);
 			clip = operation.GetAsset<AnimationClip>(assetName.ToString());
 			for(int i = 0; i < MAX_CLIP_ADD; i++)

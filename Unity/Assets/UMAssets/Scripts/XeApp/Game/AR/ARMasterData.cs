@@ -54,10 +54,10 @@ namespace XeApp.Game.AR
 			// 0xBBBD8C
 			m_isReady = false;
 			bool isError = false;
-			yield return Coroutine_Download(() => {
+			yield return Co.R(Coroutine_Download(() => {
 				//0xBBB36C
 				isError = true;
-			});
+			}));
 			if(isError)
 			{
 				if(onError != null)
@@ -67,10 +67,10 @@ namespace XeApp.Game.AR
 			}
 			
 			byte[] dataBytes = null;
-			yield return Coroutine_LoadTarFile(BBGDKLLEPIB.OGCDNCDMLCA + string.Format(DATA_PATH, m_name), (byte[] data) => {
+			yield return Co.R(Coroutine_LoadTarFile(BBGDKLLEPIB.OGCDNCDMLCA + string.Format(DATA_PATH, m_name), (byte[] data) => {
 				//0xBBB378
 				dataBytes = data;
-			} );
+			} ));
 
 			if(dataBytes != null)
 			{

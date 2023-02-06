@@ -519,7 +519,7 @@ namespace XeApp.Game.Common
 			bundleName.SetFormat("dv/ca/cmn.xab", "");
 			
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			divaAnimatorController = operation.GetAsset<RuntimeAnimatorController>("diva_cmn_animator");
 			facialAnimatorController = operation.GetAsset<RuntimeAnimatorController>("med_cmn_animator");
@@ -529,7 +529,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("diva_{0:D3}_param", divaId);
 			divaParam = operation.GetAsset<DivaParam>(assetName.ToString());
@@ -538,7 +538,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("diva_{0:D3}_cos_{1:D3}_prefab", divaId, modelId);
 			divaPrefab = operation.GetAsset<GameObject>(assetName.ToString());
@@ -561,7 +561,7 @@ namespace XeApp.Game.Common
 			{
 				bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}_{2:D2}.xab", divaId, modelId, colorId);
 				operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-				yield return operation;
+				yield return Co.R(operation);
 				
 				List<Texture> texList = new List<Texture>();
 				
@@ -576,9 +576,9 @@ namespace XeApp.Game.Common
 				XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);	
 			}
 			
-			yield return Co_LoadComponent(divaId, modelId, (pe, pw) => {prefabEffect = pe; prefabWind = pw;});
+			yield return Co.R(Co_LoadComponent(divaId, modelId, (pe, pw) => {prefabEffect = pe; prefabWind = pw;}));
 			
-			yield return Co_LoadBoneSpringSuppress(divaId, modelId, (p) => {boneSpringResource.suppress.presets = p;});
+			yield return Co.R(Co_LoadBoneSpringSuppress(divaId, modelId, (p) => {boneSpringResource.suppress.presets = p;}));
 			
 			isLoadedBasicResource = true;
     		UnityEngine.Debug.Log("Exit Co_LoadBasicResource");
@@ -606,7 +606,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/bs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			if(!operation.IsError())
 			{
@@ -660,7 +660,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			for(int i = 0; i < 3; i++)
 			{
@@ -679,7 +679,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/ca/cmn.xab", "");
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			if(list_effect.Count == 0)
 			{
@@ -816,7 +816,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("mc/{0}/bt{1:D3}.xab", wavPath, primeId);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			if(divaNum > 1 && divaId == 9)
 			{
@@ -873,7 +873,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/mk/bt/cmn.xab", "");
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("stand_mike_animator", "");
 			mikeStandAnimatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
@@ -882,7 +882,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/mk/bt/{0:D3}.xab", primeId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("stand_mike_prefab", "");
 			mikeStandPrefab = operation.GetAsset<GameObject>(assetName.ToString());
@@ -936,7 +936,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("mc/{0}/ft.xab", wavPath);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("facial_table", "");
 			TextAsset facialTableAsset = operation.GetAsset<TextAsset>(assetName.ToString());
@@ -950,7 +950,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			commonFacialResource.Clear();
 			
@@ -1049,7 +1049,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			for(int i = 1; i <= MAX_TALK; i++)
 			{
@@ -1086,7 +1086,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("diva_{0:D3}_menu_idle_body", divaId);
 			menuMotionOverride.idle.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
@@ -1184,7 +1184,7 @@ namespace XeApp.Game.Common
 			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId;
 			divaBundleName.SetFormat("dv/ty/{0:D3}.xab", divaParam.ChangePersonalityId(modelId, personalityId));
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("type_{0:D3}_result_battle_lose_start_body", personalityId);
 			resultMotionOverride.loseStart.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1208,7 +1208,7 @@ namespace XeApp.Game.Common
 
 			divaBundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("diva_{0:D3}_menu_idle_body", divaId);
 			t_costume_wait.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1241,7 +1241,7 @@ namespace XeApp.Game.Common
 
 			divaBundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			if(t_costume_wait.bodyClip != null)
 			{
@@ -1300,7 +1300,7 @@ namespace XeApp.Game.Common
 			{
 				typeBundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 				operationType = AssetBundleManager.LoadAllAssetAsync(typeBundleName.ToString());
-				yield return operationType;
+				yield return Co.R(operationType);
 
 				string str = DivaResultMotion.GetResultSpecialStr(scoreRank);
 
@@ -1362,7 +1362,7 @@ namespace XeApp.Game.Common
 			res = new LoginMotionOverrideResource.Reaction();
 			divaBundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("diva_{0:D3}_menu_idle_body", divaId);
 			loginMotionOverride.idle.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1379,7 +1379,7 @@ namespace XeApp.Game.Common
 			bundleName = new StringBuilder();
 			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			assetName.SetFormat("type_{0:D3}_login_reaction{1:D2}_begin_body", personalityId, 1);
 			res.begin.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
@@ -1412,7 +1412,7 @@ namespace XeApp.Game.Common
 
 			divaBundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("diva_{0:D3}_join_start_body", divaId);
 			unlockMotionOverride.start.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1451,7 +1451,7 @@ namespace XeApp.Game.Common
 			bodyId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).IDDHKOEFJFB_BodyId;
 			divaBundleName.SetFormat("dv/bt/{0:D3}.xab", bodyId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("type_{0:D3}_costume_start_body", bodyId);
 			unlockCostumeMotionOverride.start.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1466,7 +1466,7 @@ namespace XeApp.Game.Common
 
 			divaBundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("diva_{0:D3}_costume_pose_body", divaId);
 			unlockCostumeMotionOverride.pose.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1511,7 +1511,7 @@ namespace XeApp.Game.Common
 				bundleName.SetFormat("re/ft.xab", System.Array.Empty<object>());
 			}
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			assetName.SetFormat("facial_table", Array.Empty<object>());
 			TextAsset t = operation.GetAsset<TextAsset>(assetName.ToString());
@@ -1523,7 +1523,7 @@ namespace XeApp.Game.Common
 
 			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			commonFacialResource = new List<FacialOverrideResouece>();
 			for(int i = 0; i < divaCommonFacialAnimName.Length; i++)

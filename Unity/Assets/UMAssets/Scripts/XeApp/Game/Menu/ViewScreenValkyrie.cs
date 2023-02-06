@@ -110,7 +110,7 @@ namespace XeApp.Game.Menu
 				if(IsCreateCameraMan)
 				{
 					ViewModeCameraMan camMan = m_cameraObj.AddComponent<ViewModeCameraMan>();
-					yield return camMan.Co_loadAssets();
+					yield return Co.R(camMan.Co_loadAssets());
 					if(!SystemManager.isLongScreenDevice)
 					{
 						FlexibleCameraChanger f = FlexibleCameraChanger.AddComponent(m_cameraObj, true, false, 0, 0);

@@ -155,12 +155,12 @@ namespace XeApp.Game.Menu
 			bundleName = new StringBuilder();
 			bundleName.Set("ly/022.xab");
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultCommon");
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 				//0xB545E4
 				instance.transform.SetParent(transform, false);
 				commonLayoutController = instance.GetComponent<ResultCommonLayoutController>();
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			UnityEngine.Debug.Log("Exit Co_LoadCommonLayout");
 		}
@@ -176,12 +176,12 @@ namespace XeApp.Game.Menu
 			bundleName = new StringBuilder();
 			bundleName.Set("ly/023.xab");
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultScore");
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 				//0xB546B4
 				instance.transform.SetParent(transform, false);
 				scoreLayoutController = instance.GetComponent<ResultScoreLayoutController>();
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
@@ -196,12 +196,12 @@ namespace XeApp.Game.Menu
 			bundleName = new StringBuilder();
 			bundleName.Set("ly/024.xab");
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultDiva");
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 				//0xB54784
 				instance.transform.SetParent(transform, false);
 				divaLayoutController = instance.GetComponent<ResultDivaLayoutController>();
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
@@ -215,11 +215,11 @@ namespace XeApp.Game.Menu
 			if(scoreLayoutInitParam.achieveRewardSetting == null)
 				yield break;
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(scoreLayoutInitParam.achieveRewardSetting.BundleName, scoreLayoutInitParam.achieveRewardSetting.AssetName);
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 				//0xB54854
 				scoreLayoutInitParam.achieveRewardSetting.SetContent(instance);
-			});
+			}));
 			scoreLayoutInitParam.achieveRewardSetting.SetParent(transform);
 			AssetBundleManager.UnloadAssetBundle(scoreLayoutInitParam.achieveRewardSetting.BundleName, false);
 		}
@@ -246,14 +246,14 @@ namespace XeApp.Game.Menu
 			bundleName = new StringBuilder();
 			bundleName.Set("ly/026.xab");
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultDrop");
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 				//0xB57A58
 				instance.transform.SetParent(transform, false);
 				dropLayoutController = instance.GetComponent<ResultDropLayoutController>();
-			});
+			}));
 			itemSetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "Item");
-			yield return itemSetOp;
+			yield return Co.R(itemSetOp);
 			prefab = itemSetOp.GetAsset<GameObject>();
 			Layout layout = null;
 			TexUVListManager uvMan = null;

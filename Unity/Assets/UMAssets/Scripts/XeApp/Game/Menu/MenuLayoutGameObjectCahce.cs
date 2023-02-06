@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 			//0xB2D2D8
 			if(!string.IsNullOrEmpty(depBundleName))
 			{
-				yield return AssetBundleManager.LoadUnionAssetBundle(depBundleName);
+				yield return Co.R(AssetBundleManager.LoadUnionAssetBundle(depBundleName));
 				m_dependencyBundleMap.Add(assetName, depBundleName);
 			}
 			pool = new UGUIObjectPool(m_rootObject, count);

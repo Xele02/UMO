@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadResource()
 		{
 			//0x12D05EC
-			yield return CreateUGUIObjectCache();
+			yield return Co.R(CreateUGUIObjectCache());
 			IsReady = true;
 		}
 

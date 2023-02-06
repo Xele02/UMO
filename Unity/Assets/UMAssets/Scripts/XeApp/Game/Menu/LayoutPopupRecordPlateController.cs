@@ -200,7 +200,7 @@ namespace XeApp.Game.Menu
 			{
 				UnionAssetBundleLoadOperation operation = AssetBundleManager.LoadUnionAssetBundle(m_bundleNames[i]);
 				AddBundleCounter(m_bundleNames[i]);
-				yield return operation;
+				yield return Co.R(operation);
 			}
 			IsLoadBundle = true;
 		}

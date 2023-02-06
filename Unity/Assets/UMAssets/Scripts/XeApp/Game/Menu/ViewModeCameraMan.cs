@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 			//0xADF114
 			bundleName = "vl/cmn.xab";
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			m_camObj = new GameObject("val_cmn_cam");
 			m_camAnimObj = new GameObject("unity_cam");

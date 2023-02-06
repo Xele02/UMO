@@ -36,12 +36,12 @@ namespace XeApp.Game.Menu
 			loadCount = 0;
 
 			operation = AssetBundleManager.LoadLayoutAsync(BundleName.ToString(), AssetName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
-			yield return operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
 			{
 				m_content = instance;
-			});
+			}));
 
 			loadCount++;
 			for(int i = 0; i < loadCount; i++)

@@ -246,7 +246,7 @@ namespace XeApp.Game.Menu
 			if (!m_limitedHomeBg.m_enable)
 			{
 				DeleteLimitedBG();
-				yield return LoadBgTexture(textureType, id, bgType == BgType.GachaPickup);
+				yield return Co.R(LoadBgTexture(textureType, id, bgType == BgType.GachaPickup));
 				switch(bgType)
 				{
 					case BgType.VerticalMusic:
@@ -374,7 +374,7 @@ namespace XeApp.Game.Menu
 						types = typeof(Material);
 				}
 				operation = AssetBundleManager.LoadAssetAsync(m_strBuilder.ToString(), id.ToString("D2"), types);
-				yield return operation;
+				yield return Co.R(operation);
 				tex = new BgTexture();
 				if(types == typeof(Texture2D))
 				{
@@ -419,7 +419,7 @@ namespace XeApp.Game.Menu
 			if(!m_cachedTextures.ContainsKey(m_strBuilder.ToString()))
 			{
 				operation = AssetBundleManager.LoadAssetAsync(m_strBuilder.ToString(), id.ToString("D2"), typeof(Texture2D));
-				yield return operation;
+				yield return Co.R(operation);
 				BgTexture tex = new BgTexture();
 				tex.SetFlags(BgTextureFlag.Permanently);
 				tex.texture = operation.GetAsset<Texture2D>();

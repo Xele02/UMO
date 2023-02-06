@@ -58,7 +58,7 @@ namespace XeApp.Game.RhythmGame
 
 			name_bundle.Set("vl/param_vl.xab");
 			AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(name_bundle.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			name_asset.Set("param_vl_awake");
 			m_paramValkyrieAwake = new ParameterData_ValkyrieAwake();

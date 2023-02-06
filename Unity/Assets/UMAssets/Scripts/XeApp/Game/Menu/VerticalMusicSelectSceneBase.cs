@@ -193,9 +193,9 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_Awake()
 		{
 			//0xAD45C0
-			yield return Co_LoadResourceOnAwake();
+			yield return Co.R(Co_LoadResourceOnAwake());
 			m_rewardPopupSetting.SetParent(transform);
-			yield return Co_WaitForLoaded();
+			yield return Co.R(Co_WaitForLoaded());
 			IsReady = true;
 		}
 
@@ -247,7 +247,7 @@ namespace XeApp.Game.Menu
 			{
 				MenuScene.Instance.BgControl.ReserveFade(0.2f, Color.black);
 			}
-			yield return MenuScene.Instance.BgControl.ChangeBgCoroutine(bgType, bgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1);
+			yield return Co.R(MenuScene.Instance.BgControl.ChangeBgCoroutine(bgType, bgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
 			if(endCallBack != null)
 			{
 				endCallBack();

@@ -19,7 +19,7 @@ namespace XeApp.Game.RhythmGame.UI
 
 			// 0x1569550
 			op = AssetBundleManager.LoadAssetAsync(bundlePath, assetName, typeof(Texture2D));
-			yield return op;
+			yield return Co.R(op);
 
 			if(callBack != null)
 			{

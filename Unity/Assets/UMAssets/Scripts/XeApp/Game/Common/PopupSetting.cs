@@ -58,11 +58,11 @@ namespace XeApp.Game.Common
             if(m_content != null)
                 yield break;
             operation = AssetBundleManager.LoadLayoutAsync(BundleName, AssetName);
-            yield return operation;
-            yield return operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+            yield return Co.R(operation);
+            yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
                 //0x1BB255C
                 m_content = instance;
-            });
+            }));
             AssetBundleManager.UnloadAssetBundle(BundleName, false);
             m_content.transform.SetParent(m_parent, false);
             m_content.gameObject.SetActive(false);

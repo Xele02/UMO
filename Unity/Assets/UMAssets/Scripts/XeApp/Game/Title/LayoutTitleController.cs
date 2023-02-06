@@ -75,13 +75,13 @@ namespace XeApp.Game.Title
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutScreen");
 			//0xE38E7C
-			yield return LoadLayoutBase("Layout/title/root_title_01_layout_root", (GameObject instance) => {
+			yield return Co.R(LoadLayoutBase("Layout/title/root_title_01_layout_root", (GameObject instance) => {
 				//0xE37944
 				Screen = instance.GetComponent<LayoutTitleScreen>();
 				titleObjectList.Add(instance);
 				if(callback != null)
 					callback();
-			});
+			}));
     		UnityEngine.Debug.Log("Exit LoadLayoutScreen");
 		}
 
@@ -91,13 +91,13 @@ namespace XeApp.Game.Title
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutScreenTap");
 			// 0xE39068
-			yield return LoadLayoutBase("Layout/title/root_title_hit_layout_root", (GameObject instance) => {
+			yield return Co.R(LoadLayoutBase("Layout/title/root_title_hit_layout_root", (GameObject instance) => {
 				//0xE37A38
 				ScreenTap = instance.GetComponent<LayoutTitleScreenTap>();
 				titleObjectList.Add(instance);
 				if(callback != null)
 					callback();
-			});
+			}));
 
     		UnityEngine.Debug.Log("Exit LoadLayoutScreenTap");
 		}
@@ -108,13 +108,13 @@ namespace XeApp.Game.Title
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutButtons");
 			//0xE386B4 
-			yield return LoadLayoutBase("Layout/title/root_title_btn_layout_root", (GameObject instance) => {
+			yield return Co.R(LoadLayoutBase("Layout/title/root_title_btn_layout_root", (GameObject instance) => {
 				//0xE37B2C
 				Buttons = instance.GetComponent<LayoutTitleButtons>();
 				titleObjectList.Add(instance);
 				if(callback != null)
 					callback();
-			});
+			}));
     		UnityEngine.Debug.Log("Exit LoadLayoutButtons");
 		}
 
@@ -124,14 +124,14 @@ namespace XeApp.Game.Title
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutTexts");
 			//0xE39254
-			yield return LoadLayoutBase("Layout/title/root_title_id_version_layout_root", (GameObject instance) =>
+			yield return Co.R(LoadLayoutBase("Layout/title/root_title_id_version_layout_root", (GameObject instance) =>
 			{
 				//0xE37C20
 				Texts = instance.GetComponent<LayoutTitleTexts>();
 				titleObjectList.Add(instance);
 				if (callback != null)
 					callback();
-			});
+			}));
 			UnityEngine.Debug.Log("Exit LoadLayoutTexts");
 		}
 
@@ -141,14 +141,14 @@ namespace XeApp.Game.Title
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutCopyRight");
 			//0xE388A0
-			yield return LoadLayoutBase("Layout/title/root_title_right_layout_root", (GameObject instance) =>
+			yield return Co.R(LoadLayoutBase("Layout/title/root_title_right_layout_root", (GameObject instance) =>
 			{
 				//0xE37D14
 				CopyRight = instance.GetComponent<LayoutTitleCopyRight>();
 				titleObjectList.Add(instance);
 				if (callback != null)
 					callback();
-			});
+			}));
 			UnityEngine.Debug.Log("Exit LoadLayoutCopyRight");
 		}
 
@@ -158,13 +158,13 @@ namespace XeApp.Game.Title
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutLbButtons");
 			//0xE38A8C
-			yield return LoadLayoutBase("Layout/title/root_title_google_btn_layout_root", (GameObject instance) => {
+			yield return Co.R(LoadLayoutBase("Layout/title/root_title_google_btn_layout_root", (GameObject instance) => {
 				//0xE37E08
 				LbButtons = instance.GetComponent<LayoutTitleLeftBottomButtons>();
 				titleObjectList.Add(instance);
 				if(callback != null)
 					callback();
-			});
+			}));
     		UnityEngine.Debug.Log("Exit LoadLayoutLbButtons");
 		}
 
@@ -174,11 +174,11 @@ namespace XeApp.Game.Title
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutTitleLogo");
 			//0xE39440
-			yield return LoadLayoutBase("Layout/startup/root_start_logo_layout_root", (GameObject instance) => {
+			yield return Co.R(LoadLayoutBase("Layout/startup/root_start_logo_layout_root", (GameObject instance) => {
 				//0xE37768
 				TitleLogo = instance.GetComponent<LayoutTitleLogo>();
 				titleObjectList.Add(instance);
-			});
+			}));
 
 			while(!TitleLogo.IsLoaded())
 			{
@@ -198,12 +198,12 @@ namespace XeApp.Game.Title
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutArButton");
 			//0xE38238
-			yield return LoadLayoutBase("Layout/title/root_title_ar_btn_layout_root", (GameObject instance) =>
+			yield return Co.R(LoadLayoutBase("Layout/title/root_title_ar_btn_layout_root", (GameObject instance) =>
 			{
 				//0xE37814
 				ArButton = instance.GetComponent<LayoutTitleArButton>();
 				titleObjectList.Add(instance);
-			});
+			}));
 			while (!ArButton.IsLoaded())
 				yield return null;
 			if (callback != null)
@@ -217,11 +217,11 @@ namespace XeApp.Game.Title
 		{
     		UnityEngine.Debug.Log("Enter LoadLayoutMonthlyPass");
 			//0xE38C78
-			yield return LoadLayoutBase("Layout/sel_inheriting/root_inh_pop_04_layout_root", (GameObject instance) =>
+			yield return Co.R(LoadLayoutBase("Layout/sel_inheriting/root_inh_pop_04_layout_root", (GameObject instance) =>
 			{
 				//0xE378C0
 				MonthlyPass = instance.GetComponent<LayoutMonthlyPassTakeover>();
-			});
+			}));
 			while (!MonthlyPass.IsLoaded())
 				yield return null;
 			if (callback != null)

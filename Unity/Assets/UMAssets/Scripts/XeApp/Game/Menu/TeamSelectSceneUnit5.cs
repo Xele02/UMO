@@ -141,7 +141,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadResource()
 		{
 			//0xA94FF8
-			yield return CreateUGUIObjectCache();
+			yield return Co.R(CreateUGUIObjectCache());
 			IsReady = true;
 		}
 
@@ -350,7 +350,7 @@ namespace XeApp.Game.Menu
 			m_isWaitEnterAnimation = true;
 			SetTitleInOut(DispType.CurrentUnit, m_dispType);
 			SetInactiveUnnecessaryContent(m_dispType);
-			yield return Co_EnterContents(m_dispType);
+			yield return Co.R(Co_EnterContents(m_dispType));
 			m_isWaitEnterAnimation = false;
 		}
 
@@ -471,7 +471,7 @@ namespace XeApp.Game.Menu
 				TodoLogger.Log(0, "Co_ShowHelp");
 			}
 			MenuScene.Instance.InputDisable();
-			yield return TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition);
+			yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition));
 			MenuScene.Instance.InputEnable();
 			GameManager.Instance.AddPushBackButtonHandler(OnBackButton);
 			m_isWaitActivateScene = false;
@@ -1159,7 +1159,7 @@ namespace XeApp.Game.Menu
 			while (IsPlayingContents())
 				yield return null;
 			SetInactiveUnnecessaryContent(dispType);
-			yield return TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition_forSwitchDispType);
+			yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition_forSwitchDispType));
 			MenuScene.Instance.RaycastEnable();
 		}
 
@@ -1353,7 +1353,7 @@ namespace XeApp.Game.Menu
 			if(m_prismData.FBGAKINEIPG)
 			{
 				if (m_dispType != DispType.Prism)
-					yield return Co_SwitchContents(DispType.Prism);
+					yield return Co.R(Co_SwitchContents(DispType.Prism));
 			}
 			else
 			{
@@ -1376,7 +1376,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					yield return Co_SwitchContents(DispType.CurrentUnit);
+					yield return Co.R(Co_SwitchContents(DispType.CurrentUnit));
 				}
 			}
 		}
@@ -1581,8 +1581,8 @@ namespace XeApp.Game.Menu
 		{
 			//0xA94B18
 			MenuScene.Instance.RaycastDisable();
-			yield return Co_DownloadUnitSetResources();
-			yield return Co_SwitchContents(DispType.UnitSet);
+			yield return Co.R(Co_DownloadUnitSetResources());
+			yield return Co.R(Co_SwitchContents(DispType.UnitSet));
 			m_unitSetInfo.MessageControl.Enter(m_playerData.JKIJFGGMNAN_GetUnit(UnitSetIndex, m_isGoDivaEvent).EIGKIHENKNC_HasDivaSet ? SetDeckUnitInfoMessageControl.DispType.Keep : SetDeckUnitInfoMessageControl.DispType.OneShot);
 			MenuScene.Instance.RaycastEnable();
 		}

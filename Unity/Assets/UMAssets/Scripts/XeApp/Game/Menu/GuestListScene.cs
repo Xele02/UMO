@@ -492,7 +492,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadResources()
 		{
 			//0xE2F51C
-			yield return Co_LoadLayout();
+			yield return Co.R(Co_LoadLayout());
 			IsReady = true;
 		}
 
@@ -515,52 +515,52 @@ namespace XeApp.Game.Menu
 			bundleLoadCount = 0;
 
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_GeneralListButton");
-			yield return operation;
+			yield return Co.R(operation);
 
-			yield return operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xE2E3BC
 				instance.transform.SetParent(transform, false);
 				m_buttonRuntime = instance.GetComponent<GeneralListButtonRuntime>();
-			});
+			}));
 			bundleLoadCount++;
 
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_GuestListWindow");
-			yield return operation;
+			yield return Co.R(operation);
 
-			yield return operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xE2E4B8
 				instance.transform.SetParent(transform, false);
 				m_windowUi = instance.GetComponent<GuestListWindow>();
 				m_scrollList = instance.GetComponentInChildren<SwapScrollList>(true);
-			});
+			}));
 			bundleLoadCount++;
 
 			uguiOperation = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "UGUI_AssistButton");
-			yield return uguiOperation;
+			yield return Co.R(uguiOperation);
 
-			yield return uguiOperation.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOperation.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xE2E5FC
 				instance.transform.SetParent(transform, false);
 				m_assistButton = instance.GetComponent<AssistSelectButton>();
-			});
+			}));
 			bundleLoadCount++;
 
 			poolSize = m_scrollList.ScrollObjectCount;
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_GuestListElem");
-			yield return operation;
+			yield return Co.R(operation);
 
 			LayoutUGUIRuntime baseRuntime = null;
-			yield return operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xE2E6F8
 				baseRuntime = instance.GetComponent<LayoutUGUIRuntime>();
 				baseRuntime.name = string.Format("GuestListElem {0:D2}", 0);
 				m_scrollList.AddScrollObject(baseRuntime.GetComponent<SwapScrollListContent>());
 				m_elems.Add(baseRuntime.GetComponent<GuestListElem>());
-			});
+			}));
 			bundleLoadCount++;
 
 			for(i = 1; i < poolSize; i++)

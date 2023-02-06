@@ -45,13 +45,13 @@ namespace XeApp.Game.Common
 			AssetBundleLoadUGUIOperationBase operation;
 			//0x1CD9868
 			operation = AssetBundleManager.LoadUGUIAsync(bundleName, prefabname);
-			yield return operation;
+			yield return Co.R(operation);
 			GameObject sourceInstance = null;
-			yield return operation.InitializeUGUICoroutine(font, (GameObject instance) =>
+			yield return Co.R(operation.InitializeUGUICoroutine(font, (GameObject instance) =>
 			{
 				//0x1CD985C
 				sourceInstance = instance;
-			});
+			}));
 			for(int i = 0; i < m_poolSize; i++)
 			{
 				GameObject obj = UnityEngine.Object.Instantiate<GameObject>(sourceInstance);

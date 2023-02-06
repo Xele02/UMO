@@ -16,7 +16,7 @@ namespace XeApp.Game.Common
 			//0x1CD2230
 			if(IsReady)
 				yield break;
-			yield return AssetBundleManager.LoadAllAssetAsync(BundleName);
+			yield return Co.R(AssetBundleManager.LoadAllAssetAsync(BundleName));
 			IsReady = true;
 		}
 

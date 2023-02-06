@@ -611,11 +611,11 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadResources()
 		{
 			//0xF50008
-			yield return Co_LoadLayout();
+			yield return Co.R(Co_LoadLayout());
 
 			m_rewardPopupSetting.SetParent(transform);
 
-			yield return Co_WaitForLoaded();
+			yield return Co.R(Co_WaitForLoaded());
 
 			playButtonUI = CreatePlayButtonWrapper();
 

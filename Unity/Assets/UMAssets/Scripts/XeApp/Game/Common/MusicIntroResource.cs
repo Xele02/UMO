@@ -59,7 +59,7 @@ namespace XeApp.Game.Common
 			assetName = new StringBuilder();
 			bundleName.SetFormat("gm/it/{0:D4}.xab", runwayId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			assetName.SetFormat("game_it_{0:D4}_prefab", runwayId);
 			runwayPrefab = operation.GetAsset<GameObject>(assetName.ToString());
@@ -80,7 +80,7 @@ namespace XeApp.Game.Common
 			assetName.SetFormat("env_it_{0:D4}_prefab", enviromentId);
 
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			enviromentPrefab = operation.GetAsset<GameObject>(assetName.ToString());
 

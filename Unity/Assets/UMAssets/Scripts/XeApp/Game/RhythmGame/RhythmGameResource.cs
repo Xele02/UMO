@@ -586,7 +586,7 @@ namespace XeApp.Game.RhythmGame
 				{
 					bundleName.Set(GetDivaSkillCutinTextureBundlePath(teamInfo.divaList[i].divaId, teamInfo.divaList[i].costumeModelId, teamInfo.divaList[i].costumeColorId));
 					operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-					yield return operation;
+					yield return Co.R(operation);
 
 					assetName.SetFormat(GetDivaSkillCutinTextureAssetName(bundleName, false), Array.Empty<object>());
 					Texture tex = operation.GetAsset<Texture>(assetName.ToString());
@@ -612,7 +612,7 @@ namespace XeApp.Game.RhythmGame
 							{
 								if(masterSkill.EGLDFPILJLG_SkillBuffEffect[k] != 0)
 								{
-									yield return LoadSkillEffectTextureCoroutine(masterSkill.EGLDFPILJLG_SkillBuffEffect[k], bundleName, assetName);
+									yield return Co.R(LoadSkillEffectTextureCoroutine(masterSkill.EGLDFPILJLG_SkillBuffEffect[k], bundleName, assetName));
 								}
 							}
 						}
@@ -656,7 +656,7 @@ namespace XeApp.Game.RhythmGame
 			assetName.SetFormat("{0:D6}_{1:D2}", mainSceneId, a);
 
 			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(Texture));
-			yield return operation;
+			yield return Co.R(operation);
 
 			uiTextureResources.centerCardTexture = operation.GetAsset<Texture>();
 			uiTextureResources.activeSkillIconMaterial = new Material(Shader.Find("MCRS/RhythmUI/RhythmUIVertexColor"));
@@ -690,7 +690,7 @@ namespace XeApp.Game.RhythmGame
 				bundleName.SetFormat("ct/gm/as/{0:D3}.xab", effectType);
 				assetName.SetFormat("{0:D3}_base", effectType);
 				bundleOperation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(Texture));
-				yield return bundleOperation;
+				yield return Co.R(bundleOperation);
 
 				colorTex = bundleOperation.GetAsset<Texture>();
 
@@ -732,7 +732,7 @@ namespace XeApp.Game.RhythmGame
 			assetName = new StringBuilder();
 			option = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options;
 
-			yield return AssetBundleManager.LoadUnionAssetBundle("gm/if/un.xab");
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle("gm/if/un.xab"));
 			
 			if(option.MIHFCOBBIPJ_GetQuality2d())
 			{
@@ -752,7 +752,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			
 			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(GameObject));
-			yield return operation;
+			yield return Co.R(operation);
 
 			uiPrefab = operation.GetAsset<GameObject>();
 
@@ -767,7 +767,7 @@ namespace XeApp.Game.RhythmGame
 			assetName.SetFormat("{0:D3}", 6);
 
 			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(GameObject));
-			yield return operation;
+			yield return Co.R(operation);
 
 			enemySkillPrefab = operation.GetAsset<GameObject>();
 
@@ -778,18 +778,18 @@ namespace XeApp.Game.RhythmGame
 			font = GameManager.Instance.GetSystemFont();
 
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_Failed");
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(font,(GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(font,(GameObject instance) => {
 				//0xBF93FC
 				faildUiPrefab = instance;
-			});
+			}));
 
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_GameComplete");
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(font,(GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(font,(GameObject instance) => {
 				//0xBF9404
 				completeUiPrefab = instance;
-			});
+			}));
 
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);

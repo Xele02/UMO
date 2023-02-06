@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 
 			//0x1371E80
 			operation = AssetBundleManager.LoadAllAssetAsync("ct/sc/ef.xab");
-			yield return operation;
+			yield return Co.R(operation);
 
 			m_kira256Material = operation.GetAsset<Material>("eff_256");
 			m_kira2048Material = operation.GetAsset<Material>("eff_2048");
@@ -194,7 +194,7 @@ namespace XeApp.Game.Menu
 			IsKiraShaderParam = Shader.PropertyToID("_IsKira");
 
 			operation = AssetBundleManager.LoadAllAssetAsync("ct/sc/me/01/al.xab");
-			yield return operation;
+			yield return Co.R(operation);
 
 			SharedAlphaTexture = operation.GetAsset<Texture2D>("al");
 
@@ -208,7 +208,7 @@ namespace XeApp.Game.Menu
 			while (m_loadingTexture == null)
 				yield return null;
 
-			yield return AssetBundleManager.LoadUnionAssetBundle("ct/sc/fr_256.xab");
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle("ct/sc/fr_256.xab"));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C6328 Offset: 0x6C6328 VA: 0x6C6328

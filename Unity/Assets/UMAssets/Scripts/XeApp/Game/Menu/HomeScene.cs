@@ -823,7 +823,7 @@ namespace XeApp.Game.Menu
 			bundleName.SetFormat("mc/{0}/sc.xab", waveName);
 			assetName.SetFormat("p_{0:D4}", musicInfo.KKPAHLMJKIH_WavId);
 			var operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(MusicDirectionParamBase));
-			yield return operation;
+			yield return Co.R(operation);
 
 			Database.Instance.gameSetup.teamInfo.valkyrieId = 0;
 			Database.Instance.gameSetup.teamInfo.prismValkyrieId = 0;

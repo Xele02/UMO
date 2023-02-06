@@ -141,7 +141,7 @@ class DataExporter
 			writer.WriteLine("|---|---|---|---|---|---|---|---|---|---|");
 
 			var operation = AssetBundleManager.LoadAssetAsync("mc/" + dirInfo.Name + "/sc.xab", "p_" + songId, typeof(MusicDirectionParamBase));
-			yield return operation;
+			yield return Co.R(operation);
 
 			MusicDirectionParamBase param = operation.GetAsset<MusicDirectionParamBase>();
 

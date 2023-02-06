@@ -38,12 +38,12 @@ namespace XeApp.Game.Menu
 			//0xA4CE28
 			assetBundleName = "ly/208.xab";
 			operation = AssetBundleManager.LoadLayoutAsync(assetBundleName, "root_pop_ep_raid_contents_layout_root");
-			yield return operation;
+			yield return Co.R(operation);
 
 			GameObject prefab = operation.GetAsset<GameObject>();
 			LayoutUGUIRuntime runtime = prefab.GetComponent<LayoutUGUIRuntime>();
 
-			yield return operation.CreateLayoutCoroutine(runtime, GameManager.Instance.GetSystemFont(), (Layout loadLayout, TexUVListManager loadUvMan) =>
+			yield return Co.R(operation.CreateLayoutCoroutine(runtime, GameManager.Instance.GetSystemFont(), (Layout loadLayout, TexUVListManager loadUvMan) =>
 			{
 				//0xA4CA40
 				GameObject go = Instantiate(prefab);
@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 				m_scrollSupport.AddView(m_contentLayout.gameObject, 0, 0);
 				m_scrollSupport.EndAddView();
 				m_scrollSupport.ContentSize = new Vector2(m_scrollSupport.RangeSize.x, 572);
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(assetBundleName);
 			while (!m_contentLayout.IsLoaded())
 				yield return null;

@@ -69,7 +69,7 @@ namespace XeApp.Game.Common
 				yield break;
 
 			AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(BundleName);
-			yield return operation;
+			yield return Co.R(operation);
 
 			for(int i = 0; i < TexUvListAssetName.Length; i++)
 			{

@@ -579,16 +579,16 @@ namespace XeApp.Game.Menu
 		{
 			//0xB3C79C
 			GameManager.Instance.SetTouchEffectVisible(false);
-			yield return GameManager.Instance.TryInstallRhythmGameResource(Database.Instance.gameSetup);
+			yield return Co.R(GameManager.Instance.TryInstallRhythmGameResource(Database.Instance.gameSetup));
 			GameManager.Instance.fullscreenFader.Fade(0.1f, Color.black);
 			while(GameManager.Instance.fullscreenFader.isFading)
 				yield return null;
 			if(wait != null)
-				yield return wait();
+				yield return Co.R(wait());
 			GameManager.Instance.NowLoading.Show();
 			SoundManager.Instance.bgmPlayer.Stop();
-			yield return RhythmGameStartVoicePlay();
-			yield return GameManager.Instance.ShowGameIntroCoroutine();
+			yield return Co.R(RhythmGameStartVoicePlay());
+			yield return Co.R(GameManager.Instance.ShowGameIntroCoroutine());
 		}
 
 		// // RVA: 0xB313A4 Offset: 0xB313A4 VA: 0xB313A4
@@ -608,7 +608,7 @@ namespace XeApp.Game.Menu
 		{
 			TodoLogger.Log(0, "GotoRhythmGameCorotine");
 			//0xB3B65C
-			yield return RhythmGamePreLoad(wait);
+			yield return Co.R(RhythmGamePreLoad(wait));
 			enableFade = false;
 			while(SoundManager.Instance.voDiva.isPlaying && SoundManager.Instance.voDivaCos.isPlaying && 
 				SoundManager.Instance.voPilot.isPlaying)

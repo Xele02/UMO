@@ -197,20 +197,20 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.RaycastDisable();
 			layoutHeaderTitle.StartBeginAnim();
 			layoutMusicInfo.StartBeginAnim();
-			yield return Co_StartTitleCutinAnim();
-			yield return Co_StartScoreMainAnim();
+			yield return Co.R(Co_StartTitleCutinAnim());
+			yield return Co.R(Co_StartScoreMainAnim());
 			if(!isInTutorial)
 			{
-				yield return Co_StartMusicInfoAnim();
-				yield return Co_WaitSingRankRateEffect();
-				yield return Co_OpenSingRankRateReward();
-				yield return Co_StartPlayerRankAnim();
-				yield return Co_OpenPlayerRankLevelUp();
-				yield return Co_OpenMissionStepup();
-				yield return Co_StartPlaylogAnim();
-				yield return Co_AchieveReward();
+				yield return Co.R(Co_StartMusicInfoAnim());
+				yield return Co.R(Co_WaitSingRankRateEffect());
+				yield return Co.R(Co_OpenSingRankRateReward());
+				yield return Co.R(Co_StartPlayerRankAnim());
+				yield return Co.R(Co_OpenPlayerRankLevelUp());
+				yield return Co.R(Co_OpenMissionStepup());
+				yield return Co.R(Co_StartPlaylogAnim());
+				yield return Co.R(Co_AchieveReward());
 			}
-			yield return Co_StartOkeyButton();
+			yield return Co.R(Co_StartOkeyButton());
 			MenuScene.Instance.RaycastEnable();
 		}
 
@@ -282,7 +282,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OpenPlayerRankLevelUp()
 		{
 			//0xB627D0
-			yield return layoutPlayerRank.Co_ShowRankupPopup();
+			yield return Co.R(layoutPlayerRank.Co_ShowRankupPopup());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x723CF4 Offset: 0x723CF4 VA: 0x723CF4
@@ -290,7 +290,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OpenMissionStepup()
 		{
 			//0xB6265C
-			yield return MenuScene.Instance.ShowMissionStepupWindowCoroutine();
+			yield return Co.R(MenuScene.Instance.ShowMissionStepupWindowCoroutine());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x723D6C Offset: 0x723D6C VA: 0x723D6C
@@ -338,11 +338,11 @@ namespace XeApp.Game.Menu
 			while(!done)
 				yield return null;
 			isShowingGuide = true;
-			yield return TryTutorialCoroutine(CheckGameResultTutorialCondition, () => {
+			yield return Co.R(TryTutorialCoroutine(CheckGameResultTutorialCondition, () => {
 				//0xB617DC
 				TodoLogger.Log(0, "TryTutorialCoroutine end");
 				isShowingGuide = false;
-			});
+			}));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x723ED4 Offset: 0x723ED4 VA: 0x723ED4
@@ -415,7 +415,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OpenSingRankRateReward()
 		{
 			//0xB628E8
-			yield return MenuScene.Instance.ShowReceiveRewardWindowCoroutine();
+			yield return Co.R(MenuScene.Instance.ShowReceiveRewardWindowCoroutine());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72412C Offset: 0x72412C VA: 0x72412C
@@ -428,24 +428,24 @@ namespace XeApp.Game.Menu
 
 			//0xB620FC
 			bundleName = "ly/110.xab";
-			yield return AssetBundleManager.LoadUnionAssetBundle(bundleName);
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle(bundleName));
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_game_res_mgrade_layout_root");
-			yield return operation;
-			yield return operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			yield return Co.R(operation);
+			yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
 			{
 				//0xB61478
 				instance.transform.SetParent(transform, false);
 				m_singRankrateEffect = instance.GetComponent<LayoutResultSingRateEffect>();
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_game_res_mgrade_icon_layout_root");
-			yield return operation;
-			yield return operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			yield return Co.R(operation);
+			yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
 			{
 				//0xB61548
 				instance.transform.SetParent(transform, false);
 				m_singRankrateEffectIcon = instance.GetComponent<LayoutResultSingRateEffectIcon>();
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 

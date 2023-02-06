@@ -215,7 +215,7 @@ namespace XeApp.Game.Common
 		{
 			//0x13992E8
 			changeVolume = Co_ChangeVolume(sec, 0);
-			yield return changeVolume;
+			yield return Co.R(changeVolume);
 			changeVolume = null;
 			StopCue(true);
 			source.volume = 1.0f;
@@ -240,7 +240,7 @@ namespace XeApp.Game.Common
 		{
 			//0x1399140
 			changeVolume = Co_ChangeVolume(sec, targetVol);
-			yield return changeVolume;
+			yield return Co.R(changeVolume);
 			changeVolume = null;
 			fadeCoroutine = null;
 			if (onEnd != null)

@@ -161,7 +161,7 @@ public class IOGKADECKOP
 			yield return DANMJLOBLIE.StartCoroutineWatched(FIIEPEEMMLD_CoroutineStart());
 		}
 		GameManager.Instance.ResetSystemCanvasCamera();
-		yield return GameManager.Instance.UnloadAllAssets();
+		yield return Co.R(GameManager.Instance.UnloadAllAssets());
 		yield return DANMJLOBLIE.StartCoroutineWatched(LLMFFOGJNLH_Coroutine_Initialize());
 		BICOBOLNFLJ = true;
         UnityEngine.Debug.Log("Exit GGKONDNONPP_BootCoroutine");
@@ -689,7 +689,7 @@ public class IOGKADECKOP
 			FHBJNLFHGPB(0);
 			//LAB_00a0e094:
 			// goto goto LAB_00a0eba0;
-			yield return HBBDEHKOFKN_Coroutine_DownloadTitleBannerTexture(); // To 9
+			yield return Co.R(HBBDEHKOFKN_Coroutine_DownloadTitleBannerTexture()); // To 9
 			
 			//9
 			//L825
@@ -739,13 +739,13 @@ public class IOGKADECKOP
 			yield break;
 		}
 		bool FBBAOFKBGBA = true;
-		yield return IMJGOIOLGIO_Contract(() => {
+		yield return Co.R(IMJGOIOLGIO_Contract(() => {
 			// 0xA09330
 			FBBAOFKBGBA = false;
 		}, () => {
 			//0xA0933C
 			FBBAOFKBGBA = true;
-		});
+		}));
 		//goto LAB_00a0e094; // goto LAB_00a0eba0; // To 0xc
 		
 		// 0xc
@@ -806,13 +806,13 @@ public class IOGKADECKOP
 				bool OJFKNEOJEHH = true;
 				if(KDHGBOOECKC.HHCJCDFCLOB != null) // else goto LAB_00a0be80;
 				{
-					yield return KDHGBOOECKC.HHCJCDFCLOB.CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements(() => {
+					yield return Co.R(KDHGBOOECKC.HHCJCDFCLOB.CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements(() => {
 						//0xA09618
 						OJFKNEOJEHH = false;
 					}, () => {
 						//0xA09624
 						OJFKNEOJEHH = true;
-					}); //goto LAB_00a0e094; // to 0xe
+					})); //goto LAB_00a0e094; // to 0xe
 					
 					// 0xe
 					
@@ -1043,7 +1043,7 @@ public class IOGKADECKOP
 					}
 					FHBJNLFHGPB(96);
 					//goto LAB_00a0eb98;
-					yield return ACHBBAIODMC(); // To 16
+					yield return Co.R(ACHBBAIODMC()); // To 16
 					//16
 					FHBJNLFHGPB(100);
 					yield return null; // To 17
@@ -1111,7 +1111,7 @@ public class IOGKADECKOP
   
 			string assetBundleName = String.Format("ct/bg/ld/{0:D6}.xab", BLEAOGCLJPK_TitleBannerAssetId);
 			AHBCOPDIEEH = AssetBundleManager.LoadAssetAsync(assetBundleName, assetName, typeof(Texture2D));
-			yield return AHBCOPDIEEH;
+			yield return Co.R(AHBCOPDIEEH);
 			
 			HOFMODFAOEA = null;
 			ResourcesManager.Instance.Load(Path.Combine("Menu/Prefab/MenuBg","BgTitleBanner"), (FileResultObject NLCGHBBNOJA) => {
@@ -1260,7 +1260,7 @@ public class IOGKADECKOP
 			string s1 = String.Format("{0:D4}", NLFFEOBGFMC);
 			
 			AssetBundleLoadAssetOperation GDKDBPHILKG = AssetBundleManager.LoadAssetAsync(FCFBGJOFEHO, s1, typeof(Texture));
-			yield return GDKDBPHILKG;
+			yield return Co.R(GDKDBPHILKG);
 			
 			PDOILOAFKCF.texture = GDKDBPHILKG.GetAsset<Texture>();
 			

@@ -60,11 +60,11 @@ namespace XeApp.Core
             }
             for(int i = 0; i < runtimes.Length; i++)
             {
-                yield return CreateLayoutCoroutine(runtimes[i], font, (Layout layout, TexUVListManager uvMan) => {
+                yield return Co.R(CreateLayoutCoroutine(runtimes[i], font, (Layout layout, TexUVListManager uvMan) => {
                     //0xE10128
                     runtimes[i].UvMan = uvMan;
                     runtimes[i].Layout = layout;
-                });
+                }));
                 runtimes[i].LoadLayout();
             }
             yield return null;

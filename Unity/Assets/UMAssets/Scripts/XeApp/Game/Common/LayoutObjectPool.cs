@@ -49,19 +49,19 @@ namespace XeApp.Game.Common
 
 			//0x1106090
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName, prefabname);
-			yield return operation;
+			yield return Co.R(operation);
 
 			prefab = operation.GetAsset<GameObject>();
 			Layout layout = null;
 			TexUVListManager uvMan = null;
 			LayoutUGUIRuntime runtime = prefab.GetComponent<LayoutUGUIRuntime>();
 
-			yield return operation.CreateLayoutCoroutine(runtime, font, (Layout loadLayout, TexUVListManager loadUvMan) =>
+			yield return Co.R(operation.CreateLayoutCoroutine(runtime, font, (Layout loadLayout, TexUVListManager loadUvMan) =>
 			{
 				//0x1106080
 				layout = loadLayout;
 				uvMan = loadUvMan;
-			});
+			}));
 
 			GameObject go = UnityEngine.Object.Instantiate(prefab);
 			go.GetComponent<LayoutUGUIRuntime>().IsLayoutAutoLoad = false;

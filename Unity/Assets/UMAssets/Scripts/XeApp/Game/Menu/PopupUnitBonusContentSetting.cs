@@ -30,17 +30,17 @@ namespace XeApp.Game.Menu
 				yield break;
 
 			operation = AssetBundleManager.LoadLayoutAsync(BundleName.ToString(), AssetName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			GameObject content = null;
 
-			yield return operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
 			{
 				//0x11552E8
 				content = instance;
-			});
+			}));
 
-			yield return content.GetComponent<UnitBonusWindow>().LoadContents();
+			yield return Co.R(content.GetComponent<UnitBonusWindow>().LoadContents());
 			AssetBundleManager.UnloadAssetBundle(BundleName.ToString());
 			m_content = content;
 			content.transform.SetParent(m_parent, false);

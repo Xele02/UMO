@@ -205,8 +205,8 @@ namespace XeApp.Game.Menu
 					}
 					layoutRateRankIn.StartChildrenAnimLoop("logo_act", "loen_act");
 				}
-				yield return Co_UpdataUtarateRanking();
-				yield return Co_GetCurrentRank();
+				yield return Co.R(Co_UpdataUtarateRanking());
+				yield return Co.R(Co_GetCurrentRank());
 			}
 			else
 			{

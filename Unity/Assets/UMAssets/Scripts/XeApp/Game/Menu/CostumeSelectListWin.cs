@@ -94,14 +94,14 @@ namespace XeApp.Game.Menu
 			font = GameManager.Instance.GetSystemFont();
 			bundleName = "ly/044.xab";
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_cos_list_layout_root");
-			yield return lytOp;
+			yield return Co.R(lytOp);
 
 			GameObject t_source = null;
-			yield return lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
 			{
 				//0x16DE098
 				t_source = instance;
-			});
+			}));
 
 			LayoutUGUIRuntime runtime = t_source.GetComponent<LayoutUGUIRuntime>();
 			for(int i = 0; i < m_swapScrollList.ColumnCount * m_swapScrollList.RowCount; i++)
