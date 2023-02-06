@@ -214,7 +214,7 @@ namespace XeApp.Game.Common
 		{
 			if(immediate && m_animCoroutine != null)
 			{
-				StopCoroutine(m_animCoroutine);
+				this.StopCoroutineWatched(m_animCoroutine);
 			}
 			m_animCoroutine = null;
 		}

@@ -76,7 +76,7 @@ namespace XeApp.Game.Common
 		{
 			if(m_coWaitForAnimationEnd != null)
 			{
-				StopCoroutine(m_coWaitForAnimationEnd);
+				this.StopCoroutineWatched(m_coWaitForAnimationEnd);
 			}
 			MakeParent();
 			gameObject.SetActive(true);
@@ -117,7 +117,7 @@ namespace XeApp.Game.Common
 		{
 			if(m_coWaitForAnimationEnd != null)
 			{
-				StopCoroutine(m_coWaitForAnimationEnd);
+				this.StopCoroutineWatched(m_coWaitForAnimationEnd);
 			}
 			gameObject.SetActive(false);
 			SetAllActive(false);

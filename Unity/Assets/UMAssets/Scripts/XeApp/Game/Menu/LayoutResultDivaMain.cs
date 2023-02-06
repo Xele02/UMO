@@ -364,7 +364,7 @@ namespace XeApp.Game.Menu
 		{
 			if(GaugeAnimFinishCoroutine != null)
 			{
-				StopCoroutine(GaugeAnimFinishCoroutine);
+				this.StopCoroutineWatched(GaugeAnimFinishCoroutine);
 				GaugeAnimFinishCoroutine = null;
 			}
 			for(int i = 0; i < 3; i++)
@@ -881,7 +881,7 @@ namespace XeApp.Game.Menu
 				if(coGuideAnim != null && timeLength - 1 <= currentTime)
 				{
 					dl.layoutDivaLevelEffectRoot2.StartChildrenAnimGoStop("go_out", "st_out");
-					StopCoroutine(coGuideAnim);
+					this.StopCoroutineWatched(coGuideAnim);
 				}
 				if(timeLength <= currentTime)
 				{

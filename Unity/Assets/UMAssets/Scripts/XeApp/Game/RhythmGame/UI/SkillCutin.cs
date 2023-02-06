@@ -123,7 +123,7 @@ namespace XeApp.Game.RhythmGame.UI
 		public void Close(Action endCallback)
 		{
 			if (m_coroutine != null)
-				StopCoroutine(m_coroutine);
+				this.StopCoroutineWatched(m_coroutine);
 			m_animator.enabled = true;
 			m_isPlaying = false;
 			m_skillQueue.Clear();

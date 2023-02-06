@@ -355,7 +355,7 @@ namespace XeApp.Game.Common
 		{
 			for(int i = 0; i < m_coroutineList.Count; i++)
 			{
-				StopCoroutine(m_coroutineList[i]);
+				this.StopCoroutineWatched(m_coroutineList[i]);
 			}
 			m_coroutineList.Clear();
 		}

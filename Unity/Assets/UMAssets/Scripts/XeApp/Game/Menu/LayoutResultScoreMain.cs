@@ -333,7 +333,7 @@ namespace XeApp.Game.Menu
 			}
 			if(co != null)
 			{
-				StopCoroutine(co);
+				this.StopCoroutineWatched(co);
 				co = null;
 			}
 			onChangeNumberCakllback(targetNumber);

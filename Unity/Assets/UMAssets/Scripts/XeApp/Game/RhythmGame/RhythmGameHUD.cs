@@ -554,7 +554,7 @@ namespace XeApp.Game.RhythmGame
 						}
 						if(WaitRecoveryFunc != null)
 						{
-							StopCoroutine(WaitRecoveryFunc);
+							this.StopCoroutineWatched(WaitRecoveryFunc);
 						}
 						WaitRecoveryFunc = WaitRecoveryCoroutine();
 						this.StartCoroutineWatched(WaitRecoveryFunc);

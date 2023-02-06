@@ -418,7 +418,7 @@ namespace XeApp.Game.Common
 		public void WaitLockBoneSpring(int a_index = 0, float a_seconds = 0.05f)
 		{
 			if (m_coroutine_wait_lock != null)
-				StopCoroutine(m_coroutine_wait_lock);
+				this.StopCoroutineWatched(m_coroutine_wait_lock);
 			if (!gameObject.activeSelf)
 				return;
 			m_coroutine_wait_lock = this.StartCoroutineWatched(CoroutineWaitLockBoneSpring(a_index, a_seconds));

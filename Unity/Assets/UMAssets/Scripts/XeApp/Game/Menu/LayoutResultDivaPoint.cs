@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_coroutine != null)
 			{
-				StopCoroutine(m_coroutine);
+				this.StopCoroutineWatched(m_coroutine);
 			}
 			m_is_open_window = false;
 			countScoreSEPlayback.Stop();

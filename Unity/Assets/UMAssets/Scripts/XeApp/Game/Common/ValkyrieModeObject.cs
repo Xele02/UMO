@@ -126,11 +126,11 @@ namespace XeApp.Game.Common
 		{
 			if (m_coWaitForEnterEnd != null)
 			{
-				StopCoroutine(m_coWaitForEnterEnd);
+				this.StopCoroutineWatched(m_coWaitForEnterEnd);
 			}
 			if (m_coWaitForAnimationEnd != null)
 			{
-				StopCoroutine(m_coWaitForAnimationEnd);
+				this.StopCoroutineWatched(m_coWaitForAnimationEnd);
 			}
 			SetAllActive(true);
 			isRunning = true;
@@ -172,7 +172,7 @@ namespace XeApp.Game.Common
 			if (isInitialized)
 			{
 				if (m_coWaitForEnterEnd != null)
-					StopCoroutine(m_coWaitForEnterEnd);
+					this.StopCoroutineWatched(m_coWaitForEnterEnd);
 				isShootingPhase = false;
 				if (!m_isFailed)
 				{
@@ -210,7 +210,7 @@ namespace XeApp.Game.Common
 				return;
 			m_valkyrie.ForceShootStop();
 			if (m_coWaitForEnterEnd != null)
-				StopCoroutine(m_coWaitForEnterEnd);
+				this.StopCoroutineWatched(m_coWaitForEnterEnd);
 			m_lockOnTarget.End();
 			m_lockOnTarget.Unregister();
 			SetAllActive(false);

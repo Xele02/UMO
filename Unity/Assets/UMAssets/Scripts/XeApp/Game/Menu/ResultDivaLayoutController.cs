@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 					if (layoutDiva.IsLevelupPopupProcess)
 						return;
 					if (countPointWindowCoroutine != null)
-						StopCoroutine(countPointWindowCoroutine);
+						this.StopCoroutineWatched(countPointWindowCoroutine);
 					layoutDiva.SkipBeginAnim();
 					layoutPoint.Skip();
 					isSkiped = true;

@@ -270,7 +270,7 @@ namespace XeApp.Game.Menu
 		{
 			if(GaugeAnimFinishCoroutine != null)
 			{
-				StopCoroutine(GaugeAnimFinishCoroutine);
+				this.StopCoroutineWatched(GaugeAnimFinishCoroutine);
 				GaugeAnimFinishCoroutine = null;
 			}
 			ChangeOldExp(viewLevelupData.IANDPFDFAKP_Level2, CalcExpPercentage(viewLevelupData.IANDPFDFAKP_Level2, viewLevelupData.GLAJCLEAKJJ_Exp));

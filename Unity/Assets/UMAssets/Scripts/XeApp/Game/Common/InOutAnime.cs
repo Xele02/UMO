@@ -78,7 +78,7 @@ namespace XeApp.Game.Common
 				return;
 			else if(m_animCoroutine != null)
 			{
-				StopCoroutine(m_animCoroutine);
+				this.StopCoroutineWatched(m_animCoroutine);
 				m_animCoroutine = null;
 			}
 			state = State.Enter;
@@ -151,7 +151,7 @@ namespace XeApp.Game.Common
 				return;
 			else if(m_animCoroutine != null)
 			{
-				StopCoroutine(m_animCoroutine);
+				this.StopCoroutineWatched(m_animCoroutine);
 				m_animCoroutine = null;
 			}
 			state = State.Leave;
@@ -222,7 +222,7 @@ namespace XeApp.Game.Common
 			{
 				if (m_animCoroutine != null)
 				{
-					StopCoroutine(m_animCoroutine);
+					this.StopCoroutineWatched(m_animCoroutine);
 					m_animCoroutine = null;
 				}
 				state = State.Leave;
@@ -260,7 +260,7 @@ namespace XeApp.Game.Common
 			if(state != State.Enter)
 			{
 				if (m_animCoroutine != null)
-					StopCoroutine(m_animCoroutine);
+					this.StopCoroutineWatched(m_animCoroutine);
 				state = State.Enter;
 				RectTransform rect = transform as RectTransform;
 				m_animCoroutine = this.StartCoroutineWatched(Co_Animation(rect.anchoredPosition, m_enterPos, animTime, (Vector2 vec) =>

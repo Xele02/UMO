@@ -90,7 +90,7 @@ namespace XeApp.Game.Common
 		{
 			if(m_coChangeFinish != null)
 			{
-				StopCoroutine(m_coChangeFinish);
+				this.StopCoroutineWatched(m_coChangeFinish);
 				m_coChangeFinish = null;
 			}
 			form = (form + 2) % 3;

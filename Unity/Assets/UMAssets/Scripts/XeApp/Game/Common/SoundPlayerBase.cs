@@ -199,10 +199,10 @@ namespace XeApp.Game.Common
 		{
 			if(fadeCoroutine != null)
 			{
-				StopCoroutine(fadeCoroutine);
+				this.StopCoroutineWatched(fadeCoroutine);
 				if(changeVolume != null)
 				{
-					StopCoroutine(changeVolume);
+					this.StopCoroutineWatched(changeVolume);
 				}
 				source.volume = 1.0f;
 			}
@@ -228,9 +228,9 @@ namespace XeApp.Game.Common
 		protected void ChangeVolume(float sec, float targetVol, Action onEnd)
 		{
 			if (fadeCoroutine != null)
-				StopCoroutine(fadeCoroutine);
+				this.StopCoroutineWatched(fadeCoroutine);
 			if (changeVolume != null)
-				StopCoroutine(changeVolume);
+				this.StopCoroutineWatched(changeVolume);
 			fadeCoroutine = this.StartCoroutineWatched(Co_ChangeVolume(sec, targetVol, onEnd));
 		}
 

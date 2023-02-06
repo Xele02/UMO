@@ -231,7 +231,7 @@ namespace XeApp.Game.RhythmGame.UI
 					{
 						if (info.m_gaugeAnimeCroutine != null)
 						{
-							StopCoroutine(info.m_gaugeAnimeCroutine);
+							this.StopCoroutineWatched(info.m_gaugeAnimeCroutine);
 						}
 						info.m_gaugeAnimeCroutine = this.StartCoroutineWatched(BackGaugeAnimation(a_gauge, isLowSpec));
 					}

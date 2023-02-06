@@ -91,7 +91,7 @@ namespace XeApp.Game.Common
 		public void Begin()
 		{
 			if (m_coWaitForMovieEnd != null)
-				StopCoroutine(m_coWaitForMovieEnd);
+				this.StopCoroutineWatched(m_coWaitForMovieEnd);
 			gameObject.SetActive(true);
 			m_billboardCamera.cullingMask = VisibleDiva ? m_overrideCullingMask1 : m_overrideCullingMask2;
 			m_stretchBillboard.enabled = true;
@@ -109,7 +109,7 @@ namespace XeApp.Game.Common
 			if (!isInitialized)
 				return;
 			if (m_coWaitForMovieEnd != null)
-				StopCoroutine(m_coWaitForMovieEnd);
+				this.StopCoroutineWatched(m_coWaitForMovieEnd);
 			gameObject.SetActive(false);
 			m_billboardCamera.cullingMask = m_releaseData.cullingMask;
 			m_stretchBillboard.enabled = false;

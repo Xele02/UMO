@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEC85B0 Offset: 0xEC85B0 VA: 0xEC85B0
-		//protected void StopCoroutine(Coroutine routine) { }
+		//protected void this.StopCoroutineWatched(Coroutine routine) { }
 
 		//// RVA: 0xEC866C Offset: 0xEC866C VA: 0xEC866C Slot: 4
 		public void BeginControl(MenuDivaManager divaManager, MenuDivaObject divaObject)

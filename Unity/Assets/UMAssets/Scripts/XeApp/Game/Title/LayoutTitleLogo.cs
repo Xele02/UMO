@@ -61,7 +61,7 @@ namespace XeApp.Game.Title
 			IsOpen = true;
 			if(m_logoCoroutine != null)
 			{
-				StopCoroutine(m_logoCoroutine);
+				this.StopCoroutineWatched(m_logoCoroutine);
 				m_logoCoroutine = null;
 			}
 			m_logoCoroutine = this.StartCoroutineWatched(UpdateLogo());

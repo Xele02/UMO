@@ -262,7 +262,7 @@ namespace XeApp.Game.Menu
 			m_resourceLoadRequest = true;
 			if(divaWaitCoroutine != null)
 			{
-				StopCoroutine(divaWaitCoroutine);
+				this.StopCoroutineWatched(divaWaitCoroutine);
 				divaWaitCoroutine = null;
 			}
 			MenuScene.Instance.divaManager.SetAnimParamInteger("menu_simpleLoopStart_State", 0);
@@ -469,7 +469,7 @@ namespace XeApp.Game.Menu
 			//0x16E5738
 			if(divaWaitCoroutine != null)
 			{
-				StopCoroutine(divaWaitCoroutine);
+				this.StopCoroutineWatched(divaWaitCoroutine);
 				divaWaitCoroutine = null;
 			}
 			yield return null;
