@@ -36,21 +36,21 @@ namespace SecureLib
         // // RVA: 0x2E71EF8 Offset: 0x2E71EF8 VA: 0x2E71EF8
         public static bool isRooted()
         {
-            TodoLogger.Log(5, "isRooted");
+            TodoLogger.Log(TodoLogger.SecureLibAPI, "SecureLibAPI.isRooted");
             return false;
         }
 
         // // RVA: 0x2E71F70 Offset: 0x2E71F70 VA: 0x2E71F70
         public static bool isDebuggerAttachedJava()
         {
-            TodoLogger.Log(5, "isDebuggerAttachedJava");
+            TodoLogger.Log(TodoLogger.SecureLibAPI, "SecureLibAPI.isDebuggerAttachedJava");
             return false;
         }
 
         // // RVA: 0x2E71FE8 Offset: 0x2E71FE8 VA: 0x2E71FE8
         public static bool isDebuggerAttachedNative()
         {
-            TodoLogger.Log(5, "isDebuggerAttachedNative");
+            TodoLogger.Log(TodoLogger.SecureLibAPI, "SecureLibAPI.isDebuggerAttachedNative");
             return false;
         }
 
@@ -63,7 +63,7 @@ namespace SecureLib
         // // RVA: 0x2E71FF4 Offset: 0x2E71FF4 VA: 0x2E71FF4
         public static bool isEmulator()
         {
-            TodoLogger.Log(5, "isEmulator");
+            TodoLogger.Log(TodoLogger.SecureLibAPI, "SecureLibAPI.isEmulator");
             return false;
         }
 

@@ -70,7 +70,12 @@ namespace CriWare
         // // RVA: 0x294D7A4 Offset: 0x294D7A4 VA: 0x294D7A4
         public CriFsWebInstaller()
         {
-            TodoLogger.Log(5, "CriFsWebInstaller()");
+			criFsWebInstaller_Create(out handle);
+			if(handle != IntPtr.Zero)
+			{
+				CriDisposableObjectManager.Register(this, CriDisposableObjectManager.ModuleType.FsWeb);
+			}
+			throw new Exception("criFsWebInstaller_Create() failed.");
         }
 
         // // RVA: 0x294DF48 Offset: 0x294DF48 VA: 0x294DF48 Slot: 1
@@ -95,7 +100,7 @@ namespace CriWare
         // // RVA: 0x294D728 Offset: 0x294D728 VA: 0x294D728
         public void Stop()
         {
-            TodoLogger.Log(5, "CriFsWebInstaller Stop");
+            TodoLogger.Log(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller Stop");
             if(www != null)
             {
                 www.Dispose();
@@ -169,7 +174,12 @@ namespace CriWare
         // private static extern int criFsWebInstaller_ExecuteMain() { }
 
         // // RVA: 0x294DE30 Offset: 0x294DE30 VA: 0x294DE30
-        // private static extern int criFsWebInstaller_Create(out IntPtr installer) { }
+        private static /*extern */int criFsWebInstaller_Create(out IntPtr installer)
+		{
+			TodoLogger.Log(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.criFsWebInstaller_Create");
+			installer = new IntPtr(1);
+			return 0;
+		}
 
         // // RVA: 0x294ED50 Offset: 0x294ED50 VA: 0x294ED50
         // private static extern int criFsWebInstaller_Destroy(IntPtr installer) { }
@@ -183,7 +193,7 @@ namespace CriWare
         // // RVA: 0x294E3D0 Offset: 0x294E3D0 VA: 0x294E3D0
         private static /*extern */int criFsWebInstaller_GetStatusInfo(/*IntPtr*/CriFsWebInstaller installer, out CriFsWebInstaller.StatusInfo status)
         {
-            TodoLogger.Log(5, "criFsWebInstaller_GetStatusInfo");
+            TodoLogger.Log(TodoLogger.CriFsWebInstaller, "criFsWebInstaller_GetStatusInfo");
             
             status = installer.status;
 

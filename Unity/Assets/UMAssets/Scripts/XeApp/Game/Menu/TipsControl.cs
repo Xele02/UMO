@@ -56,9 +56,9 @@ namespace XeApp.Game.Menu
 		// public bool IsLoading { get; } 0xA974FC
 
 		// // RVA: 0xA97284 Offset: 0xA97284 VA: 0xA97284
-		public static void SetSituationValue(TipsControl.SituationId id, int val)
+		public static void SetSituationValue(SituationId id, int val)
 		{
-			TodoLogger.Log(5, "SetSituationValue");
+			m_situationValues[(int)id] = val;
 		}
 
 		// // RVA: 0xA9734C Offset: 0xA9734C VA: 0xA9734C
