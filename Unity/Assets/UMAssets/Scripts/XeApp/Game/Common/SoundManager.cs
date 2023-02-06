@@ -66,7 +66,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1395A94 Offset: 0x1395A94 VA: 0x1395A94
 		private IEnumerator SurveyLatencyEstimator()
 		{
-    		UnityEngine.Debug.Log("Enter SurveyLatencyEstimator");
+    		//UnityEngine.Debug.Log("Enter SurveyLatencyEstimator");
 			//0x1397B84
 			CriAtomExLatencyEstimator.InitializeModule();
 			do
@@ -79,7 +79,7 @@ namespace XeApp.Game.Common
 
 			CriAtomExLatencyEstimator.FinalizeModule();
 
-			UnityEngine.Debug.Log("Exit SurveyLatencyEstimator");
+			//UnityEngine.Debug.Log("Exit SurveyLatencyEstimator");
 			yield break;
 		}
 

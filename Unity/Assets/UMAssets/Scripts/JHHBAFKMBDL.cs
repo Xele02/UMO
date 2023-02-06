@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using XeSys;
 
 public class JHHBAFKMBDL
 {
@@ -100,14 +102,28 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB2200C Offset: 0xB2200C VA: 0xB2200C
-	// public bool EAADBLJMIPP() { }
+	public bool EAADBLJMIPP()
+	{
+		if (HDGDDJDCNGE != null)
+			return HDGDDJDCNGE();
+		return false;
+	}
 
 	// // RVA: 0xB22080 Offset: 0xB22080 VA: 0xB22080
-	// public void INCAHPACGAF(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC, bool EFDMHILHFPJ, bool OPEDAAIEOGN) { }
+	public void INCAHPACGAF_ShowWebView(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC, bool EFDMHILHFPJ, bool OPEDAAIEOGN)
+	{
+		N.a.StartCoroutineWatched(LDGPIGGPKMG_Coroutine_ShowWebView(HJLDBEJOMIO, HIDFAIBOHCC, EFDMHILHFPJ, OPEDAAIEOGN));
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B88F0 Offset: 0x6B88F0 VA: 0x6B88F0
 	// // RVA: 0xB220F0 Offset: 0xB220F0 VA: 0xB220F0
-	// private IEnumerator LDGPIGGPKMG_ShowWebView(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC, bool EFDMHILHFPJ, bool OPEDAAIEOGN) { }
+	private IEnumerator LDGPIGGPKMG_Coroutine_ShowWebView(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC, bool EFDMHILHFPJ, bool OPEDAAIEOGN)
+	{
+		//0x1348FFC
+		TodoLogger.Log(TodoLogger._Todo, "JHHBAFKMBDL.LDGPIGGPKMG_Coroutine_ShowWebView");
+		HIDFAIBOHCC();
+		yield break;
+	}
 
 	// // RVA: 0xB221DC Offset: 0xB221DC VA: 0xB221DC
 	// public void EEBIICOLLIC(IMCBBOAFION BHEOPIPFEFJ) { }

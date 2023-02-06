@@ -235,7 +235,7 @@ public class OAGBCBBHMPF
 		NGBOABGLAMM = 4,
 	}
 
-	public static string[] IEPAJNPLHJI = new string[101] { "NONE", "PAID", "CONSUME", "TUTORIAL", "STAGE_START", "STAGE_END", "DECK_CH",
+	public static string[] IEPAJNPLHJI_EventId = new string[101] { "NONE", "PAID", "CONSUME", "TUTORIAL", "STAGE_START", "STAGE_END", "DECK_CH",
                                                             "GACHA", "ENHANCE", "GET_ITEM", "MUSIC_DL", "CLOTHES", "MISSION", "VIEW",
                                                             "STORY", "FRIEND", "OPEN_SNS", "SNS", "EPISODE", "REVIEW", "VALKYRIE", 
                                                             "RANK_UP", "DIVA_LEVELUP", "EMBLEM", "VOICE", "ENERGY", "ENQUETE", "EMBLEM_GET",

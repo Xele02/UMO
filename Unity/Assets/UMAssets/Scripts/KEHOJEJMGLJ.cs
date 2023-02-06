@@ -200,7 +200,7 @@ public class KEHOJEJMGLJ
 		// private LFPOMKLKHPB NOAMCCLDODN; // 0x34
 		// private int NJDHMNBBCLK; // 0x38
 		//0xE8DA10
-		UnityEngine.Debug.Log("Enter EOFJPNPFGDM_Coroutine_Install");
+		//UnityEngine.Debug.Log("Enter EOFJPNPFGDM_Coroutine_Install");
 
 		int NJDHMNBBCLK = 0;
 		// private KEHOJEJMGLJ.<>c__DisplayClass75_0 OPLBFCEPDCH; // 0x14
@@ -343,7 +343,7 @@ public class KEHOJEJMGLJ
 						}
 						//goto LAB_00e8f334;
 						FBGNDKKDOIE = null;
-						UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
+						//UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 						yield break;
 					}
 					// L518
@@ -640,7 +640,7 @@ public class KEHOJEJMGLJ
 			// goto LAB_00e8f334;
 			FBGNDKKDOIE = null;
 
-			UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
+			//UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 			break;
 		}
 	}

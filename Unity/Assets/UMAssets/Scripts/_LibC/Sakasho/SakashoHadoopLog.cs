@@ -6,8 +6,6 @@ namespace ExternLib
     {
         public static int SakashoHadoopLogSendLogToHadoop(int callbackId, string json)
         {
-            UnityEngine.Debug.Log("SakashoHadoopLogSendLogToHadoop "+json);
-            
             // Hack directly send response
             string message =
 @"{

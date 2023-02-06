@@ -1045,9 +1045,9 @@ public class JGEOBNENMAH
 	// // RVA: 0xB0A4B4 Offset: 0xB0A4B4 VA: 0xB0A4B4
 	private IEnumerator ODBDMBAFOIN_Coroutine_Recover(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
 	{
-		UnityEngine.Debug.Log("Enter ODBDMBAFOIN_Coroutine_Recover");
+		//UnityEngine.Debug.Log("Enter ODBDMBAFOIN_Coroutine_Recover");
 		TodoLogger.Log(0, "TODO");
-		UnityEngine.Debug.Log("Exit ODBDMBAFOIN_Coroutine_Recover");
+		//UnityEngine.Debug.Log("Exit ODBDMBAFOIN_Coroutine_Recover");
 		yield break;
 	}
 

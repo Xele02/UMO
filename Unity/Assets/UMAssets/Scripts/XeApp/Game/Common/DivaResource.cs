@@ -493,7 +493,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF88A8 Offset: 0x1BF88A8 VA: 0x1BF88A8
 		private IEnumerator Co_LoadBasicResource(int divaId, int modelId, int colorId)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadBasicResource");
+    		//UnityEngine.Debug.Log("Enter Co_LoadBasicResource");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public DivaResource <>4__this; // 0x10
@@ -581,14 +581,14 @@ namespace XeApp.Game.Common
 			yield return Co.R(Co_LoadBoneSpringSuppress(divaId, modelId, (p) => {boneSpringResource.suppress.presets = p;}));
 			
 			isLoadedBasicResource = true;
-    		UnityEngine.Debug.Log("Exit Co_LoadBasicResource");
+    		//UnityEngine.Debug.Log("Exit Co_LoadBasicResource");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7366E4 Offset: 0x7366E4 VA: 0x7366E4
 		// // RVA: 0x1BF89A0 Offset: 0x1BF89A0 VA: 0x1BF89A0
 		protected IEnumerator Co_LoadBoneSpringSuppress(int divaId, int modelId, Action<Dictionary<BoneSpringSuppressor.Preset, BoneSpringSuppressParam>> a_func)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadBoneSpringSuppress");
+    		//UnityEngine.Debug.Log("Enter Co_LoadBoneSpringSuppress");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public int divaId; // 0x10
@@ -623,14 +623,14 @@ namespace XeApp.Game.Common
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			a_func(pressets);
-    		UnityEngine.Debug.Log("Exit Co_LoadBoneSpringSuppress");
+    		//UnityEngine.Debug.Log("Exit Co_LoadBoneSpringSuppress");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73675C Offset: 0x73675C VA: 0x73675C
 		// // RVA: 0x1BF8A80 Offset: 0x1BF8A80 VA: 0x1BF8A80
 		protected IEnumerator Co_LoadComponent(int divaId, int modelId, Action<List<GameObject>, GameObject> a_func)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadComponent");
+    		//UnityEngine.Debug.Log("Enter Co_LoadComponent");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public int divaId; // 0x10
@@ -703,7 +703,7 @@ namespace XeApp.Game.Common
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
 			a_func(list_effect, wind);
-    		UnityEngine.Debug.Log("Exit Co_LoadComponent");
+    		//UnityEngine.Debug.Log("Exit Co_LoadComponent");
 		}
 
 		// // RVA: 0x1BF8B60 Offset: 0x1BF8B60 VA: 0x1BF8B60
@@ -789,7 +789,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF93D8 Offset: 0x1BF93D8 VA: 0x1BF93D8
 		private IEnumerator Co_LoadMusicAnimationResource(int wavId, int primeId, int positionId = 1, int divaNum = 1, int divaId = 0)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadMusicAnimationResource");
+    		//UnityEngine.Debug.Log("Enter Co_LoadMusicAnimationResource");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public int divaNum; // 0x10
@@ -845,7 +845,7 @@ namespace XeApp.Game.Common
 				yield return this.StartCoroutineWatched(Co_LoadMikeStandResource(ms));
 			}
 			isLoadedMusicAnimationResource = true;
-    		UnityEngine.Debug.Log("Exit Co_LoadMusicAnimationResource");
+    		//UnityEngine.Debug.Log("Exit Co_LoadMusicAnimationResource");
 		}
 
 		// // RVA: 0x1BF9508 Offset: 0x1BF9508 VA: 0x1BF9508
@@ -859,7 +859,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF960C Offset: 0x1BF960C VA: 0x1BF960C
 		private IEnumerator Co_LoadMikeStandResource(int primeId)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadMikeStandResource");
+    		//UnityEngine.Debug.Log("Enter Co_LoadMikeStandResource");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public DivaResource <>4__this; // 0x10
@@ -891,7 +891,7 @@ namespace XeApp.Game.Common
 			mikeCommonPrefab = operation.GetAsset<GameObject>(assetName.ToString());
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
-    		UnityEngine.Debug.Log("Exit Co_LoadMikeStandResource");
+    		//UnityEngine.Debug.Log("Exit Co_LoadMikeStandResource");
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x7369D0 Offset: 0x7369D0 VA: 0x7369D0
@@ -915,7 +915,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF971C Offset: 0x1BF971C VA: 0x1BF971C
 		private IEnumerator Co_LoadFacialResource(int divaId, int wavId, int stageDivaNum)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadFacialResource");
+    		//UnityEngine.Debug.Log("Enter Co_LoadFacialResource");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public int wavId; // 0x10
@@ -980,7 +980,7 @@ namespace XeApp.Game.Common
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
 			isLoadedMusicFacialResource = true;
-    		UnityEngine.Debug.Log("Exit Co_LoadFacialResource");
+    		//UnityEngine.Debug.Log("Exit Co_LoadFacialResource");
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x736A68 Offset: 0x736A68 VA: 0x736A68
@@ -1004,7 +1004,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF9894 Offset: 0x1BF9894 VA: 0x1BF9894
 		private IEnumerator Co_LoadMenuResource(int divaId, int modelId, DivaResource.MenuFacialType facialType, ResultScoreRank.Type scoreRank)
 		{			
-    		UnityEngine.Debug.Log("Enter Co_LoadMenuResource");
+    		//UnityEngine.Debug.Log("Enter Co_LoadMenuResource");
 			//0x1C03944
 			
 			yield return this.StartCoroutineWatched(Co_LoadCharacter(divaId));
@@ -1014,14 +1014,14 @@ namespace XeApp.Game.Common
 			yield return this.StartCoroutineWatched(Co_LoadUnlockDivaAction(divaId));
 			yield return this.StartCoroutineWatched(Co_LoadUnlockCostumeDivaAction(divaId));
 			isLoadedMenuAnimationResource = true;
-    		UnityEngine.Debug.Log("Exit Co_LoadMenuResource");
+    		//UnityEngine.Debug.Log("Exit Co_LoadMenuResource");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736B00 Offset: 0x736B00 VA: 0x736B00
 		// // RVA: 0x1BF99A4 Offset: 0x1BF99A4 VA: 0x1BF99A4
 		private IEnumerator Co_LoadCharacter(int divaId)
 		{			
-    		UnityEngine.Debug.Log("Enter Co_LoadCharacter");
+    		//UnityEngine.Debug.Log("Enter Co_LoadCharacter");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public DivaResource <>4__this; // 0x10
@@ -1158,7 +1158,7 @@ namespace XeApp.Game.Common
 			}
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
-    		UnityEngine.Debug.Log("Exit Co_LoadCharacter");
+    		//UnityEngine.Debug.Log("Exit Co_LoadCharacter");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736B78 Offset: 0x736B78 VA: 0x736B78

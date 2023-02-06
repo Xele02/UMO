@@ -5,7 +5,7 @@ public class SakashoSupportSite : SakashoAPIBase
 	// // RVA: 0x2E68CF4 Offset: 0x2E68CF4 VA: 0x2E68CF4
 	public static SakashoAPICallContext GetToken(OnSuccess onSuccess, OnError onError)
     {
-        int callID = SakashoAPIBase.Call(SakashoSupportSiteGetToken, "", onSuccess, onError);
+        int callID = Call(SakashoSupportSiteGetToken, "", onSuccess, onError);
         return new SakashoAPICallContext(callID);
     }
 
@@ -13,7 +13,11 @@ public class SakashoSupportSite : SakashoAPIBase
 	// public static SakashoAPICallContext GetInformationURL(OnSuccess onSuccess, OnError onError) { }
 
 	// // RVA: 0x2E68EBC Offset: 0x2E68EBC VA: 0x2E68EBC
-	// public static SakashoAPICallContext GetInquiryURL(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetInquiryURL(OnSuccess onSuccess, OnError onError)
+	{
+		int callID = Call(SakashoSupportSiteGetInquiryURL, "", onSuccess, onError);
+		return new SakashoAPICallContext(callID);
+	}
 
 	// // RVA: 0x2E68FA0 Offset: 0x2E68FA0 VA: 0x2E68FA0
 	// public static SakashoAPICallContext GetOpinionURL(OnSuccess onSuccess, OnError onError) { }
@@ -66,7 +70,10 @@ public class SakashoSupportSite : SakashoAPIBase
 	// private static extern int SakashoSupportSiteGetInformationURL(int callbackId, string json) { }
 
 	// // RVA: 0x2E6A3B8 Offset: 0x2E6A3B8 VA: 0x2E6A3B8
-	// private static extern int SakashoSupportSiteGetInquiryURL(int callbackId, string json) { }
+	private static /*extern*/ int SakashoSupportSiteGetInquiryURL(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoSupportSiteGetInquiryURL(callbackId, json);
+	}
 
 	// // RVA: 0x2E6A4C8 Offset: 0x2E6A4C8 VA: 0x2E6A4C8
 	// private static extern int SakashoSupportSiteGetOpinionURL(int callbackId, string json) { }

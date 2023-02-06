@@ -26,13 +26,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13DE2BC Offset: 0x13DE2BC VA: 0x13DE2BC
 		public void Awake()
 		{
-			TodoLogger.Log(5, "InheritingMenu Awake");
+			return;
 		}
 
 		// // RVA: 0x13DE2C0 Offset: 0x13DE2C0 VA: 0x13DE2C0
 		public void Start()
 		{
-			TodoLogger.Log(5, "InheritingMenu Start");
+			return;
 		}
 
 		// // RVA: 0x13DE2C4 Offset: 0x13DE2C4 VA: 0x13DE2C4
@@ -45,7 +45,10 @@ namespace XeApp.Game.Menu
 		// private void SetCurrentScreenOrientation() { }
 
 		// // RVA: 0x13DE4B0 Offset: 0x13DE4B0 VA: 0x13DE4B0
-		// public void PopupShowMenu(bool isPreparation, Action inheritingSuccess, Action closeCallback, LayoutMonthlyPassTakeover monthlylayout) { }
+		public void PopupShowMenu(bool isPreparation, Action inheritingSuccess, Action closeCallback, LayoutMonthlyPassTakeover monthlylayout)
+		{
+			TodoLogger.Log(TodoLogger.Popup, "PopupShowMenu");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E588C Offset: 0x6E588C VA: 0x6E588C
 		// // RVA: 0x13DE4EC Offset: 0x13DE4EC VA: 0x13DE4EC

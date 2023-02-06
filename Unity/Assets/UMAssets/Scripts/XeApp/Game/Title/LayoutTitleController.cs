@@ -73,7 +73,7 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE36AC0 Offset: 0xE36AC0 VA: 0xE36AC0
 		public IEnumerator LoadLayoutScreen(Action callback)
 		{
-    		UnityEngine.Debug.Log("Enter LoadLayoutScreen");
+    		//UnityEngine.Debug.Log("Enter LoadLayoutScreen");
 			//0xE38E7C
 			yield return Co.R(LoadLayoutBase("Layout/title/root_title_01_layout_root", (GameObject instance) => {
 				//0xE37944
@@ -82,14 +82,14 @@ namespace XeApp.Game.Title
 				if(callback != null)
 					callback();
 			}));
-    		UnityEngine.Debug.Log("Exit LoadLayoutScreen");
+    		//UnityEngine.Debug.Log("Exit LoadLayoutScreen");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B31D8 Offset: 0x6B31D8 VA: 0x6B31D8
 		// // RVA: 0xE36B88 Offset: 0xE36B88 VA: 0xE36B88
 		public IEnumerator LoadLayoutScreenTap(Action callback)
 		{
-    		UnityEngine.Debug.Log("Enter LoadLayoutScreenTap");
+    		//UnityEngine.Debug.Log("Enter LoadLayoutScreenTap");
 			// 0xE39068
 			yield return Co.R(LoadLayoutBase("Layout/title/root_title_hit_layout_root", (GameObject instance) => {
 				//0xE37A38
@@ -99,14 +99,14 @@ namespace XeApp.Game.Title
 					callback();
 			}));
 
-    		UnityEngine.Debug.Log("Exit LoadLayoutScreenTap");
+    		//UnityEngine.Debug.Log("Exit LoadLayoutScreenTap");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B3250 Offset: 0x6B3250 VA: 0x6B3250
 		// // RVA: 0xE36C50 Offset: 0xE36C50 VA: 0xE36C50
 		public IEnumerator LoadLayoutButtons(Action callback)
 		{
-    		UnityEngine.Debug.Log("Enter LoadLayoutButtons");
+    		//UnityEngine.Debug.Log("Enter LoadLayoutButtons");
 			//0xE386B4 
 			yield return Co.R(LoadLayoutBase("Layout/title/root_title_btn_layout_root", (GameObject instance) => {
 				//0xE37B2C
@@ -115,14 +115,14 @@ namespace XeApp.Game.Title
 				if(callback != null)
 					callback();
 			}));
-    		UnityEngine.Debug.Log("Exit LoadLayoutButtons");
+    		//UnityEngine.Debug.Log("Exit LoadLayoutButtons");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B32C8 Offset: 0x6B32C8 VA: 0x6B32C8
 		// // RVA: 0xE36D18 Offset: 0xE36D18 VA: 0xE36D18
 		public IEnumerator LoadLayoutTexts(Action callback)
 		{
-    		UnityEngine.Debug.Log("Enter LoadLayoutTexts");
+    		//UnityEngine.Debug.Log("Enter LoadLayoutTexts");
 			//0xE39254
 			yield return Co.R(LoadLayoutBase("Layout/title/root_title_id_version_layout_root", (GameObject instance) =>
 			{
@@ -132,14 +132,14 @@ namespace XeApp.Game.Title
 				if (callback != null)
 					callback();
 			}));
-			UnityEngine.Debug.Log("Exit LoadLayoutTexts");
+			//UnityEngine.Debug.Log("Exit LoadLayoutTexts");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B3340 Offset: 0x6B3340 VA: 0x6B3340
 		// // RVA: 0xE36DE0 Offset: 0xE36DE0 VA: 0xE36DE0
 		public IEnumerator LoadLayoutCopyRight(Action callback)
 		{
-    		UnityEngine.Debug.Log("Enter LoadLayoutCopyRight");
+    		//UnityEngine.Debug.Log("Enter LoadLayoutCopyRight");
 			//0xE388A0
 			yield return Co.R(LoadLayoutBase("Layout/title/root_title_right_layout_root", (GameObject instance) =>
 			{
@@ -149,14 +149,14 @@ namespace XeApp.Game.Title
 				if (callback != null)
 					callback();
 			}));
-			UnityEngine.Debug.Log("Exit LoadLayoutCopyRight");
+			//UnityEngine.Debug.Log("Exit LoadLayoutCopyRight");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B33B8 Offset: 0x6B33B8 VA: 0x6B33B8
 		// // RVA: 0xE36EA8 Offset: 0xE36EA8 VA: 0xE36EA8
 		public IEnumerator LoadLayoutLbButtons(Action callback)
 		{
-    		UnityEngine.Debug.Log("Enter LoadLayoutLbButtons");
+    		//UnityEngine.Debug.Log("Enter LoadLayoutLbButtons");
 			//0xE38A8C
 			yield return Co.R(LoadLayoutBase("Layout/title/root_title_google_btn_layout_root", (GameObject instance) => {
 				//0xE37E08
@@ -165,14 +165,14 @@ namespace XeApp.Game.Title
 				if(callback != null)
 					callback();
 			}));
-    		UnityEngine.Debug.Log("Exit LoadLayoutLbButtons");
+    		//UnityEngine.Debug.Log("Exit LoadLayoutLbButtons");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B3430 Offset: 0x6B3430 VA: 0x6B3430
 		// // RVA: 0xE36F70 Offset: 0xE36F70 VA: 0xE36F70
 		public IEnumerator LoadLayoutTitleLogo(Action callback)
 		{
-    		UnityEngine.Debug.Log("Enter LoadLayoutTitleLogo");
+    		//UnityEngine.Debug.Log("Enter LoadLayoutTitleLogo");
 			//0xE39440
 			yield return Co.R(LoadLayoutBase("Layout/startup/root_start_logo_layout_root", (GameObject instance) => {
 				//0xE37768
@@ -189,14 +189,14 @@ namespace XeApp.Game.Title
 				callback();
 			}
 
-    		UnityEngine.Debug.Log("Exit LoadLayoutTitleLogo");
+    		//UnityEngine.Debug.Log("Exit LoadLayoutTitleLogo");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B34A8 Offset: 0x6B34A8 VA: 0x6B34A8
 		// // RVA: 0xE37038 Offset: 0xE37038 VA: 0xE37038
 		public IEnumerator LoadLayoutArButton(Action callback)
 		{
-    		UnityEngine.Debug.Log("Enter LoadLayoutArButton");
+    		//UnityEngine.Debug.Log("Enter LoadLayoutArButton");
 			//0xE38238
 			yield return Co.R(LoadLayoutBase("Layout/title/root_title_ar_btn_layout_root", (GameObject instance) =>
 			{
@@ -208,14 +208,14 @@ namespace XeApp.Game.Title
 				yield return null;
 			if (callback != null)
 				callback();
-			UnityEngine.Debug.Log("Exit LoadLayoutArButton");
+			//UnityEngine.Debug.Log("Exit LoadLayoutArButton");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B3520 Offset: 0x6B3520 VA: 0x6B3520
 		// // RVA: 0xE37100 Offset: 0xE37100 VA: 0xE37100
 		public IEnumerator LoadLayoutMonthlyPass(Action callback)
 		{
-    		UnityEngine.Debug.Log("Enter LoadLayoutMonthlyPass");
+    		//UnityEngine.Debug.Log("Enter LoadLayoutMonthlyPass");
 			//0xE38C78
 			yield return Co.R(LoadLayoutBase("Layout/sel_inheriting/root_inh_pop_04_layout_root", (GameObject instance) =>
 			{
@@ -226,14 +226,14 @@ namespace XeApp.Game.Title
 				yield return null;
 			if (callback != null)
 				callback();
-			UnityEngine.Debug.Log("Exit LoadLayoutMonthlyPass");
+			//UnityEngine.Debug.Log("Exit LoadLayoutMonthlyPass");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B3598 Offset: 0x6B3598 VA: 0x6B3598
 		// // RVA: 0xE371C8 Offset: 0xE371C8 VA: 0xE371C8
 		private IEnumerator LoadLayoutBase(string path, Action<GameObject> callback)
 		{
-    		UnityEngine.Debug.Log("Enter LoadLayoutBase");
+    		//UnityEngine.Debug.Log("Enter LoadLayoutBase");
 			//0xE3843C
 
 			bool isLoading = false;
@@ -259,7 +259,7 @@ namespace XeApp.Game.Title
 				callback(obj);
 			}
 
-    		UnityEngine.Debug.Log("Exit LoadLayoutBase");
+    		//UnityEngine.Debug.Log("Exit LoadLayoutBase");
 		}
 
 		// // RVA: 0xE372A8 Offset: 0xE372A8 VA: 0xE372A8
@@ -277,7 +277,10 @@ namespace XeApp.Game.Title
 		}
 
 		// // RVA: 0xE37424 Offset: 0xE37424 VA: 0xE37424
-		// public void PopupShowSupport(Action closeCallback) { }
+		public void PopupShowSupport(Action closeCallback)
+		{
+			TodoLogger.LogNotImplemented("PopupShowSupport");
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6B3610 Offset: 0x6B3610 VA: 0x6B3610
 		// // RVA: 0xE37768 Offset: 0xE37768 VA: 0xE37768

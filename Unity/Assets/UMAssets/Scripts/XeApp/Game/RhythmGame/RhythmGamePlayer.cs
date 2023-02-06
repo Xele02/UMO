@@ -2070,7 +2070,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C12F8 Offset: 0x9C12F8 VA: 0x9C12F8
 		private IEnumerator Co_StartMusic()
 		{
-    		UnityEngine.Debug.Log("Enter Co_StartMusic");
+    		//UnityEngine.Debug.Log("Enter Co_StartMusic");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public RhythmGamePlayer <>4__this; // 0x10
@@ -2139,7 +2139,7 @@ namespace XeApp.Game.RhythmGame
 				MusicIntroStartPlayerCutInCallback();
 			}
 			Play();
-    		UnityEngine.Debug.Log("Exit Co_StartMusic");
+    		//UnityEngine.Debug.Log("Exit Co_StartMusic");
 		}
 
 		// // RVA: 0x9B2AE0 Offset: 0x9B2AE0 VA: 0x9B2AE0
@@ -2433,7 +2433,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C4868 Offset: 0x9C4868 VA: 0x9C4868
 		private IEnumerator Co_FadeOutAndExit()
 		{
-    		UnityEngine.Debug.Log("Enter Co_FadeOutAndExit");
+    		//UnityEngine.Debug.Log("Enter Co_FadeOutAndExit");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public RhythmGamePlayer <>4__this; // 0x10
@@ -2444,7 +2444,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			GotoTitleSceneInError();
 			uiController.DeleteIntro();
-    		UnityEngine.Debug.Log("Exit Co_FadeOutAndExit");
+    		//UnityEngine.Debug.Log("Exit Co_FadeOutAndExit");
 		}
 
 		// // RVA: 0x9C48F0 Offset: 0x9C48F0 VA: 0x9C48F0
@@ -2484,7 +2484,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			int[] noteResultCount;
 			int noteResultCount_Excellent;
-			UnityEngine.Debug.Log("Enter Co_WaitRhytmGameEnd");
+			//UnityEngine.Debug.Log("Enter Co_WaitRhytmGameEnd");
 			//0xBF3B04
 
 			GameManager.FadeOut(0.4f);
@@ -2543,7 +2543,7 @@ namespace XeApp.Game.RhythmGame
 
 			//TodoLogger.MinLog = -9999;
 
-			UnityEngine.Debug.Log("Exit Co_WaitRhytmGameEnd");
+			//UnityEngine.Debug.Log("Exit Co_WaitRhytmGameEnd");
 			yield break;
 		}
 
@@ -3241,14 +3241,14 @@ namespace XeApp.Game.RhythmGame
 		{
 			float waittime;
 			float startTime;
-			UnityEngine.Debug.Log("Enter WaitMusicPlayCoroutine");
+			//UnityEngine.Debug.Log("Enter WaitMusicPlayCoroutine");
 			//0xBF4584
 			waittime = a_sec_wait;
 			startTime = TimeWrapper.time;
 			while (TimeWrapper.time - startTime < waittime)
 				yield return null;
 			StartPlayMusic(Mathf.RoundToInt((TimeWrapper.time - startTime - waittime) * 1000));
-			UnityEngine.Debug.Log("Exit WaitMusicPlayCoroutine");
+			//UnityEngine.Debug.Log("Exit WaitMusicPlayCoroutine");
 		}
 
 		// // RVA: 0x9C3750 Offset: 0x9C3750 VA: 0x9C3750

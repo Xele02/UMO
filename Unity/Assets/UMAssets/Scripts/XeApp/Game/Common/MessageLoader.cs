@@ -129,11 +129,11 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1117090 Offset: 0x1117090 VA: 0x1117090
 		private IEnumerator CheckDone()
 		{
-    		UnityEngine.Debug.Log("Enter CheckDone");
+    		//UnityEngine.Debug.Log("Enter CheckDone");
 			//0x11178B0
 			while(m_isLoading)
 				yield return null;
-    		UnityEngine.Debug.Log("Exit CheckDone");
+    		//UnityEngine.Debug.Log("Exit CheckDone");
 		}
 
 		// // RVA: 0x111713C Offset: 0x111713C VA: 0x111713C

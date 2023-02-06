@@ -5,7 +5,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CCED9C Offset: 0x1CCED9C VA: 0x1CCED9C
 		public void EntrySheet()
 		{
-			TodoLogger.Log(5, "TitlecallVoicePlayer EntrySheet");
+			RequestChangeCueSheet("cs_diva_title", null);
 		}
 
 		// // RVA: 0x1CCEE08 Offset: 0x1CCEE08 VA: 0x1CCEE08

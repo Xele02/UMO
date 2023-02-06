@@ -262,7 +262,7 @@ public class KDLPEDBKMID
 	// // RVA: 0xE7DCBC Offset: 0xE7DCBC VA: 0xE7DCBC
 	private IEnumerator EOFJPNPFGDM_Coroutine_Install()
 	{
-        UnityEngine.Debug.Log("Enter EOFJPNPFGDM_Coroutine_Install");
+        //UnityEngine.Debug.Log("Enter EOFJPNPFGDM_Coroutine_Install");
 		// private KDLPEDBKMID.<>c__DisplayClass44_0 OPLBFCEPDCH; // 0x14			
 			// public KDLPEDBKMID KIGBLACMODG; // 0x8
 			// public PJKLMCGEJMK CPHFEPHDJIB; // 0xC
@@ -384,7 +384,7 @@ public class KDLPEDBKMID
 						{
 							//goto LAB_00e85514;
 							KOIGPANFBKP = false;
-							UnityEngine.Debug.Log("Exit Error EOFJPNPFGDM_Coroutine_Install");
+							UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
 							yield break;
 						}
 						//goto LAB_00e84f9c;
@@ -434,7 +434,7 @@ public class KDLPEDBKMID
 						{
 							//LAB_00e85514:
 							KOIGPANFBKP = false;
-							UnityEngine.Debug.Log("Exit Error EOFJPNPFGDM_Coroutine_Install");
+							UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
 							yield break;
 						}
 						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status != 0)
@@ -459,7 +459,7 @@ public class KDLPEDBKMID
 			}
 		}
 		
-    	UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
+    	//UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 	}
 
 	// // RVA: 0xE7ECF4 Offset: 0xE7ECF4 VA: 0xE7ECF4

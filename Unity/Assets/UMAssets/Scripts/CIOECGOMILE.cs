@@ -187,7 +187,7 @@ public class CIOECGOMILE
 		// private NAIJIFAJGGK BPOJOBICBAC; // 0x34
 		// private DOLDMCAMEOD GHPOKNKDBGO; // 0x38
 		//0x1010F04
-		UnityEngine.Debug.Log("Enter ODDEPBIJHOE_Coroutine_Load");
+		//UnityEngine.Debug.Log("Enter ODDEPBIJHOE_Coroutine_Load");
 
 		PJKLMCGEJMK OKDOIAEGADK = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF;
 		OKGLGHCBCJP_Database DLMOKNDEMMB = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
@@ -377,7 +377,7 @@ public class CIOECGOMILE
 											FLENFOEFHPL();
 										}
 										LNAHEIEIBOI = true;
-										UnityEngine.Debug.Log("Exit ODDEPBIJHOE_Coroutine_Load");
+										//UnityEngine.Debug.Log("Exit ODDEPBIJHOE_Coroutine_Load");
 										yield break;
 									}
 									
@@ -414,7 +414,7 @@ public class CIOECGOMILE
 			}
 		}
 
-		UnityEngine.Debug.Log("Exit ODDEPBIJHOE_Coroutine_Load");
+		//UnityEngine.Debug.Log("Exit ODDEPBIJHOE_Coroutine_Load");
 	}
 
 	// // RVA: 0xFFB930 Offset: 0xFFB930 VA: 0xFFB930
@@ -434,9 +434,9 @@ public class CIOECGOMILE
 	// // RVA: 0xFFBAC8 Offset: 0xFFBAC8 VA: 0xFFBAC8
 	private IEnumerator EKKCGGHIFEG_GetFriendCounts(DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		UnityEngine.Debug.Log("Enter EKKCGGHIFEG_GetFriendCounts");
+		//UnityEngine.Debug.Log("Enter EKKCGGHIFEG_GetFriendCounts");
 		TodoLogger.Log(0, "TODO");
-		UnityEngine.Debug.Log("Exit EKKCGGHIFEG_GetFriendCounts");
+		//UnityEngine.Debug.Log("Exit EKKCGGHIFEG_GetFriendCounts");
 		yield break;
 	}
 

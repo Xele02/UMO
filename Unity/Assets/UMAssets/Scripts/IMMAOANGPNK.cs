@@ -64,7 +64,7 @@ public class IMMAOANGPNK
 	// // RVA: 0x9FBA5C Offset: 0x9FBA5C VA: 0x9FBA5C
 	private IEnumerator MHEKMICKGDM_LoadFromStorage(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
 	{
-        UnityEngine.Debug.Log("Enter MHEKMICKGDM_LoadFromStorage");
+        //UnityEngine.Debug.Log("Enter MHEKMICKGDM_LoadFromStorage");
 		// private int GGPNEJDOELB; // 0x8
 		// private object GMEFKDIEHCA; // 0xC
 		// public IMMAOANGPNK KIGBLACMODG; // 0x10
@@ -296,7 +296,7 @@ public class IMMAOANGPNK
 								{
 									BHFHGFKBOHH();
 									LNAHEIEIBOI_Initialized = true;
-        							UnityEngine.Debug.Log("Exit MHEKMICKGDM_LoadFromStorage");
+        							//UnityEngine.Debug.Log("Exit MHEKMICKGDM_LoadFromStorage");
 									yield break;
 								}
 							}
@@ -336,9 +336,9 @@ public class IMMAOANGPNK
 	// // RVA: 0x9FBCFC Offset: 0x9FBCFC VA: 0x9FBCFC
 	private IEnumerator LGFPCADOCAA_ShowError()
 	{
-        UnityEngine.Debug.Log("Enter LGFPCADOCAA_ShowError");
+        //UnityEngine.Debug.Log("Enter LGFPCADOCAA_ShowError");
 		TodoLogger.Log(0, "TODO");
-        UnityEngine.Debug.Log("Exit LGFPCADOCAA_ShowError");
+        //UnityEngine.Debug.Log("Exit LGFPCADOCAA_ShowError");
 		yield break;
 	}
 

@@ -120,7 +120,7 @@ namespace XeSys.Gfx
 		private IEnumerator LoadAssetAsync(int index, ResourceRequest req, string path, Texture2D texture)
 		{
 			//0x1EE2300
-			UnityEngine.Debug.Log("Enter LoadAssetAsync "+path);
+			//UnityEngine.Debug.Log("Enter LoadAssetAsync "+path);
 			while(!req.isDone)
 			{
 				yield return null;
@@ -129,7 +129,7 @@ namespace XeSys.Gfx
 			if(data != null)
 			{
 				Register(index, data);
-				UnityEngine.Debug.Log("Exit 2 LoadAssetAsync "+path+" "+data);
+				//UnityEngine.Debug.Log("Exit 2 LoadAssetAsync "+path+" "+data);
 				yield break;
 			}
 			req = LoadTextAsync(path);
@@ -144,7 +144,7 @@ namespace XeSys.Gfx
 				data.Initialize(asset.bytes, texture);
 			}
 			Register(index, data);
-			UnityEngine.Debug.Log("Exit LoadAssetAsync "+path+" "+data);
+			//UnityEngine.Debug.Log("Exit LoadAssetAsync "+path+" "+data);
 		}
 
 		// // RVA: 0x1EE1C3C Offset: 0x1EE1C3C VA: 0x1EE1C3C

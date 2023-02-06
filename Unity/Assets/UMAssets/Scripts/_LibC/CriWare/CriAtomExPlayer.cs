@@ -293,12 +293,12 @@ namespace ExternLib
         }
         public static IntPtr criAtomExPlayer_GetPlayerParameter(IntPtr player)
         {
-            TodoLogger.Log(100, "criAtomExPlayer_GetPlayerParameter");
+            TodoLogger.Log(TodoLogger.CriAtomExPlayer, "criAtomExPlayer_GetPlayerParameter");
             return IntPtr.Zero;
         }
         public static void criAtomExPlayerParameter_RemoveParameter(IntPtr player_parameter, ushort id)
         {
-            TodoLogger.Log(100, "criAtomExPlayerParameter_RemoveParameter");
+            TodoLogger.Log(TodoLogger.CriAtomExPlayer, "criAtomExPlayerParameter_RemoveParameter");
         }
         public static uint criAtomExPlayer_Start(IntPtr player)
         {

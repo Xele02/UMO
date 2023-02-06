@@ -116,9 +116,9 @@ public class AMOCLPHDGBP
 	// // RVA: 0xCE9F24 Offset: 0xCE9F24 VA: 0xCE9F24
 	private IEnumerator GEMPIKIBEKJ_Coroutine_AutoRecover(IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP, DJBHIFLHJLK BFKEGJMPELF, bool EBKGBLFCENA, bool BOGDHEBBHFA)
 	{
-		UnityEngine.Debug.Log("Enter GEMPIKIBEKJ_Coroutine_AutoRecover");
+		//UnityEngine.Debug.Log("Enter GEMPIKIBEKJ_Coroutine_AutoRecover");
 		TodoLogger.Log(0, "TODO");
-		UnityEngine.Debug.Log("Exit GEMPIKIBEKJ_Coroutine_AutoRecover");
+		////UnityEngine.Debug.Log("Exit GEMPIKIBEKJ_Coroutine_AutoRecover");
 		KLMFJJCNBIP();
 		yield break;
 	}

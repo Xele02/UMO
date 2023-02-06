@@ -6,7 +6,7 @@ public class BFGOCONGNDK
 {
 	private const int NEBFFKCGIMK = 741042;
 	private const int OBHOPEGFNGN = 16;
-	public string IOIMHJAOKOO; // 0x8
+	public string IOIMHJAOKOO_FileHash; // 0x8
 	public int OENPCNBFPDA; // 0xC
 	public long PDBPFJJCADD; // 0x10
 	public long FDBNFFNFOND; // 0x18
@@ -19,7 +19,7 @@ public class BFGOCONGNDK
 	}
 
 	// // RVA: 0xC79EFC Offset: 0xC79EFC VA: 0xC79EFC
-	public static string NLMBMNKEINP(int KEFGPJBKAOD)
+	public static string NLMBMNKEINP_GetFileName(int KEFGPJBKAOD)
     {
         return "ct/bg/tl/"+ KEFGPJBKAOD.ToString("D4") + ".xab";
     }
@@ -58,25 +58,35 @@ public class BFGOCONGNDK
 	// public void HJMKBCFJOOH() { }
 
 	// // RVA: 0xC7AF9C Offset: 0xC7AF9C VA: 0xC7AF9C
-	public bool DAONJOOCPFP(int ODJPFMGNDML)
+	public bool DAONJOOCPFP(int ODJPFMGNDML_Id)
     {
-        OENPCNBFPDA = ODJPFMGNDML; // Hack, force bg id since PCODDPDFLHK is not executed
+        OENPCNBFPDA = ODJPFMGNDML_Id; // Hack, force bg id since PCODDPDFLHK is not executed
 
-		if(OENPCNBFPDA == ODJPFMGNDML)
+		if(OENPCNBFPDA == ODJPFMGNDML_Id)
 		{
-			string fileBg = FileSystemProxy.ConvertPath(CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data/android/" + NLMBMNKEINP(ODJPFMGNDML));
+			string fileBg = FileSystemProxy.ConvertPath(CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data/android/" + NLMBMNKEINP_GetFileName(ODJPFMGNDML_Id));
 			//if(File.Exists(fileBg))
 			if(FileSystemProxy.FileExists(fileBg))
 			{
 				if(KEHOJEJMGLJ.HHCJCDFCLOB != null)
 				{
-					BEEINMBNKNM_Encryption decryptor = KEHOJEJMGLJ.HHCJCDFCLOB.GMLCCMEHNCI.MFHAOMELJKJ_FindDecryptor("/"+NLMBMNKEINP(ODJPFMGNDML));
+					BEEINMBNKNM_Encryption decryptor = KEHOJEJMGLJ.HHCJCDFCLOB.GMLCCMEHNCI.MFHAOMELJKJ_FindDecryptor("/"+NLMBMNKEINP_GetFileName(ODJPFMGNDML_Id));
 					if(decryptor != null)
 					{
 						MD5 md5 = MD5.Create();
 						FileStream f = File.OpenRead(fileBg);
 						byte[] hash = md5.ComputeHash(f);
-						TodoLogger.Log(0, "end BG check hash");
+						string strHash = "";
+						for(int i = 0; i < hash.Length; i++)
+						{
+							strHash += string.Format("{0:x2}", hash[i]);
+						}
+						if(f != null)
+						{
+							f.Dispose();
+						}
+						TodoLogger.Log(TodoLogger._Todo, "BFGOCONGNDK.DAONJOOCPFP Fix when PCODDPDFLHK works");
+						//return strHash == IOIMHJAOKOO_FileHash;
 						return true;
 					}
 				}

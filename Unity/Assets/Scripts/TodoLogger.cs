@@ -26,11 +26,15 @@ public static class TodoLogger
 	public static int StorageSupport = _NonVisible;
 	public static int ManaAd = _NonVisible;
 	public static int AndroidNotification = _NonVisible;
+	public static int CriAtomExPlayer = _NonVisible;
 
 	// Need to implement at some point
 	public static int _Todo = 99999999;
 	public static int CriAtomVolumes = _Todo;
 	public static int ToCheck = _Todo;
+	public static int Errors = _Todo;
+
+	public static int Popup = 0;
 
 	public static void Log(int priority, string str)
 	{

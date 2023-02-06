@@ -548,7 +548,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x1F00A1C Offset: 0x1F00A1C VA: 0x1F00A1C
 		private IEnumerator LoadScriptableLayoutCoroutine()
 		{
-			UnityEngine.Debug.Log("Enter LoadScriptableLayoutCoroutine "+m_layoutPath);
+			//UnityEngine.Debug.Log("Enter LoadScriptableLayoutCoroutine "+m_layoutPath);
 			// private ResourceRequest <req>5__2; // 0x14
 			// private ScriptableLayout <scriptableLayout>5__3; // 0x18
 			// private int <i>5__4; // 0x1C
@@ -580,7 +580,7 @@ namespace XeSys.Gfx
 			if(scriptableLayout == null)
 			{
 				m_updater = this.LoadXmlLayout;
-				UnityEngine.Debug.Log("Exit XML LoadScriptableLayoutCoroutine"+m_layoutPath);
+				//UnityEngine.Debug.Log("Exit XML LoadScriptableLayoutCoroutine"+m_layoutPath);
 				yield break;
 			}
 			if(m_layout == null)
@@ -602,7 +602,7 @@ namespace XeSys.Gfx
 			ConnectUguiInfo(scriptableLayout.ViewsCount);
 			m_updater = this.UpdatePreStart;
 
-			UnityEngine.Debug.Log("Exit ScriptableLayout LoadScriptableLayoutCoroutine"+m_layoutPath);
+			//UnityEngine.Debug.Log("Exit ScriptableLayout LoadScriptableLayoutCoroutine"+m_layoutPath);
 		}
 
 		// // RVA: 0x1F00AC8 Offset: 0x1F00AC8 VA: 0x1F00AC8

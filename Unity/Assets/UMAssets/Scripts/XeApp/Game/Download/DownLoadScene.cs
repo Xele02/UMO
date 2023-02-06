@@ -43,7 +43,7 @@ namespace XeApp.Game.DownLoad
 		// // RVA: 0x11BE4E4 Offset: 0x11BE4E4 VA: 0x11BE4E4
 		private IEnumerator Co_MainProc()
 		{
-			UnityEngine.Debug.Log("Enter Co_MainProc");
+			//UnityEngine.Debug.Log("Enter Co_MainProc");
 			//0x11BFC54 
 			yield return this.StartCoroutineWatched(Co_InitializeQuestionary());
 
@@ -53,19 +53,19 @@ namespace XeApp.Game.DownLoad
 			NextScene("Menu");
 
 			TodoLogger.Log(0, "TODO");
-			UnityEngine.Debug.Log("Exit Co_MainProc");
+			//UnityEngine.Debug.Log("Exit Co_MainProc");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B5068 Offset: 0x6B5068 VA: 0x6B5068
 		// // RVA: 0x11BE7E4 Offset: 0x11BE7E4 VA: 0x11BE7E4
 		private IEnumerator Co_InitializeQuestionary()
 		{
-			UnityEngine.Debug.Log("Enter Co_InitializeQuestionary");
+			//UnityEngine.Debug.Log("Enter Co_InitializeQuestionary");
 			//0x11BF7A4
 			yield return null;
 
 			TodoLogger.Log(0, "TODO");
-			UnityEngine.Debug.Log("Exit Co_InitializeQuestionary");
+			//UnityEngine.Debug.Log("Exit Co_InitializeQuestionary");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B50E0 Offset: 0x6B50E0 VA: 0x6B50E0

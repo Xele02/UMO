@@ -40,7 +40,7 @@ namespace XeApp.Core
         // RVA: 0xE0FE3C Offset: 0xE0FE3C VA: 0xE0FE3C Slot: 11
         public override IEnumerator InitializeLayoutCoroutine(Font font, Action<GameObject> finish)
         {
-            UnityEngine.Debug.Log("Enter InitializeLayoutCoroutine "+m_AssetName);
+            //UnityEngine.Debug.Log("Enter InitializeLayoutCoroutine "+m_AssetName);
 			//UnityEngine.Debug.Log("Enter InitializeLayoutCoroutine request : "+m_request);
 			//0xE110FC
 #if UNITY_EDITOR || UNITY_STANDALONE
@@ -80,7 +80,7 @@ namespace XeApp.Core
             {
                 finish(instance);
             }
-            UnityEngine.Debug.Log("Exit InitializeLayoutCoroutine "+m_AssetName);
+            //UnityEngine.Debug.Log("Exit InitializeLayoutCoroutine "+m_AssetName);
         }
 
         // [IteratorStateMachineAttribute] // RVA: 0x747F58 Offset: 0x747F58 VA: 0x747F58

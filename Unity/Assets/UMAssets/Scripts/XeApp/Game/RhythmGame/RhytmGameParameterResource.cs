@@ -45,7 +45,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x1551CB8 Offset: 0x1551CB8 VA: 0x1551CB8
 		private IEnumerator Co_LoadResource()
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadResource");
+    		//UnityEngine.Debug.Log("Enter Co_LoadResource");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public RhytmGameParameterResource <>4__this; // 0x10
@@ -88,7 +88,7 @@ namespace XeApp.Game.RhythmGame
 			AssetBundleManager.UnloadAssetBundle(name_bundle.ToString(), false);
 
 			isLoaded = true;
-    		UnityEngine.Debug.Log("Exit Co_LoadResource");
+    		//UnityEngine.Debug.Log("Exit Co_LoadResource");
 		}
 	}
 }

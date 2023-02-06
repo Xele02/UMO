@@ -102,7 +102,7 @@ public class BBGDKLLEPIB
 	// // RVA: 0xF17A70 Offset: 0xF17A70 VA: 0xF17A70
 	private IEnumerator EOFJPNPFGDM_Coroutine_Install(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		UnityEngine.Debug.Log("Enter EOFJPNPFGDM_Coroutine_Install");
+		//UnityEngine.Debug.Log("Enter EOFJPNPFGDM_Coroutine_Install");
 		// private BBGDKLLEPIB.<>c__DisplayClass45_0 OPLBFCEPDCH; // 0x14
 				// public BBGDKLLEPIB KIGBLACMODG; // 0x8
 				// public bool KOMKKBDABJP; // 0xC
@@ -159,7 +159,7 @@ public class BBGDKLLEPIB
 			{
 				if(MOBEEPPKFLG != null)
 					MOBEEPPKFLG();
-				UnityEngine.Debug.Log("Exit Error EOFJPNPFGDM_Coroutine_Install");
+				UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
 				yield break;
 			}
 
@@ -177,7 +177,7 @@ public class BBGDKLLEPIB
 				//goto LAB_00f1b02c;
 				if(BHFHGFKBOHH != null)
 					BHFHGFKBOHH();
-				UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
+				//UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 				yield break;
 			}
 			//L254
@@ -258,7 +258,7 @@ public class BBGDKLLEPIB
 				//LAB_00f1b02c:
 				if(BHFHGFKBOHH != null)
 					BHFHGFKBOHH();
-				UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
+				//UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 				yield break;
 			}
 			//L361
@@ -359,7 +359,7 @@ public class BBGDKLLEPIB
 		// To 4
 		}
 		
-		UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
+		//UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 	}
 
 	// // RVA: 0xF17B50 Offset: 0xF17B50 VA: 0xF17B50

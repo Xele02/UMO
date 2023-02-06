@@ -46,7 +46,7 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 			UnityEngine.Debug.LogError("Error Register shader, bundle is null");
 			yield break;
 		}
-        UnityEngine.Debug.Log("Enter Co_RegisterShaderIds "+shaderBundle2.name);
+        //UnityEngine.Debug.Log("Enter Co_RegisterShaderIds "+shaderBundle2.name);
 		if(alreadyParsedBundle.Contains(shaderBundle2.name))
 		{
 			if(onCompleted != null)

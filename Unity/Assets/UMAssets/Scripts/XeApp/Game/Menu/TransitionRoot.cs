@@ -677,7 +677,7 @@ namespace XeApp.Game.Menu
 				// private ResourcesManager <resourceManager>5__4; // 0x28
 				// private AssetBundleLoadLayoutOperationBase <operation>5__5; // 0x2C
 				//0xA414D4
-				UnityEngine.Debug.Log("Enter RegisterCache");
+				//UnityEngine.Debug.Log("Enter RegisterCache");
 				GameObject instance = null;
 				TransitionRoot root = null;
 				TransitionRoot.MenuTransitionControl.BundleName assetBundle = assetBundleNames[(int)transitionName];
@@ -724,7 +724,7 @@ namespace XeApp.Game.Menu
 				root.transform.SetParent(m_uiRootObject.transform, false);
 				root.gameObject.SetActive(false);
 				m_instanceCacheDict.Add((int)transitionName, root);
-				UnityEngine.Debug.Log("Exit RegisterCache "+transitionName);
+				//UnityEngine.Debug.Log("Exit RegisterCache "+transitionName);
 			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8D4C Offset: 0x6C8D4C VA: 0x6C8D4C

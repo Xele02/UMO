@@ -272,7 +272,7 @@ namespace XeApp.Game.Common
 		private IEnumerator WaitLoadLayout()
 		{
 			//0x1BBF9FC
-			UnityEngine.Debug.Log("Enter Popup WaitLoadLayout");
+			//UnityEngine.Debug.Log("Enter Popup WaitLoadLayout");
 			while(!IsLoadedLayout())
 			{
 				yield return null;
@@ -280,7 +280,7 @@ namespace XeApp.Game.Common
 			m_isReady = true;
 			m_image.gameObject.SetActive(false);
 			m_blackPanel.gameObject.SetActive(false);
-			UnityEngine.Debug.Log("Exit Popup WaitLoadLayout");
+			//UnityEngine.Debug.Log("Exit Popup WaitLoadLayout");
 		}
 
 		// // RVA: 0x1BB9B18 Offset: 0x1BB9B18 VA: 0x1BB9B18

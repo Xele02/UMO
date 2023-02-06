@@ -13,7 +13,7 @@ namespace XeApp.Game.Title
 		private Action m_OnClickArCallback; // 0x1C
 		private bool isEnter; // 0x20
 
-		//public Action OnClickArButton { set; } 0xE354E0
+		public Action OnClickArButton { set { m_OnClickArCallback = value; } } //0xE354E0
 
 		// RVA: 0xE354E8 Offset: 0xE354E8 VA: 0xE354E8 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

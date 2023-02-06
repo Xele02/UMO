@@ -141,10 +141,10 @@ public class PKECIDPBEFL
 	// // RVA: 0x93AC74 Offset: 0x93AC74 VA: 0x93AC74
 	private string JAFAIDPJALG()
     {
-        BEEINMBNKNM_Encryption.GKBODMNBFJM(0x299ce1af, BitConverter.GetBytes(NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD));
+        BEEINMBNKNM_Encryption.GKBODMNBFJM(0x299ce1af, BitConverter.GetBytes(NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId));
         StringBuilder str = new StringBuilder();
         str.Append(Application.persistentDataPath);
-        str.AppendFormat("/61/{0:x}", NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD);
+        str.AppendFormat("/61/{0:x}", NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId);
         return str.ToString();
     }
 

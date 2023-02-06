@@ -27,7 +27,7 @@ public class GNMBAOKGJDO
 		// public GNMBAOKGJDO KIGBLACMODG; // 0x14
 		// private DsfdLoader.ILoadRequest OCJDGDAJMFC; // 0x18
 		//0x1E5951C
-		UnityEngine.Debug.Log("Enter ODDEPBIJHOE_Coroutine_Load");
+		//UnityEngine.Debug.Log("Enter ODDEPBIJHOE_Coroutine_Load");
 
 		UnityEngine.Debug.Log("start DsfdLoader.LoadFile "+CJEKGLGBIHF);
 		DsfdLoader.ILoadRequest OCJDGDAJMFC = DsfdLoader.LoadFile(CJEKGLGBIHF);
@@ -71,7 +71,7 @@ public class GNMBAOKGJDO
 			yield break;
 		}
 
-		UnityEngine.Debug.Log("Exit ODDEPBIJHOE_Coroutine_Load");
+		//UnityEngine.Debug.Log("Exit ODDEPBIJHOE_Coroutine_Load");
 	}
 
 }
