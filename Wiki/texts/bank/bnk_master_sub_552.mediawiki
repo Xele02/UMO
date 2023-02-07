@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0251_obj
+ | Value=シンプルなインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0252_obj
+ | Value=シンプルなインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0253_obj
+ | Value=ミンメイの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0254_obj
+ | Value=ミンメイの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0255_obj
+ | Value=ミンメイの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0256_obj
+ | Value=裸喰娘娘のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0257_obj
+ | Value=裸喰娘娘のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0258_obj
+ | Value=フレイアの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0259_obj
+ | Value=ケイオス女子寮のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0260_obj
+ | Value=ケイオス女子寮のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0261_obj
+ | Value=ケイオス女子寮のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0262_obj
+ | Value=ケイオス女子寮のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0263_obj
+ | Value=ランカの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0264_obj
+ | Value=ランカの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0265_obj
+ | Value=ランカの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0266_obj
+ | Value=ランカの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0267_obj
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0268_obj
+ | Value=シェリルの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0269_obj
+ | Value=シェリルの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0270_obj
+ | Value=バサラの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0271_obj
+ | Value=バサラの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0272_obj
+ | Value=バサラの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0273_obj
+ | Value=バサラの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0274_obj
+ | Value=バサラの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0275_obj
+ | Value=バサラの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0276_obj
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0277_obj
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0278_obj
+ | Value=フロンティア船団の軍病院のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0279_obj
+ | Value=超時空飯店 娘々のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0280_obj
+ | Value=ミラージュの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0281_obj
+ | Value=ミラージュの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0282_obj
+ | Value=ミラージュの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0283_obj
+ | Value=ミレーヌの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0284_obj
+ | Value=ミレーヌの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0285_obj
+ | Value=ミレーヌの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0286_obj
+ | Value=ミレーヌの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0287_obj
+ | Value=ミレーヌの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0288_obj
+ | Value=ミレーヌの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0289_obj
+ | Value=ミレーヌの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0290_obj
+ | Value=ミレーヌの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0291_obj
+ | Value=ミレーヌの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0292_obj
+ | Value=チャペルのインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0293_obj
+ | Value=チャペルのインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0294_obj
+ | Value=チャペルのインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0295_obj
+ | Value=チャペルのインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0296_obj
+ | Value=チャペルのインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0297_obj
+ | Value=チャペルのインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0298_obj
+ | Value=チャペルのインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0299_obj
+ | Value=カナメの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0300_obj
+ | Value=カナメの部屋のインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    

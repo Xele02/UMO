@@ -1,0 +1,37 @@
+
+{{Texts/Bank/BankValue:
+ | Key=pop_gakuya_present_caution
+ | Value=<color=#FF1576>※親密度上限を超えた場合、数値は反映されません。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_gakuya_present_num_prefix
+ | Value=あと
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_gakuya_present_num_title
+ | Value={0}回
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_have_title_h2
+ | Value=所持状況
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_have_01
+ | Value=所持
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_have_02
+ | Value=未所持
+ | ParentPage=Texts/Bank/menu
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_3102
+ | Value=背中は任せろ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3103
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3104
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3105
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3106
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3107
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3108
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3109
+ | Value=Document of Freyja
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3110
+ | Value=EP【都会に流れる風】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3111
+ | Value=集中、集中！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3112
+ | Value=なんも無理なんか…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3113
+ | Value=EP【都会に流れる風】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3114
+ | Value=EP【都会に流れる風】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3115
+ | Value=EP【都会に流れる風】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3116
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3117
+ | Value=EP【都会に流れる風】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3118
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3119
+ | Value=EP【都会に流れる風】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3120
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3121
+ | Value=Document of Kaname
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3122
+ | Value=EP【ドラマチック・ライフ】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3123
+ | Value=ありがとう、カナメさん
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3124
+ | Value=やはりお前も風に乗るか！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3125
+ | Value=EP【ドラマチック・ライフ】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3126
+ | Value=EP【ドラマチック・ライフ】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3127
+ | Value=EP【ドラマチック・ライフ】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3128
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3129
+ | Value=EP【ドラマチック・ライフ】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3130
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3131
+ | Value=EP【ドラマチック・ライフ】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3132
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3133
+ | Value=ミステリアスでラブリーモア！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3134
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3135
+ | Value=厳粛主義たる風
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3136
+ | Value=直情径行なる風
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3137
+ | Value=女神の祝福を
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3138
+ | Value=EP【未来を歌う女神たち】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3139
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3140
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3141
+ | Value=EP【未来を歌う女神たち】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3142
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3143
+ | Value=EP【未来を歌う女神たち】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3144
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3145
+ | Value=ハグ☆キュン♪マイラバー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3146
+ | Value=EP【ラブリー＆キューン】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3147
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3148
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3149
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3150
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_3151
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

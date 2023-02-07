@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0427
+ | Value=HOLY LONELY LIVE・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0428
+ | Value=エンジェル・ブライド・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0429
+ | Value=エンジェル・ブライド・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0430
+ | Value=♪天使になっちゃった・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0431
+ | Value=♪天使になっちゃった・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0432
+ | Value=♪天使になっちゃった・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0433
+ | Value=♪天使になっちゃった・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0434
+ | Value=♪天使になっちゃった・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0435
+ | Value=恋! ハレイション THE DANCE・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0436
+ | Value=恋! ハレイション THE DANCE・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0437
+ | Value=彼方へ届ける歌 ～インフィニティ #7～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0438
+ | Value=彼方へ届ける歌 ～インフィニティ #7～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0439
+ | Value=♪インフィニティ #7・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0440
+ | Value=♪インフィニティ #7・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0441
+ | Value=♪インフィニティ #7・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0442
+ | Value=♪インフィニティ #7・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0443
+ | Value=♪インフィニティ #7・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0444
+ | Value=復刻　閃光のAXIA・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0445
+ | Value=復刻　閃光のAXIA・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0446
+ | Value=大空を舞う小白竜・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0447
+ | Value=大空を舞う小白竜・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0448
+ | Value=純情サマーバケーション・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0449
+ | Value=純情サマーバケーション・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0450
+ | Value=♪破滅の純情・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0451
+ | Value=♪破滅の純情・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0452
+ | Value=♪破滅の純情・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0453
+ | Value=♪破滅の純情・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0454
+ | Value=♪破滅の純情・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0455
+ | Value=復刻　パステル♡SUMMER・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0456
+ | Value=復刻　パステル♡SUMMER・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0457
+ | Value=夏のなないろ☆ビタミンチャージ！・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0458
+ | Value=夏のなないろ☆ビタミンチャージ！・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0459
+ | Value=星間ランデブー★彡・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0460
+ | Value=星間ランデブー★彡・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0461
+ | Value=♪星間飛行～Freyja Ver.～・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0462
+ | Value=♪星間飛行～Freyja Ver.～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0463
+ | Value=♪星間飛行～Freyja Ver.～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0464
+ | Value=♪星間飛行～Freyja Ver.～・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0465
+ | Value=♪星間飛行～Freyja Ver.～・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0466
+ | Value=復刻　New song Live ～第2弾～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0467
+ | Value=復刻　New song Live ～第2弾～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0468
+ | Value=REMEMBER SUMMER・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0469
+ | Value=REMEMBER SUMMER・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0470
+ | Value=Trick or Nyan? DIARY・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0471
+ | Value=Trick or Nyan? DIARY・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0472
+ | Value=♪ねこ日記【MIRROR ver.】・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0473
+ | Value=♪ねこ日記【MIRROR ver.】・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0474
+ | Value=♪ねこ日記【MIRROR ver.】・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0475
+ | Value=♪ねこ日記【MIRROR ver.】・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0476
+ | Value=♪ねこ日記【MIRROR ver.】・白
+ | ParentPage=Texts/Bank/master
+}}
+                    

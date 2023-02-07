@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0107_srf
+ | Value=悲しいね…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0108_srf
+ | Value=もー！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0109_srf
+ | Value=やっぱり意地悪だよ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0110_srf
+ | Value=もう子供じゃ<br/>ないんだから！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0111_srf
+ | Value=だって<br/>伝えたかったんだもん！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0112_srf
+ | Value=みんな一緒にー！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0113_srf
+ | Value=ワン・ツー！<br/>デカルチャー！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0114_srf
+ | Value=すごーい！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0115_srf
+ | Value=今度お礼するね！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0116_srf
+ | Value=さすがだね！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0117_srf
+ | Value=驚いちゃった！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0118_srf
+ | Value=デッカルチャ～！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0119_srf
+ | Value=いつも<br/>助けてくれるんだね
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0120_srf
+ | Value=救援したよ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0121_srf
+ | Value=みんな、文化してるー？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0122_srf
+ | Value=あなたにも一緒に<br/>歌って欲しいの！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0123_srf
+ | Value=早く行きましょ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0124_srf
+ | Value=ふふふ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0125_srf
+ | Value=楽しくなってきたわね！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0126_srf
+ | Value=…悲しいわね
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0127_srf
+ | Value=あとは燃え尽きるだけ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0128_srf
+ | Value=照れてるのかしら？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0129_srf
+ | Value=生意気よ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0130_srf
+ | Value=…悪かったわ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0131_srf
+ | Value=これが<br/>あの子の本当の力…！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0132_srf
+ | Value=もっと行くわよ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0133_srf
+ | Value=絶望の中で<br/>歌ってみせる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0134_srf
+ | Value=ありがとう<br/>みんな！愛してる！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0135_srf
+ | Value=驚いたわ…！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0136_srf
+ | Value=やるわね！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0137_srf
+ | Value=熱いライブだったわ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0138_srf
+ | Value=本当にすごいわね
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0139_srf
+ | Value=困ったわね…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0140_srf
+ | Value=救援を送ったわ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0141_srf
+ | Value=よろしくね！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0142_srf
+ | Value=出撃しなきゃ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0143_srf
+ | Value=そろそろライブの<br/>時間なんじゃない？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0144_srf
+ | Value=わくわくしちゃうよね！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0145_srf
+ | Value=嬉しー！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0146_srf
+ | Value=みんな目を覚まして！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0147_srf
+ | Value=信じらんない…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0148_srf
+ | Value=ひねくれものー！！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0149_srf
+ | Value=もう！失礼しちゃうわ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0150_srf
+ | Value=待ちなさいよ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0151_srf
+ | Value=許さないんだから！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0152_srf
+ | Value=あたしに任せて！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0153_srf
+ | Value=や～だ！ジョークよ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0154_srf
+ | Value=ありがとー！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0155_srf
+ | Value=びっくりしたー！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0156_srf
+ | Value=すごーい！！
+ | ParentPage=Texts/Bank/master
+}}
+                    

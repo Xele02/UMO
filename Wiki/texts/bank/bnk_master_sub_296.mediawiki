@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0727
+ | Value=復刻　とまらない！ワルキューレLIVE・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0728
+ | Value=復刻　とまらない！ワルキューレLIVE・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0729
+ | Value=君に届け→ ～Halloween live～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0730
+ | Value=君に届け→ ～Halloween live～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0731
+ | Value=HELLO！MY FRIENDS！・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0732
+ | Value=HELLO！MY FRIENDS！・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0733
+ | Value=♪HELLO・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0734
+ | Value=♪HELLO・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0735
+ | Value=♪HELLO・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0736
+ | Value=♪HELLO・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0737
+ | Value=♪HELLO・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0738
+ | Value=復刻　聖なる夜の涙目SONG・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0739
+ | Value=復刻　聖なる夜の涙目SONG・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0740
+ | Value=幻惑レスキュー!!!!! ～チェンジ!!!!!～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0741
+ | Value=幻惑レスキュー!!!!! ～チェンジ!!!!!～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0742
+ | Value=♪チェンジ!!!!!【UNIT-LIVE】・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0743
+ | Value=♪チェンジ!!!!!【UNIT-LIVE】・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0744
+ | Value=♪チェンジ!!!!!【UNIT-LIVE】・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0745
+ | Value=♪チェンジ!!!!!【UNIT-LIVE】・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0746
+ | Value=♪チェンジ!!!!!【UNIT-LIVE】・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0747
+ | Value=復刻　絶対零度θFantastic！・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0748
+ | Value=復刻　絶対零度θFantastic！・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0749
+ | Value=Glow in the dark・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0750
+ | Value=Glow in the dark・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0751
+ | Value=♪Glow in the dark・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0752
+ | Value=♪Glow in the dark・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0753
+ | Value=♪Glow in the dark・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0754
+ | Value=♪Glow in the dark・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0755
+ | Value=♪Glow in the dark・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0756
+ | Value=復刻　衝撃 デビューステージ・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0757
+ | Value=復刻　衝撃 デビューステージ・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0758
+ | Value=燃える瞳の小白竜・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0759
+ | Value=燃える瞳の小白竜・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0760
+ | Value=不思議な時の迷宮・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0761
+ | Value=不思議な時の迷宮・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0762
+ | Value=♪時の迷宮・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0763
+ | Value=♪時の迷宮・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0764
+ | Value=♪時の迷宮・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0765
+ | Value=♪時の迷宮・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0766
+ | Value=♪時の迷宮・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0767
+ | Value=復刻　Chocoっとルンピカッ♡Valentine・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0768
+ | Value=復刻　Chocoっとルンピカッ♡Valentine・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0769
+ | Value=会えないときのValentine・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0770
+ | Value=会えないときのValentine・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0771
+ | Value=かじかむ声 ～唇の凍傷～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0772
+ | Value=かじかむ声 ～唇の凍傷～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0773
+ | Value=♪唇の凍傷【UNIT-LIVE】・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0774
+ | Value=♪唇の凍傷【UNIT-LIVE】・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0775
+ | Value=♪唇の凍傷【UNIT-LIVE】・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0776
+ | Value=♪唇の凍傷【UNIT-LIVE】・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    

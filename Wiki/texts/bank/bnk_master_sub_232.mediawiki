@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=cos_0048
+ | Value=エーデル・シュヴァン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0049
+ | Value=レゾナンツ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0050
+ | Value=ライデンシャフト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0051
+ | Value=コズミックマーガレット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0052
+ | Value=フローラルサマー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0053
+ | Value=マンダリン・ゴージャス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0054
+ | Value=ダイナ・オフィサー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0055
+ | Value=バースティング・ベル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0056
+ | Value=クロスオーバー・アライブ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0057
+ | Value=フォーア・シュトース
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0058
+ | Value=ビッター・ショコラーデ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0059
+ | Value=スローブ・パイレーツ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0060
+ | Value=シュテルネン・レーベン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0061
+ | Value=ワルキューレ・ユニフォーム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0062
+ | Value=シュトラール
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0063
+ | Value=パステルサマー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0064
+ | Value=スイート・ベル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0065
+ | Value=シュヴァルツェ・カッツェ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0066
+ | Value=レゾナンツ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0067
+ | Value=ビオレ・ゴージャス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0068
+ | Value=スイートリリス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0069
+ | Value=フォーア・シュトース
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0070
+ | Value=ライデンシャフト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0071
+ | Value=シュテルネン・ヴァッサー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0072
+ | Value=ブラウ・ブルーメ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0073
+ | Value=フローラルサマー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0074
+ | Value=クロスオーバー・スイート
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0075
+ | Value=キモノ・ラビット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0076
+ | Value=ミルヒ・ショコラーデ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0077
+ | Value=エーデル・シュヴァン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0078
+ | Value=クロスオーバー・エンブレイス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0079
+ | Value=シュガー・アリス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0080
+ | Value=カニンヒェンミュートス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0081
+ | Value=ワルキューレ・ユニフォーム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0082
+ | Value=シュトラール
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0083
+ | Value=サイレントジャスパー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0084
+ | Value=エーデル・シュヴァン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0085
+ | Value=リトルゴースト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0086
+ | Value=レゾナンツ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0087
+ | Value=フォーア・シュトース
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0088
+ | Value=ガーベラ・ブラウト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0089
+ | Value=メーア・ツィトローネ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0090
+ | Value=ブラウ・ブルーメ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0091
+ | Value=ライデンシャフト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0092
+ | Value=シュテルネン・ナハト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0093
+ | Value=フローラルサマー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0094
+ | Value=クロスオーバー・ティングル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0095
+ | Value=ティグリング・ベル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0096
+ | Value=キモノ・フォリッジ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0097
+ | Value=スピッツ・ショコラーデ
+ | ParentPage=Texts/Bank/master
+}}
+                    

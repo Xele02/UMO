@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0498
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0499
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0500
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0001
+ | Value=ワルキューレ・ユニフォームの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0002
+ | Value=シュトラールの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0003
+ | Value=ロートケープヒェンの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0004
+ | Value=ブラウ・ブルーメの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0005
+ | Value=キモノシュティールの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0006
+ | Value=フォーア・シュトースの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0007
+ | Value=ヒュプシュ・クヴァレの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0008
+ | Value=エーアステ・リーベの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0009
+ | Value=レゾナンツの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0010
+ | Value=エーデル・シュヴァンの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0011
+ | Value=ガーネット・ティーンの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0012
+ | Value=ブラウアーエザーの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0013
+ | Value=シュテルネン・ブラウの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0014
+ | Value=ライデンシャフトの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0015
+ | Value=裸喰娘娘メサイアの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0016
+ | Value=コズミックアップルの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0017
+ | Value=フローラルサマーの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0018
+ | Value=ポップ・ツイスターの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0019
+ | Value=ホットリリスの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0020
+ | Value=クロスオーバー・パッションの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0021
+ | Value=ワルキューレ・ユニフォームの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0022
+ | Value=シュトラールの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0023
+ | Value=フェアクライドゥングの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0024
+ | Value=エーデル・シュヴァンの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0025
+ | Value=モーントシャインの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0026
+ | Value=フォーア・シュトースの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0027
+ | Value=ライデンシャフトの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0028
+ | Value=レゾナンツの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0029
+ | Value=フェアボーテネの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0030
+ | Value=シュヴァルツェ・レーツェルの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0031
+ | Value=シュテルネン・ファイルヒェンの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0032
+ | Value=ミュスティカ・ブラウトの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0033
+ | Value=フローラルサマーの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0034
+ | Value=プルシアン・ゴージャスの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0035
+ | Value=ミスティ・オフィサーの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0036
+ | Value=クロスオーバー・ファビュラスの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0037
+ | Value=キモノ・クノイチの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0038
+ | Value=ネーベル・ショコラーデの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0039
+ | Value=モーディッシュ・ヴェルデの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0040
+ | Value=クロスオーバー・イリューシブの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0041
+ | Value=ワルキューレ・ユニフォームの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0042
+ | Value=シュトラールの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0043
+ | Value=ブラウ・ブルーメの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0044
+ | Value=シュヴァルツェ・フリューリングの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0045
+ | Value=ブリッツ・ブラウトの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0046
+ | Value=ミルヒシュトラーセの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_dsc_0047
+ | Value=マリーゴールドの衣装が着せられたトルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    

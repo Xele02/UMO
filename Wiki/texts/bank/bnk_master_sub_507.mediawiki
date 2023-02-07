@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0141
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0142
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0143
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0144
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0145
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0146
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0147
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0148
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0149
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0150
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0151
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0152
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0153
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0154
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0155
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0156
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0157
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0158
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0159
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0160
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0161
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0162
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0163
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0164
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_short_name_0165
+ | Value=NONE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_nm_0001
+ | Value=娘くじ☆抽選券
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_nm_0002
+ | Value=勲章
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_nm_0003
+ | Value=勲章
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_nm_0004
+ | Value=勲章
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_nm_0005
+ | Value=前夜祭娘くじ☆抽選券
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_nm_0006
+ | Value=娘くじ☆抽選券
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_nm_0007
+ | Value=4周年娘くじ☆抽選券
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_dsc_0001
+ | Value=「娘々」印の抽選券。<br/>抽選会場で娘くじ☆を引くことができる。<br/><color=#8e0529>※娘くじ☆の期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_dsc_0002
+ | Value=アーネスト艦長から贈られる<br/>名誉ある勲章
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_dsc_0003
+ | Value=アーネスト艦長から贈られる<br/>名誉ある勲章
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_dsc_0004
+ | Value=アーネスト艦長から贈られる<br/>名誉ある勲章
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_dsc_0005
+ | Value=「娘々」印の抽選券。<br/>抽選会場で娘くじ☆を引くことができる。<br/><color=#8e0529>※娘くじ☆の期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_dsc_0006
+ | Value=「娘々」印の抽選券。<br/>抽選会場で娘くじ☆を引くことができる。<br/><color=#8e0529>※娘くじ☆の期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=egt_dsc_0007
+ | Value=「娘々」印の抽選券。<br/>抽選会場で娘くじ☆を引くことができる。<br/><color=#8e0529>※娘くじ☆の期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0001
+ | Value=普通の置き物
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0002
+ | Value=おしゃれな置き物
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0003
+ | Value=アロマグッズ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0004
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0005
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0006
+ | Value=小さなお菓子
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0007
+ | Value=大きなお菓子
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0008
+ | Value=ウィンダミアのリンゴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0009
+ | Value=極上おつまみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0010
+ | Value=生のクラゲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0011
+ | Value=ホットドッグ
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0320
+ | Value=翼に旋律を
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0321
+ | Value=風が運んだ歌
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0322
+ | Value=混沌のBlack
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0323
+ | Value=無垢のWhite
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0324
+ | Value=若き天才たち
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0325
+ | Value=きゃわわにLIVE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0326
+ | Value=刺激的なLIVE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0327
+ | Value=嵐に吠えろ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0328
+ | Value=夢を捜し続けて
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0329
+ | Value=より高く、遠くへ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0330
+ | Value=ラスト・チャンス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0331
+ | Value=心静かなる風
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0332
+ | Value=階段を一歩ずつ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0333
+ | Value=エンジェル・スター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0334
+ | Value=永遠の花嫁
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0335
+ | Value=ゆるふわウェディング
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0336
+ | Value=時は走り続ける
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0337
+ | Value=Fire Bomberは今…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0338
+ | Value=比類なき才能
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0339
+ | Value=ゼントラ盛りの夏休み
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0340
+ | Value=エキサイト・サマー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0341
+ | Value=極北に輝く光
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0342
+ | Value=真夏の小休止
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0343
+ | Value=立ち上がれ女たち
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0344
+ | Value=元気をみんなに
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0345
+ | Value=ライブへGO！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0346
+ | Value=神秘をまとう妖精
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0347
+ | Value=星にきらめく愛
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0348
+ | Value=熱く燃える生命
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0349
+ | Value=夢と希望を胸に
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0350
+ | Value=萌える超合金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0351
+ | Value=希望のエール
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0352
+ | Value=深・秋葉原へようこそ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0353
+ | Value=元気が繋ぐ平和
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0354
+ | Value=変わり始めた歌声
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0355
+ | Value=学園の流れ星
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0356
+ | Value=学園の女王
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0357
+ | Value=美しく健やかに
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0358
+ | Value=麗しく謎めいて
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0359
+ | Value=新たなる戦い
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0360
+ | Value=痛みと誇り
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0361
+ | Value=甘く華やかに
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0362
+ | Value=トリック or ライブ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0363
+ | Value=ハロウィンに息抜きを
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0364
+ | Value=道を照らす歌声
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0365
+ | Value=華麗に気高く
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0366
+ | Value=月夜にこんばんは
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0367
+ | Value=これが私の戦闘服！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0368
+ | Value=絆をその身に
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0369
+ | Value=楽園の天使
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0195
+ | Value=【ライブ】で【マクロス7】の楽曲を15回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0196
+ | Value=【ライブ】で【マクロス7】の楽曲を20回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0197
+ | Value=【ライブ】で【マクロス7】の楽曲を25回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0198
+ | Value=【ライブ】で【マクロス7】の楽曲を50回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0199
+ | Value=【ライブ】で【マクロス7】の楽曲を100回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0200
+ | Value=【ライブ】で【マクロス7】の楽曲を150回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0201
+ | Value=【ライブ】で【マクロス7】の楽曲を200回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0202
+ | Value=【ライブ】で【マクロス7】の楽曲を250回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0203
+ | Value=【ライブ】で【マクロスF】の楽曲を7回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0204
+ | Value=【ライブ】で【マクロスF】の楽曲を10回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0205
+ | Value=【ライブ】で【マクロスF】の楽曲を15回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0206
+ | Value=【ライブ】で【マクロスF】の楽曲を20回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0207
+ | Value=【ライブ】で【マクロスF】の楽曲を25回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0208
+ | Value=【ライブ】で【マクロスF】の楽曲を50回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0209
+ | Value=【ライブ】で【マクロスF】の楽曲を100回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0210
+ | Value=【ライブ】で【マクロスF】の楽曲を150回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0211
+ | Value=【ライブ】で【マクロスF】の楽曲を200回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0212
+ | Value=【ライブ】で【マクロスF】の楽曲を250回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0213
+ | Value=【ライブ】で【マクロスΔ】の楽曲を7回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0214
+ | Value=【ライブ】で【マクロスΔ】の楽曲を10回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0215
+ | Value=【ライブ】で【マクロスΔ】の楽曲を15回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0216
+ | Value=【ライブ】で【マクロスΔ】の楽曲を20回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0217
+ | Value=【ライブ】で【マクロスΔ】の楽曲を25回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0218
+ | Value=【ライブ】で【マクロスΔ】の楽曲を50回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0219
+ | Value=【ライブ】で【マクロスΔ】の楽曲を100回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0220
+ | Value=【ライブ】で【マクロスΔ】の楽曲を150回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0221
+ | Value=【ライブ】で【マクロスΔ】の楽曲を200回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0222
+ | Value=【ライブ】で【マクロスΔ】の楽曲を250回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0223
+ | Value=未設定（表示されていたらバグ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0224
+ | Value=未設定（表示されていたらバグ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0225
+ | Value=未設定（表示されていたらバグ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0226
+ | Value=未設定（表示されていたらバグ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0227
+ | Value=未設定（表示されていたらバグ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0228
+ | Value=未設定（表示されていたらバグ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0229
+ | Value=未設定（表示されていたらバグ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0230
+ | Value=フルコンボを5回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0231
+ | Value=フルコンボを10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0232
+ | Value=フルコンボを20回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0233
+ | Value=フルコンボを30回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0234
+ | Value=フルコンボを40回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0235
+ | Value=フルコンボを50回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0236
+ | Value=フルコンボを100回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0237
+ | Value=スコアランクSSを5回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0238
+ | Value=スコアランクSSを10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0239
+ | Value=スコアランクSSを20回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0240
+ | Value=スコアランクSSを30回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0241
+ | Value=スコアランクSSを40回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0242
+ | Value=スコアランクSSを50回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0243
+ | Value=スコアランクSSを100回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0244
+ | Value=ハイスコア150000以上を達成
+ | ParentPage=Texts/Bank/master
+}}
+                    

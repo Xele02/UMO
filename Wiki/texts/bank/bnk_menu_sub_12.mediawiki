@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_08
+ | Value=前回のプレイヤー名変更から30日以内は<br/>新たに変更できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_09
+ | Value=紹介文変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_10
+ | Value=紹介文を入力してください。<br/>（全角半角25文字まで）
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_11
+ | Value=・一部使用できない記号、文字がございます。<br/>・変更の反映に時間がかかることがあります。<br/>・個人情報や公序に反する内容は入力しないでください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_12
+ | Value=紹介文変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_13
+ | Value=紹介文を変更しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_14
+ | Value=プレイヤーID
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_15
+ | Value=プレイヤーIDをコピーしました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_playernameentry
+ | Value=プレイヤー名入力
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_playernameentry_desc
+ | Value=プレイヤー名を入力してください。<br/>（全角半角{0}文字まで）
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_playernameentry_notes
+ | Value=<color={0}>※プレイヤー名は後から変更することが可能です。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_playernameconfirm
+ | Value={0}<br/>でよろしいですか？<br/><color={1}>※プレイヤー名は後から変更することが可能です。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_notchangedplayername
+ | Value=プレイヤー名が変更されませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_notchangedcomment
+ | Value=紹介文が変更されませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_stamina_01
+ | Value=エナジー回復
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_stamina_01
+ | Value=歌晶石を{0}個消費することで<br/>エナジーを{1}回復します。<br/><br/><color=#C8087E>歌晶石  {2}→{3}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_stamina_02
+ | Value=歌晶石を{0}個消費することで<br/>エナジーを{1}回復します。<br/><br/><color=#C8087E>歌晶石が足りません。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_stamina_03
+ | Value=エナジーが{0}に回復しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_stamina_04
+ | Value=これ以上エナジーを回復できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_stamina_05
+ | Value={0}を{1}個消費することで<br/>エナジーを{2}回復します。<br/><br/><color=#C8087E>{0}  {3}→{4}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_week_recovery_01
+ | Value=曜日楽曲プレイ回数回復
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_week_recovery_02
+ | Value={0}使用確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_week_recovery_01
+ | Value={0}を{1}個消費することで<br/>曜日楽曲のプレイ回数を{2}回まで回復します。<br/><br/><color=#C8087E>{0}  {3}→{4}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_week_recovery_02
+ | Value=プレイ回数を回復する{0}を<br/>所持していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_week_recovery_03
+ | Value=曜日楽曲のプレイ回数が<br/>残り{0}回まで回復しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_week_recovery_04
+ | Value=間もなく日付が切り替わります。<br/>{0}を使用しますか？<br/><br/><color=#8E0529>※日付が切り替わると回復した回数分は<br/>翌日の曜日楽曲に上乗せされません。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_musiclevel_nocleartext
+ | Value=クリアした楽曲がありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_quest_change_diff_title
+ | Value=難易度選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_quest_change_diff_text
+ | Value=難易度 {0} のミッションが遊べます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_quest_reset
+ | Value={1} UC消費して<br/>ミッションを再度選びなおすことができます。<br/>リセットしますか？<br/><br/><color={0}>所持UC {2}→{3}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_quest_reset_failed
+ | Value={1} UC消費して<br/>ミッションを再度選びなおすことができます。<br/><br/><color={0}>UCが不足しています。<br/>所持UC {2}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_quest_last_spurt_title
+ | Value=ラッキーカード大量発生
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_quest_last_spurt_text
+ | Value=ボーナスミッションの<br/>出現確率が2倍になりました！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_quest_select_lucky
+ | Value=<color={0}>ラッキーミッションカードを選びました！</color><br/>ミッション達成時に取得できるポイントが2倍になります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_quest_progress
+ | Value=ミッション達成まであと　{0}{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_quest_touch_screen
+ | Value=STARTボタンでミッション開始
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_quest_touch_screen2
+ | Value=画面をタップでシャッフル開始
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_quest_touch_screen3
+ | Value=カードを1枚選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_quest_touch_screen4
+ | Value=画面をタップで進む
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_quest_limit_time_d
+ | Value=あと{0}日
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_quest_limit_time_h
+ | Value=あと{0}時間
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_quest_limit_time_m
+ | Value=あと{0}分
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_quest_progress_count
+ | Value=あと{0}{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_quest_unreceived_reward_title
+ | Value=未受け取りの報酬があります
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_quest_unreceived_reward_text
+ | Value=ミッション特設ページにて<br/>報酬を受け取ることができます。<br/><color={0}>※イベント終了後1時間以内に<br/>受け取らなければ報酬が消失します。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_collect_ticket_few_title
+ | Value=チケット消費
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_collect_ticket_few_msg
+ | Value=チケットを{0}枚消費して楽曲をプレイします。<br/><br/><color=#C8087E>チケットが不足しています。<br/>所持チケット数 {1}枚</color><br/><br/>ライブでチケットを集めますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_login_item00_title_msg
+ | Value=<color=#C8087E>超時空LIVEチケット　{0}枚</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_login_item00_label00_msg
+ | Value=イベントの楽曲をプレイするために必要なアイテム。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_login_item00_label01_msg
+ | Value=<color=#8e0529>現在開催中のイベント終了時に消失します。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    

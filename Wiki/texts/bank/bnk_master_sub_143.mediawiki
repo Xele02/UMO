@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1980
+ | Value=海中から勢いよく空へとジャンプするハック。<br/>その脅威のジャンプ力は、水中生活に適応したラグナ人ならではだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1981
+ | Value=おしゃれでキュートな花柄モチーフのビキニを纏い、夏の海を絶賛満喫中なカナメ。<br/>いつもはしっかりチームを纏める彼女も、夏の太陽の下ではちょっと大胆になるのかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1982
+ | Value=【大人な夏のお楽しみ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1983
+ | Value=青く広がる大海原を見つめて、何やら思いついた様子のクラゲ大好きアラド隊長。<br/>タモ網を片手に携えて、その心は最高級の珍味たちとの出会いに膨らんでいる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1984
+ | Value=ぷかぷかと波間に揺られながら見上げる夏の空は、格別に爽快なものがあるだろう。<br/>ただ、油断しているとウミネコたちの丁度いい休憩場所にされてしまうかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1985
+ | Value=ウミネコのボスをあと一歩のところまで追いつめるも、逃げられてしまったハヤテたち。<br/>悔しそうなハヤテだが、このとき見たウミネコの動きがのちの試験での逆転に繋がった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1986
+ | Value=本気が出せないフレイアのため、入隊試験中のハヤテの映像を映し出したカナメ。<br/>カナメや美雲の目論見通り、フレイアは調子を取り戻し力強く歌い始めたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1987
+ | Value=押し売りに捕まってしまったフレイアの手を引き、一目散に駆け出すハヤテ。<br/>惑星アル・シャハルでの一幕のように、こういう事態には慣れっこのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1988
+ | Value=シグル・バレンスの砲撃により海中に没したかに見えたマクロス・エリシオンだが、<br/>浮上した際にはすでに変形を終えており、即座に反撃に移ることで敵の虚をついた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1989
+ | Value=ボスを追って水中へ潜るも、捕まえるどころか顔面に一撃を貰ってしまうハヤテ。<br/>さすがに普通の人間が水中でウミネコを相手にするのは分が悪すぎたといえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1990
+ | Value=海中から浮上しマクロス・キャノンを放ったマクロス・エリシオン。<br/>船体を滝のように流れる大量の海水が、壮観な眺めを作り出している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1991
+ | Value=惑星ラグナの海沿いに作られた街並み。<br/>ところどころ水路の流れるその景色は、どこを切り取っても絵になりそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1992
+ | Value=ウミネコを追いかけて海に飛び込む際、ハヤテが脱ぎ捨てたTシャツ。<br/>どこまでも青いラグナの空に、Tシャツの白がよく映える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1993
+ | Value=デルタ小隊の一員として、オフでもワルキューレの警護は欠かさないミラージュ。<br/>お気に入りの水着で浮き輪片手に夏の海を満喫するのも、きっと任務の一環なのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1994
+ | Value=小型支援機「リル・ドラケン」を装着し、航続距離と性能を強化したSv-262Hs。<br/>その性能は白騎士であるキースの手によりいかんなく発揮され、デルタ小隊を苦しめた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1995
+ | Value=ウィンダミアを守る騎士であるキースにとって、夏の風は無縁といえるかもしれない。<br/>ただ、彼がもし夏の砂浜に現れたのなら、どこか心地よい涼風を運んできてくれそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1996
+ | Value=偶然の邂逅から一時の語らいを経た2人は、互いに身を削りながら再び戦場で相見える。<br/>「カシム・エーベルハルト！」「ハヤテ・インメルマン！」─ハヤテ、カシム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1997
+ | Value=「風の歌」の実験で混乱する空中騎士団の中にあって、なお機体を制御し続けるキース。<br/>キースはハインツの生体フォールド波の乱れをルンにはっきりと感じ取っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1998
+ | Value=フレイアの発する生体フォールド波と共鳴し、凄まじい戦闘能力を発揮するハヤテ。<br/>しかしそれは正常な状態とはいえず、むしろ暴走といって差し支えのないものだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1999
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2000
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2002
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2003
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2004
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2005
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2006
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2007
+ | Value=【密航者フレイア】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2008
+ | Value=【密航者フレイア】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2009
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2010
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2011
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2012
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2013
+ | Value=【It's show time!】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2014
+ | Value=【It's show time!】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2015
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2016
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2017
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2018
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2019
+ | Value=【閃光のAXIA】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2020
+ | Value=【閃光のAXIA】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2021
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2022
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2023
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2024
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2025
+ | Value=【メカニック担当マキナ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2026
+ | Value=【メカニック担当マキナ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2027
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2028
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2029
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

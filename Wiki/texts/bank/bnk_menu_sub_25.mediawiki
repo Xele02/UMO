@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_name_05
+ | Value=支援プレート
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_name_06
+ | Value=Lスキル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_name_07
+ | Value=Aスキル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_name_08
+ | Value=コンボ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_name_09
+ | Value=スコアノーツ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_name_10
+ | Value=ラッキーリーフ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_name_11
+ | Value=バルキリー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_desc_01
+ | Value=歌姫とプレートのステータスのみで獲得できるスコアの予測
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_desc_02
+ | Value=着用した衣装のステータスによって上昇する予測
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_desc_03
+ | Value=楽曲とプレートの属性の合致によるボーナスによって上昇する予測
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_desc_04
+ | Value=センタースキルによって上昇するスコアの予測
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_desc_05
+ | Value=支援プレートによって上昇するスコアの予測
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_desc_06
+ | Value=ライブスキルによって上昇するスコアの予測の合計
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_desc_07
+ | Value=アクティブスキルによって上昇するスコアの予測
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_desc_08
+ | Value=楽曲の90％まで継続したコンボボーナスの予測
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_desc_09
+ | Value=出現するスコアノーツを全てタップした場合の予測
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_desc_10
+ | Value=解放状態のラッキーリーフによって上昇するスコアの予測
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_desc_11
+ | Value=選択したバルキリーによって上昇するスコアの予測
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_reward_select_scene_detail_text
+ | Value=【{0}】の<br/>EPを大幅に上げられるプレート。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_normal_bingo_start_text
+ | Value={0}枚目のビンゴミッションを開始します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_mission_conditions_text
+ | Value=【獲得条件】
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_not_received_item_title
+ | Value=期限切れのアイテム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_not_received_item_text
+ | Value=以下のアイテムは期限切れのため入手できませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_valyrietuneup_title
+ | Value=消費アイテム確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_valkyrietuneup_desc
+ | Value=バルキリーの拡張性能を解放します。よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_valyrietuneupcheck_title
+ | Value=拡張性能解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_save_title
+ | Value=変更内容が保存されていません
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_save_desc
+ | Value=変更した内容を保存していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_bast_title
+ | Value=配置保存
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_bast_desc
+ | Value=編集内容を保存しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_no_have_text
+ | Value=デコアイテムを<br/>所持していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_bast_storage_title
+ | Value=デコルーム一覧
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_storage_delete_title
+ | Value=削除確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_storage_delete_desc
+ | Value={0}<br/>に保存されているデコルームを削除しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_storage_delete_comp_title
+ | Value=削除完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_storage_delete_comp_desc
+ | Value={0}<br/>のデコルームを削除しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_storage_overwrite_title
+ | Value=上書き確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_storage_overwrite_desc
+ | Value={0}<br/>に現在のデコルームを上書き保存しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_storage_overwrite_comp_title
+ | Value=保存完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_storage_overwrite_comp_desc
+ | Value={0}<br/>に現在のデコルームを上書き保存しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_storage_select_comp_title
+ | Value=デコルーム変更完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_storage_select_comp_desc
+ | Value=現在のデコルームを<br/>{0}<br/>に変更しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_storage_select_text
+ | Value=選択中のデコルームに変更しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_screenshot_success
+ | Value=写真を保存しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_sel_popup_storage_message_ios
+ | Value=歌マクロスに写真への書き込みが<br/>許可されていないので、写真を保存できません。<br/><br/>以下の権限を許可してください。<br/><br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_sel_popup_storage_message_android
+ | Value=歌マクロスにストレージへのアクセスが<br/>許可されていないので、写真を保存できません。<br/><br/>以下の権限を許可してください。<br/><br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_screenshot_storage_text_ios
+ | Value=写真<br/>写真を保存するために<br/>フォトライブラリに書き込みます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_screenshot_storage_text_android
+ | Value=ストレージ<br/>写真を保存するために<br/>本体のストレージやSDカードにアクセスします。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_popup_err_no_permission_storage
+ | Value=ストレージへのアクセスが許可されて<br/>いないので、写真を保存できませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_popup_err_not_abailable_storage
+ | Value=ストレージの空き容量が不足している<br/>ので、写真を保存できませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

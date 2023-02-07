@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0014
+ | Value=マクシミリアン・ジーナス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0015
+ | Value=早乙女アルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0016
+ | Value=ガムリン・木崎
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0017
+ | Value=ミリア・ファリーナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0018
+ | Value=<size=16>キース・エアロ・ウィンダミア</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0019
+ | Value=ロイド・ブレーム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0020
+ | Value=ボーグ・コンファールト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0021
+ | Value=ルカ・アンジェローニ 
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0022
+ | Value=S.M.S隊員
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0023
+ | Value=イサム・ダイソン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0024
+ | Value=ガルド・ゴア・ボーマン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0025
+ | Value=ミラージュ・F・ジーナス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0026
+ | Value=オオサンショウウオ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0027
+ | Value=一条輝
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0028
+ | Value=イサム・ダイソン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0029
+ | Value=一条輝
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0030
+ | Value=ブレラ・スターン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0031
+ | Value=早乙女アルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0032
+ | Value=マックス＆ミリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0033
+ | Value=熱気バサラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0034
+ | Value=ガムリン・木崎
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0035
+ | Value=テオ・ユッシラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0036
+ | Value=ザオ・ユッシラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0037
+ | Value=カシム・エーベルハルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0038
+ | Value=ヘルマン・クロース
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=plt_nm_0039
+ | Value=ハヤテ・インメルマン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_0000
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_0001
+ | Value=歌晶石
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_0002
+ | Value=デカルガチャチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_0003
+ | Value=ユニオンクレジット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_0004
+ | Value=歌マクパス特別補填
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_0005
+ | Value=背景
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_0006
+ | Value=キャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_0007
+ | Value=フレーズ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_0008
+ | Value=スタンプ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_0009
+ | Value=バルキリーフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_0010
+ | Value=衣装トルソー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_dsc_0000
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_dsc_0001
+ | Value=ガチャやエナジーの回復など、<br/>さまざまなことに使用できるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_dsc_0002
+ | Value=歌晶石の代わりにガチャを引くことができるチケット。<br/><color=#C8087E>※デカルガチャなど一部のガチャで使用できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_dsc_0003
+ | Value=エピソードプレートの能力の解放など、<br/>さまざまなことに使用できる通貨。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_dsc_0004
+ | Value=歌マクパスのログイン補填です。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_dsc_0005
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_dsc_0006
+ | Value=デコルームとチャットのスタンプに使用できるキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_dsc_0007
+ | Value=デコルームとチャットのスタンプに使用できるフレーズ<br/>({0})
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_dsc_0008
+ | Value=チャットで使用できるスタンプ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_dsc_0009
+ | Value=バルキリーのフィギュア。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_dsc_0010
+ | Value=衣装を着せたトルソー。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_uni_0000
+ | Value=個
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_uni_0001
+ | Value=個
+ | ParentPage=Texts/Bank/master
+}}
+                    

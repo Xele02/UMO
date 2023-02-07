@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ranking_ev_no_entry
+ | Value=ランキングに参加していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ranking_ev_range_not_found
+ | Value=その順位にはユーザーがいません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rank_range_title
+ | Value=表示順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rank_range_myself
+ | Value=自分の順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rank_range_place
+ | Value={0}位～
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_week_play_count_limit
+ | Value=プレイ可能回数の上限に<br/>達したため本日はこれ以上<br/>プレイできません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_end_week
+ | Value=本日の曜日イベントは<br/>終了しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_end_score_rank
+ | Value=集計中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_end_attain
+ | Value=集計中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_end_attain_banner
+ | Value=集計中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_end_attain_popup
+ | Value=集計中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_period
+ | Value=開催期間:{0} ～ {1} まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_period_date
+ | Value={0:D4}年 {1}月{2}日 {3:D2}:{4:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_remain_prefix
+ | Value=あと 
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_remain_day
+ | Value={0}日
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_remain_hour
+ | Value={0}時間
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_remain_minute
+ | Value={0}分
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_remain_second
+ | Value={0}秒
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_collect_ticket_label
+ | Value=所持チケット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_collect_current_point_label
+ | Value=累計ポイント
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_collect_next_point_label
+ | Value=次の報酬まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_collect_point_unit
+ | Value=pt
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_collect_rank_label
+ | Value=現在の順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_collect_rank_counting_label
+ | Value=最終順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_collect_rank_unit
+ | Value=位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_collect_rank_counting
+ | Value=集計中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_collect_reward_label
+ | Value=次の報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_current_point_label
+ | Value=累計ポイント
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_next_point_label
+ | Value=次の報酬まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_point_unit
+ | Value=pt
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_rank_hiscore_label
+ | Value=EXバトル順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_rank_hiscore_counting_label
+ | Value=最終EXバトル順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_rank_total_label
+ | Value=累計ポイント順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_rank_total_counting_label
+ | Value=最終累計ポイント順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_rank_unit
+ | Value=位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_bp_counting_label
+ | Value=EXバトルハイスコア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_bp_unit
+ | Value=
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_rank_counting
+ | Value=集計中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_reward_label
+ | Value=次の報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_class
+ | Value=クラス{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_ｔarｇeｔ_score
+ | Value=目標スコア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_class_lvup
+ | Value=新しいバトルクラスで勝利すればイベントポイントが<br/>より多く獲得できるようになります。<br/>新しいバトルクラスに挑戦しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_class_get_emblem_01
+ | Value=バトルクラス{0}の称号を獲得しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_class_get_emblem_02
+ | Value=バトルクラス{0}までの称号を獲得しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_class_next_01
+ | Value=バトルクラス{0}のEXバトルに勝利 または
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_class_next_02
+ | Value=楽曲EXバトルスコア{0}以上獲得
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_class_caution
+ | Value=挑戦するバトルクラスを選んでください。<br/>高クラスになるほどイベントポイントがより多く獲得できるようになります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_class_reselect_01
+ | Value=バトルクラス再選択確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_class_reselect_02
+ | Value=バトルクラスの再選択を行います。<br/>よろしいですか？<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_class_reselect_03
+ | Value=<color=#8e0529>※EXゲージがリセットされます。<br/>※対戦相手が再度マッチングされます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_music_attribute_003
+ | Value=命
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_music_attribute_004
+ | Value=全
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_combo_title_h2
+ | Value=コンボ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_fullcombo
+ | Value=フルコンボ<br/>未達成
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_prefect_fullcombo
+ | Value=パーフェクトフルコンボ<br/>未達成
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_unit_title_h2
+ | Value=ユニットライブ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_reward_title_h2
+ | Value=達成報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_reward_score
+ | Value=SCORE SS <br/>未達成
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_reward_combo
+ | Value=COMBO SS <br/>未達成
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_reward_clear
+ | Value=CLEAR 報酬 <br/>未達成
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_music_level_title_h2
+ | Value=楽曲レベル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_bonus_title_h2
+ | Value=ボーナス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_bonus_ok
+ | Value=あり
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_bonus_not_ok
+ | Value=なし
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_not_exist_filter_text
+ | Value=現在のフィルター設定で該当する楽曲はありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_gacha_period_warning_title
+ | Value=有効期限付きアイテム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_gacha_period_warning_text_1
+ | Value={0}で引けるガチャが<color=#C8087E>本日で終了</color>します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_gacha_period_warning_text_2
+ | Value=ガチャ開催期限：{0}/{1}/{2} {3}:{4:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_gacha_period_warning_text_3
+ | Value=※対象ガチャについては、ガチャ画面をご確認ください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_setting_desc_006
+ | Value=フィルター設定は無効となります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_skip_story_title
+ | Value=ライブスキップチケット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_skip_story_text
+ | Value=記憶の時空で楽曲を選択している場合は、<br/>スキップ機能を利用できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_diva_change_text
+ | Value=4人目、5人目に設定される歌姫のステータスは、<br/>ユニットに反映されません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_diva_limit_message
+ | Value=人数制限の為<br/>この楽曲に参加しません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_head_prism_btton_on
+ | Value=ON
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_head_prism_btton_off
+ | Value=OFF
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_save_button_save
+ | Value=保存
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_save_button_overwrite
+ | Value=上書き
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_mv_mode_description
+ | Value=ノーツ表示設定：【ON】ノーツが表示されます。【OFF】ノーツのみが非表示なります。　　バルキリーモード設定：【ON】バルキリーモード演出が表示されます。【OFF】バルキリーモード演出が非表示になります。　　超歌姫モード設定：【ON】超歌姫モード演出が表示されます。【OFF】超歌姫モード演出が非表示になります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_prism_switch_button_on
+ | Value=ON
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_prism_switch_button_off
+ | Value=OFF
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_mv_mode_switch_button_on
+ | Value=ON
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_mv_mode_switch_button_off
+ | Value=OFF
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_unitset_description
+ | Value=操作するユニットセットをリストから選択してください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_unitset_page
+ | Value={0}/{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_unitset_dummy_name
+ | Value=ユニット{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_status_skill_regulation_series_y
+ | Value=シリーズ一致のため、このスキル効果は発動しません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_status_skill_regulation_series_n
+ | Value=シリーズ不一致のため、このスキル効果は発動しません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_status_skill_regulation_attr
+ | Value=対象の属性楽曲ではないので発動しません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_music_exp
+ | Value=熟練度
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_diva_status_titla_level
+ | Value=歌姫Lv
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_diva_status_titla_total
+ | Value=TOTAL
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_diva_status_titla_music_exp
+ | Value=熟練度
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unit_disp_type_scene
+ | Value=プレート
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unit_disp_type_diva
+ | Value=歌姫
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_playbutton_en
+ | Value=消費EN
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_playbutton_ap
+ | Value=消費AP
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_prism_unlock_text
+ | Value=【解放条件】<br/><br/>プレイヤーランクを{0}にする。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unit_status_attr_reg
+ | Value=以下の楽曲をプレイする時のみセンタースキルが発動します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_set_prizm_title
+ | Value=変更確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    

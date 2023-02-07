@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3430
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3431
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3432
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3433
+ | Value=特別な水着衣装でパレオをひらめかせながら、カナメは気高く情熱的に観客を魅了する。<br/>リーダーとしてだけじゃなく、美雲のライバルとしてもその歌声は熱く響き渡っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3434
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3435
+ | Value=戦場となったアル・シャハルの市街に、コスチュームを纏って集結したワルキューレ。<br/>力強いサインと美しいその姿が、人々にワルキューレが助けが来たことを伝えるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3436
+ | Value=ブリッジオペレーターのミズキは、頭にクラゲのような生き物を乗せた女の子。<br/>控えめなところもあるけれど、噂話にはグイグイきちゃうお調子者なところも。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3437
+ | Value=【情熱と女神の夏】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3438
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3439
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3440
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3441
+ | Value=【情熱と女神の夏】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3442
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3443
+ | Value=【情熱と女神の夏】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3444
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3445
+ | Value=ついに真打登場といった様子でロックフェスのステージへと上がるFire Bomber。<br/>ミレーヌの熱く突き抜けるパフォーマンスに、観客たちは夏の暑さも忘れて大熱狂だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3446
+ | Value=【夏を照らす瞳たち】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3447
+ | Value=真夏の炎天下さながらの暑さに晒されて、ミレーヌもグババもへとへとな様子。<br/>こんなとき気の利いた差し入れをしたなら、目を輝かせて喜んでくれるかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3448
+ | Value=ジャミング・バーズのオーディション参加し、堂々とプロポーションを披露するミリア。<br/>我らが市長の登場に市民は大盛り上がりだが、身内であったら頭を抱えてしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3449
+ | Value=【夏を照らす瞳たち】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3450
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3451
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3452
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3453
+ | Value=【夏を照らす瞳たち】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3454
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3455
+ | Value=【夏を照らす瞳たち】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3456
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3457
+ | Value=クラゲの飾りが特徴的な水着をゆらゆら揺らし、歌を届けていくレイナ。<br/>ハートをチクチクさせる歌と眼差しで、刺激的なチャレンジは大成功したようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3458
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3459
+ | Value=カナメの掛け声に合わせて、一気にラストスパートをかけていくワルキューレ。<br/>レイナとマキナも疲れを感じさせない歌声で、新しい世界へ観客たちを導いていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3460
+ | Value=相も変わらず勝負を挑んでくるボーグに、いつまで続けるのかと呆れてしまうヘルマン。<br/>「もちろん、マスターから1本取るまで！」─ボーグ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3461
+ | Value=デリカシーに欠けるレイナの物言いに、女の子としてしっかり注意するマキナ。<br/>クラゲ祭りと同様に、こういった2人のやり取りも毎年恒例なのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3462
+ | Value=【刺激的チャレンジ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3463
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3464
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3465
+ | Value=【刺激的チャレンジ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3466
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3467
+ | Value=【刺激的チャレンジ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3468
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3469
+ | Value=ウサギの飾りがかわいい水着で、もこもこふわふわな魅力を振りまくマキナ。<br/>見るものを癒す愛らしい仕草に、ステージもまるでピンク色に染まるかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3470
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3471
+ | Value=カナメの掛け声に合わせて、一気にラストスパートをかけていくワルキューレ。<br/>我先にと飛び出していくフレイアに、コミカルな演出で最後の曲を盛り上げていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3472
+ | Value=ブリッジオペレーターのニナは、球状レーダーに目を凝らすブリッジ内の索敵担当。<br/>ジャケットの胸元にウミネコを抱いている他、思ったことは口に出るタイプみたい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3473
+ | Value=【癒し系＆挑発ボディー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3474
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3475
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3476
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3477
+ | Value=【癒し系＆挑発ボディー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3478
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3479
+ | Value=【癒し系＆挑発ボディー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    

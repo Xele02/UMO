@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=cos_0098_01
+ | Value=レイナ衣装 018
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0099_01
+ | Value=レイナ衣装 019
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0100_01
+ | Value=レイナ衣装 020
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0101_01
+ | Value=聖マリア学園制服
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0102_01
+ | Value=スターリットミルキー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0103_01
+ | Value=ウィッシュ・オブ・ヴァルキュリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0104_01
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0105_01
+ | Value=パンプキンウィッチ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0106_01
+ | Value=ゴールドフィッシュテール
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0107_01
+ | Value=ピンキープティ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0108_01
+ | Value=トゥインクルシェイド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0109_01
+ | Value=リテールアンブルー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0110_01
+ | Value=マンジュリカ・ステラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0111_01
+ | Value=ランカ・ブロッサム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0112_01
+ | Value=チアフルエメラルド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0113_01
+ | Value=ジョリーローズ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0114_01
+ | Value=クロスオーバーピーチ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0115_01
+ | Value=フラッフィー・ステラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0116_01
+ | Value=マニフィック・エクラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0117_01
+ | Value=ラズライト・ティーン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0118_01
+ | Value=ミニオン・ノエル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0119_01
+ | Value=ランカ衣装 019
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0120_01
+ | Value=ランカ衣装 020
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0121_01
+ | Value=オフショルダー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0122_01
+ | Value=クリムゾンボンテージ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0123_01
+ | Value=カウントベイビー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0124_01
+ | Value=シャイン・オブ・ヴァルキュリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0125_01
+ | Value=ピンクハイビスカス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0126_01
+ | Value=アムールアメール
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0127_01
+ | Value=カーディナルレッド・ステラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0128_01
+ | Value=レーヌ・デ・エピヌス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0129_01
+ | Value=ピンキーナース
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0130_01
+ | Value=パープルギャラクシー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0131_01
+ | Value=チアフルルビー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0132_01
+ | Value=クロスオーバールージュ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0133_01
+ | Value=ヴェスタ・ゴージャス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0134_01
+ | Value=マニフィック・クール  
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0135_01
+ | Value=サン・ド・オルレアン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0136_01
+ | Value=シュガーベリーベイビー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0137_01
+ | Value=ブリリアント・ノエル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0138_01
+ | Value=シェリル衣装 018
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0139_01
+ | Value=クリムゾンスカーレットクイーン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0140_01
+ | Value=ファイアーラヴァー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0141_01
+ | Value=ボンバーライブ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0142_01
+ | Value=ダイナマイトビート
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0143_01
+ | Value=クロスオーバーガール
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0144_01
+ | Value=イノセントブルーム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0145_01
+ | Value=スパークルフレイム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0146_01
+ | Value=トゥインクルマジック
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0147_01
+ | Value=キューティー・マリン
+ | ParentPage=Texts/Bank/master
+}}
+                    

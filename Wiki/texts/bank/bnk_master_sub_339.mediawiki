@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1245
+ | Value=歌レートを5900にして<br/>歌グレードを【少尉★10】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1246
+ | Value=歌レートを6100にして<br/>歌グレードを【中尉★2】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1247
+ | Value=歌レートを6300にして<br/>歌グレードを【中尉★4】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1248
+ | Value=歌レートを6500にして<br/>歌グレードを【中尉★6】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1249
+ | Value=歌レートを6700にして<br/>歌グレードを【中尉★8】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1250
+ | Value=歌レートを6900にして<br/>歌グレードを【中尉★10】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1251
+ | Value=歌レートを7100にして<br/>歌グレードを【大尉★2】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1252
+ | Value=歌レートを7300にして<br/>歌グレードを【大尉★4】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1253
+ | Value=歌レートを7500にして<br/>歌グレードを【大尉★6】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1254
+ | Value=歌レートを7700にして<br/>歌グレードを【大尉★8】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1255
+ | Value=歌レートを7900にして<br/>歌グレードを【大尉★10】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1256
+ | Value=歌レートを8100にして<br/>歌グレードを【少佐★2】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1257
+ | Value=歌レートを8300にして<br/>歌グレードを【少佐★4】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1258
+ | Value=歌レートを8500にして<br/>歌グレードを【少佐★6】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1259
+ | Value=歌レートを8700にして<br/>歌グレードを【少佐★8】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1260
+ | Value=歌レートを8900にして<br/>歌グレードを【少佐★10】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1261
+ | Value=歌レートを9100にして<br/>歌グレードを【中佐★2】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1262
+ | Value=歌レートを9300にして<br/>歌グレードを【中佐★4】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1263
+ | Value=歌レートを9500にして<br/>歌グレードを【中佐★6】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1264
+ | Value=歌レートを9700にして<br/>歌グレードを【中佐★8】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1265
+ | Value=歌レートを9900にして<br/>歌グレードを【中佐★10】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1266
+ | Value=歌レートを10100にして<br/>歌グレードを【大佐★2】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1267
+ | Value=歌レートを10300にして<br/>歌グレードを【大佐★4】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1268
+ | Value=歌レートを10500にして<br/>歌グレードを【大佐★6】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1269
+ | Value=歌レートを10700にして<br/>歌グレードを【大佐★8】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1270
+ | Value=歌レートを10900にして<br/>歌グレードを【大佐★10】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1271
+ | Value=歌レートを11000にして<br/>歌グレードを【准将★1】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1272
+ | Value=歌レートを11100にして<br/>歌グレードを【准将★2】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1273
+ | Value=歌レートを11200にして<br/>歌グレードを【准将★3】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1274
+ | Value=歌レートを11300にして<br/>歌グレードを【准将★4】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1275
+ | Value=歌レートを11400にして<br/>歌グレードを【准将★5】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1276
+ | Value=歌レートを11500にして<br/>歌グレードを【准将★6】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1277
+ | Value=歌レートを11600にして<br/>歌グレードを【准将★7】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1278
+ | Value=歌レートを11700にして<br/>歌グレードを【准将★8】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1279
+ | Value=歌レートを11800にして<br/>歌グレードを【准将★9】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1280
+ | Value=歌レートを11900にして<br/>歌グレードを【准将★10】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1281
+ | Value=歌レートを12000にして<br/>歌グレードを【少将★1】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1282
+ | Value=歌レートを12200にして<br/>歌グレードを【少将★2】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1283
+ | Value=歌レートを12400にして<br/>歌グレードを【少将★3】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1284
+ | Value=歌レートを12600にして<br/>歌グレードを【少将★4】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1285
+ | Value=歌レートを12800にして<br/>歌グレードを【少将★5】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1286
+ | Value=歌レートを13000にして<br/>歌グレードを【少将★6】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1287
+ | Value=歌レートを13200にして<br/>歌グレードを【少将★7】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1288
+ | Value=歌レートを13400にして<br/>歌グレードを【少将★8】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1289
+ | Value=歌レートを13600にして<br/>歌グレードを【少将★9】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1290
+ | Value=歌レートを13800にして<br/>歌グレードを【少将★10】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1291
+ | Value=歌レートを14000にして<br/>歌グレードを【中将★1】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1292
+ | Value=歌レートを14300にして<br/>歌グレードを【中将★2】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1293
+ | Value=歌レートを14600にして<br/>歌グレードを【中将★3】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1294
+ | Value=歌レートを14900にして<br/>歌グレードを【中将★4】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    

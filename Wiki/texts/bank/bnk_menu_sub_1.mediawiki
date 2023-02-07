@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=pbox_title_02
+ | Value=プレゼント受け取り
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_title_03
+ | Value=一括受取確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_title_04
+ | Value=所持上限
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_01
+ | Value=<color=#C8087E>{0}</color><br/>を受け取ります。<br/><br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_02
+ | Value=受け取ろうとしたアイテムが<br/>所持上限を超えています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_03
+ | Value=<color=#C8087E>{0}</color><br/><br/>を受け取りました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_04
+ | Value={0}<br/><br/>を受け取り、LUCKの加算を行いました。<br/>{1} のLUCKが {2} 上昇しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_05
+ | Value={0}<br/><br/>{1} のLUCKは上限に達しているため、<br/>{2} に変換されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_06
+ | Value=プレゼントを一括で受け取ります。<br/><br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_07
+ | Value=受け取ろうとしたアイテムに<br/>所持上限を超えるものがありました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_08
+ | Value=プレゼント {0} 件を受け取りました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_09
+ | Value=受け取り可能なプレゼントがありませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_10
+ | Value={0}/{1}/{2} {3}:{4}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_11
+ | Value={0}/{1}/{2} {3}:{4}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_12
+ | Value=あと{0}日
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_13
+ | Value=あと{0}時間
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_text_14
+ | Value=あと{0}分
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_win_warn01
+ | Value=<color=#c8087e>最新の{0}件が表示されます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_win_warn02
+ | Value=<color=#c8087e>最新の{0}件が表示されます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_win_none01
+ | Value=プレゼントがありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pbox_win_none02
+ | Value=受け取り履歴がありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_00
+ | Value=通知設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_01
+ | Value=ご利用の端末の通知設定をOFFにしている場合はすべての通知が行われません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_02
+ | Value=イベントやキャンペーンなど<br/>お知らせ情報をプッシュ通知します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_03
+ | Value=通知が届く時間帯を設定します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_04
+ | Value=「お知らせ」には適用されません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_05
+ | Value=エナジーが全回復した時に<br/>プッシュ通知します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_06
+ | Value=超時空SNSで会話が発信された時に<br/>プッシュ通知します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_07
+ | Value=バルキリーオペレーションが<br/>完了した時にプッシュ通知します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_08
+ | Value=APが全回復した時に<br/>プッシュ通知します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_09
+ | Value=EX暴走エネミーが出現した時に<br/>プッシュ通知します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_10
+ | Value=「お知らせ」の通知をOFFにしている場合は通知されません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_11
+ | Value=デコルーム上で回収できるものが<br/>満タンの時にプッシュ通知します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_battle_event_text_01
+ | Value=バトルクラス再選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_battle_event_text_02
+ | Value=※クラスを再選択するとEXゲージがリセットされます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_battle_event_text_03
+ | Value=バトル途中経過の表示
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_battle_event_text_04
+ | Value=※OFFにするとライブ中の途中経過のアイコンが表示されなくなります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_00
+ | Value=音量設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_01
+ | Value=BGM
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_02
+ | Value=効果音
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_03
+ | Value=ボイス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_04
+ | Value=画面表示設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_05
+ | Value=端末の向きによって自動で画面を回転するか、<br/>左右どちらかに固定で表示するかを選択します<br/>「自動」を設定している場合でも端末機能で画面の向きを<br/>ロックしている場合は回転しません
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_05_iphone
+ | Value=<size=22>端末の向きによって自動で画面を回転するか、<br/>左右どちらかに固定で表示するかを選択します。<br/>「自動」を設定している場合でも端末機能で画面の向きを<br/>ロックしている場合は回転しません。</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_05_android
+ | Value=<size=22>端末の向きによって自動で画面を回転するか、<br/>左右どちらかに固定で表示するかを選択します。</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_06
+ | Value=自動
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_07
+ | Value=右を上にする
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_08
+ | Value=左を上にする
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_09
+ | Value=表示設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_10
+ | Value=ビデオ設定を低、非表示にすることでゲームの動作が軽くなる場合があります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

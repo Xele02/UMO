@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=home_footer_badge_text_03
+ | Value=ガチャ更新！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_footer_badge_text_04
+ | Value=朝 無料！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_footer_badge_text_05
+ | Value=昼 無料！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_footer_badge_text_06
+ | Value=夜 無料！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_footer_badge_text_07
+ | Value=CHECK！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_footer_badge_text_08
+ | Value=新機能追加！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_footer_badge_text_09
+ | Value=受信メッセージあり
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_banner_period
+ | Value={0}/{1}/{2} {3}:{4:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_event_banner_period
+ | Value={0}/{1}/{2}:{3:D2}～{4}/{5}/{6}:{7:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_unlock_rank
+ | Value=RANK{0}で解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gakuya_gift_unlock_rank
+ | Value=RANK{0}<br/>で解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gakuya_status_diva_ranking_value
+ | Value={0}位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gakuya_intimacy_present_none
+ | Value=ギフトを持っていないため<br/>ギフトを贈ることができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gakuya_gift_stock_count
+ | Value=所持数：{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_gakuya_present_ask_title
+ | Value={0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_gakuya_present_ask
+ | Value={0}<br/><br/>このアイテムを使用しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_gakuya_present_lv_max
+ | Value=親密度レベルが最大のため<br/>ギフトを贈ることができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_gakuya_present_limit_title
+ | Value=使用上限
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_gakuya_present_limit
+ | Value=本日はこれ以上ギフトを贈ることができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sp_transition_bingo_error_title
+ | Value=ビンゴ未開放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sp_bingo_debutmission_notclear_text
+ | Value=デビューミッションをすべて達成後<br/>挑戦できます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_event_started
+ | Value=イベント開催中！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_event_counting
+ | Value=イベント集計中！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_event_reward_recieved
+ | Value=エピローグ配信中！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_story_release_diva
+ | Value={0}の記憶を<br/>解放しよう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_story_release_music
+ | Value=新しい歌の記憶を<br/>解放しよう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_bg_limit_period
+ | Value={0}/{1}/{2} {3}:{4:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_banner_raid_lobby_open
+ | Value=マクロスロビーオープン！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_banner_raid_end
+ | Value=イベント終了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_pass_button_purchase
+ | Value=　購入可能！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_pass_button_rare_up_item
+ | Value=まであと{0}回
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_minigame001_pause_title
+ | Value=一時停止中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_minigame001_pause_text
+ | Value=SCORE {0:D8}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_minigame001_retire_title
+ | Value=リタイア確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_minigame001_retire_text
+ | Value=リタイアすると報酬を獲得することができません。<br/><br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_fes_remain_prefix
+ | Value=開催まであと 
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_ticket_ev_name
+ | Value=所持イベントチケット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_unspecified
+ | Value=指定なし
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_difficulty_title_h2
+ | Value=難易度
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_difficulty_easy
+ | Value=EASY
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_difficulty_normal
+ | Value=NORMAL
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_difficulty_hard
+ | Value=HARD
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_difficulty_veryhard
+ | Value=VERY HARD
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_difficulty_extreme
+ | Value=EXTREME
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_difficulty_6line_hard
+ | Value=HARD+
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_difficulty_6line_veryhard
+ | Value=VERY HARD+
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_difficulty_6line_extreme
+ | Value=EXTREME+
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_music_attribute_title_h2
+ | Value=属性
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_music_attribute_001
+ | Value=星
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_music_attribute_002
+ | Value=愛
+ | ParentPage=Texts/Bank/menu
+}}
+                    

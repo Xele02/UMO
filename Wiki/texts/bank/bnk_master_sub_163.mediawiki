@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2980
+ | Value=特別席にてランカのファーストライブを鑑賞中、突然光を放つシェリルのイヤリング。<br/>次の瞬間、イヤリングを中心に伝わってくる鋭い痛みがシェリルを襲ったのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2981
+ | Value=アルトが撃墜されたという報せを受けて、軍病院へと駆け付けたシェリル。<br/>治療器具に体を覆われて横たわるアルトの姿に、声を震わせるシェリルだったが…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2982
+ | Value=準女王バジュラとの戦闘で撃墜され、意識不明で軍病院へと搬入されていたアルト。<br/>あたりに響くシェリル声に頭を痛めつつも、皮肉を交えながら目を覚ますのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2983
+ | Value=ランカのファーストライブ中に起きた異変を察知し、状況を監視するグレイス。<br/>無数に開かれたデータウィンドウの中で、プロトコルの解析が進められていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2984
+ | Value=彼方から届いた歌のフォールド波によって、反撃のチャンスが生まれた。<br/>「なんだか知らんが、動きが鈍っている！今だ！！」─オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2985
+ | Value=女形の修行の一環として、家事全般を身に着けてきたアルト。<br/>その手際を前に、シェリルも正直な感想を漏らすのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2986
+ | Value=シェリルを手のひらの上に乗せて、教会のステージへと向かうYF-29。<br/>その間もシェリルは止めることなく歌を歌い続けていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2987
+ | Value=シェリルが皮を剥いていたお見舞い品のリンゴ。<br/>慣れない手つきのせいかガタガタになってしまい、ちょっと勿体ない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2988
+ | Value=フロンティア制圧作戦のため送り込まれた工作員たち。<br/>難民に偽装することで船団へと入り込んだようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2989
+ | Value=未踏の大地を求めて旅した人々のように、尽きることのない探求心に溢れているレイナ。<br/>その想いは歌への愛とともに、ネットワークの海から銀河の宙まで果てしなく続くのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2990
+ | Value=【進撃のHacker】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2991
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2992
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2993
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2994
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2995
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2996
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2997
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2998
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2999
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3000
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3001
+ | Value=ハートを揺さぶる幻惑的な香りと歌で、ミステリアスなバレンタインへと誘う美雲。<br/>五感に響き渡る神秘的な味わいは、かつてない境地を感じさせてくれることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3002
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3003
+ | Value=ヴァールが猛威を振るう宙域にて、女神たちの口上を締め括るべく口を開く美雲。<br/>虹色の歌声に込められた神秘的な力により、ヴァールをも幻惑して鎮めるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3004
+ | Value=戦術ライブによってヴァールとなった新統合軍兵士たちを鎮圧していくワルキューレ。<br/>そんなワルキューレの一員として歌えることに、フレイアは溢れる想いを感じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3005
+ | Value=戦術音楽ユニットの本領を発揮し、戦術ライブにてヴァールに対抗するワルキューレ。<br/>ワクチンライブ時とはひと味違う、勇ましい姿で戦場をステージへと作り替えていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3006
+ | Value=迎撃部隊を突破して目の前に迫ったボーグに裏切者とののしられるフレイア。<br/>同郷の人間の口から放たれた言葉に、フレイアはルンを青ざめてショックを受ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3007
+ | Value=メッサーからキツイ説教を受け、飲まずにはいられないといった様子のハヤテ。<br/>ドリンクを一気にあおると、メッサーに対する不満を吐き出したのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3008
+ | Value=一刻も早く戦争を終わらせてほしいというハインツの願いに、誓いを新たにするキース。<br/>かつて戦争によって祖国が受けた痛みは、いまだ楔となって人々の心に残り続けていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3009
+ | Value=出撃前にEX-ギアによる脱出システムの動作確認を行うハヤテ。<br/>頭をすっぽり覆うことで、万が一宇宙に投げ出されても安心だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3010
+ | Value=ボーグのSv-262Asに勢いよく蹴りを入れるハヤテのVF-31J。<br/>でたらめながらも、操縦センス自体はメッサーのお墨付きである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3011
+ | Value=VF-31に搭載された航空システムの起動画面。<br/>各種機体の状態に、作戦宙域の星図が映し出されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3012
+ | Value=ヴァール化した新統合軍パイロットのヘルメットに映る美雲の姿。<br/>女神の姿と歌声に、暴走していたパイロットたちも釘付けだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3013
+ | Value=ホワイトデーのお返しについて悩んでいる様子のアラドを見かけたミラージュ。<br/>そこで彼女が提案したのは、特別な衣装に身を包んで行う特別なおもてなしだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3014
+ | Value=隊を取り纏めるだけじゃなく、奇抜な発想で財政面のフォローもやってのけるアラド。<br/>掴みどころのない人物だが、空を自由に飛ばさせてやりたいと部下を想う心は本物だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3015
+ | Value=チームのエースとして君臨し、ワルキューレをより大きなものへと成長させてきた美雲。<br/>新たにフレイアという存在が加わったことで、ワルキューレは更なる高みへと飛翔する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3016
+ | Value=デルタ小隊の隊長を務めるアラド。その経歴の多くは、いまだ謎で隠されていた。<br/>「ハゴロモクラゲにも3本の隠し針、と言いますから…」─アラド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3017
+ | Value=自ら撃破した機体の爆炎に照らされながら、余裕の笑みを浮かべるアラド。<br/>経験によって裏打ちされた見事な腕前は、まさに年季の違いを感じさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3018
+ | Value=デルタ小隊を早く1人前に仕上げるべく、スパルタで指導にあたっていたメッサー。<br/>茶化すアラドだが、それはメッサーとの強い信頼関係があってこそのものといえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3019
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3020
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3021
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3022
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3023
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3024
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3025
+ | Value=白き軍服に身を包んだ麗人となり、輝く旗を手に掲げながら戦場で歌い続けたシェリル。<br/>命を燃やして愛する者に歌と祈りを捧げる姿は、伝承の中に現れる聖女のようであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3026
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3027
+ | Value=銀河を震わせるため、フォールドアンプが起動した教会のステージに降り立つシェリル。<br/>命を懸けて銀河を震わせるという決意とともに、魂を鼓舞するかのように旗を掲げた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3028
+ | Value=アーティストとマネージャーとして、長い年月をともに歩んできたシェリルとグレイス。<br/>いつしかただのパートナーといった関係を越え、深い絆で2人は結ばれていたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3029
+ | Value=【乙女の旗のもとに】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    

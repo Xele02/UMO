@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0580
+ | Value=待ち伏せしてチョコレートを渡そうとするフレイア。<br/>偶然を装うので必死だが、ルンの輝きでバレてしまうのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0581
+ | Value=薄着1枚の刺激的な格好でファンを魅了するマキナ。<br/>こんな映像を見せられては、課金ボタンを連打してしまうのも納得だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0582
+ | Value=大胆な水着姿でファンを魅了するマキナ。<br/>しっかり自分の武器を心得ているあたり、さすがといったところか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0583
+ | Value=ライブの合間、ステージ裏で休憩するフレイア。<br/>突然頬に当てられた差し入れに驚き、素の反応を見せてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0584
+ | Value=ハヤテの父親に関して、アラドは真実を語ろうとする。<br/>今まで話してこなかったのは、その内容が軍事機密とされていたからだという。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0585
+ | Value=2度目のヴォルドール潜入作戦において、協力者となってくれた新統合軍兵士。<br/>かつてワルキューレの歌声によって救われた恩を忘れてはいない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0586
+ | Value=父親の話を聞いて、格納庫に佇むハヤテ。<br/>今まで知らされていなかったことに、何を思うのだろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0587
+ | Value=ハヤテの実の父親。<br/>ウィンダミア独立戦争の際、彼が次元兵器を無断で使用したとされている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0588
+ | Value=ハインツの歌声を聴こうと大勢の人間が集まっている。<br/>しかし、歌うことによる負荷は確実に彼の身体を蝕んでいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0589
+ | Value=身体のラインを大胆に目立たせるコスチュームと挑発的なポーズ。<br/>その妖しい瞳に見つめられて、シェリルの魅力から逃れられる者はいない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0590
+ | Value=ランカに対して、どうしてアイモを歌えるのか問いただすシェリル。<br/>周囲に緊張が走った瞬間、シェリルの胸元から飛び出したのは…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0591
+ | Value=西部劇のガンマンをモチーフにした姿で、派手なパフォーマンスをするシェリル。<br/>まるでその心を撃ち抜かれたかのように、ファンはひとときも目を離すことができない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0592
+ | Value=早乙女アルト、シェリル・ノーム、ランカ・リー。<br/>戦争と恋の狭間で揺れる歪な三角関係、その運命の行方は誰にも分からない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0593
+ | Value=アルトの懐から拝借したお守りを、胸の谷間に隠してからかうシェリル。<br/>取れるものなら取ってみろと余裕の笑顔である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0594
+ | Value=不意の事故で崖から落下し、気を失ってしまったシェリル。<br/>目を覚ますや否や衣服の乱れからアルトに襲われたと勘違いし鋭い一撃をお見舞いする。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0595
+ | Value=オズマと喧嘩になってしまい、家を飛び出したランカ。<br/>どこか行く当てがあるでもなく、ゼントラモールへと足を運ぶ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0596
+ | Value=どうしても歌手になりたいと言うランカを、断固として認めないオズマ。<br/>「お前みたいな引っ込み思案が、歌手なんかできっこない！」―オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0597
+ | Value=S.M.Sの隊員として正式に着任したアルト。<br/>手始めに、催涙ガスを使ったきつーい歓迎を受けるのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0598
+ | Value=バジュラの襲撃により大きなダメージを受けたフロンティア船団。<br/>無残に破壊された街並みを見て、グレイスは1人笑顔を浮かべる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0599
+ | Value=フロンティア船団内に存在する湖。<br/>草原と森に囲まれた静かな場所で、訪れる人も少ない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0600
+ | Value=フロンティア船団では、秘密裏に回収したバジュラの調査が進められていた。<br/>その結果、バジュラは一種の生物兵器であるという仮説が浮上する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0601
+ | Value=どこか中性的な魅力に溢れるスタイルでライブステージに立つレイナ。<br/>結成当初は積極的ではなかった彼女も、今や多くのファンを魅了してやまない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0602
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0603
+ | Value=ついに結成された戦術音楽ユニット、その名は「ワルキューレ」。<br/>活気づくメンバーに対して、レイナは興味なさげな視線を向ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0604
+ | Value=施設内にいる美雲を探して、全力で駆け出すカナメ。<br/>その歌声で反応を探るが、果たして…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0605
+ | Value=長く苦しい訓練を経て、ついにワルキューレの歌声がヴァールに効果を示した。<br/>戦術音楽ユニットの名に恥じぬ活躍が、ここから始まろうとしていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0606
+ | Value=戦闘服では気分が乗らないと、特製の衣装を用意したマキナ。<br/>両手の指を合わせた決めポーズも考えて、やる気は満々である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0607
+ | Value=惑星アルヴヘイムでヴァールを鎮圧したワルキューレ。<br/>そこで命を救われた兵士の中に、メッサーという名の青年がいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0608
+ | Value=ある日、ワルキューレに新人が加入することになった。<br/>オーディションも受けずに現れたその新人の歌声は、聴いた者に深い感動を与えた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0609
+ | Value=ワルキューレの力を最大限に引き出すため、アラドは共闘作戦を提案する。<br/>戦場での護衛役と、ライブを盛り上げるためのパフォーマーを兼任するのだという。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0610
+ | Value=近接戦闘用のナイフで敵を攻撃するアラド。<br/>敵を行動不能にするだけなら、これでも十分な威力がある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0611
+ | Value=フォールドレセプターを持つメンバーによって構成される特殊チーム。<br/>その中核を担うべく1人の女性がやってきた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0612
+ | Value=ウィンダミアに伝わる、星の歌い手の伝承。<br/>ハインツの歌う風の歌とは、また異なるものであると言われている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0613
+ | Value=ワルキューレの絶対的エース、美雲・ギンヌメール。<br/>常に最前線に立つ彼女はあらゆるものを裏切り、そしてとどまることを知らない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0614
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0615
+ | Value=ワルキューレの結成直後、思うようにいかず戦場で苦心するカナメ。<br/>そんなとき彼女はアラドと出会った。まだデルタ小隊が結成される前の話である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0616
+ | Value=ワルキューレに加入するも、なかなか本領を発揮することができないフレイア。<br/>そんなフレイアの本質を、美雲はどこか見抜いているように感じる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0617
+ | Value=反攻作戦開始の直前、ハヤテと美雲は2人きりで話していた。<br/>迷いやしがらみを吹っ切った2人の表情は穏やかで、少し打ち解けた様子だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0618
+ | Value=ケイオスの反攻作戦が始まり、惑星ランドールへの攻撃が開始される。<br/>駆け付けた援軍の中にはヴォルドールの兵士たちの姿があった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0619
+ | Value=惑星アルヴヘイムへの奇襲が成功し、ワルキューレのライブが開始される。<br/>かつてメッサーと出会ったこの星。運命は彼女を再びこの星へと導いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0620
+ | Value=フレイアの歌を聴いて、またしても暴走してしまうハヤテ。<br/>あろうことか味方に銃口を向けるハヤテに、ミラージュは必死に呼びかけ続けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0621
+ | Value=ワルキューレへと戻ってきた美雲。しかしその様子はどこか不自然だ。<br/>カナメ、マキナ、レイナの前で、美雲は自らの生まれについて語り始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0622
+ | Value=初めて美雲の歌声を聴いたカナメは、自分の能力ではかなわないことを察した。<br/>しかし前向きな心で、彼女はワルキューレの成長を固く決意するのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0623
+ | Value=ウィンダミアでの激しい戦闘で、船外へと放り出されてしまうカナメ。<br/>しかし間一髪、アラドによって救助される。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0624
+ | Value=惑星ランドールの宙域へと出撃したマクロス・エリシオン。<br/>その圧倒的な火力で敵影を薙ぎ払っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0625
+ | Value=ワルキューレに加入してから月日が経ち、更に成長を続けるフレイア。<br/>彼女のトレードマークとして定着したリンゴが、今日もステージを彩っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0626
+ | Value=歌は、自分そのもの。必要としてくれる人のため、命の歌を歌うフレイア。<br/>輝くルンが尽きるその日まで、彼女は歌い続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0627
+ | Value=華々しい活躍の裏で、ワルキューレは過酷なレッスンをこなし続けてきた。<br/>その厳しさ故か、これまでに何度かのメンバー変更も行われている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0628
+ | Value=レッスンでなかなか成果が出せないフレイアだったが、ハヤテの飛行を見て覚醒する。<br/>気持ちが高ぶり、ルンが輝けば、彼女の口からは自然と歌があふれ出していく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0629
+ | Value=自分が歌うことで、またハヤテの暴走を招いてしまうのではと恐れるフレイア。<br/>しかし、その場にいた誰もが彼女の歌を待っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    

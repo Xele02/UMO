@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0617
+ | Value=<size=18>「復刻　やさしさSAYONARA」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0618
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0619
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0620
+ | Value=<size=18>「Christmas of Fairy」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0621
+ | Value=<size=18>「Christmas of Fairy」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0622
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0623
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0624
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0625
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0626
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0627
+ | Value=<size=18>「復刻　ためらいクリスマス」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0628
+ | Value=<size=18>「復刻　ためらいクリスマス」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0629
+ | Value=<size=18>「Merry Christmas with Cinderella」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0630
+ | Value=<size=18>「Merry Christmas with Cinderella」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0631
+ | Value=<size=18>「Dancing in the New Year」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0632
+ | Value=<size=18>「Dancing in the New Year」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0633
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0634
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0635
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0636
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0637
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0638
+ | Value=<size=18>「復刻　HOLY LONELY LIVE」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0639
+ | Value=<size=18>「復刻　HOLY LONELY LIVE」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0640
+ | Value=<size=18>「JOURNEY PARADE」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0641
+ | Value=<size=18>「JOURNEY PARADE」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0642
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0643
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0644
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0645
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0646
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0647
+ | Value=<size=18>「復刻　おにゃの子☆Valentine」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0648
+ | Value=<size=18>「復刻　おにゃの子☆Valentine」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0649
+ | Value=<size=18>「NEO STREAM ～Another Live～」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0650
+ | Value=<size=18>「NEO STREAM ～Another Live～」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0651
+ | Value=<size=18>「星を廻せ！学園祭LIVE」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0652
+ | Value=<size=18>「星を廻せ！学園祭LIVE」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0653
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0654
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0655
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0656
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0657
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0658
+ | Value=<size=18>「復刻　恋! ハレイション THE DANCE」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0659
+ | Value=<size=18>「復刻　恋! ハレイション THE DANCE」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0660
+ | Value=<size=18>「夜にかける虹 ～SWEET FANTASY～」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0661
+ | Value=<size=18>「夜にかける虹 ～SWEET FANTASY～」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0662
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0663
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0664
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0665
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0666
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    

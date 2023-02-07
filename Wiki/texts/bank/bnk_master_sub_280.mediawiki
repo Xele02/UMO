@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0027
+ | Value=VF-25F（歌姫）を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0028
+ | Value=YF-29 SPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0029
+ | Value=VF-31J 35thを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0030
+ | Value=Sv-262Baを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0031
+ | Value=YF-19を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0032
+ | Value=YF-21を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0033
+ | Value=VF-19改 S.N-01を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0034
+ | Value=Sv-262Ba w/Lを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0035
+ | Value=VF-31C M.N-01を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0036
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0037
+ | Value=VF-25G SPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0038
+ | Value=VF-25F SPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0039
+ | Value=Sv-262Hs w/Lを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0040
+ | Value=VF-1J C.O-19を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0041
+ | Value=VF-31J SPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0042
+ | Value=VF-25S SPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0043
+ | Value=VF-31J F.W-01を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0044
+ | Value=VF-31F K.B-01を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0045
+ | Value=VF-25F TPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0046
+ | Value=YF-19 K-40を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0047
+ | Value=VF-31C SPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0048
+ | Value=VF-31S SPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0049
+ | Value=VF-25G TPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0050
+ | Value=VF-31E SPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0051
+ | Value=VF-19EF/Aを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0052
+ | Value=VF-31J F.W-02を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0053
+ | Value=VF-1Dを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0054
+ | Value=VF-17Sを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0055
+ | Value=VF-27γ SPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0056
+ | Value=VF-31F K.B-02を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0057
+ | Value=VF-171EXを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0058
+ | Value=VF-1Dを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0059
+ | Value=VF-19Pを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0060
+ | Value=VF-25S APを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0061
+ | Value=VF-22Sを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0062
+ | Value=RVF-25 SPを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0063
+ | Value=Sv-262Baを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0064
+ | Value=VF-1Aを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0065
+ | Value=VF-31S M.G-01を精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0066
+ | Value=VF-31AXを精密に再現されたフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0067
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0068
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0069
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0070
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0071
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0072
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0073
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0074
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0075
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_dsc_0076
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

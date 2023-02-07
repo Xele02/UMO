@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0230
+ | Value=少し恥ずかしそうに砂浜に立つ、水着姿のナナセ。<br/>メリハリのあるボディラインが男性たちの視線を引き付けるようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0231
+ | Value=ミシェルとクランは幼馴染の関係であり、互いのことはよく知っている。<br/>だが、よく知った仲だからこそ、肝心なところで素直になれないこともある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0232
+ | Value=シェリルのマネージャーであるグレイスも、水着に着替えて浜辺を歩いていた。<br/>大人の魅力が溢れる水着姿からは、少々危険な香りが漂う。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0233
+ | Value=イタズラ好きのウミネコを追って海に飛び込んだチャック。<br/>しかしウミネコの素早さは尋常ではなく、さすがのチャックでも手に余るようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0234
+ | Value=戦うことの心構えを説くミラージュに、ハヤテは疑問を投げかける。<br/>「楽しい？私は戦士、守るために飛ぶ」―ミラージュ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0235
+ | Value=夕日に照らされたジェフリーの横顔。それを密かに見つめるモニカ。<br/>乙女の心を知ってか知らずか、海の男は静かに佇む。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0236
+ | Value=パラソルの下、ミレーヌを待ちながら静かに読書をするガムリン。<br/>もしかすると、その行動は緊張を抑えるための手段なのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0237
+ | Value=アルトとランカが待ち合わせをしたおしゃれなカフェ。<br/>涼しい日陰で休憩するにはもってこいの場所である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0238
+ | Value=リゾート艦内のビーチで休んでいる美女。<br/>黒い肌にトロピカルなジュース、まさに常夏といった装いである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0239
+ | Value=フロンティア船団の中には地球と同じように動物も生息している。<br/>海上を悠々と飛ぶカモメの姿も、夏という気候の再現に一役買っているのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0240
+ | Value=地球に帰還したマクロスは太平洋上に着水した。<br/>流れる海の風と潮の香りを感じて、乗員たちは歓喜の声を上げる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0241
+ | Value=日々パイロットとしての仕事をこなすミラージュも、ひと時の休息が与えられた。<br/>海で遊ぶことにしたが、慣れない水着姿に思わず耳の先まで赤く染まってしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0242
+ | Value=デルタ小隊に所属するパイロット。名門ジーナス家の生まれ。<br/>誇りを持って職務に臨む優秀なパイロットだが、真面目で融通が利かない一面もある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0243
+ | Value=母がお見合い相手として選んできたガムリンと、ビーチで会う約束をしていたミレーヌ。<br/>「それより、ガムリンさんのお仕事のお話聞きたいですわ」―ミレーヌ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0244
+ | Value=降り注ぐ陽光の下、大きな浮き輪を持って砂浜を駆けるミレーヌ。<br/>ありのままの笑顔がこぼれ、美しい桃色の髪がそよ風になびいている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0245
+ | Value=銀河の妖精シェリル・ノームは、当然、この夏もCM出演に引っ張りだこである。<br/>「輝きは異次元、ノーム・ピュアシールド」―シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0246
+ | Value=アルトとの待ち合わせ場所に、少しいたずらっぽく笑いながら現れたランカ。<br/>「やだ、あんまりじろじろ見ちゃダメだよ！」―ランカ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0247
+ | Value=リゾート艦の人工の海で泳ぐミレーヌ。<br/>人工とはいっても自然の海洋と変わらず、人間も魚も思うままに泳ぎ回ることができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0248
+ | Value=即席の空き缶ドラムで演奏するビヒーダ。<br/>奇抜な光景に人が集まり始めているが、本人はまるで気にしていないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0249
+ | Value=いつもランカの後ろをちょこちょことついてくるあい君は、彼女の大切な友達だ。<br/>だが、一体あい君が何者でどこから来たのか、それは未だに謎のままである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0250
+ | Value=惑星ラグナに住むラグナ人は、水中での生活に適したひれや水かきを持っている。<br/>商店街で購入できるお土産にもその特徴がいかされているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0251
+ | Value=マクロス7船団に属するリゾート艦。艦内に人工の海がある。<br/>マリンリゾート施設の他にも、魚介類の養殖や研究目的の施設も存在する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0252
+ | Value=長い旅路の果てに、ついに地球への帰還を果たしたマクロス。<br/>無事に戻ってこれたことにクルーは感動し、多くの者は涙を流していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0253
+ | Value=バロータ戦役が終結し、Fire Bomberは銀河に名を轟かせる超有名バンドとなった。<br/>ド派手な演出に彩られたライブで、今宵も大勢のファンを魅了する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0254
+ | Value=熱い魂をギラギラに輝かせて、ライブに詰めかけた大勢のファンの期待に応えたバサラ。<br/>演出の入れ替えでステージ裏に下がっても、バサラを呼ぶ声が収まることはなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0255
+ | Value=何やら作業に勤しむグラハム。<br/>軽く挨拶をするバサラだが、あまり歓迎されているような雰囲気ではなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0256
+ | Value=トラックに乗ってバサラを呼ぶゾラ人の少女エルマ。<br/>元気に声を張り上げるその姿は、どこかミレーヌに似た面影を感じさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0257
+ | Value=バサラがいなくなり、1人でボーカルを務めることになったミレーヌ。<br/>ライブは盛り上がったものの、ミレーヌ本人は物足りなさを感じているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0258
+ | Value=惑星ゾラの大気中には、銀河クジラの影響で大量の雑菌が繁殖するらしい。<br/>ゾラ人以外の人間の場合、最悪は死に至ることもあるそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0259
+ | Value=マクロス7船団を去り、あてのない旅に出たバサラ。<br/>物憂げな表情で惑星ゾラの夕焼けを見つめる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0260
+ | Value=エルマの父、とてつもない巨漢のグラハムはバサラをひょいとつまみ上げた。<br/>「とんでもねえ星だぜ…」―バサラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0261
+ | Value=銀河系の辺境に位置する惑星ゾラ。<br/>ゾラ人という原住民族が住んでおり、地球圏とも友好的な関係にある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0262
+ | Value=グラハムが捕鯨を行う際に着用する服。<br/>彼の体格に合わせて作られているため、服と呼ぶにはいささか巨大である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0263
+ | Value=惑星ゾラ付近を回遊する巨大な存在。<br/>群れを成して移動しており、その群れはひときわ大きな個体によって率いられている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0264
+ | Value=銀河クジラが描かれた壁画。<br/>多数の群れで雄大に泳ぎ回る姿が見て取れる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0265
+ | Value=移民船にも夏はある。溢れる美貌でビーチの人々の視線を集めるシェリル・ノーム。<br/>その姿は、まさにギラギラ輝く真夏の妖精！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0266
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0267
+ | Value=伝説の歌姫と称えられるリン・ミンメイも、真夏の陽気の下では1人の少女。<br/>水着に身を包み、ビーチに佇む少女は、心なしかいつもより大人っぽく見える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0268
+ | Value=マクロス・クォーター艦長のジェフリーは、実は凄腕のサーファーでもある。<br/>大波を華麗に乗りこなすその姿は、モニカの熱い視線の的となっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0269
+ | Value=休暇で訪れたマヤン島で、ランカと一緒に過ごすことを約束したアルト。<br/>街頭モニターに映る父親の公演CMを見て、やや不機嫌そうな表情を浮かべる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0270
+ | Value=かつてバジュラに捕らわれたとき、ランカはバジュラの中に心の存在を感じたという。<br/>それを聞いて、バジュラに心なんてあるはずがないと笑うアルトだが…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0271
+ | Value=リゾート艦でのライブは気が進まないとぼやくバサラに、それを叱るミレーヌ。<br/>いつもどおり喧嘩をする2人を、レイとビヒーダは何も言わずに見守っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0272
+ | Value=艦の一部エリアが封鎖され、逃げ遅れたバサラとミレーヌは閉じ込められてしまう。<br/>そんな絶体絶命のピンチにも関わらず、2人はいつもどおり言い争いを始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0273
+ | Value=マクロス・フロンティア船団の中に存在するリゾート地、マヤン島。<br/>地球に存在する同名の島がモデルとなっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0274
+ | Value=バサラの自分勝手な言動に怒りをあらわにするミレーヌ。<br/>しかしひとたび海に出てしまえば、そんなことは忘れて無邪気に駆け出すのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0275
+ | Value=アルトとランカが注文した山盛りのかき氷。<br/>ちなみに、ランカが注文したのは右側の大きいかき氷である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0276
+ | Value=浜辺に落ちていたであろう空き缶で作ったドラム。<br/>カンカンという間の抜けた音も、これはこれで趣があって良い…のかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0277
+ | Value=記憶を取り戻し、自分の中の気持ちと正面から向き合ったランカ。<br/>その歌声に宿る力は、彼女自身の成長に伴って未だかつてないほどに高まっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0278
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0279
+ | Value=出撃の直前、どこか緊張と決意に満ちた様子でアルトの前に現れたランカ。<br/>その震える唇でアルトへの想いを伝え、必ず無事に帰ってきてほしいと願うのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    

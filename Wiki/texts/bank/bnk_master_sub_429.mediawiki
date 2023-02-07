@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=rn_0086
+ | Value=HOLY LONELY LIVE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0087
+ | Value=エンジェル・ブライド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0088
+ | Value=恋! ハレイション THE DANCE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0089
+ | Value=<size=20>彼方へ届ける歌 ～インフィニティ＃7～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0090
+ | Value=大空を舞う小白竜
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0091
+ | Value=純情サマーバケーション
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0092
+ | Value=<size=20>夏のなないろ☆ビタミンチャージ！</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0093
+ | Value=星間ランデブー★彡
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0094
+ | Value=REMEMBER SUMMER
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0095
+ | Value=Trick or Nyan? DIARY
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0096
+ | Value=Trick or trap ？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0097
+ | Value=<size=20>ワルキューレのバースデイ♡パーティー</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0098
+ | Value=<size=20>Rock 'n' Roll！…だけど Baby！！</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0099
+ | Value=聖なる夜の涙目SONG
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0100
+ | Value=<size=20>SNOW FRONTIER ～鐘を打ち鳴らせ！～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0101
+ | Value=<size=20>夜明けを灯す新たな光 ～オベリスク～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0102
+ | Value=時を超える愛の歌
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0103
+ | Value=Chocoっとルンピカッ♡Valentine
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0104
+ | Value=LOVEなクロスファイト！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0105
+ | Value=WhiteDay Attack!
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0106
+ | Value=天使のウェディング
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0107
+ | Value=スクールフェスで光速クライmax☆
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0108
+ | Value=未来はオンナのためにある
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0109
+ | Value=おにゃの子☆Pinch Hitter
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0110
+ | Value=<size=20>銀河クジラを求めて ～ANGEL VOICE～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0111
+ | Value=Memories of VOICES
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0112
+ | Value=無重力ドッグ・ファイター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0113
+ | Value=ルンに花咲く恋もある
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0114
+ | Value=LIGHT THE SUMMER
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0115
+ | Value=絶対零度θFantastic！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0116
+ | Value=<size=18>アンコールライブ！～Hear The Universe～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0117
+ | Value=BEAT ＆ SOUL
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0118
+ | Value=永遠と歌う声
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0119
+ | Value=純白のエーテル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0120
+ | Value=ハロウィン・シンデレラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0121
+ | Value=<size=18>未開の世界 ～いけないボーダーライン～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0122
+ | Value=ワルキューレカフェへようこそ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0123
+ | Value=Christmas of Fairy
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0124
+ | Value=<size=18>Merry Christmas with Cinderella</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0125
+ | Value=Dancing in the New Year
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0126
+ | Value=ロマンシング・イゾラド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0127
+ | Value=JOURNEY PARADE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0128
+ | Value=<size=20>NEO STREAM ～Another Live～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0129
+ | Value=星を廻せ！学園祭LIVE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0130
+ | Value=<size=18>Memorial Days ～私の彼はパイロット～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0131
+ | Value=<size=18>夜にかける虹 ～SWEET FANTASY～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0132
+ | Value=<size=20>超時空音楽祭 ～Songbird～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0133
+ | Value=リバーシブル・バニー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0134
+ | Value=FLASH IN THE SOUL
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0135
+ | Value=<size=18>見えない風 ～GIRAFFE BLUES～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0527
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0528
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0529
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0530
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0531
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0532
+ | Value=デビューオペレーションを1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0533
+ | Value=デビューオペレーションを2回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0534
+ | Value=デビューオペレーションを3回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0535
+ | Value=デビューオペレーションを4回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0536
+ | Value=デビューオペレーションを5回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0537
+ | Value=デビューオペレーションを6回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0538
+ | Value=デビューオペレーションを7回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0539
+ | Value=デビューオペレーションを8回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0540
+ | Value=歌姫オペレーション解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0541
+ | Value=フレイアの歌姫オペレーション1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0542
+ | Value=フレイアの歌姫オペレーション10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0543
+ | Value=美雲の歌姫オペレーション1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0544
+ | Value=美雲の歌姫オペレーション10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0545
+ | Value=カナメの歌姫オペレーション1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0546
+ | Value=カナメの歌姫オペレーション10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0547
+ | Value=マキナの歌姫オペレーション1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0548
+ | Value=マキナの歌姫オペレーション10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0549
+ | Value=レイナの歌姫オペレーション1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0550
+ | Value=レイナの歌姫オペレーション10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0551
+ | Value=ランカの歌姫オペレーション1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0552
+ | Value=ランカの歌姫オペレーション10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0553
+ | Value=シェリルの歌姫オペレーション1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0554
+ | Value=シェリルの歌姫オペレーション10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0555
+ | Value=ミレーヌの歌姫オペレーション1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0556
+ | Value=ミレーヌの歌姫オペレーション10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0557
+ | Value=バサラの歌姫オペレーション1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0558
+ | Value=バサラの歌姫オペレーション10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0559
+ | Value=ミンメイの歌姫オペレーション1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0560
+ | Value=ミンメイの歌姫オペレーション10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0561
+ | Value=？？？？？？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0562
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0563
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0564
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0565
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0566
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0567
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0568
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0569
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0570
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0571
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0572
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0573
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0574
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0575
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0576
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

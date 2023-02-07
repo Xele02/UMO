@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0017
+ | Value=「パステル♡SUMMER」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0018
+ | Value=「待たせたな！Fire Bomber登場！」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0019
+ | Value=「待たせたな！Fire Bomber登場！」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0020
+ | Value=「銀河の妖精」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0021
+ | Value=「銀河の妖精」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0022
+ | Value=「ミンメイ・バースデー」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0023
+ | Value=「ミンメイ・バースデー」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0024
+ | Value=「Happy Hacking Halloween」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0025
+ | Value=「Happy Hacking Halloween」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0026
+ | Value=「衝撃 デビューステージ」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0027
+ | Value=「衝撃 デビューステージ」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0028
+ | Value=「ダイナマイト7」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0029
+ | Value=「ダイナマイト7」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0030
+ | Value=「決断 オーバーロード」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0031
+ | Value=「決断 オーバーロード」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0032
+ | Value=東京スカイツリー®コラボ ミニチュア<br/>スタンプをコンプリートした証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0033
+ | Value=東京スカイツリー®コラボ 等身大<br/>スタンプをコンプリートした証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0034
+ | Value=「サヨナラノツバサ」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0035
+ | Value=「サヨナラノツバサ」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0036
+ | Value=「クロスオーバーLIVE（FB編）」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0037
+ | Value=「クロスオーバーLIVE（FB編）」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0038
+ | Value=「ためらいクリスマス」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0039
+ | Value=「ためらいクリスマス」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0040
+ | Value=「超時空カウントダウンライブ'17」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0041
+ | Value=「超時空カウントダウンライブ'17」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0042
+ | Value=「Happy New Yearライブ'18」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0043
+ | Value=「Happy New Yearライブ'18」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0044
+ | Value=<size=20>「目指せ！ミス・マクロス ～潜入大作戦～」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0045
+ | Value=<size=20>「目指せ！ミス・マクロス ～潜入大作戦～」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0046
+ | Value=「sexy monsoon」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0047
+ | Value=「sexy monsoon」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0048
+ | Value=<size=18>「メモリアル・バースデー ～Dear ミレーヌ～」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0049
+ | Value=<size=18>「メモリアル・バースデー ～Dear ミレーヌ～」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0050
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0051
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0052
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0053
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0054
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0055
+ | Value=<size=20>「おにゃの子☆Valentine」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0056
+ | Value=「おにゃの子☆Valentine」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0057
+ | Value=「とまらない！ワルキューレLIVE」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0058
+ | Value=「とまらない！ワルキューレLIVE」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0059
+ | Value=「虹いろ・クマクマ」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0060
+ | Value=「虹いろ・クマクマ」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0061
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0062
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0063
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0064
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0065
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0066
+ | Value=<size=20>「0-G Love」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    

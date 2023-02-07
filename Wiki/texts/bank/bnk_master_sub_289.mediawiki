@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0377
+ | Value=♪チェンジ!!!!!・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0378
+ | Value=♪チェンジ!!!!!・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0379
+ | Value=♪チェンジ!!!!!・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0380
+ | Value=♪チェンジ!!!!!・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0381
+ | Value=♪チェンジ!!!!!・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0382
+ | Value=あゝ、デカルチャー ～宇宙兄弟船～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0383
+ | Value=あゝ、デカルチャー ～宇宙兄弟船～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0384
+ | Value=リン・ミンメイ物語 ～Fire Bomber編～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0385
+ | Value=リン・ミンメイ物語 ～Fire Bomber編～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0386
+ | Value=暴走する歌声 ～シャロン・アップル～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0387
+ | Value=暴走する歌声 ～シャロン・アップル～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0388
+ | Value=♪INFORMATION HIGH・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0389
+ | Value=♪INFORMATION HIGH・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0390
+ | Value=♪INFORMATION HIGH・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0391
+ | Value=♪INFORMATION HIGH・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0392
+ | Value=♪INFORMATION HIGH・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0393
+ | Value=不確定性♡フォーメーションダンス・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0394
+ | Value=不確定性♡フォーメーションダンス・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0395
+ | Value=little queen ～愛・おぼえていますか～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0396
+ | Value=little queen ～愛・おぼえていますか～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0397
+ | Value=熱唱☆学園ライブ！ ～卒業式編～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0398
+ | Value=熱唱☆学園ライブ！ ～卒業式編～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0399
+ | Value=♪ヴァージンストーリー・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0400
+ | Value=♪ヴァージンストーリー・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0401
+ | Value=♪ヴァージンストーリー・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0402
+ | Value=♪ヴァージンストーリー・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0403
+ | Value=♪ヴァージンストーリー・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0404
+ | Value=旅立つ君へ ～愛は流れる～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0405
+ | Value=旅立つ君へ ～愛は流れる～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0406
+ | Value=流星の奏でる旋律・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0407
+ | Value=流星の奏でる旋律・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0408
+ | Value=ようこそ！ワルキューレ★Partyへ・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0409
+ | Value=ようこそ！ワルキューレ★Partyへ・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0410
+ | Value=♪ようこそ！ワルキューレ・ワールドへ・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0411
+ | Value=♪ようこそ！ワルキューレ・ワールドへ・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0412
+ | Value=♪ようこそ！ワルキューレ・ワールドへ・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0413
+ | Value=♪ようこそ！ワルキューレ・ワールドへ・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0414
+ | Value=♪ようこそ！ワルキューレ・ワールドへ・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0415
+ | Value=願いがキラリ ～また会おうね～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0416
+ | Value=願いがキラリ ～また会おうね～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0417
+ | Value=私たちのビューティフル・プレイス・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0418
+ | Value=私たちのビューティフル・プレイス・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0419
+ | Value=Dancing in the Planet・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0420
+ | Value=Dancing in the Planet・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0421
+ | Value=♪Dancing in the Moonlight・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0422
+ | Value=♪Dancing in the Moonlight・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0423
+ | Value=♪Dancing in the Moonlight・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0424
+ | Value=♪Dancing in the Moonlight・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0425
+ | Value=♪Dancing in the Moonlight・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0426
+ | Value=HOLY LONELY LIVE・金
+ | ParentPage=Texts/Bank/master
+}}
+                    

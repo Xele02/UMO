@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0927
+ | Value=美雲が告げる真相
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0928
+ | Value=とまらない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0929
+ | Value=ライブへようこそ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0930
+ | Value=ランカのお兄ちゃん
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0931
+ | Value=ランカとオズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0932
+ | Value=ランカの相談事
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0933
+ | Value=アイドルらしさ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0934
+ | Value=ミンメイ直伝
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0935
+ | Value=小悪魔？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0936
+ | Value=あなたのためのライブ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0937
+ | Value=味方がいっぱい
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0938
+ | Value=不思議な感覚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0939
+ | Value=美雲の異変
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0940
+ | Value=記憶の中の女神
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0941
+ | Value=あなたたちと歌いたい
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0942
+ | Value=波乱のエイプリルフール
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0943
+ | Value=歌に込められた想い
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0944
+ | Value=悲しい記憶
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0945
+ | Value=桜のように
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0946
+ | Value=不思議な世界
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0947
+ | Value=内緒の手紙
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0948
+ | Value=イツワリノセカイの君へ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0949
+ | Value=超時空ユニットライブ、始動
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0950
+ | Value=開発までの道のり
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0951
+ | Value=新しいステージ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0952
+ | Value=母と姪からの追及
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0953
+ | Value=シビル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0954
+ | Value=いつかどこかで
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0955
+ | Value=麗しのアルト姫
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0956
+ | Value=喧嘩するほど仲が良い人たち
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0957
+ | Value=いつか同じステージで
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0958
+ | Value=思い出に残る衣装
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0959
+ | Value=カナメの気持ち
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0960
+ | Value=素直な感想
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0961
+ | Value=ファンなんです！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0962
+ | Value=シェリルに学ぶこと
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0963
+ | Value=シェリルの反応
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0964
+ | Value=衝撃告白…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0965
+ | Value=歌えばいいだろ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0966
+ | Value=感じるままに
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0967
+ | Value=衝撃の事実
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0968
+ | Value=事の真相
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0969
+ | Value=あなたは昔から…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0970
+ | Value=ミンメイ艦長誕生！？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0971
+ | Value=うちの艦長と言えば？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0972
+ | Value=いつか、その日が来たら
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0973
+ | Value=予想外のライブ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0974
+ | Value=ミレーヌからのお願い
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0975
+ | Value=気分次第！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0976
+ | Value=結集1周年！
+ | ParentPage=Texts/Bank/master
+}}
+                    

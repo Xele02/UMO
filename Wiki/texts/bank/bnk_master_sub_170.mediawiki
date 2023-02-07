@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3330
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3331
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3332
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3333
+ | Value=【恋色にBLOOM】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3334
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3335
+ | Value=【恋色にBLOOM】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3336
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3337
+ | Value=同じ異性を想いながらも、互いを思いやる気持ちを持ち続けたフレイアとミラージュ。<br/>2人の共感とためらいの感情は複雑に絡み合い、より強い絆となって2人を結びつける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3338
+ | Value=フレイアと出会って歌と自由な空を知り、それを守るために飛ぶことを誓ったハヤテ。<br/>数々の戦場を越え、ミラージュの想いを知ったことでも誓いはより強くなっていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3339
+ | Value=ラグナの海でウミネコたちと一緒になって、思いっきり羽根を伸ばすフレイア。<br/>とっても仲良しな様子に新しい水着も相まって、海の女神様に見えなくないかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3340
+ | Value=コンテナの外から聞こえてくる心地良いリズムに、つい歌を口ずさんでしまうフレイア。<br/>結局それが決め手になって、隠れて密航しているところをハヤテに見つかってしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3341
+ | Value=歌の力を信じ、命を懸けた歌によってララサーバル大尉のヴァールを浄化したフレイア。<br/>その歌声は同じように命を懸けて戦うハヤテの元にも届いて、更なる力を呼び覚ました。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3342
+ | Value=ハヤテとフレイアの騒ぎに遭遇して、ハヤテを密航犯と勘違いしてしまったミラージュ。<br/>「違う、違うって！」「じゃあ婦女暴行犯とでも呼ばれたい！？」─ハヤテ、ミラージュ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3343
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3344
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3345
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3346
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3347
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3348
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3349
+ | Value=開拓重機での水着にヘルメットもしっかりかぶって、ランカの開拓へと挑む準備は万端。<br/>どんな過酷な現場だとしても、溢れる夢と乙女心のパワーで瞬く間に開拓＆開発なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3350
+ | Value=【ランカ開拓中！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3351
+ | Value=駆け出しアイドルとして、超時空重機展で開拓重機のプロモーションに精を出すランカ。<br/>ブルドーザーのブレードに足を掛け、爽やかなガッツポーズでパワフルさをアピールだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3352
+ | Value=かつて伝説と呼ばれたメイクアップアーティストの肩書を持つボビー。<br/>その知る人ぞ知るという腕前は、性別を超越した美と愛に満ちている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3353
+ | Value=【ランカ開拓中！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3354
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3355
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3356
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3357
+ | Value=【ランカ開拓中！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3358
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3359
+ | Value=【ランカ開拓中！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3360
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3361
+ | Value=ミンメイのアジアン・ビューティーな水着姿の周りに散りばめられた、蒼く清浄な花々。<br/>澄み切った風景にミンメイの華やかな姿が加わると、東洋の美を感じさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3362
+ | Value=【清廉なる東洋の美】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3363
+ | Value=水着の上から上着を羽織り、ビーチサイドでお忍びのお散歩を楽しんでいたミンメイ。<br/>忙しさから解放されたのも束の間、楽しい時間はあっという間に過ぎてしまうようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3364
+ | Value=輝のお見舞いに来たはずが、いまいち空気の読めない発言で場を乱してしまう柿崎。<br/>結局フォッカーに襟首を掴まれ、マックスともども撤収するはめになってしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3365
+ | Value=【清廉なる東洋の美】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3366
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3367
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3368
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3369
+ | Value=【清廉なる東洋の美】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3370
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3371
+ | Value=【清廉なる東洋の美】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3372
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3373
+ | Value=最高の盛り上がりをみせる夏のロックフェスに、いよいよFire Bomberが登場！<br/>ステージで熱くサウンドを響かせるバサラの姿に、観客たちの熱気も最高潮を迎える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3374
+ | Value=【夏を照らす熱き光】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3375
+ | Value=辛い物が大好物なバサラだけあって、海の家で注文したのは激辛カレー。<br/>火が出そうなほど真っ赤なカレーに、見ているこっちまで汗が吹き出てしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3376
+ | Value=シビルを守るため、ギギルは自らを犠牲にしてバルゴを惑星ラクスごと吹き飛ばした。<br/>ギギルの命を懸けた想いに触れたシビルの瞳からは、いくつもの光る涙が流れていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3377
+ | Value=シティ7が謎の猛暑に見舞われる中、バサラはというと、とりわけ暑いアクショで…<br/>「へっ、最高最高！やっぱロックやんなら暑いのにかぎるぜ！」─バサラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3378
+ | Value=【夏を照らす熱き光】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3379
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

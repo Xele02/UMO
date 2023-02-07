@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option006
+ | Value=交換所を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option007
+ | Value=アイテムを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option008
+ | Value=イベントストーリーを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option009
+ | Value=ブロックしたユーザーの一覧です
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest000
+ | Value=
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest001
+ | Value=アシストを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest002
+ | Value=ユニットを編成してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest003
+ | Value=歌姫を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest004
+ | Value=楽曲ごとの成長を確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest005
+ | Value=プレートを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest006
+ | Value=プレートの能力を解放できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest007
+ | Value=保存したユニットを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest008
+ | Value=バルキリーを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest009
+ | Value=衣装を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest010
+ | Value=ランキングを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest011
+ | Value=プロフィールを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest110
+ | Value=ランキングを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest120
+ | Value=イベントストーリーを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest130
+ | Value=イベントミッションの一覧です
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest030
+ | Value=強化する衣装を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest031
+ | Value=アイテムを選択してください　　　　　
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_result211
+ | Value=プロフィールを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_result240
+ | Value=ランキングを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_musicrate000
+ | Value=歌レート情報を確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_musicrate001
+ | Value=プロフィールを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_desc_000
+ | Value=ライブに楽曲が追加されました！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_desc_001
+ | Value=記憶の時空で 歌の記憶が解放できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_desc_002
+ | Value=歌姫ステータス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_loginbonus_001
+ | Value=通算ログインボーナス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_loginbonus_002
+ | Value=アイテムはプレゼントBOXに送られます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_loginbonus_comeback_pack_001
+ | Value=おかえりなさいパック
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_review_000
+ | Value=フレイアからレビューのお願い
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_review_001
+ | Value=歌マクロス スマホDeカルチャーを<br/>遊んでくれてあんがとね！<br/>遊んでみて、どんな感じかね？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_review_002
+ | Value=星をタップして評価してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_review_003
+ | Value=もしよかったら、感想とか<br/>聞かせてもらえると嬉しいんやけど…<br/><br/>こっそり教えてくれんかね？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_review_004
+ | Value=もしよかったら、意見とか<br/>聞かせてもらえんかね？<br/><br/>歌マクロス スマホDeカルチャーを<br/>もっと面白くしていくかんね！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_reward_detail_001
+ | Value={0}回以上クリア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_reward_detail_002
+ | Value=スコア{0}以上
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_reward_detail_003
+ | Value={0}コンボ以上
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_reward_detail_004
+ | Value={0}UC
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_reward_detail_005
+ | Value={0}×{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_reward_detail_title
+ | Value=取得報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pupup_app_exit_title
+ | Value=アプリ終了確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_app_exit
+ | Value=アプリを終了してもよろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_quest_reward_title
+ | Value=ミッション達成
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=quest_event_none_list
+ | Value=現在挑戦できるミッションはありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=quest_reward_none_list
+ | Value=報酬を受け取ることができるミッションはありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=quest_timer_d
+ | Value=あと{0}日
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=quest_timer_h
+ | Value=あと{0}時間
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=quest_timer_m
+ | Value=あと{0}分
+ | ParentPage=Texts/Bank/menu
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=vc_uni_0002
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_uni_0003
+ | Value=UC
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_uni_0004
+ | Value=日分
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_uni_0005
+ | Value=セット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_uni_0006
+ | Value=体
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_uni_0007
+ | Value=個
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_uni_0008
+ | Value=個
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_uni_0009
+ | Value=個
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_uni_0010
+ | Value=体
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=df_00
+ | Value=EASY
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=df_01
+ | Value=NORMAL
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=df_02
+ | Value=HARD
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=df_03
+ | Value=VERY HARD
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=df_04
+ | Value=EXTREAM
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0000
+ | Value=未定義
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0001
+ | Value=SNS連絡部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0002
+ | Value=みんなで雑談部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0003
+ | Value=祝☆記念日部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0004
+ | Value=フレイアの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0005
+ | Value=美雲の部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0006
+ | Value=カナメの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0007
+ | Value=マキナの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0008
+ | Value=レイナの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0009
+ | Value=ランカの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0010
+ | Value=シェリルの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0011
+ | Value=ミレーヌの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0012
+ | Value=バサラの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0013
+ | Value=ミンメイの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0014
+ | Value=超時空ヴィーナス ワルキューレ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0015
+ | Value=閃光のAXIA
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0016
+ | Value=夏だ！海だ！水着De Show！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0017
+ | Value=パステル♡SUMMER
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0018
+ | Value=待たせたな！Fire Bomber登場！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0019
+ | Value=銀河の妖精
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0020
+ | Value=ミンメイ・バースデー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0021
+ | Value=Happy Hacking Halloween
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0022
+ | Value=衝撃 デビューステージ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0023
+ | Value=ダイナマイト7
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0024
+ | Value=決断 オーバーロード
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0025
+ | Value=サヨナラノツバサ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0026
+ | Value=クロスオーバーLIVE（FB編）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0027
+ | Value=ためらいクリスマス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0028
+ | Value=Happy Merry Xmas ～2017～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0029
+ | Value=超時空カウントダウンライブ'17
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0030
+ | Value=<size=20>【賀正】Happy New Yearライブ'18</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0031
+ | Value=<size=20>目指せ！ミス・マクロス～潜入大作戦～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0032
+ | Value=みんなで東京スカイツリー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0033
+ | Value=sexy monsoon
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0034
+ | Value=<size=18>メモリアル・バースデー ～Dear ミレーヌ～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0035
+ | Value=おにゃの子☆Valentine
+ | ParentPage=Texts/Bank/master
+}}
+                    

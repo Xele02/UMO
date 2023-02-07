@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0043_sp
+ | Value=マキナ（フラウ・ユーベルト）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0044_sp
+ | Value=フレイア（スカーレット・ノーブル）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0045_sp
+ | Value=美雲（ヴァイオレット・ノーブル）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0046_sp
+ | Value=バサラ（クロスオーバー・ビート）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0047_sp
+ | Value=カナメ（マンダリン・ノーブル）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0048_sp
+ | Value=レイナ（フラウ・ユーベルト）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0049_sp
+ | Value=美雲（フラウ・ユーベルト）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0050_sp
+ | Value=美雲（ヤミ・クローズ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0001_sp
+ | Value=マクロスキャノンのエネルギーを充填できるインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0002_sp
+ | Value=アイテムが回収できるインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0003_sp
+ | Value=アイテムが回収できるインテリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0004_sp
+ | Value=ヤミ・クローズの衣装を着た<br/>マキナの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0005_sp
+ | Value=エバーグリーン・フラワーの衣装を着た<br/>ランカの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0006_sp
+ | Value=ライラック・ギャラクシーの衣装を着た<br/>シェリルの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0007_sp
+ | Value=アイス・フラワーの衣装を着た<br/>マキナの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0008_sp
+ | Value=アイス・フラワーの衣装を着た<br/>レイナの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0009_sp
+ | Value=ラジカル・ハートの衣装を着た<br/>ミレーヌの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0010_sp
+ | Value=エンバー・グレイの衣装を着た<br/>バサラの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0011_sp
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0012_sp
+ | Value=オベリスクの衣装を着た<br/>シェリルの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0013_sp
+ | Value=フォーア・シュトースの衣装を着た<br/>カナメの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0014_sp
+ | Value=アプフェル・ショコラーデの衣装を着た<br/>フレイアの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0015_sp
+ | Value=クロスオーバー・キュリアスの衣装を着た<br/>レイナの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0016_sp
+ | Value=クロスオーバー・チャームの衣装を着た<br/>ランカの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0017_sp
+ | Value=クロスオーバー・エンブレイスの衣装を着た<br/>マキナの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0018_sp
+ | Value=クロスオーバー・デザイアの衣装を着た<br/>シェリルの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0019_sp
+ | Value=クロスオーバー・イリューシブの衣装を着た<br/>美雲の大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0020_sp
+ | Value=クロスオーバー・ブリーズの衣装を着た<br/>ミレーヌの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0021_sp
+ | Value=クロスオーバー・リップの衣装を着た<br/>フレイアの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0022_sp
+ | Value=クロスオーバー・セレニティの衣装を着た<br/>ミンメイの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0023_sp
+ | Value=クロスオーバー・フリーの衣装を着た<br/>バサラの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0024_sp
+ | Value=アニバーサル・フロレットの衣装を着た<br/>ランカの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0025_sp
+ | Value=シュタイフ・ブリーゼの衣装を着た<br/>カナメの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0026_sp
+ | Value=シュタイフ・ブリーゼの衣装を着た<br/>美雲の大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0027_sp
+ | Value=アニバーサル・フェアリーの衣装を着た<br/>シェリルの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0028_sp
+ | Value=シュタイフ・ブリーゼの衣装を着た<br/>マキナの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0029_sp
+ | Value=フロリートチャイナの衣装を着た<br/>ミンメイの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0030_sp
+ | Value=ロックオン・リバティの衣装を着た<br/>バサラの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0031_sp
+ | Value=クロスオーバー・スカッシュの衣装を着た<br/>カナメの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0032_sp
+ | Value=ウィッシュ・スターズの衣装を着た<br/>ランカの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0033_sp
+ | Value=サヴァイヴ・スターズの衣装を着た<br/>シェリルの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0034_sp
+ | Value=タイニー・スワンの衣装を着た<br/>ミレーヌの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0035_sp
+ | Value=シュタイフ・ブリーゼの衣装を着た<br/>レイナの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0036_sp
+ | Value=ラパン・ノワールの衣装を着た<br/>シェリルの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0037_sp
+ | Value=シュタイフ・ブリーゼの衣装を着た<br/>フレイアの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0038_sp
+ | Value=クロスオーバー・レガシーの衣装を着た<br/>ミンメイの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0039_sp
+ | Value=バーン・リライブの衣装を着た<br/>バサラの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0040_sp
+ | Value=フラウ・ユーベルトの衣装を着た<br/>カナメの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0041_sp
+ | Value=フラウ・ユーベルトの衣装を着た<br/>フレイアの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0042_sp
+ | Value=マスコット・メサイアの衣装を着た<br/>ランカの大きなマスコットぬいぐるみ
+ | ParentPage=Texts/Bank/master
+}}
+                    

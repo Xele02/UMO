@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0270
+ | Value=ときには眼鏡もかけるなど、おしゃれな<br/>振る舞いに余念がないマキナ。今日も<br/>バッチリ決めて楽しい街へレッツゴー！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0271
+ | Value=秋の夜長はセンチメンタルな気持ちを<br/>高めるもの。そんな夜は愛され続けた<br/>名曲を聴き、想いに耽るのも悪くない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0272
+ | Value=愛する人を失おうとも、その人への<br/>愛が消えることはないだろう。そして、<br/>愛ある限り、人は希望を失わないのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0273
+ | Value=地球にもたくさんの記念日があったが、<br/>人類が宇宙に飛び出して以降、もっと<br/>たくさんの記念日ができたことだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0274
+ | Value=若いミレーヌにとって、本物の悲劇を<br/>受け止めることは難しい。それでも<br/>くじけない強さが彼女にはあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0275
+ | Value=封じ込められていたブレラの本当の心。<br/>黄金の光とランカの歌、そして自らの<br/>意志にてブレラはすべてを取り戻した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0276
+ | Value=医療船へと潜入する際、看護師の姿に<br/>変装したマキナ。似合いすぎなせいか、<br/>誰も気が付かないのも納得できるかも。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0277
+ | Value=花嫁が待つ教会の扉が勢いよく開かれ、<br/>新郎が姿を現す。今宵、教会を舞台に<br/>美しくも禁じられし愛の花が咲き誇る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0278
+ | Value=年に1度の魔法煌めく不思議な夜には、<br/>ガラスの靴を履いてカボチャの馬車に<br/>乗り、真夜中の舞踏会へと繰り出そう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0279
+ | Value=魔法で空を飛ぶことに憧れる人は多い<br/>はず。案外「飛べば飛べる」と思えば、<br/>なんとかなったり、ならなかったり？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0280
+ | Value=本物の戦場を経験したカナメにとって、<br/>生死をわける瞬間を前に、諦める<br/>という選択肢はないのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0281
+ | Value=プロトカルチャーによる支配を不屈の<br/>精神で跳ね返した美雲。仲間たちとの<br/>絆が美雲に諦めない意志を与えたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0282
+ | Value=カナメの想いを込めた歌がメッサーの<br/>翼と重なったとき、それは気高き風と<br/>なって、戦場を美しく舞うことだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0283
+ | Value=ランカにとって兄という存在はとても<br/>大きなものだろう。優しい兄の存在が<br/>ランカを優しい少女へ成長させたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0284
+ | Value=ワルキューレメンバーの中でもなかなか<br/>エキセントリックな趣味嗜好のレイナ。<br/>それもある意味おしゃれといえるかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0285
+ | Value=ルンピカメイドがお料理に元気を注入！<br/>料理は愛情というけれど、元気になって<br/>ほしいという想いだって大事なんです。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0286
+ | Value=メイドさんと一緒に過ごすとっても甘い<br/>ひととき。心づくしのおもてなしの前に<br/>身も心もふわふわと夢心地になりそう…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0287
+ | Value=挫折を乗り越え、自身のことを妖精と<br/>呼ぶ人々の想いに応え歌うシェリルの<br/>歌声には、確かな愛が満ち溢れていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0288
+ | Value=銀河から見れば人の命も小さく見えて<br/>しまいそう。それでも一生懸命生きる<br/>命の光は、星にだって負けないはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0289
+ | Value=シェリルを新たな希望の歌姫に据えて<br/>侵攻するフロンティア船団。アルトも<br/>小隊長としてその戦列に加わっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0290
+ | Value=クリスマスの季節にクリスマスソングは<br/>かかせない。今年も歌好きな女神たちが<br/>素敵な歌をみんなにプレゼントするぞ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0291
+ | Value=暗い夜道を照らす、真っ赤なトナカイの<br/>鼻に負けないくらい、フレイアのルンも<br/>ピカッと聖夜を照らしてくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0292
+ | Value=アイドルを目指す少女の数はそれこそ<br/>星の数ほど。夢に向かって最初の1歩<br/>を踏み出せるかどうか、それが大事だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0293
+ | Value=バサラの歌エネルギーはアステロイド<br/>を破壊せず貫通するほどに強力。その<br/>際の出力は20万チバソングを超える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0294
+ | Value=歌もダンスもメカもみーんな大好きな<br/>マキナ。好きな物を何ひとつ諦めない<br/>その姿は仲間にも影響を与えたはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0295
+ | Value=お正月はおいしいご馳走たくさん食べて<br/>歌って踊ってしっかり体を動かしたなら<br/>今年も1年無病息災、健康間違いなし？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0296
+ | Value=お互い敵として剣を交えたマックスと<br/>ミリア。そんな2人が結ばれることに<br/>なったのも、愛が持つ力に他ならない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0297
+ | Value=和というと落ち着いたイメージを思い<br/>浮かべがちだけれど、ロックはそんな<br/>常識だって過激に塗り替えていくのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0298
+ | Value=かつて偉大な芸術家が「芸術は爆発だ」<br/>と語った。バサラがサウンドに求める<br/>爆発力にも通じるところがあるのかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0299
+ | Value=舞台という隔絶された世界にてその身に<br/>受ける熱狂と快楽は、シェリルにとって<br/>何にもかえがたいほど魅力的といえた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0300
+ | Value=遥かな距離を隔てて存在する、無数の<br/>銀河。人とバジュラの出会いのように、<br/>宇宙には果てしない未知が溢れていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0301
+ | Value=歌うことに対してや生活面でも人一倍<br/>束縛を嫌うバサラ。今日もギラギラを<br/>追い求め、自由な姿で歌い続けるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0302
+ | Value=年長者として振る舞いに余裕があって、<br/>行動力もあるカナメ。お休みの日には<br/>旅行を楽しむ姿なんかも似合いそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0303
+ | Value=ふらりと立ち寄った場所なら出ていく<br/>ときもまたふらりと出ていく。そんな<br/>旅がバサラには似合うのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0304
+ | Value=お昼はランチのお客さんで大忙し。<br/>クラゲの手だって借りたくなりそうだ<br/>けど、レイナに食べられてしまうかも。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0305
+ | Value=中華料理店では看板娘としても人気の<br/>ミンメイ。エプロンドレスに着替えて<br/>カフェで働いてもきっと似合うだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0306
+ | Value=観客のざわめく声の中、静まり返った<br/>ステージに神秘的なイントロが流れる。<br/>いよいよ待ちに待ったライブが始まる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0307
+ | Value=最後の曲が終わっても、ライブはまだ<br/>終わらない。また次のライブのために<br/>明日へ向かって歌声は続いていくのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0308
+ | Value=今やシェリルと並び立つ存在感を放ち、<br/>同じ人に想いを寄せるランカ。姿形は<br/>違えども、2人の心は鏡写しといえた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0309
+ | Value=ランカを大切な友人として、また歌と<br/>恋のライバルとして認め合うシェリル。<br/>この絆はこれからもきっと続いていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0310
+ | Value=例え何があろうとも愛する妹を守り抜く<br/>というオズマの信念は、兄である以上に<br/>男の生き様を感じさせるものであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0311
+ | Value=今ではアイドルとしての過酷な毎日を<br/>送るカナメだが、かつてはアイドルに<br/>憧れる学生の日々もあったことだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0312
+ | Value=生まれた場所や、育った場所の多くが<br/>謎に包まれたバサラだが、青春は今も<br/>歌とともに熱く燃え続けているはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0313
+ | Value=今や伝説的な歌手としてうたわれている<br/>ミンメイだが、そこにいたるまでの道に<br/>は努力と青春の日々があったのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0314
+ | Value=歌とダンスにメカまで大好きなマキナ。<br/>きっと学生の頃は、男の子や女の子に<br/>関係なくみんなの人気者だったはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0315
+ | Value=思うように歌えず悩んでいたミレーヌは<br/>憧れの歌手アリス・ホリディと出会い、<br/>心を込めて歌う意味を知ったのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0316
+ | Value=喜びや悲しみ、時には痛みすらも共有<br/>してきたワルキューレ。どんなことも<br/>乗り越えられる愛がそこにあったのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0317
+ | Value=銀河クジラを巡る騒動の中、とにかく<br/>バサラの歌を聞かせるためガムリンは<br/>パトロール隊に協力し戦闘へ介入した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0318
+ | Value=一度打ちのめされた経験を乗り越えた<br/>姿と力強い歌は、再び立ち上がる力を<br/>取り戻させてくれるのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0319
+ | Value=フレイアの初ライブでクビを匂わせ<br/>発破をかける美雲。冗談だったのか、<br/>本気だったのかは謎のままである。
+ | ParentPage=Texts/Bank/master
+}}
+                    

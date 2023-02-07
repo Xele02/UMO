@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_sns_000
+ | Value=各種アカウントと連携することで<br/>プレイデータの保存ができます。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_sns_001
+ | Value=※アプリと連携していない場合はアプリを削除するとプレイデータが消失します。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_sns_002
+ | Value=次から表示しない
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_sns_003
+ | Value=30日後に再表示されます。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_title_001
+ | Value=パスワード入力
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_pass_000
+ | Value=プレイヤーIDとパスワードを入力することで、<br/>他の端末で遊んでいたプレイデータを<br/>引き継ぐことができます。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_pass_001
+ | Value=パスワード
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_title_002
+ | Value=機種変更の手順
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_title_003
+ | Value=パスワード発行
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_pass_002
+ | Value=データ移行のパスワードを発行します。<br/>パスワードは大切に保管し、<br/>第三者に伝えたり、公開したりしないでください。<br/><br/><color=#c8087e>※パスワードの有効期間は発行から１週間となります。<br/>移行が完了したパスワードは無効となります。</color><br/>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_pass_003
+ | Value=タイトル（メニュー）→引き継ぎ→データを移行するにて、<br/>下記のプレイヤーIDとパスワードを入力することで、<br/>プレイデータの引き継ぎが行えます。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_pass_004
+ | Value=プレイヤーID
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_title_004
+ | Value=引き継ぎ完了
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_pass_success
+ | Value=データの引き継ぎが完了しました。<br/>タイトル画面に戻ります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_title_005
+ | Value=引き継ぎ失敗
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_pass_success_no
+ | Value=プレイヤーIDまたはパスワードが間違っています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_pass_timeover
+ | Value=パスワードが有効期限を過ぎたため無効となりました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_pass_countover
+ | Value=30日間内に3回以上引き継ぎを行えません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_title_006
+ | Value=プレイデータがありません
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_nodata
+ | Value=プレイデータがないため<br/>パスワードが発行できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_procedure
+ | Value=引き継ぎ手順<br/><br/>データを引き継ぎする場合は、以下の手順でお願いします。<br/><br/>1、現在の端末で「データ引き継ぎ」にある<br/>　　「パスワード発行」でパスワードを発行するか、<br/>　　「SNS連携」でいずれかのSNSと連携を行ってください。<br/><br/>2、新規端末で「データ引き継ぎ」にある「データを移行する」から<br/>　　「パスワード入力」で旧端末で発行したパスワードを入力するか、<br/>　　「データを移行する」から旧端末で連携したSNSと連携を行ってください。<br/><br/><br/>◆注意事項（必読）<br/><br/>旧端末で発行されたパスワードの有効期間は1週間です。<br/>期限を過ぎたパスワードは使用できません。<br/>再度旧端末でパスワードを発行してください。<br/>パスワードは発行ボタンを押すたびに更新されます。<br/><br/>パスワードはデータを引き継ぐための大切な情報です。<br/>メモやスクリーンショットなどで必ずお控えください。<br/>また第三者へ教えたり、公開などすると<br/>データの引き継ぎができなくなる可能性があります。<br/>絶対に開示しないようご注意ください。<br/><br/>データ引き継ぎが完了すると<br/>旧端末ではプレイができなくなります。<br/><br/>データ引き継ぎを行わずにアプリを削除した場合、<br/>これまでプレイしたデータは失われます。<br/>アプリを削除する際は十分にお気をつけくださいますよう、<br/>お願いいたします。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_desc001
+ | Value=プレイヤーIDを入力してください
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_desc002
+ | Value=パスワードを入力してください
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_twitter_title
+ | Value=Twitter連携
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_facebook_title
+ | Value=Facebook連携
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_line_title
+ | Value=LINE連携
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_apple_title
+ | Value=Apple ID連携
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_twitter_success
+ | Value=Twitter連携を行いました。<br/>他の端末でプレイする場合は引き継ぎを行ってください。<br/><br/><color=#c8087e>※Twitter側から歌マクロスとの「アプリ連携」を<br/>解除した場合、歌マクロスアプリ上の表示に<br/>即座に反映されないことがあります。<br/>15分以上、待ってからご確認ください。</color>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_facebook_success
+ | Value=Facebook連携を行いました。<br/>他の端末でプレイする場合は引き継ぎを行ってください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_line_success
+ | Value=LINE連携を行いました。<br/>他の端末でプレイする場合は引き継ぎを行ってください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_apple_success
+ | Value=Apple ID連携を行いました。<br/>他の端末でプレイする場合は引き継ぎを行ってください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_twitter_success_no
+ | Value=Twitterとの連携に失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_facebook_success_no
+ | Value=Facebookとの連携に失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_line_success_no
+ | Value=LINEとの連携に失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_apple_success_no
+ | Value=Apple IDとの連携に失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_apple_cancel
+ | Value=Apple IDとの連携がキャンセルされました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_window_inh_title
+ | Value=データ引き継ぎ
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unlock_episode_reward
+ | Value=エピソード解放 {0} 達成！
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_support_title
+ | Value=サポート
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_maintenance_title
+ | Value=メンテナンス
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_ban_title
+ | Value=警告
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_app_update_title
+ | Value=アプリアップデート
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_app_update_an
+ | Value=新しいアプリバージョンがあります。<br/>Google Play ストアにて<br/>アップデートを行ってください。<br/>更新に失敗する場合は、端末を再起動してください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_app_update_ios
+ | Value=新しいアプリバージョンがあります。<br/>App Storeにて<br/>アップデートを行ってください。<br/>更新に失敗する場合は、端末を再起動してください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cache_clear_00
+ | Value=ゲームデータを削除して、データの修復を行います。<br/>ゲームがうまく起動しない場合などにお試しください。<br/>データ修復を行いますか？<br/><br/><color=#c8087e>※プレイデータは削除されません。</color>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cache_clear_01
+ | Value=データ修復が完了しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cache_clear_02
+ | Value=データ修復
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cache_clear_03
+ | Value=データ修復完了
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cache_clear_04
+ | Value=データ修復が完了しました。<br/>タイトル画面に戻ります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cache_clear_05
+ | Value=データ修復後、タイトル画面で<br/>ゲームデータを再ダウンロードします。<br/><br/><color=#c8087e>※ダウンロードに時間がかかる場合がございますので、<br/>Wi-Fi環境を推奨いたします。また、ダウンロード中は<br/>ゲームをプレイしていただくことができません。<br/>※ストレージの残り容量によっては、<br/>ゲームプレイを再開できない可能性があります。</color>
+ | ParentPage=Texts/Bank/common
+}}
+                    

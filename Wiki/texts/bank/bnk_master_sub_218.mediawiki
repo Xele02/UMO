@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0248
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0249
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0250
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0251
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0252
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0253
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0254
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0255
+ | Value=歌姫スコア＆ダメージ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0256
+ | Value=Fld波スコアアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0257
+ | Value=親密度スコアアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0258
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0259
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0260
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0261
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0262
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0263
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0264
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0265
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0266
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0267
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0268
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0269
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0270
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0271
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0272
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0273
+ | Value=スコア＆ダメージEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0274
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0275
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0276
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0277
+ | Value=スコア＆ダメージEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0278
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0279
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0280
+ | Value=スコア＆ダメージEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0281
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0282
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0283
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0284
+ | Value=スコア＆ダメージEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0285
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0286
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0287
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0288
+ | Value=スコア＆ダメージEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0289
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0290
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0291
+ | Value=スコア＆ダメージEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0001
+ | Value=ライフが[tv]％以下になると[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0002
+ | Value=ライフが[tv]％以下になると[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0003
+ | Value=ライフが[tv]％以下になると[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0004
+ | Value=ライフが[tv]％以下になると[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0005
+ | Value=ライフが[tv]％以下になると[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0006
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    

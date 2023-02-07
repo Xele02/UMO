@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2630
+ | Value=【ハッピー×バースデイ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2631
+ | Value=人生の折り返しになる大切な日を、仲間たちと迎えられたことに万感の思いのフレイア。<br/>心からの感謝とともに、これからもワルキューレとして歌い続けることを誓うのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2632
+ | Value=誕生日のプレゼントとして、フレイアが好きなものを思い浮かべるハヤテであったが…？<br/>「アイツの好きなもの…歌とリンゴ以外わっかんねぇ」─ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2633
+ | Value=フレイアへの誕生日プレゼントを探して、ショッピングモール内の店舗を回るハヤテ。<br/>アクセサリーやマスコットなどを手に取ってみるが、どうもしっくりこないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2634
+ | Value=お祝いの歌の締めくくりに、誕生日ケーキに立てられたロウソクを吹き消すフレイア。<br/>ロウソクをみんなの前で吹き消すのは、誕生日をお祝いされた人の大切な役目なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2635
+ | Value=ウィンダミアとの戦争がまだまだ続いていくことに対し、心を痛めていたフレイア。<br/>遠い銀河の先を見つめて、故郷の星へと届けるかのように1人静かに歌うのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2636
+ | Value=プレゼント候補のリストを疑ってかかるハヤテに対し、息を巻いて反論するミラージュ。<br/>どうやら女性誌のアンケート結果らしく、ミラージュにとっては信頼できるものらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2637
+ | Value=物陰に隠れてハヤテとミラージュの様子を観察していたチャックとマキナ、レイナ。<br/>ミラージュに対してあまりに鈍感なハヤテの態度に、流石に3人からもダメ出しが入る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2638
+ | Value=父親が自分と同じパイロットであったことを知り、どこか自嘲気味のハヤテ。<br/>やっと見つけたやりたいことが父親と同じ道だったことに複雑な心境のようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2639
+ | Value=ハヤテがプレゼント選びのお礼としてミラージュにおごったアイスクリーム。<br/>何気ないこうした気遣いからハヤテの人柄が伺える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2640
+ | Value=ミラージュが用意していたフレイアへの誕生日プレゼント候補。<br/>「お前…このリスト自分の欲しい物並べただけじゃねぇの？」─ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2641
+ | Value=銀河のアーティストたちが集結するスペシャルライブに時空を超えて共演した美雲。<br/>眩惑するかのような光景と神秘の歌声は、観客たちにかつてない幻想の世界を見せる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2642
+ | Value=【女神たちの誕生歌】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2643
+ | Value=フレイアの誕生日サプライズパーティーの発起人として、みんなと気合をいれるマキナ。<br/>ここぞというタイミングでみんなを盛り上げてきたのは、いつだってマキナなのである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2644
+ | Value=誕生日のパーティーで振る舞うための料理を自信満々に引き受けるチャック。<br/>特別なご馳走への期待から、お祝いされる側でなくとも楽しみになりそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2645
+ | Value=サプライズの話を聞きつけて、横から身を乗り出しながら会話に参加するチャック。<br/>お祭りや賑やかなことが好きなのは、ラグナ人の気質だったりするのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2646
+ | Value=フレイアの誕生日をサプライズなものにするべく、役割の確認をするマキナとレイナ。<br/>提案した内容をその場で纏め上げて、段取りまで進めてしまう行動力は流石といえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2647
+ | Value=誕生日プレゼントに雪を降らせるというハヤテの発想に対して、素直に感心するアラド。<br/>直接褒められることには馴れていないのか、思わず目をぱちくりさせるハヤテであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2648
+ | Value=手のひらに落ちた雪が解けて流れていく様子を、どこか懐かしそうに見つめる美雲。<br/>その懐かしいという感情がどこから来たものなのか、このときはまだわからずにいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2649
+ | Value=クラゲのスルメを齧りながらパーティーの準備をやり過ごすアラド。<br/>なお、サボリに厳しいミラージュにはしっかり見つかってしまうのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2650
+ | Value=フレイアへの誕生日プレゼントを運びながらパーティー会場に向かうハヤテ。<br/>その急いでいる様子から、どうやら準備には少し時間がかかる代物のようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2651
+ | Value=かぶった頭巾とつぶらな瞳がキュートなウミネコのマスコット。<br/>お腹を押すと「キュッ」と鳴くギミック付き。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2652
+ | Value=ワルキューレの広報サイトに掲載されたマキナのピックアップ画像。<br/>「マキナの笑顔ラブリー、立ち姿モアラブリー」─レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2653
+ | Value=フレイアの誕生日を間近に控え、何かサプライズなお祝いができないかと考えるハヤテ。<br/>デルタ小隊やワルキューレのみんなと協力すれば、素敵なサプライズを演出できそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2654
+ | Value=フレイアとハヤテがペアを組んで乗り込むフレイア・ヴィオンカラーのVF-31J。<br/>レッドを基調にして彩られた翼が、ライブの観客たちへ元気の歌を届ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2655
+ | Value=だいぶ遅れてしまったものの、プレゼントを用意してパーティーに参加できたハヤテ。<br/>ハヤテの姿が見えず気にしていたフレイアの表情にも、喜びと安堵の色が広がっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2656
+ | Value=フレイアの気持ちを大切にしていたからこそ用意できたハヤテのサプライズプレゼント。<br/>ルンを輝かせて大喜びするフレイアの姿を、ハヤテもまた満足そうに見つめるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2657
+ | Value=ハヤテがルンに差し出した指を避けることもなく、じっとハヤテを見つめ返すフレイア。<br/>ルンの輝きはまるでフレイアの心を映すかのように、辺り一面を暖かく照らすのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2658
+ | Value=ハヤテがパイロットになったことと、後で知った父親の話は関係ないというミラージュ。<br/>ミラージュらしい正直でまっすぐな言葉に、ハヤテの気持ちも和らいだのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2659
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2660
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2661
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2662
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2663
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2664
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2665
+ | Value=銀河のアーティストたちが集結するスペシャルライブに時空を超えて共演したカナメ。<br/>脅威を前にしても決して怯まない、生命力溢れた歌声が観客たちに活力をみなぎらせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2666
+ | Value=【クロスオーバーライフ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2667
+ | Value=誕生日を迎えるフレイアへのサプライズ企画に、ノリノリな様子で賛同を返すレイナ。<br/>そして照れくささから曖昧な返事をする不届き者には、容赦の無い圧力を掛けるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2668
+ | Value=みんなで盛り上がることに慣れていないのか、中々話の輪に入っていけないミラージュ。<br/>それでもマキナたちからの圧力に負けて、控えめながらも肯定の意志を示すのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2669
+ | Value=【クロスオーバーライフ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2670
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2671
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2672
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2673
+ | Value=【クロスオーバーライフ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2674
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2675
+ | Value=【クロスオーバーライフ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2676
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2677
+ | Value=銀河のアーティストたちが集結するスペシャルライブに時空を超えて共演したミレーヌ。<br/>時空を股に掛けた大舞台であっても、物怖じしない姿と歌声がみんなをドキドキさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2678
+ | Value=大切な人たちから送られたお祝いのメッセージに、ちょっとはにかみ気味なミレーヌ。<br/>愛用のベースをイメージした特製ケーキも登場して、素敵な誕生日になったみたいだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2679
+ | Value=木の根元に座り込み、ぼんやりと誰かを待っているかのような様子のミレーヌ。<br/>振り返った瞳の中には、おひさまのように優しい笑顔が映っていることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0470
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0471
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0472
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0473
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0474
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0475
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0476
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0477
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0478
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0479
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0480
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0481
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0482
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0483
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0484
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0485
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0486
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0487
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0488
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0489
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0490
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0491
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0492
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0493
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0494
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0495
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0496
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0497
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0498
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0499
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_nm_0500
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0001
+ | Value=故郷の惑星から単身飛び出し、念願の<br/>オーディションへと参加するフレイア。<br/>持てる力をすべて出し切ったその結果は？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0002
+ | Value=フレイア、ハヤテ、ミラージュ。数奇な<br/>運命が重なって、3人は邂逅を果たした。<br/>この惑星アル・シャハルの地で。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0003
+ | Value=マクロス進宙式の当日、輝とミンメイは<br/>異星人との戦いに巻き込まれる。平和は<br/>終わり、史上初の星間大戦が始まった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0004
+ | Value=マクロス艦内の街で、叔父の中華料理店<br/>「娘々」を再開するミンメイ。持ち前の<br/>明るさで市民の心を支えるのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0005
+ | Value=惑星ヴォルドールに潜入調査を試みる<br/>デルタ小隊とワルキューレ。ヴァール化<br/>の謎と陰謀に迫ることができるのか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0006
+ | Value=レイナ・プラウラー。凄腕の電子技術者<br/>でもあり、ハッキングの腕前は超一流。<br/>寡黙であまり感情を表に出さない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0007
+ | Value=マキナ・中島。凄腕のメカニックとして<br/>デルタ小隊メンバーの機体整備も担当する。<br/>かわいいあだ名をつけるのが好き。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0008
+ | Value=大人気歌手シェリルのライブが開催され<br/>盛り上がるフロンティア船団。そこに<br/>謎の生物バジュラの群れが迫っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0009
+ | Value=展望公園で出会ったランカとシェリル。<br/>この出会いが、後にフロンティア船団の<br/>命運を左右することになるのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0010
+ | Value=地球人と異星人、初の星間結婚をした<br/>2人の天才パイロット。この日、銀河の<br/>歴史に新たな1ページが刻まれた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0011
+ | Value=ヴァールの発生により戦場と化した惑星<br/>アル・シャハル。絶望の最中、戦術音楽<br/>ユニット ワルキューレが舞い降りる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0012
+ | Value=激しい暴動の最中、舞い降りた超時空<br/>シンデレラ、ランカ。予定より早まった<br/>鮮烈なファーストライブが幕を開けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0013
+ | Value=突如謎の敵に襲われたマクロス7船団。<br/>混乱を極める最中、1人の男が赤い<br/>バルキリーに乗って戦場へと現れる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0014
+ | Value=第37次超長距離移民船団マクロス7。<br/>そこに、後に伝説となるバンドがいた。<br/>彼らの名は…「Fire Bomber」!
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0015
+ | Value=銀河横断ツアーの最終公演を行うため、<br/>フロンティア船団を訪れたシェリル。<br/>そこで待つ運命を彼女はまだ知らない。 
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0016
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0017
+ | Value=惑星ランドールでのワクチンライブ。<br/>新メンバーフレイアのデビューを一目<br/>見ようと多くのファンが会場に集った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0018
+ | Value=かつて自分の命を救ってくれた恩人。<br/>かけがえのない存在である彼女との別れ<br/>の夜、メッサーは感謝の想いを語った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0019
+ | Value=突如出現した謎のバルキリー部隊に<br/>応戦するデルタ小隊。白騎士と死神、<br/>2人のエースが戦場の空で激突する。
+ | ParentPage=Texts/Bank/master
+}}
+                    

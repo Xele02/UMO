@@ -1,0 +1,307 @@
+
+{{Texts/Bank/BankValue:
+ | Key=talk_time_01
+ | Value=休む時は思いっきり休む…<br/>だら～ん…
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_02
+ | Value=猫カフェがあるなら、<br/>ウミネコカフェもあるはず
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_03
+ | Value=クラゲは生がいい。<br/>調理不要
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_04
+ | Value=ゲームは1日1時間…<br/>守れる？
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_05
+ | Value=私にハッキング<br/>できないものなんて、ない
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_06
+ | Value=私から逃げようなんて、甘い。<br/>居場所の特定は得意
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_07
+ | Value=♪～
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_08
+ | Value=…！マキナのピンチ？<br/>行かなくちゃ
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_01
+ | Value=朝。今日もがんばる。<br/>いっしょに
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_02
+ | Value=裸喰娘娘、行こう。<br/>お昼ご飯たべよう
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_03
+ | Value=夕日、まっかっか
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_04
+ | Value=晩ごはん…<br/>クラゲの丸焼きがいい
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_05
+ | Value=まだ、起きてるの。<br/>寝なきゃ、明日にひびく
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_01
+ | Value=久しぶり…待ってた
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_02
+ | Value=今日もよろしく
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_birthday_01
+ | Value=誕生日、祝ってくれるの？<br/>…なら、クラゲのケーキ、<br/>食べてみたい
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_01
+ | Value=おせち料理、食べた。<br/>おもちはもちもち…クセになりそう
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_02
+ | Value=マキナと一緒にチョコ作って、<br/>食べさせあいっこ。<br/>ふふ…完璧なバレンタイン！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_03
+ | Value=今日はみんなで豆まき。<br/>カナメが一番はしゃいでた
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_04
+ | Value=今日はひな祭り。<br/>人形には興味ないけどマキナの<br/>ひな祭り特別衣装は気になる
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_05
+ | Value=ホワイトチョコレートクラゲ、<br/>おいしそう
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_06
+ | Value=もう不要なハッキングはしない。<br/>…もちろん、嘘
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_07
+ | Value=クラゲいっぱい買った。<br/>連休のために買いだめした
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_08
+ | Value=…マキナの花嫁姿、<br/>想像して泣いた
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_09
+ | Value=フレイアが書いた短冊、発見…！　<br/>ほうほう、なるほどなるほど…！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_10
+ | Value=夏は、涼しい部屋で<br/>マキナとゆったり…推奨
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_11
+ | Value=お祭りに行きたい。<br/>屋台料理、食べ尽くすべし…！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_12
+ | Value=望遠鏡持ってきた。<br/>これでウサギを探そう
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_13
+ | Value=美雲に悪戯、大成功。<br/>美雲の悲鳴、モアラブリー！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_14
+ | Value=お祭りなら、どこかに<br/>クラゲのお店があるはず。<br/>探してくる
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_15
+ | Value=マキナサンタのプレゼント、<br/>今年も期待大…！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_16
+ | Value=きっと来年も、いい年になる。<br/>…しよう。一緒に
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_17
+ | Value=ハーフミリオン突破…<br/>上出来
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_18
+ | Value=なんと、ミリオン突破…<br/>みんな、ありがとう
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_19
+ | Value=200万ダウンロード…<br/>まだまだこれから
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_20
+ | Value=1周年…胸がチクチク
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_01
+ | Value=…どうか、した？
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_02
+ | Value=そんなにツンツンして、<br/>楽しい？
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_03
+ | Value=さわりすぎ…<br/>ちょっとしつこい
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_04
+ | Value=休む時は思いっきり休む…<br/>だら～ん…
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_05
+ | Value=猫カフェがあるなら、<br/>ウミネコカフェもあるはず
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_06
+ | Value=クラゲは生がいい。<br/>調理不要
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_07
+ | Value=からかうのは<br/>やめた方がいい
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_08
+ | Value=…撫でられるのは<br/>不思議な気分
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_01
+ | Value=あげる…もちろんタダで
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_02
+ | Value=存分に役立ててほしい
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_01
+ | Value=シミュレーションの結果、<br/>予想以上に良好だった。<br/>データもたくさん集まった
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_01
+ | Value=…いい感じ
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_02
+ | Value=まだまだ成長期
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_03
+ | Value=プレミアムなお知らせ…！　<br/>ドキドキ！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_01
+ | Value=グッド
+ | ParentPage=Texts/Bank/diva005
+}}
+                    

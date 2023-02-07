@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0152
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0153
+ | Value=レイナ　レベル2で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0154
+ | Value=レイナ　レベル4で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0155
+ | Value=レイナ　レベル7で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0156
+ | Value=レイナ　レベル10で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0157
+ | Value=レイナ　レベル12で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0158
+ | Value=レイナ　レベル17で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0159
+ | Value=レイナ　レベル20で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0160
+ | Value=レイナ　レベル25で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0161
+ | Value=レイナ　レベル30で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0162
+ | Value=レイナ　レベル35で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0163
+ | Value=レイナ　レベル40で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0164
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0165
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0166
+ | Value=ランカ　レベル2で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0167
+ | Value=ランカ　レベル4で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0168
+ | Value=ランカ　レベル7で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0169
+ | Value=ランカ　レベル10で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0170
+ | Value=ランカ　レベル12で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0171
+ | Value=ランカ　レベル17で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0172
+ | Value=ランカ　レベル20で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0173
+ | Value=ランカ　レベル25で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0174
+ | Value=ランカ　レベル30で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0175
+ | Value=ランカ　レベル35で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0176
+ | Value=ランカ　レベル40で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0177
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0178
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0179
+ | Value=シェリル　レベル2で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0180
+ | Value=シェリル　レベル4で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0181
+ | Value=シェリル　レベル7で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0182
+ | Value=シェリル　レベル10で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0183
+ | Value=シェリル　レベル12で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0184
+ | Value=シェリル　レベル17で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0185
+ | Value=シェリル　レベル20で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0186
+ | Value=シェリル　レベル25で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0187
+ | Value=シェリル　レベル30で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0188
+ | Value=シェリル　レベル35で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0189
+ | Value=シェリル　レベル40で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0190
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0191
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0192
+ | Value=ミレーヌ　レベル2で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0193
+ | Value=ミレーヌ　レベル4で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0194
+ | Value=ミレーヌ　レベル7で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0195
+ | Value=ミレーヌ　レベル10で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0196
+ | Value=ミレーヌ　レベル12で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0197
+ | Value=ミレーヌ　レベル17で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0198
+ | Value=ミレーヌ　レベル20で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0199
+ | Value=ミレーヌ　レベル25で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0200
+ | Value=ミレーヌ　レベル30で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0201
+ | Value=ミレーヌ　レベル35で解放
+ | ParentPage=Texts/Bank/master
+}}
+                    

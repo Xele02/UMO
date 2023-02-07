@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ar_net_error_retry
+ | Value=リトライ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_net_error_title
+ | Value=タイトルへ戻る
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=badge_label_quest_achieved
+ | Value={0}達成！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=badge_label_gacha_oneday
+ | Value=1回無料
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=badge_label_gacha_firsttime
+ | Value=初回無料
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=badge_label_gacha_thistime
+ | Value=今回は無料
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_multi_dance_popup_00
+ | Value=歌姫が編成されていないため<br/>楽曲をプレイすることができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_multi_dance_popup_01
+ | Value=超時空プリズムに<br/>歌姫が編成されていないため<br/>楽曲をプレイすることができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_multi_dance_popup_02
+ | Value=歌姫が編成されていないため<br/>楽曲をプレイすることができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_multi_dance_popup_03
+ | Value=このユニットライブをプレイするためには<br/>{0}人以上の歌姫が必要です。<br/><br/><color=#C8087E>※記憶の時空を進めることで新しい歌姫が<br/>ユニットに参加できるようになります。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_multi_dance_lock_text
+ | Value=ユニットライブは<br/>RANK{0}で<br/>解放されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_warning_window_title
+ | Value=ユニットライブについて
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_warning_window_check
+ | Value=今後表示しない
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_warning_window_text_001
+ | Value=ユニットライブが選択されています。<br/>ユニットライブはご使用の端末によっては快適なプレイが<br/>できない可能性があります。<br/><br/>快適なプレイを重視する場合はソロライブでプレイすることを推奨します。<br/><br/><color=#C8087E>※ソロライブ、ユニットライブには見た目以外の違いはありません。<br/>※動作設定の「3Dライト」を選ぶことで改善することがあります。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_warning_window_text_002
+ | Value=ユニットライブが選択されています。<br/>ユニットライブはご使用の端末によっては快適なプレイが<br/>できない可能性があります。<br/><br/><color=#C8087E>※動作設定の「3Dライト」を選ぶことで改善することがあります。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=episode_appeal_text_001
+ | Value=新エピソード
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=episode_appeal_text_002
+ | Value=エピソード完全解放報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=episode_appeal_text_003
+ | Value={0}専用：新衣装登場！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=add_unit_multi_dance_popup_01
+ | Value=ユニットライブ（{0}人）が追加されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_error_purchase_multi_title
+ | Value=購入失敗
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_error_purchase_multi_text_00
+ | Value=購入処理中にエラーが発生しました。<br/>タイトル画面に戻ります。<br/><color=#C8087E>※購入した商品がプレゼントBOXに送られている<br/>可能性がありますのでご確認ください。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_shutdown_message
+ | Value=アプリを終了してもよろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_shutdown_button_l
+ | Value=キャンセル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_shutdown_button_r
+ | Value=OK
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=android_backbutton_disable
+ | Value=Backキーは無効です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_sp_daily_adv_num_title
+ | Value=第{0}話　配信中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_sp_daily_adv_all_title
+ | Value=全話　配信中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_sp_end_attain
+ | Value=集計中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_sp_epilogue
+ | Value=イベントエピローグ配信中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_sp_reward
+ | Value=受取期間中！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_sp_open_at
+ | Value={0}/{1}/{2} {3}:{4:D2} 開催
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_sp_close_at
+ | Value={0}/{1}/{2} {3}:{4:D2} まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=episode_reward_text001
+ | Value=必要EP：{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=episode_reward_text002
+ | Value=エピソード完全解放後<br/>{0}{1}ごとに獲得
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=episode_reward_text003
+ | Value=EP
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_6line_music_text
+ | Value=6レーンゲームが追加されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_formation_name_chenge_popup_title
+ | Value=小隊名変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_formation_name_chenge_popup_text_01
+ | Value=小隊名を入力してください。<br/>（全角半角15文字まで）
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_formation_name_chenge_popup_text_02
+ | Value=・一部使用できない記号、文字がございます。<br/>・変更の反映に時間がかかることがあります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_formation_name_chenge_popup_text_03
+ | Value=小隊名変更完了しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_formation_name_notchangedcomment_popup
+ | Value=小隊名が変更されませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_chenge_popup_title
+ | Value=変更確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_plantoon_chenge_popup_text_01
+ | Value=所属する小隊を変更しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_no_leader_popup_text
+ | Value=リーダー機が編成されていないため<br/>小隊を決定できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_Dissolution_popup_text
+ | Value=小隊を解散しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer__cant_orders_popup_text
+ | Value=現在、このオペレーションを<br/>受注することはできません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_squadron_popup_title
+ | Value=出撃小隊
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_fast_completion_popup_title_01
+ | Value=高速完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_fast_completion_popup_text_01_01
+ | Value=高速プログラムを{0}個消費することで<br/>オペレーションを高速完了します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_fast_completion_popup_text_01_02
+ | Value=<color=#C8087E>高速プログラム {0}→{1}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    

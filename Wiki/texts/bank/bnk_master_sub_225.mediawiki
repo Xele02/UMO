@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0016
+ | Value=トータル＆ライフ{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0017
+ | Value=トータル＆サポート{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0018
+ | Value=チャーム＆ライフ{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0019
+ | Value=ボイス＆ライフ{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0020
+ | Value=ソウル＆ライフ{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0021
+ | Value=トータル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0022
+ | Value=星属性{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0023
+ | Value=愛属性{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0024
+ | Value=命属性{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0025
+ | Value=トータル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0026
+ | Value=ソウル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0027
+ | Value=ボイス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0028
+ | Value=チャーム{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0029
+ | Value=星属性{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0030
+ | Value=愛属性{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0031
+ | Value=命属性{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0032
+ | Value=歌姫自身のトータル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0033
+ | Value=ソウルボイス{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0034
+ | Value=ソウルチャーム{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0035
+ | Value=ボイスチャーム{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0036
+ | Value=ソウル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0037
+ | Value=ボイス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0038
+ | Value=チャーム{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0039
+ | Value=ソウル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0040
+ | Value=ボイス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0041
+ | Value=チャーム{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0001
+ | Value=ライフ{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0002
+ | Value=ソウル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0003
+ | Value=ボイス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0004
+ | Value=チャーム{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0005
+ | Value=星属性プレートの<br/>全ステータス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0006
+ | Value=愛属性プレートの<br/>全ステータス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0007
+ | Value=命属性プレートの<br/>全ステータス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0008
+ | Value=フォールド波{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0009
+ | Value=サポート{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0010
+ | Value=全ステータス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0011
+ | Value=トータル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0012
+ | Value=ソウルボイス{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0013
+ | Value=ソウルチャーム{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0014
+ | Value=ボイスチャーム{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0015
+ | Value=フォールド波{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0016
+ | Value=トータル＆ライフ{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0017
+ | Value=トータル＆サポート{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0018
+ | Value=チャーム＆ライフ{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0019
+ | Value=ボイス＆ライフ{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0020
+ | Value=ソウル＆ライフ{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0021
+ | Value=トータル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0022
+ | Value=星属性プレートの<br/>全ステータス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0023
+ | Value=愛属性プレートの<br/>全ステータス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0024
+ | Value=命属性プレートの<br/>全ステータス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    

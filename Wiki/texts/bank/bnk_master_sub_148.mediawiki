@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2230
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つレイナとマキナ。<br/>愛と希望の鈴の音は美しい星とともに、クリスマスを賑やかに仕立てあげることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2231
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つミンメイとランカ。<br/>時代を越える2人のシンデレラストーリーが、めくるめく新年を歌声とともに祝福する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2232
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つカナメとミレーヌ。<br/>煌めくタフなレディーのハートは、銀河に強さと美しさを知らしめてくれることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2233
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つバサラとランカ。<br/>学園を舞台にした熱き青春のビートは、若者たちのハートを美しく星のように輝かせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2234
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つフレイアとシェリル。<br/>期待の新人と超一流アーティストによる強力タッグ！狙ったハートは決して逃さないぞ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2235
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つミレーヌとレイナ。<br/>時が経つのも忘れるほどの愉快なイリュージョンで、めくるめく不思議の世界へご招待！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2236
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つカナメとシェリル。<br/>ハートを描いて舞うふたつのブーケに乗せて、花嫁たちを祝福する歌が銀河に響き渡る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2237
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つミンメイとマキナ。<br/>透き通るような青と瑞々しさに溢れた水着姿は、爽やかな刺激と清涼感を届けてくれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2238
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つランカと美雲。<br/>月の如き神秘性に、無数の星の如き輝きが合わさって、銀河に新しい物語を紡いでいく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2239
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つフレイアとバサラ。<br/>星々の輝きをその身に背負い、銀河を巡るすべてを魂の絶唱によって突き動かしていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2240
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つミレーヌとシェリル。<br/>お茶目とキュートが炸裂するライブに、お化けたちからも嬉しい悲鳴のオンパレードだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2241
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つミンメイとカナメ。<br/>数々の想いをその身に背負い、威風堂々とした歌声で銀河の彼方へと突き進んでいく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2242
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つシェリルとランカ。<br/>たくさんの幸せを抱きしめながら、銀河も震える歌声で最高のクリスマスを演出するぞ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2243
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つバサラとレイナ。<br/>2人とも新春にふさわしい着物姿で、新年早々おおいに熱く刺激的な旋風を巻き起こす。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2244
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つ美雲とフレイア。<br/>都会の賑やかなサウンドの中、圧倒的な存在感の歌声が流行の最先端を引っ張っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2245
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つレイナとミンメイ。<br/>繰り返しドラマで観た歌姫との共演が、感動とドキドキを歌に乗せて銀河に反響させる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2246
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つバサラとランカ。<br/>夢に向かって真っすぐな瞳と歌は、新しい目標と次なるフロンティアを今も探し続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2247
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2248
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2249
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2250
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2251
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2252
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2253
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2254
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2255
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2256
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2257
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2258
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2259
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2260
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2261
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2262
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2263
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2264
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2265
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2266
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2267
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2268
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2269
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2270
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2271
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2272
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2273
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2274
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2275
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2276
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2277
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2278
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2279
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

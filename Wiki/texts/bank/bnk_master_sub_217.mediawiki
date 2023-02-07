@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0198
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0199
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0200
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0201
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0202
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0203
+ | Value=歌姫スコア・リピート
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0204
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0205
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0206
+ | Value=判定緩和S＋スコアS
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0207
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0208
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0209
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0210
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0211
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0212
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0213
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0214
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0215
+ | Value=モードスコアアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0216
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0217
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0218
+ | Value=スコリピ＆ダメージ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0219
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0220
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0221
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0222
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0223
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0224
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0225
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0226
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0227
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0228
+ | Value=判定緩和S＋スコアS
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0229
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0230
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0231
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0232
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0233
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0234
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0235
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0236
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0237
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0238
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0239
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0240
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0241
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0242
+ | Value=スコアアップEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0243
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0244
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0245
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0246
+ | Value=スコア・リピートEX
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_nm_0247
+ | Value=回復S＋スコアS
+ | ParentPage=Texts/Bank/master
+}}
+                    

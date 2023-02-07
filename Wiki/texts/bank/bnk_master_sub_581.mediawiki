@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0043
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0044
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0045
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0046
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0047
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0048
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0049
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0050
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0051
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0052
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sk_nm_0001
+ | Value=ライブスキップチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sk_nm_0002
+ | Value=期限付きライブスキップチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sk_dsc_0001
+ | Value=リズムゲームをスキップできるチケット<br/>1日に使える枚数には制限があります。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sk_dsc_0002
+ | Value=リズムゲームをスキップできる期限付きのチケット<br/>1日に使える枚数には制限があります。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sk_qt_0001
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sk_qt_0002
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gc_lm_nm_0001
+ | Value=40001ガチャポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gc_lm_nm_0002
+ | Value=41001ガチャポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gc_lm_nm_0003
+ | Value=41002ガチャポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gc_lm_nm_0004
+ | Value=41003ガチャポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gc_lm_nm_0005
+ | Value=41004ガチャポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gc_lm_nm_0006
+ | Value=41005ガチャポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gc_lm_nm_0007
+ | Value=41006ガチャポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gc_lm_nm_0008
+ | Value=41007ガチャポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gc_lm_nm_0009
+ | Value=41008ガチャポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gc_lm_nm_0010
+ | Value=49999ガチャポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_0101
+ | Value=デカルガチャチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_0201
+ | Value=イベントガチャチケット(3月-青-)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_0202
+ | Value=イベントガチャチケット(4月-青-)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_0203
+ | Value=イベントガチャチケット(2月-青-)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_0204
+ | Value=イベントガチャチケット(3月-緑-)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_0205
+ | Value=イベントガチャチケット(4月-緑-)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_0206
+ | Value=イベントガチャチケット(2月-緑-)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_0207
+ | Value=イベントガチャチケット(3月-赤-)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_0208
+ | Value=イベントガチャチケット(4月-赤-)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_0209
+ | Value=イベントガチャチケット(2月-赤-)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_dsc_0101
+ | Value=歌晶石の代わりにガチャを引くことができるチケット。<br/><color=#C8087E>※デカルガチャなど一部のガチャで使用できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_dsc_0201
+ | Value=歌晶石の代わりにガチャを引くことができるチケット。<br/><color=#C8087E>※対象のガチャはガチャ画面で確認できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_dsc_0202
+ | Value=歌晶石の代わりにガチャを引くことができるチケット。<br/><color=#C8087E>※対象のデカルガチャはガチャ画面で確認できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_dsc_0203
+ | Value=歌晶石の代わりにガチャを引くことができるチケット。<br/><color=#C8087E>※対象のガチャはガチャ画面で確認できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_dsc_0204
+ | Value=歌晶石の代わりにガチャを引くことができるチケット。<br/><color=#C8087E>※対象のガチャはガチャ画面で確認できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_dsc_0205
+ | Value=歌晶石の代わりにガチャを引くことができるチケット。<br/><color=#C8087E>※対象のガチャはガチャ画面で確認できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_dsc_0206
+ | Value=歌晶石の代わりにガチャを引くことができるチケット。<br/><color=#C8087E>※対象のガチャはガチャ画面で確認できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_dsc_0207
+ | Value=歌晶石の代わりにガチャを引くことができるチケット。<br/><color=#C8087E>※対象のガチャはガチャ画面で確認できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_dsc_0208
+ | Value=歌晶石の代わりにガチャを引くことができるチケット。<br/><color=#C8087E>※対象のガチャはガチャ画面で確認できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_dsc_0209
+ | Value=歌晶石の代わりにガチャを引くことができるチケット。<br/><color=#C8087E>※対象のガチャはガチャ画面で確認できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_uni_0101
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_uni_0201
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_uni_0202
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_uni_0203
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    

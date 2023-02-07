@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0645
+ | Value=プレイヤーランクを172にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0646
+ | Value=プレイヤーランクを173にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0647
+ | Value=プレイヤーランクを174にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0648
+ | Value=プレイヤーランクを175にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0649
+ | Value=プレイヤーランクを176にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0650
+ | Value=プレイヤーランクを177にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0651
+ | Value=プレイヤーランクを178にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0652
+ | Value=プレイヤーランクを179にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0653
+ | Value=プレイヤーランクを180にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0654
+ | Value=プレイヤーランクを181にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0655
+ | Value=プレイヤーランクを182にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0656
+ | Value=プレイヤーランクを183にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0657
+ | Value=プレイヤーランクを184にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0658
+ | Value=プレイヤーランクを185にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0659
+ | Value=プレイヤーランクを186にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0660
+ | Value=プレイヤーランクを187にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0661
+ | Value=プレイヤーランクを188にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0662
+ | Value=プレイヤーランクを189にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0663
+ | Value=プレイヤーランクを190にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0664
+ | Value=プレイヤーランクを191にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0665
+ | Value=プレイヤーランクを192にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0666
+ | Value=プレイヤーランクを193にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0667
+ | Value=プレイヤーランクを194にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0668
+ | Value=プレイヤーランクを195にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0669
+ | Value=プレイヤーランクを196にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0670
+ | Value=プレイヤーランクを197にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0671
+ | Value=プレイヤーランクを198にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0672
+ | Value=プレイヤーランクを199にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0673
+ | Value=プレイヤーランクを200にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0674
+ | Value=イベントを進めて<br/>【銀河の妖精】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0675
+ | Value=イベントを進めて<br/>【銀河の妖精】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0676
+ | Value=イベントを進めて<br/>【銀河の妖精】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0677
+ | Value=イベントを進めて<br/>【ミンメイ・バースデー】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0678
+ | Value=イベントを進めて<br/>【ミンメイ・バースデー】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0679
+ | Value=イベントを進めて<br/>【ミンメイ・バースデー】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0680
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0681
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0682
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0683
+ | Value=イベントを進めて<br/>【Happy Hacking Halloween】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0684
+ | Value=イベントを進めて<br/>【Happy Hacking Halloween】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0685
+ | Value=イベントを進めて<br/>【Happy Hacking Halloween】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0686
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0687
+ | Value=イベントを進めて<br/>【衝撃 デビューステージ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0688
+ | Value=イベントを進めて<br/>【衝撃 デビューステージ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0689
+ | Value=イベントを進めて<br/>【衝撃 デビューステージ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0690
+ | Value=イベントを進めて<br/>【ダイナマイト7】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0691
+ | Value=イベントを進めて<br/>【ダイナマイト7】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0692
+ | Value=イベントを進めて<br/>【ダイナマイト7】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0693
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0694
+ | Value=イベントを進めて<br/>【決断 オーバーロード】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    

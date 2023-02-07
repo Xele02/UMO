@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0730
+ | Value=戦いの最中に歌うシェリルの様子が、フロンティア全艦に向けて中継される。<br/>その映像を見た人々は、まだ希望が残っていることを知った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0731
+ | Value=フロンティア船団に店舗を構えるホットドッグ屋さん。<br/>刺激的な辛さが人気の秘密。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0732
+ | Value=病院の屋上で、シェリルとアルトは並んで夕日を見ていた。<br/>つかの間の穏やかな時間が2人を包み込む。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0733
+ | Value=歌手になることを夢見て、がむしゃらに走り続けてきたランカ。<br/>シンデレラと呼ばれた少女も、いつしか憧れの存在と肩を並べるまでに成長した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0734
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0735
+ | Value=ミシェルは、常日頃から元女形のアルトのことを「姫」と呼んでからかっていた。<br/>しかしこの日、確かな決意を秘めた彼の瞳を見て、ミシェルは嬉しそうに微笑んだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0736
+ | Value=幼い頃から、早乙女アルトは空を飛ぶことを夢見ていた。<br/>やがて少年は成長し、大空を自由に舞うパイロットになった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0737
+ | Value=バジュラの攻撃をくらって、機外へと弾き出されてしまったミシェル。<br/>鉄柱に引っかかり宙吊りになりながら、いつものように軽口を叩いてみせるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0738
+ | Value=大破したVF-25Gの残骸を前に、大粒の涙を流すクラン。<br/>しかし生存していたミシェルを発見して、悲しみは喜びへと変わった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0739
+ | Value=ギリギリの接近飛行でバジュラ母艦の背後をとったマクロス・クォーター。<br/>ボビーの荒々しい雄叫びとともに、必殺のマクロス・アタックをお見舞いする！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0740
+ | Value=ファーストライブの準備中、浮かない顔をしているとナナセに心配されるランカ。<br/>ライブ前の緊張か、はたまた別の何かが原因か。その思いは彼女の胸の内にある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0741
+ | Value=グリフィスパークの丘で、アルトに心中を打ち明けるランカ。<br/>アルトはポケットから紙を取り出すと、手慣れた様子で紙飛行機を作ってみせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0742
+ | Value=フロンティア船団で開発された試作機。<br/>これは実物ではなく、精巧に作り上げられた模型である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0743
+ | Value=病院の屋上で向かい合うシェリルとアルト。そこに偶然にもランカが訪れる。<br/>夕日に照らされながら、3人の関係は少しずつ変わり始めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0744
+ | Value=充電スタンドの上でお休み中のオオサンショウウオさん。<br/>その伸縮性をいかんなく発揮した垂れ具合である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0745
+ | Value=艶やかな黒い羽を持つカラスは、好奇心旺盛で、ときに思わぬ行動をする鳥だ。<br/>大胆な行動力を持つシェリルに、ファンや周りの人々はいつも驚かされている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0746
+ | Value=ときとして海を越え、何千キロもの距離を飛ぶツバメの前を遮る物は何もない。<br/>自分に素直でまっすぐなミレーヌも、どこまでも自由に飛んでいくだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0747
+ | Value=白い羽を羽ばたかせ空を飛んでいくハトは、人々に平和のイメージを抱かせる。<br/>異なる種族を、その美しい歌声で和解させたミンメイも平和の象徴と言えるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0748
+ | Value=大きな瞳で愛らしいイメージのあるフクロウは、名狩人の一面を併せ持っている。<br/>ランカにも親しみやすいかわいらしさと、芯の強さと粘り強い部分があるかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0749
+ | Value=上昇気流を巧みにつかみ空高くへと舞い上がるトンビは、無血勝利を象徴する鳥だ。<br/>空高く響くようなバサラの熱い歌声は、戦争を止めみんなを勝利へと導くのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0750
+ | Value=多彩な羽色に、様々な見た目を持つインコはいるだけで周囲を明るく彩っている。<br/>いつでも明るく元気なフレイアは、ライブだけでなく常に人々を明るくしてくれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0751
+ | Value=魚群の位置を教えるウミネコは、漁師たちに神の使いとして大切にされている。<br/>メンバーをまとめ上げ先導するカナメは、人々の導き手と言っても過言ではないだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0752
+ | Value=きらびやかな羽を優雅に広げるクジャクは、美しくもどこか幻想的な鳥である。<br/>美雲の浮世離れした雰囲気もまた、彼女の魅力に拍車をかけているかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0753
+ | Value=空ではなく海の中を縦横無尽に翔び回るペンギンは、鳥類の中でも特異な存在だ。<br/>天才ハッカーのレイナを情報の海で泳がせれば、彼女の右に出るものはいないだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0754
+ | Value=フラミンゴは平穏のために特殊な環境の水辺に生息する鮮やかなピンク色の鳥だ。<br/>柔和な雰囲気と性格で周囲を包むマキナが望むのは、平穏な世界なのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0755
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0756
+ | Value=澄み切った空気を胸いっぱいに感じながら、仲良く初詣にやってきたシェリルとランカ。<br/>初日の出を迎えてお参りを済ませれば、新しい1年を祝うスペシャルライブの始まりだ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0757
+ | Value=トップアイドルとして、マクロス艦内で大人気を誇るミンメイ。撮影にライブと<br/>多忙な日々を送っていたある日、彼女は一条輝との運命的な出会いを果たす。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0758
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0759
+ | Value=戦闘の騒動で閉鎖区画に閉じ込められてしまった輝とミンメイ。<br/>こんな事態だというのに、輝は以前からミンメイのファンであったことを明かした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0760
+ | Value=ゼントラーディ軍の攻撃を受け、マクロス艦内の重力制御システムが停止してしまう。<br/>無重力空間を漂うミンメイ。それに気が付いた輝は直ちにバルキリーで救助に向かった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0761
+ | Value=地球への帰還を目指すマクロスに、襲い掛かるゼントラーディ軍の戦闘部隊。<br/>互いの距離が近づき、敵味方入り乱れての乱戦が始まろうとしていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0762
+ | Value=救助が来るまでの間、2人で過ごすことになった輝とミンメイ。<br/>男女で2人っきりという状況でも、ミンメイはあまり気にしてはいないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0763
+ | Value=ラブシーンの演技をしてみせると言って、輝に迫るミンメイ。<br/>演技とわかっていながらも、雰囲気に飲み込まれた輝は動揺を隠せないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0764
+ | Value=閉鎖区画から救助された輝の元に、仲間の柿崎たちが駆け寄る。<br/>一同は輝とミンメイの仲に興味津々という様子で、次々と質問を投げかけるのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0765
+ | Value=自分の担当任務を無視してマクロスの防衛に向かった輝。<br/>命令を聞かない輝に対して、早瀬未沙も手を焼いているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0766
+ | Value=追加装備のアーマードパックを装備したVF-1J。<br/>絶大な火力と装甲を誇るが、装備したまま変形を行うことができない欠点を持つ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0767
+ | Value=マクロスから回収したミンメイの人形に、恐る恐る触れるゼントラーディ兵士。<br/>彼らは地球人をマイクローンと呼び、その存在に恐怖を抱いているようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0768
+ | Value=無事に閉鎖区画から救助された輝とミンメイ。<br/>しかし、偶然にもキスをしていたところを写真に収められてしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0769
+ | Value=特殊作戦の遂行を主眼に置き、ステルス性が重視された最新鋭可変戦闘機。<br/>マクロス7船団においても、精鋭部隊であるダイアモンドフォースに配備されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0770
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0771
+ | Value=出会った頃は、バサラの破天荒さを理解できずに反発することが多かったガムリン。<br/>しかし、ミレーヌの助けもあって少しずつ、ガムリンの心境は変化していく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0772
+ | Value=結婚してから時が経ち、今ではすっかり冷え切ってしまった夫婦の仲。<br/>しかしながら、それは大人になっても素直になれないところがあるだけのことだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0773
+ | Value=昏睡状態に陥っていたバサラの目の前で、Fire Bomberの歌を歌ってみせるガムリン。<br/>ついにバサラは目を覚まし、ガムリンも嬉しそうな笑顔を浮かべた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0774
+ | Value=自身の専用機を駆り、ミリアとともに戦場へ戻ったマックス。<br/>かつて天才と称されたそのテクニックは陰りを見せず、群がる敵を翻弄する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0775
+ | Value=どうしても戦場に行くと言って聞かないミレーヌに対して、バサラは声を荒らげた。<br/>「俺がバルキリーから引きずりおろしてやるからな！」―バサラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0776
+ | Value=出撃前、サウンドフォースの護衛をしている暇はないと言っていたガムリン。<br/>それでも、やはり土壇場で信じるべきはバサラの歌声だと感じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0777
+ | Value=もし戦場で命を落とせば、この夜景も見納めとなってしまう。<br/>もう見慣れていたはずの夜景を前にして、バサラは歌い始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0778
+ | Value=出撃直前、どちらが1番乗りするかを話すバサラとガムリン。<br/>2人の間に挟まれて、ミレーヌはどこか安心したように微笑みを浮かべた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0779
+ | Value=プロトデビルンが拠点とする惑星に向かったマクロス7船団の攻撃部隊。<br/>地表では無数の敵が待ち構えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0545
+ | Value=ミレーヌのレベルを7にして<br/>【ミレーヌの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0546
+ | Value=ミレーヌのレベルを10にして<br/>【ミレーヌの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0547
+ | Value=ミレーヌのレベルを12にして<br/>【ミレーヌの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0548
+ | Value=ミレーヌのレベルを17にして<br/>【ミレーヌの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0549
+ | Value=ミレーヌのレベルを20にして<br/>【ミレーヌの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0550
+ | Value=ミレーヌのレベルを25にして<br/>【ミレーヌの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0551
+ | Value=ミレーヌのレベルを30にして<br/>【ミレーヌの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0552
+ | Value=ミレーヌのレベルを35にして<br/>【ミレーヌの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0553
+ | Value=ミレーヌのレベルを40にして<br/>【ミレーヌの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0554
+ | Value=バサラのレベルを2にして<br/>【バサラの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0555
+ | Value=バサラのレベルを4にして<br/>【バサラの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0556
+ | Value=バサラのレベルを7にして<br/>【バサラの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0557
+ | Value=バサラのレベルを10にして<br/>【バサラの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0558
+ | Value=バサラのレベルを12にして<br/>【バサラの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0559
+ | Value=バサラのレベルを17にして<br/>【バサラの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0560
+ | Value=バサラのレベルを20にして<br/>【バサラの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0561
+ | Value=バサラのレベルを25にして<br/>【バサラの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0562
+ | Value=バサラのレベルを30にして<br/>【バサラの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0563
+ | Value=バサラのレベルを35にして<br/>【バサラの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0564
+ | Value=バサラのレベルを40にして<br/>【バサラの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0565
+ | Value=イベントを進めて<br/>【夏だ！海だ！水着De Show！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0566
+ | Value=イベントを進めて<br/>【夏だ！海だ！水着De Show！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0567
+ | Value=イベントを進めて<br/>【夏だ！海だ！水着De Show！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0568
+ | Value=イベントを進めて<br/>【パステル♡SUMMER】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0569
+ | Value=イベントを進めて<br/>【パステル♡SUMMER】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0570
+ | Value=イベントを進めて<br/>【パステル♡SUMMER】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0571
+ | Value=イベントを進めて<br/>【待たせたな！Fire Bomber登場！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0572
+ | Value=イベントを進めて<br/>【待たせたな！Fire Bomber登場！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0573
+ | Value=イベントを進めて<br/>【待たせたな！Fire Bomber登場！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0574
+ | Value=プレイヤーランクを101にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0575
+ | Value=プレイヤーランクを102にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0576
+ | Value=プレイヤーランクを103にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0577
+ | Value=プレイヤーランクを104にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0578
+ | Value=プレイヤーランクを105にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0579
+ | Value=プレイヤーランクを106にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0580
+ | Value=プレイヤーランクを107にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0581
+ | Value=プレイヤーランクを108にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0582
+ | Value=プレイヤーランクを109にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0583
+ | Value=プレイヤーランクを110にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0584
+ | Value=プレイヤーランクを111にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0585
+ | Value=プレイヤーランクを112にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0586
+ | Value=プレイヤーランクを113にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0587
+ | Value=プレイヤーランクを114にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0588
+ | Value=プレイヤーランクを115にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0589
+ | Value=プレイヤーランクを116にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0590
+ | Value=プレイヤーランクを117にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0591
+ | Value=プレイヤーランクを118にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0592
+ | Value=プレイヤーランクを119にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0593
+ | Value=プレイヤーランクを120にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0594
+ | Value=プレイヤーランクを121にする
+ | ParentPage=Texts/Bank/master
+}}
+                    

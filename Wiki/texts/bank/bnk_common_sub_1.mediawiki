@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=saka_error0051
+ | Value=すでにゲームの情報が存在します。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0052
+ | Value=引き継ぎが制限されています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0053
+ | Value=ロックされています。しばらくしてから、もう一度お試しください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0054
+ | Value=スレッドがみつかりません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0055
+ | Value=コメントがみつかりません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0056
+ | Value=権限がありません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0057
+ | Value=これ以上投稿できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0058
+ | Value=現在、メンテナンス中です。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0059
+ | Value=現在このアカウントでは、<br/>ログインできません。<br/>お心当たりがない場合は<br/>お問い合わせまでお願いいたします。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0060
+ | Value=現在、このアカウントではご利用いただくことができません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0061
+ | Value=受け取り可能なランキング報酬がありません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0062
+ | Value=これ以上利用できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0063
+ | Value=購入できませんでした。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0064
+ | Value=購入が停止されています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0065
+ | Value=誕生日を登録してください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0066
+ | Value=ギルドに所属していない
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0067
+ | Value=指定されたIDのギルドが存在しない
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0068
+ | Value=ギルドメンバーが上限数に達しています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0069
+ | Value=ご利用いただけません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0070
+ | Value=サービス対象外の地域からのアクセスのためご利用いただけません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0071
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0072
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0073
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0074
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0075
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0076
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0077
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0078
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0079
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0080
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0081
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0082
+ | Value=これ以上ステップアップガチャをすることができません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0083
+ | Value=Twitter連携の手続きに失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0084
+ | Value=Twitter連携できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0085
+ | Value=LINE連携できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0086
+ | Value=LINE連携の手続きに失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0087
+ | Value=LINE連携の手続きに失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0088
+ | Value=イベントランキングBAN（仮）
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0089
+ | Value=ゲストプレイヤーが存在しないか、終了フラグが設定されていないレイドボスが存在するため次のマルチバトルを開始できない状態です。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0090
+ | Value=%sとはすでに遭遇しています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0091
+ | Value=%sと遭遇することはできまtせんでした。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0092
+ | Value=%sと遭遇可能な期間を過ぎています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0093
+ | Value=%sの%sが低すぎます。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0094
+ | Value=プレイヤーのキャンセル、Google側サーバーの問題、Google APIの設定ミスなどによりサインインに失敗した
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0095
+ | Value=GameCenterアカウント情報の検証でエラーが発生した
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0096
+ | Value=他のGameCenterアカウントで連携済み
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0097
+ | Value=GameCenterアカウントが現在のプレイヤー以外のプレイヤーと紐付いている
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0098
+ | Value=端末のGameCenter機能が無効化されている
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0099
+ | Value=GameCenter機能でシステムエラーが発生した
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0100
+ | Value=プレイヤーがGameCenter連携をしていない
+ | ParentPage=Texts/Bank/common
+}}
+                    

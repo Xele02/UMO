@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0717
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0718
+ | Value=<size=18>「復刻　無重力ドッグ・ファイター」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0719
+ | Value=<size=18>「復刻　無重力ドッグ・ファイター」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0720
+ | Value=<size=18>「ワルキューレはあきらめない!!!!!」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0721
+ | Value=<size=18>「ワルキューレはあきらめない!!!!!」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0722
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0723
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0724
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0725
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0726
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0727
+ | Value=<size=18>「復刻　とまらない！ワルキューレLIVE」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0728
+ | Value=<size=18>「復刻　とまらない！ワルキューレLIVE」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0729
+ | Value=<size=18>「君に届け→ ～Halloween live～」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0730
+ | Value=<size=18>「君に届け→ ～Halloween live～」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0731
+ | Value=<size=18>「HELLO！MY FRIENDS！」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0732
+ | Value=<size=18>「HELLO！MY FRIENDS！」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0733
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0734
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0735
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0736
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0737
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0738
+ | Value=<size=18>「復刻　聖なる夜の涙目SONG」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0739
+ | Value=<size=18>「復刻　聖なる夜の涙目SONG」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0740
+ | Value=<size=18>「幻惑レスキュー!!!!! ～チェンジ!!!!!～」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0741
+ | Value=<size=18>「幻惑レスキュー!!!!! ～チェンジ!!!!!～」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0742
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0743
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0744
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0745
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0746
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0747
+ | Value=<size=18>「復刻　絶対零度θFantastic！」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0748
+ | Value=<size=18>「復刻　絶対零度θFantastic！」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0749
+ | Value=<size=18>「Glow in the dark」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0750
+ | Value=<size=18>「Glow in the dark」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0751
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0752
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0753
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0754
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0755
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0756
+ | Value=<size=18>「復刻　衝撃 デビューステージ」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0757
+ | Value=<size=18>「復刻　衝撃 デビューステージ」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0758
+ | Value=<size=18>「燃える瞳の小白竜」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0759
+ | Value=<size=18>「燃える瞳の小白竜」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0760
+ | Value=<size=18>「不思議な時の迷宮」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0761
+ | Value=<size=18>「不思議な時の迷宮」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0762
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0763
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0764
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0765
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0766
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    

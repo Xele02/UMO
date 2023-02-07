@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0083
+ | Value=マクロス7命属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0001
+ | Value=ライフ回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0002
+ | Value=ライフ回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0003
+ | Value=ライフ回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0004
+ | Value=スコアアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0005
+ | Value=スコアアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0006
+ | Value=スコアアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0007
+ | Value=スコアアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0008
+ | Value=スコアアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0009
+ | Value=ノーダメージ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0010
+ | Value=ダメージ軽減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0011
+ | Value=ダメージ軽減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0012
+ | Value=ダメージ軽減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0013
+ | Value=判定緩和
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0014
+ | Value=判定緩和
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0015
+ | Value=判定緩和
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0016
+ | Value=コンボ継続
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0017
+ | Value=コンボ継続
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0018
+ | Value=コンボ継続
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0019
+ | Value=アイテム100％
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0020
+ | Value=テスト用パーフェクト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0021
+ | Value=判定縮小スコアアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0022
+ | Value=コンボボーナス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0023
+ | Value=スコア＆ダメージ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0024
+ | Value=スコアアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0025
+ | Value=コンボボーナス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_nm_0026
+ | Value=コンボボーナス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0001
+ | Value=ライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0002
+ | Value=ライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0003
+ | Value=ライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0004
+ | Value=[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0005
+ | Value=[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0006
+ | Value=[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0007
+ | Value=[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0008
+ | Value=[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0009
+ | Value=[dv]秒間ダメージを受けない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0010
+ | Value=[dv]秒間ダメージが半減する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0011
+ | Value=[dv]秒間ダメージが半減する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0012
+ | Value=[dv]秒間ダメージが半減する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0013
+ | Value=[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0014
+ | Value=[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0015
+ | Value=[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0016
+ | Value=[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0017
+ | Value=[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0018
+ | Value=[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0019
+ | Value=[dv]秒間ノーツが全てアイテムノーツになる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0020
+ | Value=[dv]秒間ノーツ判定を全てPERFECTに
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0021
+ | Value=[dv]秒間ノーツ判定が縮小するがスコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0022
+ | Value=[dv]秒間ノーツタップ時のコンボ数50あたり[v1]％のスコアアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=a_dsc_0023
+ | Value=[dv2]秒間毎秒ライフが[v1]減少しスコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    

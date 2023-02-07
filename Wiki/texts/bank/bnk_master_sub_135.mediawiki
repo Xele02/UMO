@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1580
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1581
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1582
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1583
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1584
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1585
+ | Value=ときと場所が違えばありえたかもしれない、学生として何気ない学園生活を送るバサラ。<br/>一緒に登下校したり、不意に壁に手をつくようなアクシデントがあったりしたのかも…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1586
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1587
+ | Value=列車の背に揺られながら、1人あてのない放浪の旅を続けるバサラ。<br/>空を見上げる表情には、自由に対する喜びと新しい世界への期待に満ちていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1588
+ | Value=バサラの分まで盛りあげようとするも、とうとう歌が続かなくなってしまうミレーヌ。<br/>歌が途切れたことを笑顔で誤魔化すミレーヌの姿は、どこか痛々しさを感じさせていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1589
+ | Value=ガムリンの何気ない気遣いの言葉に、何やら思い悩むような表情を浮かべるミレーヌ。<br/>いつもどおりに振る舞いつつも、バサラの不在はミレーヌに影響を与えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1590
+ | Value=ミレーヌのことを心配して、バサラを連れ戻しに行く決心をするガムリン。<br/>しかしミレーヌとの関係を心配されると、思わず狼狽えてしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1591
+ | Value=惑星ゾラを放浪中、武装集団とパトロール隊の銃撃戦に出くわしたバサラ。<br/>聞く耳を持たない両者に対し、バサラはギターを掻き鳴らして歌い始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1592
+ | Value=放浪の旅の途中で、目も開けられないほどの突風の中を進むバサラ。<br/>荒々しい大自然の洗礼を受けながら、まだ見ぬ新天地を目指し突き進んでいく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1593
+ | Value=貨物を運搬するカートの荷台で始まった即興のミニライブ。<br/>人と貨物の流れに乗る自由な歌声は、ドライバーたちにも好評のようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1594
+ | Value=バサラとミレーヌの立て看板を並べて、なんとか場を盛り上げようとするレイ。<br/>「あいつらだと思って、応援してくれ。」─レイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1595
+ | Value=Fire Bomberのライブに押し寄せる会場いっぱいの観客たち。<br/>バサラの不在をミレーヌが告げるも、観客の熱狂が衰えることはなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1596
+ | Value=ボーカルがいなくなってしまったため、ラジカセで歌を流すレイ。<br/>バサラとミレーヌの不在を支えるレイの苦労がしのばれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1597
+ | Value=Fire Bomberの熱気バサラが持つ歌への情熱に、強いシンパシーを感じていたシェリル。<br/>特別に用意した衣装は、セクシーな魅力にバサラへの溢れるオマージュが炸裂していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1598
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1599
+ | Value=エレベーター上の車内で静かに目を伏せ、自身の戦う意味を改めて心に刻むオズマ。<br/>「お前も、お前の夢も俺が守る！」─オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1600
+ | Value=機体の被弾をかすり傷と言ってのけ、制止するキャシーに対し微笑みを返すオズマ。<br/>「妹も、惚れた女も！！守れないで何が男だ！！」─オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1601
+ | Value=ペナルティ中に陰口を叩いた結果、周回数を上乗せされてしまったアルトとミシェル。<br/>その無慈悲な宣告にはアルトも拒否感を隠せず、全力で顔を引きつらせるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1602
+ | Value=戦闘中の負傷によって一時は意識を失いつつも、驚異の回復力をみせたオズマ。<br/>S.M.Sの隊員たちとキャシーは呆れつつも、一様に安堵の表情を浮かべていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1603
+ | Value=Fire Bomberの大ファンであり、そのサウンドでパワーアップするとまで語るオズマ。<br/>作戦中にも号令としてFire Bomberのナンバーを叫ぶなど、その思い入れは本物だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1604
+ | Value=キャシーとの別れ際、個人的な思い入れのあるパインケーキをリクエストするオズマ。<br/>その横顔は昔を懐かしむように、柔らかな表情を浮かべていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1605
+ | Value=ランカをミンメイに例えるラムたちに対し、古すぎるとバサラを例えに出すボビー。<br/>「（小声）にしたって古いです…」─ラム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1606
+ | Value=ナイフ1本でバジュラと壮絶な近接戦を繰り広げるオズマのVF-25S。<br/>オズマの意志を乗せた鋭い一撃は、バジュラの装甲を貫いて腕を切り落とした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1607
+ | Value=オズマの愛車に取り付けられていたカーナビ。<br/>銀河ネットワークにも接続されており、各種コンテンツのチェックもできるらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1608
+ | Value=昔オズマがキャシーに作り方を教わってランカのために作ったパインケーキ。<br/>オズマとランカの兄妹にとっては思い出の味だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1609
+ | Value=満開の桜の下、麗らかな陽射しと舞い散る花びらに見送られながら校庭を歩くミンメイ。<br/>その瞳には今までの感謝と旅立つ喜び、そしてほんのちょっぴりの切なさが滲んでいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1610
+ | Value=未沙を助け出すためとはいえ、またも命令を無視することになってしまった輝。<br/>ばつの悪そうな顔を浮かべる輝に対し、未沙は優しく微笑み返したのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1611
+ | Value=基地に取り残された未沙を救うため、輝は未沙の制止を聞かず基地へと向かった。<br/>「そういう命令、今まで守ったことなかったですね」─輝
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1612
+ | Value=決戦を前に再び歌を聴かせてほしいというエキセドルの願いに応えるミンメイ。<br/>その場にいた輝もまた、最後になるかもしれない歌声に静かに耳を傾けたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1613
+ | Value=出撃の準備を整える輝の前に、思いつめた表情で現れたミンメイ。<br/>輝の突然の告白と決死の覚悟をした姿に、驚きと戸惑いを隠せずにいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1614
+ | Value=ボドル基幹艦隊の砲撃によって焼き尽くされる地球を目の当たりにする輝とミンメイ。<br/>その光景に打ちひしがれる中で、輝は地球に残った未沙の身を案じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1615
+ | Value=朝日に照らされて地上へ舞い降りるマクロスと、その勇姿を見つめる輝と未沙。<br/>未来へと希望が繋がった喜びを胸に、2人はそっと身を寄せ合うのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1616
+ | Value=ボドル基幹艦隊の襲来を受け、即座に出撃の準備に向かうマックスとミリア。<br/>夫婦ともにエースパイロットというだけあって、まさに阿吽の呼吸といったところだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1617
+ | Value=未沙を救出するため、頭部4門のレーザーを収束させて隔壁を焼き切る輝のVF-1S。<br/>ガンポットよりは威力が劣るものの、扱い方次第でこんなこともできてしまうのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1618
+ | Value=全軍用周波数にて戦場に流れるミンメイの歌に耳を傾けるカムジンたち。<br/>その歌声は勝ち目がないと考えていたカムジンを再び戦場へと向かわせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1619
+ | Value=輝の持っていたヘルメットに反射して映るミンメイの姿。<br/>それはまるで2人の住んでいる世界の隔たりを表しているかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1620
+ | Value=アラスカ基地から発射されたグランドキャノンの巨大な砲線。<br/>捻るように放たれた一撃はボドル基幹艦隊を薙ぎ払い、多数の戦艦を轟沈させた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1621
+ | Value=まるで宇宙のような深い青色の衣装に身を包み、星屑のステージに舞い降りたフレイア。<br/>星々が照らしだす銀河の輝きにも負けないくらい、生き生きとした輝きを放っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1622
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1623
+ | Value=裸喰娘娘の一室で膝を抱え、1人思いつめた表情を浮かべるフレイア。<br/>未だ意識が戻らないハヤテに対して想いを募らせているのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1624
+ | Value=歌を兵器と語るベルガーの尊大な態度に、怒りがこみ上げるミラージュ。<br/>しかし同時に、フレイアにかけられる言葉が何もない自分に気付くのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1625
+ | Value=歌は兵器じゃないと声を荒げるも、ベルガーの仮説に反論することができないフレイア。<br/>「あなたの歌に共鳴したハヤテ・インメルマンは凄まじい力を発揮した」─ベルガー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1626
+ | Value=意識を取り戻してベッドから起き上がろうとするハヤテを慌てて抑えるミラージュ。<br/>ハヤテは心配をかけたことを詫びるとともに、素直な感謝の気持ちを伝えた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1627
+ | Value=2度目の暴走を乗り越えて見事フォーメーションを成功させるハヤテとミラージュ。<br/>「うむ、やっと一皮剥けたか！」─アラド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1628
+ | Value=風の騎士としてウィンダミア王の命ならばいつでも剣となることを誓うキース。<br/>そして、ハインツが自らの意志で「真なる風」を吹かせることを願うのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1629
+ | Value=ベルガーの尊大な態度と、ウィンダミアと通じていた事実に怒り心頭のチャック。<br/>更に統合政府まで後ろ盾になっていたことを知り、エラを逆立てて怒りを露わにした。
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0802
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0803
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0804
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0805
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0806
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0807
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0808
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0809
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0810
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0811
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0812
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0813
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0814
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0815
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0816
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0817
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0818
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0819
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0820
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0821
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0822
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0823
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0824
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0825
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0826
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0827
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0828
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0829
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0830
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0831
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0832
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0833
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0834
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0835
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0836
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0837
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0838
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0839
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0840
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0841
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0842
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0843
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0844
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0845
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0846
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0847
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0848
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0849
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0850
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0851
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/master
+}}
+                    

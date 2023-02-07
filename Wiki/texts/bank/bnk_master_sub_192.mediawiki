@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4430
+ | Value=屈託のない笑顔と元気を振りまいて、心の底からステージを楽しみながら歌うフレイア。<br/>そんなフレイアに感化されるかのように、美雲の歌も更なる輝きを放って成長していく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4431
+ | Value=今やソロでも活躍できるようになったフレイアの姿に、ハヤテは思わず目を奪われる。<br/>ケイオスに参加してから一緒に切磋琢磨してきただけあって、その感慨もひとしおだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4432
+ | Value=眩暈のするような情報量のステージであっても、美雲は怯むことなく飛び込んでいく。<br/>まるで意に介すことのない思い切りの良さは、美雲の歌にも自信となって表れている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4433
+ | Value=惑星アル・シャハルのヴァールシンドロームを歌の力で鎮圧していくワルキューレ。<br/>カナメがチェックするフォールドレセプターの数値もバッチリアクティブの反応だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4434
+ | Value=惑星イオニデスへとヴァールシンドロームの鎮圧に出動したデルタ小隊とワルキューレ。<br/>フレイアもいくつものライブを経験し、すっかりワルキューレの一員になったみたいだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4435
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4436
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4437
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4438
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4439
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4440
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4441
+ | Value=ワルキューレのエースと銀河の妖精が、時空を超えて神秘のコラボレーションを実現。<br/>歌こそがすべてという2人のシンクロする想いは、遥か遠い銀河を震わせる歌声となる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4442
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4443
+ | Value=アルトと自然の中を駆けまわり、まるで不思議の国で過ごしたかのような1日。<br/>その日の記録をプレビューしながら、シェリルは1人切ない想いを募らせていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4444
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4445
+ | Value=【神秘をまとう妖精】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4446
+ | Value=【神秘をまとう妖精】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4447
+ | Value=【神秘をまとう妖精】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4448
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4449
+ | Value=【神秘をまとう妖精】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4450
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4451
+ | Value=【神秘をまとう妖精】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4452
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4453
+ | Value=アレンジしたワルキューレコスチュームをまとって、ランカがレイナとドキドキの共演。<br/>キモカワ大好きという共通の趣味を持つ2人だけあって、歌と衣装の相性もバッチリだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4454
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4455
+ | Value=ジェフリーは鼻の古傷をそっと指で触れながら、大きな戦いの気配を感じ取っていた。<br/>「傷がね…疼くんだよ。嵐が近いってね」─ジェフリー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4456
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4457
+ | Value=【星にきらめく愛】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4458
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4459
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4460
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4461
+ | Value=【星にきらめく愛】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4462
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4463
+ | Value=【星にきらめく愛】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4464
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4465
+ | Value=カナメのワルキューレコスチュームのデザインを、バサラに合わせて大胆にアレンジ。<br/>命掛けの想いと熱き魂のコラボレーションが、燃え上がる歌声とサウンドに昇華する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4466
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4467
+ | Value=無敗の格闘士として戦いに明け暮れていたビヒーダは、ある日1人の少年に出会う。<br/>その小さな少年が奏でるギターのサウンドに、ビヒーダは熱い何かを感じ取っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4468
+ | Value=どこかシビルの面影を持った花を見つめながら、バサラは銀河を旅した記憶を思い返す。<br/>シビルとギギルとで見た銀河の大きさは、バサラの心にとてつもない感動を残していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4469
+ | Value=スピーカーポッドγを手に、ファイアーバルキリーはゲペルニッチの艦隊へと突撃する。<br/>「ゲペなんとか野郎、俺の歌を聞けぇ！ハートをビンビンにしてやるぜ！」─バサラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4470
+ | Value=【熱く燃える生命】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4471
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4472
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4473
+ | Value=【熱く燃える生命】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4474
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4475
+ | Value=【熱く燃える生命】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4476
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4477
+ | Value=アレンジしたワルキューレコスチュームをまとい、ミレーヌがきゃわわな女神に大変身。<br/>コラボレーション相手のマキナと並べば、スタイルもかわいさもダイナマイト級である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4478
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4479
+ | Value=夜な夜などこかへ行ってしまうバサラの行方を探ろうと、変装して監視するミレーヌ。<br/>レイがたしなめようともお構いなしの様子で、とにかく気になって仕方がないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    

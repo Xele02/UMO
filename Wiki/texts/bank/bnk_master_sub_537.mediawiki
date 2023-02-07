@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0014_obj
+ | Value=小さいテーブル（ケイオス女子寮）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0015_obj
+ | Value=ソファ（ケイオス女子寮）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0016_obj
+ | Value=窓（ランカの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0017_obj
+ | Value=ベッド（ランカの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0018_obj
+ | Value=ランプ（ランカの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0019_obj
+ | Value=あい君のおうち（ランカの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0020_obj
+ | Value=チェックのラグ（ランカの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0021_obj
+ | Value=窓（バサラの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0022_obj
+ | Value=テーブル（バサラの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0023_obj
+ | Value=ベッド（バサラの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0024_obj
+ | Value=バサラのアコースティックギター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0025_obj
+ | Value=バサラの楽譜スタンド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0026_obj
+ | Value=窓（ミンメイの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0027_obj
+ | Value=洋服だんす（ミンメイの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0028_obj
+ | Value=ドレッサー（ミンメイの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0029_obj
+ | Value=本棚（ミンメイの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0030_obj
+ | Value=ベッド（ミンメイの部屋）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0031_obj
+ | Value=ベンチ（惑星エデン 星の丘）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0032_obj
+ | Value=風力発電機（惑星エデン 星の丘）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0033_obj
+ | Value=モニュメント（惑星エデン 星の丘）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0034_obj
+ | Value=竜鳥のグライダー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0035_obj
+ | Value=竜鳥の羽
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0036_obj
+ | Value=イサムのバイク
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0037_obj
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0038_obj
+ | Value=バサラのギター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0039_obj
+ | Value=ミレーヌのベース
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0040_obj
+ | Value=レイのキーボード
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0041_obj
+ | Value=ビヒーダのドラムセット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0042_obj
+ | Value=マイク（野外ライブステージ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0043_obj
+ | Value=大型スピーカー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0044_obj
+ | Value=バサラのパネル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0045_obj
+ | Value=ミレーヌのパネル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0046_obj
+ | Value=饅頭娘娘ののぼり
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0047_obj
+ | Value=網焼きクラゲ饅頭
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0048_obj
+ | Value=立て看板（クラゲ祭り）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0049_obj
+ | Value=クラゲすくい
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0050_obj
+ | Value=オブジェ（クラゲ祭り）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0051_obj
+ | Value=光クラゲA
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0052_obj
+ | Value=光クラゲB
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0053_obj
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0054_obj
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0055_obj
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0056_obj
+ | Value=中華料理テーブル（超時空飯店 娘々）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0057_obj
+ | Value=ついたて（超時空飯店 娘々）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0058_obj
+ | Value=大きな絵（超時空飯店 娘々）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0059_obj
+ | Value=ジャイロバイク（超時空飯店 娘々）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0060_obj
+ | Value=おかもち（超時空飯店 娘々）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0061_obj
+ | Value=カウンター（裸喰娘娘）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0062_obj
+ | Value=窓（裸喰娘娘）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0063_obj
+ | Value=ついたて（裸喰娘娘）
+ | ParentPage=Texts/Bank/master
+}}
+                    

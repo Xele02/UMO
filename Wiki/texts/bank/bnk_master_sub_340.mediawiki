@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1295
+ | Value=歌レートを15200にして<br/>歌グレードを【中将★5】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1296
+ | Value=歌レートを15500にして<br/>歌グレードを【中将★6】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1297
+ | Value=歌レートを15800にして<br/>歌グレードを【中将★7】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1298
+ | Value=歌レートを16100にして<br/>歌グレードを【中将★8】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1299
+ | Value=歌レートを16400にして<br/>歌グレードを【中将★9】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1300
+ | Value=歌レートを16700にして<br/>歌グレードを【中将★10】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1301
+ | Value=歌レートを17000にして<br/>歌グレードを【大将★1】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1302
+ | Value=歌レートを17400にして<br/>歌グレードを【大将★2】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1303
+ | Value=歌レートを17800にして<br/>歌グレードを【大将★3】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1304
+ | Value=歌レートを18200にして<br/>歌グレードを【大将★4】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1305
+ | Value=歌レートを18600にして<br/>歌グレードを【大将★5】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1306
+ | Value=歌レートを19000にして<br/>歌グレードを【大将★6】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1307
+ | Value=歌レートを19400にして<br/>歌グレードを【大将★7】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1308
+ | Value=歌レートを19800にして<br/>歌グレードを【大将★8】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1309
+ | Value=歌レートを20200にして<br/>歌グレードを【大将★9】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1310
+ | Value=歌レートを20600にして<br/>歌グレードを【大将★10】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1311
+ | Value=歌レートを21000にして<br/>歌グレードを【元帥★1】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1312
+ | Value=歌レートを21500にして<br/>歌グレードを【元帥★2】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1313
+ | Value=歌レートを22000にして<br/>歌グレードを【元帥★3】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1314
+ | Value=歌レートを22500にして<br/>歌グレードを【元帥★4】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1315
+ | Value=歌レートを23000にして<br/>歌グレードを【元帥★5】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1316
+ | Value=歌レートを23500にして<br/>歌グレードを【元帥★6】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1317
+ | Value=歌レートを24000にして<br/>歌グレードを【元帥★7】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1318
+ | Value=歌レートを24500にして<br/>歌グレードを【元帥★8】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1319
+ | Value=歌レートを25000にして<br/>歌グレードを【元帥★9】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1320
+ | Value=歌レートを25500にして<br/>歌グレードを【元帥★10】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1321
+ | Value=イベントを進めて<br/>【Trick or trap ？】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1322
+ | Value=イベントを進めて<br/>【Trick or trap ？】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1323
+ | Value=イベントを進めて<br/>【Trick or trap ？】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1324
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1325
+ | Value=イベントを進めて<br/>【ワルキューレのバースデイ♡パーティー】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1326
+ | Value=イベントを進めて<br/>【ワルキューレのバースデイ♡パーティー】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1327
+ | Value=イベントを進めて<br/>【ワルキューレのバースデイ♡パーティー】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1328
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1329
+ | Value=イベントを進めて<br/>【Rock 'n' Roll！…だけど Baby！！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1330
+ | Value=イベントを進めて<br/>【Rock 'n' Roll！…だけど Baby！！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1331
+ | Value=イベントを進めて<br/>【Rock 'n' Roll！…だけど Baby！！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1332
+ | Value=イベントを進めて<br/>【聖なる夜の涙目SONG】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1333
+ | Value=イベントを進めて<br/>【聖なる夜の涙目SONG】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1334
+ | Value=イベントを進めて<br/>【聖なる夜の涙目SONG】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1335
+ | Value=イベントを進めて<br/>【SNOW FRONTIER ～鐘を打ち鳴らせ！～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1336
+ | Value=イベントを進めて<br/>【SNOW FRONTIER ～鐘を打ち鳴らせ！～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1337
+ | Value=イベントを進めて<br/>【SNOW FRONTIER ～鐘を打ち鳴らせ！～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1338
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1339
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1340
+ | Value=イベントを進めて<br/>【夜明けを灯す新たな光 ～オベリスク～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1341
+ | Value=イベントを進めて<br/>【夜明けを灯す新たな光 ～オベリスク～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1342
+ | Value=イベントを進めて<br/>【夜明けを灯す新たな光 ～オベリスク～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1343
+ | Value=イベントを進めて<br/>【時を超える愛の歌】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1344
+ | Value=イベントを進めて<br/>【時を超える愛の歌】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2880
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2881
+ | Value=銀河のアーティストたちが集結するスペシャルライブに時空を超えて共演したミンメイ。<br/>種族を越えて文化を伝え銀河の運命を変えた歌姫が今、時を超えてステージに甦る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2882
+ | Value=【時を超える愛】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2883
+ | Value=ゴル・ボドルザー撃破のため、機動要塞の中枢へと突入していく輝を見送るミンメイ。<br/>お互いに違う道を選択しながらも、心はそばにあるかのようにミンメイは歌い続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2884
+ | Value=廃墟となった古代文明の住居にて、文字らしきものが記されたプレートを手に取る未沙。<br/>その場での解読は困難だったものの、未沙の心にはどこか感じ入るものがあったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2885
+ | Value=一度は自暴自棄になりながらも、輝の懸命の説得に平静さを取り戻したミンメイ。<br/>好きで歌手の道を選んだことを思い出し、思いっきり歌うことを誓ったのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2886
+ | Value=マクロスを援護するべく集まった艦隊の姿に、感極まって涙を浮かべるミンメイ。<br/>恋と悲しみを乗り越えて選んだ歌手としての人生は、決して間違いではなかったのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2887
+ | Value=歌声に導かれ、続々とマクロスの元へと集うゼントラーディとメルトランディの艦隊。<br/>文化を取り戻し、そして守るために、種族を越えて銀河がひとつになった瞬間だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2888
+ | Value=ミンメイの歌の正体がわからずにいたクローディアに、それとなく答えを明かす未沙。<br/>それは何万年も昔に異星人たちの街ではやっていた、当たり前のラブソングであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2889
+ | Value=ミンメイの歌でかつて自分たちにも文化が存在していたことを理解したエキセドル。<br/>「50万周期の時を超えて…」「我々にも文化が甦るのか…」─エキセドル、ブリタイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2890
+ | Value=ゴル・ボドルザーの視界に映るミンメイのステージ映像と輝のVF-1S。<br/>戦いを終わらせるべく、輝はすべての火器をゴル・ボドルザーに向けて構える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2891
+ | Value=遺跡の街で見つけたプレートの文字を何気なく読み上げる未沙。<br/>メロディに乗せて口ずさんだ瞬間、未沙はそれが歌詞であることに気づくのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2892
+ | Value=未沙が解読し、輝からミンメイに手渡された歌の歌詞。<br/>紙1枚に記された歌詞が、銀河の運命を変えたのである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2893
+ | Value=チクリとする寒さに頬をほんのり赤く染めながら、椿から零れる雪を眺めていたレイナ。<br/>キラキラと光を反射しながら舞う姿に、ステージでの光景を重ねているのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2894
+ | Value=【芽吹きを待つ愛】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2895
+ | Value=甲板上のステージの中で、静かに瞳を閉じて戦術ライブの始まりを待つレイナ。<br/>ワルキューレとして歌で銀河を救うため、レイナは戦場に愛の歌声を響かせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2896
+ | Value=空中騎士団がワルキューレと共闘し、なおも抵抗を続けることに苛立つロイド。<br/>我が身を削ることもいとわずシステムの出力を上げ、精神の支配を広げていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2897
+ | Value=キースからのワルキューレと風を合わせるという指示に、戸惑いながらも従うボーグ。<br/>更にワルキューレの歌と姿を目の当たりにし、思わずルンを輝かせてしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2898
+ | Value=空中騎士団からのまさかの援護に、抱き合いながら喜ぶレイナとマキナ。<br/>そして、空に向かって2人でサインを掲げて感謝の意を示すのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2899
+ | Value=精神を強引に支配しようとするロイドだったが、その反動で急激に命を蝕まれていく。<br/>「自分で…自分を傷つけて！？」─マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2900
+ | Value=人々からの非難にさらされ、結晶化で命の危機にありながらも意思を貫いたフレイア。<br/>その姿にレイナとカナメも意思を取り戻し、ロイドからの誘いを跳ねのけるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2901
+ | Value=非難する人々の姿を突き付けることで、ワルキューレの心を揺さぶっていくロイド。<br/>さらにはフレイアの結晶化についても取引を持ち掛け、懐柔を迫っていくのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2902
+ | Value=人は1人1人違う風を持つという信念のもと、ロイドに反旗を翻したキース。<br/>空中騎士団を引き連れ、ケイオスに向けてワルキューレの援護を宣言した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2903
+ | Value=ロイドの仕掛けたプロパガンダによって、反ワルキューレと化した人々。<br/>「命がけで守る価値が、奴らにあると？」─ロイド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2904
+ | Value=ワルキューレとデルタ小隊の姿に、ハインツと同じ命がけの風を感じ取ったキース。<br/>「人はみな、己の風を持って生きるもの…風をひとつにするなど！」─キース
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2905
+ | Value=溢れんばかりの甘い香りに包まれながら、光が降り注ぐステージに降り立ったフレイア。<br/>乙女の心を元気づける女神の歌声は、バレンタインに恋の奇跡を起こしてくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2906
+ | Value=【甘くハートを光らせて】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2907
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2908
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2909
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2910
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2911
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2912
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2913
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2914
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2915
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2916
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2917
+ | Value=大人らしい落ち着いた雰囲気を漂わせ、バレンタインをコーディネートしていくカナメ。<br/>甘い口どけにほんのり感じる苦みが、味わい深いひとときを演出してくれることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2918
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2919
+ | Value=ヴァールを鎮圧するべく挑む戦術ライブにて、高らかに口上を響き渡らせるカナメ。<br/>勇ましくも美しい女神たちの歌声は、どんな戦場であっても決して怯むことはない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2920
+ | Value=ステージの袖でワルキューレとしてステージに立つフレイアの姿を見ていたミラージュ。<br/>心のままに輝きを放つフレイアに対し、ミラージュは引け目のようなものを感じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2921
+ | Value=自室にてフレイアの歌の分析結果を眺めながら、バスローブ姿でくつろぐカナメ。<br/>ベッドに入るまでのちょっとした時間を楽しむ、大人ならではの贅沢なひとときだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2922
+ | Value=空中騎士団の中で動きの違う1機をダーウェントの白騎士と呼称するアラド。<br/>「空中騎士団に代々続く、エースの称号だ」─アラド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2923
+ | Value=まるで本物の風が吹いているかのようなバルキリーのコックピットで歌うフレイア。<br/>たとえコックピットの中でも、雰囲気や開放感は十分に感じることができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2924
+ | Value=空に響くエンジン音からハヤテが無断でバルキリーを飛ばしたことに気づくミラージュ。<br/>重大な隊規違反に思わず悪態をつくと、誰かが気づく前に止めようと駆け出して行った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2925
+ | Value=ワルキューレにウィンダミア人が紛れ込んでいることをヘルマンに報告するボーグ。<br/>裏切者をくさい風と表現するなど、地球人とは違った独特の感性が感じとれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2926
+ | Value=かつてウィンダミアにて艦隊戦の教官を務めていたアーネスト。<br/>第一次独立戦争の直前に解任されていたが、7年のときを経て再び相対することになった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2927
+ | Value=VF-31Jのコックピットに備えられたエアコン機能。<br/>風力を上げればコックピット内でも風を感じられるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2928
+ | Value=ラグナの海側から眺めたバレッタシティの夜景。<br/>日が落ちても華やかな明かりが灯っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2929
+ | Value=まるで姉妹のように仲睦まじくバレンタインの準備を進めるカナメとフレイアの2人。<br/>本番のバレンタインでは、きっと2人一緒にハートを甘く輝かせてくれることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    

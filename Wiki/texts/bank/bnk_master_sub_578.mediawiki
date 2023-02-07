@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0307_srf
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0308_srf
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0309_srf
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0310_srf
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0311_srf
+ | Value=ただのお友達よ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0312_srf
+ | Value=わたしの歌、<br/>聴いてくれてるの？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0313_srf
+ | Value=それじゃ、行くわ<br/>またね！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0314_srf
+ | Value=思いをこめて<br/>歌います
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0315_srf
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0316_srf
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0317_srf
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0318_srf
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0319_srf
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0320_srf
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_itm_nm_0001
+ | Value=メカニックツール
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_itm_nm_0002
+ | Value=ブレイズギア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_itm_nm_0003
+ | Value=ウインドギア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_itm_nm_0004
+ | Value=ブルースカイギア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_itm_nm_0005
+ | Value=バルキリーギア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_itm_dsc_0001
+ | Value=バルキリーの拡張性能解放に使用されるアイテム。<br/>特殊な素材を加工するための道具。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_itm_dsc_0002
+ | Value=バルキリーの拡張レベル解放に使用されるアイテム。<br/>バルキリーの性能を引き出す炎の力を宿した素材。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_itm_dsc_0003
+ | Value=バルキリーの拡張レベル解放に使用されるアイテム。<br/>バルキリーの性能を引き出す風の力を宿した素材。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_itm_dsc_0004
+ | Value=バルキリーの拡張レベル解放に使用されるアイテム。<br/>バルキリーの性能を引き出す空の力を宿した素材。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_itm_dsc_0005
+ | Value=バルキリーの拡張性能解放に使用されるアイテム。<br/>バルキリーの性能を引き出すとても貴重な素材。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_nm_0001
+ | Value=ライブ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_nm_0002
+ | Value=VOP
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0001
+ | Value=マクロスΔ楽曲で発動し<br/>攻撃力が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0002
+ | Value=マクロスΔ楽曲で発動し<br/>命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0003
+ | Value=マクロスΔ楽曲で発動し<br/>攻撃力と命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0004
+ | Value=マクロスF楽曲で発動し<br/>攻撃力が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0005
+ | Value=マクロスF楽曲で発動し<br/>命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0006
+ | Value=マクロスF楽曲で発動し<br/>攻撃力と命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0007
+ | Value=マクロス7楽曲で発動し<br/>攻撃力が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0008
+ | Value=マクロス7楽曲で発動し<br/>命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0009
+ | Value=マクロス7楽曲で発動し<br/>攻撃力と命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0010
+ | Value=超時空要塞マクロス楽曲で発動し<br/>攻撃力が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0011
+ | Value=超時空要塞マクロス楽曲で発動し<br/>命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0012
+ | Value=超時空要塞マクロス楽曲で発動し<br/>攻撃力と命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0013
+ | Value=VOPの時に発動し<br/>攻撃力が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0014
+ | Value=VOPの時に発動し<br/>命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0015
+ | Value=VOPの時に発動し<br/>攻撃力と命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0016
+ | Value=VOPの時に発動し<br/>大成功確率が{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0017
+ | Value=VOPの時にリーダーにすると<br/>発動し攻撃力が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0018
+ | Value=VOPの時にリーダーにすると<br/>発動し命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0019
+ | Value=VOPの時にリーダーにすると<br/>発動し攻撃力と命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0020
+ | Value=VOPの時にリーダーにすると<br/>発動し大成功確率が{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0021
+ | Value=マクロスプラス楽曲で発動し<br/>攻撃力が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0022
+ | Value=マクロスプラス楽曲で発動し<br/>命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0023
+ | Value=マクロスプラス楽曲で発動し<br/>攻撃力と命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0024
+ | Value=VOPの時にリーダーにすると<br/>発動し攻撃力と命中値が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    

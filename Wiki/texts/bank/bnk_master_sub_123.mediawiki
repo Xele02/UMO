@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0980
+ | Value=棘で縛り付けられた花嫁が、何かの刺激を感じてその頬を赤く染めた。<br/>彼女の身を貫いたのは痛みか、はたまた快感なのか。想像をかき立てられてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0981
+ | Value=VF-25シリーズに装備することができるオプションパック。<br/>YF-29の装備と共通点が多く、実際にデータ収集などの目的でも運用されているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0982
+ | Value=バジュラの体内から採取されたフォールドクォーツ。<br/>シェリルの歌声に反応して明滅を繰り返しているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0983
+ | Value=シェリルのライブのために用意された教会ステージ。<br/>美しい内装まで完璧に作り込まれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0984
+ | Value=今回のライブで披露された振り付けのひとつ。<br/>指でフレームを作るようにして、その手を胸元まで持っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0985
+ | Value=いくつもの窮地をともに乗り越えてきたワルキューレの5人。<br/>フレイアの心が生み出す温かいルンの光が、彼女たちを希望の未来へと導いていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0986
+ | Value=その生真面目な性格から何かと気苦労が絶えない様子のミラージュ。<br/>そんな彼女の密かな癒やしは、女子寮のペットであるキュルルと触れ合うことのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0987
+ | Value=偶然の出会いに導かれるかのように、デルタ小隊へ入隊することとなったハヤテ。<br/>2人とともに紡ぐ未来で、自身の風を見つけることができるのだろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0988
+ | Value=訓練をサボっているハヤテを発見したフレイアは、頭上から彼の顔を覗き込む。<br/>晴天をバックに見るその笑顔は、まるで燦然と輝く太陽のようにも思えた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0989
+ | Value=フレイアの歌に対して素直な感想を述べるハヤテと横で照れ笑いを浮かべるフレイア。<br/>「お前、笑うと気持ち悪いよな」―ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0990
+ | Value=反応弾の爆発に巻き込まれたハヤテを、ミラージュが咄嗟の判断で救出した。<br/>まっすぐな態度で礼を言うハヤテ。図らずも2人の距離は近づき始めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0991
+ | Value=戦火に包まれるラグナを見て、表情を曇らせるフレイア。<br/>だが生還したハヤテを前にしてか、そのルンは確かな輝きを放っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0992
+ | Value=デルタ小隊にスカウトされたハヤテの能力について、ミラージュに問いかけるフレイア。<br/>ハヤテに振り回されっぱなしのミラージュは珍しく声を荒らげて答えた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0993
+ | Value=マクロス・エリシオンの頭部。<br/>ここが司令室となっており、むき出しのように見えるが強固なバリアで守られている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0994
+ | Value=女子寮で飼われているウミネコ。<br/>野良のウミネコとは違って、どこかおっとりとした顔つきが特徴的だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0995
+ | Value=惑星アル・シャハルで、ハヤテは初めて空を飛んだ。<br/>そのとき彼はフレイアの歌を聴き、確かに吹き渡る「風」を感じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0996
+ | Value=ウィンダミアの侵攻が惑星ラグナへと及び、さらに新統合軍の介入も始まった。<br/>今や戦地となってしまったラグナ。住民の速やかな避難が開始される。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0997
+ | Value=いくつもの窮地をともに乗り越えてきたワルキューレの5人。<br/>人一倍仲間のことを想うマキナがいたからこそ、5人の絆は揺るがないものとなった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0998
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0999
+ | Value=最初は仲が悪かったレイナとマキナも、今ではワルキューレの名コンビ。<br/>少々親密すぎる？2人の姿に元気をもらうファンもいるとかいないとか…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1000
+ | Value=暗闇の部屋の中で、ディスプレイの明かりに照らされているレイナ。<br/>天才ハッカーである彼女にとっては、これが落ち着いて作業ができる環境なのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1001
+ | Value=戦場で危機に陥っていたマキナとレイナを、咄嗟の判断で救出したボーグ。<br/>荒い言葉で本心を隠そうとするも、ルンの輝きまでは抑えられなかったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1002
+ | Value=最終決戦の最中、ついに相見えることとなったキースとロイド。<br/>いつしか異なる道を歩んでいた2人の心に、ルンの輝きが遠い日の記憶を映し出す。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1003
+ | Value=最終決戦の最中、ついに相見えることとなったキースとロイド。<br/>いつしか異なる道を歩んでいた2人の心に、ルンの輝きが遠い日の記憶を映し出す。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1004
+ | Value=激しい戦闘の中で、兄キースの存在を感じ取ったハインツ。<br/>どこか微妙な距離を保っていた兄弟の心も、ルンの輝きが繋いでくれるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1005
+ | Value=ウィンダミアとの最終決戦、その作戦名はラグナロク。<br/>デルタ小隊の面々も、持てる力の限りを尽くして戦っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1006
+ | Value=危機一髪のところでボーグに救われたマキナとレイナ。<br/>2人は感謝の意を示すと、そのまま力強く歌い続けるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1007
+ | Value=爆発に巻き込まれる直前、キースとロイドのルンは確かに共鳴した。<br/>最後の最後で、親友同士であった男たちは真にわかり合えたのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1008
+ | Value=ロイドの支配下に置かれたSv-262は、機体の色が白に変更されていた。<br/>しかしその白はどこか禍々しさを孕み、無機質な敵意を周囲に撒き散らす。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1009
+ | Value=夕焼けをバックに草原に横たわるバサラは、語りかけるようにグババの方を見る。<br/>その眼差しは穏やかだが、その奥に潜む情熱はメラメラと燃えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1010
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1011
+ | Value=宇宙船といえど、マクロス7の市民たちは地球での生活と変わらない日々を過ごす。<br/>日が明けるシティ7を見上げるバサラ。眩しい朝日に彼は何を思うのか。　
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1012
+ | Value=荒野を静かに歩くバサラ。ギターを腕で担ぎ、砂だけが舞う地を<br/>ただまっすぐ歩き続ける。彼の行く先に何があるのか、彼自身も知らないだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1013
+ | Value=バサラとビヒーダ。一見するとあまり共通点がなさそうな2人。<br/>だが、お互いに無駄なことは語らないという意味では似ているのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1014
+ | Value=本当の名曲とは、年齢や性別、果ては時代まで越えて歌い継がれていく。<br/>自分たちが奏でるサウンドも、そんな名曲でありたいとバサラは語った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1015
+ | Value=バサラの考えを知らないミレーヌは、バルキリーは兵器であり戦うものだと話す。<br/>その言葉に、ついに堪忍袋の緒が切れたバサラは憤りを隠せずにいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1016
+ | Value=3度目の出撃でまた歌の途中で敵に逃げられ、納得のいかないバサラ。<br/>だがそれでもバサラは諦めず、次はもっと熱い歌を聞かせることを決意する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1017
+ | Value=昏睡状態から目を覚ましたバサラは、ライトアップされたファイヤーバルキリーと、<br/>それを囲む大勢のファンに向かって復活の合図を送った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1018
+ | Value=惑星ラクスの夕焼けを前にレックスと2人で語り合うバサラ。<br/>落ち着いたムードにやや意識してしまうレックスだが、バサラにその気はないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1019
+ | Value=一方的に攻撃されているガムリンを助けるため、敵と対峙するバサラ。<br/>しかし、葛藤に揺らぐバサラの手元は震えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1020
+ | Value=Fire Bomberの新曲を考えるバサラ。<br/>その独特な譜面の書き方にミレーヌは驚きを隠せないでいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1021
+ | Value=夕焼けをバックに草原に横たわるミレーヌは、語りかけるようにグババの方を見る。<br/>まだ幼さが残る眼差しの奥には、ギラギラと輝く情熱が滲んでいる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1022
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1023
+ | Value=ステージの上から見る光景に想いを馳せるミレーヌ。<br/>まだ14歳と若い彼女だが、音楽に対しては人一倍真摯な姿勢で臨んでいる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1024
+ | Value=愛娘を戦地に送らせないため、サウンドフォースから外すように命令するマックス。<br/>しかし、レイはミレーヌを部隊に加入させると主張した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1025
+ | Value=幼い頃からいつも一緒にいたミレーヌとグババ。<br/>最初はなかなか心を開かなかったグババも、今では感情を共有するほどの仲である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1026
+ | Value=自分のファンを大切にすることを誓い、ミレーヌはグババの人形を届けに行った。　<br/>「これからもあたしの…ううん、Fire Bomberのファンでいてね」―ミレーヌ　
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1027
+ | Value=ビリーの家にあるミレーヌの写真。それはミレーヌのデビューライブの写真だった。<br/>「あたしの写真…こんなきれいに撮ってくれたんだ」―ミレーヌ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1028
+ | Value=鏡を見たミレーヌは、ふとグババに問いかけた。<br/>「ねえグババ、あたしパパとママどっちに似てると思う？」―ミレーヌ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1029
+ | Value=歌には秘められた力があると信じ、歌の研究をしているドクター千葉。<br/>その実験台となるガムリンを椅子に縛り付け、不敵な笑みを浮かべている。
+ | ParentPage=Texts/Bank/master
+}}
+                    

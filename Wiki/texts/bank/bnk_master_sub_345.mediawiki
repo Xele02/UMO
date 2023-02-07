@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1545
+ | Value=イベントを進めて<br/>【Glow in the dark】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1546
+ | Value=イベントを進めて<br/>【Glow in the dark】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1547
+ | Value=イベントを進めて<br/>【Glow in the dark】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1548
+ | Value=楽曲を解放して<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1549
+ | Value=イベントを進めて<br/>【燃える瞳の小白竜】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1550
+ | Value=イベントを進めて<br/>【燃える瞳の小白竜】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1551
+ | Value=イベントを進めて<br/>【燃える瞳の小白竜】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1552
+ | Value=イベントを進めて<br/>【不思議な時の迷宮】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1553
+ | Value=イベントを進めて<br/>【不思議な時の迷宮】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1554
+ | Value=イベントを進めて<br/>【不思議な時の迷宮】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1555
+ | Value=楽曲を解放して<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1556
+ | Value=イベントを進めて<br/>【会えないときのValentine】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1557
+ | Value=イベントを進めて<br/>【会えないときのValentine】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1558
+ | Value=イベントを進めて<br/>【会えないときのValentine】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1559
+ | Value=イベントを進めて<br/>【かじかむ声 ～唇の凍傷～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1560
+ | Value=イベントを進めて<br/>【かじかむ声 ～唇の凍傷～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1561
+ | Value=イベントを進めて<br/>【かじかむ声 ～唇の凍傷～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1562
+ | Value=楽曲を解放して<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1563
+ | Value=イベントを進めて<br/>【無垢になれ！ ～つらみ現在進行形～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1564
+ | Value=イベントを進めて<br/>【無垢になれ！ ～つらみ現在進行形～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1565
+ | Value=イベントを進めて<br/>【無垢になれ！ ～つらみ現在進行形～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1566
+ | Value=イベントを進めて<br/>【ふたりの恋のマホウ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1567
+ | Value=イベントを進めて<br/>【ふたりの恋のマホウ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1568
+ | Value=イベントを進めて<br/>【ふたりの恋のマホウ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1569
+ | Value=イベントを進めて<br/>【吹き抜ける風 ～NEVER SAY DIE～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1570
+ | Value=イベントを進めて<br/>【吹き抜ける風 ～NEVER SAY DIE～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1571
+ | Value=イベントを進めて<br/>【吹き抜ける風 ～NEVER SAY DIE～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1572
+ | Value=イベントを進めて<br/>【超時空ファイナルLive ～Act.1～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1573
+ | Value=イベントを進めて<br/>【超時空ファイナルLive ～Act.1～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1574
+ | Value=イベントを進めて<br/>【超時空ファイナルLive ～Act.1～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1575
+ | Value=イベントを進めて<br/>【超時空ファイナルLive ～Act.2～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1576
+ | Value=イベントを進めて<br/>【超時空ファイナルLive ～Act.2～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1577
+ | Value=イベントを進めて<br/>【超時空ファイナルLive ～Act.2～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1578
+ | Value=イベントを進めて<br/>【超時空ファイナルLive ～Act.3～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1579
+ | Value=イベントを進めて<br/>【超時空ファイナルLive ～Act.3～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1580
+ | Value=イベントを進めて<br/>【超時空ファイナルLive ～Act.3～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0002
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0003
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0004
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0005
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0006
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0007
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0008
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0009
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0010
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0011
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dscb_0012
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dscb_0001
+ | Value=【ライブ】で1曲クリアしよう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dscb_0002
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

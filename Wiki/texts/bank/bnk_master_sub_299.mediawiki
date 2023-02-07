@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0067
+ | Value=「0-G Love」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0068
+ | Value=「dシュディスタb」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0069
+ | Value=「dシュディスタb」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0070
+ | Value=「宿命θノヴァティック」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0071
+ | Value=「宿命θノヴァティック」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0072
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0073
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0074
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0075
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0076
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0077
+ | Value=<size=20>「やさしさSAYONARA」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0078
+ | Value=「やさしさSAYONARA」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0079
+ | Value=「イツワリノセカイの君へ」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0080
+ | Value=「イツワリノセカイの君へ」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0081
+ | Value=「fight on stage ～2人の歌姫～」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0082
+ | Value=「fight on stage ～2人の歌姫～」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0083
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0084
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0085
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0086
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0087
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0088
+ | Value=「SUBMARINE MEMORY」の<br/>アーネスト艦長からの報酬で入手した称号
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0089
+ | Value=「SUBMARINE MEMORY」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0090
+ | Value=「光速クライmax☆stage」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0091
+ | Value=「光速クライmax☆stage」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0092
+ | Value=「涙目ウェディング」で<br/>ランキング最上位に入賞した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0093
+ | Value=「涙目ウェディング」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0094
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0095
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0096
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0097
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0098
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0099
+ | Value=「誘惑のエリクシア」の<br/>アーネスト艦長からの報酬で入手した称号
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0100
+ | Value=「誘惑のエリクシア」で<br/>努力した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0101
+ | Value=フレイアと長く接することで<br/>理解を深めた者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0102
+ | Value=フレイアと接することで<br/>親しくなった仲間だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0103
+ | Value=美雲と長く接することで<br/>理解を深めた者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0104
+ | Value=美雲と接することで<br/>親しくなった仲間だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0105
+ | Value=カナメと長く接することで<br/>理解を深めた者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0106
+ | Value=カナメと接することで<br/>親しくなった仲間だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0107
+ | Value=マキナと長く接することで<br/>理解を深めた者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0108
+ | Value=マキナと接することで<br/>親しくなった仲間だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0109
+ | Value=レイナと長く接することで<br/>理解を深めた者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0110
+ | Value=レイナと接することで<br/>親しくなった仲間だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0111
+ | Value=ランカと長く接することで<br/>理解を深めた者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0112
+ | Value=ランカと接することで<br/>親しくなった仲間だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0113
+ | Value=シェリルと長く接することで<br/>理解を深めた者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0114
+ | Value=シェリルと接することで<br/>親しくなった仲間だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0115
+ | Value=ミレーヌと長く接することで<br/>理解を深めた者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0116
+ | Value=ミレーヌと接することで<br/>親しくなった仲間だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    

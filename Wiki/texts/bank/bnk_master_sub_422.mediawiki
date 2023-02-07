@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0320
+ | Value=翼が風を受けて飛ぶように、歌も風に<br/>乗って響いていく。翼と歌がひとつに<br/>なったら、どこまで飛べるのだろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0321
+ | Value=ラグナの風に故郷と似た印象を感じて<br/>いたフレイア。懐かしいメロディーを<br/>風が運んできてくれたのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0322
+ | Value=シェリルのステージは、時に暴虐的な<br/>までに人々を熱狂の渦へと引き込んで<br/>いく。その快楽に抗えるものはいない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0323
+ | Value=白の衣装に身を包み、演出に合わせて<br/>ステージ上でキャラクターを演じきる<br/>シェリル。その姿はまさにプロである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0324
+ | Value=シェリルやランカのスター性とは違う<br/>ものの、ルカもまた技術者として世界<br/>を動かす天才の1人なのは間違いない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0325
+ | Value=ひらひらの衣装でライブをきゃわわに<br/>演出してくれるマキナ。アイドルへの<br/>想いは、1番正統派なのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0326
+ | Value=過去も現代も文化という誘惑には誰も<br/>抗えない。たとえ敵対する相手だったと<br/>しても、夢中にするほど刺激的なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0327
+ | Value=村人たちが恐れている「呪いの声」に<br/>興味を持ったバサラは、音楽が好きな<br/>少年ペドロを連れて雪山へと向かった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0328
+ | Value=歌姫への憧れを胸に、歩き続けてきた<br/>エミリアとミレーヌの姉妹。方向性が<br/>多少違うのも、それぞれの魅力なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0329
+ | Value=歌は幻なんかじゃない、想いを込めた<br/>歌は必ず届くと信じるフレイアだから<br/>こそ、遠い空へと歌を届けられるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0330
+ | Value=次の戦術ライブで成果を出せなければ、<br/>チームを解散するという通告を受けた<br/>ワルキューレは、最後の大勝負に出る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0331
+ | Value=双子の兄であり、若き騎士であるテオ。<br/>商家の生まれながら、弟のザオとともに<br/>ウィンダミアを守るために空を駆ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0332
+ | Value=まだ結婚どころか、恋愛にさえ考えが<br/>及ばないミレーヌ。気にする周囲には、<br/>もう放っておいてという感じなのかも。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0333
+ | Value=オズマにとって自分の命よりも大切な<br/>妹、ランカが結婚するとなったとき、<br/>一体どうなってしまうのか心配である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0334
+ | Value=歌手以外に、普通のお嫁さんにもなり<br/>たかったミンメイ。歌手となった今も、<br/>その夢は胸の奥で輝いているのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0335
+ | Value=多くの男性を惹きつけるマキナだが、<br/>その男性の中から誰か1人を選ぶのは<br/>まだまだ先になるのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0336
+ | Value=ミンメイの歌が今も色褪せることなく<br/>人々に愛されるように、感動や美しい<br/>思い出は時を越えて語り継がれていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0337
+ | Value=経緯や結末に関して、ほとんどの情報が<br/>伝わっていないバロータ戦役。その結果<br/>Fire Bomberの存在を疑う者もいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0338
+ | Value=時代が変わり新しいパイロットたちが<br/>誕生したとしても、マックスを超える<br/>天才が現れるのは難しいかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0339
+ | Value=もし船を自由に使えたなら、夏休みに<br/>クルージングなんていいかもしれない。<br/>遊びが盛りだくさんの夏になりそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0340
+ | Value=刺激的な男女の水着姿にスリリングな<br/>水上アクティビティの数々。夏の海に<br/>来たのなら泳ぐだけじゃもったいない！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0341
+ | Value=ろうそくの火が消えようとする瞬間に<br/>大きく輝きを増すように、シェリルも<br/>最後の力を振り絞って歌い続けていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0342
+ | Value=夏場の暑い日々には体を休めるための<br/>休養が不可欠。木陰に腰を落ち着けて、<br/>エレガントに過ごすのも悪くなさそう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0343
+ | Value=リーダーとしてチームの管理に、歌や<br/>ダンス、さらにバトルもこなすカナメ。<br/>まさに戦う女の理想像のひとつである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0344
+ | Value=歌と比べてダンスはちょっぴり苦手な<br/>フレイアだけど、頑張って克服しよう<br/>とする姿もまたみんなに元気をくれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0345
+ | Value=会場を埋め尽くす観客とステージ上の<br/>アーティストが一体となった高揚感は、<br/>やっぱり生で感じるのが1番だろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0346
+ | Value=まるで神秘をまとうかのような美貌を<br/>持つシェリル。それが生まれたままと<br/>いうなら、その存在こそ神秘といえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0347
+ | Value=生来の優しさと、種族をも越えるかの<br/>ような愛情を持ったランカだからこそ、<br/>その歌は胸の奥深くに突き刺さるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0348
+ | Value=最初は山に向かって1人歌い続けていた<br/>バサラ。いつしかその周りには歌と熱い<br/>魂に惹かれるように仲間ができていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0349
+ | Value=憧れの歌手のようなスターを目指して、<br/>音楽の世界に足を踏み入れたミレーヌ。<br/>その胸は今も夢と希望に膨らんでいる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0350
+ | Value=熱い想いを指先に込め、そっと優しく<br/>組み立てたなら、胸にときめきという<br/>名の起動音を響かせてくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0351
+ | Value=自分の大好きなものと機転を活かして<br/>みんなを支え続けるマキナだからこそ、<br/>その応援にも特別な力が宿るのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0352
+ | Value=渋谷エリア居住地の深層、地下に建設<br/>されている地下電子街「深・秋葉原」。<br/>今日もディープな世界が君を待ってる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0353
+ | Value=宇宙で漂流しながらも、平和な生活を<br/>取り戻そうとするマクロス市民たちの<br/>姿は、元気とたくましさに溢れていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0354
+ | Value=仲間たちと思い出を共有し、少しずつ<br/>変わり始めた美雲。その変化は本人も<br/>気付かぬうち、歌にも現れ始めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0355
+ | Value=学習分野に芸能コースもある美星学園。<br/>生徒の芸能活動にも寛容な教育方針で、<br/>ランカが転入を希望したのも頷けるぞ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0356
+ | Value=まさかの大スターの転入に、沸き立つ<br/>美星学園の生徒たち。学園内における<br/>勢力図が激変するのはまず間違いない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0357
+ | Value=庶民であるフレイアと貴族たちとでは<br/>身分に差があるかもしれないが、心の<br/>美しさについては決して負けていない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0358
+ | Value=謎めいた気品と美しさを漂わせている<br/>美雲だが、その意味や理由については<br/>本人さえもわからないのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0359
+ | Value=長きにわたる戦いは停戦を経て和平の<br/>道を歩み始める。しかし、新たな戦い<br/>はすぐそこへと迫っていたのだった…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0360
+ | Value=たくさんの刺激と痛みを刻み込んできた<br/>レイナの心。無数の傷痕は誇りになって<br/>今のレイナを形作ったのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0361
+ | Value=マキナに威厳からくる高貴なイメージは<br/>感じにくいものの、その親しみやすさと<br/>愛らしさで社交界もうまくやれそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0362
+ | Value=ハロウィンといえばイタズラとお菓子。<br/>でも中にはお菓子より、熱くて痺れる<br/>ロックが大好きなお化けもいるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0363
+ | Value=どんな楽しい夜もはしゃいでばっかり<br/>では疲れてしまうもの。ひと息ついて、<br/>お化けと談笑なんていいかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0364
+ | Value=道を見失ってしまったときは、そっと<br/>瞳を閉じてみよう。懐かしい声と熱い<br/>思い出が、道を照らしてくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0365
+ | Value=身分ある立場にはそれ相応の義務が発生<br/>するといわれる貴族社会。カナメならば<br/>その責任も受け止められるに違いない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0366
+ | Value=いつもの仮装をちょっとアレンジして、<br/>みんなの注目を独り占め。大胆な姿に<br/>お月様も見惚れちゃうこと間違いなし。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0367
+ | Value=戦闘服の代わりに、ヒラヒラの衣装で<br/>戦術ライブへと挑む提案をしたマキナ。<br/>以降のライブ方針を決めた一手である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0368
+ | Value=衣装はライブの演出としてだけでなく、<br/>気持ちをひとつにするのに大切なもの。<br/>絆の力が最高のライブを演出するのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0369
+ | Value=記念式典の会場上空に現れた、天使を<br/>思わせる姿のシャロン。神々しい姿と<br/>歌声は、人々の心を楽園へ誘っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    

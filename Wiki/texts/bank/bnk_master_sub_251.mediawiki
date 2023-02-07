@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=cos_0498_01
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0499_01
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cos_0500_01
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0001
+ | Value=ワルキューレ・ユニフォーム(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0002
+ | Value=シュトラール(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0003
+ | Value=ロートケープヒェン(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0004
+ | Value=ブラウ・ブルーメ(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0005
+ | Value=キモノシュティール(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0006
+ | Value=フォーア・シュトース(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0007
+ | Value=ヒュプシュ・クヴァレ(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0008
+ | Value=エーアステ・リーベ(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0009
+ | Value=レゾナンツ(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0010
+ | Value=エーデル・シュヴァン(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0011
+ | Value=ガーネット・ティーン(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0012
+ | Value=ブラウアーエザー(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0013
+ | Value=シュテルネン・ブラウ(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0014
+ | Value=ライデンシャフト(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0015
+ | Value=裸喰娘娘メサイア(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0016
+ | Value=コズミックアップル(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0017
+ | Value=フローラルサマー(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0018
+ | Value=ポップ・ツイスター(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0019
+ | Value=ホットリリス(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0020
+ | Value=クロスオーバー・パッション(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0021
+ | Value=ワルキューレ・ユニフォーム(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0022
+ | Value=シュトラール(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0023
+ | Value=フェアクライドゥング(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0024
+ | Value=エーデル・シュヴァン(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0025
+ | Value=モーントシャイン(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0026
+ | Value=フォーア・シュトース(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0027
+ | Value=ライデンシャフト(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0028
+ | Value=レゾナンツ(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0029
+ | Value=フェアボーテネ(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0030
+ | Value=シュヴァルツェ・レーツェル(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0031
+ | Value=シュテルネン・ファイルヒェン(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0032
+ | Value=ミュスティカ・ブラウト(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0033
+ | Value=フローラルサマー(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0034
+ | Value=プルシアン・ゴージャス(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0035
+ | Value=ミスティ・オフィサー(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0036
+ | Value=クロスオーバー・ファビュラス(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0037
+ | Value=キモノ・クノイチ(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0038
+ | Value=ネーベル・ショコラーデ(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0039
+ | Value=モーディッシュ・ヴェルデ(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0040
+ | Value=クロスオーバー・イリューシブ(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0041
+ | Value=ワルキューレ・ユニフォーム(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0042
+ | Value=シュトラール(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0043
+ | Value=ブラウ・ブルーメ(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0044
+ | Value=シュヴァルツェ・フリューリング(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0045
+ | Value=ブリッツ・ブラウト(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0046
+ | Value=ミルヒシュトラーセ(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0047
+ | Value=マリーゴールド(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    

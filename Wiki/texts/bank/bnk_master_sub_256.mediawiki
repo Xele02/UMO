@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0248
+ | Value=ヤミ・クローズ(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0249
+ | Value=ヴァイス・トレーネン(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0250
+ | Value=フラウ・ユーベルト(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0251
+ | Value=モーディッシュ・ナルベ(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0252
+ | Value=デルフィーンミュートス(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0253
+ | Value=シュタイフ・ブリーゼ(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0254
+ | Value=フェーンアーテム(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0255
+ | Value=クロスオーバー・スカッシュ(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0256
+ | Value=アカシア・デイズ(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0257
+ | Value=アイントラハト(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0258
+ | Value=ヴァイス・トレーネン(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0259
+ | Value=フラウ・ユーベルト(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0260
+ | Value=ヤミ・クローズ(カナメ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0261
+ | Value=モーディッシュ・シャルマン(マキナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0262
+ | Value=エンジェル・ヒーリング(マキナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0263
+ | Value=ヒュブシュ・シュルツェ(マキナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0264
+ | Value=シュタイフ・ブリーゼ(マキナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0265
+ | Value=スイート・デイズ(マキナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0266
+ | Value=アイントラハト(マキナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0267
+ | Value=シューネ・ブラウト(マキナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0268
+ | Value=フラウ・ユーベルト(マキナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0269
+ | Value=ヤミ・クローズ(マキナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0270
+ | Value=ヴァイス・トレーネン(マキナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0271
+ | Value=クロノ・ラビット(レイナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0272
+ | Value=デイジー・ペイン(レイナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0273
+ | Value=モーディッシュ・トロッツ(レイナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0274
+ | Value=クリベルン・メイド(レイナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0275
+ | Value=シュタイフ・ブリーゼ(レイナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0276
+ | Value=アイントラハト(レイナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0277
+ | Value=ウルティカ・サーフ(レイナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0278
+ | Value=ヤミ・クローズ(レイナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0279
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0280
+ | Value=ヴァイス・トレーネン(レイナ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0281
+ | Value=リーニュ・アティロン(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0282
+ | Value=ソワレ・エテルネル(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0283
+ | Value=セイント・グルーム(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0284
+ | Value=アニバーサル・フェアリー(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0285
+ | Value=ニュイ・グラムール(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0286
+ | Value=サヴァイヴ・スターズ(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0287
+ | Value=ラパン・ノワール(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0288
+ | Value=ラパン・ブラン(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0289
+ | Value=ノーザン・クロス(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0290
+ | Value=アド・シュトラール(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0291
+ | Value=ソワレ・アミカル(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0292
+ | Value=スターリット・ヴェルデュール(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0293
+ | Value=ニュイ・リュミヌーズ(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0294
+ | Value=ウィッシュ・スターズ(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0295
+ | Value=キャナリー・キャロット(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0296
+ | Value=マリエ・ベニーズ(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0297
+ | Value=ネイビー・トレジャー(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    

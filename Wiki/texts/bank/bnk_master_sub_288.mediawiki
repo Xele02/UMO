@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0327
+ | Value=♪Good job！・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0328
+ | Value=♪Good job！・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0329
+ | Value=♪Good job！・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0330
+ | Value=♪Good job！・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0331
+ | Value=New song Live ～第2弾～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0332
+ | Value=New song Live ～第2弾～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0333
+ | Value=New song Live ～第3弾～・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0334
+ | Value=New song Live ～第3弾～・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0335
+ | Value=絶命ジャッジメント・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0336
+ | Value=絶命ジャッジメント・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0337
+ | Value=♪Absolute 5・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0338
+ | Value=♪Absolute 5・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0339
+ | Value=♪Absolute 5・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0340
+ | Value=♪Absolute 5・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0341
+ | Value=♪Absolute 5・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0342
+ | Value=メモリアル・ランナー・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0343
+ | Value=メモリアル・ランナー・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0344
+ | Value=ジリティック♡Halloween・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0345
+ | Value=ジリティック♡Halloween・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0346
+ | Value=夕焼けオーバーフロウ・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0347
+ | Value=夕焼けオーバーフロウ・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0348
+ | Value=♪放課後オーバーフロウ・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0349
+ | Value=♪放課後オーバーフロウ・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0350
+ | Value=♪放課後オーバーフロウ・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0351
+ | Value=♪放課後オーバーフロウ・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0352
+ | Value=♪放課後オーバーフロウ・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0353
+ | Value=追憶ジェリーフィッシュ・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0354
+ | Value=追憶ジェリーフィッシュ・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0355
+ | Value=Queen's Birthday・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0356
+ | Value=Queen's Birthday・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0357
+ | Value=Walküre！ THUNDER GLOW・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0358
+ | Value=Walküre！ THUNDER GLOW・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0359
+ | Value=♪LOVE! THUNDER GLOW・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0360
+ | Value=♪LOVE! THUNDER GLOW・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0361
+ | Value=♪LOVE! THUNDER GLOW・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0362
+ | Value=♪LOVE! THUNDER GLOW・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0363
+ | Value=♪LOVE! THUNDER GLOW・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0364
+ | Value=MAGICAL☆MY FRIENDS・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0365
+ | Value=MAGICAL☆MY FRIENDS・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0366
+ | Value=サンタクロースでなんかいられない！・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0367
+ | Value=サンタクロースでなんかいられない！・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0368
+ | Value=超時空カウントダウンライブ'18・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0369
+ | Value=超時空カウントダウンライブ'18・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0370
+ | Value=♪ライオン・彩
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0371
+ | Value=♪ライオン・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0372
+ | Value=♪ライオン・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0373
+ | Value=♪ライオン・銅
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0374
+ | Value=♪ライオン・白
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0375
+ | Value=【賀正】Happy New Yearライブ'19・金
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_nm_0376
+ | Value=【賀正】Happy New Yearライブ'19・銀
+ | ParentPage=Texts/Bank/master
+}}
+                    

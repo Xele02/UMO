@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1630
+ | Value=ヴォルドール潜入作戦を成功させるため、陽動としてランドールに現れたエリシオン。<br/>マクロス級の圧倒的な火力によって、共闘するヴォルドール方面軍を援護した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1631
+ | Value=苛立つケイオスの面々に対し、統合政府からの許可証を見せつけるベルガー。<br/>彼のしたたかさと、ウィンダミアに対する統合政府の関心の低さが垣間見える瞬間だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1632
+ | Value=暴走後に意識を失ったハヤテが収容された医務室。<br/>医療船ほどではないながらも、一定の治療を行える設備があるようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1633
+ | Value=宇宙空間でもなお濃く際立つような、深い紫で仕立て上げられた衣装を纏った美雲。<br/>妖しく輝く星屑のステージにおいても、その綺羅星の如き輝きはまったく褪せない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1634
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1635
+ | Value=惑星ヴォルドールでの戦術ライブにて遺跡と共鳴し、謎の記憶が呼び覚まされた美雲。<br/>妖しい輝きを放ち虚ろな瞳で歌う美雲の歌声に、遺跡はかつてない反応を見せ始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1636
+ | Value=フレイアとの共鳴を不思議がる美雲に対し遺跡と繋がる美雲の方がすごいと返すハヤテ。<br/>すると美雲は悪戯っぽい仕草で、遺跡と繋がるイメージを率直な言葉で語るのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1637
+ | Value=ハヤテやミラージュ、メンバーの叱咤激励を受けて歌う意志を取り戻したフレイア。<br/>美雲はその姿を見届けると、フレイアを促すように片手のサインを空へと掲げた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1638
+ | Value=アイテールの展望デッキにて、お互いできることしかできないと美雲に語るハヤテ。<br/>そこには再び飛べることへの安堵に、美雲の境遇への気遣いが滲んでいるようだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1639
+ | Value=美雲が隔離された医療船を不安な表情で遠くから眺めるマキナとレイナ。<br/>知らされていないことがあまりにも多いものの、美雲を心配する2人の気持ちは本物だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1640
+ | Value=森に突っ込むことで不時着ができたにも関わらず、機首を下げての墜落を選んだカシム。<br/>ハヤテが駆け寄ると朦朧とした意識の中にありながら、リンゴ畑を気遣う言葉を残した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1641
+ | Value=ケイオス本部から派遣されたスタッフにより、医療船に隔離される美雲。<br/>美雲に対するこの処置に関してもレディ・Mは沈黙を貫いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1642
+ | Value=ルンと生命の輝きを燃やすかのような動きで、ハヤテを圧倒するカシム。<br/>その鋭い風はまるで『白騎士』と見紛うほどに研ぎ澄まされたものだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1643
+ | Value=畑に移せるまで立派に育ったリンゴの苗木。<br/>カシムの息子アレクの元へ、鍬と添え木と肥料と共に届けられた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1644
+ | Value=空母アイテールに搭載されたアルファ、ベータ小隊のVF-31A。<br/>空母ヘーメラーにはデストロイド部隊が搬入され、着々と出撃の準備が進められていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1645
+ | Value=ワルキューレのリーダーを務め、戦術ライブでもメンバーを引っ張っていくカナメ。<br/>メンバーからの信頼と共に、トキメキに心を弾ませあらゆる障害を乗り越えていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1646
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1647
+ | Value=医療船の予想を上回るセキュリティに、バックアップを図るも苦戦を強いられるレイナ。<br/>レイナの強行突破の指示にカナメは演技を止めると、ベッドから飛び降りて駆け出した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1648
+ | Value=レセプター保有者として選出されたとき、特に深く考えていなかったと答えるカナメ。<br/>もう一度歌えるかもしれないという純粋な想いが、カナメを突き動かしたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1649
+ | Value=共鳴によってハヤテがヴァール化するかもしれないということを知らされたフレイア。<br/>ヴァール化、それもハヤテということに対してフレイアは強いショックを受ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1650
+ | Value=生体フォールド波の異常により、患者として医療船へと運び込まれるカナメ。<br/>実際はレイナが捏造したカルテを使って医療船の内部へと潜入する作戦だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1651
+ | Value=警備員に周囲を取り囲まれ、壁に手をつく形で無力化されるマキナ。<br/>マキナは拘束され処罰を受けるであろう自身のことより、美雲の身を案じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1652
+ | Value=ウィンダミアに直接乗り込む作戦の舞台として選ばれた惑星アルヴヘイム。<br/>奇しくもそこは、メッサーと初めて会った場所でもあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1653
+ | Value=モニターに映し出されたヴォルドールでのハヤテとフレイアの共鳴を記録した映像。<br/>そこには異様な挙動で敵機を猛追する、ハヤテのVF-31Fが映し出されていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1654
+ | Value=成果が出ないことを思い悩んでいたカナメに、協力を申し出たかつてのアラド。<br/>そしてクラゲに例えたことわざで、焦らなくていいとカナメを励ましたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1655
+ | Value=惑星ラグナを離れてから、ワルキューレの寮にもなっている裸喰娘娘。<br/>どうやらマキナとレイナの姿が見えないようだが…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1656
+ | Value=ケイオスの本部から派遣された医療船のスタッフ。<br/>詳細は不明であるものの、美雲とは深い関わりがあるらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1657
+ | Value=これまでワルキューレの中でも一二を争うほど大きく心を成長させてきたレイナ。<br/>仲間たちと培ってきた絆を胸に、どんなに強固な障壁も軽々と解き放っていくだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1658
+ | Value=ハッキングやウィルスを自由自在に操り、ネットワークの波を飛び越えていくレイナ。<br/>その能力は普段のクールな表情に隠された、燃えるような情熱があってこそといえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1659
+ | Value=美雲の深く胸に突き刺さるような歌声に、強く心を揺さぶられたマキナとレイナ。<br/>そしていつの間にか重ねられていたレイナの手を、マキナはそっと握り返したのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1660
+ | Value=ミラージュがハヤテの部屋に出入りしているという噂にレイナの鋭い推理が光る！<br/>「……通い妻」「か、通い妻～！？」─レイナ、フレイア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1661
+ | Value=共鳴実験で一度も歌うことができなかったフレイアを心配し、様子を見に来たハヤテ。<br/>塞ぎこむフレイアに対し、ハヤテは居ても立っても居られず話を切り出し始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1662
+ | Value=ハヤテに歌への想いを疑われ、歌が大好きなのは変わらないと答えるフレイア。<br/>それでも、歌うこと以上に大切かもしれない気持ちがフレイアの中に芽生え始めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1663
+ | Value=警備員に完全に包囲され、ほとんど投降する形で身柄を拘束されたレイナ。<br/>レイナもまたマキナと同じように、自身のことよりも美雲の身を案じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1664
+ | Value=レイナがハッキングをしたのなら、何も情報が手に入らないはずはないという美雲。<br/>カナメとマキナが一様に口を閉ざす中、レイナはためらいがちに言葉を返すのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1665
+ | Value=ハヤテに対するフレイアの歌の影響を調べるため行われた共鳴実験。<br/>フレイアが別のスタジオから歌う他、録音された歌と切り替えることもできた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1666
+ | Value=暴走に関してフレイアの歌は関係ないというハヤテを鋭く戒めるアーネスト。<br/>今後の作戦にも関わってくる以上、看過することはできない状況なのであろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1667
+ | Value=ハヤテとフレイアの共鳴実験を見守っていたワルキューレとデルタ小隊の面々。<br/>数日に渡って行われた実験だったが、ついに結果が出ることはなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1668
+ | Value=真実を突き止めるため医療船へのハッキングを進めるレイナとマキナ。<br/>そのセキュリティはレイナの技術を持ってしてもかなり厳重のようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1669
+ | Value=ハインツの戴冠式を前に決意を新たにするため、次元兵器の傷痕を訪れたボーグ。<br/>祖国が受けた屈辱と亡き家族の無念を晴らすべく、その風は熱く研ぎ澄まされていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1670
+ | Value=若き騎士ボーグが戦場で駆る、小型支援機「リル・ドラケン」を2機搭載した機体。<br/>対VF戦を意識したSVシリーズの後継機であり、その名に恥じない性能を誇っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1671
+ | Value=空の騎士を侮辱した報いを受けさせんと、レイナに対し一際強い敵意を向けるボーグ。<br/>仕掛けた攻撃は執拗で苛烈だったものの、なぜか頬を赤らめてしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1672
+ | Value=メッサーを身の程知らずと罵った上、返り討ちにあって当然というボーグだったが…<br/>「お前にあれ程の風が吹かせられるか」─キース
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1673
+ | Value=他の空中騎士団が次元兵器の傷痕を訪れる中、亡き家族に会うため実家へと戻るボーグ。<br/>そして家族全員が弔われた墓標を前に、優勢に向かいつつある戦況を報告したのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1674
+ | Value=夕焼けの空を舞う2匹の竜鳥に、自身とロイドの姿を重ねて昔を思い返すキース。<br/>かつて同じ空を飛んでいた友の真意が掴めない振る舞いに、1人思い悩むのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1675
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1676
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1677
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1678
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1679
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

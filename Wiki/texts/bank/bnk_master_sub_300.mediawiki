@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0117
+ | Value=バサラと長く接することで<br/>理解を深めた者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0118
+ | Value=バサラと接することで<br/>親しくなった仲間だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0119
+ | Value=ミンメイと長く接することで<br/>理解を深めた者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0120
+ | Value=ミンメイと接することで<br/>親しくなった仲間だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0121
+ | Value=フレイアと接することで<br/>パートナーになった者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0122
+ | Value=美雲と接することで<br/>パートナーになった者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0123
+ | Value=カナメと接することで<br/>パートナーになった者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0124
+ | Value=マキナと接することで<br/>パートナーになった者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0125
+ | Value=レイナと接することで<br/>パートナーになった者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0126
+ | Value=ランカと接することで<br/>パートナーになった者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0127
+ | Value=シェリルと接することで<br/>パートナーになった者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0128
+ | Value=ミレーヌと接することで<br/>パートナーになった者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0129
+ | Value=バサラと接することで<br/>パートナーになった者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0130
+ | Value=ミンメイと接することで<br/>パートナーになった者だけに贈られる証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0131
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0132
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0133
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0134
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0135
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0136
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0137
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0138
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0139
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0140
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0141
+ | Value=バトルクラス1を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0142
+ | Value=バトルクラス2を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0143
+ | Value=バトルクラス3を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0144
+ | Value=バトルクラス4を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0145
+ | Value=バトルクラス5を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0146
+ | Value=バトルクラス6を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0147
+ | Value=バトルクラス7を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0148
+ | Value=バトルクラス8を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0149
+ | Value=バトルクラス9を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0150
+ | Value=バトルクラス10を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0151
+ | Value=バトルクラス11を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0152
+ | Value=バトルクラス12を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0153
+ | Value=バトルクラス13を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0154
+ | Value=バトルクラス14を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0155
+ | Value=バトルクラス15を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0156
+ | Value=バトルクラス16を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0157
+ | Value=バトルクラス17を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0158
+ | Value=バトルクラス18を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0159
+ | Value=バトルクラス19を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0160
+ | Value=バトルクラス20を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0161
+ | Value=バトルクラス21を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0162
+ | Value=バトルクラス22を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0163
+ | Value=バトルクラス23を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0164
+ | Value=バトルクラス24を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0165
+ | Value=バトルクラス25を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0166
+ | Value=バトルクラス26を制した証
+ | ParentPage=Texts/Bank/master
+}}
+                    

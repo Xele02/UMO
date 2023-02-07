@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0830
+ | Value=ミンメイは、再び歌手として生きていくことを選択した。<br/>輝との別れを惜しむように口づけると、彼女は荒れ果てた街の中を歩いていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0831
+ | Value=戦争が終わり、輝は未沙とともに生きていくことを選択した。<br/>しかし、去り行くミンメイの歌声はいつまでも2人のそばにあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0832
+ | Value=人類の宇宙移民計画が決定し、その1番艦の艦長に任命された未沙。<br/>彼女は最後に、心に秘めていた輝への想いを口にした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0833
+ | Value=一時の平和を乱すように、ゼントラーディ軍の襲撃が発生した。<br/>軍人である輝は直ちに出撃しようとするが、ミンメイは必死に彼を引き止めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0834
+ | Value=未沙は軍を退役して、どこか遠い街へと行くつもりだという。<br/>自分が軍人であるが故にミンメイとの差を感じ、輝への想いを伝えられずにいるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0835
+ | Value=未沙をマクロスのブリッジに呼び出したグローバル。<br/>今や総司令と呼ばれる男の目は、人類の未来を静かに見据えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0836
+ | Value=ミンメイは昔の思い出話をすると、しきりにあの頃に戻りたいと言った。<br/>楽しかった過去と不確定な未来。いつかは輝も選択をしなければならないのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0837
+ | Value=ゼントラーディ軍の襲撃を受けて、かつてのクルーがマクロスに集結する。<br/>一時的にではあるが、マクロスは再び力を取り戻した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0838
+ | Value=ミンメイの制止を振り切って、輝は戦場へと向かった。<br/>このとき、輝とミンメイの未来は異なる方に向かい始めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0839
+ | Value=地上に潜伏していたゼントラーディ軍の残党が、マクロスに攻撃を開始した。<br/>その戦力は決して多くはないが、すでに市街地の広範囲に被害が及んでいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0840
+ | Value=敵艦の主砲が命中し、マクロスがバランスを崩す。<br/>突然の出来事に、市民たちは呆然と立ち尽くすしかなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0841
+ | Value=水底を映すような心象風景の中で、カナメはひとつの光を両手で優しく包み込む。<br/>そして、その光の先に未来があることを信じて、カナメもまた未来へと歩き出す。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0842
+ | Value=新年を祝うリン・ミンメイの呼びかけに応じ、時空を超えて集まった銀河の歌姫たち。<br/>煌びやかな東洋の装いを纏った歌姫たちの姿に、遠き銀河も鮮やかな彩りに包まれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0843
+ | Value=歌で気持ちを伝えることによって、暴れる原住生物をなだめることができたミレーヌ。<br/>この一件を通じてミレーヌは、おぼろげながらも歌の持つ力を感じ取ったのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0844
+ | Value=暖かな陽気が降り注ぐ中、草むらに寝転んで自由気ままな1日を全身で感じるミレーヌ。<br/>忙しさに追われる日々から抜け出して、こうしてのんびり過ごすのも大切かもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0845
+ | Value=休みを利用して輝の部屋の片付けをしていた際に、1冊のアルバムを見つけた未沙。<br/>アルバムに収められた輝とミンメイの写真に、未沙は寂しさを募らせるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0846
+ | Value=ビヨン・シティの暴動を鎮圧して基地に戻った際、未沙から封筒を手渡される輝。<br/>中に収められた未沙の写真に驚く輝に対し、未沙は何も言わず走り去っていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0847
+ | Value=今年の夏をもっと熱くするべく、女神たちがスペシャルデザインの水着を纏って降臨！<br/>更なる高みを目指して羽ばたき続ける、ワルキューレの新しいステージにこうご期待！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0848
+ | Value=ギターを片手に自分の部屋から出て行こうとするバサラ。<br/>長い別れになることを察したのか、グババが悲しそうに鳴いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0849
+ | Value=白い銀河クジラに対し、無謀な戦いを繰り返す父親の姿を見続けてきたライザ。<br/>そのせいか、同じような無茶をするバサラには文句をいわずにはいられなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0850
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0851
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0852
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0853
+ | Value=過去の記憶を持たないランカは、いつも心のどこかで不安と孤独を感じていた。<br/>暗い暗い心の海。しかし今、紡がれた希望の光が彼女の手を取ろうとしている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0854
+ | Value=夕焼けが徐々に深い蒼へと染まっていくなか、1人空へと向かって歌い続けるランカ。<br/>その優しい歌声は悠久の時を越えて、銀河に広がる満天の星々へと届くことだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0855
+ | Value=アルトの活躍によって、バジュラに連れ去られたランカは無事に救出された。<br/>雪が降る中、ランカに優しく語りかけるアルト。するとランカの頬が赤く染まった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0856
+ | Value=自分にできることをしただけ。バジュラとの戦いのあと、シェリルはそう語った。<br/>彼女の歌は人々に希望を与え、そして仲間たちの絆をより強固なものにしたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0857
+ | Value=襲来したバジュラを退け、フロンティア船団の危機は去った。<br/>船内には人工の雪が舞い降り、戦いの中で散っていた者の魂を慰めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0858
+ | Value=バジュラとの激しい戦闘の最中、一時的にブレラからの援護を受けたアルト。<br/>戦いのあと、どこか通じ合うものを感じたのか、アルトは微笑んでみせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0859
+ | Value=バジュラに連れ去られたランカを救うために、アルトを援護したブレラ。<br/>戦いのあとに彼が見せた微笑みは、冷徹なインプラント兵士のそれではなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0860
+ | Value=自身の大切なイヤリングを、戦闘へ出向くアルトに預けていたシェリル。<br/>自分たちを守ってくれた報酬として、少しだけ強引にそれを譲り渡すのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0861
+ | Value=マクロス・クォーターの操舵士であるボビー・マルゴ。<br/>彼（彼女？）の持つ大胆な操舵技術は、幾度となくS.M.Sの危機を救ってきた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0862
+ | Value=マクロス・クォーターは「マクロス」の名を持つ艦としては小型である。<br/>従来型と比較してもおよそ4分の1のサイズだが、それ故に高い機動性を誇る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0863
+ | Value=数に物を言わせて敵へと襲いかかるバジュラ。<br/>VF-25の最新の火器管制システムをもってしても倒し切ることは難しい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0864
+ | Value=バトル・フロンティアが放つ必殺のマクロス・キャノン。<br/>銀河を穿たんとするその一撃は、いかなる敵も瞬時に葬り去ってしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0865
+ | Value=見る者すべてをドキドキさせる、鮮烈で大胆なシェリルのステージ。<br/>恋をするのもされるのも、彼女はいつだって全力なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0866
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0867
+ | Value=堂々とした歩みで街角を進むシェリル。<br/>彼女にかかれば、サングラスを外して目線を配るその仕草さえも絵になってしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0868
+ | Value=病院のロビーで、アルトを挟んで歌い始めたシェリルとランカ。<br/>シェリルの大胆なアピールを前に、アルトもたじたじといった様子である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0869
+ | Value=シェリルの見舞いのため、病院を訪れたアルトとランカ。<br/>そのとき、ランカのデビュー前の映像がモニターに映し出された。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0870
+ | Value=学園で探し物をしている途中、生徒から隠れるためにロッカーに入った2人。<br/>少々過激なトラブルに見舞われ、さすがのシェリルも頬を赤らめるのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0871
+ | Value=自らの身体を蝕む病気の正体が明かされ、深い悲しみに暮れるシェリル。<br/>それでも歌い続けていたいのだと、彼女は想い人に心を委ねた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0872
+ | Value=アルトたちが通う美星学園にまさかの転校生がやってきた。<br/>その名はシェリル・ノーム。彼女が現れる所には、いつも波乱が巻き起こる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0873
+ | Value=体調が優れないシェリルを、S.M.Sの自室で休ませていたアルト。<br/>そこに割り込む緊急通信。何故かその場に居合わせたミシェルまで慌てていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0874
+ | Value=作戦中に女性のことで人をからかうと、いきなり撃墜される。<br/>そんなジンクスを語るアルトに向かって、陽気に手を振るシェリルの姿があった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0875
+ | Value=街中で倒れ込んでしまったシェリルは、偶然にも早乙女の屋敷で保護されていた。<br/>彼女に会いに来たアルトの前に、二度とくぐらないと誓った門が立ちはだかる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0876
+ | Value=V型感染症という病気について、過去の資料を調べていたミシェルとクラン。<br/>そこには、シェリルの祖母とともに写真に写るグレイスの姿があった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0877
+ | Value=見る者すべてをキラキラさせる、元気いっぱいなランカのステージ。<br/>恋も歌も全力な彼女の姿に、誰もがきっと恋をする。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0878
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0879
+ | Value=軽快な走りで街角を進むランカ。<br/>未来のトップアイドルも、このときはまだ普通の少女の笑みを浮かべている。
+ | ParentPage=Texts/Bank/master
+}}
+                    

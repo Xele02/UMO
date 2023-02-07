@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_needrankrange_unit
+ | Value={0}～{1}位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_sns_itemtitle
+ | Value=トーク：{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_emblemtitle
+ | Value=称号：{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_platetitle
+ | Value=★{0} {1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_check_have_pt
+ | Value=現在のポイント
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_check_rank
+ | Value=現在の順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rhythm_adjust_set
+ | Value=設定値
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rhythm_adjust_desc
+ | Value=高音がなるタイミングに合わせてリズムボタンを<br/>タップしてください。<br/>タイミングが自動で設定されます。<br/>確認モードでリズムをお試しできます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rhythm_adjust_balloon_text
+ | Value=高音に合わせてタップ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rhythm_adjust_confirmmode_title
+ | Value=調整確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rhythm_adjust_confirmmode_text
+ | Value=設定値を {0}に調整しました。<br/>確認モードに移行しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rhythm_adjust_result_title
+ | Value=調整結果
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rhythm_adjust_result_text
+ | Value=設定値 {0}<br/>タイミング調整を完了します。<br/>こちらでよろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rhythm_adjust_start_title
+ | Value=調整モード
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rhythm_adjust_start_text
+ | Value=ノーツタイミングの調整を開始します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rhythm_adjust_tutorial_title
+ | Value=ノーツタイミング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_result_playlog_detail_title
+ | Value=プレイログ詳細
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_denom_check_birthday_title
+ | Value=年齢確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_denom_check_birthday_text
+ | Value=生年月は{0}年{1}月でよろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_denom_title
+ | Value=歌晶石購入
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=denom_item_rest
+ | Value=残り{0}セット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_denom_regist_birthday_title
+ | Value=年齢登録
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_denom_regist_birthday_text1
+ | Value=生年月を登録してください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_denom_regist_birthday_text2
+ | Value=未成年の方にも安心・安全な環境でサービスをご利用頂くため<br/>一ヶ月に購入できる金額に制限を設けております。 <br/><br/><color=#C8087E>※一度登録した年齢は変更できません。 </color><br/>※年齢は誕生月の翌月になると自動で更新されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_option_various_info
+ | Value=各種情報
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_option_ranking_title
+ | Value=前回のイベントランキング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_option_ranking_notfound_title
+ | Value=前回のイベントランキング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_option_ranking_notfound_msg
+ | Value=イベントランキング情報の取得に失敗しました。<br/><br/>前回開催されたイベント以外の<br/>情報は取得できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profil_text_01
+ | Value=未セット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profil_text_02
+ | Value=未セット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profil_text_03
+ | Value=なし
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profil_text_04
+ | Value=RANK 
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profil_text_05
+ | Value=変更可能日 {0}月 {1}日
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_info_01
+ | Value=楽曲をプレイしますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_buy_music_msg_android
+ | Value=これより先は外部サイトへリンクします。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_buy_music_msg_ios
+ | Value=これより先は外部サイトへリンクします。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_home_diva_01
+ | Value=歌姫設定が選択歌姫に変更されます。<br/><br/>ユニットのセンター歌姫をホームに表示する場合は<br/>メニューから設定を変更できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=balloon_story_new_chara
+ | Value=歌姫の記憶を解放しよう
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=balloon_story_new_basara
+ | Value=熱気バサラの記憶を解放しよう
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=balloon_story_new_stage
+ | Value=歌の記憶を解放しよう
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=balloon_story_new_sns
+ | Value=超時空SNSが更新されました
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=balloon_event_prologue_loginbonus
+ | Value=イベントプロローグを見て<br/>{0}を受け取ろう
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=balloon_event_epilogue_loginbonus
+ | Value=イベントエピローグを見て<br/>{0}を受け取ろう
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_select_text_01
+ | Value=取得条件
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_select_text_02
+ | Value=エピソード<br/>「{0}」<br/>を完全解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_select_text_03
+ | Value=エピソード未解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_select_text_04
+ | Value=「{0}」<br/>エピソードを構成するプレートを所持していません<br/>エピソードプレートを集めてエピソードを解放しましょう
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_diff_02
+ | Value=<size=22>難易度HARDが選べるようになりました！</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_diff_03
+ | Value=<size=22>難易度VERY HARDが選べるようになりました！</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_diff_04
+ | Value=<size=22>難易度EXTREMEが選べるようになりました！</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    

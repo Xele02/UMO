@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_loginbonus_hoten_desc
+ | Value=月間パスのログイン補填として<br/>{0}日分の超時空ログインボーナスの<br/>アイテムを受け取りました。<br/><br/><color=#C8087E>※レアアップスターがもらえるまでの<br/>超時空ログインボーナス受け取り回数として加算されます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_goto_home
+ | Value=超時空ログインボーナスを受け取るために<br/>ホーム画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_store_error
+ | Value=ストアのエラーによって<br/>月間パスの購入情報が正しく取得できませんでした。<br/><br/>月間パスを購入されている場合、<br/>特典が一時的に受けられない状態になっています。<br/>後程、もう一度お試しください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_update_operation_text
+ | Value=オペレーションが追加されました。<br/>リストを更新します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dateline_error_title
+ | Value=日付変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dateline_error_text
+ | Value=日付の変更処理に失敗しました。<br/>タイトル画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_goto_home_2
+ | Value=月間パスは購入済みです。<br/>ホーム画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_popup_event_period
+ | Value=開催期間：{0}年{1}月{2}日({3}) {4}:{5:D2} ～ {6}年{7}月{8}日({9}) {10}:{11:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_pickup_event_period
+ | Value=開催期間：{0}月{1}日 {2}:{3:D2} ～ {4}月{5}日 {6}:{7:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_download_size_title
+ | Value=データダウンロード
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_download_size_text
+ | Value=新しいダウンロードデータが見つかりました。<br/>ゲームデータのダウンロードを行います。<br/><color=#C8087E>※キャンセルした場合、タイトルに戻ります。</color><br/><br/>ダウンロードサイズ：{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_download_size_error
+ | Value=ダウンロードサイズの取得に失敗しました。<br/>インターネットへの接続や電波の状況を確認して、<br/>もう一度お試しください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_bunchdownload_data_check
+ | Value=データを確認中です。<br/>しばらくお待ちください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_bunchdownload_size_text
+ | Value=新しいダウンロードデータが見つかりました。<br/>ゲームデータのダウンロードを行います。<br/><color=#C8087E>※Wi-Fi環境下でのダウンロードをおすすめします。</color><br/><br/>ダウンロードサイズ：{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_bunchdownload_size_zero
+ | Value=新しいダウンロードデータは見つかりませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_bunchdownload_cancel_title
+ | Value=ダウンロード中断
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_bunchdownload_cancel
+ | Value=データダウンロードを中断します。<br/><br/><color=#C8087E>※次回ダウンロード行う場合<br/>中断されたデータからダウンロードが再開されます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_bunchdownload_complete_title
+ | Value=ダウンロード完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_bunchdownload_complete
+ | Value=データダウンロードが完了しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lucky_leaf_sort_message
+ | Value=<size={1}>解放可能ラッキーリーフ:{0}</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_recover_done_title
+ | Value=プレイデータの反映
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_recover_done_text
+ | Value=前回のゲームプレイのリザルトは<br/>ゲーム内に反映されています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_tutorial_gacha_details
+ | Value=★4　今日からあなたもワルキューレ　　　　　100%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_next_charange
+ | Value={0}/{1}/{2} 0:00から<br/>次のビンゴミッションに<br/>挑戦できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_count_text
+ | Value={0}枚目
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_reward_count_text
+ | Value={0}ビンゴ報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_ribbon_bingo_count_text
+ | Value=現在{0}ビンゴ！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_ribbon_costume_text
+ | Value={0}ビンゴ目で解放プレートGET！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_ribbon_item_text
+ | Value=すべてのビンゴ報酬をGET！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_next_reward_text
+ | Value=次のビンゴ報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_reward_select_desc1
+ | Value=ビンゴミッション1回につき、報酬を1つ選択することができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_reward_select_desc2
+ | Value=ビンゴミッションは最大{0}回までとなります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_reward_select_desc3
+ | Value=ビンゴミッションの開始後は、報酬を選択し直すことができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_reward_select_title
+ | Value=エピソード完全解放報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_reward_select_caution_desc
+ | Value=※現在所持しているプレートでエピソードを完全解放することができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_reward_select_caution_desc1
+ | Value=※このエピソードは完全解放済みです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_reward_select_conf_text
+ | Value=この報酬でよろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_reward_select_conf_title
+ | Value=報酬選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_mission_reward_pop_title
+ | Value=ミッション報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_reward_pop_title
+ | Value=ビンゴ報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_mission_reward_get_pop_title
+ | Value=報酬獲得
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_mission_change__bingo_text
+ | Value={0}枚目のビンゴミッションの報酬を<br/>すべて獲得しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bingo_mission_end_pop_text
+ | Value=すべてのビンゴミッションの報酬を獲得しました。<br/>ミッション画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_title
+ | Value=スコア予測ゲージ詳細
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_caution_01
+ | Value=滅びの歌の影響も予測に含まれています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_caution_02
+ | Value=プレートの能力やスキルからの予測であり、実際のプレイ結果ではありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_name_01
+ | Value=ベース値
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_name_02
+ | Value=衣装
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_name_03
+ | Value=属性ボーナス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_score_detail_item_name_04
+ | Value=Cスキル
+ | ParentPage=Texts/Bank/menu
+}}
+                    

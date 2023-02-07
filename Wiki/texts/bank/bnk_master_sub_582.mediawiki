@@ -1,0 +1,151 @@
+
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_uni_0204
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_uni_0205
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_uni_0206
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_uni_0207
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_uni_0208
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vc_gt_uni_0209
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0002
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0003
+ | Value=東京スカイツリーコラボ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0004
+ | Value=年始BGM変更
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0005
+ | Value=娘々祭～水着ガチャ終了
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0006
+ | Value=2018-2019 年末年始娘々祭
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0007
+ | Value=娘々祭
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0008
+ | Value=2019-2020 年末年始娘々祭
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0009
+ | Value=3周年娘々祭
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0010
+ | Value=2020-2021 年末年始娘々祭
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0011
+ | Value=ブリーフィングルーム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0012
+ | Value=グリフィスパーク
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0013
+ | Value=アクショのアパート
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0014
+ | Value=中華料理店 娘々
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0015
+ | Value=4周年娘々祭
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0016
+ | Value=ワルキューレライブ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0017
+ | Value=深・秋葉原
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0018
+ | Value=バジュラ本星
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=hm_bg_nm_0019
+ | Value=マジカルボンバーランド
+ | ParentPage=Texts/Bank/master
+}}
+                    

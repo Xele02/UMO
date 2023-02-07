@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0018
+ | Value=絶妙にキモくてかわいいグッズ。<br/>よく見るとあの子の<br/>携帯電話にそっくり！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0019
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0020
+ | Value=丁寧にラッピングされたチョコレート。<br/>心のこもった甘いひとときを<br/>召し上がれ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0021
+ | Value=丁寧にラッピングされたお菓子。<br/>不器用な男心が詰まっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0022
+ | Value=誰が手にしても嬉しい特別な贈り物。<br/>しかし、中身は謎に包まれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0002
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0003
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0004
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0005
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0006
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0007
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0008
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0009
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0010
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0011
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0012
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0013
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0014
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0015
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0016
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0017
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0018
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0019
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0020
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0021
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_qt_0022
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0002
+ | Value=勲章を集めた分だけ<br/>君に報酬を渡そう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0003
+ | Value=報酬はたくさん用意しているぞ。<br/>期待しててくれ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0004
+ | Value=1番いいものは<br/>もう引き当てているみたいだな。<br/>報酬の中身は入れ替えることもできるぞ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0005
+ | Value=欲しいものはあったかな？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0006
+ | Value=ははっ、遠慮なく取っておいてくれ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0007
+ | Value=存分に役立ててくれ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0008
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0009
+ | Value=ほう…君は強運の持ち主のようだな
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0010
+ | Value=いいものを引き当てたな
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0011
+ | Value=おめでとう、良かったじゃないか
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebga_rtx_0012
+ | Value=運も実力のうちだ、よくやったな
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0002
+ | Value=勲章を集めた分だけ<br/>君に報酬を渡そう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0003
+ | Value=報酬はたくさん用意しているぞ。<br/>期待しててくれ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0004
+ | Value=1番いいものは<br/>もう引き当てているみたいだな。<br/>報酬の中身は入れ替えることもできるぞ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0005
+ | Value=欲しいものはあったかな？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0006
+ | Value=ははっ、遠慮なく取っておいてくれ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0007
+ | Value=存分に役立ててくれ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0008
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0009
+ | Value=ほう…君は強運の持ち主のようだな
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0010
+ | Value=いいものを引き当てたな
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0011
+ | Value=おめでとう、良かったじゃないか
+ | ParentPage=Texts/Bank/master
+}}
+                    

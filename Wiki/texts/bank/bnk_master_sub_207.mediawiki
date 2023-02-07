@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0008
+ | Value=バジュラクイーン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0009
+ | Value=敵009
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0010
+ | Value=敵009
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0011
+ | Value=ヌージャデル・ガー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0012
+ | Value=Fz-109A
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0013
+ | Value=大型バジュラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0014
+ | Value=VF-171
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0015
+ | Value=ヌージャデル・ガー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0016
+ | Value=Fz-109A
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0017
+ | Value=大型バジュラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0018
+ | Value=Sv-262Hs
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0019
+ | Value=ヌージャデル・ガー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0020
+ | Value=Fz-109A
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0021
+ | Value=大型バジュラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0022
+ | Value=VF-171
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0023
+ | Value=ヌージャデル・ガー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0024
+ | Value=Fz-109A
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0025
+ | Value=大型バジュラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0026
+ | Value=VF-171
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0027
+ | Value=ヌージャデル・ガー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0028
+ | Value=Fz-109A
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0029
+ | Value=大型バジュラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0030
+ | Value=VF-171
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0031
+ | Value=VF-31C
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0032
+ | Value=ゴーストX-9
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0033
+ | Value=イサム・ダイソン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0034
+ | Value=ガルド・ゴア・ボーマン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0035
+ | Value=大型バジュラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0036
+ | Value=VF-171
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0037
+ | Value=オオサンショウウオさん
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0038
+ | Value=グババ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0039
+ | Value=密漁団母艦
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0040
+ | Value=大型バジュラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0041
+ | Value=ゴーストX-9
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0042
+ | Value=VF-171
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0043
+ | Value=Sv-303
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0044
+ | Value=ヌージャデル・ガー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0045
+ | Value=VF-171
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_nm_0046
+ | Value=Fz-109A
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0001
+ | Value=ゼントラーディ軍が運用する大型パワードスーツ。<br/>特別な能力はなく、通常どおりのスキルを<br/>発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0002
+ | Value=バロータ軍の主力可変戦闘機。<br/>特別な能力はなく、通常どおりのスキルを<br/>発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0003
+ | Value=フロンティア船団を襲った超時空生命体。<br/>この個体に特別な能力はなく、通常どおりの<br/>スキルを発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0004
+ | Value=新統合軍の主力可変戦闘機。<br/>特別な能力はなく、通常どおりのスキルを<br/>発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0005
+ | Value=新統合軍の主力可変戦闘機。<br/>特別な能力はなく、通常どおりのスキルを<br/>発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0006
+ | Value=空中騎士団のエース、キースの搭乗機。<br/>歴代のVFの機体とは異なり、濃紺に金の<br/>ラインが入ったカラーリングとなっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0007
+ | Value=ギャラクシー船団のパイロット、ブレラの搭乗機。<br/>サイボーグ兵士の専用機でありながら、<br/>さらに出力を高める調整が施されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0008
+ | Value=無数のバジュラを統率する中枢となる個体。<br/>マクロス級戦艦に匹敵する巨体を誇り、<br/>その火力も他のバジュラとは一線を画す。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0009
+ | Value=説明009
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0010
+ | Value=説明009
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0011
+ | Value=ゼントラーディ軍が運用する大型パワードスーツ。
+ | ParentPage=Texts/Bank/master
+}}
+                    

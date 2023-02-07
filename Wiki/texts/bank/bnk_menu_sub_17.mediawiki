@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_dash_cost_over_ticket
+ | Value=<color=#8e0529>チケットが不足しているため、選択できません。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rcmd_app_update_title
+ | Value=アプリアップデート
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rcmd_app_update_an
+ | Value=新しいアプリバージョンがあります。<br/>Google Play ストアにて<br/>アップデートを行ってください。<br/>更新に失敗する場合は、端末を再起動してください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rcmd_app_update_ios
+ | Value=新しいアプリバージョンがあります。<br/>App Storeにて<br/>アップデートを行ってください。<br/>更新に失敗する場合は、端末を再起動してください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_mvpause_title
+ | Value=一時停止中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_mvpause_text
+ | Value=楽曲名<br/>{0}<br/><br/>難易度<br/>{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_mvmode_endtitle_text
+ | Value=終了確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_mvmode_end_text
+ | Value=シミュレーションライブを終了します。<br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_popuptitle_000
+ | Value=歌姫選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_popuptitle_001
+ | Value=衣装選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_popuptitle_002
+ | Value=バルキリー選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_menu_000
+ | Value=<size=22>バルキリーモードに突入</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_menu_001
+ | Value=<size=22>超歌姫モードに突入</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_menu_002
+ | Value=<color=#8e0529>OFFの場合、ノーツ表示のみがOFFになります。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_popup_text_000_000
+ | Value=ホームの歌姫
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_popup_text_000_001
+ | Value={0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_popup_text_001_000
+ | Value=歌姫にSET中の衣装
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_popup_text_001_001
+ | Value={0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_popup_text_001_002
+ | Value=バサラにSET中の衣装
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_popup_text_002_000
+ | Value=ユニットにSET中のバルキリー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_setting_popup_text_002_001
+ | Value={0} {1}<br/>{2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_check_popup_title
+ | Value=アイテム消費
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvmode_check_popup_text
+ | Value=S-LIVEトークンを{0}個消費して<br/>シミュレーションライブをプレイします。<br/><br/><color=#8e0529>アイテムが不足しています。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=prism_caution
+ | Value=ライブの歌姫やバルキリーの見た目だけを変更できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_popup_shop_text_00
+ | Value=アイテム交換
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_popup_shop_text_01
+ | Value=所持：
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_popup_shop_text_02
+ | Value=必要：
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_popup_shop_text_03
+ | Value={0} と {1} を交換します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_popup_shop_text_04
+ | Value=残り{0}回
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_popup_shop_text_05
+ | Value=アイテム受け取り
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_popup_shop_text_06
+ | Value={0}は<br/>{1}/{2}/{3} {4:}:{5:00}に消失します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_popup_shop_text_07
+ | Value={0}は<br/>{1}/{2}/{3} {4:}:{5:00}に消失します。<br/><br/>{0}は歌晶石の<br/>おまけからのみ入手可能です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_popup_shop_text_08
+ | Value={0}には利用期限があります。今交換しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_popup_shop_text_09
+ | Value=上記にはこれから交換するアイテムの利用期限を表示しています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_episode_plate
+ | Value=エピソードプレート
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_shop_medal_period
+ | Value=メダルは{0}/{1} {2}:{3:D2}に消失します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_shop_sphere_period
+ | Value=スフィアは{0}/{1} {2}:{3:D2}に消失します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_shop_caution
+ | Value=必要なアイテムが不足しているため、交換できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_shop_caution_max
+ | Value=アイテムの所持上限に達したため、交換できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_shop_closed
+ | Value=現在、ご利用になれません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_shop_period
+ | Value=交換期限　{0}/{1} {2}:{3:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_shop_get_period
+ | Value=取得期限　{0}/{1} {2}:{3:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_shop_reset_period
+ | Value={0}/{1} {2}:{3:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_shop_limit_period
+ | Value={0}/{1} {2}:{3:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_message_000
+ | Value=+{0}%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_message_001
+ | Value=挑戦するミッションを選択しよう
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_select_event_bonus
+ | Value=ボーナス楽曲{0}%アップ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_changemusic_title
+ | Value=楽曲選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_changemusic_title2
+ | Value=ボーナス楽曲について
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_changemusic_desc_001
+ | Value=楽曲のプレイ可能期間が終了したため<br/>再度楽曲を選び直しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

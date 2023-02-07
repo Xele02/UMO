@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2830
+ | Value=キースが敵を引きつける隙に美雲の元へと駆けつけたミラージュのVF-31C。<br/>美雲を救い出すことに成功し、見事ロイドの計画を阻止する事に成功した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2831
+ | Value=助け出された美雲の元へと駆けつけるワルキューレの面々。<br/>空には自由を取り戻したかのように、まっすぐな飛行機雲が引かれていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2832
+ | Value=ラグナでの激闘を終えて海上に鎮座するエリシオン。<br/>すでに空は白み始め、新しい1日が始まろうとしていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2833
+ | Value=落下していくアルトの機体を前に、シェリルの胸中にはこれまでの2人の思い出が甦る。<br/>シェリルはアルトを再び羽ばたかせるため、歌で想いを届けようとマイクを手にした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2834
+ | Value=空に対する憧れと、自分も誰かを守りたいという想いからアルトはパイロットとなった。<br/>S.M.Sの新たなスポンサー、シェリル・ノームの支援を受けた最新鋭の翼で空を舞う。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2835
+ | Value=大人らしい落ち着いた印象の和服に身を包み、新年の挨拶回りにいそしむグレイス。<br/>一年の計は元旦にありと言わんばかりに、スケジュールに目を通し始めるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2836
+ | Value=シェリルのイヤリングから流れ込んできた、激しい心の痛みに苦しむアルト。<br/>そして、鏡に映るその姿から、この痛みがシェリルのものであることを知るのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2837
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2838
+ | Value=中継のドローンが飛来し、ステージ上に再び灯った照明に驚いて振り返るシェリル。<br/>それがグレイスからの援護であることに気付くと、その頼もしさから笑顔をみせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2839
+ | Value=被弾でバランスを崩していたとき、シェリルの歌声に気付いて体勢を復帰させたアルト。<br/>そして、フロンティアに中継されたシェリルの姿に命懸けの覚悟を感じ取るのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2840
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2841
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2842
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2843
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2844
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2845
+ | Value=新しい1年を飾るスペシャルライブにて、誰よりも強く輝きを放つように歌うカナメ。<br/>カナメ率いるワルキューレの快進撃は、銀河を貫く流星の如く止まることを知らない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2846
+ | Value=【新たなスタートライン】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2847
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2848
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2849
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2850
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2851
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2852
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2853
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2854
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2855
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2856
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2857
+ | Value=和服姿で飛び出して、柔らかな表情を浮かべながら舞い散る雪の結晶を見つめるマキナ。<br/>同じく雪を見ているであろうレイナのことや、ライブの演出のことを考えているのかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2858
+ | Value=【新春の雪花】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2859
+ | Value=ヴァールが猛威を振るう宙域にて、堂々とワルキューレとしての口上をあげるマキナ。<br/>宙域に響き渡るその掛け声は、ヴァールに抵抗を続ける人々への希望となることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2860
+ | Value=ワルキューレとして戦場に立つために課せられる訓練は、いずれも過酷を極めるもの。<br/>例え泥水にまみれようとも、決してくじけない心が女神になるためには必要なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2861
+ | Value=【新春の雪花】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2862
+ | Value=【新春の雪花】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2863
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2864
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2865
+ | Value=【新春の雪花】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2866
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2867
+ | Value=【新春の雪花】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2868
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2869
+ | Value=銀河のアーティストたちが集結するスペシャルライブに時空を超えて共演したバサラ。<br/>ステージを焦がすような歌声と燃えあがるサウンドが、観客たちの魂に熱く火を点ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2870
+ | Value=【重なり合う熱き魂】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2871
+ | Value=一向に目を覚まそうとしないシビルに、歌を聞かずに攻撃し続けるプロトデビルンたち。<br/>歌が届かないことにバサラの苛立ちは限界を越え、再びミサイルへと手を出してしまう…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2872
+ | Value=バサラからの手をあげてみろという呼びかけに、意図はわからずとも応じるガムリン。<br/>それは大切なことを思い出させてくれたガムリンへの、バサラなりの感謝の答えだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2873
+ | Value=【重なり合う熱き魂】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2874
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2875
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2876
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2877
+ | Value=【重なり合う熱き魂】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2878
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2879
+ | Value=【重なり合う熱き魂】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    

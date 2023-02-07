@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0677
+ | Value=ハッピー・メリー・クリスマス ～2020～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0678
+ | Value=エンジョイ・バースデー ～ロイド～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0679
+ | Value=エンジョイ・バースデー ～オズマ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0680
+ | Value=エンジョイ・バースデー ～アラド～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0681
+ | Value=エンジョイ・バースデー ～ガムリン～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0682
+ | Value=エンジョイ・バースデー ～ミレーヌ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0683
+ | Value=エンジョイ・バースデー ～ミラージュ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0684
+ | Value=エンジョイ・バースデー ～キース～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0685
+ | Value=エンジョイ・バースデー ～未沙～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0686
+ | Value=新作ゲーム…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0687
+ | Value=みんなでプレイ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0688
+ | Value=エンジョイ・バースデー ～ボーグ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0689
+ | Value=エンジョイ・バースデー ～マキナ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0690
+ | Value=エンジョイ・バースデー ～ランカ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0691
+ | Value=エンジョイ・バースデー ～カナメ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0692
+ | Value=エンジョイ・バースデー ～レイナ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0693
+ | Value=エンジョイ・バースデー ～アルト～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0694
+ | Value=ハートフル・バースデー ～バサラ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0695
+ | Value=ハートフル・バースデー ～美雲～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0696
+ | Value=ハートフル・バースデー ～チャック～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0697
+ | Value=ハートフル・バースデー ～ハヤテ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0698
+ | Value=ハートフル・バースデー ～レイ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0699
+ | Value=ハートフル・バースデー ～ミンメイ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0700
+ | Value=神出鬼没の熱気バサラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0701
+ | Value=ミンメイの悩み
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0702
+ | Value=歌姫たちが見た、リン・ミンメイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0703
+ | Value=ワルキューレへの悪戯
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0704
+ | Value=ミラージュの絶叫
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0705
+ | Value=熱気バサラを驚かせよう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0706
+ | Value=もしもの学園生活！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0707
+ | Value=逃げない勇気
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0708
+ | Value=放課後ワルキューレ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0709
+ | Value=魂を送る歌
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0710
+ | Value=近くにいたの
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0711
+ | Value=カナメが見た記憶
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0712
+ | Value=バースデーライブとサプライズ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0713
+ | Value=シェリル・ノームだもの
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0714
+ | Value=本番はこれから
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0715
+ | Value=作戦成功！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0716
+ | Value=血は争えない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0717
+ | Value=ハヤテと美雲を捜せ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0718
+ | Value=ジーナス家限定！マジカルライブ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0719
+ | Value=バサラとガムリン…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0720
+ | Value=Oh! MY FAMILY
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0721
+ | Value=クリスマスライブの成果
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0722
+ | Value=サンタからのプレゼント…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0723
+ | Value=悩めるアルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0724
+ | Value=フレイアとバサラでファイアー！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0725
+ | Value=ランカとミレーヌの仲良しライブ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0726
+ | Value=セクシーな2人
+ | ParentPage=Texts/Bank/master
+}}
+                    

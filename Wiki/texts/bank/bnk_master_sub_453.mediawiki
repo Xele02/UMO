@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0002
+ | Value=記憶の時空で楽曲を1曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0003
+ | Value=記憶の時空で楽曲を2曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0004
+ | Value=記憶の時空で楽曲を3曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0005
+ | Value=記憶の時空で楽曲を4曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0006
+ | Value=記憶の時空で楽曲を5曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0007
+ | Value=記憶の時空で楽曲を6曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0008
+ | Value=記憶の時空で楽曲を7曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0009
+ | Value=記憶の時空で楽曲を8曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0010
+ | Value=記憶の時空で楽曲を9曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0011
+ | Value=記憶の時空で楽曲を10曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0012
+ | Value=記憶の時空で楽曲を11曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0013
+ | Value=記憶の時空で楽曲を12曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0014
+ | Value=記憶の時空で楽曲を13曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0015
+ | Value=記憶の時空で楽曲を14曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0016
+ | Value=記憶の時空で楽曲を15曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0017
+ | Value=記憶の時空で楽曲を16曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0018
+ | Value=記憶の時空で楽曲を17曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0019
+ | Value=記憶の時空で楽曲を18曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0020
+ | Value=記憶の時空で楽曲を19曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0021
+ | Value=記憶の時空で楽曲を20曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0022
+ | Value=記憶の時空で楽曲を21曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0023
+ | Value=記憶の時空で楽曲を22曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0024
+ | Value=記憶の時空で楽曲を23曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0025
+ | Value=記憶の時空で楽曲を24曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0026
+ | Value=記憶の時空で楽曲を25曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0027
+ | Value=記憶の時空で楽曲を26曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0028
+ | Value=記憶の時空で楽曲を27曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0029
+ | Value=記憶の時空で楽曲を28曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0030
+ | Value=記憶の時空で楽曲を29曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0031
+ | Value=記憶の時空で楽曲を30曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0032
+ | Value=記憶の時空で楽曲を31曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0033
+ | Value=記憶の時空で楽曲を32曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0034
+ | Value=記憶の時空で楽曲を33曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0035
+ | Value=記憶の時空で楽曲を34曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0036
+ | Value=記憶の時空で楽曲を35曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0037
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0038
+ | Value=記憶の時空で楽曲を36曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0039
+ | Value=記憶の時空で楽曲を37曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0040
+ | Value=記憶の時空で楽曲を38曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0041
+ | Value=記憶の時空で楽曲を39曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0042
+ | Value=記憶の時空で楽曲を40曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0043
+ | Value=記憶の時空で楽曲を41曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0044
+ | Value=記憶の時空で楽曲を42曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0045
+ | Value=記憶の時空で楽曲を43曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0046
+ | Value=記憶の時空で楽曲を44曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0047
+ | Value=記憶の時空で楽曲を45曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0048
+ | Value=記憶の時空で楽曲を46曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0049
+ | Value=記憶の時空で楽曲を47曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0050
+ | Value=記憶の時空で楽曲を48曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc2_0051
+ | Value=記憶の時空で楽曲を49曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0198
+ | Value=コスモプリズム(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0199
+ | Value=アジアン・デュー(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0200
+ | Value=トリック・チャーム(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0201
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0202
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0203
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0204
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0205
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0206
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0207
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0208
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0209
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0210
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0211
+ | Value=アンフィニ・ピュール(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0212
+ | Value=ジャカード・ブラン(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0213
+ | Value=ポップ・ミーティア(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0214
+ | Value=シュクル・ミネット(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0215
+ | Value=クロスオーバー・リーフ(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0216
+ | Value=キュート・メサイア(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0217
+ | Value=クロスオーバー・チャーム(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0218
+ | Value=メテオ・シューター(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0219
+ | Value=ディグ・フロンティア(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0220
+ | Value=アニバーサル・フロレット(ランカ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0221
+ | Value=オリエンタルラヴァー(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0222
+ | Value=アンジュ・ベニーズ(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0223
+ | Value=アンフィニ・アムール(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0224
+ | Value=ジャカード・ノワール(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0225
+ | Value=カシス・ミネット(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0226
+ | Value=クロスオーバー・ブルーム(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0227
+ | Value=オベリスク(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0228
+ | Value=フェアリー・デュランダル(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0229
+ | Value=オンディーヌ・ダムール(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0230
+ | Value=クロスオーバー・デザイア(シェリル)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0231
+ | Value=アプフェル・ショコラーデ(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0232
+ | Value=キルシェ・ブラウト(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0233
+ | Value=モーディッシュ・ヴィント(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0234
+ | Value=アプフェルミュートス(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0235
+ | Value=クロスオーバー・リップ(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0236
+ | Value=トリック・アップル(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0237
+ | Value=メリー・シュルツェ(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0238
+ | Value=シャイニー・ベル(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0239
+ | Value=アイントラハト(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0240
+ | Value=キャナリー・アップル(フレイア)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0241
+ | Value=メーアスミュートス(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0242
+ | Value=ミスティック・トーン(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0243
+ | Value=シュタイフ・ブリーゼ(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0244
+ | Value=ミスティカル・ベル(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0245
+ | Value=アイントラハト(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0246
+ | Value=ブラウ・ブルーメ(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0247
+ | Value=モルフォ・ブリーズ(美雲)
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qd_dsc_0007
+ | Value=デイリーミッションをすべてクリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dsc_0008
+ | Value=デイリーミッションをすべてクリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dsc_0009
+ | Value=デイリーミッションをすべてクリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dsc_0010
+ | Value=デイリーミッションをすべてクリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dsc_0011
+ | Value=デイリーミッションをすべてクリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qd_dsc_0012
+ | Value=デイリーミッションをすべてクリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0001
+ | Value=【ライブ】で1曲クリアしよう<br/>報酬プレート：★3「特別な計らい」
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0002
+ | Value=【記憶の時空】をクリアして<br/>新しい楽曲を解放しよう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0003
+ | Value=RANKを3にして歌姫を仲間に加えよう<br/>報酬プレート：★3「アラド隊長の誘い」
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0004
+ | Value=新しい歌姫をユニットに編成しよう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0005
+ | Value=エピソードプレートを<br/>能力解放して強くしよう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0006
+ | Value=超時空SNSを見てみよう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0007
+ | Value=プレゼントBOXでプレゼントを受け取ろう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0008
+ | Value=サービスガチャを1回引いてみよう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0009
+ | Value=エピソードプレートを歌姫に編成しよう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0010
+ | Value=アクティブスキルを使用してクリアしよう<br/>報酬プレート：★5「Welcome to Walküre World」
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0011
+ | Value=【覚悟のオーディション】エピソードを<br/>完全解放して衣装を獲得しよう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0012
+ | Value=衣装【シュトラール】を着たフレイアを<br/>センターにして【ライブ】をクリアしよう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0013
+ | Value=デビューミッションをすべてクリアしよう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0014
+ | Value=未設定（表示されていたらバグ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0015
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0016
+ | Value=【ライブ】で楽曲を5回クリアして<br/>【みんなで雑談部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0017
+ | Value=プレイヤーランクを5にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0018
+ | Value=エピソードプレートを10種類入手
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0019
+ | Value=エピソードプレートを1種類Lv10にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0020
+ | Value=ユニオンクレジット（UC）を累計5000獲得
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0021
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を5回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0022
+ | Value=【ライブ】で【マクロス7】の楽曲を5回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0023
+ | Value=【ライブ】で【マクロスF】の楽曲を5回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0024
+ | Value=【ライブ】で【マクロスΔ】の楽曲を5回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0025
+ | Value=難易度【VERY HARD】を5回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0026
+ | Value=フルコンボを1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0027
+ | Value=スコアランクSSを1回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0028
+ | Value=ハイスコア100000以上を達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0029
+ | Value=超歌姫モードに突入して5回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0030
+ | Value=フレイアのレベルを2にして<br/>【フレイアの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0031
+ | Value=美雲のレベルを2にして<br/>【美雲の部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0032
+ | Value=カナメのレベルを2にして<br/>【カナメの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0033
+ | Value=マキナのレベルを2にして<br/>【マキナの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0034
+ | Value=レイナのレベルを2にして<br/>【レイナの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0035
+ | Value=ランカのレベルを2にして<br/>【ランカの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0036
+ | Value=シェリルのレベルを2にして<br/>【シェリルの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0037
+ | Value=ミンメイのレベルを2にして<br/>【ミンメイの部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0038
+ | Value=ノーマルミッションを累計10個クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0039
+ | Value=【ライブ】で楽曲を10回クリアして<br/>【みんなで雑談部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0040
+ | Value=【ライブ】で楽曲を20回クリアして<br/>【みんなで雑談部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0041
+ | Value=【ライブ】で楽曲を30回クリアして<br/>【みんなで雑談部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0042
+ | Value=【ライブ】で楽曲を40回クリアして<br/>【みんなで雑談部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0043
+ | Value=【ライブ】で楽曲を50回クリアして<br/>【みんなで雑談部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0044
+ | Value=【ライブ】で楽曲を75回クリアして<br/>【みんなで雑談部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    

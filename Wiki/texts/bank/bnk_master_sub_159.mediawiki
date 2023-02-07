@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2780
+ | Value=ライブに身が入らないミレーヌを案じて、独自にバサラの捜索を行っていたガムリン。<br/>バサラの歌エネルギー確認の報告を受け、バサラが惑星ゾラにいることを突き止めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2781
+ | Value=軍で余剰機だったものを民間に払い下げた機体であるVT-1C。<br/>グラハムの家に保管されていたが、銀河クジラに会うためにバサラが借りていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2782
+ | Value=放浪の旅に出てしまったバサラの身を思い思いに案じるメンバーたち。<br/>ビヒーダもまた、愛用のドラムスティックが折れたことに不吉なものを感じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2783
+ | Value=通常のバルキリーであってもお構いなくギターで操縦してしまうバサラ。<br/>もはやここまで来ると、操縦技術というより曲芸の域といえそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2784
+ | Value=惑星ゾラの衛星軌道上を回遊する銀河クジラの群れ。<br/>その超自然的な光景に、バサラも興奮の雄たけびをあげた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2785
+ | Value=山積みにしたプレゼントを抱えながら、クリスマスの準備に大忙しな様子のミレーヌ。<br/>きっとクリスマスには頑張ったご褒美に、弾けるような街の灯りが迎えてくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2786
+ | Value=【良い子たちへの贈り物】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2787
+ | Value=セクシーなワンピース姿にサングラスを掛けてゴージャスに着飾ったミレーヌ。<br/>本人的にはバッチリ決めている様子だが、ちょっと背伸びしている感があるかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2788
+ | Value=ゾラ人であるエルマと、共生生命体の「キャットスネーキー」であるキャピー。<br/>種族として共生関係にあるのだが、2人の場合はまるで友達のように仲良しである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2789
+ | Value=Fire Bomberのライブを生で見たことが無いマックスに不貞腐れるミレーヌ。<br/>迫力が違うのもあるが、なにより直接見に来てほしいという想いもあったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2790
+ | Value=通りすがりの兵士たちから向けられる奇異の視線に、思わず眉をしかめるマックス。<br/>艦長という立場を除いても、浮ついた噂が流れるなどたまったものではないのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2791
+ | Value=バサラのことが気になったのか、体を伸ばしてバサラの顔を覗き込むキャピー。<br/>キャピーがこういった行為をするのは珍しいのか、エルマも不思議がっていたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2792
+ | Value=ラジオから流れてくるFire Bomberの「PLANET DANCE」を熱唱するエルマ。<br/>ほうきをマイクスタンドに見立てたパフォーマンスで、気分もノリノリである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2793
+ | Value=マックスとミレーヌのツーショットに思わず振り返る通りすがりの兵士たち。<br/>2人が親子であることを知らない人にとっては、誤解を与えかねない光景である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2794
+ | Value=粘着弾を使って密漁団のバルキリーを制圧しようとする惑星ゾラの銀河パトロール隊。<br/>しかし、訓練されているうえ実弾で武装した密漁団を相手に苦戦を強いられてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2795
+ | Value=マクロス7艦内にあると思われるおしゃれなバーラウンジ。<br/>「新しい子ですね」「…娘だ」─店員、マックス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2796
+ | Value=カートに山盛りの食材を乗せて戻ってきたエルマ。<br/>一方、ギターの弦が見つからなかったバサラは一足先に戻ってきていたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2797
+ | Value=銀河のアーティストたちが集結するスペシャルライブに時空を超えて共演したランカ。<br/>今をときめくシンデレラの魔法の歌声は、銀河の果てまで夢と希望で包み込んでいく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2798
+ | Value=ランカの誕生日を祝おうと、美星学園のみんなが用意してくれたスペシャルパーティー。<br/>みんなの心からのおもてなしに感激しつつも、ちょっと恥ずかしそうなランカであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2799
+ | Value=繭に閉じ込められたランカを助け出すため、EX-ギアで力いっぱい外壁を叩くアルト。<br/>しかし、余りの硬さになすすべもなく、壁を隔てて言葉を交わすことしかできなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2800
+ | Value=戦場から流れ込んでくる痛みと悲しみに、お腹を押さえてすすり泣くランカ。<br/>「なぜ泣く」「…わからない…わからないよ…どうして…？」─ブレラ、ランカ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2801
+ | Value=【星天オーバーフロウ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2802
+ | Value=【星天オーバーフロウ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2803
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2804
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2805
+ | Value=【星天オーバーフロウ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2806
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2807
+ | Value=【星天オーバーフロウ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2808
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2809
+ | Value=果てしなく続くかのような階段を、決意の眼差しとともに駆け上がっていくシェリル。<br/>ほとばしる情熱と愛によって紡ぎだされた歌声は、銀河に新たな礎を築くかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2810
+ | Value=【新しい自分への礎】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2811
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2812
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2813
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2814
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2815
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2816
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2817
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2818
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2819
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2820
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2821
+ | Value=華やかで趣きのある和服をこともなげに着こなし、上品な雰囲気を醸し出す美雲。<br/>ワルキューレのエースとしても、神色自若な振る舞いを余すことなく見せつけてくれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2822
+ | Value=【初春の装い】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2823
+ | Value=新年を祝うスペシャルライブにて、華やかな和服姿で観客たちの前に現れた美雲。<br/>幽雅な出で立ちから投げかけられる女神の口づけに、新年早々釘付けになりそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2824
+ | Value=地球人の文化である正月祝いを、優雅な和服をまとい何食わぬ顔で過ごすロイド。<br/>敵を知り己を知ればとはいうものの、その端正な振る舞いはさすが聖騎士長である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2825
+ | Value=仲間たちと一緒に歌いたいという強い意志で、星の歌い手の呪縛を解き放った美雲。<br/>涙とともに仲間たちに迎えられた美雲は、朝日の中で心からの言葉を紡いだのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2826
+ | Value=激闘を終え、ようやく故郷であるラグナへと戻ってくることができたデルタ小隊の面々。<br/>「帰ってきましたね…」「ああ、ラグナの空だ」─チャック、アラド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2827
+ | Value=取り戻したラグナの空を飛び、ワルキューレのライブを演出するハヤテとミラージュ。<br/>眩しい太陽の光が降り注ぐ自由な空は、新しい時代と輝く未来を示すかのようだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2828
+ | Value=ロイドの謀反を阻止し、残存兵力を纏めつつウィンダミアへの帰還を命じるハインツ。<br/>多くのものを失いながらも、次の時代をまっすぐに見つめる王の姿がそこにはあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2829
+ | Value=立ちはだかる敵機を横凪ぎの一閃によって断ち切ったキースのSv-262Hs。<br/>その卓越した剣捌きは、バトロイドの操縦においても遜色はない。
+ | ParentPage=Texts/Bank/master
+}}
+                    

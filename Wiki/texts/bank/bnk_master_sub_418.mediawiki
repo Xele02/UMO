@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0120
+ | Value=初詣のくじ引きは特別なもの。<br/>初春の陽気にあてられて、いい結果が<br/>出るまでつい何度も引いてしまうかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0121
+ | Value=美雲を救い出すため、命を懸けて歌う<br/>ワルキューレとそれを守るデルタ小隊。<br/>自由な空と風を懸けた決戦の行方は…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0122
+ | Value=文化と人類存続のため、宇宙へ旅立ち<br/>幾光年。銀河と世代を超える果てなき<br/>旅路よ。あゝ、人生はデカルチャー。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0123
+ | Value=リン・ミンメイの功績を讃えたドラマの<br/>出演に、何やら引っかかるものを感じた<br/>バサラ。気になるドラマの内容とは…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0124
+ | Value=リン・ミンメイを演じながら戦場に歌を<br/>響かせるミレーヌ。過去と現在が重なり<br/>あう時、彼女の心に去来する想いとは…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0125
+ | Value=「スーパー・ノヴァ計画」の内の1機、<br/>YF-19。ピーキーな操縦性で事故が多発、<br/>本来の高い性能を発揮できずにいたが…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0126
+ | Value=「スーパー・ノヴァ計画」の内の1機、<br/>YF-21。革新的技術を搭載し、試験も<br/>優位に進められているかに見えたが…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0127
+ | Value=空を舞い観客と触れ合うワルキューレ。<br/>こういったステージを盛り上げる演出も<br/>歌の効果を高める大事な要素といえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0128
+ | Value=チョコレートには乙女の特別な想いが<br/>込められている。とろける甘い口どけが<br/>どんな想いも心に届けてくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0129
+ | Value=バジュラにも人と同じように気持ちが<br/>ある。ただ、それを理解するためには<br/>お互いに違う所が多過ぎたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0130
+ | Value=ウィンダミアの宣戦布告を受け緊張が<br/>高まる球状星団。そして世間の関心は<br/>ウィンダミア出身のフレイアにも及ぶ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0131
+ | Value=かつて伝説と呼ばれたロックバンドが<br/>存在した。その魂を揺さぶるサウンドは<br/>今も人々の魂を熱く燃やし続けている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0132
+ | Value=物の価値なんて人それぞれ。人の目を<br/>気にしてないで、青春を駆け抜けよう。<br/>今こそ自分だけの物語を奏でるときだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0133
+ | Value=熱烈なFire Bomberファンのオズマに、<br/>熱気バサラをリスペクトするシェリル。<br/>ファンの心は今も火を灯し続けていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0134
+ | Value=春は多くの人々にとって旅立ちの季節。<br/>流れる桜の花びらのように、人もまた<br/>新しい世界へと旅立っていくのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0135
+ | Value=銀河には星々と共に、無数の生命が風と<br/>なって吹いているという。その風が止む<br/>ときまで星と共に輝き続けるのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0136
+ | Value=見えなくなったかと思えば突然現れる…<br/>煌めく星のように神出鬼没で神秘的な<br/>美雲の魅力から人々は目が離せない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0137
+ | Value=ステージに女神のコーラスが響き渡り<br/>始めれば、開幕の時間はもうすぐそこ。<br/>心が躍る歌と冒険が待っているはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0138
+ | Value=かつては歌への興味も協調性もなかった<br/>レイナだったが、仲間たちと共に苦難を<br/>乗り越え、強く心を成長させていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0139
+ | Value=軍備の拡張を受けて後進を率いる立場と<br/>なったボーグだが、その風は未だ若さと<br/>共に燃えるような激しさを纏っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0140
+ | Value=朽ち果てたアルトの機体の前で祈りを<br/>捧げるランカと仲間たち。いつの日か<br/>また、必ず出会えることを願って。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0141
+ | Value=統合政府の通達により半ば追放される<br/>形となったマクロスは、いつの日か再び<br/>帰れることを願い地球を離れていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0142
+ | Value=生い立ち故、これまでギャラクシーを<br/>嫌ってきたシェリルだが、唯一の故郷を<br/>蔑ろにすることはできなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0143
+ | Value=かつて通用しなかったワルキューレの<br/>歌声。それでも歌い続けることにより、<br/>希望を掴みとることができたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0144
+ | Value=ワルキューレになりたいという一心で<br/>故郷を飛び出してきたフレイア。その<br/>心は夢と溢れるリズムで輝いていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0145
+ | Value=アイドルもメカメカも大好きなマキナ。<br/>今日も歌と踊り、きゃわわなメカメカに<br/>囲まれファンに希望を振りまいていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0146
+ | Value=ささやかながら歌手としてデビューを<br/>果たしたランカ。下積みを重ねながら、<br/>一歩ずつスターの道を歩み始めていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0147
+ | Value=結婚式場のオープニングセレモニーで<br/>演奏することになったFire Bomber。<br/>一体どんなライブになるのだろうか？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0148
+ | Value=結婚式場の華やかさより、ケーキや<br/>ライブに夢中なミレーヌ。結婚を意識<br/>するにはまだ少し早かったようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0149
+ | Value=メンバーの中でもひときわ仲間想いで、<br/>芯の強さも併せ持つマキナ。メンバーの<br/>心と絆を支える欠かせない存在なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0150
+ | Value=恋する少女もいつしか純白のドレスを<br/>身に纏い、花嫁となる。微笑む天使に<br/>手を引かれ、幸せに空を舞うのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0151
+ | Value=新しい門出を迎える恋人たちを見守る<br/>天使たちと、祝福を贈る女神たち。<br/>きっと花咲く未来が待っているはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0152
+ | Value=普段は矯正用の眼鏡を掛けているほど<br/>常人離れな視力を持つミシェル。夜空の<br/>星を数えるなんてこと造作もないのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0153
+ | Value=マクロス・エリシオンが飛び立つときは<br/>平和を脅かす不届きな者たちに、本物の<br/>ヤック・デカルチャーを見せるときだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0154
+ | Value=舞台が宇宙に変わっても人類の争いは<br/>続いていく。それでもいつか愛が全てを<br/>救うと信じて銀河に歌を響かせるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0155
+ | Value=柔らかな尾を引いて銀河を旅してきた<br/>ほうき星。そのロマンティックな光は<br/>人々に夢と希望を運んでくれるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0156
+ | Value=超長距離移民船団の旗艦や、司令部を<br/>務めることもあるマクロス。指揮する<br/>艦長の責任はとても重大なのである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0157
+ | Value=アルトが戦場にいることを知りつつも、<br/>それでも気高く歌い続けるシェリル。<br/>その姿はランカの心をも強く震わせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0158
+ | Value=シェリルと心を通わせ、一緒に想いを<br/>届けるように歌うランカ。2人の祈りを<br/>込めた歌がアルトへ届くことを願って。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0159
+ | Value=入隊試験を終えて初の出撃任務となった<br/>アルト。果たして12光年のフォールド<br/>を抜けた先で待ち受けるものとは一体。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0160
+ | Value=突き抜けるような青空に輝く陽射しが<br/>今年も夏が訪れたことを教えてくれる。<br/>価値ある季節を目いっぱい満喫しよう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0161
+ | Value=マクロスに住む民間人のバイタリティは<br/>とどまることを知らず、カンフー映画<br/>「小白竜」を完成させるまでに至った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0162
+ | Value=リン・ミンメイ主演の映画「小白竜」。<br/>もしフレイアたちがこの映画を観ていた<br/>としたら、デジタルリマスター盤かも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0163
+ | Value=ジリジリとした暑さが本格化し始めて<br/>夏の遊びもいよいよ本番。太陽の光に<br/>負けないよう、日焼け止めは忘れずに。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0164
+ | Value=夏に燃え盛る太陽と同様、燃え上がる<br/>のが純情というもの。大切な気持ちを<br/>壊さないようしっかり休暇を楽しもう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0165
+ | Value=大人だって夏は思いきり遊びたいもの。<br/>夏は子供だけのものじゃない、今こそ<br/>大人な夏の楽しみ方を見せつけるとき。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0166
+ | Value=詳細を伏せたまま行われたシステムの<br/>起動実験。一抹の不安を抱えながらも、<br/>まだキースはロイドに従う他なかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0167
+ | Value=プロの世界へと足を踏み入れて40年、<br/>稀代のクリエイターが作り出す世界は<br/>大きな広がりを見せ輝きを増していく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0168
+ | Value=歌姫たちと翼を駆るパイロットたちの<br/>物語は切り離せないもの。今日も翼は<br/>歌姫たちの歌を乗せて空へと飛び立つ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0169
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

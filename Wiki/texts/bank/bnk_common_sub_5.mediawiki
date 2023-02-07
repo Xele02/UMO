@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=profile_diva007_description
+ | Value=「この銀河に暮らしてシェリルの歌を聴かない日はない」と称されるトップシンガー。通称「銀河の妖精」。プロである自分に誇りを持っており、一流であり続けるための努力を惜しまない。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva008_age
+ | Value=14歳
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva008_birthday
+ | Value=2月2日
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva008_birthplace
+ | Value=宇宙空母レッドムーン
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva008_favorite
+ | Value=銀河ドライブ、カツ丼、ピザ
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva008_description
+ | Value=ロックバンド「Fire Bomber」のボーカル ／ベース担当。七人姉妹の末娘。物怖じしない真っ直ぐな性格で、子ども扱いされることを嫌う。ボーカリストとしてもパイロットとしても、バサラに劣らない実力を持つ。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva009_age
+ | Value=21歳
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva009_birthday
+ | Value=8月15日
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva009_birthplace
+ | Value=不明
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva009_favorite
+ | Value=オレの歌を聞かせること
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva009_description
+ | Value=ロックバンド「Fire Bomber」のボーカル ／ギター担当。何よりも歌うことが好きで、争い事を好まない。口癖は「俺の歌を聞けぇ！」。どんなことでも、歌があれば理解し合えると考えている。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva010_age
+ | Value=15歳
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva010_birthday
+ | Value=10月10日
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva010_birthplace
+ | Value=地球
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva010_favorite
+ | Value=紅茶、娘々ラーメン
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva010_description
+ | Value=後世にも語り継がれる伝説のアイドル。明るく屈託のない性格だが、少しわがままな一面もある。彼女の魅力と歌は、人類と戦争状態にあったゼントラーディさえも魅了し、彼らに文化を取り戻させるきっかけとなった。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_neterror
+ | Value=通信エラー
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_dateline
+ | Value=日付変更
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_datetile
+ | Value=日付けが変わりました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_data
+ | Value=データ更新
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_data_error
+ | Value=サーバーデータエラー
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_data_error
+ | Value=サーバーから取得したデータに異常があります。<br/>タイトル画面に戻ります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_app_error
+ | Value=アプリケーションエラー
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_app_error
+ | Value=アプリケーションに異常があります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_app_error_stop
+ | Value=アプリケーションに異常があります。<br/>ゲームを正常に起動する事ができません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_title
+ | Value=メッセージ
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_01
+ | Value=あなたのこと、待ってるかんね！
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_02
+ | Value=そろそろ私の歌が恋しくなったんじゃない？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_03
+ | Value=あなたがいないと、なんだか退屈ね
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_04
+ | Value=待ってるから、会いに来てね～！
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_05
+ | Value=会えないと、胸がチクチク…
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_06
+ | Value=久しぶりに君とお話したいな！
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_07
+ | Value=会いに来なさい、待ってるわ
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_08
+ | Value=そろそろライブよ！早く来てよね！
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_09
+ | Value=俺の歌、早く聞きに来いよ！
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_10
+ | Value=ねえ、久しぶりに会えない？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_ngword_error_title
+ | Value=登録エラー
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_ngword_error_message
+ | Value=使用できない言葉が含まれています。<br/>内容の変更をお願いいたします。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_kiyaku_title
+ | Value=規約のご確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_kiyaku_001
+ | Value=利用規約に同意しますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_kiyaku_002
+ | Value=歌マクロス スマホDeカルチャーをご利用いただくには、<br/>利用規約に同意いただく必要があります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_not_play_title
+ | Value=プレイ不可
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_not_play_001
+ | Value=歌マクロス スマホDeカルチャーをプレイするには<br/>「利用規約」に同意する必要があります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=attention
+ | Value=■ご注意■<br/>未成年者のご利用は、必ず保護者の方の同意が必要です。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_limit_title
+ | Value=フレンド上限
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_limit_01
+ | Value=フレンド数が上限に達しています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_limit_02
+ | Value={0} さんの<br/>フレンド数が上限に達しています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_already_send_title
+ | Value=フレンド申請済み
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_already_send_01
+ | Value={0} さんに<br/>すでにフレンド申請しています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_accept_fail_title
+ | Value=承認失敗
+ | ParentPage=Texts/Bank/common
+}}
+                    

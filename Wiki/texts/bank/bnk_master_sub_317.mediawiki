@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0145
+ | Value=エピソードプレートを4種類Lv10にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0146
+ | Value=エピソードプレートを5種類Lv10にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0147
+ | Value=エピソードプレートを1種類Lv20にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0148
+ | Value=エピソードプレートを2種類Lv20にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0149
+ | Value=エピソードプレートを3種類Lv20にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0150
+ | Value=エピソードプレートを4種類Lv20にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0151
+ | Value=エピソードプレートを5種類Lv20にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0152
+ | Value=エピソードプレートを1種類Lv30にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0153
+ | Value=エピソードプレートを2種類Lv30にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0154
+ | Value=エピソードプレートを3種類Lv30にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0155
+ | Value=エピソードプレートを4種類Lv30にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0156
+ | Value=エピソードプレートを5種類Lv30にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0157
+ | Value=エピソードプレートを1種類Lv50にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0158
+ | Value=エピソードプレートを2種類Lv50にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0159
+ | Value=エピソードプレートを3種類Lv50にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0160
+ | Value=エピソードプレートを4種類Lv50にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0161
+ | Value=エピソードプレートを5種類Lv50にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0162
+ | Value=エピソードプレートを1種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0163
+ | Value=エピソードプレートを2種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0164
+ | Value=エピソードプレートを3種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0165
+ | Value=エピソードプレートを4種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0166
+ | Value=エピソードプレートを5種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0167
+ | Value=エピソードプレートを6種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0168
+ | Value=エピソードプレートを7種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0169
+ | Value=エピソードプレートを8種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0170
+ | Value=エピソードプレートを9種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0171
+ | Value=エピソードプレートを10種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0172
+ | Value=エピソードプレートを15種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0173
+ | Value=エピソードプレートを20種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0174
+ | Value=エピソードプレートを25種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0175
+ | Value=エピソードプレートを30種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0176
+ | Value=エピソードプレートを40種類Lv70にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0177
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0178
+ | Value=ユニオンクレジット（UC）を累計10000獲得
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0179
+ | Value=ユニオンクレジット（UC）を累計50000獲得
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0180
+ | Value=ユニオンクレジット（UC）を累計100000獲得
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0181
+ | Value=ユニオンクレジット（UC）を累計500000獲得
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0182
+ | Value=ユニオンクレジット（UC）を累計1000000獲得
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0183
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を7回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0184
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を10回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0185
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を15回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0186
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を20回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0187
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を25回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0188
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を50回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0189
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を100回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0190
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を150回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0191
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を200回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0192
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を250回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0193
+ | Value=【ライブ】で【マクロス7】の楽曲を7回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0194
+ | Value=【ライブ】で【マクロス7】の楽曲を10回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    

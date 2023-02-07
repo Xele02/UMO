@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0627
+ | Value=ワンダフル・バースデー ～ロイド～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0628
+ | Value=ワンダフル・バースデー ～オズマ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0629
+ | Value=ワンダフル・バースデー ～アラド～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0630
+ | Value=ワンダフル・バースデー ～ガムリン～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0631
+ | Value=ワンダフル・バースデー ～ミレーヌ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0632
+ | Value=ワンダフル・バースデー ～ミラージュ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0633
+ | Value=ワンダフル・バースデー ～キース～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0634
+ | Value=ワンダフル・バースデー ～未沙～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0635
+ | Value=ワンダフル・バースデー ～ボーグ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0636
+ | Value=未知の生物、飛来
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0637
+ | Value=ワンダフル・バースデー ～マキナ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0638
+ | Value=ワンダフル・バースデー ～ランカ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0639
+ | Value=ワンダフル・バースデー ～カナメ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0640
+ | Value=ワンダフル・バースデー ～レイナ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0641
+ | Value=ワンダフル・バースデー ～アルト～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0642
+ | Value=スペシャルバースデー ～チャック～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0643
+ | Value=スペシャルバースデー ～バサラ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0644
+ | Value=スペシャルバースデー ～美雲～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0645
+ | Value=スペシャルバースデー ～ハヤテ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0646
+ | Value=スペシャルバースデー ～レイ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0647
+ | Value=スペシャルバースデー ～ミンメイ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0648
+ | Value=スペシャルバースデー ～フレイア～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0649
+ | Value=スペシャルバースデー ～シェリル～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0650
+ | Value=スペシャルバースデー ～メッサー～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0651
+ | Value=ハッピー・メリー・クリスマス ～2019～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0652
+ | Value=スペシャルバースデー ～ロイド～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0653
+ | Value=スペシャルバースデー ～オズマ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0654
+ | Value=スペシャルバースデー ～アラド～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0655
+ | Value=スペシャルバースデー ～ガムリン～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0656
+ | Value=スペシャルバースデー ～ミレーヌ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0657
+ | Value=スペシャルバースデー ～ミラージュ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0658
+ | Value=スペシャルバースデー ～キース～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0659
+ | Value=スペシャルバースデー ～未沙～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0660
+ | Value=スペシャルバースデー ～ボーグ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0661
+ | Value=エイプリルフールライブ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0662
+ | Value=バルキリーユニットダンス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0663
+ | Value=スペシャルバースデー ～マキナ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0664
+ | Value=スペシャルバースデー ～ランカ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0665
+ | Value=スペシャルバースデー ～カナメ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0666
+ | Value=スペシャルバースデー ～レイナ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0667
+ | Value=スペシャルバースデー ～アルト～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0668
+ | Value=エンジョイ・バースデー ～バサラ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0669
+ | Value=エンジョイ・バースデー ～美雲～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0670
+ | Value=エンジョイ・バースデー ～チャック～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0671
+ | Value=エンジョイ・バースデー ～ハヤテ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0672
+ | Value=エンジョイ・バースデー ～レイ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0673
+ | Value=エンジョイ・バースデー ～ミンメイ～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0674
+ | Value=エンジョイ・バースデー ～フレイア～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0675
+ | Value=エンジョイ・バースデー ～シェリル～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_nm_0676
+ | Value=エンジョイ・バースデー ～メッサー～
+ | ParentPage=Texts/Bank/master
+}}
+                    

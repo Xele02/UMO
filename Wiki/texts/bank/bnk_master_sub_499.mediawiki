@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=evdsc_0007
+ | Value=少しのイベントポイントに変換されるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evdsc_0008
+ | Value=そこそこのイベントポイントに変換されるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evdsc_0009
+ | Value=たくさんのイベントポイントに変換されるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=eng_nm_0001
+ | Value=エナジーエーテル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=eng_nm_0002
+ | Value=【当日限定】エナジーエーテル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=eng_dsc_0001
+ | Value=超時空LIVEの開催に必要なエナジーを回復できるアイテム。<br/>使用するとエナジーが全回復する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=eng_dsc_0002
+ | Value=超時空LIVEの開催に必要なエナジーを回復できるアイテム。<br/>使用するとエナジーが全回復する。<br/><color=#8e0529>※獲得した当日の24時に破棄されます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvtk_nm_0001
+ | Value=S-LIVEトークン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mvtk_dsc_0001
+ | Value=空間上に立体映像を映し出す電子端末。<br/>シミュレーションライブをプレイするために必要なアイテム。<br/><color=#C8087E>※シミュレーションライブはランク10で解放されます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0001
+ | Value=山羊座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0002
+ | Value=水瓶座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0003
+ | Value=魚座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0004
+ | Value=牡羊座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0005
+ | Value=牡牛座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0006
+ | Value=双子座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0007
+ | Value=蟹座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0008
+ | Value=獅子座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0009
+ | Value=乙女座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0010
+ | Value=天秤座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0011
+ | Value=蠍座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0012
+ | Value=射手座メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0013
+ | Value=マクロスFライブ記念チケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0014
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0015
+ | Value=メモリアルチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_nm_0016
+ | Value=超時空お年玉
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0001
+ | Value=山羊座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0002
+ | Value=水瓶座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0003
+ | Value=魚座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0004
+ | Value=牡羊座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0005
+ | Value=牡牛座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0006
+ | Value=双子座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0007
+ | Value=蟹座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0008
+ | Value=獅子座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0009
+ | Value=乙女座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0010
+ | Value=天秤座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0011
+ | Value=蠍座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0012
+ | Value=射手座のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0013
+ | Value=マクロスFライブ記念特別ミッションでもらえるチケット。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0014
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0015
+ | Value=過去の記憶が詰まっているチケット。<br/>ケイオス交換所でプレートと交換できる。<br/><color=#8e0530>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mdl_dsc_0016
+ | Value=時空を超えてもらえるお年玉。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0530>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0001
+ | Value=スプリングスフィア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0002
+ | Value=サマースフィア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0003
+ | Value=オータムスフィア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0004
+ | Value=ウィンタースフィア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0005
+ | Value=娘くじ☆抽選券
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0006
+ | Value=★5確定ガチャチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0007
+ | Value=★5確定ガチャチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0008
+ | Value=お正月SPガチャチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0009
+ | Value=前夜祭娘くじ☆抽選券
+ | ParentPage=Texts/Bank/master
+}}
+                    

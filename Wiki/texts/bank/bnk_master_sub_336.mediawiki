@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1095
+ | Value=イベントを進めて<br/>【夕焼けオーバーフロウ 】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1096
+ | Value=イベントを進めて<br/>【夕焼けオーバーフロウ 】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1097
+ | Value=イベントを進めて<br/>【追憶ジェリーフィッシュ 】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1098
+ | Value=イベントを進めて<br/>【追憶ジェリーフィッシュ 】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1099
+ | Value=イベントを進めて<br/>【追憶ジェリーフィッシュ 】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1100
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1101
+ | Value=Twitter連携を行う
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1102
+ | Value=LINE連携を行う
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1103
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1104
+ | Value=イベントを進めて<br/>【Queen's Birthday】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1105
+ | Value=イベントを進めて<br/>【Queen's Birthday】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1106
+ | Value=イベントを進めて<br/>【Queen's Birthday】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1107
+ | Value=イベントを進めて<br/>【Walküre！ THUNDER GLOW】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1108
+ | Value=イベントを進めて<br/>【Walküre！ THUNDER GLOW】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1109
+ | Value=イベントを進めて<br/>【Walküre！ THUNDER GLOW】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1110
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1111
+ | Value=イベントを進めて<br/>【MAGICAL☆MY FRIENDS】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1112
+ | Value=イベントを進めて<br/>【MAGICAL☆MY FRIENDS】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1113
+ | Value=イベントを進めて<br/>【MAGICAL☆MY FRIENDS】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1114
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1115
+ | Value=イベントを進めて<br/>【サンタクロースでなんかいられない！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1116
+ | Value=イベントを進めて<br/>【サンタクロースでなんかいられない！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1117
+ | Value=イベントを進めて<br/>【サンタクロースでなんかいられない！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1118
+ | Value=イベントを進めて<br/>【超時空カウントダウンライブ'18】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1119
+ | Value=イベントを進めて<br/>【超時空カウントダウンライブ'18】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1120
+ | Value=イベントを進めて<br/>【超時空カウントダウンライブ'18】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1121
+ | Value=イベントを進めて<br/>【Happy New Yearライブ'19】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1122
+ | Value=イベントを進めて<br/>【Happy New Yearライブ'19】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1123
+ | Value=イベントを進めて<br/>【Happy New Yearライブ'19】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1124
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1125
+ | Value=イベントを進めて<br/>【あゝ、デカルチャー ～宇宙兄弟船～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1126
+ | Value=イベントを進めて<br/>【あゝ、デカルチャー ～宇宙兄弟船～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1127
+ | Value=イベントを進めて<br/>【あゝ、デカルチャー ～宇宙兄弟船～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1128
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1129
+ | Value=イベントを進めて<br/>【リン・ミンメイ物語 ～Fire Bomber編～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1130
+ | Value=イベントを進めて<br/>【リン・ミンメイ物語 ～Fire Bomber編～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1131
+ | Value=イベントを進めて<br/>【リン・ミンメイ物語 ～Fire Bomber編～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1132
+ | Value=プレイヤーランクを5にしてデコルチャーモードを解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1133
+ | Value=【デコポイント交換所】でデコアイテムを1回交換する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1134
+ | Value=【デコポイント交換所】でデコアイテムを5回交換する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1135
+ | Value=【デコポイント交換所】でデコアイテムを10回交換する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1136
+ | Value=【デコポイント交換所】でデコアイテムを15回交換する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1137
+ | Value=【デコポイント交換所】でデコアイテムを20回交換する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1138
+ | Value=【デコポイント交換所】でデコアイテムを30回交換する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1139
+ | Value=デコポイントを累計15000DP獲得する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1140
+ | Value=デコポイントを累計20000DP獲得する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1141
+ | Value=デコポイントを累計30000DP獲得する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1142
+ | Value=デコポイントを累計40000DP獲得する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1143
+ | Value=デコポイントを累計50000DP獲得する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1144
+ | Value=デコポイントを累計75000DP獲得する
+ | ParentPage=Texts/Bank/master
+}}
+                    

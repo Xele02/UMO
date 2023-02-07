@@ -1,0 +1,55 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_account_linkaging_text_apple
+ | Value=Sign in with Apple
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_linkaging_text_separator
+ | Value=,
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_remove_title
+ | Value=アカウント削除
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_remove_text001
+ | Value=アカウント削除を実行します。<br/>処理が完了するまで<br/>歌マクロスを終了しないでください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_remove_text002
+ | Value=アカウント削除が完了しました。<br/>歌マクロスを終了してください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_remove_consent_button
+ | Value=同意事項
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_remove_pass_001
+ | Value=なし
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_remove_pass_002
+ | Value=歌マクパス
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_remove_pass_003
+ | Value=スペシャルパス
+ | ParentPage=Texts/Bank/common
+}}
+                    

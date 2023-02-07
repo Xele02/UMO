@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=config_text_60
+ | Value=バルキリーモード中も歌姫が表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_61
+ | Value=確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_62
+ | Value=ノーツスピードを初期設定に戻します。<br/>よろしいですか？<br/><color=#C8087E>※すべての難易度の設定値が変更されます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_63
+ | Value=すべての難易度で同じ設定を反映する
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_64
+ | Value=チェックしない場合、ノーツスピードは難易度ごとに設定されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_65
+ | Value=次から表示しない
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_66
+ | Value=ノーツスピードはゲーム設定からいつでも変更できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_67
+ | Value=ノーツスピード設定が完了しました。<br/>ゲーム設定からいつでも変更できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_68
+ | Value=ノーツデザイン設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_69
+ | Value=3色を選ぶとフリックノーツが各方向で別の色になります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_70
+ | Value=ライブ中のEXCELLENT表示設定です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_71
+ | Value=OFFの場合、ライブ中にEXCELLENTが発生してもPERFECTが表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_72
+ | Value=歌姫モード設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_73
+ | Value=歌姫モード中の演出について設定できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_74
+ | Value=設定は3Dライブにのみ反映されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_75
+ | Value=歌姫モード中、歌姫の背景にビデオが表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_76
+ | Value=歌姫モード中、歌姫のみが表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_77
+ | Value=歌姫モード中、ビデオのみが表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_78
+ | Value=ノーツタップ音は最小にしても無音になりません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_79
+ | Value=ライブ表示設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_80
+ | Value=ライブシステム設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_81
+ | Value=<size=24>シミュレーションライブ設定</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_82
+ | Value=<size=24>画面フレーム設定</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_83
+ | Value=画面のフレームデザインについて設定できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_84
+ | Value=デザインフレーム1を表示します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_85
+ | Value=デザインフレーム2を表示します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_86
+ | Value=黒フレームを表示します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_87
+ | Value=OFFの場合、6レーンゲームのスライド中のガイドエフェクトを非表示にします。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_88
+ | Value=<size=24>アスペクト比</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_89
+ | Value=画面の表示について設定できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_90
+ | Value=横に広い画面で表示します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_91
+ | Value=ワイドに比べて縦が広く、横が狭い画面で表示します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_92
+ | Value=設定は次回アプリ起動時から反映されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_93
+ | Value=プレミアプレート
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_94
+ | Value=<size=22>プレミア化したプレートの表示について設定できます。</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_95
+ | Value=プレートをプレミア化した状態で表示します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_96
+ | Value=プレートをプレミア化前の状態で表示します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_list_text_01
+ | Value=次回取得報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_list_text_02
+ | Value=×{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_list_text_03
+ | Value={0}の{1}レベル{2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_title_01
+ | Value=ロック解放条件
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_title_text01
+ | Value=メインボード拡張
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_title_text02
+ | Value=シークレットボード追加
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_title_text03
+ | Value=シークレットボード拡張
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_title_text04
+ | Value=解放数選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_title_text05
+ | Value=解放上限確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_title_text06
+ | Value=解放上限確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text01
+ | Value=所持:{0,4}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text02
+ | Value=以下のアイテムとUCを消費します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text03
+ | Value=必要UC:<color={1}>{0,4}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    

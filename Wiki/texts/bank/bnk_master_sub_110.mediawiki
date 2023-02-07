@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0330
+ | Value=ランカのパフォーマンスも終わり、無事にコンテストは幕を下ろした。<br/>言葉を交わす審査員の中には、穏やかな笑顔を浮かべるシェリルの姿もあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0331
+ | Value=模擬戦の途中、突然襲来したバジュラを何とか撃退したアルトたち。<br/>無茶な攻撃で突っ込んだアルトの身を案じてか、ミシェルはそっと息を漏らした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0332
+ | Value=任務中でありながら、バルキリーの中からコンテストの放送を見ている輝。<br/>誰も聞いていないのをいいことに、少し調子に乗っている様子だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0333
+ | Value=コンテストに出場するミンメイを、にやけながら見守る輝。<br/>そこに緊急出動の報せが届き、輝は渋々基地へと戻るのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0334
+ | Value=コンテスト審査用の水着を着たミンメイを見て、ゼントラーディの兵士は疑問を感じる。<br/>あんな薄い服で本当に戦闘を行えるのか…と。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0335
+ | Value=水着の女性たちを見て、理解できない文化に頭を悩ませる3人組。<br/>ただ、言葉にできない魅力は感じているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0336
+ | Value=マクロス艦内のTV放送局開局を記念して開催された、ミス・マクロスコンテスト。<br/>相当な数のカメラマンが会場に集まっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0337
+ | Value=ヴァールシンドロームに唯一対抗できる、ワルキューレの歌の力。<br/>まだ見ぬ大勢の「誰か」を救うために、彼女たちは、日々努力を続けているのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0338
+ | Value=【決意を胸に】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0339
+ | Value=メッサーを見返してやろうと言うハヤテ。悔しさを糧に彼の才能はさらに成長していく。<br/>「死神野郎に目に物見せてやろうぜ！」―ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0340
+ | Value=バトロイド形態での巧みな操縦を駆使して小惑星を回避するハヤテ。<br/>インメルマンダンスと称されたその動きは、無重力の宇宙でも健在だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0341
+ | Value=戦場で幾度となく相まみえる、キースとメッサーの2人。<br/>特にキースにとっては、メッサーは唯一自分と渡り合える好敵手となったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0342
+ | Value=訓練後、ハヤテに対して厳しい評価を下すメッサー。<br/>しかしその厳しさも部下を戦場で無駄死にさせたくないという思いから来るものだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0343
+ | Value=戦場で見事な連携を見せ、互いをカバーし合う2人。<br/>先輩であるミラージュもハヤテの成長を認めているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0344
+ | Value=戦場で見事な連携を見せ、互いをカバーし合う2人。<br/>ミラージュに対しての信頼も、ハヤテ自身の成長の証かもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0345
+ | Value=近接戦闘用のナイフを使って、敵バルキリーの手足だけを破壊するアラド。<br/>簡単にやっているように見えるが、高度な操縦技術が要求される技である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0346
+ | Value=裸喰娘娘で食事をするエリシオンの女性クルーたち。<br/>いつもとは違って、何やら慌ただしい店内の様子に落ち着かないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0347
+ | Value=かつて、ウィンダミアで次元兵器が使用された場所。<br/>長い時間が経った今でも、稲妻が光り続ける異様な光景が残っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0348
+ | Value=スーパーパックを装備したVF-31S。<br/>ワルキューレの歌声の効果を高める特殊なスピーカーも装備されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0349
+ | Value=ミス・マクロスコンテストへの潜入を試みるレイナたち。<br/>この日のために用意した特別な衣装で、優勝をかっさらってしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0350
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0351
+ | Value=ドラマの撮影の最中、またしてもバロータ軍の襲撃が始まった。<br/>もう一度歌ってやると意気込むバサラに、ミレーヌも少しずつ影響を受けていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0352
+ | Value=勇気を振り絞ってミス・マクロス・フロンティアに出場したランカ。<br/>緊張にその身を震わせながら、練習した曲を元気いっぱいに歌い始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0353
+ | Value=アルバイトの途中、不注意から盛大に皿を割ってしまうランカ。<br/>どうやら、秘密裏に応募したコンテストの結果が気になっているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0354
+ | Value=ランカがコンテストに参加することは、オズマには絶対に秘密だ。<br/>オズマが事実を知った瞬間、きっとランカを連れ戻すに違いない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0355
+ | Value=訓練でのペナルティが積み重なり、とてつもない重量のスーツを着せられたアルト。<br/>これで格納庫を何周もさせられるのだという。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0356
+ | Value=コンテストの壇上に上がり、自己紹介をするランカ。<br/>緊張のあまり、マイクにおでこをぶつけてしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0357
+ | Value=コンテストの会場で偶然父親と遭遇し、怪訝な表情を見せるアルト。<br/>歌舞伎の名門早乙女家の息子として、色々と思うところがあるようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0358
+ | Value=模擬戦の最中、敵を撃破したアルトは優雅にポーズを決める。<br/>バルキリーに乗っても絵になる男…とはいえ、戦闘中に油断は禁物だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0359
+ | Value=舞台裏で緊張しているランカに、アルトから励ましのメールが届く。<br/>ぶっきらぼうな文面だが、ランカにとってはこれでも十分、力になるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0360
+ | Value=模擬戦の宙域を漂っていたゼントラーディ軍艦の残骸。<br/>かつての星間戦争の時代から、ずっとこのままであったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0361
+ | Value=少し早い春の訪れを感じさせる、華やかな金魚の和服。<br/>ひらひら揺れるそのデザインは、ランカ・リーの新たな魅力を教えてくれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0362
+ | Value=【新春の風】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0363
+ | Value=青空の下、落ち着いた和装を着こなすアルト。<br/>その生まれのせいか、ただ佇む姿さえも様になっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0364
+ | Value=地球の文化に倣って、初詣に訪れたルカとナナセ。<br/>艶やかな和服姿のナナセを見て、ルカは内心穏やかではなさそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0365
+ | Value=クランからVF-25Gのスナイパーライフルを託されたアルト。<br/>親友の想いを肌で受け継ぐかのように、アルトは右手を差し出した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0366
+ | Value=バジュラとの決戦に、ミシェルの愛機を駆って出撃するクラン。<br/>悲しみを乗り越えた彼女の瞳は、ただまっすぐに敵を捉えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0367
+ | Value=決戦を控え、ナナセの病室を訪れたルカ。<br/>卑怯者と呼ばれても構わないと言って、ルカは愛する彼女にそっと口づける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0368
+ | Value=出撃を前に、アルトとシェリルは2人きりで言葉を交わす。<br/>しかし決意を鈍らせないために、最後まで気持ちを伝え合うことはしなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0369
+ | Value=裏で暗躍する真の敵を暴き出すため、S.M.Sが戦場へと帰還する。<br/>人類とバジュラの決戦は、にわかにその様相を変化させつつあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0370
+ | Value=フロンティア船団の命運をかけた、バジュラの星に対する攻撃作戦。<br/>優勢に進む戦況を見て、レオンは頬を吊り上がらせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0371
+ | Value=S.M.Sがフロンティア船団から離反したあと、船団に残ったアルトは機体を乗り換える。<br/>やはり最新鋭のVF-25とは勝手が違うようで、反応速度の違いに手を焼いてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0372
+ | Value=無数のバジュラたちの中に君臨する女王、バジュラクイーン。<br/>マクロス級戦艦に匹敵する巨体を誇っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0373
+ | Value=和の雰囲気で統一された一室で、銀河の妖精は穏やかに微笑む。<br/>セクシーでもキュートでもない、新たな魅力をまとったシェリル・ノームの姿だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0374
+ | Value=マクロス・ギャラクシー船団所属、アンタレス小隊のパイロット。<br/>身体の大部分をインプラント化しており、その戦闘能力は極めて高い。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0375
+ | Value=ランカの幼い頃の記憶。<br/>兄が奏でるハーモニカの音色に乗せて、一緒に歌ったのは思い出の歌だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0376
+ | Value=グレイス・オコナーとレオン・三島。<br/>バジュラとの最終決戦を前にして、彼らの計画が動き出そうとしていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0377
+ | Value=バジュラクイーンに立ち向かうアルトとブレラ。<br/>激しい攻撃を掻い潜りながら、その目前へと接近する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0378
+ | Value=人は1人だからこそ、誰かを愛することができる。<br/>バジュラの力を利用しようと企むグレイスに向けて、アルトはそう叫んだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0379
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

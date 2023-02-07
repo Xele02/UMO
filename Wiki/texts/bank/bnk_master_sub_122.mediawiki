@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0930
+ | Value=慰問ライブのためアルカトラズに訪れたランカ。<br/>凄まじい歓声から察するに、彼女の人気はこの監獄の中にまで広がっているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0931
+ | Value=「Lovely Bomber」のギタリストとしてライブに参加したミシェル。<br/>演奏もさることながら、あの人物を彷彿とさせる髪型が見事である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0932
+ | Value=「Lovely Bomber」のベーシストとしてライブに参加したクラン。<br/>見た目は子供だが、大きなベースを使いこなすその様はさすがといったところだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0933
+ | Value=「Lovely Bomber」のキーボーディストとしてライブに参加したミーナ。<br/>頭脳明晰なことで知られる彼女だが、キーボードの演奏もそつなくこなしている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0934
+ | Value=自分の歌と感情が、不思議な力を発現させることを理解したランカ。<br/>彼女は彼女なりに、その力を何かの役に立てたいと考えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0935
+ | Value=ライブを見ている2人のゼントラーディ。<br/>どうやら、奥にいる男はランカについて詳しく知っているらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0936
+ | Value=シェリルが囚われている監獄。<br/>海に囲まれた島であるため、決して脱獄することはできないと言われている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0937
+ | Value=パーソナルカラーのウェディングドレスに身を包み、教会で静かにときを待つカナメ。<br/>ほのかに頬を赤らめて微笑む彼女の手を取るのは、果たして誰なのだろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0938
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0939
+ | Value=カナメの歌を聴いて、ヴァールの脅威を抑え込むことができたメッサー。<br/>後に死神と呼ばれることになる男は、己の内に潜む死の恐怖に抗うことを決めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0940
+ | Value=ある日、突然現れた美雲は、その神秘的な歌声でワルキューレのエースとなった。<br/>そのときカナメの心の中では、悔しさとともにリーダーとしての喜びが芽生え始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0941
+ | Value=美雲を救うための行動を咎められ、謹慎となったワルキューレのメンバー。<br/>初期メンバーであるカナメ、マキナ、レイナの3人は、懐かしい過去の記憶を語り始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0942
+ | Value=美雲を救うための行動を咎められ、謹慎となったワルキューレのメンバー。<br/>初期メンバーであるカナメ、マキナ、レイナの3人は、懐かしい過去の記憶を語り始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0943
+ | Value=美雲を救うための行動を咎められ、謹慎となったワルキューレのメンバー。<br/>初期メンバーであるカナメ、マキナ、レイナの3人は、懐かしい過去の記憶を語り始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0944
+ | Value=第1回オーディションに合格し、ワルキューレに加入した2人。<br/>ともに初期のワルキューレを支えたが、美雲の加入前に脱退してしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0945
+ | Value=惑星アルヴヘイムでのライブを終えたワルキューレ。<br/>戦場を見渡すカナメの目前を、1人の負傷した兵士が苦しそうに歩いていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0946
+ | Value=自分の何倍もの大きさで迫りくる敵。カナメは為す術もなく、死を覚悟する。<br/>しかしこの状況が、後のデルタ小隊発足のきっかけとなっていくのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0947
+ | Value=謹慎中のカナメたちに与えられた粗末な食事。<br/>1人が食べる量としても、決して満足できるものではないだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0948
+ | Value=諦めることなく歌い続けた甲斐もあり、ついにワルキューレの歌が効力を発揮し始めた。<br/>これがヴァールに対抗するための歴史的な一歩となったのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0949
+ | Value=パーソナルカラーのウェディングドレスに身を包み、いつもとは違う顔を見せるレイナ。<br/>激しい爆発と神聖な光が、クールなばかりではない彼女の魅力を照らし出す。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0950
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0951
+ | Value=ワルキューレは発足以来何度も戦場に赴き、活動のためのデータを蓄積していった。<br/>何度敵に襲われても、何度激しい爆発に見舞われても、彼女たちは歌い続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0952
+ | Value=戦場での決死の活動は、いつしかワルキューレの中に確かな絆を生み出した。<br/>マキナとレイナ、2人の仲もこのときから親密になっていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0953
+ | Value=元々ハッカーとして活動していたレイナは、歌にもダンスにも興味がなかった。<br/>当然レッスンもサボってばかり。熱心なマキナとはまるでそりが合わないようだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0954
+ | Value=第1回オーディションの結果、レセプター適性を認められてワルキューレに加入した。<br/>戦場でも華麗な衣装で歌うワルキューレのスタイルは、彼女の手によって生み出された。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0955
+ | Value=第1回オーディションの結果、レセプター適性を認められてワルキューレに加入した。<br/>メンバー中唯一のラグナ人で、褐色の肌が特徴的だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0956
+ | Value=第1回オーディションの結果、レセプター適性を認められてワルキューレに加入した。<br/>戦場には似つかわしくない美しい金髪が目を引く。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0957
+ | Value=ワルキューレが歌い終わったとき、目の前はいつも瓦礫の山と化していた。<br/>その景色は彼女らに、自分たちが無力であるという現実を否応なく感じさせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0958
+ | Value=戦場の轟音と爆炎は、まだ若い彼女たちにとっては耐え難い恐怖でしかない。<br/>しかし刻一刻と変化する状況は、耳を塞ぐことすら許してはくれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0959
+ | Value=ワルキューレが実際に行っていた訓練のひとつ。<br/>まるで屈強な兵士が行うようなハードな内容である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0960
+ | Value=戦場で強大な敵に立ち向かうとき、ワルキューレは決して孤独ではない。<br/>苦難をともに乗り越えるたび、彼女たちは少しずつ強くなっていくのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0961
+ | Value=ウィンダミアの精鋭部隊である空中騎士団には、若く優秀なパイロットも所属している。<br/>精神的に未熟な部分も多い彼らだが、その若さが未来のウィンダミアの支えとなるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0962
+ | Value=ウィンダミア王国、空中騎士団のパイロット。<br/>騎士団の中では最も若く、時折勢い任せに行動してしまうのが欠点である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0963
+ | Value=かつてウィンダミアに投下された次元兵器は、そこに住む人々を大地ごと消し去った。<br/>ボーグはその際に家族を亡くしており、地球人に対しての憎しみは人一倍強い。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0964
+ | Value=父であるグラミアから王位を継承したハインツ。<br/>しかし多くの国民の前で歌を披露するその姿は、まだ王と呼ぶには若すぎる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0965
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0966
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0967
+ | Value=空中騎士団の中でも随一の巨漢。<br/>かつてはリンゴ農家を営んでいたが、独立戦争の際に、その畑を失った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0968
+ | Value=空中騎士団の一員であり、かつてはボーグの師匠でもあった。<br/>老化の進行もあって一度は退役していたが、再び前線へと復帰した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0969
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0970
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0971
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0972
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0973
+ | Value=刺激的なナースの衣装と意味深な演出で観客を魅了するシェリル。<br/>彼女の危険な魅力があってこそ、この妖しげな世界が完成するのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0974
+ | Value=ときに優しく、ときに挑発的な笑顔で踊るナース衣装のシェリル。<br/>一体どの顔が本物の彼女なのか、それを知る者はいない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0975
+ | Value=今回のライブでは、ナース衣装とウェディングドレスに身を包んだシェリルが登場する。<br/>神聖な花嫁と妖しく微笑むナース。相反する美しさが、そこにはあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0976
+ | Value=シェリルの動きに合わせて、純白のヴェールがひらひらと舞う。<br/>シンプルな白のドレスが、銀河の妖精の魅力をさらに引き立てている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0977
+ | Value=男装したシェリルが、ウェディングドレスを着たシェリルを押し倒す。<br/>その美麗さと危険な雰囲気に、多くのファンが魅せられることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0978
+ | Value=2人のシェリルが触れ合うたび、棘が少しずつ柔肌に食い込んでいく。<br/>やがて全身に絡み付けば、誘惑から逃れることはできなくなる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0979
+ | Value=ナース衣装に身を包んだシェリルは、ステージ上で華麗なダンスを披露する。<br/>決して動きやすい服装ではないはずだが、その動きは非常に滑らかである。
+ | ParentPage=Texts/Bank/master
+}}
+                    

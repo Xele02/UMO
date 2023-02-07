@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1230
+ | Value=思うように歌うことができないフレイアに声をかけるハヤテ。<br/>しかし、ハヤテ1人の言葉ではフレイアの不安を払うことはできなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1231
+ | Value=ライブの最中、突如マキナに突き飛ばされるフレイア。<br/>その直後フレイアが目にしたのは、銃弾を受け、倒れるマキナの姿だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1232
+ | Value=フレイアの歌声を聴き、苦悶の表情を浮かべるハヤテ。<br/>仲間のため、フレイアのため、暴走しそうな自分をギリギリの所で抑えつけていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1233
+ | Value=力を取り戻したフレイアの歌声を聴き、再び暴走してしまったハヤテ。<br/>それは一度目の暴走よりも激しく、敵と味方の判別もできなくなってしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1234
+ | Value=絶体絶命のピンチに駆けつけた、チャックとヴォルドール方面軍。<br/>作戦が失敗し撤退を余儀なくされたとき、チャックは最後尾につき任務をこなした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1235
+ | Value=銃を構え、レーザー式の照準で狙いを定めるウィンダミアの兵士。<br/>ここまで接近されていたことに、撃たれる直前まで誰も気付けなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1236
+ | Value=惑星アルヴヘイムに存在するプロトカルチャーの遺跡。<br/>システムを利用することで、フォールドゲートを出現させることができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1237
+ | Value=惑星アルヴヘイムでの戦術ライブは、カナメとアラドにとって特別な意味を持っていた。<br/>この地で出会い、志半ばで倒れたメッサーを想いながら、2人は戦場へと向かう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1238
+ | Value=互いを好敵手と認め、幾度となく壮絶な一騎打ちを繰り広げたメッサーとキース。<br/>空への並々ならぬ想いを持つ2人の翼は、どこまでも美しく誇り高い風を纏っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1239
+ | Value=デルタ小隊のエースとして、そして秘めたファンの1人として支えてくれたメッサー。<br/>今は亡き彼を想い、カナメは涙を浮かべつつも力強く歌い続けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1240
+ | Value=マキナは血を流し、痛みに耐えながらも歌を止めないでほしいと願った。<br/>「みんな…歌って…」─マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1241
+ | Value=フレイアの不調によって動揺が広がる中、カナメはフレイアに言葉をかける。<br/>ワルキューレのリーダーとして、ときには厳しい態度を取ることも必要なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1242
+ | Value=思い出の場所でのライブに、カナメとアラドは亡きメッサーのことを想っていた。<br/>「導いてくれるのかもしれません…あいつが」─アラド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1243
+ | Value=ライブを中断し、負傷したマキナに駆け寄るワルキューレ。<br/>その状況は上空から援護していたミラージュたちの目にも留まった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1244
+ | Value=銃撃によって倒れたマキナを前に、呆然とするフレイアとレイナ。<br/>そんな中、カナメは即座に駆け寄り、応急キットで迅速な処置を施した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1245
+ | Value=1人、また1人と欠けていくワルキューレのメンバーたち。<br/>そんな状況においても彼女たちは、倒れた仲間たちの想いを引き継いで歌い続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1246
+ | Value=ハヤテとの戦いの中、カシムはルンの力を解放し、命を燃やしながら飛び続ける。<br/>『白騎士』を思わせるほどの鬼気迫る戦闘に、テオとザオは味方ながら驚愕する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1247
+ | Value=ライブによって惑星アルヴヘイムの遺跡上空にフォールドゲートが開かれる。<br/>その先は敵の本拠地、惑星ウィンダミアへと繋がっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1248
+ | Value=システムを破壊するべく、ウィンダミアの遺跡に降り立ったワルキューレ。<br/>離れ離れとなった美雲の合流を信じて、彼女たちは4人での戦術ライブに挑む。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1249
+ | Value=ウィンダミア王国の空中騎士団を取り纏める存在として、聖騎士団長を務めるロイド。<br/>騎士の誇りを重んじる『白騎士』とは対照的に、その瞳は遠い彼方を見つめている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1250
+ | Value=すでに空を降りたと語るロイドだが、かつて『白騎士』を上回るといわれた腕前は健在。<br/>その純白の翼は、彼の理想に対する思いを物語っているかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1251
+ | Value=星の神殿と星の歌声により、ロイドを中枢にしたシステムが銀河に広がっていく。<br/>「おお…！フォールドニューロネットが繋がっていく…！」─ロイド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1252
+ | Value=ロイドと共に訪れた遺跡の祭壇にて、美雲は古代の壁画を目にし驚愕する。<br/>記憶に残っていなくとも、美雲の奥底には星の歌い手の記憶が刻み込まれていたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1253
+ | Value=永遠の命と銀河の平和を望むロイドに対し、銀河も自身の命も望まないと語るキース。<br/>ウィンダミアのために戦う2人だが、その心の奥底には大きな違いが存在していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1254
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1255
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1256
+ | Value=星の歌によって引き込まれた精神世界で、その効果を確信するロイド。<br/>星の歌姫である美雲を手に入れたことで、彼の計画は最終段階へと進んでいく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1257
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1258
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1259
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1260
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1261
+ | Value=高く澄み切った秋空の下、柔らかな表情でアルバムのページをめくるミンメイ。<br/>思い出のアルバムの中には、彼女にとって大切な思い出がちりばめられている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1262
+ | Value=青々と広がる秋の空と、茜色に染まる木々の中にて和やかなひとときを過ごすミンメイ。<br/>束の間の休息を終えた後には、きっと澄み渡る歌声でステージを満たしてくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1263
+ | Value=初出撃を前に不安になった輝は、ミンメイを夜の公園に誘い出す。<br/>不安を打ち明けることはできなかったが、そのとき撮った写真は思い出の1枚になった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1264
+ | Value=敵に捕らえられた輝は、ミンメイと交わした約束を思い出していた。<br/>「結局、約束は果たせないってわけか…」─輝
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1265
+ | Value=ワンピースの裾を広げて、輝に感想を求めるミンメイ。<br/>素直な感想を言った輝だったが、ミンメイにとってはいまいち響かないものであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1266
+ | Value=輝を連れて入ったブティックで、気になる服を手に取るミンメイ。<br/>年頃の女の子らしく、おしゃれに対しては余念がないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1267
+ | Value=歌手としてのデビューを目指して、レッスンに励むミンメイ。<br/>仕事にレッスンにと、忙しいながらも充実した毎日を送っているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1268
+ | Value=期待の新人歌手としてショーに出演したミンメイ。<br/>大勢の観客の前で「私の彼はパイロット」を歌い上げ、鮮烈なデビューを飾った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1269
+ | Value=選んだ服を手に、試着室に入るミンメイ。<br/>輝との初々しいやり取りに、居合わせた店員も思わず笑みを零した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1270
+ | Value=忙しい仕事の合間を縫って、連絡を取り合う輝とミンメイ。<br/>久しぶりに休暇を取れそうな輝だったが、多忙なミンメイは予定が合わないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1271
+ | Value=マクロス艦内の公園に設置されている自動写真機。<br/>「カメラ」と気軽に呼べば、どこからともなくやってきてくれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1272
+ | Value=マクロス艦内で放送されているワイドショー。<br/>番組に出演したミンメイは、自らの歌手に対する想いを語った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1273
+ | Value=セクシーなサキュバス風の衣装に身を包み、夢魔の世界に舞い降りたマキナ。<br/>ドキドキが溢れる素敵な夢の世界に、思わず目を覚ましたくなくなってしまうかも。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1274
+ | Value=海賊船長の仮装に身を包み、船まで用意して大人の遊び心を見せつけるアラド。<br/>曲者揃いなお化けたちを引き連れて、お宝いっぱいの海へと繰り出すのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1275
+ | Value=亡者たちの賑やかな催しに誘われて、神出鬼没な女神もひょっこり顔を出す。<br/>今宵はハロウィン…妖しく輝く月の下で、神秘的なステージが幕を開ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1276
+ | Value=魔女っ娘衣装に身を包み、お菓子を片手に次の獲物を探すフレイア。<br/>彼女に悪戯をされないよう、お菓子はたくさん準備したほうがいいだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1277
+ | Value=作戦の見直しが必要と進言するロイドに対し、グラミアは厳かにそれを諌めた。<br/>「案ずるな、風は必ず吹く」─グラミア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1278
+ | Value=ハインツは次元兵器の引き起こした惨状を目の当たりにし、激しい動揺を見せる。<br/>「目を背けてはいけません。見るのです…我らが受けた傷痕を…屈辱の印を！」─キース
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1279
+ | Value=反応兵器の使用許可を求められ、それを拒否するハワード大統領。<br/>全面戦争となることを避けようとする彼に、控えていたレオンが囁きかける。
+ | ParentPage=Texts/Bank/master
+}}
+                    

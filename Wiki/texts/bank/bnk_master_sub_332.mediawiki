@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0895
+ | Value=イベントを進めて<br/>【銀河に歌え！～時を超えるライオン～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0896
+ | Value=イベントを進めて<br/>【銀河に歌え！～時を超えるライオン～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0897
+ | Value=イベントを進めて<br/>【銀河に歌え！～時を超えるライオン～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0898
+ | Value=イベントを進めて<br/>【夏だ！水着だ！ワル裏フェス！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0899
+ | Value=イベントを進めて<br/>【夏だ！水着だ！ワル裏フェス！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0900
+ | Value=イベントを進めて<br/>【夏だ！水着だ！ワル裏フェス！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0901
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0902
+ | Value=イベントを進めて<br/>【SUNSET RESORT 】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0903
+ | Value=イベントを進めて<br/>【SUNSET RESORT 】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0904
+ | Value=イベントを進めて<br/>【SUNSET RESORT 】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0905
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0906
+ | Value=イベントを進めて<br/>【ミッドサマー・ラブハート！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0907
+ | Value=イベントを進めて<br/>【ミッドサマー・ラブハート！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0908
+ | Value=イベントを進めて<br/>【ミッドサマー・ラブハート！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0909
+ | Value=【デビューオペレーション】を進めて<br/>【バルキリーオペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0910
+ | Value=【デビューオペレーション】を進めて<br/>【バルキリーオペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0911
+ | Value=【デビューオペレーション】を進めて<br/>【バルキリーオペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0912
+ | Value=【デビューオペレーション】を進めて<br/>【バルキリーオペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0913
+ | Value=【デビューオペレーション】を進めて<br/>【バルキリーオペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0914
+ | Value=【デビューオペレーション】を進めて<br/>【バルキリーオペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0915
+ | Value=【デビューオペレーション】を進めて<br/>【バルキリーオペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0916
+ | Value=【デビューオペレーション】を進めて<br/>【バルキリーオペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0917
+ | Value=【バルキリーオペレーション】を進めて<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0918
+ | Value=フレイアの依頼を1回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0919
+ | Value=フレイアの依頼を10回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0920
+ | Value=美雲の依頼を1回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0921
+ | Value=美雲の依頼を10回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0922
+ | Value=カナメの依頼を1回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0923
+ | Value=カナメの依頼を10回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0924
+ | Value=マキナの依頼を1回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0925
+ | Value=マキナの依頼を10回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0926
+ | Value=レイナの依頼を1回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0927
+ | Value=レイナの依頼を10回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0928
+ | Value=ランカの依頼を1回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0929
+ | Value=ランカの依頼を10回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0930
+ | Value=シェリルの依頼を1回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0931
+ | Value=シェリルの依頼を10回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0932
+ | Value=ミレーヌの依頼を1回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0933
+ | Value=ミレーヌの依頼を10回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0934
+ | Value=バサラの依頼を1回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0935
+ | Value=バサラの依頼を10回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0936
+ | Value=ミンメイの依頼を1回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0937
+ | Value=ミンメイの依頼を10回達成して<br/>【歌姫オペレーション】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0938
+ | Value=バルキリーオペレーションを累計10回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0939
+ | Value=バルキリーオペレーションを累計20回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0940
+ | Value=バルキリーオペレーションを累計30回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0941
+ | Value=バルキリーオペレーションを累計50回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0942
+ | Value=バルキリーオペレーションを累計75回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0943
+ | Value=バルキリーオペレーションを累計100回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0944
+ | Value=バルキリーオペレーションを累計150回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3580
+ | Value=ガビルの特攻によって撃墜されたガムリンだったが、奇跡的にも一命を取り留めていた。<br/>吹雪の中でかすかに聴こえる歌に意識を取り戻すと、お守りを強く握りしめたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3581
+ | Value=【蒼き少女の心】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3582
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3583
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3584
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3585
+ | Value=【蒼き少女の心】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3586
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3587
+ | Value=【蒼き少女の心】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3588
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3589
+ | Value=歌うことへの迷いを振り切ることができないランカを、ブレラは優しく抱き寄せる。<br/>それは記憶を失っていようとも、守るべきものを心が覚えているかのようであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3590
+ | Value=インプラントによる洗脳によって、ギャラクシー軍の操り人形と化していたブレラ。<br/>呪縛から解き放たれすべての記憶を取り戻した今、その心を止めるものは何もない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3591
+ | Value=夜空に輝く紅い月の如く、サイボーグの瞳を妖しく煌めかせる黒衣の貴公子が降臨した。<br/>甘いマスクで優しい言葉を囁きながら、口元に隠した鋭い牙が今宵の獲物を狙っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3592
+ | Value=ブレラはランカに自分が兄であることを明かし、過去に何があったのかを語り始める。<br/>フロンティア政府の追手が迫る中、使命を果たすために残された時間は殆どなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3593
+ | Value=ランカの歌うアイモに、ブレラが伴奏でハーモニカを吹いていたガリア4の遠い記憶。<br/>仲睦まじい兄妹の運命は、突如現れた無数のバジュラによって大きく狂わされていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3594
+ | Value=第117次大規模調査船団の護衛部隊には、新統合軍時代のオズマも所属していた。<br/>しかし、バジュラの襲撃の前では抵抗もむなしく、調査船団は壊滅することとなる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3595
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3596
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3597
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3598
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3599
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3600
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3601
+ | Value=ゆるふわボディを白衣で包み、キュートでセクシーな白衣の天使へとマキナが大変身！<br/>優しくとろけるような甘～い看護で、心も身体もバッチリ癒してくれること間違いなし？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3602
+ | Value=【看護のお時間】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3603
+ | Value=緊迫する無線に交じって、なにやら怪しいハヤテとミラージュの通信が…？<br/>「何やってんだか」「ヒメゴト」─マキナ、レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3604
+ | Value=電源復旧による重力制御装置の復活で、宙づりになってしまったハヤテとミラージュ。<br/>しかも、ミラージュはハヤテにしがみつく姿をさらされてしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3605
+ | Value=【看護のお時間】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3606
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3607
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3608
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3609
+ | Value=【看護のお時間】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3610
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3611
+ | Value=【看護のお時間】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3612
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3613
+ | Value=美しく端正なマスクに危険な香りを忍ばせ、花嫁を誘う新郎と化したシェリル。<br/>すべてを奪い去らんとする眼差しと唇で交わされる契りは、まさに禁断の光景といえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3614
+ | Value=【禁断の愛の儀式】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3615
+ | Value=夜空に浮かぶ紋様の下、流麗なる眼差しで新郎姿のシェリルは手を差し伸べる。<br/>その端正なる顔立ちと指先から延びる蔓は、心のすべてを絡めとっていくかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3616
+ | Value=かつて天女が舞台の空を舞ったように、シェリルはアルトに再び空を舞うことを願う。<br/>それはかりそめの空ではなく、本物の空を舞台にした早乙女アルトの真実の舞であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3617
+ | Value=【禁断の愛の儀式】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3618
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3619
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3620
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3621
+ | Value=【禁断の愛の儀式】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3622
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3623
+ | Value=【禁断の愛の儀式】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3624
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3625
+ | Value=魔法のステッキを巧みに操り、ハロウィンの夜に不思議な魔法をかけていくミンメイ。<br/>不思議な一夜の体験は、ガラスの靴のように夜が明けても夢の中で輝き続けるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3626
+ | Value=【真夜中の舞踏会へ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3627
+ | Value=ハロウィンの定番アイテムであるカボチャを手に、ミンメイは何やら考え中な様子。<br/>神秘的な月が見守る中、このカボチャがどんな仕上がりになるのか今から楽しみだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3628
+ | Value=実は最新の技術で作られていたという、ミンメイのファーストライブ用の衣装。<br/>何事もなければ、ステージ上でその機能を披露する演出が用意されていたのかも。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3629
+ | Value=艦内に閉じ込められながらも、却って一息つけるとミンメイは笑みをこぼす。<br/>「ちょうどいいわ。過密スケジュールはもうたくさん」─ミンメイ
+ | ParentPage=Texts/Bank/master
+}}
+                    

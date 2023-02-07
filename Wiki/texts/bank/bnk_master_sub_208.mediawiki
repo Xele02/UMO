@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0012
+ | Value=バロータ軍の主力可変戦闘機。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0013
+ | Value=フロンティア船団を襲った超時空生命体。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0014
+ | Value=新統合軍の主力可変戦闘機。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0015
+ | Value=ゼントラーディ軍が運用する大型パワードスーツ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0016
+ | Value=バロータ軍の主力可変戦闘機。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0017
+ | Value=フロンティア船団を襲った超時空生命体。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0018
+ | Value=空中騎士団のエース、キースの搭乗機。<br/>歴代のVFの機体とは異なり、濃紺に金の<br/>ラインが入ったカラーリングとなっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0019
+ | Value=ゼントラーディ軍が運用する大型パワードスーツ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0020
+ | Value=バロータ軍の主力可変戦闘機。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0021
+ | Value=フロンティア船団を襲った超時空生命体。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0022
+ | Value=新統合軍の主力可変戦闘機。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0023
+ | Value=ゼントラーディ軍が運用する大型パワードスーツ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0024
+ | Value=バロータ軍の主力可変戦闘機。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0025
+ | Value=フロンティア船団を襲った超時空生命体。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0026
+ | Value=新統合軍の主力可変戦闘機。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0027
+ | Value=ゼントラーディ軍が運用する大型パワードスーツ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0028
+ | Value=バロータ軍の主力可変戦闘機。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0029
+ | Value=フロンティア船団を襲った超時空生命体。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0030
+ | Value=新統合軍の主力可変戦闘機。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0031
+ | Value=デルタ小隊のパイロット、ミラージュの搭乗機。<br/>自分勝手なハヤテにしびれを切らし、<br/>たまらず追いかけてきたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0032
+ | Value=マクロスコンツェルンが極秘裏に開発した<br/>自律型無人戦闘機。シャロン・アップルから<br/>得たデータが人工知能に応用されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0033
+ | Value=イサムがテストパイロットを務める試作機。<br/>高度な操縦技術が要求されるが、空力を<br/>追求した設計により高い運動性能を誇る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0034
+ | Value=ガルドがテストパイロットを務める試作機。<br/>革新的技術の粋を集めて開発されており、<br/>非常に高次元な性能を持つに至っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0035
+ | Value=フロンティア船団を襲った超時空生命体。<br/>この個体に特別な能力はなく、通常どおりの<br/>スキルを発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0036
+ | Value=新統合軍の主力可変戦闘機。<br/>特別な能力はなく、通常どおりのスキルを<br/>発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0037
+ | Value=ランカ愛用のバイオセルラー（生体携帯）。<br/>緑色とオレンジ色の2種類が存在しており、<br/>音楽プレーヤーなどさまざまな機能を持つ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0038
+ | Value=ミレーヌといつも一緒な銀河毛長ネズミ。<br/>感情を送受信する能力を持っており、<br/>つねにミレーヌと同じ表情を見せている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0039
+ | Value=回遊する銀河クジラを狙う密漁団の母艦。<br/>群れを守っている白い銀河クジラに対し、<br/>反応弾の使用による抹殺を企てている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0040
+ | Value=フロンティア船団を襲った超時空生命体。<br/>この個体に特別な能力はなく、通常どおりの<br/>スキルを発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0041
+ | Value=マクロスコンツェルンが極秘裏に開発した<br/>自律型無人戦闘機。シャロン・アップルから<br/>得たデータが人工知能に応用されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0042
+ | Value=新統合軍の主力可変戦闘機。<br/>特別な能力はなく、通常どおりのスキルを<br/>発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0043
+ | Value=反統合軍組織「ヘイムダル」が運用する<br/>可変戦闘機。量子AIシステム「セイレーン」<br/>にて制御される無人機（ゴースト）である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0044
+ | Value=ゼントラーディ軍が運用する大型パワードスーツ。<br/>特別な能力はなく、通常どおりのスキルを<br/>発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0045
+ | Value=新統合軍の主力可変戦闘機。<br/>特別な能力はなく、通常どおりのスキルを<br/>発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=e_dsc_0046
+ | Value=バロータ軍の主力可変戦闘機。<br/>特別な能力はなく、通常どおりのスキルを<br/>発揮できれば撃退は難しくない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0001
+ | Value=トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0002
+ | Value=星プレートアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0003
+ | Value=愛プレートアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0004
+ | Value=命プレートアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0005
+ | Value=ソウルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0006
+ | Value=ボイスアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0007
+ | Value=チャームアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0008
+ | Value=ライフアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0009
+ | Value=サポートアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0010
+ | Value=フォールドアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0011
+ | Value=トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0012
+ | Value=ライフアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0013
+ | Value=星プレートアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0014
+ | Value=愛プレートアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0015
+ | Value=命プレートアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    

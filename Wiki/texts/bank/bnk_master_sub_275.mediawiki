@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0077
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0078
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0079
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0080
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0081
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0082
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0083
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0084
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0085
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0086
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0087
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0088
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0089
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0090
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0091
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0092
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0093
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0094
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0095
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0096
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0097
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0098
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0099
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_pn_0100
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0001
+ | Value=ワルキューレの警護、支援を目的とした<br/>デルタ小隊で運用される可変戦闘機。<br/>VF-31Aカイロスを改修した特別機で<br/>パイロットであるハヤテ・インメルマンに<br/>合わせてチューニングされている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0002
+ | Value=マクロス・フロンティア船団で開発された<br/>可変戦闘機。フォールドクォーツを用いた<br/>次世代技術を標準搭載しており、前世代の<br/>可変戦闘機と比べて、安全性を確保したまま<br/>機動性を向上させることに成功している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0003
+ | Value=統合軍のVF-19を熱気バサラ専用に改修した<br/>機体。真っ赤なカラーリングが印象的な<br/>機体は砲弾の代わりにスピーカーを撃ち込む<br/>スピーカーポッドや、肩部のスピーカーで<br/>バサラの歌声を戦場に響かせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0004
+ | Value=第一次星間大戦で活躍した可変戦闘機。<br/>優れた汎用性を持ち、大戦終了後も長きに<br/>わたって運用される歴史的傑作機となった。<br/>退役した後世でも、愛称の「バルキリー」は<br/>可変戦闘機の総称として受け継がれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0005
+ | Value=VF-31Aカイロスをベースにデルタ小隊での<br/>運用に最適な改修が施された可変戦闘機。<br/>E型は索敵や偵察に特化した電子戦型で、<br/>折り畳み式のレドームを装備している。文字<br/>どおりデルタ小隊の目や耳となる存在である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0006
+ | Value=第一次星間大戦で活躍した可変戦闘機。<br/>S型は指揮官機として運用され、武装の面や<br/>機動性にてJ型を上回る性能を誇る。歴戦の<br/>エース、ロイ・フォッカーの乗機であったが<br/>一条輝が受け継ぐ形でパイロットを務めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0007
+ | Value=第一次星間大戦で活躍した可変戦闘機。<br/>マクシミリアン・ジーナスの乗機であり、<br/>パーソナルカラーの青色となっている。<br/>後期生産型である本機は、エースパイロット<br/>向けにアビオニクスの改良が施されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0008
+ | Value=VF-31Aカイロスをベースにデルタ小隊での<br/>運用に最適な改修が施された可変戦闘機。<br/>F型は空中戦に特化した機体で、戦闘空域を<br/>支配し得るだけの空戦性能を誇るが、それを<br/>いかすには高い操縦技量が必要とされる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0009
+ | Value=VF-31Aカイロスをベースにデルタ小隊での<br/>運用に最適な改修が施された可変戦闘機。<br/>C型は性能バランスに優れ、チーム全体の<br/>支援を行うことに適している。また、S型に<br/>次ぐ指揮管制能力も備えられている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0010
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0011
+ | Value=マクロス・ギャラクシー船団で開発された<br/>可変戦闘機。インプラント化された兵士の<br/>搭乗を前提としているため、生身の人間では<br/>その驚異的な機動力から発生するGの負荷に<br/>耐えることはできないとされている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0012
+ | Value=VF-31Aカイロスをベースにデルタ小隊での<br/>運用に最適な改修が施された可変戦闘機。<br/>S型は指揮官用として指揮管制能力と武装が<br/>強化されている。機体背面中央にあたる部分<br/>には剣をくわえた竜の頭骨が描かれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0013
+ | Value=対バジュラ戦を想定して設計された試作機。<br/>VF-25、VF-27とは同じ機体を原型とした<br/>姉妹機であるが、その両機を上回る性能を<br/>誇っている。機体性能を大きく向上させる<br/>「フォールドウェーブシステム」が特徴。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0014
+ | Value=ウィンダミアに配備されている可変戦闘機。<br/>Svの形式番号が示すように、VF系統の機体<br/>とは異なる技術で設計されている。特にその<br/>変形機構はかなり特殊なものになっている。<br/>このHs型は指揮官機として運用される。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0015
+ | Value=ウィンダミアに配備されている可変戦闘機。<br/>Svの形式番号が示すように、VF系統の機体<br/>とは異なる技術で設計されている。特にその<br/>変形機構はかなり特殊なものになっている。<br/>このBa型は一般兵士用として運用される。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0016
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0017
+ | Value=マクロス・フロンティア船団で開発された<br/>可変戦闘機。専用の電子戦装備、特に背部の<br/>レドームが特徴。強力なフォールド通信誘導<br/>システムによって、複数の無人戦闘機を<br/>同時に制御することが可能となっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0018
+ | Value=マクロス・フロンティア船団で開発された<br/>可変戦闘機。指揮官用として総合的な性能の<br/>向上が図られている。オズマ・リーの乗機<br/>として、グレーの機体に黄色と黒のラインが<br/>塗られているのが特徴となっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0019
+ | Value=ウィンダミアに配備されている可変戦闘機。<br/>Svの形式番号が示すように、VF系統の機体<br/>とは異なる技術で設計されている。純白の<br/>機体色が目を引くが、基本的には同じHs型の<br/>キース機と同等の性能を持った機体である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0020
+ | Value=マクロス・フロンティア船団で開発された<br/>可変戦闘機。長距離狙撃を主とする特化型で、<br/>スナイパーパックを標準装備している。<br/>頭部は外見こそA型との差異はないものの、<br/>高精度型単眼式カメラが備わっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0021
+ | Value=特殊作戦の遂行を主眼に置いた可変戦闘機。<br/>ステルス性を重視した設計がなされており、<br/>従来の機体よりも大型、かつ重装甲である。<br/>機動性と火力にも優れており、強攻モード<br/>という特殊なガウォーク形態に変形できる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0022
+ | Value=第一次星間大戦で活躍した可変戦闘機。<br/>ミリア・ファリーナの乗機であり、<br/>パーソナルカラーの赤色となっている。<br/>後期生産型である本機は、エースパイロット<br/>向けにアビオニクスの改良が施されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0023
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0024
+ | Value=統合軍のVF-11をミレーヌ・ジーナス<br/>専用に改修した機体。白とピンクを基調と<br/>したカラーリングに柔らかい印象のフォルム<br/>が特徴。ファイヤーバルキリーと同じで<br/>スピーカーポッドなどが装備されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0025
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0026
+ | Value=マクロス・フロンティア船団で開発された<br/>可変戦闘機。フォールドクォーツを用いた<br/>次世代技術を標準搭載しており、前世代の<br/>可変戦闘機と比べて、安全性を確保したまま<br/>機動性を向上させることに成功している。
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=gn_0011
+ | Value=ボイスストーン（中）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0012
+ | Value=ボイスストーン（大）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0013
+ | Value=チャームストーン（小）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0014
+ | Value=チャームストーン（中）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0015
+ | Value=チャームストーン（大）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0016
+ | Value=命の結晶（小）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0017
+ | Value=命の結晶（中）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0018
+ | Value=命の結晶（大）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0019
+ | Value=愛の結晶（小）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0020
+ | Value=愛の結晶（中）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0021
+ | Value=愛の結晶（大）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0022
+ | Value=星の結晶（小）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0023
+ | Value=星の結晶（中）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0024
+ | Value=星の結晶（大）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0025
+ | Value=幸運の輝石
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0026
+ | Value=幸運の煌石
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_0027
+ | Value=シークレットストーン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0001
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>メロディの力が少し秘められている。<br/><color=#C8087E>※【月＆日曜日限定イベントメロディ】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0002
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>メロディの力が秘められている。<br/><color=#C8087E>※【月＆日曜日限定イベントメロディ】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0003
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>メロディの力がより多く秘められている。<br/><color=#C8087E>※【月＆日曜日限定イベントメロディ】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0004
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>ライフの力が少し秘められている。<br/><color=#C8087E>※【木＆土曜日限定イベントライフ】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0005
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>ライフの力が秘められている。<br/><color=#C8087E>※【木＆土曜日限定イベントライフ】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0006
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>ライフの力がより多く秘められている。<br/><color=#C8087E>※【木＆土曜日限定イベントライフ】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0007
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>ソウルの力が少し秘められている。<br/><color=#C8087E>※【金＆日曜日限定イベントソウル】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0008
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>ソウルの力が秘められている。<br/><color=#C8087E>※【金＆日曜日限定イベントソウル】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0009
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>ソウルの力がより多く秘められている。<br/><color=#C8087E>※【金＆日曜日限定イベントソウル】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0010
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>ボイスの力が少し秘められている。<br/><color=#C8087E>※【水＆日曜日限定イベントボイス】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0011
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>ボイスの力が秘められている。<br/><color=#C8087E>※【水＆日曜日限定イベントボイス】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0012
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>ボイスの力がより多く秘められている。<br/><color=#C8087E>※【水＆日曜日限定イベントボイス】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0013
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>チャームの力が少し秘められている。<br/><color=#C8087E>※【火＆土曜日限定イベントチャーム】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0014
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>チャームの力が秘められている。<br/><color=#C8087E>※【火＆土曜日限定イベントチャーム】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0015
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>チャームの力がより多く秘められている。<br/><color=#C8087E>※【火＆土曜日限定イベントチャーム】などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0016
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>命の力が少し秘められている。<br/><color=#C8087E>※命属性の楽曲などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0017
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>命の力が秘められている。<br/><color=#C8087E>※命属性の楽曲などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0018
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>命の力がより多く秘められている。<br/><color=#C8087E>※命属性の楽曲などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0019
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>愛の力が少し秘められている。<br/><color=#C8087E>※愛属性の楽曲などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0020
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>愛の力が秘められている。<br/><color=#C8087E>※愛属性の楽曲などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0021
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>愛の力がより多く秘められている。<br/><color=#C8087E>※愛属性の楽曲などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0022
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>星の力が少し秘められている。<br/><color=#C8087E>※星属性の楽曲などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0023
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>星の力が秘められている。<br/><color=#C8087E>※星属性の楽曲などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0024
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>星の力がより多く秘められている。<br/><color=#C8087E>※星属性の楽曲などから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0025
+ | Value=ラッキーリーフの能力を解放するために<br/>使用される希少なアイテム。<br/><color=#8e0529>※レアリティアップ後のレアリティが★5のプレートに使用できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0026
+ | Value=ラッキーリーフの能力を解放するために<br/>使用されるとても希少なアイテム。<br/><color=#8e0529>※レアリティアップ後のレアリティが★6、★7のプレートに使用できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gn_dsc_0027
+ | Value=【能力解放】で使用してシークレットボードが解放できる<br/><color=#8e0529>※レアリティアップ後のレアリティが★5、★6のプレートに使用できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_01
+ | Value=フレイア・ヴィオン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_02
+ | Value=美雲・ギンヌメール
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_03
+ | Value=カナメ・バッカニア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_04
+ | Value=マキナ・中島
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_05
+ | Value=レイナ・プラウラー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_06
+ | Value=ランカ・リー
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=header_desc_story007
+ | Value=保存したユニットを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_story008
+ | Value=バルキリーを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_story009
+ | Value=衣装を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_story030
+ | Value=強化する衣装を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_story031
+ | Value=アイテムを選択してください　　　　　
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free000
+ | Value=楽曲を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free001
+ | Value=アシストを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free002
+ | Value=ユニットを編成してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free003
+ | Value=歌姫を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free004
+ | Value=楽曲ごとの成長を確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free005
+ | Value=プレートを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free006
+ | Value=プレートの能力を解放できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free007
+ | Value=保存したユニットを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free008
+ | Value=バルキリーを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free009
+ | Value=衣装を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free010
+ | Value=ランキングを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free011
+ | Value=プロフィールを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free020
+ | Value=ライブの設定を確認してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free110
+ | Value=ランキングを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free120
+ | Value=イベントストーリーを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free130
+ | Value=イベントミッションの一覧です
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free030
+ | Value=強化する衣装を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free031
+ | Value=アイテムを選択してください　　　　　
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free201
+ | Value=アシストを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free202
+ | Value=ユニットを編成してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free203
+ | Value=歌姫を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free204
+ | Value=楽曲ごとの成長を確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free205
+ | Value=プレートを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free206
+ | Value=プレートの能力を解放できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free207
+ | Value=保存したユニットを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free208
+ | Value=バルキリーを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free209
+ | Value=衣装を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free210
+ | Value=ランキングを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free211
+ | Value=プロフィールを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free230
+ | Value=強化する衣装を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free231
+ | Value=アイテムを選択してください　　　　　
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free240
+ | Value=ランキングを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free303
+ | Value=アイテムを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_gacha000
+ | Value=ガチャを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_gacha001
+ | Value=ガチャについて確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_quest000
+ | Value=ミッションの一覧です
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_quest001
+ | Value=イベントミッションの一覧です
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_quest002
+ | Value=報酬を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_quest003
+ | Value=ビンゴミッションに挑戦できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option000
+ | Value=項目を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option001
+ | Value=プロフィールを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option002
+ | Value=称号を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option003
+ | Value=ランキングを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option004
+ | Value=プロフィールを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option005
+ | Value=項目を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    

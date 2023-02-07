@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0391
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0392
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0393
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0394
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0395
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0396
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0397
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0398
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0399
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0400
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0401
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0402
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0403
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0404
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0405
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0406
+ | Value=超銀河オペレーション
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0407
+ | Value=超銀河オペレーション
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0408
+ | Value=超銀河オペレーション
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0409
+ | Value=超銀河オペレーション
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0410
+ | Value=超銀河オペレーション
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0411
+ | Value=超銀河オペレーション
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0412
+ | Value=超銀河オペレーション
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0413
+ | Value=超銀河オペレーション
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0414
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0415
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0416
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0417
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0418
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0419
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0420
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0421
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0422
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0423
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0424
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0425
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0426
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0427
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0428
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0429
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0430
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0431
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0432
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0433
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0434
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0435
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0436
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0437
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0438
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0439
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0440
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    

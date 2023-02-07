@@ -1,0 +1,307 @@
+
+{{Texts/Bank/BankValue:
+ | Key=talk_time_01
+ | Value=お疲れ様です！…ふふ、<br/>このあいさつ、アイドルっぽいかな？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_02
+ | Value=私がアイドルなんて、<br/>今でも夢みたいだよ
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_03
+ | Value=あわわ！髪がはねちゃってる～！<br/>…これで直ったかな？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_04
+ | Value=レッスンは大変だけど、<br/>同じぐらい楽しいの！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_05
+ | Value=私ね、ゼントラーディとの<br/>クォーターなんだよ
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_06
+ | Value=あれ？<br/>どこに行っちゃったんだろ…？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_07
+ | Value=♪～
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_08
+ | Value=シェリルさんのライブ、<br/>また行きたいなー…
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_01
+ | Value=おはよう！<br/>今日もがんばろうね！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_02
+ | Value=はい、娘々名物のマグロ饅！<br/>おいしいよ！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_03
+ | Value=あ、テレビにシェリルさんが<br/>映ってる！キレイだなぁ…
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_04
+ | Value=今日もお疲れ様！<br/>ゆっくりしていってね
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_05
+ | Value=あなたが起きてるなら、<br/>私も起きておこうかな
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_01
+ | Value=久しぶり！<br/>また会えて嬉しいな
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_02
+ | Value=今日も一緒に頑張ろうね！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_birthday_01
+ | Value=わぁ、私の誕生日、<br/>お祝いしてくれるの？<br/>嬉しいよ、ありがとう！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_01
+ | Value=お兄ちゃんがお年玉をくれたの。<br/>私、もう子供じゃないんだけどなぁ…
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_02
+ | Value=うーん…アルト君は、<br/>どんなチョコが好きかなぁ…
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_03
+ | Value=今日は節分なんだって！<br/>ワルキューレのみんなは<br/>豆まきをしたらしいよ！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_04
+ | Value=今日はひな祭りだね！<br/>えへへ、ナナちゃんと一緒に<br/>ひな人形を飾るんだ
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_05
+ | Value=ホワイトデーってなんだか<br/>ドキドキするよね…
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_06
+ | Value=エイプリルフールは嘘をついても<br/>いい日なんだって！<br/>どんな嘘がいいかなぁ？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_07
+ | Value=お休みの間もね、<br/>歌のレッスンは欠かさないんだ！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_08
+ | Value=ウェディングドレス、<br/>1回でいいから着てみたいなぁ…
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_09
+ | Value=短冊にお願いごとを書いてきたよ。<br/>アルト君と、シェリルさんと、<br/>ずっと一緒にいられますようにって！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_10
+ | Value=暑いね…お兄ちゃんにアイスでも<br/>買ってきてもらおうかな
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_11
+ | Value=シェリルさんの浴衣姿…<br/>とっても素敵だったなぁ
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_12
+ | Value=お月様がよく見える場所、<br/>教えてあげよっか？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_13
+ | Value=ブレラさんにハロウィンについて<br/>教えてあげたんだ！そしたらね、<br/>今年はお菓子を用意してくれるって！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_14
+ | Value=イルミネーション、<br/>とっても綺麗だね！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_15
+ | Value=私のところには、毎年サンタさんが<br/>来てくれるんだ。サンタさんの<br/>正体は、もう知ってるんだけどね！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_16
+ | Value=年を越す瞬間って、<br/>なんだかドキドキしちゃうよね？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_17
+ | Value=私の歌がこんなにたくさんの人に<br/>届いてるなんて…<br/>私、もっと頑張るね！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_18
+ | Value=ひゃ、ひゃ、ひゃくまん！？<br/>うわぁ、すごーい！<br/>みんな、ありがとう！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_19
+ | Value=200万ダウンロード達成！<br/>すごーい！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_20
+ | Value=1周年だね。私の歌を<br/>たくさん聴いてくれてありがとう
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_01
+ | Value=えへへ。なぁに？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_02
+ | Value=もー、<br/>あんまりじろじろ見ないでよね
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_03
+ | Value=きゃあ！<br/>ど、どこ触ってるの！？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_04
+ | Value=お疲れ様です！…ふふ、<br/>このあいさつ、アイドルっぽいかな？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_05
+ | Value=私がアイドルなんて、<br/>今でも夢みたいだよ
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_06
+ | Value=あわわ！髪がはねちゃってる～！<br/>…これで直ったかな？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_07
+ | Value=あ、あんまりからかわないで！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_08
+ | Value=えへへ…撫でられるのって<br/>なんだか恥ずかしいなぁ
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_01
+ | Value=はいこれ、受け取って！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_02
+ | Value=喜んでもらえたら嬉しいな！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_01
+ | Value=シミュレーションなのに<br/>すごく緊張しちゃった。<br/>ちゃんと歌えてた…よね？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_01
+ | Value=もっと上手に歌えるように、<br/>レッスン頑張らないと！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_02
+ | Value=…私、少しは変われたかな？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_03
+ | Value=次のライブ、絶対見に来てね！　<br/>約束だよ？
+ | ParentPage=Texts/Bank/diva006
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_01
+ | Value=やったね！
+ | ParentPage=Texts/Bank/diva006
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_name_change_title
+ | Value=デコルーム名変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_name_change_text
+ | Value=デコルーム名を変更しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_name_change_desc
+ | Value=デコルーム名を入力してください。<br/>（全角半角10文字まで）
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_name_change_notes
+ | Value=・一部使用できない記号、文字がございます。<br/>・変更の反映に時間がかかることがあります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_name_change_cancel
+ | Value=デコルーム名が変更されませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_item_title
+ | Value=デコアイテム所持数
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_item_count
+ | Value={0}個
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_item_content
+ | Value=「衣装トルソー」と「バルキリーのフィギュア」と<br/>「デコマスコット」を除いた<br/>「インテリア」と「フレーズ」がカウントされます。<br/>「ポスター」は対象外となります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_001
+ | Value=あと デコアイテム {0} 個入手でレベルアップ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_002
+ | Value=レベルアップ可能！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_003
+ | Value=レベルは最大です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_004
+ | Value=アイテムを回収した後にレベルアップします。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_levelup
+ | Value={0}<br/>がレベルアップしました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_all_receive_title
+ | Value=一括対応
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_all_receive_content
+ | Value=現在デコルーム上で<br/>受け取れるアイテムがありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_point_format
+ | Value={0}/{1}<size=18>{2}</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_time_format
+ | Value={0}<size=18>時間</size>{1:D2}<size=18>分</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_cannon_suffix
+ | Value=%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_cannon_title
+ | Value=マクロスキャノンゲージ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_itemlist_title
+ | Value=回収アイテム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_cannon_text001
+ | Value=エネルギーをチャージしました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_cannon_text002
+ | Value=ゲージがMAXのため<br/>エネルギーをチャージできません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_cannon_text003
+ | Value=※マクロスキャノンを使用することでチャージが可能です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_remove_title
+ | Value=エクストラアイテム収納
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_remove_message_001
+ | Value=以下のエクストラアイテムが<br/>変更するデコルームに含まれていません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_remove_message_002
+ | Value=以下のエクストラアイテムを収納します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_sp_item_remove_message_003
+ | Value=※エクストラアイテムを収納すると、<br/>残り時間や受け取り可能な状態がリセットされます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_gift_success_title
+ | Value=贈り物完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_gift_failed_title
+ | Value=贈り物可能上限
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_gift_multi_message
+ | Value={0}人に贈り物を届けました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_gift_single_message
+ | Value=贈り物を届けました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_gift_failed_message
+ | Value=本日はこれ以上贈り物ができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_gift_item_message
+ | Value={0}<br/>{1}{2}獲得
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_option_title
+ | Value=デコルチャーモード設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_option_desc_display
+ | Value=デコルチャーモードの表示物について設定できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_bossselect_none_text01
+ | Value=暴走エネミーは発見されていません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_bossselect_none_text02
+ | Value=暴走エネミーは「{0}」で探すことができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_bossselect_rescue_time
+ | Value=あと{0:D2}：{1:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_first_attack_free_ap_01
+ | Value=支援が実行可能です！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_first_attack_free_ap_02
+ | Value=この敵に対しては支援が実行できます。<br/>スキップを消費せずライブをスキップできます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_assist_attack_skip_01
+ | Value=1回だけチケットなし<br/>スキップのチャンス！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_helprequest_confirmed_title
+ | Value=救援確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_helprequest_confirmed_text
+ | Value=まだ参戦していません。<br/>参戦しないと報酬が獲得できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_helprequest_failed_text01
+ | Value=ロビー内に他の参加者がまだいないので、<br/>救援要請を送ることはできません。<br/><br/><color=#C6077CFF>※救援要請を送ったことにはなっていません。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_helprequest_failed_text02
+ | Value=救援要請を送りましたが、<br/>受け取れるプレイヤーがいませんでした。<br/><br/><color=#C6077CFF>※救援要請を送れる回数は減りませんでした。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_bosspop_title
+ | Value=暴走エネミー索敵
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_bosspop_text01
+ | Value={0}を使用して<br/>暴走エネミーを索敵します。<br/><br/><color=#C6077CFF>{0}　{1}→{2}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_bosspop_not_text01
+ | Value={0}を所持していません。<br/>{0}は楽曲クリア後に<br/>入手できる可能性があります。<br/><br/><color=#C6077CFF>{0}　{1}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_helprequest_title
+ | Value=救援確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_helprequest_loby
+ | Value=マクロスロビーに救援要請を送る
+ | ParentPage=Texts/Bank/menu
+}}
+                    

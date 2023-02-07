@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0045
+ | Value=レトロな部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0046
+ | Value=歯車の部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0047
+ | Value=ガーデンウェディング
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0048
+ | Value=アジアンリゾート
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0049
+ | Value=お月見茶屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0050
+ | Value=ハロウィンパーティー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0051
+ | Value=ゼントラモール
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0052
+ | Value=クリスマスマーケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0002
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0003
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0004
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0005
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0006
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0007
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0008
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0009
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0010
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0011
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0012
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0013
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0014
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0015
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0016
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0017
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0018
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0019
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0020
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0021
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0022
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0023
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0024
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0025
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0026
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0027
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0028
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0029
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0030
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0031
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0032
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0033
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0034
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0035
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0036
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0037
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0038
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0039
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0040
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0041
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_dsc_0042
+ | Value=デコルームの壁や床の背景です
+ | ParentPage=Texts/Bank/master
+}}
+                    

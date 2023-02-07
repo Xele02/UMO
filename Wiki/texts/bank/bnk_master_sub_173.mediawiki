@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3480
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3481
+ | Value=歌うことへの意味を追い求め、バサラは銀河の様々な星へと飛び出して歌い続けてきた。<br/>今も銀河の呼び声に耳を傾けて、新たなサウンドを胸に旅を続けているのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3482
+ | Value=【BURN ＆ SOUL】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3483
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3484
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3485
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3486
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3487
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3488
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3489
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3490
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3491
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3492
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3493
+ | Value=まるで悠久のときを旅してきたかのように心の奥底へと深く突き刺さる美雲の歌。<br/>たとえ呪いのような運命を背負っていたとしても、今の美雲の歌に曇りはない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3494
+ | Value=【暖かな歌と幻想】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3495
+ | Value=バサラの歌に触発され、クァドランを降り自らもギターを取り出し構えるエミリア。<br/>その巨躯から放たれたのは、吹き荒ぶ嵐のようにハートへ魂を叩きつける歌だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3496
+ | Value=通信の端々からお互いの名前に気付き、改めて顔を合わせたミレーヌとエミリア。<br/>「よっ、ミレーヌ」「お姉ちゃん！」─エミリア、ミレーヌ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3497
+ | Value=【暖かな歌と幻想】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3498
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3499
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3500
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3501
+ | Value=【暖かな歌と幻想】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3502
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3503
+ | Value=【暖かな歌と幻想】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3504
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3505
+ | Value=新たに感知された歌エネルギーの正体を探るべく、辺境の惑星に集結していく英傑たち。<br/>「呪いの声」と恐れられる巨人の女性、エミリアを中心に歌と歌が激しくぶつかり合う。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3506
+ | Value=ダイアモンドフォースの隊長として、シティ7の平和を守るため戦い続けるガムリン。<br/>あらゆる窮地を乗り越え、人を愛することを知ってその意志はより固いものとなった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3507
+ | Value=全力をかけた歌合戦を通じて、互いに意気投合することとなったバサラとエミリア。<br/>歌に対する強い情熱や、山に向かって歌ったりと色々共感する想いがあったのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3508
+ | Value=最新鋭の部隊に編成されず落ち込むも、ミレーヌの励ましで気を取り直したガムリン。<br/>手渡されたお守りと屈託のないミレーヌの言葉がガムリンを大いに励ましたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3509
+ | Value=お互いに機体を降り、魂と情熱を掛けて真っ向から歌で対抗するバサラとエミリア。<br/>一歩も譲らない2人の歌エネルギーの高まりは、嵐となって雪原を吹き抜けていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3510
+ | Value=歌エネルギー探知機がオーバーヒートを起こすほどのエネルギーを感知したレイたち。<br/>「一体何が起こってるの」「わからん。歌合戦でもやってるのか？」─ミレーヌ、レイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3511
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3512
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3513
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3514
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3515
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3516
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3517
+ | Value=深く蒼い星空を思わせる衣装を身に纏い、小さく煌めく星へそっと手を伸ばすカナメ。<br/>カナメの想いを乗せた歌が響けば、星も息を吹き返して銀河を駆け抜けていくだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3518
+ | Value=【星に生命の輝きを】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3519
+ | Value=ミラージュからAXIAについて尋ねられたカナメは、当時を思い返して語り始める。<br/>そして今のエースは美雲と語り、自分にエースの才能はないと心情を吐露するのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3520
+ | Value=立ちのぼる光の粒子に照らされながら、強く静かな意志を持って祈るように歌うレイナ。<br/>それは暗い宇宙の中であっても、希望の光が射すことを人々へ伝えるかのようであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3521
+ | Value=【星に生命の輝きを】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3522
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3523
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3524
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3525
+ | Value=【星に生命の輝きを】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3526
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3527
+ | Value=【星に生命の輝きを】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3528
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3529
+ | Value=ゆるふわ系癒しキャラにしてチームを支えるムードメーカー、マキナ・中島を独占取材。<br/>男性ファンだけでなくきゃわわを目指す女の子も必見、永久保存版でお送りいたします。
+ | ParentPage=Texts/Bank/master
+}}
+                    

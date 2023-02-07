@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0680
+ | Value=映画の出演から一転、人気アイドルとして雑誌のインタビューを受けるランカ。<br/>落ち着いて受け答えしつつ、時折笑顔を見せる姿にランカの成長が感じられる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0681
+ | Value=青空が映し出されたステージで空に手を伸ばし、のびのびと自由に歌うフレイア。<br/>その歌声はハヤテへの想いを表すかのように輝き、聴く人々の心をときめかせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0682
+ | Value=ナース衣装の胸元をはだけさせ、揺れ動くように眩惑的な舞いを踊るシェリル。<br/>幾重にも重なった姿はステージ上の演出か、はたまた観客の目が起こした錯覚か…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0683
+ | Value=メッサーよりも強い敵を前にして、何もできなかった自身の無力さを痛感したハヤテ。<br/>そしてクラゲ送りを通じ、メッサーの分まで自分が飛ぶと決意を新たにするのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0684
+ | Value=歌によって争いを止めるべく、美雲の元へと駆け寄り一緒に歌声を響かせるフレイア。<br/>ハヤテはワルキューレたちの歌に対する信念を目の当たりにし、改めて衝撃を受けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0685
+ | Value=ツインテールをなびかせて、グババと一緒に歌って踊るミレーヌ。<br/>ランカにも負けない軽やかなダンスで、見る者の心に輝きをもたらす。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0686
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0687
+ | Value=アルトと休日に会う約束をしようとしたランカだったが、ブレラに止められてしまう。<br/>静かに視線を送るブレラを、ランカは不思議そうに見上げていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0688
+ | Value=ライブの終了が近づき、観客席のシェリルの前で2人のランカが微笑んでみせる。<br/>招待に応じて来てくれたシェリルに、感謝の気持ちを伝えたかったのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0689
+ | Value=反応弾による先制攻撃が行われたが、バジュラはまだまだ残っている。<br/>オズマの命令を皮切りに、戦いは近距離でのドッグファイトに移行した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0690
+ | Value=大型バジュラの頭上をとり、攻撃態勢になるブレラ。<br/>インプラント化している彼の目には、敵の弱点が明確に映し出されていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0691
+ | Value=心を曇らせていた少女は、妖精の姿になって魔法の花畑を飛び回った。<br/>勇気と自信を取り戻したとき、少女はマイクを取って歌い始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0692
+ | Value=妖精と一緒に、小さな綿毛が会場中に舞い散っていく。<br/>そうして飛んだ先で、綿毛はまた新しい勇気を芽吹かせていくのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0693
+ | Value=VF-27γのキャノピーは完全に装甲化されており外部の様子を直接見ることはできない。<br/>その代わりに、コックピット内部の全面がモニターとなっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0694
+ | Value=静かなステージの上で、1人の少女が悲しそうに座り込んでいる。<br/>その心は曇り、少女は勇気を持てずにいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0695
+ | Value=バジュラの巣内部には大型のバジュラがいた。<br/>そしてその周囲では、バジュラの幼生と思わしき生物が卵の中で眠っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0696
+ | Value=ライブ演出によって映し出された青空。<br/>降り注ぐ陽光が、会場が屋内であることを忘れさせてくれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0697
+ | Value=落ち着いた様子のオズマとブレラ。静かな空気が2人を包んでいる。<br/>しかし内心ではランカのライブが気がかりなのか、招待状を気にしているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0698
+ | Value=S.M.Sに所属するパイロット。スカル小隊のリーダーとして常に先陣を切る。<br/>豊富な経験と熟練したスキルを持ち、心には冷静さと熱さを兼ね備えている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0699
+ | Value=スパイ容疑の一件以来、シェリルの監視役兼ボディーガードとして雇われていたアルト。<br/>しかし当のシェリルは、そんなアルトを使ってランカをからかう余裕を見せている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0700
+ | Value=仕事の合間を縫って、久々のオフにアルトを海へと誘うランカ。<br/>約束を取り付けると、マヤン島での楽しい日々を想像して頬を緩めるのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0701
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0702
+ | Value=バジュラとの戦闘が終わり、その場を去ろうとするブレラをオズマが止める。<br/>今でこそ共闘関係にあるとはいえ、この2人の仲にはどこか緊張が漂っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0703
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0704
+ | Value=楽曲のイメージとしても使用されている、デフォルメされたクマのぬいぐるみ。<br/>まるでランカに付き添うように、魔法の力で動き回る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0705
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0706
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0707
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0708
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0709
+ | Value=コックピットに鳴り響く通信の音に気付き、咄嗟に身を隠そうとするミンメイ。<br/>残念ながら輝と一緒にいることを知られていたのか、あっさりばれてしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0710
+ | Value=リゾート艦であるリビエラに演奏の仕事のためやってきたFire Bomber。<br/>仕事とはいえ艦内施設を紹介する放送を聞けば、否が応にも期待が膨らむというものだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0711
+ | Value=鳥籠のような世界に翼を囚われながらも、新天地を求めて進み続けた若者たち。<br/>本当の空と心を取り戻したとき、その翼は果てしなく続く空を自由に舞うのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0712
+ | Value=空の世界において、エースと呼ばれるパイロットたちがいる。<br/>彼らは優しさと厳しさを併せ持ち、ときに命を賭してその生き様を仲間たちへ示すのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0713
+ | Value=自由な空を何より愛し、空と大切なものを守ることに全てを捧げた男たち。<br/>例え道半ばで途絶えようとも、その高潔な精神は決して朽ち果てることはない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0714
+ | Value=荒野と化した地上で、もう生き残っている人はいないかもしれないと悲嘆にくれる未沙。<br/>そんな未沙に対して輝は、少なくとも1人ぼっちじゃないという希望を示したのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0715
+ | Value=カムジン艦隊からの一斉攻撃をバリアシステムによって見事に受け切ったマクロス。<br/>「スゲェや」「これで諦めてくれればいいけどな」─柿崎、輝
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0716
+ | Value=実験はもういいのかというレオンに対し、調教には飴と鞭が必要だと語るグレイス。<br/>まるでランカの人権を無視するかのようなその言動は、薄ら寒い悪意を感じさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0717
+ | Value=歌にその身を捧げて幾数年、遠い銀河を渡って歌という文化を伝え続けるシェリル。<br/>ときに激しく、そして切なく燃える慕情とともにその航跡は煌々と輝き続けている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0718
+ | Value=銀河にその名を轟かせるアーティストたちが一堂に会するスペシャルライブが開かれた。<br/>響く歌姫たちの歌声は、銀河すべての人々の心を繋ぐ希望といえるのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0719
+ | Value=銀河にその名を轟かせるアーティストたちが一堂に会するスペシャルライブが開かれた。<br/>歌姫たちの愛と勇気と生命を懸けた歌声は、決して褪せることのない輝きに満ちていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0720
+ | Value=銀河にその名を轟かせるアーティストたちが一堂に会するスペシャルライブが開かれた。<br/>熱く魂を燃やす歌声は、星々を輝かせ、時空を超えて語り継がれていくのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0721
+ | Value=銀河のトップシンガーとして、ひたすら走り続けてきたシェリル。<br/>妖精と呼ばれた彼女は、これからもより一層輝きを増して歌い続けることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0722
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0723
+ | Value=かつて、マクロス・ギャラクシー船団に歌舞伎の天才子役が訪れた。<br/>彼の演技を見た1人の少女は、いつか自分も銀河一の歌手になってみせると誓った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0724
+ | Value=真の敵を討ち果たし、フロンティア船団の人々は平和を手にすることができた。<br/>そして戦いの中で失ってきたものを思い、彼らは祈りを捧げる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0725
+ | Value=シェリルとランカ、異なる場所で生まれ育ったはずの2人。<br/>だが不思議なことに、2人はまったく同じ歌を歌うことができたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0726
+ | Value=ギャラクシー船団のスパイとして拘束、逮捕されてしまったシェリル。<br/>戦時中の法規に則り、彼女には極刑が下されることとなった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0727
+ | Value=歌舞伎の天才子役として有名だったアルト。<br/>かつては、公演のために別の船団へ足を運ぶこともあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0728
+ | Value=最後の歌を歌い切ったシェリルは意識を失い、そのまま目を覚まさず眠り続けている。<br/>治療は続けられているが、この先いつ目覚めるかはわからないままだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0729
+ | Value=襲い来る無数のバジュラと熾烈な空中戦を繰り広げるアルト。<br/>トルネードパックを装備したVF-25Fをもってしても、気を抜くことは許されない。
+ | ParentPage=Texts/Bank/master
+}}
+                    

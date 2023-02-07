@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0220
+ | Value=想いは必ずしも成就するわけではない。<br/>でも本気だったのなら後悔はないはず。<br/>あるとすればほんの少しの切なさだけ…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0221
+ | Value=恋愛模様の変化に胸をチクチクさせる<br/>のも、バレンタインの風物詩。抜きつ<br/>抜かれつ、一瞬の油断が命取りである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0222
+ | Value=チョコレートにだって負けないマキナの<br/>甘くてキュートな歌声。きっとふんわり<br/>優しくとろけさせてくれることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0223
+ | Value=救世主の名をあやかったVF-25。<br/>ランカもまた、歌でバジュラと交流を<br/>果たした救世主といえるかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0224
+ | Value=宇宙最強の呼び声も高いYF-29。<br/>銀河の妖精の歌が合わされば、まさに<br/>銀河を震わすバルキリーとなるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0225
+ | Value=お手製コンピューターウィルスを従え、<br/>ネットワークを突き進んでいくレイナ。<br/>その探求心はとどまることを知らない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0226
+ | Value=緊張を和らげる効果があるかと思えば、<br/>逆に興奮させたりもするチョコレート。<br/>人の心を惑わす罪作りな甘味といえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0227
+ | Value=ワルキューレ初期のころから様々な形で<br/>女神を支えてきたデルタ小隊。彼らこそ<br/>ファン第1号といえるのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0228
+ | Value=「エール・ド・リュミエール」という<br/>シェリルが教会のステージで掲げた旗。<br/>それはフランス語で「光の空」をさす。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0229
+ | Value=ウィンダミアの侵攻に対しケイオスは<br/>人々を守るべくラグナ星の放棄を決定。<br/>そこにウィンダミアからの追撃が迫る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0230
+ | Value=天使が舞い降りるかのような青空の下、<br/>幸せのアーチを描いて空を舞うブーケ。<br/>いつの時代も少女が憧れる光景である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0231
+ | Value=例えどんな困難だって、溢れる元気で<br/>塗り替えていくことができたのならば、<br/>きっと幸せな未来が待っているはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0232
+ | Value=夢を追いかけてスターの座を駆け登って<br/>きたランカ。アイドルとしての成功を<br/>収めた今、星空の下で何を思うのか…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0233
+ | Value=運命に絶望することは誰にだってある。<br/>それでも、くじけない愛と支える歌が<br/>あれば、何度だって立ち上がれるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0234
+ | Value=Fire Bomber風の衣装を着用して<br/>慰問ライブに潜入したS.M.S隊員たち。<br/>シェリルのエスケイプ・ライブ開始だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0235
+ | Value=夢を追いかけて辺境の惑星を飛び出し、<br/>都会の惑星へと降り立ったフレイア。<br/>そこにはきらきらした音が満ちていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0236
+ | Value=紛争地域に生まれ、本物の戦場を知る<br/>カナメ。それはケイオスへの就職から<br/>ワルキューレでの活躍にもいかされた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0237
+ | Value=最新のあらゆるガジェットを駆使して<br/>ライブを演出するワルキューレ。その<br/>歌の世界は見る者に未来を感じさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0238
+ | Value=かわいさだけじゃなく、大胆でセクシー<br/>な姿を惜しみなく見せてくれるマキナ。<br/>そのサービス精神にファンも大興奮だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0239
+ | Value=難攻不落を自称するレイナだけあって、<br/>ガードの固さは驚異的。果たして彼女の<br/>許しを得られる異性はいるのだろうか？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0240
+ | Value=自ら作り出す料理と生まれ故郷である<br/>ラグナを愛するチャック。でもそれと<br/>同じくらいに女の子も大好きなのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0241
+ | Value=謎に包まれた美雲のプライベートな姿。<br/>住んでいる場所は？いきつけのお店は？<br/>謎が謎を呼んで人々の興味も尽きない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0242
+ | Value=航海の記録を書き記した日誌は、ときに<br/>胸躍る冒険の物語となって後世の人々を<br/>海へと駆り立てていくのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0243
+ | Value=滅亡の危機に瀕した人類は、種を守る<br/>ため宇宙の新天地を目指した。まさに<br/>「銀河の大航海時代」の幕開けである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0244
+ | Value=カナメの名前について海賊との関連は<br/>なさそうだが、勇猛果敢な性格と強い<br/>結束力は通じるところがありそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0245
+ | Value=歌姫として高潔な精神を持つシェリル。<br/>たとえその身が黒に染まろうとも、<br/>その美しさは決して変わらない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0246
+ | Value=ヴァールによって自我を失い、暴徒と<br/>化した人々にとって、ワルキューレの<br/>歌はまさに救いの光といえるのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0247
+ | Value=イサムたち3人がまだ子供で、自由に<br/>夢を追い続けて暮らしたその日々は、<br/>確かに楽園といえたかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0248
+ | Value=時間に追われる毎日を送るのは流石に<br/>大変。たとえおとぎ話の世界でも、<br/>こればっかりはどうにもならなそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0249
+ | Value=マキナの柔らかでかわいいイメージは、<br/>ファンタジーな世界観との相性も抜群。<br/>不思議が一杯な夢を見せてくれそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0250
+ | Value=バルキリー隊が壮絶なドッグファイトを<br/>繰り広げる頃、マクロスではミンメイが<br/>初めてのコンサートの日を迎えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0251
+ | Value=飛行機は時にアクロバットな機動で<br/>人々の心をドキドキさせる。それが<br/>命がけのものならばなおさらである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0252
+ | Value=歌やベースの演奏の他に、バルキリーの<br/>操縦も一流なミレーヌ。夢を追いかけて<br/>なら、どこまででも飛んでいけそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0253
+ | Value=ラグナ星を目指す中でハヤテと出会い、<br/>オーディションにも合格したフレイア。<br/>恋に仕事に、大輪の花を咲かせたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0254
+ | Value=ワルキューレの歌声を増幅することで<br/>一時的に性能向上するVF-31。そこに<br/>想いも乗せたのなら無敵といえそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0255
+ | Value=ランカがCMソングを歌った開拓重機。<br/>なお衣装が水着だった理由については、<br/>ランカ自身よくわかっていないそうな。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0256
+ | Value=清廉さと、少女らしい純情さを持つ<br/>リン・ミンメイ。その美しさは<br/>ミス・マクロスの初代女王に相応しい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0257
+ | Value=夏がやってくると盛り上がりをみせる<br/>のがロック。太陽に負けないくらいの<br/>光輝くサウンドが夏をもっと熱くする。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0258
+ | Value=映画「鳥の人」の撮影が行われていた<br/>マヤン島。美しい自然を再現した島は、<br/>少し心を開放的にするのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0259
+ | Value=歌やリズム、様々なものを色にたとえる<br/>フレイアの人生は、たくさんの思い出に<br/>よって鮮やかに彩られていくのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0260
+ | Value=星間大戦の終結後も各地で歌手としての<br/>活動を続けていくミンメイ。いつの日か<br/>また、銀河へと羽ばたくことを夢見て。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0261
+ | Value=訓練用として2人乗りが可能なVF-1D。<br/>輝はこの機体に乗ったことでミンメイと<br/>出会い、後に彼女を救うこととなった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0262
+ | Value=ライブを盛り上げるためならば情熱を<br/>惜しまないワルキューレ。夏の暑さも<br/>吹き飛ぶ歌を響かせてくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0263
+ | Value=まっすぐな瞳を向けて遊びもバンドも<br/>全力で楽しむミレーヌは、夏の太陽の<br/>下でもその輝く瞳で夢を描くのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0264
+ | Value=歯に衣着せぬ振る舞いでよく驚かせて<br/>くれるレイナ。今日も今日とて刺激を<br/>求めて、新しい姿を見せてくれそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0265
+ | Value=ゆるふわな癒しに魅惑的なボディも<br/>マキナの魅力のひとつ。気後れなんか<br/>したら大事なシーンを見逃しちゃうぞ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0266
+ | Value=バサラが語るハートにグッとくる歌は、<br/>種族や年代を超えて、銀河のあらゆる<br/>者たちの魂を熱く燃やすものなのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0267
+ | Value=過去の記憶がなく、人との繋がりもなく<br/>育った美雲にとって、仲間たちとの温か<br/>な日々は幻想的に映ったのであろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0268
+ | Value=次々同僚を失う不幸に見舞われながらも<br/>職務を貫き通したガムリン。その意志の<br/>硬さは、まさにダイアモンドといえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0269
+ | Value=自分の歌を大切にしてくれる人を知り、<br/>再び歌に輝きを取り戻していくカナメ。<br/>その想いは星のように輝くことだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0667
+ | Value=<size=18>「復刻　未来はオンナのためにある」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0668
+ | Value=<size=18>「復刻　未来はオンナのためにある」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0669
+ | Value=<size=18>「超時空音楽祭 ～Songbird～」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0670
+ | Value=<size=18>「超時空音楽祭 ～Songbird～」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0671
+ | Value=<size=18>「リバーシブル・バニー」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0672
+ | Value=<size=18>「リバーシブル・バニー」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0673
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0674
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0675
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0676
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0677
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0678
+ | Value=<size=18>「復刻　流星の奏でる旋律」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0679
+ | Value=<size=18>「復刻　流星の奏でる旋律」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0680
+ | Value=<size=18>「見えない風 ～GIRAFFE BLUES～」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0681
+ | Value=<size=18>「見えない風 ～GIRAFFE BLUES～」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0682
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0683
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0684
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0685
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0686
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0687
+ | Value=<size=18>「復刻　エンジェル・ブライド」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0688
+ | Value=<size=18>「復刻　エンジェル・ブライド」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0689
+ | Value=<size=18>「SUNSET WEDDING」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0690
+ | Value=<size=18>「SUNSET WEDDING」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0691
+ | Value=<size=18>「デュエット・ランナー」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0692
+ | Value=<size=18>「デュエット・ランナー」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0693
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0694
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0695
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0696
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0697
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0698
+ | Value=<size=18>「復刻　夏のなないろ☆ビタミンチャージ！」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0699
+ | Value=<size=18>「復刻　夏のなないろ☆ビタミンチャージ！」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0700
+ | Value=<size=18>「立ち上がれ5人の女神たち」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0701
+ | Value=<size=18>「立ち上がれ5人の女神たち」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0702
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0703
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0704
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0705
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0706
+ | Value=楽曲ランキング<br/>1001位～5000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0707
+ | Value=<size=18>「復刻　彼方へ届ける歌 ～インフィニティ #7～」の<br/>アーネスト艦長からの報酬で入手した称号</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0708
+ | Value=<size=18>「復刻　彼方へ届ける歌 ～インフィニティ #7～」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0709
+ | Value=<size=18>「ROCK'N'ROLL FIRE！」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0710
+ | Value=<size=18>「ROCK'N'ROLL FIRE！」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0711
+ | Value=<size=18>「ダイナム・ダイナミック」で<br/>ランキング最上位に入賞した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0712
+ | Value=<size=18>「ダイナム・ダイナミック」で<br/>努力した証</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0713
+ | Value=楽曲ランキングで優勝した証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0714
+ | Value=楽曲ランキング<br/>2位～10位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0715
+ | Value=楽曲ランキング<br/>11位～100位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=em_dsc_0716
+ | Value=楽曲ランキング<br/>101位～1000位入賞の証
+ | ParentPage=Texts/Bank/master
+}}
+                    

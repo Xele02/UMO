@@ -1,0 +1,307 @@
+
+{{Texts/Bank/BankValue:
+ | Key=talk_time_01
+ | Value=マヨネーズライスって、<br/>実はおいしかったりするのかしら？
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_02
+ | Value=疲れてなんかないわ！<br/>まだまだいけるんだから！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_03
+ | Value=グババはあたしの親友…<br/>ううん、あたしの分身なの！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_04
+ | Value=そろそろ練習の時間だわ。<br/>頑張るからね！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_05
+ | Value=Fire Bomberのベースは、<br/>あたしが弾いてるのよ
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_06
+ | Value=あれー？<br/>どこに行ったのよぉ…？
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_07
+ | Value=…バサラでも探しにいこっかなぁ
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_08
+ | Value=うーん、次はどんなお仕事を<br/>とってこようかしら？
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_01
+ | Value=おっはよ！<br/>今日も仕事、取ってきたよ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_02
+ | Value=お昼だし、<br/>ドライブ付き合ってよ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_03
+ | Value=夕日には、フラスチャカヤの<br/>「そこにあるのが未来だから」よね
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_04
+ | Value=大音量でロックもいいけど、<br/>静かな夜も好きだな
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_05
+ | Value=ま～だ起きてんの？<br/>熱心ねぇ～
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_01
+ | Value=ちょっと、<br/>たまには顔見せてよね！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_02
+ | Value=今日も気合入れていくわよ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_birthday_01
+ | Value=子供扱いしないでよね！<br/>今日であたし、<br/>ひとつ大人になったんだから！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_01
+ | Value=せっかくのお正月だし、<br/>着物で初詣にも行きたいなぁ。<br/>あなたも一緒に行く？
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_02
+ | Value=ビヒーダからチョコレート<br/>もらっちゃった…！<br/>びっくりしたけど、すっごく嬉しい！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_03
+ | Value=バサラー！豆まきするわよ！<br/>もう、どこに行っちゃったのよー…
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_04
+ | Value=ひなあられっておいしいわよね～。<br/>グババもだーい好きなの！<br/>2人で仲良く分けて食べたわ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_05
+ | Value=ねぇねぇ、ホワイトデーの<br/>お返しまだ？楽しみにしてるわ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_06
+ | Value=今日はエイプリルフール！<br/>誰を驚かせちゃおうかしら！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_07
+ | Value=連休だからって、<br/>だらだらしてたらダメなんだからね！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_08
+ | Value=結婚式を挙げるなら小さな<br/>チャペルがいいなぁ。披露宴は<br/>ガーデンパーティーで…うふふっ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_09
+ | Value=星がきれい…こんな夜は、<br/>ロマンティックな歌が<br/>歌いたくなるわね…
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_10
+ | Value=グババが暑そうね…<br/>水浴びさせてあげないと！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_11
+ | Value=お祭りの屋台といえば、何が好き？<br/>射的？金魚すくい？<br/>あたしはぜーんぶ大好き！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_12
+ | Value=いつか、本物の月の上で<br/>ライブをしてみたいわ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_13
+ | Value=グババがいろんな人からお菓子を<br/>もらってくるの。ふふっ、グババが<br/>可愛がられてると、あたしも嬉しい！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_14
+ | Value=文化の祭りなら、<br/>Fire Bomberのライブが<br/>不可欠でしょ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_15
+ | Value=バサラにクリスマスの予定を聞いたら、<br/>『いつもどおり歌うだけだ』ですって。<br/>本当に色気がないんだから、もう
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_16
+ | Value=来年の抱負はもう決めてる？<br/>あたしはねぇ…『Fire Bomberを<br/>銀河で1番のバンドにする！』かな？
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_17
+ | Value=みんな、いつもありがとう！<br/>これからもがんばるからねー！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_18
+ | Value=やったー！<br/>100万人よ、100万人！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_19
+ | Value=200万ダウンロード達成！<br/>やったわね！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_20
+ | Value=自由な人たちが多いけど、<br/>これからもよろしく！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_01
+ | Value=なあに？<br/>歌ってほしいの？
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_02
+ | Value=もう、<br/>さすがに恥ずかしいよ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_03
+ | Value=や、やだ！<br/>ベタベタしすぎだってばぁ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_04
+ | Value=マヨネーズライスって、<br/>実はおいしかったりするのかしら？
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_05
+ | Value=疲れてなんかないわ！<br/>まだまだいけるんだから！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_06
+ | Value=グババはあたしの親友…<br/>ううん、あたしの分身なの！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_07
+ | Value=こらー！<br/>あんまり触ると怒るわよ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_08
+ | Value=撫でたいなら、<br/>別に撫でてもいいのよ…？
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_01
+ | Value=はい、これ！今日もよろしくね♪
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_02
+ | Value=明日も楽しみにしててね！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_01
+ | Value=あたしの歌、どうだった？<br/>シミュレーションだって忘れて、<br/>本気で楽しく歌えたわ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_01
+ | Value=練習はちゃーんとするわよ！<br/>本番で気持ち良く歌いたいからね！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_02
+ | Value=…ちょっとくらいは<br/>大人っぽくなれたかしら？
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_03
+ | Value=ねぇねぇ！もう1曲演奏<br/>しましょーよ！
+ | ParentPage=Texts/Bank/diva008
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_01
+ | Value=あっはは
+ | ParentPage=Texts/Bank/diva008
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0370
+ | Value=少女の姿で受話器越しに誰かとの話に<br/>花を咲かせるシャロン。人々はそんな<br/>シャロンの一挙一動から目が離せない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0371
+ | Value=普段は言葉数の少ないレイナだけれど、<br/>その分ひと言ひと言は結構強烈。愛も<br/>トゲもいっぱいこもっているのである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0372
+ | Value=まずは最初に飛び出して、仲間たちの<br/>道を切り拓くのがエースの役目。その<br/>姿が仲間たちに力を与えてくれるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0373
+ | Value=戦場を縦横無尽に駆ける美雲と完璧に<br/>タイミングを合わせるアラド。熟練の<br/>腕があってこそできる芸当なのである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0374
+ | Value=他のメンバーから驚きと喜びをもって<br/>迎えられたフレイアの「涙目爆発音」。<br/>過去が今に繋がった瞬間かもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0375
+ | Value=プライベートは別、というシェリルの<br/>言葉どおり、普段着る服はステージと<br/>違って落ち着いたものも多いみたいだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0376
+ | Value=白い雪と街の灯りのように、赤と白の<br/>衣装がクリスマスにピッタリ。一緒に<br/>ケーキを用意したなら、準備は万端！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0377
+ | Value=ライブも衣装もう～んと盛り上げたい<br/>マキナ。もちろんクリスマスも大事な<br/>イベント、ど～んとマキナにお任せ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0378
+ | Value=美雲の歌をフレイアは虹色と表現した。<br/>歌に色が付くのならば、例えば漆黒に<br/>染まった歌声も存在するのだろうか？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0379
+ | Value=絶望と希望は表裏一体。いつも希望を<br/>絶やさないマキナであっても、絶望と<br/>いうものは音もなく忍び寄るのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0380
+ | Value=年末を過ごしたらいよいよ新しい<br/>1年が始まる。今年を実り豊かな1年に<br/>するためにも、元気いっぱい頑張ろう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0381
+ | Value=遊びと称して重要機密へのハッキング<br/>を繰り返していたレイナ。これもまた<br/>欲望に忠実だからこその行動であろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0382
+ | Value=年長者として酸いも甘いも経験したで<br/>あろうカナメ。その人生は光だけでは<br/>なく、影の部分もあったことであろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0383
+ | Value=数十年後には銀河にチェーン展開する<br/>ほど成長を遂げる中華料理店「娘々」。<br/>食の文化もまた広がっていくのである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0384
+ | Value=超時空飯店「娘々」にてアルバイトを<br/>していたランカ。デビューしたあとも<br/>CMに出演するなど関係が続いている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0385
+ | Value=アルトが居なくなり、シェリルが長い<br/>眠りについてから数年。ランカは銀河<br/>にその名を轟かす歌姫に成長していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0386
+ | Value=生命維持のカプセルの中で、今も眠り<br/>続けるシェリル。ランカはシェリルの<br/>回復を願いアルトの行方を追い続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0387
+ | Value=バジュラから星を譲り受けて、入植を<br/>開始した人類。この美しい星といかに<br/>共生していくのかがこれからの課題だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0388
+ | Value=成熟した容姿を持つ一方、精神的には<br/>幼い一面を持つ美雲。真っ白い雪の<br/>ような純粋さも、また魅力的に見える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0389
+ | Value=赤を差し色にした黒のおしゃれな洋服<br/>で着飾ったフレイア。どこに出しても<br/>恥ずかしくない立派なお嬢さんの姿だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0390
+ | Value=紛れもない愛が込められたシェリルの<br/>歌声。甘く切なく寄り添うような歌は、<br/>少し苦みと共に人々の心を震わせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0391
+ | Value=バレンタインのある2月は1年の中でも<br/>特に寒い期間。温もりを求め、人が<br/>恋しくなるのも仕方のないことなのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0392
+ | Value=フィギュアスケートの見せ場といえば<br/>華麗なジャンプ。ふわふわなボディを<br/>いかせば、4回転越えも夢じゃない！？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0393
+ | Value=スケートリンクで軽やかに舞う演者の<br/>姿はまさに氷上の華。舞い上がる氷の<br/>きらめきと、刺激的な演技が心を貫く。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0394
+ | Value=赤は情熱やエネルギーといった生命力<br/>を感じさせてくれる。色の力を使えば<br/>普段より強く見せることもできるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0395
+ | Value=一見すると無鉄砲にみえるフレイアの<br/>行動力。持ち前の元気のなせる技だが、<br/>それも行き過ぎれば狂気にもなり得る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0396
+ | Value=ジャンプやスピンといった技術以外に、<br/>表現力も重視されるフィギュアの世界。<br/>生き生きと舞う姿にこそ花が咲くのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0397
+ | Value=凍りついた湖は天然のスケートリンク。<br/>ダンスは少し苦手なフレイアだけれど、<br/>アイスダンスは意外とできたりしそう？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0398
+ | Value=磨き上げられたスケートリンクを風に<br/>乗って駆け抜ける女神たち。軽やかに、<br/>そして美しく凍てつく空へ舞い上がる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0399
+ | Value=遊園地といえば定番のデートスポット。<br/>日常から離れて過ごす遊びに満ちた1日<br/>は、それこそ魔法のように見えるはず。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0400
+ | Value=基本的におしゃれには無頓着なバサラ。<br/>たまの休みくらいはおしゃれな格好で、<br/>遊びに出ているのを見てみたいところ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0401
+ | Value=長い航海において、娯楽はとても大事。<br/>移民船団ほどの大きさなら、遊園地を<br/>まるごと建設したりもできるのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0402
+ | Value=自然に住まう生き物たちが奏でる音は、<br/>しばしば天然のミュージックに例えら<br/>れる。調和に満ちた生命の賛歌なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0403
+ | Value=最初はコネだの裏口だのとそれはもう<br/>色々言われた美雲のワルキューレ入り。<br/>今やそれを揶揄する者はいないだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0404
+ | Value=まさに着の身着のままといった言葉が<br/>ピッタリなバサラの旅行スタイル。<br/>その身軽さでどこへだっていけそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0405
+ | Value=時を経た今も人々の記憶に残り続ける<br/>ミンメイの歌。それは人々の心を繋ぎ、<br/>まるで銀河のように遠い宇宙を照らす。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0406
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0407
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0408
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0409
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0410
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0411
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0412
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0413
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0414
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0415
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0416
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0417
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0418
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0419
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

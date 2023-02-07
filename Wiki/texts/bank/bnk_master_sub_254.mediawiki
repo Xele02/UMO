@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0148
+ | Value=ジェスターラビット(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0149
+ | Value=テイルズディーヴァ(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0150
+ | Value=ホーリーグローリー(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0151
+ | Value=サマー・リップル(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0152
+ | Value=ファンシー・コーラル(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0153
+ | Value=パンプキン・ゴースト(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0154
+ | Value=クロスオーバー・フレンド(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0155
+ | Value=スパークリング・ベル(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0156
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0157
+ | Value=クロスオーバー・ブリーズ(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0158
+ | Value=イグナイト・スパークル(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0159
+ | Value=トゥインクル・ゼファー(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0160
+ | Value=キモノ・パンクス(ミレーヌ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0161
+ | Value=ファイアーライブ(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0162
+ | Value=エクスプロージョンロック(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0163
+ | Value=クロスオーバーファイアー(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0164
+ | Value=ロンリーウォーカー(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0165
+ | Value=シャドウフレイム(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0166
+ | Value=ハウリングムーン(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0167
+ | Value=バーニングエース(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0168
+ | Value=バーンスターズ(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0169
+ | Value=ホーリーグルーム(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0170
+ | Value=リメンバーホライゾン(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0171
+ | Value=クロスオーバー・ブレイズ(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0172
+ | Value=ファーベント・ベル(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0173
+ | Value=バーニング・ボイジャー(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0174
+ | Value=イグナイト・サマー(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0175
+ | Value=クロスオーバー・フリー(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0176
+ | Value=スターリット・プロミネンス(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0177
+ | Value=キモノ・インフェルノ(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0178
+ | Value=ロックオン・リバティ(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0179
+ | Value=フレイム・デイズ(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0180
+ | Value=ブレイジング・ダーク(バサラ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0181
+ | Value=リメンバーラブ(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0182
+ | Value=娘々チャイナ(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0183
+ | Value=ポルカドット(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0184
+ | Value=ブルーガーデン(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0185
+ | Value=トリコロール(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0186
+ | Value=フローラル(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0187
+ | Value=コズミックリリィ(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0188
+ | Value=プルメリア・リップル(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0189
+ | Value=ノスタルジア(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0190
+ | Value=キモノカメリア(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0191
+ | Value=ラブフロウズ(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0192
+ | Value=オリエンタルブライト(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0193
+ | Value=エンジェル・ブライド(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0194
+ | Value=娘々メサイア(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0195
+ | Value=ミント・コーラル(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0196
+ | Value=クロスオーバー・コスモス(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=trs_nm_0197
+ | Value=クロスオーバー・セレニティ(ミンメイ)
+ | ParentPage=Texts/Bank/master
+}}
+                    

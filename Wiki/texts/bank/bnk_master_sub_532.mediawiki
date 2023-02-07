@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0023
+ | Value=クァドラン・レアとの模擬戦
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0024
+ | Value=アイランド１の攻防
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0025
+ | Value=シンデレラの角笛作戦
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0026
+ | Value=ナイト級バジュラ討伐
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0027
+ | Value=突入！バジュラ本星
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0028
+ | Value=クラゲ祭りの準備
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0029
+ | Value=ケイオス要人護衛
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0030
+ | Value=ケイオス電子防衛戦
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0031
+ | Value=レディ・Ｍからの依頼
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0032
+ | Value=惑星イオニデスの戦い
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0033
+ | Value=惑星アルヴヘイム奪還作戦
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0034
+ | Value=超時空ネットワーク調査
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0035
+ | Value=真なる風
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0036
+ | Value=潜入！ウィンダミア王国
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0001
+ | Value=リンゴと一緒に密航Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0002
+ | Value=リンゴと一緒に密航Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0003
+ | Value=リンゴと一緒に密航Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0004
+ | Value=リンゴと一緒に密航Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0005
+ | Value=リンゴと一緒に密航Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0006
+ | Value=秘密の練習場、ラグナの海岸Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0007
+ | Value=秘密の練習場、ラグナの海岸Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0008
+ | Value=秘密の練習場、ラグナの海岸Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0009
+ | Value=秘密の練習場、ラグナの海岸Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0010
+ | Value=秘密の練習場、ラグナの海岸Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0011
+ | Value=カナメと過ごしたラグナの街Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0012
+ | Value=カナメと過ごしたラグナの街Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0013
+ | Value=カナメと過ごしたラグナの街Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0014
+ | Value=カナメと過ごしたラグナの街Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0015
+ | Value=カナメと過ごしたラグナの街Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0016
+ | Value=アル・シャハルで聴いた声Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0017
+ | Value=アル・シャハルで聴いた声Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0018
+ | Value=アル・シャハルで聴いた声Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0019
+ | Value=アル・シャハルで聴いた声Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0020
+ | Value=アル・シャハルで聴いた声Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0021
+ | Value=大切なデビューライブⅠ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0022
+ | Value=大切なデビューライブⅡ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0023
+ | Value=大切なデビューライブⅢ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0024
+ | Value=大切なデビューライブⅣ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0025
+ | Value=大切なデビューライブⅤ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0026
+ | Value=メッサーと見た、ラグナの海Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0027
+ | Value=メッサーと見た、ラグナの海Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0028
+ | Value=メッサーと見た、ラグナの海Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0029
+ | Value=メッサーと見た、ラグナの海Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0030
+ | Value=メッサーと見た、ラグナの海Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0031
+ | Value=ひとりで歩く、ラグナの桟橋Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0032
+ | Value=ひとりで歩く、ラグナの桟橋Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0033
+ | Value=ひとりで歩く、ラグナの桟橋Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0034
+ | Value=ひとりで歩く、ラグナの桟橋Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0035
+ | Value=ひとりで歩く、ラグナの桟橋Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0036
+ | Value=ヴォルドールでの潜入作戦Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    

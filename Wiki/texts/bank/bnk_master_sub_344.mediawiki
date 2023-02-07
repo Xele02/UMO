@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1495
+ | Value=イベントを進めて<br/>【FLASH IN THE SOUL】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1496
+ | Value=イベントを進めて<br/>【見えない風 ～GIRAFFE BLUES～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1497
+ | Value=イベントを進めて<br/>【見えない風 ～GIRAFFE BLUES～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1498
+ | Value=イベントを進めて<br/>【見えない風 ～GIRAFFE BLUES～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1499
+ | Value=イベントを進めて<br/>【SUNSET WEDDING】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1500
+ | Value=イベントを進めて<br/>【SUNSET WEDDING】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1501
+ | Value=イベントを進めて<br/>【SUNSET WEDDING】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1502
+ | Value=楽曲を解放して<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1503
+ | Value=イベントを進めて<br/>【デュエット・ランナー】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1504
+ | Value=イベントを進めて<br/>【デュエット・ランナー】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1505
+ | Value=イベントを進めて<br/>【デュエット・ランナー】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1506
+ | Value=イベントを進めて<br/>【命がけの出会い ～ノーザンクロス～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1507
+ | Value=イベントを進めて<br/>【命がけの出会い ～ノーザンクロス～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1508
+ | Value=イベントを進めて<br/>【命がけの出会い ～ノーザンクロス～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1509
+ | Value=楽曲を解放して<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1510
+ | Value=イベントを進めて<br/>【立ち上がれ5人の女神たち】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1511
+ | Value=イベントを進めて<br/>【立ち上がれ5人の女神たち】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1512
+ | Value=イベントを進めて<br/>【立ち上がれ5人の女神たち】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1513
+ | Value=楽曲を解放して<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1514
+ | Value=イベントを進めて<br/>【ROCK'N'ROLL FIRE！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1515
+ | Value=イベントを進めて<br/>【ROCK'N'ROLL FIRE！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1516
+ | Value=イベントを進めて<br/>【ROCK'N'ROLL FIRE！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1517
+ | Value=イベントを進めて<br/>【ダイナム・ダイナミック】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1518
+ | Value=イベントを進めて<br/>【ダイナム・ダイナミック】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1519
+ | Value=イベントを進めて<br/>【ダイナム・ダイナミック】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1520
+ | Value=楽曲を解放して<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1521
+ | Value=イベントを進めて<br/>【ロマンティック☆デート @Formo】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1522
+ | Value=イベントを進めて<br/>【ロマンティック☆デート @Formo】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1523
+ | Value=イベントを進めて<br/>【ロマンティック☆デート @Formo】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1524
+ | Value=イベントを進めて<br/>【ワルキューレはあきらめない!!!!!】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1525
+ | Value=イベントを進めて<br/>【ワルキューレはあきらめない!!!!!】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1526
+ | Value=イベントを進めて<br/>【ワルキューレはあきらめない!!!!!】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1527
+ | Value=楽曲を解放して<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1528
+ | Value=イベントを進めて<br/>【君に届け→ ～Halloween live～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1529
+ | Value=イベントを進めて<br/>【君に届け→ ～Halloween live～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1530
+ | Value=イベントを進めて<br/>【君に届け→ ～Halloween live～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1531
+ | Value=イベントを進めて<br/>【HELLO！MY FRIENDS！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1532
+ | Value=イベントを進めて<br/>【HELLO！MY FRIENDS！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1533
+ | Value=イベントを進めて<br/>【HELLO！MY FRIENDS！】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1534
+ | Value=楽曲を解放して<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1535
+ | Value=イベントを進めて<br/>【楽園 ～WANNA BE AN ANGEL～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1536
+ | Value=イベントを進めて<br/>【楽園 ～WANNA BE AN ANGEL～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1537
+ | Value=イベントを進めて<br/>【楽園 ～WANNA BE AN ANGEL～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1538
+ | Value=イベントを進めて<br/>【幻惑レスキュー!!!!! ～チェンジ!!!!!～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1539
+ | Value=イベントを進めて<br/>【幻惑レスキュー!!!!! ～チェンジ!!!!!～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1540
+ | Value=イベントを進めて<br/>【幻惑レスキュー!!!!! ～チェンジ!!!!!～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1541
+ | Value=楽曲を解放して<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1542
+ | Value=イベントを進めて<br/>【シルバームーン・ホーリームーン】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1543
+ | Value=イベントを進めて<br/>【シルバームーン・ホーリームーン】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1544
+ | Value=イベントを進めて<br/>【シルバームーン・ホーリームーン】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=offer_notification_return_vfp_title
+ | Value=オペレーション完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_notification_return_vfp_1
+ | Value=レイナ「小隊Ⅰの作戦完了。確認よろしく」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_notification_return_vfp_2
+ | Value=レイナ「小隊Ⅱが戻ってきた…いい感じ」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_notification_return_vfp_3
+ | Value=レイナ「小隊Ⅲが戻ってくる。みんな無事」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_notification_return_vfp_4
+ | Value=レイナ「小隊Ⅳ、帰還。結果を確認すべし」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_notification_return_vfp_5
+ | Value=レイナ「小隊Ⅴが帰ってくる。出迎えよう」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_cannot_cancel_text
+ | Value=オペレーションが完了しています。<br/>受注解除できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_use_caution_1
+ | Value=利用期限を過ぎるとこのアイテムは消失します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_use_caution_2
+ | Value=アイテムを複数所持している場合、一番利用期限の早いものが表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_use_period
+ | Value=利用期限: {0}/{1}/{2} {3}:{4:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_use_period_title
+ | Value={0}利用期限
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_use_period_text_1
+ | Value=利用期限
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_use_period_text_2
+ | Value={0}数
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=item_use_period_date
+ | Value={0}/{1}/{2} {3}:{4:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rarityup_item_use_title
+ | Value=レアリティアップ確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rarityup_item_use_desc_1
+ | Value=以下のアイテムを消費してプレートをレアリティアップします。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rarityup_item_use_desc_2
+ | Value=レアリティアップに必要なアイテムが不足しています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rarityup_item_get_desc_1
+ | Value=※{0}は月間パスを購入するとおまけとしてついてくる<br/>超時空ログインボーナスを既定の回数受け取ることで入手できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rarityup_item_use_confirm_title
+ | Value=レアリティアップ最終確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rarityup_item_use_confirm_desc
+ | Value=このプレートを本当にレアリティアップしますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rarityup_item_use_warning
+ | Value={0}は<br/>レアリティアップ前の★5プレートにも使用できます。<br/><br/>レアリティアップ前の★4プレートに<br/>使用してもよろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=secret_board_item_use_title
+ | Value=シークレットボード解放確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=secret_board_item_use_desc_1
+ | Value=以下のアイテムを消費してシークレットボードを解放します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=secret_board_item_use_desc_2
+ | Value=シークレットボードの解放に必要なアイテムが不足しています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=secret_board_item_use_confirm_title
+ | Value=シークレットボード解放最終確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=secret_board_item_use_confirm_desc
+ | Value=このプレートを本当にシークレットボード解放しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=secret_board_item_use_warning
+ | Value={0}は<br/>レアリティアップ後が★6のプレートにも使用できます。<br/><br/>このプレートはレアリティアップ後が★5のプレートですが<br/>本当に使用してもよろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sel_cos_terms_title
+ | Value=取得条件
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sel_cos_terms_text_base
+ | Value=エピソード<br/>「{0}」<br/>を完全解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sel_cos_terms_text_color01
+ | Value=「{0}」<br/>のきゃわわランクを{1}まで強化
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sel_cos_terms_text_color02
+ | Value=「衣装強化」を解放して
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sel_cos_terms_text_color03
+ | Value=エピソード<br/>「{0}」<br/>を完全解放して<br/><br/>「{1}」<br/>を取得
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sel_cos_terms_costume_change
+ | Value=【解放条件】<br/>・バルキリーオペレーションを合計{0}回クリアする。<br/><color=#C8087E>※バルキリーオペレーションはゲーム進行で解放されます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_footer_badge_text_offer
+ | Value=VOP完了！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_button_monthly_pass
+ | Value=まであと{0}回
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_add_operation_text
+ | Value=オペレーションが追加されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_title
+ | Value=歌マクパス購入
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_text01
+ | Value=■同意事項<br/>・歌マクパスの有効期間は購入してから1ヶ月間です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_text02
+ | Value=<br/>■特典内容<br/>・有効期間中、獲得するプレイヤーランク経験値、歌姫熟練度ポイントが1.2倍になります。<br/>・有効期間中、バルキリーオペレーション（VOP）に特別なデイリーオペレーションが追加されます。 <br/><br/>■おまけ特典<br/>歌マクパスを購入すると、おまけとして以下の特典が付与されます。<br/>・超時空ガチャチケットなど豪華報酬が貰える超時空ログインボーナスが追加されます。<br/>　超時空ログインボーナスは歌マクパスの有効期間中、1日1回受け取ることができます。<br/>・超時空ログインボーナスを90回受け取るごとにレアアップスターを獲得できます。<br/>　レアアップスターはエピソードプレートをレアリティアップできるアイテムです。<br/>　レアリティアップ前の★4、★5プレートに使用できます。<br/><br/>■初回特典<br/>超時空ログインボーナスを初めて25回受け取った際にレアアップスターをプレゼントします。<br/>　※初回特典を受け取った後、再度歌マクパスを購入しても初回特典はプレゼントされません。<br/>　※異なる端末で複数回購入しても、初回特典の付与は1回限りです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_text_android
+ | Value=・歌マクパスの有効期間は、ご利用のOSの規定に基づいて<br/>　自動で更新されます。それに伴い、特典の付与期間も自動で更新されます。<br/>・お客様が本ゲームの利用端末のデータ引き継ぎを行った場合、<br/>　旧端末における歌マクパスおよび特典付与の有効期間は引き継がれますが、<br/>　異なるOS間でのデータ引き継ぎの場合や旧端末と異なるGoogleIDを使用する場合、<br/>　旧端末における歌マクパスおよび特典付与の有効期間の自動更新は新端末に反映されません。<br/>　新端末で歌マクパスを利用する場合には、旧端末の歌マクパスおよび特典付与期間をご確認の上、<br/>　当該期間の終了後に新端末での歌マクパスの購入をお願いいたします。<br/>・旧端末と新端末とで二重に歌マクパスを購入しても、<br/>　歌マクパスの効果発動および特典付与は重複して行われません。<br/>・有効期間中に解約した場合も、有効期間中は歌マクパスの効果および特典付与は継続します。<br/>・レアアップスターの有効期限は付与から90日間となります。<br/>・超時空ガチャチケットの有効期限は付与から30日間となります。<br/>・歌マクパスの更新をしない場合には、OSの規定に基づいて解約をする必要があります。　<br/>　Androidでの解約<br/>　　Google Play ストア→定期購入から定期購入の解約を行ってください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_text_ios
+ | Value=・歌マクパスの料金はご利用のiTunesアカウントに対して請求されます。<br/>・歌マクパスの有効期間が終了する24時間前までに自動更新を解除しない限り、<br/>　歌マクパスの有効期間は自動的に更新されます。<br/>・自動更新の料金のお支払いは、歌マクパスの有効期間が終了する24時間以内に更新が行われます。<br/>・次回の自動更新の料金は、有効期間が終了する24時間以上前に、ご利用のApple IDに対して<br/>　提示されます。<br/>・歌マクパスは下記の手順で、次回の自動更新のタイミングの確認や自動更新の解除を行うことが<br/>　できます。<br/>　[設定アプリ]→[iTunes StoreとApp Store]→[Apple IDを表示]→[登録]<br/>・お客様が本ゲームの利用端末のデータ引き継ぎを行った場合、　<br/>　旧端末における歌マクパスおよび特典付与の有効期間は引き継がれますが、　<br/>　異なるOS間でのデータ引き継ぎの場合や旧端末と異なるAppleIDを使用する場合、　<br/>　旧端末における歌マクパスおよび特典付与の有効期間の自動更新は新端末に反映されません。<br/>　新端末で歌マクパスを利用する場合には、旧端末の歌マクパスおよび特典付与期間をご確認の上、<br/>　当該期間の終了後に新端末での歌マクパスの購入をお願いいたします。<br/>・旧端末と新端末とで二重に歌マクパスを購入しても、　<br/>　歌マクパスの効果発動および特典付与は重複して行われません。<br/>・有効期間中に解約した場合も、有効期間中は歌マクパスの効果および特典付与は継続します。<br/>・レアアップスターの有効期限は付与から90日間となります。<br/>・超時空ガチャチケットの有効期限は付与から30日間となります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_popup_title
+ | Value=購入確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_popup_text01
+ | Value=歌マクパスをご利用いただくには、<br/>同意事項を承認いただく必要があります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_popup_text02
+ | Value=<size=22><color=#8e0529>※引き継ぎしてから購入される場合、<br/>旧端末での解約を済ませてから購入いただくようお願いいたします。</color></size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_popup_check
+ | Value=<color=#C8087E>同意事項を承認する</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_loginbonus_rarityup_get
+ | Value=あと{0}回受け取りで<br/>GET！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_loginbonus_desc
+ | Value=※GOALまで到達するとSTARTから開始します。<br/>※所持上限を超えるアイテムは消失します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_loginbonus_title
+ | Value=超時空ログインボーナス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_loginbonus_about_title
+ | Value=同意事項
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_loginbonus_hoten_title
+ | Value=歌マクパスログイン補填
+ | ParentPage=Texts/Bank/menu
+}}
+                    

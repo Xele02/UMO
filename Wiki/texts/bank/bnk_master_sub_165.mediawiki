@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3080
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3081
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3082
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3083
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3084
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3085
+ | Value=地の底を思わせる暗く深い世界で、煌めく光とともに柔らかな微笑を浮かべるシェリル。<br/>どんな絶望の淵にあっても諦めない心がある限り、光が失われることは決してないのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3086
+ | Value=【暗き淵にこそ煌めく】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3087
+ | Value=女神を模した衣装に身を包み、噴水で作られた水のスクリーンに映し出されるシェリル。<br/>水上にて儚く揺らめくシルエットが、曲調とも重なり神秘的な光景を作り出していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3088
+ | Value=「あそこのシステムは、うちの…L.A.I製です」<br/>「ふう…。最高だな、お前んちの会社」─ルカ、ミシェル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3089
+ | Value=【暗き淵にこそ煌めく】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3090
+ | Value=【暗き淵にこそ煌めく】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3091
+ | Value=【暗き淵にこそ煌めく】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3092
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3093
+ | Value=【暗き淵にこそ煌めく】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3094
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3095
+ | Value=【暗き淵にこそ煌めく】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3096
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3097
+ | Value=誰かに聞かせるというわけでもなく、1人教室に残りギターの練習をしていたミシェル。<br/>若い頃の憧れや積み重ねた努力は、いつの日か誰かを救うことに繋がるのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3098
+ | Value=数ヶ月に渡るバジュラとの戦争、「バジュラ戦役」をミシェルは最後まで生き抜いた。<br/>人類が新たに手に入れた空の下で、その瞳はきっと美しい未来を映しているのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3099
+ | Value=娘々特製の銀河ラーメン、カバ牛のスープから立ちのぼる芳醇な香りが食欲を刺激する。<br/>「いっただき～！」「あ！こら、待てクラン！」─クラン、ミシェル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3100
+ | Value=敵の放ったマクロス・キャノンの砲撃に飲み込まれていくクランのクァドラン・ロー。<br/>その姿を目の当たりにしたミシェルは、我が身をかえりみずに砲火の中へと突撃する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3101
+ | Value=看守の目を自分たちに引き付けることで、アルトたちを先に逃がすミシェルたち。<br/>「死ぬなよ！」「お前こそ、ちゃんと2人を守れよ」─アルト、ミシェル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3102
+ | Value=トルネードパックを装備した機体でアルトとともにバジュラを迎撃するミシェル。<br/>最新の装備に2人のコンビネーションがあれば、向かうところ敵なしかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3103
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3104
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3105
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3106
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3107
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3108
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3109
+ | Value=今や都会の空気にすっかり馴染んだ彼女も、ここに至るまでは壮絶な人生を送ってきた。<br/>そんなワルキューレ異色の新メンバー、フレイア・ヴィオンの人生に今回カメラが迫る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3110
+ | Value=【都会に流れる風】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3111
+ | Value=ヴァールに対するワルキューレの出動に備え、フレイアも待機室で気合を入れなおす。<br/>両手で頬をピシャリと打てば、戦術ライブに向けての気持ちの引き締めもバッチリだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3112
+ | Value=平静を装うフレイアだったが、本当は無理をしていることをハヤテに指摘されてしまう。<br/>更に証拠として、ピカピカと光るルンを指で突っつかれてしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3113
+ | Value=【都会に流れる風】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3114
+ | Value=【都会に流れる風】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3115
+ | Value=【都会に流れる風】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3116
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3117
+ | Value=【都会に流れる風】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3118
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3119
+ | Value=【都会に流れる風】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3120
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3121
+ | Value=ソロアイドル時代は鳴かず飛ばずであった彼女が、いかにして女神となったのか。<br/>これはワルキューレのリーダー、カナメ・バッカニアを追ったドキュメンタリーである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3122
+ | Value=【ドラマチック・ライフ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3123
+ | Value=白騎士を撃破するも肉体の限界を越え、満身創痍でカナメに抱きかかえられるメッサー。<br/>メッサーの口からこぼれ出たのは、カナメの歌に出会えたことへの感謝の言葉であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3124
+ | Value=自身と互角の機動を返すメッサーに対し、闘志を剥き出しにしてルンを輝かせるキース。<br/>戦場において数々の死闘を繰り広げた死神を、真の好敵手として白騎士が認めた瞬間だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3125
+ | Value=【ドラマチック・ライフ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3126
+ | Value=【ドラマチック・ライフ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3127
+ | Value=【ドラマチック・ライフ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3128
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3129
+ | Value=【ドラマチック・ライフ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    

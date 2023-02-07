@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=config_text_11
+ | Value=カスタム設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_12
+ | Value=スキル発動時のカットイン表示設定です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_13
+ | Value=ノーツが飛んで来る軌道の表示設定です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_14
+ | Value=動作設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_15
+ | Value=各項目を設定した条件でライブを行います。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_16
+ | Value=動作の軽量化のため、2D表示でライブが行われます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_17
+ | Value=動作の軽量化のため、一部のライブ演出をカットします。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_18
+ | Value=すべてのライブ演出を表示します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_19
+ | Value=タイミング設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_20
+ | Value=ノーツアイコンの判定タイミングを調整できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_21
+ | Value=ライブ設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_22
+ | Value=確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_23
+ | Value=音量設定を初期設定に戻します。<br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_24
+ | Value=ライブ中に3Dで表示される歌姫について設定します。<br/>低にすると描画のクオリティを最低限に抑え、負荷を<br/>軽減します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_25
+ | Value=ライブ中に3Dで表示される背景、バルキリーなどに<br/>ついて設定します。低にすると描画のクオリティを<br/>最低限に抑え、負荷を軽減します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_26
+ | Value=ライブ中に2Dで表示される演出について設定します。<br/>低にすると演出を最低限に抑え、負荷を軽減します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_27
+ | Value=描画設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_28
+ | Value=メニュー設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_29
+ | Value=その他設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_30
+ | Value=背景設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_31
+ | Value=<size=22>ホーム画面の背景について設定できます。</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_32
+ | Value=デフォルトの背景が表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_33
+ | Value=メインプレートのレアリティアップ前の<br/>レアリティが★4以上の場合、背景として表示します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_34
+ | Value=有効の場合はポーズ状態になり、無効の場合は反応しなくなります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_35
+ | Value=ライブ中のBackキー設定をします。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_36
+ | Value=Backキー設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_37_rhythm
+ | Value=現在の難易度
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_37_option
+ | Value=選択中の難易度
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_38
+ | Value=ノーツスピードは難易度ごとに設定されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_39
+ | Value=ライブ中のノーツスピードを調整できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_40
+ | Value=ノーツスピード設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_41
+ | Value=ビデオ設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_42
+ | Value=歌姫モード中に流れるビデオについて設定できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_43
+ | Value=ビデオ画質を低にすることでゲームの動作が軽くなる場合があります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_44
+ | Value=画質を切り替える場合はビデオを再ダウンロードします。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_45
+ | Value=設定を変更する場合は<br/>現在ダウンロード済みのビデオを削除し<br/>楽曲プレイ時に新しくビデオが再ダウンロードされます。<br/><br/>設定を変更しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_46
+ | Value=削除が完了しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_47
+ | Value=歌姫設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_48
+ | Value=<size=22>ホーム画面の歌姫について設定できます。</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_49
+ | Value=ユニットのセンター歌姫・衣装が表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_50
+ | Value=楽屋で選択した歌姫が表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_51
+ | Value=タイミング設定を初期設定に戻します。<br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_52
+ | Value=明度設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_53
+ | Value=3Dライブと2Dライブ、それぞれの画面の明るさを調整できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_54
+ | Value=暗
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_55
+ | Value=明
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_56
+ | Value=明度設定を初期設定に戻します。<br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_57
+ | Value=バルキリーモード設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_58
+ | Value=バルキリーモード中の演出について設定できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_59
+ | Value=バルキリーと敵のバトルが表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

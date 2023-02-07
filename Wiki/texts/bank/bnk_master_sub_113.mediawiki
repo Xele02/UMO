@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0480
+ | Value=パーティーの準備を手伝うハックとザック。<br/>店全体を飾り付けるので一苦労だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0481
+ | Value=クールビューティーな美雲の魅力を引き立てる、新しいライブ衣装が完成した。<br/>白と黒を分かつような美しいライン。その姿は、月光をまとう女神のようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0482
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0483
+ | Value=作戦の一環とはいえ、ついにワルキューレのライブ映像配信が実現した。<br/>宣伝のために現れたマキナのホログラムに、道行く人々は釘付けである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0484
+ | Value=突然目の前に現れたレイナのホログラムを見て、動揺を隠しきれないボーグ。<br/>思わず、ルンを光らせながら顔を真っ赤に染めてしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0485
+ | Value=ライブ映像の配信直前、ネットワークを通じて自分たちの状況を説明するカナメ。<br/>突然の出来事に驚く人々だが、やがてそれは歓声へと変わっていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0486
+ | Value=配信映像を通じて、ワルキューレとしての思いを語るレイナ。<br/>いつもとは少し違う勇ましい表情から、彼女の本気がうかがえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0487
+ | Value=ライブ映像と同時に放たれていたウィルスが銀河ネットワークを侵食。<br/>大規模な通信障害を引き起こし、秘密裏に進行していた作戦が成功した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0488
+ | Value=フレイアの歌う姿を、舞台袖から見守っていたハヤテ。<br/>そのとき、周囲に幻覚のような光が現れ、ハヤテは激しい眩暈に襲われるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0489
+ | Value=こっそりとワルキューレのライブ映像を堪能していたウィンダミアの兵士たち。<br/>ボーグに見つかり、慌てて敵の研究だと嘘をついたものの、ごまかせなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0490
+ | Value=ワルキューレのライブ映像を止めようと必死に操作するボーグ。<br/>しかし、よくわからないまま何度も課金ボタンを押してしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0491
+ | Value=ライブ演出で出現した巨大なハート。<br/>周囲の花畑も相まって、キュートなマキナのイメージにぴったりの光景だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0492
+ | Value=特別なサービス映像を見て、端末の課金ボタンを連打する人々。<br/>商売上手のアラド隊長に乗せられているとは誰も知らない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0493
+ | Value=水着に着替えて遊ぶフレイア。ふとハヤテの姿を目にして、うひひと笑みを浮かべた。<br/>楽しそうに何かを企む彼女は、一体どんなイタズラを思いついたのだろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0494
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0495
+ | Value=必死に奮闘するも、ウミネコを捕まえられずに悔しがるハヤテ。<br/>「あのウミネコやろう…」―ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0496
+ | Value=客の反応があまり良くなかったと思っていたが、実は好評だったFire Bomberのライブ。<br/>追加のステージが決定し、一同は再び演奏を始めるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0497
+ | Value=イタズラ好きのウミネコを捕まえるため、ハヤテは海に飛び込んだ。<br/>だが、さすがのハヤテも水中ではいいようにもてあそばれるばかりである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0498
+ | Value=訓練をサボっていたハヤテと、一緒になってウミネコを追い回していたチャック。<br/>怒り心頭のミラージュに問い詰められ、意味不明な言葉を残して海へと逃げていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0499
+ | Value=夕焼けに染まる浜辺で、会話を楽しむオズマとキャシー。<br/>元恋人同士である2人だが、現在でもその仲は良好なようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0500
+ | Value=ライブのためリゾート艦を訪れたFire Bomberの面々。<br/>浮かれるのもつかの間、迎えに来た目付け役の姿を見てミレーヌはため息をつく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0501
+ | Value=惑星ラグナも、地球人類が入植を行った星のひとつである。<br/>ラグナには先住民のラグナ人が住んでいたが、現在まで良好な関係を保っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0502
+ | Value=ビーチバレーを楽しむ女性陣とは離れ、1人波打ち際を歩くボビー。<br/>その足取りだけは他の誰よりも乙女らしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0503
+ | Value=驚くほど透き通ったマヤン島の海。<br/>浅瀬であれば、海底の様子まで簡単に見通せてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0504
+ | Value=ガムリンとの会話につい熱が入ってしまうミレーヌ。<br/>いつの間にか時間は過ぎ、頼んだジュースもほとんど飲み干してしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0505
+ | Value=大人なデザインの和服を見事に着こなすカナメ。<br/>ワルキューレのリーダーとして、堂々たる大人の魅力を見せつけてくれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0506
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0507
+ | Value=新年も変わらずミステリアスな表情を見せる美雲。<br/>どれだけ長い付き合いがあったとしても、彼女の願い事を予想することは難しいだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0508
+ | Value=和服を着て、グババと一緒に楽しんでいるミレーヌ。<br/>まだまだ子供っぽさは抜けないようだが、その明るさは春の陽気を思わせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0509
+ | Value=S.M.Sの帰還に対して、クランは笑みを浮かべた。<br/>船団に残った彼女も、いずれこうなることを予見していたのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0510
+ | Value=フロンティア船団に帰還したオズマは、かつての自分の部下たちに呼びかけた。<br/>「隊長と呼べ、スカル3！」―オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0511
+ | Value=ランカとシェリルに対して敬礼をするVF-25F。<br/>彼女たちの見送りを受けて、最後の戦いに向けて飛び立っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0512
+ | Value=戦場へ行くアルトを見送るランカとシェリル。<br/>戦士の背中を押すように、翼に風を吹かせるように、2人はともに歌い続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0513
+ | Value=お互いの背中をかばい合って戦うブレラとアルト。<br/>かつては敵として戦った2人の手によって、決戦に終止符が打たれようとしていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0514
+ | Value=ついにバジュラクイーンの目前に迫り、アルトはスナイパーライフルの狙いを定める。<br/>長きにわたる戦いと、様々な因縁と謀略。今、その全てが終わりを告げる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0515
+ | Value=バトル・ギャラクシーを撃破するため、総攻撃を仕掛けるS.M.S。<br/>カナリアの乗るケーニッヒモンスターが決死の一撃を放った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0516
+ | Value=ついに、バジュラクイーンとの融合を果たしたグレイス。<br/>その強大な力で銀河を支配するため、まずは目の前の人間たちを蹴散らさんとする。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0517
+ | Value=2人の歌姫の歌声に含まれるフォールド波の力。そしてYF-29のシステムによる力の増幅。<br/>バジュラに心を伝えようとする全員の想いが、金色の光となってこの空に輝いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0518
+ | Value=あらゆる性能面でVF-25を上回る試作機。対バジュラ戦を想定して設計されている。<br/>フォールドクォーツを利用した「フォールドウェーブシステム」を搭載している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0519
+ | Value=有名な歌舞伎一門の後継者でありながら、パイロットになる道を選んだアルト。<br/>幼い頃に母から受けた影響もあって、大空への憧れを捨てられずにいたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0520
+ | Value=オズマ・リーとブレラ・スターン。ときに共闘し、ときに敵対する2人の男。<br/>立場は大きく違えども、1人の妹を見守る兄であることに違いはない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0521
+ | Value=何者かがバジュラを支配し、この銀河を掌握しようと目論んでいた。<br/>それを食い止められるのは2人の歌だけ。そして、その歌を伝えられるのは…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0522
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0523
+ | Value=命の危険があるにも関わらず歌い続けるシェリルを見て、アルトの心から迷いが消える。<br/>早乙女アルトがもう一度舞う場所、それはこの一面の大空に他ならない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0524
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0525
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0526
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0527
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0528
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0529
+ | Value=雪の降る夜空に、一段と映える赤い衣装。耳をすませばどこからかベルの音が聞こえる。<br/>凍える寒さも吹っ飛ばして、今夜だけのきゃわわなサンタが舞い降りた！
+ | ParentPage=Texts/Bank/master
+}}
+                    

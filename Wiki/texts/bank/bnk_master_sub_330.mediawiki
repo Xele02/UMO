@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0795
+ | Value=歌レートを7600にして<br/>歌グレードを【大尉★7】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0796
+ | Value=歌レートを7800にして<br/>歌グレードを【大尉★9】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0797
+ | Value=歌レートを8000にして<br/>歌グレードを【少佐★1】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0798
+ | Value=歌レートを8200にして<br/>歌グレードを【少佐★3】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0799
+ | Value=歌レートを8400にして<br/>歌グレードを【少佐★5】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0800
+ | Value=歌レートを8600にして<br/>歌グレードを【少佐★7】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0801
+ | Value=歌レートを8800にして<br/>歌グレードを【少佐★9】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0802
+ | Value=歌レートを9000にして<br/>歌グレードを【中佐★1】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0803
+ | Value=歌レートを9200にして<br/>歌グレードを【中佐★3】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0804
+ | Value=歌レートを9400にして<br/>歌グレードを【中佐★5】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0805
+ | Value=歌レートを9600にして<br/>歌グレードを【中佐★7】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0806
+ | Value=歌レートを9800にして<br/>歌グレードを【中佐★9】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0807
+ | Value=歌レートを10000にして<br/>歌グレードを【大佐★1】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0808
+ | Value=歌レートを10200にして<br/>歌グレードを【大佐★3】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0809
+ | Value=歌レートを10400にして<br/>歌グレードを【大佐★5】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0810
+ | Value=歌レートを10600にして<br/>歌グレードを【大佐★7】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0811
+ | Value=歌レートを10800にして<br/>歌グレードを【大佐★9】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0812
+ | Value=歌レートを250にして<br/>歌グレードを【訓練兵】から【二等兵】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0813
+ | Value=歌レートを500にして<br/>歌グレードを【二等兵】から【一等兵】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0814
+ | Value=歌レートを1000にして<br/>歌グレードを【一等兵】から【上等兵】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0815
+ | Value=歌レートを1500にして<br/>歌グレードを【上等兵】から【伍長】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0816
+ | Value=歌レートを2000にして<br/>歌グレードを【伍長】から【軍曹】にする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0817
+ | Value=イベントを進めて<br/>【超時空カウントダウンライブ'17】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0818
+ | Value=イベントを進めて<br/>【超時空カウントダウンライブ'17】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0819
+ | Value=イベントを進めて<br/>【超時空カウントダウンライブ'17】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0820
+ | Value=イベントを進めて<br/>【Happy New Yearライブ'18】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0821
+ | Value=イベントを進めて<br/>【Happy New Yearライブ'18】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0822
+ | Value=イベントを進めて<br/>【Happy New Yearライブ'18】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0823
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0824
+ | Value=イベントを進めて【目指せ！ミス・マクロス<br/> ～潜入大作戦～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0825
+ | Value=イベントを進めて【目指せ！ミス・マクロス<br/> ～潜入大作戦～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0826
+ | Value=イベントを進めて【目指せ！ミス・マクロス<br/> ～潜入大作戦～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0827
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0828
+ | Value=イベントを進めて<br/>【sexy monsoon】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0829
+ | Value=イベントを進めて<br/>【sexy monsoon】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0830
+ | Value=イベントを進めて<br/>【sexy monsoon】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0831
+ | Value=イベントを進めて【メモリアル・バースデー<br/>～Dear ミレーヌ～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0832
+ | Value=イベントを進めて【メモリアル・バースデー<br/>～Dear ミレーヌ～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0833
+ | Value=イベントを進めて【メモリアル・バースデー<br/>～Dear ミレーヌ～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0834
+ | Value=イベントを進めて<br/>【おにゃの子☆Valentine】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0835
+ | Value=イベントを進めて<br/>【おにゃの子☆Valentine】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0836
+ | Value=イベントを進めて<br/>【おにゃの子☆Valentine】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0837
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0838
+ | Value=イベントを進めて【とまらない！<br/>ワルキューレLIVE】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0839
+ | Value=イベントを進めて【とまらない！<br/>ワルキューレLIVE】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0840
+ | Value=イベントを進めて【とまらない！<br/>ワルキューレLIVE】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0841
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0842
+ | Value=イベントを進めて<br/>【虹いろ・クマクマ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0843
+ | Value=イベントを進めて<br/>【虹いろ・クマクマ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0844
+ | Value=イベントを進めて<br/>【虹いろ・クマクマ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0007
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0008
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0009
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0010
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0011
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0012
+ | Value=[tv]コンボ時に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0013
+ | Value=[tv]コンボ時に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0014
+ | Value=開始[tv]秒後に発動し[dv]秒間ダメージを受けなくなる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0015
+ | Value=開始[tv]秒後に発動し[dv]秒間ダメージを受けなくなる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0016
+ | Value=開始[tv]秒後に発動し[dv]秒間ダメージを受けなくなる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0017
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0018
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0019
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0020
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0021
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0022
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0023
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0024
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0025
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0026
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0027
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0028
+ | Value=開始[tv]秒後に発動し[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0029
+ | Value=開始[tv]秒後に発動し[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0030
+ | Value=開始[tv]秒後に発動し[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0031
+ | Value=開始[tv]秒後に発動し[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0032
+ | Value=開始[tv]秒後に発動し[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0033
+ | Value=開始[tv]秒後に発動し[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0034
+ | Value=開始[tv]秒後に発動し[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0035
+ | Value=開始[tv]秒後に発動し[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0036
+ | Value=ライフが[tv]％以下になると[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0037
+ | Value=ライフが[tv]％以下になると[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0038
+ | Value=ライフが[tv]％以下になると[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0039
+ | Value=ライフが[tv]％以下になると[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0040
+ | Value=ライフが[tv]％以下になると[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0041
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0042
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0043
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0044
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0045
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0046
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0047
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0048
+ | Value=[tv]コンボ時に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0049
+ | Value=[tv]コンボ時に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0050
+ | Value=開始[tv]秒後に発動し[dv]秒間ダメージを受けなくなる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0051
+ | Value=開始[tv]秒後に発動し[dv]秒間ダメージを受けなくなる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0052
+ | Value=開始[tv]秒後に発動し[dv]秒間ダメージを受けなくなる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0053
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0054
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0055
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0056
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    

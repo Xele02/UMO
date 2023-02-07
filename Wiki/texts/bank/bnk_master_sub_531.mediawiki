@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0441
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0442
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0443
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0444
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0445
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0446
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0447
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0448
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0449
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0450
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0451
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0452
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0453
+ | Value=超銀河オペレーション７
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0454
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0455
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0456
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0457
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0458
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0459
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0460
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0461
+ | Value=超銀河オペレーションＦ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0462
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0463
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0464
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0465
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0466
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0467
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=oda_nm_0468
+ | Value=超銀河オペレーションΔ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0001
+ | Value=重力機雷誘爆作戦
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0002
+ | Value=古代星間文明の遺跡調査
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0003
+ | Value=メガロード級移民船の護衛
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0004
+ | Value=グローバル艦長の依頼
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0005
+ | Value=包囲網突破！地球帰還作戦
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0006
+ | Value=鳥島沖マクロス防衛戦
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0007
+ | Value=ゼントラーディ軍の襲撃
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0008
+ | Value=南アタリア島市街戦
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0009
+ | Value=突撃！ボドルザー基幹艦隊
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0010
+ | Value=新マクロス級移民船の護衛
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0011
+ | Value=プロトカルチャーの遺跡調査
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0012
+ | Value=交戦！ギギル艦隊
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0013
+ | Value=俺の歌を聞けーッ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0014
+ | Value=バロータ軍の奇襲攻撃
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0015
+ | Value=銀河がオレを呼んでいる！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0016
+ | Value=Dr.千葉からの依頼
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0017
+ | Value=プロトデビルン撃退戦
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0018
+ | Value=オペレーション・スターゲイザー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0019
+ | Value=美星学園ライブの護衛
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0020
+ | Value=フロンティア船団警備
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0021
+ | Value=ギャラクシー残存艦救出
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=owk_nm_0022
+ | Value=グレイスからの依頼
+ | ParentPage=Texts/Bank/master
+}}
+                    

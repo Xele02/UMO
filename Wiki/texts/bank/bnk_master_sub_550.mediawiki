@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0151_obj
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0152_obj
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0153_obj
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0154_obj
+ | Value=マクロスΔのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0155_obj
+ | Value=マクロスΔのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0156_obj
+ | Value=マクロスΔのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0157_obj
+ | Value=マクロスΔのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0158_obj
+ | Value=マクロスΔのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0159_obj
+ | Value=マクロスΔのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0160_obj
+ | Value=マクロスΔのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0161_obj
+ | Value=マクロスFのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0162_obj
+ | Value=マクロスFのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0163_obj
+ | Value=マクロスFのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0164_obj
+ | Value=マクロスFのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0165_obj
+ | Value=マクロス7のキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0166_obj
+ | Value=マクロス7のキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0167_obj
+ | Value=マクロス7のキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0168_obj
+ | Value=マクロスΔのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0169_obj
+ | Value=マクロスΔのキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0170_obj
+ | Value=マクロス7のキャラクター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0171_obj
+ | Value=ふかふかしたかわいい人形
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0172_obj
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0173_obj
+ | Value=ふかふかしたかわいい人形
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0174_obj
+ | Value=銅の水瓶座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0175_obj
+ | Value=銀に輝く水瓶座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0176_obj
+ | Value=金に輝く水瓶座のトロフィー<br/>超銀河総力LIVEで最も貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0177_obj
+ | Value=銅の魚座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0178_obj
+ | Value=銀に輝く魚座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0179_obj
+ | Value=金に輝く魚座のトロフィー<br/>超銀河総力LIVEで最も貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0180_obj
+ | Value=銅の牡羊座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0181_obj
+ | Value=銀に輝く牡羊座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0182_obj
+ | Value=金に輝く牡羊座のトロフィー<br/>超銀河総力LIVEで最も貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0183_obj
+ | Value=銅の牡牛座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0184_obj
+ | Value=銀に輝く牡牛座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0185_obj
+ | Value=金に輝く牡牛座のトロフィー<br/>超銀河総力LIVEで最も貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0186_obj
+ | Value=銅の双子座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0187_obj
+ | Value=銀に輝く双子座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0188_obj
+ | Value=金に輝く双子座のトロフィー<br/>超銀河総力LIVEで最も貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0189_obj
+ | Value=銅の蟹座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0190_obj
+ | Value=銀に輝く蟹座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0191_obj
+ | Value=金に輝く蟹座のトロフィー<br/>超銀河総力LIVEで最も貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0192_obj
+ | Value=銅の獅子座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0193_obj
+ | Value=銀に輝く獅子座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0194_obj
+ | Value=金に輝く獅子座のトロフィー<br/>超銀河総力LIVEで最も貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0195_obj
+ | Value=銅の乙女座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0196_obj
+ | Value=銀に輝く乙女座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0197_obj
+ | Value=金に輝く乙女座のトロフィー<br/>超銀河総力LIVEで最も貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0198_obj
+ | Value=銅の天秤座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0199_obj
+ | Value=銀に輝く天秤座のトロフィー<br/>超銀河総力LIVEで貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_dsc_0200_obj
+ | Value=金に輝く天秤座のトロフィー<br/>超銀河総力LIVEで最も貢献した者に贈られる
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=saka_error0101
+ | Value=JWT ID Tokenのverifyに失敗した
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0102
+ | Value=チケット数が不足している
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0103
+ | Value=該当するプレイヤーデータが存在しない
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0104
+ | Value=GMTool上でCrow専用設定が設定されていない
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0105
+ | Value=現在のプレイヤーに指定されたUDKEY,GDKEYと異なるUDKEY,GDKEYが紐付けられている
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0106
+ | Value=既に他のプレイヤーに指定されたUDKEY,GDKEYが紐付けられている
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0107
+ | Value=iOS,Androidの最低動作バージョンが設定されていない
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0108
+ | Value=CrowのAPIサーバーからエラーが返された
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0109
+ | Value=指定されたUDKEYが不正である
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0110
+ | Value=指定されたGDKEYが不正である
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0111
+ | Value=お使いのiOSはSign in with Appleに未対応です。<br/>iOS13以上にアップデートしてお試しください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0112
+ | Value=Apple IDの検証でエラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0113
+ | Value=他のApple IDで連携済みです。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0114
+ | Value=Apple IDが他のプレイヤーに連携されています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0115
+ | Value=Sign in with Appleでシステムエラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0116
+ | Value=Sign in with AppleによるApple IDとの連携を行っていません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0117
+ | Value=指定したユニークキーの複数仮想通貨ステップアップガチャが存在しない
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0118
+ | Value=指定した仮想通貨IDの仮想通貨が存在しない
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0119
+ | Value=複数仮想通貨ステップアップガチャの総実行回数が上限に達している
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0120
+ | Value=指定された仮想通貨IDがユニークで30件を超えている
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0121
+ | Value=指定したユニークキーが30件を超えている
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0122
+ | Value=指定したユニークキーのデイリーアチーブメントが存在しない
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0123
+ | Value=受取回数が受取上限回数を超えるデイリーアチーブメントが指定された
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0124
+ | Value=割り込み可能なレイドボスが存在しなかった。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0125
+ | Value=指定された商品IDがユニークで30件を超えている
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0126
+ | Value=保留中の取引が発生した、支払いはまだ完了していない
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0127
+ | Value=保留中の取引があり、支払いはまだ完了していない
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0128
+ | Value=不正な商品ID(ID重複)が指定された
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=update_error0000
+ | Value=データは最新状態です。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=update_error0001
+ | Value=新しいデータが見つかりました。<br/>タイトル画面に戻ります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=update_error0002
+ | Value=新しいダウンロードデータが見つかりました。<br/>タイトル画面に戻ります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_pause_title
+ | Value=一時停止中
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_pause_text
+ | Value=楽曲名<br/>{0}<br/><br/>難易度<br/>{1}
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_continue_title
+ | Value=コンティニュー確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_continue_text
+ | Value=歌晶石を{0}個消費することで<br/>コンティニューします。<br/><br/><color=#C8087E>歌晶石　{1}→{2}</color>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_continue_text_01
+ | Value=コンティニューしますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_continue_shotage_text
+ | Value=コンティニューをするには歌晶石が不足しています。<br/>歌晶石を購入しますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_continue_story_text
+ | Value=コンティニューしますか？<br/><color=#C8087E>※歌晶石は消費されません。</color>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_retire_title
+ | Value=リタイア確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_retire_text
+ | Value=リタイアすると報酬を獲得することができません。<br/><br/>よろしいですか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_retire_text_battle
+ | Value=リタイアすると報酬を獲得することができません。<br/>よろしいですか？<br/><br/><color=#8e0529>※EXバトルの場合、EXゲージがリセットされます。</color>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_retire_text_godiva
+ | Value=リタイアすると報酬を獲得することができません。<br/>よろしいですか？<br/><br/><color=#8e0529>※スペシャルライブの場合<br/>ライブボーナスは消失します。</color>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_retire_story_text
+ | Value=リタイアしますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_skip_title
+ | Value=スキップ確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_popup_skip_story_text
+ | Value=スキップしますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_tutorial_skip_title
+ | Value=スキップ確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_tutorial_skip_text
+ | Value=ライブをスキップして<br/>次に進みますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mlv_unlock_00
+ | Value={0}の歌姫Lvを{1}にする
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=mlv_unlock_01
+ | Value={0}で<br/>{1}の歌姫熟練度を{2}にする
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_title_000
+ | Value=SNS連携設定
+ | ParentPage=Texts/Bank/common
+}}
+                    

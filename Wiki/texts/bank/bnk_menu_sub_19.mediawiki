@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=pupup_music_select_periodover_text_003
+ | Value=選択した楽曲のプレイ可能期間が終了しました。<br/>ライブ画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pupup_music_select_periodover_text_004
+ | Value=選択した楽曲のプレイ可能期間が終了しました。<br/>ホーム画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_intimacy_lvup_text_001
+ | Value={0}のボイスが<br/>追加されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_intimacy_lvup_text_002
+ | Value={0}のリアクションが<br/>追加されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_intimacy_lvup_text_003
+ | Value={0}の親密度ボーナス<br/>+{1}%が解放されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_intimacy_lvup_text_004
+ | Value={0}の称号を<br/>獲得しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_intimacy_time_count
+ | Value=あと {0}:{1:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_intimacy_time_count_2
+ | Value=あと {0}:{1:D2}:{2:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_intimacy_max
+ | Value=親密度レベルが最大です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_intimacy_tips
+ | Value=歌姫を長押しタッチして<br/>親密度を上げよう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_intimacy_basara_tips
+ | Value=バサラを長押しタッチして<br/>親密度を上げよう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_001
+ | Value=プロローグ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_002
+ | Value=エピローグ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_003
+ | Value=イベントを進めて解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_004
+ | Value={0}/{1}/{2}　{3}:{4:D2}に解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_005
+ | Value=？？？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_006
+ | Value={0}を{1}{2}使用して解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_007
+ | Value=オープニング{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_008
+ | Value=SNS解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_009
+ | Value={0}を{1}{4}消費して<br/>SNSを解放します。<br/><br/><color=#C8087E>{0}　{2}→{3}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_010
+ | Value=SNSを解放しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_011
+ | Value=1つ前のトークを見ていないため<br/>トークを見ることができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_012
+ | Value=1つ前のトークを見ていないため<br/>トークを解放することができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_013
+ | Value={0}を{1}{2}消費して<br/>SNSを解放します。<br/><br/><color=#8e0529>アイテムが不足しています。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_014
+ | Value=アイテム消費
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_list_period
+ | Value=開催期間<br/>{0}/{1}/{2}～{3}/{4}/{5}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_item_rank_postfix
+ | Value=<color=#C8087E>※ギフトはランク{0}で解放されます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_intimacy_limit_01
+ | Value=親密度レベルが最大のため<br/>ギフトを贈ることができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_intimacy_limit_02
+ | Value=本日はこれ以上<br/>ギフトを贈ることができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_intimacy_limit_03
+ | Value=ギフトを持っていないため<br/>ギフトを贈ることができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_coution_01
+ | Value=「応募する」ボタンを押すことで、1日1回抽選権を獲得できます。（応募は毎日0時に切り替わります）
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_coution_02
+ | Value=後日抽選期間にログインすることで、抽選スタンプ数に応じた結果を確認する事ができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_coution_03
+ | Value=キャンペーン登録から必要事項の登録を行っていただいた方のみ1等への抽選権利が与えられます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_coution_04
+ | Value=1等「ライブ招待チケット」当選の方へのみ、登録メールアドレスにご案内をお送りいたします。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_coution_05
+ | Value=登録サイトで登録を行っていただいた方へのみ、1等への抽選権利が与えられます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_coution_06
+ | Value=登録サイトでお預かりした個人情報は、株式会社ディー・エヌ・エーが取得し「ライブ招待チケット」を<br/>取得いただくためのご連絡およびお問い合わせのために使用します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_coution_07
+ | Value=この画面には「ライブ招待チケット」および「歌晶石×1000」は表示されません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_content_01
+ | Value=<color=#C8087E>登録サイトボタン</color>をタップして<br/>1等「ライブ招待チケット」または「歌晶石×1000個」の抽選に参加！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_content_02
+ | Value=【ライブ招待チケットで応募された方】<br/>応募時にご登録していただいたメールアドレスへ招待チケットお受け取りのための<br/>「申込サイトURL」のご案内を記載したメールを10月11日～10月13日に送信いたします。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_msg_chara_01
+ | Value=<br/>【歌晶石×1,000個で応募された方】<br/>歌晶石は2021年10月7日(木)15:00以降に<br/>プレゼントBOXへ別途配布させていただきます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_msg_chara_02
+ | Value=<br/>【歌晶石×1,000個で応募された方】<br/>歌晶石は2021年10月7日(木)15:00以降に<br/>プレゼントBOXへ別途配布させていただきます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_msg_chara_03
+ | Value=<br/>【歌晶石×1,000個で応募された方】<br/>歌晶石は2021年10月7日(木)15:00以降に<br/>プレゼントBOXへ別途配布させていただきます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_msg_chara_04
+ | Value=<br/>【歌晶石×1,000個で応募された方】<br/>歌晶石は2021年10月7日(木)15:00以降に<br/>プレゼントBOXへ別途配布させていただきます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_msg_chara_05
+ | Value=<br/>【歌晶石×1,000個で応募された方】<br/>歌晶石は2021年10月7日(木)15:00以降に<br/>プレゼントBOXへ別途配布させていただきます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_msg_chara_06
+ | Value=<br/>【歌晶石×1,000個で応募された方】<br/>歌晶石は2021年10月7日(木)15:00以降に<br/>プレゼントBOXへ別途配布させていただきます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_msg_chara_07
+ | Value=<br/>【歌晶石×1,000個で応募された方】<br/>歌晶石は2021年10月7日(木)15:00以降に<br/>プレゼントBOXへ別途配布させていただきます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_msg_chara_08
+ | Value=<br/>【歌晶石×1,000個で応募された方】<br/>歌晶石は2021年10月7日(木)15:00以降に<br/>プレゼントBOXへ別途配布させていただきます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_msg_chara_09
+ | Value=<br/>【歌晶石×1,000個で応募された方】<br/>歌晶石は2021年10月7日(木)15:00以降に<br/>プレゼントBOXへ別途配布させていただきます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_msg_chara_10
+ | Value=<br/>【歌晶石×1,000個で応募された方】<br/>歌晶石は2021年10月7日(木)15:00以降に<br/>プレゼントBOXへ別途配布させていただきます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_period
+ | Value={0}/{1}/{2} {3}:{4:D2} ～ {5}/{6}/{7} {8}:{9:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1730
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1731
+ | Value=ヴァール鎮圧作戦の最中にワルキューレ以外の歌声を感じとった美雲とカナメ。<br/>「この歌…」「私たちの他にも誰かいる？」─美雲、カナメ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1732
+ | Value=何とか難を逃れ、疲労感からへたり込むフレイアに1人の青年が手を差し伸べる。<br/>「安心して。俺はケイオス・デルタ小隊所属、ハヤテ・インメルマン准尉」─ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1733
+ | Value=降り積もった雪を踏みしめ、息を切らせながら吹雪の中を歩き続けるフレイア。<br/>必ずワルキューレになるという想いを胸に、まっすぐ前を見つめていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1734
+ | Value=フレイアが歌の力でヴァールを鎮静化させる瞬間を目の当たりにするハヤテ。<br/>ワルキューレに匹敵するような歌とその光景に、ハヤテは目を離すことができなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1735
+ | Value=ヴァールを鎮圧して安心してしまったのか、その場で崩れるように倒れ込むフレイア。<br/>咄嗟にハヤテが支えるも、直後に聴こえてきたのはお腹の虫の大きな鳴き声だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1736
+ | Value=歌いながらハヤテにマイクを差し出すようなジェスチャーをするフレイア。<br/>若干ためらいながらも、それにちゃんと応えてあげるハヤテなのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1737
+ | Value=襲い掛かってしまったお詫びにとオニギリをご馳走になるハヤテとフレイア。<br/>ちょうどお腹がすいていたフレイアは、一心不乱にオニギリをむさぼるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1738
+ | Value=ワルキューレに襲い掛かるアンノウンを蹴散らすメッサーのVF-31F。<br/>死を呼び込むはずの死神のエンブレムがどこまでも頼もしく見える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1739
+ | Value=フレイアが密航していた貨物船の船員たち。<br/>戦闘宙域の近くを通りかかったがためにヴァールを発症してしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1740
+ | Value=雪が降りしきる惑星ウィンダミアの宇宙港。<br/>降り続く雪で物音を隠せば、貨物に忍び込むのも簡単かもしれない…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1741
+ | Value=ミラージュのパイロットスーツを手に何やらウキウキと楽しそうなマキナ。<br/>持ち前のインスピレーションを発揮して、気分はすっかり凄腕パイロットのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1742
+ | Value=マキナとミラージュがペアを組んで乗り込むマキナ・中島カラーのVF-31C。<br/>ピンク＆ライトブルーに彩られた翼が、ライブの観客たちへ希望の歌を届ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1743
+ | Value=「行くぜエリートのお嬢様、死神野郎に目に物見せてやろうぜ！」<br/>「フン、ヒヨッコのくせに…」─ハヤテ、ミラージュ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1744
+ | Value=女子寮の露天風呂にて、バスタオル1枚の姿でピッタリと寄り添うマキナとレイナ。<br/>ほんのり色づく頬と仲睦まじすぎる光景は、ファンにはちょっと刺激が強すぎるかも…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1745
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1746
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1747
+ | Value=パイロットが意識を失い、落下していくSv-262Baに歌声を届けるマキナとレイナ。<br/>ワルキューレにとって目の前の命を救うことに敵かどうかなんて関係ないのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1748
+ | Value=意識を取り戻したボーグは自身に歌を届けるワルキューレの姿を目の当たりにする。<br/>あれほど嫌悪していた歌声にも関わらず、その光景にしばし呆然としてしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1749
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1750
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1751
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1752
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1753
+ | Value=柔らかな日差しと煌めく小物に飾られた窓際で、まったりと日向ぼっこ中のランカ。<br/>猫の置物を眺めながら、夢が溢れる空想の世界に思いを馳せているのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1754
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1755
+ | Value=水着姿で街頭に立ち、デビュー曲「ねこ日記」のプロモーションを行うランカ。<br/>人々が行き交う通りの中には、最近ランカの周りでよく見かける青年の姿もあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1756
+ | Value=ミシェルから、ファーストライブまでにランカを送り届ける役目を任されたアルト。<br/>これはランカとアルトを2人きりにしてやりたいというミシェルの計らいでもあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1757
+ | Value=【空色模様の交換日記】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1758
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1759
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1760
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1761
+ | Value=【空色模様の交換日記】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1762
+ | Value=【空色模様の交換日記】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1763
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1764
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1765
+ | Value=結婚式場で演奏することになり、ドレスコードに則る形でタキシードに身を包むバサラ。<br/>本人はいまいち乗り気でないものの、伊達なその出で立ちは中々様になっているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1766
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1767
+ | Value=機体を失いながらもガムリンの助けを借りてバサラの元に歌を届けたミレーヌ。<br/>その歌声は輝くエネルギーに変化し、バサラの喉へ癒やしとなって注がれていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1768
+ | Value=ゲペルニッチの謎の力によって声を出すことができなくなってしまったバサラ。<br/>1人海岸で必死に声を絞り出そうとするも、辺りに響くのは空しい波の音だけだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1769
+ | Value=岩場で体を反らしたところ、そのままバランスを崩して倒れ込んでしまうバサラ。<br/>声の不調のせいもあるのか、いつになく格好が付かない形になってしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1770
+ | Value=ミレーヌをプロトデビルンの攻撃から庇いながらも必死に歌おうとするバサラ。<br/>全身を震わせ声なき叫びを繰り返すバサラの姿にミレーヌの心は強く打たれたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1771
+ | Value=機体の背中をレイたちのVF-17T改に支えられながら歌い続けるミレーヌとバサラ。<br/>そして歌いながらも、その視線は信頼する仲間たちへと向けられていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1772
+ | Value=戦いの中でミレーヌが放った歌エネルギーによって声を取り戻すことができたバサラ。<br/>そして歌えなかった鬱憤を晴らすかのように、昇る朝日を前に思いっきり歌うのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1773
+ | Value=バランスを崩しそうになったVF-19改を背中から支えるレイとビヒーダ。<br/>背中を任せられる仲間たちがいるからこそ、バサラたちも全力で歌うことができるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1774
+ | Value=ミレーヌと共に重ねるようにしてサウンドウェーブを放つバサラのVF-19改。<br/>そのエネルギーはプロトデビルンが放ったエネルギー波を圧倒するほどだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1775
+ | Value=声が出せずに苦しむバサラを心配そうに見つめるグババ。<br/>バサラの様子が気になって後をつけてきていたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1776
+ | Value=バサラのギターに装着されているコントロール用のレバー。<br/>突き出た羽の様なデザインが特徴的だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1777
+ | Value=両親の夫婦関係を見てきたせいか、いまいち幸せな結婚をイメージできないミレーヌ。<br/>既に興味は大きなウェディングケーキと、ライブでの演出に移ってしまっているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1778
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1779
+ | Value=ライブ出演を終え、撤収していくバサラたちを乗せたバンとその横をすれ違う少女。<br/>果たして少女が手に持った大きな花束を手渡せる日は来るのだろうか…？
+ | ParentPage=Texts/Bank/master
+}}
+                    

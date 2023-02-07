@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0037
+ | Value=ヴォルドールでの潜入作戦Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0038
+ | Value=ヴォルドールでの潜入作戦Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0039
+ | Value=ヴォルドールでの潜入作戦Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0040
+ | Value=ヴォルドールでの潜入作戦Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0041
+ | Value=レイナ御用達、クラゲの屋台Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0042
+ | Value=レイナ御用達、クラゲの屋台Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0043
+ | Value=レイナ御用達、クラゲの屋台Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0044
+ | Value=レイナ御用達、クラゲの屋台Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0045
+ | Value=レイナ御用達、クラゲの屋台Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0046
+ | Value=この世に開かないドアはないⅠ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0047
+ | Value=この世に開かないドアはないⅡ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0048
+ | Value=この世に開かないドアはないⅢ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0049
+ | Value=この世に開かないドアはないⅣ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0050
+ | Value=この世に開かないドアはないⅤ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0051
+ | Value=お兄ちゃんのお迎え、聖マリア学園Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0052
+ | Value=お兄ちゃんのお迎え、聖マリア学園Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0053
+ | Value=お兄ちゃんのお迎え、聖マリア学園Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0054
+ | Value=お兄ちゃんのお迎え、聖マリア学園Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0055
+ | Value=お兄ちゃんのお迎え、聖マリア学園Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0056
+ | Value=全ての始まり、天空門広場Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0057
+ | Value=全ての始まり、天空門広場Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0058
+ | Value=全ての始まり、天空門広場Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0059
+ | Value=全ての始まり、天空門広場Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0060
+ | Value=全ての始まり、天空門広場Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0061
+ | Value=アルトと歩く、エリア1Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0062
+ | Value=アルトと歩く、エリア1Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0063
+ | Value=アルトと歩く、エリア1Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0064
+ | Value=アルトと歩く、エリア1Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0065
+ | Value=アルトと歩く、エリア1Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0066
+ | Value=遥かなるギャラクシーⅠ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0067
+ | Value=遥かなるギャラクシーⅡ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0068
+ | Value=遥かなるギャラクシーⅢ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0069
+ | Value=遥かなるギャラクシーⅣ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0070
+ | Value=遥かなるギャラクシーⅤ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0071
+ | Value=音が生まれる場所、練習スタジオⅠ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0072
+ | Value=音が生まれる場所、練習スタジオⅡ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0073
+ | Value=音が生まれる場所、練習スタジオⅢ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0074
+ | Value=音が生まれる場所、練習スタジオⅣ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0075
+ | Value=音が生まれる場所、練習スタジオⅤ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0076
+ | Value=リゾート艦で聞いた、バサラの言葉Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0077
+ | Value=リゾート艦で聞いた、バサラの言葉Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0078
+ | Value=リゾート艦で聞いた、バサラの言葉Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0079
+ | Value=リゾート艦で聞いた、バサラの言葉Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0080
+ | Value=リゾート艦で聞いた、バサラの言葉Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0081
+ | Value=戦いの始まり、カタスミパークⅠ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0082
+ | Value=戦いの始まり、カタスミパークⅡ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0083
+ | Value=戦いの始まり、カタスミパークⅢ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0084
+ | Value=戦いの始まり、カタスミパークⅣ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0085
+ | Value=戦いの始まり、カタスミパークⅤ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0086
+ | Value=月が見える場所、幻のセッションⅠ
+ | ParentPage=Texts/Bank/master
+}}
+                    

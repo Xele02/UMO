@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0025
+ | Value=VOPの時にリーダーにすると<br/>発動し攻撃力が{0}アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=val_skill_dsc_0026
+ | Value=VOPの時に発動し<br/>大成功確率が{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dcpt_nm_0001
+ | Value=デコポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dcpt_dsc_0001
+ | Value=デコポイントのシンボルが刻まれたコイン。<br/>ケイオス交換所でデコアイテムと交換できる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bgeff_nm_0001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bgeff_nm_0002
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0002
+ | Value=フレイアの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0003
+ | Value=ケイオス女子寮
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0004
+ | Value=ランカの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0005
+ | Value=バサラの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0006
+ | Value=ミンメイの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0007
+ | Value=惑星エデン 星の丘
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0008
+ | Value=クラゲ祭り
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0009
+ | Value=野外ライブステージ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0010
+ | Value=ワルキューレフェス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0011
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0012
+ | Value=超時空飯店 娘々
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0013
+ | Value=裸喰娘娘
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0014
+ | Value=縁側のある和室
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0015
+ | Value=お花見公園
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0016
+ | Value=中華料理店 娘々
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0017
+ | Value=シェリルの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0018
+ | Value=ラグナの浜辺
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0019
+ | Value=ミラージュの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0020
+ | Value=フロンティア船団の軍病院
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0021
+ | Value=ブックカフェMACROSS
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0022
+ | Value=ミレーヌの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0023
+ | Value=チャペル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0024
+ | Value=カナメの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0025
+ | Value=プラネタリウム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0026
+ | Value=パーティールーム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0027
+ | Value=ラグナ水族館
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0028
+ | Value=マキナとレイナの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0029
+ | Value=紅葉のお茶所
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0030
+ | Value=ハロウィンルーム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0031
+ | Value=マクロスブリッジ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0032
+ | Value=雪の裸喰娘娘
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0033
+ | Value=クリスマス広場
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0034
+ | Value=北欧クリスマス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0035
+ | Value=お正月の和室
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0036
+ | Value=お菓子の部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0037
+ | Value=学校の教室
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0038
+ | Value=ガーデンパーティー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0039
+ | Value=怪しげな森
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0040
+ | Value=ログハウス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0041
+ | Value=ホワイトクリスマス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0042
+ | Value=お正月の庭
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0043
+ | Value=チョコレートの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_set_nm_0044
+ | Value=ベーカリー
+ | ParentPage=Texts/Bank/master
+}}
+                    

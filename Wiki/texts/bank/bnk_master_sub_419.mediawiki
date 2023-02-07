@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0170
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0171
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0172
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0173
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0174
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0175
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0176
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0177
+ | Value=恋愛や仕事、遊びにと燃えあがるのが<br/>夏というもの。暑いときこそ薄着に<br/>着替えて、ときめく夏へと飛び出そう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0178
+ | Value=七色の流星のように降り注ぐ太陽の光を<br/>全身いっぱいに浴び、今日も仲間たちと<br/>ともに、夏の海へと元気に飛び込もう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0179
+ | Value=銀河を旅する移民船団にだって休暇は<br/>必要。リゾート船とまではいかなくても<br/>プールくらいは楽しんでもいいはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0180
+ | Value=楽しい時間はあっという間。短い夏を<br/>惜しみながらも、夏が終わるころには<br/>たくさんの思い出ができているはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0181
+ | Value=時代を超えて伝えられていく歌がある。<br/>時代を超えた歌はいつしか銀河を超え、<br/>種族を超えて伝えられていくのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0182
+ | Value=ランカのデビュー間もない頃の楽曲に<br/>して、代表曲ともいえる『星間飛行』。<br/>今も人々の心を掴み続ける名曲である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0183
+ | Value=アステロイド宙域でのヴァール鎮圧に<br/>向かったワルキューレとデルタ小隊。<br/>ハヤテにとって初の宇宙戦闘となった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0184
+ | Value=千の夜を超えて語られる物語のように、<br/>数万年のときと、長い銀河の夜を超えて<br/>歌という文化もまた歌い継がれていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0185
+ | Value=水平線へ太陽が沈んでいく光景はどこか<br/>物悲しさを感じさせる。さざ波の音色も<br/>終わりゆく夏を惜しむかのようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0186
+ | Value=水しぶきを上げて夏の海を自由気ままに<br/>楽しんだ少女たち。きっと来年も素敵な<br/>姿をみんなに見せてくれるに違いない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0187
+ | Value=かつて内乱に荒れる星に暮らし、多くの<br/>生命を見つめてきたと思われるカナメ。<br/>歌に込める生命もまた特別なのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0188
+ | Value=ハロウィンでお祭り騒ぎの通りを抜け<br/>路地裏に足を踏み入れれば、そこには<br/>ねこたちの世界が広がっているかも…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0189
+ | Value=恋の駆け引きにだって有効ないたずら。<br/>上手にサプライズを演出できたなら、<br/>甘いご褒美が待っているかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0190
+ | Value=アルトにギリアムの最期を話させるため<br/>S.M.Sへと連れてきたオズマ。仲間の死<br/>を語り継ぐことこそ彼らの流儀なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0191
+ | Value=すっかり夜が更けてからもお化けたちは<br/>元気がいっぱい。ちゃんと戸締りをして<br/>いない家はいたずらされてしまうかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0192
+ | Value=ハロウィンにも礼節は必要。行き過ぎた<br/>振る舞いの果てに待つのは、硬く冷たい<br/>檻の中での生活かもしれないのだから…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0193
+ | Value=星間複合企業体として、様々な事業を<br/>手掛けるケイオス。現地の警察組織と<br/>協力する部署もあったりしそうである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0194
+ | Value=ハロウィンを敬い大切にすれば、素敵な<br/>夜の魔法が見られるかもしれない。<br/>お化けもきっと祝福してくれるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0195
+ | Value=ワルキューレの一員となって初めての<br/>誕生日を迎えたフレイア。この素敵な<br/>瞬間を生涯忘れることはないのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0196
+ | Value=フレイアの誕生日パーティーに現れた<br/>美雲は、周囲が見守る中でフレイアに<br/>歌声をプレゼントとして贈るのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0197
+ | Value=歌とリンゴが大好きなワルキューレの<br/>ニューフェイス、フレイア。みんなに<br/>元気を届けるため命の限り歌い続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0198
+ | Value=人との交わりによって、人生は大きく<br/>変化していくもの。先のわからない<br/>人生だからこそ、生命もまた輝くのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0199
+ | Value=銀河にその名を轟かせた歌姫たちが、<br/>時空を超えて再び地球へと集結した。<br/>かつてない舞台の幕がいよいよ開く。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0200
+ | Value=ボーカルとして自身のナンバーも多数<br/>持つミレーヌ。挑戦的なラブソングや<br/>バラードはバサラにも負けてはいない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0201
+ | Value=人種の壁を越え、動物や植物にさえも<br/>気持ちを伝えられるのが歌。交差する<br/>歌声は互いに影響を与えて響き続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0202
+ | Value=我の強いアーティストたちを一纏めに<br/>するのは大変でも、ふわふわ柔らかな<br/>空気があれば意外と軟着陸できるかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0203
+ | Value=クリスマスに流れる嬉し涙と悲し涙。<br/>いくつもの涙が夜を彩り、また次の<br/>涙を輝かせてくれるのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0204
+ | Value=文明が大きく発達した今、プレゼントを<br/>持って忍び込むのは大変。サンタさんは<br/>魔法のパスワードを持っているのかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0205
+ | Value=『歌は生命』の言葉とともに、生命を<br/>懸けてステージに立つカナメ。そして<br/>その歌声は死神の運命をも変えたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0206
+ | Value=群衆の中を手を繋いで駆け抜けていく<br/>2人。交差していく複雑な恋愛模様は、<br/>見ている人々の心を飽きさせない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0207
+ | Value=冬空に雪が舞って鐘の音が響き渡れば<br/>クリスマスの到来だ。銀河中の人々が<br/>気付けるよう、力強く鐘を打ち鳴らせ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0208
+ | Value=子供扱いが大嫌いなミレーヌだけど、<br/>クリスマスが楽しみな気持ちはまだある<br/>はず。プレゼントだって貰えそうかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0209
+ | Value=憧れを追い続けて夢を掴んだランカ。<br/>まさにシンデレラともいうべき物語は<br/>人々の心に夢と希望を溢れさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0210
+ | Value=駆け抜けていくかのようなときの流れの<br/>中、1秒毎に積み重ねてきた自分という<br/>存在。それは決して朽ちることはない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0211
+ | Value=初春の心地良い陽気が、自然に足を<br/>外へと運んでくれる。こういうときは<br/>少し着飾って街を歩くのも悪くない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0212
+ | Value=人は喜びをわかち合う力を持っている。<br/>大切な人と一緒ならば、それは希望や<br/>生きる力を与えて道を照らすのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0213
+ | Value=ラグナの空を取り戻し、再び5人揃った<br/>ワルキューレ。より一層強い絆とともに<br/>女神たちは新しいスタートを切った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0214
+ | Value=新春と書いても実際の春の訪れはまだ<br/>少し先。その代わり空に目を凝らせば、<br/>小さな雪の花が顔を見せてくれるかも。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0215
+ | Value=50万周期の時を超えて呼び覚まされる<br/>異星人たちの文化。歌へと込められた<br/>愛が、再び銀河をひとつにしたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0216
+ | Value=雪の下で草木が花開くときを待つかの<br/>ように、秘められた愛も芽吹くときを<br/>待っている。恋の季節はもうすぐそこ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0217
+ | Value=最初は奇妙な因縁から始まったバサラと<br/>ガムリンの関係。いつしか2人の間には<br/>強い信頼と友情が生まれ始めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0218
+ | Value=バレンタインは恋する乙女たちにとって<br/>一大イベント。ハートもチョコレートも<br/>甘く輝く季節が今年もやってきた！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0219
+ | Value=甘みも苦みも混ぜ合わせて、味わいが<br/>深くなるのは人もチョコレートも一緒。<br/>その誘惑に抗うのはちょっと難しそう。
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_02
+ | Value=バッチリだわ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_03
+ | Value=ふふふっ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_01
+ | Value=ありがとう！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_02
+ | Value=ふぅ…<br/>なんだかお腹がすいちゃったわね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_03
+ | Value=ラグナには<br/>いろんな食べ物があるの。<br/>特に魚介類が豊富よ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_04
+ | Value=もうこんな時間か…<br/>みんなで裸喰娘娘に行こうかな
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_05
+ | Value=はぁ…<br/>行き詰っちゃったわ…
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_06
+ | Value=ちょっと時間ができたわね…<br/>何か楽しいことはないかしら？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_07
+ | Value=気分を変えて<br/>もっと楽しい気分で歌いたいわね…
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_08
+ | Value=おしゃれなものは好きよ。<br/>やっぱり気分が上がるもの！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_09
+ | Value=レッスンも終わったし、<br/>ちょっと買い物に行くのもいいわね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_10
+ | Value=置き物とか雑貨って、<br/>つい買っちゃったりしない？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_11
+ | Value=バッチリだわ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_01
+ | Value=はい、何か用かしら？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_02
+ | Value=ふふっ、どうかしたの？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_03
+ | Value=握手？<br/>ええ、勿論いいわよ！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_04
+ | Value=歌は生命！<br/>今日も気合い入れていくわ！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_05
+ | Value=何か困ったことがあったら<br/>いつでも頼ってね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_06
+ | Value=戦術音楽ユニット、ワルキューレ！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_07
+ | Value=やっぱり、5人で歌っているときが<br/>一番楽しいわね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_08
+ | Value=あなたは、ワルキューレの<br/>どの曲が好き？<br/>参考にさせてもらうわ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_09
+ | Value=この衣装、どうかしら？<br/>気に入った？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_10
+ | Value=最近調子はどう？<br/>無理はしないようにね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_21
+ | Value=フレイアのバースデーパーティーに<br/>美雲も来てくれるみたい。<br/>変わったわね、あの子も…
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_22
+ | Value=美雲のバースデーパーティーを<br/>開こうと思うの。驚く顔が<br/>見たいから…あの子にはまだ内緒ね？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_23
+ | Value=カナメ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_24
+ | Value=マキナ、お誕生日おめでとう！<br/>いつもすごく助かってるわ、<br/>ありがとう
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_25
+ | Value=レイナったら、プレゼントのクラゲを<br/>あっという間に食べちゃったの。<br/>本当にクラゲが好きなのね！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_26
+ | Value=ランカさん、<br/>お誕生日おめでとうございます！<br/>今日はゆっくり過ごしてくださいね。
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_27
+ | Value=お誕生日祝いに、シェリルさんの<br/>歌を歌わせてもらうことになったの。<br/>緊張するわ…！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_28
+ | Value=レイナがミレーヌさんへの<br/>プレゼントを考えてたわ。あの２人、<br/>いつの間に仲良くなったのかしら？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_29
+ | Value=歌に対して真っ直ぐな<br/>生き方をするバサラさん…<br/>本当に見習いたくなるわ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_30
+ | Value=伝説の歌姫に直接<br/>『お誕生日おめでとう』を言える<br/>なんて…ふふっ、なんだか不思議ね！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_31
+ | Value=ハヤテ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_32
+ | Value=ミラージュ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_33
+ | Value=メッサー君に、誕生日プレゼントは<br/>何がいい？って聞いたら…<br/>いらないって言われちゃったの
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_34
+ | Value=ふふっ。<br/>アラド隊長への誕生日プレゼントに、<br/>秘蔵の珍味を用意して正解だったわ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_35
+ | Value=チャック
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_36
+ | Value=アルト
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_37
+ | Value=オズマ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_38
+ | Value=レイ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_39
+ | Value=輝
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_40
+ | Value=ガムリン
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_41
+ | Value=未沙
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_42
+ | Value=私たちの映画がやるんですって！<br/>すごく楽しみね！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_43
+ | Value=伝わってたわよ、私たちの歌を<br/>大切に想ってくれるあなたの気持ち。<br/>本当にありがとう、忘れないわ…！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_44
+ | Value=またいつか会えるといいわね。<br/>あなただったら、ケイオスや<br/>裸喰娘娘のみんなも大歓迎よ！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_45
+ | Value=私、本当にランカさんと一緒に<br/>歌ったりお話したりしたのよね…<br/>今でも夢みたいに感じるわ！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_46
+ | Value=バサラさんにミレーヌさん、本当に<br/>カッコいい人たちだったわ。私たち<br/>の時空でも会ってみたくなっちゃった
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_47
+ | Value=ミンメイさんと時空を超えて一緒に<br/>歌ったこと…記録には残らなく<br/>ても、私たちの心の中に…ずっと！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    

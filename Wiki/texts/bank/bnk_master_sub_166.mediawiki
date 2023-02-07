@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3130
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3131
+ | Value=【ドラマチック・ライフ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3132
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3133
+ | Value=大勢の観客を前に、神々しさとかわいらしさが共存する水着姿を披露してくれた美雲。<br/>ミステリアスにラブリーな魅力が合わさって、観客だけでなく仲間たちも大盛り上がり！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3134
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3135
+ | Value=同じ空中騎士団である双子の弟ザオと比較すると、兄として常に理性的に振る舞うテオ。<br/>慎重さが求められる任務や、咄嗟の判断が必要な場面でも優れた立ち回りを見せる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3136
+ | Value=双子の兄であるテオとともに空中騎士団に所属し、好戦的な性格で空を駆けるザオ。<br/>戦闘では長所とも言える性格だが、単独で突出してしまうことも多いのが玉にキズだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3137
+ | Value=謎の敵機が撤退し、ヴァールも鎮圧されたことを見届けた美雲は高々とサインを掲げる。<br/>その美しさと勇ましさを兼ね備えた女神の姿に、人々は割れんばかりの大歓声を送った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3138
+ | Value=【未来を歌う女神たち】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3139
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3140
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3141
+ | Value=【未来を歌う女神たち】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3142
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3143
+ | Value=【未来を歌う女神たち】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3144
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3145
+ | Value=イメージカラーであるピンクとハートを前面に押し出したマキナのスペシャルステージ。<br/>溢れるかわいらしさと抱きしめたくなる歌声が、ファンのハートをピンクに染め上げる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3146
+ | Value=【ラブリー＆キューン】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3147
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3148
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3149
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3150
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3151
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3152
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3153
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3154
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3155
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3156
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3157
+ | Value=シックなスタイルの衣装を纏い、いつもよりどこか艶めいた表情を見せてくれるレイナ。<br/>お近づきになりたいという紳士淑女の諸君は、無数のトラップにご注意を。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3158
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3159
+ | Value=惑星ヴォルドールでの交戦結果から、フレイアの歌とハヤテが共鳴していることが判明。<br/>状況を飲み込めずにいるも、ハヤテと目が合うとつい意識してしまうフレイアであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3160
+ | Value=ラグナ星から退避したこともあり、マキナと一緒に裸喰娘娘に住むことになったレイナ。<br/>早速テリトリーを主張するレイナであるが、きっとマキナはフリーパスなのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3161
+ | Value=【恋の世界は許可制】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3162
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3163
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3164
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3165
+ | Value=【恋の世界は許可制】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3166
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3167
+ | Value=【恋の世界は許可制】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3168
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3169
+ | Value=いつものご愛顧に応えて、大感謝デーと称してスペシャル料理を振る舞う裸喰娘娘。<br/>チャイナ服姿で手伝うワルキューレたちの姿に、チャックも料理の腕が鳴りそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3170
+ | Value=デルタ小隊の目と耳の役割を務め、故郷であるラグナ星をこよなく愛する男、チャック。<br/>偵察用の機体を駆りながら、戦闘の方にも積極的に参加してくれる小隊の良き兄貴分だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3171
+ | Value=作戦に備えて各々が時間を過ごす中、家族から差し入れられた弁当を手にとるチャック。<br/>チャックの顔をかたどった手作りの弁当には、家族たちの温かな想いが詰まっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3172
+ | Value=空中騎士団にしつこく追い回されていたチャックの元に、ハヤテからの援護が入る。<br/>デルタ小隊が誇る強力なチームワークとともに、ハヤテの成長が垣間見えた瞬間だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3173
+ | Value=ケイオスとの契約更新に伴い、熱い視線を女性クルーたちへと送るチャック。<br/>「まだ誰ともデートしてないしネー♪」─チャック
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3174
+ | Value=ハヤテとミラージュの模擬戦闘の行方を見守っていたアラドとチャックの2人。<br/>気楽に眺めつつも、ハヤテが墜落寸前に陥った際はさすがに冷や汗をかいたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3175
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3176
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3177
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3178
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3179
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

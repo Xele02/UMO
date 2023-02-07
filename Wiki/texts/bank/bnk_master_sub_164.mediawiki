@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3030
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3031
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3032
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3033
+ | Value=【乙女の旗のもとに】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3034
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3035
+ | Value=【乙女の旗のもとに】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3036
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3037
+ | Value=純白のスタイリッシュな衣装で、カラフル&ソフトに彩られた世界に溶け込んだマキナ。<br/>柔らかな色彩の世界と一体になりながらも、その輪郭は変わらない存在感を放っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3038
+ | Value=【希望の大脱出】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3039
+ | Value=突然ルンをピカピカ光らせて飛び出すフレイア。これにはマキナとレイナも思わず仰天。<br/>「ええーっ！？」「ルンピカきたぁっ！」─マキナ、レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3040
+ | Value=惑星ラグナへと侵攻するにあたり、王として自ら指揮を執ると宣言したグラミア。<br/>老いたその身を押して戦場に立つ王の雄姿が、翼の騎士たちを強く奮い立たせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3041
+ | Value=【希望の大脱出】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3042
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3043
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3044
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3045
+ | Value=【希望の大脱出】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3046
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3047
+ | Value=【希望の大脱出】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3048
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3049
+ | Value=明るく爽やかに広がる空の下で、白く愛らしいドレスを纏う花嫁の姿となったミンメイ。<br/>天高く投げられたブーケと降り注ぐ花びらは、次の花嫁の幸せも約束してくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3050
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3051
+ | Value=ステージ本番を前に控え室でメイクを整え、1人静かに時を待つミンメイ。<br/>悲しい思い出と沈んだ心を塗り変え、輝くステージで思いのままに羽ばたくために。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3052
+ | Value=娯楽施設の仮装ホログラムにて、純白のウェディングドレス姿へと変身したミンメイ。<br/>少女の憧れともいえるウェディングドレスに、ミンメイの表情もぱあっと明るく輝く。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3053
+ | Value=新郎の姿になって隣のホログラム台の上に立つ輝に、穏やかな笑顔を向けるミンメイ。<br/>そこにはアイドルとしての忙しい日々を離れ、普通の少女として微笑む姿があった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3054
+ | Value=ミンメイの隣にあるホログラム台に立ったことで、白の燕尾服姿の仮装に変身した輝。<br/>ウェディングドレス姿のミンメイを前にし、ちょっとした新郎気分に浸るのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3055
+ | Value=ミンメイからの呼び出しを嬉しく思いつつも、彼女の立場を心配して遠慮がちな輝。<br/>そんな輝の心配を知ってか、ミンメイはいじらしい仕草を交えて輝を誘うのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3056
+ | Value=繰り返される過激な報道に対し、大きなため息をついてベッドに倒れこんだミンメイ。<br/>くるくると回るランプの飾りをぼんやり眺めながら、憂鬱な表情を浮かべるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3057
+ | Value=ドレスの裾を翻しながら、ホログラム台の上でくるくると回るミンメイ。<br/>思いがけない花嫁姿の仮装に、気持ちも舞い上がっているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3058
+ | Value=トップアイドル熱愛スキャンダルの噂に花を咲かせるマクロスのクルーたち。<br/>「ほんとねえ、今どき清純派なんているわけないのよねえ」─ヴァネッサ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3059
+ | Value=ミンメイと輝が訪れた娯楽施設「スーパー・ルーム」。<br/>ホログラムによって、さまざまな仮装が楽しめる施設である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3060
+ | Value=週刊誌に掲載されたミンメイのスキャンダル記事。<br/>記事には輝が軍人であることなども赤裸々に記されていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3061
+ | Value=花びらが舞い散る桜並木を、愛らしいドレスに身を包んで駆け抜けていくフレイア。<br/>その純情な想いとともに舞い上がる桜吹雪が、見る人の心も桜色に染め上げていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3062
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3063
+ | Value=ヴァールが発生した宙域で、ワルキューレとして元気いっぱいに口上をあげるフレイア。<br/>フレッシュな歌はヴァールを制するのみならず、仲間たちに活力を与えてくれるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3064
+ | Value=ヘルマンに指摘されて、初めて自分がルンを光らせていることに気付いたボーグ。<br/>空中騎士団として鍛錬を重ねてきたものの、まだまだ青さが残るボーグであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3065
+ | Value=ラグナ人の老夫婦の姿を見て、2人が歩んできたであろう人生に想いを馳せるフレイア。<br/>それは憧れとともに、今自分が感じている幸せを2人の姿に重ねているかのようだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3066
+ | Value=曲の内容に合わせるように目まぐるしく変化するスペシャルライブのステージ背景。<br/>フレイアがソロでステージに立った際は、どこまでも青い空が映し出されていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3067
+ | Value=限られた時間だからこそ、みんなと一緒に楽しい時間を過ごせばいいと答えるハヤテ。<br/>それは1分1秒を真剣に生きているフレイアにとって、何よりも心強いものであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3068
+ | Value=フレイアとハヤテのために尽力する理由を、言葉を選ぶようにして答えるミラージュ。<br/>それは自身の想いをごまかしつつも、決して嘘偽りのない本心からくる言葉であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3069
+ | Value=成り行きでフレイアを保護するも、密航の理由を聞いてハヤテは呆れてしまう。<br/>「しかし結婚したくないくらいで密航ねぇ…」─ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3070
+ | Value=被弾して墜落するVF-171を空中でキャッチするVF-31C。<br/>バトロイドへのスムーズな変形と、救出の手際は見事なものである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3071
+ | Value=ウィンダミアにおいて一般的と思われる親子の姿。<br/>厳しい環境の中にも暖かな家庭があることを感じさせてくれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3072
+ | Value=年季の入った仲睦まじいラグナ人の夫婦。<br/>フレイアは最初お年寄りの姿を見たとき、別の星の人と勘違いしたそうな。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3073
+ | Value=深い森の中、星明かりに照らされながら自然に息づく無数の命と心を通わせるランカ。<br/>夜空に弧を描いて回る星たちのように命もまた巡り、星とともに歌を奏でるのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3074
+ | Value=【光舞う星空に】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3075
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3076
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3077
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3078
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3079
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

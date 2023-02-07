@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0430
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0431
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0432
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0433
+ | Value=故郷ウィンダミアのパイロットから裏切り者と罵られ、決意が揺らぐフレイア。<br/>皆が彼女を心配する中、美雲だけは非情ともとれる物言いでフレイアに問いかけた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0434
+ | Value=黒の衣装も相まって、黒猫のような趣きでカラフルに彩られた世界へと溶け込んだ美雲。<br/>しなやかでミステリアスな姿と、時折見せるあどけない表情は美雲の魅力のひとつかも。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0435
+ | Value=空中騎士団のメンバー、ボーグとキース。<br/>地球人の基準ではまだ若い2人だが、空中騎士団を支える優れたパイロットである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0436
+ | Value=ウィンダミア王国の宰相を務める男で、空中騎士団のキースとは旧知の仲である。<br/>眼鏡にはこだわりがあるらしく、自室に多数をコレクションしている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0437
+ | Value=夕飯の時間とはいえ、この日の裸喰娘娘はいつも以上の客数で賑わっていた。<br/>ウィンダミアとの戦争が始まったことで、皮肉にも景気が良くなっているのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0438
+ | Value=メッサーの厳しい物言いに苛立ちを隠せないハヤテだが、その実力は認めていた。<br/>「青い空に一筋、スッと、まっすぐな鋭い線が伸びて…」―ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0439
+ | Value=メッサーと美雲の厳しさに対して、一時は落ち込んでいたハヤテとフレイア。<br/>しかし、その気持ちをバネにできるところも2人は似ていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0440
+ | Value=ウィンダミア王城のどこか、薄暗い広間で歌い続けるハインツ。<br/>不思議な力を持つその歌声だが、本人にかかる負荷は相当なものであるらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0441
+ | Value=美雲に「あなたからは何も感じない」と言われ、とことん落ち込んでしまったフレイア。<br/>あまりの落ち込みように、ルンは真っ黒になってしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0442
+ | Value=ヴァールシンドロームの発生と空中騎士団の出現。<br/>緊張が高まるなか、直ちにデルタ小隊が発進する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0443
+ | Value=夜のラグナに佇むマクロス・エリシオン。<br/>うっすらと明かりに照らされたその巨体は、どこか幻想的にも見える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0444
+ | Value=ウィンダミア軍に占領された惑星に存在する、太古の遺跡。<br/>そこでは何やら怪しげな実験が行われているようだが…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0445
+ | Value=Fire Bomberのボーカリスト、熱気バサラとミレーヌ・ジーナス。<br/>2人の歌声は無限大のエネルギーとなり、希望の光を照らす。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0446
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0447
+ | Value=かつては統合軍に所属しており、バルキリー部隊のパイロットであったレイ。<br/>しかし作戦中に心に傷を負い、あてのない旅に出た先で幼少期のバサラと出会う。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0448
+ | Value=普段はマイクローン化しているが、それでも並の人間を上回る巨体を誇るビヒーダ。<br/>かつて、幼少期のバサラの演奏を耳にしたことがきっかけで音楽の道を歩み始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0449
+ | Value=武器は使うなというバサラの訴えに、ミレーヌも戦場で歌い始める。<br/>2人の歌が相乗効果を生むように、歌エネルギーが爆発的な上昇を見せた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0450
+ | Value=アルカトラズで開催された囚人たちへの慰問ライブ。<br/>本物のランカ・リーの登場に、集まった囚人たちは熱烈な盛り上がりを見せる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0451
+ | Value=特設された大型船のステージで歌うシェリル。<br/>前回のライブが中断されたこともあってか、その歌声には力がこもっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0452
+ | Value=ミンメイの歌うラブソングが、戦闘宙域の全艦へと中継される。<br/>それは戦闘種族ゼントラーディの心の奥底に眠る文化を取り戻させた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0453
+ | Value=バサラとミレーヌの歌声から検知されるエネルギーがどんどん上昇していく。<br/>観測していた敵兵士はそれを脅威とみなし、一時退却を決断した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0454
+ | Value=バサラの歌エネルギーが急激に高まっていることをマックス艦長に報告するDr.千葉。<br/>その数値は実に1万チバソング。ちなみに普段は3千チバソングが限度であるらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0455
+ | Value=サウンドフォースとして戦場に出動するFire Bomber。<br/>部隊連携の指揮は、軍属の経験があるレイが執ることが多い。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0456
+ | Value=バトロイドカーニバルに展示されていたデストロイド・モンスター。<br/>かつての星間大戦時代に運用されていた年代ものである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0457
+ | Value=知らず知らずの内に、ミレーヌの心の中でバサラの存在が大きいものになっていく。<br/>たとえ遠いどこかに離れていたとしても、2人の心は歌を通じて繋がっているはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0458
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0459
+ | Value=統合軍のエースパイロットで、精鋭部隊ダイアモンドフォースの一員。<br/>真面目な性格だが、時折心の底にある熱い情熱を覗かせることもある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0460
+ | Value=Fire Bomberの行くところならどこにでも現れる少女。バサラの大ファン。<br/>バサラに花束を手渡したいようだが、何故かいつも失敗してしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0461
+ | Value=意識を失ったまま目覚めないバサラに、ミレーヌが泣きながら呼びかける。<br/>「ねえ、バサラ起きて！ファイアーとか、ボンバーとか…言ってよぉ！」―ミレーヌ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0462
+ | Value=容赦なく街を破壊するバジュラ。頼みの綱のランカも歌うことができない。<br/>避難した市民たちの心が絶望に染まるなか、もう1人の歌姫が静かに歌い始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0463
+ | Value=バジュラとの戦いの中で、自分が本当は何のために歌いたかったのかを悩むランカ。<br/>そんなランカの心を知って、ブレラは優しく彼女を抱きしめた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0464
+ | Value=白騎士との戦闘中、突如ハヤテのバルキリーの動きが変化した。<br/>それは紛れもなく、フレイアの歌の力の影響を受けてのことだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0465
+ | Value=誕生日プレゼントだと言って、ミレーヌにダイアモンドの指輪を手渡すガムリン。<br/>明らかに特別なそのプレゼントには、ガムリンの想いが託されているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0466
+ | Value=幼い頃のバサラは、ひたすら巨大な山に向かって歌い続けていた。<br/>いつかこの山を動かしてみせると、本気で考えていたらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0467
+ | Value=可変戦闘機に装備するオプションユニット。<br/>歌の力をサウンドエナジーに変換し、増幅して放つことができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0468
+ | Value=はるか昔に誕生した、絶大な力を持つ生命体。<br/>生命を維持するために精神エネルギー「スピリチア」を吸収する必要がある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0469
+ | Value=フレイアの誕生日にハヤテが用意したプレゼント。それは降りしきる真っ白な雪だった。<br/>故郷のウィンダミアを思い出させるサプライズに、フレイアは心からの笑顔を見せた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0470
+ | Value=裸喰娘娘でチャイナドレスに身を包み、元気いっぱい接客をするフレイア。<br/>しかし、仲間たちは無理をして明るく振る舞っていることに気が付いていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0471
+ | Value=フレイアの誕生日パーティーに、なんと私服姿の美雲が現れた。<br/>美雲とみんなが歌うバースデーソング。フレイアの目には大粒の涙が浮かんでいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0472
+ | Value=特製の誕生日ケーキを作るチャック。<br/>かなり大きいサイズのようだが、急がないとフレイアが到着してしまう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0473
+ | Value=空から降る雪を見て、駆け回り大喜びするフレイア。<br/>準備のためにパーティーに遅れてしまったハヤテだが、その甲斐はあったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0474
+ | Value=真っ白な雪の上でハヤテと見つめ合いながら、フレイアは静かに歌い始める。<br/>ルンをピカピカ輝かせるフレイアを、ハヤテは何も言わずに見つめていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0475
+ | Value=自分の父親はどんな人だったのかと、アラドに尋ねるハヤテ。<br/>懐かしそうに、そしてどこか嬉しそうに、アラドは口を開いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0476
+ | Value=雪を見て大はしゃぎするチャックの妹たち。<br/>水かきのある両手いっぱいに雪を掴んで楽しんでいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0477
+ | Value=裸喰娘娘に到着したフレイアを迎える一同。<br/>しかし、そこにハヤテの姿は見当たらなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0478
+ | Value=チャック特製の誕生日ケーキ。<br/>あとはロウソクが吹き消されるのを待つのみだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0479
+ | Value=みんなが選んだプレゼントが運ばれてくる。<br/>一体何が入っているのか、それは開けてみてからのお楽しみ。
+ | ParentPage=Texts/Bank/master
+}}
+                    

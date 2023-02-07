@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1780
+ | Value=バサラの歌声を取り戻し、プロトデビルンを撃退することに成功したミレーヌたち。<br/>夜が明けて朝日が昇り始めると、そこには朝日に負けないくらいに輝く笑顔があった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1781
+ | Value=サウンド装置を装着し、歌エネルギーを発生させることに成功したミレーヌ。<br/>ミレーヌが伸び伸びと歌う一方、バサラはその光景をどこか遠い目で眺めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1782
+ | Value=歌エネルギーの本当の力を発揮させるには、バサラでなければ難しいと語るDr.千葉。<br/>それに対してミレーヌは、自分にだってできると実験の継続を懇願するのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1783
+ | Value=歌エネルギー実験のライブ中、ミレーヌに向けて観客席から笑顔で手を振るガムリン。<br/>バサラが戻らず落ち込み気味だったミレーヌも、その笑顔を受けて調子を取り戻した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1784
+ | Value=再び歌えるようになったことを感謝するバサラに、皮肉も交えて笑顔を返すミレーヌ。<br/>「ふーんだ、歌えなくなったカナリアは海に流されちゃうんだから」─ミレーヌ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1785
+ | Value=バサラとガムリンの間で揺れ動くミレーヌのオーラに一喜一憂するアキコとDr.千葉。<br/>「見事に三角ねぇ」「えぇい、はっきりせんかー！」─アキコ、Dr.千葉
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1786
+ | Value=プロトデビルンに接近するミレーヌの援護に回るダイアモンドフォース。<br/>不用意に攻撃を加えない慎重さもサウンドフォースへの援護となっていそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1787
+ | Value=ガムリンからの声援を受けてピンク色に変化したミレーヌのオーラ。<br/>波打つような動きとその色も相まって、まるでハートのようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1788
+ | Value=バサラとガムリンの間で真っ二つに分かれてしまったミレーヌのオーラ。<br/>まさにミレーヌの2人に対する感情が表れた形になっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1789
+ | Value=羽のようにふわふわと柔らかなステップでライブステージ上を舞い踊るマキナ。<br/>今日もそのスタイルと存在感のある動きで観客の心をふわふわと弾ませてくれるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1790
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1791
+ | Value=いつもは変型してウサギの耳のようなカチューシャになっているマキナのゴーグル。<br/>必要に応じてゴーグルに戻すことで、いろんなパラメーターをチェックできるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1792
+ | Value=有事の際に備えてマルチドローンに改良を加えるレイナとマキナ。<br/>この2人に任せておけば、どんなに難しい調整もバッチリ仕上げてくれるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1793
+ | Value=ワクチンライブに向かうシャトルの中で、ライブ前の決め口上を口にするワルキューレ。<br/>歌を待っている人々のため、心をひとつにしてライブに挑むための大切な儀式だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1794
+ | Value=バルキリーの整備士であるガイから入隊祝いと称した情報端末を渡されたハヤテ。<br/>そこに記録されていた映像は、新人であるハヤテへの思いやりに溢れたものであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1795
+ | Value=チューンアップのおかげでヘルメットなしでも自由に飛べるようになったVF-31J。<br/>エアショーで初めて搭乗したハヤテも、その完璧な仕上がり具合に大喜びだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1796
+ | Value=援軍かと思われた新統合軍によるまさかの襲撃に、一転して窮地に陥ったワルキューレ。<br/>マキナはレイナを抱えると、ジェットを噴射して爆炎の中を突っ切り脱出するのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1797
+ | Value=マキナとレイナの技術コンビに、整備士たちの手でチューンアップされたVF-31J。<br/>AIのサポートを嫌うハヤテに合わせて、さまざまな改修が加えられたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1798
+ | Value=敵のジャミング攻撃による被害状況を分析するマキナとレイナ。<br/>計器を睨むレイナに対し、マキナはゴーグルで周囲への警戒を強めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1799
+ | Value=ワクチンライブ襲撃の知らせを受けて出動したと思われる、新統合軍所属のVF-171。<br/>「おおっ、我が愛しの援軍っち！」─チャック
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1800
+ | Value=裸喰娘娘の特製メニューであるウミグモの姿煮。<br/>かなりきわどい見た目だが、缶詰にもなるくらい味はいいらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1801
+ | Value=純白のウェディングドレスに身を包み、教会を舞台に純潔の花嫁を演じるシェリル。<br/>天使のように寄り添うその姿は、演技を越えて恋に落ちてしまいそうなほどだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1802
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1803
+ | Value=グレイスに連れられ、ギャラクシー船団での早乙女一座の興行を目にしたシェリル。<br/>初めての歌舞伎と天才子役アルトの演技に、シェリルはその小さな胸をときめかせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1804
+ | Value=シェリルが美人で、良いスタイルと大人っぽさを兼ね備えていると認めているクラン。<br/>それでもゼントラ化したときならば…と対抗心を燃やさずにはいられないのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1805
+ | Value=艶やかな唇からキスを投げかけながら、穢れのない瞳でまっすぐに見据えるシェリル。<br/>その唇と瞳の前では、いかなる誓いの言葉であっても霞んで聞こえてしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1806
+ | Value=純白ベールに覆われながら、瞳を閉じて慎ましやかにうつむくシェリルの横顔。<br/>演出上のワンシーンだが、その表情は純潔を表すかのような美しさを湛えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1807
+ | Value=草原で身を起こしながら、アルトが身を挺して助けてくれたことに気付くシェリル。<br/>そしてバジュラ襲撃のときを思い返すと、いとおしむように心情を呟いたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1808
+ | Value=デートの別れ際、必ずイヤリングを探して届けると約束したアルト。<br/>シェリルは込み上げる気持ちを抑え一言だけ返すと、アルトの頬にキスをしたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1809
+ | Value=煌めくステンドグラスに照らされながら、教会で新郎を待つ花嫁。<br/>まるで浮き上がるかのような純白のドレスが神聖な雰囲気を醸し出している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1810
+ | Value=バジュラを迎撃しつつ、いち早くシェリルのもとへと駆けつけたアルトのVF-25F。<br/>バジュラのフォールドに巻き込まれたことが、結果的には功を奏した形になった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1811
+ | Value=本物の空への憧れを語りながら手でかたどった飛行機を太陽にかざすアルト。<br/>そんなアルトに感化されるように、シェリルも手を伸ばし陽射しに手を重ねるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1812
+ | Value=演出としてステージ上の教会に備え付けられた鐘。<br/>重厚なその音色は聴く者に厳かな気持ちを抱かせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1813
+ | Value=淡い紫の生地で仕立てられたウェディングドレスを纏い、光に照らされながら佇む美雲。<br/>花々の香り漂うその立ち姿は、まさに祝福を授ける女神の姿を表すかのようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1814
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1815
+ | Value=フレイアの歌が変化したきっかけとして、ハヤテの映像を見せながら尋ねる美雲。<br/>あまりにも直球な物言いに、フレイアは顔を赤らめながら慌てふためいてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1816
+ | Value=フレイアから歌の変化を指摘されたことを、何やら真剣な面持ちで考え込む美雲。<br/>そんな2人のやりとりを、カナメは少し離れた場所から心配そうに見つめていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1817
+ | Value=遺跡との共鳴にて垣間見たウィンダミアの光景に、美雲はどこか懐かしさをにじませる。<br/>「旋律は風に乗り、何処までも飛んでいく。歌は星を駆け巡り、そして昇華する」─美雲
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1818
+ | Value=美雲から誕生日を祝ってもらった覚えがないという話を聞かされるカナメ。<br/>そして続けざまに語られた美雲の話は、カナメの想像を大きく超えたものであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1819
+ | Value=歌い終えてステージを後にするも、釈然としない表情を浮かべるマキナとレイナ。<br/>うまく言葉にはできないものの、美雲に起きた僅かな変化をお互い気にしていたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1820
+ | Value=銀河ネットワークライブの楽屋裏にてフレイアの歌が変わったと語りかける美雲。<br/>一方フレイアは言葉の意味が分からず、どこかキョトンとした表情を浮かべていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1821
+ | Value=ジークフリードの背に細いワイヤー1本で乗り込む美雲。<br/>一見命知らずな行為だが、注意を引きつけつつ歌を届けるという効果は絶大だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1822
+ | Value=チャックの部屋を訪れた際、部屋の中に風呂場があることに驚くフレイア。<br/>「違うって、ラグナ人のベッドだよ」─ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1823
+ | Value=遺跡と共鳴したときに得た情報をもとに作戦を提案する美雲。<br/>それは行き詰まっていた球状星団を奪還する作戦の糸口となった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1824
+ | Value=惑星ラグナから撤退する際にお店ごと避難してきた裸喰娘娘。<br/>周囲には同じように避難してきた船の姿もある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1825
+ | Value=プロモーション撮影の合間に、バラの咲き乱れる庭園でどこか遠くを見つめるミシェル。<br/>決意を秘めたその眼差しは、支え合う仲間たちと掴み取るべき未来へと向けられている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1826
+ | Value=スナイパーパックを標準装備するVF-25Gに、更にスーパーパックを追加で装備した機体。<br/>大気圏外活動に合わせた構成だが、火力や装甲が強化されてより安定した性能となった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1827
+ | Value=コードVICTORの発令を受け、オズマからの号令に対して敬礼を返すミシェルとルカ。<br/>学園での振る舞いとは打って変わり、規律を重んじる戦士としての姿がそこにあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1828
+ | Value=入隊の意志を見せるアルトに対し、再び逃げるのかと問いかけた上で忠告するミシェル。<br/>「今のままじゃ、いずれ自分が死ぬか…誰かを殺す」─ミシェル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1829
+ | Value=展望台でのアルトとの待ち合わせ中、ずっと星を数えていたというミシェル。<br/>その常人離れした視力は、凄腕のスナイパーとして遺憾なく発揮されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=rn_0136
+ | Value=SUNSET WEDDING
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0137
+ | Value=デュエット・ランナー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0138
+ | Value=<size=18>命がけの出会い ～ノーザンクロス～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0139
+ | Value=<size=20>立ち上がれ5人の女神たち</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0140
+ | Value=ROCK'N'ROLL FIRE！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0141
+ | Value=ダイナム・ダイナミック
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0142
+ | Value=ロマンティック☆デート @Formo
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0143
+ | Value=<size=18>ワルキューレはあきらめない!!!!!</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0144
+ | Value=<size=18>君に届け→ ～Halloween live～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0145
+ | Value=HELLO！MY FRIENDS！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0146
+ | Value=<size=18>楽園 ～WANNA BE AN ANGEL～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0147
+ | Value=<size=18>幻惑レスキュー!!!!! ～チェンジ!!!!!～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0148
+ | Value=<size=18>シルバームーン・ホーリームーン</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0149
+ | Value=Glow in the dark
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0150
+ | Value=燃える瞳の小白竜
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0151
+ | Value=不思議な時の迷宮
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0152
+ | Value=<size=20>会えないときのValentine</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0153
+ | Value=<size=20>かじかむ声 ～唇の凍傷～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0154
+ | Value=<size=18>無垢になれ！ ～つらみ現在進行形～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0155
+ | Value=ふたりの恋のマホウ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0156
+ | Value=<size=18>吹き抜ける風 ～NEVER SAY DIE～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0157
+ | Value=<size=18>超時空ファイナルLive ～Act.1～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0158
+ | Value=<size=18>超時空ファイナルLive ～Act.2～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0159
+ | Value=<size=18>超時空ファイナルLive ～Act.3～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0001
+ | Value=フレイアがログインしました
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0002
+ | Value=記憶の時空で楽曲を1曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0003
+ | Value=記憶の時空で楽曲を2曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0004
+ | Value=記憶の時空で楽曲を3曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0005
+ | Value=記憶の時空で楽曲を4曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0006
+ | Value=記憶の時空で楽曲を5曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0007
+ | Value=記憶の時空で楽曲を6曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0008
+ | Value=記憶の時空で楽曲を7曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0009
+ | Value=記憶の時空で楽曲を8曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0010
+ | Value=記憶の時空で楽曲を9曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0011
+ | Value=記憶の時空で楽曲を10曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0012
+ | Value=記憶の時空で楽曲を11曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0013
+ | Value=記憶の時空で楽曲を12曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0014
+ | Value=記憶の時空で楽曲を13曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0015
+ | Value=記憶の時空で楽曲を14曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0016
+ | Value=記憶の時空で楽曲を15曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0017
+ | Value=記憶の時空で楽曲を16曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0018
+ | Value=記憶の時空で楽曲を17曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0019
+ | Value=記憶の時空で楽曲を18曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0020
+ | Value=記憶の時空で楽曲を19曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0021
+ | Value=記憶の時空で楽曲を20曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0022
+ | Value=記憶の時空で楽曲を21曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0023
+ | Value=記憶の時空で楽曲を22曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0024
+ | Value=記憶の時空で楽曲を23曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0025
+ | Value=記憶の時空で楽曲を24曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_dsc_0026
+ | Value=記憶の時空で楽曲を25曲解放
+ | ParentPage=Texts/Bank/master
+}}
+                    

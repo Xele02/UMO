@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=event_mission_changemusic_desc_002
+ | Value=曜日イベント楽曲が<br/>プレイ可能回数の上限に達したため<br/>再度楽曲を選び直しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_changemusic_desc_003
+ | Value=ボーナス楽曲の対象が変更されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_changemusic_caution
+ | Value=ボーナス楽曲からランダムで選択が行われます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_changemusic_caution2
+ | Value=前回プレイした楽曲はボーナス楽曲ではなくなりました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_changemusic_format
+ | Value={0}{1}{2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission
+ | Value=
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_setting_title
+ | Value=ミッション設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_setting_desc_001
+ | Value=楽曲選択設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_setting_desc_002
+ | Value=ミッション決定後、自動で選択される楽曲について設定します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_setting_desc_003
+ | Value=楽曲は任意に選択し直すことができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_setting_desc_004
+ | Value=ボーナス楽曲からランダムで選択する
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_setting_desc_005
+ | Value=前回プレイした楽曲を選択する
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_mission_comborank
+ | Value=<br/>({0}コンボ)
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_anim_name_01
+ | Value=マクロスΔ(デルタ)（全26話）
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_anim_name_02
+ | Value=マクロスＦ（全25話）
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_anim_name_03
+ | Value=マクロス7（全52話）
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_anim_name_04
+ | Value=超時空要塞マクロス（全36話）
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_title
+ | Value=歌レート詳細
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_grade_title
+ | Value=歌グレード一覧
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_total
+ | Value=合計
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_up
+ | Value=↑
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_not_found
+ | Value=歌レートの記録がありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_ranking_not_found
+ | Value=歌レートランキングの記録がありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_next_01
+ | Value=あと
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_next_02
+ | Value=で
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_must
+ | Value=必要歌レート
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_get_reward_desc_01
+ | Value=歌グレードが上昇したので、報酬としてアイテムを獲得しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_get_reward_desc_02
+ | Value=報酬は全てプレゼントBOXに送られます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_desc
+ | Value=歌グレードはハイスコア上位10曲の歌レートの合計値で決まります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_rate_rank_unit
+ | Value={0}位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_gacha_box_period
+ | Value=開催期間 {0}/{1}/{2} {3}:{4:D2} ～ {5}/{6}/{7} {8}:{9:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_gacha_box_medama_plate_name
+ | Value=目玉プレート
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_gacha_box_list_count
+ | Value=報酬リスト{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_01
+ | Value=娘くじ☆　残りアイテム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_02
+ | Value=残り
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_03
+ | Value=娘くじ☆をすべて引いたため、中身を入れ替えます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_04
+ | Value=娘くじ☆は終了しました。<br/>タイトル画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_05
+ | Value={0}/{1}/{2} {3}:{4:D2} に詳細が公開されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_06
+ | Value=1回の交換に必要な勲章数：<color=#C8087E>{0}</color>個
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_07
+ | Value=勲章を<color=#C8087E>{0}</color>個使用して<br/>アーネスト艦長からの報酬と<br/><color=#C8087E>{1}</color>回交換しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_08
+ | Value=報酬リスト{0}　残りアイテム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_09
+ | Value=次のリストに変更しますか？<br/>変更すると前のリストには戻せなくなります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_10
+ | Value=1回交換するために必要な勲章の数が<br/>以下のように変更されます。<br/><color=#C8087E>{0}</color>→<color=#C8087E>{1}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_11
+ | Value=報酬リストの変更を行いました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_12
+ | Value=目玉アイテムを引き当てたため<br/>報酬リストの変更が<br/>行えるようになりました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_gacha_box_text_13
+ | Value=アーネスト艦長からの報酬をすべて交換したため<br/>次のリストに変更します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_ar_marker_emblem_title
+ | Value=称号獲得
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_ar_marker_emblem_text_01
+ | Value=以下の報酬を受け取りました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pupup_music_select_periodover_text_001
+ | Value=選択した楽曲のプレイ可能期間が終了しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pupup_music_select_periodover_text_002
+ | Value=選択した楽曲のプレイ可能期間が終了しました。<br/>イベントホーム画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

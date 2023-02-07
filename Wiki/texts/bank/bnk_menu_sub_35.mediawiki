@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_rack
+ | Value=仮
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_other
+ | Value=仮
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_filter
+ | Value=フィルター
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_title_h1
+ | Value=フィルター設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_mainep_title_h2
+ | Value=解放状況
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_series_title_h2
+ | Value=シリーズ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_diva_val_title_h2
+ | Value=歌姫／バルキリー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_mainep_item_lock
+ | Value=未解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_mainep_item_unlock
+ | Value=解放済
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_mainep_item_enable_unlock
+ | Value=プレート解放可
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_option_data_title
+ | Value=データ管理
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_option_cacheclear_title
+ | Value=データ修復
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_option_cacheclear_desc1
+ | Value=ゲームデータを削除して、データ修復を行います。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_option_cacheclear_desc2
+ | Value=ゲームがうまく起動しない場合などにお試しください。<br/><color=#C8087E>※プレイデータは削除されません。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_option_bunchinstall_title
+ | Value=一括ダウンロード
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_option_bunchinstall_desc1
+ | Value=ゲームプレイに必要なデータを、一括でダウンロードします。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_option_bunchinstall_desc2
+ | Value=通信を減らし、快適にプレイできるようになります。<br/><color=#C8087E>※ダウンロードが終了するまで他の操作が行えなくなります。<br/>※Wi-Fi環境でのダウンロードをおすすめします。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=episode_sort_filter_empty
+ | Value=該当するエピソードがありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_homebg_title
+ | Value=背景選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_homebg_scene_select
+ | Value=選択したプレートを背景に設定しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_homebg_default_scene
+ | Value=背景をデフォルトに設定しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_homebg_default_scene_name
+ | Value=デフォルト背景
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home040
+ | Value=背景を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_quest_receive_vc_caution
+ | Value=※歌晶石はプレゼントBOXに送られます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=homebgselect_title
+ | Value=ホーム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=select_costume_desc01
+ | Value=※ここで変更した衣装はユニット編成には反映されません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_rarity_title_h2
+ | Value=レアリティ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_rarity_01
+ | Value=★ 1
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_rarity_02
+ | Value=★ 2
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_rarity_03
+ | Value=★ 3
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_rarity_04
+ | Value=★ 4
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_rarity_05
+ | Value=★ 5
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_rarity_06
+ | Value=★ 6
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_rarity_07
+ | Value=★ 7
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_name_decomascot
+ | Value=デコマスコット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_bunchinstall_error_storage_title
+ | Value=ストレージエラー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_bunchinstall_error_storage_desc
+ | Value=ファイルのダウンロードに失敗しました。<br/>ストレージに十分な空き容量を確保して、<br/>もう一度お試しください。<br/><br/><color=#C8087E>※キャンセルした場合はタイトル画面に戻ります。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_bunchinstall_error_other_title
+ | Value=ダウンロードエラー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_bunchinstall_error_other_desc
+ | Value=ファイルのダウンロードに失敗しました。<br/>インターネットへの接続や電波の状況を確認して、<br/>もう一度お試しください。<br/><br/><color=#C8087E>※キャンセルした場合はタイトル画面に戻ります。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_costumeselect_home
+ | Value=楽屋に反映
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_loginbonus_caution
+ | Value=スペシャルパスのおまけとして{0}を{1}{2}配布します。<br/><color=#8E0529>※所持上限を超えた分は消失します。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_select
+ | Value=歌晶石もしくはガチャチケットを使ってガチャを引きます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_select_title
+ | Value=月間パスプラン確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_select_desc
+ | Value=月間パスの各種プランについて確認ボタンをタップして確認できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_popup_text03
+ | Value=スペシャルパスをご利用いただくには、<br/>同意事項を承認いただく必要があります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_popup_text04
+ | Value=<size=22><color=#8e0529>※引き継ぎしてから別の月間パスへの乗り換えを行われる場合、<br/>旧端末での解約を済ませてから購入いただくようお願いいたします。</color></size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_popup_text05
+ | Value=歌マクパスをご利用いただくには<br/>現在契約中のスペシャルパスを<br/>解約いただくようお願いいたします。<br/><color=#C8087E>※スペシャルパスの有効期間終了後に<br/>歌マクパスを契約することができます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_popup_text06
+ | Value=歌マクパスをご利用いただくには<br/>スペシャルパスの有効期間終了までお待ちください。<br/><color=#C8087E>※スペシャルパスの有効期間終了後に<br/>歌マクパスを契約することができます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_sp_title
+ | Value=スペシャルパス購入
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_sp_text01
+ | Value=■同意事項<br/>・スペシャルパスの有効期間は購入してから1ヶ月間です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

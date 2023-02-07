@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0345
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を500回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0346
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を600回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0347
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を700回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0348
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を800回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0349
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を900回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0350
+ | Value=【ライブ】で<br/>【超時空要塞マクロス】の楽曲を1000回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0351
+ | Value=【ライブ】で【マクロス7】の楽曲を300回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0352
+ | Value=【ライブ】で【マクロス7】の楽曲を350回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0353
+ | Value=【ライブ】で【マクロス7】の楽曲を400回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0354
+ | Value=【ライブ】で【マクロス7】の楽曲を450回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0355
+ | Value=【ライブ】で【マクロス7】の楽曲を500回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0356
+ | Value=【ライブ】で【マクロス7】の楽曲を600回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0357
+ | Value=【ライブ】で【マクロス7】の楽曲を700回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0358
+ | Value=【ライブ】で【マクロス7】の楽曲を800回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0359
+ | Value=【ライブ】で【マクロス7】の楽曲を900回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0360
+ | Value=【ライブ】で【マクロス7】の楽曲を1000回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0361
+ | Value=【ライブ】で【マクロスF】の楽曲を300回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0362
+ | Value=【ライブ】で【マクロスF】の楽曲を350回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0363
+ | Value=【ライブ】で【マクロスF】の楽曲を400回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0364
+ | Value=【ライブ】で【マクロスF】の楽曲を450回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0365
+ | Value=【ライブ】で【マクロスF】の楽曲を500回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0366
+ | Value=【ライブ】で【マクロスF】の楽曲を600回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0367
+ | Value=【ライブ】で【マクロスF】の楽曲を700回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0368
+ | Value=【ライブ】で【マクロスF】の楽曲を800回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0369
+ | Value=【ライブ】で【マクロスF】の楽曲を900回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0370
+ | Value=【ライブ】で【マクロスF】の楽曲を1000回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0371
+ | Value=【ライブ】で【マクロスΔ】の楽曲を300回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0372
+ | Value=【ライブ】で【マクロスΔ】の楽曲を350回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0373
+ | Value=【ライブ】で【マクロスΔ】の楽曲を400回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0374
+ | Value=【ライブ】で【マクロスΔ】の楽曲を450回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0375
+ | Value=【ライブ】で【マクロスΔ】の楽曲を500回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0376
+ | Value=【ライブ】で【マクロスΔ】の楽曲を600回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0377
+ | Value=【ライブ】で【マクロスΔ】の楽曲を700回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0378
+ | Value=【ライブ】で【マクロスΔ】の楽曲を800回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0379
+ | Value=【ライブ】で【マクロスΔ】の楽曲を900回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0380
+ | Value=【ライブ】で【マクロスΔ】の楽曲を1000回クリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0381
+ | Value=フルコンボを150回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0382
+ | Value=フルコンボを200回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0383
+ | Value=フルコンボを300回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0384
+ | Value=フルコンボを400回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0385
+ | Value=フルコンボを500回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0386
+ | Value=フルコンボを750回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0387
+ | Value=フルコンボを1000回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0388
+ | Value=フルコンボを1250回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0389
+ | Value=フルコンボを1500回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0390
+ | Value=フルコンボを2000回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0391
+ | Value=フルコンボを2500回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0392
+ | Value=スコアランクSSを150回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0393
+ | Value=スコアランクSSを200回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_0394
+ | Value=スコアランクSSを300回達成
+ | ParentPage=Texts/Bank/master
+}}
+                    

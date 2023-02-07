@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1830
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1831
+ | Value=単身で行動を起こすルカの姿を見止めたミシェルは、咄嗟にクランを引き寄せ身を隠す。<br/>一方クランはそんなことなど露知らず、その近すぎる距離にどぎまぎしてしてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1832
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1833
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1834
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1835
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1836
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1837
+ | Value=マクロス級の艦長をイメージしたかのような、特製の艦長服に身を包むフレイア。<br/>格式ある装いにクールな表情を浮かべ、ポーズもどことなく挑戦的だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1838
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1839
+ | Value=次の出演までの休憩中、2人っきりで歌の感想について話し合うフレイアとハヤテ。<br/>フレイアは今もドキドキしているとルンを輝かせ、ハヤテをじっと見つめ返していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1840
+ | Value=ヴァール化したパイロットが搭乗するコックピットに歩み寄り、歌声を届ける美雲。<br/>息がかかるほどの近さで響き渡る歌声に、パイロットは瞬く間に理性を取り戻した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1841
+ | Value=【ごりごり出航準備！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1842
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1843
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1844
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1845
+ | Value=【ごりごり出航準備！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1846
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1847
+ | Value=【ごりごり出航準備！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1848
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1849
+ | Value=夜空をイメージさせるかのようなシャープな衣装を纏い、星空のステージに立つレイナ。<br/>軽快なリズムとフットワークで、星々の輝きを繋ぎ合わせるかのように駆け抜けていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1850
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1851
+ | Value=フレイアの素質を見極めるべく、変装して一般人を装うワルキューレのメンバーたち。<br/>ホログラムによる衣装の投影技術により、まさに変幻自在ともいえる変装が可能なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1852
+ | Value=オーディションでの芳しくないフレイアの数値に、美雲は釈然としない表情を浮かべる。<br/>「緊張しちゃったのかな？」「………」マキナ、美雲
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1853
+ | Value=バレッタシティでのヴァール症候群の中継にざわつくモノレールの乗客たち。<br/>ラグナに拠点を構えるワルキューレが、この事態を放っておくわけがないはずだが…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1854
+ | Value=惑星アル・シャハルの衛星軌道上にて、各種センサーの数値を監視するレイナ。<br/>VF-31Eの索敵能力も利用して、かなりの広範囲をフォローしているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1855
+ | Value=アンノウンに対し、必殺と称するサブマリンアタックを仕掛けたチャック。<br/>ところが相手の予想を上回る機動性に、背後をつきながらも取り逃がしてしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1856
+ | Value=合格者なしという結果を受け、失意のまま帰りのモノレールを待つフレイア。<br/>足りなかったのは実力か、思いの強さか。──今のフレイアに答えは出なかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1857
+ | Value=クラゲを使った新商品をネタに、レイナの気を引こうと試みるチャック。<br/>なお、クラゲは生派であるレイナにはあっさり袖にされてしまったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1858
+ | Value=空母へと肉薄し、発進カタパルトから直接内部に攻撃を加えるキースのSv-262Hs。<br/>無数のミサイルを内部に叩き込まれた空母は、誘爆を繰り返しながら爆散してしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1859
+ | Value=ヴァールによって暴徒化した市民の様子を中継するリポーター。<br/>しかし次の瞬間、起こった爆発によって映像は途切れてしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1860
+ | Value=惑星ラグナの海側エリアと丘の上のエリアを繋ぐモノレール。<br/>開放的な車内から見える景色も観光ポイントのひとつといえそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1861
+ | Value=水底を思わせるような色合いの衣装に身を包み、星の瞬くステージに降り立ったマキナ。<br/>柔らかな歌声とステップは、流れる水のように銀河の星々へ癒やしを与えるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1862
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1863
+ | Value=オーディションに備える参加者たちを、舞台裏からこっそりと観察するレイナとマキナ。<br/>新たなメンバーを迎えるにあたり、候補者の適正や素質のチェックに余念がないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1864
+ | Value=目的は果たしたと語るロイドに対し、叩けるときに叩くべきだと詰め寄るキース。<br/>積極性を欠く方針に、キースのみならず空中騎士団の面々は歯がゆさを感じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1865
+ | Value=惑星アル・シャハルでのフレイアの歌声に、それぞれ感想を伝えるワルキューレたち。<br/>「きゃわわーな歌声だったよ！」「チクチクしてて、気持ち良かった」─マキナ、レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1866
+ | Value=なんと最終オーディションの内容はフレイアの素質を見極めるための壮大なドッキリ。<br/>特殊メイクに肉襦袢、血糊まで用意する周到さにすっかり騙されたフレイアであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1867
+ | Value=投げ出されていた音楽プレーヤーを拾いあげ、フレイアに声を掛ける乗客の1人の女性。<br/>フレイアはうまく状況を飲み込めずにいたが、その声には確かに聞き覚えがあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1868
+ | Value=突然の帰投命令に対し、勝てる戦いであったと不満を噴出させる空中騎士団の面々。<br/>老練家であるヘルマンも、このときばかりは腑に落ちないという様子だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1869
+ | Value=控え室の様子を眺めていたマキナが指差すモニターに映っていたフレイア。<br/>見られているとは露知らず、鉢巻きを締めて気合十分といった様子である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1870
+ | Value=背後から接近するメッサーのVF-31Fから鋭い風を感じ取ったテオとザオ。<br/>余裕のあった態度から一転、その鋭さに対して緊張が走る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1871
+ | Value=ワルキューレのオーディション参加者たちに配られたリストバンド。<br/>歌を正確に記録するためとあるが、実際には別の目的もありそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1872
+ | Value=Sv-262に搭載された強力な電子ジャミング機能。<br/>対策が不十分であった場合、機体が分身しているかのように見えるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1873
+ | Value=マクロス級の艦長をイメージしたかのような、特製の艦長服に身を包むカナメ。<br/>凛々しくもチャーミングなその姿は、頼もしさと魅力に溢れている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1874
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1875
+ | Value=ヴォルドール遺跡での戦術ライブ中、フォールド波の乱れを感じ取るワルキューレたち。<br/>カナメは計測した数値から、遺跡が歌に反応しているということをいち早く突き止めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1876
+ | Value=クラゲラーメンにラグナエビも乗せて奢るという約束で小隊メンバーを鼓舞するアラド。<br/>「了解！」「ゲッコウアワビもな！」「まいどあり！」─ミラージュ、ハヤテ、チャック
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1877
+ | Value=【操舵もOK、私が艦長！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1878
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1879
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

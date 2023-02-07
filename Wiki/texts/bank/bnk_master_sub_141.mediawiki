@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1880
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1881
+ | Value=【操舵もOK、私が艦長！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1882
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1883
+ | Value=【操舵もOK、私が艦長！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1884
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1885
+ | Value=真紅の衣装を纏い、遠い宇宙の彼方へ向かって祈りを捧げるかのように歌うシェリル。<br/>気高さと無限の愛を湛えたその歌声は、大切な人たちへの想いとなって繋がっていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1886
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1887
+ | Value=遠くフロンティアのステージからイヤリングを通じて届けられたシェリルたちの歌声。<br/>絶望的な状況の中、アルトは魂を鼓舞するような力強い歌声にその身を奮い立たせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1888
+ | Value=戦場の様子を見つめつつも、アルトの話題には、ついムキになってしまうシェリル。<br/>「誤解しないで！わたしが心配してるのはギャラクシーよ！」─シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1889
+ | Value=真紅の衣装に身を包み、サヨナラライブを締めくくる最後の1曲を歌い始めたシェリル。<br/>その歌と想いは、遠くの銀河で命を懸けて戦うアルトたちのもとへと向けられていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1890
+ | Value=いよいよ最後の1曲を残すのみとなったシェリルのサヨナラライブ。<br/>シェリルは改めてフロンティアの人々へ感謝の気持ちを伝えるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1891
+ | Value=シェリルとの別れ際、イヤリングを「幸運のお守り」として貸してもらったアルト。<br/>アルトはVF-25Fのコックピットにイヤリングを飾り、初めての戦場へと向かった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1892
+ | Value=カイトスを護衛しながら宙域周辺に広がるフォールド断層に対し苦言を漏らすルカ。<br/>断層によって生じるタイムラグが、救出をより困難なものにしていたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1893
+ | Value=誰も予想だにしなかったバジュラの母艦の出現に、愕然とするS.M.Sのクルーたち。<br/>「フォールド断層をダイレクトに越えてきたっていうの…？」─ラム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1894
+ | Value=仲間たちの活躍や、ケーニッヒ・モンスターの火力を前に圧倒されるアルト。<br/>思わず呆然とするアルトだったが、その様子にすかさずオズマの檄が飛ぶ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1895
+ | Value=フォールド断層を越えて突如現れたナイト級バジュラ。<br/>その威容は逃げるカイトスに対し、容赦なく牙をむいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1896
+ | Value=ナイト級バジュラから検出された異様なフォールドエネルギー反応。<br/>「まさか、フォールドリアクター！？」─ルカ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1897
+ | Value=真紅の衣装を纏い、遠い宇宙の彼方へ向かって祈りを捧げるかのように歌うランカ。<br/>優しい心と限りなく純粋なその歌声は、大切な人たちとの絆となって繋がっていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1898
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1899
+ | Value=オズマが残したメッセージから出撃のことを知り、不安で俯いてしまうランカ。<br/>「そんな！！じゃあアルト君も！？」─ランカ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1900
+ | Value=ひとつの想いを通じて繋がった精神世界で、ランカとシェリルはお互いの心を通わせる。<br/>そして、シェリルの一緒に歌って欲しいという願いに、ランカはそっと頷くのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1901
+ | Value=遠い場所で戦うアルトたちを想い、観客席からシェリルと一緒になって歌うランカ。<br/>力強い旋律に想いを重ねて、遠い宇宙の彼方へと届けるかのように歌声を響かせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1902
+ | Value=オズマの制止を受けてなお、データ収集のためバジュラの母艦へと接近するルカ。<br/>バジュラのデータ採取に集中するあまり、周囲の警戒がおろそかになってしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1903
+ | Value=突撃するアルトを援護していたミシェルの目に、未確認の機体が映り込む。<br/>訝しがるミシェルを余所に、機体は赤い軌跡を描きながら戦場を駆け抜けていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1904
+ | Value=シェリルのイヤリングを通じ、バジュラの体内に響き渡るランカとシェリルの歌声。<br/>その歌声は物陰からアルトの動向を監視していたブレラの元へも届いていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1905
+ | Value=バジュラの母艦付近でデータ収集中、突然反応が途絶えるルカのRVF-25。<br/>通常であれば撃墜を疑うような場面だが、オズマからの報告は耳を疑うものであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1906
+ | Value=バジュラによって捕獲され、ナイト級バジュラの体内に囚われるRVF-25。<br/>捕獲に至った理由については不明だが、バジュラの習性に関係しているのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1907
+ | Value=小型のバジュラを発進させながら無数の対空砲火を放つナイト級バジュラ。<br/>その様相はまさにハリネズミといったところである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1908
+ | Value=ランカが愛用しているバルキリーを模した形状のリュックサック。<br/>サヨナラライブにてアルトが座るはずだったであろう座席へと置かれていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1909
+ | Value=シェリルとランカの歌を背に受けながら、遠い空の彼方へと想いを馳せるアルト。<br/>清廉な魂と限りない空への憧れは、大切な人たちとの運命となって繋がっていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1910
+ | Value=フロンティア船団における一般機の標準装備である、スーパーパック装備のVF-25F。<br/>アルトもS.M.S隊員として数々の戦場へこの機体で出撃し、バジュラ戦役を戦い抜いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1911
+ | Value=フライト・デッキ上で発進準備を整えたアルトに、ブリッジから発進の合図が出される。<br/>「グッドラック、スカル4」「サンキュー！」─ラム、アルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1912
+ | Value=怯まず前に出る意志をみせたアルトに、オズマは茶化しつつも満足げな表情を浮かべた。<br/>「なら、俺の尻の匂いが嗅げる位置から絶対に離れるなよ」─オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1913
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1914
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1915
+ | Value=前線へ出るのは危険と進言するキャシーに、改めて大統領のオーダーを問うジェフリー。<br/>そして、オーダーを満たす手段がまだ残されていることを堂々と言い放つのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1916
+ | Value=バジュラの体内で機体が中破した上、小型バジュラに押さえつけられてしまうアルト。<br/>絶体絶命の状況に追い込まれたそのとき、シェリルのイヤリングが輝き歌声が響き渡る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1917
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1918
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1919
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1920
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1921
+ | Value=おしゃれでキュートな花柄モチーフのビキニを纏い、夏の海を絶賛満喫中なマキナ。<br/>夏の陽射しを受けてキラキラ光る水しぶきが、ふわふわボディーを魅力的に弾けさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1922
+ | Value=【魅惑のサマーバリュー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1923
+ | Value=マキナから重要任務として、メッサーをクラゲ祭りに連れ出す役を命じられたハヤテ。<br/>周囲と距離を置くメッサーの態度から、難しい任務かに思われていたが…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1924
+ | Value=クラゲ祭りの夜、自分たちもいつどうなるかわからないとしんみり語るマキナ。<br/>「だから楽しむ。今を、精一杯」「──うん」─レイナ、マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1925
+ | Value=【魅惑のサマーバリュー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1926
+ | Value=【魅惑のサマーバリュー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1927
+ | Value=【魅惑のサマーバリュー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1928
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1929
+ | Value=【魅惑のサマーバリュー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=diva_07
+ | Value=シェリル・ノーム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_08
+ | Value=ミレーヌ・ジーナス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_09
+ | Value=熱気バサラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_10
+ | Value=リン・ミンメイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_s_01
+ | Value=フレイア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_s_02
+ | Value=美雲
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_s_03
+ | Value=カナメ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_s_04
+ | Value=マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_s_05
+ | Value=レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_s_06
+ | Value=ランカ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_s_07
+ | Value=シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_s_08
+ | Value=ミレーヌ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_s_09
+ | Value=バサラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_s_10
+ | Value=ミンメイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0001
+ | Value=クロースストーン（小）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0002
+ | Value=クロースストーン（中）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0003
+ | Value=クロースストーン（大）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0004
+ | Value=きゃわわドール（フレイア）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0005
+ | Value=きゃわわドール（美雲）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0006
+ | Value=きゃわわドール（カナメ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0007
+ | Value=きゃわわドール（マキナ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0008
+ | Value=きゃわわドール（レイナ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0009
+ | Value=きゃわわドール（ランカ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0010
+ | Value=きゃわわドール（シェリル）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0011
+ | Value=きゃわわドール（ミレーヌ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0012
+ | Value=きゃわわドール（バサラ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_nm_0013
+ | Value=きゃわわドール（ミンメイ）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0001
+ | Value=衣装を少しだけ強化できるアイテム。<br/><color=#C8087E>※バルキリーオペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0002
+ | Value=衣装を強化できるアイテム。<br/><color=#C8087E>※バルキリーオペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0003
+ | Value=衣装を大幅に強化できるアイテム。<br/><color=#C8087E>※バルキリーオペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0004
+ | Value=フレイア衣装のきゃわわランク★4を解放できるアイテム。<br/><color=#C8087E>※フレイアの歌姫オペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0005
+ | Value=美雲衣装のきゃわわランク★4を解放できるアイテム。<br/><color=#C8087E>※美雲の歌姫オペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0006
+ | Value=カナメ衣装のきゃわわランク★4を解放できるアイテム。<br/><color=#C8087E>※カナメの歌姫オペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0007
+ | Value=マキナ衣装のきゃわわランク★4を解放できるアイテム。<br/><color=#C8087E>※マキナの歌姫オペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0008
+ | Value=レイナ衣装のきゃわわランク★4を解放できるアイテム。<br/><color=#C8087E>※レイナの歌姫オペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0009
+ | Value=ランカ衣装のきゃわわランク★4を解放できるアイテム。<br/><color=#C8087E>※ランカの歌姫オペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0010
+ | Value=シェリル衣装のきゃわわランク★4を解放できるアイテム。<br/><color=#C8087E>※シェリルの歌姫オペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0011
+ | Value=ミレーヌ衣装のきゃわわランク★4を解放できるアイテム。<br/><color=#C8087E>※ミレーヌの歌姫オペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0012
+ | Value=バサラ衣装のきゃわわランク★4を解放できるアイテム。<br/><color=#C8087E>※バサラの歌姫オペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_0013
+ | Value=ミンメイ衣装のきゃわわランク★4を解放できるアイテム。<br/><color=#C8087E>※ミンメイの歌姫オペレーションなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_short_0001
+ | Value=衣装を少しだけ強化できるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_short_0002
+ | Value=衣装を強化できるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_short_0003
+ | Value=衣装を大幅に強化できるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_short_0004
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_short_0005
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_short_0006
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_short_0007
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_short_0008
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_short_0009
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_i_dsc_short_0010
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

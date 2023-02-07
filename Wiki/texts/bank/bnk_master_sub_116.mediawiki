@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0630
+ | Value=正気を取り戻したハヤテは、即座にミラージュと連携をとり戦闘に復帰する。<br/>幾度の試練を乗り越えて、2人のコンビネーションは更に高まっていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0631
+ | Value=ワルキューレの行く先に立ちはだかる空中騎士団。<br/>そのとき、颯爽と現れたチャックの一撃が突破口を開く！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0632
+ | Value=戦闘中、再び発症したヴァールの暴走に苦しめられるハヤテ。<br/>しかしそのとき、ミラージュの叫びとフレイアの歌声が彼の心を解き放った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0633
+ | Value=ルンの輝きが尽きるとき、ウィンダミア人の命の火も同時に消える。<br/>カシムは最期まで、リンゴ畑と息子の姿を想っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0634
+ | Value=ハヤテとの激戦の最中、突如コントロールを失うカシムのバルキリー。<br/>そのまま地上の雪原へと不時着する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0635
+ | Value=ウィンダミアにフォールドしようとするワルキューレたち。<br/>すぐさま空中騎士団も追撃を行う。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0636
+ | Value=幼い頃、1度だけ父と行った翼竜乗りの記憶。<br/>このとき、キースは「真なる風」とは何かを教わった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0637
+ | Value=空中騎士団のエースには、代々「ダーウェントの白騎士」の称号が与えられる。<br/>当代の白騎士であるキースは操縦技術も高く、誇りを重んじる優れたパイロットである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0638
+ | Value=ウィンダミア王国、空中騎士団のエースパイロット。通称『白騎士』。<br/>その圧倒的な実力は、デルタ小隊のメンバーですら翻弄してしまうほどである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0639
+ | Value=空中騎士団の新人は、手荒い歓迎を受けるという伝統があるらしい。<br/>しかしキースは、この頃から年上の人間に歯向かう強さを持っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0640
+ | Value=風の歌い手であるハインツの歌声は、ウィンダミアの作戦の一部として利用される。<br/>特異な能力を持つが故の宿命は、確実にハインツの身体を蝕んでいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0641
+ | Value=ロイドの真の目的、それは星の歌い手の力で全人類の意識をひとつにすること。<br/>それによって、銀河に永遠の平和が訪れるのだという。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0642
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0643
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0644
+ | Value=友であるロイドを止めるべく、キースは愛機の剣を抜いた。<br/>「風は俺が止める！」と叫んだキースの剣が光る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0645
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0646
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0647
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0648
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0649
+ | Value=まるで魔法に満ちた世界のように色とりどりの変化を見せるライブステージ。<br/>ランカの歌声が聴く者の心を開き、その奥底から想像力を解き放っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0650
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0651
+ | Value=ステージの上をところ狭しと飛び回るかわいらしい妖精。<br/>よく見ると、それは大小さまざまなランカの分身たちだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0652
+ | Value=観客席にいたシェリルの前に、1体の妖精がふわりと現れる。<br/>妖精はにこりと笑ってみせると、手に持っていたクマのぬいぐるみをプレゼントした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0653
+ | Value=巣の内部から出現した大量のバジュラを見て、驚きを隠せないアルト。<br/>その数はまさに宙域を埋め尽くさんとする勢いであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0654
+ | Value=撃てないなら去れと言うブレラに対して、アルトは己を奮い立たせるように叫んだ。<br/>しかしアルトの中から、迷いが消え去ることはなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0655
+ | Value=ランカが歌って踊るたび、そこから何かが現れる。<br/>軽快なステップも心地良い手拍子も、ここではすべてが魔法に変わる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0656
+ | Value=塞ぎ込んだ様子のランカと、そこに現れたもう1人のランカ。<br/>2人のランカがそろったら、それは夢と魔法のライブが始まる合図だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0657
+ | Value=バジュラは常に進化する生物だ。<br/>そうして現れた新型のバジュラは、大抵それまでの種を凌駕する戦闘能力を有している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0658
+ | Value=バジュラの巣と化した要塞に向けて、マクロス・キャノンが発射される。<br/>しかしこの一撃も、外壁に小さな穴を開けることしかできなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0659
+ | Value=反応弾を搭載した攻撃部隊が、作戦の開始を待っている。<br/>まさに嵐の前の静けさという様子だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0660
+ | Value=一斉に放たれた反応弾がバジュラの巣へと向かっていく。<br/>鮮烈な先制攻撃で戦闘の幕が開かれようとしていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0661
+ | Value=レイナの発言を聞いて、耳まで赤くするミラージュ。<br/>クラゲ祭りは恋人たちのお祭り。彼女にはまだ刺激が強かったのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0662
+ | Value=心身ともにヴァールに蝕まれながらも、メッサーは自らの役目を全うすることを選んだ。<br/>かつて自分を救ってくれた歌声を背に受けて、死神は宿敵の待つ空へと飛び立っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0663
+ | Value=マクロス7船団を襲撃した謎の敵に対して、再び歌を聞かせようとするバサラ。<br/>たとえ敵意を持った者が相手だとしても、決してその情熱が薄れることはない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0664
+ | Value=いきなり戦場へと飛び出していったバサラに対して、その理由を問い詰めるミレーヌ。<br/>レイやビヒーダと比べて、まだまだミレーヌはバサラの性格を理解できないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0665
+ | Value=新しい年を迎えるのに相応しい衣装を着たハヤテ、フレイア、ミラージュ。<br/>遠い地球の文化を感じながら、足並みをそろえて歩き出す。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0666
+ | Value=ヘルマンの教え子だったボーグは、未だに彼を「マスター」と呼ぶ。<br/>そんなボーグをたしなめるヘルマンの姿は、空中騎士団ではお馴染みの光景だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0667
+ | Value=デルタ小隊の主任務は護衛なのだから、戦闘訓練の必要はないと言うハヤテ。<br/>しかし、戦場では何が起こるかわからないというのもまた事実なのである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0668
+ | Value=バサラが1人で出かける理由を知ってしまった。複雑な想いを抱えたミレーヌは<br/>母ミリアに電話をかけるが、電話に出たのはミリアではなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0669
+ | Value=輝と未沙に別れを告げ、その場を去ろうとするミンメイ。<br/>荒れ果てた街と彼女の心を包み隠すように、空からは雪が降り始めるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0670
+ | Value=久しぶりの休日にランジェリーショップを訪れるオペレーターたち。<br/>そこで目にしたものは、床に這いつくばる輝の姿だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0671
+ | Value=フレイアの誕生日プレゼントを準備するため大きく遅刻してしまったハヤテ。<br/>しかし大喜びするフレイアの姿を見れば、その甲斐はあったと言えるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0672
+ | Value=医療船に潜入するため、ナース・コスチュームに身を包んだマキナ。<br/>変装はバッチリ。こんなナースがいたら退院したくなくなってしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0673
+ | Value=フロンティア船団でのシェリルのライブ開催を、ランカは人一倍喜んでいた。<br/>歌が大好きなランカにとって、シェリルはまさに憧れの存在だったのである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0674
+ | Value=ライブ中のハプニングによりステージから落下してしまったシェリル。<br/>間一髪でアルトによって救出されるが、彼女はライブを中断しようとはしなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0675
+ | Value=バジュラの猛攻から守るため、なんとバルキリーの手でランカを掴んだアルト。<br/>コックピットに乗せる余裕もないまま、必死の逃走劇が幕を開けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0676
+ | Value=美雲からの叱咤激励を受けて、再び歌い始めたフレイア。<br/>その様子を見守りながら、美雲もまた歌声を重ねていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0677
+ | Value=ちょっとしたことからシェリルに誤解を与えてしまったアルト。<br/>がむしゃらに叩き続けるシェリルに対し、アルトは誤解を解こうと必死だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0678
+ | Value=ランカが発するフォールド波に対抗するため、必死に歌い続けるシェリル。<br/>「これが…あの娘の本当のちから！？」─シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0679
+ | Value=リゾート施設に設置されたクレーンゲームに挑戦するランカたち。<br/>真剣な表情でクレーンを操作するランカだが、果たして結果は…？
+ | ParentPage=Texts/Bank/master
+}}
+                    

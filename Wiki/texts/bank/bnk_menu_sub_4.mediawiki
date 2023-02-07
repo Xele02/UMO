@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text04
+ | Value=所持UC:<color={1}>{0,8}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text05
+ | Value=アイテムが不足しています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text06
+ | Value={0}個の能力を解放します。よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text07
+ | Value=所持:<color={1}>{0,4}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text08
+ | Value=UCが不足しています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text09
+ | Value=アイテムとUCが不足しています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text10
+ | Value=レアリティがアップしました。<br/>能力ボードが拡張されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text11
+ | Value=シークレットボードが追加されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text12
+ | Value=シークレットボードが拡張されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text13
+ | Value=現在解放できる特別エピソード解放マスは{0}回分です。<br/>何回分解放するか選択してください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text14
+ | Value=このマスで一度に解放できるエピソード解放値は{0}までです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text15
+ | Value=これ以上解放すると一度に解放できるエピソード値を超えてしまいます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text16
+ | Value=これ以上はアイテムが不足しているため解放できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text17
+ | Value=これ以上はUCが不足しているため解放できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text18
+ | Value=これ以上はアイテムとUCが不足しているため解放できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text19
+ | Value={0}個の能力を解放します。よろしいですか？<br/><color={1}>※このエピソードの完全解放報酬は獲得済みです。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_addreward_text
+ | Value=追加報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_unlock_01
+ | Value=<size=25>【解放条件】</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_unlock_02
+ | Value=<size=20>以下の条件を満たすことで解放。</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_unlock_03
+ | Value=<size=20>以下のいずれか1つを満たすことで解放。</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_unlock_04
+ | Value=・プレイヤーランク{0}にする
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_unlock_05
+ | Value=・ライブで下記楽曲を{0}以上でクリアする<br/>　{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_unlock_06
+ | Value=・ライブで下記楽曲{0}を<br/>スコアランク{1}以上でクリアする<br/>「{2}」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_unlock_07
+ | Value=・前の領域を先にクリア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_unlock_08
+ | Value=ロック中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_unlock_09
+ | Value=先に1つ前の領域を解放してください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_unlock_10
+ | Value=<size=20>以下の条件を満たすことで参加します。</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_unlock_11
+ | Value=<size=20>以下のいずれか1つを満たすことで参加します。</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_not_exist_text_00
+ | Value=このカテゴリには現在遊べる楽曲がありません。<br/><color=#C8087E>※記憶の時空で歌の記憶を解放すると楽曲が追加されます。 </color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_not_exist_line6_text_00
+ | Value=このカテゴリには現在遊べる6レーン用の楽曲がありません。<br/><color=#C8087E>※6レーン用の楽曲が解放されると追加されます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=reward_all_clear_text_00
+ | Value=全達成報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_auto_popup_text_00
+ | Value=センタースキルを変えずに自動編成する
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_auto_popup_text_01
+ | Value=歌姫と相性が合うエピソードプレートを優先する
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_clearplate_confirm_text
+ | Value=ユニット内とユニット外のすべての歌姫から<br/>セット中のエピソードプレートをすべて外します。<br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_save_text
+ | Value=ユニットを保存しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_load_text
+ | Value=ユニットを呼び出しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home000
+ | Value=プレイする項目を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home001
+ | Value=フレンドの一覧です
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home002
+ | Value=プレゼントの一覧です
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home003
+ | Value=フレンドについて確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home004
+ | Value=フレンド申請中の一覧です
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home005
+ | Value=フレンドの承認を行ってください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home006
+ | Value=他プレイヤーをIDで検索できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home007
+ | Value=衣装を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home008
+ | Value=ランキングを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home009
+ | Value=プロフィールを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home010
+ | Value=イベントミッションの一覧です
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_vop000
+ | Value=オペレーションを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_vop001
+ | Value=小隊を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_vop002
+ | Value=バルキリーを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    

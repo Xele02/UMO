@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0010
+ | Value=超時空お年玉
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0011
+ | Value=7月★5確定ログボガチャチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0012
+ | Value=8月★5確定ログボガチャチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0013
+ | Value=9月★5確定ログボガチャチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0014
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0015
+ | Value=4周年娘くじ☆抽選券
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0016
+ | Value=マクロスFライブ記念チケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0017
+ | Value=娘くじ☆抽選券
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_nm_0018
+ | Value=衣装解放プレート交換券
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0001
+ | Value=春の記憶が秘められた宝石。<br/>ケイオス交換所でアイテムと交換できる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0002
+ | Value=夏の記憶が秘められた宝石。<br/>ケイオス交換所でアイテムと交換できる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0003
+ | Value=秋の記憶が秘められた宝石。<br/>ケイオス交換所でアイテムと交換できる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0004
+ | Value=冬の記憶が秘められた宝石。<br/>ケイオス交換所でアイテムと交換できる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0005
+ | Value=「娘々」印の抽選券。<br/>抽選会場で娘くじ☆を引くことができる。<br/><color=#8e0529>※娘クジ☆の期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0006
+ | Value=特別なガチャを引くことができるガチャチケット。<br/>★5確定スペシャルガチャを引くことができる。<br/><color=#8e0529>※★5確定スペシャルガチャ期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0007
+ | Value=特別なガチャを引くことができるガチャチケット。<br/>★5確定スペシャルガチャを引くことができる。<br/><color=#8e0529>※★5確定スペシャルガチャ期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0008
+ | Value=特別なガチャを引くことができるガチャチケット。<br/>お正月SPガチャを引くことができる。<br/><color=#8e0529>※お正月SPガチャ期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0009
+ | Value=「娘々」印の抽選券。<br/>抽選会場で娘くじ☆を引くことができる。<br/><color=#8e0529>※娘クジ☆の期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0010
+ | Value=時空を超えてもらえるお年玉。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0011
+ | Value=ガチャを引くことができるチケット。<br/>7月★5確定ログボガチャを引くことができる。<br/><color=#8e0529>※7月★5確定ログボガチャ期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0012
+ | Value=ガチャを引くことができるチケット。<br/>8月★5確定ログボガチャを引くことができる。<br/><color=#8e0529>※8月★5確定ログボガチャ期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0013
+ | Value=ガチャを引くことができるチケット。<br/>9月★5確定ログボガチャを引くことができる。<br/><color=#8e0529>※9月★5確定ログボガチャ期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0014
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0015
+ | Value=「娘々」印の抽選券。<br/>抽選会場で娘くじ☆を引くことができる。<br/><color=#8e0529>※娘クジ☆の期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0016
+ | Value=マクロスFライブ記念特別ミッションでもらえるチケット。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#8e0529>※取得期限：YYYY/MM/DD　交換期限：yyyy/mm/dd</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0017
+ | Value=「娘々」印の抽選券。<br/>抽選会場で娘くじ☆を引くことができる。<br/><color=#8e0529>※娘クジ☆の期間終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_dsc_0018
+ | Value=衣装の記憶が詰まった特別な交換券。<br/>ケイオス交換所で衣装解放プレートと交換できる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0002
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0003
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0004
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0005
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0006
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0007
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0008
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0009
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0010
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0011
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0012
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0013
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0014
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0015
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0016
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0017
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bvc_qt_0018
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_name_0001
+ | Value=訓練兵★1
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_name_0002
+ | Value=訓練兵★2
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_name_0003
+ | Value=訓練兵★3
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_name_0004
+ | Value=訓練兵★4
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rat_name_0005
+ | Value=訓練兵★5
+ | ParentPage=Texts/Bank/master
+}}
+                    

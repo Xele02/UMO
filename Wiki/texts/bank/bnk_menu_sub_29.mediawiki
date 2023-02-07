@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=home_lobby_button_before
+ | Value=超銀河総力LIVE開催まで　あと{0}日
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_lobby_button_enter
+ | Value=超銀河総力LIVE開催中！ あと{0}日
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_lobby_button_after
+ | Value=ロビー解放終了まで あと {0}日
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_lobby_button_before_today
+ | Value=超銀河総力LIVE 本日開催
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_lobby_button_enter_today
+ | Value=超銀河総力LIVE開催中！ 本日まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_lobby_button_after_today
+ | Value=ロビー解放 本日まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_lobby_button_popup_raid_end
+ | Value=超銀河総力LIVEは終了しました。<br/>部隊に所属していなかったため<br/>マクロスロビーに移動できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=customstamp_have_serif_not
+ | Value=フレーズを<br/>所持していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=customstamp_sort_desc
+ | Value=※スタンプ同士をタップで位置を入れ替えます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_drop_foldradar_text
+ | Value={0}を発見しました！<br/>{0}は超銀河総力LIVEで使用できるアイテムです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_lobby_group_capacityover_desc
+ | Value=選択した部隊が満員で<br/>所属できませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_lobby_group_not_searchplayer
+ | Value=選択可能なフレンド、ファン登録を行っているプレイヤーがいません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_lobby_member_fanregister_title
+ | Value=ファン登録
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_lobby_member_fanregister_desc
+ | Value={0}さんをファン登録します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_lobby_member_fan_capacityover_title
+ | Value=ファン上限
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_lobby_member_capacityover_desc
+ | Value=ファン数が上限に達しています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_lobby_member_fan_unregister_title
+ | Value=ファン解除
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_lobby_member_fan_unregister_desc
+ | Value={0}さんをファン解除します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_bg_eff_span
+ | Value=yyyy年M月d日 H:mm
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_bg_eff_initial_setting_title
+ | Value=画面エフェクト変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_bg_eff_initial_setting_desc
+ | Value=期間限定エフェクトを使用できます。<br/>エフェクト名：{0}<br/><br/>【使用可能期間】<br/>{1} ～ {2}<br/><br/>エフェクトを表示しますか？<br/><color=#C8087E>※背景の設定はデコルチャーモード設定でも行えます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_check_mvp_title
+ | Value=MVP報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_check_attack1st_title
+ | Value=1stアタック報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_check_disempowerment_title
+ | Value=参戦報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_check_lotcount_title
+ | Value=参戦報酬内訳
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_raid_info_mvp
+ | Value=MVP報酬は超銀河メダルを獲得することができます。<br/>獲得できる個数は歌グレードとエネミーランクによって変動します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_raid_info_attack1st
+ | Value=1stアタック報酬は超銀河メダルを獲得することができます。<br/>獲得できる個数は歌グレードとエネミーランクによって変動します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_raid_info_disempowerment
+ | Value=獲得できる個数は歌グレードとエネミーランクによって変動します。<br/>参戦報酬の内容は参戦報酬内訳タブから確認できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_raid_info_lotcount
+ | Value=獲得できる個数は歌グレードとエネミーランクによって変動します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_helprequest_completion_title
+ | Value=救援確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_helprequest_completion_text
+ | Value=以下のプレイヤーに救援要請を送りました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_fan_register_failure_title
+ | Value=ファン登録失敗
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_fan_register_failure_desc
+ | Value=ファン登録に失敗しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_fan_unregister_failure_title
+ | Value=ファン解除失敗
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_fan_unregister_failure_desc
+ | Value=ファン解除に失敗しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_ap_recovery_title
+ | Value=AP回復
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_ap_recovery_use_stone_check_msg
+ | Value=歌晶石を{0}個消費してAPを{1}回復しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_ap_recovery_use_stone_check_msg02
+ | Value=歌晶石を{0}個消費してAPを{1}回復しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_ap_recovery_use_item_check_msg
+ | Value={0}を{1}個消費することで<br/>APを{2}回復します。<br/><br/><color=#C8087E>{0}  {3}→{4}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_ap_recovery_failed_msg
+ | Value=上限を超えるため、APを回復できませんでした。<br/><br/>※歌晶石、アイテムは消費されません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_formation_bonus_costume
+ | Value=ボーナス衣装
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_formation_bonus_valkyrie
+ | Value=ボーナスバルキリー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_formation_bonus_costume_title
+ | Value=ボーナス対象の衣装
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_formation_bonus_costume_desc
+ | Value=※ボーナス値が最も高い衣装だけが適用されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_formation_bonus_valkyrie_title
+ | Value=ボーナス対象のバルキリー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=stamp_have_not_text
+ | Value=保存しているスタンプがありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=bulletin_board_limit_input_text
+ | Value=最大40文字まで入力できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_set_max_title
+ | Value=配置上限
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_item_set_max_desc
+ | Value=デコアイテムの配置数が上限に達しました。<br/><br/>デコアイテムを選択して「収納」で<br/>アイテムをしまうことができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_chara_set_max_desc
+ | Value=キャラの配置数が上限に達しました。<br/><br/>キャラを選択して「収納」で<br/>アイテムをしまうことができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

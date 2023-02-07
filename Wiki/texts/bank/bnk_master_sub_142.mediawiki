@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1930
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1931
+ | Value=【魅惑のサマーバリュー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1932
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1933
+ | Value=今回ミンメイが演じるのは、武芸を究めて病める都を救わんと立ち上がる美姫。<br/>しなやかな舞踏と歌声で、どんな逆境の物語であろうと大団円に導いてくれるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1934
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1935
+ | Value=マクロス艦内で制作中のカンフー映画「小白竜」の主役に大抜擢されたミンメイ。<br/>映画衣装の拳法着と、おさげに纏めた髪型がなかなかかわいいと評判であるそうな。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1936
+ | Value=ブリッジに戻れなくなり代理で指揮をしているであろうシャミーのことを心配する未沙。<br/>「あ～ん！早瀬大尉、早く来てください…」─シャミー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1937
+ | Value=輝が戦闘のケガで入院していることをフォッカーから聞かされたミンメイ。<br/>お見舞いに行って元気づけてほしいという頼みを、ミンメイは快く受けいれた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1938
+ | Value=映画のラストシーンにて、主人公役のカイフンに抱き起されるヒロイン役のミンメイ。<br/>その後、口づけを交わす2人の姿を見ていられず、輝は逃げだすように劇場を後にした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1939
+ | Value=入れ違いのせいでミンメイの用意した特別席ではなく、立ち見で映画を観賞する輝。<br/>演技とはいえカイフンに寄りそうミンメイの姿を、輝は複雑な想いで見つめていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1940
+ | Value=マクロスのトランスフォーメーションによって開いた奈落に足を滑らせるミンメイ。<br/>間一髪カイフンによって助けられるも、ミンメイはその姿に一瞬輝の幻を見るのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1941
+ | Value=ミンメイの人気も相まってか、「小白竜」を上映する劇場は満員御礼となっていた。<br/>「朝一番から並んでいた甲斐があったね」─マックス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1942
+ | Value=コーラの自動販売機を前に、未沙の分もコーラを購入しようとする輝。<br/>未沙はそれを遮り、上官であることを理由に輝にコーラをご馳走するのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1943
+ | Value=「小白竜」が公開される劇場に掲げられていた映画看板。<br/>ヒロインを演じたミンメイと、主人公を演じたカイフンがそれぞれ描かれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1944
+ | Value=「小白竜」の劇中でカイフン演じる小白竜が放った光線。<br/>この描写は戦闘記録映像として観ていたゼントラーディたちに凄まじい衝撃を与えた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1945
+ | Value=地球における中華的な文化を模した舞台で、ヌンチャク片手に武芸者を演じるフレイア。<br/>高い身体能力を活かしたスタントもバッチリ決めて、気分はすっかりカンフー・スター？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1946
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1947
+ | Value=接客用かと思われる赤いチャイナドレス姿のまま、ノリノリでポーズをとるフレイア。<br/>その仕草にはかつて地球で大流行した、カンフー映画の影響が少なからずあるのかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1948
+ | Value=惑星ラグナでハヤテに撃墜された際、右目を失うほどの重傷を負ったキース。<br/>顔の半分を覆うような眼帯を当てながらも、誇り高き信念に曇りは一切ない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1949
+ | Value=裸喰娘娘で食事を終えたお客さんを、外まで元気いっぱいにお見送りするフレイア。<br/>こんなに明るく接客してくれる店員さんがいるなら、次も来店してしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1950
+ | Value=お客さんから注文を取りながら、相変わらずの笑顔を浮かべるフレイア。<br/>本当は故郷の境遇について悩みつつも、それを感じさせないよう精一杯振る舞っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1951
+ | Value=右目を失って初めての戦闘であるにも関わらず、次々と敵を撃墜していくキース。<br/>「瞳をひとつ失い、ルンが研ぎ澄まされたか。いや、あの飛び方…」─ヘルマン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1952
+ | Value=中華鍋を振りながら手慣れた手つきでチャーハンを炒めあげるチャック。<br/>店の名前にかの有名な「娘々」をあやかるだけあって、料理の腕前も一級品だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1953
+ | Value=フレイアがホールで接客の手伝いをしてくれることに感謝するハックたち。<br/>フレイア自身もエリザベスから看板娘と呼ばれてまんざらでもないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1954
+ | Value=新統合軍の強行偵察艦隊をたった一機で蹂躙し尽くしたキースのSv-262Hs。<br/>頭部の造形も相まって、その姿はまさに冥府の番人といったところであろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1955
+ | Value=いつもより多くのお客さんで賑わう裸喰娘娘の店内。<br/>ホールの方は注文を捌くのに大忙しである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1956
+ | Value=フレイアとハヤテに自分の店である裸喰娘娘を紹介するチャック。<br/>ハヤテもデルタ小隊の隊員として、ここに入寮することになった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1957
+ | Value=おしゃれでキュートな花柄モチーフのビキニを纏い、夏の海を絶賛満喫中なレイナ。<br/>今のレイナの頭の中には、この夏を楽しく快適に過ごすプランが詰まっていそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1958
+ | Value=【ジリジリ・サマーデイ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1959
+ | Value=惑星ヴォルドールの遺跡地下にて、歌と幻影で空中騎士団を翻弄するワルキューレ。<br/>熟練相手では分が悪いものの、経験の浅い若者が相手ならばその効果はてき面である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1960
+ | Value=昔から兄であるキースの空を飛ぶ姿が好きで、それがハインツにとっても支えであった。<br/>王と臣下ではなく、キースと兄弟として共に生きることをハインツは望んでいたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1961
+ | Value=【ジリジリ・サマーデイ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1962
+ | Value=【ジリジリ・サマーデイ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1963
+ | Value=【ジリジリ・サマーデイ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1964
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1965
+ | Value=【ジリジリ・サマーデイ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1966
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1967
+ | Value=【ジリジリ・サマーデイ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1968
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1969
+ | Value=おしゃれでキュートな花柄モチーフのビキニを纏い、夏の海を絶賛満喫中な美雲。<br/>真夏の女神と呼べる美しさも、美雲の秘密を知る者にとっては禁断の美といえるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1970
+ | Value=【純情 サマーブレイク】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1971
+ | Value=ビーチに水着で繰り出していたところを見つかり、思わず声を荒げてしまうミラージュ。<br/>折角の海なのだから仕方がない気もするが、まだ少し気恥ずかしいところがあるようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1972
+ | Value=フレイアにとっての戦場を問いただすことにより、フレイアの心の迷いを取り払う美雲。<br/>そして歌い始めたフレイアの背を、ワルキューレのサインが力強く後押ししたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1973
+ | Value=惑星ラグナで古代遺跡が歌に反応するかどうか、実験を行うことになったワルキューレ。<br/>遺跡の反応が注視される中、美雲は1人瞳を閉じて、ただ歌を響かせ続けるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1974
+ | Value=気負いすぎるあまりダンスに集中できず、レッスンを中断させてしまうフレイア。<br/>「もう一度始めから、余計なことは考えないで！」「…フン」─カナメ、美雲
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1975
+ | Value=ハヤテに現実を叩き込むつもりが、その場の勢いで訓練教官にされてしまうミラージュ。<br/>ひと月で使えるようにしろというアラドの無茶振りに対して、思わず狼狽えるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1976
+ | Value=学科講習を毎回サボるハヤテに対し、まさに憤怒といった表情を浮かべるミラージュ。<br/>眉間に寄った険しい皺が、ハヤテの講習態度に対する鬱憤を物語っているかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1977
+ | Value=惑星ラグナの古代遺跡の前で歌による実験を行うワルキューレ。<br/>水中でも活動できるよう、パイロットスーツを着込んでのライブとなった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1978
+ | Value=入隊試験にてAIの介入により、思うように機体を操作できないハヤテ。<br/>ふらふらと不安定に飛ぶ機体をミラージュは試験官として容赦なく追い詰めていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1979
+ | Value=惑星ラグナの海中に鎮座するプロトカルチャーの遺跡。<br/>周りにはクラゲが漂い、神秘的な静けさを纏っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    

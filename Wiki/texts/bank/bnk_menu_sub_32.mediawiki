@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_get_liveskip_ticket_confirm_title
+ | Value=確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_get_liveskip_ticket_confirm_desc
+ | Value=毎日の{0}配布時に本アナウンスが<br/>行われない状態になります。<br/><br/>よろしいですか？<br/><br/><color=#C8087E>※配布自体は毎日行われます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_kira_scene_release_desc_1
+ | Value=ラッキーリーフを最大まで解放しているプレートが<br/>{0}になりました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_kira_scene_release_desc_2
+ | Value=プレミア化したプレートについては<br/>デコルームのポスターもプレミア化することができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_episodebonus_note_01
+ | Value=※ボーナスが適用されるのは1つのエピソードにつき1枚のプレートのみで、ユニットに編成することで適用されます。<br/>※同エピソードのプレートを複数枚編成した場合はボーナス値の高いプレートのみが適用されます。<br/>※ボーナス値はエピソードやレアリティによって異なります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_episodebonus_note_02
+ | Value=※1つのエピソードでボーナスが適用されるプレートは1枚だけです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_episodebonus_evo_bonus
+ | Value=レアアップ後は{0}%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=not_possessed
+ | Value=未所持
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gachatransition_title
+ | Value=ガチャの確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gachatransition
+ | Value=開催中のガチャ画面に遷移しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_not_gachatransition
+ | Value=該当するガチャがありませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_enemy_requested_title
+ | Value=救援確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_enemy_requested_text
+ | Value=救援要請を送れませんでした。<br/>もうしばらく経ってからもう一度お試しください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=utaraterank_over_ranking
+ | Value=----
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=utaraterank_over_login
+ | Value=----
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=utaraterank_none
+ | Value=未登録
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_episodebonus_max
+ | Value=最大{0}％
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unorganized
+ | Value=未編成
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=skill_attr_regulation
+ | Value=属性制限あり
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=episode_assist
+ | Value=ASSIST(適用中)
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=episode_available
+ | Value=適用中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_help_defeated_text
+ | Value=選択した暴走エネミーは無力化されました。<br/>リストを更新します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_help_result_defeated_text
+ | Value=選択した暴走エネミーは無力化されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_help_player_count_limit_over_text
+ | Value=最大人数まで救援要請を送っています。<br/>これ以上は救援要請を送れません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_limited_item_warning_text_1
+ | Value={0}の有効期限が<color=#C8087E>残り{1}日</color>となりました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_limited_item_warning_title
+ | Value=有効期限付きアイテム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notification_rareup_star_limit_title
+ | Value=【期限切れ通知】
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notification_rareup_star_limit_text
+ | Value={0}が消失間近です！ログインして使用しましょう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=set_notification_text_12
+ | Value=期限付きアイテムの有効期限が<br/>迫った時にプッシュ通知します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_limited_item_warning_text_2
+ | Value={0}の有効期限が<color=#C8087E>本日で終了</color>します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_option_caution_plateanimation_01
+ | Value=アニメーションするポスターにのみ適用されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_rarity_desc_01
+ | Value=※表示中の画像はレアリティアップ前のものです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_rarity_desc_02
+ | Value=※表示中の画像はレアリティアップ後のものです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_period
+ | Value=開催期間：{0}/{1} {2}:{3:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_cost_01
+ | Value=消費
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_cost_02
+ | Value=を使用して引く
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_cost_03
+ | Value=朝　{0}回無料
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_cost_04
+ | Value=昼　{0}回無料
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_cost_05
+ | Value=夜　{0}回無料
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_98
+ | Value=衣装エフェクト
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_99
+ | Value=衣装の周囲に発生しているエフェクトについて設定できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_100
+ | Value=歌姫が専用エフェクトのある衣装を着用している場合のみ適用されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_101
+ | Value=プレートアニメーション設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_102
+ | Value=アニメーションを行うプレートにのみ適用されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=config_text_103
+ | Value=ガチャ画面はプレートアニメーション設定の対象外です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=liveskillregulation_except
+ | Value=対象シリーズ<br/>以外
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=liveskillregulation_popup_title
+ | Value=ライブスキル発動対象の楽曲
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=centerskillregulation_popup_title
+ | Value=センタースキル発動対象の楽曲
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_telop_01
+ | Value=１回限定！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_telop_02
+ | Value=あと{0}回！
+ | ParentPage=Texts/Bank/menu
+}}
+                    

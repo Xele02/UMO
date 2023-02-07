@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_02
+ | Value=エクセレント
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_03
+ | Value=バッチグー
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_01
+ | Value=感謝
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_02
+ | Value=空腹…
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_03
+ | Value=クラゲは生で丸のみ。<br/>今はクラゲの事しか考えられない…
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_04
+ | Value=今日も1日がんばった。<br/>そろそろ食事の時間
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_05
+ | Value=胸がちくって<br/>するようなこと…したい
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_06
+ | Value=退屈。刺激を要求する
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_07
+ | Value=気分を変えるには…<br/>やっぱりハッキング？
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_08
+ | Value=きゃわわなものがほしい。<br/>マキナに渡す
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_09
+ | Value=おしゃれ…は興味なし。<br/>でも、勧められたら考える
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_10
+ | Value=日常に変化を求めたくなる。<br/>そんなときもある
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_11
+ | Value=エクセレント
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_01
+ | Value=…？何？
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_02
+ | Value=別にびっくりしてない
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_03
+ | Value=私は甘くない女。<br/>ツンツンするなら、ツンツンし返す
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_04
+ | Value=もしかして…構ってほしい？
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_05
+ | Value=はっ！マキナが私を探してる！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_06
+ | Value=今日の衣装も、なかなかラブリー
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_07
+ | Value=たまには髪型を変えるのもアリ…
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_08
+ | Value=みんなの歌声、<br/>チクチクして気持ちいい。<br/>私ももっと、歌いたい！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_09
+ | Value=ヒマヒマなら、<br/>私の悪戯に付き合うべし
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_10
+ | Value=人生、楽しんだ者勝ち。<br/>あなたも楽しむべし
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_21
+ | Value=これよりハヤテの尾行を開始する。<br/>フレイアの誕生日プレゼント、<br/>いったい何を選ぶのやら…！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_22
+ | Value=美雲への誕生日プレゼントは、<br/>開けてびっくり、玉手箱…！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_23
+ | Value=カナメ、誕生日おめでとう。<br/>…いつも、ありがと
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_24
+ | Value=マキナ、誕生日おめでとう。<br/>マキナは本当に大事な存在。<br/>大好き
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_25
+ | Value=レイナ
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_26
+ | Value=ランカ、誕生日おめでとう。<br/>キモカワなプレゼント、用意した
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_27
+ | Value=今日のシェリルはとっても無邪気。<br/>新たな魅力、発見！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_28
+ | Value=情報によると、今日はグババが<br/>いつにも増してミレーヌに<br/>べったりらしい。きゃわわ
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_29
+ | Value=バサラは誕生日なのに、<br/>今日も部屋にこもって<br/>歌を歌っているらしい…
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_30
+ | Value=ミンメイのバースデーパーティーは、<br/>元祖娘々が会場らしい。潜入希望…
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_31
+ | Value=ハヤテ
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_32
+ | Value=ミラージュ
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_33
+ | Value=メッサー
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_34
+ | Value=アラド
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_35
+ | Value=マリアンヌたちと、チャックの<br/>サプライズバースデーパーティーを<br/>計画中…極秘ミッション…！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_36
+ | Value=アルト
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_37
+ | Value=オズマ
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_38
+ | Value=今日はレイの誕生日らしい。<br/>名前が似てるから、<br/>なんだか不思議な親近感…
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_39
+ | Value=輝
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_40
+ | Value=ガムリン
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_41
+ | Value=未沙
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_42
+ | Value=私たちの映画が始まるらしい。<br/>ドキドキ、ワクワク…
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_43
+ | Value=本当に、刺激的な毎日だった。<br/>忘れられない、忘れたくない…<br/>この思い出は、永久保存版
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_44
+ | Value=ふっふっふ…歌にクラゲ、まだ語り<br/>つくせてないことがいっぱいある。<br/>あなたにもたっぷり付き合ってもらう
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_45
+ | Value=ランカとのキモカワ談義に、<br/>シェリルとの、恋バナ…<br/>いつかまた、一緒に話したい。
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_46
+ | Value=本物のバサラに出会えたし、<br/>ミレーヌともマブダチになれた…<br/>時空を超えた出会いに感謝…！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_47
+ | Value=私だけのリン・ミンメイ物語。<br/>ドラマじゃない、本物のミンメイとの<br/>思い出の記録…激エモ…！
+ | ParentPage=Texts/Bank/diva005
+}}
+                    

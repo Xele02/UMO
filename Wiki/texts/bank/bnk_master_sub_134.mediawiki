@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1530
+ | Value=楽曲が間奏に入ったのを見計らい、観客を含め各種数値の測定を行うワルキューレ。<br/>フレイアのレセプター数値に関しては残念ながらノンアクティブのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1531
+ | Value=初めてのステージを前にして、緊張から不安を募らせてしまうフレイア。<br/>それに対しハヤテは、フレイアの言葉を借りる形で明るく励ましたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1532
+ | Value=あえてハヤテを好きに飛ばせ、ショーが盛り上がったことに満足げな表情のアラド。<br/>曲者揃いのデルタ小隊を纏める懐の深さと、策士としての一面が垣間見える瞬間だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1533
+ | Value=ワルキューレの歌声に合わせて自由にステージ上で踊るハヤテのVF-31。<br/>目の前で繰り広げられるダイナミックなダンスに、観客も大盛り上がりだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1534
+ | Value=ヴァール化した統合軍のVF-171に、バリアを展開して体当たりするハヤテのVF-31。<br/>間一髪のところでフレイアの窮地を救うことに成功した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1535
+ | Value=ワルキューレの新メンバーであるフレイアに声援を送る観客たち。<br/>ときおり笑い声も聞こえてくるが、温かく迎え入れられているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1536
+ | Value=ワルキューレのワクチンライブの様子を窺うロイド。<br/>機を見計らうと、待機させていた全軍に対し号令を発した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1537
+ | Value=闇に溶けるような漆黒の衣装に身を包み、色とりどりのスイーツに囲まれた美雲。<br/>苦味や渋みも包み隠してしまうような神秘的な甘さに、心も体もとろけてしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1538
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1539
+ | Value=買い出しの途中、突然チョコレートを取り出して渡そうとするミラージュ。<br/>店を回るうちに買っておいたというが、そんな素振りは見られなかった…まさか手作り？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1540
+ | Value=チョコレートを手渡そうとするも、なかなか思い切りが付かない様子のクラン。<br/>まじまじと眺めていると、そのうちチョコレートを投げつけられてしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1541
+ | Value=ハヤテとの出会いから誕生日プレゼントを機に、どんどん進化していくフレイアの歌声。<br/>ソロでステージに立つフレイアの姿に、美雲はステージの陰から熱い視線を注いでいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1542
+ | Value=スペシャルライブの宣伝映像の締めくくりに、力強い言葉を投げかける美雲。<br/>そこにはウィンダミアの支配には決して屈しないという、強い意志が込められていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1543
+ | Value=スペシャルライブを通じて、みんなに元気を届けたいという想いを伝えるフレイア。<br/>その想いは銀河ネットワークを見ていたウィンダミアの兵士たちにも届けられた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1544
+ | Value=ウィルスの侵食率100%まであと一押しのタイミングでメンバーに気合を入れるカナメ。<br/>スペシャルライブもいよいよ終盤、作戦の成功をかけてのラストスパートだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1545
+ | Value=銀河ネットワークへのウィルス侵食作戦の指揮を執るアーネスト。<br/>エリシオンのクルーたちもスペシャルライブの裏で作戦の推移を見守っていたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1546
+ | Value=ライブ映像と共に放ったウィルスの侵食率を報告するエリシオンのクルーたち。<br/>レイナお手製のウィルスは、凄まじい勢いで銀河ネットワークを侵食していった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1547
+ | Value=ウィンダミアの支配に対し、歌で対抗するワルキューレたち。<br/>ライブ映像は銀河ネットワークを通じ、球状星団全域に届けられた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1548
+ | Value=踏みしめた衝撃で砕け散ったワルキューレたちの脚甲。<br/>地面に走った大量のひび割れは、彼女たちの強い意志を表しているかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1549
+ | Value=淡く青色に輝く衣装に包まれて、静寂と悲しみが支配する世界に囚われたランカ。<br/>今は動けなくても、きっと大切な仲間たちの差し伸べる手が彼女に勇気を与えるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1550
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1551
+ | Value=宙域に響き渡る歌声に導かれるように、ランカの幻影へと集結するバジュラたち。<br/>そして手を伸ばすランカの動きに呼応するように、バジュラたちは一斉砲撃を放った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1552
+ | Value=ランカから相談を受けていたとき、突然現れたバジュラに反射的に銃を構えるアルト。<br/>しかし次の瞬間目に飛び込んできたのは、身を挺してバジュラを庇うランカの姿だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1553
+ | Value=かつて母親から聞かされた本物の空の話を、まるでおとぎ話のようだと感じたアルト。<br/>そしてその空は、移民船で生まれ育ったアルトにとっての憧れの存在になっていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1554
+ | Value=ランカの幻影の周囲で守りを固めるかのように陣形を組むバジュラたち。<br/>完全に統制されたその動きは、まるで姫を守護する騎士のようだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1555
+ | Value=バジュラの惑星を侵略者から守ることが自分たち兄妹の使命だと語るブレラ。<br/>その鬼気迫る動きはアルトとクランを一度に相手取り、圧倒するほどだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1556
+ | Value=統制されたバジュラの一斉砲撃を受け、爆発炎上するフロンティア船団のコロニー。<br/>砲撃から逃れたアルトはその惨憺たる光景を目にし、しばし呆然としていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1557
+ | Value=グリフィスパークの丘に遠隔操作によって現れたブレラのVF-27γ。<br/>試作型フォールドブースターにより、フォールド断層を越えてのフォールドが可能だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1558
+ | Value=指輪に収められた写真に向かい、呟くように語りかけるリチャード・ビルラー。<br/>バジュラを巡り暗躍する者たちの影で、彼もまた別の思惑を持って動いていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1559
+ | Value=アルトに紙飛行機の折り方を教わるランカ。<br/>少しぎこちない手つきながら、アルトの折り方を真似して紙飛行機を折りあげた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1560
+ | Value=リチャード・ビルラーの指に嵌められていたロケット機構を持つ指輪。<br/>その中には彼が敬愛する歌姫の写真が収められていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1561
+ | Value=薄く透き通るような衣装に身を包み、悲しみの色を映した歌声を辿るフレイア。<br/>そして悲しみの中で震えるひとつの光に辿り着くと、そっと手を差し伸べたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1562
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1563
+ | Value=ウィンダミアのスパイ疑惑に対し、信頼を得るべく一層の努力を誓ったフレイア。<br/>美雲は一瞬あっけにとられつつも、いつもどおりの不敵な笑みを浮かべるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1564
+ | Value=ルンを青白くさせながらも、いつもどおりのんきに振る舞ってみせるフレイア。<br/>そんなフレイアの姿にハヤテは、言いようのない苛立ちとやりきれなさを感じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1565
+ | Value=フレイアに直撃するべく裸喰娘娘に来たマスコミに非難の声をあげるマキナとレイナ。<br/>その結果、マスコミの興味はフレイアだけでなくマキナとレイナにも向けられてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1566
+ | Value=疑惑の目を向けられながらも、それでもワルキューレに残りたいとこぼすフレイア。<br/>歌い続けたい、でも迷惑はかけたくないという葛藤がフレイアの中で渦巻いていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1567
+ | Value=無断でバルキリーを飛ばしたハヤテに対し、反乱容疑からの撃墜を示唆するメッサー。<br/>コックピットに鳴り響くロックオンの警報に、ハヤテとフレイアは慌てることに。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1568
+ | Value=フレイアの軽率な行動を咎めた後、カナメへの報告についても言及するメッサー。<br/>一方、ハヤテの行動については論外とし、説教をする価値もないと断じたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1569
+ | Value=食感が堪らないクラゲチップス、一度手をつけたら止まらないこと請け合いである。<br/>「期間限定、マヨ七味あじ」─レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1570
+ | Value=落ち込んだフレイアを元気づけようと、夜間の自主訓練と称して連れ出したハヤテ。<br/>当然、許可がなければ重大な隊規違反であり、反乱を疑われても仕方ない行為だが…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1571
+ | Value=まことしやかに噂されるフレイアのスパイ疑惑。<br/>銀河ネットワークでも討論番組が放送されるほどの過熱ぶりだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1572
+ | Value=日が落ちた海岸付近の岩場でおやすみ中のウミネコたち。<br/>丸くなって眠るところも地球の猫とそっくりだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1573
+ | Value=過去と未来を繋いで学園ライブに現れたバサラが、学生服姿で観客たちを盛り上げる。<br/>超時空ネットワークによる奇跡のコラボレーションに、観客のボルテージも最高潮だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1574
+ | Value=バサラのVF-19改に「銀河の妖精」ことシェリル・ノームのペイントを施した機体。<br/>燃えるようなサウンドと情熱のイメージが、銀河の星々を熱く震わせるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1575
+ | Value=昏睡状態から復活し、スピリチア溢れる歌声と共に戦場に舞い戻ったバサラ。<br/>そしてゲペルニッチに歌を聞かせるため、衝撃波の嵐の中へと突撃していった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1576
+ | Value=バサラの意識が途切れかけたとき、子供の頃の決意と歌声が再び歌う力を取り戻させた。<br/>「山よ！銀河よ！！俺の歌を聞けぇ！！！」─バサラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1577
+ | Value=移民船の天井にぶら下がった状態で、じっと何かを待ち続けていたバサラ。<br/>そして移民船の天蓋に月が昇るのを見届けると、不敵な笑みを浮かべるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1578
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1579
+ | Value=ライブに遅刻しながらも悪びれた様子を見せないバサラに口を尖らせるミレーヌ。<br/>一方バサラはにこやかに笑い返すだけで、まったく意に介していないのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    

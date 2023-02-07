@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2180
+ | Value=【甘い恋の香り】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2181
+ | Value=【生きたいと願う歌】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2182
+ | Value=【生きたいと願う歌】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2183
+ | Value=【奇跡は起こるから】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2184
+ | Value=【奇跡は起こるから】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2185
+ | Value=【ねこ娘☆ダイアリー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2186
+ | Value=【ねこ娘☆ダイアリー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2187
+ | Value=【トリック＆ロマンス】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2188
+ | Value=【トリック＆ロマンス】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2189
+ | Value=【天使の描く幸せ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2190
+ | Value=【天使の描く幸せ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2191
+ | Value=【ロック＆ベイビー！！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2192
+ | Value=【雲の切れ間】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2193
+ | Value=【雲の切れ間】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2194
+ | Value=【トリック＆ロマンス】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2195
+ | Value=【初春の装い】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2196
+ | Value=【初春の装い】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2197
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2198
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2199
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2200
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2201
+ | Value=【魅惑のサマーメモリー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2202
+ | Value=【妖精の来訪】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2203
+ | Value=【銀河に咲くは歌の花道】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2204
+ | Value=【ロック＆ベイビー！！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2205
+ | Value=【クロスハックライブ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2206
+ | Value=【おめでとうミレーヌ！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2207
+ | Value=【おめでとうミレーヌ！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2208
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2209
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つランカとシェリル。<br/>『超時空シンデレラ』、『銀河の妖精』のマクロスピードな歌声が戦場を駆け巡る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2210
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つバサラとミレーヌ。<br/>輝くスピリチアと燃えあがるサウンドは、どんな敵が相手であろうとも怯むことはない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2211
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つカナメとフレイア。<br/>戦場をステージに生命を懸けて響かせるその歌声は、輝きを纏って聴く者の心を打つ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2212
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つミンメイと美雲。<br/>異星人との共存の道を拓き、人類を平和へと導いた伝説が神秘の歌声と共に舞い降りた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2213
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つマキナとレイナ。<br/>太陽に負けない情熱で、ソフト・ハード面でもバルキリー隊を強力にバックアップする。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2214
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つシェリルと美雲。<br/>歌に全てを懸ける2人の歌声だからこそ、銀河を貫き人々の心へ道を指し示すのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2215
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つミンメイとフレイア。<br/>数万年の時を超えて甦ったラブソングが、半世紀の記憶と共に銀河を愛で包み込む。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2216
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つバサラとランカ。<br/>野生味溢れる歌声と愛らしい魔法の歌声が融合し、銀河の夜を賑やかに作り変えていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2217
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つシェリルとランカ。<br/>飽くなき探求心と創造力を発揮して、銀河に新たなる熱狂のステージを作り出していく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2218
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つ美雲とミレーヌ。<br/>何者にも囚われない純粋でまっすぐな歌声が共鳴し、時空と銀河を超えて駆け抜ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2219
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つフレイアとカナメ。<br/>日の出の如き輝きを背負った女神たちの姿に、気分も運気も上昇すること間違いなし！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2220
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2221
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つレイナとバサラ。<br/>刺激的なハートに燃えるサウンドがスパークし、鮮烈な歌声となって銀河を貫いていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2222
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つミンメイとシェリル。<br/>時代を代表するトップシンガーである2人の歌声で、銀河に新たな時代の扉が開かれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2223
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つマキナとランカ。<br/>穏やかで優しい歌の中に込められた確かな意志が、銀河を星とともに照らす希望となる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2224
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つレイナと美雲。<br/>祝福が込められた女神の歌が、銀河を幸福とほんの少しの切ない想いで包み込んでいく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2225
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つミレーヌとフレイア。<br/>ボンバーキュートにごりごりキュートが合わさって、ホットな夏も一撃ノックアウトだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2226
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つミンメイとバサラ。<br/>さざ波のように流れる歌と、ギラギラ燃え上がるサウンドが夏の思い出を輝かせていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2227
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つカナメとマキナ。<br/>光と影の衣が織りなす目まぐるしい舞踊は、華やかに咲き誇り見るものの目を奪う。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2228
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つミレーヌとランカ。<br/>2人の魔法少女が奏でる虹色のシンフォニーが、閉ざされた未来を拓く奇跡を起こす。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2229
+ | Value=迫りくる強大な敵に対して、超銀河総力LIVEにて共に迎え撃つシェリルとバサラ。<br/>時空を超え受け継がれる熱き魂のバイブレーションが、激しく銀河を揺さぶっていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    

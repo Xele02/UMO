@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1480
+ | Value=ドラマの内容は軍とシティオフィスの宣伝ビデオとして仕立て上げられていた。<br/>バサラはその目論見を知り、清々しいほどあっさりと撮影を放り出したのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1481
+ | Value=代役のボビーが出演できなくなってしまったため、渋々一条輝役を引き受けたバサラ。<br/>もともと乗り気でなかったこともあり、撮影が始まってからも思わず愚痴がこぼれた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1482
+ | Value=ドラマの制作発表会にスペシャルゲストとして招かれたミリアとマックス。<br/>世間に良好な関係をアピールしつつも、ぎこちなさは拭いきれないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1483
+ | Value=マクロス市民の批判を避けるためのビデオ作成を、姑息な手段と切り捨てるミリア。<br/>それでも出演を引き受けた背景には、正体不明の敵に対する焦りもあったのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1484
+ | Value=間一髪ミレーヌに襲い掛かる吸血鬼の間に割り込み、ついでにボビーも救出したバサラ。<br/>悪態を吐きつつも、誰も見捨てないところはバサラらしいといえるかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1485
+ | Value=撮影用にVF-1Jに見立てた装飾を施されたバサラのバルキリー。<br/>装飾といってもほとんどハリボテで、バサラにとっては不本意な姿だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1486
+ | Value=控室のソファに腰を下ろして、溜息混じりに呟くマックス。<br/>艦長である以上、不慣れな役を演じることも時には必要なのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1487
+ | Value=リン・ミンメイの功績を讃えるスペシャルドラマの台本。<br/>実際の内容は軍やシティオフィスの宣伝ビデオという意味合いが強いものだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1488
+ | Value=撮影が始まり封鎖された撮影所のゲート。<br/>流石に入り込めなかったのか、花束の少女が外から寂しく様子を伺っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1489
+ | Value=ドラマの撮影にあたってリン・ミンメイを演じるべく、真剣に役作りに励むミレーヌ。<br/>当時を再現した衣装に身を包むと、ミンメイへの憧れを胸にステージへと降り立った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1490
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1491
+ | Value=戦場で歌うバサラにリン・ミンメイの姿を重ね、自らもマイクを手にしたミレーヌ。<br/>閃光や衝撃に耐え、ミレーヌもまた物語の中の歌姫のように歌を響かせていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1492
+ | Value=ドラマの制作発表会にてスペシャルゲストとして招かれていたミリア。<br/>檀上のスクリーンには真紅のクァドランを駆けるかつてのミリアが映し出されていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1493
+ | Value=本当の目的を察したミレーヌに対し、手を掴んで引き止めようとするボビー。<br/>いくつかの押し問答の末、ボビーはミレーヌにとっての禁句を口にしてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1494
+ | Value=順調かに思えたドラマの撮影だったが、謎の部隊の出現と同時に事態は一変する。<br/>「あれは撮影用のマシンじゃない、本物の敵だ！」「ウッソ～！？」─バサラ、ミレーヌ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1495
+ | Value=ダイアモンドフォースの隊員であるガムリンも迎撃のため同じ宙域に出撃していた。<br/>ガムリンは戦場に響く歌声に、不確かながらもミレーヌの声を感じ取っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1496
+ | Value=吸血鬼に襲われたボビーを横目に、ミレーヌの不用心さを叱るバサラ。<br/>ミレーヌも反省する点があったのか、バサラの言葉に落ち込んだ表情を浮かべていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1497
+ | Value=謎の部隊の出現に慌てるプロデューサーに対し、冷静に状況を分析するミリア。<br/>その落ち着き様は、彼女が未だ戦士として衰えていないことを表しているかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1498
+ | Value=マックスがナレーションをする中で映し出された、ゼントラーディ軍所属時のミリア。<br/>かつては多くのバルキリーを撃墜し、統合軍からも怖れられる存在だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1499
+ | Value=ドラマの制作発表会の場にいたゼントラーディの共演者たち。<br/>役作りの面もあるのか、巨人の姿のまま他の共演者に挨拶をしているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1500
+ | Value=無人カメラの制御や、監督が撮影の指揮を執るために使用していた中継艦。<br/>撮影宙域で戦闘が始まった際もこっそりカメラを回し続けていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1501
+ | Value=星間大戦終結30周年式典にて、マクロス・シティ上空を舞うシャロンのホログラム。<br/>暴走するシャロンに支配されたこの地で、愛憎絡み合う物語はクライマックスを迎える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1502
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1503
+ | Value=コンサート中、ヤンのハッキングによって観客席へと引き寄せられたシャロン。<br/>しかしシャロンはヤンの元ではなく、隣にいたイサムの前に立ち、唇を重ねたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1504
+ | Value=空を飛ぶことが何よりも好きで、パイロットとしても天才的な操縦センスを持つイサム。<br/>ただし、3回受賞した「ロイ・フォッカー勲章」を3回とも剥奪された問題児でもある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1505
+ | Value=地球にて溜まりに溜まった鬱憤を晴らすかのようにぶつかり合うイサムとガルド。<br/>壮絶なドッグファイトと乱戦、口喧嘩の応酬は、まさに一進一退の攻防を見せる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1506
+ | Value=オペレーターのルーシーをバイクの後部座席に乗せ、ハイウェイをドライブするイサム。<br/>スリルを全開で楽しむイサムの姿に、強張っていたルーシーも思わず表情を崩した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1507
+ | Value=YF-19の主任設計者であるヤンとイサムは機体の扱いについて口喧嘩が絶えない。<br/>それでもYF-19の評価を順調に挽回していくあたり、意外といいコンビかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1508
+ | Value=楽曲に合わせ、歌声と容姿をコケティッシュな少女の物へと変化させたシャロン。<br/>大衆の望む姿を自在に演じられるのは、バーチャルアイドルならではの魅力と言える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1509
+ | Value=シャロンの実体となる人工知能が収められた金属のブラックBOX。<br/>多くの観衆に熱狂と共に迎えられたその姿は、アイドルの新時代を感じさせていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1510
+ | Value=統合宇宙軍の次期主力可変戦闘機を決めるコンペティション「スーパー・ノヴァ計画」。<br/>高性能なYF-19と、最新技術の粋を集めたYF-21が熾烈な採用争いを繰り広げた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1511
+ | Value=評価試験の内容を完全に無視し、イサムがYF-19で空に描き上げた竜鳥。<br/>天才的操縦センスのなせる技だが、この後イサムは3日間の搭乗禁止処分になった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1512
+ | Value=風力発電の風車が立ち並ぶ、惑星エデンの星の丘。<br/>イサムとガルド、そしてミュンの3人にとっても思い出の場所だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1513
+ | Value=7年前の記憶を取り戻したガルドは、本当の意味でイサムとの再会を果たした。<br/>2人の笑顔と暖かな夕陽が、凍り付いていたガルドの確執をゆっくりと溶かしていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1514
+ | Value=シャロンのライブを行うため故郷である惑星エデンに戻ってきたミュン。<br/>奇しくも時を同じくしてイサムとガルドの2人も惑星エデンへと戻ってきていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1515
+ | Value=7年前に起こったある事件をきっかけに、イサムと袂を分かつことになったガルド。<br/>再会をした後もミュンやプロジェクトを巡り、2人の対立はより一層深くなっていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1516
+ | Value=かつては歌手になることを志し、ハイスクール時代には自身で作曲も行っていたミュン。<br/>一度は捨てた歌を再び耳にしたミュンの瞳からは、いくつもの涙がこぼれ落ちた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1517
+ | Value=YF-21開発主任兼テストパイロットを務め、プロジェクトにも絶対の自信を持つガルド。<br/>YF-19に新しいテストパイロットが来ると聞いたときも、余裕の表情で答えるほどだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1518
+ | Value=7年前のことを回顧するイサムに対し、憑き物が落ちたような表情で軽口を返すガルド。<br/>その声に怒りや恨みの色はなく、過去と友を取り戻したことへの安堵が滲むものだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1519
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1520
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1521
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1522
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1523
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1524
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1525
+ | Value=スタイリッシュな雰囲気を纏い、ワルキューレの中でも一際軽やかに踊るレイナ。<br/>イタズラ好きな彼女の性格も相まって、その姿はまるで風に舞って踊る妖精のようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1526
+ | Value=惑星ヴォルドールでの戦術ライブ中、遺跡と共鳴した歌声に不穏なものを感じるレイナ。<br/>「モヤモヤ、ズンズン…歌が重い…？」─レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1527
+ | Value=奮闘するハヤテと歌い続ける美雲の姿に心を打たれ、フレイアは再び歌い始める。<br/>レイナがレセプターの数値を確認すると、そこには輝くアクティブ反応が現れていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1528
+ | Value=初めてのステージで、堂々とセンターに立ち輝きを放つフレイア。<br/>リンゴの惑星が浮かぶ空想的なステージで、新メンバーとして元気一杯の姿を見せた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1529
+ | Value=ステージ上を自由に飛び回り、観客席の人々とハイタッチを交わすワルキューレ。<br/>ファンだけでなく、初ステージのフレイアにとっても思い出になる素敵な体験だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    

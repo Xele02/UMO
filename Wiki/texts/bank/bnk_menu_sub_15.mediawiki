@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_add_episode_01
+ | Value=報酬はエピソードを完全解放することで入手できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_add_episode_02
+ | Value=バルキリーはエピソードを完全解放することで入手できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_add_episode_03
+ | Value=衣装はエピソードを完全解放することで入手できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_add_episode_04
+ | Value=背景はエピソードを完全解放することで入手できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_release_ep_diva_costume
+ | Value={0}衣装
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_release_episode_01
+ | Value=エピソード一覧から衣装を解放しよう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_release_episode_02
+ | Value=エピソード一覧からバルキリーを解放しよう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_release_episode_03
+ | Value=エピソード一覧から背景を解放しよう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_end_title
+ | Value=イベント終了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_end_text_1
+ | Value=イベントは終了しました。<br/>タイトル画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_end_text_2
+ | Value=イベントは終了しました。<br/>ホーム画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_end_text_3
+ | Value=イベントは終了しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_beginner_mission_001
+ | Value=おめでとう！<br/>これで初心者ミッションはすべてクリアね。<br/><br/>他にもミッションはたくさんあるから、<br/>この調子でどんどんクリアしていきましょう。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gotitle_001
+ | Value=タイトルへ戻ります。<br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=skill_format_001
+ | Value=<img={0}>　 {1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=skill_format_002
+ | Value=<img={0}>　<img={1}>{2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=skill_format_003
+ | Value=<img={0}>　  Lv{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=skill_format_004
+ | Value={0} <img={1}>　 Lv{2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=tuto_gacha_title
+ | Value=デカルガチャ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=tuto_gacha_desc
+ | Value=歌晶石を消費して<br/>エピソードプレートを入手できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=tuto_divaselect_popup_001
+ | Value=【{0}】
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=tuto_divaselect_popup_002
+ | Value=この歌姫でゲームを始めますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=tuto_divaselect_popup_003
+ | Value=<color=#C8087E>ゲームを進めることで他の歌姫も選べるようになります。 </color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_help_select_title
+ | Value=ヘルプ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_tilte_01
+ | Value=「命がけで飛べば飛べる！」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_tilte_02
+ | Value=「あなたはどんな想いで歌うの？」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_tilte_03
+ | Value=「命がけで楽しんじゃえ！」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_tilte_04
+ | Value=「どうしても一緒に歌いたくて！」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_tilte_05
+ | Value=「だから楽しむ。今を、精一杯」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_tilte_06
+ | Value=「伝えなきゃ、私の気持ち！」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_tilte_07
+ | Value=「わたしは、わたしの歌で銀河を震わせたいの」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_tilte_08
+ | Value=「あたしだってサウンドフォースのボーカルよ！」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_tilte_09
+ | Value=「伝えてやるぜ、お前にも俺の歌を！」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_tilte_10
+ | Value=「思いをこめて、歌います」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_desc_01
+ | Value=戦術音楽ユニット「ワルキューレ」に憧れて<br/>故郷を飛び出してきた女の子。<br/><br/>天真爛漫な性格で歌が大好き、しかしダンスは苦手。<br/>気持ちが昂ると頭の「ルン」が光り輝く。<br/><br/>独特の訛りで話し、「ごりごり」が口癖。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_desc_02
+ | Value=戦術音楽ユニット「ワルキューレ」のエースボーカル。<br/><br/>素性や経歴の一切が謎に包まれている<br/>ミステリアスな存在。<br/><br/>歌に対して強いこだわりを見せ、<br/>どのような危機に襲われても決して歌うことを諦めない。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_desc_03
+ | Value=戦術音楽ユニット「ワルキューレ」のリーダー。<br/><br/>スケジュール管理をはじめ、<br/>チームのマネジメントもこなすしっかり者。<br/><br/>ワルキューレに加入する前は、<br/>ソロでアイドル活動を行っていた。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_desc_04
+ | Value=戦術音楽ユニット「ワルキューレ」のメンバー。<br/><br/>代々メカニックという家系の生まれで、<br/>自身もまた一流の腕を持つメカニックである。<br/><br/>仲間やメカにあだ名をつける癖がある。<br/>レイナとは姉妹のように仲が良い。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_desc_05
+ | Value=戦術音楽ユニット「ワルキューレ」のメンバー。<br/><br/>毒舌家で、あまり感情を表に出さない。<br/><br/>凄腕のハッカーでもあり、<br/>電子技術者としても活躍している。<br/>マキナとはひとつ屋根の下で暮らすほどの仲である。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_desc_06
+ | Value=ふとしたきっかけからデビューし、<br/>たちまち人気アイドルとなった「超時空シンデレラ」。<br/><br/>心優しく一生懸命な性格。<br/><br/>子供のころから歌うことが大好きで、<br/>シェリルに対して憧れの念を抱いている。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_desc_07
+ | Value=「この銀河に暮らしてシェリルの歌を聴かない日はない」<br/>と称されるトップシンガー。<br/><br/>通称「銀河の妖精」。<br/><br/>プロである自分に誇りを持っており、<br/>一流であり続けるための努力を惜しまない。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_desc_08
+ | Value=ロックバンド「Fire Bomber」のボーカル／ベース担当。<br/><br/>七人姉妹の末娘。物怖じしない真っ直ぐな性格で、<br/>子ども扱いされることを嫌う。<br/><br/>ボーカリストとしてもパイロットとしても、<br/>バサラに劣らない実力を持つ。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_desc_09
+ | Value=ロックバンド「Fire Bomber」のボーカル／ギター担当。<br/><br/>何よりも歌うことが好きで、争い事を好まない。<br/>口癖は「俺の歌を聞けぇ！」。<br/><br/>どんなことでも、歌があれば理解し合えると考えている。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=story_diva_desc_10
+ | Value=後世にも語り継がれる伝説のアイドル。<br/><br/>明るく屈託のない性格だが、<br/>少しわがままな一面もある。<br/><br/>彼女の魅力と歌は、<br/>人類と戦争状態にあったゼントラーディさえも魅了し、<br/>彼らに文化を取り戻させるきっかけとなった。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_notify_fmt
+ | Value={0}から新しいメッセージがあります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unlock_costume_not_have_diva
+ | Value=この衣装を使用できる歌姫がいません。<br/>記憶の時空で歌姫の記憶を解放しましょう。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unlock_costume_not_have_basara
+ | Value=バサラがいないためこの衣装を使用できません。<br/>記憶の時空でバサラの記憶を解放しましょう。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=scenelist_not_listed_up
+ | Value=該当するエピソードプレートがありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_adv_skip_title
+ | Value=スキップ確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_adv_skip_text
+ | Value={0}をスキップします。<br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0080
+ | Value=マキナがいつも身につけているゴーグル。<br/>単なるファッションではなく、実は高性能な電子端末になっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0081
+ | Value=「私たちみんなで、ジクフリちゃんをチューンアップしておきました～」―マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0082
+ | Value=ハヤテ、フレイア、ミラージュの絶体絶命のピンチに駆けつけたワルキューレ。<br/>「この曲は…！」「ったく、おせーよ」―ミラージュ、ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0083
+ | Value=デルタ小隊とワルキューレの母艦であり、マクロス・エリシオンの<br/>左腕部。マクロス・エリシオンから分離して単独行動が可能。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0084
+ | Value=「ん～、きゃわっ！」―マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0085
+ | Value=変幻自在の衣装を着こなすシェリルに、その場の誰もが魅了されていた。<br/>「すごいな…あんた」―アルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0086
+ | Value=間一髪、バジュラの襲撃からランカを救出したアルト。<br/>「そこの素人！事情は後だ。すぐにその娘を連れて逃げろ！」―オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0087
+ | Value=バジュラの襲撃を受け、アルトは咄嗟にパイロットを失ったVF-25へと飛び乗った。<br/>「そいつはギリアムじゃない。素人だ！」―オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0088
+ | Value=ミッションコード『ビクター』、それはバジュラの襲来を意味するものだった。<br/>迫りくる因縁の敵を前にして、オズマは静かに燃えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0089
+ | Value=「あなたの後ろ姿が、あまりにも魅力的だったもので」<br/>「こんなとこまで来て、よくやりますよねミシェル先輩」―ミシェル、ルカ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0090
+ | Value=初めて搭乗するVF-25を巧みに操り、バジュラから逃げるアルト。<br/>「本当に素人…にしちゃいい腕だけど」―ミシェル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0091
+ | Value=宇宙空間に投げ出されそうになるランカ。<br/>「目を閉じて、口を塞げ！」―アルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0092
+ | Value=「もうすぐ会えるんですね、彼女に！」<br/>「同じ空気を吸えるなんて、俺たち幸せ～」―男子生徒たち
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0093
+ | Value=獰猛なバジュラとの戦闘では、バトロイド形態での格闘戦も覚悟しなければならない。<br/>「なんなんだよこの化け物は！？」―アルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0094
+ | Value=バジュラの圧倒的な力で押さえられ、行動不能に陥ってしまったVF-25。<br/>「やられて…たまるかよ！！」―ギリアム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0095
+ | Value=銀河の妖精シェリル・ノームの公演チラシ。<br/>銀河横断ツアーの最終公演地に選ばれたのは、フロンティア船団だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0096
+ | Value=バジュラ、それは人類に襲い掛かる未知の生命体。<br/>その目的などは一切不明で、ただ脅威であるということしか判明していない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0097
+ | Value=「え…うそ。シェリル…？」<br/>「こんなサービス、滅多にしないんだからね」―ランカ、シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0098
+ | Value=歌舞伎の元女形役者、美星学園の学生とさまざまな顔を持つパイロット。 <br/>「他人に自分の運命を任せるのはまっぴらだ！」―アルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0099
+ | Value=「17時からMBSの生放送（ナマ）。歌もあるわ。19時からは来週の<br/>ミス・マクロスの審査の打ち合わせ、その後は…聞いてます？シェリル」―グレイス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0100
+ | Value=本人が目の前にいるとは知らず、シェリルへの憧れを語るランカ。<br/>「私なんかじゃとても無理なのわかってるんですけど」―ランカ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0101
+ | Value=「ミシェル、ルカ。こっちの抑えにも限界がある。お前たちでやれるか！」<br/>「やります」―オズマ、ミシェル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0102
+ | Value=己の覚悟を叫んだアルト。<br/>「ノリでほざいてんじゃねぇ！ガキが！」―オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0103
+ | Value=大きな揺れによって転倒したシェリル。衝撃でワンピースがはだけてしまい…<br/>「シェリルさん！」「うん…？」―ランカ、シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0104
+ | Value=「わたしのを生で見たのよ！？そのくらい安いと思いなさい！」―シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0105
+ | Value=自由奔放なシェリル。口紅を使い、達者なフランス語の書き置きを残していった。<br/>「ごめ～んグレイス。ちょっと外出してくる」―シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0106
+ | Value=「あ、お腹空きませんか？私たまたますっごくおいしい点心を持ってるんです。<br/>娘々名物マグロ饅！」―ランカ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0107
+ | Value=フロンティア船団にある教育機関。<br/>屋上には、学園長の私物であるVF-1が飾られている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0108
+ | Value=数億年前から宇宙に存在したとされる地球外生命体。<br/>「超時空生命体」とも呼ばれ、体内にフォールドクォーツを保有している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0109
+ | Value=地球人とゼントラーディ、異種族間の和平の象徴である2人。<br/>戦いの中で惹かれ合い、史上初の星間結婚を行った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0110
+ | Value=「ゼントラーディ軍の中でも撃墜王の名を欲しいままにしたこの私に、<br/>屈辱を与えたお前を許さん！」―ミリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0111
+ | Value=「負けた…3度までも…。殺せ」<br/>「かわいい…」―ミリア、マックス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0112
+ | Value=幸せな家庭を築いた2人。<br/>後に7人の娘を授かり、その血統は受け継がれていくこととなる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0113
+ | Value=激戦を終えた戦艦内で、運命が2人を引き合わせた。<br/>「あぁ…美しい…」―マックス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0114
+ | Value=ゼントラーディ軍のエースパイロット。通称『エースのミリア』。<br/>「マックス。お前と一緒に、それも戦の中で死ねるなんて最高だ」―ミリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0115
+ | Value=後に撃墜王と呼ばれる天才パイロット。その操縦技能はフォッカーをも上回る。<br/>「僕って天才だったのか。そうか天才なのか。知らなかったぁ」―マックス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0116
+ | Value=最終決戦に臨むマックス。マイクローン装置で巨大化し、ミリアとともに出撃する。<br/>「これは…」「ミンメイの歌だ」―マックス、ミリア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0117
+ | Value=マクロスへと迫りくるメルトランディ軍。直ちにスカル小隊が迎撃に向かった。<br/>「女だからって甘く見るなよ！」―輝
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0118
+ | Value=赤と青のクァドラン・ロー。<br/>人類軍とメルトランディ軍、双方のエースパイロットが協力して戦場を駆ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0119
+ | Value=「リン・ミンメイの歌を聴くすべての者に告げる。我等の敵はただひとつ。<br/>ゴル・ボドルザーを倒し、再び文化を取り戻すのだ」―ブリタイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0120
+ | Value=男女に分かれ争いを続けていたゼントラーディ。<br/>地球人が当たり前に営む男女の共同生活は、彼らに大きな衝撃を与えた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0121
+ | Value=ヴァール発生による混乱の最中、どこからか歌が聴こえ始めた。<br/>「聴かせてあげる、女神の歌を」―美雲
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0122
+ | Value=フレイアの目の前に現れた、美雲・ギンヌメール。<br/>彼女はワルキューレの中でも随一の歌声を持ち、エースボーカルを担っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0123
+ | Value=ワルキューレの歌の力は、美雲だけによって発揮されるものではない。<br/>全員が揃い歌ってこそ、戦術音楽ユニット ワルキューレなのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0124
+ | Value=ハヤテの操縦するバルキリーは、まるで踊るような動きで敵を翻弄する。<br/>そのダンスが生み出すリズムに感化され、フレイアは再びルンを輝かせるのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0125
+ | Value=ワルキューレは、幾度かのメンバーの入れ替わりを経て現在に至る。<br/>かつてカナメが担っていたエースボーカルの座に、今は美雲の姿があった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0126
+ | Value=敵の攻撃によってビルの屋上から落下してしまうレイナ。<br/>そのとき、そばにいたマキナが誰よりも早く飛び込んでレイナを救った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0127
+ | Value=ワルキューレのリーダーとして、数々の戦場で歌い続けてきたカナメ。<br/>「歌は、生命！」―カナメ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0128
+ | Value=ワルキューレの歌を聴いて、ハート型の「ルン」を輝かせるフレイア。<br/>それは彼女自身の、この上ない胸の高鳴りを示すものであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0129
+ | Value=謎のバルキリーの攻撃を受け、ワルキューレのライブは中断を余儀なくされてしまう。<br/>しかし、そんなピンチの中でさえ、美雲は歌うことを諦めようとはしなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    

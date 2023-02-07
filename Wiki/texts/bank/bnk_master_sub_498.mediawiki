@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=et_nm_0002
+ | Value=超時空LIVEチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=et_nm_0003
+ | Value=超時空LIVEチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=et_nm_0004
+ | Value=ペンライト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=et_nm_0005
+ | Value=ペンライト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=et_nm_0006
+ | Value=ペンライト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=et_dsc_0001
+ | Value=イベントの楽曲をプレイするために必要なアイテム。<br/><color=#8e0529>※現在開催中のイベント終了時に破棄されます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=et_dsc_0002
+ | Value=イベントの楽曲をプレイするために必要なアイテム。<br/><color=#8e0529>※現在開催中のイベント終了時に破棄されます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=et_dsc_0003
+ | Value=イベントの楽曲をプレイするために必要なアイテム。<br/><color=#8e0529>※現在開催中のイベント終了時に破棄されます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=et_dsc_0004
+ | Value=歌姫のライブを応援するグッズ。<br/>使用するとライブボルテージが一定時間上昇する。<br/><color=#8e0529>※現在開催中のイベント終了時に破棄されます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=et_dsc_0005
+ | Value=歌姫のライブを応援するグッズ。<br/>使用するとライブボルテージが一定時間上昇する。<br/><color=#8e0529>※現在開催中のイベント終了時に破棄されます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=et_dsc_0006
+ | Value=歌姫のライブを応援するグッズ。<br/>使用するとライブボルテージが一定時間上昇する。<br/><color=#8e0529>※現在開催中のイベント終了時に破棄されます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0001
+ | Value=ストーン（小）セット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0002
+ | Value=ストーン（中）セット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0003
+ | Value=ストーン（大）セット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0004
+ | Value=結晶（小）セット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0005
+ | Value=結晶（中）セット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0006
+ | Value=結晶（大）セット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0007
+ | Value=成長素材セット（銅）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0008
+ | Value=成長素材セット（銀）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0009
+ | Value=成長素材セット（金）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0010
+ | Value=成長素材セット（虹）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0011
+ | Value=ストーン全セット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_nm_0012
+ | Value=結晶全セット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0001
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>全種類のストーン（小）がセットになっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0002
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>全種類のストーン（中）がセットになっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0003
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>全種類のストーン（大）がセットになっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0004
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>全種類の結晶（小）がセットになっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0005
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>全種類の結晶（中）がセットになっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0006
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/>全種類の結晶（大）がセットになっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0007
+ | Value=超時空ログインボーナスでもらえる解放アイテムとUCのセット。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0008
+ | Value=超時空ログインボーナスでもらえる解放アイテムとUCのセット。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0009
+ | Value=超時空ログインボーナスでもらえる解放アイテムとUCのセット。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0010
+ | Value=超時空ログインボーナスでもらえる解放アイテムとUCのセット。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0011
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/> 全種類のストーン（小）（中）（大）がセットになっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmp_dsc_0012
+ | Value=エピソードプレートの能力を解放するために使用されるアイテム。<br/> 全種類の結晶（小）（中）（大）がセットになっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evn_0001
+ | Value=記憶のかけら
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evn_0002
+ | Value=遠い記憶のかけら
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evn_0003
+ | Value=遥かな記憶のかけら
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evn_0004
+ | Value=マホウのサウンドジェム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evn_0005
+ | Value=輝くマホウのサウンドジェム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evn_0006
+ | Value=煌めくマホウのサウンドジェム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evn_0007
+ | Value=食べかけ銀河リンゴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evn_0008
+ | Value=普通の銀河リンゴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evn_0009
+ | Value=美味しそうな銀河リンゴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evdsc_0001
+ | Value=少しのイベントポイントに変換されるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evdsc_0002
+ | Value=そこそこのイベントポイントに変換されるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evdsc_0003
+ | Value=たくさんのイベントポイントに変換されるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evdsc_0004
+ | Value=少しのイベントポイントに変換されるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evdsc_0005
+ | Value=そこそこのイベントポイントに変換されるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=evdsc_0006
+ | Value=たくさんのイベントポイントに変換されるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    

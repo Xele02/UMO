@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_once_rate_warning
+ | Value=※確率表示は小数第4位以下にて切り捨て、小数第3位まで表示します。<br/>　そのため、すべて合算しても100％にならない場合があります。<br/><br/>※上記のエピソードプレートは重複して出現する場合があります。<br/><br/>※同レアリティ内であっても提供割合が異なる場合があります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rare5_rate_warning
+ | Value=※確率表示は小数第4位以下にて切り捨て、小数第3位まで表示します。<br/>　そのため、すべて合算しても100％にならない場合があります。<br/><br/>※同レアリティ内であっても提供割合が異なる場合があります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_debut_rate_warning
+ | Value=※確率表示は小数第4位以下にて切り捨て、小数第3位まで表示します。<br/>　そのため、すべて合算しても100％にならない場合があります。<br/><br/>※上記のエピソードプレートは重複して出現する場合があります。<br/><br/>※同レアリティ内であっても提供割合が異なる場合があります。<br/><br/>※「ガチャ出現率」に表示されている各レアリティごとの<br/>   出現確率は「初期出現確率」です。<br/><br/>※★5が一定程度出現しなかった場合、<br/>　★5の出現確率が「初期出現確率」からやや上昇し、その上昇分だけ<br/>　★3★4の全体の出現確率が「初期出現確率」から下がります。<br/><br/>※一度「初期出現確率」から変動した出現確率は、<br/>　ガチャの開催期間の終了、対象ガチャからの★5の排出をもって<br/>　リセットされます。<br/><br/>※「初期出現確率」からの確率の変動はデビューガチャでは発生しません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_stepup_rate_warning
+ | Value=※確率表示は小数第4位以下にて切り捨て、小数第3位まで表示します。<br/>　そのため、すべて合算しても100％にならない場合があります。<br/><br/>※上記のエピソードプレートは重複して出現する場合があります。<br/><br/>※同レアリティ内であっても提供割合が異なる場合があります。<br/><br/>※「ガチャ出現率」に表示されている各レアリティごとの<br/>   出現確率は「初期出現確率」です。<br/><br/>※★5が一定程度出現しなかった場合、<br/>　★5の出現確率が「初期出現確率」からやや上昇し、その上昇分だけ<br/>　★3★4の全体の出現確率が「初期出現確率」から下がります。<br/><br/>※一度「初期出現確率」から変動した出現確率は、<br/>　ガチャの開催期間の終了、対象ガチャからの★5の排出をもって<br/>　リセットされます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_pass_rate_warning
+ | Value=※確率表示は小数第4位以下にて切り捨て、小数第3位まで表示します。<br/>　そのため、すべて合算しても100％にならない場合があります。<br/><br/>※上記のエピソードプレートは重複して出現する場合があります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_ep_caution01
+ | Value=エピソード報酬は、エピソードポイントによりエピソードを解放することで取得できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_ep_caution02
+ | Value=獲得可能なエピソードポイントの上限は、プレートにより異なります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_ep_episode_sub
+ | Value=エピソード：
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_ep_reward_sub
+ | Value=エピソード報酬例：
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_ep_diva_costume
+ | Value={0}　{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_home_scene_bg_title
+ | Value=背景変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_home_scene_bg_msg
+ | Value=メインプレートのレアリティアップ前のレアリティが<br/>★4以上の場合、背景をプレートイラストに変更できます。<br/><br/>変更は「背景」から行う事ができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_home_scene_limited_bg_msg_00
+ | Value=ホーム画面を期間限定の背景に変更できます。<br/>背景を変更しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_home_scene_limited_bg_msg_01
+ | Value=<color=#c8087e>※背景を再度変更したい場合は、<br/>ホーム画面の背景変更から設定できます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_home_scene_limited_bg_msg_02
+ | Value=<color=#c8087e>再度プレートを表示したい場合は背景から設定できます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_home_ngword_rename_title
+ | Value=NGワード通知
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_home_ngword_rename_msg
+ | Value=プレイヤー名、または紹介文に<br/>NGワードが含まれていたため変更いたしました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_pickup_checkbox
+ | Value=今日は表示しない
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_event_end_attain
+ | Value=集計中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_event_epilogue
+ | Value=イベントエピローグ配信中！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_banner_event_end_attain
+ | Value=集計中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_scene_autocombine_title
+ | Value=自動合成確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_scene_autocombine_msg
+ | Value=このエピソードプレートは自動合成に使用されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_scene_convertitem_title
+ | Value=アイテム変換確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_scene_convertitem_msg
+ | Value=このエピソードプレートはアイテムに変換されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_paid_msg
+ | Value=歌晶石を{0}個使用して<br/>ガチャを{1}回引きますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_paid_few_msg
+ | Value=歌晶石が不足しています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_paid_count
+ | Value={0}個
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_free_msg
+ | Value=無料でガチャを{0}回引きますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_ticket_msg
+ | Value={0}を{1}枚使用して<br/>ガチャを{2}回引きますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_ticket_few_msg
+ | Value={0}が不足しています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_ticket_few_caution_01
+ | Value={0}は歌晶石のおまけから入手可能です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_ticket_few_caution_02
+ | Value={0}付き歌晶石は販売を終了しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_ticket_few_caution_03
+ | Value=※{0}は月間パスを購入すると<br/>おまけとしてついてくる超時空ログインボーナスで入手できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_ticket_count
+ | Value={0}枚
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_reject_title
+ | Value=ガチャ操作中断
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_reject_free_timeout_msg
+ | Value=現在、このガチャを引くことはできません。<br/>元の画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_reject_ticket_timeout_msg
+ | Value=現在、このガチャを引くことはできません。<br/>タイトル画面に戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_myid_copy_title
+ | Value=コピー完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_myid_copy_msg
+ | Value=プレイヤーIDをコピーしました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_degree_01
+ | Value=称号詳細
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=degree_current_window_title
+ | Value=セット中の称号
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=degree_select_window_title
+ | Value=選択中の称号
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_01
+ | Value=プレイヤー名変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_02
+ | Value=プレイヤー名を入力してください。<br/>（全角半角10文字まで）
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_03
+ | Value=<color=#C8087E>※プレイヤー名を変更すると、<br/>以後30日間はプレイヤー名を変更できません。</color><br/>・一部使用できない記号、文字がございます。<br/>・変更の反映に時間がかかることがあります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_04
+ | Value=プレイヤー名変更確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_05
+ | Value=<br/><br/>変更後のプレイヤー名はこれでよろしいですか？<br/><br/><color=#C8087E>※プレイヤー名を変更すると、<br/>以後30日間はプレイヤー名を変更できません。</color><br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_06
+ | Value=プレイヤー名変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_profil_07
+ | Value=プレイヤー名を変更しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0025
+ | Value=トータル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0026
+ | Value=ソウル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0027
+ | Value=ボイス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0028
+ | Value=チャーム{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0029
+ | Value=星属性プレートの<br/>全ステータス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0030
+ | Value=愛属性プレートの<br/>全ステータス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0031
+ | Value=命属性プレートの<br/>全ステータス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0032
+ | Value=歌姫自身のトータル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0033
+ | Value=ソウルボイス{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0034
+ | Value=ソウルチャーム{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0035
+ | Value=ボイスチャーム{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0036
+ | Value=ソウル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0037
+ | Value=ボイス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0038
+ | Value=チャーム{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0039
+ | Value=ソウル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0040
+ | Value=ボイス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_dsc_0041
+ | Value=チャーム{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=el_nm_0001
+ | Value=滅びの歌の影響でライブ中ライフが減少してしまう！<br/>ライフ回復のスキルで対抗しよう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=el_nm_0002
+ | Value=滅びの歌の影響で超歌姫モード中はノーツ判定が<br/>縮小されてしまう！判定緩和のスキルで対抗しよう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=el_nm_0003
+ | Value=滅びの歌の影響でノーツのタップを失敗した時の<br/>ダメージが倍増する。ダメージ軽減スキルで対抗しよう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=el_nm_0004
+ | Value=このライブでは、滅びの歌の影響により敵が強化されている！サポート値を高めてバルキリーモードに挑もう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=el_nm_0005
+ | Value=このライブでは、滅びの歌の影響により<br/>チャーム値が10%ダウンしボイス値が10％アップする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=el_nm_0006
+ | Value=滅びの歌の影響で超歌姫モード中はノーツ判定が<br/>縮小されてしまう！判定緩和のスキルで対抗しよう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=el_nm_0007
+ | Value=滅びの歌の影響でノーツ判定が縮小されてしまう！<br/>判定緩和のスキルで対抗しよう！１フレ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=el_nm_0008
+ | Value=滅びの歌の影響でバルキリーモード中はノーツ判定が<br/>縮小！サポート値を高めたり判定緩和で対抗しよう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=el_nm_0009
+ | Value=滅びの歌の影響で敵のライフが増加している！<br/>サポート値を上げて敵に対抗しよう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0001
+ | Value=このライブでは、滅びの歌の影響で<br/>チャーム値が20%ダウンしボイス値が20％アップする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0002
+ | Value=このライブでは、滅びの歌の影響で<br/>ボイス値が30%ダウンしチャーム値が30％アップする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0003
+ | Value=このライブでは、滅びの歌の影響で<br/>チャーム値が30%ダウンしソウル値が30％アップする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0004
+ | Value=このライブでは、滅びの歌の影響で<br/>ソウル値が30%ダウンしチャーム値が30％アップする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0005
+ | Value=このライブでは、滅びの歌の影響で<br/>ボイス値が30%ダウンしソウル値が30％アップする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0006
+ | Value=このライブでは、滅びの歌の影響で<br/>チャーム値が30%ダウンしボイス値が30％アップする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0007
+ | Value=このライブでは、滅びの歌の影響で<br/>ソウル値が30%ダウンしボイス値が30％アップする
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0008
+ | Value=敵センタースキル 008
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0009
+ | Value=敵センタースキル 009
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0010
+ | Value=敵センタースキル 010
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0011
+ | Value=敵センタースキル 011
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0012
+ | Value=敵センタースキル 012
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0013
+ | Value=敵センタースキル 013
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0014
+ | Value=敵センタースキル 014
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0015
+ | Value=敵センタースキル 015
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0016
+ | Value=敵センタースキル 016
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0017
+ | Value=敵センタースキル 017
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0018
+ | Value=敵センタースキル 018
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0019
+ | Value=敵センタースキル 019
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0020
+ | Value=敵センタースキル 020
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ec_nm_0021
+ | Value=敵センタースキル 021
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=fc_nm_0001
+ | Value=トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=fc_nm_0002
+ | Value=トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=fc_nm_0003
+ | Value=トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    

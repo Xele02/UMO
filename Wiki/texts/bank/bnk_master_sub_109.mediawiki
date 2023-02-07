@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0280
+ | Value=戦いは終わった。しかしシェリルは意識を失い、アルトは行方不明となってしまった。<br/>それでもランカは、いつかまた3人で笑い合える日が来ることを信じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0281
+ | Value=戦場に響くシェリルとランカの歌声が、ブレラの奥底に眠っている心を揺さぶった。<br/>そして口をついて出たのは、もう存在しないはずの「気持ち」という言葉だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0282
+ | Value=バジュラたちも人間と同じように心を持ち、その心に戦いの痛みを感じていた。<br/>シェリルから受け取ったイヤリングを通して、アルトはその痛みを確かに感じ取った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0283
+ | Value=復活したシェリルに続くように、ランカも歌声を合わせていく。<br/>銀河の妖精と肩を並べるシンデレラ。特別なデュエット・メドレーが始まった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0284
+ | Value=アルトの気持ちを察していたから、あのとき告白の返答を言わないでと遮ったランカ。<br/>その歌声に宿る切なさは、それでも想いを抑えきれないことを表していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0285
+ | Value=シェリルを救出して戦場に戻ってきたオズマを愛機が迎える。<br/>「ありがてえ！」―オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0286
+ | Value=銀河の各地から駆けつけたS.M.Sの増援部隊。<br/>その中には、歴戦のエースパイロットも名を連ねているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0287
+ | Value=バジュラたちは、身体に打ち込まれたインプラント弾によって操られていた。<br/>その事実さえわかれば、人類側が反撃に出ることは容易であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0288
+ | Value=敵陣の中で窮地に立たされたマクロス・クォーター。<br/>そのとき、多数の増援部隊が衛星軌道上に現れた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0289
+ | Value=空を舞うアルトの後押しをするように、2人の歌姫は歌い続ける。<br/>その歌声は翼を授けるとともに、空に吹き渡る大いなる風を生み出しているようだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0290
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0291
+ | Value=女王バジュラに向けた一斉砲撃。アルトはシェリルとランカを見つめる。<br/>そして、胸の内に秘めていた想いを打ち明けるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0292
+ | Value=女性のゼントラーディのみで構成された小隊。<br/>隊長のクラン・クランを筆頭に、全員が高い実力を持っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0293
+ | Value=朝日に照らされる女王バジュラと、金色の光をまとうYF-29。<br/>早乙女アルトの光の舞。その幻想的な美しさに、その場にいた誰もが魅了された。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0294
+ | Value=戦闘の中で、図らずもインプラントの支配から解放されたグレイス。<br/>最後に見届けたいと願ったものは、シェリルの歌声が銀河を震わせる瞬間だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0295
+ | Value=あなたの分まで歌ってみせる。自分を守ってくれたグレイスにそう誓ったシェリル。<br/>残り少ない命の力を振り絞って、銀河の妖精は再びステージに上がった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0296
+ | Value=常に大勢のファンに囲まれて、銀河のトップシンガーとして歌い続けてきたシェリル。<br/>しかし、今この瞬間の彼女の歌は、たった1人の大切な人に向けて紡がれたものだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0297
+ | Value=女王バジュラに接近するYF-29。その翼から突如出現した、まばゆい金色の光。<br/>それは例えるなら、天空に揺らめくオーロラのように美しいものだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0298
+ | Value=憎み合う必要はない。傷つけ合う必要はない。アルトは必死に想いを伝えようとした。<br/>そのとき、支配から解き放たれた女王バジュラが攻撃の手を止めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0299
+ | Value=多数のマクロス・クォーターによる一斉砲撃。<br/>その破壊力では、前線にいるアルトをも巻き込んでしまいかねないだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0300
+ | Value=マクロス・クォーター単体では、大気圏突入時の熱に耐えきることができない。<br/>だが艦長のジェフリーは、艦船の残骸をボードに見立てた波乗りで突破してみせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0301
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0302
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0303
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0304
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0305
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0306
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0307
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0308
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0309
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0310
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0311
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0312
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0313
+ | Value=ワルキューレのリーダーであり、年長者でもあるカナメ。<br/>やや挑発的で大人びた振り付けもこなしてみせるその姿は多くのファンを魅了している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0314
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0315
+ | Value=ワルキューレの絶対的エースである美雲。<br/>彼女の歌の力を引き出すことも、リーダーである自分の役目だとカナメは考えている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0316
+ | Value=仕事終わりにメッサーを飲みに誘ったものの、断られてしまったカナメ。<br/>普段からよく声をかけているようだが、彼は誘いに応じることはほとんどないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0317
+ | Value=ライブ前の決め口上を口にするカナメ。<br/>その言葉どおり、ヴァールと戦うワルキューレのライブは常に命がけだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0318
+ | Value=個性的すぎるメンバーのまとめ役として、メンバーの知らない苦労を背負ってきた。<br/>そしていつしか、彼女は誰からも頼りにされるリーダーとなっていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0319
+ | Value=美雲の私生活については、カナメも知らない部分が多いらしい。<br/>だが、カナメ自身もあまり気にしてはいないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0320
+ | Value=ワルキューレの新メンバーオーディションの結果を発表するカナメ。<br/>リーダーとして厳しい決定を下すこと、それもまた彼女の仕事である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0321
+ | Value=ワクチンライブには、ワルキューレの歌の力でヴァールの発生を予防する目的がある。<br/>映像や音声だけでは効果が発揮できないため、定期的にライブが行われている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0322
+ | Value=ワルキューレのライブ映像を見つめるロイド。<br/>どうやら、ワルキューレの歌が彼らの目的の障害となるようだが…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0323
+ | Value=惑星ラグナの名物のひとつ。<br/>生でもおいしいが、干物にすれば晩酌のお供にぴったり。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0324
+ | Value=女子寮の中にあるカナメの私室。<br/>ここで仕事をすることも多いのか、端末や資料なども置かれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0325
+ | Value=ミンメイの歌声を用いて、文化を知らないゼントラーディ兵士の士気低下を狙った作戦。<br/>前線で歌うその姿は味方兵士の鼓舞にも繋がり、後世にも伝説として語り継がれていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0326
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0327
+ | Value=多くのライバルがいる中で、見事初代ミス・マクロスに輝いたミンメイ。<br/>これ以降、同様のコンテストが各地で伝統的に開催されるようになる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0328
+ | Value=ミス・マクロス・フロンティアの審査直前、緊張で落ち込んでしまうランカ。<br/>その背中を押したのは、憧れのシェリル・ノームだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0329
+ | Value=ミンメイの歌とともに攻め込む作戦に、一部のゼントラーディ艦隊も賛同の意を示した。<br/>ここに、史上初の異星間同盟も成立したのである。
+ | ParentPage=Texts/Bank/master
+}}
+                    

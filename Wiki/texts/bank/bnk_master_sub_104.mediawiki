@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0030
+ | Value=初めてバルキリーを操縦した輝は、ミンメイの家を壊してしまう。心配する輝。<br/>「なんとか…」―ミンメイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0031
+ | Value=マクロスの主砲発射により、謎の艦隊が地球への侵攻を開始した。<br/>異星人の仕掛けたブービートラップによって、人類は戦争へと巻き込まれていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0032
+ | Value=異星人との戦闘が始まり、戦闘機が次々と迎撃のために飛び立っていく。<br/>歴戦のエースであるロイ・フォッカーは、己の中の高ぶりを抑えられずにいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0033
+ | Value=修復されていないはずのシステムが作動し、マクロスの主砲が発射されてしまう。<br/>長い戦いの口火を切ることになるこの一撃を、止められる者はいなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0034
+ | Value=ロイ・フォッカーが搭乗するVF-1。黄色と黒のマーキングラインが特徴。<br/>このS型は、中隊以上の指揮官用として運用される性能向上タイプである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0035
+ | Value=太平洋に浮かぶ島。1999年7月に、異星人の巨大宇宙船が落下。<br/>そのときの衝撃で、島の中心部が吹き飛んでしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0036
+ | Value=地球に侵攻してきた敵の正体は、ゼントラーディと呼ばれる巨大な異星人だった。<br/>「しかし、こうまで人間そっくりとはな…」―フォッカー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0037
+ | Value=中華料理店『娘々』の看板娘として、チャイナドレスに身を包むミンメイ。<br/>彼女の明るく屈託のない笑顔が、店に訪れる人々の癒やしとなっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0038
+ | Value=能力がありながら戦おうとしない輝に対して、ミンメイはたきつけるような言動をとる。<br/>「飛行機があなたの夢なんでしょ？」―ミンメイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0039
+ | Value=ミンメイの部屋で、オーディションの合格通知を見せてもらった輝。<br/>彼女は、ずっと昔から歌手になるという夢を持っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0040
+ | Value=開店した娘々で客と話すミンメイ。輝との関係を茶化されて赤面してしまう。<br/>「もう知らない！」―ミンメイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0041
+ | Value=通りかかった町会長に、お店を始めたことを話すミンメイ。<br/>地球からどれだけ遠く離れたとしても、彼女は前向きに生きようとしていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0042
+ | Value=ミンメイが自分のことを「ただのお友達」と言っているのを聞いてしまい、<br/>輝はどこか悲しげな表情を見せた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0043
+ | Value=無事に閉鎖区画から生還した輝を見て、フォッカーは嬉しそうに笑った。<br/>「この、ゴキブリ野郎が！」―フォッカー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0044
+ | Value=マクロス艦内で中華料理店『娘々』を再開することが決まり、張り切るミンメイ。<br/>「わたし着替えてくる！」―ミンメイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0045
+ | Value=VF-1 バルキリーは熱核反応タービンエンジンを搭載しており、<br/>強制推進剤さえあれば宇宙空間も飛行することができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0046
+ | Value=主砲発射に必要なエネルギー供給ルートを確保するため、<br/>マクロスは艦体の各ブロックを組み替え、人型への変形を敢行する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0047
+ | Value=ミンメイの部屋の扉に掛けられた、うさぎ型のネームプレート。<br/>ミンメイを訪ねてきた輝は、このかわいらしいプレートを見てノックをためらった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0048
+ | Value=甚大な被害を伴ったが、主砲発射によって敵を退けたマクロス。<br/>グローバル艦長は、神妙な面持ちで帽子をかぶり直した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0049
+ | Value=惑星ヴォルドールにヴァール化の謎を解くカギがあると予想したデルタ小隊は、<br/>ワルキューレとともにヴォルドール人に変装して潜入捜査を行うことを決めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0050
+ | Value=次元兵器を使用したのはウィンダミア人か、地球人か？<br/>フレイアとミラージュの議論を止めた、美雲の意味深な一言。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0051
+ | Value=「了解だー、ニャン！」<br/>「ニャンはいりません、ニャンは」―フレイア、ミラージュ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0052
+ | Value=「きゃわわ～！レイレイのニャンニャンきゃわきゃわ！」―マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0053
+ | Value=ウィンダミアアップルを見つけ、任務のことを忘れて興奮してしまったフレイア。<br/>「もう少し緊張感を持ってもらわないと」―ミラージュ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0054
+ | Value=仲間から離れ単独で行動していた美雲は、<br/>情報収集用のマイクロドローンを数多く仕掛けていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0055
+ | Value=「俺、猫アレルギーなんだけど…」<br/>「文句があるなら来るな」―ハヤテ、メッサー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0056
+ | Value=「ふしゃーっ」<br/>「やーん、爪立てないで！」―レイナ、マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0057
+ | Value=子どもたちがワルキューレの歌で救おうとしていたのは、ヴァール化した父親だった。<br/>「やっぱり嘘だったんだよ、歌で病気が治るなんて」―子供
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0058
+ | Value=ハヤテは猫アレルギーを持っている。<br/>猫型哺乳類から作られたヴォルドール人の星は、かなり辛そう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0059
+ | Value=幼い頃のフレイアの記憶。次元兵器による破壊の光景。<br/>ウィンダミア人と地球人、どちらが兵器を使用したかは双方で見解が分かれていたが…。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0060
+ | Value=「ここの水とウィンダミアアップルを取り込むと、<br/>体内でヴァール化を誘発するセイズノールが合成される」―カナメ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0061
+ | Value=「この世に」「開かないドアはない」―マキナ、レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0062
+ | Value=ワルキューレのメンバー、レイナ・プラウラーのキメ台詞。<br/>過去にケイオスにハッキングをかけ、その腕を買われてメンバーとなった経緯を持つ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0063
+ | Value=最新技術を惜しみなく使用した、ワルキューレの迫力あるライブ。<br/>レイナの振付に合わせて『S』の文字が浮かび上がる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0064
+ | Value=どんなに困難な状況でも、2人で協力すれば怖くない。<br/>2人で形作るワルキューレサインが、何よりも強い絆を体現していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0065
+ | Value=ケイオスの戦争介入が決まり、所属する全員の契約が更新されることになった。<br/>「ハンコ、押す」―レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0066
+ | Value=「ハヤハヤのジークフリードは」「ボロボロカサカサ」<br/>「メサメサのジークフリードは」「スベスベモチモチプルップル」―マキナ、レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0067
+ | Value=「クラゲは生がいい。生で丸呑み」―レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0068
+ | Value=ハッキングを成功させたレイナ。敵レーダーに発見されることなく、<br/>ウィンダミア支配下にある惑星ヴォルドールに潜入した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0069
+ | Value=「いざとなったらちゃんとEX-ギアシステムを使うんだよ」―マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0070
+ | Value=「どう、セキュリティの方は」<br/>「全部ゴミ、カス。こんなんじゃ全然チクチクしない」―カナメ、レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0071
+ | Value=「フォールドレセプター、ノンアクティブ。生体フォールド波、反応なし」―レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0072
+ | Value=敵防衛網のネットワークをハッキングするレイナ。<br/>「相手にとって、不足なし」―レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0073
+ | Value=ワルキューレのメンバーであり、一流のハッカーとメカニックでもある2人。<br/>姉妹のように仲が良く、ひとつ屋根の下で共同生活を送っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0074
+ | Value=ワルキューレのメンバー、マキナ・中島のキメ台詞。<br/>彼女は歌唱能力の他に高い整備技能を持ち、一流のメカニックとしても活躍している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0075
+ | Value=最新技術を惜しみなく使用した、ワルキューレの迫力あるライブ。<br/>マキナの振付に合わせて『O』の文字が浮かび上がる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0076
+ | Value=ヴァール警戒のため、現地の装束に身を包みオープンカフェで待機するマキナ。<br/>「シャハルシティも異常な～し」―マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0077
+ | Value=メカを愛するマキナは、他の整備員からも「姐さん」と呼ばれ慕われている。<br/>「きゃわわ～なジークフリードちゃんたちを置いていけないもんね！」―マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0078
+ | Value=出会った頃のレイナとマキナは、今の2人からは想像できないほどに仲が悪かった。<br/>「水と油、混ぜるな危険」―カナメ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0079
+ | Value=「まずは腹ごしらえですよ」―マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    

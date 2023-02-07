@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_recover_title
+ | Value=購入処理の実行
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_recover
+ | Value=月間パスの有効期間の自動更新、<br/>または通信の切断などで中断された購入処理があります。<br/>OK をタップして処理を完了させてください。<br/>この処理で追加の購入が発生することはありません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_recover_done_title
+ | Value=購入処理成功
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_recover_done
+ | Value=購入処理を完了させました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_recover_none
+ | Value=中断されている購入処理は見つかりませんでした。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_recover_fail_title
+ | Value=購入処理失敗
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_recover_fail
+ | Value=購入処理が失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_recover_manual
+ | Value=通信の切断等で中断された購入処理を<br/>完了することができます。<br/>この処理で追加の購入が発生することはありません。<br/><br/>購入処理の完了を実行しますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_recover_store_server_error_an
+ | Value=エラーが発生しました。<br/><br/>エラーコード：88
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pp_mail_subject
+ | Value=[歌マクロス]引き継ぎ用パスワード
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pp_mail_body
+ | Value=プレイヤーID：{0}<br/>パスワード：{1}<br/>有効期限： {2}<br/>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_migration_desc
+ | Value=プレイデータの移行方法を選んでください
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_migration_title
+ | Value=データ移行
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_amount_over
+ | Value=購入上限
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_amount_over_15
+ | Value=ご登録年齢が{0}歳以下のお客様<br/><br/>有料コンテンツのご購入は<br/>月額{1}円までとなっております。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_text_amount_over_1617
+ | Value=ご登録年齢が{0}歳以上{1}歳以下のお客様<br/><br/>有料コンテンツのご購入は<br/>月額{2}円までとなっております。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva001_age
+ | Value=14歳
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva001_birthday
+ | Value=11月3日
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva001_birthplace
+ | Value=惑星ウィンダミア
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva001_favorite
+ | Value=歌うこと、リンゴ
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva001_description
+ | Value=戦術音楽ユニット「ワルキューレ」に憧れて故郷を飛び出してきた女の子。天真爛漫な性格で歌が大好き、しかしダンスは苦手。気持ちが昂ると頭の「ルン」が光り輝く。独特の訛りで話し、「ごりごり」が口癖。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva002_age
+ | Value=？歳
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva002_birthday
+ | Value=8月17日
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva002_birthplace
+ | Value=不明
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva002_favorite
+ | Value=銀河中に歌を響かせること
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva002_description
+ | Value=戦術音楽ユニット「ワルキューレ」のエースボーカル。素性や経歴の一切が謎に包まれているミステリアスな存在。歌に対して強いこだわりを見せ、どのような危機に襲われても決して歌うことを諦めない。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva003_age
+ | Value=22歳
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva003_birthday
+ | Value=6月8日
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva003_birthplace
+ | Value=惑星ディバイド
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva003_favorite
+ | Value=魚介の珍味
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva003_description
+ | Value=戦術音楽ユニット「ワルキューレ」のリーダー。スケジュール管理をはじめ、チームのマネジメントもこなすしっかり者。ワルキューレに加入する前は、ソロでアイドル活動を行っていた。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva004_age
+ | Value=18歳
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva004_birthday
+ | Value=4月19日
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva004_birthplace
+ | Value=不明
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva004_favorite
+ | Value=メカ、ファンシーなもの
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva004_description
+ | Value=戦術音楽ユニット「ワルキューレ」のメンバー。代々メカニックという家系の生まれで、自身もまた一流の腕を持つメカニックである。仲間やメカにあだ名をつける癖がある。レイナとは姉妹のように仲が良い。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva005_age
+ | Value=15歳
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva005_birthday
+ | Value=7月23日
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva005_birthplace
+ | Value=不明
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva005_favorite
+ | Value=ゲテモノ、マイナーなもの
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva005_description
+ | Value=戦術音楽ユニット「ワルキューレ」のメンバー。毒舌家で、あまり感情を表に出さない。凄腕のハッカーでもあり、電子技術者としても活躍している。マキナとはひとつ屋根の下で暮らすほどの仲である。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva006_age
+ | Value=15歳
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva006_birthday
+ | Value=4月29日
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva006_birthplace
+ | Value=第117次調査船団
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva006_favorite
+ | Value=歌うこと、料理、音楽鑑賞
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva006_description
+ | Value=ふとしたきっかけからデビューし、たちまち人気アイドルとなった「超時空シンデレラ」。心優しく一生懸命な性格。子供のころから歌うことが大好きで、シェリルに対して憧れの念を抱いている。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva007_age
+ | Value=公称17歳
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva007_birthday
+ | Value=11月23日
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva007_birthplace
+ | Value=マクロス・ギャラクシー船団
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva007_favorite
+ | Value=ヨガ、スポーツジム通い
+ | ParentPage=Texts/Bank/common
+}}
+                    

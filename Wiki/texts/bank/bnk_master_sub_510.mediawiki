@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ebgb_rtx_0012
+ | Value=運も実力のうちだ、よくやったな
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0002
+ | Value=勲章を集めた分だけ<br/>君に報酬を渡そう
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0003
+ | Value=報酬はたくさん用意しているぞ。<br/>期待しててくれ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0004
+ | Value=1番いいものは<br/>もう引き当てているみたいだな。<br/>報酬の中身は入れ替えることもできるぞ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0005
+ | Value=欲しいものはあったかな？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0006
+ | Value=ははっ、遠慮なく取っておいてくれ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0007
+ | Value=存分に役立ててくれ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0008
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0009
+ | Value=ほう…君は強運の持ち主のようだな
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0010
+ | Value=いいものを引き当てたな
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0011
+ | Value=おめでとう、良かったじゃないか
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ebgc_rtx_0012
+ | Value=運も実力のうちだ、よくやったな
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0001
+ | Value=SNSアンロックキー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0002
+ | Value=高速プログラム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0003
+ | Value=ライブエーテル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0004
+ | Value=不使用
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0005
+ | Value=不使用
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0006
+ | Value=キャプテンメダリオン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0007
+ | Value=超銀河メダル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0008
+ | Value=デコポイント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0009
+ | Value=レアアップスターのかけら
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0010
+ | Value=シークレットストーンのかけら
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0011
+ | Value=輝石のかけら
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0012
+ | Value=煌石のかけら
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0013
+ | Value=ライブスキップチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0014
+ | Value=劇場版チケット抽選券
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0015
+ | Value=エピソードプレート交換券
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_nm_0016
+ | Value=衣装解放プレート交換券
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0001
+ | Value=超時空SNSで未解放のトークを解放するためのアイテム。<br/>見逃してしまったトークを改めて見ることができる。<br/><color=#8e0529>※一部解放できないトークも存在します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0002
+ | Value=受注中のバルキリーオペレーションを高速化するアイテム。<br/>規定数使用するとバルキリーオペレーションを高速で完了できる。<br/><color=#C8087E>※バルキリーオペレーションはランク7で解放されます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0003
+ | Value=曜日楽曲のプレイ回数を3回復できるアイテム。<br/><color=#C8087E>※曜日楽曲のプレイ回数が0回の時に使用できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0004
+ | Value=不使用です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0005
+ | Value=不使用です
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0006
+ | Value=歴代マクロス艦長たちの思いのこもった大メダル。<br/>マクロスキャノンゲージをチャージできるアイテム。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0007
+ | Value=銀河のシンボルが刻まれたメダル。<br/>ケイオス交換所でアイテムと交換できる。<br/><color=#C8087E>※超銀河総力LIVEなどから入手できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0008
+ | Value=デコポイントのシンボルが刻まれたコイン。<br/>ケイオス交換所でデコアイテムと交換できる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0009
+ | Value=複数集めると、ケイオス交換所でレアアップスターと交換できるアイテム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0010
+ | Value=複数集めると、ケイオス交換所でシークレットストーンと交換できるアイテム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0011
+ | Value=複数集めると、ケイオス交換所で幸運の輝石と交換できるアイテム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0012
+ | Value=複数集めると、ケイオス交換所で幸運の煌石と交換できるアイテム
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0013
+ | Value=リズムゲームをスキップできるチケット<br/>1日に使える枚数には制限があります。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0014
+ | Value=劇場版チケットの抽選券。<br/>期間中に劇場版チケットキャンペーンに応募した証。<br/><color=#C8087E>※イベント終了時に消滅します。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0015
+ | Value=記憶が詰まった特別な交換券。<br/>ケイオス交換所でプレートと交換できる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_dsc_0016
+ | Value=衣装の記憶が詰まった特別な交換券。<br/>ケイオス交換所で衣装解放プレートと交換できる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_qt_0001
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_qt_0002
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_qt_0003
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_qt_0004
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=spitm_qt_0005
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

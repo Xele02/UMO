@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0066
+ | Value=ソウルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0067
+ | Value=ボイスアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0068
+ | Value=チャームアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0069
+ | Value=ソウルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0070
+ | Value=ボイスアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0071
+ | Value=チャームアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0072
+ | Value=星楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0073
+ | Value=愛楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0074
+ | Value=命楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0075
+ | Value=星楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0076
+ | Value=愛楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0077
+ | Value=命楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0078
+ | Value=星楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0079
+ | Value=愛楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0080
+ | Value=命楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0081
+ | Value=星楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0082
+ | Value=愛楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_nm_0083
+ | Value=命楽曲トータルアップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0001
+ | Value=ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0002
+ | Value=星属性プレートのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0003
+ | Value=愛属性プレートのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0004
+ | Value=命属性プレートのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0005
+ | Value=ユニットのソウルが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0006
+ | Value=ユニットのボイスが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0007
+ | Value=ユニットのチャームが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0008
+ | Value=ユニットのライフが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0009
+ | Value=ユニットのサポート値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0010
+ | Value=ユニットのフォールド波が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0011
+ | Value=ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0012
+ | Value=ユニットのライフが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0013
+ | Value=星属性プレートのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0014
+ | Value=愛属性プレートのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0015
+ | Value=命属性プレートのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0016
+ | Value=ユニットのソウルが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0017
+ | Value=ユニットのボイスが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0018
+ | Value=ユニットのチャームが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0019
+ | Value=ユニットのサポート値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0020
+ | Value=ユニットのフォールド波が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0021
+ | Value=ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0022
+ | Value=星属性プレートのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0023
+ | Value=愛属性プレートのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0024
+ | Value=命属性プレートのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0025
+ | Value=ユニットのソウルが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0026
+ | Value=ユニットのボイスが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0027
+ | Value=ユニットのチャームが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0028
+ | Value=ユニットのライフが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0029
+ | Value=ユニットのサポート値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0030
+ | Value=ユニットのフォールド波が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0031
+ | Value=星属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0032
+ | Value=愛属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    

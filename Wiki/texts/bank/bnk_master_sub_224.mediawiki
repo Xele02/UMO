@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0257
+ | Value=開始[tv]秒後に発動し[dv]秒間プレートをセットしている歌姫の親密度[v1_1]ごとにスコアが[v1_2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0258
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0259
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0260
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0261
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0262
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0263
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0264
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0265
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0266
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0267
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0268
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0269
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0270
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0271
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0272
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0273
+ | Value=開始[tv]秒後に発動、[dv2]秒間毎秒ライフが[v1]減少しスコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0274
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0275
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0276
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0277
+ | Value=開始[tv]秒後に発動、[dv2]秒間毎秒ライフが[v1]減少しスコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0278
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0279
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0280
+ | Value=開始[tv]秒後に発動、[dv2]秒間毎秒ライフが[v1]減少しスコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0281
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0282
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0283
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0284
+ | Value=開始[tv]秒後に発動、[dv2]秒間毎秒ライフが[v1]減少しスコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0285
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0286
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0287
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0288
+ | Value=開始[tv]秒後に発動、[dv2]秒間毎秒ライフが[v1]減少しスコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0289
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0290
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0291
+ | Value=開始[tv]秒後に発動、[dv2]秒間毎秒ライフが[v1]減少しスコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0001
+ | Value=ライフ{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0002
+ | Value=ソウル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0003
+ | Value=ボイス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0004
+ | Value=チャーム{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0005
+ | Value=星属性{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0006
+ | Value=愛属性{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0007
+ | Value=命属性{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0008
+ | Value=フォールド波{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0009
+ | Value=サポート{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0010
+ | Value=全ステータス{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0011
+ | Value=トータル{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0012
+ | Value=ソウルボイス{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0013
+ | Value=ソウルチャーム{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0014
+ | Value=ボイスチャーム{0}%アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_nm_0015
+ | Value=フォールド波{0}％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    

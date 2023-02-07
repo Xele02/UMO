@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1680
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1681
+ | Value=白のワンピースでの撮影中、吹き抜ける風の中に紙飛行機を見つけたランカ。<br/>空高く舞う紙飛行機の行く先には、願い続けた光景が広がっているはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1682
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1683
+ | Value=青く澄み渡る空の下で仲間たちが見守る中、祈りを捧げるように歌うランカ。<br/>慈しみと想いに溢れたその歌声は、風と共に人々の心を癒し、包み込んでいく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1684
+ | Value=役に憑りつかれ自身の存在が消えることを怯えるアルトに、ランカはそっと手を添える。<br/>「どんなことがあっても…どんなときだって、アルト君はアルト君だよ…」─ランカ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1685
+ | Value=小高い丘一面に広がる花畑の中で、星を離れていったバジュラたちを想うランカ。<br/>この星を美しく守り続けることで、バジュラとの共生が叶うことを願いながら…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1686
+ | Value=アルトがかつて早乙女一座の天才子役として名を馳せていたことを話題に出すランカ。<br/>ランカにとってアルトはシェリルと同様、プロの世界に生きる人間として映っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1687
+ | Value=訓練を終えた帰り道、1人街灯の下で待っているランカを見つけたアルトたち。<br/>ミシェルのさりげない気配りが、アルトとランカに話し合う機会を与えた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1688
+ | Value=混乱する戦況の中でランカの歌声を感じ取り、一瞬我を取り戻すブレラ。<br/>ブレラの脳裏には幼いランカの姿と、それを守る兄としての記憶が甦っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1689
+ | Value=インプラントの呪縛を解き、元老院の操るバジュラ・クイーンへ特攻を掛けるVF-27。<br/>「もう貴様らの操り人形ではない！」─ブレラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1690
+ | Value=幼いランカがガリア4で母や兄と共に過ごしていたころの記憶。<br/>過去の凄惨な記憶の中にありつつも、そこには穏やかな時間が流れていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1691
+ | Value=水面に映る満月と、海峡に架けられた橋を渡るケーブルカー。<br/>その風景は、ここが移民船の中だとは感じさせない程に幻想的だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1692
+ | Value=バジュラ本星への入植のため施設を建築するフロンティア船団の人々。<br/>銀河の命運を懸けた戦いからひと月が経過し、人々も生活を取り戻し始めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1693
+ | Value=白く輝くオリエンタルなチャイナドレスを纏い、まどろみの表情を浮かべるミンメイ。<br/>眼下に広がる街の明かりを目に映しながら、その心は遠い故郷への想いに溢れていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1694
+ | Value=マクロスが地球から追い出される噂を耳にし、夕陽の前で沈痛な面持ちのマックス。<br/>見納めになるかもしれない地球の夕陽を見つめ、輝とともに感傷にふけるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1695
+ | Value=マクロスのバリア暴走事故から逃げ切ることができなかった柿崎の無念を思う輝。<br/>柿崎の両親との写真を手に取ると、唇を噛みしめて沸き上る悲しみを堪えるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1696
+ | Value=マクロス内のスタジオにて、離れていく地球をバックに想いを込めて歌うミンメイ。<br/>故郷の無事と帰還の願いがこもった歌声は、放送を通じて地球にもオンエアされていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1697
+ | Value=民間人の受け入れ先が決まったことを喜ぶ輝とマックス、柿崎の3人。<br/>そしてまだ街が賑やかなうちにと、輝のおごりで街へ遊びに繰り出していった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1698
+ | Value=ラプラミズの反対を押し切ってマイクローン・スパイに志願したミリア。<br/>その胸中には自身に辛酸を舐めさせたパイロットに会ってみたいという想いがあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1699
+ | Value=グローバルは諦念をにじませるような口調で統合政府からの通告を未沙に伝えた。<br/>「…早瀬大尉、やはり地球外出撃命令が来たよ」─グローバル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1700
+ | Value=マクロス市民への励ましと協力を呼びかけたミンメイは、そのままステージへと向かう。<br/>曲が流れ始める中で浮かべた表情は、故郷を慈しむかのような憂いに満ちたものだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1701
+ | Value=ミリアの入ったカプセルを手にマクロスへと接近するクァドラン・ロー。<br/>カムジンの攻撃に乗じて、戦闘空域を迂回する形でマクロスに取りついたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1702
+ | Value=市民への報告に言葉を詰まらせるグローバルに代わりカメラの前に立ったミンメイ。<br/>マクロスを愛し、励ますような言葉の数々は人々の心に共感となって伝わっていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1703
+ | Value=再び地球圏へと戻ってきたことに感慨深げな言葉を漏らすブリタイ。<br/>その意外な言葉はエキセドルが思わず聞き返してしまうほどだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1704
+ | Value=幼少の柿崎が両親と一緒に写っている写真。<br/>傍らには両親とやり取りしていたと思われる手紙が添えられていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1705
+ | Value=黒の麗しいオリエンタルなチャイナドレスを纏い、憂うような表情を浮かべるシェリル。<br/>その姿は花の如く、かつての故郷での境遇を感じさせないほどに美しく咲き誇っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1706
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1707
+ | Value=シェリルが騒ぎに気付いて振り返ると、スタッフに取り囲まれたアルトの姿があった。<br/>そしてアルトの必死な声に、シェリルはデートをしたときの約束を思い出すのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1708
+ | Value=大統領の緊急声明が発表される中、オズマから特例条項Bの発動を知らされるミシェル。<br/>通話を終えて端末を降ろすと、空を仰いでこの事態を揶揄する言葉を呟くのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1709
+ | Value=記者会見の場でライブの中止を示唆した記者を激しい口調で問い詰めたシェリル。<br/>そしてマイクを奪いカメラに向かうと、ライブ決行と共に故郷への帰還を宣言した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1710
+ | Value=新統合軍から人員が派遣されてくるという件を猫の鈴に例えて語るジェフリー。<br/>マクロス・クォーターの運用に関する話し合いは、それで手打ちになったという。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1711
+ | Value=すっかり忘れていたシェリルに対して、ばつが悪そうにイヤリングを突き出すアルト。<br/>必ず探して持っていくという約束をアルトは律儀に守り通したのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1712
+ | Value=コンサートツアーの最後を締めくくるライブのリハーサルを着実にこなすシェリル。<br/>ツアーを成功させて故郷ギャラクシーに帰るため、舞台の調整にも熱が入る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1713
+ | Value=平時の際は衛生兵として勤務しているカナリアに万一のときを頼むオズマ。<br/>「──当たるな。ならば」「ああ──」─カナリア、オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1714
+ | Value=両翼にフォールドブースターを1基ずつ搭載し、長距離偵察に対応したRVF-171。<br/>幾重ものフォールド断層を越えて、ギャラクシー船団の状況を確認する任務に就いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1715
+ | Value=無数のバジュラによる襲撃を受けるギャラクシー船団。<br/>公開された映像は5日前のものであり、状況は絶望的と思われていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1716
+ | Value=サヨナラライブの会場に掲げられたスクリーンの横断幕。<br/>そこにはギャラクシー船団を故郷に持つシェリルを励ます言葉が記されていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1717
+ | Value=メンバー随一のプロポーションを惜しげもなく披露して観客を魅了していくマキナ。<br/>ありきたりなポーズのお願いも、きっと小悪魔的に裏切ってみせてくれるに違いない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1718
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1719
+ | Value=ヴァール鎮圧作戦の最中にワルキューレ以外の歌声を感じ取ったマキナとレイナ。<br/>「歌？」「胸がチクチクっと…」─マキナ、レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1720
+ | Value=惑星ラグナに送り届けた上、ワルキューレになるチャンスまで取り持ってくれたハヤテ。<br/>フレイアは深く感謝していたが、ハヤテはいまいちピンときていない様子であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1721
+ | Value=ウィンダミア人ならではの身体能力で標識を軽やかに飛び移っていくフレイア。<br/>そしてエリシオンを仰ぎ見ながら、全身でワルキューレへの思いを表現するのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1722
+ | Value=舞い上がるフレイアを横目に、やんわりと忠告するような言葉を掛けるハヤテ。<br/>デルタ小隊としてワルキューレの護衛を務める手前、その過酷さはよく知っていたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1723
+ | Value=カナメたちの歌う「涙目爆発音」に感激し、フレイアはみんなに続いて歌い始めた。<br/>「わぁ！フレフレ歌えるんだ、涙目」「うるうる、トキメキ」─マキナ、レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1724
+ | Value=「涙目爆発音」の歌詞に合わせるように、手を伸ばして遠くを指差すフレイア。<br/>その指差す方向には、フレイアに笑顔を返す憧れのワルキューレの姿があった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1725
+ | Value=ワルキューレ流の新人歓迎会にて、かつての下積み時代の話を語るマキナ。<br/>過酷な訓練と任務に耐えられず、離れていったメンバーもいたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1726
+ | Value=ワルキューレに迫るアンノウンに対し、迎撃態勢をとるアルファ小隊のVF-31A。<br/>より戦闘に特化した機体だけあって、ミサイルの弾幕で見事に敵を迎え撃った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1727
+ | Value=惑星ラグナのケイオス支部で開催されていたワルキューレオーディション。<br/>なお、開催場所や暦の読み間違えで来られなかったあわてん坊さんもいたとか…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1728
+ | Value=ワルキューレ女子寮のテラスに設置された露天風呂。<br/>ラグナの海と空が一望できる絶景スポットでもあるようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1729
+ | Value=1分1秒たりとも後悔をしないため、心の赴くまま全力で今を駆け抜けるフレイア。<br/>そのひたむきなまっすぐさは、観客の心にまで元気を与えてくれるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    

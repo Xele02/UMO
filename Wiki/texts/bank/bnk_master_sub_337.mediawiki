@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1145
+ | Value=デコポイントを累計100000DP獲得する
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1146
+ | Value=プレイヤーランクを9にしてバルキリー強化を解放
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1147
+ | Value=【バルキリー強化】で<br/>バルキリーの拡張性能を5回アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1148
+ | Value=【バルキリー強化】で<br/>バルキリーの拡張性能を10回アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1149
+ | Value=【バルキリー強化】で<br/>バルキリーの拡張性能を20回アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1150
+ | Value=【バルキリー強化】で<br/>バルキリーの拡張性能を30回アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1151
+ | Value=【バルキリー強化】で<br/>バルキリーの拡張性能を40回アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1152
+ | Value=【バルキリー強化】で<br/>バルキリーの拡張性能を50回アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1153
+ | Value=【バルキリー強化】で<br/>バルキリーの拡張性能を60回アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1154
+ | Value=【バルキリー強化】で<br/>バルキリーの拡張性能を70回アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1155
+ | Value=【バルキリー強化】で<br/>バルキリーの拡張性能を80回アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1156
+ | Value=【バルキリー強化】で<br/>バルキリーの拡張性能を90回アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1157
+ | Value=【バルキリー強化】で<br/>バルキリーの拡張性能を100回アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1158
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1159
+ | Value=イベントを進めて<br/>【暴走する歌声 ～シャロン・アップル～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1160
+ | Value=イベントを進めて<br/>【暴走する歌声 ～シャロン・アップル～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1161
+ | Value=イベントを進めて<br/>【暴走する歌声 ～シャロン・アップル～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1162
+ | Value=イベントを進めて<br/>【不確定性♡フォーメーションダンス】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1163
+ | Value=イベントを進めて<br/>【不確定性♡フォーメーションダンス】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1164
+ | Value=イベントを進めて<br/>【不確定性♡フォーメーションダンス】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1165
+ | Value=イベントを進めて<br/>【little queen ～愛・おぼえていますか～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1166
+ | Value=イベントを進めて<br/>【little queen ～愛・おぼえていますか～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1167
+ | Value=イベントを進めて<br/>【little queen ～愛・おぼえていますか～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1168
+ | Value=イベントを進めて<br/>【熱唱☆学園ライブ！ ～卒業式編～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1169
+ | Value=イベントを進めて<br/>【熱唱☆学園ライブ！ ～卒業式編～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1170
+ | Value=イベントを進めて<br/>【熱唱☆学園ライブ！ ～卒業式編～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1171
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1172
+ | Value=イベントを進めて<br/>【旅立つ君へ ～愛は流れる～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1173
+ | Value=イベントを進めて<br/>【旅立つ君へ ～愛は流れる～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1174
+ | Value=イベントを進めて<br/>【旅立つ君へ ～愛は流れる～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1175
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1176
+ | Value=イベントを進めて<br/>【流星の奏でる旋律】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1177
+ | Value=イベントを進めて<br/>【流星の奏でる旋律】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1178
+ | Value=イベントを進めて<br/>【流星の奏でる旋律】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1179
+ | Value=イベントを進めて<br/>【ようこそ！ワルキューレ★Partyへ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1180
+ | Value=イベントを進めて<br/>【ようこそ！ワルキューレ★Partyへ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1181
+ | Value=イベントを進めて<br/>【ようこそ！ワルキューレ★Partyへ】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1182
+ | Value=イベントを進めて<br/>【願いがキラリ ～また会おうね～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1183
+ | Value=イベントを進めて<br/>【願いがキラリ ～また会おうね～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1184
+ | Value=イベントを進めて<br/>【願いがキラリ ～また会おうね～】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1185
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1186
+ | Value=イベントを進めて<br/>【私たちのビューティフル・プレイス】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1187
+ | Value=イベントを進めて<br/>【私たちのビューティフル・プレイス】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1188
+ | Value=イベントを進めて<br/>【私たちのビューティフル・プレイス】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1189
+ | Value=イベントを進めて<br/>【Dancing in the Planet】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1190
+ | Value=イベントを進めて<br/>【Dancing in the Planet】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1191
+ | Value=イベントを進めて<br/>【Dancing in the Planet】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1192
+ | Value=【記憶の時空】を進めて<br/>【SNS連絡部屋】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1193
+ | Value=イベントを進めて<br/>【HOLY LONELY LIVE】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=qn_dsc_1194
+ | Value=イベントを進めて<br/>【HOLY LONELY LIVE】で次のトークを読む
+ | ParentPage=Texts/Bank/master
+}}
+                    

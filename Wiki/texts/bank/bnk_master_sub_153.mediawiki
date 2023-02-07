@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2480
+ | Value=L.A.Iの技術開発顧問としての立場からか1人で問題を解決しようとしがちなルカ。<br/>そんなルカを気遣ったミシェルの言葉に、ルカは胸が詰まる想いを感じるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2481
+ | Value=かつての星間大戦を引き合いに出すかのようにアルトを挑発するテムジン。<br/>「歌ってみろよ。俺たちを止められるかもしれないぜ？」─テムジン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2482
+ | Value=ランカを狙撃しようとするテムジンを体当たりで阻止するアルトのVF-25F。<br/>そして、その勢いのまま2機は壮絶な空中戦へともつれこんでいく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2483
+ | Value=今をときめくアイドルであるランカのライブに大興奮の第33海兵部隊。<br/>「馬鹿共がっ！飼いならされやがって！」─テムジン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2484
+ | Value=リベンジとなるランカのファーストライブチケット。<br/>初回はガリア4での事件により中止となっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2485
+ | Value=普段のカジュアルさとは違った、アバンギャルドなスーツ姿でビシッと決めたハヤテ。<br/>怖いもの知らずな眼差しは、銀河の果てまでオールナイトで突き進んでしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2486
+ | Value=宇宙戦用の外装オプション、スーパーパックを装備して性能が強化されたVF-31J。<br/>ハヤテは最初宇宙での扱いに苦労したが、持ち前のセンスで徐々に乗りこなしていった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2487
+ | Value=自身の素質について悩むミラージュに対し、意に介さぬように明るく振る舞うハヤテ。<br/>そんなハヤテの振る舞いにミラージュは、少し救われたような表情を浮かべるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2488
+ | Value=ミラージュを救うため急行するハヤテだが、推進剤不足から距離を詰め切れずにいた。<br/>翼を狙っていられない状況の中で、ハヤテは仲間を救うためにトリガーへと指をかける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2489
+ | Value=機体の翼を狙って撃とうとするハヤテとミラージュに、冷静な忠告を与えるメッサー。<br/>アラドやチャックが翼を狙っていたのは、実力が伴うからこそできる芸当なのである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2490
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2491
+ | Value=歴戦の勇士であるヘルマンに窮地に追いやられ、堪らず救援コールを発するミラージュ。<br/>不幸にも訓練の際、メッサーに指摘されていた欠点を自ら証明する形となってしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2492
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2493
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2494
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2495
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2496
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2497
+ | Value=満月が浮かぶ夜空の下、深い青の衣装をなびかせながら歌と共に舞い踊る美雲。<br/>闇夜に響き渡る歌声と、月光に照らし出された白い素肌が見る者の心を妖しく眩惑する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2498
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2499
+ | Value=惑星ヴォルドールの遺跡に誘われて美雲が辿りついたのは、古代文明の神殿だった。<br/>神殿の舞台へと上がった美雲は瞳を閉じると、1人静謐の中で歌声を響かせ始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2500
+ | Value=惑星ヴォルドールへの潜入にあたって、装備の確認に余念がないミラージュ。<br/>場を和ませようとしたフレイアも真面目なモードにさらりと流されてしまうのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2501
+ | Value=【千夜を超える歌】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2502
+ | Value=【千夜を超える歌】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2503
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2504
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2505
+ | Value=【千夜を超える歌】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2506
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2507
+ | Value=【千夜を超える歌】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2508
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2509
+ | Value=ギラギラに輝く太陽の下、若干戸惑いつつも水着姿で夏のひとときを過ごしたバサラ。<br/>水平線の向こうへと沈む夕陽を眺めながら、終わりゆく季節に思いを馳せるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2510
+ | Value=【サマー・オルゴール】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2511
+ | Value=穏やかなさざ波の音と爽やかな風が流れる砂浜で、静かに佇む花束の少女。<br/>砂浜のように白く涼しげなワンピース姿は、夏の暑さを忘れさせてくれるかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2512
+ | Value=フィジカの家族の真実を知ってしまい、1人夕陽の公園で打ちひしがれるガムリン。<br/>そして、居た堪れない思いに耐えながらフィジカへ伝えるように家族の無事を呟いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2513
+ | Value=撃墜されたVF-17Dの爆発に照らされながらフィジカの名を叫ぶガムリン。<br/>シティ7救出の目処が立ち始めた矢先に起きた、あまりにも唐突な悲劇であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2514
+ | Value=敵兵士の記憶を呼び覚ましたことを切っ掛けに、作りかけだった曲の完成に挑むバサラ。<br/>インスピレーションを強く刺激されたのか、口からは自然と歌詞のフレーズがこぼれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2515
+ | Value=負傷しつつもシティ7へと辿りつき、フィジカの家族を見つけることができたガムリン。<br/>ガムリンの脳裏には、かつてフィジカが語っていた切実なる願いが呼び起こされていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2516
+ | Value=生身でバルキリーを破壊し、スラスター噴射の直撃さえもまったく意に介さないシビル。<br/>悪魔の如き力と美しい姿を前に金龍は錯乱し、ガムリンもまたなすすべがなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2517
+ | Value=シティ7の無事を信じて、雄叫びを上げながら奮闘するフィジカ。<br/>バトル7のトランスフォーメーションを援護するべく、迫りくる敵機を迎え撃った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2518
+ | Value=間隙を突かれ背後から撃ちぬかれるフィジカのVF-17D。<br/>大勢が有利に傾きかけたときに起きた、わずか一瞬の出来事であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2519
+ | Value=戦場からガムリンが回収したフィジカの手作りオルゴール。<br/>半分近くが焼けこげており、人形の仕掛けも止まってしまっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2520
+ | Value=シティ7で暮らすフィジカの妻と子供の写真。<br/>子供がフィジカの顔を覚えてくれないのが悩みの1つであったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2521
+ | Value=白のレースにプリントがあしらわれたキュートな水着で夏の海を満喫するミレーヌ。<br/>自由気ままに夏を楽しむミレーヌに対し、グババはちょっぴりお疲れのようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2522
+ | Value=【プリティ・マーメイド】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2523
+ | Value=救援の遅れにミリアが声を荒らげたところ絶妙なタイミングで入室してしまうミレーヌ。<br/>何食わぬ顔でお茶を受け取るミリアに対し、しらけた視線を送るミレーヌなのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2524
+ | Value=敵の大艦隊を前に、バトル7のトランスフォーメーションを指示するマックス。<br/>「奴らにこのマクシミリアン・ジーナスの戦い方、存分に見せてやる」─マックス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2525
+ | Value=バサラのバルキリーを勝手にいじり、ガウォークに変形させてしまったミレーヌ。<br/>干されていた洗濯物まで散乱させておきながらも、反省の色はいまいちといった感じだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2526
+ | Value=Fire Bomberの生歌で記憶を取り戻した敵兵に対し、穏やかに語りかけるミリア。<br/>かつて歌でカルチャーショックを受けたミリアは、この結果をわかっていたかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2527
+ | Value=敵となっていたイリーナ早川の記憶を歌で呼び覚まし、確かな手ごたえを感じたバサラ。<br/>未だ半信半疑なミレーヌに対し、バサラは不満を感じるどころか呆れてしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2528
+ | Value=バルキリーで勝手に戦ったことに対し、ミリアから直接お説教を受けるミレーヌ。<br/>ミレーヌなりに理由があっての行動だったが、それとこれとは話が違うようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2529
+ | Value=ミレーヌが勝手にバルキリーを動かしたせいで地面に落ちてしまった洗濯物。<br/>ミレーヌが悪いのは間違いないが、物干し代わりにするバサラもバサラである。
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_period2
+ | Value=応募期間 {0}/{1}/{2} {3}:{4:D2} ～ {5}/{6}/{7} {8}:{9:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=campaign_live_3rd_roulette_title
+ | Value=<size=18>マクロスF ギャラクシーライブ 2021［リベンジ］抽選会場</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_campaign_title
+ | Value=キャンペーン登録
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_campaign_result_title
+ | Value=抽選結果
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_pickup_checkbox_next
+ | Value=次から表示しない
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_result_episode
+ | Value={0}エピソード
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_result_bonus
+ | Value=消費ボーナス{0}倍
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_hi_score
+ | Value=イベントハイスコア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_music_ranking
+ | Value=イベント楽曲ランキング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_music_ranking_unit
+ | Value=位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_common_count_text
+ | Value={0} / {1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_top_button_text_collection
+ | Value=歌姫コレクション
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_top_button_text_help
+ | Value=使い方
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_top_button_text_event
+ | Value=ARイベント情報
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_top_button_text_back
+ | Value=タイトルへ戻る
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_photo_button_text_sns
+ | Value=SNSへ投稿
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_help_title_text
+ | Value=使い方
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_help_title2_text
+ | Value=ARイベント情報
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_collection_title_text
+ | Value=歌姫コレクション
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_collection_pattern_format
+ | Value={0}・{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_collection_pattern_text_0
+ | Value=ミニチュア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_collection_pattern_text_1
+ | Value=等身大
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_collection_pattern_text_2
+ | Value=パンフレット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_expired_message
+ | Value=このARマーカーは有効期限が切れているため<br/>ご利用いただけません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_download_error_0_message
+ | Value=ファイルのダウンロードに失敗しました。<br/>ストレージに十分な空き容量がない場合に<br/>このメッセージが表示される可能性が<br/>あります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_download_error_1_message
+ | Value=ファイルのダウンロードに失敗しました。<br/>インターネットへの接続や電波の状況を<br/>確認して、もう一度お試しください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_download_error_button
+ | Value=リトライ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_saved_photo
+ | Value=写真を保存しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_err_camera_permission
+ | Value=歌マクロスにカメラの使用権限が許可<br/>されていないので、ARモードをプレイ<br/>することができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_err_device_not_supported
+ | Value=ご利用中のデバイスは歌マクロスの<br/>ARモードに対応していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_err_vuforia_init_error
+ | Value=エラーが発生しました。<br/>ARシステムを起動できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_err_no_permission_storage
+ | Value=ストレージへのアクセスが許可されて<br/>いないので、写真を保存できませんで<br/>した。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_err_not_abailable_storage
+ | Value=ストレージの空き容量が不足している<br/>ので、写真を保存できませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_err_no_space_for_dataset
+ | Value=ストレージの空き容量が不足している<br/>ので、ARシステムを起動できません<br/>でした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_popup_err_no_system_error
+ | Value=問題が発生しました。<br/>ARモードを終了します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_camera_message
+ | Value=歌マクロスにカメラの使用権限が許可<br/>されていないので、ARモードをプレイ<br/>することができません。<br/><br/>以下の権限を許可してください。<br/><br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_camera_text
+ | Value=<b>カメラ</b><br/>歌マクロスでAR写真を撮影するために<br/>カメラにアクセスします。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_camera_button_l
+ | Value=タイトルへ戻る
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_camera_button_r
+ | Value=設定画面へ移動
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_storage_message_android
+ | Value=歌マクロスにストレージへのアクセスが<br/>許可されていないので、写真を保存<br/>できません。<br/><br/>以下の権限を許可してください。<br/><br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_storage_message_ios
+ | Value=歌マクロスに写真への書き込みが<br/>許可されていないので、写真を保存<br/>できません。<br/><br/>以下の権限を許可してください。<br/><br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_storage_text_android
+ | Value=<b>ストレージ</b><br/>AR写真を保存するために本体のスト<br/>レージやSDカードにアクセスします。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_storage_text_ios
+ | Value=<b>写真</b><br/>AR写真を保存するためにフォト<br/>ライブラリに書き込みます。<br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_storage_button_l
+ | Value=ARモードへ戻る
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_sel_popup_storage_button_r
+ | Value=設定画面へ移動
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cmn_profil_emblem_none
+ | Value=称号を所持していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_eve_story_title
+ | Value=イベントストーリー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_net_error_01
+ | Value=通信エラーが発生しました。<br/>インターネットへの接続や電波の状況を<br/>確認して、もう一度お試しください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_net_error_02
+ | Value=通信がタイムアウトしました。<br/>インターネットへの接続や電波の状況を<br/>確認して、もう一度お試しください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ar_net_error_03
+ | Value=エラーが発生しました。<br/><br/>エラーコード：{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    

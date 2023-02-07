@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_sp_text02
+ | Value=<br/>■特典内容<br/>・有効期間中、獲得するプレイヤーランク経験値、歌姫熟練度ポイントが1.5倍になります。<br/>・有効期間中、バルキリーオペレーション（VOP）に特別なデイリーオペレーションが<br/>　2つ追加されます。 <br/><br/>■おまけ特典<br/>スペシャルパスを購入すると、おまけとして以下の特典が付与されます。<br/>・有効期間中、契約直後と更新時にデカルガチャチケットを10枚獲得できます。<br/>　デカルガチャチケットとは、単発の有償ガチャを引けるガチャチケットです。<br/>　デカルガチャチケットはプレゼントボックス内へ配布されます。<br/>　プレゼントボックス内での保存期間は180日です。<br/>　保存期間を過ぎるとデカルガチャチケットは自動受取されます。<br/>　デカルガチャチケットの利用期限はプレゼントボックスで受取を行ってから180日となります。<br/>・有効期間中、毎日期限付きライブスキップチケットが9枚貰えます。<br/>　期限付きライブスキップチケットとは、利用期限のあるライブスキップチケットになります。<br/>　期限付きライブスキップチケットは通常のライブスキップチケットよりも優先して消費されます。<br/>　利用期限は180日で、利用期限を過ぎた期限付きライブスキップチケットは消失します。<br/>・有効期間中、ライブスキップチケットの所持枚数の上限が60枚になります。<br/>　所持枚数上限は期限付きライブスキップチケットと通常のライブスキップチケットで共通となります。<br/>・有効期間中、ライブスキップチケットの使用枚数の上限が36枚になります。<br/>・有効期間中、超時空ログインボーナスで貰える成長素材セットが2倍になります。<br/>・超時空ガチャチケットなど豪華報酬が貰える超時空ログインボーナスが追加されます。<br/>　超時空ログインボーナスはスペシャルパスの有効期間中、1日1回受け取ることができます。<br/>・超時空ログインボーナスを90回受け取るごとにレアアップスターを獲得できます。<br/>　レアアップスターはエピソードプレートをレアリティアップできるアイテムです。<br/>　レアリティアップ前の★4、★5プレートに使用できます。<br/><br/>■初回特典<br/>超時空ログインボーナスを初めて25回受け取った際にレアアップスターをプレゼントします。<br/>　※初回特典を受け取った後、再度スペシャルパスを購入しても初回特典はプレゼントされません。<br/>　※異なる端末で複数回購入しても、初回特典の付与は1回限りです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_sp_text_android
+ | Value=・スペシャルパスの有効期間は、ご利用のOSの規定に基づいて<br/>　自動で更新されます。それに伴い、特典の付与期間も自動で更新されます。<br/>・お客様が本ゲームの利用端末のデータ引き継ぎを行った場合、<br/>　旧端末におけるスペシャルパスおよび特典付与の有効期間は引き継がれますが、<br/>　異なるOS間でのデータ引き継ぎの場合や旧端末と異なるGoogleIDを使用する場合、<br/>　旧端末におけるスペシャルパスおよび特典付与の有効期間の自動更新は新端末に反映されません。<br/>　新端末でスペシャルパスを利用する場合には、<br/>　旧端末のスペシャルパスおよび特典付与期間をご確認の上、<br/>　当該期間の終了後に新端末でのスペシャルパスの購入をお願いいたします。<br/>・旧端末と新端末とで二重にスペシャルパスを購入しても、<br/>　スペシャルパスの効果発動および特典付与は重複して行われません。<br/>・有効期間中に解約した場合も、有効期間中はスペシャルパスの効果および特典付与は継続します。<br/>・レアアップスターの有効期限は付与から90日間となります。<br/>・超時空ガチャチケットの有効期限は付与から30日間となります。<br/>・スペシャルパスの更新をしない場合には、OSの規定に基づいて解約をする必要があります。　<br/>　Androidでの解約<br/>　　Google Play ストア→定期購入から定期購入の解約を行ってください。<br/>・スペシャルパスから歌マクパスに変更を行う場合も、OSの規定に基づいて解約をする必要があります。<br/>・スペシャルパスを解約した場合も、有効期間終了後に歌マクパスを契約できます。<br/>・歌マクパスからスペシャルパスに変更を行った場合、超時空ログインボーナスやレアアップスターの<br/>　経過日数を引き継ぎます。<br/>・歌マクパスからスペシャルパスへ変更を行った際に超時空ログインボーナスの内容に<br/>　差分があった場合、変更したタイミングで超時空ログインボーナスの差分が付与されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_sp_text_ios
+ | Value=・スペシャルパスの料金はご利用のiTunesアカウントに対して請求されます。<br/>・スペシャルパスの有効期間が終了する24時間前までに自動更新を解除しない限り、<br/>　スペシャルパスの有効期間は自動的に更新されます。<br/>・自動更新の料金のお支払いは、スペシャルパスの有効期間が終了する24時間以内に更新が行われます。<br/>・次回の自動更新の料金は、有効期間が終了する24時間以上前に、ご利用のApple IDに対して<br/>　提示されます。<br/>・スペシャルパスは下記の手順で、次回の自動更新のタイミングの確認や自動更新の解除を行うことが<br/>　できます。<br/>　[設定アプリ]→[iTunes StoreとApp Store]→[Apple IDを表示]→[登録]<br/>・スペシャルパスから歌マクパスへ変更を行う場合も、上記と同じ手順で解除をお願いいたします。<br/>・スペシャルパスを解約した場合も、有効期間終了後に歌マクパスを契約できます。<br/>・お客様が本ゲームの利用端末のデータ引き継ぎを行った場合、　<br/>　旧端末におけるスペシャルパスおよび特典付与の有効期間は引き継がれますが、　<br/>　異なるOS間でのデータ引き継ぎの場合や旧端末と異なるApple IDを使用する場合、　<br/>　旧端末におけるスペシャルパスおよび特典付与の有効期間の自動更新は新端末に反映されません。<br/>　新端末でスペシャルパスを利用する場合には、<br/>　旧端末のスペシャルパスおよび特典付与期間をご確認の上、<br/>　当該期間の終了後に新端末でのスペシャルパスの購入をお願いいたします。<br/>・旧端末と新端末とで二重にスペシャルパスを購入しても、　<br/>　スペシャルパスの効果発動および特典付与は重複して行われません。<br/>・有効期間中に解約した場合も、有効期間中はスペシャルパスの効果および特典付与は継続します。<br/>・レアアップスターの有効期限は付与から90日間となります。<br/>・超時空ガチャチケットの有効期限は付与から30日間となります。<br/>・歌マクパスからスペシャルパスに変更を行った場合、超時空ログインボーナスやレアアップスターの<br/>　経過日数を引き継ぎます。<br/>・歌マクパスからスペシャルパスへ変更を行った際に超時空ログインボーナスの内容に<br/>　差分があった場合、変更したタイミングで超時空ログインボーナスの差分が付与されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_pass_update_popup_title
+ | Value=乗り換え確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonus_open_target_status
+ | Value=獲得エール
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonus_open_bonus_1
+ | Value=
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonus_open_bonus_2
+ | Value=<color=#C8087E>{0:#.#}</color><color=#062E49>倍</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonus_open_explain
+ | Value=スペシャルライブではより多くのエールが入手できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonus_close_title
+ | Value=スペシャルライブ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonus_close_text
+ | Value=スペシャルライブは終了しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonus_close_next_hidden
+ | Value=次から表示しない
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_music_reselect_title
+ | Value=楽曲選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_music_reselect_text
+ | Value=楽曲のプレイ可能期間が終了したため<br/>再度楽曲を選び直しました。<br/><br/><color=#C8087E>※楽曲からランダムで選択が行われます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_music_reselect_text_count_limit
+ | Value=曜日イベント楽曲が<br/>プレイ可能回数の上限に達したため<br/>再度楽曲を選び直しました。 <br/><br/><color=#C8087E>※楽曲からランダムで選択が行われます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonusitem_title
+ | Value=ライブボルテージ上昇
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiv_bonusitem_ask_use_text
+ | Value=ペンライトを1個使用して<br/>ライブボルテージを{0}%上昇させます。<br/><color=#C8087E>※本日の残り回数はあと{5}回です。</color><br/><br/><color=#C8087E>ライブボルテージ　{1}→{2}<br/>ペンライト　{3}→{4}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiv_bonusitem_use_text
+ | Value=ライブボルテージが{0}%上昇しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonusitem_none_text
+ | Value=ペンライトを所持していない為、<br/>ライブボルテージの上昇は行えません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonusitem_limit_title
+ | Value=使用制限
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonusitem_limit_daily_cnt
+ | Value=1日に使用できる最大数を超えているため<br/>このアイテムは使用できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonusitem_limit_on_fever
+ | Value=フィーバータイム発生中のため<br/>このアイテムは使用できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_godiva_bonusitem_limit_on_bonus
+ | Value=スペシャルライブ開催中のため<br/>このアイテムは使用できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_event_info_highscore
+ | Value=ハイスコア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_even_tinfo_rank
+ | Value=順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_even_tinfo_total_point
+ | Value=累計ポイント
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_even_tinfo_next_point
+ | Value=次の報酬まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_even_tinfo_nest_reward
+ | Value=次の報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_even_tinfo_rank_unit
+ | Value=位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_even_tinfo_point_unit
+ | Value=pt
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_even_tinfo_final_rank
+ | Value=最終順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_even_tinfo_rank_collecting
+ | Value=集計中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_diva_select_not_have
+ | Value=未参加
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_diva_select_explain
+ | Value=歌姫を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_music_info_bonus_remain_count
+ | Value=あと{0}回
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_music_info_bonus_lots_rate
+ | Value={0}%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_music_info_exp_bonus
+ | Value=獲得エール{0:#.#}倍！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_music_select_exp_bonus
+ | Value=獲得エール{0:#.#}倍
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=godiva_result_bonus
+ | Value=ライブボーナス{0}倍
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_godiva_music_exp_title_h2
+ | Value=エール
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_godiva_music_exp_item_soul
+ | Value=ソウル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_godiva_music_exp_item_voice
+ | Value=ボイス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_godiva_music_exp_item_charm
+ | Value=チャーム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_godiva_status_title
+ | Value=ステータス補正値
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_godiva_status_name_soul
+ | Value=ソウルアピール
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_godiva_status_name_voice
+ | Value=ボイスアピール
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_godiva_status_name_charm
+ | Value=チャームアピール
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_godiva_status_level
+ | Value={0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_godiva_status_status
+ | Value={0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_godiva_status_up_status
+ | Value=(+{0})
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_diva_select_title
+ | Value=歌姫選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    

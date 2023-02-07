@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3180
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3181
+ | Value=美雲・ギンヌメールにまつわる神秘のベールを解き明かすべく、密着取材が開始された。<br/>プライベートな姿をカメラに捉えるため、神出鬼没な彼女の行方を全力で捜索中である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3182
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3183
+ | Value=ヴァール・シンドロームが発生したことを確認し、変装を解いて名乗りを上げる美雲。<br/>一緒に掲げるサインは片手で指をクロスさせて作る、美雲流のワルキューレサインだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3184
+ | Value=戴冠式にて国民に向けた演説を行うロイドだが、その内容は次第に過激さを増していく。<br/>そして、新統合政府の打倒とともに、大銀河文明を樹立させることを宣言したのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3185
+ | Value=【ミステリアス・シティ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3186
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3187
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3188
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3189
+ | Value=【ミステリアス・シティ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3190
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3191
+ | Value=【ミステリアス・シティ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3192
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3193
+ | Value=爽やかなセーラー服を纏ったかわいい水兵さんとして、大海原へと飛び出したミレーヌ。<br/>船上での作業もお手伝いしているが、張り切りすぎて失敗してしまうこともあるみたい？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3194
+ | Value=【弾ける航海日誌】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3195
+ | Value=猛暑に見舞われたシティの中にあっても、冷蔵庫はひんやりとした風を送ってくれる。<br/>「涼し～い！生き返るわ♪」─ミレーヌ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3196
+ | Value=燃える惑星のすぐそばで船外作業をした結果、すっかり日焼けしてしまったバサラ。<br/>同じく作業をしていたガムリンとともに、お互いの日焼け跡を茶化しあうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3197
+ | Value=【弾ける航海日誌】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3198
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3199
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3200
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3201
+ | Value=【弾ける航海日誌】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3202
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3203
+ | Value=【弾ける航海日誌】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3204
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3205
+ | Value=7つの海をわたる冒険者のように、コンパスを手に水平線の彼方を見つめるバサラ。<br/>そして熱き冒険心の赴くまま、遠きフロンティアを目指して大海原へと舵を切っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3206
+ | Value=【銀河大航海時代】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3207
+ | Value=クジラのひげを使った弦の奏でる音色に、感動とともに確かな手応えを感じたバサラ。<br/>一心不乱にギターをかき鳴らすと、クジラへの思いのたけを込めて熱唱したのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3208
+ | Value=クジラを追い続けるというグラハムに、ライザもまたグラハムを追い続けると答える。<br/>長年に渡って続いていたわだかまりが解けた後も、変わらない関係がそこにはあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3209
+ | Value=瀕死の状態から一転して、惑星ゾラに湧き出る不思議な温泉の力で完全復活したバサラ。<br/>白い銀河クジラのギラギラした目を思い出し、雄たけびをあげて再会を誓ったのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3210
+ | Value=【銀河大航海時代】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3211
+ | Value=【銀河大航海時代】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3212
+ | Value=【銀河大航海時代】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3213
+ | Value=【銀河大航海時代】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3214
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3215
+ | Value=【銀河大航海時代】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3216
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3217
+ | Value=かつて地球のカリブ海で名を馳せた海賊よろしく、勇ましい女海賊の姿に扮したカナメ。<br/>カナメがリーダーとして率いる海賊団なら、勝利の美酒と黄金に輝く夢を味わえそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3218
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3219
+ | Value=メッサーとの壮絶な戦いの最中、キースもまたカナメの歌をルンに感じ取っていた。<br/>死神に相応しい気高い風だったことをカナメに伝えると、惜しむようにルンを瞬かせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3220
+ | Value=何度も助けられたことを感謝するカナメに対し、あくまで任務であると答えるメッサー。<br/>「それでも…本当にありがとう」「…いえ」─カナメ、メッサー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3221
+ | Value=【BUCCANEER！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3222
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3223
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3224
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3225
+ | Value=【BUCCANEER！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3226
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3227
+ | Value=【BUCCANEER！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3228
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_3229
+ | Value=濡羽色に映る愛しき人の面影を纏うかのような、艶めかしい衣装に身を包むシェリル。<br/>黒が様々な色を内に持つように、衣装にも深い感情が込められているのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    

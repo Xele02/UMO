@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1330
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1331
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1332
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1333
+ | Value=いくつもの窮地をともに乗り越えてきたワルキューレの5人。<br/>個性的なメンバーを支え、繋ぎ止める彼女こそ、ワルキューレのリーダーなのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1334
+ | Value=デルタ小隊へと復帰したメッサーを、アラドとカナメが暖かく迎え入れる。<br/>「メッサー・イーレフェルト中尉、ただいまより任務に戻ります！」─メッサー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1335
+ | Value=これまで一歩引いた位置からメンバーを見守ってきたカナメだったが、今日からは違う。<br/>自分の歌を大切に思ってくれた人のため、誰よりも強く歌い続けることを誓った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1336
+ | Value=メッサーのブレスレット型プレーヤーに唯一入っていたカナメの歌。<br/>彼女の歌があったからこそ、メッサーは自我を失わずにいられたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1337
+ | Value=アラドがクラゲ送りの宴会用に差し入れた年代物のバナナ酒。<br/>とんでもないお宝らしく、酒豪であればぜひとも口にしたい逸品だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1338
+ | Value=デルタ小隊の隊長として、常に最善を尽くしてきたアラド。<br/>そんな彼でも、この日ばかりは行き場のない後悔を抱えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1339
+ | Value=親しくなりすぎたら、暴走したときにとどめを刺せなくなるかもしれない。<br/>そんなメッサーの想いを知り、ハヤテの心にはやりきれない想いが込み上げるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1340
+ | Value=クラゲを生で丸呑みするのが大好きだったレイナ。<br/>「クラゲ…もう丸呑みできない…メッサーかもしれないから」─レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1341
+ | Value=クラゲ送り用に作られた、メッサーの機体を模した舟。<br/>「ちょいブサだけど、きゃわわ！」─マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1342
+ | Value=VF-31を模した舟を海に浮かべるハヤテたち。<br/>メッサーの魂が光クラゲとなり、再び空へ還ることを信じて…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1343
+ | Value=メッサーの機体から見つかった、デルタ小隊のフライトログが残された端末。<br/>機体の状態から性格、利き足にいたるまで事細かな指摘と考察が添えられていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1344
+ | Value=夜遅くまでデルタ小隊のフライトログを作成していたメッサー。<br/>仲間たちと距離を取りつつも、彼は最後まで仲間たちを想い続けていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1345
+ | Value=煌びやかな装飾と、鮮やかな赤に彩られた衣装を身に纏うシェリル。<br/>絢爛豪華なその出で立ちは、特別なアニバーサリーを祝うのにふさわしい衣装だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1346
+ | Value=薔薇のように美しく高貴な心を持ち、分け隔てない愛情を与えてくれるシェリル。<br/>その幸福なひとときは、時を超えても色あせることのない絵画のような美しさをみせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1347
+ | Value=今歌えばこの体は終わってしまうかもしれない。それでも彼女はマイクを手に取った。<br/>「たとえ、わたしが死んでも…歌は死なない！」─シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1348
+ | Value=自分で決めるということは、誰のせいにもできないことだと語るオズマ。<br/>「だからよく己に問え！これから何の、どんな役を演じるのかをな！」─オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1349
+ | Value=アルトがまだ子役だった頃、公演後に1人の少女から花束を受け取ったことがあった。<br/>アルトにとっては遠い過去の記憶だが、少女はこのときのことをずっと覚えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1350
+ | Value=煌めく炎のホログラムを映しながら、ステージに向かって歩き出すシェリル。<br/>体に纏った輝きは、生命を燃やして歌うシェリルに呼応しているかのようだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1351
+ | Value=生命を掛けて歌うというシェリルの覚悟と歌声に圧倒されるオズマ。<br/>オズマの目に映るその姿は、まさに『銀河の妖精』そのものであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1352
+ | Value=バジュラとの戦いに勝利し人々を救うため、再び歌姫として舞い戻ったシェリル。<br/>ステージの上で見せたその表情は、最後まで歌い続けるという覚悟に満ちていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1353
+ | Value=シェリルとオズマを救出するため、2人に機体を近づけるアルト。<br/>シェリルの歌声が朦朧としたアルトの意識を呼び覚まし、ここまで導いたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1354
+ | Value=統合軍の兵士としてオズマとの一騎打ちに挑むアルト。<br/>すれ違う瞬間、両者はキャノピー越しにお互いの姿を認めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1355
+ | Value=フォールドジャミング波の影響を受け、苦しそうに身を縮めるあい君。<br/>周囲に漏れる微光は、ジャミング波に反応するかのように明滅を繰り返していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1356
+ | Value=早乙女家の屋敷内に築かれた日本庭園。<br/>今は薄明かりに照らされ、息苦しい程の静寂に満ちている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1357
+ | Value=ワルキューレのエースとして、圧倒的な歌声でステージを魅了する美雲。<br/>胸に突き刺さるその歌声は、観客のみならずワルキューレのメンバーをも奮い立たせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1358
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1359
+ | Value=美雲の加入を弾みにして、ワルキューレを最高のユニットにすると誓ったカナメたち。<br/>独房に響き渡った美雲の歌声は、そんな仲間たちの想いに応えるかのようだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1360
+ | Value=戦術音楽ユニット設立に伴い、教育係兼マネージャーとして抜擢されたカナメ。彼女が<br/>レセプター保有者かつ元ソロアイドルであったことから創設メンバーの1人となった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1361
+ | Value=作戦会議の中で示された遺跡戦艦に、何かを感じ取っていた美雲。<br/>それが何なのか答えが出せない美雲は、海底遺跡が存在する海を見つめていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1362
+ | Value=不思議な光景を夢に見て、何処ともわからない一室で目を覚ます美雲。<br/>夢の中では自分に似た女性が、古代遺跡に歌を捧げているように見えたが…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1363
+ | Value=美雲の歌で遺跡のシステムが起動したことに動揺する空中騎士団の若い騎士たち。<br/>さまざまな憶測を並べて不安を募らせる姿に、ボーグは心底うんざりといった表情だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1364
+ | Value=歌を歌いながらカナメたちが収監されている独房に現れた美雲。<br/>いつもとなんら変わりのない美雲の姿に、カナメたちは思わず戸惑ってしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1365
+ | Value=兄のテオと比べて好戦的な性格の上、お調子者なところがある弟のザオ。<br/>弟の行き過ぎた行動や態度を正すのは、しっかり者である兄、テオの役目だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1366
+ | Value=戦術ライブのために訪れた街で、暴走したクァドランに追い詰められるカナメ。<br/>当時は戦術音楽ユニットとして本領が発揮できず、危機に瀕することも多かった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1367
+ | Value=アイテール甲板上から望むラグナの夕陽。<br/>ケイオスのクルーだけが見られる絶景で、センチメンタルな気分のときにもピッタリ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1368
+ | Value=執務室にてハインツの歌声に何が足りないのかを考える込むロイド。<br/>その手に持った端末には、ヴォルドール遺跡での美雲の姿が映し出されていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1369
+ | Value=愛らしい振る舞いと柔らかなプロポーションで、男女問わず人気を誇るマキナ。<br/>また、彼女のアイドルへの情熱が今のワルキューレを形作ったといえるのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1370
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1371
+ | Value=全然やりきっていない、このままじゃ終われないと手作りの衣装を配って回るマキナ。<br/>諦めかけていたメンバーも、衣装を受け取ることで再びやる気を取り戻していった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1372
+ | Value=医療船のIDセキュリティが変更されており、急遽プログラムの修正を行うレイナ。<br/>難しいプログラムに出会うほど嬉々とする姿は、まさに天才ハッカーだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1373
+ | Value=コードの認証に失敗し、やむをえず強行突破を図るカナメたち。<br/>カナメの突入をフォローするため、マキナは身を挺して警備員に飛び掛かった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1374
+ | Value=共鳴実験の際、カナメからフレイアが歌えなかったことを聞かされたハヤテ。<br/>深く沈み込むフレイアの姿に、ハヤテは声を掛けることができなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1375
+ | Value=ハインツを裏切るようなことがあれば容赦はしないと切り捨てたキース。<br/>ロイドは友として、キースも同じ道を歩んでくれることを願わずにはいられなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1376
+ | Value=細胞に予めフォールドレセプター因子を植え付けたクローンとして生み出された美雲。<br/>美雲は自身の出生の秘密を知ってなお、歌い続けることを仲間たちの前で誓った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1377
+ | Value=医療船へのハッキングを突き止められ、警備員に取り囲まれるレイナ。<br/>レイナは後ろ手にキーを入力し、ぎりぎりまでカナメの援護を行ったのち投降した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1378
+ | Value=設立間もない頃のワルキューレを救ったアラドのVF-31A。<br/>機体の「カイロス」は、チャンスの神にあやかったものである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1379
+ | Value=レイナが医療船に放った最後のハッキングプログラム。<br/>美雲がいると思われる部屋の扉を開き、その先へとカナメを導いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,307 @@
+
+{{Texts/Bank/BankValue:
+ | Key=talk_time_01
+ | Value=あー、腹減った。<br/>なんかねーかな
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_02
+ | Value=俺の歌を聞けば、<br/>いつだってパワーが湧いてくるぜ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_03
+ | Value=散歩ってのもいいもんだぜ。<br/>いいフレーズが浮かんでくるんだ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_04
+ | Value=難しいことなんて<br/>考えてねーで、歌おうぜ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_05
+ | Value=俺は好きな時に歌うぜ。<br/>時間や場所なんて関係ねぇ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_06
+ | Value=おい、返事くらいしろよ。<br/>ライブが始まるぞ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_07
+ | Value=…んー<br/>…この音だとどうもしっくりこねぇな
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_08
+ | Value=なんだ？ミレーヌが呼んでんのか？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_01
+ | Value=んん…<br/>まだこんな時間かよ…
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_02
+ | Value=さ、今日も1日、熱くいくぜ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_03
+ | Value=飯食わねえと、<br/>ライブはできねぇぞ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_04
+ | Value=今日も俺の歌、<br/>聞いてくれたのか？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_05
+ | Value=ん～…、なんか違うな…<br/>おっ、いたのかよ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_01
+ | Value=やっぱり、<br/>俺の歌が忘れられなかったのか？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_02
+ | Value=今日も気合入れていくぜ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_birthday_01
+ | Value=ん？俺の誕生日プレゼント？<br/>…へぇ、嬉しいねぇ。ありがとよ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_01
+ | Value=正月休み？へっ、関係ねぇな。<br/>盆も正月も俺は歌うだけだ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_02
+ | Value=ミレーヌがチョコを作ったんだと。<br/>お前も一緒に食うか？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_03
+ | Value=節分ねぇ…そんなに興味ねぇな
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_04
+ | Value=なんだかいい匂いがするな…<br/>桃の花の匂いか？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_05
+ | Value=ホワイトデーか。そういや、<br/>ガムリンがお返しがどうのって<br/>話してたな
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_06
+ | Value=今日はエイプリルフールだな。<br/>ミレーヌがバレバレの嘘を<br/>ついてたぜ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_07
+ | Value=ゴールデンウィークって<br/>何がゴールデンなんだ？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_08
+ | Value=ミレーヌがウェディングドレス<br/>見てニヤけっぱなしなんだ。<br/>お前にはまだ早いってーの
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_09
+ | Value=星が綺麗だな…こういう日は、<br/>星を眺めながら歌うに限る
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_10
+ | Value=歌でスイカを割る？<br/>いいぜ、試してみようじゃねぇか！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_11
+ | Value=花火の音って、いいビートだよな。<br/>嫌いじゃないぜ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_12
+ | Value=月を見ながら作曲すると、<br/>結構はかどるんだぜ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_13
+ | Value=俺の歌でド派手なハロウィンに<br/>してやるぜ！<br/>トリック・オア・ファイヤー！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_14
+ | Value=文化の祭りって何かって？<br/>んなもん、俺の歌を聞けばわかるぜ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_15
+ | Value=サンタの格好でライブすることに<br/>なったんだけどよ…髭がギターに<br/>ひっかかって、やりづれぇぞ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_16
+ | Value=年越しの準備はできてるか？<br/>来年も燃えるぜ！ファイヤー！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_17
+ | Value=オーディエンスが大勢いるな！<br/>いいね、燃えてきたぜー！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_18
+ | Value=オーディエンス100万人か！<br/>サイッコーだぜ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_19
+ | Value=200万ダウンロード達成！<br/>やったぜ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_20
+ | Value=何周年だろうと関係ねぇよ、<br/>俺は歌うだけだ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_01
+ | Value=なんだ、<br/>俺の歌が聞きたいのか？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_02
+ | Value=おいおい、<br/>くすぐったいじゃねーか。
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_03
+ | Value=何だってんだ、この気持ち。<br/>熱いぜ…！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_04
+ | Value=あー、腹減った。<br/>なんかねーかな
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_05
+ | Value=俺の歌を聞けば、<br/>いつだってパワーが湧いてくるぜ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_06
+ | Value=散歩ってのもいいもんだぜ。<br/>いいフレーズが浮かんでくるんだ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_07
+ | Value=なんだよ、くすぐってぇな
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_08
+ | Value=そうだな…<br/>お前の好きな歌、教えてくれよ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_01
+ | Value=ほらよ、<br/>こいつを受け取ってくれ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_02
+ | Value=プレゼントってやつだ<br/>好きに使ってくれよ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_01
+ | Value=やっぱ、歌は生で聞くもんだぜ！<br/>俺のハートを感じたけりゃ、<br/>次のライブも楽しみにしててくれ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_01
+ | Value=へぇ…なかなかやるじゃねぇか
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_02
+ | Value=…お前の熱いハート、<br/>しっかり伝わったぜ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_03
+ | Value=スペシャルなプレゼントだ。<br/>今回だけだぞ？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_01
+ | Value=いいねぇ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    

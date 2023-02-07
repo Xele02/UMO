@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_helprequest_friend
+ | Value=フレンドを優先する
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_helprequest_all
+ | Value=全体に救援要請を送る
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_helprequest_text
+ | Value=
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_boss_sort_title
+ | Value=表示順変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_cannon_plate_title
+ | Value=装填プレート確認　<size=22>※マクロスキャノンゲージ1消費</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_cannon_plate_bonus_format
+ | Value={0}ボーナス：<color=#C8087E>{1}％</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_cannon_plate_text01
+ | Value=主砲威力：{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_cannon_plate_text02
+ | Value=以下のプレートを【<color=#C8087E>{0}枚</color>】装填してマクロスキャノンを発射します。<br/>※プレートは同じ暴走エネミーに対して1度しか装填できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_cannon_plate_text03
+ | Value=プレートをすべて使い切ったため、プレートを装填しないでマクロスキャノンを発射します。<br/>※プレートは同じ暴走エネミーに対して1度しか装填できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_cannon_plate_text04
+ | Value=使用できるプレートはありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_init_sort_text
+ | Value=現在のフィルター条件で<br/>表示可能な暴走エネミーが存在しません。<br/><br/>フィルター設定を初期化します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_warning_sort_text
+ | Value=選択された条件に一致する<br/>暴走エネミーはいません。<br/><br/>条件を再設定してください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_announce_text
+ | Value={0}から支援を受け、マクロスキャノンゲージが{1}%上昇しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_announce_text02
+ | Value={0}等から{2}回の支援を受け、マクロスキャノンゲージが{1}%上昇しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_announce_text03
+ | Value=部隊の仲間から{2}回の支援を受け、マクロスキャノンゲージが{1}%上昇しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_top_gauge_text
+ | Value=仲間の協力で<br/>マクロスキャノンゲージが{0}%上昇！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_top_gauge_max_text
+ | Value=最大までチャージされているので<br/>これ以上は上昇しません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_act_support_desc_text
+ | Value=チケットなしでライブスキップ！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_act_fullpower_desc_text
+ | Value=エネミーに超インパクト！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_damage_result_text
+ | Value=インパクト
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_damage_result_gauge_max_text
+ | Value=最大までチャージされているのでこれ以上は上昇しません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_ap_heal_title
+ | Value=AP回復確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_ap_heal_text
+ | Value=アイテムを使用してAPを回復します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_ap_heal_item01_text01
+ | Value=歌晶石×{0}個
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_ap_heal_item01_text02
+ | Value=使用するとAPを{0}回復する。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_ap_heal_item01_text03
+ | Value=所持：{0}個
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_ap_heal_item02_text01
+ | Value={0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_ap_heal_item02_text02
+ | Value=使用するとAPを{0}回復する。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_ap_heal_item02_text03
+ | Value=所持：{0}個
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_ap_heal_item03_text01
+ | Value={0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_ap_heal_item03_text02
+ | Value=使用するとAPを1回復する。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_ap_heal_item03_text03
+ | Value=所持：{0}個
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_heal_item_cannon_text001
+ | Value=マクロスキャノンゲージチャージ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_heal_item_cannon_text002
+ | Value={0}を{1}個消費することで<br/>マクロスキャノンゲージを{2}%チャージします。<br/>最大で200%までチャージできます。<br/><br/><color=#C6077CFF>{0}　{3}→{4}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_heal_item_cannon_text003
+ | Value=マクロスキャノンゲージを回復する<br/>{0}を所持していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_heal_item_cannon_text004
+ | Value=これ以上マクロスキャノンゲージを<br/>チャージできません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_heal_item_cannon_text005
+ | Value=マクロスキャノンゲージのチャージが完了しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_mvp_notes_text
+ | Value=全難易度共通のランキングになります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_mvp_desc_text
+ | Value=※累計インパクト数にはエネミーに与えたインパクト数がそのまま加算されます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_mvp_cell_text01
+ | Value=1位のポイント
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_mvp_cell_text02
+ | Value=2位のポイント
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_mvp_info_text01
+ | Value=この暴走エネミーのMVP対象者はいません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_mvp_info_text02
+ | Value=この暴走エネミーへの他の参戦者はいません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_mvp_info_text03
+ | Value=あなたはこの暴走エネミーへ参戦していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_defeated_title
+ | Value=無力化された暴走エネミー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_defeated_text
+ | Value=選択した暴走エネミーは無力化されました。<br/>リストを更新します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_escaped01_title
+ | Value=無力化に失敗した暴走エネミー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_escaped01_text
+ | Value=選択した暴走エネミーの無力化に失敗しました。<br/>リストを更新します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_escaped02_title
+ | Value=無力化に失敗した暴走エネミー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_escaped02_text
+ | Value=選択した暴走エネミーの無力化に失敗しました。<br/>ポイントの加算は行われません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

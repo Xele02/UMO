@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_deco_set_item_detaile_list
+ | Value=このデコセットは以下のアイテムのセット販売です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_deco_set_item_detaile_caution
+ | Value=最大所持数を超えて所持することはできません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_change_storage_attention_text
+ | Value=選択中のデコルームに変更しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_result_error_text
+ | Value=通信エラーが発生し、<br/>結果の反映が行えませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_ap_recovery_success_title
+ | Value=AP回復
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_ap_recovery_success_text
+ | Value=APが{0}に回復しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_ap_recovery_max_text
+ | Value=これ以上APを回復できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_ap_recovery_success_bonus_title
+ | Value=AP回復
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_ap_recovery_success_bonus_text
+ | Value=歌晶石でAPを回復したおまけで<br/>{0}を{1}個獲得しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_deco_save_confirm_title
+ | Value=保存確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_deco_save_confirm_desc
+ | Value=編集中のデコルームが保存されていません。<br/>デコルームを保存しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_tutorial_guidetohome_title
+ | Value=チュートリアル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_tutorial_guidetohome_text
+ | Value=規定ランクに達したためホーム画面へ移動します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_deco_save_title
+ | Value=保存して終了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_deco_save_desc
+ | Value=編集内容を保存して<br/>マイデコルームのトップ画面へ戻ります。<br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_shop_sort_title
+ | Value=フィルター設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_raid_login_reward_title
+ | Value=イベント参加報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_new_announce_text
+ | Value=新規に救援要請が　{0}件届きました！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_select_skip_count
+ | Value=残り{0}枚/日
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_select_skip_limit
+ | Value=本日分は終了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_skip_condition_title
+ | Value=解放条件
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_skip_condition_text
+ | Value=ライブスキップチケットはスコアランクSSでクリアした<br/>楽曲の難易度のみ使用できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_skip_ticket_count_title
+ | Value=1日に使用可能な枚数について
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_skip_ticket_count_text
+ | Value=ライブスキップチケットは1日に使える枚数が決まっています。<br/><br/>使用可能枚数が0になると、ライブスキップチケットを<br/>所持していても本日は使用できません。<br/><br/>使用可能枚数は毎日0:00になると最大まで回復します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_skip_ticket_lack_title
+ | Value=ライブスキップチケット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_skip_ticket_lack_text
+ | Value=ライブスキップチケットを所持していないため、<br/>スキップ機能を利用できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=use_ticket_popup_title
+ | Value=ライブスキップ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=use_ticket_popup_havecount
+ | Value=所持：
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=use_ticket_consume_format
+ | Value={0}：
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=use_ticket_consume_item_001
+ | Value=エナジー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=use_ticket_consume_item_002
+ | Value=AP
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=use_item_description_01
+ | Value=<color=#C8087E>1回の使用最大枚数は{0}枚です。</color><br/>ライブスキップチケットを消費してライブをスキップできます。<br/>ノーツは全てPERFECT、コンボ数は0として報酬、歌姫熟練度ポイントなどを取得できます。<br/>使用するチケットの枚数によって取得する量は変化します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=use_item_description_02
+ | Value=ライブスキップチケットを消費してライブをスキップできます。<br/>今回使えるライブスキップチケットは1枚だけです。<br/>ノーツは全てPERFECT、コンボ数は0として報酬、歌姫熟練度ポイントなどを取得できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=use_item_description_03
+ | Value=ライブスキップチケットを1枚消費してライブをスキップします。<br/><br/>ライブスキップチケット　{0}→{1}<br/><br/>・ノーツは全てPERFECTで判定されます。<br/>・スキップをした場合「フルコンボ」の判定はされません。<br/>・スコア、バルキリーモードでの結果はユニット編成内容によって変化します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=use_item_description_04
+ | Value=<color=#C8087E>1回の使用最大枚数は{0}枚です。</color><br/>ライブスキップチケットを消費してライブをスキップできます。<br/>曜日楽曲の残り回数以上のチケットは使えません。<br/>ノーツは全てPERFECT、コンボ数は0として報酬、歌姫熟練度ポイントなどを取得できます。<br/>使用するチケットの枚数によって取得する量は変化します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=boost_skip_ticket_title
+ | Value=ライブスキップチケット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=boost_skip_ticket_text
+ | Value=ブースト機能を使用している場合は<br/>スキップ機能を利用できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=boost_skip_battle_ex_title
+ | Value=ライブスキップチケット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=boost_skip_battle_ex_text
+ | Value=EXライバルを選択している場合は<br/>スキップ機能を利用できません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_skip_caution
+ | Value=※ハイスコア、歌レートはスキップ機能使用時には更新されません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_assist_caution
+ | Value=※ハイスコア、歌レートは支援を行った時には更新されません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_mission_stepup_desc
+ | Value=ステップ{0}をクリアしたので、次のステップ{1}が解放されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_mission_stepup_allclear
+ | Value=ステップアップミッションを最後までクリアしました！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rareup_item_warning_text
+ | Value=レアアップスターのかけらが150個を超えると<br/>自動でレアアップスターへ交換致します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rareup_item_convert_desc_01
+ | Value=レアアップスターのかけらが所持上限を超えたため<br/>レアアップスターに交換されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_rareup_item_convert_desc_02
+ | Value=レアアップスターはアイテム交換所で交換も可能です。<br/><color=#8E0529>※レアアップスターの使用期限は90日です。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_get_liveskip_ticket_title
+ | Value={0}獲得
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_get_liveskip_ticket_desc
+ | Value=※毎日{0}枚配布されます。<br/>※所持上限を超えた分は消失します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_get_liveskip_ticket_count
+ | Value=現在の所持数
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_get_liveskip_ticket_checkbox
+ | Value=次から表示しない
+ | ParentPage=Texts/Bank/menu
+}}
+                    

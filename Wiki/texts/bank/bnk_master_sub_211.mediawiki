@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0033
+ | Value=命属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0034
+ | Value=星属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0035
+ | Value=愛属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0036
+ | Value=命属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0037
+ | Value=星属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0038
+ | Value=愛属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0039
+ | Value=命属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0040
+ | Value=歌姫の取得する熟練ポイントが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0041
+ | Value=ユニットのソウルとチャームが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0042
+ | Value=ユニットのボイスとチャームが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0043
+ | Value=ユニットのソウルとボイスが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0044
+ | Value=ユニットのトータル値とサポート値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0045
+ | Value=ユニットのトータル値とサポート値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0046
+ | Value=ユニットのトータル値とライフ値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0047
+ | Value=ユニットのライフ値とサポート値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0048
+ | Value=指定シリーズの楽曲でユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0049
+ | Value=マクロスΔ楽曲でユニットのトータル値が[v1]％アップ（シリーズ対象時）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0050
+ | Value=マクロスF楽曲でユニットのトータル値が[v1]％アップ（シリーズ対象時）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0051
+ | Value=マクロス7楽曲でユニットのトータル値が[v1]％アップ（シリーズ対象時）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0052
+ | Value=超時空要塞マクロス楽曲でユニットのトータル値が[v1]％アップ（シリーズ対象時）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0053
+ | Value=OTHERSの楽曲でユニットのトータル値が[v1]％アップ（シリーズ対象時）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0054
+ | Value=指定シリーズの楽曲でユニットのソウルが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0055
+ | Value=指定シリーズの楽曲でユニットのボイスが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0056
+ | Value=指定シリーズの楽曲でユニットのチャームが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0057
+ | Value=マクロスΔ楽曲でユニットのソウルが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0058
+ | Value=マクロスΔ楽曲でユニットのボイスが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0059
+ | Value=マクロスΔ楽曲でユニットのチャームが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0060
+ | Value=マクロスF楽曲でユニットのソウルが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0061
+ | Value=マクロスF楽曲でユニットのボイスが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0062
+ | Value=マクロスF楽曲でユニットのチャームが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0063
+ | Value=マクロス7楽曲でユニットのソウルが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0064
+ | Value=マクロス7楽曲でユニットのボイスが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0065
+ | Value=マクロス7楽曲でユニットのチャームが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0066
+ | Value=超時空要塞マクロス楽曲でユニットのソウルが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0067
+ | Value=超時空要塞マクロス楽曲でユニットのボイスが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0068
+ | Value=超時空要塞マクロス楽曲でユニットのチャームが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0069
+ | Value=OTHERSの楽曲でユニットのソウルが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0070
+ | Value=OTHERSの楽曲でユニットのボイスが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0071
+ | Value=OTHERSの楽曲でユニットのチャームが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0072
+ | Value=マクロスF星属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0073
+ | Value=マクロスF愛属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0074
+ | Value=マクロスF命属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0075
+ | Value=マクロスΔ星属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0076
+ | Value=マクロスΔ愛属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0077
+ | Value=マクロスΔ命属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0078
+ | Value=超時空要塞マクロス星属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0079
+ | Value=超時空要塞マクロス愛属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0080
+ | Value=超時空要塞マクロス命属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0081
+ | Value=マクロス7星属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=c_dsc_0082
+ | Value=マクロス7愛属性楽曲の時ユニットのトータル値が[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    

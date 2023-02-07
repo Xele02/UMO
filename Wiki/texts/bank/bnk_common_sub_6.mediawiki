@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_accept_fail_01
+ | Value=フレンド承認に失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_already_friend_title
+ | Value=フレンド確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_already_friend_01
+ | Value=すでにフレンドになっています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_delete_request_fail_tilte
+ | Value=フレンド申請取り消し失敗
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_delete_request_fail_01
+ | Value=すでに申請が承認されているか<br/>拒否されているため<br/>申請の取り消しができませんでした。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_present_expire_title
+ | Value=受取失敗
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_present_expire_01
+ | Value=受け取ろうとしたアイテムの<br/>受け取り期限が切れています。<br/><br/>タイトル画面に戻ります。<br/>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_present_expire_02
+ | Value=受け取ろうとしたアイテムに<br/>受け取り期限が切れているものがありました。<br/><br/>タイトル画面に戻ります。<br/>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_limit_title
+ | Value=購入上限
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_limit_01
+ | Value=有償歌晶石は9999個を超えて<br/>購入することはできません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_expire_title
+ | Value=購入失敗
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_expire_01
+ | Value=販売期間が終了しました。<br/>購入いただくことができません。<br/>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_expire_01
+ | Value=現在、このガチャを引くことはできません。<br/>タイトル画面に戻ります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_internal_client_error_title
+ | Value=クライアントエラー
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_internal_client_error_01
+ | Value=エラーが発生しました。<br/>ストレージの空き容量が少ない場合にも<br/>このメッセージが表示される可能性があります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_player_not_found
+ | Value=この{0}アカウントは<br/>プレイデータと連携されていません。<br/>事前に引き継ぎ準備したアカウントを確認し、<br/>やり直してください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_cancel_title
+ | Value=購入キャンセル
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_cancel_01
+ | Value=購入がキャンセルされました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_error_title
+ | Value=購入失敗
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_092_01
+ | Value=前回の購入処理が完了していないため<br/>購入に失敗しました。<br/>アプリの再起動またはタイトル画面から<br/>購入処理の完了を行ってください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_error_not_product
+ | Value=購入可能な歌晶石がありません。<br/>メニューのお問い合わせからご連絡ください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inf_already_exists_01
+ | Value=この{0}アカウントは、<br/>現在、別のプレイデータと連携されています。<br/>連携を解除してから再度お手続きいただくか、<br/>別の{0}アカウントをご利用ください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_select
+ | Value=旧端末でデータ引き継ぎの準備をする場合は<br/>「データを引き継ぐ準備をする」を<br/>新端末でデータ引き継ぎをする場合は<br/>「データを引き継ぐ」を選んでください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_pre_title
+ | Value=データ引き継ぎ準備
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_pre_sns_select
+ | Value=引き継ぎ準備をせずにアプリを削除した場合、<br/>これまでプレイしたプレイデータは失われます。<br/><br/>端末紛失など不測の事態が発生した場合でも<br/>プレイデータを引き継げるように、事前のお手続きをお願いいたします。<br/>連携後、ボタンをもう一度タップすることで連携を解除することができます。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_sns_select
+ | Value=旧端末で事前準備した下記いずれかの方法で、<br/>新端末にプレイデータを引き継ぐことができます。<br/><br/>データ引き継ぎをする前に必ず注意事項をお読みください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_sns_caution
+ | Value=※アプリと連携していない場合はアプリを削除するとプレイデータが消失します。<br/>※ゲーム設定を引き継ぐことはできません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_confirm_title
+ | Value=データ引き継ぎ確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_confirm_content_01
+ | Value=新端末でプレイデータを引き継ぐと、<br/>旧端末ではプレイができなくなります。<br/>引き継ぎを行いますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_confirm_content_02
+ | Value=現在プレイ中のプレイデータはSNS連携されていません。<br/>このまま別のプレイデータを引き継ぐと<br/>現在プレイ中のプレイデータは破棄されます。<br/>よろしいですか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_caution_title
+ | Value=データ引き継ぎの注意事項
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inh_caution_content
+ | Value=引き継ぎ準備をせずにアプリを削除した場合、<br/>これまでプレイしたプレイデータは失われます。<br/><br/> 端末紛失など不測の事態が発生した場合でも<br/>プレイデータを引き継げるように、事前のお手続きをお願いいたします。<br/> <br/>旧端末では「ホーム画面のメニュー」<br/>→「引き継ぎ準備」から事前準備をしてください。<br/>新端末では「タイトル画面」<br/>→「引き継ぎ」からプレイデータを引き継いでください。<br/> <br/>新端末でプレイデータを引き継ぐと、旧端末ではプレイができなくなります。<br/><br/><color=#C8087E>※上記仕様は予告なく変更する可能性がありますのでご了承ください。</color>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_lb_already_received
+ | Value=ログインボーナスはすでに受け取り済みです。<br/>プレゼントBOXを確認してください。<br/>通信環境が悪い状態でこのメッセージが<br/>表示される可能性があります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_ranking_ban_01
+ | Value=異常を検知したため、<br/>イベントに参加できません。<br/>お心当たりがない場合は<br/>お問い合わせまでお願いいたします。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_ranking_ban_tilte
+ | Value=警告
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inf_line_api_update_title
+ | Value=LINE連携再設定のお願い
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_inf_line_api_update_content
+ | Value=<size=20>このメッセージはLINE連携の再設定が必要なお客様に表示されます。<br/>LINE社の仕様変更により、<br/>現在のお客様のLINE連携設定は2018/4/1以降は無効となります。<br/>データ引き継ぎのためにLINE連携の再設定をお願いいたします。<br/>※詳細は下記のお知らせをご確認ください。<br/>「【重要】LINE連携の再設定のお願い」</size>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_twitter_release_check_title
+ | Value=Twitter連携解除確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_facebook_release_check_title
+ | Value=Facebook連携解除確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_line_release_check_title
+ | Value=LINE連携解除確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_apple_release_check_title
+ | Value=Apple ID連携解除確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_twitter_release_check
+ | Value=どのSNSとも連携されていない状態で<br/>歌マクロスアプリを削除すると<br/>プレイデータが消失します。<br/><br/>Twitterとの連携を解除しますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_facebook_release_check
+ | Value=どのSNSとも連携されていない状態で<br/>歌マクロスアプリを削除すると<br/>プレイデータが消失します。<br/><br/>Facebookとの連携を解除しますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_line_release_check
+ | Value=どのSNSとも連携されていない状態で<br/>歌マクロスアプリを削除すると<br/>プレイデータが消失します。<br/><br/>LINEとの連携を解除しますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_apple_release_ckeck
+ | Value=どのSNSとも連携されていない状態で<br/>歌マクロスアプリを削除すると<br/>プレイデータが消失します。<br/><br/>Apple IDとの連携を解除しますか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_twitter_release_success_title
+ | Value=Twitter連携解除完了
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_facebook_release_success_title
+ | Value=Facebook連携解除完了
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_line_release_success_title
+ | Value=LINE連携解除完了
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_apple_release_success_title
+ | Value=Apple ID連携解除完了
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_twitter_release_success
+ | Value=Twitterとの連携を解除しました。<br/>端末紛失や端末故障など不測の事態が発生した場合でも<br/>プレイデータを引き継げるように、<br/>事前のお手続きをお願いいたします。
+ | ParentPage=Texts/Bank/common
+}}
+                    

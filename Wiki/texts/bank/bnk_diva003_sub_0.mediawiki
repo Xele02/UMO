@@ -1,0 +1,307 @@
+
+{{Texts/Bank/BankValue:
+ | Key=talk_time_01
+ | Value=お疲れ様！<br/>今日も頑張ってるわね！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_02
+ | Value=よいしょ！<br/>…ちょっと働きすぎたかしら
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_03
+ | Value=体調管理は万全にしなきゃね。<br/>何事も体が資本よ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_04
+ | Value=次のステージは…<br/>スケジュール管理も私の仕事なの
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_05
+ | Value=ワルキューレのリーダーとして、<br/>皆を引っ張っていかなきゃ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_06
+ | Value=あら？<br/>どこに行ったのかしら…
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_07
+ | Value=♪～
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_time_08
+ | Value=ええと、次のライブまでに<br/>改善しなくちゃいけないところは…
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_01
+ | Value=おはよう。<br/>まずはストレッチからね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_02
+ | Value=お昼ね…何か食べる？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_03
+ | Value=暗くなってきたわね。<br/>もうひと頑張りしましょう
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_04
+ | Value=お疲れ様。<br/>ゆっくり休んで、明日に備えましょう
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_login_05
+ | Value=あんまり夜更かしすると、<br/>明日にひびくわよ？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_01
+ | Value=久しぶりね。私に会いに来たの？<br/>…なんて、ね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_comeback_02
+ | Value=今日も頑張っていきましょうね！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_birthday_01
+ | Value=あら？私の誕生日を祝ってくれるの？<br/>ふふ、嬉しいわ。ありがとう！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_01
+ | Value=今年の抱負？そうね…<br/>ワルキューレを、銀河最高の<br/>ユニットにすることかしら！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_02
+ | Value=うーん。<br/>隊長とメッサー君に渡すチョコ、<br/>どんなものにしようかな…
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_03
+ | Value=豆まき、みんな楽しんでるみたい！<br/>アラド隊長に提案してみて良かったわ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_04
+ | Value=豪華なひな人形もいいけど、<br/>小さなものもかわいいわよね。<br/>見てて飽きないわ！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_05
+ | Value=お返しだなんて、気が利くのね。<br/>ありがと
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_06
+ | Value=今年こそ、びっくりするような<br/>嘘をつきたいんだけど…<br/>なかなか浮かばないわね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_07
+ | Value=せっかくのお休みだし、<br/>ショッピングに行こうかしら
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_08
+ | Value=結婚かぁ…まだあまりピンとこない<br/>けど、いつかはウェディングドレス<br/>を着てみたいわ…
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_09
+ | Value=星が綺麗ね…<br/>あなたは何か願い事をした？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_10
+ | Value=ちゃんと日焼け止めを塗ってから<br/>遊びなさいね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_11
+ | Value=お祭りといえば、<br/>やっぱりクラゲまつりよね！<br/>今年も楽しみだわ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_12
+ | Value=地球では、地域によって<br/>お月見の楽しみ方が違うそうよ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_13
+ | Value=お菓子を持ってなかったから、<br/>レイナに悪戯されちゃったわ。<br/>ハロウィンって怖いわね…
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_14
+ | Value=文化祭かぁ…<br/>ちょっとだけ懐かしい気分ね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_15
+ | Value=ケイオスのクリスマス<br/>パーティーは、毎年賑やかよ。<br/>あなたも来る？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_16
+ | Value=みんな、年越しの準備はいい？<br/>来年もいい一年にしましょうね！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_17
+ | Value=いつもありがとう！<br/>これからもたくさんの人に<br/>歌が届けられるよう、頑張るわ！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_18
+ | Value=すごいわ！<br/>こんなにたくさんの人が私たちの<br/>歌を聴いてくれてるなんて！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_19
+ | Value=200万ダウンロード、<br/>ありがとう！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_20
+ | Value=一周年ね！いつも応援ありがとう！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_01
+ | Value=何か気になることでもあるの？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_02
+ | Value=こーら、<br/>あんまりいたずらすると怒るわよ？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_03
+ | Value=もう！ベタベタさわりすぎよ！<br/>…ほどほどに、ね？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_04
+ | Value=お疲れ様！<br/>今日も頑張ってるわね！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_05
+ | Value=よいしょ！<br/>…ちょっと働きすぎたかしら
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_06
+ | Value=体調管理は万全にしなきゃね。<br/>何事も体が資本よ
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_07
+ | Value=きゃっ！もう、驚かさないで！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=touch_reaction_08
+ | Value=大人になっても、<br/>撫でられるのは嬉しいのね…
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_01
+ | Value=はい、どうぞ。<br/>今日も一緒にがんばりましょう
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=login_reaction_02
+ | Value=継続は力なりってね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=simulation_result_01
+ | Value=聴いてくれてありがとう。<br/>シミュレーションだけじゃなくて、<br/>ワクチンライブも見に来てね！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_01
+ | Value=嬉しい気持ちは<br/>一緒に分かち合いましょう！
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_02
+ | Value=成長した私の歌、<br/>もっと聴いてくれるかしら？
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=go_diva_result_03
+ | Value=次のライブは特別なものになりそう。<br/>あなたも楽しみにしててね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_01
+ | Value=素敵ね
+ | ParentPage=Texts/Bank/diva003
+}}
+                    

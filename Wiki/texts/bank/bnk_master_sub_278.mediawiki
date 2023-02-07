@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0027
+ | Value=VF-25F（歌姫） (アルト機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0028
+ | Value=YF-29 SP (アルト機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0029
+ | Value=VF-31J 35th (ハヤテ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0030
+ | Value=Sv-262Ba (ミラージュ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0031
+ | Value=YF-19 (イサム機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0032
+ | Value=YF-21 (ガルド機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0033
+ | Value=VF-19改 S.N-01 (バサラ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0034
+ | Value=Sv-262Ba w/L (ボーグ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0035
+ | Value=VF-31C（マキナ カラー）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0036
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0037
+ | Value=VF-25G SP (ミシェル機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0038
+ | Value=VF-25F SP (アルト機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0039
+ | Value=Sv-262Hs w/L (キース機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0040
+ | Value=VF-1J C.O-19 (輝機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0041
+ | Value=VF-31J SP (ハヤテ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0042
+ | Value=VF-25S SP (オズマ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0043
+ | Value=VF-31J（フレイア カラー）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0044
+ | Value=VF-31F（カナメ カラー）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0045
+ | Value=VF-25F TP (アルト機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0046
+ | Value=YF-19 K-40 (イサム機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0047
+ | Value=VF-31C SP (ミラージュ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0048
+ | Value=VF-31S SP (アラド機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0049
+ | Value=VF-25G TP (ミシェル機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0050
+ | Value=VF-31E SP (チャック機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0051
+ | Value=VF-19EF/A (イサム機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0052
+ | Value=VF-31J F.W-02 (ハヤテ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0053
+ | Value=VF-1D (輝機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0054
+ | Value=VF-17S (ガムリン機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0055
+ | Value=VF-27γ SP (ブレラ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0056
+ | Value=VF-31F K.B-02 (メッサー機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0057
+ | Value=VF-171EX (アルト機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0058
+ | Value=VF-1D (マックス＆ミリア機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0059
+ | Value=VF-19P (バサラ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0060
+ | Value=VF-25S AP (オズマ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0061
+ | Value=VF-22S (ガムリン機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0062
+ | Value=RVF-25 SP (ルカ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0063
+ | Value=Sv-262Ba (テオ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0064
+ | Value=VF-1A (マックス機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0065
+ | Value=VF-31S（美雲 カラー）
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0066
+ | Value=VF-31AX (ハヤテ機)
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0067
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0068
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0069
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0070
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0071
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0072
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0073
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0074
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0075
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vff_nm_0076
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

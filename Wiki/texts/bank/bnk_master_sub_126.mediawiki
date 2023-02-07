@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1130
+ | Value=マクロス7船団を無事に逃がすため、自ら敵戦艦へと特攻し犠牲となった金龍大尉。<br/>上官であり戦友であった大尉を想い、ガムリンはミリアと共に敬礼を送るのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1131
+ | Value=氷点下の空間に閉じ込められたバサラとミレーヌは、閉じ込められた原因について<br/>口論を始める。しかし、その間にも気温は下がり続け、争っている暇はないと気付く。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1132
+ | Value=ガムリンとミレーヌの初デートを見守るマイケル。視線はミレーヌの水着に釘づけだ。<br/>「いやー、これまたお嬢様の水着姿がまたなんとも言えず…」―マイケル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1133
+ | Value=氷点下の空間から脱出できたバサラとミレーヌ。<br/>閉じ込められたことを笑い話にする2人を見て、レイの表情も穏やかだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1134
+ | Value=ガムリンの言う、戦闘で迷惑している奴がバサラだと察したミレーヌ。<br/>日頃からたまり続けているバサラへの不満を爆発させるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1135
+ | Value=戦闘で怪我をした腕を心配するミレーヌに、ガムリンは優しく微笑んだ。<br/>「こんなもの、怪我のうちに入りませんよ」―ガムリン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1136
+ | Value=避難に間に合わなかったバサラとミレーヌは、氷点下の空間に閉じ込められてしまう。<br/>「駄目だ、閉じ込められちまった」―バサラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1137
+ | Value=バロータ軍の襲撃によって、緊急避難警報が鳴り響く。<br/>観光客で賑わうビーチは、一瞬にして地獄と化した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1138
+ | Value=水上スキーを楽しむミレーヌ。<br/>その笑顔は、これまでの疲れが吹き飛んだように爽快だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1139
+ | Value=リビエラでバカンスを満喫する人たち。<br/>リゾート艦だけあり、休日を過ごす観光客で賑わっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1140
+ | Value=空間装置が破壊され、－4℃以下の世界となってしまったリビエラ。<br/>リゾート艦だった面影は消え、辺り一面凍りついている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1141
+ | Value=海でもクールなレイナだが、今日はどこか楽しげな表情を見せている。<br/>マキナと一緒だからか、バカンスを楽しんでいるからか…きっとその両方なのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1142
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1143
+ | Value=最初は、ビーチバレーに困惑していたガムリンだが、夕暮れまで熱心に続けている。<br/>たとえ遊びであっても真面目に向き合う姿は実に彼らしいと言える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1144
+ | Value=浜辺に寝転がるレックス。抜群のプロポーションを持つ彼女は数多の男性を虜にする。<br/>大人の色気で誘惑する彼女の眼差しは、ギラギラと輝いている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1145
+ | Value=ハヤテとフレイアの歓迎会で乾杯をするカナメとアラド。<br/>新人の入隊はもちろんのこと、きっと2人は宴会自体も楽しみに違いない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1146
+ | Value=ハヤテとフレイアの歓迎会で乾杯をするレイナとミラージュ。<br/>普段から表情が変わらないレイナはともかく、今夜はミラージュも険しい表情だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1147
+ | Value=バカンスに興味のないバサラは、グババと一緒にお昼寝タイム。<br/>みんなが海を満喫している中、1人だけ部屋でくつろぐ様子はまさに自由人である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1148
+ | Value=バカンス中までマイケルと一緒に行動しなければならないことに不服なミレーヌ。<br/>「いい？警備を理由に私を監視なんかしたら、ただじゃおかないから！」―ミレーヌ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1149
+ | Value=今日も今日とてウミネコとの戦いに敗れたハヤテとチャック。<br/>疲れ果てた2人を横目に、ハックとザックは元気に遊んでいる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1150
+ | Value=Fire Bomberを待ち受けていたのは、ミリアの秘書マイケル。<br/>それもそのはず、今回の仕事はミリアからの紹介なのだから。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1151
+ | Value=ラグナと言えば名産物のクラゲ！<br/>干しクラゲに漬けクラゲ、生クラゲ…どれもおいしそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1152
+ | Value=人工とはいえ、海は海。きらきらと光る海を前に<br/>つい、はしゃいでしまうのは仕方ないことなのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1153
+ | Value=ランカとお揃いの作業着風の衣装を身に纏うシェリル。作業着風であっても、<br/>胸を強調するデザインとなっているのは、艶やかな彼女ならではのこだわりだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1154
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1155
+ | Value=ステージに立つシェリルは、観客はもちろんのこと、ライブセットまでをも魅了する。<br/>彼女に触れられてハートが飛び出す様子は、まるで彼女に恋をしているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1156
+ | Value=そびえ立つステージの上、工具を手にしたシェリルは狙いを定める。<br/>彼女の放つ一撃で撃ち抜かれるのは、心臓ではなく人々のハートだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1157
+ | Value=クレーンに乗ったシェリルはステージの上へと昇っていく。<br/>数々のステージを経験した彼女は、怖れることなく堂々とした振る舞いだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1158
+ | Value=ライブ中、シェリルはそっと目を瞑り、耳を澄ました。<br/>みんなの命が奏でる音楽を聴くために。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1159
+ | Value=戦場で歌声が聴こえたと言うアルト。そして自身の曲を歌うランカ。<br/>2人に対して、シェリルの口から零れたのは、言葉ではなく弾むような歌声だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1160
+ | Value=シェリルの圧巻のステージに、舞台裏で観ていたアルトたちも感嘆の声を漏らす。<br/>「すごい…」「銀河の妖精…」─ルカ、ミシェル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1161
+ | Value=シェリルとランカ、2人の歌姫はお互いの健闘を讃え合うと、<br/>肩を並べて新たなステージへと旅立っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1162
+ | Value=バジュラが襲いくる中、全艦へのライブ中継を敢行するスタッフたち。<br/>シェリルが命がけで歌うように、彼らも仕事に命をかけているのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1163
+ | Value=水上に浮かび上がる船型のステージ。<br/>幾重ものサーチライトが照らし出す、幻想的なライブ会場だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1164
+ | Value=アイランド1最大のコンサートホール、星道館。<br/>客席は、シェリルのライブを待ちわびる観客で、最上段までいっぱいだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1165
+ | Value=シェリルとお揃いの作業着風の衣装を身に纏うランカ。大胆に開いた上着から覗く<br/>健康的な肌が眩しい彼女は、今日も元気にステージを駆けまわる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1166
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1167
+ | Value=みんなに笑顔を届けるため、ステージの上でも元気いっぱいのランカ。<br/>夜空に輝く一番星のような笑顔を見せる彼女に、夢中にならない人はいない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1168
+ | Value=新曲に使用するライブステージを設営するランカ。<br/>マスクとゴーグルをつけた彼女には、普段とは一味違う凛々しい魅力が漂っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1169
+ | Value=作業を終え、その場所を離れるランカ。ファンの声援に応えつつも<br/>テキパキとした動きで次の場所へ向かうその姿は、一流の職人を思わせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1170
+ | Value=高々と掲げられた手摺りのない足場の上で、軽やかに歌い踊るランカ。<br/>彼女たちにとって、高所で歌うことは十八番のひとつなのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1171
+ | Value=歌とダンスでアルトに迫るシェリルに対し、ランカも負けじと歌い出す。<br/>引っ込み思案だった彼女の面影は、すでにそこにはなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1172
+ | Value=レオンの謀略により命綱を切断され、宇宙空間に投げ出されたルカ。<br/>その窮地に駆けつけてルカを救ったのは、EX-ギアに身を包んだミシェルだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1173
+ | Value=襲い掛かってくるバジュラと戦うS.M.S小隊。<br/>普段は穏やかなボビーも勝利のために奮闘し、敵を撃沈させる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1174
+ | Value=アルカトラズでの慰問ライブ開催時、ランカ直筆のサインを貰った署長たち。<br/>普段は屈強な囚人たちを相手取る彼らも、このときばかりは笑みが零れた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1175
+ | Value=アトランティスドームで行われたランカのファーストライブ。<br/>観客の大合唱もライブの演出として加わり、夢と魔法のステージが作られていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1176
+ | Value=アルカトラズで急遽開催されたランカの慰問ライブ。<br/>思いがけない歌姫の来訪に、囚人たちは沸き立っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1177
+ | Value=カラフルなペンキを手に微笑むシェリルとランカ。<br/>ピカピカのバルキリー、VF-25Fを背に何かを企んでいる様子だが…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1178
+ | Value=VF-25Fに『銀河の妖精』シェリル・ノームと、『超時空シンデレラ』ランカ・リーの<br/>ペイントを施した機体。2人の歌姫を乗せた翼は、銀河の果てまで届くかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1179
+ | Value=ディープ・アキバのキャンペーンでバルキリーに扮して歌うランカ。<br/>観客たちの熱気にたじろぎつつも笑顔を振りまく姿に、プロとしての片鱗が見える。
+ | ParentPage=Texts/Bank/master
+}}
+                    

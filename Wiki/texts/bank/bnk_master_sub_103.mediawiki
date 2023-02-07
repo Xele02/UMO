@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_5152
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5153
+ | Value=EP【星霜を経て瞬く】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5154
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5155
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5156
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5157
+ | Value=EP【星霜を経て瞬く】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5158
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5159
+ | Value=EP【星霜を経て瞬く】
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5160
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5161
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5162
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5163
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5164
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5165
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5166
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5167
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5168
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5169
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5170
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5171
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_5172
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0001
+ | Value=見事ワルキューレの最終オーディションに合格し、メンバー入りを果たしたフレイア。<br/>「Welcome to Walküre World」―美雲
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0002
+ | Value=甲板から身を投げ出したハヤテ。谷から吹き上げる上昇気流がその身を包みこんだ。<br/>「こいつ…」「風に乗っただと」―アラド、メッサー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0003
+ | Value=オーディションに合格したと知り、緊張の解けたフレイアは床に倒れこんだ。<br/>ワルキューレのカナメとレイナは、その姿を温かく見守る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0004
+ | Value=美雲はフレイアの歌に少なからず期待を抱いていた。<br/>「クモクモの予想どおり…かな？」―マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0005
+ | Value=ルンを凝視されたり触られたりするのは、ウィンダミア人にとって恥ずかしいこと。<br/>「えっち！」「んなもん、何も感じねぇっての！」―フレイア、ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0006
+ | Value=オーディションの予選を受けていなかったフレイア。<br/>しかし予選突破条件はクリアしていたため、特別に本選出場の許可が下りた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0007
+ | Value=空を飛ぶ覚悟を決めたハヤテ。<br/>「軍隊は嫌いだ。人に指図されるのも。だから、好きにやらせてもらう」―ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0008
+ | Value=ハヤテの中に何かを見出し、アラド隊長は静かに笑った。<br/>「それが、風を感じちまったもんの宿命さ」―アラド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0009
+ | Value=VF-31A カイロス。<br/>YF-30 クロノスの正式採用型。デルタ翼を採用している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0010
+ | Value=ケイオス・ラグナ支部の拠点になっているマクロス級戦艦。<br/>バレッタシティに駐屯している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0011
+ | Value=ウミネコ。<br/>惑星ラグナに生息する上半身が猫、下半身がアザラシのような生物。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0012
+ | Value=腕に巻きつくと勝手に契約を始めてしまうラグナ製の携帯電話。<br/>「契約完了。振り込み手続き開始」
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0013
+ | Value=ワルキューレのオーディションのため、ウィンダミアから密航してきたフレイア。<br/>「私は好きな歌を歌いたい。1分でも1秒でも長く。だから絶対帰らない！」―フレイア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0014
+ | Value=ワルキューレのメンバー、フレイア・ヴィオンのキメ台詞。<br/>元気いっぱいに歌う彼女は、新メンバーオーディションによりやってきた一番の新顔。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0015
+ | Value=密航がバレて捕まる寸前！ハヤテが現れ、フレイアをバイクに乗せた。<br/>「乗れ！」―ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0016
+ | Value=ハヤテのことを密航犯だと勘違いしていたミラージュ。<br/>まっすぐ向けられた銃口に、一切の迷いはなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0017
+ | Value=「美雲さん、ウチのまっすぐ娘はどうだい？」<br/>「さあ。あの子と一緒じゃ、潜入捜査なんてできないわ」―アラド、美雲
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0018
+ | Value=仕事中にも関わらず、空を見上げてサボるハヤテ。<br/>このような態度が、彼が仕事を転々としている原因のひとつでもあった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0019
+ | Value=歌が好き。そのまっすぐな気持ちを胸に、フレイアはワルキューレのオーディションへ。<br/>「歌ってると、生きとるって感じるんよ」―フレイア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0020
+ | Value=ぼよよ～ん、ぼよよ～ん。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0021
+ | Value=荷運び用のワークロイドでワルキューレの曲に合わせて踊るハヤテ。<br/>勤務態度は最悪でも、操縦技術は誰よりも上だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0022
+ | Value=フレイアが幼い頃にもらった音楽プレーヤー。<br/>この音楽プレーヤーが銀河の名曲たちとフレイアを引き合わせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0023
+ | Value=フォールド細菌の作用によって、自我が失われ狂暴化してしまう病気。<br/>この病気に対抗できるのが、ワルキューレの歌である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0024
+ | Value=ハヤテがコンテナ運びのバイトをしていた惑星。<br/>この星でフレイアやデルタ小隊、ワルキューレと出会い、物語は始まった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0025
+ | Value=ゼントラーディとの戦闘の最中、空中に投げ出されてしまうミンメイ。<br/>急降下するVF-1のコックピットから、輝は懸命に手を伸ばした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0026
+ | Value=戦闘が一段落し、輝の捜索を行うフォッカー。<br/>激しい戦火の中で、輝はなんとか生き延びていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0027
+ | Value=浮上を開始したマクロスだったが、重力制御システムの異常により落下してしまう。<br/>異星人のテクノロジーには不明な部分も多く、マクロスもまた例外ではなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0028
+ | Value=命を失いかけた恐怖も忘れて、乱れた髪の毛を直すミンメイ。<br/>「もちろん、髪の毛！」「あははは、やっぱし？」―ミンメイ、輝
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0029
+ | Value=統合軍パイロットと間違われ、VF-1で出撃することになった輝。<br/>エアレーサーとしての自信からか、その表情に迷いはなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_set_prizm_choice
+ | Value=歌姫の配置設定を変更します。<br/><br/><color=#C8087E>※既に編成されている歌姫は、編成内容が上書きされます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_set_prizm_lackdiva_titile
+ | Value=変更通知
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_diva_and_valkyrie_and_bg
+ | Value=歌姫／バルキリー／背景
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_filter_diva_val_title_h3
+ | Value=歌姫／バルキリー／背景
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_diva_status_leaf_attr
+ | Value=属性一致+{0}%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_diva_status_leaf_series
+ | Value=シリーズ一致+{0}%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_setpopup_text_08
+ | Value=上書き前
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=unit_setpopup_text_09
+ | Value=上書き後
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_musicselect_sortitem_title_h2
+ | Value=表示順
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_default
+ | Value=シリーズ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_musiclevel
+ | Value=楽曲レベル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_highscore
+ | Value=ハイスコア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_utarate
+ | Value=歌レート
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_clearnum
+ | Value=クリア回数
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_notesnum
+ | Value=ノーツ数
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_musiclength
+ | Value=曲の長さ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_smallorder
+ | Value=昇順
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_bigorder
+ | Value=降順
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_order_title_h2
+ | Value=昇順/降順
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_filter_bookmark_h2
+ | Value=お気に入り
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_filter_bookmark_00
+ | Value=設定なし
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_filter_musiclock_h2
+ | Value=楽曲解放状況
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_filter_musiclock
+ | Value=未解放楽曲
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_filter_musicunlock
+ | Value=解放済み楽曲
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_filter_range_h2
+ | Value=楽曲時間
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_filter_range_long
+ | Value=ロング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_filter_range_short
+ | Value=ショート
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_bookmark_title
+ | Value=お気に入り登録
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_unlock_title
+ | Value=解放条件
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_unlock_text01
+ | Value=以下の両方を満たすことで解放。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_unlock_text02
+ | Value=・プレイヤーランクを{0}にする。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_unlock_text03
+ | Value=・記憶の時空で現在発見されているすべての記憶を解放する。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_unlock_text04
+ | Value=記憶の時空を進めて、<br/>楽曲「{0}」を解放する。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_unlock_text05
+ | Value=プレイヤーランクを{0}にする。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_unlock_text06
+ | Value=以下のいずれか1つを満たすことで解放。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_unlock_text07
+ | Value=・ライブで下記楽曲{0}を<br/>スコアランク{1}以上でクリアする。<br/>「{2}」
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_input_bookmarkname_title
+ | Value=お気に入り名の編集
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_input_bookmarkname_text_01
+ | Value=お気に入り名を入力してください。<br/>（全角半角{0}文字まで）
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_input_bookmarkname_text_02
+ | Value=
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_input_bookmarkname_deletecheck_title
+ | Value=変更内容の取り消し
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_music_input_bookmarkname_deletecheck_text_01
+ | Value=お気に入りの登録先とお気に入り名で変更した<br/>すべての内容が保存されません。<br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_notes_expectation
+ | Value=ノーツ期待値
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_not_exist_text_01
+ | Value=現在のフィルター設定で<br/>該当する楽曲はありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_not_exist_line6_text_01
+ | Value=現在のシリーズで遊べる6レーン用の<br/>楽曲がありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vertical_music_select_event_remain_time
+ | Value=あと : <color=#FF1576>{0}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vertical_music_select_event_remain_count
+ | Value=残り : <color=#FF1576>{0}回</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_remain_prefix_01
+ | Value=あと
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vertical_music_select_event_period
+ | Value=開催期間：{0}年{1}月{2}日{3}:{4:D2} ～ {5}年{6}月{7}日{8}:{9:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=vertical_music_select_music_time
+ | Value={0}:{1:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_not_exist_text_02
+ | Value=このカテゴリで現在遊べる楽曲はありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

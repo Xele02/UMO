@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_enemy_escape_title
+ | Value=暴走エネミーの無力化に失敗
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_enemy_escape_enemyselect_text
+ | Value=制限時間を過ぎたため、暴走エネミーを見失いました。<br/>リストを更新します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_enemy_escape_result_text
+ | Value=制限時間を過ぎたため、暴走エネミーを見失いました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_radar_failed_title
+ | Value=暴走エネミー索敵
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_rader_failed_text
+ | Value=対応できる最大数の暴走エネミーが発見されています！<br/>まずは発見されている暴走エネミーを倒して<br/>数を減らしてください。<br/><br/><color=#C6077CFF>フォールドレーダーは消費しませんでした。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_time_warning_title
+ | Value=残時間警告
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_time_warning_text
+ | Value=制限時間が5分未満になっています。<br/>暴走エネミーの無力化に失敗した場合、<br/>ポイントが加算されません。<br/><br/>ライブを開始しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_assist_attack_skip_title
+ | Value=支援について
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_assist_attack_skip_desc_01
+ | Value=ライブをスキップした時のスコアを基準として<br/>エネミーにインパクトを与えることができます。<br/>1体のエネミーに対しては1回だけ実行できます。<br/><br/><color=#C6077CFF>※ライブスキップチケットは消費しません。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_assist_attack_skip_desc_02
+ | Value=超銀河総力LIVEで支援を実行時には<br/>ライブスキップチケットを使用できません。<br/><br/>支援を実行時はライブスキップチケットを使用しなくても<br/>必ずライブがスキップされます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_valyrietuneup_needitemdesc
+ | Value={0}と{1}を消費します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=customstamp_createt_itle
+ | Value=スタンプ一覧
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=customstamp_longtap_desc
+ | Value=※スタンプを長押しで削除します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=customstamp_sort_title
+ | Value=スタンプ並び替え
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_customstamp_createlimit_title
+ | Value=スタンプ作成上限
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_customstamp_createlimit_desc
+ | Value=新規で作成できるスタンプが上限に達しました。<br/><br/>保存しているスタンプを削除することで<br/>新しく作成することができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_customstamp_sort_save_title
+ | Value=保存確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_customstamp_sort_save_desc
+ | Value=現在のスタンプの並びで保存しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_customstamp_edit_save_title
+ | Value=スタンプ{0}を保存しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_customstamp_delete_title
+ | Value=スタンプ{0}を削除しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_customstamp_deletecheck_title
+ | Value=スタンプ{0}を削除しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=valkyrie_tuneup_skill_not
+ | Value=未解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_get_title
+ | Value={0}獲得
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_get_desc
+ | Value=デコルームで配置できる{0}を受け取りました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_get_limit
+ | Value=※{0}は{1}枚まで獲得できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_release_desc
+ | Value=デコルームで配置できる<br/>以下のアイテムが追加されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_name_poster
+ | Value=ポスター
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_name_torso
+ | Value=衣装トルソー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_name_figure
+ | Value=バルキリーのフィギュア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_popup_title
+ | Value=ボーナス対象の楽曲
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_popup_desc
+ | Value=イベント楽曲に加えて、以下の楽曲にボーナスが発生！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_date_format
+ | Value=yyyy/M/d H:mm
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_limit_format
+ | Value={0}　～　{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_target_format
+ | Value={0}の楽曲
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_music_attribute001
+ | Value=星属性
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_music_attribute002
+ | Value=愛属性
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_music_attribute003
+ | Value=命属性
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_music_attribute004
+ | Value=全属性
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_series_attribute001
+ | Value=マクロスΔシリーズ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_series_attribute002
+ | Value=マクロスFシリーズ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_series_attribute003
+ | Value=マクロス７シリーズ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_series_attribute004
+ | Value=超時空要塞マクロスシリーズ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_series_attribute005
+ | Value=マクロスプラスシリーズ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=missionevent_bonus_all
+ | Value=すべて
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lobby_corps_belongs_conf_text
+ | Value=この部隊に所属しますか？<br/>開催期間中は部隊の変更が行えません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lobby_corps_belongs_note_text
+ | Value=<color=#C8087E>※開催期間が終了すると部隊は解散します。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lobby_room_name_format
+ | Value=部隊名：{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lobby_room_num_format
+ | Value=第{0}小隊
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=valkyrie_name_text_format_001
+ | Value={0} {1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=storage_select_text
+ | Value=選択中のデコルームに変更しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    

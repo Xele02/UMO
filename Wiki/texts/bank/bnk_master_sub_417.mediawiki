@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0070
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0071
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0072
+ | Value=大胆で、それでもどこか幼さを持った<br/>シェリル。彼女に振り回されるたび、<br/>アルトの心は惹きつけられていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0073
+ | Value=未熟で子供染みたところが多いランカ。<br/>だが彼女の成長を見守る内に、アルトは<br/>少しずつ魅力を感じ始めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0074
+ | Value=ルカ・アンジェローニはアルトたちの<br/>同級生。しかしその日常の裏側では、<br/>S.M.Sの電子戦担当として活躍している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0075
+ | Value=シティ7の植物プラントで眠りについた<br/>シビル。彼女を目覚めさせるために、<br/>バサラはたった1人全力で歌い続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0076
+ | Value=スパイとして逮捕され、監獄に囚われて<br/>しまったシェリル。彼女を救出するべく<br/>S.M.Sの極秘作戦が開始された。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0077
+ | Value=ランカによる監獄慰問ライブ。しかし<br/>それは、極秘裏に遂行されている<br/>シェリル救出作戦の隠れ蓑であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0078
+ | Value=ワルキューレ発足時のメンバーである<br/>カナメ。苦境に立たされたとき、仲間と<br/>共に駆け抜けた過去の日々を振り返る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0079
+ | Value=ワルキューレ発足時のメンバーである<br/>レイナ。かつては非協力的だった彼女も、<br/>苦しい日々の中で絆を繋いでいった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0080
+ | Value=空中騎士団の若きパイロット、ボーグ。<br/>年齢ゆえに無鉄砲な性格だが、その風は<br/>まっすぐに戦場を吹き渡っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0081
+ | Value=バジュラの襲撃から3か月が経過し、<br/>フロンティア船団はシェリルのライブ<br/>開催によって大いに沸き立っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0082
+ | Value=日常でそして戦場で感じることのすべて<br/>が心の色を変えていく。その色は輝きと<br/>なり、ついには戦場に吹く風となった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0083
+ | Value=共に苦しみを分かち合うワルキューレ。<br/>同じときを歩んだからこそ、彼女たちは<br/>互いに希望を託せる絆を持っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0084
+ | Value=熱気バサラという男の本性を、大抵の<br/>人間は見抜けない。戦場で歌うという<br/>無謀な行為が彼の本質そのものなのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0085
+ | Value=Fire Bomberへの加入後、ミレーヌは<br/>大きな成長を遂げた。メンバーと共に<br/>歌で何かを変えたいと願うようになった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0086
+ | Value=日々ミレーヌの中で育つひとつの感情。<br/>それは友情と呼ぶには少し複雑だが、<br/>恋と呼ぶにはまだまだ幼いものだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0087
+ | Value=宇宙戦争に巻き込まれたマクロス。<br/>民間人約5万人を乗せた艦は、<br/>宇宙の彼方へと発進する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0088
+ | Value=絶望の中で歌うシェリル。「生きたい」<br/>という想いを込めて歌う姿は<br/>正に『銀河の妖精』そのものだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0089
+ | Value=ランカは戦うためではなく、想いを<br/>届けるために歌う。誰かのためにこそ<br/>『超時空シンデレラ』は輝きを放つ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0090
+ | Value=夏にはさまざまなイベントがある。<br/>チーム内の交流を大事にするカナメは、<br/>密かに、夏を楽しみにしていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0091
+ | Value=潮風に包まれながら歌う美雲。<br/>彼女の力強い歌声は風に乗り、<br/>海の向こうまで届くように流れていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0092
+ | Value=大半が海で覆われた惑星ラグナ。<br/>先住民であるラグナ人も海に適した体で<br/>『海の民』と呼ばれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0093
+ | Value=夕日が沈んでいく海。なんの変哲も<br/>ない景色だが、太陽に照らされて輝く<br/>様は楽園と呼ぶに相応しい光景だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0094
+ | Value=夏に輝くのは、太陽でも海でもなく<br/>恋心。まだまだ未熟な少女の心に<br/>恋は芽吹くのだろうか？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0095
+ | Value=夏の日差しは、眩しくて直視できない。<br/>しかし、その太陽に負けない輝きを<br/>放つのが彼女たち、ワルキューレだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0096
+ | Value=自身のステージに命をかける歌姫、<br/>シェリル。彼女に見つめられた観客は<br/>必ず恋に落ちることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0097
+ | Value=シェリルとのステージを楽しむランカ。<br/>まだまだ駆け出しの歌姫である彼女は<br/>未来への希望に瞳を輝かせている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0098
+ | Value=シェリル・ノームに憧れ、その後を追う<br/>ように歌姫の道を歩み始めたランカ。<br/>いつか同じ舞台で歌うことを夢見て。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0099
+ | Value=輝きの中、舞い降りた妖艶なる美女。<br/>彼女の眼差しに射抜かれたなら、時の<br/>権力者でさえもすべてを捧げるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0100
+ | Value=蝶の囁きに耳を傾け、甘い香りに誘惑<br/>されれば最後、決して逃れられない。<br/>すべては真昼の夢、甘くて深い蜜の罠。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0101
+ | Value=ランカを守り、ときには背中を押して<br/>くれるアルト。だんだん大きくなる<br/>感情の名前を、まだ彼女は知らない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0102
+ | Value=一点突破の反攻作戦に出たエリシオン。<br/>しかし、フレイアはハヤテの暴走を<br/>恐れて、うまく歌えないままでいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0103
+ | Value=アルヴヘイムで始まった戦術ライブ。<br/>倒れていった仲間たちの意志を継ぎ、<br/>未来へ繋げるための戦いが始まった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0104
+ | Value=ウィンダミア人の平均寿命は約30年。<br/>ロイドはその運命に抗い民を救うため、<br/>プロトカルチャーにそのすべを求めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0105
+ | Value=輝とミンメイ、2人の出会いと青春は、<br/>時が流れ季節が移り変わったとしても、<br/>色褪せない思い出として残り続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0106
+ | Value=招待状の代わりにお菓子を持てば、<br/>愛らしい悪魔たちの宴に行けるだろう。<br/>戻ってこられるかどうかはあなた次第。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0107
+ | Value=ハロウィンの催しはまだまだ続く。<br/>木霊する絶叫は遠吠えのように重なり、<br/>幻想と狂乱の夜は更に熱を帯びていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0108
+ | Value=もう会えなくなるかもしれない。<br/>そんな気持ちがランカの背中を押した。<br/>想いを伝え、一緒に生きて帰るために。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0109
+ | Value=誰かに恋をすることは人生の一大事。<br/>短い人生を生きるフレイアだからこそ、<br/>命を掛け、全力で恋をするのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0110
+ | Value=操られたバジュラの猛攻を掻い潜って<br/>突撃を敢行するマクロス・クォーター。<br/>その背には銀河の命運がかかっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0111
+ | Value=ラグナの言い伝えによると死者の魂は<br/>光クラゲに生まれ変わるという。<br/>海で魂を癒やし、再び空へと還るのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0112
+ | Value=歌で銀河を震わせると誓ったシェリル。<br/>彼女の想いを込めた歌は時を超えて、<br/>今でも人々の心と銀河を震わせ続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0113
+ | Value=レディ・Mの推薦で加入した美雲。<br/>その歌声を聴いたメンバーは心機一転、<br/>最高のユニットを目指して歩み始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0114
+ | Value=かつては脱退まで考えたマキナ。<br/>彼女が希望を捨てず頑張ったからこそ、<br/>今のワルキューレの姿があるといえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0115
+ | Value=フレイアの歌声を感じ取ったハヤテは、<br/>初めて空を飛んだ日の感覚を取り戻す。<br/>残り時間はあと僅か。試験の結果は…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0116
+ | Value=仲間たちと交流しライブを重ねることで<br/>成長してきたミレーヌだが、友情と恋の<br/>判断はまだ曖昧なところがあるようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0117
+ | Value=どこからかキャロルが聞こえてきそうな<br/>粉雪の舞う夜。人々は互いに寄り添い、<br/>贈り物を交わし想いを確かめあうのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0118
+ | Value=心も街も、みんなが煌めくクリスマス。<br/>夢と希望に彩られた聖夜に、歌姫たちは<br/>一体どんな贈り物を願うのだろう？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0119
+ | Value=初日の出とともに新しい1年が始まる。<br/>お正月を存分に満喫する人々の心も、<br/>新年を祝う気持ちと期待で輝いている。
+ | ParentPage=Texts/Bank/master
+}}
+                    

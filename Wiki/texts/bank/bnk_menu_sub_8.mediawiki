@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=quest_tiemr_e001
+ | Value=開催期間:{0} ～<br/>{1}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=quest_tiemr_e002
+ | Value=受取期間:{0} ～<br/>{1}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=quest_tiemr_e003
+ | Value={0:D4}年 {1}月{2}日 {3:D2}:{4:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_quest_detail_001
+ | Value=ユニオンクレジット×{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_quest_detail_002
+ | Value={0}×{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_episode_01
+ | Value=エピソード解放報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_episode_02
+ | Value=エピソードアイテム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_episode_03
+ | Value=エピソード解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_episode_04
+ | Value=エピソード報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=episode_item_select_01
+ | Value=アイテムを所持していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_title_sns_01
+ | Value=超時空SNSルーム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_text_01
+ | Value=新しいメッセージがあります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sns_item_description
+ | Value=超時空SNSルーム「{0}」で<br/>「トーク：{1}」を見ることができる。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_request_title
+ | Value=フレンド申請
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_request_msg
+ | Value={0} さんにフレンドを申請します。<br/><br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_release_title
+ | Value=フレンド解除確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_release_msg
+ | Value={0} さんとの<br/>フレンドを解除します。<br/><br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_cancel_title
+ | Value=フレンド申請取り消し確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_cancel_msg
+ | Value={0} さんへの<br/>フレンド申請を取り消します。<br/><br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_accept_title
+ | Value=フレンド承認確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_accept_msg
+ | Value={0} さんからの<br/>フレンド申請を承認します。<br/><br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_reject_title
+ | Value=フレンド拒否確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_reject_msg
+ | Value={0} さんからの<br/>フレンド申請を断ります。<br/><br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_requested_title
+ | Value=フレンド申請完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_requested_msg
+ | Value={0} さんに<br/>フレンド申請を送りました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_released_title
+ | Value=フレンド解除完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_released_msg
+ | Value={0} さんとの<br/>フレンドを解除しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_cancelled_title
+ | Value=フレンド申請取り消し完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_cancelled_msg
+ | Value={0} さんへの<br/>フレンド申請を取り消しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_accepted_title
+ | Value=フレンド承認完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_accepted_msg
+ | Value={0} さんと<br/>フレンドになりました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_rejected_title
+ | Value=フレンド拒否完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_rejected_msg
+ | Value={0} さんからの<br/>フレンド申請を断りました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=friend_accept_not_found
+ | Value=フレンド承認待ちのプレイヤーはいません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=friend_list_not_found
+ | Value=フレンドがいません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=friend_request_not_found
+ | Value=あなたがフレンド申請しているプレイヤーはいません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=friend_search_ready
+ | Value=ID検索をしたプレイヤーが表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=friend_search_not_found
+ | Value=プレイヤーが見つかりません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=friend_caution_request
+ | Value=申請から14日間経過するとリストから自動的に削除されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_search_title
+ | Value=ID検索
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_search_placeholder
+ | Value=プレイヤーIDを入力してください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_search_myself_title
+ | Value=検索失敗
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_search_myself_msg
+ | Value=あなたのプレイヤーIDです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_search_not_found_title
+ | Value=検索失敗
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_friend_search_not_found_msg
+ | Value=プレイヤーIDが間違っています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ranking_message
+ | Value=全難易度共通のランキングになります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ranking_no_entry
+ | Value=ランキングに参加していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ranking_ev_period
+ | Value=開催期間:{0} ～<br/>{1}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ranking_ev_period_date
+ | Value={0:D4}年 {1}月{2}日 {3:D2}:{4:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ranking_ev_message
+ | Value=
+ | ParentPage=Texts/Bank/menu
+}}
+                    

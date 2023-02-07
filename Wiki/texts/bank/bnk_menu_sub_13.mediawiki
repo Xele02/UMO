@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_event_login_item01_title_msg
+ | Value=<color=#C8087E>【当日限定】エナジーエーテル　{0}個</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_login_item01_label00_msg
+ | Value=使用するとエナジーが全回復する。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_login_item01_label01_msg
+ | Value=<color=#8e0529>獲得した当日の24時に消失します。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_login_prologue_title
+ | Value=イベントプロローグ報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_login_epilogue_title
+ | Value=イベントエピローグ報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_score_my_rank_title
+ | Value=ランキング順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_score_my_rank_msg
+ | Value=<size=28>現在のランキング順位</size><br/><size=40><color=#C8087E>{0}</color>位</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_diva_title
+ | Value=歌姫の記憶解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_basara_title
+ | Value=熱気バサラの記憶解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_diva_desc_001
+ | Value=記憶の時空で 歌姫の記憶が解放できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_basara_desc_001
+ | Value=記憶の時空で 熱気バサラの記憶が解放できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_story_diva_title_001
+ | Value=歌姫の記憶発見
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_story_diva_title_002
+ | Value=歌姫の記憶解放条件
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_001
+ | Value=フォールド波の高いエピソードプレートを編成して、バルキリーモードの突入を目指そう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_002
+ | Value=サポート値の高いエピソードプレートを編成して、歌姫モード&超歌姫モードの突入を目指そう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_003
+ | Value=MISSやBADが多かったみたい。リズムに合わせてうまくノーツをタップできるように練習しよう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_004
+ | Value=まだまだ能力を解放できるプレートがあるみたい。プレートの能力を解放してステータスを強化しよう。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_005
+ | Value=ユニットのトータル値がまだまだ低いみたい。トータル値の高いプレートを編成してみよう。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_006
+ | Value=GREAT以上でコンボがつながるよ。判定緩和やコンボ継続のスキルが役に立つよ。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_007
+ | Value=アクティブスキルを使おう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_008
+ | Value=歌姫とプレートの相性を合わせてみよう。ライブスキルが発動してコンボの継続やハイスコアが期待できるよ。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_009
+ | Value=バルキリーモードまでに生体フォールド波のゲージを溜めよう。GREAT以上の判定で溜めることができるよ。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_010
+ | Value=バルキリーモードで4コンボ以上を維持すると、敵にダメージを与えられるよ。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_011
+ | Value=サポート値の高いエピソードプレートをそろえて、超歌姫モードの突入を目指そう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_hint_012
+ | Value=スコアをあげるためにアクティブスキルを見直してみよう。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=result_playlog_graph_detail
+ | Value=詳細を確認したい<br/>グラフの箇所を<br/>タップしてください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_valkyrie_select_title
+ | Value=変更確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_result_pt_title
+ | Value=累計ポイント報酬取得
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_result_rank_title
+ | Value=ランキング報酬取得
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_ranking_type001
+ | Value=累計ランキング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_ranking_type002
+ | Value=EXバトルスコアランキング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_ranking_type003
+ | Value=歌姫スコアランキング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_result_present_box
+ | Value=<color=#C8087E>歌晶石はプレゼントBOXに送られます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_result_present_box2
+ | Value=<color=#C8087E>報酬はプレゼントBOXに送られます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_result_total
+ | Value=取得報酬合計
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_result_get_pt
+ | Value=総獲得ポイント
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_result_win
+ | Value=WIN
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_result_lose
+ | Value=LOSE
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_result_wincountbonus_unit
+ | Value={0}連勝
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_result_episodebonus_unit
+ | Value={0}エピソード
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_result_last_rank
+ | Value=最終順位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_reward_result_dash_bonus
+ | Value=消費ボーナス{0}倍
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_check_pt_title
+ | Value=累計ポイント報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_check_rank_title
+ | Value=ランキング報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_check_plate_info_title
+ | Value=プレート情報
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_check_pt
+ | Value=【累計ポイント】
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_currentpoint_unit
+ | Value=pt
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_needpoint_unit
+ | Value={0}pt
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_currentrank_unit
+ | Value=位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_reward_needrank_unit
+ | Value={0}位
+ | ParentPage=Texts/Bank/menu
+}}
+                    

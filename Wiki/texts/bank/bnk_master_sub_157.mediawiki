@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2680
+ | Value=森の中で焚き火を囲み、ガムリンが携行していた軍用品の缶詰をつつくミレーヌ。<br/>ガムリンは申し訳なさそうにしていたものの、ミレーヌは意外と気に入ったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2681
+ | Value=けたたましく鳴り響いた目覚まし時計のベルに、ビックリして飛び起きるミレーヌ。<br/>あたり一面をひっくり返すような慌て振りから、何か大事な予定があったのかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2682
+ | Value=トーストを口にくわえたままジャンパーを羽織り、急いで出かける準備をするミレーヌ。<br/>少し大きめのジャンパーに見えるけれど、ちょっとした外出にはピッタリかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2683
+ | Value=散りばめられたアクセサリーに瞳をキラキラさせながらショッピングを楽しむミレーヌ。<br/>ともすれば目が回ってしまいそうな光景だが、ミレーヌは平気といった様子である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2684
+ | Value=指で作ったピストルを構え、自信たっぷりな表情でターゲットに狙いを定めるミレーヌ。<br/>放たれる目には見えない恋の弾丸は、撃ち抜いたハートにときめきを植え付けるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2685
+ | Value=バサラとミレーヌの失踪に関するスクープ記事を見入る美穂とサリー。<br/>まことしやかに脚色された話題は、シティ7住民の注目の的となっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2686
+ | Value=シティ7を駆け巡ったバサラとミレーヌの駆け落ち…の捏造スキャンダル。<br/>それにしても、こんな写真をいつの間に撮ったのだろうか？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2687
+ | Value=統合軍のマークが入った軍用品の缶詰。<br/>肉詰めのような見た目で意外とおいしそう？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2688
+ | Value=乗っていた岩が崩れて川に流されてしまったグババ。<br/>必死にもがくグババだが、どんどん遠くへ流されていってしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2689
+ | Value=銀河のアーティストたちが集結するスペシャルライブに時空を超えて共演したレイナ。<br/>ステージ上で繰り広げられるエキセントリックな演出は、観客たちのド肝を抜くだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2690
+ | Value=【クロスハックライブ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2691
+ | Value=歌うことの意味を求めて放浪中、心ここにあらずといった様子で立ちすくむバサラ。<br/>顔に引っ掛かった枯れ葉をつまむと、そのまま無言でパリパリと食べてしまった…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2692
+ | Value=対象が歌っていなければ反応しないという、至極当然な欠点を持つ歌エネルギー探知機。<br/>結局、バサラを見つけることはできず、頼みの綱のグババも無反応という有様であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2693
+ | Value=目の前でおもむろに腕立て伏せを始めたガムリンに怪訝な表情を浮かべるミレーヌ。<br/>「気にしないでください、私の日課ですから」─ガムリン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2694
+ | Value=ミレーヌにテントへと誘われ、緊張から日課の腕立て伏せを繰り返してしまうガムリン。<br/>「さっきもソレやってなかった？」「…えっ？」─ミレーヌ、ガムリン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2695
+ | Value=銃弾がこめかみを掠めても、視線を反らすことなく前へと進み歌い続けるレイナ。<br/>それは暴力に屈さず、歌で争いに立ち向かうワルキューレの姿そのものといえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2696
+ | Value=ウィンダミア軍兵士の攻撃に怯むことなく、手が触れるほどの距離へと肉薄するレイナ。<br/>ワルキューレの常軌を逸した行動に兵士は動揺を隠せず、ルンの光も抑えられずにいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2697
+ | Value=興奮する惑星ラクスの原住生物をなだめるため、歌で気持ちを伝えようとするミレーヌ。<br/>ミレーヌの想いを込めた歌が届いたのか、噛みつかれる寸前で原住生物は動きを止めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2698
+ | Value=おいしくない糧食を渋々と食べるメンバーから離れてクラゲチップスを食べるレイナ。<br/>自分勝手な振る舞いも、ここまで堂々としていると却って清々しさを感じてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2699
+ | Value=地面に深々と残された惑星ラクスの原住生物の足跡。<br/>そのあまりの巨大さから持ち主の威容が伺い知れる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2700
+ | Value=ワルキューレのネイルアートに仕込まれているマルチツール。<br/>レイナの手に掛かれば、電子ロックのハッキングも可能だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2701
+ | Value=銀河のアーティストたちが集結するスペシャルライブに時空を超えて共演したマキナ。<br/>たとえ時空が違っても柔らかな歌声が希望とともにみんなを包み込んでくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2702
+ | Value=マキナの誕生日のお祝いに、素敵な誕生日ケーキとプレゼントを用意したワルキューレ。<br/>誕生日ケーキはハートできゃわわに、プレゼントはメカメカ大好きなマキナのために…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2703
+ | Value=戦線を拡大する故郷に胸を痛めながらも、ワルキューレとして成長を続けるフレイア。<br/>そしてフレイアの想いを込めた歌の力は、ひとつの兆候となって表れ始めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2704
+ | Value=戴冠式にて王位を継承し、風の歌い手としてウィンダミアの王となったハインツ。<br/>より強くなった風の歌とともに、父であるグラミアの意志を継ぐことを誓ったのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2705
+ | Value=【ふわふわクロッシング】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2706
+ | Value=【ふわふわクロッシング】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2707
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2708
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2709
+ | Value=【ふわふわクロッシング】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2710
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2711
+ | Value=【ふわふわクロッシング】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2712
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2713
+ | Value=時空を超えて「MACROSS CROSSOVER LIVE 2019」に集結した歌姫たち。<br/>ミンメイの平和に導く歌声とフレイアの元気を届ける歌声は最高の調和を奏でるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2714
+ | Value=時空を超えて「MACROSS CROSSOVER LIVE 2019」に集結した歌姫たち。<br/>破天荒なバサラとレイナ、マキナのコンビが合わされば、もう何が起こるかわからない！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2715
+ | Value=時空を超えて「MACROSS CROSSOVER LIVE 2019」に集結した歌姫たち。<br/>輝く光を放つミレーヌとランカ、カナメたちの弾けるようなステージから目が離せない！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2716
+ | Value=時空を超えて「MACROSS CROSSOVER LIVE 2019」に集結した歌姫たち。<br/>シェリルと美雲の星を駆け巡り銀河を震わせる歌声は、遠く宇宙の彼方まで轟くだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2717
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2718
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2719
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2720
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2721
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2722
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2723
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2724
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2725
+ | Value=クリスマスの衣装に身を包み、プレゼント片手にこっそりと部屋の中に忍び込むカナメ。<br/>こんな素敵なサンタクロースが目の前に現れたら、こちらまで息を潜めてしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2726
+ | Value=【涙目クリスマス】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2727
+ | Value=雪が降りしきる幻想的な光景を眺める中で、不意にアラドから視線を向けられるカナメ。<br/>カナメは一瞬のためらいの後に目を伏せ、ついに目を合わせることはできなかった…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2728
+ | Value=1年の大半が雪で覆われるウィンダミア育ちなだけあって、雪には慣れっこなフレイア。<br/>久しぶりの雪に大はしゃぎすると、さっそく雪玉を作って雪合戦で遊び始めるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2729
+ | Value=雪にみんなが盛り上がる中、少し離れた場所で雪が舞う景色を眺めるカナメとメッサー。<br/>遠い街の灯りと、雪で包み隠されたかのような静穏が2人だけの空間を作り出していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    

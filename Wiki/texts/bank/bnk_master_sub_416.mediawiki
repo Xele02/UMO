@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0020
+ | Value=夏の陽気が落ち着き始めるころ、浜辺の<br/>女神たちはまた違った一面を見せる。<br/>ドキドキに満ちた夏はまだ終わらない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0021
+ | Value=夏は誰にも平等に訪れる。歌姫たちが<br/>休息を謳歌するように、戦士たちも<br/>その翼を休めて英気を養うのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0022
+ | Value=1人銀河を放浪していたバサラは、偶然<br/>立ち寄った惑星ゾラで「銀河クジラ」と<br/>呼ばれる存在と出会うこととなる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0023
+ | Value=どこまでも広がる青い海、美しい空と雲、<br/>ギラギラと照りつける太陽。そして浜辺<br/>には、夏とともに妖精たちがやってくる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0024
+ | Value=過去の記憶を取り戻しアルトへの想いを<br/>告白したランカ。そして今、その歌声は<br/>バジュラに心を伝えようとしていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0025
+ | Value=バジュラとの決戦の最中、歌への情熱を<br/>取り戻したシェリル。銀河の妖精は、<br/>その命を燃やすようにして歌い始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0026
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0027
+ | Value=ワルキューレのリーダー、カナメ。<br/>個性的なメンバーをまとめる存在として<br/>チーム内外からよく頼りにされている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0028
+ | Value=ゼントラーディとの星間戦争に終止符を<br/>打ったのは、かつてミス・マクロスに<br/>輝いたリン・ミンメイの歌声だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0029
+ | Value=多くの人の意思とは関係なく、否応なく<br/>突きつけられる戦争という現実。それは<br/>デルタ小隊のメンバーも例外ではない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0030
+ | Value=ミンメイとミス・マクロスの名が刻んだ<br/>栄光は、未来でも多くの人々の記憶に<br/>残り、受け継がれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0031
+ | Value=心地よい新春の風が吹く。<br/>思い思いの装いで街へと繰り出す人々を<br/>穏やかな青空が見守っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0032
+ | Value=新天地を求めて、バジュラの星へと侵攻<br/>するフロンティア船団。今まさに人類と<br/>バジュラの命運をかけた決戦が始まる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0033
+ | Value=ミンメイの誕生日当日、何をプレゼント<br/>すればいいのか悩む輝。とうとう<br/>決まらないまま戦闘が始まってしまい…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0034
+ | Value=ハロウィンの夜の不思議なお話。<br/>月夜にお城が現れるとき、可憐な姿の<br/>幽霊があなたを夢の世界へ誘うだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0035
+ | Value=不思議な夜はまだまだ続く。<br/>無数のお菓子が浮かぶ夜、月の下では<br/>かぼちゃの魔女が飛び回るらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0036
+ | Value=戦場にて常にワルキューレを護衛する<br/>精鋭部隊、その名はデルタ小隊。経歴を<br/>問わずに優秀な隊員が集められている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0037
+ | Value=新統合政府に宣戦布告したウィンダミア。<br/>思いがけず始まった故郷との戦争に<br/>不安を覚えるフレイアだったが…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0038
+ | Value=バサラとミレーヌの歌声に秘められた力。<br/>それは時間も空間も超えて、遠い過去や<br/>未来から届く誰かの歌声に共鳴していく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0039
+ | Value=言葉では通じなくても、歌は心を伝えて<br/>くれる。いつの時代でも歌を愛する者が<br/>いる限り、人の心は受け継がれていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0040
+ | Value=フレイアの誕生日にサプライズを企画<br/>した一同。裸喰娘娘でのパーティーを<br/>こっそり計画し、ついに当日を迎える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0041
+ | Value=ウィンダミアに対抗するべく、ライブ<br/>映像の配信を始めたワルキューレ。<br/>ちょっぴり過激な作戦の行く末は…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0042
+ | Value=夏の過ごし方はたくさんある。泳ぐ、<br/>食べる、歌う…いろんな刺激と経験が<br/>味わえる季節、それが夏なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0043
+ | Value=地球には、新年に願い事をするという<br/>文化がある。銀河の歌姫たちは、<br/>一体どんなことを願うのだろうか？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0044
+ | Value=心の迷いを振り切り、バジュラに歌を<br/>届けることを決めたアルト。聖剣の名を<br/>冠する新たな翼で大空へと飛び立った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0045
+ | Value=聖なる夜の贈り物。今夜だけのきゃわわ<br/>な衣装に身を包んだ彼女が、心のこもった<br/>大切なプレゼントを運んでくれる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0046
+ | Value=自分を置いてプロトデビルンとの決戦へ<br/>赴く仲間たち。少し苦い誕生日パーティー<br/>が終わり、彼女はまた少し大人になった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0047
+ | Value=バトル7の艦長マックスの妻ミリアと、<br/>2人の娘ミレーヌ。性格に違いはあれど、<br/>お互い芯の強い部分はよく似ている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0048
+ | Value=乙女の心をくすぐる、甘い恋の香り。<br/>チョコレートと一緒に伝える想いは、<br/>一体誰に向けられたものだろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0049
+ | Value=甘さの中に潜む苦さもまた恋の醍醐味。<br/>ちょっぴりビターな経験を積んで<br/>誰もが大人へと成長していくものだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0050
+ | Value=銀河の妖精シェリル・ノームの魅力。<br/>それを語るならば、まずはその美貌から<br/>溢れる妖艶さと言えるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0051
+ | Value=銀河に名を轟かせるワルキューレにも、<br/>苦しい下積み時代があった。だからこそ<br/>メンバーの絆は強く離れることはない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0052
+ | Value=出生の秘密を知りながらも、歌い続けると<br/>誓った美雲。きっと今日のライブでも<br/>彼女の歌声が響き渡ることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0053
+ | Value=ウィンダミアから飛び出して、さまざまな<br/>経験をしたフレイア。その成長は彼女の<br/>歌をさらなる次元へと押し上げていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0054
+ | Value=ウィンダミアの精鋭部隊、空中騎士団。<br/>バルキリーに乗る彼らは、そのルンで<br/>風を感じ取り、空を支配する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0055
+ | Value=ランカのファーストライブの日。<br/>会場は、まるで魔法にかかったように<br/>何もかもが作り変えられていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0056
+ | Value=絵本の世界が飛び出して、砂漠は瞬時に<br/>海へと変わる。歌と魔法のスペシャル<br/>ライブはまだまだ終わらない！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0057
+ | Value=ランカのファーストライブは大成功。<br/>その歌に勇気を貰ったファンの歓声に<br/>包まれて、夢の時間は終わりを告げた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0058
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0059
+ | Value=シェリルに憧れる少女、ランカ・リー。<br/>運命のライブチケットを手に入れて、<br/>周囲の目も気にせずに喜ぶのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0060
+ | Value=ランカと共に命を燃やして歌い切った<br/>シェリルは、彼女を信じる大勢の仲間に<br/>見守られて、長く深い眠りについた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0061
+ | Value=眠りについたシェリルを見守るランカ。<br/>またいつの日か、2人でステージに立ち<br/>歌える日が来ることを信じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0062
+ | Value=熾烈な戦闘の末、アルトたちはバジュラ<br/>の撃退に成功する。しかし一時の平和に<br/>払った犠牲は、あまりにも大きかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0063
+ | Value=ゼントラーディとの戦闘の最中、輝と<br/>ミンメイはマクロス艦内の閉鎖された<br/>区画に閉じ込められてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0064
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0065
+ | Value=普段は反発ばかりしている人間同士に<br/>生まれる奇妙な友情。バサラとガムリン<br/>の間にも、それに近しい絆が存在する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0066
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0067
+ | Value=星の歌い手として覚醒した美雲。<br/>ともに歌い続けてきた仲間を連れ戻す<br/>ため、ワルキューレは全力を尽くす。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0068
+ | Value=仲間たちの必死の呼びかけに応え、<br/>ついに美雲は自分の心を取り戻した。<br/>ワルキューレに神秘の歌姫が帰還する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=ep_dsc_0069
+ | Value=激しい戦争が終わり、人類は宇宙へと<br/>旅立とうとしていた。輝、ミンメイ、<br/>未沙の3人が選ぶ未来は果たして…
+ | ParentPage=Texts/Bank/master
+}}
+                    

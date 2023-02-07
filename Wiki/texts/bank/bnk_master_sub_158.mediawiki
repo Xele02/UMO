@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2730
+ | Value=フレイアに最高のプレゼントを用意したハヤテにねぎらいの言葉を掛けるチャック。<br/>ハヤテの頑張りがあったからこそ、サプライズを成功させることができたといえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2731
+ | Value=ハヤテと雪玉を投げ合い、顔を雪まみれにしながらも柔らかな表情を浮かべるフレイア。<br/>ルンが感情を光で表すように、フレイアの頬もまたほんのりと赤く色付くのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2732
+ | Value=全身で喜びを表現するフレイアの姿を、どこか満ち足りた表情で見つめるハヤテ。<br/>フレイアが心の底から喜んでくれたことが、何よりも嬉しかったのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2733
+ | Value=ラグナでは見ることができないであろう雪に興味津々なハックたち。<br/>真っ白で冷たく柔らかな感触も初めての体験なのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2734
+ | Value=両腕にピンポイントバリアを展開してミサイルを受け止めるVF-31F。<br/>背後のカナメを守るため、ミサイルの直撃をひたすらに耐え続けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2735
+ | Value=フレイアへのサプライズのためにハヤテが用意した人工降雪機。<br/>ハヤテの発想も凄いが、むしろよく探してこれたものである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2736
+ | Value=暖かなラグナの海に雪が降るという不思議な光景。<br/>海岸も積もった雪で白く染まり、ここがラグナとは思えないほどだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2737
+ | Value=クリスマスの衣装に身を包み、プレゼント片手にこっそりと部屋の中に忍び込むレイナ。<br/>強固なセキュリティも解除して、世界中のどこにでもプレゼントを届けられそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2738
+ | Value=【聖夜のパスワード】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2739
+ | Value=ハヤテがフレイアのために用意した人工雪を目にし、驚きの表情を浮かべるミラージュ。<br/>手のひらに落ちた雪は冷たさを感じさせながらも、同時に温かな想いを伝えるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2740
+ | Value=パーティーの準備が完了するまでの間、裸喰娘娘の前で見張りにつくレイナ。<br/>遠くから接近するターゲットも、手にした双眼鏡を使ってバッチリ捉えるぞ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2741
+ | Value=雪が降りしきる幻想的な光景を、お互いに身を寄せ合いながら眺めるレイナとマキナ。<br/>お互いの温もりを傍に感じていれば、どんなときでも寒さに震えることはないだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2742
+ | Value=それぞれが用意したプレゼントを手に、フレイアの様子をこっそり確認するマキナたち。<br/>何も知らずにすやすやと眠るフレイアの姿に、とりあえず一安心といったところである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2743
+ | Value=パーティーのご馳走をお腹いっぱい食べて、苦しそうにテーブルに突っ伏すフレイア。<br/>楽しい雰囲気に舞い上がっていたせいか、つい調子に乗って食べ過ぎてしまったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2744
+ | Value=パーティーの準備が進む中、テキパキと段取りを確認し指示をだしていくミラージュ。<br/>奥手な態度はどこへやら、いつもの調子を取り戻してその場を仕切り始めるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2745
+ | Value=プレゼントの前でみんなと一緒になって歌うハックたち。<br/>みんなから贈られる歌声も大切なプレゼントのひとつだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2746
+ | Value=一斉に小型支援機を切り離し、総攻撃を仕掛ける空中騎士団。<br/>これだけの物量を一度に相手取るのは、熟練のパイロットでも難しいだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2747
+ | Value=ひらひらと手のひらの上に落ちる人工的に作られた雪。<br/>その感触と冷たさは本物と遜色ないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2748
+ | Value=雪が降るのを目にして外へと駆け出して行くフレイア。<br/>故郷を離れてから久しぶりに見る雪に大興奮のようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2749
+ | Value=生死を司る死神も、クリスマスは装いを変えてプレゼントを運ぶサンタクロースになる。<br/>今夜くらいは冷たく厳しい戦場から離れて、温かで穏やかな夜を過ごしてもいいはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2750
+ | Value=カナメとメッサーがペアを組んで乗り込むカナメ・バッカニアカラーのVF-31F。<br/>イエローを基調にして彩られた翼が、ライブの観客たちへ生命の歌を届ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2751
+ | Value=先の戦闘で負傷してしまったメッサー。パーティーには来られないかと思われていたが…<br/>「アラド隊長が今夜は全員参加だと」「隊長が…？」─メッサー、カナメ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2752
+ | Value=出撃の直前、ブレスレットをはめた左手を掲げるように精神を集中するメッサー。<br/>歌で生命を救われた恩に報いるため、メッサーは再び戦場へと戻ってきたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2753
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2754
+ | Value=惑星アル・シャハルにて戦術ライブをするワルキューレの前に現れた空中騎士団。<br/>キースは迎撃態勢をとるデルタ小隊の中に宿敵である死神のエンブレムを探していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2755
+ | Value=ヴァールの発生が報告されたアステロイド宙域にて、目標を鋭く睨みつけるメッサー。<br/>戦場で生命を見つめ続けてきたことも、死神という称号の由来のひとつかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2756
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2757
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2758
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2759
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2760
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2761
+ | Value=銀河のアーティストたちが集結するスペシャルライブに時空を超えて共演したシェリル。<br/>圧倒的なスケールで繰り広げられる華やかなステージは、観客を魅了し銀河を震わせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2762
+ | Value=【恋愛クロスシュート】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2763
+ | Value=今日が最後のチャンスだとし、アルトを巻き込んで失くしたイヤリングを探すシェリル。<br/>真剣な表情で絶対に見つけたいと語るほど、シェリルにとって大事なものであるようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2764
+ | Value=シェリルに1日中連れ回されていたことをミシェルにデートだと思われていたアルト。<br/>訂正しようとするも、ミシェルからはランカとの二股まで疑われてしまうのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2765
+ | Value=【恋愛クロスシュート】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2766
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2767
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2768
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2769
+ | Value=【恋愛クロスシュート】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2770
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2771
+ | Value=【恋愛クロスシュート】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2772
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2773
+ | Value=両手に大小さまざまなプレゼントをいっぱいに抱えてクリスマスの準備を進めるバサラ。<br/>選んだプレゼントを袋に詰め込み街へ繰り出せば、子供たちの笑顔が炸裂するはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2774
+ | Value=【聖夜の鐘を打ち鳴らせ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2775
+ | Value=ギターを掻き鳴らしながら満月が輝く冬の空をソリに揺られて進んでいくバサラ。<br/>クリスマスを飾る雪とプレゼントが、歌声とともに人々の元へと届けられるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2776
+ | Value=バサラの行動を不審に思い、ショックガンを突きつけて制止させようとするライザ。<br/>しかし、まったく動じることなく歌い続けるバサラの姿に、一瞬言葉を失うのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2777
+ | Value=銀河パトロールの本部に現場の状況を報告しつつ、負傷者の救助を要請するライザ。<br/>惑星ゾラでは銀河クジラの密漁に使用するため、バルキリーの盗難が相次いでいた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2778
+ | Value=グラハムが狙い続けているのは、銀河クジラの群れを率いている超大型の白い個体。<br/>この日も銀河クジラの気配を察知し、鋭く砥ぎあげた銛を手に宿敵の元へと向かう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2779
+ | Value=保管されていたVT-1Cに乗りこみ、グラハムを追って宇宙へと飛び出したバサラ。<br/>惑星ゾラの衛星軌道上で感じた銀河クジラの気配に、バサラの期待も膨らんでいく。
+ | ParentPage=Texts/Bank/master
+}}
+                    

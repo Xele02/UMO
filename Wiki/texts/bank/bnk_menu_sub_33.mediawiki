@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=gacha_telop_03
+ | Value=初回のみ無料！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_telop_04
+ | Value={0}回引けば<br/>次回は無料！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_telop_05
+ | Value=今回は無料！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_telop_06
+ | Value=1日1回だけ無料！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_cost_06
+ | Value=無料で引く
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_desc_01
+ | Value=※上記以外のエピソードプレートも排出される可能性があります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_desc_02
+ | Value=※毎日深夜0時にリセットされます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_desc_03
+ | Value=※チケットを複数所持している場合、一番利用期限が早いものが表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_desc_04
+ | Value=朝・昼・夜の1日3回、歌晶石なしでも引けるガチャです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_set_sale_desc_01
+ | Value=販売中
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_set_sale_desc_02
+ | Value=購入済み
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_set_sale_desc_03
+ | Value=販売期間外
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_ticket_name
+ | Value=所持チケット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_attribute_other
+ | Value=フリー枠
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_attribute_yellow
+ | Value=星属性
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_attribute_red
+ | Value=愛属性
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_attribute_blue
+ | Value=命属性
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_caution_01
+ | Value=※現在表示中の編成セットがアシストとして呼び出されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_namechange_popup_title
+ | Value=アシストセット名変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_namechange_popup_ok
+ | Value=アシストセット名を変更しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_namechange_popup_details_01
+ | Value=アシストセット名を入力してください<br/>(全角半角15文字まで)
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_namechange_popup_details_02
+ | Value=
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_name_title_change_ng
+ | Value=登録エラー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_name_notchangeword
+ | Value=アシストセット名が変更されていませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assistselect_name_ngword
+ | Value=使用出来ない言葉が含まれています。<br/>内容の変更をお願い致します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_015
+ | Value=ストーリーマスを解放することで見ることができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_016
+ | Value=ストーリー解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_017
+ | Value=1つ前のストーリーを見ていないため<br/>解放することができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_018
+ | Value={0}<br/>のストーリーマス解放で確認できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_019
+ | Value=※ストーリー確認ボタンから確認できます。<br/>※メニュー→イベントストーリー→プレートタブから確認できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_story_text_020
+ | Value=※メニュー→イベントストーリー→プレートタブから確認できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=assist_friend_select_caution_01
+ | Value=アシストプレートを編成していない場合はメインプレートが表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home401
+ | Value=プレートを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_home402
+ | Value=称号を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_setting040
+ | Value=プレートを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_setting041
+ | Value=称号を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_setting042
+ | Value=プロフィールを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_story040
+ | Value=プレートを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_story041
+ | Value=称号を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_story042
+ | Value=プロフィールを確認できます
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free400
+ | Value=プレートを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_free401
+ | Value=称号を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option010
+ | Value=プレートを選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_option011
+ | Value=称号を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_desc_05
+ | Value=「こんなサービス1日3回しかしないんだからね！」<br/>　　　　　　　　　　　　　－シェリル・ノーム－
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rbreak_rate_warning
+ | Value=※確率表示は小数第4位以下にて切り捨て、小数第3位まで表示します。<br/>　そのため、すべて合算しても100％にならない場合があります。<br/><br/>※上記のエピソードプレートは重複して出現する場合があります。<br/><br/>※同レアリティ内であっても提供割合が異なる場合があります。<br/><br/>※「ガチャ出現率」に表示されている各レアリティごとの<br/>   出現確率は「初期出現確率」です。<br/><br/>※★6が一定程度出現しなかった場合、<br/>　★6の出現確率が「初期出現確率」からやや上昇し、その上昇分だけ<br/>　★3★4★5の全体の出現確率が「初期出現確率」から下がります。<br/><br/>※一度「初期出現確率」から変動した出現確率は、<br/>　ガチャの開催期間の終了、対象ガチャからの★6の排出をもって<br/>　リセットされます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest400
+ | Value=プレートを選択してください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_evquest401
+ | Value=称号を選択してください
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_title_guest_select
+ | Value=表示条件変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=quest_receive_all_desc
+ | Value=※最大{0}件まで一括で受け取れます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

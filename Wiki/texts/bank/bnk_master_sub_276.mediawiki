@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0027
+ | Value=マクロス・フロンティア船団で開発された<br/>可変戦闘機にデコレーションを施した機体。<br/>装甲にシェリルとランカのイラストが堂々と<br/>描かれている。なお、これらの装飾は機体の<br/>持ち主に対し無断で行われたそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0028
+ | Value=対バジュラ戦を想定して設計された試作機。<br/>本機は大気圏内外兼用のオプションパック<br/>「スーパーパック」を追加で装備した状態。<br/>フォールド・ウェーブ・プロジェクターを<br/>搭載し、各種武装面の強化も行われている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0029
+ | Value=「マクロスシリーズ」35周年を記念して、<br/>VF-31Jに特別なカラーリングを施した機体。<br/>青黒白の配色の他に金色が加えられており、<br/>ファイター及びガウォーク形態時の上面には<br/>『ANNIVERSARY』の文字が描かれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0030
+ | Value=ウィンダミアに配備されている可変戦闘機。<br/>Svの形式番号が示すように、VF系統の機体<br/>とは異なる技術で設計されている。赤紫の<br/>機体色はミラージュが当機を強奪する際に<br/>入力した識別コードによるものである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0031
+ | Value=「スーパー・ノヴァ計画」に基づいて開発<br/>された機体。ピーキーな調整がされており<br/>その特性は「じゃじゃ馬」と称されるほど。<br/>乗り手を選ぶ機体ではあるが、非常に高い<br/>機動力と運動性能を持った高性能機である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0032
+ | Value=「スーパー・ノヴァ計画」に基づいて開発<br/>された、革新技術が多数盛り込まれた機体。<br/>機体と神経接続し操作する「BDIシステム」<br/>により高い操縦性を誇る。更にその特性は<br/>バトロイド形態においても発揮されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0033
+ | Value=統合軍のVF-19を熱気バサラ専用に改修した<br/>機体。真っ赤なカラーリングはそのままに、<br/>バサラの歌うことへの姿勢に強い共感を持つ<br/>シェリルのイラストを描くことで、時空を<br/>超えたコラボレーションを実現させている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0034
+ | Value=ウィンダミアに配備されている可変戦闘機。<br/>一般兵士用のBa型に増加ブースターを兼ねた<br/>無人戦闘機、リル・ドラケンを主翼の両端に<br/>連結した状態。分離することで機体が3機に<br/>分身したかのように見せかけることも可能。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0035
+ | Value=ワルキューレライブの演出用にVF-31を<br/>女神のイメージカラーに塗装した機体。<br/>デルタ小隊の5機それぞれに違った塗装が<br/>施され、C型はピンク＆ライトブルーの<br/>マキナ・中島カラーとなっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0036
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0037
+ | Value=マクロス・フロンティア船団で開発された<br/>可変戦闘機。長距離狙撃型の標準装備である<br/>スナイパーパックにオプションパーツを追加<br/>装備した状態。これはライフル以外の機器が<br/>内装式であるため併用が可能となっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0038
+ | Value=マクロス・フロンティア船団で開発された<br/>可変戦闘機。空中戦用に最適化されたF型に<br/>大気圏外活動用の高機動オプションである<br/>スーパーパックを装備した状態。機動力や<br/>火器だけでなく各部装甲も強化されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0039
+ | Value=ウィンダミアに配備されている可変戦闘機。<br/>指揮官機のHs型に増加ブースターを兼ねた<br/>無人戦闘機、リル・ドラケンを主翼の両端に<br/>連結した状態。3機に分離して敵を撹乱する<br/>ことが可能であり、攻撃力も向上している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0040
+ | Value=「MACROSS CROSSOVER LIVE 2019」<br/>を記念し、VFシリーズの始祖であるVF-1に<br/>同ライブのスペシャルロゴをイメージした<br/>マーキングを施した機体。歴代歌姫たちを<br/>繋ぐ、由緒正しき翼へと仕上げられている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0041
+ | Value=VF-31Jに宇宙戦用の追加オプションを装備<br/>させた状態。マルチパーパスパックの名で<br/>呼ばれており、推力や攻撃力の強化の他に、<br/>マルチパーパスコンテナユニットとの併用<br/>も可能で、多様な状況に対応が可能である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0042
+ | Value=大気圏外活動用の高機動オプションである<br/>スーパーパックを装備したVF-25S。<br/>パイロットであるオズマは重装オプションの<br/>アーマードパックの場合が多いが、軽量で<br/>機動性の高いこちらを選択する場合もある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0043
+ | Value=ワルキューレライブの演出用にVF-31を<br/>女神のイメージカラーに塗装した機体。<br/>デルタ小隊の5機それぞれに違った塗装が<br/>施され、J型はレッド＆オレンジの<br/>フレイア・ヴィオンカラーとなっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0044
+ | Value=ワルキューレライブの演出用にVF-31を<br/>女神のイメージカラーに塗装した機体。<br/>デルタ小隊の5機それぞれに違った塗装が<br/>施され、F型はイエロー＆ライトグリーンの<br/>カナメ・バッカニアカラーとなっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0045
+ | Value=大気圏内外両用であるトルネードパックを<br/>装備し、YF-29の性能に近づけたVF-25F。<br/>アーマードパック以上に高価な装備であり、<br/>YF-29の技術実証とデータ収集に、専用の<br/>装備を開発する為のテストも兼ねている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0046
+ | Value=稀代のクリエイターが自身のプロデビュー<br/>40周年を記念し、自ら彩色を行ったという<br/>特別カラーのYF-19。黒を基調としており、<br/>赤とライトブルーの特徴的なラインが映える<br/>シャープなデザインの機体となっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0047
+ | Value=VF-31Cに宇宙戦用の追加オプションを装備<br/>させた状態。<br/>優れた性能バランスが更に強化されており、<br/>装備の追加によって僚機の支援だけでなく<br/>単機での戦闘力も向上している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0048
+ | Value=VF-31Sに宇宙戦用の追加オプションを装備<br/>させた状態。機体性能を限界まで引き出した<br/>ピーキーな調整に加え、装備の追加によって<br/>更に性能が強化されており、機体の扱い自体<br/>はより難しくなっていることが予想される。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0049
+ | Value=大気圏内外両用であるトルネードパックを、<br/>ミハエル・ブランの乗機であるVF-25Gに<br/>装備した状態。高価な装備が適用できる背景<br/>には、S.M.Sの新しいクライアントである<br/>シェリル・ノームの存在も大きいといえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0050
+ | Value=VF-31Eに宇宙戦用の追加オプションを装備<br/>させた状態。推力や攻撃力の強化もさること<br/>ながら、装甲面の強化による生存性の向上は<br/>偵察のみならず戦闘にも直接参加することが<br/>多い本機にとって重要な要素となっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0051
+ | Value=モンキーモデルであるVF-19EFを2050年代<br/>後半の技術にて改良を施すプロジェクト、<br/>「VF-19ADVANCE」により誕生した機体。<br/>アドバンスパックを装備した状態の本機は、<br/>通称「イサムスペシャル」と呼ばれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0052
+ | Value=ワルキューレのライブを演出するため特別に<br/>用意されたスペシャルペイントのVF-31。<br/>J型には水着姿のフレイアが背中にペイント<br/>されており、アクロバットショーでは元気な<br/>姿を余すところなく披露してくれるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0053
+ | Value=可変戦闘機への機種転換用に改修が施された<br/>複座型訓練機。コックピットの延長に伴って<br/>外装パネルの形状が一部変更されている。<br/>訓練機ではあるものの、頭部レーザー機銃や<br/>ガンポッドの装備により戦闘も可能である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0054
+ | Value=特殊作戦の遂行を主眼に置いた可変戦闘機。<br/>標準型のD型を元に各種性能が強化された、<br/>少数配備の指揮官機である。金龍の後を継ぐ<br/>形でダイアモンドフォースの隊長となった、<br/>ガムリン・木崎の乗機として引き継がれた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0055
+ | Value=サイボーグ兵士であるブレラ・スターンの<br/>乗機、VF-27γにスーパーパックを装備、<br/>更に背面ブースターウェポンユニットとして<br/>無人戦闘機「ゴブリンⅡ」を搭載した状態。<br/>その機動性は通常時のYF-29に匹敵する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0056
+ | Value=ワルキューレのライブを演出するため特別に<br/>用意されたスペシャルペイントのVF-31。<br/>F型にはオレンジ色のリボンをあしらうかの<br/>ような装飾にカナメのペイントが施され、<br/>気高き歌とともにあきらめない意志を運ぶ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0057
+ | Value=VF-171を対バジュラ用に改修した機体。<br/>EX-ギアシステムを搭載し、従来の17系を<br/>凌駕する性能だが、機動限界はVF-25より<br/>大幅に劣り、実情を知るパイロットからは<br/>「間に合わせの機体」という評価を受けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0058
+ | Value=マックスとミリアの星間結婚式で使用された<br/>複座型の機体。マックスのパーソナルカラー<br/>の青色に塗装されており、パレードでも使用<br/>された他、結婚式の最中にゼントラーディ軍<br/>の襲撃を受けた際は出撃して戦闘も行った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0059
+ | Value=惑星ゾラの銀河パトロール隊へ評価試験用に<br/>1機だけ配備された固定武装強化型のVF-19。<br/>銀河クジラに歌を聞かせるため熱気バサラが<br/>強引に搭乗し、その後もレイ・ラブロックに<br/>レンタル料を押し付けて拝借してしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0060
+ | Value=重装オプションであるアーマードパックを<br/>装備して、火力と防御力を大幅に強化した<br/>VF-25S。装着したまま変形も可能である。<br/>オズマ・リーはこの装備を常用し、重たい<br/>はずの機体を自由自在に乗りこなしている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0061
+ | Value=VF-17に次ぐ特殊作戦機として、YF-21を<br/>一部改修して配備された機体。新たな主力機<br/>としてダイアモンドフォースにも配備され、<br/>隊長であるガムリン・木崎も指揮官機用に<br/>通信能力を強化したS型に乗り換えている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0062
+ | Value=マクロス・フロンティア船団で開発された<br/>可変戦闘機。専用の電子戦装備、特に背部の<br/>レドームが特徴。スーパーパックを併用する<br/>ことで火力と防御面が向上、前線の味方との<br/>連携や、積極的な索敵活動が可能である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0063
+ | Value=ウィンダミアに配備されている可変戦闘機。<br/>Svの形式番号が示すように、VF系統の機体<br/>とは異なる技術で設計されている。本機は<br/>テオ・ユッシラがパイロットを務めており、<br/>戦闘以外に遺跡の捜索など幅広く従事した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0064
+ | Value=第一次星間大戦で活躍した可変戦闘機。<br/>マクシミリアン・ジーナスの最初の乗機で<br/>あり、初陣でミサイルをおとりに使い敵を<br/>撃墜する「おとり撃ち」を編み出すなど、<br/>可変戦闘機乗りとして天性の才能を見せた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0065
+ | Value=ワルキューレライブの演出用にVF-31を<br/>女神のイメージカラーに塗装した機体。<br/>デルタ小隊の5機それぞれに違った塗装が<br/>施され、S型はパープル＆ブルーの<br/>美雲・ギンヌメールカラーとなっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0066
+ | Value=VF-31AカイロスにVF-31ジークフリード<br/>のスペアパーツを掛け合わせた緊急代替機。<br/>機首の前方にフォールドクォーツを追加し、<br/>ドラケンⅢと同様の全周囲モニターも採用。<br/>各種装備の強化を施した特別改造機である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0067
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0068
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0069
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0070
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0071
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0072
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0073
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0074
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0075
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=v_dsc_0076
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

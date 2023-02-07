@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2580
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2581
+ | Value=小悪魔スタイルで満月が輝く夜空をお散歩中、煌びやかなお屋敷を見つけたフレイア。<br/>ハロウィンで賑わう今夜は、きっとたくさんのお菓子やお楽しみが待っているはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2582
+ | Value=【月夜に輝く訪問者】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2583
+ | Value=デルタ小隊のルーキーであり、天性のリズム感から機体を躍らせるように操るハヤテ。<br/>そのセンスについては認められているが、パイロットとしての腕はまだまだこれからだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2584
+ | Value=デルタ小隊唯一の女性パイロットにして、職務にもプライドを持って挑むミラージュ。<br/>真面目過ぎて融通が利かないが、そのまっすぐさはときに人を支える力になる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2585
+ | Value=【月夜に輝く訪問者】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2586
+ | Value=【月夜に輝く訪問者】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2587
+ | Value=【月夜に輝く訪問者】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2588
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2589
+ | Value=【月夜に輝く訪問者】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2590
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2591
+ | Value=【月夜に輝く訪問者】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2592
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2593
+ | Value=規律と正義を重んじる組織をイメージした衣装で、神出鬼没に街をパトロールする美雲。<br/>霞の如く自在な捜査網の前では、実体のない悪事であっても白日の下に晒されるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2594
+ | Value=悪逆？の限りを尽くしたウミネコのドンも美雲ポリスの手にかかれば年貢の納めどき。<br/>黙秘権の行使も、まっすぐな瞳の前ではあらゆる罪を見透かされてしまうことだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2595
+ | Value=フォールドプロジェクターを操作し、こっそりワルキューレ衣装を着てみたミラージュ。<br/>後にワルキューレのみんなに見つかって、ポーズをリクエストされるはめになったとか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2596
+ | Value=デルタ小隊のラグナ人メンバーであり、レストランを経営する料理人でもあるチャック。<br/>ちょっと抜けているところもあるが、次々と奇抜な戦法を繰り出す優秀なパイロットだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2597
+ | Value=爆発によって避難民に動揺が広がる中、即座に状況を把握してライブを続行する美雲。<br/>決して怯むことのないワルキューレの歌声により、人々もまた平静を取り戻していく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2598
+ | Value=重力機雷によって地上に釘付けとなったマクロスに対し、総攻撃を掛けるカムジン。<br/>戦闘ポッド1000機以上の大部隊を指揮し、圧倒的な物量差でマクロスに襲い掛かる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2599
+ | Value=餞別といわんばかりにランカが実の妹であることをブレラに告げるグレイス。<br/>愕然とするブレラの前で指を鳴らすと、強制的に意識を奪い取ったのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2600
+ | Value=ゲペルニッチに忠誠を誓う同志でありながら、どうにも仲が悪いガビルとバルゴ。<br/>いがみ合う理由は不明だが、お互いを邪魔者扱いしているのは間違いなさそうである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2601
+ | Value=カムジン艦隊の強引なデフォールドによる艦隊同士の衝突に渋面を浮かべるエキセドル。<br/>元々カムジンを呼び寄せることには反対しており、まさに嫌な予感的中といった感じだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2602
+ | Value=女王をグレイスに掌握され、プロトコルを上書きされてしまったバジュラたち。<br/>完全に自我を失ってしまったのか、体色が変化し狂ったように咆哮を繰り返す。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2603
+ | Value=命令を無視して飛び出した結果、カムジンに撃墜されてしまったゼントラーディ兵士。<br/>はぐれ者の集まりなカムジン隊だけあって、隊を纏め上げるのも一苦労のようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2604
+ | Value=バジュラ本星での決戦を目前にして、部屋で1人感慨にひたるビルラー。<br/>フォールド理論に基づいた目的を完遂するべく、静かに時を待つのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2605
+ | Value=規律と正義を重んじる組織をイメージした衣装で、街に潜んだ悪党を追い詰めるカナメ。<br/>ワルキューレ随一の武闘派にして、内乱に荒れる故郷を生き抜いた経験は伊達ではない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2606
+ | Value=誕生日を迎えて、みんなから両手で抱えきれないほどのプレゼントをもらうカナメ。<br/>そのプレゼントの重みは、リーダーとしてみんなを支え続けてきた証なのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2607
+ | Value=デルタ小隊が誇るエースであり、死神の名に恥じない圧倒的な操縦技術を持つメッサー。<br/>かつて発症したヴァールの再発に苦しみつつも、仲間たちとともに今も戦い続けている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2608
+ | Value=デルタ小隊の隊長として、一癖も二癖もある小隊のメンバーを纏め上げるアラド。<br/>ベテランのパイロットとして紛うことなき腕前を持ち、遠近自在な戦いを見せる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2609
+ | Value=アラドのスカウトによってデルタ小隊の隊員になっていたメッサーと再会したカナメ。<br/>このときはまだお互いに面識が浅かったせいか、形式ばった挨拶だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2610
+ | Value=グレイスとの裏取引によって、バジュラに対抗できる攻撃手段を手に入れたレオン。<br/>もはや野心を隠そうとせず、全ての権力を掌握するためにとある計画を実行に移す。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2611
+ | Value=プロトデビルンのバルゴの体内から放たれる、異形の姿をした無数の使い魔たち。<br/>スピリチアを吸収する能力の他、物理的な攻撃を受けると分裂する厄介さを持つ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2612
+ | Value=メルトランディ軍の襲撃を察知して迎撃へと向かっていたスカル小隊を奇襲するミリア。<br/>こともなげに柿崎を撃墜すると、プロトカルチャーの遺跡を奪うべくマクロスに迫った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2613
+ | Value=シビルを復活させる手段としてバサラのアニマスピリチアに目を付けたギギル。<br/>バサラを生け捕りにするべく、エルガーゾルンを引き連れて現れた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2614
+ | Value=メルトランディ軍の機動要塞『ラプラミズ・シリーズ』の中枢ユニット。<br/>擬人化された巨大なホログラムコンピューターにより、艦隊司令としての機能を持つ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2615
+ | Value=シティ7を襲撃するバルゴが放った使い魔たち。<br/>人々のスピリチアを吸収することで、どんどん巨大化していった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2616
+ | Value=ボドルザー艦隊と対峙するようにデフォールドしてきたメルトランディ軍の艦隊。<br/>艦隊司令の中枢である機動要塞を中心に、無数の艦隊が周囲を取り囲む。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2617
+ | Value=星屑の夜空に響く遠吠えを聞き、魔法のランプが輝きを放ったことに驚くミレーヌ。<br/>これはハロウィンの起こした奇跡か、はたまた甘い香りが見せた一夜限りの夢物語か…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2618
+ | Value=【メルヘン・ハロウィン】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2619
+ | Value=腕の上ではしゃぐグババをおとなしくさせようと、叱りながら腕を振り回すミレーヌ。<br/>手にアイスクリームを持っていたのと、隣に人がいたことはすっかり忘れていたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2620
+ | Value=隣でなにやら騒ぎ始めたミレーヌに、うんざりといった様子で注意しようとするバサラ。<br/>直後、いきなり顔にアイスクリームをお見舞いされ、あっけにとられてしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2621
+ | Value=【メルヘン・ハロウィン】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2622
+ | Value=【メルヘン・ハロウィン】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2623
+ | Value=【メルヘン・ハロウィン】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2624
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2625
+ | Value=【メルヘン・ハロウィン】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2626
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2627
+ | Value=【メルヘン・ハロウィン】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2628
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2629
+ | Value=銀河のアーティストたちが集結するスペシャルライブに時空を超えて共演したフレイア。<br/>他の共演者たちに負けじと、弾けるような元気と情熱の歌声でステージを彩っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    

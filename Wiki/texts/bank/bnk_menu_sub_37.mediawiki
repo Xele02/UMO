@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_comeback_mission_count
+ | Value=達成{0}/{1}個
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_godiva_reward_check_hi_score
+ | Value=イベントハイスコア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_godiva_reward_check_ranking
+ | Value=歌姫スコアランキング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_godiva_reward_check_ranking_unit
+ | Value=位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_name_01
+ | Value=フレイア・ヴィオン
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_name_02
+ | Value=美雲・ギンヌメール
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_name_03
+ | Value=カナメ・バッカニア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_name_04
+ | Value=マキナ・中島
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_name_05
+ | Value=レイナ・プラウラー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_name_06
+ | Value=ランカ・リー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_name_07
+ | Value=シェリル・ノーム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_name_08
+ | Value=ミレーヌ・ジーナス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_name_09
+ | Value=熱気バサラ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=diva_name_10
+ | Value=リン・ミンメイ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_view_status_place_text
+ | Value=位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_view_status_divalevel_text
+ | Value=歌姫Lv
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_view_status_intimacyl_text
+ | Value=親密度Lv
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_view_status_havecostume_text
+ | Value=衣装所持数
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_view_status_divaranking_text
+ | Value=歌姫ランキング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_view_status_havecostume_now_text
+ | Value=/
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_view_status_totalstatus_text
+ | Value=TOTAL
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_view_status_intimacyl_exp_text
+ | Value=/
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_view_status_ranking_error_text
+ | Value=-
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_view_status_intimacyl_max_text
+ | Value=---- / ----
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_statuswindow_divastatus
+ | Value=歌姫ステータス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_statuswindow_eventglow
+ | Value=イベントステータス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_statuswindow_costumebonus
+ | Value=きゃわわランク
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_statuswindow_totlastatus
+ | Value=TOTAL
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_diva_statuswindow_title
+ | Value=TOTAL詳細
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=banner_godiva_fevertime
+ | Value=FEVER発生中！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_godiva_remain_time_prefix
+ | Value=FEVER終了まであと
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sel_music_godiva_exp_type_soul
+ | Value=ソウル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sel_music_godiva_exp_type_voice
+ | Value=ボイス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sel_music_godiva_exp_type_charm
+ | Value=チャーム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sel_music_godiva_exp_type_all
+ | Value=オール
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_login_item02_title_msg
+ | Value=<color=#C8087E>ペンライト　{0}個</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_login_item02_label00_msg
+ | Value=ライブボルテージを一定時間上昇することができるアイテム。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_event_login_item02_label01_msg
+ | Value=<color=#8e0529>現在開催中のイベント終了時に消失します。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sel_event_01_period
+ | Value={0}/{1}/{2} {3}:{4:D2} ～ {5}/{6}/{7} {8}:{9:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_godiva_filter_title
+ | Value=表示順変更
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_vop_all_receive_vc_caution
+ | Value=※歌晶石はプレゼントBOXに送られます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_vop_all_receive_title
+ | Value=オペレーション報酬受取
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_vop_all_receive_item_over
+ | Value=※所持上限を超えていたため、一部の報酬は受け取れませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_story_complete_stage
+ | Value=【記憶の時空】で現在発見されている<br/>すべての記憶を解放しました。<br/>今後の新規楽曲は<br/>楽曲選択画面に追加されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_story_mission_guidance
+ | Value=【記憶の時空】をすべて解放する<br/>を達成しました。<br/>ミッションから報酬を受け取ることができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_lot_ticket_few_caution_04
+ | Value=※{0}の入手方法はガチャ詳細をご確認ください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=use_item_description_05
+ | Value=<color=#C8087E>1回の使用最大枚数は{0}枚です。</color><br/>ライブスキップチケットを消費してライブをスキップできます。<br/>スペシャルライブの残り回数以上のチケットは使えません。<br/>ノーツは全てPERFECT、コンボ数は0として報酬、歌姫熟練度ポイントなどを取得できます。<br/>使用するチケットの枚数によって取得する量は変化します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_godiva_bonus_remind_title
+ | Value=楽曲選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_godiva_bonus_remind_text
+ | Value=スペシャルライブが開催中です。<br/>スペシャルライブの対象楽曲に切り替えますか？<br/><color=#C8087E>※スペシャルライブ以外の楽曲をプレイしても、<br/>ライブボルテージは上昇しません。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=home_footer_badge_text_02
+ | Value=NEW！
+ | ParentPage=Texts/Bank/menu
+}}
+                    

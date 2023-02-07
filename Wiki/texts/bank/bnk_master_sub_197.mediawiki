@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4680
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4681
+ | Value=普段はふたつに結んでいる髪の毛をほどいて、ゆるやかな長髪をあらわにしたマキナ。<br/>きわどいハロウィンの仮装も相まって、その色っぽさには思わずドキッとしてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4682
+ | Value=蒼く幻想的な夜空を前に、艶やかな小悪魔のシルエットを浮かび上がらせるマキナ。<br/>夜空を見つめる琥珀色の瞳には、星のきらめきにも負けない夢と希望が映っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4683
+ | Value=長き放浪の旅からバサラが帰還し、改めてバンド活動を再開したFire Bomber。<br/>力強くバンド活動の再開を宣言するバサラに、ミレーヌも目を輝かせるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4684
+ | Value=ライブで最高のパフォーマンスを発揮するためにも、日々のレッスンは欠かせない。<br/>しっかりとレッスンを頑張った体には、水分補給と一緒に甘～いご褒美を忘れずに。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4685
+ | Value=とある計画の実行中、予定外のトラブルに思わず顔を見合わせるレイナとマキナ。<br/>2人は最高のコンビだけれど、流石にすべての状況をフォローするのは難しそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4686
+ | Value=移民船の電源を復旧するため、チャックもまた身を奮い立たせて船外での作業を続ける。<br/>家族と再び故郷のラグナへ帰るためにも、こんなところで終わるわけにはいかないのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4687
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4688
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4689
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4690
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4691
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4692
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4693
+ | Value=かつて自ら手作りし、戦術ライブを初めて成功へと導いた衣装を再びまとったマキナ。<br/>フリフリできゃわわ～な衣装には、ライブに込めた熱い想いと信念が今も宿っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4694
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4695
+ | Value=一度は挫けそうになりながらも、衣装を手作りしてまでライブへと挑み続けたマキナ。<br/>そのひたむきな想いがあったからこそ、ワルキューレも希望を掴み取れたのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4696
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4697
+ | Value=【これが私の戦闘服！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4698
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4699
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4700
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4701
+ | Value=【これが私の戦闘服！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4702
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4703
+ | Value=【これが私の戦闘服！】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4704
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4705
+ | Value=かつては衣装を受け取ろうともしなかったレイナであったが、それももはや過去の話。<br/>大切な存在となったマキナが手作りしてくれた衣装で、心のままに戦術ライブに挑む。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4706
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4707
+ | Value=1人控え室に戻ったレイナは、戸惑いながらも化粧台に置かれたままの衣装を手に取る。<br/>戦場に歌が届く瞬間を目の当たりにし、レイナの心には新しい感情が芽吹き始めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4708
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4709
+ | Value=【絆をその身に】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4710
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4711
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4712
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4713
+ | Value=【絆をその身に】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4714
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4715
+ | Value=【絆をその身に】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4716
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4717
+ | Value=シャロン・アップルの記録から再現された、純白の衣装でステージに降臨したシェリル。<br/>翼を広げて舞い上がる姿は天使そのもの、歌声もまるで天上から響いてくるかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4718
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4719
+ | Value=マクロス・シティ上空へと浮かび上がり、シャロンは黄金の錫杖を天へと掲げる。<br/>その神秘的な光景と美しい歌声は、見上げる人々にかつてない体験を予感させる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4720
+ | Value=空を飛ぶことで言葉じゃ言い表せない、どこか違う世界が見える気がすると語るイサム。<br/>ところどころ冗談めかした口調を交えるのも、どこまでも自由なイサムらしいといえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4721
+ | Value=浮上するマクロスの眼下に現れた、黄金に輝くシャロンの巨大なホログラム。<br/>こちらはその慈しむような瞳を見下ろしているのか、見下ろされているのか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4722
+ | Value=【楽園の天使】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4723
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4724
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4725
+ | Value=【楽園の天使】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4726
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4727
+ | Value=【楽園の天使】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4728
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_4729
+ | Value=シャロン・アップルの記録から再現された、ガーリーなファッションを披露するランカ。<br/>紅く色づいた少女の甘酸っぱいトークは、おしゃれから恋にと話題が尽きることはない。
+ | ParentPage=Texts/Bank/master
+}}
+                    

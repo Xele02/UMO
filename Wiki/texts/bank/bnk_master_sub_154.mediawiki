@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2530
+ | Value=バトル7がトランスフォーメーションを行い強攻型へと変形した姿。<br/>ステルス効果のため格納されていたすべての火器が使用可能になるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2531
+ | Value=閃光のように戦場を貫くマクロス・キャノンの砲撃。<br/>効果射程内にいようものならひとたまりもないだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2532
+ | Value=捕虜となった敵兵士のヘルメットに仕掛けられていた洗脳装置。<br/>敵兵士はこの装置によって思考をコントロールされていたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2533
+ | Value=夜空に瞬く星々の光を山吹色の衣装に集め、生命を巡らすかのように歌い踊るカナメ。<br/>射止めるかのような凛とした眼差しとその美しさは、星々からの寵愛を掴んで放さない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2534
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2535
+ | Value=惑星ヴォルドールに潜入するカナメとレイナ、マキナ。そして3人を護衛するメッサー。<br/>任された責任の重さは、そのままメッサーに対する信頼の証に他ならない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2536
+ | Value=「センサーも監視カメラも、バッチリぐっすりおねんね中」<br/>「警備兵、次の巡回まであと30分」─マキナ、レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2537
+ | Value=【生命巡らす歌と舞】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2538
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2539
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2540
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2541
+ | Value=【生命巡らす歌と舞】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2542
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2543
+ | Value=【生命巡らす歌と舞】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2544
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2545
+ | Value=白ねこをイメージした衣装に身を包み、カメラの前でねこポーズを決めるランカ。<br/>元気いっぱいのおてんばキャットは、お化けたちみんなの間でも人気者になるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2546
+ | Value=【ねこ娘☆ダイアリー】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2547
+ | Value=ランカの歌声に重ねるように響き渡る歌声を耳にし、ランカは一瞬で声の主を悟る。<br/>そして、道案内を頼まれただけの女性の背中を感極まる思いで見つめ続けたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2548
+ | Value=アルトに誕生日プレゼントを渡せなかったランカの元に再び現れた緑色の生き物。<br/>気落ちしたランカを元気づけるかのように、体を伸ばして鼻先にキスをしたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2549
+ | Value=日が落ち始めて辺りが暗くなろうかという時間でもティッシュを配り続けるランカ。<br/>疲れの表情ひとつ見せることなく、笑顔を振りまいて行き交う人々と接し続けていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2550
+ | Value=ガリア4での暴動によって窮地に陥ったアルトたちの救出を求めるランカだったが…<br/>「無理なんだよ…ここからじゃ絶対に間に合わない」「そんな…」─ミシェル、ランカ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2551
+ | Value=まだ開発段階の新型フォールドパックを任せるにあたり、慎重な取り扱いを求めるルカ。<br/>「…たくっ、とんでもないもの開発してるな、お前んち」─ミシェル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2552
+ | Value=無茶をしてまでガリア4へやってきたランカのことを想うアルト。<br/>そして感謝の気持ちを伝えようとするも、照れくささから頬を赤くしてしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2553
+ | Value=ランカからティッシュを受け取る、ヒゲとサングラスが特徴的な男性。<br/>このときの巡り合わせが、後にランカの将来を大きく動かすきっかけとなった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2554
+ | Value=L.A.Iで開発中のフォールド断層の影響を受けないという新型のフォールドパック。<br/>まだ実用には問題が山積みなものの、実用化されれば銀河が1/10の広さになるという。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2555
+ | Value=ランカがプロモーションで配っていたポケットティッシュ。<br/>デビュー曲である『ねこ日記』の広告付きである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2556
+ | Value=ランカがプロモーションでティッシュ配りを行っていた渋谷エリアの一角。<br/>特徴的なモニュメントは待ち合わせのスポットになっていそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2557
+ | Value=黒ねこをイメージした衣装に身を包み、カメラの前でねこポーズを決めるシェリル。<br/>いたずら心満載なセクシーキャットは、お化けたちみんなの視線も釘付けにするかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2558
+ | Value=【トリック＆ロマンス】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2559
+ | Value=ゼントラーディモール内に響く何者かの歌声に、思わずサングラスを上げるシェリル。<br/>夢に向かい強く踏み出した歌声は、身を隠すのを忘れさせるほど真に迫るものだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2560
+ | Value=人が何かを求め続けるのは、そうせずにはいられないからだと語るクランとシェリル。<br/>立場は違えど、心に強い信念を持つ2人には何か通じ合うものがあるのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2561
+ | Value=校庭のグラウンドから女性と連れ立って歩くアルトの姿に気付いたルカ。<br/>距離が離れていたため、相手の女性の顔までは確認できなかったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2562
+ | Value=チャイムの音に反応し、ランカが帰ってきたと勘違いして勢いよくドアを開くオズマ。<br/>勝手な行動を咎めつつも、ランカが家を飛び出したことは心配で仕方なかったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2563
+ | Value=湧き上がるインスピレーションの赴くまま、一心不乱にペンを走らせるシェリル。<br/>凄まじい集中力と威圧するかのような剣幕を前に、周囲は遠巻きに眺める他ない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2564
+ | Value=歌詞を書くのに夢中なシェリルを、紙飛行機を弄りながら手持ち無沙汰に眺めるアルト。<br/>なりゆきで居合わせることになったクランも、何となくその光景を眺めるのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2565
+ | Value=ゼントラーディ向けの商品を扱う売り場では食器や衣料品の類ももちろん巨大。<br/>マイクローンにとってはまるでおとぎ話の世界に迷い込んだ気分になるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2566
+ | Value=アイランド3内の異星生物研究所にて保管されていたバジュラ。<br/>すでに機能は停止してたと思われていたが、ランカの歌声に反応し再び動き始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2567
+ | Value=膝の上でねこのようにくつろぐ惑星エデン原産の生物『ヒュドラ』。<br/>比較的おとなしい性格だが、マイクローンが近づくには躊躇してしまうサイズである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2568
+ | Value=ギャラクシー船団に所属していると思われる機体。<br/>フロンティア船団に救援を要請するため、単身フォールドアウトしてきたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2569
+ | Value=大ファンであるFire Bomberのハロウィンライブでの仮装姿に衝撃を受けるオズマ。<br/>すぐさまお揃いの衣装を求め、月が照らし出すハロウィンの夜へと駆け出すのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2570
+ | Value=戦況や作戦内容からスーパーパックを選択し、機動力を重視したオズマのVF-25S。<br/>アーマードパック以外のオプションパックを装備した姿は、意外と珍しいかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2571
+ | Value=自身のパーソナルマークにちなみ、牛頭の怪物をイメージした仮装に身を包むオズマ。<br/>戦場で猛る姿を表すように、鍛え上げた肉体でハロウィンの夜を練り歩いていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2572
+ | Value=「ギリアムは死んだ…お前は見ていたはずだな？話せ、奴がどんな風に戦って死んだか。<br/>看取った奴は残された者に死に様を語って聞かせる、それがここの流儀だ！」─オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2573
+ | Value=ミシェルの正確な狙撃を目の当たりにし、言いようのない劣等感に苛まれるアルト。<br/>「あいつにまた助けられるなんて…」─アルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2574
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2575
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2576
+ | Value=他人にすべてを任せるのではなく、全てを知っていたいという答えを返したアルト。<br/>その姿にオズマもまた真剣にアルトを見据えると、改めてその意志を確かめたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2577
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2578
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2579
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

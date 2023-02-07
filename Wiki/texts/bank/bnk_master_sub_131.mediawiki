@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1380
+ | Value=星間複合企業体であるケイオス・ラグナ支部の基地。<br/>港湾都市バレッタシティの丘の街に併設される形で存在している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1381
+ | Value=堅物の教官と自由奔放な候補生として、反発や衝突を繰り返してきた2人。<br/>仲間たちとの交流や様々な試練を乗り越えた今、2人の心は強い信頼で結ばれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1382
+ | Value=背中に『Anniversary』の文字を背負った、特別なカラーリングのVF-31J。<br/>全身で記念日を祝うかのような粋な出で立ちに、ハヤテもご機嫌な様子だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1383
+ | Value=フレイアの歌で冷静さを取り戻したハヤテは機体を立て直し、再び空へと舞いあがった。<br/>「まだ試験は終わってないぜ、教官殿！」─ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1384
+ | Value=まさかの敗北を喫し、コックピットの中で俯いて動くことができないミラージュ。<br/>それに対してハヤテは、憂鬱な空気を吹き飛ばすような笑顔で語りかけたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1385
+ | Value=オーディション合格時、ハヤテにからかわれたことを覚えていたフレイア。<br/>最終試験に合格したハヤテに対し、お返しとばかりにそっくりそのままの言葉を返した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1386
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1387
+ | Value=勝利の余韻に浸るハヤテに対し、容赦なくペイント弾を叩き込むメッサー。<br/>「死にたくなければ、戦うすべを身につけろ」─メッサー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1388
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1389
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1390
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1391
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1392
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1393
+ | Value=個性的な2羽の鳩を相棒に、マジシャンに扮したミレーヌのステージが幕を開ける。<br/>夢と魔法で満ちた歌声はキラキラと輝き、どこまでも続く星空のように広がっていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1394
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1395
+ | Value=一息ついている最中でも、つい目で追ってしまうアイツの背中。<br/>何を考えているのかわからないけれど、何故か気になってしまうミレーヌだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1396
+ | Value=湯上りのバスタオル1枚に身を包んだ、ちょっぴりセクシーな姿のミレーヌ。<br/>上気してピンク色に染まった唇はコケティッシュな魅力に溢れている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1397
+ | Value=からかうような表情で勢いよくバッグを振り回すミレーヌ。<br/>その無邪気な振る舞いには、いろいろと手を焼くことも多いのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1398
+ | Value=連れ立って歩く相手の腕に抱き着くように体を寄せるミレーヌ。<br/>子猫のような無邪気な笑みは、少女らしい幼さを感じさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1399
+ | Value=何気ないデートの最中、いつもとはまた違った印象を見せるミレーヌ。<br/>年相応の少女らしさと、女性としての魅力が同居しているのが彼女の魅力だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1400
+ | Value=折角の記念撮影だからとバサラとミレーヌを気遣うレイ。<br/>しかし、シャッターの瞬間にお互いそっぽを向かれては流石にどうしようもない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1401
+ | Value=スケジュールの都合で先延ばしになっていたミレーヌの歓迎パーティー。<br/>早速、次の仕事の話が決まるなど、新メンバー加入後の出だしは好調のようだが…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1402
+ | Value=飲み物を喉に流し込んで、たまらないという表情を浮かべるレイ。<br/>冷えていなくても、日が高いうちから外で飲むのは格別なようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1403
+ | Value=ミレーヌの歓迎パーティーで振る舞われたバーベキュー。<br/>たくさん出る煙も屋外なら気にしなくて大丈夫だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1404
+ | Value=飲み物を冷やしていたクーラーボックス。<br/>氷がたくさん入っているが、飲み物の方はいまいち冷えていなかったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1405
+ | Value=聖夜を華々しく祝うべく、クリスマス衣装をセクシーに着こなすシェリル。<br/>思わず目を奪われるその輝きは、忘れられない思い出をプレゼントしてくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1406
+ | Value=突然路地から伸びてきた脚につまずき、思わず倒れ込んでしまうアルト。<br/>「いきなり何しやがる！」「ハァ～イ☆」─アルト、シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1407
+ | Value=華やかなクリスマスの夜に現れたキュートでセクシーな聖夜の妖精。<br/>その美しく豊かなスタイルの前には、街のイルミネーションさえも霞んでしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1408
+ | Value=裾の長いワンピースの衣装に身を包み、しっとりと祈るように歌うシェリル。<br/>それは故郷ギャラクシーと、出撃していったアルトの無事を祈るかのようだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1409
+ | Value=作戦が終了したら返すという約束のイヤリングを、そのままアルトに託したシェリル。<br/>「とっといて。それはわたしたちを守ってくれたボーナスよ」─シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1410
+ | Value=亡くなった人々を弔うかのようにフロンティアに降り始めた雪。<br/>その光景に、シェリルとランカはしばし見とれるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1411
+ | Value=サヨナラライブの一幕で、フロンティアの人々に感謝の言葉を投げかけるシェリル。<br/>徐々にテンションを上げると、いつもどおりライブを盛り上げることを宣言した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1412
+ | Value=普段とまるで違う笑顔で迫るキャシーに、思わずたじろぐオズマだったが…？<br/>「お、おいっ！」「11時。ビルの角」─オズマ、キャシー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1413
+ | Value=バジュラ襲撃の中、フロンティア全艦に中継されたシェリルのライブ映像。<br/>力強く歌うシェリルの姿に、人々も希望を取り戻していった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1414
+ | Value=グレイスの機転とスタッフの尽力により再び動き出したライブステージ。<br/>シェリルの歌と映像は無人カメラによって全艦に中継された。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1415
+ | Value=外壁の損傷による減圧で雲が発生し、雪が降りだしたフロンティア。<br/>肌の露出が多い衣装を着ていたシェリルは、思わずかわいいクシャミをしてしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1416
+ | Value=淡い青のライトに照らされたサヨナラライブのシェリル。<br/>散りばめられた光の粒子が、ダイヤモンドダストのように輝いている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1417
+ | Value=ちょっぴりミニなクリスマス衣装を身に纏い、ツリーを飾りつけていくランカ。<br/>その愛くるしい姿が、何よりも最高のプレゼントになりそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1418
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1419
+ | Value=華やかなクリスマスの夜に、プレゼントを抱えながら誰かを待っているランカ。<br/>プレゼントの中身は大切な人への想いで星空のように煌めいているのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1420
+ | Value=美星学園の近くにあるカフェにて、秘密の会議をするランカとナナセ。<br/>内容は秘密なので教えてくれないみたいだが、一体どんなことを話しているのだろう？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1421
+ | Value=1人遠くを見つめるシェリル。そして、その姿を見守るランカとアルト。<br/>アルトは受け取ったイヤリングを手に、シェリルの言葉を噛みしめるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1422
+ | Value=心配で取り乱すオズマに対し苦笑いしつつも、どこか照れくさそうなランカ。<br/>まだあどけなさが残るも、シェリルとのライブを通じてランカは大きく成長していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1423
+ | Value=アルトを引き合いに出し、ミシェルを不実な奴だと告げるクラン。<br/>一方ミシェルは視線を逸らしつつ、意味ありげに含み笑いで応えるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1424
+ | Value=監視に気付いたオズマは、わざとらしくも熱々カップルを演じ始めた。<br/>「あ～ん！…おぉ、辛い！」「え～？ホントにぃ？」─オズマ、キャシー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1425
+ | Value=へたり込んでしまったランカを見て、慌ててバルキリーの上から身を乗り出すオズマ。<br/>どんなときだろうとランカの身を案じずにはいられないのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1426
+ | Value=オズマとアルト、そして謎の援軍アンタレス1によるフォーメーション。<br/>シェリルとランカのステージを守るべくバジュラを迎え撃った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1427
+ | Value=ブリッジにテーブルを持ち込んで、束の間の安息を楽しむ女性クルーたち。<br/>ピザなどの軽食をつまみつつ、色恋沙汰の話題に花が咲いている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1428
+ | Value=ランカの学園ライブの演出として会場に振りまかれた光の粒子。<br/>盛り上がっていた観客も、その輝きに思わず見とれてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1429
+ | Value=眩しい笑顔を振りまいて、元気いっぱいにお正月の遊びや文化を満喫するフレイア。<br/>鮮やかな着物に身を包んだ彼女のルンも、新年を祝う気持ちでピカピカ輝く。
+ | ParentPage=Texts/Bank/master
+}}
+                    

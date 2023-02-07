@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_quest_receive_limit_title
+ | Value=所持上限
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_quest_receive_limit_desc
+ | Value=受け取ろうとしたアイテムに所持上限を超えるものがありました。<br/>このミッションの報酬を受け取りますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_quest_receive_get
+ | Value=受取：{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_quest_receive_lose
+ | Value=消失：{0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_quest_receive_limit_caution
+ | Value=※所持上限を超えて受け取ったアイテムは自動的に消失します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_quest_receive_limit_failure_01
+ | Value=※所持上限を超えていたため、一部の報酬は受け取れませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_quest_receive_limit_failure_02
+ | Value=受け取ろうとした報酬が<br/>すべて所持上限を超えているため<br/>アイテムを受け取れませんでした。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rbreak2_rate_warning
+ | Value=※確率表示は小数第4位以下にて切り捨て、小数第3位まで表示します。<br/>　そのため、すべて合算しても100％にならない場合があります。<br/><br/>※上記のエピソードプレートは重複して出現する場合があります。<br/><br/>※同レアリティ内であっても提供割合が異なる場合があります。<br/><br/>※「ガチャ出現率」に表示されている各レアリティごとの<br/>   出現確率は「初期出現確率」です。<br/><br/>※★5★6が一定程度出現しなかった場合、<br/>　★5★6の出現確率が「初期出現確率」からやや上昇し、その上昇分だけ<br/>　★3★4の全体の出現確率が「初期出現確率」から下がります。<br/><br/>※一度「初期出現確率」から変動した出現確率は、<br/>　ガチャの開催期間の終了、対象ガチャからの★5★6の排出をもって<br/>　リセットされます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text20
+ | Value=以下のアイテムとUCを消費して能力マスをすべて解放します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text21
+ | Value=以下のアイテムとUCを消費してエピソードマスをすべて解放します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text22
+ | Value=※シークレットボードは含まれません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=growth_popup_text23
+ | Value=以下のアイテムとUCを消費して必要な能力マスをすべて解放します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_filter_reset
+ | Value=リセット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_filter_all
+ | Value=ALL
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_title_h1
+ | Value=ソート設定
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_total
+ | Value=TOTAL
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_soul
+ | Value=ソウル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_voice
+ | Value=ボイス
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_charm
+ | Value=チャーム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_get
+ | Value=入手順
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_rarity
+ | Value=レアリティ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_level
+ | Value=レベル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_life
+ | Value=ライフ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_luck
+ | Value=LUCK
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_support
+ | Value=サポート
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_fold
+ | Value=フォールド波
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_recovery_notes
+ | Value=回復ノーツ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_item_notes
+ | Value=アイテムノーツ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_scoreup_notes
+ | Value=高得点ノーツ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_support_notes
+ | Value=サポートノーツ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_fold_notes
+ | Value=フォールド波ノーツ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_last_playdate
+ | Value=最終ログイン
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_player_runk
+ | Value=ランク
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_request
+ | Value=申請日時
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_skill
+ | Value=スキル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_active_skill
+ | Value=Aスキル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_live_skill
+ | Value=Lスキル
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_episode
+ | Value=エピソード
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_secret_board
+ | Value=シークレットボード数
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_highscorerating
+ | Value=仮
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_fannum
+ | Value=ファン数
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_episodeno
+ | Value=エピソードNO
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_diva_and_valkyrie
+ | Value=歌姫／バルキリー
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_episode_point
+ | Value=エピソードポイント
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_lucky_leaf
+ | Value=ラッキーリーフ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_main_cannnon_power
+ | Value=主砲威力
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_fan
+ | Value=ファン
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_furniture
+ | Value=仮
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_ornament
+ | Value=仮
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sort_item_rug
+ | Value=仮
+ | ParentPage=Texts/Bank/menu
+}}
+                    

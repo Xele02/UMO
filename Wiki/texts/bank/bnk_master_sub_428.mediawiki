@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=rn_0036
+ | Value=映画館に行こう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0037
+ | Value=とまらない！ワルキューレLIVE
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0038
+ | Value=ライブへようこそ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0039
+ | Value=虹いろ・クマクマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0040
+ | Value=0-G Love
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0041
+ | Value=dシュディスタb
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0042
+ | Value=宿命θノヴァティック
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0043
+ | Value=波乱のエイプリルフール
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0044
+ | Value=やさしさSAYONARA
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0045
+ | Value=イツワリノセカイの君へ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0046
+ | Value=fight on stage ～2人の歌姫～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0047
+ | Value=SUBMARINE MEMORY
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0048
+ | Value=光速クライmax☆stage
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0049
+ | Value=涙目ウェディング
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0050
+ | Value=誘惑のエリクシア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0051
+ | Value=命がけの恋なら
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0052
+ | Value=SEVENTH MOON NIGHT
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0053
+ | Value=飛べ！超時空要塞マクロス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0054
+ | Value=<size=20>銀河に歌え！ ～時を超えるライオン～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0055
+ | Value=夏だ！水着だ！ワル裏フェス！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0056
+ | Value=SUNSET RESORT
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0057
+ | Value=ミッドサマー・ラブハート！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0058
+ | Value=バルキリーオペレーション
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0059
+ | Value=歌姫オペレーション
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0060
+ | Value=New song Live ～第1弾～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0061
+ | Value=New song Live ～第2弾～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0062
+ | Value=New song Live ～第3弾～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0063
+ | Value=絶命ジャッジメント
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0064
+ | Value=メモリアル・ランナー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0065
+ | Value=ジリティック♡Halloween
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0066
+ | Value=夕焼けオーバーフロウ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0067
+ | Value=追憶ジェリーフィッシュ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0068
+ | Value=Queen's Birthday
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0069
+ | Value=Walküre！ THUNDER GLOW
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0070
+ | Value=MAGICAL☆MY FRIENDS
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0071
+ | Value=<size=20>サンタクロースでなんかいられない！</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0072
+ | Value=超時空カウントダウンライブ'18
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0073
+ | Value=<size=20>【賀正】Happy New Yearライブ'19</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0074
+ | Value=<size=23>あゝ、デカルチャー ～宇宙兄弟船～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0075
+ | Value=<size=20>リン・ミンメイ物語 ～Fire Bomber編～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0076
+ | Value=<size=20>暴走する歌声 ～シャロン・アップル～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0077
+ | Value=不確定性♡フォーメーションダンス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0078
+ | Value=<size=20>little queen ～愛・おぼえていますか～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0079
+ | Value=<size=19>熱唱☆学園ライブ！ ～卒業式編～</size>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0080
+ | Value=旅立つ君へ ～愛は流れる～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0081
+ | Value=流星の奏でる旋律
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0082
+ | Value=ようこそ！ワルキューレ★Partyへ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0083
+ | Value=願いがキラリ ～また会おうね～
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0084
+ | Value=私たちのビューティフル・プレイス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rn_0085
+ | Value=Dancing in the Planet
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1030
+ | Value=一時期スランプに陥っていた彼女は、ミレーヌとバサラの歌を聴いて調子を取り戻した。<br/>ステージに響く歌声には、以前よりも熱いハートが込められていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1031
+ | Value=連れ去られたミレーヌを探していると、突然グババの目が光り出した。<br/>どうやら、感覚を共有しているグババはミレーヌの気配を察知できるらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1032
+ | Value=ファンの少年、ビリーが作った手作りのグババ人形。<br/>特徴をよく捉えているが、グババは不服のようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1033
+ | Value=強制的なお見合いから始まったものの、次第に打ち解けるミレーヌとガムリン。<br/>だが、何かと衝突しがちなバサラに対しても、彼女は理解を示し始めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1034
+ | Value=ジーナス家の末娘でありサウンドフォースの一員。両親譲りの操縦テクニックを持つ。<br/>専用バルキリーに乗って歌うその姿は、決してバサラにも引けを取らない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1035
+ | Value=初めての戦闘で悩んでいたミレーヌは、感情の整理がつかないようだった。<br/>そんな彼女に、ガムリンはお守りを見せて笑いかけるのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1036
+ | Value=夜の街を歩く男が2人。その名は、熱気バサラとガムリン・木崎。<br/>大きく違う人生を歩んできた2人だが、数奇な運命がその視線を交錯させる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1037
+ | Value=ミレーヌが苦労して取ってきた仕事に、納得がいっていない様子のバサラ。<br/>それに激しく噛み付くミレーヌ。その彼女のエネルギーも相当なものである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1038
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1039
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1040
+ | Value=バサラが毎回戦闘中に歌っている理由を尋ねるミレーヌ。<br/>客がいないのになぜ歌うのか、彼女にはそれが引っかかっているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1041
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1042
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1043
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1044
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1045
+ | Value=ミス・マクロス優勝後、人気アイドルになったミンメイは、新曲のイメージ衣装を<br/>着て歌う。軍服姿の彼女はいつもと違い、凛々しい雰囲気をまとっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1046
+ | Value=特大サーロインステーキを前に満面の笑みを浮かべる柿崎。<br/>大きく口を開いた次の瞬間、無情にもスクランブル警報が鳴り響いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1047
+ | Value=静かに行く先を見つめる輝。その目には戦場へと向かう者の強い意志が宿っていた。<br/>「バルキリー・スカル大隊23番機、一条輝、発進します！」―輝　
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1048
+ | Value=独断で任務を一時放棄した輝は、未沙に厳重注意を受ける。<br/>しかし、どんな言葉も今の輝には届かないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1049
+ | Value=軍隊に入ってフォッカーは変わってしまった…そう思っていた直後、前を行く女の子に<br/>釘づけの彼の姿を見て、そんなところは変わってないのだと呆れる輝だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1050
+ | Value=予定していた進路を変え、まだテストも済んでいないフォールドシステムを使うと<br/>命令する艦長。この判断がマクロスの未来を大きく変えることになる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1051
+ | Value=フォッカーとの朝帰りを指摘されるが、特に気にしていない様子のクローディア。<br/>「朝帰り？任務に影響ございませーん！」―クローディア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1052
+ | Value=ブリッジオペレーターのヴァネッサ、キム、シャミー。<br/>おしゃべりが多い3人だが、マクロスの制御に彼女たちの力はかかせない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1053
+ | Value=偶然発見したエネルギーから開発されたピンポイントバリア。<br/>その力は絶大だが範囲が狭く、操縦者の腕が試される緊張の瞬間だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1054
+ | Value=最新型の戦闘機、バルキリーを前に会話する輝とフォッカー。<br/>その後に待っている運命を、今はまだ誰も知らない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1055
+ | Value=異星人との戦闘を終え、やっと休憩の時間がやってきた。<br/>ブリッジでも、コーヒーはやはり休憩の定番だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1056
+ | Value=バルキリーを変形させ、フォッカーとの衝突回避を試みる輝。<br/>しかし、初めての操縦では墜落は免れないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1057
+ | Value=時として、ランカに厳しく当たるのも、彼女の胸の奥にプロとしての魂があるから。<br/>そんな彼女だからこそ、銀河を震わせる歌を奏でられるのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1058
+ | Value=新統合政府の動きに期待できない今、グレイスたちの思惑を阻止するため覚悟を決める。<br/>「我々がやるしかない、ついてきてくれるかね？モニカ君」―ジェフリー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1059
+ | Value=『銀河の妖精』シェリルと『超時空シンデレラ』ランカ。<br/>正反対の2人だが想いはひとつ。彼女たちの歌声は、やがて銀河を救う力となる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1060
+ | Value=妙なことからライオンを歌うことになったクラン。歌には想いを伝える力があると<br/>言われ、クランも想いを込めて歌い出す。伝えたい相手はもちろん…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1061
+ | Value=もう思い残すことはない。シェリルの視線はまっすぐ自らの戦場へと注がれていた。<br/>銀河の妖精が歌う決意の歌は、バジュラに、銀河に届くのか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1062
+ | Value=お守りとして、自身のイヤリングをアルトに託し、帰還の約束をするシェリル。<br/>「必ず帰ってくるのよ。いいわね？アルト」―シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1063
+ | Value=最終決戦の戦場。それこそがシェリルの最後のステージだった。<br/>「今あるのは音楽と、そしてわたし。だから、わたしの歌を聴けー！」―シェリル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1064
+ | Value=機体を失ったアルトへとVF-25Fを運ぶクランとルカ。<br/>アーマードパックをつけて舞い戻ったアルトの翼は、人類の希望となるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1065
+ | Value=今まで起きた出来事の真相を話す艦長に、動揺を隠せないレオン。<br/>「我々は踊らされていたのだよ。奴らの陰謀とそれに加担する者に！」―ジェフリー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1066
+ | Value=第117次大規模調査船団に残された写真。<br/>それはシェリルの母が、祖母マオ・ノームへ送ったものだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1067
+ | Value=ギャラクシー船団に乗っ取られたバジュラクイーンの姿。<br/>その強大なネットワークは全宇宙のバジュラを手足とし、銀河中の惑星を襲った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1068
+ | Value=V型感染症の症状が書かれたカルテ。<br/>シェリルにとってそれは、自身の死期が近いという宣告でしかなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1069
+ | Value=シェリルに導かれ『超時空シンデレラ』への階段を上っていくランカ。<br/>彼女の歌は未熟ながらも力と輝きがある。それこそが彼女の魅力なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1070
+ | Value=憧れと歌への想いを原動力に、トップアイドルを目指して夢を追い続けてきたランカ。<br/>溢れるエナジーは夢を叶えた後も尽きることはなく、新たな世界へ広がり続けている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1071
+ | Value=絶望的な状況のなか歌い続けるシェリルとランカ。胸の奥にあるのは、歌を届けたい<br/>という想い。諦めずに希望を信じる2人の歌は銀河を救うことができるのか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1072
+ | Value=バジュラたちを乗っ取ったグレイスの居場所を伝えるブレラ。<br/>「アルト、頭を狙え。バジュラの心は頭ではなく腹にある」―ブレラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1073
+ | Value=力尽き、すべてを諦めようとするシェリルの頬を打ったランカ。<br/>シェリルがいなければ今の自分はいない。その想いを届けるために。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1074
+ | Value=自分が誰のために歌いたいのか。それに気付いたランカは皆にではなく、<br/>ただ1人、アルトに向けて歌うことを決めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1075
+ | Value=駆け寄ってくるあい君に、歌が届いたことを伝えたランカ。<br/>バジュラにも気持ちがあり、想いが通じることを嬉しそうに語った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1076
+ | Value=スカル小隊のもとへと戻ったオズマ。彼がいなければ作戦は始められない。<br/>「全機行くぞ。突撃ラブハート！」―オズマ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1077
+ | Value=母ランシェ・メイから教えてもらった『アイモ』を歌うランカ。<br/>その目の前にバジュラたちが現れた。すべての物語はここから始まったのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1078
+ | Value=クランとルカが運んでくれた自身の機体―VF-25F。<br/>再び戻ってきた翼を纏い、アルトは最終決戦の戦場へと駆けていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1079
+ | Value=ギャラクシーの攻撃からフロンティア船団を守ってくれたバジュラたち。<br/>その行動は、ランカとシェリルの歌が届いた証だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    

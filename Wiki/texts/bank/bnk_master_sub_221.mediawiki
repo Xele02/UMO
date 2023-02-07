@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0107
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0108
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0109
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0110
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0111
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0112
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0113
+ | Value=バルキリーモード開始時に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0114
+ | Value=バルキリーモード開始時に発動し[dv]秒間コンボが切れない
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0115
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0116
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0117
+ | Value=ライフが[tv]％以下になるとライフを[v1]％回復
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0118
+ | Value=ライフが[tv]％以下になると発動し[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0119
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和され[dv2]秒間スコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0120
+ | Value=開始[tv]秒後に発動しライフを[v1]％回復し[dv2]秒間スコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0121
+ | Value=ライフが[tv]％以下になると[dv]秒間ダメージ半減
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0122
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和され[dv2]秒間スコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0123
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和され[dv2]秒間スコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0124
+ | Value=開始[tv]秒後に発動し[dv]秒間コンボが切れず[dv2]秒間スコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0125
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和され[dv2]秒間スコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0126
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0127
+ | Value=超歌姫モード開始時に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0128
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0129
+ | Value=開始[tv]秒後に発動し[dv]秒間判定が緩和され[dv2]秒間スコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0130
+ | Value=開始[tv]秒後に発動しライフを[v1]％回復し[dv2]秒間スコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0131
+ | Value=バルキリーモード開始時に発動し[dv]秒間判定が緩和される
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0132
+ | Value=開始[tv]秒後に発動し[dv]秒間ダメージを受けなくなりスコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0133
+ | Value=開始[tv]秒後に発動し[dv]秒間ダメージ半減[dv2]秒間スコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0134
+ | Value=開始[tv]秒後に発動、[dv2]秒間毎秒ライフが[v1]減少しスコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0135
+ | Value=ライフが[tv]％以下になると発動し[dv]秒間ダメージを受けなくなる
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0136
+ | Value=開始[tv]秒後に発動、[dv2]秒間毎秒ライフが[v1]減少しスコアが[v2]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0137
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0138
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0139
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0140
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0141
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0142
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0143
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0144
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0145
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0146
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0147
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0148
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0149
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0150
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0151
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0152
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0153
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0154
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0155
+ | Value=開始後[tv]秒ごとに[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=l_dsc_0156
+ | Value=開始[tv]秒後に発動し[dv]秒間スコアが[v1]％アップ
+ | ParentPage=Texts/Bank/master
+}}
+                    

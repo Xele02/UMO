@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1080
+ | Value=あい君をバジュラの母星に返しに行くランカとブレラ。<br/>しかし、ランカの思いとは裏腹にバジュラたちは攻撃態勢に入った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1081
+ | Value=普段はワルキューレのリーダーとして、皆を気遣ったり、まとめたりと大変な彼女も<br/>海に行けば無邪気にはしゃぐ。太陽に照らされて輝く姿は第2の太陽のようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1082
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1083
+ | Value=徐々に成果を出し始めたワルキューレに、今後の方針を提案するアラド隊長。デルタ小隊<br/>との連携など、ワルキューレのことを真摯に考える姿に希望の光を見るのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1084
+ | Value=きゃわわな水着の影響でいつもより輝きを増すルン。今ならもっとごりごりなビーム…<br/>ごりごりなルンピカビーム・サマーバージョンが出せるかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1085
+ | Value=ハヤテとフレイアの歓迎会で乾杯をするメッサー。馴れ合いを好まない印象の<br/>メッサーだが、特に嫌ってる様子はないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1086
+ | Value=ハヤテとフレイアの歓迎会で乾杯前の挨拶をするアーネスト艦長。<br/>彼の話はとても長く、集まっている人たちは呆れた様子である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1087
+ | Value=ハヤテは祭りに恋人同士で来ている人が多いことに気付き、チャックへと目線を向けた。<br/>「クラゲ祭りは恋人たちの祭りってね」―チャック
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1088
+ | Value=デルタ小隊に入隊したハヤテと、ワルキューレになったフレイア。<br/>まだまだ未熟な2人は理想と現実とのギャップに苦戦しているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1089
+ | Value=ラグナの大規模イベント、クラゲ祭り。<br/>多くの人で賑わうこの祭りには、さまざまな夜店が軒を連ねている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1090
+ | Value=カフェでカナメが飲んでいたジュース。<br/>何が入っていたのかは謎である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1091
+ | Value=人気料理店・裸喰娘娘が満を持しての出張営業！<br/>名物・クラゲ饅頭を販売している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1092
+ | Value=ハヤテを挑発するウミネコ。海中を素早く逃げる動きは、<br/>ハヤテだけでなく、ラグナ人であるチャック兄弟も手を焼くほどだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1093
+ | Value=ワルキューレのメンバーと一緒に海で遊ぶ美雲。『仲間と一緒に遊ぶ』という経験が<br/>あまりなかった彼女は、どこか無邪気な笑みを浮かべていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1094
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1095
+ | Value=ウミネコを捕まえようとするハヤテ。しかし、彼は猫アレルギーを持っていたため、<br/>クシャミで隙ができてしまい、今回も弄ばれるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1096
+ | Value=ビーチボールを持つメッサー。どうやらパイロットたちに誘われたらしい。<br/>最初は乗り気ではなかったものの、夕暮れどきには緩やかな微笑みを浮かべていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1097
+ | Value=アラドと業務報告をするカナメだが、話の内容が聞こえない第3者にとっては<br/>何やらプライベートな会話にも見える。こうして噂は広まっていく…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1098
+ | Value=晴れてデルタ小隊の期待の新人として入隊したハヤテ。まだ未熟な言動もある彼だが、<br/>根がまっすぐなところは本物であり、今後の成長が楽しみである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1099
+ | Value=レイナの大人な発言を聞いて顔を赤らめるフレイア。<br/>フレイアは大人な発言に慣れていないあたり、まだまだ精神的には子供のようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1100
+ | Value=食い逃げをしたウミネコが、ハヤテに放った強力な一撃。<br/>デルタ小隊に入って早々、運に恵まれないハヤテだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1101
+ | Value=フレイアがオーディションで落ちる様子を見に来たと茶化すハヤテ。<br/>その言葉に悔しさを覚えるフレイアはより一層、力を入れるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1102
+ | Value=クラゲ祭りではどこを見てもカップルたちが歩いている。<br/>それもそのはず、クラゲ祭りには恋愛成就の言い伝えがあるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1103
+ | Value=ラグナの文化はクラゲや海を象徴するものが多い。<br/>楽器に貝殻などが使われているのも、崇拝のあらわれなのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1104
+ | Value=ラグナ名物のクラゲ。刺身や干しクラゲなど、さまざまな料理に使われている。<br/>デルタ小隊のアラドは、クラゲのつまみを持ち歩いているらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1105
+ | Value=女性陣に対抗して水着に着替えるパイロットたち。男だけで遊ぶ姿に華はないが、<br/>普段は戦闘で忙しい小隊メンバーも、今回はオフを満喫しているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1106
+ | Value=チームのムードメーカーでありお調子者。平時は裸喰娘娘の料理人をしている。<br/>小隊では早期警戒管制・電子戦を担当し、デルタ小隊をサポートするのが仕事だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1107
+ | Value=今日こそは！とウミネコの捕獲に奮闘するチャックたち。だが、賢いウミネコは<br/>隙をついてバックターンで躱す。捕まえられるのはまだまだ先になりそうだ…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1108
+ | Value=チャックの弟妹のハックとザックとエリザベス。髪をひとつに結んでいるのがハック、<br/>そうでないのがザック、手前にいるエリザベスは「キラッ」がお気に入りのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1109
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1110
+ | Value=フレイアとハヤテの歓迎会で料理を運ぶチャックとハック。<br/>料理の中身はお任せで、試作中の料理が出てくることもあるらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1111
+ | Value=ウミネコの捕獲に失敗し、晩ご飯を盗られたことを嘆くマキナ。<br/>「あーん！私のディナーがー」―マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1112
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1113
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1114
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1115
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1116
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1117
+ | Value=貝殻がモチーフのかわいらしい水着に身を包むミンメイ。恋に恋する年頃の彼女は、<br/>特別な人へと視線を向ける。その瞳は何かを期待しているようにも見えた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1118
+ | Value=土星に行ってみたいというミンメイの願いを叶えた輝。近頃、スキャンダルで<br/>悩んでいた彼女には、輝が闇から助け出してくれた王子様に見えたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1119
+ | Value=純白の水着をまとい、海の底で歌うミンメイ。その歌声は海中に響き渡り、<br/>生き物たちをも魅了する。近づいてきた魚と触れ合う様子は、まさに人魚のようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1120
+ | Value=バルキリーとお揃いの赤い水着に身を包むミリア。夏の海に心を躍らせる姿は、<br/>いつもの彼女からは想像つかないが、隣のマックスは見逃すつもりはないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1121
+ | Value=疲れたと言うミンメイに、目の前にあったホテルでの休憩を提案する輝。<br/>ホテルの名前を見たミンメイは輝に不審な目を向けるが、彼は気付いていないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1122
+ | Value=未沙とカイフンにバルキリーを無断で使用したことが見つかってしまい非難される輝。<br/>しかし、罰せられる覚悟をしていたからか、素直に帰還命令に応じるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1123
+ | Value=窓に映る土星に感嘆を漏らすミンメイ。その瞳はキラキラと輝いており、<br/>輝は土星に行きたいという彼女の願いを叶える決心をした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1124
+ | Value=土星デートの最中、輝はミンメイのために、とっておきの景色を見せてあげた。<br/>「わあ、素敵」「土星の虹さ」―ミンメイ、輝
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1125
+ | Value=デート中、ミンメイに振り回される輝。<br/>大変なように見えるが、彼自身まんざらでもないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1126
+ | Value=ミンメイと土星デートをするために輝が無断使用した機体。<br/>訓練用バルキリーのため、武器などは搭載されていない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1127
+ | Value=輝とミンメイがデートをしているときに見かけた見世物芸。<br/>日本刀で紙を瞬時に切る様は、まさに伝統芸と言うに相応しい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1128
+ | Value=地球に戻ってきたマクロス。<br/>海から見る夕焼けは、まるで「おかえり」と言ってるかのように輝いていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1129
+ | Value=普段は背伸びをしているミレーヌも、海に来たら年相応にはしゃぎだす。<br/>その元気はライブにも影響し、いつもより輝きを増した歌声が響き渡るだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    

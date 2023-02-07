@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=offer_fast_completion_popup_text_02_01
+ | Value=歌晶石を{0}個消費することで<br/>オペレーションを高速完了します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_fast_completion_popup_text_02_02
+ | Value=<color=#C8087E>歌晶石　 {0}→{1}</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_fast_completion_popup_text_02_03
+ | Value=<color=#C8087E>歌晶石が足りません。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_fast_done_limit_over_pop_text
+ | Value=本日はこれ以上<br/>高速完了することができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_not_fast_done_pop_text
+ | Value=現在、このオペレーションを<br/>高速完了することができません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_platoon_release_condition_title_text
+ | Value=小隊解放条件
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_platoon_release_condition_text_01
+ | Value=デビューオペレーションをすべて達成する
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_platoon_release_condition_text_02
+ | Value=デビューオペレーションをすべて達成する<br/><br/>バルキリーを{0}機以上所持する
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_diva_select_title_text
+ | Value=歌姫選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_comp_title_text
+ | Value=衣装解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_detail_item_title_text
+ | Value=報酬詳細
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_item_select_makina_serif
+ | Value=この衣装を強化するよー<br/>強化アイテムを選んでね！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_item_select_makina_serif2
+ | Value=クロースストーンは<br/>VOPで入手できるよ！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_item_use_title_text
+ | Value=消費アイテム確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_achievement_title_text
+ | Value=きゃわわランクアップ報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_rankup_title_text
+ | Value=きゃわわランク制限解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_cmn_rankup_attention_text
+ | Value=ランクアップ毎に　歌晶石　{0}個　を獲得できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_next_release_point_text
+ | Value=次の報酬まで {0} {1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_use_item_limit_text
+ | Value=一度に使用できるアイテムは{0}個までです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_diva_select_warning_text
+ | Value=未解放の歌姫が選択されています。<br/>強化可能な衣装がありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_item_detail_costume_skillup
+ | Value=衣装に新たな効果を付与する。<br/>獲得効果『{0}』
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_item_detail_costume_skillget
+ | Value=衣装の効果を1段階強化する。<br/>強化後ステータス『{0}』
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_item_detail_costume_color
+ | Value={0}<br/>{1}のパレットチェンジ衣装を解放する。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_item_detail_diva_status_up
+ | Value={0}のステータスを強化する。<br/>強化後ステータス『{1}{2}』
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_item_detail_diva_status_up_title
+ | Value=ステータスアップ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_item_detail_sub_plate
+ | Value=『{0}』を解放する。<br/>解放済みの場合はその枠を3%強化する。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_rank_up_unlock_condition_text
+ | Value=解放条件
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=costume_upgrade_lock_text
+ | Value=【解放条件】<br/>・バルキリーオペレーションを合計{0}回達成する。<br/><br/><color=#C8087E>※バルキリーオペレーションは<br/>ゲームを進めることで解放されます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=subplate_rate_text
+ | Value={0}％
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=subplate_lock_text
+ | Value=【解放条件】<br/>・衣装強化で支援プレート解放を獲得する。<br/><br/><color=#C8087E>※衣装強化はゲームを進めることで解放されます。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_infomation_text_01
+ | Value=オペレーションを<br/>更新しました！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_infomation_text_02
+ | Value=【{0}】から<br/>依頼があります！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_infomation_text_03
+ | Value=歌姫オペレーションが<br/>パワーアップしました！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_infomation_text_04
+ | Value=オペレーションが<br/>完了しました！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_non_offer_text
+ | Value=選択可能な歌姫オペレーションが見つかりません。<br/><br/><color=#C8087E>※楽曲プレイで歌姫オペレーションは出現します。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_occur_diva_offer_text_01
+ | Value={0}から特別な依頼が届いています
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_occur_diva_offer_text_02
+ | Value={0}の依頼内容がパワーアップしました！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_cancel_pop_title
+ | Value=受注解除確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_cancel_pop_text
+ | Value=受注を解除すると報酬を獲得することができません。<br/><br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_daily_offer_levelup_text
+ | Value=デイリーオペレーション難易度解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_diva_offer_levelup_text
+ | Value=<size=23>{0}の歌姫オペレーション難易度解放</size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_result_first_achievement_title
+ | Value=初回達成報酬
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sacred_stones_count_text
+ | Value=<color=#C8087E>歌晶石 {0}個</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_item_scene_detail_text
+ | Value=★1～★3プレートの中から１つ出現する。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_spitem_detail_title
+ | Value=目玉アイテム
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_spitem_detail_text
+ | Value=レアドロップで出現する可能性があるアイテム。<br/><color=#C8087E>※任務大成功の場合は１つ出現します。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_all_platoon_sortie_pop_text
+ | Value=すべての小隊が出撃中のため<br/>オペレーションを受注することはできません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_select_operation_ended_pop_text
+ | Value=現在、このオペレーションを<br/>受注することはできません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_fast_done_limit_count_text
+ | Value=本日 残り{0}回
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=offer_operation_badge_text
+ | Value={0}件完了！
+ | ParentPage=Texts/Bank/menu
+}}
+                    

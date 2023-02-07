@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2380
+ | Value=惑星アル・シャハルを襲撃した空中騎士団。<br/>血気盛んなボーグが先陣を切り、激しい戦闘が幕を開けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2381
+ | Value=初めて敵パイロットを撃ってしまい、複雑な思いに悩んでしまうハヤテ。<br/>だがミラージュの励ましもあって、自分だけ負けてはいられないと立ち直るのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2382
+ | Value=バサラの誕生日を祝って大合唱する歌姫たちに、当のバサラはあっけにとられるばかり。<br/>やれやれと一息つきつつ、たまにはこんな日があってもいいかと思うバサラであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2383
+ | Value=誕生日を良く知らない美雲のため、パーティーの準備からワルキューレ一同が全面協力。<br/>仲間たちの温かな想いに包まれて過ごす誕生日は、まるで虹色のように輝くことだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2384
+ | Value=リゾート地のフードコートで提供されたのは、山のように盛られたかき氷。<br/>どう手を付けたものかと戸惑うアルトだが、ランカのかき氷の方がもっとすごいぞ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2385
+ | Value=アルトとランカが2人っきりでいるところに出くわし、爆発寸前といった様子のオズマ。<br/>要件を尋ねる前にまず誤解を解かないと、大変なことになってしまいそうだ…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2386
+ | Value=バサラの歌声を聞いて苦しみ出したシビルに対し、怪訝な顔をするバサラ。<br/>思わずシビルの体調を気にするも、まさか自分の歌が原因だとは気付かなかったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2387
+ | Value=アクショの自宅マンション屋上で、途中だった新曲作りを再開するバサラ。<br/>その日に起きた出来事を思い返すように、バサラは歌に旋律を重ねていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2388
+ | Value=バジュラの体内に捕らわれていたランカが、不意に空中へと投げ出されてしまう。<br/>バルキリーから飛び出したアルト。必死の思いで右手をランカに伸ばした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2389
+ | Value=バジュラに連れ去られ絶体絶命の中、シェリルの歌とともにランカも歌い続ける。<br/>いつしか表情から悲壮感は消え、生を渇望するかのような強い意志に満ちていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2390
+ | Value=入隊試験でハヤテとミラージュの対決が決まり、盛り上がるエリシオンのクルーたち。<br/>話題は男女の関係にまで発展し、妄想は止まることを知らずにどんどん加速していく…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2391
+ | Value=銀河が滅びない限り挽回はできると語るベルガーの姿は、まさに商人そのものといえた。<br/>「私は商人です。血の一滴たりとも、タダでは渡しません」─ベルガー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2392
+ | Value=輝と会うために変装してきたミンメイだったが、当の本人にはあっさりとばれてしまう。<br/>「わかるよ、写真集みんな持ってるもん」「一生懸命、変装したのに…」輝、ミンメイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2393
+ | Value=ボトルを片手に、輝に男女の仲とは何たるかをとっくりと語って聞かせるフォッカー。<br/>良く言えば情熱的、悪く言えば横暴な内容に、隣のクローディアも気が気でない様子。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2394
+ | Value=誕生日祝いにいいところを見せたい輝に対して、ちょっといじわるに振る舞うミンメイ。<br/>気になる男の子が頑張ったり困ったりする姿も、思い出という名のプレゼントなのかも。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2395
+ | Value=エンジン・ブロックに伝わる振動で、マクロスがタイタンから発進したことに気づく輝。<br/>その一方、状況がわからないミンメイは、心配そうに輝の腕にすがりつくのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2396
+ | Value=故郷の村では誕生日になると逃げ回っていたフレイアも、今ではみんなと大盛り上がり。<br/>ウィンダミア人なら人生の折り返しだとしても、フレイアの人生はまだまだこれからだ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2397
+ | Value=おのが身を省みることなく、疾風のように駆けつけ救いの手を差し伸べるワルキューレ。<br/>どんなことが待ち受けていようとも、彼女たちがあきらめることは決してないのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2398
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2399
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2400
+ | Value=ネットワーク上の特別ステージから、ワルキューレがスペシャルライブをお届け！<br/>モニターを通じて世界中に届けられる女神の歌を、みんなでいっしょに楽しもう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2401
+ | Value=今年も良い1年になることを願いながら、歌姫たちも仲良く新年最初の運試し。<br/>悪い運勢は晴れやかな歌で追い払って、爽やかな気持ちで新しい1年をスタートしよう！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2402
+ | Value=新年を迎え、晴れ着姿で一家水入らずなお正月を過ごすマックスとその家族たち。<br/>異星間の交流で広がった文化は、こうして次の世代へ受け継がれていくのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2403
+ | Value=過去の戦闘データをシミュレーションした電子空間へと挑むバルキリーパイロットたち。<br/>迫りくるエネミーを無力化し、平和を取り戻せるかどうかは君たちの手にかかっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2404
+ | Value=みなさまに支えられ、「歌マクロス」も4周年を迎えることができました。<br/>支え合うからこそ乗り越えられる、そう信じて歌姫たちもエールを送ってくれています！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2405
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2406
+ | Value=激動の時代を経て、なおも語り継がれる『銀河の妖精』と『超時空シンデレラ』の歌声。<br/>これまでも、そしてこれからも、重なり合うふたつの歌声は世界に輝く光を放ち続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2407
+ | Value=バサラとシェリル、カナメの3人で協力した餅つきは迫力満点で、伸びも粘りも一級品！<br/>つきたて熱々のお餅のように、今年も1年燃えるハートでどこまでも熱く伸び続けるぜ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2408
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2409
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2410
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2411
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2412
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2413
+ | Value=おしゃれでキュートな花柄モチーフのビキニを纏い、夏の海を絶賛満喫中なフレイア。<br/>夏の陽射しと潮風を全身に浴びて、ルンも太陽に負けないくらいピカピカ輝いている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2414
+ | Value=【夏色にときめいて】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2415
+ | Value=ワルキューレの本拠地であるケイオス・ラグナ支部にてレコーディングを行うフレイア。<br/>本領発揮とはいかなかったものの、夢見ていた舞台へと一歩踏み出したのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2416
+ | Value=惑星アル・シャハルでの戦術ライブ後、憧れのワルキューレに想いを伝えたフレイア。<br/>そしてワルキューレから贈られた激励に感動し、元気よく返事とサインを返すのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2417
+ | Value=【夏色にときめいて】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2418
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2419
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2420
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2421
+ | Value=【夏色にときめいて】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2422
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2423
+ | Value=【夏色にときめいて】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2424
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2425
+ | Value=さんさんと降り注ぐ太陽の光をいっぱいに浴びて、瑞々しい輝きを放つランカ。<br/>純白のトップスにカラフルなボトムの水着が夏の元気をサポートするかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2426
+ | Value=【夏のなないろ流星群】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2427
+ | Value=マヤン島の夕陽を前に、うまく言葉にできない気持ちを歌に乗せて響かせるランカ。<br/>優しく切ないアイモの旋律は、ランカの願いや祈りを表しているかのようであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2428
+ | Value=普段と違うランカの様子から、何か思い悩んでいることに気付いていたアルト。<br/>ランカは複雑な表情を浮かべながらも、アルトの気遣いに嬉しさを滲ませるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2429
+ | Value=バジュラの心に対しての考えを、真っ向から否定するアルトの剣幕に気圧されるランカ。<br/>驚いて空へと散っていく海鳥たちの姿は、ランカの淡い願いと重なるかのようであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    

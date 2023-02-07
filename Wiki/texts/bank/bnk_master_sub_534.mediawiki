@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0087
+ | Value=月が見える場所、幻のセッションⅡ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0088
+ | Value=月が見える場所、幻のセッションⅢ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0089
+ | Value=月が見える場所、幻のセッションⅣ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0090
+ | Value=月が見える場所、幻のセッションⅤ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0091
+ | Value=みんなが集まる場所、娘々Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0092
+ | Value=みんなが集まる場所、娘々Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0093
+ | Value=みんなが集まる場所、娘々Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0094
+ | Value=みんなが集まる場所、娘々Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0095
+ | Value=みんなが集まる場所、娘々Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0096
+ | Value=思わぬ人と出会う、夕暮れの公園Ⅰ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0097
+ | Value=思わぬ人と出会う、夕暮れの公園Ⅱ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0098
+ | Value=思わぬ人と出会う、夕暮れの公園Ⅲ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0099
+ | Value=思わぬ人と出会う、夕暮れの公園Ⅳ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=odv_nm_0100
+ | Value=思わぬ人と出会う、夕暮れの公園Ⅴ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=obg_nm_0001
+ | Value=生体フォールド波測定
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=obg_nm_0002
+ | Value=南アタリア島の調査
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=obg_nm_0003
+ | Value=戦場に歌声を響かせろ！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=obg_nm_0004
+ | Value=Ｓ.Ｍ.Ｓ入隊試験
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=obg_nm_0005
+ | Value=ブービー・トラップ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=obg_nm_0006
+ | Value=シティ７の異変
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=obg_nm_0007
+ | Value=謎の異星生命体
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=obg_nm_0008
+ | Value=正体不明の敵
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rup_nm_0001
+ | Value=レアアップスター
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=rup_dsc_0001
+ | Value=プレートをレアリティアップするために<br/>使用されるとても希少なアイテム。<br/><color=#8e0529>※レアリティアップ前の★4、★5プレートに使用できます。</color>
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lmitm_nm_0001
+ | Value=超時空ガチャチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lmitm_nm_0002
+ | Value=★5確定サービスチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lmitm_nm_0003
+ | Value=★5確定ビンゴチケット
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lmitm_dsc_0001
+ | Value=特別なガチャを引くことができるガチャチケット。<br/>超時空ガチャを引くことができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lmitm_dsc_0002
+ | Value=ガチャを引くことができるチケット。<br/>★5確定サービスガチャを引くことができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lmitm_dsc_0003
+ | Value=特別なガチャを引くことができるガチャチケット。<br/>★5確定ビンゴチケットガチャを引くことができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lmitm_qt_0001
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lmitm_qt_0002
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lmitm_qt_0003
+ | Value=枚
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0001_bg
+ | Value=最初の部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0002_bg
+ | Value=フレイアの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0003_bg
+ | Value=ケイオス女子寮
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0004_bg
+ | Value=ランカの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0005_bg
+ | Value=バサラの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0006_bg
+ | Value=ミンメイの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0007_bg
+ | Value=惑星エデン 星の丘
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0008_bg
+ | Value=クラゲ祭り
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0009_bg
+ | Value=野外ライブステージ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0010_bg
+ | Value=ワルキューレフェス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0011_bg
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0012_bg
+ | Value=超時空飯店 娘々
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0013_bg
+ | Value=裸喰娘娘
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0014_bg
+ | Value=縁側のある和室
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0015_bg
+ | Value=お花見公園
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0016_bg
+ | Value=中華料理店 娘々
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=dc_itm_nm_0017_bg
+ | Value=シェリルの部屋
+ | ParentPage=Texts/Bank/master
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_adv_skip_target001
+ | Value=会話
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_adv_skip_target002
+ | Value=オープニング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_cbt_purchase
+ | Value=クローズドβテストでは<br/>歌晶石の購入はできません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=questionary_notification_000
+ | Value=該当項目をひとつ選択してください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=questionary_notification_001
+ | Value=該当する項目を{0}つまで選択してください。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=questionary_notification_002
+ | Value=選択肢によってゲームの内容が変化することはありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_sns_desc_001
+ | Value={0}<br/>を達成しました。<br/><br/>ミッションから報酬を受け取ることができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_story_termination
+ | Value=記憶の時空で現在発見されている<br/>すべての記憶を解放しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_unlock_desc_title
+ | Value=歌の記憶解放
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_episodebonus_platelist_title
+ | Value={0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_episodebonus_nothingplate
+ | Value=該当のエピソードを構成するプレートを所持していません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=push_notify_lb_title
+ | Value=ログボを受け取ろう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=push_notify_lb_msg_01
+ | Value=歌晶石100個を2日目ログボでプレゼント！今すぐログインしよう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=push_notify_debut_vc_title
+ | Value=歌晶石セール開催中！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=push_notify_debut_vc_msg_01
+ | Value=今だけのお得な歌晶石セット、まもなく販売終了です！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_limit_over_add
+ | Value=ラッキーリーフの新しい能力を解放できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_limit_over_release_01
+ | Value=ラッキーリーフの効果が追加されました！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_limit_over_release_02
+ | Value=ラッキーリーフの効果が追加されました！<br/>さらにラッキーリーフの新しい能力を解放できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_excellent_rate_01
+ | Value=PERFECTが<color=#C8087E>EXCELLENT</color>に変化する確率を+<color=#C8087E>{0}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_excellent_rate_02
+ | Value=PERFECTが<color=#C8087E>EXCELLENT</color>に変化する確率を+<color=#C8087E>{0}</color>%<br/>プレートと楽曲の<color=#C8087E>属性が同じ</color>だとさらに+<color=#C8087E>{ma}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_excellent_rate_03
+ | Value=PERFECTが<color=#C8087E>EXCELLENT</color>に変化する確率を+<color=#C8087E>{0}</color>%<br/>プレートと楽曲の<color=#C8087E>属性が同じ</color>だとさらに+<color=#C8087E>{ma}</color>%<br/>プレートと楽曲の<color=#C8087E>シリーズが同じ</color>だとさらに+<color=#C8087E>{sa}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_excellent_rate_04
+ | Value=プレートと楽曲の<color=#C8087E>属性が同じ</color>だとさらに+<color=#C8087E>{0}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_excellent_rate_05
+ | Value=プレートと楽曲の<color=#C8087E>シリーズが同じ</color>だとさらに+<color=#C8087E>{0}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_excellent_effect_01
+ | Value=<color=#C8087E>EXCELLENT</color>が発生した場合にスコアを+<color=#C8087E>{0}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_excellent_effect_02
+ | Value=<color=#C8087E>EXCELLENT</color>が発生した場合にスコアを+<color=#C8087E>{0}</color>%<br/>プレートと楽曲の<color=#C8087E>属性が同じ</color>だとさらに+<color=#C8087E>{1}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_excellent_effect_03
+ | Value=プレートと楽曲の<color=#C8087E>属性が同じ</color>だとさらに+<color=#C8087E>{0}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_center_live_skill_01
+ | Value=<color=#C8087E>センターライブスキルノーツ</color>が出現する確率を+<color=#C8087E>{0}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_center_live_skill_02
+ | Value=<color=#C8087E>センターライブスキルノーツ</color>が出現する確率を+<color=#C8087E>{0}</color>%<br/>プレートと楽曲の<color=#C8087E>属性が同じ</color>だとさらに+<color=#C8087E>{ma}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_center_live_skill_03
+ | Value=<color=#C8087E>センターライブスキルノーツ</color>が出現する確率を+<color=#C8087E>{0}</color>%<br/>プレートと楽曲の<color=#C8087E>属性が同じ</color>だとさらに+<color=#C8087E>{ma}</color>%<br/>プレートと楽曲の<color=#C8087E>シリーズが同じ</color>だとさらに+<color=#C8087E>{sa}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_center_live_skill_04
+ | Value=プレートと楽曲の<color=#C8087E>属性が同じ</color>だとさらに+<color=#C8087E>{0}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_center_live_skill_05
+ | Value=プレートと楽曲の<color=#C8087E>シリーズが同じ</color>だとさらに+<color=#C8087E>{0}</color>%
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_unlock_01
+ | Value=【解放条件】LUCK{0}以上
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_unlock_02
+ | Value=【解放条件】LUCK{0}以上　<size=18><color=#8e0529>LUCKが不足しています。</color></size>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_unlock_03
+ | Value=このラッキーリーフの効果はすべて解放済みです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_unlock_04
+ | Value=※メインプレートと歌姫相性が合っていない場合でも発動します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_popup_title
+ | Value=ラッキーリーフ効果
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=limit_over_popup_caution
+ | Value=※★{0}プレートを最大まで解放すればプレミア化します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_limit_over_list_title
+ | Value=ラッキーリーフ一覧
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_limit_over_list_count
+ | Value={0}枚
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_limit_over_list_none_desc
+ | Value=表示できるプレートがありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dash_ticket_title
+ | Value=チケット消費枚数選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dash_energy_title
+ | Value=エナジー消費量選択
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dash_button
+ | Value={0}倍
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dash_cost_energy
+ | Value=エナジー消費量 {0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dash_own_energy
+ | Value=現在のエナジー {0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dash_cost_ticket
+ | Value=消費チケット枚数 {0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dash_own_ticket
+ | Value=所持チケット枚数 {0}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dash_caution
+ | Value=選択した倍率に応じて獲得できるイベントポイントも増えます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dash_caution_skip
+ | Value=スキップ機能は1倍消費のみ使用可能です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_dash_cost_over_energy
+ | Value=<color=#8e0529>必要な消費量までエナジーを回復できないため、選択できません。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    

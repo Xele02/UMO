@@ -1,0 +1,500 @@
+{{DivaStat
+ |Level=51
+ |Life=9999
+ |Soul=584
+ |Vocal=584
+ |Charm=584
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=52
+ |Life=9999
+ |Soul=606
+ |Vocal=584
+ |Charm=584
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=53
+ |Life=9999
+ |Soul=606
+ |Vocal=606
+ |Charm=584
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=54
+ |Life=9999
+ |Soul=606
+ |Vocal=606
+ |Charm=606
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=55
+ |Life=9999
+ |Soul=628
+ |Vocal=606
+ |Charm=606
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=56
+ |Life=9999
+ |Soul=628
+ |Vocal=628
+ |Charm=606
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=57
+ |Life=9999
+ |Soul=628
+ |Vocal=628
+ |Charm=628
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=58
+ |Life=9999
+ |Soul=650
+ |Vocal=628
+ |Charm=628
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=59
+ |Life=9999
+ |Soul=650
+ |Vocal=650
+ |Charm=628
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=60
+ |Life=9999
+ |Soul=650
+ |Vocal=650
+ |Charm=650
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=61
+ |Life=9999
+ |Soul=672
+ |Vocal=650
+ |Charm=650
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=62
+ |Life=9999
+ |Soul=672
+ |Vocal=672
+ |Charm=650
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=63
+ |Life=9999
+ |Soul=672
+ |Vocal=672
+ |Charm=672
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=64
+ |Life=9999
+ |Soul=694
+ |Vocal=672
+ |Charm=672
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=65
+ |Life=9999
+ |Soul=694
+ |Vocal=694
+ |Charm=672
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=66
+ |Life=9999
+ |Soul=694
+ |Vocal=694
+ |Charm=694
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=67
+ |Life=9999
+ |Soul=716
+ |Vocal=694
+ |Charm=694
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=68
+ |Life=9999
+ |Soul=716
+ |Vocal=716
+ |Charm=694
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=69
+ |Life=9999
+ |Soul=716
+ |Vocal=716
+ |Charm=716
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=70
+ |Life=9999
+ |Soul=738
+ |Vocal=716
+ |Charm=716
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=71
+ |Life=9999
+ |Soul=738
+ |Vocal=738
+ |Charm=716
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=72
+ |Life=9999
+ |Soul=738
+ |Vocal=738
+ |Charm=738
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=73
+ |Life=9999
+ |Soul=760
+ |Vocal=738
+ |Charm=738
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=74
+ |Life=9999
+ |Soul=760
+ |Vocal=760
+ |Charm=738
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=75
+ |Life=9999
+ |Soul=760
+ |Vocal=760
+ |Charm=760
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=76
+ |Life=9999
+ |Soul=782
+ |Vocal=760
+ |Charm=760
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=77
+ |Life=9999
+ |Soul=782
+ |Vocal=782
+ |Charm=760
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=78
+ |Life=9999
+ |Soul=782
+ |Vocal=782
+ |Charm=782
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=79
+ |Life=9999
+ |Soul=804
+ |Vocal=782
+ |Charm=782
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=80
+ |Life=9999
+ |Soul=804
+ |Vocal=804
+ |Charm=782
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=81
+ |Life=9999
+ |Soul=804
+ |Vocal=804
+ |Charm=804
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=82
+ |Life=9999
+ |Soul=826
+ |Vocal=804
+ |Charm=804
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=83
+ |Life=9999
+ |Soul=826
+ |Vocal=826
+ |Charm=804
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=84
+ |Life=9999
+ |Soul=826
+ |Vocal=826
+ |Charm=826
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=85
+ |Life=9999
+ |Soul=848
+ |Vocal=826
+ |Charm=826
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=86
+ |Life=9999
+ |Soul=848
+ |Vocal=848
+ |Charm=826
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=87
+ |Life=9999
+ |Soul=848
+ |Vocal=848
+ |Charm=848
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=88
+ |Life=9999
+ |Soul=870
+ |Vocal=848
+ |Charm=848
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=89
+ |Life=9999
+ |Soul=870
+ |Vocal=870
+ |Charm=848
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=90
+ |Life=9999
+ |Soul=870
+ |Vocal=870
+ |Charm=870
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=91
+ |Life=9999
+ |Soul=892
+ |Vocal=870
+ |Charm=870
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=92
+ |Life=9999
+ |Soul=892
+ |Vocal=892
+ |Charm=870
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=93
+ |Life=9999
+ |Soul=892
+ |Vocal=892
+ |Charm=892
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=94
+ |Life=9999
+ |Soul=914
+ |Vocal=892
+ |Charm=892
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=95
+ |Life=9999
+ |Soul=914
+ |Vocal=914
+ |Charm=892
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=96
+ |Life=9999
+ |Soul=914
+ |Vocal=914
+ |Charm=914
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=97
+ |Life=9999
+ |Soul=936
+ |Vocal=914
+ |Charm=914
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=98
+ |Life=9999
+ |Soul=936
+ |Vocal=936
+ |Charm=914
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=99
+ |Life=9999
+ |Soul=936
+ |Vocal=936
+ |Charm=936
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}
+{{DivaStat
+ |Level=100
+ |Life=9999
+ |Soul=958
+ |Vocal=936
+ |Charm=936
+ |Fold=55
+ |Support=55
+ | ParentPage=Database/Diva/Diva_002
+}}

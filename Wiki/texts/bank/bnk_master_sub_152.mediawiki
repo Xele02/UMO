@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2430
+ | Value=不意にランカと密着する状況になってしまい、思わず顔を赤らめるアルト。<br/>しかも誤解されそうなこの状況を、あろうことかオズマに見つかってしまうのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2431
+ | Value=他の女性に声をかけてばかりのミシェルに対し、口をへの字に曲げて抗議するクラン。<br/>不満げな表情ではあるのだが、どこか愛嬌たっぷりでかわいらしく見えてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2432
+ | Value=慰安旅行に来たマヤン島の砂浜で、ビーチバレーに興じるS.M.Sのクルーたち。<br/>ペア対決にギャラリーは賑わいをみせるも、試合展開は力の差が歴然のようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2433
+ | Value=マヤン島での慰安旅行中も、いつもと同じ調子で女性に声をかけるミシェル。<br/>お相手は年上の美人のようだが、どことなく知り合いの面影がある…かも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2434
+ | Value=バジュラの大群に対し、先制攻撃として放たれる反応弾。<br/>アーマードパック装備のVF-25Sからは4発の反応弾が放たれた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2435
+ | Value=ランカの隣で砂浜に穴を掘って埋まるあい君。<br/>その行動や仕草はまさに小動物のそれである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2436
+ | Value=マヤン島周辺の海底を鮮やかに彩るサンゴ礁。<br/>再現された環境ながら、ここには確かな自然のサイクルが存在している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2437
+ | Value=真夏の陽射しが降り注ぐ中で、艶やかなシルエットをはっきりと映し出すシェリル。<br/>纏った水着は黒を基調としつつも、まるで煌めくオーロラのように美しくビーチを彩る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2438
+ | Value=【銀河を駆け抜ける夏】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2439
+ | Value=仕事に追われるランカを心配するナナセに、今が一番楽しい時期だと語るシェリル。<br/>経験に裏打ちされた話であるのか、その表情はまさに自信満々といったところだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2440
+ | Value=均整のとれたシルエットを映し出しつつ、プールサイドに腰かけるアルトたち。<br/>S.M.S隊員が持つ引き締まった肉体は、日々の厳しい訓練の賜物でもあるのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2441
+ | Value=シェリルの水着姿を一目見ようと、フェンスに殺到する美星学園の男子生徒たち。<br/>一方シェリルは我関せずといった様子で、堂々とその見事なスタイルを披露していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2442
+ | Value=暇なのかというアルトに対して、経験則を理由にムキになって反論するシェリル。<br/>決して仕事が少なくなったわけじゃないというシェリルだが、果たして…？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2443
+ | Value=アルトの誕生日が近いにもかかわらず、ランカからの連絡がないことを不安がるナナセ。<br/>ルカのフォローやシェリルの助言を聞くも、いまいち不安は晴れなかったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2444
+ | Value=強がるアルトに対し、いたずらっぽく笑みを浮かべてからかうシェリル。<br/>アルトのキスシーンについては、シェリル自身も興味津々のようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2445
+ | Value=リゾート地に合わせた涼しげな装いで何者かのコンタクトを待つレオン。<br/>爽やかな風景とは裏腹に、取引の内容については不穏な空気が漂う。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2446
+ | Value=マヤン島での映画撮影用にカラーリングが変更されたVF-25F。<br/>VF-0のカラーリングに似せるため、ラインのカラーが黒に変更されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2447
+ | Value=ゼントラーディモール内にあると思われるマイクローン向けのカフェラウンジ。<br/>ガラス張りの外周からはマヤン島が一望できる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2448
+ | Value=美星学園の敷地内に設置されたプール。<br/>水泳の授業以外にも、部活動で利用されたりするのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2449
+ | Value=夏にときめく心と陽射しで火照った肌に、ひんやり冷た～いドリンクのサプライズ。<br/>冷たい刺激とミンメイの爽やかな水着姿が、この夏を素敵な思い出にしてくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2450
+ | Value=【思い出に変わる夏】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2451
+ | Value=ミス・マクロスコンテストでの懐かしい水着姿をふたたび披露してくれたミンメイ。<br/>当時と変わらない魅力を放っているが、本人はちょっと恥ずかしかったりするのかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2452
+ | Value=宇宙空間に漂う巨大マグロを目にし、しばし呆気にとられる輝とミンメイであったが…？<br/>「…マグロ！おさしみ！！」─輝&ミンメイ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2453
+ | Value=【思い出に変わる夏】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2454
+ | Value=【思い出に変わる夏】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2455
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2456
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2457
+ | Value=【思い出に変わる夏】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2458
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2459
+ | Value=【思い出に変わる夏】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2460
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2461
+ | Value=レトロ・ポップなスタイルで思い出の名曲を元気いっぱいに歌いあげるフレイア。<br/>幼い頃に触れた歌との思い出は、今もフレイアの心の中でキラキラと光を放っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2462
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2463
+ | Value=使い古された音楽プレーヤーを手に、地球の軍人たちとの思い出にふけるフレイア。<br/>フレイアにとって地球の歌と出会うきっかけとなった、大切な思い出なのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2464
+ | Value=ボイスレコーダーから父親の本当の姿と優しさを知ることができたハヤテ。<br/>父親からの贈り物を眺める表情は、穏やかな気持ちで満ちていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2465
+ | Value=地球の軍人から貰った音楽プレーヤーに記録されていた「星間飛行」を歌うフレイア。<br/>幼い頃に感じた歌への感動と憧れが、歌手を目指すきっかけになったのかもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2466
+ | Value=ハヤテの父親からの贈り物にあった1枚の葉っぱを手に取って眺めるフレイア。<br/>鮮やかに色づいた樹木の葉が、その星の風景を見る者に感じさせるようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2467
+ | Value=ハヤテの母親から送られた小包には、父親からの手紙も一緒に収められていた。<br/>どこか詩的な印象を抱かせる内容に、ハヤテの父親の人となりが表れているかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2468
+ | Value=ハヤテのインメルマンという姓を聞き、ルンをどす黒い赤へと変色させるボーグ。<br/>かつて家族と多くの同胞の命を奪った男の姓こそインメルマンなのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2469
+ | Value=クラゲ祭りの屋台でクラゲ饅頭のおいしさをアピールするエリザベス。<br/>その口ぶりは『銀河の妖精』や『超時空シンデレラ』を意識したもののようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2470
+ | Value=ベルガーの手引きによってアラドたちに奪取され、再び空を舞うVF-22。<br/>四肢は取り外されており、そのスペースはワルキューレを匿うのに利用された。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2471
+ | Value=フレイアが幼少の頃、遊び場の近くに駐留していた地球の軍人たち。<br/>戦争が始まる前はフレイアもよくここまで遊びに来ていたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2472
+ | Value=母親から送られた、これまでの父親からの手紙と贈り物がまとめられた小包。<br/>ハヤテが父親と同じパイロットになったことに、何か思うところがあったのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2473
+ | Value=レトロ・ポップなスタイルでキラキラと輝く星のようにステージで歌うランカ。<br/>大都市を熱狂させたキャッチーなメロディは、今でも時空を超えて愛され続けている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2474
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2475
+ | Value=バルキリーの奪還に成功し、上空から即席ステージ上のランカを見つめるアルト。<br/>危険を顧みることなく歌い続けたランカの姿に、アルトは心打たれるものを感じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2476
+ | Value=レオンを相手に1人で立ち回り続けていたルカを気遣って声をかけるミシェル。<br/>ミシェルらしい気楽な口調で語りかけながらも、その言葉は仲間への信頼に満ちていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2477
+ | Value=ランカ・アタックによってバジュラを制することに成功し人類の希望となったランカ。<br/>ファーストライブのリベンジも成功し、まさにひとつの時代が生まれようとしていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2478
+ | Value=マイクを手に決意の表情を浮かべ、バルキリーの後部座席で立ち上がるランカ。<br/>強風が吹き荒れる上空で息を整え、1日早いファーストライブの幕が上がった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2479
+ | Value=ミシェルが連れてきたランカの姿を見て呆然とするアルト。<br/>なぜここにランカがいるのかまったく理解できていないといった様子である。
+ | ParentPage=Texts/Bank/master
+}}
+                    

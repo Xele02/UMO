@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=shop_no_product_desc
+ | Value=交換できるアイテムがありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_deco_all_remove_title
+ | Value=収納確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_deco_all_remove_desc
+ | Value=デコルーム上のアイテムとキャラクターを<br/>すべて収納しますか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_storage_unused_storage_name
+ | Value=未使用
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_deco_storage_write_comp_desc
+ | Value={0}<br/>に現在のデコルームを保存しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lobby_viewing_system_text
+ | Value=別部隊からロビーを観覧中です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_profile_visit_title
+ | Value=訪問確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_profile_visit_msg
+ | Value={0}さんの<br/>デコルームへ移動します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_profile_lobby_title
+ | Value=閲覧確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_profile_lobby_msg
+ | Value={0}さんの<br/>マクロスロビーへ移動します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_visit_gift
+ | Value=贈り物可能数
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_visit_no_friend
+ | Value=フレンドがいません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_visit_no_fun
+ | Value=まだファン登録を行っていません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=chat_post_conf_popup_text
+ | Value=バトルログの情報をチャットへ手動投稿します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=chat_post_conf_popup_title
+ | Value=チャット投稿確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=raid_event_end_text
+ | Value=イベント集計中です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lobby_raid_befor_text
+ | Value=開催まで{0}日
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lobby_raid_befor_today_text
+ | Value=本日開催！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_compatible_music_title
+ | Value=ライブスキル発動対象の楽曲
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_compatible_music_desc
+ | Value=以下の楽曲をプレイする時のみライブスキルが発動します。<br/><br/><br/>{0}<br/><br/>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_compatible_series_title
+ | Value=センタースキル発動対象のシリーズ
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_compatible_series_desc
+ | Value=以下のシリーズ楽曲をプレイする時のみ<br/>センタースキルが発動します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_block_ask_title
+ | Value=ブロック確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_block_ask_desc
+ | Value={0}さんをブロックしますか？<br/>ブロックされた相手には以下の制限がかかります。<br/><br/>・ロビー、チャットでの発言が非表示になります。<br/>・あなたのデコルームで発言できなくなります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_block_done_title
+ | Value=ブロック完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_block_done_desc
+ | Value={0}さんをブロックしました。<br/><br/>ブロックリストの管理は<br/>メニューのブロックリストから行えます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_block_limit_title
+ | Value=ブロック上限
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_block_limit_desc
+ | Value=ブロックできる人数が<br/>上限({0}人)に達しています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_block_remove_ask_title
+ | Value=ブロック解除確認
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_block_remove_ask_text
+ | Value={0}さんの<br/>ブロックを解除します。<br/><br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_block_remove_done_title
+ | Value=ブロック解除完了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_block_remove_deon_text
+ | Value={0}さんの<br/>ブロックを解除しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_blocked_title
+ | Value=ブロック
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_blocked_text
+ | Value=ブロックされているので<br/>この行動はできません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_not_belong_lobby_transition_title
+ | Value=部隊所属
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_not_belong_lobby_transition_desc
+ | Value=超銀河総力LIVEに参加するには<br/>部隊に所属する必要があります。<br/><color=#C8087E>※開催期間が終了すると部隊は解散します。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_chat_footer_attention_text
+ | Value=スタンプやコメントのつかない<br/>状態で60日間経過すると<br/>履歴が自動的に削除されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=blocklist_title
+ | Value=ブロックしたユーザーの一覧です
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=blocklist_empty_text
+ | Value=ブロックしているユーザーはいません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=header_desc_deco000
+ | Value=
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_set_buy_warn_text
+ | Value=<color=#C8087E>このアイテムを含む商品がデコセットにもあります。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=lobby_raidboss_enable_count
+ | Value={0}体出現中！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_raid_attack_network_error
+ | Value=通信エラーが発生しました。<br/><br/>インターネットへの接続や電波の状況を<br/>確認して、もう一度お試しください。<br/><color=#C8087E>※キャンセルした場合、<br/>データを保存せずタイトルに戻ります。</color>
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_exchange_need_item
+ | Value={0}で交換します。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_deco_all_back_title
+ | Value=編集の終了
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_deco_all_back_desc
+ | Value=編集内容を保存しないで<br/>マイデコルームのトップ画面へ戻ります。<br/>よろしいですか？
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_in_my_blocklist_text
+ | Value=ブロック中のプレイヤーのため、<br/>この行動はできません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=shop_product_deco_set_contain_text
+ | Value=セット販売あり
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_deco_set_item_detaile_title
+ | Value=アイテムセット
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=deco_set_item_list_text
+ | Value={0}×{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    

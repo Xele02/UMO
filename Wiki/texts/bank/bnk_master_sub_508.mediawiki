@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0012
+ | Value=ピザ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0013
+ | Value=激辛カレー
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0014
+ | Value=娘々ラーメン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0015
+ | Value=アイデアノート
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0016
+ | Value=激レア音源
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0017
+ | Value=バルキリーのフィギュア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0018
+ | Value=キモカワグッズ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0019
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0020
+ | Value=バレンタインギフト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0021
+ | Value=ホワイトデーギフト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_nm_0022
+ | Value=プレミアムギフト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0001
+ | Value=無難な感じの置き物。<br/>どんな場所でもそれなりに馴染む。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0002
+ | Value=おしゃれな雰囲気の置き物。<br/>特に用途があるわけではないがおしゃれ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0003
+ | Value=最新式のアロマディフューザー。<br/>火を使わない安心設計で女神様も安心。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0004
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0005
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0006
+ | Value=一口サイズのお菓子。<br/>小腹がすいたときに最適な量。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0007
+ | Value=大きなサイズのお菓子。<br/>友達と食べるのに最適な量。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0008
+ | Value=ウィンダミア特産のおいしいリンゴ。<br/>粗末に扱うとフレイアに叱られるので注意。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0009
+ | Value=めったに手に入らない極上のおつまみ。<br/>お酒を楽しめる大人の女性に大人気。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0010
+ | Value=ラグナの海でとれた新鮮なクラゲ。<br/>スベスベでモチモチでプルップルな食感がたまらない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0011
+ | Value=路上の売店で売っているホットドッグ。<br/>誰かと一緒に食べればもっとおいしくなる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0012
+ | Value=端っこまでおいしいピザ。<br/>お子様な味付けと言われても食べたくなるもの。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0013
+ | Value=驚くほど辛い真っ赤なカレー。<br/>知らずに食べると火を吹いてしまうかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0014
+ | Value=中華料理店「娘々」の定番メニュー。<br/>癖になる味わいで女性からの人気も高い。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0015
+ | Value=たくさんのアイデアが記されたノート。<br/>行き詰ってしまったときに見てみよう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0016
+ | Value=偉大なアーティストの楽曲が記録されている。<br/>聴けばインスピレーションを得られること間違いなし！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0017
+ | Value=バルキリーの精巧なフィギュア。<br/>メカニックも満足の完全変形モデル。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0018
+ | Value=絶妙にキモくてかわいいグッズ。<br/>よく見るとあの子の携帯電話にそっくり！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0019
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0020
+ | Value=丁寧にラッピングされたチョコレート。<br/>心のこもった甘いひとときを召し上がれ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0021
+ | Value=丁寧にラッピングされたお菓子。<br/>不器用な男心が詰まっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc_0022
+ | Value=誰が手にしても嬉しい特別な贈り物。<br/>しかし、中身は謎に包まれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0001
+ | Value=無難な感じの置き物。<br/>どんな場所でもそれなりに<br/>馴染む。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0002
+ | Value=おしゃれな雰囲気の置き物。<br/>特に用途があるわけでは<br/>ないがおしゃれ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0003
+ | Value=最新式のアロマディフューザー。<br/>火を使わない安心設計で<br/>女神様も安心。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0004
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0005
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0006
+ | Value=一口サイズのお菓子。<br/>小腹がすいたときに<br/>最適な量。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0007
+ | Value=大きなサイズのお菓子。<br/>友達と食べるのに<br/>最適な量。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0008
+ | Value=ウィンダミア特産のおいしいリンゴ。<br/>粗末に扱うとフレイアに<br/>叱られるので注意。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0009
+ | Value=めったに手に入らない極上のおつまみ。<br/>お酒を楽しめる大人の女性に大人気。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0010
+ | Value=ラグナの海でとれた新鮮なクラゲ。<br/>スベスベでモチモチで<br/>プルップルな食感がたまらない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0011
+ | Value=路上の売店で売っているホットドッグ。<br/>誰かと一緒に食べれば<br/>もっとおいしくなる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0012
+ | Value=端っこまでおいしいピザ。<br/>お子様な味付けと言われても<br/>食べたくなるもの。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0013
+ | Value=驚くほど辛い真っ赤なカレー。<br/>知らずに食べると<br/>火を吹いてしまうかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0014
+ | Value=中華料理店「娘々」の定番メニュー。<br/>癖になる味わいで<br/>女性からの人気も高い。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0015
+ | Value=たくさんのアイデアが記されたノート。<br/>行き詰ってしまったときに見てみよう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0016
+ | Value=偉大なアーティストの楽曲が記録されて<br/>いる。聴けばインスピレーションを<br/>得られること間違いなし！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=itp_dsc2_0017
+ | Value=バルキリーの精巧なフィギュア。<br/>メカニックも満足の<br/>完全変形モデル。
+ | ParentPage=Texts/Bank/master
+}}
+                    

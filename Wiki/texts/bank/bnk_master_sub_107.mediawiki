@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0180
+ | Value=フロンティア船団を襲撃した敵の名は「バジュラ」。<br/>その姿は明らかに生物であり、これまでのどの軍事兵器とも異なるものであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0181
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0182
+ | Value=S.M.Sに所属するパイロット。アルトとは同級生でライバル。<br/>長距離狙撃に特化したVF-25Gに搭乗し、数々の戦績をあげてきたスナイパーだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0183
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0184
+ | Value=幼い頃からともに過ごしてきたミシェルとクランの2人。<br/>お互いに憎まれ口を叩くことも少なくないが、その心は確かな信頼で繋がっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0185
+ | Value=シェリルのライブ当日、満員の電車に乗って会場へと向かうランカ。<br/>最新技術の塊である宇宙移民船だが、電車の混雑は解決できていないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0186
+ | Value=バジュラの襲撃からランカを守るアルトの前に、ランカの兄オズマが現れる。<br/>その厳しい物言いには、見知らぬ男に妹を託すことへの不安が混じっているようだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0187
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0188
+ | Value=自分をバジュラから守ってくれた青年のことが気になるランカ。<br/>そこで、民間軍事プロバイダーに勤務する兄の情報網を頼ることを思いついた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0189
+ | Value=アーマードパックに搭載されたミサイルの一斉発射。<br/>いかに頑強なバジュラといえど、これをまともにくらってはひとたまりもない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0190
+ | Value=フロンティア船団内部へ侵入される前にバジュラを撃破すること。<br/>VF-25Fのパイロット、ギリアムは強い意気込みとともに機体を加速させた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0191
+ | Value=生物的な外見を持つ、ランカの携帯電話。<br/>手足を伸ばしてヘッドホンにしたり、音楽再生機器として使用することもできる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0192
+ | Value=中華料理店の「娘々」は、銀河を超えて展開するチェーン店である。<br/>その味は絶品。つくりたてホヤホヤ、熱いうちに食すのがオススメだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0193
+ | Value=デビューライブ当日、会場に集まった大勢のファンを前にして緊張するフレイア。<br/>しかしひとたび曲が始まれば、見事な歌とダンスでレッスンの成果を披露した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0194
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0195
+ | Value=次のワクチンライブの開催が決まり、それがハヤテの初出撃の場となった。<br/>ミラージュは、また謎の敵部隊の襲撃を受ける可能性があることを気にかけていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0196
+ | Value=古来からウィンダミアに存在する「風の歌い手」。<br/>その歌声には特殊な力があるといわれているが…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0197
+ | Value=自分の歓迎会で、ついつい感極まってしまった様子のフレイア。<br/>「相変わらず大げさ…」―ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0198
+ | Value=飲みの席で思いを寄せるメッサーに話しかけるマリアンヌ。<br/>しかし、弟のザックに割り込まれて2人きりでの会話とはいかなかったようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0199
+ | Value=空中騎士団のキースを兄に持つ、ウィンダミアの王子ハインツ。<br/>あくまで臣下としてのふるまいを崩さない兄に対して、どこか複雑な思いを抱いていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0200
+ | Value=かつて空中騎士団の訓練教官であったヘルマン。<br/>ウィンダミア人としては長く生き、そのぶん豊富な経験を持つ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0201
+ | Value=ライブ開始前、全員で円陣を組んでいるワルキューレ。<br/>新たなメンバーフレイアも加わって、いつも以上に気合が入っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0202
+ | Value=ウィンダミア人は、よく「風」という言葉を使って感覚を表現する。<br/>それは、彼らが持つ特殊な器官「ルン」と関係があるようだが…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0203
+ | Value=ワルキューレの新メンバー、フレイアの歓迎会。<br/>ケイオス・ラグナ支部のメンバーが集まって盛大に催されるようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0204
+ | Value=地球からはるか遠く、惑星ウィンダミアⅣに存在する王制国家。<br/>常に雪に覆われており、地球人によく似たウィンダミア人が暮らしている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0205
+ | Value=ワルキューレのリーダーであるカナメと、デルタ小隊のエースであるメッサー。<br/>お互いの信頼は厚く、戦場においてもその連携が狂うことはない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0206
+ | Value=ワルキューレのメンバー、カナメ・バッカニアのキメ台詞。<br/>自ら歌うだけでなく、リーダーとしてスケジュールの管理なども行っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0207
+ | Value=「今夜はみんな、勝負パンツ」<br/>「レイレイ、女の子がそんなこと言っちゃいけません！」―レイナ、マキナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0208
+ | Value=夜、自室で静かに外を眺めながら、ワルキューレの未来について考えるカナメ。<br/>「フレイアの歌を安定させることができれば、美雲の歌の力も…」―カナメ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0209
+ | Value=裸喰娘娘の夜店の前で客引きの歌を披露するフレイア。<br/>キュートなフレイアの歌声に、周囲の人々は笑顔に包まれるのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0210
+ | Value=お祭りの夜ともなれば、あたりはカップルが多くなるもの。<br/>関心なさげなハヤテと赤面するミラージュ、2人の反応はまさに対照的である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0211
+ | Value=デルタ小隊からの転属が決まり、荷物の整理を行っていたメッサー。<br/>「明日はみんなでお見送りに行くからね」―カナメ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0212
+ | Value=ワルキューレのファンから声援を送られるフレイア。<br/>その様子を見て、先輩であるマキナとレイナも安心しているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0213
+ | Value=ウィンダミアを陰で支援する武器商人らしき男。可変戦闘機すら<br/>手配できる財力を有していること以外、そのほとんどが謎に包まれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0214
+ | Value=どこからともなく聴こえる、ヴァールを活性化させる「風の歌」。<br/>まるでその歌に呼応するかのように、古代の遺跡が次々に反応し始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0215
+ | Value=惑星ラグナには、クラゲをモチーフにした名産物が数多く存在する。<br/>クラゲ饅頭もその内のひとつで、クラゲ祭りの夜店でも振る舞われていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0216
+ | Value=マクロス・エリシオンの艦上で、静かに酒を飲み交わすアラドとアーネスト。<br/>「ウィンダミアには縁があるようだ、ハヤテ・インメルマンは」―アラド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0217
+ | Value=死神メッサーと白騎士キース。運命に導かれた2人のエースがここに邂逅する。<br/>「死神…」―キース
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0218
+ | Value=デルタ小隊のエースパイロット。隊長のアラドをも凌ぐ操縦技術を持つ。<br/>ハヤテらの教官役も務めており、あえて辛辣な態度をとって彼らを鍛えている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0219
+ | Value=最新技術を惜しみなく使用した、ワルキューレの迫力あるライブ。<br/>美雲の振付に合わせて『S』『O』『S』の文字が浮かび上がる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0220
+ | Value=暴れ狂うヴァール化した兵士。街は破壊と混乱の渦に飲み込まれていく。<br/>だがヴァールによる悲劇があるとき、そこには必ずワルキューレが現れるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0221
+ | Value=密航に成功したかに思えたフレイアだが、偶然にもハヤテに発見されてしまう。<br/>「行きなよ」「どうせワケありなんだろ？」―ハヤテ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0222
+ | Value=路地裏でフレイアと話していたハヤテは、突然現れた女性に組み伏せられてしまう。<br/>ハヤテを密航犯と勘違いしたミラージュと名乗る女性は、あのデルタ小隊の隊員だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0223
+ | Value=フレイアの歌声に宿る力を、ワルキューレのメンバーは確かに感じ取っていた。<br/>「この声！」「胸がチクチクって」―マキナ、レイナ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0224
+ | Value=背後から迫りくるミサイルに、ハヤテは咄嗟の反応で操縦桿を倒した。<br/>叫ぶハヤテに応えるかのように、バルキリーは空高く飛翔する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0225
+ | Value=ヴァール化した兵士が操縦するリガードが、無抵抗な市民に襲い掛かる。<br/>その一撃をまともに受けてしまえば、ひとたまりもないだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0226
+ | Value=謎のバルキリー部隊を指揮する男は、眼鏡をかけると戦闘開始の号令を発した。<br/>「いざ風に舞え、天空の騎士たちよ！」―ロイド
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0227
+ | Value=ライブの開始とともに、敵の位置など必要な情報を集めるワルキューレとデルタ小隊。<br/>数々の最新技術によって成り立っている彼女たちのライブは戦いでもある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0228
+ | Value=ヴァールの発生が確認されたとき、ワルキューレは戦地でライブを開始する。<br/>恐怖におびえている人々に希望を見せるその姿は、まさに戦場の女神だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0229
+ | Value=ジリジリと輝く太陽の下、熱い浜辺に女神が舞い降りた。<br/>弾ける笑顔に溢れる美貌。彼女の無限の魅力に、惹きつけられない者はいない。
+ | ParentPage=Texts/Bank/master
+}}
+                    

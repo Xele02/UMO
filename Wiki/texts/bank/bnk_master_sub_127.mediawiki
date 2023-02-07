@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1180
+ | Value=輝く汗は努力の証、一歩ずつスターへの道を歩んでいくランカ。<br/>同じ事務所に所属する先輩、徳川喜一郎の拳にも力が入る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1181
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1182
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1183
+ | Value=紙飛行機が飛び立つのを見届け、アルトはすかさず風を読む。<br/>「…北北西の風、秒速4メートル…」─アルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1184
+ | Value=アルトとミシェル、相も変わらず些細なことで言い争いを始める2人だった。<br/>「成長しないガキ共め」─クラン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1185
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1186
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1187
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1188
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1189
+ | Value=蝶のごとく妖艶な舞と星屑を羽に纏ったかのような輝きで、彼女は世界を魅了する。<br/>この世の輝くものすべて、果ては星々でさえもが彼女の虜であるかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1190
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1191
+ | Value=彼女が何気なく振り向いた際に見えた唇に、多くの聴衆は息をのむ。<br/>妖艶さを纏う小悪魔的な仕草に見とれてしまえば、もはや彼女の虜だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1192
+ | Value=青い空の下、降り注ぐ陽射しの中でこちらを見つめる彼女の瞳は、<br/>太陽よりもまばゆく煌めく。その煌めきの前では、誰であろうと目を眩ませるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1193
+ | Value=たとえ、すべてを捧げたとしても、彼女を満たすことはできないだろう。<br/>繰り返される彼女の欲求に応え続けることができる者は果たして存在するのだろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1194
+ | Value=誘惑する彼女の指先に誘われるがままに彼女を求めてしまえば、彼女からは<br/>それ以上のものを求められる。そしてそれは、どんどんエスカレートしていくのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1195
+ | Value=ライブ中に一瞬だけ映し出されたシェリルの映像。一瞬ではあったものの、<br/>香り立つような美しさと輝きが、観客へと強く彼女のイメージを植えつけている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1196
+ | Value=シェリルのイヤリングに触れた瞬間、彼女の心を垣間見たアルト。<br/>自身の過ちに気付いたアルトは、その思いを伝えるべく再びシェリルの前に現れた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1197
+ | Value=歌うために生きているというシェリルは、自身を舞台という魔物に囚われた虜と語る。<br/>熱狂する観客とその奔流に酔いしれることで、彼女の精神は銀河の彼方へ飛翔するのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1198
+ | Value=シェリルが宿泊するホテルのバスルーム。<br/>広々とした室内には観葉植物も置かれており、豪華な内装の一部が垣間見えている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1199
+ | Value=シェリルのライブが盛り上がるにつれ、刻々と変化していくステージ。<br/>無数の歯車で構成されたそれは、さながら小さな宇宙のようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1200
+ | Value=夕暮れに映し出されるシェリルのプロモーション映像。<br/>儚く、悲しげなピアノの旋律の裏で、物語は大きく動き出す。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1201
+ | Value=暗い紫紺の衣装に身を包んだマキナ。いつもの明るく柔和な印象は一転、<br/>見るものすべてを誘惑するその仕草は、月夜に舞う妖艶な蝶そのものである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1202
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1203
+ | Value=噂にたがわぬ美貌を持つ彼女を見ることができるならば値千金。<br/>一夜をともに明かすことができるのであれば、これ以上の価値はない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1204
+ | Value=自身の美を見せつけるかのように宮殿を闊歩する彼女。その煌びやかな歩みは<br/>見るものすべてを魅了するが、同時に決して手に入らぬものであることを認識させる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1205
+ | Value=美しすぎる彼女の仕草は、ときには威圧的ですらある。<br/>一度主導権を握られてしまえば、誰にも彼女の欲求を阻むことはできない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1206
+ | Value=彼女を求めて富や権力をあてがうほど、彼女自身の欲求も果てしなくなっていく。<br/>数多の愛執をその身に受けた彼女の美貌は、まさに蠱惑的といっていいだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1207
+ | Value=潜入調査中、シャハルシティのオープンカフェで1人涼むマキナ。<br/>一見、呑気にも見えるが、シティ周辺の監視は怠っていないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1208
+ | Value=銀河中に配信されたライブの中で、メインで1曲を歌い上げたマキナ。<br/>その甘くかわいらしい歌声は、男女を問わず魅了していく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1209
+ | Value=ランカ・リーにシェリル・ノーム、ふたつの巨星と同じときに生きた数多の星々。<br/>ミランダ・メリンもまた、その星のひとつだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1210
+ | Value=シャハルシティにて潜入調査を行うワルキューレたち。<br/>美雲はミラージュからわざと離れると、単独で潜入調査を開始した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1211
+ | Value=S.M.Sのオーナーであるリチャード・ビルラーが構えた宮殿。<br/>彼は昇進したアルトをここへ招くと、彼に自らの夢について語るのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1212
+ | Value=惑星アル・シャハルの港に設置された大型モニター。<br/>アル・シャハルを訪れる人々に、さまざまな言語で歓迎の言葉を伝えている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1213
+ | Value=ふわふわ衣装に身を包み、あい君と一緒にお休みタイム。<br/>流れ星に願うのは、ふんわり溶けていくマシュマロのように甘い夢か。それとも…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1214
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1215
+ | Value=桟橋の上、急な風に飛ばされたランカの帽子。それを掴もうとアルトが手を伸ばすと、<br/>思わずランカに抱きつく形になってしまった。突然の急接近にお互いドキドキだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1216
+ | Value=歌でバジュラを抑え込む実験に不安を抱いていたランカ。そんな彼女に対し、<br/>アルトは紙飛行機を折りながら、彼なりの言葉で彼女を励ますのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1217
+ | Value=キュートでちょっぴりセクシーな衣装で写真撮影に挑むランカ。<br/>普段とはまるで違うその表情に、見ている者は思わずドキッとしてしまうだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1218
+ | Value=仕事が軌道にのり、忙しい日々を送るランカ。それでも移動中のわずかな時間を<br/>見つけては、アルトや学校の仲間たちとメールのやり取りを欠かさない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1219
+ | Value=自分が勇気を持てるようになったのはアルトのおかげだと打ち明けるランカ。<br/>惑星ガリア4の水辺で2人きり、互いにしばし見つめ合うのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1220
+ | Value=ランカは意を決して、アルトにシェリルのことをどう思っているか問いかけた。<br/>路面電車に揺られる中、アルトは言葉を選びつつもシェリルへの思いを語り始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1221
+ | Value=アルトを残して部屋を離れる際、恥じらいながら釘を刺すランカ。<br/>信じていても、そこは年頃の女の子。やっぱり気になってしまうのだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1222
+ | Value=あい君の部屋を不用意に覗き込んだ結果、返り討ちにあうアルト。<br/>アルトがひっくり返ったときの衝撃は、ランカのいる台所にまで響いていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1223
+ | Value=ピンクに金色の縁取りがかわいらしいカップとお茶菓子。<br/>カップにはランカのいれたコーヒーが入っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1224
+ | Value=ぬいぐるみが飾られ、綺麗に整頓されたランカの部屋。<br/>ぬいぐるみのデザインからは、持ち主特有の独特な感性がにじみ出ている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1225
+ | Value=フレイアの歌の力を信じるハヤテとミラージュ。<br/>信頼する2人の決意と想いが、恐怖に縛られていたフレイアの心を解き放つ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1226
+ | Value=【想いを繋ぐ歌声】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1227
+ | Value=他のメンバーがフレイアを慰めようとする中、美雲はフレイアの頬を叩く。<br/>決して歌うことをやめない美雲の強い想いが、フレイアの心にも伝わっていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1228
+ | Value=ライブの最中、フレイアを狙うレーザー照準に気付くマキナ。<br/>絶体絶命の中、マキナは身を挺してフレイアの元へと駆け出す。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1229
+ | Value=自身の歌がハヤテを暴走させたことから、歌うことに恐怖心を持ってしまったフレイア。<br/>必死に歌おうとするも、声が震えて生体フォールド波が安定しない。
+ | ParentPage=Texts/Bank/master
+}}
+                    

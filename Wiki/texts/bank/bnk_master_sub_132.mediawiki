@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1430
+ | Value=【新年を祝う輝き】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1431
+ | Value=地球の文化に倣って、新年の筆始めに挑戦するマキナ。<br/>見事な出来栄えは手先の器用さだけでなく、彼女のセンスもあるのかも？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1432
+ | Value=地球の文化に倣って、お正月らしくお雑煮をつつくレイナ。<br/>よく伸びるお餅だからといって遊んでいると、そのうちマキナに怒られてしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1433
+ | Value=ライブが始まり、多くの歓声が響く中で堂々とセンターに立つカナメ。<br/>実績と経験が光る歌とダンスで、先頭に立ちワルキューレを引っ張っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1434
+ | Value=淡い紫色の花の中で蝶と一緒にまどろむ美雲。<br/>美雲のミステリアスさと眩惑的な光景が混じりあい、絶妙な美しさを醸し出している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1435
+ | Value=ハートをかたどるポーズをバッチリ決めるマキナとレイナ。<br/>いくつもの苦難を乗り越え、強い絆を結んだ2人ならではのコンビネーションだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1436
+ | Value=目まぐるしく変化するステージの上を縦横無尽に飛び回るワルキューレ。<br/>まるでアトラクションのような演出とダンスに、観客たちは目を離すことができない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1437
+ | Value=ステージ上にホログラムが投影され、光に彩られるワルキューレ。<br/>躍動感溢れるその演出は、見る者たちを決して飽きさせない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1438
+ | Value=ライブの演出の中でさりげなく作られたワルキューレサイン。<br/>控えめながらも、そこには魂が込められていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1439
+ | Value=フレイアが放ったピンク色の波動が観客席を疾走する。<br/>そして、その波動は会場警護をしていたハヤテたちのバルキリーにまで届いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1440
+ | Value=突如ライブ会場上空に出現した謎の立方体。<br/>この立方体こそが今回のワルキューレのライブステージなのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1441
+ | Value=1年の吉凶を占うくじ引きで、見事大吉を引き当て大喜びのミンメイ。<br/>優美な着物を華やかに着こなし、新しい1年の始まりに胸を躍らせている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1442
+ | Value=【初春に胸躍らせて】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1443
+ | Value=初春の陽気の中、真紅の振り袖を華麗に着こなすミリア。<br/>新年を祝うという文化に見事順応しているが、着付けは一体誰に教わったのだろう？
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1444
+ | Value=天高く澄みきった晴れの日、ぼんやり眺めていた空に1羽の鷹を見つけたバサラ。<br/>初夢の続きかと思いつつも、翼を広げるその姿にバサラは確かな生命力を感じていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1445
+ | Value=ふわふわと衣装と髪を揺らし、弾むように歌い踊るマキナ。<br/>とろけるような甘い歌声と眼差しは、観客を魅了しその心を溶かしていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1446
+ | Value=色とりどりの光の尾を引いて、星の渦の中に落ちていくカナメ。<br/>落ちていくような、吸い込まれていくようなその光景は、どこか陶酔的である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1447
+ | Value=幻覚のような光景の中心で激しく揺れ踊る美雲。<br/>翻弄されそうな世界の中でも、美雲の存在感はまったく揺るがない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1448
+ | Value=新しい季節を探して地球型惑星の表面を駆けまわるフレイア。<br/>掲げられた手に元気よくハイタッチを交わせば、彼女の溢れる元気が伝わってきそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1449
+ | Value=ステージ上にピンク色の光で映し出されたホログラムのマキナ。<br/>眼前に広がるダイナミックな姿に触れようと、思わず手を伸ばしてしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1450
+ | Value=ステージ演出で流れるように表現された春夏秋冬の景色。<br/>桜や深緑の葉、紅葉、雪のエフェクトが舞い散り四季を彩っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1451
+ | Value=燃え上がるように観客席に広がっていく炎のエフェクト。<br/>観客の熱狂も相まって、その勢いは空を焦がすかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1452
+ | Value=展開したマルチドローンから投影されたホログラムによるロンド。<br/>一糸乱れぬその動きは、高度な技術と優秀なプログラミングの賜物だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1453
+ | Value=入念な下調べと予習によって、新年早々にその成果を見せつけるミラージュ。<br/>新春の光に照らされたその姿には、そこはかとない自信と矜持を感じさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1454
+ | Value=識別コードによってミラージュのパーソナルカラーである赤紫色に変化したSv-262Ba。<br/>奪取した敵機を即座に乗りこなすあたり、ミラージュの操縦技術の高さがうかがえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1455
+ | Value=デルタ小隊を束ねる存在なだけあり、和服姿でも落ちついた着こなしを見せるアラド。<br/>信頼する部下たちとともに、新しいスタートを切る準備は万端といった様子だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1456
+ | Value=中尉に昇進し、かつてメッサーが務めたデルタ2のポジションとなったミラージュ。<br/>作戦全体を見なければならないアラドに代わり、デルタ小隊を任されたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1457
+ | Value=肩を抱き身を寄せるような仕草で、うっとりと流し目を送るフレイア。<br/>溢れ出すハートのエフェクトも相まって、胸がキュッと苦しくなってしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1458
+ | Value=バラバラと崩れていくステージの上で、挑発的に指先で誘う美雲。<br/>圧倒的な自信を感じさせる態度と眼差しに、観客もステージも翻弄されるがままだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1459
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1460
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1461
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1462
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1463
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1464
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1465
+ | Value=地球の古い文献に残る芸妓の最高位、『太夫』の如き華やかさを見せるシェリル。<br/>艶やかでありつつも品格を感じさせる装いが、シェリルの美貌をより際立たせている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1466
+ | Value=同じ事務所の先輩である徳川喜一郎とともに、プロモーション活動に精を出すランカ。<br/>栄養満点なニンジンを片手に、ゼントラサイズな夢を叶えるために今日も頑張るのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1467
+ | Value=溢れる想いに身を任せ、遠く流れる銀河をバックに魂を込めて熱唱するシェリル。<br/>きかせたこぶしとビブラートは、2万光年先の銀河にまで響くかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1468
+ | Value=早乙女一門の兄弟弟子として、ともに芸を磨いてきたアルトと矢三郎。<br/>役者としての2人の才能は、稽古の風景でさえ鮮烈な舞台の一幕として見えるほどだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1469
+ | Value=嵐蔵の指示により手本を見せる矢三郎。その胸中はアルトに対する憂いに満ちていた。<br/>「人は叶わぬから夢を見るのか、叶わぬから夢なのか」─矢三郎
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1470
+ | Value=美星学園に現れた矢三郎をアルトが「兄さん」と呼んだことに驚くミシェルとルカ。<br/>アルトにとっては兄弟子にあたるのだが、そんなことは知る由もない2人であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1471
+ | Value=昼間の矢三郎との会話を思い出しつつ、お守りを眺めていたアルト。<br/>真剣に考え込んでいたためか、背中を指で突かれて思わずビックリしてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1472
+ | Value=アルトにその自信はどこから来るのかと問われて、当然のように答えるシェリル。<br/>彼女がシェリル・ノームであるがゆえの、単純明快なアイデンティティーだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1473
+ | Value=ルカのパソコンのモニターに表示された、歌舞伎役者としての矢三郎の情報。<br/>アルトが家を出てしまったためか、次代宗家の最有力候補となっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1474
+ | Value=慰問ライブを行うため、惑星ガリア4へ向かうシェリルとそれを護衛するアルト。<br/>従来のフォールド技術による航行だと、到達は7日後になる長旅だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1475
+ | Value=アイランド3のゼントラーディモール『フォルモ』の入り口付近。<br/>マイクローン用の通路も整備され、傍らには下積みの歌手の姿も見られる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1476
+ | Value=アイランド1の天蓋内面にホログラムで再現された朝日。<br/>昼夜のない宇宙空間にて、移民船の人々はこの人工の光で夜明けを迎える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1477
+ | Value=ミンメイの救出を再現したシーンの撮影に挑む2人。ミレーヌは慣れない空中での演技に<br/>慌ててしまい、うまくバサラの手を掴めずにいたが、バサラは普段と変わらないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1478
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1479
+ | Value=戦場から敵が撤退し、また歌を聞かせることができなかったと気を落とすバサラ。<br/>一方、ミレーヌは戦場で歌うことで、物語についてのひとつの答えを導き出していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    

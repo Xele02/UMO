@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0130
+ | Value=専用のバルキリーで構成されたデルタ小隊。ワルキューレとともに任務にあたる彼らは、<br/>護衛を行うだけでなく、ライブパフォーマンスなども担当している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0131
+ | Value=ヴァール化した兵士たちの手によって街は破壊され、燃え盛る火の手が市民を襲った。<br/>平和な街が一転して戦場と化す。それがヴァールの恐ろしさだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0132
+ | Value=主戦場が空であるバルキリーに対して、陸戦の主力を担うのがデストロイドである。<br/>街の破壊を止めるため、ヴァール化した兵士たちに立ち向かった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0133
+ | Value=暴動を治めるべく、バルキリーに乗ったまま歌い始めるランカ。<br/>その彼女のまっすぐな歌声が、戦う兵士たちの手を次々に止めさせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0134
+ | Value=楽しみにしていたシェリルのライブの日、会場にたどり着けずに困っていたランカ。<br/>偶然出会ったアルトに助けてもらい、また今度お礼をすると約束するのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0135
+ | Value=アルトの危機を知って、ランカは自ら助けに行くことを決意する。<br/>「私、アルト君にプレゼントも渡せてない。何も言えてないのに…」―ランカ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0136
+ | Value=最新鋭のバルキリーといえど、船団から惑星ガリア4まではあまりにも遠すぎる。<br/>だが開発中のフォールドブースターを用いたミシェルに助けられ、ランカはやって来た。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0137
+ | Value=突然、空から現れたランカの姿を見て色めき立つゼントラーディ兵士たち。<br/>それもそのはず。今まさに、幻のファーストライブが目の前で開催されているのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0138
+ | Value=「彼女こそ、代役からチャンスを掴み、スターの座を駆け上がっている<br/>超時空シンデレラ、ランカちゃんです！」―第33部隊副長
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0139
+ | Value=慰問ライブで惑星ガリア4に訪れたシェリルだが、直後に体調を崩してしまう。<br/>「いいから寝てろ！もう歌ってどうこうなる状況じゃないんだ！」―アルト
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0140
+ | Value=暴動の騒ぎも治まり、2人で空を飛ぶランカとアルト。<br/>危険を顧みず自分のもとへ来てくれたランカに、アルトは感謝の言葉を語る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0141
+ | Value=乗っていたVF-25が突然操縦不能に陥り、不時着を余儀なくされたランカとアルト。<br/>その先で発見したものは、無人のまま朽ち果てたマクロス級の艦の姿であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0142
+ | Value=シェリルの慰問ライブの日、一部の兵士たちによる暴動が発生する。<br/>彼らはクァドランも使用して、邪魔者たちを排除しようと動き始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0143
+ | Value=久しぶりの休日ということで、美星学園へ登校するランカ。<br/>皆との再会を喜んでいると、服の中に隠していた友達がひょっこりと顔を覗かせた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0144
+ | Value=シェリルの乗ったシャトルに向かって敬礼する兵士たち。<br/>慰問ライブを前にしても、彼らの統率のとれた動きは一瞬の乱れも生じていない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0145
+ | Value=マクロス7船団で活動する4人組のロックバンド。<br/>熱気バサラとミレーヌ・ジーナスのツインボーカルで人気を博している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0146
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0147
+ | Value=専用機「ファイヤーバルキリー」に乗ってバサラは戦場へと飛び出した。<br/>その操縦桿はギターの形をしており、まさにバサラのために改造された機体である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0148
+ | Value=戦闘が始まるや否や、どこかの廃墟の奥へと向かったバサラ。<br/>そこには全身が真っ赤な可変戦闘機が隠されていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0149
+ | Value=Fire Bomberのドラムを担当する女性ゼントラーディ。<br/>ほとんど話さないが、その代わりにドラムスティックで会話ができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0150
+ | Value=Fire Bomberのギターとボーカルを担当する。<br/>音楽に対して凄まじい情熱を持っているが、その自由さで他人を振り回すことも多い。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0151
+ | Value=Fire Bomberのベースとボーカルを担当する。<br/>演奏も歌も大人顔負けの実力を持つが、年相応に子供らしい一面も見せることも。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0152
+ | Value=Fire Bomberのリーダーで、キーボードを担当する。<br/>常に落ち着いた雰囲気を纏い、年下のバサラやミレーヌを諭すこともしばしば。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0153
+ | Value=バロータ軍が運用する可変戦闘機。<br/>頭部から照射されるビームを人間が浴びると、生命エネルギーを吸収されてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0154
+ | Value=エリートパイロット用の高性能機として設計された可変戦闘機。<br/>優れた機動性と火力を有し、特殊作戦に対応するためのステルス性も重視されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0155
+ | Value=マクロス7船団護衛部隊の旗艦。作戦時の総司令部。<br/>緊急時には、空母形態から人型ロボット形態へ変形することができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0156
+ | Value=マクロス7船団の中核となる超大型の居住艦。<br/>艦内に街や自然が存在し、多くの人間がここで生活している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0157
+ | Value=バロータ軍との戦闘が始まったと知って、勢いよくどこかへ飛び出していったバサラ。<br/>人の話を聞かないバサラに呆れながらも、ミレーヌは演奏を続けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0158
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0159
+ | Value=娘のミレーヌが演奏する姿を見て、マックスは思わず本音を漏らす。<br/>「こんなことをさせるためにピアノを習わせたわけではないんだが」―マックス
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0160
+ | Value=突如勃発した戦闘により、凄まじい衝撃と強風がライブ会場を襲う。バサラに<br/>かばってもらうも、体格の差でミレーヌは彼の腕の中にすっぽりと収まってしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0161
+ | Value=Fire Bomberのライブに必ず訪れる少女。<br/>バサラのファンのようだが、いつもその花束を手渡すことができずにいる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0162
+ | Value=ライブが始まっているというのに、バサラは一向に会場に姿を見せない。<br/>どこにいるのかと思えば、なんと艦の天井にぶら下がって何かを待っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0163
+ | Value=赤いバルキリーに乗って戦場に飛び出し、自分の歌を歌い始めたバサラ。<br/>「俺は、このときを待っていたんだ！」―バサラ
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0164
+ | Value=激しい戦闘が繰り広げられる宙域に突然割り込んできたバサラ。<br/>統合軍パイロットのガムリン・木崎は、そのことに怒りを隠しきれない様子だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0165
+ | Value=空母バトル7のブリッジに座る2人。<br/>地球人である艦長のマックスに、ゼントラーディである参謀のエキセドルだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0166
+ | Value=なかなかライブ会場に現れないバサラ。<br/>まるで持ち主を待っているかのように、ギターだけがぽつんと置かれていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0167
+ | Value=Fire Bomberのライブに熱くなっていたファンたち。<br/>今度はバサラが戦場で歌う様子を見て歓声を上げ始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0168
+ | Value=都市船シティ7の片隅に存在する小さな広場。<br/>この日はFire Bomberのライブ会場として使用されていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0169
+ | Value=絶大な人気を誇るトップシンガー、シェリル・ノーム。<br/>最新ホログラム技術で彩られたど派手なライブ演出の才能も、彼女の魅力である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0170
+ | Value=【妖精の来訪】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0171
+ | Value=シェリルのライブ会場へ向かう途中、道に迷ってしまったランカ。<br/>そこで偶然にもアルトと遭遇し、青年とは思えない美しさに思わず見とれてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0172
+ | Value=ライブ開催のため、宇宙船に乗ってフロンティア船団を訪れたシェリル。<br/>つかの間、歌姫である自分を忘れ、眼下に広がる人工の海に感嘆の声を漏らした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0173
+ | Value=バジュラの襲撃をうけ、ライブ会場の裏口から避難するシェリル。<br/>時折、冷徹なようにも見える彼女だが、それはプロとしての自覚の裏返しでもある。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0174
+ | Value=フロンティア船団へ入る直前にシェリルは、ふとその表情を変える。<br/>その瞬間、彼女は「銀河の妖精シェリル・ノーム」に変わった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0175
+ | Value=シェリルのライブの余興でパフォーマンスを行うことに不満げなアルト。<br/>仲間のミシェルに冷やかされて思わず声を荒らげてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0176
+ | Value=むくれているアルトに対して、これはリーダーである自分の決定だと諭すミシェル。<br/>「文句があるなら、次はトップをとれよ」―ミシェル
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0177
+ | Value=フロンティア船団に配備されているVF-25。<br/>特徴のひとつとして、アーマードパック装着状態でのバトロイドへの変形が可能である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0178
+ | Value=VF-25シリーズは、フロンティア船団で開発された最新鋭のバルキリーである。<br/>主に民間軍事プロバイダーS.M.Sの手によって運用されている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0179
+ | Value=フロンティア船団の針路上に突如出現した謎の敵反応。<br/>直ちに防衛部隊が発進するも、その戦力差は圧倒的なものであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    

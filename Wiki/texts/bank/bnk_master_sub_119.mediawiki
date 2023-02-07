@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0780
+ | Value=プロトデビルンへの攻撃を開始するバルキリー部隊。<br/>激しい抵抗を回避しながら地上に接近していく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0781
+ | Value=東京スカイツリーを訪れることになったワルキューレの5人。<br/>絶好の観光日和だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0782
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0783
+ | Value=東京スカイツリーを訪れることになったシェリル。<br/>しかし、待ち合わせをしていた相手はどうやら遅刻してきたようで…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0784
+ | Value=東京スカイツリーを訪れることになったランカ。<br/>待ち合わせ時間よりも早く来てしまったランカが待っていたのは…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0785
+ | Value=レッスンの最中、ハヤテが最終試験を受けていることを知ったフレイア。<br/>傍に行くことはできなくても、彼女は大切な仲間のために歌い始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0786
+ | Value=新年を迎えるのに相応しい晴れ着姿で初詣に来た美雲とカナメ、そしてメッサー。<br/>新年の空に響く鈴緒の音は、きっと銀河の全ての神様にも願いを届けてくれるだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0787
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0788
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0789
+ | Value=人類が宇宙へと飛び立ってから約半世紀、時代を越えてなお人々の心に息づく歌がある。<br/>そして、それぞれの時代を象徴する歌姫たちの歌声は、種族を越えて今も愛され続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0790
+ | Value=みなさまに支えられ、「歌マクロス」も2周年を迎えることができました。<br/>「歌マクロス」はこれからもみなさまと、マクロスピードで走り続けます！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0791
+ | Value=アルトの背後へとこっそり忍び寄り、後ろから指で突いて驚かせるシェリル。<br/>想定どおりなリアクションを返すアルトに、シェリルの表情も満足そうである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0792
+ | Value=戦闘中に被弾してしまい、バルキリーを大破させながらも何とか初陣を終えられた柿崎。<br/>輝たちと軽い調子で談笑しつつも、頭の中はバルキリーの弁償でいっぱいなのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0793
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0794
+ | Value=みなさまに支えられ、「歌マクロス」も1周年を迎えることができました。<br/>シェリルとランカもドレスに身を包み、お祝いしてくれているようです！
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0795
+ | Value=銀河を代表する歌姫ミンメイと、ワルキューレに憧れて辺境惑星を飛び出したフレイア。<br/>時空を超えた2人の出会いは、消えてしまった世界の記憶を再び甦らせてくれるはずだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0796
+ | Value=『超時空シンデレラ』ことランカと、ワルキューレのゆるふわムードメーカーマキナ。<br/>大切な人たちを想う2人の歌声には、きっと素敵な願いが込められているに違いない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0797
+ | Value=Fire Bomberのベーシストであるミレーヌと、ワルキューレの天才ハッカーレイナ。<br/>2人のフレッシュな発想と技術で、銀河中に遊び心とサプライズを広げてくれそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0798
+ | Value=電子の歌姫シャロンと、年齢から経歴に至るまで不詳なワルキューレのエース美雲。<br/>ブラック・ボックスに包まれた存在の2人だが、歌に対する想いは純然たる真実である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0799
+ | Value=Fire Bomberのメインボーカルであるバサラと、ワルキューレのリーダーカナメ。<br/>前へ前へと突き進む2人の歌声は、更なる高みを目指して仲間たちを引っ張っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0800
+ | Value=過去から未来へと歌姫たちからの影響を引き継いできた『銀河の妖精』ことシェリル。<br/>その愛に満ち溢れた歌声もまた、銀河に生まれる新しい歌声とともに引き継がれ続ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0801
+ | Value=特製の誕生日ケーキに立てられたロウソクの火を眺めながら、上機嫌な様子のシェリル。<br/>パーティーに招待した人たちがまだ来ていないというのに、我慢できなかったみたいだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0802
+ | Value=もう歌わなくてもいいというアルトの言葉に対し、拒絶の意志を見せるシェリル。<br/>たとえ命を削ることになったとしても、彼女にとっては歌こそが生きた証なのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0803
+ | Value=銀河を震わせるという言葉に、かつてシェリルと出会っていたことを思い出すアルト。<br/>その一方でシェリルは、最初に出会ったときからアルトのことを覚えていたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0804
+ | Value=アイランド1上空に設置されたスカイラウンジからの眺めに感嘆の声を漏らすシェリル。<br/>アルトにとっては普通のドーム型都市船だが、シェリルには特別なものに見えたようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0805
+ | Value=いくつもの窮地をともに乗り越えてきたワルキューレの5人。かつて孤独で<br/>自分勝手であった凄腕ハッカー、レイナ・プラウラーは今はもうどこにもいない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0806
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0807
+ | Value=美雲のため、フレイア、カナメ、レイナの3人は必死に歌い続けていた。<br/>そして、負傷し離脱していたマキナも痛みに耐えながら立ち上がった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0808
+ | Value=幼い頃のミラージュの記憶。<br/>戦闘機のコックピットに乗って喜ぶ姿が、彼女の内に流れるエースの血筋を感じさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0809
+ | Value=ハヤテの母親から届いた小包の中には、幼い頃のハヤテと父親の写真が入っていた。<br/>その写真を見たフレイアは、何かを思い出したかのように笑い始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0810
+ | Value=最終決戦を前に、フレイアと話そうとするハヤテ。<br/>いくら連絡しても出なかったのは、どうやら携帯電話の電源が切れていたかららしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0811
+ | Value=激しい戦闘の最中、ハヤテを援護するミラージュ。<br/>ハヤテに礼を言われると、思わず赤面して視線をそらしてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0812
+ | Value=いつも食事のときになると行方をくらましてしまう美雲。<br/>たまには一緒に食べようと、マキナとレイナが笑顔で引き止める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0813
+ | Value=美雲・ギンヌメールの正体は星の歌い手と呼ばれる存在だった。<br/>王家の血族であるハインツには、それがわかるのだという。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0814
+ | Value=ハヤテが父親からもらったペンダント。<br/>特務諜報員としての任務中に、どこかで手にいれた物なのだろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0815
+ | Value=家族から受け取った弁当を見て、決意を新たにするチャック。<br/>「ラグナもマリアンヌも、絶対取り戻してやっからな」―チャック
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0816
+ | Value=ウィンダミアの兵士が装備しているムササビのようなスーツ。<br/>高い身体能力をいかして自在に風に乗ることができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0817
+ | Value=いくつもの窮地をともに乗り越えてきたワルキューレの5人。<br/>神秘の歌姫、ミステリアス・ヴィーナスの心にも、絆は確かに存在している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0818
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0819
+ | Value=フレイアの、仲間たちの声を聞いて、美雲はついに自分を取り戻した。<br/>自分の奥底に眠る、正直で純粋な願望を取り戻したのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0820
+ | Value=迷いに囚われた美雲に、フレイアが問いかける。<br/>それはかつて、ワルキューレに入ったばかりの自分に美雲が問いかけた言葉だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0821
+ | Value=星の歌い手、美雲の歌声がラグナに響き渡る。<br/>その声に込められた膨大な生体フォールド波が惑星を揺らした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0822
+ | Value=城の庭園で歌うハインツの元に、1羽の竜鳥が舞い降りる。<br/>昔から、どれだけ獰猛な動物でもハインツにはすぐに懐いてしまうのだという。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0823
+ | Value=誰かと一緒に食事をすることに、恥じらいを見せる美雲。<br/>その愛らしい様子を見て、たまらずマキナの笑顔が弾けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0824
+ | Value=激しいフォールド波の嵐に苦しめられながらも、ワルキューレは再び立ち上がった。<br/>リーダーのカナメを筆頭に、全員が一丸となって美雲を取り戻そうとしていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0825
+ | Value=最終決戦を前にハヤテに託された新しい機体。<br/>その背には、死神の風を受け継いだエンブレムが刻まれていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0826
+ | Value=ハヤテの父親の写真を見てフレイアは思い出した。<br/>かつて幼かった自分に、地球の歌が入った音楽プレーヤーを渡してくれた人のことを。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0827
+ | Value=ウィンダミアに潜入していたところを、兵士に捕らえられてしまったハヤテ。<br/>変装のためにつけていた偽物のルンを引きちぎられてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0828
+ | Value=かつてウィンダミアの地に次元兵器を投下したVF-22。<br/>ハヤテの父ライトが乗った機体は、悪魔の翼と呼ばれ保管されていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0829
+ | Value=人間の一生にはさまざまな出会いと別れが存在し、そして思い出は歌によって彩られる。<br/>ミンメイの歌は時代と場所を越え、今も多くの人々の思い出に寄り添い続けている。
+ | ParentPage=Texts/Bank/master
+}}
+                    

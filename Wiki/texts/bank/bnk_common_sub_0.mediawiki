@@ -1,0 +1,307 @@
+
+{{Texts/Bank/BankValue:
+ | Key=saka_error0000
+ | Value=エラーが発生しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0001
+ | Value=エラーが発生しました。<br/>しばらくしてから、もう一度お試しください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0002
+ | Value=通信エラーが発生しました。<br/>インターネットへの接続や電波の状況を確認してください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0003
+ | Value=通信エラーが発生しました。<br/>インターネットへの接続や電波の状況を確認して、<br/>もう一度お試しください。<br/>キャンセルした場合はタイトル画面に戻ります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0004
+ | Value=ファイルがみつかりません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0005
+ | Value=該当するお知らせがみつかりません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0006
+ | Value=現在、購入いただくことはできません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0007
+ | Value=これ以上購入できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0008
+ | Value=購入に失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0009
+ | Value=このコードはすでに利用されています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0010
+ | Value=このコードは利用できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0011
+ | Value=エラーが発生しました。<br/>アプリを再起動してください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0012
+ | Value=使用できない言葉が含まれています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0013
+ | Value=プレイヤーが見つかりませんでした。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0014
+ | Value=すでに受け取っています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0015
+ | Value=受け取れませんでした。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0016
+ | Value=フレンドが見つかりませんでした。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0017
+ | Value=ブロックリストに登録されているためフレンド申請が拒否されました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0018
+ | Value=フレンド申請ができませんでした。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0019
+ | Value=フレンドを拒否しているプレイヤーです。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0020
+ | Value=すでにフレンド申請をしています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0021
+ | Value=相手のフレンド数が上限に達しています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0022
+ | Value=フレンド数が上限に達しています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0023
+ | Value=招待コードは利用できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0024
+ | Value=自分の招待コードは利用できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0025
+ | Value=すでに招待コードを利用しています。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0026
+ | Value=この招待コードは利用できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0027
+ | Value=このプレイヤーの招待コードは利用できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0028
+ | Value=メッセージがみつかりません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0029
+ | Value=Facebook連携できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0030
+ | Value=Facebook連携の手続きに失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0031
+ | Value=すでに終了したランキングです。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0032
+ | Value=ランキングがみつかりません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0033
+ | Value=ランキングは開始されていません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0034
+ | Value=現在集計中です。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0035
+ | Value=ランキングに参加していないか、ランキングの圏外です。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0036
+ | Value=ランキングが開催されていません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0037
+ | Value=期間外のため受け取れませんでした。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0038
+ | Value=集計中です。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0039
+ | Value=この引き継ぎコードは利用できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0040
+ | Value=購入の手続きに失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0041
+ | Value=購入に失敗しました。設定を確認してからもう一度お試しください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0042
+ | Value=エラーが発生しました。ゲームを再起動してください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0043
+ | Value=購入の情報が無効です。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0044
+ | Value=未定義
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0045
+ | Value=購入できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0046
+ | Value=購入がキャンセルされました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0047
+ | Value=プッシュ通知が利用できません。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0048
+ | Value=プッシュ通知が利用できません。<br/>プッシュ通知の設定を確認してから、もう一度お試しください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0049
+ | Value=不正な入力です。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=saka_error0050
+ | Value=新しいバージョンのアプリがストアで配信されています。<br/>アプリを更新するためにストアを開きます。
+ | ParentPage=Texts/Bank/common
+}}
+                    

@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=popup_facebook_release_success
+ | Value=Facebookとの連携を解除しました。<br/>端末紛失や端末故障など不測の事態が発生した場合でも<br/>プレイデータを引き継げるように、<br/>事前のお手続きをお願いいたします。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_line_release_success
+ | Value=LINEとの連携を解除しました。<br/>端末紛失や端末故障など不測の事態が発生した場合でも<br/>プレイデータを引き継げるように、<br/>事前のお手続きをお願いいたします。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_apple_release_success
+ | Value=Apple IDとの連携を解除しました。<br/>端末紛失や端末故障など不測の事態が発生した場合でも<br/>プレイデータを引き継げるように、<br/>事前のお手続きをお願いいたします。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_error_storage_size
+ | Value=ストレージに十分な空き容量がありません。<br/>必要な容量を確保してください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=first_present_item_name
+ | Value=歌マクロスプレイ開始記念プレゼントです。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_title_2
+ | Value=おかえりボーナスを受け取ろう！
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=notify_comback_text_2
+ | Value=歌晶石をおかえりボーナスでプレゼント！今すぐログインしよう！
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_subscription_confirmation_text
+ | Value=以前お使いの端末で<br/>歌マクパスまたはスペシャルパスが<br/>有効期間中でしたか？
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_subscription_data_confirmation_ios_text
+ | Value=月間パスの残り有効期間中は<br/>新端末でも月間パスの効果および特典が有効になります。<br/><br/><color=#8e0529>※旧端末と異なるApple IDをご使用になる場合や<br/>異なるOS間でのデータ引き継ぎを行う場合、<br/>有効期間の自動更新が行われないため<br/>新端末で月間パスを再度購入していただく必要があります。<br/><br/>その際、旧端末の月間パスは<br/>旧端末側で解約いただくようお願いいたします。</color>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=pop_subscription_data_confirmation_android_text
+ | Value=月間パスの残り有効期間中は<br/>新端末でも月間パスの効果および特典が有効になります。<br/><br/><color=#8e0529>※旧端末と異なるGoogleIDをご使用になる場合や<br/>異なるOS間でのデータ引き継ぎを行う場合、<br/>有効期間終了後に契約の自動更新が行われないため<br/>新端末で月間パスを再度購入していただく必要があります。<br/><br/>その際、旧端末の月間パスは<br/>旧端末側で解約いただくようお願いいたします。</color>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_s_mas_title
+ | Value=エラー
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_s_mas_text
+ | Value=サーバーデータの取得に失敗しました。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_internal_server_error_retry_text
+ | Value=エラーが発生しました。リトライしますか？<br/>キャンセルした場合はタイトル画面に戻ります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_costumeselect_home
+ | Value=楽屋に反映
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva001_description_gakuya
+ | Value=戦術音楽ユニット「ワルキューレ」に<br/>憧れて故郷を飛び出してきた女の子。<br/>天真爛漫な性格で歌が大好き、しかし<br/>ダンスは苦手。<br/><br/>気持ちが昂ると頭の「ルン」が光り輝く。<br/>独特の訛りで話し、「ごりごり」が口癖。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva002_description_gakuya
+ | Value=戦術音楽ユニット「ワルキューレ」の<br/>エースボーカル。素性や経歴の一切が<br/>謎に包まれているミステリアスな存在。<br/><br/>歌に対して強いこだわりを見せ、<br/>どのような危機に襲われても決して<br/>歌うことを諦めない。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva003_description_gakuya
+ | Value=戦術音楽ユニット「ワルキューレ」の<br/>リーダー。スケジュール管理をはじめ、<br/>チームのマネジメントもこなすしっかり者。<br/><br/>ワルキューレに加入する前は、<br/>ソロでアイドル活動を行っていた。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva004_description_gakuya
+ | Value=戦術音楽ユニット「ワルキューレ」の<br/>メンバー。代々メカニックという家系の<br/>生まれで、自身もまた一流の腕を持つ<br/>メカニックである。<br/><br/>仲間やメカにあだ名をつける癖がある。<br/>レイナとは姉妹のように仲が良い。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva005_description_gakuya
+ | Value=戦術音楽ユニット「ワルキューレ」の<br/>メンバー。毒舌家で、あまり感情を表に<br/>出さない。凄腕のハッカーでもあり、<br/>電子技術者としても活躍している。<br/><br/>マキナとはひとつ屋根の下で暮らすほどの<br/>仲である。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva006_description_gakuya
+ | Value=ふとしたきっかけからデビューし、<br/>たちまち人気アイドルとなった<br/>「超時空シンデレラ」。<br/><br/>心優しく一生懸命な性格。<br/>子供のころから歌うことが大好きで、<br/>シェリルに対して憧れの念を抱いている。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva007_description_gakuya
+ | Value=「この銀河に暮らしてシェリルの歌を<br/>聴かない日はない」と称される<br/>トップシンガー。通称「銀河の妖精」。<br/><br/>プロである自分に誇りを持っており、<br/>一流であり続けるための努力を惜しまない。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva008_description_gakuya
+ | Value=ロックバンド「Fire Bomber」の<br/>ボーカル／ベース担当。<br/>七人姉妹の末娘。<br/>物怖じしない真っ直ぐな性格で、<br/>子ども扱いされることを嫌う。<br/>ボーカリストとしてもパイロットとしても、<br/>バサラに劣らない実力を持つ。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva009_description_gakuya
+ | Value=ロックバンド「Fire Bomber」の<br/>ボーカル ／ギター担当。<br/>何よりも歌うことが好きで、<br/>争い事を好まない。<br/>口癖は「俺の歌を聞けぇ！」。<br/>どんなことでも、歌があれば<br/>理解し合えると考えている。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=profile_diva010_description_gakuya
+ | Value=後世にも語り継がれる伝説のアイドル。<br/>明るく屈託のない性格だが、<br/>少しわがままな一面もある。<br/>彼女の魅力と歌は、人類と戦争状態に<br/>あったゼントラーディさえも魅了し、<br/>彼らに文化を取り戻させるきっかけと<br/>なった。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_351_01
+ | Value=お支払いされていない商品があります。<br/>お支払い後アプリを再起動してください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_purchase_352_01
+ | Value=この商品はお支払いが完了しておりません、<br/>お支払い後アプリを再起動してください。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_playerdata_error
+ | Value=サーバーから取得したデータに異常があります。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text001
+ | Value=アカウント管理
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text002
+ | Value=データ引き継ぎ
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text003
+ | Value=プレイデータの引き継ぎ準備を行います。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text004
+ | Value=端末紛失など不測の事態が発生した場合に<br/>プレイデータが引き継げるように準備をします。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text005
+ | Value=引き継ぎ準備
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text006
+ | Value=アカウント削除
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text007
+ | Value=プレイデータの削除を行います。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text008
+ | Value=現在プレイ中のプレイデータを削除します。<br/><color=#C8087E>※削除したプレイデータは完全に失われます。</color>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text009
+ | Value=アカウント削除
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text010
+ | Value=閉じる
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text011
+ | Value=アカウント削除
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text012
+ | Value=現在プレイ中のこのアカウントを削除します。<br/><br/><color=#8e0529>・これまでのプレイ状況や所持アイテム、歌晶石、などを含むすべての情報に<br/>　アクセスできなくなります。</color><br/>・アカウント連携を行っている場合、このアカウントに紐付くすべてのアカウント連携が<br/>　解除され、再度アクセスできなくなります。<br/><br/><color=#8e0529>※未使用分の歌晶石は消滅してサービス終了時の払い戻しはできなくなります。</color><br/>※定期購入した「歌マクパス」「スペシャルパス」が有効期間中の場合、<br/>　各月間パスの　　　　　　を必ず実行前にご確認ください。<br/>※月間パスを解除せずにアカウントを削除した場合、<br/>　当該月間パスは当該削除されたアカウントについて引き続き効果が生じ、<br/>　更新が行われます。<br/>　また、月間パスを別途解除しない限り、<br/>　新しいアカウントで月間パスを購入することはできません。<br/>　従いまして、有効中の月間パスがある場合は、必ず当該月間パスを解除してから<br/>　アカウントを削除するようお願いいたします。<br/>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text013
+ | Value=上記に同意します。
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text014
+ | Value=キャンセル
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text015
+ | Value=アカウント削除
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text016
+ | Value=最終確認
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text017
+ | Value=この操作は取り消すことができません。<br/><color=#8e0529>下記アカウントを本当に削除してよろしいですか？</color><br/><br/>■アカウント情報<br/><br/>　ユーザーID：{0}<br/>　ユーザー名：{1} （RANK {2}）<br/>　連携中のアカウント：{3}<br/>　歌晶石残高：{4}個<br/>　有償購入数：{5}個<br/>　無償付与数：{6}個<br/>　有効中の月間パス：{7}<br/><br/><color=#8e0529>※アカウント連携は無効になります。<br/>※月間パスの効果は契約開始日から1ヶ月間となっております。<br/>　お客様が上記期間中に月間パスを解除してアカウントを削除する場合<br/>　有効中の月間パスに商品名が表示されます。<br/>※有効中の月間パスがある場合サブスクリプションの契約状態をご確認下さい。</color><br/>
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text018
+ | Value=キャンセル
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_management_text019
+ | Value=OK
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_linkaging_text_none
+ | Value=なし
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_linkaging_text_facebook
+ | Value=Facebook
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_linkaging_text_twitter
+ | Value=Twitter
+ | ParentPage=Texts/Bank/common
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_account_linkaging_text_line
+ | Value=LINE
+ | ParentPage=Texts/Bank/common
+}}
+                    

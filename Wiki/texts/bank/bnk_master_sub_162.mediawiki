@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2930
+ | Value=ハヤテにフレイアを始め、仲間たちと深めた絆ですべての迷いを振り払ったミラージュ。<br/>かつてはコンプレックスにまみれていた翼も、今や心の赴くまま無心で空を駆け抜ける。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2931
+ | Value=気持ちのいい青空の下、自信満々の表情を浮かべて宣戦布告といった様子のフレイア。<br/>まっすぐ狙いを定めるように構えた指先は、見る者の心をロックオンして逃がさない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2932
+ | Value=ハヤテに告白することでフレイアの背中を押し、自身の想いに決着をつけたミラージュ。<br/>ミラージュの頬には果てしなく続くラグナの空のように、澄みきった涙が流れていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2933
+ | Value=最終決戦への出撃を前に、今日こそは無心で飛ぶという決意をするミラージュ。<br/>仲間たちとの絆と、強敵たちとの戦いがミラージュをより強くしていたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2934
+ | Value=レイナとマキナのステージに続き、いよいよ出番となったフレイアのソロステージ。<br/>元気いっぱい観客に向けて声を投げかけると、声援を受けながら堂々と歌い始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2935
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2936
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2937
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2938
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2939
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2940
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2941
+ | Value=甘さの中に刺激がピリリ。一筋縄ではいかないバレンタインを提供してくれるレイナ。<br/>いたずら心に隠されたメッセージの解読は、チョコレートのように甘くはなさそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2942
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2943
+ | Value=ウィンダミアの目的を突き止めようと、こめかみを指で抑えて思考を集中させるレイナ。<br/>なんとも古典的なしぐさではあるものの、閃きを得るには意外と効果的かもしれない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2944
+ | Value=ウィンダミアアップルを陰謀に利用され、悲しみとともに激しい怒りを見せたフレイア。<br/>「リンゴとみんなに、謝らんかい！」─フレイア
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2945
+ | Value=【チクチク・スイート】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2946
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2947
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2948
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2949
+ | Value=【チクチク・スイート】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2950
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2951
+ | Value=【チクチク・スイート】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2952
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2953
+ | Value=持ち前の柔らかく包み込むような雰囲気で、甘いバレンタインを提供してくれるマキナ。<br/>まさに夢心地といった味わいは、たったのひとくちでもハートを虜にしてしまうだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2954
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2955
+ | Value=侵入したネットワークの情報をもとに、壁の向こうにある怪しい空間を発見したレイナ。<br/>後はマキナが扉を作れば一丁あがり、道がなければ道を作ってしまう2人なのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2956
+ | Value=何の変哲もないリンゴと水という組み合わせに、何か引っ掛かるものを感じとるハヤテ。<br/>そして、レイナとマキナのエピソードをヒントに、ひとつの仮説を思いつくのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2957
+ | Value=【ふわふわ・メルティ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2958
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2959
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2960
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2961
+ | Value=【ふわふわ・メルティ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2962
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2963
+ | Value=【ふわふわ・メルティ】のエピソードポイントを上げられるプレート。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2964
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2965
+ | Value=メサイアバルキリーことVF-25Fモチーフの衣装でキュートにポーズを決めるランカ。<br/>軽快な電子音の波と星のように輝く歌声が混ざり、ステージは別次元の様相を見せる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2966
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2967
+ | Value=深紅のVF-1のコックピット上にて、突風に立ち向かうかのように歌い続けるランカ。<br/>まっすぐ見据えた瞳と力強い歌声は、アイドルとしてのランカの成長を感じさせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2968
+ | Value=警告のアラートが鳴り響く中、意識を朦朧とさせながらモニターを見つめるアルト。<br/>アルトの視界には仲間を助けるバジュラの姿と、宙を漂うイヤリングが映っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2969
+ | Value=ライブの最中に突然彼方から届いた得体のしれない衝撃に貫かれるランカ。<br/>苦悶の表情を浮かべるも、ライブを壊すまいと歯を食いしばって耐えたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2970
+ | Value=ブレラの操縦テクニックを前に、悔しさをにじませながらも必死に追いかけるアルト。<br/>そのとき、コックピット内に下げていたイヤリングが光を放ち歌が響き始めたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2971
+ | Value=焚きつけられる形で共闘を承諾したアルトに対し、含みのある笑みを見せるブレラ。<br/>アルトの単純な性格を踏まえつつ、パイロットとしての腕前を信用したのだろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2972
+ | Value=アルトが撃墜されたという報せを受けて、急いで軍病院へと向かうランカ。<br/>スクーターを巧みに操作して、車で渋滞する道を掻い潜っていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2973
+ | Value=雨が降りしきるアトランティスホールのステージに立つランカ。<br/>歌詞の内容と合わさり、天候の変化もまた舞台演出であるかのようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2974
+ | Value=ランカをステージ船上に送り届けるアルトのVF-25F。<br/>ステージの上ではシェリルが笑顔で2人を出迎えた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2975
+ | Value=ランカのファーストライブにて登場した深紅のVF-1。<br/>鮮やかなカラーリングはまるでレーサーのようである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2976
+ | Value=準女王バジュラの爆発とともに放たれた超指向性のフォールド波。<br/>「まさか、この方向は…バジュラの星！？」─ルカ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2977
+ | Value=デュランダルバルキリーことYF-29モチーフの衣装をセクシーに着こなすシェリル。<br/>聖剣の誉れと銀河を震わす歌声が合わさり、電子のハートに熱い鼓動を刻み込んでいく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2978
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_2979
+ | Value=アルトの怪我が大したことないと知り、慌てた様子から一転して不機嫌になるシェリル。<br/>「え？慌ててたのか？」「うるさいわよ！アルトのくせに！」─アルト、シェリル。
+ | ParentPage=Texts/Bank/master
+}}
+                    

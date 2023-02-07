@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_02
+ | Value=燃えるぜ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=intimacy_pointup_03
+ | Value=へへっ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_01
+ | Value=ありがとよ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_02
+ | Value=腹減ったな…
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_03
+ | Value=なんつーか、こう…<br/>刺激のあるもんが食いてぇな
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_04
+ | Value=食いたいときに食う。<br/>細かいことは気にしねぇぜ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_05
+ | Value=調子が出ねぇ気がするな…
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_06
+ | Value=たまには気分を変えてみるってのも<br/>悪くねぇな
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_07
+ | Value=気分転換ってやつでもしてみるか
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_08
+ | Value=身だしなみねぇ…<br/>そんなに大事なことか？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_09
+ | Value=俺の部屋？<br/>別に何も置いてねぇよ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_10
+ | Value=身の回りに気を使えって<br/>ミレーヌがうるせぇんだよな…
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=present_11
+ | Value=いいねぇ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_01
+ | Value=よう、なんか用か？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_02
+ | Value=なぁ、ライブに行こうぜ。<br/>歌いてぇんだ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_03
+ | Value=ハイタッチか？いいぜ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_04
+ | Value=部屋にこもって新曲でも書くか…
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_05
+ | Value=俺の部屋に来たい？いいけど、<br/>レモネードぐらいしかねぇぞ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_06
+ | Value=レイのやつ、また俺のバルキリーを<br/>持っていきやがった…<br/>早く返せっての
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_07
+ | Value=衣装なんてなんでもいいが、<br/>ずっと同じってのも飽きてくるな。<br/>刺激が欲しいぜ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_08
+ | Value=あんた、暇か？<br/>なら、俺の歌を聞いていけ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_09
+ | Value=退屈そうだな。なら、<br/>俺がハートをビンビンにしてやるぜ！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=cs_touch_reaction_10
+ | Value=面白ぇやつだな…<br/>あんたと歌ってみたいぜ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_21
+ | Value=フレイアの誕生日パーティーを見て<br/>きたんだけどよ。裸喰娘娘の料理…<br/>うまそうだったな
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_22
+ | Value=ワルキューレの奴ら、美雲に<br/>バースデーソングをプレゼント<br/>したらしいぜ。最高じゃねぇか…！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_23
+ | Value=カナメ、誕生日なんだってな
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_24
+ | Value=マキナの誕生日だったのか…
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_25
+ | Value=今日はレイナの誕生日なんだと。<br/>後で一曲、祝いの曲でも<br/>歌ってやるか
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_26
+ | Value=今日はランカの誕生日なのか？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_27
+ | Value=シェリルの奴、<br/>今日は一段とギラギラしてるな。<br/>最高の歌声じゃねぇか！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_28
+ | Value=ミレーヌがずっとニヤニヤ<br/>してるんだ。誕生日がそんなに<br/>嬉しいのか？ったく…
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_29
+ | Value=バサラ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_30
+ | Value=ミンメイのバースデーライブには、<br/>たくさんの人が集まるらしい。<br/>あいつの歌がそうさせるんだろうな…
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_31
+ | Value=ハヤテ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_32
+ | Value=ミラージュ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_33
+ | Value=メッサー
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_34
+ | Value=アラド
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_35
+ | Value=チャック
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_36
+ | Value=アルト
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_37
+ | Value=オズマ
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_38
+ | Value=レイへの誕生日プレゼントは、<br/>ミレーヌとビヒーダに任せて…<br/>俺は記念の新曲でも書くか
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_39
+ | Value=輝
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_40
+ | Value=ミレーヌから、ガムリンの誕生日<br/>プレゼントを考えろって言われたん<br/>だけどよ…俺が考えるのか？
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_41
+ | Value=未沙
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_42
+ | Value=俺たちの映画が公開されるんだと
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_43
+ | Value=思えばずいぶんと世話になったな。<br/>お前とのセッション、最高だったぜ！<br/>またいつかやろうな！
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_44
+ | Value=ガムリンもお前のことを褒めてたぜ。<br/>これまでの協力に感謝しますってな。<br/>あいつもほんと生真面目だよな
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_45
+ | Value=バジュラやウィンダミアの奴らにも、<br/>俺の歌を聞かせてやりてぇな。<br/>ま、次の楽しみってことにしとくか。
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_46
+ | Value=銀河を見て、時空を超えて…へへっ、<br/>次は何が起きるのか楽しみだぜ。<br/>その前にまた旅にでも出るか
+ | ParentPage=Texts/Bank/diva009
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=talk_event_47
+ | Value=ミレーヌのやつが最後にミンメイに<br/>挨拶しようってうるせぇんだ。まぁ、<br/>世話になったし、行ってくるか…
+ | ParentPage=Texts/Bank/diva009
+}}
+                    

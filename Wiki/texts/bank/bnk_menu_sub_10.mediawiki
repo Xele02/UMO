@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=ex_battle_non_record
+ | Value=EXバトルスコアの記録がありません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_battle_reward_check_hi_score
+ | Value=EXバトルハイスコア
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_battle_reward_check_ranking
+ | Value=EXバトルスコアランキング
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=event_battle_reward_check_ranking_unit
+ | Value=位
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_ex_schedule_caution_01
+ | Value=EXバトルの楽曲は日付変更のタイミングで切り替わります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_battle_ex_schedule_caution_02
+ | Value=一度出現したEXバトルの楽曲は日付が変わっても変更されません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_end
+ | Value=イベントの開催期間は終了しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_event_counting
+ | Value=イベント集計中です。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_to_live_ticket_msg
+ | Value=ライブで<color=#c8087e>チケット</color>を<color=#c8087e>GET</color>しよう！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_to_live_stamina_msg
+ | Value=
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_select_slive_own_item
+ | Value=所持トークン
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=music_select_slive_cost_item
+ | Value=消費トークン
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=game_play_event_end_attain
+ | Value=このイベントは終了しました。<br/>ホームへ戻ります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_list_period
+ | Value={0}/{1} {2}:{3:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_list_daycount
+ | Value={0}日目
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_timezone
+ | Value=朝{0}-{1}　昼{2}-{3}　夜{4}-{5}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_timezone_time
+ | Value={0}:{1:D2}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_event_period
+ | Value={0}/{1} {2}:{3:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_promo_msg_01
+ | Value=※該当のプレートを2枚集めるとレアリティアップができます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_promo_msg_02
+ | Value=※該当のプレートはレアリティアップ後のプレートです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_ep_reward_sub
+ | Value=エピソード報酬例
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_ep_caution01
+ | Value=※エピソード報酬はエピソードポイントにより<br/>　エピソードを解放することで取得できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_ep_caution02
+ | Value=※獲得可能なエピソードポイントの上限は、<br/>　プレートにより異なります。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_ep_diva_costume
+ | Value={0}衣装<br/>{1}
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_pickup_caution
+ | Value=※ピックアップ対象プレートが出現率アップしている分、ピックアップ対象外プレートの出現率が下がっています。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_ticket_sale_period
+ | Value=※チケット付き歌晶石の販売期間は{0}/{1} {2}:{3:D2}までです。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_mpass_desc
+ | Value={0}を消費して<br/>エピソードプレートを入手できます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_mpass_caution
+ | Value=※チケットを複数所持している場合、<br/>　一番利用期限の早いものが表示されます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=gacha_main_mpass_period
+ | Value=利用期限: {0}/{1}/{2} {3}:{4:D2}まで
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_record_plate_001
+ | Value=重複したエピソードプレートが自動合成されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_record_plate_002
+ | Value=重複したエピソードプレートが自動合成され<br/><color=#c8087e>シークレットボードが追加</color>されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_record_plate_003
+ | Value=重複したエピソードプレートが自動合成され<br/><color=#c8087e>シークレットボードが拡張</color>されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_record_plate_004
+ | Value=重複したエピソードプレートが自動合成され<color=#c8087e>レアリティがアップ</color>しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_record_plate_005
+ | Value=重複したエピソードプレートが自動合成され<color=#c8087e>シークレットボードが追加</color>されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_record_plate_006
+ | Value=重複したエピソードプレートが自動合成され<color=#c8087e>シークレットボードが拡張</color>されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_record_plate_007
+ | Value=取得したエピソードプレートが<color=#c8087e>解放アイテムに変換</color>されました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_record_plate_008
+ | Value=合成結果
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_record_plate_009
+ | Value=新しいエピソードプレートを入手しました。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_record_plate_010
+ | Value=新規エピソードプレート
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_title
+ | Value=出現エピソードプレート一覧
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_limited_header
+ | Value=確定枠ガチャ出現率
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_limited_list
+ | Value=確定枠ガチャ出現一覧
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_limited5_header
+ | Value=確定枠ガチャ出現率
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_limited5_list
+ | Value=確定枠ガチャ出現一覧
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_basic_header
+ | Value=ガチャ出現率
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_basic_list
+ | Value=ガチャ出現一覧
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_pickup
+ | Value=ピックアップ対象！
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_stepup
+ | Value=ステップ{0}の出現確率
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha_rate_warning
+ | Value=※確率表示は小数第4位以下にて切り捨て、小数第3位まで表示します。<br/>　そのため、すべて合算しても100％にならない場合があります。<br/><br/>※上記のエピソードプレートは重複して出現する場合があります。<br/><br/>※同レアリティ内であっても提供割合が異なる場合があります。<br/><br/>※「ガチャ出現率」に表示されている各レアリティごとの<br/>   出現確率は「初期出現確率」です。<br/><br/>※★5が一定程度出現しなかった場合、<br/>　★5の出現確率が「初期出現確率」からやや上昇し、その上昇分だけ<br/>　★3★4の全体の出現確率が「初期出現確率」から下がります。<br/><br/>※一度「初期出現確率」から変動した出現確率は、<br/>　ガチャの開催期間の終了、対象ガチャからの★5の排出をもって<br/>　リセットされます。<br/><br/>※「初期出現確率」からの確率の変動はデビューガチャでは発生しません。
+ | ParentPage=Texts/Bank/menu
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=popup_gacha2_rate_warning
+ | Value=※確率表示は小数第4位以下にて切り捨て、小数第3位まで表示します。<br/>　そのため、すべて合算しても100％にならない場合があります。<br/><br/>※上記のエピソードプレートは重複して出現する場合があります。<br/><br/>※同レアリティ内であっても提供割合が異なる場合があります。<br/><br/>※「ガチャ出現率」に表示されている各レアリティごとの<br/>   出現確率は「初期出現確率」です。<br/><br/>※★5が一定程度出現しなかった場合、<br/>　★5の出現確率が「初期出現確率」からやや上昇し、その上昇分だけ<br/>　★3★4の全体の出現確率が「初期出現確率」から下がります。<br/><br/>※一度「初期出現確率」から変動した出現確率は、<br/>　ガチャの開催期間の終了、対象ガチャからの★5の排出をもって<br/>　リセットされます。
+ | ParentPage=Texts/Bank/menu
+}}
+                    

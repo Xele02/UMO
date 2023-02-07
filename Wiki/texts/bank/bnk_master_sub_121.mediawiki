@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0880
+ | Value=病院のロビーで、アルトを挟んで歌い始めたシェリルとランカ。<br/>ランカの大胆なアピールを前に、アルトは少し意外そうな顔を見せた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0881
+ | Value=歌を口ずさみながら、セクシーなアピールでアルトに迫るシェリル。<br/>その様子を、ランカは羨ましさと恥ずかしさの入り混じった視線で見つめていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0882
+ | Value=惑星ガリア4から帰還したランカは、病院で長い精密検査を受けていた。<br/>そして久しぶりにアルトと再会すると、喜びのあまり抱き付こうとするのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0883
+ | Value=マヤン島での映画撮影も終盤、ヒロインを演じるランカはキスシーンに臨む。<br/>主演俳優の代役であるアルトを見つめるその瞳には、演技以上の何かが込められていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0884
+ | Value=美星学園の芸能コースへと転入したランカ。<br/>仕事を始めた都合で、前の学校に通えなくなってしまったらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0885
+ | Value=アルトの誕生日プレゼントにと、クッキーを焼いたランカ。<br/>しかし、アルトが任務で船団を離れてしまったため、直接渡すことはできなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0886
+ | Value=ランカのデビュー曲プロモーションに協力していたボビー。<br/>ランカを疎かに扱うと許さない！と、マネージャーのエルモに釘を刺すのであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0887
+ | Value=ランカはブレラとともにバジュラの故郷へと向かってしまった。<br/>もしもランカが敵になるのなら、そのときは自分がランカを撃つとアルトは覚悟した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0888
+ | Value=バジュラとの戦いによって荒れ果てたフロンティア船団。<br/>瓦礫の中には、船団を離れてしまったランカの人形が落ちていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0889
+ | Value=S.M.Sの隊員でありながら、一大企業L.A.Iの技術開発部特別顧問という顔を持つルカ。<br/>しかし一度日常に戻れば、その姿はどこにでもいる男子高校生と変わらない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0890
+ | Value=S.M.Sに所属するパイロット。電子戦、及び情報支援を担当している。<br/>年相応の幼さが残るものの、電子機器の扱いにかけてはスペシャリストといえる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0891
+ | Value=いくつもの顔を持つルカにとって、美星学園での日常はかけがえのないものだった。<br/>やがてそれは、少年に守る強さを与えていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0892
+ | Value=座り込んで物憂げな表情を見せるアルト。<br/>彼がそこにいることで、何気ない風景も儚げな美しさで満たされていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0893
+ | Value=ランカのファーストライブを楽しみにしている様子のルカ。<br/>穏やかな昼休み、おいしそうに昼食を頬張っている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0894
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0895
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0896
+ | Value=最終決戦を前に、ルカは己の中にあった迷いを振り切った。<br/>守りたいもののために戦うと、少年は覚悟を決めたのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0897
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0898
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0899
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0900
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0901
+ | Value=人間の少女に似た姿のプロトデビルン、その名はシビル。<br/>覚醒した彼女はマクロス7船団に接近、そこで熱気バサラとの邂逅を果たす。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0902
+ | Value=バサラとの接触によって、生命エネルギー「スピリチア」を失ってしまったシビル。<br/>青白く光る球体に身を包み、森の奥深くで深い眠りについたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0903
+ | Value=いついかなるときも、まっすぐに歌を歌い続けてきたバサラ。<br/>彼が歌った場所、歌ったとき、歌そのものが、いくつもの記憶として息づいている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0904
+ | Value=どれだけバサラが歌っても、眠ったシビルは一向に目を覚ます気配を見せない。<br/>それに業を煮やしたギギルは、もっと力強く歌えとバサラに向けて拳を振り上げた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0905
+ | Value=バサラを追って植物プラントへと訪れたミレーヌ。<br/>そこで、先日ミリアを襲ったシビルと1人歌い続けるバサラの姿を目撃してしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0906
+ | Value=スピリチアを求めて、ミリアのオフィスを襲撃したシビル。<br/>ミレーヌとガムリンが駆け付けるが、その強大な力の前には銃さえも無力だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0907
+ | Value=突然雑誌に掲載されたバサラとレックスの熱愛記事。もちろん中身はねつ造である。<br/>レックスは気にかけていたようだが、当のバサラはいつもと変わらぬ様子だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0908
+ | Value=ゴシップ誌「銀スポ」の記者であるジャネット。<br/>バサラに関するスキャンダル記事をねつ造し、今回の騒動を引き起こした張本人だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0909
+ | Value=夜な夜などこかへ出かけていくバサラを、こっそり尾行するミレーヌとグババ。<br/>おそろいのサングラスで変装はバッチリだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0910
+ | Value=マクロス7船団に新設された精鋭部隊。隊長はドッカー大尉。<br/>最新鋭機体のVF-19が配備されており、その評価は高い。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0911
+ | Value=何かの気配を察してか、突然鳴き声を上げてしまったグババ。<br/>バサラに見つかるところだったとミレーヌから叱られ、しょんぼり落ち込んでしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0912
+ | Value=バサラに関する無数のスキャンダル記事に対して、世間の関心は高まっていた。<br/>ついには、バサラの自宅前までマスコミが押し掛けるほどである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0913
+ | Value=ランカとともに歌うことによって、シェリルの歌の力はさらに高まっていく。<br/>命の炎を燃やすようなパワフルな歌声が、聴く者すべての心を熱くするのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0914
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0915
+ | Value=ライブの演出に紛れて監獄への潜入に成功したアルト。<br/>無事にシェリルを牢屋から連れ出し、ランカのいるライブステージへと送り届けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0916
+ | Value=薄暗く冷たい牢屋の壁に、無心で歌詞を書き連ねるシェリル。<br/>いかなる状況にあっても、彼女は歌姫としての自分を捨てることはなかった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0917
+ | Value=アルトによって救出されたシェリルは、ステージの上でランカと再会する。<br/>差し出されたマイクを受け取って、彼女は再び歌うことを決意した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0918
+ | Value=牢屋のベッドで横になっていたシェリル。<br/>しかし外からの歌声が聴こえると、彼女も静かにそれを口ずさみ始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0919
+ | Value=「Lovely Bomber」のダンサーとしてライブに参加したアルト。<br/>この完璧な女装を見れば、誰も彼が男だということに気が付かないだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0920
+ | Value=盛り上がりは最高潮、その場のすべての者たちがランカのライブに釘付けとなった。<br/>そして今こそ、牢屋に囚われているシェリルを助け出すときだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0921
+ | Value=「Lovely Bomber」のドラマーとしてライブに参加したカナリア。<br/>手慣れた様子でスティックをさばき、力強く演奏をこなしている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0922
+ | Value=監獄まで面会に来たランカと話すシェリル。<br/>しかしその様子は暗く、視線もどこか悲しげであった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0923
+ | Value=音響スタッフに扮したルカが、シェリル救出のタイミングをうかがっている。<br/>ライブが最高潮に盛り上がる瞬間が決行のときである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0924
+ | Value=すべての囚人がランカの慰問ライブを見られるわけではない。<br/>その見られない者たちは、歌に合わせてスプーンを打ち付け始めた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0925
+ | Value=シェリルとともに歌うことによって、ランカの歌の力はさらに高まっていく。<br/>まるで魔法が宿ったようなキュートな歌声が、聴く者すべての心を晴らしていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0926
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0927
+ | Value=ランカとシェリルによる、一夜限りのスペシャル監獄ライブ。<br/>囚人たちは大いに盛り上がり、やがてその勢いは監獄の外へと溢れ出していく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0928
+ | Value=キラキラと眩しいライブ演出がランカの歌を彩る。<br/>こうして全員の目を釘付けにすることが、シェリル救出作戦の第1段階であった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0929
+ | Value=アルトによって救出されたシェリルと、ステージ上で再会したランカ。<br/>ほっと安心した様子で微笑むと、ともに歌うためのマイクを差し出すのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    

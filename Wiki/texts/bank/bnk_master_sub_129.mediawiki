@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1280
+ | Value=切り捨てたはずのシェリルが生還したことに、皮肉交じりの笑みを浮かべるグレイス。<br/>蔑むようなその眼差しに、憐れみや情は一切感じられない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1281
+ | Value=ヴァールによって狂暴化した兵士も、ワルキューレの歌に我を取り戻して目を輝かせる。<br/>「デ…カルチャー…！」─ゼントラーディ兵士
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1282
+ | Value=バジュラに囚われたランカを救出し、フロンティア全軍に通信を送るブレラ。<br/>ギャラクシー船団に生き残りがいたことを知り、新統合軍の司令部は驚きの声を上げた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1283
+ | Value=惑星ヴォルドールのパラナガール遺跡に多数配置されている警戒ドローン。<br/>…だったのだが、マキナとレイナによってあっという間に掌握されてしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1284
+ | Value=居なくなってしまったあい君の特徴を伝えるため、ナナセが描いたイラスト。<br/>それを見たルカは、船内でバジュラの幼生が活動していることに気付いてしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1285
+ | Value=オオカミ男をイメージした衣装と、慣れない催しにちょっと不機嫌そうなバサラ。<br/>しかし、ひとたびライブが始まると豹変し、月明かりの下で熱いシャウトを響かせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1286
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1287
+ | Value=キュートな衣装に身を包んだミンメイ。彼女の投げキッスに、お化けたちもメロメロ。<br/>お菓子や悪戯そっちのけで、彼女に夢中になってしまいそうだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1288
+ | Value=ミステリアスで危険な魅力を持つシビル。妖しいハロウィンの夜に<br/>うっかり出会ってしまったら最後、あっという間に骨抜きにされてしまうだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1289
+ | Value=ジャングルに墜落した旧ボドル基幹艦隊の戦艦を修理するカムジンたち。<br/>彼らに文化を教えたことが、皮肉にも新たな脅威を生み出すことになってしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1290
+ | Value=直属の配下に「エースのミリア」を持つ、ゼントラーディ軍の直衛艦隊司令。<br/>ボドルザーの命により、ブリタイの後任としてマクロス内偵作戦の遂行に当たった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1291
+ | Value=白い羽毛で覆われ、背中に翼を持った少年のような姿のプロトデビルン。<br/>あらゆる事柄に美を見出そうとする、独特な美意識の持ち主だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1292
+ | Value=マックスたちの決死の作戦も、ゲペルニッチの力によって失敗に終わってしまった。<br/>帰る手立てを失った彼らに対し、ゲペルニッチは降伏を勧告したのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1293
+ | Value=圧倒的パワーでバルキリーの装甲を剥がし、隙間からコックピットを覗き込むブリタイ。<br/>あまりの恐怖に、輝は叫び声を上げながら緊急脱出装置を起動した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1294
+ | Value=ガビルとグラビルが合体した姿で、高い知能と強大な戦闘力を兼ね備えている。<br/>彼らにとって合体は「究極の手段」であり、その姿をもって「完成美」であると称した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1295
+ | Value=シティ7に潜入し、次々と市民を襲ってスピリチアを奪うバロータ軍の兵士たち。<br/>その犯行内容から、シティ7の人々は彼らをバンパイアと呼んで恐れた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1296
+ | Value=ワレラたち「青い風」がマクロスから持ち帰った品々のひとつ。<br/>下級兵士たちは初めて聞く歌という文化に強い興味を示した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1297
+ | Value=いつもとは違う制服に身を包み、新曲のプロモーションを行うランカ。<br/>輝く放課後の夕陽と優しいメロディーが、等身大の彼女の魅力を引き出している。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1298
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1299
+ | Value=新曲のために用意した衣装をアルトに披露するランカ。<br/>そして、伏し目がちにうつむきながら、新曲とアルトに対する想いを打ち明けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1300
+ | Value=決戦の場で歌うことになったランカ。歌う曲は、彼女が初めて作詞した曲だった。<br/>想いを込めた歌をアルト、そしてバジュラに伝えるため、ランカは戦場に歌を響かせる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1301
+ | Value=勇気を振り絞って、ついにアルトへの想いを打ち明けたランカ。<br/>直後、恥ずかしさの余り瞳を潤わせ、自嘲気味な言葉をポツリと呟いた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1302
+ | Value=当たり前だった日々の中でも特別だったアルトとの思い出。<br/>もう会えないかもしれないという想いに耐え、戦場でランカは歌い続けた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1303
+ | Value=子供の頃の記憶を失っているランカが、唯一覚えていたアイモという歌。<br/>彼女にとってその歌は希望であり、大切な思い出となっていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1304
+ | Value=1枚の紙が空を飛ぶ飛行機に変わることを楽しそうに語るアルト。<br/>アルトは紙飛行機に取り分け強い愛着を持っていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1305
+ | Value=夕陽が照らす中でランカの歌声に耳を傾けるアルト。<br/>ランカの歌への想いに重ねるように、アルトも空を飛ぶことへの想いを伝えた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1306
+ | Value=VF-25をベースとして開発中の、対バジュラ決戦用試作機。<br/>今はまだマクロス・クォーターの格納庫で完成のときを待っている状態だ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1307
+ | Value=美星学園の近くの高台にある公園。<br/>市街を展望でき、人工の物ながら美しい夕陽を望むことができる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1308
+ | Value=美星学園の外周に設置されたフェンス。<br/>他校の生徒だったランカは、フェンス越しにアルトがいるであろう学園を眺めていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1309
+ | Value=赤襟のセーラー服に身を包み、夕陽の射す教室に佇むフレイア。<br/>憂いの表情を浮かべつつも、その心は新しい明日への期待に満ち溢れている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1310
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1311
+ | Value=初めて空を飛んだとき、フレイアの歌で気持ち良く飛べたことを語るハヤテ。<br/>それを聞いたフレイアはルンを輝かせ、嬉しそうに笑顔を浮かべる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1312
+ | Value=ミラージュを救うためではあったが、初めて敵を撃墜したことを気に病むハヤテ。<br/>それに対しミラージュは感謝を伝えると同時に戦士としての責任を説いたのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1313
+ | Value=毎日レッスンが楽しいというフレイアに対し、ハヤテは羨ましいと返した。<br/>そして父の形見のペンダントを眺めながら、訓練に対しての不満を口にするのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1314
+ | Value=オーディションに合格したことに喜びを隠せないフレイア。<br/>ハヤテはその様子をからかいつつも、また一緒にいられることを喜んでいるようだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1315
+ | Value=大好きなアップルジュースを飲んでご機嫌なフレイア。<br/>額のルンもフレイアの感情に合わせて、ピッカピカに輝いている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1316
+ | Value=ハヤテとミラージュの2ショットや、数々の証言から何かを察するマキナに対し、<br/>ハヤテの話題にフレイアは激しく動揺してしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1317
+ | Value=緊急の案件に対し議論を深めるべく、カフェに集まったケイオスの女の子たち。<br/>議題は流行のファッションから話題のスイーツ、痴情のもつれなどなど…
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1318
+ | Value=VF-1を最新の技術で改良した機体で、エリシオンには訓練機として配備されている。<br/>形式番号はVF-1EX。コックピットに導入された「EX-ギア」が由来といわれている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1319
+ | Value=惑星ラグナに出店しているキノコをモチーフにしたカフェ。<br/>ワルキューレやケイオスの社員も度々利用しているようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1320
+ | Value=ラグナの街並みと海が一望できる高台。<br/>海から吹く風が心地良く、ウミネコのボスもお気に入りの場所らしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1321
+ | Value=フロンティア軍の目論見を阻止し、アイランド1に取り残された人々を救うため、<br/>そしてバジュラと対話を行い、無益な戦いに終止符を打つための戦いが始まった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1322
+ | Value=銀河の命運をかけた戦いに終止符を打つため、突撃を敢行するマクロス・クォーター。<br/>必殺のマクロス・キャノンで敵を薙ぎ払い、その機動力をいかんなく発揮する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1323
+ | Value=カタパルト上に現れたYF-29SPのコックピットからランカに敬礼を送るアルト。<br/>ランカはステージ上からサインを返すと、歌とともに出撃していくアルトを見送った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1324
+ | Value=最後の決戦を前に、ジェフリーは艦内放送を使用して総員に向けた演説を行った。<br/>それは絶望的な状況でありながらも、強い意志に満ち溢れるものだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1325
+ | Value=コントロールウェーブによるランカの歌への妨害を阻止するため、<br/>ジェフリーはアイランド1への突入と、フォールド発信ステーションの制圧を試みる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1326
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1327
+ | Value=敵陣への突撃に向けて、対Gシートに体を固定するボビー。<br/>特徴的なヘアーを整えると、オペレーション・ビッグ・ウェンズデーを実行した。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1328
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_1329
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    

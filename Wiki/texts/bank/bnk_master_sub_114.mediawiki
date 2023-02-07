@@ -1,0 +1,301 @@
+
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0530
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0531
+ | Value=みんなにプレゼントを配るのがサンタのお仕事。<br/>サンタ衣装に身を包んだマキナは、冬の寒さにも負けずに笑顔を見せる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0532
+ | Value=ほんのりと赤く染まった頬が、雪の上に立つ彼女の魅力を引き立てる。<br/>聖なる夜、プレゼントを届け終わるまでマキマキサンタのお仕事は終わらない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0533
+ | Value=フレイアへの誕生日プレゼントを選ぶハヤテとミラージュ。<br/>そして何故かそれを尾行するレイナたち。2人の様子を見てやけに嬉しそうである。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0534
+ | Value=急に恋愛の話題になり動揺するミラージュ。<br/>しかし、鈍感なハヤテはそれに気がついていないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0535
+ | Value=フレイアの誕生日パーティーに参加した美雲。<br/>自分は誕生日を祝ってもらった覚えがない…だから、興味があったのだという。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0536
+ | Value=喜ぶフレイアと満足げなハヤテ。仲睦まじい様子の2人を見て、ミラージュは微笑む。<br/>だが不意に彼女の頬を伝った一筋の涙が、嬉しさとは違う感情があることを示していた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0537
+ | Value=サプライズパーティーのことなどつゆ知らず、ぐっすりと眠るフレイア。<br/>一体どんな夢を見ているのか、その寝顔は笑みを浮かべていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0538
+ | Value=独立戦争が終わったあと、大変な時期を過ごしたというフレイア。<br/>そんなとき、辛さやさみしさを吹き飛ばしてくれたのは地球の音楽だった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0539
+ | Value=いきなり鳴り響いたクラッカーに驚くフレイア。<br/>入念に準備されたサプライズパーティーの幕開けだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0540
+ | Value=プレゼントに何を買っていいのかわからないというハヤテ。<br/>ミラージュを誘って一緒にお店を巡るようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0541
+ | Value=ホテルの一室を借り切って盛大に催されたミレーヌの誕生日パーティー。<br/>大きなリボンが特徴のドレスに、いつものような明るい笑顔がよく映えていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0542
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0543
+ | Value=出撃の前夜。ギターを抱えて、輝く夜景を前に歌い始めるバサラ。<br/>もう二度と会えないかもしれないが、レックスは想いを伝えずに夜の街へと消えていく。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0544
+ | Value=Fire Bomberをずっと支えてきたアキコは、彼らが戦いに出ることを悔やんでいた。<br/>そんなアキコに、レイは必ず無事に戻ると約束を交わす。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0545
+ | Value=仲間たちからおめでとう、おめでとうと声をかけられるミレーヌ。<br/>初めは笑って返していたミレーヌだったが、やがてその瞳から涙がこぼれ始める。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0546
+ | Value=誰もいなくなった会場で、ミレーヌに指輪を手渡したガムリン。<br/>「もしも私が生きて戻ったら、これを左手の薬指にはめてください」―ガムリン
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0547
+ | Value=戦場へ行ってしまう仲間たちのことを思って泣き出してしまうミレーヌ。<br/>そこにすっとバサラが現れて、彼なりの厳しくも優しい言葉をかけるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0548
+ | Value=自分だけが出撃メンバーから外されてしまったことに落胆するミレーヌ。<br/>それならみんなが戻ってくるまで、特別なライブを開こうとアキコは提案する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0549
+ | Value=プロトデビルンの潜む惑星への奇襲作戦。<br/>志願者のみで構成された少数精鋭の部隊で敢行される。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0550
+ | Value=出撃するメンバーたちがマックスの元へ向かったため、1人で練習をするミレーヌ。<br/>しかし寂しさのあまりか、途中で歌うのをやめてしまった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0551
+ | Value=手作りの案内状を作っていたのだというミレーヌ。<br/>その案内状は、もうすぐ開かれるミレーヌの誕生日パーティーのものらしい。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0552
+ | Value=誕生日パーティーの最後を飾るのは、Fire Bomberの特別ライブだった。<br/>しかし、どこか元気のないミレーヌは本調子ではないようだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0553
+ | Value=ミレーヌが手にした写真に写っていたのは、まだ若い頃のマックスとミリアの姿だった。<br/>喧嘩ばかりしている今とは違って、初々しさの残る姿が眩しく見える。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0554
+ | Value=かつてはゼントラーディ軍のエースであったミリア。<br/>マックスとの結婚を果たしてからは、地球人類の味方としてその腕を振るっている。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0555
+ | Value=自分を置いて出撃していく仲間たちを、たまらず追いかけてしまうミレーヌ。<br/>自分だけ待っているなんてできないと言い張る彼女に、ミリアは成長を感じるのだった。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0556
+ | Value=サウンドフォースの設立にあたり、ミレーヌはメンバーから外される予定であった。<br/>しかし、最終的にはレイの判断によってメンバーへの加入を果たした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0557
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0558
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0559
+ | Value=プロトデビルンとの決戦に際し、新たなバルキリーに搭乗して出撃したミリア。<br/>長く実戦からは離れていたはずだが、その腕はまだまだ衰えていない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0560
+ | Value=強大な敵を前にしても、強い決意で歌い続けるミレーヌ。<br/>わがままで子供っぽい性格だった彼女も、戦いの中で確かな成長を遂げていた。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0561
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0562
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0563
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0564
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0565
+ | Value=たくさんのチョコレートと、乙女心をくすぐる特製のコスチューム。<br/>めくるめく甘い世界の中心で、マキナがあなたを恋へと誘う。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0566
+ | Value=バレンタインデー当日、手作りのチョコレートを手渡してくれるシェリル。<br/>台所やシェリルの指の様子から伝わる努力に思わず胸が熱くなってしまう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0567
+ | Value=ときには戦場から離れて、穏やかにクッキーを焼くのも悪くない。<br/>大切な人への想いが詰まったお菓子なら、きっと喜んでもらえることだろう。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0568
+ | Value=バレンタイン当日、実際にチョコレートを渡すのは緊張が伴うもの。<br/>このときだけは、ランカもアイドルから1人の少女へと戻る。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0569
+ | Value=かわいらしい演出が魅力の、マキナのソロステージ。<br/>男性はもちろんのこと、女性のファンの姿も多く見受けられる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0570
+ | Value=最近、いい意味で歌に変化があると美雲に指摘されたフレイア。<br/>ハヤテが原因かと尋ねられて、少し恥ずかしそうに話題をそらした。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0571
+ | Value=再度立案された、惑星ヴォルドールへの潜入作戦。<br/>ウィンダミアの監視網を潜り抜けるため、ある秘策を実行するとアラドは語った。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0572
+ | Value=銀河ネットワークに配信されたワルキューレのライブ映像。<br/>お手元の端末でクリックしてね、と少し刺激的な動作でマキナが告げる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0573
+ | Value=自室でワルキューレのライブ映像を見ているロイド。<br/>彼女たちの持つ力に興味があるのだろうか。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0574
+ | Value=銀河ネットワークに対して、ライブ映像とともにウィルスを拡散する作戦が成功した。<br/>アーネスト艦長は作戦の続行を指示する。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0575
+ | Value=ロイドの自室にある眼鏡の数々。<br/>色も形もさまざまであるところに、彼のこだわりを感じる。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0576
+ | Value=武器商人を通じて戦力を拡充していくウィンダミア軍。<br/>今やその戦力は、辺境の軍と侮ることはできない。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0577
+ | Value=落ち着いた装いで大人のバレンタインデーを表現してみせるカナメ。<br/>恋もチョコレートも、少しの苦みこそが甘さを引き立ててくれるのだ。
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0578
+ | Value=
+ | ParentPage=Texts/Bank/master
+}}
+                    
+{{Texts/Bank/BankValue:
+ | Key=sn_dsc_0579
+ | Value=ラッピングされたチョコレートを手渡してくれるミレーヌ。<br/>よく見るとグババの顔がデザインされているこだわりの一品である。
+ | ParentPage=Texts/Bank/master
+}}
+                    
