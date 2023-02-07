@@ -272,7 +272,7 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG_DbSection
 	// // RVA: 0xD6EFB0 Offset: 0xD6EFB0 VA: 0xD6EFB0 Slot: 11
 	public override uint CAOGDCBPBAN()
     {
-        TodoLogger.Log(100, "TODO");
+        TodoLogger.Log(TodoLogger.DbIntegrityCheck, "DFHCLGPLJCP_Rules.CAOGDCBPBAN");
         return 0;
     }
 }

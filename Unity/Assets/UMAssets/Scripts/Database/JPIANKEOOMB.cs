@@ -134,7 +134,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	// RVA: 0x1BA7198 Offset: 0x1BA7198 VA: 0x1BA7198 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "Valkyrie CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "JPIANKEOOMB_Valkyrie.CAOGDCBPBAN");
 		return 0;
 	}
 

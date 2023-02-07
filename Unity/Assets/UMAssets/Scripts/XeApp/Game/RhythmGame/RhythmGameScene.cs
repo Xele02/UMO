@@ -23,7 +23,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			CNGFKOJANNP c = CNGFKOJANNP.HHCJCDFCLOB;
 			if(c != null)
-				c.IKHJJMKLAEP();
+				c.IKHJJMKLAEP_DisableAutoCheck();
 
 			GameManager.Instance.SetFPS(60);
 			enableFade = false;
@@ -66,7 +66,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(CNGFKOJANNP.HHCJCDFCLOB != null)
 			{
-				CNGFKOJANNP.HHCJCDFCLOB.KANPNADDJBK();
+				CNGFKOJANNP.HHCJCDFCLOB.KANPNADDJBK_EnableAutoCheck();
 			}
 			if (onChangeScene != null)
 				onChangeScene();

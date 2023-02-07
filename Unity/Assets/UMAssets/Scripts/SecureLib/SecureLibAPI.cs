@@ -77,9 +77,16 @@ namespace SecureLib
         // public static string getCodeDigest() { }
 
         // // RVA: 0x2E721D4 Offset: 0x2E721D4 VA: 0x2E721D4
-        // public static bool checkCodeDigest(string whiteList) { }
+        public static bool checkCodeDigest(string whiteList)
+		{
+			TodoLogger.Log(TodoLogger.SecureLibAPI, "SecureLibAPI.checkCodeDigest");
+			return false;
+		}
 
         // // RVA: 0x2E72254 Offset: 0x2E72254 VA: 0x2E72254
-        // public static bool isHooked() { }
+        public static bool isHooked()
+		{
+			return false;
+		}
     }
 }

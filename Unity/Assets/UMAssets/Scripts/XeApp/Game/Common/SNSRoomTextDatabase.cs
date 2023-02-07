@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace XeApp.Game.Common
 {
 	public class SNSRoomTextDatabase
@@ -15,7 +17,18 @@ namespace XeApp.Game.Common
 		// RVA: 0x138C2F8 Offset: 0x138C2F8 VA: 0x138C2F8
 		public void LoadFromBinaryTAR(CBBJHPBGBAJ_Archive tar)
 		{
-			TodoLogger.Log(0, "TODO");
+			StringBuilder str = new StringBuilder(256);
+			str.AppendFormat("{0}.bytes", s_path);
+			string a_path = str.ToString();
+			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
+			{
+				//0x138C6E8
+				return x.OPFGFINHFCE_Name.Contains(a_path);
+			});
+			if(file != null)
+			{
+				textData.Init(file.DBBGALAPFGC_Data, 0);
+			}
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x73AA64 Offset: 0x73AA64 VA: 0x73AA64

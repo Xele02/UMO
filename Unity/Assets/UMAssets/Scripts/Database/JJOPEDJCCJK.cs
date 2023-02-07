@@ -343,7 +343,7 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	// // RVA: 0x1357E44 Offset: 0x1357E44 VA: 0x1357E44 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "Exp CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "JJOPEDJCCJK_Exp.CAOGDCBPBAN");
 		return 0;
 	}
 }

@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Menu;
 using XeSys;
 
@@ -26,7 +27,10 @@ public class OEGIPPCADNA
 	//public int CDINKAANIAA { get; set; } 0x1B3C7CC AHHAOMGOPKA 0x1B3C7D4 OGJPMBDLJDA
 
 	//// RVA: 0x1B3C7D8 Offset: 0x1B3C7D8 VA: 0x1B3C7D8
-	//public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
+	{
+		HHCJCDFCLOB = this;
+	}
 
 	//// RVA: 0x1B3C83C Offset: 0x1B3C83C VA: 0x1B3C83C
 	//public List<int> IFHPGJGLPPF() { }

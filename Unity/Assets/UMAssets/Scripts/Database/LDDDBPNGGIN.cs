@@ -986,7 +986,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	// // RVA: 0xDA7BFC Offset: 0xDA7BFC VA: 0xDA7BFC Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "LDDDBPNGGIN_Game.CAOGDCBPBAN");
 		return 0;
 	}
 }

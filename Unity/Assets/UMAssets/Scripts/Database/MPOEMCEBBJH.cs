@@ -78,7 +78,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 	//// RVA: 0x17BCF34 Offset: 0x17BCF34 VA: 0x17BCF34 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "pilot CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "MPOEMCEBBJH_Pilot.CAOGDCBPBAN");
 		return 0;
 	}
 }

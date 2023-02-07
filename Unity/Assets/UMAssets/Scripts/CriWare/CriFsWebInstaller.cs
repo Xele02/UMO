@@ -75,7 +75,8 @@ namespace CriWare
 			{
 				CriDisposableObjectManager.Register(this, CriDisposableObjectManager.ModuleType.FsWeb);
 			}
-			throw new Exception("criFsWebInstaller_Create() failed.");
+			else
+				throw new Exception("criFsWebInstaller_Create() failed.");
         }
 
         // // RVA: 0x294DF48 Offset: 0x294DF48 VA: 0x294DF48 Slot: 1

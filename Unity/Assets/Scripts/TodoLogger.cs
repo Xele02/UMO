@@ -33,8 +33,10 @@ public static class TodoLogger
 	public static int CriAtomVolumes = _Todo;
 	public static int ToCheck = _Todo;
 	public static int Errors = _Todo;
+	public static int DbIntegrityCheck = _Todo;
 
 	public static int Popup = 0;
+	public static int Database = 0;
 
 	public static void Log(int priority, string str)
 	{

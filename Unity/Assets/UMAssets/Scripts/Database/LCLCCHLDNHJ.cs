@@ -345,7 +345,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 	// // RVA: 0xD9CEF8 Offset: 0xD9CEF8 VA: 0xD9CEF8 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "LCLCCHLDNHJ_Costume.CAOGDCBPBAN");
 		return 0;
 	}
 

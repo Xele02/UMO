@@ -88,7 +88,7 @@ public class IHGBPAJMJFK_Emblem : DIHHCBACKGG_DbSection
 	// RVA: 0x11FB248 Offset: 0x11FB248 VA: 0x11FB248 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "Emblem CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "IHGBPAJMJFK_Emblem.CAOGDCBPBAN");
 		return 0;
 	}
 

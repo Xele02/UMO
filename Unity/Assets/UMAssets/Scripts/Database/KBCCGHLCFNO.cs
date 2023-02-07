@@ -226,7 +226,7 @@ public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
 	// // RVA: 0x101A2BC Offset: 0x101A2BC VA: 0x101A2BC Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "MonthlyPass CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "KBCCGHLCFNO_MonthlyPass.CAOGDCBPBAN");
 		return 0;
 	}
 }

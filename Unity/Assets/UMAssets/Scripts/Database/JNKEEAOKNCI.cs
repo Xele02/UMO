@@ -768,7 +768,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	//// RVA: 0x1B97044 Offset: 0x1B97044 VA: 0x1B97044 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(0, "DB Skills CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "JNKEEAOKNCI_Skill.CAOGDCBPBAN");
 		return 0;
 	}
 }

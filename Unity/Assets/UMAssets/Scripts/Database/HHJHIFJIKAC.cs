@@ -96,7 +96,7 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 	// // RVA: 0x1831840 Offset: 0x1831840 VA: 0x1831840 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "BonusVc CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "HHJHIFJIKAC_BonusVc.CAOGDCBPBAN");
 		return 0;
 	}
 }

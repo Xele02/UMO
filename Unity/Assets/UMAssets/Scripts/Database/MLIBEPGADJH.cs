@@ -587,7 +587,7 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 	// // RVA: 0x1961F54 Offset: 0x1961F54 VA: 0x1961F54 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "MLIBEPGADJH_Scene.CAOGDCBPBAN");
 		return 0;
 	}
 

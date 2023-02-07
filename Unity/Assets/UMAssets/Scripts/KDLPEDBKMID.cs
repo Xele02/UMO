@@ -38,7 +38,7 @@ public class KDLPEDBKMID
 	private bool PICLIFPDEOF; // 0x28
 	private JEHIAIPJNJF_FileDownloader PMDNNKAPIKJ_FileDownloader; // 0x2C
 	private float FGCMHIPPDFL; // 0x34
-	private float LPHLENALMBE = 1.0f; // 0x38
+	private float LPHLENALMBE_InstallAutoWaitSec = 1.0f; // 0x38
 	private WaitForEndOfFrame CGHFIPJFFKD = new WaitForEndOfFrame(); // 0x3C
 	private static readonly string[] NFKOAFFBHOL = new string[13] {"snd/bgm/cs_bgm_tutorial.acb", 
 																	"snd/bgm/cs_bgm_tutorial.awb",
@@ -94,9 +94,13 @@ public class KDLPEDBKMID
 	public KDLPEDBKMID.PHKOILLPHGG CNDDKMJAIBG { get; set; } // 0x30 HMCLOEGDNBA HIGNHAEJKAH DFJLAMPMCMP
 
 	// // RVA: 0xE7D730 Offset: 0xE7D730 VA: 0xE7D730
-	public void OIKLOJMPBGA(int COGJONKKALB)
+	public void OIKLOJMPBGA_SetInstallAutoWait(int COGJONKKALB_TimeMs)
 	{
-		TodoLogger.Log(0, "TODO");
+		if (COGJONKKALB_TimeMs < 1)
+			COGJONKKALB_TimeMs = 0;
+		else if (COGJONKKALB_TimeMs > 1999)
+			COGJONKKALB_TimeMs = 2000;
+		LPHLENALMBE_InstallAutoWaitSec = COGJONKKALB_TimeMs * 1.0f / 1000;
 	}
 
 	// // RVA: 0xE7D768 Offset: 0xE7D768 VA: 0xE7D768
@@ -146,7 +150,7 @@ public class KDLPEDBKMID
 			{
 				if(CNDDKMJAIBG != KDLPEDBKMID.PHKOILLPHGG.ODFDIFNIFPC/*2*/)
 				{
-					if(Time.realtimeSinceStartup - FGCMHIPPDFL < LPHLENALMBE)
+					if(Time.realtimeSinceStartup - FGCMHIPPDFL < LPHLENALMBE_InstallAutoWaitSec)
 						return;
 				}
 				LFPOPKJMGKA = true;

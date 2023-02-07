@@ -87,7 +87,7 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 	// RVA: 0xCD22AC Offset: 0xCD22AC VA: 0xCD22AC Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(0, "AIPOFGJGPKI_CampaignDiva CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "AIPOFGJGPKI_CampaignDiva.CAOGDCBPBAN");
 		return 0;
 	}
 }

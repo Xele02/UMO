@@ -576,7 +576,7 @@ public class IOGKADECKOP
 		CNGFKOJANNP a = CNGFKOJANNP.HHCJCDFCLOB;
 		if(a != null)
 		{
-			a.EGDJHGIAFGO();
+			a.EGDJHGIAFGO_Start();
 		}
 		GameManager.Instance.fullscreenFader.Fade(0.5f, Color.black);
 		GameManager.Instance.RemovePushBackButtonHandler(this.GJLDMJFMIOD_OnPushBackButton);

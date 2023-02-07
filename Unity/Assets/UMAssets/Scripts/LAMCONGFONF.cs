@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Menu;
 
 public class LAMCONGFONF
@@ -25,7 +26,10 @@ public class LAMCONGFONF
 	public static LAMCONGFONF HHCJCDFCLOB { get; private set; } // 0x0 NKACBOEHELJ OKPMHKNCNAL
 
 	//// RVA: 0xD907F8 Offset: 0xD907F8 VA: 0xD907F8
-	//public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE) { }
+	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
+	{
+		HHCJCDFCLOB = this;
+	}
 
 	//// RVA: 0xD9085C Offset: 0xD9085C VA: 0xD9085C
 	//public bool ECKDEPDMHGP() { }

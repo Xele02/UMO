@@ -374,7 +374,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	//// RVA: 0x17CB474 Offset: 0x17CB474 VA: 0x17CB474 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(0, "NBPHJDCOECH_Drop CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "NBPHJDCOECH_Drop.CAOGDCBPBAN");
 		return 0;
 	}
 

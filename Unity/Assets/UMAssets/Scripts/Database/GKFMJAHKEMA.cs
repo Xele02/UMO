@@ -524,7 +524,7 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 	//// RVA: 0xAB1180 Offset: 0xAB1180 VA: 0xAB1180 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "ValSkill CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "GKFMJAHKEMA_ValSkill.CAOGDCBPBAN");
 		return 0;
 	}
 }

@@ -405,7 +405,7 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 	// // RVA: 0x1131470 Offset: 0x1131470 VA: 0x1131470 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "KOGHKIODHPA_Board.CAOGDCBPBAN");
 		return 0;
 	}
 }

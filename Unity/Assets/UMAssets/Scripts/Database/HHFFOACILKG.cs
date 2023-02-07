@@ -93,7 +93,7 @@ public class HHFFOACILKG_Medal : DIHHCBACKGG_DbSection
 	// RVA: 0x1759568 Offset: 0x1759568 VA: 0x1759568 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(0, "CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "HHFFOACILKG_Medal.CAOGDCBPBAN");
 		return 0;
 	}
 }

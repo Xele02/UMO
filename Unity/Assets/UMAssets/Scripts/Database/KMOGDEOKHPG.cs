@@ -176,7 +176,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	// // RVA: 0x11201C0 Offset: 0x11201C0 VA: 0x11201C0 Slot: 11
 	public override uint CAOGDCBPBAN()
     {
-        TodoLogger.Log(0, "CAOGDCBPBAN");
+        TodoLogger.Log(TodoLogger.DbIntegrityCheck, "KMOGDEOKHPG_Episode.CAOGDCBPBAN");
         return 0;
     }
 }

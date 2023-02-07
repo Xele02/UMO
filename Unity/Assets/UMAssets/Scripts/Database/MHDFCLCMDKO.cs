@@ -97,7 +97,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 	// // RVA: 0x132B5F8 Offset: 0x132B5F8 VA: 0x132B5F8 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "Energy CAOGDCBPBAN");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "MHDFCLCMDKO_Enemy.CAOGDCBPBAN");
 		return 0;
 	}
 }
