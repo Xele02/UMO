@@ -366,64 +366,64 @@ public class OKGLGHCBCJP_Database
 		{(int)BEOKNKGHFFE_Section.IEICONEHLFE_EventBattleA,() => { return new ICFLJACCIKF_EventBattle(); } }, //0x149E2EC				"event_battle_a",
 		{(int)BEOKNKGHFFE_Section.CJLAEPKNNJE_EventBattleB,() => { return new ICFLJACCIKF_EventBattle(); } }, //0x149E358				"event_battle_b",
 		{(int)BEOKNKGHFFE_Section.MPCNKNCKBAE_EventBattleC,() => { return new ICFLJACCIKF_EventBattle(); } }, //0x149E3C4				"event_battle_c",
-		{(int)BEOKNKGHFFE_Section.COFHBPGDPML_EventBoxGachaA,() => { return new IMDBGDNPLJA(); } }, //0x149E430				"event_box_gacha_a",
-		{(int)BEOKNKGHFFE_Section.BHJGBPLKMBK_EventBoxGachaB,() => { return new IMDBGDNPLJA(); } }, //0x149E49C				"event_box_gacha_b",
-		{(int)BEOKNKGHFFE_Section.AHDKIFOPEHM_EventBoxGachaC,() => { return new IMDBGDNPLJA(); } }, //0x149E508				"event_box_gacha_c",
-		{(int)BEOKNKGHFFE_Section.LLEDCLGDDCD_EventBoxGachaD,() => { return new IMDBGDNPLJA(); } }, //0x149E574				"event_box_gacha_d",
-		{(int)BEOKNKGHFFE_Section.ACNPHHGCHAF_EventBoxGachaE,() => { return new IMDBGDNPLJA(); } }, //0x149E5E0				"event_box_gacha_e",
-		{(int)BEOKNKGHFFE_Section.FEICGBHOIPB_EventBoxGachaF,() => { return new IMDBGDNPLJA(); } }, //0x149E64C				"event_box_gacha_f",
-		{(int)BEOKNKGHFFE_Section.OAOKLHCDPON_EventCollectionA,() => { return new PHBACNMCMHG(); } }, //0x149E6B8				"event_collection_a",
-		{(int)BEOKNKGHFFE_Section.GGKFEJFMNGP_EventCollectionB,() => { return new PHBACNMCMHG(); } }, //0x149E724				"event_collection_b",
-		{(int)BEOKNKGHFFE_Section.LLHBBEMKIGD_EventCollectionC,() => { return new PHBACNMCMHG(); } }, //0x149E790				"event_collection_c",
-		{(int)BEOKNKGHFFE_Section.HJDJGMNAJFJ_EventGachaTicket,() => { return new JNGINLMOJKH(); } }, //0x149E7FC				"event_gacha_ticket",
-		{(int)BEOKNKGHFFE_Section.MBMNNEODFFP_EventGoDivaA,() => { return new LNELCMNJPIC(); } }, //0x149E868				"event_godiva_a",
-		{(int)BEOKNKGHFFE_Section.NLIBPDOHAPH_EventGoDivaB,() => { return new LNELCMNJPIC(); } }, //0x149E8D4				"event_godiva_b",
-		{(int)BEOKNKGHFFE_Section.JLGODHLEBMK_EventGoDivaC,() => { return new LNELCMNJPIC(); } }, //0x149E940				"event_godiva_c",
-		{(int)BEOKNKGHFFE_Section.OFAAHIINGFD_EventGoDivaRanking,() => { return new JPJGOECJFEE(); } }, //0x149E9AC				"event_godiva_ranking",
-		{(int)BEOKNKGHFFE_Section.OFGFNFAJHFE_eventItem,() => { return new HGLPLKKBBOL(); } }, //0x149EA18				"event_item",
-		{(int)BEOKNKGHFFE_Section.DCBIDPBJHOC_EventMissionA,() => { return new ACBAHDMEFFL(); } }, //0x149EA84				"event_mission_a",
-		{(int)BEOKNKGHFFE_Section.BNCLLKEHEFH_EventMissionB,() => { return new ACBAHDMEFFL(); } }, //0x149EAF0				"event_mission_b",
-		{(int)BEOKNKGHFFE_Section.BDGKKLAAJJB_EventMissionC,() => { return new ACBAHDMEFFL(); } }, //0x149EB5C				"event_mission_c",
-		{(int)BEOKNKGHFFE_Section.CLKOFJKPPEP_EventPresentCampaignA,() => { return new HIADOIECMFP(); } }, //0x149EBC8				"event_present_campaign_a",
-		{(int)BEOKNKGHFFE_Section.DCEHHGDDBPP_EventRaidA,() => { return new BKOGPDBKFFJ(); } }, //0x149EC34				"event_raid_a",
-		{(int)BEOKNKGHFFE_Section.PLNOKLOLJEP_EventRaidB,() => { return new BKOGPDBKFFJ(); } }, //0x149ECA0				"event_raid_b",
-		{(int)BEOKNKGHFFE_Section.IJEIEHHAJNM_EventRaidC,() => { return new BKOGPDBKFFJ(); } }, //0x149ED0C				"event_raid_c",
-		{(int)BEOKNKGHFFE_Section.DMKFEJGOELJ_EventRaidD,() => { return new BKOGPDBKFFJ(); } }, //0x149ED78				"event_raid_d",
-		{(int)BEOKNKGHFFE_Section.IEBPINPALBD_EventRaidLobbyA,() => { return new LDEBIBGHCGD(); } }, //0x149EDE4				"event_raidlobby_a",
-		{(int)BEOKNKGHFFE_Section.CHNHFHCEKGN_EventRaidLobbyB,() => { return new LDEBIBGHCGD(); } }, //0x149EE50				"event_raidlobby_b",
-		{(int)BEOKNKGHFFE_Section.FCAJCEOCDFF_EventRaidLobbyC,() => { return new LDEBIBGHCGD(); } }, //0x149EEBC				"event_raidlobby_c",
-		{(int)BEOKNKGHFFE_Section.IJOLIEAOOJC_EventRaidLobbyD,() => { return new LDEBIBGHCGD(); } }, //0x149EF28				"event_raidlobby_d",
-		{(int)BEOKNKGHFFE_Section.MDAEJLJPIHN_EventRaidItem,() => { return new NKBOMKGFGIO(); } }, //0x149EF94				"event_raid_item",
-		{(int)BEOKNKGHFFE_Section.OJAHCPGNPDB_EventQuestA,() => { return new LMBBEGIAKAD(); } }, //0x149F000				"event_quest_a",
-		{(int)BEOKNKGHFFE_Section.KGJMEGLKJDM_EventQuestB,() => { return new LMBBEGIAKAD(); } }, //0x149F06C				"event_quest_b",
-		{(int)BEOKNKGHFFE_Section.LNBMDELKFHI_EventQuestC,() => { return new LMBBEGIAKAD(); } }, //0x149F0D8				"event_quest_c",
-		{(int)BEOKNKGHFFE_Section.FMHLCBNFAOC_EventScoreA,() => { return new HIHJGPDLNDN(); } }, //0x149F144				"event_score_a",
-		{(int)BEOKNKGHFFE_Section.LCJACACCKFC_EventScoreB,() => { return new HIHJGPDLNDN(); } }, //0x149F1B0				"event_score_b",
-		{(int)BEOKNKGHFFE_Section.BPOFGIDPMBF_EventScoreC,() => { return new HIHJGPDLNDN(); } }, //0x149F21C				"event_score_c",
-		{(int)BEOKNKGHFFE_Section.JPNKKKOHHLG_EventScoreD,() => { return new HIHJGPDLNDN(); } }, //0x149F288				"event_score_d",
-		{(int)BEOKNKGHFFE_Section.ECHHEGJOHGI_EventScoreE,() => { return new HIHJGPDLNDN(); } }, //0x149F2F4				"event_score_e",
-		{(int)BEOKNKGHFFE_Section.NLDGAHCIPAE_EventScoreF,() => { return new HIHJGPDLNDN(); } }, //0x149F360				"event_score_f",
-		{(int)BEOKNKGHFFE_Section.MHGPKDOPEDJ_EventSpA,() => { return new HIHJGPDLNDN(); } }, //0x149F3CC				"event_sp_a",
-		{(int)BEOKNKGHFFE_Section.AMGKNGLDHMG_EventTicket,() => { return new OEIJEFBBJBD(); } }, //0x149F438				"event_ticket",
-		{(int)BEOKNKGHFFE_Section.BKEKCFONNBG_EventWeekDay,() => { return new DKCJADHKGAN(); } }, //0x149F4A4				"event_weekday",
-		{(int)BEOKNKGHFFE_Section.JLNNFLCLGBM_EventStory,() => { return new FBIOJHECAHB(); } }, //0x149F510				"event_story",
+		{(int)BEOKNKGHFFE_Section.COFHBPGDPML_EventBoxGachaA,() => { return new IMDBGDNPLJA_EventBoxGacha(); } }, //0x149E430				"event_box_gacha_a",
+		{(int)BEOKNKGHFFE_Section.BHJGBPLKMBK_EventBoxGachaB,() => { return new IMDBGDNPLJA_EventBoxGacha(); } }, //0x149E49C				"event_box_gacha_b",
+		{(int)BEOKNKGHFFE_Section.AHDKIFOPEHM_EventBoxGachaC,() => { return new IMDBGDNPLJA_EventBoxGacha(); } }, //0x149E508				"event_box_gacha_c",
+		{(int)BEOKNKGHFFE_Section.LLEDCLGDDCD_EventBoxGachaD,() => { return new IMDBGDNPLJA_EventBoxGacha(); } }, //0x149E574				"event_box_gacha_d",
+		{(int)BEOKNKGHFFE_Section.ACNPHHGCHAF_EventBoxGachaE,() => { return new IMDBGDNPLJA_EventBoxGacha(); } }, //0x149E5E0				"event_box_gacha_e",
+		{(int)BEOKNKGHFFE_Section.FEICGBHOIPB_EventBoxGachaF,() => { return new IMDBGDNPLJA_EventBoxGacha(); } }, //0x149E64C				"event_box_gacha_f",
+		{(int)BEOKNKGHFFE_Section.OAOKLHCDPON_EventCollectionA,() => { return new PHBACNMCMHG_EventCollection(); } }, //0x149E6B8				"event_collection_a",
+		{(int)BEOKNKGHFFE_Section.GGKFEJFMNGP_EventCollectionB,() => { return new PHBACNMCMHG_EventCollection(); } }, //0x149E724				"event_collection_b",
+		{(int)BEOKNKGHFFE_Section.LLHBBEMKIGD_EventCollectionC,() => { return new PHBACNMCMHG_EventCollection(); } }, //0x149E790				"event_collection_c",
+		{(int)BEOKNKGHFFE_Section.HJDJGMNAJFJ_EventGachaTicket,() => { return new JNGINLMOJKH_EventGachaTicket(); } }, //0x149E7FC				"event_gacha_ticket",
+		{(int)BEOKNKGHFFE_Section.MBMNNEODFFP_EventGoDivaA,() => { return new LNELCMNJPIC_EventGoDiva(); } }, //0x149E868				"event_godiva_a",
+		{(int)BEOKNKGHFFE_Section.NLIBPDOHAPH_EventGoDivaB,() => { return new LNELCMNJPIC_EventGoDiva(); } }, //0x149E8D4				"event_godiva_b",
+		{(int)BEOKNKGHFFE_Section.JLGODHLEBMK_EventGoDivaC,() => { return new LNELCMNJPIC_EventGoDiva(); } }, //0x149E940				"event_godiva_c",
+		{(int)BEOKNKGHFFE_Section.OFAAHIINGFD_EventGoDivaRanking,() => { return new JPJGOECJFEE_EventGoDivaRanking(); } }, //0x149E9AC				"event_godiva_ranking",
+		{(int)BEOKNKGHFFE_Section.OFGFNFAJHFE_EventItem,() => { return new HGLPLKKBBOL_EventItem(); } }, //0x149EA18				"event_item",
+		{(int)BEOKNKGHFFE_Section.DCBIDPBJHOC_EventMissionA,() => { return new ACBAHDMEFFL_EventMission(); } }, //0x149EA84				"event_mission_a",
+		{(int)BEOKNKGHFFE_Section.BNCLLKEHEFH_EventMissionB,() => { return new ACBAHDMEFFL_EventMission(); } }, //0x149EAF0				"event_mission_b",
+		{(int)BEOKNKGHFFE_Section.BDGKKLAAJJB_EventMissionC,() => { return new ACBAHDMEFFL_EventMission(); } }, //0x149EB5C				"event_mission_c",
+		{(int)BEOKNKGHFFE_Section.CLKOFJKPPEP_EventPresentCampaignA,() => { return new HIADOIECMFP_EventPresentCampaign(); } }, //0x149EBC8				"event_present_campaign_a",
+		{(int)BEOKNKGHFFE_Section.DCEHHGDDBPP_EventRaidA,() => { return new BKOGPDBKFFJ_EventRaid(); } }, //0x149EC34				"event_raid_a",
+		{(int)BEOKNKGHFFE_Section.PLNOKLOLJEP_EventRaidB,() => { return new BKOGPDBKFFJ_EventRaid(); } }, //0x149ECA0				"event_raid_b",
+		{(int)BEOKNKGHFFE_Section.IJEIEHHAJNM_EventRaidC,() => { return new BKOGPDBKFFJ_EventRaid(); } }, //0x149ED0C				"event_raid_c",
+		{(int)BEOKNKGHFFE_Section.DMKFEJGOELJ_EventRaidD,() => { return new BKOGPDBKFFJ_EventRaid(); } }, //0x149ED78				"event_raid_d",
+		{(int)BEOKNKGHFFE_Section.IEBPINPALBD_EventRaidLobbyA,() => { return new LDEBIBGHCGD_EventRaidLobby(); } }, //0x149EDE4				"event_raidlobby_a",
+		{(int)BEOKNKGHFFE_Section.CHNHFHCEKGN_EventRaidLobbyB,() => { return new LDEBIBGHCGD_EventRaidLobby(); } }, //0x149EE50				"event_raidlobby_b",
+		{(int)BEOKNKGHFFE_Section.FCAJCEOCDFF_EventRaidLobbyC,() => { return new LDEBIBGHCGD_EventRaidLobby(); } }, //0x149EEBC				"event_raidlobby_c",
+		{(int)BEOKNKGHFFE_Section.IJOLIEAOOJC_EventRaidLobbyD,() => { return new LDEBIBGHCGD_EventRaidLobby(); } }, //0x149EF28				"event_raidlobby_d",
+		{(int)BEOKNKGHFFE_Section.MDAEJLJPIHN_EventRaidItem,() => { return new NKBOMKGFGIO_EventRaidItem(); } }, //0x149EF94				"event_raid_item",
+		{(int)BEOKNKGHFFE_Section.OJAHCPGNPDB_EventQuestA,() => { return new LMBBEGIAKAD_EventQuest(); } }, //0x149F000				"event_quest_a",
+		{(int)BEOKNKGHFFE_Section.KGJMEGLKJDM_EventQuestB,() => { return new LMBBEGIAKAD_EventQuest(); } }, //0x149F06C				"event_quest_b",
+		{(int)BEOKNKGHFFE_Section.LNBMDELKFHI_EventQuestC,() => { return new LMBBEGIAKAD_EventQuest(); } }, //0x149F0D8				"event_quest_c",
+		{(int)BEOKNKGHFFE_Section.FMHLCBNFAOC_EventScoreA,() => { return new HIHJGPDLNDN_EventScore(); } }, //0x149F144				"event_score_a",
+		{(int)BEOKNKGHFFE_Section.LCJACACCKFC_EventScoreB,() => { return new HIHJGPDLNDN_EventScore(); } }, //0x149F1B0				"event_score_b",
+		{(int)BEOKNKGHFFE_Section.BPOFGIDPMBF_EventScoreC,() => { return new HIHJGPDLNDN_EventScore(); } }, //0x149F21C				"event_score_c",
+		{(int)BEOKNKGHFFE_Section.JPNKKKOHHLG_EventScoreD,() => { return new HIHJGPDLNDN_EventScore(); } }, //0x149F288				"event_score_d",
+		{(int)BEOKNKGHFFE_Section.ECHHEGJOHGI_EventScoreE,() => { return new HIHJGPDLNDN_EventScore(); } }, //0x149F2F4				"event_score_e",
+		{(int)BEOKNKGHFFE_Section.NLDGAHCIPAE_EventScoreF,() => { return new HIHJGPDLNDN_EventScore(); } }, //0x149F360				"event_score_f",
+		{(int)BEOKNKGHFFE_Section.MHGPKDOPEDJ_EventSpA,() => { return new HIHJGPDLNDN_EventScore(); } }, //0x149F3CC				"event_sp_a",
+		{(int)BEOKNKGHFFE_Section.AMGKNGLDHMG_EventTicket,() => { return new OEIJEFBBJBD_EventTicket(); } }, //0x149F438				"event_ticket",
+		{(int)BEOKNKGHFFE_Section.BKEKCFONNBG_EventWeekDay,() => { return new DKCJADHKGAN_EventWeekDay(); } }, //0x149F4A4				"event_weekday",
+		{(int)BEOKNKGHFFE_Section.JLNNFLCLGBM_EventStory,() => { return new FBIOJHECAHB_EventStory(); } }, //0x149F510				"event_story",
 		{(int)BEOKNKGHFFE_Section.MHNJLGONIPK_Exp,() => { return new JJOPEDJCCJK_Exp(); } }, //0x149F57C					"exp",
-		{(int)BEOKNKGHFFE_Section.FPFHPCDNIDN_GachaLimit,() => { return new BIHCALIAJII(); } }, //0x149F5E8				"gacha_limit",
+		{(int)BEOKNKGHFFE_Section.FPFHPCDNIDN_GachaLimit,() => { return new BIHCALIAJII_GachaLimit(); } }, //0x149F5E8				"gacha_limit",
 		{(int)BEOKNKGHFFE_Section.OJFINMGAFPG_GachaTicket,() => { return new PMDCIJMMNGK_GachaTicket(); } }, //0x149F654					"gacha_ticket",
 		{(int)BEOKNKGHFFE_Section.HJBCLCJIAMN_Game,() => { return new LDDDBPNGGIN_Game(); } }, //0x149F6C0					"game",
 		{(int)BEOKNKGHFFE_Section.JOMKJEEEGLM_GrowItem,() => { return new KEEKEFEPKFN_GrowItem(); } }, //0x149F72C				"grow_item",
-		{(int)BEOKNKGHFFE_Section.MGLIHABHABA_HelpBrowser,() => { return new KCDJCKCKKFM(); } }, //0x149F798				"help_browser",
-		{(int)BEOKNKGHFFE_Section.JHIAPFBBCCJ_HomeBg,() => { return new ALJHJDHNFFB(); } }, //0x149F804				"home_bg",
-		{(int)BEOKNKGHFFE_Section.FLANCIJMJHP_HomePickup,() => { return new JJCJKALEIAC(); } }, //0x149F870				"home_pickup",
-		{(int)BEOKNKGHFFE_Section.BKGFKGIGJNL_HomeVoice,() => { return new NPCCDMKJBMM(); } }, //0x149F8DC				"home_voice",
-		{(int)BEOKNKGHFFE_Section.NLIJGKHKMII_RichBanner,() => { return new JKMLBONMAHD(); } }, //0x149F948				"rich_banner",
+		{(int)BEOKNKGHFFE_Section.MGLIHABHABA_HelpBrowser,() => { return new KCDJCKCKKFM_HelpBrowser(); } }, //0x149F798				"help_browser",
+		{(int)BEOKNKGHFFE_Section.JHIAPFBBCCJ_HomeBg,() => { return new ALJHJDHNFFB_HomeBg(); } }, //0x149F804				"home_bg",
+		{(int)BEOKNKGHFFE_Section.FLANCIJMJHP_HomePickup,() => { return new JJCJKALEIAC_HomePickup(); } }, //0x149F870				"home_pickup",
+		{(int)BEOKNKGHFFE_Section.BKGFKGIGJNL_HomeVoice,() => { return new NPCCDMKJBMM_HomeVoice(); } }, //0x149F8DC				"home_voice",
+		{(int)BEOKNKGHFFE_Section.NLIJGKHKMII_RichBanner,() => { return new JKMLBONMAHD_RichBanner(); } }, //0x149F948				"rich_banner",
 		{(int)BEOKNKGHFFE_Section.CLAMLDCILJO_Intimacy,() => { return new GJALOMELEHD_Intimacy(); } }, //0x149F9B4					"intimacy",
 		{(int)BEOKNKGHFFE_Section.FONDIJMKCAJ_LimitOver,() => { return new LLKLAKGKNLD_LimitOver(); } }, //0x149FA20				"limit_over",
-		{(int)BEOKNKGHFFE_Section.KPBNAHEIJIC_LimitedItem,() => { return new EGLOKAEIHCB(); } }, //0x149FA8C				"limited_item",
+		{(int)BEOKNKGHFFE_Section.KPBNAHEIJIC_LimitedItem,() => { return new EGLOKAEIHCB_LimitedItem(); } }, //0x149FA8C				"limited_item",
 		{(int)BEOKNKGHFFE_Section.ECEDGCHFCEF_Medal,() => { return new HHFFOACILKG_Medal(); } }, //0x149FAF8				"medal",
 		{(int)BEOKNKGHFFE_Section.HOBIIBFBMKJ_MonthlyPass,() => { return new KBCCGHLCFNO_MonthlyPass(); } }, //0x149FB64					"monthly_pass",
 		{(int)BEOKNKGHFFE_Section.CHOGKKCHBCJ_Music,() => { return new LPPGENBEECK_MusicMaster(); } }, //0x149FBD0		"music",
-		{(int)BEOKNKGHFFE_Section.JMJMNDKFOIF_MvTicket,() => { return new GJAEGCMKMEK(); } }, //0x149FC3C				"mv_ticket",
+		{(int)BEOKNKGHFFE_Section.JMJMNDKFOIF_MvTicket,() => { return new GJAEGCMKMEK_MvTicket(); } }, //0x149FC3C				"mv_ticket",
 		{(int)BEOKNKGHFFE_Section.LNCIOFKDBHD_Offer,() => { return new LGHIPHEDCNC(); } }, //0x149FCA8				"offer",
 		{(int)BEOKNKGHFFE_Section.GPEFCGBGIHD_Pilot,() => { return new MPOEMCEBBJH_Pilot(); } }, //0x149FD14				"pilot",
 		{(int)BEOKNKGHFFE_Section.JFDOPKICHPJ_PresentItem,() => { return new MDACFBPPIHD(); } }, //0x149FD80				"present_item",
@@ -473,30 +473,30 @@ public class OKGLGHCBCJP_Database
 	public JKDKODAPGBJ_EnergyItem KOPOGNLKAEN_EnergyItem { get; private set; } // 0x68 DACOHEDKLPD AEOJDBAPOEN PABHKGHLLLJ
 	public KIICLPJJBNL_EpiItem NEGGMILDEEF_EpiItem { get; private set; } // 0x6C EEAPHFKEOOP EPDABADJFBH CFGCGOGNBMM
 	public KMOGDEOKHPG_Episode MOLEPBNJAGE_Episode { get; private set; } // 0x70 PKELMNGHNJI GJAGLJAIAGC ECGGGFGFEOH
-	public JNGINLMOJKH NKOKFIMNCJM { get; private set; } // 0x74 OOLBNNCGINP CHGCEALBNFF BDBOOJDGKFP
-	public JPJGOECJFEE EFHMLHKODOD { get; private set; } // 0x78 KAOFKMKMDPH PAGHOGPONBK AODLPJLNDBK
-	public HGLPLKKBBOL DHOFNBMPBAG { get; private set; } // 0x7C HLPDMEMHECG ILMEKLNLPND HMDGNIKNDKM
-	public NKBOMKGFGIO ONOJBMDKBLE { get; private set; } // 0x80 OLLFECMFKIC JOKCENNIGCE IJCDMHJCMBO
+	public JNGINLMOJKH_EventGachaTicket NKOKFIMNCJM { get; private set; } // 0x74 OOLBNNCGINP CHGCEALBNFF BDBOOJDGKFP
+	public JPJGOECJFEE_EventGoDivaRanking EFHMLHKODOD { get; private set; } // 0x78 KAOFKMKMDPH PAGHOGPONBK AODLPJLNDBK
+	public HGLPLKKBBOL_EventItem DHOFNBMPBAG { get; private set; } // 0x7C HLPDMEMHECG ILMEKLNLPND HMDGNIKNDKM
+	public NKBOMKGFGIO_EventRaidItem ONOJBMDKBLE { get; private set; } // 0x80 OLLFECMFKIC JOKCENNIGCE IJCDMHJCMBO
 	public ABBOEIPOBLJ KHPOJKHKLEM { get; private set; } // 0x84 MOKKFOJJBOL GPOGPBKFNLJ DILCIJAHIOB
-	public DKCJADHKGAN CLLPBOPLICM { get; private set; } // 0x88 FNJBPMENMGD GFEDAIKEGGC AIDDOHHKJGG
-	public FBIOJHECAHB NBEMLGADAGK { get; private set; } // 0x8C DCKAOHBMJLM INDINPLHFPO CJBHGJLJBNJ
+	public DKCJADHKGAN_EventWeekDay CLLPBOPLICM { get; private set; } // 0x88 FNJBPMENMGD GFEDAIKEGGC AIDDOHHKJGG
+	public FBIOJHECAHB_EventStory NBEMLGADAGK { get; private set; } // 0x8C DCKAOHBMJLM INDINPLHFPO CJBHGJLJBNJ
 	public JJOPEDJCCJK_Exp FMPEMFPLPDA_Exp { get; private set; } // 0x90 NFHAGPKJMCM JBOGJKMKPHB LJNHCFIIOBB
-	public BIHCALIAJII OINLLHOMEAK { get; private set; } // 0x94 NFNMMHLNOME ACMDICBGLLH AECOJNDBPPA
+	public BIHCALIAJII_GachaLimit OINLLHOMEAK { get; private set; } // 0x94 NFNMMHLNOME ACMDICBGLLH AECOJNDBPPA
 	public PMDCIJMMNGK_GachaTicket GKMAHADAAFI_GachaTicket { get; private set; } // 0x98 CDPNLBODAFG MIOKEFPFJPL JCGBPLBDCED
 	public LDDDBPNGGIN_Game HNMMJINNHII_Game { get; private set; } // 0x9C OEGOKKFEMLN // NNKOOANMMJN FDBLNEBHBKD
 	public KEEKEFEPKFN_GrowItem NKDGLGCAPEI_GrowItem { get; private set; } // 0xA0 OEBKCKBOHDC GKNAKMMFPJG FPNMNKOHIDL
-	public KCDJCKCKKFM LOJAMHAADBF { get; private set; } // 0xA4 PHJBEOHOPNK BEONJGJAHHA GKIMOCCMPNE
-	public ALJHJDHNFFB PFEKKPABPKL { get; private set; } // 0xA8 ODEEPLDCIDD CJNCHHCJDLG EJKAKGDGDOJ
-	public JJCJKALEIAC NFDHMGGLEPN { get; private set; } // 0xAC GGHPDLEFLAF KFBIAJPDFOL BLPBJMIOOHJ
-	public NPCCDMKJBMM MGIMEEEALPK { get; private set; } // 0xB0 IIGKAHAPDCK EMOJEAIPDCL KJJAAHMMPDD
-	public JKMLBONMAHD MLGEHCJPAFB { get; private set; } // 0xB4 DIOBCOIDGBL KLENJIKKNGL MCEKLAONFOO
+	public KCDJCKCKKFM_HelpBrowser LOJAMHAADBF { get; private set; } // 0xA4 PHJBEOHOPNK BEONJGJAHHA GKIMOCCMPNE
+	public ALJHJDHNFFB_HomeBg PFEKKPABPKL { get; private set; } // 0xA8 ODEEPLDCIDD CJNCHHCJDLG EJKAKGDGDOJ
+	public JJCJKALEIAC_HomePickup NFDHMGGLEPN { get; private set; } // 0xAC GGHPDLEFLAF KFBIAJPDFOL BLPBJMIOOHJ
+	public NPCCDMKJBMM_HomeVoice MGIMEEEALPK { get; private set; } // 0xB0 IIGKAHAPDCK EMOJEAIPDCL KJJAAHMMPDD
+	public JKMLBONMAHD_RichBanner MLGEHCJPAFB { get; private set; } // 0xB4 DIOBCOIDGBL KLENJIKKNGL MCEKLAONFOO
 	public GJALOMELEHD_Intimacy KDIALKDKBGE_Intimacy { get; private set; } // 0xB8 AJILIAMLKCN OHOFMNKPACI AJNFIOMEBPE
 	public LLKLAKGKNLD_LimitOver HDGOHBFKKDM_LimitOver { get; private set; } // 0xBC GOCPJPDCIFF HNHCBNDJBIL OMHPACMOBMD
-	public EGLOKAEIHCB IHPFCIJKFIC { get; private set; } // 0xC0 DLCGGEGFOFM BKAPBBKJELI MINMKCJFHDG
+	public EGLOKAEIHCB_LimitedItem IHPFCIJKFIC { get; private set; } // 0xC0 DLCGGEGFOFM BKAPBBKJELI MINMKCJFHDG
 	public HHFFOACILKG_Medal ICICKEBMEFA_Medal { get; private set; } // 0xC4 BLEKIIHCAEL ECAMAOEFEJK IEOJCBOIKPN
 	public KBCCGHLCFNO_MonthlyPass MEGJDBJCEOC_MonthlyPass { get; private set; } // 0xC8 LAJCNNENFPJ MIALNGOCOPJ NABHFEAEHFH
 	public LPPGENBEECK_MusicMaster IBPAFKKEKNK_Music { get; private set; } // 0xCC CKFEJCIKLAE AHENIIKNNJF HMKLOBHNMMI
-	public GJAEGCMKMEK NEGKEEAFKHP { get; private set; } // 0xD0 NFCPFDJHNFE HEMDMBJABPN EJFOCHNEPKD
+	public GJAEGCMKMEK_MvTicket NEGKEEAFKHP { get; private set; } // 0xD0 NFCPFDJHNFE HEMDMBJABPN EJFOCHNEPKD
 	public LGHIPHEDCNC LBCMJGOOHLJ { get; private set; } // 0xD4 NAAKJHEPHGP NFGKMIAHJHD FMJANBICBME
 	public MPOEMCEBBJH_Pilot OBGGLAKOHKP_Pilot { get; private set; } // 0xD8 AHLBGPDJMCC PLOCKLBILGJ CFGIBLPKPOH
 	public MDACFBPPIHD LPFEHNJEJFB { get; private set; } // 0xDC HFOPPMPKKFL BCAGHHBCENF FKMAMMGADKI
@@ -793,30 +793,30 @@ public class OKGLGHCBCJP_Database
 					case BEOKNKGHFFE_Section.JBFFIPCOGEC_EnergyItem: KOPOGNLKAEN_EnergyItem = (JKDKODAPGBJ_EnergyItem)item; break;
 					case BEOKNKGHFFE_Section.BBDKHAMANCB_Episode: MOLEPBNJAGE_Episode = (KMOGDEOKHPG_Episode)item; break;
 					case BEOKNKGHFFE_Section.MIOOJINHHFO_EpiItem: NEGGMILDEEF_EpiItem = (KIICLPJJBNL_EpiItem)item; break;
-					case BEOKNKGHFFE_Section.HJDJGMNAJFJ_EventGachaTicket: NKOKFIMNCJM = (JNGINLMOJKH)item; break;
-					case BEOKNKGHFFE_Section.OFAAHIINGFD_EventGoDivaRanking: EFHMLHKODOD = (JPJGOECJFEE)item; break;
-					case BEOKNKGHFFE_Section.OFGFNFAJHFE_EventItem: DHOFNBMPBAG = (HGLPLKKBBOL)item; break;
-					case BEOKNKGHFFE_Section.MDAEJLJPIHN_EventRaidItem: ONOJBMDKBLE = (NKBOMKGFGIO)item; break;
+					case BEOKNKGHFFE_Section.HJDJGMNAJFJ_EventGachaTicket: NKOKFIMNCJM = (JNGINLMOJKH_EventGachaTicket)item; break;
+					case BEOKNKGHFFE_Section.OFAAHIINGFD_EventGoDivaRanking: EFHMLHKODOD = (JPJGOECJFEE_EventGoDivaRanking)item; break;
+					case BEOKNKGHFFE_Section.OFGFNFAJHFE_EventItem: DHOFNBMPBAG = (HGLPLKKBBOL_EventItem)item; break;
+					case BEOKNKGHFFE_Section.MDAEJLJPIHN_EventRaidItem: ONOJBMDKBLE = (NKBOMKGFGIO_EventRaidItem)item; break;
 					case BEOKNKGHFFE_Section.AMGKNGLDHMG_EventTicket: KHPOJKHKLEM = (ABBOEIPOBLJ)item; break;
-					case BEOKNKGHFFE_Section.BKEKCFONNBG_EventWeekDay: CLLPBOPLICM = (DKCJADHKGAN)item; break;
-					case BEOKNKGHFFE_Section.JLNNFLCLGBM_EventStory: NBEMLGADAGK = (FBIOJHECAHB)item; break;
+					case BEOKNKGHFFE_Section.BKEKCFONNBG_EventWeekDay: CLLPBOPLICM = (DKCJADHKGAN_EventWeekDay)item; break;
+					case BEOKNKGHFFE_Section.JLNNFLCLGBM_EventStory: NBEMLGADAGK = (FBIOJHECAHB_EventStory)item; break;
 					case BEOKNKGHFFE_Section.MHNJLGONIPK_Exp: FMPEMFPLPDA_Exp = (JJOPEDJCCJK_Exp)item; break;
-					case BEOKNKGHFFE_Section.FPFHPCDNIDN_GachaLimit: OINLLHOMEAK = (BIHCALIAJII)item; break;
+					case BEOKNKGHFFE_Section.FPFHPCDNIDN_GachaLimit: OINLLHOMEAK = (BIHCALIAJII_GachaLimit)item; break;
 					case BEOKNKGHFFE_Section.OJFINMGAFPG_GachaTicket: GKMAHADAAFI_GachaTicket = (PMDCIJMMNGK_GachaTicket)item; break;
 					case BEOKNKGHFFE_Section.HJBCLCJIAMN_Game: HNMMJINNHII_Game = (LDDDBPNGGIN_Game)item; break;
 					case BEOKNKGHFFE_Section.JOMKJEEEGLM_GrowItem: NKDGLGCAPEI_GrowItem = (KEEKEFEPKFN_GrowItem)item; break;
-					case BEOKNKGHFFE_Section.MGLIHABHABA_HelpBrowser: LOJAMHAADBF = (KCDJCKCKKFM)item; break;
-					case BEOKNKGHFFE_Section.JHIAPFBBCCJ_HomeBg: PFEKKPABPKL = (ALJHJDHNFFB)item; break;
-					case BEOKNKGHFFE_Section.FLANCIJMJHP_HomePickup: NFDHMGGLEPN = (JJCJKALEIAC)item; break;
-					case BEOKNKGHFFE_Section.BKGFKGIGJNL_HomeVoice: MGIMEEEALPK = (NPCCDMKJBMM)item; break;
-					case BEOKNKGHFFE_Section.NLIJGKHKMII_RichBanner: MLGEHCJPAFB = (JKMLBONMAHD)item; break;
+					case BEOKNKGHFFE_Section.MGLIHABHABA_HelpBrowser: LOJAMHAADBF = (KCDJCKCKKFM_HelpBrowser)item; break;
+					case BEOKNKGHFFE_Section.JHIAPFBBCCJ_HomeBg: PFEKKPABPKL = (ALJHJDHNFFB_HomeBg)item; break;
+					case BEOKNKGHFFE_Section.FLANCIJMJHP_HomePickup: NFDHMGGLEPN = (JJCJKALEIAC_HomePickup)item; break;
+					case BEOKNKGHFFE_Section.BKGFKGIGJNL_HomeVoice: MGIMEEEALPK = (NPCCDMKJBMM_HomeVoice)item; break;
+					case BEOKNKGHFFE_Section.NLIJGKHKMII_RichBanner: MLGEHCJPAFB = (JKMLBONMAHD_RichBanner)item; break;
 					case BEOKNKGHFFE_Section.CLAMLDCILJO_Intimacy: KDIALKDKBGE_Intimacy = (GJALOMELEHD_Intimacy)item; break;
 					case BEOKNKGHFFE_Section.FONDIJMKCAJ_LimitOver: HDGOHBFKKDM_LimitOver = (LLKLAKGKNLD_LimitOver)item; break;
-					case BEOKNKGHFFE_Section.KPBNAHEIJIC_LimitedItem: IHPFCIJKFIC = (EGLOKAEIHCB)item; break;
+					case BEOKNKGHFFE_Section.KPBNAHEIJIC_LimitedItem: IHPFCIJKFIC = (EGLOKAEIHCB_LimitedItem)item; break;
 					case BEOKNKGHFFE_Section.ECEDGCHFCEF_Medal: ICICKEBMEFA_Medal = (HHFFOACILKG_Medal)item; break;
 					case BEOKNKGHFFE_Section.HOBIIBFBMKJ_MonthlyPass: MEGJDBJCEOC_MonthlyPass = (KBCCGHLCFNO_MonthlyPass)item; break;
 					case BEOKNKGHFFE_Section.CHOGKKCHBCJ_Music: IBPAFKKEKNK_Music = (LPPGENBEECK_MusicMaster)item; break;
-					case BEOKNKGHFFE_Section.JMJMNDKFOIF_MvTicket: NEGKEEAFKHP = (GJAEGCMKMEK)item; break;
+					case BEOKNKGHFFE_Section.JMJMNDKFOIF_MvTicket: NEGKEEAFKHP = (GJAEGCMKMEK_MvTicket)item; break;
 					case BEOKNKGHFFE_Section.LNCIOFKDBHD_Offer: LBCMJGOOHLJ = (LGHIPHEDCNC)item; break;
 					case BEOKNKGHFFE_Section.GPEFCGBGIHD_Pilot: OBGGLAKOHKP_Pilot = (MPOEMCEBBJH_Pilot)item; break;
 					case BEOKNKGHFFE_Section.JFDOPKICHPJ_PresentItem: LPFEHNJEJFB = (MDACFBPPIHD)item; break;
