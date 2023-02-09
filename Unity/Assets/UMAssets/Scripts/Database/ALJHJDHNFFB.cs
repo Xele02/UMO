@@ -53,7 +53,7 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 	// RVA: 0xCDDF3C Offset: 0xCDDF3C VA: 0xCDDF3C Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "ALJHJDHNFFB_HomeBg.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0xCDDFB4 Offset: 0xCDDFB4 VA: 0xCDDFB4 Slot: 9

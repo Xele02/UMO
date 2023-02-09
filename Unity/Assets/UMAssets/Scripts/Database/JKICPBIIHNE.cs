@@ -242,7 +242,9 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 	// RVA: 0x1360670 Offset: 0x1360670 VA: 0x1360670 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "JKICPBIIHNE_Bingo.KMBPACJNEOF");
+		JJAICEAEGKF.Clear();
+		FJOEBCMGDMI.Clear();
+		OHJFBLFELNK.Clear();
 	}
 
 	// RVA: 0x1360740 Offset: 0x1360740 VA: 0x1360740 Slot: 9

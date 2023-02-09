@@ -67,7 +67,8 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	// RVA: 0xFC6570 Offset: 0xFC6570 VA: 0xFC6570 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "FBIOJHECAHB_EventStory.KMBPACJNEOF");
+		ILEJEJKNOBN.Clear();
+		JPIGOBGOMON.Clear();
 	}
 
 	// RVA: 0xFC6614 Offset: 0xFC6614 VA: 0xFC6614 Slot: 9

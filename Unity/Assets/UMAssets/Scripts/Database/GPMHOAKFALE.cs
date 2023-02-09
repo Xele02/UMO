@@ -38,7 +38,7 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	// RVA: 0x1E5F3AC Offset: 0x1E5F3AC VA: 0x1E5F3AC Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "GPMHOAKFALE_Adventure.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x1E5F424 Offset: 0x1E5F424 VA: 0x1E5F424 Slot: 9

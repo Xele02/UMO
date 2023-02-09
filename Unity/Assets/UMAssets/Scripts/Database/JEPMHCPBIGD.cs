@@ -80,6 +80,6 @@ public class JEPMHCPBIGD_DecoItemInit : DIHHCBACKGG_DbSection
 	// RVA: 0x1C432A0 Offset: 0x1C432A0 VA: 0x1C432A0 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "JEPMHCPBIGD_DecoItemInit.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 }

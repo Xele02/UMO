@@ -21,7 +21,19 @@ public class JPJGOECJFEE_EventGoDivaRanking : DIHHCBACKGG_DbSection
 		public List<int> JHPCPNJJHLI = new List<int>(); // 0x4C
 
 		//// RVA: 0x1BA7B7C Offset: 0x1BA7B7C VA: 0x1BA7B7C
-		//public void LHPDDGIJKNB() { }
+		public void LHPDDGIJKNB()
+		{
+			BONDDBOFBND = 0;
+			HPNOGLIFJOP = 0;
+			JGMDAOACOJF = 0;
+			IDDBFFBPNGI = 0;
+			OBGBAOLONDD = 0;
+			OPFGFINHFCE = "";
+			HEDAGCNPHGD = "";
+			OCGFKMHNEOF = "";
+			MPCAGEPEJJJ.Clear();
+			JHPCPNJJHLI.Clear();
+		}
 
 		//// RVA: 0x1BA84F4 Offset: 0x1BA84F4 VA: 0x1BA84F4
 		//public uint CAOGDCBPBAN() { }
@@ -55,7 +67,11 @@ public class JPJGOECJFEE_EventGoDivaRanking : DIHHCBACKGG_DbSection
 	// RVA: 0x1BA7A64 Offset: 0x1BA7A64 VA: 0x1BA7A64 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "JPJGOECJFEE_EventGoDivaRanking.KMBPACJNEOF");
+		NGHKJOEDLIP.LHPDDGIJKNB();
+		FJOEBCMGDMI.Clear();
+		OHJFBLFELNK.Clear();
+		JNJAOACIGOC.Clear();
+		IFBBNEGGCIH.Clear();
 	}
 
 	// RVA: 0x1BA7C58 Offset: 0x1BA7C58 VA: 0x1BA7C58 Slot: 9

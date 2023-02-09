@@ -47,7 +47,7 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	// RVA: 0x198DC88 Offset: 0x198DC88 VA: 0x198DC88 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "DKCJADHKGAN_EventWeekDay.KMBPACJNEOF");
+		MPCJGPEBCCD.Clear();
 	}
 
 	// RVA: 0x198DD00 Offset: 0x198DD00 VA: 0x198DD00 Slot: 9

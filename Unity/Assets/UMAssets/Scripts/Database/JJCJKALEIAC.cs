@@ -128,7 +128,9 @@ public class JJCJKALEIAC_HomePickup : DIHHCBACKGG_DbSection
 	// RVA: 0x134DEF8 Offset: 0x134DEF8 VA: 0x134DEF8 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "JJCJKALEIAC_HomePickup.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
+		ENONECOLGGC.Clear();
+		HOFCPIHMHNB.Clear();
 	}
 
 	// RVA: 0x134DFC8 Offset: 0x134DFC8 VA: 0x134DFC8 Slot: 9

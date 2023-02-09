@@ -38,7 +38,7 @@ public class GJAEGCMKMEK_MvTicket : DIHHCBACKGG_DbSection
 	// RVA: 0xAA81D4 Offset: 0xAA81D4 VA: 0xAA81D4 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "GJAEGCMKMEK_MvTicket.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0xAA824C Offset: 0xAA824C VA: 0xAA824C Slot: 9

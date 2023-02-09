@@ -48,7 +48,7 @@ public class EGLOKAEIHCB_LimitedItem : DIHHCBACKGG_DbSection
 	// RVA: 0x1C4FF1C Offset: 0x1C4FF1C VA: 0x1C4FF1C Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "EGLOKAEIHCB_LimitedItem.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x1C4FF94 Offset: 0x1C4FF94 VA: 0x1C4FF94 Slot: 9

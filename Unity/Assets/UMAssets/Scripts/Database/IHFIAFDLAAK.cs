@@ -101,7 +101,10 @@ public class IHFIAFDLAAK_DecoStamp : DIHHCBACKGG_DbSection
 	// RVA: 0x11F9194 Offset: 0x11F9194 VA: 0x11F9194 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "IHFIAFDLAAK_DecoStamp.KMBPACJNEOF");
+		FHBIIONKIDI.Clear();
+		DMKMNGELNAE.Clear();
+		FJOEBCMGDMI.Clear();
+		OHJFBLFELNK.Clear();
 	}
 
 	// RVA: 0x11F9290 Offset: 0x11F9290 VA: 0x11F9290 Slot: 9

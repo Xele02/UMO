@@ -59,7 +59,7 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 	// RVA: 0xFEBA84 Offset: 0xFEBA84 VA: 0xFEBA84 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "PLPBJOFICEJ_CosItem.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0xFEBAF0 Offset: 0xFEBAF0 VA: 0xFEBAF0 Slot: 9

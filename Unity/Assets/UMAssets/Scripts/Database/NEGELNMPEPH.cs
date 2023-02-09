@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use NEGELNMPEPH_DecoSpSetting", true)]
 public class NEGELNMPEPH { }
@@ -56,7 +57,9 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 	// RVA: 0x1AE5B44 Offset: 0x1AE5B44 VA: 0x1AE5B44 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "NEGELNMPEPH_DecoSpSetting.KMBPACJNEOF");
+		FBGGEFFJJHB = (int)(Utility.GetCurrentUnixTime() ^ 0x2627849);
+		ILCGCPIGAFP.Clear();
+		JDLCJAILIME.Clear();
 	}
 
 	// RVA: 0x1AE5C2C Offset: 0x1AE5C2C VA: 0x1AE5C2C Slot: 9

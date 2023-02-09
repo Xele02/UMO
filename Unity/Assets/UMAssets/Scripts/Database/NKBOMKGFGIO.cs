@@ -37,7 +37,7 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 	// RVA: 0x18AE308 Offset: 0x18AE308 VA: 0x18AE308 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "NKBOMKGFGIO_EventRaidItem.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x18AE380 Offset: 0x18AE380 VA: 0x18AE380 Slot: 9

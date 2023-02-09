@@ -31,7 +31,7 @@ public class JKMLBONMAHD_RichBanner : DIHHCBACKGG_DbSection
 	// RVA: 0x14697F4 Offset: 0x14697F4 VA: 0x14697F4 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "JKMLBONMAHD_RichBanner.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x146986C Offset: 0x146986C VA: 0x146986C Slot: 9

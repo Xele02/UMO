@@ -42,7 +42,7 @@ public class JKDKODAPGBJ_EnergyItem : DIHHCBACKGG_DbSection
 	// RVA: 0x135C748 Offset: 0x135C748 VA: 0x135C748 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "JKDKODAPGBJ_EnergyItem.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x135C7C0 Offset: 0x135C7C0 VA: 0x135C7C0 Slot: 9

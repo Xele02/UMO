@@ -32,7 +32,7 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 	// RVA: 0x1CB5AE8 Offset: 0x1CB5AE8 VA: 0x1CB5AE8 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "NPCCDMKJBMM_HomeVoice.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x1CB5B60 Offset: 0x1CB5B60 VA: 0x1CB5B60 Slot: 9

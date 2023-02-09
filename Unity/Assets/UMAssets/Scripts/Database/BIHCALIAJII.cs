@@ -66,7 +66,11 @@ public class BIHCALIAJII_GachaLimit : DIHHCBACKGG_DbSection
 	// RVA: 0xC83760 Offset: 0xC83760 VA: 0xC83760 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "BIHCALIAJII_GachaLimit.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
+		JNJAOACIGOC.Clear();
+		IFBBNEGGCIH.Clear();
+		OHJFBLFELNK.Clear();
+		FJOEBCMGDMI.Clear();
 	}
 
 	// RVA: 0xC83888 Offset: 0xC83888 VA: 0xC83888 Slot: 9

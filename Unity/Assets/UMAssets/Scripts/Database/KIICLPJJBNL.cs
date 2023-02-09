@@ -34,7 +34,7 @@ public class KIICLPJJBNL_EpiItem : DIHHCBACKGG_DbSection
 	// RVA: 0x19FF648 Offset: 0x19FF648 VA: 0x19FF648 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "KIICLPJJBNL_EpiItem.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x19FF6C0 Offset: 0x19FF6C0 VA: 0x19FF6C0 Slot: 9

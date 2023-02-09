@@ -47,7 +47,7 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 	// RVA: 0x13FD878 Offset: 0x13FD878 VA: 0x13FD878 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "GAEBMAEDNAN_DecoPoint.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x13FD8F0 Offset: 0x13FD8F0 VA: 0x13FD8F0 Slot: 9

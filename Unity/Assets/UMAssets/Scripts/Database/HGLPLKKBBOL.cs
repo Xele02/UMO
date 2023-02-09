@@ -35,7 +35,7 @@ public class HGLPLKKBBOL_EventItem : DIHHCBACKGG_DbSection
 	// RVA: 0x1751684 Offset: 0x1751684 VA: 0x1751684 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "HGLPLKKBBOL_EventItem.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x17516FC Offset: 0x17516FC VA: 0x17516FC Slot: 9

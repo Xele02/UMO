@@ -42,7 +42,7 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 	// RVA: 0x18331B8 Offset: 0x18331B8 VA: 0x18331B8 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "HHPEMHHCKBE_Compo.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x1833230 Offset: 0x1833230 VA: 0x1833230 Slot: 9

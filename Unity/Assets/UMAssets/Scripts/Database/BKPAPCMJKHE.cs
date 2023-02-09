@@ -1,0 +1,203 @@
+
+using System.Collections.Generic;
+
+[System.Obsolete("Use BKPAPCMJKHE_Shop", true)]
+public class BKPAPCMJKHE { }
+public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
+{
+	public class DNOENEKHGMI
+	{
+		public string NEMKDKDIIDK; // 0x8
+		public long IBCNABKLHHH; // 0x10
+		public long MABPKDKBJAG; // 0x18
+		public int LJBEJEFBDMJ; // 0x20
+		public int JMLCKCMIKII; // 0x24
+		public int BJJLBHBCENG; // 0x28
+		public int MMJEPJKPHHE; // 0x2C
+		public int OIFAFKDMEEJ; // 0x30
+		public int MKHGNAKFPBE; // 0x34
+		public int FBGGEFFJJHB; // 0x38
+		public int OMMLFMMBOFC; // 0x3C
+		public int HHPFFPINGAA; // 0x40
+		public int LDCHDEEKMJO; // 0x44
+
+		//public long KJBGCLPMLCG { get; set; } 0x19B5C6C IDLJOCDJJOC 0x19B54FC ODIEKGPKOAC
+		//public long GJFPFFBAKGK { get; set; } 0x19B3B94 KPBMCJKFEGN 0x19B5510 IEFCDGKGICA
+		//public int OPKDAIMPJBH { get; set; } 0x19B5C80 AOCDPGPPMHN 0x19B5544 FAHCKCGKHIO
+		//public int PPEGAKEIEGM { get; set; } 0x19B3B64 KPOEEPIMMJP 0x19B5574 NCIEAFEDPBH
+		//public int EAHPLCJMPHD { get; set; } 0x19B5C90 NMDECGCDKNM 0x19B5534 PGNAAAGJOBO
+		//public int HCCEFDMGPEA { get; set; } 0x19B3B74 MAEOBCEBMDC 0x19B5554 BFFBMOIGFBI
+		//public int IBAKPKKEDJM { get; set; } 0x19B3B84 IJHAHFOOJKH 0x19B54EC LNKIOJGIKMB
+		//public int FPJBMCDMAMO { get; set; } 0x19B5CA0 JBJCDOHLLKK 0x19B5584 JEFGPFMEONF
+		//public int EFNMDPKEJIM { get; set; } 0x19B5CAC GDECNFAFAMM 0x19B54DC MMJDPGLLFNI
+		//public int EILKGEADKGH { get; set; } 0x19B5CBC NPDDACIHBKD 0x19B5524 BJJMCKHBPNH
+		//public int JPGALGPNJAI { get; set; } 0x19B5CCC GHFHDABMBCL 0x19B5564 AGNACDEALEO
+
+		//// RVA: 0x19B5A38 Offset: 0x19B5A38 VA: 0x19B5A38
+		//public uint CAOGDCBPBAN() { }
+	}
+
+	public class BOMCAJJCPME
+	{
+		public int ICKAMKNDAEB; // 0x8
+		public long IBCNABKLHHH; // 0x10
+		public long MABPKDKBJAG; // 0x18
+		public int NBGGOMCCMPJ; // 0x20
+		public int KGJMFDPKIPE; // 0x24
+		public int OMMLFMMBOFC; // 0x28
+		public int CKNFCDCKFDE; // 0x2C
+		public int OIFAFKDMEEJ; // 0x30
+		public int FBGGEFFJJHB; // 0x34
+		public int BOELIGECGJD; // 0x38
+		public int HHPFFPINGAA; // 0x3C
+
+		//public long KJBGCLPMLCG { get; set; } 0x19B5BD8 IDLJOCDJJOC 0x19B55EC ODIEKGPKOAC
+		//public long GJFPFFBAKGK { get; set; } 0x19B5BEC KPBMCJKFEGN 0x19B5600 IEFCDGKGICA
+		//public int AFKAGFOFAHM { get; set; } 0x19B5C00 IGKEDHAIDGK 0x19B55DC JPIJBPNFMLN
+		//public int PPEGAKEIEGM { get; set; } 0x19B5C10 KPOEEPIMMJP 0x19B5614 NCIEAFEDPBH
+		//public int EFNMDPKEJIM { get; set; } 0x19B5C1C GDECNFAFAMM 0x19B55BC MMJDPGLLFNI
+		//public int JLENMGOCHDG { get; set; } 0x19B5C2C OLJEIELPFMC 0x19B559C JMNGGBCNLJN
+		//public int EILKGEADKGH { get; set; } 0x19B5C3C NPDDACIHBKD 0x19B55CC BJJMCKHBPNH
+		//public int GJGNOFAPFJD { get; set; } 0x19B5C4C JAGHPMNNEPG 0x19B55AC FACIELLBLMP
+		//public int FPJBMCDMAMO { get; set; } 0x19B5C5C JBJCDOHLLKK 0x19B5624 JEFGPFMEONF
+
+		//// RVA: 0x19B5AC0 Offset: 0x19B5AC0 VA: 0x19B5AC0
+		//public uint CAOGDCBPBAN() { }
+	}
+
+	public class GPNPMJJKONJ
+	{
+		public int BOELIGECGJD; // 0x8
+		public int KMIKFOHJFPA; // 0xC
+		public int FBGGEFFJJHB; // 0x10
+		public int KMGPNCCNNAK; // 0x14
+		public int GINNJCGGEKM; // 0x18
+		public int GBCJJADIEAD; // 0x1C
+
+		//public int GJGNOFAPFJD { get; set; } 0x19B5CDC JAGHPMNNEPG 0x19B563C FACIELLBLMP
+		//public int LMMCMHHAGBJ { get; set; } 0x19B5CEC BKOBPJBDPFG 0x19B564C OECHFCHOPFH
+		//public int CMEIMAMOMPI { get; set; } 0x19B5CFC HELOEMEKCPD 0x19B565C DNGNBHNCMPF
+		//public int EJHMPCJNHBP { get; set; } 0x19B5D0C CNEFJKJDBAE 0x19B566C DJCFJNBEPJG
+		//public int LBCNKLPIMHL { get; set; } 0x19B5D1C NCHJGHNJOCO 0x19B567C EPEIFLOGFHJ
+
+		//// RVA: 0x19B5B3C Offset: 0x19B5B3C VA: 0x19B5B3C
+		//public uint CAOGDCBPBAN() { }
+	}
+
+	public class HALAHNKGPFH
+	{
+		public int FBGGEFFJJHB; // 0x8
+		public int LCHBLBDIIGE; // 0xC
+		public int PLCMLMADCDD; // 0x10
+		public int IIHILCBMPIH; // 0x14
+		public int LCGJKAGIFGO; // 0x18
+		public int DFPHFMCMONM; // 0x1C
+
+		//public int POFDDFCGEGP { get; set; } 0x19B5D2C IMNKDCLKMEM 0x19B5694 GKGJKCNDNLF
+		//public int NNDBJGDFEEM { get; set; } 0x19B5D3C EHNOFMPHLFC 0x19B56A4 GCANPOPEKEE
+		//public int DOOGFEGEKLG { get; set; } 0x19B5D4C AECMFIOFFJN 0x19B56B4 NGOJJDOCIDG
+		//public int NOMCDEPGIEC { get; set; } 0x19B5D5C JNOBFNFKMMO 0x19B56C4 MHMCCOKPFHP
+		//public int MMLMEAJPPJE { get; set; } 0x19B5D6C JCHOHBPNBDB 0x19B56D4 HLOMOKGCJKK
+
+		//// RVA: 0x19B5B88 Offset: 0x19B5B88 VA: 0x19B5B88
+		//public uint CAOGDCBPBAN() { }
+	}
+
+	public class IHBIOGDPJIN
+	{
+		public int FBGGEFFJJHB; // 0x8
+		public int FPJBMCDMAMO; // 0xC
+		public long IBCNABKLHHH; // 0x10
+		public long MABPKDKBJAG; // 0x18
+		public int HKHLEFMLIGA; // 0x20
+		public int GNGNIKNNCNH; // 0x24
+		public int HNJHPNPFAAN; // 0x28
+
+		//public long KJBGCLPMLCG { get; set; } 0x19B38A8 IDLJOCDJJOC 0x19B56EC ODIEKGPKOAC
+		//public long GJFPFFBAKGK { get; set; } 0x19B38C0 KPBMCJKFEGN 0x19B5700 IEFCDGKGICA
+		//public int INHOGJODJFJ { get; set; } 0x19B5D7C MIHPGFMJEED 0x19B5714 NBGJAEFAENJ
+		//public int IJEKNCDIIAE { get; set; } 0x19B5D8C KJIMMIBDCIL 0x19B5724 DMEGNOKIKCD
+		//public int PLALNIIBLOF { get; set; } 0x19B5D9C JPCJNLHHIPE 0x19B5734 JJFJNEJLBDG
+
+		//// RVA: 0x19B5DAC Offset: 0x19B5DAC VA: 0x19B5DAC
+		//public uint CAOGDCBPBAN() { }
+	}
+
+	public List<int> DJGJIMCOPHG; // 0x38
+	public int IEHAJFDMGEJ; // 0x3C
+
+	public List<DNOENEKHGMI> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<BOMCAJJCPME> MHKCPJDNJKI { get; private set; } // 0x24 CPMNDNELDME DFAHGPEFPOO IOMCCGAKKCP
+	public List<GPNPMJJKONJ> HMKKLPPEOHL { get; private set; } // 0x28 KLGEEBCHBKP LFKCGDAOEAC NMHJKDPOEME
+	public List<HALAHNKGPFH> FLPICDDOOBH { get; private set; } // 0x2C GOJFEJEGKIC BECPDMCKJIB OBKFENLIGGF
+	public List<IHBIOGDPJIN> EDLJEPAFLEK { get; private set; } // 0x30 HLPMNLBOAOE KCAPDIFFLJF HPIKMODJOLD
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK { get; private set; } // 0x34 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
+
+	//// RVA: 0x19B3660 Offset: 0x19B3660 VA: 0x19B3660
+	//public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }
+
+	//// RVA: 0x19B3744 Offset: 0x19B3744 VA: 0x19B3744
+	//public bool JIFKFKJPANC(int ODNILEDOAIP, long EOLFJGMAJAB) { }
+
+	//// RVA: 0x19B38D8 Offset: 0x19B38D8 VA: 0x19B38D8
+	//public long LELDGMBGEAO(int IBAKPKKEDJM) { }
+
+	// RVA: 0x19B3BA8 Offset: 0x19B3BA8 VA: 0x19B3BA8
+	public BKPAPCMJKHE_Shop()
+	{
+		JIKKNHIAEKG_BlockName = "";
+		LNIMEIMBCMF = false;
+		CDENCMNHNGA = new List<DNOENEKHGMI>();
+		MHKCPJDNJKI = new List<BOMCAJJCPME>();
+		HMKKLPPEOHL = new List<GPNPMJJKONJ>();
+		FLPICDDOOBH = new List<HALAHNKGPFH>();
+		EDLJEPAFLEK = new List<IHBIOGDPJIN>();
+		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
+		LMHMIIKCGPE = 74;
+	}
+
+	// RVA: 0x19B3DD4 Offset: 0x19B3DD4 VA: 0x19B3DD4 Slot: 8
+	protected override void KMBPACJNEOF()
+	{
+		TodoLogger.Log(TodoLogger.Database, "BKPAPCMJKHE_Shop.KMBPACJNEOF");
+	}
+
+	// RVA: 0x19B3F54 Offset: 0x19B3F54 VA: 0x19B3F54 Slot: 9
+	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+	{
+		TodoLogger.Log(TodoLogger.Database, "BKPAPCMJKHE_Shop.IIEMACPEEBJ");
+		return true;
+	}
+
+	// RVA: 0x19B54CC Offset: 0x19B54CC VA: 0x19B54CC Slot: 10
+	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
+	{
+		TodoLogger.Log(TodoLogger.Database, "BKPAPCMJKHE_Shop.IIEMACPEEBJ");
+		return true;
+	}
+
+	//// RVA: 0x19B4218 Offset: 0x19B4218 VA: 0x19B4218
+	//private bool HPECBBKKMMF(EBLAAOGMLIJ JMHECKKKMLK) { }
+
+	//// RVA: 0x19B4688 Offset: 0x19B4688 VA: 0x19B4688
+	//private bool IDNCPMHNHEE(EBLAAOGMLIJ JMHECKKKMLK) { }
+
+	//// RVA: 0x19B4A78 Offset: 0x19B4A78 VA: 0x19B4A78
+	//private bool KOBCANBABDO(EBLAAOGMLIJ JMHECKKKMLK) { }
+
+	//// RVA: 0x19B4D20 Offset: 0x19B4D20 VA: 0x19B4D20
+	//private bool PHIMFOACHEE(EBLAAOGMLIJ JMHECKKKMLK) { }
+
+	//// RVA: 0x19B4FC8 Offset: 0x19B4FC8 VA: 0x19B4FC8
+	//private bool KPAIPNIAAIF(EBLAAOGMLIJ JMHECKKKMLK) { }
+
+	//// RVA: 0x19B51B8 Offset: 0x19B51B8 VA: 0x19B51B8
+	//private bool AJKEEJDFAIH(EBLAAOGMLIJ JMHECKKKMLK) { }
+
+	// RVA: 0x19B5744 Offset: 0x19B5744 VA: 0x19B5744 Slot: 11
+	public override uint CAOGDCBPBAN()
+	{
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "BKPAPCMJKHE_Shop.CAOGDCBPBAN");
+		return 0;
+	}
+}

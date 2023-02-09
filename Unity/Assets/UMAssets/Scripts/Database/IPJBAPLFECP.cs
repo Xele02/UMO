@@ -38,7 +38,7 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 	// RVA: 0x141036C Offset: 0x141036C VA: 0x141036C Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "IPJBAPLFECP_Anketo.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x14103E4 Offset: 0x14103E4 VA: 0x14103E4 Slot: 9
