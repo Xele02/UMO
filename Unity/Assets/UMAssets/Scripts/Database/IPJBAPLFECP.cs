@@ -44,19 +44,40 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 	// RVA: 0x14103E4 Offset: 0x14103E4 VA: 0x14103E4 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "IPJBAPLFECP_Anketo.IIEMACPEEBJ");
+		HHHEIMGFICD parser = HHHEIMGFICD.HEGEKFMJNCC(DBBGALAPFGC);
+		KLNOMBKJDNN(parser);
 		return true;
 	}
 
 	// RVA: 0x1410794 Offset: 0x1410794 VA: 0x1410794 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "IPJBAPLFECP_Anketo.IIEMACPEEBJ");
 		return true;
 	}
 
 	//// RVA: 0x1410410 Offset: 0x1410410 VA: 0x1410410
-	//private bool KLNOMBKJDNN(HHHEIMGFICD JMHECKKKMLK) { }
+	private bool KLNOMBKJDNN(HHHEIMGFICD JMHECKKKMLK)
+	{
+		GGDEOLDOFMH[] array = JMHECKKKMLK.EEMGLFBGGKN;
+		for(int i = 0; i < array.Length; i++)
+		{
+			MDOMAACPHCN data = new MDOMAACPHCN();
+			data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.EILKGEADKGH = array[i].EILKGEADKGH;
+			data.INDDJNMPONH = array[i].GBJFNGCDKPM;
+			data.ADCMNODJBGJ = array[i].ADCMNODJBGJ;
+			data.BNMCMNPPPCI = array[i].BNMCMNPPPCI;
+			data.GJLFANGDGCL = array[i].AGNHPHEJKMK;
+			data.EMNLOGDDOBC = array[i].EMNLOGDDOBC;
+			data.IICECOLFEEL = array[i].IICECOLFEEL;
+			data.NNDBJGDFEEM = array[i].NNDBJGDFEEM;
+			data.DOOGFEGEKLG = array[i].DOOGFEGEKLG;
+			data.LLNDMKBBNIJ = array[i].LLNDMKBBNIJ;
+			CDENCMNHNGA.Add(data);
+		}
+		return true;
+	}
 
 	//// RVA: 0x14107A4 Offset: 0x14107A4 VA: 0x14107A4
 	//private bool KLNOMBKJDNN(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }

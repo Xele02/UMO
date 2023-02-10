@@ -36,7 +36,7 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 	// RVA: 0x9301C0 Offset: 0x9301C0 VA: 0x9301C0 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "PJANOOPJIDE_TutorialPict.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x930238 Offset: 0x930238 VA: 0x930238 Slot: 9

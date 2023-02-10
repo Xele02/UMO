@@ -34,7 +34,8 @@ public class INDEPDKCJDD_ValItem : DIHHCBACKGG_DbSection
 	// RVA: 0xA00FF8 Offset: 0xA00FF8 VA: 0xA00FF8 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "INDEPDKCJDD_ValItem.KMBPACJNEOF");
+		if(CDENCMNHNGA != null)
+			CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0xA01064 Offset: 0xA01064 VA: 0xA01064 Slot: 9

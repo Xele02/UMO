@@ -61,7 +61,7 @@ public class LAEGMENIEDB_Story : DIHHCBACKGG_DbSection
 	// RVA: 0xD8F244 Offset: 0xD8F244 VA: 0xD8F244 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "LAEGMENIEDB_Story.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0xD8F2BC Offset: 0xD8F2BC VA: 0xD8F2BC Slot: 9

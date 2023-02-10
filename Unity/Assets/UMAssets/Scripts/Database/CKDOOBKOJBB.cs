@@ -38,7 +38,7 @@ public class CKDOOBKOJBB_RareUpItem : DIHHCBACKGG_DbSection
 	// RVA: 0x107D388 Offset: 0x107D388 VA: 0x107D388 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "CKDOOBKOJBB_RareUpItem.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x107D400 Offset: 0x107D400 VA: 0x107D400 Slot: 9

@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use HHPEMHHCKBE_Compo", true)]
 public class HHPEMHHCKBE { }
@@ -13,8 +14,8 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 		public int[] AHGCGHAAHOO; // 0x14
 		public int EAJCFBCHIFB; // 0x18
 
-		//public int PPFNGGCBJKC { get; set; } 0x18337DC DEMEPMAEJOO 0x1833654 HIGKAIDMOKN
-		//public int EKLIPGELKCL { get; set; } 0x18337EC OEEHBGECGKL 0x1833664 GHLMHLJJBIG
+		public int PPFNGGCBJKC { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0x18337DC DEMEPMAEJOO 0x1833654 HIGKAIDMOKN
+		public int EKLIPGELKCL { get { return EAJCFBCHIFB ^ FBGGEFFJJHB; } set { EAJCFBCHIFB = value ^ FBGGEFFJJHB; } } //0x18337EC OEEHBGECGKL 0x1833664 GHLMHLJJBIG
 
 		//// RVA: 0x18337FC Offset: 0x18337FC VA: 0x18337FC
 		//public int JCJGGHGIKIJ() { }
@@ -48,15 +49,34 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 	// RVA: 0x1833230 Offset: 0x1833230 VA: 0x1833230 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "HHPEMHHCKBE_Compo.IIEMACPEEBJ");
+		FPDHPIEBAHD parser = FPDHPIEBAHD.HEGEKFMJNCC(DBBGALAPFGC);
+		AKJNKDNCCCC[] array = parser.LIFDACJBDBA;
+		int k = (int)Utility.GetCurrentUnixTime();
+		k = k * 0x761fed + 5;
+		for (int i = 0; i < array.Length; i++)
+		{
+			MLMDKHBFOJM data = new MLMDKHBFOJM();
+			data.FBGGEFFJJHB = k;
+			data.PPFNGGCBJKC = (int)array[i].PPFNGGCBJKC;
+			data.EKLIPGELKCL = array[i].EKLIPGELKCL;
+			int[] l1 = array[i].AIHOJKFNEEN;
+			uint[] l2 = array[i].BFINGCJHOHI;
+			data.AHGCGHAAHOO = new int[l1.Length];
+			data.OGEBLOHMGAM = new int[l2.Length];
+			for(int j = 0; j < l1.Length; j++)
+			{
+				data.AHGCGHAAHOO[j] = data.FBGGEFFJJHB ^ l1[i];
+				data.OGEBLOHMGAM[j] = data.FBGGEFFJJHB ^ (int)l2[i];
+			}
+			CDENCMNHNGA.Add(data);
+		}
 		return true;
 	}
 
 	// RVA: 0x1833674 Offset: 0x1833674 VA: 0x1833674 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "HHPEMHHCKBE_Compo.IIEMACPEEBJ");
-		return true;
+		return false;
 	}
 
 	// RVA: 0x183367C Offset: 0x183367C VA: 0x183367C Slot: 11

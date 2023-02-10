@@ -25,10 +25,15 @@ public class MDACFBPPIHD_PresentItem : DIHHCBACKGG_DbSection
 
 	public const int CADHDBIFKKL = 20;
 	public static int FBGGEFFJJHB = 0xd724f; // 0x0
-	public List<GPFDNMMCPHB> CDENCMNHNGA; // 0x20
+	public List<GPFDNMMCPHB> CDENCMNHNGA = new List<GPFDNMMCPHB>(); // 0x20
 
 	// RVA: 0x130DAE8 Offset: 0x130DAE8 VA: 0x130DAE8
-	public MDACFBPPIHD_PresentItem() { }
+	public MDACFBPPIHD_PresentItem()
+	{
+		JIKKNHIAEKG_BlockName = "";
+		LNIMEIMBCMF = false;
+		LMHMIIKCGPE = 66;
+	}
 
 	// RVA: 0x130DBE0 Offset: 0x130DBE0 VA: 0x130DBE0 Slot: 8
 	protected override void KMBPACJNEOF()

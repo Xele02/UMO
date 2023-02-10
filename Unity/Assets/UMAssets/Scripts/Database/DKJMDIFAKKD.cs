@@ -65,7 +65,8 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 	// RVA: 0x19900B0 Offset: 0x19900B0 VA: 0x19900B0 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "DKJMDIFAKKD_VcItem.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
+		JOBKIDDLCPL.Clear();
 	}
 
 	// RVA: 0x1990154 Offset: 0x1990154 VA: 0x1990154 Slot: 9

@@ -159,7 +159,13 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 	// RVA: 0x19B3DD4 Offset: 0x19B3DD4 VA: 0x19B3DD4 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "BKPAPCMJKHE_Shop.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
+		MHKCPJDNJKI.Clear();
+		HMKKLPPEOHL.Clear();
+		FLPICDDOOBH.Clear();
+		OHJFBLFELNK.Clear();
+		EDLJEPAFLEK.Clear();
+		DJGJIMCOPHG.Clear();
 	}
 
 	// RVA: 0x19B3F54 Offset: 0x19B3F54 VA: 0x19B3F54 Slot: 9

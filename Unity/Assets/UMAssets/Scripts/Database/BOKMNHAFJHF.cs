@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using XeSys;
 
 [System.Obsolete("Use BOKMNHAFJHF_Sns", true)]
 public class BOKMNHAFJHF { }
@@ -82,7 +83,26 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 	// RVA: 0x19CDBF4 Offset: 0x19CDBF4 VA: 0x19CDBF4 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "BOKMNHAFJHF_Sns.KMBPACJNEOF");
+		int val = (int)Utility.GetCurrentUnixTime();
+		CDENCMNHNGA.Clear();
+		for(int i = 0; i < 2000; i++)
+		{
+			KEIGMAOCJHK data = new KEIGMAOCJHK();
+			data.AIPLIEMLHGC = i + 1;
+			CDENCMNHNGA.Add(data);
+		}
+		KHCACDIKJLG.Clear();
+		for(int i = 0; i < 100; i++)
+		{
+			JFMDDEBLCAA data = new JFMDDEBLCAA();
+			data.OPFGFINHFCE = "";
+			data.HAPAFECPFEK = "";
+			data.IDELKEKDIFD = i + 1;
+			data.EAHPLCJMPHD = 1;
+			data.HEHKNMCDBJJ = 1;
+			data.CPKMLLNADLJ = 0;
+			KHCACDIKJLG.Add(data);
+		}
 	}
 
 	// RVA: 0x19CDE7C Offset: 0x19CDE7C VA: 0x19CDE7C Slot: 9

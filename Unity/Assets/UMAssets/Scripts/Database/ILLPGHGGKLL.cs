@@ -31,7 +31,7 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 	// RVA: 0x9F63BC Offset: 0x9F63BC VA: 0x9F63BC Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "ILLPGHGGKLL_TutorialMiniAdv.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x9F6434 Offset: 0x9F6434 VA: 0x9F6434 Slot: 9

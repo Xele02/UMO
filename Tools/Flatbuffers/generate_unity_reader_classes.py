@@ -199,7 +199,13 @@ class_to_generate = {
     "MBBEDEBFEHK" : {"FB_class":"JKIJAPMNHFJ"},
     "GHFFJFCGDCB" : {"FB_class":"KMANHBAOCLJ"},
     "CFJBIGCPCAK" : {"FB_class":"PCGHGHNPJDO"},
-    "ONPNHODCGFB" : {"FB_class":"NMOEOEOBDAD"}
+    "ONPNHODCGFB" : {"FB_class":"NMOEOEOBDAD"},
+    "NJBPFPMDKHN" : {"FB_class":"EADNHFHCKIA"},
+    "HHHEIMGFICD" : {"FB_class":"EBDJIPDILLC"},
+    "LGDFIOHBHIK" : {"FB_class":"JGABIAKLIJE"},
+    "FPDHPIEBAHD" : {"FB_class":"MNENFGHNPFJ"},
+    "MADCJBCGGEE" : {"FB_class":"OOKJGIANFNP"},
+    "FFHDKFPLLEN" : {"FB_class":"OJJJPOGDHKM"}
 }
 
 

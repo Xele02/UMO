@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use JEPMHCPBIGD_DecoItemInit", true)]
 public class JEPMHCPBIGD { }
@@ -19,26 +20,33 @@ public class JEPMHCPBIGD_DecoItemInit : DIHHCBACKGG_DbSection
 	public class MPIILICCLDD
 	{
 		private int FBGGEFFJJHB; // 0x8
-		private int PIMKKONMBOG; // 0xC
-		private int MKEEIHFCJBA; // 0x10
-		private int ANDAEBIKMAM; // 0x14
-		private int BJEIILIBOLB; // 0x18
-		private int DGLIDLIIILE; // 0x1C
-		private int MJDLLJGJKEI; // 0x20
-		private int OFOBOGAAHGF; // 0x24
+		private int PIMKKONMBOG_ItemIdCrypted; // 0xC
+		private int MKEEIHFCJBA_PosXCrypted; // 0x10
+		private int ANDAEBIKMAM_PosYCrypted; // 0x14
+		private int BJEIILIBOLB_RvsCrypted; // 0x18
+		private int DGLIDLIIILE_PrioCrypted; // 0x1C
+		private int MJDLLJGJKEI_WordCrypted; // 0x20
+		private int OFOBOGAAHGF_PlacingCrypted; // 0x24
 
-		//public int KIJAPOFAGPN { get; set; } 0x1C43318 GCKKKIDNACI 0x1C42CF0 OGBLMPODGBG
-		//public int FBNCFENGOOD { get; set; } 0x1C43328 LECCAHAHAMP 0x1C42D00 FAAHKNDOEFN
-		//public int LOEJKNILJKF { get; set; } 0x1C43338 BLDOOIODGOK 0x1C42D10 BICDPEHAJPN
-		//public bool NEGMFBPNJGK { get; set; } 0x1C43348 AGBGLCMJIIL 0x1C42D20 PDPBJNLLAID
-		//public int DAPGDCPDCNA { get; set; } 0x1C43364 GFAHOLGECII 0x1C42D58 KJKCIHEDEBB
-		//public int BEJGNPAAKNB { get; set; } 0x1C43374 PPHPHCADCLJ 0x1C42D68 BPMLEPPPCKP
-		//public bool OPAHFDJPFJO { get; set; } 0x1C43384 AFIMAHKLGJH 0x1C42D78 OELIAPKHFKE
+		public int KIJAPOFAGPN_ItemId { get { return PIMKKONMBOG_ItemIdCrypted ^ FBGGEFFJJHB; } set { PIMKKONMBOG_ItemIdCrypted = value ^ FBGGEFFJJHB; } } //0x1C43318 GCKKKIDNACI 0x1C42CF0 OGBLMPODGBG
+		public int FBNCFENGOOD_PosX { get { return MKEEIHFCJBA_PosXCrypted ^ FBGGEFFJJHB; } set { MKEEIHFCJBA_PosXCrypted = value ^ FBGGEFFJJHB; } } //0x1C43328 LECCAHAHAMP 0x1C42D00 FAAHKNDOEFN
+		public int LOEJKNILJKF_PosY { get { return ANDAEBIKMAM_PosYCrypted ^ FBGGEFFJJHB; } set { ANDAEBIKMAM_PosYCrypted = value ^ FBGGEFFJJHB; } } //0x1C43338 BLDOOIODGOK 0x1C42D10 BICDPEHAJPN
+		public bool NEGMFBPNJGK_Rvs { get { return (BJEIILIBOLB_RvsCrypted ^ FBGGEFFJJHB) == 140; } set { BJEIILIBOLB_RvsCrypted = (value ? 140 : 892) ^ FBGGEFFJJHB; } } //0x1C43348 AGBGLCMJIIL 0x1C42D20 PDPBJNLLAID
+		public int DAPGDCPDCNA_Prio { get { return DGLIDLIIILE_PrioCrypted ^ FBGGEFFJJHB; } set { DGLIDLIIILE_PrioCrypted = value ^ FBGGEFFJJHB; } } //0x1C43364 GFAHOLGECII 0x1C42D58 KJKCIHEDEBB
+		public int BEJGNPAAKNB_Word { get { return MJDLLJGJKEI_WordCrypted ^ FBGGEFFJJHB; } set { MJDLLJGJKEI_WordCrypted = value ^ FBGGEFFJJHB; } } //0x1C43374 PPHPHCADCLJ 0x1C42D68 BPMLEPPPCKP
+		public bool OPAHFDJPFJO_Placing { get { return (OFOBOGAAHGF_PlacingCrypted ^ FBGGEFFJJHB) == 16469; } set { OFOBOGAAHGF_PlacingCrypted = (value ? 16469 : 4026) ^ FBGGEFFJJHB; } } // 0x1C43384 AFIMAHKLGJH 0x1C42D78 OELIAPKHFKE
 
 		// RVA: 0x1C42C04 Offset: 0x1C42C04 VA: 0x1C42C04
 		public MPIILICCLDD()
 		{
-			TodoLogger.Log(TodoLogger.Database, "MPIILICCLDD.MPIILICCLDD()");
+			FBGGEFFJJHB = (int)Utility.GetCurrentUnixTime();
+			KIJAPOFAGPN_ItemId = 0;
+			FBNCFENGOOD_PosX = 0;
+			LOEJKNILJKF_PosY = 0;
+			NEGMFBPNJGK_Rvs = false;
+			DAPGDCPDCNA_Prio = 0;
+			BEJGNPAAKNB_Word = 0;
+			OPAHFDJPFJO_Placing = false;
 		}
 
 		//// RVA: 0x1C43258 Offset: 0x1C43258 VA: 0x1C43258
@@ -59,7 +67,20 @@ public class JEPMHCPBIGD_DecoItemInit : DIHHCBACKGG_DbSection
 	// RVA: 0x1C42914 Offset: 0x1C42914 VA: 0x1C42914 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "JEPMHCPBIGD_DecoItemInit.IIEMACPEEBJ");
+		FFHDKFPLLEN parser = FFHDKFPLLEN.HEGEKFMJNCC(DBBGALAPFGC);
+		MPEFMPPMBGM[] array = parser.HMPJFEFCGHI;
+		for(int i = 0; i < array.Length; i++)
+		{
+			MPIILICCLDD data = new MPIILICCLDD();
+			data.KIJAPOFAGPN_ItemId = (int)array[i].GLCLFMGPMAN;
+			data.FBNCFENGOOD_PosX = array[i].FPLEBCKDCBE;
+			data.LOEJKNILJKF_PosY = array[i].MDLMHEDHPHA;
+			data.NEGMFBPNJGK_Rvs = array[i].NEGMFBPNJGK == 1;
+			data.DAPGDCPDCNA_Prio = (int)array[i].DAPGDCPDCNA;
+			data.BEJGNPAAKNB_Word = (int)array[i].BEJGNPAAKNB;
+			data.OPAHFDJPFJO_Placing = array[i].OPAHFDJPFJO == 1;
+			CDENCMNHNGA.Add(data);
+		}
 		return true;
 	}
 

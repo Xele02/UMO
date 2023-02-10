@@ -35,7 +35,7 @@ public class DGDIEDDPNNG_UcItem : DIHHCBACKGG_DbSection
 	// RVA: 0x1984490 Offset: 0x1984490 VA: 0x1984490 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "DGDIEDDPNNG_UcItem.KMBPACJNEOF");
+		CDENCMNHNGA.Clear();
 	}
 
 	// RVA: 0x1984508 Offset: 0x1984508 VA: 0x1984508 Slot: 9
