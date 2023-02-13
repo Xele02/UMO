@@ -77,19 +77,65 @@ public class JPJGOECJFEE_EventGoDivaRanking : DIHHCBACKGG_DbSection
 	// RVA: 0x1BA7C58 Offset: 0x1BA7C58 VA: 0x1BA7C58 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "JPJGOECJFEE_EventGoDivaRanking.IIEMACPEEBJ");
+		CEGLELHPKBO parser = CEGLELHPKBO.HEGEKFMJNCC(DBBGALAPFGC);
+		DGKKMKLCEDF(parser);
+		{
+			KAGMCEBLHAI[] array = parser.BHGDNGHDDAC;
+			for(int i = 0; i < array.Length; i++)
+			{
+				CEBFFLDKAEC_SecureInt data = new CEBFFLDKAEC_SecureInt();
+				data.DNJEJEANJGL_Value = array[i].JBGEEPFKIGG;
+				OHJFBLFELNK.Add(array[i].LJNAKDMILMC, data);
+				JNJAOACIGOC.Add(data);
+			}
+		}
+		{
+			KBHIGPCGLKH[] array = parser.MHGMDJNOLMI;
+			for(int i = 0; i < array.Length; i++)
+			{
+				NNJFKLBPBNK_SecureString data = new NNJFKLBPBNK_SecureString();
+				data.DNJEJEANJGL_Value = array[i].JBGEEPFKIGG;
+				FJOEBCMGDMI.Add(array[i].LJNAKDMILMC, data);
+				IFBBNEGGCIH.Add(data);
+			}
+		}
 		return true;
 	}
 
 	// RVA: 0x1BA84BC Offset: 0x1BA84BC VA: 0x1BA84BC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "JPJGOECJFEE_EventGoDivaRanking.IIEMACPEEBJ");
 		return true;
 	}
 
 	//// RVA: 0x1BA7F78 Offset: 0x1BA7F78 VA: 0x1BA7F78
-	//private bool DGKKMKLCEDF(CEGLELHPKBO JMHECKKKMLK) { }
+	private bool DGKKMKLCEDF(CEGLELHPKBO JMHECKKKMLK)
+	{
+		HMNCNMGCIMM pData = JMHECKKKMLK.HMBHNLCFDIH;
+		NGHKJOEDLIP.OBGBAOLONDD = (int)pData.OBGBAOLONDD;
+		NGHKJOEDLIP.OPFGFINHFCE = pData.OPFGFINHFCE;
+		NGHKJOEDLIP.HEDAGCNPHGD = pData.HEDAGCNPHGD;
+		NGHKJOEDLIP.OCGFKMHNEOF = pData.OCGFKMHNEOF;
+		NGHKJOEDLIP.BONDDBOFBND = pData.BONDDBOFBND;
+		NGHKJOEDLIP.HPNOGLIFJOP = pData.HPNOGLIFJOP;
+		NGHKJOEDLIP.LNFKGHNHJKE = pData.LNFKGHNHJKE;
+		NGHKJOEDLIP.JGMDAOACOJF = pData.JGMDAOACOJF;
+		NGHKJOEDLIP.IDDBFFBPNGI = pData.IDDBFFBPNGI;
+		NGHKJOEDLIP.KNLGKBBIBOH = pData.KNLGKBBIBOH;
+		NGHKJOEDLIP.MPCAGEPEJJJ.Clear();
+		for(int i = 0; i < pData.MPCAGEPEJJJ.Length; i++)
+		{
+			NGHKJOEDLIP.MPCAGEPEJJJ.Add(pData.MPCAGEPEJJJ[i]);
+		}
+		for(int i = 0; i < pData.JHPCPNJJHLI.Length; i++)
+		{
+			if(pData.JHPCPNJJHLI[i] < 1001)
+			{
+				NGHKJOEDLIP.JHPCPNJJHLI.Add(pData.JHPCPNJJHLI[i]);
+			}
+		}
+		return true;
+	}
 
 	// RVA: 0x1BA84C4 Offset: 0x1BA84C4 VA: 0x1BA84C4 Slot: 11
 	public override uint CAOGDCBPBAN()

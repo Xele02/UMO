@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use NKBOMKGFGIO_EventRaidItem", true)]
 public class NKBOMKGFGIO { }
@@ -14,11 +15,11 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 		private int HHPFFPINGAA; // 0x18
 		private int LCGJKAGIFGO; // 0x1C
 
-		//public int PPFNGGCBJKC { get; set; } 0x18AEBB8 DEMEPMAEJOO 0x18AE658 HIGKAIDMOKN
-		//public int EKLIPGELKCL { get; set; } 0x18AEBC8 OEEHBGECGKL 0x18AE668 GHLMHLJJBIG
-		//public int JBGEEPFKIGG { get; set; } 0x18AEBD8 OLOCMINKGON 0x18AE678 ABAFHIBFKCE
-		//public int EILKGEADKGH { get; set; } 0x18AEBE8 NPDDACIHBKD 0x18AE688 BJJMCKHBPNH
-		//public int DOOGFEGEKLG { get; set; } 0x18AEBF8 AECMFIOFFJN 0x18AE698 NGOJJDOCIDG
+		public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0x18AEBB8 DEMEPMAEJOO 0x18AE658 HIGKAIDMOKN
+		public int EKLIPGELKCL_Rar { get { return EAJCFBCHIFB ^ FBGGEFFJJHB; } set { EAJCFBCHIFB = value ^ FBGGEFFJJHB; } } //0x18AEBC8 OEEHBGECGKL 0x18AE668 GHLMHLJJBIG
+		public int JBGEEPFKIGG_Val { get { return ICKOHEDLEFP ^ FBGGEFFJJHB; } set { ICKOHEDLEFP = value ^ FBGGEFFJJHB; } } //0x18AEBD8 OLOCMINKGON 0x18AE678 ABAFHIBFKCE
+		public int EILKGEADKGH_Odr{ get { return HHPFFPINGAA ^ FBGGEFFJJHB; } set { HHPFFPINGAA = value ^ FBGGEFFJJHB; } } //0x18AEBE8 NPDDACIHBKD 0x18AE688 BJJMCKHBPNH
+		public int DOOGFEGEKLG_Max { get { return LCGJKAGIFGO ^ FBGGEFFJJHB; } set { LCGJKAGIFGO = value ^ FBGGEFFJJHB; } } //0x18AEBF8 AECMFIOFFJN 0x18AE698 NGOJJDOCIDG
 
 		//// RVA: 0x18AEB70 Offset: 0x18AEB70 VA: 0x18AEB70
 		//public uint CAOGDCBPBAN() { }
@@ -43,7 +44,22 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 	// RVA: 0x18AE380 Offset: 0x18AE380 VA: 0x18AE380 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "NKBOMKGFGIO_EventRaidItem.IIEMACPEEBJ");
+		CHIHOOMFLNA parser = CHIHOOMFLNA.HEGEKFMJNCC(DBBGALAPFGC);
+		DNNGNDOKKGA[] array = parser.KADBDHBKNMK;
+		int k = (int)Utility.GetCurrentUnixTime();
+		k *= 0x2014;
+		for (int i = 0; i < array.Length; i++)
+		{
+			PDPBHLDICEJ data = new PDPBHLDICEJ();
+			data.FBGGEFFJJHB = k;
+			data.PPFNGGCBJKC_Id = (int)array[i].PPFNGGCBJKC;
+			data.EKLIPGELKCL_Rar = (int)array[i].FBFLDFMFFOH;
+			data.JBGEEPFKIGG_Val = (int)array[i].JBGEEPFKIGG;
+			data.EILKGEADKGH_Odr = (int)array[i].FPOMEEJFBIG;
+			data.DOOGFEGEKLG_Max = (int)array[i].DOOGFEGEKLG;
+			k *= 0x356;
+			CDENCMNHNGA.Add(data);
+		}
 		return true;
 	}
 

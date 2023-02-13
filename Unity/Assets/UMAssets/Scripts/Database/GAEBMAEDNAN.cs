@@ -15,13 +15,13 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 	public class KFFELNOEBPB
 	{
 		private int FBGGEFFJJHB; // 0x8
-		private int EHOIENNDEDH; // 0xC
-		private int CBJIBLBAJLD; // 0x10
-		private int ICKOHEDLEFP; // 0x14
+		private int EHOIENNDEDH_IdCrypted; // 0xC
+		private int CBJIBLBAJLD_Rarity; // 0x10
+		private int ICKOHEDLEFP_Value; // 0x14
 
-		//public int PPFNGGCBJKC { get; set; } 0x13FDEC0 DEMEPMAEJOO 0x13FDB7C HIGKAIDMOKN
-		//public int FBFLDFMFFOH { get; set; } 0x13FDED0 HNLMNIOMOLI 0x13FDB8C CHHJKABBIBL
-		//public int JBGEEPFKIGG { get; set; } 0x13FDEE0 OLOCMINKGON 0x13FDB9C ABAFHIBFKCE
+		public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB; } }// 0x13FDEC0 DEMEPMAEJOO 0x13FDB7C HIGKAIDMOKN
+		public int FBFLDFMFFOH_Rariry { get { return CBJIBLBAJLD_Rarity ^ FBGGEFFJJHB; } set { CBJIBLBAJLD_Rarity = value ^ FBGGEFFJJHB; } }// 0x13FDED0 HNLMNIOMOLI 0x13FDB8C CHHJKABBIBL
+		public int JBGEEPFKIGG_Value { get { return ICKOHEDLEFP_Value ^ FBGGEFFJJHB; } set { ICKOHEDLEFP_Value = value ^ FBGGEFFJJHB; } }// 0x13FDEE0 OLOCMINKGON 0x13FDB9C ABAFHIBFKCE
 
 		// RVA: 0x13FDAD8 Offset: 0x13FDAD8 VA: 0x13FDAD8
 		public KFFELNOEBPB()
@@ -53,8 +53,21 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 	// RVA: 0x13FD8F0 Offset: 0x13FD8F0 VA: 0x13FD8F0 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "GAEBMAEDNAN_DecoPoint.IIEMACPEEBJ");
-		return true;
+		ALFKCDIOOHC parser = ALFKCDIOOHC.HEGEKFMJNCC(DBBGALAPFGC);
+		NPMGLCODOBA[] array = parser.HKOCCOIGLIK;
+		if(array.Length < 2)
+		{
+			if(array.Length == 1)
+			{
+				KFFELNOEBPB data = new KFFELNOEBPB();
+				data.PPFNGGCBJKC_Id = (int)array[0].PPFNGGCBJKC;
+				data.FBFLDFMFFOH_Rariry = (int)array[0].FBFLDFMFFOH;
+				data.JBGEEPFKIGG_Value = (int)array[0].JBGEEPFKIGG;
+				CDENCMNHNGA.Add(data);
+			}
+			return true;
+		}
+		return false;
 	}
 
 	// RVA: 0x13FDBAC Offset: 0x13FDBAC VA: 0x13FDBAC Slot: 10
