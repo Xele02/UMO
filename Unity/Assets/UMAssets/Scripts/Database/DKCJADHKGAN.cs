@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 
 public class DKCJADHKGAN { }
@@ -8,15 +9,15 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	{
 		public long KINJOEIAHFK; // 0x8
 		public long PCCFAKEOBIC; // 0x10
-		public int JCADAMLIOKK; // 0x18
-		public sbyte PPEGAKEIEGM; // 0x1C
+		public int JCADAMLIOKK_Id; // 0x18
+		public sbyte PPEGAKEIEGM_Enabled; // 0x1C
 		public int AIDNHPGEHPM; // 0x20
 		public int DJCHKGLCLPD; // 0x24
 		public string CIOJJBOHEEJ; // 0x28
 		public List<List<int>> BEPAMEEBPGI = new List<List<int>>(); // 0x2C
 
-		//public int ELEPHBOKIGK { get; set; } 0x198E5A0 IIJFLONJAFL 0x198E160 LHNFGPIGCNE
-		//public int AEHCKNNGAKF { get; set; } 0x198E5B4 KKNJPEMGEBF 0x198E174 NPDLLBHCIJP
+		public int ELEPHBOKIGK { get { return AIDNHPGEHPM ^ 0x5717f14f; } set { AIDNHPGEHPM = value ^ 0x5717f14f; } } //0x198E5A0 IIJFLONJAFL 0x198E160 LHNFGPIGCNE
+		public int AEHCKNNGAKF { get { return DJCHKGLCLPD ^ 0x5717f14f; } set { DJCHKGLCLPD = value ^ 0x5717f14f; } } //0x198E5B4 KKNJPEMGEBF 0x198E174 NPDLLBHCIJP
 
 		//// RVA: 0x198E5C8 Offset: 0x198E5C8 VA: 0x198E5C8
 		//public List<int> OPCBHOLFCHO(int IAPNPKAGEGH) { }
@@ -53,19 +54,52 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	// RVA: 0x198DD00 Offset: 0x198DD00 VA: 0x198DD00 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "DKCJADHKGAN_EventWeekDay.IIEMACPEEBJ");
+		PMHJIJGDJMO parser = PMHJIJGDJMO.HEGEKFMJNCC(DBBGALAPFGC);
+		FBCAIGGLGMK[] array = parser.MDFFJJKBDFC;
+		for(int i = 0; i < array.Length; i++)
+		{
+			JFFPEKOEINE data = new JFFPEKOEINE();
+			data.JCADAMLIOKK_Id = (int)array[i].PPFNGGCBJKC;
+			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(1, (int)array[i].PLALNIIBLOF, 0);
+			data.KINJOEIAHFK = array[i].FNEIADJMHHO;
+			data.PCCFAKEOBIC = array[i].KOMKKBDABJP;
+			data.CIOJJBOHEEJ = array[i].GENIJOLKBNH;
+			data.ELEPHBOKIGK = array[i].BFINGCJHOHI;
+			data.AEHCKNNGAKF = array[i].OEOIHIIIMCK;
+			for(int j = 0; j < array[i].EHDDADDKMFI.Length; j++)
+			{
+				data.BEPAMEEBPGI.Add(JCAGLPANMFC(array[i].EHDDADDKMFI[j]));
+			}
+			MPCJGPEBCCD.Add(data);
+		}
 		return true;
 	}
 
 	// RVA: 0x198E324 Offset: 0x198E324 VA: 0x198E324 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "DKCJADHKGAN_EventWeekDay.IIEMACPEEBJ");
-		return true;
+		return false;
 	}
 
 	//// RVA: 0x198E188 Offset: 0x198E188 VA: 0x198E188
-	//private static List<int> JCAGLPANMFC(string IBDJFHFIIHN) { }
+	private static List<int> JCAGLPANMFC(string IBDJFHFIIHN)
+	{
+		List<int> res = null;
+		if(!string.IsNullOrEmpty(IBDJFHFIIHN))
+		{
+			char[] sep = new char[1] { ',' };
+			string[] strs = IBDJFHFIIHN.Split(sep);
+			if(strs != null && strs.Length != 0)
+			{
+				res = new List<int>(strs.Length);
+				for(int i = 0; i < strs.Length; i++)
+				{
+					res.Add(Int32.Parse(strs[i]));
+				}
+			}
+		}
+		return res;
+	}
 
 	// RVA: 0x198E32C Offset: 0x198E32C VA: 0x198E32C Slot: 11
 	public override uint CAOGDCBPBAN()

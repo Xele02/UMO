@@ -74,14 +74,43 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	// RVA: 0xFC6614 Offset: 0xFC6614 VA: 0xFC6614 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "FBIOJHECAHB_EventStory.IIEMACPEEBJ");
+		BLOHGJIKLAK parser = BLOHGJIKLAK.HEGEKFMJNCC(DBBGALAPFGC);
+		ILEJEJKNOBN.Clear();
+		JPIGOBGOMON.Clear();
+		{
+			BCCFAPDAFOE[] array = parser.MLJNCEIFECL;
+			for(int i = 0; i < array.Length; i++)
+			{
+				GIEHECAKIFC data = new GIEHECAKIFC();
+				data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
+				data.OAFJONPIFGM = array[i].BCKCEEMNKCH;
+				data.MGBDCFIKBPM = (byte)array[i].BDJMFDKLHPM;
+				data.PDBPFJJCADD = array[i].PDBPFJJCADD;
+				data.FDBNFFNFOND = array[i].FDBNFFNFOND;
+				ILEJEJKNOBN.Add(data);
+			}
+		}
+		{
+			MCCFOKHKJIC[] array = parser.FGAOKKECNIH;
+			for(int i = 0; i < array.Length; i++)
+			{
+				ENDMMNNOAIL data = new ENDMMNNOAIL();
+				data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
+				data.PPEGAKEIEGM = array[i].PLALNIIBLOF;
+				data.OAFJONPIFGM = array[i].BCKCEEMNKCH;
+				data.JDJNNJEJDAJ = (NMIGMCJHAIE)array[i].PIDAAPMCAML;
+				data.LOHMKCPKBON = array[i].OIAAFFHGBBD;
+				data.CHOFDPDFPDC = array[i].ODNOJKHHEOP;
+				data.PFGAKEDKOPD = array[i].DFMOIKJOCGH;
+				JPIGOBGOMON.Add(data);
+			}
+		}
 		return true;
 	}
 
 	// RVA: 0xFC6B30 Offset: 0xFC6B30 VA: 0xFC6B30 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "FBIOJHECAHB_EventStory.IIEMACPEEBJ");
 		return true;
 	}
 

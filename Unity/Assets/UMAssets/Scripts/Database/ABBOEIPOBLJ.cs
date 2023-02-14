@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use ABBOEIPOBLJ_EventTicket", true)]
 public class ABBOEIPOBLJ { }
@@ -13,10 +14,10 @@ public class ABBOEIPOBLJ_EventTicket : DIHHCBACKGG_DbSection
 		public int ICKOHEDLEFP; // 0x14
 		public int MKENMKMJFKP; // 0x18
 
-		//public int PPFNGGCBJKC { get; set; } 0x15B094C DEMEPMAEJOO 0x15B0464 HIGKAIDMOKN
-		//public int EKLIPGELKCL { get; set; } 0x15B095C OEEHBGECGKL 0x15B0474 GHLMHLJJBIG
-		//public int JBGEEPFKIGG { get; set; } 0x15B096C OLOCMINKGON 0x15B0484 ABAFHIBFKCE
-		//public int INDDJNMPONH { get; set; } 0x15B097C GHAILOLPHPF 0x15B0494 BACGOKIGMBC
+		public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0x15B094C DEMEPMAEJOO 0x15B0464 HIGKAIDMOKN
+		public int EKLIPGELKCL_Rar { get { return EAJCFBCHIFB ^ FBGGEFFJJHB; } set { EAJCFBCHIFB = value ^ FBGGEFFJJHB; } } //0x15B095C OEEHBGECGKL 0x15B0474 GHLMHLJJBIG
+		public int JBGEEPFKIGG_Val { get { return ICKOHEDLEFP ^ FBGGEFFJJHB; } set { ICKOHEDLEFP = value ^ FBGGEFFJJHB; } } //0x15B096C OLOCMINKGON 0x15B0484 ABAFHIBFKCE
+		public int INDDJNMPONH_Typ { get { return MKENMKMJFKP ^ FBGGEFFJJHB; } set { MKENMKMJFKP = value ^ FBGGEFFJJHB; } } //0x15B097C GHAILOLPHPF 0x15B0494 BACGOKIGMBC
 
 		//// RVA: 0x15B0920 Offset: 0x15B0920 VA: 0x15B0920
 		//public uint CAOGDCBPBAN() { }
@@ -41,7 +42,21 @@ public class ABBOEIPOBLJ_EventTicket : DIHHCBACKGG_DbSection
 	// RVA: 0x15B01B4 Offset: 0x15B01B4 VA: 0x15B01B4 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "ABBOEIPOBLJ_EventTicket.IIEMACPEEBJ");
+		BELBAJBINBO parser = BELBAJBINBO.HEGEKFMJNCC(DBBGALAPFGC);
+		EIIBKGHEGFI[] array = parser.GMDKFCMGHIK;
+		int k = (int)Utility.GetCurrentUnixTime();
+		k *= 0x3981;
+		for (int i = 0; i < array.Length; i++)
+		{
+			CBDACMFFHJC data = new CBDACMFFHJC();
+			data.FBGGEFFJJHB = k;
+			data.PPFNGGCBJKC_Id = (int)array[i].PPFNGGCBJKC;
+			data.EKLIPGELKCL_Rar = (int)array[i].FBFLDFMFFOH;
+			data.JBGEEPFKIGG_Val = (int)array[i].JBGEEPFKIGG;
+			data.INDDJNMPONH_Typ = (int)array[i].GBJFNGCDKPM;
+			k *= 0x6cd;
+			CDENCMNHNGA.Add(data);
+		}
 		return true;
 	}
 
