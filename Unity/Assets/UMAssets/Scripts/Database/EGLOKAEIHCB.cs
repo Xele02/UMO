@@ -54,7 +54,23 @@ public class EGLOKAEIHCB_LimitedItem : DIHHCBACKGG_DbSection
 	// RVA: 0x1C4FF94 Offset: 0x1C4FF94 VA: 0x1C4FF94 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "EGLOKAEIHCB_LimitedItem.KMBPACJNEOF");
+		KNJFLGCKEIF parser = KNJFLGCKEIF.HEGEKFMJNCC(DBBGALAPFGC);
+		GMHAHLAIOKB[] array = parser.FNKIIFGDCDM;
+		for(int i = 0; i < array.Length; i++)
+		{
+			DEOCBHAGEEH data = new DEOCBHAGEEH();
+			data.PPFNGGCBJKC = (int)array[i].PPFNGGCBJKC;
+			data.DMEDKJPOLCH = (int)array[i].DMEDKJPOLCH;
+			data.JBGEEPFKIGG = (int)array[i].JBGEEPFKIGG;
+			data.DOOGFEGEKLG = (int)array[i].DOOGFEGEKLG;
+			data.PLALNIIBLOF = (int)array[i].PLALNIIBLOF;
+			data.IJEKNCDIIAE = array[i].IJEKNCDIIAE;
+			data.EKLIPGELKCL = (int)array[i].FBFLDFMFFOH;
+			data.EILKGEADKGH = (int)array[i].FPOMEEJFBIG;
+			data.EMIJNAFJFJO = (int)array[i].EMIJNAFJFJO;
+			data.KHCBANFDKBO = (int)array[i].KHCBANFDKBO;
+			CDENCMNHNGA.Add(data);
+		}
 		return true;
 	}
 

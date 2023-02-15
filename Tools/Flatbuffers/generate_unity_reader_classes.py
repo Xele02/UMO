@@ -223,7 +223,10 @@ class_to_generate = {
     "LEGLJNFOBGN" : {"FB_class":"CHFNKBBHDGM"},
     "MFNEHMPBDKK" : {"FB_class":"KIPJDHHEGND"},
     "PCKMEHLNOFO" : {"FB_class":"BNMAJCFEFOK"},
-    "MLAEPADJOJH" : {"FB_class":"OGOJIHOJMHD"}
+    "MLAEPADJOJH" : {"FB_class":"OGOJIHOJMHD"},
+    "KNJFLGCKEIF" : {"FB_class":"BHNBHGFFDII"},
+    "INAAHCCMEGE" : {"FB_class":"MHNDFPBJOGK"},
+    "FELHBHFOHPO" : {"FB_class":"DNCDFDOLLLP"}
 }
 
 
