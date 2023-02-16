@@ -13,11 +13,11 @@ public class MDACFBPPIHD_PresentItem : DIHHCBACKGG_DbSection
 		public int GNGNIKNNCNH; // 0x14
 		public int EAJCFBCHIFB; // 0x18
 
-		//public int PPFNGGCBJKC { get; set; } 0x130E3A0 DEMEPMAEJOO 0x130DEF4 HIGKAIDMOKN
-		//public int JBGEEPFKIGG { get; set; } 0x130E438 OLOCMINKGON 0x130DF90 ABAFHIBFKCE
-		//public int PLALNIIBLOF { get; set; } 0x130E4D0 JPCJNLHHIPE 0x130E02C JJFJNEJLBDG
-		//public int IJEKNCDIIAE { get; set; } 0x130E568 KJIMMIBDCIL 0x130E0C8 DMEGNOKIKCD
-		//public int EKLIPGELKCL { get; set; } 0x130E600 OEEHBGECGKL 0x130E164 GHLMHLJJBIG
+		public int PPFNGGCBJKC { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0x130E3A0 DEMEPMAEJOO 0x130DEF4 HIGKAIDMOKN
+		public int JBGEEPFKIGG { get { return ICKOHEDLEFP ^ FBGGEFFJJHB; } set { ICKOHEDLEFP = value ^ FBGGEFFJJHB; } } //0x130E438 OLOCMINKGON 0x130DF90 ABAFHIBFKCE
+		public int PLALNIIBLOF { get { return HNJHPNPFAAN ^ FBGGEFFJJHB; } set { HNJHPNPFAAN = value ^ FBGGEFFJJHB; } } //0x130E4D0 JPCJNLHHIPE 0x130E02C JJFJNEJLBDG
+		public int IJEKNCDIIAE { get { return GNGNIKNNCNH ^ FBGGEFFJJHB; } set { GNGNIKNNCNH = value ^ FBGGEFFJJHB; } } //0x130E568 KJIMMIBDCIL 0x130E0C8 DMEGNOKIKCD
+		public int EKLIPGELKCL { get { return EAJCFBCHIFB ^ FBGGEFFJJHB; } set { EAJCFBCHIFB = value ^ FBGGEFFJJHB; } } //0x130E600 OEEHBGECGKL 0x130E164 GHLMHLJJBIG
 
 		//// RVA: 0x130E2EC Offset: 0x130E2EC VA: 0x130E2EC
 		//public uint CAOGDCBPBAN() { }
@@ -44,15 +44,25 @@ public class MDACFBPPIHD_PresentItem : DIHHCBACKGG_DbSection
 	// RVA: 0x130DC58 Offset: 0x130DC58 VA: 0x130DC58 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "MDACFBPPIHD_PresentItem.IIEMACPEEBJ");
+		LGCNKCBKJBA parser = LGCNKCBKJBA.HEGEKFMJNCC(DBBGALAPFGC);
+		MKMPJMOODKL[] array = parser.AAAKAPGGNGL;
+		for (int i = 0; i < array.Length; i++)
+		{
+			GPFDNMMCPHB data = new GPFDNMMCPHB();
+			data.PPFNGGCBJKC = (int)array[i].PPFNGGCBJKC;
+			data.JBGEEPFKIGG = (int)array[i].JBGEEPFKIGG;
+			data.PLALNIIBLOF = (int)array[i].PLALNIIBLOF;
+			data.IJEKNCDIIAE = array[i].IJEKNCDIIAE;
+			data.EKLIPGELKCL = (int)array[i].FBFLDFMFFOH;
+			CDENCMNHNGA.Add(data);
+		}
 		return true;
 	}
 
 	// RVA: 0x130E200 Offset: 0x130E200 VA: 0x130E200 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "MDACFBPPIHD_PresentItem.IIEMACPEEBJ");
-		return true;
+		return false;
 	}
 
 	// RVA: 0x130E208 Offset: 0x130E208 VA: 0x130E208 Slot: 11

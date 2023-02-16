@@ -97,7 +97,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 			}
 			return true;
 		}
-		HDIDJNCGICK = "\"diva\" table overflow";
+		HDIDJNCGICK_LoadError = "\"diva\" table overflow";
 		return false;
     }
 

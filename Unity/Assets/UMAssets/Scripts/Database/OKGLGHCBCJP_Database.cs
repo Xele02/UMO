@@ -923,7 +923,7 @@ public class OKGLGHCBCJP_Database
 					read = true;
 					if(!item.IIEMACPEEBJ(found2.DBBGALAPFGC_Data))
 					{
-						throw new Exception(item.JIKKNHIAEKG_BlockName + AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash /*'/'*/ + item.HDIDJNCGICK);
+						throw new Exception(item.JIKKNHIAEKG_BlockName + AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash /*'/'*/ + item.HDIDJNCGICK_LoadError);
 					}
 				}
 				string ECLJBKNPACL = item.JIKKNHIAEKG_BlockName + ".json";
@@ -937,7 +937,7 @@ public class OKGLGHCBCJP_Database
 					EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(jsonStr);
 					if(!item.IIEMACPEEBJ(json, 0))
 					{
-						throw new Exception(item.JIKKNHIAEKG_BlockName + AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash /*'/'*/ + item.HDIDJNCGICK);
+						throw new Exception(item.JIKKNHIAEKG_BlockName + AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash /*'/'*/ + item.HDIDJNCGICK_LoadError);
 					}
 				}
 			}	
