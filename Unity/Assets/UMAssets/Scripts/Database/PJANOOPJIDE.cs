@@ -10,7 +10,7 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 		public int PPFNGGCBJKC; // 0x8
 		public int[] FJOLNJLLJEJ; // 0xC
 		public int[] AKBHPFBDDOL; // 0x10
-		public int PPEGAKEIEGM; // 0x14
+		public int PPEGAKEIEGM_Enabled; // 0x14
 		public int KNHABOOAAIP; // 0x18
 		public string[] JONNCMDGMKA; // 0x1C
 		public string[] ADCMNODJBGJ; // 0x20
@@ -42,19 +42,38 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 	// RVA: 0x930238 Offset: 0x930238 VA: 0x930238 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "PJANOOPJIDE_TutorialPict.IIEMACPEEBJ");
+		BOFIIKIJEPA parser = BOFIIKIJEPA.HEGEKFMJNCC(DBBGALAPFGC);
+		KLNOMBKJDNN(parser);
 		return true;
 	}
 
 	// RVA: 0x9305C8 Offset: 0x9305C8 VA: 0x9305C8 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "PJANOOPJIDE_TutorialPict.IIEMACPEEBJ");
 		return true;
 	}
 
 	//// RVA: 0x930264 Offset: 0x930264 VA: 0x930264
-	//private bool KLNOMBKJDNN(BOFIIKIJEPA JMHECKKKMLK) { }
+	private bool KLNOMBKJDNN(BOFIIKIJEPA JMHECKKKMLK)
+	{
+		LKCILPCIPBE[] array = JMHECKKKMLK.NBDMOIBEDFI;
+		for(int i = 0; i < array.Length; i++)
+		{
+			HNHHGJCPMEA data = new HNHHGJCPMEA();
+			data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
+			data.AKBHPFBDDOL = array[i].JIMJHIDEHNM;
+			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, array[i].DBHPPMPNCKF);
+			data.KNHABOOAAIP = array[i].KNHABOOAAIP;
+			data.JONNCMDGMKA = array[i].IPBHCLIHAPG;
+			data.ADCMNODJBGJ = array[i].ADCMNODJBGJ;
+			data.MAPDMCPCLFA = array[i].HANMDEBPBHG;
+			data.FJOLNJLLJEJ = array[i].INANEEGAEEG;
+			data.KMDGMOMCDAD = array[i].JOFAJDPOEOB;
+			data.IODLCIBCONC = array[i].BFCILBEICEN;
+			CDENCMNHNGA.Add(data);
+		}
+		return true;
+	}
 
 	//// RVA: 0x9305D0 Offset: 0x9305D0 VA: 0x9305D0
 	//private bool KLNOMBKJDNN(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }

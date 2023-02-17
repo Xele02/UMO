@@ -8,7 +8,7 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 	public class ALLFFCNKFBG
 	{
 		public short PPFNGGCBJKC; // 0x8
-		public sbyte PPEGAKEIEGM; // 0xA
+		public sbyte PPEGAKEIEGM_Enabled; // 0xA
 		public sbyte NCGNCEOOBGP; // 0xB
 		public int[] HFLGGIBMEOL; // 0xC
 		public long KJBGCLPMLCG; // 0x10
@@ -48,19 +48,42 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 	// RVA: 0xC6FC44 Offset: 0xC6FC44 VA: 0xC6FC44 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "BCKMELFCKKN_Tips.IIEMACPEEBJ");
+		DGLENODDACE parser = DGLENODDACE.HEGEKFMJNCC(DBBGALAPFGC);
+		KLNOMBKJDNN(parser);
 		return true;
 	}
 
 	// RVA: 0xC7004C Offset: 0xC7004C VA: 0xC7004C Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "BCKMELFCKKN_Tips.IIEMACPEEBJ");
 		return true;
 	}
 
 	//// RVA: 0xC6FC70 Offset: 0xC6FC70 VA: 0xC6FC70
-	//private bool KLNOMBKJDNN(DGLENODDACE JMHECKKKMLK) { }
+	private bool KLNOMBKJDNN(DGLENODDACE JMHECKKKMLK)
+	{
+		JBFGONALAMG[] array = JMHECKKKMLK.KCCHMPEPAII;
+		for(int i = 0; i < array.Length; i++)
+		{
+			ALLFFCNKFBG data = new ALLFFCNKFBG();
+			data.PPFNGGCBJKC = (short)array[i].PPFNGGCBJKC;
+			data.NCGNCEOOBGP = (sbyte)array[i].CBDOEDKIOJK;
+			data.KJBGCLPMLCG = array[i].MGPEOHKLOEP;
+			data.GJFPFFBAKGK = array[i].LFAFFICDFMJ;
+			data.ADCMNODJBGJ = array[i].ADCMNODJBGJ;
+			data.JONNCMDGMKA = array[i].IPBHCLIHAPG;
+			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.EAHPLCJMPHD = array[i].HANMDEBPBHG;
+			data.LKDJHPLBKAI = array[i].HBDKKPIOFND;
+			data.MHPAFEEPBNJ = array[i].NHBLDIPBHNF;
+			data.HFLGGIBMEOL = array[i].KPECMLFDLOI;
+			data.GGHHHIIENAF = array[i].GENGOHFLGLG;
+			data.NLPDDGADNFP = array[i].OAAMGLOGJNN;
+			data.ILPJHHKLOEN = array[i].PDMJBLLHICB;
+			CDENCMNHNGA.Add(data);
+		}
+		return true;
+	}
 
 	//// RVA: 0xC70054 Offset: 0xC70054 VA: 0xC70054
 	//private bool KLNOMBKJDNN(EDOHBJAPLPF OILEIIEIBHP, int KAPMOPMDHJE) { }

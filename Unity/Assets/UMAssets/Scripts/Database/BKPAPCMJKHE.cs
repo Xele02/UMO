@@ -160,6 +160,7 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 		EDLJEPAFLEK = new List<IHBIOGDPJIN>();
 		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
 		LMHMIIKCGPE = 74;
+		DJGJIMCOPHG_ItemCatTab = new List<int>();
 	}
 
 	// RVA: 0x19B3DD4 Offset: 0x19B3DD4 VA: 0x19B3DD4 Slot: 8

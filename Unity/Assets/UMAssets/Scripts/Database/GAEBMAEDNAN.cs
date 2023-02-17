@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use GAEBMAEDNAN_DecoPoint", true)]
 public class GAEBMAEDNAN { }
@@ -20,13 +21,16 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 		private int ICKOHEDLEFP_Value; // 0x14
 
 		public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB; } }// 0x13FDEC0 DEMEPMAEJOO 0x13FDB7C HIGKAIDMOKN
-		public int FBFLDFMFFOH_Rariry { get { return CBJIBLBAJLD_Rarity ^ FBGGEFFJJHB; } set { CBJIBLBAJLD_Rarity = value ^ FBGGEFFJJHB; } }// 0x13FDED0 HNLMNIOMOLI 0x13FDB8C CHHJKABBIBL
+		public int FBFLDFMFFOH_Rarity { get { return CBJIBLBAJLD_Rarity ^ FBGGEFFJJHB; } set { CBJIBLBAJLD_Rarity = value ^ FBGGEFFJJHB; } }// 0x13FDED0 HNLMNIOMOLI 0x13FDB8C CHHJKABBIBL
 		public int JBGEEPFKIGG_Value { get { return ICKOHEDLEFP_Value ^ FBGGEFFJJHB; } set { ICKOHEDLEFP_Value = value ^ FBGGEFFJJHB; } }// 0x13FDEE0 OLOCMINKGON 0x13FDB9C ABAFHIBFKCE
 
 		// RVA: 0x13FDAD8 Offset: 0x13FDAD8 VA: 0x13FDAD8
 		public KFFELNOEBPB()
 		{
-			TodoLogger.Log(TodoLogger.Database, "KFFELNOEBPB.KFFELNOEBPB()");
+			FBGGEFFJJHB = (int)Utility.GetCurrentUnixTime();
+			PPFNGGCBJKC_Id = 0;
+			FBFLDFMFFOH_Rarity = 0;
+			JBGEEPFKIGG_Value = 0;
 		}
 
 		// RVA: 0x13FDE9C Offset: 0x13FDE9C VA: 0x13FDE9C
@@ -61,7 +65,7 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 			{
 				KFFELNOEBPB data = new KFFELNOEBPB();
 				data.PPFNGGCBJKC_Id = (int)array[0].PPFNGGCBJKC;
-				data.FBFLDFMFFOH_Rariry = (int)array[0].FBFLDFMFFOH;
+				data.FBFLDFMFFOH_Rarity = (int)array[0].FBFLDFMFFOH;
 				data.JBGEEPFKIGG_Value = (int)array[0].JBGEEPFKIGG;
 				CDENCMNHNGA.Add(data);
 			}

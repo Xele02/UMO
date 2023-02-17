@@ -35,7 +35,14 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		// RVA: 0x1465C54 Offset: 0x1465C54 VA: 0x1465C54
 		public void LHPDDGIJKNB()
 		{
-			TodoLogger.Log(TodoLogger.Database, "HNOGDJFJGPM.LHPDDGIJKNB");
+			PPFNGGCBJKC = 0;
+			IJEKNCDIIAE = 0;
+			PLALNIIBLOF = 0;
+			OGKBHHLMMID = 0;
+			PDBPFJJCADD = 0;
+			FDBNFFNFOND = 0;
+			MNOKEJIPOBJ = 0;
+			DPGMFEGFCJN.Clear();
 		}
 
 		// RVA: 0x1465F54 Offset: 0x1465F54 VA: 0x1465F54
@@ -64,7 +71,12 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		// RVA: 0x13630E4 Offset: 0x13630E4 VA: 0x13630E4
 		public void LHPDDGIJKNB()
 		{
-			TodoLogger.Log(TodoLogger.Database, "EHLBDNHLCIN.LHPDDGIJKNB");
+			PPFNGGCBJKC = 0;
+			OHJFBLFELNK.Clear();
+			FJOEBCMGDMI.Clear();
+			CFHKEJHDGBG.Clear();
+			PFEGHILDOGF.Clear();
+			MFMGDFACBON.Clear();
 		}
 
 		//// RVA: 0x1363264 Offset: 0x1363264 VA: 0x1363264
@@ -156,7 +168,20 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		// RVA: 0x1362B9C Offset: 0x1362B9C VA: 0x1362B9C
 		public void LHPDDGIJKNB()
 		{
-			TodoLogger.Log(TodoLogger.Database, "CCOCDFGGDBB.LHPDDGIJKNB");
+			PPFNGGCBJKC = 0;
+			PLALNIIBLOF = 0;
+			BGKHDJOGEAL = 0;
+			KGANBBFKCDD.Clear();
+			AHGCGHAAHOO.Clear();
+			CMBLIDNDLOO.Clear();
+			AIGOPKGALKA.Clear();
+			for(int i = 0; i < 8; i++)
+			{
+				KGANBBFKCDD.Add(0);
+				AHGCGHAAHOO.Add(0);
+				CMBLIDNDLOO.Add(0);
+				AIGOPKGALKA.Add(0);
+			}
 		}
 
 		// RVA: 0x1362E74 Offset: 0x1362E74 VA: 0x1362E74
@@ -199,7 +224,15 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		// RVA: 0x14682FC Offset: 0x14682FC VA: 0x14682FC
 		public void LHPDDGIJKNB()
 		{
-			TodoLogger.Log(TodoLogger.Database, "MKOCCBABHAH.LHPDDGIJKNB");
+			PPFNGGCBJKC = 0;
+			PLALNIIBLOF = 0;
+			CPKMLLNADLJ = 0;
+			FDBOPFEOENF = 0;
+			AHGCGHAAHOO.Clear();
+			for(int i = 0; i < 8; i++)
+			{
+				AHGCGHAAHOO.Add(0);
+			}
 		}
 
 		//// RVA: 0x1468510 Offset: 0x1468510 VA: 0x1468510
@@ -247,7 +280,23 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		// RVA: 0x1467080 Offset: 0x1467080 VA: 0x1467080
 		public IEGCPLCLOHF()
 		{
-			TodoLogger.Log(TodoLogger.Database, "IEGCPLCLOHF.IEGCPLCLOHF()");
+			PPFNGGCBJKC = 0;
+			PBEEPMLJGJC = 0;
+			PLALNIIBLOF = 0;
+			NDFOAINJPIN = 0;
+			CPKMLLNADLJ = 0;
+			FDBOPFEOENF = 0;
+			GOKJLBDJOLA = 0;
+			GPNPBHLLHDI = 0;
+			IMEPEOAFIIB = 0;
+			MAPNDFCJFLJ = 0;
+			JBFLEDKDFCO = 0;
+			PMDLBHLNIDP = 0;
+			GLCLFMGPMAN = 0;
+			LJKMKCOAICL = 0;
+			JJHPDDPKBHF = 0;
+			FEMMDNIELFC = "";
+			JEPGJJJBFLN = "";
 		}
 
 		// RVA: 0x1467660 Offset: 0x1467660 VA: 0x1467660

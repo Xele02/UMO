@@ -231,7 +231,15 @@ class_to_generate = {
     "GEDOHHLGKCG" : {"FB_class":"EEBLKICOJPH"},
     "HDPPMMGCPFC" : {"FB_class":"FJGGBKGOPEG"},
     "EBLAAOGMLIJ" : {"FB_class":"DFHBOFFBKDB"},
-    "MILDDOGCGLE" : {"FB_class":"DEMFEEEPCCO"}
+    "MILDDOGCGLE" : {"FB_class":"DEMFEEEPCCO"},
+    "LLENNGEBHNC" : {"FB_class":"EAHMHMEDAOG"},
+    "MEPHNDCDFFJ" : {"FB_class":"PLONLLOGMEJ"},
+    "DGLENODDACE" : {"FB_class":"BGECCLJCLID"},
+    "EMEEODMLEHD" : {"FB_class":"JAAOECLAKNC"},
+    "BOFIIKIJEPA" : {"FB_class":"PCIPKGNLLBO"},
+    "MMEGEEMJBDH" : {"FB_class":"CFOEKHAFGOJ"},
+    "MDFCHKPOMAJ" : {"FB_class":"LBAGNFKGHIB"},
+    "MAPLLKFHCLF" : {"FB_class":"IOOJDNCIHIC"}
 }
 
 

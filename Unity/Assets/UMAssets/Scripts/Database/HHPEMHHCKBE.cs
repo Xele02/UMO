@@ -65,8 +65,8 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 			data.OGEBLOHMGAM = new int[l2.Length];
 			for(int j = 0; j < l1.Length; j++)
 			{
-				data.AHGCGHAAHOO[j] = data.FBGGEFFJJHB ^ l1[i];
-				data.OGEBLOHMGAM[j] = data.FBGGEFFJJHB ^ (int)l2[i];
+				data.AHGCGHAAHOO[j] = data.FBGGEFFJJHB ^ l1[j];
+				data.OGEBLOHMGAM[j] = data.FBGGEFFJJHB ^ (int)l2[j];
 			}
 			CDENCMNHNGA.Add(data);
 		}
