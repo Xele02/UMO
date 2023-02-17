@@ -698,7 +698,7 @@ public class KEHOJEJMGLJ
 	// public void OANLHPBJIND() { }
 
 	// // RVA: 0xE89CF8 Offset: 0xE89CF8 VA: 0xE89CF8
-	public static void INLICKMJHHK(string CJEKGLGBIHF_path)
+	public static void INLICKMJHHK_DeleteFile(string CJEKGLGBIHF_path)
 	{
 		UnityEngine.Debug.Log("Delete File "+CJEKGLGBIHF_path);
 		File.Delete(CJEKGLGBIHF_path);
@@ -724,7 +724,7 @@ public class KEHOJEJMGLJ
 			string[] files = Directory.GetFiles(tmpDir);
 			for(int i = 0; i < files.Length; i++)
 			{
-				INLICKMJHHK(files[i]);
+				INLICKMJHHK_DeleteFile(files[i]);
 			}
 			string[] dirs = Directory.GetDirectories(tmpDir);
 			for(int i = 0; i < dirs.Length; i++)
@@ -744,7 +744,7 @@ public class KEHOJEJMGLJ
 		string[] files = Directory.GetFiles(CJJJPKJHOGM);
 		for(int i = 0; i < files.Length; i++)
 		{
-			INLICKMJHHK(files[i]);
+			INLICKMJHHK_DeleteFile(files[i]);
 		}
 		string[] dirs = Directory.GetDirectories(CJJJPKJHOGM);
 		for(int i = 0; i < dirs.Length; i++)
@@ -781,7 +781,24 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE8BF18 Offset: 0xE8BF18 VA: 0xE8BF18
 	private void FFHCCIOCPAD()
 	{
-		TodoLogger.Log(0, "Delete some files in bgm");
+		string path = CGAHFOBGHIM_PersistentPlatformDataPath + "/snd/bgm";
+		if(Directory.Exists(path))
+		{
+			long serverTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			int idx = JCMJBMBMJAK_PersistentDataPath.Length;
+			string[] files = Directory.GetFiles(path);
+			for(int i = 0; i < files.Length; i++)
+			{
+				string name = files[i].Substring(idx);
+				name.Replace('\\', '/');
+				FECDBKKBAHO.FHOPNIJCFKA_FileInfo info = KLIJFOBEKBE.LBDOLHGDIEB(name);
+				if(info != null && info.GEJJEDDEPMI && info.FNALNKKMKDC_ExpireTime < serverTime)
+				{
+					Debug.Log(JpStringLiterals.StringLiteral_12223 + files[i] + "</color>");
+					//INLICKMJHHK_DeleteFile(files[i]);
+				}
+			}
+		}
 	}
 
 	// // RVA: 0xE8C288 Offset: 0xE8C288 VA: 0xE8C288

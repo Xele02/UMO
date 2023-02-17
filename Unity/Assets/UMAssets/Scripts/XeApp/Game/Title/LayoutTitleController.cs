@@ -57,7 +57,13 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE368A4 Offset: 0xE368A4 VA: 0xE368A4
 		public void SetVisible(bool isVisible)
 		{
-			TodoLogger.Log(5, "Layout Title Controller SetVisible "+isVisible);
+			for(int i = 0; i < titleObjectList.Count; i++)
+			{
+				if(titleObjectList[i] != null)
+				{
+					titleObjectList[i].gameObject.SetActive(isVisible);
+				}
+			}
 		}
 
 		// // RVA: 0xE36A24 Offset: 0xE36A24 VA: 0xE36A24

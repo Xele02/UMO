@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class FECDBKKBAHO
 {
-	public class FHOPNIJCFKA
+	public class FHOPNIJCFKA_FileInfo
 	{
 		public long DGGFLBJBLLN; // 0x8
 		public long FNALNKKMKDC_ExpireTime; // 0x10
@@ -16,7 +16,7 @@ public class FECDBKKBAHO
 	
 	private const int MPLGOGILHHF = 10003;
 	private const int KENEAGNAKAF = 24;
-	private Dictionary<int, FECDBKKBAHO.FHOPNIJCFKA> MLHACNBJAGM = new Dictionary<int, FECDBKKBAHO.FHOPNIJCFKA>(); // 0x8
+	private Dictionary<int, FHOPNIJCFKA_FileInfo> MLHACNBJAGM_FilesInfoByHash = new Dictionary<int, FHOPNIJCFKA_FileInfo>(); // 0x8
 	private string JHJMNLMNPGO_PersistentDirSys; // 0xC
 	public bool GCKONHLCMFL; // 0x10
 	private int IHEPCAHBECA = -1; // 0x14
@@ -37,7 +37,14 @@ public class FECDBKKBAHO
 	// public void JCHLONCMPAJ() { }
 
 	// // RVA: 0xFCF860 Offset: 0xFCF860 VA: 0xFCF860
-	// public FECDBKKBAHO.FHOPNIJCFKA LBDOLHGDIEB(string CJEKGLGBIHF) { }
+	public FHOPNIJCFKA_FileInfo LBDOLHGDIEB(string CJEKGLGBIHF)
+	{
+		if(MLHACNBJAGM_FilesInfoByHash.ContainsKey(CJEKGLGBIHF.GetHashCode()))
+		{
+			return MLHACNBJAGM_FilesInfoByHash[CJEKGLGBIHF.GetHashCode()];
+		}
+		return null;
+	}
 
 	// // RVA: 0xFCF948 Offset: 0xFCF948 VA: 0xFCF948
 	public void OJCJPCHFPGO(string CJEKGLGBIHF)
@@ -49,7 +56,7 @@ public class FECDBKKBAHO
 	// public void KMHCHILJPIG() { }
 
 	// // RVA: 0xFCFBB8 Offset: 0xFCFBB8 VA: 0xFCFBB8
-	public FECDBKKBAHO.FHOPNIJCFKA ANIJHEBLMGB(string CJEKGLGBIHF, long DGGFLBJBLLN, int KKPAHLMJKIH)
+	public FECDBKKBAHO.FHOPNIJCFKA_FileInfo ANIJHEBLMGB(string CJEKGLGBIHF, long DGGFLBJBLLN, int KKPAHLMJKIH)
 	{
 		TodoLogger.Log(0, "TODO");
 		return null;
@@ -62,7 +69,7 @@ public class FECDBKKBAHO
 		{
 			Directory.CreateDirectory(JHJMNLMNPGO_PersistentDirSys);
 		}
-		MLHACNBJAGM.Clear();
+		MLHACNBJAGM_FilesInfoByHash.Clear();
 		string file = JHJMNLMNPGO_PersistentDirSys + "/" + KCOGAGGCPBP.PFJKALCPNHG_File00;
 		if(File.Exists(file))
 		{
@@ -76,13 +83,13 @@ public class FECDBKKBAHO
 					int offset = 8;
 					for(int i = 0; i < val; i++)
 					{
-						FECDBKKBAHO.FHOPNIJCFKA d = new FECDBKKBAHO.FHOPNIJCFKA();
+						FHOPNIJCFKA_FileInfo d = new FHOPNIJCFKA_FileInfo();
 						d.DGGFLBJBLLN = BitConverter.ToInt64(data, offset);
 						d.FNALNKKMKDC_ExpireTime = BitConverter.ToInt64(data, offset + 8);
 						d.IOIMHJAOKOO = BitConverter.ToInt32(data, offset + 16);
 						d.KKPAHLMJKIH = BitConverter.ToInt16(data, offset + 20);
 						d.GEJJEDDEPMI = data[22] != 0;
-						MLHACNBJAGM.Add(d.IOIMHJAOKOO, d);
+						MLHACNBJAGM_FilesInfoByHash.Add(d.IOIMHJAOKOO, d);
 						offset += 24;
 					}
 				}

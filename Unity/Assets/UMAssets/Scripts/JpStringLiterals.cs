@@ -107,6 +107,7 @@ class JpStringLiterals
 	public const string StringLiteral_12151 = "Ⅳ"; // 0x03bb4894
 	public const string StringLiteral_12152 = "Ⅴ"; // 0x03bb4898
 	public const string StringLiteral_12215 = "ロック解除条件"; // 0x03bb4994
+	public const string StringLiteral_12223 = "<color=red>楽曲削除="; // 0x03bb49b4
 	public const string StringLiteral_12326 = "おまけ付初心者セット"; // 0x03bb4b50
 	public const string StringLiteral_12327 = "お得セットA"; // 0x03bb4b54
 	public const string StringLiteral_12328 = "お得セットB"; // 0x03bb4b58

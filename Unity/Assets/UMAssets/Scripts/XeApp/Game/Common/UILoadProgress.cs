@@ -1,6 +1,7 @@
 using XeSys.Gfx;
 using UnityEngine;
 using System;
+using System.Collections;
 
 namespace XeApp.Game.Common
 {
@@ -49,37 +50,82 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDDFA4 Offset: 0x1CDDFA4 VA: 0x1CDDFA4
 		public void Begin(Transform parent)
 		{
-			TodoLogger.Log(5, "UILoadProgress Begin");
-			m_isReady = true;
+			if(!gameObject.activeSelf)
+			{
+				gameObject.SetActive(true);
+			}
+			m_ratio = 0;
+			m_per = 0;
+			ChangeProgress(0);
+			m_isReady = false;
+			m_oldParent = transform.parent;
+			transform.SetParent(parent, false);
+			StartCoroutine(WaitOneFrameCoroutine());
 		}
 
 		// // RVA: 0x1CDE13C Offset: 0x1CDE13C VA: 0x1CDE13C
 		public void End()
 		{
-			TodoLogger.Log(0, "TODO");
+			gameObject.SetActive(false);
+			transform.SetParent(m_oldParent, false);
+			m_oldParent = null;
 		}
 
 		// // RVA: 0x1CDE1B8 Offset: 0x1CDE1B8 VA: 0x1CDE1B8
-		public void SetType(UILoadProgress.Type type)
+		public void SetType(Type type)
 		{
-			TodoLogger.Log(5, "UILoadPRogress SetType");
+			m_type = type;
+			if(type == Type.Event)
+			{
+				m_layoutType.StartChildrenAnimGoStop("02");
+			}
+			else if(type == Type.Normal)
+			{
+				m_layoutType.StartChildrenAnimGoStop("01");
+			}
 		}
 
 		// // RVA: 0x1CDE270 Offset: 0x1CDE270 VA: 0x1CDE270
 		public void SetPer(int per)
 		{
-			TodoLogger.Log(5, "SetPer");
+			m_per = per;
 		}
 
 		// // RVA: 0x1CDDEE0 Offset: 0x1CDDEE0 VA: 0x1CDDEE0
 		private void ChangeProgress(int per)
 		{
-			TodoLogger.Log(5, "Change Progress");
+			float ratio = 0;
+			float p = 0;
+			if (per < 100)
+			{
+				ratio = m_ratio;
+				p = per;
+			}
+			else
+			{
+				ratio = 100;
+				m_ratio = 100;
+				p = 100;
+			}
+			m_ratio = ratio + (per - ratio) * 0.7f;
+			int f = Mathf.RoundToInt(m_ratio);
+			m_layoutBar[(int)m_type].StartChildrenAnimGoStop(f, f);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7398AC Offset: 0x7398AC VA: 0x7398AC
 		// // RVA: 0x1CDE0B0 Offset: 0x1CDE0B0 VA: 0x1CDE0B0
-		// private IEnumerator WaitOneFrameCoroutine() { }
+		private IEnumerator WaitOneFrameCoroutine()
+		{
+			//0x1CDE684
+			if(m_parent == null)
+			{
+				m_parent = transform.parent;
+			}
+			transform.SetParent(null, false);
+			yield return m_frameYilder;
+			transform.SetParent(m_parent, false);
+			m_isReady = true;
+		}
 
 		// // RVA: 0x1CDE298 Offset: 0x1CDE298 VA: 0x1CDE298 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

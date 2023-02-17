@@ -34,6 +34,7 @@ public static class TodoLogger
 	public static int ToCheck = _Todo;
 	public static int Errors = _Todo;
 	public static int DbIntegrityCheck = _Todo;
+	public static int Xedec = _Todo;
 
 	public static int Popup = 0;
 	public static int Database = 0;

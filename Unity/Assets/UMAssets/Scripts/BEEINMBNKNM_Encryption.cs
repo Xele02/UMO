@@ -100,7 +100,7 @@ public class BEEINMBNKNM_Encryption
 	private static /*extern*/ uint ANMDMMBEJPB(uint IOIMHJAOKOO, /*IntPtr */byte[] DBBGALAPFGC, int NFHFALDMGGC)
 	{
 		// return xedec_hash(IOIMHJAOKOO, DBBGALAPFGC, NFHFALDMGGC);
-		TodoLogger.Log(0, "xedec_hash");
+		TodoLogger.Log(TodoLogger.Xedec, "BEEINMBNKNM_Encryption.ANMDMMBEJPB xedec_hash");
 		return 0;
 	}
 

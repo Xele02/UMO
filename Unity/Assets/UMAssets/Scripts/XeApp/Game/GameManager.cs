@@ -966,7 +966,7 @@ namespace XeApp.Game
 		// // RVA: 0x9A01C8 Offset: 0x9A01C8 VA: 0x9A01C8
 		public void SetNeverSleep(bool enable)
 		{
-			TodoLogger.Log(5, "GameManager SetNeverSleep");
+			Screen.sleepTimeout = enable ? -1 : -2;
 		}
 
 		// // RVA: 0x9A01DC Offset: 0x9A01DC VA: 0x9A01DC
