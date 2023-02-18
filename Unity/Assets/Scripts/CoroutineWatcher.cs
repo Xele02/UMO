@@ -19,11 +19,13 @@ public static class MonoBehaviourExtensions
 	public static void StopCoroutineWatched(this MonoBehaviour owner, IEnumerator coroutine)
 	{
 		//CoroutineWatcher.Instance.StopCoroutine(CoroutineWatcher.Instance.Find(coroutine));
+		CoroutineWatcher.Instance.Stop(coroutine);
 		owner.StopCoroutine(coroutine);
 	}
 	public static void StopCoroutineWatched(this MonoBehaviour owner, Coroutine coroutine)
 	{
 		//owner/*CoroutineWatcher.Instance*/.StopCoroutine(coroutine);
+		CoroutineWatcher.Instance.Stop(coroutine);
 		owner.StopCoroutine(coroutine);
 	}
 	public static Coroutine StartCoroutineWatched(this MonoBehaviour owner, string FuncName)
@@ -75,6 +77,29 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
         //UnityEngine.Debug.LogError(""+i.Id+" End "+e);
         coroutines.Remove(i);
     }
+
+	public void Stop(IEnumerator e)
+	{
+		Info i_ = coroutines.Find((Info info_) => 
+		{ 
+			return info_.e == e;
+		});
+		if(i_ != null)
+		{
+			coroutines.Remove(i_);
+		}
+	}
+	public void Stop(Coroutine c)
+	{
+		Info i_ = coroutines.Find((Info info_) => 
+		{ 
+			return info_.c == c;
+		});
+		if(i_ != null)
+		{
+			coroutines.Remove(i_);
+		}
+	}
 
 	public void SetSpawned(IEnumerator e, IEnumerator spawned, Coroutine c, MonoBehaviour owner)
 	{
