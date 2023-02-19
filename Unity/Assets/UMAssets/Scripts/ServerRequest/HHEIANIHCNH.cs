@@ -4,7 +4,7 @@ using UnityEngine;
 public class HHEIANIHCNH { }
 public class HHEIANIHCNH_RequestPlayerStatus : CACGCMBKHDI_Request
 {
-	public HEHLBMMFMPL NFEAMMJIMPG { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB x17574D0 KMKEGMGKCBA 0x17574D8
+	public HEHLBMMFMPL_PlayerStatusInfo NFEAMMJIMPG_Result { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB x17574D0 KMKEGMGKCBA 0x17574D8
 
 	// // RVA: 0x17574E0 Offset: 0x17574E0 VA: 0x17574E0 Slot: 12
 	public override void DHLDNIEELHO()
@@ -16,12 +16,14 @@ public class HHEIANIHCNH_RequestPlayerStatus : CACGCMBKHDI_Request
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
     {
         EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
-        NFEAMMJIMPG = new HEHLBMMFMPL();
-        NFEAMMJIMPG.KHEKNNFCAOI(json);
+        NFEAMMJIMPG_Result = new HEHLBMMFMPL_PlayerStatusInfo();
+        NFEAMMJIMPG_Result.KHEKNNFCAOI(json);
     }
 }
 
-public class HEHLBMMFMPL
+[System.Obsolete("Use HEHLBMMFMPL_PlayerStatusInfo", true)]
+public class HEHLBMMFMPL {}
+public class HEHLBMMFMPL_PlayerStatusInfo
 {
 	public int EKFHOJIGHHH_IsCreated; // 0x8
 	public int EHGBICNIBKE_PlayerId; // 0xC
@@ -30,7 +32,7 @@ public class HEHLBMMFMPL
 	// public bool NNJKNHKFPBB { get; }
 
 	// RVA: 0x1748038 Offset: 0x1748038 VA: 0x1748038
-	public bool OGADPAILFBC()
+	public bool OGADPAILFBC_IsCreated()
     {
         return EKFHOJIGHHH_IsCreated == 1;
     }

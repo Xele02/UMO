@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 			if(!MenuScene.IsAlreadyHome)
 			{
 				m_isCheckGachaProductList = false;
-				NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG(() => {
+				NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProducList(() => {
 					//0x13C7AD0
 					TodoLogger.Log(10, "TODO");
 					m_isCheckGachaProductList = true;

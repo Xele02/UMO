@@ -22,14 +22,14 @@ public class LAPFLEEAACL
     }
 
 	// // RVA: 0xD94650 Offset: 0xD94650 VA: 0xD94650
-	public void OFKONDFPMLJ()
+	public void OFKONDFPMLJ_GetProduct()
     {
         TodoLogger.Log(0, "SakashoPayment$$GetProducts");
 		PLOOEECNHFB = true;
     }
 
 	// // RVA: 0xD94AA0 Offset: 0xD94AA0 VA: 0xD94AA0
-	public void LAOEGNLOJHC()
+	public void LAOEGNLOJHC_Convert()
     {
         TodoLogger.Log(0, "BJGOKLICIDO_Coroutine_Convert");
 		PLOOEECNHFB = true;

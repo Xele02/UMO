@@ -300,14 +300,14 @@ public class NKGJPJPHLIF
 	}
 
 	// // RVA: 0xC17FB4 Offset: 0xC17FB4 VA: 0xC17FB4
-	public void HGJKAEOLMJN(IMCBBOAFION KLMFJJCNBIP, DJBHIFLHJLK JGKOLBLPMPG, bool MKFJAGGLEFL = true, bool FBBNPFFEJBN = false)
+	public void HGJKAEOLMJN_InitializePlayerToken(IMCBBOAFION KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK JGKOLBLPMPG_OnFail, bool MKFJAGGLEFL = true, bool FBBNPFFEJBN = false)
 	{
-		N.a.StartCoroutineWatched(PFKIHFCAPNC_Coroutine_InitializePlayerToken(KLMFJJCNBIP, JGKOLBLPMPG, MKFJAGGLEFL, FBBNPFFEJBN));
+		N.a.StartCoroutineWatched(PFKIHFCAPNC_Coroutine_InitializePlayerToken(KLMFJJCNBIP_OnSuccess, JGKOLBLPMPG_OnFail, MKFJAGGLEFL, FBBNPFFEJBN));
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B98B0 Offset: 0x6B98B0 VA: 0x6B98B0
 	// // RVA: 0xC18024 Offset: 0xC18024 VA: 0xC18024
-	private IEnumerator PFKIHFCAPNC_Coroutine_InitializePlayerToken(IMCBBOAFION KLMFJJCNBIP, DJBHIFLHJLK JGKOLBLPMPG, bool MKFJAGGLEFL, bool FBBNPFFEJBN)
+	private IEnumerator PFKIHFCAPNC_Coroutine_InitializePlayerToken(IMCBBOAFION KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK JGKOLBLPMPG_OnFail, bool MKFJAGGLEFL, bool FBBNPFFEJBN)
 	{
     	//UnityEngine.Debug.Log("Enter PFKIHFCAPNC_Coroutine_InitializePlayerToken");
 		// public NKGJPJPHLIF KIGBLACMODG; // 0x10
@@ -318,37 +318,37 @@ public class NKGJPJPHLIF
 		if(MDAMJIGBOLD_PlayerId != 0 && !FBBNPFFEJBN)
 		{
 			//goto LAB_00c1bbc4;
-			if(KLMFJJCNBIP != null)
-				KLMFJJCNBIP();
+			if(KLMFJJCNBIP_OnSuccess != null)
+				KLMFJJCNBIP_OnSuccess();
     		//UnityEngine.Debug.Log("Exit PFKIHFCAPNC_Coroutine_InitializePlayerToken");
 			yield break;
 		}
-		HHEIANIHCNH_RequestPlayerStatus FFEEIONIBFF = IBLPICFDGOF.IFFNCAFNEAG_AddRequest<HHEIANIHCNH_RequestPlayerStatus>(new HHEIANIHCNH_RequestPlayerStatus());
-		FFEEIONIBFF.EOPCHGLLONF = MKFJAGGLEFL;
-		yield return FFEEIONIBFF.GDPDELLNOBO_WaitDone(N.a);
+		HHEIANIHCNH_RequestPlayerStatus FFEEIONIBFF_Request = IBLPICFDGOF.IFFNCAFNEAG_AddRequest<HHEIANIHCNH_RequestPlayerStatus>(new HHEIANIHCNH_RequestPlayerStatus());
+		FFEEIONIBFF_Request.EOPCHGLLONF = MKFJAGGLEFL;
+		yield return FFEEIONIBFF_Request.GDPDELLNOBO_WaitDone(N.a);
 
 		//1
 
-		if(FFEEIONIBFF.NPNNPNAIONN)
+		if(FFEEIONIBFF_Request.NPNNPNAIONN)
 		{
 			//goto LAB_00c1b8f8;
-			if(JGKOLBLPMPG != null)
-				JGKOLBLPMPG();
+			if(JGKOLBLPMPG_OnFail != null)
+				JGKOLBLPMPG_OnFail();
 		}
 		//L177
 		int playerId = 0;
 		int accountStatus = 0;
-		if(FFEEIONIBFF.NFEAMMJIMPG.OGADPAILFBC()) // iscreated
+		if(FFEEIONIBFF_Request.NFEAMMJIMPG_Result.OGADPAILFBC_IsCreated()) // iscreated
 		{
-			playerId = FFEEIONIBFF.NFEAMMJIMPG.EHGBICNIBKE_PlayerId;
-			accountStatus = FFEEIONIBFF.NFEAMMJIMPG.JFMEKPDHJPP_PlayerAccountStatus;
-			FFEEIONIBFF = null;
+			playerId = FFEEIONIBFF_Request.NFEAMMJIMPG_Result.EHGBICNIBKE_PlayerId;
+			accountStatus = FFEEIONIBFF_Request.NFEAMMJIMPG_Result.JFMEKPDHJPP_PlayerAccountStatus;
+			FFEEIONIBFF_Request = null;
 			//goto LAB_00c1b9d8;
 		}
 		else
 		{
 			//L214
-			FFEEIONIBFF = null;
+			FFEEIONIBFF_Request = null;
 			TodoLogger.Log(0,  "CreatePlayer");
 			/*PKNOGNLPHAE CNEMMHHJKNG = IBLPICFDGOF.IFFNCAFNEAG_AddRequest<PKNOGNLPHAE>(new PKNOGNLPHAE());
 			yield return CNEMMHHJKNG.GDPDELLNOBO(N.a);*/
@@ -366,8 +366,8 @@ public class NKGJPJPHLIF
 		MDAMJIGBOLD_PlayerId = playerId;
 		if(accountStatus == -1)
 			DCPCLHOJEHE = true;
-		if(KLMFJJCNBIP != null)
-			KLMFJJCNBIP();
+		if(KLMFJJCNBIP_OnSuccess != null)
+			KLMFJJCNBIP_OnSuccess();
     	//UnityEngine.Debug.Log("Exit PFKIHFCAPNC_Coroutine_InitializePlayerToken");
 	}
 

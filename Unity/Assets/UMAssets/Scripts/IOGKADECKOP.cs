@@ -25,7 +25,7 @@ public class IOGKADECKOP
 	private MonoBehaviour DANMJLOBLIE; // 0x8
 	private bool BICOBOLNFLJ; // 0xC
 	private InheritingMenu MCJHELIEHMC; // 0x10
-	private LayoutTitleController NOFPJPHIPBD; // 0x14
+	private LayoutTitleController NOFPJPHIPBD_LayoutTitleCtrl; // 0x14
 	private RawImage PDOILOAFKCF_BgImage; // 0x18
 	private GameObject HOFMODFAOEA; // 0x1C
 	private string ABJDBPINCIC = "DownLoad"; // 0x20
@@ -33,7 +33,7 @@ public class IOGKADECKOP
 	private AMOCLPHDGBP OFFPKPHHLKD; // 0x28
 	private bool OKDMEMPECDO; // 0x2C
 	private bool LKFGMDGFKDP; // 0x2D
-	private bool JJHGAKDMGLJ; // 0x2E
+	private bool JJHGAKDMGLJ_NoTutorial; // 0x2E
 	private BgBehaviour IJCPLBPLJLJ; // 0x30
 	private bool EHKDIJELHAO; // 0x34
 	private bool OOIBKCCMCAG_HasCustomBg; // 0x35
@@ -84,14 +84,14 @@ public class IOGKADECKOP
 		if(MCJHELIEHMC.IsOpen)
 			return;
 		
-		if(NOFPJPHIPBD.IsSupportPopupOpen)
+		if(NOFPJPHIPBD_LayoutTitleCtrl.IsSupportPopupOpen)
 			return;
 		
-		NOFPJPHIPBD.Buttons.CallbackClear();
-		NOFPJPHIPBD.LbButtons.CallbackClear();
+		NOFPJPHIPBD_LayoutTitleCtrl.Buttons.CallbackClear();
+		NOFPJPHIPBD_LayoutTitleCtrl.LbButtons.CallbackClear();
 		SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_TITLE_000);
-		NOFPJPHIPBD.ScreenTap.ClearCallback();
-		NOFPJPHIPBD.Screen.TapAnim();
+		NOFPJPHIPBD_LayoutTitleCtrl.ScreenTap.ClearCallback();
+		NOFPJPHIPBD_LayoutTitleCtrl.Screen.TapAnim();
 		DANMJLOBLIE.StartCoroutineWatched(PFEKBBONCJJ_Coroutine_GameStart());
     }
 
@@ -120,13 +120,13 @@ public class IOGKADECKOP
         //UnityEngine.Debug.Log("Enter LMDJGHMDDJA_LogoActCoroutine");
 		//0x14087CC
 		PJKLMCGEJMK LPKMGOHDKGM = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF;
-		while(!(NOFPJPHIPBD.IsSetup && !LKFGMDGFKDP))
+		while(!(NOFPJPHIPBD_LayoutTitleCtrl.IsSetup && !LKFGMDGFKDP))
 		{
 			yield return null;
 		}
-		if(NOFPJPHIPBD.Texts != null)
+		if(NOFPJPHIPBD_LayoutTitleCtrl.Texts != null)
 		{
-			NOFPJPHIPBD.Texts.SetStatus();
+			NOFPJPHIPBD_LayoutTitleCtrl.Texts.SetStatus();
 		}
 		yield return null;
 		SoundManager.Instance.bgmPlayer.Play(BgmConstant.Name.Title, 1);
@@ -136,7 +136,7 @@ public class IOGKADECKOP
 		
 		GameManager.Instance.InputEnabled = true;
 		GameManager.Instance.AddPushBackButtonHandler(this.GJLDMJFMIOD_OnPushBackButton);
-		NOFPJPHIPBD.ScreenTap.SetCallback();
+		NOFPJPHIPBD_LayoutTitleCtrl.ScreenTap.SetCallback();
 		SoundManager.Instance.voTitlecall.EntrySheet();
 		yield return new WaitForSeconds(0.5f);
 		
@@ -146,10 +146,10 @@ public class IOGKADECKOP
 		{
 			SoundManager.Instance.voTitlecall.Play(divaId, 0);
 		}
-		NOFPJPHIPBD.Show();
+		NOFPJPHIPBD_LayoutTitleCtrl.Show();
 		if(EHKDIJELHAO)
 		{
-			NOFPJPHIPBD.ShowArButton();
+			NOFPJPHIPBD_LayoutTitleCtrl.ShowArButton();
 		}
 		DANMJLOBLIE.StartCoroutineWatched(HNPMKCFMEGA_Coroutine_Inquiry());
         //UnityEngine.Debug.Log("Exit LMDJGHMDDJA_LogoActCoroutine");
@@ -211,7 +211,7 @@ public class IOGKADECKOP
 		{
 			bool BEKAMBBOLBO = false;
 			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.OLBAIKLLIFE = true;
-			NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN(() => {
+			NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN_InitializePlayerToken(() => {
 				//0xA08F1C
 				BEKAMBBOLBO = true;
 			}, () => {
@@ -300,7 +300,7 @@ public class IOGKADECKOP
 		AssetBundleManager.isTutorialNow = false;
 		if(!OKDMEMPECDO)
 		{
-			NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN(() => {
+			NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN_InitializePlayerToken(() => {
 				//0xA08F90
 				BEKAMBBOLBO = true;
 			}, () => {
@@ -318,7 +318,7 @@ public class IOGKADECKOP
 		BEKAMBBOLBO = false;
 		CNAIDEAFAAM = false;
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.OLBAIKLLIFE = true;
-		DOKOHKJIDBO.HHCJCDFCLOB.DBEPFLFHAFH(false, () => {
+		DOKOHKJIDBO.HHCJCDFCLOB.DBEPFLFHAFH_RequestMaster(false, () => {
 			// 0xA08FA8
 			BEKAMBBOLBO = true;
 		}, () => {
@@ -370,10 +370,10 @@ public class IOGKADECKOP
 			IJCPLBPLJLJ.gameObject.SetActive(false);
 			IJCPLBPLJLJ.transform.SetSiblingIndex(1);
 		}
-		if(NOFPJPHIPBD == null)
+		if(NOFPJPHIPBD_LayoutTitleCtrl == null)
 		{
-			NOFPJPHIPBD = new LayoutTitleController();
-			NOFPJPHIPBD.Parent = DANMJLOBLIE.transform.parent.gameObject;
+			NOFPJPHIPBD_LayoutTitleCtrl = new LayoutTitleController();
+			NOFPJPHIPBD_LayoutTitleCtrl.Parent = DANMJLOBLIE.transform.parent.gameObject;
 			bool CJFHNONJGIP = false;
 			bool ACEAJMLOEBK = false;
 			bool DEKGLHFKHBK = false;
@@ -383,39 +383,39 @@ public class IOGKADECKOP
 			bool IHDCDHLLAJN = false;
 			bool LOAFINDJGMC = false;
 			bool OPLHMBBOCCH = false;
-			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD.LoadLayoutTitleLogo(() => {
+			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD_LayoutTitleCtrl.LoadLayoutTitleLogo(() => {
 				// 0xA08FE0
 				CJFHNONJGIP = true;
 			}));
-			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD.LoadLayoutButtons(() => {
+			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD_LayoutTitleCtrl.LoadLayoutButtons(() => {
 				// 0xA08FEC
 				ACEAJMLOEBK = true;
 			}));
-			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD.LoadLayoutLbButtons(() => {
+			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD_LayoutTitleCtrl.LoadLayoutLbButtons(() => {
 				// 0xA08FF8
 				DEKGLHFKHBK = true;
 			}));
-			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD.LoadLayoutArButton(() => {
+			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD_LayoutTitleCtrl.LoadLayoutArButton(() => {
 				// 0xA09004
 				LOAFINDJGMC = true;
 			}));
-			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD.LoadLayoutScreenTap(() => {
+			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD_LayoutTitleCtrl.LoadLayoutScreenTap(() => {
 				// 0xA09010
 				CLEFCNJNLJJ = true;
 			}));
-			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD.LoadLayoutScreen(() => {
+			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD_LayoutTitleCtrl.LoadLayoutScreen(() => {
 				// 0xA0901C
 				AOHHKIPNNND = true;
 			}));
-			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD.LoadLayoutTexts(() => {
+			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD_LayoutTitleCtrl.LoadLayoutTexts(() => {
 				// 0xA09028
 				PIDLFGNJPMJ = true;
 			}));
-			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD.LoadLayoutCopyRight(() => {
+			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD_LayoutTitleCtrl.LoadLayoutCopyRight(() => {
 				// 0xA09034
 				IHDCDHLLAJN = true;
 			}));
-			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD.LoadLayoutMonthlyPass(() => {
+			DANMJLOBLIE.StartCoroutineWatched(NOFPJPHIPBD_LayoutTitleCtrl.LoadLayoutMonthlyPass(() => {
 				// 0xA09040
 				OPLHMBBOCCH = true;
 			}));
@@ -423,7 +423,7 @@ public class IOGKADECKOP
 			{
 				yield return null;
 			}
-			NOFPJPHIPBD.LayoutSetup();
+			NOFPJPHIPBD_LayoutTitleCtrl.LayoutSetup();
 		}
         //UnityEngine.Debug.Log("Exit BLJICEOFNMM_LoadLayoutTitle");
 	}
@@ -431,36 +431,36 @@ public class IOGKADECKOP
 	// // RVA: 0xA06E24 Offset: 0xA06E24 VA: 0xA06E24
 	private void PELOLGDNOGL()
 	{
-		NOFPJPHIPBD.ScreenTap.ButtonCallbackTap = this.FGBKOJCFMKM;
-		NOFPJPHIPBD.Buttons.ButtonCallbackSupport = () =>
+		NOFPJPHIPBD_LayoutTitleCtrl.ScreenTap.ButtonCallbackTap = this.FGBKOJCFMKM;
+		NOFPJPHIPBD_LayoutTitleCtrl.Buttons.ButtonCallbackSupport = () =>
 		{
 			//0xA085A0
-			if (NOFPJPHIPBD.IsSupportPopupOpen)
+			if (NOFPJPHIPBD_LayoutTitleCtrl.IsSupportPopupOpen)
 				return;
-			NOFPJPHIPBD.PopupShowSupport(null);
+			NOFPJPHIPBD_LayoutTitleCtrl.PopupShowSupport(null);
 		};
-		NOFPJPHIPBD.Buttons.ButtonCallbackInheriting = () =>
+		NOFPJPHIPBD_LayoutTitleCtrl.Buttons.ButtonCallbackInheriting = () =>
 		{
 			//0xA085FC
 			if(!MCJHELIEHMC.IsOpen)
 			{
-				GraphicRaycaster g = NOFPJPHIPBD.Parent.GetComponentInParent<GraphicRaycaster>();
+				GraphicRaycaster g = NOFPJPHIPBD_LayoutTitleCtrl.Parent.GetComponentInParent<GraphicRaycaster>();
 				g.enabled = false;
 				MCJHELIEHMC.PopupShowMenu(false, () =>
 				{
 					//0xA087F8
-					if(NOFPJPHIPBD.Texts != null)
+					if(NOFPJPHIPBD_LayoutTitleCtrl.Texts != null)
 					{
-						NOFPJPHIPBD.Texts.SetStatus();
+						NOFPJPHIPBD_LayoutTitleCtrl.Texts.SetStatus();
 					}
 				}, () =>
 				{
 					//0xA0904C
 					g.enabled = true;
-				}, NOFPJPHIPBD.MonthlyPass);
+				}, NOFPJPHIPBD_LayoutTitleCtrl.MonthlyPass);
 			}
 		};
-		NOFPJPHIPBD.LbButtons.ButtonCallbackGpgs = () =>
+		NOFPJPHIPBD_LayoutTitleCtrl.LbButtons.ButtonCallbackGpgs = () =>
 		{
 			//0xA08B2C
 			NDABOOOOENC.HHCJCDFCLOB.OHFNPFMHMMJ_TryLogin(() =>
@@ -469,7 +469,7 @@ public class IOGKADECKOP
 				return;
 			}, true);
 		};
-		NOFPJPHIPBD.ArButton.OnClickArButton = OCCAKNDDCMA;
+		NOFPJPHIPBD_LayoutTitleCtrl.ArButton.OnClickArButton = OCCAKNDDCMA;
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B3F88 Offset: 0x6B3F88 VA: 0x6B3F88
@@ -491,19 +491,19 @@ public class IOGKADECKOP
 		//0x140845C
 		LKFGMDGFKDP = true;
 		
-		while(NOFPJPHIPBD.TitleLogo == null || NOFPJPHIPBD.TitleLogo.IsLoaded())
+		while(NOFPJPHIPBD_LayoutTitleCtrl.TitleLogo == null || NOFPJPHIPBD_LayoutTitleCtrl.TitleLogo.IsLoaded())
 		{
 			yield return null;
 		}
-		NOFPJPHIPBD.TitleLogo.SetStatus();
-		NOFPJPHIPBD.TitleLogo.Show();
+		NOFPJPHIPBD_LayoutTitleCtrl.TitleLogo.SetStatus();
+		NOFPJPHIPBD_LayoutTitleCtrl.TitleLogo.Show();
 		
-		while(!NOFPJPHIPBD.TitleLogo.IsClose)
+		while(!NOFPJPHIPBD_LayoutTitleCtrl.TitleLogo.IsClose)
 		{
 			yield return null;
 		}
 
-		NOFPJPHIPBD.TitleLogo.Hide();
+		NOFPJPHIPBD_LayoutTitleCtrl.TitleLogo.Hide();
 		LKFGMDGFKDP = false;
 
         //UnityEngine.Debug.Log("Exit IMDAHCEDGFK_Coroutine_TitleLogo");
@@ -597,27 +597,27 @@ public class IOGKADECKOP
 		IMMAOANGPNK MPHCKPBAKMO = IMMAOANGPNK.HHCJCDFCLOB;
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.MBOIDKCMCDL = false;
 		
-		bool BEKAMBBOLBO = false;
-		bool CNAIDEAFAAM = false;
-		bool OOICHDNLLJG = false;
-		NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN(() => {
+		bool BEKAMBBOLBO_Done = false;
+		bool CNAIDEAFAAM_IsError = false;
+		bool OOICHDNLLJG_NeedTuto = false;
+		NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN_InitializePlayerToken(() => {
 			//0xA09290
-			BEKAMBBOLBO = true;
+			BEKAMBBOLBO_Done = true;
 		}, () => {
 			//0xA0929C
-			BEKAMBBOLBO = true;
-			CNAIDEAFAAM = true;
+			BEKAMBBOLBO_Done = true;
+			CNAIDEAFAAM_IsError = true;
 		}, false,false);
 			// goto LAB_00a0c574;
 		// 2
 		//LAB_00a0c574:
-		while(!BEKAMBBOLBO)
+		while(!BEKAMBBOLBO_Done)
 		{
 			//LAB_00a0e350:
 			yield return null; // To 2
 		}
 		// L337
-		if(CNAIDEAFAAM)
+		if(CNAIDEAFAAM_IsError)
 		{
 			// break
 			NLJKCDHIPEG = null;
@@ -639,25 +639,25 @@ public class IOGKADECKOP
 		{
 			throw new BOS3LLS6G79("bits="+checkSecure);
 		}
-		BEKAMBBOLBO = false;
-		CNAIDEAFAAM = false;
+		BEKAMBBOLBO_Done = false;
+		CNAIDEAFAAM_IsError = false;
 		
-		DOKOHKJIDBO.HHCJCDFCLOB.DBEPFLFHAFH(true, () => {
+		DOKOHKJIDBO.HHCJCDFCLOB.DBEPFLFHAFH_RequestMaster(true, () => {
 			//0xA092A8
-			BEKAMBBOLBO = true;
+			BEKAMBBOLBO_Done = true;
 		}, () => {
 			//0xA092B4
-			BEKAMBBOLBO = true;
-			CNAIDEAFAAM = true;
+			BEKAMBBOLBO_Done = true;
+			CNAIDEAFAAM_IsError = true;
 		});
 		//LAB_00a0c790:
-		while(!BEKAMBBOLBO)
+		while(!BEKAMBBOLBO_Done)
 		{
 			// goto LAB_00a0e350;
 			yield return null; // to 4 // goto LAB_00a0c790;
 		}
 		//L424
-		if(CNAIDEAFAAM)
+		if(CNAIDEAFAAM_IsError)
 		{
 			// break;
 			NLJKCDHIPEG = null;
@@ -666,23 +666,23 @@ public class IOGKADECKOP
         	UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 			yield break;
 		}
-		BEKAMBBOLBO = false;
-		CNAIDEAFAAM = false;
-		MPHCKPBAKMO.BAHKPIADOBI(() => {
+		BEKAMBBOLBO_Done = false;
+		CNAIDEAFAAM_IsError = false;
+		MPHCKPBAKMO.BAHKPIADOBI_LoadFromStorage(() => {
 			//0xA092C0
-			BEKAMBBOLBO = true;
+			BEKAMBBOLBO_Done = true;
 		}, () => {
 			//0xA092CC
-			BEKAMBBOLBO = true;
-			CNAIDEAFAAM = true;
+			BEKAMBBOLBO_Done = true;
+			CNAIDEAFAAM_IsError = true;
 		});
 		//LAB_00a0c8d0:
-		while(!BEKAMBBOLBO)
+		while(!BEKAMBBOLBO_Done)
 		{
 			//goto LAB_00a0e350;
 			yield return null; // to 5 // goto LAB_00a0c8d0;
 		}
-		if(CNAIDEAFAAM)
+		if(CNAIDEAFAAM_IsError)
 		{
 			// break;
 			NLJKCDHIPEG = null;
@@ -692,24 +692,24 @@ public class IOGKADECKOP
 			yield break;
 		}
 		// L473
-		BEKAMBBOLBO = false;
-		CNAIDEAFAAM = false;
-		JGEOBNENMAH.HHCJCDFCLOB.EMDLPEGOEJB(() => {
+		BEKAMBBOLBO_Done = false;
+		CNAIDEAFAAM_IsError = false;
+		JGEOBNENMAH.HHCJCDFCLOB.EMDLPEGOEJB_Recover(() => {
 			//0xA092D8
-			BEKAMBBOLBO = true;
+			BEKAMBBOLBO_Done = true;
 		}, () => {
 			//0xA092E4
-			BEKAMBBOLBO = true;
-			CNAIDEAFAAM = true;
+			BEKAMBBOLBO_Done = true;
+			CNAIDEAFAAM_IsError = true;
 		});
 		//LAB_00a0caac:
-		while(!BEKAMBBOLBO)
+		while(!BEKAMBBOLBO_Done)
 		{
 			//goto LAB_00a0e350;
 			yield return null; // To 6 goto LAB_00a0caac;
 		}
 		// L515
-		if(CNAIDEAFAAM)
+		if(CNAIDEAFAAM_IsError)
 		{
 			// break;
 			NLJKCDHIPEG = null;
@@ -721,24 +721,24 @@ public class IOGKADECKOP
 		// L524
 		FJHPOIDFLEE_FindTitleBannerToDisplay();
 		
-		BEKAMBBOLBO = false;
-		CNAIDEAFAAM = false;
-		KEHOJEJMGLJ.HHCJCDFCLOB.PAHGEEOFEPM(KEHOJEJMGLJ.ACGGHEIMPHC.DEKNOKPEIHO, () => {
+		BEKAMBBOLBO_Done = false;
+		CNAIDEAFAAM_IsError = false;
+		KEHOJEJMGLJ.HHCJCDFCLOB.PAHGEEOFEPM_Install(KEHOJEJMGLJ.ACGGHEIMPHC.DEKNOKPEIHO, () => {
 			//0xA092F0
-			BEKAMBBOLBO = true;
+			BEKAMBBOLBO_Done = true;
 		}, () => {
 			//0xA092FC
-			BEKAMBBOLBO = true;
-			CNAIDEAFAAM = true;
+			BEKAMBBOLBO_Done = true;
+			CNAIDEAFAAM_IsError = true;
 		});
 		//LAB_00a0cc14:
-		while(!BEKAMBBOLBO)
+		while(!BEKAMBBOLBO_Done)
 		{
 			//goto LAB_00a0e350;
 			yield return null; // To 7 // goto LAB_00a0cc14;
 		}
 		//L571
-		if(CNAIDEAFAAM)
+		if(CNAIDEAFAAM_IsError)
 		{
 			// break
 			NLJKCDHIPEG = null;
@@ -748,17 +748,17 @@ public class IOGKADECKOP
 			yield break;
 		}
 		// L 581
-		NIFKNMFALEM();
-		if(JJHGAKDMGLJ)
+		NIFKNMFALEM_StartLoading();
+		if(JJHGAKDMGLJ_NoTutorial)
 		{
 			//LAB_00a0ccc0:
 			while(!GameManager.Instance.ProgressBar.IsReady)
 				yield return null; // To 8 goto LAB_00a0ccc0;
 			
 			//L604
-			NOFPJPHIPBD.SetVisible(false);
+			NOFPJPHIPBD_LayoutTitleCtrl.SetVisible(false);
 			IJCPLBPLJLJ.gameObject.SetActive(true);
-			FHBJNLFHGPB(0);
+			FHBJNLFHGPB_SetPercent(0);
 			//LAB_00a0e094:
 			// goto goto LAB_00a0eba0;
 			yield return Co.R(HBBDEHKOFKN_Coroutine_DownloadTitleBannerTexture()); // To 9
@@ -773,35 +773,35 @@ public class IOGKADECKOP
 			//goto LAB_00a0dbd4;
 		}
 		//LAB_00a0dbd4:
-		FHBJNLFHGPB(30);
+		FHBJNLFHGPB_SetPercent(30);
 		long timestamp = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.LOMEEJGIAHO.JOJFKIIHMOJ(timestamp);
 		DateTime date = Utility.GetLocalDateTime(timestamp);
 		NKGJPJPHLIF.HHCJCDFCLOB.DHMLDAGGKCD = date.Month * 100 + date.Year * 100000 + date.Day;
 		NKGJPJPHLIF.DPCCNOCAHGC = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("server_time_auto_update", 0) == 1;
 		
-		BEKAMBBOLBO = false;
-		CNAIDEAFAAM = false;
-		NLJKCDHIPEG.ODJCMJBNDOK(() => {
+		BEKAMBBOLBO_Done = false;
+		CNAIDEAFAAM_IsError = false;
+		NLJKCDHIPEG.ODJCMJBNDOK_Load(() => {
 			//0xA09308
-			BEKAMBBOLBO = true;
+			BEKAMBBOLBO_Done = true;
 		}, () => {
 			//0xA09314
-			OOICHDNLLJG = true;
-			BEKAMBBOLBO = true;
+			OOICHDNLLJG_NeedTuto = true;
+			BEKAMBBOLBO_Done = true;
 		}, () => {
 			//0xA09324
-			BEKAMBBOLBO = true;
-			CNAIDEAFAAM = true;
+			BEKAMBBOLBO_Done = true;
+			CNAIDEAFAAM_IsError = true;
 		}, false);
 		//LAB_00a0df8c:
-		while(!BEKAMBBOLBO)
+		while(!BEKAMBBOLBO_Done)
 		{
 			//goto LAB_00a0e350;
 			yield return null; // to 0xb //goto LAB_00a0df8c;
 		}
 		// L 764
-		if(CNAIDEAFAAM) // Inversed
+		if(CNAIDEAFAAM_IsError) // Inversed
 		{
 			// break
 			NLJKCDHIPEG = null;
@@ -810,23 +810,23 @@ public class IOGKADECKOP
         	UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 			yield break;
 		}
-		bool FBBAOFKBGBA = true;
+		bool FBBAOFKBGBA_IsError = true;
 		yield return Co.R(IMJGOIOLGIO_Contract(() => {
 			// 0xA09330
-			FBBAOFKBGBA = false;
+			FBBAOFKBGBA_IsError = false;
 		}, () => {
 			//0xA0933C
-			FBBAOFKBGBA = true;
+			FBBAOFKBGBA_IsError = true;
 		}));
 		//goto LAB_00a0e094; // goto LAB_00a0eba0; // To 0xc
 		
 		// 0xc
 		// L859
-		if(!FBBAOFKBGBA)
+		if(!FBBAOFKBGBA_IsError)
 		{
 			if(NLJKCDHIPEG.HAELBFCGHMB)
 			{
-				FHBJNLFHGPB(40);
+				FHBJNLFHGPB_SetPercent(40);
 				NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.FNLNIKFNHAM_ForceRename = true;
 				string str1 = NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_Cont;
 				Debug.LogError("TODO CHECK");
@@ -838,23 +838,23 @@ public class IOGKADECKOP
 				NLJKCDHIPEG.FMFKHDPKLOC.JHFIPCIHJNL_Base.KFKDMBPNLJK_BlockInvalid = true;
 				NLJKCDHIPEG.AIKJMHBDABF(() => {
 					//0xA09348
-					BEKAMBBOLBO = true;
+					BEKAMBBOLBO_Done = true;
 				}, () => {
 					//0xA09354
-					BEKAMBBOLBO = true;
+					BEKAMBBOLBO_Done = true;
 				}, null);
-				BEKAMBBOLBO = false;
+				BEKAMBBOLBO_Done = false;
 				//goto LAB_00a0ca2c;
 				
 				//0xd
 				//LAB_00a0ca2c:
 				//L999
-				while(!BEKAMBBOLBO)
+				while(!BEKAMBBOLBO_Done)
 				{
 					//goto LAB_00a0e350;
 					yield return null; // to 0xd
 				}
-				if(CNAIDEAFAAM)
+				if(CNAIDEAFAAM_IsError)
 				{
 					DANMJLOBLIE.StartCoroutineWatched(NNPDJBJGBFA_Coroutine_ReturnToTitle());
         			UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
@@ -867,7 +867,7 @@ public class IOGKADECKOP
 			//goto LAB_00a0d064;
 			
 			//LAB_00a0d064:
-			FHBJNLFHGPB(60);
+			FHBJNLFHGPB_SetPercent(60);
 			if(NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.KNIKMMKNOFA == 3)
 			{
 				// goto LAB_00a0d0e8;
@@ -875,47 +875,47 @@ public class IOGKADECKOP
 			else
 			{
 			//L1057
-				bool OJFKNEOJEHH = true;
+				bool OJFKNEOJEHH_IsError = true;
 				if(KDHGBOOECKC.HHCJCDFCLOB != null) // else goto LAB_00a0be80;
 				{
 					yield return Co.R(KDHGBOOECKC.HHCJCDFCLOB.CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements(() => {
 						//0xA09618
-						OJFKNEOJEHH = false;
+						OJFKNEOJEHH_IsError = false;
 					}, () => {
 						//0xA09624
-						OJFKNEOJEHH = true;
+						OJFKNEOJEHH_IsError = true;
 					})); //goto LAB_00a0e094; // to 0xe
 					
 					// 0xe
 					
 				}
 				//LAB_00a0be80:
-				if(!OJFKNEOJEHH)
+				if(!OJFKNEOJEHH_IsError)
 				{
 					//LAB_00a0d0e8:
-					BEKAMBBOLBO = false;
-					CNAIDEAFAAM = false;
+					BEKAMBBOLBO_Done = false;
+					CNAIDEAFAAM_IsError = false;
 					OFFPKPHHLKD = new AMOCLPHDGBP();
-					OFFPKPHHLKD.OLNDKPDNPCM(() => {
+					OFFPKPHHLKD.OLNDKPDNPCM_Auto_Recover(() => {
 						//0xA09360
-						BEKAMBBOLBO = true;
+						BEKAMBBOLBO_Done = true;
 					}, () => {
 						//0xA0936C
-						BEKAMBBOLBO = true;
+						BEKAMBBOLBO_Done = true;
 					}, () => {
 						//0xA09378
-						BEKAMBBOLBO = true;
-						CNAIDEAFAAM = true;
+						BEKAMBBOLBO_Done = true;
+						CNAIDEAFAAM_IsError = true;
 					}, false, false);
 					//goto LAB_00a0d354;
 					// 0xf
 					//LAB_00a0d354:
-					while(!BEKAMBBOLBO)
+					while(!BEKAMBBOLBO_Done)
 					{
 						//goto LAB_00a0e350;
 						yield return null; // to 0xf
 					}
-					if(CNAIDEAFAAM)
+					if(CNAIDEAFAAM_IsError)
 					{
 						//break;
 						NLJKCDHIPEG = null;
@@ -925,27 +925,27 @@ public class IOGKADECKOP
 						yield break;
 					}
 					//L1159
-					FHBJNLFHGPB(70);
-					BEKAMBBOLBO = false;
-					CNAIDEAFAAM = false;
-					NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG(() => {
+					FHBJNLFHGPB_SetPercent(70);
+					BEKAMBBOLBO_Done = false;
+					CNAIDEAFAAM_IsError = false;
+					NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProducList(() => {
 						//0xA09384
-						BEKAMBBOLBO = true;
+						BEKAMBBOLBO_Done = true;
 					}, () => {
 						//0xA09390
-						BEKAMBBOLBO = true;
-						CNAIDEAFAAM = true;
+						BEKAMBBOLBO_Done = true;
+						CNAIDEAFAAM_IsError = true;
 					}, false, true);
 					//goto LAB_00a0d4d4;
 					
 					//0x10
 					//LAB_00a0d4d4:
-					while(!BEKAMBBOLBO)
+					while(!BEKAMBBOLBO_Done)
 					{
 						//goto LAB_00a0e350;
 						yield return null; // to 0x10
 					}
-					if(CNAIDEAFAAM)
+					if(CNAIDEAFAAM_IsError)
 					{
 						//break;
 						NLJKCDHIPEG = null;
@@ -955,28 +955,28 @@ public class IOGKADECKOP
 						yield break;
 					}
 					//L1223
-					FHBJNLFHGPB(80);
-					BEKAMBBOLBO = false;
-					CNAIDEAFAAM = false;
+					FHBJNLFHGPB_SetPercent(80);
+					BEKAMBBOLBO_Done = false;
+					CNAIDEAFAAM_IsError = false;
 					long val2 = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-					JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.GHKKPKBBEAN(val2, () => {
+					JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.GHKKPKBBEAN_Prepare(val2, () => {
 						//0xA0939C
-						BEKAMBBOLBO = true;
+						BEKAMBBOLBO_Done = true;
 					}, () => {
 						//0xA093A8
-						BEKAMBBOLBO = true;
-						CNAIDEAFAAM = true;
+						BEKAMBBOLBO_Done = true;
+						CNAIDEAFAAM_IsError = true;
 					});
 					//goto LAB_00a0d720;
 					
 					//0x11
 					//LAB_00a0d720:
-					while(!BEKAMBBOLBO)
+					while(!BEKAMBBOLBO_Done)
 					{
 						//goto LAB_00a0e350;
 						yield return null; // to 0x11
 					}
-					if(CNAIDEAFAAM)
+					if(CNAIDEAFAAM_IsError)
 					{
 						//break;
 						NLJKCDHIPEG = null;
@@ -1002,30 +1002,30 @@ public class IOGKADECKOP
 					{
 						GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA(null, 0);
 					}
-					FHBJNLFHGPB(85);
+					FHBJNLFHGPB_SetPercent(85);
 					
-					BEKAMBBOLBO = false;
-					CNAIDEAFAAM = false;
-					EJHPIMANJFP.HHCJCDFCLOB.LILDGEPCPPG(() => {
+					BEKAMBBOLBO_Done = false;
+					CNAIDEAFAAM_IsError = false;
+					EJHPIMANJFP.HHCJCDFCLOB.LILDGEPCPPG_GetProductList(() => {
 						//0xA093B4
-						BEKAMBBOLBO = true;
+						BEKAMBBOLBO_Done = true;
 					}, () => {
 						//0xA093C0
-						BEKAMBBOLBO = true;
+						BEKAMBBOLBO_Done = true;
 					}, () => {
 						//0xA093CC
-						BEKAMBBOLBO = true;
-						CNAIDEAFAAM = true;
+						BEKAMBBOLBO_Done = true;
+						CNAIDEAFAAM_IsError = true;
 					}, true, true);
 					//goto LAB_00a0dacc;
 					//0x12
 					//LAB_00a0dacc:
-					while(!BEKAMBBOLBO)
+					while(!BEKAMBBOLBO_Done)
 					{
 						//goto LAB_00a0e350;
 						yield return null; // to 0x12
 					}
-					if(CNAIDEAFAAM)
+					if(CNAIDEAFAAM_IsError)
 					{
 						//break;
 						NLJKCDHIPEG = null;
@@ -1035,11 +1035,11 @@ public class IOGKADECKOP
 						yield break;
 					}
 					//L1147
-					FHBJNLFHGPB(90);
+					FHBJNLFHGPB_SetPercent(90);
 					LAPFLEEAACL[] EMOMAPKPGGK = NKGJPJPHLIF.HHCJCDFCLOB.HECNGABHNDJ;
 					for(int i = 0; i < EMOMAPKPGGK.Length; i++)
 					{
-						EMOMAPKPGGK[i].OFKONDFPMLJ();
+						EMOMAPKPGGK[i].OFKONDFPMLJ_GetProduct();
 						//LAB_00a0e464:
 						while(!EMOMAPKPGGK[i].PLOOEECNHFB)
 						{
@@ -1056,7 +1056,7 @@ public class IOGKADECKOP
        						UnityEngine.Debug.LogError("Exit  Error PFEKBBONCJJ_Coroutine_GameStart");
 							yield break;
 						}
-						EMOMAPKPGGK[i].LAOEGNLOJHC();
+						EMOMAPKPGGK[i].LAOEGNLOJHC_Convert();
 						//LAB_00a0e56c:
 						while(!EMOMAPKPGGK[i].PLOOEECNHFB)
 						{
@@ -1074,36 +1074,36 @@ public class IOGKADECKOP
 							yield break;
 						}
 					}
-					FHBJNLFHGPB(93);
+					FHBJNLFHGPB_SetPercent(93);
 					NHPDPKHMFEP MGPMDNDOBFI = NHPDPKHMFEP.HHCJCDFCLOB;
-					BEKAMBBOLBO = false;
-					CNAIDEAFAAM = false;
-					MGPMDNDOBFI.OFKONDFPMLJ(() => {
+					BEKAMBBOLBO_Done = false;
+					CNAIDEAFAAM_IsError = false;
+					MGPMDNDOBFI.OFKONDFPMLJ_GetProducts(() => {
 						//0xA093D8
-						BEKAMBBOLBO = true;
+						BEKAMBBOLBO_Done = true;
 					}, () => {
 						//0xA093E4
-						BEKAMBBOLBO = true;
-						CNAIDEAFAAM = true;
+						BEKAMBBOLBO_Done = true;
+						CNAIDEAFAAM_IsError = true;
 					});
 					//goto LAB_00a0e764;
 					//0x15
 					//LAB_00a0e764
-					while(!BEKAMBBOLBO)
+					while(!BEKAMBBOLBO_Done)
 					{
 						//goto LAB_00a0e350
 						yield return null; // to 0x15
 					}
 					MGPMDNDOBFI.DLGMLAJMLOP = true;
-					FHBJNLFHGPB(94);
+					FHBJNLFHGPB_SetPercent(94);
 					NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.IFDJHOKOEGA();
 					JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.IMHONIOILIG();
 					NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.KCILENCPNHD();
 					NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.HIKNIPGJDAI(NKGJPJPHLIF.HHCJCDFCLOB.DHMLDAGGKCD);
 					EOHDAOAJOHH.HHCJCDFCLOB.OPODBGPJDCJ();
-					FHBJNLFHGPB(95);
+					FHBJNLFHGPB_SetPercent(95);
 					AppQualitySetting.InitDefault3dMode();
-					if(!OOICHDNLLJG)
+					if(!OOICHDNLLJG_NeedTuto)
 					{
 						CIOECGOMILE.HHCJCDFCLOB.AKCOAKHAGAL();
 						GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PPOJCDCCFNI_TutorialEnd = 1;
@@ -1111,30 +1111,30 @@ public class IOGKADECKOP
 					}
 					else
 					{
-						JNBOGCGCOMH(); // setup tutorial
+						JNBOGCGCOMH_StartTutorial(); // setup tutorial
 					}
-					FHBJNLFHGPB(96);
+					FHBJNLFHGPB_SetPercent(96);
 					//goto LAB_00a0eb98;
-					yield return Co.R(ACHBBAIODMC()); // To 16
+					yield return Co.R(ACHBBAIODMC_UtarateRankingUpdate()); // To 16
 					//16
-					FHBJNLFHGPB(100);
+					FHBJNLFHGPB_SetPercent(100);
 					yield return null; // To 17
 					//17
-					if(JJHGAKDMGLJ) // Inversed // goto LAB_00a0cf04;
+					if(JJHGAKDMGLJ_NoTutorial) // Inversed // goto LAB_00a0cf04;
 					{
 						// L1813
 						GameManager.Instance.fullscreenFader.Fade(0.5f, Color.black);
 						yield return GameManager.Instance.WaitFadeYielder; // To 18
 						//18
-						NOFPJPHIPBD.SetVisible(true);
+						NOFPJPHIPBD_LayoutTitleCtrl.SetVisible(true);
 						IJCPLBPLJLJ.gameObject.SetActive(false);
 					}
 					
 					//LAB_00a0cf04
-					HFIBEEMGOND();
+					HFIBEEMGOND_EndLoading();
 					yield return DANMJLOBLIE.StartCoroutineWatched(ABPGOJDKKHO_PopupShowSNS(() => {
 						//0xA093F0
-						NOFPJPHIPBD.Dispose();
+						NOFPJPHIPBD_LayoutTitleCtrl.Dispose();
 						NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.MBOIDKCMCDL = false;
 						SoundManager.Instance.voTitlecall.RequestRemoveCueSheet();
 						OGNDELCENBB(ABJDBPINCIC);
@@ -1161,7 +1161,7 @@ public class IOGKADECKOP
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B41E0 Offset: 0x6B41E0 VA: 0x6B41E0
 	// // RVA: 0xA07440 Offset: 0xA07440 VA: 0xA07440
-	private IEnumerator ACHBBAIODMC()
+	private IEnumerator ACHBBAIODMC_UtarateRankingUpdate()
 	{
         //UnityEngine.Debug.Log("Enter ACHBBAIODMC");
 		TodoLogger.Log(0, "UtarateRankingUpdate");
@@ -1226,7 +1226,7 @@ public class IOGKADECKOP
 	// private void EECGCFAKEPF() { }
 
 	// // RVA: 0xA07698 Offset: 0xA07698 VA: 0xA07698
-	private void JNBOGCGCOMH()
+	private void JNBOGCGCOMH_StartTutorial()
 	{
 		GameManager.Instance.IsTutorial = true;
 		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JAIGHAGMLCJ();
@@ -1260,7 +1260,7 @@ public class IOGKADECKOP
 	}
 
 	// // RVA: 0xA07B88 Offset: 0xA07B88 VA: 0xA07B88
-	public void NIFKNMFALEM()
+	public void NIFKNMFALEM_StartLoading()
 	{
 		if(!GameManager.Instance.IsTutorial)
 		{
@@ -1268,19 +1268,19 @@ public class IOGKADECKOP
 				return;
 			
 			GameManager.Instance.ProgressBar.Begin(DANMJLOBLIE.transform.parent);
-			JJHGAKDMGLJ = true;
+			JJHGAKDMGLJ_NoTutorial = true;
 		}
 	}
 
 	// // RVA: 0xA07D9C Offset: 0xA07D9C VA: 0xA07D9C
-	public void FHBJNLFHGPB(int LNAHJANMJNM) // Update loading percent
+	public void FHBJNLFHGPB_SetPercent(int LNAHJANMJNM) // Update loading percent
 	{
 		UnityEngine.Debug.Log("Init % : "+LNAHJANMJNM);
 		GameManager.Instance.ProgressBar.SetPer(LNAHJANMJNM);
 	}
 
 	// // RVA: 0xA07E70 Offset: 0xA07E70 VA: 0xA07E70
-	public void HFIBEEMGOND()
+	public void HFIBEEMGOND_EndLoading()
 	{
 		GameManager.Instance.ProgressBar.End();
 		if(HOFMODFAOEA != null)
@@ -1288,7 +1288,7 @@ public class IOGKADECKOP
 			UnityEngine.Object.Destroy(HOFMODFAOEA.gameObject);
 			HOFMODFAOEA = null;
 		}
-		JJHGAKDMGLJ = false;
+		JJHGAKDMGLJ_NoTutorial = false;
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B43C0 Offset: 0x6B43C0 VA: 0x6B43C0

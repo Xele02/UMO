@@ -58,7 +58,7 @@ public class NHPDPKHMFEP
 	// private bool AIJFDCIDDLO(SakashoErrorId PPFNGGCBJKC) { }
 
 	// // RVA: 0x18979DC Offset: 0x18979DC VA: 0x18979DC
-	public void OFKONDFPMLJ(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
+	public void OFKONDFPMLJ_GetProducts(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
 	{
 		TodoLogger.Log(0, "SakashoPlatformPayment$$GetProducts");
 		BHFHGFKBOHH();
