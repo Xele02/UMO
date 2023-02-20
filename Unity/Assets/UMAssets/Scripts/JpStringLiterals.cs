@@ -234,6 +234,7 @@ class JpStringLiterals
 	public const string StringLiteral_12935 = "特設イベントホーム"; // 0x03bb54d4
 	public const string StringLiteral_12936 = "ホーム自動再生"; // 0x03bb54d8
 	public const string StringLiteral_12937 = "能力ボード"; // 0x03bb54dc
+	public const string StringLiteral_12943 = "バルキリー小隊"; //0x03bb54f4
 	public const string StringLiteral_13101 = "5分以内"; // 0x03bb576c
 	public const string StringLiteral_13102 = "分前"; // 0x03bb5770
 	public const string StringLiteral_13103 = "時間前"; // 0x03bb5774

@@ -3,21 +3,21 @@
 public class FNBIIGJJGKA {}
 public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 {
-	// private const int ECFEMKGFDCE = 2;
-	// private const int MKINOABMBGM = 20;
-	// private const int FOBFLHIIJOM = 100;
-	// private const int PNFLFNNAAPL = 5;
-	// private const long EBABKJBHKDF = 9999999999;
-	// private const long GKIALDDPKNF = 99999;
-	// private const int AFHHHFICNIN = 12;
-	// public OHDCBNFDHLA EJFAEKPGKNJ; // 0x24
+	private const int ECFEMKGFDCE = 2;
+	private const int MKINOABMBGM = 20;
+	private const int FOBFLHIIJOM = 100;
+	private const int PNFLFNNAAPL = 5;
+	private const long EBABKJBHKDF = 9999999999;
+	private const long GKIALDDPKNF = 99999;
+	private const int AFHHHFICNIN = 12;
+	public OHDCBNFDHLA EJFAEKPGKNJ; // 0x24
 	public NAKMCMEPAGH BDLNMOIOMHK; // 0x28
-	// public byte[] NONMPJBNBNN; // 0x2C
-	// public byte[] CFHOMPIKIGK; // 0x30
-	// public byte[] NDBEHBMEGGI; // 0x34
-	// public byte[] DNKKDCHJJHF; // 0x38
-	// public long[] NJIDHLPGBFO; // 0x3C
-	// public long PCBJHBCNNGD; // 0x40
+	public byte[] NONMPJBNBNN = new byte[300]; // 0x2C
+	public byte[] CFHOMPIKIGK = new byte[300]; // 0x30
+	public byte[] NDBEHBMEGGI = new byte[300]; // 0x34
+	public byte[] DNKKDCHJJHF = new byte[300]; // 0x38
+	public long[] NJIDHLPGBFO = new long[5]; // 0x3C
+	public long PCBJHBCNNGD; // 0x40
 
 	// public override bool DMICHEJIAJL { get; }
 
@@ -42,7 +42,7 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x119EB74 Offset: 0x119EB74 VA: 0x119EB74
 	public FNBIIGJJGKA_Counter()
 	{
-		TodoLogger.Log(0, "TODO");
+		EJFAEKPGKNJ = new OHDCBNFDHLA();
 		BDLNMOIOMHK = new NAKMCMEPAGH();
 		KMBPACJNEOF();
 	}
@@ -50,8 +50,20 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x119EC90 Offset: 0x119EC90 VA: 0x119EC90 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(0, "TODO");
+		EJFAEKPGKNJ.LHPDDGIJKNB();
 		BDLNMOIOMHK.LHPDDGIJKNB();
+		for(int i = 0; i < 300; i++)
+		{
+			NONMPJBNBNN[i] = 0;
+			CFHOMPIKIGK[i] = 0;
+			NDBEHBMEGGI[i] = 0;
+			DNKKDCHJJHF[i] = 0;
+		}
+		for(int i = 0; i < 5; i++)
+		{
+			NJIDHLPGBFO[i] = 0;
+		}
+		PCBJHBCNNGD = 0;
 	}
 
 	// // RVA: 0x119EE28 Offset: 0x119EE28 VA: 0x119EE28 Slot: 5
@@ -108,4 +120,58 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 	// [CompilerGeneratedAttribute] // RVA: 0x6BEDC4 Offset: 0x6BEDC4 VA: 0x6BEDC4
 	// // RVA: 0x11A3B08 Offset: 0x11A3B08 VA: 0x11A3B08
 	// private void <Deserialize>b__24_5(int OIPCCBHIKIA, int JBGEEPFKIGG) { }
+}
+
+public class OHDCBNFDHLA
+{
+	private const int MNHALNODIPI = 99999999;
+	public long BEBJKJKBOGH; // 0x8
+	public int MILCBLJDADN; // 0x10
+	public int[] GEIONHDKGEB = new int[5]; // 0x14
+	public int NDNHHGJKJGM; // 0x18
+	public int GACBDCLPOCD; // 0x1C
+	public int MPHFGEPJOGL; // 0x20
+
+	//public long AAFMGJHLLCD { get; } 0x1DE0750 KMKOHJDPKGL
+
+	//// RVA: 0x1DE0894 Offset: 0x1DE0894 VA: 0x1DE0894
+	//public void FHPENOLOPKI(long JHNMKKNEENE, bool FBBNPFFEJBN) { }
+
+	//// RVA: 0x1DE0948 Offset: 0x1DE0948 VA: 0x1DE0948
+	//public void FBKAPLHEACL() { }
+
+	//// RVA: 0x1DE0964 Offset: 0x1DE0964 VA: 0x1DE0964
+	//public void DPKJNIPGGMJ(int FJOLNJLLJEJ) { }
+
+	//// RVA: 0x1DE0A00 Offset: 0x1DE0A00 VA: 0x1DE0A00
+	//public void BFAJMALBALG(int HMFFHLPNMPH) { }
+
+	//// RVA: 0x1DE0A20 Offset: 0x1DE0A20 VA: 0x1DE0A20
+	//public void MAFAKCMFHEE() { }
+
+	//// RVA: 0x1DE0A40 Offset: 0x1DE0A40 VA: 0x1DE0A40
+	//public void CIGILPOKMAN(int HMFFHLPNMPH) { }
+
+	//// RVA: 0x1DE0A60 Offset: 0x1DE0A60 VA: 0x1DE0A60
+	public void LHPDDGIJKNB()
+	{
+		BEBJKJKBOGH = 0;
+		MILCBLJDADN = 0;
+		for(int i = 0; i < GEIONHDKGEB.Length; i++)
+		{
+			GEIONHDKGEB[i] = 0;
+		}
+		NDNHHGJKJGM = 0;
+		GACBDCLPOCD = 0;
+		MPHFGEPJOGL = 0;
+	}
+
+	//// RVA: 0x1DE0AF4 Offset: 0x1DE0AF4 VA: 0x1DE0AF4
+	//public bool AGBOGBEOFME(OHDCBNFDHLA OIKJFMGEICL) { }
+
+	//// RVA: 0x1DE0CD4 Offset: 0x1DE0CD4 VA: 0x1DE0CD4
+	//public void ODDIHGPONFL(OHDCBNFDHLA GPBJHKLFCEP) { }
+
+	//// RVA: 0x1DE0E1C Offset: 0x1DE0E1C VA: 0x1DE0E1C
+	//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, OHDCBNFDHLA OHMCIEMIKCE, bool EFOEPDLNLJG) { }
 }

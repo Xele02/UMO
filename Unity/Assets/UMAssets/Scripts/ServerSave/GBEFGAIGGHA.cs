@@ -1,13 +1,39 @@
 
+using System.Collections.Generic;
+
 [System.Obsolete("Use GBEFGAIGGHA_Shop", true)]
 public class GBEFGAIGGHA { }
 public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 {
-	// private const int ECFEMKGFDCE = 2;
-	// public const int EPAOCPMNLNC = 6000;
-	// public static string POFDDFCGEGP = "_"; // 0x0
+	public class DPGGLKKBNBJ
+	{
+		public long KLAPHOKNEDG; // 0x8
+		public int IBLOAFJJBOA; // 0x10
+		public int IPINEGKBNLK; // 0x14
+		public int FBGGEFFJJHB; // 0x18
 
-	// public List<GBEFGAIGGHA.DPGGLKKBNBJ> ECMLOMPGMLC { get; private set; } // 0x24 ICOECAFDDGE OCJOHJOFLJH IGPAHLBHIMN
+		public int DJJGPACGEMM { get { return IBLOAFJJBOA ^ FBGGEFFJJHB; } set { IBLOAFJJBOA = value ^ FBGGEFFJJHB; } } //0x1402898 LNKIAOKJIPL 0x1402C38 EOEFCENJMJG
+		public int KMFLNILNPJD { get { return IPINEGKBNLK ^ FBGGEFFJJHB; } set { IPINEGKBNLK = value ^ FBGGEFFJJHB; } } //0x14028A8 EJNACGPGJAI 0x1401DC8 PGAECLKCFEL
+		public long BEBJKJKBOGH { get { return KLAPHOKNEDG ^ FBGGEFFJJHB; } set { KLAPHOKNEDG = value ^ FBGGEFFJJHB; } } //0x140200C DIAPHCJBPFD 0x1401DB4 IHAIKPNEEJE
+
+		//// RVA: 0x14021D8 Offset: 0x14021D8 VA: 0x14021D8
+		//public void LHPDDGIJKNB() { }
+
+		//// RVA: 0x1403108 Offset: 0x1403108 VA: 0x1403108
+		//public bool AGBOGBEOFME(GBEFGAIGGHA.DPGGLKKBNBJ GPBJHKLFCEP) { }
+
+		//// RVA: 0x1402E18 Offset: 0x1402E18 VA: 0x1402E18
+		//public void ODDIHGPONFL(GBEFGAIGGHA.DPGGLKKBNBJ GPBJHKLFCEP) { }
+
+		//// RVA: 0x14035F0 Offset: 0x14035F0 VA: 0x14035F0
+		//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, GBEFGAIGGHA.DPGGLKKBNBJ OHMCIEMIKCE, bool KFCGIKHEEMB) { }
+	}
+
+	 private const int ECFEMKGFDCE = 2;
+	 public const int EPAOCPMNLNC = 6000;
+	 public static string POFDDFCGEGP = "_"; // 0x0
+
+	 public List<DPGGLKKBNBJ> ECMLOMPGMLC { get; private set; } // 0x24 ICOECAFDDGE OCJOHJOFLJH IGPAHLBHIMN
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x1401CB0 Offset: 0x1401CB0 VA: 0x1401CB0
@@ -19,13 +45,23 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1402020 Offset: 0x1402020 VA: 0x1402020
 	public GBEFGAIGGHA_Shop()
 	{
-		TodoLogger.Log(0, "TODO");
+		ECMLOMPGMLC = new List<DPGGLKKBNBJ>(6000);
+		KMBPACJNEOF();
 	}
 
 	// // RVA: 0x14020C4 Offset: 0x14020C4 VA: 0x14020C4 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(0, "TODO");
+		ECMLOMPGMLC.Clear();
+		for(int i = 0; i < 6000; i++)
+		{
+			DPGGLKKBNBJ data = new DPGGLKKBNBJ();
+			data.FBGGEFFJJHB = 0x2a843;
+			data.BEBJKJKBOGH = 0;
+			data.DJJGPACGEMM = 0;
+			data.KMFLNILNPJD = 0;
+			ECMLOMPGMLC.Add(data);
+		}
 	}
 
 	// // RVA: 0x14021FC Offset: 0x14021FC VA: 0x14021FC Slot: 5

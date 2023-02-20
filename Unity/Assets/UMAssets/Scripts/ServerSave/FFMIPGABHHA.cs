@@ -4,7 +4,7 @@ public class FFMIPGABHHA { }
 public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 {
 	private const int ECFEMKGFDCE = 2;
-	public const long BBEGLBMOBOF = 32158710441;
+	public const long BBEGLBMOBOF = 0x77ccefaa9;
 	public static string POFDDFCGEGP = "_"; // 0x0
 	public string IOIMHJAOKOO; // 0x24
 	private long KLAPHOKNEDG; // 0x28
@@ -29,7 +29,9 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14E4E48 Offset: 0x14E4E48 VA: 0x14E4E48 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(0, "TODO");
+		BEBJKJKBOGH_Time = 0;
+		AFNJCFEKFDD = 0;
+		IOIMHJAOKOO = "";
 	}
 
 	// // RVA: 0x14E4EC8 Offset: 0x14E4EC8 VA: 0x14E4EC8 Slot: 5

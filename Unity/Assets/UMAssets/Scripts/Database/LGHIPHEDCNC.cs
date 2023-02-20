@@ -608,7 +608,12 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK { get; private set; } // 0x6C KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
 
 	//// RVA: 0xD7449C Offset: 0xD7449C VA: 0xD7449C
-	//public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }
+	public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH)
+	{
+		if (!FJOEBCMGDMI.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		return FJOEBCMGDMI[LJNAKDMILMC].DNJEJEANJGL_Value;
+	}
 
 	//// RVA: 0xD74580 Offset: 0xD74580 VA: 0xD74580
 	//public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }

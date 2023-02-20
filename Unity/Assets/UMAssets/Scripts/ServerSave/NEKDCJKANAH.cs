@@ -87,7 +87,13 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1AE6AD4 Offset: 0x1AE6AD4 VA: 0x1AE6AD4 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(0, "TODO");
+		MMKAJBFBKNH.Clear();
+		for(int i = 0; i < 200; i++)
+		{
+			HKDNILFKCFC data = new HKDNILFKCFC();
+			data.BMPFHHHCNJC = i + 1;
+			MMKAJBFBKNH.Add(data);
+		}
 	}
 
 	// // RVA: 0x1AE6C4C Offset: 0x1AE6C4C VA: 0x1AE6C4C Slot: 5

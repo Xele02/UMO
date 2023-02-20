@@ -640,7 +640,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1C53BE8 Offset: 0x1C53BE8 VA: 0x1C53BE8
 	public void BCLKCMDGDLD(GPFlagConstant.ID PPFNGGCBJKC, bool JKDJCFEBDHC)
 	{
-		TodoLogger.Log(0, "EGOLBAPFHHD_Common.BCLKCMDGDLD Todo with calc office");
+		TodoLogger.Log(TodoLogger._Todo, "EGOLBAPFHHD_Common.BCLKCMDGDLD Todo with calc office");
 		if(JKDJCFEBDHC)
 			CKDPJCLINAB_GpFlg[0] &= 1 << (int)PPFNGGCBJKC;
 		else

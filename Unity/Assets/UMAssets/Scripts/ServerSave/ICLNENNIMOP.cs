@@ -1,16 +1,19 @@
 
+using System.Collections.Generic;
+using XeSys;
+
 [System.Obsolete("Use ICLNENNIMOP_FreeScoreMax", true)]
 public class ICLNENNIMOP { }
 public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 {
-	// private const int ECFEMKGFDCE = 2;
-	// private const long GMNKHOJAOPC = 1496070000;
-	// private const long GNBEEACODKK = 1811602800;
-	// public List<double> AGPLAKAFDEP; // 0x24
-	// public List<double> HHDIPKALCDG; // 0x28
-	// private int FBGGEFFJJHB; // 0x2C
-	// private List<int> NBOLDNMPJFG; // 0x30
-	// private List<int> FONGFOAMHJK; // 0x34
+	private const int ECFEMKGFDCE = 2;
+	private const long GMNKHOJAOPC = 1496070000;
+	private const long GNBEEACODKK = 1811602800;
+	public List<double> AGPLAKAFDEP; // 0x24
+	public List<double> HHDIPKALCDG; // 0x28
+	private int FBGGEFFJJHB; // 0x2C
+	private List<int> NBOLDNMPJFG; // 0x30
+	private List<int> FONGFOAMHJK; // 0x34
 
 	// public override bool DMICHEJIAJL { get; }
 
@@ -32,13 +35,28 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x11EA084 Offset: 0x11EA084 VA: 0x11EA084
 	public ICLNENNIMOP_FreeScoreMax()
 	{
-		TodoLogger.Log(0, "TODO");
+		NBOLDNMPJFG = new List<int>(2000);
+		FONGFOAMHJK = new List<int>(2000);
+		AGPLAKAFDEP = new List<double>(2000);
+		HHDIPKALCDG = new List<double>(2000);
+		KMBPACJNEOF();
 	}
 
 	// // RVA: 0x11EA198 Offset: 0x11EA198 VA: 0x11EA198 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(0, "TODO");
+		FBGGEFFJJHB = (int)Utility.GetCurrentUnixTime() * 0x8d;
+		NBOLDNMPJFG.Clear();
+		FONGFOAMHJK.Clear();
+		AGPLAKAFDEP.Clear();
+		HHDIPKALCDG.Clear();
+		for(int i = 0; i < 2000; i++)
+		{
+			NBOLDNMPJFG.Add(FBGGEFFJJHB);
+			FONGFOAMHJK.Add(0);
+			AGPLAKAFDEP.Add(0);
+			HHDIPKALCDG.Add(0);
+		}
 	}
 
 	// // RVA: 0x11EA3DC Offset: 0x11EA3DC VA: 0x11EA3DC Slot: 5
