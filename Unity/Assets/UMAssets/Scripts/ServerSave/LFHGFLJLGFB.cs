@@ -1,27 +1,33 @@
 
+using System.Collections.Generic;
+using XeSys;
+
 [System.Obsolete("Use LFHGFLJLGFB_FavoritePlayer", true)]
 public class LFHGFLJLGFB { }
 public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 {
-	// private const int ECFEMKGFDCE = 1;
-	// private const int ODDKIBLJKPI = 50;
-	// private int ENOBDCFHELD; // 0x24
-	// private int FCEJCHGLFGN; // 0x28
-	// private List<CEBFFLDKAEC> FNDJLOMNECG; // 0x2C
+	private const int ECFEMKGFDCE = 1;
+	private const int ODDKIBLJKPI = 50;
+	private int ENOBDCFHELD; // 0x24
+	private int FCEJCHGLFGN; // 0x28
+	private List<CEBFFLDKAEC_SecureInt> FNDJLOMNECG; // 0x2C
 
-	// public int KPEBMCLONHK { get; } ??
+	//public int KPEBMCLONHK { get; } ??
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0xD6B438 Offset: 0xD6B438 VA: 0xD6B438
 	public LFHGFLJLGFB_FavoritePlayer()
 	{
-		TodoLogger.Log(0, "LFHGFLJLGFB_FavoritePlayer()");
+		FNDJLOMNECG = new List<CEBFFLDKAEC_SecureInt>(50);
+		KMBPACJNEOF();
 	}
 
 	// // RVA: 0xD6B4DC Offset: 0xD6B4DC VA: 0xD6B4DC Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(0, "LFHGFLJLGFB_FavoritePlayer KMBPACJNEOF");
+		ENOBDCFHELD = (int)Utility.GetCurrentUnixTime() ^ 0x5721577;
+		FCEJCHGLFGN = (int)Utility.GetCurrentUnixTime() ^ 0x3846732;
+		FNDJLOMNECG.Clear();
 	}
 
 	// // RVA: 0xD6B5B0 Offset: 0xD6B5B0 VA: 0xD6B5B0

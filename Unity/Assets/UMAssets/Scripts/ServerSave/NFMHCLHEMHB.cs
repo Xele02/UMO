@@ -301,7 +301,7 @@ public class NFMHCLHEMHB_Bingo : KLFDBFMNLBL_ServerSaveBlock
 			OHMBCPHFDLD = new List<long>();
 			for (int i = 0; i < 7; i++)
 			{
-				OHMBCPHFDLD[i] = BBEGLBMOBOF;
+				OHMBCPHFDLD.Add(BBEGLBMOBOF);
 			}
 		}
 

@@ -3,13 +3,13 @@
 public class BAHFBCEPFGP { }
 public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 {
-	// private const int ECFEMKGFDCE = 1;
-	// private const int JDOFFDAJGBO = 300;
-	// private const int DKKOEGALOPA = 38;
-	// private byte[] BJFCIFJLJJI = new byte[38]; // 0x24
-	// private byte[] IEGFCNMOCNE = new byte[38]; // 0x28
-	// private byte[] FALFJCGGDHB = new byte[38]; // 0x2C
-	// private byte[] KKPKAMANKOH = new byte[38]; // 0x30
+	private const int ECFEMKGFDCE = 1;
+	private const int JDOFFDAJGBO = 300;
+	private const int DKKOEGALOPA = 38;
+	private byte[] BJFCIFJLJJI = new byte[38]; // 0x24
+	private byte[] IEGFCNMOCNE = new byte[38]; // 0x28
+	private byte[] FALFJCGGDHB = new byte[38]; // 0x2C
+	private byte[] KKPKAMANKOH = new byte[38]; // 0x30
 
 	// public override bool DMICHEJIAJL { get; }
 
@@ -25,7 +25,22 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xF148A4 Offset: 0xF148A4 VA: 0xF148A4 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(0, "TODO");
+		for(int i = 0; i < BJFCIFJLJJI.Length; i++)
+		{
+			BJFCIFJLJJI[i] = 0;
+		}
+		for(int i = 0; i < IEGFCNMOCNE.Length; i++)
+		{
+			IEGFCNMOCNE[i] = 0;
+		}
+		for(int i = 0; i < FALFJCGGDHB.Length; i++)
+		{
+			FALFJCGGDHB[i] = 0;
+		}
+		for(int i = 0; i < KKPKAMANKOH.Length; i++)
+		{
+			FALFJCGGDHB[i] = 0; // Bug, should be KKPKAMANKOH
+		}
 	}
 
 	// // RVA: 0xF148A8 Offset: 0xF148A8 VA: 0xF148A8 Slot: 5

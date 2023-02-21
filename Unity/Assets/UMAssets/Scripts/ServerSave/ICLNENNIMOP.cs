@@ -21,7 +21,11 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 	// public int BDCAICINCKK(int GHBPLHBNMBK) { }
 
 	// // RVA: 0x11E9CB4 Offset: 0x11E9CB4 VA: 0x11E9CB4
-	// public void ECKFCIHPHGJ(int GHBPLHBNMBK, int KNIFCANOHOC) { }
+	public void ECKFCIHPHGJ(int GHBPLHBNMBK, int KNIFCANOHOC)
+	{
+		NBOLDNMPJFG[GHBPLHBNMBK - 1] = KNIFCANOHOC ^ FBGGEFFJJHB;
+		FONGFOAMHJK[GHBPLHBNMBK - 1] = KNIFCANOHOC;
+	}
 
 	// // RVA: 0x11E9D78 Offset: 0x11E9D78 VA: 0x11E9D78
 	// public double CJFBOEKDKNN(int GHBPLHBNMBK) { }
@@ -30,7 +34,13 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 	// public void POIKGADFLHF(int GHBPLHBNMBK, int KNIFCANOHOC, long EOLFJGMAJAB) { }
 
 	// // RVA: 0x11E9F80 Offset: 0x11E9F80 VA: 0x11E9F80
-	// public void POIKGADFLHF(int GHBPLHBNMBK, double HMLEDBJDCAF) { }
+	public void POIKGADFLHF(int GHBPLHBNMBK, double HMLEDBJDCAF)
+	{
+		AGPLAKAFDEP[GHBPLHBNMBK - 1] = HMLEDBJDCAF;
+		HHDIPKALCDG[GHBPLHBNMBK - 1] = HMLEDBJDCAF;
+		double f = BOAGCEOHJEO.CFLDNJANAPI_Truncate(HMLEDBJDCAF);
+		ECKFCIHPHGJ(GHBPLHBNMBK, (int)f);
+	}
 
 	// // RVA: 0x11EA084 Offset: 0x11EA084 VA: 0x11EA084
 	public ICLNENNIMOP_FreeScoreMax()
@@ -65,8 +75,43 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x11EA758 Offset: 0x11EA758 VA: 0x11EA758 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		TodoLogger.Log(0, "TODO");
-		return true;
+		bool blockMissing = false;
+		bool isInvalid = false;
+		EDOHBJAPLPF_JsonData block = LGPBAKLCFHI_FindAndCheckBlock(OILEIIEIBHP, ref blockMissing, ref isInvalid, 2);
+		if (!blockMissing)
+		{
+			if (block == null || !block.EPNGJLOKGIF_IsArray)
+			{
+				isInvalid = true;
+			}
+			else
+			{
+				if (block.HNBFOAJIIAL_Count != 2000)
+					isInvalid = true;
+				int cnt = block.HNBFOAJIIAL_Count;
+				if (cnt > 1999)
+					cnt = 2000;
+				for(int i = 0; i < cnt; i++)
+				{
+					EDOHBJAPLPF_JsonData b = block[i];
+					if(b.MDDJBLEDMBJ_IsInt)
+					{
+						POIKGADFLHF(i + 1, (int)b);
+					}
+					else if(b.DCPEFFOMOOK_IsLong)
+					{
+						POIKGADFLHF(i + 1, (long)b);
+					}
+					else if(b.NFPOKKABOHN_IsDouble)
+					{
+						POIKGADFLHF(i + 1, (double)b);
+					}
+				}
+			}
+			KFKDMBPNLJK_BlockInvalid = isInvalid;
+			return true;
+		}
+		return false;
 	}
 
 	// // RVA: 0x11EA9DC Offset: 0x11EA9DC VA: 0x11EA9DC Slot: 7

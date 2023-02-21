@@ -308,6 +308,35 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 		// public uint CAOGDCBPBAN() { }
 	}
 
+	public struct FKIMJLOFONM
+	{
+		private int FBGGEFFJJHB; // 0x0
+		private int OHMGPDPKGLF; // 0x4
+
+		public int NANNGLGOFKH { get { return OHMGPDPKGLF ^ FBGGEFFJJHB; } set { OHMGPDPKGLF = value ^ FBGGEFFJJHB; } } //0x7FEBC4 EDFAHCMGHKM 0x7FEBD4 BKPDFNKGNHA
+
+		// RVA: 0x7FEBE4 Offset: 0x7FEBE4 VA: 0x7FEBE4
+		public FKIMJLOFONM(int NANNGLGOFKH, int FBGGEFFJJHB)
+		{
+			this.FBGGEFFJJHB = FBGGEFFJJHB;
+			OHMGPDPKGLF = 0;
+			this.NANNGLGOFKH = NANNGLGOFKH;
+		}
+
+		//// RVA: 0x1AE29E0 Offset: 0x1AE29E0 VA: 0x1AE29E0
+		//public static int JNEJKMKNIJJ(NDBFKHKMMCE.FKIMJLOFONM OHDPMGMGJBI) { }
+
+		//// RVA: 0x1AE29E8 Offset: 0x1AE29E8 VA: 0x1AE29E8
+		//public static string HBPCIELOBKD(NDBFKHKMMCE.FKIMJLOFONM OHDPMGMGJBI) { }
+
+		// RVA: 0x7FEBF4 Offset: 0x7FEBF4 VA: 0x7FEBF4 Slot: 3
+		public override string ToString()
+		{
+			return NANNGLGOFKH.ToString();
+		}
+	}
+
+
 	// public const int NLDKJMCFECI = 200;
 	// public const int LNNEEPBINDO = 6000;
 	// public const int IKMLLLANDNO = 100;
