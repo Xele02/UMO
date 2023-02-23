@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class FKNOCGCODBK { }
 public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 {
-	// private const int ECFEMKGFDCE = 3;
+	private const int ECFEMKGFDCE = 3;
 	private List<CIFHILOJJFC> AHBBMJANGHE; // 0x24
 	public CIFHILOJJFC DBMOBFCLFOB = new CIFHILOJJFC(); // 0x28
 

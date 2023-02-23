@@ -6,31 +6,31 @@ public class NAKMCMEPAGH
 	private const long CKDBIMGJMFC = 999999999999;
 	private const long NGMFAGBELEO = 999999999999;
 	public int FBGGEFFJJHB; // 0x8
-	public int MILCBLJDADN; // 0xC
-	public int[] LHOCOEOKFNO = new int[5]; // 0x10
-	public int[] PHPPOGOEOAF = new int[5]; // 0x14
-	public int[] IAFPEPABGJJ = new int[5]; // 0x18
-	public int HLNOELCIBPH; // 0x1C
-	public int FILFPNDEINH; // 0x20
-	public int KOONLNKCIJC; // 0x24
-	public int EDLBLCGHECJ; // 0x28
-	public long HOHBKPPOLLA; // 0x30
-	public int GACBDCLPOCD; // 0x38
-	public int IMIEPNOECFD; // 0x3C
-	public int BENEAPDMALA; // 0x40
-	public long PDGJIJOMAKO; // 0x48
-	public int PFOMECFACLL; // 0x50
-	public int DHNOLFBEHKN; // 0x54
-	public long NALPJPKDNGH; // 0x58
-	public int KNCLIEBAPJD; // 0x60
-	public int MJBCBJDMODC; // 0x64
-	public int[] GKOAPFJFKEJ = new int[5]; // 0x68
-	public int[] LOOAKNLDONN = new int[10]; // 0x6C
+	public int MILCBLJDADN_MClr; // 0xC
+	public int[] LHOCOEOKFNO_SClr = new int[5]; // 0x10
+	public int[] PHPPOGOEOAF_DClr = new int[5]; // 0x14
+	public int[] IAFPEPABGJJ_DClr16 = new int[5]; // 0x18
+	public int HLNOELCIBPH_Perf; // 0x1C
+	public int FILFPNDEINH_Fcb; // 0x20
+	public int KOONLNKCIJC_SS; // 0x24
+	public int EDLBLCGHECJ_Max; // 0x28
+	public long HOHBKPPOLLA_Uc; // 0x30
+	public int GACBDCLPOCD_Sdv; // 0x38
+	public int IMIEPNOECFD_Vk; // 0x3C
+	public int BENEAPDMALA_Mk; // 0x40
+	public long PDGJIJOMAKO_Medl; // 0x48
+	public int PFOMECFACLL_Shp; // 0x50
+	public int DHNOLFBEHKN_Dcshp; // 0x54
+	public long NALPJPKDNGH_Dp; // 0x58
+	public int KNCLIEBAPJD_Cosu; // 0x60
+	public int MJBCBJDMODC_Valu; // 0x64
+	public int[] GKOAPFJFKEJ_VOpC = new int[5]; // 0x68
+	public int[] LOOAKNLDONN_DOpC = new int[10]; // 0x6C
 	public int CCNDOFGDOGF; // 0x70
 	public int DAPDDMJNNGG; // 0x74
 
-	public int BJDKMJFCOOM { get { return CCNDOFGDOGF ^ FBGGEFFJJHB; } set { CCNDOFGDOGF = value ^ FBGGEFFJJHB; } } //0x17C0578 JKLLJKHDJFM 0x17C0588 OHDMFLKNGDA
-	public int BKEKKFPEPBG { get { return DAPDDMJNNGG ^ FBGGEFFJJHB; } set { DAPDDMJNNGG = value ^ FBGGEFFJJHB; } } //0x17C0598 POIFAKPKGPE 0x17C05A8 KPEDOCAGMJP
+	public int BJDKMJFCOOM_LCnt { get { return CCNDOFGDOGF ^ FBGGEFFJJHB; } set { CCNDOFGDOGF = value ^ FBGGEFFJJHB; } } //0x17C0578 JKLLJKHDJFM 0x17C0588 OHDMFLKNGDA
+	public int BKEKKFPEPBG_LDt { get { return DAPDDMJNNGG ^ FBGGEFFJJHB; } set { DAPDDMJNNGG = value ^ FBGGEFFJJHB; } } //0x17C0598 POIFAKPKGPE 0x17C05A8 KPEDOCAGMJP
 
 	// // RVA: 0x17C05B8 Offset: 0x17C05B8 VA: 0x17C05B8
 	// public void FBKAPLHEACL() { }
@@ -54,7 +54,7 @@ public class NAKMCMEPAGH
 	public void EJJAPFPJLHP(int ACGLMKEBMDL)
 	{
 		TodoLogger.Log(1000, "Find the max value");
-		HOHBKPPOLLA += ACGLMKEBMDL;
+		HOHBKPPOLLA_Uc += ACGLMKEBMDL;
 	}
 
 	// // RVA: 0x17C0824 Offset: 0x17C0824 VA: 0x17C0824
@@ -97,39 +97,39 @@ public class NAKMCMEPAGH
 	public void LHPDDGIJKNB()
 	{
 		FBGGEFFJJHB = LPDNKHAIOLH.CEIBAFOCNCA();
-		MILCBLJDADN = 0;
-		BENEAPDMALA = 0;
-		HLNOELCIBPH = 0;
-		FILFPNDEINH = 0;
-		KOONLNKCIJC = 0;
-		EDLBLCGHECJ = 0;
-		NALPJPKDNGH = 0;
-		MJBCBJDMODC = 0;
-		PDGJIJOMAKO = 0;
-		PFOMECFACLL = 0;
-		DHNOLFBEHKN = 0;
-		HOHBKPPOLLA = 0;
-		GACBDCLPOCD = 0;
-		IMIEPNOECFD = 0;
-		for(int i = 0; i < GKOAPFJFKEJ.Length; i++)
+		MILCBLJDADN_MClr = 0;
+		BENEAPDMALA_Mk = 0;
+		HLNOELCIBPH_Perf = 0;
+		FILFPNDEINH_Fcb = 0;
+		KOONLNKCIJC_SS = 0;
+		EDLBLCGHECJ_Max = 0;
+		NALPJPKDNGH_Dp = 0;
+		MJBCBJDMODC_Valu = 0;
+		PDGJIJOMAKO_Medl = 0;
+		PFOMECFACLL_Shp = 0;
+		DHNOLFBEHKN_Dcshp = 0;
+		HOHBKPPOLLA_Uc = 0;
+		GACBDCLPOCD_Sdv = 0;
+		IMIEPNOECFD_Vk = 0;
+		for(int i = 0; i < GKOAPFJFKEJ_VOpC.Length; i++)
 		{
-			GKOAPFJFKEJ[i] = 0;
+			GKOAPFJFKEJ_VOpC[i] = 0;
 		}
-		for(int i = 0; i < LOOAKNLDONN.Length; i++)
+		for(int i = 0; i < LOOAKNLDONN_DOpC.Length; i++)
 		{
-			LOOAKNLDONN[i] = 0;
+			LOOAKNLDONN_DOpC[i] = 0;
 		}
-		for(int i = 0; i < LHOCOEOKFNO.Length; i++)
+		for(int i = 0; i < LHOCOEOKFNO_SClr.Length; i++)
 		{
-			LHOCOEOKFNO[i] = 0;
+			LHOCOEOKFNO_SClr[i] = 0;
 		}
-		for(int i = 0; i < PHPPOGOEOAF.Length; i++)
+		for(int i = 0; i < PHPPOGOEOAF_DClr.Length; i++)
 		{
-			PHPPOGOEOAF[i] = 0;
-			IAFPEPABGJJ[i] = 0;
+			PHPPOGOEOAF_DClr[i] = 0;
+			IAFPEPABGJJ_DClr16[i] = 0;
 		}
-		BJDKMJFCOOM = 0;
-		BKEKKFPEPBG = 0;
+		BJDKMJFCOOM_LCnt = 0;
+		BKEKKFPEPBG_LDt = 0;
 	}
 
 	// // RVA: 0x17C0DEC Offset: 0x17C0DEC VA: 0x17C0DEC

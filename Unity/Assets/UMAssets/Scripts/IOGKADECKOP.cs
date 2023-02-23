@@ -868,7 +868,7 @@ public class IOGKADECKOP
 			
 			//LAB_00a0d064:
 			FHBJNLFHGPB_SetPercent(60);
-			if(NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.KNIKMMKNOFA == 3)
+			if(NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.KNIKMMKNOFA_ARcv == 3)
 			{
 				// goto LAB_00a0d0e8;
 			}

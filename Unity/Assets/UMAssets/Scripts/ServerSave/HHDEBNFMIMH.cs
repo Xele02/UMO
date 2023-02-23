@@ -7,9 +7,9 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 {
 	public class JLAPDGALDGC
 	{
-		public int DPMFCMCDBKL { get; set; } // 0x8 PEGDAIOMDKH BDFDFHFLEKI MBOGFMBGAIG
-		public bool CADENLBDAEB { get; set; } // 0xC HMFLCAALEKM KJGFPPLHLAB ILJHLPMDHPO
-		public long BEBJKJKBOGH { get; set; } // 0x10 MCIJNMKFMDB DIAPHCJBPFD IHAIKPNEEJE
+		public int DPMFCMCDBKL_Id { get; set; } // 0x8 PEGDAIOMDKH BDFDFHFLEKI MBOGFMBGAIG
+		public bool CADENLBDAEB_New { get; set; } // 0xC HMFLCAALEKM KJGFPPLHLAB ILJHLPMDHPO
+		public long BEBJKJKBOGH_Date { get; set; } // 0x10 MCIJNMKFMDB DIAPHCJBPFD IHAIKPNEEJE
 		//public bool FJODMPGPDDD { get; }
 
 		//// RVA: 0x17574A8 Offset: 0x17574A8 VA: 0x17574A8
@@ -54,7 +54,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 		for(int i = 0; i < 500; i++)
 		{
 			JLAPDGALDGC data = new JLAPDGALDGC();
-			data.DPMFCMCDBKL = i + 1;
+			data.DPMFCMCDBKL_Id = i + 1;
 			JBBHBNAJMJB.Add(data);
 		}
 	}
@@ -65,8 +65,35 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1755B78 Offset: 0x1755B78 VA: 0x1755B78 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		TodoLogger.Log(0, "TODO");
-		return true;
+		bool blockMissing = false;
+		bool isInvalid = false;
+		EDOHBJAPLPF_JsonData block = LGPBAKLCFHI_FindAndCheckBlock(OILEIIEIBHP, ref blockMissing, ref isInvalid, 2);
+		if (!blockMissing)
+		{
+			if (block == null)
+			{
+				isInvalid = true;
+			}
+			else
+			{
+				GPMHOAKFALE_Adventure advDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
+				for(int i = 0; i < advDb.CDENCMNHNGA.Count; i++)
+				{
+					string str = POFDDFCGEGP + (i + 1).ToString();
+					if(block.BBAJPINMOEP_Contains(str))
+					{
+						EDOHBJAPLPF_JsonData b = block[str];
+						JLAPDGALDGC data = JBBHBNAJMJB[i];
+						data.DPMFCMCDBKL_Id = i + 1;
+						data.CADENLBDAEB_New = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.KLJGEHBKMMG_new, 0, ref isInvalid) != 0;
+						data.BEBJKJKBOGH_Date = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date, 0, ref isInvalid);
+					}
+				}
+			}
+			KFKDMBPNLJK_BlockInvalid = isInvalid;
+			return true;
+		}
+		return false;
 	}
 
 	// // RVA: 0x1755EF0 Offset: 0x1755EF0 VA: 0x1755EF0 Slot: 7

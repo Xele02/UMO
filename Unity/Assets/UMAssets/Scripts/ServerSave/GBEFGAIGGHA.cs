@@ -12,9 +12,9 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 		public int IPINEGKBNLK; // 0x14
 		public int FBGGEFFJJHB; // 0x18
 
-		public int DJJGPACGEMM { get { return IBLOAFJJBOA ^ FBGGEFFJJHB; } set { IBLOAFJJBOA = value ^ FBGGEFFJJHB; } } //0x1402898 LNKIAOKJIPL 0x1402C38 EOEFCENJMJG
-		public int KMFLNILNPJD { get { return IPINEGKBNLK ^ FBGGEFFJJHB; } set { IPINEGKBNLK = value ^ FBGGEFFJJHB; } } //0x14028A8 EJNACGPGJAI 0x1401DC8 PGAECLKCFEL
-		public long BEBJKJKBOGH { get { return KLAPHOKNEDG ^ FBGGEFFJJHB; } set { KLAPHOKNEDG = value ^ FBGGEFFJJHB; } } //0x140200C DIAPHCJBPFD 0x1401DB4 IHAIKPNEEJE
+		public int DJJGPACGEMM_Id { get { return IBLOAFJJBOA ^ FBGGEFFJJHB; } set { IBLOAFJJBOA = value ^ FBGGEFFJJHB; } } //0x1402898 LNKIAOKJIPL 0x1402C38 EOEFCENJMJG
+		public int KMFLNILNPJD_Cnt { get { return IPINEGKBNLK ^ FBGGEFFJJHB; } set { IPINEGKBNLK = value ^ FBGGEFFJJHB; } } //0x14028A8 EJNACGPGJAI 0x1401DC8 PGAECLKCFEL
+		public long BEBJKJKBOGH_Date { get { return KLAPHOKNEDG ^ FBGGEFFJJHB; } set { KLAPHOKNEDG = value ^ FBGGEFFJJHB; } } //0x140200C DIAPHCJBPFD 0x1401DB4 IHAIKPNEEJE
 
 		//// RVA: 0x14021D8 Offset: 0x14021D8 VA: 0x14021D8
 		//public void LHPDDGIJKNB() { }
@@ -57,9 +57,9 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 		{
 			DPGGLKKBNBJ data = new DPGGLKKBNBJ();
 			data.FBGGEFFJJHB = 0x2a843;
-			data.BEBJKJKBOGH = 0;
-			data.DJJGPACGEMM = 0;
-			data.KMFLNILNPJD = 0;
+			data.BEBJKJKBOGH_Date = 0;
+			data.DJJGPACGEMM_Id = 0;
+			data.KMFLNILNPJD_Cnt = 0;
 			ECMLOMPGMLC.Add(data);
 		}
 	}
@@ -70,8 +70,35 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14028B8 Offset: 0x14028B8 VA: 0x14028B8 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		TodoLogger.Log(0, "TODO");
-		return true;
+		bool blockMissing = false;
+		bool isInvalid = false;
+		EDOHBJAPLPF_JsonData block = LGPBAKLCFHI_FindAndCheckBlock(OILEIIEIBHP, ref blockMissing, ref isInvalid, 2);
+		if (!blockMissing)
+		{
+			if (block == null)
+			{
+				isInvalid = true;
+			}
+			else
+			{
+				BKPAPCMJKHE_Shop shopDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop;
+				for(int i = 0; i < shopDb.MHKCPJDNJKI.Count; i++)
+				{
+					string str = POFDDFCGEGP + (i + 1).ToString();
+					if(block.BBAJPINMOEP_Contains(str))
+					{
+						EDOHBJAPLPF_JsonData b = block[str];
+						DPGGLKKBNBJ data = ECMLOMPGMLC[i];
+						data.DJJGPACGEMM_Id = i + 1;
+						data.KMFLNILNPJD_Cnt = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt, 0, ref isInvalid);
+						data.BEBJKJKBOGH_Date = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date, 0, ref isInvalid);
+					}
+				}
+			}
+			KFKDMBPNLJK_BlockInvalid = isInvalid;
+			return true;
+		}
+		return false;
 	}
 
 	// // RVA: 0x1402C48 Offset: 0x1402C48 VA: 0x1402C48 Slot: 7

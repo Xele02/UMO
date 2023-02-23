@@ -6,11 +6,11 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	private const int ECFEMKGFDCE = 2;
 	public const long BBEGLBMOBOF = 0x77ccefaa9;
 	public static string POFDDFCGEGP = "_"; // 0x0
-	public string IOIMHJAOKOO; // 0x24
-	private long KLAPHOKNEDG; // 0x28
-	public long AFNJCFEKFDD; // 0x30
+	public string IOIMHJAOKOO_Hash; // 0x24
+	private long KLAPHOKNEDG_Time; // 0x28
+	public long AFNJCFEKFDD_Dirty; // 0x30
 
-	public long BEBJKJKBOGH_Time { get { return KLAPHOKNEDG ^ 0x77ccefaa9; } set { KLAPHOKNEDG = value ^ 0x77ccefaa9; } } //DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
+	public long BEBJKJKBOGH_Time { get { return KLAPHOKNEDG_Time ^ BBEGLBMOBOF; } set { KLAPHOKNEDG_Time = value ^ BBEGLBMOBOF; } } //DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x14E4BBC Offset: 0x14E4BBC VA: 0x14E4BBC
@@ -30,8 +30,8 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	public override void KMBPACJNEOF()
 	{
 		BEBJKJKBOGH_Time = 0;
-		AFNJCFEKFDD = 0;
-		IOIMHJAOKOO = "";
+		AFNJCFEKFDD_Dirty = 0;
+		IOIMHJAOKOO_Hash = "";
 	}
 
 	// // RVA: 0x14E4EC8 Offset: 0x14E4EC8 VA: 0x14E4EC8 Slot: 5
@@ -40,7 +40,26 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14E5148 Offset: 0x14E5148 VA: 0x14E5148 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		TodoLogger.Log(0, "TODO");
+		bool isInvalid = false;
+		if(!OILEIIEIBHP.BBAJPINMOEP_Contains(JIKKNHIAEKG_BlockName))
+		{
+			isInvalid = true;
+		}
+		else
+		{
+			EDOHBJAPLPF_JsonData block = OILEIIEIBHP[JIKKNHIAEKG_BlockName];
+			if (!block.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev))
+				isInvalid = true;
+			else
+			{
+				if ((int)block[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] != 2)
+					isInvalid = true;
+			}
+			IOIMHJAOKOO_Hash = FGCNMLBACGO_ReadString(block, "hash", "", ref isInvalid);
+			BEBJKJKBOGH_Time = DKMPHAPBDLH_ReadLong(block, "date", 0, ref isInvalid);
+			AFNJCFEKFDD_Dirty = DKMPHAPBDLH_ReadLong(block, "dirty", 0, ref isInvalid);
+		}
+		KFKDMBPNLJK_BlockInvalid = isInvalid;
 		return true;
 	}
 
