@@ -828,7 +828,7 @@ public class IOGKADECKOP
 			{
 				FHBJNLFHGPB_SetPercent(40);
 				NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.FNLNIKFNHAM_ForceRename = true;
-				string str1 = NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_Cont;
+				string str1 = NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
 				Debug.LogError("TODO CHECK");
 				if(str1 == JpStringLiterals.StringLiteral_9806)
 				{

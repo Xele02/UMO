@@ -371,7 +371,18 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xF32498 Offset: 0xF32498 VA: 0xF32498 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		BCGFHLIEKLJ_DecoItem d = GPBJHKLFCEP as BCGFHLIEKLJ_DecoItem;
+		for(int i = 0; i < DJHBDDGEKGO_Bgs.Count; i++)
+		{
+
+		}
+		for (int i = 0; i < KPMFLNOELIN_Objs.Count; i++)
+		{
+			!!!
+		}
+	}
 
 	// // RVA: 0xF32C3C Offset: 0xF32C3C VA: 0xF32C3C Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

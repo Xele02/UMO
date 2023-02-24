@@ -304,7 +304,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 			int val = 0;
 			if(!GIKLNODJKFK)
 			{
-				info.KNIFCANOHOC_Score = saveInfo.BDCAICINCKK_GetScore(i);
+				info.KNIFCANOHOC_Score = saveInfo.BDCAICINCKK_GetScoreForDiff(i);
 				info.NLKEBAOBJCM_Combo = saveInfo.NLKEBAOBJCM_Combo[i];
 				info.JNLKJCDFFMM_Clear = saveInfo.JNLKJCDFFMM_Clear[i];
 				info.LCOHGOIDMDF_ComboRank = saveInfo.LAMCCNAKIOJ_CbRnk[i];
@@ -313,7 +313,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 			}
 			else
 			{
-				info.KNIFCANOHOC_Score = saveInfo.AHDKMPFDKPE_GetScoreL6(i);
+				info.KNIFCANOHOC_Score = saveInfo.AHDKMPFDKPE_GetScoreL6_ForDiff(i);
 				info.NLKEBAOBJCM_Combo = saveInfo.DNIGPFPHJAK_ComboL6[i];
 				info.JNLKJCDFFMM_Clear = saveInfo.DPPCFFFNBGA_ClearL6[i];
 				info.LCOHGOIDMDF_ComboRank = saveInfo.EEECMKPLPNL_CbRnkL6[i];

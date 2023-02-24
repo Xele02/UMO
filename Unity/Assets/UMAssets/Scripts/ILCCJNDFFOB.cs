@@ -1,5 +1,7 @@
+using System;
 using System.Text;
 using UnityEngine;
+using XeSys;
 
 public class ILCCJNDFFOB
 {
@@ -33,15 +35,38 @@ public class ILCCJNDFFOB
 	// private string AOKAECCKGFC(DateTime EBBCCKCMBMC) { }
 
 	// // RVA: 0x8F4100 Offset: 0x8F4100 VA: 0x8F4100
-	// private string BGLHDAKDPMJ(DateTime EBBCCKCMBMC) { }
+	private string BGLHDAKDPMJ_DateToString(DateTime EBBCCKCMBMC)
+	{
+		NNNAKNFEPCF.Length = 0;
+		NNNAKNFEPCF.AppendFormat("{0:0000}-", EBBCCKCMBMC.Year);
+		NNNAKNFEPCF.AppendFormat("{0:00}-", EBBCCKCMBMC.Month);
+		NNNAKNFEPCF.AppendFormat("{0:00} ", EBBCCKCMBMC.Day);
+		NNNAKNFEPCF.AppendFormat("{0:00}:", EBBCCKCMBMC.Hour);
+		NNNAKNFEPCF.AppendFormat("{0:00}:", EBBCCKCMBMC.Minute);
+		NNNAKNFEPCF.AppendFormat("{0:00}", EBBCCKCMBMC.Second);
+		return NNNAKNFEPCF.ToString();
+	}
 
 	// // RVA: 0x8F4400 Offset: 0x8F4400 VA: 0x8F4400
 	// private string COPGJHJGHJG(long KPBJHHHMOJE) { }
 
 	// // RVA: 0x8F44CC Offset: 0x8F44CC VA: 0x8F44CC
-	private void FLBFCCIEPNC(EDOHBJAPLPF_JsonData IDLHJIOMJBK, long JCNNBEEHFLE)
+	private void FLBFCCIEPNC(EDOHBJAPLPF_JsonData IDLHJIOMJBK, long JCNNBEEHFLE_RequestId)
 	{
-		TodoLogger.Log(5, "ILCCJNDFFOB.FLBFCCIEPNC");
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		IDLHJIOMJBK[AFEHLCGHAEE_Strings.MOEDCMHBCHN_client_time] = BGLHDAKDPMJ_DateToString(Utility.GetLocalDateTime(time));
+		IDLHJIOMJBK[AFEHLCGHAEE_Strings.BMOBAOCHNMO_request_id] = JCNNBEEHFLE_RequestId;
+		if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI)
+		{
+			IDLHJIOMJBK[AFEHLCGHAEE_Strings.BIEPKMIADMM_user_rank] = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+			MCKCJMLOAFP m = CIOECGOMILE.HHCJCDFCLOB.JBEKNFEGFFI();
+			if (m != null)
+			{
+				IDLHJIOMJBK[AFEHLCGHAEE_Strings.OCDBDAFJPBG_num_free_crystal] = m.JLNEMPJICEH_NumFreeCrystal;
+				IDLHJIOMJBK[AFEHLCGHAEE_Strings.ABFKGMFCAIL_num_paid_crystal] = m.KCKBGALKNMA_NumPaidCrystal;
+			}
+			IDLHJIOMJBK[AFEHLCGHAEE_Strings.MOPDHAAPNAN_player_name] = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
+		}
 	}
 
 	// // RVA: 0x8F4AB8 Offset: 0x8F4AB8 VA: 0x8F4AB8
@@ -231,7 +256,7 @@ public class ILCCJNDFFOB
 	public void NJEIHFPKOMG(int HBODCMLFDOB, int EJJNDLJIIIF, string EFBLONMFDCB)
 	{
 		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
-		FLBFCCIEPNC(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB());
+		FLBFCCIEPNC(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
 		json["result"] = HBODCMLFDOB;
 		json["error_code"] = EJJNDLJIIIF;
 		json["parse_result"] = EFBLONMFDCB;

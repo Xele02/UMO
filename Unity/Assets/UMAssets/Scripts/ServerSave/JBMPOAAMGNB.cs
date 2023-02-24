@@ -10,8 +10,8 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 	public static bool NICIAENCMEG = false; // 0x8
 
 	public int LLNDMKBBNIJ_Version { get; set; } // 0x24 BGOALFDCFBL OHMCGADLNCA KJNHDFEGEGE
-	public string OPFGFINHFCE_Cont { get; set; } // 0x28 LGIIAPHCLPN DKJOHDGOIJE MJAMIGECMMF
-	public string CMKKFCGBILD { get; set; } // 0x2C JLHLBNNHPKA NCCACAFLMOO MNOEKLIDBJP
+	public string OPFGFINHFCE_PlayerName { get; set; } // 0x28 LGIIAPHCLPN DKJOHDGOIJE MJAMIGECMMF
+	public string CMKKFCGBILD_Prof { get; set; } // 0x2C JLHLBNNHPKA NCCACAFLMOO MNOEKLIDBJP
 	public int IJHBIMNKOMC_TutorialEnd { get; set; } // 0x30 DALCLLEGHAC DHDGMEEPOPC IDOPFHIMIDI
 	public long AFPONJEJKCO_RenameDate { get; set; } // 0x38 CIHJOFPCAFP LIOJMOEDFAN JJGOCLFAPMD
 	public bool FNLNIKFNHAM_ForceRename { get; set; } // 0x40 GAJKNOHAOMB KDLCLJKPMOF JLBBKAMOCNK
@@ -28,9 +28,9 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 	public override void KMBPACJNEOF()
 	{
 		LLNDMKBBNIJ_Version = 1;
-		OPFGFINHFCE_Cont = IMHFIDMLLNI;
+		OPFGFINHFCE_PlayerName = IMHFIDMLLNI;
 		AFPONJEJKCO_RenameDate = 0;
-		CMKKFCGBILD = NBPICMBNPPB;
+		CMKKFCGBILD_Prof = NBPICMBNPPB;
 		IJHBIMNKOMC_TutorialEnd = 0;
 		FNLNIKFNHAM_ForceRename = false;
 		PBEKKMOPENN_AgreeTosVer = 0;
@@ -50,17 +50,17 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 		{
 			isInvalid = true;
 		}
-		OPFGFINHFCE_Cont = CEDHHAGBIBA.KJFAGPBALNO(FGCNMLBACGO_ReadString(block, AFEHLCGHAEE_Strings.MOHDLLIJELH_cont, IMHFIDMLLNI, ref isInvalid));
+		OPFGFINHFCE_PlayerName = CEDHHAGBIBA.KJFAGPBALNO(FGCNMLBACGO_ReadString(block, AFEHLCGHAEE_Strings.OPFGFINHFCE_name, IMHFIDMLLNI, ref isInvalid));
 		LLNDMKBBNIJ_Version = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.LLNDMKBBNIJ_ver, 1, ref isInvalid);
-		CMKKFCGBILD = FGCNMLBACGO_ReadString(block, AFEHLCGHAEE_Strings.CMKKFCGBILD_prof, NBPICMBNPPB, ref isInvalid);
+		CMKKFCGBILD_Prof = FGCNMLBACGO_ReadString(block, AFEHLCGHAEE_Strings.CMKKFCGBILD_prof, NBPICMBNPPB, ref isInvalid);
 		IJHBIMNKOMC_TutorialEnd = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.IJHBIMNKOMC_tutorial_end, 0, ref isInvalid);
 		FNLNIKFNHAM_ForceRename = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.FNLNIKFNHAM_force_rename, 0, ref isInvalid) != 0;
 		PBEKKMOPENN_AgreeTosVer = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.PBEKKMOPENN_agree_tos_ver, 0, ref isInvalid);
 		AFPONJEJKCO_RenameDate = FNLNIKFNHAM_ForceRename ? 0 : DKMPHAPBDLH_ReadLong(block, AFEHLCGHAEE_Strings.AFPONJEJKCO_rename_date, 0, ref isInvalid);
-		if(OPFGFINHFCE_Cont.Length > 10)
-			OPFGFINHFCE_Cont = OPFGFINHFCE_Cont.Substring(0, 10);
-		if (CMKKFCGBILD.Length > 25)
-			CMKKFCGBILD = CMKKFCGBILD.Substring(0, 25);
+		if(OPFGFINHFCE_PlayerName.Length > 10)
+			OPFGFINHFCE_PlayerName = OPFGFINHFCE_PlayerName.Substring(0, 10);
+		if (CMKKFCGBILD_Prof.Length > 25)
+			CMKKFCGBILD_Prof = CMKKFCGBILD_Prof.Substring(0, 25);
 		KFKDMBPNLJK_BlockInvalid = isInvalid;
 
 		if(RuntimeSettings.CurrentSettings.ForceTutoSkip)

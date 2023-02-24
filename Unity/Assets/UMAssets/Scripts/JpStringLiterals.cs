@@ -4,6 +4,7 @@ class JpStringLiterals
 	public const string StringLiteral_8278 = "既に初期化済みです。再初期化を行う場合は、Terminateを呼ぶ必要があります。"; // 0x03bb0c10
 	public const string StringLiteral_8280 = "初期化されていません。"; // 0x03bb0c18
 	public const string StringLiteral_8686 = "なし"; // 0x03bb1270
+	public const string StringLiteral_9528 = "想定していない人数が入っています　id:"; //0x03bb1f98
 	public const string StringLiteral_9555 = "event_quest"; // 0x03bb2004
 	public const string StringLiteral_9767 = "超時空ユニット"; // 0x03bb2354
 	public const string StringLiteral_9793 = "エナジー"; // 0x03bb23bc

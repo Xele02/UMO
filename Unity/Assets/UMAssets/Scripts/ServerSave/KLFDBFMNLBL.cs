@@ -49,10 +49,16 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 	public abstract bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP);
 
 	// // RVA: 0x1A0BCA4 Offset: 0x1A0BCA4 VA: 0x1A0BCA4
-	// public void ODDIHGPONFL_Copy(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public void ODDIHGPONFL_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		MCNELPPHFKJ = GPBJHKLFCEP.MCNELPPHFKJ;
+		KFKDMBPNLJK_BlockInvalid = GPBJHKLFCEP.KFKDMBPNLJK_BlockInvalid;
+		FHMMFHAIPLF = GPBJHKLFCEP.FHMMFHAIPLF;
+		BMGGKONLFIC(GPBJHKLFCEP);
+	}
 
 	// // RVA: -1 Offset: -1 Slot: 7
-	// public abstract void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP);
+	public abstract void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP);
 
 	// // RVA: -1 Offset: -1 Slot: 8
 	// public abstract bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP);

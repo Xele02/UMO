@@ -33,7 +33,10 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xCDB344 Offset: 0xCDB344 VA: 0xCDB344 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "ALIPBIMCAPN_EventBoxGacha.GPBJHKLFCEP");
+	}
 
 	// // RVA: 0xCDB748 Offset: 0xCDB748 VA: 0xCDB748 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

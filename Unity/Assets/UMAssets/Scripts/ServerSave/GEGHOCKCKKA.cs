@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using XeSys;
@@ -23,14 +24,32 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 			public int DOJDOLDDBPP_Hav { get { return DJJOKAOHAML ^ FBGGEFFJJHB; } set { DJJOKAOHAML = value ^ FBGGEFFJJHB; } } //0x16BB610 FHJFILKDGGO 0x16BBB1C DEEAELHLIEC
 			public int DIAPHCJBPFD_Get { get { return JECIEFEOBDO ^ FBGGEFFJJHB; } set { JECIEFEOBDO = value ^ FBGGEFFJJHB; } } //0x16B98B4 EIEMCCANNJE 0x16BBAFC JLGBEBCNDJN
 			public int IOLJPHAOBOH_Use { get { return DADJGIPLGBK ^ FBGGEFFJJHB; } set { DADJGIPLGBK = value ^ FBGGEFFJJHB; } } //0x16BB600 EHKEMJJNKKI 0x16BBB0C GHMCNDFEFIF
-			//public int HNKFMAJIFJD { get; } 0x16B91A4 CEOIBKAGPAG
-			//private long OLNKAECIGJH { get; } 0x16BD4AC GBAOINLDCEM
+			public int HNKFMAJIFJD { get {
+					DateTime date = Utility.GetLocalDateTime(EDLLKJAKIGO(PPFNGGCBJKC_Id, DIAPHCJBPFD_Get) + DIAPHCJBPFD_Get);
+					return (int)Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 23, 59, 59);
+				} } //0x16B91A4 CEOIBKAGPAG
+			private long OLNKAECIGJH { get { return Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); } } //0x16BD4AC GBAOINLDCEM
 
 			//// RVA: 0x16BD368 Offset: 0x16BD368 VA: 0x16BD368
-			//private int EDLLKJAKIGO(int PPFNGGCBJKC, long JHNMKKNEENE) { }
+			private int EDLLKJAKIGO(int PPFNGGCBJKC, long JHNMKKNEENE)
+			{
+				int t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[PPFNGGCBJKC - 1].EMIJNAFJFJO;
+				if (t * 0x15180 != 0)
+					return t * 0x15180;
+				return (int)OLNKAECIGJH - (int)JHNMKKNEENE;
+			}
 
 			//// RVA: 0x16B88F4 Offset: 0x16B88F4 VA: 0x16B88F4
-			//public bool NIENPFFLMCH(long JHNMKKNEENE) { }
+			public bool NIENPFFLMCH(long JHNMKKNEENE)
+			{
+				if(DOJDOLDDBPP_Hav == 1)
+				{
+					TodoLogger.Log(TodoLogger._Todo, "GEGHOCKCKKA_LimitedCompoItem.NIENPFFLMCH check int64");
+					if (DIAPHCJBPFD_Get < JHNMKKNEENE)
+						return HNKFMAJIFJD > JHNMKKNEENE;
+				}
+				return false;
+			}
 
 			//// RVA: 0x16BA81C Offset: 0x16BA81C VA: 0x16BA81C
 			//public bool GIBLKLLLHFP() { }
@@ -109,7 +128,61 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 	// public int BLKPKBICPKK(int PPFNGGCBJKC, long JHNMKKNEENE) { }
 
 	// // RVA: 0x16B92C8 Offset: 0x16B92C8 VA: 0x16B92C8
-	// public int CPIICACGNBH(int PPFNGGCBJKC, long JHNMKKNEENE, bool DDGFCOPPBBN = False) { }
+	public int CPIICACGNBH(int PPFNGGCBJKC, long JHNMKKNEENE, bool DDGFCOPPBBN = false)
+	{
+		if(PPFNGGCBJKC > 0)
+		{
+			JHAAHJNEBOG_LimitedCompoItem limitedDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem;
+			int a = limitedDb.OCMMLAOEPIG[PPFNGGCBJKC - 1].PENIOLJHIPK;
+			AIAPDPDOIKG data = ODHBHOGFNAA[a - 1];
+			int MinGet = int.MaxValue;
+			int MaxUid = int.MaxValue;
+			int MinGetIdx = -1;
+			for(int i = 0; i < data.HFAHJPBLCHK; i++)
+			{
+				if(!data.PJADHDHKOEJ[i].NIENPFFLMCH(JHNMKKNEENE))
+				{
+					if(data.PJADHDHKOEJ[i].DIAPHCJBPFD_Get <= MinGet)
+					{
+						MinGet = data.PJADHDHKOEJ[i].DIAPHCJBPFD_Get;
+						MinGetIdx = i;
+					}
+				}
+				if(data.PJADHDHKOEJ[i].PGPGPJNBIOH_Uid > MaxUid)
+				{
+					MaxUid = data.PJADHDHKOEJ[i].PGPGPJNBIOH_Uid;
+				}
+			}
+			if(MinGetIdx > -1)
+			{
+				MaxUid++;
+				if (MaxUid > 99999999)
+					MaxUid = 1;
+				if (DDGFCOPPBBN)
+				{
+					return limitedDb.OCMMLAOEPIG[PPFNGGCBJKC - 1].EMIJNAFJFJO + (int)JHNMKKNEENE;
+				}
+				AIAPDPDOIKG.AGGJCJMIIMJ data2 = data.PJADHDHKOEJ[MinGetIdx];
+				data2.FBGGEFFJJHB = (int)JHNMKKNEENE * 0x2e7;
+				data2.PGPGPJNBIOH_Uid = MaxUid;
+				data2.PPFNGGCBJKC_Id = PPFNGGCBJKC;
+				data2.DIAPHCJBPFD_Get = (int)JHNMKKNEENE;
+				data2.DOJDOLDDBPP_Hav = 1;
+				data2.IOLJPHAOBOH_Use = 0;
+
+				data2 = data.NPNNEDINOKC[MinGetIdx];
+				data2.FBGGEFFJJHB = (int)JHNMKKNEENE * 0x540545;
+				data2.PGPGPJNBIOH_Uid = MaxUid;
+				data2.PPFNGGCBJKC_Id = PPFNGGCBJKC;
+				data2.DIAPHCJBPFD_Get = (int)JHNMKKNEENE;
+				data2.DOJDOLDDBPP_Hav = 1;
+				data2.IOLJPHAOBOH_Use = 0;
+
+				return data.PJADHDHKOEJ[MinGetIdx].HNKFMAJIFJD;
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0x16B990C Offset: 0x16B990C VA: 0x16B990C
 	// public List<int> BHNDPHCBCKN(int PPFNGGCBJKC, long JHNMKKNEENE) { }

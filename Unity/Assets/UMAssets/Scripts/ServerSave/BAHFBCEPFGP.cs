@@ -14,7 +14,37 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0xF14400 Offset: 0xF14400 VA: 0xF14400
-	// public void DDCBGCODHHN(int DLAEJOBELBH_Id, int HPNLNIFICNI) { }
+	public void DDCBGCODHHN(int DLAEJOBELBH_Id, int HPNLNIFICNI)
+	{
+		int a = (DLAEJOBELBH_Id - 1) >> 3;
+		if(a < 38)
+		{
+			if(HPNLNIFICNI >= 2 && HPNLNIFICNI < 6)
+			{
+				byte[] array = null;
+				switch (HPNLNIFICNI)
+				{
+					case 2:
+						array = BJFCIFJLJJI_ShowAddUnitLiveDio;
+						break;
+					case 3:
+						array = IEGFCNMOCNE_ShowAddUnitLiveTrio;
+						break;
+					case 4:
+						array = FALFJCGGDHB_ShowAddUnitLiveQuartet;
+						break;
+					case 5:
+						array = KKPKAMANKOH_ShowAddUnitLiveQuintet;
+						break;
+				}
+				array[a] |= (byte)(1 << ((DLAEJOBELBH_Id - 1) & 7));
+			}
+			else
+			{
+				UnityEngine.Debug.Log(JpStringLiterals.StringLiteral_9528 + DLAEJOBELBH_Id);
+			}
+		}
+	}
 
 	// // RVA: 0xF14574 Offset: 0xF14574 VA: 0xF14574
 	// public bool CGEPJMFFLLJ(int DLAEJOBELBH_Id, int HPNLNIFICNI) { }
@@ -72,7 +102,26 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xF14EB8 Offset: 0xF14EB8 VA: 0xF14EB8 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		BAHFBCEPFGP_AddMusic b = GPBJHKLFCEP as BAHFBCEPFGP_AddMusic;
+		for (int i = 0; i < BJFCIFJLJJI_ShowAddUnitLiveDio.Length; i++)
+		{
+			BJFCIFJLJJI_ShowAddUnitLiveDio[i] = b.BJFCIFJLJJI_ShowAddUnitLiveDio[i];
+		}
+		for(int i = 0; i < IEGFCNMOCNE_ShowAddUnitLiveTrio.Length; i++)
+		{
+			IEGFCNMOCNE_ShowAddUnitLiveTrio[i] = b.IEGFCNMOCNE_ShowAddUnitLiveTrio[i];
+		}
+		for(int i = 0; i < FALFJCGGDHB_ShowAddUnitLiveQuartet.Length; i++)
+		{
+			FALFJCGGDHB_ShowAddUnitLiveQuartet[i] = b.FALFJCGGDHB_ShowAddUnitLiveQuartet[i];
+		}
+		for(int i = 0; i < KKPKAMANKOH_ShowAddUnitLiveQuintet.Length; i++)
+		{
+			KKPKAMANKOH_ShowAddUnitLiveQuintet[i] = b.KKPKAMANKOH_ShowAddUnitLiveQuintet[i];
+		}
+	}
 
 	// // RVA: 0xF15248 Offset: 0xF15248 VA: 0xF15248 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

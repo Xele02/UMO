@@ -82,7 +82,14 @@ public class CIOECGOMILE
 	// public int NOJDLFKKMDD(int MHFBCINOJEE) { }
 
 	// // RVA: 0xFFA7DC Offset: 0xFFA7DC VA: 0xFFA7DC
-	// public MCKCJMLOAFP JBEKNFEGFFI() { }
+	public MCKCJMLOAFP JBEKNFEGFFI()
+	{
+		return BBEPLKNMICJ.Find((MCKCJMLOAFP BNKHBCBJBKI) =>
+		{
+			//0x100A150
+			return BNKHBCBJBKI.PPFNGGCBJKC == 1001;
+		});
+	}
 
 	// // RVA: 0xFFA934 Offset: 0xFFA934 VA: 0xFFA934
 	// public bool FDFDGEMMKKJ() { }

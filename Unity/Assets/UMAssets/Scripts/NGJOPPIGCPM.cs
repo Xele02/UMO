@@ -115,23 +115,23 @@ public class NGJOPPIGCPM_ResultData
 		GPMILOPNBPA_Bonus = mInfo1.ECLDABOLHLM;
 		if(!GIKLNODJKFK_IsLine6)
 		{
-			IHNCAAHAFEE_Score = mInfo1.BDCAICINCKK_GetScore((int)NOAKHKMLPFK_diff);
+			IHNCAAHAFEE_Score = mInfo1.BDCAICINCKK_GetScoreForDiff((int)NOAKHKMLPFK_diff);
 			NCMJNHJJLBC_Combo = mInfo1.NLKEBAOBJCM_Combo[(int)NOAKHKMLPFK_diff];
 		}
 		else
 		{
-			IHNCAAHAFEE_Score = mInfo1.AHDKMPFDKPE_GetScoreL6((int)NOAKHKMLPFK_diff);
+			IHNCAAHAFEE_Score = mInfo1.AHDKMPFDKPE_GetScoreL6_ForDiff((int)NOAKHKMLPFK_diff);
 			NCMJNHJJLBC_Combo = mInfo1.DNIGPFPHJAK_ComboL6[(int)NOAKHKMLPFK_diff];
 		}
 		if(!GIKLNODJKFK_IsLine6)
 		{
-			HMDHDKLDPFK_PrevScore = mInfo2.BDCAICINCKK_GetScore((int)NOAKHKMLPFK_diff);
+			HMDHDKLDPFK_PrevScore = mInfo2.BDCAICINCKK_GetScoreForDiff((int)NOAKHKMLPFK_diff);
 			HHPIAKKJBJD_IsBetterScore = HMDHDKLDPFK_PrevScore < IHNCAAHAFEE_Score;
 			EFJFKKMAHMB_IsBetterCombo = mInfo2.NLKEBAOBJCM_Combo[(int)NOAKHKMLPFK_diff] < NCMJNHJJLBC_Combo;
 		}
 		else
 		{
-			HMDHDKLDPFK_PrevScore = mInfo2.AHDKMPFDKPE_GetScoreL6((int)NOAKHKMLPFK_diff);
+			HMDHDKLDPFK_PrevScore = mInfo2.AHDKMPFDKPE_GetScoreL6_ForDiff((int)NOAKHKMLPFK_diff);
 			HHPIAKKJBJD_IsBetterScore = HMDHDKLDPFK_PrevScore < IHNCAAHAFEE_Score;
 			EFJFKKMAHMB_IsBetterCombo = mInfo2.DNIGPFPHJAK_ComboL6[(int)NOAKHKMLPFK_diff] < NCMJNHJJLBC_Combo;
 		}

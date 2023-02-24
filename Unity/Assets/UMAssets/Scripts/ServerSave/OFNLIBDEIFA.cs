@@ -1,5 +1,7 @@
 
-public class OFNLIBDEIFA : KLFDBFMNLBL_ServerSaveBlock
+[System.Obsolete("Use OFNLIBDEIFA_EventQuest", true)]
+public class OFNLIBDEIFA { }
+public class OFNLIBDEIFA_EventQuest : KLFDBFMNLBL_ServerSaveBlock
 {
 	// private const int ECFEMKGFDCE = 2;
 	// public const int IIPMADOHGAD = 100;
@@ -15,7 +17,7 @@ public class OFNLIBDEIFA : KLFDBFMNLBL_ServerSaveBlock
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x1DD23AC Offset: 0x1DD23AC VA: 0x1DD23AC
-	public OFNLIBDEIFA()
+	public OFNLIBDEIFA_EventQuest()
 	{
 		LHPDDGIJKNB_Reset();
 	}
