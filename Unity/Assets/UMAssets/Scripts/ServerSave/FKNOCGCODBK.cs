@@ -95,7 +95,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 								if(!colOk)
 									colId = 0;
 							}
-							AMCGONHBGGF a = MEFHDDNABLM.FDBOPFEOENF_MainDivas[i];
+							AMCGONHBGGF a = MEFHDDNABLM.FDBOPFEOENF_MainDivas[j];
 							a.DIPKCALNIII_Id = divaId;
 							a.BEEAIAAJOHD_CId = cosId;
 							a.AFNIOJHODAG_ColId = colId;

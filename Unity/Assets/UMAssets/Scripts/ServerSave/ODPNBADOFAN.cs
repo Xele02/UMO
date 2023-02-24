@@ -57,7 +57,7 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 			data.BEBJKJKBOGH_Date = 0;
 			k *= 0xb;
 			data.CADENLBDAEB_New = true;
-			GPMKFMFEKLN_NormalQuests.Clear();
+			GPMKFMFEKLN_NormalQuests.Add(data);
 		}
 	}
 

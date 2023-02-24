@@ -6,10 +6,10 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	private const int ECFEMKGFDCE = 1;
 	private const int JDOFFDAJGBO = 300;
 	private const int DKKOEGALOPA = 38;
-	private byte[] BJFCIFJLJJI = new byte[38]; // 0x24
-	private byte[] IEGFCNMOCNE = new byte[38]; // 0x28
-	private byte[] FALFJCGGDHB = new byte[38]; // 0x2C
-	private byte[] KKPKAMANKOH = new byte[38]; // 0x30
+	private byte[] BJFCIFJLJJI_ShowAddUnitLiveDio = new byte[38]; // 0x24
+	private byte[] IEGFCNMOCNE_ShowAddUnitLiveTrio = new byte[38]; // 0x28
+	private byte[] FALFJCGGDHB_ShowAddUnitLiveQuartet = new byte[38]; // 0x2C
+	private byte[] KKPKAMANKOH_ShowAddUnitLiveQuintet = new byte[38]; // 0x30
 
 	// public override bool DMICHEJIAJL { get; }
 
@@ -25,21 +25,21 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xF148A4 Offset: 0xF148A4 VA: 0xF148A4 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		for(int i = 0; i < BJFCIFJLJJI.Length; i++)
+		for(int i = 0; i < BJFCIFJLJJI_ShowAddUnitLiveDio.Length; i++)
 		{
-			BJFCIFJLJJI[i] = 0;
+			BJFCIFJLJJI_ShowAddUnitLiveDio[i] = 0;
 		}
-		for(int i = 0; i < IEGFCNMOCNE.Length; i++)
+		for(int i = 0; i < IEGFCNMOCNE_ShowAddUnitLiveTrio.Length; i++)
 		{
-			IEGFCNMOCNE[i] = 0;
+			IEGFCNMOCNE_ShowAddUnitLiveTrio[i] = 0;
 		}
-		for(int i = 0; i < FALFJCGGDHB.Length; i++)
+		for(int i = 0; i < FALFJCGGDHB_ShowAddUnitLiveQuartet.Length; i++)
 		{
-			FALFJCGGDHB[i] = 0;
+			FALFJCGGDHB_ShowAddUnitLiveQuartet[i] = 0;
 		}
-		for(int i = 0; i < KKPKAMANKOH.Length; i++)
+		for(int i = 0; i < KKPKAMANKOH_ShowAddUnitLiveQuintet.Length; i++)
 		{
-			FALFJCGGDHB[i] = 0; // Bug, should be KKPKAMANKOH
+			FALFJCGGDHB_ShowAddUnitLiveQuartet[i] = 0; // Bug, should be KKPKAMANKOH
 		}
 	}
 
@@ -49,8 +49,26 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xF14CD0 Offset: 0xF14CD0 VA: 0xF14CD0 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		TodoLogger.Log(0, "TODO");
-		return true;
+		bool blockMissing = false;
+		bool isInvalid = false;
+		EDOHBJAPLPF_JsonData block = LGPBAKLCFHI_FindAndCheckBlock(OILEIIEIBHP, ref blockMissing, ref isInvalid, 1);
+		if (!blockMissing)
+		{
+			if (block == null)
+			{
+				isInvalid = true;
+			}
+			else
+			{
+				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(BJFCIFJLJJI_ShowAddUnitLiveDio, FGCNMLBACGO_ReadString(block, "show_addunitlive_dio", "", ref isInvalid));
+				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(IEGFCNMOCNE_ShowAddUnitLiveTrio, FGCNMLBACGO_ReadString(block, "show_addunitlive_trio", "", ref isInvalid));
+				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(FALFJCGGDHB_ShowAddUnitLiveQuartet, FGCNMLBACGO_ReadString(block, "show_addunitlive_quartet", "", ref isInvalid));
+				CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(KKPKAMANKOH_ShowAddUnitLiveQuintet, FGCNMLBACGO_ReadString(block, "show_addunitlive_quintet", "", ref isInvalid));
+			}
+			KFKDMBPNLJK_BlockInvalid = isInvalid;
+			return true;
+		}
+		return false;
 	}
 
 	// // RVA: 0xF14EB8 Offset: 0xF14EB8 VA: 0xF14EB8 Slot: 7

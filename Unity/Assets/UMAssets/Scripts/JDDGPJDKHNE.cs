@@ -275,7 +275,7 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C326D4 Offset: 0x1C326D4 VA: 0x1C326D4
 	public long KPKAKIIAFFB()
 	{
-		UnityEngine.Debug.LogWarning("Check");
+		TodoLogger.Log(TodoLogger._Todo, "JDDGPJDKHNE.KPKAKIIAFFB Check int64 opération");
 		BBMBNCPEAHC_EventsToSend.JCNNBEEHFLE = BBMBNCPEAHC_EventsToSend.JCNNBEEHFLE + 1;
 		return BBMBNCPEAHC_EventsToSend.JCNNBEEHFLE;
 	}
