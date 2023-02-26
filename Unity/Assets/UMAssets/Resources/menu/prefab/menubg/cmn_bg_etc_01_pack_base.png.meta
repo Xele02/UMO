@@ -1,13 +1,33 @@
 fileFormatVersion: 2
-guid: a27fc421026972643ad19d747900bcb8
+guid: adf15bb0df1979544993aaa11d16a005
+timeCreated: 1661107314
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
-  externalObjects: {}
   serializedVersion: 9
+  objectHideFlags: 0
+  correspondingSourceObject: {fileID: 0}
+  prefabInstance: {fileID: 0}
+  prefabAsset: {fileID: 0}
+  name:
+  fileIDToRecycleName:
+  - 21300000: cmn_bg_etc_onp_0
+  - 21300002: cmn_bg_tile_01
+  - 21300004: cmn_bg_grad_01
+  - 21300006: cmn_bg_etc_emblem_0
+  - 21300008: cmn_bg_etc_emblem_1
+  - 21300010: cmn_bg_etc_emblem_2
+  - 21300012: cmn_bg_home_tile
+  - 21300014: cmn_bg_music_pack_01
+  - 21300016: cmn_bg_etc_01_pack_base_0
+  - 21300018: cmn_bg_music_pack_02
+  - 21300020: cmn_bg_base_black
+  - 21300022: cmd_bg_music_tile
+  - 21300024: cmn_bg_offer_tile
+  externalObjects: {}
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
-    sRGBTexture: 0
+    sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -27,20 +47,20 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 1
-  maxTextureSize: 2048
+  textureFormat: 34
+  maxTextureSize: 1024
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,9 +69,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -71,18 +91,530 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: cmn_bg_etc_onp_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 594
+        width: 430
+        height: 430
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 215.00002, y: -215.00002}
+        - {x: -215.00002, y: -215.00002}
+        - {x: -215.00002, y: 215.00002}
+        - {x: 215.00002, y: 215.00002}
+      physicsShape:
+      - - {x: -214.99998, y: 214.99998}
+        - {x: -214.99998, y: -214.99998}
+        - {x: 214.99998, y: -214.99998}
+        - {x: 214.99998, y: 214.99998}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fcb068cf98e44d18430689787e4cc43
+      vertices:
+      - {x: -1.5258789E-05, y: 430}
+      - {x: 430, y: -1.5258789E-05}
+      - {x: 430, y: 430}
+      - {x: -1.5258789E-05, y: -1.5258789E-05}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmn_bg_tile_01
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 98
+        width: 352
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 176, y: -45}
+        - {x: -176, y: -45}
+        - {x: -176, y: 45}
+        - {x: 176, y: 45}
+      physicsShape:
+      - - {x: -176, y: 45}
+        - {x: -176, y: -45}
+        - {x: 176, y: -45}
+        - {x: 176, y: 45}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c802e83d4394bf1a0a30689b4f827ab
+      vertices:
+      - {x: 0, y: 90}
+      - {x: 352, y: 0}
+      - {x: 352, y: 90}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmn_bg_grad_01
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 107
+        width: 10
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: -40}
+        - {x: -5, y: 40}
+        - {x: 5, y: 40}
+        - {x: 5, y: -40}
+      physicsShape:
+      - - {x: -4.9999995, y: 39.999996}
+        - {x: -4.9999995, y: -39.999996}
+        - {x: 4.9999995, y: -39.999996}
+        - {x: 4.9999995, y: 39.999996}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f073bc0b6278407aae2dc4c10b9ff032
+      vertices:
+      - {x: 0, y: 80}
+      - {x: 10, y: 80}
+      - {x: 0, y: 0}
+      - {x: 10, y: 0}
+      indices:
+      - 0
+      - 1
+      - 2
+      - 2
+      - 1
+      - 3
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmn_bg_etc_emblem_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 194
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 200, y: -200}
+        - {x: -200, y: -200}
+        - {x: -200, y: 200}
+        - {x: 200, y: 200}
+      physicsShape:
+      - - {x: -200, y: 200}
+        - {x: -200, y: -200}
+        - {x: 200, y: -200}
+        - {x: 200, y: 200}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa9d0887975406d9547be16a88f24d7
+      vertices:
+      - {x: 0, y: 400}
+      - {x: 400, y: 0}
+      - {x: 400, y: 400}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmn_bg_etc_emblem_1
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 194
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 200, y: -200}
+        - {x: -200, y: -200}
+        - {x: -200, y: 200}
+        - {x: 200, y: 200}
+      physicsShape:
+      - - {x: -200, y: 200}
+        - {x: -200, y: -200}
+        - {x: 200, y: -200}
+        - {x: 200, y: 200}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5289a5ffea8f4764ac27e06757b39865
+      vertices:
+      - {x: 0, y: 400}
+      - {x: 400, y: 0}
+      - {x: 400, y: 400}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmn_bg_etc_emblem_2
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 603
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 200, y: -200}
+        - {x: -200, y: -200}
+        - {x: -200, y: 200}
+        - {x: 200, y: 200}
+      physicsShape:
+      - - {x: -200, y: 200}
+        - {x: -200, y: -200}
+        - {x: 200, y: -200}
+        - {x: 200, y: 200}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b36f2b05896497bbd699e084183d1d8
+      vertices:
+      - {x: 0, y: 400}
+      - {x: 400, y: 0}
+      - {x: 400, y: 400}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmn_bg_home_tile
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 133
+        width: 52
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: -26}
+        - {x: -26, y: -26}
+        - {x: -26, y: 26}
+        - {x: 26, y: 26}
+      physicsShape:
+      - - {x: -26, y: 26}
+        - {x: -26, y: -26}
+        - {x: 26, y: -26}
+        - {x: 26, y: 26}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1bacbd96b1d4b09ab141a6e6661dd38
+      vertices:
+      - {x: 0, y: 52}
+      - {x: 52, y: 0}
+      - {x: 52, y: 52}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmn_bg_music_pack_01
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 595
+        width: 8
+        height: 428
+      alignment: 9
+      pivot: {x: 0.49999815, y: 0.49689367}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.000015, y: -213.99998}
+        - {x: -4.000015, y: 214.00002}
+        - {x: 3.9999852, y: 214.00002}
+        - {x: 3.9999852, y: -213.99998}
+      physicsShape:
+      - - {x: -4.000015, y: 214.00002}
+        - {x: -4.000015, y: -213.99998}
+        - {x: 3.9999852, y: -213.99998}
+        - {x: 3.9999852, y: 214.00002}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2ef9b84d5e485e83b6b3f6d76bbc97
+      vertices:
+      - {x: 0, y: 429.32953}
+      - {x: 8, y: 429.32953}
+      - {x: 0, y: 1.3295288}
+      - {x: 8, y: 1.3295288}
+      indices:
+      - 0
+      - 1
+      - 2
+      - 2
+      - 1
+      - 3
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmn_bg_etc_01_pack_base_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 512, y: -512}
+        - {x: -512, y: -512}
+        - {x: -512, y: 512}
+        - {x: 512, y: 512}
+      physicsShape:
+      - - {x: -512, y: 512}
+        - {x: -512, y: -512}
+        - {x: 512, y: -512}
+        - {x: 512, y: 512}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9201e8f139574406a96738012393f046
+      vertices:
+      - {x: 0, y: 1024}
+      - {x: 1024, y: 0}
+      - {x: 1024, y: 1024}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmn_bg_music_pack_02
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 196
+        width: 198
+        height: 397
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 99, y: -198.5}
+        - {x: -99, y: -198.5}
+        - {x: -99, y: 198.5}
+        - {x: 99, y: 198.5}
+      physicsShape:
+      - - {x: -98.99999, y: 198.5}
+        - {x: -98.99999, y: -198.5}
+        - {x: 98.99999, y: -198.5}
+        - {x: 98.99999, y: 198.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73f24ad25ff463aacff25173e4665d2
+      vertices:
+      - {x: 0, y: 397}
+      - {x: 198, y: 0}
+      - {x: 198, y: 397}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmn_bg_base_black
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 180
+        width: 10
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5376831, y: 0.61510926}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: -5}
+        - {x: -5, y: 5}
+        - {x: 5, y: 5}
+        - {x: 5, y: -5}
+      physicsShape:
+      - - {x: -5, y: 5}
+        - {x: -5, y: -5}
+        - {x: 5, y: -5}
+        - {x: 5, y: 5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c69d27dc43348a6933149c3fb9ee660
+      vertices:
+      - {x: -0.37683105, y: 8.848907}
+      - {x: 9.623169, y: 8.848907}
+      - {x: -0.37683105, y: -1.1510925}
+      - {x: 9.623169, y: -1.1510925}
+      indices:
+      - 0
+      - 1
+      - 2
+      - 2
+      - 1
+      - 3
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmd_bg_music_tile
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 80
+        width: 52
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: -26}
+        - {x: -26, y: -26}
+        - {x: -26, y: 26}
+        - {x: 26, y: 26}
+      physicsShape:
+      - - {x: -26, y: 26}
+        - {x: -26, y: -26}
+        - {x: 26, y: -26}
+        - {x: 26, y: 26}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fb8a1c72324faf8f1e7dc643d3b960
+      vertices:
+      - {x: 0, y: 52}
+      - {x: 52, y: 0}
+      - {x: 52, y: 52}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cmn_bg_offer_tile
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 80
+        width: 52
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: -26}
+        - {x: -26, y: -26}
+        - {x: -26, y: 26}
+        - {x: 26, y: 26}
+      physicsShape:
+      - - {x: -26, y: 26}
+        - {x: -26, y: -26}
+        - {x: 26, y: -26}
+        - {x: 26, y: 26}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbc81c2beba4b8b8065e2f6ad58e651
+      vertices:
+      - {x: 0, y: 52}
+      - {x: 52, y: 0}
+      - {x: 52, y: 52}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID:
     vertices: []
-    indices: 
+    indices: []
     edges: []
     weights: []
-  spritePackingTag: 
+  spritePackingTag:
+  output:
+    textureImportInstructions:
+      compressedFormat: 0
+      uncompressedFormat: 0
+      desiredFormat: 0
+      usageMode: 0
+      colorSpace: 0
+      androidETC2FallbackFormat: 0
+      width: 0
+      height: 0
+      compressionQuality: 0
+      androidETC2FallbackDownscale: 0
+    sourceTextureInformation:
+      width: 0
+      height: 0
+      doesTextureContainAlpha: 0
+      sourceWasHDR: 0
+    importInspectorWarnings:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:
