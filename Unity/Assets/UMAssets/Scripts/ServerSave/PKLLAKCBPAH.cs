@@ -34,7 +34,10 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x93F1B4 Offset: 0x93F1B4 VA: 0x93F1B4 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "PKLLAKCBPAH_DecoPublicInfo.BMGGKONLFIC");
+	}
 
 	// // RVA: 0x93F2CC Offset: 0x93F2CC VA: 0x93F2CC Slot: 9
 	// public override bool NFKFOODCJJB() { }

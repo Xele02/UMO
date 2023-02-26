@@ -118,7 +118,19 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1B3B480 Offset: 0x1B3B480 VA: 0x1B3B480 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		ODPNBADOFAN_Quest q = GPBJHKLFCEP as ODPNBADOFAN_Quest;
+		for(int i = 0; i < GPMKFMFEKLN_NormalQuests.Count; i++)
+		{
+			GPMKFMFEKLN_NormalQuests[i].ODDIHGPONFL(q.GPMKFMFEKLN_NormalQuests[i]);
+		}
+		for(int i = 0; i < BEGCHDHHEKC_DailyQuests.Count; i++)
+		{
+			BEGCHDHHEKC_DailyQuests[i].ODDIHGPONFL(q.BEGCHDHHEKC_DailyQuests[i]);
+		}
+		FANICHGKOML_InitDate = q.FANICHGKOML_InitDate;
+	}
 
 	// // RVA: 0x1B3B74C Offset: 0x1B3B74C VA: 0x1B3B74C Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }
@@ -151,7 +163,13 @@ public class NFPHOINMHKN_QuestInfo
 	//public bool AGBOGBEOFME(NFPHOINMHKN OIKJFMGEICL) { }
 
 	//// RVA: 0x1AF3F70 Offset: 0x1AF3F70 VA: 0x1AF3F70
-	//public void ODDIHGPONFL(NFPHOINMHKN GPBJHKLFCEP) { }
+	public void ODDIHGPONFL(NFPHOINMHKN_QuestInfo GPBJHKLFCEP)
+	{
+		PPFNGGCBJKC_Id = GPBJHKLFCEP.PPFNGGCBJKC_Id;
+		EALOBDHOCHP_Stat = GPBJHKLFCEP.EALOBDHOCHP_Stat;
+		BEBJKJKBOGH_Date = GPBJHKLFCEP.BEBJKJKBOGH_Date;
+		CADENLBDAEB_New = GPBJHKLFCEP.CADENLBDAEB_New;
+	}
 
 	//// RVA: 0x1AF4028 Offset: 0x1AF4028 VA: 0x1AF4028
 	//public bool CHFOOMPEABN() { }

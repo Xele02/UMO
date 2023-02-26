@@ -64,7 +64,13 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x14E5400 Offset: 0x14E5400 VA: 0x14E5400 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		FFMIPGABHHA_SaveHash s = GPBJHKLFCEP as FFMIPGABHHA_SaveHash;
+		IOIMHJAOKOO_Hash = string.Copy(s.IOIMHJAOKOO_Hash);
+		BEBJKJKBOGH_Time = s.BEBJKJKBOGH_Time;
+		AFNJCFEKFDD_Dirty = s.AFNJCFEKFDD_Dirty;
+	}
 
 	// // RVA: 0x14E5558 Offset: 0x14E5558 VA: 0x14E5558 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

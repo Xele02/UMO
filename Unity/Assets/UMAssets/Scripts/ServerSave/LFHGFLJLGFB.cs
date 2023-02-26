@@ -94,7 +94,15 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD6C138 Offset: 0xD6C138 VA: 0xD6C138 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		LFHGFLJLGFB_FavoritePlayer f = GPBJHKLFCEP as LFHGFLJLGFB_FavoritePlayer;
+		FNDJLOMNECG.Clear();
+		for(int i = 0; i < f.FNDJLOMNECG.Count; i++)
+		{
+			BNFBKGHBHHN(f.FNDJLOMNECG[i].DNJEJEANJGL_Value);
+		}
+	}
 
 	// // RVA: 0xD6C300 Offset: 0xD6C300 VA: 0xD6C300 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

@@ -100,7 +100,10 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xFD55BC Offset: 0xFD55BC VA: 0xFD55BC Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "FEHINJKHDAP_EventScore.BMGGKONLFIC");
+	}
 
 	// // RVA: 0xFD5790 Offset: 0xFD5790 VA: 0xFD5790 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

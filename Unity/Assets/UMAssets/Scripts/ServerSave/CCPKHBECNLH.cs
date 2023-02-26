@@ -39,7 +39,10 @@ public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x190E5C0 Offset: 0x190E5C0 VA: 0x190E5C0 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "CCPKHBECNLH_EventBattle.BMGGKONLFIC");
+	}
 
 	// // RVA: 0x190E794 Offset: 0x190E794 VA: 0x190E794 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

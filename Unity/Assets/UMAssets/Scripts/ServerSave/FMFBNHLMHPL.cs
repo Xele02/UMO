@@ -34,7 +34,10 @@ public class FMFBNHLMHPL_EventAprilFool : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x119A4B0 Offset: 0x119A4B0 VA: 0x119A4B0 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "FMFBNHLMHPL_EventAprilFool.BMGGKONLFIC");
+	}
 
 	// // RVA: 0x119AA04 Offset: 0x119AA04 VA: 0x119AA04 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

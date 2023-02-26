@@ -96,7 +96,29 @@ public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x13E5900 Offset: 0x13E5900 VA: 0x13E5900 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		FNCFHIEELGO_DecoVisit d = GPBJHKLFCEP as FNCFHIEELGO_DecoVisit;
+		LIDCDBKAAFL_VisitAcquiredAt = d.LIDCDBKAAFL_VisitAcquiredAt;
+		KAIOEKJJAKH_VisitedAt = d.KAIOEKJJAKH_VisitedAt;
+		HFJADCMLFAN_VisitPrevCntFriend = d.HFJADCMLFAN_VisitPrevCntFriend;
+		FBINJFGCIOI_VisitPrevCntFan = d.FBINJFGCIOI_VisitPrevCntFan;
+		IAOOCOKEECB_VisitPrevCntOther = d.IAOOCOKEECB_VisitPrevCntOther;
+		EILGNIEGDOI_PresentAcquiredAt = d.EILGNIEGDOI_PresentAcquiredAt;
+		GHEBKKHAAPM_PresentPrevCnt = d.GHEBKKHAAPM_PresentPrevCnt;
+		MPPKMEIEGFE_VisitList.Clear();
+		MPPKMEIEGFE_VisitList.Capacity = d.MPPKMEIEGFE_VisitList.Count;
+		for(int i = 0; i < d.MPPKMEIEGFE_VisitList.Count; i++)
+		{
+			MPPKMEIEGFE_VisitList.Add(d.MPPKMEIEGFE_VisitList[i]);
+		}
+		MHPDCGNOBHH_PresentSentList.Clear();
+		MHPDCGNOBHH_PresentSentList.Capacity = d.MHPDCGNOBHH_PresentSentList.Count;
+		for(int i = 0; i < d.MHPDCGNOBHH_PresentSentList.Count; i++)
+		{
+			MHPDCGNOBHH_PresentSentList.Add(d.MHPDCGNOBHH_PresentSentList[i]);
+		}
+	}
 
 	// // RVA: 0x13E5E3C Offset: 0x13E5E3C VA: 0x13E5E3C Slot: 9
 	// public override bool NFKFOODCJJB() { }

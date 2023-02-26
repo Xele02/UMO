@@ -60,7 +60,10 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x19C979C Offset: 0x19C979C VA: 0x19C979C Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "BMIODFJCGAJ_EventBattlePlayer.BMGGKONLFIC");
+	}
 
 	// // RVA: 0x19C9C48 Offset: 0x19C9C48 VA: 0x19C9C48 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

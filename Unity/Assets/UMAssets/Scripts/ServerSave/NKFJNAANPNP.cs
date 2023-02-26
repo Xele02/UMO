@@ -163,7 +163,15 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xC148A0 Offset: 0xC148A0 VA: 0xC148A0 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		NKFJNAANPNP n = GPBJHKLFCEP as NKFJNAANPNP;
+		for(int i = 0; i < IDJIDAPJCBE.Count; i++)
+		{
+			IDJIDAPJCBE[i].ODDIHGPONFL(n.IDJIDAPJCBE[i]);
+			NPNNEDINOKC[i].ODDIHGPONFL(n.NPNNEDINOKC[i]);
+		}
+	}
 
 	// // RVA: 0xC14B04 Offset: 0xC14B04 VA: 0xC14B04 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

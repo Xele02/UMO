@@ -201,7 +201,18 @@ public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1800BA4 Offset: 0x1800BA4 VA: 0x1800BA4 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		LIFGJMIHHKM_LimitedItem l = GPBJHKLFCEP as LIFGJMIHHKM_LimitedItem;
+		for(int i = 0; i < ODHBHOGFNAA.Count; i++)
+		{
+			for(int j = 0; j < ODHBHOGFNAA[i].PJADHDHKOEJ.Count; j++)
+			{
+				ODHBHOGFNAA[i].PJADHDHKOEJ[j].ODDIHGPONFL(l.ODHBHOGFNAA[i].PJADHDHKOEJ[j]);
+				ODHBHOGFNAA[i].NPNNEDINOKC[j].ODDIHGPONFL(l.ODHBHOGFNAA[i].NPNNEDINOKC[j]);
+			}
+		}
+	}
 
 	// // RVA: 0x1800FD4 Offset: 0x1800FD4 VA: 0x1800FD4 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

@@ -40,7 +40,10 @@ public class CCBMJNPFPBB_EventGoDiva : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1901778 Offset: 0x1901778 VA: 0x1901778 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "CCBMJNPFPBB_EventGoDiva.BMGGKONLFIC");
+	}
 
 	// // RVA: 0x1901F10 Offset: 0x1901F10 VA: 0x1901F10 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

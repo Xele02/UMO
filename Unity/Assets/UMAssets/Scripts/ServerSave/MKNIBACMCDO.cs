@@ -29,7 +29,15 @@ public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x195AC68 Offset: 0x195AC68 VA: 0x195AC68 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		MKNIBACMCDO_AssistPlate a = GPBJHKLFCEP as MKNIBACMCDO_AssistPlate;
+		for(int i = 0; i < 5; i++)
+		{
+			LDIINNKMLLO[i].ODDIHGPONFL(a.LDIINNKMLLO[i]);
+		}
+		HODDNKENKHD_Page = a.HODDNKENKHD_Page;
+	}
 
 	// // RVA: 0x195AE1C Offset: 0x195AE1C VA: 0x195AE1C Slot: 10
 	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }

@@ -35,7 +35,10 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x101542C Offset: 0x101542C VA: 0x101542C Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "KBAGKBIBGPM_EventRaidLobby.BMGGKONLFIC");
+	}
 
 	// // RVA: 0x10158DC Offset: 0x10158DC VA: 0x10158DC Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

@@ -47,7 +47,10 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xAA1E44 Offset: 0xAA1E44 VA: 0xAA1E44 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "GGHPEFNADEN_Ticket.BMGGKONLFIC");
+	}
 
 	// // RVA: 0xAA2020 Offset: 0xAA2020 VA: 0xAA2020 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

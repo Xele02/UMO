@@ -187,7 +187,14 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x11916EC Offset: 0x11916EC VA: 0x11916EC Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		FKNOCGCODBK_Unit u = GPBJHKLFCEP as FKNOCGCODBK_Unit;
+		for(int i = 0; i < AHBBMJANGHE.Count; i++)
+		{
+			AHBBMJANGHE[i].ODDIHGPONFL_Copy(u.AHBBMJANGHE[i]);
+		}
+	}
 
 	// // RVA: 0x11918C4 Offset: 0x11918C4 VA: 0x11918C4 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

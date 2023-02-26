@@ -294,7 +294,18 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x16BBC30 Offset: 0x16BBC30 VA: 0x16BBC30 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		GEGHOCKCKKA_LimitedCompoItem l = GPBJHKLFCEP as GEGHOCKCKKA_LimitedCompoItem;
+		for(int i = 0; i < ODHBHOGFNAA.Count; i++)
+		{
+			for(int j = 0; j < ODHBHOGFNAA[i].PJADHDHKOEJ.Count; j++)
+			{
+				ODHBHOGFNAA[i].PJADHDHKOEJ[j].ODDIHGPONFL(l.ODHBHOGFNAA[i].PJADHDHKOEJ[j]);
+				ODHBHOGFNAA[i].NPNNEDINOKC[j].ODDIHGPONFL(l.ODHBHOGFNAA[i].NPNNEDINOKC[j]);
+			}
+		}
+	}
 
 	// // RVA: 0x16BC060 Offset: 0x16BC060 VA: 0x16BC060 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

@@ -69,7 +69,17 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1422000 Offset: 0x1422000 VA: 0x1422000 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		JBMPOAAMGNB_Base b = GPBJHKLFCEP as JBMPOAAMGNB_Base;
+		OPFGFINHFCE_PlayerName = string.Copy(b.OPFGFINHFCE_PlayerName);
+		LLNDMKBBNIJ_Version = b.LLNDMKBBNIJ_Version;
+		CMKKFCGBILD_Prof = string.Copy(b.CMKKFCGBILD_Prof);
+		IJHBIMNKOMC_TutorialEnd = b.IJHBIMNKOMC_TutorialEnd;
+		FNLNIKFNHAM_ForceRename = b.FNLNIKFNHAM_ForceRename;
+		AFPONJEJKCO_RenameDate = b.AFPONJEJKCO_RenameDate;
+		PBEKKMOPENN_AgreeTosVer = b.PBEKKMOPENN_AgreeTosVer;
+	}
 
 	// // RVA: 0x14221CC Offset: 0x14221CC VA: 0x14221CC Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

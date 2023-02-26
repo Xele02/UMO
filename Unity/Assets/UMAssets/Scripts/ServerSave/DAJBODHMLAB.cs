@@ -179,7 +179,10 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x176AF10 Offset: 0x176AF10 VA: 0x176AF10 Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "DAJBODHMLAB_DecoPublicSet.BMGGKONLFIC");
+	}
 
 	// // RVA: 0x176B214 Offset: 0x176B214 VA: 0x176B214 Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }

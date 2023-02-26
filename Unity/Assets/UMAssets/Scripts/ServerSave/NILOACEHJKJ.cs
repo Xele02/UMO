@@ -41,7 +41,10 @@ public class NILOACEHJKJ_EventSP : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x18A488C Offset: 0x18A488C VA: 0x18A488C Slot: 7
-	// public override void BMGGKONLFIC(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "NILOACEHJKJ_EventSP.BMGGKONLFIC");
+	}
 
 	// // RVA: 0x18A508C Offset: 0x18A508C VA: 0x18A508C Slot: 8
 	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }
