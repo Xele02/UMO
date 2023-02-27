@@ -263,5 +263,13 @@ namespace ExternLib
 			return 0;
 		}
 
+		public static int SakashoPlayerDataSavePlayerData(int callbackId, string json)
+		{
+			string result = "";
+			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + result);
+
+			return 0;
+		}
+
 	}
 }

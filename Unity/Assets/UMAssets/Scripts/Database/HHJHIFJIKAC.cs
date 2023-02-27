@@ -22,7 +22,7 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
         public int PPFNGGCBJKC_Id; // 0x8
         public int PLALNIIBLOF; // 0xC
         public int PDBPFJJCADD; // 0x10
-        public int EGBOHDFBAPB; // 0x14
+        public int EGBOHDFBAPB_ClosedAt; // 0x14
         public int KMENGHEAIOC; // 0x18
         public int JDANEOJCLBB; // 0x1C
         public int CPGFOBNKKBF; // 0x20
@@ -76,7 +76,7 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.PDBPFJJCADD = array[i].PDBPFJJCADD;
-			data.EGBOHDFBAPB = array[i].EGBOHDFBAPB;
+			data.EGBOHDFBAPB_ClosedAt = array[i].EGBOHDFBAPB;
 			data.KMENGHEAIOC = array[i].KMENGHEAIOC;
 			data.JDANEOJCLBB = array[i].JDANEOJCLBB;
 			data.CPGFOBNKKBF = array[i].CPGFOBNKKBF;

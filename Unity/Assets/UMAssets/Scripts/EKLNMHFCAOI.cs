@@ -257,7 +257,55 @@ public class EKLNMHFCAOI
 	// public static string NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL INDDJNMPONH, int JBGEEPFKIGG = 0) { }
 
 	// // RVA: 0x12F77D0 Offset: 0x12F77D0 VA: 0x12F77D0
-	// public static bool KGANFNCODNG(EKLNMHFCAOI.FKGCBLHOOCL INDDJNMPONH) { }
+	public static bool KGANFNCODNG_IsValidCategory(FKGCBLHOOCL_Category INDDJNMPONH)
+	{
+		switch(INDDJNMPONH)
+		{
+			case FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC:
+			case FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket:
+			case FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit:
+			case FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene:
+			case FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume:
+			case FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie:
+			case FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem:
+			case FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem:
+			case FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem:
+			case FKGCBLHOOCL_Category.EMOLGEDEEJP_EventItem:
+			case FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket:
+			case FKGCBLHOOCL_Category.GIMBFBNKPNO_CompoItem:
+			case FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem:
+			case FKGCBLHOOCL_Category.IGIFMNJADEC_MvTicket:
+			case FKGCBLHOOCL_Category.ADCAAALBAIF_Medal:
+			case FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC:
+			case FKGCBLHOOCL_Category.LLFAAOHPMIC_EventGachaTicket:
+			case FKGCBLHOOCL_Category.DLBHNNOHLMM_PresentItem:
+			case FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem:
+			case FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem:
+			case FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem:
+			case FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem:
+			case FKGCBLHOOCL_Category.PJCJEOECLBK_MonthlyPassItem:
+			case FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg:
+			case FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
+			case FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
+			case FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
+			case FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
+			case FKGCBLHOOCL_Category.MABCLBNIOFA_ValkyrieItem:
+			case FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
+			case FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
+			case FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
+			case FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem:
+			case FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara:
+			case FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem:
+			case FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
+			case FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
+			case FKGCBLHOOCL_Category.CKCPFLDGILD_LimitedCompoItem:
+			case FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg:
+			case FKGCBLHOOCL_Category.OCMIGPEOFEG_GachaLimit:
+				return true;
+			default:
+				return false;
+		}
+	}
 
 	// // RVA: 0x12F78AC Offset: 0x12F78AC VA: 0x12F78AC
 	// public static int DLNFNHMPGLI(OKGLGHCBCJP LKMHPJKIFDN, BBHNACPENDM LDEGEHAEALK, EKLNMHFCAOI.FKGCBLHOOCL INDDJNMPONH, int NANNGLGOFKH, IKDICBBFBMI JMFICAICKBC) { }

@@ -120,7 +120,7 @@ public class PJKLMCGEJMK
             CMCKNKKCNDK_Status = PJKLMCGEJMK.AHADNLCOPOL.OGBMKAILHMF;
         }
         CACGCMBKHDI_Request request = FCICFIAOLAM_RequestList[0];
-        if(!request.PLOOEECNHFB)
+        if(!request.PLOOEECNHFB_IsDone)
             return;
         if(FCICFIAOLAM_RequestList.Count > 0)
         {
@@ -142,7 +142,7 @@ public class PJKLMCGEJMK
     public CACGCMBKHDI_Request IFFNCAFNEAG_AddRequest(CACGCMBKHDI_Request ADKIDBJCAJA_Request)
     {
         ADKIDBJCAJA_Request.BNJPAKLNOPA_WorkerThreadQueue = BNJPAKLNOPA_WorkerThreadQueue;
-        ADKIDBJCAJA_Request.PLOOEECNHFB = false;
+        ADKIDBJCAJA_Request.PLOOEECNHFB_IsDone = false;
 
         double time = Time.realtimeSinceStartup;
         ADKIDBJCAJA_Request.KINJOEIAHFK_StartTime = time;
@@ -164,7 +164,7 @@ public class PJKLMCGEJMK
     public T IFFNCAFNEAG_AddRequest<T>(T ADKIDBJCAJA_Request)  where T : CACGCMBKHDI_Request
     { 
         ADKIDBJCAJA_Request.BNJPAKLNOPA_WorkerThreadQueue = BNJPAKLNOPA_WorkerThreadQueue;
-        ADKIDBJCAJA_Request.PLOOEECNHFB = false;
+        ADKIDBJCAJA_Request.PLOOEECNHFB_IsDone = false;
 
         double time = Time.realtimeSinceStartup;
         ADKIDBJCAJA_Request.KINJOEIAHFK_StartTime = time;
@@ -452,7 +452,7 @@ public class PJKLMCGEJMK
                 break;
             }
         }
-        ADKIDBJCAJA.PLOOEECNHFB = true;
+        ADKIDBJCAJA.PLOOEECNHFB_IsDone = true;
         CACGCMBKHDI_Request.HDHIKGLMOGF a = null;
         if(!KADMOOOMMJF)
         {

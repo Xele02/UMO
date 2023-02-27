@@ -56,7 +56,7 @@ public abstract class CACGCMBKHDI_Request
     // public virtual bool OIDCBBGLPHL { get; } // GINMIBJOABO 0x18F256C
     public virtual bool ICFMKEFJOIE { get { return false; } } // HOPDAAAEBBG 0x18F2574 
     // public virtual bool BNCFONNOHFO { get; } // NPLNAJFJPEE 0x18F257C
-    public bool PLOOEECNHFB { get { return NAEDHHPPFCK_IsDone; } set { NAEDHHPPFCK_IsDone = value; } } // JFOKBBLFMLD 0x18F2584 EDBGNGILAKA 0x18F258C
+    public bool PLOOEECNHFB_IsDone { get { return NAEDHHPPFCK_IsDone; } set { NAEDHHPPFCK_IsDone = value; } } // JFOKBBLFMLD 0x18F2584 EDBGNGILAKA 0x18F258C
     public SakashoAPICallContext EBGACDGNCAA_CallContext { get; set; }  // 0x78 NKPCDAJOMEO EEMOCCMAONH IGIDINIFHDJ
     public virtual bool EBPLLJGPFDA_HasResult { get { return true; } } // HGPAELCGELL 0x18F2BD8
 
