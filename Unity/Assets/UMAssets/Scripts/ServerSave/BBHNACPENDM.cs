@@ -627,7 +627,7 @@ public class BBHNACPENDM_ServerSaveData
 	{
 		if(FLBPFBFKBFC_FreeScoreMax != null && LCKMBHDMPIP_RecordMusic != null)
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			List<KEODKEGFDLD_FreeMusicInfo> freeMusicsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas;
 			List<JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo> freeMusicsSave = LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo;
 			for(int i = 0; i < freeMusicsDb.Count; i++)
@@ -719,7 +719,7 @@ public class BBHNACPENDM_ServerSaveData
 		{
 			if(KCCLEHLLOFG_Common.BBFIGEOBOMB_SpItem != null && GJCOJBDOOJG_LimitedCompoItem != null)
 			{
-				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 				int cnt = KCCLEHLLOFG_Common.JJKEDPHDEDO_GetSpItemCount(13);
 				for(int i = 0; i < cnt; i++)
 				{

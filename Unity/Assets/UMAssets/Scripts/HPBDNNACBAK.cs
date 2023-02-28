@@ -71,7 +71,7 @@ public class HPBDNNACBAK
 		// // RVA: 0x1606AB4 Offset: 0x1606AB4 VA: 0x1606AB4
 		// internal void FCGLLIIOJNI(CACGCMBKHDI JIPCHHHLOMM) { }
 
-		CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt LECJIEDBMKP = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.IFFNCAFNEAG_AddRequest<CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt>(new CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt());
+		CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt LECJIEDBMKP = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest<CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt>(new CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt());
 		LECJIEDBMKP.CJNLEEEECOC = new List<int>(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.DHIACJMOEBH);
 		LECJIEDBMKP.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request JIPCHHHLOMM) => {
 			//0x160637C

@@ -180,7 +180,7 @@ namespace XeApp.Game.Menu
 				m_isCheckGachaProductList = true;
 			}
 			
-			if(CGFNKMNBNBN.DGCIHGPOMCI(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()))
+			if(CGFNKMNBNBN.DGCIHGPOMCI(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()))
 			{
 				this.StartCoroutineWatched(Co_ChangeBg());
 			}

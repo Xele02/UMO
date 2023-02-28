@@ -1,4 +1,7 @@
 
+using System;
+using XeSys;
+
 [System.Obsolete("Use FNBIIGJJGKA_Counter", true)]
 public class FNBIIGJJGKA {}
 public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
@@ -284,10 +287,27 @@ public class OHDCBNFDHLA
 	public int GACBDCLPOCD_Sdv; // 0x1C
 	public int MPHFGEPJOGL_AS; // 0x20
 
-	//public long AAFMGJHLLCD { get; } 0x1DE0750 KMKOHJDPKGL
+	public long AAFMGJHLLCD_EndOfDay { get
+		{
+			DateTime date = Utility.GetLocalDateTime(BEBJKJKBOGH_Date);
+			return Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 23, 59, 59);
+		} } //0x1DE0750 KMKOHJDPKGL
 
 	//// RVA: 0x1DE0894 Offset: 0x1DE0894 VA: 0x1DE0894
-	//public void FHPENOLOPKI(long JHNMKKNEENE, bool FBBNPFFEJBN) { }
+	public void FHPENOLOPKI_CheckEndOfDay(long JHNMKKNEENE_Time, bool FBBNPFFEJBN)
+	{
+		if (JHNMKKNEENE_Time < AAFMGJHLLCD_EndOfDay)
+			return;
+		NDNHHGJKJGM_Gach = 0;
+		GACBDCLPOCD_Sdv = 0;
+		MPHFGEPJOGL_AS = 0;
+		BEBJKJKBOGH_Date = JHNMKKNEENE_Time;
+		MILCBLJDADN_MClr = 0;
+		for(int i = 0; i < GEIONHDKGEB_SRnk.Length; i++)
+		{
+			GEIONHDKGEB_SRnk[i] = 0;
+		}
+	}
 
 	//// RVA: 0x1DE0948 Offset: 0x1DE0948 VA: 0x1DE0948
 	//public void FBKAPLHEACL() { }

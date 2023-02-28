@@ -410,7 +410,7 @@ namespace XeApp.Game.Common
 				IsLine6Mode = isLine6Mode;
 				if(setupTime == 0)
 				{
-					setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+					setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 				}
 				this.musicLoadText = musicLoadText;
 				this.onStageDivaNum = onStageDivaNum;

@@ -426,5 +426,159 @@ namespace ExternLib
 
 			return 0;
 		}
+
+
+		public static int SakashoPaymentGetProducts(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			int currencyId = -1;
+			if(jsonData.BBAJPINMOEP_Contains("currencyId"))
+				currencyId = (int)jsonData["currencyId"];
+			int productType = -1;
+			if (jsonData.BBAJPINMOEP_Contains("productType"))
+				productType = (int)jsonData["productType"];
+			int label = -1;
+			if (jsonData.BBAJPINMOEP_Contains("label"))
+				label = (int)jsonData["label"];
+			string masterGroupName = null;
+			if (jsonData.BBAJPINMOEP_Contains("masterGroupName"))
+				masterGroupName = (string)jsonData["masterGroupName"];
+			int page = (int)jsonData["page"];
+			int ipp = (int)jsonData["ipp"];
+
+
+			string message = "";
+
+			EDOHBJAPLPF_JsonData arrayData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"[
+				{
+					""bought_quantity"": null,
+					""buy_limit"": 0,
+					""closed_at"": 32520895200,
+					""description"": ""\u30b2\u30fc\u30e0\u4e2d\u306b\u30b3\u30f3\u30c6\u30cb\u30e5\u30fc\u3067\u304d\u307e\u3059\u3002"",
+					""group_key"": null,
+					""id"": 67554,
+					""imageUrl"": null,
+					""item_set_name_for_api"": null,
+					""label"": 10,
+					""name"": ""\u30b3\u30f3\u30c6\u30cb\u30e5\u30fc"",
+					""opened_at"": 1497856800,
+					""platform_product_id"": null,
+					""price"": 10
+				},
+				{
+					""bought_quantity"": null,
+					""buy_limit"": 0,
+					""closed_at"": 32520895200,
+					""description"": ""\u30b9\u30bf\u30df\u30ca\u56de\u5fa9"",
+					""group_key"": null,
+					""id"": 67572,
+					""imageUrl"": null,
+					""item_set_name_for_api"": null,
+					""label"": 10,
+					""name"": ""\u30b9\u30bf\u30df\u30ca\u56de\u5fa9"",
+					""opened_at"": 1497870000,
+					""platform_product_id"": null,
+					""price"": 10
+				},
+				{
+					""bought_quantity"": null,
+					""buy_limit"": 0,
+					""closed_at"": 32525902800,
+					""description"": ""VOP\u9ad8\u901f\u5b8c\u4e86\u306e\u5b9f\u884c\u306b\u4f7f\u7528\u3057\u307e\u3059\u3002"",
+					""group_key"": null,
+					""id"": 153192,
+					""imageUrl"": null,
+					""item_set_name_for_api"": null,
+					""label"": 10,
+					""name"": ""VOP\u9ad8\u901f\u5b8c\u4e86"",
+					""opened_at"": 1535342400,
+					""platform_product_id"": null,
+					""price"": 5
+				},
+				{
+					""bought_quantity"": null,
+					""buy_limit"": 0,
+					""closed_at"": 32512611600,
+					""description"": ""AP\u56de\u5fa9"",
+					""group_key"": null,
+					""id"": 167079,
+					""imageUrl"": null,
+					""item_set_name_for_api"": null,
+					""label"": 10,
+					""name"": ""AP\u56de\u5fa9"",
+					""normal_lot_free_setting"": {
+						""duration_days"": null,
+						""is_first_time"": false,
+						""reset_count"": null,
+						""reset_hours"": null
+					},
+					""opened_at"": 1552575600,
+					""platform_product_id"": null,
+					""player_normal_lot_free_state"": {
+						""is_next_free"": false
+					},
+					""price"": 10
+				},
+				{
+					""bought_quantity"": null,
+					""buy_limit"": 0,
+					""closed_at"": 32530057200,
+					""description"": ""AP\u56de\u5fa9(\u5c0f)"",
+					""group_key"": null,
+					""id"": 222423,
+					""imageUrl"": null,
+					""item_set_name_for_api"": null,
+					""label"": 10,
+					""name"": ""AP\u56de\u5fa92"",
+					""opened_at"": 1570086000,
+					""platform_product_id"": null,
+					""price"": 5
+				},
+				{
+					""bought_quantity"": null,
+					""buy_limit"": 0,
+					""closed_at"": 32530057200,
+					""description"": ""AP\u56de\u5fa9\uff08\u5927\uff09"",
+					""group_key"": null,
+					""id"": 222424,
+					""imageUrl"": null,
+					""item_set_name_for_api"": null,
+					""label"": 10,
+					""name"": ""AP\u56de\u5fa93"",
+					""opened_at"": 1570086000,
+					""platform_product_id"": null,
+					""price"": 20
+				}
+			]");
+
+			EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
+			res.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["SAKASHO_CURRENT_ASSET_REVISION"] = "20220602120304";
+			res["SAKASHO_CURRENT_DATE_TIME"] = Utility.GetCurrentUnixTime();
+			res["SAKASHO_CURRENT_MASTER_REVISION"] = 5;
+			res["current_page"] = page;
+			res["next_page"] = 0;
+			res["previous_page"] = 0;
+			res["products"] = new EDOHBJAPLPF_JsonData();
+			res["products"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			if(productType == 0 && currencyId == 1001 && label == 10)
+			{
+				for (int i = 0; i < arrayData.HNBFOAJIIAL_Count; i++)
+				{
+					if((int)arrayData[i]["label"] == label)
+						res["products"].Add(arrayData[i]);
+				}
+			}
+			else
+			{
+				TodoLogger.Log(0, "Missing product info for "+json);
+			}
+
+			message = res.EJCOJCGIBNG_ToJson();
+
+			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + message);
+
+			return 0;
+		}
 	}
 }

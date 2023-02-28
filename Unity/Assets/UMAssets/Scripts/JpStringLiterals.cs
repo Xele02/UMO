@@ -11,6 +11,7 @@ class JpStringLiterals
 	public const string StringLiteral_9794 = "スタミナ"; // 0x03bb23c0
 	public const string StringLiteral_9796 = "コンテニュー"; // 0x03bb23c8
 	public const string StringLiteral_9797 = "VOP高速完了"; // 0x03bb23cc
+	public const string StringLiteral_9798 = "AP回復"; // 0x03bb23d0
 	public const string StringLiteral_9806 = "プレイヤー"; // 0x03bb23f0
 	public const string StringLiteral_9807 = "よろしくおねがいします"; // 0x03bb23f4
 	public const string StringLiteral_9874 = "未取得"; // 0x03bb2500
@@ -102,6 +103,7 @@ class JpStringLiterals
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
 	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
 	public const string StringLiteral_12038 = "…"; // 0x03bb46d0
+	public const string StringLiteral_12097 = " (歌マクロス"; // 0x03bb47bc
 	public const string StringLiteral_12148 = "Ⅰ"; // 0x03bb4888
 	public const string StringLiteral_12149 = "Ⅱ"; // 0x03bb488c
 	public const string StringLiteral_12150 = "Ⅲ"; // 0x03bb4890

@@ -126,7 +126,7 @@ public class NPAFCENJADP
 		}
 		binWriter.Close();
 		
-		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 			//0x1CB13C4
 			ICryptoTransform crypt = KHFCJBEFJNC.CreateEncryptor();
 			byte[] res = crypt.TransformFinalBlock(CFFBJGGICCE, 0, CFFBJGGICCE.Length);

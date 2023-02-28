@@ -1,0 +1,47 @@
+
+public class DJFNNGDEHIA
+{
+	public int PPFNGGCBJKC_Id; // 0x8
+	public long IFNLEKOILPM_UpdatedAt; // 0x10
+
+	// RVA: 0x198CD3C Offset: 0x198CD3C VA: 0x198CD3C
+	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+	{
+		PPFNGGCBJKC_Id = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id];
+		IFNLEKOILPM_UpdatedAt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.IFNLEKOILPM_updated_at];
+	}
+}
+
+public class COBFLNBLJEI
+{
+	public int EHGBICNIBKE_PlayerId; // 0x8
+	public int NEILEPPJKIN_Favorite; // 0xC
+	public int NPMIJMFMEKB_TargetPlayerId; // 0x10
+	public long BIOGKIEECGN_CreatedAt; // 0x18
+	public long IFNLEKOILPM_UpdatedAt; // 0x20
+
+	// RVA: 0x1761570 Offset: 0x1761570 VA: 0x1761570
+	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+	{
+		EHGBICNIBKE_PlayerId = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.EHGBICNIBKE_player_id];
+		NEILEPPJKIN_Favorite = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.NEILEPPJKIN_favorite];
+		NPMIJMFMEKB_TargetPlayerId = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.NPMIJMFMEKB_target_player_id];
+		BIOGKIEECGN_CreatedAt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at];
+		IFNLEKOILPM_UpdatedAt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.IFNLEKOILPM_updated_at];
+	}
+}
+
+public class CHPIKCFKJOA
+{
+	public COBFLNBLJEI JPFFIBCDCNJ_Friend; // 0x8
+	public DJFNNGDEHIA NMICBJDPLOH_Player; // 0xC
+
+	// RVA: 0xFF51BC Offset: 0xFF51BC VA: 0xFF51BC
+	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+	{
+		JPFFIBCDCNJ_Friend = new COBFLNBLJEI();
+		JPFFIBCDCNJ_Friend.KHEKNNFCAOI(IDLHJIOMJBK[AFEHLCGHAEE_Strings.JPFFIBCDCNJ_friend]);
+		NMICBJDPLOH_Player = new DJFNNGDEHIA();
+		NMICBJDPLOH_Player.KHEKNNFCAOI(IDLHJIOMJBK[AFEHLCGHAEE_Strings.NMICBJDPLOH_player]);
+	}
+}

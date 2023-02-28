@@ -46,7 +46,7 @@ public class MBCPNPNMFHB
 		if(l != null)
 		{
 			bool DBJECEMOJON = true;
-			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.IFFNCAFNEAG_AddRequest(l);
+			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(l);
 			l.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 			{
 				//0xA2E200

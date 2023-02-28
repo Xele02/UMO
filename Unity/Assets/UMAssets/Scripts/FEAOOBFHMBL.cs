@@ -1,0 +1,9 @@
+
+public class FEAOOBFHMBL
+{
+	// RVA: 0xFCE76C Offset: 0xFCE76C VA: 0xFCE76C
+	public static void DOMFHDPMCCO(OKGLGHCBCJP_Database LKMHPJKIFDN, BBHNACPENDM_ServerSaveData LDEGEHAEALK, long JHNMKKNEENE, bool FBBNPFFEJBN)
+	{
+		TodoLogger.Log(0, "FEAOOBFHMBL.DOMFHDPMCCO");
+	}
+}

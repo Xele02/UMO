@@ -174,7 +174,7 @@ namespace XeApp.Game.AR
 			// private float <endTime>5__8; // 0x38
 			// 0xBBB400
 
-			PJKLMCGEJMK am = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF;
+			PJKLMCGEJMK am = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester;
 			JPAPJLIPNOK_RequestAssetList req = am.IFFNCAFNEAG_AddRequest<JPAPJLIPNOK_RequestAssetList>(new JPAPJLIPNOK_RequestAssetList());
 			req.FPCIBJLJOFI_Type = "db";
 

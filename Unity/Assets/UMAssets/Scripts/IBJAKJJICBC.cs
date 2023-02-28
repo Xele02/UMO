@@ -187,7 +187,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	{
 		if(ALMOMLMCHNA_OtherEndTime != 0)
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			if (ALMOMLMCHNA_OtherEndTime > time)
 				return ALMOMLMCHNA_OtherEndTime - time;
 		}
