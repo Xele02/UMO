@@ -41,19 +41,19 @@ public class SakashoInventory : SakashoAPIBase
 	public static SakashoAPICallContext GetInventories(int page, int ipp, SakashoInventoryCriteria criteria, OnSuccess onSuccess, OnError onError)
 	{
 		Hashtable h = new Hashtable();
-		h["page"] = page.ToString();
-		h["ipp"] = ipp.ToString();
+		h["page"] = page;
+		h["ipp"] = ipp;
 		if(criteria != null)
 		{
-			h["onlyUnreceived"] = criteria.OnlyUnreceived.ToString();
-			h["type"] = criteria.Type.ToString();
+			h["onlyUnreceived"] = criteria.OnlyUnreceived;
+			h["type"] = criteria.Type;
 			ArrayList l = null;
 			if(criteria.Types != null)
 			{
 				l = new ArrayList();
 				for(int i = 0; i < criteria.Types.Length; i++)
 				{
-					l.Add(criteria.Types[i].ToString());
+					l.Add(criteria.Types[i]);
 				}
 			}
 			h["types"] = l;

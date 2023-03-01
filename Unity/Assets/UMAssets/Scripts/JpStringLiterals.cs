@@ -7,6 +7,7 @@ class JpStringLiterals
 	public const string StringLiteral_9528 = "想定していない人数が入っています　id:"; //0x03bb1f98
 	public const string StringLiteral_9555 = "event_quest"; // 0x03bb2004
 	public const string StringLiteral_9767 = "超時空ユニット"; // 0x03bb2354
+	public const string StringLiteral_9787 = "<color=yellow>期間限定エナジーアイテムの削除</color>"; // 0x03bb23a4
 	public const string StringLiteral_9793 = "エナジー"; // 0x03bb23bc
 	public const string StringLiteral_9794 = "スタミナ"; // 0x03bb23c0
 	public const string StringLiteral_9796 = "コンテニュー"; // 0x03bb23c8

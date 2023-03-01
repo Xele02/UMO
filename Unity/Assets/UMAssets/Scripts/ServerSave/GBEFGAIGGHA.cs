@@ -45,7 +45,25 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 	// public void HJDIPJKGCID() { }
 
 	// // RVA: 0x1401DE0 Offset: 0x1401DE0 VA: 0x1401DE0
-	// public void LBLNLMGHLAG(BKPAPCMJKHE IFLGCDGOLOP, long JHNMKKNEENE) { }
+	public void LBLNLMGHLAG_UpdateTimedItems(BKPAPCMJKHE_Shop IFLGCDGOLOP_DbShop, long JHNMKKNEENE_Time)
+	{
+		int num = 6000;
+		if (IFLGCDGOLOP_DbShop.MHKCPJDNJKI.Count < 6000)
+			num = IFLGCDGOLOP_DbShop.MHKCPJDNJKI.Count;
+		for(int i = 0; i < num; i++)
+		{
+			BKPAPCMJKHE_Shop.BOMCAJJCPME dbItem = IFLGCDGOLOP_DbShop.MHKCPJDNJKI[i];
+			DPGGLKKBNBJ serverItem = ECMLOMPGMLC[i];
+			if(dbItem.PPEGAKEIEGM_Enabled == 2)
+			{
+				if(serverItem.BEBJKJKBOGH_Date < dbItem.KJBGCLPMLCG || serverItem.BEBJKJKBOGH_Date > dbItem.GJFPFFBAKGK)
+				{
+					serverItem.BEBJKJKBOGH_Date = 0;
+					serverItem.KMFLNILNPJD_Cnt = 0;
+				}
+			}
+		}
+	}
 
 	// // RVA: 0x1402020 Offset: 0x1402020 VA: 0x1402020
 	public GBEFGAIGGHA_Shop()

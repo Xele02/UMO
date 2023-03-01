@@ -16,9 +16,33 @@ public class MCGNOFMAPBJ
 	private int MNJAPFEIOKD; // 0x50
 	private const int FGPCFEMHOGO = 999;
 
-	// public long DLPEEDCCNMJ { get; set; } 0x130CD40 IPMOLPGCIIB 0x130CB20 POJLMKDPBHI
-	// public int NEPIPMPAFIE { get; set; } 0x130CD7C DNNADJLKBPC 0x130CB40 BJOJAFDBOBL
-	public int DCBENCMNOGO { get
+	public long DLPEEDCCNMJ_StaminaSaveTime { get {
+			if ((EHCBKLCHFHE ^ FBGGEFFJJHB) != DDPGLABEIEM)
+				MNJAPFEIOKD |= 1;
+			return EHCBKLCHFHE ^ FBGGEFFJJHB;
+		} set
+		{
+			DDPGLABEIEM = value;
+			EHCBKLCHFHE = value ^ FBGGEFFJJHB;
+		}
+	} //0x130CD40 IPMOLPGCIIB 0x130CB20 POJLMKDPBHI
+	public int NEPIPMPAFIE_Stamina { get
+		{
+			if (PINPIHODOKP != HICKJFPDBEG) // Why, bug ?
+			{
+				MNJAPFEIOKD |= 2;
+			}
+			return FBGGEFFJJHB ^ HICKJFPDBEG;
+		} set {
+			PINPIHODOKP = value;
+			if (value < 1)
+				PINPIHODOKP = 0;
+			if (value > 999)
+				PINPIHODOKP = 999;
+			HICKJFPDBEG = FBGGEFFJJHB ^ PINPIHODOKP;
+		}
+	} //0x130CD7C DNNADJLKBPC 0x130CB40 BJOJAFDBOBL
+	public int DCBENCMNOGO_GainStamina { get
 		{
 			if((EMGIAPOEKLL ^ FBGGEFFJJHB) != BPADHGOCPIH)
 				MKMBHBOGFHM = MKMBHBOGFHM | 4;
@@ -32,8 +56,17 @@ public class MCGNOFMAPBJ
 				BPADHGOCPIH = 999;
 			EMGIAPOEKLL = BPADHGOCPIH ^ FBGGEFFJJHB;
 		} } //0x130CDA4 HHBCMCGODFP 0x130CB68 NPANKNNLDOB
-	// public long FLJGHBLEDDB { get; set; } 0x130CDCC DEOLPKEGHFP 0x130CB90 OCIMIINBMAD
-	public long FJDBNGEPKHL { get {
+	public long FLJGHBLEDDB_HealSec { get
+		{
+			if ((JCGIEJGOEIM ^ FBGGEFFJJHB) != OPDBPKLCEFO)
+				MNJAPFEIOKD |= 8;
+			return JCGIEJGOEIM ^ FBGGEFFJJHB;
+		}
+		set {
+			OPDBPKLCEFO = value;
+			JCGIEJGOEIM = value ^ FBGGEFFJJHB;
+		} } //0x130CDCC DEOLPKEGHFP 0x130CB90 OCIMIINBMAD
+	public long FJDBNGEPKHL_Time { get {
 			long val = FBGGEFFJJHB ^ HFMOEKIBNKA;
 			if((val ^ MKMBHBOGFHM) != 0)
 				MKMBHBOGFHM = MKMBHBOGFHM | 0x10;
@@ -49,16 +82,11 @@ public class MCGNOFMAPBJ
     {
         long time = Utility.GetCurrentUnixTime();
         FBGGEFFJJHB = (int)time ^ 0x51020427;
-        OPDBPKLCEFO = 180;
-        MKMBHBOGFHM = 0;
-        DDPGLABEIEM = 0;
-        PINPIHODOKP = 0;
-        BPADHGOCPIH = 0;
-        EHCBKLCHFHE = FBGGEFFJJHB;
-        HICKJFPDBEG = FBGGEFFJJHB;
-        EMGIAPOEKLL = FBGGEFFJJHB;
-        JCGIEJGOEIM = (int)time ^ 0x51020493;
-        HFMOEKIBNKA = FBGGEFFJJHB;
+		FLJGHBLEDDB_HealSec = 180;
+		FJDBNGEPKHL_Time = 0;
+		DCBENCMNOGO_GainStamina = 0;
+		DLPEEDCCNMJ_StaminaSaveTime = 0;
+		NEPIPMPAFIE_Stamina = 0;
     }
 
 	// // RVA: 0x130CBD0 Offset: 0x130CBD0 VA: 0x130CBD0

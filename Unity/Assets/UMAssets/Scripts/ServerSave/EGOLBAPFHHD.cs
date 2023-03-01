@@ -541,10 +541,33 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// public bool KCIPEJCFJMD() { }
 
 	// // RVA: 0x1C52038 Offset: 0x1C52038 VA: 0x1C52038
-	public List<int> LPFFDGNDLKG(bool ANLBEIOFIGB = true, int CPNEKIDCAMF = 2160)
+	public List<int> LPFFDGNDLKG_UpdateMedals(bool ANLBEIOFIGB = true, int CPNEKIDCAMF = 2160)
 	{
-		TodoLogger.Log(0, "TODO");
-		return null;
+		List<int> l = new List<int>();
+		l.Clear();
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		int t = CPNEKIDCAMF * 3600;
+		for(int i = 0; i < MHKJEBNOPIM_Medal.Count; i++)
+		{
+			GLBBNDKGEOC m = MHKJEBNOPIM_Medal[i];
+			if(m.PPFNGGCBJKC_Id == 12 && m.BEBJKJKBOGH_Date == 0 && m.BFINGCJHOHI_Cnt > 0)
+			{
+				m.BEBJKJKBOGH_Date = Utility.GetTargetUnixTime(2017, 12, 2, 0, 0, 0);
+			}
+			if(m.BEBJKJKBOGH_Date != 0)
+			{
+				if(m.BEBJKJKBOGH_Date + t < time) // ?
+				{
+					if(ANLBEIOFIGB)
+					{
+						m.BFINGCJHOHI_Cnt = 0;
+						m.BEBJKJKBOGH_Date = 0;
+					}
+					l.Add(m.PPFNGGCBJKC_Id);
+				}
+			}
+		}
+		return l;
 	}
 
 	// // RVA: 0x1C5261C Offset: 0x1C5261C VA: 0x1C5261C

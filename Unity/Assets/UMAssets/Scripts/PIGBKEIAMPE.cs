@@ -233,8 +233,6 @@ public class PIGBKEIAMPE_FriendManager
 			//0x92C66C
 			TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
 		};
-
-		TodoLogger.Log(0, "TODO");
 	}
 
 	// // RVA: 0x16D5094 Offset: 0x16D5094 VA: 0x16D5094

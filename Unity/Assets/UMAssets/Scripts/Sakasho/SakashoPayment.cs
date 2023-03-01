@@ -19,17 +19,17 @@ public class SakashoPayment : SakashoAPIBase
 		Hashtable h = new Hashtable();
 		if(criteria != null)
 		{
-			h["currencyId"] = criteria.CurrencyId.ToString();
+			h["currencyId"] = criteria.CurrencyId;
 			if(criteria.Label != null)
 			{
 				h["label"] = criteria.Label;
 			}
-			h["productType"] = criteria.ProductType.ToString();
+			h["productType"] = criteria.ProductType;
 			if(criteria.MasterGroupName != null)
 				h["masterGroupName"] = criteria.MasterGroupName;
 		}
-		h["page"] = page.ToString();
-		h["ipp"] = ipp.ToString();
+		h["page"] = page;
+		h["ipp"] = ipp;
 		return new SakashoAPICallContext(Call(SakashoPaymentGetProducts, MiniJSON.jsonEncode(h), onSuccess, onError));
 	}
 

@@ -8,8 +8,8 @@ public class SakashoFriend : SakashoAPIBase
 	public static SakashoAPICallContext GetFriends(int page, int ipp, OnSuccess onSuccess, OnError onError)
 	{
 		Hashtable h = new Hashtable();
-		h["page"] = page.ToString();
-		h["ipp"] = ipp.ToString();
+		h["page"] = page;
+		h["ipp"] = ipp;
 		return new SakashoAPICallContext(Call(SakashoFriendGetFriends, MiniJSON.jsonEncode(h), onSuccess, onError));
 	}
 
@@ -20,8 +20,8 @@ public class SakashoFriend : SakashoAPIBase
 	public static SakashoAPICallContext GetReceivedRequests(int page, int ipp, OnSuccess onSuccess, OnError onError)
 	{
 		Hashtable h = new Hashtable();
-		h["page"] = page.ToString();
-		h["ipp"] = ipp.ToString();
+		h["page"] = page;
+		h["ipp"] = ipp;
 		return new SakashoAPICallContext(Call(SakashoFriendGetReceivedRequests, MiniJSON.jsonEncode(h), onSuccess, onError));
 	}
 
@@ -29,8 +29,8 @@ public class SakashoFriend : SakashoAPIBase
 	public static SakashoAPICallContext GetSentRequests(int page, int ipp, OnSuccess onSuccess, OnError onError)
 	{
 		Hashtable h = new Hashtable();
-		h["page"] = page.ToString();
-		h["ipp"] = ipp.ToString();
+		h["page"] = page;
+		h["ipp"] = ipp;
 		return new SakashoAPICallContext(Call(SakashoFriendGetSentRequests, MiniJSON.jsonEncode(h), onSuccess, onError));
 	}
 
@@ -50,7 +50,7 @@ public class SakashoFriend : SakashoAPIBase
 	public static SakashoAPICallContext SetFriendsLimit(int friendLimit, OnSuccess onSuccess, OnError onError)
 	{
 		Hashtable h = new Hashtable();
-		h["friendLimit"] = friendLimit.ToString();
+		h["friendLimit"] = friendLimit;
 		return new SakashoAPICallContext(Call(SakashoFriendSetFriendsLimit, MiniJSON.jsonEncode(h), onSuccess, onError));
 	}
 
