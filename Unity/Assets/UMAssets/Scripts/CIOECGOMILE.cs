@@ -393,7 +393,7 @@ public class CIOECGOMILE
 									HLACGFNICAI_UpdateIntimacyTensionInfo();
 
 									HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.AGEAPKNODHO();
-									GameManager.Instance.localSave.FBCDKFENOEM();
+									GameManager.Instance.localSave.FBCDKFENOEM_SyncFlagsFromServer();
 									CHNJPFCKFOI_FriendManager.BCEAAAOLGEB();
 									FGDMEFINCEE();
 									if(AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd == 0)

@@ -533,7 +533,7 @@ namespace XeApp.Game.Menu
 			m_isGoDiva = (Args as ValkyrieDataArgs).isGoDiva;
 			m_UnitData = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(m_isGoDiva);
 			MenuScene.Instance.BgControl.SetPriority(BgPriority.TopMost);
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO(2);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO_SetTrue(2);
 			m_IsSceneActivate = false;
 			this.StartCoroutineWatched(Co_Initialize());
 		}
