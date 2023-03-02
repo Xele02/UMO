@@ -109,7 +109,10 @@ public class CIOECGOMILE
 	// // RVA: 0xFFAB20 Offset: 0xFFAB20 VA: 0xFFAB20
 	private void FGDMEFINCEE()
 	{
-		TodoLogger.Log(0, "TODO");
+		for(int i = 0; i < BFHJLPDOEPB.Count; i++)
+		{
+			BFHJLPDOEPB[i]();
+		}
 	}
 
 	// // RVA: 0xFFABFC Offset: 0xFFABFC VA: 0xFFABFC
@@ -394,7 +397,7 @@ public class CIOECGOMILE
 
 									HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.AGEAPKNODHO();
 									GameManager.Instance.localSave.FBCDKFENOEM_SyncFlagsFromServer();
-									CHNJPFCKFOI_FriendManager.BCEAAAOLGEB();
+									CHNJPFCKFOI_FriendManager.BCEAAAOLGEB_Reset();
 									FGDMEFINCEE();
 									if(AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd == 0)
 									{

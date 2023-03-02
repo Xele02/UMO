@@ -120,7 +120,13 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 		//public bool AGBOGBEOFME(OCMJNBIFJNM.JPOHOLBBFGP OIKJFMGEICL) { }
 
 		//// RVA: 0x1B310E8 Offset: 0x1B310E8 VA: 0x1B310E8
-		//public bool DFIGPDCBAPB() { }
+		public bool DFIGPDCBAPB_IsUnitialized()
+		{
+			bool res1 = GBJFNGCDKPM_Type != 0 || MLDPDLPHJPM_OfferId != 0 || EALOBDHOCHP_Stat != 0 || OIOECMEEFKJ_VFp != 0 ||
+				MNCEBKHBBEF_VFf != 0 || NCDHKKCCGOD_Edt != 0 || DFJLNPFJGDK_Sdt != 0 || KOOEOKEDJDO_Expr != 0;
+			bool res2 = PIBLLGLCJEO_Prm != 0 || BFINGCJHOHI_Cnt != 0 || NACGJGLGOHM_EvFlg != 0 || JBPOABLNLHC_UpPer != 0;
+			return !(BDJMFDKLHPM_SId != "" || LHMOAJAIJCO_IsNew || res1 || res2);
+		}
 
 		//// RVA: 0x1B366D8 Offset: 0x1B366D8 VA: 0x1B366D8
 		//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, OCMJNBIFJNM.JPOHOLBBFGP OHMCIEMIKCE, bool EFOEPDLNLJG) { }

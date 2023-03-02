@@ -511,13 +511,51 @@ public class IOGKADECKOP
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B4078 Offset: 0x6B4078 VA: 0x6B4078
 	// // RVA: 0xA072D0 Offset: 0xA072D0 VA: 0xA072D0
-	private IEnumerator IMJGOIOLGIO_Contract(Action FHANAFNKIFC, Action DOGDHKIEBJA)
+	private IEnumerator IMJGOIOLGIO_Coroutine_Contract(Action FHANAFNKIFC_OnSuccess, Action DOGDHKIEBJA_OnFail)
 	{
-        //UnityEngine.Debug.Log("Enter IMJGOIOLGIO_Contract");
-		TodoLogger.Log(0, "TODO");
-        //UnityEngine.Debug.Log("Exit IMJGOIOLGIO_Contract");
-		FHANAFNKIFC();
-		yield break;
+		EFLBHNFNFHA EPAIEPBGBEL;
+
+		//0xA0ACCC
+		EPAIEPBGBEL = new EFLBHNFNFHA();
+		EPAIEPBGBEL.PCODDPDFLHK_Refresh();
+		if(!EPAIEPBGBEL.CILPABJCBPH_AgreeTos)
+		{
+			bool HFPLKFCPHDK = false;
+			bool CILPABJCBPH = false;
+			HFPLKFCPHDK = false;
+			PopupContractSetting setting = new PopupContractSetting();
+			setting.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("popup_kiyaku_title");
+			setting.WindowSize = SizeType.Small;
+			setting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Disagree, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Agree, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel KAPMOPMDHJE) =>
+			{
+				//0xA090F0
+				if (INDDJNMPONH == PopupButton.ButtonType.Positive)
+					CILPABJCBPH = true;
+			}, null, null, null, true, true, false, () =>
+			{
+				//0xA09100
+				HFPLKFCPHDK = true;
+				return true;
+			});
+			while (HFPLKFCPHDK == false)
+				yield return null;
+			if(CILPABJCBPH == false)
+			{
+				if(DOGDHKIEBJA_OnFail != null)
+					DOGDHKIEBJA_OnFail();
+			}
+			else
+			{
+				EPAIEPBGBEL.HJMKBCFJOOH_SetAgreeTos();
+				if (FHANAFNKIFC_OnSuccess != null)
+					FHANAFNKIFC_OnSuccess();
+			}
+		}
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B40F0 Offset: 0x6B40F0 VA: 0x6B40F0
@@ -811,7 +849,7 @@ public class IOGKADECKOP
 			yield break;
 		}
 		bool FBBAOFKBGBA_IsError = true;
-		yield return Co.R(IMJGOIOLGIO_Contract(() => {
+		yield return Co.R(IMJGOIOLGIO_Coroutine_Contract(() => {
 			// 0xA09330
 			FBBAOFKBGBA_IsError = false;
 		}, () => {
@@ -878,7 +916,7 @@ public class IOGKADECKOP
 				bool OJFKNEOJEHH_IsError = true;
 				if(KDHGBOOECKC.HHCJCDFCLOB != null) // else goto LAB_00a0be80;
 				{
-					yield return Co.R(KDHGBOOECKC.HHCJCDFCLOB.CEHFPAGELLE_ReceiveVOP_UnreceivedAchievements(() => {
+					yield return Co.R(KDHGBOOECKC.HHCJCDFCLOB.CEHFPAGELLE_Coroutine_ReceiveVOP_UnreceivedAchivements(() => {
 						//0xA09618
 						OJFKNEOJEHH_IsError = false;
 					}, () => {

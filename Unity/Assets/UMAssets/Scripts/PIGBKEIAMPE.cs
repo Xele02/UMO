@@ -730,9 +730,10 @@ public class PIGBKEIAMPE_FriendManager
 	// public void CCAOOIMEPAL(Action<int> BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
 
 	// // RVA: 0x16DAF20 Offset: 0x16DAF20 VA: 0x16DAF20
-	public void BCEAAAOLGEB()
+	public void BCEAAAOLGEB_Reset()
 	{
-		TodoLogger.Log(0, "TODO");
+		JFDPPPBMCBK.Clear();
+		GJHIHNBANEC = false;
 	}
 
 	// // RVA: 0x16DAFA0 Offset: 0x16DAFA0 VA: 0x16DAFA0

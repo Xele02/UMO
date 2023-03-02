@@ -14,7 +14,7 @@ using CriWare;
 public class NKGJPJPHLIF
 {
 	public int IMDEGHBHAPC; // 0xC
-	public string MLKOPOKGHHH = ""; // 0x10
+	public string MLKOPOKGHHH_SakashoGameId = ""; // 0x10
 	public static bool GKHEAEAPEGB = false; // 0x4
 	// public IKIIAFKHDFP DHEFMDMGPMG; // 0x1C
 	private CIOECGOMILE NLGFEPAJBOJ; // 0x20
@@ -283,7 +283,7 @@ public class NKGJPJPHLIF
 				s.sakashoGameId = "" + a.DMJGDDEACMD;
 				s.sakashoCommonKey = a.LJNAKDMILMC;
 				s.paymentType = 0;
-				MLKOPOKGHHH = s.sakashoGameId;
+				MLKOPOKGHHH_SakashoGameId = s.sakashoGameId;
 				IMDEGHBHAPC = a.CNDDKMJAIBG;
 				yield return new WaitForSeconds(0.1f);
 			}
@@ -358,7 +358,7 @@ public class NKGJPJPHLIF
 		//LAB_00c1b9d8
 		object[] args = new object[4];
 		args[0] = "game_id=";
-		args[1] = MLKOPOKGHHH;
+		args[1] = MLKOPOKGHHH_SakashoGameId;
 		args[2] = " player_id=";
 		args[3] = playerId;
 		Crittercism.SetUsername(String.Concat(args));

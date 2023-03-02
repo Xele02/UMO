@@ -6,7 +6,7 @@ using UnityEngine;
 public class BIFNGFAIEIL
 {
 	public static int AEGKCNDEHDO; // 0x4
-	//private PJKPGLKHGIP BNEGNOBCHGP = new PJKPGLKHGIP(); // 0x8
+	private PJKPGLKHGIP BNEGNOBCHGP = new PJKPGLKHGIP(); // 0x8
 	private string ELLBAAFKDCH_FilePath; // 0xC
 	private string BOFPFGNHBAJ_SavePath; // 0x10
 	private int MLJGJMGNNPP; // 0x14
@@ -46,7 +46,7 @@ public class BIFNGFAIEIL
 	//// RVA: 0xC810DC Offset: 0xC810DC VA: 0xC810DC
 	public void KGMNAMKNADC()
 	{
-		TodoLogger.Log(0, "KGMNAMKNADC");
+		BNEGNOBCHGP.ADOIBPKFJKB();
 	}
 
 	//// RVA: 0xC81108 Offset: 0xC81108 VA: 0xC81108
