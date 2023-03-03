@@ -329,7 +329,7 @@ public class NKGJPJPHLIF
 
 		//1
 
-		if(FFEEIONIBFF_Request.NPNNPNAIONN)
+		if(FFEEIONIBFF_Request.NPNNPNAIONN_IsError)
 		{
 			//goto LAB_00c1b8f8;
 			if(JGKOLBLPMPG_OnFail != null)

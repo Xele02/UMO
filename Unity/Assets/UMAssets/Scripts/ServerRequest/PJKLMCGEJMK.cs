@@ -256,13 +256,13 @@ public class PJKLMCGEJMK
                     {
                         if(APLAAAMOBCF)
                         {
-                            ADKIDBJCAJA.NPNNPNAIONN = false;
+                            ADKIDBJCAJA.NPNNPNAIONN_IsError = false;
                             KADMOOOMMJF = false;
                         }
                         else
                         {
                             KADMOOOMMJF = true;
-                            ADKIDBJCAJA.NPNNPNAIONN = true;
+                            ADKIDBJCAJA.NPNNPNAIONN_IsError = true;
                         }
                         break;
                     }
@@ -330,13 +330,13 @@ public class PJKLMCGEJMK
                     errorResponse = error.ResponseCode;
                     KADMOOOMMJF = true;
                 }
-                ADKIDBJCAJA.NPNNPNAIONN = KADMOOOMMJF;
+                ADKIDBJCAJA.NPNNPNAIONN_IsError = KADMOOOMMJF;
                 if(JBPEHAHCBLK)
                 {
                     if(!ADKIDBJCAJA.AILPHBMCCGP || OMAGHCDMBBI == null)
                     {
                         //LAB_009346e8:
-                        ADKIDBJCAJA.NPNNPNAIONN = true;
+                        ADKIDBJCAJA.NPNNPNAIONN_IsError = true;
                         ADKIDBJCAJA.PDAPLCPOCMA = true;
                         KADMOOOMMJF = true;
                         break;
@@ -362,7 +362,7 @@ public class PJKLMCGEJMK
                     if(!EEBKLFOBGPM)
                     {
                         //goto LAB_009346e8;
-                        ADKIDBJCAJA.NPNNPNAIONN = true;
+                        ADKIDBJCAJA.NPNNPNAIONN_IsError = true;
                         ADKIDBJCAJA.PDAPLCPOCMA = true;
                         KADMOOOMMJF = true;
                         break;
@@ -382,7 +382,7 @@ public class PJKLMCGEJMK
                         yield return N.a.StartCoroutineWatched(AOMMJNJGFEL(ADKIDBJCAJA, val));
                         // To 8
                         KADMOOOMMJF = true;
-                        ADKIDBJCAJA.NPNNPNAIONN = true;
+                        ADKIDBJCAJA.NPNNPNAIONN_IsError = true;
                         ADKIDBJCAJA.JONHGMCILHM = true;
                         break;
                     }
@@ -447,7 +447,7 @@ public class PJKLMCGEJMK
                 yield return N.a.StartCoroutineWatched(GGOECCJJPFN(ADKIDBJCAJA));
                 // To3
                 KADMOOOMMJF = true;
-                ADKIDBJCAJA.NPNNPNAIONN = true;
+                ADKIDBJCAJA.NPNNPNAIONN_IsError = true;
                 ADKIDBJCAJA.CJMFJOMECKI_ErrorId = 0;
                 break;
             }

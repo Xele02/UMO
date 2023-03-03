@@ -72,6 +72,7 @@ class JpStringLiterals
 	public const string StringLiteral_10294 = "超時空SNS"; // 0x03bb2b90
 	public const string StringLiteral_10309 = "エナジー回復"; // 0x03bb2bcc
 	public const string StringLiteral_10310 = "エナジーが全回復しました！"; // 0x03bb2bd0
+	public const string StringLiteral_10431 = "デビューガチャ"; //0x03bb2db4
 	public const string StringLiteral_11062 = "ライフ"; // 0x03bb3790
 	public const string StringLiteral_11063 = "ソウル"; // 0x03bb3794
 	public const string StringLiteral_11064 = "ボイス"; // 0x03bb3798
@@ -92,6 +93,7 @@ class JpStringLiterals
 	public const string StringLiteral_11079 = "エピソード"; // 0x03bb37d4
 	public const string StringLiteral_11081 = "無限"; // 0x03bb37dc
 	public const string StringLiteral_11082 = "ストーリー"; // 0x03bb37e0
+	public const string StringLiteral_11117 = "デカルガチャ"; //0x03bb386c
 	public const string StringLiteral_11428 = "支援攻撃"; // 0x03bb3d48
 	public const string StringLiteral_11429 = "全力攻撃"; // 0x03bb3d4c
 	public const string StringLiteral_11430 = "マクロスキャノン"; // 0x03bb3d50

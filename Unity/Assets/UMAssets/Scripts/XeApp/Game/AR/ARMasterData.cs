@@ -188,7 +188,7 @@ namespace XeApp.Game.AR
 			}
 			yield return req.GDPDELLNOBO_WaitDone(N.a);
 
-			if(req.NPNNPNAIONN)
+			if(req.NPNNPNAIONN_IsError)
 			{
 				if(onError != null)
 					onError();

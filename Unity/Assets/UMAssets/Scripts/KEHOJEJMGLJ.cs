@@ -248,7 +248,7 @@ public class KEHOJEJMGLJ
 			yield return COJNCNGHIJC.GDPDELLNOBO_WaitDone(N.a);
 			//1
 
-			if(COJNCNGHIJC.NPNNPNAIONN)
+			if(COJNCNGHIJC.NPNNPNAIONN_IsError)
 			{
 				if(MOBEEPPKFLG != null)
 				{

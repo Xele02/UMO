@@ -37,7 +37,7 @@ public abstract class CACGCMBKHDI_Request
     public WorkerThreadQueue BNJPAKLNOPA_WorkerThreadQueue { get; set; } // 0x24 EGCCKJEDANG IMDNDFIKMHN ODBGIMFJOHN
     public SakashoError ANMFDAGDMDE { get; set; } // 0x2C GHCMEMELCJF ILGAFKNEAJI DPCCCKAKHDB
     public SakashoErrorId CJMFJOMECKI_ErrorId { get; set; } // 0x30 BCCAMPBOJHK LBJPGPOJOKP GPEILELFPCD
-    public bool NPNNPNAIONN { get; set; } // 0x34 GMEODAHJILH IAGEPLEBOKJ DDHAFEDMPEH
+    public bool NPNNPNAIONN_IsError { get; set; } // 0x34 GMEODAHJILH IAGEPLEBOKJ DDHAFEDMPEH
     public bool JONHGMCILHM { get; set; } // 0x35 CEMOPAGHPJM JPIBKPPPIDG BMAPGPMEFKC
     public bool LEBKCAEHLPC { get; set; } // 0x36 DMGEAJAAHAO FHBJIBDPBLI ODMPKGGKPAN
     public bool PDAPLCPOCMA { get; set; } // 0x37 MIEDINFMHKL EBANJNNPMCM GNKHADMLLGA

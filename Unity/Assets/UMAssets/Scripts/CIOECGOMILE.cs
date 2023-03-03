@@ -63,7 +63,7 @@ public class CIOECGOMILE
 	// public FKAFHLIDAFD AEBNIAFEIHC { get; private set; } // CJMMAKNNLGO 0xFF3E08 GGDKCIHDPGP 0xFFA308
 	public AIFIANALLPB KPFKKDDOHCN { get; private set; } // 0x48 CNBPHMJCOGK EJCOPFKKFJA EEAFNGBEHHJ
 	public PIGBKEIAMPE_FriendManager CHNJPFCKFOI_FriendManager { get; private set; } // 0x4C NMPHJGJOODM PPHAPIPAEOJ IDDONPAJKCN
-	public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ { get; private set; } // 0x50 KCLAFENGONP PCHMJADGBEI MFONKBBKMIJ
+	public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_Currencies { get; private set; } // 0x50 KCLAFENGONP PCHMJADGBEI MFONKBBKMIJ
 	public MCGNOFMAPBJ BPLOEAHOPFI_StaminaUpdater { get; private set; } // 0x54 KKOIOMJKJJK IFLOIFCLBFJ NGMKCJOPEGH
 	public JKNNIKNKMNJ IOCLFHJLHLE_IntimacyUpdater { get; private set; } // 0x58 GIKMDNCDMAA NJGEOHOLOOB CBKHODJCHHG
 	public int[] PAAMLFNPJGJ { get; private set; } // 0x5C LJCBJICKPNL CPKABGODIPL NLCNIFNICIL
@@ -84,7 +84,7 @@ public class CIOECGOMILE
 	// // RVA: 0xFFA7DC Offset: 0xFFA7DC VA: 0xFFA7DC
 	public MCKCJMLOAFP_CurrencyInfo JBEKNFEGFFI()
 	{
-		return BBEPLKNMICJ.Find((MCKCJMLOAFP_CurrencyInfo BNKHBCBJBKI) =>
+		return BBEPLKNMICJ_Currencies.Find((MCKCJMLOAFP_CurrencyInfo BNKHBCBJBKI) =>
 		{
 			//0x100A150
 			return BNKHBCBJBKI.PPFNGGCBJKC_Id == 1001;
@@ -122,14 +122,14 @@ public class CIOECGOMILE
 		{
 			for(int i = 0; i < PIPMPLFMCPL_CurrenciesInfo.Count; i++)
 			{
-				MCKCJMLOAFP_CurrencyInfo currency = BBEPLKNMICJ.Find((MCKCJMLOAFP_CurrencyInfo EABDEAANPOE) =>
+				MCKCJMLOAFP_CurrencyInfo currency = BBEPLKNMICJ_Currencies.Find((MCKCJMLOAFP_CurrencyInfo EABDEAANPOE) =>
 				{
 					//0x100A2B4
 					return EABDEAANPOE.PPFNGGCBJKC_Id == PIPMPLFMCPL_CurrenciesInfo[i].PPFNGGCBJKC_Id;
 				});
 				if(currency == null)
 				{
-					BBEPLKNMICJ.Add(PIPMPLFMCPL_CurrenciesInfo[i]);
+					BBEPLKNMICJ_Currencies.Add(PIPMPLFMCPL_CurrenciesInfo[i]);
 				}
 				else
 				{
@@ -160,7 +160,7 @@ public class CIOECGOMILE
 		CHNJPFCKFOI_FriendManager = new PIGBKEIAMPE_FriendManager();
 		LNAHEIEIBOI = false;
 		KONHMOLMOCI = false;
-		BBEPLKNMICJ = new List<MCKCJMLOAFP_CurrencyInfo>();
+		BBEPLKNMICJ_Currencies = new List<MCKCJMLOAFP_CurrencyInfo>();
 		BPLOEAHOPFI_StaminaUpdater = new MCGNOFMAPBJ();
 		IOCLFHJLHLE_IntimacyUpdater = new JKNNIKNKMNJ();
 		PAAMLFNPJGJ = new int[10];
@@ -252,8 +252,8 @@ public class CIOECGOMILE
 		}
 
 		UnityEngine.Debug.Log(str.ToString());
-		ILCCJNDFFOB.HHCJCDFCLOB.NJEIHFPKOMG(!(BPOJOBICBAC.NPNNPNAIONN || b) ? 1 : 0, (int)BPOJOBICBAC.CJMFJOMECKI_ErrorId, str.ToString());
-		if(BPOJOBICBAC.NPNNPNAIONN || b)
+		ILCCJNDFFOB.HHCJCDFCLOB.NJEIHFPKOMG(!(BPOJOBICBAC.NPNNPNAIONN_IsError || b) ? 1 : 0, (int)BPOJOBICBAC.CJMFJOMECKI_ErrorId, str.ToString());
+		if(BPOJOBICBAC.NPNNPNAIONN_IsError || b)
 		{
 			// private CIOECGOMILE.<>c__DisplayClass119_0 OPLBFCEPDCH; // 0x14
 				// public bool HFPLKFCPHDK; // 0x8
@@ -296,7 +296,7 @@ public class CIOECGOMILE
 
 		//goto LAB_01011f20;
 		//3
-		if(GHPOKNKDBGO.NPNNPNAIONN)
+		if(GHPOKNKDBGO.NPNNPNAIONN_IsError)
 		{
 			if(MOBEEPPKFLG_OnError != null)
 			{
@@ -304,7 +304,7 @@ public class CIOECGOMILE
 			}
 		}
 
-		BBEPLKNMICJ.Clear();
+		BBEPLKNMICJ_Currencies.Clear();
 		DJICHKCLMCD_UpdateCurrencies(GHPOKNKDBGO.NFEAMMJIMPG.BBEPLKNMICJ_CurrenciesList);
 		GHPOKNKDBGO = null;
 
@@ -990,7 +990,7 @@ public class CIOECGOMILE
 		List<HHJHIFJIKAC_BonusVc.MNGJPJBCMBH> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA;
 		for(int i = 0; i < l.Count; i++)
 		{
-			if(l[i].PLALNIIBLOF == 2)
+			if(l[i].PLALNIIBLOF_Enabled == 2)
 			{
 				int idx = res.FindIndex((int GHPLINIACBB) =>
 				{

@@ -157,7 +157,7 @@ public class AIFIANALLPB
 			AKHKGHHHJKD.AHEFHIMGIBI_PlayerData = IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(data);
 			while (!AKHKGHHHJKD.PLOOEECNHFB_IsDone)
 				yield return null;
-			if (AKHKGHHHJKD.NPNNPNAIONN)
+			if (AKHKGHHHJKD.NPNNPNAIONN_IsError)
 			{
 				PLOOEECNHFB = true;
 				if (MOBEEPPKFLG != null)
@@ -187,7 +187,7 @@ public class AIFIANALLPB
 			BPOJOBICBAC.AMOMNBEAHBF_Ids = l;
 			while (!BPOJOBICBAC.PLOOEECNHFB_IsDone)
 				yield return null;
-			if (BPOJOBICBAC.NPNNPNAIONN)
+			if (BPOJOBICBAC.NPNNPNAIONN_IsError)
 			{
 				PLOOEECNHFB = true;
 				if (MOBEEPPKFLG != null)

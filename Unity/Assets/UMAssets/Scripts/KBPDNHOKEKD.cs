@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeSys;
 
 public class HFDMKKIFNNP
 {
@@ -173,7 +174,18 @@ public class KBPDNHOKEKD_ProductId
 	}
 
 	//// RVA: 0x101D66C Offset: 0x101D66C VA: 0x101D66C
-	//public void OCBHANFFLOO(int HMFFHLPNMPH) { }
+	public void OCBHANFFLOO_SetTutoGachaProduct(int HMFFHLPNMPH)
+	{
+		OPFGFINHFCE_Name = MessageManager.Instance.GetMessage("menu", "tuto_gacha_title");
+		KLMPFGOCBHC_Description = MessageManager.Instance.GetMessage("menu", "tuto_gacha_desc");
+		CANACBAPKFK = HMFFHLPNMPH;
+		HMFDJHEEGNN_BuyLimit = 0;
+		GIEBJDKLCDH_BoughtQuantity = 0;
+		KAPMOPMDHJE_Label = (HMFFHLPNMPH == 10) ? 7000102 : 7000101;
+		NPPGKNGIFGK_Price = (HMFFHLPNMPH == 10) ? 500 : 50;
+		KBFOIECIADN_OpenedAt = Utility.GetTargetUnixTime(2010, 1, 1, 0, 0, 0);
+		EGBOHDFBAPB_ClosedAt = Utility.GetTargetUnixTime(3000, 1, 1, 0, 0, 0);
+	}
 
 	//// RVA: 0x101D81C Offset: 0x101D81C VA: 0x101D81C
 	//public bool HFEFJALCHMM() { }

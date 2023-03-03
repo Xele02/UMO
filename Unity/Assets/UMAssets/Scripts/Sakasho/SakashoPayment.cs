@@ -66,7 +66,10 @@ public class SakashoPayment : SakashoAPIBase
 	//public static SakashoAPICallContext GetPurchasingStatus(OnSuccess onSuccess, OnError onError) { }
 
 	// RVA: 0x2E548D4 Offset: 0x2E548D4 VA: 0x2E548D4
-	//public static SakashoAPICallContext Recover(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext Recover(OnSuccess onSuccess, OnError onError)
+	{
+		return new SakashoAPICallContext(Call(SakashoPaymentRecover, "", onSuccess, onError));
+	}
 
 	// RVA: 0x2E549B8 Offset: 0x2E549B8 VA: 0x2E549B8
 	//public static SakashoAPICallContext GetProductsWithItemSetDetail(SakashoProductCriteria criteria, int page, int ipp, OnSuccess onSuccess, OnError onError) { }
@@ -134,6 +137,10 @@ public class SakashoPayment : SakashoAPIBase
 
 	// RVA: 0x2E55F78 Offset: 0x2E55F78 VA: 0x2E55F78
 	//private static extern int SakashoPaymentRecover(int callbackId, string json) { }
+	private static int SakashoPaymentRecover(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoPaymentRecover(callbackId, json);
+	}
 
 	// RVA: 0x2E560B8 Offset: 0x2E560B8 VA: 0x2E560B8
 	//private static extern int SakashoPaymentGetProductsWithItemSetDetail(int callbackId, string json) { }
