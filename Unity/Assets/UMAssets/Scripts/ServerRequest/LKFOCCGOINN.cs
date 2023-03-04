@@ -1,7 +1,9 @@
 
 using UnityEngine;
 
-public class LKFOCCGOINN : CACGCMBKHDI_Request
+[System.Obsolete("Use LKFOCCGOINN_GetURL", true)]
+public class LKFOCCGOINN {}
+public class LKFOCCGOINN_GetURL : CACGCMBKHDI_Request
 {
 	public class FLFKLJCAJPG_ResData
 	{
