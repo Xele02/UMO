@@ -574,7 +574,13 @@ public class OKGLGHCBCJP_Database
 	}
 
 	// // RVA: 0x149101C Offset: 0x149101C VA: 0x149101C
-	// public DIHHCBACKGG LBDOLHGDIEB(string OPFGFINHFCE) { }
+	public DIHHCBACKGG_DbSection LBDOLHGDIEB_GetDbSection(string OPFGFINHFCE)
+	{
+		return MGJKEJHEBPO_SectionList.Find((DIHHCBACKGG_DbSection PKLPKMLGFGK) => {
+			//0x14A065C
+			return PKLPKMLGFGK.JIKKNHIAEKG_BlockName == OPFGFINHFCE;
+		});
+	}
 
 	// // RVA: -1 Offset: -1
 	// public T LBDOLHGDIEB<T>(string OPFGFINHFCE) { }

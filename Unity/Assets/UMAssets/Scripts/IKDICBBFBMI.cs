@@ -57,11 +57,22 @@ public abstract class IKDICBBFBMI_EventBase
 	public List<int> BHAHKCMJAJE; // 0x68
 	public bool MNDFBBMNJGN; // 0x6C
 	public int JKIADEKHGLC; // 0x70
-	// public List<IHAEIOAKEMG> PFPJHJJAGAG; // 0x74
-	// public List<MAOCCKFAOPC>[] EGIPGHCDMII; // 0x78
-	public List<int> JOFBHHHLBBN; // 0x7C
+	// public List<IHAEIOAKEMG> PFPJHJJAGAG = new List<IHAEIOAKEMG>(50); // 0x74
+	// public List<MAOCCKFAOPC>[] EGIPGHCDMII = new List<MAOCCKFAOPC>[10] {
+	//	new List<MAOCCKFAOPC>(20),
+	//	new List<MAOCCKFAOPC>(20),
+	//	new List<MAOCCKFAOPC>(20),
+	//	new List<MAOCCKFAOPC>(20),
+	//	new List<MAOCCKFAOPC>(20),
+	//	new List<MAOCCKFAOPC>(20),
+	//	new List<MAOCCKFAOPC>(20),
+	//	new List<MAOCCKFAOPC>(20),
+	//	new List<MAOCCKFAOPC>(20),
+	//	new List<MAOCCKFAOPC>(20)
+	//}; // 0x78
+	public List<int> JOFBHHHLBBN = new List<int>(); // 0x7C
 	// public NHGEHCMPDAI HLFHJIDHJMP; // 0x80
-	// public JKNGJFOBADP JANMJPOKLFL; // 0x84
+	// public JKNGJFOBADP JANMJPOKLFL = new JKNGJFOBADP(); // 0x84
 	// public List<AKIIJBEJOEP> AGLILDLEFDK; // 0x88
 	// public List<IKCGAJKCPFN> OLDFFDMPEBM; // 0x8C
 	private int HAJJBEFHPKG; // 0x90
@@ -74,20 +85,20 @@ public abstract class IKDICBBFBMI_EventBase
 	public bool GPHEKCNDDIK; // 0xA2
 	public bool NPNNPNAIONN; // 0xA3
 	public long EJDJIBPKKNO; // 0xA8
-	public int[] CDINKAANIAA; // 0xB0
-	public long[] KPOMHFLKMKI; // 0xB4
+	public int[] CDINKAANIAA = new int[10]; // 0xB0
+	public long[] KPOMHFLKMKI = new long[10]; // 0xB4
 	public List<string> PMHLJAIGBGK; // 0xB8
 	public List<int> FMEDFGOMNBK; // 0xBC
-	// public List<IKDICBBFBMI.CEGDBNNIDIG> LHAKGDAGEMM; // 0xC0
-	// public List<IKDICBBFBMI.NJJDBBCHBNP> PGDAMNENGDA; // 0xC4
-	// public List<IKDICBBFBMI.MEBJJBHPMEO> DHOMAEOEFMJ; // 0xC8
+	// public List<CEGDBNNIDIG> LHAKGDAGEMM = new List<CEGDBNNIDIG>(); // 0xC0
+	// public List<NJJDBBCHBNP> PGDAMNENGDA = new List<NJJDBBCHBNP>(); // 0xC4
+	// public List<MEBJJBHPMEO> DHOMAEOEFMJ = new List<MEBJJBHPMEO>(); // 0xC8
 	public bool CMPEJEHCOEI; // 0xCC
 	public bool LPFJADHHLHG; // 0xCD
 	public bool CBPOMDFDKPD; // 0xCE
 	// public MFDJIFIIPJD BHABCGJCGNO; // 0xD0
-	// public List<MFDJIFIIPJD> KGBCKPKLKHM; // 0xD4
+	// public List<MFDJIFIIPJD> KGBCKPKLKHM = new List<MFDJIFIIPJD>(); // 0xD4
 	// public List<AIGOEAPJGEB> MBHDIJJEOFL; // 0xD8
-	public int HADLPHIMBHH; // 0xDC
+	public int HADLPHIMBHH = 1; // 0xDC
 	public bool IBLPKJJNNIG; // 0xE0
 	public bool BELBNINIOIE; // 0xE1
 	protected bool GFHKFKHBIGM; // 0xE2
@@ -111,7 +122,7 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8DCDBC Offset: 0x8DCDBC VA: 0x8DCDBC
 	public IKDICBBFBMI_EventBase(string OPFGFINHFCE)
 	{
-		TodoLogger.Log(0, "TODO");
+		JOPOPMLFINI = OPFGFINHFCE;
 	}
 
 	// // RVA: 0x8DD51C Offset: 0x8DD51C VA: 0x8DD51C Slot: 5
@@ -218,10 +229,10 @@ public abstract class IKDICBBFBMI_EventBase
 	// public virtual void MJFKJHJJLMN(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = False) { }
 
 	// // RVA: -1 Offset: -1 Slot: 30
-	// protected abstract bool JIHMLILFOPG(long JHNMKKNEENE);
+	protected abstract bool JIHMLILFOPG(long JHNMKKNEENE);
 
 	// // RVA: -1 Offset: -1 Slot: 31
-	// protected abstract bool IMCMNOPNGHO(long JHNMKKNEENE);
+	protected abstract bool IMCMNOPNGHO(long JHNMKKNEENE);
 
 	// // RVA: 0x8DF774 Offset: 0x8DF774 VA: 0x8DF774 Slot: 32
 	// public virtual EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO) { }
@@ -245,13 +256,26 @@ public abstract class IKDICBBFBMI_EventBase
 	// public virtual void EMEPJNLHJHJ(int GJEADBKFAPA, int AKNELONELJK, bool GIKLNODJKFK, ref int APMGOLOPLFP, ref int FBBDNLAMPMH) { }
 
 	// // RVA: 0x8DF8B8 Offset: 0x8DF8B8 VA: 0x8DF8B8
-	// public bool GHKKPKBBEAN(long JHNMKKNEENE) { }
+	public bool GHKKPKBBEAN(long JHNMKKNEENE)
+	{
+		return ENBOJGJCPCP(JHNMKKNEENE);
+	}
 
 	// // RVA: 0x8DF8E0 Offset: 0x8DF8E0 VA: 0x8DF8E0 Slot: 39
-	// protected virtual bool ENBOJGJCPCP(long JHNMKKNEENE) { }
+	protected virtual bool ENBOJGJCPCP(long JHNMKKNEENE)
+	{
+		if(JIHMLILFOPG(JHNMKKNEENE))
+		{
+			return IMCMNOPNGHO(JHNMKKNEENE);
+		}
+		return false;
+	}
 
 	// // RVA: 0x8DF94C Offset: 0x8DF94C VA: 0x8DF94C
-	// public void EHNHJKBDIJN(long JHNMKKNEENE) { }
+	public void EHNHJKBDIJN(long JHNMKKNEENE)
+	{
+		TodoLogger.Log(0, "IKDICBBFBMI_EventBase.EHNHJKBDIJN");
+	}
 
 	// // RVA: 0x8DF980 Offset: 0x8DF980 VA: 0x8DF980 Slot: 40
 	// protected virtual void KKFLDCBHFJA(long JHNMKKNEENE) { }
@@ -263,7 +287,10 @@ public abstract class IKDICBBFBMI_EventBase
 	// public virtual int DEECKJADNMJ(int LAJNCHHNLBI) { }
 
 	// // RVA: 0x8DF99C Offset: 0x8DF99C VA: 0x8DF99C
-	// public void NDHIFHJAAEO() { }
+	public void NDHIFHJAAEO()
+	{
+		TodoLogger.Log(0, "IKDICBBFBMI_EventBase.NDHIFHJAAEO");
+	}
 
 	// // RVA: 0x8DF9B8 Offset: 0x8DF9B8 VA: 0x8DF9B8 Slot: 43
 	// protected virtual void FCHGHAAPIBH() { }

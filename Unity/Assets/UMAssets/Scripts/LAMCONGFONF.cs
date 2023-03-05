@@ -21,7 +21,7 @@ public class LAMCONGFONF
 	public List<RankingListInfo> BMKBAMFBAPJ = new List<RankingListInfo>(); // 0x14
 	private OJFOLGKMBIG[] KIAFBCEKMEA = new OJFOLGKMBIG[10]; // 0x18
 	private OJFOLGKMBIG[] CEPDOODGDEM = new OJFOLGKMBIG[10]; // 0x1C
-	//private EECOJKDJIFG[] AEJCLHOIDDD = new EECOJKDJIFG[10]; // 0x20
+	private EECOJKDJIFG[] AEJCLHOIDDD = new EECOJKDJIFG[10]; // 0x20
 
 	public static LAMCONGFONF HHCJCDFCLOB { get; private set; } // 0x0 NKACBOEHELJ OKPMHKNCNAL
 
@@ -32,7 +32,27 @@ public class LAMCONGFONF
 	}
 
 	//// RVA: 0xD9085C Offset: 0xD9085C VA: 0xD9085C
-	//public bool ECKDEPDMHGP() { }
+	public bool ECKDEPDMHGP()
+	{
+		JPJGOECJFEE_EventGoDivaRanking dbGo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFHMLHKODOD_EventGoDivaRanking;
+		if(dbGo != null)
+		{
+			for(int i = 0; i < dbGo.NGHKJOEDLIP.MPCAGEPEJJJ.Count; i++)
+			{
+				KIAFBCEKMEA[i] = new OJFOLGKMBIG();
+				CEPDOODGDEM[i] = new OJFOLGKMBIG();
+				string OCGFKMHNEOF = dbGo.NGHKJOEDLIP.MPCAGEPEJJJ[i];
+				AEJCLHOIDDD[i] = KKLGENJKEBN.HHCJCDFCLOB.JPDPFGFMKHK.Find((EECOJKDJIFG PKLPKMLGFGK) => {
+					//0xD92A98
+					return PKLPKMLGFGK.OCGFKMHNEOF == OCGFKMHNEOF;
+				});
+				if(AEJCLHOIDDD[i] == null)
+					return false;
+			}
+			return true;
+		}
+		return false;
+	}
 
 	//// RVA: 0xD90CA0 Offset: 0xD90CA0 VA: 0xD90CA0
 	//public LAMCONGFONF.OJFOLGKMBIG CEPOFDBHIAC(int LHJCOPMMIGO, bool PFFJNEFNAMI = False) { }

@@ -973,7 +973,7 @@ namespace XeApp.Game.Menu
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			m_eventBanner.SetType(VerticalMusicSelectEventBanner.ButtonType.Disable);
 			m_eventItem.SetEnable(false);
-			IKDICBBFBMI_EventBase eventInfo = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ);
+			IKDICBBFBMI_EventBase eventInfo = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ);
 			if(eventInfo != null)
 			{
 				TodoLogger.Log(0, "ApplyEventInfo");

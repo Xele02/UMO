@@ -354,7 +354,10 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 		}
 
 		// // RVA: 0x19632D0 Offset: 0x19632D0 VA: 0x19632D0
-		// public bool OOOPJNKBDIL() { }
+		public bool OOOPJNKBDIL_Is6OrMoreRarity()
+		{
+			return EKLIPGELKCL_Rarity > 5;
+		}
 	}
 
 	

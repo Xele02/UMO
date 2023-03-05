@@ -87,11 +87,22 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	// RVA: 0x9400DC Offset: 0x9400DC VA: 0x9400DC
 	public PKNOKJNLPOE_EventRaid(string OPFGFINHFCE) : base(OPFGFINHFCE)
     {
-        TodoLogger.Log(0, "TODO");
+		if(FJLIDJJAGOM() != null)
+		{
+        	TodoLogger.Log(0, "PKNOKJNLPOE_EventRaid()");
+		}
     }
 
 	// // RVA: 0x940304 Offset: 0x940304 VA: 0x940304
-	// private BKOGPDBKFFJ FJLIDJJAGOM() { }
+	private BKOGPDBKFFJ_EventRaid FJLIDJJAGOM()
+	{
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		if(db != null)
+		{
+			return db as BKOGPDBKFFJ_EventRaid;
+		}
+		return null;
+	}
 
 	// // RVA: 0x940418 Offset: 0x940418 VA: 0x940418
 	// private JLOGEHCIBEJ.PMJBKKNNNEM KNKJHNJFONJ() { }
@@ -137,10 +148,22 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	// public override void MJFKJHJJLMN(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = False) { }
 
 	// // RVA: 0x941F28 Offset: 0x941F28 VA: 0x941F28 Slot: 30
-	// protected override bool JIHMLILFOPG(long JHNMKKNEENE) { }
+	protected override bool JIHMLILFOPG(long JHNMKKNEENE)
+	{
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		if(db != null)
+		{
+			TodoLogger.Log(0, "PKNOKJNLPOE_EventRaid.JIHMLILFOPG");
+		}
+		return false;
+	}
 
 	// // RVA: 0x9421F0 Offset: 0x9421F0 VA: 0x9421F0 Slot: 31
-	// protected override bool IMCMNOPNGHO(long JHNMKKNEENE) { }
+	protected override bool IMCMNOPNGHO(long JHNMKKNEENE)
+	{
+		TodoLogger.Log(0, "PKNOKJNLPOE_EventRaid.IMCMNOPNGHO");
+		return false;
+	}
 
 	// // RVA: 0x942614 Offset: 0x942614 VA: 0x942614 Slot: 40
 	// protected override void KKFLDCBHFJA(long JHNMKKNEENE) { }
@@ -351,7 +374,10 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	// public void CFKCMIBJOIA(out int LCIIDGAPDCN, out int OGOHJAFOEPG) { }
 
 	// // RVA: 0x9498A8 Offset: 0x9498A8 VA: 0x9498A8
-	// public void FGIHOCHKKMD(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
+	public void FGIHOCHKKMD(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
+	{
+		TodoLogger.Log(0, "PKNOKJNLPOE_EventRaid.FGIHOCHKKMD");
+	}
 
 	// // RVA: 0x949CE0 Offset: 0x949CE0 VA: 0x949CE0
 	// private void OFAHKDKDGAN(PKNOKJNLPOE.FCDIHBGEKOB BCGAOHJKPIG, BBHNACPENDM AHEFHIMGIBI) { }

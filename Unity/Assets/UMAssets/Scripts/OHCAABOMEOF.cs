@@ -16,7 +16,7 @@ public class OHCAABOMEOF
         DAMDPLEBNCB = 10,
         CADKONMJEDA_EventRaid = 11,
         DIDJLIPNCKO = 12,
-        MCGPGMGEPHG = 13,
+        MCGPGMGEPHG_EventRaidLobby = 13,
         BNECMLPHAGJ_EventGoDiva = 14,
     }
 
