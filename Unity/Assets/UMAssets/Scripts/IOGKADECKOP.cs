@@ -1045,7 +1045,7 @@ public class IOGKADECKOP
 				}
 				if(GNGMCIAIKMA.HHCJCDFCLOB != null)
 				{
-					GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA(null, 0);
+					GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_HasBingoActive(null, 0);
 				}
 				FHBJNLFHGPB_SetPercent(85);
 					

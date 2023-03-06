@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null &&
 					Database.Instance.gameSetup.musicInfo != null)
 				{
-					int serie = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.musicId).AIHCEGFANAM_SerieId;
+					int serie = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.musicId).AIHCEGFANAM_SerieAttr;
 					if (serie >= 1 && serie <= 4)
 						return 0;
 					return (EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition)serie;

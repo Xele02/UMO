@@ -280,7 +280,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 			data.NODKIFGGMGP_Div = (short)array[i].FNAEGLFKDBI;
 			data.FKDCCLPGKDK_Ma = (sbyte)array[i].AOLLIMFKDAA;
 			data.EMIKBGHIOMN_SerieLogoId = (sbyte)array[i].JPFMJHLCMJL;
-			data.AIHCEGFANAM_SerieId = (sbyte)SeriesAttr.ConvertFromLogoId((SeriesLogoId.Type)data.EMIKBGHIOMN_SerieLogoId);
+			data.AIHCEGFANAM_SerieAttr = (sbyte)SeriesAttr.ConvertFromLogoId((SeriesLogoId.Type)data.EMIKBGHIOMN_SerieLogoId);
 			data.KKPAHLMJKIH_WavId = (short)array[i].IKOFFIOMOME;
 			data.BKJGCEOEPFB_VariationId = (short)array[i].PKLIPLFIDED;
 			data.GHICLBNHNGJ_Dsc = (short)array[i].GJDKHDLKONI;
@@ -662,7 +662,7 @@ public class EONOEHOKBEB_Music
 	public short KNMGEEFGDNI_Nam { get; set; } // JELJHGCOAFJ // 0xE HKEFEIOCKLP OCOGGADKEHD
 	public short NODKIFGGMGP_Div { get; set; } // PNBJIFJHCBL // 0x10 APAOBAGKCPC LKDECIOADPO
 	public sbyte FKDCCLPGKDK_Ma { get; set; } // KLMKEFEMHOC // 0x12 FBADKBMGIBP NCNMMABFHGN
-	public sbyte AIHCEGFANAM_SerieId { get; set; } // FJOGAAMLJMA // 0x13 ANEJPLENMAL HEHDOGFEIOL
+	public sbyte AIHCEGFANAM_SerieAttr { get; set; } // FJOGAAMLJMA // 0x13 ANEJPLENMAL HEHDOGFEIOL
 	public sbyte EMIKBGHIOMN_SerieLogoId { get; set; } // CCEIEDMCHLA // 0x14 BJGJCKFOBCA OAKIKBEEACC
 	public short KKPAHLMJKIH_WavId { get; set; } // EOPNGHAFEMB // 0x16 ENODDPDBIPA HOAKFLEAEOH
 	public short BKJGCEOEPFB_VariationId { get; set; } // PJKCKOJHKEM // 0x18 FNEBPBJBIIP OIDGLNHNGJB

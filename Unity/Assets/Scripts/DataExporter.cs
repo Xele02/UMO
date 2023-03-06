@@ -30,7 +30,7 @@ class DataExporter
 			if (MusicDb.EPMMNEFADAP_Musics[i].JNCPEGJGHOG_Cov > 0)
 			{
 				string Title = Database.Instance.musicText.Get(MusicDb.EPMMNEFADAP_Musics[i].KNMGEEFGDNI_Nam).musicName;
-				string Serie = string.Format("{0}", MusicDb.EPMMNEFADAP_Musics[i].AIHCEGFANAM_SerieId);
+				string Serie = string.Format("{0}", MusicDb.EPMMNEFADAP_Musics[i].AIHCEGFANAM_SerieAttr);
 				if (Serie == "4") Serie = "Macross";
 				if (Serie == "3") Serie = "Macross 7";
 				if (Serie == "2") Serie = "Macross Frontier";

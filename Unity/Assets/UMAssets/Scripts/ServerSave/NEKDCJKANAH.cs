@@ -27,7 +27,7 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 		public bool ICCJMCCJCBG; // 0x28
 		public bool HCENOJKNCMK; // 0x29
 
-		//public bool HALOKFOJMLA { get; } 0x1AE98B8 LKOICFDJNDD
+		public bool HALOKFOJMLA { get { return EALOBDHOCHP_Stat > 3; } } //0x1AE98B8 LKOICFDJNDD
 
 		// RVA: 0x1AE6C08 Offset: 0x1AE6C08 VA: 0x1AE6C08
 		public HKDNILFKCFC()

@@ -120,7 +120,7 @@ namespace XeApp.Game.RhythmGame
 			NHDJHOPLMDE data = new NHDJHOPLMDE(valkyrieId, 0);
 			int v1 = 0;
 			int v2 = 0;
-			if(data.LAKLFHGMCLI((SeriesAttr.Type)musicData.musicBase.AIHCEGFANAM_SerieId))
+			if(data.LAKLFHGMCLI((SeriesAttr.Type)musicData.musicBase.AIHCEGFANAM_SerieAttr))
 			{
 				v1 = data.NONBCCLGBAO_Hit;
 				v2 = data.KINFGHHNFCF_Atk;
