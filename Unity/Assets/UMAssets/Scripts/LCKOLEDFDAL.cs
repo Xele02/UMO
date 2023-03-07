@@ -21,7 +21,7 @@ public class LCKOLEDFDAL
 	}
 
 	//// RVA: 0xD9AC34 Offset: 0xD9AC34 VA: 0xD9AC34
-	public static SakashoProductCriteria DGKCONBHMJA(int LEHJCMFDHLD)
+	public static SakashoProductCriteria DGKCONBHMJA_GetCriteriaForCurrency(int LEHJCMFDHLD)
 	{
 		SakashoProductCriteria res = new SakashoProductCriteria();
 		res.CurrencyId = LEHJCMFDHLD;
@@ -30,8 +30,21 @@ public class LCKOLEDFDAL
 	}
 
 	//// RVA: 0xD9ACF0 Offset: 0xD9ACF0 VA: 0xD9ACF0
-	//public static SakashoProductCriteria CMNCOOIKDIH(int KAPMOPMDHJE) { }
+	public static SakashoProductCriteria CMNCOOIKDIH_GetCriteriaForLabel(int KAPMOPMDHJE)
+	{
+		SakashoProductCriteria res = new SakashoProductCriteria();
+		res.CurrencyId = 2;
+		res.ProductType = 0;
+		res.Label = KAPMOPMDHJE;
+		return res;
+	}
 
 	//// RVA: 0xD949E4 Offset: 0xD949E4 VA: 0xD949E4
-	//public static SakashoProductCriteria BAKNLGCIHAN(int CPGFOBNKKBF) { }
+	public static SakashoProductCriteria BAKNLGCIHAN(int CPGFOBNKKBF)
+	{
+		SakashoProductCriteria res = new SakashoProductCriteria();
+		res.CurrencyId = CPGFOBNKKBF;
+		res.ProductType = 0;
+		return res;
+	}
 }

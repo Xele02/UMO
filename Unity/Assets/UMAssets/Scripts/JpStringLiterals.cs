@@ -19,6 +19,10 @@ class JpStringLiterals
 	public const string StringLiteral_10040 = "お気に入り1"; // 0x03bb2798
 	public const string StringLiteral_10041 = "お気に入り2"; // 0x03bb279c
 	public const string StringLiteral_10042 = "お気に入り3"; // 0x03bb27a0
+	public const string StringLiteral_10058 = "無効 VcItemSceduleInfo id="; //03bb27e0
+	public const string StringLiteral_10062 = "期間内 VcItemSceduleInfo id="; //0x03bb27f0
+	public const string StringLiteral_10064 = "商品件数 = "; // 0x03bb27f8
+	public const string StringLiteral_10065 = "期間外 VcItemSceduleInfo id="; // 0x03bb27fc
 	public const string StringLiteral_10089 = "個"; // 0x03bb285c
 	public const string StringLiteral_10090 = "枚"; // 0x03bb2860
 	public const string StringLiteral_10093 = "機"; // 0x03bb286c
@@ -103,6 +107,7 @@ class JpStringLiterals
 	public const string StringLiteral_11861 = "バッチインストーラ　不停止モジュール放棄"; // 0x03bb440c
 	public const string StringLiteral_11862 = "バッチインストーラ　停止処理が完了しなかったインストールモジュール数 {0}"; // 0x03bb4410
 	public const string StringLiteral_11863 = "バッチインストーラ　放棄した分、インストールモジュールを生成 {0}"; // 0x03bb4414
+	public const string StringLiteral_11920 = "\n\nエラーコード : "; // 0x03bb44f8
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
 	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
 	public const string StringLiteral_12038 = "…"; // 0x03bb46d0
@@ -247,6 +252,7 @@ class JpStringLiterals
 	public const string StringLiteral_13104 = "日前"; // 0x03bb5778
 	public const string StringLiteral_13105 = "365日以上"; // 0x03bb577c
 	public const string StringLiteral_13106 = "1時間前"; // 0x03bb5780
+	public const string StringLiteral_13316 = "ディフォルト3Dモードの設定 : "; //0x03bb5ac8
 	public const string StringLiteral_13620 = " - 対応していない型が渡されました\n   {0}"; // 0x03bb5f88
 	public const string StringLiteral_13959 = "★"; // 0x03bb64d4
 	public const string StringLiteral_13975 = "EXレート="; // 0x03bb6514

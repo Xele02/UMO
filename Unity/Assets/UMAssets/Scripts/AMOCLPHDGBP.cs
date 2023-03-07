@@ -220,12 +220,12 @@ public class AMOCLPHDGBP
 				{
 					PPOJLIPFMMP[GBIEKJGODJD_i].LAOEGNLOJHC_Convert();
 					//LAB_00d48b44
-					while(!PPOJLIPFMMP[GBIEKJGODJD_i].PLOOEECNHFB)
+					while(!PPOJLIPFMMP[GBIEKJGODJD_i].PLOOEECNHFB_IsDone)
 					{
 						// 5
 						yield return null;
 					}
-					if(PPOJLIPFMMP[GBIEKJGODJD_i].NPNNPNAIONN)
+					if(PPOJLIPFMMP[GBIEKJGODJD_i].NPNNPNAIONN_IsError)
 					{
 						//go LAB_00d48a98
 						BFKEGJMPELF();
@@ -488,12 +488,12 @@ public class AMOCLPHDGBP
 					{
 						PPOJLIPFMMP[GBIEKJGODJD_i].LAOEGNLOJHC_Convert();
 						//LAB_00d48d90
-						if(!PPOJLIPFMMP[GBIEKJGODJD_i].PLOOEECNHFB)
+						if(!PPOJLIPFMMP[GBIEKJGODJD_i].PLOOEECNHFB_IsDone)
 						{
 							//19
 							yield return null;
 						}
-						if(PPOJLIPFMMP[GBIEKJGODJD_i].NPNNPNAIONN)
+						if(PPOJLIPFMMP[GBIEKJGODJD_i].NPNNPNAIONN_IsError)
 						{
 							// go LAB_00d48a98
 							BFKEGJMPELF();

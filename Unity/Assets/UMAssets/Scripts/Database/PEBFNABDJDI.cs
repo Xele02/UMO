@@ -96,7 +96,11 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	// public bool JLAJNCMIIOK(int JIKLEHGJKBH, string OPFGFINHFCE) { }
 
 	// // RVA: 0xCC4B20 Offset: 0xCC4B20 VA: 0xCC4B20
-	// public int GAGDEIMGBBG(int JIKLEHGJKBH) { }
+	public int GAGDEIMGBBG(int JIKLEHGJKBH)
+	{
+		string[] strs = EFEGBHACJAL("default_3dmode_android", "1,1,0").Split(new char[] { ',' });
+		return int.Parse(strs[JIKLEHGJKBH]);
+	}
 
 	// // RVA: 0xCC4C4C Offset: 0xCC4C4C VA: 0xCC4C4C
 	public int DDGHBNLOBAJ_GetCueEncryptedKey(string OPFGFINHFCE)

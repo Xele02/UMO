@@ -51,7 +51,7 @@ public class ILDKBCLAFPB
         public int NFMEIILKACN_NotesRoute; // 0x28
         public int NAGJLEIPAAC_Cutin; // 0x2C
         public int DADIPGPHLDD_EffectCutin; // 0x30
-        public int DDHCLNFPNGK_RenderQuality = 0;// Tmp to init in full quality 1; // 0x34
+        public int DDHCLNFPNGK_RenderQuality = 1; // 0x34
         public int GEPLOFLHAOL_NeedInitRenderQuality; // 0x38
         public int OJAJHIMOIEC_NoteOffset; // 0x3C
         public int OAKOJGPBAJF_BackKey; // 0x40
@@ -108,7 +108,7 @@ public class ILDKBCLAFPB
 			ICGAOAFIHFD_VolBgmRhythm = 15;
 			FCKEDCKCEFC_VolVoiceRhythm = 15;
 			IBEINHHMHAC_VolNotesRhythm = 11;
-			DDHCLNFPNGK_RenderQuality = 0; // tmp to init in full quality
+			DDHCLNFPNGK_RenderQuality = 1;
 			HHMCIGLCBNG_QualityCustomDiva3D = 0;
 			AHLFOHJMGAI_QualityCustomOther3D = 0;
 			IHEPCAHBECA_VideoMode = 0;
@@ -472,7 +472,6 @@ public class ILDKBCLAFPB
 			NAGJLEIPAAC_Cutin = JsonUtil.GetInt(OBHAFLMHAKG, "cutin", 0);
 			DADIPGPHLDD_EffectCutin = JsonUtil.GetInt(OBHAFLMHAKG, "effectCutin", 0);
 			DDHCLNFPNGK_RenderQuality = JsonUtil.GetInt(OBHAFLMHAKG, "renderQuality", 1);
-			DDHCLNFPNGK_RenderQuality = 0; // UMO : default to full quality for now
 			GEPLOFLHAOL_NeedInitRenderQuality = JsonUtil.GetInt(OBHAFLMHAKG, "needInitRenderQuality", 0);
 			LMDACNNJDOE_VolSeRhythm = JsonUtil.GetInt(OBHAFLMHAKG, "volSeRhythm", 0xf);
 			ICGAOAFIHFD_VolBgmRhythm = JsonUtil.GetInt(OBHAFLMHAKG, "volBgmRhythm", 0xf);

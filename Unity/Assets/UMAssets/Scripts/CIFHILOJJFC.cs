@@ -8,7 +8,7 @@ public class CIFHILOJJFC
 	public string OPFGFINHFCE_Name = ""; // 0xC
 	public List<AMCGONHBGGF> FDBOPFEOENF_MainDivas; // 0x10
 	public List<DKDMLOBCPFC> KAKGHFFOAEJ_AddDivas; // 0x14
-	public int FODKKJIDDKN_VfId = 1; // 0x18 // UMO add, default to 1 when no save
+	public int FODKKJIDDKN_VfId; // 0x18
 	public int GCCNMFHELCB_Form; // 0x1C
 	public static string CBELJGBFLGA = JpStringLiterals.StringLiteral_9767; // 0x0 
 

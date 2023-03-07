@@ -4,6 +4,28 @@ using UnityEngine;
 using XeApp.Game.Menu;
 using XeSys;
 
+
+public class JFCBDOJBKNG
+{
+	private static string ODFODCGDAHD = ""; // 0x0
+	private const string AAGJILMIBKD = "uta_rate_ranking";
+
+	public static string LMPCPCAIEHH { get; }
+
+	// RVA: 0x1C433A4 Offset: 0x1C433A4 VA: 0x1C433A4
+	public static string AJAHDNPMPHA_GetEventRankingKey()
+	{
+		if(ODFODCGDAHD == "")
+		{
+			if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			{
+				ODFODCGDAHD = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("uta_rate_event_ranking_key", "uta_rate_ranking");
+			}
+		}
+		return ODFODCGDAHD;
+	}
+}
+
 public class OEGIPPCADNA
 {
 	public class JCDOJGNNIIL
@@ -44,8 +66,37 @@ public class OEGIPPCADNA
 	//// RVA: 0x1B3CF94 Offset: 0x1B3CF94 VA: 0x1B3CF94
 	public void MJFKJHJJLMN(int LHJCOPMMIGO, bool FBBNPFFEJBN = false, IMCBBOAFION KLMFJJCNBIP = null, DJBHIFLHJLK IDAEHNGOKAE = null, DJBHIFLHJLK JGKOLBLPMPG = null)
 	{
-		TodoLogger.Log(0, "MJFKJHJJLMN");
-		KLMFJJCNBIP();
+		KKLGENJKEBN.HHCJCDFCLOB.HEOKADCEAGL_GetRanks(JFCBDOJBKNG.AJAHDNPMPHA_GetEventRankingKey(), () =>
+		{
+			//0x1B3EA54
+			MCILHNEDPBM = (int)KKLGENJKEBN.HHCJCDFCLOB.LPPCNCMEDFA;
+			DPDCIICKJEJ = (int)KKLGENJKEBN.HHCJCDFCLOB.IPNEJCOFBIB;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank = MCILHNEDPBM;
+			PLOOEECNHFB = true;
+			KLMFJJCNBIP();
+		}, () =>
+		{
+			//0x1B3EBF0
+			MCILHNEDPBM = 0;
+			DPDCIICKJEJ = 0;
+			PLOOEECNHFB = true;
+			IDAEHNGOKAE();
+		}, () =>
+		{
+			//0x1B3EC64
+			MCILHNEDPBM = 0;
+			DPDCIICKJEJ = 0;
+			PLOOEECNHFB = true;
+			NPNNPNAIONN = true;
+			JGKOLBLPMPG();
+		}, () =>
+		{
+			//0x1B3ECF0
+			MCILHNEDPBM = 0;
+			DPDCIICKJEJ = 0;
+			PLOOEECNHFB = true;
+			FKKDIDMGLMI = true;
+		});
 	}
 
 	//// RVA: 0x1B3D1B0 Offset: 0x1B3D1B0 VA: 0x1B3D1B0

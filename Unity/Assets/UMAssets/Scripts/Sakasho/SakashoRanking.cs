@@ -1,4 +1,6 @@
+using Sakasho.JSON;
 using SakashoSystemCallback;
+using System.Collections;
 
 public class SakashoRanking : SakashoAPIBase
 {
@@ -18,7 +20,15 @@ public class SakashoRanking : SakashoAPIBase
 	// public static SakashoAPICallContext GetRankingRecord(int id, OnSuccess onSuccess, OnError onError) { }
 
 	// // RVA: 0x2E5F79C Offset: 0x2E5F79C VA: 0x2E5F79C
-	// public static SakashoAPICallContext GetRanksAroundSelf(int id, int type, int from, int to, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetRanksAroundSelf(int id, int type, int from, int to, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["id"] = id;
+		h["type"] = type;
+		h["from"] = from;
+		h["to"] = to;
+		return new SakashoAPICallContext(Call(SakashoRankingGetRanksAroundSelf, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E5FA40 Offset: 0x2E5FA40 VA: 0x2E5FA40
 	// public static SakashoAPICallContext GetTopRanks(int id, int type, int page, int ipp, OnSuccess onSuccess, OnError onError) { }
@@ -49,6 +59,10 @@ public class SakashoRanking : SakashoAPIBase
 
 	// // RVA: 0x2E607B0 Offset: 0x2E607B0 VA: 0x2E607B0
 	// private static extern int SakashoRankingGetRanksAroundSelf(int callbackId, string json) { }
+	private static int SakashoRankingGetRanksAroundSelf(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoRankingGetRanksAroundSelf(callbackId, json);
+	}
 
 	// // RVA: 0x2E608C0 Offset: 0x2E608C0 VA: 0x2E608C0
 	// private static extern int SakashoRankingGetTopRanks(int callbackId, string json) { }

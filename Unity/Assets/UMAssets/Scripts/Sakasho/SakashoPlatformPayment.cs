@@ -1,9 +1,19 @@
+using Sakasho.JSON;
 using SakashoSystemCallback;
+using System.Collections;
 
 public class SakashoPlatformPayment : SakashoAPIBase
 {
 	//// RVA: 0x2E57F90 Offset: 0x2E57F90 VA: 0x2E57F90
-	//public static SakashoAPICallContext GetProducts(string cursor, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetProducts(string cursor, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		if(cursor != null)
+		{
+			h["cursor"] = cursor;
+		}
+		return new SakashoAPICallContext(Call(SakashoPlatformPaymentGetProducts, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2E58108 Offset: 0x2E58108 VA: 0x2E58108
 	public static SakashoAPICallContext Recover(OnSuccess onSuccess, OnError onError)
@@ -28,6 +38,10 @@ public class SakashoPlatformPayment : SakashoAPIBase
 
 	//// RVA: 0x2E58890 Offset: 0x2E58890 VA: 0x2E58890
 	//private static extern int SakashoPlatformPaymentGetProducts(int callbackId, string json) { }
+	private static int SakashoPlatformPaymentGetProducts(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoPlatformPaymentGetProducts(callbackId, json);
+	}
 
 	//// RVA: 0x2E589A0 Offset: 0x2E589A0 VA: 0x2E589A0
 	//private static extern int SakashoPlatformPaymentRecover(int callbackId, string json) { }

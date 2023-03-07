@@ -164,8 +164,15 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1AE9734 Offset: 0x1AE9734 VA: 0x1AE9734 Slot: 9
 	// public override bool NFKFOODCJJB() { }
 
-	// // RVA: 0x1AE6928 Offset: 0x1AE6928 VA: 0x1AE6928
-	// public void LOAOLBNFNNP() { }
+	// // RVA: g Offset: 0x1AE6928 VA: 0x1AE6928
+	public void LOAOLBNFNNP_InitDefault()
+	{
+		MMKAJBFBKNH[0].EALOBDHOCHP_Stat = 4;
+		MMKAJBFBKNH[0].NDFOAINJPIN_Pos = 1;
+		MMKAJBFBKNH[0].OKJMIFELDMD_Opn = 15;
+		MMKAJBFBKNH[0].ICCJMCCJCBG = false;
+		MMKAJBFBKNH[0].HCENOJKNCMK = false;
+	}
 
 	// // RVA: 0x1AE973C Offset: 0x1AE973C VA: 0x1AE973C
 	// public void GGKLNCHMPFC(int LFLLLOPAKCO) { }

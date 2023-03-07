@@ -1,4 +1,5 @@
 using UnityEngine;
+using XeApp;
 
 public class EOHDAOAJOHH
 {
@@ -6,7 +7,7 @@ public class EOHDAOAJOHH
 	public static bool FKOBPENIMGM; // 0x0
 	private static sbyte[] AKCBIJHIOGH = new sbyte[0x18] {0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x01, 0x01, 0x02, 0x02, 0x02, 0x02,
   0x03, 0x03, 0x03, 0x03, 0x04, 0x04, 0x04, 0x04, 0x05, 0x05, 0x05, 0x05}; // 0x4
-	// private OJIHOFLJOMK KGCCNEBMHMM; // 0x8
+	private OJIHOFLJOMK KGCCNEBMHMM; // 0x8
 	private static string[] OBAFHIJBOJP = new string[3] {JpStringLiterals.StringLiteral_10309, JpStringLiterals.StringLiteral_10309, JpStringLiterals.StringLiteral_10310}; // 0xC
 	private const long KMBNMDMFDMB = 5;
 
@@ -72,7 +73,10 @@ public class EOHDAOAJOHH
 	// // RVA: 0xFB88AC Offset: 0xFB88AC VA: 0xFB88AC
 	public void OPODBGPJDCJ()
     {
-        TodoLogger.Log(0, "TODO");
+		if(!AppEnv.IsCBT() && KGCCNEBMHMM != null)
+		{
+			TodoLogger.Log(0, "OPODBGPJDCJ");
+		}
     }
 
 	// // RVA: 0xFB8EF0 Offset: 0xFB8EF0 VA: 0xFB8EF0

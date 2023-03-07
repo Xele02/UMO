@@ -18,7 +18,10 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x118F428 Offset: 0x118F428 VA: 0x118F428
-	// public CIFHILOJJFC FJDDNKGHPHN() { }
+	public CIFHILOJJFC FJDDNKGHPHN_GetDefault()
+	{
+		return AHBBMJANGHE[0];
+	}
 
 	// // RVA: 0x118F4A4 Offset: 0x118F4A4 VA: 0x118F4A4
 	public FKNOCGCODBK_Unit()
