@@ -17,7 +17,12 @@ public class JGJFFKPFMDB
 	//public static string NCDHNMILIOJ(SakashoErrorId PPFNGGCBJKC, bool AAIOCNJGNEN) { }
 
 	//// RVA: 0xB1A9A4 Offset: 0xB1A9A4 VA: 0xB1A9A4
-	//public static bool BDGBCCGLLAJ(SakashoErrorId PPFNGGCBJKC) { }
+	public static bool BDGBCCGLLAJ_IsRankingError(SakashoErrorId PPFNGGCBJKC)
+	{
+		if (PPFNGGCBJKC != SakashoErrorId.RANKING_REWARD_NOT_FOUND && (PPFNGGCBJKC < SakashoErrorId.RANKING_CLOSED || PPFNGGCBJKC > SakashoErrorId.REGULAR_RANKING_NOT_GENERATED))
+			return PPFNGGCBJKC == SakashoErrorId.RANKING_DROPPED_PLAYER;
+		return true;
+	}
 
 	//// RVA: 0xB1A9D8 Offset: 0xB1A9D8 VA: 0xB1A9D8
 	public static bool NBDHKIGADLF(SakashoErrorId PPFNGGCBJKC)

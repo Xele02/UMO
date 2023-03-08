@@ -8,22 +8,15 @@ namespace ExternLib
 		{
 			UnityEngine.Debug.Log("SakashoFCMPushNotificationGetFCMTokens " + json);
 
-			string message = @"
-{
-    ""SAKASHO_CURRENT_ASSET_REVISION"": ""20220602120304"",
-    ""SAKASHO_CURRENT_DATE_TIME"": "+Utility.GetCurrentUnixTime()+ @",
-    ""SAKASHO_CURRENT_MASTER_REVISION"": 5,
-    ""fcm_tokens"": [
-        {
-            ""created_at"": 1654415099,
-            ""fcm_token"": ""fsv1QPtYSk29XEGdFahQbX:APA91bE12ybizthTK7N6v35M2G6HDBtFBnvq6zuUTb6xidoAq8TPwzucNwExrCIVuDloSk1i-KoP6TBHjZ9fFfI2CBEOJNkSwFHac6F82TL5O7weJczCyu1L-M8IB7A4qsUteKcWb1Ce"",
-            ""updated_at"": 1654415099
-        }
-    ]
-}
-";
+			EDOHBJAPLPF_JsonData message = GetBaseMessage();
+			message["fcm_tokens"] = new EDOHBJAPLPF_JsonData();
+			message["fcm_tokens"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			message["fcm_tokens"].Add(new EDOHBJAPLPF_JsonData());
+			message["fcm_tokens"][0]["created_at"] = 1654415099;
+			message["fcm_tokens"][0]["fcm_token"] = "fsv1QPtYSk29XEGdFahQbX:APA91bE12ybizthTK7N6v35M2G6HDBtFBnvq6zuUTb6xidoAq8TPwzucNwExrCIVuDloSk1i-KoP6TBHjZ9fFfI2CBEOJNkSwFHac6F82TL5O7weJczCyu1L-M8IB7A4qsUteKcWb1Ce";
+			message["fcm_tokens"][0]["updated_at"] = 1654415099;
 
-			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + message);
+			SendMessage(callbackId, message);
 
 			return 0;
 		}
@@ -31,9 +24,8 @@ namespace ExternLib
 		{
 			UnityEngine.Debug.Log("SakashoFCMPushNotificationAcceptPushNotification " + json);
 
-			string message = "";
-
-			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + message);
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
 
 			return 0;
 		}
@@ -42,9 +34,8 @@ namespace ExternLib
 		{
 			UnityEngine.Debug.Log("SakashoFCMPushNotificationBlockPushNotification " + json);
 
-			string message = "";
-
-			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + message);
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
 
 			return 0;
 		}

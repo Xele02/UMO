@@ -9,10 +9,8 @@ namespace ExternLib
 			UnityEngine.Debug.Log("SakashoSupportSiteGetInquiryURL " + json);
 			TodoLogger.Log(0, "SakashoSupportSiteGetInquiryURL");
 
-			string message = "";
-
-			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + message);
-
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
 			return 0;
 		}
 	}

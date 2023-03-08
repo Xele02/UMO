@@ -16,32 +16,22 @@ namespace ExternLib
 
             jsonRes["common"]["mv_ticket"] = 999;
 
-            // Hack directly send response
-            string message =
-@"{
-    ""SAKASHO_CURRENT_ASSET_REVISION"": ""20220622141305"",
-    ""SAKASHO_CURRENT_DATE_TIME"": "+Utility.GetCurrentUnixTime()+@",
-    ""SAKASHO_CURRENT_MASTER_REVISION"": 5,
-    ""created_at"": 1501751856,
-    ""data_status"": 1,
-    ""updated_at"": 1656166393,
-    ""player"": {";
-            for(int i = 0; i < names.HNBFOAJIIAL_Count; i++)
-            {
-                string str = (string)names[i];
-                message += @"
-        """+str+@""":";
-				message += jsonRes[str].EJCOJCGIBNG_ToJson();
-				message += @""+(i != names.HNBFOAJIIAL_Count -1 ? "," : "");
-            }
-            message += @"
-    }
-}";
-            //UnityEngine.Debug.Log(message);
-            UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", ""+callbackId+":"+message);
-            // end hack
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["created_at"] = 1501751856;
+			res["data_status"] = 1;
+			res["updated_at"] = 1656166393;
+			res["player"] = new EDOHBJAPLPF_JsonData();
+			res["player"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			for (int i = 0; i < names.HNBFOAJIIAL_Count; i++)
+			{
+				string str = (string)names[i];
+				res["player"][str] = jsonRes[str];
+			}
 
-            return 0;
+			SendMessage(callbackId, res);
+			// end hack
+
+			return 0;
         }
 
 		public static int SakashoPlayerDataSearchForPlayer(int callbackId, string json)
@@ -258,16 +248,14 @@ namespace ExternLib
 	""previous_page"": 0
 }";
 
-			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + result);
-
+			SendMessage(callbackId, result);
 			return 0;
 		}
 
 		public static int SakashoPlayerDataSavePlayerData(int callbackId, string json)
 		{
-			string result = "";
-			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + result);
-
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
 			return 0;
 		}
 

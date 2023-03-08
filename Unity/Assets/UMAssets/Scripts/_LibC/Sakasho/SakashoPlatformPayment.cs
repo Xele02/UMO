@@ -6,28 +6,14 @@ namespace ExternLib
 	{
 		public static int SakashoPlatformPaymentRecover(int callbackId, string json)
 		{
-			EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
-			res.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
-			res["SAKASHO_CURRENT_ASSET_REVISION"] = "20220602120304";
-			res["SAKASHO_CURRENT_DATE_TIME"] = Utility.GetCurrentUnixTime();
-			res["SAKASHO_CURRENT_MASTER_REVISION"] = 5;
-			string message = res.EJCOJCGIBNG_ToJson();
-
-			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + message);
-
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
 			return 0;
 		}
 		public static int SakashoPlatformPaymentGetProducts(int callbackId, string json)
 		{
-			EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
-			res.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
-			res["SAKASHO_CURRENT_ASSET_REVISION"] = "20220602120304";
-			res["SAKASHO_CURRENT_DATE_TIME"] = Utility.GetCurrentUnixTime();
-			res["SAKASHO_CURRENT_MASTER_REVISION"] = 5;
-			string message = res.EJCOJCGIBNG_ToJson();
-
-			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + message);
-
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
 			return 0;
 		}
 	}

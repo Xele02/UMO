@@ -34,13 +34,23 @@ public class SakashoRanking : SakashoAPIBase
 	// public static SakashoAPICallContext GetTopRanks(int id, int type, int page, int ipp, OnSuccess onSuccess, OnError onError) { }
 
 	// // RVA: 0x2E5FCE4 Offset: 0x2E5FCE4 VA: 0x2E5FCE4
-	// public static SakashoAPICallContext UpdateRankingScore(int id, double score, string extra, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext UpdateRankingScore(int id, double score, string extra, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["id"] = id;
+		h["score"] = score;
+		h["extra"] = extra;
+		return new SakashoAPICallContext(Call(SakashoRankingUpdateRankingScore, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E5FF14 Offset: 0x2E5FF14 VA: 0x2E5FF14
 	// public static SakashoAPICallContext ClaimRankingRewards(int id, OnSuccess onSuccess, OnError onError) { }
 
 	// // RVA: 0x2E600A4 Offset: 0x2E600A4 VA: 0x2E600A4
-	// public static SakashoAPICallContext UpdateRankingScore(int id, double score, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext UpdateRankingScore(int id, double score, OnSuccess onSuccess, OnError onError)
+	{
+		return UpdateRankingScore(id, score, null, onSuccess, onError);
+	}
 
 	// // RVA: 0x2E600D0 Offset: 0x2E600D0 VA: 0x2E600D0
 	// public static SakashoAPICallContext GetRankingRecordsByKeys(string[] keys, OnSuccess onSuccess, OnError onError) { }
@@ -68,7 +78,10 @@ public class SakashoRanking : SakashoAPIBase
 	// private static extern int SakashoRankingGetTopRanks(int callbackId, string json) { }
 
 	// // RVA: 0x2E60A08 Offset: 0x2E60A08 VA: 0x2E60A08
-	// private static extern int SakashoRankingUpdateRankingScore(int callbackId, string json) { }
+	private static int SakashoRankingUpdateRankingScore(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoRankingUpdateRankingScore(callbackId, json);
+	}
 
 	// // RVA: 0x2E60B18 Offset: 0x2E60B18 VA: 0x2E60B18
 	// private static extern int SakashoRankingClaimRankingRewards(int callbackId, string json) { }

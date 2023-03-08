@@ -1212,33 +1212,33 @@ public class IOGKADECKOP
 		//0x1408EEC
 		JICFCEAHCDJ = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common;
 		JNMFKOHFAFB_PublicStatus pstatus = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MHEAEGMIKIE_PublicStatus;
-		bool DHGMILEPDKF = false;
+		bool DHGMILEPDKF_IsRankingError = false;
 		if (JICFCEAHCDJ == null || pstatus == null)
 			yield break;
-		bool BEKAMBBOLBO = false;
-		bool CNAIDEAFAAM = false;
-		OEGIPPCADNA.HHCJCDFCLOB.MJFKJHJJLMN(0, false, () =>
+		bool BEKAMBBOLBO_IsDone = false;
+		bool CNAIDEAFAAM_IsError = false;
+		OEGIPPCADNA.HHCJCDFCLOB.MJFKJHJJLMN_GetUtaRateRank(0, false, () =>
 		{
 			//0xA09640
-			BEKAMBBOLBO = true;
+			BEKAMBBOLBO_IsDone = true;
 		}, () =>
 		{
 			//0xA0964C
-			BEKAMBBOLBO = true;
-			DHGMILEPDKF = true;
+			BEKAMBBOLBO_IsDone = true;
+			DHGMILEPDKF_IsRankingError = true;
 		}, () =>
 		{
 			//0xA09678
-			BEKAMBBOLBO = true;
-			CNAIDEAFAAM = true;
+			BEKAMBBOLBO_IsDone = true;
+			CNAIDEAFAAM_IsError = true;
 		});
-		while (!BEKAMBBOLBO)
+		while (!BEKAMBBOLBO_IsDone)
 			yield return null;
-		if(!CNAIDEAFAAM)
+		if(!CNAIDEAFAAM_IsError)
 		{
-			BEKAMBBOLBO = false;
-			CNAIDEAFAAM = false;
-			if(!DHGMILEPDKF)
+			BEKAMBBOLBO_IsDone = false;
+			CNAIDEAFAAM_IsError = false;
+			if(!DHGMILEPDKF_IsRankingError)
 			{
 				yield break;
 			}
@@ -1246,23 +1246,23 @@ public class IOGKADECKOP
 			{
 				yield break;
 			}
-			OEGIPPCADNA.HHCJCDFCLOB.FGMOMBKGCNF(JICFCEAHCDJ.EAHPKPADCPL_TotalUtaRate, () =>
+			OEGIPPCADNA.HHCJCDFCLOB.FGMOMBKGCNF_UpdateTotalUtaRate(JICFCEAHCDJ.EAHPKPADCPL_TotalUtaRate, () =>
 			{
 				//0xA09684
-				BEKAMBBOLBO = true;
+				BEKAMBBOLBO_IsDone = true;
 			}, () =>
 			{
 				//0xA09690
-				BEKAMBBOLBO = true;
+				BEKAMBBOLBO_IsDone = true;
 			}, () =>
 			{
 				//0xA0969C
-				BEKAMBBOLBO = true;
-				CNAIDEAFAAM = true;
+				BEKAMBBOLBO_IsDone = true;
+				CNAIDEAFAAM_IsError = true;
 			});
-			while (!BEKAMBBOLBO)
+			while (!BEKAMBBOLBO_IsDone)
 				yield return null;
-			if (!CNAIDEAFAAM)
+			if (!CNAIDEAFAAM_IsError)
 				yield break;
 			//LAB_01409244
 		}

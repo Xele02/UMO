@@ -1,4 +1,6 @@
 
+using XeSys;
+
 namespace ExternLib
 {
     public static partial class LibSakasho
@@ -11,6 +13,25 @@ namespace ExternLib
 		public static void SakashoSystemCancelAPICall(int callId)
 		{
 			TodoLogger.Log(TodoLogger.SakashoSystem, "LibSakasho.SakashoSystemCancelAPICall");
+		}
+
+		public static EDOHBJAPLPF_JsonData GetBaseMessage()
+		{
+			EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
+			res.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["SAKASHO_CURRENT_ASSET_REVISION"] = "20220602120304";
+			res["SAKASHO_CURRENT_DATE_TIME"] = Utility.GetCurrentUnixTime();
+			res["SAKASHO_CURRENT_MASTER_REVISION"] = 5;
+			return res;
+		}
+
+		public static void SendMessage(int callbackId, string message)
+		{
+			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + message);
+		}
+		public static void SendMessage(int callbackId, EDOHBJAPLPF_JsonData data)
+		{
+			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + data.EJCOJCGIBNG_ToJson());
 		}
 
 	}

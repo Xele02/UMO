@@ -141,7 +141,7 @@ namespace ExternLib
             {
                 TodoLogger.Log(0, "SakashoAssetGetAssetList "+json);
             }
-            UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", ""+callbackId+":"+message);
+			SendMessage(callbackId, message);
             // end hack
 
             return 0;
