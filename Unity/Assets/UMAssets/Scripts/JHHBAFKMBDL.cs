@@ -217,7 +217,10 @@ public class JHHBAFKMBDL
 	// private IEnumerator IJJADJCHHIG_ShowRankingDropErrorLoop(DJBHIFLHJLK HIDFAIBOHCC) { }
 
 	// // RVA: 0xB24D9C Offset: 0xB24D9C VA: 0xB24D9C
-	// public void NELJJPGFGOA(IMCBBOAFION HIDFAIBOHCC) { }
+	public void NELJJPGFGOA(IMCBBOAFION HIDFAIBOHCC)
+	{
+		TodoLogger.Log(0, "NELJJPGFGOA");
+	}
 
 	// // RVA: 0xB2509C Offset: 0xB2509C VA: 0xB2509C
 	// public void LOMNLGIDLKO(DJBHIFLHJLK AOCANKOMKFG) { }

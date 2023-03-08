@@ -1,14 +1,16 @@
 using System;
 using UnityEngine;
+using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
 	public class InheritingMenu : MonoBehaviour, IDisposable
 	{
-		// private PopupSnsContent m_snsContent; // 0xC
-		// private PopupSnsInheritingContent m_snsInheritingContent; // 0x10
-		// private PopupWindowControl m_snsCoopControl; // 0x14
-		// private Action m_inheritingSuccess; // 0x18
+		private PopupSnsContent m_snsContent; // 0xC
+		private PopupSnsInheritingContent m_snsInheritingContent; // 0x10
+		private PopupWindowControl m_snsCoopControl; // 0x14
+		private Action m_inheritingSuccess; // 0x18
 
 		public bool IsOpen { get; private set; } // 0x1C
 
@@ -65,7 +67,50 @@ namespace XeApp.Game.Menu
 		// private void PopupShowPreparationMenu(bool isTitle = False, Action callback, Action errorToTitle) { }
 
 		// // RVA: 0x13DECD4 Offset: 0x13DECD4 VA: 0x13DECD4
-		// public void PopupShowPreparationNotice(bool isTitle = False, Action callback, Action errorToTitle) { }
+		public void PopupShowPreparationNotice(bool isTitle = false, Action callback = null, Action errorToTitle = null)
+		{
+			PopupSnsSetting setting = new PopupSnsSetting();
+			setting.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("popup_inh_title_000");
+			setting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			setting.WindowSize = SizeType.Middle;
+			setting.IsTitle = isTitle;
+			setting.ButtonCallbackTwitter = () =>
+			{
+				//0x13E162C
+				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackTwitter");
+			};
+			setting.ButtonCallbackFacebook = () =>
+			{
+				//0x13E16A4
+				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackFacebook");
+			};
+			setting.ButtonCallbackLine = () =>
+			{
+				//0x13E171C
+				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackLine");
+			};
+			setting.ButtonCallbackShow = (bool status) =>
+			{
+				//0x13E0C20
+				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackShow");
+			};
+			PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x13E1794
+				if(callback != null)
+					callback();
+			}, null, () =>
+			{
+				//0x13E17A8
+				m_snsContent = m_snsCoopControl.Content as PopupSnsContent;
+				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Twitter, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
+				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Facebook, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
+				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Line, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
+			}, null);
+		}
 
 		// // RVA: 0x13DF250 Offset: 0x13DF250 VA: 0x13DF250
 		// private void SnsInheriting(HDEEBKIFLNI.DGNPPLKNCGH platform, LayoutMonthlyPassTakeover monthlylayout) { }
