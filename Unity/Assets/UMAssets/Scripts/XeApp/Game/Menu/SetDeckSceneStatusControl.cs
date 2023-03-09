@@ -292,7 +292,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					m_episodeNameText.text = PIGBBNDPPJC.EJOJNFDHDHN(episodeId);
+					m_episodeNameText.text = PIGBBNDPPJC.EJOJNFDHDHN_GetEpName(episodeId);
 				}
 				if(episodeId < 1)
 				{

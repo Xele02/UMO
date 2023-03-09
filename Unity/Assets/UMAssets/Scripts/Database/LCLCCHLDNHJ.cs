@@ -158,7 +158,39 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 		}
 
         // // RVA: 0xD9E5E0 Offset: 0xD9E5E0 VA: 0xD9E5E0
-        // public void NNIKNCGNDHK(int ANAJIAENLNB, StatusData CMCKNKKCNDK) { }
+        public void NNIKNCGNDHK_AddStatsAtLevel(int ANAJIAENLNB_Level, StatusData CMCKNKKCNDK)
+		{
+			JEJCHECAEBD_ForEachLevel(ANAJIAENLNB_Level, (int FGMJJBBDOOI_Level, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD_Info) =>
+			{
+				//0xD9EA00
+				if (GMCEJHMOJJD_Info.INDDJNMPONH_UnlockType != 5)
+					return;
+				if(GMCEJHMOJJD_Info.PIBLLGLCJEO_Value[0] > 0 && GMCEJHMOJJD_Info.PIBLLGLCJEO_Value[0] < 7)
+				{
+					switch(GMCEJHMOJJD_Info.PIBLLGLCJEO_Value[0])
+					{
+						case 1:
+							CMCKNKKCNDK.soul += GMCEJHMOJJD_Info.PIBLLGLCJEO_Value[1];
+							break;
+						case 2:
+							CMCKNKKCNDK.vocal += GMCEJHMOJJD_Info.PIBLLGLCJEO_Value[1];
+							break;
+						case 3:
+							CMCKNKKCNDK.charm += GMCEJHMOJJD_Info.PIBLLGLCJEO_Value[1];
+							break;
+						case 4:
+							CMCKNKKCNDK.life += GMCEJHMOJJD_Info.PIBLLGLCJEO_Value[1];
+							break;
+						case 5:
+							CMCKNKKCNDK.support += GMCEJHMOJJD_Info.PIBLLGLCJEO_Value[1];
+							break;
+						case 6:
+							CMCKNKKCNDK.fold += GMCEJHMOJJD_Info.PIBLLGLCJEO_Value[1];
+							break;
+					}
+				}
+			});
+		}
 
         // // RVA: 0xD9E6C4 Offset: 0xD9E6C4 VA: 0xD9E6C4
         // public void LEFFFKJFCFH(int ANAJIAENLNB, int[,] LAEAKOHKNHO) { }

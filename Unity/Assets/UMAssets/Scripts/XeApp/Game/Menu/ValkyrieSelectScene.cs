@@ -731,7 +731,7 @@ namespace XeApp.Game.Menu
 					return;
 				m_layoutValSelect.ApplySelectValkyrieImage(m_SeriesValkyrieList[SelectSeries], Select);
                 PIGBBNDPPJC epData = GetEpisodeData(m_SeriesValkyrieList[SelectSeries][Select].KELFCMEOPPM_EpisodeId);
-                m_episodePop.SetEpisodeText(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_01"), string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_02"), epData != null ? epData.OPFGFINHFCE : ""));
+                m_episodePop.SetEpisodeText(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_01"), string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_02"), epData != null ? epData.OPFGFINHFCE_Name : ""));
 				m_layoutValSelect.FadeInValkyrieImage(LayoutValkyrieSelect.Direction.LEFT);
 				m_layoutValSelect.FadeInValkyrieImage(LayoutValkyrieSelect.Direction.RIGHT);
 				m_episodePop.SetEpisodeValkyrieImage(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, 0);

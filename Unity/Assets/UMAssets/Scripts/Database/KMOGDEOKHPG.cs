@@ -109,7 +109,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 		{
 			HMGPODKEFBA_EpisodeInfo data = new HMGPODKEFBA_EpisodeInfo();
 			data.KELFCMEOPPM = (short)array[i].PPFNGGCBJKC;
-			data.IOFHEGJPHKG = (short)array[i].BDJMFDKLHPM;
+			data.IOFHEGJPHKG_StepId = (short)array[i].BDJMFDKLHPM;
 			data.PPEGAKEIEGM = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			data.EILKGEADKGH = (short)array[i].FPOMEEJFBIG;
 			for(int j = 0; j < array[i].JGOHPDKCJKB.Length; j++)
@@ -119,7 +119,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 			FMLIFJBPFNA_Step f = KODIKHBMBBJ_Steps.Find((FMLIFJBPFNA_Step HKICMNAACDA) =>
 			{
 				//0x112040C
-				return HKICMNAACDA.IOFHEGJPHKG_SId == data.IOFHEGJPHKG;
+				return HKICMNAACDA.IOFHEGJPHKG_SId == data.IOFHEGJPHKG_StepId;
 			});
 			if (f == null)
 				data.FGOGPCMHPIN = 0;
@@ -186,7 +186,7 @@ public class HMGPODKEFBA { }
 public class HMGPODKEFBA_EpisodeInfo
 {
 	public short KELFCMEOPPM; // 0x8
-	public short IOFHEGJPHKG; // 0xA
+	public short IOFHEGJPHKG_StepId; // 0xA
 	public short EILKGEADKGH; // 0xC
 	public sbyte PPEGAKEIEGM; // 0xE
 	public sbyte FGOGPCMHPIN; // 0xF

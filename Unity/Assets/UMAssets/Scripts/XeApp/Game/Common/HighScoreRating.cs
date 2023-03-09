@@ -180,7 +180,15 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA3F80 Offset: 0xEA3F80 VA: 0xEA3F80
 		private void UpdatePublicStatus()
 		{
-			TodoLogger.Log(0, "TODO UpdatePublicStatus");
+			JNMFKOHFAFB_PublicStatus.LBGEDDJKOKF rating = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MHEAEGMIKIE_PublicStatus.AEIADFODLMC_HsRating[0];
+			rating.KMBPACJNEOF_Reset();
+			for(int i = 0; i < 10; i++)
+			{
+				rating.GMLHMKAMOEN_SetFreeMusicId(i, hsRatingMusicData[i, 0].FreeMusicId);
+				rating.HJHBGHMNGKL_SetDifficulty(i, hsRatingMusicData[i, 0].Difficulty);
+				rating.ECKFCIHPHGJ_SetScore(i, hsRatingMusicData[i, 0].Score);
+				rating.HPDBEKAGKOD_SetL6(i, hsRatingMusicData[i, 0].isLine6);
+			}
 		}
 
 		//// RVA: 0xEA5AFC Offset: 0xEA5AFC VA: 0xEA5AFC

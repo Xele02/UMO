@@ -585,7 +585,22 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 	// public bool OEEJKKFOBKD(int BCCHOBPJJKE) { }
 
 	// // RVA: 0x1961E30 Offset: 0x1961E30 VA: 0x1961E30
-	// public int ELKHCOEMNOJ(int BCCHOBPJJKE, int DMNIMMGGJJJ, LLKLAKGKNLD HDGOHBFKKDM) { }
+	public int ELKHCOEMNOJ(int BCCHOBPJJKE, int DMNIMMGGJJJ, LLKLAKGKNLD_LimitOver HDGOHBFKKDM)
+	{
+		if(BCCHOBPJJKE > 0)
+		{
+			if (BCCHOBPJJKE <= CDENCMNHNGA_SceneList.Count)
+			{
+				if(CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].EKLIPGELKCL_Rarity > 4)
+				{
+					int a = HDGOHBFKKDM.ELFPIODODFF(CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].EKLIPGELKCL_Rarity);
+					if (a > 0)
+						return a <= DMNIMMGGJJJ ? 1 : 0;
+				}
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0x1961F54 Offset: 0x1961F54 VA: 0x1961F54 Slot: 11
 	public override uint CAOGDCBPBAN()

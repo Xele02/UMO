@@ -84,10 +84,9 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 		// // RVA: 0x14F7038 Offset: 0x14F7038 VA: 0x14F7038
 		public bool CGKAEMGLHNK_Possessed()
 		{
-			TodoLogger.Log(0, "CGKAEMGLHNK_Possessed");
 			if (RuntimeSettings.CurrentSettings.ForceCostumeUnlock)
 				return true;
-			return false;
+			return BEBJKJKBOGH_Date != 0;
 		}
 
 		// // RVA: 0x14FA198 Offset: 0x14FA198 VA: 0x14FA198
@@ -350,10 +349,18 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x14F84D4 Offset: 0x14F84D4 VA: 0x14F84D4
-	public StatusData NNIKNCGNDHK(int MCDINKAKFGG_DivaId)
+	public StatusData NNIKNCGNDHK_GetStatForDiva(int MCDINKAKFGG_DivaId)
 	{
-		TodoLogger.Log(0, "NNIKNCGNDHK");
-		return new StatusData();
+		StatusData res = new StatusData();
+		for (int i = 0; i < FABAGMLEKIB_List.Count; i++)
+		{
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo dbCostume = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostumeInfo(FABAGMLEKIB_List[i].BEEAIAAJOHD_CostumeId);
+			if(FABAGMLEKIB_List[i].BEBJKJKBOGH_Date != 0 && dbCostume.AHHJLDLAPAN_PrismDivaId == MCDINKAKFGG_DivaId)
+			{
+				dbCostume.NNIKNCGNDHK_AddStatsAtLevel(FABAGMLEKIB_List[i].ANAJIAENLNB_Level, res);
+			}
+		}
+		return res;
 	}
 
 	// // RVA: 0x14F8720 Offset: 0x14F8720 VA: 0x14F8720
