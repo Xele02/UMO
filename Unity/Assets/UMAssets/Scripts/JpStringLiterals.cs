@@ -201,6 +201,7 @@ class JpStringLiterals
 	public const string StringLiteral_11219 = "ノーマルミッション"; // 0x03bb3a04
 	public const string StringLiteral_11220 = "イベントミッション"; // 0x03bb3a08
 	public const string StringLiteral_11221 = "ビンゴミッション"; // 0x03BB3A0C
+	public const string StringLiteral_11248 = "既に回答済み"; //0x03bb3a78
 	public const string StringLiteral_12894 = "イベント達成pt"; // 0x03bb5430
 	public const string StringLiteral_12895 = "ログボ"; // 0x03bb5434
 	public const string StringLiteral_12896 = "イベントログインボーナス"; // 0x03bb5438

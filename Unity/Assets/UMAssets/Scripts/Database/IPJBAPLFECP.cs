@@ -7,11 +7,11 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 {
 	public class MDOMAACPHCN
 	{
-		public int PPFNGGCBJKC; // 0x8
-		public int PLALNIIBLOF; // 0xC
+		public int PPFNGGCBJKC_Id; // 0x8
+		public int PLALNIIBLOF_Enabled; // 0xC
 		public int EILKGEADKGH; // 0x10
 		public int INDDJNMPONH; // 0x14
-		public int GJLFANGDGCL; // 0x18
+		public int GJLFANGDGCL_Category; // 0x18
 		public string ADCMNODJBGJ; // 0x1C
 		public string[] BNMCMNPPPCI; // 0x20
 		public int EMNLOGDDOBC; // 0x24
@@ -62,13 +62,13 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			MDOMAACPHCN data = new MDOMAACPHCN();
-			data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
-			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
+			data.PLALNIIBLOF_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.EILKGEADKGH = array[i].EILKGEADKGH;
 			data.INDDJNMPONH = array[i].GBJFNGCDKPM;
 			data.ADCMNODJBGJ = array[i].ADCMNODJBGJ;
 			data.BNMCMNPPPCI = array[i].BNMCMNPPPCI;
-			data.GJLFANGDGCL = array[i].AGNHPHEJKMK;
+			data.GJLFANGDGCL_Category = array[i].AGNHPHEJKMK;
 			data.EMNLOGDDOBC = array[i].EMNLOGDDOBC;
 			data.IICECOLFEEL = array[i].IICECOLFEEL;
 			data.NNDBJGDFEEM = array[i].NNDBJGDFEEM;

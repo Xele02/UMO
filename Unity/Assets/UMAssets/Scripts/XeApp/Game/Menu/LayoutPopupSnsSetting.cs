@@ -5,6 +5,7 @@ using XeApp.Game.Common;
 using System.Collections.Generic;
 using System;
 using XeSys;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -59,7 +60,7 @@ namespace XeApp.Game.Menu
 			SetText(eText.Desc2, bank.GetMessageByLabel("popup_inh_sns_001"));
 			SetText(eText.Desc3, bank.GetMessageByLabel("popup_inh_sns_002"));
 			SetText(eText.Desc4, bank.GetMessageByLabel("popup_inh_sns_003"));
-			SetCheckBoxEnable(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.MDBINDIACKP_CanShowPopup(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM.HLFFEADNEHB));
+			SetCheckBoxEnable(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.MDBINDIACKP_CanShowPopup(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM.HLFFEADNEHB_AccountBindPopup));
 			if (IsTitle)
 				return;
 			SetText(eText.Desc3, "");
@@ -152,7 +153,11 @@ namespace XeApp.Game.Menu
 				m_toggleButton.AddOnClickCallback(() =>
 				{
 					//0x1789DC8
-					TodoLogger.LogNotImplemented("LayoutPopupSnsSetting.m_toggleButton click");
+					if(OnButtonCallbackShow != null)
+					{
+						OnButtonCallbackShow(m_toggleButton.IsOn);
+					}
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				});
 			}
 			m_checkBoxLayout = layout.FindViewByExId("sw_inh_pop_sns_sw_cmn_btn_check_anim") as AbsoluteLayout;

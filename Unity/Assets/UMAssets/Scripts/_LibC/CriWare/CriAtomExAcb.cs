@@ -21,7 +21,6 @@ namespace ExternLib
 
         public static void criAtomExAcb_Release(IntPtr acb_hn)
         {
-            TodoLogger.Log(0, "criAtomExAcb_Release");
             if(acbFiles.ContainsKey(acb_hn))
             {
                 acbFiles.Remove(acb_hn);

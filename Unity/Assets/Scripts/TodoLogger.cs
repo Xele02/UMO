@@ -11,6 +11,7 @@ public static class TodoLogger
 	public static int CriAtomPlugin = _NonVisible;
 	public static int CriManaPlugin = _NonVisible;
 	public static int CriWareDecrypter = _NonVisible;
+	public static int CriWareInitializer = _NonVisible;
 	public static int CriAtomExLib = _NonVisible;
 	public static int AppQualitySetting = _NonVisible;
 	public static int SecureLibAPI = _NonVisible;

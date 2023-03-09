@@ -95,7 +95,15 @@ namespace XeApp.Game.Menu
 			setting.ButtonCallbackShow = (bool status) =>
 			{
 				//0x13E0C20
-				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackShow");
+				if(status)
+				{
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.PFCBKBFONJA_SetPopupNextShowTime(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM.HLFFEADNEHB_AccountBindPopup, Utility.GetCurrentUnixTime() + 2592000); // ??0x8d00  0x27
+				}
+				else
+				{
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.PFCBKBFONJA_SetPopupNextShowTime(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM.HLFFEADNEHB_AccountBindPopup, Utility.GetCurrentUnixTime());
+				}
+				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			};
 			m_snsCoopControl = PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{

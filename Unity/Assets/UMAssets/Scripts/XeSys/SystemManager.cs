@@ -64,8 +64,6 @@ namespace XeSys
 		// // RVA: 0x23A51DC Offset: 0x23A51DC VA: 0x23A51DC
 		public static void SetForceWideScreen(bool isOn)
 		{
-			TodoLogger.Log(0, "Fix isForceWideScreen");
-			isForceWideScreen = isOn;
 			PlayerPrefs.SetInt("forceWideScreen", isOn ? 1 : 0);
 			PlayerPrefs.Save();
 		}
@@ -105,9 +103,9 @@ namespace XeSys
 			rawScreenAreaRect = XeSafeArea.GetScreenArea();
 			BaseScreenSize = new Vector2(1184, 792);
 
-			int forceWS = PlayerPrefs.GetInt("forceWideScreen", 1);
-			if(forceWS != 1)
-				forceWS = 0;
+			int isForceWideScreen = PlayerPrefs.GetInt("forceWideScreen", 1);
+			if(isForceWideScreen != 1)
+				isForceWideScreen = 0;
 			
 			AddToSystemGroup(InputManager.Create(inputManagerPrefab));
 			AddToSystemGroup(CriFileRequestManager.HEGEKFMJNCC(criFileRequestManagerPrefab));

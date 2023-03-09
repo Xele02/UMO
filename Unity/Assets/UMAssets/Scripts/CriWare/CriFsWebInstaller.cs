@@ -150,7 +150,7 @@ namespace CriWare
         // // RVA: 0x294E8A4 Offset: 0x294E8A4 VA: 0x294E8A4
         public static void FinalizeModule()
 		{
-			TodoLogger.Log(100, "CriFsWebInstaller FinalizeModule");
+			TodoLogger.Log(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller FinalizeModule");
 		}
 
 		// // RVA: 0x294C460 Offset: 0x294C460 VA: 0x294C460

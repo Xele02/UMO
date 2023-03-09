@@ -10,7 +10,7 @@ namespace XeApp.Game.DownLoad
 		private GameObject m_questionaryPrefab; // 0x28
 		private LayoutDownLoad m_Layout; // 0x2C
 		private LayoutQuestionary m_questionary; // 0x30
-		// private MBLFHJJEHLH m_anketoMrg = new MBLFHJJEHLH(); // 0x34
+		private MBLFHJJEHLH_AnketoMgr m_anketoMrg = new MBLFHJJEHLH_AnketoMgr(); // 0x34
 		private bool m_IsFinish; // 0x38
 		private bool m_IsDispDownLoadUI; // 0x39
 		private bool m_IsExecuteQuestionary; // 0x3A
@@ -60,12 +60,16 @@ namespace XeApp.Game.DownLoad
 		// // RVA: 0x11BE7E4 Offset: 0x11BE7E4 VA: 0x11BE7E4
 		private IEnumerator Co_InitializeQuestionary()
 		{
-			//UnityEngine.Debug.Log("Enter Co_InitializeQuestionary");
 			//0x11BF7A4
-			yield return null;
-
-			TodoLogger.Log(0, "TODO");
-			//UnityEngine.Debug.Log("Exit Co_InitializeQuestionary");
+			m_IsExecuteQuestionary = m_anketoMrg.KHEKNNFCAOI(1, false);
+			if (!m_IsExecuteQuestionary)
+				yield break;
+			m_questionary = Instantiate(m_questionaryPrefab).GetComponent<LayoutQuestionary>();
+			m_questionary.LoadResource();
+			while (m_questionary.IsLoading())
+				yield return null;
+			m_questionary.SetFinishDownLoad();
+			m_questionary.PushOkHander += OnQuestionaryOk;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B50E0 Offset: 0x6B50E0 VA: 0x6B50E0
@@ -95,7 +99,14 @@ namespace XeApp.Game.DownLoad
 		// private void DownLoadError() { }
 
 		// // RVA: 0x11BEB0C Offset: 0x11BEB0C VA: 0x11BEB0C
-		// private void OnQuestionaryOk(LayoutQuestionaryButton[] buttons, int qIndex) { }
+		private void OnQuestionaryOk(LayoutQuestionaryButton[] buttons, int qIndex)
+		{
+			for (int i = 0; i < m_anketoMrg.KICOACCACII[qIndex].LPKAJMLOAMF_ChoiceText.Length; i++)
+			{
+				m_anketoMrg.KICOACCACII[qIndex].MHBBJADMHPN_ChoiceSelected[i] = buttons[i].IsOn();
+			}
+			m_anketoMrg.HGOHIJMEIHG_UpdateResult(m_anketoMrg.KICOACCACII[qIndex]);
+		}
 
 		// // RVA: 0x11BEC9C Offset: 0x11BEC9C VA: 0x11BEC9C Slot: 13
 		protected override void DoUpdateMain()

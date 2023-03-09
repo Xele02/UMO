@@ -72,7 +72,15 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE36A28 Offset: 0xE36A28 VA: 0xE36A28 Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.Log(0, "TODO");
+			Parent = null;
+			ArButton = null;
+			CopyRight = null;
+			LbButtons = null;
+			Buttons = null;
+			Screen = null;
+			ScreenTap = null;
+			Texts = null;
+			titleObjectList.Clear();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B3160 Offset: 0x6B3160 VA: 0x6B3160

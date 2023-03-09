@@ -78,7 +78,7 @@ namespace CriWare
 		// // RVA: 0x2BAAFA4 Offset: 0x2BAAFA4 VA: 0x2BAAFA4
 		private void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnDestroy");
 		}
 
 		// // RVA: 0x2BAACB0 Offset: 0x2BAACB0 VA: 0x2BAACB0
