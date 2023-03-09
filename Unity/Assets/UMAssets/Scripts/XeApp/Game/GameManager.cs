@@ -553,9 +553,21 @@ namespace XeApp.Game
 				FacialNameDatabase.Create(bootAssetOperation.GetAsset<TextAsset>());
 				AssetBundleManager.UnloadAssetBundle("bt.xab");
 			}
-
-			TodoLogger.Log(0, "finish UnionDataCoroutine (Tips / Sns");
-
+			TipsControl tips = TipsControl.Instance;
+			GameObject root = GameObject.Find("Canvas-Popup");
+			tips.transform.SetParent(root.transform.GetChild(0), false);
+			tips.LoadResource();
+			tips.transform.SetAsFirstSibling();
+			while (!tips.IsInitialized)
+				yield return null;
+			AssetBundleLoadAssetOperation op = AssetBundleManager.LoadAssetAsync("ly/094.xab", "SnsNotification", typeof(GameObject));
+			yield return op;
+			m_snsNotification = Instantiate(op.GetAsset<GameObject>()).GetComponent<SnsNotification>();
+			m_snsNotification.transform.SetParent(root.transform.GetChild(0), false);
+			m_snsNotification.transform.SetAsLastSibling();
+			yield return this.StartCoroutineWatched(m_snsNotification.LoadLayout());
+			m_snsNotification.gameObject.SetActive(false);
+			AssetBundleManager.UnloadAssetBundle("ly/094.xab", false);
 			IsUnionDataInitialized = true;
 		}
 

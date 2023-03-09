@@ -2,6 +2,8 @@ using XeSys;
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
+using XeApp.Core;
 
 namespace XeApp.Game.Menu
 {
@@ -123,11 +125,49 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA97A3C Offset: 0xA97A3C VA: 0xA97A3C
-		// public void LoadResource() { }
+		public void LoadResource()
+		{
+			this.StartCoroutineWatched(LoadResourceCoroutine());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73559C Offset: 0x73559C VA: 0x73559C
 		// // RVA: 0xA97A60 Offset: 0xA97A60 VA: 0xA97A60
-		// private IEnumerator LoadResourceCoroutine() { }
+		private IEnumerator LoadResourceCoroutine()
+		{
+			int loadCount; // 0x14
+			AssetBundleLoadLayoutOperationBase layOperation; // 0x18
+
+			//0xA9AB4C
+			if (IsInitialized)
+				yield break;
+			loadCount = 0;
+			layOperation = AssetBundleManager.LoadLayoutAsync("ly/065.xab", "root_tips_window_layout_root");
+			yield return layOperation;
+			yield return Co.R(layOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0xA9A038
+				m_window = instance.GetComponent<TipsWindow>();
+			}));
+			loadCount++;
+			layOperation = AssetBundleManager.LoadLayoutAsync("ly/065.xab", "root_tips_song_plate_layout_root");
+			yield return layOperation;
+			yield return Co.R(layOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0xA9A0B4
+				m_musicInfo = instance.GetComponent<TipsMusicInfo>();
+			}));
+			loadCount++;
+			for(int i = 0; i < loadCount; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle("ly/065.xab", false);
+			}
+			yield return null;
+			m_window.gameObject.SetActive(false);
+			m_musicInfo.gameObject.SetActive(false);
+			m_window.transform.SetParent(transform, false);
+			m_musicInfo.transform.SetParent(transform, false);
+			IsInitialized = true;
+		}
 
 		// // RVA: 0xA97B0C Offset: 0xA97B0C VA: 0xA97B0C
 		// private int SearchPriorityTableIndex(int playerLevel) { }
@@ -187,13 +227,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xA98584 Offset: 0xA98584 VA: 0xA98584
 		// private long GetServerUnixTime() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73569C Offset: 0x73569C VA: 0x73569C
-		// // RVA: 0xA9A038 Offset: 0xA9A038 VA: 0xA9A038
-		// private void <LoadResourceCoroutine>b__35_0(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7356AC Offset: 0x7356AC VA: 0x7356AC
-		// // RVA: 0xA9A0B4 Offset: 0xA9A0B4 VA: 0xA9A0B4
-		// private void <LoadResourceCoroutine>b__35_1(GameObject instance) { }
 	}
 }
