@@ -97,7 +97,7 @@ namespace XeApp.Game.Menu
 				//0x13E0C20
 				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackShow");
 			};
-			PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			m_snsCoopControl = PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x13E1794
 				if(callback != null)
