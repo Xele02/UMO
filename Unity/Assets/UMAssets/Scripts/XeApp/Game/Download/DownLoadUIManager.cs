@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Game.Menu;
 
@@ -16,7 +18,19 @@ namespace XeApp.Game.DownLoad
 		private bool m_IsLoadedLayout; // 0x1D
 		private bool m_IsFade; // 0x1E
 
-		//public static DownLoadUIManager Instance { get; } 0x11B9770
+		public static DownLoadUIManager Instance { get
+			{
+				if(sm_Instance == null)
+				{
+					GameObject g = GameObject.Find("DownLoadUIManager");
+					if(g != null)
+					{
+						sm_Instance = g.GetComponent<DownLoadUIManager>();
+					}
+				}
+				return sm_Instance;
+			}
+		} //0x11B9770
 		//public GameObject UIRoot { get; } 0x11BC594
 		//public LayoutDownLoad Layout { get; } 0x11BC59C
 		//public bool IsLoadLayout { get; } 0x11BF010
@@ -36,18 +50,33 @@ namespace XeApp.Game.DownLoad
 		}
 
 		//// RVA: 0x11BC560 Offset: 0x11BC560 VA: 0x11BC560
-		//public void LoadResouce(List<int> diva_list) { }
+		public void LoadResouce(List<int> diva_list)
+		{
+			if (m_IsLoadLayout)
+				return;
+			this.StartCoroutineWatched(Co_LoadResource(diva_list));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B53F8 Offset: 0x6B53F8 VA: 0x6B53F8
 		//// RVA: 0x11C1310 Offset: 0x11C1310 VA: 0x11C1310
-		//private IEnumerator Co_LoadResource(List<int> diva_list) { }
+		private IEnumerator Co_LoadResource(List<int> diva_list)
+		{
+			//0x11C15DC
+			m_IsLoadLayout = true;
+			m_BgControl = new BgControl(m_BgRoot);
+			yield return this.StartCoroutineWatched(m_BgControl.Load(null));
+			yield return this.StartCoroutineWatched(LayoutDownLoad.Co_LoadLayout(m_UIRoot.transform, (LayoutDownLoad layout) =>
+			{
+				//0x11C1490
+				m_Layout = layout;
+			}));
+			m_BgControl.ChangeDownLoadBg();
+			m_Layout.SetupDownload(diva_list);
+			m_IsLoadedLayout = true;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B5470 Offset: 0x6B5470 VA: 0x6B5470
 		//// RVA: 0x11C13D8 Offset: 0x11C13D8 VA: 0x11C13D8
 		//public IEnumerator ChangeValkieriBg() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6B54E8 Offset: 0x6B54E8 VA: 0x6B54E8
-		//// RVA: 0x11C1490 Offset: 0x11C1490 VA: 0x11C1490
-		//private void <Co_LoadResource>b__24_0(LayoutDownLoad layout) { }
 	}
 }

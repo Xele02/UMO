@@ -68,6 +68,7 @@ public class PIGBBNDPPJC
 			CADENLBDAEB_IsNew = false;
 			BEBJKJKBOGH_Date = 0;
 			JBFLCHFEIGL = null;
+			JBCIDDKDJMM = false;
 		}
 		else
 		{
@@ -144,10 +145,6 @@ public class PIGBBNDPPJC
 			}
 			JBCIDDKDJMM = FIBLGPNEKEM(KELFCMEOPPM);
 		}
-		else
-		{
-			JBCIDDKDJMM = false;
-		}
 	}
 
 	//// RVA: 0x16D18D4 Offset: 0x16D18D4 VA: 0x16D18D4
@@ -197,13 +194,59 @@ public class PIGBBNDPPJC
 	//public int PFMLAOPEAMJ(int BNGHLLCONJM, int HMFFHLPNMPH, IMCBBOAFION BHFHGFKBOHH) { }
 
 	//// RVA: 0x16D20E4 Offset: 0x16D20E4 VA: 0x16D20E4
-	//private int GMDHJBGLBEI(int KELFCMEOPPM) { }
+	private int GMDHJBGLBEI(int KELFCMEOPPM)
+	{
+		return GMDHJBGLBEI(KELFCMEOPPM, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+	}
 
 	//// RVA: 0x16D11D0 Offset: 0x16D11D0 VA: 0x16D11D0
-	//private bool FIBLGPNEKEM(int KELFCMEOPPM) { }
+	private bool FIBLGPNEKEM(int KELFCMEOPPM)
+	{
+		for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA.Count; i++)
+		{
+			MMPBPOIFDAF_Scene.PMKOFEIONEG serverScene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[i];
+			if (serverScene.IHIAFIHAAPO_Unlocked)
+			{
+				MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[serverScene.PPFNGGCBJKC_Id - 1];
+				if (dbScene.KELFCMEOPPM_Ep == KELFCMEOPPM)
+				{
+					if(dbScene.MCCIFLKCNKO_Feed)
+					{
+						if(GCIJNCFDNON_SceneInfo.CGJCEHGFHMA(serverScene.PPFNGGCBJKC_Id) <
+							GCIJNCFDNON_SceneInfo.JLNGOOGHCNA(serverScene.PPFNGGCBJKC_Id, dbScene.EKLIPGELKCL_Rarity, serverScene.JPIPENJGGDD_Mlt > 0, serverScene.JPIPENJGGDD_Mlt))
+						{
+							return true;
+						}
+					}
+				}
+			}
+		}
+		return false;
+	}
 
 	//// RVA: 0x16D2FD4 Offset: 0x16D2FD4 VA: 0x16D2FD4
-	//public static int GMDHJBGLBEI(int KELFCMEOPPM, BBHNACPENDM AHEFHIMGIBI) { }
+	public static int GMDHJBGLBEI(int KELFCMEOPPM, BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
+	{
+		OCLHKHAMDHF_Episode.JEHNEEBBDBO_EpisodeInfo saveEp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[KELFCMEOPPM - 1];
+		MLIBEPGADJH_Scene sceneDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
+		List<MMPBPOIFDAF_Scene.PMKOFEIONEG> sceneList = AHEFHIMGIBI.PNLOINMCCKH_Scene.OPIBAPEGCLA;
+		int l30 = 0;
+		int l2c = 0;
+		for(int i = 0; i < sceneList.Count; i++)
+		{
+			MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = sceneList[i];
+			if(saveScene.IHIAFIHAAPO_Unlocked)
+			{
+				if(sceneDb.CDENCMNHNGA_SceneList[saveScene.PPFNGGCBJKC_Id - 1].KELFCMEOPPM_Ep == KELFCMEOPPM)
+				{
+					int rar = sceneDb.CDENCMNHNGA_SceneList[saveScene.PPFNGGCBJKC_Id - 1].EKLIPGELKCL_Rarity;
+					l30 += GCIJNCFDNON_SceneInfo.JLNGOOGHCNA(saveScene.PPFNGGCBJKC_Id, rar, saveScene.JPIPENJGGDD_Mlt > 0, saveScene.JPIPENJGGDD_Mlt);
+					l2c += GCIJNCFDNON_SceneInfo.CGJCEHGFHMA(saveScene.PPFNGGCBJKC_Id);
+				}
+			}
+		}
+		return l30 - l2c + saveEp.OGDBKJKIGAJ_CurrentPoint;
+	}
 
 	//// RVA: 0x16D0FEC Offset: 0x16D0FEC VA: 0x16D0FEC
 	public static string EJOJNFDHDHN_GetEpName(int KELFCMEOPPM)

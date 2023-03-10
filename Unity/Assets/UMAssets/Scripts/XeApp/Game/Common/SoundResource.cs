@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using CriWare;
@@ -268,7 +269,22 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x139B010 Offset: 0x139B010 VA: 0x139B010
-		// public static List<string> CreateBgmFilePathList(int wavId) { }
+		public static List<string> CreateBgmFilePathList(int wavId)
+		{
+			string a = "cs_w_" + wavId.ToString("D4");
+			string s = GetStreamingAssetCueSheetPath(a);
+			List<string> res = new List<string>();
+			res.Add(s + ".acb");
+			if(isSecureCueSheet(a))
+			{
+				res.Add(s + "_d.awb");
+			}
+			else
+			{
+				res.Add(s + ".awb");
+			}
+			return res;
+		}
 
 		// // RVA: 0x139A7D8 Offset: 0x139A7D8 VA: 0x139A7D8
 		public static bool isSecureCueSheet(string cueSheetName)

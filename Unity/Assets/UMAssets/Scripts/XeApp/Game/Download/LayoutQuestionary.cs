@@ -47,7 +47,10 @@ namespace XeApp.Game.DownLoad
 		}
 
 		//// RVA: 0x97F8A0 Offset: 0x97F8A0 VA: 0x97F8A0
-		//public void SetProgressValue(int value) { }
+		public void SetProgressValue(int value)
+		{
+			m_window.SetProgressValue(value);
+		}
 
 		//// RVA: 0x97F908 Offset: 0x97F908 VA: 0x97F908
 		public void SetFinishDownLoad()

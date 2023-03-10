@@ -318,7 +318,12 @@ namespace XeApp.Game.Menu
 		// public void ChangeTilingFade(float time, float alpha) { }
 
 		// // RVA: 0x143DD24 Offset: 0x143DD24 VA: 0x143DD24
-		// public void ChangeDownLoadBg() { }
+		public void ChangeDownLoadBg()
+		{
+			UnloadBgTexture();
+			m_bgBehaviour.SetMenu();
+			m_bgBehaviour.ChangeColor(BgBehaviour.ColorType.DownLoad);
+		}
 
 		// // RVA: 0x143DE8C Offset: 0x143DE8C VA: 0x143DE8C
 		// public void ChangeNameEntryBg() { }
@@ -395,7 +400,17 @@ namespace XeApp.Game.Menu
 		// public IEnumerator LoadBgTexture(GameObject obj, int id) { }
 
 		// // RVA: 0x143DD74 Offset: 0x143DD74 VA: 0x143DD74
-		// private void UnloadBgTexture() { }
+		private void UnloadBgTexture()
+		{
+			if (m_bgTexture == null)
+				return;
+			if(!m_cachedTextures.ContainsValue(m_bgTexture))
+			{
+				Resources.UnloadAsset(m_bgTexture.texture);
+				m_bgTexture.texture = null;
+			}
+			m_bgTexture = null;
+		}
 
 		// // RVA: 0x143E158 Offset: 0x143E158 VA: 0x143E158
 		// private void UnloadBgTexture(BgControl.BgTexture bgTexture) { }

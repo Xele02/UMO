@@ -110,6 +110,7 @@ namespace XeApp.Core
                     TexUVList uvList = GameManager.Instance.UnionTextureManager.GetTexUvList(runtime.UvListPathList[j]);
                     if(uvList == null)
                     {
+						Debug.Log("CreateLayoutCoroutine from bundle "+m_loadedAssetBundle.m_DebugBundleName); // UMO
                         m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TexUVList>(Path.GetFileName(runtime.UvListPathList[j]));
                         while(!m_request.isDone)
                             yield return null;

@@ -661,7 +661,10 @@ public class ILDKBCLAFPB
 			}
 
 			// // RVA: 0x2023F98 Offset: 0x2023F98 VA: 0x2023F98
-			// public void NGNECOFAMKP(FreeCategoryId.Type DEPGBBJMFED) { }
+			public void NGNECOFAMKP(FreeCategoryId.Type DEPGBBJMFED)
+			{
+				OMKLPMBJLIO_CategoryId = DEPGBBJMFED;
+			}
 
 			// // RVA: 0x2023FA0 Offset: 0x2023FA0 VA: 0x2023FA0
 			// public void HJHBGHMNGKL(Difficulty.Type AKNELONELJK) { }
@@ -673,7 +676,11 @@ public class ILDKBCLAFPB
 			// public void KJGPOAEGFHK(int EKANGPODCEP, int MCNEIJAOLNO) { }
 
 			// // RVA: 0x2023FBC Offset: 0x2023FBC VA: 0x2023FBC
-			// public void ACGKEJKPFIA(FreeCategoryId.Type DEPGBBJMFED, int GHBPLHBNMBK, OHCAABOMEOF.KGOGMKMBCPP HIDHLFCBIDE) { }
+			public void ACGKEJKPFIA(FreeCategoryId.Type DEPGBBJMFED, int GHBPLHBNMBK, OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE)
+			{
+				LGMDOEIPLAK_FreeMusicIds[(int)DEPGBBJMFED - 1] = GHBPLHBNMBK;
+				AADOPBAMLJK_GameEventTypes[(int)DEPGBBJMFED - 1] = (int)HIDHLFCBIDE;
+			}
 		}
 
 

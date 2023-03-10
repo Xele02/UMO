@@ -77,7 +77,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 				data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 				data.DOAJJALOKLI = (sbyte)array[i].KLCMKLPIDDJ;
 				data.PKNONBBKCCP = (sbyte)array[i].BAOFEFFADPD;
-				data.LIOGKHIGJKN = (ushort)array[i].LIOGKHIGJKN;
+				data.LIOGKHIGJKN_FreeMusicId = (ushort)array[i].LIOGKHIGJKN;
 				data.CMBCBNEODPD_HomeBgId = (ushort)array[i].CMBCBNEODPD;
 
 				EPPOHFLMDBC_DivaStats data2 = new EPPOHFLMDBC_DivaStats();

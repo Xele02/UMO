@@ -295,7 +295,23 @@ public class JEPBIIJDGEF_EventInfo
 	// public List<int> BHGODBCDHKM() { }
 
 	// // RVA: 0x1C3C4DC Offset: 0x1C3C4DC VA: 0x1C3C4DC
-	// public List<string> IJCPBPFEGDM() { }
+	public List<string> IJCPBPFEGDM_GetEventsInstallFiles()
+	{
+		List<string> res = new List<string>();
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		for(int i = 0; i < MPEOOINCGEN.Count; i++)
+		{
+			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN)
+			{
+				List<string> str = MPEOOINCGEN[i].IJCPBPFEGDM(time);
+				if (str != null)
+				{
+					res.AddRange(str);
+				}
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0x1C3C704 Offset: 0x1C3C704 VA: 0x1C3C704
 	public int NBIAKELCBLC(int MNNHHJBBICA, int MFJKNCACBDG, int AKNELONELJK, bool GIKLNODJKFK, int MJBODMOLOBC, int HDDCLCOMOOB)

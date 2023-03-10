@@ -82,7 +82,10 @@ namespace XeApp.Game.DownLoad
 		//public void SetCurrentPage(int num) { }
 
 		//// RVA: 0x97F8D0 Offset: 0x97F8D0 VA: 0x97F8D0
-		//public void SetProgressValue(int value) { }
+		public void SetProgressValue(int value)
+		{
+			_m_progressAnim.StartChildrenAnimGoStop(value, value);
+		}
 
 		//// RVA: 0x97F930 Offset: 0x97F930 VA: 0x97F930
 		public void SetFinishProgress()
