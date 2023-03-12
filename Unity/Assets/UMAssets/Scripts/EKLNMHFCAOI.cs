@@ -200,7 +200,7 @@ public class EKLNMHFCAOI
 	}
 
 	// // RVA: 0x12F57C4 Offset: 0x12F57C4 VA: 0x12F57C4
-	public static int GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category INDDJNMPONH_Category, int PPFNGGCBJKC_ItemId)
+	public static int GJEEGMCBGGM_GetItemFullId(FKGCBLHOOCL_Category INDDJNMPONH_Category, int PPFNGGCBJKC_ItemId)
 	{
 		return (int)INDDJNMPONH_Category * 10000 + PPFNGGCBJKC_ItemId;
 	}
@@ -212,7 +212,62 @@ public class EKLNMHFCAOI
 	// public static int ADGMGNKCIGA(int DKMLEDJJFOI) { }
 
 	// // RVA: 0x12F5818 Offset: 0x12F5818 VA: 0x12F5818
-	// public static int LKBIIPBKNGJ(int KIJAPOFAGPN) { }
+	public static int LKBIIPBKNGJ_GetItemFileStatus(int KIJAPOFAGPN)
+	{
+		FKGCBLHOOCL_Category itemCat = (FKGCBLHOOCL_Category)((KIJAPOFAGPN / 10000) & 0xff);
+		int itemId = KIJAPOFAGPN % 10000;
+		switch(itemCat)
+		{
+			case FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC:
+			case FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit:
+			case FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene:
+			case FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem:
+			case FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem:
+			case FKGCBLHOOCL_Category.GIMBFBNKPNO_CompoItem:
+			case FKGCBLHOOCL_Category.KNHFAHFCCBK_SnsItem:
+			case FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem:
+			case FKGCBLHOOCL_Category.IGIFMNJADEC_MvTicket:
+			case FKGCBLHOOCL_Category.ADCAAALBAIF_Medal:
+			case FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC:
+			case FKGCBLHOOCL_Category.LLFAAOHPMIC_EventGachaTicket:
+			case FKGCBLHOOCL_Category.DLBHNNOHLMM_PresentItem:
+			case FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem:
+			case FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem:
+			case FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem:
+			case FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem:
+			case FKGCBLHOOCL_Category.PJCJEOECLBK_MonthlyPassItem:
+			case FKGCBLHOOCL_Category.MABCLBNIOFA_ValkyrieItem:
+			case FKGCBLHOOCL_Category.CKCPFLDGILD_LimitedCompoItem:
+				return 1;
+			case FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume:
+				if(itemId > 0)
+				{
+					if(itemId <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes.Count)
+					{
+						if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[itemId - 1].PPEGAKEIEGM_Enabled == 2)
+						{
+							return 1;
+						}
+						return 2;
+					}
+				}
+				break;
+			case FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie:
+				if(itemId > 0)
+				{
+					if(itemId <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList.Count)
+					{
+						if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[itemId - 1].PPEGAKEIEGM_Enabled == 2)
+						{
+							return 1;
+						}
+						return 2;
+					}
+				}
+				break;
+		}
+		return 2;
+	}
 
 	// // RVA: 0x12F5BF8 Offset: 0x12F5BF8 VA: 0x12F5BF8
 	// public static string ANIEBBILFKN(int KIJAPOFAGPN) { }

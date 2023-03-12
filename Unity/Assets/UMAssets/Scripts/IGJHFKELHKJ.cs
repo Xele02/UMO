@@ -20,10 +20,20 @@ public class IGJHFKELHKJ
 	private string JHJMNLMNPGO; // 0xC
 
 	// // RVA: 0x11F4DB4 Offset: 0x11F4DB4 VA: 0x11F4DB4
-	// public IGJHFKELHKJ.HPJEDLPEJLF LBDOLHGDIEB(uint IOIMHJAOKOO) { }
+	public HPJEDLPEJLF LBDOLHGDIEB(uint IOIMHJAOKOO)
+	{
+		if(!BEIEHPNODAM.ContainsKey(IOIMHJAOKOO))
+			return null;
+		return BEIEHPNODAM[IOIMHJAOKOO];
+	}
 
 	// // RVA: 0x11F4E74 Offset: 0x11F4E74 VA: 0x11F4E74
-	// public void IDJJFHFPNFG(uint IOIMHJAOKOO) { }
+	public void IDJJFHFPNFG(uint IOIMHJAOKOO)
+	{
+		if(!BEIEHPNODAM.ContainsKey(IOIMHJAOKOO))
+			return;
+		BEIEHPNODAM[IOIMHJAOKOO].CPBPOIMHIML = true;
+	}
 
 	// // RVA: 0x11F4F48 Offset: 0x11F4F48 VA: 0x11F4F48
 	public void PNMIOGBPDFN()

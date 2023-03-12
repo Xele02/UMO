@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using XeApp.Game.Common;
 using XeSys;
 
 public class JHHBAFKMBDL
@@ -248,7 +249,19 @@ public class JHHBAFKMBDL
 	// public void NKIKBOJOCNN(IMCBBOAFION HIDFAIBOHCC, JFDNPFFOACP NIMPEHIECJH, string EHKMFNJBLOL) { }
 
 	// // RVA: 0xB2627C Offset: 0xB2627C VA: 0xB2627C
-	// public void AINKKHHAKLK(IMCBBOAFION HIDFAIBOHCC) { }
+	public void AINKKHHAKLK(IMCBBOAFION HIDFAIBOHCC)
+	{
+		TextPopupSetting popup = new TextPopupSetting();
+		popup.TitleText = MessageManager.Instance.GetMessage("menu", "popup_download_size_title");
+		popup.Text = MessageManager.Instance.GetMessage("menu", "popup_download_size_error");
+		popup.Buttons = new ButtonInfo[1] {
+			new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
+		};
+		PopupWindowManager.Show(popup, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) => {
+			//0x13488E8
+			HIDFAIBOHCC();
+		}, null, null, null);
+	}
 
 	// // RVA: 0xB2657C Offset: 0xB2657C VA: 0xB2657C
 	// public void AEGFNBHBJEM(IMCBBOAFION HIDFAIBOHCC) { }

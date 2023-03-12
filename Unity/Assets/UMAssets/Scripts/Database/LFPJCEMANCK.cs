@@ -10,17 +10,17 @@ public class DFHCLGPLJCP_Rules
 	public string IOMHINDAFOH_File { get; private set; } // 0xC HFKJBIDDJHL EIAEEOGCIMA MMFKGDDAIDG
 	public int KPNKPGLPDHI_Op { get; private set; } // 0x10 OLDMILDBDME EDAJJEJELHN HLIEKAOJIGI
 	public int PAAPNEMBHGN_Day { get; private set; } // 0x14 BFBNPHPDOCP LGLMKGLDFME BGNMBMCHOCF
-	// public bool EGELJDAGHPP { get; } 0x197E46C ELPABIFMEMH
-	// public bool AKHBHEFFNJC { get; } 0x197E478 BMDCOINKDMC
-	// public bool OHIOIDCLIEO { get; } 0x197E484 BIGDBDKMGED
-	// public bool BMEHOMDBEIH { get; } 0x197E490 IMICNGNNIME
-	// public bool OEACGDAKMMB { get; } 0x197E49C NFPLGHKIAFI
-	// public bool BEIECJDELHK { get; } 0x197E4A8 JNAPPKBMEHJ
+	public bool EGELJDAGHPP { get { return (KPNKPGLPDHI_Op & 1) != 0; } } //0x197E46C ELPABIFMEMH
+	public bool AKHBHEFFNJC { get { return ((KPNKPGLPDHI_Op >> 1) & 1) != 0; } } //0x197E478 BMDCOINKDMC
+	public bool OHIOIDCLIEO { get { return ((KPNKPGLPDHI_Op >> 2) & 1) != 0; } } //0x197E484 BIGDBDKMGED
+	public bool BMEHOMDBEIH { get { return ((KPNKPGLPDHI_Op >> 3) & 1) != 0; } } //0x197E490 IMICNGNNIME
+	public bool OEACGDAKMMB { get { return ((KPNKPGLPDHI_Op >> 4) & 1) != 0; } } //0x197E49C NFPLGHKIAFI
+	public bool BEIECJDELHK_WavFlag { get { return ((KPNKPGLPDHI_Op >> 5) & 1) != 0; } } //0x197E4A8 JNAPPKBMEHJ
 	public bool PEOIMDCECDL { get { return ((KPNKPGLPDHI_Op >> 6) & 1) != 0; } } //0x197E4B4 ANNFICFGPIK
-	// public bool EELHAIGHFAC { get; } 0x197E4C0 MBPJOOPLGBK
-	// public bool NGPLFEMNNPP { get; } 0x197E4CC NHIFINDFAJF
-	// public bool NIPNNJBPBFL { get; } 0x197E4D8 NNECCEFDGMB
-	// public bool ALKDIKCBKDC { get; } 0x197E4E4 IAHFHFALMDB
+	public bool EELHAIGHFAC_EventFlag { get { return ((KPNKPGLPDHI_Op >> 7) & 1) != 0; } } //0x197E4C0 MBPJOOPLGBK
+	public bool NGPLFEMNNPP_GachaFlag { get { return ((KPNKPGLPDHI_Op >> 8) & 1) != 0; } } //0x197E4CC NHIFINDFAJF
+	public bool NIPNNJBPBFL_PickupFlag { get { return ((KPNKPGLPDHI_Op >> 9) & 1) != 0; } } //0x197E4D8 NNECCEFDGMB
+	public bool ALKDIKCBKDC_ItemFlag { get { return ((KPNKPGLPDHI_Op >> 10) & 1) != 0; } } //0x197E4E4 IAHFHFALMDB
 	// public bool ABKMOFPEHEF { get; } 0x197E4F0 DHMLEGIECEC
 	// public bool PNKPHBHMLNM { get; } 0x197E4FC COJEDBKBBHK
 

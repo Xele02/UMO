@@ -28,6 +28,7 @@ public static class TodoLogger
 	public static int ManaAd = _NonVisible;
 	public static int AndroidNotification = _NonVisible;
 	public static int CriAtomExPlayer = _NonVisible;
+	public static int HashCheck = _NonVisible;
 
 	// Need to implement at some point
 	public static int _Todo = 99999999;

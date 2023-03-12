@@ -47,9 +47,11 @@ public class FECDBKKBAHO
 	}
 
 	// // RVA: 0xFCF948 Offset: 0xFCF948 VA: 0xFCF948
-	public void OJCJPCHFPGO(string CJEKGLGBIHF)
+	public void OJCJPCHFPGO_DeleteFileInfo(string CJEKGLGBIHF)
 	{
-		TodoLogger.Log(0, "TODO");
+		if(!MLHACNBJAGM_FilesInfoByHash.ContainsKey(CJEKGLGBIHF.GetHashCode()))
+			return;
+		MLHACNBJAGM_FilesInfoByHash.Remove(CJEKGLGBIHF.GetHashCode());
 	}
 
 	// // RVA: 0xFCFA28 Offset: 0xFCFA28 VA: 0xFCFA28

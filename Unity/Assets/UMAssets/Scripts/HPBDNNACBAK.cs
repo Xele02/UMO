@@ -430,24 +430,24 @@ public class HPBDNNACBAK
 	// // RVA: 0x16058D0 Offset: 0x16058D0 VA: 0x16058D0
 	public void IFDJHOKOEGA()
     {
-		HODOGPOKOOJ.JNDKAFPBENO.Clear();
-		HODOGPOKOOJ.IBBMNGEHDEP.Clear();
+		HODOGPOKOOJ.JNDKAFPBENO_Gacha.Clear();
+		HODOGPOKOOJ.IBBMNGEHDEP_Pickup.Clear();
 		for(int i = 0; i < MHKCPJDNJKI_GatchaProducts.Count; i++)
 		{
-			HODOGPOKOOJ.JNDKAFPBENO.Add(MHKCPJDNJKI_GatchaProducts[i].FDEBLMKEMLF);
+			HODOGPOKOOJ.JNDKAFPBENO_Gacha.Add(MHKCPJDNJKI_GatchaProducts[i].FDEBLMKEMLF);
 			if(MHKCPJDNJKI_GatchaProducts[i].KACECFNECON != null)
 			{
 				for(int j = 0; j < MHKCPJDNJKI_GatchaProducts[i].KACECFNECON.PGKIHFOKEHL.Count; j++)
 				{
 					int val = MHKCPJDNJKI_GatchaProducts[i].KACECFNECON.PGKIHFOKEHL[j].DNJEJEANJGL_Value;
-					int idx = HODOGPOKOOJ.IBBMNGEHDEP.FindIndex((int GHPLINIACBB) =>
+					int idx = HODOGPOKOOJ.IBBMNGEHDEP_Pickup.FindIndex((int GHPLINIACBB) =>
 					{
 						//0x1606C94
 						return val == GHPLINIACBB;
 					});
 					if(idx < 0)
 					{
-						HODOGPOKOOJ.IBBMNGEHDEP.Add(val);
+						HODOGPOKOOJ.IBBMNGEHDEP_Pickup.Add(val);
 					}
 				}
 			}
