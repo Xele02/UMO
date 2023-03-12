@@ -182,7 +182,14 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// public override string FEKEBPKINIM() { }
 
 	// // RVA: 0x113CC84 Offset: 0x113CC84 VA: 0x113CC84 Slot: 73
-	// public override List<string> IJCPBPFEGDM(long JHNMKKNEENE) { }
+	public override List<string> IJCPBPFEGDM(long JHNMKKNEENE)
+	{
+		DIHHCBACKGG_DbSection dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		if(dbSection == null)
+			return null;
+		TodoLogger.Log(0, "KPJHLACKGJF_EventMission.IJCPBPFEGDM");
+		return null;
+	}
 
 	// // RVA: 0x113CF98 Offset: 0x113CF98 VA: 0x113CF98 Slot: 74
 	// public override int EDNMFMBLCGF() { }

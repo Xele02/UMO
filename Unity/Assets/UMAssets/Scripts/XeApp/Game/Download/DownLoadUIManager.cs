@@ -31,10 +31,10 @@ namespace XeApp.Game.DownLoad
 				return sm_Instance;
 			}
 		} //0x11B9770
-		//public GameObject UIRoot { get; } 0x11BC594
-		//public LayoutDownLoad Layout { get; } 0x11BC59C
-		//public bool IsLoadLayout { get; } 0x11BF010
-		//public bool IsLoadedLayout { get; } 0x11BC558
+		public GameObject UIRoot { get { return m_UIRoot; } } //0x11BC594
+		public LayoutDownLoad Layout { get { return m_Layout; } } //0x11BC59C
+		public bool IsLoadLayout { get { return m_IsLoadLayout; } } //0x11BF010
+		public bool IsLoadedLayout { get { return m_IsLoadedLayout; } } //0x11BC558
 		//public bool IsFade { get; set; } 0x11C126C 0x11C1274
 
 		// RVA: 0x11C127C Offset: 0x11C127C VA: 0x11C127C
@@ -71,7 +71,7 @@ namespace XeApp.Game.DownLoad
 				m_Layout = layout;
 			}));
 			m_BgControl.ChangeDownLoadBg();
-			m_Layout.SetupDownload(diva_list);
+			m_Layout.SetupDownLoad(diva_list);
 			m_IsLoadedLayout = true;
 		}
 

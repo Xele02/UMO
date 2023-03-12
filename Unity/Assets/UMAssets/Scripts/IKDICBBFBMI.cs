@@ -434,10 +434,18 @@ public abstract class IKDICBBFBMI_EventBase
 	// public virtual string MAICAKMIBEM(string LJNAKDMILMC, string MNCOAGOKNAO) { }
 
 	// // RVA: 0x8E239C Offset: 0x8E239C VA: 0x8E239C Slot: 73
-	// public virtual List<string> IJCPBPFEGDM(long JHNMKKNEENE) { }
+	public virtual List<string> IJCPBPFEGDM(long JHNMKKNEENE)
+	{
+		return null;
+	}
 
 	// // RVA: 0x8E23A4 Offset: 0x8E23A4 VA: 0x8E23A4
-	// protected bool MNNNLDFNNCD(long JHNMKKNEENE) { }
+	protected bool MNNNLDFNNCD(long JHNMKKNEENE)
+	{
+		if(GLIMIGNNGGB < JHNMKKNEENE)
+			return false;
+		return LJOHLEGGGMC < JHNMKKNEENE;
+	}
 
 	// // RVA: 0x8E23DC Offset: 0x8E23DC VA: 0x8E23DC Slot: 74
 	// public virtual int EDNMFMBLCGF() { }

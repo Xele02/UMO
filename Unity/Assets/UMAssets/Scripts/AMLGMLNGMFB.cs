@@ -157,7 +157,14 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 	// public FMFBNHLMHPL.LCFOEDLCCON NDNDIAFEBFJ() { }
 
 	// // RVA: 0xCE70A8 Offset: 0xCE70A8 VA: 0xCE70A8 Slot: 73
-	// public override List<string> IJCPBPFEGDM(long JHNMKKNEENE) { }
+	public override List<string> IJCPBPFEGDM(long JHNMKKNEENE)
+	{
+		DIHHCBACKGG_DbSection dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		if(dbSection == null)
+			return null;
+		TodoLogger.Log(0, "AMLGMLNGMFB_EventAprilFool.IJCPBPFEGDM");
+		return null;
+	}
 
 	// // RVA: 0xCE746C Offset: 0xCE746C VA: 0xCE746C Slot: 74
 	// public override int EDNMFMBLCGF() { }

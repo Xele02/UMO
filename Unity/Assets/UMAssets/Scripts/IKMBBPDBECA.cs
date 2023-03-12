@@ -5,15 +5,9 @@ public class HGBOODNMNFM
 {
 	private const int FBGGEFFJJHB = 0x7daf3c5a;
 	public int CABBMIIAKPP = FBGGEFFJJHB; // 0x8
-	public List<CEBFFLDKAEC_SecureInt> ADDCEJNOJLG = new List<CEBFFLDKAEC_SecureInt>(); // 0xC
+	public List<CEBFFLDKAEC_SecureInt> ADDCEJNOJLG_Scenes = new List<CEBFFLDKAEC_SecureInt>(); // 0xC
 
-	public int KELFCMEOPPM { get; set; }
-
-	// // RVA: 0x173E794 Offset: 0x173E794 VA: 0x173E794
-	// public int AHJNJHDELBE() { }
-
-	// // RVA: 0x1749C80 Offset: 0x1749C80 VA: 0x1749C80
-	// public void PJLFKEOLFMK(int NANNGLGOFKH) { }
+	public int KELFCMEOPPM_EpisodeId { get { return CABBMIIAKPP ^ FBGGEFFJJHB; } set { CABBMIIAKPP = value ^ FBGGEFFJJHB; } } //0x173E794 AHJNJHDELBE 0x1749C80 PJLFKEOLFMK
 }
 
 public abstract class IKMBBPDBECA

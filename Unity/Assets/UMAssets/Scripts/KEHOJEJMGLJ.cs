@@ -283,9 +283,9 @@ public class KEHOJEJMGLJ
 					JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 						//0xE8CE74
 						//FCPBCDOKOPD?
-						KLIJFOBEKBE.EBCAKALIAHH();
+						KLIJFOBEKBE.EBCAKALIAHH_RemoveExpiredSongs();
 						PAIGMDNFNDJ = 0;
-						DIDACHONHJA(ref FAOOOLDDBBB, JCMJBMBMJAK_PersistentDataPath);
+						DIDACHONHJA_ListExistingFiles(ref FAOOOLDDBBB, JCMJBMBMJAK_PersistentDataPath);
 						string[] str = new string[5];
 						str[0] = ""+COJNCNGHIJC.NFEAMMJIMPG.KGHAJGGMPKL_Files.Count;
 						str[1] = ",installed=";
@@ -646,9 +646,27 @@ public class KEHOJEJMGLJ
 	}
 
 	// // RVA: 0xE88D50 Offset: 0xE88D50 VA: 0xE88D50
-	private void DIDACHONHJA(ref Dictionary<string, int> FAOOOLDDBBB, string CJJJPKJHOGM)
+	private void DIDACHONHJA_ListExistingFiles(ref Dictionary<string, int> FAOOOLDDBBB, string CJJJPKJHOGM)
 	{
-		TodoLogger.Log(0, "!!!");
+		KLIJFOBEKBE.KMHCHILJPIG();
+		if(Directory.Exists(CJJJPKJHOGM))
+		{
+			string dataPath = KEHOJEJMGLJ.JCMJBMBMJAK_PersistentDataPath;
+			int len = dataPath.Length;
+			string[] files = Directory.GetFiles(CJJJPKJHOGM, "*", SearchOption.AllDirectories);
+			for(int i = 0; i < files.Length; i++)
+			{
+				string str = files[i].Substring(len);
+				str = str.Replace('\\', '/');
+				FAOOOLDDBBB[str] = 1;
+				PAIGMDNFNDJ++;
+                FECDBKKBAHO.FHOPNIJCFKA_FileInfo finfo = KLIJFOBEKBE.LBDOLHGDIEB_GetFileInfo(str);
+				if(finfo != null)
+				{
+					finfo.GOAEFAAIOEK_Missing = false;
+				}
+            }
+		}
 	}
 
 	// // RVA: 0xE88F88 Offset: 0xE88F88 VA: 0xE88F88
@@ -791,7 +809,7 @@ public class KEHOJEJMGLJ
 			{
 				string name = files[i].Substring(idx);
 				name.Replace('\\', '/');
-				FECDBKKBAHO.FHOPNIJCFKA_FileInfo info = KLIJFOBEKBE.LBDOLHGDIEB(name);
+				FECDBKKBAHO.FHOPNIJCFKA_FileInfo info = KLIJFOBEKBE.LBDOLHGDIEB_GetFileInfo(name);
 				if(info != null && info.GEJJEDDEPMI && info.FNALNKKMKDC_ExpireTime < serverTime)
 				{
 					Debug.Log(JpStringLiterals.StringLiteral_12223 + files[i] + "</color>");

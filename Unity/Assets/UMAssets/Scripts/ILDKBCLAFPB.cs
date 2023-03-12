@@ -663,7 +663,7 @@ public class ILDKBCLAFPB
 			// // RVA: 0x2023F98 Offset: 0x2023F98 VA: 0x2023F98
 			public void NGNECOFAMKP(FreeCategoryId.Type DEPGBBJMFED)
 			{
-				OMKLPMBJLIO_CategoryId = DEPGBBJMFED;
+				OMKLPMBJLIO_CategoryId = (int)DEPGBBJMFED;
 			}
 
 			// // RVA: 0x2023FA0 Offset: 0x2023FA0 VA: 0x2023FA0

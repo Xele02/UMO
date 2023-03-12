@@ -1,4 +1,6 @@
 
+using System.Collections.Generic;
+
 [System.Obsolete("Use KNKDBNFMAKF_EventSp", true)]
 public class KNKDBNFMAKF { }
 public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
@@ -138,7 +140,10 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	// public override string FEKEBPKINIM() { }
 
 	// // RVA: 0x1128BF4 Offset: 0x1128BF4 VA: 0x1128BF4 Slot: 73
-	// public override List<string> IJCPBPFEGDM(long JHNMKKNEENE) { }
+	public override List<string> IJCPBPFEGDM(long JHNMKKNEENE)
+	{
+		return null;
+	}
 
 	// // RVA: 0x1128BFC Offset: 0x1128BFC VA: 0x1128BFC Slot: 74
 	// public override int EDNMFMBLCGF() { }

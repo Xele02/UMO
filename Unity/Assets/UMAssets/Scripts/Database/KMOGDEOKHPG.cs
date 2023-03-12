@@ -122,9 +122,9 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 				return HKICMNAACDA.IOFHEGJPHKG_SId == data.IOFHEGJPHKG_StepId;
 			});
 			if (f == null)
-				data.FGOGPCMHPIN = 0;
+				data.FGOGPCMHPIN_Count = 0;
 			else
-				data.FGOGPCMHPIN = f.FGOGPCMHPIN_Count;
+				data.FGOGPCMHPIN_Count = f.FGOGPCMHPIN_Count;
 			BBAJKJPKOHD_EpisodeList.Add(data);
 		}
 		return true;
@@ -189,7 +189,7 @@ public class HMGPODKEFBA_EpisodeInfo
 	public short IOFHEGJPHKG_StepId; // 0xA
 	public short EILKGEADKGH; // 0xC
 	public sbyte PPEGAKEIEGM; // 0xE
-	public sbyte FGOGPCMHPIN; // 0xF
+	public sbyte FGOGPCMHPIN_Count; // 0xF
 	public List<short> HHJGBJCIFON_Rewards = new List<short>(10); // 0x10
 
 	public bool IPJMPBANBPP { get; } //0x15F4CC4

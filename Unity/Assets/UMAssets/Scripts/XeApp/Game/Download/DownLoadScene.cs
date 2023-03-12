@@ -110,13 +110,13 @@ namespace XeApp.Game.DownLoad
 					}
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.ACGKEJKPFIA((FreeCategoryId.Type)fminfo.DEPGBBJMFED_CategoryId, fminfo.GHBPLHBNMBK_FreeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL);
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.NGNECOFAMKP((FreeCategoryId.Type)fminfo.DEPGBBJMFED_CategoryId);
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.ACGKEJKPFIA(false, fminfo.GHBPLHBNMBK_FreeMusicId, 0);
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.GJDEHJBAMNH(0);
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.ACGKEJKPFIA_SetSelectedSong(false, fminfo.GHBPLHBNMBK_FreeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL);
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.GJDEHJBAMNH_SetSeries(MusicSelectConsts.SeriesType.All);
 				}
 			}
 			HBCPJANGOLB h = new HBCPJANGOLB();
 			h.OBKGEDCKHHE();
-			List<string> str2 = h.LMFHAGHJIEM();
+			List<string> str2 = HBCPJANGOLB.LMFHAGHJIEM_GetAssetsList(h);
 			if(str2.Count > 0)
 			{
 				if (KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE == null)
@@ -138,16 +138,16 @@ namespace XeApp.Game.DownLoad
 			}
 			if(m_IsExecuteQuestionary)
 			{
-				if(!DownLoadUIManager.Instance.m_IsLoadLayout)
+				if(!DownLoadUIManager.Instance.IsLoadLayout)
 				{
-					DownLoadUIManager.Instance.LoadResource();
+					LoadResource();
 				}
 			}
-			if(DownLoadUIManager.Instance.m_IsLoadLayout)
+			if(DownLoadUIManager.Instance.IsLoadLayout)
 			{
-				while (!DownLoadUIManager.Instance.m_IsLoadedLayout)
+				while (!DownLoadUIManager.Instance.IsLoadedLayout)
 					yield return null;
-				m_Layout = DownLoadUIManager.Instance.m_Layout;
+				m_Layout = DownLoadUIManager.Instance.Layout;
 				m_Layout.InVisible();
 			}
 			//LAB_011c0374
@@ -157,7 +157,7 @@ namespace XeApp.Game.DownLoad
 			}
 			else
 			{
-				m_questionary.transform.SetParent(DownLoadUIManager.Instance.m_UIRoot.transform, false);
+				m_questionary.transform.SetParent(DownLoadUIManager.Instance.UIRoot.transform, false);
 				yield return this.StartCoroutineWatched(Co_QuestionayProc());
 				//5
 			}
@@ -196,11 +196,19 @@ namespace XeApp.Game.DownLoad
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B50E0 Offset: 0x6B50E0 VA: 0x6B50E0
 		// // RVA: 0x11BE890 Offset: 0x11BE890 VA: 0x11BE890
-		// private IEnumerator Co_QuestionayProc() { }
+		private IEnumerator Co_QuestionayProc()
+		{
+			TodoLogger.Log(0, "Co_QuestionayProc");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B5158 Offset: 0x6B5158 VA: 0x6B5158
 		// // RVA: 0x11BE93C Offset: 0x11BE93C VA: 0x11BE93C
-		// private IEnumerator Co_DownLoadProc() { }
+		private IEnumerator Co_DownLoadProc()
+		{
+			TodoLogger.Log(0, "Co_DownLoadProc");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B51D0 Offset: 0x6B51D0 VA: 0x6B51D0
 		// // RVA: 0x11BE9E8 Offset: 0x11BE9E8 VA: 0x11BE9E8
@@ -215,10 +223,17 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11BEA7C Offset: 0x11BEA7C VA: 0x11BEA7C
-		// private void FinishDownLoad() { }
+		private void FinishDownLoad()
+		{
+			if(!m_IsFinish)
+				m_IsFinish = true;
+		}
 
 		// // RVA: 0x11BEAA4 Offset: 0x11BEAA4 VA: 0x11BEAA4
-		// private void DownLoadError() { }
+		private void DownLoadError()
+		{
+			TodoLogger.Log(0, "DownloadScene.DownLoadError");
+		}
 
 		// // RVA: 0x11BEB0C Offset: 0x11BEB0C VA: 0x11BEB0C
 		private void OnQuestionaryOk(LayoutQuestionaryButton[] buttons, int qIndex)

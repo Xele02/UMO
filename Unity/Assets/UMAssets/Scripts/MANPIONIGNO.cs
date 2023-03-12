@@ -232,7 +232,13 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// public bool GPGPLIAHGJH(int AHHJLDLAPAN) { }
 
 	// // RVA: 0xA27DB0 Offset: 0xA27DB0 VA: 0xA27DB0 Slot: 73
-	// public override List<string> IJCPBPFEGDM(long JHNMKKNEENE) { }
+	public override List<string> IJCPBPFEGDM(long JHNMKKNEENE)
+	{
+		if(!MNNNLDFNNCD(JHNMKKNEENE))
+			return null;
+		TodoLogger.Log(0, "MANPIONIGNO_EventGoDiva.IJCPBPFEGDM");
+		return null;
+	}
 
 	// // RVA: 0xA2802C Offset: 0xA2802C VA: 0xA2802C Slot: 74
 	// public override int EDNMFMBLCGF() { }

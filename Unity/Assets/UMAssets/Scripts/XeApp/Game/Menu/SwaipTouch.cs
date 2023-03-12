@@ -219,7 +219,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF976F4 Offset: 0xF976F4 VA: 0xF976F4
-		// public void SetHitCheck(RectTransform rect) { }
+		public void SetHitCheck(RectTransform rect)
+		{
+			m_hit_check = rect;
+		}
 
 		// // RVA: 0xF97114 Offset: 0xF97114 VA: 0xF97114
 		// private void InputSwaip(SwaipTouch.Direction dir) { }

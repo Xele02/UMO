@@ -199,7 +199,7 @@ public class LOBDIAABMKG
 						MLIBEPGADJH_Scene sceneDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
 						foreach(var k in KACECFNECON.NNDMIOEKKMM)
 						{
-							foreach(var l in k.ADDCEJNOJLG)
+							foreach(var l in k.ADDCEJNOJLG_Scenes)
 							{
 								if(sceneDb.CDENCMNHNGA_SceneList[l.DNJEJEANJGL_Value - 1].OOOPJNKBDIL_Is6OrMoreRarity())
 								{

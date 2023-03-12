@@ -439,7 +439,13 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	// public override bool GJMGKBDGMOP(long LPEKHFOMCAH) { }
 
 	// // RVA: 0x1B865E4 Offset: 0x1B865E4 VA: 0x1B865E4 Slot: 73
-	// public override List<string> IJCPBPFEGDM(long JHNMKKNEENE) { }
+	public override List<string> IJCPBPFEGDM(long JHNMKKNEENE)
+	{
+		if(!MNNNLDFNNCD(JHNMKKNEENE))
+			return null;
+		TodoLogger.Log(0, "HAEDCCLHEMN_EventBattle.IJCPBPFEGDM");
+		return null;
+	}
 
 	// // RVA: 0x1B867D8 Offset: 0x1B867D8 VA: 0x1B867D8 Slot: 74
 	// public override int EDNMFMBLCGF() { }
