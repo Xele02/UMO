@@ -7,7 +7,7 @@ namespace XeApp.Game
 {
 	public class CustomScreenKeyboard : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private List<ButtonBase> CustomInputList;
 		public int InputFieldCount;

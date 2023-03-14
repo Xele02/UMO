@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 {
 	public class DivaStatusParam : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[Serializable]
 		public class DivaStatusSelectScene : UnityEvent<int>
 		{

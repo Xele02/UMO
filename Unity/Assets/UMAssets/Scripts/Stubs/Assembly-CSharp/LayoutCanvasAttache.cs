@@ -2,5 +2,5 @@ using XeSys.Gfx;
 
 public class LayoutCanvasAttache : LayoutUGUIScriptBase
 {
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 }

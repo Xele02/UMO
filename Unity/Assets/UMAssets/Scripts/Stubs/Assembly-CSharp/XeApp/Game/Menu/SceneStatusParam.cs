@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 			Pickup = 2,
 		}
 
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[Serializable]
 		public class SceneAbilityButtonEvent : UnityEvent<int>
 		{

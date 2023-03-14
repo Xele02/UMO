@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LobbyChatBbsSwitchButton : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ToggleButton m_chatButton;
 		[SerializeField]

@@ -6,7 +6,7 @@ namespace XeApp.Game.Common
 {
 	public class LayoutSkillRegulationWindow : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text[] m_skillLevelTexts;
 		[SerializeField]

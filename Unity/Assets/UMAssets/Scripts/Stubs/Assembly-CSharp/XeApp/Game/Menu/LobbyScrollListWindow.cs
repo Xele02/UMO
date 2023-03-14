@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LobbyScrollListWindow : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private RawImageEx m_decoIconImage01;
 		[SerializeField]

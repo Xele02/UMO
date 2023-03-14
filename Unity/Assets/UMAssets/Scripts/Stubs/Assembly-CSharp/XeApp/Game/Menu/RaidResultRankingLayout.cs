@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class RaidResultRankingLayout : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_rankText;
 		[SerializeField]

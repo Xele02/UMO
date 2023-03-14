@@ -6,7 +6,7 @@ namespace XeApp.Game.RhythmAdjust
 {
 	public class LayoutRhythmAdjustWindow : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Slider m_sliderPrefab;
 		[SerializeField]

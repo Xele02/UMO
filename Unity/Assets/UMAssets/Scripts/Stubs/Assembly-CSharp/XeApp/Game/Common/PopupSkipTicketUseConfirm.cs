@@ -13,7 +13,7 @@ namespace XeApp.Game.Common
 			Ap = 2,
 		}
 
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{

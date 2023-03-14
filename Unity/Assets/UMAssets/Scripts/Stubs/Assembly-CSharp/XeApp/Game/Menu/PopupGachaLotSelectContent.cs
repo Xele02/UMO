@@ -8,7 +8,7 @@ namespace XeApp.Game.Menu
 {
 	public class PopupGachaLotSelectContent : LayoutUGUIScriptBase, IPopupContent
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{

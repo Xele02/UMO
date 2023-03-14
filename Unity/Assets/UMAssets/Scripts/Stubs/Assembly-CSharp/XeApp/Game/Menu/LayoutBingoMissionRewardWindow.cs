@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutBingoMissionRewardWindow : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private SwapScrollList m_scrollList;
 		public List<string> missionTextList;

@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class EpisodeReleaseWindow : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ActionButton m_plas;
 		[SerializeField]

@@ -5,7 +5,7 @@ namespace XeApp.Game.Menu
 {
 	public class MenuButtonNewIcon : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private int m_iconId;
 		[SerializeField]

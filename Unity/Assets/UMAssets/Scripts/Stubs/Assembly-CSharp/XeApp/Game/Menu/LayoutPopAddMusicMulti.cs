@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopAddMusicMulti : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private SwapScrollList scrollList;
 	}

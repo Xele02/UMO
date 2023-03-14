@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 			Raid_Result = 4,
 		}
 
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_player_name;
 		[SerializeField]

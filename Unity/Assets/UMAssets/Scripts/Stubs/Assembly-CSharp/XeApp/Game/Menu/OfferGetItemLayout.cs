@@ -8,7 +8,7 @@ namespace XeApp.Game.Menu
 {
 	public class OfferGetItemLayout : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		public float nextItemMoveSec;
 		public float backItemMoveSec;
 		[SerializeField]

@@ -40,7 +40,7 @@ namespace XeApp.Game.Menu
 		}
 
 
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private RawImageEx[] m_icons;
 		[SerializeField]

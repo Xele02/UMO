@@ -6,7 +6,7 @@ namespace XeApp.Game.Common
 {
 	public class LayoutPopupConfigRhythmNotes : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_titleText;
 		[SerializeField]

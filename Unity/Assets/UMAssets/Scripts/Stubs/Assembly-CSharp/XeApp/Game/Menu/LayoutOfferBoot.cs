@@ -4,7 +4,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutOfferBoot : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		public bool IsStartEnd;
 	}
 }
