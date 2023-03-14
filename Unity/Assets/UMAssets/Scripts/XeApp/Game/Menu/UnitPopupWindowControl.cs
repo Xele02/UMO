@@ -1,27 +1,78 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
 	public class UnitPopupWindowControl
 	{
-		// private PopupUnitSaveListContentSetting m_unitSaveListSetting; // 0x8
-		// private PopupUnitSaveConfirmContentSetting m_unitSaveConfirmSetting; // 0xC
-		// private PopupAutoSettingContentSetting m_unitAutoSettingSetting; // 0x10
-		// private PopupSubPlateContentSetting m_subPlateSetting; // 0x14
-		// private TextPopupSetting m_textContentSetting; // 0x18
-		// private TextPopupSetting m_skillInfoContentSetting; // 0x1C
-		// private TextPopupSetting m_plateAllClearSetting; // 0x20
-		// private TextPopupSetting m_subPlateLockSetting; // 0x24
+		private PopupUnitSaveListContentSetting m_unitSaveListSetting; // 0x8
+		private PopupUnitSaveConfirmContentSetting m_unitSaveConfirmSetting; // 0xC
+		private PopupAutoSettingContentSetting m_unitAutoSettingSetting; // 0x10
+		private PopupSubPlateContentSetting m_subPlateSetting; // 0x14
+		private TextPopupSetting m_textContentSetting; // 0x18
+		private TextPopupSetting m_skillInfoContentSetting; // 0x1C
+		private TextPopupSetting m_plateAllClearSetting; // 0x20
+		private TextPopupSetting m_subPlateLockSetting; // 0x24
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7359F4 Offset: 0x7359F4 VA: 0x7359F4
 		// RVA: 0x12475E0 Offset: 0x12475E0 VA: 0x12475E0
 		public IEnumerator Initialize(GameObject parent, UnityAction action)
 		{
-			TodoLogger.Log(0, "UnitPopupWindowControl Initialize");
-			action();
-			yield break;
+			//0x1249C58
+			MessageBank bank = MessageManager.Instance.GetBank("menu");
+			m_unitSaveListSetting = new PopupUnitSaveListContentSetting();
+			m_unitSaveListSetting.WindowSize = SizeType.Large;
+			m_unitSaveListSetting.TitleText = bank.GetMessageByLabel("unit_popup_title_00");
+			m_unitSaveConfirmSetting = new PopupUnitSaveConfirmContentSetting();
+			m_unitSaveConfirmSetting.WindowSize = SizeType.Large;
+			m_unitSaveListSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			m_unitAutoSettingSetting = new PopupAutoSettingContentSetting();
+			m_unitAutoSettingSetting.WindowSize = SizeType.Large;
+			m_unitAutoSettingSetting.TitleText = bank.GetMessageByLabel("popup_text_14");
+			m_unitAutoSettingSetting.Tabs = new PopupTabButton.ButtonLabel[2]
+			{
+				PopupTabButton.ButtonLabel.SimpleAutoSet, PopupTabButton.ButtonLabel.NormalAutoSet
+			};
+			m_unitAutoSettingSetting.DefaultTab = PopupTabButton.ButtonLabel.SimpleAutoSet;
+			m_subPlateSetting = new PopupSubPlateContentSetting();
+			m_subPlateSetting.WindowSize = SizeType.Large;
+			m_subPlateSetting.TitleText = bank.GetMessageByLabel("popup_text_17");
+			m_textContentSetting = new TextPopupSetting();
+			m_textContentSetting.TitleText = bank.GetMessageByLabel("popup_text_15");
+			m_textContentSetting.WindowSize = SizeType.Small;
+			m_textContentSetting.IsCaption = false;
+			m_skillInfoContentSetting = new TextPopupSetting();
+			m_skillInfoContentSetting.TitleText = bank.GetMessageByLabel("popup_text_16");
+			m_skillInfoContentSetting.WindowSize = SizeType.Middle;
+			m_skillInfoContentSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			m_plateAllClearSetting = new TextPopupSetting();
+			m_plateAllClearSetting.TitleText = bank.GetMessageByLabel("popup_text_12");
+			m_plateAllClearSetting.Text = bank.GetMessageByLabel("unit_clearplate_confirm_text");
+			m_plateAllClearSetting.WindowSize = SizeType.Small;
+			m_subPlateLockSetting = new TextPopupSetting();
+			m_subPlateLockSetting.Text = bank.GetMessageByLabel("subplate_lock_text");
+			m_subPlateLockSetting.WindowSize = SizeType.Small;
+			m_subPlateLockSetting.IsCaption = false;
+			m_subPlateLockSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			m_unitSaveListSetting.SetParent(parent.transform);
+			m_unitSaveConfirmSetting.SetParent(parent.transform);
+			m_unitAutoSettingSetting.SetParent(parent.transform);
+			m_subPlateSetting.SetParent(parent.transform);
+			yield return null;
+			if (action != null)
+				action();
 		}
 
 		// // RVA: 0x12476C0 Offset: 0x12476C0 VA: 0x12476C0
