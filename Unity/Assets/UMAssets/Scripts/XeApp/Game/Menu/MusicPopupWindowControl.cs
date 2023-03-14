@@ -1,22 +1,46 @@
+using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
 	public class MusicPopupWindowControl
 	{
-		// private MusicInfoPopupSetting m_musicInfoPopupSetting; // 0x8
-		// private EnemyInfoPopupSetting m_enemyInfoPopupSetting; // 0xC
-		// private PopupDivaSkillLevelSetting m_divaSkillLevelPopupSetting; // 0x10
-		// private PopupTabSetting m_tabSetting; // 0x14
-		// private PopupTabContents m_tabContents; // 0x18
-		// private static readonly Dictionary<int, PopupTabContents.ContentsData> m_contensDataDic; // 0x0
-		// private static readonly List<PopupTabButton.ButtonLabel>[] m_contentLabel; // 0x4
-		// private static readonly List<ButtonInfo>[] m_popupButton; // 0x8
+		private MusicInfoPopupSetting m_musicInfoPopupSetting; // 0x8
+		private EnemyInfoPopupSetting m_enemyInfoPopupSetting; // 0xC
+		private PopupDivaSkillLevelSetting m_divaSkillLevelPopupSetting; // 0x10
+		private PopupTabSetting m_tabSetting; // 0x14
+		private PopupTabContents m_tabContents; // 0x18
+		private static readonly Dictionary<int, PopupTabContents.ContentsData> m_contensDataDic = new Dictionary<int, PopupTabContents.ContentsData>(); // 0x0
+		private static readonly List<PopupTabButton.ButtonLabel>[] m_contentLabel = new List<PopupTabButton.ButtonLabel>[2]
+			{
+				new List<PopupTabButton.ButtonLabel>() { PopupTabButton.ButtonLabel.MusicInformation, PopupTabButton.ButtonLabel.DivaLevelOfSkill },
+				new List<PopupTabButton.ButtonLabel>() { PopupTabButton.ButtonLabel.MusicInformation, PopupTabButton.ButtonLabel.EnemyInformation }
+			}; // 0x4
+		private static readonly List<ButtonInfo>[] m_popupButton = new List<ButtonInfo>[2]
+		{
+			new List<ButtonInfo>()
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+			}, new List<ButtonInfo>()
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}
+		}; // 0x8
 
 		// // RVA: 0x104BB44 Offset: 0x104BB44 VA: 0x104BB44
 		public void Initialize(Transform parent)
 		{
-			TodoLogger.Log(0, "MusicPopupWindowControl Initialize");
+			m_musicInfoPopupSetting = new MusicInfoPopupSetting();
+			m_enemyInfoPopupSetting = new EnemyInfoPopupSetting();
+			m_divaSkillLevelPopupSetting = new PopupDivaSkillLevelSetting();
+			m_musicInfoPopupSetting.SetParent(parent);
+			m_enemyInfoPopupSetting.SetParent(parent);
+			m_divaSkillLevelPopupSetting.SetParent(parent);
+			m_contensDataDic.Add(6, new PopupTabContents.ContentsData(6, m_musicInfoPopupSetting, "popup_music_select_00"));
+			m_contensDataDic.Add(6, new PopupTabContents.ContentsData(7, m_enemyInfoPopupSetting, "popup_music_select_07"));
+			m_contensDataDic.Add(8, new PopupTabContents.ContentsData(8, m_divaSkillLevelPopupSetting, "popup_music_select_06"));
 		}
 
 		// // RVA: 0x104BE40 Offset: 0x104BE40 VA: 0x104BE40
@@ -48,11 +72,5 @@ namespace XeApp.Game.Menu
 		// [IteratorStateMachineAttribute] // RVA: 0x6C92A4 Offset: 0x6C92A4 VA: 0x6C92A4
 		// // RVA: 0x104C4F4 Offset: 0x104C4F4 VA: 0x104C4F4
 		// private IEnumerator OnBuyMusicCoroutine(int musicId, MusicTextDatabase.TextInfo musicInfo) { }
-
-		// RVA: 0x104C5C4 Offset: 0x104C5C4 VA: 0x104C5C4
-		static MusicPopupWindowControl()
-		{
-			TodoLogger.Log(0, "static MusicPopupWindowControl");
-		}
 	}
 }

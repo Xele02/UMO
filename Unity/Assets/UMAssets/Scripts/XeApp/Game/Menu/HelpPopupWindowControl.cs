@@ -4,16 +4,20 @@ namespace XeApp.Game.Menu
 {
 	public class HelpPopupWindowControl
 	{
-		// private PopupTabContents m_tabContents; // 0x8
-		// private PopupTabSetting m_tabSetting; // 0xC
-		// private HelpSelectPopupSetting m_wiki_setting; // 0x10
-		// private HelpSelectPopupSetting m_help_setting; // 0x14
-		// private Transform m_parent; // 0x18
+		private PopupTabContents m_tabContents; // 0x8
+		private PopupTabSetting m_tabSetting; // 0xC
+		private HelpSelectPopupSetting m_wiki_setting; // 0x10
+		private HelpSelectPopupSetting m_help_setting; // 0x14
+		private Transform m_parent; // 0x18
 
 		// RVA: 0x953ED4 Offset: 0x953ED4 VA: 0x953ED4
 		public void Initialize(Transform parent)
 		{
-			TodoLogger.Log(0, "HelpPopupWindowControl Initialize");
+			m_parent = parent;
+			m_wiki_setting = new HelpSelectPopupSetting();
+			m_help_setting = new HelpSelectPopupSetting();
+			m_wiki_setting.SetParent(m_parent);
+			m_help_setting.SetParent(m_parent);
 		}
 
 		// // RVA: 0x953FBC Offset: 0x953FBC VA: 0x953FBC

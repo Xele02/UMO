@@ -178,8 +178,19 @@ namespace XeApp.Game.Common
 		// // RVA: 0x139697C Offset: 0x139697C VA: 0x139697C
 		public void RequestEntryMenuCueSheet(UnityAction onLoadedCallback)
 		{
-			TodoLogger.Log(0, "TODO");
-			onLoadedCallback();
+			RemoveSectionallySECueSheet();
+			bool skipRaidLobby = true;
+			if(!GameManager.Instance.IsTutorial)
+			{
+				if(IMMAOANGPNK.HHCJCDFCLOB != null && IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				{
+					skipRaidLobby = !IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LGLJALBIIIB_IsRaidLobbyLoaded();
+				}
+			}
+			List<string> l = new List<string>() { "cs_se_menu", "cs_se_result" };
+			if (!skipRaidLobby)
+				l.Add("cs_se_raid");
+			this.StartCoroutineWatched(Co_InstallProcess(l.ToArray(), onLoadedCallback));
 		}
 
 		// // RVA: 0x1396BFC Offset: 0x1396BFC VA: 0x1396BFC

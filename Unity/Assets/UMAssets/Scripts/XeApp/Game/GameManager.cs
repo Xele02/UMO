@@ -1275,7 +1275,7 @@ namespace XeApp.Game
 		// // RVA: 0x9A0C6C Offset: 0x9A0C6C VA: 0x9A0C6C
 		public void SetTouchEffectMode(bool isRhythmGame)
 		{
-			TodoLogger.Log(0, "SetTouchEffectMode");
+			m_touchParticle.SetTouchEffectMode(isRhythmGame);
 		}
 
 		// // RVA: 0x9A0CA0 Offset: 0x9A0CA0 VA: 0x9A0CA0

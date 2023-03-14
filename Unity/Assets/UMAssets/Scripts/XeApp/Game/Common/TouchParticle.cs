@@ -145,6 +145,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1CD07C8 Offset: 0x1CD07C8 VA: 0x1CD07C8
-		// public void SetTouchEffectMode(bool isRhythmGame) { }
+		public void SetTouchEffectMode(bool isRhythmGame)
+		{
+			Vector3 v = new Vector3(1, 1, 1);
+			if (isRhythmGame)
+				v = new Vector3(2, 2, 2);
+			transform.localScale = v;
+			for(int i = 0; i < m_patricles.Length; i++)
+			{
+				m_patricles[i].transform.localScale = v;
+			}
+		}
 	}
 }

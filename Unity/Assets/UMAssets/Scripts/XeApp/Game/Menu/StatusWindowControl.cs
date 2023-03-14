@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,18 +7,26 @@ namespace XeApp.Game.Menu
 {
 	public class StatusWindowControl
 	{
-		// private Dictionary<int, List<StatusPopupState>> m_popStateDict = new Dictionary<int, List<StatusPopupState>>(); // 0x8
-		// private int m_historyPosition; // 0xC
-		// public DivaStatePopupSetting m_divaStatePopup; // 0x10
-		// public SceneStatePopupSetting m_sceneStatePopup; // 0x14
+		//private Dictionary<int, List<StatusPopupState>> m_popStateDict = new Dictionary<int, List<StatusPopupState>>(); // 0x8
+		private int m_historyPosition; // 0xC
+		public DivaStatePopupSetting m_divaStatePopup; // 0x10
+		public SceneStatePopupSetting m_sceneStatePopup; // 0x14
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7354B4 Offset: 0x7354B4 VA: 0x7354B4
 		// RVA: 0x12E147C Offset: 0x12E147C VA: 0x12E147C
 		public IEnumerator Initialize(GameObject parent, UnityAction action)
 		{
-			TodoLogger.Log(0, "StatusWindowControl Initialize");
-			action();
-			yield break;
+			//0x12E33B4
+			m_divaStatePopup = new DivaStatePopupSetting();
+			m_divaStatePopup.SetParent(parent.transform);
+			yield return null;
+			m_divaStatePopup.WindowSize = Common.SizeType.Large;
+			m_sceneStatePopup = new SceneStatePopupSetting();
+			m_sceneStatePopup.SetParent(parent.transform);
+			yield return null;
+			m_sceneStatePopup.WindowSize = Common.SizeType.Large;
+			if (action != null)
+				action();
 		}
 
 		// // RVA: 0x12E155C Offset: 0x12E155C VA: 0x12E155C

@@ -9,6 +9,13 @@ namespace XeApp.Game.Menu
 {
 	public class SceneStatusParam : LayoutUGUIScriptBase
 	{
+		public enum PageSave
+		{
+			None = 0,
+			Player = 1,
+			Pickup = 2,
+		}
+
     public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[Serializable]
 		public class SceneAbilityButtonEvent : UnityEvent<int>

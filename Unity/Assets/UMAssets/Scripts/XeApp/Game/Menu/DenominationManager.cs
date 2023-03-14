@@ -28,14 +28,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17CF4F0 Offset: 0x17CF4F0 VA: 0x17CF4F0
 		public static DenominationManager Create(Transform parent)
 		{
-			TodoLogger.Log(5, "DenominationManager.Create");
-			return null;
+			if(sm_GameObject == null)
+			{
+				sm_GameObject = new GameObject("DenominationManager");
+				sm_GameObject.AddComponent<DenominationManager>();
+			}
+			sm_GameObject.transform.SetParent(parent, false);
+			return sm_GameObject.GetComponent<DenominationManager>();
 		}
 
 		// // RVA: 0x17CF744 Offset: 0x17CF744 VA: 0x17CF744
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			sm_GameObject = null;
+			m_paidVCPurchase = null;
 		}
 
 		// // RVA: 0x17CF7DC Offset: 0x17CF7DC VA: 0x17CF7DC

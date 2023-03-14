@@ -1274,7 +1274,28 @@ namespace XeApp.Game.Menu
 			public bool CanShowTips(TransitionList.Type from, TransitionList.Type to, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene camBackUnityScene, out int count)
 			{
 				count = 0;
-				TodoLogger.Log(0, "TODO");
+				for(int i = 0; i < tipsPlaceList.Length; i++)
+				{
+					bool b;
+					if (tipsPlaceList[i].camBackUnityScene == MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None)
+						b = true;
+					else
+					{
+						b = tipsPlaceList[i].camBackUnityScene == camBackUnityScene;
+					}
+					bool b2 = true;
+					if(tipsPlaceList[i].from != TransitionList.Type.UNDEFINED)
+					{
+						b2 = false;
+						if (tipsPlaceList[i].from == from)
+							b2 = true;
+					}
+					if(b && b2 && tipsPlaceList[i].to == to)
+					{
+						count = tipsPlaceList[i].count;
+						return true;
+					}
+				}
 				return false;
 			}
 		}

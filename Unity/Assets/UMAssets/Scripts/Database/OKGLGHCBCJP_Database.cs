@@ -591,7 +591,17 @@ public class OKGLGHCBCJP_Database
 	// */
 
 	// // RVA: 0x149111C Offset: 0x149111C VA: 0x149111C
-	// public bool LGLJALBIIIB() { }
+	public bool LGLJALBIIIB_IsRaidLobbyLoaded()
+	{
+		for (int i = 0; i < MGJKEJHEBPO_SectionList.Count; i++)
+		{
+			if(MGJKEJHEBPO_SectionList[i].JIKKNHIAEKG_BlockName.Contains("event_raidlobby_"))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0x1491240 Offset: 0x1491240 VA: 0x1491240
 	public List<BEOKNKGHFFE_Section> BPCKOIDILDK_GetSectionsValid(List<GDIPLANPCEI> JOBKIDDLCPL, long JHNMKKNEENE_Time)

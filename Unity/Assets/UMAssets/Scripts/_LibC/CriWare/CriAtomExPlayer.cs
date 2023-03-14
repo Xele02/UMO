@@ -124,7 +124,7 @@ namespace ExternLib
                     return;
 #endif
             }
-            TodoLogger.Log(0, "criAtomExPlayer_Set3dSourceHn");
+            TodoLogger.Log(TodoLogger.CriAtomExPlayer, "criAtomExPlayer_Set3dSourceHn");
         }
         public static void criAtomExPlayer_Set3dListenerHn(IntPtr player, IntPtr listener)
         {

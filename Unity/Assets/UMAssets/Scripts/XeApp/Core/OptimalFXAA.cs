@@ -2,11 +2,8 @@ using UnityEngine;
 
 namespace XeApp.Core
 {
+	[RequireComponent(typeof(Camera))]
 	public class OptimalFXAA : MonoBehaviour
 	{
-		private void Awake()
-		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
-		}
 	}
 }
