@@ -63,11 +63,10 @@ public class CGFNKMNBNBN
 	// public static void DPMCLJMIBDK(BBHNACPENDM AHEFHIMGIBI, int PPFNGGCBJKC, long BEBJKJKBOGH) { }
 
 	// // RVA: 0x12BAE60 Offset: 0x12BAE60 VA: 0x12BAE60
-	public static bool MHJBBLBFHIB()
+	public static bool MHJBBLBFHIB_IsHomeBgDark()
     {
-        TodoLogger.Log(0, "TODO");
-        return false;
-    }
+		return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KFOCBNDNHDJ_HomeBgDark == 1;
+	}
 
 	// // RVA: 0x12BAF44 Offset: 0x12BAF44 VA: 0x12BAF44
 	// public static void LLAMCBGJNOG(bool BBIFHJGMAMJ) { }

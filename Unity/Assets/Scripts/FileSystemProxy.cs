@@ -20,6 +20,12 @@ static class FileSystemProxy
 
 	static public string ConvertURL(string url)
 	{
+		string urlExt = "";
+		if (url.Contains("?"))
+		{
+			urlExt = url.Substring(url.IndexOf("?"));
+			url = url.Substring(0, url.IndexOf("?"));
+		}
 		if (url.Contains("!s00000000z!"))
 		{
 			int idx = url.IndexOf("/android/");
@@ -42,12 +48,12 @@ static class FileSystemProxy
 			{
 				url = url.Replace("[SERVER_DATA_PATH]", "file://" + Path.GetFullPath(RuntimeSettings.CurrentSettings.DataDirectory));
 			}
-			return url;
+			return url + urlExt;
 		}
 		string serverPath = RuntimeSettings.CurrentSettings.DataWebServerURL;
 		if (serverPath.EndsWith("/"))
 			serverPath = serverPath.Substring(0, serverPath.Length - 1);
-		return url.Replace("[SERVER_DATA_PATH]", serverPath);
+		return url.Replace("[SERVER_DATA_PATH]", serverPath) + urlExt;
 	}
 
 	static public string ConvertPath(string path)

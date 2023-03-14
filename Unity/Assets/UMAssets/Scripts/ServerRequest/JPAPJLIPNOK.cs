@@ -75,5 +75,16 @@ public class IKAHKDKIGNA
 	}
 
 	// // RVA: 0x8DBA08 Offset: 0x8DBA08 VA: 0x8DBA08
-	// public GCGNICILKLD BIKLNKNFFMK(string CKDFCDDOBDH) { }
+	public GCGNICILKLD_AssetFileInfo BIKLNKNFFMK_GetAssetFileInfo(string CKDFCDDOBDH)
+	{
+		string p = "/android/" + CKDFCDDOBDH;
+		for(int i = 0; i < KGHAJGGMPKL_Files.Count; i++)
+		{
+			if(KGHAJGGMPKL_Files[i].OIEAICNAMNB_LocalFileName == p)
+			{
+				return KGHAJGGMPKL_Files[i];
+			}
+		}
+		return null;
+	}
 }

@@ -14,7 +14,7 @@ public class FECDBKKBAHO
 		public bool GOAEFAAIOEK_Missing; // 0x1F
 	}
 	
-	private const int MPLGOGILHHF = 10003;
+	private const int MPLGOGILHHF = 0x2713;
 	private const int KENEAGNAKAF = 24;
 	private Dictionary<int, FHOPNIJCFKA_FileInfo> MLHACNBJAGM_FilesInfoByHash = new Dictionary<int, FHOPNIJCFKA_FileInfo>(); // 0x8
 	private string JHJMNLMNPGO_PersistentDirSys; // 0xC
@@ -87,7 +87,7 @@ public class FECDBKKBAHO
 			if(data != null)
 			{
 				int header = BitConverter.ToInt32(data, 0);
-				if(header == 0x2713)
+				if(header == MPLGOGILHHF)
 				{
 					int val = BitConverter.ToInt32(data, 4);
 					int offset = 8;
@@ -114,8 +114,44 @@ public class FECDBKKBAHO
 	// // RVA: 0xFCFEAC Offset: 0xFCFEAC VA: 0xFCFEAC
 	public void HJMKBCFJOOH()
     {
-        TodoLogger.Log(0, "TODO");
-    }
+        if(!Directory.Exists(JHJMNLMNPGO_PersistentDirSys))
+		{
+			Directory.CreateDirectory(JHJMNLMNPGO_PersistentDirSys);
+		}
+		int cnt = 0;
+		int[] array = null;
+		if (MLHACNBJAGM_FilesInfoByHash.Count > 0)
+		{
+			array = new int[MLHACNBJAGM_FilesInfoByHash.Keys.Count];
+			MLHACNBJAGM_FilesInfoByHash.Keys.CopyTo(array, 0);
+			for(int i = 0; i < array.Length; i++)
+			{
+				cnt += MLHACNBJAGM_FilesInfoByHash[array[i]].GOAEFAAIOEK_Missing ? 0 : 1;
+			}
+		}
+		string p = JHJMNLMNPGO_PersistentDirSys + "/" + KCOGAGGCPBP.PFJKALCPNHG_File00;
+		byte[] bytes = new byte[cnt * 24 + 8];
+		Buffer.BlockCopy(BitConverter.GetBytes(MPLGOGILHHF), 0, bytes, 0, 4);
+		Buffer.BlockCopy(BitConverter.GetBytes(cnt), 0, bytes, 4, 4);
+		if(array != null && array.Length > 0)
+		{
+			int off = 8;
+			for(int i = 0; i < cnt; i++)
+			{
+				FHOPNIJCFKA_FileInfo data = MLHACNBJAGM_FilesInfoByHash[array[i]];
+				if (!data.GOAEFAAIOEK_Missing)
+				{
+					Buffer.BlockCopy(BitConverter.GetBytes(data.DGGFLBJBLLN), 0, bytes, off, 8);
+					Buffer.BlockCopy(BitConverter.GetBytes(data.FNALNKKMKDC_ExpireTime), 0, bytes, off + 8, 8);
+					Buffer.BlockCopy(BitConverter.GetBytes(array[i]), 0, bytes, off + 16, 4);
+					Buffer.BlockCopy(BitConverter.GetBytes(data.KKPAHLMJKIH), 0, bytes, off + 20, 2);
+					bytes[off + 22] = (byte)(data.GEJJEDDEPMI ? 1 : 0);
+					off += 24;
+				}
+			}
+		}
+		File.WriteAllBytes(p, bytes);
+	}
 
 	// // RVA: 0xFD0494 Offset: 0xFD0494 VA: 0xFD0494
 	public bool JCENJHBMDIP(int KKPAHLMJKIH, long JHNMKKNEENE, long CKPIHCGOEDP)

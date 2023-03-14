@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 			m_bgInstance.transform.SetParent(m_bgRoot.transform, false);
 			m_bgBehaviour.ResetBgImageRectSize(false);
 			prefab = null;
-			m_bgBehaviour.SetHome(CGFNKMNBNBN.MHJBBLBFHIB());
+			m_bgBehaviour.SetHome(CGFNKMNBNBN.MHJBBLBFHIB_IsHomeBgDark());
 			m_bgBehaviour.ChangeAttribute(m_attr);
 			if(action != null)
 				action();

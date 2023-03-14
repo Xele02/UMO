@@ -30,22 +30,55 @@ namespace XeApp.Game.DownLoad
 		}
 
 		//// RVA: 0x98160C Offset: 0x98160C VA: 0x98160C
-		//public void SetLabel(string label) { }
+		public void SetLabel(string label)
+		{
+			m_buttonLabel.text = label;
+		}
 
 		//// RVA: 0x981648 Offset: 0x981648 VA: 0x981648
-		//public void Open() { }
+		public void Open()
+		{
+			if(!m_isOpen)
+			{
+				m_rootAnim.StartChildrenAnimGoStop("go_in", "st_in");
+			}
+			m_isOpen = true;
+			m_toggleButton.IsInputOff = false;
+		}
 
 		//// RVA: 0x98170C Offset: 0x98170C VA: 0x98170C
-		//public void Close() { }
+		public void Close()
+		{
+			if(m_isOpen)
+			{
+				m_rootAnim.StartChildrenAnimGoStop("go_out", "st_out");
+			}
+			m_isOpen = false;
+			m_toggleButton.IsInputOff = true;
+		}
 
 		//// RVA: 0x9817D0 Offset: 0x9817D0 VA: 0x9817D0
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			if(m_rootAnim.IsVisible)
+			{
+				return m_rootAnim.IsPlayingChildren();
+			}
+			return false;
+		}
 
 		//// RVA: 0x981834 Offset: 0x981834 VA: 0x981834
-		//public void Hide() { }
+		public void Hide()
+		{
+			m_rootAnim.StartChildrenAnimGoStop("st_out");
+			m_toggleButton.IsInputOff = true;
+		}
 
 		//// RVA: 0x9818D4 Offset: 0x9818D4 VA: 0x9818D4
-		//public void Clear() { }
+		public void Clear()
+		{
+			m_toggleButton.SetOff();
+		}
 
 		//// RVA: 0x981908 Offset: 0x981908 VA: 0x981908
 		public bool IsOn()

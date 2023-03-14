@@ -7,6 +7,7 @@ using System.IO;
 using XeApp.Game;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using System.Text;
 
 public class KEHOJEJMGLJ
 {
@@ -45,6 +46,13 @@ public class KEHOJEJMGLJ
 		ANFKBNLLJFN = 0,
 		GGCIMLDFDOC = 1,
 		DEKNOKPEIHO = 2,
+	}
+	
+	public class FDICFBNIPAJ
+	{
+		public int KKPAHLMJKIH; // 0x8
+		public long DGGFLBJBLLN; // 0x10
+		public List<string> IBGNDNLAHOE = new List<string>(2); // 0x18
 	}
 
 	private float NDEJCDBHPLB = 180.0f; // 0x8
@@ -309,7 +317,11 @@ public class KEHOJEJMGLJ
 					//FCPBCDOKOPD?
 					DLAEPJPPEKI = false;
 					// L 482
-					if(ICCMKHKNAMJ.Count == 0)
+					//*************
+					TodoLogger.Log(TodoLogger._Todo, "Todo File on disk check");
+					ICCMKHKNAMJ.Clear();// UMO hack, not file check for now
+					//*************
+					if (ICCMKHKNAMJ.Count == 0)
 					{
 						KOMKKBDABJP = false;
 						JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
@@ -353,97 +365,45 @@ public class KEHOJEJMGLJ
 					LFPOMKLKHPB NOAMCCLDODN = new LFPOMKLKHPB();
 					NOAMCCLDODN.LKLCOEJLBGG();
 					//break;
-					if(!NOAMCCLDODN.PLOOEECNHFB)
+					while (!NOAMCCLDODN.PLOOEECNHFB_IsDone)
 					{
 						yield return null;
-						// to 10
-						//LAB_00e8f0a4:
-						while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
-						{
-							PMDNNKAPIKJ.FBANBDCOEJL();
-							yield return null;
-						}
-						int APGOAMNGFFF = 0;
-						string errorStr = "network";
-						if(PMDNNKAPIKJ.KAMPHNKAHAB_IsDiskFull)
-						{
-							errorStr = "storage";
-						}
-						int avaiable = StorageSupport.GetAvailableStorageSizeMB();
-						if(avaiable > -1 && avaiable < 50)
-							errorStr = "storage";
-						MAIHLKPEHJN(errorStr, () => {
-							//0xE8D93C
-							TodoLogger.Log(0, "TODO");
-						}, () => {
-							//0xE8D948
-							TodoLogger.Log(0, "TODO");
-						});
-						//goto LAB_00e8f260;
-						//0xb
-						while(APGOAMNGFFF == 0)
-							yield return null;
-						if(APGOAMNGFFF != 1)
-						{
-							//LAB_00e8f30c:
-							PMDNNKAPIKJ.Dispose();
-							PMDNNKAPIKJ = null;
-							if(FGGJNGCAFGK != null)
-								FGGJNGCAFGK();
-							//LAB_00e8f334
-							FBGNDKKDOIE = null;
-							UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
-							yield break;
-						}
-						PMDNNKAPIKJ.PBIMGBKLDPP();
-						//LAB_00e8f2d0:
-						while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
-						{
-							PMDNNKAPIKJ.FBANBDCOEJL();
-							//LAB_00e8f2fc:
-							yield return null;
-							// 0xc
-							//goto LAB_00e8f2d0
-						}
-						//goto LAB_00e8f360;
 					}
-					else
-					{
-						NOAMCCLDODN.NKIKBOJOCNN(ICCMKHKNAMJ);
-						//LAB_00e8e7d8
-						while(!NOAMCCLDODN.PLOOEECNHFB)
-						{
-							yield return null;
-							// To 5
-							//5
-						}
 
-						if(!NOAMCCLDODN.AAAOKDDILCP)
-						{
-							if(MOBEEPPKFLG != null)
-							{
-								MOBEEPPKFLG();
-							}
-							UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
-							yield break;
-						}
-						OEPPEGHGNNO(1, 0);
-						//LAB_00e8e87c:
-						while(!OEPPEGHGNNO(4, 0))
-						{
-							yield return null;
-							// to 6
-							//6
-						}
-						PMDNNKAPIKJ = new JEHIAIPJNJF_FileDownloader(3);
-						PMDNNKAPIKJ.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ, FLHOFIEOKDH_BaseUrl, JCMJBMBMJAK_PersistentDataPath);
-						PMDNNKAPIKJ.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {
-							//0xE8D424
-							TodoLogger.Log(0, "TODO");
-						};
-						NJDHMNBBCLK = 60;
-						// goto LAB_00e8f360
+					NOAMCCLDODN.NKIKBOJOCNN_ShowInstallFileSize(ICCMKHKNAMJ);
+					//LAB_00e8e7d8
+					while(!NOAMCCLDODN.PLOOEECNHFB_IsDone)
+					{
+						yield return null;
+						// To 5
+						//5
 					}
+
+					if(NOAMCCLDODN.AAAOKDDILCP_IsError)
+					{
+						if(MOBEEPPKFLG != null)
+						{
+							MOBEEPPKFLG();
+						}
+						UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+						yield break;
+					}
+					OEPPEGHGNNO(1, 0);
+					//LAB_00e8e87c:
+					while(!OEPPEGHGNNO(4, 0))
+					{
+						yield return null;
+						// to 6
+						//6
+					}
+					PMDNNKAPIKJ = new JEHIAIPJNJF_FileDownloader(3);
+					PMDNNKAPIKJ.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ, FLHOFIEOKDH_BaseUrl, JCMJBMBMJAK_PersistentDataPath);
+					PMDNNKAPIKJ.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {
+						//0xE8D424
+						TodoLogger.Log(0, "TODO");
+					};
+					NJDHMNBBCLK = 60;
+					// goto LAB_00e8f360
 					//LAB_00e8f360:
 					PMDNNKAPIKJ.LAOEGNLOJHC();
 					while(true)
@@ -674,7 +634,89 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE88F88 Offset: 0xE88F88 VA: 0xE88F88
 	public void CIDPPOGCODB(Dictionary<string, int> FAOOOLDDBBB)
 	{
-		TodoLogger.Log(0, "!!!");
+		//FCPBCDOKOPD(FAOOOLDDBBB, ) ??
+		Dictionary<int, FDICFBNIPAJ> d = new Dictionary<int, FDICFBNIPAJ>();
+		Dictionary<int, FDICFBNIPAJ> d2 = new Dictionary<int, FDICFBNIPAJ>();
+		string[] strs = new string[FAOOOLDDBBB.Keys.Count];
+		FAOOOLDDBBB.Keys.CopyTo(strs, 0);
+		for (int i = 0; i < strs.Length; i++)
+		{
+			if (FAOOOLDDBBB[strs[i]] == 4)
+			{
+				FECDBKKBAHO.FHOPNIJCFKA_FileInfo fileInfo = KLIJFOBEKBE.LBDOLHGDIEB_GetFileInfo(strs[i]);
+				if (fileInfo != null && fileInfo.KKPAHLMJKIH > 0)
+				{
+					if (!d.ContainsKey(fileInfo.KKPAHLMJKIH))
+					{
+						FDICFBNIPAJ data = new FDICFBNIPAJ();
+						data.KKPAHLMJKIH = fileInfo.KKPAHLMJKIH;
+						data.DGGFLBJBLLN = fileInfo.DGGFLBJBLLN;
+						d.Add(data.KKPAHLMJKIH, data);
+					}
+					d[fileInfo.KKPAHLMJKIH].IBGNDNLAHOE.Add(strs[i]);
+				}
+			}
+			else if (FAOOOLDDBBB[strs[i]] == 3)
+			{
+				FECDBKKBAHO.FHOPNIJCFKA_FileInfo fileInfo = KLIJFOBEKBE.LBDOLHGDIEB_GetFileInfo(strs[i]);
+				if (fileInfo != null && fileInfo.KKPAHLMJKIH > 0)
+				{
+					if (!d2.ContainsKey(fileInfo.KKPAHLMJKIH))
+					{
+						FDICFBNIPAJ data = new FDICFBNIPAJ();
+						data.KKPAHLMJKIH = fileInfo.KKPAHLMJKIH;
+						data.DGGFLBJBLLN = fileInfo.DGGFLBJBLLN;
+						d2.Add(data.KKPAHLMJKIH, data);
+					}
+					d2[fileInfo.KKPAHLMJKIH].IBGNDNLAHOE.Add(strs[i]);
+				}
+			}
+			else if (FAOOOLDDBBB[strs[i]] == 1)
+			{
+				string path = JCMJBMBMJAK_PersistentDataPath + strs[i];
+				File.SetAttributes(path, FileAttributes.Normal);
+				UnityEngine.Debug.Log("Would delete " + path);
+				//INLICKMJHHK_DeleteFile(path);
+			}
+		}
+		//FCPBCDOKOPD
+		if(d.Count != 0)
+		{
+			int a = d.Count;
+			if(d2.Count <= HGOIEGFBABK)
+			{
+				int b = d2.Count + a;
+				a = d2.Count - HGOIEGFBABK;
+				if (a == 0 || b < HGOIEGFBABK)
+					a = 0;
+			}
+			List<FDICFBNIPAJ> l = new List<FDICFBNIPAJ>();
+			FDICFBNIPAJ[] l2 = new FDICFBNIPAJ[d.Values.Count];
+			d.Values.CopyTo(l2, 0);
+			for(int i = 0; i < l2.Length; i++)
+			{
+				l.Add(l2[i]);
+			}
+			l.Sort((FDICFBNIPAJ HKICMNAACDA, FDICFBNIPAJ BNKHBCBJBKI) =>
+			{
+				//0xE8CD9C
+				return (int)HKICMNAACDA.DGGFLBJBLLN - (int)BNKHBCBJBKI.DGGFLBJBLLN;
+			});
+			for(int i = 0; i < a; i++)
+			{
+				if (l.Count <= i)
+					break;
+				for(int j = 0; j < l[i].IBGNDNLAHOE.Count; j++)
+				{
+					string path = JCMJBMBMJAK_PersistentDataPath + l[i].IBGNDNLAHOE[j];
+					File.SetAttributes(path, FileAttributes.Normal);
+					UnityEngine.Debug.Log("Would delete " + path);
+					//INLICKMJHHK_DeleteFile(path);
+					KLIJFOBEKBE.OJCJPCHFPGO_DeleteFileInfo(l[i].IBGNDNLAHOE[j]);
+				}
+			}
+		}
+		//FCPBCDOKOPD
 	}
 
 	// // RVA: 0xE89EA0 Offset: 0xE89EA0 VA: 0xE89EA0
@@ -932,7 +974,20 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE8B9A4 Offset: 0xE8B9A4 VA: 0xE8B9A4
 	private static void PKLPEIBEGNO()
 	{
-		TodoLogger.Log(0, "!!!");
+		string basePath = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/sys";
+		if(!Directory.Exists(basePath))
+		{
+			Directory.CreateDirectory(basePath);
+		}
+		if (string.IsNullOrEmpty(LHJNPJFNDNA))
+			return;
+		string p = LHJNPJFNDNA + "," + BBGDKLLEPIB.HHCJCDFCLOB.OCOGBOHOGGE;
+		byte[] bytes = Encoding.UTF8.GetBytes(p);
+		for(int i = 0; i < bytes.Length; i++)
+		{
+			bytes[i] ^= (byte)i;
+		}
+		File.WriteAllBytes(basePath + "/03", bytes);
 	}
 
 	// // RVA: 0xE888B8 Offset: 0xE888B8 VA: 0xE888B8
@@ -979,7 +1034,7 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE8C288 Offset: 0xE8C288 VA: 0xE8C288
 	private void KDHNLDOIOAL()
 	{
-		TodoLogger.Log(0, "!!!");
+		new BFGOCONGNDK().HJMKBCFJOOH_SaveStartBgInfo();
 	}
 
 	// // RVA: 0xE8C30C Offset: 0xE8C30C VA: 0xE8C30C

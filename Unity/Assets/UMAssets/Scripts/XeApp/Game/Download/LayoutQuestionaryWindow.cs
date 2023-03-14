@@ -4,6 +4,8 @@ using XeApp.Game.Common;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using mcrs;
+using System.Collections;
+using XeSys;
 
 namespace XeApp.Game.DownLoad
 {
@@ -73,13 +75,80 @@ namespace XeApp.Game.DownLoad
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B5D80 Offset: 0x6B5D80 VA: 0x6B5D80
 		//// RVA: 0x980924 Offset: 0x980924 VA: 0x980924
-		//public IEnumerator Setup(MBLFHJJEHLH.CGBKENNCMMC data) { }
+		public IEnumerator Setup(MBLFHJJEHLH_AnketoMgr.CGBKENNCMMC data)
+		{
+			//0x982C78
+			string str = GetNotificationMessage(data);
+			m_notification1Text[1].text = str;
+			m_notification1Text[0].text = str;
+			m_notification2Text.text = MessageManager.Instance.GetMessage("menu", "questionary_notification_002");
+			m_questionText.text = string.Format("Q{0}.{1}", data.EILKGEADKGH_Idx, data.ADCMNODJBGJ_Detail);
+			m_minAnswerCount = data.NNDBJGDFEEM_MinAnswer;
+			m_maxAnswerCount = data.DOOGFEGEKLG_MaxAnswer;
+			CloseAllButton();
+			m_notificationTextChangeAnim.StartChildrenAnimGoStop(str.Length > 17 ? "02" : "01");
+			while (IsPlayingButtonAnime())
+				yield return null;
+			m_okButton.ClearOnClickCallback();
+			if(data.NMEMGMMNMDK())
+			{
+				m_radioButtonRoot.StartChildrenAnimGoStop(data.LPKAJMLOAMF_ChoiceText.Length.ToString("00"));
+				m_checkButtonRoot.StartChildrenAnimGoStop("00");
+				for(int i = 0; i < data.LPKAJMLOAMF_ChoiceText.Length; i++)
+				{
+					m_radioButtons[i].SetLabel(data.LPKAJMLOAMF_ChoiceText[i]);
+					m_radioButtons[i].Clear();
+					m_radioButtons[i].Hide();
+				}
+				yield return null;
+				//2
+				for(int i = 0; i < data.LPKAJMLOAMF_ChoiceText.Length; i++)
+				{
+					m_radioButtons[i].Open();
+				}
+				m_okButton.AddOnClickCallback(() =>
+				{
+					//0x982C64
+					OnPushOk(m_radioButtons);
+				});
+			}
+			if (data.CPLDDCLIBAL())
+			{
+				m_radioButtonRoot.StartChildrenAnimGoStop("00");
+				m_checkButtonRoot.StartChildrenAnimGoStop(data.LPKAJMLOAMF_ChoiceText.Length.ToString("00"));
+				for (int i = 0; i < data.LPKAJMLOAMF_ChoiceText.Length; i++)
+				{
+					m_checkButtons[i].SetLabel(data.LPKAJMLOAMF_ChoiceText[i]);
+					m_checkButtons[i].Clear();
+					m_checkButtons[i].Hide();
+				}
+				yield return null;
+				//3
+				for (int i = 0; i < data.LPKAJMLOAMF_ChoiceText.Length; i++)
+				{
+					m_checkButtons[i].Open();
+				}
+				m_okButton.AddOnClickCallback(() =>
+				{
+					//0x982C6C
+					OnPushOk(m_checkButtons);
+				});
+			}
+			//LAB_00982f00
+			m_okButton.Disable = true;
+		}
 
 		//// RVA: 0x98087C Offset: 0x98087C VA: 0x98087C
-		//public void SetMaxPage(int max) { }
+		public void SetMaxPage(int max)
+		{
+			m_denText.text = max.ToString();
+		}
 
 		//// RVA: 0x9808D0 Offset: 0x9808D0 VA: 0x9808D0
-		//public void SetCurrentPage(int num) { }
+		public void SetCurrentPage(int num)
+		{
+			m_numText.text = num.ToString();
+		}
 
 		//// RVA: 0x97F8D0 Offset: 0x97F8D0 VA: 0x97F8D0
 		public void SetProgressValue(int value)
@@ -94,10 +163,33 @@ namespace XeApp.Game.DownLoad
 		}
 
 		//// RVA: 0x980774 Offset: 0x980774 VA: 0x980774
-		//public void CloseAllButton() { }
+		public void CloseAllButton()
+		{
+			for (int i = 0; i < m_radioButtons.Length; i++)
+			{
+				m_radioButtons[i].Close();
+			}
+			for (int i = 0; i < m_checkButtons.Length; i++)
+			{
+				m_checkButtons[i].Close();
+			}
+		}
 
 		//// RVA: 0x982628 Offset: 0x982628 VA: 0x982628
-		//private bool IsPlayingButtonAnime() { }
+		private bool IsPlayingButtonAnime()
+		{
+			for (int i = 0; i < m_radioButtons.Length; i++)
+			{
+				if (m_radioButtons[i].IsPlaying())
+					return true;
+			}
+			for (int i = 0; i < m_checkButtons.Length; i++)
+			{
+				if (m_checkButtons[i].IsPlaying())
+					return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x982748 Offset: 0x982748 VA: 0x982748
 		private void OnSelectedCheckButton()
@@ -140,17 +232,26 @@ namespace XeApp.Game.DownLoad
 		}
 
 		//// RVA: 0x982A80 Offset: 0x982A80 VA: 0x982A80
-		//private void OnPushOk(LayoutQuestionaryButton[] buttons) { }
+		private void OnPushOk(LayoutQuestionaryButton[] buttons)
+		{
+			if(PushOkHandler != null)
+			{
+				PushOkHandler(buttons);
+			}
+		}
 
 		//// RVA: 0x982AF4 Offset: 0x982AF4 VA: 0x982AF4
-		//private string GetNotificationMessage(MBLFHJJEHLH.CGBKENNCMMC data) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6B5DF8 Offset: 0x6B5DF8 VA: 0x6B5DF8
-		//// RVA: 0x982C64 Offset: 0x982C64 VA: 0x982C64
-		//private void <Setup>b__30_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6B5E08 Offset: 0x6B5E08 VA: 0x6B5E08
-		//// RVA: 0x982C6C Offset: 0x982C6C VA: 0x982C6C
-		//private void <Setup>b__30_1() { }
+		private string GetNotificationMessage(MBLFHJJEHLH_AnketoMgr.CGBKENNCMMC data)
+		{
+			string str = MessageManager.Instance.GetMessage("menu", string.Format("questionary_notification_{0:D3}", data.INDDJNMPONH_NotifId - 1));
+			if(data.INDDJNMPONH_NotifId == 2)
+			{
+				if (data.DOOGFEGEKLG_MaxAnswer > 2)
+					str = string.Format(str, data.DOOGFEGEKLG_MaxAnswer);
+				else
+					str = string.Format(str, JpStringLiterals.StringLiteral_14832);
+			}
+			return str;
+		}
 	}
 }

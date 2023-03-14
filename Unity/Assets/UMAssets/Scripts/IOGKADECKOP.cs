@@ -1493,7 +1493,7 @@ public class IOGKADECKOP
 		}
 		if(PDOILOAFKCF_BgImage != null)
 		{
-			string FCFBGJOFEHO_bundleFile = BFGOCONGNDK.NLMBMNKEINP_GetFileName(NLFFEOBGFMC_BgId);
+			string FCFBGJOFEHO_bundleFile = BFGOCONGNDK.NLMBMNKEINP_GetBgFileName(NLFFEOBGFMC_BgId);
 			string s1 = String.Format("{0:D4}", NLFFEOBGFMC_BgId);
 			
 			AssetBundleLoadAssetOperation GDKDBPHILKG = AssetBundleManager.LoadAssetAsync(FCFBGJOFEHO_bundleFile, s1, typeof(Texture));
@@ -1516,7 +1516,7 @@ public class IOGKADECKOP
 			if(bg == null)
 				return;
 			BFGOCONGNDK a = new BFGOCONGNDK();
-			a.PCODDPDFLHK();
+			a.PCODDPDFLHK_ReadStartBgInfo();
 			if(a.MBGHLLHFNHH && a.DAONJOOCPFP(bg.bgId))
 			{
 				OOIBKCCMCAG_HasCustomBg = true;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using XeApp.Game;
 using XeApp.Game.Common;
 using XeSys;
 
@@ -19,9 +20,12 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1DF30 Offset: 0xB1DF30 VA: 0xB1DF30
-	public void NIGGABHIFEE(bool JKDJCFEBDHC)
+	public void NIGGABHIFEE_ShowTransmissionIcon(bool JKDJCFEBDHC)
 	{
-		TodoLogger.Log(0, "TODO");
+		if(GameManager.Instance.transmissionIcon != null)
+		{
+			GameManager.Instance.transmissionIcon.SetActive(JKDJCFEBDHC);
+		}
 	}
 
 	// // RVA: 0xB1E078 Offset: 0xB1E078 VA: 0xB1E078
@@ -246,10 +250,29 @@ public class JHHBAFKMBDL
 	// public void EKEGGMIHFIP(IMCBBOAFION MBIKIBHLAGE) { }
 
 	// // RVA: 0xB25EF4 Offset: 0xB25EF4 VA: 0xB25EF4
-	// public void NKIKBOJOCNN(IMCBBOAFION HIDFAIBOHCC, JFDNPFFOACP NIMPEHIECJH, string EHKMFNJBLOL) { }
+	public void NKIKBOJOCNN_ShowDldSizePopup(IMCBBOAFION HIDFAIBOHCC, JFDNPFFOACP NIMPEHIECJH, string EHKMFNJBLOL_Size)
+	{
+		TextPopupSetting popup = new TextPopupSetting();
+		popup.TitleText = MessageManager.Instance.GetMessage("menu", "popup_download_size_title");
+		popup.Text = string.Format(MessageManager.Instance.GetMessage("menu", "popup_download_size_text"), EHKMFNJBLOL_Size);
+		popup.Buttons = new ButtonInfo[2] {
+			new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+		};
+		PopupWindowManager.Show(popup, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) => {
+			//0x1348888
+			if(INDDJNMPONH != PopupButton.ButtonType.Negative)
+			{
+				HIDFAIBOHCC();
+				return;
+			}
+			NIMPEHIECJH();
+			return;
+		}, null, null, null);
+	}
 
 	// // RVA: 0xB2627C Offset: 0xB2627C VA: 0xB2627C
-	public void AINKKHHAKLK(IMCBBOAFION HIDFAIBOHCC)
+	public void AINKKHHAKLK_ShowDldSizeErrorPopup(IMCBBOAFION HIDFAIBOHCC)
 	{
 		TextPopupSetting popup = new TextPopupSetting();
 		popup.TitleText = MessageManager.Instance.GetMessage("menu", "popup_download_size_title");

@@ -25,7 +25,13 @@ namespace XeApp.Game.DownLoad
 		private List<int> m_VoicePlayCounters = new List<int>(10); // 0x34
 
 		// public Action OnClickOk { set; } 0x11BC6C8
-		// public SwaipTouch SwaipTouch { get; } 0x11B9EC8
+		public SwaipTouch SwaipTouch { get
+			{
+				if (m_SwaipTouch != null)
+					m_SwaipTouch = GetComponentInChildren<SwaipTouch>(true);
+				return m_SwaipTouch;
+			}
+		} //0x11B9EC8
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B5598 Offset: 0x6B5598 VA: 0x6B5598
 		// // RVA: 0x11C1870 Offset: 0x11C1870 VA: 0x11C1870

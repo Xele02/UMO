@@ -7,7 +7,7 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 {
 	public class AFBMNDPOALE
 	{
-		public int PPFNGGCBJKC; // 0x8
+		public int PPFNGGCBJKC_Id; // 0x8
 		public int NDFOAINJPIN; // 0xC
 		public string[] JONNCMDGMKA; // 0x10
 		public int[] KGJHFFNFPOK; // 0x14
@@ -17,7 +17,14 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 	public List<AFBMNDPOALE> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x9F61C8 Offset: 0x9F61C8 VA: 0x9F61C8
-	//public ILLPGHGGKLL.AFBMNDPOALE LBDOLHGDIEB(int PPFNGGCBJKC) { }
+	public AFBMNDPOALE LBDOLHGDIEB(int PPFNGGCBJKC)
+	{
+		return CDENCMNHNGA.Find((AFBMNDPOALE GHPLINIACBB) =>
+		{
+			//0x9F66A8
+			return GHPLINIACBB.PPFNGGCBJKC_Id == PPFNGGCBJKC;
+		});
+	}
 
 	// RVA: 0x9F62C8 Offset: 0x9F62C8 VA: 0x9F62C8
 	public ILLPGHGGKLL_TutorialMiniAdv()
@@ -55,7 +62,7 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 		for(int i = 0; i < array.Length; i++)
 		{
 			AFBMNDPOALE data = new AFBMNDPOALE();
-			data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
+			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.JONNCMDGMKA = array[i].IPBHCLIHAPG;
 			data.CJPMCKIOCGI = array[i].OGDLCNPFODO;
 			data.NDFOAINJPIN = array[i].NDFOAINJPIN;

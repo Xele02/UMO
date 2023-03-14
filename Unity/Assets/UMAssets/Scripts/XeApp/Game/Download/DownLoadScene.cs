@@ -198,8 +198,11 @@ namespace XeApp.Game.DownLoad
 		// // RVA: 0x11BE890 Offset: 0x11BE890 VA: 0x11BE890
 		private IEnumerator Co_QuestionayProc()
 		{
-			TodoLogger.Log(0, "Co_QuestionayProc");
-			yield return null;
+			//0x11C102C
+			m_Layout.SwaipTouch.enabled = false;
+			yield return this.StartCoroutineWatched(m_questionary.Co_Proc(m_anketoMrg.KICOACCACII_QData, m_anketoMrg.MCJBEJBMJMF_TotalCount));
+			m_questionary.gameObject.SetActive(false);
+			m_Layout.SwaipTouch.enabled = true;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B5158 Offset: 0x6B5158 VA: 0x6B5158
@@ -238,11 +241,11 @@ namespace XeApp.Game.DownLoad
 		// // RVA: 0x11BEB0C Offset: 0x11BEB0C VA: 0x11BEB0C
 		private void OnQuestionaryOk(LayoutQuestionaryButton[] buttons, int qIndex)
 		{
-			for (int i = 0; i < m_anketoMrg.KICOACCACII[qIndex].LPKAJMLOAMF_ChoiceText.Length; i++)
+			for (int i = 0; i < m_anketoMrg.KICOACCACII_QData[qIndex].LPKAJMLOAMF_ChoiceText.Length; i++)
 			{
-				m_anketoMrg.KICOACCACII[qIndex].MHBBJADMHPN_ChoiceSelected[i] = buttons[i].IsOn();
+				m_anketoMrg.KICOACCACII_QData[qIndex].MHBBJADMHPN_ChoiceSelected[i] = buttons[i].IsOn();
 			}
-			m_anketoMrg.HGOHIJMEIHG_UpdateResult(m_anketoMrg.KICOACCACII[qIndex]);
+			m_anketoMrg.HGOHIJMEIHG_UpdateResult(m_anketoMrg.KICOACCACII_QData[qIndex]);
 		}
 
 		// // RVA: 0x11BEC9C Offset: 0x11BEC9C VA: 0x11BEC9C Slot: 13

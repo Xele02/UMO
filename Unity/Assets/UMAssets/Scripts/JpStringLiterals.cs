@@ -262,6 +262,7 @@ class JpStringLiterals
 	public const string StringLiteral_14007 = "×{0}"; // 0x03bb6594
 	public const string StringLiteral_14032 = "アニメーションテーブル数以上のキーフレーム番号が指定されました。"; // 0x03bb65f8
 	public const string StringLiteral_14529 = "ーーー"; // 0x03bb6dbc
+	public const string StringLiteral_14832 = "ふた"; // 0x03bb7278
 	public const string StringLiteral_15651 = "手動"; // 0x03bb7f44
 	public const string StringLiteral_16338 = "ユーザーリスト 失敗"; // 0x03bb8a00
 	public const string StringLiteral_16339 = "ユーザーフレンドリスト 成功 "; // 0x03bb8a04

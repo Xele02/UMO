@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using XeApp.Game.Common;
 using mcrs;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace XeApp.Game.DownLoad
 {
@@ -63,11 +65,80 @@ namespace XeApp.Game.DownLoad
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B5AD8 Offset: 0x6B5AD8 VA: 0x6B5AD8
 		//// RVA: 0x97F9FC Offset: 0x97F9FC VA: 0x97F9FC
-		//public IEnumerator Co_Proc(List<MBLFHJJEHLH.CGBKENNCMMC> qData, int totalCount) { }
+		public IEnumerator Co_Proc(List<MBLFHJJEHLH_AnketoMgr.CGBKENNCMMC> qData, int totalCount)
+		{
+			WaitWhile waiter; // 0x1C
+			int page; // 0x20
+
+			//0x97FEF0
+			waiter = new WaitWhile(() =>
+			{
+				//0x97FD38
+				return GameManager.IsFading();
+			});
+			while (IsLoading())
+				yield return null;
+			GameManager.FadeIn(0.4f);
+			m_window.gameObject.SetActive(true);
+			m_window.CloseAllButton();
+			page = totalCount - qData.Count;
+			m_executeIndex = 0;
+			m_window.SetMaxPage(totalCount);
+			do
+			{
+				//LAB_0098042c
+				m_inputBlocker.enabled = true;
+				m_window.SetCurrentPage(page + m_executeIndex + 1);
+				m_isPushOk = false;
+				yield return this.StartCoroutineWatched(m_window.Setup(qData[m_executeIndex]));
+				yield return waiter;
+				yield return this.StartCoroutineWatched(Co_ShowMessage(qData[m_executeIndex].CIMPIIJBFPE));
+				m_inputBlocker.enabled = false;
+				while (!m_isPushOk)
+				{
+					yield return null;
+				}
+				m_inputBlocker.enabled = true;
+				yield return this.StartCoroutineWatched(Co_ShowMessage(qData[m_executeIndex].DHEIGBMNBNK));
+				m_executeIndex++;
+				if (m_executeIndex < qData.Count)
+				{
+					yield return null;
+				}
+			} while (m_executeIndex < qData.Count);
+			yield return this.StartCoroutineWatched(Co_ShowMessage(54));
+			GameManager.FadeOut(0.4f);
+			yield return waiter;
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B5B50 Offset: 0x6B5B50 VA: 0x6B5B50
 		//// RVA: 0x97FADC Offset: 0x97FADC VA: 0x97FADC
-		//private IEnumerator Co_ShowMessage(int miniAdvId) { }
+		private IEnumerator Co_ShowMessage(int miniAdvId)
+		{
+			ILLPGHGGKLL_TutorialMiniAdv.AFBMNDPOALE adv; // 0x18
+			int i; // 0x1C
+
+			//0x980BD0
+			adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv.LBDOLHGDIEB(miniAdvId);
+			if (adv == null)
+				yield break;
+			m_messageTouchArea.gameObject.SetActive(true);
+			m_messWindow.Show();
+			while (m_messWindow.IsPlaying())
+				yield return null;
+			for(i = 0; i < adv.JONNCMDGMKA.Length; i++)
+			{
+				yield return Co.R(m_messWindow.Co_ProcMessage(adv.JONNCMDGMKA[i]));
+				yield return null;
+			}
+			m_messWindow.Hide();
+			//LAB_00980ee8
+			while (m_messWindow.IsPlaying())
+				yield return null;
+			m_messWindow.MessageClear();
+			m_messageTouchArea.gameObject.SetActive(false);
+		}
 
 		//// RVA: 0x97FBA4 Offset: 0x97FBA4 VA: 0x97FBA4
 		private void OnPushOk(LayoutQuestionaryButton[] buttons)
