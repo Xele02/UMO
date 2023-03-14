@@ -4,7 +4,7 @@ namespace XeApp.Game.Menu
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.Log(0, "Implement monobehaviour");
 		}
 		public PopupFilterSortUGUIParts_Sort filterSort;
 		public PopupFilterSortUGUIParts_FilterMusicBookMark filterMusicBookMark;

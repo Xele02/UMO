@@ -31,7 +31,7 @@ namespace XeApp.Game.Adv
 		private AdvVoicePlayer m_advVoicePlayer;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

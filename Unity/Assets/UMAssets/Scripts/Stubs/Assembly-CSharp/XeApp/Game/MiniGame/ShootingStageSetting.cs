@@ -11,7 +11,7 @@ namespace XeApp.Game.MiniGame
 		public int stageNum;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

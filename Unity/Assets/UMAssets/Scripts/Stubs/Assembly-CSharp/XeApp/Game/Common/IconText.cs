@@ -8,7 +8,7 @@ namespace XeApp.Game.Common
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.Log(0, "Implement monobehaviour");
 		}
 		public IconTextSetting m_setting;
 		public float m_iconScale;

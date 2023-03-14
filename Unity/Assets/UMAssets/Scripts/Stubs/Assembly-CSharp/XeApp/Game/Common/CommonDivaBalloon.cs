@@ -21,7 +21,7 @@ namespace XeApp.Game.Common
 		private Color[] m_colorTable;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

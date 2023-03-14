@@ -15,7 +15,7 @@ namespace XeApp.Game.MiniGame
 		public SummonEnemyData[] enemyData;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

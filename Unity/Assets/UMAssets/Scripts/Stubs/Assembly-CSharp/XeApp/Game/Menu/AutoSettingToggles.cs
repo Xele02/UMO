@@ -18,7 +18,7 @@ namespace XeApp.Game.Menu
 		private AutoTypeToggleEvent m_onAutoTypeEvent;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

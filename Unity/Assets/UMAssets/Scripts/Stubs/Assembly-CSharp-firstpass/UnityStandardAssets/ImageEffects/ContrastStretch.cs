@@ -13,7 +13,7 @@ namespace UnityStandardAssets.ImageEffects
 		public Shader shaderApply;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

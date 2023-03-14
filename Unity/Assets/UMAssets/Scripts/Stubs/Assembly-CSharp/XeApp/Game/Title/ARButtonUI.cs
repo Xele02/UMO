@@ -9,7 +9,7 @@ namespace XeApp.Game.Title
 		private Button m_gotoARButton;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

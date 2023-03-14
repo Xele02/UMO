@@ -20,7 +20,7 @@ namespace XeApp.Game.MiniGame
 		private float m_blinkingTimeMax;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

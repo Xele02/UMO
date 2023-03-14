@@ -13,7 +13,7 @@ namespace XeApp.Game.Menu
 		private ButtonBase m_hitCheck;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

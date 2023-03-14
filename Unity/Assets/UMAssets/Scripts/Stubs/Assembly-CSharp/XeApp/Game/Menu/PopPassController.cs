@@ -19,7 +19,7 @@ namespace XeApp.Game.Menu
 		public PopPassPurchaseConfirmationPopup m_layout_popup;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

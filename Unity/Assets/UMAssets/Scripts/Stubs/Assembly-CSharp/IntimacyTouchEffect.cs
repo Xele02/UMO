@@ -10,6 +10,6 @@ public class IntimacyTouchEffect : MonoBehaviour
 	private Camera m_systemCanvasCamera;
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement Monobehaviour");
+		TodoLogger.Log(0, "Implement Monobehaviour");
 	}
 }

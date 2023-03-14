@@ -24,7 +24,7 @@ namespace XeApp.Game.MiniGame
 		private ShootingResultScoreUseCommand m_resultScoreUseCommand;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

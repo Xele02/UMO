@@ -7,7 +7,7 @@ namespace XeApp.Game.MiniGame
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.Log(0, "Implement monobehaviour");
 		}
 		public GameObject m_miniGame;
 		public GameObject m_edit;

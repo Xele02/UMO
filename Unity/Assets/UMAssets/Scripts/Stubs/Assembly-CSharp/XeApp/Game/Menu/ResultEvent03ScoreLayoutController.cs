@@ -8,7 +8,7 @@ namespace XeApp.Game.Menu
 		private GameObject[] effectPrefab;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

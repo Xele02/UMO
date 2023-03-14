@@ -42,7 +42,7 @@ namespace XeApp.Game.Common
 
         private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.Log(0, "Implement monobehaviour");
 		}
 	}
 }

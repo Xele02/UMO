@@ -8,7 +8,7 @@ namespace XeApp.Game.Common
 		private Animator m_animator;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

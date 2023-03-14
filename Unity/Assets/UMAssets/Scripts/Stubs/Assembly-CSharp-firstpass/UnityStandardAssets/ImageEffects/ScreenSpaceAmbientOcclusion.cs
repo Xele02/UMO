@@ -22,7 +22,7 @@ namespace UnityStandardAssets.ImageEffects
 		public Texture2D m_RandomTexture;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

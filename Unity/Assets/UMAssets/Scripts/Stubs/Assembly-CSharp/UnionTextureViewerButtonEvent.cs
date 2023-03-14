@@ -5,7 +5,7 @@ public class UnionTextureViewerButtonEvent : MainSceneBase
 {
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement monobehaviour");
+		TodoLogger.Log(0, "Implement monobehaviour");
 	}
 	[SerializeField]
 	private RectTransform[] targetObjects;

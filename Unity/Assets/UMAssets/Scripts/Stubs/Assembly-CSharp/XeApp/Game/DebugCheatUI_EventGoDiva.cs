@@ -40,7 +40,7 @@ namespace XeApp.Game
 		private Toggle toggel_RankingRank;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

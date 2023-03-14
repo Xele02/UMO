@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x10A5F50 Offset: 0x10A5F50 VA: 0x10A5F50
 		private IEnumerator Co_InitializeLayout()
 		{
-			UnityEngine.Debug.LogError("Implement CampainRoulette Co_InitializeLayout");
+			TodoLogger.Log(0, "Implement CampainRoulette Co_InitializeLayout");
 			yield break;
 		}
 

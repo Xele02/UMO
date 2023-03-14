@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 		private TobbleButtonEvent m_onSelectCompatibleDivaEvent;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

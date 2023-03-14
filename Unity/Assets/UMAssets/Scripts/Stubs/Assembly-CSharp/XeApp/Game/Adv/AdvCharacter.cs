@@ -30,7 +30,7 @@ namespace XeApp.Game.Adv
 		private Material prismMaterialSource;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

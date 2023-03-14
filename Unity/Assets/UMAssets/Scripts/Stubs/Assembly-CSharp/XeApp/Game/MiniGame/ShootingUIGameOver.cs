@@ -8,7 +8,7 @@ namespace XeApp.Game.MiniGame
 		public Text m_textGameOver;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

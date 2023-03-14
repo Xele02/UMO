@@ -8,7 +8,7 @@ namespace XeApp.Core
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.Log(0, "Implement monobehaviour");
 		}
 		public int maxSeChannels;
 		public int maxLoopSeChannels;

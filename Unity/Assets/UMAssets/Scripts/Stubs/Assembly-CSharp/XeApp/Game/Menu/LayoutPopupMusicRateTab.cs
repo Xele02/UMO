@@ -14,7 +14,7 @@ namespace XeApp.Game.Menu
 		private ActionButton button;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.Log(0, "Implement monobehaviour");
 		}
 		public ActionButton m_btn_bonus;
 		public RawImageEx m_image_frm_01;

@@ -13,7 +13,7 @@ namespace XeApp.Game.Common
 		public bool m_enable_h;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

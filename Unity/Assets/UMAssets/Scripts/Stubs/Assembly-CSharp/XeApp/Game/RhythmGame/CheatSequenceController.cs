@@ -10,7 +10,7 @@ namespace XeApp.Game.RhythmGame
 		private float skipSecond;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

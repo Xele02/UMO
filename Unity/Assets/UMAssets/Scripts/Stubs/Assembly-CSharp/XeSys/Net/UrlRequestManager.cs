@@ -29,7 +29,7 @@ namespace XeSys.Net
 		private TestMode testMode;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

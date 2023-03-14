@@ -13,7 +13,7 @@ namespace XeApp.Game.MiniGame
 		private RectTransform m_mainSceenSize;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

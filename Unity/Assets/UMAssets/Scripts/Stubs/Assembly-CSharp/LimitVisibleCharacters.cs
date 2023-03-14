@@ -5,7 +5,7 @@ public class LimitVisibleCharacters : BaseMeshEffect
 {
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement monobehaviour");
+		TodoLogger.Log(0, "Implement monobehaviour");
 	}
 	public override void ModifyMesh(VertexHelper vh)
 	{

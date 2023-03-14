@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 		private CanvasGroup m_canvasGroup;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

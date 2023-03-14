@@ -8,7 +8,7 @@ public class PopupItemListGrowItemIcon : FlexibleListItemLayout
 {
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement monobehaviour");
+		TodoLogger.Log(0, "Implement monobehaviour");
 	}
 	[SerializeField]
 	private RawImageEx[] m_iconImages;

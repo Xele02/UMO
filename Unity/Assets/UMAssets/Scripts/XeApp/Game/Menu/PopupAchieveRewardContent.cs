@@ -22,7 +22,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xDF09B4 Offset: 0xDF09B4 VA: 0xDF09B4 Slot: 17
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{
-			UnityEngine.Debug.LogError("Implement PopupAchieveRewardContent");
+			TodoLogger.Log(0, "Implement PopupAchieveRewardContent");
 		}
 
 		//// RVA: 0xDF116C Offset: 0xDF116C VA: 0xDF116C

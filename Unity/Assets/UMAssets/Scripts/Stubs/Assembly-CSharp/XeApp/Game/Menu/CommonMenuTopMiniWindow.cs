@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		public bool m_isEnter;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

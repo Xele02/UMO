@@ -8,7 +8,7 @@ namespace XeApp.Game.Menu
 		private CharTouchButton m_button;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

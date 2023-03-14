@@ -36,7 +36,7 @@ namespace XeApp.Game.Common
 		private List<Image> m_imagesNum;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

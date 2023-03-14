@@ -18,7 +18,7 @@ namespace UnityStandardAssets.ImageEffects
 		public Shader shaderYUV;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

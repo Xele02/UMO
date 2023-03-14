@@ -5,7 +5,7 @@ public class OverlayTexture : BaseMeshEffect, IMaterialModifier
 {
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement monobehaviour");
+		TodoLogger.Log(0, "Implement monobehaviour");
 	}
 	public enum TextureMode
 	{

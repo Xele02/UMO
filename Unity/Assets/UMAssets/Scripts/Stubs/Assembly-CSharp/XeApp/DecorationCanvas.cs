@@ -13,7 +13,7 @@ namespace XeApp
 		private Material m_posterKiraMaterialFlip;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

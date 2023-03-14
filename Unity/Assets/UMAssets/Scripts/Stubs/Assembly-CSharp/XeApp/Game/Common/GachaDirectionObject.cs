@@ -10,7 +10,7 @@ namespace XeApp.Game.Common
 		private Transform m_quartzRoot;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

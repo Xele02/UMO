@@ -7,7 +7,7 @@ namespace XeApp.Game
 		public bool isInteger;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

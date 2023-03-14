@@ -17,7 +17,7 @@ namespace XeSys.Gfx
 		public PrefabData[] m_prefabData;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

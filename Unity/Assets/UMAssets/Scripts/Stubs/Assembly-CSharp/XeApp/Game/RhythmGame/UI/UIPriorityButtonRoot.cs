@@ -4,7 +4,7 @@ namespace XeApp.Game.RhythmGame.UI
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.Log(0, "Implement monobehaviour");
 		}
 		public int buttonModelOffset;
 		public int divaButtonOffOffset;

@@ -41,7 +41,7 @@ namespace XeApp.Game
 		private Text m_continueLabel;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

@@ -6,7 +6,7 @@ namespace UnityStandardAssets.ImageEffects
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.Log(0, "Implement monobehaviour");
 		}
 		public enum TweakMode
 		{

@@ -7,6 +7,6 @@ public class AnimatorCheck : MainSceneBase
 	private Transform m_findTo;
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement monobehaviour");
+		TodoLogger.Log(0, "Implement monobehaviour");
 	}
 }

@@ -8,7 +8,7 @@ namespace XeSys.Gfx
 		public Texture textureDown;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

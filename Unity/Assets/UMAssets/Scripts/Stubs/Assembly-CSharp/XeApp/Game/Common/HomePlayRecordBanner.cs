@@ -12,7 +12,7 @@ namespace XeApp.Game.Common
 		private CanvasGroup m_canvasGroup;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

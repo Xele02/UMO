@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 		public ViewScreenCostume m_camera;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

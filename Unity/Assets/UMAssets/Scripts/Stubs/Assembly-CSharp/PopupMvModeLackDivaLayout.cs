@@ -7,6 +7,6 @@ public class PopupMvModeLackDivaLayout : MonoBehaviour
 	private UGUISwapScrollList m_scrollList;
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement Monobehaviour");
+		TodoLogger.Log(0, "Implement Monobehaviour");
 	}
 }

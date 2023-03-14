@@ -7,7 +7,7 @@ namespace XeApp.Core
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.Log(0, "Implement monobehaviour");
 		}
 		public override void Process()
 		{

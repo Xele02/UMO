@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		private Image backGroundImage;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

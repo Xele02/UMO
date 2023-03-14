@@ -10,7 +10,7 @@ namespace XeApp.Game.Menu
 		private RaidBossPopLayout m_spBossPopLayout;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }

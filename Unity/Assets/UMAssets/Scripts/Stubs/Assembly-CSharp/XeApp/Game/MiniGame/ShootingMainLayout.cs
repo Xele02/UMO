@@ -14,7 +14,7 @@ namespace XeApp.Game.MiniGame
 		private ShootingMainUseCommand m_useCommand;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.Log(0, "Implement Monobehaviour");
 		}
 	}
 }
