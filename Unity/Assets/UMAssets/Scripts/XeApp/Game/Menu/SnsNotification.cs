@@ -52,6 +52,10 @@ namespace XeApp.Game.Menu
 		//private IEnumerator Co_TouchWait(UnityAction pushAction, bool isButtonEnable = True, bool IsOffer = False) { }
 
 		//// RVA: 0x12D189C Offset: 0x12D189C VA: 0x12D189C
-		//public void Close() { }
+		public void Close()
+		{
+			m_dirtyClose = true;
+			return;
+		}
 	}
 }

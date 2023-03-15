@@ -63,7 +63,16 @@ namespace XeSys
 		}
 
 		// // RVA: 0x23A9378 Offset: 0x23A9378 VA: 0x23A9378
-		// public static bool IsWithinPeriod(long current, long start, long end) { }
+		public static bool IsWithinPeriod(long current, long start, long end)
+		{
+			if(start == 0)
+			{
+				return end > current;
+			}
+			if ((end == 0 || end > current) && start < current)
+				return true;
+			return false;
+		}
 
 		// // RVA: 0x23A93DC Offset: 0x23A93DC VA: 0x23A93DC
 		// public static string GetDayStringFromUNIXTime(long unix_time) { }

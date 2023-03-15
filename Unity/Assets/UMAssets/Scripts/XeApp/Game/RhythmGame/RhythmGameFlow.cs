@@ -340,7 +340,7 @@ namespace XeApp.Game.RhythmGame
 					isDivaSoundLoaded = true;
 				});
 			}
-			IsRareBreak = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.GOFAPKBNNCL(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
+			IsRareBreak = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.GOFAPKBNNCL_HasRareSceneWithCostumeForDivaUnlocked(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
 			if(IsRareBreak)
 			{
 				isDivaCosSoundLoaded = false;

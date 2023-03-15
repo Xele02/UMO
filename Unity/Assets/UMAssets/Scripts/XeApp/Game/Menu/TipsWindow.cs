@@ -4,6 +4,7 @@ using XeApp.Game.Common;
 using XeSys;
 using System.Collections;
 using mcrs;
+using System.Collections.Generic;
 
 namespace XeApp.Game.Menu
 {
@@ -35,7 +36,7 @@ namespace XeApp.Game.Menu
 		private bool m_isScroll; // 0x34
 		private bool m_canAutoScroll = true; // 0x35
 		private const float AutoScrollWaitSecond = 5;
-		//private List<TipsData> m_tipsList = new List<TipsData>; // 0x38
+		private List<TipsData> m_tipsList = new List<TipsData>(); // 0x38
 		private const int MaxListupTips = 3;
 
 		//public int MaxPage { get; } 0xA9C0D4
@@ -54,13 +55,59 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA9B388 Offset: 0xA9B388 VA: 0xA9B388
-		//public void SetContent(List<TipsData> tipsList) { }
+		public void SetContent(List<TipsData> tipsList)
+		{
+			m_isScroll = false;
+			m_tipsList = tipsList;
+			m_page = 1;
+			SetMaxPage(tipsList.Count);
+			m_page = 1;
+			m_conten.SetContent(m_tipsList[0].title, m_tipsList[0].message, m_tipsList[0].texture);
+			m_scrollWaitSecond = 0;
+			SetCharaImage(DirectionIndex.Left, m_tipsList[0].divaL);
+			SetCharaImage(DirectionIndex.Right, m_tipsList[0].divaR);
+			SetGraffitiImage(m_tipsList[0].graffitiId, m_tipsList[0].graffiti);
+			m_canAutoScroll = tipsList.Count > 1;
+		}
 
 		//// RVA: 0xA9C3BC Offset: 0xA9C3BC VA: 0xA9C3BC
-		//private void SetCharaImage(TipsWindow.DirectionIndex dir, TipsTexture image) { }
+		private void SetCharaImage(DirectionIndex dir, TipsTexture image)
+		{
+			if (image != null)
+			{
+				m_charaImages[(int)dir].enabled = true;
+				image.Set(m_charaImages[(int)dir]);
+			}
+			else
+			{
+				m_charaImages[(int)dir].enabled = false;
+			}
+		}
 
 		//// RVA: 0xA9C490 Offset: 0xA9C490 VA: 0xA9C490
-		//private void SetGraffitiImage(int id, TipsTexture image) { }
+		private void SetGraffitiImage(int id, TipsTexture image)
+		{
+			if(image == null)
+			{
+				for(int i = 0; i < m_graffitiImages.Length; i++)
+				{
+					m_graffitiImages[i].enabled = false;
+				}
+			}
+			else
+			{
+				TodoLogger.Log(0, "Todo check values");
+				int x = id - 1;
+				int y = x * 16 + 16;
+				for (int i = 0; i < m_graffitiImages.Length; i++)
+				{
+					m_graffitiImages[i].enabled = true;
+					image.Set(m_graffitiImages[i]);
+					Rect r = new Rect(GRAFFITI_UV_TABLE[x * 2 + i].x, GRAFFITI_UV_TABLE[x * 2 + i].y, GRAFFITI_SIZE.x, GRAFFITI_SIZE.y);
+					m_graffitiImages[i].uvRect = new Rect(r.x / image.BaseTexture.width, 1 - (r.y + r.height) / image.BaseTexture.height, r.width / image.BaseTexture.width, r.height / image.BaseTexture.height);
+				}
+			}
+		}
 
 		//// RVA: 0xA9C3B8 Offset: 0xA9C3B8 VA: 0xA9C3B8
 		//private void UpdateFlag(TipsData tipsData) { }
@@ -80,7 +127,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA9B520 Offset: 0xA9B520 VA: 0xA9B520
-		//public void Show() { }
+		public void Show()
+		{
+			m_scrollWaitSecond = 0;
+			m_canAutoScroll = true;
+			gameObject.SetActive(true);
+			m_root.StartChildrenAnimGoStop("st_in");
+		}
 
 		//// RVA: 0xA9964C Offset: 0xA9964C VA: 0xA9964C
 		//public void Close() { }
@@ -90,13 +143,23 @@ namespace XeApp.Game.Menu
 		//private IEnumerator CloseCoroutine() { }
 
 		//// RVA: 0xA998C4 Offset: 0xA998C4 VA: 0xA998C4
-		//public bool IsPlayingAnime() { }
+		public bool IsPlayingAnime()
+		{
+			return m_root.IsPlayingChildren();
+		}
 
 		//// RVA: 0xA9CA94 Offset: 0xA9CA94 VA: 0xA9CA94
 		//public void StartAutoScroll() { }
 
 		//// RVA: 0xA9C30C Offset: 0xA9C30C VA: 0xA9C30C
-		//private void SetMaxPage(int maxPage) { }
+		private void SetMaxPage(int maxPage)
+		{
+			m_maxPage = maxPage;
+			for(int i = 0; i < m_arrowButtons.Length; i++)
+			{
+				m_arrowButtons[i].Hidden = maxPage < 2;
+			}
+		}
 
 		//// RVA: 0xA9C3B0 Offset: 0xA9C3B0 VA: 0xA9C3B0
 		//private void SetPage(int page) { }

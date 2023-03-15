@@ -745,19 +745,32 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB2AAD4 Offset: 0xB2AAD4 VA: 0xB2AAD4
 		public void InputDisable()
 		{
-			TodoLogger.Log(0, "InputDisable");
+			m_inputDisableCount++;
+			m_menuTransitionControl.SetHeaderMenuButtonDisable(MenuHeaderControl.Button.All);
+			m_menuTransitionControl.SetMenuContentButtonDisable();
+			m_menuTransitionControl.SetFooterMenuButtonDisable(MenuFooterControl.Button.All);
+			m_menuTransitionControl.SetHelpButtonDisable();
+			m_lobbyButtonControl.EnableButton(false);
 		}
 
 		// // RVA: 0xB322EC Offset: 0xB322EC VA: 0xB322EC
 		public void RaycastEnable()
 		{
-			TodoLogger.Log(0, "Raycast Enable");
+			m_raycastDisableCount--;
+			if (m_raycastDisableCount > 0)
+				return;
+			m_uiRaycaster.enabled = true;
+			m_raycastDisableCount = 0;
 		}
 
 		// // RVA: 0xB32338 Offset: 0xB32338 VA: 0xB32338
 		public void RaycastDisable()
 		{
-			TodoLogger.Log(0, "Raycast Disable");
+			if(m_raycastDisableCount == 0)
+			{
+				m_uiRaycaster.enabled = false;
+			}
+			m_raycastDisableCount++;
 		}
 
 		// // RVA: 0xB32384 Offset: 0xB32384 VA: 0xB32384
@@ -949,7 +962,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB35814 Offset: 0xB35814 VA: 0xB35814
 		private bool CheckDatelineAndAssetUpdateInner()
 		{
-			TodoLogger.Log(0, "CheckDatelineAndAssetUpdateInner");
+			if(((uint)m_menuTransitionControl.GetCurrentScene().name & 0xfffffffeU) != (uint)TransitionList.Type.UNLOCK_COSTUME)
+			{
+				if(((uint)m_menuTransitionControl.GetNextScene().name & 0xfffffffeU) != (uint)TransitionList.Type.UNLOCK_COSTUME)
+				{
+					return CheckDatelineAndAssetUpdate();
+				}
+			}
 			return false;
 		}
 

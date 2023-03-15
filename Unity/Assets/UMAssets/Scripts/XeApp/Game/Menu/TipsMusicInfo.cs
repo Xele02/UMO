@@ -44,7 +44,10 @@ namespace XeApp.Game.Menu
 		//private IEnumerator CloseCoroutine() { }
 
 		//// RVA: 0xA998F0 Offset: 0xA998F0 VA: 0xA998F0
-		//public bool IsPlayingAnime() { }
+		public bool IsPlayingAnime()
+		{
+			return m_root.IsPlayingAll();
+		}
 
 		//[CompilerGeneratedAttribute] // RVA: 0x7357F4 Offset: 0x7357F4 VA: 0x7357F4
 		//// RVA: 0xA9BD38 Offset: 0xA9BD38 VA: 0xA9BD38

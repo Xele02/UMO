@@ -210,7 +210,11 @@ namespace XeApp.Game.Menu
 		// public void SetEnable() { }
 
 		// // RVA: 0xE31058 Offset: 0xE31058 VA: 0xE31058
-		// public void SetDisable() { }
+		public void SetDisable()
+		{
+			m_button.IsInputOff = true;
+			m_blockCount++;
+		}
 
 		// // RVA: 0xE31098 Offset: 0xE31098 VA: 0xE31098
 		private void OnPushHelpButton()

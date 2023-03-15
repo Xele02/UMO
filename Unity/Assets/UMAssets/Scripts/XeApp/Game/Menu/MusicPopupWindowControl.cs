@@ -39,7 +39,7 @@ namespace XeApp.Game.Menu
 			m_enemyInfoPopupSetting.SetParent(parent);
 			m_divaSkillLevelPopupSetting.SetParent(parent);
 			m_contensDataDic.Add(6, new PopupTabContents.ContentsData(6, m_musicInfoPopupSetting, "popup_music_select_00"));
-			m_contensDataDic.Add(6, new PopupTabContents.ContentsData(7, m_enemyInfoPopupSetting, "popup_music_select_07"));
+			m_contensDataDic.Add(7, new PopupTabContents.ContentsData(7, m_enemyInfoPopupSetting, "popup_music_select_07"));
 			m_contensDataDic.Add(8, new PopupTabContents.ContentsData(8, m_divaSkillLevelPopupSetting, "popup_music_select_06"));
 		}
 

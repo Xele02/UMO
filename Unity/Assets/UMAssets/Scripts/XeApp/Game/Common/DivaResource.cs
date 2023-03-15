@@ -1150,7 +1150,7 @@ namespace XeApp.Game.Common
 			CIOECGOMILE c = CIOECGOMILE.HHCJCDFCLOB;
 			BBHNACPENDM_ServerSaveData b2 = c.AHEFHIMGIBI_ServerSave;
 			MMPBPOIFDAF_Scene m = b2.PNLOINMCCKH_Scene;
-			bool f = m.GOFAPKBNNCL(divaId);
+			bool f = m.GOFAPKBNNCL_HasRareSceneWithCostumeForDivaUnlocked(divaId);
 			if(f)
 			{
 				assetName.SetFormat("diva_{0:D3}_menu_voicetable_cos", divaId);

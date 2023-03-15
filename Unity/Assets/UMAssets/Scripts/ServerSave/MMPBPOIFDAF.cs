@@ -299,12 +299,58 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 	// public bool MBGEHFKKOEN(MLIBEPGADJH ECNHDEHADGL) { }
 
 	// // RVA: 0x196B17C Offset: 0x196B17C VA: 0x196B17C
-	// public List<MLIBEPGADJH.KKLDOOJBJMN> NFFGMOFIBDH(MLIBEPGADJH ECNHDEHADGL) { }
+	public List<MLIBEPGADJH_Scene.KKLDOOJBJMN> NFFGMOFIBDH_GetAllUnlockedRareScenes(MLIBEPGADJH_Scene ECNHDEHADGL)
+	{
+		List<MLIBEPGADJH_Scene.KKLDOOJBJMN> res = new List<MLIBEPGADJH_Scene.KKLDOOJBJMN>();
+		for(int i = 0; i < OPIBAPEGCLA.Count; i++)
+		{
+			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = ECNHDEHADGL.CDENCMNHNGA_SceneList[OPIBAPEGCLA[i].PPFNGGCBJKC_Id - 1];
+			if(dbScene.PPEGAKEIEGM_En > 1)
+			{
+				if(dbScene.EKLIPGELKCL_Rarity > 5)
+				{
+					if(OPIBAPEGCLA[i].IHIAFIHAAPO_Unlocked)
+					{
+						res.Add(dbScene);
+					}
+				}
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0x196B4C0 Offset: 0x196B4C0 VA: 0x196B4C0
-	public bool GOFAPKBNNCL(int DPKCMAHGHNI)
+	public bool GOFAPKBNNCL_HasRareSceneWithCostumeForDivaUnlocked(int DPKCMAHGHNI)
     {
-        TodoLogger.Log(0, "TODO");
+		OKGLGHCBCJP_Database db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+		if (db != null)
+		{
+			MLIBEPGADJH_Scene dbScenes = db.ECNHDEHADGL_Scene;
+			KMOGDEOKHPG_Episode dbEps = db.MOLEPBNJAGE_Episode;
+			LCLCCHLDNHJ_Costume dbCos = db.MFPNGNMFEAL_Costume;
+			List<MLIBEPGADJH_Scene.KKLDOOJBJMN> l = NFFGMOFIBDH_GetAllUnlockedRareScenes(dbScenes);
+			for(int i = 0; i < l.Count; i++)
+			{
+				if(l[i].KELFCMEOPPM_Ep > 0)
+				{
+					HMGPODKEFBA_EpisodeInfo ep = dbEps.BBAJKJPKOHD_EpisodeList[l[i].KELFCMEOPPM_Ep - 1];
+					for(int j = 0; j < ep.HHJGBJCIFON_Rewards.Count; j++)
+					{
+						JNIKPOIKFAC_Reward reward = dbEps.LFAAEPAAEMB_Rewards[ep.HHJGBJCIFON_Rewards[j]];
+						if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_Item) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+						{
+							int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(reward.KIJAPOFAGPN_Item);
+							if(itemId > 0)
+							{
+								LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = dbCos.CDENCMNHNGA_Costumes[itemId - 1];
+								if (cos.AHHJLDLAPAN_PrismDivaId == DPKCMAHGHNI)
+									return true;
+							}
+						}
+					}
+				}
+			}
+		}
         return false;
     }
 

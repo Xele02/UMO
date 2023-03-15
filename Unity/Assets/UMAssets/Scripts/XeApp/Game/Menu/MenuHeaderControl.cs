@@ -9,6 +9,24 @@ namespace XeApp.Game.Menu
 {
 	public class MenuHeaderControl
 	{
+		public enum Button
+		{
+			None = 0,
+			Rank = 1,
+			UtaRate = 2,
+			Stamina = 4,
+			Charge = 8,
+			Back = 16,
+			All = 31,
+		}
+
+		public enum ButtonIndex
+		{
+			Stamina = 0,
+			Charge = 1,
+			Back = 2,
+		}
+
 		private GameObject m_root; // 0x8
 		private GameObject m_userInfoInstance; // 0xC
 		private GameObject m_menuStackInstance; // 0x10
@@ -392,7 +410,17 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB299F0 Offset: 0xB299F0 VA: 0xB299F0
-		// public void SetButtonDisable(MenuHeaderControl.Button bit) { }
+		public void SetButtonDisable(Button bit)
+		{
+			for(int i = 0; i < m_buttons.Count; i++)
+			{
+				if(((int)bit & (1 << (i & 0x1f))) != 0)
+				{
+					m_buttons[i].enabled = false;
+					m_buttonBlockCount[i]++;
+				}
+			}
+		}
 
 		// // RVA: 0xB29B2C Offset: 0xB29B2C VA: 0xB29B2C
 		// public void SetButtonEnable(MenuHeaderControl.Button bit) { }

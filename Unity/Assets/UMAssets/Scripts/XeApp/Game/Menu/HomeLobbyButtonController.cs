@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 using System;
 using System.Collections;
+using XeApp.Core;
 
 namespace XeApp.Game.Menu
 {
@@ -33,12 +34,21 @@ namespace XeApp.Game.Menu
 		// RVA: 0x966720 Offset: 0x966720 VA: 0x966720
 		public IEnumerator Co_LoadLayout(GameObject a_ui_root)
 		{
-			TodoLogger.Log(0, "LobbyButton Co_LoadLayout");
-			yield break;
+			//0x96A520
+			yield return Co.R(Co_LoadTabButtonData(a_ui_root));
+			yield return Co.R(Co_LoadSceneButtonData(a_ui_root));
+			m_lobbyTabBtn.Wait();
+			m_lobbySceneBtn.Wait();
+			m_lobbyTabBtn.onTabClickButton = OnLobbyTabButton;
+			m_lobbySceneBtn.onSceneClickButton = OnClickChangeLobbySceneButton;
+			m_lobbySceneBtn.onHideClickButton = OnLobbySceneButtonHide;
+			m_listBtn.Clear();
+			m_listBtn.AddRange(m_lobbyTabBtn.gameObject.GetComponentsInChildren<ButtonBase>(true));
+			m_listBtn.AddRange(m_lobbySceneBtn.gameObject.GetComponentsInChildren<ButtonBase>(true));
 		}
 
 		// RVA: 0x9667E8 Offset: 0x9667E8 VA: 0x9667E8
-		public void Setup(HomeLobbyButtonController.Type a_type = Type.DOWN)
+		public void Setup(Type a_type = Type.DOWN)
 		{
 			TodoLogger.Log(0, "LobbyButton Setup");
 		}
@@ -64,7 +74,27 @@ namespace XeApp.Game.Menu
 		// public void Wait() { }
 
 		// // RVA: 0x967298 Offset: 0x967298 VA: 0x967298
-		// public void EnableButton(bool a_enable) { }
+		public void EnableButton(bool a_enable)
+		{
+			if(m_IsInitialize)
+			{
+				if(a_enable)
+				{
+					m_cnt_input--;
+					if (m_cnt_input > 0)
+						return;
+					m_cnt_input = 0;
+				}
+				else
+				{
+					m_cnt_input++;
+				}
+				for(int i = 0; i < m_listBtn.Count; i++)
+				{
+					m_listBtn[i].IsInputOff = !a_enable;
+				}
+			}
+		}
 
 		// // RVA: 0x966F30 Offset: 0x966F30 VA: 0x966F30
 		// public void SetAsLastSibling() { }
@@ -107,23 +137,76 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E2B9C Offset: 0x6E2B9C VA: 0x6E2B9C
 		// // RVA: 0x968960 Offset: 0x968960 VA: 0x968960
-		// private IEnumerator Co_LoadTabButtonData(GameObject a_ui_root) { }
+		private IEnumerator Co_LoadTabButtonData(GameObject a_ui_root)
+		{
+			string _lyName; // 0x1C
+			AssetBundleLoadLayoutOperationBase operation; // 0x20
+
+			//0x96B048
+			_lyName = "ly/202.xab";
+			operation = AssetBundleManager.LoadLayoutAsync(_lyName, "root_cmn_lobby_tb_layout_root");
+			yield return operation;
+			yield return operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0x96974C
+				m_lobbyTabBtn = instance.GetComponent<HomeLobbyButton>();
+				if(m_lobbyTabBtn != null)
+				{
+					m_lobbyTabBtn.transform.SetParent(a_ui_root.transform, false);
+				}
+			});
+			AssetBundleManager.UnloadAssetBundle(_lyName, false);
+			yield return null;
+			while (!m_lobbyTabBtn.IsLoaded())
+				yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E2C14 Offset: 0x6E2C14 VA: 0x6E2C14
 		// // RVA: 0x968A28 Offset: 0x968A28 VA: 0x968A28
-		// private IEnumerator Co_LoadSceneButtonData(GameObject a_ui_root) { }
+		private IEnumerator Co_LoadSceneButtonData(GameObject a_ui_root)
+		{
+			string _lyName; // 0x1C
+			AssetBundleLoadLayoutOperationBase operation; // 0x20
+
+			//0x96ACAC
+			_lyName = "ly/202.xab";
+			operation = AssetBundleManager.LoadLayoutAsync(_lyName, "root_cmn_lobby_btn_layout_root");
+			yield return operation;
+			yield return operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0x9698C4
+				m_lobbySceneBtn = instance.GetComponent<HomeLobbySceneButton>();
+				if(m_lobbySceneBtn != null)
+				{
+					m_lobbySceneBtn.transform.SetParent(a_ui_root.transform, false);
+				}
+			});
+			AssetBundleManager.UnloadAssetBundle(_lyName, false);
+			yield return null;
+			while (!m_lobbySceneBtn.IsLoaded())
+				yield return null;
+		}
 
 		// // RVA: 0x966B74 Offset: 0x966B74 VA: 0x966B74
 		// private void UpdatePresentment() { }
 
 		// // RVA: 0x968EF8 Offset: 0x968EF8 VA: 0x968EF8
-		// private void OnLobbyTabButton() { }
+		private void OnLobbyTabButton()
+		{
+			TodoLogger.LogNotImplemented("HomeLobbyButtonController.OnLobbyTabButton");
+		}
 
 		// // RVA: 0x9690D0 Offset: 0x9690D0 VA: 0x9690D0
-		// private void OnLobbySceneButtonHide() { }
+		private void OnLobbySceneButtonHide()
+		{
+			TodoLogger.LogNotImplemented("HomeLobbyButtonController.OnLobbySceneButtonHide");
+		}
 
 		// // RVA: 0x96916C Offset: 0x96916C VA: 0x96916C
-		// private void OnClickChangeLobbySceneButton() { }
+		private void OnClickChangeLobbySceneButton()
+		{
+			TodoLogger.LogNotImplemented("HomeLobbyButtonController.OnClickChangeLobbySceneButton");
+		}
 
 		// // RVA: 0x967EBC Offset: 0x967EBC VA: 0x967EBC
 		// public static void Show_PopupNotAffiliationRaidEnd(Action transitionCallback, Action endCallback, NKOBMDPHNGP.FIPGKDJHKCH phase = 3) { }

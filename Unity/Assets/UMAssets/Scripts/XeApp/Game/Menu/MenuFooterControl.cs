@@ -9,6 +9,19 @@ namespace XeApp.Game.Menu
 {
 	public class MenuFooterControl
 	{
+		public enum Button
+		{
+			None = 0,
+			Home = 64,
+			Setting = 32,
+			VOP = 16,
+			LiveMode = 8,
+			Gacha = 4,
+			Mission = 2,
+			Menu = 1,
+			All = 127,
+		}
+
 		private GameObject m_root; // 0x8
 		private GameObject m_instance; // 0xC
 		private MenuBarPrefab m_menuBar; // 0x10
@@ -220,7 +233,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xED2678 Offset: 0xED2678 VA: 0xED2678
-		// public void SetButtonDisable(MenuFooterControl.Button bit) { }
+		public void SetButtonDisable(Button bit)
+		{
+			if (m_buttons != null)
+			{
+				for (int i = 0; i < m_buttons.Length; i++)
+				{
+					if(((int)bit & (1 << (i & 0x1f))) != 0)
+					{
+						m_buttons[i].enabled = false;
+						m_buttonBlockCount[i]++;
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xED2768 Offset: 0xED2768 VA: 0xED2768
 		// public void SetButtonEnable(MenuFooterControl.Button bit) { }

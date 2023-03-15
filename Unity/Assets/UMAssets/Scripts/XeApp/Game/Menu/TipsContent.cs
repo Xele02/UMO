@@ -30,15 +30,45 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA96F28 Offset: 0xA96F28 VA: 0xA96F28
-		//public void SetContent(string title, string tips, TipsTexture texture) { }
+		public void SetContent(string title, string tips, TipsTexture texture)
+		{
+			SetImage(texture);
+			SetTitle(title);
+			SetTipsMessag(tips, texture == null ? 1 : 0.725f);
+		}
 
 		//// RVA: 0xA970E4 Offset: 0xA970E4 VA: 0xA970E4
-		//private void SetTitle(string title) { }
+		private void SetTitle(string title)
+		{
+			for(int i = 0; i < m_titleTexts.Length; i++)
+			{
+				m_titleTexts[i].text = title;
+			}
+		}
 
 		//// RVA: 0xA97184 Offset: 0xA97184 VA: 0xA97184
-		//private void SetTipsMessag(string tips, float lineSpace) { }
+		private void SetTipsMessag(string tips, float lineSpace)
+		{
+			for(int i = 0; i < m_contentTexts.Length; i++)
+			{
+				m_contentTexts[i].text = tips;
+				m_contentTexts[i].lineSpacing = lineSpace;
+			}
+		}
 
 		//// RVA: 0xA96F94 Offset: 0xA96F94 VA: 0xA96F94
-		//private void SetImage(IiconTexture texture) { }
+		private void SetImage(IiconTexture texture)
+		{
+			if(texture == null)
+			{
+				m_animeLayout.StartChildrenAnimGoStop("plate_02");
+			}
+			else
+			{
+				m_image.enabled = true;
+				texture.Set(m_image);
+				m_animeLayout.StartChildrenAnimGoStop("plate_01");
+			}
+		}
 	}
 }

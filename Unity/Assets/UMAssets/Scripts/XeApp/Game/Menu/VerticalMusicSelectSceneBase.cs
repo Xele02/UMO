@@ -177,10 +177,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xAC9070 Offset: 0xAC9070 VA: 0xAC9070 Slot: 30
-		//protected override void InputDisable()
-		//{
-		//	TodoLogger.Log(0, "!!!");
-		//}
+		protected override void InputDisable()
+		{
+			TodoLogger.Log(0, "VerticalMusicSelectSceneBase InputDisable");
+		}
 
 		// RVA: 0xAC909C Offset: 0xAC909C VA: 0xAC909C Slot: 29
 		//protected override void InputEnable()
