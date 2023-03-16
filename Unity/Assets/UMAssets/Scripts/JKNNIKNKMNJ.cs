@@ -42,7 +42,7 @@ public class JKNNIKNKMNJ
 				PINPIHODOKP = GPBGFJONHPB();
 			HICKJFPDBEG = PINPIHODOKP ^ FBGGEFFJJHB;
 		} } //0x1472770 DNNADJLKBPC 0x14724A8 BJOJAFDBOBL
-	public int DCBENCMNOGO { get
+	public int DCBENCMNOGO_Gain { get
 		{
 			if ((EMGIAPOEKLL ^ FBGGEFFJJHB) != BPADHGOCPIH)
 				MNJAPFEIOKD |= 4;
@@ -71,7 +71,7 @@ public class JKNNIKNKMNJ
 				OPDBPKLCEFO = 1;
 			JCGIEJGOEIM = OPDBPKLCEFO ^ FBGGEFFJJHB;
 		} } //0x14727C0 DEOLPKEGHFP 0x1472520 OCIMIINBMAD
-	public long FJDBNGEPKHL { get { 
+	public long FJDBNGEPKHL_Time { get { 
 			long val = FBGGEFFJJHB ^ HFMOEKIBNKA; 
 			if((val ^ MKMBHBOGFHM) != 0)
 				MNJAPFEIOKD = MNJAPFEIOKD | 0x10;
@@ -122,7 +122,25 @@ public class JKNNIKNKMNJ
 	// public int DCLKMNGMIKC(bool LIFPCFFJEOA = False) { }
 
 	// // RVA: 0x1472B28 Offset: 0x1472B28 VA: 0x1472B28
-	// public long CKEJFCLAOHP() { }
+	public long CKEJFCLAOHP_GetRemainingTime()
+	{
+		if (NEPIPMPAFIE_CntVal < DCBENCMNOGO_Gain)
+		{
+			int staminaDiff = DCBENCMNOGO_Gain - NEPIPMPAFIE_CntVal;
+			int stamTime = (int)(staminaDiff * FLJGHBLEDDB_UpdateInterval);
+			TodoLogger.Log(TodoLogger.ToCheck, "Int 64");
+			if ((FJDBNGEPKHL_Time - DLPEEDCCNMJ_CntSaveTime) > stamTime)
+			{
+				long delta = (FJDBNGEPKHL_Time - DLPEEDCCNMJ_CntSaveTime) / FLJGHBLEDDB_UpdateInterval;
+				if (delta != 0)
+				{
+					return delta;
+				}
+				return stamTime;
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0x1472C7C Offset: 0x1472C7C VA: 0x1472C7C
 	// public long LEHHIGOOIJJ() { }

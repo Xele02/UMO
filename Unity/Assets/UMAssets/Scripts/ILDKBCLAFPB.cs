@@ -4886,6 +4886,9 @@ public class DJJGOGFPCEA_Home : FLGABCAPFEC<long>
 	//public bool MBHHHMCCOLI(long OFCBCEKFAMJ) { }
 
 	//// RVA: 0x198D448 Offset: 0x198D448 VA: 0x198D448
-	//public void HBGKPLDGGLF(long BBFAAIDPIJM) { }
+	public void HBGKPLDGGLF(long BBFAAIDPIJM)
+	{
+		DOBDFAGOIJK_List[0] = BBFAAIDPIJM;
+	}
 }
 

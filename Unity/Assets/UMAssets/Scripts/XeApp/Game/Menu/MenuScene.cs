@@ -141,7 +141,7 @@ namespace XeApp.Game.Menu
 		public HomeLobbyButtonController LobbyButtonControl { get { return m_lobbyButtonControl; } } //0xB2E730
 		// public FlexibleLayoutCamera FlexibleLayoutCamera { get; } 0xB2E738
 		// public DenominationManager DenomControl { get; } 0xB2AB9C
-		// public long EnterToHomeTime { get; } 0xB2E7EC
+		public long EnterToHomeTime { get { return m_enterToHomeTime; } } //0xB2E7EC
 
 		// // RVA: 0xB2E7F4 Offset: 0xB2E7F4 VA: 0xB2E7F4 Slot: 9
 		protected override void DoAwake()
@@ -231,7 +231,17 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB306D8 Offset: 0xB306D8 VA: 0xB306D8
-		// public static float GetLongScreenScale() { }
+		public static float GetLongScreenScale()
+		{
+			if(SystemManager.HasSafeArea)
+			{
+				return 1.7777778f / (GameManager.Instance.AppResolutionWidth / GameManager.Instance.AppResolutionHeight);
+			}
+			else
+			{
+				return 0.84f;
+			}
+		}
 
 		// // RVA: 0xB2F0E0 Offset: 0xB2F0E0 VA: 0xB2F0E0
 		private void MakeComebackSceneInfo(ref MenuScene.MenuSceneCamebackInfo info)
@@ -939,7 +949,24 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB355A0 Offset: 0xB355A0 VA: 0xB355A0
 		private void ChangeGroupCategory(SceneGroupCategory prevCategory, SceneGroupCategory nextCategory)
 		{
-			TodoLogger.Log(0, "TODO");
+			m_statusWindowControl.ResetHistory();
+			if(prevCategory < SceneGroupCategory.GACHA)
+			{
+				if(prevCategory == SceneGroupCategory.HOME || prevCategory == SceneGroupCategory.FREE)
+				{
+					//LAB_00b35634
+					Database.Instance.bonusData.ClearEpisodeBonus();
+					return;
+				}
+			}
+			else if(prevCategory < SceneGroupCategory.VOP)
+			{
+				if (((1 << (int)((int)prevCategory & 0xffU)) & 0x41a00U) == 0)
+					return;
+
+				//LAB_00b35634
+				Database.Instance.bonusData.ClearEpisodeBonus();
+			}
 		}
 
 		// // RVA: 0xB3568C Offset: 0xB3568C VA: 0xB3568C

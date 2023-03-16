@@ -259,7 +259,21 @@ namespace XeApp.Game.Common
 		//public static bool IsNotReceivedRewardUtaGrade() { }
 
 		//// RVA: 0xEA6544 Offset: 0xEA6544 VA: 0xEA6544
-		//public static int GetNextUtaGradeNum(int rateTotal) { }
+		public static int GetNextUtaGradeNum(int rateTotal)
+		{
+			if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			{
+				List<HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO;
+				for (int i = 0; i < l.Count; i++)
+				{
+					if(l[i].ADKDHKMPMHP <= rateTotal)
+					{
+						return l[i].ADKDHKMPMHP - rateTotal;
+					}
+				}
+			}
+			return 0;
+		}
 
 		//// RVA: 0xEA66C8 Offset: 0xEA66C8 VA: 0xEA66C8
 		//public HighScoreRating.UtaGradeData GetNextUtaGradeInfo(int rateTotal) { }

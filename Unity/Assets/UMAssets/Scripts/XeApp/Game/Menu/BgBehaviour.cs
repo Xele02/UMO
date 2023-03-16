@@ -292,7 +292,31 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1437E00 Offset: 0x1437E00 VA: 0x1437E00
-		// public void SetHomeScene(bool isBgDark) { }
+		public void SetHomeScene(bool isBgDark)
+		{
+			m_tileImage.enabled = false;
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			for (int i = 0; i < m_colorChangeImages.Count; i++)
+			{
+				m_colorChangeImages[i].material = m_decorationMaterials[0];
+			}
+			if (isBgDark)
+			{
+				ShowOverlay(HomeSceneOverlayAlpha);
+			}
+			else
+			{
+				HideOverlay();
+			}
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x1438148 Offset: 0x1438148 VA: 0x1438148
 		// public void SetHomeSceneView() { }
@@ -376,7 +400,25 @@ namespace XeApp.Game.Menu
 		// public void SetNewYearEvent() { }
 
 		// // RVA: 0x143AAC4 Offset: 0x143AAC4 VA: 0x143AAC4
-		// public void SetLimitedHomeScene() { }
+		public void SetLimitedHomeScene()
+		{
+			m_tileImage.enabled = false;
+			ChangeTilingType(TilingType.Dot, false);
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for(int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			for(int i = 0; i < m_colorChangeImages.Count; i++)
+			{
+				m_colorChangeImages[i].material = m_decorationMaterials[0];
+			}
+			ShowOverlay(HomeSceneOverlayAlpha);
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x143ADFC Offset: 0x143ADFC VA: 0x143ADFC
 		// public void SetCampaign() { }
@@ -474,7 +516,10 @@ namespace XeApp.Game.Menu
 		// public IEnumerator SetupStoryBg(int map, Action finish) { }
 
 		// // RVA: 0x143BCBC Offset: 0x143BCBC VA: 0x143BCBC
-		// public void StoryBgShow() { }
+		public void StoryBgShow()
+		{
+			m_storyBgScroll.gameObject.SetActive(true);
+		}
 
 		// // RVA: 0x143BD0C Offset: 0x143BD0C VA: 0x143BD0C
 		public void StoryBgHide()

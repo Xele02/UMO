@@ -46,7 +46,7 @@ public class OEGIPPCADNA
 	public List<RankingListInfo> BMKBAMFBAPJ = new List<RankingListInfo>(); // 0x1C
 
 	public static OEGIPPCADNA HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
-	//public int CDINKAANIAA { get; set; } 0x1B3C7CC AHHAOMGOPKA 0x1B3C7D4 OGJPMBDLJDA
+	public int CDINKAANIAA { get { return MCILHNEDPBM; } set { return; } } //0x1B3C7CC AHHAOMGOPKA 0x1B3C7D4 OGJPMBDLJDA
 
 	//// RVA: 0x1B3C7D8 Offset: 0x1B3C7D8 VA: 0x1B3C7D8
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)

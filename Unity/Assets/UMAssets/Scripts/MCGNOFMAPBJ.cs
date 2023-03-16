@@ -100,7 +100,25 @@ public class MCGNOFMAPBJ
 	}
 
 	// // RVA: 0x130D008 Offset: 0x130D008 VA: 0x130D008 Slot: 5
-	// public virtual long MLLGPBGFLFI() { }
+	public virtual long MLLGPBGFLFI_GetRemainingTime()
+	{
+		if(NEPIPMPAFIE_Stamina < DCBENCMNOGO_GainStamina)
+		{
+			int staminaDiff = DCBENCMNOGO_GainStamina - NEPIPMPAFIE_Stamina;
+			int healTime = (int)(staminaDiff * FLJGHBLEDDB_HealSec);
+			TodoLogger.Log(TodoLogger.ToCheck, "Int 64");
+			if ((FJDBNGEPKHL_Time - DLPEEDCCNMJ_StaminaSaveTime) > healTime)
+			{
+				long delta = (FJDBNGEPKHL_Time - DLPEEDCCNMJ_StaminaSaveTime) / FLJGHBLEDDB_HealSec;
+				if(delta != 0)
+				{
+					return delta;
+				}
+				return healTime;
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0x130D15C Offset: 0x130D15C VA: 0x130D15C
 	// public long LEHHIGOOIJJ() { }

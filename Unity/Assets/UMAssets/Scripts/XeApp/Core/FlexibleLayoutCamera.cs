@@ -18,9 +18,9 @@ namespace XeApp.Core
 		private bool isEnableFov = true; // 0x20
 		private bool isEnableViewPort = true; // 0x21
 
-		//public bool IsEnableFov { get; set; } 0x1D704B0 0x1D704B8
+		public bool IsEnableFov { get { return isEnableFov; } set { isEnableFov = value; } } //0x1D704B0 0x1D704B8
 		//public bool IsEnableViewPort { get; set; } 0x1D704C0 0x1D704C8
-		//public List<Camera> FlexibleFovCameraList { get; } 0x1D704D0
+		public List<Camera> FlexibleFovCameraList { get { return flexibleFovCameraList; } } //0x1D704D0
 		//public List<Camera> FlexibleViewportCameraList { get; } 0x1D704D8
 
 		// RVA: 0x1D704E0 Offset: 0x1D704E0 VA: 0x1D704E0
@@ -147,7 +147,10 @@ namespace XeApp.Core
 		//public void SetEnable() { }
 
 		//// RVA: 0x1D711E0 Offset: 0x1D711E0 VA: 0x1D711E0
-		//public float GetDefaultFov(int cameraListIndex) { }
+		public float GetDefaultFov(int cameraListIndex)
+		{
+			return flexibleDefaultFovList[cameraListIndex];
+		}
 
 		//// RVA: 0x1D71260 Offset: 0x1D71260 VA: 0x1D71260
 		private SystemManager.OverPermissionAspectResult GetOverPermissionAspectResult()

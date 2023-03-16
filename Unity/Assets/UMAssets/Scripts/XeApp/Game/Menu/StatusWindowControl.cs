@@ -5,9 +5,23 @@ using UnityEngine.Events;
 
 namespace XeApp.Game.Menu
 {
+	internal enum StatusPopupType
+	{
+		Diva = 0,
+		Scene = 1,
+	}
+	internal struct StatusPopupState
+	{
+		public StatusPopupType type; // 0x0
+		public int id; // 0x4
+		public bool isCloseOnly; // 0x8
+		public bool isGoDiva; // 0x9
+		public int divaSlotNumber; // 0xC
+	}
+
 	public class StatusWindowControl
 	{
-		//private Dictionary<int, List<StatusPopupState>> m_popStateDict = new Dictionary<int, List<StatusPopupState>>(); // 0x8
+		private Dictionary<int, List<StatusPopupState>> m_popStateDict = new Dictionary<int, List<StatusPopupState>>(); // 0x8
 		private int m_historyPosition; // 0xC
 		public DivaStatePopupSetting m_divaStatePopup; // 0x10
 		public SceneStatePopupSetting m_sceneStatePopup; // 0x14
@@ -32,7 +46,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12E155C Offset: 0x12E155C VA: 0x12E155C
 		public void ResetHistory()
 		{
-			TodoLogger.Log(0, "StatusWindowControl ResetHistory");
+			foreach(var k in m_popStateDict)
+			{
+				k.Value.Clear();
+			}
 		}
 
 		// // RVA: 0x12E1708 Offset: 0x12E1708 VA: 0x12E1708
