@@ -1311,9 +1311,10 @@ namespace XeApp.Game
 		// // RVA: 0x98874C Offset: 0x98874C VA: 0x98874C
 		public void ResetViewPlayerData()
 		{
-			TodoLogger.Log(0, "ResetViewPlayerData");
-			//tmp
-			CreateViewPlayerData();
+			if (m_viewPlayerData == null)
+				return;
+			m_viewPlayerData.KHEKNNFCAOI_Init(null, false);
+			JKIJLMMLNPL.DJNPDEOLNHD_UpdateMacrossCannonPower();
 		}
 
 		// // RVA: 0x9A0DF8 Offset: 0x9A0DF8 VA: 0x9A0DF8

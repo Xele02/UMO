@@ -576,7 +576,16 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x143D0C8 Offset: 0x143D0C8 VA: 0x143D0C8
 		public void DeleteLimitedBG()
 		{
-			TodoLogger.Log(0, "DeleteLimitedBG");
+			if(m_limitedHomeBg.m_prefab != null)
+			{
+				UnityEngine.Object.Destroy(m_limitedHomeBg.m_prefab);
+				m_limitedHomeBg.m_prefab = null;
+			}
+			if(m_limitedHomeBg.m_camera != null)
+			{
+				UnityEngine.Object.Destroy(m_limitedHomeBg.m_camera);
+				m_limitedHomeBg.m_camera = null;
+			}
 		}
 
 		// // RVA: 0x143D874 Offset: 0x143D874 VA: 0x143D874
@@ -683,12 +692,64 @@ namespace XeApp.Game.Menu
 			bool canBeMat = false;
 			switch (textureType)
 			{
-				case BgTextureType.Music:
-					m_strBuilder.AppendFormat("{0}{1:D2}.xab", "ct/bg/mc/nm/", m_id);
+				case BgTextureType.Scene:
+					int itemId = m_id % 1000000;
+					m_strBuilder.SetFormat("{0:D6}_{1:D2}", m_id / 1000000, itemId);
+					string s = m_strBuilder.ToString();
+					List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenesList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList;
+					if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.LENJLNLNPEO_IsPlateAnimationHome == 0 
+						&& itemId > 0 
+						&& scenesList.Count >= itemId
+						&& scenesList[itemId - 1].EKLIPGELKCL_Rarity >= 6)
+					{
+						m_strBuilder.SetFormat("{0}{1}.xab", SceneBg2TextureBundlePath, m_id.ToString("D2"));
+						canBeMat = true;
+					}
+					else
+					{
+						m_strBuilder.SetFormat("{0}{1}.xab", SceneBgTextureBundlePath, m_id.ToString("D2"));
+					}
 					break;
+				case BgTextureType.Music:
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", MusicBgTextureBundlePath, m_id);
+					break;
+				case BgTextureType.MusicEvent:
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", MusicEventBgTextureBundlePath, m_id);
+					break;
+				case BgTextureType.Valkyrie:
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", ValkyrieBgTextureBundlePath, m_id);
+					break;
+				case BgTextureType.Result:
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", ResultBgTextureBundlePath, m_id);
+					break;
+				case BgTextureType.LoginBonus:
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", LoginBonusBgTextureBundlePath, m_id);
+					break;
+				case BgTextureType.CostumeSelect:
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", CostumeBgTextureBundlePath, m_id);
+					break;
+				case BgTextureType.NewYearEvent:
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", NewYearEventBgTextureBundlePath, m_id);
+					break;
+				case BgTextureType.GachaBox:
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", GachaBoxBgTextureBundlePath, m_id);
+					break;
+				case BgTextureType.GachaNormal:
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", GachaBgTextureBundlePath, m_id);
+					break;
+				case BgTextureType.Offer:
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", OfferBgTextureBundlePath, m_id);
+					break;
+				case BgTextureType.Raid:
+					m_strBuilder.AppendFormat("{0}{1:D3}_{2:D2}.xab", RaidBgTextureBundlePath, m_id, 1);
+					string.Format("{0:D3}_{1:D2}", id, 1);
+					break;
+				case BgTextureType.LobbyMain:
+					m_strBuilder.AppendFormat("{0}{1:D3}.xab", LobbyMainBgTextureBundlePath, m_id);
+					break;
+				//case BgTextureType.Normal:
 				default:
-					TodoLogger.Log(0, "load other bg");
-					yield break;
+					m_strBuilder.AppendFormat("{0}{1:D2}.xab", HomeBgTextureBundlePath, m_id);
 					break;
 			}
 			BgTexture tex;
@@ -747,11 +808,11 @@ namespace XeApp.Game.Menu
 			ConvertBgType(bgType, ref texType, ref id);
 			if(texType == BgTextureType.Raid)
 			{
-				m_strBuilder.SetFormat("{0}{1:D3}_{2:D2}.xab", "ct/bg/rd/", id, 1);
+				m_strBuilder.SetFormat("{0}{1:D3}_{2:D2}.xab", RaidBgTextureBundlePath, id, 1);
 			}
 			else if(texType == BgTextureType.Music)
 			{
-				m_strBuilder.SetFormat("{0}{1:D2}.xab", "ct/bg/mc/nm/", id);
+				m_strBuilder.SetFormat("{0}{1:D2}.xab", MusicBgTextureBundlePath, id);
 			}
 			if(!m_cachedTextures.ContainsKey(m_strBuilder.ToString()))
 			{

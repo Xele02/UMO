@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 			if(a_fader != null)
 			{
 				mTargetFader = a_fader;
-				Update()
+				Update();
 			}
 			else
 			{

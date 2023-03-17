@@ -16,7 +16,7 @@ public class NKGJPJPHLIF
 	public int IMDEGHBHAPC; // 0xC
 	public string MLKOPOKGHHH_SakashoGameId = ""; // 0x10
 	public static bool GKHEAEAPEGB = false; // 0x4
-	// public IKIIAFKHDFP DHEFMDMGPMG; // 0x1C
+	public IKIIAFKHDFP DHEFMDMGPMG_LoginBonusManager; // 0x1C
 	private CIOECGOMILE NLGFEPAJBOJ; // 0x20
 	private IMMAOANGPNK EJDOEBLBGIO; // 0x24
 	private JGEOBNENMAH FDOODGBBKEE; // 0x28
