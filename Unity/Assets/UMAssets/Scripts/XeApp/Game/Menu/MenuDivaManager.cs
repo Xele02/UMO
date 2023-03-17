@@ -278,7 +278,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECB2A8 Offset: 0xECB2A8 VA: 0xECB2A8
-		//public void SetPosition(Vector3 position) { }
+		public void SetPosition(Vector3 position)
+		{
+			if (divaObject == null)
+				return;
+			divaObject.LockBoneSpring(0);
+			divaObject.transform.localPosition = position;
+			divaObject.UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0xECB408 Offset: 0xECB408 VA: 0xECB408
 		public bool isWaitUnlockBoneSpring()
@@ -344,7 +351,10 @@ namespace XeApp.Game.Menu
 		//public string GetFullName() { }
 
 		//// RVA: 0xECB89C Offset: 0xECB89C VA: 0xECB89C
-		//public void SetCameraRot(Vector3 rotation) { }
+		public void SetCameraRot(Vector3 rotation)
+		{
+			divaCamera.transform.localEulerAngles = rotation;
+		}
 
 		//// RVA: 0xECB90C Offset: 0xECB90C VA: 0xECB90C
 		//public void ChangeCameraRot(Vector3 rotation, float duration) { }

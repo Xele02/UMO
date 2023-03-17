@@ -34,8 +34,8 @@ namespace XeApp.Game.Menu
 		private int m_blockCount; // 0x30
 		private int m_pattern; // 0x34
 		private State m_state; // 0x38
-		// private OHCAABOMEOF.KGOGMKMBCPP m_eventType; // 0x3C
-		// private VeiwOptionHelpCategoryData m_helpCategory = new VeiwOptionHelpCategoryData(); // 0x40
+		private OHCAABOMEOF.KGOGMKMBCPP_EventType m_eventType; // 0x3C
+		private VeiwOptionHelpCategoryData m_helpCategory = new VeiwOptionHelpCategoryData(); // 0x40
 		private const int ResultButtonPattern = 3;
 		private const int ResultSearchId = 106;
 		private const int RaidResultSearchId = 128;
@@ -140,11 +140,59 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xE30560 Offset: 0xE30560 VA: 0xE30560
 		public void TryShow(TransitionList.Type transitionName)
 		{
-			TodoLogger.Log(0, "TryShow HelpButton");
+			HelpInfo info;
+			if (ButtonDispPlaceDict.TryGetValue((int)transitionName, out info))
+			{
+				int id = FindHelpUniqueId(info.searchId);
+				if(id < 0)
+				{
+					int v;
+					if(m_eventHelpIdDict.TryGetValue(info.eveType, out v))
+					{
+						m_searchId = info.searchId;
+						m_callHelpId = v;
+					}
+					else
+					{
+						Hide();
+					}
+				}
+				else
+				{
+					m_searchId = info.searchId;
+					m_callHelpId = id;
+				}
+				m_eventType = info.eveType;
+				m_pattern = info.pattern;
+				Show(m_pattern);
+			}
+			else
+			{
+				Hide();
+			}
 		}
 
 		// // RVA: 0xE306A4 Offset: 0xE306A4 VA: 0xE306A4
-		// public static int FindHelpUniqueId(int searchId) { }
+		public static int FindHelpUniqueId(int searchId)
+		{
+			DPGPEALHJOB[] hp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD;
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			for(int i = 0; i < hp.Length; i++)
+			{
+				if (hp[i].DIJHLDAIBCA_SearchId == searchId)
+				{
+					TodoLogger.Log(TodoLogger.ToCheck, "int64");
+					if(hp[i].PDBPFJJCADD <= time)
+					{
+						if(hp[i].FDBNFFNFOND >= time)
+						{
+							return hp[i].OBGBAOLONDD_UniqueId;
+						}
+					}
+				}
+			}
+			return -1;
+		}
 
 		// // RVA: 0xE30C24 Offset: 0xE30C24 VA: 0xE30C24
 		// public void ShowMusicSelectHelpButton() { }
@@ -189,10 +237,21 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xE30964 Offset: 0xE30964 VA: 0xE30964
-		// private void Show(int pattern) { }
+		private void Show(int pattern)
+		{
+			TodoLogger.Log(0, "HelpButton.Show");
+		}
 
 		// // RVA: 0xE30B7C Offset: 0xE30B7C VA: 0xE30B7C
-		// private void Hide() { }
+		private void Hide()
+		{
+			if(m_isShow)
+			{
+				m_buttonAnimLayout.StartChildrenAnimGoStop("go_out", "st_out");
+				m_isShow = false;
+			}
+			m_state = State.Hide;
+		}
 
 		// // RVA: 0xE30EB0 Offset: 0xE30EB0 VA: 0xE30EB0
 		public void TryEnter()

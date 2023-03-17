@@ -255,10 +255,16 @@ namespace XeApp.Game.Menu
 		// public ButtonBase FindButton(MenuFooterControl.Button bit) { }
 
 		// // RVA: 0xED29D4 Offset: 0xED29D4 VA: 0xED29D4
-		// public void SetButtonNew(MenuFooterControl.Button bit, bool isNew) { }
+		public void SetButtonNew(Button bit, bool isNew)
+		{
+			TodoLogger.Log(0, "SetButtonNew");
+		}
 
 		// // RVA: 0xED3160 Offset: 0xED3160 VA: 0xED3160
-		// public void SetOfferUnlockRank() { }
+		public void SetOfferUnlockRank()
+		{
+			TodoLogger.Log(0, "SetOfferUnlockRank");
+		}
 
 		// // RVA: 0xED33D4 Offset: 0xED33D4 VA: 0xED33D4
 		// public bool IsShow() { }

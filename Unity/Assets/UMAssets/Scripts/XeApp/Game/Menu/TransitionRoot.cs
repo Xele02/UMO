@@ -326,17 +326,17 @@ namespace XeApp.Game.Menu
 				TransitionList.Type.COSTUME_SELECT,
 				TransitionList.Type.COSTUME_VIEW_MODE
 			}; // 0x60
-			// private Dictionary<TransitionList.Type, float[]> m_divaAdjustPosition = new Dictionary<TransitionList.Type, float[]>() {
-			//	{ 12, new float[2] {1.0f, 1.5f} }
-			//}; // 0x64
-			// private Dictionary<TransitionList.Type, Vector3> m_divaCameraRotation = new Dictionary<TransitionList.Type, Vector3>() {
-				// { -2, new Vector3(0, -170, 0) },
-				// { 2, new Vector3(0, -180, 0) },
-				// { 105, new Vector3(0, -180, 0) },
-				// { 111, new Vector3( 0, -178, 0 ) },
-				// { 112, new Vector3(0, -178, 0) }
-			// }; // 0x68
-			// private readonly float[] m_baseAspect = new float[2] { 1.777778f, 1.333333f }; // 0x6C
+			private Dictionary<TransitionList.Type, float[]> m_divaAdjustPosition = new Dictionary<TransitionList.Type, float[]>() {
+				{ TransitionList.Type.TEAM_EDIT, new float[2] {1.0f, 1.5f} }
+			}; // 0x64
+			private Dictionary<TransitionList.Type, Vector3> m_divaCameraRotation = new Dictionary<TransitionList.Type, Vector3>() {
+				{ TransitionList.Type.UNDEFINED, new Vector3(0, -170, 0) },
+				{ TransitionList.Type.HOME, new Vector3(0, -180, 0) },
+				{ TransitionList.Type.HOME_BG_SELECT, new Vector3(0, -180, 0) },
+				{ TransitionList.Type.GAKUYA, new Vector3( 0, -178, 0 ) },
+				{ TransitionList.Type.GAKUYA_DIVA_VIEW, new Vector3(0, -178, 0) }
+			 }; // 0x68
+			private readonly float[] m_baseAspect = new float[2] { 1.777778f, 1.333333f }; // 0x6C
 			private static readonly TransitionRoot.MenuTransitionControl.LoadPlaceData[] loadPlaceList = new LoadPlaceData[16] {
 				new LoadPlaceData(TransitionList.Type.UNDEFINED, TransitionList.Type.COSTUME_SELECT),
 				new LoadPlaceData(TransitionList.Type.UNDEFINED, TransitionList.Type.VALKYRIE_SELECT),
@@ -994,8 +994,21 @@ namespace XeApp.Game.Menu
 				bool divaActivated = false;
 				if(isDivaActivate)
 				{
-					TodoLogger.Log(0, "setup diva");
-					//900
+					float[] f;
+					float posX = 0;
+					if (m_divaAdjustPosition.TryGetValue(m_next.name, out f))
+					{
+						posX = CalcDivaPositionX(f[0], f[1]);
+					}
+					MenuScene.Instance.SetDivaXposition(posX);
+					if(idleDivaModel)
+					{
+						MenuScene.Instance.divaManager.OnIdle("");
+					}
+					//LAB_00a3ed5c
+					//18
+					while (MenuScene.Instance.divaManager.isWaitUnlockBoneSpring())
+						yield return null;
 					divaActivated = isDivaActivate;
 				}
 				if((isNotAutoLoad || divaActivated) == false)
@@ -1004,7 +1017,8 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					TodoLogger.Log(0, "setup cam");
+					Vector3 camRot = GetDivaCameraRotByScene(m_next.name);
+					MenuScene.Instance.divaManager.SetCameraRot(camRot);
 				}
 				m_currentRoot.OnPostSetCanvas();
 				while(!m_currentRoot.IsEndPostSetCanvas())
@@ -1102,7 +1116,10 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3A5F4 Offset: 0xA3A5F4 VA: 0xA3A5F4
-			// private float CalcDivaPositionX(float min, float max) { }
+			private float CalcDivaPositionX(float min, float max)
+			{
+				return (max - min) * (Screen.width * 1.0f / Screen.height - m_baseAspect[1]) / (m_baseAspect[0] - m_baseAspect[1]) + min;
+			}
 
 			// // RVA: 0xA3A708 Offset: 0xA3A708 VA: 0xA3A708
 			// private bool IsShiftIdleAnimation(TransitionList.Type current, TransitionList.Type next) { }
@@ -1177,7 +1194,38 @@ namespace XeApp.Game.Menu
 			// // RVA: 0xA3ADFC Offset: 0xA3ADFC VA: 0xA3ADFC
 			public static void UpdateMenuNewIcon(TransitionList.Type nextTransition, TransitionList.Type prevTransition)
 			{
-				TodoLogger.Log(0, "UpdateMenuNewIcon");
+				QuestUtility.UpdateQuestData();
+				QuestUtility.FooterMenuBadge();
+				bool b = false;
+				bool c = QuestUtility.IsBeginnerQuest();
+				if (!c)
+				{
+					b = IBJAKJJICBC.FPLIAMHMFJP();
+				}
+				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.LiveMode, b);
+				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Gacha, false);
+				bool isNew = false;
+				if(NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies == 0 || !c)
+				{
+					isNew = true;
+					if(!AODFBGCCBPE.PLKKMHBFDCJ())
+					{
+						isNew = DKKPBBBDKMJ.CADENLBDAEB();
+					}
+				}
+				else
+				{
+					isNew = NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies > 0 || !c;
+				}
+				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Menu, isNew);
+				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Home, false);
+				if (nextTransition == TransitionList.Type.OFFER_RESULT || prevTransition == TransitionList.Type.OFFER_SELECT)
+					return;
+				bool d = KDHGBOOECKC.HHCJCDFCLOB.PPPLNJCFAID();
+				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				KDHGBOOECKC.HHCJCDFCLOB.JPNPPIHOJFC(time);
+				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.VOP, nextTransition != TransitionList.Type.OFFER_SELECT && d);
+				MenuScene.Instance.FooterMenu.SetOfferUnlockRank();
 			}
 
 			// // RVA: 0xA3B1C0 Offset: 0xA3B1C0 VA: 0xA3B1C0
@@ -1273,7 +1321,15 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3BA1C Offset: 0xA3BA1C VA: 0xA3BA1C
-			// public Vector3 GetDivaCameraRotByScene(TransitionList.Type type) { }
+			public Vector3 GetDivaCameraRotByScene(TransitionList.Type type)
+			{
+				Vector3 res;
+				if(!m_divaCameraRotation.TryGetValue(type, out res))
+				{
+					res = m_divaCameraRotation[TransitionList.Type.UNDEFINED];
+				}
+				return res;
+			}
 
 			// // RVA: 0xA3BB18 Offset: 0xA3BB18 VA: 0xA3BB18
 			public bool CanShowNowLoading(TransitionList.Type from, TransitionList.Type to)

@@ -612,7 +612,12 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	// public override string ToString() { }
 
 	// // RVA: 0x121FC40 Offset: 0x121FC40 VA: 0x121FC40
-	// public static bool FPLIAMHMFJP() { }
+	public static bool FPLIAMHMFJP()
+	{
+		TodoLogger.Log(0, "FPLIAMHMFJP");
+		return false;
+	}
+
 
 	// // RVA: 0x121FEF4 Offset: 0x121FEF4 VA: 0x121FEF4
 	public static int POPLHDKHIIM()

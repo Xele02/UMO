@@ -88,8 +88,12 @@ public class JEPBIIJDGEF_EventInfo
 	// // RVA: 0x1C395FC Offset: 0x1C395FC VA: 0x1C395FC
 	public IKDICBBFBMI_EventBase MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/, bool BJIOJJDLODJ = false)
 	{
-		TodoLogger.Log(0, "MKBJOOAILBB");
-		return new HAEDCCLHEMN_EventBattle("");
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		for(int i = 0; i < MPEOOINCGEN.Count; i++)
+		{
+			TodoLogger.Log(0, "MKBJOOAILBB");
+		}
+		return null;
 	}
 
 	// // RVA: 0x1C39848 Offset: 0x1C39848 VA: 0x1C39848

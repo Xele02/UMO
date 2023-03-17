@@ -41,7 +41,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB2FA4 Offset: 0xEB2FA4 VA: 0xEB2FA4 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			TodoLogger.Log(5, "LoginBonusScene OnBgmStart");
+			if (m_connectStatus != eConnectStatus.SuccessNo && m_connectStatus != eConnectStatus.Error)
+			{
+				TodoLogger.Log(5, "LoginBonusScene OnBgmStart");
+			}
 			return true;
 		}
 
@@ -321,7 +324,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB4D70 Offset: 0xEB4D70 VA: 0xEB4D70
 		private bool IsDefaultLoginBonus()
 		{ 
-			TodoLogger.Log(5, "IsDefaultLoginBonus");
+			if(m_loginBonusMasters != null)
+			{
+				TodoLogger.Log(0, "IsDefaultLoginBonus");
+			}
 			return false;
 		}
 
@@ -371,12 +377,6 @@ namespace XeApp.Game.Menu
 				return;
 			}
 			m_isOpenScene = true;
-
-			TodoLogger.Log(5, "remove");
-
-			m_isConnect = false;
-			AutoFadeFlag = false;
-			m_updater.Add(this.NextScene());
 		}
 
 		// RVA: 0xEB5530 Offset: 0xEB5530 VA: 0xEB5530 Slot: 15

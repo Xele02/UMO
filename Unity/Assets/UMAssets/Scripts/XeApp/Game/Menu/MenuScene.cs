@@ -541,7 +541,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB30D0C Offset: 0xB30D0C VA: 0xB30D0C
-		// public void SetDivaXposition(float xpos) { }
+		public void SetDivaXposition(float xpos)
+		{
+			divaManager.SetPosition(new Vector3(xpos, 0, 0));
+		}
 
 		// // RVA: 0xB30D6C Offset: 0xB30D6C VA: 0xB30D6C Slot: 14
 		protected override bool DoUpdateLeave()

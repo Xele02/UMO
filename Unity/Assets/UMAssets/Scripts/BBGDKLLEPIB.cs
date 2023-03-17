@@ -76,7 +76,18 @@ public class BBGDKLLEPIB
 	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x24 EAIFOAGPGGH KCLBNOKEPIG 0xF178A4 OCIMGEFKKLM 0xF178AC // Error CB
 
 	// // RVA: 0xF17748 Offset: 0xF17748 VA: 0xF17748
-	// public bool KHJHKNLEOAB(long JHNMKKNEENE) { }
+	public bool KHJHKNLEOAB(long JHNMKKNEENE)
+	{
+		for(int i = 0; i < PFMPODNDFIB.Count; i++)
+		{
+			TodoLogger.Log(TodoLogger.ToCheck, "int64");
+			if(PFMPODNDFIB[i] >= JHNMKKNEENE && PFMPODNDFIB[i] >= POCKENHKOBL)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0xF178B4 Offset: 0xF178B4 VA: 0xF178B4
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)

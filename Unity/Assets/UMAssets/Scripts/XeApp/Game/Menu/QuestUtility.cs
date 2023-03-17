@@ -16,18 +16,18 @@ namespace XeApp.Game.Menu
 		}
 
 		public const int QUEST_ACHIEVED_COUNT_MAX = 99;
-		//public static List<FKMOKDCJFEN> m_dailyViewList; // 0x0
-		//public static List<FKMOKDCJFEN> m_beginnerViewList; // 0x4
-		//public static List<FKMOKDCJFEN> m_normalViewList; // 0x8
-		//public static List<FKMOKDCJFEN> m_snsViewList; // 0xC
-		//public static List<CGJKNOCAPII> m_eventViewList; // 0x10
-		//public static List<CGJKNOCAPII> m_bingoViewList; // 0x14
+		public static List<FKMOKDCJFEN> m_dailyViewList; // 0x0
+		public static List<FKMOKDCJFEN> m_beginnerViewList; // 0x4
+		public static List<FKMOKDCJFEN> m_normalViewList; // 0x8
+		public static List<FKMOKDCJFEN> m_snsViewList; // 0xC
+		public static List<CGJKNOCAPII> m_eventViewList; // 0x10
+		public static List<CGJKNOCAPII> m_bingoViewList; // 0x14
 		//public static MFDJIFIIPJD m_selectedItemInfo; // 0x18
 		public static int m_dailyAchievedCount; // 0x1C
 		public static int m_beginnerAchievedCount; // 0x20
 		public static int m_normalAchievedCount; // 0x24
 		public static int m_snsAchievedCount; // 0x28
-		public static List<QuestUtility.EventQuestData> m_eventQuestDataList; // 0x2C
+		public static List<EventQuestData> m_eventQuestDataList; // 0x2C
 		private const int M = 60;
 		private const int H = 3600;
 		private const int D = 86400;
@@ -36,11 +36,73 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9DB964 Offset: 0x9DB964 VA: 0x9DB964
 		public static void UpdateQuestData(LayoutQuestTab.eTabType type)
 		{
-			TodoLogger.Log(0, "QuastUtility UpdateQuestData");
+			switch(type)
+			{
+				case LayoutQuestTab.eTabType.Event:
+					m_eventViewList = CGJKNOCAPII.JHCHAOJFHFG(false);
+					m_eventQuestDataList = new List<EventQuestData>();
+					for(int i = 0; i < m_eventViewList.Count; i++)
+					{
+						EventQuestData data = new EventQuestData();
+						/*data.m_masterName = l[i].JOPOPMLFINI;
+						data.m_uniqueId = */
+						TodoLogger.Log(0, "UpdateQuestData event");
+						m_eventQuestDataList.Add(data);
+					}
+					break;
+				case LayoutQuestTab.eTabType.Normal:
+					m_normalViewList = FKMOKDCJFEN.ABHPOFCEAEN(false);
+					m_normalAchievedCount = GetQuestCountByStatus(m_normalViewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+					break;
+				case LayoutQuestTab.eTabType.Daily:
+					m_dailyViewList = FKMOKDCJFEN.NNEHCMNOKFO(false);
+					m_dailyAchievedCount = GetQuestCountByStatus(m_dailyViewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+					break;
+				case LayoutQuestTab.eTabType.Diva:
+					m_snsViewList = FKMOKDCJFEN.IHEMBPBBIEO(false);
+					m_snsAchievedCount = GetQuestCountByStatus(m_snsViewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+					break;
+				case LayoutQuestTab.eTabType.Beginner:
+					m_beginnerViewList = FKMOKDCJFEN.BAENBNLMPMO(false);
+					m_beginnerAchievedCount = GetQuestCountByStatus(m_beginnerViewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+					break;
+				case LayoutQuestTab.eTabType.Bingo:
+					m_eventQuestDataList = new List<EventQuestData>();
+					m_bingoViewList = CGJKNOCAPII.GOGBAODOOAO(false);
+					for (int i = 0; i < m_bingoViewList.Count; i++)
+					{
+						EventQuestData data = new EventQuestData();
+						data.m_masterName = m_bingoViewList[i].JOPOPMLFINI;
+						data.m_uniqueId = m_bingoViewList[i].JHAOHBNPMNA;
+						data.m_eventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.DIDJLIPNCKO;
+						data.m_achievedCount = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(m_bingoViewList[i].PGIIDPEGGPI, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+						m_eventQuestDataList.Add(data);
+						m_bingoViewList[i].PKNLMLDKCLM = data.m_achievedCount;
+						if(data.m_achievedCount < 1)
+						{
+							m_bingoViewList[i].BEEIIJJKDBH = Common.BadgeConstant.ID.None;
+							m_bingoViewList[i].BHANMJKCCBC = "";
+						}
+						else
+						{
+							m_bingoViewList[i].BEEIIJJKDBH = Common.BadgeConstant.ID.Label;
+							m_bingoViewList[i].BHANMJKCCBC = GetAchievedCountText(data.m_achievedCount);
+						}
+					}
+					break;
+			}
 		}
 
 		//// RVA: 0x9D60CC Offset: 0x9D60CC VA: 0x9D60CC
-		//public static void UpdateQuestData() { }
+		public static void UpdateQuestData()
+		{
+			UpdateQuestData(LayoutQuestTab.eTabType.Daily);
+			UpdateQuestData(LayoutQuestTab.eTabType.Normal);
+			UpdateQuestData(LayoutQuestTab.eTabType.Beginner);
+			UpdateQuestData(LayoutQuestTab.eTabType.Diva);
+			UpdateQuestData(LayoutQuestTab.eTabType.Event);
+			UpdateQuestData(LayoutQuestTab.eTabType.Bingo);
+		}
 
 		//// RVA: 0x9E2BEC Offset: 0x9E2BEC VA: 0x9E2BEC
 		//public static bool FindAchievedQuestList(List<FKMOKDCJFEN> list) { }
@@ -49,13 +111,30 @@ namespace XeApp.Game.Menu
 		//public static List<FKMOKDCJFEN> GetEventQuestList(string masterName) { }
 
 		//// RVA: 0x9E29AC Offset: 0x9E29AC VA: 0x9E29AC
-		//public static int GetQuestCountByStatus(List<FKMOKDCJFEN> list, FKMOKDCJFEN.ADCPCCNCOMD status) { }
+		public static int GetQuestCountByStatus(List<FKMOKDCJFEN> list, FKMOKDCJFEN.ADCPCCNCOMD_Status status)
+		{
+			int res = 0;
+			if(list != null)
+			{
+				for(int i = 0; i < list.Count; i++)
+				{
+					if(list[i].CMCKNKKCNDK_Status == status)
+					{
+						res++;
+					}
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0x9E2E60 Offset: 0x9E2E60 VA: 0x9E2E60
 		//public static void FooterMenuBadge(bool enable) { }
 
 		//// RVA: 0x9D6170 Offset: 0x9D6170 VA: 0x9D6170
-		//public static void FooterMenuBadge() { }
+		public static void FooterMenuBadge()
+		{
+			TodoLogger.Log(0, "FooterMenuBadge");
+		}
 
 		//// RVA: 0x9E322C Offset: 0x9E322C VA: 0x9E322C
 		//public static long GetCurrentServerUnixTime() { }
@@ -76,7 +155,11 @@ namespace XeApp.Game.Menu
 		//private static TutorialTextPopupSetting CreateTutorialPopup(Transform parent, int face, string message, SizeType size, ButtonInfo[] buttons) { }
 
 		//// RVA: 0x9DAAD4 Offset: 0x9DAAD4 VA: 0x9DAAD4
-		//public static bool IsBeginnerQuest() { }
+		public static bool IsBeginnerQuest()
+		{
+			TodoLogger.Log(0, "IsBeginnerQuest");
+			return false;
+		}
 
 		//// RVA: 0x9E3AEC Offset: 0x9E3AEC VA: 0x9E3AEC
 		//public static bool IsEmphasis(List<FKMOKDCJFEN> list) { }
@@ -112,7 +195,11 @@ namespace XeApp.Game.Menu
 		//public static int GetAchievedCount() { }
 
 		//// RVA: 0x9E2AA4 Offset: 0x9E2AA4 VA: 0x9E2AA4
-		//public static string GetAchievedCountText(int count) { }
+		public static string GetAchievedCountText(int count)
+		{
+			TodoLogger.Log(0, "GetAchievedCountText");
+			return "";
+		}
 
 		//// RVA: 0x9E449C Offset: 0x9E449C VA: 0x9E449C
 		//public static string GetAchievedCountText(LayoutQuestTab.eTabType type) { }

@@ -103,6 +103,7 @@ class JpStringLiterals
 	public const string StringLiteral_11429 = "全力攻撃"; // 0x03bb3d4c
 	public const string StringLiteral_11430 = "マクロスキャノン"; // 0x03bb3d50
 	public const string StringLiteral_11431 = "通常攻撃"; // 0x03bb3d54
+	public const string StringLiteral_11781 = "新しいバージョン検知 mver= "; // 0x03bb42cc
 	public const string StringLiteral_11859 = "バッチインストーラ　停止完了"; // 0x03bb4404
 	public const string StringLiteral_11860 = "バッチインストーラ　停止待ち {0}"; // 0x03bb4408
 	public const string StringLiteral_11861 = "バッチインストーラ　不停止モジュール放棄"; // 0x03bb440c

@@ -133,7 +133,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B49E30 Offset: 0x1B49E30 VA: 0x1B49E30
 		public void Leave(bool isEnd = false)
 		{
-			TodoLogger.Log(0, "Leave common top menu");
+			if(is_show)
+			{
+				m_main.StartSiblingAnimGoStop(isEnd ? "st_out" : "go_out", "st_out");
+			}
+			is_show = false;
 		}
 
 		// // RVA: 0x1B4D764 Offset: 0x1B4D764 VA: 0x1B4D764

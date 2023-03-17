@@ -16,5 +16,13 @@ public class LGNBLDHKLJK
     }
 
 	// // RVA: 0x17F5AE4 Offset: 0x17F5AE4 VA: 0x17F5AE4
-	// public bool LNLCIMPFCEK(long LKCCMBEOLLA) { }
+	public bool LNLCIMPFCEK(long LKCCMBEOLLA)
+	{
+		if(!PPEGAKEIEGM || ABNEIOCBKPI == 0)
+		{
+			return false;
+		}
+		TodoLogger.Log(TodoLogger.ToCheck, "int64");
+		return LKCCMBEOLLA >= ABNEIOCBKPI;
+	}
 }
