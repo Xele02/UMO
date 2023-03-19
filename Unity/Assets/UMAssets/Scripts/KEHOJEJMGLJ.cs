@@ -326,7 +326,8 @@ public class KEHOJEJMGLJ
 						KOMKKBDABJP = false;
 						JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 							//0xE8D3C0
-							CIDPPOGCODB(FAOOOLDDBBB);
+							TodoLogger.Log(TodoLogger._Todo, "Disabled file deletion");
+							//CIDPPOGCODB(FAOOOLDDBBB);
 							KOMKKBDABJP = true;
 						});
 						//goto LAB_00e8eab0;

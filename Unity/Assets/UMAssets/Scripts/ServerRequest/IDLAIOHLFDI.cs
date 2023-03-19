@@ -34,7 +34,7 @@ public class IDLAIOHLFDI_GetLoginBonuses : CACGCMBKHDI_Request
 	public int MLPLGFLKKLI_Ipp = 30; // 0x80
 
 	public GMCAMBDHIGJ NFEAMMJIMPG { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	//public override bool EBPLLJGPFDA { get; }
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG != null; } } // 0x11EBD20 HGPAELCGELL
 
 	// RVA: 0x11EBB6C Offset: 0x11EBB6C VA: 0x11EBB6C Slot: 12
 	public override void DHLDNIEELHO()
@@ -48,9 +48,6 @@ public class IDLAIOHLFDI_GetLoginBonuses : CACGCMBKHDI_Request
 		NFEAMMJIMPG = null;
 		BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);
 	}
-
-	// RVA: 0x11EBD20 Offset: 0x11EBD20 VA: 0x11EBD20 Slot: 14
-	//public override bool HGPAELCGELL() { }
 
 	//// RVA: 0x11EBD30 Offset: 0x11EBD30 VA: 0x11EBD30
 	private void DIAMDBHBKBH()

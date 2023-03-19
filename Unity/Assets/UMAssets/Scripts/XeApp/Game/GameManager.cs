@@ -428,7 +428,8 @@ namespace XeApp.Game
 		// // RVA: 0x99B0D4 Offset: 0x99B0D4 VA: 0x99B0D4
 		private void OnFontTextureRebuilt(Font font)
 		{
-			TodoLogger.Log(5, "GameManager.OnFontTextureRebuilt");
+			if(font.name == GetSystemFont().name)
+				isDirtyFontUpdate = true;
 		}
 
 		// // RVA: 0x99B194 Offset: 0x99B194 VA: 0x99B194
@@ -1406,8 +1407,25 @@ namespace XeApp.Game
 		// // RVA: 0x9A1348 Offset: 0x9A1348 VA: 0x9A1348
 		public bool InstallEvent(int type, float per)
 		{
-			TodoLogger.Log(0, "InstallEvent");
-			return true;
+			switch(type)
+			{
+				case 1:
+					DownloadBar.HighResolutionModeFlag = false;
+					DownloadBar.Begin();
+				break;
+				case 2:
+					DownloadBar.SetPer(per);
+					if(onDownLoadFinish != null)
+						onDownLoadFinish();
+					DownloadBar.End();
+				break;
+				case 3:
+					DownloadBar.SetPer(per);
+					break;
+				case 4:
+					return DownloadBar.IsReady;
+			}
+			return false;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADE28 Offset: 0x6ADE28 VA: 0x6ADE28

@@ -46,7 +46,9 @@ namespace XeSys
 		// // RVA: 0x23A9000 Offset: 0x23A9000 VA: 0x23A9000
 		public static DateTime GetLocalDateTime(long unixTime)
 		{
-			return UNIX_EPOCH.AddSeconds(unixTime);
+			//UMO, get real timeline
+			double diff = (DateTime.Now - DateTime.UtcNow).TotalSeconds;
+			return TimeZoneInfo.ConvertTimeToUtc(UNIX_EPOCH.AddSeconds(unixTime + diff/* + 32400*/));
 		}
 
 		// // RVA: 0x23A90F8 Offset: 0x23A90F8 VA: 0x23A90F8
@@ -206,7 +208,7 @@ namespace XeSys
 		public static long RoundDownDayUnixTime(long unixtime, int offset = 0)
 		{
 			DateTime d = GetLocalDateTime(unixtime);
-			return GetTargetUnixTime(d.Year, d.Month, d.Day, 0, 0, 0);
+			return GetTargetUnixTime(d.Year, d.Month, d.Day, 0, 0, 0) + offset;
 		}
 	}
 }

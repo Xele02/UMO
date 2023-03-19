@@ -49,8 +49,8 @@ namespace XeApp.Core
 				string path = null;
 				if(m_lodingAssetBundle.TryGetValue(assetBundleName, out loadingCount))
 				{
-					UnityEngine.Debug.Log("LoadAssetBundle using currently loading AB "+assetBundleName);
-					m_lodingAssetBundle[assetBundleName] = loadingCount++;
+					m_lodingAssetBundle[assetBundleName] = ++loadingCount;
+					UnityEngine.Debug.Log("LoadAssetBundle using currently loading AB "+assetBundleName+" count is "+m_lodingAssetBundle[assetBundleName]);
 					return true;
 				}
 				else
@@ -65,6 +65,7 @@ namespace XeApp.Core
 				{
 					path = Path.Combine(BaseAssetBundleInstallPath, assetBundleName);
 				}
+				UnityEngine.Debug.Log("LoadAssetBundle "+assetBundleName);
 				FileLoader.Instance.Request(path, assetBundleName, 
 					(FileResultObject fo) => {
 						//0x1D6AC7C
@@ -82,6 +83,7 @@ namespace XeApp.Core
 								{
 									res.m_ReferencedCount += loadingCount;
 								}
+								UnityEngine.Debug.Log("LoadAssetBundle shader done "+assetBundleName+" count is "+m_LoadedAssetBundles[assetBundleName].m_ReferencedCount);
 								m_lodingAssetBundle.Remove(assetBundleName);
 
 #if UNITY_EDITOR || UNITY_STANDALONE
@@ -106,6 +108,7 @@ namespace XeApp.Core
 
 				FileLoader.Instance.Load();
 				m_lodingAssetBundle.Add(assetBundleName, 0);
+				UnityEngine.Debug.Log("LoadAssetBundle added in m_lodingAssetBundle "+assetBundleName);
 				return false;
 			}
 		}

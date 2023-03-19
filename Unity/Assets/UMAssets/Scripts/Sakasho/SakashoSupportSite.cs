@@ -62,8 +62,7 @@ public class SakashoSupportSite : SakashoAPIBase
 	private static /*extern*/ int SakashoSupportSiteGetToken(int callbackId, string json)
     {
         // call lib sakasho.SakashoSupportSiteGetToken
-        TodoLogger.Log(0, "SakashoSupportSiteGetToken");
-        return 0;
+        return ExternLib.LibSakasho.SakashoSupportSiteGetToken(callbackId, json);
     }
 
 	// // RVA: 0x2E6A2A8 Offset: 0x2E6A2A8 VA: 0x2E6A2A8

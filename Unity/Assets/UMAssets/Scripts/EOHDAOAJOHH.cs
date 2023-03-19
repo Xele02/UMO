@@ -83,7 +83,11 @@ public class EOHDAOAJOHH
 	// public void PNAOEAFNNFA() { }
 
 	// // RVA: 0xFBC4E8 Offset: 0xFBC4E8 VA: 0xFBC4E8
-	// public bool HKMEADILMGB(long PEJIPAFKHKM, int LJNAKDMILMC, string LJGOOOMOMMA, int EAHPLCJMPHD) { }
+	public bool HKMEADILMGB(long PEJIPAFKHKM, int LJNAKDMILMC, string LJGOOOMOMMA, int EAHPLCJMPHD)
+	{
+		TodoLogger.Log(0, "HKMEADILMGB");
+		return false;
+	}
 
 	// // RVA: 0xFBC6DC Offset: 0xFBC6DC VA: 0xFBC6DC
 	// public bool COGJLOMPOKK(int HMFFHLPNMPH, int ABILEHIAMOO) { }

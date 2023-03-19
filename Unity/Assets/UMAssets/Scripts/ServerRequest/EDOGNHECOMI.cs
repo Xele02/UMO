@@ -12,7 +12,7 @@ public class EDOGNHECOMI_GetStepUpLotDetail : CACGCMBKHDI_Request
 	private bool ENDFGMBBBEE; // 0x88
 
 	public JBHCLFDBPKP NFEAMMJIMPG { get; private set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	//public override bool EBPLLJGPFDA { get; }
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG != null; } } // 0x1509F00 HGPAELCGELL
 
 	// RVA: 0x1509CAC Offset: 0x1509CAC VA: 0x1509CAC Slot: 12
 	public override void DHLDNIEELHO()
@@ -31,9 +31,6 @@ public class EDOGNHECOMI_GetStepUpLotDetail : CACGCMBKHDI_Request
 	{
 		TodoLogger.Log(0, "EDOGNHECOMI_GetStepUpLotDetail.MGFNKDPHFGI");
 	}
-
-	// RVA: 0x1509F00 Offset: 0x1509F00 VA: 0x1509F00 Slot: 14
-	//public override bool HGPAELCGELL() { }
 
 	// RVA: 0x1509F10 Offset: 0x1509F10 VA: 0x1509F10
 	//private void DIAMDBHBKBH() { }

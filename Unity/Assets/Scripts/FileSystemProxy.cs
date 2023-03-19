@@ -121,6 +121,7 @@ static class FileSystemProxy
 		{
 			serverFileList = new Dictionary<string, string>();
 			string fileList = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath + "/../../Data/RequestGetFiles.json"));
+			fileList = fileList.Replace("[[DATE]]", "0");
 			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(fileList);
 			EDOHBJAPLPF_JsonData fileL = jsonData["files"];
 			for (int i = 0; i < fileL.HNBFOAJIIAL_Count; i++)

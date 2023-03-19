@@ -651,7 +651,7 @@ namespace XeApp.Game.Common
 			int e = a.EGLDFPILJLG;
 			if(e == 0)
 			{
-    			UnityEngine.Debug.LogError("Exit  Error Co_LoadComponent");
+    			//UnityEngine.Debug.LogWarning("Exit  Error Co_LoadComponent");
 				yield break;
 			}
 			

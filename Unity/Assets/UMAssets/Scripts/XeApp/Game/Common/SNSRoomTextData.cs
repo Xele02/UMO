@@ -34,13 +34,25 @@ namespace XeApp.Game.Common
 		private List<string> messageList; // 0x14
 
 		//// RVA: 0x138B510 Offset: 0x138B510 VA: 0x138B510
-		//public SNSRoomTextData.Header FindHeader(int talkId) { }
+		public Header FindHeader(int talkId)
+		{
+			TodoLogger.Log(0, "FindHeader");
+			return null;
+		}
 
 		//// RVA: 0x138B7E4 Offset: 0x138B7E4 VA: 0x138B7E4
-		//public string FindMessage(int messageIndex) { }
+		public string FindMessage(int messageIndex)
+		{
+			TodoLogger.Log(0, "FindMessage");
+			return "";
+		}
 
 		//// RVA: 0x138B8AC Offset: 0x138B8AC VA: 0x138B8AC
-		//public SNSRoomTextData.TalkData FindData(int talkIndex) { }
+		public TalkData FindData(int talkIndex)
+		{
+			TodoLogger.Log(0, "FindData");
+			return null;
+		}
 
 		//// RVA: 0x138B92C Offset: 0x138B92C VA: 0x138B92C
 		public bool Init(byte[] dataBytes, int offset)

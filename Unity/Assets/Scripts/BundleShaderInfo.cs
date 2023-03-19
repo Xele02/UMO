@@ -78,7 +78,7 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 					}
 					if(info.shader == null)
 					{
-						Debug.LogError("shader not found : "+assetName+" : "+info.name);
+						Debug.LogWarning("shader not found : "+assetName+" : "+info.name);
 					}
 					
 					shaderList.Add(o.GetInstanceID(), info);

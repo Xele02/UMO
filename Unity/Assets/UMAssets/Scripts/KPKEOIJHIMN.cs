@@ -44,7 +44,7 @@ public class KPKEOIJHIMN
         if(CINGFPEPPED.AJBPBEALBOB_ServerCurrentAssetRevision == null)
             return GIDACIOHFNN.NHHHCIINJKO;
 
-        if(IBLKLEMGCCG.AJBPBEALBOB_ServerCurrentAssetRevision == CINGFPEPPED.AJBPBEALBOB_ServerCurrentAssetRevision)
+        if(IBLKLEMGCCG.AJBPBEALBOB_ServerCurrentAssetRevision != CINGFPEPPED.AJBPBEALBOB_ServerCurrentAssetRevision)
             return GIDACIOHFNN.GJCDHOAEIHP;
             
 		return GIDACIOHFNN.NHHHCIINJKO;

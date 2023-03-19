@@ -651,7 +651,10 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1C53128 Offset: 0x1C53128 VA: 0x1C53128
-	// public void NDLADIBEHAM() { }
+	public void NDLADIBEHAM_ClearGachaDrawList()
+	{
+		KKPNGCNBJHO_GachaDraw.Clear();
+	}
 
 	// // RVA: 0x1C531A0 Offset: 0x1C531A0 VA: 0x1C531A0
 	public void INJFPFAJGPK_KeepGachaDraw(int BHBHMFCMLHN)

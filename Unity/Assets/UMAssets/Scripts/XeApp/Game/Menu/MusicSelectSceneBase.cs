@@ -192,10 +192,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xF3A110 Offset: 0xF3A110 VA: 0xF3A110 Slot: 29
-		// protected override void InputEnable()
-		// {
-		// 	TodoLogger.Log(0, "MusicSelectSceneBase");
-		// }
+		protected override void InputEnable()
+		{
+			TodoLogger.Log(0, "MusicSelectSceneBase InputEnable");
+		}
 
 		// // RVA: -1 Offset: -1 Slot: 35
 		protected abstract void CheckTryInstall();

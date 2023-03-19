@@ -325,7 +325,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x972FA4 Offset: 0x972FA4 VA: 0x972FA4 Slot: 29
-		// protected override void InputEnable() { }
+		protected override void InputEnable()
+		{
+			TodoLogger.Log(0, "HomeScene InputEnable");
+		}
 
 		// RVA: 0x972FD8 Offset: 0x972FD8 VA: 0x972FD8 Slot: 30
 		protected override void InputDisable()

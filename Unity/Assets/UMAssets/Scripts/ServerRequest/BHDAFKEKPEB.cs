@@ -16,7 +16,7 @@ public class BHDAFKEKPEB { }
 public class BHDAFKEKPEB_GetStepUpLotRecords : CACGCMBKHDI_Request
 {
 	public HBFCGCGDINM NFEAMMJIMPG { get; private set; } // 0x7C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	//public override bool EBPLLJGPFDA { get; }
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG != null; } } // 0xC7EF48 HGPAELCGELL
 
 	// RVA: 0xC7EDB0 Offset: 0xC7EDB0 VA: 0xC7EDB0 Slot: 12
 	public override void DHLDNIEELHO()
@@ -29,9 +29,6 @@ public class BHDAFKEKPEB_GetStepUpLotRecords : CACGCMBKHDI_Request
 	{
 		TodoLogger.Log(0, "BHDAFKEKPEB_GetStepUpLotRecords.MGFNKDPHFGI");
 	}
-
-	// RVA: 0xC7EF48 Offset: 0xC7EF48 VA: 0xC7EF48 Slot: 14
-	//public override bool HGPAELCGELL() { }
 
 	//// RVA: 0xC7EF58 Offset: 0xC7EF58 VA: 0xC7EF58
 	//private void DIAMDBHBKBH() { }

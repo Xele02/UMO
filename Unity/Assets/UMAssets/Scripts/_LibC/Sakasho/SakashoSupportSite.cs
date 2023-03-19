@@ -13,5 +13,12 @@ namespace ExternLib
 			SendMessage(callbackId, res);
 			return 0;
 		}
+		public static int SakashoSupportSiteGetToken(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["sss_temporary_token"] = "";
+			SendMessage(callbackId, res);
+			return 0;
+		}
 	}
 }

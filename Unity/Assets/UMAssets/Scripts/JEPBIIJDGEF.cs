@@ -132,7 +132,11 @@ public class JEPBIIJDGEF_EventInfo
 	// public bool GPKMEOKPDIP(int PGIIDPEGGPI) { }
 
 	// // RVA: 0x1C3AB44 Offset: 0x1C3AB44 VA: 0x1C3AB44
-	// public long IALIHKHGMFJ(int PGIIDPEGGPI) { }
+	public long IALIHKHGMFJ(int PGIIDPEGGPI)
+	{
+		TodoLogger.Log(0, "IALIHKHGMFJ");
+		return 0;
+	}
 
 	// // RVA: 0x1C3AC54 Offset: 0x1C3AC54 VA: 0x1C3AC54
 	public IKDICBBFBMI_EventBase HGHDAFJKEKO_GetEventForType(OHCAABOMEOF.KGOGMKMBCPP_EventType INDDJNMPONH)

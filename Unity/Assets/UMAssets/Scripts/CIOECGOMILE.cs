@@ -53,7 +53,7 @@ public class CIOECGOMILE
 	private BBHNACPENDM_ServerSaveData CCNKAKCBBDJ { get; set; } // 0xC MOMIOKHCMKH GHMKOMEKBFO KKOICOJPENH
 	public BBHNACPENDM_ServerSaveData FMFKHDPKLOC { get; set; } // 0x10 FDDDKGAMLLB AAMOPGKKGEI OBEALILDFEM
 	public BBHNACPENDM_ServerSaveData MNJHBCIIHED_PrevServerData { get; private set; } // 0x14 JHPFMKPOIOC KBOFNPLNBOA ICKBCAJFDOM
-	public bool LNAHEIEIBOI { get; set; } // 0x18 INBPPDMFOAD FHEAKKHAAPF GOEIEJFPLOG
+	public bool LNAHEIEIBOI_Initialized { get; set; } // 0x18 INBPPDMFOAD FHEAKKHAAPF GOEIEJFPLOG
 	public bool KONHMOLMOCI { get; private set; } // 0x19 DEDJLABCBOH MDEMPMONBLE NAALAEJIEAI
 	public bool BLCDJDJJBHC { get; set; } // 0x1A BPLABMJENOI AAIACPOJKKO DNLNBFEHCKD
 	public FKAFHLIDAFD LGBMDHOLOIF { get; private set; }  // 0x44 ABKMJCPPEJA EEIKGFMAOGO MPNANFEAALL
@@ -162,7 +162,7 @@ public class CIOECGOMILE
 		CCNKAKCBBDJ.HFCOIIHIENB = BBHNACPENDM_ServerSaveData.BDADJONBIBO.LPKPFMHEKEM/*4*/;
 		KPFKKDDOHCN = new AIFIANALLPB();
 		CHNJPFCKFOI_FriendManager = new PIGBKEIAMPE_FriendManager();
-		LNAHEIEIBOI = false;
+		LNAHEIEIBOI_Initialized = false;
 		KONHMOLMOCI = false;
 		BBEPLKNMICJ_Currencies = new List<MCKCJMLOAFP_CurrencyInfo>();
 		BPLOEAHOPFI_StaminaUpdater = new MCGNOFMAPBJ();
@@ -409,12 +409,12 @@ public class CIOECGOMILE
 										{
 											FLENFOEFHPL_OnSuccessWithTuto();
 										}
-										LNAHEIEIBOI = true;
+										LNAHEIEIBOI_Initialized = true;
 										//UnityEngine.Debug.Log("Exit ODDEPBIJHOE_Coroutine_Load");
 										yield break;
 									}
 									
-									LNAHEIEIBOI = true;
+									LNAHEIEIBOI_Initialized = true;
 									if(BHFHGFKBOHH_OnSuccess != null)
 									{
 										BHFHGFKBOHH_OnSuccess();
@@ -899,7 +899,7 @@ public class CIOECGOMILE
 	// // RVA: 0xFFB658 Offset: 0xFFB658 VA: 0xFFB658
 	private void PDKNJAEGNIL()
 	{
-		if(LNAHEIEIBOI && AHEFHIMGIBI_ServerSave != null)
+		if(LNAHEIEIBOI_Initialized && AHEFHIMGIBI_ServerSave != null)
 		{
 			if(BLCDJDJJBHC)
 				return;

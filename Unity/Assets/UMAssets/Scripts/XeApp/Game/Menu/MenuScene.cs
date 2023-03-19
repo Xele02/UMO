@@ -752,7 +752,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB2B190 Offset: 0xB2B190 VA: 0xB2B190
 		public void InputEnable()
 		{
-			TodoLogger.Log(0, "InputEnable");
+			m_inputDisableCount--;
+			if(m_inputDisableCount < 0)
+				m_inputDisableCount = 0;
+			m_menuTransitionControl.SetHeaderMenuButtonEnable(MenuHeaderControl.Button.All);
+			m_menuTransitionControl.SetMenuContentButtonEnable();
+			m_menuTransitionControl.SetFooterMenuButtonEnable(MenuFooterControl.Button.All);
+			m_menuTransitionControl.SetHelpButtonEnable();
+			m_lobbyButtonControl.EnableButton(true);
 		}
 
 		// // RVA: 0xB2AAD4 Offset: 0xB2AAD4 VA: 0xB2AAD4

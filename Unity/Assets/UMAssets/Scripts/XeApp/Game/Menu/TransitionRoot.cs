@@ -1235,10 +1235,20 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3B1F4 Offset: 0xA3B1F4 VA: 0xA3B1F4
-			// public void SetFooterMenuButtonEnable(MenuFooterControl.Button button) { }
+			public void SetFooterMenuButtonEnable(MenuFooterControl.Button button)
+			{
+				m_menuBarControl.SetButtonEnable(button);
+			}
 
 			// // RVA: 0xA3B228 Offset: 0xA3B228 VA: 0xA3B228
-			// public void SetMenuContentButtonEnable() { }
+			public void SetMenuContentButtonEnable()
+			{
+				TransitionRoot t;
+				if(m_instanceCacheDict.TryGetValue((int)m_current.name, out t))
+				{
+					t.InputEnable();
+				}
+			}
 
 			// // RVA: 0xA3B300 Offset: 0xA3B300 VA: 0xA3B300
 			public void SetHeaderMenuButtonDisable(MenuHeaderControl.Button button)
@@ -1247,7 +1257,10 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3B334 Offset: 0xA3B334 VA: 0xA3B334
-			// public void SetHeaderMenuButtonEnable(MenuHeaderControl.Button button) { }
+			public void SetHeaderMenuButtonEnable(MenuHeaderControl.Button button)
+			{
+				m_titleBarControl.SetButtonEnable(button);
+			}
 
 			// // RVA: 0xA3B368 Offset: 0xA3B368 VA: 0xA3B368
 			public void SetMenuContentButtonDisable()
@@ -1260,7 +1273,13 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3B440 Offset: 0xA3B440 VA: 0xA3B440
-			// public void SetHelpButtonEnable() { }
+			public void SetHelpButtonEnable()
+			{
+				if(m_helpButton != null)
+				{
+					m_helpButton.SetEnable();
+				}
+			}
 
 			// // RVA: 0xA3B4F4 Offset: 0xA3B4F4 VA: 0xA3B4F4
 			public void SetHelpButtonDisable()
@@ -1559,7 +1578,35 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA9D81C Offset: 0xA9D81C VA: 0xA9D81C Slot: 29
-		// protected virtual void InputEnable() { }
+		protected virtual void InputEnable()
+		{
+			ListupInputObjects();
+			m_inputStateCount--;
+			if(m_inputStateCount < 1)
+			{
+				for(int i = 0; i < m_swaipTouches.Count; i++)
+				{
+					m_swaipTouches[i].Stop(false);
+				}
+				for(int i = 0; i < m_scrollRect.Count; i++)
+				{
+					m_scrollRect[i].enabled = true;
+					if(m_scrollRect[i].verticalScrollbar != null)
+					{
+						m_scrollRect[i].verticalScrollbar.interactable = true;
+					}
+					if (m_scrollRect[i].horizontalScrollbar != null)
+					{
+						m_scrollRect[i].horizontalScrollbar.interactable = true;
+					}
+				}
+				for(int i = 0; i < m_buttons.Count; i++)
+				{
+					m_buttons[i].IsInputOff = false;
+				}
+				m_inputStateCount = 0;
+			}
+		}
 
 		// // RVA: 0xA9DD34 Offset: 0xA9DD34 VA: 0xA9DD34
 		// public void InputEnable(string objName, string parentName = "") { }

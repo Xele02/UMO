@@ -151,7 +151,7 @@ namespace XeApp.Game.Menu
 
 			//0xEB6920
 			PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH/*0*/);
-			loginBonus = Co.R(CheckLoginBonus());
+			loginBonus = /*Co.R(*/CheckLoginBonus()/*)*/;
 			while (loginBonus.MoveNext())
 				yield return null;
 			if(m_connectStatus == eConnectStatus.Success)

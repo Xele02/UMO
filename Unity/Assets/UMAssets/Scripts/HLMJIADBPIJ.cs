@@ -1,0 +1,12 @@
+
+public class HLMJIADBPIJ
+{
+	public static int MKLHIENKAFA = 864000; // 0x0
+
+	// RVA: 0x15F2314 Offset: 0x15F2314 VA: 0x15F2314
+	public static bool IBHJAMDGGMC(NJLGICBHIOC.EOFJDIACFEC INDDJNMPONH, long DPIBHFNDJII, long EKPBOLNFGJB, BBHNACPENDM_ServerSaveData AHEFHIMGIBI, OKGLGHCBCJP_Database NKEBMCIMJND, long JHNMKKNEENE)
+    {
+        TodoLogger.Log(0, "HLMJIADBPIJ.IBHJAMDGGMC");
+        return false;
+    }
+}

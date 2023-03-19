@@ -63,6 +63,9 @@ namespace XeSys
 		}
 
 		// // RVA: 0x2397E98 Offset: 0x2397E98 VA: 0x2397E98
-		// public bool IsExistBank(string bankName) { }
+		public bool IsExistBank(string bankName)
+		{
+			return msgBankDic.ContainsKey(bankName);
+		}
 	}
 }

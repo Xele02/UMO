@@ -6,6 +6,7 @@ class JpStringLiterals
 	public const string StringLiteral_8686 = "なし"; // 0x03bb1270
 	public const string StringLiteral_9528 = "想定していない人数が入っています　id:"; //0x03bb1f98
 	public const string StringLiteral_9555 = "event_quest"; // 0x03bb2004
+	public const string StringLiteral_9630 = "から新しいメッセージがあります。"; // 0x03bb2130
 	public const string StringLiteral_9767 = "超時空ユニット"; // 0x03bb2354
 	public const string StringLiteral_9787 = "<color=yellow>期間限定エナジーアイテムの削除</color>"; // 0x03bb23a4
 	public const string StringLiteral_9793 = "エナジー"; // 0x03bb23bc
@@ -110,6 +111,9 @@ class JpStringLiterals
 	public const string StringLiteral_11862 = "バッチインストーラ　停止処理が完了しなかったインストールモジュール数 {0}"; // 0x03bb4410
 	public const string StringLiteral_11863 = "バッチインストーラ　放棄した分、インストールモジュールを生成 {0}"; // 0x03bb4414
 	public const string StringLiteral_11920 = "\n\nエラーコード : "; // 0x03bb44f8
+	public const string StringLiteral_11921 = "データ更新"; // 0x03bb44fc
+	public const string StringLiteral_11922 = "日付変更"; // 0x03bb4500
+	public const string StringLiteral_11923 = "日付が変わりました。"; // 0x03bb4504
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
 	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
 	public const string StringLiteral_12038 = "…"; // 0x03bb46d0

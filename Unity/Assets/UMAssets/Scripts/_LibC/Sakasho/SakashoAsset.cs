@@ -136,6 +136,7 @@ namespace ExternLib
                 message = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath+"/../../Data/RequestGetFiles.json"));
 				message = message.Replace("https://assets-sakasho.cdn-dena.com/1246/20220502151005", "[SERVER_DATA_PATH]");
                 message = message.Replace("https://assets-sakasho.cdn-dena.com/1246/20220622141305", "[SERVER_DATA_PATH]");
+                message = message.Replace("[[DATE]]", ""+Utility.GetCurrentUnixTime());
 			}
             else
             {

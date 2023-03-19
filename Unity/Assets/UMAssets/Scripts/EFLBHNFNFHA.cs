@@ -24,7 +24,7 @@ public class EFLBHNFNFHA
 		{
 			if(NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId != 0)
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI)
+				if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
 				{
 					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.PBEKKMOPENN_AgreeTosVer != 0)
 					{
@@ -59,7 +59,7 @@ public class EFLBHNFNFHA
 		if (!Directory.Exists(pathName))
 			Directory.CreateDirectory(pathName);
 		File.WriteAllBytes(path, data);
-		if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI)
+		if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
 		{
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.PBEKKMOPENN_AgreeTosVer = 1;
 		}
