@@ -120,7 +120,17 @@ namespace XeApp.Game.Tutorial
 		}
 
 		// // RVA: 0xE3DD1C Offset: 0xE3DD1C VA: 0xE3DD1C
-		// public static void TutorialAfterFirstHome() { }
+		public static void TutorialAfterFirstHome()
+		{
+			if((GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.NJFNCNCJMOO_FirstLogin & 2) == 0)
+			{
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level != 1)
+				{
+					return;
+				}
+				TodoLogger.Log(0, "TutorialAfterFirstHome");
+			}
+		}
 
 		// // RVA: 0xE3DF30 Offset: 0xE3DF30 VA: 0xE3DF30
 		public void ShowMessageWindow(BasicTutorialMessageId id, Action endCallBack, AdvMessageBase.TagConvertFunc func)

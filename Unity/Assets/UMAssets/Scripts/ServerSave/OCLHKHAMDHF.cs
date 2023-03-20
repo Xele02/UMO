@@ -119,7 +119,19 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 	//public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x1B2C690 Offset: 0x1B2C690 VA: 0x1B2C690
-	// public int GGKOLJCPNKO(KMOGDEOKHPG MOLEPBNJAGE) { }
+	public int GGKOLJCPNKO(KMOGDEOKHPG_Episode MOLEPBNJAGE)
+	{
+		int res = 0;
+		for(int i = 0; i < MOLEPBNJAGE.BBAJKJPKOHD_EpisodeList.Count; i++)
+		{
+			if(MOLEPBNJAGE.BBAJKJPKOHD_EpisodeList[i].PPEGAKEIEGM != 0)
+			{
+				if (MOLEPBNJAGE.BBAJKJPKOHD_EpisodeList[i].FGOGPCMHPIN_Count - 1 <= BBAJKJPKOHD_EpisodeList[i].EBIIIAELNAA_Step)
+					res++;
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0x1B2C840 Offset: 0x1B2C840 VA: 0x1B2C840
 	// public List<OCLHKHAMDHF.MGGPEOCPIEG> POEDIMMMLME(KMOGDEOKHPG MOLEPBNJAGE, ref bool AJFHCEEKPPA) { }

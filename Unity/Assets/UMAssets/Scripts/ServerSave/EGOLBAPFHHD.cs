@@ -777,7 +777,13 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// public string NPGGEAJMFCB(int MFCNKPHPJBH) { }
 
 	// // RVA: 0x1C53B48 Offset: 0x1C53B48 VA: 0x1C53B48
-	// public bool ADKJDHPEAJH(GPFlagConstant.ID PPFNGGCBJKC) { }
+	public bool ADKJDHPEAJH(GPFlagConstant.ID PPFNGGCBJKC)
+	{
+		TodoLogger.Log(TodoLogger._Todo, "EGOLBAPFHHD_Common.BCLKCMDGDLD Todo with calc office");
+		if ((int)PPFNGGCBJKC > 32)
+			return false;
+		return (CKDPJCLINAB_GpFlg[0] & (1 << ((int)PPFNGGCBJKC))) != 0;
+	}
 
 	// // RVA: 0x1C53BE8 Offset: 0x1C53BE8 VA: 0x1C53BE8
 	public void BCLKCMDGDLD(GPFlagConstant.ID PPFNGGCBJKC, bool JKDJCFEBDHC)

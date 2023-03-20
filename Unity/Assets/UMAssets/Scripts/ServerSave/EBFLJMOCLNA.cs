@@ -198,13 +198,16 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x14F6B90 Offset: 0x14F6B90 VA: 0x14F6B90
-	public EBFLJMOCLNA_Costume.ILFJDCICIKN EEOADCECNOM_GetCostume(int PPFNGGCBJKC)
+	public ILFJDCICIKN EEOADCECNOM_GetCostume(int PPFNGGCBJKC)
 	{
 		return FABAGMLEKIB_List[PPFNGGCBJKC - 1];
 	}
 
 	// // RVA: 0x14F6C10 Offset: 0x14F6C10 VA: 0x14F6C10
-	// public bool MLBBKNLPBBD(int OIPCCBHIKIA) { }
+	public bool MLBBKNLPBBD_IsTutoDone(int OIPCCBHIKIA)
+	{
+		return (JLFONLABECA_ShowTuto & (1 << (OIPCCBHIKIA & 0x1f))) != 0;
+	}
 
 	// // RVA: 0x14F6C2C Offset: 0x14F6C2C VA: 0x14F6C2C
 	// public void ILMPHFPFLJE(int OIPCCBHIKIA, bool OAFPGJLCNFM) { }

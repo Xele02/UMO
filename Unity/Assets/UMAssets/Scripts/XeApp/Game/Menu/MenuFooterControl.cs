@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using XeApp.Game.Common;
+using XeApp.Game.Gacha;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
@@ -28,8 +29,8 @@ namespace XeApp.Game.Menu
 		private ActionButton[] m_actionButtons; // 0x14
 		private LayoutUGUIHitOnly[] m_buttons; // 0x18
 		private int[] m_buttonBlockCount; // 0x1C
-		// private HGOAIGFPCBC m_QuestbadgeData = new HGOAIGFPCBC(); // 0x20
-		// private IIMBAOGHCIG m_HomebadgeData = new IIMBAOGHCIG(); // 0x24
+		private HGOAIGFPCBC m_QuestbadgeData = new HGOAIGFPCBC(); // 0x20
+		private IIMBAOGHCIG m_HomebadgeData = new IIMBAOGHCIG(); // 0x24
 		private List<TransitionUniqueId> m_disableMenuBarUniqueScene = new List<TransitionUniqueId>() {
 			TransitionUniqueId.MUSICSELECT_FRIENDSELECT_TEAMSELECT_DIVASELECTLIST_SCENESELECT,
 			TransitionUniqueId.MUSICSELECT_FRIENDSELECT_TEAMSELECT_SCENESELECT,
@@ -140,7 +141,7 @@ namespace XeApp.Game.Menu
 			TransitionList.Type.GAKUYA,
 			TransitionList.Type.GAKUYA_DIVA_VIEW
 		}; // 0x2C
-		// private static readonly MenuButtonAnim.ButtonType[] ToButtonType = new MenuButtonAnim.ButtonType[7] { 6, 5, 4, 3, 2, 1, 0 }; // 0x0
+		private static readonly MenuButtonAnim.ButtonType[] ToButtonType = new MenuButtonAnim.ButtonType[7] { MenuButtonAnim.ButtonType.MENU, MenuButtonAnim.ButtonType.QUEST, MenuButtonAnim.ButtonType.GACHA, MenuButtonAnim.ButtonType.LIVE, MenuButtonAnim.ButtonType.VOP, MenuButtonAnim.ButtonType.SETTING, MenuButtonAnim.ButtonType.HOME }; // 0x0
 
 		public MenuBarPrefab MenuBar { get { return m_menuBar; } } //0xED0D08
 
@@ -274,7 +275,54 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xED29D4 Offset: 0xED29D4 VA: 0xED29D4
 		public void SetButtonNew(Button bit, bool isNew)
 		{
-			TodoLogger.Log(0, "SetButtonNew");
+			BadgeConstant.ID badgeId = 0;
+			string badgeText = null;
+			MenuButtonAnim.ButtonType buttonType = 0;
+			if(m_buttons != null)
+			{
+				if(m_menuBar != null)
+				{
+					bool isTuto = GameManager.Instance.IsTutorial;
+					for(int i = 0; i < m_buttons.Length; i++)
+					{
+						if (((int)bit & (1 << (i & 0x1f))) == 0)
+							continue;
+						badgeId = 0;
+						badgeText = "";
+						buttonType = ToButtonType[i];
+						switch (ToButtonType[i])
+						{
+							case MenuButtonAnim.ButtonType.VOP:
+								m_HomebadgeData.FBANBDCOEJL(isNew && !isTuto);
+								badgeText = m_HomebadgeData.BHANMJKCCBC;// 0xc
+								badgeId = m_HomebadgeData.BEEIIJJKDBH;//0x8
+								break;
+							case MenuButtonAnim.ButtonType.LIVE:
+							case MenuButtonAnim.ButtonType.MENU:
+								if(isNew && !isTuto)
+								{
+									badgeId = BadgeConstant.ID.New;
+								}
+								break;
+							case MenuButtonAnim.ButtonType.GACHA:
+								badgeId = 0;
+								if(!QuestUtility.IsBeginnerQuest())
+								{
+									badgeId = GachaUtility.GetFooterMenuBadgeId(ref badgeText);
+								}
+								break;
+							case MenuButtonAnim.ButtonType.QUEST:
+								m_QuestbadgeData.FBANBDCOEJL(true);
+								//i2c = m_QuestbadgeData.BHANMJKCCBC
+								badgeId = m_QuestbadgeData.BEEIIJJKDBH;
+								break;
+						}
+						string[] values = new string[6] { "buttonType:", buttonType.ToString(), " / badgeID:", badgeId.ToString(), " / badgeText:", badgeText };
+						Debug.Log(string.Concat(values));
+						m_menuBar.SetButtonBadge(buttonType, badgeId, badgeText);
+					}
+				}
+			}
 		}
 
 		// // RVA: 0xED3160 Offset: 0xED3160 VA: 0xED3160

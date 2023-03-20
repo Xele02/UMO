@@ -230,7 +230,11 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 	// public override bool DMICHEJIAJL { get; } // ??
 
 	// // RVA: 0x1B30F5C Offset: 0x1B30F5C VA: 0x1B30F5C
-	// public bool MLBBKNLPBBD(BOPFPIHGJMD.PDLKAKEABDP COONLEFJBMP) { }
+	public bool MLBBKNLPBBD(BOPFPIHGJMD.PDLKAKEABDP COONLEFJBMP)
+	{
+		TodoLogger.Log(0, "MLBBKNLPBBD");
+		return false;
+	}
 
 	// // RVA: 0x1B30F84 Offset: 0x1B30F84 VA: 0x1B30F84
 	// public void ILMPHFPFLJE(BOPFPIHGJMD.PDLKAKEABDP COONLEFJBMP, bool OAFPGJLCNFM) { }

@@ -616,7 +616,12 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0xD74580 Offset: 0xD74580 VA: 0xD74580
-	//public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }
+	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
+	{
+		if (!OHJFBLFELNK.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		return OHJFBLFELNK[LJNAKDMILMC].DNJEJEANJGL_Value;
+	}
 
 	//// RVA: 0xD74664 Offset: 0xD74664 VA: 0xD74664
 	//public int LDBKGMIKJJM(int BJHAMGNNGBC) { }

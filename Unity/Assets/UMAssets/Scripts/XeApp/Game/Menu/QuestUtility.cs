@@ -51,11 +51,11 @@ namespace XeApp.Game.Menu
 					}
 					break;
 				case LayoutQuestTab.eTabType.Normal:
-					m_normalViewList = FKMOKDCJFEN.ABHPOFCEAEN(false);
+					m_normalViewList = FKMOKDCJFEN.ABHPOFCEAEN_GetNormalQuests(false);
 					m_normalAchievedCount = GetQuestCountByStatus(m_normalViewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 					break;
 				case LayoutQuestTab.eTabType.Daily:
-					m_dailyViewList = FKMOKDCJFEN.NNEHCMNOKFO(false);
+					m_dailyViewList = FKMOKDCJFEN.NNEHCMNOKFO_GetDailyQuests(false);
 					m_dailyAchievedCount = GetQuestCountByStatus(m_dailyViewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 					break;
 				case LayoutQuestTab.eTabType.Diva:
@@ -128,12 +128,18 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x9E2E60 Offset: 0x9E2E60 VA: 0x9E2E60
-		//public static void FooterMenuBadge(bool enable) { }
+		public static void FooterMenuBadge(bool enable)
+		{
+			if(MenuScene.Instance != null && MenuScene.Instance.FooterMenu != null)
+			{
+				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Mission, enable);
+			}
+		}
 
 		//// RVA: 0x9D6170 Offset: 0x9D6170 VA: 0x9D6170
 		public static void FooterMenuBadge()
 		{
-			TodoLogger.Log(0, "FooterMenuBadge");
+			FooterMenuBadge(IsEmphasisAll());
 		}
 
 		//// RVA: 0x9E322C Offset: 0x9E322C VA: 0x9E322C
@@ -157,21 +163,55 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9DAAD4 Offset: 0x9DAAD4 VA: 0x9DAAD4
 		public static bool IsBeginnerQuest()
 		{
-			TodoLogger.Log(0, "IsBeginnerQuest");
-			return false;
+			return m_beginnerViewList.Find((FKMOKDCJFEN _) =>
+			{
+				//0x9E7A80
+				if (_.OAPCHMHAJID)
+					return _.CMCKNKKCNDK_Status != FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG;
+				return false;
+			}) != null;
 		}
 
 		//// RVA: 0x9E3AEC Offset: 0x9E3AEC VA: 0x9E3AEC
-		//public static bool IsEmphasis(List<FKMOKDCJFEN> list) { }
+		public static bool IsEmphasis(List<FKMOKDCJFEN> list)
+		{
+			return list.Find((FKMOKDCJFEN _) =>
+			{
+				//0x9E7AC4
+				return _.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved;
+			}) != null;
+		}
 
 		//// RVA: 0x9E3C48 Offset: 0x9E3C48 VA: 0x9E3C48
-		//public static bool IsEmphasis(List<CGJKNOCAPII> list) { }
+		public static bool IsEmphasis(List<CGJKNOCAPII> list)
+		{
+			return list.Find((CGJKNOCAPII _) =>
+			{
+				//0x9E7AF4
+				return _.PKNLMLDKCLM > 0;
+			}) != null;
+		}
 
 		//// RVA: 0x9DADA8 Offset: 0x9DADA8 VA: 0x9DADA8
 		//public static bool IsEmphasis(LayoutQuestTab.eTabType type) { }
 
 		//// RVA: 0x9E3004 Offset: 0x9E3004 VA: 0x9E3004
-		//public static bool IsEmphasisAll() { }
+		public static bool IsEmphasisAll()
+		{
+			if(IsEmphasis(m_dailyViewList))
+				return true;
+			if (IsEmphasis(m_normalViewList))
+				return true;
+			if (IsEmphasis(m_eventViewList))
+				return true;
+			if (IsEmphasis(m_snsViewList))
+				return true;
+			if (IsEmphasis(m_beginnerViewList))
+				return true;
+			if (IsEmphasis(m_bingoViewList))
+				return true;
+			return false;
+		}
 
 		//// RVA: 0x9E3DA4 Offset: 0x9E3DA4 VA: 0x9E3DA4
 		//private static void BackButtonEmpty() { }

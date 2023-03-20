@@ -198,8 +198,16 @@ public class BIFNGFAIEIL
 	//public void OILGDFPFIJP(int HMFFHLPNMPH) { }
 
 	//// RVA: 0xC82510 Offset: 0xC82510 VA: 0xC82510
-	//public int CEDPKMOHANM(int MALFHCHNEFN) { }
+	public int CEDPKMOHANM(int MALFHCHNEFN)
+	{
+		TodoLogger.Log(0, "CEDPKMOHANM");
+		return 0;
+	}
 
 	//// RVA: 0xC82974 Offset: 0xC82974 VA: 0xC82974
-	//public bool EEGOJOFABAF(int MALFHCHNEFN, int AJIDLAGFPGM) { }
+	public bool EEGOJOFABAF(int MALFHCHNEFN, int AJIDLAGFPGM)
+	{
+		TodoLogger.Log(0, "EEGOJOFABAF");
+		return false;
+	}
 }

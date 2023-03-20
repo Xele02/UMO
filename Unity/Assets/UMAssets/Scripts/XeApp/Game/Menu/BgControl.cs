@@ -107,11 +107,11 @@ namespace XeApp.Game.Menu
 		private const string OfferBgTextureBundlePath = "ct/bg/of/";
 		private const string RaidBgTextureBundlePath = "ct/bg/rd/";
 		private const string LobbyMainBgTextureBundlePath = "ct/bg/lb/";
-		private BgControl.LimitedHomeBg m_limitedHomeBg = new LimitedHomeBg(); // 0x48
+		private LimitedHomeBg m_limitedHomeBg = new LimitedHomeBg(); // 0x48
 		private StoryBgParam storyBgParam; // 0x4C
 		private bool storyBgLoading; // 0x58
 
-		// public BgControl.LimitedHomeBg limitedHomeBg { get; private set; } 0x143CA14 0x143CA1C
+		public LimitedHomeBg limitedHomeBg { get { return m_limitedHomeBg; } private set { return; } } //0x143CA14 0x143CA1C
 		// public ScrollRect storyBgScrollRect { get; private set; } 0x143EA44 0x143EA68
 
 		// RVA: 0x143CA20 Offset: 0x143CA20 VA: 0x143CA20

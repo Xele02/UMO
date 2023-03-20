@@ -34,7 +34,7 @@ public class FEAOOBFHMBL
 				for(int i = 0; i < LKMHPJKIFDN_Database.MHGPMMIDKMM_Quest.BEGCHDHHEKC_DailyQuests.Count; i++)
 				{
 					CNLPPCFJEID_QuestInfo q = LKMHPJKIFDN_Database.MHGPMMIDKMM_Quest.BEGCHDHHEKC_DailyQuests[i];
-					if (q.INDDJNMPONH != 0)
+					if (q.INDDJNMPONH_Type != 0)
 					{
 						if((q.KJBGCLPMLCG == 0 && q.GJFPFFBAKGK == 0) || (q.KJBGCLPMLCG < JHNMKKNEENE_Time && q.GJFPFFBAKGK > JHNMKKNEENE_Time))
 						{
@@ -54,7 +54,7 @@ public class FEAOOBFHMBL
 								else
 								{
 									int a = i;
-									if (q.INDDJNMPONH != 6)
+									if (q.INDDJNMPONH_Type != 6)
 										a = qIdx;
 									if (qIdx < 0)
 										qIdx = a;
@@ -76,7 +76,7 @@ public class FEAOOBFHMBL
 								}
 								else
 								{
-									if (q.INDDJNMPONH == 6)
+									if (q.INDDJNMPONH_Type == 6)
 									{
 										if (qIdx < 0)
 										{

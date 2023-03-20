@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using UnityEngine;
 
 namespace XeApp.Game.Common
 {
@@ -36,22 +37,39 @@ namespace XeApp.Game.Common
 		//// RVA: 0x138B510 Offset: 0x138B510 VA: 0x138B510
 		public Header FindHeader(int talkId)
 		{
-			TodoLogger.Log(0, "FindHeader");
+			if(jumpOffsetTable.Count <= talkId)
+				return null;
+			if(talkId > -1)
+			{
+				if (talkId < jumpOffsetTable.Count)
+				{
+					int idx = jumpOffsetTable[talkId];
+					if (idx < 0)
+						return null;
+					if(idx < headerList.Count)
+					{
+						return headerList[idx];
+					}
+					Debug.LogError("talkId=" + talkId + ",headrListSize=" + headerList.Count);
+					return null;
+				}
+			}
+			Debug.LogError("talkId=" + talkId + ",jumpOffsetTable.Count=" + jumpOffsetTable.Count);
 			return null;
 		}
 
 		//// RVA: 0x138B7E4 Offset: 0x138B7E4 VA: 0x138B7E4
 		public string FindMessage(int messageIndex)
 		{
-			TodoLogger.Log(0, "FindMessage");
-			return "";
+			if (messageList.Count <= messageIndex)
+				return "";
+			return messageList[messageIndex];
 		}
 
 		//// RVA: 0x138B8AC Offset: 0x138B8AC VA: 0x138B8AC
 		public TalkData FindData(int talkIndex)
 		{
-			TodoLogger.Log(0, "FindData");
-			return null;
+			return talkDataList[talkIndex];
 		}
 
 		//// RVA: 0x138B92C Offset: 0x138B92C VA: 0x138B92C

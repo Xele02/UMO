@@ -53,7 +53,10 @@ public class HDEEBKIFLNI
 	}
 
 	//// RVA: 0x1740E78 Offset: 0x1740E78 VA: 0x1740E78
-	//public bool FAEJJLGPAJP() { }
+	public bool FAEJJLGPAJP_HasALinkPlatform()
+	{
+		return AMBCBJHFIDD_LinkByPlatform[1] || AMBCBJHFIDD_LinkByPlatform[0] || AMBCBJHFIDD_LinkByPlatform[2];
+	}
 
 	//// RVA: 0x1740F38 Offset: 0x1740F38 VA: 0x1740F38
 	private void KFDDEOKEBJC_SetLinked(DGNPPLKNCGH_PlatformLink MKBOKLLDCFI, bool MMOHJNEKMBF)

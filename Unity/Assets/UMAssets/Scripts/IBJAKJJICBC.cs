@@ -614,7 +614,22 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	// // RVA: 0x121FC40 Offset: 0x121FC40 VA: 0x121FC40
 	public static bool FPLIAMHMFJP()
 	{
-		TodoLogger.Log(0, "FPLIAMHMFJP");
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		List<IBJAKJJICBC> l = FKDIMODKKJD(1, time, false, true, false, false);
+		if(l.Count > 0)
+			return true;
+		l = FKDIMODKKJD(2, time, false, true, false, false);
+		if (l.Count > 0)
+			return true;
+		l = FKDIMODKKJD(3, time, false, true, false, false);
+		if (l.Count > 0)
+			return true;
+		l = FKDIMODKKJD(4, time, false, true, false, false);
+		if (l.Count > 0)
+			return true;
+		l = FKDIMODKKJD(5, time, false, true, false, false);
+		if (l.Count > 0)
+			return true;
 		return false;
 	}
 

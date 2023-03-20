@@ -105,7 +105,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xEC3FA8 Offset: 0xEC3FA8 VA: 0xEC3FA8
-		// public void SetButtonBadge(MenuButtonAnim.ButtonType buttonType, BadgeConstant.ID badgeId, string text) { }
+		public void SetButtonBadge(MenuButtonAnim.ButtonType buttonType, BadgeConstant.ID badgeId, string text)
+		{
+			m_badge[(int)buttonType].Set(badgeId, text);
+		}
 
 		// // RVA: 0xEC4018 Offset: 0xEC4018 VA: 0xEC4018
 		// public void SetCallBack(ButtonBase.OnClickCallback callback, MenuButtonAnim.ButtonType type) { }

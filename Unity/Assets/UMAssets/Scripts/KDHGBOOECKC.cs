@@ -725,7 +725,14 @@ public class KDHGBOOECKC
 	// public int PICPOPFLEJH() { }
 
 	// // RVA: 0x1037BBC Offset: 0x1037BBC VA: 0x1037BBC
-	// public int EKODBMNLMKA() { }
+	public int EKODBMNLMKA()
+	{
+		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null && IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer != null)
+		{
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.LPJLEHAJADA("sns_diva_room_id", 59);
+		}
+		return 59;
+	}
 
 	// // RVA: 0x1037CC0 Offset: 0x1037CC0 VA: 0x1037CC0
 	// public void NCGGBBELDFI(bool OAFPGJLCNFM) { }

@@ -24,6 +24,14 @@ public class BOPFPIHGJMD
 		GENEIBGNMPH = 4,
 		GEJGMBBCFEE = 5,
 	}
+	public enum PDLKAKEABDP
+	{
+		EILIAPKFCEO = 0,
+		HFKNIAGOFKC = 1,
+		LGJIPMIHAKC = 2,
+		GHGLPOGHBBL = 3,
+	}
+
 
 	public const int PHJLOHLFJBL = 1000;
 	public const int PPGIAEJBHJP = 3;

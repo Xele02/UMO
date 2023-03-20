@@ -1,20 +1,45 @@
 using XeSys.Gfx;
 using UnityEngine.UI;
 using UnityEngine;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
 	public class MenuBarBadge : LayoutUGUIScriptBase
 	{
-		[SerializeField] // RVA: 0x66AFF8 Offset: 0x66AFF8 VA: 0x66AFF8
+		[SerializeField]
 		private Text m_text; // 0x14
-		[SerializeField] // RVA: 0x66B008 Offset: 0x66B008 VA: 0x66B008
+		[SerializeField]
 		private LayoutUGUIRuntime m_runtime; // 0x18
 
 		public LayoutUGUIRuntime runtime { get { return m_runtime; } } //0xEC3518
 
 		// // RVA: 0xEC3520 Offset: 0xEC3520 VA: 0xEC3520
-		// public void Set(BadgeConstant.ID id, string text) { }
+		public void Set(BadgeConstant.ID id, string text)
+		{
+			switch(id)
+			{
+				case BadgeConstant.ID.None:
+					gameObject.SetActive(false);
+					return;
+				case BadgeConstant.ID.Label:
+					gameObject.SetActive(true);
+					m_text.text = text;
+					return;
+				/*	case BadgeConstant.ID.New:
+
+				Gacha_Update = 3,
+				Gacha_FreeMorning = 4,
+				Gacha_FreeNoon = 5,
+				Gacha_FreeNight = 6,
+				Menu_ShopCheck = 7,
+				Menu_NewFuncAdd = 8,
+				Menu_ResvMsg = 9,*/
+				default:
+					TodoLogger.Log(0, "MenuBarBadge.Set");
+					break;
+			}
+		}
 
 		// // RVA: 0xEC379C Offset: 0xEC379C VA: 0xEC379C
 		public void Initialize(GameObject parent, AbsoluteLayout parentLayout)

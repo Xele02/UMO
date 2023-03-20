@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Core;
+using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
 
 namespace XeApp.Game.Menu
@@ -43,7 +44,27 @@ namespace XeApp.Game.Menu
 		{
 			if (m_connectStatus != eConnectStatus.SuccessNo && m_connectStatus != eConnectStatus.Error)
 			{
-				TodoLogger.Log(5, "LoginBonusScene OnBgmStart");
+				int id = MenuScene.Instance.BgControl.limitedHomeBg.m_music_id;
+				if(id == BgControl.LimitedHomeBg.INVALID_MUSIC_ID)
+				{
+					string strid = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("home_bgm_id", "0,0,0");
+					string[] strs = strid.Split(new char[] { ',' });
+					if(strs.Length == 3)
+					{
+						long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+						int idx = BgControl.GetHomeBgId(time);
+						int id2;
+						if(int.TryParse(strs[idx - 1], out id2))
+						{
+							id = id2 + BgmPlayer.MENU_BGM_ID_BASE;
+						}
+					}
+				}
+				else
+				{
+					id = id + BgmPlayer.MENU_BGM_ID_BASE;
+				}
+				SoundManager.Instance.bgmPlayer.ContinuousPlay(id, 1);
 			}
 			return true;
 		}
@@ -89,12 +110,23 @@ namespace XeApp.Game.Menu
 		private IEnumerator NextScene()
 		{
 			//0xEB8E58
-			UnityEngine.Debug.LogWarning("TOTO login next scene");
-
-			yield return null;
-			//MenuScene.Instance.Mount(TransitionUniqueId.HOME_CAMPAIGNROULETTE, null, true, 0);
+			while (!m_isOpenScene)
+			{
+				yield return null;
+			}
+			BasicTutorialManager.TutorialAfterFirstHome();
+			GameManager.Instance.SetFPS(30);
+			foreach(var e in JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN)
+			{
+				TodoLogger.Log(0, "LoginBonusScene.NextScene event");
+			}
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA/*9*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+			if(ev != null)
+			{
+				TodoLogger.Log(0, "LoginBonusScene.NextScene event");
+			}
+			//LAB_00eb9458
 			MenuScene.Instance.Mount(TransitionUniqueId.EPISODEAPPEAL, null, true, 0);
-			yield break;
 		}
 
 		// // RVA: 0xEB385C Offset: 0xEB385C VA: 0xEB385C
@@ -189,6 +221,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
+				loginBonusManager = null;
 				m_connectStatus = eConnectStatus.None;
 				AutoFadeFlag = false;
 				m_isConnect = false;

@@ -1,5 +1,6 @@
 
 using System;
+using XeApp.Game.Common;
 using XeApp.Game.Menu;
 
 namespace XeApp.Game.Gacha
@@ -219,7 +220,11 @@ namespace XeApp.Game.Gacha
 		// public static void ClearNetData() { }
 
 		// // RVA: 0x996690 Offset: 0x996690 VA: 0x996690
-		// public static BadgeConstant.ID GetFooterMenuBadgeId(ref string badgeText) { }
+		public static BadgeConstant.ID GetFooterMenuBadgeId(ref string badgeText)
+		{
+			TodoLogger.Log(0, "GetFooterMenuBadgeId");
+			return 0;
+		}
 
 		// // RVA: 0x9969C8 Offset: 0x9969C8 VA: 0x9969C8
 		public static long GetGachaProductOpenTime(LOBDIAABMKG product)

@@ -178,7 +178,16 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 	// public override bool DMICHEJIAJL { get; } ??
 
 	// // RVA: 0x1969998 Offset: 0x1969998 VA: 0x1969998
-	// public int IGJAAIEAJPB() { }
+	public int IGJAAIEAJPB_GetNumUnlockedScene()
+	{
+		int res = 0;
+		for(int i = 0; i < OPIBAPEGCLA.Count; i++)
+		{
+			if (OPIBAPEGCLA[i].BEBJKJKBOGH_Date != 0)
+				res++;
+		}
+		return res;
+	}
 
 	// // RVA: 0x1969B1C Offset: 0x1969B1C VA: 0x1969B1C
 	public int MPFLFKBNFEI_GetNumSceneAtLevelOrMore(LDDDBPNGGIN_Game HNMMJINNHII, MLIBEPGADJH_Scene ECNHDEHADGL, int FCDKJAKLGMB)
