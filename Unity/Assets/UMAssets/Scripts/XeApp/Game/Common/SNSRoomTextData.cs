@@ -14,7 +14,7 @@ namespace XeApp.Game.Common
 			public int endIndex; // 0x10
 			public int headMessageIndex; // 0x14
 
-			//public int count { get; } 0x138C084
+			public int count { get { return endIndex + 1 - startIndex; } } //0x138C084
 		}
 
 		public class TalkData

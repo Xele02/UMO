@@ -71,7 +71,7 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 	private const int GKIDNIKODDK = 52143548; // 0x31ba5bc
 	private int AKLLPNDJFCN_Complete; // 0x24
 
-	// public bool EOHHFADHHBL { get; set; } FPOHKGALENL 0x1AE66D8  HCFHGHNGPJK 0x1AE66F4
+	public bool EOHHFADHHBL { get { return AKLLPNDJFCN_Complete == GCAHAAADBEH; } set { AKLLPNDJFCN_Complete = value ? GCAHAAADBEH : GKIDNIKODDK; } } //FPOHKGALENL 0x1AE66D8  HCFHGHNGPJK 0x1AE66F4
 	public List<HKDNILFKCFC> MMKAJBFBKNH { get; private set; } // 0x28 JAKKBNNDGOM BLJEKMOEHCM FJAHCOJOEJO
 	// public override bool DMICHEJIAJL { get; }
 

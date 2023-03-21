@@ -23,15 +23,18 @@ public class OHCAABOMEOF
 	public const int NKMJHIAPPFL = 1000;
 
 	// // RVA: 0x1DDFF1C Offset: 0x1DDFF1C VA: 0x1DDFF1C
-	// public static int LDGFHMMAFOC(OHCAABOMEOF.KGOGMKMBCPP INDDJNMPONH, int PPFNGGCBJKC) { }
+	public static int LDGFHMMAFOC(KGOGMKMBCPP_EventType INDDJNMPONH, int PPFNGGCBJKC)
+	{
+		return (int)INDDJNMPONH * 1000 + PPFNGGCBJKC;
+	}
 
 	// // RVA: 0x1DDFF28 Offset: 0x1DDFF28 VA: 0x1DDFF28
-	public static OHCAABOMEOF.KGOGMKMBCPP_EventType BPJMGICFPBJ(int PGIIDPEGGPI)
+	public static KGOGMKMBCPP_EventType BPJMGICFPBJ(int PGIIDPEGGPI)
     {
         int res = PGIIDPEGGPI / 1000;
         if(PGIIDPEGGPI - 2000 < 1000)
-            res =  (int)OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest;
+            res =  (int)KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest;
 
-        return (OHCAABOMEOF.KGOGMKMBCPP_EventType)res;
+        return (KGOGMKMBCPP_EventType)res;
     }
 }

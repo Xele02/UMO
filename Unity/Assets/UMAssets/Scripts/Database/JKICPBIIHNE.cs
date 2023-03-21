@@ -104,7 +104,14 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		public int BGKHDJOGEAL { get { return AFHMDMMHBMC ^ FBGGEFFJJHB; } set { AFHMDMMHBMC = value ^ FBGGEFFJJHB; } } //0x13627B0 BAEEGALHJCD 0x13621C8 MIIBCLFCGBJ
 
 		//// RVA: 0x136281C Offset: 0x136281C VA: 0x136281C
-		//public int BLLCPCGGHJM(int IOPHIHFOOEP) { }
+		public int BLLCPCGGHJM(int IOPHIHFOOEP)
+		{
+			if (IOPHIHFOOEP > -1 && IOPHIHFOOEP < KGANBBFKCDD.Count)
+			{
+				return FBGGEFFJJHB ^ KGANBBFKCDD[IOPHIHFOOEP];
+			}
+			return 0;
+		}
 
 		//// RVA: 0x1362238 Offset: 0x1362238 VA: 0x1362238
 		public bool APPMICHOCFN(int IOPHIHFOOEP, int JBGEEPFKIGG)
@@ -118,7 +125,14 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x13628FC Offset: 0x13628FC VA: 0x13628FC
-		//public int FKNBLDPIPMC(int IOPHIHFOOEP) { }
+		public int FKNBLDPIPMC(int IOPHIHFOOEP)
+		{
+			if (IOPHIHFOOEP > -1 && IOPHIHFOOEP < AHGCGHAAHOO.Count)
+			{
+				return FBGGEFFJJHB ^ AHGCGHAAHOO[IOPHIHFOOEP];
+			}
+			return 0;
+		}
 
 		//// RVA: 0x1362320 Offset: 0x1362320 VA: 0x1362320
 		public bool OEFHMMJFEKC(int IOPHIHFOOEP, int JBGEEPFKIGG)
@@ -132,7 +146,14 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x13629DC Offset: 0x13629DC VA: 0x13629DC
-		//public int KAINPNMMAEK(int IOPHIHFOOEP) { }
+		public int KAINPNMMAEK(int IOPHIHFOOEP)
+		{
+			if (IOPHIHFOOEP > -1 && IOPHIHFOOEP < CMBLIDNDLOO.Count)
+			{
+				return FBGGEFFJJHB ^ CMBLIDNDLOO[IOPHIHFOOEP];
+			}
+			return 0;
+		}
 
 		//// RVA: 0x1362408 Offset: 0x1362408 VA: 0x1362408
 		public bool PPJAGFPBFHJ(int IOPHIHFOOEP, int JBGEEPFKIGG)
@@ -202,7 +223,14 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		public int FDBOPFEOENF { get { return LLEMDLLGIAH ^ FBGGEFFJJHB; } set { LLEMDLLGIAH = value ^ FBGGEFFJJHB; } } //0x1467FC4 MJPHCAIKKJG 0x1468030 GHECGDMEBFF
 
 		//// RVA: 0x14680A0 Offset: 0x14680A0 VA: 0x14680A0
-		//public int FKNBLDPIPMC(int IOPHIHFOOEP) { }
+		public int FKNBLDPIPMC(int IOPHIHFOOEP)
+		{
+			if (IOPHIHFOOEP > -1 && IOPHIHFOOEP < AHGCGHAAHOO.Count)
+			{
+				return AHGCGHAAHOO[IOPHIHFOOEP] ^ FBGGEFFJJHB;
+			}
+			return 0;
+		}
 
 		//// RVA: 0x1468180 Offset: 0x1468180 VA: 0x1468180
 		public bool OEFHMMJFEKC(int IOPHIHFOOEP, int JBGEEPFKIGG)

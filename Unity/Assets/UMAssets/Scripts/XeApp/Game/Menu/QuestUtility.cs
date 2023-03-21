@@ -232,7 +232,11 @@ namespace XeApp.Game.Menu
 		//public static int GetAchievedCount(LayoutQuestTab.eTabType type) { }
 
 		//// RVA: 0x9E439C Offset: 0x9E439C VA: 0x9E439C
-		//public static int GetAchievedCount() { }
+		public static int GetAchievedCount()
+		{
+			TodoLogger.Log(0, "GetAchievedCount");
+			return 0;
+		}
 
 		//// RVA: 0x9E2AA4 Offset: 0x9E2AA4 VA: 0x9E2AA4
 		public static string GetAchievedCountText(int count)
