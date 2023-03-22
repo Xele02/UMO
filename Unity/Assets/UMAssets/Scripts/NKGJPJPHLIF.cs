@@ -457,8 +457,7 @@ public class NKGJPJPHLIF
 		// // RVA:  Offset: 0xC1AA34 VA: 0xC1AA34
 		// internal void HPCLPPCILDO(CACGCMBKHDI JIPCHHHLOMM) { }
 
-		TodoLogger.Log(TodoLogger.ToCheck, "Check "+IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()+" "+GOEPLCHCCBC);
-		if((IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() - GOEPLCHCCBC) < 1799 && !FBBNPFFEJBN)
+		if((IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() - GOEPLCHCCBC) <= 1799 && !FBBNPFFEJBN)
 		{
 			if(BHFHGFKBOHH != null)
 			{

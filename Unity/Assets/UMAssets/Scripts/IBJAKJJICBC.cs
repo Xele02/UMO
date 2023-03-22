@@ -450,8 +450,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 					type = 0;
 			}
 			//LAB_0121a02c:
-			TodoLogger.Log(0, "finish FKDIMODKKJD (generate song list)");
-			//event? = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.CLLPBOPLICM_EventWeekDay.PPIBJECKCEF(JHNMKKNEENE);
+			DKCJADHKGAN_EventWeekDay.JFFPEKOEINE ev = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.CLLPBOPLICM_EventWeekDay.PPIBJECKCEF(JHNMKKNEENE_Date);
 			DateTime time = Utility.GetLocalDateTime(JHNMKKNEENE_Date);
 			for(int i = 0; i < numSongs; i++)
 			{
@@ -470,8 +469,9 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 						bool b = false;
 						int val = 0;
 						bool b2 = false;
-						if(DEPGBBJMFED_Serie == 5 && /*event.FLPDCNBLOKL(time.??, musicInfo.GHBPLHBNMBK)*/ false)
+						if(DEPGBBJMFED_Serie == 5 && ev != null && ev.FLPDCNBLOKL((int)time.DayOfWeek, musicInfo.GHBPLHBNMBK_FreeMusicId))
 						{
+							TodoLogger.Log(0, "FKDIMODKKJD Event week");
 							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[i].FKBPJCDBDAG_SetWeekEventServerDate(JHNMKKNEENE_Date);
 							//Setup vars
 							//L311

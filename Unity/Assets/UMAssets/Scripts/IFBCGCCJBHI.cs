@@ -71,8 +71,7 @@ public class IFBCGCCJBHI
 		if (t != KLDBCKIJACO_StaminaTimeLeft || FPLEADMHLKN_StaminaStr == null)
         {
 			FPLEADMHLKN_StaminaStr = "MAX";
-			TodoLogger.Log(TodoLogger.ToCheck, "Check int64");
-			if (t > 0)
+			if (t != 0)
 			{
 				KOHNLDKIKPC.Clear();
 				KOHNLDKIKPC.Append(JpStringLiterals.StringLiteral_11083);
@@ -92,7 +91,7 @@ public class IFBCGCCJBHI
 		if(t != NFKMOHGLPAO_IntamacyTimeLeft || KOENBEGADHP_IntimacyStr == null)
 		{
 			KOENBEGADHP_IntimacyStr = "MAX";
-			if(t > 0)
+			if(t != 0)
 			{
 				KOHNLDKIKPC.Clear();
 				KOHNLDKIKPC.Append(JpStringLiterals.StringLiteral_11083);

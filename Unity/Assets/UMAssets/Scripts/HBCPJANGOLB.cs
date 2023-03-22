@@ -22,15 +22,13 @@ public class HBCPJANGOLB
         for(int i = 0; i < l.Count; i++)
         {
             long t = GachaUtility.GetGachaProductOpenTime(l[i]);
-            TodoLogger.Log(TodoLogger.ToCheck, "int64 check");
-            if(t2 >= time)
+            if(t2 >= t)
             {
                 for(int j = 0; j < l[i].KACECFNECON.NNDMIOEKKMM.Count; j++)
                 {
                     MNJNCKPELGE.Add(l[i].KACECFNECON.NNDMIOEKKMM[j]);
                 }
-                TodoLogger.Log(TodoLogger.ToCheck, "int64 check");
-                if(t < date && MNJNCKPELGE.Count > 0)
+                if(date >= t && MNJNCKPELGE.Count > 0)
                     date = t;
             }
         }
@@ -60,8 +58,7 @@ public class HBCPJANGOLB
         long lastEpTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MOBHLLDIMMN_EpisodeLastShowTime;
         long t2 = KKEFACGGKOD.HFPEDBCGFOJ_GetLastShowDate();
         long m = System.Math.Max(lastEpTime, t2);
-        TodoLogger.Log(TodoLogger.ToCheck, "Int64 check");
-        if(JHNMKKNEENE > m)
+        if(JHNMKKNEENE >= m)
             return 0;
         return m;
     }

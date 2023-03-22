@@ -23,7 +23,11 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 		//public List<int> OPCBHOLFCHO(int IAPNPKAGEGH) { }
 
 		//// RVA: 0x198DA90 Offset: 0x198DA90 VA: 0x198DA90
-		//public bool FLPDCNBLOKL(int IAPNPKAGEGH, int GHBPLHBNMBK) { }
+		public bool FLPDCNBLOKL(int IAPNPKAGEGH, int GHBPLHBNMBK)
+		{
+			TodoLogger.Log(0, "FLPDCNBLOKL");
+			return false;
+		}
 
 		//// RVA: 0x198E414 Offset: 0x198E414 VA: 0x198E414
 		//public uint CAOGDCBPBAN() { }
@@ -32,7 +36,15 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	private List<JFFPEKOEINE> MPCJGPEBCCD = new List<JFFPEKOEINE>(); // 0x20
 
 	//// RVA: 0x198D87C Offset: 0x198D87C VA: 0x198D87C
-	//public DKCJADHKGAN.JFFPEKOEINE PPIBJECKCEF(long FJLBOKEKFKA) { }
+	public JFFPEKOEINE PPIBJECKCEF(long FJLBOKEKFKA)
+	{
+		for(int i = 0; i < MPCJGPEBCCD.Count; i++)
+		{
+			if (MPCJGPEBCCD[i].PPEGAKEIEGM_Enabled == 2 && FJLBOKEKFKA >= MPCJGPEBCCD[i].KINJOEIAHFK && MPCJGPEBCCD[i].PCCFAKEOBIC >= FJLBOKEKFKA)
+				return MPCJGPEBCCD[i];
+		}
+		return null;
+	}
 
 	//// RVA: 0x198D990 Offset: 0x198D990 VA: 0x198D990
 	//public bool FLPDCNBLOKL(long JHNMKKNEENE, int GHBPLHBNMBK) { }

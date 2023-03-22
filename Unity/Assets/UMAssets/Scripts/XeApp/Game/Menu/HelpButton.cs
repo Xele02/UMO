@@ -181,8 +181,7 @@ namespace XeApp.Game.Menu
 			{
 				if (hp[i].DIJHLDAIBCA_SearchId == searchId)
 				{
-					TodoLogger.Log(TodoLogger.ToCheck, "int64");
-					if(hp[i].PDBPFJJCADD <= time)
+					if(time >= hp[i].PDBPFJJCADD)
 					{
 						if(hp[i].FDBNFFNFOND >= time)
 						{

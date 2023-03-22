@@ -65,10 +65,9 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 							{
 								if (CDENCMNHNGA[i].EGBOHDFBAPB == 0)
 									return CDENCMNHNGA[i];
-								TodoLogger.Log(TodoLogger.ToCheck, "Check int64");
-								if (JHNMKKNEENE > CDENCMNHNGA[i].PDBPFJJCADD)
+								if (JHNMKKNEENE >= CDENCMNHNGA[i].PDBPFJJCADD)
 									return CDENCMNHNGA[i];
-								if (JHNMKKNEENE < CDENCMNHNGA[i].EGBOHDFBAPB)
+								if (CDENCMNHNGA[i].EGBOHDFBAPB >= JHNMKKNEENE)
 									return CDENCMNHNGA[i];
 							}
 						}
@@ -83,10 +82,9 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 				if(OPFGFINHFCE.Contains(CDENCMNHNGA[i].OPFGFINHFCE))
 				if (CDENCMNHNGA[i].EGBOHDFBAPB == 0)
 					return CDENCMNHNGA[i];
-				TodoLogger.Log(TodoLogger.ToCheck, "Check int64");
-				if (JHNMKKNEENE > CDENCMNHNGA[i].PDBPFJJCADD)
+				if (JHNMKKNEENE >= CDENCMNHNGA[i].PDBPFJJCADD)
 					return CDENCMNHNGA[i];
-				if (JHNMKKNEENE < CDENCMNHNGA[i].EGBOHDFBAPB)
+				if (CDENCMNHNGA[i].EGBOHDFBAPB >= JHNMKKNEENE)
 					return CDENCMNHNGA[i];
 			}
 		}

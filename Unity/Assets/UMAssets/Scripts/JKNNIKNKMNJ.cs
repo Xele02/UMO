@@ -128,8 +128,7 @@ public class JKNNIKNKMNJ
 		{
 			int staminaDiff = DCBENCMNOGO_Gain - NEPIPMPAFIE_CntVal;
 			int stamTime = (int)(staminaDiff * FLJGHBLEDDB_UpdateInterval);
-			TodoLogger.Log(TodoLogger.ToCheck, "Int 64");
-			if ((FJDBNGEPKHL_Time - DLPEEDCCNMJ_CntSaveTime) > stamTime)
+			if ((FJDBNGEPKHL_Time - DLPEEDCCNMJ_CntSaveTime) >= stamTime)
 			{
 				long delta = (FJDBNGEPKHL_Time - DLPEEDCCNMJ_CntSaveTime) / FLJGHBLEDDB_UpdateInterval;
 				if (delta != 0)

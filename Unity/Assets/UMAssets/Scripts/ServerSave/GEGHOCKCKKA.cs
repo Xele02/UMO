@@ -44,8 +44,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 			{
 				if(DOJDOLDDBPP_Hav == 1)
 				{
-					TodoLogger.Log(TodoLogger._Todo, "GEGHOCKCKKA_LimitedCompoItem.NIENPFFLMCH check int64");
-					if (DIAPHCJBPFD_Get < JHNMKKNEENE)
+					if (JHNMKKNEENE >= DIAPHCJBPFD_Get)
 						return HNKFMAJIFJD > JHNMKKNEENE;
 				}
 				return false;

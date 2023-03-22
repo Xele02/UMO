@@ -80,8 +80,7 @@ public class BBGDKLLEPIB
 	{
 		for(int i = 0; i < PFMPODNDFIB.Count; i++)
 		{
-			TodoLogger.Log(TodoLogger.ToCheck, "int64");
-			if(PFMPODNDFIB[i] >= JHNMKKNEENE && PFMPODNDFIB[i] >= POCKENHKOBL)
+			if(JHNMKKNEENE >= PFMPODNDFIB[i] && POCKENHKOBL >= PFMPODNDFIB[i])
 			{
 				return true;
 			}

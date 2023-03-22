@@ -501,8 +501,7 @@ public class IMMAOANGPNK
 	{
 		for(int i = 0; i < MGFBEKNMJOA.Count; i++)
 		{
-			TodoLogger.Log(TodoLogger.ToCheck, "int64");
-			if (MGFBEKNMJOA[i].PDBPFJJCADD >= JHNMKKNEENE)
+			if (JHNMKKNEENE >= MGFBEKNMJOA[i].PDBPFJJCADD)
 			{
 				object[] o = new object[4] { JpStringLiterals.StringLiteral_11781, MGFBEKNMJOA[i].IJEKNCDIIAE_MVer, ",name=", MGFBEKNMJOA[i].OPFGFINHFCE_Name };
 				Debug.Log(string.Concat(o));
