@@ -2,6 +2,7 @@ using XeSys.Gfx;
 using UnityEngine.UI;
 using UnityEngine;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -26,18 +27,38 @@ namespace XeApp.Game.Menu
 					gameObject.SetActive(true);
 					m_text.text = text;
 					return;
-				/*	case BadgeConstant.ID.New:
-
-				Gacha_Update = 3,
-				Gacha_FreeMorning = 4,
-				Gacha_FreeNoon = 5,
-				Gacha_FreeNight = 6,
-				Menu_ShopCheck = 7,
-				Menu_NewFuncAdd = 8,
-				Menu_ResvMsg = 9,*/
-				default:
-					TodoLogger.Log(0, "MenuBarBadge.Set");
-					break;
+				case BadgeConstant.ID.New:
+					gameObject.SetActive(true);
+					m_text.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("home_footer_badge_text_02");
+					return;
+				case BadgeConstant.ID.Gacha_Update:
+					gameObject.SetActive(true);
+					m_text.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("home_footer_badge_text_03");
+					return;
+				case BadgeConstant.ID.Gacha_FreeMorning:
+					gameObject.SetActive(true);
+					m_text.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("home_footer_badge_text_04");
+					return;
+				case BadgeConstant.ID.Gacha_FreeNoon:
+					gameObject.SetActive(true);
+					m_text.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("home_footer_badge_text_05");
+					return;
+				case BadgeConstant.ID.Gacha_FreeNight:
+					gameObject.SetActive(true);
+					m_text.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("home_footer_badge_text_06");
+					return;
+				case BadgeConstant.ID.Menu_ShopCheck:
+					gameObject.SetActive(true);
+					m_text.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("home_footer_badge_text_07");
+					return;
+				case BadgeConstant.ID.Menu_NewFuncAdd:
+					gameObject.SetActive(true);
+					m_text.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("home_footer_badge_text_08");
+					return;
+				case BadgeConstant.ID.Menu_ResvMsg:
+					gameObject.SetActive(true);
+					m_text.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("home_footer_badge_text_09");
+					return;
 			}
 		}
 

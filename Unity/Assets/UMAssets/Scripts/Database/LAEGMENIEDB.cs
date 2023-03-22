@@ -49,7 +49,20 @@ public class LAEGMENIEDB_Story : DIHHCBACKGG_DbSection
 	//public int EPBLBFOIEEB(int GHBPLHBNMBK) { }
 
 	//// RVA: 0xD8EF9C Offset: 0xD8EF9C VA: 0xD8EF9C
-	//public int JOHMIPPKPPM(int GHBPLHBNMBK) { }
+	public int JOHMIPPKPPM(int GHBPLHBNMBK)
+	{
+		for(int i = 0; i < CDENCMNHNGA.Count; i++)
+		{
+			if(CDENCMNHNGA[i].PPEGAKEIEGM_Enabled == 2)
+			{
+				if(CDENCMNHNGA[i].OMMEPCGNHFM == GHBPLHBNMBK)
+				{
+					return CDENCMNHNGA[i].LFLLLOPAKCO;
+				}
+			}
+		}
+		return 0;
+	}
 
 	// RVA: 0xD8F14C Offset: 0xD8F14C VA: 0xD8F14C
 	public LAEGMENIEDB_Story()

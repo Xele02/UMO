@@ -55,15 +55,16 @@ public class EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x1C48F30 Offset: 0x1C48F30 VA: 0x1C48F30 Slot: 5
-	public virtual bool DBIGDCOHOIC()
+	public virtual bool DBIGDCOHOIC_IsMultiDanceUnlocked()
 	{
-		//return JFEEHOKLFPO() <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.FBGGEFFJJHB ^ CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_Save.KCCLEHLLOFG_Common.HMJBBNEACOA;
-		TodoLogger.Log(0, "DBIGDCOHOIC");
-		return true;
+		return JFEEHOKLFPO_GetMultiDanceMinLevel() <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 	}
 
 	// // RVA: 0x1C49024 Offset: 0x1C49024 VA: 0x1C49024
-	//public int JFEEHOKLFPO() { }
+	public int JFEEHOKLFPO_GetMultiDanceMinLevel()
+	{
+		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3);
+	}
 
 	// // RVA: 0x1C49124 Offset: 0x1C49124 VA: 0x1C49124
 	public bool BENDFLDLIAG_IsAvaiableForNumDiva(int OFGIOBGAJPA_NumDiva)

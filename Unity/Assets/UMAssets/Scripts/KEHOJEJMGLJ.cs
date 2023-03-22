@@ -982,7 +982,7 @@ public class KEHOJEJMGLJ
 		}
 		if (string.IsNullOrEmpty(LHJNPJFNDNA))
 			return;
-		string p = LHJNPJFNDNA + "," + BBGDKLLEPIB.HHCJCDFCLOB.OCOGBOHOGGE;
+		string p = LHJNPJFNDNA + "," + BBGDKLLEPIB.HHCJCDFCLOB.OCOGBOHOGGE_DbFileName;
 		byte[] bytes = Encoding.UTF8.GetBytes(p);
 		for(int i = 0; i < bytes.Length; i++)
 		{

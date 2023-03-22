@@ -1215,8 +1215,14 @@ public class GNGMCIAIKMA
 	// // RVA: 0xAC257C Offset: 0xAC257C VA: 0xAC257C
 	public int OBOGIOGEBPK(int APFDNBGMMMM, FKMOKDCJFEN.ADCPCCNCOMD_Status CMCKNKKCNDK)
 	{
-		TodoLogger.Log(0, "OBOGIOGEBPK");
-		return 0;
+		NFMHCLHEMHB_Bingo.CCGKCGJKADC bingo = MENDFPNPAAO_GetSaveBingo(APFDNBGMMMM);
+		int res = 0;
+		for(int i = 0; i < bingo.AHCFGOGCJKI_St.HDMADAHNLDN_Ms.Count; i++)
+		{
+			if (bingo.AHCFGOGCJKI_St.HDMADAHNLDN_Ms[i].CMCKNKKCNDK_Stat == (int)CMCKNKKCNDK)
+				res++;
+		}
+		return res;
 	}
 
 	// // RVA: 0xAC26A8 Offset: 0xAC26A8 VA: 0xAC26A8

@@ -2,6 +2,7 @@
 using System;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
+using XeSys;
 
 namespace XeApp.Game.Gacha
 {
@@ -131,10 +132,17 @@ namespace XeApp.Game.Gacha
 		// private static bool CheckLimitTime() { }
 
 		// // RVA: 0x992A24 Offset: 0x992A24 VA: 0x992A24
-		// public static void SetupFreeTimezone() { }
+		public static void SetupFreeTimezone()
+		{
+			TodoLogger.Log(0, "SetupFreeTimezone");
+		}
 
 		// // RVA: 0x991F98 Offset: 0x991F98 VA: 0x991F98
-		// public static GachaUtility.Timezone GetTimezoneFor(long unixTime) { }
+		public static Timezone GetTimezoneFor(long unixTime)
+		{
+			TodoLogger.Log(0, "GetTimezoneFor");
+			return 0;
+		}
 
 		// // RVA: 0x992C04 Offset: 0x992C04 VA: 0x992C04
 		// public static string MakeTimezoneDesc() { }
@@ -222,8 +230,48 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x996690 Offset: 0x996690 VA: 0x996690
 		public static BadgeConstant.ID GetFooterMenuBadgeId(ref string badgeText)
 		{
-			TodoLogger.Log(0, "GetFooterMenuBadgeId");
-			return 0;
+			HPBDNNACBAK h = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI;
+			if (h == null)
+				return 0;
+			h.OKINLIEHCEC();
+			h.ANGMDEPOBEE();
+			if (h.PFLJNIANOHE)
+				return BadgeConstant.ID.Gacha_Update;
+			string s = "";
+			KBPDNHOKEKD_ProductId.KNEKLJHNHAK v = h.FJICMLBOJCH(out s);
+			if (v == 0)
+			{
+				if (!h.CPGNMGCIIKI())
+					return 0;
+				SetupFreeTimezone();
+				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				Timezone t = GetTimezoneFor(time);
+				if ((int)t < 3)
+					return (BadgeConstant.ID)(t + (int)BadgeConstant.ID.Gacha_FreeMorning);
+				return 0;
+			}
+			if(string.IsNullOrEmpty(s))
+			{
+				switch(v)
+				{
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.LCLLMJGIMHC/*1*/:
+						badgeText = MessageManager.Instance.GetMessage("menu", "badge_label_gacha_oneday");
+						break;
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.PBEMIDKNPNH/*2*/:
+						badgeText = MessageManager.Instance.GetMessage("menu", "badge_label_gacha_firsttime");
+						break;
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.DKIKNLEDDBK/*3*/:
+						return 0;
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.AAPLMEGMNJA/*4*/:
+						badgeText = MessageManager.Instance.GetMessage("menu", "badge_label_gacha_thistime");
+						break;
+				}
+			}
+			else
+			{
+				badgeText = s;
+			}
+			return BadgeConstant.ID.Label;
 		}
 
 		// // RVA: 0x9969C8 Offset: 0x9969C8 VA: 0x9969C8

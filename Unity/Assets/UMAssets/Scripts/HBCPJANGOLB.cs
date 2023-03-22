@@ -22,17 +22,17 @@ public class HBCPJANGOLB
         for(int i = 0; i < l.Count; i++)
         {
             long t = GachaUtility.GetGachaProductOpenTime(l[i]);
-            if(t2 >= t)
+            if(t2 < t)
             {
                 for(int j = 0; j < l[i].KACECFNECON.NNDMIOEKKMM.Count; j++)
                 {
                     MNJNCKPELGE.Add(l[i].KACECFNECON.NNDMIOEKKMM[j]);
                 }
-                if(date >= t && MNJNCKPELGE.Count > 0)
+                if(date < t && MNJNCKPELGE.Count > 0)
                     date = t;
             }
         }
-        if(date >= 0)
+        if(date != 0)
         {
             KKEFACGGKOD.JKHNJBFAFBL_SetLastShowDate(date);
         }

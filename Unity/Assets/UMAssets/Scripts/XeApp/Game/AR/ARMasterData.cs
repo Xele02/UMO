@@ -67,7 +67,7 @@ namespace XeApp.Game.AR
 			}
 			
 			byte[] dataBytes = null;
-			yield return Co.R(Coroutine_LoadTarFile(BBGDKLLEPIB.OGCDNCDMLCA + string.Format(DATA_PATH, m_name), (byte[] data) => {
+			yield return Co.R(Coroutine_LoadTarFile(BBGDKLLEPIB.OGCDNCDMLCA_MxDir + string.Format(DATA_PATH, m_name), (byte[] data) => {
 				//0xBBB378
 				dataBytes = data;
 			} ));
@@ -207,7 +207,7 @@ namespace XeApp.Game.AR
 			}
 
 			string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl + found.MFBMBPJAADA_FileName);
-			string dest = FileSystemProxy.ConvertPath(BBGDKLLEPIB.OGCDNCDMLCA + found.OIEAICNAMNB_LocalFileName);
+			string dest = FileSystemProxy.ConvertPath(BBGDKLLEPIB.OGCDNCDMLCA_MxDir + found.OIEAICNAMNB_LocalFileName);
 			UnityEngine.Debug.Log("Dld from "+src+" to "+dest);
 
 			string dir = Path.GetDirectoryName(dest);

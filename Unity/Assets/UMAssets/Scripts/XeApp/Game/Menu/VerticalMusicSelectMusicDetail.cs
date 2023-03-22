@@ -522,7 +522,7 @@ namespace XeApp.Game.Menu
 					soloId = i;
 			}
 			m_unitToggleButtonGroupObj.blocksRaycasts = true;
-			if (!musicData.DBIGDCOHOIC())
+			if (!musicData.DBIGDCOHOIC_IsMultiDanceUnlocked())
 			{
 				TodoLogger.Log(0, "ShowUnitDanceButton for locked");
 			}

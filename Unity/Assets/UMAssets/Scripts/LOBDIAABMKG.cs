@@ -94,7 +94,20 @@ public class LOBDIAABMKG
 	// public bool NIHLEOHPAFC() { }
 
 	// // RVA: 0x10C54F8 Offset: 0x10C54F8 VA: 0x10C54F8
-	// public KBPDNHOKEKD.KNEKLJHNHAK FJICMLBOJCH() { }
+	public KBPDNHOKEKD_ProductId.KNEKLJHNHAK FJICMLBOJCH()
+	{
+		KBPDNHOKEKD_ProductId.KNEKLJHNHAK res = KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL;
+		for(int i = 0; i < MHKCPJDNJKI.Count; i++)
+		{
+			if(MHKCPJDNJKI[i] != null)
+			{
+				KBPDNHOKEKD_ProductId.KNEKLJHNHAK r = MHKCPJDNJKI[i].FJICMLBOJCH();
+				if (r != KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL)
+					return r;
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0x10C5618 Offset: 0x10C5618 VA: 0x10C5618
 	// public bool BANFOFKNKED(int APHNELOFGAK) { }

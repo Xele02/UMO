@@ -45,7 +45,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 				if(DOJDOLDDBPP_Hav == 1)
 				{
 					if (JHNMKKNEENE >= DIAPHCJBPFD_Get)
-						return HNKFMAJIFJD > JHNMKKNEENE;
+						return HNKFMAJIFJD >= JHNMKKNEENE;
 				}
 				return false;
 			}

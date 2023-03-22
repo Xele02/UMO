@@ -226,16 +226,48 @@ namespace XeApp.Game.Menu
 		//public static int GetCount(LayoutQuestTab.eTabType type) { }
 
 		//// RVA: 0x9E408C Offset: 0x9E408C VA: 0x9E408C
-		//public static int GetAchievedCount(List<CGJKNOCAPII> list) { }
+		public static int GetAchievedCount(List<CGJKNOCAPII> list)
+		{
+			int res = 0;
+			for(int i = 0; i < list.Count; i++)
+			{
+				res += list[i].PKNLMLDKCLM;
+			}
+			return res;
+		}
 
 		//// RVA: 0x9E4164 Offset: 0x9E4164 VA: 0x9E4164
-		//public static int GetAchievedCount(LayoutQuestTab.eTabType type) { }
+		public static int GetAchievedCount(LayoutQuestTab.eTabType type)
+		{
+			switch(type)
+			{
+				case LayoutQuestTab.eTabType.Event:
+					return GetAchievedCount(m_eventViewList);
+				case LayoutQuestTab.eTabType.Normal:
+					return m_normalAchievedCount;
+				case LayoutQuestTab.eTabType.Daily:
+					return m_dailyAchievedCount;
+				case LayoutQuestTab.eTabType.Diva:
+					return m_snsAchievedCount;
+				case LayoutQuestTab.eTabType.Beginner:
+					return m_beginnerAchievedCount;
+				case LayoutQuestTab.eTabType.Bingo:
+					return GetAchievedCount(m_bingoViewList);
+			}
+			return 0;
+		}
 
 		//// RVA: 0x9E439C Offset: 0x9E439C VA: 0x9E439C
 		public static int GetAchievedCount()
 		{
-			TodoLogger.Log(0, "GetAchievedCount");
-			return 0;
+			int a = GetAchievedCount(LayoutQuestTab.eTabType.Daily);
+			int b = GetAchievedCount(LayoutQuestTab.eTabType.Normal);
+			int c = GetAchievedCount(LayoutQuestTab.eTabType.Event);
+			int d = GetAchievedCount(LayoutQuestTab.eTabType.Diva);
+			int e = 5;
+			if (IsBeginnerQuest())
+				e = 4;
+			return b + a + c + d + e;
 		}
 
 		//// RVA: 0x9E2AA4 Offset: 0x9E2AA4 VA: 0x9E2AA4
