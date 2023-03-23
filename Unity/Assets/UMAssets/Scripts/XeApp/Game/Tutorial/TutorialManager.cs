@@ -15,7 +15,10 @@ namespace XeApp.Game.Tutorial
 		public static int forceShowTipsId; // 0x0
 
 		// // RVA: 0xE4604C Offset: 0xE4604C VA: 0xE4604C
-		// public static void Initialize() { }
+		public static void Initialize()
+		{
+			TodoLogger.Log(0, "TutorialManager.Initialize");
+		}
 
 		// // RVA: 0xE461F8 Offset: 0xE461F8 VA: 0xE461F8
 		// public void PreLoadResource(UnityAction finishCb, bool isAppendLayout = False) { }
@@ -35,8 +38,58 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE463C4 Offset: 0xE463C4 VA: 0xE463C4
 		public static IEnumerator TryShowTutorialCoroutine(Func<TutorialConditionId, bool> checker)
 		{
-			TodoLogger.Log(0, "TryShowTutorialCoroutine");
-			yield return null;
+			PJANOOPJIDE_TutorialPict master; // 0x14
+			ILDKBCLAFPB.DNLECGEBDOI_Tutorial saveData; // 0x18
+			int playerRank; // 0x1C
+			int saveBitIndex; // 0x20
+			int index; // 0x24
+
+			//0xE47C64
+			master = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict;
+			saveData = GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial;
+			playerRank = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+			saveBitIndex = 0;
+			GameManager.Instance.AddPushBackButtonHandler(OnDummyBackButton);
+			bool hasShown = false;
+			for (index = 0; index < master.CDENCMNHNGA.Count; index++)
+			{
+				if(master.CDENCMNHNGA[index].PPEGAKEIEGM_Enabled > 1)
+				{
+					int a = master.CDENCMNHNGA[index].PPFNGGCBJKC;
+					if (master.CDENCMNHNGA[index].IODLCIBCONC > 0)
+						a = master.CDENCMNHNGA[index].IODLCIBCONC;
+					saveBitIndex = 0;
+					if(a > 63)
+					{
+						if ((a - 501) > 63)
+							continue;
+						a = a - 437;
+					}
+					saveBitIndex = a;
+					if(!saveData.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(a))
+					{
+						for(int i = 0; i < master.CDENCMNHNGA[index].AKBHPFBDDOL.Length; i++)
+						{
+							if(master.CDENCMNHNGA[index].FJOLNJLLJEJ[i] <= playerRank)
+							{
+								if(checker((TutorialConditionId)master.CDENCMNHNGA[index].AKBHPFBDDOL[i]))
+								{
+									Initialize();
+									yield return Instance.ShowTutorialCoroutine(master.CDENCMNHNGA[index]);
+									saveData.INEAGJMJLFG_TutorialAlreadyFlags.EDEDFDDIOKO_SetTrue(saveBitIndex);
+									hasShown = true;
+								}
+							}
+						}
+					}
+				}
+			}
+			if (hasShown)
+			{
+				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				Instance.Release();
+			}
+			GameManager.Instance.RemovePushBackButtonHandler(OnDummyBackButton);
 		}
 
 		// // RVA: 0xE46470 Offset: 0xE46470 VA: 0xE46470
@@ -47,7 +100,10 @@ namespace XeApp.Game.Tutorial
 		// public static IEnumerator ShowTutorial(int id, UnityAction endAction) { }
 
 		// // RVA: 0xE46578 Offset: 0xE46578 VA: 0xE46578
-		// private static void OnDummyBackButton() { }
+		private static void OnDummyBackButton()
+		{
+			return;
+		}
 
 		// // RVA: 0xE4657C Offset: 0xE4657C VA: 0xE4657C
 		// public static bool IsAlreadyTutorial(TutorialConditionId conditionId) { }
@@ -60,7 +116,11 @@ namespace XeApp.Game.Tutorial
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE848 Offset: 0x6AE848 VA: 0x6AE848
 		// // RVA: 0xE46BE8 Offset: 0xE46BE8 VA: 0xE46BE8
-		// public IEnumerator ShowTutorialCoroutine(PJANOOPJIDE.HNHHGJCPMEA messData) { }
+		public IEnumerator ShowTutorialCoroutine(PJANOOPJIDE_TutorialPict.HNHHGJCPMEA messData)
+		{
+			TodoLogger.Log(0, "ShowTutorialCoroutine");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE8C0 Offset: 0x6AE8C0 VA: 0x6AE8C0
 		// // RVA: 0xE46220 Offset: 0xE46220 VA: 0xE46220

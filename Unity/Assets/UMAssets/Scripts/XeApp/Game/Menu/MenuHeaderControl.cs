@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using XeApp.Core;
+using XeApp.Game.Common;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
@@ -448,7 +449,18 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB29E8C Offset: 0xB29E8C VA: 0xB29E8C
 		public void ApplyPlayerStatus(IFBCGCCJBHI playerStatus)
 		{
-			TodoLogger.Log(0, "ApplyPlayerStatus");
+			if (m_userInfo == null)
+				return;
+			if (!m_userInfo.IsLoaded())
+				return;
+			m_userInfo.SetLevelLimit(playerStatus.NMCICIHMOCM_PlayerLevelLimit);
+			m_userInfo.ChangeEnergyValue(playerStatus.EPNALMONMHB_CurEnergy, playerStatus.POKDILOKODG_MaxEnergy);
+			m_userInfo.ChangeRemainTime(playerStatus.CMCHABFEOHH_RemainTime);
+			m_userInfo.ChangeLevelValue(playerStatus.DMBFOMLCGBG_ChangeLevelValue);
+			m_userInfo.ChangeEXPValue(playerStatus.OPBHNBECFII_CurExp, playerStatus.PBGFIOONCMB_MaxExp);
+			m_userInfo.ChangeCurrencyValue(playerStatus.OIOFGIBDOPI_CurrencyNonPaid, playerStatus.FNCPAEFEECO_CurrencyPaid + Database.Instance.tutorialPaidVC);
+			m_userInfo.ChangeMedalValue(playerStatus.AHHGKGOPGDE_MedalMonth, playerStatus.GBIKGLELKEO_MedalValue);
+			m_userInfo.ChangeUtaRateValue(playerStatus.ILELGGCCGMJ_UtaGrade, playerStatus.HDBFOIAGPJK_UtaRank);
 		}
 
 		// // RVA: 0xB2A28C Offset: 0xB2A28C VA: 0xB2A28C

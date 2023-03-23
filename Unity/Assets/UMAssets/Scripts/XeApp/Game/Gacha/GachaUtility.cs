@@ -134,14 +134,39 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x992A24 Offset: 0x992A24 VA: 0x992A24
 		public static void SetupFreeTimezone()
 		{
-			TodoLogger.Log(0, "SetupFreeTimezone");
+			timezoneMorn = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.FPBEBCIPEPI_GachaHour[0];
+			timezoneNoon = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.FPBEBCIPEPI_GachaHour[1];
+			timezoneNight = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.FPBEBCIPEPI_GachaHour[2];
+			timezoneEnd = timezoneMorn + 24;
 		}
 
 		// // RVA: 0x991F98 Offset: 0x991F98 VA: 0x991F98
 		public static Timezone GetTimezoneFor(long unixTime)
 		{
-			TodoLogger.Log(0, "GetTimezoneFor");
-			return 0;
+			DateTime date = Utility.GetLocalDateTime(unixTime);
+			if(date.Hour > -1)
+			{
+				if (date.Hour < timezoneMorn)
+					return Timezone.Night;
+			}
+			if(timezoneMorn <= date.Hour)
+			{
+				if (date.Hour < timezoneNoon)
+					return Timezone.Morning;
+			}
+			if(timezoneNoon <= date.Hour)
+			{
+				if (date.Hour < timezoneNight)
+					return Timezone.Noon;
+			}
+			if (date.Hour < timezoneNight)
+				return Timezone.Morning;
+			else
+			{
+				if (timezoneEnd <= date.Hour)
+					return Timezone.Morning;
+				return Timezone.Night;
+			}
 		}
 
 		// // RVA: 0x992C04 Offset: 0x992C04 VA: 0x992C04

@@ -3984,7 +3984,10 @@ public class ILDKBCLAFPB
 		//public void POAFHAHACEL(int PPFNGGCBJKC, long IOIMHJAOKOO) { }
 
 		//// RVA: 0x20263B4 Offset: 0x20263B4 VA: 0x20263B4
-		//public long BGDCMGOPCGE(int PPFNGGCBJKC) { }
+		public long BGDCMGOPCGE(int PPFNGGCBJKC)
+		{
+			return MHKCPJDNJKI[PPFNGGCBJKC - 1];
+		}
 
 		//// RVA: 0x2026160 Offset: 0x2026160 VA: 0x2026160
 		private string LAPEABGEEKP(int PPFNGGCBJKC)

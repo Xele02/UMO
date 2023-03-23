@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using System.Text;
+using XeApp.Game.Menu;
 
 public class DKKPBBBDKMJ
 {
@@ -40,8 +41,12 @@ public class DKKPBBBDKMJ
 	//// RVA: 0x1226D50 Offset: 0x1226D50 VA: 0x1226D50
 	public static bool CADENLBDAEB()
 	{
-		TodoLogger.Log(0, "CADENLBDAEB");
-		return false;
+		bool res = false;
+		if(!QuestUtility.IsBeginnerQuest())
+		{
+			res = !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(XeApp.Game.Common.GPFlagConstant.ID.IsNewEventStory);
+		}
+		return res;
 	}
 
 	//// RVA: 0x1226E78 Offset: 0x1226E78 VA: 0x1226E78

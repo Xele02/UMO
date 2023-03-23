@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -328,7 +329,18 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xED3160 Offset: 0xED3160 VA: 0xED3160
 		public void SetOfferUnlockRank()
 		{
-			TodoLogger.Log(0, "SetOfferUnlockRank");
+			int idx = Array.FindIndex(ToButtonType, (MenuButtonAnim.ButtonType x) =>
+			{
+				//0xB26954
+				return x == MenuButtonAnim.ButtonType.VOP;
+			});
+			m_buttons[idx].enabled = false;
+			if (KDHGBOOECKC.HHCJCDFCLOB != null)
+			{
+				KDHGBOOECKC.HHCJCDFCLOB.EJBPEBIIMPG_GetVfoPlayerLevelUnlock();
+				m_buttons[idx].enabled = KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk();
+			}
+			m_actionButtons[idx].Disable = !m_buttons[idx].enabled;
 		}
 
 		// // RVA: 0xED33D4 Offset: 0xED33D4 VA: 0xED33D4

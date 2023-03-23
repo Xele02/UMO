@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using XeSys;
 
 namespace XeApp.Game.Menu
 { 
@@ -273,8 +274,16 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9E2AA4 Offset: 0x9E2AA4 VA: 0x9E2AA4
 		public static string GetAchievedCountText(int count)
 		{
-			TodoLogger.Log(0, "GetAchievedCountText");
-			return "";
+			string res = "";
+			if(count > 0)
+			{
+				MessageBank bank = MessageManager.Instance.GetBank("menu");
+				if (count < 100)
+					res = string.Format(bank.GetMessageByLabel("badge_label_quest_achieved"), count.ToString() + JpStringLiterals.StringLiteral_10089);
+				else
+					res = string.Format(bank.GetMessageByLabel("badge_label_quest_achieved"), 99.ToString() + "+");
+			}
+			return res;
 		}
 
 		//// RVA: 0x9E449C Offset: 0x9E449C VA: 0x9E449C

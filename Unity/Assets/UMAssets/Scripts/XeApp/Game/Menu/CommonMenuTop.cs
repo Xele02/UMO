@@ -147,16 +147,43 @@ namespace XeApp.Game.Menu
 		// public bool LeaveEnd() { }
 
 		// // RVA: 0x1B4D790 Offset: 0x1B4D790 VA: 0x1B4D790
-		// public void SetLevelLimit(bool isLimit) { }
+		public void SetLevelLimit(bool isLimit)
+		{
+			is_level_limit = isLimit;
+		}
 
 		// // RVA: 0x1B4D798 Offset: 0x1B4D798 VA: 0x1B4D798
-		// public void ChangeEnergyValue(int num, int den) { }
+		public void ChangeEnergyValue(int num, int den)
+		{
+			if (den == 0)
+				return;
+			if (num < 1)
+				num = 0;
+			SetEnergyNum(num, den);
+			is_energy_max = den <= num;
+			SetEnergyMaxAnim(den <= num, false);
+		}
 
 		// // RVA: 0x1B4D908 Offset: 0x1B4D908 VA: 0x1B4D908
-		// public void ChangeLevelValue(int level) { }
+		public void ChangeLevelValue(int level)
+		{
+			m_numberRank.SetNumber(level, 0);
+		}
 
 		// // RVA: 0x1B4D948 Offset: 0x1B4D948 VA: 0x1B4D948
-		// public void ChangeEXPValue(int current, int max) { }
+		public void ChangeEXPValue(int current, int max)
+		{
+			if(is_level_limit)
+			{
+				m_exp_gauge.gaugeMax = 1;
+				m_exp_gauge.gaugeValue = 1;
+			}
+			else
+			{
+				m_exp_gauge.gaugeMax = max;
+				m_exp_gauge.gaugeValue = current;
+			}
+		}
 
 		// // RVA: 0x1B4D9E0 Offset: 0x1B4D9E0 VA: 0x1B4D9E0
 		// private static int ConvertTimeBasedValue(int seconds) { }
@@ -165,10 +192,25 @@ namespace XeApp.Game.Menu
 		// private static int ConvertTimeBasedValue(int minutes, int seconds) { }
 
 		// // RVA: 0x1B4DA14 Offset: 0x1B4DA14 VA: 0x1B4DA14
-		// public void ChangeRemainTime(int seconds) { }
+		public void ChangeRemainTime(int seconds)
+		{
+			if(!is_energy_max)
+			{
+				m_textEnergyTime.text = JpStringLiterals.StringLiteral_11083 + (seconds / 60) + ":" + (seconds % 60).ToString("00");
+			}
+			else
+			{
+				m_textEnergyTime.text = "MAX";
+			}
+		}
 
 		// // RVA: 0x1B4D7F0 Offset: 0x1B4D7F0 VA: 0x1B4D7F0
-		// private void SetEnergyNum(int num, int den) { }
+		private void SetEnergyNum(int num, int den)
+		{
+			m_textEnergyNum.text = string.Format("<color=#ff2992>{0}</color>/{1}", num, den);
+			int start = num * 100 / den;
+			m_energyNum.StartChildrenAnimGoStop(start, start);
+		}
 
 		// // RVA: 0x1B4D478 Offset: 0x1B4D478 VA: 0x1B4D478
 		private void SetEnergyMaxAnim(bool enable, bool force = false)
@@ -214,22 +256,55 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B4ED00 Offset: 0x1B4ED00 VA: 0x1B4ED00
-		// public void ChangeCurrencyValue(int nonPaid, int paid) { }
+		public void ChangeCurrencyValue(int nonPaid, int paid)
+		{
+			m_textUC.text = string.Format("{0:#,0}", nonPaid);
+			m_textStone.text = string.Format("{0:#,0}", paid);
+		}
 
 		// // RVA: 0x1B4EE2C Offset: 0x1B4EE2C VA: 0x1B4EE2C
-		// public void ChangeUtaRateValue(HighScoreRatingRank.Type grade, int ranking) { }
+		public void ChangeUtaRateValue(HighScoreRatingRank.Type grade, int ranking)
+		{
+			int a = OEGIPPCADNA.BFKAHKBKBJE(ranking, 0);
+			if (m_utaRateRanking != a)
+			{
+				m_utaRateRanking = a;
+				m_textUtaRate.text = OEGIPPCADNA.GEEFFAEGHAH(a, true);
+			}
+			if (m_utaGrade == grade)
+				return;
+			m_utaGrade = grade;
+			m_imageUtaGrade.enabled = false;
+			GameManager.Instance.MusicRatioTextureCache.Load(m_utaGrade, (IiconTexture texture) =>
+			{
+				//0x1B4F20C
+				if(texture != null)
+				{
+					MusicRatioTextureCache.MusicRatioTexture tex = texture as MusicRatioTextureCache.MusicRatioTexture;
+					if(tex != null)
+					{
+						m_imageUtaGrade.enabled = true;
+						tex.Set(m_imageUtaGrade, m_utaGrade);
+					}
+				}
+			});
+		}
 
 		// // RVA: 0x1B4EFE8 Offset: 0x1B4EFE8 VA: 0x1B4EFE8
-		// public void ChangeMedalValue(int medalMonth, int value) { }
+		public void ChangeMedalValue(int medalMonth, int value)
+		{
+			m_textMedal.text = string.Format("{0:#,0}", value).ToString();
+			if (medalMonth < 2)
+				medalMonth = 1;
+			if (medalMonth > 11)
+				medalMonth = 12;
+			m_imageMedal.uvRect = m_monthly_coin_rect[medalMonth - 1];
+		}
 
 		// // RVA: 0x1B4D42C Offset: 0x1B4D42C VA: 0x1B4D42C
 		public void SetActiveMonthlyCoin(bool active)
 		{
 			m_coin_layout.StartChildrenAnimGoStop(active ? 1 : 0, active ? 1 : 0);
 		}
-		
-		// [CompilerGeneratedAttribute] // RVA: 0x6CC4A4 Offset: 0x6CC4A4 VA: 0x6CC4A4
-		// // RVA: 0x1B4F20C Offset: 0x1B4F20C VA: 0x1B4F20C
-		// private void <ChangeUtaRateValue>b__61_0(IiconTexture texture) { }
 	}
 }

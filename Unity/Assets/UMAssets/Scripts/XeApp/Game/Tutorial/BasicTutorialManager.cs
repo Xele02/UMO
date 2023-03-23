@@ -116,7 +116,12 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE3DB08 Offset: 0xE3DB08 VA: 0xE3DB08
 		public static void TutorialAfterFirstLoginBonus()
 		{
-			TodoLogger.Log(5, "TutorialAfterFirstLoginBonus");
+			if((GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.NJFNCNCJMOO_FirstLogin & 1) == 0)
+			{
+				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level != 1)
+					return;
+				TodoLogger.Log(0, "TutorialAfterFirstLoginBonus");
+			}
 		}
 
 		// // RVA: 0xE3DD1C Offset: 0xE3DD1C VA: 0xE3DD1C
