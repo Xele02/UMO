@@ -438,32 +438,35 @@ public class IMMAOANGPNK
 	// public static Comparison<IMMAOANGPNK.MPFFINOMILP> <>9__44_1; // 0xC
 		MGFBEKNMJOA.Clear();
 		
-		CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File res = GBEGLNMFLIE.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) => { return GHPLINIACBB.OPFGFINHFCE_Name.Contains("version.bytes"); }); // 0x9FDDD8
+		CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File res = GBEGLNMFLIE.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) =>
+		{
+			return GHPLINIACBB.OPFGFINHFCE_Name.Contains("version.bytes");
+		}); // 0x9FDDD8
 		if(res != null)
 		{
 			IDEELDJLDBN a = IDEELDJLDBN.HEGEKFMJNCC(res.DBBGALAPFGC_Data);
 			JGIHJPPECBB[] b = a.MLOPDBGPLFI;
-			IMMAOANGPNK.MPFFINOMILP obj = null;
+			MPFFINOMILP obj = null;
 			for(int i = 0; i < b.Length; i++)
 			{
 				int val = b[i].BEBJKJKBOGH;
-				if(val < JHNMKKNEENE_Time)
+				if(JHNMKKNEENE_Time >= val)
 				{
 					if(obj != null)
 					{
-						if(val < obj.PDBPFJJCADD)
+						if(obj.PDBPFJJCADD >= val)
 						{
 							continue;
 						}
 					}
-					obj = new IMMAOANGPNK.MPFFINOMILP();
+					obj = new MPFFINOMILP();
 					obj.OPFGFINHFCE_Name = b[i].OPFGFINHFCE;
 					obj.PDBPFJJCADD = val;
 					obj.IJEKNCDIIAE_MVer = b[i].IJEKNCDIIAE;
 				}
 				else
 				{
-					IMMAOANGPNK.MPFFINOMILP obj2 = new IMMAOANGPNK.MPFFINOMILP();
+					MPFFINOMILP obj2 = new MPFFINOMILP();
 					obj2.OPFGFINHFCE_Name = b[i].OPFGFINHFCE;
 					obj2.PDBPFJJCADD = val;
 					obj2.IJEKNCDIIAE_MVer = b[i].IJEKNCDIIAE;
@@ -482,7 +485,7 @@ public class IMMAOANGPNK
 			if(MGFBEKNMJOA.Count > 0)
 			{
 				IMMAOANGPNK.MPFFINOMILP item = MGFBEKNMJOA[0];
-				if(item.PDBPFJJCADD < JHNMKKNEENE_Time)
+				if(JHNMKKNEENE_Time >= item.PDBPFJJCADD)
 				{
 					DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion = item.IJEKNCDIIAE_MVer;
 					object[] strData = new object[4];

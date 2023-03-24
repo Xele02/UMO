@@ -39,7 +39,7 @@ namespace ExternLib
 			//https://sakasho.sp.mbga.jp/v2/player_search?page=1&ipp=40&from=1&to=19&exclude_account_ban=1&key=plv&namespaces=base,public_status&order_by_updated_at=2&_reqid=1654421025
 			string result = @"
 {
-    ""SAKASHO_CURRENT_ASSET_REVISION"": ""20220602120304"",
+    ""SAKASHO_CURRENT_ASSET_REVISION"": ""20220622141305"",
 	""SAKASHO_CURRENT_DATE_TIME"": " + Utility.GetCurrentUnixTime() + @",
     ""SAKASHO_CURRENT_MASTER_REVISION"": 5,
     ""current_page"": 1,

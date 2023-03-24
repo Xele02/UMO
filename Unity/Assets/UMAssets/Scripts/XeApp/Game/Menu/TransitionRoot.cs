@@ -1700,6 +1700,38 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA9FA50 Offset: 0xA9FA50 VA: 0xA9FA50
 		protected bool CheckTutorialFunc(TutorialConditionId conditionId)
 		{
+			if (GameManager.Instance.IsTutorial)
+				return false;
+			if ((int)conditionId > 65)
+			{
+				switch (conditionId)
+				{
+					case TutorialConditionId.Condition79:
+						return m_transitionName == TransitionList.Type.DECO_CHAT;
+					default:
+						return false;
+					case TutorialConditionId.Condition84:
+						if (m_transitionName != TransitionList.Type.SCENE_GROWTH)
+							return false;
+						if (!(m_args is SceneGrowthSceneArgs))
+							return false;
+						SceneGrowthSceneArgs sceneArgs = m_args as SceneGrowthSceneArgs;
+						if (sceneArgs.ViewSceneData.JPIPENJGGDD < 2)
+							return false;
+						return sceneArgs.ViewSceneData.ILABPFOMEAG_Va > 0;
+					case TutorialConditionId.Condition86:
+						if (m_transitionName != TransitionList.Type.SCENE_GROWTH)
+							return false;
+						return TutorialManager.IsAlreadyTutorial(TutorialConditionId.Condition47);
+					case TutorialConditionId.Condition89:
+						return m_transitionName == TransitionList.Type.HOME_BG_SELECT;
+					case TutorialConditionId.Condition90:
+					case TutorialConditionId.Condition92:
+						return m_transitionName == TransitionList.Type.GAKUYA;
+					case TutorialConditionId.Condition91:
+						return m_transitionName == TransitionList.Type.SCENE_GROWTH;
+				}
+			}
 			TodoLogger.Log(0, "CheckTutorialFunc");
 			return false;
 		}

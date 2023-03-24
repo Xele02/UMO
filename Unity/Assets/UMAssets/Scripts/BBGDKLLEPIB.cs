@@ -565,7 +565,7 @@ public class BBGDKLLEPIB
 		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
 		json["rev"] = LHJNPJFNDNA;
 		json["db"] = OCOGBOHOGGE_DbFileName;
-		string jsonStr = IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(json);
+		string jsonStr = json.EJCOJCGIBNG_ToJson();//IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(json); // IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson is broken ?!
 		byte[] data = Encoding.UTF8.GetBytes(jsonStr);
 		for(int i = 0; i < data.Length; i++)
 		{

@@ -13,9 +13,9 @@ namespace ExternLib
                 // Hack directly send response
                 message =
 @"{
-    ""SAKASHO_CURRENT_ASSET_REVISION"": ""20220622141305"",
-    ""SAKASHO_CURRENT_DATE_TIME"": "+Utility.GetCurrentUnixTime()+ @",
-    ""SAKASHO_CURRENT_MASTER_REVISION"": 5,
+    ""SAKASHO_CURRENT_ASSET_REVISION"":""20220622141305"",
+    ""SAKASHO_CURRENT_DATE_TIME"":" + Utility.GetCurrentUnixTime()+ @",
+    ""SAKASHO_CURRENT_MASTER_REVISION"":5,
     ""base_url"": ""[SERVER_DATA_PATH]"",
     ""files"": [
         {

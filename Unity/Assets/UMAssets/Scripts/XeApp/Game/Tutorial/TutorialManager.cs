@@ -61,7 +61,7 @@ namespace XeApp.Game.Tutorial
 					saveBitIndex = 0;
 					if(a > 63)
 					{
-						if ((a - 501) > 63)
+						if ((a - 501) > 63 || (a - 501) < 0)
 							continue;
 						a = a - 437;
 					}
@@ -106,7 +106,11 @@ namespace XeApp.Game.Tutorial
 		}
 
 		// // RVA: 0xE4657C Offset: 0xE4657C VA: 0xE4657C
-		// public static bool IsAlreadyTutorial(TutorialConditionId conditionId) { }
+		public static bool IsAlreadyTutorial(TutorialConditionId conditionId)
+		{
+			TodoLogger.Log(0, "IsAlreadyTutorial");
+			return false;
+		}
 
 		// // RVA: 0xE46958 Offset: 0xE46958 VA: 0xE46958
 		// public static bool IsAlreadyTutorial(int tutorialId) { }
