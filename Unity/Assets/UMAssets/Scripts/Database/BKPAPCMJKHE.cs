@@ -143,7 +143,20 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x19B3744 Offset: 0x19B3744 VA: 0x19B3744
-	//public bool JIFKFKJPANC(int ODNILEDOAIP, long EOLFJGMAJAB) { }
+	public bool JIFKFKJPANC(int ODNILEDOAIP, long EOLFJGMAJAB)
+	{
+		if(ODNILEDOAIP > 0)
+		{
+			if(ODNILEDOAIP <= EDLJEPAFLEK.Count)
+			{
+				if(EOLFJGMAJAB >= EDLJEPAFLEK[ODNILEDOAIP - 1].KJBGCLPMLCG && EDLJEPAFLEK[ODNILEDOAIP - 1].GJFPFFBAKGK >= EOLFJGMAJAB)
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 	//// RVA: 0x19B38D8 Offset: 0x19B38D8 VA: 0x19B38D8
 	//public long LELDGMBGEAO(int IBAKPKKEDJM) { }
