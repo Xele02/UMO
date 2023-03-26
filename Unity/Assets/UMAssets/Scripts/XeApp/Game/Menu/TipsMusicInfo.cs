@@ -1,6 +1,7 @@
 using XeSys.Gfx;
 using UnityEngine.UI;
 using UnityEngine;
+using System.Collections;
 
 namespace XeApp.Game.Menu
 {
@@ -37,11 +38,22 @@ namespace XeApp.Game.Menu
 		//public void Show() { }
 
 		//// RVA: 0xA996E8 Offset: 0xA996E8 VA: 0xA996E8
-		//public void Close() { }
+		public void Close()
+		{
+			IsShow = false;
+			m_root.StartAllAnimGoStop("go_out", "st_out");
+			this.StartCoroutineWatched(CloseCoroutine());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73577C Offset: 0x73577C VA: 0x73577C
 		//// RVA: 0xA9BC84 Offset: 0xA9BC84 VA: 0xA9BC84
-		//private IEnumerator CloseCoroutine() { }
+		private IEnumerator CloseCoroutine()
+		{
+			//0xA9BEFC
+			while(IsPlayingAnime())
+				yield return null;
+			gameObject.SetActive(false);
+		}
 
 		//// RVA: 0xA998F0 Offset: 0xA998F0 VA: 0xA998F0
 		public bool IsPlayingAnime()

@@ -96,14 +96,13 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.Log(0, "Todo check values");
 				int x = id - 1;
-				int y = x * 16 + 16;
+				int x_ = (x % 2) * 2;
 				for (int i = 0; i < m_graffitiImages.Length; i++)
 				{
 					m_graffitiImages[i].enabled = true;
 					image.Set(m_graffitiImages[i]);
-					Rect r = new Rect(GRAFFITI_UV_TABLE[x * 2 + i].x, GRAFFITI_UV_TABLE[x * 2 + i].y, GRAFFITI_SIZE.x, GRAFFITI_SIZE.y);
+					Rect r = new Rect(GRAFFITI_UV_TABLE[x_ + i].x, GRAFFITI_UV_TABLE[x_ + i].y, GRAFFITI_SIZE.x, GRAFFITI_SIZE.y);
 					m_graffitiImages[i].uvRect = new Rect(r.x / image.BaseTexture.width, 1 - (r.y + r.height) / image.BaseTexture.height, r.width / image.BaseTexture.width, r.height / image.BaseTexture.height);
 				}
 			}
@@ -136,11 +135,21 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA9964C Offset: 0xA9964C VA: 0xA9964C
-		//public void Close() { }
+		public void Close()
+		{
+			m_root.StartAllAnimGoStop("st_out");
+			this.StartCoroutineWatched(CloseCoroutine());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x735864 Offset: 0x735864 VA: 0x735864
 		//// RVA: 0xA9C9E8 Offset: 0xA9C9E8 VA: 0xA9C9E8
-		//private IEnumerator CloseCoroutine() { }
+		private IEnumerator CloseCoroutine()
+		{
+			//0xA9CE84
+			while(IsPlayingAnime())
+				yield return null;
+			gameObject.SetActive(false);
+		}
 
 		//// RVA: 0xA998C4 Offset: 0xA998C4 VA: 0xA998C4
 		public bool IsPlayingAnime()
@@ -188,8 +197,33 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA9C940 Offset: 0xA9C940 VA: 0xA9C940
 		private IEnumerator ScrollCoroutine(int dir)
 		{
-			TodoLogger.Log(0, "ScrollCoroutine");
-			yield return null;
+			//0xA9CFC8
+			m_isScroll = true;
+			if(dir < 0)
+			{
+				m_page++;
+				if(m_maxPage < m_page)
+					m_page = 1;
+				TipsData tips = m_tipsList[m_page - 1];
+				m_conten.SetContent(tips.title, tips.message, tips.texture);
+				SetCharaImage(DirectionIndex.Left, tips.divaL);
+				SetCharaImage(DirectionIndex.Right, tips.divaR);
+				SetGraffitiImage(tips.graffitiId, tips.graffiti);
+			}
+			else if(dir > 0)
+			{
+				m_page--;
+				if(m_page < 1)
+					m_page = m_maxPage;
+				TipsData tips = m_tipsList[m_page - 1];
+				m_conten.SetContent(tips.title, tips.message, tips.texture);
+				SetCharaImage(DirectionIndex.Left, tips.divaL);
+				SetCharaImage(DirectionIndex.Right, tips.divaR);
+				SetGraffitiImage(tips.graffitiId, tips.graffiti);
+			}
+			m_isScroll = false;
+			m_scrollWaitSecond = 0;
+			yield break;
 		}
 	}
 }

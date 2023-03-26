@@ -374,7 +374,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xEB5030 Offset: 0xEB5030 VA: 0xEB5030 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			TodoLogger.Log(5, "OnStartExitAnimation, 3d diva related");
+			MenuScene.Instance.divaManager.EndControl(m_divaControl);
 		}
 
 		// RVA: 0xEB51D4 Offset: 0xEB51D4 VA: 0xEB51D4 Slot: 13

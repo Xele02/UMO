@@ -232,7 +232,15 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xE30DD4 Offset: 0xE30DD4 VA: 0xE30DD4
 		public void TryHide(TransitionList.Type transitionName)
 		{
-			TodoLogger.Log(0, "Help TryHide");
+			HelpInfo info;
+			if(!ButtonDispPlaceDict.TryGetValue((int)transitionName, out info)
+				|| m_pattern != info.pattern
+				|| m_searchId != info.searchId
+				|| m_eventType != info.eveType
+				)
+			{
+				Hide();
+			}
 		}
 
 		// // RVA: 0xE30964 Offset: 0xE30964 VA: 0xE30964

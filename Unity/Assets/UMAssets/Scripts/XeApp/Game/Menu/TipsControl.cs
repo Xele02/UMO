@@ -250,25 +250,25 @@ namespace XeApp.Game.Menu
 						{
 							if (!IsSessionEvent(tips.NCGNCEOOBGP_EventType))
 								continue;
-							if (Utility.IsWithinPeriod(GetServerUnixTime(), tips.KJBGCLPMLCG_Start, tips.GJFPFFBAKGK_End))
+						}
+						if (Utility.IsWithinPeriod(GetServerUnixTime(), tips.KJBGCLPMLCG_Start, tips.GJFPFFBAKGK_End))
+						{
+							int idx = m_historyList.FindIndex((int x) =>
 							{
-								int idx = m_historyList.FindIndex((int x) =>
+								//0xA9A1BC
+								return x == tips.PPFNGGCBJKC_Id;
+							});
+							if(idx < 0)
+							{
+								if(tips.ILPJHHKLOEN_Situation > 0)
 								{
-									//0xA9A1BC
-									return x == tips.PPFNGGCBJKC_Id;
-								});
-								if(idx < 0)
-								{
-									if(tips.ILPJHHKLOEN_Situation > 0)
-									{
-										if (GetSituationValue((SituationId)tips.ILPJHHKLOEN_Situation) < 1)
-											continue;
-										m_listUpList.Clear();
-										m_totalWeight = 0;
-									}
-									m_listUpList.Add(new ListupInfo() { flags = (uint)((tips.EAHPLCJMPHD_ImageId > 0) ? 1 : 0), tipsId = tips.PPFNGGCBJKC_Id, weight = m_totalWeight });
-									m_totalWeight += tips.HFLGGIBMEOL[priorityTable];
+									if (GetSituationValue((SituationId)tips.ILPJHHKLOEN_Situation) < 1)
+										continue;
+									m_listUpList.Clear();
+									m_totalWeight = 0;
 								}
+								m_listUpList.Add(new ListupInfo() { flags = (uint)((tips.EAHPLCJMPHD_ImageId > 0) ? 1 : 0), tipsId = tips.PPFNGGCBJKC_Id, weight = m_totalWeight });
+								m_totalWeight += tips.HFLGGIBMEOL[priorityTable];
 							}
 						}
 					}
@@ -367,7 +367,15 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA99520 Offset: 0xA99520 VA: 0xA99520
 		public void Close()
 		{
-			TodoLogger.Log(0, "Tips Close");
+			if(!m_isShow)
+				return;
+			m_window.Close();
+			if(m_musicInfo.IsShow)
+			{
+				m_musicInfo.Close();
+			}
+			m_isShow = false;
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 		}
 
 		// // RVA: 0xA99794 Offset: 0xA99794 VA: 0xA99794
