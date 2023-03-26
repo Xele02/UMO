@@ -17,10 +17,10 @@ namespace XeApp.Game.Menu
 		private HomeEventBanner m_eventBanner; // 0x54
 		private HomePickupBanner m_campaignBanner; // 0x58
 		private HomeFesBanner m_fesBanner; // 0x5C
-		// private HomePickup m_pickupUi; // 0x60
+		private HomePickup m_pickupUi; // 0x60
 		private HomeBalloonText m_leadBalloon; // 0x64
 		private CharTouchHitCheck m_charTouch; // 0x68
-		// private CommonDivaBalloon m_divaBalloon; // 0x6C
+		private CommonDivaBalloon m_divaBalloon; // 0x6C
 		private HomeDivaControl m_divaControl; // 0x70
 		private MenuDivaTalk m_divaTalk; // 0x74
 		private HomePlayRecordBanner m_playRecordBanner; // 0x78
@@ -327,7 +327,8 @@ namespace XeApp.Game.Menu
 		// RVA: 0x972FA4 Offset: 0x972FA4 VA: 0x972FA4 Slot: 29
 		protected override void InputEnable()
 		{
-			TodoLogger.Log(0, "HomeScene InputEnable");
+			base.InputEnable();
+			m_leadBalloon.SetEnable();
 		}
 
 		// RVA: 0x972FD8 Offset: 0x972FD8 VA: 0x972FD8 Slot: 30
@@ -341,18 +342,127 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_Loading()
 		{
 			//0x13D0F0C
-			TodoLogger.Log(0, "TODO");
+			yield return Co.R(Co_LoadLayout());
+			yield return Co.R(Co_LoadDivaSerifWindow());
 			IsReady = true;
-			yield break;
+
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3354 Offset: 0x6E3354 VA: 0x6E3354
 		// // RVA: 0x97300C Offset: 0x97300C VA: 0x97300C
-		// private IEnumerator Co_LoadLayout() { }
+		private IEnumerator Co_LoadLayout()
+		{
+			string bundleName; // 0x18
+			int bundleLoadCount; // 0x1C
+			AssetBundleLoadLayoutOperationBase lyOp; // 0x20
+			AssetBundleLoadUGUIOperationBase operation; // 0x24
+
+			//0x13D038C
+			Font font = GameManager.Instance.GetSystemFont();
+			bundleName = "ly/006.xab";
+			bundleLoadCount = 0;
+			lyOp = AssetBundleManager.LoadLayoutAsync("ly/006.xab", "UI_HomePickup");
+			bundleLoadCount++;
+			yield return lyOp;
+			yield return Co.R(lyOp.InitializeLayoutCoroutine(font, (GameObject instance) => {
+				//0x13C7B58
+				m_pickupUi = instance.GetComponent<HomePickup>();
+				m_pickupUi.transform.SetParent(transform, false);
+			}));
+			m_pickupUi.Hide();
+			operation = AssetBundleManager.LoadUGUIAsync(bundleName, "HomeSubMenu");
+			bundleLoadCount++;
+			yield return operation;
+			yield return Co.R(operation.InitializeUGUICoroutine(font, (GameObject instance) => {
+				//0x13C7C6C
+				m_subMenu = instance.GetComponent<HomeSubMenu>();
+				m_subMenu.transform.SetParent(transform, false);
+			}));
+			operation = AssetBundleManager.LoadUGUIAsync(bundleName, "HomeButtonGroup");
+			bundleLoadCount++;
+			yield return operation;
+			yield return Co.R(operation.InitializeUGUICoroutine(font, (GameObject instance) => {
+				//0x13C7D80
+				m_buttonGroup = instance.GetComponent<HomeButtonGroup>();
+				m_buttonGroup.transform.SetParent(transform, false);
+			}));
+			operation = AssetBundleManager.LoadUGUIAsync(bundleName, "HomeEventBanner");
+			bundleLoadCount++;
+			yield return operation;
+			yield return Co.R(operation.InitializeUGUICoroutine(font, (GameObject instance) => {
+				//0x13C7E94
+				m_eventBanner = instance.GetComponent<HomeEventBanner>();
+				m_eventBanner.transform.SetParent(transform, false);
+				m_eventBanner.SetFont(font);
+			}));
+			operation = AssetBundleManager.LoadUGUIAsync(bundleName, "HomeFesBanner");
+			bundleLoadCount++;
+			yield return operation;
+			yield return Co.R(operation.InitializeUGUICoroutine(font, (GameObject instance) => {
+				//0x13C7FE4
+				m_fesBanner = instance.GetComponent<HomeFesBanner>();
+				m_fesBanner.transform.SetParent(transform, false);
+				m_fesBanner.SetFont(font);
+			}));
+			operation = AssetBundleManager.LoadUGUIAsync(bundleName, "HomePickupBanner");
+			bundleLoadCount++;
+			yield return operation;
+			yield return Co.R(operation.InitializeUGUICoroutine(font, (GameObject instance) => {
+				//0x13C8134
+				m_campaignBanner = instance.GetComponent<HomePickupBanner>();
+				m_campaignBanner.transform.SetParent(transform, false);
+				m_campaignBanner.SetFont(font);
+			}));
+			operation = AssetBundleManager.LoadUGUIAsync(bundleName, "HomeBalloonText");
+			bundleLoadCount++;
+			yield return operation;
+			yield return Co.R(operation.InitializeUGUICoroutine(font, (GameObject instance) => {
+				//0x13C8284
+				m_leadBalloon = instance.GetComponent<HomeBalloonText>();
+				m_leadBalloon.transform.SetParent(transform, false);
+			}));
+			operation = AssetBundleManager.LoadUGUIAsync(bundleName, "HomePlayRecordBanner");
+			bundleLoadCount++;
+			yield return operation;
+			yield return Co.R(operation.InitializeUGUICoroutine(font, (GameObject instance) => {
+				//0x13C8398
+				m_playRecordBanner = instance.GetComponent<HomePlayRecordBanner>();
+				m_playRecordBanner.transform.SetParent(transform, false);
+			}));
+			for(int i = 0; i < bundleLoadCount; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
+			}
+			while(!m_pickupUi.IsLoaded())
+				yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E33CC Offset: 0x6E33CC VA: 0x6E33CC
 		// // RVA: 0x973094 Offset: 0x973094 VA: 0x973094
-		// private IEnumerator Co_LoadDivaSerifWindow() { }
+		private IEnumerator Co_LoadDivaSerifWindow()
+		{
+			string bundleName; // 0x14
+			int bundleLoadCount; // 0x18
+			Font font; // 0x1C
+			AssetBundleLoadUGUIOperationBase operation; // 0x20
+
+			//0x13D0074
+			bundleName = "ly/032.xab";
+			bundleLoadCount = 0;
+			font = GameManager.Instance.GetSystemFont();
+			operation = AssetBundleManager.LoadUGUIAsync(bundleName, "CommonDivaBalloon");
+			bundleLoadCount++;
+			yield return operation;
+			yield return Co.R(operation.InitializeUGUICoroutine(font, (GameObject instance) => {
+				//0x97D120
+				m_divaBalloon = instance.GetComponent<CommonDivaBalloon>();
+				m_divaBalloon.transform.SetParent(transform, false);
+			}));
+			for(int i = 0; i < bundleLoadCount; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
+			}
+		}
 
 		// // RVA: 0x97311C Offset: 0x97311C VA: 0x97311C
 		// private void OnNetErrorToTitle() { }
@@ -738,10 +848,6 @@ namespace XeApp.Game.Menu
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E44DC Offset: 0x6E44DC VA: 0x6E44DC
 		// 	// RVA: 0x97D0E8 Offset: 0x97D0E8 VA: 0x97D0E8
 		// 	private void <Co_OnPostSetCanvas>b__59_3() { }
-
-		// 	[CompilerGeneratedAttribute] // RVA: 0x6E44EC Offset: 0x6E44EC VA: 0x6E44EC
-		// 	// RVA: 0x97D120 Offset: 0x97D120 VA: 0x97D120
-		// 	private void <Co_LoadDivaSerifWindow>b__74_0(GameObject instance) { }
 
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E44FC Offset: 0x6E44FC VA: 0x6E44FC
 		// 	// RVA: 0x97D1F4 Offset: 0x97D1F4 VA: 0x97D1F4
