@@ -80,7 +80,7 @@ public class HLMJIADBPIJ
 						return false;
 					if (AHEFHIMGIBI.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd != 2)
 						return false;
-					if (DPIBHFNDJII >= MKLHIENKAFA)
+					if (JHNMKKNEENE < (DPIBHFNDJII - MKLHIENKAFA))
 						return false;
 					return EKPBOLNFGJB >= JHNMKKNEENE;
 				}

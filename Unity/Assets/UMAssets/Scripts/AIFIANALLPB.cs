@@ -246,12 +246,12 @@ public class AIFIANALLPB
 				HHJHIFJIKAC_BonusVc.MNGJPJBCMBH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA[AIMLPJOGPID.NNFNGLJOKKF_ItemId - 1];
 				if ((item.INDDJNMPONH & 0xfffffffeU) != 2)
 					return false;
-				if(AIMLPJOGPID.EGBOHDFBAPB_ClosedAt < item.EGBOHDFBAPB_ClosedAt)
+				if(item.EGBOHDFBAPB_ClosedAt < AIMLPJOGPID.EGBOHDFBAPB_ClosedAt)
 				{
 					AIMLPJOGPID.EGBOHDFBAPB_ClosedAt = item.EGBOHDFBAPB_ClosedAt;
 					AIMLPJOGPID.BGOJPEJJJFB_IsAvaiable = false;
 				}
-				return AIMLPJOGPID.EGBOHDFBAPB_ClosedAt < time;
+				return time >= AIMLPJOGPID.EGBOHDFBAPB_ClosedAt;
 			}
 			if(AIMLPJOGPID.NNFNGLJOKKF_ItemId < 200)
 			{

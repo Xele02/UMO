@@ -667,7 +667,7 @@ public class OKGLGHCBCJP_Database
 			}
 			for(int j = 0; j < JOBKIDDLCPL.Count; j++)
 			{
-				if(JOBKIDDLCPL[j].KBFOIECIADN_OpenedAt < JHNMKKNEENE_Time && JOBKIDDLCPL[j].EGBOHDFBAPB_ClosedAt > JHNMKKNEENE_Time)
+				if(JHNMKKNEENE_Time >= JOBKIDDLCPL[j].KBFOIECIADN_OpenedAt && JHNMKKNEENE_Time < JOBKIDDLCPL[j].EGBOHDFBAPB_ClosedAt)
 				{
 					if(IJBLEJOKEFH_SectionNames[i] != "" && JOBKIDDLCPL[j].OPFGFINHFCE_Name == IJBLEJOKEFH_SectionNames[i])
 					{

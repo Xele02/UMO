@@ -49,7 +49,7 @@ namespace XeSys.Gfx
 		{
 			int idx = str.IndexOf(":");
 			if(idx == -1)
-				return "???12";
+				return JpStringLiterals.StringLiteral_21607;
 			string bank = str.Substring(0, idx);
 			string label = str.Substring(idx+1);
 			return MessageManager.Instance.GetMessage(bank, label);

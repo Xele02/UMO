@@ -556,7 +556,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 			}
 			if(m.BEBJKJKBOGH_Date != 0)
 			{
-				if(m.BEBJKJKBOGH_Date + t < time) // ?
+				if(time >= m.BEBJKJKBOGH_Date + t)
 				{
 					if(ANLBEIOFIGB)
 					{

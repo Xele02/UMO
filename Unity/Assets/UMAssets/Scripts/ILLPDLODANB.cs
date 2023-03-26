@@ -533,7 +533,7 @@ public class ILLPDLODANB
 			return saveQuest.EALOBDHOCHP_Stat;
 		}
 		long v = DCLKMNGMIKC_GetQuestCurrentValue(dbQuest, LKMHPJKIFDN, LDEGEHAEALK);
-		return v >= dbQuest.FCDKJAKLGMB ? 1 : 2;
+		return v < dbQuest.FCDKJAKLGMB ? 1 : 2;
 	}
 
 	//// RVA: 0x9F4D28 Offset: 0x9F4D28 VA: 0x9F4D28
@@ -554,7 +554,7 @@ public class ILLPDLODANB
 					CNLPPCFJEID_QuestInfo q2 = LKMHPJKIFDN.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[dbQuest.HHIBBHFHENH - 1];
 					long t = DCLKMNGMIKC_GetQuestCurrentValue(q2, LKMHPJKIFDN, LDEGEHAEALK);
 					a = 2;
-					if(t >= q2.FCDKJAKLGMB)
+					if(t < q2.FCDKJAKLGMB)
 					{
 						NFPHOINMHKN_QuestInfo s2 = LDEGEHAEALK.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[dbQuest.HHIBBHFHENH - 1];
 						a = s2.EALOBDHOCHP_Stat;
@@ -563,7 +563,7 @@ public class ILLPDLODANB
 			}
 			c = 2;
 			long t2 = DCLKMNGMIKC_GetQuestCurrentValue(dbQuest, LKMHPJKIFDN, LDEGEHAEALK);
-			if(t2 >= dbQuest.FCDKJAKLGMB)
+			if(t2 < dbQuest.FCDKJAKLGMB)
 			{
 				if(dbQuest.EKANGPODCEP != 0)
 				{

@@ -198,7 +198,7 @@ public class FECDBKKBAHO
 				{
 					if(finfo.FNALNKKMKDC_ExpireTime != 0)
 					{
-						if(finfo.FNALNKKMKDC_ExpireTime < JHNMKKNEENE_Time)
+						if(finfo.FNALNKKMKDC_ExpireTime <= JHNMKKNEENE_Time)
 						{
 							//File.Delete(files[i]);
 							UnityEngine.Debug.Log("delete " + files[i]);

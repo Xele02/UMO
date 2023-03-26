@@ -58,7 +58,7 @@ public class HBCPJANGOLB
         long lastEpTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MOBHLLDIMMN_EpisodeLastShowTime;
         long t2 = KKEFACGGKOD.HFPEDBCGFOJ_GetLastShowDate();
         long m = System.Math.Max(lastEpTime, t2);
-        if(JHNMKKNEENE >= m)
+        if(JHNMKKNEENE < m)
             return 0;
         return m;
     }

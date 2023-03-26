@@ -143,7 +143,7 @@ namespace XeApp.Game.AR
 			{
 				if(m_chengeBg[i].enable == 2)
 				{
-					if(m_chengeBg[i].startTime <= time && m_chengeBg[i].endTime >= time)
+					if(time >= m_chengeBg[i].startTime && time < m_chengeBg[i].endTime)
 						return m_chengeBg[i];
 				}
 			}

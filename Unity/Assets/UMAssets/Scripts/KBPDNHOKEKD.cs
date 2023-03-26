@@ -128,7 +128,7 @@ public class KBPDNHOKEKD_ProductId
 		EGBOHDFBAPB_ClosedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at);
 		MMOIFDEPIEP_AppPublicKey = CEDHHAGBIBA.BNCLNFJHEND_ReadString(IDLHJIOMJBK, AFEHLCGHAEE_Strings.MMOIFDEPIEP_app_public_key);
 		NGIKLCDKAMB_FormatedPrice = CEDHHAGBIBA.BNCLNFJHEND_ReadString(IDLHJIOMJBK, "formatted_price");
-		if (EGBOHDFBAPB_ClosedAt != 0)//??
+		if (EGBOHDFBAPB_ClosedAt != 0)
 			EGBOHDFBAPB_ClosedAt--;
 		int idx = OPFGFINHFCE_Name.IndexOf(" (TEST1234");
 		if (idx > -1)

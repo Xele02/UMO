@@ -269,9 +269,7 @@ public class PJKLMCGEJMK
                 }
             }
 
-			TodoLogger.Log(TodoLogger.ToCheck, "Check "+ADKIDBJCAJA.CKOOCBJGHBI +" "+JDIBBDGNFKH);
-            
-            bool enterIf = ADKIDBJCAJA.CKOOCBJGHBI - JDIBBDGNFKH >= 0;
+            bool enterIf = ADKIDBJCAJA.CKOOCBJGHBI >= JDIBBDGNFKH;
             if(!enterIf)
             {
                 OHFKAECPJPO(ADKIDBJCAJA);

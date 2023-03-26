@@ -442,7 +442,7 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8E23A4 Offset: 0x8E23A4 VA: 0x8E23A4
 	protected bool MNNNLDFNNCD(long JHNMKKNEENE)
 	{
-		if(GLIMIGNNGGB < JHNMKKNEENE)
+		if(JHNMKKNEENE < GLIMIGNNGGB)
 			return false;
 		return LJOHLEGGGMC < JHNMKKNEENE;
 	}

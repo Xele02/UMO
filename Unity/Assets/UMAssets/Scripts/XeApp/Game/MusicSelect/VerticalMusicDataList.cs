@@ -244,7 +244,7 @@ namespace XeApp.Game.MusicSelect
 					else
 					{
 						eventPeriodString = GetEventPeriodString(eventController.GLIMIGNNGGB, eventController.DPJCPDKALGI);
-						if (musicData.AHAEGEHKONB_GetOtherTimeLeft() < 0)
+						if (musicData.AHAEGEHKONB_GetOtherTimeLeft() == 0)
 						{
 							continue;
 						}

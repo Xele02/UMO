@@ -3764,7 +3764,7 @@ public class ILDKBCLAFPB
 		{
 			if(KBMJNKENLAC_PopupNt[(int)PPFNGGCBJKC] != 0)
 			{
-				return KBMJNKENLAC_PopupNt[(int)PPFNGGCBJKC] > -1 && KBMJNKENLAC_PopupNt[(int)PPFNGGCBJKC] < AIOOALJCFOG;
+				return KBMJNKENLAC_PopupNt[(int)PPFNGGCBJKC] > -1 && KBMJNKENLAC_PopupNt[(int)PPFNGGCBJKC] <= AIOOALJCFOG;
 			}
 			return true;
 		}

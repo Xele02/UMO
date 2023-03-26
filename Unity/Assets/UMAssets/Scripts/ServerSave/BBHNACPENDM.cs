@@ -494,7 +494,7 @@ public class BBHNACPENDM_ServerSaveData
 				else
 				{
 					save_id = JsonUtil.GetLong(jsonData, AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id, 0);
-					if(save_id > MCKEOKFMLAH)
+					if(MCKEOKFMLAH < save_id)
 						MCKEOKFMLAH = save_id;
 				}
 			}

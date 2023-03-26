@@ -69,9 +69,9 @@ namespace XeSys
 		{
 			if(start == 0)
 			{
-				return end > current;
+				return !(end < current);
 			}
-			if ((end == 0 || end > current) && start < current)
+			if ((end == 0 || end > current) && current >= start)
 				return true;
 			return false;
 		}

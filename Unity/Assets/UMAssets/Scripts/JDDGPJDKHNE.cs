@@ -233,7 +233,7 @@ public class JDDGPJDKHNE
 					{
 						if(!NKKADKPDHIL)
 						{
-							if(Utility.GetCurrentUnixTime() - MMLMIMLGPON < 3)
+							if(Utility.GetCurrentUnixTime() - MMLMIMLGPON < 21)
 							{
 								return;
 							}

@@ -186,7 +186,7 @@ public class PIGBKEIAMPE_FriendManager
 		{
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			int coolTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("friend_api_cooling_time", 60);
-			if (LCCEHNMDILJ_LastUpdateGetFriendLimit + coolTime > time)
+			if (time - LCCEHNMDILJ_LastUpdateGetFriendLimit < coolTime)
 			{
 				PLOOEECNHFB_IsSuccess = true;
 				if (BHFHGFKBOHH != null)
@@ -242,7 +242,7 @@ public class PIGBKEIAMPE_FriendManager
 		{
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			int coolTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("friend_api_cooling_time", 60);
-			if (MBPPBKAKIBM_LastUpdateGetReceivedFriendsRequests + coolTime > time)
+			if (time - MBPPBKAKIBM_LastUpdateGetReceivedFriendsRequests < coolTime)
 			{
 				PLOOEECNHFB_IsSuccess = true;
 				if (BHFHGFKBOHH != null)
@@ -270,7 +270,7 @@ public class PIGBKEIAMPE_FriendManager
 			MBPPBKAKIBM_LastUpdateGetReceivedFriendsRequests = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			for(int i = 0; i < r.NFEAMMJIMPG_ResultData.PBHBFBNFPJI_Requests.Count; i++)
 			{
-				if(r.NFEAMMJIMPG_ResultData.PBHBFBNFPJI_Requests[i].IFNLEKOILPM_UpdatedAt > LKGLMCFEDBF)
+				if(LKGLMCFEDBF < r.NFEAMMJIMPG_ResultData.PBHBFBNFPJI_Requests[i].IFNLEKOILPM_UpdatedAt)
 				{
 					JCOBBOMCENL_NumNewRequests++;
 				}
@@ -292,7 +292,7 @@ public class PIGBKEIAMPE_FriendManager
 		{
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			int coolTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("friend_api_cooling_time", 60);
-			if (AEGKFFCKLNL_LastUpdateGetSentRequests + coolTime > time)
+			if (time - AEGKFFCKLNL_LastUpdateGetSentRequests < coolTime)
 			{
 				PLOOEECNHFB_IsSuccess = true;
 				if (BHFHGFKBOHH != null)
@@ -392,7 +392,7 @@ public class PIGBKEIAMPE_FriendManager
 		long serverTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		for (int i = 0; i < KAMNNDELNHG.Count; i++)
 		{
-			if (KAMNNDELNHG[i].ANDGMDJLDLO < serverTime) // check long test
+			if (serverTime >= KAMNNDELNHG[i].ANDGMDJLDLO)
 			{
 				KAMNNDELNHG.RemoveAt(i);
 				i = 0;
@@ -666,23 +666,23 @@ public class PIGBKEIAMPE_FriendManager
 	// // RVA: 0x16D9714 Offset: 0x16D9714 VA: 0x16D9714
 	public static string MKILKPFAOIC_GetLastLoginString(long BEBJKJKBOGH_LoginDate, long EABMEFOJHOJ_ServerTime)
 	{
-		if(BEBJKJKBOGH_LoginDate > EABMEFOJHOJ_ServerTime)
+		if(300 >= EABMEFOJHOJ_ServerTime - BEBJKJKBOGH_LoginDate)
 		{
 			return ANELGKCJBAA[0];
 		}
 		else
 		{
-			if((EABMEFOJHOJ_ServerTime - BEBJKJKBOGH_LoginDate) < 3600)
+			if((EABMEFOJHOJ_ServerTime - BEBJKJKBOGH_LoginDate) <= 3600)
 			{
 				int val = (int)((EABMEFOJHOJ_ServerTime - BEBJKJKBOGH_LoginDate) % 60);
 				return "" + val + ANELGKCJBAA[1];
 			}
-			else if(EABMEFOJHOJ_ServerTime - BEBJKJKBOGH_LoginDate < 86400)
+			else if(EABMEFOJHOJ_ServerTime - BEBJKJKBOGH_LoginDate <= 86400)
 			{
 				int val = (int)((EABMEFOJHOJ_ServerTime - BEBJKJKBOGH_LoginDate) % 3600);
 				return "" + val + ANELGKCJBAA[2];
 			}
-			else if(EABMEFOJHOJ_ServerTime - BEBJKJKBOGH_LoginDate < 31536000)
+			else if(EABMEFOJHOJ_ServerTime - BEBJKJKBOGH_LoginDate <= 31536000)
 			{
 				int val = (int)((EABMEFOJHOJ_ServerTime - BEBJKJKBOGH_LoginDate) % 86400);
 				return "" + val + ANELGKCJBAA[3];

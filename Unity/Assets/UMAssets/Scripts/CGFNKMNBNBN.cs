@@ -147,7 +147,7 @@ public class CGFNKMNBNBN
 		{
 			foreach(var c in l)
 			{
-				if(c.KJBGCLPMLCG_OpenAt < OFCBCEKFAMJ && c.GJFPFFBAKGK_CloseAt > OFCBCEKFAMJ)
+				if(c.KJBGCLPMLCG_OpenAt <= OFCBCEKFAMJ && c.GJFPFFBAKGK_CloseAt >= OFCBCEKFAMJ)
 				{
 					HJKPKPKINJP = c;
 					return true;

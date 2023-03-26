@@ -421,7 +421,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 				}
 				else
 				{
-					if(info.IOKJFDPOEFP_InstallerStatusInfo.contentsSize > 0)
+					if(info.IOKJFDPOEFP_InstallerStatusInfo.contentsSize != 0)
 					{
 						if(info.ICKGJODOCBB != null)
 						{

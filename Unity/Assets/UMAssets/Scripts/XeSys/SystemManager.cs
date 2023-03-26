@@ -120,7 +120,7 @@ namespace XeSys
 		private void ResetGcMemoryProfile()
 		{
 			gcCheckTime = 0;
-			gcMinUseMemorySize = 0x540be3ff20000000; // ??
+			gcMinUseMemorySize = 9999999999; // ??
 			gcMaxUseMemorySize = 0;
 		}
 
@@ -133,9 +133,9 @@ namespace XeSys
 				ResetGcMemoryProfile();
 			}
 			long totalMem = GC.GetTotalMemory(false);
-			if(totalMem > gcMaxUseMemorySize)
+			if(gcMaxUseMemorySize < totalMem)
 				gcMaxUseMemorySize = totalMem;
-			if(gcMinUseMemorySize == 0 || totalMem < gcMinUseMemorySize)
+			if(totalMem < gcMinUseMemorySize)
 				gcMinUseMemorySize = totalMem;
 			UpdateScreenSize();
 			FileLoader.Instance.Update();

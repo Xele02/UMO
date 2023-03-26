@@ -204,7 +204,8 @@ namespace XeSys
 				allowedticks = (long)(ticks * BurstProcessingRate);
 			}
 			sw.Stop();
-			if(allowedticks < 0)
+			bool noExec = lazyCount > 1;
+			if(allowedticks == 0 && lazyCount < 2)
 			{
 				lazyCount++;
 				return;
@@ -215,7 +216,6 @@ namespace XeSys
 			sw.Reset();
 			sw.Start();
 			int i = active;
-			bool noExec = lazyCount > 1;
 			do
 			{
 				int next = processes[i].Next;

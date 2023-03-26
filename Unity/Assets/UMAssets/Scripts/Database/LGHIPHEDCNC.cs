@@ -710,7 +710,7 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 			{
 				FFNEKFPAGDO data = new FFNEKFPAGDO();
 				data.KHEKNNFCAOI(Int32.Parse(strs[i]));
-				if(data.NHPCKCOPKAM == 0 && data.PJFKNNNDMIA == 0) // ??
+				if(data.NHPCKCOPKAM != 0 && data.PJFKNNNDMIA != 0)
 				{
 					DDKAFBFPIEA.Add(data);
 				}

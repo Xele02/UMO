@@ -158,7 +158,7 @@ namespace XeApp.Game.Common
 		{
 			//0x1BF143C
 			yield return new WaitForSeconds(0.5f);
-			while (isPlayingMovie && playedMicroSec < endMicroSec)
+			while (isPlayingMovie && endMicroSec >= playedMicroSec)
 				yield return null;
 			if (onEndMovieCallback != null)
 				onEndMovieCallback();

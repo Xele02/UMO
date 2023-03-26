@@ -296,7 +296,7 @@ public class OHDCBNFDHLA
 	//// RVA: 0x1DE0894 Offset: 0x1DE0894 VA: 0x1DE0894
 	public void FHPENOLOPKI_CheckEndOfDay(long JHNMKKNEENE_Time, bool FBBNPFFEJBN)
 	{
-		if (JHNMKKNEENE_Time < AAFMGJHLLCD_EndOfDay)
+		if (AAFMGJHLLCD_EndOfDay >= JHNMKKNEENE_Time)
 			return;
 		NDNHHGJKJGM_Gach = 0;
 		GACBDCLPOCD_Sdv = 0;

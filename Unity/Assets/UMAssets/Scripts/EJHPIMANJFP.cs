@@ -207,9 +207,9 @@ public class EJHPIMANJFP
 				data.KHEKNNFCAOI_Init(BBKDLIPKADG[i]);
 				if(staminaCheckTime != 0 && data.JLGHMCBLENL)
 				{
-					if (time < nextCheck)
+					if (time >= nextCheck)
 						continue;
-					if (nextCheck > data.EMEKFFHCHMH)
+					if (nextCheck < data.EMEKFFHCHMH)
 						data.EMEKFFHCHMH = nextCheck;
 				}
 				if(data.GCJMGMBNBCB < 1 || data.GCJMGMBNBCB != data.AJIFADGGAAJ)

@@ -794,7 +794,7 @@ public class KEHOJEJMGLJ
 						fileKeepStatus = HODOGPOKOOJ.KMBJEEFHJOH.CCAPCGPIIPF/*1*/;
 					}
                     FECDBKKBAHO.FHOPNIJCFKA_FileInfo finfo = KLIJFOBEKBE.LBDOLHGDIEB_GetFileInfo(afinfo.OIEAICNAMNB_LocalFileName);
-					if(finfo != null && finfo.FNALNKKMKDC_ExpireTime != 0 && DMPNAEEIANJ < finfo.FNALNKKMKDC_ExpireTime)
+					if(finfo != null && finfo.FNALNKKMKDC_ExpireTime != 0 && DMPNAEEIANJ >= finfo.FNALNKKMKDC_ExpireTime)
 					{
 						if(!finfo.GEJJEDDEPMI)
 							continue;
@@ -814,6 +814,7 @@ public class KEHOJEJMGLJ
 									NFIDKHELFDK++;
 									string h = IFCHFDEDCGF_GetFileHash(md5, localPath);
 									//if(h == afinfo.POEGMFKLFJG_Hash)
+									TodoLogger.Log(TodoLogger._Todo, "hash check disabled");
 									if(true) // UMO
 									{
 										FAOOOLDDBBB[afinfo.OIEAICNAMNB_LocalFileName] = 2;
@@ -833,6 +834,7 @@ public class KEHOJEJMGLJ
 							{
 								NFIDKHELFDK++;
 								string h = IFCHFDEDCGF_GetFileHash(md5, localPath);
+								TodoLogger.Log(TodoLogger._Todo, "hash check disabled");
 								//if(h != afinfo.POEGMFKLFJG_Hash)
 								if(false) // UMO
 								{
@@ -1023,7 +1025,7 @@ public class KEHOJEJMGLJ
 				string name = files[i].Substring(idx);
 				name.Replace('\\', '/');
 				FECDBKKBAHO.FHOPNIJCFKA_FileInfo info = KLIJFOBEKBE.LBDOLHGDIEB_GetFileInfo(name);
-				if(info != null && info.GEJJEDDEPMI && info.FNALNKKMKDC_ExpireTime < serverTime)
+				if(info != null && info.GEJJEDDEPMI && serverTime >= info.FNALNKKMKDC_ExpireTime)
 				{
 					Debug.Log(JpStringLiterals.StringLiteral_12223 + files[i] + "</color>");
 					//INLICKMJHHK_DeleteFile(files[i]);

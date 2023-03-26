@@ -521,9 +521,8 @@ public class NKGJPJPHLIF
 					{
 						if (EJDOEBLBGIO.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("server_time_auto_update", 0) == 0)
 							return;
-						if (LJBHLFGDBHA - Utility.GetCurrentUnixTime() > 0) // ???
+						if ((LJBHLFGDBHA - Utility.GetCurrentUnixTime()) <= 30)
 						{
-							TodoLogger.Log(0, "64 check");
 							PECPLBANLBN = false;
 							return;
 						}

@@ -1023,7 +1023,7 @@ namespace XeApp.Game.Menu
 		{
 			if (musicCloseAt == 0)
 				return false;
-			if (musicCloseAt > NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime())
+			if (NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() < musicCloseAt)
 				return false;
 			TodoLogger.Log(0, "Finish TryMusicPeriod");
 			return true;
