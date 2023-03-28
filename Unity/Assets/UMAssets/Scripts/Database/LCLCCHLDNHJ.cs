@@ -484,7 +484,20 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xD9D70C Offset: 0xD9D70C VA: 0xD9D70C
-	// public bool JAHFLLONDCN(int JPIDIENBGKH, int HEHKNMCDBJJ = 0) { }
+	public bool JAHFLLONDCN(int JPIDIENBGKH, int HEHKNMCDBJJ = 0)
+	{
+		if(JPIDIENBGKH > 0 && HEHKNMCDBJJ < 1 && JPIDIENBGKH <= CDENCMNHNGA_Costumes.Count)
+		{
+			if(CDENCMNHNGA_Costumes[JPIDIENBGKH - 1].PPEGAKEIEGM_Enabled == 2)
+			{
+				if(CDENCMNHNGA_Costumes[JPIDIENBGKH - 1].IIELLEPEEFH > 0)
+				{
+					return CDENCMNHNGA_Costumes[JPIDIENBGKH - 1].IIELLEPEEFH <= IEFOPDOOLOK_MasterVersion;
+				}
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0xD9D924 Offset: 0xD9D924 VA: 0xD9D924
 	// public int FLFLMHDEBOL(int JPIDIENBGKH) { }

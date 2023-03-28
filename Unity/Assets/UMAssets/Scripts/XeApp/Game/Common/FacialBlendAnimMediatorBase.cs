@@ -179,7 +179,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C1131C Offset: 0x1C1131C VA: 0x1C1131C
-		//public void ResetReference() { }
+		public void ResetReference()
+		{
+			eyeMeshRenderer = null;
+			cheekMeshRenderer = null;
+			targetAnimator = null;
+			isSetup = false;
+		}
 
 		//// RVA: 0x1C11334 Offset: 0x1C11334 VA: 0x1C11334
 		public void SetTime(double time)

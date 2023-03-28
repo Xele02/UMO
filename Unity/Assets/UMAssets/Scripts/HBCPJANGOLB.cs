@@ -64,7 +64,14 @@ public class HBCPJANGOLB
     }
 
 	// // RVA: 0x173DFC4 Offset: 0x173DFC4 VA: 0x173DFC4
-	// public bool HJMKBCFJOOH() { }
+	public bool HJMKBCFJOOH()
+	{
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		long t = JPAICCMDGHD_GetMaxLastShowDate(time);
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MOBHLLDIMMN_EpisodeLastShowTime = t;
+		KKEFACGGKOD.JKHNJBFAFBL_SetLastShowDate(t);
+		return KKEFACGGKOD.HJMKBCFJOOH_TrySaveDate(false);
+	}
 
 	// // RVA: 0x173E200 Offset: 0x173E200 VA: 0x173E200
 	public static List<string> LMFHAGHJIEM_GetAssetsList(HBCPJANGOLB IDLHJIOMJBK)

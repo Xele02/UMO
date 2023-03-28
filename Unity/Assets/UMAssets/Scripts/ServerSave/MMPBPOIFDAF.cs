@@ -227,7 +227,43 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 	// public int FLPPOODHKAB(MLIBEPGADJH ECNHDEHADGL, int NDKJCDGHPLD, int LFPEIEOHABE, bool DHOFGFAEJFM = False) { }
 
 	// // RVA: 0x196A4D8 Offset: 0x196A4D8 VA: 0x196A4D8
-	// public int HOLEDOLMJCB(int PPFNGGCBJKC, MLIBEPGADJH ECNHDEHADGL, int INDDJNMPONH) { }
+	public int HOLEDOLMJCB(int PPFNGGCBJKC, MLIBEPGADJH_Scene ECNHDEHADGL, int INDDJNMPONH)
+	{
+		if (PPFNGGCBJKC == 0)
+			return 0;
+		if (PPFNGGCBJKC > OPIBAPEGCLA.Count)
+			return 0;
+		if(ECNHDEHADGL.FDIOFBGJKNO(PPFNGGCBJKC))
+		{
+			int maxPoster = 50;
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null &&
+				IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem != null)
+			{
+				maxPoster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("poster_have_max", 50);
+			}
+			PMKOFEIONEG saveData = OPIBAPEGCLA[PPFNGGCBJKC - 1];
+			MLIBEPGADJH_Scene.KKLDOOJBJMN dbData = ECNHDEHADGL.CDENCMNHNGA_SceneList[PPFNGGCBJKC - 1];
+			if(saveData.IHIAFIHAAPO_Unlocked)
+			{
+				if(!dbData.FBJDHLGODPP_Sngl)
+				{
+					if (saveData.JPIPENJGGDD_Mlt == 1)
+						return 1;
+					if (saveData.JPIPENJGGDD_Mlt == 0)
+						return INDDJNMPONH == 0 ? 1 : 0;
+				}
+				else
+				{
+					if (INDDJNMPONH == 0)
+						return 0;
+				}
+				if (maxPoster < saveData.JPIPENJGGDD_Mlt)
+					return maxPoster;
+				return saveData.JPIPENJGGDD_Mlt;
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0x196A78C Offset: 0x196A78C VA: 0x196A78C
 	private bool AHKLHIBIDHF(MLIBEPGADJH_Scene ECNHDEHADGL, KOGHKIODHPA_Board JEMMMJEJLNL)

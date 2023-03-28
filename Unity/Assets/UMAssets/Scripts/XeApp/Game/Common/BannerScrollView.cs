@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace XeApp.Game.Common
@@ -13,7 +14,25 @@ namespace XeApp.Game.Common
 			public Action OnRepeatTiming { get; set; } // 0x10
 
 			// // RVA: 0xE5FAEC Offset: 0xE5FAEC VA: 0xE5FAEC
-			// public void Update() { }
+			public void Update()
+			{
+				if(m_wait > 0)
+				{
+					if(m_wait <= m_time)
+					{
+						m_wait = 0;
+						if (OnRepeatTiming != null)
+						{
+							OnRepeatTiming();
+							return;
+						}
+					}
+					else
+					{
+						m_time += Time.deltaTime;
+					}
+				}
+			}
 
 			// // RVA: 0xE5FC44 Offset: 0xE5FC44 VA: 0xE5FC44
 			// public void Init(float wait) { }
@@ -24,7 +43,10 @@ namespace XeApp.Game.Common
 		// RVA: 0xE5FA38 Offset: 0xE5FA38 VA: 0xE5FA38 Slot: 48
 		protected override void LateUpdate()
 		{
-			TodoLogger.Log(0, "BannerScrollView.LateUpdate");
+			base.LateUpdate();
+			if (scrollObjects.Count < 1)
+				return;
+			m_repeatTimer.Update();
 		}
 
 		// RVA: 0xE5FB60 Offset: 0xE5FB60 VA: 0xE5FB60 Slot: 46

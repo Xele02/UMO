@@ -576,7 +576,29 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1961B04 Offset: 0x1961B04 VA: 0x1961B04
-	// public bool FDIOFBGJKNO(int BCCHOBPJJKE) { }
+	public bool FDIOFBGJKNO(int BCCHOBPJJKE)
+	{
+		if(BCCHOBPJJKE > 0)
+		{
+			if(BCCHOBPJJKE <= CDENCMNHNGA_SceneList.Count)
+			{
+				if(CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].PPEGAKEIEGM_En == 2)
+				{
+					int r = CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].EKLIPGELKCL_Rarity - 4;
+					if (CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].EKLIPGELKCL_Rarity > 3)
+					{
+						r = CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].LFPEIEOHABE_Pstv - 1;
+					}
+					TodoLogger.Log(TodoLogger.ToCheck, "check test puVar1 < 0 == bVar6");
+					if(r >= 1)
+					{
+						return r <= IEFOPDOOLOK_MasterVersion;
+					}
+				}
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0x1961C54 Offset: 0x1961C54 VA: 0x1961C54
 	// public int KBEGPJEBFMA(int BCCHOBPJJKE) { }

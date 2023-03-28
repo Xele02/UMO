@@ -95,8 +95,23 @@ public class MCGNOFMAPBJ
 	// // RVA: 0x130CE44 Offset: 0x130CE44 VA: 0x130CE44 Slot: 4
 	public virtual int DCLKMNGMIKC()
 	{
-		TodoLogger.Log(0, "DCLKMNGMIKC");
-		return 0;
+		int res = NEPIPMPAFIE_Stamina;
+		if(res < DCBENCMNOGO_GainStamina)
+		{
+			int diff = DCBENCMNOGO_GainStamina - res;
+			long a = diff * FLJGHBLEDDB_HealSec;
+			long b = FLJGHBLEDDB_HealSec * diff;
+			long timeDiff = FJDBNGEPKHL_Time - DLPEEDCCNMJ_StaminaSaveTime;
+			if(a < timeDiff)
+			{
+				timeDiff = a;
+			}
+			TodoLogger.Log(TodoLogger.ToCheck, "Check stamina up");
+			res += (int)(timeDiff % FLJGHBLEDDB_HealSec);
+			if (DCBENCMNOGO_GainStamina < res)
+				return DCBENCMNOGO_GainStamina;
+		}
+		return res;
 	}
 
 	// // RVA: 0x130D008 Offset: 0x130D008 VA: 0x130D008 Slot: 5

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using XeSys;
 
@@ -22,10 +23,16 @@ public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 			public int DOJDOLDDBPP_Hav { get { return DJJOKAOHAML ^ FBGGEFFJJHB; } set { DJJOKAOHAML = value ^ FBGGEFFJJHB; } } //0x1800624 FHJFILKDGGO 0x1800ACC DEEAELHLIEC
 			public int DIAPHCJBPFD_Get { get { return JECIEFEOBDO ^ FBGGEFFJJHB; } set { JECIEFEOBDO = value ^ FBGGEFFJJHB; } } //0x17FEB58 EIEMCCANNJE 0x1800AAC JLGBEBCNDJN
 			public int IOLJPHAOBOH_Use { get { return DADJGIPLGBK ^ FBGGEFFJJHB; } set { DADJGIPLGBK = value ^ FBGGEFFJJHB; } } //0x1800614 EHKEMJJNKKI 0x1800ABC GHMCNDFEFIF
-			//public int HNKFMAJIFJD { get; } 0x17FE608 CEOIBKAGPAG
+			public int HNKFMAJIFJD { get {
+					DateTime date = Utility.GetLocalDateTime(NLMAIPMAHMN + DIAPHCJBPFD_Get);
+					return (int)Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 23, 59, 59);
+				} } //0x17FE608 CEOIBKAGPAG
 
 			//// RVA: 0x17FE280 Offset: 0x17FE280 VA: 0x17FE280
-			//public bool NIENPFFLMCH(long JHNMKKNEENE) { }
+			public bool NIENPFFLMCH(long JHNMKKNEENE)
+			{
+				return DOJDOLDDBPP_Hav == 1 && JHNMKKNEENE >= DIAPHCJBPFD_Get && HNKFMAJIFJD >= JHNMKKNEENE;
+			}
 
 			//// RVA: 0x1801EAC Offset: 0x1801EAC VA: 0x1801EAC
 			//public void DNBGDMBCLMI(int KNEFBLHBDBG) { }
@@ -74,7 +81,17 @@ public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x17FE0E8 Offset: 0x17FE0E8 VA: 0x17FE0E8
-	// public int HPPKOGKNKMH(int PPFNGGCBJKC, long JHNMKKNEENE) { }
+	public int HPPKOGKNKMH(int PPFNGGCBJKC, long JHNMKKNEENE)
+	{
+		if (PPFNGGCBJKC < 1)
+			return 0;
+		int res = 0;
+		for(int i = 0; i < ODHBHOGFNAA[PPFNGGCBJKC - 1].MAHLPMJFLLJ; i++)
+		{
+			res += (ODHBHOGFNAA[PPFNGGCBJKC - 1].PJADHDHKOEJ[i].NIENPFFLMCH(JHNMKKNEENE) && ODHBHOGFNAA[PPFNGGCBJKC - 1].NPNNEDINOKC[i].NIENPFFLMCH(JHNMKKNEENE)) ? 1 : 0;
+		}
+		return res;
+	}
 
 	// // RVA: 0x17FE2DC Offset: 0x17FE2DC VA: 0x17FE2DC
 	// public int MOAPEHACGDN(int PPFNGGCBJKC, long JHNMKKNEENE) { }

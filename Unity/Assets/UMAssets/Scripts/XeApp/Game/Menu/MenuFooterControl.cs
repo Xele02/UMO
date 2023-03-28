@@ -180,8 +180,6 @@ namespace XeApp.Game.Menu
 			m_menuBar.gameObject.SetActive(true);
 			m_menuBar.transform.SetAsLastSibling();
 			m_menuBar.Enter(isFading, selectedButton);
-
-			TodoLogger.Log(0, "footer Show");
 		}
 
 		// // RVA: 0xED2390 Offset: 0xED2390 VA: 0xED2390

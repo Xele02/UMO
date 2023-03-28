@@ -1732,7 +1732,203 @@ namespace XeApp.Game.Menu
 						return m_transitionName == TransitionList.Type.SCENE_GROWTH;
 				}
 			}
-			TodoLogger.Log(0, "CheckTutorialFunc");
+			switch(conditionId)
+			{
+				case TutorialConditionId.Condition2:
+					return m_transitionName == TransitionList.Type.STORY_SELECT;
+				case TutorialConditionId.Condition3:
+					return m_transitionName == TransitionList.Type.MUSIC_SELECT;
+				case TutorialConditionId.Condition4:
+					if (!GameManager.Instance.IsTutorial)
+						return m_transitionName == TransitionList.Type.FRIEND_SELECT;
+					break;
+				case TutorialConditionId.Condition5:
+					if(m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						int res = 0;
+						for(int i = 0; i < GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Count; i++)
+						{
+							res += GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked() ? 1 : 0;
+						}
+						return res > 9;
+					}
+					break;
+				case TutorialConditionId.Condition9:
+					if (m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						TeamEditSceneArgs teamArgs = m_args as TeamEditSceneArgs;
+						if(teamArgs != null)
+						{
+							return teamArgs.IsFromBeginner;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition10:
+				case TutorialConditionId.Condition13:
+					if(m_transitionName == TransitionList.Type.SCENE_ABILITY_RELEASE_LIST)
+					{
+						SceneListArgs sceneArgs = m_args as SceneListArgs;
+						if(sceneArgs != null && sceneArgs.IsFromBiginner && sceneArgs.QuestType == 42)
+						{
+							return conditionId == TutorialConditionId.Condition10;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition11:
+					return m_transitionName == TransitionList.Type.PRESENT_LIST;
+				case TutorialConditionId.Condition12:
+					if(m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC.Count; i++)
+						{
+							List<FFHPBEPOMAK_DivaInfo> cosList = FFHPBEPOMAK_DivaInfo.DNAIGDHCILM_GetCostumeList(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId, false);
+							int res = 0;
+							for (int j = 0; j < cosList.Count; j++)
+							{
+								res += cosList[j].JLKPGDEKPEO_IsHave ? 1 : 0;
+							}
+							return res > 1;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition15:
+					if(m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						int res = 0;
+						for(int i = 0; i < GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas.Count; i++)
+						{
+							if (GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[i] != null)
+								res++;
+						}
+						return res > 1;
+					}
+					break;
+				case TutorialConditionId.Condition17:
+					if(m_transitionName == TransitionList.Type.PROFIL)
+					{
+						if(this is ProfilMenuScene)
+						{
+							return !(this as ProfilMenuScene).IsFriend();
+						}
+						return false;
+					}
+					break;
+				case TutorialConditionId.Condition23:
+					return m_transitionName == TransitionList.Type.SCENE_ABILITY_RELEASE_LIST;
+				case TutorialConditionId.Condition24:
+					return m_transitionName == TransitionList.Type.VALKYRIE_SELECT;
+				case TutorialConditionId.Condition26:
+					return m_transitionName == TransitionList.Type.OPTION_MENU;
+				case TutorialConditionId.Condition27:
+					return m_transitionName == TransitionList.Type.EPISODE_SELECT;
+				case TutorialConditionId.Condition28:
+					return m_transitionName == TransitionList.Type.EPISODE_DETAIL;
+				case TutorialConditionId.Condition30:
+					if(m_transitionName == TransitionList.Type.TEAM_SELECT)
+					{
+						if(Database.Instance.selectedMusic.GetSelectedMusicData() != null)
+						{
+							return Database.Instance.selectedMusic.GetSelectedMusicData().FKDCCLPGKDK_JacketAttr != 4;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition35:
+					if(m_transitionName == TransitionList.Type.TEAM_SELECT || m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level > 4)
+						{
+							return !GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.ODKIHPBEOEC_IsTrue(2);
+						}
+					}
+					break;
+				case TutorialConditionId.Condition37:
+					if(!GameManager.Instance.IsTutorial && m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						int res = 0;
+						for(int i = 0; i < GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Count; i++)
+						{
+							if(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked())
+							{
+								res++;
+								if (res > 4)
+									return true;
+							}
+						}
+					}
+					break;
+				case TutorialConditionId.Condition38:
+					return m_transitionName == TransitionList.Type.SCENE_GROWTH;
+				case TutorialConditionId.Condition40:
+					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level < 3)
+						return false;
+					return m_transitionName == TransitionList.Type.MUSIC_SELECT;
+				case TutorialConditionId.Condition42:
+					if(m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						if(m_args is TeamEditSceneArgs)
+						{
+							if ((m_args as TeamEditSceneArgs).IsFromBeginner)
+								return false;
+						}
+						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[3].EALOBDHOCHP_Stat < 2)
+						{
+							int res = 0;
+							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC.Count; i++)
+							{
+								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[i].FJODMPGPDDD ? 1 : 0;
+							}
+							return res > 1;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition46:
+					if (Database.Instance.bonusData.EffectiveEpisodeBonus.Count > 0)
+						return m_transitionName == TransitionList.Type.TEAM_SELECT;
+					return false;
+				case TutorialConditionId.Condition47:
+					if(m_transitionName == TransitionList.Type.SCENE_GROWTH && m_args is SceneGrowthSceneArgs)
+					{
+						SceneGrowthSceneArgs args = m_args as SceneGrowthSceneArgs;
+						if(args.ViewSceneData.JPIPENJGGDD > 1)
+						{
+
+							AEKDNMPPOJN data = new AEKDNMPPOJN();
+							MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[args.ViewSceneData.BCCHOBPJJKE_SceneId - 1];
+							data.KHEKNNFCAOI(args.ViewSceneData.JKGFBFPIMGA_Rarity, args.ViewSceneData.MKHFCGPJPFI_LimitOverCount,
+								scene.PKNGPIFNIGN(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board, args.ViewSceneData.JPIPENJGGDD, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(scene.EKLIPGELKCL_Rarity, scene.MCCIFLKCNKO_Feed)));
+							if (data.LJHOOPJACPI > 0)
+								return true;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition48:
+					if(m_transitionName == TransitionList.Type.MUSIC_SELECT)
+					{
+						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+					}
+					break;
+				case TutorialConditionId.Condition49:
+					return m_transitionName == TransitionList.Type.SIMULATIONLIVE_SETTING;
+				case TutorialConditionId.Condition50:
+					if(m_transitionName == TransitionList.Type.TEAM_SELECT)
+					{
+						AOJGDNFAIJL_PrismData.AMIECPBIALP data = new AOJGDNFAIJL_PrismData.AMIECPBIALP(Database.Instance.gameSetup.musicInfo.musicId, false);
+						return data.OFHMEAJBIEL_IsPrismUnlocked();
+					}
+					break;
+				case TutorialConditionId.Condition53:
+					return m_transitionName == TransitionList.Type.SHOP;
+				case TutorialConditionId.Condition55:
+					return m_transitionName == TransitionList.Type.GACHA_BOX_QUEST;
+				case TutorialConditionId.Condition57:
+					return m_transitionName == TransitionList.Type.GACHA_BOX;
+				case TutorialConditionId.Condition65:
+					if(m_transitionName == TransitionList.Type.TEAM_EDIT || m_transitionName == TransitionList.Type.TEAM_SELECT)
+					{
+						return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.GODGHFDMAHF() != null;
+					}
+					break;
+				}
 			return false;
 		}
 	}

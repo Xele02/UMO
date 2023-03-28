@@ -8,14 +8,14 @@ namespace XeApp.Game.Common
 {
 	public class SelectScrollView : ScrollRect
 	{
-		public bool isSingleTouch; // 0xF0
-		private bool isEnableTouch; // 0xF1
+		public bool isSingleTouch = true; // 0xF0
+		private bool isEnableTouch = true; // 0xF1
 		private Coroutine m_coroutine; // 0xF4
 		public AnimationCurve curve; // 0xF8
-		public int m_itemCount; // 0xFC
-		public float selectVelocity; // 0x100
-		public Vector2 itemSize; // 0x104
-		public Vector2 spacing; // 0x10C
+		public int m_itemCount = -1; // 0xFC
+		public float selectVelocity = 15; // 0x100
+		public Vector2 itemSize = Vector2.one; // 0x104
+		public Vector2 spacing = Vector2.zero; // 0x10C
 
 		public List<SelectScrollViewContent> scrollObjects { get; private set; } // 0x114
 		public int index { get; private set; } // 0x118
@@ -52,19 +52,124 @@ namespace XeApp.Game.Common
 		// RVA: 0x13907B0 Offset: 0x13907B0 VA: 0x13907B0 Slot: 4
 		protected override void Awake()
 		{
-			TodoLogger.Log(0, "Awake()");
+			base.Awake();
+			scrollObjects = new List<SelectScrollViewContent>();
+			curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+			HorizontalLayoutGroup hlg = content.GetComponent<HorizontalLayoutGroup>();
+			if(hlg != null)
+			{
+				spacing = new Vector2(hlg.spacing, 0);
+			}
+			VerticalLayoutGroup vlg = content.GetComponent<VerticalLayoutGroup>();
+			if (vlg != null)
+			{
+				spacing = new Vector2(0, vlg.spacing);
+			}
+			GridLayoutGroup glg = content.GetComponent<GridLayoutGroup>();
+			if (glg != null)
+			{
+				spacing = glg.spacing;
+			}
 		}
 
 		// RVA: 0x1390AA0 Offset: 0x1390AA0 VA: 0x1390AA0 Slot: 6
 		protected override void Start()
 		{
-			TodoLogger.Log(0, "Start()");
+			base.Start();
+			for(int i = 0; i < content.childCount; i++)
+			{
+				SelectScrollViewContent rt = content.GetChild(i).GetComponent<SelectScrollViewContent>();
+				if(rt != null)
+				{
+					scrollObjects.Add(rt);
+				}
+			}
+			if(scrollObjects.Count > 0)
+			{
+				itemSize = scrollObjects[0].GetItemSize();
+			}
 		}
 
 		// RVA: 0x1390CB0 Offset: 0x1390CB0 VA: 0x1390CB0 Slot: 48
 		protected override void LateUpdate()
 		{
-			TodoLogger.Log(0, "LateUpdate()");
+			if (!isEnableTouch)
+				return;
+			if(isDrag)
+			{
+				base.LateUpdate();
+				return;
+			}
+			Vector2 pos = content.anchoredPosition;
+			bool b = m_coroutine != null;
+			if (vertical)
+			{
+				if(verticalNormalizedPosition >= 0)
+				{
+					if(verticalNormalizedPosition < 1)
+					{
+						float size = itemSize.y + spacing.y;
+						float f = pos.y % size;
+						if(Mathf.Abs(f) < size * 0.5f)
+						{
+							pos.y -= f * Time.deltaTime * selectVelocity;
+						}
+						else
+						{
+							float f2 = -1;
+							if (pos.y >= 0)
+								f2 = 1;
+							pos.y += (f2 * size - f) * Time.deltaTime * selectVelocity;
+						}
+					}
+					else
+					{
+						b = true;
+					}
+				}
+				else
+				{
+					b = true;
+				}
+			}
+			if(horizontal)
+			{
+				if (horizontalNormalizedPosition >= 0)
+				{
+					if (horizontalNormalizedPosition < 1)
+					{
+						float size = itemSize.x + spacing.x;
+						float f = pos.x % size;
+						if (Mathf.Abs(f) < size * 0.5f)
+						{
+							if (!b)
+							{
+								pos.x -= f * Time.deltaTime * selectVelocity;
+								content.anchoredPosition = pos;
+								return;
+							}
+						}
+						else
+						{
+							float f2 = -1;
+							if (pos.x >= 0)
+								f2 = 1;
+							if (!b)
+							{
+								pos.x += (f2 * size - f) * Time.deltaTime * selectVelocity;
+								content.anchoredPosition = pos;
+								return;
+							}
+						}
+					}
+				}
+			}
+			if(!b)
+			{
+				content.anchoredPosition = pos;
+				return;
+			}
+			base.LateUpdate();
 		}
 
 		// RVA: 0x1391018 Offset: 0x1391018 VA: 0x1391018 Slot: 42
@@ -89,12 +194,6 @@ namespace XeApp.Game.Common
 		public override void OnEndDrag(PointerEventData eventData)
 		{
 			TodoLogger.Log(0, "OnEndDrag()");
-		}
-
-		// RVA: 0x1391584 Offset: 0x1391584 VA: 0x1391584
-		public SelectScrollView()
-		{
-			TodoLogger.Log(0, "SelectScrollView()");
 		}
 	}
 }

@@ -45,7 +45,19 @@ public class EAOHMJHHDKN_GachaLimit : KLFDBFMNLBL_ServerSaveBlock
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x14F225C Offset: 0x14F225C VA: 0x14F225C
-	// public int CFLDNJANAPI(int HHGMPEEGFMA) { }
+	public int CFLDNJANAPI(int HHGMPEEGFMA)
+	{
+		BIHCALIAJII_GachaLimit.AICPHCIFEJL gacha = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OINLLHOMEAK_GachaLimit.CDENCMNHNGA.Find((BIHCALIAJII_GachaLimit.AICPHCIFEJL GHPLINIACBB) =>
+		{
+			//0x14F5B5C
+			return HHGMPEEGFMA == GHPLINIACBB.FEFDGBPFKBJ_GId;
+		});
+		if(gacha != null && gacha.PLALNIIBLOF_En == 2)
+		{
+			return OECAPENFOHH[gacha.PPFNGGCBJKC_Id].BAMCNPNLEEN;
+		}
+		return 0;
+	}
 
 	// // RVA: 0x14F247C Offset: 0x14F247C VA: 0x14F247C
 	// public void KHBNLBNPGPK(int HHGMPEEGFMA, int DNBFMLBNAEE) { }
