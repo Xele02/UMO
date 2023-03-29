@@ -598,5 +598,13 @@ public class HPBDNNACBAK
 	// private bool MFGDDLPKFGF(KBPDNHOKEKD.KNEKLJHNHAK LJPMEHDDBGP) { }
 
 	// // RVA: 0x1605F2C Offset: 0x1605F2C VA: 0x1605F2C
-	// public bool GGBCCADCPNP() { }
+	public bool GGBCCADCPNP()
+	{
+		foreach(var k in MHKCPJDNJKI_GatchaProducts)
+		{
+			if (k.CMCNKHLIKPP_HighRarityScene)
+				return true;
+		}
+		return false;
+	}
 }

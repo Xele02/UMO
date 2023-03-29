@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 namespace XeApp.Game.Common
 {
@@ -40,11 +41,65 @@ namespace XeApp.Game.Common
 		// public void SetPosition(SelectScrollViewContent content, float animTime = 0) { }
 
 		// // RVA: 0x13904EC Offset: 0x13904EC VA: 0x13904EC Slot: 64
-		// public virtual void SetPosition(int pos, float animTime = 0) { }
+		public virtual void SetPosition(int pos, float animTime = 0)
+		{
+			int cnt = m_itemCount;
+			if (m_itemCount < 0)
+			{
+				cnt = scrollObjects.Count;
+			}
+			IEnumerator co = Co_SetPosition(Mathf.Clamp(pos, 0, cnt - 1), animTime);
+			if (animTime < 0)
+			{
+				co.MoveNext();
+			}
+			else
+			{
+				m_coroutine = this.StartCoroutineWatched(co);
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73D2AC Offset: 0x73D2AC VA: 0x73D2AC
 		// // RVA: 0x1390688 Offset: 0x1390688 VA: 0x1390688
-		// private IEnumerator Co_SetPosition(int pos, float animTime) { }
+		private IEnumerator Co_SetPosition(int pos, float animTime)
+		{
+			Vector2 start; // 0x1C
+			Vector2 end; // 0x24
+			Vector2 diff; // 0x2C
+			float time; // 0x34
+			float speed; // 0x38
+
+			//0x13916D8
+			start = content.anchoredPosition;
+			end = start;
+			if(vertical)
+			{
+				end.y = (itemSize.y + spacing.y) * pos;
+			}
+			if(horizontal)
+			{
+				end.x = (itemSize.x + spacing.x) * pos;
+			}
+			index = pos;
+			if (OnChangeItem != null)
+				OnChangeItem(index);
+			diff = end - start;
+			time = 0;
+			speed = 1.0f / animTime;
+			while(time <= animTime)
+			{
+				time += Time.deltaTime;
+				float v = curve.Evaluate(time * speed);
+				Vector2 p = (diff * v) + start;
+				content.anchoredPosition = p;
+				yield return null;
+			}
+			content.anchoredPosition = end;
+			velocity = Vector2.zero;
+			if (OnChangeEndItem != null)
+				OnChangeEndItem(index);
+			m_coroutine = null;
+		}
 
 		// // RVA: 0x1390774 Offset: 0x1390774 VA: 0x1390774
 		// public bool IsEnableTouchId(PointerEventData eventData) { }

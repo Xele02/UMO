@@ -6,5 +6,5 @@ public interface ISelectScrollViewContent
 	//public abstract int GetIndex();
 
 	// RVA: -1 Offset: -1 Slot: 1
-	public abstract Vector2 GetItemSize();
+	Vector2 GetItemSize();
 }

@@ -71,7 +71,13 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x967244 Offset: 0x967244 VA: 0x967244
-		// public void Wait() { }
+		public void Wait()
+		{
+			if (!m_IsInitialize)
+				return;
+			m_lobbyTabBtn.Wait();
+			m_lobbySceneBtn.Wait();
+		}
 
 		// // RVA: 0x967298 Offset: 0x967298 VA: 0x967298
 		public void EnableButton(bool a_enable)
@@ -111,7 +117,18 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E29BC Offset: 0x6E29BC VA: 0x6E29BC
 		// // RVA: 0x968314 Offset: 0x968314 VA: 0x968314
-		// public IEnumerator InitRaidLobby(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle) { }
+		public IEnumerator InitRaidLobby(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle)
+		{
+			//0x96BEFC
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+			if (ev == null)
+			{
+				if (onSuccess != null)
+					onSuccess();
+				yield break;
+			}
+			TodoLogger.Log(0, "InitRaidLobby");
+		}
 
 		// // RVA: 0x9683DC Offset: 0x9683DC VA: 0x9683DC
 		public bool CheckLobbyAnnounce()

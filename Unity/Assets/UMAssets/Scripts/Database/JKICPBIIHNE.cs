@@ -342,7 +342,12 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 	//public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }
 
 	//// RVA: 0x13603D0 Offset: 0x13603D0 VA: 0x13603D0
-	//public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }
+	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
+	{
+		if (!OHJFBLFELNK.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		return OHJFBLFELNK[LJNAKDMILMC].DNJEJEANJGL_Value;
+	}
 
 	// RVA: 0x13604B4 Offset: 0x13604B4 VA: 0x13604B4
 	public JKICPBIIHNE_Bingo()

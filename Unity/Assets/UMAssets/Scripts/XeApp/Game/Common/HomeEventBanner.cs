@@ -106,7 +106,16 @@ namespace XeApp.Game.Common
 		// // RVA: 0xEA9484 Offset: 0xEA9484 VA: 0xEA9484
 		private void InitScrollType()
 		{
-			TodoLogger.Log(0, "InitScrollType");
+			Vector2 pos = m_scrollView.content.anchoredPosition;
+			m_scrollView.content.anchoredPosition = new Vector2(pos.x, 0);
+			m_scrollView.horizontal = true;
+			m_scrollView.vertical = false;
+			m_scrollView.horizontalNormalizedPosition = 0;
+			m_scrollView.SetPosition(0, 0);
+			m_scrollView.SetAutoScroll(m_autoScrollWait);
+			m_gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+			m_gridLayoutGroup.constraintCount = m_scrollView.scrollObjects.Count;
+			m_rootPageIcon.gameObject.SetActive(true);
 		}
 
 		// // RVA: 0xEAB5FC Offset: 0xEAB5FC VA: 0xEAB5FC

@@ -77,6 +77,7 @@ class JpStringLiterals
 	public const string StringLiteral_10294 = "超時空SNS"; // 0x03bb2b90
 	public const string StringLiteral_10309 = "エナジー回復"; // 0x03bb2bcc
 	public const string StringLiteral_10310 = "エナジーが全回復しました！"; // 0x03bb2bd0
+	public const string StringLiteral_10346 = "LinkError : 自分自身のIDをリンクIDに指定している"; // 0x03bb2c60
 	public const string StringLiteral_10431 = "デビューガチャ"; //0x03bb2db4
 	public const string StringLiteral_11062 = "ライフ"; // 0x03bb3790
 	public const string StringLiteral_11063 = "ソウル"; // 0x03bb3794

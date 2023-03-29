@@ -140,7 +140,7 @@ namespace XeApp.Game.Menu
 		public bool DirtyChangeScene { get { return m_menuTransitionControl.DirtyChangeScene; } } //0xB2E704
 		public HomeLobbyButtonController LobbyButtonControl { get { return m_lobbyButtonControl; } } //0xB2E730
 		// public FlexibleLayoutCamera FlexibleLayoutCamera { get; } 0xB2E738
-		// public DenominationManager DenomControl { get; } 0xB2AB9C
+		public DenominationManager DenomControl { get { return m_denomControl; } } //0xB2AB9C
 		public long EnterToHomeTime { get { return m_enterToHomeTime; } } //0xB2E7EC
 
 		// // RVA: 0xB2E7F4 Offset: 0xB2E7F4 VA: 0xB2E7F4 Slot: 9
@@ -741,7 +741,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32260 Offset: 0xB32260 VA: 0xB32260
-		// public bool IsTransition() { }
+		public bool IsTransition()
+		{
+			return m_menuTransitionControl.IsTransition;
+		}
 
 		// // RVA: 0xB3228C Offset: 0xB3228C VA: 0xB3228C
 		// public bool OnPushReturnButton() { }

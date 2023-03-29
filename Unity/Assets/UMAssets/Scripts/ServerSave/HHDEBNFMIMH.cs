@@ -43,7 +43,10 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 	// public void GFANLIOMMNA(int BPNKGDGBBFG) { }
 
 	// // RVA: 0x175523C Offset: 0x175523C VA: 0x175523C
-	// public bool FABEJIHKFGN(int MDLFDNOJAJN) { }
+	public bool FABEJIHKFGN(int MDLFDNOJAJN)
+	{
+		return JBBHBNAJMJB[MDLFDNOJAJN - 1].BEBJKJKBOGH_Date != 0;
+	}
 
 	// // RVA: 0x17552F0 Offset: 0x17552F0 VA: 0x17552F0
 	public HHDEBNFMIMH_Adventure()

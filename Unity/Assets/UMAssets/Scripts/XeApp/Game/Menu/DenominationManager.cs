@@ -48,7 +48,10 @@ namespace XeApp.Game.Menu
 		// public void StartPurchaseSequence(IMCBBOAFION onSuccess, JFDNPFFOACP onCancel, DJBHIFLHJLK onError, OnDenomChangeDate onChangeDate, ProductListFilter filter) { }
 
 		// // RVA: 0x17CFC3C Offset: 0x17CFC3C VA: 0x17CFC3C
-		// public void AddResponseHandler(DenominationManager.ResponseHandler handler) { }
+		public void AddResponseHandler(ResponseHandler handler)
+		{
+			m_responceHandlerList.Add(handler);
+		}
 
 		// // RVA: 0x17CFCBC Offset: 0x17CFCBC VA: 0x17CFCBC
 		// public void RemoveResponseHandler(DenominationManager.ResponseHandler handler) { }

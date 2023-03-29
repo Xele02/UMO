@@ -549,14 +549,14 @@ public class ILLPDLODANB
 				return saveQuest.EALOBDHOCHP_Stat;
 			if(!KDEBJBCDFOL)
 			{
-				if(dbQuest.HHIBBHFHENH != 0)
+				if(dbQuest.HHIBBHFHENH_LinkQuestId != 0)
 				{
-					CNLPPCFJEID_QuestInfo q2 = LKMHPJKIFDN.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[dbQuest.HHIBBHFHENH - 1];
+					CNLPPCFJEID_QuestInfo q2 = LKMHPJKIFDN.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[dbQuest.HHIBBHFHENH_LinkQuestId - 1];
 					long t = DCLKMNGMIKC_GetQuestCurrentValue(q2, LKMHPJKIFDN, LDEGEHAEALK);
 					a = 2;
 					if(t < q2.FCDKJAKLGMB)
 					{
-						NFPHOINMHKN_QuestInfo s2 = LDEGEHAEALK.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[dbQuest.HHIBBHFHENH - 1];
+						NFPHOINMHKN_QuestInfo s2 = LDEGEHAEALK.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[dbQuest.HHIBBHFHENH_LinkQuestId - 1];
 						a = s2.EALOBDHOCHP_Stat;
 					}
 				}
@@ -573,7 +573,7 @@ public class ILLPDLODANB
 					if (ev.NGOFCFJHOMI > KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL/*5*/)
 						return 0;
 				}
-				return (dbQuest.HHIBBHFHENH == 0 || a > 1) ? 1 : 0;
+				return (dbQuest.HHIBBHFHENH_LinkQuestId == 0 || a > 1) ? 1 : 0;
 			}
 		}
 		return c;

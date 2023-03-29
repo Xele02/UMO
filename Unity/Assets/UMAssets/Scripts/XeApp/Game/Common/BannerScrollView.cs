@@ -35,7 +35,11 @@ namespace XeApp.Game.Common
 			}
 
 			// // RVA: 0xE5FC44 Offset: 0xE5FC44 VA: 0xE5FC44
-			// public void Init(float wait) { }
+			public void Init(float wait)
+			{
+				m_wait = wait;
+				m_time = 0;
+			}
 		}
 
 		private RepeatTimer m_repeatTimer = new RepeatTimer(); // 0x12C
@@ -68,10 +72,16 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0xE5FB78 Offset: 0xE5FB78 VA: 0xE5FB78
-		// public void SetAutoScroll(float autoScrollWait) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73D414 Offset: 0x73D414 VA: 0x73D414
-		// // RVA: 0xE5FCE0 Offset: 0xE5FCE0 VA: 0xE5FCE0
-		// private void <SetAutoScroll>b__5_0() { }
+		public void SetAutoScroll(float autoScrollWait)
+		{
+			m_repeatTimer.Init(autoScrollWait);
+			m_repeatTimer.OnRepeatTiming = () =>
+			{
+				//0xE5FCE0
+				if (isDrag)
+					return;
+				SetPosition((index + 1) % scrollObjects.Count, 1);
+			};
+		}
 	}
 }

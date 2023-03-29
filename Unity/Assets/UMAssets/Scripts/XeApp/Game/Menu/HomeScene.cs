@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 		// private bool m_isHiddenUI; // 0x8D
 		// private KNKDBNFMAKF m_spEventCtrl; // 0x90
 		// private CHHECNJBMLA m_boxGachaEventCtrl; // 0x94
-		// private PLADCDJLOBE m_balloonLeadData; // 0x98
+		private PLADCDJLOBE m_balloonLeadData; // 0x98
 		// private SnsScreen m_snsScreen; // 0x9C
 		// private GachaScene.GachaArgs m_gachaArgs = new GachaScene.GachaArgs(); // 0xA0
 		private HomePickupTextureCahce m_pickupTexCache; // 0xA4
@@ -123,8 +123,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x970740 Offset: 0x970740 VA: 0x970740 Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			// MenuScene.Instance.divaManager.transform.Find("DivaCamera").GetComponent<Camera>().enabled = true;
-			TodoLogger.Log(0, "diva 3d");
+			MenuScene.Instance.divaManager.transform.Find("DivaCamera").GetComponent<Camera>().enabled = true;
 			m_eventAdvId = GetEventAdvId();
 			if(CanRareBreakAdv() || m_eventAdvId > 0)
 			{
@@ -132,18 +131,17 @@ namespace XeApp.Game.Menu
 			}
 			MenuScene.Instance.FooterMenu.MenuBar.SetInterruptEvent((TransitionList.Type type) => {
 				//0x13C78E0
-				TodoLogger.Log(10, "TODO");
+				TodoLogger.Log(0, "SetInterruptEvent");
 				return false;
 			});
 			m_isInitRaidLobby = false;
-			TodoLogger.Log(5, "Raid");
-			/*MenuScene.Instance.LobbyButtonControl.StartCoroutineWatched(MenuScene.Instance.LobbyButtonControl.InitRaidLobby(() => {
-				//0x13C790C*/
+			MenuScene.Instance.LobbyButtonControl.StartCoroutineWatched(MenuScene.Instance.LobbyButtonControl.InitRaidLobby(() => {
+				//0x13C790C
 				m_isInitRaidLobby = true;
-			/*}, () => {
+			}, () => {
 				//0x13C7934
-				TodoLogger.Log(10, "TODO");
-			}));*/
+				TodoLogger.Log(0, "InitRaidLobby");
+			}));
 			m_isSuccessPrepare = false;
 			NKGJPJPHLIF.HHCJCDFCLOB.LBEHLMLKPDM(() => {
 				//0x13C7980
@@ -152,27 +150,26 @@ namespace XeApp.Game.Menu
 				//0x13C79A8
 				TodoLogger.Log(10, "TODO");
 			});
-			TodoLogger.Log(5, "m_balloonLeadData");
-			// m_balloonLeadData = PLADCDJLOBE.PLADCDJLOBE();
-			// Database.Instance.bonusData.ClearEpisodeBonus();
+			m_balloonLeadData = PLADCDJLOBE.HEGEKFMJNCC();
+			Database.Instance.bonusData.ClearEpisodeBonus();
 			m_isUpdateMusicRateRanking = false;
-			/*OEGIPPCADNA.HHCJCDFCLOB.MJFKJHJJLMN(0, false, () => {
-				//0x13C7A14*/
+			OEGIPPCADNA.HHCJCDFCLOB.MJFKJHJJLMN_GetUtaRateRank(0, false, () => {
+				//0x13C7A14
 				m_isUpdateMusicRateRanking = true;
-			/*}, () => {
+			}, () => {
 				//0x13C7A3C
-				TodoLogger.Log(10, "TODO");
-			});*/
+				TodoLogger.Log(0, "MJFKJHJJLMN_GetUtaRateRank");
+			});
 			if(!MenuScene.IsAlreadyHome)
 			{
 				m_isCheckGachaProductList = false;
 				NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProducList(() => {
 					//0x13C7AD0
-					TodoLogger.Log(10, "TODO");
+					TodoLogger.Log(0, "LILDGEPCPPG_GetProducList");
 					m_isCheckGachaProductList = true;
 				}, () => {
 					//0x13C7B24
-					TodoLogger.Log(10, "TODO");
+					TodoLogger.Log(0, "LILDGEPCPPG_GetProducList");
 				}, false, false);
 			}
 			else
@@ -184,10 +181,9 @@ namespace XeApp.Game.Menu
 			{
 				this.StartCoroutineWatched(Co_ChangeBg());
 			}
-			TodoLogger.Log(5, "end OnPreSetCanvas");
-			// MenuScene.Instance.LobbyButtonControl.Wait();
-			// MenuScene.Instance.DenomControl.AddResponseHandler(this.OnChargeMoney);
-			// BingoQuestStart();
+			MenuScene.Instance.LobbyButtonControl.Wait();
+			MenuScene.Instance.DenomControl.AddResponseHandler(OnChargeMoney);
+			BingoQuestStart();
 		}
 
 		// RVA: 0x9717EC Offset: 0x9717EC VA: 0x9717EC Slot: 17
@@ -471,7 +467,23 @@ namespace XeApp.Game.Menu
 		// private void OnExternalTransition() { }
 
 		// // RVA: 0x9715E0 Offset: 0x9715E0 VA: 0x9715E0
-		// private void BingoQuestStart() { }
+		private void BingoQuestStart()
+		{
+			if(GNGMCIAIKMA.HHCJCDFCLOB.GBCPDBJEDHL())
+			{
+				List<int> bingos = GNGMCIAIKMA.HHCJCDFCLOB.CNADOFDDNLO_GetActiveBingos();
+				for(int i = 0; i < bingos.Count; i++)
+				{
+					JKICPBIIHNE_Bingo.HNOGDJFJGPM bingo = GNGMCIAIKMA.HHCJCDFCLOB.EBEDAPJFHCE_GetBingo(bingos[i]);
+					if(bingo.MNOKEJIPOBJ != 0)
+					{
+						GNGMCIAIKMA.HHCJCDFCLOB.BHFGBNNEMLI(bingos[i]);
+						GNGMCIAIKMA.HHCJCDFCLOB.FBHHEBDDIMO(bingos[i], true);
+						GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_HasBingoActive(null, -1);
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x9731E0 Offset: 0x9731E0 VA: 0x9731E0
 		// private void ShowInformation(bool disableDivaTalk = False) { }
@@ -483,7 +495,10 @@ namespace XeApp.Game.Menu
 		// private bool TryLobbyAnnounce() { }
 
 		// // RVA: 0x9737E8 Offset: 0x9737E8 VA: 0x9737E8
-		// private void OnChargeMoney(DenominationManager.Response handler) { }
+		private void OnChargeMoney(DenominationManager.Response handler)
+		{
+			TodoLogger.LogNotImplemented("OnChargeMoney");
+		}
 
 		// // RVA: 0x973910 Offset: 0x973910 VA: 0x973910
 		// private void OnClickNoticeButton() { }
@@ -759,12 +774,27 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x971360 Offset: 0x971360 VA: 0x971360
 		private bool CanRareBreakAdv()
 		{
-			TodoLogger.Log(0, "CanRareBreakAdv");
+			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd == 2)
+			{
+				int id = GetRareBreakAdvId();
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN(id) == false)
+				{
+					return NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.GGBCCADCPNP();
+				}
+			}
 			return false;
 		}
 
 		// // RVA: 0x97BC14 Offset: 0x97BC14 VA: 0x97BC14
-		// private int GetRareBreakAdvId() { }
+		private int GetRareBreakAdvId()
+		{
+			CEBFFLDKAEC_SecureInt val = new CEBFFLDKAEC_SecureInt();
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OHJFBLFELNK.TryGetValue("rare_break_adv_id", out val))
+			{
+				return val.DNJEJEANJGL_Value;
+			}
+			return 128;
+		}
 
 		// // RVA: 0x97155C Offset: 0x97155C VA: 0x97155C
 		// private bool CanGetEventAdv() { }
@@ -772,7 +802,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x970F60 Offset: 0x970F60 VA: 0x970F60
 		private int GetEventAdvId()
 		{
-			TodoLogger.Log(0, "GetEventAdvId");
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd == 2)
+			{
+				for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
+				{
+					TodoLogger.Log(0, "Event GetEventAdvId");
+				}
+			}
 			return 0;
 		}
 

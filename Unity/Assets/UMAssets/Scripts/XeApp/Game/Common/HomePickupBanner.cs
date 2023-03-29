@@ -30,7 +30,22 @@ namespace XeApp.Game.Common
 			public Action OnRepeatTiming { get; set; } // 0x10
 
 			// // RVA: 0xEAD384 Offset: 0xEAD384 VA: 0xEAD384
-			// public void Update() { }
+			public void Update()
+			{
+				if(m_wait > 0)
+				{
+					if(m_time >= m_wait)
+					{
+						m_time = 0;
+						if (OnRepeatTiming != null)
+							OnRepeatTiming();
+					}
+					else
+					{
+						m_time += Time.deltaTime;
+					}
+				}
+			}
 
 			// // RVA: 0xEADA10 Offset: 0xEADA10 VA: 0xEADA10
 			// public void Init(float wait) { }
@@ -102,13 +117,36 @@ namespace XeApp.Game.Common
 		// RVA: 0xEAD074 Offset: 0xEAD074 VA: 0xEAD074
 		private void Start()
 		{
-			TodoLogger.Log(0, "Start");
+			m_buttonOpenClose.ClearOnClickCallback();
+			m_buttonOpenClose.AddOnClickCallback(OnClickToggle);
+			m_scrollView.OnUpdateItem = (int index, UGUILoopScrollContent content) =>
+			{
+				//0xEAEC78
+				TodoLogger.Log(0, "OnUpdateItem ");
+			};
+			m_scrollView.OnDragBegin = () =>
+			{
+				//0xEAF00C
+				TodoLogger.Log(0, "OnDragBegin ");
+			};
+			m_scrollView.OnDragEnd = (Vector2 vec) =>
+			{
+				//0xEAF048
+				TodoLogger.Log(0, "OnDragEnd ");
+			};
+			m_repeatTimer.OnRepeatTiming = () =>
+			{
+				//0xEAF294
+				TodoLogger.Log(0, "OnRepeatTiming ");
+			};
 		}
 
 		// RVA: 0xEAD2C0 Offset: 0xEAD2C0 VA: 0xEAD2C0
 		protected void LateUpdate()
 		{
-			TodoLogger.Log(0, "Late Update");
+			if (MenuScene.Instance.IsTransition())
+				return;
+			m_repeatTimer.Update();
 		}
 
 		// RVA: 0xEAD3F8 Offset: 0xEAD3F8 VA: 0xEAD3F8
@@ -139,7 +177,10 @@ namespace XeApp.Game.Common
 		// private void SetPageNum(int page) { }
 
 		// // RVA: 0xEADE44 Offset: 0xEADE44 VA: 0xEADE44
-		// private void OnClickToggle() { }
+		private void OnClickToggle()
+		{
+			TodoLogger.LogNotImplemented("OnClickToggle");
+		}
 
 		// // RVA: 0xEAD840 Offset: 0xEAD840 VA: 0xEAD840
 		// private void ToggleAnimation(bool toggle, float animTime) { }
@@ -175,23 +216,7 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0xEAEB34 Offset: 0xEAEB34 VA: 0xEAEB34
 		// public bool IsPlaying() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73D774 Offset: 0x73D774 VA: 0x73D774
-		// // RVA: 0xEAEC78 Offset: 0xEAEC78 VA: 0xEAEC78
-		// private void <Start>b__33_0(int index, UGUILoopScrollContent content) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73D784 Offset: 0x73D784 VA: 0x73D784
-		// // RVA: 0xEAF00C Offset: 0xEAF00C VA: 0xEAF00C
-		// private void <Start>b__33_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73D794 Offset: 0x73D794 VA: 0x73D794
-		// // RVA: 0xEAF048 Offset: 0xEAF048 VA: 0xEAF048
-		// private void <Start>b__33_2(Vector2 vec) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73D7A4 Offset: 0x73D7A4 VA: 0x73D7A4
-		// // RVA: 0xEAF294 Offset: 0xEAF294 VA: 0xEAF294
-		// private void <Start>b__33_3() { }
-
+		
 		// [CompilerGeneratedAttribute] // RVA: 0x73D7B4 Offset: 0x73D7B4 VA: 0x73D7B4
 		// // RVA: 0xEAF41C Offset: 0xEAF41C VA: 0xEAF41C
 		// private void <Setup>b__36_0(int pictId) { }

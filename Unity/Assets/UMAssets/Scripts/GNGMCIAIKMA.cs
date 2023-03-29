@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Game.Common;
+using XeApp.Game.Menu;
 
 public class GNGMCIAIKMA
 {
@@ -281,10 +282,29 @@ public class GNGMCIAIKMA
 	}
 
 	// // RVA: 0xAB99D8 Offset: 0xAB99D8 VA: 0xAB99D8
-	// public bool GBCPDBJEDHL() { }
+	public bool GBCPDBJEDHL()
+	{
+		return GBCPDBJEDHL(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+	}
 
 	// // RVA: 0xAB9AD0 Offset: 0xAB9AD0 VA: 0xAB9AD0
-	// public bool GBCPDBJEDHL(long JHNMKKNEENE) { }
+	public bool GBCPDBJEDHL(long JHNMKKNEENE)
+	{
+		JKICPBIIHNE_Bingo bingoDb = FJLIDJJAGOM_GetBingoDb();
+		if(bingoDb != null)
+		{
+			int val = bingoDb.LPJLEHAJADA("bingo_enable", 1);
+			if(val != 0)
+			{
+				if(!QuestUtility.IsBeginnerQuest())
+				{
+					KIAAOBFJCHP(JHNMKKNEENE);
+					return CNADOFDDNLO_GetActiveBingos(JHNMKKNEENE).Count > 0;
+				}
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0xABA38C Offset: 0xABA38C VA: 0xABA38C
 	// public bool NJBPNCDPGNO(int APFDNBGMMMM) { }
@@ -485,7 +505,14 @@ public class GNGMCIAIKMA
 	// public NFMHCLHEMHB.CCGKCGJKADC MENDFPNPAAO(BBHNACPENDM AHEFHIMGIBI, int PPFNGGCBJKC) { }
 
 	// // RVA: 0xABBA8C Offset: 0xABBA8C VA: 0xABBA8C
-	// public bool BHFGBNNEMLI(int APFDNBGMMMM) { }
+	public bool BHFGBNNEMLI(int APFDNBGMMMM)
+	{
+		if(MENDFPNPAAO_GetSaveBingo(APFDNBGMMMM).AHCFGOGCJKI_St.PPFNGGCBJKC_Id == 0)
+		{
+			MENDFPNPAAO_GetSaveBingo(APFDNBGMMMM).AHCFGOGCJKI_St.KHEKNNFCAOI(1);
+		}
+		return true;
+	}
 
 	// // RVA: 0xABBB00 Offset: 0xABBB00 VA: 0xABBB00
 	// public int CGOIJPBINCF(int APFDNBGMMMM, bool BAFFAONJPCE) { }
@@ -1201,7 +1228,10 @@ public class GNGMCIAIKMA
 	}
 
 	// // RVA: 0xAC1BB8 Offset: 0xAC1BB8 VA: 0xAC1BB8
-	// public void FBHHEBDDIMO(int APFDNBGMMMM, bool NLNNKIKIPBJ) { }
+	public void FBHHEBDDIMO(int APFDNBGMMMM, bool NLNNKIKIPBJ)
+	{
+		MENDFPNPAAO_GetSaveBingo(APFDNBGMMMM).BJOHOIAKKFM_Bst = NLNNKIKIPBJ ? 1 : 0;
+	}
 
 	// // RVA: 0xAC1BF0 Offset: 0xAC1BF0 VA: 0xAC1BF0
 	// public List<JJPEIELNEJB.JLHHGLANHGE> HNBJHJENFGL(JJPEIELNEJB.OMMBBPKFLNH KOGBMDOONFA, List<int> FFLGNFIAFFE) { }
