@@ -31,7 +31,10 @@ public class SakashoPlatformPayment : SakashoAPIBase
 	//public static SakashoAPICallContext GetPurchaseCount(string platform_product_unique_key, OnSuccess onSuccess, OnError onError) { }
 
 	//// RVA: 0x2E586C8 Offset: 0x2E586C8 VA: 0x2E586C8
-	//public static SakashoAPICallContext GetSubscriptionStatuses(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetSubscriptionStatuses(OnSuccess onSuccess, OnError onError)
+	{
+		return new SakashoAPICallContext(Call(SakashoPlatformPaymentGetSubscriptionStatuses, "", onSuccess, onError));
+	}
 
 	//// RVA: 0x2E587AC Offset: 0x2E587AC VA: 0x2E587AC
 	//public static SakashoAPICallContext ClaimSubscriptionContinuationBonus(OnSuccess onSuccess, OnError onError) { }
@@ -60,7 +63,10 @@ public class SakashoPlatformPayment : SakashoAPIBase
 	//private static extern int SakashoPlatformPaymentGetPurchaseCount(int callbackId, string json) { }
 
 	//// RVA: 0x2E58DF0 Offset: 0x2E58DF0 VA: 0x2E58DF0
-	//private static extern int SakashoPlatformPaymentGetSubscriptionStatuses(int callbackId, string json) { }
+	private static int SakashoPlatformPaymentGetSubscriptionStatuses(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoPlatformPaymentGetSubscriptionStatuses(callbackId, json);
+	}
 
 	//// RVA: 0x2E58F10 Offset: 0x2E58F10 VA: 0x2E58F10
 	//private static extern int SakashoPlatformPaymentClaimSubscriptionContinuationBonus(int callbackId, string json) { }

@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using XeApp.Game;
 using XeApp.Game.Common;
+using XeApp.Game.Menu;
 using XeSys;
 
 public class JHHBAFKMBDL
@@ -125,7 +126,30 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB208BC Offset: 0xB208BC VA: 0xB208BC
-	// public void GLJAPKKLIJJ(IMCBBOAFION EDIIEFHAOGP, JFDNPFFOACP NIMPEHIECJH) { }
+	public void GLJAPKKLIJJ_ShowUpdatePopup(IMCBBOAFION EDIIEFHAOGP, JFDNPFFOACP NIMPEHIECJH)
+	{
+		PopupVersionUpCautionSetting setting = new PopupVersionUpCautionSetting();
+		setting.Buttons = new ButtonInfo[2]
+		{
+			new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+			new ButtonInfo() { Label = PopupButton.ButtonLabel.Update, Type = PopupButton.ButtonType.Positive }
+		};
+		setting.TitleText = MessageManager.Instance.GetMessage("menu", "popup_rcmd_app_update_title");
+		setting.Message = MessageManager.Instance.GetMessage("menu", "popup_rcmd_app_update_an");
+		setting.WindowSize = SizeType.Middle;
+		PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		{
+			//0x134796C
+			if(LHFGEOAJAAL != PopupButton.ButtonLabel.Update)
+			{
+				NIMPEHIECJH();
+			}
+			else
+			{
+				EDIIEFHAOGP();
+			}
+		}, null, null, null);
+	}
 
 	// // RVA: 0xB20C60 Offset: 0xB20C60 VA: 0xB20C60
 	// public void PFFJELDODOP(AMOCLPHDGBP PKLPKMLGFGK, ELBOJBBIBFM EDMKFIJKJLB, JFDNPFFOACP NIMPEHIECJH) { }

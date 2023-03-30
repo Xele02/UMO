@@ -1,5 +1,7 @@
 
+using System;
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use LGIDLHLBFFJ_MonthlyPass", true)]
 public class LGIDLHLBFFJ { }
@@ -167,7 +169,12 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// public KBCCGHLCFNO.JKGFAIPDNDL ECBMDDGPKGN() { }
 
 	// // RVA: 0xD8528C Offset: 0xD8528C VA: 0xD8528C
-	// public void AFGLHGNKOFC() { }
+	public void AFGLHGNKOFC()
+	{
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		DateTime date = Utility.GetLocalDateTime(time + 86400);
+		BKONHFNBHKL_Aextm = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+	}
 
 	// // RVA: 0xD85444 Offset: 0xD85444 VA: 0xD85444
 	// public int AIGKHDMFFMO() { }
@@ -420,7 +427,10 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// public override bool NFKFOODCJJB() { }
 
 	// // RVA: 0xD8AC14 Offset: 0xD8AC14 VA: 0xD8AC14
-	// public string POGHKGLHHFL() { }
+	public string POGHKGLHHFL()
+	{
+		return CPENFPEPDFC_Lguk.DNJEJEANJGL_Value;
+	}
 
 	// // RVA: 0xD8AC40 Offset: 0xD8AC40 VA: 0xD8AC40
 	// public string KIHJLOGLAGI() { }

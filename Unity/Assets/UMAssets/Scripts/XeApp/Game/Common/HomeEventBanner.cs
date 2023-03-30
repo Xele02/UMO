@@ -58,11 +58,11 @@ namespace XeApp.Game.Common
 			});
 			m_scrollView.OnChangeItem = (int idx) => {
 				//0xEABBA4
-				TodoLogger.Log(0, "OnChangeItem");
+				TodoLogger.Log(TodoLogger.UI, "OnChangeItem");
 			};
 			m_scrollView.OnChangeEndItem = (int idx) => {
 				//0xEABBC0
-				TodoLogger.Log(0, "OnChangeEndItem");
+				TodoLogger.Log(TodoLogger.UI, "OnChangeEndItem");
 			};
 			InitScrollType();
 		}

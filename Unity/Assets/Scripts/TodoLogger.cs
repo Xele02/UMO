@@ -29,6 +29,7 @@ public static class TodoLogger
 	public static int AndroidNotification = _NonVisible;
 	public static int CriAtomExPlayer = _NonVisible;
 	public static int HashCheck = _NonVisible;
+	public static int Java = _NonVisible;
 
 	// Need to implement at some point
 	public static int _Todo = 99999999;
@@ -37,6 +38,7 @@ public static class TodoLogger
 	public static int Errors = _Todo;
 	public static int DbIntegrityCheck = _Todo;
 	public static int Xedec = _Todo;
+	public static int UI = _Todo;
 
 	public static int Popup = 0;
 	public static int Database = 0;

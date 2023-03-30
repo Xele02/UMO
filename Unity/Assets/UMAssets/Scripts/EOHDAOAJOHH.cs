@@ -1,5 +1,8 @@
+using System;
 using UnityEngine;
 using XeApp;
+using XeApp.Game;
+using XeSys;
 
 public class EOHDAOAJOHH
 {
@@ -96,10 +99,62 @@ public class EOHDAOAJOHH
 	// public void JOADGPOBFMC() { }
 
 	// // RVA: 0xFBCB48 Offset: 0xFBCB48 VA: 0xFBCB48
-	// public void NNGHCGKIIHM(bool DDGFCOPPBBN = False) { }
+	public void NNGHCGKIIHM(bool DDGFCOPPBBN = false)
+	{
+		if(KGCCNEBMHMM != null)
+		{
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification.ILNIHDCCOEO_EventReceive != 0)
+			{
+				if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				{
+					long time;
+					if (DDGFCOPPBBN)
+					{
+						time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+					}
+					else
+					{
+						if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MNLAJEDKLCI_StamineLotTime == 0)
+							return;
+						time = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MNLAJEDKLCI_StamineLotTime;
+					}
+					int debut_push_time_offset = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("debut_push_time_offset", 60);
+					DateTime date = Utility.GetLocalDateTime(time);
+					long time2 = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+					time2 += debut_push_time_offset * 3600;
+					long time3 = Utility.GetCurrentUnixTime();
+					if(time2 >= time3 && JPFDCIFKBML(time2))
+					{
+						int idx = EJHPIMANJFP.HHCJCDFCLOB.MHKCPJDNJKI.FindIndex((LGDNAJACFHI GHPLINIACBB) =>
+						{
+							//0xFBDD4C
+							return GHPLINIACBB.JLGHMCBLENL;
+						});
+						if(idx < 0 && DDGFCOPPBBN)
+						{
+							MessageBank bk = MessageManager.Instance.GetBank("menu");
+							string str = bk.GetMessageByLabel("push_notify_debut_vc_title");
+							string str2 = bk.GetMessageByLabel("push_notify_debut_vc_msg_01");
+							if (str.Contains("!not exist"))
+								str = JpStringLiterals.StringLiteral_10303;
+							if (str2.Contains("!not exist"))
+								str2 = JpStringLiterals.StringLiteral_10304;
+							Debug.Log("SendDebutSetMessage targetUnixTime=" + time2);
+							KGCCNEBMHMM.LKCPCCANJFB(EAPDJLPDHEJ.KOGBMDOONFA, time2, 4, str, str2, 103, "png");
+						}
+					}
+				}
+			}
+		}
+	}
 
 	// // RVA: 0xFBD33C Offset: 0xFBD33C VA: 0xFBD33C
-	// public void KCKLPAEILNH() { }
+	public void KCKLPAEILNH()
+	{
+		if (KGCCNEBMHMM == null)
+			return;
+		KGCCNEBMHMM.JCHLONCMPAJ(4);
+	}
 
 	// // RVA: 0xFB8374 Offset: 0xFB8374 VA: 0xFB8374
 	// public void PAIHLJKFMNL() { }
@@ -144,7 +199,11 @@ public class EOHDAOAJOHH
 	// public void HHEDACCFPGM() { }
 
 	// // RVA: 0xFBA2B8 Offset: 0xFBA2B8 VA: 0xFBA2B8
-	// public bool JPFDCIFKBML(long EOLFJGMAJAB) { }
+	public bool JPFDCIFKBML(long EOLFJGMAJAB)
+	{
+		DateTime date = Utility.GetLocalDateTime(EOLFJGMAJAB);
+		return GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification.OCKFGNLLBFA(AKCBIJHIOGH[date.Hour]);
+	}
 
 	// // RVA: 0xFBDA10 Offset: 0xFBDA10 VA: 0xFBDA10
 	// public void KOFIBEMHONI() { }

@@ -16,5 +16,13 @@ namespace ExternLib
 			SendMessage(callbackId, res);
 			return 0;
 		}
+
+		public static int SakashoPlatformPaymentGetSubscriptionStatuses(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+			return 0;
+		}
+		
 	}
 }

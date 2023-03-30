@@ -98,7 +98,12 @@ public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0x1018544 Offset: 0x1018544 VA: 0x1018544
-	// public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }
+	public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH)
+	{
+		if (!FJOEBCMGDMI_StringValues.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		return FJOEBCMGDMI_StringValues[LJNAKDMILMC];
+	}
 
 	// // RVA: 0x1018658 Offset: 0x1018658 VA: 0x1018658
 	// public int MAOBENAPFNI(int POMMEMHCDCA) { }

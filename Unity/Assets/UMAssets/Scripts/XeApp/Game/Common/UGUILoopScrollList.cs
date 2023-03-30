@@ -246,13 +246,13 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CD4AB8 Offset: 0x1CD4AB8 VA: 0x1CD4AB8
 		private void UpdateScrollCb(Vector2 position)
 		{
-			TodoLogger.Log(0, "UpdateScrollCb");
+			TodoLogger.Log(TodoLogger.UI, "UpdateScrollCb");
 		}
 
 		//// RVA: 0x1CD47C4 Offset: 0x1CD47C4 VA: 0x1CD47C4
 		public void VisibleRegionUpdate()
 		{
-			TodoLogger.Log(0, "VisibleRegionUpdate");
+			TodoLogger.Log(TodoLogger.UI, "VisibleRegionUpdate");
 		}
 
 		//// RVA: 0x1CD6AC4 Offset: 0x1CD6AC4 VA: 0x1CD6AC4

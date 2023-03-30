@@ -9,6 +9,7 @@ class JpStringLiterals
 	public const string StringLiteral_9630 = "から新しいメッセージがあります。"; // 0x03bb2130
 	public const string StringLiteral_9767 = "超時空ユニット"; // 0x03bb2354
 	public const string StringLiteral_9787 = "<color=yellow>期間限定エナジーアイテムの削除</color>"; // 0x03bb23a4
+	public const string StringLiteral_9788 = "<color=pink>ログイン日数="; // 0x03bb23a8
 	public const string StringLiteral_9793 = "エナジー"; // 0x03bb23bc
 	public const string StringLiteral_9794 = "スタミナ"; // 0x03bb23c0
 	public const string StringLiteral_9796 = "コンテニュー"; // 0x03bb23c8
@@ -75,6 +76,8 @@ class JpStringLiterals
 	public const string StringLiteral_10178 = "ガチャ天井アイテム"; // 0x03bb29c0
 	public const string StringLiteral_10282 = "AP全回復"; //0x03bb2b60
 	public const string StringLiteral_10294 = "超時空SNS"; // 0x03bb2b90
+	public const string StringLiteral_10303 = "歌晶石セール開催中！"; // 0x03bb2bb4
+	public const string StringLiteral_10304 = "今だけのごりっごりお得な歌晶石セット。もうすぐ買えなくなっちゃうんよ！"; // 0x03bb2bb8
 	public const string StringLiteral_10309 = "エナジー回復"; // 0x03bb2bcc
 	public const string StringLiteral_10310 = "エナジーが全回復しました！"; // 0x03bb2bd0
 	public const string StringLiteral_10346 = "LinkError : 自分自身のIDをリンクIDに指定している"; // 0x03bb2c60

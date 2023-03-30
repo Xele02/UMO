@@ -3624,7 +3624,10 @@ public class ILDKBCLAFPB
         // public void AAHGFMHAJFG(int ICDJHNPILBC, bool JKDJCFEBDHC) { }
 
         // // RVA: 0x2035A60 Offset: 0x2035A60 VA: 0x2035A60
-        // public bool OCKFGNLLBFA(int ICDJHNPILBC) { }
+        public bool OCKFGNLLBFA(int ICDJHNPILBC)
+		{
+			return (OLBKCGKDBBL_TimeSlotAndBoss & (1 << ICDJHNPILBC)) == 0;
+		}
 
         // // RVA: 0x2035A7C Offset: 0x2035A7C VA: 0x2035A7C
         public static bool CHDGLBBFEKH_IsEqual(JDBOPCADICO_Notification ILEKEPJBFDP, JDBOPCADICO_Notification GEPALDIIDPC)
