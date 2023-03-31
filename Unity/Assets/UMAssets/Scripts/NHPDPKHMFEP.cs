@@ -190,7 +190,8 @@ public class NHPDPKHMFEP
 							CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF(() =>
 							{
 								//0x189D73C
-								!!!
+								TodoLogger.Log(0, "TODO");
+								BHFHGFKBOHH();
 							}, AOCANKOMKFG, null);
 						}
 					};

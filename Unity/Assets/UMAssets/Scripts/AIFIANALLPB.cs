@@ -40,7 +40,14 @@ public class AIFIANALLPB
 		PLOOEECNHFB = false;
 		if(!FBBNPFFEJBN)
 		{
-			TodoLogger.Log(0, "TODO");
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			if(29 >= (time - ECFNAOCFKKN_Date))
+			{
+				PLOOEECNHFB = true;
+				if (BHFHGFKBOHH != null)
+					BHFHGFKBOHH();
+				return;
+			}
 		}
 		GNDBGCIECCN.Clear();
 		AACJKHBODGM.Clear();

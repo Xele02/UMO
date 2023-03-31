@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using XeApp.Game;
 using XeApp.Game.Common;
 public class CGFNKMNBNBN
 {
@@ -166,9 +167,20 @@ public class CGFNKMNBNBN
 	// public static IEnumerator PKMMMMFMCBE(int KEFGPJBKAOD, Action<Texture2D> KBCBGIGOLHP) { }
 
 	// // RVA: 0x12BBA64 Offset: 0x12BBA64 VA: 0x12BBA64
-	public static bool DGCIHGPOMCI(long JHNMKKNEENE)
+	public static bool DGCIHGPOMCI_CheckHomeBgExpire(long JHNMKKNEENE)
 	{
-		TodoLogger.Log(5, "DGCIHGPOMCI");
+		if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MDKELFPNCDB_HomeSceneEvolveId == 0)
+		{
+			CGFNKMNBNBN g = ELKDCEEPLKB(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.GPHPNEGGGBG_HomeSceneId);
+			if(g != null)
+			{
+				if(g.GJFPFFBAKGK_CloseAt != 0 && g.GJFPFFBAKGK_CloseAt < JHNMKKNEENE)
+				{
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.GPHPNEGGGBG_HomeSceneId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId - 1].CMBCBNEODPD_HomeBgId;
+					return true;
+				}
+			}
+		}
 		return false;
 	}
 }

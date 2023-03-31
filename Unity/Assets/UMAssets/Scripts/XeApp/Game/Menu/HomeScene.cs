@@ -158,18 +158,18 @@ namespace XeApp.Game.Menu
 				m_isUpdateMusicRateRanking = true;
 			}, () => {
 				//0x13C7A3C
-				TodoLogger.Log(0, "MJFKJHJJLMN_GetUtaRateRank");
+				m_isUpdateMusicRateRanking = true;
 			});
 			if(!MenuScene.IsAlreadyHome)
 			{
 				m_isCheckGachaProductList = false;
 				NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.LILDGEPCPPG_GetProducList(() => {
 					//0x13C7AD0
-					TodoLogger.Log(0, "LILDGEPCPPG_GetProducList");
+					TodoLogger.Log(0, "LILDGEPCPPG_GetProducList 1");
 					m_isCheckGachaProductList = true;
 				}, () => {
 					//0x13C7B24
-					TodoLogger.Log(0, "LILDGEPCPPG_GetProducList");
+					TodoLogger.Log(0, "LILDGEPCPPG_GetProducList 2");
 				}, false, false);
 			}
 			else
@@ -177,7 +177,7 @@ namespace XeApp.Game.Menu
 				m_isCheckGachaProductList = true;
 			}
 			
-			if(CGFNKMNBNBN.DGCIHGPOMCI(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()))
+			if(CGFNKMNBNBN.DGCIHGPOMCI_CheckHomeBgExpire(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()))
 			{
 				this.StartCoroutineWatched(Co_ChangeBg());
 			}
