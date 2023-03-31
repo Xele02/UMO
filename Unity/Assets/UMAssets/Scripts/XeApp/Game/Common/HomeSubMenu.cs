@@ -16,11 +16,11 @@ namespace XeApp.Game.Common
 		[SerializeField]
 		private CanvasGroup m_canvasGroup; // 0x14
 
-		//public Action onClickPresentButton { set; } 0xEB16E4
-		//public Action onClickNoticeButton { set; } 0xEB1784
-		//public Action onClickMPassButton { set; } 0xEB181C
-		//public Action onClickFriendButton { set; } 0xEB18B4
-		//public Action onClickSnsButton { set; } 0xEB194C
+		public Action onClickPresentButton { set { m_buttons[0].onClickButton = value; } } //0xEB16E4
+		public Action onClickNoticeButton { set { m_buttons[1].onClickButton = value; } } //0xEB1784
+		public Action onClickMPassButton { set { m_buttons[2].onClickButton = value; } } //0xEB181C
+		public Action onClickFriendButton { set { m_buttons[3].onClickButton = value; } } //0xEB18B4
+		public Action onClickSnsButton { set { m_buttons[4].onClickButton = value; } } //0xEB194C
 
 		//// RVA: 0xEB19E4 Offset: 0xEB19E4 VA: 0xEB19E4
 		private void Start()

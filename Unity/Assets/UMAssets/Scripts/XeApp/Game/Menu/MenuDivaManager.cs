@@ -33,9 +33,9 @@ namespace XeApp.Game.Menu
 		private Camera divaCamera; // 0x44
 
 		public bool IsLoading { get; private set; } // 0x48
-		//public MenuDivaVoiceTable VoiceTable { get; } 0xECA3B4
-		//public MenuDivaVoiceTableCos VoiceTableCos { get; } 0xECA3BC
-		//public IList<int> ReactionWeights { get; } 0xECA3C4
+		public MenuDivaVoiceTable VoiceTable { get { return voiceTable; } } //0xECA3B4
+		public MenuDivaVoiceTableCos VoiceTableCos { get { return voiceTableCos; } } //0xECA3BC
+		public IList<int> ReactionWeights { get { return divaMenuParam.ReactionWeights; } } //0xECA3C4
 		public int DivaId { get { return divaObject != null ? divaObject.divaId : -1; } } //0xECA3F0
 		public int ModelId { get { return divaObject != null ? divaObject.modelId : -1; } } //0xECA4A8
 		public int ColorId { get { return divaObject != null ? divaObject.colorId : -1; } } //0xECA560

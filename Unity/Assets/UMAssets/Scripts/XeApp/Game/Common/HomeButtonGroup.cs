@@ -28,12 +28,12 @@ namespace XeApp.Game.Common
 		private CanvasGroup m_canvasGroup; // 0x24
 
 		//public HomeUIHideButton buttonUIHide { get; } 0xEA8138
-		//public Action onClickBgChangeButton { set; } 0xEA8140
-		//public Action<bool> onClickUIHideButton { set; } 0xEA8168
-		//public Action onClickStoryButton { set; } 0xEA8198
-		//public Action onClickGakuyaButton { set; } 0xEA81C8
-		//public Action onClickDecoRoomButton { set; } 0xEA81F8
-		//public Action<int> onClickBingoButton { set; } 0xEA8228
+		public Action onClickBgChangeButton { set { m_buttonBgChange.onClickButton = value; } } //0xEA8140
+		public Action<bool> onClickUIHideButton { set { m_buttonUIHide.onClickButton = value; } } //0xEA8168
+		public Action onClickStoryButton { set { m_buttonStory.onClickButton = value; } } //0xEA8198
+		public Action onClickGakuyaButton { set { m_buttonGakuya.onClickButton = value; } } //0xEA81C8
+		public Action onClickDecoRoomButton { set { m_buttonDecoRoom.onClickButton = value; } } //0xEA81F8
+		public Action<int> onClickBingoButton { set { m_buttonBingo.onClickButton = value; } } //0xEA8228
 
 		//// RVA: 0xEA8250 Offset: 0xEA8250 VA: 0xEA8250
 		//public void Setup(long currentTime) { }

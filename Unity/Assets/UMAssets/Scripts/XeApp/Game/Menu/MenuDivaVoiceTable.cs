@@ -21,25 +21,25 @@ namespace XeApp.Game.Menu
 
 		[SerializeField]
 		[Header("- m_home_[Voice Id]")]
-		private List<MenuDivaVoiceTable.Data> m_timeTalk; // 0xC
+		private List<Data> m_timeTalk; // 0xC
 		[SerializeField]
-		private List<MenuDivaVoiceTable.Data> m_loginTalk; // 0x10
+		private List<Data> m_loginTalk; // 0x10
 		[SerializeField]
-		private MenuDivaVoiceTable.Data m_comeback; // 0x14
+		private Data m_comeback; // 0x14
 		[SerializeField]
-		private MenuDivaVoiceTable.Data m_birthdayTalk; // 0x18
+		private Data m_birthdayTalk; // 0x18
 		[Header("- diva_[Diva Id]_m_home_[Voice Id]")]
 		[SerializeField]
-		private List<MenuDivaVoiceTable.Data> m_eventTalk; // 0x1C
+		private List<Data> m_eventTalk; // 0x1C
 		[SerializeField]
 		[Header("- touch [Voice Id] [Touch / Talk / Timezone / Present / SimpleTalk]")]
-		private List<MenuDivaVoiceTable.Data> m_touchReaction; // 0x20
+		private List<Data> m_touchReaction; // 0x20
 		[SerializeField]
 		[Header("- present [Voice Id] [Touch / Talk / Timezone / Present / SimpleTalk]")]
-		private List<MenuDivaVoiceTable.Data> m_presentReaction; // 0x24
+		private List<Data> m_presentReaction; // 0x24
 		[Header("- intimacy [Voice Id] [Touch / Talk / Timezone / Present / SimpleTalk]")]
 		[SerializeField]
-		private List<MenuDivaVoiceTable.Data> m_intimacyReaction; // 0x28
+		private List<Data> m_intimacyReaction; // 0x28
 		[SerializeField]
 		[Header("")] // RVA: 0x669D34 Offset: 0x669D34 VA: 0x669D34
 		private List<int> m_IntimacyLock_TimeTalk; // 0x2C
@@ -47,7 +47,10 @@ namespace XeApp.Game.Menu
 		private List<int> m_IntimacyLock_TouchReaction; // 0x30
 
 		// // RVA: 0xECE090 Offset: 0xECE090 VA: 0xECE090
-		// public List<MenuDivaVoiceTable.Data> GetList_TimeTalk() { }
+		public List<Data> GetList_TimeTalk()
+		{
+			return m_timeTalk;
+		}
 
 		// // RVA: 0xED0848 Offset: 0xED0848 VA: 0xED0848
 		// public List<MenuDivaVoiceTable.Data> GetList_LoginTalk() { }

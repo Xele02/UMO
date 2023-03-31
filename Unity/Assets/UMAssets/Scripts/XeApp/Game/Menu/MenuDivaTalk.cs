@@ -1,26 +1,32 @@
+using System.Collections.Generic;
+using System.Diagnostics;
+using XeApp.Game.Common;
+
 namespace XeApp.Game.Menu
 {
 	public class MenuDivaTalk
 	{
-		// private static readonly float s_autoTalkInterval = 10.0f; // 0x0
-		// private static readonly int s_autoTalkBasicWeight = 10; // 0x4
-		// private static readonly int s_autoTalkLimitedWeight = s_autoTalkBasicWeight; // 0x8
-		// private static readonly int s_autoTalkBirthdayWeight = s_autoTalkBasicWeight; // 0xC
-		// private List<NJOOMLFFIJB> m_limitedTalkData; // 0x10
-		// private List<int> m_limitedTalkIndex; // 0x14
-		// private NJOOMLFFIJB m_birthdayTalkData; // 0x18
-		// private int m_birthdayTalkIndex; // 0x1C
-		// private int m_prevAutoTalkIndex; // 0x20
-		// private List<int> m_autoTalkWeights; // 0x24
-		// private Stopwatch m_autoTalkWatch; // 0x28
-		// private int m_prevReactionIndex; // 0x2C
-		// private List<int> m_reactionWeights; // 0x30
-		// private long m_loginTime; // 0x38
-		// private HomeDivaControl m_divaControl; // 0x40
+		public delegate void OnChangedMessage(string msgLabel);
 
-		// public JJOELIOGMKK viewIntimacyData { private get; set; }  // 0x8
-		// public MenuDivaTalk.OnChangedMessage onChangedMessage { private get; set; } // 0xC
-		// private MenuDivaManager divaManager { get; } 0xECD720
+		private static readonly float s_autoTalkInterval = 10.0f; // 0x0
+		private static readonly int s_autoTalkBasicWeight = 10; // 0x4
+		private static readonly int s_autoTalkLimitedWeight = s_autoTalkBasicWeight; // 0x8
+		private static readonly int s_autoTalkBirthdayWeight = s_autoTalkBasicWeight; // 0xC
+		private List<NJOOMLFFIJB> m_limitedTalkData = new List<NJOOMLFFIJB>(); // 0x10
+		private List<int> m_limitedTalkIndex = new List<int>(); // 0x14
+		private NJOOMLFFIJB m_birthdayTalkData; // 0x18
+		private int m_birthdayTalkIndex = -1; // 0x1C
+		private int m_prevAutoTalkIndex = -1; // 0x20
+		private List<int> m_autoTalkWeights; // 0x24
+		private Stopwatch m_autoTalkWatch = new Stopwatch(); // 0x28
+		private int m_prevReactionIndex = -1; // 0x2C
+		private List<int> m_reactionWeights; // 0x30
+		private long m_loginTime; // 0x38
+		private HomeDivaControl m_divaControl; // 0x40
+
+		public JJOELIOGMKK_DivaIntimacyInfo viewIntimacyData { private get; set; }  // 0x8
+		public OnChangedMessage onChangedMessage { private get; set; } // 0xC
+		private MenuDivaManager divaManager { get { return MenuScene.Instance.divaManager; } } //0xECD720
 		// private ILDKBCLAFPB saveManager { get; } 0xECD7BC
 		// private ILDKBCLAFPB.BKLCILHFCGB talkFlags { get; } 0xECD858
 
@@ -28,13 +34,47 @@ namespace XeApp.Game.Menu
 		// public static void ClearHomeTalkFlags() { }
 
 		// // RVA: 0xECD9B8 Offset: 0xECD9B8 VA: 0xECD9B8
-		// public void .ctor(int divaId, HomeDivaControl divaControl) { }
+		public MenuDivaTalk(int divaId, HomeDivaControl divaControl)
+		{
+			List<NJOOMLFFIJB> talkDataList = NJOOMLFFIJB.FKDIMODKKJD(divaId);
+			m_divaControl = divaControl;
+			m_autoTalkWeights = new List<int>();
+			MenuDivaVoiceTable voiceTable = divaControl.VoiceTable;
+			for (int i = 0; i < voiceTable.GetList_TimeTalk().Count; i++)
+			{
+				m_autoTalkWeights.Add(s_autoTalkBasicWeight);
+			}
+			m_limitedTalkData.Clear();
+			m_limitedTalkIndex.Clear();
+			for(int i = 0; i < talkDataList.Count; i++)
+			{
+				if(talkDataList[i].NEJBNCHLMNJ_Type == NJOOMLFFIJB.LGAJNFGABFK.AJGKPBOPIJI_Limited)
+				{
+					m_limitedTalkData.Add(talkDataList[i]);
+					m_limitedTalkIndex.Add(m_autoTalkWeights.Count);
+					m_autoTalkWeights.Add(s_autoTalkLimitedWeight);
+				}
+			}
+			NJOOMLFFIJB data = talkDataList.Find((NJOOMLFFIJB _) =>
+			{
+				//0xED07B8
+				return _.NEJBNCHLMNJ_Type == NJOOMLFFIJB.LGAJNFGABFK.DDAFHPDFFPI_Brithday;
+			});
+			m_birthdayTalkData = data;
+			m_birthdayTalkIndex = m_autoTalkWeights.Count;
+			m_autoTalkWeights.Add(m_birthdayTalkData == null ? 0 : s_autoTalkBirthdayWeight);
+			m_reactionWeights = new List<int>(divaManager.ReactionWeights);
+			TimerStop();
+		}
 
 		// // RVA: 0xECE0C4 Offset: 0xECE0C4 VA: 0xECE0C4
 		// public void TimerStart() { }
 
 		// // RVA: 0xECE098 Offset: 0xECE098 VA: 0xECE098
-		// public void TimerStop() { }
+		public void TimerStop()
+		{
+			m_autoTalkWatch.Stop();
+		}
 
 		// // RVA: 0xECE0F0 Offset: 0xECE0F0 VA: 0xECE0F0
 		// public void TimerRestart() { }
@@ -49,7 +89,13 @@ namespace XeApp.Game.Menu
 		// public bool IsDownLoading() { }
 
 		// // RVA: 0xECE218 Offset: 0xECE218 VA: 0xECE218
-		// public void RequestDelayDownLoad() { }
+		public void RequestDelayDownLoad()
+		{
+			for(int i = 0; i < m_limitedTalkData.Count; i++)
+			{
+				m_divaControl.RequestDelayDownLoad(m_limitedTalkData[i].NKCNHKHGJHN_TalkType);
+			}
+		}
 
 		// // RVA: 0xECE310 Offset: 0xECE310 VA: 0xECE310
 		// public void DoIntroTalk(bool resetTalkFlags = False) { }
@@ -75,11 +121,31 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xECF9A4 Offset: 0xECF9A4 VA: 0xECF9A4
 		public void Update()
 		{
-			TodoLogger.Log(5, "MenuDivaTalk Update");
+			if(m_autoTalkWatch.IsRunning)
+			{
+				if(!PopupWindowManager.IsActivePopupWindow())
+				{
+					if(m_divaControl.IsActionRequested)
+					{
+						m_autoTalkWatch.Reset();
+						m_autoTalkWatch.Start();
+					}
+					else
+					{
+						if (m_autoTalkWatch.Elapsed.TotalSeconds >= s_autoTalkInterval)
+							DoAutoTalk();
+					}
+				}
+			}
 		}
 
 		// // RVA: 0xECEBE4 Offset: 0xECEBE4 VA: 0xECEBE4
-		// private void DoAutoTalk() { }
+		private void DoAutoTalk()
+		{
+			TodoLogger.Log(0, "DoAutoTalk");
+			m_autoTalkWatch.Reset();
+			m_autoTalkWatch.Start();
+		}
 
 		// // RVA: 0xECE9F8 Offset: 0xECE9F8 VA: 0xECE9F8
 		// private void RequestTimezoneTalk() { }
