@@ -43,12 +43,12 @@ namespace XeApp.Game.Common
 		private Vector2 m_animStartPos = Vector2.zero; // 0x154
 		private Vector2 m_animEndPos = Vector2.zero; // 0x15C
 
-		//public Vector2 ContentSize { get; } 0x1CD3CF0
-		//public Vector2 Spacing { get; } 0x1CD3D04
-		//public List<UGUILoopScrollContent> ScrollObjects { get; } 0x1CD3D18
+		public Vector2 ContentSize { get { return m_contentSize; } } //0x1CD3CF0
+		public Vector2 Spacing { get { return m_spacing; } } //0x1CD3D04
+		public List<UGUILoopScrollContent> ScrollObjects { get { return m_scrollObjects; } } //0x1CD3D18
 		//public int RowCount { get; } 0x1CD3D20
 		//public int ColumnCount { get; } 0x1CD3D28
-		//public int ObjectPoolSize { get; } 0x1CD3D30
+		public int ObjectPoolSize { get { return m_columnCount * m_rowCount; } } //0x1CD3D30
 		//public bool IsEnableScroll { get; } 0x1CD3D40
 		public bool IsDrag { get; private set; } // 0x110
 		public Action<int, UGUILoopScrollContent> OnUpdateItem { get; set; } // 0x114
@@ -177,25 +177,43 @@ namespace XeApp.Game.Common
 		//public bool IsEnableTouchId(PointerEventData eventData) { }
 
 		//// RVA: 0x1CD5880 Offset: 0x1CD5880 VA: 0x1CD5880
-		//public void AddScrollObject(UGUILoopScrollContent obj) { }
+		public void AddScrollObject(UGUILoopScrollContent obj)
+		{
+			m_scrollObjects.Add(obj);
+		}
 
 		//// RVA: 0x1CD5900 Offset: 0x1CD5900 VA: 0x1CD5900
 		//public void RemoveScrollObject(UGUILoopScrollContent obj) { }
 
 		//// RVA: 0x1CD5980 Offset: 0x1CD5980 VA: 0x1CD5980
-		//public void ClearScrollObject() { }
+		public void ClearScrollObject()
+		{
+			m_scrollObjects.Clear();
+		}
 
 		//// RVA: 0x1CD59F8 Offset: 0x1CD59F8 VA: 0x1CD59F8
-		//public void Apply(int rowCount, int columnCount, Vector2 contentSize) { }
+		public void Apply(int rowCount, int columnCount, Vector2 contentSize)
+		{
+			m_rowCount = rowCount;
+			m_columnCount = columnCount;
+			m_contentSize = contentSize;
+			Apply();
+		}
 
 		//// RVA: 0x1CD5A10 Offset: 0x1CD5A10 VA: 0x1CD5A10
-		//public void Apply() { }
+		public void Apply()
+		{
+			TodoLogger.Log(TodoLogger.UI, "Apply");
+		}
 
 		//// RVA: 0x1CD5DB0 Offset: 0x1CD5DB0 VA: 0x1CD5DB0
 		//public void SetContentEscapeMode(bool isEnable) { }
 
 		//// RVA: 0x1CD63A4 Offset: 0x1CD63A4 VA: 0x1CD63A4
-		//public void SetItemCount(int count, bool isLoop = False) { }
+		public void SetItemCount(int count, bool isLoop = false)
+		{
+			TodoLogger.Log(TodoLogger.UI, "SetItemCount");
+		}
 
 		//// RVA: 0x1CD493C Offset: 0x1CD493C VA: 0x1CD493C
 		private Vector2 GetContentSize(int count)
@@ -205,7 +223,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CD66C0 Offset: 0x1CD66C0 VA: 0x1CD66C0
-		//public void SetPosition(int index, float animTime = 0) { }
+		public void SetPosition(int index, float animTime = 0)
+		{
+			TodoLogger.Log(TodoLogger.UI, "SetPosition");
+		}
 
 		//// RVA: 0x1CD6964 Offset: 0x1CD6964 VA: 0x1CD6964
 		//public void SetPosition(float xpos, float ypos, float animTime = 0) { }

@@ -3,6 +3,8 @@ using System;
 using UnityEngine.UI;
 using XeApp.Game.Menu;
 using System.Collections.Generic;
+using System.Collections;
+using System.Text;
 
 namespace XeApp.Game.Common
 {
@@ -48,7 +50,11 @@ namespace XeApp.Game.Common
 			}
 
 			// // RVA: 0xEADA10 Offset: 0xEADA10 VA: 0xEADA10
-			// public void Init(float wait) { }
+			public void Init(float wait)
+			{
+				m_wait = wait;
+				m_time = 0;
+			}
 		}
 
 		// [HeaderAttribute] // RVA: 0x68A404 Offset: 0x68A404 VA: 0x68A404
@@ -110,7 +116,7 @@ namespace XeApp.Game.Common
 		private int m_inputDisableCount; // 0x64
 		private RepeatTimer m_repeatTimer = new RepeatTimer(); // 0x68
 		private HomeBannerTextureCache m_bannerTexCache; // 0x6C
-		// private List<JBCAHMMCOKK> m_list = new List<JBCAHMMCOKK>(); // 0x70
+		private List<JBCAHMMCOKK> m_list = new List<JBCAHMMCOKK>(); // 0x70
 
 		public Action<int> onClickBannerButton { private get; set; } // 0x74
 
@@ -156,25 +162,76 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAD400 Offset: 0xEAD400 VA: 0xEAD400
-		// public void Setup(List<JBCAHMMCOKK> list, HomeBannerTextureCache bannerTexCache) { }
+		public void Setup(List<JBCAHMMCOKK> list, HomeBannerTextureCache bannerTexCache)
+		{
+			m_bannerTexCache = bannerTexCache;
+			m_list = list;
+			for(int i = 0; i < m_scrollView.ScrollObjects.Count; i++)
+			{
+				Destroy(m_scrollView.ScrollObjects[i].gameObject);
+			}
+			m_scrollView.ClearScrollObject();
+			for(int i = 0; i < m_scrollView.ObjectPoolSize; i++)
+			{
+                HomePickupBannerContent banner = Instantiate(m_objBanner);
+				banner.name = banner.name.Replace("(Clone)", string.Format("_{0:D2}0", i));
+				banner.transform.SetParent(m_scrollView.content, false);
+				banner.SetFont(m_font);
+				banner.onClickButton = (int pictId) => {
+					//0xEAF41C
+					if(onClickBannerButton != null)
+						onClickBannerButton(pictId);
+				};
+				m_scrollView.AddScrollObject(banner);
+            }
+			ToggleAnimation(true, 0);
+			m_toggleOpenClose = false;
+		}
 
 		// // RVA: 0xEAD960 Offset: 0xEAD960 VA: 0xEAD960
-		// public void StartAutoScroll() { }
+		public void StartAutoScroll()
+		{
+			if(m_list.Count < 2)
+				m_repeatTimer.Init(0);
+			else
+				m_repeatTimer.Init(m_autoScrollWait);
+		}
 
 		// // RVA: 0xEADA20 Offset: 0xEADA20 VA: 0xEADA20
 		// public void StopAutoScroll() { }
 
 		// // RVA: 0xEADA4C Offset: 0xEADA4C VA: 0xEADA4C
-		// public int GetContentSize(bool vertical) { }
+		public int GetContentSize(bool vertical)
+		{
+			if(vertical)
+			{
+				return (int)(Mathf.Min(m_list.Count, 5) * Mathf.Round(m_scrollView.ContentSize.y + m_scrollView.Spacing.y));
+			}
+			else
+			{
+				return (int)Mathf.Round(m_scrollView.ContentSize.x + m_scrollView.Spacing.x);
+			}
+		}
 
 		// // RVA: 0xEADBBC Offset: 0xEADBBC VA: 0xEADBBC
-		// private void InputEnable() { }
+		private void InputEnable()
+		{
+			m_inputDisableCount = Mathf.Max(m_inputDisableCount - 1, 0);
+			m_buttonOpenClose.enabled = m_inputDisableCount == 0;
+		}
 
 		// // RVA: 0xEADC7C Offset: 0xEADC7C VA: 0xEADC7C
-		// private void InputDisable() { }
+		private void InputDisable()
+		{
+			m_inputDisableCount = Mathf.Max(m_inputDisableCount + 1, 0);
+			m_buttonOpenClose.enabled = m_inputDisableCount == 0;
+		}
 
 		// // RVA: 0xEADD3C Offset: 0xEADD3C VA: 0xEADD3C
-		// private void SetPageNum(int page) { }
+		private void SetPageNum(int page)
+		{
+			m_textPageNum.text = string.Format("{0}\n{1}", page, m_list.Count);
+		}
 
 		// // RVA: 0xEADE44 Offset: 0xEADE44 VA: 0xEADE44
 		private void OnClickToggle()
@@ -183,18 +240,150 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAD840 Offset: 0xEAD840 VA: 0xEAD840
-		// private void ToggleAnimation(bool toggle, float animTime) { }
+		private void ToggleAnimation(bool toggle, float animTime)
+		{
+			IEnumerator e = Co_ToggleAnimation(toggle, animTime);
+			if(animTime > 0)
+			{
+				this.StartCoroutineWatched(e);
+			}
+			else
+			{
+				e.MoveNext();
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73D684 Offset: 0x73D684 VA: 0x73D684
 		// // RVA: 0xEADF04 Offset: 0xEADF04 VA: 0xEADF04
-		// private IEnumerator Co_ToggleAnimation(bool toggle, float animTime) { }
+		private IEnumerator Co_ToggleAnimation(bool toggle, float animTime)
+		{
+			RectTransform scrollViewRect; // 0x1C
+			Vector2 scrollSize; // 0x20
+			int contentSize; // 0x28
+			int animStart; // 0x2C
+			int animEnd; // 0x30
+			int diff; // 0x34
+			float time; // 0x38
+			float speed; // 0x3C
+
+			//0xEAF4CC
+			InputDisable();
+			if(!toggle)
+			{
+				ChangeScrollType(true);
+				m_scrollView.Apply(6, 1, m_scrollView.ContentSize);
+				m_scrollView.SetItemCount(m_list.Count, false);
+				m_scrollView.SetPosition(0, 0);
+				SetPageNum(1);
+			}
+			scrollViewRect = m_scrollView.transform as RectTransform;
+			scrollSize = scrollViewRect.sizeDelta;
+			contentSize = GetContentSize(true);
+			if(!toggle)
+			{
+				m_imageOpenClose.sprite = m_tableReplace[0].sprite;
+				animStart = Mathf.Min(m_sizeClose, contentSize);
+				animEnd = Mathf.Min(m_sizeOpen, contentSize);
+				m_scrollView.vertical = m_sizeOpen < contentSize;
+			}
+			else
+			{
+				m_imageOpenClose.sprite = m_tableReplace[1].sprite;
+				animStart = Mathf.Min(m_sizeOpen, contentSize);
+				animEnd = Mathf.Min(m_sizeClose, contentSize);
+				m_scrollView.vertical = m_sizeOpen < contentSize;
+			}
+			time = 0;
+			diff = animEnd - animStart;
+			speed = 1.0f / animTime;
+			while(time <= animTime)
+			{
+				time += Time.deltaTime;
+				float f = m_animOpenClose.Evaluate(time * speed);
+				scrollSize.y = f * diff + animStart;
+				scrollViewRect.sizeDelta = scrollSize;
+				yield return null;
+			}
+			scrollSize.y = animEnd;
+			scrollViewRect.sizeDelta = scrollSize;
+			if(!toggle)
+			{
+				if(m_scrollbar != null)
+				{
+					m_scrollbar.SetActive(scrollSize.y < contentSize);
+				}
+			}
+			else
+			{
+				ChangeScrollType(false);
+				m_scrollView.Apply(1, 6, m_scrollView.ContentSize);
+				m_scrollView.SetItemCount(m_list.Count, true);
+				m_scrollView.SetPosition(0, 0);
+				SetPageNum(1);
+				if(m_scrollbar != null)
+				{
+					m_scrollbar.SetActive(false);
+				}
+			}
+			InputEnable();
+		}
 
 		// // RVA: 0xEADFF0 Offset: 0xEADFF0 VA: 0xEADFF0
-		// private void ChangeScrollType(bool vertical) { }
+		private void ChangeScrollType(bool vertical)
+		{
+			m_vertical = vertical;
+			if(vertical)
+			{
+				m_scrollView.content.anchoredPosition = new Vector2(0, m_scrollView.content.anchoredPosition.y);
+				m_scrollView.content.offsetMin = new Vector2(5, m_scrollView.content.offsetMin.y);
+				m_scrollView.horizontal = false;
+				m_scrollView.vertical = true;
+				m_scrollView.verticalNormalizedPosition = 1;
+				m_scrollView.movementType = ScrollRect.MovementType.Elastic;
+				m_imageScroll.enabled = true;
+				m_rootPageNum.gameObject.SetActive(false);
+				m_repeatTimer.Init(0);
+			}
+			else
+			{
+				m_scrollView.content.anchoredPosition = new Vector2(m_scrollView.content.anchoredPosition.x, 0);
+				m_scrollView.content.offsetMin = new Vector2(20, m_scrollView.content.offsetMin.y);
+				m_scrollView.horizontal = m_list.Count > 1;
+				m_scrollView.vertical = false;
+				m_scrollView.horizontalNormalizedPosition = 1;
+				m_scrollView.movementType = ScrollRect.MovementType.Unrestricted;
+				m_imageScroll.enabled = false;
+				m_rootPageNum.gameObject.SetActive(true);
+				if(m_list.Count < 2)
+				{
+					m_repeatTimer.Init(0);
+					m_buttonOpenClose.gameObject.SetActive(false);
+				}
+				else
+				{
+					StartAutoScroll();
+					m_buttonOpenClose.gameObject.SetActive(true);
+				}
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73D6FC Offset: 0x73D6FC VA: 0x73D6FC
 		// // RVA: 0xEAE560 Offset: 0xEAE560 VA: 0xEAE560
-		// public IEnumerator Co_TryInstallBanner(List<JBCAHMMCOKK> list) { }
+		public IEnumerator Co_TryInstallBanner(List<JBCAHMMCOKK> list)
+		{
+			//0xEAFD58
+			if(list == null)
+				list = m_list;
+			StringBuilder str = new StringBuilder(32);
+			bool b = false;
+			for(int i = 0; i < list.Count; i++)
+			{
+				TodoLogger.Log(0, "Co_TryInstallBanner");
+			}
+			if(!b)
+				yield break;
+			TodoLogger.Log(0, "Co_TryInstallBanner");
+		}
 
 		// // RVA: 0xEAE628 Offset: 0xEAE628 VA: 0xEAE628
 		// private void LoadBanner(int pictId, Action<IiconTexture> onLoaded) { }
@@ -216,9 +405,5 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0xEAEB34 Offset: 0xEAEB34 VA: 0xEAEB34
 		// public bool IsPlaying() { }
-		
-		// [CompilerGeneratedAttribute] // RVA: 0x73D7B4 Offset: 0x73D7B4 VA: 0x73D7B4
-		// // RVA: 0xEAF41C Offset: 0xEAF41C VA: 0xEAF41C
-		// private void <Setup>b__36_0(int pictId) { }
 	}
 }

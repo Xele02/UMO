@@ -42,27 +42,27 @@ namespace XeApp.Game.Menu
 		private bool m_isUpdateMusicRateRanking; // 0x8B
 		private bool m_isHomeShowDiva = true; // 0x8C
 		// private bool m_isHiddenUI; // 0x8D
-		// private KNKDBNFMAKF m_spEventCtrl; // 0x90
-		// private CHHECNJBMLA m_boxGachaEventCtrl; // 0x94
+		private KNKDBNFMAKF_EventSp m_spEventCtrl; // 0x90
+		private CHHECNJBMLA_EventBoxGacha m_boxGachaEventCtrl; // 0x94
 		private PLADCDJLOBE m_balloonLeadData; // 0x98
 		// private SnsScreen m_snsScreen; // 0x9C
 		// private GachaScene.GachaArgs m_gachaArgs = new GachaScene.GachaArgs(); // 0xA0
 		private HomePickupTextureCahce m_pickupTexCache; // 0xA4
 		private HomeBannerTextureCache m_bannerTexCache; // 0xA8
-		// private List<JBCAHMMCOKK> m_pickupList = new List<JBCAHMMCOKK>(8); // 0xAC
-		// private List<JBCAHMMCOKK> m_pickupBannerList = new List<JBCAHMMCOKK>(8); // 0xB0
-		// private List<JBCAHMMCOKK> m_pickupWebViewList = new List<JBCAHMMCOKK>(8); // 0xB4
-		// private ONFFFKPFFGI m_richBannerData = new ONFFFKPFFGI(); // 0xB8
+		private List<JBCAHMMCOKK> m_pickupList = new List<JBCAHMMCOKK>(8); // 0xAC
+		private List<JBCAHMMCOKK> m_pickupBannerList = new List<JBCAHMMCOKK>(8); // 0xB0
+		private List<JBCAHMMCOKK> m_pickupWebViewList = new List<JBCAHMMCOKK>(8); // 0xB4
+		private ONFFFKPFFGI m_richBannerData = new ONFFFKPFFGI(); // 0xB8
 		private PopPassController m_pop_pass_ctrl; // 0xBC
-		// private Coroutine m_coOpenSnsScreen; // 0xC0
+		private Coroutine m_coOpenSnsScreen; // 0xC0
 		private int m_eventAdvId; // 0xC4
-		// private static int m_introTalkDivaId = 0; // 0x0
-		// private static bool m_lastHomeShowDiva = 1; // 0x4
-		// private List<Action> NoticeActionList = new List<Action>(); // 0xC8
-		// private bool m_pickupToClose; // 0xCC
-		// private bool m_pickupToJump; // 0xCD
-		// private IntimacyController m_intimacyControl; // 0xD0
-		// private Camera m_uiCamera; // 0xD4
+		private static int m_introTalkDivaId = 0; // 0x0
+		private static bool m_lastHomeShowDiva = true; // 0x4
+		private List<Action> NoticeActionList = new List<Action>(); // 0xC8
+		private bool m_pickupToClose; // 0xCC
+		private bool m_pickupToJump; // 0xCD
+		private IntimacyController m_intimacyControl; // 0xD0
+		private Camera m_uiCamera; // 0xD4
 		// private List<HomeScene.limitedWarning> m_coLimitedItemList = new List<HomeScene.limitedWarning>(); // 0xD8
 		// private List<HomeScene.limitedWarning> m_coCurrencyItemList = new List<HomeScene.limitedWarning>(); // 0xDC
 
@@ -125,11 +125,11 @@ namespace XeApp.Game.Menu
 			m_buttonGroup.onClickBingoButton = OnClickBingoView;
 			m_buttonGroup.Setup(time);
 			m_eventBanner.onClickBannerButton = OnClickEventBannerButton;
-			m_eventBanner.Setup(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/, false);
+			m_eventBanner.Setup(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/, false), time);
 			SetupPickup();
 			m_campaignBanner.onClickBannerButton = OnClickHomeBanner;
 			m_campaignBanner.Setup(m_pickupBannerList, m_bannerTexCache);
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection.ENPJADLIFAB/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 			if(ev == null)
 			{
 				m_spEventCtrl = null;
@@ -138,7 +138,7 @@ namespace XeApp.Game.Menu
 			{
 				TodoLogger.Log(0, "Event");
 			}
-			CHHECNJBMLA_EventBoxGacha evGacha = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.JNHHEMLIDGJ();
+			CHHECNJBMLA_EventBoxGacha evGacha = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.JNHHEMLIDGJ() as CHHECNJBMLA_EventBoxGacha;
 			if(evGacha == null)
 			{
 				m_boxGachaEventCtrl = null;
@@ -156,28 +156,31 @@ namespace XeApp.Game.Menu
 			m_pickupUi.onClickCloseButton = OnClickPickupClose;
 			m_pickupUi.onClickJumpButton = OnClickPickupJump;
 			m_pickupUi.onClickRejectCheckbox = OnClickRejectCheckbox;
-			m_pickupUi.m_checkboxLabelText.text = bk.GetMessageByLabel("home_pickup_checkbox");
+			m_pickupUi.SetCheckboxLabel(bk.GetMessageByLabel("home_pickup_checkbox"));
 			m_pickupUi.gameObject.SetActive(false);
-			switch(m_balloonLeadData.MMMGMNAMGDF)
+			if(m_balloonLeadData != null)
 			{
-				case PLADCDJLOBE.PNLNGHNHCNI.NHANNKGPAHM/*0*/:
-					SetupBeginnerLead();
-					break;
-				case PLADCDJLOBE.PNLNGHNHCNI.KJHABBHBFPD/*1*/:
-					SetupMissionLead();
-					break;
-				case PLADCDJLOBE.PNLNGHNHCNI.PAAIHBHJJMM/*2*/:
-					SetupStoryLead();
-					break;
-				case PLADCDJLOBE.PNLNGHNHCNI.MOFPBMFPFHF/*3*/:
-					SetupStoryDivaLead();
-					break;
-				case PLADCDJLOBE.PNLNGHNHCNI.IEGNGNLGLGN/*4*/:
-					SetupStorySnsLead();
-					break;
-				case PLADCDJLOBE.PNLNGHNHCNI.CCDOBDNDPIL/*5*/:
-					SetupEventHomeLead();
-					break;
+				switch(m_balloonLeadData.MMMGMNAMGDF)
+				{
+					case PLADCDJLOBE.PNLNGHNHCNI.NHANNKGPAHM/*0*/:
+						SetupBeginnerLead();
+						break;
+					case PLADCDJLOBE.PNLNGHNHCNI.KJHABBHBFPD/*1*/:
+						SetupMissionLead();
+						break;
+					case PLADCDJLOBE.PNLNGHNHCNI.PAAIHBHJJMM/*2*/:
+						SetupStoryLead();
+						break;
+					case PLADCDJLOBE.PNLNGHNHCNI.MOFPBMFPFHF/*3*/:
+						SetupStoryDivaLead();
+						break;
+					case PLADCDJLOBE.PNLNGHNHCNI.IEGNGNLGLGN/*4*/:
+						SetupStorySnsLead();
+						break;
+					case PLADCDJLOBE.PNLNGHNHCNI.CCDOBDNDPIL/*5*/:
+						SetupEventHomeLead();
+						break;
+				}
 			}
 		}
 
@@ -312,7 +315,7 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.divaManager.SetEnableDivaWind(true, false);
 			}
 			Initialize();
-			yield return Co.R(Co_TryInstallBanner(m_campaignBanner.m_pickupBannerList));
+			yield return Co.R(m_campaignBanner.Co_TryInstallBanner(m_pickupBannerList));
 			yield return Co.R(Co_InitIntimacy());
 			m_playRecordBanner.transform.SetAsLastSibling();
 			m_fesBanner.transform.SetAsLastSibling();
@@ -854,7 +857,27 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x96F7D0 Offset: 0x96F7D0 VA: 0x96F7D0
-		// private void SetupPickup() { }
+		private void SetupPickup()
+		{
+			m_pickupList.Clear();
+			m_pickupList.AddRange(JBCAHMMCOKK.FKDIMODKKJD(false));
+			m_pickupBannerList.Clear();
+			m_pickupBannerList.Capacity = m_pickupList.Count;
+			m_pickupWebViewList.Clear();
+			m_pickupWebViewList.Capacity = m_pickupList.Count;
+			m_richBannerData.KHEKNNFCAOI();
+			for(int i = 0; i < m_pickupList.Count; i++)
+			{
+				if(m_pickupList[i].LDLFAKLAMFG)
+				{
+					m_pickupBannerList.Add(m_pickupList[i]);
+				}
+				if(m_pickupList[i].AKGKKPGAJEM)
+				{
+					m_pickupWebViewList.Add(m_pickupList[i]);
+				}
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3AD4 Offset: 0x6E3AD4 VA: 0x6E3AD4
 		// // RVA: 0x97AA10 Offset: 0x97AA10 VA: 0x97AA10
@@ -880,22 +903,40 @@ namespace XeApp.Game.Menu
 		// private static string GetLeadBalloonDesc(PLADCDJLOBE leadData) { }
 
 		// // RVA: 0x96FAF8 Offset: 0x96FAF8 VA: 0x96FAF8
-		// private void SetupBeginnerLead() { }
+		private void SetupBeginnerLead()
+		{
+			TodoLogger.Log(0, "SetupBeginnerLead");
+		}
 
 		// // RVA: 0x96FD5C Offset: 0x96FD5C VA: 0x96FD5C
-		// private void SetupMissionLead() { }
+		private void SetupMissionLead()
+		{
+			TodoLogger.Log(0, "SetupMissionLead");
+		}
 
 		// // RVA: 0x96FFC0 Offset: 0x96FFC0 VA: 0x96FFC0
-		// private void SetupStoryLead() { }
+		private void SetupStoryLead()
+		{
+			TodoLogger.Log(0, "SetupStoryLead");
+		}
 
 		// // RVA: 0x970118 Offset: 0x970118 VA: 0x970118
-		// private void SetupStoryDivaLead() { }
+		private void SetupStoryDivaLead()
+		{
+			TodoLogger.Log(0, "SetupStoryDivaLead");
+		}
 
 		// // RVA: 0x970358 Offset: 0x970358 VA: 0x970358
-		// private void SetupStorySnsLead() { }
+		private void SetupStorySnsLead()
+		{
+			TodoLogger.Log(0, "SetupStorySnsLead");
+		}
 
 		// // RVA: 0x9704B0 Offset: 0x9704B0 VA: 0x9704B0
-		// private void SetupEventHomeLead() { }
+		private void SetupEventHomeLead()
+		{
+			TodoLogger.Log(0, "SetupEventHomeLead");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3D2C Offset: 0x6E3D2C VA: 0x6E3D2C
 		// // RVA: 0x97ADFC Offset: 0x97ADFC VA: 0x97ADFC
@@ -977,7 +1018,23 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E4074 Offset: 0x6E4074 VA: 0x6E4074
 		// // RVA: 0x97BD8C Offset: 0x97BD8C VA: 0x97BD8C
-		// private IEnumerator Co_InitIntimacy() { }
+		private IEnumerator Co_InitIntimacy()
+		{
+			//0x13CE3F
+			m_isInitIntimacy = false;
+			m_intimacyControl = MenuScene.Instance.IntimacyControl;
+			m_intimacyControl.InitHome(this, m_divaBalloon, m_divaTalk, null);
+			if(m_divaTalk != null)
+			{
+				m_divaTalk.viewIntimacyData = m_intimacyControl.viewData;
+			}
+			m_uiCamera = GetComponentInParent<Canvas>().worldCamera;
+			yield return new WaitWhile(() => {
+				//0x97D3E0
+				return m_intimacyControl.IsLoading();
+			});
+			m_isInitIntimacy = true;
+		}
 
 		// // RVA: 0x972210 Offset: 0x972210 VA: 0x972210
 		// private void EnterIntimacy() { }
@@ -1063,10 +1120,6 @@ namespace XeApp.Game.Menu
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E456C Offset: 0x6E456C VA: 0x6E456C
 		// 	// RVA: 0x97D3BC Offset: 0x97D3BC VA: 0x97D3BC
 		// 	private void <Co_OpenSnsScreen>b__156_0() { }
-
-		// 	[CompilerGeneratedAttribute] // RVA: 0x6E457C Offset: 0x6E457C VA: 0x6E457C
-		// 	// RVA: 0x97D3E0 Offset: 0x97D3E0 VA: 0x97D3E0
-		// 	private bool <Co_InitIntimacy>b__171_0() { }
 
 		private void LoadSLive()
 		{

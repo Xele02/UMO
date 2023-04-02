@@ -36,7 +36,13 @@ namespace XeApp.Game.Common
 		public Action<int> onClickBingoButton { set { m_buttonBingo.onClickButton = value; } } //0xEA8228
 
 		//// RVA: 0xEA8250 Offset: 0xEA8250 VA: 0xEA8250
-		//public void Setup(long currentTime) { }
+		public void Setup(long currentTime)
+		{
+			m_buttonUIHide.Setup();
+			m_buttonStory.Setup();
+			m_buttonDecoRoom.Setup();
+			m_buttonBingo.Setup(currentTime);
+		}
 
 		//// RVA: 0xEA870C Offset: 0xEA870C VA: 0xEA870C
 		//public void SetActive(bool active) { }

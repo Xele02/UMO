@@ -43,7 +43,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA8310 Offset: 0xEA8310 VA: 0xEA8310
-		//public void Setup() { }
+		public void Setup()
+		{
+			m_buttonShow.gameObject.SetActive(false);
+		}
 
 		//// RVA: 0xEA8854 Offset: 0xEA8854 VA: 0xEA8854
 		//public void Enter() { }

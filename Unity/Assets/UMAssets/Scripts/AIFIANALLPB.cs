@@ -23,7 +23,7 @@ public class AIFIANALLPB
 	public long ECFNAOCFKKN_Date; // 0x30
 	public static bool HELFIJPHKJM; // 0x0
 
-	// public List<GJDFHLBONOL> GIPGAICOGGL { get; } 0xCCBFB0 LNLOKDIGNEL
+	public List<GJDFHLBONOL> GIPGAICOGGL { get { return GNDBGCIECCN; } } //0xCCBFB0 LNLOKDIGNEL
 	// public List<GJDFHLBONOL> LPCFCLLLAMI { get; } 0xCCBFB8 CPDLFJBFDBK
 	public bool PLOOEECNHFB { get; private set; }  // 0x38 MGFBAEDOIDD JFOKBBLFMLD EDBGNGILAKA
 

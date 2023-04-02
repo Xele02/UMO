@@ -11,7 +11,7 @@ public class OHCAABOMEOF
         ENMHPBGOOII = 5,
         NKDOEBONGNI_EventQuest = 6,
         ENPJADLIFAB = 7,
-        OCCGDMDBCHK = 8,
+        OCCGDMDBCHK_EventGacha = 8,
         DMPMKBCPHMA = 9,
         DAMDPLEBNCB = 10,
         CADKONMJEDA_EventRaid = 11,

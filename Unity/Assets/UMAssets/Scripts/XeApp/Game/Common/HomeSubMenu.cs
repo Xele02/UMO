@@ -32,10 +32,49 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEB1B5C Offset: 0xEB1B5C VA: 0xEB1B5C
-		//public void ApplyNewIcons() { }
+		public void ApplyNewIcons()
+		{
+			m_buttons[0].SetBadgeActive(CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN.GIPGAICOGGL.Count > 0);
+			m_buttons[1].SetBadgeActive(false);
+			UpdateMonthlyPass();
+			m_buttons[3].SetBadgeActive(CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.NMOJPDCBGMK_NumFriendNoFav + CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.JCOBBOMCENL_NumNewRequests > 0);
+			m_buttons[4].SetBadgeActive(BIFNGFAIEIL.HHCJCDFCLOB.FMHMCMIAOAC());
+		}
 
 		//// RVA: 0xEB1F58 Offset: 0xEB1F58 VA: 0xEB1F58
-		//public void UpdateMonthlyPass() { }
+		public void UpdateMonthlyPass()
+		{
+			HomeSubMenuPassButton b = m_buttons[2] as HomeSubMenuPassButton;
+			int a = NHPDPKHMFEP.HHCJCDFCLOB.OEFMFNICHHH();
+			int c = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal, 1);
+			if(NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() == 0)
+			{
+				b.SetBadgeActive(true);
+				b.Setup(c, a);
+				b.SetBadgeActive(a < 1 ? HomeSubMenuPassButton.Type.Purchase : HomeSubMenuPassButton.Type.Switch);
+				return;
+			}
+			if(NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() < 1)
+			{
+				if(NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() != -3)
+				{
+					b.SetActive(false);
+					return;
+				}
+				b.SetActive(true);
+			}
+			else
+			{
+				b.SetActive(true);
+				b.Setup(c, a);
+				if(a > 0)
+				{
+					b.SetBadgeActive(HomeSubMenuPassButton.Type.RareUpItem);
+					return;
+				}
+			}
+			b.SetBadgeActive(0);
+		}
 
 		//// RVA: 0xEB24C0 Offset: 0xEB24C0 VA: 0xEB24C0
 		//public void SetActive(bool active) { }

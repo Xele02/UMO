@@ -1,6 +1,8 @@
 
 class JpStringLiterals
 {
+	public const string StringLiteral_1376 = "月"; // 0x03baa038
+	public const string StringLiteral_1378 = "日"; // 0x03baa040
 	public const string StringLiteral_8278 = "既に初期化済みです。再初期化を行う場合は、Terminateを呼ぶ必要があります。"; // 0x03bb0c10
 	public const string StringLiteral_8280 = "初期化されていません。"; // 0x03bb0c18
 	public const string StringLiteral_8686 = "なし"; // 0x03bb1270
@@ -114,6 +116,11 @@ class JpStringLiterals
 	public const string StringLiteral_11861 = "バッチインストーラ　不停止モジュール放棄"; // 0x03bb440c
 	public const string StringLiteral_11862 = "バッチインストーラ　停止処理が完了しなかったインストールモジュール数 {0}"; // 0x03bb4410
 	public const string StringLiteral_11863 = "バッチインストーラ　放棄した分、インストールモジュールを生成 {0}"; // 0x03bb4414
+	public const string StringLiteral_11845 = "火"; // 03bb43cc
+	public const string StringLiteral_11846 = "水"; // 03bb43d0
+	public const string StringLiteral_11847 = "木"; // 03bb43d4
+	public const string StringLiteral_11848 = "金"; // 03bb43d8
+	public const string StringLiteral_11849 = "土"; // 03bb43dc
 	public const string StringLiteral_11920 = "\n\nエラーコード : "; // 0x03bb44f8
 	public const string StringLiteral_11921 = "データ更新"; // 0x03bb44fc
 	public const string StringLiteral_11922 = "日付変更"; // 0x03bb4500

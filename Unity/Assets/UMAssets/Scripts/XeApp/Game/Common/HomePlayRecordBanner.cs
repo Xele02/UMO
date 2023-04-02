@@ -22,10 +22,27 @@ namespace XeApp.Game.Common
 		//public bool IsSetup() { }
 
 		//// RVA: 0xEB11C4 Offset: 0xEB11C4 VA: 0xEB11C4
-		//public bool IsAvailabilityPeriod(long mver) { }
+		public bool IsAvailabilityPeriod(long mver)
+		{
+			int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("playrecord_master_version", 0);
+			if(a > 0)
+			{
+				return mver >= a;
+			}
+			return false;
+		}
 
 		//// RVA: 0xEB12E0 Offset: 0xEB12E0 VA: 0xEB12E0
-		//public void Setup() { }
+		public void Setup()
+		{
+			m_setup = true;
+			m_button.ClearOnClickCallback();
+			m_button.AddOnClickCallback(() => {
+				//0xEB15E4
+				if(onClickButton != null)
+					onClickButton();
+			});
+		}
 
 		//// RVA: 0xEB13B0 Offset: 0xEB13B0 VA: 0xEB13B0
 		//public void SetActive(bool active) { }
@@ -44,9 +61,5 @@ namespace XeApp.Game.Common
 
 		//// RVA: 0xEB15B0 Offset: 0xEB15B0 VA: 0xEB15B0
 		//public bool IsPlaying() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x73D914 Offset: 0x73D914 VA: 0x73D914
-		//// RVA: 0xEB15E4 Offset: 0xEB15E4 VA: 0xEB15E4
-		//private void <Setup>b__10_0() { }
 	}
 }

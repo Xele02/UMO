@@ -56,7 +56,19 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CD1BA4 Offset: 0x1CD1BA4 VA: 0x1CD1BA4
-		//public void Setup(string text, Sprite sprite) { }
+		public void Setup(string text, Sprite sprite)
+		{
+			if(sprite != null)
+			{
+				m_imageIcon.gameObject.SetActive(true);
+				m_imageIcon.sprite = sprite;
+			}
+			else
+			{
+				m_imageIcon.gameObject.SetActive(false);
+			}
+			m_textMessage.text = text;
+		}
 
 		//// RVA: 0x1CD1824 Offset: 0x1CD1824 VA: 0x1CD1824
 		public void SetDirection(Direction dir)

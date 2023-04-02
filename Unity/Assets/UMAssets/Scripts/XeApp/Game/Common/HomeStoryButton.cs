@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -31,7 +32,21 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA8360 Offset: 0xEA8360 VA: 0xEA8360
-		//public void Setup() { }
+		public void Setup()
+		{
+			m_view = LIEJFHMGNIA.HDKCNAKPAAC(null);
+			if(m_view != null)
+			{
+				if(!m_view.MMEGDFPNONJ)
+				{
+					m_infoWindow.Setup(MessageManager.Instance.GetMessage("menu", "home_story_release_music"), null);
+				}
+				else
+				{
+					m_infoWindow.Setup(string.Format(MessageManager.Instance.GetMessage("menu", "home_story_release_diva"), MessageManager.Instance.GetMessage("master", string.Format("diva_s_{0:D2}", m_view.AHHJLDLAPAN))), null);
+				}
+			}
+		}
 
 		//// RVA: 0xEA8888 Offset: 0xEA8888 VA: 0xEA8888
 		//public void Enter() { }

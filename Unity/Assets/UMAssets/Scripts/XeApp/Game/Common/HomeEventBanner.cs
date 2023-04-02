@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using XeApp.Game.Menu;
 
 namespace XeApp.Game.Common
 {
@@ -74,10 +75,26 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEA9718 Offset: 0xEA9718 VA: 0xEA9718
-		// public void Setup(IKDICBBFBMI cont, long currentTime) { }
+		public void Setup(IKDICBBFBMI_EventBase cont, long currentTime)
+		{
+			List<IKDICBBFBMI_EventBase> l = new List<IKDICBBFBMI_EventBase>();
+			if(cont != null)
+				l.Add(cont);
+			Setup(l, currentTime);
+		}
 
 		// // RVA: 0xEA97F0 Offset: 0xEA97F0 VA: 0xEA97F0
-		// public void Setup(List<IKDICBBFBMI> list, long currentTime) { }
+		public void Setup(List<IKDICBBFBMI_EventBase> list, long currentTime)
+		{
+			ClearBanner();
+			int cnt = 0;
+			MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce();
+			for(int i = 0; i < list.Count; i++)
+			{
+				TodoLogger.Log(0, "Event");
+			}
+			m_scrollView.horizontal = cnt > 1;
+		}
 
 		// // RVA: 0xEAA048 Offset: 0xEAA048 VA: 0xEAA048
 		// public void AddBanner(int id, long start, long end, string text = "") { }
@@ -86,7 +103,13 @@ namespace XeApp.Game.Common
 		// public void RemoveBanner(int id) { }
 
 		// // RVA: 0xEA9EE0 Offset: 0xEA9EE0 VA: 0xEA9EE0
-		// public void ClearBanner() { }
+		public void ClearBanner()
+		{
+			for(int i = 0; i < m_scrollView.scrollObjects.Count; i++)
+			{
+				TodoLogger.Log(0, "ClearBanner");
+			}
+		}
 
 		// // RVA: 0xEAB328 Offset: 0xEAB328 VA: 0xEAB328
 		// private void InputEnable() { }

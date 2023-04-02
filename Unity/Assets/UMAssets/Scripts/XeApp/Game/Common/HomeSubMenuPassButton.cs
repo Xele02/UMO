@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using XeApp.Game.Menu;
+using XeSys;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Common
@@ -27,20 +29,57 @@ namespace XeApp.Game.Common
 		private int m_loginCount; // 0x50
 		
 		//// RVA: 0xEB2268 Offset: 0xEB2268 VA: 0xEB2268
-		//public void Setup(int itemId, int loginCount) { }
+		public void Setup(int itemId, int loginCount)
+		{
+			m_loginCount = loginCount;
+			imageRareUpItem.enabled = false;
+			GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture texture) => {
+				//0xEB29A0
+				imageRareUpItem.enabled = true;
+				texture.Set(imageRareUpItem);
+			});
+		}
 
 		//// RVA: 0xEB23A4 Offset: 0xEB23A4 VA: 0xEB23A4
-		//public void SetBadgeActive(HomeSubMenuPassButton.Type type) { }
+		public void SetBadgeActive(Type type)
+		{
+			SetBadgeActive(type != Type.None);
+			ChangeType(type);
+			if(type < Type.Switch)
+			{
+				badgeAnim.Stop(false);
+				return;
+			}
+			if(type != Type.Switch)
+				return;
+			badgeAnim.Play(0, (KeyFrameAnime sprite, int idx) => {
+				//0xEB2AA4
+				if(idx == 1)
+				{
+					ChangeType(Type.RareUpItem);
+					return;
+				}
+				if(idx != 0)
+					return;
+				ChangeType(Type.Purchase);
+			});
+		}
 
 		//// RVA: 0xEB2764 Offset: 0xEB2764 VA: 0xEB2764
-		//public void ChangeType(HomeSubMenuPassButton.Type type) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x73D984 Offset: 0x73D984 VA: 0x73D984
-		//// RVA: 0xEB29A0 Offset: 0xEB29A0 VA: 0xEB29A0
-		//private void <Setup>b__6_0(IiconTexture texture) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x73D994 Offset: 0x73D994 VA: 0x73D994
-		//// RVA: 0xEB2AA4 Offset: 0xEB2AA4 VA: 0xEB2AA4
-		//private void <SetBadgeActive>b__7_0(KeyFrameAnime sprite, int idx) { }
+		public void ChangeType(Type type)
+		{
+			m_type = type;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			if(type == Type.RareUpItem)
+			{
+				textMessage.text = string.Format(bk.GetMessageByLabel("home_pass_button_rare_up_item"), m_loginCount);
+				imageRareUpItem.gameObject.SetActive(true);
+			}
+			else if(type == Type.Purchase || type == Type.Switch)
+			{
+				textMessage.text = bk.GetMessageByLabel("home_pass_button_purchase");
+				imageRareUpItem.gameObject.SetActive(false);
+			}
+		}
 	}
 }

@@ -109,7 +109,19 @@ public class JEPBIIJDGEF_EventInfo
 	// public IKDICBBFBMI HGLEKOEPMIP() { }
 
 	// // RVA: 0x1C39F1C Offset: 0x1C39F1C VA: 0x1C39F1C
-	// public IKDICBBFBMI JNHHEMLIDGJ() { }
+	public IKDICBBFBMI_EventBase JNHHEMLIDGJ()
+	{
+		List<IKDICBBFBMI_EventBase> evts = MPEOOINCGEN.FindAll((IKDICBBFBMI_EventBase GHPLINIACBB) => {
+			//0x1C3F174
+			return GHPLINIACBB.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha;
+		});
+		for(int i = 0; i < evts.Count; i++)
+		{
+			if((evts[i] as CHHECNJBMLA_EventBoxGacha).AAODGCEBJCG)
+				return evts[i];
+		}
+		return null;
+	}
 
 	// // RVA: 0x1C3A130 Offset: 0x1C3A130 VA: 0x1C3A130
 	public IKDICBBFBMI_EventBase LKJGDCBCLKO(string JOPOPMLFINI)

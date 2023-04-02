@@ -160,7 +160,16 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// public int PKGCIBGBAOO() { }
 
 	// // RVA: 0xD84E34 Offset: 0xD84E34 VA: 0xD84E34
-	// public int HGEJHKCHBNB() { }
+	public int HGEJHKCHBNB()
+	{
+		int a = HKABHJKHFKL_RareGetCnt == 0 ? 30 : 90;
+		string str = HKABHJKHFKL_RareGetCnt == 0 ? "rareup_1st_day" : "rareup_2nd_day";
+		int b = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.LPJLEHAJADA_GetValue(str, a);
+		int c = FCPHDFKFDCK_LoginCnt;
+		if(b - c > 0)
+			return b - c;
+		return 0;
+	}
 
 	// // RVA: 0xD84F68 Offset: 0xD84F68 VA: 0xD84F68
 	// public int HEOIMMMJKIP() { }

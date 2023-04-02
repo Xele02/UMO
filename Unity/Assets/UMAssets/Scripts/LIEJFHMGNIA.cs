@@ -1,4 +1,6 @@
 
+using System.Collections.Generic;
+
 public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 {
 	public class AGDCEJNCPDE
@@ -37,7 +39,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	public int NDFOAINJPIN; // 0x74
 	private int GJIIGKLIGLA; // 0x78
 
-	//public bool MMEGDFPNONJ { get; } 0x17F754C LCEFNOMFGCC
+	public bool MMEGDFPNONJ { get { return AHHJLDLAPAN != 0; } } //0x17F754C LCEFNOMFGCC
 	//public bool HHBJAEOIGIH { get; } 0x17F755C EEGJFFAIOPD
 	//public bool PCFICCCLBNP { get; } 0x17F756C NNCIIIFBKEG
 	//public bool GOELFAECHGI { get; } 0x17F758C AAFHNPBKGCH
@@ -79,7 +81,11 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	//public static int PJIJLMFBBCJ() { }
 
 	//// RVA: 0x17FA29C Offset: 0x17FA29C VA: 0x17FA29C
-	//public static List<LIEJFHMGNIA> FKDIMODKKJD(int KFOLEAPKGFC = 0, bool POOMOBGPCNE = True, bool OKIAAPADPLM = True, bool HFOAFJBMNOF = False) { }
+	public static List<LIEJFHMGNIA> FKDIMODKKJD(int KFOLEAPKGFC = 0, bool POOMOBGPCNE = true, bool OKIAAPADPLM = true, bool HFOAFJBMNOF = false)
+	{
+		TodoLogger.Log(0, "FKDIMODKKJD");
+		return new List<LIEJFHMGNIA>();
+	}
 
 	//// RVA: 0x17FB06C Offset: 0x17FB06C VA: 0x17FB06C
 	//public static void PMBEMMPPNMN(List<LIEJFHMGNIA> NNDGIAEFMOG) { }
@@ -127,7 +133,18 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	//public static int KLOHKIPGCME(List<LIEJFHMGNIA> NNDGIAEFMOG) { }
 
 	//// RVA: 0x17FD644 Offset: 0x17FD644 VA: 0x17FD644
-	//public static LIEJFHMGNIA HDKCNAKPAAC(FDDIIKBJNNA ANJGLKIGLAN) { }
+	public static LIEJFHMGNIA HDKCNAKPAAC(FDDIIKBJNNA ANJGLKIGLAN)
+	{
+		List<LIEJFHMGNIA> l = FKDIMODKKJD(0, false, false, false);
+		for(int i = 0; i < l.Count; i++)
+		{
+			if(l[i].CADENLBDAEB)
+			{
+				return l[i];
+			}
+		}
+		return null;
+	}
 
 	//// RVA: 0x17FD794 Offset: 0x17FD794 VA: 0x17FD794
 	//public static int CCOJMPONIOC() { }

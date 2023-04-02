@@ -171,7 +171,40 @@ public class BIFNGFAIEIL
 	}
 
 	//// RVA: 0xC81108 Offset: 0xC81108 VA: 0xC81108
-	//public bool FMHMCMIAOAC() { }
+	public bool FMHMCMIAOAC()
+	{
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns != null)
+		{
+			if(Database.Instance.roomText.textData != null)
+			{
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.FLHMJHBOBEA_Sns.HAJEJPFGILG.Count > 0)
+				{
+					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA.Count; i++)
+					{
+                        BOKMNHAFJHF_Sns.KEIGMAOCJHK dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA[i];
+						if(dbSns.PPEGAKEIEGM_Enabled == 2)
+						{
+                            DDEMMEPBOIA_Sns.EFIFBJGKPJF saveSns = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.FLHMJHBOBEA_Sns.HAJEJPFGILG[i];
+							if(saveSns.BEBJKJKBOGH_Date != 0)
+							{
+								if(time >= saveSns.BEBJKJKBOGH_Date)
+								{
+                                    SNSRoomTextData.Header header = Database.Instance.roomText.textData.FindHeader(dbSns.AJIDLAGFPGM);
+									if(header != null)
+									{
+										if(header.count > saveSns.LDJIMGPHFPA_Cnt)
+											return true;
+									}
+                                }
+							}
+                        }
+                    }
+				}
+			}
+		}
+		return false;
+	}
 
 	//// RVA: 0xC81550 Offset: 0xC81550 VA: 0xC81550
 	//public void DLKJAPDLDFG(bool HEDFNFLEPHI, int NIGMABNOBEF = 0) { }

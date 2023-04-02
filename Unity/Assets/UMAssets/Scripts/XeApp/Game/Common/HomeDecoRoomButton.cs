@@ -36,7 +36,30 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA85C0 Offset: 0xEA85C0 VA: 0xEA85C0
-		//public void Setup() { }
+		public void Setup()
+		{
+			int requirelLevel;
+			bool enable;
+			HNDLICBDEMI.FMLGCFKNKIA_GetDecoPlayerLevelAndEnabled(out requirelLevel, out enable);
+			if(requirelLevel == 0)
+			{
+				m_button.gameObject.SetActive(false);
+			}
+			else
+			{
+				if(!enable)
+				{
+					m_unlock.SetActive(true);
+					m_contentColorGroup.color = m_colorLock;
+				}
+				else
+				{
+					m_unlock.SetActive(false);
+					m_contentColorGroup.color = m_colorNormal;
+				}
+				m_contentColorGroup.SetMaterialDirty();
+			}
+		}
 
 		//// RVA: 0xEA8924 Offset: 0xEA8924 VA: 0xEA8924
 		//public void Enter() { }

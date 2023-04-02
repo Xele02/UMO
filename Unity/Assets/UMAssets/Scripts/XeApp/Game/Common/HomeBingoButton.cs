@@ -34,7 +34,31 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA7D84 Offset: 0xEA7D84 VA: 0xEA7D84
-		//public void Setup(long currentTime) { }
+		public void Setup(long currentTime)
+		{
+			bool b1 = false;
+			bool b2 = false;
+			bool b3 = false;
+			if(GNGMCIAIKMA.HHCJCDFCLOB != null)
+			{
+				b3 = GNGMCIAIKMA.HHCJCDFCLOB.GBCPDBJEDHL(currentTime);
+				m_bingoId = 0;
+				if(GNGMCIAIKMA.HHCJCDFCLOB.CNADOFDDNLO_GetActiveBingos().Count > 0)
+				{
+					m_bingoId = GNGMCIAIKMA.HHCJCDFCLOB.CNADOFDDNLO_GetActiveBingos()[0];
+					b2 = GNGMCIAIKMA.HHCJCDFCLOB.DOEGBMNNFKH(m_bingoId);
+					if(b2 || GNGMCIAIKMA.HHCJCDFCLOB.DHPLHALIDHH(m_bingoId))
+					{
+						if(GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(m_bingoId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved) > 0)
+							b2 = true;
+					}
+					b2 = GNGMCIAIKMA.HHCJCDFCLOB.NJBPNCDPGNO(m_bingoId);
+				}
+			}
+			m_button.gameObject.SetActive(b3);
+			m_iconNew.SetActive(b1);
+			m_iconBegginer.SetActive(b2);
+		}
 
 		//// RVA: 0xEA7F9C Offset: 0xEA7F9C VA: 0xEA7F9C
 		//public void Enter() { }

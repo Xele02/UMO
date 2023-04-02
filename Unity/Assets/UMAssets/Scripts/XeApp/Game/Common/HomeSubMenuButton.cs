@@ -25,9 +25,16 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEB222C Offset: 0xEB222C VA: 0xEB222C
-		//public void SetActive(bool active) { }
+		public void SetActive(bool active)
+		{
+			gameObject.SetActive(active);
+		}
 
 		//// RVA: 0xEB1E9C Offset: 0xEB1E9C VA: 0xEB1E9C
-		//public void SetBadgeActive(bool enable) { }
+		public void SetBadgeActive(bool enable)
+		{
+			if(badgeIcon != null)
+				badgeIcon.SetActive(enable);
+		}
 	}
 }

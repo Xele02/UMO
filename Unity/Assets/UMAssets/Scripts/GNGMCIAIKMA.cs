@@ -307,7 +307,18 @@ public class GNGMCIAIKMA
 	}
 
 	// // RVA: 0xABA38C Offset: 0xABA38C VA: 0xABA38C
-	// public bool NJBPNCDPGNO(int APFDNBGMMMM) { }
+	public bool NJBPNCDPGNO(int APFDNBGMMMM)
+	{
+		JKICPBIIHNE_Bingo bingoDb = FJLIDJJAGOM_GetBingoDb();
+		if(bingoDb != null)
+		{
+			if(APFDNBGMMMM <= bingoDb.JJAICEAEGKF.Count)
+			{
+				return bingoDb.JJAICEAEGKF[APFDNBGMMMM - 1].FDBNFFNFOND_EndTime == 0;
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0xABA480 Offset: 0xABA480 VA: 0xABA480
 	// public int AMIBPGONGFE(long JHNMKKNEENE, bool HLCDBGGEHPD) { }

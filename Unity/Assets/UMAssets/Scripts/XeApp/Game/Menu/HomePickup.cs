@@ -57,7 +57,10 @@ namespace XeApp.Game.Menu
 		// public bool IsPlaying() { }
 
 		// // RVA: 0x96C9C4 Offset: 0x96C9C4 VA: 0x96C9C4
-		// public void SetCheckboxLabel(string label) { }
+		public void SetCheckboxLabel(string label)
+		{
+			m_checkboxLabelText.text = label;
+		}
 
 		// // RVA: 0x96CA00 Offset: 0x96CA00 VA: 0x96CA00
 		// public void SetPickupImage(IiconTexture image) { }
