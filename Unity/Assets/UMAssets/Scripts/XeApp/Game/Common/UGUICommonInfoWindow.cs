@@ -110,10 +110,16 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CD1CE4 Offset: 0x1CD1CE4 VA: 0x1CD1CE4
-		//public void SetTelopColor(Color color) { }
+		public void SetTelopColor(Color color)
+		{
+			m_imageTelop.color = color;
+		}
 
 		//// RVA: 0x1CD1D44 Offset: 0x1CD1D44 VA: 0x1CD1D44
-		//public void Enter(bool force = False) { }
+		public void Enter(bool force = false)
+		{
+			m_inOutAnime.Enter(force, null);
+		}
 
 		//// RVA: 0x1CD1D7C Offset: 0x1CD1D7C VA: 0x1CD1D7C
 		//public void Enter(float animTime, bool force = False) { }

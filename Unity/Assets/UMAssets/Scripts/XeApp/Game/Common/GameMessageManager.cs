@@ -68,7 +68,10 @@ namespace XeApp.Game.Common
 		//public static void ReplaceInvalidFont(ref StringBuilder strBuilder, string inputStr) { }
 
 		//// RVA: 0xE99DD4 Offset: 0xE99DD4 VA: 0xE99DD4
-		//public static bool CheckBasara(int divaId) { }
+		public static bool CheckBasara(int divaId)
+		{
+			return divaId == 9;
+		}
 
 		//// RVA: 0xE99DE8 Offset: 0xE99DE8 VA: 0xE99DE8
 		//public static string MissionMessageTagFunc(StringBuilder strBuilder, string tag, int freeMusicId, bool is6Line, Difficulty.Type diffculty) { }

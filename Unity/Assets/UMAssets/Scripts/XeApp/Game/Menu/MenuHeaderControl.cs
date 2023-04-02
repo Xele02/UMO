@@ -337,10 +337,30 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB29640 Offset: 0xB29640 VA: 0xB29640
-		// public void SetActive(bool active) { }
+		public void SetActive(bool active)
+		{
+			if(m_userInfoInstance != null)
+			{
+				if(active)
+				{
+					m_userInfoInstance.SetActive(true);
+					m_userInfoInstance.transform.SetAsLastSibling();
+				}
+				else
+				{
+					m_userInfoInstance.SetActive(false);
+				}
+			}
+		}
 
 		// // RVA: 0xB29754 Offset: 0xB29754 VA: 0xB29754
-		// public void Enter(bool isFading = False) { }
+		public void Enter(bool isFading = false)
+		{
+			if(m_userInfo != null)
+			{
+				m_userInfo.Enter(isFading);
+			}
+		}
 
 		// // RVA: 0xB29810 Offset: 0xB29810 VA: 0xB29810
 		// public void Leave(bool isFading = False) { }

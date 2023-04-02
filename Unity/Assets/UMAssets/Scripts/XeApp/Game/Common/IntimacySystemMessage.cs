@@ -65,10 +65,17 @@ namespace XeApp.Game.Common
 		// public void SetTextLevelUpBonus(int divaId, string name, JJOELIOGMKK.LPBGKOJDNJK type, int param) { }
 
 		// // RVA: 0x11027FC Offset: 0x11027FC VA: 0x11027FC
-		// public void SetTextSystem(int divaId, string text) { }
+		public void SetTextSystem(int divaId, string text)
+		{
+			m_systemWindow.SetTelopColor(m_colorTable[divaId - 1]);
+			m_systemWindow.Setup(text, null);
+		}
 
 		// // RVA: 0x11028C0 Offset: 0x11028C0 VA: 0x11028C0
-		// public void Enter(bool force = False) { }
+		public void Enter(bool force = false)
+		{
+			m_systemWindow.Enter(force);
+		}
 
 		// // RVA: 0x11028F4 Offset: 0x11028F4 VA: 0x11028F4
 		// public void Enter(float animTime, bool force = False) { }

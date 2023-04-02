@@ -86,7 +86,10 @@ namespace XeApp.Game.Menu
 		// public void SetLoginTime(long unixtime) { }
 
 		// // RVA: 0xECE17C Offset: 0xECE17C VA: 0xECE17C
-		// public bool IsDownLoading() { }
+		public bool IsDownLoading()
+		{
+			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+		}
 
 		// // RVA: 0xECE218 Offset: 0xECE218 VA: 0xECE218
 		public void RequestDelayDownLoad()
@@ -101,7 +104,12 @@ namespace XeApp.Game.Menu
 		// public void DoIntroTalk(bool resetTalkFlags = False) { }
 
 		// // RVA: 0xECEF14 Offset: 0xECEF14 VA: 0xECEF14
-		// public bool IsEnableReaction() { }
+		public bool IsEnableReaction()
+		{
+			if(m_divaControl != null)
+				return !m_divaControl.IsActionRequested;
+			return false;
+		}
 
 		// // RVA: 0xECEF3C Offset: 0xECEF3C VA: 0xECEF3C
 		// public int RandomTouchReactionIndex() { }

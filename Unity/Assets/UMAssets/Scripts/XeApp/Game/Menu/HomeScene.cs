@@ -332,9 +332,8 @@ namespace XeApp.Game.Menu
 		{
 			if(m_isHomeShowDiva)
 			{
-				TodoLogger.Log(0, "3d diva");
-				//if(m_divaTalk.IsDownLoading())
-				//	return false;
+				if(m_divaTalk.IsDownLoading())
+					return false;
 			}
 			if(GameManager.Instance.EventBannerTextureCache.IsLoading())
 				return false;
@@ -369,17 +368,16 @@ namespace XeApp.Game.Menu
 		// RVA: 0x972010 Offset: 0x972010 VA: 0x972010 Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			TodoLogger.Log(0, "OnStartEnterAnimation");
-			// EnterIntimacy();
-			// m_eventBanner.Enter();
-			// m_campaignBanner.Enter();
-			// m_fesBanner.Enter();
-			// m_subMenu.Enter();
-			// m_buttonGroup.Enter();
-			// m_playRecordBanner.Enter();
-			// MenuScene.Instance.LobbyButtonControl.Setup(1);
-			// MenuScene.Instance.HeaderMenu.SetActive(true);
-			// MenuScene.Instance.HeaderMenu.Enter(false);
+			EnterIntimacy();
+			m_eventBanner.Enter();
+			m_campaignBanner.Enter();
+			m_fesBanner.Enter();
+			m_subMenu.Enter();
+			m_buttonGroup.Enter();
+			m_playRecordBanner.Enter();
+			MenuScene.Instance.LobbyButtonControl.Setup(HomeLobbyButtonController.Type.DOWN);
+			MenuScene.Instance.HeaderMenu.SetActive(true);
+			MenuScene.Instance.HeaderMenu.Enter(false);
 		}
 
 		// RVA: 0x972284 Offset: 0x972284 VA: 0x972284 Slot: 10
@@ -1037,7 +1035,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x972210 Offset: 0x972210 VA: 0x972210
-		// private void EnterIntimacy() { }
+		private void EnterIntimacy()
+		{
+			m_intimacyControl.EnterCounter();
+			m_intimacyControl.EnableLongTouchTips();
+			m_intimacyControl.EnterLongTouchTips();
+		}
 
 		// // RVA: 0x97BE14 Offset: 0x97BE14 VA: 0x97BE14
 		// private void EnterIntimacy(float animTime) { }

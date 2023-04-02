@@ -48,7 +48,15 @@ namespace XeApp.Game.Common
 		//public void SetActive(bool active) { }
 
 		//// RVA: 0xEA879C Offset: 0xEA879C VA: 0xEA879C
-		//public void Enter() { }
+		public void Enter()
+		{
+			m_buttonBgChange.Enter();
+			m_buttonUIHide.Enter();
+			m_buttonStory.Enter();
+			m_buttonGakuya.Enter();
+			m_buttonDecoRoom.Enter();
+			m_buttonBingo.Enter();
+		}
 
 		//// RVA: 0xEA8958 Offset: 0xEA8958 VA: 0xEA8958
 		//public void Enter(float animTime) { }

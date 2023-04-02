@@ -21,7 +21,14 @@ namespace XeApp.Game.Common
 		public Transform rootMessage { get { return m_inOutCount.transform; } } //0x1101CEC
 
 		// // RVA: 0x1101D18 Offset: 0x1101D18 VA: 0x1101D18
-		// public void SetEnable(bool enable) { }
+		public void SetEnable(bool enable)
+		{
+			if(enable)
+				m_colorGroup.color = new Color(1, 1, 1);
+			else
+				m_colorGroup.color = new Color(0.6f, 0.6f, 0.6f);
+			m_colorGroup.OnUpdateColor();
+		}
 
 		// // RVA: 0x1101E0C Offset: 0x1101E0C VA: 0x1101E0C
 		// public void SetCount(int count) { }
@@ -30,7 +37,10 @@ namespace XeApp.Game.Common
 		// public void SetTime(long time) { }
 
 		// // RVA: 0x11020E0 Offset: 0x11020E0 VA: 0x11020E0
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_inOutCount.Enter(false, null);
+		}
 
 		// // RVA: 0x110211C Offset: 0x110211C VA: 0x110211C
 		// public void Enter(float animTime) { }

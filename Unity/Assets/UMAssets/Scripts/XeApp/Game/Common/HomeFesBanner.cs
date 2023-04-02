@@ -90,7 +90,12 @@ namespace XeApp.Game.Common
 		// public void SetActive(bool active) { }
 
 		// // RVA: 0xEACCA8 Offset: 0xEACCA8 VA: 0xEACCA8
-		// public void Enter() { }
+		public void Enter()
+		{
+			if(m_controller == null)
+				return;
+			m_inOutAnime.Enter(false, null);
+		}
 
 		// // RVA: 0xEACCE8 Offset: 0xEACCE8 VA: 0xEACCE8
 		// public void Enter(float animTime) { }

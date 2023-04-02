@@ -390,5 +390,12 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 	// public bool IGFOFCEKIAM(int AHHJLDLAPAN, int HMFFHLPNMPH) { }
 
 	// // RVA: 0x197B67C Offset: 0x197B67C VA: 0x197B67C
-	// public int KPJIMHGMAGN(int AHHJLDLAPAN) { }
+	public int KPJIMHGMAGN(int AHHJLDLAPAN)
+	{
+		if(AHHJLDLAPAN < 1)
+			return 0;
+		if(NBIGLBMHEDC_DivaList[AHHJLDLAPAN - 1].NEAADNDKGLG_IntimacyTouchTotal < 1)
+			return 0;
+		return NBIGLBMHEDC_DivaList[AHHJLDLAPAN - 1].NEAADNDKGLG_IntimacyTouchTotal;
+	}
 }

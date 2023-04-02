@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -106,7 +107,10 @@ namespace XeApp.Game.Menu
 		//public void OnDestoryScene() { }
 
 		//// RVA: 0x14B04BC Offset: 0x14B04BC VA: 0x14B04BC
-		//public bool CheckUnlock() { }
+		public bool CheckUnlock()
+		{
+			return m_viewIntimacyData.HFFOJIBDNOG();
+		}
 
 		//// RVA: 0x14B04E8 Offset: 0x14B04E8 VA: 0x14B04E8
 		public void InitHome(TransitionRoot root, CommonDivaBalloon divaBalloon, MenuDivaTalk divaTalk, Action callback)
@@ -151,7 +155,14 @@ namespace XeApp.Game.Menu
 		//public void SetSiblingIndexCounter(int index) { }
 
 		//// RVA: 0x14B06DC Offset: 0x14B06DC VA: 0x14B06DC
-		//public void EnterCounter() { }
+		public void EnterCounter()
+		{
+			if(!CheckUnlock())
+				return;
+			m_intimacyCounter.Enter();
+			m_intimacyCounter.SetEnable(false);
+			m_prevEnableReaction = false;
+		}
 
 		//// RVA: 0x14B0744 Offset: 0x14B0744 VA: 0x14B0744
 		//public void EnterCounter(float animTime) { }
@@ -166,10 +177,32 @@ namespace XeApp.Game.Menu
 		//public void DisableLongTouchTips() { }
 
 		//// RVA: 0x14B0840 Offset: 0x14B0840 VA: 0x14B0840
-		//public void EnableLongTouchTips() { }
+		public void EnableLongTouchTips()
+		{
+			m_enableLongTouchTips = true;
+		}
 
 		//// RVA: 0x14B084C Offset: 0x14B084C VA: 0x14B084C
-		//public void EnterLongTouchTips(bool force = False) { }
+		public void EnterLongTouchTips(bool force = false)
+		{
+			if(m_enableLongTouchTips && m_divaTalk != null)
+			{
+				if(!m_divaTalk.IsEnableReaction())
+					return;
+				bool enabled = m_viewIntimacyData.HFFOJIBDNOG();
+				if(m_viewIntimacyData.HHLEJPBEHNE() < 1)
+				{
+					if(enabled && !m_viewIntimacyData.HBODCMLFDOB.PFIILLOIDIL)
+					{
+						bool b = GameMessageManager.CheckBasara(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+						MessageBank bk = MessageManager.Instance.GetBank("menu");
+						string str = bk.GetMessageByLabel(b ? "diva_intimacy_basara_tips" : "diva_intimacy_tips");
+						m_systemMessage.SetTextSystem(m_viewIntimacyData.AHHJLDLAPAN_DivaId, str);
+						m_systemMessage.Enter(force);
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x14B0A74 Offset: 0x14B0A74 VA: 0x14B0A74
 		//public void EnterLongTouchTips(float animTime, bool force = False) { }

@@ -148,7 +148,12 @@ namespace XeApp.Game.Common
 		// public void SetActive(bool active) { }
 
 		// // RVA: 0xEAB7E0 Offset: 0xEAB7E0 VA: 0xEAB7E0
-		// public void Enter() { }
+		public void Enter()
+		{
+			if(m_scrollView.scrollObjects.Count < 1)
+				return;
+			m_inOutAnime.Enter(false, null);
+		}
 
 		// // RVA: 0xEAB8A8 Offset: 0xEAB8A8 VA: 0xEAB8A8
 		// public void Enter(float animTime) { }
