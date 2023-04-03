@@ -68,6 +68,10 @@ namespace XeApp.Game.Common
 		//public void Leave(float animTime) { }
 
 		//// RVA: 0xEA8F7C Offset: 0xEA8F7C VA: 0xEA8F7C
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_buttonBgChange.IsPlaying() || m_buttonUIHide.IsPlaying() || m_buttonStory.IsPlaying() ||
+				m_buttonGakuya.IsPlaying() || m_buttonDecoRoom.IsPlaying() || m_buttonBingo.IsPlaying();
+		}
 	}
 }

@@ -165,6 +165,9 @@ namespace XeApp.Game.Common
 		// public void Leave(float animTime) { }
 
 		// // RVA: 0xEABA00 Offset: 0xEABA00 VA: 0xEABA00
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOutAnime.IsPlaying();
+		}
 	}
 }

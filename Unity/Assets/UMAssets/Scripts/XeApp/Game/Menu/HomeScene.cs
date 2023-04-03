@@ -360,8 +360,29 @@ namespace XeApp.Game.Menu
 		// RVA: 0x971B40 Offset: 0x971B40 VA: 0x971B40 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			TodoLogger.Log(0, "OnBgmStart");
-			//SoundManager.Instance.bgmPlayer.ContinuousPlay(BgmPlayer.MENU_BGM_ID_BASE);
+			int bgmId = 0;
+			if(!CanRareBreakAdv() && m_eventAdvId < 1)
+			{
+				bgmId = BgmPlayer.MENU_BGM_ID_BASE;
+				if (MenuScene.Instance.BgControl.limitedHomeBg.m_music_id == BgControl.LimitedHomeBg.INVALID_MUSIC_ID)
+				{
+					string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("home_bgm_id", "0,0,0");
+					string[] strs = str.Split(new char[] { ',' });
+					if(strs.Length == 3)
+					{
+						int v = 0;
+						if(int.TryParse(strs[BgControl.GetHomeBgId(MenuScene.Instance.EnterToHomeTime) - 1], out v))
+						{
+							bgmId += v;
+						}
+					}
+				}
+				else
+				{
+					bgmId = BgmPlayer.MENU_BGM_ID_BASE + MenuScene.Instance.BgControl.limitedHomeBg.m_music_id;
+				}
+				SoundManager.Instance.bgmPlayer.ContinuousPlay(bgmId, 1);
+			}
 			return true;
 		}
 
@@ -383,10 +404,8 @@ namespace XeApp.Game.Menu
 		// RVA: 0x972284 Offset: 0x972284 VA: 0x972284 Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			TodoLogger.Log(0, "IsEndEnterAnimation");
-			return true;
-			//return !m_eventBanner.IsPlaying() && !m_campaignBanner.IsPlaying() && !m_fesBanner.IsPlaying() && !m_subMenu.IsPlaying() && 
-			//	!m_buttonGroup.IsPlaying() && !m_playRecordBanner.IsPlaying() && base.IsEndEnterAnimation();
+			return !m_eventBanner.IsPlaying() && !m_campaignBanner.IsPlaying() && !m_fesBanner.IsPlaying() && !m_subMenu.IsPlaying() && 
+				!m_buttonGroup.IsPlaying() && !m_playRecordBanner.IsPlaying() && base.IsEndEnterAnimation();
 		}
 
 		// RVA: 0x972398 Offset: 0x972398 VA: 0x972398 Slot: 12
