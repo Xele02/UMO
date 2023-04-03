@@ -133,7 +133,16 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9683DC Offset: 0x9683DC VA: 0x9683DC
 		public bool CheckLobbyAnnounce()
 		{
-			TodoLogger.Log(0, "CheckLobbyAnnounce");
+			if (!m_IsInitialize)
+				return false;
+			if(!GameManager.Instance.IsTutorial && m_coroutine == null)
+			{
+				IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+				if(ev != null)
+				{
+					TodoLogger.Log(0, "Event CheckLobbyAnnounce");
+				}
+			}
 			return false;
 		}
 
