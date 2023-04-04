@@ -27,11 +27,14 @@ namespace XeApp.Game.Menu
 		public JJOELIOGMKK_DivaIntimacyInfo viewIntimacyData { private get; set; }  // 0x8
 		public OnChangedMessage onChangedMessage { private get; set; } // 0xC
 		private MenuDivaManager divaManager { get { return MenuScene.Instance.divaManager; } } //0xECD720
-		// private ILDKBCLAFPB saveManager { get; } 0xECD7BC
-		// private ILDKBCLAFPB.BKLCILHFCGB talkFlags { get; } 0xECD858
+		private ILDKBCLAFPB saveManager { get { return GameManager.Instance.localSave; } } //0xECD7BC
+		private ILDKBCLAFPB.BKLCILHFCGB_Flags talkFlags { get { return saveManager.EPJOACOONAC_GetSave().NDOKECOAPML_Login.LDCMANMNAHC_HomeTalkFlags; } } //0xECD858
 
 		// RVA: 0xECD8B4 Offset: 0xECD8B4 VA: 0xECD8B4
-		// public static void ClearHomeTalkFlags() { }
+		public static void ClearHomeTalkFlags()
+		{
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().NDOKECOAPML_Login.LDCMANMNAHC_HomeTalkFlags.JCHLONCMPAJ_Clear();
+		}
 
 		// // RVA: 0xECD9B8 Offset: 0xECD9B8 VA: 0xECD9B8
 		public MenuDivaTalk(int divaId, HomeDivaControl divaControl)
@@ -68,7 +71,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECE0C4 Offset: 0xECE0C4 VA: 0xECE0C4
-		// public void TimerStart() { }
+		public void TimerStart()
+		{
+			m_autoTalkWatch.Start();
+		}
 
 		// // RVA: 0xECE098 Offset: 0xECE098 VA: 0xECE098
 		public void TimerStop()
@@ -83,7 +89,10 @@ namespace XeApp.Game.Menu
 		// public bool IsTimerRunning() { }
 
 		// // RVA: 0xECE16C Offset: 0xECE16C VA: 0xECE16C
-		// public void SetLoginTime(long unixtime) { }
+		public void SetLoginTime(long unixtime)
+		{
+			m_loginTime = unixtime;
+		}
 
 		// // RVA: 0xECE17C Offset: 0xECE17C VA: 0xECE17C
 		public bool IsDownLoading()
@@ -101,7 +110,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECE310 Offset: 0xECE310 VA: 0xECE310
-		// public void DoIntroTalk(bool resetTalkFlags = False) { }
+		public void DoIntroTalk(bool resetTalkFlags = false)
+		{
+			TodoLogger.Log(0, "DoIntroTalk");
+		}
 
 		// // RVA: 0xECEF14 Offset: 0xECEF14 VA: 0xECEF14
 		public bool IsEnableReaction()
@@ -177,10 +189,34 @@ namespace XeApp.Game.Menu
 		// private bool CheckComebackTalk(DateTime loginDate, DateTime lastLoginDate) { }
 
 		// // RVA: 0xECE538 Offset: 0xECE538 VA: 0xECE538
-		// public bool CheckBirthdayTalk(bool checkOnly = True) { }
+		public bool CheckBirthdayTalk(bool checkOnly = true)
+		{
+			if(m_birthdayTalkData != null)
+			{
+				bool b = talkFlags.ODKIHPBEOEC_IsTrue(1);
+				if (!b && !checkOnly)
+				{
+					talkFlags.EDEDFDDIOKO_SetTrue(1);
+					return true;
+				}
+				return !b;
+			}
+			return false;
+		}
 
 		// // RVA: 0xECE6C0 Offset: 0xECE6C0 VA: 0xECE6C0
-		// public bool CheckLimitedTalk(bool checkOnly = True) { }
+		public bool CheckLimitedTalk(bool checkOnly = true)
+		{
+			if (m_limitedTalkData.Count == 0)
+				return false;
+			bool b = talkFlags.ODKIHPBEOEC_IsTrue(2);
+			if (!b && !checkOnly)
+			{
+				talkFlags.EDEDFDDIOKO_SetTrue(2);
+				return true;
+			}
+			return !b;
+		}
 
 		// // RVA: 0xECF6E0 Offset: 0xECF6E0 VA: 0xECF6E0
 		// private void DivaTalk(string label, MenuDivaTalk.OnChangedMessage a_callback) { }

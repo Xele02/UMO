@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -31,10 +33,31 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1101E0C Offset: 0x1101E0C VA: 0x1101E0C
-		// public void SetCount(int count) { }
+		public void SetCount(int count)
+		{
+			m_numCount.SetNum(count);
+		}
 
 		// // RVA: 0x1101E40 Offset: 0x1101E40 VA: 0x1101E40
-		// public void SetTime(long time) { }
+		public void SetTime(long time)
+		{
+			if(time < 0)
+			{
+				m_textTime.text = "MAX";
+			}
+			else
+			{
+				TimeSpan t = new TimeSpan(0, 0, (int)time);
+				if(t.Hours < 1)
+				{
+					m_textTime.text = string.Format(MessageManager.Instance.GetMessage("menu", "diva_intimacy_time_count"), t.Minutes, t.Seconds);
+				}
+				else
+				{
+					m_textTime.text = string.Format(MessageManager.Instance.GetMessage("menu", "diva_intimacy_time_count_2"), t.Hours, t.Minutes, t.Seconds);
+				}
+			}
+		}
 
 		// // RVA: 0x11020E0 Offset: 0x11020E0 VA: 0x11020E0
 		public void Enter()

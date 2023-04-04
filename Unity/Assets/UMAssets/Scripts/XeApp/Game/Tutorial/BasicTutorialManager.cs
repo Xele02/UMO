@@ -203,7 +203,11 @@ namespace XeApp.Game.Tutorial
 		// public JGEOBNENMAH.EDHCNKBMLGI SetupTutorialGame(TutorialGameMode.Type type) { }
 
 		// // RVA: 0xE42544 Offset: 0xE42544 VA: 0xE42544
-		// public static bool IsBeginnerMission() { }
+		public static bool IsBeginnerMission()
+		{
+			TodoLogger.Log(0, "IsBeginnerMission");
+			return false;
+		}
 
 		// // RVA: 0xE42630 Offset: 0xE42630 VA: 0xE42630
 		public BasicTutorialManager()

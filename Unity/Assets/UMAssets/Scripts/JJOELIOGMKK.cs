@@ -174,10 +174,16 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 	//public bool FNGFADPFKOD() { }
 
 	//// RVA: 0x1353B44 Offset: 0x1353B44 VA: 0x1353B44
-	//public int GMIEFBELJJH() { }
+	public int GMIEFBELJJH()
+	{
+		return CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.DCLKMNGMIKC(false);
+	}
 
 	//// RVA: 0x1353C04 Offset: 0x1353C04 VA: 0x1353C04
-	//public long BPBIHCAMNBJ() { }
+	public long BPBIHCAMNBJ()
+	{
+		return CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.CKEJFCLAOHP_GetRemainingTime();
+	}
 
 	//// RVA: 0x1353CC0 Offset: 0x1353CC0 VA: 0x1353CC0
 	//public bool NJAKNMGEKFB(JJOELIOGMKK.LPBGKOJDNJK GBJFNGCDKPM, int KDCMPJNGLBL) { }

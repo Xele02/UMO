@@ -97,7 +97,11 @@ namespace XeApp.Game.Tutorial
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE7D0 Offset: 0x6AE7D0 VA: 0x6AE7D0
 		// // RVA: 0xE464B0 Offset: 0xE464B0 VA: 0xE464B0
-		// public static IEnumerator ShowTutorial(int id, UnityAction endAction) { }
+		public static IEnumerator ShowTutorial(int id, UnityAction endAction)
+		{
+			TodoLogger.Log(0, "ShowTutorial");
+			yield return null;
+		}
 
 		// // RVA: 0xE46578 Offset: 0xE46578 VA: 0xE46578
 		private static void OnDummyBackButton()

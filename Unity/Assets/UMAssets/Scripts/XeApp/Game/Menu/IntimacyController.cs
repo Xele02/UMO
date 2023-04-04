@@ -93,7 +93,10 @@ namespace XeApp.Game.Menu
 		{
 			if(!m_isLoading && m_root != null)
 			{
-				TodoLogger.Log(0, "IntimacyController.Update");
+				if(m_root is HomeScene)
+					UpdateLayout();
+				if (m_root is DecoScene)
+					UpdateLayoutDeco();
 			}
 		}
 
@@ -208,7 +211,17 @@ namespace XeApp.Game.Menu
 		//public void EnterLongTouchTips(float animTime, bool force = False) { }
 
 		//// RVA: 0x14B0CB0 Offset: 0x14B0CB0 VA: 0x14B0CB0
-		//public void LeaveLongTouchTips(bool force = False) { }
+		public void LeaveLongTouchTips(bool force = false)
+		{
+			bool enabled = m_viewIntimacyData.HFFOJIBDNOG();
+			if(m_viewIntimacyData.HHLEJPBEHNE() < 1)
+			{
+				if(enabled && !m_viewIntimacyData.HBODCMLFDOB.PFIILLOIDIL)
+				{
+					m_systemMessage.Leave(force);
+				}
+			}
+		}
 
 		//// RVA: 0x14B0D74 Offset: 0x14B0D74 VA: 0x14B0D74
 		//public void LeaveLongTouchTips(float animTime, bool force = False) { }
@@ -233,7 +246,43 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14AFCE8 Offset: 0x14AFCE8 VA: 0x14AFCE8
-		//private void UpdateLayout() { }
+		private void UpdateLayout()
+		{
+			if(m_viewIntimacyData != null)
+			{
+				if(m_intimacyCounter != null)
+				{
+					int cnt = m_viewIntimacyData.GMIEFBELJJH();
+					if (cnt <= 0)
+						cnt = 0;
+					long t = m_viewIntimacyData.BPBIHCAMNBJ();
+					JKNNIKNKMNJ j = new JKNNIKNKMNJ();
+					int countMax = j.GPBGFJONHPB();
+					if (countMax <= cnt)
+						t = -1;
+					m_intimacyCounter.SetTime(t);
+					m_intimacyCounter.SetCount(cnt);
+					if(m_divaTalk != null)
+					{
+						bool canEnable = cnt > 0 && m_divaTalk.IsEnableReaction() && !MenuScene.Instance.IsTransition() && m_coroutine == null;
+						if (canEnable != m_prevEnableReaction)
+						{
+							m_prevEnableReaction = canEnable;
+							if(!canEnable)
+							{
+								LeaveLongTouchTips(false);
+								m_intimacyCounter.SetEnable(false);
+							}
+							else
+							{
+								EnterLongTouchTips(false);
+								m_intimacyCounter.SetEnable(true);
+							}
+						}
+					}
+				}
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E65C4 Offset: 0x6E65C4 VA: 0x6E65C4
 		//// RVA: 0x14B116C Offset: 0x14B116C VA: 0x14B116C
@@ -413,7 +462,10 @@ namespace XeApp.Game.Menu
 		//private IEnumerator Co_TouchDecoCharactor(IntimacyController.CharTouchInterface charTouch, DecorationChara chara, Action<bool> reactionCallback, Action endCallback) { }
 
 		//// RVA: 0x14AFFAC Offset: 0x14AFFAC VA: 0x14AFFAC
-		//private void UpdateLayoutDeco() { }
+		private void UpdateLayoutDeco()
+		{
+			TodoLogger.Log(0, "UpdateLayoutDeco");
+		}
 
 		//// RVA: 0x14B2884 Offset: 0x14B2884 VA: 0x14B2884
 		//public void InitGakuya(TransitionRoot root, GakuyaDivaMessage gakuyaDivaMessage, GakuyaPresentListWindow gakuyaPresentListWindow, GakuyaPresentLimit gakuyaPresentLimit, MenuDivaTalk divaTalk, HomeDivaControl divaControl, Action callback) { }

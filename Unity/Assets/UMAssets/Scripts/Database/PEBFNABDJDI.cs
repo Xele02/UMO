@@ -90,7 +90,20 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xCC4880 Offset: 0xCC4880 VA: 0xCC4880
-	// public int NCEMAEDMJLO(long EOLFJGMAJAB) { }
+	public int NCEMAEDMJLO(long EOLFJGMAJAB)
+	{
+		if (BMAHEAMPCED_BeginnerGachaInfo.Count < 1)
+			return 1;
+		int res = 1;
+		for(int i = 0; i < BMAHEAMPCED_BeginnerGachaInfo.Count; i++)
+		{
+			if(EOLFJGMAJAB >= BMAHEAMPCED_BeginnerGachaInfo[i].KJLPILMAIKH_Date)
+			{
+				res = BMAHEAMPCED_BeginnerGachaInfo[i].CEMEIPNMAAD_Version;
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0xCC49B8 Offset: 0xCC49B8 VA: 0xCC49B8
 	// public bool JLAJNCMIIOK(int JIKLEHGJKBH, string OPFGFINHFCE) { }

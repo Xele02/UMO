@@ -125,7 +125,10 @@ namespace XeApp.Game.Common
 		//public void Enter(float animTime, bool force = False) { }
 
 		//// RVA: 0x1CD1DC8 Offset: 0x1CD1DC8 VA: 0x1CD1DC8
-		//public void Leave(bool force = False) { }
+		public void Leave(bool force = false)
+		{
+			m_inOutAnime.Leave(force, null);
+		}
 
 		//// RVA: 0x1CD1E00 Offset: 0x1CD1E00 VA: 0x1CD1E00
 		//public void Leave(float animTime, bool force = False) { }

@@ -87,7 +87,10 @@ namespace XeApp.Game.Menu
 		// public void SetActive(bool active) { }
 
 		// // RVA: 0x956FFC Offset: 0x956FFC VA: 0x956FFC
-		// public void Enter(bool force = False) { }
+		public void Enter(bool force = false)
+		{
+			m_inOutAnime.Enter(force, null);
+		}
 
 		// // RVA: 0x957034 Offset: 0x957034 VA: 0x957034
 		// public void Enter(float animTime, bool force = False) { }

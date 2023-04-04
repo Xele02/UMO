@@ -101,7 +101,11 @@ public class JEPBIIJDGEF_EventInfo
 	// // RVA: 0x1C39BD4 Offset: 0x1C39BD4 VA: 0x1C39BD4
 	public IKDICBBFBMI_EventBase AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/)
 	{
-		TodoLogger.Log(0, "AJLEDCKMFLP");
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		for(int i = 0; i < MPEOOINCGEN.Count; i++)
+		{
+			TodoLogger.Log(0, "AJLEDCKMFLP");
+		}
 		return null;
 	}
 

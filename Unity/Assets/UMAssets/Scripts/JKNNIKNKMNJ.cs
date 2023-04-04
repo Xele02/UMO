@@ -119,7 +119,29 @@ public class JKNNIKNKMNJ
     }
 
 	// // RVA: 0x147292C Offset: 0x147292C VA: 0x147292C
-	// public int DCLKMNGMIKC(bool LIFPCFFJEOA = False) { }
+	public int DCLKMNGMIKC(bool LIFPCFFJEOA = false)
+	{
+		if(!LIFPCFFJEOA)
+		{
+			if(DCBENCMNOGO_Gain <= NEPIPMPAFIE_CntVal)
+			{
+				return NEPIPMPAFIE_CntVal;
+			}
+		}
+		int diff = NEPIPMPAFIE_CntVal - DCBENCMNOGO_Gain;
+		long updateDiff = diff * FLJGHBLEDDB_UpdateInterval;
+		long diff2 = FJDBNGEPKHL_Time - DLPEEDCCNMJ_CntSaveTime;
+		if(updateDiff < diff2)
+		{
+			diff2 = updateDiff;
+		}
+		long v = NEPIPMPAFIE_CntVal + diff2 % FLJGHBLEDDB_UpdateInterval; // % or/ ?
+		if(v <= DCBENCMNOGO_Gain)
+		{
+			return (int)v;
+		}
+		return DCBENCMNOGO_Gain;
+	}
 
 	// // RVA: 0x1472B28 Offset: 0x1472B28 VA: 0x1472B28
 	public long CKEJFCLAOHP_GetRemainingTime()

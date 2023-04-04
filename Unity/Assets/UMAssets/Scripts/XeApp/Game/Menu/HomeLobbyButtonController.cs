@@ -50,7 +50,18 @@ namespace XeApp.Game.Menu
 		// RVA: 0x9667E8 Offset: 0x9667E8 VA: 0x9667E8
 		public void Setup(Type a_type = Type.DOWN)
 		{
-			TodoLogger.Log(0, "LobbyButton Setup");
+			if(m_IsInitialize)
+			{
+				m_EnableShow = false;
+				m_lobbyTabBtn.Wait();
+				m_lobbySceneBtn.Wait();
+				UpdatePresentment();
+				IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+				if(ev != null)
+				{
+					TodoLogger.Log(0, "LobbyButton Setup Event");
+				}
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E2944 Offset: 0x6E2944 VA: 0x6E2944
@@ -214,7 +225,14 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x966B74 Offset: 0x966B74 VA: 0x966B74
-		// private void UpdatePresentment() { }
+		private void UpdatePresentment()
+		{
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+			if(ev != null)
+			{
+				TodoLogger.Log(0, "UpdatePresentment event");
+			}
+		}
 
 		// // RVA: 0x968EF8 Offset: 0x968EF8 VA: 0x968EF8
 		private void OnLobbyTabButton()

@@ -2123,7 +2123,13 @@ public class ILDKBCLAFPB
 		// public void GIBNLEBILNO(int PPFNGGCBJKC) { }
 
 		// // RVA: 0x20255B0 Offset: 0x20255B0 VA: 0x20255B0
-		// public void JCHLONCMPAJ() { }
+		public void JCHLONCMPAJ_Clear()
+		{
+			for (int i = 0; i < KGMLFAFPOKP.Length; i++)
+			{
+				KGMLFAFPOKP[i] = 0;
+			}
+		}
 
 		// // RVA: 0x2025628 Offset: 0x2025628 VA: 0x2025628
 		public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData OBHAFLMHAKG)

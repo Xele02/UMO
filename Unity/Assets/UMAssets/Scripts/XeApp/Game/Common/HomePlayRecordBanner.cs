@@ -19,7 +19,10 @@ namespace XeApp.Game.Common
 		public Action onClickButton { private get; set; } // 0x18
 
 		//// RVA: 0xEB11BC Offset: 0xEB11BC VA: 0xEB11BC
-		//public bool IsSetup() { }
+		public bool IsSetup()
+		{
+			return m_setup;
+		}
 
 		//// RVA: 0xEB11C4 Offset: 0xEB11C4 VA: 0xEB11C4
 		public bool IsAvailabilityPeriod(long mver)

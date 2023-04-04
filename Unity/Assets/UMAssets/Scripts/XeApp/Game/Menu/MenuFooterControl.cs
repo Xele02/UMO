@@ -269,7 +269,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xED28D4 Offset: 0xED28D4 VA: 0xED28D4
-		// public ButtonBase FindButton(MenuFooterControl.Button bit) { }
+		public ButtonBase FindButton(Button bit)
+		{
+			if(m_buttons != null)
+			{
+				for(int i = 0; i < m_buttons.Length; i++)
+				{
+					if (((int)bit & (1 << (i & 0x1f))) != 0)
+					{
+						return m_buttons[i].GetComponentInParent<ButtonBase>();
+					}
+				}
+			}
+			return null;
+		}
 
 		// // RVA: 0xED29D4 Offset: 0xED29D4 VA: 0xED29D4
 		public void SetButtonNew(Button bit, bool isNew)

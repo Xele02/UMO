@@ -1,9 +1,31 @@
 using System;
 using System.Collections;
 using XeApp.Game.Common;
+using XeApp.Game.Menu;
+using XeApp.Game.MusicSelect;
 
 namespace XeApp.Game.Tutorial
 {
+	public enum InputLimitButton
+	{
+		None = -1,
+		CmnBack = 0,
+		GachaList = 1,
+		GachaBuy = 2,
+		GachaReturn = 3,
+		Setting = 4,
+		UnitSetting = 5,
+		MainScene = 6,
+		Scene = 7,
+		PopupPositiveButton = 8,
+		SnsRoomButton = 9,
+		VOP = 10,
+		Mission = 11,
+		LobbyTab = 12,
+		LobbyScene = 13,
+		Delegate = 14,
+	}
+
 	public class TutorialProc
 	{
 		public const int PlateGrowthBeginnerMissionId = 5;
@@ -38,23 +60,43 @@ namespace XeApp.Game.Tutorial
 		//public static IEnumerator Co_TutorialUnit5(ButtonBase unitInfoChangeButton) { }
 
 		//// RVA: 0xE4A1F8 Offset: 0xE4A1F8 VA: 0xE4A1F8
-		//public static bool CanBeginnerMissionLiveClearLiveHelp() { }
+		public static bool CanBeginnerMissionLiveClearLiveHelp()
+		{
+			TodoLogger.Log(0, "Tutorial CanBeginnerMissionLiveClearLiveHelp");
+			return false;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AEE98 Offset: 0x6AEE98 VA: 0x6AEE98
 		//// RVA: 0xE4A4C0 Offset: 0xE4A4C0 VA: 0xE4A4C0
-		//public static IEnumerator Co_BeginnerMissionLiveClear(MusicSelectCDSelect cdSelect, MusicScrollView musicScrollView) { }
+		public static IEnumerator Co_BeginnerMissionLiveClear(MusicSelectCDSelect cdSelect, MusicScrollView musicScrollView)
+		{
+			TodoLogger.Log(0, "Co_BeginnerMissionLiveClear");
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AEF10 Offset: 0x6AEF10 VA: 0x6AEF10
 		//// RVA: 0xE4A588 Offset: 0xE4A588 VA: 0xE4A588
-		//public static IEnumerator Co_OffeReleaseTutorial(InputLimitButton inputLimitButton, ButtonBase button, Action act, BasicTutorialMessageId messageId, bool IsInputLimit = True, MusicSelectCDSelect cdSelect, MusicScrollView musicScrollView) { }
+		public static IEnumerator Co_OffeReleaseTutorial(InputLimitButton inputLimitButton, ButtonBase button, Action act, BasicTutorialMessageId messageId, bool IsInputLimit = true, MusicSelectCDSelect cdSelect = null, MusicScrollView musicScrollView = null)
+		{
+			TodoLogger.Log(0, "Co_OffeReleaseTutorial");
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AEF88 Offset: 0x6AEF88 VA: 0x6AEF88
 		//// RVA: 0xE4A6AC Offset: 0xE4A6AC VA: 0xE4A6AC
-		//public static IEnumerator Co_CostumeUpgrade(EBFLJMOCLNA.NDOPBOCEPJO type, ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton = -1, TutorialPointer.Direction direction = 1) { }
+		public static IEnumerator Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO type, ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton = InputLimitButton.None, TutorialPointer.Direction direction = TutorialPointer.Direction.Normal)
+		{
+			TodoLogger.Log(0, "Co_CostumeUpgrade");
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF000 Offset: 0x6AF000 VA: 0x6AF000
 		//// RVA: 0xE4A7C4 Offset: 0xE4A7C4 VA: 0xE4A7C4
-		//public static IEnumerator Co_ValkyrieUpgrade(ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton = -1, TutorialPointer.Direction direction = 1, MusicSelectCDSelect cdSelect, MusicScrollView musicScrollView) { }
+		public static IEnumerator Co_ValkyrieUpgrade(ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton = InputLimitButton.None, TutorialPointer.Direction direction = TutorialPointer.Direction.Normal, MusicSelectCDSelect cdSelect = null, MusicScrollView musicScrollView = null)
+		{
+			TodoLogger.Log(0, "Co_ValkyrieUpgrade");
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF078 Offset: 0x6AF078 VA: 0x6AF078
 		//// RVA: 0xE4A8D0 Offset: 0xE4A8D0 VA: 0xE4A8D0
@@ -66,7 +108,11 @@ namespace XeApp.Game.Tutorial
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF168 Offset: 0x6AF168 VA: 0x6AF168
 		//// RVA: 0xE4A9FC Offset: 0xE4A9FC VA: 0xE4A9FC
-		//public static IEnumerator Co_Decolture(ButtonBase button, Action proc) { }
+		public static IEnumerator Co_Decolture(ButtonBase button, Action proc)
+		{
+			TodoLogger.Log(0, "Co_Decolture");
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF1E0 Offset: 0x6AF1E0 VA: 0x6AF1E0
 		//// RVA: 0xE4AAC4 Offset: 0xE4AAC4 VA: 0xE4AAC4

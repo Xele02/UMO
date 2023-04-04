@@ -572,7 +572,10 @@ namespace XeApp.Game.Menu
 		// public int GetCurrentStamina() { }
 
 		// // RVA: 0xB30F70 Offset: 0xB30F70 VA: 0xB30F70
-		// public void InitAssitPlate() { }
+		public void InitAssitPlate()
+		{
+			TodoLogger.Log(0, "InitAssitPlate");
+		}
 
 		// // RVA: 0xB30FF4 Offset: 0xB30FF4 VA: 0xB30FF4
 		public void GotoRhythmGame(bool isSkip, int ticketCount, bool isNotUpdateProfile)
@@ -633,7 +636,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB31758 Offset: 0xB31758 VA: 0xB31758
-		// public void GotoAdventure(bool isExecuteSceneExit = False) { }
+		public void GotoAdventure(bool isExecuteSceneExit = false)
+		{
+			TodoLogger.Log(0, "GotoAdventure");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7B7C Offset: 0x6C7B7C VA: 0x6C7B7C
 		// // RVA: 0xB318BC Offset: 0xB318BC VA: 0xB318BC
@@ -893,7 +899,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7F3C Offset: 0x6C7F3C VA: 0x6C7F3C
 		// // RVA: 0xB34C48 Offset: 0xB34C48 VA: 0xB34C48
-		// public IEnumerator ShowPosterReleaseWindowCoroutine() { }
+		public IEnumerator ShowPosterReleaseWindowCoroutine()
+		{
+			TodoLogger.Log(0, "ShowPosterReleaseWindowCoroutine");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7FB4 Offset: 0x6C7FB4 VA: 0x6C7FB4
 		// // RVA: 0xB34CF4 Offset: 0xB34CF4 VA: 0xB34CF4
@@ -921,11 +931,19 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C8194 Offset: 0x6C8194 VA: 0x6C8194
 		// // RVA: 0xB34FC0 Offset: 0xB34FC0 VA: 0xB34FC0
-		// public IEnumerator ShowConvertRareupStarWindowCoroutine() { }
+		public IEnumerator ShowConvertRareupStarWindowCoroutine()
+		{
+			TodoLogger.Log(0, "ShowConvertRareupStarWindowCoroutine");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C820C Offset: 0x6C820C VA: 0x6C820C
 		// // RVA: 0xB3506C Offset: 0xB3506C VA: 0xB3506C
-		// public IEnumerator ShowGetLiveSkipTicketWindowCoroutine() { }
+		public IEnumerator ShowGetLiveSkipTicketWindowCoroutine()
+		{
+			TodoLogger.Log(0, "ShowGetLiveSkipTicketWindowCoroutine");
+			yield return null;
+		}
 
 		// // RVA: 0xB35118 Offset: 0xB35118 VA: 0xB35118
 		// public void ChangeRhythmAdjustScene() { }

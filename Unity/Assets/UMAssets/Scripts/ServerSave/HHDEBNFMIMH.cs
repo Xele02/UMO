@@ -40,7 +40,10 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 	// public override bool DMICHEJIAJL { get; }
 
 	// // RVA: 0x17550EC Offset: 0x17550EC VA: 0x17550EC
-	// public void GFANLIOMMNA(int BPNKGDGBBFG) { }
+	public void GFANLIOMMNA(int BPNKGDGBBFG)
+	{
+		TodoLogger.Log(0, "GFANLIOMMNA");
+	}
 
 	// // RVA: 0x175523C Offset: 0x175523C VA: 0x175523C
 	public bool FABEJIHKFGN(int MDLFDNOJAJN)

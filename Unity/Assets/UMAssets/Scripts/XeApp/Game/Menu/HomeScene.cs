@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
+using XeApp.Game.Tutorial;
 using XeSys;
 
 namespace XeApp.Game.Menu
@@ -28,25 +29,25 @@ namespace XeApp.Game.Menu
 		private bool m_sceneUiEnable = true; // 0x7D
 		private bool m_footerUiEnable = true; // 0x7E
 		private bool m_isSuccessPrepare; // 0x7F
-		// private bool m_isARMarkerConvert; // 0x80
-		// private bool m_isCheckEventReward; // 0x81
+		private bool m_isARMarkerConvert; // 0x80
+		private bool m_isCheckEventReward; // 0x81
 		private bool m_isCheckGachaProductList; // 0x82
-		// private bool m_isDisplayingInfo; // 0x83
-		// private bool m_saveDataDirty; // 0x84
+		private bool m_isDisplayingInfo; // 0x83
+		private bool m_saveDataDirty; // 0x84
 		private bool m_isWaitIntro; // 0x85
-		// private bool m_isAbortIntro; // 0x86
-		// private bool m_isDivaCrossFade; // 0x87
+		private bool m_isAbortIntro; // 0x86
+		private bool m_isDivaCrossFade; // 0x87
 		private bool m_isInitIntimacy; // 0x88
 		private bool m_isInitRaidLobby; // 0x89
-		// private bool m_isStartTutorial; // 0x8A
+		private bool m_isStartTutorial; // 0x8A
 		private bool m_isUpdateMusicRateRanking; // 0x8B
 		private bool m_isHomeShowDiva = true; // 0x8C
-		// private bool m_isHiddenUI; // 0x8D
+		private bool m_isHiddenUI; // 0x8D
 		private KNKDBNFMAKF_EventSp m_spEventCtrl; // 0x90
 		private CHHECNJBMLA_EventBoxGacha m_boxGachaEventCtrl; // 0x94
 		private PLADCDJLOBE m_balloonLeadData; // 0x98
-		// private SnsScreen m_snsScreen; // 0x9C
-		// private GachaScene.GachaArgs m_gachaArgs = new GachaScene.GachaArgs(); // 0xA0
+		private SnsScreen m_snsScreen; // 0x9C
+		//private GachaScene.GachaArgs m_gachaArgs = new GachaScene.GachaArgs(); // 0xA0
 		private HomePickupTextureCahce m_pickupTexCache; // 0xA4
 		private HomeBannerTextureCache m_bannerTexCache; // 0xA8
 		private List<JBCAHMMCOKK> m_pickupList = new List<JBCAHMMCOKK>(8); // 0xAC
@@ -66,7 +67,7 @@ namespace XeApp.Game.Menu
 		// private List<HomeScene.limitedWarning> m_coLimitedItemList = new List<HomeScene.limitedWarning>(); // 0xD8
 		// private List<HomeScene.limitedWarning> m_coCurrencyItemList = new List<HomeScene.limitedWarning>(); // 0xDC
 
-		// private bool isValidBalloonLead { get; } 0x96E6EC
+		private bool isValidBalloonLead { get { return m_balloonLeadData != null; } } //0x96E6EC
 
 		// RVA: 0x96E6FC Offset: 0x96E6FC VA: 0x96E6FC Slot: 4
 		protected override void Awake()
@@ -618,7 +619,39 @@ namespace XeApp.Game.Menu
 		// private void ShowInformation(bool disableDivaTalk = False) { }
 
 		// // RVA: 0x973484 Offset: 0x973484 VA: 0x973484
-		// private void SetInputStatus(bool headerEnable, bool sceneEnable, bool footerEnable) { }
+		private void SetInputStatus(bool headerEnable, bool sceneEnable, bool footerEnable)
+		{
+			if(m_headerUiEnable != headerEnable)
+			{
+				if (headerEnable)
+					MenuScene.Instance.HeaderMenu.SetButtonEnable(MenuHeaderControl.Button.All);
+				else
+					MenuScene.Instance.HeaderMenu.SetButtonDisable(MenuHeaderControl.Button.All);
+				m_headerUiEnable = headerEnable;
+			}
+			if(m_sceneUiEnable != sceneEnable)
+			{
+				if (sceneEnable)
+					InputEnable();
+				else
+					InputDisable();
+				m_sceneUiEnable = sceneEnable;
+			}
+			if(m_footerUiEnable != footerEnable)
+			{
+				if (footerEnable)
+				{
+					MenuScene.Instance.FooterMenu.SetButtonEnable(MenuFooterControl.Button.All);
+					MenuScene.Instance.LobbyButtonControl.EnableButton(true);
+				}
+				else
+				{
+					MenuScene.Instance.FooterMenu.SetButtonDisable(MenuFooterControl.Button.All);
+					MenuScene.Instance.LobbyButtonControl.EnableButton(false);
+				}
+				m_footerUiEnable = footerEnable;
+			}
+		}
 
 		// // RVA: 0x97371C Offset: 0x97371C VA: 0x97371C
 		// private bool TryLobbyAnnounce() { }
@@ -667,7 +700,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3444 Offset: 0x6E3444 VA: 0x6E3444
 		// // RVA: 0x975108 Offset: 0x975108 VA: 0x975108
-		// public IEnumerator CO_ExecutePlayRecordFirst() { }
+		public IEnumerator CO_ExecutePlayRecordFirst()
+		{
+			TodoLogger.Log(0, "CO_ExecutePlayRecordFirst");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E34BC Offset: 0x6E34BC VA: 0x6E34BC
 		// // RVA: 0x975064 Offset: 0x975064 VA: 0x975064
@@ -725,22 +762,328 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x971AA4 Offset: 0x971AA4 VA: 0x971AA4
 		private IEnumerator Co_SceneIntroduce()
 		{
+			List<Func<IEnumerator>> coList; // 0x1C
+			bool isFirstHome; // 0x20
+			bool isFirstTitleFlow; // 0x21
+			int i; // 0x24
+			GameManager.PushBackButtonHandler backButtonDummy; // 0x28
+
 			//0x13D2790
-			TodoLogger.Log(0, "Co_SceneIntroduce");
-			yield return null;
+			HomeArgs args = Args as HomeArgs;
+			SetInputStatus(false, false, false);
+			m_campaignBanner.StopAutoScroll();
+			m_isWaitIntro = true;
+			m_isAbortIntro = false;
+			coList = new List<Func<IEnumerator>>();
+			if (UI_PlayRecord.IsFirstLaunch())
+			{
+				if (m_playRecordBanner.IsSetup())
+				{
+					coList.Add(CO_ExecutePlayRecordFirst);
+				}
+			}
+			isFirstHome = !MenuScene.IsAlreadyHome;
+			isFirstTitleFlow = MenuScene.IsFirstTitleFlow;
+			if (isFirstHome)
+			{
+				coList.Add(Co_GetPaidVCProductList);
+				MenuScene.Instance.InitAssitPlate();
+			}
+			coList.Add(Coroutine_LoginBonusPopup);
+			coList.Add(Co_MonthlyPassLoginBonusPopup);
+			if (isFirstTitleFlow)
+			{
+				coList.Add(Co_ShowRichBanner);
+				coList.Add(Co_ShowPickupWebView);
+				coList.Add(Coroutine_ShowInformation);
+			}
+			if (args != null && args.isOpenSns)
+			{
+				coList.Add(Co_SnsScreen);
+			}
+			coList.Add(MenuScene.Instance.ShowPosterReleaseWindowCoroutine);
+			coList.Add(MenuScene.Instance.ShowGetLiveSkipTicketWindowCoroutine);
+			coList.Add(MenuScene.Instance.ShowConvertRareupStarWindowCoroutine);
+			coList.Add(MenuScene.Instance.ShowReceiveRewardWindowCoroutine);
+			coList.Add(MenuScene.Instance.ShowMissionStepupWindowCoroutine);
+			coList.Add(Co_HomeMissionAnnounce);
+			coList.Add(Co_LimitedItemWarning);
+			coList.Add(Co_CurrencyItemWarning);
+			coList.Add(Co_ChangePopupLimtiedBg);
+			if (MenuScene.CheckDatelineAndAssetUpdate())
+				m_isAbortIntro = true;
+			if (CanRareBreakAdv())
+			{
+				TipsControl.Instance.Close();
+				//LAB_013d39d0
+				while (TipsControl.Instance.isPlayingAnime())
+					yield return null;
+				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(GetRareBreakAdvId());
+				ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(GetRareBreakAdvId(), OAGBCBBHMPF.DKAMMIHBINF.PGNFDEIHHMD/*9*/);
+				Database.Instance.advSetup.Setup(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(GetRareBreakAdvId()).KKPPFAHFOJI);
+				MenuScene.Instance.GotoAdventure(true);
+				m_isAbortIntro = true;
+				yield break;
+			}
+			if (CanGetEventAdv())
+			{
+				TipsControl.Instance.Close();
+				//LAB_013d3d98
+				while (TipsControl.Instance.isPlayingAnime())
+					yield return null;
+				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(m_eventAdvId);
+				ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(m_eventAdvId, OAGBCBBHMPF.DKAMMIHBINF.PGNFDEIHHMD/*9*/);
+				Database.Instance.advSetup.Setup(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(m_eventAdvId).KKPPFAHFOJI);
+				MenuScene.Instance.GotoAdventure(true);
+				m_isAbortIntro = true;
+				yield break;
+			}
+			for (i = 0; i < coList.Count; i++)
+			{
+				if (!m_isAbortIntro)
+				{
+					yield return Co.R(coList[i].Invoke());
+					//3
+				}
+			}
+			coList.Clear();
+			bool doTransition = false;
+			if (!doTransition && !m_isAbortIntro)
+			{
+				yield return Co.R(MenuScene.Instance.LobbyButtonControl.Co_CheckNewMark(() =>
+				{
+					//0x13C6C3C
+					doTransition = true;
+					MenuScene.Instance.GotoTitle();
+				}));
+				//4
+				if (MenuScene.Instance.DirtyChangeScene)
+					doTransition = true;
+			}
+			//LAB_013d54f8
+			if (!doTransition && !m_isAbortIntro)
+			{
+				yield return Co.R(Coroutine_EventReward());
+				//5
+				if (MenuScene.Instance.DirtyChangeScene)
+					doTransition = true;
+			}
+			//LAB_013d5534
+			if (!doTransition && !m_isAbortIntro && TutorialProc.CanBeginnerMissionLiveClearLiveHelp())
+			{
+				m_isStartTutorial = true;
+				SetInputStatus(false, false, true);
+				yield return Co.R(TutorialProc.Co_BeginnerMissionLiveClear(null, null));
+				//6
+				if (MenuScene.Instance.DirtyChangeScene)
+					doTransition = true;
+				m_isStartTutorial = false;
+			}
+			//LAB_013d4110
+			if (!doTransition && !m_isAbortIntro)
+			{
+				yield return Co.R(Coroutine_ShowUnlock(() =>
+				{
+					//0x13C6CE4
+					doTransition = true;
+				}));
+				//7
+				if (MenuScene.Instance.DirtyChangeScene)
+					doTransition = true;
+			}
+			//LAB_013d414c
+			if (!doTransition && !m_isAbortIntro)
+			{
+				yield return Co.R(Co_CheckPlayerForceRename(() =>
+				{
+					//0x13C6CF0
+					doTransition = true;
+				}));
+				//8
+				if (MenuScene.Instance.DirtyChangeScene)
+					doTransition = true;
+			}
+			//LAB_013d4188
+			if (!doTransition && !m_isAbortIntro && BasicTutorialManager.IsBeginnerMission())
+			{
+				m_isStartTutorial = true;
+				SetInputStatus(false, false, true);
+				yield return Co.R(Co_BeginnerMissionMiniAdv());
+				//9
+				if (MenuScene.Instance.DirtyChangeScene)
+					doTransition = true;
+				m_isStartTutorial = false;
+			}
+			//LAB_013d4264
+			if (!doTransition && !m_isAbortIntro)
+			{
+				yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialFunc));
+				//10
+				if (MenuScene.Instance.DirtyChangeScene)
+					doTransition = true;
+			}
+			//LAB_013d42a0
+			if (!doTransition && !m_isAbortIntro && HNDLICBDEMI.AFGKIJMPNNN())
+			{
+				m_isStartTutorial = true;
+				List<ButtonBase> btns = new List<ButtonBase>(m_buttonGroup.GetComponentsInChildren<ButtonBase>(true));
+				ButtonBase btn = btns.Find((ButtonBase _) =>
+				{
+					//0x13C69AC
+					return _.name.Contains("Button_DecoRoom");
+				});
+				yield return Co.R(TutorialProc.Co_Decolture(btn, () =>
+				{
+					//0x13C6CFC
+					SetInputStatus(false, false, false);
+					doTransition = true;
+				}));
+				//0xb
+				m_isStartTutorial = false;
+			}
+			//LAB_013d44f8
+			if (!doTransition && !m_isAbortIntro)
+			{
+				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.MLBBKNLPBBD(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO/*0*/))
+				{
+					if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
+					{
+						m_isStartTutorial = true;
+						SetInputStatus(false, false, true);
+						ButtonBase btn = MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP);
+						yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, btn, () =>
+						{
+							//0x13C6A44
+							return;
+						}, BasicTutorialMessageId.Id_OfferRelease, true, null, null));
+						//0xc
+						doTransition = true;
+						m_isStartTutorial = false;
+					}
+				}
+			}
+			//LAB_013d47c8
+			if (!doTransition && !m_isAbortIntro)
+			{
+				if(GNGMCIAIKMA.HHCJCDFCLOB != null)
+				{
+					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBingoMission) && GNGMCIAIKMA.HHCJCDFCLOB.GBCPDBJEDHL())
+					{
+						m_isStartTutorial = true;
+						MenuScene.Instance.InputDisable();
+						backButtonDummy = () =>
+						{
+							//0x13C6A48
+							return;
+						};
+						yield return Co.R(TutorialManager.ShowTutorial(114, null));
+						//0xd
+						bool done = false;
+						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBingoMission, true);
+						MenuScene.Save(() =>
+						{
+							//0x13C6D54
+							done = true;
+						}, null);
+						while (!done)
+							yield return null;
+						GameManager.Instance.RemovePushBackButtonHandler(backButtonDummy);
+						MenuScene.Instance.InputEnable();
+						m_isStartTutorial = false;
+						backButtonDummy = null;
+					}
+				}
+			}
+			//LAB_013d4804
+			if (!doTransition && !m_isAbortIntro && MOEALEGLGCH.CDOCOLOKCJK() && 
+				!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
+			{
+				m_isStartTutorial = true;
+				SetInputStatus(false, false, true);
+				ButtonBase btn = MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Setting);
+				yield return Co.R(TutorialProc.Co_CostumeUpgrade(0, btn, BasicTutorialMessageId.Id_CostumeUpgradeHome, InputLimitButton.Setting, TutorialPointer.Direction.Down));
+				//0xf
+				doTransition = true;
+				m_isStartTutorial = false;
+			}
+			//LAB_013d48f0
+			if (!doTransition && !m_isAbortIntro && SettingMenuPanel.IsValkyrieTuneUpUnlock() && 
+				!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
+			{
+				m_isStartTutorial = true;
+				SetInputStatus(false, false, true);
+				ButtonBase btn = MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Setting);
+				yield return Co.R(TutorialProc.Co_ValkyrieUpgrade(btn, BasicTutorialMessageId.Id_ValkyrieUpgradeHome, InputLimitButton.Setting, TutorialPointer.Direction.Down, null, null));
+				//0x10
+				doTransition = true;
+				m_isStartTutorial = false;
+			}
+			//LAB_013d4974
+			SetInputStatus(true, true, true);
+			MenuScene.IsAlreadyHome = true;
+			MenuScene.IsFirstTitleFlow = false;
+			if(!doTransition && !m_isAbortIntro)
+			{
+				if(m_isHomeShowDiva)
+				{
+					if(GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId != m_introTalkDivaId ||
+						m_lastHomeShowDiva != m_isHomeShowDiva ||
+						isFirstTitleFlow || isFirstHome)
+					{
+						m_introTalkDivaId = GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId;
+						MenuDivaTalk.ClearHomeTalkFlags();
+					}
+					bool b = true;
+					if(!m_divaTalk.CheckBirthdayTalk(true))
+					{
+						b = m_divaTalk.CheckLimitedTalk(true);
+					}
+					if(!b && !(isFirstTitleFlow || isFirstHome))
+					{
+						m_divaTalk.TimerStart();
+					}
+					else
+					{
+						m_divaTalk.SetLoginTime(MenuScene.Instance.EnterToHomeTime);
+						m_divaTalk.DoIntroTalk(false);
+					}
+				}
+				m_lastHomeShowDiva = m_isHomeShowDiva;
+				if (isValidBalloonLead)
+				{
+					m_leadBalloon.gameObject.SetActive(true);
+					m_leadBalloon.Enter(false);
+				}
+				NoticeActionList.Add(CheckSnsNotice);
+				NoticeActionList.Add(CheckOfferNotice);
+				ShowNotice();
+			}
+			m_campaignBanner.StartAutoScroll();
+			m_isWaitIntro = false;
 		}
 
 		// // RVA: 0x978C38 Offset: 0x978C38 VA: 0x978C38
-		// private void CheckSnsNotice() { }
+		private void CheckSnsNotice()
+		{
+			TodoLogger.Log(0, "CheckSnsNotice");
+		}
 
 		// // RVA: 0x978E2C Offset: 0x978E2C VA: 0x978E2C
-		// private void CheckOfferNotice() { }
+		private void CheckOfferNotice()
+		{
+			TodoLogger.Log(0, "CheckOfferNotice");
+		}
 
 		// // RVA: 0x978F14 Offset: 0x978F14 VA: 0x978F14
 		// private void AddNotice(Action action) { }
 
 		// // RVA: 0x978F94 Offset: 0x978F94 VA: 0x978F94
-		// private void ShowNotice() { }
+		private void ShowNotice()
+		{
+			TodoLogger.Log(0, "ShowNotice");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E35AC Offset: 0x6E35AC VA: 0x6E35AC
 		// // RVA: 0x978FB8 Offset: 0x978FB8 VA: 0x978FB8
@@ -813,23 +1156,43 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3714 Offset: 0x6E3714 VA: 0x6E3714
 		// // RVA: 0x97A338 Offset: 0x97A338 VA: 0x97A338
-		// private IEnumerator Coroutine_LoginBonusPopup() { }
+		private IEnumerator Coroutine_LoginBonusPopup()
+		{
+			TodoLogger.Log(0, "Coroutine_LoginBonusPopup");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E378C Offset: 0x6E378C VA: 0x6E378C
 		// // RVA: 0x97A3C0 Offset: 0x97A3C0 VA: 0x97A3C0
-		// private IEnumerator Co_MonthlyPassLoginBonusPopup() { }
+		private IEnumerator Co_MonthlyPassLoginBonusPopup()
+		{
+			TodoLogger.Log(0, "Co_MonthlyPassLoginBonusPopup");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3804 Offset: 0x6E3804 VA: 0x6E3804
 		// // RVA: 0x97A448 Offset: 0x97A448 VA: 0x97A448
-		// private IEnumerator Coroutine_ShowInformation() { }
+		private IEnumerator Coroutine_ShowInformation()
+		{
+			TodoLogger.Log(0, "Coroutine_ShowInformation");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E387C Offset: 0x6E387C VA: 0x6E387C
 		// // RVA: 0x97A4D0 Offset: 0x97A4D0 VA: 0x97A4D0
-		// private IEnumerator Co_HomeMissionAnnounce() { }
+		private IEnumerator Co_HomeMissionAnnounce()
+		{
+			TodoLogger.Log(0, "Co_HomeMissionAnnounce");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E38F4 Offset: 0x6E38F4 VA: 0x6E38F4
 		// // RVA: 0x97A558 Offset: 0x97A558 VA: 0x97A558
-		// private IEnumerator Co_ShowRichBanner() { }
+		private IEnumerator Co_ShowRichBanner()
+		{
+			TodoLogger.Log(0, "Co_ShowRichBanner");
+			yield return null;
+		}
 
 		// // RVA: 0x97A5E0 Offset: 0x97A5E0 VA: 0x97A5E0
 		private void OnClickBgViewStart()
@@ -839,7 +1202,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E396C Offset: 0x6E396C VA: 0x6E396C
 		// // RVA: 0x97A730 Offset: 0x97A730 VA: 0x97A730
-		// private IEnumerator Co_ChangePopupLimtiedBg() { }
+		private IEnumerator Co_ChangePopupLimtiedBg()
+		{
+			TodoLogger.Log(0, "Co_ChangePopupLimtiedBg");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E39E4 Offset: 0x6E39E4 VA: 0x6E39E4
 		// // RVA: 0x97A7A0 Offset: 0x97A7A0 VA: 0x97A7A0
@@ -906,7 +1273,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3BC4 Offset: 0x6E3BC4 VA: 0x6E3BC4
 		// // RVA: 0x97AB3C Offset: 0x97AB3C VA: 0x97AB3C
-		// private IEnumerator Co_ShowPickupWebView() { }
+		private IEnumerator Co_ShowPickupWebView()
+		{
+			TodoLogger.Log(0, "Co_ShowPickupWebView");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3C3C Offset: 0x6E3C3C VA: 0x6E3C3C
 		// // RVA: 0x97ABC4 Offset: 0x97ABC4 VA: 0x97ABC4
@@ -914,7 +1285,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3CB4 Offset: 0x6E3CB4 VA: 0x6E3CB4
 		// // RVA: 0x97AC68 Offset: 0x97AC68 VA: 0x97AC68
-		// private IEnumerator Co_GetPaidVCProductList() { }
+		private IEnumerator Co_GetPaidVCProductList()
+		{
+			TodoLogger.Log(0, "Co_GetPaidVCProductList");
+			yield return null;
+		}
 
 		// // RVA: 0x97ACF0 Offset: 0x97ACF0 VA: 0x97ACF0
 		// private static string GetLeadBalloonDesc(PLADCDJLOBE leadData) { }
@@ -957,7 +1332,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3D2C Offset: 0x6E3D2C VA: 0x6E3D2C
 		// // RVA: 0x97ADFC Offset: 0x97ADFC VA: 0x97ADFC
-		// private IEnumerator Co_SnsScreen() { }
+		private IEnumerator Co_SnsScreen()
+		{
+			TodoLogger.Log(0, "Co_SnsScreen");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3DA4 Offset: 0x6E3DA4 VA: 0x6E3DA4
 		// // RVA: 0x973C9C Offset: 0x973C9C VA: 0x973C9C
@@ -972,22 +1351,38 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3E94 Offset: 0x6E3E94 VA: 0x6E3E94
 		// // RVA: 0x97B034 Offset: 0x97B034 VA: 0x97B034
-		// private IEnumerator Co_BeginnerMissionMiniAdv() { }
+		private IEnumerator Co_BeginnerMissionMiniAdv()
+		{
+			TodoLogger.Log(0, "Co_BeginnerMissionMiniAdv");
+			yield return null;
+		}
 
 		// // RVA: 0x97B0BC Offset: 0x97B0BC VA: 0x97B0BC
 		// private bool CheckTutorialFunc(TutorialConditionId conditionId) { }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3F0C Offset: 0x6E3F0C VA: 0x6E3F0C
 		// // RVA: 0x97B73C Offset: 0x97B73C VA: 0x97B73C
-		// private IEnumerator Coroutine_EventReward() { }
+		private IEnumerator Coroutine_EventReward()
+		{
+			TodoLogger.Log(0, "Coroutine_EventReward");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3F84 Offset: 0x6E3F84 VA: 0x6E3F84
 		// // RVA: 0x97B7C4 Offset: 0x97B7C4 VA: 0x97B7C4
-		// private IEnumerator Coroutine_ShowUnlock(Action onTransition) { }
+		private IEnumerator Coroutine_ShowUnlock(Action onTransition)
+		{
+			TodoLogger.Log(0, "Coroutine_ShowUnlock");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3FFC Offset: 0x6E3FFC VA: 0x6E3FFC
 		// // RVA: 0x97B84C Offset: 0x97B84C VA: 0x97B84C
-		// private IEnumerator Co_CheckPlayerForceRename(Action onTransition) { }
+		private IEnumerator Co_CheckPlayerForceRename(Action onTransition)
+		{
+			TodoLogger.Log(0, "Co_CheckPlayerForceRename");
+			yield return null;
+		}
 
 		// // RVA: 0x97B8D4 Offset: 0x97B8D4 VA: 0x97B8D4
 		// private bool RaidEventApHeal() { }
@@ -1018,7 +1413,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x97155C Offset: 0x97155C VA: 0x97155C
-		// private bool CanGetEventAdv() { }
+		private bool CanGetEventAdv()
+		{
+			TodoLogger.Log(0, "CanGetEventAdv");
+			return false;
+		}
 
 		// // RVA: 0x970F60 Offset: 0x970F60 VA: 0x970F60
 		private int GetEventAdvId()
@@ -1078,7 +1477,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E40EC Offset: 0x6E40EC VA: 0x6E40EC
 		// // RVA: 0x97C348 Offset: 0x97C348 VA: 0x97C348
-		// private IEnumerator Co_LimitedItemWarning() { }
+		private IEnumerator Co_LimitedItemWarning()
+		{
+			TodoLogger.Log(0, "Co_LimitedItemWarning");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E4164 Offset: 0x6E4164 VA: 0x6E4164
 		// // RVA: 0x97C3D0 Offset: 0x97C3D0 VA: 0x97C3D0
@@ -1101,7 +1504,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E4344 Offset: 0x6E4344 VA: 0x6E4344
 		// // RVA: 0x97C9E0 Offset: 0x97C9E0 VA: 0x97C9E0
-		// private IEnumerator Co_CurrencyItemWarning() { }
+		private IEnumerator Co_CurrencyItemWarning()
+		{
+			TodoLogger.Log(0, "Co_CurrencyItemWarning");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E43BC Offset: 0x6E43BC VA: 0x6E43BC
 		// // RVA: 0x97CA68 Offset: 0x97CA68 VA: 0x97CA68

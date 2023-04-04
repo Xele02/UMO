@@ -551,8 +551,17 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	// // RVA: 0x121AA58 Offset: 0x121AA58 VA: 0x121AA58
 	private static List<IKDICBBFBMI_EventBase> DJPFFHLCCNL(OHCAABOMEOF.KGOGMKMBCPP_EventType INDDJNMPONH, long JHNMKKNEENE, KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/)
 	{
-		TodoLogger.Log(0, "DJPFFHLCCNL");
-		return new List<IKDICBBFBMI_EventBase>();
+		List<IKDICBBFBMI_EventBase> res = new List<IKDICBBFBMI_EventBase>();
+		List<IKDICBBFBMI_EventBase> evts = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.FindAll((IKDICBBFBMI_EventBase JPAEDJJFFOI) =>
+		{
+			//0x1220374
+			return JPAEDJJFFOI.HIDHLFCBIDE_EventType == INDDJNMPONH;
+		});
+		for(int i = 0; i < evts.Count; i++)
+		{
+			TodoLogger.Log(0, "DJPFFHLCCNL");
+		}
+		return res;
 	}
 
 	// // RVA: 0x121BE84 Offset: 0x121BE84 VA: 0x121BE84

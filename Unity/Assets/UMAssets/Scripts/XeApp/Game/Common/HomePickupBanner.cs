@@ -198,7 +198,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEADA20 Offset: 0xEADA20 VA: 0xEADA20
-		// public void StopAutoScroll() { }
+		public void StopAutoScroll()
+		{
+			m_repeatTimer.Init(0);
+		}
 
 		// // RVA: 0xEADA4C Offset: 0xEADA4C VA: 0xEADA4C
 		public int GetContentSize(bool vertical)

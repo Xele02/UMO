@@ -1,5 +1,7 @@
 
+using System;
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use JJCJKALEIAC_HomePickup", true)]
 public class JJCJKALEIAC { }
@@ -84,8 +86,8 @@ public class JJCJKALEIAC_HomePickup : DIHHCBACKGG_DbSection
 	{
 		private int FBGGEFFJJHB; // 0x8
 		public sbyte PLALNIIBLOF_Enabled; // 0xC
-		public sbyte KLCMKLPIDDJ; // 0xD
-		public sbyte BAOFEFFADPD; // 0xE
+		public sbyte KLCMKLPIDDJ_Month; // 0xD
+		public sbyte BAOFEFFADPD_Day; // 0xE
 		private int EHOIENNDEDH; // 0x10
 		public int AECMLPKCEAE; // 0x14
 		private NNJFKLBPBNK_SecureString JOEGFLCGFNO; // 0x18
@@ -100,8 +102,8 @@ public class JJCJKALEIAC_HomePickup : DIHHCBACKGG_DbSection
 			JOEGFLCGFNO = new NNJFKLBPBNK_SecureString();
 			FBGGEFFJJHB = LPDNKHAIOLH.CEIBAFOCNCA();
 			PLALNIIBLOF_Enabled = 0;
-			KLCMKLPIDDJ = 0;
-			KLCMKLPIDDJ = 0;
+			KLCMKLPIDDJ_Month = 0;
+			KLCMKLPIDDJ_Month = 0;
 			PPFNGGCBJKC = 0;
 			KNHOMNONOEB = 0;
 			AOBNHHIIJBO = "";
@@ -149,10 +151,38 @@ public class JJCJKALEIAC_HomePickup : DIHHCBACKGG_DbSection
 	public List<OHPHKIFMPEK> HOFCPIHMHNB = new List<OHPHKIFMPEK>(); // 0x28
 
 	//// RVA: 0x134DA08 Offset: 0x134DA08 VA: 0x134DA08
-	//public List<KOCBFBJBHLJ> NOHBJAPCJJI(long EOLFJGMAJAB) { }
+	public List<KOCBFBJBHLJ> NOHBJAPCJJI(long EOLFJGMAJAB)
+	{
+		DateTime date = Utility.GetLocalDateTime(EOLFJGMAJAB);
+		List<KOCBFBJBHLJ> res = new List<KOCBFBJBHLJ>();
+		for(int i = 0; i < ENONECOLGGC.Count; i++)
+		{
+			if(ENONECOLGGC[i].PLALNIIBLOF_Enabled == 2 
+				&& ENONECOLGGC[i].KLCMKLPIDDJ_Month == date.Month 
+				&& ENONECOLGGC[i].BAOFEFFADPD_Day == date.Day)
+			{
+				res.Add(ENONECOLGGC[i]);
+			}
+		}
+		return res;
+	}
 
 	//// RVA: 0x134DBE8 Offset: 0x134DBE8 VA: 0x134DBE8
-	//public JJCJKALEIAC.OHPHKIFMPEK OKMGCLFJDJI(int IHDHKBEMADL, long EOLFJGMAJAB) { }
+	public OHPHKIFMPEK OKMGCLFJDJI(int IHDHKBEMADL, long EOLFJGMAJAB)
+	{
+		for(int i = 0; i < HOFCPIHMHNB.Count; i++)
+		{
+			if(HOFCPIHMHNB[i].PLALNIIBLOF_Enabled == 2 && HOFCPIHMHNB[i].GBJFNGCDKPM == IHDHKBEMADL)
+			{
+				if(EOLFJGMAJAB >= HOFCPIHMHNB[i].CCPECDBPFCJ + HOFCPIHMHNB[i].JOFAGCFNKIO)
+				{
+					if (HOFCPIHMHNB[i].CCPECDBPFCJ + HOFCPIHMHNB[i].EBCHFBIINDP >= EOLFJGMAJAB)
+						return HOFCPIHMHNB[i];
+				}
+			}
+		}
+		return null;
+	}
 
 	// RVA: 0x134DD9C Offset: 0x134DD9C VA: 0x134DD9C
 	public JJCJKALEIAC_HomePickup()
@@ -207,8 +237,8 @@ public class JJCJKALEIAC_HomePickup : DIHHCBACKGG_DbSection
 				KOCBFBJBHLJ data = new KOCBFBJBHLJ();
 				data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
 				data.PLALNIIBLOF_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
-				data.KLCMKLPIDDJ = (sbyte)array[i].KLCMKLPIDDJ;
-				data.BAOFEFFADPD = (sbyte)array[i].BAOFEFFADPD;
+				data.KLCMKLPIDDJ_Month = (sbyte)array[i].KLCMKLPIDDJ;
+				data.BAOFEFFADPD_Day = (sbyte)array[i].BAOFEFFADPD;
 				data.KNHOMNONOEB = array[i].KNHOMNONOEB;
 				data.AOBNHHIIJBO = array[i].AOBNHHIIJBO;
 				ENONECOLGGC.Add(data);
