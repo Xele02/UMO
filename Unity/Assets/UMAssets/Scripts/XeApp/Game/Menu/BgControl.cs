@@ -535,14 +535,14 @@ namespace XeApp.Game.Menu
 			t_operation = AssetBundleManager.LoadAssetAsync(nameBundle, m_strBuilder.ToString(), typeof(GameObject));
 			yield return t_operation;
 			loadCount++;
-			m_limitedHomeBg.m_prefab = t_operation.GetAsset<GameObject>();
+			m_limitedHomeBg.m_prefab = UnityEngine.Object.Instantiate(t_operation.GetAsset<GameObject>());
 			t_operation = null;
 
 			m_strBuilder.SetFormat("bg{0:D4}_00_camera", a_bundle_id);
 			t_operation = AssetBundleManager.LoadAssetAsync(nameBundle, m_strBuilder.ToString(), typeof(GameObject));
 			yield return t_operation;
 			loadCount++;
-			m_limitedHomeBg.m_camera = t_operation.GetAsset<GameObject>();
+			m_limitedHomeBg.m_camera = UnityEngine.Object.Instantiate(t_operation.GetAsset<GameObject>());
 
 			GameObject g = new GameObject("dark_panel");
 			Image i = g.AddComponent<Image>();
