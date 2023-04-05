@@ -574,7 +574,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30F70 Offset: 0xB30F70 VA: 0xB30F70
 		public void InitAssitPlate()
 		{
-			TodoLogger.Log(0, "InitAssitPlate");
+			EEMGHIINEHN data = new EEMGHIINEHN();
+			data.IONKIJLHJDP();
 		}
 
 		// // RVA: 0xB30FF4 Offset: 0xB30FF4 VA: 0xB30FF4
