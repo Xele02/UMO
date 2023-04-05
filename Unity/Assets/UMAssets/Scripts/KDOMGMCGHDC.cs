@@ -90,5 +90,8 @@ public class KDOMGMCGHDC
 	}
 
 	//// RVA: 0xE86F74 Offset: 0xE86F74 VA: 0xE86F74
-	//public static bool BKEMLLBKELP(int DMBFOMLCGBG) { }
+	public static bool BKEMLLBKELP(int DMBFOMLCGBG)
+	{
+		return DMBFOMLCGBG > 7;
+	}
 }

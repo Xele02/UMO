@@ -83,7 +83,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECE0F0 Offset: 0xECE0F0 VA: 0xECE0F0
-		// public void TimerRestart() { }
+		public void TimerRestart()
+		{
+			m_autoTalkWatch.Reset();
+			m_autoTalkWatch.Start();
+		}
 
 		// // RVA: 0xECE140 Offset: 0xECE140 VA: 0xECE140
 		// public bool IsTimerRunning() { }
@@ -136,7 +140,10 @@ namespace XeApp.Game.Menu
 		// public void DoIntimacyReaction(MenuDivaTalk.OnChangedMessage a_callback_msg) { }
 
 		// // RVA: 0xECF978 Offset: 0xECF978 VA: 0xECF978
-		// public void CancelRequest() { }
+		public void CancelRequest()
+		{
+			m_divaControl.CancelRequest();
+		}
 
 		// // RVA: 0xECF9A4 Offset: 0xECF9A4 VA: 0xECF9A4
 		public void Update()

@@ -33,9 +33,9 @@ public class NJOOMLFFIJB
 				{
 					if(time >= voiceList[i].PDBPFJJCADD && time < voiceList[i].FDBNFFNFOND && voiceList[i].CHOFDPDFPDC == PDJEMLMOEPF)
 					{
-						if(diva.DOAJJALOKLI == date.Month)
+						if(diva.DOAJJALOKLI_Month == date.Month)
 						{
-							if(diva.PKNONBBKCCP == date.Day)
+							if(diva.PKNONBBKCCP_Day == date.Day)
 							{
 								NJOOMLFFIJB data = new NJOOMLFFIJB();
 								data.NEJBNCHLMNJ_Type = LGAJNFGABFK.DDAFHPDFFPI_Brithday;

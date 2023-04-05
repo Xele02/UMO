@@ -174,17 +174,17 @@ public class ILLPDLODANB
 				}
 				return 0;
 			case 8:
-				return LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.MILCBLJDADN_MClr;
+				return LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.MILCBLJDADN_MusicClear;
 			case 9:
 				if(questValue > 0)
 				{
-					if (LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.LHOCOEOKFNO_SClr.Length < questValue)
+					if (LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.LHOCOEOKFNO_SerieClear.Length < questValue)
 						return 0;
-					return LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.LHOCOEOKFNO_SClr[questValue - 1];
+					return LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.LHOCOEOKFNO_SerieClear[questValue - 1];
 				}
 				return 0;
 			case 10:
-				return LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.PHPPOGOEOAF_DClr[questValue - 1];
+				return LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.PHPPOGOEOAF_DiffClear[questValue - 1];
 			case 11: // 0xb
 				return LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.HLNOELCIBPH_Perf;
 			case 12: // 0xc

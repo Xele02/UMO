@@ -82,8 +82,8 @@ public class EPPOHFLMDBC_DivaStats
 public class BJPLLEBHAGO { }
 public class BJPLLEBHAGO_DivaInfo
 {
-	public sbyte DOAJJALOKLI; // 0xD
-	public sbyte PKNONBBKCCP; // 0xE
+	public sbyte DOAJJALOKLI_Month; // 0xD
+	public sbyte PKNONBBKCCP_Day; // 0xE
 	public List<EPPOHFLMDBC_DivaStats> CMCKNKKCNDK_StatsByLevel = new List<EPPOHFLMDBC_DivaStats>(); // 0x14
 
 	public sbyte AIHCEGFANAM_Attr { get; set; } // 0x8 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL

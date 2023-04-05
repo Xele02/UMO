@@ -89,6 +89,9 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE6E0A0 Offset: 0xE6E0A0 VA: 0xE6E0A0
-		//public void Stop() { }
+		public void Stop()
+		{
+			StopCue();
+		}
 	}
 }

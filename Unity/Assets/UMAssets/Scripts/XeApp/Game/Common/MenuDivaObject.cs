@@ -41,7 +41,7 @@ namespace XeApp.Game.Common
 		public bool IsIdleAnim { get { return animator.GetCurrentAnimatorStateInfo(0).shortNameHash == IdleHash; } private set { return; } } //0x1112268 0x111237C
 		//public bool IsFacialIdelAnim { get; private set; } 0x1112380 0x1112564
 		public bool IsInTransition { get { return animator.IsInTransition(0); } } //0x1112568
-		//public bool IsInFacialTransition { get; } 0x1112598
+		public bool IsInFacialTransition { get { return facialBlendAnimMediator.selfAnimator.IsInTransition(0) || facialBlendAnimMediator.selfAnimator.IsInTransition(1); } } //0x1112598
 
 		// RVA: 0x110F3D8 Offset: 0x110F3D8 VA: 0x110F3D8 Slot: 6
 		protected override void SetupCustomComponents(DivaResource resource)
@@ -164,7 +164,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1110B60 Offset: 0x1110B60 VA: 0x1110B60
-		//public void IdleCrossFade(string stateName = "") { }
+		public void IdleCrossFade(string stateName = "")
+		{
+			if (string.IsNullOrEmpty(stateName))
+				stateName = "idle";
+			animator.CrossFade(stateName, 0.07f);
+			facialBlendAnimMediator.selfAnimator.Play(stateName, 0);
+			facialBlendAnimMediator.selfAnimator.Play(stateName, 1);
+		}
 
 		//// RVA: 0x1110C90 Offset: 0x1110C90 VA: 0x1110C90
 		//public void SetBodyCrossFade(string stateName, float duration = 0,07) { }
@@ -268,13 +275,19 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1111E60 Offset: 0x1111E60 VA: 0x1111E60
-		//public void ReactionLoopBreak() { }
+		public void ReactionLoopBreak()
+		{
+			Anim_SetBool("menu_breakReactionLoop", true);
+		}
 
 		//// RVA: 0x1111ECC Offset: 0x1111ECC VA: 0x1111ECC
 		//public bool IsInTalkLoop() { }
 
 		//// RVA: 0x1112020 Offset: 0x1112020 VA: 0x1112020
-		//public void TalkLoopBreak() { }
+		public void TalkLoopBreak()
+		{
+			Anim_SetBool("menu_breakTalkLoop", true);
+		}
 
 		//// RVA: 0x111208C Offset: 0x111208C VA: 0x111208C
 		//public void TimezoneTalk(int type) { }

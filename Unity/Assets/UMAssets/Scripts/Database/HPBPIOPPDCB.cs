@@ -75,8 +75,8 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 				data.IDDHKOEFJFB_BodyId = (sbyte)array[i].JIBNPJCIALH;
 				data.FPMGHDKACOF_PersonalityId = (sbyte)array[i].OKADDOIJGNB;
 				data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
-				data.DOAJJALOKLI = (sbyte)array[i].KLCMKLPIDDJ;
-				data.PKNONBBKCCP = (sbyte)array[i].BAOFEFFADPD;
+				data.DOAJJALOKLI_Month = (sbyte)array[i].KLCMKLPIDDJ;
+				data.PKNONBBKCCP_Day = (sbyte)array[i].BAOFEFFADPD;
 				data.LIOGKHIGJKN_FreeMusicId = (ushort)array[i].LIOGKHIGJKN;
 				data.CMBCBNEODPD_HomeBgId = (ushort)array[i].CMBCBNEODPD;
 

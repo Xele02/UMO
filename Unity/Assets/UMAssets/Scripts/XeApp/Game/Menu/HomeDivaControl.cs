@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using XeApp.Game.Common;
 
@@ -109,7 +110,26 @@ namespace XeApp.Game.Menu
 		//public bool RequestBirthdayTalk(Action onActionEndCallback) { }
 
 		//// RVA: 0x962058 Offset: 0x962058 VA: 0x962058
-		//public void CancelRequest() { }
+		public void CancelRequest()
+		{
+			if(!IsAnimatorRequested)
+			{
+				if (m_runningCoroutine == null)
+					return;
+				StopCoroutine(m_runningCoroutine);
+				m_runningCoroutine = null;
+			}
+			else if(m_runningCoroutine != null)
+			{
+				StopCoroutine(m_runningCoroutine);
+				m_runningCoroutine = null;
+			}
+			SoundManager.Instance.voDiva.Stop();
+			SoundManager.Instance.voDivaCos.Stop();
+			SoundManager.Instance.voSeasonEvent.Stop();
+			IsAnimatorRequested = false;
+			OnActionEndCallback = null;
+		}
 
 		//// RVA: 0x962184 Offset: 0x962184 VA: 0x962184
 		public void RequestDelayDownLoad(int talkType)
@@ -119,7 +139,29 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C65A8 Offset: 0x6C65A8 VA: 0x6C65A8
 		//// RVA: 0x962204 Offset: 0x962204 VA: 0x962204
-		//public IEnumerator Coroutine_IdleCrossFade() { }
+		public IEnumerator Coroutine_IdleCrossFade()
+		{
+			//0x962AEC
+			if(DivaObject.IsInTransition)
+			{
+				while (!DivaObject.IsIdleAnim)
+					yield return null;
+			}
+			if(!isTalkMotion)
+			{
+				while (DivaObject.IsInFacialTransition)
+					yield return null;
+				DivaObject.ReactionLoopBreak();
+				DivaObject.IdleCrossFade("");
+			}
+			else
+			{
+				DivaObject.TalkLoopBreak();
+			}
+			yield return null;
+			while (!DivaObject.IsIdleAnim || DivaObject.IsInTransition)
+				yield return null;
+		}
 
 		//// RVA: 0x960ADC Offset: 0x960ADC VA: 0x960ADC
 		//private void RequestUpdate() { }

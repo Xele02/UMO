@@ -20,6 +20,9 @@ namespace XeApp.Game.Common
 		//public void Play(int divaId, int voiceId) { }
 
 		//// RVA: 0x138FF64 Offset: 0x138FF64 VA: 0x138FF64
-		//public void Stop() { }
+		public void Stop()
+		{
+			StopCue(false);
+		}
 	}
 }

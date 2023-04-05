@@ -703,13 +703,65 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x975108 Offset: 0x975108 VA: 0x975108
 		public IEnumerator CO_ExecutePlayRecordFirst()
 		{
-			TodoLogger.Log(0, "CO_ExecutePlayRecordFirst");
-			yield return null;
+			//0x13C9068
+			yield return CO_ExecutePlayRecord(true);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E34BC Offset: 0x6E34BC VA: 0x6E34BC
 		// // RVA: 0x975064 Offset: 0x975064 VA: 0x975064
-		// public IEnumerator CO_ExecutePlayRecord(bool a_first) { }
+		public IEnumerator CO_ExecutePlayRecord(bool a_first)
+		{
+			Camera t_camera; // 0x1C
+			CameraClearFlags t_clear_flg; // 0x20
+
+			//0x13C8758
+			if(MenuScene.Instance != null)
+			{
+				MenuScene.Instance.InputDisable();
+			}
+			if(GameManager.Instance != null)
+			{
+				GameManager.Instance.CloseSnsNotice();
+				GameManager.Instance.CloseOfferNotice();
+			}
+			if(!a_first)
+			{
+				this.StartCoroutineWatched(m_divaControl.Coroutine_IdleCrossFade());
+				m_divaTalk.CancelRequest();
+				m_divaTalk.TimerStop();
+			}
+			UI_PlayRecord t_playrecord = null;
+			yield return Co.R(UI_PlayRecord.CO_LoadLayout(MenuScene.Instance.m_uiRootObject.transform, (UI_PlayRecord a_ui) =>
+			{
+				//0x13C86B4
+				t_playrecord = a_ui;
+			}));
+			t_playrecord.transform.SetAsLastSibling();
+			t_camera = GameManager.Instance.GetSystemCanvasCamera();
+			t_clear_flg = t_camera.clearFlags;
+			bool t_close = false;
+			yield return Co.R(t_playrecord.Initialize(() =>
+			{
+				//0x13C86BC
+				t_close = true;
+			}));
+			yield return Co.R(t_playrecord.Enter());
+			while (!t_close)
+				yield return null;
+			yield return Co.R(t_playrecord.Leave());
+			Destroy(t_playrecord.gameObject);
+			yield return null;
+			yield return Resources.UnloadUnusedAssets();
+			t_camera.clearFlags = t_clear_flg;
+			if(!a_first)
+			{
+				m_divaTalk.TimerRestart();
+			}
+			if (MenuScene.Instance != null)
+			{
+				MenuScene.Instance.InputEnable();
+			}
+		}
 
 		// // RVA: 0x975190 Offset: 0x975190 VA: 0x975190
 		// private void OnClickFesButton() { }
@@ -1416,8 +1468,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97155C Offset: 0x97155C VA: 0x97155C
 		private bool CanGetEventAdv()
 		{
-			TodoLogger.Log(0, "CanGetEventAdv");
-			return false;
+			return m_eventAdvId > 0;
 		}
 
 		// // RVA: 0x970F60 Offset: 0x970F60 VA: 0x970F60
