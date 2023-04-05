@@ -5,6 +5,7 @@ using XeApp.Game.Menu;
 using System.Collections.Generic;
 using System.Collections;
 using System.Text;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -381,11 +382,45 @@ namespace XeApp.Game.Common
 			bool b = false;
 			for(int i = 0; i < list.Count; i++)
 			{
-				TodoLogger.Log(0, "Co_TryInstallBanner");
+				if(list[i].NNHHNFFLCFO >= JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD)
+				{
+					str.SetFormat("ct/ba/hm/{0:D3}.xab", list[i].EAHPLCJMPHD);
+				}
+				else if(((1 << ((int)list[i].NNHHNFFLCFO & 0xff)) & 0x4030e10U) != 0)
+				{
+					str.SetFormat("ct/ev/hm/{0:D4}.xab", list[i].EAHPLCJMPHD);
+				}
+				else if (((1 << ((int)list[i].NNHHNFFLCFO & 0xff)) & 0x81c0060U) != 0)
+				{
+					str.SetFormat("ct/gc/hm/{0:D5}.xab", list[i].EAHPLCJMPHD);
+				}
+				else if (((1 << ((int)list[i].NNHHNFFLCFO & 0xff)) & 0xc00000U) != 0)
+				{
+					str.SetFormat("ct/ba/hm/{0:D3}.xab", list[i].EAHPLCJMPHD);
+				}
+				else
+				{
+					str.SetFormat("ct/bn/hm/{0:D5}.xab", list[i].EAHPLCJMPHD);
+				}
+				if(!KDLPEDBKMID.HHCJCDFCLOB.EGIFDIFALKK(str.ToString()))
+				{
+					Debug.Log("install cancelled : " + str.ToString());
+				}
+				else
+				{
+					if(KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str.ToString()))
+					{
+						Debug.Log("install request : " + str.ToString());
+						b = true;
+					}
+				}
 			}
 			if(!b)
 				yield break;
-			TodoLogger.Log(0, "Co_TryInstallBanner");
+			Debug.Log("install start");
+			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				yield return null;
+			Debug.Log("install end");
 		}
 
 		// // RVA: 0xEAE628 Offset: 0xEAE628 VA: 0xEAE628
