@@ -11,6 +11,11 @@ public static class MonoBehaviourExtensions
     public static Coroutine StartCoroutineWatched(this MonoBehaviour owner, IEnumerator coroutine)
     {
 		Coroutine c_ = owner.StartCoroutine(coroutine);
+		if(c_ == null)
+		{
+			// Coroutine immediately endend, return;
+			return null;
+		}
 		IEnumerator s = CoroutineWatcher.Instance.Run(coroutine, c_);
 		Coroutine c = CoroutineWatcher.Instance.StartCoroutine(s);
 		CoroutineWatcher.Instance.SetSpawned(coroutine, s, c, owner);
