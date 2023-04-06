@@ -61,8 +61,8 @@ public class NHPDPKHMFEP
 	private bool BHGMFDECGPG; // 0x14
 	private long AGHHAHBJGMH; // 0x18
 	public List<FHPFLAGNCAF> MHKCPJDNJKI = new List<FHPFLAGNCAF>(); // 0x20
-	// public JKNGJFOBADP BEJHIEGCGNE = new JKNGJFOBADP(); // 0x24
-	// public List<GJDFHLBONOL> LKNKNKAALJO = new List<GJDFHLBONOL>(); // 0x28
+	public JKNGJFOBADP BEJHIEGCGNE = new JKNGJFOBADP(); // 0x24
+	public List<GJDFHLBONOL> LKNKNKAALJO = new List<GJDFHLBONOL>(); // 0x28
 	public int DMFNALAGLHH; // 0x2C
 
 	public static NHPDPKHMFEP HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
@@ -297,7 +297,31 @@ public class NHPDPKHMFEP
 	// public int DKJFDLJCHIM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG) { }
 
 	// // RVA: 0x189AC08 Offset: 0x189AC08 VA: 0x189AC08
-	// public bool KBJJGEJAMOK() { }
+	public bool KBJJGEJAMOK()
+	{
+		DMFNALAGLHH = 0;
+		int stamp_hosei_ver = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.LPJLEHAJADA_GetValue("stamp_hosei_ver", 1);
+		if(stamp_hosei_ver != 0)
+		{
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HMMNDKHKEBC_MonthlyPass.MPLPHLAHJOC_StampHosei = stamp_hosei_ver;
+			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HMMNDKHKEBC_MonthlyPass.HMAHFMHPBBC())
+			{
+				for(int i = 0; i < 39; i++)
+				{
+					BEJHIEGCGNE.JCHLONCMPAJ();
+					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HMMNDKHKEBC_MonthlyPass.BGANHMCJIIC() != null)
+					{
+						TodoLogger.Log(0, "KBJJGEJAMOK");
+					}
+					DMFNALAGLHH++;
+					if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HMMNDKHKEBC_MonthlyPass.HMAHFMHPBBC())
+						break;
+				}
+				return true;
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0x189B04C Offset: 0x189B04C VA: 0x189B04C
 	// public void GBMFNHOFGOP(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK AOCANKOMKFG, NHPDPKHMFEP.GGNEBJEIFCP LDKJENNJPFL) { }
@@ -328,7 +352,10 @@ public class NHPDPKHMFEP
 	// public bool NILNABPCKGI() { }
 
 	// // RVA: 0x189A23C Offset: 0x189A23C VA: 0x189A23C
-	// public bool ENAAHAPDMCO() { }
+	public bool ENAAHAPDMCO()
+	{
+		return GBCPDBJEDHL(false) && HNNAJBJCNEJ;
+	}
 
 	// // RVA: 0x189B788 Offset: 0x189B788 VA: 0x189B788
 	// public bool DCDDAAONHHC() { }

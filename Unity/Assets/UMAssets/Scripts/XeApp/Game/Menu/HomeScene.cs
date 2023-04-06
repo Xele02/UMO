@@ -1285,8 +1285,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97A3C0 Offset: 0x97A3C0 VA: 0x97A3C0
 		private IEnumerator Co_MonthlyPassLoginBonusPopup()
 		{
-			TodoLogger.Log(0, "Co_MonthlyPassLoginBonusPopup");
-			yield return null;
+			//0x13D1094
+			yield return PopupLoginBonusMonthlyPass.Show(0, false, null, (bool received) =>
+			{
+				//0x97D2E4
+				m_subMenu.UpdateMonthlyPass();
+			});
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3804 Offset: 0x6E3804 VA: 0x6E3804
@@ -1658,11 +1662,7 @@ namespace XeApp.Game.Menu
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E450C Offset: 0x6E450C VA: 0x6E450C
 		// 	// RVA: 0x97D218 Offset: 0x97D218 VA: 0x97D218
 		// 	private void <OnClickDecoButton>b__121_0(PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-
-		// 	[CompilerGeneratedAttribute] // RVA: 0x6E451C Offset: 0x6E451C VA: 0x6E451C
-		// 	// RVA: 0x97D2E4 Offset: 0x97D2E4 VA: 0x97D2E4
-		// 	private void <Co_MonthlyPassLoginBonusPopup>b__128_0(bool received) { }
-
+		
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E452C Offset: 0x6E452C VA: 0x6E452C
 		// 	// RVA: 0x97D318 Offset: 0x97D318 VA: 0x97D318
 		// 	private void <SetupBeginnerLead>b__149_0(IiconTexture image) { }
