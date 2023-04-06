@@ -1313,8 +1313,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97A558 Offset: 0x97A558 VA: 0x97A558
 		private IEnumerator Co_ShowRichBanner()
 		{
+			AssetBundleLoadLayoutOperationBase lyOp; // 0x18
+			GameManager.PushBackButtonHandler backButtonAction; // 0x1C
+			int i; // 0x20
+
+			//0x13D7AEC
+			if (m_richBannerData.FPCLGFKEEFE.Count == 0)
+				yield break;
 			TodoLogger.Log(0, "Co_ShowRichBanner");
-			yield return null;
 		}
 
 		// // RVA: 0x97A5E0 Offset: 0x97A5E0 VA: 0x97A5E0

@@ -13,7 +13,7 @@ public class ONFFFKPFFGI
 	private List<ABBFICCGNOG> LMMLAMKOAKA = new List<ABBFICCGNOG>(); // 0xC
 	private long CDCKLGCKHFG; // 0x10
 
-	// public List<ABBFICCGNOG> FPCLGFKEEFE { get; } 0xCAE5D8
+	public List<ABBFICCGNOG> FPCLGFKEEFE { get { return LMMLAMKOAKA; } } //0xCAE5D8 FPNPEAAPJCL
 
 	// RVA: 0xCAE5E0 Offset: 0xCAE5E0 VA: 0xCAE5E0
 	public void KHEKNNFCAOI()
