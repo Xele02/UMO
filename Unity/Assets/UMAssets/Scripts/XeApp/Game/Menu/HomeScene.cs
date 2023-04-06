@@ -592,7 +592,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x97311C Offset: 0x97311C VA: 0x97311C
-		// private void OnNetErrorToTitle() { }
+		private void OnNetErrorToTitle()
+		{
+			TodoLogger.Log(0, "OnNetErrorToTitle");
+		}
 
 		// // RVA: 0x9731CC Offset: 0x9731CC VA: 0x9731CC
 		// private void OnExternalTransition() { }
@@ -1196,23 +1199,86 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x979E74 Offset: 0x979E74 VA: 0x979E74
-		// private void LoginBonusPopup() { }
+		private void LoginBonusPopup()
+		{
+			return;
+		}
 
 		// // RVA: 0x979E78 Offset: 0x979E78 VA: 0x979E78
-		// private bool LoginBonusPopupSetting(PopupLoginBonusSetting setting) { }
+		private bool LoginBonusPopupSetting(PopupLoginBonusSetting setting)
+		{
+			if (setting == null)
+				return false;
+			PopupWindowManager.Show(setting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x13C6A4C
+				NKGJPJPHLIF.HHCJCDFCLOB.DHEFMDMGPMG_LoginBonusManager = null;
+			}, null, null, null, true, true, false);
+			m_updater = LoginBonusPopup;
+			return true;
+		}
 
 		// // RVA: 0x97A068 Offset: 0x97A068 VA: 0x97A068
-		// private EPLAAEHPCDM GetTotalLoginBonus() { }
+		private EPLAAEHPCDM GetTotalLoginBonus()
+		{
+			if(NKGJPJPHLIF.HHCJCDFCLOB.DHEFMDMGPMG_LoginBonusManager != null)
+			{
+				return NKGJPJPHLIF.HHCJCDFCLOB.DHEFMDMGPMG_LoginBonusManager.FMAMKPJMFHJ.Find((EPLAAEHPCDM _) =>
+				{
+					//0x13C6AE4
+					return _.CKHOBDIKJFN == ANPGILOLNFK.CDOGFBNLIPG.MKADAMIGMPO/*7*/;
+				});
+			}
+			return null;
+		}
 
 		// // RVA: 0x97A284 Offset: 0x97A284 VA: 0x97A284
-		// private bool IsExistTotalLoginBonus() { }
+		private bool IsExistTotalLoginBonus()
+		{
+			return NKGJPJPHLIF.HHCJCDFCLOB.DHEFMDMGPMG_LoginBonusManager != null && GetTotalLoginBonus() != null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3714 Offset: 0x6E3714 VA: 0x6E3714
 		// // RVA: 0x97A338 Offset: 0x97A338 VA: 0x97A338
 		private IEnumerator Coroutine_LoginBonusPopup()
 		{
-			TodoLogger.Log(0, "Coroutine_LoginBonusPopup");
-			yield return null;
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0x13DA16C
+			PopupLoginBonusSetting setting = null;
+			if (IsExistTotalLoginBonus())
+			{
+				setting = new PopupLoginBonusSetting();
+				setting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("popup_loginbonus_001");
+				setting.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				setting.WindowSize = 0;
+				setting.loginBonusManager = NKGJPJPHLIF.HHCJCDFCLOB.DHEFMDMGPMG_LoginBonusManager;
+				operation = AssetBundleManager.LoadLayoutAsync(setting.BundleName, setting.AssetName);
+				yield return operation;
+				yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+				{
+					//0x13C6D68
+					instance.transform.SetParent(transform, false);
+					setting.SetContent(instance);
+				}));
+				AssetBundleManager.UnloadAssetBundle(setting.BundleName, false);
+				operation = null;
+			}
+			else
+			{
+				NKGJPJPHLIF.HHCJCDFCLOB.DHEFMDMGPMG_LoginBonusManager = null;
+			}
+			if(LoginBonusPopupSetting(setting))
+			{
+				yield return null;
+				while (!PopupWindowManager.IsActivePopupWindow())
+					yield return null;
+				while (PopupWindowManager.IsActivePopupWindow())
+					yield return null;
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E378C Offset: 0x6E378C VA: 0x6E378C
@@ -1340,8 +1406,23 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97AC68 Offset: 0x97AC68 VA: 0x97AC68
 		private IEnumerator Co_GetPaidVCProductList()
 		{
-			TodoLogger.Log(0, "Co_GetPaidVCProductList");
-			yield return null;
+			//0x13CD614
+			bool isEnd = false;
+			EJHPIMANJFP.HHCJCDFCLOB.LILDGEPCPPG_GetProductList(() =>
+			{
+				//0x13C72B4
+				isEnd = true;
+			}, () =>
+			{
+				//0x13C72C0
+				isEnd = true;
+			}, () =>
+			{
+				//0x13C72CC
+				OnNetErrorToTitle();
+			}, true, false);
+			while (!isEnd)
+				yield return null;
 		}
 
 		// // RVA: 0x97ACF0 Offset: 0x97ACF0 VA: 0x97ACF0

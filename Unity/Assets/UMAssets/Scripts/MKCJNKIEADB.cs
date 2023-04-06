@@ -8,7 +8,7 @@ public class MKCJNKIEADB
 	public long MMPCPKODGKI; // 0x18
 	public long KBFOIECIADN; // 0x20
 	public long EGBOHDFBAPB; // 0x28
-	//public ANPGILOLNFK.CDOGFBNLIPG CKHOBDIKJFN; // 0x30
+	public ANPGILOLNFK.CDOGFBNLIPG CKHOBDIKJFN; // 0x30
 	public int PJHKECDOALD = 100; // 0x34
 	public bool DNEHFIFIHEM; // 0x38
 	public int OENPCNBFPDA; // 0x3C
