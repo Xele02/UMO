@@ -1231,7 +1231,10 @@ namespace XeApp.Game
 		// // RVA: 0x9A0BB8 Offset: 0x9A0BB8 VA: 0x9A0BB8
 		public void CloseOfferNotice()
 		{
-			TodoLogger.Log(5, "GameManager CloseOfferNotice");
+			if(m_snsNotification != null)
+			{
+				m_snsNotification.Close();
+			}
 		}
 
 		// // RVA: 0x9A040C Offset: 0x9A040C VA: 0x9A040C

@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		public ScrollRect m_scroll; // 0x48
 		private PlayRecord_Animator m_anim_ctrl; // 0x4C
 
-		//public PlayRecord_Animator animctrl { get; private set; } 0xA42358 0xA46710
+		public PlayRecord_Animator animctrl { get { return m_anim_ctrl; } private set { return; } } //0xA42358 0xA46710
 
 		//// RVA: 0xA46370 Offset: 0xA46370 VA: 0xA46370
 		public void Initalize()

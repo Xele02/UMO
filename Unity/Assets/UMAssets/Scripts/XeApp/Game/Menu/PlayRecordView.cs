@@ -38,7 +38,75 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDE33F0 Offset: 0xDE33F0 VA: 0xDE33F0
 		private void Setup_Costume(BBHNACPENDM_ServerSaveData a_player_data)
 		{
-			TodoLogger.Log(0, "Setup_Costume");
+			LCLCCHLDNHJ_Costume dbCostumes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
+			int[] m_costume_max_array = new int[11];
+			int[] m_costume_color_max_array = new int[11];
+			int[] m_costume_upgrade_max_array = new int[11];
+			int[] m_costume_now_array = new int[11];
+			int[] m_costume_color_now_array = new int[11];
+			int[] m_costume_upgrade_now_array = new int[11];
+			for(int i = 0; i < dbCostumes.CDENCMNHNGA_Costumes.Count; i++)
+			{
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo dbCostume = dbCostumes.CDENCMNHNGA_Costumes[i];
+				EBFLJMOCLNA_Costume.ILFJDCICIKN saveCostume = a_player_data.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[i];
+				if(dbCostume.PPEGAKEIEGM_Enabled == 2)
+				{
+					m_costume_max_array[0]++;
+					m_costume_max_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+					for(int j = 0; j < dbCostume.BJGNGNPHCBA_LevelsInfo.Length; j++)
+					{
+						if(dbCostume.BJGNGNPHCBA_LevelsInfo[j].INDDJNMPONH_UnlockType == 4)
+						{
+							m_costume_color_max_array[0]++;
+							m_costume_color_max_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+						}
+					}
+					if (dbCostume.LLLCMHENKKN_LevelMax > 0)
+					{
+						m_costume_upgrade_max_array[0]++;
+						m_costume_upgrade_max_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+					}
+					if(dbCostume.DAJGPBLEEOB_PrismCostumeModelId == 1 || saveCostume.CGKAEMGLHNK_Possessed())
+					{
+						if(a_player_data.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(dbCostume.AHHJLDLAPAN_PrismDivaId).CPGFPEDMDEH != 0)
+						{
+							//LAB_00de38f4
+							m_costume_now_array[0]++;
+							m_costume_now_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+							if(dbCostume.LLLCMHENKKN_LevelMax > 0)
+							{
+								if(dbCostume.LLLCMHENKKN_LevelMax <= saveCostume.ANAJIAENLNB_Level)
+								{
+									m_costume_upgrade_now_array[0]++;
+									m_costume_upgrade_now_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+								}
+							}
+							int numCol = dbCostume.KKLPLPGBOFD_GetAvaiableColor(saveCostume.ANAJIAENLNB_Level).Length;
+							m_costume_color_now_array[0] += numCol;
+							m_costume_color_now_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+						}
+					}
+				}
+			}
+			for(int i = 0; i < m_costume_now_array.Length; i++)
+			{
+				if(i == 0)
+				{
+					m_total.m_costume_now = m_costume_now_array[0];
+					m_total.m_costume_max = m_costume_max_array[0];
+					m_total.m_costume_color_now = m_costume_color_now_array[0];
+					m_total.m_costume_color_max = m_costume_color_max_array[0];
+					m_total.m_costume_upgrade_now = m_costume_upgrade_now_array[0];
+					m_total.m_costume_upgrade_max = m_costume_upgrade_max_array[0];
+				}
+				else
+				{
+					m_diva[i - 1].m_costume_now = m_costume_now_array[i];
+					m_diva[i - 1].m_costume_max = m_costume_max_array[i];
+					m_diva[i - 1].m_costume_upgrade_now = m_costume_upgrade_now_array[i];
+					m_diva[i - 1].m_costume_upgrade_max = m_costume_upgrade_max_array[i];
+				}
+			}
 		}
 	}
 }

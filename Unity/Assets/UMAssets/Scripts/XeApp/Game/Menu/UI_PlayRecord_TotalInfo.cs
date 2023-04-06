@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 		public ScrollRect m_scroll; // 0x68
 		private PlayRecord_Animator m_anim_ctrl; // 0x6C
 
-		//public PlayRecord_Animator animctrl { get; private set; } 0xA42350 0xA4671C
+		public PlayRecord_Animator animctrl { get { return m_anim_ctrl; } private set { return; } } //0xA42350 0xA4671C
 		
 		//// RVA: 0xA45DD8 Offset: 0xA45DD8 VA: 0xA45DD8
 		public void Initialize()
@@ -69,7 +69,31 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA45E50 Offset: 0xA45E50 VA: 0xA45E50
 		public void Set(PlayRecordView_Total a_view)
 		{
-			TodoLogger.Log(0, "Set");
+			m_Login.Set(a_view.m_login);
+			m_Mission.Set(a_view.m_mission);
+			m_Achievement.Set(a_view.m_achievement, a_view.m_achievement_max);
+			m_MusicTotal.Set(a_view.m_music_total);
+			for(int i = 0; i < m_MusicSeries.Count; i++)
+			{
+				m_MusicSeries[i].Set(a_view.m_music_series[i]);
+			}
+			for(int i = 0; i < m_MusicDifficulty.Count; i++)
+			{
+				m_MusicDifficulty[i].Set(a_view.m_music_difficulty[i]);
+			}
+			m_Plate.Set(a_view.m_plate_now, a_view.m_plate_max);
+			m_PlateLV.Set(a_view.m_plate_upgrade);
+			m_PlatePremium.Set(a_view.m_plate_premium);
+			m_Costume.Set(a_view.m_costume_now, a_view.m_costume_max);
+			m_CostumeLV.Set(a_view.m_costume_upgrade_now);
+			m_CostumeColor.Set(a_view.m_costume_color_now, a_view.m_costume_color_max);
+			m_Valkyrie.Set(a_view.m_valkyrie_now, a_view.m_valkyrie_max);
+			m_ValkyrieLV.Set(a_view.m_valkyrie_upgrade_now);
+			m_Deco.Set(a_view.m_deco_now, a_view.m_deco_max);
+			m_Deco_Phrase.Set(a_view.m_deco_phrase_now, a_view.m_deco_phrase_max);
+			m_Deco_Interior.Set(a_view.m_deco_interia_now, a_view.m_deco_interia_max);
+			m_Deco_BG.Set(a_view.m_deco_bg_now, a_view.m_deco_bg_max);
+			m_Deco_Mascot.Set(a_view.m_deco_mascot_now, a_view.m_deco_mascot_max);
 		}
 
 		//// RVA: 0xA45304 Offset: 0xA45304 VA: 0xA45304

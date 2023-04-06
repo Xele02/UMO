@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 							{
 								DDEMMEPBOIA_Sns.EFIFBJGKPJF saveSns = a_player_data.FLHMJHBOBEA_Sns.HAJEJPFGILG[i];
 								SNS data = new SNS();
-								object o = new object[4] { date.Year, date.Month, date.Day, bk.GetMessageByLabel("sns_nm_" + dbSns.AIPLIEMLHGC.ToString("D4")) };
+								object[] o = new object[4] { date.Year, date.Month, date.Day, bk.GetMessageByLabel("sns_nm_" + dbSns.AIPLIEMLHGC.ToString("D4")) };
 								data.m_enable = false;
 								data.m_title = string.Format(JpStringLiterals.StringLiteral_19018, o);
 								data.m_time = date;
