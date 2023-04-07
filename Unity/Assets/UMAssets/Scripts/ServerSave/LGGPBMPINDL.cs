@@ -3,11 +3,11 @@
 public class LGGPBMPINDL { }
 public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 {
-	// private const int ECFEMKGFDCE = 1;
-	// public int MEBHCFJCKFE; // 0x24
-	// public int OBGBAOLONDD; // 0x28
-	// public long NFIOKIBPJCJ; // 0x30
-	// public int KDMPHHFADMC; // 0x38
+	private const int ECFEMKGFDCE = 1;
+	public int MEBHCFJCKFE; // 0x24
+	public int OBGBAOLONDD; // 0x28
+	public long NFIOKIBPJCJ; // 0x30
+	public int KDMPHHFADMC; // 0x38
 
 	// public override bool DMICHEJIAJL { get; }
 
@@ -46,7 +46,11 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD74318 Offset: 0xD74318 VA: 0xD74318 Slot: 8
-	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "AGBOGBEOFME");
+		return true;
+	}
 
 	// // RVA: 0xD74470 Offset: 0xD74470 VA: 0xD74470 Slot: 10
 	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }

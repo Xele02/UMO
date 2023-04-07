@@ -490,7 +490,11 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD89128 Offset: 0xD89128 VA: 0xD89128 Slot: 8
-	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "AGBOGBEOFME");
+		return true;
+	}
 
 	// // RVA: 0xD897EC Offset: 0xD897EC VA: 0xD897EC Slot: 10
 	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }

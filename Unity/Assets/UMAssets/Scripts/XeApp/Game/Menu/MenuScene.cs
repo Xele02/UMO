@@ -6,6 +6,7 @@ using System.Collections;
 using XeApp.Game.Common;
 using UnityEngine.Events;
 using System;
+using XeApp.Game.Tutorial;
 
 namespace XeApp.Game.Menu
 {
@@ -1057,8 +1058,82 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB3506C Offset: 0xB3506C VA: 0xB3506C
 		public IEnumerator ShowGetLiveSkipTicketWindowCoroutine()
 		{
-			TodoLogger.Log(0, "ShowGetLiveSkipTicketWindowCoroutine");
+			ILDKBCLAFPB.IPHAEFKCNMN saveData; // 0x20
+			int ticketCount; // 0x24
+			bool isPossibleReceveLiveSkipTicket; // 0x28
+			GameObject root; // 0x2C
+			AssetBundleLoadLayoutOperationBase lyOp; // 0x30
+
+			//0xB3E720
+			saveData = GameManager.Instance.localSave.EPJOACOONAC_GetSave();
+			ticketCount = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("live_skip_ticket_present_count", 3);
+			isPossibleReceveLiveSkipTicket = false;
+			if (CIOECGOMILE.HHCJCDFCLOB.NKMNJIAGHBB() && ticketCount > 0)
+				isPossibleReceveLiveSkipTicket = true;
+			bool isShowSkipTicketPopup = saveData.MCNEIJAOLNO_Select.KMCLFGMAKPA_Skip.OBMEMOOLLEI_SkipTicketPopup;
+			bool b = false;
+			if(isPossibleReceveLiveSkipTicket)
+			{
+				InputDisable();
+				RaycastDisable();
+				CIOECGOMILE.HHCJCDFCLOB.ONAAEGAJBBG(ticketCount);
+				bool done = false;
+				Save(() =>
+				{
+					//0xB38778
+					done = true;
+				}, null);
+				while (!done)
+					yield return null;
+				yield return Co.R(TutorialManager.TryShowTutorialCoroutine((TutorialConditionId conditionId) =>
+				{
+					//0xB3820C
+					return conditionId == TutorialConditionId.Condition83;
+				}));
+				InputEnable();
+				RaycastEnable();
+				b = isPossibleReceveLiveSkipTicket;
+			}
+			//LAB_00b3f078
+			if (!(b && isShowSkipTicketPopup))
+				yield break;
+			RaycastDisable();
+			root = GameObject.Find("Canvas-Popup/Root");
+			HomeGetSkipTicket layout = null;
+			lyOp = AssetBundleManager.LoadLayoutAsync("ly/006.xab", "root_home_skiptkt_window_layout_root");
+			yield return lyOp;
+			yield return Co.R(lyOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject obj) =>
+			{
+				//0xB3878C
+				layout = obj.GetComponent<HomeGetSkipTicket>();
+			}));
+			AssetBundleManager.UnloadAssetBundle("ly/006.xab", false);
 			yield return null;
+			RaycastEnable();
+			layout.Setup(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.CKCPFLDGILD_LimitedCompoItem, 1), ticketCount);
+			layout.onClickRejectCheckbox = (bool isChecked) =>
+			{
+				//0xB38764
+				isShowSkipTicketPopup = !isChecked;
+			};
+			layout.transform.SetParent(root.transform, false);
+			layout.transform.SetAsFirstSibling();
+			bool isWait = true;
+			layout.Enter(!isShowSkipTicketPopup, false, () =>
+			{
+				//0xB38808
+				isWait = false;
+			});
+			while (isWait)
+				yield return null;
+			while (layout.IsOpen)
+				yield return null;
+			layout.transform.SetParent(null, false);
+			saveData.MCNEIJAOLNO_Select.KMCLFGMAKPA_Skip.OBMEMOOLLEI_SkipTicketPopup = isShowSkipTicketPopup;
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			Destroy(layout.gameObject);
+			root = null;
+			lyOp = null;
 		}
 
 		// // RVA: 0xB35118 Offset: 0xB35118 VA: 0xB35118

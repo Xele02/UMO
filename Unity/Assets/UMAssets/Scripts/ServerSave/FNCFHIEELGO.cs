@@ -130,7 +130,11 @@ public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_ServerSaveBlock
 	// private void EANKOKOGMMI(BHBONAHFKHD JBBHNIACMFJ, string HDBEJBBPPBK, string PKLPKMLGFGK, List<NDBFKHKMMCE.FKIMJLOFONM> LKCCMBEOLLA, List<NDBFKHKMMCE.FKIMJLOFONM> GJLFANGDGCL) { }
 
 	// // RVA: 0x13E6B7C Offset: 0x13E6B7C VA: 0x13E6B7C Slot: 8
-	// public override bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP) { }
+	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	{
+		TodoLogger.Log(0, "AGBOGBEOFME");
+		return true;
+	}
 
 	// // RVA: 0x13E707C Offset: 0x13E707C VA: 0x13E707C Slot: 4
 	public override void KMBPACJNEOF()

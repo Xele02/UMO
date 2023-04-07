@@ -17,7 +17,7 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 	public bool KFKDMBPNLJK_BlockInvalid { get; set; } // 0x1D BLBIMNAGKOO PLCNNONHHKM CFDMFKKMOIM
 	public bool FHMMFHAIPLF { get; set; } // 0x1E EPOOAPEGCBO HNONIIAOAEA FEPNEHMFJAN
 	public bool EFOEPDLNLJG { get; set; } // 0x1F CPFHBAONBPP BCOKDCKGGAP DKEGLPGEFEK
-	// public virtual bool DMICHEJIAJL { get; } // ?
+	//public virtual bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x1A0BD24 NFKFOODCJJB //Slot 9
 
 	// // RVA: 0x1A0BBE8 Offset: 0x1A0BBE8 VA: 0x1A0BBE8
 	public KLFDBFMNLBL_ServerSaveBlock() 
@@ -61,11 +61,8 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 	public abstract void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP);
 
 	// // RVA: -1 Offset: -1 Slot: 8
-	// public abstract bool AGBOGBEOFME(KLFDBFMNLBL GPBJHKLFCEP);
-
-	// // RVA: 0x1A0BD24 Offset: 0x1A0BD24 VA: 0x1A0BD24 Slot: 9
-	// public virtual bool NFKFOODCJJB() { }
-
+	public abstract bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP);
+	
 	// // RVA: 0x1A0BD2C Offset: 0x1A0BD2C VA: 0x1A0BD2C Slot: 10
 	// public virtual void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }
 
