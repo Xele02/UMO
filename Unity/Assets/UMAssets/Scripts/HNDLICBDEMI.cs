@@ -20,10 +20,12 @@ public class HNDLICBDEMI
 	}
 
 	//// RVA: 0x15FAF54 Offset: 0x15FAF54 VA: 0x15FAF54
-	public static bool AFGKIJMPNNN()
+	public static bool AFGKIJMPNNN_IsDecoEnabled()
 	{
-		TodoLogger.Log(0, "AFGKIJMPNNN");
-		return false;
+		int a = 0;
+		bool b = false;
+		FMLGCFKNKIA_GetDecoPlayerLevelAndEnabled(out a, out b);
+		return b;
 	}
 
 	//// RVA: 0x15FAF84 Offset: 0x15FAF84 VA: 0x15FAF84

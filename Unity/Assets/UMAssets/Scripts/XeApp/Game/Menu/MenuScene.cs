@@ -902,13 +902,128 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB34C48 Offset: 0xB34C48 VA: 0xB34C48
 		public IEnumerator ShowPosterReleaseWindowCoroutine()
 		{
-			TodoLogger.Log(0, "ShowPosterReleaseWindowCoroutine");
-			yield return null;
+			BBHNACPENDM_ServerSaveData pd; // 0x1C
+			bool isHaveAnyKiraPlate; // 0x20
+
+			//0xB40A38
+			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+			isHaveAnyKiraPlate = pd.PNLOINMCCKH_Scene.MBGEHFKKOEN_HasRarePlate(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene);
+			if (!pd.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+			{
+				if (HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled())
+					yield break;
+				if (pd.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+					yield break;
+				pd.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsDecolture, true);
+				if (isHaveAnyKiraPlate)
+				{
+					yield return Co.R(ShowKiraSceneReleaseWindowCoroutine(false));
+					//1
+				}
+				else
+				{
+					InputDisable();
+					RaycastDisable();
+					bool isSaved = false;
+					Save(() =>
+					{
+						//0xB38690
+						isSaved = true;
+					}, null);
+					//LAB_00b40fe0;
+					//2
+					while (!isSaved)
+						yield return null;
+					InputEnable();
+					RaycastEnable();
+				}
+			}
+			else
+			{
+				int a2 = pd.KCCLEHLLOFG_Common.JGMBAIMPGBK_GetPstVer();
+				int a = pd.PNLOINMCCKH_Scene.FLPPOODHKAB(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene, DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion, a2, true);
+				int b2 = pd.KCCLEHLLOFG_Common.CPJHIHMCLMN_GetDvfVer();
+				int b = pd.JJFFBDLIOCF_Valkyrie.HEGDAMANPMF(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie, DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion, b2);
+				int c2 = pd.KCCLEHLLOFG_Common.NLAPKFFNEOC_GetTrsVer();
+				int c = pd.BEKHNNCGIEL_Costume.AAKEPLHPLPL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume, DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion, c2);
+				int d2 = pd.KCCLEHLLOFG_Common.PBHMDEJPLMJ_GetDMasVer();
+				int d = pd.OMMNKDEODJP_DecoItem.KFFGHBCCCIJ(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem, DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion, d2);
+				//??
+				if (a <= a2 && b <= b2 && c <= c2 && d <= d2)
+				{
+					//LAB_00b411a0;
+				}
+				else
+				{
+					InputDisable();
+					RaycastDisable();
+					string msg = MessageManager.Instance.GetBank("menu").GetMessageByLabel("pop_deco_release_desc") + "";
+					if (a2 < a)
+					{
+						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_poster") + "";
+						pd.KCCLEHLLOFG_Common.HHCMHDKKFNF_SetPstVer(a);
+					}
+					if (b2 < b)
+					{
+						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_figure") + "";
+						pd.KCCLEHLLOFG_Common.HKAMGHBKNBH_SetDvfVer(b);
+					}
+					if (c2 < c)
+					{
+						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_torso") + "";
+						pd.KCCLEHLLOFG_Common.GCCOOJJHIAM_SetTrsVer(c);
+					}
+					if (d2 < d)
+					{
+						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_decomascot") + "";
+						pd.KCCLEHLLOFG_Common.JAHBNIMDNHJ_DMasVer(d);
+					}
+					ButtonInfo[] buttons = new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+					};
+					TextPopupSetting setting = PopupWindowManager.CrateTextContent("", SizeType.Small, msg, buttons, false, false);
+					bool done = false;
+					bool close = false;
+					Save(() =>
+					{
+						//0xB386A4
+						done = true;
+					}, null);
+					PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+					{
+						//0xB386B0
+						close = true;
+					}, null, null, null, true, true, false);
+					while (!close)
+						yield return null;
+					//3
+					while (!done)
+						yield return null;
+					//4
+					InputEnable();
+					RaycastEnable();
+				}
+				//LAB_00b411a0
+				if (isHaveAnyKiraPlate)
+				{
+					if (!pd.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowKiraPlatePopUp2))
+					{
+						pd.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowKiraPlatePopUp2, true);
+						yield return Co.R(ShowKiraSceneReleaseWindowCoroutine(true));
+						//5
+					}
+				}
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7FB4 Offset: 0x6C7FB4 VA: 0x6C7FB4
 		// // RVA: 0xB34CF4 Offset: 0xB34CF4 VA: 0xB34CF4
-		// public IEnumerator ShowKiraSceneReleaseWindowCoroutine(bool isUnlockDeco) { }
+		public IEnumerator ShowKiraSceneReleaseWindowCoroutine(bool isUnlockDeco)
+		{
+			TodoLogger.Log(0, "ShowKiraSceneReleaseWindowCoroutine");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C802C Offset: 0x6C802C VA: 0x6C802C
 		// // RVA: 0xB34DBC Offset: 0xB34DBC VA: 0xB34DBC

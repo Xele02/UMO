@@ -1,9 +1,9 @@
-﻿
+
 public class MHOILBOJFHL
 {
 	public enum KCAEDEHGAFO
 	{
-		GCCBFIFJHII = 0,
+		GCCBFIFJHII_Information = 0,
 		CCFMGBNHMNN_Inquiry = 1,
 		FFIDPICMNKN = 2,
 		LCNNIHGFBMP = 3,

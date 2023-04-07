@@ -141,7 +141,7 @@ namespace XeApp.Game.Menu
 				{
 					yield return Co.R(m_prpController.EpisodePhase(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ, episodeList, null));
 				}
-				if(HNDLICBDEMI.AFGKIJMPNNN())
+				if(HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled())
 				{
 					if (viewData.JDKOAKDLHMG(/*8*/GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP, ref highList, ref infoList, ref episodeList))
 					{

@@ -433,5 +433,18 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 	// public override bool NFKFOODCJJB() { }
 
 	// // RVA: 0xF35030 Offset: 0xF35030 VA: 0xF35030
-	// public int KFFGHBCCCIJ(NDBFKHKMMCE EPAHOAKPAJJ, int NDKJCDGHPLD, int LNBOIHIGAGL) { }
+	public int KFFGHBCCCIJ(NDBFKHKMMCE_DecoItem EPAHOAKPAJJ, int NDKJCDGHPLD, int LNBOIHIGAGL)
+	{
+		int res = 0;
+		foreach(var k in NBKAMFFIOOG_Sp)
+		{
+			if(k.BFINGCJHOHI_Cnt > 0)
+			{
+				int a = EPAHOAKPAJJ.CHMNDNFMAGA(k.PPFNGGCBJKC_Id);
+				if (LNBOIHIGAGL < a && NDKJCDGHPLD >= a && res < a)
+					res = a;
+			}
+		}
+		return res;
+	}
 }

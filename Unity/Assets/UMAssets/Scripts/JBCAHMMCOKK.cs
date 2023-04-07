@@ -424,7 +424,15 @@ public class JBCAHMMCOKK
 					List<JJCJKALEIAC_HomePickup.KOCBFBJBHLJ> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NFDHMGGLEPN_HomePickup.NOHBJAPCJJI(JHNMKKNEENE);
 					for(int i = 0; i < l.Count; i++)
 					{
-						TodoLogger.Log(0, "HEGEKFMJNCC 24");
+						JBCAHMMCOKK data = new JBCAHMMCOKK();
+						data.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
+						JJCJKALEIAC_HomePickup.KOCBFBJBHLJ pickup = l[i];
+						data.IAMFPLLOHFO = pickup.AOBNHHIIJBO;
+						data.EAHPLCJMPHD = pickup.KNHOMNONOEB;
+						if (!b)
+							data.BJIMIONBKDD = false;
+						data.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM/*2*/;
+						NNDGIAEFMOG.Add(data);
 					}
 				}
 				break;

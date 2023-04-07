@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using UnityEngine;
 
 [System.Obsolete("Use MMPBPOIFDAF_Scene", true)]
 public class MMPBPOIFDAF { }
@@ -224,7 +225,42 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 	// public int BNNPJLPMLLK(LDDDBPNGGIN HNMMJINNHII, MLIBEPGADJH ECNHDEHADGL) { }
 
 	// // RVA: 0x196A0C8 Offset: 0x196A0C8 VA: 0x196A0C8
-	// public int FLPPOODHKAB(MLIBEPGADJH ECNHDEHADGL, int NDKJCDGHPLD, int LFPEIEOHABE, bool DHOFGFAEJFM = False) { }
+	public int FLPPOODHKAB(MLIBEPGADJH_Scene ECNHDEHADGL, int NDKJCDGHPLD, int LFPEIEOHABE, bool DHOFGFAEJFM = false)
+	{
+		int res = 0;
+		for(int i = 0; i < OPIBAPEGCLA.Count; i++)
+		{
+			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = ECNHDEHADGL.CDENCMNHNGA_SceneList[i];
+			if(dbScene.PPEGAKEIEGM_En == 2)
+			{
+				PMKOFEIONEG saveScene = OPIBAPEGCLA[i];
+				if(saveScene.IHIAFIHAAPO_Unlocked)
+				{
+					if(dbScene.LFPEIEOHABE_Pstv <= NDKJCDGHPLD && LFPEIEOHABE < dbScene.LFPEIEOHABE_Pstv)
+					{
+						if (res < dbScene.LFPEIEOHABE_Pstv)
+							res = dbScene.LFPEIEOHABE_Pstv;
+						if(DHOFGFAEJFM)
+						{
+							if(saveScene.JPIPENJGGDD_Mlt == 1)
+							{
+								saveScene.DOAAOOHGODJ_PstNew = 3;
+							}
+							else if(saveScene.JPIPENJGGDD_Mlt == 0)
+							{
+								saveScene.DOAAOOHGODJ_PstNew = 1;
+							}
+							else
+							{
+								saveScene.DOAAOOHGODJ_PstNew = 3;
+							}
+						}
+					}
+				}
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0x196A4D8 Offset: 0x196A4D8 VA: 0x196A4D8
 	public int HOLEDOLMJCB(int PPFNGGCBJKC, MLIBEPGADJH_Scene ECNHDEHADGL, int INDDJNMPONH)
@@ -341,7 +377,21 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x196AEE4 Offset: 0x196AEE4 VA: 0x196AEE4
-	// public bool MBGEHFKKOEN(MLIBEPGADJH ECNHDEHADGL) { }
+	public bool MBGEHFKKOEN_HasRarePlate(MLIBEPGADJH_Scene ECNHDEHADGL)
+	{
+		int cnt = Mathf.Min(OPIBAPEGCLA.Count, ECNHDEHADGL.CDENCMNHNGA_SceneList.Count);
+		for(int i = 0; i < cnt; i++)
+		{
+			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = ECNHDEHADGL.CDENCMNHNGA_SceneList[i];
+			PMKOFEIONEG saveScene = OPIBAPEGCLA[i];
+			if(saveScene.IHIAFIHAAPO_Unlocked)
+			{
+				if (dbScene.EKLIPGELKCL_Rarity > 4)
+					return true;
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0x196B17C Offset: 0x196B17C VA: 0x196B17C
 	public List<MLIBEPGADJH_Scene.KKLDOOJBJMN> NFFGMOFIBDH_GetAllUnlockedRareScenes(MLIBEPGADJH_Scene ECNHDEHADGL)

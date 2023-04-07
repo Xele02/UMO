@@ -620,7 +620,36 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x9731E0 Offset: 0x9731E0 VA: 0x9731E0
-		// private void ShowInformation(bool disableDivaTalk = False) { }
+		private void ShowInformation(bool disableDivaTalk = false)
+		{
+			if(!GameManager.Instance.IsTutorial)
+			{
+				if(m_isHomeShowDiva && disableDivaTalk)
+				{
+					this.StartCoroutineWatched(m_divaControl.Coroutine_IdleCrossFade());
+					m_divaTalk.CancelRequest();
+					m_divaTalk.TimerStop();
+				}
+				MenuScene.Instance.InputDisable();
+				m_isDisplayingInfo = true;
+				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.GCCBFIFJHII_Information, () =>
+				{
+					//0x13C84B4
+					m_isDisplayingInfo = false;
+					MenuScene.Instance.InputEnable();
+					if (m_isHomeShowDiva && disableDivaTalk)
+					{
+						m_divaTalk.TimerRestart();
+					}
+				}, () =>
+				{
+					//0x13C85D0
+					m_isDisplayingInfo = false;
+					MenuScene.Instance.InputEnable();
+					OnNetErrorToTitle();
+				});
+			}
+		}
 
 		// // RVA: 0x973484 Offset: 0x973484 VA: 0x973484
 		private void SetInputStatus(bool headerEnable, bool sceneEnable, bool footerEnable)
@@ -981,7 +1010,7 @@ namespace XeApp.Game.Menu
 					doTransition = true;
 			}
 			//LAB_013d42a0
-			if (!doTransition && !m_isAbortIntro && HNDLICBDEMI.AFGKIJMPNNN())
+			if (!doTransition && !m_isAbortIntro && HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled())
 			{
 				m_isStartTutorial = true;
 				List<ButtonBase> btns = new List<ButtonBase>(m_buttonGroup.GetComponentsInChildren<ButtonBase>(true));
@@ -1297,7 +1326,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97A448 Offset: 0x97A448 VA: 0x97A448
 		private IEnumerator Coroutine_ShowInformation()
 		{
-			TodoLogger.Log(0, "Coroutine_ShowInformation");
+			//0x13DA8F8
+			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd != 2)
+				yield break;
+			ShowInformation(false);
+			while(m_isDisplayingInfo)
+				yield return null;
 			yield return null;
 		}
 
@@ -1404,8 +1438,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97AB3C Offset: 0x97AB3C VA: 0x97AB3C
 		private IEnumerator Co_ShowPickupWebView()
 		{
-			TodoLogger.Log(0, "Co_ShowPickupWebView");
-			yield return null;
+			int i;
+
+			//0x13D71BC
+			if(m_pickupWebViewList.Count > 0)
+			{
+				TodoLogger.Log(0, "Co_ShowPickupWebView");
+			}
+			yield break;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3C3C Offset: 0x6E3C3C VA: 0x6E3C3C

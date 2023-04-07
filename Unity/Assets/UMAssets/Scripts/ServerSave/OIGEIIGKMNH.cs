@@ -85,7 +85,24 @@ public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 	// public bool KBBNHBBGDEC(int FODKKJIDDKN, int CIEOBFIIPLD) { }
 
 	// // RVA: 0x1DE378C Offset: 0x1DE378C VA: 0x1DE378C
-	// public int HEGDAMANPMF(JPIANKEOOMB PEOALFEGNDH, int NDKJCDGHPLD, int MIHAHCEANII) { }
+	public int HEGDAMANPMF(JPIANKEOOMB_Valkyrie PEOALFEGNDH, int NDKJCDGHPLD, int MIHAHCEANII)
+	{
+		int res = 0;
+		for(int i = 0; i < CNGNBKNBKGI_ValkList.Count; i++)
+		{
+			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbValk = PEOALFEGNDH.CDENCMNHNGA_ValkyrieList[i];
+			if(dbValk.PPEGAKEIEGM_Enabled == 2)
+			{
+				HLNPGNNPCGO_ValkyrieInfo saveValk = CNGNBKNBKGI_ValkList[i];
+				if(saveValk.BEBJKJKBOGH_Date != 0)
+				{
+					if (dbValk.MIHAHCEANII > MIHAHCEANII && NDKJCDGHPLD >= dbValk.MIHAHCEANII && res < dbValk.MIHAHCEANII)
+						res = dbValk.MIHAHCEANII;
+				}
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0x1DE397C Offset: 0x1DE397C VA: 0x1DE397C
 	public int NBFPEPBFEHI(int PPFNGGCBJKC, JPIANKEOOMB_Valkyrie PEOALFEGNDH)
