@@ -227,7 +227,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 	public int GHKKEFGDIBC_LastVfpUnlock { get { return LOIHBJBPLCE ^ ENOBDCFHELD; } set { LOIHBJBPLCE = value ^ ENOBDCFHELD; } } // EDBPDAJBLKA 0x1B31944 IAGFEICDNLP 0x1B31958
 	public int CHFMCFNEFEO_LastVopDailyLv { get { return NNDPDBJCELB ^ ENOBDCFHELD; } set { NNDPDBJCELB = value ^ ENOBDCFHELD; } } // IEPJFBCMFFB 0x1B3196C GJAMHFABMPF 0x1B31980
 	public int KNIKMMKNOFA_ARcv { get { return PGHGOOFMDMI ^ ENOBDCFHELD; } set { PGHGOOFMDMI = value ^ ENOBDCFHELD; } } // LKJJIINADLD 0x1B31A4C IHOKNBIAPLL 0x1B31A60
-	// public override bool DMICHEJIAJL { get; } // ??
+	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x1B373C0 NFKFOODCJJB
 
 	// // RVA: 0x1B30F5C Offset: 0x1B30F5C VA: 0x1B30F5C
 	public bool MLBBKNLPBBD(BOPFPIHGJMD.PDLKAKEABDP COONLEFJBMP)
@@ -326,7 +326,10 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1B320C0 Offset: 0x1B320C0 VA: 0x1B320C0 Slot: 5
-	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "OKJPIBHMKMJ");
+	}
 
 	// // RVA: 0x1B3329C Offset: 0x1B3329C VA: 0x1B3329C
 	// private EDOHBJAPLPF_JsonData BGGGENIANOD(OCMJNBIFJNM.PMOECIDOLNA FFOINHDALAM) { }
@@ -443,7 +446,10 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1B35630 Offset: 0x1B35630 VA: 0x1B35630 Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }
+	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "AGHKODFKOJI");
+	}
 
 	// // RVA: 0x1B36D84 Offset: 0x1B36D84 VA: 0x1B36D84 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
@@ -451,7 +457,4 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 		TodoLogger.Log(0, "TODO");
 		return null;
 	}
-
-	// // RVA: 0x1B373C0 Offset: 0x1B373C0 VA: 0x1B373C0 Slot: 9
-	// public override bool NFKFOODCJJB() { }
 }

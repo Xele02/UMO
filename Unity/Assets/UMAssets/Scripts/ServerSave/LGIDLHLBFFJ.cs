@@ -168,7 +168,7 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	public int HKABHJKHFKL_RareGetCnt { get { return POAGOKLJCNF ^ FBGGEFFJJHB; } set { POAGOKLJCNF = value ^ FBGGEFFJJHB; PHJODLGIEJA = value; } } //IDKLGKKOHII 0xD84510 LHCMKDALNEE 0xD845A8
 	public int JAMCDEDFHHK_HotenCnt { get { return JJCMEHFOCED ^ FBGGEFFJJHB; } set { JJCMEHFOCED = value ^ FBGGEFFJJHB; CEFBCMKNPKB = value; } } //CHGOJFDDCEG 0xD84648 ABJLDAFNEOJ 0xD846E0
 	public long BKONHFNBHKL_Aextm { get { return FLMJPPIPMGP ^ BBEGLBMOBOF; } set { FLMJPPIPMGP = value ^ BBEGLBMOBOF; FDGICFBLMKO = value; } } //ADJIEHKCCCN 0xD84780 CPDDIJHNBCJ 0xD8481C
-	// public override bool DMICHEJIAJL { get; }
+	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0xD8AC0C NFKFOODCJJB
 
 	// // RVA: 0xD848C8 Offset: 0xD848C8 VA: 0xD848C8
 	// public KBCCGHLCFNO.JKGFAIPDNDL LOGJJALCFPF() { }
@@ -333,7 +333,10 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD86020 Offset: 0xD86020 VA: 0xD86020 Slot: 5
-	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "OKJPIBHMKMJ");
+	}
 
 	// // RVA: 0xD87544 Offset: 0xD87544 VA: 0xD87544 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
@@ -497,7 +500,10 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD897EC Offset: 0xD897EC VA: 0xD897EC Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }
+	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "AGHKODFKOJI");
+	}
 
 	// // RVA: 0xD8A954 Offset: 0xD8A954 VA: 0xD8A954 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
@@ -505,9 +511,6 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 		TodoLogger.Log(0, "TODO");
 		return null;
 	}
-
-	// // RVA: 0xD8AC0C Offset: 0xD8AC0C VA: 0xD8AC0C Slot: 9
-	// public override bool NFKFOODCJJB() { }
 
 	// // RVA: 0xD8AC14 Offset: 0xD8AC14 VA: 0xD8AC14
 	public string POGHKGLHHFL()

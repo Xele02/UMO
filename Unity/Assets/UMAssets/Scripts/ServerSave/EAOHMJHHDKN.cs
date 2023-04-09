@@ -37,12 +37,12 @@ public class EAOHMJHHDKN_GachaLimit : KLFDBFMNLBL_ServerSaveBlock
 		//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, EAOHMJHHDKN.EODJHACIKGM OHMCIEMIKCE, bool KFCGIKHEEMB) { }
 	}
 
-	 private const int ECFEMKGFDCE = 2;
-	 private const int GACEJGPNHMP = 1000;
-	 public static string POFDDFCGEGP = "_"; // 0x0
+	private const int ECFEMKGFDCE = 2;
+	private const int GACEJGPNHMP = 1000;
+	public static string POFDDFCGEGP = "_"; // 0x0
 
-	 public List<EODJHACIKGM> OECAPENFOHH { get; private set; } // 0x24 AHJGDGAMCNJ MPEGCNGGNPP GLPLMEINNKJ
-	// public override bool DMICHEJIAJL { get; }
+	public List<EODJHACIKGM> OECAPENFOHH { get; private set; } // 0x24 AHJGDGAMCNJ MPEGCNGGNPP GLPLMEINNKJ
+	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x14F5A58 NFKFOODCJJB
 
 	// // RVA: 0x14F225C Offset: 0x14F225C VA: 0x14F225C
 	public int CFLDNJANAPI(int HHGMPEEGFMA)
@@ -91,7 +91,10 @@ public class EAOHMJHHDKN_GachaLimit : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x14F2D70 Offset: 0x14F2D70 VA: 0x14F2D70 Slot: 5
-	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "OKJPIBHMKMJ");
+	}
 
 	// // RVA: 0x14F3B70 Offset: 0x14F3B70 VA: 0x14F3B70 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
@@ -149,8 +152,8 @@ public class EAOHMJHHDKN_GachaLimit : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x14F46A4 Offset: 0x14F46A4 VA: 0x14F46A4 Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }
-
-	// // RVA: 0x14F5A58 Offset: 0x14F5A58 VA: 0x14F5A58 Slot: 9
-	// public override bool NFKFOODCJJB() { }
+	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "AGHKODFKOJI");
+	}
 }

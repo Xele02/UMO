@@ -78,7 +78,17 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDD5E0 Offset: 0x1CDD5E0 VA: 0x1CDD5E0
 		private void ChangeProgress(int per)
 		{
-			TodoLogger.Log(5, "ChangeProgress");
+			if(per < 100)
+			{
+				m_ratio += (per - m_ratio) * 0.7f;
+			}
+			else
+			{
+				m_ratio = 100;
+			}
+			int v = Mathf.RoundToInt(m_ratio);
+			m_per_number.SetNumber(v * 100, 3);
+			m_download_frame_layout.StartChildrenAnimGoStop(v, v);
 		}
 
 		// // RVA: 0x1CDD888 Offset: 0x1CDD888 VA: 0x1CDD888

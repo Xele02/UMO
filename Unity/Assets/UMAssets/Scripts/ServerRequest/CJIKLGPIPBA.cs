@@ -5,11 +5,11 @@ public interface CJIKLGPIPBA
 {
 
 	// RVA: -1 Offset: -1 Slot: 0
-	//List<string> KPIDBPEKMFD();
+	List<string> KPIDBPEKMFD();
 
 	//// RVA: -1 Offset: -1 Slot: 1
-	//long DPKGNBIAFDO();
+	long DPKGNBIAFDO();
 
 	//// RVA: -1 Offset: -1 Slot: 2
-	//int JNFCOPCBHAP();
+	int JNFCOPCBHAP();
 }

@@ -11,7 +11,7 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 
 	// public bool DGNMOIBJBBJ { get; set; } GOOBCPPNKNF 0x93EF3C NBBIKPFKHME 0x93EF50
 	// public string PCBDMADAIEO { get; set; } KBGEHDFKHJC 0x93EF80 KNBPHPFBGMI 0x93EF88
-	// public override bool DMICHEJIAJL { get; }
+	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x93F2CC NFKFOODCJJB
 
 	// // RVA: 0x93EF90 Offset: 0x93EF90 VA: 0x93EF90
 	public PKLLAKCBPAH_DecoPublicInfo()
@@ -39,11 +39,11 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 		TodoLogger.Log(0, "PKLLAKCBPAH_DecoPublicInfo.BMGGKONLFIC");
 	}
 
-	// // RVA: 0x93F2CC Offset: 0x93F2CC VA: 0x93F2CC Slot: 9
-	// public override bool NFKFOODCJJB() { }
-
 	// // RVA: 0x93F2D4 Offset: 0x93F2D4 VA: 0x93F2D4 Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }
+	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "AGHKODFKOJI");
+	}
 
 	// // RVA: 0x93F6E0 Offset: 0x93F6E0 VA: 0x93F6E0 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
@@ -59,5 +59,8 @@ public class PKLLAKCBPAH_DecoPublicInfo : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x93F8E8 Offset: 0x93F8E8 VA: 0x93F8E8 Slot: 5
-	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "OKJPIBHMKMJ");
+	}
 }

@@ -255,6 +255,9 @@ namespace ExternLib
 		public static int SakashoPlayerDataSavePlayerData(int callbackId, string json)
 		{
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["created_at"] = 1501751856;
+			res["data_status"] = 1;
+			res["updated_at"] = 1656166393;
 			SendMessage(callbackId, res);
 			return 0;
 		}

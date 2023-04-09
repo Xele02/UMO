@@ -36,7 +36,15 @@ public class BBHNACPENDM_ServerSaveData
 		}
 
 		//// RVA: 0xF2AC9C Offset: 0xF2AC9C VA: 0xF2AC9C
-		//public string PBNINEMAOPB() { }
+		public string PBNINEMAOPB()
+		{
+			if(BAKAGKBPOMJ != null)
+				return BAKAGKBPOMJ;
+			KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
+			OBHAFLMHAKG.EJCOJCGIBNG_ToJson(writer);
+			BAKAGKBPOMJ = writer.ToString();
+			return BAKAGKBPOMJ;
+		}
 
 		//// RVA: 0xF2AD7C Offset: 0xF2AD7C VA: 0xF2AD7C
 		public bool LHIACHALIFC_IsEmpty()
@@ -333,7 +341,13 @@ public class BBHNACPENDM_ServerSaveData
 	// public static List<string> KPIDBPEKMFD(ulong MKDDOJOADMF) { }
 
 	// // RVA: 0xF1C428 Offset: 0xF1C428 VA: 0xF1C428
-	// public KLFDBFMNLBL LBDOLHGDIEB(string OPFGFINHFCE) { }
+	public KLFDBFMNLBL_ServerSaveBlock LBDOLHGDIEB_GetBlock(string OPFGFINHFCE)
+	{
+		return MGJKEJHEBPO_Blocks.Find((KLFDBFMNLBL_ServerSaveBlock PKLPKMLGFGK) => {
+			//0xF2AB28
+			return PKLPKMLGFGK.JIKKNHIAEKG_BlockName == OPFGFINHFCE;
+		});
+	}
 
 	// // RVA: -1 Offset: -1
 	// public T LBDOLHGDIEB<T>(string OPFGFINHFCE) { }
@@ -560,7 +574,19 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF20BE0 Offset: 0xF20BE0 VA: 0xF20BE0
-	// public void PLCFEICAKBC(List<string> HHIHCJKLJFF) { }
+	public void PLCFEICAKBC(List<string> HHIHCJKLJFF)
+	{
+		MCKEOKFMLAH++;
+		for(int i = 0; i < HHIHCJKLJFF.Count; i++)
+		{
+            KLFDBFMNLBL_ServerSaveBlock block = LBDOLHGDIEB_GetBlock(HHIHCJKLJFF[i]);
+			if(block != null)
+			{
+				block.KFKDMBPNLJK_BlockInvalid = false;
+				block.FHMMFHAIPLF = true;
+			}
+        }
+	}
 
 	// // RVA: 0xF20CE0 Offset: 0xF20CE0 VA: 0xF20CE0
 	public bool IPLNOMCCNBI_UpdatePublicStatus()
@@ -594,7 +620,7 @@ public class BBHNACPENDM_ServerSaveData
 			MHEAEGMIKIE_PublicStatus.FHCAFLCLGAA_EmCnt = OFAJDLJBMEM_Emblem.MDKOHOCONKE[MHEAEGMIKIE_PublicStatus.ABLOIBMGLFD_EmId - 1].FHCAFLCLGAA_Cnt;
 		}
 		MHEAEGMIKIE_PublicStatus.FOFGELKGMAH_CosCnt = BEKHNNCGIEL_Costume.EFFKJGEDONM_GetNumUnlockedCostume(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume, DGCJCAHIAPP_Diva, true);
-		MHEAEGMIKIE_PublicStatus.MIFLBHBPBNF_VfCnt = JJFFBDLIOCF_Valkyrie.IJHGOONDKLI(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie);
+		MHEAEGMIKIE_PublicStatus.MIFLBHBPBNF_VfCnt = JJFFBDLIOCF_Valkyrie.IJHGOONDKLI_GetNumUnlocked(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie);
 		MHEAEGMIKIE_PublicStatus.APFOBLMCLAO_QCnt = GOACJBOCLHH_Quest.KJJJNMHNMCG(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest);
 		MHEAEGMIKIE_PublicStatus.JGDNCEANEBB_LvMaxCnt = PNLOINMCCKH_Scene.BNNPJLPMLLK(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene);
 		MHEAEGMIKIE_PublicStatus.LDKEOMCNLBE_PfTap = OEKEIGFAIGN_Counter.NJIDHLPGBFO_TTap[4];

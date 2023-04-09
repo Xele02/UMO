@@ -77,7 +77,7 @@ public class NPOOPJIOMHF_Prism : KLFDBFMNLBL_ServerSaveBlock
 	public static string POFDDFCGEGP = "_"; // 0x0
 
 	public List<CLGGEONAHPL_TeamSelectionSetting> AHBBMJANGHE_TeamSelectionBySongs { get; private set; } // 0x24 DLDLMEDGOBA MELKCNPOKKB CEGODGDEJGN
-	// public override bool DMICHEJIAJL { get; }
+	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x1CBE0EC NFKFOODCJJB
 
 	// // RVA: 0x1CB6740 Offset: 0x1CB6740 VA: 0x1CB6740
 	public CLGGEONAHPL_TeamSelectionSetting GCINIJEMHFK_GetTeamForSong(int PPFNGGCBJKC)
@@ -135,7 +135,10 @@ public class NPOOPJIOMHF_Prism : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1CB6E60 Offset: 0x1CB6E60 VA: 0x1CB6E60 Slot: 5
-	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "OKJPIBHMKMJ");
+	}
 
 	// // RVA: 0x1CB7B80 Offset: 0x1CB7B80 VA: 0x1CB7B80 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
@@ -210,8 +213,8 @@ public class NPOOPJIOMHF_Prism : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1CB8A9C Offset: 0x1CB8A9C VA: 0x1CB8A9C Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }
-
-	// // RVA: 0x1CBE0EC Offset: 0x1CBE0EC VA: 0x1CBE0EC Slot: 9
-	// public override bool NFKFOODCJJB() { }
+	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "AGHKODFKOJI");
+	}
 }

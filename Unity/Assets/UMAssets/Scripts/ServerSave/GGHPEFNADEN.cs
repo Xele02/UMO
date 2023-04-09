@@ -19,7 +19,7 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 	// public string EBAMGNMELPO { get; set; } NLLPAPKGDJM 0xAA1300 GDOPHGNBAGO 0xAA1308
 	// public string HBODCMLFDOB { get; set; } MDOIHMLLDEC 0xAA1348 DNGOCLOHDPE 0xAA1350
 	// public string OEDIICBDNKG { get; set; } GNOMCGBDNDA 0xAA1390 MFIEGCGDLFH 0xAA1398
-	// public override bool DMICHEJIAJL { get; }
+	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0xAA2A6C NFKFOODCJJB
 
 	// // RVA: 0xAA13D8 Offset: 0xAA13D8 VA: 0xAA13D8
 	// public List<string> HOFACDIBDLM() { }
@@ -37,7 +37,10 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xAA16D0 Offset: 0xAA16D0 VA: 0xAA16D0 Slot: 5
-	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "OKJPIBHMKMJ");
+	}
 
 	// // RVA: 0xAA1A4C Offset: 0xAA1A4C VA: 0xAA1A4C Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
@@ -60,7 +63,10 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xAA21DC Offset: 0xAA21DC VA: 0xAA21DC Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }
+	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "AGHKODFKOJI");
+	}
 
 	// // RVA: 0xAA2900 Offset: 0xAA2900 VA: 0xAA2900 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
@@ -68,7 +74,4 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 		TodoLogger.Log(0, "TODO");
 		return null;
 	}
-
-	// // RVA: 0xAA2A6C Offset: 0xAA2A6C VA: 0xAA2A6C Slot: 9
-	// public override bool NFKFOODCJJB() { }
 }

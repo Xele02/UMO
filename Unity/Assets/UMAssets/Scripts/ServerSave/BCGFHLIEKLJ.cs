@@ -150,7 +150,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 	public List<AKAHOEBACGJ> PFNNIMBMKDL_Posters { get; private set; } // 0x50 FIIKAHPNLIE IGJGKPNGDIH JNGABBLANIN
 	public List<AKAHOEBACGJ> NOAEDPJGBJK_Sets { get; private set; } // 0x54 PGLOGOHILGI CIDOGCLBPDM ILJKEMBMMBG
 	public long MKLJLHBHBJA_AcumAt { get { return MEEMHKPLHJD ^ JHOLGGAKMOH; } set { MEEMHKPLHJD = value ^ JHOLGGAKMOH; IEGEBHKPKMG = value ^ BCGMFGMCPCP; } } // BFGAIJEPHKF 0xF2F008 ENMIOFHLLMG 0xF2EFE4
-	// public override bool DMICHEJIAJL { get; } // ??
+	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0xF35028 NFKFOODCJJB
 
 	// // RVA: 0xF2A574 Offset: 0xF2A574 VA: 0xF2A574
 	public BCGFHLIEKLJ_DecoItem()
@@ -215,7 +215,10 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xF2F01C Offset: 0xF2F01C VA: 0xF2F01C Slot: 5
-	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "OKJPIBHMKMJ");
+	}
 
 	// // RVA: 0xF30E1C Offset: 0xF30E1C VA: 0xF30E1C Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
@@ -424,7 +427,10 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xF33518 Offset: 0xF33518 VA: 0xF33518 Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }
+	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "AGHKODFKOJI");
+	}
 
 	// // RVA: 0xF34888 Offset: 0xF34888 VA: 0xF34888 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
@@ -432,9 +438,6 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 		TodoLogger.Log(0, "TODO");
 		return null;
 	}
-
-	// // RVA: 0xF35028 Offset: 0xF35028 VA: 0xF35028 Slot: 9
-	// public override bool NFKFOODCJJB() { }
 
 	// // RVA: 0xF35030 Offset: 0xF35030 VA: 0xF35030
 	public int KFFGHBCCCIJ(NDBFKHKMMCE_DecoItem EPAHOAKPAJJ, int NDKJCDGHPLD, int LNBOIHIGAGL)

@@ -57,10 +57,22 @@ public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 	public static string POFDDFCGEGP = "_"; // 0x0
 
 	public List<HLNPGNNPCGO_ValkyrieInfo> CNGNBKNBKGI_ValkList { get; private set; } // 0x24 HPMHJMMCOKA PGNBHFIAMPP BDMGCKFBDMI
-	//public override bool DMICHEJIAJL { get; }
+	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x1DE68D0 NFKFOODCJJB
 
 	// // RVA: 0x1DE34C8 Offset: 0x1DE34C8 VA: 0x1DE34C8
-	// public int IJHGOONDKLI(JPIANKEOOMB PEOALFEGNDH) { }
+	public int IJHGOONDKLI_GetNumUnlocked(JPIANKEOOMB_Valkyrie PEOALFEGNDH)
+	{
+		int res = 0;
+		for(int i = 0; i < PEOALFEGNDH.CDENCMNHNGA_ValkyrieList.Count; i++)
+		{
+			if(PEOALFEGNDH.CDENCMNHNGA_ValkyrieList[i].PPEGAKEIEGM_Enabled == 2)
+			{
+				if(CNGNBKNBKGI_ValkList[i].BEBJKJKBOGH_Date != 0)
+					res++;
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0x1DE3658 Offset: 0x1DE3658 VA: 0x1DE3658
 	public HLNPGNNPCGO_ValkyrieInfo JMJOPCDNHKK(int FODKKJIDDKN)
@@ -140,7 +152,10 @@ public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1DE3D44 Offset: 0x1DE3D44 VA: 0x1DE3D44 Slot: 5
-	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "OKJPIBHMKMJ");
+	}
 
 	// // RVA: 0x1DE4580 Offset: 0x1DE4580 VA: 0x1DE4580 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
@@ -195,8 +210,8 @@ public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1DE4FE8 Offset: 0x1DE4FE8 VA: 0x1DE4FE8 Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }
-
-	// // RVA: 0x1DE68D0 Offset: 0x1DE68D0 VA: 0x1DE68D0 Slot: 9
-	// public override bool NFKFOODCJJB() { }
+	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "AGHKODFKOJI");
+	}
 }

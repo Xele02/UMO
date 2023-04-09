@@ -15,7 +15,7 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 
 	public List<NFPHOINMHKN_QuestInfo> BEGCHDHHEKC_DailyQuests { get; private set; } // 0x30 FGGBICBDOEN DEBOJOHHPPB CFINEIEEJGN
 	public List<NFPHOINMHKN_QuestInfo> GPMKFMFEKLN_NormalQuests { get; private set; } // 0x34 LKPJIEOOENM HDOHKBOJCDK CDNIDJPOHDJ
-	// public override bool DMICHEJIAJL { get; }
+	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x1B3C0BC NFKFOODCJJB
 
 	// // RVA: 0x1B39620 Offset: 0x1B39620 VA: 0x1B39620
 	public long DFFFCPCHBBE_EndDate()
@@ -25,7 +25,19 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1B39724 Offset: 0x1B39724 VA: 0x1B39724
-	// public int KJJJNMHNMCG(DHOJHGODBAB MHGPMMIDKMM) { }
+	public int KJJJNMHNMCG(DHOJHGODBAB_Quest MHGPMMIDKMM)
+	{
+		int res = 0;
+		for(int i = 0; i < MHGPMMIDKMM.GPMKFMFEKLN_NormalQuests.Count; i++)
+		{
+			if(MHGPMMIDKMM.GPMKFMFEKLN_NormalQuests[i].INDDJNMPONH_Type != 0)
+			{
+				if(GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat == 3)
+					res++;
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0x1B39890 Offset: 0x1B39890 VA: 0x1B39890
 	public ODPNBADOFAN_Quest()
@@ -67,7 +79,10 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1B39C80 Offset: 0x1B39C80 VA: 0x1B39C80 Slot: 5
-	// public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH) { }
+	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "OKJPIBHMKMJ");
+	}
 
 	// // RVA: 0x1B3A84C Offset: 0x1B3A84C VA: 0x1B3A84C Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
@@ -145,10 +160,10 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1B3BAE4 Offset: 0x1B3BAE4 VA: 0x1B3BAE4 Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL GJLFANGDGCL, long MCKEOKFMLAH) { }
-
-	// // RVA: 0x1B3C0BC Offset: 0x1B3C0BC VA: 0x1B3C0BC Slot: 9
-	// public override bool NFKFOODCJJB() { }
+	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
+	{
+		TodoLogger.Log(0, "AGHKODFKOJI");
+	}
 }
 
 [System.Obsolete("Use NFPHOINMHKN_QuestInfo", true)]
