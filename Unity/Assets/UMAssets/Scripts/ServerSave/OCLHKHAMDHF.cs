@@ -63,7 +63,21 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0x1B2E5E0 Offset: 0x1B2E5E0 VA: 0x1B2E5E0
-		//public bool AGBOGBEOFME(OCLHKHAMDHF.JEHNEEBBDBO OIKJFMGEICL) { }
+		public bool AGBOGBEOFME(JEHNEEBBDBO_EpisodeInfo OIKJFMGEICL)
+		{
+			if(OGDBKJKIGAJ_CurrentPoint != OIKJFMGEICL.OGDBKJKIGAJ_CurrentPoint ||
+				LHMOAJAIJCO_IsNew != OIKJFMGEICL.LHMOAJAIJCO_IsNew ||
+				HPLMMKHBKIG_Id != OIKJFMGEICL.HPLMMKHBKIG_Id ||
+				EBIIIAELNAA_Step != OIKJFMGEICL.EBIIIAELNAA_Step ||
+				BEBJKJKBOGH_Date != OIKJFMGEICL.BEBJKJKBOGH_Date)
+				return false;
+			for(int i = 0; i < 10; i++)
+			{
+				if(MCIHDIBHHBI_IsRewardReceived(i) != OIKJFMGEICL.MCIHDIBHHBI_IsRewardReceived(i))
+					return false;
+			}
+			return true;
+		}
 
 		//// RVA: 0x1B2E268 Offset: 0x1B2E268 VA: 0x1B2E268
 		public void ODDIHGPONFL(JEHNEEBBDBO_EpisodeInfo GPBJHKLFCEP)
@@ -221,7 +235,14 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1B2E398 Offset: 0x1B2E398 VA: 0x1B2E398 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		OCLHKHAMDHF_Episode other = GPBJHKLFCEP as OCLHKHAMDHF_Episode;
+		if(BBAJKJPKOHD_EpisodeList.Count != other.BBAJKJPKOHD_EpisodeList.Count)
+			return false;
+		for(int i = 0; i < BBAJKJPKOHD_EpisodeList.Count; i++)
+		{
+			if(!BBAJKJPKOHD_EpisodeList[i].AGBOGBEOFME(other.BBAJKJPKOHD_EpisodeList[i]))
+				return false;
+		}
 		return true;
 	}
 

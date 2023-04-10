@@ -135,7 +135,28 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x11EAC28 Offset: 0x11EAC28 VA: 0x11EAC28 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		ICLNENNIMOP_FreeScoreMax other = GPBJHKLFCEP as ICLNENNIMOP_FreeScoreMax;
+		double d = 50000000.0;
+		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+		{
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System != null)
+			{
+				d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("free_score_max_limit_score", 50000000);
+			}
+		}
+		for(int i = 0; i < 2000; i++)
+		{
+			if(d <= AGPLAKAFDEP[i])
+				return true;
+			if(d <= other.AGPLAKAFDEP[i])
+				return true;
+		}
+		for(int i = 0; i < 2000; i++)
+		{
+			if(BDCAICINCKK_GetScoreMusic(i + 1) != other.BDCAICINCKK_GetScoreMusic(i + 1) ||
+				AGPLAKAFDEP[i] != other.AGPLAKAFDEP[i])
+				return false;
+		}
 		return true;
 	}
 

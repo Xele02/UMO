@@ -205,7 +205,14 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x11918C4 Offset: 0x11918C4 VA: 0x11918C4 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		FKNOCGCODBK_Unit other = GPBJHKLFCEP as FKNOCGCODBK_Unit;
+		if(AHBBMJANGHE.Count != other.AHBBMJANGHE.Count)
+			return false;
+		for(int i = 0; i < AHBBMJANGHE.Count; i++)
+		{
+			if(!AHBBMJANGHE[i].AGBOGBEOFME(other.AHBBMJANGHE[i]))
+				return false;
+		}
 		return true;
 	}
 

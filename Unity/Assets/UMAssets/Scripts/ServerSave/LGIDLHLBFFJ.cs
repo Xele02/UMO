@@ -33,7 +33,15 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0x17F1820 Offset: 0x17F1820 VA: 0x17F1820
-		//public bool AGBOGBEOFME(LGIDLHLBFFJ.LCDJCBAPAML OIKJFMGEICL) { }
+		public bool AGBOGBEOFME(LCDJCBAPAML OIKJFMGEICL)
+		{
+			if(FDFGEMODIIF_StartedAt != OIKJFMGEICL.FDFGEMODIIF_StartedAt ||
+				NKMNFPMMJND_ExpiredAt != OIKJFMGEICL.NKMNFPMMJND_ExpiredAt ||
+				EMOHDABPCHD_CheckAt != OIKJFMGEICL.EMOHDABPCHD_CheckAt ||
+				PPFNGGCBJKC_Id != OIKJFMGEICL.PPFNGGCBJKC_Id)
+				return false;
+			return true;
+		}
 
 		//// RVA: 0x17F1940 Offset: 0x17F1940 VA: 0x17F1940
 		public void ODDIHGPONFL(LCDJCBAPAML GPBJHKLFCEP)
@@ -82,7 +90,15 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// RVA: 0x17F2DE4 Offset: 0x17F2DE4 VA: 0x17F2DE4
-		//public bool AGBOGBEOFME(LGIDLHLBFFJ.ODHIHCNALDL OIKJFMGEICL) { }
+		public bool AGBOGBEOFME(ODHIHCNALDL OIKJFMGEICL)
+		{
+			for(int i = 0; i < 20; i++)
+			{
+				if(LPGIECKPBDK(i) != OIKJFMGEICL.LPGIECKPBDK(i))
+					return false;
+			}
+			return true;
+		}
 
 		// RVA: 0x17F2E68 Offset: 0x17F2E68 VA: 0x17F2E68
 		public void ODDIHGPONFL(ODHIHCNALDL GPBJHKLFCEP)
@@ -495,7 +511,40 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD89128 Offset: 0xD89128 VA: 0xD89128 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		LGIDLHLBFFJ_MonthlyPass other = GPBJHKLFCEP as LGIDLHLBFFJ_MonthlyPass;
+		if(PCBLFLDMCJA_StampDay != other.PCBLFLDMCJA_StampDay ||
+			FADAJDBCBJK_TopPlanDay != other.FADAJDBCBJK_TopPlanDay ||
+			FLBJKACKNOI_CurStamp != other.FLBJKACKNOI_CurStamp ||
+			FCPHDFKFDCK_LoginCnt != other.FCPHDFKFDCK_LoginCnt ||
+			HKABHJKHFKL_RareGetCnt != other.HKABHJKHFKL_RareGetCnt ||
+			JAMCDEDFHHK_HotenCnt != other.JAMCDEDFHHK_HotenCnt ||
+			KJBOIGIDKIF_Platform != other.KJBOIGIDKIF_Platform ||
+			PMCKOEGANFB_Status != other.PMCKOEGANFB_Status ||
+			MPLPHLAHJOC_StampHosei != other.MPLPHLAHJOC_StampHosei ||
+			BKONHFNBHKL_Aextm != other.BKONHFNBHKL_Aextm ||
+			CPENFPEPDFC_Lguk.DNJEJEANJGL_Value != other.CPENFPEPDFC_Lguk.DNJEJEANJGL_Value ||
+			BPMLNLPDCAJ_Lauk.DNJEJEANJGL_Value != other.BPMLNLPDCAJ_Lauk.DNJEJEANJGL_Value)
+			return false;
+		for(int i = 0; i < DNKJAIHCDFN_First.Count; i++)
+		{
+			if(!DNKJAIHCDFN_First[i].AGBOGBEOFME(other.DNKJAIHCDFN_First[i]))
+				return false;
+		}
+		for(int i = 0; i < FMPLMFLMJNE_Last.Count; i++)
+		{
+			if(!FMPLMFLMJNE_Last[i].AGBOGBEOFME(other.FMPLMFLMJNE_Last[i]))
+				return false;
+		}
+		for(int i = 0; i < AOHBAOAPGDM_Raw.Count; i++)
+		{
+			if(!AOHBAOAPGDM_Raw[i].AGBOGBEOFME(other.AOHBAOAPGDM_Raw[i]))
+				return false;
+		}
+		for(int i = 0; i < EOHPPNNLBNH_Stamp.Count; i++)
+		{
+			if(!EOHPPNNLBNH_Stamp[i].AGBOGBEOFME(other.EOHPPNNLBNH_Stamp[i]))
+				return false;
+		}
 		return true;
 	}
 

@@ -78,7 +78,11 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14E5558 Offset: 0x14E5558 VA: 0x14E5558 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		FFMIPGABHHA_SaveHash other = GPBJHKLFCEP as FFMIPGABHHA_SaveHash;
+		if(BEBJKJKBOGH_Time != other.BEBJKJKBOGH_Time ||
+			IOIMHJAOKOO_Hash != other.IOIMHJAOKOO_Hash ||
+			AFNJCFEKFDD_Dirty != other.AFNJCFEKFDD_Dirty)
+			return false;
 		return true;
 	}
 

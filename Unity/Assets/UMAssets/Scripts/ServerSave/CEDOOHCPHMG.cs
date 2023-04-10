@@ -9,7 +9,7 @@ public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_ServerSaveBlock
 	private List<MPBEHHIAGOI> GFPFBJDPHLJ; // 0x24
 	public List<CIFHILOJJFC> PKMMBKHODDM = new List<CIFHILOJJFC>(); // 0x28
 
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x12B4DD8 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x12B4DD8 NFKFOODCJJB
 
 	// // RVA: 0x12B2A3C Offset: 0x12B2A3C VA: 0x12B2A3C
 	public CIFHILOJJFC ALDOJAEAMCJ(int AHHJLDLAPAN, int PPFNGGCBJKC_Id)

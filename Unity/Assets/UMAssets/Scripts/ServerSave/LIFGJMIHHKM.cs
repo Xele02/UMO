@@ -56,7 +56,15 @@ public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 			}
 
 			//// RVA: 0x180153C Offset: 0x180153C VA: 0x180153C
-			//public bool AGBOGBEOFME(LIFGJMIHHKM.DOPNDKHMMGI.EFHFKNHFNID OIKJFMGEICL) { }
+			public bool AGBOGBEOFME(EFHFKNHFNID OIKJFMGEICL)
+			{
+				if(PGPGPJNBIOH_Uid != OIKJFMGEICL.PGPGPJNBIOH_Uid ||
+					DIAPHCJBPFD_Get != OIKJFMGEICL.DIAPHCJBPFD_Get ||
+					IOLJPHAOBOH_Use != OIKJFMGEICL.IOLJPHAOBOH_Use ||
+					DOJDOLDDBPP_Hav != OIKJFMGEICL.DOJDOLDDBPP_Hav)
+					return false;
+				return true;
+			}
 
 			//// RVA: 0x1801F0C Offset: 0x1801F0C VA: 0x1801F0C
 			//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, LIFGJMIHHKM.DOPNDKHMMGI.EFHFKNHFNID OHMCIEMIKCE, bool KFCGIKHEEMB) { }
@@ -237,7 +245,19 @@ public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1800FD4 Offset: 0x1800FD4 VA: 0x1800FD4 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		LIFGJMIHHKM_LimitedItem other = GPBJHKLFCEP as LIFGJMIHHKM_LimitedItem;
+		for(int i = 0; i < ODHBHOGFNAA.Count; i++)
+		{
+			if(ODHBHOGFNAA[i].PJADHDHKOEJ.Count != other.ODHBHOGFNAA[i].PJADHDHKOEJ.Count)
+				return false;
+			for(int j = 0; j < ODHBHOGFNAA[i].PJADHDHKOEJ.Count; j++)
+			{
+				if(!ODHBHOGFNAA[i].PJADHDHKOEJ[j].AGBOGBEOFME(other.ODHBHOGFNAA[i].PJADHDHKOEJ[j]))
+					return false;
+				if(!ODHBHOGFNAA[i].NPNNEDINOKC[j].AGBOGBEOFME(other.ODHBHOGFNAA[i].NPNNEDINOKC[j]))
+					return false;
+			}
+		}
 		return true;
 	}
 

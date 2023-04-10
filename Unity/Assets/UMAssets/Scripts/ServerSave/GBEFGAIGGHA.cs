@@ -20,7 +20,14 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 		//public void LHPDDGIJKNB() { }
 
 		//// RVA: 0x1403108 Offset: 0x1403108 VA: 0x1403108
-		//public bool AGBOGBEOFME(GBEFGAIGGHA.DPGGLKKBNBJ GPBJHKLFCEP) { }
+		public bool AGBOGBEOFME(DPGGLKKBNBJ GPBJHKLFCEP)
+		{
+			if(DJJGPACGEMM_Id != GPBJHKLFCEP.DJJGPACGEMM_Id ||
+				KMFLNILNPJD_Cnt != GPBJHKLFCEP.KMFLNILNPJD_Cnt ||
+				BEBJKJKBOGH_Date != GPBJHKLFCEP.BEBJKJKBOGH_Date)
+				return false;
+			return true;
+		}
 
 		//// RVA: 0x1402E18 Offset: 0x1402E18 VA: 0x1402E18
 		public void ODDIHGPONFL(DPGGLKKBNBJ GPBJHKLFCEP)
@@ -140,7 +147,14 @@ public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1402EC0 Offset: 0x1402EC0 VA: 0x1402EC0 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		GBEFGAIGGHA_Shop other = GPBJHKLFCEP as GBEFGAIGGHA_Shop;
+		if(ECMLOMPGMLC.Count != other.ECMLOMPGMLC.Count)
+			return false;
+		for(int i = 0; i < ECMLOMPGMLC.Count; i++)
+		{
+			if(!ECMLOMPGMLC[i].AGBOGBEOFME(other.ECMLOMPGMLC[i]))
+				return false;
+		}
 		return true;
 	}
 

@@ -87,7 +87,15 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14221CC Offset: 0x14221CC VA: 0x14221CC Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		JBMPOAAMGNB_Base other = GPBJHKLFCEP as JBMPOAAMGNB_Base;
+		if(OPFGFINHFCE_PlayerName != other.OPFGFINHFCE_PlayerName ||
+			LLNDMKBBNIJ_Version != other.LLNDMKBBNIJ_Version ||
+			CMKKFCGBILD_Prof != other.CMKKFCGBILD_Prof || 
+			FNLNIKFNHAM_ForceRename != other.FNLNIKFNHAM_ForceRename ||
+			PBEKKMOPENN_AgreeTosVer != other.PBEKKMOPENN_AgreeTosVer ||
+			AFPONJEJKCO_RenameDate != other.AFPONJEJKCO_RenameDate ||
+			IJHBIMNKOMC_TutorialEnd != other.IJHBIMNKOMC_TutorialEnd)
+			return false;
 		return true;
 	}
 

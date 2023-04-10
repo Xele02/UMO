@@ -129,7 +129,27 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xF15248 Offset: 0xF15248 VA: 0xF15248 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		BAHFBCEPFGP_AddMusic other = GPBJHKLFCEP as BAHFBCEPFGP_AddMusic;
+		for (int i = 0; i < BJFCIFJLJJI_ShowAddUnitLiveDio.Length; i++)
+		{
+			if(BJFCIFJLJJI_ShowAddUnitLiveDio[i] != other.BJFCIFJLJJI_ShowAddUnitLiveDio[i])
+				return false;
+		}
+		for(int i = 0; i < IEGFCNMOCNE_ShowAddUnitLiveTrio.Length; i++)
+		{
+			if(IEGFCNMOCNE_ShowAddUnitLiveTrio[i] != other.IEGFCNMOCNE_ShowAddUnitLiveTrio[i])
+				return false;
+		}
+		for(int i = 0; i < FALFJCGGDHB_ShowAddUnitLiveQuartet.Length; i++)
+		{
+			if(FALFJCGGDHB_ShowAddUnitLiveQuartet[i] != other.FALFJCGGDHB_ShowAddUnitLiveQuartet[i])
+				return false;
+		}
+		for(int i = 0; i < KKPKAMANKOH_ShowAddUnitLiveQuintet.Length; i++)
+		{
+			if(KKPKAMANKOH_ShowAddUnitLiveQuintet[i] != other.KKPKAMANKOH_ShowAddUnitLiveQuintet[i])
+				return false;
+		}
 		return true;
 	}
 

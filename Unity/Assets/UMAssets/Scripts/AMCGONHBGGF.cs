@@ -22,7 +22,19 @@ public class AMCGONHBGGF
 	}
 
 	// // RVA: 0xCE0F1C Offset: 0xCE0F1C VA: 0xCE0F1C
-	// public bool AGBOGBEOFME(AMCGONHBGGF OIKJFMGEICL) { }
+	public bool AGBOGBEOFME(AMCGONHBGGF OIKJFMGEICL)
+	{
+		if(DIPKCALNIII_Id != OIKJFMGEICL.DIPKCALNIII_Id ||
+			BEEAIAAJOHD_CId != OIKJFMGEICL.BEEAIAAJOHD_CId ||
+			AFNIOJHODAG_ColId != OIKJFMGEICL.AFNIOJHODAG_ColId)
+			return false;
+		for(int i = 0; i < 3; i++)
+		{
+			if(EBDNICPAFLB_SSlot[i] != OIKJFMGEICL.EBDNICPAFLB_SSlot[i])
+				return false;
+		}
+		return true;
+	}
 
 	// // RVA: 0xCE101C Offset: 0xCE101C VA: 0xCE101C
 	// public EDOHBJAPLPF_JsonData NOJCMGAFAAC() { }

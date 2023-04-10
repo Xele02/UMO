@@ -34,7 +34,13 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0xA05038 Offset: 0xA05038 VA: 0xA05038
-		//public bool AGBOGBEOFME(IOEKHJBOMDH.PAFLFMFEOJD OIKJFMGEICL) { }
+		public bool AGBOGBEOFME(PAFLFMFEOJD OIKJFMGEICL)
+		{
+			if(CNOHJPEHHCH_StampId != OIKJFMGEICL.CNOHJPEHHCH_StampId ||
+				JBOCHIJAMFD_SerifId != OIKJFMGEICL.JBOCHIJAMFD_SerifId)
+				return false;
+			return true;
+		}
 
 		//// RVA: 0xA04BBC Offset: 0xA04BBC VA: 0xA04BBC
 		public void ODDIHGPONFL(PAFLFMFEOJD OIKJFMGEICL)
@@ -93,7 +99,14 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0xA050A4 Offset: 0xA050A4 VA: 0xA050A4
-		//public bool AGBOGBEOFME(IOEKHJBOMDH.GFPPDCEPLCM OIKJFMGEICL) { }
+		public bool AGBOGBEOFME(GFPPDCEPLCM OIKJFMGEICL)
+		{
+			if(PPFNGGCBJKC_Id != OIKJFMGEICL.PPFNGGCBJKC_Id ||
+				BFINGCJHOHI_Cnt != OIKJFMGEICL.BFINGCJHOHI_Cnt ||
+				CADENLBDAEB_IsNew != OIKJFMGEICL.CADENLBDAEB_IsNew)
+				return false;
+			return true;
+		}
 
 		//// RVA: 0xA03F44 Offset: 0xA03F44 VA: 0xA03F44
 		//public bool DFIGPDCBAPB() { }
@@ -273,7 +286,22 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xA04CE0 Offset: 0xA04CE0 VA: 0xA04CE0 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		IOEKHJBOMDH_DecoStamp other = GPBJHKLFCEP as IOEKHJBOMDH_DecoStamp;
+		for(int i = 0; i < GNKJGECHLNE_CustomList.Count; i++)
+		{
+			if(!GNKJGECHLNE_CustomList[i].AGBOGBEOFME(other.GNKJGECHLNE_CustomList[i]))
+				return false;
+		}
+		for(int i = 0; i < FHBIIONKIDI_Stamps.Count; i++)
+		{
+			if(!FHBIIONKIDI_Stamps[i].AGBOGBEOFME(other.FHBIIONKIDI_Stamps[i]))
+				return false;
+		}
+		for(int i = 0; i < DMKMNGELNAE_Serif.Count; i++)
+		{
+			if(!DMKMNGELNAE_Serif[i].AGBOGBEOFME(other.DMKMNGELNAE_Serif[i]))
+				return false;
+		}
 		return true;
 	}
 

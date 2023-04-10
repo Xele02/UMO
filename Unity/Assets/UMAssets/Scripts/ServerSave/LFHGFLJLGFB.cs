@@ -13,7 +13,7 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	private List<CEBFFLDKAEC_SecureInt> FNDJLOMNECG; // 0x2C
 
 	//public int KPEBMCLONHK { get; } ??
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0xD6C5FC NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return false; } } // 0xD6C5FC NFKFOODCJJB
 
 	// // RVA: 0xD6B438 Offset: 0xD6B438 VA: 0xD6B438
 	public LFHGFLJLGFB_FavoritePlayer()

@@ -135,7 +135,28 @@ public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x13E6B7C Offset: 0x13E6B7C VA: 0x13E6B7C Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		FNCFHIEELGO_DecoVisit other = GPBJHKLFCEP as FNCFHIEELGO_DecoVisit;
+		if(LIDCDBKAAFL_VisitAcquiredAt != other.LIDCDBKAAFL_VisitAcquiredAt ||
+			KAIOEKJJAKH_VisitedAt != other.KAIOEKJJAKH_VisitedAt ||
+			HFJADCMLFAN_VisitPrevCntFriend != other.HFJADCMLFAN_VisitPrevCntFriend ||
+			FBINJFGCIOI_VisitPrevCntFan != other.FBINJFGCIOI_VisitPrevCntFan ||
+			IAOOCOKEECB_VisitPrevCntOther != other.IAOOCOKEECB_VisitPrevCntOther ||
+			EILGNIEGDOI_PresentAcquiredAt != other.EILGNIEGDOI_PresentAcquiredAt ||
+			GHEBKKHAAPM_PresentPrevCnt != other.GHEBKKHAAPM_PresentPrevCnt ||
+			MPPKMEIEGFE_VisitList.Count != other.MPPKMEIEGFE_VisitList.Count)
+			return false;
+		for(int i = 0; i < MPPKMEIEGFE_VisitList.Count; i++)
+		{
+			if(MPPKMEIEGFE_VisitList[i].NANNGLGOFKH != other.MPPKMEIEGFE_VisitList[i].NANNGLGOFKH)
+				return false;
+		}
+		if(MHPDCGNOBHH_PresentSentList.Count != other.MHPDCGNOBHH_PresentSentList.Count)
+			return false;
+		for(int i = 0; i < MHPDCGNOBHH_PresentSentList.Count; i++)
+		{
+			if(MHPDCGNOBHH_PresentSentList[i].NANNGLGOFKH != other.MHPDCGNOBHH_PresentSentList[i].NANNGLGOFKH)
+				return false;
+		}
 		return true;
 	}
 
