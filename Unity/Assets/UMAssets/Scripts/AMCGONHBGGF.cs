@@ -37,5 +37,19 @@ public class AMCGONHBGGF
 	}
 
 	// // RVA: 0xCE101C Offset: 0xCE101C VA: 0xCE101C
-	// public EDOHBJAPLPF_JsonData NOJCMGAFAAC() { }
+	public EDOHBJAPLPF_JsonData NOJCMGAFAAC()
+	{
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = DIPKCALNIII_Id;
+		data[AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id] = BEEAIAAJOHD_CId;
+		data["c_col"] = AFNIOJHODAG_ColId;
+		EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+		data2.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+		for(int i = 0; i < EBDNICPAFLB_SSlot.Length; i++)
+		{
+			data2.Add(EBDNICPAFLB_SSlot[i]);
+		}
+		data[AFEHLCGHAEE_Strings.EBDNICPAFLB_s_slot] = data2;
+		return data;
+	}
 }

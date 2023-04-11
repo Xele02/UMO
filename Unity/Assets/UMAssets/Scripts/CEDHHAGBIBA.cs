@@ -142,7 +142,10 @@ public class CEDHHAGBIBA
     }
 
 	// // RVA: 0x12B2508 Offset: 0x12B2508 VA: 0x12B2508
-	// public static string EHNMFLADJKG(byte[] IFIKNDBPOKO) { }
+	public static string EHNMFLADJKG_ByteArrayToString(byte[] IFIKNDBPOKO)
+	{
+		return Convert.ToBase64String(IFIKNDBPOKO);
+	}
 
 	// // RVA: 0x12B258C Offset: 0x12B258C VA: 0x12B258C
 	public static void IFOLECIIDPO_StringToByteArray(byte[] IFIKNDBPOKO, string BJKEOACPMHB)

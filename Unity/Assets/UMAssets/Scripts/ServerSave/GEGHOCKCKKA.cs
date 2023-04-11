@@ -134,7 +134,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 	public const int HAKDOMMLLJP = 99999999;
 	public List<AIAPDPDOIKG> ODHBHOGFNAA = new List<AIAPDPDOIKG>(); // 0x24
 
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x16BC740 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return false; } } // 0x16BC740 NFKFOODCJJB
 
 	// // RVA: 0x16B869C Offset: 0x16B869C VA: 0x16B869C
 	public int HPPKOGKNKMH(int PPFNGGCBJKC, long JHNMKKNEENE)

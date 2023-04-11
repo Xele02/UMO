@@ -15,7 +15,7 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 
 	public List<NFPHOINMHKN_QuestInfo> BEGCHDHHEKC_DailyQuests { get; private set; } // 0x30 FGGBICBDOEN DEBOJOHHPPB CFINEIEEJGN
 	public List<NFPHOINMHKN_QuestInfo> GPMKFMFEKLN_NormalQuests { get; private set; } // 0x34 LKPJIEOOENM HDOHKBOJCDK CDNIDJPOHDJ
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x1B3C0BC NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return false; } } // 0x1B3C0BC NFKFOODCJJB
 
 	// // RVA: 0x1B39620 Offset: 0x1B39620 VA: 0x1B39620
 	public long DFFFCPCHBBE_EndDate()
@@ -81,7 +81,39 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1B39C80 Offset: 0x1B39C80 VA: 0x1B39C80 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "OKJPIBHMKMJ");
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			data2[POFDDFCGEGP] = "";
+			for(int i = 0; i < BEGCHDHHEKC_DailyQuests.Count; i++)
+			{
+				EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
+				data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = GPMKFMFEKLN_NormalQuests[i].PPFNGGCBJKC_Id;
+				data3[AFEHLCGHAEE_Strings.EALOBDHOCHP_stat] = GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat;
+				data3[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = GPMKFMFEKLN_NormalQuests[i].BEBJKJKBOGH_Date;
+				data3[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New;
+				data2[POFDDFCGEGP + (i + 1)] = data3;
+			}
+			data[AFEHLCGHAEE_Strings.EJFAEKPGKNJ_daily] = data2;
+		}
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			data2[POFDDFCGEGP] = "";
+			for (int i = 0; i < GPMKFMFEKLN_NormalQuests.Count; i++)
+			{
+				EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
+				data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = GPMKFMFEKLN_NormalQuests[i].PPFNGGCBJKC_Id;
+				data3[AFEHLCGHAEE_Strings.EALOBDHOCHP_stat] = GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat;
+				data3[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = GPMKFMFEKLN_NormalQuests[i].BEBJKJKBOGH_Date;
+				data3[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New;
+				data2[POFDDFCGEGP + (i + 1)] = data3;
+			}
+			data[AFEHLCGHAEE_Strings.EGDEGGMPIGA_normal] = data2;
+		}
+		data[AFEHLCGHAEE_Strings.FANICHGKOML_init_date] = FANICHGKOML_InitDate;
+		data[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
+		data[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 2;
+		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 	}
 
 	// // RVA: 0x1B3A84C Offset: 0x1B3A84C VA: 0x1B3A84C Slot: 6

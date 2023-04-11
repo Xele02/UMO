@@ -9,7 +9,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 	public CIFHILOJJFC DBMOBFCLFOB = new CIFHILOJJFC(); // 0x28
 
 	// public CIFHILOJJFC JKNGLJNEEPO { get; }
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x1191F34 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x1191F34 NFKFOODCJJB
 
 	// // RVA: 0x118F3A8 Offset: 0x118F3A8 VA: 0x118F3A8
 	public CIFHILOJJFC GCINIJEMHFK(int PPFNGGCBJKC)
@@ -46,6 +46,44 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x118F6B0 Offset: 0x118F6B0 VA: 0x118F6B0 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+		for(int i = 0; i < AHBBMJANGHE.Count; i++)
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			CIFHILOJJFC c = AHBBMJANGHE[i];
+			data2[AFEHLCGHAEE_Strings.GIDKKHFHALL_unit_id] = c.GIDKKHFHALL;
+			data2[AFEHLCGHAEE_Strings.FODKKJIDDKN_vf_id] = c.FODKKJIDDKN_VfId;
+			data2[AFEHLCGHAEE_Strings.OPFGFINHFCE_name] = c.OPFGFINHFCE_Name;
+			EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
+			data3.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			for(int j = 0; j < c.FDBOPFEOENF_MainDivas.Count; j++)
+			{
+				data3.Add(c.FDBOPFEOENF_MainDivas[j].NOJCMGAFAAC());
+			}
+			EDOHBJAPLPF_JsonData data4 = new EDOHBJAPLPF_JsonData();
+			data4.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			for (int j = 0; j < c.KAKGHFFOAEJ_AddDivas.Count; j++)
+			{
+				data4.Add(c.KAKGHFFOAEJ_AddDivas[j].NOJCMGAFAAC());
+			}
+			data2[AFEHLCGHAEE_Strings.FDBOPFEOENF_diva] = data3;
+			data2["add_" + AFEHLCGHAEE_Strings.FDBOPFEOENF_diva] = data4;
+			data.Add(data2);
+		}
+		if(!EMBGIDLFKGM)
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			data2[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
+			data2[JIKKNHIAEKG_BlockName] = data;
+			data2[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 3;
+			data = data2;
+		}
+		else
+		{
+			OILEIIEIBHP = OILEIIEIBHP[AFEHLCGHAEE_Strings.JCIBKDHKNFH_alldata];
+		}
+		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 		TodoLogger.Log(0, "OKJPIBHMKMJ");
 	}
 

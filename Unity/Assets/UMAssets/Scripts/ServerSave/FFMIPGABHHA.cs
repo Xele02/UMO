@@ -11,7 +11,7 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	public long AFNJCFEKFDD_Dirty; // 0x30
 
 	public long BEBJKJKBOGH_Time { get { return KLAPHOKNEDG_Time ^ BBEGLBMOBOF; } set { KLAPHOKNEDG_Time = value ^ BBEGLBMOBOF; } } //DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x14E5A68 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x14E5A68 NFKFOODCJJB
 
 	// // RVA: 0x14E4BBC Offset: 0x14E4BBC VA: 0x14E4BBC
 	public static string CAOGDCBPBAN(string MDADLCOCEBN, int EHDDADDKMFI, int FEOKKEPAIBB)

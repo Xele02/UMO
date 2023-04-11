@@ -27,5 +27,12 @@ public class DKDMLOBCPFC
 	}
 
 	// // RVA: 0x198E724 Offset: 0x198E724 VA: 0x198E724
-	// public EDOHBJAPLPF_JsonData NOJCMGAFAAC() { }
+	public EDOHBJAPLPF_JsonData NOJCMGAFAAC()
+	{
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = DIPKCALNIII_Id;
+		data[AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id] = BEEAIAAJOHD_CosId;
+		data["c_col"] = AFNIOJHODAG_ColId;
+		return data;
+	}
 }

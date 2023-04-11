@@ -207,7 +207,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	private int JLFONLABECA_ShowTuto; // 0x28
 
 	public List<ILFJDCICIKN> FABAGMLEKIB_List { get; private set; } = new List<ILFJDCICIKN>(500); // 0x24 PICMGGDAMCD NGJACJFHBKM NEHGIPDDKNG
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x14FCB14 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x14FCB14 NFKFOODCJJB
 
 	// // RVA: 0x14F6B90 Offset: 0x14F6B90 VA: 0x14F6B90
 	public ILFJDCICIKN EEOADCECNOM_GetCostume(int PPFNGGCBJKC)
@@ -460,7 +460,38 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14F9094 Offset: 0x14F9094 VA: 0x14F9094 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "OKJPIBHMKMJ");
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		data[POFDDFCGEGP] = "";
+		for(int i = 0; i < FABAGMLEKIB_List.Count; i++)
+		{
+			if(FABAGMLEKIB_List[i].BEBJKJKBOGH_Date != 0 || FABAGMLEKIB_List[i].FOENNFDGCIC_TrsNew != 0)
+			{
+				EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+				data2[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = FABAGMLEKIB_List[i].BEEAIAAJOHD_CostumeId;
+				data2[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = FABAGMLEKIB_List[i].CADENLBDAEB_IsNew;
+				data2[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = FABAGMLEKIB_List[i].BEBJKJKBOGH_Date;
+				data2["lv"] = FABAGMLEKIB_List[i].ANAJIAENLNB_Level;
+				data2["unlock"] = FABAGMLEKIB_List[i].KBOLNIBLIND_Unlock;
+				data2["point"] = FABAGMLEKIB_List[i].DNBFMLBNAEE_Point;
+				data2["col_new"] = FABAGMLEKIB_List[i].MKEHNGNEFMM_IsNewColorFlags;
+				data2[AFEHLCGHAEE_Strings.DLMDINBHGBG_trs_new] = FABAGMLEKIB_List[i].FOENNFDGCIC_TrsNew;
+				data[POFDDFCGEGP + (i + 1)] = data2;
+			}
+		}
+		if(!EMBGIDLFKGM)
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			data2[AFEHLCGHAEE_Strings.FFKMJNHFFFL_costume] = data;
+			data2[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
+			data2[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 2;
+			data2["show_tuto"] = JLFONLABECA_ShowTuto;
+			data = data2;
+		}
+		else
+		{
+			OILEIIEIBHP = OILEIIEIBHP[AFEHLCGHAEE_Strings.JCIBKDHKNFH_alldata];
+		}
+		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 	}
 
 	// // RVA: 0x14F993C Offset: 0x14F993C VA: 0x14F993C Slot: 6

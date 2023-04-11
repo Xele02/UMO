@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using UnityEngine;
 using XeSys;
 
 [System.Obsolete("Use OCLHKHAMDHF_Episode", true)]
@@ -130,7 +131,7 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 	public static string POFDDFCGEGP = "_"; // 0x0
 
 	public List<JEHNEEBBDBO_EpisodeInfo> BBAJKJPKOHD_EpisodeList { get; private set; } // 0x24 LOGMEMCACAC NNNEPHIJAKK HIAFHIDDPEJ
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x1B304DC NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x1B304DC NFKFOODCJJB
 
 	// // RVA: 0x1B2C690 Offset: 0x1B2C690 VA: 0x1B2C690
 	public int GGKOLJCPNKO(KMOGDEOKHPG_Episode MOLEPBNJAGE)
@@ -178,7 +179,45 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1B2D098 Offset: 0x1B2D098 VA: 0x1B2D098 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "OKJPIBHMKMJ");
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		data[POFDDFCGEGP] = "";
+		for(int i = 0; i < BBAJKJPKOHD_EpisodeList.Count; i++)
+		{
+			if(BBAJKJPKOHD_EpisodeList[i].BEBJKJKBOGH_Date != 0)
+			{
+				EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+				if(BBAJKJPKOHD_EpisodeList[i].PHJFOJLMFGK != null)
+				{
+					Debug.LogError("pending_rewards is exists!!");
+				}
+				data2[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = BBAJKJPKOHD_EpisodeList[i].HPLMMKHBKIG_Id;
+				data2[AFEHLCGHAEE_Strings.JBGEEPFKIGG_val] = BBAJKJPKOHD_EpisodeList[i].OGDBKJKIGAJ_CurrentPoint;
+				data2[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = BBAJKJPKOHD_EpisodeList[i].LHMOAJAIJCO_IsNew;
+				data2[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = BBAJKJPKOHD_EpisodeList[i].BEBJKJKBOGH_Date;
+				data2[AFEHLCGHAEE_Strings.LGADCGFMLLD_step] = BBAJKJPKOHD_EpisodeList[i].EBIIIAELNAA_Step;
+				EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
+				data3.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				for(int j = 0; j < 10; j++)
+				{
+					data3.Add(BBAJKJPKOHD_EpisodeList[i].MCIHDIBHHBI_IsRewardReceived(i));
+				}
+				data2[AFEHLCGHAEE_Strings.CCCHFLGBMAF_recv] = data3;
+				data[POFDDFCGEGP + (i + 1)] = data2;
+			}
+		}
+		if(!EMBGIDLFKGM)
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			data2[AFEHLCGHAEE_Strings.PBJKGCLJFOE_episode] = data;
+			data2[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
+			data2[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 2;
+			data = data2;
+		}
+		else
+		{
+			OILEIIEIBHP = OILEIIEIBHP[AFEHLCGHAEE_Strings.JCIBKDHKNFH_alldata];
+		}
+		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 	}
 
 	// // RVA: 0x1B2DA80 Offset: 0x1B2DA80 VA: 0x1B2DA80 Slot: 6
