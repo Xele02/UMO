@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using XeApp.Core;
 using XeSys;
 
 namespace XeApp.Game.Tutorial
@@ -132,21 +133,72 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE46BE8 Offset: 0xE46BE8 VA: 0xE46BE8
 		public IEnumerator ShowTutorialCoroutine(PJANOOPJIDE_TutorialPict.HNHHGJCPMEA messData)
 		{
-			TodoLogger.Log(0, "ShowTutorialCoroutine");
-			yield return null;
+			//0xE478A4
+			if(m_tutorialSetInstance == null)
+			{
+				bool isWait = true;
+				yield return this.StartCoroutineWatched(PreLoadLayoutCoroutine(() =>
+				{
+					//0xE46DF4
+					isWait = false;
+				}, false));
+				while (isWait)
+					yield return null;
+			}
+			//LAB_00e47a44
+			{
+				bool isWait = true;
+				m_window.SetMessageData(messData);
+				m_window.gameObject.SetActive(true);
+				m_window.Show(() =>
+				{
+					//0xE46E08
+					isWait = false;
+				}, true);
+				while (isWait)
+					yield return null;
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE8C0 Offset: 0x6AE8C0 VA: 0x6AE8C0
 		// // RVA: 0xE46220 Offset: 0xE46220 VA: 0xE46220
-		// private IEnumerator PreLoadLayoutCoroutine(UnityAction finishCb, bool isAppendLayout = False) { }
+		private IEnumerator PreLoadLayoutCoroutine(UnityAction finishCb, bool isAppendLayout = false)
+		{
+			//0xE473AC
+			yield return this.StartCoroutineWatched(LoadBaseLayoutCoroutine());
+			if (finishCb != null)
+				finishCb();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE938 Offset: 0x6AE938 VA: 0x6AE938
 		// // RVA: 0xE46CD0 Offset: 0xE46CD0 VA: 0xE46CD0
-		// private IEnumerator LoadBaseLayoutCoroutine() { }
+		private IEnumerator LoadBaseLayoutCoroutine()
+		{
+			int loadCount; // 0x14
+			AssetBundleLoadLayoutOperationBase op; // 0x18
 
-		// [CompilerGeneratedAttribute] // RVA: 0x6AE9B0 Offset: 0x6AE9B0 VA: 0x6AE9B0
-		// // RVA: 0xE46DE4 Offset: 0xE46DE4 VA: 0xE46DE4
-		// private void <LoadBaseLayoutCoroutine>b__17_0(GameObject instance) { }
+			//0xE46E18
+			if(m_tutorialSetInstance == null)
+			{
+				loadCount = 0;
+				op = AssetBundleManager.LoadLayoutAsync("ly/093.xab", "root_cmn_tuto03_window_layout_root");
+				yield return op;
+				yield return Co.R(op.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+				{
+					//0xE46DE4
+					m_tutorialSetInstance = instance;
+				}));
+				loadCount++;
+				while (m_tutorialSetInstance == null)
+					yield return null;
+				for (int i = 0; i < loadCount; i++)
+					AssetBundleManager.UnloadAssetBundle("ly/093.xab", false);
+			}
+			m_tutorialSetInstance.gameObject.SetActive(false);
+			m_tutorialSetInstance.transform.SetParent(GameManager.Instance.PopupCanvas.transform.Find("Root"), false);
+			m_tutorialSetInstance.transform.SetAsLastSibling();
+			m_window = m_tutorialSetInstance.GetComponent<TutorialWindow>();
+		}
 	}
 
 	public enum TutorialConditionId

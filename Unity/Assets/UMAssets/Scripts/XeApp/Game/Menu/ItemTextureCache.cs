@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.Log(0, "MakeItemIconTexturePath");
+				TodoLogger.Log(0, "MakeItemIconTexturePath "+ val);
 				val = val - 14;
 				switch (val)
 				{
