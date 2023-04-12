@@ -62,11 +62,23 @@ public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x195B3D0 Offset: 0x195B3D0 VA: 0x195B3D0 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "OKJPIBHMKMJ");
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		data[AFEHLCGHAEE_Strings.EOKMNCPJMCO_assist_list] = EOLCFDGNIJI();
+		data["page"] = HODDNKENKHD_Page;
+		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 	}
 
 	// // RVA: 0x195B098 Offset: 0x195B098 VA: 0x195B098
-	// private EDOHBJAPLPF_JsonData EOLCFDGNIJI() { }
+	private EDOHBJAPLPF_JsonData EOLCFDGNIJI()
+	{
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		OAILDDLJFEE o = new OAILDDLJFEE();
+		for(int i = 0; i < LDIINNKMLLO.Length; i++)
+		{
+			data.Add(o.LPGBJBHFINB(LDIINNKMLLO[i]));
+		}
+		return data;
+	}
 
 	// // RVA: 0x195B560 Offset: 0x195B560 VA: 0x195B560 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)

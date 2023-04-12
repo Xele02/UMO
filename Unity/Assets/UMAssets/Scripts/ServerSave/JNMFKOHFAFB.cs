@@ -210,7 +210,7 @@ public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_ServerSaveBlock
 			int val = 0;
 			if(IKPIDCFOFEA < 10)
 			{
-				val = EHOIENNDEDH_FreeMusicIds[IKPIDCFOFEA];
+				val = EHOIENNDEDH_FreeMusicIds[IKPIDCFOFEA] ^ FBGGEFFJJHB;
 				if (val < 0 || val > 2000)
 					val = 0;
 			}
@@ -232,7 +232,7 @@ public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_ServerSaveBlock
 			int val = 0;
 			if (IKPIDCFOFEA < 10)
 			{
-				val = EHLGHDIACCG_Difficulty[IKPIDCFOFEA];
+				val = EHLGHDIACCG_Difficulty[IKPIDCFOFEA] ^ FBGGEFFJJHB;
 				if (val < 0 || val > 4)
 					val = 0;
 			}
@@ -254,7 +254,7 @@ public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_ServerSaveBlock
 			if (IKPIDCFOFEA > 9)
 				return 0;
 			if (PCFFCAAIPNB_Score[IKPIDCFOFEA] > 0)
-				return PCFFCAAIPNB_Score[IKPIDCFOFEA];
+				return PCFFCAAIPNB_Score[IKPIDCFOFEA] ^ FBGGEFFJJHB;
 			return 0;
 		}
 
@@ -273,7 +273,7 @@ public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_ServerSaveBlock
 			if (IKPIDCFOFEA > 9)
 				return 0;
 			if (JALJMLNOLII_L6[IKPIDCFOFEA] > 0)
-				return JALJMLNOLII_L6[IKPIDCFOFEA];
+				return JALJMLNOLII_L6[IKPIDCFOFEA] ^ FBGGEFFJJHB;
 			return 0;
 		}
 

@@ -158,10 +158,10 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 			data3.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			for (int i = 0; i < 300; i++)
 			{
-				data2.Add(NONMPJBNBNN_MClr[i]);
-				data3.Add(CFHOMPIKIGK_MFCb[i]);
-				data4.Add(NDBEHBMEGGI_MClr16[i]);
-				data5.Add(DNKKDCHJJHF_MFCb16[i]);
+				data2.Add((int)NONMPJBNBNN_MClr[i]);
+				data3.Add((int)CFHOMPIKIGK_MFCb[i]);
+				data4.Add((int)NDBEHBMEGGI_MClr16[i]);
+				data5.Add((int)DNKKDCHJJHF_MFCb16[i]);
 			}
 			for(int i = 0; i < 5; i++)
 			{

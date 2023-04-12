@@ -20,7 +20,7 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 		public List<int> PHJFOJLMFGK; // 0x2C
 		public bool LHMOAJAIJCO_IsNew; // 0x30
 
-		public int HPLMMKHBKIG_Id { get { return GDIKAELAKBN_IdCrypted ^ FBGGEFFJJHB; } set { GDIKAELAKBN_IdCrypted = value ^ GDIKAELAKBN_IdCrypted; } } //0x1B2D9F4 CABAPDMNCDN 0x1B2E04C BIEKAEDMACK
+		public int HPLMMKHBKIG_Id { get { return GDIKAELAKBN_IdCrypted ^ FBGGEFFJJHB; } set { GDIKAELAKBN_IdCrypted = value ^ FBGGEFFJJHB; } } //0x1B2D9F4 CABAPDMNCDN 0x1B2E04C BIEKAEDMACK
 		public int OGDBKJKIGAJ_CurrentPoint { get {
 				int res = EFLHPLDPEHJ_ValCrypted ^ FBGGEFFJJHB;
 				if (BMNPNDCOGOJ_ValCheck != res)
@@ -199,7 +199,7 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 				data3.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 				for(int j = 0; j < 10; j++)
 				{
-					data3.Add(BBAJKJPKOHD_EpisodeList[i].MCIHDIBHHBI_IsRewardReceived(i));
+					data3.Add(BBAJKJPKOHD_EpisodeList[i].MCIHDIBHHBI_IsRewardReceived(j));
 				}
 				data2[AFEHLCGHAEE_Strings.CCCHFLGBMAF_recv] = data3;
 				data[POFDDFCGEGP + (i + 1)] = data2;

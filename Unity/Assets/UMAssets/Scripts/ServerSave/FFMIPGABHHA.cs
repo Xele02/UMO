@@ -37,7 +37,13 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14E4EC8 Offset: 0x14E4EC8 VA: 0x14E4EC8 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "OKJPIBHMKMJ");
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		data[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
+		data[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 2;
+		data["hash"] = IOIMHJAOKOO_Hash;
+		data["date"] = KLAPHOKNEDG_Time;
+		data["dirty"] = AFNJCFEKFDD_Dirty;
+		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 	}
 
 	// // RVA: 0x14E5148 Offset: 0x14E5148 VA: 0x14E5148 Slot: 6

@@ -84,7 +84,6 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 			OILEIIEIBHP = OILEIIEIBHP[AFEHLCGHAEE_Strings.JCIBKDHKNFH_alldata];
 		}
 		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
-		TodoLogger.Log(0, "OKJPIBHMKMJ");
 	}
 
 	// // RVA: 0x118FEC0 Offset: 0x118FEC0 VA: 0x118FEC0 Slot: 6

@@ -53,7 +53,25 @@ public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x12B2E08 Offset: 0x12B2E08 VA: 0x12B2E08 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "OKJPIBHMKMJ");
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+		for(int i = 0; i < GFPFBJDPHLJ.Count; i++)
+		{
+			data.Add(GFPFBJDPHLJ[i].NOJCMGAFAAC());
+		}
+		if(!EMBGIDLFKGM)
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			data2[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
+			data2[JIKKNHIAEKG_BlockName] = data;
+			data2[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 2;
+			data = data2;
+		}
+		else
+		{
+			OILEIIEIBHP = OILEIIEIBHP[AFEHLCGHAEE_Strings.JCIBKDHKNFH_alldata];
+		}
+		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 	}
 
 	// // RVA: 0x12B3180 Offset: 0x12B3180 VA: 0x12B3180 Slot: 6
@@ -232,7 +250,32 @@ public class MPBEHHIAGOI
 	}
 
 	//// RVA: 0x17BB6C0 Offset: 0x17BB6C0 VA: 0x17BB6C0
-	//public EDOHBJAPLPF NOJCMGAFAAC() { }
+	public EDOHBJAPLPF_JsonData NOJCMGAFAAC()
+	{
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			data2.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			for(int i = 0; i < AHBBMJANGHE.Count; i++)
+			{
+				EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
+				data3[AFEHLCGHAEE_Strings.GIDKKHFHALL_unit_id] = AHBBMJANGHE[i].GIDKKHFHALL;
+				data3[AFEHLCGHAEE_Strings.FODKKJIDDKN_vf_id] = AHBBMJANGHE[i].FODKKJIDDKN_VfId;
+				data3[AFEHLCGHAEE_Strings.OPFGFINHFCE_name] = AHBBMJANGHE[i].OPFGFINHFCE_Name;
+				EDOHBJAPLPF_JsonData data4 = new EDOHBJAPLPF_JsonData();
+				data4.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				for(int j = 0; j < AHBBMJANGHE[i].FDBOPFEOENF_MainDivas.Count; j++)
+				{
+					data4.Add(AHBBMJANGHE[i].FDBOPFEOENF_MainDivas[j].NOJCMGAFAAC());
+				}
+				data3[AFEHLCGHAEE_Strings.FDBOPFEOENF_diva] = data4;
+				data2.Add(data3);
+			}
+			data[AFEHLCGHAEE_Strings.MEFHDDNABLM_unit] = data2;
+		}
+		data[AFEHLCGHAEE_Strings.DIPKCALNIII_diva_id] = AHHJLDLAPAN_divaId;
+		return data;
+	}
 
 	//// RVA: 0x17BBC34 Offset: 0x17BBC34 VA: 0x17BBC34
 	//public bool AGBOGBEOFME(MPBEHHIAGOI GPBJHKLFCEP) { }

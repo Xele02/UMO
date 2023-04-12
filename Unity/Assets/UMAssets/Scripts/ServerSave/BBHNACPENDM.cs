@@ -472,6 +472,9 @@ public class BBHNACPENDM_ServerSaveData
 			if(block != null)
 			{
 				block.ODDIHGPONFL_Copy(GPBJHKLFCEP.MGJKEJHEBPO_Blocks[i]);
+				// tmp debug
+				//if (!block.AGBOGBEOFME(GPBJHKLFCEP.MGJKEJHEBPO_Blocks[i]))
+				//	UnityEngine.Debug.LogError("Error copying block "+ GPBJHKLFCEP.MGJKEJHEBPO_Blocks[i].JIKKNHIAEKG_BlockName);
 			}
 		}
 	}
