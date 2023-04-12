@@ -161,7 +161,14 @@ public class BIFNGFAIEIL
 	//// RVA: 0xC80F54 Offset: 0xC80F54 VA: 0xC80F54
 	public void LEPNMDBJAIE(List<string> OHNJJIMGKGK)
 	{
-		TodoLogger.Log(0, "LEPNMDBJAIE");
+		string str = OHNJJIMGKGK.Find((string GHPLINIACBB) =>
+		{
+			//0xC82EB0
+			return GHPLINIACBB == "sns";
+		});
+		if (str == null)
+			return;
+		BNEGNOBCHGP.JCHLONCMPAJ(ELLBAAFKDCH_FilePath);
 	}
 
 	//// RVA: 0xC810DC Offset: 0xC810DC VA: 0xC810DC

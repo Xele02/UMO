@@ -17,7 +17,13 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE4604C Offset: 0xE4604C VA: 0xE4604C
 		public static void Initialize()
 		{
-			TodoLogger.Log(0, "TutorialManager.Initialize");
+			TutorialManager t = GameManager.Instance.gameObject.GetComponent<TutorialManager>();
+			if(GameManager.Instance != null)
+			{
+				if (t != null)
+					return;
+				GameManager.Instance.gameObject.AddComponent<TutorialManager>();
+			}
 		}
 
 		// // RVA: 0xE461F8 Offset: 0xE461F8 VA: 0xE461F8

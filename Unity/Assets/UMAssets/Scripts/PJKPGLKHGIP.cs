@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using System.IO;
 
 public class PJKPGLKHGIP
 {
@@ -15,7 +16,16 @@ public class PJKPGLKHGIP
 	//public void ANIJHEBLMGB(int PPFNGGCBJKC, int BEBJKJKBOGH) { }
 
 	//// RVA: 0x937BB0 Offset: 0x937BB0 VA: 0x937BB0
-	//public void JCHLONCMPAJ(string CJEKGLGBIHF) { }
+	public void JCHLONCMPAJ(string CJEKGLGBIHF)
+	{
+		PAAFIOOKJIP_ReceivedSns = 0;
+		ONOICEHIHPJ_Ids.Clear();
+		KJNJHHHELBK_Dates.Clear();
+		if (CJEKGLGBIHF == null)
+			return;
+		if (File.Exists(CJEKGLGBIHF))
+			File.Delete(CJEKGLGBIHF);
+	}
 
 	//// RVA: 0x937C8C Offset: 0x937C8C VA: 0x937C8C
 	//public void HJMKBCFJOOH(string CJEKGLGBIHF) { }
