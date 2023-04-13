@@ -139,17 +139,47 @@ namespace XeApp.Game.Menu
 			m_checkboxReject.AddOnClickCallback(() =>
 			{
 				//0x964FD4
-				TodoLogger.LogNotImplemented("m_checkboxReject");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				ShowConfirmWindow(m_checkboxReject.IsChecked, (bool isChecked) =>
+				{
+					//0x9650E4
+					if (isChecked)
+						m_checkboxReject.SetOn();
+					else
+						m_checkboxReject.SetOff();
+					if (onClickRejectCheckbox != null)
+						onClickRejectCheckbox(isChecked);
+				});
 			});
 			Loaded();
 			return true;
 		}
 
 		//// RVA: 0x964A58 Offset: 0x964A58 VA: 0x964A58
-		//private void ShowConfirmWindow(bool isChecked, Action<bool> callback) { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6E260C Offset: 0x6E260C VA: 0x6E260C
-		//// RVA: 0x9650E4 Offset: 0x9650E4 VA: 0x9650E4
-		//private void <InitializeFromLayout>b__29_2(bool isChecked) { }
+		private void ShowConfirmWindow(bool isChecked, Action<bool> callback)
+		{
+			if(!isChecked)
+			{
+				callback(isChecked);
+			}
+			else
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				TextPopupSetting setting = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_get_liveskip_ticket_confirm_title"),
+					SizeType.Middle, string.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_confirm_desc"), EKLNMHFCAOI.INCKKODFJAP(m_typeItemId)), new ButtonInfo[2]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+					}, false, true);
+				PopupWindowManager.Show(setting, (PopupWindowControl ctl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x965194
+					if (type == PopupButton.ButtonType.Negative)
+						isChecked = !isChecked;
+					if (callback != null)
+						callback(isChecked);
+				}, null, null, null);
+			}
+		}
 	}
 }

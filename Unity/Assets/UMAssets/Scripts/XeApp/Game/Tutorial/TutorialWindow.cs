@@ -291,7 +291,8 @@ namespace XeApp.Game.Tutorial
 			int a = m_maxPage - page + 1;
 			if (a > 2)
 				a = 3;
-			m_windowAnime[m_messageData.KNHABOOAAIP].StartChildrenAnimGoStop(string.Format("{0:D2}", a));
+			if(m_windowAnime[m_messageData.KNHABOOAAIP] != null)
+				m_windowAnime[m_messageData.KNHABOOAAIP].StartChildrenAnimGoStop(string.Format("{0:D2}", a));
 		}
 
 		//// RVA: 0x19185A0 Offset: 0x19185A0 VA: 0x19185A0

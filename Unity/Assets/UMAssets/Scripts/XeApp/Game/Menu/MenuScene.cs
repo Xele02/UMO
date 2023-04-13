@@ -1050,8 +1050,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB34FC0 Offset: 0xB34FC0 VA: 0xB34FC0
 		public IEnumerator ShowConvertRareupStarWindowCoroutine()
 		{
+			//0xB3DB50
+			InputDisable();
+			RaycastDisable();
+			yield return TutorialManager.TryShowTutorialCoroutine((TutorialConditionId conditionId) =>
+			{
+				//0xB381FC
+				return conditionId == TutorialConditionId.Condition82;
+			});
+			InputEnable();
+			RaycastEnable();
+			if (!JHLCEOOMFLN.NAMDJCPDJDD())
+				yield break;
 			TodoLogger.Log(0, "ShowConvertRareupStarWindowCoroutine");
-			yield return null;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C820C Offset: 0x6C820C VA: 0x6C820C
