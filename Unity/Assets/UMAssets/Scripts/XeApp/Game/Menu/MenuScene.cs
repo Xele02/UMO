@@ -7,6 +7,8 @@ using XeApp.Game.Common;
 using UnityEngine.Events;
 using System;
 using XeApp.Game.Tutorial;
+using System.Collections.Generic;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -1034,8 +1036,67 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB34E68 Offset: 0xB34E68 VA: 0xB34E68
 		public IEnumerator ShowReceiveRewardWindowCoroutine()
 		{
-			TodoLogger.Log(0, "ShowReceiveRewardWindowCoroutine");
-			yield return null;
+			HighScoreRatingRank.Type grade; // 0x18
+			List<HighScoreRating.UtaGradeData> rewardList; // 0x1C
+
+			//0xB419F0
+			if (!HighScoreRating.IsNotReceivedRewardUtaGrade())
+				yield break;
+			grade = (HighScoreRatingRank.Type)HighScoreRating.GetUtaRate(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
+			HighScoreRating hs = new HighScoreRating();
+			hs.Init();
+			rewardList = hs.GetUtaGradeList(grade);
+			bool done = false;
+			bool error = false;
+			this.StartCoroutineWatched(OEGIPPCADNA.HHCJCDFCLOB.JAAOHPKMEAF_Coroutine_Receive_UnreceivedAchivements(() =>
+			{
+				//0xB386F8
+				done = true;
+			}, () =>
+			{
+				//0xB38704
+				done = true;
+				error = true;
+			}));
+			while (!done)
+				yield return null;
+			if(!error)
+			{
+				int total = 0;
+				for(int i = 0; i < rewardList.Count; i++)
+				{
+					total += rewardList[i].items.Count;
+				}
+				if(total > 0)
+				{
+					PopupMusicGradeGetRewardSetting setting = new PopupMusicGradeGetRewardSetting();
+					setting.WindowSize = SizeType.Large2;
+					setting.IsCaption = false;
+					setting.NowGrade = grade;
+					setting.RewardList = rewardList;
+					setting.Buttons = new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+					};
+					GameManager.Instance.ResetViewPlayerData();
+					done = false;
+					error = false;
+					PopupWindowManager.Show(setting, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+					{
+						//0xB38710
+						done = true;
+					}, null, null, null, true, true, false, null, null, (PopupWindowControl.SeType type) =>
+					{
+						//0xB38190
+						if (type != PopupWindowControl.SeType.WindowOpen)
+							return false;
+						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_004);
+						return true;
+					});
+					while (!done)
+						yield return null;
+				}
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C811C Offset: 0x6C811C VA: 0x6C811C
@@ -1165,7 +1226,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!GameManager.Instance.IsTutorial)
 			{
-				CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF(() =>
+				CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
 				{
 					//0xB38814
 					JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;

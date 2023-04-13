@@ -19,21 +19,35 @@ namespace XeApp.Game.Common
 			public int isLine6 { get; set; } // 0x18
 			public int RawScore { get; set; } // 0x1C
 		}
-		/*
+		
 		public class UtaGradeData
 		{
 			public int grade; // 0x8
 			public int rate; // 0xC
 			public int pickup; // 0x10
-			//public List<MFDJIFIIPJD> items; // 0x14
+			public List<MFDJIFIIPJD> items = new List<MFDJIFIIPJD>(); // 0x14
 			public bool isNow; // 0x18
 
 			// RVA: 0xEA6BC0 Offset: 0xEA6BC0 VA: 0xEA6BC0
-			public void .ctor() { }
+			public UtaGradeData()
+			{
+				grade = 1;
+				rate = 0;
+				pickup = 0;
+				isNow = false;
+				items.Clear();
+			}
 
 			//// RVA: 0xEA6C90 Offset: 0xEA6C90 VA: 0xEA6C90
-			//public void Init(int grade, int rate, int pickup, List<MFDJIFIIPJD> items, bool isNow = False) { }
-		}*/
+			public void Init(int grade, int rate, int pickup, List<MFDJIFIIPJD> items, bool isNow = false)
+			{
+				this.grade = grade;
+				this.rate = rate;
+				this.pickup = pickup;
+				this.items.AddRange(items);
+				this.isNow = isNow;
+			}
+		}
 
 		public const int LIST_UTA_GRADE_MIN = 25;
 		public const int LIST_UTA_GRADE_NOWPLUS = 2;
@@ -240,7 +254,7 @@ namespace XeApp.Game.Common
 		{
 			for(int i = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Count - 1; i >= 0;  i--)
 			{
-				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO[i].ADKDHKMPMHP <= total)
+				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO[i].ADKDHKMPMHP_Rate <= total)
 					return (HighScoreRatingRank.Type)(i + 1);
 			}
 			return HighScoreRatingRank.Type.Be;
@@ -256,7 +270,11 @@ namespace XeApp.Game.Common
 		//public static HighScoreRatingRank.Type GetReceivedRewardUtaGrade() { }
 
 		//// RVA: 0xEA6414 Offset: 0xEA6414 VA: 0xEA6414
-		//public static bool IsNotReceivedRewardUtaGrade() { }
+		public static bool IsNotReceivedRewardUtaGrade()
+		{
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAFLCGCIOND_RetRewRecGra != 
+				GetUtaRate(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
+		}
 
 		//// RVA: 0xEA6544 Offset: 0xEA6544 VA: 0xEA6544
 		public static int GetNextUtaGradeNum(int rateTotal)
@@ -266,9 +284,9 @@ namespace XeApp.Game.Common
 				List<HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO;
 				for (int i = 0; i < l.Count; i++)
 				{
-					if(l[i].ADKDHKMPMHP <= rateTotal)
+					if(l[i].ADKDHKMPMHP_Rate <= rateTotal)
 					{
-						return l[i].ADKDHKMPMHP - rateTotal;
+						return l[i].ADKDHKMPMHP_Rate - rateTotal;
 					}
 				}
 			}
@@ -282,7 +300,52 @@ namespace XeApp.Game.Common
 		//public HighScoreRating.UtaGradeData GetNextUtaGradeInfo() { }
 
 		//// RVA: 0xEA6D50 Offset: 0xEA6D50 VA: 0xEA6D50
-		//public List<HighScoreRating.UtaGradeData> GetUtaGradeList(HighScoreRatingRank.Type nowGrade) { }
+		public List<UtaGradeData> GetUtaGradeList(HighScoreRatingRank.Type nowGrade)
+		{
+			List<UtaGradeData> res = new List<UtaGradeData>();
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			{
+				List<HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO;
+				int a = AGLHPOOPOCG.HHCJCDFCLOB.EIFNIBPAGFF();
+				int b = a;
+				if (a < (int)nowGrade)
+					b = (int)nowGrade;
+				if (a < 1)
+					b = (int)nowGrade;
+				int grade = b + 2;
+				if (l.Count < grade)
+				{
+					grade = l.Count;
+				}
+				else if (grade < 26)
+					grade = 25;
+				List<MFDJIFIIPJD> items = new List<MFDJIFIIPJD>();
+				for(int i = grade - 1; grade >= 0; grade--)
+				{
+					HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE it = l[i];
+					if(it.HDOEJDHGFLH_ItemFullId > 0)
+					{
+						if(it.GCKPDEDJFIC > 0)
+						{
+							MFDJIFIIPJD data = new MFDJIFIIPJD();
+							data.KHEKNNFCAOI(it.HDOEJDHGFLH_ItemFullId, it.GCKPDEDJFIC);
+							items.Add(data);
+						}
+					}
+					for(int j = 0; j < it.AJMDFJFCIML_GetCount(); j++)
+					{
+						MFDJIFIIPJD data = new MFDJIFIIPJD();
+						data.KHEKNNFCAOI(it.FKNBLDPIPMC_GetItemId(j), it.NKOHMLHLJGL(j));
+						items.Add(data);
+					}
+					UtaGradeData utaData = new UtaGradeData();
+					utaData.Init(i + 1, it.ADKDHKMPMHP_Rate, it.JOPPFEHKNFO_Idx, items, grade + 1 == (int)nowGrade);
+					res.Add(utaData);
+					items.Clear();
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0xEA72FC Offset: 0xEA72FC VA: 0xEA72FC
 		//public List<HighScoreRating.UtaGradeData> GetUtaGradeList() { }

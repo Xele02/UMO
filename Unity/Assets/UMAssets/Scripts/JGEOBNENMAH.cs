@@ -688,7 +688,7 @@ public class JGEOBNENMAH
 						{
 							if(!KFIEMBCDEFO.EDDMMPBELBM)
 							{
-								NLJKCDHIPEG_serverData.AIKJMHBDABF(() =>
+								NLJKCDHIPEG_serverData.AIKJMHBDABF_SavePlayerData(() =>
 								{
 									//0xB0AAB0
 									BEKAMBBOLBO = true;
@@ -864,7 +864,7 @@ public class JGEOBNENMAH
 		}
 		bool BEKAMBBOLBO = false;
 		bool CNAIDEAFAAM = false;
-		CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF(() =>
+		CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
 		{
 			//0xB0AB4C
 			BEKAMBBOLBO = true;

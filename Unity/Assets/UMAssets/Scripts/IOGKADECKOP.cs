@@ -939,7 +939,7 @@ public class IOGKADECKOP
 				}
 				NLJKCDHIPEG.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.KFKDMBPNLJK_BlockInvalid = true;
 				NLJKCDHIPEG.FMFKHDPKLOC.JHFIPCIHJNL_Base.KFKDMBPNLJK_BlockInvalid = true;
-				NLJKCDHIPEG.AIKJMHBDABF(() => {
+				NLJKCDHIPEG.AIKJMHBDABF_SavePlayerData(() => {
 					//0xA09348
 					BEKAMBBOLBO_Done = true;
 				}, () => {

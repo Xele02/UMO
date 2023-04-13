@@ -187,7 +187,7 @@ public class NHPDPKHMFEP
 								HNNAJBJCNEJ = true;
 								PJJEOFOFDCO.AFGLHGNKOFC();
 							}
-							CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF(() =>
+							CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
 							{
 								//0x189D73C
 								TodoLogger.Log(0, "TODO");

@@ -18,7 +18,7 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 		private List<int> FAEPDABICLE = new List<int>(); // 0x28
 
 		public int PPFNGGCBJKC { get { return FBGGEFFJJHB ^ EHOIENNDEDH; } set { EHOIENNDEDH = FBGGEFFJJHB ^ value; } } //0x1753ABC DEMEPMAEJOO 0x1752F5C HIGKAIDMOKN
-		public int ADKDHKMPMHP { get { return FBGGEFFJJHB ^ CHGFBPOFICJ; } set { CHGFBPOFICJ = FBGGEFFJJHB ^ value; } } //0x1753DC4 KCLKBHDMAFH 0x1752FCC GOLECEILPOI
+		public int ADKDHKMPMHP_Rate { get { return FBGGEFFJJHB ^ CHGFBPOFICJ; } set { CHGFBPOFICJ = FBGGEFFJJHB ^ value; } } //0x1753DC4 KCLKBHDMAFH 0x1752FCC GOLECEILPOI
 		public int JOPPFEHKNFO_Idx { get { return FBGGEFFJJHB ^ ECDMGKIIKFL; } set { ECDMGKIIKFL = FBGGEFFJJHB ^ value; } } //0x1753B28 FNIOGOJFLMG 0x175303C AJIOKKIJBED
 		public int BGFPPGPJONG { get { return FBGGEFFJJHB ^ IPFBMBMNAGL; } set { IPFBMBMNAGL = FBGGEFFJJHB ^ value; } } //0x1753E30 LBMNPGFFCJN 0x17530AC NDNCLLKIJHA
 		public int HDOEJDHGFLH_ItemFullId { get { return FBGGEFFJJHB ^ GFGDHCCCIBM; } set { GFGDHCCCIBM = FBGGEFFJJHB ^ value; } } //0x1753C78 OEGAADKHDEB 0x1753264 NCJCOKLLAIL
@@ -47,7 +47,14 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x1753E9C Offset: 0x1753E9C VA: 0x1753E9C
-		//public int NKOHMLHLJGL(int IOPHIHFOOEP) { }
+		public int NKOHMLHLJGL(int IOPHIHFOOEP)
+		{
+			if (IOPHIHFOOEP > -1 && IOPHIHFOOEP < FAEPDABICLE.Count)
+			{
+				return FAEPDABICLE[IOPHIHFOOEP] ^ FBGGEFFJJHB;
+			}
+			return 0;
+		}
 
 		//// RVA: 0x17531C0 Offset: 0x17531C0 VA: 0x17531C0
 		public void BLMLMOGEMCN(int IOPHIHFOOEP, int JBGEEPFKIGG)
@@ -58,7 +65,10 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x1753F7C Offset: 0x1753F7C VA: 0x1753F7C
-		//public int HKDBDPPDCFG() { }
+		public int HKDBDPPDCFG()
+		{
+			return FAEPDABICLE.Count;
+		}
 
 		//// RVA: 0x1753FF4 Offset: 0x1753FF4 VA: 0x1753FF4
 		//public void LHPDDGIJKNB() { }
@@ -138,7 +148,7 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 		{
 			LGNDICJEDNE data = new LGNDICJEDNE();
 			data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
-			data.ADKDHKMPMHP = array[i].ADKDHKMPMHP;
+			data.ADKDHKMPMHP_Rate = array[i].ADKDHKMPMHP;
 			data.JOPPFEHKNFO_Idx = array[i].JOPPFEHKNFO;
 			data.BGFPPGPJONG = (int)array[i].LJNAKDMILMC;
 			for(int j = 0; j < array[i].GLCLFMGPMAN.Length; j++)

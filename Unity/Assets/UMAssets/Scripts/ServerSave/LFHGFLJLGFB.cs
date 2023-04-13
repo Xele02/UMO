@@ -122,7 +122,18 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD6C300 Offset: 0xD6C300 VA: 0xD6C300 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		LFHGFLJLGFB_FavoritePlayer other = GPBJHKLFCEP as LFHGFLJLGFB_FavoritePlayer;
+		if (FNDJLOMNECG.Count != other.FNDJLOMNECG.Count)
+			return false;
+		for(int i = 0; i < FNDJLOMNECG.Count; i++)
+		{
+			if (other.FNDJLOMNECG.Find((CEBFFLDKAEC_SecureInt JKDKBCPFFEL) =>
+			 {
+				 //0xD6C70C
+				 return JKDKBCPFFEL.DNJEJEANJGL_Value == FNDJLOMNECG[i].DNJEJEANJGL_Value;
+			 }) == null)
+				return false;
+		}
 		return true;
 	}
 

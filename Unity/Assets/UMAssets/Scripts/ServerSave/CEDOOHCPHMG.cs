@@ -185,7 +185,14 @@ public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x12B4768 Offset: 0x12B4768 VA: 0x12B4768 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		CEDOOHCPHMG_UnitGoDiva other = GPBJHKLFCEP as CEDOOHCPHMG_UnitGoDiva;
+		if (GFPFBJDPHLJ.Count != other.GFPFBJDPHLJ.Count)
+			return false;
+		for(int i = 0; i < GFPFBJDPHLJ.Count; i++)
+		{
+			if (!GFPFBJDPHLJ[i].AGBOGBEOFME(other.GFPFBJDPHLJ[i]))
+				return false;
+		}
 		return true;
 	}
 
@@ -278,7 +285,17 @@ public class MPBEHHIAGOI
 	}
 
 	//// RVA: 0x17BBC34 Offset: 0x17BBC34 VA: 0x17BBC34
-	//public bool AGBOGBEOFME(MPBEHHIAGOI GPBJHKLFCEP) { }
+	public bool AGBOGBEOFME(MPBEHHIAGOI GPBJHKLFCEP)
+	{
+		if (AHBBMJANGHE.Count != GPBJHKLFCEP.AHBBMJANGHE.Count)
+			return false;
+		for(int i = 0; i < AHBBMJANGHE.Count; i++)
+		{
+			if (!AHBBMJANGHE[i].AGBOGBEOFME(GPBJHKLFCEP.AHBBMJANGHE[i]))
+				return false;
+		}
+		return true;
+	}
 
 	//// RVA: 0x17BBDF8 Offset: 0x17BBDF8 VA: 0x17BBDF8
 	public void ODDIHGPONFL(MPBEHHIAGOI GPBJHKLFCEP)

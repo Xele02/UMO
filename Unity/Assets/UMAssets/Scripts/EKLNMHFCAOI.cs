@@ -331,7 +331,11 @@ public class EKLNMHFCAOI
 	// public static int APDHLDGBENB(int KIJAPOFAGPN) { }
 
 	// // RVA: 0x12EC60C Offset: 0x12EC60C VA: 0x12EC60C
-	// public static int FABCKNDLPDH(EKLNMHFCAOI.FKGCBLHOOCL INDDJNMPONH, int PPFNGGCBJKC) { }
+	public static int FABCKNDLPDH(FKGCBLHOOCL_Category INDDJNMPONH, int PPFNGGCBJKC)
+	{
+		TodoLogger.Log(0, "FABCKNDLPDH");
+		return 0;
+	}
 
 	// // RVA: 0x12F75BC Offset: 0x12F75BC VA: 0x12F75BC
 	public static string NDBLEADIDLA(FKGCBLHOOCL_Category INDDJNMPONH, int JBGEEPFKIGG = 0)
