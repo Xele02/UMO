@@ -50,7 +50,30 @@ public class HPBDNNACBAK
 	// public List<LOBDIAABMKG> FIGBNDFBKPE(int APHNELOFGAK) { }
 
 	// // RVA: 0x1602108 Offset: 0x1602108 VA: 0x1602108
-	// public List<LOBDIAABMKG> NDALDMHNMKI(int KIJAPOFAGPN) { }
+	public List<LOBDIAABMKG> NDALDMHNMKI(int KIJAPOFAGPN)
+	{
+		List<LOBDIAABMKG> res = new List<LOBDIAABMKG>();
+		for(int i = 0; i < MHKCPJDNJKI_GatchaProducts.Count; i++)
+		{
+			if(MHKCPJDNJKI_GatchaProducts[i].KACECFNECON != null)
+			{
+				for (int j = 0; j < 10; j++)
+				{
+					if(MHKCPJDNJKI_GatchaProducts[i].HNDLKGOMMNM((GCAHJLOGMCI.NFCAJPIJFAM)(j + 1)).MJNOAMAFNHA == KIJAPOFAGPN)
+					{
+						res.Add(MHKCPJDNJKI_GatchaProducts[i]);
+						break;
+					}
+				}
+			}
+		}
+		res.Sort((LOBDIAABMKG HKICMNAACDA, LOBDIAABMKG BNKHBCBJBKI) =>
+		{
+			//0x1606168
+			return HKICMNAACDA.EABMLBFHJBH.CompareTo(BNKHBCBJBKI.EABMLBFHJBH);
+		});
+		return res;
+	}
 
 	// // RVA: 0x16023CC Offset: 0x16023CC VA: 0x16023CC
 	public void LILDGEPCPPG_GetProducList(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG, bool IAHLNPMFJMH = false, bool FBBNPFFEJBN = true)

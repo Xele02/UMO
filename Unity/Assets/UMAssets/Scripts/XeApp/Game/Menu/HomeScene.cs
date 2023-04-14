@@ -12,6 +12,19 @@ namespace XeApp.Game.Menu
 {
 	public class HomeScene : TransitionRoot
 	{
+		public struct limitedWarning
+		{
+			public IEnumerator col_action; // 0x0
+			public long limit_time; // 0x8
+
+			// RVA: 0x7FC7CC Offset: 0x7FC7CC VA: 0x7FC7CC
+			public limitedWarning(IEnumerator _col, long time)
+			{
+				col_action = _col;
+				limit_time = time;
+			}
+		}
+
 		private Action m_updater; // 0x48
 		private HomeSubMenu m_subMenu; // 0x4C
 		private HomeButtonGroup m_buttonGroup; // 0x50
@@ -64,8 +77,8 @@ namespace XeApp.Game.Menu
 		private bool m_pickupToJump; // 0xCD
 		private IntimacyController m_intimacyControl; // 0xD0
 		private Camera m_uiCamera; // 0xD4
-		// private List<HomeScene.limitedWarning> m_coLimitedItemList = new List<HomeScene.limitedWarning>(); // 0xD8
-		// private List<HomeScene.limitedWarning> m_coCurrencyItemList = new List<HomeScene.limitedWarning>(); // 0xDC
+		private List<limitedWarning> m_coLimitedItemList = new List<limitedWarning>(); // 0xD8
+		private List<limitedWarning> m_coCurrencyItemList = new List<limitedWarning>(); // 0xDC
 
 		private bool isValidBalloonLead { get { return m_balloonLeadData != null; } } //0x96E6EC
 
@@ -1687,28 +1700,121 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97C348 Offset: 0x97C348 VA: 0x97C348
 		private IEnumerator Co_LimitedItemWarning()
 		{
-			TodoLogger.Log(0, "Co_LimitedItemWarning");
-			yield return null;
+			int i;
+
+			//0x13CF5B8
+			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave == null)
+				yield break;
+			if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database == null)
+				yield break;
+			if (NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI == null)
+				yield break;
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			m_coLimitedItemList.Clear();
+			int period = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DPNKPPBEAGJ_RareUpItem.JCJKKMECCFI(time);
+			m_coLimitedItemList.Add(new limitedWarning(Co_RareupStarLimitPopup(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem, 1), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DPNKPPBEAGJ_RareUpItem.LDLCGGACHGA(time), time, period), period));
+			List<int> l = new List<int>();
+			l.Add(1);
+			l.Add(2);
+			l.Add(3);
+			for(i = 0; i < l.Count; i++)
+			{
+				List<LOBDIAABMKG> l2 = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.NDALDMHNMKI(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, l[i]));
+				if(l2.Count > 0)
+				{
+					period = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.AFHFIPLOKMN_LimitedItem.BLKPKBICPKK(l[i], time);
+					if (l[i] > 0 || l2[0].EABMLBFHJBH >= period)
+					{
+						m_coLimitedItemList.Add(new limitedWarning(Co_LimitedItemPeriodPopup(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, l[i]), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.AFHFIPLOKMN_LimitedItem.HPPKOGKNKMH(l[i], time), time, period), period));
+					}
+					else
+					{
+						m_coLimitedItemList.Add(new limitedWarning(Co_LimitedItemPeriodPopup(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, l[i]), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.AFHFIPLOKMN_LimitedItem.HPPKOGKNKMH(l[i], time), time, period), period));
+					}
+				}
+			}
+			m_coLimitedItemList.Sort((limitedWarning a, limitedWarning b) =>
+			{
+				//0x13C6B94
+				return a.limit_time.CompareTo(b.limit_time);
+			});
+			for(i = 0; i < m_coLimitedItemList.Count; i++)
+			{
+				yield return Co.R(m_coLimitedItemList[i].col_action);
+			}
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E4164 Offset: 0x6E4164 VA: 0x6E4164
 		// // RVA: 0x97C3D0 Offset: 0x97C3D0 VA: 0x97C3D0
-		// private IEnumerator Co_RareupStarLimitPopup(int itemId, int itemCount, long currentTime, long period) { }
+		private IEnumerator Co_RareupStarLimitPopup(int itemId, int itemCount, long currentTime, long period)
+		{
+			ILDKBCLAFPB.FIDNFICGLEE_LimitedItemWarning saveData_limit;
+
+			//0x13D22A8
+			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave == null)
+				yield break;
+			if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database == null)
+				yield break;
+			bool isClose = false;
+			saveData_limit = GameManager.Instance.localSave.EPJOACOONAC_GetSave().KPHPNFBBLPA_LimitedItemWarning;
+			TimeSpan timeSpan;
+			int p = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DPNKPPBEAGJ_RareUpItem.JCJKKMECCFI(currentTime);
+			if (IsShowLimitedPopup(currentTime, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, saveData_limit.DIKBJMJBOIL_RateUpDate, period, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("limited_item_show_warning_time", 3), out timeSpan))
+			{
+				yield return ShowLimitedItemPopup(itemId, itemCount, p, timeSpan, () =>
+				{
+					//0x13C77FC
+					isClose = true;
+				});
+				while (!isClose)
+					yield return null;
+				saveData_limit.DIKBJMJBOIL_RateUpDate = currentTime;
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E41DC Offset: 0x6E41DC VA: 0x6E41DC
 		// // RVA: 0x97C4A8 Offset: 0x97C4A8 VA: 0x97C4A8
-		// private IEnumerator Co_LimitedItemPeriodPopup(int itemId, int itemCount, long currentTime, long period) { }
+		private IEnumerator Co_LimitedItemPeriodPopup(int itemId, int itemCount, long currentTime, long period)
+		{
+			TodoLogger.Log(0, "Co_LimitedItemPeriodPopup");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E4254 Offset: 0x6E4254 VA: 0x6E4254
 		// // RVA: 0x97C57C Offset: 0x97C57C VA: 0x97C57C
-		// private IEnumerator Co_LimitedItemGachaProductPeriodPopup(int itemId, int itemCount, long currentTime, long period) { }
+		private IEnumerator Co_LimitedItemGachaProductPeriodPopup(int itemId, int itemCount, long currentTime, long period)
+		{
+			TodoLogger.Log(0, "Co_LimitedItemGachaProductPeriodPopup");
+			yield return null;
+		}
 
 		// // RVA: 0x97C684 Offset: 0x97C684 VA: 0x97C684
-		// public bool IsShowLimitedPopup(long currentTime, OKGLGHCBCJP md, long localSaveTime, long experioAt, int rangeTime, out TimeSpan limited_data_span) { }
+		public bool IsShowLimitedPopup(long currentTime, OKGLGHCBCJP_Database md, long localSaveTime, long experioAt, int rangeTime, out TimeSpan limited_data_span)
+		{
+			DateTime current = Utility.GetLocalDateTime(currentTime);
+			DateTime startCurrent = new DateTime(current.Year, current.Month, current.Day);
+			DateTime localSave = Utility.GetLocalDateTime(localSaveTime);
+			TimeSpan diff = localSave - startCurrent;
+			DateTime expire = Utility.GetLocalDateTime(experioAt);
+			TimeSpan diff2 = expire - startCurrent;
+			limited_data_span = diff2;
+			bool b = false;
+			if(localSaveTime < currentTime)
+			{
+				if (0 <= diff.TotalDays)
+					b = true;
+			}
+			return b && (experioAt - currentTime) != 0 && limited_data_span.Days <= rangeTime;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E42CC Offset: 0x6E42CC VA: 0x6E42CC
 		// // RVA: 0x97C8C4 Offset: 0x97C8C4 VA: 0x97C8C4
-		// private IEnumerator ShowLimitedItemPopup(int itemId, int itemCount, int period, TimeSpan limitedSpan, Action close) { }
+		private IEnumerator ShowLimitedItemPopup(int itemId, int itemCount, int period, TimeSpan limitedSpan, Action close)
+		{
+			TodoLogger.Log(0, "ShowLimitedItemPopup");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E4344 Offset: 0x6E4344 VA: 0x6E4344
 		// // RVA: 0x97C9E0 Offset: 0x97C9E0 VA: 0x97C9E0

@@ -105,7 +105,26 @@ public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 	// public int MOAPEHACGDN(int PPFNGGCBJKC, long JHNMKKNEENE) { }
 
 	// // RVA: 0x17FE3AC Offset: 0x17FE3AC VA: 0x17FE3AC
-	// public int BLKPKBICPKK(int PPFNGGCBJKC, long JHNMKKNEENE) { }
+	public int BLKPKBICPKK(int PPFNGGCBJKC, long JHNMKKNEENE)
+	{
+		if (PPFNGGCBJKC < 1)
+			return 0;
+		DOPNDKHMMGI l = ODHBHOGFNAA[PPFNGGCBJKC - 1];
+		int res = -1;
+		for(int i = 0; i < l.MAHLPMJFLLJ; i++)
+		{
+			if(l.PJADHDHKOEJ[i].NIENPFFLMCH(JHNMKKNEENE) || l.NPNNEDINOKC[i].NIENPFFLMCH(JHNMKKNEENE))
+			{
+				if(l.PJADHDHKOEJ[i].HNKFMAJIFJD < res)
+				{
+					res = l.PJADHDHKOEJ[i].HNKFMAJIFJD;
+				}
+			}
+		}
+		if (res == -1)
+			res = 0;
+		return res;
+	}
 
 	// // RVA: 0x17FE71C Offset: 0x17FE71C VA: 0x17FE71C
 	// public int CPIICACGNBH(int PPFNGGCBJKC, long JHNMKKNEENE, bool DDGFCOPPBBN = False) { }

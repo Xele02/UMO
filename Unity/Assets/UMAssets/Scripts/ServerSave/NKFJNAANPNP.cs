@@ -92,7 +92,23 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 	// public int BBHIGOOBGID(long JHNMKKNEENE) { }
 
 	// // RVA: 0xC128B0 Offset: 0xC128B0 VA: 0xC128B0
-	// public int JCJKKMECCFI(long JHNMKKNEENE) { }
+	public int JCJKKMECCFI(long JHNMKKNEENE)
+	{
+		if (FIBFMLMHOGN < 1)
+			return -1;
+		int res = -1;
+		for (int i = 0; i < FIBFMLMHOGN; i++)
+		{
+			if(IDJIDAPJCBE[i].NIENPFFLMCH(JHNMKKNEENE) && NPNNEDINOKC[i].NIENPFFLMCH(JHNMKKNEENE))
+			{
+				if(IDJIDAPJCBE[i].HNKFMAJIFJD < res)
+				{
+					res = IDJIDAPJCBE[i].HNKFMAJIFJD;
+				}
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0xC12BD4 Offset: 0xC12BD4 VA: 0xC12BD4
 	// public int APIEKGBMBPA(long JHNMKKNEENE, bool DDGFCOPPBBN = False) { }
