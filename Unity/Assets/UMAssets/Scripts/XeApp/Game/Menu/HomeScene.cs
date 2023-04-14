@@ -1405,8 +1405,21 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97A730 Offset: 0x97A730 VA: 0x97A730
 		private IEnumerator Co_ChangePopupLimtiedBg()
 		{
+			ILDKBCLAFPB.IPHAEFKCNMN saveData; // 0x18
+			CGFNKMNBNBN t_master_homebg; // 0x1C
+			int sceneId; // 0x20
+
+			//0x13CA400
+			saveData = GameManager.Instance.localSave.EPJOACOONAC_GetSave();
+			if (!saveData.GBCEALJIKFN_Home.MBHHHMCCOLI(MenuScene.Instance.EnterToHomeTime))
+				yield break;
+			t_master_homebg = null;
+			if (!CGFNKMNBNBN.CLBDFPACPKE(MenuScene.Instance.EnterToHomeTime, out t_master_homebg))
+				yield break;
+			//PopupLimitedHomeBG.Setting s = new PopupLimitedHomeBG.Setting();
+			//MenuScene.Instance.InputDisable();
+			//s.m_bundle_id = 
 			TodoLogger.Log(0, "Co_ChangePopupLimtiedBg");
-			yield return null;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E39E4 Offset: 0x6E39E4 VA: 0x6E39E4
