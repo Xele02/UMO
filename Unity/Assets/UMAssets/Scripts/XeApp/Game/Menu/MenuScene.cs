@@ -1103,8 +1103,33 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB34F14 Offset: 0xB34F14 VA: 0xB34F14
 		public IEnumerator ShowMissionStepupWindowCoroutine()
 		{
-			TodoLogger.Log(0, "ShowMissionStepupWindowCoroutine");
-			yield return null;
+			List<AMLGMLNGMFB_EventAprilFool.FOFMLBPMIIC> nextList; // 0x14
+			int i; // 0x18
+
+			//0xB3FCD8
+			nextList = new List<AMLGMLNGMFB_EventAprilFool.FOFMLBPMIIC>();
+			if (!GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.AAFEFCNONGL_StepUpQuest.IAPNOPFIPAG_IsShowNextInfo)
+				yield break;
+			List<AMLGMLNGMFB_EventAprilFool> l = new List<AMLGMLNGMFB_EventAprilFool>();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			if(GetCurrentScene().name == TransitionList.Type.RESULT)
+			{
+				TodoLogger.Log(0, "ShowMissionStepupWindowCoroutine");
+			}
+			else
+			{
+				for(i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
+				{
+					TodoLogger.Log(0, "ShowMissionStepupWindowCoroutine Event");
+				}
+				if(l.Count == 0)
+				{
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.AAFEFCNONGL_StepUpQuest.IAPNOPFIPAG_IsShowNextInfo = false;
+					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					yield break;
+				}
+				TodoLogger.Log(0, "ShowMissionStepupWindowCoroutine Event");
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C8194 Offset: 0x6C8194 VA: 0x6C8194

@@ -1,10 +1,102 @@
 
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use AMLGMLNGMFB_EventAprilFool", true)]
 public class AMLGMLNGMFB { }
 public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 {
+	private enum IGIPPPLKDJP
+	{
+		HJNNKCMLGFL = 0,
+		KEBIIAMNKAJ = 1,
+	}
+
+	private enum HODGPGLCPKM
+	{
+		HJNNKCMLGFL = 0,
+		EBKLKECECIF = 1,
+	}
+
+	public enum MMKMPKEBLBF
+	{
+		HJNNKCMLGFL = 0,
+		DMPOKMFNPKP = 1,
+	}
+
+	public enum ANFKADJMHPO
+	{
+		LOFOEPLBMID = 0,
+		LGMPDPNEPGD = 1,
+		BPJBNFNKGOJ = 2,
+	}
+
+	public class FOFMLBPMIIC
+	{
+		public int JJJNKGBCFMI = 0; // 0x8
+		public int AGKIABJHDDG = 0; // 0xC
+		public string FEMMDNIELFC = ""; // 0x10
+		public int JNCPEGJGHOG = 0; // 0x14
+		public string NEDBBJDAFBH = ""; // 0x18
+	}
+
+	public class OLDLIIKHDKD
+	{
+		public int CMJEGIEJNMD { get; private set; } // 0x8 IDFDLCAMDJH AGEDDPBMIKH LOLNKOKFIIE
+		public MMKMPKEBLBF GODBCGAFMBE { get; private set; } // 0xC JLPCLKOHCAH GJHPPLPNIIF BLONDJKOIOG
+		public int DDIOHHEGANL { get; private set; } // 0x10 GHPIIFOKMPM IIFKOIEJFKF DGIPAMDIKPD
+		public int ELIFBFLFAFC { get; private set; } // 0x14 IGMJIGLNICF FIIPNJGPEFL EAPCKJIHFEA
+
+		// RVA: 0xCE6E2C Offset: 0xCE6E2C VA: 0xCE6E2C
+		public OLDLIIKHDKD(int IGHPMLOFGMO, int AGEGAHMDMPH, int KKFMFGPBHKM, int LGCKAMEEDGC)
+		{
+			CMJEGIEJNMD = IGHPMLOFGMO;
+			GODBCGAFMBE = (MMKMPKEBLBF)AGEGAHMDMPH;
+			DDIOHHEGANL = LGCKAMEEDGC;
+			ELIFBFLFAFC = KKFMFGPBHKM;
+		}
+	}
+
+	public class JPGMKBANFGF
+	{
+		private int FBGGEFFJJHB = 0x13c7dd4; // 0x8
+		private sbyte ALPDMEILILP; // 0xC
+		private int NBOLDNMPJFG; // 0x10
+		private sbyte JAFNIDLINKN; // 0x14
+
+		//public bool BCGLDMKODLC { get; set; } 0xCE7DC8 NNGALFPBDNA 0xCE8E40 JJBMOHCMALD
+		//public int KNIFCANOHOC { get; set; } 0xCE7D00 EOJEPLIPOMJ 0xCE8E70 AEEMBPAEAAI
+		//public bool CHPIFIEEEEC { get; set; } 0xCE7D20 FLHPOBEBLBH 0xCE8E80 LIJEMJDBNPD
+	}
+
+	public class IMFNPKNPDDP
+	{
+		private int FBGGEFFJJHB; // 0x8
+		private sbyte ALPDMEILILP; // 0xC
+		private int NBOLDNMPJFG; // 0x10
+		private sbyte NLKIOJKEKNM; // 0x14
+		private int KGNDGJAOFJG; // 0x18
+		private sbyte MNOIODAMMCC; // 0x1C
+
+		//public bool BCGLDMKODLC { get; set; } 0xCE7E0C NNGALFPBDNA 0xCE7DDC JJBMOHCMALD
+		//public int KNIFCANOHOC { get; set; }  0xCE8DE4 EOJEPLIPOMJ 0xCE7D10 AEEMBPAEAAI
+		//public bool PIBCFBBLHBB { get; set; } 0xCE8DF4 BLHCJKNODGF 0xCE7D34 ILCPMIBDKPB
+		//public int LGDLEHHOIEL { get; set; } 0xCE7DA4 OMFCCEBAODD 0xCE7D64 JGIJCMFGKEP
+		//public bool LNDLJBINJDE { get; set; } 0xCE7DB4 HHNJLPDNDPN 0xCE7D74 CCOMADGCMEG
+
+		// RVA: 0xCE1F20 Offset: 0xCE1F20 VA: 0xCE1F20
+		public IMFNPKNPDDP()
+		{
+			FBGGEFFJJHB = (int)(Utility.GetCurrentUnixTime() ^ 0x346293);
+			NBOLDNMPJFG = FBGGEFFJJHB;
+			ALPDMEILILP = 0x33;
+			KGNDGJAOFJG = FBGGEFFJJHB;
+		}
+
+		// RVA: 0xCE8E08 Offset: 0xCE8E08 VA: 0xCE8E08
+		//private void KHEKNNFCAOI(int KNEFBLHBDBG) { }
+	}
+
 	// private const int GHJHJDIDCFA = 3;
 	// private List<KCGOMAFPGDD.EIEGCBJHGCP> NFMDLCBJOIB = new List<KCGOMAFPGDD.EIEGCBJHGCP>(); // 0xE8
 	// private EECOJKDJIFG KBACNOCOANM; // 0xEC
