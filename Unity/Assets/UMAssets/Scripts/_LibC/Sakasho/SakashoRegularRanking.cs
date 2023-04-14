@@ -17,6 +17,10 @@ namespace ExternLib
 			res["current_page"] = page;
 			res["regular_ranking_ranks"] = new EDOHBJAPLPF_JsonData();
 			res["regular_ranking_ranks"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			res["regular_ranking_ranks"].Add(new EDOHBJAPLPF_JsonData());
+			res["regular_ranking_ranks"][0]["player_id"] = 42288945;
+			res["regular_ranking_ranks"][0]["rank"] = 1;
+			res["regular_ranking_ranks"][0]["score"] = 23820;
 			SendMessage(callbackId, res);
 			return 0;
 		}
