@@ -84,6 +84,7 @@ class JpStringLiterals
 	public const string StringLiteral_10310 = "エナジーが全回復しました！"; // 0x03bb2bd0
 	public const string StringLiteral_10346 = "LinkError : 自分自身のIDをリンクIDに指定している"; // 0x03bb2c60
 	public const string StringLiteral_10431 = "デビューガチャ"; //0x03bb2db4
+	public const string StringLiteral_11015 = "master_gacha_ticket.xlsxにデカルガチャチケットの設定がありません"; //0x03bb36d4
 	public const string StringLiteral_11062 = "ライフ"; // 0x03bb3790
 	public const string StringLiteral_11063 = "ソウル"; // 0x03bb3794
 	public const string StringLiteral_11064 = "ボイス"; // 0x03bb3798

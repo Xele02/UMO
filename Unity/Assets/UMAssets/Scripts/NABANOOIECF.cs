@@ -1,0 +1,13 @@
+
+public class NABANOOIECF
+{
+	private const int FBGGEFFJJHB = 0x2541a98f;
+	public int EHOIENNDEDH = FBGGEFFJJHB; // 0x8
+	public string OPFGFINHFCE; // 0xC
+	public string KLMPFGOCBHC; // 0x10
+
+	public int PPFNGGCBJKC { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0x17BEE78 DEMEPMAEJOO 0x17BEE8C HIGKAIDMOKN
+
+	// RVA: 0x17BEEA0 Offset: 0x17BEEA0 VA: 0x17BEEA0
+	//public void KHEKNNFCAOI(EDOHBJAPLPF IDLHJIOMJBK) { }
+}

@@ -46,7 +46,7 @@ public class LOBDIAABMKG
 	private List<int> DHIACJMOEBH = new List<int>(11); // 0x88
 	//public Dictionary<string, HIMAFGJCECK> PECBGINLOLH = new Dictionary<string, HIMAFGJCECK>(); // 0x8C
 	public bool CADENLBDAEB; // 0x90
-	//public KOPCFBCDBPC NECDFDNBHFK; // 0x94
+	public KOPCFBCDBPC NECDFDNBHFK; // 0x94
 	//public JBHCLFDBPKP NJLONELPNCD; // 0x98
 
 	// public int OANKCIDLHLJ { get; }
@@ -78,7 +78,16 @@ public class LOBDIAABMKG
 	}
 
 	// // RVA: 0x10C4B30 Offset: 0x10C4B30 VA: 0x10C4B30
-	// public int OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM BJLONGBNPCI) { }
+	public int OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM BJLONGBNPCI)
+	{
+		if(BJLONGBNPCI != GCAHJLOGMCI.NFCAJPIJFAM.OBLEFFEJGIJ/*8*/)
+		{
+			return DHIACJMOEBH[(int)BJLONGBNPCI];
+		}
+		if (NECDFDNBHFK == null)
+			return 0;
+		return NECDFDNBHFK.LKPHIGAFJKD.PPFNGGCBJKC;
+	}
 
 	// // RVA: 0x10C4BF0 Offset: 0x10C4BF0 VA: 0x10C4BF0
 	// public int FKKCFICCGMM(int APHNELOFGAK) { }

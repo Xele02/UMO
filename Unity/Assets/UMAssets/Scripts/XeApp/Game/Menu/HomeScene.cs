@@ -1820,17 +1820,76 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97C9E0 Offset: 0x97C9E0 VA: 0x97C9E0
 		private IEnumerator Co_CurrencyItemWarning()
 		{
-			TodoLogger.Log(0, "Co_CurrencyItemWarning");
-			yield return null;
+			int i;
+
+			//0x13CCB60
+			m_coCurrencyItemList.Clear();
+			if (NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI == null)
+				yield break;
+			for(i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.DHIACJMOEBH.Count; i++)
+			{
+				int ticketId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.DHIACJMOEBH[i];
+				List<HPBDNNACBAK.MBMMGKJBJGD> l = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.GGKFCDDFHFP.FindAll((HPBDNNACBAK.MBMMGKJBJGD x) =>
+				{
+					//0x13C786C
+					return x.PPFNGGCBJKC_Id == ticketId;
+				});
+				if(l.Count > 0)
+				{
+					long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+					long p = l[0].DJJENNPDPCM_ExpireAt;
+					int count = 0;
+					for (int j = 0; j < l.Count; j++)
+					{
+						count += l[i].HNBFOAJIIAL_Remaining;
+					}
+					if(HPBDNNACBAK.FIHFDIBDKKE(ticketId))
+					{
+						m_coCurrencyItemList.Add(new limitedWarning(Co_CurrencyItemPeriodPopup(ticketId, count, time, p), p));
+					}
+					else
+					{
+						List<LOBDIAABMKG> l2 = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.FIGBNDFBKPE(ticketId);
+						if (l2.Count < 1)
+							continue;
+						if(l2[0].EABMLBFHJBH >= p)
+						{
+							m_coCurrencyItemList.Add(new limitedWarning(Co_CurrencyItemPeriodPopup(ticketId, count, time, p), p));
+						}
+						else
+						{
+							m_coCurrencyItemList.Add(new limitedWarning(Co_CurrencyItemGachaProductPeriodPopup(ticketId, count, time, l2[0].EABMLBFHJBH), l2[0].EABMLBFHJBH));
+						}
+					}
+				}
+			}
+			m_coCurrencyItemList.Sort((limitedWarning a, limitedWarning b) =>
+			{
+				//0x13C6BE4
+				return a.limit_time.CompareTo(b.limit_time);
+			});
+			for(i = 0; i < m_coCurrencyItemList.Count; i++)
+			{
+				yield return Co.R(m_coCurrencyItemList[i].col_action);
+			}
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E43BC Offset: 0x6E43BC VA: 0x6E43BC
 		// // RVA: 0x97CA68 Offset: 0x97CA68 VA: 0x97CA68
-		// private IEnumerator Co_CurrencyItemPeriodPopup(int currencyId, int count, long currentTime, long period) { }
+		private IEnumerator Co_CurrencyItemPeriodPopup(int currencyId, int count, long currentTime, long period)
+		{
+			TodoLogger.Log(0, "Co_CurrencyItemPeriodPopup");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E4434 Offset: 0x6E4434 VA: 0x6E4434
 		// // RVA: 0x97CB70 Offset: 0x97CB70 VA: 0x97CB70
-		// private IEnumerator Co_CurrencyItemGachaProductPeriodPopup(int currencyId, int count, long currentTime, long period) { }
+		private IEnumerator Co_CurrencyItemGachaProductPeriodPopup(int currencyId, int count, long currentTime, long period)
+		{
+			TodoLogger.Log(0, "Co_CurrencyItemGachaProductPeriodPopup");
+			yield return null;
+		}
 
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E44FC Offset: 0x6E44FC VA: 0x6E44FC
 		// 	// RVA: 0x97D1F4 Offset: 0x97D1F4 VA: 0x97D1F4
@@ -1839,7 +1898,7 @@ namespace XeApp.Game.Menu
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E450C Offset: 0x6E450C VA: 0x6E450C
 		// 	// RVA: 0x97D218 Offset: 0x97D218 VA: 0x97D218
 		// 	private void <OnClickDecoButton>b__121_0(PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-		
+
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E452C Offset: 0x6E452C VA: 0x6E452C
 		// 	// RVA: 0x97D318 Offset: 0x97D318 VA: 0x97D318
 		// 	private void <SetupBeginnerLead>b__149_0(IiconTexture image) { }

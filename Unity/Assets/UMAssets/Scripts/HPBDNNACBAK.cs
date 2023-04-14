@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Gacha;
 
 public class HPBDNNACBAK
@@ -39,15 +40,45 @@ public class HPBDNNACBAK
 	// // RVA: 0x1601CC4 Offset: 0x1601CC4 VA: 0x1601CC4
 	public static int NKIHMCHJIEM()
 	{
-		TodoLogger.Log(0, "NKIHMCHJIEM");
-		return 0;
+		int decal_gacha_ticket_currency_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("decal_gacha_ticket_currency_id", 2101);
+		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(decal_gacha_ticket_currency_id) == null)
+		{
+			Debug.LogError(JpStringLiterals.StringLiteral_11015);
+		}
+		return decal_gacha_ticket_currency_id;
 	}
 
 	// // RVA: 0x1601E48 Offset: 0x1601E48 VA: 0x1601E48
-	// public static bool FIHFDIBDKKE(int APHNELOFGAK) { }
+	public static bool FIHFDIBDKKE(int APHNELOFGAK)
+	{
+		return NKIHMCHJIEM() == APHNELOFGAK;
+	}
 
 	// // RVA: 0x1601E6C Offset: 0x1601E6C VA: 0x1601E6C
-	// public List<LOBDIAABMKG> FIGBNDFBKPE(int APHNELOFGAK) { }
+	public List<LOBDIAABMKG> FIGBNDFBKPE(int APHNELOFGAK)
+	{
+		List<LOBDIAABMKG> res = new List<LOBDIAABMKG>();
+		for (int i = 0; i < MHKCPJDNJKI_GatchaProducts.Count; i++)
+		{
+			if (MHKCPJDNJKI_GatchaProducts[i].KACECFNECON != null)
+			{
+				for (int j = 0; j < 10; j++)
+				{
+					if (MHKCPJDNJKI_GatchaProducts[i].OMNAPCHLBHF((GCAHJLOGMCI.NFCAJPIJFAM)(j + 1)) == APHNELOFGAK)
+					{
+						res.Add(MHKCPJDNJKI_GatchaProducts[i]);
+						break;
+					}
+				}
+			}
+		}
+		res.Sort((LOBDIAABMKG HKICMNAACDA, LOBDIAABMKG BNKHBCBJBKI) =>
+		{
+			//0x1606114
+			return HKICMNAACDA.EABMLBFHJBH.CompareTo(BNKHBCBJBKI.EABMLBFHJBH);
+		});
+		return res;
+	}
 
 	// // RVA: 0x1602108 Offset: 0x1602108 VA: 0x1602108
 	public List<LOBDIAABMKG> NDALDMHNMKI(int KIJAPOFAGPN)

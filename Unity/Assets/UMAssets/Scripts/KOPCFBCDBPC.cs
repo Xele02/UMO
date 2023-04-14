@@ -5,7 +5,7 @@ public class KOPCFBCDBPC
 	public string OPFGFINHFCE; // 0x8
 	public string KLMPFGOCBHC; // 0xC
 	public string FJGCDPLCIAK; // 0x10
-	//public NABANOOIECF LKPHIGAFJKD; // 0x14
+	public NABANOOIECF LKPHIGAFJKD; // 0x14
 	public long JJLCCDHHOKK = 0x5a7d5afa35ac5a5a; // 0x18
 	public long JLFFBIOJBAO = 0x5a7d5afa35ac5a5a; // 0x20
 	//public List<MMNNAPPLHFM> BMFEGOMNECF; // 0x28
