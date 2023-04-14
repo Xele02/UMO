@@ -68,8 +68,33 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x967008 Offset: 0x967008 VA: 0x967008
 		public IEnumerator Co_CheckNewMark(Action OnError)
 		{
-			TodoLogger.Log(0, "LobbyButton Co_CheckNewMark");
-			yield break;
+			NKOBMDPHNGP_EventRaidLobby t_raid_lobby_ctrl;
+
+			//0x969A8C
+			if (!m_IsInitialize)
+				yield break;
+			m_IsNewMark = false;
+			m_IsNewMarkEffect = false;
+
+			PKNOKJNLPOE_EventRaid t_raid_ctrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as PKNOKJNLPOE_EventRaid;
+			if (t_raid_ctrl != null)
+			{
+				TodoLogger.Log(0, "LobbyButton Co_CheckNewMark");
+			}
+			t_raid_lobby_ctrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+			if(t_raid_lobby_ctrl != null)
+			{
+				TodoLogger.Log(0, "LobbyButton Co_CheckNewMark 2");
+			}
+			t_raid_lobby_ctrl = null;
+			if(t_raid_ctrl != null && t_raid_lobby_ctrl != null)
+			{
+				TodoLogger.Log(0, "LobbyButton Co_CheckNewMark 3");
+			}
+			//LAB_0096a28c
+			if (!m_lobbyTabBtn.IsLoaded())
+				yield break;
+			TodoLogger.Log(0, "LobbyButton Co_CheckNewMark 4");
 		}
 
 		// // RVA: 0x966FCC Offset: 0x966FCC VA: 0x966FCC
