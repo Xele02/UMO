@@ -1339,8 +1339,33 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97A4D0 Offset: 0x97A4D0 VA: 0x97A4D0
 		private IEnumerator Co_HomeMissionAnnounce()
 		{
-			TodoLogger.Log(0, "Co_HomeMissionAnnounce");
-			yield return null;
+			LAGEHKFIPPC localSaveData; // 0x18
+			int currentDay; // 0x1C
+			long currentTime; // 0x20
+			//List.Enumerator<IKDICBBFBMI_EventBase> <>7__wrap4; // 0x28
+			AMLGMLNGMFB_EventAprilFool.OLDLIIKHDKD view; // 0x38
+			AssetBundleLoadLayoutOperationBase lyOp; // 0x3C
+
+			//0x13CD970
+			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd != 2)
+				yield break;
+			localSaveData = new LAGEHKFIPPC();
+			localSaveData.PCODDPDFLHK_Load();
+			currentDay = NKGJPJPHLIF.HHCJCDFCLOB.DHMLDAGGKCD;
+			if (currentDay == localSaveData.KOGBMDOONFA.IDCGBCGNOLH_Day)
+				yield break;
+			if(currentDay < localSaveData.KOGBMDOONFA.IDCGBCGNOLH_Day)
+			{
+				localSaveData.KOGBMDOONFA.IDCGBCGNOLH_Day = currentDay;
+				localSaveData.HJMKBCFJOOH_Save();
+				yield break;
+			}
+			currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			foreach(var it in JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN)
+			{
+				TodoLogger.Log(0, "Co_HomeMissionAnnounce");
+			}
+
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E38F4 Offset: 0x6E38F4 VA: 0x6E38F4
