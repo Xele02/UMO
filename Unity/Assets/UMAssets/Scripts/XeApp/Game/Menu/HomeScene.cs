@@ -219,8 +219,7 @@ namespace XeApp.Game.Menu
 			}
 			MenuScene.Instance.FooterMenu.MenuBar.SetInterruptEvent((TransitionList.Type type) => {
 				//0x13C78E0
-				TodoLogger.Log(0, "SetInterruptEvent");
-				return false;
+				return TryLobbyAnnounce();
 			});
 			m_isInitRaidLobby = false;
 			MenuScene.Instance.LobbyButtonControl.StartCoroutineWatched(MenuScene.Instance.LobbyButtonControl.InitRaidLobby(() => {
@@ -425,42 +424,97 @@ namespace XeApp.Game.Menu
 		// RVA: 0x972398 Offset: 0x972398 VA: 0x972398 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			TodoLogger.Log(0, "OnStartExitAnimation");
-			// if(m_isHomeShowDiva)
-			// {
-			// 	TodoLogger.Log(0, "3d diva");
-			// }
-			// LeaveIntimacy();
-			// m_playRecordBanner.Leave();
-			// m_eventBanner.Leave();
-			// m_campaignBanner.Leave();
-			// m_fesBanner.Leave();
-			// m_subMenu.Leave();
-			// m_buttonGroup.Leave();
-			// if(m_leadBalloon.isEntered)
-			// {
-			// 	m_leadBalloon.Leave();
-			// }
-			// MenuScene.Instance.
+			if(m_isHomeShowDiva)
+			{
+				m_divaTalk.CancelRequest();
+				m_divaTalk.TimerStop();
+				LeaveMessage(true);
+			}
+			LeaveIntimacy();
+			m_playRecordBanner.Leave();
+			m_eventBanner.Leave();
+			m_campaignBanner.Leave();
+			m_fesBanner.Leave();
+			m_subMenu.Leave();
+			m_buttonGroup.Leave();
+			if(m_leadBalloon.isEntered)
+			{
+				m_leadBalloon.Leave(true);
+			}
+			MenuScene.Instance.LobbyButtonControl.Hide();
+			if(MenuScene.Instance.GetCurrentScene().cacheCategory == MenuScene.Instance.GetNextScene().cacheCategory)
+			{
+				if(MenuScene.Instance.GetCurrentScene().fadeId == MenuScene.Instance.GetNextScene().fadeId && 
+					!MenuScene.Instance.GetNextScene().isForceFading)
+				{
+					if(MenuScene.Instance.HeaderMenu.CheckDisableUserInfo(MenuScene.Instance.GetNextScene()))
+					{
+						MenuScene.Instance.HeaderMenu.Leave(false);
+					}
+					if(MenuScene.Instance.FooterMenu.CheckDisableFooter(MenuScene.Instance.GetNextScene()))
+					{
+						MenuScene.Instance.FooterMenu.Leave(false);
+					}
+				}
+			}
 		}
 
 		// RVA: 0x97286C Offset: 0x97286C VA: 0x97286C Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			TodoLogger.Log(0, "TODO");
-			return true;
+			if(m_saveDataDirty)
+			{
+				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			}
+			if(!m_isDivaCrossFade)
+			{
+				return !m_eventBanner.IsPlaying() && !m_campaignBanner.IsPlaying() && 
+					!m_fesBanner.IsPlaying() && !m_subMenu.IsPlaying() &&
+					!m_buttonGroup.IsPlaying() && !m_playRecordBanner.IsPlaying() && 
+					base.IsEndExitAnimation();
+			}
+			return false;
 		}
 
 		// RVA: 0x972A48 Offset: 0x972A48 VA: 0x972A48 Slot: 14
 		protected override void OnDestoryScene()
 		{
-			TodoLogger.Log(0, "TODO");
+			if(m_isHomeShowDiva)
+			{
+				MenuScene.Instance.divaManager.EndControl(m_divaControl);
+				MenuScene.Instance.divaManager.SetEnableDivaWind(false, false);
+			}
+			if(m_intimacyControl != null)
+			{
+				m_intimacyControl.OnDestoryScene();
+			}
+			MenuScene.Instance.LobbyButtonControl.OnStartAnnounce = null;
+			MenuScene.Instance.LobbyButtonControl.OnEndAnnounce = null;
+			MenuScene.Instance.LobbyButtonControl.OnStartTutorial = null;
+			MenuScene.Instance.LobbyButtonControl.OnEndTutorial = null;
+			MenuScene.Instance.FooterMenu.MenuBar.SetInterruptEvent(null);
+			MenuScene.Instance.DenomControl.RemoveResponseHandler(OnChargeMoney);
 		}
 
 		// RVA: 0x972E08 Offset: 0x972E08 VA: 0x972E08 Slot: 15
 		protected override void OnDeleteCache()
 		{
-			TodoLogger.Log(0, "TODO");
+			if(m_coOpenSnsScreen != null)
+			{
+				this.StopCoroutineWatched(m_coOpenSnsScreen);
+				m_coOpenSnsScreen = null;
+			}
+			if(m_snsScreen != null)
+			{
+				m_snsScreen.Dispose();
+				m_snsScreen = null;
+			}
+			Destroy(m_divaBalloon.gameObject);
+			m_divaBalloon = null;
+			m_pickupTexCache.Terminated();
+			m_pickupTexCache = null;
+			m_bannerTexCache.Terminated();
+			m_bannerTexCache = null;
 		}
 
 		// RVA: 0x972FA4 Offset: 0x972FA4 VA: 0x972FA4 Slot: 29
@@ -700,7 +754,14 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x97371C Offset: 0x97371C VA: 0x97371C
-		// private bool TryLobbyAnnounce() { }
+		private bool TryLobbyAnnounce()
+		{
+			if(!m_isStartTutorial)
+			{
+				return MenuScene.Instance.LobbyButtonControl.TryLobbyAnnounce();
+			}
+			return false;
+		}
 
 		// // RVA: 0x9737E8 Offset: 0x9737E8 VA: 0x9737E8
 		private void OnChargeMoney(DenominationManager.Response handler)
@@ -1194,7 +1255,10 @@ namespace XeApp.Game.Menu
 		// private void ApplyMessageText(string msg) { }
 
 		// // RVA: 0x9727C4 Offset: 0x9727C4 VA: 0x9727C4
-		// private void LeaveMessage(bool force = False) { }
+		private void LeaveMessage(bool force = false)
+		{
+			m_divaBalloon.Leave(force);
+		}
 
 		// // RVA: 0x979174 Offset: 0x979174 VA: 0x979174
 		private void OnClickDivaView()
@@ -1730,7 +1794,12 @@ namespace XeApp.Game.Menu
 		// private void EnterIntimacy(float animTime) { }
 
 		// // RVA: 0x9727F8 Offset: 0x9727F8 VA: 0x9727F8
-		// private void LeaveIntimacy() { }
+		private void LeaveIntimacy()
+		{
+			m_intimacyControl.LeaveCounter();
+			m_intimacyControl.DisableLongTouchTips();
+			m_intimacyControl.LeaveLongTouchTips(false);
+		}
 
 		// // RVA: 0x97BE94 Offset: 0x97BE94 VA: 0x97BE94
 		// private void LeaveIntimacy(float animTime) { }

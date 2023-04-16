@@ -2,6 +2,7 @@ using XeApp.Game.Common;
 using UnityEngine;
 using UnityEngine.UI;
 using XeSys.Gfx;
+using System;
 
 namespace XeApp.Game.MusicSelect
 {
@@ -37,15 +38,19 @@ namespace XeApp.Game.MusicSelect
 		//[HeaderAttribute] // RVA: 0x665880 Offset: 0x665880 VA: 0x665880
 		[SerializeField] // RVA: 0x665880 Offset: 0x665880 VA: 0x665880
 		private Image m_imageBookMark; // 0x48
-		//private int m_index = -1; // 0x4C
+		private int m_index = -1; // 0x4C
 
-		//public Action<int> OnClickButtonListener { get; set; } // 0x50
+		public Action<int> OnClickButtonListener { get; set; } // 0x50
 		//private MusicJacketTextureCache jacketTexCache { get; } 0xC9AF60
 
 		//// RVA: 0xC9AFFC Offset: 0xC9AFFC VA: 0xC9AFFC
 		private void Awake()
 		{
-			TodoLogger.Log(0, "!!!");
+			m_buttonJacket.AddOnClickCallback(() => {
+				//0xC9B604
+				if(OnClickButtonListener != null)
+					OnClickButtonListener(m_index);
+			});
 		}
 
 		//// RVA: 0xC9B0A4 Offset: 0xC9B0A4 VA: 0xC9B0A4
@@ -71,9 +76,5 @@ namespace XeApp.Game.MusicSelect
 
 		//// RVA: 0xC9B33C Offset: 0xC9B33C VA: 0xC9B33C
 		//public void SetUpdateContent(int index, bool select, VerticalMusicDataList.MusicListData musicData, bool isEvent) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6B49A8 Offset: 0x6B49A8 VA: 0x6B49A8
-		//// RVA: 0xC9B604 Offset: 0xC9B604 VA: 0xC9B604
-		//private void <Awake>b__18_0() { }
 	}
 }

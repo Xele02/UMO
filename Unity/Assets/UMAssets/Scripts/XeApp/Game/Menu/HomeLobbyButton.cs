@@ -24,7 +24,14 @@ namespace XeApp.Game.Menu
 		//public void Show(bool isEnd = False) { }
 
 		//// RVA: 0x965FCC Offset: 0x965FCC VA: 0x965FCC
-		//public void Hide(bool isEnd = False) { }
+		public void Hide(bool isEnd = false)
+		{
+			if(m_is_show)
+			{
+				m_tabButtonsAnim.StartChildrenAnimGoStop(isEnd ? "st_out" : "go_out", "st_out");
+				m_is_show = false;
+			}
+		}
 
 		//// RVA: 0x966094 Offset: 0x966094 VA: 0x966094
 		public void Wait()

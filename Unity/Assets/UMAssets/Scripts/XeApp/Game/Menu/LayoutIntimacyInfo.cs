@@ -54,7 +54,11 @@ namespace XeApp.Game.Menu
 		// public void Show() { }
 
 		// // RVA: 0x1D52664 Offset: 0x1D52664 VA: 0x1D52664
-		// public void Hide() { }
+		public void Hide()
+		{
+			m_isShown = false;
+			m_layoutRoot.StartAllAnimGoStop("st_wait");
+		}
 
 		// // RVA: 0x1D526E8 Offset: 0x1D526E8 VA: 0x1D526E8
 		// public void StartPointUp(Action callback) { }

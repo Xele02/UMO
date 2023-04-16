@@ -62,7 +62,15 @@ namespace XeApp.Game.Common
 		//public void Enter(float animTime) { }
 
 		//// RVA: 0xEA8B8C Offset: 0xEA8B8C VA: 0xEA8B8C
-		//public void Leave() { }
+		public void Leave()
+		{
+			m_buttonBgChange.Leave();
+			m_buttonUIHide.Leave();
+			m_buttonStory.Leave();
+			m_buttonGakuya.Leave();
+			m_buttonDecoRoom.Leave();
+			m_buttonBingo.Leave();
+		}
 
 		//// RVA: 0xEA8D48 Offset: 0xEA8D48 VA: 0xEA8D48
 		//public void Leave(float animTime) { }

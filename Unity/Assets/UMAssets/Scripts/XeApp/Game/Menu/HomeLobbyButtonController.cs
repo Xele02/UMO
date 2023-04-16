@@ -103,7 +103,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9670D0 Offset: 0x9670D0 VA: 0x9670D0
 		public void Hide(bool isEnd = false)
 		{
-			TodoLogger.Log(0, "LobbyButton Hide");
+			if(!m_EnableShow)
+				return;
+			m_lobbyTabBtn.Hide(isEnd);
+			m_lobbySceneBtn.Hide(isEnd);
 		}
 
 		// // RVA: 0x967244 Offset: 0x967244 VA: 0x967244
@@ -183,7 +186,13 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x9686FC Offset: 0x9686FC VA: 0x9686FC
-		// public bool TryLobbyAnnounce() { }
+		public bool TryLobbyAnnounce()
+		{
+			if(!CheckLobbyAnnounce())
+				return false;
+			TodoLogger.Log(0, "TryLobbyAnnounce");
+			return true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E2A34 Offset: 0x6E2A34 VA: 0x6E2A34
 		// // RVA: 0x968740 Offset: 0x968740 VA: 0x968740

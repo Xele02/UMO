@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 		private int m_inputBlockCount; // 0x34
 
 		public Action onClickButton { private get; set; } // 0x38
-		// public bool isEntered { get; } 0x956B24
+		public bool isEntered { get { return m_inOutAnime.IsEnter; } } //0x956B24
 
 		// RVA: 0x956B50 Offset: 0x956B50 VA: 0x956B50
 		private void Start() { }
@@ -96,7 +96,10 @@ namespace XeApp.Game.Menu
 		// public void Enter(float animTime, bool force = False) { }
 
 		// // RVA: 0x957080 Offset: 0x957080 VA: 0x957080
-		// public void Leave(bool force = False) { }
+		public void Leave(bool force = false)
+		{
+			m_inOutAnime.Leave(force, null);
+		}
 
 		// // RVA: 0x9570B8 Offset: 0x9570B8 VA: 0x9570B8
 		// public void Leave(float animTime, bool force = False) { }

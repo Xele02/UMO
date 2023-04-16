@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Game.Common;
 
@@ -18,7 +19,7 @@ namespace XeApp.Game.MusicSelect
 		[SerializeField]
 		//[HeaderAttribute] // RVA: 0x6659E0 Offset: 0x6659E0 VA: 0x6659E0
 		private InOutAnime m_animeInOut; // 0x18
-		//private List<VerticalMusicDataList.MusicListData> m_musicList; // 0x1C
+		private List<VerticalMusicDataList.MusicListData> m_musicList; // 0x1C
 
 		public UGUISwapScrollList scrollList { get { return m_scrollList; } } //0xC9B9AC
 		public Action OnClickCloseButtonListener { private get; set; } // 0x20
@@ -31,7 +32,12 @@ namespace XeApp.Game.MusicSelect
 		//public void SetMusicList(List<VerticalMusicDataList.MusicListData> list) { }
 
 		//// RVA: 0xC9BC10 Offset: 0xC9BC10 VA: 0xC9BC10
-		//public VerticalMusicDataList.MusicListData GetMusicList(int index) { }
+		public VerticalMusicDataList.MusicListData GetMusicList(int index)
+		{
+			if(m_musicList.Count <= index)
+				return null;
+			return m_musicList[index];
+		}
 
 		//// RVA: 0xC9BCCC Offset: 0xC9BCCC VA: 0xC9BCCC
 		//public void Enter(Action endCallback) { }
@@ -42,7 +48,23 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xC9C0B0 Offset: 0xC9C0B0 VA: 0xC9C0B0
 		public void Initialize()
 		{
-			TodoLogger.Log(0, "Music Jacket Scroll Initialize");
+			m_buttonClose.ClearOnClickCallback();
+			m_buttonClose.AddOnClickCallback(() => {
+				//0xC9C4A4
+				if(OnClickCloseButtonListener != null)
+					OnClickCloseButtonListener();
+			});
+			for(int i = 0; i < m_scrollList.ScrollObjects.Count; i++)
+			{
+				(m_scrollList.ScrollObjects[i] as MusicJacketScrollItem).SetVisible(true);
+				(m_scrollList.ScrollObjects[i] as MusicJacketScrollItem).OnClickButtonListener = (int index) => {
+					//0xC9C4B8
+					if(OnClickJacketButtonListener != null)
+					{
+						OnClickJacketButtonListener(GetMusicList(index).ViewMusic.GHBPLHBNMBK_FreeMusicId);
+					}
+				};
+			}
 		}
 
 		//// RVA: 0xC9C310 Offset: 0xC9C310 VA: 0xC9C310
@@ -50,13 +72,5 @@ namespace XeApp.Game.MusicSelect
 
 		//// RVA: 0xC9BDDC Offset: 0xC9BDDC VA: 0xC9BDDC
 		//public void SetInputOff(bool inputOff) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6B49F8 Offset: 0x6B49F8 VA: 0x6B49F8
-		//// RVA: 0xC9C4A4 Offset: 0xC9C4A4 VA: 0xC9C4A4
-		//private void <Initialize>b__20_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6B4A08 Offset: 0x6B4A08 VA: 0x6B4A08
-		//// RVA: 0xC9C4B8 Offset: 0xC9C4B8 VA: 0xC9C4B8
-		//private void <Initialize>b__20_1(int index) { }
 	}
 }

@@ -247,7 +247,21 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB28E7C Offset: 0xB28E7C VA: 0xB28E7C
-		// public bool CheckDisableUserInfo(TransitionInfo info) { }
+		public bool CheckDisableUserInfo(TransitionInfo info)
+		{
+			int idx = m_disableUserInfo.FindIndex((TransitionList.Type x) => {
+				//0xB2B8D0
+				return info.name == x;
+			});
+			if(idx < 0)
+			{
+				idx = m_disableUserInfoUniqueScene.FindIndex((TransitionUniqueId x) => {
+					//0xB2B8E4
+					return info.uniqueId == (int)x;
+				});
+			}
+			return idx > -1;
+		}
 
 		// // RVA: 0xB2903C Offset: 0xB2903C VA: 0xB2903C
 		public void Show(TransitionList.Type transitionName, TransitionUniqueId uniqueId, CommonMenuStackLabel.LabelType labelType, SceneGroupCategory group, int descId, bool isVisibleBackButton)
@@ -363,7 +377,13 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB29810 Offset: 0xB29810 VA: 0xB29810
-		// public void Leave(bool isFading = False) { }
+		public void Leave(bool isFading = false)
+		{
+			if(m_userInfo != null)
+			{
+				m_userInfo.Leave(isFading);
+			}
+		}
 
 		// // RVA: 0xB298CC Offset: 0xB298CC VA: 0xB298CC
 		// public bool IsPlaying() { }

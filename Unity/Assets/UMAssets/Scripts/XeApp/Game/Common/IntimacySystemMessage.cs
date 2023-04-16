@@ -87,7 +87,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1102964 Offset: 0x1102964 VA: 0x1102964
-		// public void Leave(float animTime, bool force = False) { }
+		public void Leave(float animTime, bool force = false)
+		{
+			m_systemWindow.Leave(animTime, force);
+		}
 
 		// // RVA: 0x11029A0 Offset: 0x11029A0 VA: 0x11029A0
 		// public bool IsPlaying() { }

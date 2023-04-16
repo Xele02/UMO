@@ -180,8 +180,6 @@ namespace XeApp.Game.Menu
 				cueId = (int)cs_se_boot.SE_BTN_000;
 			}
 			SoundManager.Instance.sePlayerBoot.Play(cueId);
-
-			TodoLogger.Log(0, "CallBackFreeBattle");
 		}
 
 		// // RVA: 0xEC55DC Offset: 0xEC55DC VA: 0xEC55DC

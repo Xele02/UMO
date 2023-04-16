@@ -70,7 +70,10 @@ namespace XeApp.Game.Common
 		//public void Enter(float animTime) { }
 
 		//// RVA: 0xEA8018 Offset: 0xEA8018 VA: 0xEA8018
-		//public void Leave() { }
+		public void Leave()
+		{
+			m_inOutAnime.Leave(false, null);
+		}
 
 		//// RVA: 0xEA804C Offset: 0xEA804C VA: 0xEA804C
 		//public void Leave(float animTime) { }

@@ -144,7 +144,20 @@ namespace XeApp.Game.Common
 			m_repeatTimer.OnRepeatTiming = () =>
 			{
 				//0xEAF294
-				TodoLogger.Log(0, "OnRepeatTiming ");
+				if(m_scrollView.IsDrag)
+					return;
+				int idx = m_scrollView.PosIndex + 1;
+				m_scrollView.SetPosition(idx, m_changeTime);
+				if(idx < m_list.Count)
+				{
+					if(idx < 0)
+						idx = m_list.Count - 1;
+				}
+				else
+				{
+					idx = idx % m_list.Count;
+				}
+				SetPageNum(idx);
 			};
 		}
 
@@ -441,7 +454,10 @@ namespace XeApp.Game.Common
 		// public void Enter(float animTime) { }
 
 		// // RVA: 0xEAEAB8 Offset: 0xEAEAB8 VA: 0xEAEAB8
-		// public void Leave() { }
+		public void Leave()
+		{
+			m_inOutAnime.Leave(false, null);
+		}
 
 		// // RVA: 0xEAEAEC Offset: 0xEAEAEC VA: 0xEAEAEC
 		// public void Leave(float animTime) { }

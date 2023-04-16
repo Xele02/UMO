@@ -54,7 +54,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17CFCBC Offset: 0x17CFCBC VA: 0x17CFCBC
-		// public void RemoveResponseHandler(DenominationManager.ResponseHandler handler) { }
+		public void RemoveResponseHandler(ResponseHandler handler)
+		{
+			m_responceHandlerList.Remove(handler);
+		}
 
 		// // RVA: 0x17CFD3C Offset: 0x17CFD3C VA: 0x17CFD3C
 		// public void CallResponseHandler(DenominationManager.Response response) { }

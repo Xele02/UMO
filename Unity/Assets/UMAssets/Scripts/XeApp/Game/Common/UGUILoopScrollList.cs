@@ -56,9 +56,19 @@ namespace XeApp.Game.Common
 		public Action<Vector2> OnDragEnd { get; set; } // 0x11C
 
 		//public MovementType ScrollMovementType { get; set; } 0x1CD3DB0 0x1CD3DB8
-		//public int PosIndex { get; } 0x1CD3DC0
+		public int PosIndex { get { 
+			if(vertical)
+				return Mathf.RoundToInt(AnchoredPosition / (m_contentSize.x + m_spacing.x));
+			else
+				return Mathf.RoundToInt(-AnchoredPosition / (m_contentSize.y + m_spacing.y));
+		 } } //0x1CD3DC0
 		//public bool IsPlaying { get; } 0x1CD3F58
-		//private float AnchoredPosition { get; } 0x1CD3EA8
+		private float AnchoredPosition { get {
+			if(vertical)
+				return -content.anchoredPosition.y;
+			else
+				return content.anchoredPosition.x;
+		} } //0x1CD3EA8
 		//private float ItemSize { get; } 0x1CD3F1C
 
 		// RVA: 0x1CD3F70 Offset: 0x1CD3F70 VA: 0x1CD3F70 Slot: 4

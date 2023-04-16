@@ -153,7 +153,21 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xED1F34 Offset: 0xED1F34 VA: 0xED1F34
-		// public bool CheckDisableFooter(TransitionInfo info) { }
+		public bool CheckDisableFooter(TransitionInfo info)
+		{
+			int idx = m_disableMenuBarScene.FindIndex((TransitionList.Type x) => {
+				//0xB2696C
+				return info.name == x;
+			});
+			if(idx < 0)
+			{
+				idx = m_disableMenuBarUniqueScene.FindIndex((TransitionUniqueId x) => {
+					//0xB26980
+					return info.uniqueId == (int)x;
+				});
+			}
+			return idx > -1;
+		}
 
 		// // RVA: 0xED20EC Offset: 0xED20EC VA: 0xED20EC
 		public void Show(TransitionList.Type transitionName, TransitionUniqueId uniqueId, MenuButtonAnim.ButtonType selectedButton, bool isFading)
@@ -186,7 +200,13 @@ namespace XeApp.Game.Menu
 		// public void Enter(bool isFading = False) { }
 
 		// // RVA: 0xED2448 Offset: 0xED2448 VA: 0xED2448
-		// public void Leave(bool isFading = False) { }
+		public void Leave(bool isFading = false)
+		{
+			if(m_menuBar != null)
+			{
+				m_menuBar.Leave(isFading);
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C75D4 Offset: 0x6C75D4 VA: 0x6C75D4
 		// RVA: 0xED2500 Offset: 0xED2500 VA: 0xED2500

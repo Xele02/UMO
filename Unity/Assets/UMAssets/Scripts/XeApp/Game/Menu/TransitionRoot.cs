@@ -763,7 +763,17 @@ namespace XeApp.Game.Menu
 				bool isSaveError = false;
 				if(m_isRequestSave)
 				{
-					TodoLogger.Log(0, "request save");
+					CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() => {
+						//0xA3D568
+						JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+					}, () => {
+						//0xA3D7AC
+						JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
+						JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+						MenuScene.Instance.GotoTitle();
+						isSaveError = true;
+					}, null);
+					m_isRequestSave = false;
 				}
 				DirtyChangeScene = false;
 				IsTransition = true;

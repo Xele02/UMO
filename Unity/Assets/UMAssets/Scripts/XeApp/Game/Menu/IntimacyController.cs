@@ -107,7 +107,34 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B0210 Offset: 0x14B0210 VA: 0x14B0210
-		//public void OnDestoryScene() { }
+		public void OnDestoryScene()
+		{
+			if(m_effectObject != null)
+			{
+				Destroy(m_effectObject.gameObject);
+				m_effectObject = null;
+			}
+			m_coroutine = null;
+			m_root = null;
+			m_divaBalloon = null;
+			if(m_layoutInfo != null)
+			{
+				m_layoutInfo.Hide();
+			}
+			if(m_systemMessage != null)
+			{
+				m_systemMessage.Leave(0, false);
+			}
+			m_loopSE.Stop();
+			if(m_layoutInfoDeco != null)
+			{
+				m_layoutInfoDeco.Hide();
+			}
+			if(m_layoutMessageDeco != null)
+			{
+				m_layoutMessageDeco.Hide();
+			}
+		}
 
 		//// RVA: 0x14B04BC Offset: 0x14B04BC VA: 0x14B04BC
 		public bool CheckUnlock()
@@ -171,13 +198,21 @@ namespace XeApp.Game.Menu
 		//public void EnterCounter(float animTime) { }
 
 		//// RVA: 0x14B07B4 Offset: 0x14B07B4 VA: 0x14B07B4
-		//public void LeaveCounter() { }
+		public void LeaveCounter()
+		{
+			if(!CheckUnlock())
+				return;
+			m_intimacyCounter.Leave();
+		}
 
 		//// RVA: 0x14B07F0 Offset: 0x14B07F0 VA: 0x14B07F0
 		//public void LeaveCounter(float animTime) { }
 
 		//// RVA: 0x14B0834 Offset: 0x14B0834 VA: 0x14B0834
-		//public void DisableLongTouchTips() { }
+		public void DisableLongTouchTips()
+		{
+			m_enableLongTouchTips = false;
+		}
 
 		//// RVA: 0x14B0840 Offset: 0x14B0840 VA: 0x14B0840
 		public void EnableLongTouchTips()
