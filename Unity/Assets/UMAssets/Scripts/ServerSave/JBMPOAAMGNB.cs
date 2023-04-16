@@ -67,7 +67,7 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 		KFKDMBPNLJK_BlockInvalid = isInvalid;
 
 		if(RuntimeSettings.CurrentSettings.ForceTutoSkip)
-			IJHBIMNKOMC_TutorialEnd = 1;
+			IJHBIMNKOMC_TutorialEnd = 2;
 		return true;
 	}
 

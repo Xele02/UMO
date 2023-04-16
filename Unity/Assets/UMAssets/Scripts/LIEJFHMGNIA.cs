@@ -78,7 +78,10 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	//public void MFEGPPKFCEI() { }
 
 	//// RVA: 0x17FA294 Offset: 0x17FA294 VA: 0x17FA294
-	//public static int PJIJLMFBBCJ() { }
+	public static int PJIJLMFBBCJ()
+	{
+		return 1;
+	}
 
 	//// RVA: 0x17FA29C Offset: 0x17FA29C VA: 0x17FA29C
 	public static List<LIEJFHMGNIA> FKDIMODKKJD(int KFOLEAPKGFC = 0, bool POOMOBGPCNE = true, bool OKIAAPADPLM = true, bool HFOAFJBMNOF = false)

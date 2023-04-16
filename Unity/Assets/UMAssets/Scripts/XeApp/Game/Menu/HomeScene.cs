@@ -1599,24 +1599,56 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97B73C Offset: 0x97B73C VA: 0x97B73C
 		private IEnumerator Coroutine_EventReward()
 		{
-			TodoLogger.Log(0, "Coroutine_EventReward");
+			List<IKDICBBFBMI_EventBase> eventControlers; // 0x18
+			int i; // 0x1C
+			IKDICBBFBMI_EventBase eventController; // 0x20
+			int rankingNum; // 0x24
+			int n; // 0x28
+			int rankingIndex; // 0x2C
+
+			//0x13D9054
+			m_isCheckEventReward = true;
+            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.DDEODFNANDO/*8*/, false);
+			if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL/*2*/)
+			{
+				TodoLogger.Log(0, "Coroutine_EventReward");
+			}
+			bool isShowReward = false;
+			bool isError = false;
+			bool isEnd = false;
+			bool isCallRanking = false;
+			eventControlers = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN;
+			for(i = 0; i < eventControlers.Count; i++)
+			{
+				TodoLogger.Log(0, "Coroutine_EventReward");
+			}
+			eventControlers = null;
 			yield return null;
-		}
+			//7
+			m_isCheckEventReward = false;
+        }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3F84 Offset: 0x6E3F84 VA: 0x6E3F84
 		// // RVA: 0x97B7C4 Offset: 0x97B7C4 VA: 0x97B7C4
 		private IEnumerator Coroutine_ShowUnlock(Action onTransition)
 		{
-			TodoLogger.Log(0, "Coroutine_ShowUnlock");
-			yield return null;
+			//0x13DAB40
+			yield return Co.R(PopupUnlock.Show(PopupUnlock.eSceneType.Home, (int label) => {
+				//0x13C75E0
+				if(label != 45)
+					return;
+				onTransition();
+			}, true, null));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3FFC Offset: 0x6E3FFC VA: 0x6E3FFC
 		// // RVA: 0x97B84C Offset: 0x97B84C VA: 0x97B84C
 		private IEnumerator Co_CheckPlayerForceRename(Action onTransition)
 		{
+			//0x13CAF10
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.FNLNIKFNHAM_ForceRename)
+				yield break;
 			TodoLogger.Log(0, "Co_CheckPlayerForceRename");
-			yield return null;
 		}
 
 		// // RVA: 0x97B8D4 Offset: 0x97B8D4 VA: 0x97B8D4

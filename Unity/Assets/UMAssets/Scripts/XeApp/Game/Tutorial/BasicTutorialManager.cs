@@ -3,6 +3,12 @@ using UnityEngine;
 using System.Text;
 using System;
 using XeApp.Game.Adv;
+using System.Collections.Generic;
+using XeApp.Game.Common;
+using UnityEngine.Events;
+using System.Collections;
+using XeApp.Core;
+using XeApp.Game.Menu;
 
 namespace XeApp.Game.Tutorial
 {
@@ -67,24 +73,50 @@ namespace XeApp.Game.Tutorial
 		private GameObject m_blackImageInstance; // 0xC
 		private TutorialHighLight m_highLight; // 0x10
 		private GameObject m_cursorInstance; // 0x14
-		// private TutorialPointer m_pointer; // 0x18
-		// private List<ButtonBase> m_buttonList; // 0x1C
-		private StringBuilder m_strBuilder; // 0x20
+		private TutorialPointer m_pointer; // 0x18
+		private List<ButtonBase> m_buttonList = new List<ButtonBase>(); // 0x1C
+		private StringBuilder m_strBuilder = new StringBuilder(10); // 0x20
 		private TutorialMessageWindow m_messageWindow; // 0x24
-		private int[,] m_charaTextRowColCountTable; // 0x28
+		private int[,] m_charaTextRowColCountTable = new int[2, 3]
+		{
+			{8, 17, 11},
+			{21, 18, 30}
+		}; // 0x28
 
 		// // RVA: 0xE3D1B0 Offset: 0xE3D1B0 VA: 0xE3D1B0
 		// public bool IsLoadedLayout() { }
 
 		// // RVA: 0xE3D23C Offset: 0xE3D23C VA: 0xE3D23C
-		// public static void Initialize() { }
+		public static void Initialize()
+		{
+			BasicTutorialManager bt = GameManager.Instance.gameObject.GetComponent<BasicTutorialManager>();
+			if(GameManager.Instance != null && bt == null)
+			{
+				bt = GameManager.Instance.gameObject.AddComponent<BasicTutorialManager>();
+			}
+		}
 
 		// // RVA: 0xE3D3E8 Offset: 0xE3D3E8 VA: 0xE3D3E8
-		// public void PreLoadResource(UnityAction finishCb, bool isAppendLayout = True) { }
+		public void PreLoadResource(UnityAction finishCb, bool isAppendLayout = true)
+		{
+			this.StartCoroutineWatched(PreLoadLayoutCoroutine(finishCb, isAppendLayout));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE360 Offset: 0x6AE360 VA: 0x6AE360
 		// // RVA: 0xE3D4CC Offset: 0xE3D4CC VA: 0xE3D4CC
-		// public IEnumerator PreDownLoadTextureResource(BasicTutorialMessageId id) { }
+		public IEnumerator PreDownLoadTextureResource(BasicTutorialMessageId id)
+		{
+			//0xE43BCC
+			ILLPGHGGKLL_TutorialMiniAdv.AFBMNDPOALE t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv.LBDOLHGDIEB((int)id);
+			if(t == null)
+				yield return null;
+			for(int i = 0; i < t.KGJHFFNFPOK_CharacterId.Length; i++)
+			{
+				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(DivaIconTextureCache.MakeTutorialIconPath(t.KGJHFFNFPOK_CharacterId[i]));
+			}
+			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				yield return null;
+		}
 
 		// // RVA: 0xE3D578 Offset: 0xE3D578 VA: 0xE3D578 Slot: 6
 		public virtual void Release()
@@ -149,7 +181,10 @@ namespace XeApp.Game.Tutorial
 		// private IEnumerator ProcMessage(ILLPGHGGKLL.AFBMNDPOALE messData, Action endCallBack, AdvMessageBase.TagConvertFunc func) { }
 
 		// // RVA: 0xE3E170 Offset: 0xE3E170 VA: 0xE3E170
-		// public void SetInputLimit(InputLimitButton button, UnityAction onPush, Func<ButtonBase> findButton, TutorialPointer.Direction dir = 1) { }
+		public void SetInputLimit(InputLimitButton button, UnityAction onPush, Func<ButtonBase> findButton, TutorialPointer.Direction dir = TutorialPointer.Direction.Normal)
+		{
+			TodoLogger.Log(0, "SetInputLimit");
+		}
 
 		// // RVA: 0xE409E4 Offset: 0xE409E4 VA: 0xE409E4
 		// private bool ObjectFindFunc(Transform ts, string name, string parentName) { }
@@ -177,15 +212,76 @@ namespace XeApp.Game.Tutorial
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE450 Offset: 0x6AE450 VA: 0x6AE450
 		// // RVA: 0xE3D40C Offset: 0xE3D40C VA: 0xE3D40C
-		// private IEnumerator PreLoadLayoutCoroutine(UnityAction finishCb, bool isAppendLayout = False) { }
+		private IEnumerator PreLoadLayoutCoroutine(UnityAction finishCb, bool isAppendLayout = false)
+		{
+			//0xE43F00
+			yield return this.StartCoroutineWatched(LoadBaseLayoutCoroutine());
+			if(isAppendLayout)
+			{
+				yield return this.StartCoroutineWatched(LoadAppendLayoutCoroutine());
+			}
+			if(finishCb != null)
+				finishCb();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE4C8 Offset: 0x6AE4C8 VA: 0x6AE4C8
 		// // RVA: 0xE4172C Offset: 0xE4172C VA: 0xE4172C
-		// private IEnumerator LoadBaseLayoutCoroutine() { }
+		private IEnumerator LoadBaseLayoutCoroutine()
+		{
+			AssetBundleLoadAssetOperation layOp;
+
+			//0xE43750
+			if(m_messageWindow == null)
+			{
+				layOp = AssetBundleManager.LoadAssetAsync("to.xab", "MessageWindow", typeof(GameObject));
+				yield return layOp;
+				GameObject g = Instantiate(layOp.GetAsset<GameObject>());
+				g.transform.SetParent(GameManager.Instance.PopupCanvas.transform.Find("Root"), false);
+				m_messageWindow = g.GetComponent<TutorialMessageWindow>();
+				AssetBundleManager.UnloadAssetBundle("to.xab", false);
+				m_messageWindow.gameObject.SetActive(false);
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE540 Offset: 0x6AE540 VA: 0x6AE540
 		// // RVA: 0xE417D8 Offset: 0xE417D8 VA: 0xE417D8
-		// private IEnumerator LoadAppendLayoutCoroutine() { }
+		private IEnumerator LoadAppendLayoutCoroutine()
+		{
+			int loadCount;
+			AssetBundleLoadAssetOperation op;
+			AssetBundleLoadLayoutOperationBase layOp;
+
+			//0xE42F6C
+			if(m_blackImageInstance != null)
+				yield break;
+			loadCount = 0;
+			op = AssetBundleManager.LoadAssetAsync("ly/080.xab", "BlackBack", typeof(GameObject));
+			loadCount++;
+			yield return op;
+			m_blackImageInstance = Instantiate(op.GetAsset<GameObject>());
+			m_highLight = m_blackImageInstance.GetComponent<TutorialHighLight>();
+			m_blackImageInstance.gameObject.SetActive(false);
+			layOp = AssetBundleManager.LoadLayoutAsync("ly/080.xab", "root_cmn_tuto_finger_layout_root");
+			loadCount++;
+			yield return layOp;
+			yield return layOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+				//0xE42748
+				m_cursorInstance = instance;
+			});
+			while(m_cursorInstance == null)
+				yield return null;
+			for(int i = 0; i < loadCount; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle("ly/080.xab", false);
+			}
+			m_blackImageInstance.transform.SetParent(GameManager.Instance.PopupCanvas.transform, false);
+			m_blackImageInstance.transform.SetAsLastSibling();
+			m_blackImageInstance.SetActive(false);
+			m_cursorInstance.transform.SetParent(GameManager.Instance.PopupCanvas.transform, false);
+			m_cursorInstance.SetActive(false);
+			m_cursorInstance.transform.SetAsLastSibling();
+			m_pointer = m_cursorInstance.GetComponent<TutorialPointer>();
+		}
 
 		// // RVA: 0xE41884 Offset: 0xE41884 VA: 0xE41884
 		// public void UpdateLocalPlayerData() { }
@@ -205,18 +301,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE42544 Offset: 0xE42544 VA: 0xE42544
 		public static bool IsBeginnerMission()
 		{
-			TodoLogger.Log(0, "IsBeginnerMission");
-			return false;
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd < 2;
 		}
-
-		// // RVA: 0xE42630 Offset: 0xE42630 VA: 0xE42630
-		public BasicTutorialManager()
-		{
-			TodoLogger.Log(0, "TODO");
-		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6AE5B8 Offset: 0x6AE5B8 VA: 0x6AE5B8
-		// // RVA: 0xE42748 Offset: 0xE42748 VA: 0xE42748
-		// private void <LoadAppendLayoutCoroutine>b__29_0(GameObject instance) { }
 	}
 }

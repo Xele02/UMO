@@ -169,7 +169,10 @@ namespace XeApp.Game.Menu
 		// public void ScrollEnable() { }
 
 		// // RVA: 0x16702EC Offset: 0x16702EC VA: 0x16702EC
-		// public void ScrollDisable() { }
+		public void ScrollDisable()
+		{
+			m_scroller.InputDisable();
+		}
 
 		// // RVA: 0x16704C8 Offset: 0x16704C8 VA: 0x16704C8
 		// public void SetupUnitLive(IBJAKJJICBC musicData, MMOLNAHHDOM saveData) { }

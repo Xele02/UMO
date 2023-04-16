@@ -62,7 +62,18 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A1F8 Offset: 0xE4A1F8 VA: 0xE4A1F8
 		public static bool CanBeginnerMissionLiveClearLiveHelp()
 		{
-			TodoLogger.Log(0, "Tutorial CanBeginnerMissionLiveClearLiveHelp");
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBeginnerLiveMission))
+			{
+				if(QuestUtility.m_beginnerViewList.Count != 0)
+				{
+					FKMOKDCJFEN f = QuestUtility.m_beginnerViewList.Find((FKMOKDCJFEN x) => {
+						//0xE4C030
+						return x.CMEJFJFOIIJ_QuestId == 1;
+					});
+					if(f != null && f.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG/*3*/)
+						return true;
+				}
+			}
 			return false;
 		}
 
@@ -78,8 +89,58 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A588 Offset: 0xE4A588 VA: 0xE4A588
 		public static IEnumerator Co_OffeReleaseTutorial(InputLimitButton inputLimitButton, ButtonBase button, Action act, BasicTutorialMessageId messageId, bool IsInputLimit = true, MusicSelectCDSelect cdSelect = null, MusicScrollView musicScrollView = null)
 		{
-			TodoLogger.Log(0, "Co_OffeReleaseTutorial");
-			yield return null;
+			BasicTutorialManager mrg;
+			GameManager.PushBackButtonHandler dymmyBackHandler;
+
+			//0x19121B0
+			MenuScene.Instance.RaycastDisable();
+			BasicTutorialManager.Initialize();
+			mrg = BasicTutorialManager.Instance;
+			bool isWait = true;
+			mrg.PreLoadResource(() => {
+				//0xE4C124
+				isWait = false;
+			}, true);
+			while(isWait)
+				yield return null;
+			yield return mrg.PreDownLoadTextureResource(messageId);
+			MenuScene.Instance.RaycastEnable();
+			dymmyBackHandler = () => {
+				//0xE4C060
+				return;
+			};
+			GameManager.Instance.AddPushBackButtonHandler(dymmyBackHandler);
+			if(cdSelect != null)
+				cdSelect.ScrollDisable();
+			if(musicScrollView != null)
+				musicScrollView.ScrollEnable(false);
+			isWait = true;
+			mrg.ShowMessageWindow(messageId, () => {
+				//0xE4C130
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			if(!IsInputLimit)
+			{
+				act();
+				isWait = false;
+			}
+			else
+			{
+				isWait = true;
+				mrg.SetInputLimit(inputLimitButton, () => {
+					//0xE4C13C
+					act();
+					isWait = false;
+				}, () => {
+					//0xE4C174
+					return button;
+				}, TutorialPointer.Direction.Down);
+			}
+			while(isWait)
+				yield return null;
+			GameManager.Instance.RemovePushBackButtonHandler(dymmyBackHandler);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AEF88 Offset: 0x6AEF88 VA: 0x6AEF88
@@ -94,8 +155,15 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A7C4 Offset: 0xE4A7C4 VA: 0xE4A7C4
 		public static IEnumerator Co_ValkyrieUpgrade(ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton = InputLimitButton.None, TutorialPointer.Direction direction = TutorialPointer.Direction.Normal, MusicSelectCDSelect cdSelect = null, MusicScrollView musicScrollView = null)
 		{
+			BasicTutorialManager mrg;
+			GameManager.PushBackButtonHandler dymmyBackHandler;
+
+			//0x1915D2C
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
+				yield break;
+			if(RuntimeSettings.CurrentSettings.ForceTutoSkip)
+				yield break;
 			TodoLogger.Log(0, "Co_ValkyrieUpgrade");
-			yield return null;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF078 Offset: 0x6AF078 VA: 0x6AF078
@@ -110,8 +178,16 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A9FC Offset: 0xE4A9FC VA: 0xE4A9FC
 		public static IEnumerator Co_Decolture(ButtonBase button, Action proc)
 		{
+			BasicTutorialManager mrg; // 0x1C
+			BasicTutorialMessageId messageId; // 0x20
+			GameManager.PushBackButtonHandler dymmyBackHandler; // 0x24
+
+			//0xE4E414
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+				yield break;
+			if(proc != null)
+				proc();
 			TodoLogger.Log(0, "Co_Decolture");
-			yield return null;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF1E0 Offset: 0x6AF1E0 VA: 0x6AF1E0

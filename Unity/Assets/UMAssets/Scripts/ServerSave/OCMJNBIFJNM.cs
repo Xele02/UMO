@@ -261,6 +261,8 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1B30F5C Offset: 0x1B30F5C VA: 0x1B30F5C
 	public bool MLBBKNLPBBD(BOPFPIHGJMD.PDLKAKEABDP COONLEFJBMP)
 	{
+		if(RuntimeSettings.CurrentSettings.ForceTutoSkip)
+			return true;
 		return (JLFONLABECA_ShowTuto & (1 << (int)COONLEFJBMP)) != 0;
 	}
 

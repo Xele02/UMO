@@ -74,7 +74,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x166E9A8 Offset: 0x166E9A8 VA: 0x166E9A8
-		// public void InputDisable() { }
+		public void InputDisable()
+		{
+			m_inputEnable = false;
+		}
 
 		// // RVA: 0x166E9B4 Offset: 0x166E9B4 VA: 0x166E9B4
 		private void Update()

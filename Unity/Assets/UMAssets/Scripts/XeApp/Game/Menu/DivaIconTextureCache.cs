@@ -179,7 +179,10 @@ namespace XeApp.Game.Menu
 		// public static string GetDivaStandingCostumeIconPath(int id, int modelId) { }
 
 		// // RVA: 0x17E3DAC Offset: 0x17E3DAC VA: 0x17E3DAC
-		// public static string MakeTutorialIconPath(int charId) { }
+		public static string MakeTutorialIconPath(int charId)
+		{
+			return string.Format("ad/ic/{0:D4}.xab", charId);
+		}
 
 		// // RVA: 0x17E425C Offset: 0x17E425C VA: 0x17E425C
 		public void TryInstall(DFKGGBMFFGB_PlayerInfo playerData)

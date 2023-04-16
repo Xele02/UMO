@@ -901,7 +901,32 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE845B8 Offset: 0xE845B8 VA: 0xE845B8
 	public static void GFOMKMANCPP(string CJEKGLGBIHF_path, long KMNPPIKCPNG, uint HHPEMFKDHLK, bool FLJBOOPPGDM = false)
 	{
-		TodoLogger.Log(0, "TODO");
+		DateTime fileDate = File.GetLastWriteTime(CJEKGLGBIHF_path);
+		fileDate = TimeZoneInfo.ConvertTimeToUtc(fileDate);
+		TimeSpan diff = fileDate - CBHCDLLOBBK;
+		if(MLPDBGFBAAC != null)
+		{
+			IGJHFKELHKJ.HPJEDLPEJLF a = MLPDBGFBAAC.LBDOLHGDIEB(HHPEMFKDHLK);
+			if(a == null)
+			{
+				IGJHFKELHKJ.HPJEDLPEJLF data = new IGJHFKELHKJ.HPJEDLPEJLF();
+				data.JMGLAOBOAHM = (long)diff.TotalSeconds;
+				data.LGEGIKJGCCA = KMNPPIKCPNG;
+				data.IOIMHJAOKOO = HHPEMFKDHLK;
+				data.CPBPOIMHIML = true;
+				MLPDBGFBAAC.LBBOGOBBAAD(data);
+			}
+			else
+			{
+				a.CPBPOIMHIML = true;
+				a.JMGLAOBOAHM = (long)diff.TotalSeconds;
+				a.LGEGIKJGCCA = KMNPPIKCPNG;
+			}
+			if(FLJBOOPPGDM)
+			{
+				MLPDBGFBAAC.HJMKBCFJOOH();
+			}
+		}
 	}
 
 	// // RVA: 0xE8B274 Offset: 0xE8B274 VA: 0xE8B274
