@@ -52,9 +52,8 @@ namespace XeApp.Game.MusicSelect
 			public MusicSelectConsts.PlayBoostType PlayBoostType { get; } = MusicSelectConsts.PlayBoostType.Max; // 0x40
 
 			//	// RVA: 0xCA2E0C Offset: 0xCA2E0C VA: 0xCA2E0C
-			public MusicListData(VerticalMusicDataList.MusicListData.InitParam initParam)
+			public MusicListData(InitParam initParam)
 			{
-				TodoLogger.Log(0, "MusicListData()");
 				MusicName = initParam.musicName;
 				ViewMusic = initParam.viewMusic;
 				IsHighLevel = initParam.isHighLevel;
@@ -75,16 +74,16 @@ namespace XeApp.Game.MusicSelect
 			}
 		}
 
-		private List<VerticalMusicDataList.MusicListData> m_viewList = new List<VerticalMusicDataList.MusicListData>(); // 0x8
-		private List<VerticalMusicDataList.MusicListData> m_view6LineList = new List<VerticalMusicDataList.MusicListData>(); // 0xC
-		private List<VerticalMusicDataList.MusicListData> m_viewSimulationList = new List<VerticalMusicDataList.MusicListData>(); // 0x10
-		private List<VerticalMusicDataList.MusicListData> m_viewSimulation6LineList = new List<VerticalMusicDataList.MusicListData>(); // 0x14
+		private List<MusicListData> m_viewList = new List<MusicListData>(); // 0x8
+		private List<MusicListData> m_view6LineList = new List<MusicListData>(); // 0xC
+		private List<MusicListData> m_viewSimulationList = new List<MusicListData>(); // 0x10
+		private List<MusicListData> m_viewSimulation6LineList = new List<MusicListData>(); // 0x14
 
 		//// RVA: 0xCA0F60 Offset: 0xCA0F60 VA: 0xCA0F60
-		public static List<VerticalMusicDataList.MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI_EventBase eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId)
+		public static List<MusicListData> CreateMusicListData(List<IBJAKJJICBC> viewMusicDataList, IKDICBBFBMI_EventBase eventController, bool line6Mode, int musicTypeThreshold, int lastStoryFreeMusicId)
 		{
 			string musicTimeFormat = MessageManager.Instance.GetBank("menu").GetMessageByLabel("vertical_music_select_music_time");
-			List<VerticalMusicDataList.MusicListData> res = new List<VerticalMusicDataList.MusicListData>();
+			List<MusicListData> res = new List<MusicListData>();
 			FPGEMAIAMBF_RewardData b = new FPGEMAIAMBF_RewardData();
 			for(int i = 0; i < viewMusicDataList.Count; i++)
 			{
@@ -376,7 +375,7 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xCA2ED4 Offset: 0xCA2ED4 VA: 0xCA2ED4
 		public int GetCount(bool line6Mode, bool simulation)
 		{
-			List<VerticalMusicDataList.MusicListData> data;
+			List<MusicListData> data;
 			if(simulation)
 			{
 				if(line6Mode)
@@ -400,9 +399,9 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA2FA4 Offset: 0xCA2FA4 VA: 0xCA2FA4
-		public VerticalMusicDataList.MusicListData Get(int index, bool line6Mode, bool simulation)
+		public MusicListData Get(int index, bool line6Mode, bool simulation)
 		{
-			List<VerticalMusicDataList.MusicListData> data;
+			List<MusicListData> data;
 			if(simulation)
 			{
 				if(line6Mode)
@@ -428,9 +427,9 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA2F78 Offset: 0xCA2F78 VA: 0xCA2F78
-		public List<VerticalMusicDataList.MusicListData> GetList(bool line6Mode, bool simulation)
+		public List<MusicListData> GetList(bool line6Mode, bool simulation)
 		{
-			List<VerticalMusicDataList.MusicListData> data;
+			List<MusicListData> data;
 			if(simulation)
 			{
 				if(line6Mode)
@@ -503,7 +502,7 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xCA34CC Offset: 0xCA34CC VA: 0xCA34CC
 		public int FindIndex(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType, bool line6Mode, bool simulation)
 		{
-			return FindIndex((VerticalMusicDataList.MusicListData _) =>
+			return FindIndex((MusicListData _) =>
 			{
 				//0xCA3C4C
 				return _.ViewMusic.GHBPLHBNMBK_FreeMusicId == freeMusicId && _.ViewMusic.MNNHHJBBICA_EventType == (int)gameEventType;
@@ -511,9 +510,9 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA3424 Offset: 0xCA3424 VA: 0xCA3424
-		public int FindIndex(Predicate<VerticalMusicDataList.MusicListData> match, bool line6Mode, bool simulation)
+		public int FindIndex(Predicate<MusicListData> match, bool line6Mode, bool simulation)
 		{
-			List<VerticalMusicDataList.MusicListData> list = null;
+			List<MusicListData> list = null;
 			if (simulation)
 			{
 				if(line6Mode)
@@ -551,9 +550,9 @@ namespace XeApp.Game.MusicSelect
 		//public VerticalMusicDataList.MusicListData Find(Predicate<VerticalMusicDataList.MusicListData> match, bool line6Mode, bool simulation) { }
 
 		//// RVA: 0xCA3888 Offset: 0xCA3888 VA: 0xCA3888
-		public void AddList(List<VerticalMusicDataList.MusicListData> addList, bool line6Mode, bool simulation)
+		public void AddList(List<MusicListData> addList, bool line6Mode, bool simulation)
 		{
-			List<VerticalMusicDataList.MusicListData> inList;
+			List<MusicListData> inList;
 			if(simulation)
 			{
 				if(line6Mode)

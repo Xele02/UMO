@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using XeApp.Core;
 
 namespace XeApp.Game.Menu
@@ -12,7 +13,7 @@ namespace XeApp.Game.Menu
 		private float m_touchWaitCounter; // 0x14
 		private bool m_dirtyClose; // 0x18
 
-		//public bool DirtyClose { get; set; } 0x12D1228 0x12D1230
+		public bool DirtyClose { get { return m_dirtyClose; } set { m_dirtyClose = value; } } //0x12D1228 0x12D1230
 
 		// RVA: 0x12D1238 Offset: 0x12D1238 VA: 0x12D1238
 		public void OnDestroy()
@@ -42,10 +43,18 @@ namespace XeApp.Game.Menu
 		//public void Show(int snsId, UnityAction pushAction, bool isButtonEnable = True) { }
 
 		//// RVA: 0x12D14E4 Offset: 0x12D14E4 VA: 0x12D14E4
-		//public void ShowOffer(UnityAction pushAction, bool isButtonEnable = True) { }
+		public void ShowOffer(UnityAction pushAction, bool isButtonEnable = true)
+		{
+			Show(KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.AHHJLDLAPAN_DivaId, KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.PGOGHFDBIBA_OfferName, KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.PNOBKANLFHA_OfferText, pushAction, isButtonEnable, true);
+			m_dirtyClose = false;
+		}
 
 		//// RVA: 0x12D1408 Offset: 0x12D1408 VA: 0x12D1408
-		//private void Show(int charaId, string header, string body, UnityAction pushAction, bool isButtonEnable = True, bool IsOffer = False) { }
+		private void Show(int charaId, string header, string body, UnityAction pushAction, bool isButtonEnable = true, bool IsOffer = false)
+		{
+			TodoLogger.Log(0, "Show");
+			pushAction();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x735264 Offset: 0x735264 VA: 0x735264
 		//// RVA: 0x12D17A8 Offset: 0x12D17A8 VA: 0x12D17A8

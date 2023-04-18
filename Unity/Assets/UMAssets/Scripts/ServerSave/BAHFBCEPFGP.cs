@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 [System.Obsolete("Use BAHFBCEPFGP_AddMusic", true)]
 public class BAHFBCEPFGP { }
 public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
@@ -41,13 +43,44 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				UnityEngine.Debug.Log(JpStringLiterals.StringLiteral_9528 + DLAEJOBELBH_Id);
+				Debug.Log(JpStringLiterals.StringLiteral_9528 + DLAEJOBELBH_Id);
 			}
 		}
 	}
 
 	// // RVA: 0xF14574 Offset: 0xF14574 VA: 0xF14574
-	// public bool CGEPJMFFLLJ(int DLAEJOBELBH_Id, int HPNLNIFICNI) { }
+	public bool CGEPJMFFLLJ(int DLAEJOBELBH_Id, int HPNLNIFICNI)
+	{
+		int a = (DLAEJOBELBH_Id - 1) >> 3;
+		if(a < 38)
+		{
+			if(HPNLNIFICNI >= 2 && HPNLNIFICNI < 6)
+			{
+				byte[] array = null;
+				switch (HPNLNIFICNI)
+				{
+					case 2:
+						array = BJFCIFJLJJI_ShowAddUnitLiveDio;
+						break;
+					case 3:
+						array = IEGFCNMOCNE_ShowAddUnitLiveTrio;
+						break;
+					case 4:
+						array = FALFJCGGDHB_ShowAddUnitLiveQuartet;
+						break;
+					case 5:
+						array = KKPKAMANKOH_ShowAddUnitLiveQuintet;
+						break;
+				}
+				return ((1 << ((DLAEJOBELBH_Id - 1) & 7)) & KKPKAMANKOH_ShowAddUnitLiveQuintet[a]) != 0;
+			}
+			else
+			{
+				Debug.Log(JpStringLiterals.StringLiteral_9528 + DLAEJOBELBH_Id.ToString());
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0xF146F4 Offset: 0xF146F4 VA: 0xF146F4
 	// public void KDJJJAIPJCA() { }

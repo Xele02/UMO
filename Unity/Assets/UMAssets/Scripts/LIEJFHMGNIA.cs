@@ -40,7 +40,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	private int GJIIGKLIGLA; // 0x78
 
 	public bool MMEGDFPNONJ { get { return AHHJLDLAPAN != 0; } } //0x17F754C LCEFNOMFGCC
-	//public bool HHBJAEOIGIH { get; } 0x17F755C EEGJFFAIOPD
+	public bool HHBJAEOIGIH { get { return DDNCFHEKBAF != 0; } } //0x17F755C EEGJFFAIOPD
 	//public bool PCFICCCLBNP { get; } 0x17F756C NNCIIIFBKEG
 	//public bool GOELFAECHGI { get; } 0x17F758C AAFHNPBKGCH
 

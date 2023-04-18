@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Core;
 
 namespace XeApp.Game.Menu
 {
@@ -26,50 +27,160 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x178A330 Offset: 0x178A330 VA: 0x178A330
-		// public void SetStatus(PopupUnlock.UnlockInfo info) { }
+		public void SetStatus(PopupUnlock.UnlockInfo info)
+		{
+			if (info == null)
+				return;
+			if (info.param != null)
+				m_info = info;
+		}
 
 		// // RVA: 0x178A360 Offset: 0x178A360 VA: 0x178A360
 		// public void Reset() { }
 
 		// // RVA: 0x178A3D8 Offset: 0x178A3D8 VA: 0x178A3D8
-		// public void Update() { }
+		public void Update()
+		{
+			if(m_mainUpdate.Count > 0)
+			{
+				if(!m_mainUpdate[0].MoveNext())
+				{
+					m_mainUpdate.RemoveAt(0);
+				}
+				if (m_mainUpdate.Count == 0)
+					IsClosed = true;
+			}
+		}
 
 		// // RVA: 0x178A584 Offset: 0x178A584 VA: 0x178A584
-		// public void Show() { }
+		public void Show()
+		{
+			if (IsOpen)
+				return;
+			IsOpen = true;
+			m_mainUpdate.Add(MainPhase());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7040D4 Offset: 0x7040D4 VA: 0x7040D4
 		// // RVA: 0x178A620 Offset: 0x178A620 VA: 0x178A620
-		// private IEnumerator MainPhase() { }
+		private IEnumerator MainPhase()
+		{
+			//0x178BA70
+			if((int)m_info.param.unlockType -1 < 4)
+			{
+				switch(m_info.param.unlockType)
+				{
+					case PopupUnlock.eUnlockType.Music:
+						m_mainUpdate.Add(MusicUnlockPhase());
+						break;
+					case PopupUnlock.eUnlockType.Stage:
+						m_mainUpdate.Add(StageUnlockPhase());
+						break;
+					case PopupUnlock.eUnlockType.Diva:
+						m_mainUpdate.Add(DivaUnlockPhase());
+						break;
+					case PopupUnlock.eUnlockType.DivaNotify:
+						m_mainUpdate.Add(DivaNotifyPhase());
+						break;
+				}
+			}
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70414C Offset: 0x70414C VA: 0x70414C
 		// // RVA: 0x178A6CC Offset: 0x178A6CC VA: 0x178A6CC
-		// private IEnumerator MusicUnlockPhase() { }
+		private IEnumerator MusicUnlockPhase()
+		{
+			TodoLogger.Log(0, "MusicUnlockPhase");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7041C4 Offset: 0x7041C4 VA: 0x7041C4
 		// // RVA: 0x178A778 Offset: 0x178A778 VA: 0x178A778
-		// private IEnumerator StageUnlockPhase() { }
+		private IEnumerator StageUnlockPhase()
+		{
+			TodoLogger.Log(0, "StageUnlockPhase");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70423C Offset: 0x70423C VA: 0x70423C
 		// // RVA: 0x178A80C Offset: 0x178A80C VA: 0x178A80C
-		// private IEnumerator DivaNotifyPhase() { }
+		private IEnumerator DivaNotifyPhase()
+		{
+			TodoLogger.Log(0, "DivaNotifyPhase");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7042B4 Offset: 0x7042B4 VA: 0x7042B4
 		// // RVA: 0x178A8A0 Offset: 0x178A8A0 VA: 0x178A8A0
-		// private IEnumerator DivaUnlockPhase() { }
+		private IEnumerator DivaUnlockPhase()
+		{
+			TodoLogger.Log(0, "DivaUnlockPhase");
+			yield break;
+		}
 
 		// // RVA: 0x178A934 Offset: 0x178A934 VA: 0x178A934 Slot: 4
-		public void Dispose() { }
+		public void Dispose()
+		{
+			if(MusicDirection != null)
+			{
+				UnityEngine.Object.Destroy(MusicDirection.gameObject);
+				MusicDirection = null;
+			}
+			UnloadAssetBundle();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70432C Offset: 0x70432C VA: 0x70432C
 		// // RVA: 0x178AC90 Offset: 0x178AC90 VA: 0x178AC90
-		// public IEnumerator LoadLayoutMusic(Action callback) { }
+		public IEnumerator LoadLayoutMusic(Action callback)
+		{
+			//0x178B85C
+			if(MusicDirection == null)
+			{
+				yield return LoadLayout("ly/047.xab", "root_pop_music_ul_dir_layout_root", (GameObject instance) =>
+				{
+					//0x178B23C
+					if(CanvasParent != null)
+					{
+						instance.transform.SetParent(CanvasParent.transform, false);
+					}
+					MusicDirection = instance.GetComponent<LayoutPopupUnlockMusicDirection>();
+					instance.transform.SetAsLastSibling();
+				});
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7043A4 Offset: 0x7043A4 VA: 0x7043A4
 		// // RVA: 0x178AD58 Offset: 0x178AD58 VA: 0x178AD58
-		// private IEnumerator LoadLayout(string bundleName, string assetName, Action<GameObject> callback) { }
+		private IEnumerator LoadLayout(string bundleName, string assetName, Action<GameObject> callback)
+		{
+			Font font; // 0x24
+			AssetBundleLoadLayoutOperationBase operation; // 0x28
+
+			//0x178B59C
+			font = GameManager.Instance.GetSystemFont();
+			operation = AssetBundleManager.LoadLayoutAsync(bundleName, assetName);
+			yield return operation;
+			yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0x178B3B0
+				callback(instance);
+			});
+			AddBundleCounter(bundleName);
+		}
 
 		// // RVA: 0x178AE60 Offset: 0x178AE60 VA: 0x178AE60
-		// private void AddBundleCounter(string bundleName) { }
+		private void AddBundleCounter(string bundleName)
+		{
+			if(m_bundleCounter.ContainsKey(bundleName))
+			{
+				m_bundleCounter[bundleName]++;
+			}
+			else
+			{
+				m_bundleCounter.Add(bundleName, 1);
+			}
+		}
 
 		// // RVA: 0x178AF74 Offset: 0x178AF74 VA: 0x178AF74
 		// public void LoadAssetBundle() { }
@@ -79,10 +190,15 @@ namespace XeApp.Game.Menu
 		// private IEnumerator UnionBundle() { }
 
 		// // RVA: 0x178AA34 Offset: 0x178AA34 VA: 0x178AA34
-		// public void UnloadAssetBundle() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7044B4 Offset: 0x7044B4 VA: 0x7044B4
-		// // RVA: 0x178B23C Offset: 0x178B23C VA: 0x178B23C
-		// private void <LoadLayoutMusic>b__33_0(GameObject instance) { }
+		public void UnloadAssetBundle()
+		{
+			foreach(var b in m_bundleCounter)
+			{
+				for(int i = 0; i < b.Value; i++)
+				{
+					AssetBundleManager.UnloadAssetBundle(b.Key);
+				}
+			}
+		}
 	}
 }

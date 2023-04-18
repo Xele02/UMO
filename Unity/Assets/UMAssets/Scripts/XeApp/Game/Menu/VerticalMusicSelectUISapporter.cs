@@ -145,7 +145,16 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADAD1C Offset: 0xADAD1C VA: 0xADAD1C
 		public void SetRewardMark(IBJAKJJICBC musicData, bool withoutReward)
 		{
-			TodoLogger.Log(0, "SetRewardMark");
+			MusicRewardStat r = m_rewardStats[(int)m_difficulty];
+			MusicScrollCenterItem item = m_musicSelectList.MusicScrollView.CenterItem;
+			if(withoutReward)
+			{
+				item.SetRewardState(false, false, false);
+			}
+			else
+			{
+				item.SetRewardState(r.isScoreComplete, r.isComboComplete, r.isClearCountComplete);
+			}
 		}
 
 		// // RVA: 0xADAEC4 Offset: 0xADAEC4 VA: 0xADAEC4

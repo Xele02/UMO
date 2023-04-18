@@ -54,7 +54,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1EDBC44 Offset: 0x1EDBC44 VA: 0x1EDBC44
-		// public void Reset() { }
+		public void Reset()
+		{
+			return;
+		}
 
 		// // RVA: 0x1EDBC48 Offset: 0x1EDBC48 VA: 0x1EDBC48
 		public void Show()

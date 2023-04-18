@@ -828,7 +828,19 @@ namespace XeApp.Game.Menu
 		// public void ShowSnsNotice(int snsId, UnityAction pushAction) { }
 
 		// // RVA: 0xB32704 Offset: 0xB32704 VA: 0xB32704
-		// public void ShowOfferNotice(UnityAction pushAction) { }
+		public void ShowOfferNotice(UnityAction pushAction)
+		{
+			if(pushAction == null)
+			{ 
+				pushAction = () =>
+				{
+					//0xB37DC0
+					m_menuTransitionControl.Mount(TransitionUniqueId.OFFERSELECT, null, true, MenuSceneCamebackInfo.CamBackUnityScene.None);
+					KDHGBOOECKC.HHCJCDFCLOB.HJOLFCDAIGE(BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA/*3*/);
+				};
+			}
+			GameManager.Instance.ShowOfferNotice(pushAction, true);
+		}
 
 		// // RVA: 0xB327F0 Offset: 0xB327F0 VA: 0xB327F0
 		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK_DivaInfo diva, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isChangeScene = true, bool isCloseOnly = false, int divaSlotNumber = -1, bool isGoDiva = false)
@@ -1375,11 +1387,7 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x6C832C Offset: 0x6C832C VA: 0x6C832C
 		// // RVA: 0xB37CF8 Offset: 0xB37CF8 VA: 0xB37CF8
 		// private void <ShowSnsNotice>b__189_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6C833C Offset: 0x6C833C VA: 0x6C833C
-		// // RVA: 0xB37DC0 Offset: 0xB37DC0 VA: 0xB37DC0
-		// private void <ShowOfferNotice>b__190_0() { }
-
+		
 		// [CompilerGeneratedAttribute] // RVA: 0x6C834C Offset: 0x6C834C VA: 0x6C834C
 		// // RVA: 0xB37E34 Offset: 0xB37E34 VA: 0xB37E34
 		// private void <OnShowHelpPopup>b__232_1() { }

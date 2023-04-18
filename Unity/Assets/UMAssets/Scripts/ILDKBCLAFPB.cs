@@ -2324,7 +2324,17 @@ public class ILDKBCLAFPB
 			//public void .ctor(int EOCPIGDIFNB, int JJNLEPEKNDO, int PGMJCBIHNHK, int DPDBMECAIIO, int AONOGHPAENH, int ALGFGPCPGFK, int GONLKIDILLH, int LHPDCGNKPHD) { }
 
 			//// RVA: 0x2031990 Offset: 0x2031990 VA: 0x2031990
-			//public void LHPDDGIJKNB() { }
+			public void LHPDDGIJKNB()
+			{
+				LHPDCGNKPHD_sortItem = 40;
+				DPDBMECAIIO_NumUnitsFilterBits = 0;
+				GONLKIDILLH_BookmarkIndex = 0;
+				AONOGHPAENH_filterMusicUnLock = 0;
+				ALGFGPCPGFK_filterRange = 0;
+				EOCPIGDIFNB_MusicAttrFilterBits = 0;
+				JJNLEPEKNDO_ComboFilterBits = 0;
+				PGMJCBIHNHK_RewardFilterBits = 0;
+			}
 
 			//// RVA: 0x202D040 Offset: 0x202D040 VA: 0x202D040
 			public void ODDIHGPONFL(CLBMCCEEDGE_VerticalMusicSelect DNNHDJPNIAK)

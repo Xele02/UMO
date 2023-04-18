@@ -74,6 +74,7 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceValkyrieUnlock = true;
 	public bool ForceSimulationOpen = true;
 	public bool ForceTutoSkip = true;
+	public bool ForceAllStoryMusicUnlock = true;
 	public int ForcePlayerLevel = 90;
 	public bool IsInvincibleCheat = true;
 

@@ -1226,7 +1226,14 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x9A0AB0 Offset: 0x9A0AB0 VA: 0x9A0AB0
-		// public void ShowOfferNotice(UnityAction pushAction, bool isButtonEnable = True) { }
+		public void ShowOfferNotice(UnityAction pushAction, bool isButtonEnable = true)
+		{
+			if(m_snsNotification != null)
+			{
+				m_snsNotification.gameObject.SetActive(true);
+				m_snsNotification.ShowOffer(pushAction, isButtonEnable);
+			}
+		}
 
 		// // RVA: 0x9A0BB8 Offset: 0x9A0BB8 VA: 0x9A0BB8
 		public void CloseOfferNotice()

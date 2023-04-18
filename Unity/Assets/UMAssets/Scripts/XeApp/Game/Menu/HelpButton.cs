@@ -194,7 +194,17 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xE30C24 Offset: 0xE30C24 VA: 0xE30C24
-		// public void ShowMusicSelectHelpButton() { }
+		public void ShowMusicSelectHelpButton()
+		{
+			int a = FindHelpUniqueId(102);
+			if (a < 0)
+				return;
+			m_callHelpId = a;
+			m_searchId = 102;
+			m_eventType = 0;
+			m_pattern = 13;
+			Show(m_pattern);
+		}
 
 		// // RVA: 0xE30C6C Offset: 0xE30C6C VA: 0xE30C6C
 		public void ShowResultHelpButton()
@@ -246,7 +256,17 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xE30964 Offset: 0xE30964 VA: 0xE30964
 		private void Show(int pattern)
 		{
-			TodoLogger.Log(0, "HelpButton.Show");
+			if(!m_isShow)
+			{
+				m_buttonAnimLayout.StartChildrenAnimGoStop("go_in", "st_in");
+				m_isShow = true;
+			}
+			m_rectTransform.anchorMax = AnchorPosTbl[pattern];
+			m_rectTransform.anchorMin = AnchorPosTbl[pattern];
+			m_rectTransform.pivot = PivotTbl[pattern];
+			m_rectTransform.SetAsLastSibling();
+			m_buttonAnimLayout.StartAnimGoStop(pattern.ToString("00"));
+			m_state = State.Show;
 		}
 
 		// // RVA: 0xE30B7C Offset: 0xE30B7C VA: 0xE30B7C

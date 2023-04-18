@@ -88,7 +88,36 @@ public class EEDKAACNBBG_MusicData
 	// public int IOMLIADJJLD(bool FJNPMGBCBGJ = False) { }
 
 	// // RVA: 0x1C491B4 Offset: 0x1C491B4 VA: 0x1C491B4
-	// public bool JAPLKHPLOOF(OHCAABOMEOF.KGOGMKMBCPP JONPKLHMOBL) { }
+	public bool JAPLKHPLOOF(OHCAABOMEOF.KGOGMKMBCPP_EventType JONPKLHMOBL)
+	{
+		int multi_dance_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3);
+		if (JONPKLHMOBL != 0 || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level >= multi_dance_player_level)
+		{
+			if(JONPKLHMOBL == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL && BNCMJNMIDIN_AvaiableDivaModes > 1 && (BNCMJNMIDIN_AvaiableDivaModes & 1) == 0)
+			{
+				int numDiva = 1;
+				for(int i = 1; i <= 31; i++)
+				{
+					if ((BNCMJNMIDIN_AvaiableDivaModes & (1 << i)) != 0)
+					{
+						numDiva = i + 1;
+						break;
+					}
+				}
+				int cnt = 0;
+				for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
+				{
+					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH > 0)
+						cnt++;
+				}
+				if (cnt < numDiva)
+					return false;
+			}
+			if (BNCMJNMIDIN_AvaiableDivaModes > 1)
+				return true;
+		}
+		return false;
+	}
 
 	// // RVA: 0x1C48E2C Offset: 0x1C48E2C VA: 0x1C48E2C
 	public void OBGKIMDIAJF_CheckIsDlded()

@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 		{
 			CheckTryInstall();
 			m_unitLiveLocalSaveData = new MMOLNAHHDOM();
-			m_unitLiveLocalSaveData.PCODDPDFLHK();
+			m_unitLiveLocalSaveData.PCODDPDFLHK_Read();
 			m_isConfirmedUnitDance = false;
 		}
 
@@ -176,7 +176,7 @@ namespace XeApp.Game.Menu
 		protected override void OnDestoryScene()
 		{
 			Release();
-			m_unitLiveLocalSaveData.HJMKBCFJOOH(false);
+			m_unitLiveLocalSaveData.HJMKBCFJOOH_Write(false);
 		}
 
 		// RVA: 0xF3A03C Offset: 0xF3A03C VA: 0xF3A03C Slot: 15
