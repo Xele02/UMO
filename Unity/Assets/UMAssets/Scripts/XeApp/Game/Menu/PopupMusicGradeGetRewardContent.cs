@@ -1,3 +1,4 @@
+using mcrs;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -157,14 +158,29 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1694B98 Offset: 0x1694B98 VA: 0x1694B98
 		private void UpdateContent(IFlexibleListItem item)
 		{
-			TodoLogger.Log(0, "UpdateContent");
+			if(item != null)
+			{
+				if(item.Layout != null)
+				{
+					LayoutMusicRateList.FlexibleListItem_Reward layout = item as LayoutMusicRateList.FlexibleListItem_Reward;
+					LayoutPopupMusicGradeRewardListItem it = item.Layout.GetComponent<LayoutPopupMusicGradeRewardListItem>();
+					if(it == null)
+						return;
+					it.SetStatus(layout);
+					it.OnClickButton = (int itemId, int itemNum) =>
+					{
+						//0x169521C
+						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+						OnShowItemDetails(itemId, itemNum);
+					};
+				}
+			}
 		}
 
 		//// RVA: 0x1694E50 Offset: 0x1694E50 VA: 0x1694E50
-		//public void OnShowItemDetails(int itemId, int itemNum) { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x7068A4 Offset: 0x7068A4 VA: 0x7068A4
-		//// RVA: 0x169521C Offset: 0x169521C VA: 0x169521C
-		//private void <UpdateContent>b__18_0(int itemId, int itemNum) { }
+		public void OnShowItemDetails(int itemId, int itemNum)
+		{
+			TodoLogger.LogNotImplemented("OnShowItemDetails");
+		}
 	}
 }

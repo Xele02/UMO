@@ -1331,7 +1331,33 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB35920 Offset: 0xB35920 VA: 0xB35920
-		// public bool CheckEventLimit(IBJAKJJICBC musicData, bool isCheckDateLine = True, bool isDoTransition = True, KGCNCBOKCBA.GNENJEHKMHD status = 5, int eventUniqueId = 0) { }
+		public bool CheckEventLimit(IBJAKJJICBC musicData, bool isCheckDateLine = true, bool isDoTransition = true, KGCNCBOKCBA.GNENJEHKMHD status = KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL/*5*/, int eventUniqueId = 0)
+		{
+			if(isCheckDateLine)
+			{
+				if (CheckDatelineAndAssetUpdate())
+					return true;
+			}
+			if (musicData == null)
+				return false;
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			if (!musicData.AJGCPCMLGKO_IsEvent)
+			{
+				if(!musicData.BNIAJAKIAJC_IsEventMinigame)
+				{
+					if(musicData.OEILJHENAHN < 5)
+					{
+						if (musicData.OEILJHENAHN == 0)
+							return false;
+						TodoLogger.Log(0, "CheckEventLimit 1");
+					}
+					TodoLogger.Log(0, "CheckEventLimit 2");
+				}
+				TodoLogger.Log(0, "CheckEventLimit 3");
+			}
+			TodoLogger.Log(0, "CheckEventLimit 4");
+			return false;
+		}
 
 		// // RVA: 0xB36020 Offset: 0xB36020 VA: 0xB36020
 		// public bool CheckEventLimit(OHCAABOMEOF.KGOGMKMBCPP eventType, bool isCheckDateLine = True, bool isDoTransition = True, KGCNCBOKCBA.GNENJEHKMHD status = 5, int eventUniqueId = 0) { }

@@ -1368,10 +1368,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBECFD4 Offset: 0xBECFD4 VA: 0xBECFD4 Slot: 56
-		//protected override void OnApplyUnitLiveButtonSetting(bool isUnit)
-		//{
-		//	TodoLogger.Log(0, "!!!");
-		//}
+		protected override void OnApplyUnitLiveButtonSetting(bool isUnit)
+		{
+			m_musicSelectUISapporter.SetUnitButton(selectMusicData, !selectMusicListData.IsOpen);
+		}
 
 		// // RVA: 0xBEAA10 Offset: 0xBEAA10 VA: 0xBEAA10
 		private void SetMusicTab(VerticalMusicSelecChoiceMusicListTab.MusicTab type)

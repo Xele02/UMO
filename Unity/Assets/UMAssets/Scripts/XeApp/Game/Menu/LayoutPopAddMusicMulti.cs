@@ -22,10 +22,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15DCEE8 Offset: 0x15DCEE8 VA: 0x15DCEE8
-		//public void AddScrollContent(SwapScrollListContent content) { }
+		public void AddScrollContent(SwapScrollListContent content)
+		{
+			scrollList.AddScrollObject(content);
+		}
 
 		//// RVA: 0x15DCF1C Offset: 0x15DCF1C VA: 0x15DCF1C
-		//public void ApplyScrollContent() { }
+		public void ApplyScrollContent()
+		{
+			scrollList.Apply();
+		}
 
 		//// RVA: 0x15DCF48 Offset: 0x15DCF48 VA: 0x15DCF48
 		public void VisibleRegionUpdate()

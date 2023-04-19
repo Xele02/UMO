@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 using XeApp.Game.Common;
 
@@ -19,7 +20,11 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73353C Offset: 0x73353C VA: 0x73353C
 		//// RVA: 0x116044C Offset: 0x116044C VA: 0x116044C Slot: 4
-		//public override IEnumerator LoadAssetBundlePrefab(Transform parent) { }
+		public override IEnumerator LoadAssetBundlePrefab(Transform parent)
+		{
+			TodoLogger.Log(0, "LoadAssetBundlePrefab");
+			yield return null;
+		}
 
 		//[DebuggerHiddenAttribute] // RVA: 0x7335B4 Offset: 0x7335B4 VA: 0x7335B4
 		//[CompilerGeneratedAttribute] // RVA: 0x7335B4 Offset: 0x7335B4 VA: 0x7335B4

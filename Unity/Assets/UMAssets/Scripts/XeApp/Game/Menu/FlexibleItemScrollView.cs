@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 			float val = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
 			if(val >= 0)
 			{
-				//?
+				val = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
 			}
 			return val;
 		}
