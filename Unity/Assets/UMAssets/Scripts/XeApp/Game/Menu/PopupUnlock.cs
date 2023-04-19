@@ -475,20 +475,62 @@ namespace XeApp.Game.Menu
 			switch (unlockTYpe)
 			{
 				case eUnlockType.Music:
-					PopupUnlockMusicContentSetting psetting = new PopupUnlockMusicContentSetting();
-					res = psetting;
-					psetting.TitleText = "";
-					psetting.WindowSize = 0;
-					psetting.Buttons = new ButtonInfo[1]
+					if (param.Count < 2)
 					{
+						PopupUnlockMusicContentSetting psetting = new PopupUnlockMusicContentSetting();
+						res = psetting;
+						res.TitleText = "";
+						res.WindowSize = 0;
+						res.Buttons = new ButtonInfo[1]
+						{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
-					};
-					psetting.UnlockInfo = m_unlockInfo;
-					psetting.closeAction = () =>
+						};
+						psetting.UnlockInfo = m_unlockInfo;
+						psetting.closeAction = () =>
+						{
+							//0x115C22C
+							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ENIPGFLGJHH_LastStory = 0;
+						};
+					}
+					else
 					{
-						//0x115C22C
-						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ENIPGFLGJHH_LastStory = 0;
-					};
+						PopupAddMusicMultiSetting psetting = new PopupAddMusicMultiSetting();
+						res = psetting;
+						res.TitleText = "";
+						res.WindowSize = SizeType.Large;
+						res.Buttons = new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+						};
+						psetting.UnlockInfo = m_unlockInfo;
+					}
+					break;
+				case eUnlockType.MultiDivaMusic:
+					if (param.Count > 1)
+					{
+						PopupAddUnitDanceMusicMultiSetting mdmsetting = new PopupAddUnitDanceMusicMultiSetting();
+						res = mdmsetting;
+						res.TitleText = "";
+						res.WindowSize = SizeType.Large;
+						//LAB_0115b7b4
+						res.Buttons = new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+						};
+						mdmsetting.UnlockInfo = m_unlockInfo;
+					}
+					else
+					{
+						PopupAddMultiDivaMusicSetting mdmsetting = new PopupAddMultiDivaMusicSetting();
+						res = mdmsetting;
+						res.TitleText = "";
+						res.WindowSize = SizeType.Small;
+						res.Buttons = new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+						};
+						mdmsetting.UnlockInfo = m_unlockInfo;
+					}
 					break;
 				default:
 					TodoLogger.Log(0, "CreatePopupSetting " + unlockTYpe);

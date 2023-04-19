@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1791A60 Offset: 0x1791A60 VA: 0x1791A60 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			m_root = layout.Root;
+			m_root = layout.Root[0] as AbsoluteLayout;
 			Loaded();
 			return true;
 		}

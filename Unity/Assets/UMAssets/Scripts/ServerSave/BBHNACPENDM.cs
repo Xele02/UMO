@@ -555,11 +555,13 @@ public class BBHNACPENDM_ServerSaveData
 			BHBONAHFKHD data = new BHBONAHFKHD();
 			for(int i = 0; i < l1.Count; i++)
 			{
+				TodoLogger.Log(TodoLogger.OptimizedSave, "OptimizedSave not neededd for now as we are only local");
+				continue;
 				KLFDBFMNLBL_ServerSaveBlock b = MGJKEJHEBPO_Blocks[l1[i]];
 				KLFDBFMNLBL_ServerSaveBlock b2 = GJLFANGDGCL.MGJKEJHEBPO_Blocks[l1[i]];
 				b.AGHKODFKOJI(data, b2, v);
 			}
-			if(data.MGPEIGDOMPH.HNBFOAJIIAL_Count < 101)
+			if (data.MGPEIGDOMPH.HNBFOAJIIAL_Count < 101)
 			{
 				EMHDCKMFCGE data2 = new EMHDCKMFCGE(data.MGPEIGDOMPH, l2, true, v);
 				return data2;
