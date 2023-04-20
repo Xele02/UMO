@@ -665,14 +665,29 @@ namespace XeApp.Game.Menu
 		// RVA: 0xBE65C8 Offset: 0xBE65C8 VA: 0xBE65C8 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			TodoLogger.Log(0, "!!!");
+			m_musicList.MusicScrollView.ScrollEnable(false);
+			m_musicList.Leave();
+			m_musicDetail.Leave();
+			m_utaRate.Leave();
+			m_difficultyButtonGroup.Leave();
+			m_seriesButtonGroup.Leave();
+			m_eventBanner.Leave();
+			m_eventItem.Leave();
+			m_filterButton.Leave();
+			m_line6Button.Leave();
+			m_simulationButton.Leave();
+			m_choiceMusicTab.Leave();
+			m_playButton.Leave();
+			m_orderButton.Leave();
+			MenuScene.Instance.LobbyButtonControl.Hide(false);
 		}
 
 		// RVA: 0xBE683C Offset: 0xBE683C VA: 0xBE683C Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			TodoLogger.Log(0, "!!!");
-			return true;
+			return !m_musicList.IsPlaying() && !m_musicDetail.IsPlaying() && !m_utaRate.IsPlaying() && !m_difficultyButtonGroup.IsPlaying() && !m_seriesButtonGroup.IsPlaying() && !m_eventBanner.IsPlaying() &&
+				!m_eventItem.IsPlaying() && !m_filterButton.IsPlaying() && !m_line6Button.IsPlaying() && !m_simulationButton.IsPlaying() && !m_choiceMusicTab.IsPlaying() &&
+				!m_playButton.IsPlaying() && !m_orderButton.IsPlaying();
 		}
 
 		// RVA: 0xBE6A30 Offset: 0xBE6A30 VA: 0xBE6A30 Slot: 20
@@ -691,13 +706,14 @@ namespace XeApp.Game.Menu
 		// RVA: 0xBE6B00 Offset: 0xBE6B00 VA: 0xBE6B00 Slot: 48
 		protected override void ReleaseScene()
 		{
-			TodoLogger.Log(0, "!!!");
+			GameManager.Instance.SetFPS(30);
 		}
 
 		// RVA: 0xBE6BA0 Offset: 0xBE6BA0 VA: 0xBE6BA0 Slot: 49
 		protected override void ReleaseCache()
 		{
-			TodoLogger.Log(0, "!!!");
+			MenuScene.Instance.BgControl.DestroyCacheBg();
+			m_isBgCached = false;
 		}
 
 		// RVA: 0xBE6C68 Offset: 0xBE6C68 VA: 0xBE6C68 Slot: 50

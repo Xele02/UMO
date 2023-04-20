@@ -495,44 +495,70 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC95E8 Offset: 0xAC95E8 VA: 0xAC95E8 Slot: 58
 		protected virtual bool CurrentMusicDecisionCheck(bool isSimulation, Action cancelCallback, MKIKFJKPEHK viewBoostData, int selectIndex = 0)
 		{
-			/*if(viewBoostData == null)
+			if(viewBoostData == null)
 			{
-				if(selectMusicData.LHONOILACFL)
+				if(selectMusicData.LHONOILACFL_IsWeeklyEvent)
 				{
-					if(selectMusicData.MOJMEFIENDM < 1)
+					if(selectMusicData.MOJMEFIENDM_WeeklyEventCount < 1)
 					{
-						OpenWeekRecoveryWindow((int recovery) =>
+						/*OpenWeekRecoveryWindow((int recovery) =>
 						{
 							//0xAD3920
 							TodoLogger.Log(0, "OpenWeekRecoveryWindow");
 						}, cancelCallback);
-						return false;
+						return false;*/
+						TodoLogger.Log(0, "CurrentMusicDecisionCheck Event");
 					}
 				}
-				CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI.DCLKMNGMIKC
-			}*/
-			TodoLogger.Log(0, "CurrentMusicDecisionCheck");
-			OpenStaminaWindow(() => {
-				DecideCurrentMusic(isSimulation);
-			}, null);
-			return false;
+				if (selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Energy <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC())
+					return true;
+				OpenStaminaWindow(() =>
+				{
+					//0xAD3AC8
+					OnClickPlayButton(isSimulation);
+				}, cancelCallback);
+				return false;
+			}
+			else
+			{
+				if (viewBoostData.EFFBJDMGIGO(selectIndex) != MKIKFJKPEHK.IMIDFBNGHCG.CNAMHABEOPF/*1*/)
+					return true;
+				OpenStaminaWindow(() => {
+					//0xAD3B00
+					DecideCurrentMusic(isSimulation);
+				}, cancelCallback);
+				return false;
+			}
 		}
 
 		// // RVA: 0xAC9FF8 Offset: 0xAC9FF8 VA: 0xAC9FF8
 		private void CheckBoostData(bool isSimulation, Action<bool> endCallback, Action cancelCallback)
 		{
-			TodoLogger.Log(0, "CheckBoostData");
-			this.StartCoroutineWatched(Co_CheckBoostData(isSimulation, endCallback, cancelCallback));
+			GameManager.Instance.StartCoroutineWatched(Co_CheckBoostData(isSimulation, endCallback, cancelCallback));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6B6C Offset: 0x6F6B6C VA: 0x6F6B6C
 		// // RVA: 0xACA0C8 Offset: 0xACA0C8 VA: 0xACA0C8
 		private IEnumerator Co_CheckBoostData(bool isSimulation, Action<bool> endCallback, Action cancelCallback)
 		{
+			MKIKFJKPEHK viewBoostData;
+
 			//0xAD49C0
-			TodoLogger.Log(0, "Co_CheckBoostData");
-			CurrentMusicDecisionCheck(true, null, null, 0);
-			endCallback(isSimulation);
+			Database.Instance.gameSetup.ResetSelectedDashIndex();
+			if (m_eventCtrl != null)
+			{
+				TodoLogger.Log(0, "Co_CheckBoostData event");
+				//m_eventCtrl.OJGHCKMPJFP();
+			}
+			viewBoostData = new MKIKFJKPEHK();
+			if(viewBoostData.DPICLLJJPAC(selectMusicData, (int)diff, isLine6Mode))
+			{
+				TodoLogger.Log(0, "Co_CheckBoostData event");
+			}
+			if (!CurrentMusicDecisionCheck(true, null, null, 0))
+				yield break;
+			if(endCallback != null)
+				endCallback(isSimulation);
 			yield break;
 		}
 
@@ -1054,8 +1080,36 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC9C88 Offset: 0xAC9C88 VA: 0xAC9C88
 		protected void OpenStaminaWindow(Action recoveryCallback, Action cancelCallback)
 		{
-			TodoLogger.Log(0, "OpenStaminaWindow");
-			recoveryCallback();
+			MenuScene.Instance.InputDisable();
+			PopupWindowManager.OpenStaminaWindow(MenuScene.Instance.DenomControl, () =>
+			{
+				//0xAD3F14
+				MenuScene.Instance.InputEnable();
+				if (recoveryCallback != null)
+					recoveryCallback();
+			}, () =>
+			{
+				//0xAD3FC8
+				MenuScene.Instance.InputEnable();
+				if (cancelCallback != null)
+					cancelCallback();
+			}, () =>
+			{
+				//0xAD33A4
+				MenuScene.Instance.GotoTitle();
+			}, (TransitionList.Type gotoSceneType) =>
+			{
+				//0xAD3440
+				if(gotoSceneType == TransitionList.Type.TITLE)
+				{
+					MenuScene.Instance.GotoTitle();
+				}
+				else if(gotoSceneType == TransitionList.Type.LOGIN_BONUS)
+				{
+					MenuScene.Instance.GotoLoginBonus();
+				}
+				MenuScene.Instance.InputEnable();
+			});
 		}
 
 		// // RVA: 0xAD16B4 Offset: 0xAD16B4 VA: 0xAD16B4

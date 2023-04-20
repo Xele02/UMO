@@ -80,7 +80,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	private int PPDEOMLMEKC = FBGGEFFJJHB_Key; // 0x5C
 	private sbyte IKGGKOFGMNC; // 0x60
 	private sbyte CICKCGDKICN = JFOFMKBJBBE_False; // 0x61
-	// public BKKMNPEEILG DACLONHOFLA; // 0x64
+	public BKKMNPEEILG DACLONHOFLA; // 0x64
 	private int KAEIHNCACOD = FBGGEFFJJHB_Key; // 0x68
 	private sbyte MPDBHMLFLLA = JFOFMKBJBBE_False; // 0x6C
 	private sbyte JMFIOFIBLFH = JFOFMKBJBBE_False; // 0x6D

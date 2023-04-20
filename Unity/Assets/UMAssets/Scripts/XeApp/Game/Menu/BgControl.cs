@@ -48,16 +48,19 @@ namespace XeApp.Game.Menu
 		{
 			public Texture2D texture; // 0x8
 			public Material material; // 0xC
-			private BgControl.BgTextureFlag flags; // 0x10
+			private BgTextureFlag flags; // 0x10
 
 			// RVA: 0x143F530 Offset: 0x143F530 VA: 0x143F530
-			public void SetFlags(BgControl.BgTextureFlag flags)
+			public void SetFlags(BgTextureFlag flags)
 			{
 				this.flags = flags;
 			}
 
 			// RVA: 0x143E340 Offset: 0x143E340 VA: 0x143E340
-			// public bool CanDestory() { }
+			public bool CanDestory()
+			{
+				return (flags & BgTextureFlag.Permanently) == 0;
+			}
 		}
 
 		public class LimitedHomeBg
@@ -827,7 +830,27 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x143CDE8 Offset: 0x143CDE8 VA: 0x143CDE8
-		// public void DestroyCacheBg() { }
+		public void DestroyCacheBg()
+		{
+			for(int i = 0; i < m_cachedTextures.Count; i++)
+			{
+				if(m_bgTexture == null || (m_bgTexture != m_cachedTextures[i] && m_cachedTextures[i].CanDestory()))
+				{
+					if(m_cachedTextures[i].texture != null)
+					{
+						Resources.UnloadAsset(m_cachedTextures[i].texture);
+						m_cachedTextures[i].texture = null;
+					}
+					if (m_cachedTextures[i].material != null)
+					{
+						Resources.UnloadAsset(m_cachedTextures[i].material);
+						m_cachedTextures[i].material = null;
+					}
+					m_cachedTextures.Remove(i);
+					i--;
+				}
+			}
+		}
 
 		// // RVA: 0x143E354 Offset: 0x143E354 VA: 0x143E354
 		public void SetPriority(BgPriority priority)

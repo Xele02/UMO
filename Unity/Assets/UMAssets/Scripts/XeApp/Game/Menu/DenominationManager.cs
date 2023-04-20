@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace XeApp.Game.Menu
 {
-	delegate void OnDenomChangeDate(TransitionList.Type type);
-	delegate bool ProductListFilter(LGDNAJACFHI data);
+	public delegate void OnDenomChangeDate(TransitionList.Type type);
+	public delegate bool ProductListFilter(LGDNAJACFHI data);
 
 	public class DenominationManager : MonoBehaviour
 	{

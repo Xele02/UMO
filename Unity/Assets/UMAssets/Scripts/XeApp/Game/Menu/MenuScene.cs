@@ -670,11 +670,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB2B4A8 Offset: 0xB2B4A8 VA: 0xB2B4A8
 		public void GotoTitle()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "GotoTitle");
 		}
 
 		// // RVA: 0xB2B620 Offset: 0xB2B620 VA: 0xB2B620
-		// public void GotoLoginBonus() { }
+		public void GotoLoginBonus()
+		{
+			TodoLogger.Log(0, "GotoLoginBonus");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7CE4 Offset: 0x6C7CE4 VA: 0x6C7CE4
 		// // RVA: 0xB31CF4 Offset: 0xB31CF4 VA: 0xB31CF4

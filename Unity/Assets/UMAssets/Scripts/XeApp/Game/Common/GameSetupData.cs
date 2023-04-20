@@ -504,7 +504,10 @@ namespace XeApp.Game.Common
 		// public void SetIsNotUpdateProfile(bool _isNotUpdateProfile) { }
 
 		// // RVA: 0xE9CBBC Offset: 0xE9CBBC VA: 0xE9CBBC
-		// public void ResetSelectedDashIndex() { }
+		public void ResetSelectedDashIndex()
+		{
+			SelectedDashIndex = -1;
+		}
 
 		// // RVA: 0xE9CF18 Offset: 0xE9CF18 VA: 0xE9CF18
 		// public void SetSelectedDashIndex(int index) { }
