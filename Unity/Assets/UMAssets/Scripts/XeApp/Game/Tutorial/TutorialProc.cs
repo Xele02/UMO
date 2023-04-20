@@ -37,6 +37,8 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE49B54 Offset: 0xE49B54 VA: 0xE49B54
 		public static bool CanAutoSettingHelp()
 		{
+			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
+				return false;
 			TodoLogger.Log(0, "Tutorial CanAutoSettingHelp");
 			return false;
 		}
@@ -51,6 +53,8 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A008 Offset: 0xE4A008 VA: 0xE4A008
 		public static bool CanUnit5Help(GameSetupData.MusicInfo musicInfo)
 		{
+			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
+				return false;
 			TodoLogger.Log(0, "Tutorial CanUnit5Help");
 			return false;
 		}
@@ -254,6 +258,8 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4B79C Offset: 0xE4B79C VA: 0xE4B79C
 		public static bool CanBeginnerAssistSelect()
 		{
+			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
+				return false;
 			TodoLogger.Log(0, "Tutorial CanBeginnerAssistSelect");
 			return false;
 		}

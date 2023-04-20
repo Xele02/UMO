@@ -26,21 +26,21 @@ public class JGEOBNENMAH
 
 	public class NEDILFPPCJF
 	{
-		public int HBKBKHACHHI; // 0x8
-		public int GMECIBOJCFF; // 0xC
-		public int MIMLMJGGNJH; // 0x10
-		public int IPEKDLNEOFI; // 0x14
-		public int BFHPKJEKJNN; // 0x18
-		public int DDBEJNGJIPF; // 0x1C
-		public int CBOCBLLOMHE; // 0x20
+		public int HBKBKHACHHI_Soul; // 0x8
+		public int GMECIBOJCFF_Vocal; // 0xC
+		public int MIMLMJGGNJH_Charm; // 0x10
+		public int IPEKDLNEOFI_Life; // 0x14
+		public int BFHPKJEKJNN_Support; // 0x18
+		public int DDBEJNGJIPF_Fold; // 0x1C
+		public int CBOCBLLOMHE_Total; // 0x20
 		public int MINAGJOIGOP; // 0x24
-		public int ICBJAAPJNEI; // 0x28
-		public int AGNGKDFONAM; // 0x2C
-		public int KAEHAANLPKF; // 0x30
-		public int NIBMFONLOME; // 0x34
-		public int PLMGHHHFAGL; // 0x38
-		public int EKKCKGDGNPM; // 0x3C
-		public int GCAOLGILAAI; // 0x40
+		public int ICBJAAPJNEI_Soul; // 0x28
+		public int AGNGKDFONAM_Vocal; // 0x2C
+		public int KAEHAANLPKF_Charm; // 0x30
+		public int NIBMFONLOME_Life; // 0x34
+		public int PLMGHHHFAGL_Support; // 0x38
+		public int EKKCKGDGNPM_Fold; // 0x3C
+		public int GCAOLGILAAI_Total; // 0x40
 		public int IBFPGFJDLEI; // 0x44
 		public int APPEPDLOPAA; // 0x48
 		public int LHBINHCMEDA; // 0x4C

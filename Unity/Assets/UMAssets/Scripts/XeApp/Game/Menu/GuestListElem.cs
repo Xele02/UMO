@@ -107,7 +107,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xE27774 Offset: 0xE27774 VA: 0xE27774
 		public void ChangeStatus(bool toTotal, bool immediate = false)
 		{
-			TodoLogger.Log(0, "ChangeStatus");
+			m_symbolStatus.StartAnim(toTotal ? (immediate ? "wait_1" : "goto_1") : (immediate ? "wait_2" : "goto_2"));
+			m_statusIsTotal = toTotal;
 		}
 
 		//// RVA: 0xE27830 Offset: 0xE27830 VA: 0xE27830

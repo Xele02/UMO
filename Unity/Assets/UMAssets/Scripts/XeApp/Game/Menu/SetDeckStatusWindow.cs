@@ -185,11 +185,66 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA7886C Offset: 0xA7886C VA: 0xA7886C
 		private void CalcLimitBrake(JLKEOGLJNOD_TeamInfo viewUnitData, DFKGGBMFFGB_PlayerInfo viewPlayerData, EEDKAACNBBG_MusicData musicData, EAJCBFGKKFA_FriendInfo friendData)
 		{
-			TodoLogger.Log(0, "CalcLimitBrake");
+			m_limitOverStatus.Clear();
+			for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count; i++)
+			{
+				m_tmpLimitOverStatus.Clear();
+				if(viewUnitData.BCJEAJPLGMB_MainDivas[i] != null)
+				{
+					if (viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId != 0)
+					{
+						GCIJNCFDNON_SceneInfo scene = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId - 1];
+						IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity,
+							scene.MJBODMOLOBC_Luck, scene.MKHFCGPJPFI_LimitOverCount);
+						AdjustOverLimit(m_tmpLimitOverStatus, scene, musicData);
+						m_limitOverStatus.Add(m_tmpLimitOverStatus);
+					}
+					for(int j = 0; j < viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds.Count; j++)
+					{
+						if (viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] != 0)
+						{
+							GCIJNCFDNON_SceneInfo scene = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] - 1];
+							IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity,
+								scene.MJBODMOLOBC_Luck, scene.MKHFCGPJPFI_LimitOverCount);
+							AdjustOverLimit(m_tmpLimitOverStatus, scene, musicData);
+							m_limitOverStatus.Add(m_tmpLimitOverStatus);
+						}
+					}
+				}
+			}
+			if (friendData == null || friendData.KHGKPKDBMOH_GetAssistScene() == null)
+				return;
+			GCIJNCFDNON_SceneInfo fscene = friendData.KHGKPKDBMOH_GetAssistScene();
+			IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref m_tmpLimitOverStatus,
+				fscene.JKGFBFPIMGA_Rarity, fscene.MJBODMOLOBC_Luck, friendData.KHGKPKDBMOH_GetAssistScene().MKHFCGPJPFI_LimitOverCount);
+			AdjustOverLimit(m_tmpLimitOverStatus, fscene, musicData);
+			m_limitOverStatus.Add(m_tmpLimitOverStatus);
 		}
 
 		//// RVA: 0xA78E14 Offset: 0xA78E14 VA: 0xA78E14
-		//private void AdjustOverLimit(LimitOverStatusData status, GCIJNCFDNON sceneData, EEDKAACNBBG musicData) { }
+		private void AdjustOverLimit(LimitOverStatusData status, GCIJNCFDNON_SceneInfo sceneData, EEDKAACNBBG_MusicData musicData)
+		{
+			if(musicData == null)
+			{
+				m_tmpLimitOverStatus.excellentRate_SameSeriesAttr = 0;
+				m_tmpLimitOverStatus.centerLiveSkillRate_SameSeriesAttr = 0;
+				m_tmpLimitOverStatus.excellentRate_SameMusicAttr = 0;
+				m_tmpLimitOverStatus.centerLiveSkillRate_SameMusicAttr = 0;
+			}
+			else
+			{
+				if((int)sceneData.AIHCEGFANAM_SceneSeries != musicData.AIHCEGFANAM_Serie)
+				{
+					status.excellentRate_SameSeriesAttr = 0;
+					status.centerLiveSkillRate_SameSeriesAttr = 0;
+				}
+				if (CMMKCEPBIHI.OJNOJNEKBKH(sceneData.JGJFIJOCPAG_SceneAttr, musicData.FKDCCLPGKDK_JacketAttr))
+				{
+					status.excellentRate_SameMusicAttr = 0;
+					status.centerLiveSkillRate_SameMusicAttr = 0;
+				}
+			}
+		}
 
 		//// RVA: 0xA78FC4 Offset: 0xA78FC4 VA: 0xA78FC4
 		private void OnShowSubPlateWindowButton()

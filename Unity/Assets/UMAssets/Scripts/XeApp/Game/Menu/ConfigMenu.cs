@@ -14,11 +14,11 @@ namespace XeApp.Game.Menu
 		private bool m_loaded; // 0xC
 		//private PopupTabSetting m_tabSetting; // 0x10
 		//private PopupTabContents m_tabContents; // 0x14
-		//private PopupConfigScrollListSetting m_settingMenu; // 0x18
-		//private PopupConfigScrollListSetting m_settingRhythmView; // 0x1C
-		//private PopupConfigScrollListSetting m_settingRhythmSystem; // 0x20
-		//private PopupConfigScrollListSetting m_settingRhythmSimulation; // 0x24
-		//private PopupConfigScrollListSetting m_settingOther; // 0x28
+		private PopupConfigScrollListSetting m_settingMenu; // 0x18
+		private PopupConfigScrollListSetting m_settingRhythmView; // 0x1C
+		private PopupConfigScrollListSetting m_settingRhythmSystem; // 0x20
+		private PopupConfigScrollListSetting m_settingRhythmSimulation; // 0x24
+		private PopupConfigScrollListSetting m_settingOther; // 0x28
 		private GameObject m_loadingObject; // 0x2C
 		private Dictionary<string, int> m_bundleCounter = new Dictionary<string, int>(8); // 0x30
 
@@ -67,7 +67,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B5E04C Offset: 0x1B5E04C VA: 0x1B5E04C
-		//private void DestroyLoadingObject() { }
+		private void DestroyLoadingObject()
+		{
+			if (m_loadingObject == null)
+				return;
+			Destroy(m_loadingObject);
+			m_loadingObject = null;
+		}
 
 		//// RVA: 0x1B5DF90 Offset: 0x1B5DF90 VA: 0x1B5DF90
 		private void LoadingObjectEnable(bool enable)
@@ -103,7 +109,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B5E200 Offset: 0x1B5E200 VA: 0x1B5E200
-		//public void UnloadAssetBundle() { }
+		public void UnloadAssetBundle()
+		{
+			foreach(var k in m_bundleCounter)
+			{
+				for(int i = 0; i < k.Value; i++)
+				{
+					AssetBundleManager.UnloadAssetBundle(k.Key, false);
+				}
+			}
+			AssetBundleManager.UnloadAssetBundle("ly/072.xab", false);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x700C04 Offset: 0x700C04 VA: 0x700C04
 		//// RVA: 0x1B5E4A4 Offset: 0x1B5E4A4 VA: 0x1B5E4A4
@@ -159,7 +175,36 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1B5EFA4 Offset: 0x1B5EFA4 VA: 0x1B5EFA4 Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.Log(0, "Dispose ConfigMenu");
+			if(m_settingMenu != null)
+			{
+				Destroy(m_settingMenu.Content.gameObject);
+			}
+			if(m_settingOther != null)
+			{
+				Destroy(m_settingOther.Content.gameObject);
+			}
+			if (m_settingRhythmView != null)
+			{
+				Destroy(m_settingRhythmView.Content.gameObject);
+			}
+			if (m_settingRhythmSystem != null)
+			{
+				Destroy(m_settingRhythmSystem.Content.gameObject);
+			}
+			if (m_settingRhythmSimulation != null)
+			{
+				Destroy(m_settingRhythmSimulation.Content.gameObject);
+			}
+			m_settingMenu = null;
+			m_settingRhythmView = null;
+			m_settingRhythmSystem = null;
+			m_settingRhythmSimulation = null;
+			m_settingOther = null;
+			if (ConfigManager.Instance != null)
+				ConfigManager.Release();
+			DestroyLoadingObject();
+			UnloadAssetBundle();
+			Destroy(gameObject);
 		}
 
 		//[CompilerGeneratedAttribute] // RVA: 0x7010B4 Offset: 0x7010B4 VA: 0x7010B4

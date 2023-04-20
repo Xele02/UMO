@@ -281,7 +281,29 @@ namespace XeApp.Game.Menu
 			m_skipStatus = CehckSkipStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
 			CheckExistOriginalSetting(m_prismData);
 			SetDeckPlayButtons.SkipButtoType skipButton = SetDeckPlayButtons.SkipButtoType.Enable;
-			TodoLogger.Log(0, "Fix skipButton");
+			/*
+			 
+			Enable = 0,
+			Story = 1,
+			Lock = 2,
+			Limit = 3,
+			LackTicket = 4,
+			Boost = 5,
+			Rival = 6,
+			Support = 7,
+			 */
+			/*
+
+		   Hide = 0,
+		   Enable = 1,
+		   Disable = 2,
+		   Lock = 3, 
+			*/
+			if (m_skipStatus == SkipStatusType.Lock)
+				skipButton = SetDeckPlayButtons.SkipButtoType.Lock;
+			else if (m_skipStatus != SkipStatusType.Enable)
+				skipButton = SetDeckPlayButtons.SkipButtoType.Hide;
+			TodoLogger.Log(TodoLogger.ToCheck, "Check skipButton, read in a array somewhere");
 			// L 909
 			m_playButtons.Set(skipButton, GetSkipRestCount(), CheckPlayButtonType(Database.Instance.gameSetup.musicInfo), energy);
 			m_playButtons.SetPosType(SetDeckPlayButtons.PosType.Normal);
@@ -761,7 +783,10 @@ namespace XeApp.Game.Menu
 				{
 					TodoLogger.Log(0, "Event");
 				}
-				TodoLogger.Log(0, "Event");
+				if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
+				{
+					TodoLogger.Log(0, "Event");
+				}
 				res = SkipStatusType.Boost;
 				if(Database.Instance.gameSetup.SelectedDashIndex < 1)
 				{

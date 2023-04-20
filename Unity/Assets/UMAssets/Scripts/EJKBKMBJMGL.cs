@@ -59,7 +59,27 @@ public class EJKBKMBJMGL_EnemyData
 	//// RVA: 0x12F3BD0 Offset: 0x12F3BD0 VA: 0x12F3BD0
 	public void NPEKPHAFMGE(int DCOALMMJDJK, int KKPLDFNDFDE)
 	{
-		TodoLogger.Log(0, "NPEKPHAFMGE enemyData");
+		this.KKPLDFNDFDE = KKPLDFNDFDE;
+		this.DCOALMMJDJK = DCOALMMJDJK;
+		PFHJFIHGCKP_CenterName = "";
+		NDPPEMCHKHA_SkillName = "";
+		MessageBank bk = MessageManager.Instance.GetBank("master");
+		if(KKPLDFNDFDE > 0)
+		{
+			NDPPEMCHKHA_SkillName = bk.GetMessageByLabel("el_nm_" + KKPLDFNDFDE.ToString("D4"));
+		}
+		else if (JMEGLFEKEBD_LiveSkill != 0)
+		{
+			NDPPEMCHKHA_SkillName = bk.GetMessageByLabel("el_nm_" + JMEGLFEKEBD_LiveSkill.ToString("D4"));
+		}
+		if(DCOALMMJDJK > 0)
+		{
+			PFHJFIHGCKP_CenterName = bk.GetMessageByLabel("ec_nm_" + DCOALMMJDJK.ToString("D4"));
+		}
+		else if(MOMCFBMJJKB_CS != 0)
+		{
+			PFHJFIHGCKP_CenterName = bk.GetMessageByLabel("ec_nm_" + MOMCFBMJJKB_CS.ToString("D4"));
+		}
 	}
 
 	//// RVA: 0x12F3D94 Offset: 0x12F3D94 VA: 0x12F3D94

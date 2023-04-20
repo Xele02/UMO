@@ -109,7 +109,7 @@ public class GCIJNCFDNON_SceneInfo
 	// // RVA: 0x16AB830 Offset: 0x16AB830 VA: 0x16AB830
 	public int CGIELKDLHGE_GetEvolveId()
 	{
-		TodoLogger.Log(0, "Not sure ? ");
+		TodoLogger.Log(TodoLogger.ToCheck, "CGIELKDLHGE_GetEvolveId Not sure ? ");
 		if (JPIPENJGGDD <= 0 && IJIKIPDKCPP <= 1 && !JOKJBMJBLBB_Single)
 			return 1;
 		return 2;

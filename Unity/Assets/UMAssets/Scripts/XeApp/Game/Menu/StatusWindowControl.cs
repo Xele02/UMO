@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,12 +54,61 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x12E1708 Offset: 0x12E1708 VA: 0x12E1708
-		// public void ShowDivaStatusPopupWindow(FFHPBEPOMAK diva, DFKGGBMFFGB playerData, EAJCBFGKKFA friendData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isFriend = False, bool isChangeScene = True, bool isCloseOnly = False, int divaSlotNumber = -1, bool isGoDiva = False) { }
+		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK_DivaInfo diva, DFKGGBMFFGB_PlayerInfo playerData, EAJCBFGKKFA_FriendInfo friendData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isFriend = false, bool isChangeScene = true, bool isCloseOnly = false, int divaSlotNumber = -1, bool isGoDiva = false)
+		{
+			TodoLogger.Log(0, "ShowDivaStatusPopupWindow");
+		}
 
 		// // RVA: 0x12E21FC Offset: 0x12E21FC VA: 0x12E21FC
-		// public void ShowSceneStatusPopupWindow(GCIJNCFDNON scene, DFKGGBMFFGB playerData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isFriend = False, bool isReward = False, SceneStatusParam.PageSave pageSave = 1, bool isDisableZoom = False) { }
+		public void ShowSceneStatusPopupWindow(GCIJNCFDNON_SceneInfo scene, DFKGGBMFFGB_PlayerInfo playerData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isFriend = false, bool isReward = false, SceneStatusParam.PageSave pageSave = SceneStatusParam.PageSave.Player, bool isDisableZoom = false)
+		{
+			TodoLogger.Log(0, "ShowSceneStatusPopupWindow");
+		}
 
 		// // RVA: 0x12E2978 Offset: 0x12E2978 VA: 0x12E2978
-		// public void TryShowPopupWindow(DFKGGBMFFGB viewPlayerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName, Action closeCallBack) { }
+		public void TryShowPopupWindow(DFKGGBMFFGB_PlayerInfo viewPlayerData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName, Action closeCallBack)
+		{
+			List<StatusPopupState> l;
+			if(m_popStateDict.TryGetValue((int)transitionName, out l))
+			{
+				while(l.Count > 0)
+				{
+					StatusPopupState s = l[0];
+					l.RemoveAt(0);
+					if (s.type == StatusPopupType.Diva)
+					{
+						FFHPBEPOMAK_DivaInfo diva;
+						bool b;
+						if (!s.isGoDiva)
+						{
+							diva = viewPlayerData.NBIGLBMHEDC[s.id - 1];
+							b = false;
+						}
+						else
+						{
+							int idx;
+							List<FFHPBEPOMAK_DivaInfo> dl;
+							if(s.divaSlotNumber < viewPlayerData.DPLBHAIKPGL_GetTeam(true).BCJEAJPLGMB_MainDivas.Count)
+							{
+								dl = viewPlayerData.DPLBHAIKPGL_GetTeam(true).BCJEAJPLGMB_MainDivas;
+								idx = s.divaSlotNumber;
+							}
+							else
+							{
+								dl = viewPlayerData.DPLBHAIKPGL_GetTeam(true).CMOPCCAJAAO_AddDivas;
+								idx = s.divaSlotNumber = viewPlayerData.DPLBHAIKPGL_GetTeam(true).BCJEAJPLGMB_MainDivas.Count;
+							}
+							diva = dl[idx];
+							b = true;
+						}
+						ShowDivaStatusPopupWindow(diva, viewPlayerData, null, musicData, isMoment, transitionName, closeCallBack, false, true, s.isCloseOnly, s.divaSlotNumber, b);
+					}
+					else
+					{
+						ShowSceneStatusPopupWindow(viewPlayerData.OPIBAPEGCLA_Scenes[s.id], viewPlayerData, isMoment, transitionName, closeCallBack, false, false, SceneStatusParam.PageSave.Player, false);
+					}
+				}
+			}
+		}
 	}
 }

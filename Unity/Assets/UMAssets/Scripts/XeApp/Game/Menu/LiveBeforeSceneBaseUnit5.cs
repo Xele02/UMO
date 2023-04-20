@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeSys;
@@ -36,12 +37,12 @@ namespace XeApp.Game.Menu
 			new PrefabCacheParam() { prefabName="SetDeckStatusWindow", count=1 }
 		}; // 0x0
 		protected AOJGDNFAIJL_PrismData.AMIECPBIALP m_prismData = new AOJGDNFAIJL_PrismData.AMIECPBIALP(); // 0x48
-		// private AOJGDNFAIJL.AMIECPBIALP m_prismLogDiffData = new AOJGDNFAIJL.AMIECPBIALP(); // 0x4C
+		private AOJGDNFAIJL_PrismData.AMIECPBIALP m_prismLogDiffData = new AOJGDNFAIJL_PrismData.AMIECPBIALP(); // 0x4C
 		private PopupMvModeSelectListSetting m_prismPopupSetting = new PopupMvModeSelectListSetting(); // 0x50
-		// private List<int> m_lackDivaIds = new List<int>(); // 0x54
-		// private AOJGDNFAIJL.AMIECPBIALP m_prismOriginalData = new AOJGDNFAIJL.AMIECPBIALP(); // 0x58
-		// private TextPopupSetting m_textSetPrizmPopup = new TextPopupSetting(); // 0x5C
-		// private PopupMvModeLackDivaSetting m_lackDivaSetting = new PopupMvModeLackDivaSetting(); // 0x60
+		private List<int> m_lackDivaIds = new List<int>(); // 0x54
+		private AOJGDNFAIJL_PrismData.AMIECPBIALP m_prismOriginalData = new AOJGDNFAIJL_PrismData.AMIECPBIALP(); // 0x58
+		private TextPopupSetting m_textSetPrizmPopup = new TextPopupSetting(); // 0x5C
+		private PopupMvModeLackDivaSetting m_lackDivaSetting = new PopupMvModeLackDivaSetting(); // 0x60
 
 		protected DFKGGBMFFGB_PlayerInfo m_playerData { get { return GameManager.Instance.ViewPlayerData; } } //0x1547368
 
@@ -225,9 +226,7 @@ namespace XeApp.Game.Menu
 			m_prismPopupSetting.Buttons[1].Label = PopupButton.ButtonLabel.Ok;
 			m_prismPopupSetting.Buttons[1].Type = PopupButton.ButtonType.Positive;
 
-			TodoLogger.Log(0, "finish SetupPrismPopupSetting");
-
-			/*m_textSetPrizmPopup.WindowSize = SizeType.Middle;
+			m_textSetPrizmPopup.WindowSize = SizeType.Middle;
 			m_textSetPrizmPopup.SetParent(transform);
 			m_textSetPrizmPopup.TitleText = bank.GetMessageByLabel("popup_set_prizm_title");
 			m_textSetPrizmPopup.Text = bank.GetMessageByLabel("popup_set_prizm_choice");
@@ -235,10 +234,15 @@ namespace XeApp.Game.Menu
 			m_textSetPrizmPopup.Buttons[0].Label = PopupButton.ButtonLabel.Cancel;
 			m_textSetPrizmPopup.Buttons[0].Type = PopupButton.ButtonType.Negative;
 			m_textSetPrizmPopup.Buttons[1].Label = PopupButton.ButtonLabel.Ok;
-			m_textSetPrizmPopup.Buttons[1].Type = PopupButton.ButtonType.Positive;*/
+			m_textSetPrizmPopup.Buttons[1].Type = PopupButton.ButtonType.Positive;
 
-			//m_lackDivaSetting
-
+			m_lackDivaSetting.WindowSize = SizeType.Middle;
+			m_lackDivaSetting.SetParent(transform);
+			m_lackDivaSetting.TitleText = bank.GetMessageByLabel("popup_set_prizm_lackdiva_titile");
+			m_lackDivaSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
 		}
 
 		// // RVA: 0x1548D74 Offset: 0x1548D74 VA: 0x1548D74

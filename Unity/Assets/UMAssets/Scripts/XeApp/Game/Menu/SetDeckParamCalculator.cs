@@ -273,7 +273,7 @@ namespace XeApp.Game.Menu
 		private static bool CanBonusEpisode(List<IKDICBBFBMI_EventBase.GNPOABJANKO> list, out int bonusPoint)
 		{
 			bonusPoint = 0;
-			if (list != null)
+			if (list != null && list.Count > 0)
 			{
 				TodoLogger.Log(0, "CanBonusEpisode Event");
 			}

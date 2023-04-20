@@ -193,7 +193,16 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 		}
 
         // // RVA: 0xD9E6C4 Offset: 0xD9E6C4 VA: 0xD9E6C4
-        // public void LEFFFKJFCFH(int ANAJIAENLNB, int[,] LAEAKOHKNHO) { }
+        public void LEFFFKJFCFH(int ANAJIAENLNB, int[,] LAEAKOHKNHO)
+		{
+			JEJCHECAEBD_ForEachLevel(ANAJIAENLNB, (int FGMJJBBDOOI, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD) =>
+			{
+				//0xD9EBB4
+				if (GMCEJHMOJJD.INDDJNMPONH_UnlockType != 6)
+					return;
+				LAEAKOHKNHO[GMCEJHMOJJD.PIBLLGLCJEO_Value[0] - 1, GMCEJHMOJJD.PIBLLGLCJEO_Value[1] - 1]++;
+			});
+		}
 
         // // RVA: 0xD9DEB0 Offset: 0xD9DEB0 VA: 0xD9DEB0
         private void ILBDHNHFJHL_CheckTextureBundleExists()

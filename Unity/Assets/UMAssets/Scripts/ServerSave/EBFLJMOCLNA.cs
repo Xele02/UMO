@@ -382,8 +382,27 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	public int[,] GODGHFDMAHF()
 	{
 		int[,] res = new int[LCLCCHLDNHJ_Costume.GFIKOEEBIJP, 3];
-		TodoLogger.Log(0, "GODGHFDMAHF");
-		return res;
+		for (int i = 0; i < FABAGMLEKIB_List.Count; i++)
+		{
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo dbCos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostumeInfo(FABAGMLEKIB_List[i].BEEAIAAJOHD_CostumeId);
+			if(FABAGMLEKIB_List[i].BEBJKJKBOGH_Date != 0)
+			{
+				dbCos.LEFFFKJFCFH(FABAGMLEKIB_List[i].ANAJIAENLNB_Level, res);
+			}
+		}
+		bool found = false;
+		for (int i = 0; i < res.GetLength(0); i++)
+		{
+			for(int j = 0; j < res.GetLength(1); j++)
+			{
+				if(res[i, j] > 0)
+				{
+					res[i, j] = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.OLNFADCCMIG[res[i, j] - 1];
+					found = true;
+				}
+			}
+		}
+		return found ? res : null;
 	}
 
 	// // RVA: 0x14F8ADC Offset: 0x14F8ADC VA: 0x14F8ADC

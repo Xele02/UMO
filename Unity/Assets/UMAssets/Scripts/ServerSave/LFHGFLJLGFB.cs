@@ -53,8 +53,11 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD6B9E8 Offset: 0xD6B9E8 VA: 0xD6B9E8
 	public bool FFKIDMKHIOE(int PPFNGGCBJKC)
 	{
-		TodoLogger.Log(0, "LFHGFLJLGFB_FavoritePlayer FFKIDMKHIOE");
-		return false;
+		return FNDJLOMNECG.Find((CEBFFLDKAEC_SecureInt GGHLPLMKFFE) =>
+		{
+			//0xD6C6C8
+			return GGHLPLMKFFE.DNJEJEANJGL_Value == PPFNGGCBJKC;
+		}) != null;
 	}
 
 	// // RVA: 0xD6BAF0 Offset: 0xD6BAF0 VA: 0xD6BAF0

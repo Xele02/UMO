@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
 
 [System.Obsolete("Use LLKLAKGKNLD_LimitOver", true)]
@@ -14,7 +15,10 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 		public int PPFNGGCBJKC { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0x18109E0 DEMEPMAEJOO 0x180FD54 HIGKAIDMOKN
 
 		//// RVA: 0x180EC10 Offset: 0x180EC10 VA: 0x180EC10
-		//public int DEACAHNLMNI(int OIPCCBHIKIA) { }
+		public int DEACAHNLMNI(int OIPCCBHIKIA)
+		{
+			return IOKDGIGCJDA[OIPCCBHIKIA] ^ FBGGEFFJJHB;
+		}
 
 		//// RVA: 0x1810570 Offset: 0x1810570 VA: 0x1810570
 		//public uint CAOGDCBPBAN() { }
@@ -93,7 +97,56 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 	//// RVA: 0x180E924 Offset: 0x180E924 VA: 0x180E924
 	public void MNHPPJFNPCG(ref LimitOverStatusData DNNHDJPNIAK, int JKGFBFPIMGA, int MJBODMOLOBC, int DCMJPFFBINO)
 	{
-		TodoLogger.Log(0, "MNHPPJFNPCG");
+		int a = ELFPIODODFF(JKGFBFPIMGA);
+		if(a < DCMJPFFBINO)
+		{
+			Debug.LogError("leafNum > leafMaxNum");
+			DCMJPFFBINO = a;
+		}
+		a = JNLLKKHJCAD(JKGFBFPIMGA, MJBODMOLOBC);
+		if(a < DCMJPFFBINO)
+		{
+			Debug.LogError("leafNum > GetLuckToLeafMaxNum");
+			DCMJPFFBINO = a;
+		}
+
+		PBMKLFCEAAA t0 = BODDKCKFLJF[JKGFBFPIMGA - 1];
+		PBMKLFCEAAA t1 = GPPJBOCJOFI[DCMJPFFBINO];
+
+		for(int i = 0; i < 6; i++)
+		{
+			int b = 0;
+			if(t1.DEACAHNLMNI(i) == 1)
+			{
+				b = t0.DEACAHNLMNI(i);
+			}
+			switch(i)
+			{
+				case 0:
+					DNNHDJPNIAK.excellentRate = b;
+					break;
+				case 1:
+					DNNHDJPNIAK.centerLiveSkillRate = b;
+					break;
+				case 2:
+					DNNHDJPNIAK.excellentRate_SameMusicAttr = b;
+					break;
+				case 3:
+					DNNHDJPNIAK.centerLiveSkillRate_SameMusicAttr = b;
+					break;
+				case 4:
+					DNNHDJPNIAK.excellentRate_SameSeriesAttr = b;
+					break;
+				case 5:
+					DNNHDJPNIAK.centerLiveSkillRate_SameSeriesAttr = b;
+					break;
+				default:
+					break;
+				case 7:
+					DNNHDJPNIAK.excellentEffect = b;
+					break;
+			}
+		}
 	}
 
 	// RVA: 0x180ECDC Offset: 0x180ECDC VA: 0x180ECDC

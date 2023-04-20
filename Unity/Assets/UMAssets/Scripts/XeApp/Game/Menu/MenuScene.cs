@@ -860,8 +860,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB32A3C Offset: 0xB32A3C VA: 0xB32A3C
 		public void TryShowPopupWindow(TransitionRoot root, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName, Action closeCallBack)
 		{
-			closeCallBack();
-			TodoLogger.Log(0, "TryShowPopupWindow");
+			if (root.PrevTransition != TransitionList.Type.SCENE_SELECT &&
+				root.PrevTransition != TransitionList.Type.SCENE_ABILITY_RELEASE_LIST &&
+				root.PrevTransition != TransitionList.Type.DIVA_SELECT_LIST &&
+				root.PrevTransition != TransitionList.Type.DIVA_GROWTH_CONF &&
+				root.PrevTransition != TransitionList.Type.SCENE_GROWTH &&
+				root.PrevTransition != TransitionList.Type.COSTUME_SELECT)
+				return;
+			m_statusWindowControl.TryShowPopupWindow(playerData, musicData, isMoment, transitionName, closeCallBack);
 		}
 
 		// // RVA: 0xB32BA0 Offset: 0xB32BA0 VA: 0xB32BA0
