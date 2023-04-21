@@ -258,13 +258,28 @@ namespace XeApp.Game.Menu
 		//private void UpdateCompatibleButton() { }
 
 		//// RVA: 0x12DA4FC Offset: 0x12DA4FC VA: 0x12DA4FC
-		//public static int SortSecondPriority(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		public static int SortSecondPriority(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			int res = left.JKGFBFPIMGA_Rarity - right.JKGFBFPIMGA_Rarity;
+			if (res == 0)
+				res = left.EKLIPGELKCL_SceneRarity - right.EKLIPGELKCL_SceneRarity;
+			return res;
+		}
 
 		//// RVA: 0x12DA548 Offset: 0x12DA548 VA: 0x12DA548
-		//public static int SortThirdPriority(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		public static int SortThirdPriority(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			return right.BCCHOBPJJKE_SceneId - left.BCCHOBPJJKE_SceneId;
+		}
 
 		//// RVA: 0x12DA588 Offset: 0x12DA588 VA: 0x12DA588
-		//public static int GetSameEvaluationValue(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		public static int GetSameEvaluationValue(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			int res = SortSecondPriority(right, left);
+			if (res != 0)
+				return res;
+			return SortThirdPriority(left, right);
+		}
 
 		//// RVA: 0x12DA650 Offset: 0x12DA650 VA: 0x12DA650
 		//public void .ctor() { }

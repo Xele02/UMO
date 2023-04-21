@@ -409,15 +409,105 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x114C748 Offset: 0x114C748 VA: 0x114C748
 		public static bool IsActiveSkillFilterOn(GCIJNCFDNON_SceneInfo scene, ulong flags)
 		{
-			TodoLogger.Log(0, "IsActiveSkillFilterOn");
-			return true;
+			if (flags == 0)
+				return true;
+			if(scene.HGONFBDIBPM_ActiveSkillId != 0)
+			{
+				CDNKOFIELMK skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[scene.HGONFBDIBPM_ActiveSkillId - 1];
+				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP.Count; i++)
+				{
+					HCDIOPEOGEE h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP[i];
+					TodoLogger.Log(TodoLogger.ToCheck, "check bit test");
+					if((h.MKDDOJOADMF & (int)flags) != 0)
+					{
+						for (int j = 0; j < h.NNDGIAEFMOG.Count; j++)
+						{
+							CCINPCJDFJG c = h.NNDGIAEFMOG[j];
+							bool b = false;
+							for(int k = 0; k < skill.EGLDFPILJLG_BuffEffectType.Length; k++)
+							{
+								if(skill.EGLDFPILJLG_BuffEffectType[k] != c.EGLDFPILJLG[k])
+								{
+									b = true;
+									break;
+								}
+							}
+							for(int k = 0; k < skill.FPMFEKIPFPI_DurationType.Length; k++)
+							{
+								if (skill.FPMFEKIPFPI_DurationType[k] != c.FPMFEKIPFPI[k])
+								{
+									b = true;
+									break;
+								}
+							}
+							if (!b)
+								return true;
+						}
+					}
+				}
+			}
+			return false;
 		}
 
 		//// RVA: 0x114CC6C Offset: 0x114CC6C VA: 0x114CC6C
 		public static bool IsLiveSkillFilterOn(GCIJNCFDNON_SceneInfo scene, ulong flags)
 		{
-			TodoLogger.Log(0, "IsLiveSkillFilterOn");
-			return true;
+			if (flags == 0)
+				return true;
+			int id = scene.FILPDDHMKEJ_GetLiveSkillId(true, 0, 0);
+			if(id != 0)
+			{
+				PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1];
+				for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC.Count; i++)
+				{
+					DNIDPGDJCOG d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC[i];
+					TodoLogger.Log(TodoLogger.ToCheck, "check bit test");
+					if ((d.MKDDOJOADMF & (int)flags) != 0)
+					{
+						for(int j = 0; j < d.NNDGIAEFMOG.Count; j++)
+						{
+							FCNGHAJPMEA f = d.NNDGIAEFMOG[j];
+							bool b = f.NEHDLDEHFCD != skill.FLJHGGKIOJH_SkillType;
+							for(int k = 0; k < skill.EGLDFPILJLG_SkillBuffEffect.Length; k++)
+							{
+								if(skill.EGLDFPILJLG_SkillBuffEffect[k] != f.EGLDFPILJLG[k])
+								{
+									b = true;
+									break;
+								}
+							}
+							for (int k = 0; k < skill.FPMFEKIPFPI_DurationType.Length; k++)
+							{
+								if (skill.FPMFEKIPFPI_DurationType[k] != f.FPMFEKIPFPI[k])
+								{
+									b = true;
+									break;
+								}
+							}
+							bool b2 = skill.CEFHDLLAPDH_MusicIdCond > 0;
+							if (f.CEFHDLLAPDH < 1)
+								b2 = skill.CEFHDLLAPDH_MusicIdCond == 0;
+							bool b3 = false;
+							if(f.BHADMHLIFMM < 1)
+							{
+								b3 = false;
+								TodoLogger.Log(TodoLogger.ToCheck, "Check test");
+								if(scene.AOLIJKMIJJE_DivaCompatible < 2)
+								{
+									b3 = true;
+								}
+							}
+							else
+							{
+								b3 = f.BHADMHLIFMM < scene.AOLIJKMIJJE_DivaCompatible;
+							}
+							if (!(b || f.CPNAGMFCIJK != skill.CPNAGMFCIJK_TriggerType || !b2 || f.NFIBKOACELP != skill.NFIBKOACELP_Attr || b3))
+								return true;
+						}
+					}
+				}
+			}
+			return false;
 		}
 
 		//// RVA: 0x114D304 Offset: 0x114D304 VA: 0x114D304

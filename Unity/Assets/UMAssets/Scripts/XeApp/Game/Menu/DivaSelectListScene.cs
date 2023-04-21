@@ -327,8 +327,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17F023C Offset: 0x17F023C VA: 0x17F023C
 		private IEnumerator Co_ShowHelp()
 		{
-			TodoLogger.Log(0, "Co_ShowHelp");
-			yield return null;
+			//0x1264EA8
+			m_isWaitHelp = true;
+			MenuScene.Instance.InputDisable();
+			yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition));
+			MenuScene.Instance.InputEnable();
+			m_isWaitHelp = false;
 		}
 
 		//// RVA: 0x17F02DC Offset: 0x17F02DC VA: 0x17F02DC Slot: 14
@@ -446,6 +450,9 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17F0F90 Offset: 0x17F0F90 VA: 0x17F0F90
-		//private bool CheckTutorialCondition(TutorialConditionId conditionId) { }
+		private bool CheckTutorialCondition(TutorialConditionId conditionId)
+		{
+			return false;
+		}
 	}
 }

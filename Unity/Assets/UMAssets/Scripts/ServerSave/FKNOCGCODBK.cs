@@ -6,7 +6,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 {
 	private const int ECFEMKGFDCE = 3;
 	private List<CIFHILOJJFC> AHBBMJANGHE; // 0x24
-	public CIFHILOJJFC DBMOBFCLFOB = new CIFHILOJJFC(); // 0x28
+	public CIFHILOJJFC DBMOBFCLFOB_Saved = new CIFHILOJJFC(); // 0x28
 
 	// public CIFHILOJJFC JKNGLJNEEPO { get; }
 	public override bool DMICHEJIAJL { get { return true; } } // 0x1191F34 NFKFOODCJJB
@@ -222,7 +222,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 					}
 				}
 			}
-			DBMOBFCLFOB.ODDIHGPONFL_Copy(AHBBMJANGHE[0], false);
+			DBMOBFCLFOB_Saved.ODDIHGPONFL_Copy(AHBBMJANGHE[0], false);
 			KFKDMBPNLJK_BlockInvalid = notValid;
 			return true;
 		}

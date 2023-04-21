@@ -524,7 +524,15 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17EC120 Offset: 0x17EC120 VA: 0x17EC120
 		public StayButton GetNavigationDivaListButton()
 		{
-			TodoLogger.Log(0, "GetNavigationDivaListButton");
+			FFHPBEPOMAK_DivaInfo d = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
+			for(int i = 0; i < 2; i++)
+			{
+				FFHPBEPOMAK_DivaInfo d2 = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_sortDivaList[i]];
+				if(d2.AHHJLDLAPAN_DivaId != d.AHHJLDLAPAN_DivaId)
+				{
+					return m_divaListIcon[i].StayButton;
+				}
+			}
 			return null;
 		}
 	}

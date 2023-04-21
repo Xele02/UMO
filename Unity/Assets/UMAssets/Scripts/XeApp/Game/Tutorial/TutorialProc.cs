@@ -244,6 +244,8 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4B430 Offset: 0xE4B430 VA: 0xE4B430
 		public static IEnumerator Co_DivaSelectList(StayButton button, Func<bool> waitFunc)
 		{
+			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
+				yield break;
 			TodoLogger.Log(0, "Co_DivaSelectList");
 			yield return null;
 		}

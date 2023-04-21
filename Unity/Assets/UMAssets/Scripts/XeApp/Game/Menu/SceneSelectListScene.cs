@@ -239,23 +239,171 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1381204 Offset: 0x1381204 VA: 0x1381204
 		private void SortImpl()
 		{
-			TodoLogger.Log(0, "SortImpl");
+			if(!m_isCallEpisodeList)
+			{
+				m_sceneIndexList.Sort(DefaultSortCb);
+			}
+			else
+			{
+				m_sceneIndexList.Sort(EpisodeSortCb);
+			}
 		}
 
 		// // RVA: 0x138131C Offset: 0x138131C VA: 0x138131C
-		// private int DefaultSortCb(int left, int right) { }
+		private int DefaultSortCb(int left, int right)
+		{
+			if (left < 0)
+				return -1;
+			if (right < 0)
+				return 1;
+			GCIJNCFDNON_SceneInfo lscene = PlayerData.OPIBAPEGCLA_Scenes[left];
+			GCIJNCFDNON_SceneInfo rscene = PlayerData.OPIBAPEGCLA_Scenes[right];
+			long leftVal = 0;
+			long rightVal = 0;
+			if (m_sortType <= SortItem.UtaRate)
+			{
+				switch (m_sortType)
+				{
+					case SortItem.Total:
+						leftVal = lscene.CMCKNKKCNDK_Status.Total;
+						rightVal = rscene.CMCKNKKCNDK_Status.Total;
+						break;
+					case SortItem.Soul:
+						leftVal = lscene.CMCKNKKCNDK_Status.soul;
+						rightVal = rscene.CMCKNKKCNDK_Status.soul;
+						break;
+					case SortItem.Voice:
+						leftVal = lscene.CMCKNKKCNDK_Status.vocal;
+						rightVal = rscene.CMCKNKKCNDK_Status.vocal;
+						break;
+					case SortItem.Charm:
+						leftVal = lscene.CMCKNKKCNDK_Status.charm;
+						rightVal = rscene.CMCKNKKCNDK_Status.charm;
+						break;
+					case SortItem.Get:
+						leftVal = lscene.NPHOIEOPIJO;
+						rightVal = rscene.NPHOIEOPIJO;
+						break;
+					case SortItem.Rarity:
+						leftVal = lscene.EKLIPGELKCL_SceneRarity;
+						rightVal = rscene.EKLIPGELKCL_SceneRarity;
+						break;
+					case SortItem.Level:
+						leftVal = lscene.CIEOBFIIPLD_SceneLevel;
+						rightVal = rscene.CIEOBFIIPLD_SceneLevel;
+						break;
+					case SortItem.Life:
+						leftVal = lscene.CMCKNKKCNDK_Status.life;
+						rightVal = rscene.CMCKNKKCNDK_Status.life;
+						break;
+					case SortItem.Luck:
+						leftVal = lscene.MJBODMOLOBC_Luck;
+						rightVal = rscene.MJBODMOLOBC_Luck;
+						break;
+					case SortItem.Support:
+						leftVal = lscene.CMCKNKKCNDK_Status.support;
+						rightVal = rscene.CMCKNKKCNDK_Status.support;
+						break;
+					case SortItem.Fold:
+						leftVal = lscene.CMCKNKKCNDK_Status.fold;
+						rightVal = rscene.CMCKNKKCNDK_Status.fold;
+						break;
+					case SortItem.RecoveryNotes:
+					case SortItem.ItemNotes:
+					case SortItem.ScoreUpNotes:
+					case SortItem.SupportNotes:
+					case SortItem.FoldNotes:
+						leftVal = lscene.CMCKNKKCNDK_Status.spNoteExpected[(int)m_sortType - 10];
+						rightVal = rscene.CMCKNKKCNDK_Status.spNoteExpected[(int)m_sortType - 10];
+						break;
+					default:
+						break;
+					case SortItem.ActiveSkill:
+						if (lscene.HGONFBDIBPM_ActiveSkillId < 1)
+							left = 0;
+						else
+							left = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[lscene.HGONFBDIBPM_ActiveSkillId - 1].GIEFBAHPMMM;
+						if (rscene.HGONFBDIBPM_ActiveSkillId < 1)
+							right = 0;
+						else
+							right = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[rscene.HGONFBDIBPM_ActiveSkillId - 1].GIEFBAHPMMM;
+						break;
+					case SortItem.LiveSkill:
+						int id = lscene.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
+						if (id < 1)
+							left = 0;
+						else
+							left = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1].GIEFBAHPMMM;
+						id = rscene.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
+						if (id < 1)
+							right = 0;
+						else
+							right = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1].GIEFBAHPMMM;
+						break;
+					case SortItem.Episode:
+						leftVal = lscene.KELFCMEOPPM_EpisodeId;
+						rightVal = rscene.KELFCMEOPPM_EpisodeId;
+						break;
+					case SortItem.SecretBoard:
+						leftVal = lscene.JPIPENJGGDD;
+						rightVal = rscene.JPIPENJGGDD;
+						break;
+					case SortItem.LuckyLeaf:
+						leftVal = lscene.MKHFCGPJPFI_LimitOverCount;
+						rightVal = rscene.MKHFCGPJPFI_LimitOverCount;
+						break;
+					case SortItem.NotesExpectation:
+						leftVal = lscene.KMFADKEKPOM_Nx;
+						rightVal = rscene.KMFADKEKPOM_Nx;
+						break;
+				}
+			}
+			int res = (int)(leftVal - rightVal);
+			if(res == 0)
+			{
+				res = GetSameEvaluationValue2(lscene, rscene);
+				if (res == 0)
+				{
+					return GetSameEvaluationValue3(lscene, rscene);
+				}
+			}
+			else
+			{
+				if (res < 0)
+					res = -1;
+				else
+					res = 1;
+			}
+			if (m_order != 0)
+				res = -res;
+			return res;
+		}
 
 		// // RVA: 0x1382008 Offset: 0x1382008 VA: 0x1382008
-		// private int EpisodeSortCb(int left, int right) { }
+		private int EpisodeSortCb(int left, int right)
+		{
+			GCIJNCFDNON_SceneInfo lscene = PlayerData.OPIBAPEGCLA_Scenes[left];
+			GCIJNCFDNON_SceneInfo rscene = PlayerData.OPIBAPEGCLA_Scenes[right];
+			return GetSameEvaluationValue(lscene, rscene);
+		}
 
 		// // RVA: 0x1382140 Offset: 0x1382140 VA: 0x1382140
-		// private int GetSameEvaluationValue(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		private int GetSameEvaluationValue(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			return SortMenuWindow.GetSameEvaluationValue(left, right);
+		}
 
 		// // RVA: 0x1381EF0 Offset: 0x1381EF0 VA: 0x1381EF0
-		// private int GetSameEvaluationValue2(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		private int GetSameEvaluationValue2(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			return SortMenuWindow.SortSecondPriority(left, right);
+		}
 
 		// // RVA: 0x1381F7C Offset: 0x1381F7C VA: 0x1381F7C
-		// private int GetSameEvaluationValue3(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		private int GetSameEvaluationValue3(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			return SortMenuWindow.SortThirdPriority(left, right);
+		}
 
 		// // RVA: 0x13821CC Offset: 0x13821CC VA: 0x13821CC
 		private void AttachScene(int slot, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON_SceneInfo sceneData)
