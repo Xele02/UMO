@@ -170,7 +170,40 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x10D0270 Offset: 0x10D0270 VA: 0x10D0270
-	// public int DCMGLKDJAKL(int JHNCAFBGOKA, int HKOHGJAIJMA, List<int> JFCDMNPDIGP) { }
+	public int DCMGLKDJAKL(int JHNCAFBGOKA, int HKOHGJAIJMA, List<int> JFCDMNPDIGP)
+	{
+		foreach(var k in DBBLKLCCHFC)
+		{
+			if (k.PLALNIIBLOF != 2)
+				break;
+			if(k.DLAEJOBELBH_Id == JHNCAFBGOKA && k.OFGIOBGAJPA == HKOHGJAIJMA)
+			{
+				int[] a = k.AHHJLDLAPAN;
+				bool valid = true;
+				for(int i = 0; i < a.Length; i++)
+				{
+					if (HKOHGJAIJMA < 1)
+					{
+						valid = false;
+						break;
+					}
+					for(int j = 0; j < JFCDMNPDIGP.Count; j++)
+					{
+						if (JFCDMNPDIGP[j] == a[i])
+							break;
+						if(HKOHGJAIJMA <= j + 1)
+						{
+							valid = false;
+							break;
+						}
+					}
+				}
+				if(valid)
+					return k.OEJOOMPKAOO;
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0x10D050C Offset: 0x10D050C VA: 0x10D050C
 	public LPPGENBEECK_MusicMaster()

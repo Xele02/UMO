@@ -68,10 +68,16 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE6DEA0 Offset: 0xE6DEA0 VA: 0xE6DEA0
-		//public void RequestChangeCueSheetDuet(int a_divaId, UnityAction onChangeCallback) { }
+		public void RequestChangeCueSheetDuet(int a_divaId, UnityAction onChangeCallback)
+		{
+			RequestChangeCueSheet(MakeCueSheetName(Sheet.Duet, a_divaId, 0), onChangeCallback);
+		}
 
 		//// RVA: 0xE6DF44 Offset: 0xE6DF44 VA: 0xE6DF44
-		//public void RequestChangeCueSheetUnit(int a_divaId, int a_divaId2, UnityAction onChangeCallback) { }
+		public void RequestChangeCueSheetUnit(int a_divaId, int a_divaId2, UnityAction onChangeCallback)
+		{
+			RequestChangeCueSheet(MakeCueSheetName(Sheet.Unit, a_divaId, a_divaId2), onChangeCallback);
+		}
 
 		//// RVA: 0xE6DFEC Offset: 0xE6DFEC VA: 0xE6DFEC
 		public void Play(Category categoryType, int voiceId)

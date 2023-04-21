@@ -97,10 +97,32 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B57C34 Offset: 0x1B57C34 VA: 0x1B57C34
-		// public float GetNotesSpeed() { }
+		public float GetNotesSpeed()
+		{
+			return GetNotesSpeedInner() / 10.0f;
+		}
 
 		// // RVA: 0x1B57C54 Offset: 0x1B57C54 VA: 0x1B57C54
-		// private float GetNotesSpeedInner() { }
+		private float GetNotesSpeedInner()
+		{
+			Difficulty.Type diff = GetNotesSpeedCurrentDiff();
+			bool line6 = IsNotesSpeedCurrentLine6Mode();
+			switch(diff)
+			{
+				case Difficulty.Type.Easy:
+					return Option.DCHMOFLEFMI_NotesSpeedEasy;
+				case Difficulty.Type.Normal:
+					return Option.MBOEPFLNDOD_NotesSpeedNormal;
+				case Difficulty.Type.Hard:
+					return line6 ? Option.LIPAPGABJOA_NotesSpeedHardPlus : Option.MGOOLKHAPAF_NotesSpeedHard;
+				case Difficulty.Type.VeryHard:
+					return line6 ? Option.JDJBFBPBLDC_NotesSpeedVeryHardPlus : Option.AIKDLBAANLG_NotesSpeedVeryHard;
+				case Difficulty.Type.Extreme:
+					return line6 ? Option.FJKNAHGFAPP_NotesSpeedExtremePlus : Option.KOKDGGOFPPI_NotesSpeedExtreme;
+				default:
+					return 30;
+			}
+		}
 
 		// // RVA: 0x1B57F10 Offset: 0x1B57F10 VA: 0x1B57F10
 		// public void SetNotesSpeedValue(float value) { }
@@ -109,13 +131,30 @@ namespace XeApp.Game.Menu
 		// private void SetNotesSpeedInner(float value) { }
 
 		// // RVA: 0x1B57D58 Offset: 0x1B57D58 VA: 0x1B57D58
-		// public Difficulty.Type GetNotesSpeedCurrentDiff() { }
+		public Difficulty.Type GetNotesSpeedCurrentDiff()
+		{
+			if(m_notesSpeedDiffSelection)
+			{
+				return (Difficulty.Type)Option.LHJHOFNIJJF_NotesSpeedSelectDiff;
+			}
+			return Database.Instance.gameSetup.musicInfo.difficultyType;
+		}
 
 		// // RVA: 0x1B57E34 Offset: 0x1B57E34 VA: 0x1B57E34
-		// public bool IsNotesSpeedCurrentLine6Mode() { }
+		public bool IsNotesSpeedCurrentLine6Mode()
+		{
+			if(m_notesSpeedDiffSelection)
+			{
+				return Option.ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode;
+			}
+			return Database.Instance.gameSetup.musicInfo.IsLine6Mode;
+		}
 
 		// // RVA: 0x1B58034 Offset: 0x1B58034 VA: 0x1B58034
-		// public void SetNotesSpeedDiffSelection(bool canSelect) { }
+		public void SetNotesSpeedDiffSelection(bool canSelect)
+		{
+			m_notesSpeedDiffSelection = canSelect;
+		}
 
 		// // RVA: 0x1B5803C Offset: 0x1B5803C VA: 0x1B5803C
 		// public void NotesSpeedDiffToLeft() { }
@@ -142,7 +181,10 @@ namespace XeApp.Game.Menu
 		// public float NotesSpeedMinus() { }
 
 		// // RVA: 0x1B58810 Offset: 0x1B58810 VA: 0x1B58810
-		// public bool GetNotesSpeedAllApply() { }
+		public bool GetNotesSpeedAllApply()
+		{
+			return Option.LBIKGDHCICB_NotesSpeedAllApply == 1;
+		}
 
 		// // RVA: 0x1B5883C Offset: 0x1B5883C VA: 0x1B5883C
 		// public void SetNotesSpeedAllApply(bool allApply) { }
@@ -150,8 +192,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B58864 Offset: 0x1B58864 VA: 0x1B58864
 		public bool GetNotesSpeedAutoRejected()
 		{
-			TodoLogger.Log(0, "GetNotesSpeedAutoRejected");
-			return false;
+			return Option.JJDENMHGOIH_NotesSpeedAutoRejected == 1;
 		}
 
 		// // RVA: 0x1B58890 Offset: 0x1B58890 VA: 0x1B58890
@@ -260,13 +301,59 @@ namespace XeApp.Game.Menu
 		// public float VolumeMinus(SoundManager.CategoryId category, bool simulation = False) { }
 
 		// // RVA: 0x1B597E4 Offset: 0x1B597E4 VA: 0x1B597E4
-		// public void SetVolume(SoundManager.CategoryId category, float value, bool simulation = False) { }
+		public void SetVolume(SoundManager.CategoryId category, float value, bool simulation = false)
+		{
+			switch(category)
+			{
+				case SoundManager.CategoryId.MENU_SE:
+					Option.BGLLCLEDHKK_VolSe = Mathf.RoundToInt(value);
+					break;
+				case SoundManager.CategoryId.MENU_VOICE:
+					Option.CNCIMBGLKOB_VolVoice = Mathf.RoundToInt(value);
+					break;
+				case SoundManager.CategoryId.MENU_BGM:
+					Option.HOMPENLIHCK_VolBgm = Mathf.RoundToInt(value);
+					break;
+				case SoundManager.CategoryId.GAME_SE:
+					if(simulation)
+						OptionSLive.LMDACNNJDOE_VolSeRhythm = Mathf.RoundToInt(value);
+					else
+						Option.LMDACNNJDOE_VolSeRhythm = Mathf.RoundToInt(value);
+					break;
+				case SoundManager.CategoryId.GAME_VOICE:
+					if (simulation)
+						OptionSLive.FCKEDCKCEFC_VolVoiceRhythm = Mathf.RoundToInt(value);
+					else
+						Option.FCKEDCKCEFC_VolVoiceRhythm = Mathf.RoundToInt(value);
+					break;
+				case SoundManager.CategoryId.GAME_BGM:
+					if (simulation)
+						OptionSLive.ICGAOAFIHFD_VolBgmRhythm = Mathf.RoundToInt(value);
+					else
+						Option.ICGAOAFIHFD_VolBgmRhythm = Mathf.RoundToInt(value);
+					break;
+				case SoundManager.CategoryId.GAME_NOTES:
+					if (simulation)
+						OptionSLive.IBEINHHMHAC_VolNotesRhythm = Mathf.RoundToInt(value);
+					else
+						Option.IBEINHHMHAC_VolNotesRhythm = Mathf.RoundToInt(value);
+					break;
+				default:
+					break;
+			}
+			SoundManager.Instance.SetCategoryVolumeFromMark(category, Mathf.RoundToInt(value), false);
+		}
 
 		// // RVA: 0x1B599D4 Offset: 0x1B599D4 VA: 0x1B599D4
 		// public void SetOrientation(int value) { }
 
 		// // RVA: 0x1B599FC Offset: 0x1B599FC VA: 0x1B599FC
-		// private void SetOrientationInner(int type) { }
+		private void SetOrientationInner(int type)
+		{
+			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CJFAJNMADBA_ScreenRotation == type)
+				return;
+			SetScreenOrientation(type);
+		}
 
 		// // RVA: 0x1B59AF8 Offset: 0x1B59AF8 VA: 0x1B59AF8
 		// public bool IsChangeVideo() { }
@@ -284,7 +371,10 @@ namespace XeApp.Game.Menu
 		// public bool IsChangeDecoNotification() { }
 
 		// // RVA: 0x1B5A03C Offset: 0x1B5A03C VA: 0x1B5A03C
-		// public bool IsChangeAllNotification() { }
+		public bool IsChangeAllNotification()
+		{
+			return ILDKBCLAFPB.JDBOPCADICO_Notification.HMMFJOEBEKJ(Notification, GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification);
+		}
 
 		// // RVA: 0x1B5A120 Offset: 0x1B5A120 VA: 0x1B5A120
 		// public void ApplyNotification() { }
@@ -299,31 +389,163 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B5A35C Offset: 0x1B5A35C VA: 0x1B5A35C
 		public void ApplyValue(bool isSave = true, Action callback = null)
 		{
-			if (callback != null)
-				callback();
-			TodoLogger.Log(0, "ApplyValue");
-			/*if(!isSave)
+			if(!isSave)
 			{
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.ODDIHGPONFL_Copy(Option);
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification.ODDIHGPONFL_Copy(Notification);
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.ODDIHGPONFL_Copy(OptionSLive);
 				SetHomeDivaValue();
 			}
-			SetVolume(2, Option.HOMPENLIHCK_VolBgm);
-			SetVolume(5, Option.ICGAOAFIHFD_VolBgmRhythm);
-			SetVolume(0, Option.BGLLCLEDHKK_VolSe);
-			SetVolume(3, Option.LMDACNNJDOE_VolSeRhythm);
-			SetVolume(6, Option.IBEINHHMHAC_VolNotesRhythm);
-			SetVolume(1, Option.CNCIMBGLKOB_VolVoice);
-			SetVolume(4, Option.FCKEDCKCEFC_VolVoiceRhythm);
+			SetVolume(SoundManager.CategoryId.MENU_BGM, Option.HOMPENLIHCK_VolBgm, false);
+			SetVolume(SoundManager.CategoryId.GAME_BGM, Option.ICGAOAFIHFD_VolBgmRhythm, false);
+			SetVolume(SoundManager.CategoryId.MENU_SE, Option.BGLLCLEDHKK_VolSe, false);
+			SetVolume(SoundManager.CategoryId.GAME_SE, Option.LMDACNNJDOE_VolSeRhythm, false);
+			SetVolume(SoundManager.CategoryId.GAME_NOTES, Option.IBEINHHMHAC_VolNotesRhythm, false);
+			SetVolume(SoundManager.CategoryId.MENU_VOICE, Option.CNCIMBGLKOB_VolVoice, false);
+			SetVolume(SoundManager.CategoryId.GAME_VOICE, Option.FCKEDCKCEFC_VolVoiceRhythm, false);
 
 			Option.CJFAJNMADBA_ScreenRotation = Option.CJFAJNMADBA_ScreenRotation;
 
-			GameManager.Instance.SetLongscreenFrameColor(Option.HLABNEIEJPM_SafeAreaDesign);
+			GameManager.Instance.SetLongScreenFrameColor(Option.HLABNEIEJPM_SafeAreaDesign);
 			if(isSave)
 			{
-				SetOrientationInner GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality
-			}*/
+				bool b = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality();
+				bool b2 = Option.PKEMELMMEKM_GetDivaQuality();
+				SetOrientationInner(b2 ? 1 : 0);
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HOMPENLIHCK_VolBgm = Option.HOMPENLIHCK_VolBgm;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BGLLCLEDHKK_VolSe = Option.BGLLCLEDHKK_VolSe;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CNCIMBGLKOB_VolVoice = Option.CNCIMBGLKOB_VolVoice;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.ICGAOAFIHFD_VolBgmRhythm = Option.ICGAOAFIHFD_VolBgmRhythm;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.LMDACNNJDOE_VolSeRhythm = Option.LMDACNNJDOE_VolSeRhythm;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.FCKEDCKCEFC_VolVoiceRhythm = Option.FCKEDCKCEFC_VolVoiceRhythm;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.IBEINHHMHAC_VolNotesRhythm = Option.IBEINHHMHAC_VolNotesRhythm;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.ICGAOAFIHFD_VolBgmRhythm = OptionSLive.ICGAOAFIHFD_VolBgmRhythm;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.LMDACNNJDOE_VolSeRhythm = OptionSLive.LMDACNNJDOE_VolSeRhythm;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.FCKEDCKCEFC_VolVoiceRhythm = OptionSLive.FCKEDCKCEFC_VolVoiceRhythm;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.IBEINHHMHAC_VolNotesRhythm = OptionSLive.IBEINHHMHAC_VolNotesRhythm;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CJFAJNMADBA_ScreenRotation = Option.CJFAJNMADBA_ScreenRotation;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.NFMEIILKACN_NotesRoute = Option.NFMEIILKACN_NotesRoute;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.EDDMJEMOAGM_IsNotExcellentDisplaySetting = Option.EDDMJEMOAGM_IsNotExcellentDisplaySetting;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MJHEPGIEDDL_IsSlideNoteEffect = Option.MJHEPGIEDDL_IsSlideNoteEffect;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KDNKCOAJGCM_NotesType = Option.KDNKCOAJGCM_NotesType;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OJAJHIMOIEC_NoteOffset = Option.OJAJHIMOIEC_NoteOffset;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CDGKHMEOEMP_ValkyrieMode = Option.CDGKHMEOEMP_ValkyrieMode;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.FPFAMFOPJDJ_Dimmer2d = Option.FPFAMFOPJDJ_Dimmer2d;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OLALFDCEHKJ_Dimmer3d = Option.OLALFDCEHKJ_Dimmer3d;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.NAGJLEIPAAC_Cutin = Option.NAGJLEIPAAC_Cutin;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DADIPGPHLDD_EffectCutin = Option.DADIPGPHLDD_EffectCutin;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.DADIPGPHLDD_EffectCutin = OptionSLive.DADIPGPHLDD_EffectCutin;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DDHCLNFPNGK_RenderQuality = Option.DDHCLNFPNGK_RenderQuality;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.DDHCLNFPNGK_RenderQuality = OptionSLive.DDHCLNFPNGK_RenderQuality;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video = Option.PMGMMMGCEEI_Video;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CJKKALFPMLA_IsNotDivaModeDivaVisible = Option.CJKKALFPMLA_IsNotDivaModeDivaVisible;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.IHEPCAHBECA_VideoMode = Option.IHEPCAHBECA_VideoMode;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OAKOJGPBAJF_BackKey = Option.OAKOJGPBAJF_BackKey;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MHACPBAPBFE_BgMode = Option.MHACPBAPBFE_BgMode;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GACNKPOMOFA_IsDrawKira = Option.GACNKPOMOFA_IsDrawKira;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.LENJLNLNPEO_IsPlateAnimationHome = Option.LENJLNLNPEO_IsPlateAnimationHome;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DFLJOKOKLIL_IsPlateAnimationOther = Option.DFLJOKOKLIL_IsPlateAnimationOther;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MDMDEAFFIMB_IsDivaEffect = Option.MDMDEAFFIMB_IsDivaEffect;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KPFAFLBICLA_IsNotBattleEventInfo = Option.KPFAFLBICLA_IsNotBattleEventInfo;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HLABNEIEJPM_SafeAreaDesign = Option.HLABNEIEJPM_SafeAreaDesign;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HJPDHDHMOPF_IsNotForceWideScreen = Option.HJPDHDHMOPF_IsNotForceWideScreen;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HHMCIGLCBNG_QualityCustomDiva3D = Option.HHMCIGLCBNG_QualityCustomDiva3D;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AHLFOHJMGAI_QualityCustomOther3D = Option.AHLFOHJMGAI_QualityCustomOther3D;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.FPJHOLMLDGC_QualityCustom2D = Option.FPJHOLMLDGC_QualityCustom2D;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.HHMCIGLCBNG_QualityCustomDiva3D = OptionSLive.HHMCIGLCBNG_QualityCustomDiva3D;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.AHLFOHJMGAI_QualityCustomOther3D = OptionSLive.AHLFOHJMGAI_QualityCustomOther3D;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DCHMOFLEFMI_NotesSpeedEasy = Option.DCHMOFLEFMI_NotesSpeedEasy;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MBOEPFLNDOD_NotesSpeedNormal = Option.MBOEPFLNDOD_NotesSpeedNormal;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MGOOLKHAPAF_NotesSpeedHard = Option.MGOOLKHAPAF_NotesSpeedHard;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AIKDLBAANLG_NotesSpeedVeryHard = Option.AIKDLBAANLG_NotesSpeedVeryHard;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KOKDGGOFPPI_NotesSpeedExtreme = Option.KOKDGGOFPPI_NotesSpeedExtreme;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.LIPAPGABJOA_NotesSpeedHardPlus = Option.LIPAPGABJOA_NotesSpeedHardPlus;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.JDJBFBPBLDC_NotesSpeedVeryHardPlus = Option.JDJBFBPBLDC_NotesSpeedVeryHardPlus;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.FJKNAHGFAPP_NotesSpeedExtremePlus = Option.FJKNAHGFAPP_NotesSpeedExtremePlus;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.LHJHOFNIJJF_NotesSpeedSelectDiff = Option.LHJHOFNIJJF_NotesSpeedSelectDiff;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode = Option.ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.LBIKGDHCICB_NotesSpeedAllApply = Option.LBIKGDHCICB_NotesSpeedAllApply;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.JJDENMHGOIH_NotesSpeedAutoRejected = Option.JJDENMHGOIH_NotesSpeedAutoRejected;
+				bool b3 = b != b2;
+				if(HomeDiva == m_optionHomeDiva)
+				{
+					if(b3)
+					{
+						//LAB_01b5cb0c
+						if(MenuScene.Instance != null)
+						{
+							MenuScene.Instance.divaManager.Release(true);
+						}
+					}
+				}
+				else
+				{
+					int dId = m_optionHomeDiva;
+					if (dId != 1)
+						dId = 0;
+					int hid = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
+					FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
+					if(diva.EGAFMGDFFCH_HomeDivaCostume.DAJGPBLEEOB_PrismCostumeId ==
+						diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId)
+					{
+						if(diva.JFFLFIMIMOI_HomeColorId != diva.JFFLFIMIMOI_HomeColorId)
+							b3 = true;
+					}
+					else
+					{
+						//LAB_01b5ca08
+						b3 = true;
+					}
+					if (m_optionHomeDiva == 1)
+						dId = diva.AHHJLDLAPAN_DivaId;
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId = dId;
+					Option.BBIOMNCILMC_HomeDivaId = dId;
+					SetHomeDivaValue();
+					if ((hid != diva.AHHJLDLAPAN_DivaId && m_optionHomeDiva != 1) || b3)
+					{
+						if (MenuScene.Instance != null)
+						{
+							MenuScene.Instance.divaManager.Release(true);
+						}
+					}
+				}
+				bool b4 = false;
+				if(IsChangeAllNotification())
+				{
+					Notification.ODDIHGPONFL_Copy(GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification);
+					b4 = true;
+				}
+				if(MenuScene.Instance != null)
+				{
+					if(MenuScene.Instance.divaManager != null)
+					{
+						MenuScene.Instance.divaManager.SetEnableDivaEffect(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MDMDEAFFIMB_IsDivaEffect == 0, false);
+						MenuScene.Instance.divaManager.SetEnableDivaWind(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MDMDEAFFIMB_IsDivaEffect == 0, false);
+					}
+				}
+				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				if(b4)
+				{
+					MenuScene.Instance.InputDisable();
+					MenuScene.Save(() =>
+					{
+						//0x1B5D42C
+						if(callback != null)
+							callback();
+						MenuScene.Instance.InputEnable();
+					}, () =>
+					{
+						//0x1B5D4E0
+						if (callback != null)
+							callback();
+						MenuScene.Instance.InputEnable();
+					});
+					return;
+				}
+			}
+			//LAB_01b5d088
+			if (callback != null)
+				callback();
 		}
 
 		// // RVA: 0x1B5D114 Offset: 0x1B5D114 VA: 0x1B5D114

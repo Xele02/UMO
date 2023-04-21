@@ -586,11 +586,14 @@ namespace XeApp.Game.Menu
 		{
 			GameManager.Instance.SetSystemCanvasRenderMode(RenderMode.ScreenSpaceOverlay);
 			GameManager.Instance.ChangePopupPriority(true);
-
-			TodoLogger.Log(0, "GotoRhythmGame");
+			Database.Instance.gameSetup.SetLiveSkip(isSkip, ticketCount);
+			Database.Instance.gameSetup.SetIsNotUpdateProfile(isNotUpdateProfile);
+			m_menuTransitionControl.SetHeaderMenuButtonDisable(MenuHeaderControl.Button.All);
+			m_menuTransitionControl.SetMenuContentButtonDisable();
+			m_menuTransitionControl.SetFooterMenuButtonDisable(MenuFooterControl.Button.All);
 			this.StartCoroutineWatched(GotoRhythmGameCorotine(() => {
 				return m_menuTransitionControl.DestroyTransion();
-			}, false));
+			}, isSkip));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7A14 Offset: 0x6C7A14 VA: 0x6C7A14
@@ -612,21 +615,141 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB313A4 Offset: 0xB313A4 VA: 0xB313A4
-		// private static int SeachLiveStartMultiVoice() { }
+		private static int SeachLiveStartMultiVoice()
+		{
+			List<int> l = new List<int>();
+			for(int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum; i++)
+			{
+				l.Add(Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId);
+			}
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.DCMGLKDJAKL(Database.Instance.gameSetup.musicInfo.musicId, Database.Instance.gameSetup.musicInfo.onStageDivaNum, l);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7A8C Offset: 0x6C7A8C VA: 0x6C7A8C
 		// // RVA: 0xB316A4 Offset: 0xB316A4 VA: 0xB316A4
 		public static IEnumerator RhythmGameStartVoicePlay()
 		{
-			TodoLogger.Log(0, "RhythmGameStartVoicePlay");
-			yield break;
+			GameSetupData.TeamInfo.DivaInfo t_center_diva; // 0x10
+			GameSetupData.TeamInfo.DivaInfo t_diva2; // 0x14
+			GameSetupData.TeamInfo.DivaInfo t_diva3; // 0x18
+			int t_diva_num; // 0x1C
+
+			//0xB3CC5C
+			t_center_diva = Database.Instance.gameSetup.teamInfo.divaList[0];
+			int forceVoice = Database.Instance.gameSetup.ForceDivaVoice();
+			int a = SeachLiveStartMultiVoice();
+			if(forceVoice < 1)
+			{
+				if(a < 1)
+				{
+					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.OOOPJNKBDIL(t_center_diva.prismDivaId, t_center_diva.prismCostumeModelId))
+					{
+						t_diva2 = Database.Instance.gameSetup.teamInfo.divaList[1];
+						t_diva3 = Database.Instance.gameSetup.teamInfo.divaList[2];
+						t_diva_num = Database.Instance.gameSetup.musicInfo.onStageDivaNum;
+						int disable_game_start_multi_voices = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("disable_game_start_multi_voices", 0);
+						if (disable_game_start_multi_voices != 0)
+							t_diva_num = 1;
+						bool isEndedChangeCueSheet = false;
+						if(t_diva_num == 3)
+						{
+							SoundManager.Instance.voDivaCos.RequestChangeCueSheetUnit(t_center_diva.prismDivaId, t_diva2.prismDivaId, () =>
+							{
+								//0xB3862C
+								isEndedChangeCueSheet = true;
+							});
+						}
+						else if(t_diva_num == 2)
+						{
+							SoundManager.Instance.voDivaCos.RequestChangeCueSheetDuet(t_center_diva.prismDivaId, () =>
+							{
+								//0xB38638
+								isEndedChangeCueSheet = true;
+							});
+						}
+						else
+						{
+							SoundManager.Instance.voDivaCos.RequestChangeCueSheetSole(t_center_diva.prismDivaId, () =>
+							{
+								//0xB38644
+								isEndedChangeCueSheet = true;
+							});
+						}
+						yield return new WaitUntil(() =>
+						{
+							//0xB38650
+							return isEndedChangeCueSheet;
+						});
+						//3
+						if(t_diva_num == 3)
+						{
+							SoundManager.Instance.voDivaCos.Play(DivaCosVoicePlayer.Category.GameStartMulti, t_diva3.prismDivaId);
+						}
+						else if(t_diva_num == 2)
+						{
+							SoundManager.Instance.voDivaCos.Play(DivaCosVoicePlayer.Category.GameStartMulti, t_diva2.prismDivaId);
+						}
+						else
+						{
+							SoundManager.Instance.voDivaCos.Play(DivaCosVoicePlayer.Category.GameStart, 0);
+						}
+					}
+					else
+					{
+						bool isEndedChangeCueSheet = false;
+						SoundManager.Instance.voDiva.RequestChangeCueSheet(t_center_diva.prismDivaId, () =>
+						{
+							//0xB38660
+							isEndedChangeCueSheet = true;
+						});
+						yield return new WaitUntil(() =>
+						{
+							//0xB3866C
+							return isEndedChangeCueSheet;
+						});
+						//4
+						SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.StartGame, 0);
+					}
+				}
+				else
+				{
+					bool isEndedChangeCueSheet = false;
+					SoundManager.Instance.voDiva.RequestChangeCueSheetForLiveStartMulti(a, () =>
+					{
+						//0xB38610
+						isEndedChangeCueSheet = true;
+					});
+					yield return new WaitUntil(() =>
+					{
+						//0xB3861C
+						return isEndedChangeCueSheet;
+					});
+					//2
+					SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.StartGame, t_center_diva.prismDivaId);
+				}
+			}
+			else
+			{
+				bool isEndedChangeCueSheet = false;
+				SoundManager.Instance.voDiva.RequestChangeCueSheetForReplacement(forceVoice, () =>
+				{
+					//0xB385F4
+					isEndedChangeCueSheet = true;
+				});
+				yield return new WaitUntil(() =>
+				{
+					//0xB38600
+					return isEndedChangeCueSheet;
+				});
+				//1
+				SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.StartGame, 0);
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7B04 Offset: 0x6C7B04 VA: 0x6C7B04
 		// // RVA: 0xB31238 Offset: 0xB31238 VA: 0xB31238
 		private IEnumerator GotoRhythmGameCorotine(Func<IEnumerator> wait, bool isSkip = false)
 		{
-			TodoLogger.Log(0, "GotoRhythmGameCorotine");
 			//0xB3B65C
 			yield return Co.R(RhythmGamePreLoad(wait));
 			enableFade = false;

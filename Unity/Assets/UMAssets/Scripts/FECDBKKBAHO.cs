@@ -156,8 +156,22 @@ public class FECDBKKBAHO
 	// // RVA: 0xFD0494 Offset: 0xFD0494 VA: 0xFD0494
 	public bool JCENJHBMDIP(int KKPAHLMJKIH, long JHNMKKNEENE, long CKPIHCGOEDP)
 	{
-		TodoLogger.Log(0, "JCENJHBMDIP");
-		return false;
+		long t = CKPIHCGOEDP * 86400;
+		Dictionary<int, FHOPNIJCFKA_FileInfo>.KeyCollection k = MLHACNBJAGM_FilesInfoByHash.Keys;
+		if(k.Count > 0)
+		{
+			int[] lk = new int[k.Count];
+			k.CopyTo(lk, 0);
+			for(int i = 0; i < lk.Length; i++)
+			{
+				if(MLHACNBJAGM_FilesInfoByHash[lk[i]].GEJJEDDEPMI && MLHACNBJAGM_FilesInfoByHash[lk[i]].KKPAHLMJKIH == KKPAHLMJKIH)
+				{
+					MLHACNBJAGM_FilesInfoByHash[lk[i]].DGGFLBJBLLN = JHNMKKNEENE;
+					MLHACNBJAGM_FilesInfoByHash[lk[i]].FNALNKKMKDC_ExpireTime = JHNMKKNEENE + t;
+				}
+			}
+		}
+		return true;
 	}
 
 	// // RVA: 0xFD0724 Offset: 0xFD0724 VA: 0xFD0724

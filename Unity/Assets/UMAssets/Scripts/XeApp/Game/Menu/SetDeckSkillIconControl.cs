@@ -111,6 +111,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
+				m_effectAnime.gameObject.SetActive(true);
 				m_effectAnime.Stop(true);
 				m_effectAnime.Play(0, null);
 			}

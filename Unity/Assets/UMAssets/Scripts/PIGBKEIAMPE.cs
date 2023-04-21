@@ -34,7 +34,7 @@ public class PIGBKEIAMPE_FriendManager
     public class CDDNFEDGCGG
     {
         public int MLPEHNBNOGD_Id; // 0x8
-        public long ANDGMDJLDLO; // 0x10
+        public long ANDGMDJLDLO_HideTime; // 0x10
     }
 
 	public static bool AGBLJGDGMGH = false; // 0x0
@@ -113,7 +113,7 @@ public class PIGBKEIAMPE_FriendManager
 						CDDNFEDGCGG data = new CDDNFEDGCGG();
 						data.MLPEHNBNOGD_Id = br.ReadInt32();
 						br.ReadInt32();
-						data.ANDGMDJLDLO = br.ReadInt64();
+						data.ANDGMDJLDLO_HideTime = br.ReadInt64();
 						KAMNNDELNHG.Add(data);
 					}
 				}
@@ -125,7 +125,25 @@ public class PIGBKEIAMPE_FriendManager
 	}
 
 	// // RVA: 0x16D3FC0 Offset: 0x16D3FC0 VA: 0x16D3FC0
-	// public void OKJJBFBDPDI() { }
+	public void OKJJBFBDPDI()
+	{
+		if (!Directory.Exists(PEHPMOBIOJF_SaveDataPath))
+			Directory.CreateDirectory(PEHPMOBIOJF_SaveDataPath);
+		FileStream fs = new FileStream(CCJEGGGJJPO_FcaFile, FileMode.Create);
+		BinaryWriter bw = new BinaryWriter(fs);
+		bw.Write(1);
+		bw.Write(KAMNNDELNHG.Count);
+		for(int i = 0; i < KAMNNDELNHG.Count; i++)
+		{
+			bw.Write(KAMNNDELNHG[i].MLPEHNBNOGD_Id);
+			bw.Write(0);
+			bw.Write(KAMNNDELNHG[i].ANDGMDJLDLO_HideTime);
+		}
+		bw.Flush();
+		bw.Close();
+		bw.Dispose();
+		fs.Dispose();
+	}
 
 	// // RVA: 0x16D463C Offset: 0x16D463C VA: 0x16D463C
 	// private void NDBHHJGGFDF(int PPFNGGCBJKC) { }
@@ -404,7 +422,7 @@ public class PIGBKEIAMPE_FriendManager
 		long serverTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		for (int i = 0; i < KAMNNDELNHG.Count; i++)
 		{
-			if (serverTime >= KAMNNDELNHG[i].ANDGMDJLDLO)
+			if (serverTime >= KAMNNDELNHG[i].ANDGMDJLDLO_HideTime)
 			{
 				KAMNNDELNHG.RemoveAt(i);
 				i = 0;

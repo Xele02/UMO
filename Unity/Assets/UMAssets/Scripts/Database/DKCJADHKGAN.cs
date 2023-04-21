@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using XeSys;
 
 public class DKCJADHKGAN { }
 public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
@@ -25,7 +26,14 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 		//// RVA: 0x198DA90 Offset: 0x198DA90 VA: 0x198DA90
 		public bool FLPDCNBLOKL(int IAPNPKAGEGH, int GHBPLHBNMBK)
 		{
-			TodoLogger.Log(0, "FLPDCNBLOKL");
+			if(BEPAMEEBPGI[IAPNPKAGEGH] != null)
+			{
+				for(int i = 0; i < BEPAMEEBPGI[IAPNPKAGEGH].Count; i++)
+				{
+					if (BEPAMEEBPGI[IAPNPKAGEGH][i] == GHBPLHBNMBK)
+						return true;
+				}
+			}
 			return false;
 		}
 
@@ -47,7 +55,15 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x198D990 Offset: 0x198D990 VA: 0x198D990
-	//public bool FLPDCNBLOKL(long JHNMKKNEENE, int GHBPLHBNMBK) { }
+	public bool FLPDCNBLOKL(long JHNMKKNEENE, int GHBPLHBNMBK)
+	{
+		JFFPEKOEINE data = PPIBJECKCEF(JHNMKKNEENE);
+		if(data != null)
+		{
+			return data.FLPDCNBLOKL((int)Utility.GetLocalDateTime(JHNMKKNEENE).DayOfWeek, GHBPLHBNMBK);
+		}
+		return false;
+	}
 
 	// RVA: 0x198DBA0 Offset: 0x198DBA0 VA: 0x198DBA0
 	public DKCJADHKGAN_EventWeekDay()

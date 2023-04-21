@@ -653,7 +653,20 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x196225C Offset: 0x196225C VA: 0x196225C
-	// public MLIBEPGADJH.KKLDOOJBJMN PLKHCPPCHJL(int GJGIFNEAHJN) { }
+	public KKLDOOJBJMN PLKHCPPCHJL(int GJGIFNEAHJN)
+	{
+		for (int i = 0; i < CDENCMNHNGA_SceneList.Count; i++)
+		{
+			if(CDENCMNHNGA_SceneList[i].PPEGAKEIEGM_En > 1)
+			{
+				if(CDENCMNHNGA_SceneList[i].KELFCMEOPPM_Ep == GJGIFNEAHJN)
+				{
+					return CDENCMNHNGA_SceneList[i];
+				}
+			}
+		}
+		return null;
+	}
 }
 
 public class IDMPGHMNLHD

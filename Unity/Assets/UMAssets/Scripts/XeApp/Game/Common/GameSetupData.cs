@@ -498,10 +498,17 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE9CF04 Offset: 0xE9CF04 VA: 0xE9CF04
-		// public void SetLiveSkip(bool isSkip, int ticketCount) { }
+		public void SetLiveSkip(bool isSkip, int ticketCount)
+		{
+			LiveSkipTicketCount = ticketCount;
+			EnableLiveSkip = isSkip;
+		}
 
 		// // RVA: 0xE9CF10 Offset: 0xE9CF10 VA: 0xE9CF10
-		// public void SetIsNotUpdateProfile(bool _isNotUpdateProfile) { }
+		public void SetIsNotUpdateProfile(bool _isNotUpdateProfile)
+		{
+			IsNotUpdateProfile = _isNotUpdateProfile;
+		}
 
 		// // RVA: 0xE9CBBC Offset: 0xE9CBBC VA: 0xE9CBBC
 		public void ResetSelectedDashIndex()
