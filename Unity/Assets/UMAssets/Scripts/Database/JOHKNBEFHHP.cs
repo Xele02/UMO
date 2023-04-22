@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use JOHKNBEFHHP_TitleBanner", true)]
 public class JOHKNBEFHHP { }
 public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG_DbSection
 {
@@ -40,7 +41,7 @@ public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG_DbSection
 			NGKJHBDEELB data = new NGKJHBDEELB();
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.KNHOMNONOEB_AssetId = array[i].KNHOMNONOEB;
-			data.PPEGAKEIEGM = (sbyte)JKAECBCNHAN(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PPEGAKEIEGM = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.PDBPFJJCADD_StartDate = array[i].PDBPFJJCADD;
 			data.FDBNFFNFOND_EndDate = array[i].FDBNFFNFOND;
 			CDENCMNHNGA_BannerList.Add(data);

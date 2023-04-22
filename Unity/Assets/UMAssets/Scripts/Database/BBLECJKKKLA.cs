@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use BBLECJKKKLA_DecoSetItem", true)]
 public class BBLECJKKKLA { }
 public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 {
@@ -65,7 +66,7 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 			GJBPBKNHLHC_DecoSetItemInfo data = new GJBPBKNHLHC_DecoSetItemInfo();
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.EKLIPGELKCL = array[i].FBFLDFMFFOH;
-			data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.CPKMLLNADLJ = array[i].CPKMLLNADLJ;
 			data.MLMCEBBDJOE = array[i].MLMCEBBDJOE;
 			data.ODNILEDOAIP = array[i].ODNILEDOAIP;

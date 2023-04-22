@@ -284,7 +284,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BB9B18 Offset: 0x1BB9B18 VA: 0x1BB9B18
-		// public bool IsReady() { }
+		public bool IsReady()
+		{
+			return m_isReady;
+		}
 
 		// // RVA: 0x1BB9B20 Offset: 0x1BB9B20 VA: 0x1BB9B20
 		private bool IsLoadedLayout()
@@ -328,7 +331,7 @@ namespace XeApp.Game.Common
 			}
 			m_buttonUguiRuntime.GetComponent<RectTransform>().anchoredPosition = GetContentButtonPosition(setting.WindowSize, setting.IsCaption);
 			m_validButtonCount = m_buttons.Length;
-			m_tabButtonUguiRuntime.gameObject.SetActive(m_buttons.Length != 0);
+			m_tabButtonUguiRuntime.gameObject.SetActive(setting.Tabs.Length != 0);
 			if(setting.Tabs.Length != 0)
 			{
 				AbsoluteLayout layout = m_tabButtonUguiRuntime.Layout.Root[0] as AbsoluteLayout;
@@ -497,10 +500,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BBB660 Offset: 0x1BBB660 VA: 0x1BBB660
-		// public bool IsActivePopupWindow() { }
+		public bool IsActivePopupWindow()
+		{
+			return m_isActive;
+		}
 
 		// // RVA: 0x1BBB668 Offset: 0x1BBB668 VA: 0x1BBB668
-		// public bool IsOpenPopupWindow() { }
+		public bool IsOpenPopupWindow()
+		{
+			return m_isOpenWindow;
+		}
 
 		// // RVA: 0x1BBB670 Offset: 0x1BBB670 VA: 0x1BBB670
 		public void SetButtonHiddenEnable(bool enable)
@@ -704,10 +713,29 @@ namespace XeApp.Game.Common
 		// public PopupButton FindButton(PopupButton.ButtonType type) { }
 
 		// // RVA: 0x1BBC234 Offset: 0x1BBC234 VA: 0x1BBC234
-		// public void ForceChangeScrollPosition(float value) { }
+		public void ForceChangeScrollPosition(float value)
+		{
+			m_scrollRect.verticalScrollbar.value = value;
+		}
 
 		// // RVA: 0x1BBC288 Offset: 0x1BBC288 VA: 0x1BBC288
-		// public void ResetScroll(PopupSetting setting, IPopupContent content, float scrollPosition = 1) { }
+		public void ResetScroll(PopupSetting setting, IPopupContent content, float scrollPosition = 1)
+		{
+			m_scrollRect.content = setting.Content.GetComponent<RectTransform>();
+			if (content.IsScrollable())
+			{
+				m_scrollRect.enabled = true;
+				m_scrollRect.verticalScrollbar.gameObject.SetActive(true);
+				m_rectMask.enabled = true;
+			}
+			else
+			{
+				m_scrollRect.enabled = false;
+				m_scrollRect.verticalScrollbar.gameObject.SetActive(false);
+				m_rectMask.enabled = false;
+			}
+			ForceChangeScrollPosition(scrollPosition);
+		}
 
 		// // RVA: 0x1BBC534 Offset: 0x1BBC534 VA: 0x1BBC534
 		// public void StopScrollMovement() { }

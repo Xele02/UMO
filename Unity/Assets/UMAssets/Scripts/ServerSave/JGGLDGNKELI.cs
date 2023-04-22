@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use JGGLDGNKELI_Emblem", true)]
 public class JGGLDGNKELI { }
 public class JGGLDGNKELI_Emblem : KLFDBFMNLBL_ServerSaveBlock
 {

@@ -25,9 +25,9 @@ namespace XeApp.Game.Menu
 
         internal MusicSelectArgs.SelectionData selection { get; private set; } // 0x8
         internal bool hasSelection { get { return selection != null; } } //0x1054A18
-        // internal bool isScoreRanking { get; private set; } // 0xC
-        // public bool isSimulation { get; set; } // 0xD
-        // public bool isLine6Mode { get; set; } // 0xE
+        internal bool isScoreRanking { get; private set; } // 0xC
+        public bool isSimulation { get; set; } // 0xD
+        public bool isLine6Mode { get; set; } // 0xE
 
         // // RVA: 0x1054A50 Offset: 0x1054A50 VA: 0x1054A50
         // public void SetSelection(int freeMusicid, Difficulty.Type difficulty) { }

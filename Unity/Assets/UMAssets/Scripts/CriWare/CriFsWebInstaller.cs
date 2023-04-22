@@ -86,7 +86,7 @@ namespace CriWare
         public void Copy(string url, string dstPath)
         {
 			url = FileSystemProxy.ConvertURL(url);
-            TodoLogger.Log(5, "Copy "+url+" "+dstPath);
+            UnityEngine.Debug.Log("Copy "+url+" "+dstPath);
             www = new UnityEngine.WWW(url);
             fileSavePath = dstPath;
             status.status = Status.Busy;
@@ -194,6 +194,10 @@ namespace CriWare
 							UnityEngine.Debug.Log("Write file " + installer.fileSavePath);
 							System.IO.File.WriteAllBytes(installer.fileSavePath, installer.www.bytes);
 						}
+                        else
+                        {
+                            UnityEngine.Debug.LogError("Install Error for "+installer.www.url+" : "+installer.www.error);
+                        }
                     }
                 }
             }

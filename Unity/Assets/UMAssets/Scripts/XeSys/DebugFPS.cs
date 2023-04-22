@@ -52,31 +52,53 @@ namespace XeSys
 		// // RVA: 0x1931A48 Offset: 0x1931A48 VA: 0x1931A48
 		private void Awake()
 		{
-			TodoLogger.Log(100, "Debug FPS Awake");
+			DontDestroyOnLoad(this);
 		}
 
 		// // RVA: 0x1931ACC Offset: 0x1931ACC VA: 0x1931ACC
 		private void Start()
 		{
-			TodoLogger.Log(100, "Debug FPS Start");
+			minFPS = 60;
+			mLastInterval = Time.realtimeSinceStartup;
+			mFrames = 0;
+			mFps = 0;
+			stringBuilder = new StringBuilder(16);
 		}
 
 		// // RVA: 0x1931B64 Offset: 0x1931B64 VA: 0x1931B64
 		private void Update()
 		{
-			TodoLogger.Log(100, "Debug FPS Update");
+			mFrames++;
+			float dt = Time.realtimeSinceStartup - mLastInterval;
+			if (dt >= 0.5f)
+			{
+				mFps = mFrames / dt;
+				if (mFps <= minFPS)
+					minFPS = mFps;
+				mLastInterval = Time.realtimeSinceStartup;
+				mFrames = 0;
+				if (!isMeasureingAvg)
+					return;
+				mAvgFpsCount++;
+				mTotalFps += mFps;
+				avgFPS = mTotalFps / mAvgFpsCount;
+			}
 		}
 
 		// // RVA: 0x1931C18 Offset: 0x1931C18 VA: 0x1931C18
 		public void StartMeasureAvg()
 		{
-			TodoLogger.Log(100, "StartMeasureAvg");
+			mTotalFps = 0;
+			mAvgFpsCount = 0;
+			isMeasureingAvg = true;
 		}
 
 		// // RVA: 0x1931C34 Offset: 0x1931C34 VA: 0x1931C34
 		public void StopMeasureAvg()
 		{
-			TodoLogger.Log(100, "Debug FPS StopMeasureAvg");
+			isMeasureingAvg = false;
+			mTotalFps = 0;
+			mAvgFpsCount = 0;
 		}
 
 		// [ConditionalAttribute] // RVA: 0x690690 Offset: 0x690690 VA: 0x690690

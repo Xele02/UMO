@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF39E6C Offset: 0xF39E6C VA: 0xF39E6C Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB;
+			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0xF39F0C Offset: 0xF39F0C VA: 0xF39F0C Slot: 18

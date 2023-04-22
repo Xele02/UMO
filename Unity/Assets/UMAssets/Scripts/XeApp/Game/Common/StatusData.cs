@@ -65,6 +65,19 @@ namespace XeApp.Game.Common
 		// public void Multi(int multi) { }
 
 		// // RVA: 0x1CCA1F0 Offset: 0x1CCA1F0 VA: 0x1CCA1F0
-		// public void Div(int div) { }
+		public void Div(int div)
+		{
+			life /= div;
+			soul /= div;
+			vocal /= div;
+			charm /= div;
+			sceneBonus /= div;
+			support /= div;
+			fold /= div;
+			for(int i = 0; i < spNoteExpected.Length; i++)
+			{
+				spNoteExpected[i] /= div;
+			}
+		}
 	}
 }

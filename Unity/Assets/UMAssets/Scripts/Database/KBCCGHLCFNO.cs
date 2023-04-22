@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use KBCCGHLCFNO_MonthlyPass", true)]
 public class KBCCGHLCFNO { }
 public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
 {
@@ -168,7 +169,7 @@ public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
 			{
 				OFCDEIEAKLN data = new OFCDEIEAKLN();
 				data.JJPDPNJFBHN = array[i].JJPDPNJFBHN;
-				data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+				data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 				data.HIPBLKBEPAJ = array[i].HIPBLKBEPAJ;
 				JHNEKMAHOPJ.Add(data);
 			}
@@ -179,7 +180,7 @@ public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
 			{
 				BJEKBPEKCIM data = new BJEKBPEKCIM();
 				data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
-				data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+				data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 				data.FJGCDPLCIAK = array[i].FJGCDPLCIAK;
 				data.OPFGFINHFCE = array[i].OPFGFINHFCE;
 				data.KLMPFGOCBHC = array[i].KLMPFGOCBHC;

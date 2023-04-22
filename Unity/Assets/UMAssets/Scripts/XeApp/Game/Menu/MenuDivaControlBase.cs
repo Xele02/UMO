@@ -1,3 +1,5 @@
+using System.Collections;
+using UnityEngine;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
@@ -20,21 +22,42 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEC84EC Offset: 0xEC84EC VA: 0xEC84EC
-		//protected Coroutine StartCoroutine(IEnumerator routine) { }
+		protected Coroutine StartCoroutine(IEnumerator routine)
+		{
+			if (DivaManager != null)
+				return DivaManager.StartCoroutine(routine);
+			return null;
+		}
 
 		//// RVA: 0xEC85B0 Offset: 0xEC85B0 VA: 0xEC85B0
 		//protected void StopCoroutine(Coroutine routine) { }
 
 		//// RVA: 0xEC866C Offset: 0xEC866C VA: 0xEC866C Slot: 4
-		//private void XeApp.Game.Menu.MenuDivaManager.ControlDelegater.BeginControl(MenuDivaManager divaManager, MenuDivaObject divaObject) { }
+		public void BeginControl(MenuDivaManager divaManager, MenuDivaObject divaObject)
+		{
+			DivaObject = divaObject;
+			DivaManager = divaManager;
+			OnBeginControl();
+		}
 
 		//// RVA: 0xEC8684 Offset: 0xEC8684 VA: 0xEC8684 Slot: 5
-		//private void XeApp.Game.Menu.MenuDivaManager.ControlDelegater.EndControl() { }
+		public void EndControl()
+		{
+			OnEndControl();
+			DivaObject = null;
+			DivaManager = null;
+		}
 
 		//// RVA: 0xEC86B4 Offset: 0xEC86B4 VA: 0xEC86B4 Slot: 8
-		//protected virtual void OnBeginControl() { }
+		protected virtual void OnBeginControl()
+		{
+			return;
+		}
 
 		//// RVA: 0xEC86B8 Offset: 0xEC86B8 VA: 0xEC86B8 Slot: 9
-		//protected virtual void OnEndControl() { }
+		protected virtual void OnEndControl()
+		{
+			return;
+		}
 	}
 }

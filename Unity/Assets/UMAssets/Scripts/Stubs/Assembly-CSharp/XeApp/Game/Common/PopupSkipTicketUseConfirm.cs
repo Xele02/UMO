@@ -6,36 +6,45 @@ namespace XeApp.Game.Common
 {
 	public class PopupSkipTicketUseConfirm : LayoutUGUIScriptBase, IPopupContent
 	{
+		public enum ConsumeItem
+		{
+			Energy = 0,
+			LiveTicket = 1,
+			Ap = 2,
+		}
+
     public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		public bool IsScrollable()
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
+			return true;
 		}
 
 		public void Show()
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		public void Hide()
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		public bool IsReady()
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
+			return true;
 		}
 
 		public void CallOpenEnd()
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		[SerializeField]
@@ -57,6 +66,6 @@ namespace XeApp.Game.Common
 		[SerializeField]
 		private Text m_cautionText;
 
-		public Transform Parent => throw new System.NotImplementedException();
+		public Transform Parent => null; //throw new System.NotImplementedException();
 	}
 }

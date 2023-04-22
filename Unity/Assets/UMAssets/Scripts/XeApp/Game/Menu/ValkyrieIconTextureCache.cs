@@ -27,7 +27,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1655A58 Offset: 0x1655A58 VA: 0x1655A58
-		// public void LoadPortraitIcon(int valkyrie, int form, Action<IiconTexture> callBack) { }
+		public void LoadPortraitIcon(int valkyrie, int form, Action<IiconTexture> callBack)
+		{
+			Load(MakePortraitIconBundleName(valkyrie, form), callBack);
+		}
 
 		// // RVA: 0x1655C2C Offset: 0x1655C2C VA: 0x1655C2C
 		// public void TryInstallPortraitIcon(int valkyrie) { }
@@ -39,6 +42,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1655A8C Offset: 0x1655A8C VA: 0x1655A8C
-		// public static string MakePortraitIconBundleName(int valkyrie, int form) { }
+		public static string MakePortraitIconBundleName(int valkyrie, int form)
+		{
+			return string.Format("ct/vl/02/{0:D2}_{1:D2}.xab", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[valkyrie - 1].DAJGPBLEEOB_ModelId, form + 1);
+		}
 	}
 }

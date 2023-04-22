@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use JDEFIJBCJLC_EncryptedString", true)]
 public class JDEFIJBCJLC { }
 public class JDEFIJBCJLC_EncryptedString
 {

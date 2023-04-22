@@ -214,7 +214,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x971848 Offset: 0x971848 VA: 0x971848
 		private IEnumerator Co_OnPostSetCanvas()
 		{
-			UnityEngine.Debug.LogError("Co_OnPostSetCanvas");
+			TodoLogger.Log(0, "Co_OnPostSetCanvas");
 			m_isInitIntimacy = true;
 			yield return null;
 		}
@@ -794,26 +794,26 @@ namespace XeApp.Game.Menu
 			do
 			{
 				freemusicNum = UnityEngine.Random.Range(0, freemusics.Count);
-			} while(freemusics[freemusicNum].PPEGAKEIEGM != 2);
+			} while(freemusics[freemusicNum].PPEGAKEIEGM_Enabled != 2);
 			UnityEngine.Debug.Log("Select Free Music : "+(freemusicNum + 1));
 
-			int musicId = freemusics[freemusicNum].DLAEJOBELBH_Id;
+			int musicId = freemusics[freemusicNum].DLAEJOBELBH_MusicId;
 			UnityEngine.Debug.Log("Music Id : "+musicId);
 			var musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[musicId - 1];
 			UnityEngine.Debug.Log("Wav Id : "+musicInfo.KKPAHLMJKIH_WavId);
 
-			EEDKAACNBBG song = new EEDKAACNBBG();
+			EEDKAACNBBG_MusicData song = new EEDKAACNBBG_MusicData();
 			song.KHEKNNFCAOI(musicInfo.DLAEJOBELBH_Id);
 			UnityEngine.Debug.Log("Music Name : "+song.NEDBBJDAFBH_MusicName);
 
 			// select num diva
 			int numDiva = 1;
-			if(musicInfo.NJAOOMHCIHL_Dvs != 0 && musicInfo.PECMGDOMLAF_Dvm == 0)
+			if(musicInfo.NJAOOMHCIHL_DivaSolo != 0 && musicInfo.PECMGDOMLAF_DivaMulti == 0)
 				numDiva = 1;
-			else if(musicInfo.NJAOOMHCIHL_Dvs == 0 && musicInfo.PECMGDOMLAF_Dvm != 0)
-				numDiva = musicInfo.PECMGDOMLAF_Dvm;
+			else if(musicInfo.NJAOOMHCIHL_DivaSolo == 0 && musicInfo.PECMGDOMLAF_DivaMulti != 0)
+				numDiva = musicInfo.PECMGDOMLAF_DivaMulti;
 			else
-				numDiva = UnityEngine.Random.Range(0, 2) == 0 ? 1 : musicInfo.PECMGDOMLAF_Dvm;
+				numDiva = UnityEngine.Random.Range(0, 2) == 0 ? 1 : musicInfo.PECMGDOMLAF_DivaMulti;
 			UnityEngine.Debug.Log("Select NumDiva : "+numDiva);
 
 			// load music 
@@ -946,11 +946,11 @@ namespace XeApp.Game.Menu
 				}
 				if(team.danceDivaList[i].costumeModelId == 0)
 				{
-                    LCLCCHLDNHJ_Costume.ILODJKFJJDO cosInfo = null;
+                    LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = null;
 					do
 					{
 						team.danceDivaList[i].costumeModelId = UnityEngine.Random.Range(1, 50);
-						cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN(team.danceDivaList[i].divaId, team.danceDivaList[i].costumeModelId);
+						cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(team.danceDivaList[i].divaId, team.danceDivaList[i].costumeModelId);
 					} while(cosInfo.DAJGPBLEEOB_PrismCostumeModelId != team.danceDivaList[i].costumeModelId || 
 						excludedCostume.Contains(team.danceDivaList[i].divaId * 1000 + team.danceDivaList[i].costumeModelId)
 						|| (excludedCostumePos.ContainsKey(team.danceDivaList[i].divaId * 1000 + team.danceDivaList[i].costumeModelId) && 

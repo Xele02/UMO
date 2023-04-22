@@ -1,4 +1,6 @@
 
+[System.Obsolete("Use LINJMMGGDKL_SecureInt2", true)]
+public class LINJMMGGDKL { }
 public class LINJMMGGDKL_SecureInt2
 {
 	private int IPKONDLIDHC; // 0x8

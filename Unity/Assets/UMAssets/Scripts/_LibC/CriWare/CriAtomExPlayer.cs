@@ -182,11 +182,12 @@ namespace ExternLib
 			AudioClip clip = null;
 			if (!acbFiles[player.acbPtr].cachedAudioClips.TryGetValue(clipName, out clip))
 			{
+				//UnityEngine.Debug.LogError("Loading uncached sound "+ clipName +" " + player.cueName+" "+ player.cueId+" "+player.acbPtr.ToString());
 				clip = GetClip(player.audioStream, player.cueName, player.cueId, isStreaming);
 			}
 			source.clip = clip;
 			player.status = CriAtomExPlayer.Status.Stop;
-            UnityEngine.Debug.Log("Prepared sound "+ player.cueName+" "+ player.cueId);
+            //UnityEngine.Debug.Log("Prepared sound "+ player.cueName+" "+ player.cueId);
 #endif
 		}
 
@@ -306,7 +307,7 @@ namespace ExternLib
 #if !UNITY_ANDROID
 				AudioSource source = playersList[player].config.source.unityAudioSource;
                 source.Play();
-                UnityEngine.Debug.Log("Play sound "+playersList[player].cueName+" "+playersList[player].cueId);
+                //UnityEngine.Debug.Log("Play sound "+playersList[player].cueName+" "+playersList[player].cueId);
                 playersList[player].status = CriAtomExPlayer.Status.Playing;
                 playersList[player].currentPlayingId = (uint)++playbackCount;
                 PlaybackInfo pbinfo = new PlaybackInfo();

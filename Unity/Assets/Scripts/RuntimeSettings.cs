@@ -70,13 +70,27 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceDivaUnlock = true;
 	public bool ForceCostumeUnlock = true;
 	public bool ForceSongUnlock = true;
+	public bool ForceCardsUnlock = true;
+	public bool ForceValkyrieUnlock = true;
 	public bool ForceSimulationOpen = true;
 	public bool ForceTutoSkip = true;
+	public int ForcePlayerLevel = 90;
+	public bool IsInvincibleCheat = true;
 
 	[Header("Live")]
 	public bool ForceLiveValkyrieMode = true;
 	public bool ForceLiveDivaMode = false;
 	public bool ForceLiveAwakenDivaMode = true;
+
+	public bool AddBigScore = false;
+
+	public KeyCode Lane1Touch = KeyCode.S;
+	public KeyCode Lane2Touch = KeyCode.D;
+	public KeyCode Lane3Touch = KeyCode.F;
+	public KeyCode Lane4Touch = KeyCode.H;
+	public KeyCode Lane5Touch = KeyCode.J;
+	public KeyCode Lane6Touch = KeyCode.K;
+	public KeyCode ActiveSkillTouch = KeyCode.Space;
 
 	[Header("S-Live")]
 	public bool ForceCutin = true;
@@ -93,4 +107,10 @@ class RuntimeSettings : ScriptableObject
 
 	public bool SLiveViewerRequest { get; set; }
 	public bool SLiveViewer { get; set; }
+
+	public bool DisableMovies = false;
+
+	[Header("Debug")]
+
+	public int MinLog = -9999;
 }

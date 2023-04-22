@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use KPJHLACKGJF_EventMission", true)]
 public class KPJHLACKGJF { }
 public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 {

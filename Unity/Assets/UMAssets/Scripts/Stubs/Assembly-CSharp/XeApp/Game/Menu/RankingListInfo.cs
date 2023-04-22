@@ -4,7 +4,7 @@ namespace XeApp.Game.Menu
 {
 	public class RankingListInfo : PlayerListInfo
 	{
-		public RankingListInfo(int index, bool isAvailable, EAJCBFGKKFA friend)
+		public RankingListInfo(int index, bool isAvailable, EAJCBFGKKFA_FriendInfo friend)
 		{
 		}
 

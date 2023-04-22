@@ -55,7 +55,7 @@ namespace XeApp.Game.RhythmGame
 			short variationId = musicData.musicBase.BKJGCEOEPFB_VariationId;
 			if(musicInfo.isFreeMode)
 			{
-				KEODKEGFDLD musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId);
+				KEODKEGFDLD_FreeMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId);
 				if (!musicInfo.IsLine6Mode)
 				{
 					subgoalValue = musicdb.HLKHOFPAOMK_SubGoalFreeModeByDiff[(int)musicInfo.difficultyType];
@@ -71,7 +71,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				DJNPIGEFPMF musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
+				DJNPIGEFPMF_StoryMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
 				subgoalValue = musicdb.HLKHOFPAOMK_SubGoalByDiff[(int)musicInfo.difficultyType];
 				goalValue = musicdb.HLLJIICKNIP_GoalByDiff[(int)musicInfo.difficultyType];
 				maxValue = musicdb.FENOHOEIJOE_MaxValueByDiff[(int)musicInfo.difficultyType];
@@ -125,7 +125,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				f = Mathf.Round((currentValue - subgoalValue) * 100);
+				f = Mathf.Round((currentValue * 1.0f / subgoalValue) * 100);
 			}
 			return (int)f;
 		}

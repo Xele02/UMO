@@ -104,13 +104,42 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x1565788 Offset: 0x1565788 VA: 0x1565788
-		//public void OnSkillBit(int id, bool isTopPriority) { }
+		public void OnSkillBit(int id, bool isTopPriority)
+		{
+			int val = 0;
+			if(effectTypeIdEffectIdMap.TryGetValue(id, out val))
+			{
+				int idx = GetControllerIndex(id);
+				m_controller[idx].m_skillEffectiveIdBit |= (byte)(1 << val);
+				if(isTopPriority)
+				{
+					m_controller[idx].m_topPrioritySkillEffectiveIdBit |= (byte)(1 << val);
+					m_controller[idx].updateSkillAnimeCoroutine = StartCoroutine(UpdateSkillAnimeCoroutine(idx));
+				}
+			}
+		}
 
 		//// RVA: 0x1565A78 Offset: 0x1565A78 VA: 0x1565A78
-		//public void OffSkillBit(int id) { }
+		public void OffSkillBit(int id)
+		{
+			int val = 0;
+			if (effectTypeIdEffectIdMap.TryGetValue(id, out val))
+			{
+				int idx = GetControllerIndex(id);
+				m_controller[idx].m_skillEffectiveIdBit &= (byte)~(1 << val);
+			}
+		}
 
 		//// RVA: 0x1565BD8 Offset: 0x1565BD8 VA: 0x1565BD8
-		//public void OffTopPrioritySkillBit(int id) { }
+		public void OffTopPrioritySkillBit(int id)
+		{
+			int val = 0;
+			if (effectTypeIdEffectIdMap.TryGetValue(id, out val))
+			{
+				int idx = GetControllerIndex(id);
+				m_controller[idx].m_topPrioritySkillEffectiveIdBit &= (byte)~(1 << val);
+			}
+		}
 
 		//// RVA: 0x1565D38 Offset: 0x1565D38 VA: 0x1565D38
 		//public void DrawEnable(bool flag) { }
@@ -190,6 +219,12 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x1565994 Offset: 0x1565994 VA: 0x1565994
-		//private int GetControllerIndex(int effectId) { }
+		private int GetControllerIndex(int effectId)
+		{
+			if (effectId == 7 || effectId == 4)
+				return BTN_OUTSIDE;
+			else
+				return BTN_INSIDE;
+		}
 	}
 }

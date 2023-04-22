@@ -23,7 +23,7 @@ class DataExporter
 	[MenuItem("UMO/Export Song List")]
 	static void ExportSongList()
 	{
-		LPPGENBEECK_musicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
+		LPPGENBEECK_MusicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
 		string fileOutput = "";
 		for (int i = 0; i < MusicDb.EPMMNEFADAP_Musics.Count; i++)
 		{
@@ -37,7 +37,7 @@ class DataExporter
 				if (Serie == "1") Serie = "Macross Delta";
 				bool divaSolo = false;
 				int numMulti = -1;
-				EEDKAACNBBG song = new EEDKAACNBBG();
+				EEDKAACNBBG_MusicData song = new EEDKAACNBBG_MusicData();
 				song.KHEKNNFCAOI(MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_Id);
 
 				for (int k = 0; k < 7; k++)
@@ -50,8 +50,8 @@ class DataExporter
 							numMulti = k + 1;
 					}
 				}
-				bool valid = MusicDb.GEAANLPDJBP_FreeMusicDatas.Find((KEODKEGFDLD data) => {
-					return data.DLAEJOBELBH_Id == MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_Id && data.PPEGAKEIEGM == 2;
+				bool valid = MusicDb.GEAANLPDJBP_FreeMusicDatas.Find((KEODKEGFDLD_FreeMusicInfo data) => {
+					return data.DLAEJOBELBH_MusicId == MusicDb.EPMMNEFADAP_Musics[i].DLAEJOBELBH_Id && data.PPEGAKEIEGM_Enabled == 2;
 				}) != null;
 				fileOutput += "|" + i + "|" + MusicDb.EPMMNEFADAP_Musics[i].KKPAHLMJKIH_WavId + "|" + Title + "|" + Serie + "|" + (divaSolo ? "X" : "") + "|" + (numMulti != -1 ? numMulti.ToString() : "") + "|" + (valid ? "X" : "") + "\n";
 			}
@@ -72,10 +72,10 @@ class DataExporter
 		string fileOutput = "";
 		for(int diva = 1; diva <= 10; diva++)
 		{
-			for (int i = 0; i < CostumeDb.CDENCMNHNGA.Count; i++)
+			for (int i = 0; i < CostumeDb.CDENCMNHNGA_Costumes.Count; i++)
 			{
-				var cosInfo = CostumeDb.CDENCMNHNGA[i];
-				if (cosInfo.PPEGAKEIEGM == 2 && cosInfo.AHHJLDLAPAN_PrismDivaId == diva)
+				var cosInfo = CostumeDb.CDENCMNHNGA_Costumes[i];
+				if (cosInfo.PPEGAKEIEGM_Enabled == 2 && cosInfo.AHHJLDLAPAN_PrismDivaId == diva)
 				{
 					GameManager.Instance.DivaIconCache.LoadDivaUpIco(cosInfo.AHHJLDLAPAN_PrismDivaId, cosInfo.DAJGPBLEEOB_PrismCostumeModelId, 0, (IiconTexture texture) =>
 					{
@@ -108,7 +108,7 @@ class DataExporter
 
 	static public IEnumerator ExtractEffectList()
 	{
-		LPPGENBEECK_musicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
+		LPPGENBEECK_MusicMaster MusicDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
 
 		StreamWriter writer = new StreamWriter(Application.dataPath + "../../../Data/SongEffectlist.txt", false);
 		string path = FileSystemProxy.ConvertPath(UnityEngine.Application.persistentDataPath + "/data/android/mc/0001/sc.xab");

@@ -18,13 +18,30 @@ namespace XeApp.Game.Common
 			public Texture2D MaskTexture { get; set; } // 0x10
 
 			// RVA: 0x1105018 Offset: 0x1105018 VA: 0x1105018
-			// public void Create(AssetBundleLoadAllAssetOperationBase a_operation, string a_path) { }
+			public void Create(AssetBundleLoadAllAssetOperationBase a_operation, string a_path)
+			{
+				Material = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+				string path = Path.GetFileNameWithoutExtension(a_path);
+				BaseTexture = a_operation.GetAsset<Texture2D>(path + "_base");
+				MaskTexture = a_operation.GetAsset<Texture2D>(path + "_mask");
+			}
 
 			// // RVA: 0x110528C Offset: 0x110528C VA: 0x110528C
 			// public void Release() { }
 
 			// // RVA: 0x110541C Offset: 0x110541C VA: 0x110541C
-			// public void Set(RawImageEx image) { }
+			public void Set(RawImageEx image)
+			{
+				if(Material == null)
+					return;
+				if(image == null)
+					return;
+				image.material = Material;
+				image.MaterialMul = Material;
+				image.texture = BaseTexture;
+				image.material.SetTexture("_MainTex", BaseTexture);
+				image.material.SetTexture("_MaskTex", MaskTexture);
+			}
 
 			// // RVA: 0x1105634 Offset: 0x1105634 VA: 0x1105634
 			// public void Set(RawImage image) { }
@@ -60,7 +77,9 @@ namespace XeApp.Game.Common
 			}
 			for(int i = 0; i < TexListAssetName.Length; i++)
 			{
-				m_unionTextureDict.Add(TexListAssetName[i], operation.GetAsset<CommonTexture>(TexListAssetName[i]));
+				CommonTexture tex = new CommonTexture();
+				tex.Create(operation, TexListAssetName[i]);
+				m_unionTextureDict.Add(TexListAssetName[i], tex);
 			}
 			MakeUvRects(m_gameAttributeRects, "cmn_zok_{0:D2}", 1, GameAttribute.ArrayNum);
 			MakeUvRects(m_difficultyRects, "cmn_music_diff_{0:D2}", 1, 5);
@@ -81,7 +100,12 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x110423C Offset: 0x110423C VA: 0x110423C
-		// public LayoutCommonTextureManager.CommonTexture GetTexture(string path) { }
+		public LayoutCommonTextureManager.CommonTexture GetTexture(string path)
+		{
+			CommonTexture t = null;
+			m_unionTextureDict.TryGetValue(Path.GetFileNameWithoutExtension(path), out t);
+			return t;
+		}
 
 		// // RVA: 0x1104310 Offset: 0x1104310 VA: 0x1104310
 		// public Rect GetGameAttributeUvRect(GameAttribute.Type attr) { }
@@ -90,13 +114,19 @@ namespace XeApp.Game.Common
 		// public Rect GetDifficultyUvRect(Difficulty.Type diff) { }
 
 		// // RVA: 0x1104420 Offset: 0x1104420 VA: 0x1104420
-		// public Rect GetSkillRankUvRect(SkillRank.Type rank) { }
+		public Rect GetSkillRankUvRect(SkillRank.Type rank)
+		{
+			return m_skillRankRects[(int)rank];
+		}
 
 		// // RVA: 0x11044A8 Offset: 0x11044A8 VA: 0x11044A8
 		// public Rect GetLiveSkillTypeUvRect(LiveSkillType.Type skillType) { }
 
 		// // RVA: 0x1104530 Offset: 0x1104530 VA: 0x1104530
-		// public void SetImageSkillRank(RawImageEx image, SkillRank.Type rank) { }
+		public void SetImageSkillRank(RawImageEx image, SkillRank.Type rank)
+		{
+			image.uvRect = GetSkillRankUvRect(rank);
+		}
 
 		// // RVA: 0x1104580 Offset: 0x1104580 VA: 0x1104580
 		// public void SetImageLiveSkillType(RawImageEx image, LiveSkillType.Type skillType) { }

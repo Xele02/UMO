@@ -551,7 +551,7 @@ namespace XeApp.Game.RhythmGame
 			m_enemyPilotTexture = new UiEnemyPilotTexture();
 			m_enemyRobotTexture = new UiEnemyRobotTexture();
 			isUITextureResoucesLoaded_ = false;
-			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB())
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB_CutInEnabled())
 			{
 				yield return StartCoroutine(LoadingUIDivaSkillCutinTextureResource());
 				yield return StartCoroutine(LoadingUIACTIVESkillIconTextureResource());
@@ -607,12 +607,12 @@ namespace XeApp.Game.RhythmGame
 					{
 						if(liveSkills[j] != 0)
 						{
-							masterSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML[liveSkills[j] - 1];
-							for(k = 0; k < masterSkill.EGLDFPILJLG.Length; k++)
+							masterSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkills[j] - 1];
+							for(k = 0; k < masterSkill.EGLDFPILJLG_SkillBuffEffect.Length; k++)
 							{
-								if(masterSkill.EGLDFPILJLG[k] != 0)
+								if(masterSkill.EGLDFPILJLG_SkillBuffEffect[k] != 0)
 								{
-									yield return LoadSkillEffectTextureCoroutine(masterSkill.EGLDFPILJLG[k], bundleName, assetName);
+									yield return LoadSkillEffectTextureCoroutine(masterSkill.EGLDFPILJLG_SkillBuffEffect[k], bundleName, assetName);
 								}
 							}
 						}
@@ -645,9 +645,9 @@ namespace XeApp.Game.RhythmGame
 			mainSceneId = Database.Instance.gameSetup.teamInfo.divaList[0].sceneIdList[0];
 			if (mainSceneId == 0)
 				yield break;
-			GCIJNCFDNON d = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA[mainSceneId - 1];
-			int a = d.CGIELKDLHGE();
-			if (d.JKGFBFPIMGA < 4)
+			GCIJNCFDNON_SceneInfo d = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[mainSceneId - 1];
+			int a = d.CGIELKDLHGE_GetEvolveId();
+			if (d.JKGFBFPIMGA_Rarity < 4)
 				a = 1;
 			activeSkillId = Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId;
 			if (activeSkillId < 1)
@@ -662,15 +662,15 @@ namespace XeApp.Game.RhythmGame
 			uiTextureResources.activeSkillIconMaterial = new Material(Shader.Find("MCRS/RhythmUI/RhythmUIVertexColor"));
 			uiTextureResources.activeSkillIconMaterial.SetTexture("_MainTex", uiTextureResources.centerCardTexture);
 
-			int off = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA[mainSceneId - 1].GCLAAGFKPPJ_Aofs;
+			int off = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[mainSceneId - 1].GCLAAGFKPPJ_Aofs;
 			uiTextureResources.activeSkillIconMaterial.SetTextureOffset("_MainTex", new Vector2(0, off * 1.0f / uiTextureResources.centerCardTexture.height));
 
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 
-			md = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA[activeSkillId - 1];
+			md = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[activeSkillId - 1];
 			for (i = 0; i < 1; i++)
 			{
-				effectType = md.EGLDFPILJLG[i];
+				effectType = md.EGLDFPILJLG_BuffEffectType[i];
 				yield return StartCoroutine(LoadSkillEffectTextureCoroutine(effectType, bundleName, assetName));
 				uiTextureResources.activeSkillEffectMaterial = uiTextureResources.skillEffectMaterials[effectType];
 			}

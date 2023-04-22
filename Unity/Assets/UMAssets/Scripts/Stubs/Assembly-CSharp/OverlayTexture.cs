@@ -27,7 +27,8 @@ public class OverlayTexture : BaseMeshEffect, IMaterialModifier
 
 	public Material GetModifiedMaterial(Material baseMaterial)
 	{
-		throw new System.NotImplementedException();
+		//throw new System.NotImplementedException();
+		return null;
 	}
 
 	[SerializeField]

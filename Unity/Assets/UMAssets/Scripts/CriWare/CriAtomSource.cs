@@ -460,6 +460,15 @@ namespace CriWare
 		// public void DetachFromAnalyzer(CriAtomExOutputAnalyzer analyzer) { }
 
 		//UMO
+		public void Preload(string cueName)
+		{
+			CriAtomExAcb acb = null;
+			if (!String.IsNullOrEmpty(this.cueSheet))
+			{
+				acb = CriAtom.GetAcb(this.cueSheet);
+			}
+			ExternLib.LibCriWare.PreloadCue(acb.nativeHandle, cueName);
+		}
 		public void Preload(int cueId)
 		{
 			CriAtomExAcb acb = null;

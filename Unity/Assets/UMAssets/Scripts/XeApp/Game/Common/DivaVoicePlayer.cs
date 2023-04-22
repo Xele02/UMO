@@ -84,6 +84,13 @@ namespace XeApp.Game.Common
 			PlayCue(MakeCueName(categoryType,voiceId));
 		}
 
+		public void Preload(VoiceCategory categoryType, int voiceId)
+		{
+			if (!m_enable)
+				return;
+			Preload(MakeCueName(categoryType, voiceId));
+		}
+
 		// // RVA: 0x1C0A298 Offset: 0x1C0A298 VA: 0x1C0A298
 		// public void Play(int cueId) { }
 

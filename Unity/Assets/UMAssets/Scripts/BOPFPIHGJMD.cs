@@ -15,6 +15,15 @@ public class BOPFPIHGJMD
         GEJGMBBCFEE = 3,
     }
 
+	public enum MLBMHDCCGHI
+	{
+		HJNNKCMLGFL = 0,
+		HEFPAOLDHCK = 1,
+		FDOOAJLGFAE = 2,
+		FMLPIOFBCMA = 3,
+		GENEIBGNMPH = 4,
+		GEJGMBBCFEE = 5,
+	}
 
 	public const int PHJLOHLFJBL = 1000;
 	public const int PPGIAEJBHJP = 3;

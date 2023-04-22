@@ -77,34 +77,49 @@ namespace XeApp.Game.Menu
 		public Action OnClickExpectedScoreDescButton; // 0x50
 
 		public InOutAnime InOut { get { return m_inOut; } } //0xA6F6B0
-		// public SetDeckExpectedScoreGauge ExpectedScoreGauge { get; } 0xA6F6B8
+		public SetDeckExpectedScoreGauge ExpectedScoreGauge { get { return m_expectedScoreGauge; } } //0xA6F6B8
 
 		// // RVA: 0xA6F6C0 Offset: 0xA6F6C0 VA: 0xA6F6C0
 		private void Awake()
 		{
-			TodoLogger.Log(0, "SetDeckMusicInfo Awake");
+			ApplyBottomType(BottomType.ExpectedScoreGauge);
+			if(m_expectedScoreDescButton != null)
+			{
+				m_expectedScoreDescButton.AddOnClickCallback(() =>
+				{
+					//0xA6FF68
+					if (OnClickExpectedScoreDescButton != null)
+						OnClickExpectedScoreDescButton();
+				});
+			}
 		}
 
 		// // RVA: 0xA6F828 Offset: 0xA6F828 VA: 0xA6F828
-		public void Set(EEDKAACNBBG viewMusicData, GameSetupData.MusicInfo musicInfo, bool isMvMode, SetDeckMusicInfo.BottomType bottomType)
+		public void Set(EEDKAACNBBG_MusicData viewMusicData, GameSetupData.MusicInfo musicInfo, bool isMvMode, SetDeckMusicInfo.BottomType bottomType)
 		{
 			TodoLogger.Log(0, "Music Info Set");
 			m_musicNameText.text = Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicInfo.freeMusicId, musicInfo.musicId).KNMGEEFGDNI_Nam).musicName;
 		}
 
 		// // RVA: 0xA6FE7C Offset: 0xA6FE7C VA: 0xA6FE7C
-		public void SetPosType(SetDeckMusicInfo.PosType posType)
+		public void SetPosType(PosType posType)
 		{
-			TodoLogger.Log(0, "SetPosType");
+			m_posTable.SetPosition((int)posType);
 		}
 
 		// // RVA: 0xA6FEB0 Offset: 0xA6FEB0 VA: 0xA6FEB0
-		// public void ReStartMusicAttrAnime() { }
+		public void ReStartMusicAttrAnime()
+		{
+			if (!m_musicAttrEffectAnime.IsPlaying())
+				return;
+			m_musicAttrEffectAnime.Stop();
+			m_musicAttrEffectAnime.Play(0, null);
+		}
 
 		// // RVA: 0xA6FF34 Offset: 0xA6FF34 VA: 0xA6FF34
 		public void ResetDescriptionScroll()
 		{
-			TodoLogger.Log(0, "ResetDescriptionScroll");
+			m_descriptionScroll.ResetScroll();
 		}
 
 		// // RVA: 0xA6FD80 Offset: 0xA6FD80 VA: 0xA6FD80
@@ -117,10 +132,10 @@ namespace XeApp.Game.Menu
 		// private Sprite GetDifficultySprite(Difficulty.Type difficulty, bool is6Line) { }
 
 		// // RVA: 0xA6F7BC Offset: 0xA6F7BC VA: 0xA6F7BC
-		// private void ApplyBottomType(SetDeckMusicInfo.BottomType bottomType) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x730CBC Offset: 0x730CBC VA: 0x730CBC
-		// // RVA: 0xA6FF68 Offset: 0xA6FF68 VA: 0xA6FF68
-		// private void <Awake>b__24_0() { }
+		private void ApplyBottomType(BottomType bottomType)
+		{
+			m_expectedScoreGaugeObject.SetActive(bottomType == BottomType.ExpectedScoreGauge);
+			m_descriptionObject.SetActive(bottomType == BottomType.Description);
+		}
 	}
 }

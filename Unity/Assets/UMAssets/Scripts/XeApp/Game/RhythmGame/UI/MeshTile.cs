@@ -34,7 +34,7 @@ namespace XeApp.Game.UI
 		private readonly int[] baseTriangle = new int[6] { 0, 2, 1, 1, 2, 3 }; // 0x40
 		private float value_ = 0.5f; // 0x44
 
-		//public Rect UvRect { get; set; } 0x191C4E0 0x191C4F0
+		public Rect UvRect { get { return uvRect; } set { if(uvRect != value) { uvRect = value; UpdateMesh(); } } } //0x191C4E0 0x191C4F0
 		//public Material Material { get; set; } 0x191CA54 0x191CA5C
 		//public MeshTile.Direction Type { get; set; } 0x191CB1C 0x191CB24
 		public float Value { get { return value_; } set { value_ = value; UpdateMesh(); } } //0x191CB38 0x191CB40

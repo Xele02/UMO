@@ -7,6 +7,22 @@ namespace XeApp.Game.Menu
 {
 	public class SceneSelectHomeBgLayout : LayoutUGUIScriptBase
 	{
+		private enum PlateState
+		{
+			Undeveloped = 0,
+			Evolution = 1,
+			Num = 2,
+		}
+
+		public enum SetBgType
+		{
+			Undeveloped = 0,
+			EvoleOnly = 1,
+			Evole = 2,
+			Default = 3,
+			LimitBg = 4,
+		}
+
     public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_setBgTitle;

@@ -66,7 +66,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CD0C34 Offset: 0x1CD0C34 VA: 0x1CD0C34 Slot: 7
 		protected override void PausableUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0x1CD0C38 Offset: 0x1CD0C38 VA: 0x1CD0C38 Slot: 8

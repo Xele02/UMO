@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using CriWare;
+using mcrs;
 using UnityEngine;
 using UnityEngine.Playables;
 using XeApp.Core;
@@ -410,7 +411,7 @@ namespace XeApp.Game.Common
 			if (onBeginShooting != null)
 				onBeginShooting();
 			m_lockOnTarget.Begin(3.0f);
-			m_flightSePlayback = SoundManager.Instance.sePlayerGame.Play(13);
+			m_flightSePlayback = SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_016);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73C918 Offset: 0x73C918 VA: 0x73C918

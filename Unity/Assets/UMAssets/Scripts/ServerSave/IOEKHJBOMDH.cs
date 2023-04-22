@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use IOEKHJBOMDH_DecoStamp", true)]
 public class IOEKHJBOMDH { }
 public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 {

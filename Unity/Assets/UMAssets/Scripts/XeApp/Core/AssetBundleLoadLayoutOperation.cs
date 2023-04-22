@@ -67,6 +67,7 @@ namespace XeApp.Core
                 });
                 runtimes[i].LoadLayout();
             }
+            yield return null;
             Array.ForEach(instance.GetComponentsInChildren<Text>(true), (Text text) => {
                 //0xE1001C
                 if(text.font == null)

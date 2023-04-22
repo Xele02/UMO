@@ -1,3 +1,4 @@
+using mcrs;
 using System.Collections;
 using XeApp.Game.Common;
 using XeSys;
@@ -278,19 +279,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CEEB4 Offset: 0x12CEEB4 VA: 0x12CEEB4
 		private void OnClickGameSettingButton()
 		{
-			TodoLogger.Log(0, "OnClickGameSettingButton");
+			TodoLogger.LogNotImplemented("OnClickGameSettingButton");
 		}
 
 		// // RVA: 0x12CEF38 Offset: 0x12CEF38 VA: 0x12CEF38
 		private void OnClickOriginalSetting()
 		{
-			TodoLogger.Log(0, "OnClickOriginalSetting");
+			TodoLogger.LogNotImplemented("OnClickOriginalSetting");
 		}
 
 		// // RVA: 0x12CF0E8 Offset: 0x12CF0E8 VA: 0x12CF0E8
 		private void OnClickValkyrieButton()
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			ShowPrismSelectPopup(PopupMvModeSelectListContent.SelectTarget.Valkyrie, 0, Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo, false, () =>
 			{
 				//0x12CFE44
@@ -302,7 +303,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CF2A0 Offset: 0x12CF2A0 VA: 0x12CF2A0
 		private void OnClickPlayButton()
 		{
-			SoundManager.Instance.sePlayerBoot.Play(1);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			AdvanceGame();
 		}
 

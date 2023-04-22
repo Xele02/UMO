@@ -73,7 +73,7 @@ namespace XeApp.Game.RhythmGame
 		void SetEnemyLiveSkillEffect(GameObject effPrefab);
 
 		// // RVA: -1 Offset: -1 Slot: 17
-		// public abstract void SetPoisonSkillEffect(int a_bit, bool a_enable);
+		void SetPoisonSkillEffect(int a_bit, bool a_enable);
 
 		// // RVA: -1 Offset: -1 Slot: 18
 		void Show(Action end);
@@ -148,13 +148,13 @@ namespace XeApp.Game.RhythmGame
 		void ShowDiva(bool isSpMode);
 
 		// // RVA: -1 Offset: -1 Slot: 42
-		// public abstract void EntryLiveSkillCutin(LiveSkill liveSkill, Material skillDescription, Material divaIconMaterial);
+		void EntryLiveSkillCutin(LiveSkill liveSkill, Material skillDescription, Material divaIconMaterial);
 
 		// // RVA: -1 Offset: -1 Slot: 43
-		// public abstract void ShowLiveSkillCutin();
+		void ShowLiveSkillCutin();
 
 		// // RVA: -1 Offset: -1 Slot: 44
-		// public abstract void ShowActiveSkillCutin(string skillname, RhythmGameResource.UITextureResource textureResource);
+		void ShowActiveSkillCutin(string skillname, RhythmGameResource.UITextureResource textureResource);
 
 		// // RVA: -1 Offset: -1 Slot: 45
 		void CloseSkillCutin();
@@ -211,40 +211,40 @@ namespace XeApp.Game.RhythmGame
 		void ShowResultEffect(int lineNumber, RhythmGameConsts.NoteResultEx a_result_ex);
 
 		// // RVA: -1 Offset: -1 Slot: 63
-		// public abstract void OnSkillEffect(int lineNumber, int effectType, bool isTopPriority);
+		void OnSkillEffect(int lineNumber, int effectType, bool isTopPriority);
 
 		// // RVA: -1 Offset: -1 Slot: 64
-		// public abstract void OffSkillEffect(int lineNumber, int effectType);
+		void OffSkillEffect(int lineNumber, int effectType);
 
 		// // RVA: -1 Offset: -1 Slot: 65
-		// public abstract void OffTopPrioritySkillEffect(int lineNumber, int effectType);
+		void OffTopPrioritySkillEffect(int lineNumber, int effectType);
 
 		// // RVA: -1 Offset: -1 Slot: 66
 		// public abstract void DrawSkillEffectEnable(int lineNumber, bool flag);
 
 		// // RVA: -1 Offset: -1 Slot: 67
-		// public abstract bool IsEnableActiveSkillButton();
+		bool IsEnableActiveSkillButton();
 
 		// // RVA: -1 Offset: -1 Slot: 68
-		// public abstract void DecideActiveSkillButton(SkillDuration.Type duration);
+		void DecideActiveSkillButton(SkillDuration.Type duration);
 
 		// // RVA: -1 Offset: -1 Slot: 69
 		// public abstract void EnableActiveSkillButton();
 
 		// // RVA: -1 Offset: -1 Slot: 70
-		// public abstract void DisableActiveSkillButton();
+		void DisableActiveSkillButton();
 
 		// // RVA: -1 Offset: -1 Slot: 71
-		// public abstract void EndActiveSkill();
+		void EndActiveSkill();
 
 		// // RVA: -1 Offset: -1 Slot: 72
-		// public abstract void RestartActiveSkillButton();
+		void RestartActiveSkillButton();
 
 		// // RVA: -1 Offset: -1 Slot: 73
 		bool IsActiveSkillButtonAcEnd();
 
 		// // RVA: -1 Offset: -1 Slot: 74
-		// public abstract bool IsActiveSkillButtonAcOn();
+		bool IsActiveSkillButtonAcOn();
 
 		// // RVA: -1 Offset: -1 Slot: 75
 		// public abstract void OnPauseButtonSelected(bool a_syspend);
@@ -268,7 +268,7 @@ namespace XeApp.Game.RhythmGame
 		void UpdateEnemyStatus(int damage, int threshold1, int threshold2, UnityAction onChaseModeCallback);
 
 		// // RVA: -1 Offset: -1 Slot: 82
-		// public abstract void ChangeEnemyLife(EnemyStatus.LifeType a_type);
+		void ChangeEnemyLife(EnemyStatus.LifeType a_type);
 
 		// // RVA: -1 Offset: -1 Slot: 83
 		// public abstract void ChangeFaildEnemyStatus();

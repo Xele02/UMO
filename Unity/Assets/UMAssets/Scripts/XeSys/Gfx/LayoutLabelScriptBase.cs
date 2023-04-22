@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace XeSys.Gfx
@@ -19,7 +20,31 @@ namespace XeSys.Gfx
 			if(defData.parentExid.Length != 0)
 				rootLayout = layout.FindViewByExId(defData.parentExid) as AbsoluteLayout;
 
-			return new LayoutSymbolData(defData, rootLayout.FindViewByExId(defData.exid) as AbsoluteLayout, this);
+			AbsoluteLayout abs = rootLayout.FindViewByExId(defData.exid) as AbsoluteLayout;
+			//UMO
+			if(abs == null)
+			{
+				string str = "";
+				List<ViewBase> l = new List<ViewBase>();
+				l.Add(rootLayout);
+				while(l.Count > 0)
+				{
+					ViewBase absL = l[0];
+					l.RemoveAt(0);
+					str += absL.EXID + " " + absL.ID + " " + absL.GetType() + " - ";
+					if (absL is AbsoluteLayout)
+					{
+						AbsoluteLayout absL2 = absL as AbsoluteLayout;
+						for (int i = 0; i < absL2.viewCount; i++)
+						{
+							l.Add(absL2[i]);
+						}
+					}
+				}
+				UnityEngine.Debug.LogError("Can't find abs layout with id " + defData.exid+", vals are "+str);
+			}
+			//UMO end
+			return new LayoutSymbolData(defData, abs, this);
 		}
 
 		// // RVA: 0x1EF8EDC Offset: 0x1EF8EDC VA: 0x1EF8EDC
@@ -52,7 +77,27 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EF92D0 Offset: 0x1EF92D0 VA: 0x1EF92D0
-		// public void GoToFrame(LabelPreset preset, AbsoluteLayout layout, int frame) { }
+		public void GoToFrame(LabelPreset preset, AbsoluteLayout layout, int frame)
+		{
+			switch (preset.type)
+			{
+				case LabelPreset.Type.Table:
+				case LabelPreset.Type.Frame:
+					layout.StartSiblingAnimGoStop(frame, frame);
+					break;
+				case LabelPreset.Type.FrameAll:
+					layout.StartAllAnimGoStop(frame, frame);
+					layout.StartSiblingAnimGoStop(frame, frame);
+					break;
+				case LabelPreset.Type.TableChildren:
+				case LabelPreset.Type.FrameChildren:
+					layout.StartChildrenAnimGoStop(frame, frame);
+					break;
+				default:
+					UnityEngine.Debug.LogError("undefined PresetType : " + preset.type);
+					break;
+			}
+		}
 
 		// // RVA: 0x1EF9500 Offset: 0x1EF9500 VA: 0x1EF9500
 		// public void GoToLabelFrame(LabelPreset preset, AbsoluteLayout layout, int frame) { }

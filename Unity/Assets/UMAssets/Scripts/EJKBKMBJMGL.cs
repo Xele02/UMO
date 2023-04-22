@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use EJKBKMBJMGL_EnemyData", true)]
 public class EJKBKMBJMGL { }
 public class EJKBKMBJMGL_EnemyData
 {
@@ -17,7 +18,7 @@ public class EJKBKMBJMGL_EnemyData
 	public int KKPLDFNDFDE; // 0x38
 
 	//public int LMJFFFOEPLE { get; } 0x12F3790 CGIJHCKFOKG
-	//public int PDHCABLLJPB { get; } 0x12F37A4 LJKILMHFCCK
+	public int PDHCABLLJPB_SkillId { get { return DCOALMMJDJK < 1 ? MOMCFBMJJKB : DCOALMMJDJK; } } //0x12F37A4 LJKILMHFCCK
 	//public bool CDEFLIHHNAB { get; } 0x12F37B8 NKOCPFCGNOG
 
 	//// RVA: 0x12F37F4 Offset: 0x12F37F4 VA: 0x12F37F4
@@ -27,7 +28,10 @@ public class EJKBKMBJMGL_EnemyData
 	}
 
 	//// RVA: 0x12F3BD0 Offset: 0x12F3BD0 VA: 0x12F3BD0
-	//public void NPEKPHAFMGE(int DCOALMMJDJK, int KKPLDFNDFDE) { }
+	public void NPEKPHAFMGE(int DCOALMMJDJK, int KKPLDFNDFDE)
+	{
+		TodoLogger.Log(0, "NPEKPHAFMGE enemyData");
+	}
 
 	//// RVA: 0x12F3D94 Offset: 0x12F3D94 VA: 0x12F3D94
 	//public void CCFGGCGKECF() { }

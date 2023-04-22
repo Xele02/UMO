@@ -6,6 +6,8 @@ using System.IO;
 
 //https://github.com/LitJSON/litjson/blob/cd646def20af4aff19a02f8e7bcdd28b54fc850f/src/LitJson/JsonData.cs
 
+[System.Obsolete("Use EDOHBJAPLPF_JsonData", true)]
+public class EDOHBJAPLPF { }
 public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJAPLPF_JsonData> 
 {
 	#region Fields

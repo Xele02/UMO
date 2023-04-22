@@ -48,7 +48,20 @@ namespace XeSys.Gfx
 		// public virtual void InsertView(int index, ViewBase child) { }
 
 		// // RVA: 0x203EBD0 Offset: 0x203EBD0 VA: 0x203EBD0
-		// public void RemoveView(ViewBase child) { }
+		public void RemoveView(ViewBase child)
+		{
+			if(child != null)
+			{
+				child.Parent = null;
+				m_List.Remove(child);
+				m_ChildViewMap.Remove(child.ID);
+				m_ChildViewMapForExid.Remove(child.EXID);
+				if(child is AbsoluteLayout)
+				{
+					m_AbsoluteList.Remove(child as AbsoluteLayout);
+				}
+			}
+		}
 
 		// // RVA: 0x203EDE0 Offset: 0x203EDE0 VA: 0x203EDE0
 		public ViewBase GetView(int index)
@@ -203,15 +216,31 @@ namespace XeSys.Gfx
 		// public void StartAllAnim() { }
 
 		// // RVA: 0x2040430 Offset: 0x2040430 VA: 0x2040430
-		// private void StartAllAnimGoStop(List<ViewBase> listView, int start, int end) { }
+		private void StartAllAnimGoStop(List<ViewBase> listView, int start, int end)
+		{
+			StartAnimGoStop(start, end);
+			for (int i = 0; i < listView.Count; i++)
+			{
+				if (listView[i] is AbsoluteLayout)
+				{
+					(listView[i] as AbsoluteLayout).StartAllAnimGoStop(start, end);
+				}
+				else
+				{
+					listView[i].StartAnimGoStop(start, end);
+				}
+			}
+		}
 
 		// // RVA: 0x204058C Offset: 0x204058C VA: 0x204058C
-		// public void StartAllAnimGoStop(int start, int end) { }
+		public void StartAllAnimGoStop(int start, int end)
+		{
+			StartAllAnimGoStop(m_List, start, end);
+		}
 
 		// // RVA: 0x20405B0 Offset: 0x20405B0 VA: 0x20405B0
 		private void StartAllAnimGoStop(List<ViewBase> listView, string startLabel, string endLabel)
 		{
-			UnityEngine.Debug.Log(ID);
 			StartAnimGoStop(startLabel, endLabel);
 			for(int i = 0; i < listView.Count; i++)
 			{
@@ -368,7 +397,16 @@ namespace XeSys.Gfx
 		// public bool CheckAnimation() { }
 
 		// // RVA: 0x2040FA0 Offset: 0x2040FA0 VA: 0x2040FA0
-		// public void StartSiblingAnimGoStop(int start, int end) { }
+		public void StartSiblingAnimGoStop(int start, int end)
+		{
+			AbsoluteLayout p = Parent as AbsoluteLayout;
+			if (p == null)
+				return;
+			for (int i = 0; i < p.m_List.Count; i++)
+			{
+				p.m_List[i].StartAnimGoStop(start, end);
+			}
+		}
 
 		// // RVA: 0x20410DC Offset: 0x20410DC VA: 0x20410DC
 		public void StartSiblingAnimGoStop(string startLabel, string endLabel)
@@ -420,10 +458,19 @@ namespace XeSys.Gfx
 		// public bool CheckSiblingAnimation() { }
 
 		// // RVA: 0x2041850 Offset: 0x2041850 VA: 0x2041850
-		// public void StartChildrenAnimGoStop(int start, int end) { }
+		public void StartChildrenAnimGoStop(int start, int end)
+		{
+			StartChildrenAnimGoStop(m_List, start, end);
+		}
 
 		// // RVA: 0x2041874 Offset: 0x2041874 VA: 0x2041874
-		// private void StartChildrenAnimGoStop(List<ViewBase> listView, int start, int end) { }
+		private void StartChildrenAnimGoStop(List<ViewBase> listView, int start, int end)
+		{
+			for (int i = 0; i < listView.Count; i++)
+			{
+				listView[i].StartAnimGoStop(start, end);
+			}
+		}
 
 		// // RVA: 0x2041960 Offset: 0x2041960 VA: 0x2041960
 		public void StartChildrenAnimGoStop(string startLabel, string endLabel)
@@ -456,16 +503,34 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x2041B58 Offset: 0x2041B58 VA: 0x2041B58
-		// public void StartChildrenAnimLoop(int start, int end) { }
+		public void StartChildrenAnimLoop(int start, int end)
+		{
+			StartChildrenAnimLoop(m_List, start, end);
+		}
 
 		// // RVA: 0x2041B7C Offset: 0x2041B7C VA: 0x2041B7C
-		// private void StartChildrenAnimLoop(List<ViewBase> listView, int start, int end) { }
+		private void StartChildrenAnimLoop(List<ViewBase> listView, int start, int end)
+		{
+			for (int i = 0; i < listView.Count; i++)
+			{
+				listView[i].StartAnimLoop(start, end);
+			}
+		}
 
 		// // RVA: 0x2041C68 Offset: 0x2041C68 VA: 0x2041C68
-		// public void StartChildrenAnimLoop(int current, int start, int end) { }
+		public void StartChildrenAnimLoop(int current, int start, int end)
+		{
+			StartChildrenAnimLoop(m_List, current, start, end);
+		}
 
 		// // RVA: 0x2041C94 Offset: 0x2041C94 VA: 0x2041C94
-		// private void StartChildrenAnimLoop(List<ViewBase> listView, int current, int start, int end) { }
+		private void StartChildrenAnimLoop(List<ViewBase> listView, int current, int start, int end)
+		{
+			for (int i = 0; i < listView.Count; i++)
+			{
+				listView[i].StartAnimLoop(current, start, end);
+			}
+		}
 
 		// // RVA: 0x2041D88 Offset: 0x2041D88 VA: 0x2041D88
 		public void StartChildrenAnimLoop(string startLabel, string endLabel)
@@ -498,10 +563,19 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x2041F80 Offset: 0x2041F80 VA: 0x2041F80
-		// public void FinishAnimLoop() { }
+		public void FinishAnimLoop()
+		{
+			FinishAnimLoop(m_List);
+		}
 
 		// // RVA: 0x2041F88 Offset: 0x2041F88 VA: 0x2041F88
-		// private void FinishAnimLoop(List<ViewBase> listView) { }
+		private void FinishAnimLoop(List<ViewBase> listView)
+		{
+			for (int i = 0; i < listView.Count; i++)
+			{
+				listView[i].FinishAnimLoop();
+			}
+		}
 
 		// // RVA: 0x204205C Offset: 0x204205C VA: 0x204205C
 		private bool IsPlayingChildren(List<ViewBase> listView)
@@ -564,13 +638,51 @@ namespace XeSys.Gfx
 		// public virtual void SetDrawLayer(int layer) { }
 
 		// // RVA: 0x20426C0 Offset: 0x20426C0 VA: 0x20426C0
-		// public void SetViewMask() { }
+		public void SetViewMask()
+		{
+			SetViewMask(this);
+		}
 
 		// // RVA: 0x20426C8 Offset: 0x20426C8 VA: 0x20426C8
-		// public void SetViewMask(ViewBase maskView) { }
+		public void SetViewMask(ViewBase maskView)
+		{
+			for(int i = 0; i < viewCount; i++)
+			{
+				SetViewMask(maskView, m_List[i]);
+			}
+		}
 
 		// // RVA: 0x204277C Offset: 0x204277C VA: 0x204277C
-		// public void SetViewMask(ViewBase maskView, ViewBase view) { }
+		public void SetViewMask(ViewBase maskView, ViewBase view)
+		{
+			if(view != null)
+			{
+				if(view is AbsoluteLayout)
+				{
+					(view as AbsoluteLayout).SetViewMask(maskView);
+				}
+				else if(view is TextView)
+				{
+					(view as TextView).SetMaskFromView(maskView);
+					(view as TextView).IsMask = true;
+					if(maskView != null)
+					{
+						GameObject t = (view as TextView).GetTextGameObject();
+						if (maskView is ScrollView && t != null)
+							(maskView as ScrollView).AddChildGameObject(t);
+					}
+				}
+				else if(view is SwfView)
+				{
+					(view as SwfView).SetMaskFromView(maskView);
+					(view as SwfView).IsMask = true;
+				}
+				else if(view is ImageView)
+				{
+					(view as ImageView).IsMask = true;
+				}
+			}
+		}
 
 		// // RVA: 0x2042CD0 Offset: 0x2042CD0 VA: 0x2042CD0
 		// public void SetViewMaskEx() { }

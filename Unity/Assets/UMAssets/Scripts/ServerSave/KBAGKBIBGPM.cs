@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use KBAGKBIBGPM_EventRaidLobby", true)]
 public class KBAGKBIBGPM { }
 public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 {

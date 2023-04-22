@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -46,14 +47,38 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xF709C8 Offset: 0xF709C8 VA: 0xF709C8
 		public void BeginCompleteAnim(RhythmGameConsts.ResultComboType type)
 		{
-			TodoLogger.Log(0, "BeginCompleteAnim");
+			gameObject.SetActive(true);
+			if(type == RhythmGameConsts.ResultComboType.FullCombo)
+			{
+				m_mainSymbol.StartAnim("fullcombo");
+				m_fullcomboSymbol.StartAnim("enter");
+				m_referenceSymbol = m_fullcomboSymbol;
+			}
+			else if(type == RhythmGameConsts.ResultComboType.PerfectFullCombo)
+			{
+				m_mainSymbol.StartAnim("pfullcombo");
+				m_pfullcomboSymbol.StartAnim("enter");
+				m_referenceSymbol = m_pfullcomboSymbol;
+			}
+			else
+			{
+				m_mainSymbol.StartAnim("complete");
+				m_completeSymbol.StartAnim("enter");
+				m_referenceSymbol = m_completeSymbol;
+			}
+			m_clear_rank = type;
+			PlayClearRankSe();
+			m_updater = UpdateLeaveWait;
 		}
 
 		//// RVA: 0xF749F8 Offset: 0xF749F8 VA: 0xF749F8
 		//public void EndCompleteAnim() { }
 
 		//// RVA: 0xF74A30 Offset: 0xF74A30 VA: 0xF74A30
-		//private void UpdateIdle() { }
+		private void UpdateIdle()
+		{
+			return;
+		}
 
 		//// RVA: 0xF74A34 Offset: 0xF74A34 VA: 0xF74A34
 		public void BeginCompleteAnimSimulate()
@@ -77,10 +102,35 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF74C5C Offset: 0xF74C5C VA: 0xF74C5C
-		//private void UpdateLeaveWait() { }
+		private void UpdateLeaveWait()
+		{
+			if(m_referenceSymbol != null)
+			{
+				if (m_referenceSymbol.IsPlaying())
+					return;
+			}
+			leave_completed_event();
+			m_updater = UpdateIdle;
+		}
 
 		//// RVA: 0xF74964 Offset: 0xF74964 VA: 0xF74964
-		//private void PlayClearRankSe() { }
+		private void PlayClearRankSe()
+		{
+			int cueId = (int)cs_se_game.SE_GAME_002;
+			if(m_clear_rank == RhythmGameConsts.ResultComboType.FullCombo)
+			{
+				if (m_cb_playvoice_clear_fullcombo != null)
+					m_cb_playvoice_clear_fullcombo();
+				cueId = (int)cs_se_game.SE_GAME_012;
+			}
+			else if(m_clear_rank == RhythmGameConsts.ResultComboType.PerfectFullCombo)
+			{
+				if (m_cb_playvoice_clear_perfectfullcombo != null)
+					m_cb_playvoice_clear_perfectfullcombo();
+				cueId = (int)cs_se_game.SE_GAME_010;
+			}
+			SoundManager.Instance.sePlayerGame.Play(cueId);
+		}
 
 		//[CompilerGeneratedAttribute] // RVA: 0x7469EC Offset: 0x7469EC VA: 0x7469EC
 		//							 // RVA: 0xF74D20 Offset: 0xF74D20 VA: 0xF74D20

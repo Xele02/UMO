@@ -8,6 +8,7 @@ using System;
 using XeApp.Game.Tutorial;
 using XeSys;
 using CriWare;
+using mcrs;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -200,7 +201,17 @@ namespace XeApp.Game.RhythmGame
 		private List<int> liveSkillActivateCountList = new List<int>(XeApp.Game.Common.TeamConst.TeamSceneNum); // 0x158
 		private RhythmGamePlayLogger logger = new RhythmGamePlayLogger(); // 0x15C
 		private int m_bit_note_result; // 0x160
-		private int[] noteTouchSEIndex = new int[8] {4, 5, 3, 2, 1, 0, 7, 6}; // Field$<PrivateImplementationDetails>.B97719DD67FEBE5083885CEEA340284B07BE6023; // 0x164
+		private int[] noteTouchSEIndex = new int[8] 
+		{
+			(int)cs_se_notes.SE_NOTES_004,
+			(int)cs_se_notes.SE_NOTES_005,
+			(int)cs_se_notes.SE_NOTES_003,
+			(int)cs_se_notes.SE_NOTES_002,
+			(int)cs_se_notes.SE_NOTES_001,
+			(int)cs_se_notes.SE_NOTES_000,
+			(int)cs_se_notes.SE_NOTES_007,
+			(int)cs_se_notes.SE_NOTES_006
+		}; // Field$<PrivateImplementationDetails>.B97719DD67FEBE5083885CEEA340284B07BE6023; // 0x164
 		private const int BattleEventVoiceNum = 3;
 		private ActiveSkillRestartTimer activeSkillRestartTimer = new ActiveSkillRestartTimer(); // 0x168
 		public static bool IsLowQualityMode; // 0x30
@@ -408,7 +419,7 @@ namespace XeApp.Game.RhythmGame
 					if(uiController.Hud.isBattleLimitTimeRunning)
 					{
 						Vector3 pos = Vector3.zero;
-						if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D && GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG())
+						if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D && GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled())
 						{							
 							valkyrieModeObject.GetLockOnTargetPos(out pos);
 							valkyrieModeObject.SetShootLock(!status.IsEnableValkyrieAttack());
@@ -452,6 +463,182 @@ namespace XeApp.Game.RhythmGame
 			InitializeCheatOption();
 			InitializeMusicData();
 			InitializeGameData();
+
+
+#if UNITY_STANDALONE
+			//UMO
+			// Preload note sounds
+			for (int i = 0; i < noteTouchSEIndex.Length; i++)
+			{
+				SoundManager.Instance.sePlayerNotes.Preload(noteTouchSEIndex[i]);
+			}
+			// From valkyrie event, not sure if dynamic by valkyrie / ground
+			SoundManager.Instance.sePlayerGame.Preload("se_game_006");
+			SoundManager.Instance.sePlayerGame.Preload("se_game_012");
+			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_000");
+			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_001");
+			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_002");
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_009);
+			// Preload pilot voice
+			if (setting.m_enable_cutin)
+			{
+				RhythmGameVoicePlayer.Result res = voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.TakeOff);
+				if (RhythmGameVoicePlayer.Result.None == res)
+				{
+					if (resource.isTakeoffDivaVoice)
+					{
+						SoundManager.Instance.voDiva.Preload(DivaVoicePlayer.VoiceCategory.GameSpecial, resource.takeoffVoiceId);
+					}
+					else
+					{
+						int voiceId = resource.takeoffVoiceId;
+						PilotVoicePlayer.VoiceCategory categoryId = PilotVoicePlayer.VoiceCategory.Start;
+						if (voiceId < 0)
+						{
+							categoryId = PilotVoicePlayer.VoiceCategory.Start;
+							voiceId = 0;
+						}
+						else
+						{
+							categoryId = PilotVoicePlayer.VoiceCategory.Special;
+						}
+						SoundManager.Instance.voPilot.Preload(categoryId, voiceId);
+					}
+				}
+			}
+			//Preload active skill sounds
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_VALKYRIE_001);
+			if (gameFlow.IsRareBreak)
+			{
+				SoundManager.Instance.voDivaCos.Preload(DivaCosVoicePlayer.Category.ActiveSkill, 0);
+			}
+			else
+			{
+				if (voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.ActiveSkill) == 0)
+				{
+					SoundManager.Instance.voDiva.Preload(DivaVoicePlayer.VoiceCategory.GameActiveSkill, 0);
+				}
+			}
+			// Preload skill cutin
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_VALKYRIE_000);
+			// Preload voice pilot
+			for (int playVoiceId = 0; playVoiceId <= 1; playVoiceId++)
+			{
+				RhythmGameVoicePlayer.Result res = voicePlayer.PreloadPlayVoice(playVoiceId != 0 ? RhythmGameVoicePlayer.Voice.Wave_100 : RhythmGameVoicePlayer.Voice.Wave_50);
+				if (res == RhythmGameVoicePlayer.Result.None)
+				{
+					PilotVoicePlayer.VoiceCategory catId = PilotVoicePlayer.VoiceCategory.Fwave;
+					if (playVoiceId == 0)
+					{
+						if (resource.enterFoldWaveId_50 > -1)
+						{
+							playVoiceId = resource.enterFoldWaveId_50;
+							catId = PilotVoicePlayer.VoiceCategory.Special;
+						}
+						else
+						{
+							catId = PilotVoicePlayer.VoiceCategory.Fwave;
+						}
+					}
+					else
+					{
+						catId = PilotVoicePlayer.VoiceCategory.Fwave;
+						if (playVoiceId == 1)
+						{
+							if (resource.enterFoldWaveId_100 < 0)
+							{
+								playVoiceId = 1;
+								catId = PilotVoicePlayer.VoiceCategory.Fwave;
+							}
+							else
+							{
+								playVoiceId = resource.enterFoldWaveId_100;
+								catId = PilotVoicePlayer.VoiceCategory.Special;
+							}
+						}
+					}
+					SoundManager.Instance.voPilot.Preload(catId, playVoiceId);
+				}
+			}
+			// valkyriemode start
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_008);
+			if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Start) == RhythmGameVoicePlayer.Result.None)
+			{
+				if (resource.enteredValkyrieModeVoiceId < 0)
+				{
+					SoundManager.Instance.voPilot.Preload(PilotVoicePlayer.VoiceCategory.Valkyrie, 0);
+				}
+				else
+				{
+					SoundManager.Instance.voPilot.Preload(PilotVoicePlayer.VoiceCategory.Special, resource.enteredValkyrieModeVoiceId);
+				}
+			}
+			// enemy lock
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_013);
+			// shoot
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_016);
+			// valkyrie mode end
+			if (setting.m_enable_cutin)
+			{
+				// fail
+				if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Failed) == RhythmGameVoicePlayer.Result.None)
+				{
+					SoundManager.Instance.voPilot.Preload(PilotVoicePlayer.VoiceCategory.Valkyrie, 3);
+				}
+				// awaken
+				if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Success2) == RhythmGameVoicePlayer.Result.None)
+				{
+					SoundManager.Instance.voPilot.Preload(PilotVoicePlayer.VoiceCategory.Valkyrie, 2);
+				}
+				// diva
+				if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Success1) == RhythmGameVoicePlayer.Result.None)
+				{
+					SoundManager.Instance.voPilot.Preload(PilotVoicePlayer.VoiceCategory.Valkyrie, 1);
+				}
+			}
+			// start diva cutscene
+			// awaken
+			{
+				SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_017);
+				if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Diva_Awake) == RhythmGameVoicePlayer.Result.None)
+				{
+					DivaVoicePlayer.VoiceCategory cat = DivaVoicePlayer.VoiceCategory.None;
+					int voice = 0;
+					if (resource.enterdAwakenDivaModeVoiceId < 0)
+					{
+						cat = DivaVoicePlayer.VoiceCategory.GameClear;
+						voice = 1;
+					}
+					else
+					{
+						voice = resource.enterdAwakenDivaModeVoiceId;
+						cat = DivaVoicePlayer.VoiceCategory.GameSpecial;
+					}
+					SoundManager.Instance.voDiva.Preload(cat, voice);
+				}
+			}
+			// normal
+			{
+				SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_011);
+				if (voicePlayer.PreloadPlayVoice(RhythmGameVoicePlayer.Voice.Mode_Diva) == RhythmGameVoicePlayer.Result.None)
+				{
+					DivaVoicePlayer.VoiceCategory cat = DivaVoicePlayer.VoiceCategory.None;
+					int voice = 0;
+					if (resource.enterdDivaModeVoiceId < 0)
+					{
+						cat = DivaVoicePlayer.VoiceCategory.GameClear;
+						voice = 0;
+					}
+					else
+					{
+						voice = resource.enterdDivaModeVoiceId;
+						cat = DivaVoicePlayer.VoiceCategory.GameSpecial;
+					}
+					SoundManager.Instance.voDiva.Preload(cat, voice);
+				}
+			}
+			//
+#endif
 		}
 
 		// // RVA: 0x9B3F80 Offset: 0x9B3F80 VA: 0x9B3F80
@@ -519,15 +706,6 @@ namespace XeApp.Game.RhythmGame
 			soundCheerOrderer.Initialize(resource.musicData.cheerScoreData);
 			soundCheerOrderer.Stop();
 			soundCheerOrderer.Resume();
-
-#if UNITY_STANDALONE
-			//UMO
-			for (int i = 0; i < noteTouchSEIndex.Length; i++)
-			{
-				SoundManager.Instance.sePlayerNotes.Preload(noteTouchSEIndex[i]);
-			}
-			//
-#endif
 		}
 
 		// // RVA: 0x9B4D20 Offset: 0x9B4D20 VA: 0x9B4D20
@@ -846,7 +1024,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			
 			setting = new Setting();
-			setting.m_enable_cutin = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GLKGAOFHLPN();
+			setting.m_enable_cutin = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GLKGAOFHLPN_IsCutinEnabled();
 			setting.m_visible_diva = XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CJKKALFPMLA_IsNotDivaModeDivaVisible;
 			if(setting_mv.m_enable)
 			{
@@ -871,7 +1049,7 @@ namespace XeApp.Game.RhythmGame
 				return;
 			backupSaveData.m_enable = true;
 			backupSaveData.m_option = new ILDKBCLAFPB.MPHNGGECENI_Option();
-			backupSaveData.m_option.ODDIHGPONFL_Copy(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.ODDIHGPONFL_Copy(backupSaveData.m_option);
 		}
 
 		// // RVA: 0x9BAFE8 Offset: 0x9BAFE8 VA: 0x9BAFE8
@@ -1061,7 +1239,21 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (setting_mv.m_enable)
 				return;
-			TodoLogger.Log(0, "InitializeSkill");
+			skillOwner.status = status;
+			skillOwner.CreateList();
+			skillOwner.onFullfillLiveSkill = OnFullfillLiveSkill;
+			skillOwner.onFullfillEnemySkill = OnFullfillEnemySkill;
+			skillOwner.onFullfillActiveSkill = OnFullfillActiveSkill;
+			buffOwner.ClearAll();
+			buffOwner.Initialize();
+			buffOwner.AddActiveEvent(OnActiveBuffEffect);
+			buffOwner.AddRemoveEvent(OnRemoveBuffEffect);
+			buffOwner.poisonEvent.AddListener(OnPosionSkillDamageCallback);
+			uiController.Hud.DisableActiveSkillButton();
+			skillTouched = false;
+			touchedCenterLiveSkill = false;
+			touchedEventItem = false;
+			skillOwner.CheckFirstTrigger();
 		}
 
 		// // RVA: 0x9BB22C Offset: 0x9BB22C VA: 0x9BB22C
@@ -1181,7 +1373,7 @@ namespace XeApp.Game.RhythmGame
 				return;
 			}
 			uiController.Hud.ShowValkyrie();
-			SoundManager.Instance.sePlayerGame.Play(8);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_009);
 		}
 
 		// // RVA: 0x9BB820 Offset: 0x9BB820 VA: 0x9BB820
@@ -1192,7 +1384,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(status.internalMode.type == RhythmGameMode.Type.Valkyrie)
 			{
-				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG())
+				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled())
 				{
 					uguiFader.Fade(0.05f, new Color(ValkyrieStartFadeColor.r, ValkyrieStartFadeColor.g, ValkyrieStartFadeColor.b, 0), ValkyrieStartFadeColor);
 				}
@@ -1216,7 +1408,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (status.internalMode.type != RhythmGameMode.Type.Valkyrie)
 				return;
-			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG())
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled())
 			{
 				uguiFader.Fade(0.05f, ValkyrieStartFadeColor, new Color(ValkyrieStartFadeColor.r, ValkyrieStartFadeColor.g, ValkyrieStartFadeColor.b, 0));
 				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
@@ -1360,7 +1552,7 @@ namespace XeApp.Game.RhythmGame
 				bool is3D = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
 				if(status.internalMode.type == RhythmGameMode.Type.AwakenDiva)
 				{
-					SoundManager.Instance.sePlayerGame.Play(16);
+					SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_017);
 					if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Diva_Awake) == RhythmGameVoicePlayer.Result.None)
 					{
 						DivaVoicePlayer.VoiceCategory cat = DivaVoicePlayer.VoiceCategory.None;
@@ -1384,7 +1576,7 @@ namespace XeApp.Game.RhythmGame
 				}
 				else
 				{
-					SoundManager.Instance.sePlayerGame.Play(15);
+					SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_011);
 					if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Diva) == RhythmGameVoicePlayer.Result.None)
 					{
 						DivaVoicePlayer.VoiceCategory cat = DivaVoicePlayer.VoiceCategory.None;
@@ -1475,12 +1667,51 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				TodoLogger.Log(100, "UpdateSkill");
+				skillOwner.CheckTrigger(new SkillTriggerParameter()
+				{
+					musicTime = musicMillisec / 1000.0f,
+					currentLifeRate = status.life.current * 1.0f / status.life.max,
+					currentCombo = status.combo.current,
+					currentScore = status.score.currentScore,
+					valkyeriModeEndTimeMs = resource.musicData.valkyrieModeLeaveMillisec,
+					modeType = status.directionMode.type,
+					touchedSkill = skillTouched,
+					touchedCenterLiveSkillNote = touchedCenterLiveSkill
+				}, buffOwner);
+				OnActiveSkill_Update(musicMillisec);
 			}
+			buffOwner.OnUpdate(new BuffDurationCheckParameter()
+			{
+				musicTime = musicMillisec / 1000.0f,
+				isValkyrieMode = false,
+				modeType = status.directionMode.type,
+				bitNoteResult = m_bit_note_result
+			});
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.Poison, -1))
+			{
+				uiController.Hud.SetPoisonSkillEffect(0, true);
+			}
+			else
+			{
+				uiController.Hud.SetPoisonSkillEffect(0, false);
+			}
+			uiController.ShowLIVESkill();
 		}
 
 		// // RVA: 0x9BE618 Offset: 0x9BE618 VA: 0x9BE618
-		// private void OnPosionSkillDamageCallback(BuffEffect buff) { }
+		private void OnPosionSkillDamageCallback(BuffEffect buff)
+		{
+			float f = 1;
+			if(buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ReduceDamage, -1))
+			{
+				f = 1 - Mathf.Min(buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.ReduceDamage, -1, RhythmGameConsts.NoteResult.None) / 100.0f, 1);
+			}
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.NoDamage, -1))
+			{
+				f = 0;
+			}
+			status.life.DamageValue(Mathf.RoundToInt(f * buff.effectValue));
+		}
 
 		// // RVA: 0x9BE84C Offset: 0x9BE84C VA: 0x9BE84C
 		private void MusicIntroStartPlayerCutInCallback()
@@ -1556,7 +1787,7 @@ namespace XeApp.Game.RhythmGame
 			eventFireFlags[0] = true;
 			if (!setting.m_enable_cutin)
 				return;
-			SoundManager.Instance.sePlayerGame.Play(7);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_008);
 			if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Start) == RhythmGameVoicePlayer.Result.None)
 			{
 				if(resource.enteredValkyrieModeVoiceId < 0)
@@ -1579,7 +1810,7 @@ namespace XeApp.Game.RhythmGame
 			eventFireFlags[1] = true;
 			if (!setting.m_enable_cutin)
 				return;
-			SoundManager.Instance.sePlayerGame.Play(7);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_008);
 			uiController.Hud.ShowEnemyCutin();
 		}
 
@@ -1589,31 +1820,171 @@ namespace XeApp.Game.RhythmGame
 			if (eventFireFlags[2])
 				return;
 			eventFireFlags[2] = true;
-			SoundManager.Instance.sePlayerGame.Play(11);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_013);
 			uiController.Hud.ShowEnemyStatus();
 			uiController.Hud.ShowTargetSight();
 		}
 
 		// // RVA: 0x9BF538 Offset: 0x9BF538 VA: 0x9BF538
-		// private void OnFullfillLiveSkill(LiveSkill skill) { }
+		private void OnFullfillLiveSkill(LiveSkill skill)
+		{
+			if(skill.SkillIndex == 0)
+			{
+				liveSkillActivateCountList[skill.ownerSlotPlaceIndex + skill.ownerDivaPlaceIndex * 3]++;
+			}
+			AddSkillLog(skill, false);
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB_CutInEnabled())
+			{
+				uiController.EnterLIVESkill(skill, resource.uiTextureResources.skillEffectMaterials[(int)skill.buffEffectType], resource.uiTextureResources.divaSkillCutinMaterials[skill.ownerDivaPlaceIndex]);
+			}
+			if (skill.durationType == SkillDuration.Type.Instant)
+				ActivateInstantBuff(skill);
+		}
 
 		// // RVA: 0x9BFCCC Offset: 0x9BFCCC VA: 0x9BFCCC
-		// private void OnFullfillActiveSkill(ActiveSkill skill) { }
+		private void OnFullfillActiveSkill(ActiveSkill skill)
+		{
+			AddSkillLog(skill, true);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_VALKYRIE_001);
+			if(gameFlow.IsRareBreak)
+			{
+				SoundManager.Instance.voDivaCos.Play(DivaCosVoicePlayer.Category.ActiveSkill, 0);
+			}
+			else
+			{
+				if(voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.ActiveSkill) == 0)
+				{
+					SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.GameActiveSkill, 0);
+				}
+			}
+			uiController.Hud.DecideActiveSkillButton(skill.durationType);
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB_CutInEnabled())
+			{
+				int a = 0;
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave != null)
+				{
+					a = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[Database.Instance.gameSetup.teamInfo.danceDivaList[0].sceneIdList[0] - 1].JPIPENJGGDD_Mlt;
+				}
+				uiController.Hud.ShowActiveSkillCutin(GameMessageManager.GetSceneCardName(Database.Instance.gameSetup.teamInfo.danceDivaList[0].sceneIdList[0], a, ""), resource.uiTextureResources);
+			}
+			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+			{
+				BasicTutorialManager.Instance.HideCursor();
+			}
+			if(skill.durationType == SkillDuration.Type.Instant)
+			{
+				ActivateInstantBuff(skill);
+				OnActiveSkill_End();
+			}
+		}
 
 		// // RVA: 0x9C0468 Offset: 0x9C0468 VA: 0x9C0468
-		// private void OnFullfillEnemySkill(EnemySkill skill) { }
+		private void OnFullfillEnemySkill(EnemySkill skill)
+		{
+			if(skill.masterSkill.CPNAGMFCIJK_TriggerType == (int)SkillTrigger.Type.FirstCheck)
+			{
+				if(skill.buffEffectType == SkillBuffEffect.Type.EnemyLifeUp)
+				{
+					if (!status.enemy.SetupEnemyLife(skill))
+						return;
+					uiController.Hud.ChangeEnemyLife(UI.EnemyStatus.LifeType.Double);
+				}
+			}
+			else if(skill.durationType == SkillDuration.Type.Instant)
+			{
+				ActivateInstantBuff(skill);
+			}
+		}
 
 		// // RVA: 0x9C03D8 Offset: 0x9C03D8 VA: 0x9C03D8
-		// private void OnActiveSkill_End() { }
+		private void OnActiveSkill_End()
+		{
+			if (!skillOwner.activeSkill.IsRestart())
+				return;
+			activeSkillRestartTimer.m_step = ActiveSkillRestartTimer.Step.WaitEnd;
+			activeSkillRestartTimer.m_msec_st = notesMillisec;
+		}
 
 		// // RVA: 0x9BE160 Offset: 0x9BE160 VA: 0x9BE160
-		// private void OnActiveSkill_Update(int a_notes_msec) { }
+		private void OnActiveSkill_Update(int a_notes_msec)
+		{
+			if(activeSkillRestartTimer.m_step == ActiveSkillRestartTimer.Step.WaitEnd)
+			{
+				if(uiController.Hud.IsActiveSkillButtonAcEnd())
+				{
+					activeSkillRestartTimer.m_step = ActiveSkillRestartTimer.Step.WaitTime;
+					activeSkillRestartTimer.m_msec_st = a_notes_msec;
+					activeSkillRestartTimer.m_msec_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("activeskill_cool_time", 0);
+					return;
+				}
+			}
+			else
+			{
+				if(activeSkillRestartTimer.m_step == ActiveSkillRestartTimer.Step.WaitTime)
+				{
+					if(Mathf.Abs(a_notes_msec - activeSkillRestartTimer.m_msec_st) > activeSkillRestartTimer.m_msec_max)
+					{
+						uiController.Hud.RestartActiveSkillButton();
+						activeSkillRestartTimer.m_step = ActiveSkillRestartTimer.Step.WaitRestart;
+						return;
+					}
+				}
+				else if(activeSkillRestartTimer.m_step == ActiveSkillRestartTimer.Step.WaitRestart)
+				{
+					if(uiController.Hud.IsActiveSkillButtonAcOn())
+					{
+						skillOwner.activeSkill.Restart();
+						skillTouched = false;
+						activeSkillRestartTimer.m_step = ActiveSkillRestartTimer.Step.None;
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x9C0648 Offset: 0x9C0648 VA: 0x9C0648
-		// private void OnActiveBuffEffect(BuffEffect buff) { }
+		private void OnActiveBuffEffect(BuffEffect buff)
+		{
+			for(int i = 0; i < RhythmGameConsts.LineNum; i++)
+			{
+				if((buff.lineTarget & (1 << i)) > 0)
+				{
+					uiController.AddBuffEffect(buff, i);
+				}
+			}
+			if (buff.effectType != SkillBuffEffect.Type.AllItemNotes)
+				return;
+			status.internalMode.isAllItemMode = true;
+			rNoteOwner.OnChangeGameMode();
+		}
 
 		// // RVA: 0x9C07AC Offset: 0x9C07AC VA: 0x9C07AC
-		// private void OnRemoveBuffEffect(BuffEffect buff, int ownerDivaPlaceIndex) { }
+		private void OnRemoveBuffEffect(BuffEffect buff, int ownerDivaPlaceIndex)
+		{
+			for(int i = 0; i < RhythmGameConsts.LineNum; i++)
+			{
+				if((buff.lineTarget & (1 << i)) > 0)
+				{
+					if(!buffOwner.effectiveBuffList.IsConatinEffectType(buff.effectType, i))
+					{
+						uiController.DeleteBuffEffect(buff, i);
+					}
+					if(buff.isTopPriorityDisplay)
+					{
+						uiController.DeleteBuffEffectTopPriorityFlagOnly(buff, i);
+					}
+				}
+			}
+			if(buff.skillType == SkillType.Type.ActiveSkill)
+			{
+				uiController.EndActiveSkill();
+				OnActiveSkill_End();
+			}
+			if(buff.effectType == SkillBuffEffect.Type.AllItemNotes)
+			{
+				status.internalMode.isAllItemMode = false;
+				rNoteOwner.OnChangeGameMode();
+			}
+		}
 
 		// // RVA: 0x9C0A20 Offset: 0x9C0A20 VA: 0x9C0A20
 		// private bool MiddleScoreJudge(int idx, int score) { }
@@ -1628,10 +1999,41 @@ namespace XeApp.Game.RhythmGame
 		// private int GetBattleResultVoiceCueId(BattleEventResultVoice.ResultVoiceIndex index) { }
 
 		// // RVA: 0x9BFB50 Offset: 0x9BFB50 VA: 0x9BFB50
-		// private void ActivateInstantBuff(SkillBase skill) { }
+		private void ActivateInstantBuff(SkillBase skill)
+		{
+			if(skill.buffEffectType == SkillBuffEffect.Type.HealLifePercentage)
+			{
+				status.life.HealPercentage(skill.buffEffectValue);
+			}
+			else if(skill.buffEffectType == SkillBuffEffect.Type.HealLifeValue)
+			{
+				status.life.HealValue(skill.buffEffectValue);
+			}
+			else if (skill.buffEffectType == SkillBuffEffect.Type.EffectValueUp)
+			{
+				skillOwner.LiveSkillEffectValueUp(skill);
+			}
+		}
 
 		// // RVA: 0x9BF8B4 Offset: 0x9BF8B4 VA: 0x9BF8B4
-		// private void AddSkillLog(SkillBase skill, bool isActiveSkill) { }
+		private void AddSkillLog(SkillBase skill, bool isActiveSkill)
+		{
+			RhythmGamePlayLog.SkillData data = new RhythmGamePlayLog.SkillData();
+			data.skillId = skill.skillId;
+			data.skillLevel = skill.skillLevel;
+			data.skillType = skill.buffEffectType;
+			data.sceneId = -1;
+			if(skill.ownerDivaIndex > -1)
+			{
+				if(skill.ownerSlotIndex > -1)
+				{
+					data.sceneId = Database.Instance.gameSetup.teamInfo.divaList[skill.ownerDivaIndex].sceneIdList[skill.ownerSlotIndex];
+				}
+			}
+			data.isActive = isActiveSkill;
+			data.millisec = currentRawMusicMillisec - noteOffsetMillisec;
+			logger.AddSkillData(data);
+		}
 
 		// // RVA: 0x9C10B4 Offset: 0x9C10B4 VA: 0x9C10B4
 		private void LoadedRhythmGame()
@@ -1786,13 +2188,49 @@ namespace XeApp.Game.RhythmGame
 		// private void ReconfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 
 		// // RVA: 0x9C27B4 Offset: 0x9C27B4 VA: 0x9C27B4
-		// private void PauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void PauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if(type != PopupButton.ButtonType.Negative)
+			{
+				GameManager.Instance.SetTouchEffectVisible(false);
+				GameManager.Instance.SetTouchEffectMode(false);
+				uiController.BeginRetryAnim(PauseRetryAnimCompletedCallBack);
+			}
+			else
+			{
+				if(!Database.Instance.gameSetup.musicInfo.isTutorialOne && 
+					!Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+				{
+					if (!Database.Instance.gameSetup.musicInfo.isStoryMode)
+					{
+						uiController.ShowRetireConfirmationWindow(PauseRetireConfirmationWindowCallBack);
+						return;
+					}
+					uiController.ShowSkipConfirmationWindow(SkipStoryPauseWindowCallBack);
+					return;
+				}
+				uiController.ShowSkipConfirmationWindow(SkipTutorialWindowCallBack);
+			}
+		}
 
 		// // RVA: 0x9C2A9C Offset: 0x9C2A9C VA: 0x9C2A9C
-		// private void PauseRetireConfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void PauseRetireConfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if(type == PopupButton.ButtonType.Negative)
+			{
+				uiController.ShowPauseWindow(PauseWindowCallBack);
+			}
+			else
+			{
+				FailedRhythmGame();
+			}
+		}
 
 		// // RVA: 0x9C2B68 Offset: 0x9C2B68 VA: 0x9C2B68
-		// private void SkipTutorialWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void SkipTutorialWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			TodoLogger.Log(0, "SkipTutorialWindowCallBack");
+		}
 
 		// // RVA: 0x9C2D30 Offset: 0x9C2D30 VA: 0x9C2D30
 		// private void EndTutorialWindowCallBack() { }
@@ -1801,7 +2239,10 @@ namespace XeApp.Game.RhythmGame
 		// private void SkipStoryWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 
 		// // RVA: 0x9C2E00 Offset: 0x9C2E00 VA: 0x9C2E00
-		// private void SkipStoryPauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void SkipStoryPauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			TodoLogger.Log(0, "SkipStoryPauseWindowCallBack");
+		}
 
 		// // RVA: 0x9C2ECC Offset: 0x9C2ECC VA: 0x9C2ECC
 		private void MvModePauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
@@ -1878,7 +2319,11 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C3A48 Offset: 0x9C3A48 VA: 0x9C3A48
 		private void PauseButtonCallback(bool a_suspend)
 		{
-			TodoLogger.Log(0, "Rhythmgameplayer PauseButtonCallback");
+			PauseGame(true);
+			GameManager.Instance.SetTouchEffectVisible(true);
+			GameManager.Instance.SetTouchEffectMode(true);
+			uiController.failed.ShowBlackCurtainOnly();
+			uiController.ShowPauseWindow(PauseWindowCallBack);
 		}
 
 		// // RVA: 0x9C3BCC Offset: 0x9C3BCC VA: 0x9C3BCC
@@ -1927,7 +2372,11 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9C4154 Offset: 0x9C4154 VA: 0x9C4154
-		// private void PauseRetryAnimCompletedCallBack() { }
+		private void PauseRetryAnimCompletedCallBack()
+		{
+			ResumeGame();
+			uiController.Hud.ClearPauseButton();
+		}
 
 		// // RVA: 0x9C309C Offset: 0x9C309C VA: 0x9C309C
 		private void MvModePauseRetry()
@@ -2001,7 +2450,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C48F0 Offset: 0x9C48F0 VA: 0x9C48F0
 		private void TutorialClearEndRhythmGame()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "TutorialClearEndRhythmGame");
 		}
 
 		// // RVA: 0x9C4A70 Offset: 0x9C4A70 VA: 0x9C4A70
@@ -2037,17 +2486,17 @@ namespace XeApp.Game.RhythmGame
 			int noteResultCount_Excellent;
 			UnityEngine.Debug.Log("Enter Co_WaitRhytmGameEnd");
 			//0xBF3B04
-			TodoLogger.Log(0, "Co_WaitRhytmGameEnd");
+
 			GameManager.FadeOut(0.4f);
-			/*if(soundCheerOrderer != null)
+			if(soundCheerOrderer != null)
 			{
 				SoundManager.Instance.sePlayerCheer.FadeOut(1.0f);
 			}
 			noteResultCount = new int[5];
-			rNoteOwner.SetupNoteResultData(noteResultCount, logger);
+			rNoteOwner.SetupNoteResultData(ref noteResultCount, logger);
 			noteResultCount_Excellent = rNoteOwner.GetExcellentResultNoteCount();
 			JGEOBNENMAH.HAJIFNABIFF data;
-			MakeClearSetupData(data, noteResultCount, noteResultCount_Excellent, touchedEventItem);
+			MakeClearSetupData(out data, noteResultCount, noteResultCount_Excellent, touchedEventItem ? 1 : 0);
 			int t_next = 0;
 			if (!isClear)
 			{
@@ -2056,33 +2505,131 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
+				JGEOBNENMAH.HHCJCDFCLOB.EFHPJGACNLK(data, () =>
+				{
+					//0xBF1ADC
+					t_next = 2;
+				}, () =>
+				{
+					//0xBF1AE8
+					t_next = 1;
+				});
+			}
+			GameManager.Instance.SetTouchEffectVisible(false);
+			GameManager.Instance.SetTouchEffectMode(false);
 
-			}*/
+			while (t_next == 0)
+				yield return null;
+
+			if(soundCheerOrderer != null)
+			{
+				while (SoundManager.Instance.sePlayerCheer.IsPlaying())
+					yield return null;
+				while(SoundManager.Instance.sePlayerCheer.IsFading())
+					yield return null;
+			}
+			if(t_next == 3)
+			{
+				GotoMenuSceneInFailed();
+			}
+			else if(t_next == 2)
+			{
+				GotoMenuSceneInSuccess(noteResultCount, noteResultCount_Excellent);
+			}
+			else if(t_next == 1)
+			{
+				GotoTitleSceneInError();
+			}
 
 			//TodoLogger.MinLog = -9999;
 
-			GotoMenuSceneInSuccess(new int[5], 0);
 			UnityEngine.Debug.Log("Exit Co_WaitRhytmGameEnd");
 			yield break;
 		}
 
 		// // RVA: 0x9C4B8C Offset: 0x9C4B8C VA: 0x9C4B8C
-		// private void MakeClearSetupData(out JGEOBNENMAH.HAJIFNABIFF clearSetup, int[] noteResultCount, int noteResultCount_Excellent, int noteResultCount_EventItem) { }
+		private void MakeClearSetupData(out JGEOBNENMAH.HAJIFNABIFF clearSetup, int[] noteResultCount, int noteResultCount_Excellent, int noteResultCount_EventItem)
+		{
+			RhythmGameConsts.ResultComboType comboRank = CalcComboRank();
+			clearSetup = new JGEOBNENMAH.HAJIFNABIFF();
+			clearSetup.KLCIIHKFPPO_StoryMusicId = Database.Instance.gameSetup.musicInfo.storyMusicId;
+			clearSetup.GHBPLHBNMBK_FreeMusicId = Database.Instance.gameSetup.musicInfo.freeMusicId;
+			clearSetup.AKNELONELJK_Difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
+			clearSetup.LFGNLKKFOCD_IsLine6 = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
+			clearSetup.MNNHHJBBICA_GameEventType = (int)Database.Instance.gameSetup.musicInfo.gameEventType;
+			clearSetup.MFJKNCACBDG_OpenEventType = (int)Database.Instance.gameSetup.musicInfo.openEventType;
+			clearSetup.OEILJHENAHN_PlayEventType = (int)Database.Instance.gameSetup.musicInfo.playEventType;
+			clearSetup.KNIFCANOHOC_Score = status.score.currentScore;
+			clearSetup.EACPIDGGPPO_ExcellentScore = status.score.currentScore - status.score.nonExcellentScore;
+			clearSetup.NLKEBAOBJCM_MaxCombo = status.combo.record;
+			clearSetup.LCOHGOIDMDF_ComboRank = (int)comboRank;
+			clearSetup.MJBODMOLOBC_TeamLuck = Database.Instance.gameSetup.teamInfo.teamLuck;
+			clearSetup.DGMPBPMDBEC_DropItemList = new List<int>(dropItemList);
+			clearSetup.JNNDFGPMEDA_EnergyLeft = status.energy.GetGaugeValue();
+			clearSetup.JKPPKAHPPKH_LifeLeft = status.life.current;
+			clearSetup.IPEKDLNEOFI_TeamLife = Database.Instance.gameSetup.teamInfo.teamStatus.life;
+			clearSetup.HBKBKHACHHI_TeamSoul = Database.Instance.gameSetup.teamInfo.teamStatus.soul;
+			clearSetup.GMECIBOJCFF_TeamVocal = Database.Instance.gameSetup.teamInfo.teamStatus.vocal;
+			clearSetup.MIMLMJGGNJH_TeamCharm = Database.Instance.gameSetup.teamInfo.teamStatus.charm;
+			clearSetup.BFHPKJEKJNN_TeamSupport = Database.Instance.gameSetup.teamInfo.teamStatus.support;
+			clearSetup.DDBEJNGJIPF_Fold = Database.Instance.gameSetup.teamInfo.teamStatus.fold;
+			clearSetup.JBCKLEMCEBD_LiveSkillActivateCount = new List<int>(liveSkillActivateCountList);
+			clearSetup.CPNOKMINILL_SkillDataList = new List<RhythmGamePlayLog.SkillData>(logger.log.skillDataList);
+			clearSetup.JEKDIEFPEON_RareItemRandomSeed = rNoteOwner.GetRareItemRandomSeed();
+			clearSetup.OOOGNIPJMDE_HadDivaMode = logger.log.divaModeData.type == RhythmGameMode.Type.Diva;
+			clearSetup.HGEKDNNJAAC_HadAwakenDivaMode = logger.log.divaModeData.type == RhythmGameMode.Type.AwakenDiva;
+			clearSetup.KNCBNGCDMII_HadValkyrieMode = logger.log.valkyrieModeData.type == RhythmGameMode.Type.Valkyrie;
+			clearSetup.EHCFOHAABDA_EnemyLeft = status.enemy.currentValue;
+			clearSetup.HNHCIGMKPDC_DivaIds = new List<int>();
+			clearSetup.OJDDNGGBJOG_AverageFPS = (int)DebugFPS.Instance.avgFPS;
+			clearSetup.BIIGPMLBOOD_MinFPS = (int)DebugFPS.Instance.minFPS;
+			clearSetup.FJCIPNCOBNA_SerializedNoteResultInfo = rNoteOwner.SerializeForNotesLog();
+			clearSetup.FDNEPIEMMFN_AssignedCenterLiveSkillNote = rNoteOwner.assignedCenterLiveSkillNote ? 1 : 0;
+			clearSetup.HJIECNDECNO_TouchedCenterLiveSkill = touchedCenterLiveSkill ? 1 : 0;
+			clearSetup.OBOPMHBPCFE_MvMode = Database.Instance.gameSetup.musicInfo.IsMvMode;
+			for(int i = 0; i < 3; i++)
+			{
+				clearSetup.HNHCIGMKPDC_DivaIds.Add(Database.Instance.gameSetup.teamInfo.danceDivaList[i].divaId);
+			}
+			for(int i = 0; i < logger.log.skillDataList.Count; i++)
+			{
+				if(logger.log.skillDataList[i].isActive)
+				{
+					clearSetup.BCGBODDEFKP_NumSkillActive++;
+					clearSetup.IHDIJODHCGD_LastSkillMillisec = logger.log.skillDataList[i].millisec;
+				}
+			}
+			clearSetup.GLGLFDAPNIF_ContinueCount = continueCount;
+			clearSetup.OJFNDOIFOOE_NoteResultCount = new List<int>(noteResultCount);
+			clearSetup.FEGLNPOFDJC_ExcellentCount = noteResultCount_Excellent;
+			clearSetup.OOPEJLMNIAH_EventItemCount = noteResultCount_EventItem;
+			clearSetup.JPJMALBLKDI_Tutorial = (int)Database.Instance.gameSetup.musicInfo.tutorial;
+			clearSetup.NFFDIGEJHGL_ServerTime = JGEOBNENMAH.HHCJCDFCLOB.GJIICCJMDIF_GetServerTime();
+			clearSetup.PMCGHPOGLGM_IsSkip = false;
+			clearSetup.KAIPAEILJHO_TicketCount = 0;
+			if(status.score.CheckFalisification() != null)
+				clearSetup.NMNHBJIAPGG_CheckFalsification = status.score.CheckFalisification();
+			if(status.combo.CheckFalisification() != null)
+				clearSetup.NMNHBJIAPGG_CheckFalsification = status.combo.CheckFalisification();
+		}
 
 		// // RVA: 0x9C5C78 Offset: 0x9C5C78 VA: 0x9C5C78
 		private void GotoMenuSceneInSuccess(int[] noteResultCount, int noteResultCount_Excellent)
 		{
-			TodoLogger.Log(0, "GotoMenuSceneInSuccess");
+			Database.Instance.gameResult.Setup(true, false, noteResultCount, logger.log, noteResultCount_Excellent);
 			scene.GotoMenuScene();
 		}
 
 		// // RVA: 0x9C5D68 Offset: 0x9C5D68 VA: 0x9C5D68
-		// private void GotoMenuSceneInFailed() { }
+		private void GotoMenuSceneInFailed()
+		{
+			TodoLogger.Log(0, "GotoMenuSceneInFailed");
+		}
 
 		// // RVA: 0x9C34EC Offset: 0x9C34EC VA: 0x9C34EC
 		private void GotoTitleSceneInError()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.Log(0, "GotoTitleSceneInError");
 		}
 
 		// // RVA: 0x9C5F68 Offset: 0x9C5F68 VA: 0x9C5F68
@@ -2201,7 +2748,21 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (setting_mv.m_enable)
 				return;
-			TodoLogger.Log(0, "RhythmGamePlayer RNoteOverwrideJudgedResultDelegate");
+			if(buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.OverwritePerfect, a_note_obj.rNote.GetLineNo()))
+			{
+				if (a_result_ex.m_result == RhythmGameConsts.NoteResult.Bad || a_result_ex.m_result == RhythmGameConsts.NoteResult.Good || a_result_ex.m_result == RhythmGameConsts.NoteResult.Great)
+				{
+					a_result_ex.m_result = RhythmGameConsts.NoteResult.Perfect;
+				}
+			}
+			if(a_result_ex.m_result == RhythmGameConsts.NoteResult.Perfect)
+			{
+				if(m_NoteResultParam_Excellent.m_note_judge_rate * 100000.0f < UnityEngine.Random.Range(0, 100000))
+				{
+					return;
+				}
+				a_result_ex.m_excellent = true;
+			}
 		}
 
 		// // RVA: 0x9C71D8 Offset: 0x9C71D8 VA: 0x9C71D8
@@ -2219,7 +2780,17 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9CA2CC Offset: 0x9CA2CC VA: 0x9CA2CC
 		public void SkillTouchEventCallback(TouchSwipeDirection swipeDir)
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer SkillTouchEventCallback");
+			if(!isVisiblePauseWindow && !skillTouched)
+			{
+				if(uiController.Hud.isReadyHUD)
+				{
+					if(uiController.Hud.IsInputAccept())
+					{
+						if (uiController.Hud.IsEnableActiveSkillButton())
+							skillTouched = true;
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x9C73F8 Offset: 0x9C73F8 VA: 0x9C73F8
@@ -2291,7 +2862,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				int damage = status.enemy.Damage(a_result_ex.m_result, noteObject.rNote.GetIndexInMode(MusicData.NoteModeType.Valkyrie), status.comboValkyrie.current, 1.0f, 1.0f, noteObject.rNote.CurrentModeInfo(status.internalMode).specialNoteType);
 				bool is3DMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
-				bool showValkyrie = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG();
+				bool showValkyrie = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled();
 				uiController.UpdateEnemyLife(status.enemy.currentValue, status.enemy.subgoalValue, status.enemy.goalValue, () =>
 				{
 					//0xBF1AFC
@@ -2602,7 +3173,7 @@ namespace XeApp.Game.RhythmGame
 				if(status.IsEnableValkyrieAttack())
 				{
 					bool is3DMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
-					bool showValkyrie = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG();
+					bool showValkyrie = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled();
 					int dmg = status.enemy.Damage(preJudgeValkyrieNotes[i].rNote.result, preJudgeValkyrieNotes[i].rNote.GetIndexInMode(MusicData.NoteModeType.Valkyrie), status.comboValkyrie.current, 1.0f, 1.0f, info.specialNoteType);
 					uiController.UpdateEnemyLife(status.enemy.currentValue, status.enemy.subgoalValue, status.enemy.goalValue, () =>
 					{

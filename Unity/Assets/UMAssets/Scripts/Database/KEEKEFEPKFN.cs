@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using XeSys;
 
+[System.Obsolete("Use KEEKEFEPKFN_GrowItem", true)]
 public class KEEKEFEPKFN { }
 public class KEEKEFEPKFN_GrowItem : DIHHCBACKGG_DbSection
 {
@@ -60,7 +61,7 @@ public class KEEKEFEPKFN_GrowItem : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC = (int)array[i].PPFNGGCBJKC;
 			data.EKLIPGELKCL = (int)array[i].FBFLDFMFFOH;
 			data.INDDJNMPONH = (int)array[i].GBJFNGCDKPM;
-			data.PPEGAKEIEGM = JKAECBCNHAN(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PPEGAKEIEGM = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 		}
 		return true;
 	}

@@ -104,6 +104,8 @@ public   delegate TValue MAIGGGACCCE_ImporterFunc<TJson, TValue> (TJson BJKEOACP
 
 public delegate IHIFCPDDDKN_IJsonWrapper OEIBKOCANDB_WrapperFactory();
 
+[System.Obsolete("Use IKPIMINCOPI_JsonMapper", true)]
+public class IKPIMINCOPI { }
 public class IKPIMINCOPI_JsonMapper
 {
 	#region Fields

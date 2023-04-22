@@ -34,10 +34,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14BD94C Offset: 0x14BD94C VA: 0x14BD94C
-		// public void LoadEmblem(int emblemId, Action<IiconTexture> callback) { }
+		public void LoadEmblem(int emblemId, Action<IiconTexture> callback)
+		{
+			Load(MakeEmblemIconTexturePath(emblemId), callback);
+		}
 
 		// // RVA: 0x14BDA14 Offset: 0x14BDA14 VA: 0x14BDA14
-		// public void TryInstallEmblem(int emblemId) { }
+		public void TryInstallEmblem(int emblemId)
+		{
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MakeEmblemIconTexturePath(emblemId));
+		}
 
 		// // RVA: 0x14BDAC4 Offset: 0x14BDAC4 VA: 0x14BDAC4
 		public void TryInstall(int id, int subId = 0)
@@ -49,7 +55,10 @@ namespace XeApp.Game.Menu
 		// private static int ConvertDegreeTexId(int itemId) { }
 
 		// // RVA: 0x14BD984 Offset: 0x14BD984 VA: 0x14BD984
-		// public static string MakeEmblemIconTexturePath(int emblemId) { }
+		public static string MakeEmblemIconTexturePath(int emblemId)
+		{
+			return MakeItemIconTexturePath(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem, emblemId), 0);
+		}
 
 		// // RVA: 0x14BD514 Offset: 0x14BD514 VA: 0x14BD514
 		public static string MakeItemIconTexturePath(int id, int subId = 0)

@@ -7,7 +7,7 @@ public class DOKOHKJIDBO
 {
 	public ANCJLICGOLP IKCAJDOKNOM; // 0x8
 	public bool LNAHEIEIBOI; // 0xC
-	public string BEIFBNGMFPG = "StringLiteral_9874"; // 0x10
+	public string BEIFBNGMFPG = JpStringLiterals.StringLiteral_9874; // 0x10
 	public Dictionary<int, BEEINMBNKNM_Encryption> KCOIDGJOJHC_EncryptionMap = new Dictionary<int, BEEINMBNKNM_Encryption>(); // 0x14
 
 	public static DOKOHKJIDBO HHCJCDFCLOB { get; private set; } // 0x0 // LGMPACEDIJF, Get NKACBOEHELJ, Set OKPMHKNCNAL
@@ -68,7 +68,7 @@ public class DOKOHKJIDBO
 		request.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) => 
 		{
 			//0x123329C
-			if(!JIPCHHHLOMM.DLKLLHPLANH && JIPCHHHLOMM.CJMFJOMECKI != SakashoErrorId.MASTER_DATA_NOT_FOUND)
+			if(!JIPCHHHLOMM.DLKLLHPLANH && JIPCHHHLOMM.CJMFJOMECKI_ErrorId != SakashoErrorId.MASTER_DATA_NOT_FOUND)
 			{
 				MOBEEPPKFLG();
 				return;

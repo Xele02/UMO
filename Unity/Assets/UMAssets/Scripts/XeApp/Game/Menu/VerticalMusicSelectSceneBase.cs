@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -88,10 +89,10 @@ namespace XeApp.Game.Menu
 			return selectMusicData.GHBPLHBNMBK_FreeMusicId;
 		} } //0xAC8BAC
 		// protected int gameEventType { get; } 0xAC8C00
-		// protected int m_eventTicketId { get; set; } // 0x9C
+		protected int m_eventTicketId { get; set; } // 0x9C
 		protected KGCNCBOKCBA.GNENJEHKMHD m_eventStatus { get; set; } // 0xA0
 		protected bool m_isEventTimeLimit { get; set; } // 0xA4
-		// private bool m_muteSelectionSe { get; set; } // 0xA5
+		private bool m_muteSelectionSe { get; set; } // 0xA5
 		private bool m_requestFadeOutBgm { get; set; } // 0xA6
 		private int m_changeToTrialBgmId { get; set; } // 0xA8
 		// private float bgmFadeOutSec { get; } 0xAC8CAC
@@ -127,7 +128,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xAC8EA4 Offset: 0xAC8EA4 VA: 0xAC8EA4 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			return m_isEndPresetCanvas && !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB;
+			return m_isEndPresetCanvas && !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
 		}
 
 		// RVA: 0xAC8F58 Offset: 0xAC8F58 VA: 0xAC8F58 Slot: 18
@@ -340,7 +341,7 @@ namespace XeApp.Game.Menu
 			lw = ILCCJNDFFOB.HHCJCDFCLOB;
 			pre = 0;
 			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA(musicData.KKPAHLMJKIH_WavId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicData.GHBPLHBNMBK_FreeMusicId).KEFGPJBKAOD_WavId, val, GetDanceDivaCount());
-			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB)
+			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 			{
 				if(pre < 50)
 				{
@@ -426,6 +427,7 @@ namespace XeApp.Game.Menu
 			//0xAD49C0
 			TodoLogger.Log(0, "Co_CheckBoostData");
 			CurrentMusicDecisionCheck(true, null, null, 0);
+			endCallback(isSimulation);
 			yield break;
 		}
 
@@ -469,7 +471,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACAA10 Offset: 0xACAA10 VA: 0xACAA10
 		protected void OnClickPlayButton(bool isSimulation)
 		{
-			SoundManager.Instance.sePlayerBoot.Play(1);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			GameManager.Instance.CloseSnsNotice();
 			GameManager.Instance.CloseOfferNotice();
 			if(!CheckEventLimit())
@@ -535,7 +537,6 @@ namespace XeApp.Game.Menu
 					val = m_eventCtrl.PGIIDPEGGPI;
 				if(!isSimulation)
 				{
-					return; // For now don't lauch Play
 					if (!MenuScene.Instance.TryMusicPeriod(selectMusicData.IHPCKOMBGKJ, val, (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.MNNHHJBBICA_EventType, isSimulation, MenuScene.MusicPeriodMess.MusicSelect))
 					{
 						CheckUnitLive(() =>
@@ -753,7 +754,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAD03FC Offset: 0xAD03FC VA: 0xAD03FC
 		protected void OnClickRewardButton(Action openRewardWindowFunc)
 		{
-			TodoLogger.Log(0, "OnClickRewardButton");
+			TodoLogger.LogNotImplemented("OnClickRewardButton");
 		}
 
 		// // RVA: 0xAD0524 Offset: 0xAD0524 VA: 0xAD0524

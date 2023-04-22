@@ -62,7 +62,7 @@ namespace XeApp.Game.Common
 			path = assetName.ToString();
 			if(KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(path))
 			{
-				while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB)
+				while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 				{
 					yield return null;
 				}

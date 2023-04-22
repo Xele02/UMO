@@ -1,11 +1,17 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using XeApp.Core;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
 	public class ConfigMenu : MonoBehaviour, IDisposable
 	{
-		//private bool m_loaded; // 0xC
+		private bool m_loaded; // 0xC
 		//private PopupTabSetting m_tabSetting; // 0x10
 		//private PopupTabContents m_tabContents; // 0x14
 		//private PopupConfigScrollListSetting m_settingMenu; // 0x18
@@ -13,28 +19,63 @@ namespace XeApp.Game.Menu
 		//private PopupConfigScrollListSetting m_settingRhythmSystem; // 0x20
 		//private PopupConfigScrollListSetting m_settingRhythmSimulation; // 0x24
 		//private PopupConfigScrollListSetting m_settingOther; // 0x28
-		//private GameObject m_loadingObject; // 0x2C
-		//private Dictionary<string, int> m_bundleCounter = new Dictionary<string, int>(8); // 0x30
+		private GameObject m_loadingObject; // 0x2C
+		private Dictionary<string, int> m_bundleCounter = new Dictionary<string, int>(8); // 0x30
 
-		//public bool IsOpen { get; private set; } // 0x34
+		public bool IsOpen { get; private set; } // 0x34
 		//public bool IsReady { get; } 0x1B5E13C
-		//public bool IsLoadBundle { get; private set; } // 0x35
+		public bool IsLoadBundle { get; private set; } // 0x35
 
 		//// RVA: 0x1B5D9E0 Offset: 0x1B5D9E0 VA: 0x1B5D9E0
 		public static ConfigMenu Create(Transform parent)
 		{
-			TodoLogger.Log(0, "Create Config");
-			return null;
+			GameObject go = new GameObject("ConfigMenu");
+			go.transform.SetParent(parent, false);
+			ConfigMenu c = go.AddComponent<ConfigMenu>();
+			if(ConfigManager.Instance == null)
+			{
+				ConfigManager.Create();
+				ConfigManager.Instance.Initialize();
+			}
+			c.CreateLoadingObject();
+			c.StartCoroutine(c.LoadUnionAssetBundle());
+			return c;
 		}
 
 		//// RVA: 0x1B5DB78 Offset: 0x1B5DB78 VA: 0x1B5DB78
-		//public void CreateLoadingObject() { }
+		public void CreateLoadingObject()
+		{
+			if(m_loadingObject == null)
+			{
+				GameObject c = GameObject.Find("Canvas-Popup/Root");
+				if(c != null)
+				{
+					m_loadingObject = new GameObject("LoadingBackObject");
+					m_loadingObject.layer = 5;
+					m_loadingObject.transform.SetParent(c.transform, false);
+					m_loadingObject.transform.SetAsFirstSibling();
+					Image i = m_loadingObject.AddComponent<Image>();
+					i.color = new Color(0, 0, 0, 0.501961f);
+					i.raycastTarget = true;
+					i.rectTransform.anchorMin = new Vector2(0, 0);
+					i.rectTransform.anchorMax = new Vector2(1, 1);
+					i.rectTransform.sizeDelta = new Vector2(0, 0);
+					i.rectTransform.pivot = new Vector2(0.5f, 0.5f);
+					LoadingObjectEnable(false);
+				}
+			}
+		}
 
 		//// RVA: 0x1B5E04C Offset: 0x1B5E04C VA: 0x1B5E04C
 		//private void DestroyLoadingObject() { }
 
 		//// RVA: 0x1B5DF90 Offset: 0x1B5DF90 VA: 0x1B5DF90
-		//private void LoadingObjectEnable(bool enable) { }
+		private void LoadingObjectEnable(bool enable)
+		{
+			if (m_loadingObject == null)
+				return;
+			m_loadingObject.SetActive(enable);
+		}
 
 		//// RVA: 0x1B5E124 Offset: 0x1B5E124 VA: 0x1B5E124
 		public void Awake()
@@ -53,7 +94,13 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x700B8C Offset: 0x700B8C VA: 0x700B8C
 		//// RVA: 0x1B5E154 Offset: 0x1B5E154 VA: 0x1B5E154
-		//private IEnumerator LoadUnionAssetBundle() { }
+		private IEnumerator LoadUnionAssetBundle()
+		{
+			//0x1B63224
+			IsLoadBundle = false;
+			yield return AssetBundleManager.LoadUnionAssetBundle("ly/072.xab");
+			IsLoadBundle = true;
+		}
 
 		//// RVA: 0x1B5E200 Offset: 0x1B5E200 VA: 0x1B5E200
 		//public void UnloadAssetBundle() { }
@@ -102,7 +149,12 @@ namespace XeApp.Game.Menu
 		//public void ShowPopupConfig(UnityAction showEndCb, UnityAction<PopupButton.ButtonLabel> finishCb) { }
 
 		//// RVA: 0x1B5EE28 Offset: 0x1B5EE28 VA: 0x1B5EE28
-		//public void ShowPopupRhythm(UnityAction showEndCb, UnityAction<PopupButton.ButtonLabel> finishCb) { }
+		public void ShowPopupRhythm(UnityAction showEndCb, UnityAction<PopupButton.ButtonLabel> finishCb)
+		{
+			showEndCb();
+			finishCb(PopupButton.ButtonLabel.Ok);
+			TodoLogger.Log(0, "ShowPopupRhythm ConfigMenu");
+		}
 
 		//// RVA: 0x1B5EFA4 Offset: 0x1B5EFA4 VA: 0x1B5EFA4 Slot: 4
 		public void Dispose()

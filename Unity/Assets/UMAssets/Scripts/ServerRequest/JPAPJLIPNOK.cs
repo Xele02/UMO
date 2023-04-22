@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[System.Obsolete("Use JPAPJLIPNOK_RequestAssetList", true)]
 public class JPAPJLIPNOK { }
 public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_Request
 {
@@ -13,7 +14,7 @@ public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_Request
 	// RVA: 0x1BA5024 Offset: 0x1BA5024 VA: 0x1BA5024 Slot: 12
 	public override void DHLDNIEELHO() 
     {
-        EBGACDGNCAA = SakashoAsset.GetAssetList(FPCIBJLJOFI_Type, this.DCKLDDCAJAP, this.MEOCKCJBDAD);
+        EBGACDGNCAA_CallContext = SakashoAsset.GetAssetList(FPCIBJLJOFI_Type, this.DCKLDDCAJAP, this.MEOCKCJBDAD);
     }
 
 	// RVA: 0x1BA5110 Offset: 0x1BA5110 VA: 0x1BA5110 Slot: 13
@@ -63,7 +64,7 @@ public class IKAHKDKIGNA
     }
 
 	// // RVA: 0x8DB8C0 Offset: 0x8DB8C0 VA: 0x8DB8C0
-	public bool PPCCFNAPHCH(string CKDFCDDOBDH)
+	public bool PPCCFNAPHCH_FileExists(string CKDFCDDOBDH)
 	{
 		for(int i = 0; i < KGHAJGGMPKL_Files.Count; i++)
 		{

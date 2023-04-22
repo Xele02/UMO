@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use IHGBPAJMJFK_Emblem", true)]
 public class IHGBPAJMJFK { }
 public class IHGBPAJMJFK_Emblem : DIHHCBACKGG_DbSection
 {

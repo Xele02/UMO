@@ -259,11 +259,62 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xD2BF6C Offset: 0xD2BF6C VA: 0xD2BF6C
-		// public void LoadResourcesForMenu(int valkyrieId) { }
+		public void LoadResourcesForMenu(int valkyrieId)
+		{
+			isLoadedPrefab = false;
+			StartCoroutine(Co_LoadResourcesMenu(valkyrieId));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73C548 Offset: 0x73C548 VA: 0x73C548
 		// // RVA: 0xD2BF9C Offset: 0xD2BF9C VA: 0xD2BF9C
-		// private IEnumerator Co_LoadResourcesMenu(int valkyrieId) { }
+		private IEnumerator Co_LoadResourcesMenu(int valkyrieId)
+		{
+			StringBuilder bundleName; // 0x1C
+			StringBuilder assetName; // 0x20
+			short modelId; // 0x24
+
+			//0xD2E2AC
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[valkyrieId - 1];
+			modelId = valk.DAJGPBLEEOB_ModelId;
+			bundleName.SetFormat("vl/{0:D4}.xab", modelId);
+			assetName.SetFormat("val_{0:D4}_prefab", modelId);
+
+			AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+
+			prefab = operation.GetAsset<GameObject>(assetName.ToString());
+			menuOverrideResource.wait = new AnimationClip[3];
+			menuOverrideResource.change = new AnimationClip[3];
+			for(int i = 0; i < 3; i++)
+			{
+				int next = (i + 1) % 3;
+				assetName.SetFormat("val_{0:D4}_me_{1}_wait", modelId, s_formTypeId[i].ToLower());
+				menuOverrideResource.wait[i] = operation.GetAsset<AnimationClip>(assetName.ToString());
+				assetName.SetFormat("val_{0:D4}_me_{1}_to_{2}", modelId, s_formTypeId[i].ToLower(), s_formTypeId[next].ToLower());
+				menuOverrideResource.change[i] = operation.GetAsset<AnimationClip>(assetName.ToString());
+			}
+			assetName.SetFormat("val_{0:D4}_get", modelId);
+			unlockOverrideResource.unlock = operation.GetAsset<AnimationClip>(assetName.ToString());
+			assetName.SetFormat("val_{0:D4}_appeal", modelId);
+			appealOverrideResource.appeal = operation.GetAsset<AnimationClip>(assetName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+
+			bundleName.Set("vl/cmn.xab");
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+
+			EffectFactoryCollector eff = prefab.GetComponent<EffectFactoryCollector>();
+			eff.RedirectionAll((string name) => {
+				//0xD2C47C
+				return operation.GetAsset<GameObject>(name);
+			});
+			assetName.Set("val_cmn_animator");
+			animatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			isLoadedPrefab = true;
+		}
 
 		// // RVA: 0xD2C064 Offset: 0xD2C064 VA: 0xD2C064
 		// public void LoadResourcesForAppeal(int valkyrieId) { }

@@ -51,10 +51,28 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EFB130 Offset: 0x1EFB130 VA: 0x1EFB130
-		// public static void AddView(GameObject parentObj, AbsoluteLayout parentView, GameObject childObj) { }
+		public static void AddView(GameObject parentObj, AbsoluteLayout parentView, GameObject childObj)
+		{
+			childObj.transform.SetParent(parentObj.transform, false);
+			if (parentView == null)
+				return;
+			LayoutUGUIRuntime run = childObj.GetComponent<LayoutUGUIRuntime>();
+			if (run == null)
+				return;
+			parentView.AddView(run.Layout.Root);
+		}
 
 		// // RVA: 0x1EFB344 Offset: 0x1EFB344 VA: 0x1EFB344
-		// public static void RemoveView(GameObject parentObj, AbsoluteLayout parentView, GameObject childObj) { }
+		public static void RemoveView(GameObject parentObj, AbsoluteLayout parentView, GameObject childObj)
+		{
+			childObj.transform.SetParent(null, false);
+			if (parentView == null)
+				return;
+			LayoutUGUIRuntime runtime = childObj.GetComponent<LayoutUGUIRuntime>();
+			if (runtime == null)
+				return;
+			parentView.RemoveView(runtime.Layout.Root);
+		}
 
 		// // RVA: 0x1EFF750 Offset: 0x1EFF750 VA: 0x1EFF750
 		public static Rect MakeUnityUVRect(TexUVData uvData)

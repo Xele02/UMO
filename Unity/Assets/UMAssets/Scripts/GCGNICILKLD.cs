@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 using System;
 
+[System.Obsolete("Use GCGNICILKLD_AssetFileInfo", true)]
 public class GCGNICILKLD { }
 public class GCGNICILKLD_AssetFileInfo
 {

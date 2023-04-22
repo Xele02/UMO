@@ -43,7 +43,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADB2A0 Offset: 0xADB2A0 VA: 0xADB2A0
 		public void SetScoreRatingRank(HighScoreRatingRank.Type rank)
 		{
-			TodoLogger.Log(0, "VerticalMusicSelectUtaRate SetScoreRatingRank");
+			GameManager.Instance.MusicRatioTextureCache.Load(rank, (IiconTexture texture) => {
+				//0xADC004
+				(texture as MusicRatioTextureCache.MusicRatioTexture).Set(m_utaRateIcon, rank);
+			});
 		}
 
 		// // RVA: 0xADBEA4 Offset: 0xADBEA4 VA: 0xADBEA4

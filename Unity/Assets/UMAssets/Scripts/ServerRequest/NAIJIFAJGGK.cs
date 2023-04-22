@@ -5,6 +5,7 @@ using XeSys;
 
 public delegate bool LDDPADICHHB(List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
 
+[System.Obsolete("Use NAIJIFAJGGK_RequestLoadPlayerData", true)]
 public class NAIJIFAJGGK { }
 public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
 {
@@ -33,7 +34,7 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
 	// // RVA: 0x17C0114 Offset: 0x17C0114 VA: 0x17C0114 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        EBGACDGNCAA = SakashoPlayerData.LoadPlayerData(HHIHCJKLJFF_BlockToRequest.ToArray(), this.DCKLDDCAJAP, this.MEOCKCJBDAD);
+        EBGACDGNCAA_CallContext = SakashoPlayerData.LoadPlayerData(HHIHCJKLJFF_BlockToRequest.ToArray(), this.DCKLDDCAJAP, this.MEOCKCJBDAD);
     }
 
 	// // RVA: 0x17C0260 Offset: 0x17C0260 VA: 0x17C0260 Slot: 13
@@ -52,16 +53,17 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
 	// // RVA: 0x17C0330 Offset: 0x17C0330 VA: 0x17C0330
 	private void DIAMDBHBKBH()
     {
-        NFEAMMJIMPG_Result = new PHAKFFBNNEI_PlayerDataResult();
+        PHAKFFBNNEI_PlayerDataResult tmp = new PHAKFFBNNEI_PlayerDataResult();
         EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
-        NFEAMMJIMPG_Result.BIOGKIEECGN_CreatedAt = JsonUtil.GetLong(jsonData["created_at"]);
-        NFEAMMJIMPG_Result.IFNLEKOILPM_UpdatedAt = JsonUtil.GetLong(jsonData["updated_at"]);
-        NFEAMMJIMPG_Result.MLGKDBJLNBM_DataStatus = (sbyte)JsonUtil.GetInt(jsonData["data_status"]);
+        tmp.BIOGKIEECGN_CreatedAt = JsonUtil.GetLong(jsonData["created_at"]);
+        tmp.IFNLEKOILPM_UpdatedAt = JsonUtil.GetLong(jsonData["updated_at"]);
+        tmp.MLGKDBJLNBM_DataStatus = (sbyte)JsonUtil.GetInt(jsonData["data_status"]);
         DLKLLHPLANH = false;
         if(IJMPLDBGMHC_OnDataReceived != null)
         {
             DLKLLHPLANH = !IJMPLDBGMHC_OnDataReceived(HHIHCJKLJFF_BlockToRequest, JsonUtil.GetObject(jsonData, "player"));
         }
         GC.Collect();
+        NFEAMMJIMPG_Result = tmp;
     }
 }

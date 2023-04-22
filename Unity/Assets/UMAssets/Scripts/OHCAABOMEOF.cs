@@ -4,7 +4,7 @@ public class OHCAABOMEOF
     public enum KGOGMKMBCPP_EventType
     {
         HJNNKCMLGFL = 0,
-        AOPKACCDKPA = 1,
+        AOPKACCDKPA_EventCollection = 1,
         MKKOHBGHADL = 2,
         PFKOKHODEGL_EventBattle = 3,
         KEILBOLBDHN = 4,

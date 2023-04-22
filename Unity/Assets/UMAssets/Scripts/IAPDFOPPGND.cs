@@ -7,7 +7,7 @@ public class IAPDFOPPGND
 	public string FEMMDNIELFC_EmblemDesc; // 0xC
 	public int EAHPLCJMPHD_EmblemPic; // 0x10
 	public int HMFFHLPNMPH; // 0x14
-	public int MDPKLNFFDBO; // 0x18
+	public int MDPKLNFFDBO_EmblemId; // 0x18
 	private int EILKGEADKGH_EmblemOdr; // 0x1C
 
 	// // RVA: 0x120EB38 Offset: 0x120EB38 VA: 0x120EB38
@@ -19,7 +19,7 @@ public class IAPDFOPPGND
 		FEMMDNIELFC_EmblemDesc = bank.GetMessageByLabel("em_dsc_" + ABLOIBMGLFD.ToString("D4"));
 		EAHPLCJMPHD_EmblemPic = emblem.HANMDEBPBHG_Pic;
 		this.HMFFHLPNMPH = HMFFHLPNMPH;
-		MDPKLNFFDBO = ABLOIBMGLFD;
+		MDPKLNFFDBO_EmblemId = ABLOIBMGLFD;
 		EILKGEADKGH_EmblemOdr = emblem.FPOMEEJFBIG_Odr;
 	}
 

@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use MPOEMCEBBJH_Pilot", true)]
 public class MPOEMCEBBJH { }
 public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 {

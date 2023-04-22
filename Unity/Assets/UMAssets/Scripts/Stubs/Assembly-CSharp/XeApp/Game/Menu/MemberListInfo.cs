@@ -4,7 +4,7 @@ namespace XeApp.Game.Menu
 {
 	public class MemberListInfo : PlayerListInfo
 	{
-		public MemberListInfo(short titleIndex, bool isAvailable, EAJCBFGKKFA fri)
+		public MemberListInfo(short titleIndex, bool isAvailable, EAJCBFGKKFA_FriendInfo fri)
 		{
 		}
 

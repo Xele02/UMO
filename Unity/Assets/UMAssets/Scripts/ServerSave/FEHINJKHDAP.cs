@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use FEHINJKHDAP_EventScore", true)]
 public class FEHINJKHDAP { }
 public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 {

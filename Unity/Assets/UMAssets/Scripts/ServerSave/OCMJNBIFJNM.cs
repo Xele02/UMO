@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use OCMJNBIFJNM_Offer", true)]
 public class OCMJNBIFJNM { }
 public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 {

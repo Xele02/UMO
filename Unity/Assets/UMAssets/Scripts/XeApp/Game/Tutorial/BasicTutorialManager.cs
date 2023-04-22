@@ -1,9 +1,67 @@
 using XeSys;
 using UnityEngine;
 using System.Text;
+using System;
+using XeApp.Game.Adv;
 
 namespace XeApp.Game.Tutorial
 {
+	public enum BasicTutorialMessageId
+	{
+		Id_BeginAdjust = 1,
+		Id_ConfirmAdjust = 25,
+		Id_EndAdjust = 2,
+		Id_StartGame = 3,
+		Id_ManualEnd = 24,
+		Id_FailedGame = 4,
+		Id_GachaList = 5,
+		Id_GachaMain = 6,
+		Id_GachaResult = 7,
+		Id_GachaEnd = 8,
+		Id_Setting = 9,
+		Id_PlateSelect = 10,
+		Id_PlateSelected = 11,
+		Id_SnsStart = 12,
+		Id_RoomSelected = 13,
+		Id_Sns1 = 14,
+		Id_DivaSelect = 16,
+		Id_DecideDiva = 26,
+		Id_StartMission1 = 20,
+		Id_StartMission2 = 21,
+		Id_Mission = 22,
+		Id_ClearMission = 23,
+		Id_EpisodeMission1 = 27,
+		Id_EpisodeMission2 = 28,
+		Id_EpisodeMission3 = 29,
+		Id_GameResult = 55,
+		Id_StartMission3 = 60,
+		Id_UnitAutoSetting1 = 65,
+		Id_UnitAutoSetting2 = 66,
+		Id_LiveClear1 = 70,
+		Id_LiveClear2 = 71,
+		Id_MusicOpen = 75,
+		Id_SceneGrowth = 80,
+		Id_DivaSelect1 = 85,
+		Id_DivaSelect2 = 86,
+		Id_AssistSelect = 90,
+		Id_OfferRelease = 91,
+		Id_OfferOrder = 92,
+		Id_OfferPlatoon = 93,
+		Id_OfferTransFrom = 94,
+		Id_CostumeUpgradeHome = 95,
+		Id_CostumeUpgradeMenu = 96,
+		Id_CostumeUpgradeSelect = 97,
+		Id_BingoMission = 98,
+		Id_ValkyrieUpgradeHome = 99,
+		Id_ValkyrieUpgradeMenu = 100,
+		Id_McrsLobby = 101,
+		Id_Decolture = 102,
+		Id_RaidFromMcrsLobby = 103,
+		Id_RaidUseFoldRadar1 = 104,
+		Id_RaidUseFoldRadar2 = 105,
+		Id_Unit5Help1 = 106,
+		Id_Unit5Help2 = 107,
+	}
 	public class BasicTutorialManager : SingletonBehaviour<BasicTutorialManager>
 	{
 		private GameObject m_blackImageInstance; // 0xC
@@ -47,7 +105,11 @@ namespace XeApp.Game.Tutorial
 		// public static void TutorialAfterFirstHome() { }
 
 		// // RVA: 0xE3DF30 Offset: 0xE3DF30 VA: 0xE3DF30
-		// public void ShowMessageWindow(BasicTutorialMessageId id, Action endCallBack, AdvMessageBase.TagConvertFunc func) { }
+		public void ShowMessageWindow(BasicTutorialMessageId id, Action endCallBack, AdvMessageBase.TagConvertFunc func)
+		{
+			TodoLogger.Log(5, "TutorialAfterFirstLoginBonus");
+			endCallBack();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE3D8 Offset: 0x6AE3D8 VA: 0x6AE3D8
 		// // RVA: 0xE3E078 Offset: 0xE3E078 VA: 0xE3E078

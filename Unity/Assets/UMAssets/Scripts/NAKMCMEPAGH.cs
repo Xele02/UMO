@@ -63,7 +63,11 @@ public class NAKMCMEPAGH
 	// public void DHECAFOELPF(int KNIFCANOHOC) { }
 
 	// // RVA: 0x17C07E0 Offset: 0x17C07E0 VA: 0x17C07E0
-	// public void EJJAPFPJLHP(int ACGLMKEBMDL) { }
+	public void EJJAPFPJLHP(int ACGLMKEBMDL)
+	{
+		TodoLogger.Log(1000, "Find the max value");
+		HOHBKPPOLLA += ACGLMKEBMDL;
+	}
 
 	// // RVA: 0x17C0824 Offset: 0x17C0824 VA: 0x17C0824
 	// public void FNLAFLEEAHC(int IDAEEHPLIIO) { }
@@ -75,7 +79,10 @@ public class NAKMCMEPAGH
 	// public void MOOJGMJFOKK() { }
 
 	// // RVA: 0x17C08A0 Offset: 0x17C08A0 VA: 0x17C08A0
-	// public void LLKJHBIPCOP() { }
+	public void LLKJHBIPCOP()
+	{
+		TodoLogger.Log(0, "LLKJHBIPCOP");
+	}
 
 	// // RVA: 0x17C08BC Offset: 0x17C08BC VA: 0x17C08BC
 	// public void KPNLMLPFKMJ(int MHKJEBNOPIM) { }

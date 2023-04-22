@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use EIJJIAPKICH_RequestToken", true)]
 public class EIJJIAPKICH { } 
 public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_Request
 {

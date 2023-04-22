@@ -13,7 +13,21 @@ namespace XeApp.Game.Menu
         public ulong CreateCount { get; set; } // 0x18
 
         // // RVA: 0x13DB7E8 Offset: 0x13DB7E8 VA: 0x13DB7E8 Slot: 15
-        // public virtual void Release() { }
+        public virtual void Release()
+		{
+			if (Material != null)
+				Material = null;
+			if (BaseTexture != null)
+			{
+				Resources.UnloadAsset(BaseTexture);
+				BaseTexture = null;
+			}
+			if(MaskTexture != null)
+			{
+				Resources.UnloadAsset(MaskTexture);
+				MaskTexture = null;
+			}
+		}
 
         // // RVA: 0x13DB938 Offset: 0x13DB938 VA: 0x13DB938 Slot: 16
         public virtual void Set(RawImageEx image)
@@ -23,6 +37,7 @@ namespace XeApp.Game.Menu
             if(image == null)
                 return;
             image.material = Material;
+            image.MaterialMul = Material;
             image.texture = BaseTexture;
             image.material.SetTexture("_MainTex", BaseTexture);
             image.material.SetTexture("_MaskTex", MaskTexture);

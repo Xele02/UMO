@@ -21,8 +21,8 @@ namespace XeSys.Gfx
 		private int m_FrameNum; // 0x1C
 		private Dictionary<string, int> m_LabelIndex = new Dictionary<string, int>(); // 0x20
 
-		// public FrameData[] F { get; } 0x1EEBECC
-		// public int FrameDataCount { get; } 0x1EEBCE4
+		public FrameData[] F { get { return m_FrameDataList; } } //0x1EEBECC
+		public int FrameDataCount { get { return m_FrameDataList != null ? m_FrameDataList.Length : 0; } } //0x1EEBCE4
 		// public bool IsPosAnim { get; set; } 0x1EEBED4 0x1EEBEE0
 		// public bool IsMoveAnim { get; set; } 0x1EEBEF8 0x1EEBF04
 		// public bool IsMoveBezierX { get; set; } 0x1EEBF1C 0x1EEBF28
@@ -35,7 +35,7 @@ namespace XeSys.Gfx
 		// public bool IsCenterAnim { get; set; } 0x1EEC018 0x1EEC024
 		// public bool IsUseTimeMap { get; } 0x1EEA408
 		public TimeMap AnimTimeMap { get { return m_AnimTimeMap; } } //0x1EE9694
-		// public int FrameNum { get; private set; } 0x1EE960C 0x1EEC03C
+		public int FrameNum { get { return m_FrameNum; } private set { m_FrameNum = value; } } //0x1EE960C 0x1EEC03C
 		// public string ID { get; set; } 0x1EE9638 0x1EE9668
 
 		// // RVA: 0x1EEBDE4 Offset: 0x1EEBDE4 VA: 0x1EEBDE4 Slot: 5
@@ -270,6 +270,11 @@ namespace XeSys.Gfx
 				isUpdateSRT = true;
 			}
 			if((m_AnimFlag & 32) != 0)
+			{
+				vt.m.Scale = m_FrameDataList[Base].TransFormData.m.Scale + (m_FrameDataList[Target].TransFormData.m.Scale - m_FrameDataList[Base].TransFormData.m.Scale) * rate;
+				isUpdateSRT = true;
+			}
+			if((m_AnimFlag & 64) != 0)
 			{
 				vt.m.Rot = m_FrameDataList[Base].TransFormData.m.Rot + (m_FrameDataList[Target].TransFormData.m.Rot - m_FrameDataList[Base].TransFormData.m.Rot) * rate;
 				isUpdateSRT = true;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeSys;
 using XeApp.Core;
+using System.Text;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -540,69 +541,409 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDB8BEC Offset: 0xDB8BEC VA: 0xDB8BEC
 		public bool BeganTouch(int lineNo, int fingerId)
 		{
-			TodoLogger.Log(0, "RNoteOwner BeganTouch");
-			return false;
+			if(!isPause)
+			{
+				neutralCounter[fingerId] = 0;
+				if(lineTouchFingerIds[lineNo] == -1)
+				{
+					lineTouchFingerIds[lineNo] = fingerId;
+					singlePool.MakeUsingList(ref activeSingleList);
+					activeSingleList.RemoveAll((RNoteSingle _) =>
+					{
+						//0xDBC608
+						return _.noteObject.rNote.GetLineNo() != lineNo;
+					});
+					activeSingleList.Sort(SinglePoolSortTimeFunc);
+					for(int i = 0; i < activeSingleList.Count; i++)
+					{
+						if (activeSingleList[i].noteObject.rNote.noteInfo.longTouch != MusicScoreData.TouchState.None)
+							break;
+						if(activeSingleList[i].gameObject.activeSelf)
+						{
+							RhythmGameConsts.NoteResult res = activeSingleList[i].noteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[activeSingleList[i].noteObject.rNote.noteInfo.trackID]);
+							if (res != RhythmGameConsts.NoteResult.Exempt)
+							{
+								if(activeSingleList[i].noteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.None)
+								{
+									activeSingleList[i].BeginTouch(fingerId, res);
+									return true;
+								}
+								return activeSingleList[i].noteObject.Judged(res, RhythmGameConsts.NoteJudgeType.Normal);
+							}
+						}
+					}
+					longPool.MakeUsingList(ref activeLongList);
+					activeLongList.Sort(LongPoolSortFirstTimeFunc);
+					for(int i = 0; i < activeLongList.Count; i++)
+					{
+						if(activeLongList[i].gameObject.activeSelf && activeLongList[i].firstRNoteObject.rNote.noteInfo.trackID == lineNo)
+						{
+							RhythmGameConsts.NoteResult res = activeLongList[i].firstRNoteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[activeLongList[i].firstRNoteObject.rNote.noteInfo.trackID]);
+							if(res != RhythmGameConsts.NoteResult.Exempt)
+							{
+								activeLongList[i].BeginTouch(fingerId);
+								return activeLongList[i].firstRNoteObject.Judged(res, RhythmGameConsts.NoteJudgeType.Normal);
+							}
+						}
+					}
+					slidePool.MakeUsingList(ref activeSlideList);
+					activeSlideList.Sort(LongPoolSortFirstTimeFunc);
+					for(int i = 0; i < activeSlideList.Count; i++)
+					{
+						if (activeSlideList[i].gameObject.activeSelf && activeSlideList[i].firstRNoteObject.rNote.noteInfo.trackID == lineNo)
+						{
+							if(activeSlideList[i].touchFingerId == -1)
+							{
+								RhythmGameConsts.NoteResult res = activeSlideList[i].firstRNoteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[activeSlideList[i].firstRNoteObject.rNote.noteInfo.trackID]);
+								if(res != RhythmGameConsts.NoteResult.Exempt)
+								{
+									activeSlideList[i].BeginTouch(fingerId);
+									int nextIdx = activeSlideList[i].firstRNoteObject.rNote.noteInfo.nextIndex;
+									while (nextIdx != 0)
+									{
+										if (rNoteList[nextIdx].noteInfo.isSlide)
+										{
+											for (int j = 0; j < activeSlideList.Count; j++)
+											{
+												if (rNoteList[nextIdx].noteInfo.thisIndex == activeSlideList[j].firstRNoteObject.rNote.noteInfo.nextIndex
+													|| rNoteList[nextIdx].noteInfo.thisIndex == activeSlideList[j].lastRNoteObject.rNote.noteInfo.nextIndex)
+												{
+													if (activeSlideList[j].touchFingerId == -1)
+													{
+														activeSlideList[j].BeginTouch(fingerId);
+														break;
+													}
+												}
+											}
+										}
+										nextIdx = rNoteList[nextIdx].noteInfo.nextIndex;
+									}
+									return activeSlideList[i].firstRNoteObject.Judged(res, RhythmGameConsts.NoteJudgeType.Normal);
+								}
+							}
+						}
+					}
+					return false;
+				}
+				return true;
+			}
+			else if(lineNo < 0)
+			{
+				return false;
+			}
+			else
+			{
+				pausingInputData[lineNo].fingerId = fingerId;
+				pausingInputData[lineNo].release = false;
+				return false;
+			}
 		}
 
 		//// RVA: 0xDB5FF8 Offset: 0xDB5FF8 VA: 0xDB5FF8
 		public void EndedTouch(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss, bool checkLine = false)
 		{
-			TodoLogger.Log(0, "RNoteOwner EndedTouch");
+			if(isPause)
+			{
+				if(lineNo > -1)
+				{
+					pausingInputData[lineNo].fingerId = fingerId;
+					pausingInputData[lineNo].release = true;
+				}
+				return;
+			}
+			neutralCounter[fingerId] = 0;
+			for(int i = 0; i < lineTouchFingerIds.Length; i++)
+			{
+				if(lineTouchFingerIds[lineNo] == fingerId)
+				{
+					lineTouchFingerIds[lineNo] = -1;
+				}
+			}
+			singlePool.MakeUsingList(ref activeSingleList);
+			activeSingleList.Sort(SinglePoolSortTimeFunc);
+			for(int i = 0; i < activeSingleList.Count; i++)
+			{
+				if(activeSingleList[i].touchFingerId != -1 && activeSingleList[i].touchFingerId == fingerId)
+				{
+					bool b = true;
+					if(checkLine)
+					{
+						b = false;
+						if (activeSingleList[i].noteObject.rNote.noteInfo.trackID == lineNo)
+							b = true;
+					}
+					if(b && activeSingleList[i].noteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.None &&
+						activeSingleList[i].gameObject.activeSelf && activeSingleList[i].noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.None &&
+						activeSingleList[i].noteObject.rNote.noteInfo.swipe == MusicScoreData.TouchState.None)
+					{
+						activeSingleList[i].noteObject.Judged(RhythmGameConsts.NoteResult.Miss, RhythmGameConsts.NoteJudgeType.Normal);
+						return;
+					}
+				}
+			}
+			longPool.MakeUsingList(ref activeLongList);
+			activeLongList.Sort(LongPoolSortLastTimeFunc);
+			for(int i = 0; i < activeLongList.Count; i++)
+			{
+				if(activeLongList[i].touchFingerId != -1 && activeLongList[i].touchFingerId == fingerId)
+				{
+					if((!checkLine || activeLongList[i].lastRNoteObject.rNote.noteInfo.trackID == lineNo_Begin) && activeLongList[i].gameObject.activeSelf)
+					{
+						RhythmGameConsts.NoteResult res = activeLongList[i].lastRNoteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[activeLongList[i].lastRNoteObject.rNote.noteInfo.trackID]);
+						if (res == RhythmGameConsts.NoteResult.Exempt)
+							res = RhythmGameConsts.NoteResult.Miss;
+						if(activeLongList[i].lastRNoteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.None)
+							res = RhythmGameConsts.NoteResult.Miss;
+						if(forceMiss)
+							res = RhythmGameConsts.NoteResult.Miss;
+						activeLongList[i].lastRNoteObject.Judged(res, RhythmGameConsts.NoteJudgeType.Normal);
+						return;
+					}
+				}
+			}
+			slidePool.MakeUsingList(ref activeSlideList);
+			activeSlideList.Sort(LongPoolSortLastTimeFunc);
+			for(int i = 0; i < activeSlideList.Count; i++)
+			{
+				if(activeSlideList[i].touchFingerId != -1 && activeSlideList[i].touchFingerId == fingerId && !activeSlideList[i].IsPauseKeep)
+				{
+					if(activeSlideList[i].gameObject.activeSelf)
+					{
+						RhythmGameConsts.NoteResult res = RhythmGameConsts.NoteResult.Miss;
+						if (!checkLine || activeSlideList[i].lastRNoteObject.rNote.noteInfo.trackID == lineNo)
+						{
+							if(activeSlideList[i].lastRNoteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.End)
+							{
+								res = activeSlideList[i].lastRNoteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[activeSlideList[i].lastRNoteObject.rNote.noteInfo.trackID]);
+							}
+						}
+						if (res == RhythmGameConsts.NoteResult.Exempt)
+							res = RhythmGameConsts.NoteResult.Miss;
+						if (activeSlideList[i].lastRNoteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.None)
+							res = RhythmGameConsts.NoteResult.Miss;
+						if (forceMiss)
+							res = RhythmGameConsts.NoteResult.Miss;
+						activeSlideList[i].lastRNoteObject.Judged(res, RhythmGameConsts.NoteJudgeType.EndedTouch);
+						if (res != RhythmGameConsts.NoteResult.Miss)
+							return;
+						int nextIdx = activeSlideList[i].firstRNoteObject.rNote.noteInfo.nextIndex;
+						while(nextIdx != 0)
+						{
+							if(rNoteList[nextIdx].noteInfo.isSlide)
+							{
+								for(int j = 0; j < activeSlideList.Count; j++)
+								{
+									if(rNoteList[nextIdx].noteInfo.thisIndex == activeSlideList[j].firstRNoteObject.rNote.noteInfo.nextIndex ||
+										rNoteList[nextIdx].noteInfo.thisIndex == activeSlideList[j].lastRNoteObject.rNote.noteInfo.nextIndex)
+									{
+										if (rNoteList[nextIdx].result == RhythmGameConsts.NoteResult.None)
+											activeSlideList[j].StopAnimation();
+									}
+								}
+							}
+							nextIdx = rNoteList[nextIdx].noteInfo.nextIndex;
+						}
+					}
+				}
+			}
 		}
 
 		//// RVA: 0xDB9A9C Offset: 0xDB9A9C VA: 0xDB9A9C
 		public void ReleaseLine(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss, bool checkLine = false)
 		{
-			TodoLogger.Log(0, "RNoteOwner ReleaseLine");
+			if (IsSlideBeganTouched(lineNo))
+				EndedTouch(lineNo, lineNo_Begin, fingerId, forceMiss, checkLine);
 		}
 
 		//// RVA: 0xDB9BDC Offset: 0xDB9BDC VA: 0xDB9BDC
 		public void NextLine(int lineNo0, int lineNo1, int fingerId, bool forceMiss, bool checkLine = false)
 		{
-			TodoLogger.Log(0, "RNoteOwner NextLine");
+			return;
 		}
 
 		//// RVA: 0xDB9BE0 Offset: 0xDB9BE0 VA: 0xDB9BE0
 		public void SwipedTouch(int lineNo, int fingerId, bool isRight, bool isDown, bool isLeft, bool isUp)
 		{
-			TodoLogger.Log(0, "RNoteOwner SwipedTouch");
+			if(!isPause)
+			{
+				if(neutralCounter[fingerId] < 0)
+				{
+					bool[] flag = new bool[5];
+					flag[1] = isLeft;
+					flag[2] = isRight;
+					flag[3] = isUp;
+					flag[4] = isDown;
+					singlePool.MakeUsingList(ref activeSingleList);
+					activeSingleList.Sort(SinglePoolSortTimeFunc);
+					for(int i = 0; i < activeSingleList.Count; i++)
+					{
+						if(activeSingleList[i].touchFingerId != -1 && activeSingleList[i].touchFingerId == fingerId)
+						{
+							if(IsSuccessFlick(activeSingleList[i].noteObject.rNote.noteInfo, flag) &&
+								activeSingleList[i].noteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.None && activeSingleList[i].gameObject.activeSelf && activeSingleList[i].noteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.None &&
+								activeSingleList[i].noteObject.rNote.noteInfo.swipe == MusicScoreData.TouchState.None)
+							{
+								RhythmGameConsts.NoteResult res = activeSingleList[i].noteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[activeSingleList[i].noteObject.rNote.noteInfo.trackID]);
+								activeSingleList[i].noteObject.Judged(res, RhythmGameConsts.NoteJudgeType.Normal);
+								return;
+							}
+						}
+					}
+					longPool.MakeUsingList(ref activeLongList);
+					activeLongList.Sort(LongPoolSortLastTimeFunc);
+					for(int i = 0; i < activeLongList.Count; i++)
+					{
+						if(activeLongList[i].touchFingerId != -1 && activeLongList[i].touchFingerId == fingerId)
+						{
+							if (IsSuccessFlick(activeLongList[i].lastRNoteObject.rNote.noteInfo, flag) &&
+								activeLongList[i].lastRNoteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.None && 
+								activeLongList[i].gameObject.activeSelf)
+							{
+								RhythmGameConsts.NoteResult res = activeLongList[i].lastRNoteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[activeLongList[i].lastRNoteObject.rNote.noteInfo.trackID]);
+								if (res != RhythmGameConsts.NoteResult.Exempt)
+								{
+									activeLongList[i].lastRNoteObject.Judged(res, RhythmGameConsts.NoteJudgeType.Normal);
+									neutralCounter[fingerId] = 0.05f;
+									return;
+								}
+							}
+						}
+					}
+					slidePool.MakeUsingList(ref activeSlideList);
+					activeSlideList.Sort(LongPoolSortLastTimeFunc);
+					for(int i = 0; i < activeSlideList.Count; i++)
+					{
+						if(activeSlideList[i].touchFingerId != -1 && activeSlideList[i].touchFingerId == fingerId)
+						{
+							if (IsSuccessFlick(activeSlideList[i].lastRNoteObject.rNote.noteInfo, flag) &&
+								activeSlideList[i].lastRNoteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.None &&
+								activeSlideList[i].gameObject.activeSelf &&
+								activeSlideList[i].lastRNoteObject.rNote.noteInfo.trackID == lineNo)
+							{
+								RhythmGameConsts.NoteResult res = activeSlideList[i].lastRNoteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[activeSlideList[i].lastRNoteObject.rNote.noteInfo.trackID]);
+								if (res != RhythmGameConsts.NoteResult.Exempt)
+								{
+									activeSlideList[i].lastRNoteObject.Judged(res, RhythmGameConsts.NoteJudgeType.Normal);
+									neutralCounter[fingerId] = 0.05f;
+									return;
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 
 		//// RVA: 0xDBA644 Offset: 0xDBA644 VA: 0xDBA644
-		//private bool IsSuccessFlick(MusicScoreData.InputNoteInfo info, bool[] flag) { }
+		private bool IsSuccessFlick(MusicScoreData.InputNoteInfo info, bool[] flag)
+		{
+			bool b = flag[(int)info.flick];
+			if(info.isWing)
+			{
+				int a = 3;
+				if (RhythmGameConsts.IsWingLine(info.trackID))
+					a = 4;
+				b |= flag[a];
+			}
+			return b;
+		}
 
 		//// RVA: 0xDBA7A4 Offset: 0xDBA7A4 VA: 0xDBA7A4
 		public void NeutralTouch(int lineNo, int fingerId)
 		{
-			TodoLogger.Log(0, "RNoteOwner NeutralTouch");
+			if(isPause)
+			{
+				if(lineNo > -1)
+				{
+					pausingInputData[lineNo].fingerId = fingerId;
+					pausingInputData[lineNo].release = false;
+				}
+				return;
+			}
+			if(neutralCounter[fingerId] >= 0)
+			{
+				neutralCounter[fingerId] -= Time.deltaTime;
+			}
+			slidePool.MakeUsingList(ref activeSlideList);
+			activeSlideList.Sort(LongPoolSortFirstTimeFunc);
+			for(int i = 0; i < activeSlideList.Count; i++)
+			{
+				if(activeSlideList[i].touchFingerId == fingerId)
+				{
+					if(activeSlideList[i].gameObject.activeSelf)
+					{
+						if(activeSlideList[i].lastRNoteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.Continue)
+						{
+							if(activeSlideList[i].lastRNoteObject.rNote.noteInfo.trackID == lineNo)
+							{
+								if(activeSlideList[i].lastRNoteObject.rNote.gapMilliSec > -1)
+								{
+									RhythmGameConsts.NoteResult res = activeSlideList[i].lastRNoteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[activeSlideList[i].lastRNoteObject.rNote.noteInfo.trackID]);
+									if(res != RhythmGameConsts.NoteResult.Exempt)
+									{
+										activeSlideList[i].lastRNoteObject.Judged(RhythmGameConsts.NoteResult.Perfect, RhythmGameConsts.NoteJudgeType.Normal);
+										return;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 
 		//// RVA: 0xDBAC34 Offset: 0xDBAC34 VA: 0xDBAC34
 		public void CheckInputCallback(RhythmGameInputPerformer.InputSaver inputSaver)
 		{
-			TodoLogger.Log(0, "RNoteOwner CheckInputCallback");
+			for(int i = 0; i < lineTouchFingerIds.Length; i++)
+			{
+				if(lineTouchFingerIds[i] != -1)
+				{
+					if(!inputSaver.IsActive(lineTouchFingerIds[i]))
+					{
+						lineTouchFingerIds[i] = -1;
+					}
+				}
+			}
 		}
 
 		//// RVA: 0xDBAD54 Offset: 0xDBAD54 VA: 0xDBAD54
-		//private int SinglePoolSortTimeFunc(RNoteSingle a, RNoteSingle b) { }
+		private int SinglePoolSortTimeFunc(RNoteSingle a, RNoteSingle b)
+		{
+			return a.noteObject.rNote.noteInfo.time - b.noteObject.rNote.noteInfo.time;
+		}
 
 		//// RVA: 0xDBAE5C Offset: 0xDBAE5C VA: 0xDBAE5C
-		//private int LongPoolSortFirstTimeFunc(RNoteLong a, RNoteLong b) { }
+		private int LongPoolSortFirstTimeFunc(RNoteLong a, RNoteLong b)
+		{
+			return a.firstRNoteObject.rNote.noteInfo.time - b.firstRNoteObject.rNote.noteInfo.time;
+		}
 
 		//// RVA: 0xDBAF40 Offset: 0xDBAF40 VA: 0xDBAF40
-		//private int LongPoolSortLastTimeFunc(RNoteLong a, RNoteLong b) { }
+		private int LongPoolSortLastTimeFunc(RNoteLong a, RNoteLong b)
+		{
+			return a.lastRNoteObject.rNote.noteInfo.time - b.lastRNoteObject.rNote.noteInfo.time;
+		}
 
 		//// RVA: 0xDBB024 Offset: 0xDBB024 VA: 0xDBB024
 		public bool IsLongBeganTouched(int lineNo)
 		{
-			TodoLogger.Log(0, "RNoteOwner IsLongBeganTouched");
+			for(int i = 0; i < activeLongList.Count; i++)
+			{
+				if (activeLongList[i].firstRNoteObject.rNote.GetLineNo() == lineNo)
+					return activeLongList[i].touchFingerId != -1;
+			}
 			return false;
 		}
 
 		//// RVA: 0xDB9AF4 Offset: 0xDB9AF4 VA: 0xDB9AF4
 		public bool IsSlideBeganTouched(int fingerId)
 		{
-			TodoLogger.Log(0, "RNoteOwner IsSlideBeganTouched");
+			for(int i = 0; i < activeSlideList.Count; i++)
+			{
+				if (activeSlideList[i].touchFingerId == fingerId)
+					return true;
+			}
 			return false;
 		}
 
@@ -621,22 +962,57 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDBB2AC Offset: 0xDBB2AC VA: 0xDBB2AC
 		public bool IsLongLastEvaluation(int lineNo)
 		{
-			TodoLogger.Log(0, "RNoteOwner IsLongLastEvaluation");
+			for(int i = 0; i < activeLongList.Count; i++)
+			{
+				if(activeLongList[i].firstRNoteObject.rNote.GetLineNo() == lineNo && activeLongList[i].touchFingerId != -1)
+				{
+					RhythmGameConsts.NoteResult res = activeLongList[i].lastRNoteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[lineNo]);
+					return res != RhythmGameConsts.NoteResult.Exempt;
+				}
+			}
 			return false;
 		}
 
 		//// RVA: 0xDBB458 Offset: 0xDBB458 VA: 0xDBB458
 		public bool IsSlideLastEvaluation(int fingerId)
 		{
-			TodoLogger.Log(0, "RNoteOwner IsSlideLastEvaluation");
+			for(int i = 0; i < activeSlideList.Count; i++)
+			{
+				if(activeSlideList[i].touchFingerId == fingerId && fingerId != -1)
+				{
+					if(activeSlideList[i].lastRNoteObject.rNote.noteInfo.longTouch == MusicScoreData.TouchState.End)
+					{
+						RhythmGameConsts.NoteResult res = activeSlideList[i].lastRNoteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[activeSlideList[i].lastRNoteObject.rNote.noteInfo.trackID]);
+						return res != RhythmGameConsts.NoteResult.Exempt;
+					}
+				}
+			}
 			return false;
 		}
 
 		//// RVA: 0xDBB66C Offset: 0xDBB66C VA: 0xDBB66C
-		//public void SetupNoteResultData(ref int[] countArray, RhythmGamePlayLogger logger) { }
+		public void SetupNoteResultData(ref int[] countArray, RhythmGamePlayLogger logger)
+		{
+			for(int i = 1; i < rNoteList.Count; i++)
+			{
+				if(rNoteList[i].result < RhythmGameConsts.NoteResult.Num)
+				{
+					countArray[(int)rNoteList[i].result]++;
+					logger.AddNoteData(new RhythmGamePlayLog.NoteData() { result = rNoteList[i].result, millisec = rNoteList[i].noteInfo.time });
+				}
+			}
+		}
 
 		//// RVA: 0xDBB848 Offset: 0xDBB848 VA: 0xDBB848
-		//public int GetExcellentResultNoteCount() { }
+		public int GetExcellentResultNoteCount()
+		{
+			int res = 0;
+			for(int i = 0; i < rNoteList.Count; i++)
+			{
+				res += rNoteList[i].resultEx.m_excellent ? 1 : 0;
+			}
+			return res;
+		}
 
 		//// RVA: 0xDBB948 Offset: 0xDBB948 VA: 0xDBB948
 		//public float CalcSuccessNotesRate() { }
@@ -677,7 +1053,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBBE80 Offset: 0xDBBE80 VA: 0xDBBE80
-		//public int GetRareItemRandomSeed() { }
+		public int GetRareItemRandomSeed()
+		{
+			return specialNotesAssigner.GetRareItemRandomSeed();
+		}
 
 		//// RVA: 0xDB9A80 Offset: 0xDB9A80 VA: 0xDB9A80
 		//public RhythmGameConsts.NoteResult OverwriteCheatNoteResult(RhythmGameConsts.NoteResult result, int lineNo) { }
@@ -694,7 +1073,21 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBC000 Offset: 0xDBC000 VA: 0xDBC000
-		//public string SerializeForNotesLog() { }
+		public string SerializeForNotesLog()
+		{
+			StringBuilder str = new StringBuilder(3000);
+			bool comma = false;
+			for(int i = 0; i < rNoteList.Count; i++)
+			{
+				if(rNoteList[i].result < RhythmGameConsts.NoteResult.Num)
+				{
+					if (comma)
+						str.Append(',');
+					str.Append(rNoteList[i].result);
+				}
+			}
+			return str.ToString();
+		}
 
 		//// RVA: 0xDBC188 Offset: 0xDBC188 VA: 0xDBC188
 		public RNote GetNote(int index)
@@ -703,7 +1096,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBC208 Offset: 0xDBC208 VA: 0xDBC208
-		//public int GetNoteListNum() { }
+		public int GetNoteListNum()
+		{
+			return rNoteList.Count;
+		}
 
 		//// RVA: 0xDBC280 Offset: 0xDBC280 VA: 0xDBC280
 		//public void UpdateObjectPool() { }

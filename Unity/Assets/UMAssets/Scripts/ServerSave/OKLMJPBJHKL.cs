@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use OKLMJPBJHKL_EventMission", true)]
 public class OKLMJPBJHKL { }
 public class OKLMJPBJHKL_EventMission : KLFDBFMNLBL_ServerSaveBlock
 {

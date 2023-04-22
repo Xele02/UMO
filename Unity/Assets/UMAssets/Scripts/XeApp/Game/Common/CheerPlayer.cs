@@ -27,7 +27,10 @@ namespace XeApp.Game.Common
 			}
 
 			// // RVA: 0xE65C38 Offset: 0xE65C38 VA: 0xE65C38
-			// public void FadeOut(float sec, Action onStop) { }
+			public new void FadeOut(float sec, Action onStop)
+			{
+				base.FadeOut(sec, onStop);
+			}
 		}
 
 		public const int MAX = 3;
@@ -72,10 +75,32 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE65614 Offset: 0xE65614 VA: 0xE65614
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			if(m_create)
+			{
+				for(int i = 0; i < m_player.Length; i++)
+				{
+					if (m_player[i].isPlaying)
+						return true;
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0xE656A4 Offset: 0xE656A4 VA: 0xE656A4
-		// public bool IsFading() { }
+		public bool IsFading()
+		{
+			if (m_create)
+			{
+				for (int i = 0; i < m_player.Length; i++)
+				{
+					if (m_player[i].isFading)
+						return true;
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0xE65734 Offset: 0xE65734 VA: 0xE65734
 		public void Play(int a_index, int voiceId)
@@ -140,6 +165,14 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE65BAC Offset: 0xE65BAC VA: 0xE65BAC
-		// public void FadeOut(float sec) { }
+		public void FadeOut(float sec)
+		{
+			if (!m_create)
+				return;
+			for(int i = 0; i < MAX; i++)
+			{
+				m_player[i].FadeOut(sec, null);
+			}
+		}
 	}
 }

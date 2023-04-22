@@ -11,7 +11,8 @@ namespace XeApp.Game.Common
 		}
 		public bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
+			return true;
 		}
 
 		public override void ModifyMesh(VertexHelper vh)

@@ -1,12 +1,12 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use AIPOFGJGPKI_CampaignDiva", true)]
 public class AIPOFGJGPKI { }
 public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 {
 	public class KBLBMGDILAI
 	{
-		// Fields
 		public int PPFNGGCBJKC; // 0x8
 		public int PPEGAKEIEGM; // 0xC
 		public long PDBPFJJCADD; // 0x10
@@ -18,7 +18,10 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 		//public uint CAOGDCBPBAN() { }
 
 		//// RVA: 0xCD248C Offset: 0xCD248C VA: 0xCD248C
-		//public int MPHGKGNCCEE(int AHHJLDLAPAN, int AKNELONELJK) { }
+		public int MPHGKGNCCEE(int AHHJLDLAPAN_DivaId, int AKNELONELJK)
+		{
+			return BMFACNFNCKC[AKNELONELJK] * MFKKADJIHHK[AHHJLDLAPAN_DivaId - 1];
+		}
 	}
 
 	public List<KBLBMGDILAI> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
@@ -71,7 +74,7 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 		{
 			KBLBMGDILAI data = new KBLBMGDILAI();
 			data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
-			data.PPEGAKEIEGM = JKAECBCNHAN(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+			data.PPEGAKEIEGM = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.PDBPFJJCADD = array[i].PDBPFJJCADD;
 			data.FDBNFFNFOND = array[i].FDBNFFNFOND;
 			data.BMFACNFNCKC = array[i].BMFACNFNCKC;

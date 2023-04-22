@@ -48,7 +48,32 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAF43B4 Offset: 0xAF43B4 VA: 0xAF43B4 Slot: 6
-		// public virtual void SetNumber(int number, int minDgit = 0) { }
+		public virtual void SetNumber(int number, int minDgit = 0)
+		{
+			m_number = number;
+			if (number >= m_numberMax)
+				m_number = m_numberMax;
+			if (number < m_numberMin)
+				m_number = m_numberMin;
+			int left = m_number;
+			int i;
+			for (i = 0; i < m_digit.Length; i++)
+			{
+				m_digit[i] = left % 10;
+				if (left < 10)
+					break;
+				left = left / 10;
+			}
+			for(; i < minDgit; i++)
+			{
+				m_digit[i] = 0;
+			}
+			m_digit_layout.StartSiblingAnimGoStop(i - 1, i - 1);
+			for(int j = 0; j < i; j++)
+			{
+				m_numberImage[j].uvRect = m_numberRect[m_digit[j]];
+			}
+		}
 
 		// // RVA: 0xAF4618 Offset: 0xAF4618 VA: 0xAF4618 Slot: 7
 		// public virtual void SetDigitNuber(int digit, int number) { }

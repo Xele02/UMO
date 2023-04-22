@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 		private Difficulty.Type m_difficulty; // 0x14
 		private MusicSelectConsts.SeriesType m_series; // 0x18
 		private VerticalMusicSelectSortOrder.SortOrder m_sortOrder; // 0x1C
-		private FPGEMAIAMBF m_rewardData; // 0x20
+		private FPGEMAIAMBF_RewardData m_rewardData; // 0x20
 		private List<MusicRewardStat> m_rewardStats; // 0x24
 		// private StringBuilder m_stringBuffer = new StringBuilder(64); // 0x28
 		// private List<FKMOKDCJFEN> m_questList; // 0x2C
@@ -120,7 +120,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_rewardData == null)
 			{
-				m_rewardData = new FPGEMAIAMBF();
+				m_rewardData = new FPGEMAIAMBF_RewardData();
 			}
 			if (m_rewardStats != null)
 				return;
@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 			}
 			int score = musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].KNIFCANOHOC_Score;
 			m_musicDetail.SetHighScore(score, true);
-			m_musicDetail.SetScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BAKLKJLPLOJ.DLPBHJALHCK_GetRank(score));
+			m_musicDetail.SetScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BAKLKJLPLOJ.DLPBHJALHCK_GetScoreRank(score));
 		}
 
 		// // RVA: 0xADB804 Offset: 0xADB804 VA: 0xADB804

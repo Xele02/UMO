@@ -12,8 +12,8 @@ public class VLCManager : SingletonMonoBehaviour<VLCManager>
     public void Awake()
     {
         UnityEngine.Object.DontDestroyOnLoad(this);
-		isInitialized = true;
         TryInit();
+		isInitialized = true;
 	}
 
     void TryInit()
@@ -26,7 +26,7 @@ public class VLCManager : SingletonMonoBehaviour<VLCManager>
 
             _libVLC = new LibVLC(enableDebugLogs: true);
 
-            Application.SetStackTraceLogType(LogType.Log, StackTraceLogType.None);
+            //Application.SetStackTraceLogType(LogType.Log, StackTraceLogType.None);
             //_libVLC.Log += (s, e) => UnityEngine.Debug.Log(e.FormattedLog); // enable this for logs in the editor
         }
     }
@@ -37,5 +37,5 @@ public class VLCManager : SingletonMonoBehaviour<VLCManager>
         _libVLC = null;
     }
 
-	public bool IsInitialized { get { return isInitialized; } }
+	public bool IsInitialized { get { return isInitialized && !RuntimeSettings.CurrentSettings.DisableMovies; } }
 }

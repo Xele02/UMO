@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use EAOHMJHHDKN_GachaLimit", true)]
 public class EAOHMJHHDKN { }
 public class EAOHMJHHDKN_GachaLimit : KLFDBFMNLBL_ServerSaveBlock
 {

@@ -34,14 +34,14 @@ namespace XeSys.Gfx
 		// public float AnimCount { get; set; } 0x1EE958C 0x1EE9594
 		// public float TimeScale { get; set; } 0x1EE5EA4 0x1EE5EF8
 		// public float FrameSec { get; set; } 0x1EE959C 0x1EE95A4
-		public int FrameCount { get { return (int)(m_AnimCount / m_FrameSec); } private set { return; } } //0x1EE95AC 0x1EE95C4
+		public int FrameCount { get { return Mathf.RoundToInt(m_AnimCount / m_FrameSec); } private set { return; } } //0x1EE95AC 0x1EE95C4
 		// public float BaseX { get; set; } 0x1EE95C8 0x1EE95D0
 		// public float BaseY { get; set; } 0x1EE95D8 0x1EE95E0
-		// public int FrameNum { get; } 0x1EE95E8
+		public int FrameNum { get { return data.FrameNum; } } //0x1EE95E8
 		// public string ID { get; set; } 0x1EE9614 0x1EE9640
 		// public TimeMap AnimTimeMap { get; } 0x1EE9670
 		// public int LabelCount { get; } 0x1EE969C
-		// public LabelData[] LabelList { get; } 0x1EE9700
+		public LabelData[] LabelList { get { return data.m_LabelList; } } //0x1EE9700
 		// public bool IsPosAnim { get; set; } 0x1EE9724 0x1EE6E7C
 		// public bool IsMoveAnim { get; set; } 0x1EE9790 0x1EE97B8
 		// public bool IsMoveBezierX { get; set; } 0x1EE97F0 0x1EE9818
@@ -52,6 +52,8 @@ namespace XeSys.Gfx
 		// public bool IsColAnim { get; set; } 0x1EE9928 0x1EE6F5C
 		// public bool IsAlphaAnim { get; set; } 0x1EE9950 0x1EE9978
 		// public bool IsCenterAnim { get; set; } 0x1EE99B0 0x1EE6F94
+		public FrameData[] F { get { return data.F; } }
+		public int FrameDataCount { get { return data.FrameDataCount; } }
 
 		// RVA: 0x1EE99D8 Offset: 0x1EE99D8 VA: 0x1EE99D8
 		// public void .ctor(int frameNum) { }
@@ -87,7 +89,14 @@ namespace XeSys.Gfx
 		// public void StartAnim() { }
 
 		// // RVA: 0x1EE8B4C Offset: 0x1EE8B4C VA: 0x1EE8B4C
-		// public void StartAnimGoStop(int start, int end) { }
+		public void StartAnimGoStop(int start, int end)
+		{
+			m_Action = AnimAction.stop;
+			m_IsAnimEnd = false;
+			m_startTime = start * m_FrameSec;
+			m_endTime = end * m_FrameSec;
+			m_AnimCount = m_startTime;
+		}
 
 		// // RVA: 0x1EE9FB8 Offset: 0x1EE9FB8 VA: 0x1EE9FB8
 		// public void StartAnimGoStopTime(float start, float end) { }
@@ -128,10 +137,24 @@ namespace XeSys.Gfx
 		// public void StartAnimInverseGoStop(string startLabel) { }
 
 		// // RVA: 0x1EE8D68 Offset: 0x1EE8D68 VA: 0x1EE8D68
-		// public void StartAnimLoop(int start, int end) { }
+		public void StartAnimLoop(int start, int end)
+		{
+			m_Action = AnimAction.loop;
+			m_IsAnimEnd = false;
+			m_startTime = start * m_FrameSec;
+			m_endTime = end * m_FrameSec;
+			m_AnimCount = m_startTime;
+		}
 
 		// // RVA: 0x1EE8E14 Offset: 0x1EE8E14 VA: 0x1EE8E14
-		// public void StartAnimLoop(int current, int start, int end) { }
+		public void StartAnimLoop(int current, int start, int end)
+		{
+			m_Action = AnimAction.loop;
+			m_IsAnimEnd = false;
+			m_startTime = start * m_FrameSec;
+			m_endTime = end * m_FrameSec;
+			m_AnimCount = current * m_FrameSec;
+		}
 
 		// // RVA: 0x1EE8E94 Offset: 0x1EE8E94 VA: 0x1EE8E94
 		public void StartAnimLoop(string startLabel, string endLabel)
@@ -172,7 +195,11 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EE8FE4 Offset: 0x1EE8FE4 VA: 0x1EE8FE4
-		// public void FinishAnimLoop() { }
+		public void FinishAnimLoop()
+		{
+			if (m_Action == AnimAction.loop)
+				m_Action = AnimAction.stop;
+		}
 
 		// // RVA: 0x1EE71BC Offset: 0x1EE71BC VA: 0x1EE71BC
 		public void Update(float dt)

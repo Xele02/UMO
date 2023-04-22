@@ -4,6 +4,7 @@ using System.Text;
 using System.Collections.Generic;
 
 // Represent a TAR file 
+[System.Obsolete("Use CBBJHPBGBAJ_Archive", true)]
 public class CBBJHPBGBAJ{}
 public class CBBJHPBGBAJ_Archive
 {

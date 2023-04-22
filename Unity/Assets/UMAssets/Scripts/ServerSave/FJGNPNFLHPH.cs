@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use FJGNPNFLHPH_EventCollection", true)]
 public class FJGNPNFLHPH { }
 public class FJGNPNFLHPH_EventCollection : KLFDBFMNLBL_ServerSaveBlock
 {

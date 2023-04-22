@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using XeSys;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -22,17 +23,66 @@ namespace XeApp.Game.RhythmGame
 			// RVA: 0x9A3258 Offset: 0x9A3258 VA: 0x9A3258
 			public FingerInfo()
 			{
-				TodoLogger.Log(0, "FingerInfo()");
+				if(info == null)
+				{
+					info = new Info[6];
+					for(int i = 0; i < info.Length; i++)
+					{
+						info[i] = new Info();
+					}
+				}
+				ResetJudgeLineInfo();
 			}
 
+
 			//// RVA: 0x9A6098 Offset: 0x9A6098 VA: 0x9A6098
-			//public void ResetJudgeLineInfo() { }
+			public void ResetJudgeLineInfo()
+			{
+				for(int i = 0; i < info.Length; i++)
+				{
+					info[i].m_time = System.Int32.MaxValue;
+					info[i].m_hit = false;
+				}
+			}
 
 			//// RVA: 0x9A5A24 Offset: 0x9A5A24 VA: 0x9A5A24
-			//public void SetJudgeLineInfo(int lineNo, int noteTime) { }
+			public void SetJudgeLineInfo(int lineNo, int noteTime)
+			{
+				info[lineNo].m_hit = true;
+				info[lineNo].m_time = noteTime;
+			}
 
 			//// RVA: 0x9A5AE0 Offset: 0x9A5AE0 VA: 0x9A5AE0
-			//public int JudgeLineCandidate(int a_note_msec, Vector2 a_touch_pos, List<Vector2> a_touch_rect_pos, int a_touch_priority_check) { }
+			public int JudgeLineCandidate(int a_note_msec, Vector2 a_touch_pos, List<Vector2> a_touch_rect_pos, int a_touch_priority_check)
+			{
+				int t = System.Int32.MaxValue;
+				int found = -1;
+				for(int i = 0; i < info.Length; i++)
+				{
+					if(info[i].m_time < t)
+					{
+						t = info[i].m_time;
+						found = i;
+					}
+				}
+				t = Mathf.Abs(a_note_msec - t);
+				if (found != -1 && t <= a_touch_priority_check)
+					return found;
+				float dist = float.MaxValue;
+				for(int i = 0; i < a_touch_rect_pos.Count; i++)
+				{
+					if(info[i].m_hit)
+					{
+						float d = (a_touch_pos - a_touch_rect_pos[i]).sqrMagnitude;
+						if (d < dist)
+						{
+							dist = d;
+							found = i;
+						}
+					}
+				}
+				return found;
+			}
 		}
 		
 		public class InputSaver
@@ -65,19 +115,77 @@ namespace XeApp.Game.RhythmGame
 			}
 
 			//// RVA: 0x9A5DE8 Offset: 0x9A5DE8 VA: 0x9A5DE8
-			//public void OnTouched(int fingerId, int lineNo) { }
+			public void OnTouched(int fingerId, int lineNo)
+			{
+				int i = 0;
+				for (; i < m_finger.Count; i++)
+				{
+					if (m_finger[i].lineNo < 0)
+						break;
+					if(m_finger[i].lineNo > -1 && m_finger[i].fingerId < 0)
+					{
+						if(m_finger[i].lineNo == lineNo)
+						{
+							break;
+						}
+					}
+				}
+				if (i == m_finger.Count)
+					return;
+				if (m_finger[i] == null)
+					return;
+				m_finger[i].Setup(i, fingerId, lineNo);
+				onBeganTouch(lineNo, i);
+
+			}
 
 			//// RVA: 0x9A6194 Offset: 0x9A6194 VA: 0x9A6194
-			//public void OnMoved(int fingerId, bool isContain) { }
+			public void OnMoved(int fingerId, bool isContain)
+			{
+				if(isContain)
+				{
+					FingerData data = SearchFinger(fingerId);
+					if (data != null)
+						data.RequestTimerReset();
+				}
+				else
+				{
+					if(!IsSave(fingerId))
+					{
+						FingerData data = SearchFinger(fingerId);
+						onReleaseLine(data.lineNo, data.lineNo_Begin, data.index, false);
+					}
+				}
+			}
 
 			//// RVA: 0x9A6170 Offset: 0x9A6170 VA: 0x9A6170
-			//public void OnReleased(int fingerId) { }
+			public void OnReleased(int fingerId)
+			{
+				FingerData info = SearchFinger(fingerId);
+				if (info != null)
+				{
+					info.OnReleased();
+				}
+			}
 
 			//// RVA: 0x9A6268 Offset: 0x9A6268 VA: 0x9A6268
-			//public void OnSwiped(int lineNo, int fingerId, bool isRight, bool isDown, bool isLeft, bool isUp) { }
+			public void OnSwiped(int lineNo, int fingerId, bool isRight, bool isDown, bool isLeft, bool isUp)
+			{
+				FingerData info = SearchFinger(fingerId);
+				if(info != null)
+				{
+					onSwipedTouch(lineNo, info.index, isRight, isDown, isLeft, isUp);
+				}
+			}
 
 			//// RVA: 0x9A62DC Offset: 0x9A62DC VA: 0x9A62DC
-			//public void OnNeutral(int lineNo, int fingerId) { }
+			public void OnNeutral(int lineNo, int fingerId)
+			{
+				FingerData info = SearchFinger(fingerId);
+				if (info == null)
+					return;
+				onNeutralTouch(lineNo, info.index);
+			}
 
 			//// RVA: 0x9A7F48 Offset: 0x9A7F48 VA: 0x9A7F48
 			//public int GetFingerId(int fingerId) { }
@@ -89,10 +197,27 @@ namespace XeApp.Game.RhythmGame
 			//public bool UpdateLineNo(int fingerId, int lineNo) { }
 
 			//// RVA: 0x9A8400 Offset: 0x9A8400 VA: 0x9A8400
-			//public bool IsActive(int fingerId) { }
+			public bool IsActive(int fingerId)
+			{
+				FingerData data = SearchFinger(fingerId);
+				if (data != null)
+				{
+					return data.lineNo > -1;
+				}
+				return false;
+			}
 
 			//// RVA: 0x9A70B0 Offset: 0x9A70B0 VA: 0x9A70B0
-			//private bool IsSave(int fingerId) { }
+			private bool IsSave(int fingerId)
+			{
+				FingerData data = SearchFinger(fingerId);
+				if(data != null)
+				{
+					if (data.timer < m_limitSec)
+						return m_saveForLine[data.lineNo];
+				}
+				return false;
+			}
 
 			//// RVA: 0x9A842C Offset: 0x9A842C VA: 0x9A842C
 			//private void SaveFinish(int fingerId) { }
@@ -101,7 +226,34 @@ namespace XeApp.Game.RhythmGame
 			//private void TimerReset(int fingerId) { }
 
 			//// RVA: 0x9A4B2C Offset: 0x9A4B2C VA: 0x9A4B2C
-			//public void TimerUpdate() { }
+			public void TimerUpdate()
+			{
+				for(int i = 0; i < m_finger.Count; i++)
+				{
+					if(m_finger[i].lineNo > -1)
+					{
+						//UnityEngine.Debug.LogError(m_finger[i].lineNo + " " + m_finger[i].fingerId + " " + m_finger[i].timer + " " + m_limitSec + " " + m_saveForLine[m_finger[i].lineNo]);
+						if(m_finger[i].fingerId < 0)
+						{
+							if(m_finger[i].timer < m_limitSec)
+							{
+								if(m_saveForLine[m_finger[i].lineNo])
+								{
+									onNeutralTouch(m_finger[i].lineNo, m_finger[i].index);
+									m_finger[i].TimerElapse(TimeWrapper.deltaTime);
+									continue;
+								}
+							}
+							onEndedTouch(m_finger[i].lineNo, m_finger[i].lineNo_Begin, m_finger[i].index, false);
+							m_finger[i].Reset();
+						}
+						else
+						{
+							m_finger[i].TimerElapse(TimeWrapper.deltaTime);
+						}
+					}
+				}
+			}
 
 			//// RVA: 0x9A2AEC Offset: 0x9A2AEC VA: 0x9A2AEC
 			//public void ChangeLimitSec(float limitSec) { }
@@ -110,6 +262,7 @@ namespace XeApp.Game.RhythmGame
 			public void SetLineSave(int lineNo, bool isSave, bool isCheckEndTouch = true)
 			{
 				bool prevVal = m_saveForLine[lineNo];
+				//UnityEngine.Debug.LogError("SetLineSave " + lineNo + " " + isSave + " " + isCheckEndTouch);
 				m_saveForLine[lineNo] = isSave;
 				if(prevVal && isCheckEndTouch && !isSave)
 				{
@@ -125,7 +278,15 @@ namespace XeApp.Game.RhythmGame
 			}
 
 			//// RVA: 0x9A40F8 Offset: 0x9A40F8 VA: 0x9A40F8
-			//public RhythmGameInputPerformer.FingerData SearchFinger(int fingerId) { }
+			public FingerData SearchFinger(int fingerId)
+			{
+				for(int i = 0; i < m_finger.Count; i++)
+				{
+					if (m_finger[i].fingerId == fingerId)
+						return m_finger[i];
+				}
+				return null;
+			}
 		}
 
 		public class FingerData
@@ -144,11 +305,20 @@ namespace XeApp.Game.RhythmGame
 			}
 
 			//// RVA: 0x9A6B14 Offset: 0x9A6B14 VA: 0x9A6B14
-			//public void Setup(int index, int fingerId, int lineNo) { }
+			public void Setup(int index, int fingerId, int lineNo)
+			{
+				this.index = index;
+				this.fingerId = fingerId;
+				this.lineNo = lineNo;
+				lineNo_Begin = lineNo;
+				timer = 0;
+				requestedTimerReset = false;
+			}
 
 			//// RVA: 0x9A6AE8 Offset: 0x9A6AE8 VA: 0x9A6AE8
 			public void Reset()
 			{
+				//UnityEngine.Debug.LogError("Reset Input");
 				requestedTimerReset = false;
 				index = -1;
 				fingerId = -1;
@@ -164,16 +334,37 @@ namespace XeApp.Game.RhythmGame
 			//public bool IsReleased() { }
 
 			//// RVA: 0x9A6B4C Offset: 0x9A6B4C VA: 0x9A6B4C
-			//public void OnReleased() { }
+			public void OnReleased()
+			{
+				//UnityEngine.Debug.LogError("OnReleased");
+				fingerId = -1;
+			}
 
 			//// RVA: 0x9A6B58 Offset: 0x9A6B58 VA: 0x9A6B58
 			//public bool IsInSave(float limitSec) { }
 
 			//// RVA: 0x9A6B74 Offset: 0x9A6B74 VA: 0x9A6B74
-			//public void RequestTimerReset() { }
+			public void RequestTimerReset()
+			{
+				//UnityEngine.Debug.LogError("RequestTimerReset");
+				requestedTimerReset = true;
+			}
 
 			//// RVA: 0x9A6B80 Offset: 0x9A6B80 VA: 0x9A6B80
-			//public void TimerElapse(float deltaTime) { }
+			public void TimerElapse(float deltaTime)
+			{
+				if (!requestedTimerReset)
+				{
+					timer += deltaTime;
+					//UnityEngine.Debug.LogError("TimerElapse add "+timer);
+				}
+				else
+				{
+					//UnityEngine.Debug.LogError("TimerElapse reset");
+					timer = 0;
+					requestedTimerReset = false;
+				}
+			}
 
 			//// RVA: 0x9A6BAC Offset: 0x9A6BAC VA: 0x9A6BAC
 			//public bool UpdateLineNo(int lineNo) { }
@@ -198,55 +389,61 @@ namespace XeApp.Game.RhythmGame
 		[SerializeField] // RVA: 0x68DCC8 Offset: 0x68DCC8 VA: 0x68DCC8
 		private List<Vector2> touchRectScreenPos; // 0x68
 
-		public int longNoteSaveFrame { get; set; }
+		//public int longNoteSaveFrame { get; set; } 0x9A2A9C 0x9A2AA4
 		[HideInInspector]
 		public RNoteOwner refRNoteOwner { get; set; } // 0x44
 		[HideInInspector]
 		public RhythmGamePlayer refRhytmGamePlayer { get; set; } // 0x48
 		public DelegateCheckInput delegateCheckInput { get; set; } // 0x6C
 
-		//// RVA: 0x9A2A9C Offset: 0x9A2A9C VA: 0x9A2A9C
-		//public int get_longNoteSaveFrame() { }
-
-		//// RVA: 0x9A2AA4 Offset: 0x9A2AA4 VA: 0x9A2AA4
-		//public void set_longNoteSaveFrame(int value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743DDC Offset: 0x743DDC VA: 0x743DDC
-		//							 // RVA: 0x9A2AF4 Offset: 0x9A2AF4 VA: 0x9A2AF4
-		//public RNoteOwner get_refRNoteOwner() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743DEC Offset: 0x743DEC VA: 0x743DEC
-		//							 // RVA: 0x9A2AFC Offset: 0x9A2AFC VA: 0x9A2AFC
-		//public void set_refRNoteOwner(RNoteOwner value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743DFC Offset: 0x743DFC VA: 0x743DFC
-		//							 // RVA: 0x9A2B04 Offset: 0x9A2B04 VA: 0x9A2B04
-		//public RhythmGamePlayer get_refRhytmGamePlayer() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743E0C Offset: 0x743E0C VA: 0x743E0C
-		//							 // RVA: 0x9A2B0C Offset: 0x9A2B0C VA: 0x9A2B0C
-		//public void set_refRhytmGamePlayer(RhythmGamePlayer value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743E1C Offset: 0x743E1C VA: 0x743E1C
-		//							 // RVA: 0x9A2B14 Offset: 0x9A2B14 VA: 0x9A2B14
-		//public RhythmGameInputPerformer.DelegateCheckInput get_delegateCheckInput() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x743E2C Offset: 0x743E2C VA: 0x743E2C
-		//							 // RVA: 0x9A2B1C Offset: 0x9A2B1C VA: 0x9A2B1C
-		//public void set_delegateCheckInput(RhythmGameInputPerformer.DelegateCheckInput value) { }
-
 		//// RVA: 0x9A2B24 Offset: 0x9A2B24 VA: 0x9A2B24
 		private void Start()
 		{
-			TodoLogger.Log(0, "RhythmGameInputPerformer Start");
+			touchLineNo = new List<int>(InputManager.fingerCount);
+			touchLineNo.Add(-1);
+			touchLineNo.Add(-1);
+			touchLineNo.Add(-1);
+			touchLineNo.Add(-1);
 			inputSaver = new InputSaver(longNoteSaveSec);
+			inputSaver.onBeganTouch = BeganTouch;
+			inputSaver.onEndedTouch = EndedTouch;
+			inputSaver.onReleaseLine = ReleaseLine;
+			inputSaver.onNextLine = NextLine;
+			inputSaver.onSwipedTouch = SwipedTouch;
+			inputSaver.onNeutralTouch = NeutralTouch;
+			if(fingerInfoList == null)
+			{
+				fingerInfoList = new FingerInfo[InputManager.fingerCount];
+				for(int i = 0; i < fingerInfoList.Length; i++)
+				{
+					fingerInfoList[i] = new FingerInfo();
+				}
+			}
+			touchPushRects = new RectTransform[0];
+			touchReleaseRects = new RectTransform[0];
 		}
 
 		//// RVA: 0x9A3398 Offset: 0x9A3398 VA: 0x9A3398
-		//private void UpdateTouchRect(GameObject parent) { }
+		private void UpdateTouchRect(GameObject parent)
+		{
+			Transform t = parent.transform.Find("PushRect");
+			Transform t2 = parent.transform.Find("ReleaseRect");
+			touchPushRects = new RectTransform[t.childCount];
+			touchReleaseRects = new RectTransform[t2.childCount];
+			for (int i = 0; i < t.childCount; i++)
+			{
+				touchPushRects[i] = t.Find("HitRect" + (i + 1)).GetComponent<RectTransform>();
+				touchReleaseRects[i] = t2.Find("HitRect" + (i + 1)).GetComponent<RectTransform>();
+			}
+		}
 
 		//// RVA: 0x9A3754 Offset: 0x9A3754 VA: 0x9A3754 Slot: 13
-		//public override void InitializeTouch() { }
+		public override void InitializeTouch()
+		{
+			UpdateTouchRect(RhythmGameConsts.IsWideLine() ? rectParentW : rectParent);
+			swipeDistanceRate = 0.003f;
+			touchPriorityThreshold = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("note_touch_priority_change_offset", 180);
+		}
 
 		//// RVA: 0x9A38A4 Offset: 0x9A38A4 VA: 0x9A38A4
 		public void InitializeGame(RhythmGamePlayer a_player, RNoteOwner a_rnote_owner, IRhythmGameHUD a_hud, Camera a_ui_camera)
@@ -256,7 +453,17 @@ namespace XeApp.Game.RhythmGame
 			RhythmGameHUD hud = a_hud as RhythmGameHUD;
 			if(hud != null)
 			{
-				TodoLogger.Log(0, "RhythmGameInputPerformer InitializeGame");
+				string t_str_note_line = RhythmGameConsts.IsWideLine() ? "GameNoteLinesW" : "GameNoteLines";
+				Transform t = System.Array.Find(hud.transform.parent.GetComponentsInChildren<Transform>(), (Transform _) =>
+				{
+					//0x9A69D0
+					return _.name == t_str_note_line;
+				});
+				touchRectScreenPos = new List<Vector2>();
+				for(int i = 0; i < t.childCount; i++)
+				{
+					touchRectScreenPos.Add(a_ui_camera.WorldToScreenPoint(t.GetChild(i).transform.position));
+				}
 			}
 		}
 
@@ -265,13 +472,13 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (!isEnableTouch)
 				return;
-			TodoLogger.Log(0, "RhythmGameInputPerformer Update");
+			CheckInput();
 		}
 
 		//// RVA: 0x9A3E2C Offset: 0x9A3E2C VA: 0x9A3E2C Slot: 4
 		public override void BeginTouchSave(int lineNo)
 		{
-			TodoLogger.Log(0, "RhythmGameInputPerformer BeginTouchSave");
+			inputSaver.SetLineSave(lineNo, true, true);
 		}
 
 		//// RVA: 0x9A4060 Offset: 0x9A4060 VA: 0x9A4060 Slot: 5
@@ -284,9 +491,234 @@ namespace XeApp.Game.RhythmGame
 		//public bool CheckTouchFingerId(int finger, int lineNo) { }
 
 		//// RVA: 0x9A3CBC Offset: 0x9A3CBC VA: 0x9A3CBC
-		//private void CheckInput() { }
+		private void CheckInput()
+		{
+			for(int i = 0; i < InputManager.fingerCount; i++)
+			{
+				TouchInfoRecord record = InputManager.Instance.GetTouchInfoRecord(i);
+				if(record != null)
+				{
+					if(!record.currentInfo.isIllegal)
+					{
+						CheckInputFromTouchInfo(record, i);
+					}
+				}
+			}
+			for(int i = 0; i < (int)InputManager.KeyTouchInfoRecord.KeyType.Num; i++)
+			{
+				InputManager.KeyTouchInfoRecord record = InputManager.Instance.GetKeyTouchInfoRecord((InputManager.KeyTouchInfoRecord.KeyType)i);
+				if (record != null)
+				{
+					if (!record.currentInfo.isIllegal)
+					{
+						CheckInputFromKeyTouchInfo(record, i);
+					}
+				}
+			}
+			inputSaver.TimerUpdate();
+			if (delegateCheckInput != null)
+				delegateCheckInput(inputSaver);
+		}
+
+		private void CheckInputFromKeyTouchInfo(InputManager.KeyTouchInfoRecord tir, int touchId)
+		{
+			int line = -1;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line1Touch)
+				line = 4;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line2Touch)
+				line = 0;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line3Touch)
+				line = 1;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line4Touch)
+				line = 2;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line5Touch)
+				line = 3;
+			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line6Touch)
+				line = 5;
+
+			TouchInfo info = tir.currentInfo;
+
+			int fingerId = -1;
+			int avaiableFingerId = -1;
+			for (int i = 0; i < InputManager.fingerCount; i++)
+			{
+				if(inputSaver.SearchFinger(i) == null)
+				{
+					avaiableFingerId = i;
+				}
+				else if(inputSaver.SearchFinger(i).lineNo == line)
+				{
+					fingerId = i;
+					break;
+				}
+			}
+			if (fingerId == -1)
+				fingerId = avaiableFingerId;
+
+			if (line != -1)
+			{ 
+				if (isActiveLineCallback(line))
+				{
+					if (info.isBegan || info.isMoved)
+					{
+						int noteTime = System.Int32.MaxValue;
+						for (int idx = refRNoteOwner.checkStartNotesIndex; idx < refRNoteOwner.GetNoteListNum(); idx++)
+						{
+							if (refRNoteOwner.GetNote(idx).GetLineNo() == line)
+							{
+								if (refRNoteOwner.GetNote(idx).result == RhythmGameConsts.NoteResult.None)
+								{
+									noteTime = refRNoteOwner.GetNote(idx).noteInfo.time;
+									break;
+								}
+							}
+						}
+						fingerInfoList[fingerId].SetJudgeLineInfo(line, noteTime);
+					}
+					int a = fingerInfoList[fingerId].JudgeLineCandidate(refRhytmGamePlayer.notesMillisec, info.nativePosition, touchRectScreenPos, touchPriorityThreshold);
+					if (info.isBegan)
+					{
+						if (a > 0)
+							line = a;
+						inputSaver.OnTouched(fingerId, line);
+					}
+				}
+			}
+			fingerInfoList[fingerId].ResetJudgeLineInfo();
+			FingerData fingerData = inputSaver.SearchFinger(fingerId);
+			if (info.isEnded)
+			{
+				if (fingerData != null)
+					fingerData.OnReleased();
+			}
+			else
+			{
+				if (info.isMoved && fingerData != null)
+				{
+					if (fingerData.lineNo_Begin > -1)
+					{
+						if (isActiveLineCallback.Invoke(fingerData.lineNo_Begin))
+						{
+							inputSaver.OnMoved(fingerId, true);
+						}
+					}
+					if (fingerData.lineNo > -1)
+					{
+						int flick = tir.GetFlickAngleType(12, 1, swipeDistanceRate, false);
+						if(flick == -2)
+						{
+							for (int idx = refRNoteOwner.checkStartNotesIndex; idx < refRNoteOwner.GetNoteListNum(); idx++)
+							{
+								if (refRNoteOwner.GetNote(idx).GetLineNo() == line)
+								{
+									if (refRNoteOwner.GetNote(idx).result == RhythmGameConsts.NoteResult.None && refRNoteOwner.GetNote(idx).noteInfo.flick == MusicScoreData.FlickType.None)
+									{
+										flick = -1;
+									}
+									break;
+								}
+							}
+						}
+						if (flick == -1)
+						{
+							inputSaver.OnNeutral(fingerData.lineNo, fingerId);
+						}
+						else
+						{
+							inputSaver.OnNeutral(fingerData.lineNo, fingerId); // First send a neutral to simulate 2 frame move
+							inputSaver.OnSwiped(fingerData.lineNo, fingerId, flick == -2 || flick <= 1 || flick >= 10, flick == -2 || flick >= 1 && flick <= 4, flick == -2 || flick >= 4 && flick <= 7, flick == -2 || flick >= 7 && flick <= 10);
+						}
+					}
+				}
+				if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.ActiveSkillTouch && info.isBegan)
+				{
+					BeganSkillTouch(TouchSwipeDirection.None);
+				}
+			}
+		}
 
 		//// RVA: 0x9A422C Offset: 0x9A422C VA: 0x9A422C
-		//private void CheckInputFromTouchInfo(TouchInfoRecord tir, int fingerId) { }
+		private void CheckInputFromTouchInfo(TouchInfoRecord tir, int fingerId)
+		{
+			//UnityEngine.Debug.LogError("Check " + fingerId+" "+tir.currentInfo.state);
+			bool b = false;
+			int line = -1;
+			TouchInfo info = tir.currentInfo;
+			for(int i = 0; i < touchPushRects.Length; i++)
+			{
+				if(isActiveLineCallback(i))
+				{
+					if(RectTransformUtility.RectangleContainsScreenPoint(touchPushRects[i], info.nativePosition))
+					{
+						if(info.isBegan || info.isMoved)
+						{
+							int noteTime = System.Int32.MaxValue;
+							for(int idx = refRNoteOwner.checkStartNotesIndex; idx < refRNoteOwner.GetNoteListNum(); idx++)
+							{
+								if(refRNoteOwner.GetNote(idx).GetLineNo() == i)
+								{
+									if(refRNoteOwner.GetNote(idx).result == RhythmGameConsts.NoteResult.None)
+									{
+										noteTime = refRNoteOwner.GetNote(idx).noteInfo.time;
+										break;
+									}
+								}
+							}
+							fingerInfoList[fingerId].SetJudgeLineInfo(i, noteTime);
+						}
+						b = true;
+						if (line < 0)
+							line = i;
+					}
+				}
+			}
+			if(b)
+			{
+				int a = fingerInfoList[fingerId].JudgeLineCandidate(refRhytmGamePlayer.notesMillisec, info.nativePosition, touchRectScreenPos, touchPriorityThreshold);
+				if(info.isBegan)
+				{
+					if (a > 0)
+						line = a;
+					inputSaver.OnTouched(fingerId, line);
+				}
+			}
+			fingerInfoList[fingerId].ResetJudgeLineInfo();
+			FingerData fingerData = inputSaver.SearchFinger(fingerId);
+			if(info.isEnded)
+			{
+				//UnityEngine.Debug.LogError(fingerId+" "+(fingerData != null));
+				if (fingerData != null)
+					fingerData.OnReleased();
+			}
+			else
+			{
+				if(info.isMoved && fingerData != null)
+				{
+					if(fingerData.lineNo_Begin > -1)
+					{
+						if(isActiveLineCallback.Invoke(fingerData.lineNo_Begin))
+						{
+							inputSaver.OnMoved(fingerId, RectTransformUtility.RectangleContainsScreenPoint(touchReleaseRects[fingerData.lineNo_Begin], info.nativePosition));
+						}
+					}
+					if(fingerData.lineNo > -1)
+					{
+						int flick = tir.GetFlickAngleType(12, 1, swipeDistanceRate, false);
+						if (flick < 0)
+						{
+							inputSaver.OnNeutral(fingerData.lineNo, fingerId);
+						}
+						else
+						{
+							inputSaver.OnSwiped(fingerData.lineNo, fingerId, flick <= 1 || flick >= 10, flick >= 1 && flick <= 4, flick >= 4 && flick <= 7, flick >= 7 && flick <= 10);
+						}
+					}
+				}
+				if(RectTransformUtility.RectangleContainsScreenPoint(touchSkillRect, info.nativePosition) && info.isBegan)
+				{
+					BeganSkillTouch(TouchSwipeDirection.None);
+				}
+			}
+		}
 	}
 }

@@ -199,7 +199,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xED25E4 Offset: 0xED25E4 VA: 0xED25E4
-		// public void Release() { }
+		public void Release()
+		{
+			return;
+		}
 
 		// // RVA: 0xED25F8 Offset: 0xED25F8 VA: 0xED25F8
 		// public bool IsPlaying() { }

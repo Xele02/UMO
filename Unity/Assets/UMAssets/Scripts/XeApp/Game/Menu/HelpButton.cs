@@ -61,13 +61,22 @@ namespace XeApp.Game.Menu
 		// public void ShowMusicSelectHelpButton() { }
 
 		// // RVA: 0xE30C6C Offset: 0xE30C6C VA: 0xE30C6C
-		// public void ShowResultHelpButton() { }
+		public void ShowResultHelpButton()
+		{
+			TodoLogger.Log(0, "ShowResultHelpButton HelpButton");
+		}
 
 		// // RVA: 0xE30CB4 Offset: 0xE30CB4 VA: 0xE30CB4
-		// public void ShowRaidResultHelpButton() { }
+		public void ShowRaidResultHelpButton()
+		{
+			TodoLogger.Log(0, "ShowRaidResultHelpButton HelpButton");
+		}
 
 		// // RVA: 0xE30CFC Offset: 0xE30CFC VA: 0xE30CFC
-		// public void HideResultHelpButton() { }
+		public void HideResultHelpButton()
+		{
+			TodoLogger.Log(0, "HideResultHelpButton HelpButton");
+		}
 
 		// // RVA: 0xE30D00 Offset: 0xE30D00 VA: 0xE30D00
 		// public void ShowMissiontEventHelpButton() { }
@@ -97,10 +106,16 @@ namespace XeApp.Game.Menu
 		// private void Hide() { }
 
 		// // RVA: 0xE30EB0 Offset: 0xE30EB0 VA: 0xE30EB0
-		// public void TryEnter() { }
+		public void TryEnter()
+		{
+			TodoLogger.Log(0, "TryEnter");
+		}
 
 		// // RVA: 0xE30F5C Offset: 0xE30F5C VA: 0xE30F5C
-		// public void TryLeave() { }
+		public void TryLeave()
+		{
+			TodoLogger.Log(0, "TryLeave");
+		}
 
 		// // RVA: 0xE31008 Offset: 0xE31008 VA: 0xE31008
 		// public void SetEnable() { }

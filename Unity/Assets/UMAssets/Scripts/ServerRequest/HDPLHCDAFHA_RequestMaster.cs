@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public delegate bool FAPJEIOBPDG(List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
 
+[System.Obsolete("Use HDPLHCDAFHA_RequestMaster", true)]
 public class HDPLHCDAFHA{}
 public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
 {
@@ -15,7 +16,7 @@ public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
 	// RVA: 0x174328C Offset: 0x174328C VA: 0x174328C Slot: 12
 	public override void DHLDNIEELHO()
     {
-		EBGACDGNCAA = SakashoMaster.GetMasters(DFDLAIGFDAH.ToArray(), this.DCKLDDCAJAP, this.MEOCKCJBDAD);
+		EBGACDGNCAA_CallContext = SakashoMaster.GetMasters(DFDLAIGFDAH.ToArray(), this.DCKLDDCAJAP, this.MEOCKCJBDAD);
     } // Prepare request
 
 	// RVA: 0x174339C Offset: 0x174339C VA: 0x174339C Slot: 13

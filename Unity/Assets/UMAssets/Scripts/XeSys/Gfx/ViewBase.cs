@@ -129,7 +129,7 @@ namespace XeSys.Gfx
 		public float ScaleX { get { return m_transformData.m.Scale.x; } set { m_transformData.m.Scale.x = value; } } //0x1EE6458 0x1EE6484
 		public float ScaleY { get { return m_transformData.m.Scale.y; } set { m_transformData.m.Scale.y = value; } } //0x1EE64BC 0x1EE64E8
 		public float Rot { get{ return m_transformData.m.Rot; } set { m_transformData.m.Rot = value; } } //0x1EE6520 0x1EE6544
-		// public Color Col { get; set; } 0x1EE6574 0x1EE65A4
+		public Color Col { get { return m_transformData.m.Color; } set { m_transformData.m.Color = value; } } //0x1EE6574 0x1EE65A4
 		public float CenterX { get { return m_transformData.m.Center.x; } set { m_transformData.m.Center.x = value; } } //0x1EE65E4 0x1EE6610
 		public float CenterY { get { return m_transformData.m.Center.y; } set { m_transformData.m.Center.y = value; } } //0x1EE6648 0x1EE6674
 		public ViewBase.EAlignH AlignH { get { return m_AlignH; } set { m_AlignH = value; } } //0x1EE66AC 0x1EE66B4
@@ -274,7 +274,10 @@ namespace XeSys.Gfx
 		// public void StartAnim() { }
 
 		// // RVA: 0x1EE8AF0 Offset: 0x1EE8AF0 VA: 0x1EE8AF0
-		// public void StartAnimGoStop(int start, int end) { }
+		public void StartAnimGoStop(int start, int end)
+		{
+			m_FrameAnimation.StartAnimGoStop(start, end);
+		}
 
 		// // RVA: 0x1EE8B84 Offset: 0x1EE8B84 VA: 0x1EE8B84
 		public void StartAnimGoStop(string startLabel, string endLabel)
@@ -289,10 +292,16 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EE8D08 Offset: 0x1EE8D08 VA: 0x1EE8D08
-		// public void StartAnimLoop(int start, int end) { }
+		public void StartAnimLoop(int start, int end)
+		{
+			m_FrameAnimation.StartAnimLoop(start, end);
+		}
 
 		// // RVA: 0x1EE8DA4 Offset: 0x1EE8DA4 VA: 0x1EE8DA4
-		// public void StartAnimLoop(int current, int start, int end) { }
+		public void StartAnimLoop(int current, int start, int end)
+		{
+			m_FrameAnimation.StartAnimLoop(current, start, end);
+		}
 
 		// // RVA: 0x1EE8E5C Offset: 0x1EE8E5C VA: 0x1EE8E5C
 		public void StartAnimLoop(string startLabel, string endLabel)
@@ -307,7 +316,10 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EE8FB4 Offset: 0x1EE8FB4 VA: 0x1EE8FB4
-		// public void FinishAnimLoop() { }
+		public void FinishAnimLoop()
+		{
+			m_FrameAnimation.FinishAnimLoop();
+		}
 
 		// // RVA: 0x1EE8FF8 Offset: 0x1EE8FF8 VA: 0x1EE8FF8
 		// public void StartAnimDefault() { }
@@ -367,5 +379,19 @@ namespace XeSys.Gfx
 
 		// // RVA: 0x1EE9448 Offset: 0x1EE9448 VA: 0x1EE9448 Slot: 15
 		// public virtual void Serialize(List<SerializableView> list, int parent) { }
+
+
+		static public void GetDebugHierarchy(ViewBase v, int a, ref string res)
+		{
+			for(int i = 0; i < a; i++) res += " ";
+			res += v.GetType().ToString()+" "+v.ID+" "+v.EXID+"\n";
+			if(v is AbsoluteLayout)
+			{
+				for(int i = 0; i < (v as AbsoluteLayout).viewCount; i++)
+				{
+					GetDebugHierarchy((v as AbsoluteLayout)[i], a + 1, ref res);
+				}
+			}
+		}
 	}
 }

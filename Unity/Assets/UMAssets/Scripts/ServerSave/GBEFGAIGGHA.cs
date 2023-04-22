@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use GBEFGAIGGHA_Shop", true)]
 public class GBEFGAIGGHA { }
 public class GBEFGAIGGHA_Shop : KLFDBFMNLBL_ServerSaveBlock
 {

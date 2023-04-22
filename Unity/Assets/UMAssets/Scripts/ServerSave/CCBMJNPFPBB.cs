@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use CCBMJNPFPBB_EventGoDiva", true)]
 public class CCBMJNPFPBB { }
 public class CCBMJNPFPBB_EventGoDiva : KLFDBFMNLBL_ServerSaveBlock
 {

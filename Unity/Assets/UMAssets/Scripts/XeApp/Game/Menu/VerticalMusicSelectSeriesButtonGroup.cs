@@ -3,6 +3,7 @@ using XeApp.Game.Common;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -59,7 +60,7 @@ namespace XeApp.Game.Menu
 			m_pullDownButton.AddOnClickCallback(() =>
 			{
 				//0xAD9CBC
-				SoundManager.Instance.sePlayerBoot.Play(3);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				if(m_pullDownInOut.IsEnter)
 				{
 					m_pullDownInOut.ForceLeave(null);

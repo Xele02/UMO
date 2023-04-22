@@ -26,7 +26,7 @@ namespace XeApp.Game.Common
 					(m_data_int[2][i] == a_id_dv || m_data_int[2][i] == 0) &&
 					(m_data_int[3][i] == a_id_cs || m_data_int[3][i] == 0))
 				{
-					a_out_enemy = m_data_int[3][i];
+					a_out_enemy = m_data_int[4][i];
 					return true;
 				}
 			}

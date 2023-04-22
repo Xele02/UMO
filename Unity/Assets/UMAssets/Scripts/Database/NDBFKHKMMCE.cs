@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use NDBFKHKMMCE_DecoItem", true)]
 public class NDBFKHKMMCE { }
 public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 {
@@ -411,7 +412,7 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 			EHLEEEBJLAM data = new EHLEEEBJLAM();
 			data.PPFNGGCBJKC_Id = (int)array[i].PPFNGGCBJKC;
 			data.IJEKNCDIIAE = array[i].IJEKNCDIIAE;
-			data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			data.FJFCNGNGIBN = (int)array[i].FJFCNGNGIBN;
 			data.CPKMLLNADLJ = (int)array[i].CPKMLLNADLJ;
 			data.EKLIPGELKCL = (int)array[i].FBFLDFMFFOH;
@@ -432,7 +433,7 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 			NIBEBIGPKLA data = new NIBEBIGPKLA();
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.IJEKNCDIIAE = array[i].IJEKNCDIIAE;
-			data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			data.GBJFNGCDKPM = array[i].GBJFNGCDKPM;
 			data.FJFCNGNGIBN = array[i].FJFCNGNGIBN;
 			data.CPKMLLNADLJ = (int)array[i].CPKMLLNADLJ;
@@ -462,7 +463,7 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 			FIDBAFHNGCF data = new FIDBAFHNGCF();
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.IJEKNCDIIAE = array[i].IJEKNCDIIAE;
-			data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			data.GBJFNGCDKPM = array[i].GBJFNGCDKPM;
 			data.FJFCNGNGIBN = array[i].FJFCNGNGIBN;
 			data.CPKMLLNADLJ = (int)array[i].CPKMLLNADLJ;
@@ -510,7 +511,7 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 			IEOEMNPLANK data = new IEOEMNPLANK();
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.IJEKNCDIIAE = array[i].IJEKNCDIIAE;
-			data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			data.CPKMLLNADLJ = (int)array[i].CPKMLLNADLJ;
 			data.EKLIPGELKCL = (int)array[i].FBFLDFMFFOH;
 			data.MLMCEBBDJOE = array[i].MLMCEBBDJOE;
@@ -531,7 +532,7 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 			CCHHGIJMLBN data = new CCHHGIJMLBN();
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.IJEKNCDIIAE = array[i].IJEKNCDIIAE;
-			data.PLALNIIBLOF = JKAECBCNHAN(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
+			data.PLALNIIBLOF = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			data.JBFLEDKDFCO = array[i].JBFLEDKDFCO;
 			data.GBJFNGCDKPM = array[i].GBJFNGCDKPM;
 			data.CPKMLLNADLJ = (int)array[i].CPKMLLNADLJ;
@@ -560,7 +561,7 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 			data.EFNKCPBALOP = array[i].FLLNHNJFIFL;
 			data.NMELNJNFMJF = array[i].PDBPFJJCADD;
 			data.IAJAOIEOPDP = array[i].FDBNFFNFOND;
-			data.PPEGAKEIEGM = JKAECBCNHAN(array[i].IJEKNCDIIAE, data.PPEGAKEIEGM, 0);
+			data.PPEGAKEIEGM = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, data.PPEGAKEIEGM, 0);
 			JDMCHNFAOFO.Add(data);
 		}
 		return true;

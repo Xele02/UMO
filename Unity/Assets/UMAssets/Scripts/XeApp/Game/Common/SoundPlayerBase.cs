@@ -33,7 +33,7 @@ namespace XeApp.Game.Common
 		// public int millisecTime { get; private set; } 0x1398010 0x139804C
 		// public float secTime { get; private set; } 0x1398050 0x1398078
 		public bool isPlaying { get { return playBack.GetStatus() != CriAtomExPlayback.Status.Removed; } private set {} } //0x1388C94 0x139807C
-		// public bool isFading { get; private set; } 0x1398080 0x1398090
+		public bool isFading { get { return fadeCoroutine != null; } private set { } } //0x1398080 0x1398090
 		// public string cueSheetName { get; } 0x1397434
 
 		// // RVA: 0x1397D54 Offset: 0x1397D54 VA: 0x1397D54
@@ -85,7 +85,7 @@ namespace XeApp.Game.Common
 			yield return new WaitWhile(() =>
 			{
 				//0x1395364
-				return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB;
+				return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
 			});
 			ChangeCueSheet(cueSheetName);
 			if (onEndCallback != null)
@@ -122,7 +122,17 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1388CCC Offset: 0x1388CCC VA: 0x1388CCC
-		// public bool RemoveCueSheet() { }
+		public bool RemoveCueSheet()
+		{
+			if(source != null)
+			{
+				SoundResource.RemoveCueSheet(source.cueSheet);
+				source.cueSheet = "";
+				source.cueName = "";
+				return true;
+			}
+			return false;
+		}
 
 		// // RVA: 0x138FF6C Offset: 0x138FF6C VA: 0x138FF6C
 		protected bool PlayCue(string cueName)
@@ -133,6 +143,14 @@ namespace XeApp.Game.Common
 				return true;
 			}
 			return false;
+		}
+
+		protected void Preload(string cueName)
+		{
+			if(source != null)
+			{
+				source.Preload(cueName);
+			}
 		}
 
 		// // RVA: 0x13987A4 Offset: 0x13987A4 VA: 0x13987A4

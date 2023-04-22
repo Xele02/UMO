@@ -111,12 +111,12 @@ namespace XeApp.Game.Menu
 		public static bool IsFirstTitleFlow { get; set; } // 0x5
 		public static bool ComebackByRestart { get; private set; } // 0x6
 		public MenuDivaManager divaManager { get; set; } // 0x2C
-		// public SceneIconTextureCache SceneIconCache { get; } 0xB2DCF8
-		// public DivaIconTextureCache DivaIconCache { get; } 0xB2DD94
-		// public BgTextureCache BgTextureCache { get; } 0xB2DE30
-		// public ItemTextureCache ItemTextureCache { get; } 0xB2DECC
-		// public MenuResidentTextureCache MenuResidentTextureCache { get; } 0xB2DF68
-		// public MusicJacketTextureCache MusicJacketTextureCache { get; } 0xB2E004
+		public SceneIconTextureCache SceneIconCache { get { return GameManager.Instance.SceneIconCache; } } //0xB2DCF8
+		public DivaIconTextureCache DivaIconCache { get { return GameManager.Instance.DivaIconCache; } } //0xB2DD94
+		public BgTextureCache BgTextureCache { get { return GameManager.Instance.BgTextureCache; } } //0xB2DE30
+		public ItemTextureCache ItemTextureCache { get { return GameManager.Instance.ItemTextureCache; } } //0xB2DECC
+		public MenuResidentTextureCache MenuResidentTextureCache { get { return GameManager.Instance.MenuResidentTextureCache; } } //0xB2DF68
+		public MusicJacketTextureCache MusicJacketTextureCache { get { return GameManager.Instance.MusicJacketTextureCache; } } //0xB2E004
 		// public UnitPopupWindowControl UnitSaveWindowControl { get; } 0xB2E0A0
 		public StatusWindowControl StatusWindowControl { get { return m_statusWindowControl; } } //0xB2E0A8
 		// public MusicPopupWindowControl MusicPopupWindowControl { get; } 0xB2E0B0
@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 		// public LimitOverControl LimitOverControl { get; } 0xB2E0C0
 		// public IntimacyController IntimacyControl { get; } 0xB2E0C8
 		// public PopupUseItemWindow PopupUseItemWindow { get; } 0xB2E0D0
-		// public ValkyrieIconTextureCache ValkyrieIconCache { get; } 0xB2E0D8
+		public ValkyrieIconTextureCache ValkyrieIconCache { get { return GameManager.Instance.ValkyrieIconCache; } } //0xB2E0D8
 		// public CostumeTextureCache CostumeIconCache { get; } 0xB2E174
 		// public QuestEventTextureCache QuestEventCache { get; } 0xB2E210
 		// public SNSTextureCache SnsIconCache { get; } 0xB2E2AC
@@ -254,6 +254,8 @@ namespace XeApp.Game.Menu
 			{
 				fromRhythmGame = prevSceneName == "RhythmGameSkip";
 			}
+			if(RuntimeSettings.CurrentSettings.SLiveViewer)
+				fromRhythmGame = false;
 			GameManager.Instance.SetTouchEffectVisible(true);
 			GameManager.Instance.SetTouchEffectMode(false);
 			if(fromRhythmGame == false)
@@ -298,7 +300,36 @@ namespace XeApp.Game.Menu
 				}
 			}
 
-			TodoLogger.Log(0, "init from RhythmGame");
+			if(GameManager.Instance.IsTutorial)
+			{
+				TodoLogger.Log(0, "init from Tutorial");
+				// L 415
+			}
+			else
+			{
+				if (!Database.Instance.gameSetup.musicInfo.isFreeMode)
+				{
+					TodoLogger.Log(0, "init from story mode");
+					// L529
+				}
+				if(!Database.Instance.gameResult.IsClear())
+				{
+					TodoLogger.Log(0, "init from free mode fail");
+					// L558
+				}
+				// L746
+				info.isDivaActive = true;
+				if(Database.Instance.gameSetup.musicInfo.IsMvMode)
+				{
+					info.category = SceneGroupCategory.SIMULATIONLIVE_RESULT;
+					info.nextName = TransitionList.Type.SIMULATIONLIVE_RESULT;
+					info.uniqueId = TransitionUniqueId.SIMULATIONLIVERESULT;
+					return;
+				}
+			}
+			info.category = SceneGroupCategory.RESULT;
+			info.nextName = TransitionList.Type.RESULT;
+			info.uniqueId = TransitionUniqueId.RESULT;
 
 		}
 
@@ -439,21 +470,64 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30C08 Offset: 0xB30C08 VA: 0xB30C08
 		private IEnumerator CoroutineDivaModel(UnityAction finish)
 		{
-			// private DivaResource.MenuFacialType <divaFacialType>5__2; // 0x18
-			// private int <divaId>5__3; // 0x1C
-			// private int <modelId>5__4; // 0x20
-			// private int <colorId>5__5; // 0x24
-			// private bool <isResult>5__6; // 0x28
+			DivaResource.MenuFacialType divaFacialType; // 0x18
+			int divaId; // 0x1C
+			int modelId; // 0x20
+			int colorId; // 0x24
+			bool isResult; // 0x28
+
 			//0xB3980C
-			TodoLogger.Log(0, "TODO");
-			finish();
-			yield break;
+			divaFacialType = DivaResource.MenuFacialType.Home;
+			FFHPBEPOMAK_DivaInfo divaInfo = GameManager.Instance.GetHomeDiva();
+			divaId = divaInfo.AHHJLDLAPAN_DivaId;
+			modelId = divaInfo.EOJIGHEFIAA_GetHomeDivaPrismCostumeId();
+			colorId = divaInfo.LHGJHJLGPBE_GetHomeDivaColorId();
+			isResult = false;
+			if(GameManager.Instance.IsTutorial)
+			{
+				TodoLogger.Log(0, "Tutorial");
+			}
+			else
+			{
+				isResult = true;
+				if(MainSceneBase.prevSceneName != "RhythmGame" && 
+					MainSceneBase.prevSceneName != "RhythmGameSkip")
+				{
+					isResult = false;
+				}
+			}
+			isResult &= Database.Instance.gameResult.IsClear();
+			isResult &= Database.Instance.gameSetup.musicInfo.isFreeMode;
+			while(divaManager == null)
+				yield return null;
+			if(!isResult)
+			{
+				if(!divaManager.Compare(divaId, modelId, colorId))
+				{
+					divaManager.Release(true);
+				}
+			}
+			else
+			{
+				divaFacialType = DivaResource.MenuFacialType.Result;
+				if(!GameManager.Instance.IsTutorial)
+				{
+					divaId = Database.Instance.gameSetup.teamInfo.divaList[0].prismDivaId;
+					modelId = Database.Instance.gameSetup.teamInfo.divaList[0].prismCostumeModelId;
+					colorId = Database.Instance.gameSetup.teamInfo.divaList[0].prismCostumeColorId;
+				}
+			}
+			divaManager.Load(divaId, modelId, colorId, divaFacialType, true);
+			while(divaManager.IsLoading)
+				yield return null;
+			if(finish != null)
+				finish();
 		}
 
 		// // RVA: 0xB30CD0 Offset: 0xB30CD0 VA: 0xB30CD0
 		public void SetActiveDivaModel(bool active, bool isIdle = true)
 		{
-			TodoLogger.Log(0, "SetActiveDivaModel");
+			divaManager.SetActive(active, isIdle);
 		}
 
 		// // RVA: 0xB30D0C Offset: 0xB30D0C VA: 0xB30D0C
@@ -462,7 +536,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB30D6C Offset: 0xB30D6C VA: 0xB30D6C Slot: 14
 		protected override bool DoUpdateLeave()
 		{
-			TodoLogger.Log(0, "DoUpdateLeave");
+			DivaIconCache.Clear();
+			BgTextureCache.Clear();
+			ItemTextureCache.Clear();
+			MusicJacketTextureCache.Clear();
+			m_menuTransitionControl.MenuFooter.Release();
 			MenuUpdater.updater = null;
 			return true;
 		}
@@ -644,7 +722,10 @@ namespace XeApp.Game.Menu
 		// public TransitionRoot GetCurrentTransitionRoot() { }
 
 		// // RVA: 0xB32234 Offset: 0xB32234 VA: 0xB32234
-		// public TransitionInfo GetNextScene() { }
+		public TransitionInfo GetNextScene()
+		{
+			return m_menuTransitionControl.GetNextScene();
+		}
 
 		// // RVA: 0xB32260 Offset: 0xB32260 VA: 0xB32260
 		// public bool IsTransition() { }
@@ -704,7 +785,10 @@ namespace XeApp.Game.Menu
 		// public void ShowOfferNotice(UnityAction pushAction) { }
 
 		// // RVA: 0xB327F0 Offset: 0xB327F0 VA: 0xB327F0
-		// public void ShowDivaStatusPopupWindow(FFHPBEPOMAK diva, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isChangeScene = True, bool isCloseOnly = False, int divaSlotNumber = -1, bool isGoDiva = False) { }
+		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK_DivaInfo diva, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isChangeScene = true, bool isCloseOnly = false, int divaSlotNumber = -1, bool isGoDiva = false)
+		{
+			TodoLogger.Log(0, "ShowDivaStatusPopupWindow");
+		}
 
 		// // RVA: 0xB32898 Offset: 0xB32898 VA: 0xB32898
 		// public void ShowFriendDivaStatusPopupWindow(EAJCBFGKKFA friendData, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isChangeScene = False) { }
@@ -713,7 +797,11 @@ namespace XeApp.Game.Menu
 		// public void ShowSceneStatusPopupWindow(GCIJNCFDNON scene, DFKGGBMFFGB playerData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isFriend = False, bool isReward = False, SceneStatusParam.PageSave pageSave = 1, bool isDisableZoom = False) { }
 
 		// // RVA: 0xB32A3C Offset: 0xB32A3C VA: 0xB32A3C
-		// public void TryShowPopupWindow(TransitionRoot root, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName, Action closeCallBack) { }
+		public void TryShowPopupWindow(TransitionRoot root, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName, Action closeCallBack)
+		{
+			closeCallBack();
+			TodoLogger.Log(0, "TryShowPopupWindow");
+		}
 
 		// // RVA: 0xB32BA0 Offset: 0xB32BA0 VA: 0xB32BA0
 		// public void ShowSortWindow(PopupSortMenu.SortPlace place, UnityAction<PopupSortMenu> okCallBack, Action endCallBack) { }
@@ -781,11 +869,19 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C80A4 Offset: 0x6C80A4 VA: 0x6C80A4
 		// // RVA: 0xB34E68 Offset: 0xB34E68 VA: 0xB34E68
-		// public IEnumerator ShowReceiveRewardWindowCoroutine() { }
+		public IEnumerator ShowReceiveRewardWindowCoroutine()
+		{
+			TodoLogger.Log(0, "ShowReceiveRewardWindowCoroutine");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C811C Offset: 0x6C811C VA: 0x6C811C
 		// // RVA: 0xB34F14 Offset: 0xB34F14 VA: 0xB34F14
-		// public IEnumerator ShowMissionStepupWindowCoroutine() { }
+		public IEnumerator ShowMissionStepupWindowCoroutine()
+		{
+			TodoLogger.Log(0, "ShowMissionStepupWindowCoroutine");
+			yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C8194 Offset: 0x6C8194 VA: 0x6C8194
 		// // RVA: 0xB34FC0 Offset: 0xB34FC0 VA: 0xB34FC0
@@ -809,7 +905,23 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB353C4 Offset: 0xB353C4 VA: 0xB353C4
-		// public static void Save(IMCBBOAFION onSuccess, DJBHIFLHJLK onError) { }
+		public static void Save(IMCBBOAFION onSuccess, DJBHIFLHJLK onError)
+		{
+			if(!GameManager.Instance.IsTutorial)
+			{
+				CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF(() =>
+				{
+					//0xB38814
+					JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+					if (onSuccess != null)
+						onSuccess();
+				}, () =>
+				{
+					//0xB3885C
+					TodoLogger.Log(0, "Save error");
+				}, null);
+			}
+		}
 
 		// // RVA: 0xB355A0 Offset: 0xB355A0 VA: 0xB355A0
 		private void ChangeGroupCategory(SceneGroupCategory prevCategory, SceneGroupCategory nextCategory)
@@ -877,10 +989,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB37B00 Offset: 0xB37B00 VA: 0xB37B00
-		// public int GetInputDisableCount() { }
+		public int GetInputDisableCount()
+		{
+			return m_inputDisableCount;
+		}
 
 		// // RVA: 0xB37B08 Offset: 0xB37B08 VA: 0xB37B08
-		// public int GetRaycastDisableCount() { }
+		public int GetRaycastDisableCount()
+		{
+			return m_raycastDisableCount;
+		}
 
 		// // RVA: 0xB37B10 Offset: 0xB37B10 VA: 0xB37B10
 		// public Vector3 GetDivaCameraRotByScene(TransitionList.Type type) { }

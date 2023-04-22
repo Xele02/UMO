@@ -31,8 +31,18 @@ public class LGDNAJACFHI
 	public bool NLHLBKDNGFJ; // 0x65
 	public int OJIMENABACH; // 0x68
 	public string JMEMGIPGGIK; // 0x6C
-	public static string[] GJHJBLCPPKE = new string[10] {"StringLiteral_12326", "StringLiteral_12327", "StringLiteral_12328", "StringLiteral_12329", "StringLiteral_12330",
-														"StringLiteral_12331", "StringLiteral_12332", "StringLiteral_12333", "StringLiteral_12334", "StringLiteral_12335"}; // 0x4
+	public static string[] GJHJBLCPPKE = new string[10] {
+		JpStringLiterals.StringLiteral_12326,
+		JpStringLiterals.StringLiteral_12327,
+		JpStringLiterals.StringLiteral_12328,
+		JpStringLiterals.StringLiteral_12329,
+		JpStringLiterals.StringLiteral_12330,
+		JpStringLiterals.StringLiteral_12331,
+		JpStringLiterals.StringLiteral_12332,
+		JpStringLiterals.StringLiteral_12333,
+		JpStringLiterals.StringLiteral_12334,
+		JpStringLiterals.StringLiteral_12335
+	}; // 0x4
 	public static int[] MKJBOPJEAHN = new int[10] {1, 2, 2, 3, 3, 3, 3, 3, 3, 3}; // 0x8
 
 	// // RVA: 0xD725A8 Offset: 0xD725A8 VA: 0xD725A8

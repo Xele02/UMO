@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Obsolete("Use HHEIANIHCNH_RequestPlayerStatus", true)]
 public class HHEIANIHCNH { }
 public class HHEIANIHCNH_RequestPlayerStatus : CACGCMBKHDI_Request
 {
@@ -8,7 +9,7 @@ public class HHEIANIHCNH_RequestPlayerStatus : CACGCMBKHDI_Request
 	// // RVA: 0x17574E0 Offset: 0x17574E0 VA: 0x17574E0 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        EBGACDGNCAA = SakashoUserToken.GetPlayerStatus(this.DCKLDDCAJAP, this.MEOCKCJBDAD);
+        EBGACDGNCAA_CallContext = SakashoUserToken.GetPlayerStatus(this.DCKLDDCAJAP, this.MEOCKCJBDAD);
     }
 
 	// // RVA: 0x17575BC Offset: 0x17575BC VA: 0x17575BC Slot: 13

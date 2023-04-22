@@ -81,7 +81,7 @@ public class ILDKBCLAFPB
         public int LBIKGDHCICB_NotesSpeedAllApply; // 0xA0
         public int JJDENMHGOIH_NotesSpeedAutoRejected; // 0xA4
         public int KDNKCOAJGCM_NotesType = 1; // 0xA8
-        public int BBIOMNCILMC_HomeDivaId = 1; // 0xAC // Hack default init diva id for new save
+        public int BBIOMNCILMC_HomeDivaId; // 0xAC
         public bool GDLAPBKCBFP_IsHomeDivaWindow = true; // 0xB0
         public int BAGJHPGGCCI_PlayLogGraphType; // 0xB4
         public bool EDDMJEMOAGM_IsNotExcellentDisplaySetting = true; // 0xB8
@@ -100,7 +100,7 @@ public class ILDKBCLAFPB
         // public bool FFKLPNPJLMB { get; }
         // public bool FGJBDPOGMDI { get; }
         public bool CIGAPPFDFKL_Is3D { get { return DDHCLNFPNGK_RenderQuality != 2; } private set {} } //MNJOLLGPMPI 0x2035E64 JCCDFGOGFFA 0x2035E8C
-        public bool OOCKIFIHJJN { get { return DDHCLNFPNGK_RenderQuality == 2; } private set {} } //CKJIGBCJGMI 0x2035E78 IBPIBMKAMPE 0x2035E90
+        public bool OOCKIFIHJJN_Is2DMode { get { return DDHCLNFPNGK_RenderQuality == 2; } private set {} } //CKJIGBCJGMI 0x2035E78 IBPIBMKAMPE 0x2035E90
 
         // // RVA: 0x2035BF0 Offset: 0x2035BF0 VA: 0x2035BF0
         public void PBCBJAPONBF()
@@ -138,6 +138,7 @@ public class ILDKBCLAFPB
 			JJDENMHGOIH_NotesSpeedAutoRejected = 0;
 			KDNKCOAJGCM_NotesType = 1;
 			BBIOMNCILMC_HomeDivaId = 0;
+			BBIOMNCILMC_HomeDivaId = 1; // Hack UMO
 			ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode = false;
 			GEPLOFLHAOL_NeedInitRenderQuality = 0;
 			OJAJHIMOIEC_NoteOffset = 0;
@@ -155,13 +156,13 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035D68 Offset: 0x2035D68 VA: 0x2035D68
-        public bool KKBJCJNAGDB()
+        public bool KKBJCJNAGDB_CutInEnabled()
 		{
 			return NAGJLEIPAAC_Cutin == 0;
 		}
 
         // // RVA: 0x2035D7C Offset: 0x2035D7C VA: 0x2035D7C
-        public bool GLKGAOFHLPN()
+        public bool GLKGAOFHLPN_IsCutinEnabled()
         {
             return DADIPGPHLDD_EffectCutin == 0;
         }
@@ -235,7 +236,10 @@ public class ILDKBCLAFPB
         // public bool IFLFCLIHCOA() { }
 
         // // RVA: 0x2035F2C Offset: 0x2035F2C VA: 0x2035F2C
-        // public bool DCJKPJFIJKH() { }
+        public bool DCJKPJFIJKH_IsNotesSpeedAutoRejected()
+		{
+			return JJDENMHGOIH_NotesSpeedAutoRejected == 1;
+		}
 
         // // RVA: 0x2035F3C Offset: 0x2035F3C VA: 0x2035F3C
         public int HBCHGGNOOCD_GetNotesDisplayTiming(Difficulty.Type FEOKKEPAIBB, bool JCOJKAHFADL_IsLine6)
@@ -267,7 +271,7 @@ public class ILDKBCLAFPB
         // public float EBBAAPCHNKL() { }
 
         // // RVA: 0x20361A4 Offset: 0x20361A4 VA: 0x20361A4
-        public bool AOOKLMAPPLG()
+        public bool AOOKLMAPPLG_IsValkyrieModeEnabled()
 		{
 			return CDGKHMEOEMP_ValkyrieMode == 0;
 		}
@@ -502,6 +506,7 @@ public class ILDKBCLAFPB
 			JJDENMHGOIH_NotesSpeedAutoRejected = JsonUtil.GetInt(OBHAFLMHAKG, "notesSpeedAutoRejected", 0);
 			KDNKCOAJGCM_NotesType = JsonUtil.GetInt(OBHAFLMHAKG, "notesType", 1);
 			BBIOMNCILMC_HomeDivaId = JsonUtil.GetInt(OBHAFLMHAKG, "homeDivaId", 0);
+			BBIOMNCILMC_HomeDivaId = 1; // Hack UMO
 			GDLAPBKCBFP_IsHomeDivaWindow = JsonUtil.GetInt(OBHAFLMHAKG, "isHomeDivaWindow", 0) != 0;
 			BAGJHPGGCCI_PlayLogGraphType = JsonUtil.GetInt(OBHAFLMHAKG, "playLogGraphType", 0);
 			EDDMJEMOAGM_IsNotExcellentDisplaySetting = JsonUtil.GetInt(OBHAFLMHAKG, "isExcellentDisplaySetting", 0) == 0;
@@ -2100,7 +2105,10 @@ public class ILDKBCLAFPB
 		// public bool LANDKPMJEFB(int PPFNGGCBJKC) { }
 
 		// // RVA: 0x201BAF8 Offset: 0x201BAF8 VA: 0x201BAF8
-		// public void EDEDFDDIOKO(int PPFNGGCBJKC) { }
+		public void EDEDFDDIOKO(int PPFNGGCBJKC)
+		{
+			KGMLFAFPOKP[PPFNGGCBJKC >> 5] |= 1 << (PPFNGGCBJKC & 0x1f);
+		}
 
 		// // RVA: 0x2025554 Offset: 0x2025554 VA: 0x2025554
 		// public void GIBNLEBILNO(int PPFNGGCBJKC) { }
@@ -4757,7 +4765,8 @@ public class FLGABCAPFEC<T> // TypeDefIndex: 7782
 	//*/
 }
 
-// Namespace: 
+[System.Obsolete("Use DJJGOGFPCEA_Home", true)]
+public class DJJGOGFPCEA { }
 public class DJJGOGFPCEA_Home : FLGABCAPFEC<long>
 {
 	public enum MBLAHPBHIIA

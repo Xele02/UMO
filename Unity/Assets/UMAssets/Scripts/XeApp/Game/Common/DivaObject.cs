@@ -152,7 +152,20 @@ namespace XeApp.Game.Common
 		//public void OverrideAnimations(List<DivaResource.MotionOverrideClipKeyResource> resource) { }
 
 		//// RVA: 0x1BF3E4C Offset: 0x1BF3E4C VA: 0x1BF3E4C
-		//public void OverrideAnimations(List<DivaResource.MotionOverrideSingleResource> resource) { }
+		public void OverrideAnimations(List<DivaResource.MotionOverrideSingleResource> resource)
+		{
+			for(int i = 0; i < resource.Count; i++)
+			{
+				if(resource[i].target == DivaResource.MotionOverrideSingleResource.Target.Body)
+				{
+					overrideController[resource[i].name] = resource[i].clip;
+				}
+				else
+				{
+					facialBlendAnimMediator.OverrideAnimations(resource[i]);
+				}
+			}
+		}
 
 		//// RVA: 0x1BF4048 Offset: 0x1BF4048 VA: 0x1BF4048
 		//public void OverrideAnimation(ref DivaResource.MotionOverrideClipKeyResource resource) { }
@@ -255,13 +268,34 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF4288 Offset: 0x1BF4288 VA: 0x1BF4288
-		//public void VisibleRendererComponent(bool enable) { }
+		public void VisibleRendererComponent(bool enable)
+		{
+			animator.enabled = enable;
+			foreach(var r in renderers)
+			{
+				r.enabled = enable;
+			}
+			adjustScaler.enabled = enable;
+			SetActiveEffect(enable);
+			SetActiveWind(enable);
+		}
 
 		//// RVA: 0x1BF466C Offset: 0x1BF466C VA: 0x1BF466C
 		//public void ChangeMaterial(DivaResource outerResource, int colorId) { }
 
 		//// RVA: 0x1BF4670 Offset: 0x1BF4670 VA: 0x1BF4670
-		//public void SetEnableRenderer(bool enable) { }
+		public void SetEnableRenderer(bool enable)
+		{
+			foreach(var r in renderers)
+			{
+				if(r != null)
+				{
+					r.enabled = enable;
+				}
+			}
+			SetActiveEffect(enable);
+			SetActiveWind(enable);
+		}
 
 		//// RVA: 0x1BF4828 Offset: 0x1BF4828 VA: 0x1BF4828
 		public void Release()
@@ -517,16 +551,53 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF5C50 Offset: 0x1BF5C50 VA: 0x1BF5C50
-		//protected void Anim_Play(string stateName, double time = 0) { }
+		protected void Anim_Play(string stateName, double time = 0)
+		{
+			animator.Play(stateName, 0);
+			facialBlendAnimMediator.selfAnimator.Play(stateName, 0);
+			facialBlendAnimMediator.selfAnimator.Play(stateName, 1);
+			if(m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+			{
+				m_boneSpringAnim.animator.Play(stateName);
+			}
+			if(mikeStandObject != null)
+			{
+				mikeStandObject.animator.Play(stateName, 0);
+			}
+		}
 
 		//// RVA: 0x1BF5ED0 Offset: 0x1BF5ED0 VA: 0x1BF5ED0
 		//protected void Anim_CrossFadeInFixedTime(string stateName, float fixedTime = 0) { }
 
 		//// RVA: 0x1BF6188 Offset: 0x1BF6188 VA: 0x1BF6188
-		//protected void Anim_SetBool(string name, bool value) { }
+		protected void Anim_SetBool(string name, bool value)
+		{
+			animator.SetBool(name, value);
+			facialBlendAnimMediator.selfAnimator.SetBool(name, value);
+			if (m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+			{
+				m_boneSpringAnim.animator.SetBool(name, value);
+			}
+			if (mikeStandObject != null)
+			{
+				mikeStandObject.animator.SetBool(name, value);
+			}
+		}
 
 		//// RVA: 0x1BF63C8 Offset: 0x1BF63C8 VA: 0x1BF63C8
-		//protected void Anim_SetInteger(string name, int value) { }
+		protected void Anim_SetInteger(string name, int value)
+		{
+			animator.SetInteger(name, value);
+			facialBlendAnimMediator.selfAnimator.SetInteger(name, value);
+			if(m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+			{
+				m_boneSpringAnim.animator.SetInteger(name, value);
+			}
+			if(mikeStandObject != null)
+			{
+				mikeStandObject.animator.SetInteger(name, value);
+			}
+		}
 
 		//// RVA: 0x1BF6608 Offset: 0x1BF6608 VA: 0x1BF6608
 		//protected void Anim_SetTrigger(string name) { }
@@ -627,7 +698,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF74CC Offset: 0x1BF74CC VA: 0x1BF74CC
-		//public bool GetEnableEffect() { }
+		public bool GetEnableEffect()
+		{
+			return effectEnable;
+		}
 
 		//// RVA: 0x1BF74D4 Offset: 0x1BF74D4 VA: 0x1BF74D4 Slot: 9
 		protected virtual void SetupWind(GameObject a_prefab_wind, DivaResource.BoneSpringResource a_resource)
@@ -690,6 +764,9 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF7834 Offset: 0x1BF7834 VA: 0x1BF7834
-		//public bool GetEnableWind() { }
+		public bool GetEnableWind()
+		{
+			return windEnable;
+		}
 	}
 }

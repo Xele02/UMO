@@ -1,4 +1,6 @@
 
+[System.Obsolete("Use OBOKMHHMOIL_ServerInfo", true)]
+public class OBOKMHHMOIL { }
 public class OBOKMHHMOIL_ServerInfo
 {
 	public string EBCFHFIOHBN_ServerCurrentMasterRevision; // 0x8

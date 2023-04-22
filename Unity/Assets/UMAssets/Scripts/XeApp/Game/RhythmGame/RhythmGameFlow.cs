@@ -230,7 +230,7 @@ namespace XeApp.Game.RhythmGame
 			p.KHEKNNFCAOI_Init(teamInfo.prismValkyrieId, 0, 0);
 
 			List<MusicDirectionParamBase.ConditionSetting> settingList = new List<MusicDirectionParamBase.ConditionSetting>();
-			MusicDirectionParamBase.ConditionSetting cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[0].prismDivaId, teamInfo.danceDivaList[0].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC_PilotId, teamInfo.danceDivaList[0].positionId);
+			MusicDirectionParamBase.ConditionSetting cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[0].prismDivaId, teamInfo.danceDivaList[0].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId, teamInfo.danceDivaList[0].positionId);
 			settingList.Add(cond);
 			int cnt = 0;
 			for(int i = 0; i < 4; i++)
@@ -244,7 +244,7 @@ namespace XeApp.Game.RhythmGame
 					}
 					else
 					{
-						cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[i + 1].prismDivaId, teamInfo.danceDivaList[i + 1].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE.PFGJJLGLPAC_PilotId, teamInfo.danceDivaList[i + 1].positionId);
+						cond = new MusicDirectionParamBase.ConditionSetting(teamInfo.danceDivaList[i + 1].prismDivaId, teamInfo.danceDivaList[i + 1].prismCostumeModelId, teamInfo.prismValkyrieId, p.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId, teamInfo.danceDivaList[i + 1].positionId);
 						settingList.Add(cond);
 					}
 				}
@@ -292,11 +292,11 @@ namespace XeApp.Game.RhythmGame
 			int musicId = music.prismMusicId;
 			EONOEHOKBEB_Music musicInfoDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
 			int wavId = musicInfoDb.KKPAHLMJKIH_WavId;
-			BJPLLEBHAGO divaInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
+			BJPLLEBHAGO_DivaInfo divaInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
 			List<int> prime = new List<int>();
 			for (int i = 0; i < Database.Instance.gameSetup.musicInfo.onStageDivaNum; i++)
 			{
-				prime.Add(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK(Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId).IDDHKOEFJFB);
+				prime.Add(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(Database.Instance.gameSetup.teamInfo.danceDivaList[i].prismDivaId).IDDHKOEFJFB_BodyId);
 			}
 			int stageId = 0;
 			if (music.isFreeMode)
@@ -310,10 +310,10 @@ namespace XeApp.Game.RhythmGame
 
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
 			p.KHEKNNFCAOI_Init(team.prismValkyrieId, 0, 0);
-			int pilotId = p.OPBPKNHIPPE.PFGJJLGLPAC_PilotId;
-			int intro = musicInfoDb.EECJONKNHNK_Vli;
-			int introSky = musicInfoDb.MNEFKDDCEHE_Vlis;
-			int battle = musicInfoDb.DMKCGNMOCCH_Vlb;
+			int pilotId = p.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId;
+			int intro = musicInfoDb.EECJONKNHNK_ValkyrieIntro;
+			int introSky = musicInfoDb.MNEFKDDCEHE_ValkyrieIntroSky;
+			int battle = musicInfoDb.DMKCGNMOCCH_ValkyrieBattle;
 
 			isBgmSoundLoaded = false;
 			gamePlayer.bgmPlayer.RequestChangeCueSheet(wavId, () =>
@@ -368,10 +368,10 @@ namespace XeApp.Game.RhythmGame
 			int enemyId = music.enemyInfo.EJNIMIAPJFJ_Id;
 			if(rhythmGameResource.paramResource.m_paramEnemy.Check(Database.Instance.gameSetup, ref enemyId))
 			{
-				int prevLS = music.enemyInfo.EDLACELKJIK_LS;
+				int prevLS = music.enemyInfo.EDLACELKJIK_LiveSkill;
 				int prevCS = music.enemyInfo.NJOPIPNGANO_CS;
 				music.enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[enemyId - 1]);
-				music.enemyInfo.EDLACELKJIK_LS = prevLS;
+				music.enemyInfo.EDLACELKJIK_LiveSkill = prevLS;
 				music.enemyInfo.NJOPIPNGANO_CS = prevCS;
 			}
 			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)

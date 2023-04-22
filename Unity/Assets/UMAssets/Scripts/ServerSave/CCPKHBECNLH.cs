@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use CCPKHBECNLH_EventBattle", true)]
 public class CCPKHBECNLH { }
 public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_ServerSaveBlock
 {

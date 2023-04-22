@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use GEGHOCKCKKA_LimitedCompoItem", true)]
 public class GEGHOCKCKKA { }
 public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 {

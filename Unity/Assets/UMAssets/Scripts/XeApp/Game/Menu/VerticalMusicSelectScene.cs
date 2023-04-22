@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -56,7 +57,7 @@ namespace XeApp.Game.Menu
 		private MusicJecketScrollView m_jacketScroll; // 0x110
 		private VerticalMusicSelectMusicFilterButton m_filterButton; // 0x114
 		private VerticalMusicSelectSortOrder m_orderButton; // 0x118
-		// private LayoutEventGoDivaFeverLimit m_feverLimit; // 0x11C
+		private LayoutEventGoDivaFeverLimit m_feverLimit; // 0x11C
 		private static readonly int newSeriesBgIdDiff = 6; // 0x8
 		private static readonly int eventCategoryId = 5; // 0xC
 		private static readonly int[] CategoryToNewSeriesBgId = new int[7] { -1, newSeriesBgIdDiff+4, newSeriesBgIdDiff+3, newSeriesBgIdDiff+2, newSeriesBgIdDiff+1, newSeriesBgIdDiff+eventCategoryId, newSeriesBgIdDiff+6 }; // 0x10
@@ -218,17 +219,17 @@ namespace XeApp.Game.Menu
 			m_musicList.MusicScrollView.CenterItem.OnMusicInfoButtonClickListener = () =>
 			{
 				//0xBF01A0
-				TodoLogger.Log(0, "OnMusicInfoButtonClickListener");
+				TodoLogger.LogNotImplemented("OnMusicInfoButtonClickListener");
 			};
 			m_musicList.MusicScrollView.CenterItem.OnEnemyInfoButtonClickListener = () =>
 			{
 				//0xBF01F0
-				TodoLogger.Log(0, "OnEnemyInfoButtonClickListener");
+				TodoLogger.LogNotImplemented("OnEnemyInfoButtonClickListener");
 			};
 			m_musicList.MusicScrollView.CenterItem.OnRankingButtonClickListener = () =>
 			{
 				//0xBF0240
-				TodoLogger.Log(0, "OnRankingButtonClickListener");
+				TodoLogger.LogNotImplemented("OnRankingButtonClickListener");
 			};
 			m_musicList.MusicScrollView.OnScrollStartEvent.RemoveAllListeners();
 			m_musicList.MusicScrollView.OnScrollStartEvent.AddListener(() =>
@@ -245,28 +246,28 @@ namespace XeApp.Game.Menu
 			m_musicDetail.OnUnitButtonClickListener = (int index) =>
 			{
 				//0xBF02CC
-				SoundManager.Instance.sePlayerBoot.Play(3);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				m_musicSelectUISapporter.SetUnitButton(index, selectMusicData);
 			};
 			m_musicDetail.OnMusicBookMarkButtonClickListener = () =>
 			{
 				//0xBF02D0
-				TodoLogger.Log(0, "OnMusicBookMarkButtonClickListener");
+				TodoLogger.LogNotImplemented("OnMusicBookMarkButtonClickListener");
 			};
 			m_musicDetail.OnJacketButtonClickListener = () =>
 			{
 				//0xBF036C
-				TodoLogger.Log(0, "OnJacketButtonClickListener");
+				TodoLogger.LogNotImplemented("OnJacketButtonClickListener");
 			};
 			m_musicDetail.OnEventDetailClickListener = () =>
 			{
 				//0xBF0370
-				TodoLogger.Log(0, "OnEventDetailClickListener");
+				TodoLogger.LogNotImplemented("OnEventDetailClickListener");
 			};
 			m_musicDetail.OnEventRewardClickListener = () =>
 			{
 				//0xBF0378
-				TodoLogger.Log(0, "OnEventRewardClickListener");
+				TodoLogger.LogNotImplemented("OnEventRewardClickListener");
 			};
 			m_difficultyButtonGroup.OnButtonClickListener = (int index) =>
 			{
@@ -276,7 +277,7 @@ namespace XeApp.Game.Menu
 			m_filterButton.OnClickButtonListener = () =>
 			{
 				//0xBF0390
-				TodoLogger.Log(0, "m_filterButton OnClickButtonListener");
+				TodoLogger.LogNotImplemented("m_filterButton OnClickButtonListener");
 			};
 			m_seriesButtonGroup.OnButtonClickListener = (int index) =>
 			{
@@ -305,12 +306,12 @@ namespace XeApp.Game.Menu
 			m_utaRate.onClickButton = () =>
 			{
 				//0xBF0554
-				TodoLogger.Log(0, "m_utaRate onClickButton");
+				TodoLogger.LogNotImplemented("m_utaRate onClickButton");
 			};
 			m_eventBanner.OnButtonClickListener = () =>
 			{
 				//0xBF05C0
-				TodoLogger.Log(0, "m_eventBanner OnButtonClickListener");
+				TodoLogger.LogNotImplemented("m_eventBanner OnButtonClickListener");
 			};
 			m_choiceMusicTab.OnButtonClickListener = (bool index) =>
 			{
@@ -320,23 +321,23 @@ namespace XeApp.Game.Menu
 			m_orderButton.OnClickButtonListener = () =>
 			{
 				//0xBF0698
-				TodoLogger.Log(0, "m_orderButton OnClickButtonListener");
+				TodoLogger.LogNotImplemented("m_orderButton OnClickButtonListener");
 			};
 			m_jacketScroll.OnClickJacketButtonListener = (int freeMusicId) =>
 			{
 				//0xBF06B8
-				TodoLogger.Log(0, "m_jacketScroll OnClickJacketButtonListener");
+				TodoLogger.LogNotImplemented("m_jacketScroll OnClickJacketButtonListener");
 			};
 			m_jacketScroll.OnClickCloseButtonListener = () =>
 			{
 				//0xBF06BC
-				TodoLogger.Log(0, "m_jacketScroll OnClickCloseButtonListener");
+				TodoLogger.LogNotImplemented("m_jacketScroll OnClickCloseButtonListener");
 			};
 			m_jacketScroll.scrollList.OnUpdateItem.RemoveAllListeners();
 			m_jacketScroll.scrollList.OnUpdateItem.AddListener((int index, SwapScrollListContent content) =>
 			{
 				//0xBF06C0
-				TodoLogger.Log(0, "m_jacketScroll scrollList OnUpdateItem");
+				TodoLogger.LogNotImplemented("m_jacketScroll scrollList OnUpdateItem");
 			});
 			m_musicList.MusicScrollView.ScrollEnable(true);
 			ApplyCommonInfo();
@@ -966,7 +967,30 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE97F0 Offset: 0xBE97F0 VA: 0xBE97F0
 		private void ApplyEventInfo()
 		{
-			TodoLogger.Log(0, "ApplyEventInfo");
+			m_eventId = 0;
+			m_eventIndex = -1;
+			m_eventTicketId = 0;
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			m_eventBanner.SetType(VerticalMusicSelectEventBanner.ButtonType.Disable);
+			m_eventItem.SetEnable(false);
+			IKDICBBFBMI_EventBase eventInfo = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ);
+			if(eventInfo != null)
+			{
+				TodoLogger.Log(0, "ApplyEventInfo");
+			}
+			if(m_eventCtrl != null)
+			{
+				TodoLogger.Log(0, "ApplyEventInfo");
+			}
+			if(m_feverLimit != null)
+			{
+				m_feverLimit.SetOnOff(false);
+			}
+			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI);
+			if(m_scoreEventCtrl != null)
+			{
+				TodoLogger.Log(0, "ApplyEventInfo");
+			}
 		}
 
 		// // RVA: 0xBEA28C Offset: 0xBEA28C VA: 0xBEA28C
@@ -979,8 +1003,8 @@ namespace XeApp.Game.Menu
 			m_eventBanner.ChangeEventBanner(m_eventId);
 			GHLGEECLCMH data = new GHLGEECLCMH();
 			data.KHEKNNFCAOI(null, null);
-			m_musicSelectUISapporter.SetUtaRateIcon(data.LLNHMMBFPMA);
-			m_musicSelectUISapporter.SetUtaRateRating(data.ECMFBEHEGEH);
+			m_musicSelectUISapporter.SetUtaRateIcon(data.LLNHMMBFPMA_ScoreRatingRanking);
+			m_musicSelectUISapporter.SetUtaRateRating(data.ECMFBEHEGEH_UtaRateTotal);
 			SetMusicTab(m_musicTab);
 		}
 
@@ -1187,7 +1211,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEC314 Offset: 0xBEC314 VA: 0xBEC314 Slot: 57
 		protected override void OnClickDifficultyButton(int index)
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_musicSelectUISapporter.SetDiffity((Difficulty.Type)index);
 			m_musicList.ChangeDifficult(index);
 			OnChangeFilter();
@@ -1196,7 +1220,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEC918 Offset: 0xBEC918 VA: 0xBEC918
 		private void OnClickSeriesButton(int index)
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_musicSelectUISapporter.SetSeries((MusicSelectConsts.SeriesType)index);
 			OnChangeFilter();
 		}
@@ -1233,7 +1257,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBECBEC Offset: 0xBECBEC VA: 0xBECBEC
 		private void OnClickLine6Button()
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			int selectFreeMusicId = 0;
 			OHCAABOMEOF.KGOGMKMBCPP_EventType selectEventCategory = 0;
 			if(selectMusicData != null)
@@ -1280,7 +1304,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBED05C Offset: 0xBED05C VA: 0xBED05C
 		private void OnClickMusicTabButton(bool isNormal)
 		{
-			SoundManager.Instance.sePlayerBoot.Play(3);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_musicTab = isNormal ? VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal : VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
 			SetMusicTab(m_musicTab);
 			int songId;
@@ -1521,7 +1545,7 @@ namespace XeApp.Game.Menu
 		{
 			if(filterBit != 0)
 			{
-				FPGEMAIAMBF data = new FPGEMAIAMBF();
+				FPGEMAIAMBF_RewardData data = new FPGEMAIAMBF_RewardData();
 				data.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, (int)difficulty, isLine6Mode, musicData.MNNHHJBBICA_EventType);
 				if((filterBit & 1) != 0)
 				{

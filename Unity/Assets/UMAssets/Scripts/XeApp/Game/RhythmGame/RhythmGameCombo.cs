@@ -9,7 +9,13 @@ namespace XeApp.Game.RhythmGame
 		public int record { get { return record_.DNJEJEANJGL_Value; } set { record_.DNJEJEANJGL_Value = value; } } //0xDC3B18 0xDC3B44
 
 		//// RVA: 0xDC3B78 Offset: 0xDC3B78 VA: 0xDC3B78
-		//public FENCAJJBLBH CheckFalisification() { }
+		public FENCAJJBLBH CheckFalisification()
+		{
+			FENCAJJBLBH res = current_.NMNHBJIAPGG;
+			if (res == null)
+				res = record_.NMNHBJIAPGG;
+			return res;
+		}
 
 		//// RVA: 0xDC3BC0 Offset: 0xDC3BC0 VA: 0xDC3BC0
 		public void Reset()

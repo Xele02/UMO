@@ -220,7 +220,7 @@ namespace XeApp.Game.Common
 				yield return new WaitWhile(() =>
 				{
 					//0x13975B0
-					return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB;
+					return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
 				});
 			}
 			for(int i = 0; i < cueSheetList.Length; i++)

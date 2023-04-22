@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use DIHHCBACKGG_DbSection", true)]
 public abstract class DIHHCBACKGG { }
 public abstract class DIHHCBACKGG_DbSection
 {
@@ -54,12 +55,11 @@ public abstract class DIHHCBACKGG_DbSection
 	// // RVA: 0x198B6F0 Offset: 0x198B6F0 VA: 0x198B6F0 Slot: 11
 	public virtual uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(0, "TODO");
 		return 0;
 	}
 
 	// // RVA: 0x1989E1C Offset: 0x1989E1C VA: 0x1989E1C
-	public int JKAECBCNHAN(int IJEKNCDIIAE_AssetMasterVersion, int PLALNIIBLOF_MasterEnable, int DBHPPMPNCKF = 0)
+	public int JKAECBCNHAN_IsEnabled(int IJEKNCDIIAE_AssetMasterVersion, int PLALNIIBLOF_MasterEnable, int DBHPPMPNCKF = 0)
 	{
 		if(DBHPPMPNCKF != 0)
 		{

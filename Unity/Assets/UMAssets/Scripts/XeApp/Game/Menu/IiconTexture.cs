@@ -13,7 +13,7 @@ namespace XeApp.Game.Menu
         ulong CreateCount { get; set; } // Slot: 6  Slot: 7
 
         // // RVA: -1 Offset: -1 Slot: 8
-        // public abstract void Release();
+        void Release();
 
         // // RVA: -1 Offset: -1 Slot: 9
         void Set(RawImageEx image);

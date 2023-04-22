@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use PMDCIJMMNGK_GachaTicket", true)]
 public class PMDCIJMMNGK { }
 public class PMDCIJMMNGK_GachaTicket : DIHHCBACKGG_DbSection
 {

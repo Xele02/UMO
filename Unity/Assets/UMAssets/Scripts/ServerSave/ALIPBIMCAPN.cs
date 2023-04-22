@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use ALIPBIMCAPN_EventBoxGacha", true)]
 public class ALIPBIMCAPN { }
 public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 {

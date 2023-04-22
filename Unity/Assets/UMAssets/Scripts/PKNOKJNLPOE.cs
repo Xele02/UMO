@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use PKNOKJNLPOE_EventRaid", true)]
 public class PKNOKJNLPOE { }
 public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 {

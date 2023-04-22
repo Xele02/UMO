@@ -94,7 +94,10 @@ namespace XeSys.Gfx
 		// public void SetMaskRect(Rect rect) { }
 
 		// // RVA: 0x1EE3160 Offset: 0x1EE3160 VA: 0x1EE3160
-		// public void SetMaskFromView(ViewBase view) { }
+		public void SetMaskFromView(ViewBase view)
+		{
+			return;
+		}
 
 		// RVA: 0x1EE3164 Offset: 0x1EE3164 VA: 0x1EE3164 Slot: 10
 		public override void CopyTo(ViewBase view)
@@ -133,7 +136,10 @@ namespace XeSys.Gfx
 		// public override void SetActiveGameObject(bool flag) { }
 
 		// // RVA: 0x1EE39FC Offset: 0x1EE39FC VA: 0x1EE39FC
-		// public GameObject GetTextGameObject() { }
+		public GameObject GetTextGameObject()
+		{
+			return obj;
+		}
 
 		// RVA: 0x1EE3A04 Offset: 0x1EE3A04 VA: 0x1EE3A04 Slot: 15
 		// public override void Serialize(List<SerializableView> list, int parent) { }

@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use AHHPBMBBCFM_DecoPrivateSet", true)]
 public class AHHPBMBBCFM { }
 public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 {

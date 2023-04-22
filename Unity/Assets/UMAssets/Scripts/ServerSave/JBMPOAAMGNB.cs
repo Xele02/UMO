@@ -1,11 +1,12 @@
 
+[System.Obsolete("Use JBMPOAAMGNB_Base", true)]
 public class JBMPOAAMGNB { }
 public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 {
 	private const int ECFEMKGFDCE = 2;
 	private const int JDNKJIFMONK = 1;
-	private static string IMHFIDMLLNI = "StringLiteral_9806"; // 0x0
-	private static string NBPICMBNPPB = "StringLiteral_9807"; // 0x4
+	private static string IMHFIDMLLNI = JpStringLiterals.StringLiteral_9806; // 0x0
+	private static string NBPICMBNPPB = JpStringLiterals.StringLiteral_9807; // 0x4
 	public static bool NICIAENCMEG = false; // 0x8
 
 	public int LLNDMKBBNIJ_Version { get; set; } // 0x24 BGOALFDCFBL OHMCGADLNCA KJNHDFEGEGE

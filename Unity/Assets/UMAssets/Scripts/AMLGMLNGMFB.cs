@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use AMLGMLNGMFB_EventAprilFool", true)]
 public class AMLGMLNGMFB { }
 public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 {

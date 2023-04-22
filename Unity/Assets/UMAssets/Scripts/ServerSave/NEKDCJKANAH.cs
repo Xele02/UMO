@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use NEKDCJKANAH_StoryRecord", true)]
 public class NEKDCJKANAH { }
 public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 {

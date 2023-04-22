@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use BAHFBCEPFGP_AddMusic", true)]
 public class BAHFBCEPFGP { }
 public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 {

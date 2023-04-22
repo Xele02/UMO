@@ -14,7 +14,7 @@ namespace XeSys.Gfx
 		[SerializeField]
 		private string m_TextureName;
 
-		public Material MaterialMul { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-		public Material MaterialAdd { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-	}
+		public Material MaterialMul { get => null; set { } } //throw new System.NotImplementedException(); set => null; //throw new System.NotImplementedException(); }
+		public Material MaterialAdd { get => null; set { } } //throw new System.NotImplementedException(); set => null; //throw new System.NotImplementedException(); }
+		}
 }

@@ -18,7 +18,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1054754 Offset: 0x1054754 VA: 0x1054754
-		public MusicRewardStat(FPGEMAIAMBF rewardData)
+		public MusicRewardStat(FPGEMAIAMBF_RewardData rewardData)
 		{
 			Init(rewardData);
 		}
@@ -27,7 +27,7 @@ namespace XeApp.Game.Menu
 		//public void Clear() { }
 
 		//// RVA: 0x105477C Offset: 0x105477C VA: 0x105477C
-		public void Init(FPGEMAIAMBF rewardData)
+		public void Init(FPGEMAIAMBF_RewardData rewardData)
 		{
 			achievedScoreNum = 0;
 			achievedComboNum = 0;

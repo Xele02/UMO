@@ -248,7 +248,7 @@ namespace XeApp.Game
 			if (costumeId != 0 && divaId != 0)
 			{
 				LCLCCHLDNHJ_Costume CostumeDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
-				var cosInfo = CostumeDb.NLIBHNJNJAN(divaId, costumeId);
+				var cosInfo = CostumeDb.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, costumeId);
 				if (cosInfo != null)
 				{
 					costumeImg = "[[/images/costumes/" + cosInfo.JPIDIENBGKH_CostumeId + ".png]] ";

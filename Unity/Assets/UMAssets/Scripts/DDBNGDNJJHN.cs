@@ -1,6 +1,8 @@
 
 using System;
 
+[System.Obsolete("Use DDBNGDNJJHN_SecureFloat", true)]
+public class DDBNGDNJJHN { }
 public class DDBNGDNJJHN_SecureFloat
 {
 	private int FCEJCHGLFGN; // 0x8
@@ -63,10 +65,10 @@ public class DDBNGDNJJHN_SecureFloat
 	{
 		if(NMNHBJIAPGG == null)
 		{
-			if ((DLHDPLPLCAC[0] ^ ENOBDCFHELD) == (IPKONDLIDHC[0] ^ FCEJCHGLFGN) &&
-				(DLHDPLPLCAC[1] ^ ENOBDCFHELD) == (IPKONDLIDHC[1] ^ FCEJCHGLFGN) &&
-				(DLHDPLPLCAC[2] ^ ENOBDCFHELD) == (IPKONDLIDHC[2] ^ FCEJCHGLFGN) &&
-				(DLHDPLPLCAC[3] ^ ENOBDCFHELD) == (IPKONDLIDHC[3] ^ FCEJCHGLFGN))
+			if ((byte)(DLHDPLPLCAC[0] ^ ENOBDCFHELD) == (byte)(IPKONDLIDHC[0] ^ FCEJCHGLFGN) &&
+				(byte)(DLHDPLPLCAC[1] ^ ENOBDCFHELD) == (byte)(IPKONDLIDHC[1] ^ FCEJCHGLFGN) &&
+				(byte)(DLHDPLPLCAC[2] ^ ENOBDCFHELD) == (byte)(IPKONDLIDHC[2] ^ FCEJCHGLFGN) &&
+				(byte)(DLHDPLPLCAC[3] ^ ENOBDCFHELD) == (byte)(IPKONDLIDHC[3] ^ FCEJCHGLFGN))
 				return null;
 			NMNHBJIAPGG = new FENCAJJBLBH(KGICDMIJGDF, 0, 0, "NetSecureFloat");
 		}

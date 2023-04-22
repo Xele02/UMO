@@ -72,7 +72,7 @@ namespace XeApp.Game.Common
 		{
 			if(m_hitCheck != null)
 			{
-				m_hitCheck = GetComponentInChildren<LayoutUGUIHitOnly>();
+				m_hitCheck = GetComponentInChildren<LayoutUGUIHitOnly>(true);
 			}
 		}
 

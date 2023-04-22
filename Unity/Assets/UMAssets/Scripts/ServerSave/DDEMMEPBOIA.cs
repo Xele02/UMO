@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use DDEMMEPBOIA_Sns", true)]
 public class DDEMMEPBOIA { }
 public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 {

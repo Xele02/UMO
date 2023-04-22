@@ -84,7 +84,7 @@ public class KDLPEDBKMID
 	public static KDLPEDBKMID HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
 	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x10 KPEKONPJHCL LKCDOGAFPNM NPJJMDFAIII
 	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x14 EAIFOAGPGGH KCLBNOKEPIG OCIMGEFKKLM
-	public bool LNHFLJBGGJB { 
+	public bool LNHFLJBGGJB_IsRunning { 
 		get { // KOIPHFOBLOD 0xE7D688
 			if(KOIGPANFBKP)
 				return true;
@@ -106,7 +106,7 @@ public class KDLPEDBKMID
 		LCIGLIDJILJ = this.LFKLIOKFGLP;
 		CriFileRequestManager.HHCJCDFCLOB.GOEAHKDGBBH = () => {
 			//0xE841D8
-			return LNHFLJBGGJB;
+			return LNHFLJBGGJB_IsRunning;
 		};
 		CriFileRequestManager.HHCJCDFCLOB.JPNMBNEHBOC = this.BDOFDNICMLC_StartInstallIfNeeded;
 	}

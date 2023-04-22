@@ -1,13 +1,14 @@
 
 using System;
 
+[System.Obsolete("Use KLFDBFMNLBL_ServerSaveBlock", true)]
 public abstract class KLFDBFMNLBL { }
 public abstract class KLFDBFMNLBL_ServerSaveBlock
 {
 	protected delegate void CLMHDCHPBNC(int OIPCCBHIKIA, int NANNGLGOFKH);
 
-	public bool LLBJFFFJEPJ; // 0x8
-	public long FJMOAAPNCJI = -1; // 0x10
+	public bool LLBJFFFJEPJ_Deseralized; // 0x8
+	public long FJMOAAPNCJI_SaveId = -1; // 0x10
 	public bool EMBGIDLFKGM; // 0x20
 
 	public string JIKKNHIAEKG_BlockName { get; set; } // 0x18 HIPHMHKCJOI KLGJBKFAOGN FEENLLLIMHM
@@ -29,11 +30,11 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1A0BC70 Offset: 0x1A0BC70 VA: 0x1A0BC70
 	public void LHPDDGIJKNB_Reset()
 	{
-		FJMOAAPNCJI = -1;
+		FJMOAAPNCJI_SaveId = -1;
 		KFKDMBPNLJK_BlockInvalid = true;
 		MCNELPPHFKJ = true;
 		FHMMFHAIPLF = false;
-		LLBJFFFJEPJ = false;
+		LLBJFFFJEPJ_Deseralized = false;
 		KMBPACJNEOF();
 	}
 

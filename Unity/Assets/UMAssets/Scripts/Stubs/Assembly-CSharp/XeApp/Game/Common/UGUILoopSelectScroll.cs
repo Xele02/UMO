@@ -25,7 +25,7 @@ namespace XeApp.Game.Common
 
 		public void OnEndDrag(PointerEventData eventData)
 		{
-			throw new System.NotImplementedException();
+			//throw new System.NotImplementedException();
 		}
 
 		private void Awake()

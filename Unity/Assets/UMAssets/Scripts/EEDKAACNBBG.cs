@@ -1,6 +1,8 @@
 using XeApp.Game.Common;
 
-public class EEDKAACNBBG
+[System.Obsolete("Use EEDKAACNBBG_MusicData", true)]
+public class EEDKAACNBBG { }
+public class EEDKAACNBBG_MusicData
 {
 	private const int FBGGEFFJJHB = 0x7daf3c5a;
 	public int KOPBFHIBOJJ_MusicIdCrypted = FBGGEFFJJHB; // 0x8
@@ -45,10 +47,10 @@ public class EEDKAACNBBG
 		OLLHCHDEHHM_StoryDesc = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).storyDesc;
 		KKPAHLMJKIH_WavId = musicInfo.KKPAHLMJKIH_WavId;
 		BNCMJNMIDIN_AvaiableDivaModes = 0;
-		if (musicInfo.NJAOOMHCIHL_Dvs > 0)
+		if (musicInfo.NJAOOMHCIHL_DivaSolo > 0)
 			BNCMJNMIDIN_AvaiableDivaModes |= 1;
-		if (musicInfo.PECMGDOMLAF_Dvm > 1)
-			BNCMJNMIDIN_AvaiableDivaModes |= (byte)(1 << (musicInfo.PECMGDOMLAF_Dvm - 1));
+		if (musicInfo.PECMGDOMLAF_DivaMulti > 1)
+			BNCMJNMIDIN_AvaiableDivaModes |= (byte)(1 << (musicInfo.PECMGDOMLAF_DivaMulti - 1));
 		OBGKIMDIAJF_CheckIsDlded();
 	}
 

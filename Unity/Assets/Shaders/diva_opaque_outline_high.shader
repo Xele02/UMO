@@ -252,9 +252,6 @@ Shader "MCRS/Diva/Opaque_Outline_High" {
 */
 			ENDCG
 		}
-	}
-}
-/*
 		Pass {
 			Tags { "LIGHTMODE" = "FORWARDBASE" "QUEUE" = "Geometry" "RenderType" = "Opaque" }
 			Blend SrcAlpha OneMinusSrcAlpha, SrcAlpha OneMinusSrcAlpha
@@ -267,6 +264,55 @@ Shader "MCRS/Diva/Opaque_Outline_High" {
 				Fail Keep
 				ZFail Keep
 			}
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+
+			#include "UnityCG.cginc"
+
+			struct appdata
+			{
+				float4 position0 : POSITION;
+				float3 normal0 : NORMAL;
+				float2 texcoord0 : TEXCOORD0;
+				float2 color0 : COLOR0;
+			};
+
+			struct v2f
+			{
+				float4 position0 : SV_POSITION;
+				float2 texcoord0 : TEXCOORD0;
+			};
+
+			sampler2D _MainTex;
+			float4 _MainTex_ST;
+			float4 _Color;
+			float _EdgeThickness;
+			float _EdgeBrightness;
+
+
+			v2f vert(appdata v)
+			{
+				v2f o;
+
+				o.texcoord0 = v.texcoord0;
+				float4 screenvertex = UnityObjectToClipPos(v.position0);
+				float4 projSpacePos;
+				projSpacePos.zw = screenvertex.zw;
+				float4 normaldir;
+				normaldir.w = 0.0;
+				normaldir.xyz = v.normal0;
+				float zbias = float(clamp ((screenvertex.z * 0.1), 0.5, 1.0));
+				float4 scaledNormal = (((
+					(v.color0.x * _EdgeThickness)
+					* 0.00285) * normalize(
+					(UnityObjectToClipPos(float4(normaldir)))
+				)) * zbias);
+				projSpacePos.xy = (screenvertex.xy + scaledNormal.xy);
+				o.position0 = projSpacePos;
+				return o; 
+			}
+/*
 			GpuProgramID 125476
 			Program "vp" {
 				SubProgram "gles hw_tier02 " {
@@ -327,6 +373,18 @@ Shader "MCRS/Diva/Opaque_Outline_High" {
 					    return;
 					}
 					
+*/
+			fixed4 frag(v2f i) : SV_Target
+			{
+				float4  u_xlat16_1,  u_xlat0,   SV_Target0;
+				u_xlat0 = tex2D(_MainTex, i.texcoord0.xy);
+				u_xlat16_1.xyz = u_xlat0.xyz * u_xlat0.xyz;
+				u_xlat0.xyz = u_xlat16_1.xyz * float3(float3(_EdgeBrightness, _EdgeBrightness, _EdgeBrightness));
+				SV_Target0 = u_xlat0 * _Color;
+				return SV_Target0;
+			}
+
+/*
 					#endif
 					#ifdef FRAGMENT
 					#version 100
@@ -366,7 +424,8 @@ Shader "MCRS/Diva/Opaque_Outline_High" {
 				SubProgram "gles hw_tier02 " {
 					"!!GLES"
 				}
-			}
+			}*/
+			ENDCG
 		}
 	}
-}*/
+}

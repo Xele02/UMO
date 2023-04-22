@@ -28,10 +28,10 @@ namespace XeSys
 		public Vector3 position { get; set; } // 0x14
 		public Vector3 appPosition { get; set; } // 0x20
 		public Vector3 nativePosition { get; set; } // 0x2C
-		// public float x { get; } 0x23A0454
-		// public float y { get; } 0x23A045C
+		public float x { get { return position.x; } } //0x23A0454
+		public float y { get { return position.y; } } //0x23A045C
 		public bool isBegan { get { return state == TouchState.BEGAN; } } //0x23A6690
-		// public bool isMoved { get; } 0x23A66A4
+		public bool isMoved { get { return state == TouchState.MOVED; } } //0x23A66A4
 		public bool isEnded { get { return state == TouchState.ENDED; } } //0x2389C4C
 		public bool isIllegal { get { return state == TouchState.ILLEGAL; } } //0x23A66B8
 

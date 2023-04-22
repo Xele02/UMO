@@ -24,6 +24,7 @@ namespace XeApp.Game.RhythmGame
 						res += eff.Value.effectValue;
 					}
 				}
+				eff = eff.Next;
 			}
 			return res;
 		}

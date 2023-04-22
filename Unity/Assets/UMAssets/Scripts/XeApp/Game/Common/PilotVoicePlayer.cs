@@ -58,6 +58,15 @@ namespace XeApp.Game.Common
 			PlayCue(str.ToString());
 		}
 
+		public void Preload(VoiceCategory categoryType, int voiceId)
+		{
+			if (!m_enable)
+				return;
+			StringBuilder str = new StringBuilder(32);
+			str.AppendFormat("{0}_{1:D3}", categoryPrefix[(int)categoryType], voiceId);
+			Preload(str.ToString());
+		}
+
 		// // RVA: 0xAF7200 Offset: 0xAF7200 VA: 0xAF7200
 		// public void Stop() { }
 	}

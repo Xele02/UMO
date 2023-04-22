@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using XeApp.Game.Common;
 using XeSys.Gfx;
@@ -110,11 +111,11 @@ namespace XeApp.Game.RhythmGame
 			base.InitializeFromLayout(layout, uvMan);
 			m_root = layout.FindViewByExId("root_failed_failed") as AbsoluteLayout;
 			Loaded();
-			failedSeInfo = new SePlayInfo(m_root.GetView(0), "se_failed", 3, DivaVoicePlayer.VoiceCategory.GameFailed);
+			failedSeInfo = new SePlayInfo(m_root.GetView(0), "se_failed", (int)cs_se_game.SE_GAME_003, DivaVoicePlayer.VoiceCategory.GameFailed);
 			retrySeInfo = new SePlayInfo[3];
-			retrySeInfo[0] = new SePlayInfo(m_root.GetView(0), "se_retry3", 4, DivaVoicePlayer.VoiceCategory.None);
-			retrySeInfo[1] = new SePlayInfo(m_root.GetView(0), "se_retry2", 4, DivaVoicePlayer.VoiceCategory.None);
-			retrySeInfo[2] = new SePlayInfo(m_root.GetView(0), "se_retry1", 4, DivaVoicePlayer.VoiceCategory.None);
+			retrySeInfo[0] = new SePlayInfo(m_root.GetView(0), "se_retry3", (int)cs_se_game.SE_GAME_004, DivaVoicePlayer.VoiceCategory.None);
+			retrySeInfo[1] = new SePlayInfo(m_root.GetView(0), "se_retry2", (int)cs_se_game.SE_GAME_004, DivaVoicePlayer.VoiceCategory.None);
+			retrySeInfo[2] = new SePlayInfo(m_root.GetView(0), "se_retry1", (int)cs_se_game.SE_GAME_004, DivaVoicePlayer.VoiceCategory.None);
 			return true;
 		}
 

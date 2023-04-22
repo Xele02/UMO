@@ -1,6 +1,7 @@
 
 using UnityEngine;
 
+[System.Obsolete("Use NADBPLMLIJA_GetToken", true)]
 public class NADBPLMLIJA { }
 public class NADBPLMLIJA_GetToken : CACGCMBKHDI_Request
 {

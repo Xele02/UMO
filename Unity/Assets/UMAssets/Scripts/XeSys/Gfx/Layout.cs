@@ -410,7 +410,10 @@ namespace XeSys.Gfx
 		// public void StartAllAnimLoop(int start, int end) { }
 
 		// // RVA: 0x2050E84 Offset: 0x2050E84 VA: 0x2050E84
-		// public void StartAllAnimLoop(string startLabel, string endLabel) { }
+		public void StartAllAnimLoop(string startLabel, string endLabel)
+		{
+			m_Root.StartAllAnimLoop(startLabel, endLabel);
+		}
 
 		// // RVA: 0x2050EC8 Offset: 0x2050EC8 VA: 0x2050EC8
 		public void StartAllAnimLoop(string startLabel)

@@ -20,10 +20,17 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
         public int HMFFHLPNMPH; // 0xC
     }
     
-	private List<PBJPACKDIIB.IFCOFHAFMON> EKFEHIHJHEN = new List<PBJPACKDIIB.IFCOFHAFMON>(16); // 0x8
+	private List<IFCOFHAFMON> EKFEHIHJHEN = new List<IFCOFHAFMON>(16); // 0x8
 
 	// // RVA: 0xCBC134 Offset: 0xCBC134 VA: 0xCBC134
-	// public static List<PBJPACKDIIB.IFCOFHAFMON> JAFKPMFPICA() { }
+	public static List<IFCOFHAFMON> JAFKPMFPICA()
+	{
+		if(Instance != null)
+		{
+			return Instance.EKFEHIHJHEN;
+		}
+		return null;
+	}
 
 	// // RVA: 0xCBC1CC Offset: 0xCBC1CC VA: 0xCBC1CC
 	// public void KPOJEAFIGOB() { }

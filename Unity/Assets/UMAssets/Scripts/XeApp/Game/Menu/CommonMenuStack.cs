@@ -1,6 +1,7 @@
 using XeSys.Gfx;
 using XeApp.Game.Common;
 using UnityEngine;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -53,7 +54,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B4A6F0 Offset: 0x1B4A6F0 VA: 0x1B4A6F0
-		//public void LeaveLabel(bool forceAnim = False) { }
+		public void LeaveLabel(bool forceAnim = false)
+		{
+			if (!m_labelVisible && !forceAnim)
+				return;
+			m_labelVisible = false;
+			m_symbolLabel.StartAnim("leave");
+		}
 
 		//// RVA: 0x1B4A78C Offset: 0x1B4A78C VA: 0x1B4A78C
 		public void HideLabel()
@@ -63,7 +70,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B4A810 Offset: 0x1B4A810 VA: 0x1B4A810
-		//public void EnterLabel() { }
+		public void EnterLabel()
+		{
+			m_labelVisible = true;
+			m_symbolLabel.StartAnim("enter");
+		}
 
 		// RVA: 0x1B4A894 Offset: 0x1B4A894 VA: 0x1B4A894 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -84,7 +95,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1B4AA38 Offset: 0x1B4AA38 VA: 0x1B4AA38
 		private void OnClickBackButton()
 		{
-			SoundManager.Instance.sePlayerBoot.Play(0);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_000);
 			MenuScene.SaveRequest();
 			MenuScene.Instance.Return(true);
 		}

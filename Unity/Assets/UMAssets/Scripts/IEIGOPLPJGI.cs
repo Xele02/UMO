@@ -1,6 +1,8 @@
 
 using XeSys;
 
+[System.Obsolete("Use IEIGOPLPJGI_PilotInfo", true)]
+public class IEIGOPLPJGI { }
 public class IEIGOPLPJGI_PilotInfo
 {
 	public int PFGJJLGLPAC_PilotId; // 0x8

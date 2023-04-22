@@ -208,6 +208,7 @@ namespace XeApp.Game.Common
 		{
 			if(m_transitionState != TransitionState.Normal)
 			{
+				m_transitionState = TransitionState.Normal;
 				base.SetOff();
 				m_playRequestAnim.Clear();
 				StopAnime();

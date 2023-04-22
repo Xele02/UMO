@@ -565,7 +565,10 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA39A08 Offset: 0xA39A08 VA: 0xA39A08
-			// public TransitionInfo GetNextScene() { }
+			public TransitionInfo GetNextScene()
+			{
+				return m_next;
+			}
 
 			// // RVA: 0xA39A10 Offset: 0xA39A10 VA: 0xA39A10
 			// public TransitionRoot GetCurrentTransitionRoot() { }
@@ -957,12 +960,17 @@ namespace XeApp.Game.Menu
 				{
 					if(!GameManager.Instance.divaResource.isMenuAllLoaded && !isNotAutoLoad)
 					{
-						TodoLogger.Log(0, "Load diva menu");
-						//L777
+						MenuDivaManager divaManager = MenuScene.Instance.divaManager;
+						DFKGGBMFFGB_PlayerInfo data = new DFKGGBMFFGB_PlayerInfo();
+						data.KHEKNNFCAOI_Init(null, false);
+						divaManager.Load(data, DivaResource.MenuFacialType.Home, true);
 						// to 16
+						while(divaManager.IsLoading)
+							yield return null;
 					}
 					// to 17
-					TodoLogger.Log(0, "Load diva menu");
+					while(MenuScene.Instance.divaManager.isWaitUnlockBoneSpring())
+						yield return null;
 				}
 				m_remainDivaOneTimeFlag = false;
 				bool idleDivaModel = false;
@@ -976,8 +984,7 @@ namespace XeApp.Game.Menu
 				bool activeDivaModel = false;
 				if(m_next.name == TransitionList.Type.HOME || m_next.name == TransitionList.Type.HOME_BG_SELECT)
 				{
-					TodoLogger.Log(0, "check activate diva");
-					//L876
+					activeDivaModel = JKHEOEEPBMJ.NMKPJJLAONP_GetShowHomeDiva();
 				}
 				else
 				{
@@ -988,6 +995,7 @@ namespace XeApp.Game.Menu
 				if(isDivaActivate)
 				{
 					TodoLogger.Log(0, "setup diva");
+					//900
 					divaActivated = isDivaActivate;
 				}
 				if((isNotAutoLoad || divaActivated) == false)
@@ -1291,9 +1299,9 @@ namespace XeApp.Game.Menu
 		// public GameObject bgRoot { get; set; } 0xA9D73C 0xA9D744
 		public TransitionArgs Args { get { return m_args; } set { m_args = value; } } //0xA83E84 0xA9D74C
 		public TransitionArgs ArgsReturn { get { return m_args_return; } set { m_args_return = value; } } //0xA9D754 0xA9D75C
-		// public TransitionList.Type PrevTransition { get; } 0xA7FEC8
-		// public TransitionList.Type ParentTransition { get; } 0xA9D764
-		// public TransitionRoot.MenuTransitionControl.TransitionType TransitionType { get; } 0xA9D76C
+		public TransitionList.Type PrevTransition { get { return m_prevTransition; } } //0xA7FEC8
+		public TransitionList.Type ParentTransition { get { return m_parentTransition; } } //0xA9D764
+		public TransitionRoot.MenuTransitionControl.TransitionType TransitionType { get { return m_transitionType; } } //0xA9D76C
 		public bool IsRequestGotoTitle { get; set; } // 0x28
 		public bool IsReady { get; protected set; } // 0x29
 		// public int InputStateCount { get; } 0xA9D78C

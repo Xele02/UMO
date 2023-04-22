@@ -1,4 +1,6 @@
+using mcrs;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using XeApp.Game.Common;
@@ -63,7 +65,31 @@ namespace XeApp.Game.RhythmGame.UI
 			}
 
 			//// RVA: 0x155C590 Offset: 0x155C590 VA: 0x155C590
-			//public void Update(int a_damage, int a_threshold1) { }
+			public void Update(int a_damage, int a_threshold1)
+			{
+				if(m_type == LifeType.Double)
+				{
+					m_info[0].m_rate_prev = m_info[0].m_rate;
+					m_info[0].m_now = Mathf.Clamp(a_damage - a_threshold1 * 0.5f, 0, a_threshold1 * 0.5f);
+					m_info[0].m_max = a_threshold1 * 0.5f;
+					m_info[0].m_rate = 1 - m_info[0].m_now / m_info[0].m_max;
+					m_info[0].m_anim = m_info[0].m_rate_prev != m_info[0].m_rate;
+
+					m_info[1].m_rate_prev = m_info[1].m_rate;
+					m_info[1].m_now = Mathf.Clamp(a_damage, 0, a_threshold1 * 0.5f);
+					m_info[1].m_max = a_threshold1 * 0.5f;
+					m_info[1].m_rate = 1 - m_info[1].m_now / m_info[1].m_max;
+					m_info[1].m_anim = m_info[1].m_rate_prev != m_info[1].m_rate;
+				}
+				else
+				{
+					m_info[0].m_rate_prev = m_info[0].m_rate;
+					m_info[0].m_now = Mathf.Clamp(a_damage, 0, a_threshold1);
+					m_info[0].m_max = a_threshold1;
+					m_info[0].m_rate = 1 - m_info[0].m_now / m_info[0].m_max;
+					m_info[0].m_anim = m_info[0].m_rate_prev != m_info[0].m_rate;
+				}
+			}
 		}
 
 		[SerializeField]
@@ -145,17 +171,17 @@ namespace XeApp.Game.RhythmGame.UI
 			m_life_ctrl.Initialize(a_type, m_gaugeMesh);
 			if(a_type == LifeType.Double)
 			{
-				m_gaugeMesh[0].enabled = true;
-				m_gaugeMesh[1].enabled = true;
-				m_gaugeMesh[2].enabled = true;
-				m_gaugeMesh[3].enabled = true;
+				m_gaugeMesh[0].GetComponent<Renderer>().enabled = true;
+				m_gaugeMesh[1].GetComponent<Renderer>().enabled = true;
+				m_gaugeMesh[2].GetComponent<Renderer>().enabled = true;
+				m_gaugeMesh[3].GetComponent<Renderer>().enabled = true;
 			}
 			else
 			{
-				m_gaugeMesh[0].enabled = true;
-				m_gaugeMesh[1].enabled = true;
-				m_gaugeMesh[2].enabled = false;
-				m_gaugeMesh[3].enabled = false;
+				m_gaugeMesh[0].GetComponent<Renderer>().enabled = true;
+				m_gaugeMesh[1].GetComponent<Renderer>().enabled = true;
+				m_gaugeMesh[2].GetComponent<Renderer>().enabled = false;
+				m_gaugeMesh[3].GetComponent<Renderer>().enabled = false;
 			}
 		}
 
@@ -180,18 +206,109 @@ namespace XeApp.Game.RhythmGame.UI
 		//public void UpdateFrameColor(int hash) { }
 
 		//// RVA: 0x155C530 Offset: 0x155C530 VA: 0x155C530
-		//public void UpdateEnemyLifeGauge(int damage, int threshold1, bool isLowSpec) { }
+		public void UpdateEnemyLifeGauge(int damage, int threshold1, bool isLowSpec)
+		{
+			m_life_ctrl.Update(damage, threshold1);
+			UpdateEnemyLifeGauge(0, isLowSpec);
+			UpdateEnemyLifeGauge(1, isLowSpec);
+		}
 
 		//// RVA: 0x155CF80 Offset: 0x155CF80 VA: 0x155CF80
-		//private void UpdateEnemyLifeGauge(int a_gauge, bool isLowSpec) { }
+		private void UpdateEnemyLifeGauge(int a_gauge, bool isLowSpec)
+		{
+			LifeInfo info = m_life_ctrl.m_info[a_gauge];
+			float f = info.m_mesh[0].Value;
+			info.m_mesh[0].Value = info.m_rate;
+			if(f != info.m_mesh[0].Value)
+			{
+				if(info.m_mesh[0].gameObject.activeInHierarchy)
+				{
+					if(!isLowSpec)
+					{
+						StartCoroutine(ColorAnimeCoroutine(info.m_renderer));
+					}
+					if(!info.m_isGaugeAnimation)
+					{
+						if (info.m_gaugeAnimeCroutine != null)
+						{
+							StopCoroutine(info.m_gaugeAnimeCroutine);
+						}
+						info.m_gaugeAnimeCroutine = StartCoroutine(BackGaugeAnimation(a_gauge, isLowSpec));
+					}
+				}
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x746FDC Offset: 0x746FDC VA: 0x746FDC
 		//// RVA: 0x155D194 Offset: 0x155D194 VA: 0x155D194
-		//private IEnumerator ColorAnimeCoroutine(Renderer renderer) { }
+		private IEnumerator ColorAnimeCoroutine(Renderer renderer)
+		{
+			//0x155E26C
+			m_materialPropertyBlock.SetColor(m_addColorShaderId, new Color(FlashColor, FlashColor, FlashColor, 0));
+			renderer.SetPropertyBlock(m_materialPropertyBlock);
+			yield return null;
+			m_materialPropertyBlock.SetColor(m_addColorShaderId, Color.black);
+			renderer.SetPropertyBlock(m_materialPropertyBlock);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x747054 Offset: 0x747054 VA: 0x747054
 		//// RVA: 0x155D23C Offset: 0x155D23C VA: 0x155D23C
-		//private IEnumerator BackGaugeAnimation(int a_gauge, bool isLowSpec) { }
+		private IEnumerator BackGaugeAnimation(int a_gauge, bool isLowSpec)
+		{
+			EnemyStatus.LifeInfo t_info;
+			MeshTile t_mesh_front;
+			MeshTile t_mesh_back;
+
+			//0x155DC1C
+			t_info = m_life_ctrl.m_info[a_gauge];
+			t_mesh_front = t_info.m_mesh[0];
+			t_mesh_back = t_info.m_mesh[1];
+			if (t_mesh_back.Value - t_mesh_front.Value == 0)
+				yield break;
+			float f = Mathf.Abs(t_mesh_back.Value - t_mesh_front.Value);
+			if(f >= 0.2f)
+			{
+				t_info.m_gaugeAnimationStartWait = 0;
+				t_info.m_isGaugeAnimation = true;
+			}
+			else
+			{
+				t_info.m_gaugeAnimationStartWait = Mathf.Clamp(0.01f / f, 0, 1);
+			}
+			while(true)
+			{
+				if(0 <= t_mesh_front.Value - t_mesh_back.Value)
+				{
+					t_mesh_back.Value = t_mesh_front.Value;
+					yield return null;
+					continue;
+				}
+				if(t_info.m_isGaugeAnimation)
+				{
+					if(!isLowSpec)
+					{
+						t_mesh_back.Value -= Time.deltaTime * 0.25f;
+						if(t_mesh_front.Value <= t_mesh_back.Value)
+						{
+							yield return null;
+							continue;
+						}
+					}
+					t_mesh_back.Value = t_mesh_front.Value;
+					t_info.m_isGaugeAnimation = false;
+					yield return null;
+					continue;
+				}
+				t_info.m_gaugeAnimationStartWait -= Time.deltaTime;
+				if(t_info.m_gaugeAnimationStartWait > 0)
+				{
+					yield return null;
+					continue;
+				}
+				t_info.m_isGaugeAnimation = true;
+				t_info.m_gaugeAnimationStartWait = 0;
+			}
+		}
 
 		//// RVA: 0x155D33C Offset: 0x155D33C VA: 0x155D33C
 		public void TryChaseMode(int damage, int threshold, bool isLowSpec, UnityAction callback)
@@ -205,7 +322,7 @@ namespace XeApp.Game.RhythmGame.UI
 					m_explosionEffect.Play();
 					m_currentExplosiionEff.Play();
 				}
-				SoundManager.Instance.sePlayerGame.Play(18);
+				SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_019);
 				PlayChaseEffect();
 				IsChaseMode = true;
 				if (callback != null)
@@ -221,7 +338,7 @@ namespace XeApp.Game.RhythmGame.UI
 		private void PlayChaseEffect()
 		{
 			m_fadeInAnimator.Play(chance_time_start_Hash, 0, 0);
-			SoundManager.Instance.sePlayerGame.Play(17);
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_018);
 		}
 
 		//// RVA: 0x155D5E0 Offset: 0x155D5E0 VA: 0x155D5E0
@@ -235,7 +352,11 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x155D728 Offset: 0x155D728 VA: 0x155D728
-		//public void ChangeFaild(int hash) { }
+		public void ChangeFaild(int hash)
+		{
+			m_fadeInAnimator.SetBool(ParametersIsEndHash, true);
+			m_enemyGaugeAnimator.Play(EnemyGaugeOutHash, 0, 0);
+		}
 
 		//// RVA: 0x155D830 Offset: 0x155D830 VA: 0x155D830
 		public void Show()

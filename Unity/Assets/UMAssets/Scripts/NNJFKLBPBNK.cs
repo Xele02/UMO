@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use NNJFKLBPBNK_SecureString", true)]
 public class NNJFKLBPBNK { }
 public class NNJFKLBPBNK_SecureString
 {

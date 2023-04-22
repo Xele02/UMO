@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using XeApp.Core;
 using XeApp.Game.Common;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -141,19 +142,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC478C Offset: 0xEC478C VA: 0xEC478C
 		private void CallBackHome()
 		{
-			TodoLogger.Log(0, "CallBackHome");
+			TodoLogger.LogNotImplemented("CallBackHome");
 		}
 
 		// // RVA: 0xEC4980 Offset: 0xEC4980 VA: 0xEC4980
 		private void CallBackSetting()
 		{
-			TodoLogger.Log(0, "CallBackSetting");
+			TodoLogger.LogNotImplemented("CallBackSetting");
 		}
 
 		// // RVA: 0xEC4BB8 Offset: 0xEC4BB8 VA: 0xEC4BB8
 		private void CallBackVOP()
 		{
-			TodoLogger.Log(0, "CallBackVOP");
+			TodoLogger.LogNotImplemented("CallBackVOP");
 		}
 
 		// // RVA: 0xEC4E90 Offset: 0xEC4E90 VA: 0xEC4E90
@@ -168,12 +169,12 @@ namespace XeApp.Game.Menu
 				return;
 			}
 			mMenuButtons[3].buttonAnimeDisable = false;
-			int cueId = 6;
+			int cueId = (int)cs_se_boot.SE_BTN_005;
 			if(IsTopLevelScene(SceneGroupCategory.FREE, TransitionList.Type.MUSIC_SELECT))
 			{
 				MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, null, true, 0);
 				MenuScene.Instance.StatusWindowControl.ResetHistory();
-				cueId = 0;
+				cueId = (int)cs_se_boot.SE_BTN_000;
 			}
 			SoundManager.Instance.sePlayerBoot.Play(cueId);
 
@@ -183,25 +184,25 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC55DC Offset: 0xEC55DC VA: 0xEC55DC
 		private void CallBackGacha()
 		{
-			TodoLogger.Log(0, "CallBackGacha");
+			TodoLogger.LogNotImplemented("CallBackGacha");
 		}
 
 		// // RVA: 0xEC5818 Offset: 0xEC5818 VA: 0xEC5818
 		private void CallBackQuest()
 		{
-			TodoLogger.Log(0, "CallBackQuest");
+			TodoLogger.LogNotImplemented("CallBackQuest");
 		}
 
 		// // RVA: 0xEC5A50 Offset: 0xEC5A50 VA: 0xEC5A50
 		private void CallBackMenu()
 		{
-			TodoLogger.Log(0, "CallBackMenu");
+			TodoLogger.LogNotImplemented("CallBackMenu");
 		}
 
 		// // RVA: 0xEC5C88 Offset: 0xEC5C88 VA: 0xEC5C88
 		private void CallBackBack()
 		{
-			TodoLogger.Log(0, "CallBackBack");
+			TodoLogger.LogNotImplemented("CallBackBack");
 		}
 
 		// // RVA: 0xEC5C8C Offset: 0xEC5C8C VA: 0xEC5C8C

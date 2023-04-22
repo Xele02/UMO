@@ -28,25 +28,65 @@ namespace XeApp.Game.Menu
 		public int HomeDiva { get; private set; } // 0x14
 
 		// // RVA: 0x1B575B0 Offset: 0x1B575B0 VA: 0x1B575B0
-		// public void Initialize() { }
+		public void Initialize()
+		{
+			Option = new ILDKBCLAFPB.MPHNGGECENI_Option();
+			Notification = new ILDKBCLAFPB.JDBOPCADICO_Notification();
+			OptionSLive = new BEJIKEOAJHN_OptionSLive();
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.ODDIHGPONFL_Copy(Option);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification.ODDIHGPONFL_Copy(Notification);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.ODDIHGPONFL_Copy(OptionSLive);
+			SetHomeDivaValue();
+		}
 
 		// // RVA: 0x1B57828 Offset: 0x1B57828 VA: 0x1B57828
-		// private void SetHomeDivaValue() { }
+		private void SetHomeDivaValue()
+		{
+			HomeDiva = Option.BBIOMNCILMC_HomeDivaId > 0 ? 1 : 0;
+			m_optionHomeDiva = Option.BBIOMNCILMC_HomeDivaId > 0 ? 1 : 0;
+		}
 
 		// // RVA: 0x1B5788C Offset: 0x1B5788C VA: 0x1B5788C Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// // RVA: 0x1B57890 Offset: 0x1B57890 VA: 0x1B57890
-		// private static void SetScreenOrientation(int type) { }
+		private static void SetScreenOrientation(int type)
+		{
+			if(type == 2)
+			{
+				Screen.autorotateToLandscapeLeft = false;
+				Screen.autorotateToLandscapeRight = false;
+				Screen.autorotateToPortrait = false;
+				Screen.autorotateToPortraitUpsideDown = false;
+				Screen.orientation = ScreenOrientation.LandscapeRight;
+			}
+			else if(type == 1)
+			{
+				Screen.autorotateToLandscapeLeft = false;
+				Screen.autorotateToLandscapeRight = false;
+				Screen.autorotateToPortrait = false;
+				Screen.autorotateToPortraitUpsideDown = false;
+				Screen.orientation = ScreenOrientation.LandscapeLeft;
+			}
+			else
+			{
+				Screen.autorotateToLandscapeLeft = true;
+				Screen.autorotateToLandscapeRight = true;
+				Screen.autorotateToPortrait = false;
+				Screen.autorotateToPortraitUpsideDown = false;
+				Screen.orientation = ScreenOrientation.AutoRotation;
+			}
+		}
 
 		// // RVA: 0x1B57958 Offset: 0x1B57958 VA: 0x1B57958
 		public static void SetUserData()
 		{
-			TodoLogger.Log(5, "ConfigManager SetUserData");
 			ILDKBCLAFPB.MPHNGGECENI_Option defaultOption = new ILDKBCLAFPB.MPHNGGECENI_Option();
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.ODDIHGPONFL_Copy(defaultOption);
+			SetScreenOrientation(defaultOption.CJFAJNMADBA_ScreenRotation);
 			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.MENU_BGM, defaultOption.HOMPENLIHCK_VolBgm, false);
 			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.MENU_SE, defaultOption.BGLLCLEDHKK_VolSe, false);
 			SoundManager.Instance.SetCategoryVolumeFromMark(SoundManager.CategoryId.MENU_VOICE, defaultOption.CNCIMBGLKOB_VolVoice, false);
@@ -108,7 +148,11 @@ namespace XeApp.Game.Menu
 		// public void SetNotesSpeedAllApply(bool allApply) { }
 
 		// // RVA: 0x1B58864 Offset: 0x1B58864 VA: 0x1B58864
-		// public bool GetNotesSpeedAutoRejected() { }
+		public bool GetNotesSpeedAutoRejected()
+		{
+			TodoLogger.Log(0, "GetNotesSpeedAutoRejected");
+			return false;
+		}
 
 		// // RVA: 0x1B58890 Offset: 0x1B58890 VA: 0x1B58890
 		// public void SetNotesSpeedAutoRejected(bool reject) { }
@@ -253,7 +297,34 @@ namespace XeApp.Game.Menu
 		// public void ApplyDecoNotification() { }
 
 		// // RVA: 0x1B5A35C Offset: 0x1B5A35C VA: 0x1B5A35C
-		// public void ApplyValue(bool isSave = True, Action callback) { }
+		public void ApplyValue(bool isSave = true, Action callback = null)
+		{
+			if (callback != null)
+				callback();
+			TodoLogger.Log(0, "ApplyValue");
+			/*if(!isSave)
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.ODDIHGPONFL_Copy(Option);
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification.ODDIHGPONFL_Copy(Notification);
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.ODDIHGPONFL_Copy(OptionSLive);
+				SetHomeDivaValue();
+			}
+			SetVolume(2, Option.HOMPENLIHCK_VolBgm);
+			SetVolume(5, Option.ICGAOAFIHFD_VolBgmRhythm);
+			SetVolume(0, Option.BGLLCLEDHKK_VolSe);
+			SetVolume(3, Option.LMDACNNJDOE_VolSeRhythm);
+			SetVolume(6, Option.IBEINHHMHAC_VolNotesRhythm);
+			SetVolume(1, Option.CNCIMBGLKOB_VolVoice);
+			SetVolume(4, Option.FCKEDCKCEFC_VolVoiceRhythm);
+
+			Option.CJFAJNMADBA_ScreenRotation = Option.CJFAJNMADBA_ScreenRotation;
+
+			GameManager.Instance.SetLongscreenFrameColor(Option.HLABNEIEJPM_SafeAreaDesign);
+			if(isSave)
+			{
+				SetOrientationInner GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality
+			}*/
+		}
 
 		// // RVA: 0x1B5D114 Offset: 0x1B5D114 VA: 0x1B5D114
 		// public float ParamDefault(ConfigManager.eParamDefaultType type) { }

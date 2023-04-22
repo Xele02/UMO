@@ -40,7 +40,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0E910 Offset: 0x1C0E910 VA: 0x1C0E910
-		//public void Instantiate(string name) { }
+		public void Instantiate(string name)
+		{
+			for(int i = 0; i < m_collection.Count; i++)
+			{
+				m_collection[i].Instantiate(name);
+			}
+		}
 
 		//// RVA: 0x1C0E9F0 Offset: 0x1C0E9F0 VA: 0x1C0E9F0
 		//public void ReleaseAll() { }

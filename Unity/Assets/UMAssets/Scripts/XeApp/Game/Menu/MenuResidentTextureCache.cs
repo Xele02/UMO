@@ -28,6 +28,12 @@ namespace XeApp.Game.Menu
 		// public void LoadDegree(int id, int subId, Action<IiconTexture> callBack) { }
 
 		// // RVA: 0xB2D8D4 Offset: 0xB2D8D4 VA: 0xB2D8D4
-		// public void EntryCache() { }
+		public void EntryCache()
+		{
+			for(int i = 1; i < 5; i++)
+			{
+				LoadLogo(i, null);
+			}
+		}
 	}
 }

@@ -10,8 +10,36 @@ namespace XeSys.Gfx
 	#if UNITY_EDITOR
 	public class DebugLinkInfo : MonoBehaviour
 	{
+		public GameObject InitializedFrom;
+		[Header("View")]
+		public ViewBase View;
 		public string LayoutId;
+		public string LayoutExId;
+		[Header("Render")]
 		public string shaderName;
+		[Header("Animation")]
+		public bool EnableDebugAnim;
+		public int MaxFrame;
+		public int SetFrame = -1;
+		public FrameData[] FrameData;
+
+		public LabelData[] LabelList;
+		public int CurrentFrame;
+		public bool HasView;
+
+		public void Init(ViewBase view, LayoutUGUIRuntime runtime)
+		{
+			View = view;
+			LayoutId = view.ID;
+			LayoutExId = view.EXID;
+			InitializedFrom = runtime.gameObject;
+			if(view.FrameAnimation != null)
+			{
+				MaxFrame = view.FrameAnimation.FrameDataCount;
+				FrameData = view.FrameAnimation.F;
+				LabelList = view.FrameAnimation.LabelList;
+			}
+		}
 
 		void Update()
 		{
@@ -22,6 +50,18 @@ namespace XeSys.Gfx
 				{
 					shaderName = ""+img.material.shader.GetInstanceID();
 				}
+			}
+			if(EnableDebugAnim)
+			{
+				if(SetFrame != -1)
+				{
+					View.StartAnimGoStop(SetFrame, SetFrame);
+				}
+			}
+			HasView = View != null;
+			if(View != null && View.FrameAnimation != null)
+			{
+				CurrentFrame = View.FrameAnimation.FrameCount;
 			}
 		}
 	}
@@ -374,7 +414,7 @@ namespace XeSys.Gfx
 		// public string UvListPath { get; set; } 0x1EFFD28 0x1EFFD20
 		// public string TexturePath { get; set; } 0x1EFFD38 0x1EFFD30
 		public string AnimListPath { get { return m_animListPath; } set { m_animListPath = value; } } //0x1EFFD40 0x1EFBE20
-		// public Font Font { get; set; } 0x1EFFD48 0x1EFBE28
+		public Font Font { get { return m_font; } set { m_font = value; } } //0x1EFFD48 0x1EFBE28
 		// public bool IsTextureSplit { get; set; } 0x1EFFD50 0x1EFBF00
 		// public bool IsUseImage { get; set; } 0x1EFFD58 0x1EFBF08
 		public string[] UvListPathList { get { return m_uvlistPathList; } set { m_uvlistPathList = value; } } //0x1EFFD60 0x1EFBE10
@@ -635,7 +675,7 @@ namespace XeSys.Gfx
 				if(view == null)
 					continue;
 				#if UNITY_EDITOR
-				rt.gameObject.AddComponent<DebugLinkInfo>().LayoutId = view.ID;
+				rt.gameObject.AddComponent<DebugLinkInfo>().Init(view, this);
 				#endif
 				if(rt.name.Contains("ScrollbarH") || rt.name.Contains("ScrollbarV"))
 				{

@@ -6,6 +6,11 @@ namespace XeApp.Game.Menu
         internal bool isKeep { get; set; } // 0x20
 
         // RVA: 0x17E3428 Offset: 0x17E3428 VA: 0x17E3428 Slot: 15
-        // public override void Release() { }
+        public override void Release()
+		{
+			if (isKeep)
+				return;
+			base.Release();
+		}
     }
 }

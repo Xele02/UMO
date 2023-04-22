@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use OIGEIIGKMNH_Valkyrie", true)]
 public class OIGEIIGKMNH { }
 public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 {

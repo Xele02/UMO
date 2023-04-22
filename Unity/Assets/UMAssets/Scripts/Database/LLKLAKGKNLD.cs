@@ -1,6 +1,8 @@
 
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
+[System.Obsolete("Use LLKLAKGKNLD_LimitOver", true)]
 public class LLKLAKGKNLD { }
 public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 {
@@ -53,7 +55,26 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 	//public int ELFPIODODFF(int JKGFBFPIMGA) { }
 
 	//// RVA: 0x180E628 Offset: 0x180E628 VA: 0x180E628
-	//public int JNLLKKHJCAD(int JKGFBFPIMGA, int MJBODMOLOBC) { }
+	public int JNLLKKHJCAD(int JKGFBFPIMGA, int MJBODMOLOBC)
+	{
+		int res = 0;
+		if(AJHBAOCLNDF_Enabled == 2)
+		{
+			if(JKGFBFPIMGA == 4)
+			{
+				res = LOCCHKJGJDJ[MJBODMOLOBC];
+			}
+			else
+			{
+				if(JKGFBFPIMGA >= 5)
+				{
+					res = BMEHMMIPELI[MJBODMOLOBC];
+				}
+			}
+			res = res ^ FBGGEFFJJHB;
+		}
+		return res;
+	}
 
 	//// RVA: 0x180E7A4 Offset: 0x180E7A4 VA: 0x180E7A4
 	//public int BKCAECPCELG() { }
@@ -67,7 +88,10 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x180E924 Offset: 0x180E924 VA: 0x180E924
-	//public void MNHPPJFNPCG(ref LimitOverStatusData DNNHDJPNIAK, int JKGFBFPIMGA, int MJBODMOLOBC, int DCMJPFFBINO) { }
+	public void MNHPPJFNPCG(ref LimitOverStatusData DNNHDJPNIAK, int JKGFBFPIMGA, int MJBODMOLOBC, int DCMJPFFBINO)
+	{
+		TodoLogger.Log(0, "MNHPPJFNPCG");
+	}
 
 	// RVA: 0x180ECDC Offset: 0x180ECDC VA: 0x180ECDC
 	public LLKLAKGKNLD_LimitOver()
@@ -160,7 +184,7 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 				OHJFBLFELNK.Add(array[i].LJNAKDMILMC, data);
 			}
 		}
-		AJHBAOCLNDF_Enabled = JKAECBCNHAN(LPJLEHAJADA("master_mver", 0), LPJLEHAJADA("master_en", 0), 0);
+		AJHBAOCLNDF_Enabled = JKAECBCNHAN_IsEnabled(LPJLEHAJADA("master_mver", 0), LPJLEHAJADA("master_en", 0), 0);
 		return true;
 	}
 

@@ -24,7 +24,23 @@ namespace XeApp.Game.RhythmGame
 		public float scoreNotesValue { get { return scoreNotesValue_.DNJEJEANJGL_Value; } private set { scoreNotesValue_.DNJEJEANJGL_Value = value; } } //0xBFE0CC 0xBFE0F8
 
 		//// RVA: 0xBFE12C Offset: 0xBFE12C VA: 0xBFE12C
-		//public FENCAJJBLBH CheckFalisification() { }
+		public FENCAJJBLBH CheckFalisification()
+		{
+			FENCAJJBLBH res = currentScore_.NMNHBJIAPGG;
+			if (res == null)
+			{
+				res = nonExcellentScore_.NMNHBJIAPGG;
+				if(res == null)
+				{
+					res = totalComboCount_.NMNHBJIAPGG;
+					if(res == null)
+					{
+						res = scoreNotesValue_.NMNHBJIAPGG;
+					}
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0xBFE1B8 Offset: 0xBFE1B8 VA: 0xBFE1B8
 		public void Initialize(MusicData musicData, int teamScoreBonusValue)
@@ -37,15 +53,15 @@ namespace XeApp.Game.RhythmGame
 			bool line6 = setup.musicInfo.IsLine6Mode;
 			if(setup.musicInfo.isStoryMode)
 			{
-				musicLevelData = db.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(setup.musicInfo.storyMusicId).COGKJBAFBKN[(int)diff];
+				musicLevelData = db.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(setup.musicInfo.storyMusicId).COGKJBAFBKN_ByDiff[(int)diff];
 			}
 			else
 			{
 				musicLevelData = db.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(setup.musicInfo.freeMusicId).EMJCHPDJHEI(line6, (int)diff);
 			}
 			totalComboCount = musicData.musicScoreData.CalcComboLimit();
-			musicLevel = db.IBPAFKKEKNK_Music.ALJFMLEJEHH(wavId, variationId, (int)diff, line6, true).ANAJIAENLNB_F_pt;
-			musicLevelBonusRate = db.HNMMJINNHII_Game.ADBELGIDIEN(musicLevel, line6) / 1000.0f;
+			musicLevel = db.IBPAFKKEKNK_Music.ALJFMLEJEHH_GetMusicScore(wavId, variationId, (int)diff, line6, true).ANAJIAENLNB_F_pt;
+			musicLevelBonusRate = db.HNMMJINNHII_Game.ADBELGIDIEN_GetProgress(musicLevel, line6) / 1000.0f;
 			baseNoteScore = musicLevelBonusRate * teamScoreBonusValue / totalComboCount;
 			scoreNotesValue = musicLevelBonusRate * teamScoreBonusValue / db.HNMMJINNHII_Game.GAHIBKLEDBF((int)diff, line6);
 			currentScore = 0;
@@ -87,13 +103,15 @@ namespace XeApp.Game.RhythmGame
 			nonExcellentScore += Mathf.FloorToInt(f * h * s + s * g * baseNoteScore + 0);
 			if (a_result_ex.m_excellent)
 				s += a_excellent_score_rate;
+			if(RuntimeSettings.CurrentSettings.AddBigScore)
+				s += 1500;
 			currentScore += Mathf.FloorToInt(f * h * s + g * baseNoteScore * s + 0);
 		}
 
 		//// RVA: 0xBFED3C Offset: 0xBFED3C VA: 0xBFED3C
 		public ResultScoreRank.Type CalcCurrentRank()
 		{
-			return (ResultScoreRank.Type)musicLevelData.DLPBHJALHCK_GetRank(currentScore);
+			return (ResultScoreRank.Type)musicLevelData.DLPBHJALHCK_GetScoreRank(currentScore);
 		}
 
 		//// RVA: 0xBFED74 Offset: 0xBFED74 VA: 0xBFED74

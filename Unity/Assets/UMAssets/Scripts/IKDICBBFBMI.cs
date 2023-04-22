@@ -1,8 +1,38 @@
 using System.Collections.Generic;
 
+[System.Obsolete("Use IKDICBBFBMI_EventBase", true)]
 public abstract class IKDICBBFBMI { }
 public abstract class IKDICBBFBMI_EventBase
 {
+	public class NJJDBBCHBNP
+	{
+		public int GJEADBKFAPA; // 0x8
+		public int IJKFFIKGLJM; // 0xC
+		public int DCBMFNOIENM; // 0x10
+	}
+
+	public class MEBJJBHPMEO
+	{
+		public int PPFNGGCBJKC; // 0x8
+		public int CNKFPJCGNFE; // 0xC
+		public int GNFBMCGMCFO; // 0x10
+		public int BFFGFAMJAIG; // 0x14
+	}
+
+	public class CEGDBNNIDIG
+	{
+		public int KELFCMEOPPM; // 0x8
+		public float MIHNKIHNBBL; // 0xC
+		public List<int> MLLPMJFOKEC = new List<int>(); // 0x10
+	}
+
+	public class GNPOABJANKO
+	{
+		public int KELFCMEOPPM_EpisodeId; // 0x8
+		public bool JKDJCFEBDHC; // 0xC
+		public int HEDODOBGPPM; // 0x10
+	}
+
 	public const int NLHCFCAPBFH = 10;
 	public const int NFGBMPKFEGC = 999;
 	public string JOPOPMLFINI; // 0x8

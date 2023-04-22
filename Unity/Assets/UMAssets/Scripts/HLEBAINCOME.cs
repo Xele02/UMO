@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 
+[System.Obsolete("Use HLEBAINCOME_EventScore", true)]
 public class HLEBAINCOME { }
 public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 {

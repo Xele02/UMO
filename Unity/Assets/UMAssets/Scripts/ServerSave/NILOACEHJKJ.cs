@@ -1,4 +1,5 @@
 
+[System.Obsolete("Use NILOACEHJKJ_EventSP", true)]
 public class NILOACEHJKJ { }
 public class NILOACEHJKJ_EventSP : KLFDBFMNLBL_ServerSaveBlock
 {
