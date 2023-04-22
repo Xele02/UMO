@@ -1,6 +1,6 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 0.4 Alpha 2**
+**Current version : 0.4 Alpha 3**
 
 Fonctionality : 
 * Basic loading of the game with default profile
