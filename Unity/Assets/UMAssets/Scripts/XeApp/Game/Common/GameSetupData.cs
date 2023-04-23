@@ -156,7 +156,10 @@ namespace XeApp.Game.Common
 				}
 
 				// // RVA: 0xEA0730 Offset: 0xEA0730 VA: 0xEA0730
-				// public void SetPositionId(int position_id) { }
+				public void SetPositionId(int position_id)
+				{
+					positionId = position_id;
+				}
 
 				// // RVA: 0xEA0738 Offset: 0xEA0738 VA: 0xEA0738
 				// public void ApplyCenterSpecialRules() { }

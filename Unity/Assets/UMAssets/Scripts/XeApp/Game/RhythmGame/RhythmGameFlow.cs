@@ -198,7 +198,7 @@ namespace XeApp.Game.RhythmGame
 						if (teamInfo.danceDivaList[i].positionId == basaraPos)
 							break;
 						freePos = teamInfo.danceDivaList[i].positionId;
-						teamInfo.danceDivaList[i].positionId = basaraPos;
+						teamInfo.danceDivaList[i].SetPositionId(basaraPos);
 					}
 				}
 				if(freePos != 0)
@@ -209,7 +209,7 @@ namespace XeApp.Game.RhythmGame
 						{
 							if(teamInfo.danceDivaList[i].positionId == basaraPos)
 							{
-								teamInfo.danceDivaList[i].positionId = freePos;
+								teamInfo.danceDivaList[i].SetPositionId(freePos);
 								break;
 							}
 						}
@@ -262,7 +262,6 @@ namespace XeApp.Game.RhythmGame
 				rhythmGameResource.LoadSpecialResourceFor2DMode(DbMusicInfo.KKPAHLMJKIH_WavId, stageDivaNum, settingList);
 			}
 			ChangeWaitLoadingSpecialResourceStatus();
-			TodoLogger.Log(0, "check WaitDownloadingSpecialResource");
 		}
 
 		// // RVA: 0xDC80E4 Offset: 0xDC80E4 VA: 0xDC80E4
@@ -476,10 +475,16 @@ namespace XeApp.Game.RhythmGame
 		{
 			isGameSaveEnd = false;
 			isGameSaveError = false;
+			JGEOBNENMAH.HHCJCDFCLOB.CNNNAAACEHE_GameStartSave(false, () =>
 			{
-				TodoLogger.Log(0, "GameSaveStart");
+				//0xDCA510
 				isGameSaveEnd = true;
-			}
+			}, () =>
+			{
+				//0xDCA51C
+				isGameSaveEnd = true;
+				isGameSaveError = true;
+			});
 			updater = this.WaitGameSave;
 		}
 
@@ -556,13 +561,5 @@ namespace XeApp.Game.RhythmGame
 		// [CompilerGeneratedAttribute] // RVA: 0x74415C Offset: 0x74415C VA: 0x74415C
 		// // RVA: 0xDCA504 Offset: 0xDCA504 VA: 0xDCA504
 		// private void <WaitDownloadingData>b__44_6() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x74416C Offset: 0x74416C VA: 0x74416C
-		// // RVA: 0xDCA510 Offset: 0xDCA510 VA: 0xDCA510
-		// private void <GameSaveStart>b__48_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x74417C Offset: 0x74417C VA: 0x74417C
-		// // RVA: 0xDCA51C Offset: 0xDCA51C VA: 0xDCA51C
-		// private void <GameSaveStart>b__48_1() { }
 	}
 }

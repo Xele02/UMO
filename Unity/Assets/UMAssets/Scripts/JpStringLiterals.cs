@@ -107,6 +107,9 @@ class JpStringLiterals
 	public const string StringLiteral_11082 = "ストーリー"; // 0x03bb37e0
 	public const string StringLiteral_11083 = "あと"; // 0x03bb37e4
 	public const string StringLiteral_11117 = "デカルガチャ"; //0x03bb386c
+	public const string StringLiteral_11136 = "3D標準"; // 0x03bb38b8
+	public const string StringLiteral_11137 = "3D軽量"; // 0x03bb38bc
+	public const string StringLiteral_11139 = "カスタム"; // 0x03bb38c4
 	public const string StringLiteral_11428 = "支援攻撃"; // 0x03bb3d48
 	public const string StringLiteral_11429 = "全力攻撃"; // 0x03bb3d4c
 	public const string StringLiteral_11430 = "マクロスキャノン"; // 0x03bb3d50

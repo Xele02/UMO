@@ -818,7 +818,8 @@ public class CIOECGOMILE
 	// // RVA: 0x1002F1C Offset: 0x1002F1C VA: 0x1002F1C
 	public void FMIPEACLBKL()
 	{
-		TodoLogger.Log(0, "FMIPEACLBKL");
+		AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCFPEJODJPP_Stamina = BPLOEAHOPFI_StaminaUpdater.NEPIPMPAFIE_Stamina;
+		AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.FOKNAMPDPFP_StaminaSaveTime = BPLOEAHOPFI_StaminaUpdater.DLPEEDCCNMJ_StaminaSaveTime;
 	}
 
 	// // RVA: 0x1003010 Offset: 0x1003010 VA: 0x1003010

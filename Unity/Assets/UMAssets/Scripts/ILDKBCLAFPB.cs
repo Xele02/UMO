@@ -227,7 +227,33 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035EA8 Offset: 0x2035EA8 VA: 0x2035EA8
-        // public int DGCDPGPAAII(Difficulty.Type FEOKKEPAIBB, bool JCOJKAHFADL) { }
+        public int DGCDPGPAAII_GetNotesSpeed(Difficulty.Type FEOKKEPAIBB, bool JCOJKAHFADL)
+		{
+			switch(FEOKKEPAIBB)
+			{
+				case Difficulty.Type.Easy:
+					return DCHMOFLEFMI_NotesSpeedEasy;
+				case Difficulty.Type.Normal:
+					return MBOEPFLNDOD_NotesSpeedNormal;
+				case Difficulty.Type.Hard:
+					if(JCOJKAHFADL)
+						return LIPAPGABJOA_NotesSpeedHardPlus;
+					else
+						return MGOOLKHAPAF_NotesSpeedHard;
+				case Difficulty.Type.VeryHard:
+					if(JCOJKAHFADL)
+						return JDJBFBPBLDC_NotesSpeedVeryHardPlus;
+					else
+						return AIKDLBAANLG_NotesSpeedVeryHard;
+				case Difficulty.Type.Extreme:
+					if(JCOJKAHFADL)
+						return FJKNAHGFAPP_NotesSpeedExtremePlus;
+					else
+						return KOKDGGOFPPI_NotesSpeedExtreme;
+				default:
+					return -1;
+			}
+		}
 
         // // RVA: 0x2035F1C Offset: 0x2035F1C VA: 0x2035F1C
         // public Difficulty.Type OEJCANLJKPI() { }

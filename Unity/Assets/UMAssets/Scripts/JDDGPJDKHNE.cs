@@ -1,6 +1,7 @@
 using UnityEngine;
 using XeSys;
 using System.Collections.Generic;
+using System;
 
 public class JDDGPJDKHNE
 {
@@ -128,7 +129,15 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C31ED4 Offset: 0x1C31ED4 VA: 0x1C31ED4
 	public void NFNLGGHMEAM()
 	{
-		TodoLogger.Log(0, "NFNLGGHMEAM");
+		if(DAOEKHGKJOD_EventToSendQueue.Count > 0)
+		{
+			for(int i = 0; i < DAOEKHGKJOD_EventToSendQueue.Count; i++)
+			{
+				BBMBNCPEAHC_EventsToSend.MGJKEJHEBPO_Event.Add(DAOEKHGKJOD_EventToSendQueue[i]);
+			}
+			DAOEKHGKJOD_EventToSendQueue.Clear();
+			PJDLAMLLCPM = true;
+		}
 	}
 
 	// // RVA: 0x1C32174 Offset: 0x1C32174 VA: 0x1C32174
@@ -285,7 +294,21 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C32774 Offset: 0x1C32774 VA: 0x1C32774
 	public static string GPLMOKEIOLE()
 	{
-		TodoLogger.Log(0, "GPLMOKEIOLE");
-		return "";
+		int gameId = 0;
+		byte[] bt = new byte[8];
+		int.TryParse(NKGJPJPHLIF.HHCJCDFCLOB.MLKOPOKGHHH_SakashoGameId, out gameId);
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		int playerId = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
+		byte[] btTime = BitConverter.GetBytes((int)time);
+		bt[0] = btTime[0];
+		bt[3] = btTime[1];
+		bt[6] = btTime[2];
+		bt[7] = btTime[3];
+		byte[] btPlayer = BitConverter.GetBytes((int)playerId);
+		bt[1] = btPlayer[0];
+		bt[5] = btPlayer[1];
+		bt[2] = btPlayer[2];
+		bt[4] = btPlayer[3];
+		return Convert.ToBase64String(bt);
 	}
 }

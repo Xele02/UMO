@@ -337,7 +337,25 @@ public class NHPDPKHMFEP
 	}
 
 	// // RVA: 0x189B218 Offset: 0x189B218 VA: 0x189B218
-	// public int ALNBFHJBGIG() { }
+	public int ALNBFHJBGIG()
+	{
+		if(GBCPDBJEDHL(false))
+		{
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			{
+				if(GBCPDBJEDHL(false) && HNNAJBJCNEJ)
+				{
+					return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.LPJLEHAJADA_GetValue("diva_exp_bonus_sp_per", 50);
+				}
+				else
+				{
+					return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.LPJLEHAJADA_GetValue("diva_exp_bonus_per", 20);
+				}
+			}
+			return 20;
+		}
+		return 0;
+	}
 
 	// // RVA: 0x189B368 Offset: 0x189B368 VA: 0x189B368
 	public bool CJMPCGHCGJB()

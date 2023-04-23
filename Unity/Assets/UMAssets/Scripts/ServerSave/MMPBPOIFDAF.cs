@@ -615,7 +615,7 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x19715B4 Offset: 0x19715B4 VA: 0x19715B4 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 }

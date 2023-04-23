@@ -557,7 +557,7 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD8A954 Offset: 0xD8A954 VA: 0xD8A954 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 

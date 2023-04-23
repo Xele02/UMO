@@ -592,7 +592,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14FC8B4 Offset: 0x14FC8B4 VA: 0x14FC8B4 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 

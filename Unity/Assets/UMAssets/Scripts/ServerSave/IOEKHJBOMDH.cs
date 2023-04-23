@@ -165,7 +165,7 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xA02AA4 Offset: 0xA02AA4 VA: 0xA02AA4 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 

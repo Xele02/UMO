@@ -46,7 +46,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x104BE40 Offset: 0x104BE40 VA: 0x104BE40
 		public void Release()
 		{
-			TodoLogger.Log(0, "MusicPopupWindowControl Release");
+			UnityEngine.Object.Destroy(m_musicInfoPopupSetting.Content);
+			UnityEngine.Object.Destroy(m_enemyInfoPopupSetting.Content);
+			UnityEngine.Object.Destroy(m_divaSkillLevelPopupSetting.Content);
+			m_musicInfoPopupSetting.SetContent(null);
+			m_enemyInfoPopupSetting.SetContent(null);
+			m_divaSkillLevelPopupSetting.SetContent(null);
+			m_contensDataDic.Clear();
 		}
 
 		// // RVA: 0x104C020 Offset: 0x104C020 VA: 0x104C020

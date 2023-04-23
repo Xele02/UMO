@@ -247,7 +247,7 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xC15D74 Offset: 0xC15D74 VA: 0xC15D74 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 

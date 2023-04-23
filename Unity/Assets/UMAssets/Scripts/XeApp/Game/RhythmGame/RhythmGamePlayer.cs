@@ -1153,7 +1153,7 @@ namespace XeApp.Game.RhythmGame
 				resource.musicData.rhythmGameResultStartMillisec = musicMillisecLength - 5000;
 			}
 			//else
-			TodoLogger.Log(0, "why else ?");
+			TodoLogger.Log(TodoLogger.ToCheck, "why else ?");
 			{
 				rhythmGameResultStartEvent.millisec = resource.musicData.rhythmGameResultStartMillisec;
 			}

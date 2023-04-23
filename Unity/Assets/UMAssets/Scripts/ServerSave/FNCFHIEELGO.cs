@@ -46,7 +46,7 @@ public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x13E4974 Offset: 0x13E4974 VA: 0x13E4974 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 

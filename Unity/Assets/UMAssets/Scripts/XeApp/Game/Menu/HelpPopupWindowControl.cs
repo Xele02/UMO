@@ -26,7 +26,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9540D4 Offset: 0x9540D4 VA: 0x9540D4
 		public void Release()
 		{
-			TodoLogger.Log(0, "HelpPopupWindowControl Release");
+			UnityEngine.Object.Destroy(m_wiki_setting.Content);
+			UnityEngine.Object.Destroy(m_help_setting.Content);
+			m_wiki_setting.SetParent(null);
+			m_help_setting.SetParent(null);
+			m_tabSetting = null;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E1DBC Offset: 0x6E1DBC VA: 0x6E1DBC

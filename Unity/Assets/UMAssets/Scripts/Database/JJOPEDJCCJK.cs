@@ -152,7 +152,15 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1355A4C Offset: 0x1355A4C VA: 0x1355A4C
-	// public int EMJCHPDJHEI(int LKIFDCEKDCK) { }
+	public int EMJCHPDJHEI(int LKIFDCEKDCK)
+	{
+		for(int i = 0; i < GNIPHICJAIA_Music.Count; i++)
+		{
+			if(GNIPHICJAIA_Music[i].LKIFDCEKDCK_Exp > LKIFDCEKDCK)
+				return i;
+		}
+		return GNIPHICJAIA_Music.Count;
+	}
 
 	// // RVA: 0x1355B30 Offset: 0x1355B30 VA: 0x1355B30
 	public float OLJFPKPHCJD_GetDivaExpAndLevel(float MEKJFFHMKOB, out int CIEOBFIIPLD)
@@ -174,7 +182,15 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1355CB0 Offset: 0x1355CB0 VA: 0x1355CB0
-	// public int IOCHHEEDIJD(int OLDOFEONEPD) { }
+	public int IOCHHEEDIJD(int OLDOFEONEPD)
+	{
+		for(int i = 0; i < LMFNPINMOGK_Diva.Count; i++)
+		{
+			if(OLDOFEONEPD < (LMFNPINMOGK_Diva[i] ^ JNIHDCMHINF_DivaKey[i]))
+				return i + 1;
+		}
+		return LMFNPINMOGK_Diva.Count + 1;
+	}
 
 	// // RVA: 0x1355DCC Offset: 0x1355DCC VA: 0x1355DCC
 	public int NHEBLEFJNDO_GetDivaExp(int CIEOBFIIPLD_DivaLevel)
@@ -201,7 +217,18 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1356058 Offset: 0x1356058 VA: 0x1356058
-	// public int FIHFEGCDONI(int AKNELONELJK, int DCBDCHPKLCN, bool GIKLNODJKFK) { }
+	public int FIHFEGCDONI(int AKNELONELJK, int DCBDCHPKLCN, bool GIKLNODJKFK)
+	{
+		int idx = DCBDCHPKLCN * 5 + AKNELONELJK;
+		if(!GIKLNODJKFK)
+		{
+			return AOLNJDHGNGA_GetMExp_1[idx] ^ JIBLNGDIPIG_GetMExpKey_1[idx];
+		}
+		else
+		{
+			return FDDCBPLIHFG_GetMExp_2[idx] ^ ECAODIBMEDM_GetMExpKey_2[idx];
+		}
+	}
 
 	// // RVA: 0x1356168 Offset: 0x1356168 VA: 0x1356168
 	public int FAANKGOFNGE_GetExp(int BPLOEAHOPFI_Stamina)

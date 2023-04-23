@@ -147,13 +147,13 @@ namespace XeApp.Game.Menu
 			result.DIJOPLHIMBO(logParams, viewUnitData.JLJGCBOHJID_Status, m_tmpStatus, baseLuck, friendLuck);
 			if(f == null || f.FGFIBOBAPIA_SceneId < 1)
 			{
-				logParams.IFHMFONMGPE = 0;
-				logParams.AKNKIOKELEP = 0;
+				logParams.IFHMFONMGPE_CenterSkillLvl = 0;
+				logParams.AKNKIOKELEP_ActiveSkillLvl = 0;
 			}
 			else
 			{
-				logParams.IFHMFONMGPE = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].DDEDANKHHPN_SkillLevel;
-				logParams.AKNKIOKELEP = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].PNHJPCPFNFI_ActiveSkillLevel;
+				logParams.IFHMFONMGPE_CenterSkillLvl = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].DDEDANKHHPN_SkillLevel;
+				logParams.AKNKIOKELEP_ActiveSkillLvl = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].PNHJPCPFNFI_ActiveSkillLevel;
 			}
 			int totalScore = 0;
 			for(int i = 0; i < 10; i++)

@@ -678,7 +678,15 @@ public class BBHNACPENDM_ServerSaveData
 			return null;
 		if(DHNFPAGENLN)
 		{
-			TodoLogger.Log(0, "TODO");
+			for(int i = 0; i < MGJKEJHEBPO_Blocks.Count; i++)
+			{
+				if(MGJKEJHEBPO_Blocks[i] != null)
+				{
+					FENCAJJBLBH f = MGJKEJHEBPO_Blocks[i].PFAKPFKJJKA();
+					if(f != null)
+						return f;
+				}
+			}
 		}
 		else
 		{

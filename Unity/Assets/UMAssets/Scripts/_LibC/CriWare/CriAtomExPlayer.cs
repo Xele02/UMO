@@ -65,7 +65,10 @@ namespace ExternLib
 		}
         public static void CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear(IntPtr pool)
         {
-            TodoLogger.Log(0, "CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear");
+            if(pool.ToInt32() != 0)
+            {
+                TodoLogger.Log(0, "CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear");
+            }
         }
         public static void criAtomExPlayer_SetVolume(IntPtr player, float volume)
         {

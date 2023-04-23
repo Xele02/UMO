@@ -283,7 +283,7 @@ public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x180166C Offset: 0x180166C VA: 0x180166C Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 }

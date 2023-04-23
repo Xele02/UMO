@@ -110,9 +110,9 @@ public class NGJOPPIGCPM_ResultData
 		{
 			TodoLogger.Log(0, "Event");
 		}
-		PBGLMBMEKAA_ComboCount = mInfo1.PDNJGJNGPNJ;
-		GCAPLLEIAAI_HighScore = mInfo1.ODEHJGPDFCL;
-		GPMILOPNBPA_Bonus = mInfo1.ECLDABOLHLM;
+		PBGLMBMEKAA_ComboCount = mInfo1.PDNJGJNGPNJ_MaxCombo;
+		GCAPLLEIAAI_HighScore = mInfo1.ODEHJGPDFCL_Score;
+		GPMILOPNBPA_Bonus = mInfo1.ECLDABOLHLM_ExcellentScore;
 		if(!GIKLNODJKFK_IsLine6)
 		{
 			IHNCAAHAFEE_Score = mInfo1.BDCAICINCKK_GetScoreForDiff((int)NOAKHKMLPFK_diff);
@@ -140,7 +140,7 @@ public class NGJOPPIGCPM_ResultData
 		DACPGGLFLJG_FullComboType = 0;
 		if (!JIBFGLODGHN_EnableLiveSkip)
 		{
-			DACPGGLFLJG_FullComboType = mInfo1.ABFNAEKEGOB;
+			DACPGGLFLJG_FullComboType = mInfo1.ABFNAEKEGOB_ComboRank;
 		}
 		PMCGHPOGLGM_EnableLiveSkip = JIBFGLODGHN_EnableLiveSkip;
 		BPGDOBCMDBP_CategoryId = HMONFKMAFDD.DEPGBBJMFED_CategoryId;
