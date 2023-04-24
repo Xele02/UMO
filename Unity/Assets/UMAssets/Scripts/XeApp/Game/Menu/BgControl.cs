@@ -222,6 +222,10 @@ namespace XeApp.Game.Menu
 			float fadeTime;
 			UGUIFader fader;
 			//0x143F5D4
+			if (bgType <= BgType.Undefined)
+				yield break;
+			if (id < 1)
+				id = 1;
 			ConvertBgType(bgType, ref textureType, ref id);
 			bool wasEnabled = m_limitedHomeBg.m_enable;
 			m_limitedHomeBg.m_enable = false;

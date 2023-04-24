@@ -151,7 +151,75 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA4408 Offset: 0xEA4408 VA: 0xEA4408
-		//public void CalcUtaRateForLog(JDDGGJCGOPA rec, int freeMusicId, int lastDifficulty, int lastRatingScore) { }
+		public void CalcUtaRateForLog(JDDGGJCGOPA_RecordMusic rec, int freeMusicId, int lastDifficulty, int lastRatingScore)
+		{
+			if (rec == null)
+				rec = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LCKMBHDMPIP_RecordMusic;
+			int score_rating_coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
+			List<HSRatingData>[] data = new List<HSRatingData>[1] { new List<HSRatingData>() };
+			data[0].Clear();
+			rateAttr[0] = 0;
+			rateTotal = 0;
+			for(int i = 0; i < rec.FAMANJGJANN_FreeMusicInfo.Count; i++)
+			{
+				KEODKEGFDLD_FreeMusicInfo fdata = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(rec.FAMANJGJANN_FreeMusicInfo[i].FDMENECIKEL_FreeMusicId);
+				if(fdata != null && fdata.PPEGAKEIEGM_Enabled == 2 && fdata.DEPGBBJMFED_CategoryId != 5)
+				{
+					int score = rec.FAMANJGJANN_FreeMusicInfo[i].IFNDLIGGGHP_HighScoreScore;
+					int diff = rec.FAMANJGJANN_FreeMusicInfo[i].NOCLBJAGNHD_HighScoreDiff;
+					if(score < lastRatingScore && fdata.GHBPLHBNMBK_FreeMusicId == freeMusicId)
+					{
+						score = lastRatingScore;
+						diff = lastDifficulty;
+					}
+					if(score > 0)
+					{
+						HSRatingData hsdata = new HSRatingData();
+						hsdata.FreeMusicId = fdata.GHBPLHBNMBK_FreeMusicId;
+						hsdata.Difficulty = lastDifficulty;
+						hsdata.Score = score / score_rating_coef;
+						hsdata.RawScore = score;
+						data[0].Add(hsdata);
+					}
+				}
+			}
+			if(data[0].Count > 0)
+			{
+				data[0].Sort((HSRatingData a, HSRatingData b) =>
+				{
+					//0xEA7610
+					int res = a.Score.CompareTo(b.Score);
+					if (res == 0)
+						res = a.FreeMusicId.CompareTo(b.FreeMusicId);
+					return res;
+				});
+				rateAttr[0] = 0;
+				int cnt = data[0].Count;
+				if (cnt > 9)
+					cnt = 10;
+				int score = 0;
+				for (int i = 0; i < cnt; i++)
+				{
+					rateAttr[0] += data[0][i].Score;
+					hsRatingMusicData[i, 0].FreeMusicId = data[0][i].FreeMusicId;
+					hsRatingMusicData[i, 0].Difficulty = data[0][i].Difficulty;
+					hsRatingMusicData[i, 0].Score = data[0][i].Score;
+					hsRatingMusicData[i, 0].RawScore = data[0][i].RawScore;
+					int rank = 0;
+					if (score < 1 || hsRatingMusicData[i, 0].Score != score)
+					{
+						rank = i + 1;
+					}
+					else
+					{
+						rank = hsRatingMusicData[i - 1, 0].RankNum;
+					}
+					hsRatingMusicData[i, 0].RankNum = rank;
+					score = hsRatingMusicData[i, 0].Score;
+				}
+				rateTotal += rateAttr[0];
+			}
+		}
 
 		//// RVA: 0xEA5310 Offset: 0xEA5310 VA: 0xEA5310
 		public void CalcUtaRate(List<JNMFKOHFAFB_PublicStatus.LBGEDDJKOKF> hsRatings)
@@ -221,7 +289,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA5D28 Offset: 0xEA5D28 VA: 0xEA5D28
-		//public static int CalcUtaRate(int rating_score) { }
+		public static int CalcUtaRate(int rating_score)
+		{
+			return rating_score / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
+		}
 
 		//// RVA: 0xEA5E50 Offset: 0xEA5E50 VA: 0xEA5E50
 		public static int GetUtaRate(int free_music_id)
