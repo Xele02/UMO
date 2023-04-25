@@ -653,7 +653,10 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
     }
 
 	// // RVA: 0x121FFE4 Offset: 0x121FFE4 VA: 0x121FFE4
-	// public static bool KGJJCAKCMLO(int AAODIMMEFBI) { }
+	public static bool KGJJCAKCMLO(int AAODIMMEFBI)
+	{
+		return POPLHDKHIIM() <= AAODIMMEFBI;
+	}
 
 	// // RVA: 0x1215A78 Offset: 0x1215A78 VA: 0x1215A78
 	public static bool KGJJCAKCMLO()

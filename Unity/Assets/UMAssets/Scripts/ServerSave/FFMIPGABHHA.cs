@@ -1,4 +1,6 @@
 
+using System.Text;
+
 [System.Obsolete("Use FFMIPGABHHA_SaveHash", true)]
 public class FFMIPGABHHA { }
 public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
@@ -16,8 +18,15 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14E4BBC Offset: 0x14E4BBC VA: 0x14E4BBC
 	public static string CAOGDCBPBAN(string MDADLCOCEBN, int EHDDADDKMFI, int FEOKKEPAIBB)
 	{
-		TodoLogger.Log(0, "CAOGDCBPBAN");
-		return "";
+		StringBuilder str = new StringBuilder();
+		str.Append(MDADLCOCEBN);
+		str.Append('-');
+		str.Append(EHDDADDKMFI);
+		str.Append('-');
+		str.Append(FEOKKEPAIBB);
+		str.Append('-');
+		str.Append(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+		return str.ToString();
 	}
 
 	// // RVA: 0x14E4E1C Offset: 0x14E4E1C VA: 0x14E4E1C

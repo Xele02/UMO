@@ -343,7 +343,7 @@ public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_ServerSaveBlock
 	private long GKCNAJDCODL_DcTmCrypted; // 0x70
 	private int BFKKFMILHMO_MaxScCrypted; // 0x78
 	private int FCFIANFLKCF_MaxIdCrypted; // 0x7C
-	private int OBJIGFALAGG_MaxDgCrypted; // 0x80
+	private int OBJIGFALAGG_MaxDfCrypted; // 0x80
 	private int KGNOMMHMJEB_MaxL6Crypted; // 0x84
 	private int[] DEMGKPDLMJO_DfClr = new int[5]; // 0x88
 	private int[] EJAHPKHLMHA_DfFcb = new int[5]; // 0x8C
@@ -374,7 +374,7 @@ public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_ServerSaveBlock
 	public long PCBJHBCNNGD_TClr { get { return DOOLJJCBNON_TClrCrypted ^ FBGGEFFJJHB; } set { DOOLJJCBNON_TClrCrypted = value ^ FBGGEFFJJHB; } } //BHLKKHJGGE 0x1B97DD4 FJFFPLKGNDF 0x1B97DEC
 	public int AEBENOJEGOJ_MaxSc { get { return FBGGEFFJJHB ^ BFKKFMILHMO_MaxScCrypted; } set { BFKKFMILHMO_MaxScCrypted = FBGGEFFJJHB ^ value; } } //DEBHLAOOOBN 0x1B97E00 AKKKJMMFOKH 0x1B97E10
 	public int JHOIMONJKLG_MaxId { get { return FCFIANFLKCF_MaxIdCrypted ^ FBGGEFFJJHB; } set { FCFIANFLKCF_MaxIdCrypted = value ^ FBGGEFFJJHB; } } //DJPLEMJPOIH 0x1B97E20 JINGNHOHDKD 0x1B97E30
-	public int JEENEHPOCFN_MaxDf { get { return OBJIGFALAGG_MaxDgCrypted ^ FBGGEFFJJHB; } set { OBJIGFALAGG_MaxDgCrypted = value ^ FBGGEFFJJHB; } } //ODBOEKIHJDB 0x1B97E40 KOJIBFLIAAK 0x1B97E50
+	public int JEENEHPOCFN_MaxDf { get { return OBJIGFALAGG_MaxDfCrypted ^ FBGGEFFJJHB; } set { OBJIGFALAGG_MaxDfCrypted = value ^ FBGGEFFJJHB; } } //ODBOEKIHJDB 0x1B97E40 KOJIBFLIAAK 0x1B97E50
 	public int NADEAGFJDLL_MaxL6 { get { return KGNOMMHMJEB_MaxL6Crypted ^ FBGGEFFJJHB; } set { KGNOMMHMJEB_MaxL6Crypted = value ^ FBGGEFFJJHB; } } //EICGJGODOPK 0x1B97E60 INFBHCPEBIG 0x1B97E70
 	public long DALCINDEJLC_DcTm { get { return GKCNAJDCODL_DcTmCrypted ^ FBGGEFFJJHB; } set { GKCNAJDCODL_DcTmCrypted = value ^ FBGGEFFJJHB; } } //APCILEIAHAJ 0x1B97E80 GEJPIMFNKLJ 0x1B97E98
 	public string NAKJJBEIION_DcNm { get { return IJCPFDPNDHE_DcNm; } set { IJCPFDPNDHE_DcNm = value; } } //NEFKGAAMLEG 0x1B97EAC ACAJCPPKAKN 0x1B97EB4

@@ -176,8 +176,31 @@ public class NDABOOOOENC
 	// // RVA: 0x1ADC758 Offset: 0x1ADC758 VA: 0x1ADC758
 	public List<int> HHKNOHKGAHP()
 	{
-		TodoLogger.Log(0, "HHKNOHKGAHP");
-		return new List<int>();
+		List<int> res = new List<int>();
+		if(GKDLPKNOGCK_Initialized)
+		{
+			if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+			{
+				if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				{
+					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Count; i++)
+					{
+						CNLPPCFJEID_QuestInfo dbquest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
+						if (dbquest.INDDJNMPONH_Type != 0)
+						{
+							if(dbquest.HDBFCIOCNPA != 0)
+							{
+								if(ILLPDLODANB.OBOJKHIJBGL(dbquest.PPFNGGCBJKC, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, true) > 1)
+								{
+									res.Add(dbquest.HDBFCIOCNPA);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return res;
 	}
 
 	// // RVA: 0x1ADCB04 Offset: 0x1ADCB04 VA: 0x1ADCB04
