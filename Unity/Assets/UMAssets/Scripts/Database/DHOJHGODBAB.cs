@@ -108,7 +108,7 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 				data.GJFPFFBAKGK = array[i].EICJBAEDMNM;
 				data.OAPCHMHAJID = array[i].HPGNBPIBAOM != 0;
 				data.DEPGBBJMFED = (int)array[i].DMEDKJPOLCH;
-				data.HDBFCIOCNPA = (int)array[i].ADOJHHMMNIN;
+				data.HDBFCIOCNPA_AchievementId = (int)array[i].ADOJHHMMNIN;
 				data.LMPPENOILPF = (int)array[i].ADCKKAFCIAC;
 				data.EKANGPODCEP = array[i].JMMEGKGCIIL;
 				if(JKAECBCNHAN_IsEnabled((int)array[i].IJEKNCDIIAE, data.INDDJNMPONH_Type != 0 ? 2 : data.INDDJNMPONH_Type, 0) != 2)
@@ -169,7 +169,7 @@ public class CNLPPCFJEID_QuestInfo
 	private int ELFADCBHPCD; // 0x44
 	private int EGCMPELNLKP; // 0x48
 	public bool OAPCHMHAJID; // 0x4C
-	public int HDBFCIOCNPA; // 0x50
+	public int HDBFCIOCNPA_AchievementId; // 0x50
 
 	public int PPFNGGCBJKC { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0x175CD9C DEMEPMAEJOO 0x175CCD4 HIGKAIDMOKN
 	public int INDDJNMPONH_Type { get { return MKENMKMJFKP ^ FBGGEFFJJHB; } set { MKENMKMJFKP = value ^ FBGGEFFJJHB; } } //0x175CDA8 GHAILOLPHPF 0x175CCE4 BACGOKIGMBC

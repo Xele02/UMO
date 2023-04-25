@@ -590,7 +590,13 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1C2F14C Offset: 0x1C2F14C VA: 0x1C2F14C
-	// public static int IEFAHENNHAH(bool GIKLNODJKFK, int AKNELONELJK, int OIPCCBHIKIA) { }
+	public static int IEFAHENNHAH(bool GIKLNODJKFK, int AKNELONELJK, int OIPCCBHIKIA)
+	{
+		int r = AKNELONELJK << 8;
+		if (!GIKLNODJKFK)
+			r = AKNELONELJK << 8 | 0x10000;
+		return r | OIPCCBHIKIA;
+	}
 
 	// // RVA: 0x1C2F164 Offset: 0x1C2F164 VA: 0x1C2F164
 	// public static void NPGCCNCHDLF(int FAENAMBEGMD, out bool GIKLNODJKFK, out int AKNELONELJK, out int OIPCCBHIKIA) { }

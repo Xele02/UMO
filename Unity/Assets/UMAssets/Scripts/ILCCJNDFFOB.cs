@@ -694,7 +694,13 @@ public class ILCCJNDFFOB
 	// // RVA: 0x9039C4 Offset: 0x9039C4 VA: 0x9039C4
 	public void JOLBIMMKGIP(int JPNBLCBOCLN, int NAJPNHKHKKA, int HBNIMMAEKHJ, int JGGKJBCGKCC)
 	{
-		TodoLogger.Log(0, "JOLBIMMKGIP");
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(data, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		data["type"] = 1;
+		data["room_id"] = JPNBLCBOCLN;
+		data[AFEHLCGHAEE_Strings.NAJPNHKHKKA_sns_id] = NAJPNHKHKKA;
+		data["use_item_id"] = JGGKJBCGKCC;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.HGOGFPOCKFA/*17*/, data, false);
 	}
 
 	// // RVA: 0x903D7C Offset: 0x903D7C VA: 0x903D7C

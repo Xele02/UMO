@@ -9,12 +9,12 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 {
     public class IFCOFHAFMON
     {
-        public int EKANGPODCEP; // 0x8
-        public int CMEJFJFOIIJ; // 0xC
-        public int AIBFGKBACCB; // 0x10
-        public long FKPEAGGKNLC; // 0x18
-        public long KOMKKBDABJP; // 0x20
-        public bool CGHNCPEKOCK; // 0x28
+        public int EKANGPODCEP_EId; // 0x8
+        public int CMEJFJFOIIJ_QId; // 0xC
+        public int AIBFGKBACCB_LId; // 0x10
+        public long FKPEAGGKNLC_Start; // 0x18
+        public long KOMKKBDABJP_End; // 0x20
+        public bool CGHNCPEKOCK_Dai; // 0x28
     }
 
     public class JBJMNJMJFOJ
@@ -36,10 +36,16 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 	}
 
 	// // RVA: 0xCBC1CC Offset: 0xCBC1CC VA: 0xCBC1CC
-	// public void KPOJEAFIGOB() { }
+	public void KPOJEAFIGOB()
+	{
+		EKFEHIHJHEN.Clear();
+	}
 
 	// // RVA: 0xCBC244 Offset: 0xCBC244 VA: 0xCBC244
-	// public void CGJLFIGBHCG(PBJPACKDIIB.IFCOFHAFMON AOGFMNFOBNP) { }
+	public void CGJLFIGBHCG(IFCOFHAFMON AOGFMNFOBNP)
+	{
+		EKFEHIHJHEN.Add(AOGFMNFOBNP);
+	}
 
 	// // RVA: 0xCBC2C4 Offset: 0xCBC2C4 VA: 0xCBC2C4
 	public void KNPBADBCOLO_Send(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
@@ -60,19 +66,19 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 		{
 			IFCOFHAFMON d = EKFEHIHJHEN[GGJDKPHBCFC];
 			BNJJHPEGNAI.HCAJEKFFNBM data = new BNJJHPEGNAI.HCAJEKFFNBM();
-			if(!d.CGHNCPEKOCK)
+			if(!d.CGHNCPEKOCK_Dai)
 			{
-				data.EMGJJFKONHK_ExpireDays = TimeSpan.FromSeconds(d.KOMKKBDABJP - d.FKPEAGGKNLC).Days + 1;
-				AHAENNIFOAF.DNEIBFNPNIA(ABMADBCLLHH, d.EKANGPODCEP, d.AIBFGKBACCB);
+				data.EMGJJFKONHK_ExpireDays = TimeSpan.FromSeconds(d.KOMKKBDABJP_End - d.FKPEAGGKNLC_Start).Days + 1;
+				AHAENNIFOAF.DNEIBFNPNIA(ABMADBCLLHH, d.EKANGPODCEP_EId, d.AIBFGKBACCB_LId);
 			}
 			else
 			{
 				data.EMGJJFKONHK_ExpireDays = 1;
-				DateTime date = Utility.GetLocalDateTime(d.FKPEAGGKNLC);
-				AHAENNIFOAF.OIEHNLEPEBG(ABMADBCLLHH, d.EKANGPODCEP, d.AIBFGKBACCB, date.Month, date.Day);
+				DateTime date = Utility.GetLocalDateTime(d.FKPEAGGKNLC_Start);
+				AHAENNIFOAF.OIEHNLEPEBG(ABMADBCLLHH, d.EKANGPODCEP_EId, d.AIBFGKBACCB_LId, date.Month, date.Day);
 			}
 			data.KGICDMIJGDF = ABMADBCLLHH.ToString();
-			AHAENNIFOAF.JHJAMPNMCFA(ABMADBCLLHH, d.CMEJFJFOIIJ);
+			AHAENNIFOAF.JHJAMPNMCFA(ABMADBCLLHH, d.CMEJFJFOIIJ_QId);
 			data.ADCMNODJBGJ_Title = ABMADBCLLHH.ToString();
 			KEPNMGHABPI k = KEPNMGHABPI.OGIFFNLIDIO.GOAMILGNJIE(data);
 			SakashoBbsCommentInfo info = new SakashoBbsCommentInfo();

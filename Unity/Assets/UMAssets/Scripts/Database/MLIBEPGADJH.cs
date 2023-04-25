@@ -368,10 +368,16 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 	public List<KKLDOOJBJMN> CDENCMNHNGA_SceneList { get; set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	// // RVA: 0x195D7F0 Offset: 0x195D7F0 VA: 0x195D7F0
-	// public int NGAIKCLLDBN(int BCCHOBPJJKE) { }
+	public int NGAIKCLLDBN(int BCCHOBPJJKE)
+	{
+		return 100;
+	}
 
 	// // RVA: 0x195D7F8 Offset: 0x195D7F8 VA: 0x195D7F8
-	// public int BMPOAGJJNAF(int BCCHOBPJJKE) { }
+	public int BMPOAGJJNAF(int BCCHOBPJJKE)
+	{
+		return 1;
+	}
 
 	// // RVA: 0x195D800 Offset: 0x195D800 VA: 0x195D800
 	public MLIBEPGADJH_Scene()

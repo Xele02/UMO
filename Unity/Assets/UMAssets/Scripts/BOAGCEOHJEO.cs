@@ -10,7 +10,18 @@ public class BOAGCEOHJEO
 	//public static double LLPDMEJCMGA(long KINJOEIAHFK, long PCCFAKEOBIC, long KNIKOPJKPCI) { }
 
 	//// RVA: 0x19CBC78 Offset: 0x19CBC78 VA: 0x19CBC78
-	//public static double GOAOBNBGDBJ(long KINJOEIAHFK, long PCCFAKEOBIC, long KNIKOPJKPCI, long DNBFMLBNAEE) { }
+	public static double GOAOBNBGDBJ(long KINJOEIAHFK, long PCCFAKEOBIC, long KNIKOPJKPCI, long DNBFMLBNAEE)
+	{
+		long pKNIKOPJKPCI = KNIKOPJKPCI;
+		if (KNIKOPJKPCI == 0)
+			KNIKOPJKPCI = PCCFAKEOBIC;
+		double d = (PCCFAKEOBIC - KNIKOPJKPCI) * 0.49f / (PCCFAKEOBIC - pKNIKOPJKPCI);
+		if (d < 0)
+			d = 0;
+		if (d >= 0.49f)
+			d = 0.49f;
+		return d + DNBFMLBNAEE;
+	}
 
 	//// RVA: 0x19CBD60 Offset: 0x19CBD60 VA: 0x19CBD60
 	public static double CFLDNJANAPI_Truncate(double IGFLJCNGAML)

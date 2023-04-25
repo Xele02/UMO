@@ -44,7 +44,7 @@ public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 	public static string POFDDFCGEGP = "_"; // 0x0
 
 	public List<EFIFBJGKPJF> HAJEJPFGILG { get; private set; } // 0x24 LDFKOFAKEPE DFFEFGAIDGI OMMAOJNEGAG
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x1774238 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x1774238 NFKFOODCJJB
 
 	// // RVA: 0x1771C6C Offset: 0x1771C6C VA: 0x1771C6C
 	public DDEMMEPBOIA_Sns()

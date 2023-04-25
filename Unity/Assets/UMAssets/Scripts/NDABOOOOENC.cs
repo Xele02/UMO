@@ -171,22 +171,96 @@ public class NDABOOOOENC
 	}
 
 	// // RVA: 0x1ADC3E8 Offset: 0x1ADC3E8 VA: 0x1ADC3E8
-	// public void GLHANCMGNDM(int PPFNGGCBJKC, double JBGEEPFKIGG = 100) { }
+	public void GLHANCMGNDM_UpdateAchievement(int PPFNGGCBJKC, double JBGEEPFKIGG = 100)
+	{
+		if(!AppEnv.IsCBT() && GKDLPKNOGCK_Initialized)
+		{
+			if(PPFNGGCBJKC < JIMKNDJMCID.Length)
+			{
+				string achId = JIMKNDJMCID[PPFNGGCBJKC];
+				if(PPFNGGCBJKC >= 27 && PPFNGGCBJKC < 31)
+				{
+					string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("gpgs_key_" + PPFNGGCBJKC, "");
+					if (!string.IsNullOrEmpty(str))
+						achId = str;
+				}
+				Social.ReportProgress(achId, 100, (bool FHANAFNKIFC) =>
+				{
+					//0x1ADDD80
+					return;
+				});
+			}
+		}
+	}
 
 	// // RVA: 0x1ADC758 Offset: 0x1ADC758 VA: 0x1ADC758
 	public List<int> HHKNOHKGAHP()
 	{
-		TodoLogger.Log(0, "HHKNOHKGAHP");
-		return new List<int>();
+		List<int> res = new List<int>();
+		if(GKDLPKNOGCK_Initialized)
+		{
+			if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+			{
+				if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				{
+					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Count; i++)
+					{
+						CNLPPCFJEID_QuestInfo dbquest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
+						if (dbquest.INDDJNMPONH_Type != 0)
+						{
+							if(dbquest.HDBFCIOCNPA_AchievementId != 0)
+							{
+								if(ILLPDLODANB.OBOJKHIJBGL(dbquest.PPFNGGCBJKC, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, true) > 1)
+								{
+									res.Add(dbquest.HDBFCIOCNPA_AchievementId);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return res;
 	}
 
 	// // RVA: 0x1ADCB04 Offset: 0x1ADCB04 VA: 0x1ADCB04
-	// public void NKFNJMEELMP(List<int> PKDKPCOOPLL) { }
+	public void NKFNJMEELMP_UnlockAchievements(List<int> PKDKPCOOPLL)
+	{
+		if(GKDLPKNOGCK_Initialized)
+		{
+			for(int i = 0; i < PKDKPCOOPLL.Count; i++)
+			{
+				GLHANCMGNDM_UpdateAchievement(PKDKPCOOPLL[i], 100);
+			}
+		}
+	}
 
 	// // RVA: 0x1ADCBE8 Offset: 0x1ADCBE8 VA: 0x1ADCBE8
-	public void NKFNJMEELMP()
+	public void NKFNJMEELMP_UpdateQuestAchievements()
 	{
-		TodoLogger.Log(0, "NKFNJMEELMP");
+		if(GKDLPKNOGCK_Initialized)
+		{
+			if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+			{
+				if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				{
+					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Count; i++)
+					{
+						CNLPPCFJEID_QuestInfo dbQuest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
+						if (dbQuest.INDDJNMPONH_Type != 0)
+						{
+							if(dbQuest.HDBFCIOCNPA_AchievementId != 0)
+							{
+								if(ILLPDLODANB.OBOJKHIJBGL(dbQuest.PPFNGGCBJKC, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, true) > 1)
+								{
+									GLHANCMGNDM_UpdateAchievement(dbQuest.HDBFCIOCNPA_AchievementId, 100);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 
 	// // RVA: 0x1ADCF50 Offset: 0x1ADCF50 VA: 0x1ADCF50

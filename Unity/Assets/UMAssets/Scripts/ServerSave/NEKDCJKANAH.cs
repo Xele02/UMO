@@ -82,7 +82,7 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 
 	public bool EOHHFADHHBL { get { return AKLLPNDJFCN_Complete == GCAHAAADBEH; } set { AKLLPNDJFCN_Complete = value ? GCAHAAADBEH : GKIDNIKODDK; } } //FPOHKGALENL 0x1AE66D8  HCFHGHNGPJK 0x1AE66F4
 	public List<HKDNILFKCFC> MMKAJBFBKNH { get; private set; } // 0x28 JAKKBNNDGOM BLJEKMOEHCM FJAHCOJOEJO
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x1AE9734 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x1AE9734 NFKFOODCJJB
 
 	// // RVA: 0x1AE6720 Offset: 0x1AE6720 VA: 0x1AE6720
 	public int FKJMJELHGGG()

@@ -13,7 +13,7 @@ public class NAKMCMEPAGH
 	public int HLNOELCIBPH_Perf; // 0x1C
 	public int FILFPNDEINH_Fcb; // 0x20
 	public int KOONLNKCIJC_SS; // 0x24
-	public int EDLBLCGHECJ_Max; // 0x28
+	public int EDLBLCGHECJ_MaxScore; // 0x28
 	public long HOHBKPPOLLA_Uc; // 0x30
 	public int GACBDCLPOCD_Sdv; // 0x38
 	public int IMIEPNOECFD_Vk; // 0x3C
@@ -33,27 +33,75 @@ public class NAKMCMEPAGH
 	public int BKEKKFPEPBG_LDt { get { return DAPDDMJNNGG ^ FBGGEFFJJHB; } set { DAPDDMJNNGG = value ^ FBGGEFFJJHB; } } //0x17C0598 POIFAKPKGPE 0x17C05A8 KPEDOCAGMJP
 
 	// // RVA: 0x17C05B8 Offset: 0x17C05B8 VA: 0x17C05B8
-	// public void FBKAPLHEACL() { }
+	public void FBKAPLHEACL_AddMusicClear()
+	{
+		if (MILCBLJDADN_MusicClear < 99999999)
+			MILCBLJDADN_MusicClear++;
+	}
 
 	// // RVA: 0x17C05D4 Offset: 0x17C05D4 VA: 0x17C05D4
-	// public void KGFIAHEEMDN(int MGBDCFIKBPM) { }
+	public void KGFIAHEEMDN_AddSerieClear(int MGBDCFIKBPM)
+	{
+		int a = 0;
+		if(MGBDCFIKBPM >= 2 && MGBDCFIKBPM < 6)
+		{
+			a = 1;
+			switch(MGBDCFIKBPM)
+			{
+				case 2:
+					break;
+				default:
+					a = MGBDCFIKBPM - 1;
+					break;
+			}
+		}
+		if (LHOCOEOKFNO_SerieClear[a] > 99999998)
+			return;
+		LHOCOEOKFNO_SerieClear[a]++;
+	}
 
 	// // RVA: 0x17C06AC Offset: 0x17C06AC VA: 0x17C06AC
-	// public void HIEBCILPBGB(int AKNELONELJK, bool GIKLNODJKFK = False) { }
+	public void HIEBCILPBGB_AddDiffClear(int AKNELONELJK, bool GIKLNODJKFK = false)
+	{
+		if(!GIKLNODJKFK)
+		{
+			if (PHPPOGOEOAF_DiffClear[AKNELONELJK] > 99999998)
+				return;
+			PHPPOGOEOAF_DiffClear[AKNELONELJK]++;
+		}
+		else
+		{
+			if (IAFPEPABGJJ_DiffClear16[AKNELONELJK] > 99999998)
+				return;
+			IAFPEPABGJJ_DiffClear16[AKNELONELJK]++;
+		}
+	}
 
 	// // RVA: 0x17C0798 Offset: 0x17C0798 VA: 0x17C0798
-	// public void PFLCOFBJOED() { }
+	public void PFLCOFBJOED_AddFcb()
+	{
+		if (FILFPNDEINH_Fcb < 99999999)
+			FILFPNDEINH_Fcb++;
+	}
 
 	// // RVA: 0x17C07B4 Offset: 0x17C07B4 VA: 0x17C07B4
-	// public void OLEDHOJJIOH() { }
+	public void OLEDHOJJIOH_AddSS()
+	{
+		if (KOONLNKCIJC_SS < 99999999)
+			KOONLNKCIJC_SS++;
+	}
 
 	// // RVA: 0x17C07D0 Offset: 0x17C07D0 VA: 0x17C07D0
-	// public void DHECAFOELPF(int KNIFCANOHOC) { }
+	public void DHECAFOELPF_SetHighScore(int KNIFCANOHOC)
+	{
+		if (EDLBLCGHECJ_MaxScore < KNIFCANOHOC)
+			EDLBLCGHECJ_MaxScore = KNIFCANOHOC;
+	}
 
 	// // RVA: 0x17C07E0 Offset: 0x17C07E0 VA: 0x17C07E0
-	public void EJJAPFPJLHP(int ACGLMKEBMDL)
+	public void EJJAPFPJLHP_AddUc(int ACGLMKEBMDL)
 	{
-		TodoLogger.Log(1000, "Find the max value");
+		TodoLogger.Log(TodoLogger.ToCheck, "Find the max value (99999999?)");
 		HOHBKPPOLLA_Uc += ACGLMKEBMDL;
 	}
 
@@ -64,12 +112,17 @@ public class NAKMCMEPAGH
 	// public void MAFAKCMFHEE() { }
 
 	// // RVA: 0x17C0884 Offset: 0x17C0884 VA: 0x17C0884
-	// public void MOOJGMJFOKK() { }
+	public void MOOJGMJFOKK_AddVk()
+	{
+		if (IMIEPNOECFD_Vk < 99999999)
+			IMIEPNOECFD_Vk++;
+	}
 
 	// // RVA: 0x17C08A0 Offset: 0x17C08A0 VA: 0x17C08A0
-	public void LLKJHBIPCOP()
+	public void LLKJHBIPCOP_AddMk()
 	{
-		TodoLogger.Log(0, "LLKJHBIPCOP");
+		if (BENEAPDMALA_Mk < 99999999)
+			BENEAPDMALA_Mk++;
 	}
 
 	// // RVA: 0x17C08BC Offset: 0x17C08BC VA: 0x17C08BC
@@ -102,7 +155,7 @@ public class NAKMCMEPAGH
 		HLNOELCIBPH_Perf = 0;
 		FILFPNDEINH_Fcb = 0;
 		KOONLNKCIJC_SS = 0;
-		EDLBLCGHECJ_Max = 0;
+		EDLBLCGHECJ_MaxScore = 0;
 		NALPJPKDNGH_Dp = 0;
 		MJBCBJDMODC_Valu = 0;
 		PDGJIJOMAKO_Medl = 0;
@@ -139,7 +192,7 @@ public class NAKMCMEPAGH
 			HLNOELCIBPH_Perf != OIKJFMGEICL.HLNOELCIBPH_Perf ||
 			FILFPNDEINH_Fcb != OIKJFMGEICL.FILFPNDEINH_Fcb ||
 			KOONLNKCIJC_SS != OIKJFMGEICL.KOONLNKCIJC_SS ||
-			EDLBLCGHECJ_Max != OIKJFMGEICL.EDLBLCGHECJ_Max ||
+			EDLBLCGHECJ_MaxScore != OIKJFMGEICL.EDLBLCGHECJ_MaxScore ||
 			HOHBKPPOLLA_Uc != OIKJFMGEICL.HOHBKPPOLLA_Uc ||
 			GACBDCLPOCD_Sdv != OIKJFMGEICL.GACBDCLPOCD_Sdv ||
 			IMIEPNOECFD_Vk != OIKJFMGEICL.IMIEPNOECFD_Vk ||
@@ -185,7 +238,7 @@ public class NAKMCMEPAGH
 		FILFPNDEINH_Fcb = GPBJHKLFCEP.FILFPNDEINH_Fcb;
 		KOONLNKCIJC_SS = GPBJHKLFCEP.KOONLNKCIJC_SS;
 		HOHBKPPOLLA_Uc = GPBJHKLFCEP.HOHBKPPOLLA_Uc;
-		EDLBLCGHECJ_Max = GPBJHKLFCEP.EDLBLCGHECJ_Max;
+		EDLBLCGHECJ_MaxScore = GPBJHKLFCEP.EDLBLCGHECJ_MaxScore;
 		GACBDCLPOCD_Sdv = GPBJHKLFCEP.GACBDCLPOCD_Sdv;
 		IMIEPNOECFD_Vk = GPBJHKLFCEP.IMIEPNOECFD_Vk;
 		BENEAPDMALA_Mk = GPBJHKLFCEP.BENEAPDMALA_Mk;
