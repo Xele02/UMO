@@ -23,7 +23,7 @@ namespace LibVLCSharp.Shared
         internal const string LibSystem = "libSystem";
         internal const string Kernel32 = "kernel32";
         internal const string LibX11 = "libX11";
-        internal const string LibDl = "libdl";
+        internal const string LibDl = "libdl.so.2";
         internal const string WindowsLibraryExtension = ".dll";
         internal const string MacLibraryExtension = ".dylib";
         internal const string Lib = "lib";
