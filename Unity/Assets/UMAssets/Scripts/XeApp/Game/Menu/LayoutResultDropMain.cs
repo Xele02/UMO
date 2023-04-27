@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 			textRareItemNum.text = viewDrop.MFNCONLNBPB_RareItemNum.ToString();
 			textNomralItemNum.text = viewDrop.OOEFNNNFOLF_NormalItemNum.ToString();
 			textEventRareItemNum.text = viewDrop.POPPPGMKOHN_EventRareItemNum.ToString();
-			is_evenRareDrop = viewDrop.ELKAMCOPCDO > 0;
+			is_evenRareDrop = viewDrop.ELKAMCOPCDO_EventRareItemNum > 0;
 			layoutLuckType.StartChildrenAnimGoStop(viewDrop.MJBODMOLOBC_Luck == 0 ? "00": "01");
 			layoutScoreRankIcon.StartChildrenAnimGoStop((int)viewDrop.DCBDCHPKLCN_Rank, (int)viewDrop.DCBDCHPKLCN_Rank);
 			float a = (viewDrop.JKLNANHPJLO - 1) * 100;

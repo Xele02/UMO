@@ -80,7 +80,7 @@ public class PKECIDPBEFL
 		LHPDDGIJKNB();
 		HNDDJDMAAJD = JAFAIDPJALG();
 		if (JPDPFGFMKHK != null)
-			this.JPDPFGFMKHK_Ranking.AddRange(JPDPFGFMKHK);
+			JPDPFGFMKHK_Ranking.AddRange(JPDPFGFMKHK);
 		PKIKNGJNJJH_RankKeys.Clear();
 		if (PNMLDKNKIIM != null)
 			PKIKNGJNJJH_RankKeys.AddRange(PNMLDKNKIIM);
@@ -241,6 +241,7 @@ public class PKECIDPBEFL
 					data2["sta"] = CFLLEDGILPK_CoopQuest[i].FKPEAGGKNLC_Start;
 					data2["end"] = CFLLEDGILPK_CoopQuest[i].KOMKKBDABJP_End;
 					data2["dai"] = CFLLEDGILPK_CoopQuest[i].CGHNCPEKOCK_Dai;
+					data.Add(data2);
 				}
 			}
 			res["coop_quests"] = data;

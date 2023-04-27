@@ -79,7 +79,7 @@ public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 				data2[AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt] = HAJEJPFGILG[i].LDJIMGPHFPA_Cnt;
 				data2[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = HAJEJPFGILG[i].BEBJKJKBOGH_Date;
 				data2[AFEHLCGHAEE_Strings.AIHOJKFNEEN_itm] = HAJEJPFGILG[i].PMKJFKJFDOC_Itm;
-				data[POFDDFCGEGP + (i + 1)] = data;
+				data[POFDDFCGEGP + (i + 1)] = data2;
 			}
 		}
 		if(!EMBGIDLFKGM)

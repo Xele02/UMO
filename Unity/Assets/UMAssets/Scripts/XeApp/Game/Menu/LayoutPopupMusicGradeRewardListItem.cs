@@ -53,7 +53,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
-				TextGeneratorUtility.SetTextRectangleMessage(m_textName, string.Format(bk.GetMessageByLabel("popup_event_reward_platetitle"), EKLNMHFCAOI.APDHLDGBENB(m_itemId)), 1, JpStringLiterals.StringLiteral_12038);
+				TextGeneratorUtility.SetTextRectangleMessage(m_textName, string.Format(bk.GetMessageByLabel("popup_event_reward_platetitle"), EKLNMHFCAOI.APDHLDGBENB(m_itemId), EKLNMHFCAOI.INCKKODFJAP(m_itemId)), 1, JpStringLiterals.StringLiteral_12038);
 			}
 			else
 			{

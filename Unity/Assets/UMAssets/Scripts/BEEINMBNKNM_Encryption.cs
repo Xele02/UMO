@@ -121,33 +121,32 @@ public class BEEINMBNKNM_Encryption
 	// RVA: 0xC74134 Offset: 0xC74134 VA: 0xC74134
 	public void LBGGPBBOIEH(byte[] DBBGALAPFGC)
 	{ 
-			int size = DBBGALAPFGC.Length;
-			PMBEODGMMBB = KNEFBLHBDBG;
-			if(size > 0)
+		int size = DBBGALAPFGC.Length;
+		PMBEODGMMBB = KNEFBLHBDBG;
+		if (size > 0)
+		{
+			uint q = (uint)(size / PLNOOFNMHAL);
+			for (int i = 0; i < size; i++)
 			{
-					TodoLogger.Log(0, "TODO");
-					uint q = 0;//Math.DivRem(size, PLNOOFNMHAL);
-					/*for(int i = 0; i < size; i++)
-					{
-							q = q * GELENHPBKFA + DLDLDGJEOJG;
-							DBBGALAPFGC[i] = GPGMEAPLJAI_Key[q & 0x3ff] ^ DBBGALAPFGC[i];
-					}*/
+				q = (uint)(q * GELENHPBKFA + DLDLDGJEOJG);
+				DBBGALAPFGC[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ DBBGALAPFGC[i]);
 			}
+		}
 	}
 
 	// RVA: 0xC74230 Offset: 0xC74230 VA: 0xC74230
 	public void FAEFDAJAMCE(byte[] DBBGALAPFGC)
 	{
-			uint size = (uint)DBBGALAPFGC.Length;
-			PMBEODGMMBB = KNEFBLHBDBG;
-			if(size > 0)
+		uint size = (uint)DBBGALAPFGC.Length;
+		PMBEODGMMBB = KNEFBLHBDBG;
+		if (size > 0)
+		{
+			uint q = (uint)(size / PLNOOFNMHAL);
+			for (int i = 0; i < size; i++)
 			{
-					uint q = (uint)(size / PLNOOFNMHAL);
-					for(int i = 0; i < size; i++)
-					{
-							q = (uint)(q * GELENHPBKFA + DLDLDGJEOJG);
-							DBBGALAPFGC[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ DBBGALAPFGC[i]);
-					}
+				q = (uint)(q * GELENHPBKFA + DLDLDGJEOJG);
+				DBBGALAPFGC[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ DBBGALAPFGC[i]);
 			}
+		}
 	}
 }

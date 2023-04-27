@@ -234,8 +234,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E6898 Offset: 0x18E6898 VA: 0x18E6898
 		public bool IsOpenRankupPopup()
 		{
-			TodoLogger.Log(0, "IsOpenRankupPopup");
-			return false;
+			return isOpenRankupPopup;
 		}
 
 		// // RVA: 0x18E645C Offset: 0x18E645C VA: 0x18E645C

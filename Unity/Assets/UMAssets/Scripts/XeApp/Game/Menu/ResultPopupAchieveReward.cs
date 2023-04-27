@@ -22,7 +22,18 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4E094 Offset: 0xB4E094 VA: 0xB4E094
 		public void Setup(PopupAchieveRewardSetting setting, bool levelup)
 		{
-			TodoLogger.Log(0, "ResultPopupAchieveReward.Setup");
+			m_setting = setting;
+			m_isNotAchieve = setting == null;
+			if(setting != null)
+			{
+				PopupAchieveRewardContent ct = null;
+				if (setting.Content != null)
+				{
+					ct = setting.Content.GetComponent<PopupAchieveRewardContent>();
+				}
+				m_isNotAchieve = ct == null;
+			}
+			isLevelUp = levelup;
 		}
 
 		// // RVA: 0xB4E1E8 Offset: 0xB4E1E8 VA: 0xB4E1E8

@@ -344,8 +344,16 @@ public class EKLNMHFCAOI
 	// // RVA: 0x12EC60C Offset: 0x12EC60C VA: 0x12EC60C
 	public static int FABCKNDLPDH(FKGCBLHOOCL_Category INDDJNMPONH, int PPFNGGCBJKC)
 	{
-		TodoLogger.Log(0, "FABCKNDLPDH");
-		return 0;
+		int res = 1;
+		switch(INDDJNMPONH)
+		{
+			case FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene:
+				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[PPFNGGCBJKC - 1].EKLIPGELKCL_Rarity;
+			default:
+				TodoLogger.Log(0, "FABCKNDLPDH " + INDDJNMPONH);
+				break;
+		}
+		return res;
 	}
 
 	// // RVA: 0x12F75BC Offset: 0x12F75BC VA: 0x12F75BC

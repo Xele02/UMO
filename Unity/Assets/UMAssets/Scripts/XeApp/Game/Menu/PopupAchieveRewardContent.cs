@@ -60,7 +60,11 @@ namespace XeApp.Game.Menu
 		// RVA: 0xDF1AD8 Offset: 0xDF1AD8 VA: 0xDF1AD8
 		public void Update()
 		{
-			TodoLogger.Log(0, "Update");
+			if(m_updateList.Count > 0)
+			{
+				if (!m_updateList[0].MoveNext())
+					m_updateList.RemoveAt(0);
+			}
 		}
 
 		// RVA: 0xDF1C50 Offset: 0xDF1C50 VA: 0xDF1C50 Slot: 19
