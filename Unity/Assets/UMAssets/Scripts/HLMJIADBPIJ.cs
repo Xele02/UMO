@@ -119,7 +119,7 @@ public class HLMJIADBPIJ
 					JPCKBFBCJKD m = NKEBMCIMJND.IBPAFKKEKNK_Music.LLJOPJMIGPD((int)DPIBHFNDJII);
 					if (m == null)
 						return false;
-					if (!AHEFHIMGIBI.LNOOKHJBENO_StoryRecord.EOHHFADHHBL)
+					if (!AHEFHIMGIBI.LNOOKHJBENO_StoryRecord.EOHHFADHHBL_Complete)
 						return false;
 					if (!NKEBMCIMJND.IBPAFKKEKNK_Music.IAAMKEJKPPL(m, AHEFHIMGIBI.KCCLEHLLOFG_Common.KIECDDFNCAN_Level))
 						return false;
