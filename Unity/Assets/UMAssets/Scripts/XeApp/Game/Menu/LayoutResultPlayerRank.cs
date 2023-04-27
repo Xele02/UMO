@@ -227,8 +227,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E67EC Offset: 0x18E67EC VA: 0x18E67EC
 		public IEnumerator Co_ShowRankupPopup()
 		{
-			TodoLogger.Log(0, "Co_ShowRankupPopup");
-			yield return null;
+			//0x18E7F4C
+			if(viewLevelupData.APIIHFJGEAO_Level < viewLevelupData.IANDPFDFAKP_Level2)
+			{
+				TodoLogger.Log(0, "Co_ShowRankupPopup() 1");
+				yield break;
+			}
 		}
 
 		// // RVA: 0x18E6898 Offset: 0x18E6898 VA: 0x18E6898
@@ -259,10 +263,28 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C97C Offset: 0x71C97C VA: 0x71C97C
 		// // RVA: 0x18E69C8 Offset: 0x18E69C8 VA: 0x18E69C8
-		// private IEnumerator Co_FinishGaugeAnim() { }
+		private IEnumerator Co_FinishGaugeAnim()
+		{
+			int frame;
+
+			//0x18E7AD4
+			frame = 0;
+			while (frame < GAUGE_ANIM_FINISH_TIME * 30)
+			{
+				if (!PopupWindowManager.IsOpenPopupWindow())
+					frame++;
+				yield return null;
+			}
+			layoutAddAnimGauge.StartChildrenAnimGoStop("go_out", "st_out");
+			layoutEffectOutGauge.StartChildrenAnimGoStop("go_out", "st_out");
+			layoutEffectInGauge.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		// // RVA: 0x18E6A74 Offset: 0x18E6A74 VA: 0x18E6A74
-		// public void StartFinishGaugeAnim() { }
+		public void StartFinishGaugeAnim()
+		{
+			GaugeAnimFinishCoroutine = this.StartCoroutineWatched(Co_FinishGaugeAnim());
+		}
 
 		// // RVA: 0x18E6A9C Offset: 0x18E6A9C VA: 0x18E6A9C
 		public void StopFinishGaugeAnim()

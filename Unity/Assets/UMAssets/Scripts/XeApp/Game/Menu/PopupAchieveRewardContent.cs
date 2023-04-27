@@ -22,11 +22,60 @@ namespace XeApp.Game.Menu
 		// RVA: 0xDF09B4 Offset: 0xDF09B4 VA: 0xDF09B4 Slot: 17
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{
-			TodoLogger.Log(0, "Implement PopupAchieveRewardContent");
+			m_popupControl = control;
+			PopupAchieveRewardSetting s = setting as PopupAchieveRewardSetting;
+			m_viewFreeReward = s.viewFreeReward;
+			Parent = setting.m_parent;
+			transform.GetComponent<RectTransform>().sizeDelta = size;
+			transform.localPosition = new Vector3(0, 0, 0);
+			gameObject.SetActive(true);
+			if(m_achieveReward == null)
+			{
+				m_achieveReward = setting.Content.GetComponent<LayoutPopupAchieveReward>();
+			}
+			if(s.gameEventType == 4)
+			{
+				TodoLogger.Log(0, "PopupAchieveRewardContent Init Event");
+			}
+			m_viewMusic.KHEKNNFCAOI(s.selectFreeMusicId, false, 0, 0, 0, s.diff == Difficulty.Type.Extreme, false);
+			//LAB_00df0d5c
+			ViewInitialize(s);
+			if(s.mode == LayoutPopupAchieveReward.eMode.Result)
+			{
+				m_updateList.Clear();
+				m_updateList.Add(PlayStampAnim());
+				m_updateList.Add(StampAnimSkip());
+				m_updateList.Add(PopupRewardDetail());
+				m_updateList.Add(TryShowTutorial());
+			}
+			if(m_achieveReward != null)
+			{
+				m_achieveReward.SetupReward(Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(m_viewMusic.GHBPLHBNMBK_FreeMusicId, m_viewMusic.DLAEJOBELBH_MusicId).KNMGEEFGDNI_Nam).musicName,
+					(int)s.diff, m_viewFreeReward, m_viewMusic, s.isLine6Mode);
+			}
+			m_initialized = true;
 		}
 
 		//// RVA: 0xDF116C Offset: 0xDF116C VA: 0xDF116C
-		//private void ViewInitialize(PopupAchieveRewardSetting setup) { }
+		private void ViewInitialize(PopupAchieveRewardSetting setup)
+		{
+			if(setup.selectMusicId > 0)
+			{
+				m_viewInitialized = true;
+				if(m_viewFreeReward == null)
+				{
+					m_viewFreeReward = new FPGEMAIAMBF_RewardData();
+					if(setup.mode == LayoutPopupAchieveReward.eMode.Result)
+					{
+						m_viewFreeReward.CHOHLJOJKNJ(setup.selectFreeMusicId, (int)setup.diff, setup.isLine6Mode, setup.gameEventType);
+					}
+					else if(setup.mode == LayoutPopupAchieveReward.eMode.MusicSelect)
+					{
+						m_viewFreeReward.JMHCEMHPPCM(setup.selectFreeMusicId, (int)setup.diff, setup.isLine6Mode, setup.gameEventType);
+					}
+				}
+			}
+		}
 
 		//// RVA: 0xDF1610 Offset: 0xDF1610 VA: 0xDF1610
 		//private void GetAchieveNowRewardList(PopupAchieveRewardDetailSetting setting) { }
@@ -39,19 +88,54 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x707424 Offset: 0x707424 VA: 0x707424
 		//// RVA: 0xDF13EC Offset: 0xDF13EC VA: 0xDF13EC
-		//private IEnumerator PlayStampAnim() { }
+		private IEnumerator PlayStampAnim()
+		{
+			//0xDF24A4
+			while (!IsReady())
+				yield return null;
+			yield return null;
+			while (!m_popupControl.IsOpenPopupWindow())
+				yield return null;
+			yield return null;
+			if(m_achieveReward != null)
+			{
+				m_achieveReward.PlayStampAnim();
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70749C Offset: 0x70749C VA: 0x70749C
 		//// RVA: 0xDF1478 Offset: 0xDF1478 VA: 0xDF1478
-		//private IEnumerator StampAnimSkip() { }
+		private IEnumerator StampAnimSkip()
+		{
+			//0x132BDBC
+			if(m_achieveReward != null)
+			{
+				while(!m_achieveReward.IsEndAllPlayStampAnim())
+				{
+					if(ResultScene.GetInScreenTouchCount() > 0 && !ResultScene.IsScreenTouch())
+					{
+						m_achieveReward.PlayStampSkip();
+					}
+					yield return null;
+				}
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x707514 Offset: 0x707514 VA: 0x707514
 		//// RVA: 0xDF1500 Offset: 0xDF1500 VA: 0xDF1500
-		//private IEnumerator PopupRewardDetail() { }
+		private IEnumerator PopupRewardDetail()
+		{
+			TodoLogger.Log(0, "PopupRewardDetail");
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70758C Offset: 0x70758C VA: 0x70758C
 		//// RVA: 0xDF1588 Offset: 0xDF1588 VA: 0xDF1588
-		//private IEnumerator TryShowTutorial() { }
+		private IEnumerator TryShowTutorial()
+		{
+			TodoLogger.Log(0, "TryShowTutorial");
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x707604 Offset: 0x707604 VA: 0x707604
 		//// RVA: 0xDF1A2C Offset: 0xDF1A2C VA: 0xDF1A2C
@@ -70,7 +154,11 @@ namespace XeApp.Game.Menu
 		// RVA: 0xDF1C50 Offset: 0xDF1C50 VA: 0xDF1C50 Slot: 19
 		public void Show()
 		{
-			TodoLogger.Log(0, "Show");
+			if(m_achieveReward != null)
+			{
+				m_achieveReward.Show();
+			}
+			gameObject.SetActive(true);
 		}
 
 		// RVA: 0xDF1D34 Offset: 0xDF1D34 VA: 0xDF1D34 Slot: 20
@@ -82,8 +170,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xDF1E18 Offset: 0xDF1E18 VA: 0xDF1E18 Slot: 21
 		public bool IsReady()
 		{
-			TodoLogger.Log(0, "Isready");
-			return true;
+			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && !GameManager.Instance.ItemTextureCache.IsLoading() && m_initialized;
 		}
 
 		// RVA: 0xDF1F54 Offset: 0xDF1F54 VA: 0xDF1F54 Slot: 22

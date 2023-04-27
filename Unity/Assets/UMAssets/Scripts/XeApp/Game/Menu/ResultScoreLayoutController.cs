@@ -340,8 +340,10 @@ namespace XeApp.Game.Menu
 			isShowingGuide = true;
 			yield return Co.R(TryTutorialCoroutine(CheckGameResultTutorialCondition, () => {
 				//0xB617DC
-				TodoLogger.Log(0, "TryTutorialCoroutine end");
+				divaControl.RequestResultAnimStart((ResultScoreRank.Type)initParam.viewResultData.PENICOGGNLF_RankScore);
+				layoutPlayerRank.StartFinishGaugeAnim();
 				isShowingGuide = false;
+				layoutPlaylog.SetActiveHintButton(true);
 			}));
 		}
 
@@ -350,9 +352,14 @@ namespace XeApp.Game.Menu
 		private IEnumerator TryTutorialCoroutine(Func<TutorialConditionId, bool> checker, Action finish)
 		{
 			//0xB6424C
-			TodoLogger.Log(0, "TryTutorialCoroutine");
-			yield return null;
-			if(finish != null)
+			if(GameManager.Instance.IsTutorial)
+			{
+				TodoLogger.Log(0, "TryTutorialCoroutine");
+				yield return null;
+			}
+			//LAB_00b6441c
+			yield return TutorialManager.TryShowTutorialCoroutine(checker);
+			if (finish != null)
 				finish();
 		}
 

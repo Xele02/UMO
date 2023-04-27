@@ -4,6 +4,7 @@ using XeApp.Game.Common;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -98,7 +99,34 @@ namespace XeApp.Game.Menu
 		private int m_firstStampIndex = -1; // 0x70
 
 		//// RVA: 0x15DDAD0 Offset: 0x15DDAD0 VA: 0x15DDAD0
-		//private void SwitchStampAnim(int arrayIndex, LayoutPopupAchieveReward.eStampStatus status) { }
+		private void SwitchStampAnim(int arrayIndex, eStampStatus status)
+		{
+			if (m_stampLayout.Length <= arrayIndex)
+				return;
+			if (m_stampLayout[arrayIndex] == null)
+				return;
+			if (m_stampPressLayout[arrayIndex] != null)
+			{
+				m_stampPressLayout[arrayIndex].StartChildrenAnimGoStop("01");
+			}
+			switch(status)
+			{
+				case eStampStatus.None:
+					m_stampLayout[arrayIndex].StartAllAnimGoStop("st_wait");
+					break;
+				case eStampStatus.Play:
+					m_stampLayout[arrayIndex].StartAllAnimGoStop("go_in", "st_in");
+					break;
+				case eStampStatus.Press:
+					if (m_stampPressLayout[arrayIndex] == null)
+						return;
+					m_stampPressLayout[arrayIndex].StartChildrenAnimGoStop("02");
+					break;
+				case eStampStatus.Skip:
+					m_stampLayout[arrayIndex].StartAllAnimGoStop("st_in", "st_in");
+					break;
+			}
+		}
 
 		//// RVA: 0x15DDE48 Offset: 0x15DDE48 VA: 0x15DDE48
 		//private void SwitchStampFirst(int arrayIndex) { }
@@ -107,29 +135,111 @@ namespace XeApp.Game.Menu
 		//private bool IsPlayingStampAnim(int arrayIndex) { }
 
 		//// RVA: 0x15DE0B0 Offset: 0x15DE0B0 VA: 0x15DE0B0
-		//public void PlayStampAnim() { }
+		public void PlayStampAnim()
+		{
+			if (m_stampPlayList.Count == 0)
+				return;
+			m_animationEnumerator.Add(PlayStampAnimInner());
+		}
 
 		//// RVA: 0x15DE1F8 Offset: 0x15DE1F8 VA: 0x15DE1F8
 		//private void PlaySeStamp() { }
 
 		//[IteratorStateMachineAttribute] // RVA: 0x703E5C Offset: 0x703E5C VA: 0x703E5C
 		//// RVA: 0x15DE16C Offset: 0x15DE16C VA: 0x15DE16C
-		//private IEnumerator PlayStampAnimInner() { }
+		private IEnumerator PlayStampAnimInner()
+		{
+			int index; // 0x14
+			float waitCounter; // 0x18
+			float wait; // 0x1C
+
+			//0x15E1820
+			TodoLogger.Log(0, "PlayStampAnimInner");
+			yield return null;
+		}
 
 		//// RVA: 0x15DE270 Offset: 0x15DE270 VA: 0x15DE270
 		//private bool IsEndAllPlayStampAnimInner() { }
 
 		//// RVA: 0x15DE348 Offset: 0x15DE348 VA: 0x15DE348
-		//public bool IsEndAllPlayStampAnim() { }
+		public bool IsEndAllPlayStampAnim()
+		{
+			return m_animationEnumerator.Count < 1;
+		}
 
 		//// RVA: 0x15DE3D0 Offset: 0x15DE3D0 VA: 0x15DE3D0
-		//public void PlayStampSkip() { }
+		public void PlayStampSkip()
+		{
+			if (m_animationEnumerator.Count > 0)
+				m_isSkip = true;
+		}
 
 		//// RVA: 0x15DE454 Offset: 0x15DE454 VA: 0x15DE454
-		//public void SetupReward(string music_name, int difficulty, FPGEMAIAMBF viewData, IBJAKJJICBC viewMusic, bool isLine6Mode) { }
+		public void SetupReward(string music_name, int difficulty, FPGEMAIAMBF_RewardData viewData, IBJAKJJICBC viewMusic, bool isLine6Mode)
+		{
+			SetMusicName(music_name, viewMusic.FKDCCLPGKDK_JacketAttr);
+			SwitchDifficulty((Difficulty.Type)difficulty, isLine6Mode);
+			int cnt = Mathf.Min(difficulty, viewMusic.MGJKEJHEBPO_DiffInfos.Count - 1);
+			SetClearNumber(viewMusic.MGJKEJHEBPO_DiffInfos[cnt].JNLKJCDFFMM_Clear);
+			SetScoreNumber(viewMusic.MGJKEJHEBPO_DiffInfos[cnt].KNIFCANOHOC_Score);
+			SetComboNumber(viewMusic.MGJKEJHEBPO_DiffInfos[cnt].NLKEBAOBJCM_Combo);
+			m_stampPlayList.Clear();
+			for(int i = 0; i < viewData.PDONJHCHBAE_ScoreReward.Count; i++)
+			{
+				SetRewardStatus(i + 4, viewData.PDONJHCHBAE_ScoreReward[i], false);
+				SwitchRank(i + 4, (ResultScoreRank.Type) viewData.PDONJHCHBAE_ScoreReward[i].FCDKJAKLGMB_TargetValue);
+			}
+			for (int i = 0; i < viewData.HFPMKBAANFO_ComboReward.Count; i++)
+			{
+				SetRewardStatus(i + 8, viewData.HFPMKBAANFO_ComboReward[i], false);
+				SwitchComboRank(i + 8, (ResultScoreRank.Type)viewData.HFPMKBAANFO_ComboReward[i].FCDKJAKLGMB_TargetValue);
+			}
+			for (int i = 0; i < viewData.IOCLNNCJFKA_ClearReward.Count; i++)
+			{
+				SetRewardStatus(i, viewData.IOCLNNCJFKA_ClearReward[i], false);
+			}
+		}
 
 		//// RVA: 0x15DEB48 Offset: 0x15DEB48 VA: 0x15DEB48
-		//public void SwitchDifficulty(Difficulty.Type diff, bool isLine6Mode) { }
+		public void SwitchDifficulty(Difficulty.Type diff, bool isLine6Mode)
+		{
+			if (m_diffLayout == null)
+				return;
+			switch(diff)
+			{
+				case Difficulty.Type.Easy:
+					m_diffLayout.StartAllAnimGoStop("01");
+					break;
+				case Difficulty.Type.Normal:
+					m_diffLayout.StartAllAnimGoStop("02");
+					break;
+				case Difficulty.Type.Hard:
+					m_diffLayout.StartAllAnimGoStop("03");
+					break;
+				case Difficulty.Type.VeryHard:
+					m_diffLayout.StartAllAnimGoStop("04");
+					break;
+				case Difficulty.Type.Extreme:
+					m_diffLayout.StartAllAnimGoStop("05");
+					break;
+				default:
+					break;
+			}
+			LayoutCommonTextureManager.CommonTexture tex;
+			string key;
+			if (!isLine6Mode)
+			{
+				key = DiffTexTable[(int)diff];
+				tex = GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_pack");
+			}
+			else
+			{
+				key = DiffTexTable_6Line[(int)diff - 2];
+				tex = GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_02_pack");
+			}
+			tex.Set(m_diffImages[(int)diff]);
+			m_diffImages[(int)diff].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(key));
+		}
 
 		//// RVA: 0x15DE9E8 Offset: 0x15DE9E8 VA: 0x15DE9E8
 		public void SetMusicName(string name, int musicAttr)
@@ -168,16 +278,72 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15DF8F4 Offset: 0x15DF8F4 VA: 0x15DF8F4
-		//public void SetIcon(int rewardIndex, int iconId) { }
+		public void SetIcon(int rewardIndex, int iconId)
+		{
+			if (m_icons.Length <= rewardIndex)
+				return;
+			if (m_icons[rewardIndex] == null)
+				return;
+			RawImageEx image = m_icons[rewardIndex];
+			GameManager.Instance.ItemTextureCache.Load(iconId, (IiconTexture texture) =>
+			{
+				//0x15E1740
+				if (texture == null)
+					return;
+				texture.Set(image);
+			});
+		}
 
 		//// RVA: 0x15DFB00 Offset: 0x15DFB00 VA: 0x15DFB00
-		//private void SetItemNumber(int arrayIndex, int num) { }
+		private void SetItemNumber(int arrayIndex, int num)
+		{
+			if (m_nums.Length <= arrayIndex)
+				return;
+			if (m_nums[arrayIndex] == null)
+				return;
+			m_nums[arrayIndex].SetNumber(num);
+		}
 
 		//// RVA: 0x15DFC20 Offset: 0x15DFC20 VA: 0x15DFC20
-		//private void SetThresholdNumber(int arrayIndex, string text) { }
+		private void SetThresholdNumber(int arrayIndex, string text)
+		{
+			if (m_texts.Length <= arrayIndex)
+				return;
+			if (m_texts[arrayIndex] == null)
+				return;
+			m_texts[arrayIndex].text = text;
+		}
 
 		//// RVA: 0x15DF264 Offset: 0x15DF264 VA: 0x15DF264
-		//private void SetRewardStatus(int arrayIndex, FPGEMAIAMBF.LOIJICNJMKA reward, bool isAllClear = False) { }
+		private void SetRewardStatus(int arrayIndex, FPGEMAIAMBF_RewardData.LOIJICNJMKA reward, bool isAllClear = false)
+		{
+			if (reward == null)
+				return;
+			string txt;
+			if(isAllClear)
+			{
+				txt = MessageManager.Instance.GetBank("menu").GetMessageByLabel("reward_all_clear_text_00");
+			}
+			else
+			{
+				txt = string.Format("{0}", reward.FCDKJAKLGMB_TargetValue);
+			}
+			SetThresholdNumber(arrayIndex, txt);
+			SetItemNumber(arrayIndex, reward.JDLJPNMLFID);
+			SetIcon(arrayIndex, reward.KIJAPOFAGPN_GlobalItemId);
+			if(reward.CMCKNKKCNDK_Achieved != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA/*0*/)
+			{
+				if(reward.CMCKNKKCNDK_Achieved == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL/*1*/)
+				{
+					SwitchStampAnim(arrayIndex, eStampStatus.Press);
+					return;
+				}
+				if (reward.CMCKNKKCNDK_Achieved != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved/*2*/)
+					return;
+				m_stampPlayList.Add(arrayIndex);
+			}
+			SwitchStampAnim(arrayIndex, eStampStatus.None);
+		}
 
 		//// RVA: 0x15DFD3C Offset: 0x15DFD3C VA: 0x15DFD3C
 		//private void DeleteImage(ref RawImageEx image) { }
@@ -202,10 +368,58 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15DF424 Offset: 0x15DF424 VA: 0x15DF424
-		//private void SwitchRank(int arrayIndex, ResultScoreRank.Type rank) { }
+		private void SwitchRank(int arrayIndex, ResultScoreRank.Type rank)
+		{
+			if (m_rankLayout.Length <= arrayIndex)
+				return;
+			switch(rank)
+			{
+				case ResultScoreRank.Type.C:
+					m_rankLayout[arrayIndex].StartChildrenAnimGoStop("01");
+					break;
+				case ResultScoreRank.Type.B:
+					m_rankLayout[arrayIndex].StartChildrenAnimGoStop("02");
+					break;
+				case ResultScoreRank.Type.A:
+					m_rankLayout[arrayIndex].StartChildrenAnimGoStop("03");
+					break;
+				case ResultScoreRank.Type.S:
+					m_rankLayout[arrayIndex].StartChildrenAnimGoStop("04");
+					break;
+				case ResultScoreRank.Type.SS:
+					m_rankLayout[arrayIndex].StartChildrenAnimGoStop("05");
+					break;
+				default:
+					break;
+			}
+		}
 
 		//// RVA: 0x15DF68C Offset: 0x15DF68C VA: 0x15DF68C
-		//private void SwitchComboRank(int arrayIndex, ResultScoreRank.Type rank) { }
+		private void SwitchComboRank(int arrayIndex, ResultScoreRank.Type rank)
+		{
+			if (m_comboRankIconLayout.Length <= arrayIndex)
+				return;
+			switch(rank)
+			{
+				case ResultScoreRank.Type.C:
+					m_comboRankIconLayout[arrayIndex].StartChildrenAnimGoStop("01");
+					break;
+				case ResultScoreRank.Type.B:
+					m_comboRankIconLayout[arrayIndex].StartChildrenAnimGoStop("02");
+					break;
+				case ResultScoreRank.Type.A:
+					m_comboRankIconLayout[arrayIndex].StartChildrenAnimGoStop("03");
+					break;
+				case ResultScoreRank.Type.S:
+					m_comboRankIconLayout[arrayIndex].StartChildrenAnimGoStop("04");
+					break;
+				case ResultScoreRank.Type.SS:
+					m_comboRankIconLayout[arrayIndex].StartChildrenAnimGoStop("05");
+					break;
+				default:
+					return;
+			}
+		}
 
 		// RVA: 0x15DFF80 Offset: 0x15DFF80 VA: 0x15DFF80
 		public void Reset()
@@ -214,7 +428,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15DFF84 Offset: 0x15DFF84 VA: 0x15DFF84
-		//public void Show() { }
+		public void Show()
+		{
+			return;
+		}
 
 		//// RVA: 0x15DFF88 Offset: 0x15DFF88 VA: 0x15DFF88
 		//public void Hide() { }

@@ -209,7 +209,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xE30C6C Offset: 0xE30C6C VA: 0xE30C6C
 		public void ShowResultHelpButton()
 		{
-			TodoLogger.Log(0, "ShowResultHelpButton HelpButton");
+			int id = FindHelpUniqueId(106);
+			if (id < 0)
+				return;
+			m_searchId = 106;
+			m_callHelpId = id;
+			m_eventType = 0;
+			m_pattern = 3;
+			Show(3);
 		}
 
 		// // RVA: 0xE30CB4 Offset: 0xE30CB4 VA: 0xE30CB4

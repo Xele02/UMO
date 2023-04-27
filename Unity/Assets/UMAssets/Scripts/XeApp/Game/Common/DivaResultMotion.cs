@@ -41,7 +41,12 @@ namespace XeApp.Game.Common
         // public static int GetResultReactType(ResultScoreRank.Type scoreRank) { }
 
         // // RVA: 0x1C09A3C Offset: 0x1C09A3C VA: 0x1C09A3C
-        // public static int GetVoiceId(ResultScoreRank.Type scoreRank) { }
+        public static int GetVoiceId(ResultScoreRank.Type scoreRank)
+		{
+			if (scoreRank >= ResultScoreRank.Type.A && scoreRank < ResultScoreRank.Type.Num)
+				return new int[3] { 1, 1, 2 }[(int)scoreRank - 2];
+			return 0;
+		}
 
         // // RVA: 0x1C0998C Offset: 0x1C0998C VA: 0x1C0998C
         // private static DivaResultMotion.Type ToType(ResultScoreRank.Type scoreRank) { }

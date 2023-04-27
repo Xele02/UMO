@@ -1079,7 +1079,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB54540 Offset: 0xB54540 VA: 0xB54540
-		// public static int GetInScreenTouchCount() { }
+		public static int GetInScreenTouchCount()
+		{
+			return InputManager.Instance.GetInScreenTouchCount();
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x7231D4 Offset: 0x7231D4 VA: 0x7231D4
 		// // RVA: 0xB5489C Offset: 0xB5489C VA: 0xB5489C

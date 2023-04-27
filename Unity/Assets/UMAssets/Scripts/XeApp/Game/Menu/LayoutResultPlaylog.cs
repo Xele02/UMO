@@ -455,7 +455,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18EB120 Offset: 0x18EB120 VA: 0x18EB120
-		// public void SetActiveHintButton(bool is_active) { }
+		public void SetActiveHintButton(bool is_active)
+		{
+			isHintTouch = is_active;
+		}
 
 		// // RVA: 0x18EB128 Offset: 0x18EB128 VA: 0x18EB128
 		private static bool CheckHintFunc_FoldStaus(RhythmGamePlayLog playlog)
