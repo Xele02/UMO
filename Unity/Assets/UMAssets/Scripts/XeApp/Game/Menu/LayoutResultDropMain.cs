@@ -724,9 +724,20 @@ namespace XeApp.Game.Menu
 		// private void StopBonusCountUpLoopSE() { }
 
 		// // RVA: 0x1D968E0 Offset: 0x1D968E0 VA: 0x1D968E0
-		// public bool IsDrop() { }
+		public bool IsDrop()
+		{
+			return itemList.Count > 0;
+		}
 
 		// // RVA: 0x1D96968 Offset: 0x1D96968 VA: 0x1D96968
-		// public bool IsMedalDrop() { }
+		public bool IsMedalDrop()
+		{
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				if (itemList[i].itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal)
+					return true;
+			}
+			return false;
+		}
 	}
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using XeApp.Game.Common;
+using XeApp.Game.Tutorial;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -78,7 +80,39 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xDF1610 Offset: 0xDF1610 VA: 0xDF1610
-		//private void GetAchieveNowRewardList(PopupAchieveRewardDetailSetting setting) { }
+		private void GetAchieveNowRewardList(PopupAchieveRewardDetailSetting setting)
+		{
+			List<FPGEMAIAMBF_RewardData.LOIJICNJMKA> l0 = new List<FPGEMAIAMBF_RewardData.LOIJICNJMKA>(4);
+			List<FPGEMAIAMBF_RewardData.LOIJICNJMKA> l1 = new List<FPGEMAIAMBF_RewardData.LOIJICNJMKA>(4);
+			List<FPGEMAIAMBF_RewardData.LOIJICNJMKA> l2 = new List<FPGEMAIAMBF_RewardData.LOIJICNJMKA>(4);
+			List<FPGEMAIAMBF_RewardData.LOIJICNJMKA> l3 = new List<FPGEMAIAMBF_RewardData.LOIJICNJMKA>(1);
+
+			for(int i = 0; i < m_viewFreeReward.IOCLNNCJFKA_ClearReward.Count; i++)
+			{
+				if(m_viewFreeReward.IOCLNNCJFKA_ClearReward[i].CMCKNKKCNDK_Achieved == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved)
+				{
+					l0.Add(m_viewFreeReward.IOCLNNCJFKA_ClearReward[i]);
+				}
+			}
+			for (int i = 0; i < m_viewFreeReward.PDONJHCHBAE_ScoreReward.Count; i++)
+			{
+				if (m_viewFreeReward.PDONJHCHBAE_ScoreReward[i].CMCKNKKCNDK_Achieved == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved)
+				{
+					l1.Add(m_viewFreeReward.PDONJHCHBAE_ScoreReward[i]);
+				}
+			}
+			for (int i = 0; i < m_viewFreeReward.HFPMKBAANFO_ComboReward.Count; i++)
+			{
+				if (m_viewFreeReward.HFPMKBAANFO_ComboReward[i].CMCKNKKCNDK_Achieved == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved)
+				{
+					l2.Add(m_viewFreeReward.HFPMKBAANFO_ComboReward[i]);
+				}
+			}
+			setting.clearList = l0;
+			setting.scoreList = l1;
+			setting.comboList = l2;
+			setting.allList = l3;
+		}
 
 		// RVA: 0xDF1A04 Offset: 0xDF1A04 VA: 0xDF1A04 Slot: 18
 		public bool IsScrollable()
@@ -125,21 +159,54 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDF1500 Offset: 0xDF1500 VA: 0xDF1500
 		private IEnumerator PopupRewardDetail()
 		{
-			TodoLogger.Log(0, "PopupRewardDetail");
-			yield return null;
+			PopupWindowControl popupWindowControl;
+
+			//0x132B878
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupAchieveRewardDetailSetting setting = new PopupAchieveRewardDetailSetting();
+			setting.TitleText = bk.GetMessageByLabel("popup_reward_detail_title");
+			setting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			setting.WindowSize = SizeType.Middle;
+			GetAchieveNowRewardList(setting);
+			bool isOpen = false;
+			popupWindowControl = PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xDF22A8
+				return;
+			}, null, () =>
+			{
+				//0xDF22B4
+				isOpen = true;
+			}, null, true, true, false);
+			while (!isOpen)
+				yield return null;
+			while (popupWindowControl.IsActivePopupWindow())
+				yield return null;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70758C Offset: 0x70758C VA: 0x70758C
 		//// RVA: 0xDF1588 Offset: 0xDF1588 VA: 0xDF1588
 		private IEnumerator TryShowTutorial()
 		{
-			TodoLogger.Log(0, "TryShowTutorial");
-			yield return null;
+			//0x132BFE0
+			this.StartCoroutineWatched(Co_Tutorial());
+			while (isTutorialWait)
+				yield return null;
+			PopupWindowManager.SetButtonState(true);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x707604 Offset: 0x707604 VA: 0x707604
 		//// RVA: 0xDF1A2C Offset: 0xDF1A2C VA: 0xDF1A2C
-		//private IEnumerator Co_Tutorial() { }
+		private IEnumerator Co_Tutorial()
+		{
+			//0xDF22C4
+			isTutorialWait = true;
+			yield return this.StartCoroutineWatched(TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition));
+			isTutorialWait = false;
+		}
 
 		// RVA: 0xDF1AD8 Offset: 0xDF1AD8 VA: 0xDF1AD8
 		public void Update()
@@ -164,7 +231,11 @@ namespace XeApp.Game.Menu
 		// RVA: 0xDF1D34 Offset: 0xDF1D34 VA: 0xDF1D34 Slot: 20
 		public void Hide()
 		{
-			TodoLogger.Log(0, "Hide");
+			if(m_achieveReward != null)
+			{
+				m_achieveReward.Hide();
+			}
+			gameObject.SetActive(false);
 		}
 
 		// RVA: 0xDF1E18 Offset: 0xDF1E18 VA: 0xDF1E18 Slot: 21
@@ -201,6 +272,9 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xDF216C Offset: 0xDF216C VA: 0xDF216C
-		//private bool CheckTutorialCondition(TutorialConditionId id) { }
+		private bool CheckTutorialCondition(TutorialConditionId id)
+		{
+			return id == TutorialConditionId.Condition61;
+		}
 	}
 }

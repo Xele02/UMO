@@ -132,7 +132,12 @@ namespace XeApp.Game.Common
 		// public static void SetInputState(bool isEnable) { }
 
 		// // RVA: 0x1BC0C8C Offset: 0x1BC0C8C VA: 0x1BC0C8C
-		// public static void SetButtonState(bool isEnable) { }
+		public static void SetButtonState(bool isEnable)
+		{
+			if (s_controls == null)
+				return;
+			s_controls[s_popupIndexStack[s_popupIndexStack.Count - 1]].SetButtonHiddenEnable(isEnable);
+		}
 
 		// // RVA: 0x1BC0E34 Offset: 0x1BC0E34 VA: 0x1BC0E34
 		// public static void TopPopupPushNegativeOtherButton() { }

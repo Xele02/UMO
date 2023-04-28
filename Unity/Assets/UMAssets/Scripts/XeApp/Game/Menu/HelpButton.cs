@@ -228,7 +228,12 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xE30CFC Offset: 0xE30CFC VA: 0xE30CFC
 		public void HideResultHelpButton()
 		{
-			TodoLogger.Log(0, "HideResultHelpButton HelpButton");
+			if(m_isShow)
+			{
+				m_buttonAnimLayout.StartChildrenAnimGoStop("go_out", "st_out");
+				m_isShow = false;
+			}
+			m_state = State.Hide;
 		}
 
 		// // RVA: 0xE30D00 Offset: 0xE30D00 VA: 0xE30D00

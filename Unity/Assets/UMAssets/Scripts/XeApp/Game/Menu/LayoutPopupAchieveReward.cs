@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 using XeSys;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -115,6 +116,7 @@ namespace XeApp.Game.Menu
 					m_stampLayout[arrayIndex].StartAllAnimGoStop("st_wait");
 					break;
 				case eStampStatus.Play:
+					SwitchStampFirst(arrayIndex);
 					m_stampLayout[arrayIndex].StartAllAnimGoStop("go_in", "st_in");
 					break;
 				case eStampStatus.Press:
@@ -129,10 +131,34 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15DDE48 Offset: 0x15DDE48 VA: 0x15DDE48
-		//private void SwitchStampFirst(int arrayIndex) { }
+		private void SwitchStampFirst(int arrayIndex)
+		{
+			if (m_stampLayout.Length <= arrayIndex)
+				return;
+			if(m_firstStampIndex > -1)
+			{
+				m_stampLayout[arrayIndex].StartAllAnimGoStop("02");
+			}
+			else
+			{
+				m_firstStampIndex = arrayIndex;
+				m_stampLayout[arrayIndex].StartAllAnimGoStop("01");
+				m_stampFirstShadow.StartAllAnimGoStop("go_in", "st_in");
+			}
+		}
 
 		//// RVA: 0x15DDFD4 Offset: 0x15DDFD4 VA: 0x15DDFD4
-		//private bool IsPlayingStampAnim(int arrayIndex) { }
+		private bool IsPlayingStampAnim(int arrayIndex)
+		{
+			if (m_stampLayout.Length <= arrayIndex)
+				return false;
+			if (m_stampLayout[arrayIndex] == null)
+				return false;
+			if (m_firstStampIndex == arrayIndex)
+				return m_stampPlayingFirstLayout[arrayIndex].IsPlayingChildren();
+			else
+				return m_stampPlayingLayout[arrayIndex].IsPlayingChildren();
+		}
 
 		//// RVA: 0x15DE0B0 Offset: 0x15DE0B0 VA: 0x15DE0B0
 		public void PlayStampAnim()
@@ -143,7 +169,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15DE1F8 Offset: 0x15DE1F8 VA: 0x15DE1F8
-		//private void PlaySeStamp() { }
+		private void PlaySeStamp()
+		{
+			SoundManager.Instance.sePlayerResult.Play((int)cs_se_result.SE_RESULT_011);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x703E5C Offset: 0x703E5C VA: 0x703E5C
 		//// RVA: 0x15DE16C Offset: 0x15DE16C VA: 0x15DE16C
@@ -154,12 +183,64 @@ namespace XeApp.Game.Menu
 			float wait; // 0x1C
 
 			//0x15E1820
-			TodoLogger.Log(0, "PlayStampAnimInner");
-			yield return null;
+			index = 0;
+			waitCounter = 0;
+			float f = TimeWrapper.deltaTime;
+			float f2 = 45;
+			while(true)
+			{
+				wait = f * f2;
+				if (m_stampPlayList.Count <= index)
+					break;
+				if (!m_isSkip)
+				{
+					waitCounter = 0;
+					SwitchStampAnim(m_stampPlayList[index], eStampStatus.Play);
+					PlaySeStamp();
+					//LAB_015e1938
+					while (waitCounter < wait)
+					{
+						waitCounter += TimeWrapper.deltaTime;
+						yield return null;
+					}
+					index++;
+					f2 = 15;
+				}
+				else
+					break;
+			}
+			//LAB_015e19f8
+			if(m_isSkip)
+			{
+				m_stampFirstShadow.StartAllAnimGoStop("st_in", "st_in");
+				for(int i = 0; i < m_stampPlayList.Count; i++)
+				{
+					SwitchStampAnim(m_stampPlayList[i], eStampStatus.Skip);
+				}
+				yield return null;
+			}
+			while (!IsEndAllPlayStampAnimInner() && !m_isSkip)
+				yield return null;
+			for(int i = 0; i < m_stampPlayList.Count; i++)
+			{
+				m_stampLayout[m_stampPlayList[i]].StartAllAnimLoop("logo_act_01", "loen_act_01");
+				if(m_stampPlayList[i] == 0)
+				{
+					SwitchStampAnim(m_stampPlayList[i], eStampStatus.Press);
+				}
+			}
 		}
 
 		//// RVA: 0x15DE270 Offset: 0x15DE270 VA: 0x15DE270
-		//private bool IsEndAllPlayStampAnimInner() { }
+		private bool IsEndAllPlayStampAnimInner()
+		{
+			for(int i = 0; i < m_stampPlayList.Count; i++)
+			{
+				if (IsPlayingStampAnim(m_stampPlayList[i]))
+					return false;
+			}
+			return true;
+		}
 
 		//// RVA: 0x15DE348 Offset: 0x15DE348 VA: 0x15DE348
 		public bool IsEndAllPlayStampAnim()
@@ -434,7 +515,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15DFF88 Offset: 0x15DFF88 VA: 0x15DFF88
-		//public void Hide() { }
+		public void Hide()
+		{
+			return;
+		}
 
 		// RVA: 0x15DFF8C Offset: 0x15DFF8C VA: 0x15DFF8C Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

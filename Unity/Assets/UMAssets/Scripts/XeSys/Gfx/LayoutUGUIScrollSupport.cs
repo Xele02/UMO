@@ -19,7 +19,7 @@ namespace XeSys.Gfx
 		public ScrollRect scrollRect { get { return m_scrollRect; } private set { return; } } //0x1F04E58 0x1F04E60
 		public Vector2 ContentSize { get { return m_contentSize; } set { m_contentSize = value; UpdateContent(); } } //0x1F0543C 0x1F05450
 		//public float ContentWidth { get; set; } 0x1F05CB0 0x1F05CB8
-		//public float ContentHeight { get; set; } 0x1F05CC0 0x1F05CC8
+		public float ContentHeight { get { return m_contentSize.y; } set { m_contentSize.y = value; UpdateContent(); } } //0x1F05CC0 0x1F05CC8
 		public Vector2 RangeSize { get { return m_range; } } //0x1F05CD0
 		//public float RangeHeight { get; set; } 0x1F05CE4 0x1F05CEC
 

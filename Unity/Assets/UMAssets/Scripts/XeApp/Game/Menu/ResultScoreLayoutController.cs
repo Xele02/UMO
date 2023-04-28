@@ -462,7 +462,71 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB60D28 Offset: 0xB60D28 VA: 0xB60D28
 		private bool CheckGameResultTutorialCondition(TutorialConditionId conditionId)
 		{
-			TodoLogger.Log(0, "CheckGameResultTutorialCondition");
+			if(!GameManager.Instance.IsTutorial)
+			{
+				if(conditionId < TutorialConditionId.Condition21)
+				{
+					if(conditionId == TutorialConditionId.Condition6)
+					{
+						if(initParam.viewResultData.DACPGGLFLJG_FullComboType == 0)
+						{
+							return Database.Instance.gameSetup.musicInfo.difficultyType > Difficulty.Type.Normal;
+						}
+					}
+					else if(conditionId == TutorialConditionId.Condition20)
+					{
+						for(int i = 0; i < playlog.skillDataList.Count; i++)
+						{
+							if (!playlog.skillDataList[i].isActive)
+								return true;
+						}
+					}
+				}
+				else
+				{
+					switch(conditionId)
+					{
+						case TutorialConditionId.Condition43:
+							if(!GameManager.Instance.IsTutorial)
+							{
+								bool b9 = false;
+								if(initParam.viewResultData.DACPGGLFLJG_FullComboType != 0)
+								{
+									if(initParam.viewResultData.PENICOGGNLF_RankScore < 2)
+										b9 = true;
+								}
+								bool b2 = false;
+								if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level > 9)
+								{
+									if (initParam.viewResultData.PENICOGGNLF_RankScore < 2)
+										b2 = true;
+								}
+								return b9 || b2;
+							}
+							break;
+						case TutorialConditionId.Condition44:
+							if (!GameManager.Instance.IsTutorial)
+							{
+								return layoutPlaylog.playlog.valkyrieModeData.type != RhythmGameMode.Type.Valkyrie;
+							}
+							break;
+						case TutorialConditionId.Condition45:
+							if (!GameManager.Instance.IsTutorial)
+							{
+								if (layoutPlaylog.playlog.valkyrieModeData.type != RhythmGameMode.Type.Valkyrie)
+									return false;
+								return layoutPlaylog.playlog.divaModeData.type == RhythmGameMode.Type.None;
+							}
+							break;
+						case TutorialConditionId.Condition52:
+							if (!GameManager.Instance.IsTutorial)
+							{
+								return !m_isRankUpScoreRating;
+							}
+							break;
+					}
+				}
+			}
 			return false;
 		}
 
