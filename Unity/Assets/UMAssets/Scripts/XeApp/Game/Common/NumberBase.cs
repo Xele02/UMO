@@ -61,7 +61,10 @@ namespace XeApp.Game.Common
 			{
 				m_digit[i] = left % 10;
 				if (left < 10)
+				{
+					i++;
 					break;
+				}
 				left = left / 10;
 			}
 			for(; i < minDgit; i++)

@@ -233,36 +233,116 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D127B8 Offset: 0x1D127B8 VA: 0x1D127B8
 		private IEnumerator Co_CountUpNotes()
 		{
-			//0x1D15BC8
-			layoutMainAnim.StartChildrenAnimGoStop("go_score", "st_score");
-			yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[6], true));
-			bool countUpEnd = false;
-			List<float> l = new List<float>();
-			NumberAnimationUtility.MakeAccelerationTimeList(10, 0.3f, 0.02f, ref l);
+			List<float> timerList;
+
+			//0x1D14B64
+			layoutMainAnim.StartChildrenAnimGoStop("go_notes", "st_notes");
+			List<CountType> waitList = new List<CountType>();
+			timerList = new List<float>();
+			NumberAnimationUtility.MakeAccelerationTimeList(5, 0.3f, 0.02f, ref timerList);
 			PlayCountUpLoopSE();
-			SetCountUpValue(CountType.Score, l, (int value) =>
+
 			{
-				//0x1D146D8
-				numberScore.SetNumber(value, 0);
-			}, () =>
-			{
-				//0x1D1472C
-				return m_isSkiped;
-			}, () =>
-			{
-				//0x1D14750
-				countUpEnd = true;
-			});
-			while (!countUpEnd)
-				yield return null;
-			countUpSEPlayback.Stop();
-			if(!viewData.PMCGHPOGLGM_EnableLiveSkip)
-			{
-				if(viewData.HMDHDKLDPFK_PrevScore < viewData.GCAPLLEIAAI_HighScore)
+				CountType type = CountType.Perfect;
+				waitList.Add(type);
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				SetCountUpValue(type, timerList, (int value) =>
 				{
-					numberHighScore.SetNumber(viewData.GCAPLLEIAAI_HighScore, 0);
-				}
+					//0x1D13FDC
+					numberNoteResultCountList[4].SetNumber(value, 0);
+				}, () =>
+				{
+					//0x1D14060
+					return m_isSkiped;
+				}, () =>
+				{
+					//0x1D1432C
+					waitList.Remove(type);
+				});
 			}
+
+			{
+				CountType type = CountType.Great;
+				waitList.Add(type);
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				SetCountUpValue(type, timerList, (int value) =>
+				{
+					//0x1D14084
+					numberNoteResultCountList[3].SetNumber(value, 0);
+				}, () =>
+				{
+					//0x1D14108
+					return m_isSkiped;
+				}, () =>
+				{
+					//0x1D143C8
+					waitList.Remove(type);
+				});
+			}
+
+			{
+				CountType type = CountType.Good;
+				waitList.Add(type);
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				SetCountUpValue(type, timerList, (int value) =>
+				{
+					//0x1D1412C
+					numberNoteResultCountList[2].SetNumber(value, 0);
+				}, () =>
+				{
+					//0x1D141B0
+					return m_isSkiped;
+				}, () =>
+				{
+					//0x1D14464
+					waitList.Remove(type);
+				});
+			}
+
+			{
+				CountType type = CountType.Bad;
+				waitList.Add(type);
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				SetCountUpValue(type, timerList, (int value) =>
+				{
+					//0x1D141D4
+					numberNoteResultCountList[1].SetNumber(value, 0);
+				}, () =>
+				{
+					//0x1D14258
+					return m_isSkiped;
+				}, () =>
+				{
+					//0x1D14500
+					waitList.Remove(type);
+				});
+			}
+
+			{
+				CountType type = CountType.Miss;
+				waitList.Add(type);
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				SetCountUpValue(type, timerList, (int value) =>
+				{
+					//0x1D1427C
+					numberNoteResultCountList[0].SetNumber(value, 0);
+				}, () =>
+				{
+					//0x1D14300
+					return m_isSkiped;
+				}, () =>
+				{
+					//0x1D1459C
+					waitList.Remove(type);
+				});
+			}
+
+			while(waitList.Count > 0)
+				yield return null;
+			if(OnFinishCountupNoteResult != null)
+				OnFinishCountupNoteResult();
+
+			countUpSEPlayback.Stop();
 		}
 
 		// // RVA: 0x1D12864 Offset: 0x1D12864 VA: 0x1D12864

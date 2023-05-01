@@ -607,7 +607,15 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1961C54 Offset: 0x1961C54 VA: 0x1961C54
-	// public int KBEGPJEBFMA(int BCCHOBPJJKE) { }
+	public int KBEGPJEBFMA(int BCCHOBPJJKE)
+	{
+		if(BCCHOBPJJKE > 0 && BCCHOBPJJKE <= CDENCMNHNGA_SceneList.Count)
+		{
+			if(CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].PPEGAKEIEGM_En == 2)
+				return CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].LFPEIEOHABE_Pstv;
+		}
+		return 0;
+	}
 
 	// // RVA: 0x1961D38 Offset: 0x1961D38 VA: 0x1961D38
 	// public bool OEEJKKFOBKD(int BCCHOBPJJKE) { }

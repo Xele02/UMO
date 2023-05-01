@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB5FD84 Offset: 0xB5FD84 VA: 0xB5FD84
 		private void OnCountupNoteResult(RhythmGameConsts.NoteResult type, float time)
 		{
-
+			layoutPlaylog.StartAnim(type, time);
 		}
 
 		// // RVA: 0xB5FDC0 Offset: 0xB5FDC0 VA: 0xB5FDC0

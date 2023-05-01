@@ -491,7 +491,10 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1C51B18 Offset: 0x1C51B18 VA: 0x1C51B18
-	// public bool FCBBIEPBDBA(int IJEKNCDIIAE) { }
+	public bool FCBBIEPBDBA(int IJEKNCDIIAE)
+	{
+		return NGDOMLLBIJE_PstVer < IJEKNCDIIAE;
+	}
 
 	// // RVA: 0x1C51B58 Offset: 0x1C51B58 VA: 0x1C51B58
 	public int CPJHIHMCLMN_GetDvfVer()

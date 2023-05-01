@@ -170,10 +170,22 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 		// public FENCAJJBLBH PFAKPFKJJKA() { }
 
 		// // RVA: 0x1971E34 Offset: 0x1971E34 VA: 0x1971E34
-		// public bool OFNNNEMCJNN() { }
+		public bool OFNNNEMCJNN()
+		{
+			TodoLogger.Log(TodoLogger.DbIntegrityCheck, "OFNNNEMCJNN");
+			return false;
+		}
 
 		// // RVA: 0x196A4B0 Offset: 0x196A4B0 VA: 0x196A4B0
-		// public void OEBOPKCCEEO(int JPIPENJGGDD) { }
+		public void OEBOPKCCEEO(int JPIPENJGGDD)
+		{
+			if(JPIPENJGGDD == 0)
+				DOAAOOHGODJ_PstNew = 1;
+			else if(JPIPENJGGDD == 1)
+				DOAAOOHGODJ_PstNew = DOAAOOHGODJ_PstNew | 2;
+			else
+				DOAAOOHGODJ_PstNew = 3;
+		}
 
 		// // RVA: 0x197210C Offset: 0x197210C VA: 0x197210C
 		// public bool JECJALJEDPP(int INDDJNMPONH) { }
@@ -182,10 +194,44 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 		// public void BILHHMGCPFC(int INDDJNMPONH) { }
 
 		// // RVA: 0x1972140 Offset: 0x1972140 VA: 0x1972140
-		// public void DDLEICINOHK(long BEBJKJKBOGH, int JKONPJKILCH) { }
+		public void DDLEICINOHK_Unlock(long BEBJKJKBOGH, int JKONPJKILCH)
+		{
+			BEBJKJKBOGH_Date = BEBJKJKBOGH;
+			JPIPENJGGDD_Mlt = 0;
+			IELENGDJPHF_Ulk = 0;
+			MJBODMOLOBC_Luck = 0;
+			LHMOAJAIJCO_New = true;
+			CDOBCKMHAOK_Inf = 0;
+			DMNIMMGGJJJ_Leaf = 0;
+			for(int i = 0; i < PDNIFBEGMHC_Mb.Length; i++)
+			{
+				PDNIFBEGMHC_Mb[i] = 0;
+			}
+			for(int i = 0; i < EMOJHJGHJLN.Length; i++)
+			{
+				EMOJHJGHJLN[i] = 0;
+			}
+		}
 
 		// // RVA: 0x1972278 Offset: 0x1972278 VA: 0x1972278
-		// public void DJNPIJPHKKJ(long BEBJKJKBOGH, int JKONPJKILCH) { }
+		public void DJNPIJPHKKJ(long BEBJKJKBOGH, int JKONPJKILCH)
+		{
+			BEBJKJKBOGH_Date = BEBJKJKBOGH;
+			JPIPENJGGDD_Mlt = 1;
+			IELENGDJPHF_Ulk = 1;
+			MJBODMOLOBC_Luck = 0;
+			LHMOAJAIJCO_New = true;
+			CDOBCKMHAOK_Inf = 0;
+			DMNIMMGGJJJ_Leaf = 0;
+			for(int i = 0; i < PDNIFBEGMHC_Mb.Length; i++)
+			{
+				PDNIFBEGMHC_Mb[i] = 0;
+			}
+			for(int i = 0; i < EMOJHJGHJLN.Length; i++)
+			{
+				EMOJHJGHJLN[i] = 0;
+			}
+		}
 
 		// // RVA: 0x19723B0 Offset: 0x19723B0 VA: 0x19723B0
 		// public int HNNOJNHDNLF(int JPJNKNOJBMM) { }

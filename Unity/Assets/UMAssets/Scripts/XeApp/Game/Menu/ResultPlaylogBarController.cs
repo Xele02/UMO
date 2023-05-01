@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using XeApp.Game.RhythmGame;
 using System.Collections;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -126,7 +127,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB4D0AC Offset: 0xB4D0AC VA: 0xB4D0AC
-		// public void EnterGraphAnim(RhythmGameConsts.NoteResult type, float time) { }
+		public void EnterGraphAnim(RhythmGameConsts.NoteResult type, float time)
+		{
+			if(type < RhythmGameConsts.NoteResult.Num)
+			{
+				if(m_ResultDataList[(int)type].count > 0)
+				{
+					this.StartCoroutineWatched(Co_EnterGraphAnim(type, m_BarSize.y * (1.0f * m_ResultDataList[(int)type].count / m_ResultCount), time));
+				}
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7225DC Offset: 0x7225DC VA: 0x7225DC
 		// // RVA: 0xB4CFC4 Offset: 0xB4CFC4 VA: 0xB4CFC4
@@ -151,7 +161,27 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722654 Offset: 0x722654 VA: 0x722654
 		// // RVA: 0xB4D170 Offset: 0xB4D170 VA: 0xB4D170
-		// private IEnumerator Co_EnterGraphAnim(RhythmGameConsts.NoteResult type, float height, float time) { }
+		private IEnumerator Co_EnterGraphAnim(RhythmGameConsts.NoteResult type, float height, float time)
+		{
+			//0xB4DD6C
+			float elapsed_time = 0;
+			yield return new WaitWhile(() =>
+			{
+				//0xB4D7E8
+				float a = 0;
+				for(int i = 0; i < 5; i++)
+				{
+					if((int)type < i)
+					{
+						a = Mathf.Max(m_ResultDataList[i].image.rectTransform.sizeDelta.y, a);
+					}
+				}
+				elapsed_time += Time.deltaTime;
+				float f = Mathf.Min(elapsed_time / time, 1);
+				m_ResultDataList[(int)type].image.rectTransform.sizeDelta = new Vector2(m_BarSize.x, a + f * height);
+				return true;
+			});
+		}
 
 		// // RVA: 0xB4D298 Offset: 0xB4D298 VA: 0xB4D298
 		public void FinishAnim()

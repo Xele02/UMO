@@ -680,7 +680,7 @@ namespace XeApp.Game.Menu
 					{
 						GNGMCIAIKMA.HHCJCDFCLOB.BHFGBNNEMLI(bingos[i]);
 						GNGMCIAIKMA.HHCJCDFCLOB.FBHHEBDDIMO(bingos[i], true);
-						GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_HasBingoActive(null, -1);
+						GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_IsBingoValid(null, -1);
 					}
 				}
 			}
