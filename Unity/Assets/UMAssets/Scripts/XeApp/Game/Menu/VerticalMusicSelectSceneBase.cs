@@ -486,10 +486,16 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_CheckSimulationLive(Action<bool> endCallBack)
 		{
 			//0xAD5804
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.GKKDNOFMJJN_NumTicket > 0)
+			{
+				if(endCallBack != null)
+				{
+					endCallBack(true);
+				}
+				yield break;
+			}
 			TodoLogger.Log(0, "Co_CheckSimulationLive");
-			yield return null;
-			if (endCallBack != null)
-				endCallBack(true);
 		}
 
 		// // RVA: 0xAC95E8 Offset: 0xAC95E8 VA: 0xAC95E8 Slot: 58
@@ -858,7 +864,11 @@ namespace XeApp.Game.Menu
 		{
 			if (!BIFNGFAIEIL.HHCJCDFCLOB.DNFPMBFNDCA())
 				return;
-			TodoLogger.Log(0, "CheckSnsNotice");
+			int snsId = BIFNGFAIEIL.HHCJCDFCLOB.FGGDEKAJCIF();
+			if(snsId == 0)
+				return;
+			MenuScene.Instance.ShowSnsNotice(snsId, null);
+			BIFNGFAIEIL.HHCJCDFCLOB.ALIANOFCAEI();
 		}
 
 		// // RVA: 0xACF730 Offset: 0xACF730 VA: 0xACF730

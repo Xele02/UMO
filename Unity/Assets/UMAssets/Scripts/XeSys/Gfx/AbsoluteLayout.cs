@@ -33,8 +33,8 @@ namespace XeSys.Gfx
 		{
 			child.Parent = this;
 			m_List.Add(child);
-			m_ChildViewMap.Add(child.ID, child);
-			m_ChildViewMapForExid.Add(child.EXID, child);
+			m_ChildViewMap[child.ID] = child;
+			m_ChildViewMapForExid[child.EXID] = child;
 			if(child is AbsoluteLayout)
 			{
 				m_AbsoluteList.Add(child as AbsoluteLayout);

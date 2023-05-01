@@ -107,7 +107,20 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.Log(0, "Args != null");
+				m_isLine6Mode = args.isLine6Mode;
+				if(args.isScoreRanking)
+				{
+					m_isScoreRankingPopup = true;
+				}
+				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.LMPCJJKHHPA_Is6LineMode())
+				{
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.HPDBEKAGKOD_SetIsLine6Mode(isLine6Mode);
+					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				}
+				if(args.isScoreRanking)
+				{
+					m_showScoreRankingPopup = true;
+				}
 			}
 			long currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false);

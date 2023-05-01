@@ -866,7 +866,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x143E35C Offset: 0x143E35C VA: 0x143E35C
 		private void ApplyPriority()
 		{
-			TodoLogger.Log(0, "BgControl.ApplyPriority");
+			if(m_priority == BgPriority.TopMost)
+			{
+				m_bgBehaviour.transform.SetAsLastSibling();
+			}
+			else if(m_priority == BgPriority.Bottom)
+			{
+				m_bgBehaviour.transform.SetAsFirstSibling();
+			}
 		}
 
 		// // RVA: 0x143E400 Offset: 0x143E400 VA: 0x143E400

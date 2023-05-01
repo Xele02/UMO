@@ -14,6 +14,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x956B0C Offset: 0x956B0C VA: 0x956B0C
-		//public void SetOpenSns(bool open) { }
+		public void SetOpenSns(bool open)
+		{
+			m_isOpenSns = open;
+		}
 	}
 }

@@ -236,7 +236,7 @@ namespace XeApp.Game.Menu
 					SetViewData(eSceneType.Home, FAGCLBOACEE.OGGDOPACJOB());
 					return;
 				case eSceneType.DropResult:
-					TodoLogger.Log(0, "ViewInitialize 3");
+					SetViewData(eSceneType.DropResult, FAGCLBOACEE.KJDIPIAFNEN());
 					return;
 				case eSceneType.MusicSelect:
 					TodoLogger.Log(0, "ViewInitialize 4");

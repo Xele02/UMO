@@ -276,7 +276,18 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BC5E74 Offset: 0x1BC5E74 VA: 0x1BC5E74
-		// public static void ReviewStarPopupShow(MonoBehaviour mb, Action closeWaitCallback, int divaId = 1, int voiceId = 0) { }
+		public static void ReviewStarPopupShow(MonoBehaviour mb, Action closeWaitCallback, int divaId = 1, int voiceId = 0)
+		{
+			if(!KNHHNMFCJEN.AIGMIEKPPAD())
+			{
+				if(closeWaitCallback != null)
+					closeWaitCallback();
+			}
+			else
+			{
+				TodoLogger.Log(0, "ReviewStarPopupShow");
+			}
+		}
 
 		// // RVA: 0x1BC6294 Offset: 0x1BC6294 VA: 0x1BC6294
 		// public static void OpinionPopupShow(MonoBehaviour mb, Action closeWaitCallback, int divaId = 1, int voiceId = 0, int starRank = 0) { }

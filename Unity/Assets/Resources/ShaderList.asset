@@ -302,8 +302,11 @@ MonoBehaviour:
     internalName: Unlit/RBreakPlateShader
     shader: {fileID: 4800000, guid: ac90b7f5cea53e547979690c0255453f, type: 3}
   - fileName: rbreaksmallplateshader
-    internalName: 
+    internalName: Unlit/RBreakSmallPlateShader
     shader: {fileID: 4800000, guid: 5a326b1f8132fe64b9fb7f99823ccd0d, type: 3}
+  - fileName: ui-unlit-horizontalgradationcolor
+    internalName: MCRS/HorizontalGradationColor
+    shader: {fileID: 4800000, guid: 58915648be753f340b85fd5eae23d73a, type: 3}
   - fileName: ui-unlit-splittextureaddrgb16_a8
     internalName: MCRS/SplitTextureAddRGB16A8
     shader: {fileID: 4800000, guid: 3c79bfe540815a34f8bf83b3093cc5c4, type: 3}

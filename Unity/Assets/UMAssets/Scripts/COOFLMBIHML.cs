@@ -86,7 +86,16 @@ public class COOFLMBIHML
 	//// RVA: 0x1766118 Offset: 0x1766118 VA: 0x1766118
 	public int NEHHNEPPIBK()
 	{
-		TodoLogger.Log(0, "NEHHNEPPIBK");
-		return 0;
+		int rnd = UnityEngine.Random.Range(0, DBOFPMOMPFH);
+		int idx = 0;
+		for(int i = 0; i < HDNPGKDFEJB.Count; i++)
+		{
+			if(HDNPGKDFEJB[i].FCDKJAKLGMB > rnd)
+			{
+				idx = i;
+				break;
+			}
+		}
+		return HDNPGKDFEJB[idx].BCCHOBPJJKE_SceneId;
 	}
 }

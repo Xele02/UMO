@@ -581,7 +581,27 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2D41C Offset: 0xE2D41C VA: 0xE2D41C Slot: 28
 		protected override TransitionArgs GetCallArgsReturn()
 		{
-			TodoLogger.Log(0, "GuestList GetCallArgsReturn");
+			OHCAABOMEOF.KGOGMKMBCPP_EventType eventType = Database.Instance.gameSetup.musicInfo.gameEventType;
+			if(eventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB)
+			{
+				if(eventType > OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest || 
+				((1 << (int)eventType) & 78) == 0)
+				{
+					return base.GetCallArgsReturn();
+				}
+			}
+			else
+			{
+				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+				{
+					TodoLogger.Log(0, "GetCallArgsReturn Event");
+				}
+				if(eventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
+				{
+					return base.GetCallArgsReturn();
+				}
+			}
+			TodoLogger.Log(0, "GetCallArgsReturn Event");
 			return null;
 		}
 

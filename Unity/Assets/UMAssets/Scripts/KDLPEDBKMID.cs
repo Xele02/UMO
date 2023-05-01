@@ -118,7 +118,13 @@ public class KDLPEDBKMID
 	// // RVA: 0xE7D90C Offset: 0xE7D90C VA: 0xE7D90C
 	public void FFBCKMFKFME()
     {
-        TodoLogger.Log(0, "TODO");
+        if(PMDNNKAPIKJ_FileDownloader != null)
+		{
+			PMDNNKAPIKJ_FileDownloader.Dispose();
+			PMDNNKAPIKJ_FileDownloader = null;
+		}
+		CriFileRequestManager.HHCJCDFCLOB.GOEAHKDGBBH = null;
+		CriFileRequestManager.HHCJCDFCLOB.JPNMBNEHBOC = null;
     }
 
 	// // RVA: 0xE7D990 Offset: 0xE7D990 VA: 0xE7D990

@@ -156,9 +156,9 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1104790 Offset: 0x1104790 VA: 0x1104790
 		private void MakeUvRects(List<Rect> uvRects, string format, int beginIndex, int count)
 		{
-			for(int i = beginIndex; i < count; i++)
+			for(int i = 0; i < count; i++, beginIndex++)
 			{
-				m_stringBuilder.SetFormat(format, i);
+				m_stringBuilder.SetFormat(format, beginIndex);
 				uvRects.Add(LayoutUGUIUtility.MakeUnityUVRect(GetTexUvData(m_stringBuilder.ToString())));
 			}
 		}

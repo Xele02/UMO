@@ -89,8 +89,10 @@ public class PJKLMCGEJMK
     // // RVA: 0x931734 Offset: 0x931734 VA: 0x931734
     public void FFBCKMFKFME()
     {
-        TodoLogger.Log(0, "TODO");
+        if(BNJPAKLNOPA_WorkerThreadQueue == null)
+            return;
         BNJPAKLNOPA_WorkerThreadQueue.Abort();
+        BNJPAKLNOPA_WorkerThreadQueue = null;
     }
 
     // // RVA: 0x931760 Offset: 0x931760 VA: 0x931760

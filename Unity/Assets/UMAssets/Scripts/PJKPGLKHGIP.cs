@@ -28,7 +28,24 @@ public class PJKPGLKHGIP
 	}
 
 	//// RVA: 0x937C8C Offset: 0x937C8C VA: 0x937C8C
-	//public void HJMKBCFJOOH(string CJEKGLGBIHF) { }
+	public void HJMKBCFJOOH(string CJEKGLGBIHF)
+	{
+		FileStream fs = new FileStream(CJEKGLGBIHF, FileMode.Create);
+		BinaryWriter bw = new BinaryWriter(fs);
+		bw.Write(2);
+		bw.Write(ONOICEHIHPJ_Ids.Count);
+		bw.Write(PAAFIOOKJIP_ReceivedSns);
+		bw.Write(0);
+		for(int i = 0; i < ONOICEHIHPJ_Ids.Count; i++)
+		{
+			bw.Write(ONOICEHIHPJ_Ids[i]);
+			bw.Write(KJNJHHHELBK_Dates[i]);
+		}
+		bw.Flush();
+		bw.Close();
+		bw.Dispose();
+		fs.Dispose();
+	}
 
 	//// RVA: 0x9382A0 Offset: 0x9382A0 VA: 0x9382A0
 	//public void PCODDPDFLHK(string CJEKGLGBIHF) { }

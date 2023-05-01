@@ -10,5 +10,8 @@ public class SnsNotificationButton : ActionButton
 	}
 
 	//// RVA: 0xE00054 Offset: 0xE00054 VA: 0xE00054
-	//public bool IsSelect() { }
+	public bool IsSelect()
+	{
+		return m_isPointerDown;
+	}
 }

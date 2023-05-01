@@ -1214,7 +1214,14 @@ namespace XeApp.Game
 		// public static void FadeReset() { }
 
 		// // RVA: 0x9A08E0 Offset: 0x9A08E0 VA: 0x9A08E0
-		// public void ShowSnsNotice(int snsId, UnityAction pushAction, bool isButtonEnable = True) { }
+		public void ShowSnsNotice(int snsId, UnityAction pushAction, bool isButtonEnable = true)
+		{
+			if(m_snsNotification != null)
+			{
+				m_snsNotification.gameObject.SetActive(true);
+				m_snsNotification.Show(snsId, pushAction, isButtonEnable);
+			}
+		}
 
 		// // RVA: 0x9A09FC Offset: 0x9A09FC VA: 0x9A09FC
 		public void CloseSnsNotice()

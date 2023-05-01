@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using XeApp.Core;
+using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -40,7 +42,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D12F0 Offset: 0x12D12F0 VA: 0x12D12F0
-		//public void Show(int snsId, UnityAction pushAction, bool isButtonEnable = True) { }
+		public void Show(int snsId, UnityAction pushAction, bool isButtonEnable = true)
+		{
+			if(snsId != 0)
+			{
+				ViewSNSNotificationData data = new ViewSNSNotificationData();
+				data.Init(snsId);
+				Show(data.charaPictId, data.roomName, data.bodyText, pushAction, isButtonEnable, false);
+			}
+			m_dirtyClose = false;
+		}
 
 		//// RVA: 0x12D14E4 Offset: 0x12D14E4 VA: 0x12D14E4
 		public void ShowOffer(UnityAction pushAction, bool isButtonEnable = true)
@@ -52,13 +63,47 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x12D1408 Offset: 0x12D1408 VA: 0x12D1408
 		private void Show(int charaId, string header, string body, UnityAction pushAction, bool isButtonEnable = true, bool IsOffer = false)
 		{
-			TodoLogger.Log(0, "Show");
-			pushAction();
+			m_layout.SetFaceIcon(charaId, IsOffer);
+			m_layout.SetRoomName(header);
+			m_layout.SetMessage(body);
+			this.StartCoroutineWatched(Co_TouchWait(pushAction, isButtonEnable, IsOffer));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x735264 Offset: 0x735264 VA: 0x735264
 		//// RVA: 0x12D17A8 Offset: 0x12D17A8 VA: 0x12D17A8
-		//private IEnumerator Co_TouchWait(UnityAction pushAction, bool isButtonEnable = True, bool IsOffer = False) { }
+		private IEnumerator Co_TouchWait(UnityAction pushAction, bool isButtonEnable = true, bool IsOffer = false)
+		{
+			//0x12D19A8
+			while(!m_layout.IsLoadedIcon)
+				yield return null;
+			m_layout.ButtonDisable();
+			if(!IsOffer)
+			{
+				m_layout.Show(isButtonEnable);
+			}
+			else
+			{
+				m_layout.ShowOffer(isButtonEnable);
+			}
+			while(m_layout.IsPlaying())
+				yield return null;
+			m_touchWaitCounter = 0;
+			m_layout.PushButtonHandler += pushAction;
+			m_layout.ButtonEnable();
+			while(m_touchWaitCounter < m_touchWaitTime && !m_dirtyClose && !m_layout.IsPushed)
+			{
+				if(!m_layout.Button.IsSelect() && !m_layout.OfferButton.IsSelect())
+				{
+					m_touchWaitCounter += TimeWrapper.deltaTime;
+				}
+				yield return null;
+			}
+			m_layout.PushButtonHandler -= pushAction;
+			m_layout.Close();
+			while(m_layout.IsPlaying())
+				yield return null;
+			gameObject.SetActive(false);
+		}
 
 		//// RVA: 0x12D189C Offset: 0x12D189C VA: 0x12D189C
 		public void Close()

@@ -869,13 +869,115 @@ public class ILCCJNDFFOB
 	// // RVA: 0x90F0FC Offset: 0x90F0FC VA: 0x90F0FC
 	public void IENGPDCDMBM(JGEOBNENMAH.EDHCNKBMLGI OMNOFMEBLAD, string MDADLCOCEBN, int JPLMIPNGKEA, int AIMGOGFLILF)
 	{
-		TodoLogger.Log(0, "IENGPDCDMBM");
-	}
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		KEODKEGFDLD_FreeMusicInfo mData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId);
+		json["session_id"] = MDADLCOCEBN;
+		json["free_music_id"] = OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId;
+		json["music_id"] = mData.DLAEJOBELBH_MusicId;
+		if(!OMNOFMEBLAD.LFGNLKKFOCD_IsLine6)
+			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty;
+		else
+			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty + 10;
+		switch(GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.DDHCLNFPNGK_RenderQuality)
+		{
+			case 0:
+				json["mode"] = JpStringLiterals.StringLiteral_11136;
+			break;
+			case 1:
+				json["mode"] = JpStringLiterals.StringLiteral_11137;
+			break;
+			case 2:
+				json["mode"] = "2D";
+			break;
+			case 3:
+				json["mode"] = JpStringLiterals.StringLiteral_11139;
+			break;
+		}
+		json["mv_char_id"] = Database.Instance.gameSetup.teamInfo.divaList[0].prismDivaId;
+        LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(Database.Instance.gameSetup.teamInfo.divaList[0].prismDivaId, Database.Instance.gameSetup.teamInfo.divaList[0].prismCostumeModelId);
+		if(cos == null)
+		{
+			json["mv_char_cos"] = 0;
+		}
+		else
+		{
+			json["mv_char_cos"] = cos.JPIDIENBGKH_CostumeId;
+		}
+		json["mv_valkyrie_id"] = Database.Instance.gameSetup.teamInfo.valkyrieId;
+		json["remain_mv_ticket"] = JPLMIPNGKEA;
+		json["use_mv_ticket"] = AIMGOGFLILF;
+		json["notes_speed"] = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DGCDPGPAAII_GetNotesSpeed((Difficulty.Type)OMNOFMEBLAD.AKNELONELJK_Difficulty, false);
+        NPOOPJIOMHF_Prism.CLGGEONAHPL_TeamSelectionSetting team = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GHDDPJBBEOC_Prism.GCINIJEMHFK_GetTeamForSong(mData.DLAEJOBELBH_MusicId);
+        json["notes_disp"] = team.NLFMKOJHAHJ_ShowNotes;
+		if(team.MKKGKKHABEK_ValkyrieMode == 0)
+		{
+			json["valkyrie_mode"] = JpStringLiterals.StringLiteral_11167;
+		}
+		else
+		{
+			json["valkyrie_mode"] = JpStringLiterals.StringLiteral_11168;
+		}
+		if(team.JPBJOGBGKGA_DivaMode == 0)
+		{
+			json["utahime_mode"] = JpStringLiterals.StringLiteral_11167;
+		}
+		else
+		{
+			json["utahime_mode"] = JpStringLiterals.StringLiteral_11171;
+		}
+		JBBHNIACMFJ.Length = 0;
+		JBBHNIACMFJ.Append(team.OCAMDLMPBGA_SelectedDivaSoloId == 0 ? 1 : 0);
+		JBBHNIACMFJ.Append(':');
+		JBBHNIACMFJ.Append(team.PGCEGEJOOON_SelectedCostumeSoloId == 0 ? 1 : 0);
+		JBBHNIACMFJ.Append(':');
+		JBBHNIACMFJ.Append(team.EPDPAHNLMKH_SelectedValkyrieSoloId == 0 ? 1 : 0);
+		json["mv_setting"] = JBBHNIACMFJ.ToString();
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.IENGPDCDMBM/*45*/, json, false);
+    }
 
 	// // RVA: 0x910540 Offset: 0x910540 VA: 0x910540
 	public void GDHNBIIOKMF(CPHJGFLEFNF IJAOGPFKDBP, JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD, string MDADLCOCEBN)
 	{
-		TodoLogger.Log(0, "GDHNBIIOKMF");
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		KEODKEGFDLD_FreeMusicInfo mData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId);
+		json["session_id"] = MDADLCOCEBN;
+		json["free_music_id"] = OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId;
+		json["music_id"] = mData.DLAEJOBELBH_MusicId;
+		if(IJAOGPFKDBP.LIDKENJKLGA_IsLine6 == 0)
+		{
+			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty;
+		}
+		else
+		{
+			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty + 10;
+		}
+		json["result"] = IJAOGPFKDBP.HBODCMLFDOB_Result;
+		json["start_t"] = BGLHDAKDPMJ_DateToString(Utility.GetLocalDateTime(IJAOGPFKDBP.ICJEDACBMMF_ServerTime));
+		if(IJAOGPFKDBP.IMIEPNOECFD_HasValkyrieMode == 0)
+		{
+			json["valkyrie_mode"] = JpStringLiterals.StringLiteral_11167;
+		}
+		else
+		{
+			json["valkyrie_mode"] = JpStringLiterals.StringLiteral_11168;
+		}
+		if(IJAOGPFKDBP.GFODFMFGLJG_HadDivaMode == 0)
+		{
+			json["utahime_mode"] = JpStringLiterals.StringLiteral_11167;
+		}
+		else if(IJAOGPFKDBP.GFODFMFGLJG_HadDivaMode == 1)
+		{
+			json["utahime_mode"] = JpStringLiterals.StringLiteral_11170;
+		}
+		else
+		{
+			json["utahime_mode"] = JpStringLiterals.StringLiteral_11171;
+		}
+		json["ave_fps"] = IJAOGPFKDBP.LMOBPKIDIHF_AverageFps;
+		json["low_fps"] = IJAOGPFKDBP.IPAAOFCGEAB_MinFps;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.GDHNBIIOKMF/*46*/, json, false);
 	}
 
 	// // RVA: 0x910ECC Offset: 0x910ECC VA: 0x910ECC

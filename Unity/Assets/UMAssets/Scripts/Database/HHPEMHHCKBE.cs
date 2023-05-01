@@ -18,13 +18,24 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 		public int EKLIPGELKCL { get { return EAJCFBCHIFB ^ FBGGEFFJJHB; } set { EAJCFBCHIFB = value ^ FBGGEFFJJHB; } } //0x18337EC OEEHBGECGKL 0x1833664 GHLMHLJJBIG
 
 		//// RVA: 0x18337FC Offset: 0x18337FC VA: 0x18337FC
-		//public int JCJGGHGIKIJ() { }
+		public int JCJGGHGIKIJ()
+		{
+			if(AHGCGHAAHOO != null)
+				return AHGCGHAAHOO.Length;
+			return 0;
+		}
 
 		//// RVA: 0x1833810 Offset: 0x1833810 VA: 0x1833810
-		//public int CBLLFCGEJAI(int OIPCCBHIKIA) { }
+		public int CBLLFCGEJAI(int OIPCCBHIKIA)
+		{
+			return AHGCGHAAHOO[OIPCCBHIKIA] ^ FBGGEFFJJHB;
+		}
 
 		//// RVA: 0x1833864 Offset: 0x1833864 VA: 0x1833864
-		//public int HBJMCLGKLBA(int OIPCCBHIKIA) { }
+		public int HBJMCLGKLBA(int OIPCCBHIKIA)
+		{
+			return OGEBLOHMGAM[OIPCCBHIKIA] ^ FBGGEFFJJHB;
+		}
 
 		//// RVA: 0x1833760 Offset: 0x1833760 VA: 0x1833760
 		//public uint CAOGDCBPBAN() { }

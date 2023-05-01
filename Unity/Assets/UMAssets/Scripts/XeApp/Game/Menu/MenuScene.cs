@@ -951,7 +951,20 @@ namespace XeApp.Game.Menu
 		// public void FooterLeave() { }
 
 		// // RVA: 0xB32604 Offset: 0xB32604 VA: 0xB32604
-		// public void ShowSnsNotice(int snsId, UnityAction pushAction) { }
+		public void ShowSnsNotice(int snsId, UnityAction pushAction)
+		{
+			if(pushAction == null)
+			{
+				pushAction = () =>
+				{
+					//0xB37CF8
+					HomeArgs arg = new HomeArgs();
+					arg.SetOpenSns(true);
+					m_menuTransitionControl.Mount(TransitionUniqueId.HOME, arg, true, 0);
+				};
+			}
+			GameManager.Instance.ShowSnsNotice(snsId, pushAction, true);
+		}
 
 		// // RVA: 0xB32704 Offset: 0xB32704 VA: 0xB32704
 		public void ShowOfferNotice(UnityAction pushAction)
@@ -1542,10 +1555,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB37CCC Offset: 0xB37CCC VA: 0xB37CCC
 		// private IEnumerator <GotoRhythmGame>b__148_0() { }
 
-		// [CompilerGeneratedAttribute] // RVA: 0x6C832C Offset: 0x6C832C VA: 0x6C832C
-		// // RVA: 0xB37CF8 Offset: 0xB37CF8 VA: 0xB37CF8
-		// private void <ShowSnsNotice>b__189_0() { }
-		
 		// [CompilerGeneratedAttribute] // RVA: 0x6C834C Offset: 0x6C834C VA: 0x6C834C
 		// // RVA: 0xB37E34 Offset: 0xB37E34 VA: 0xB37E34
 		// private void <OnShowHelpPopup>b__232_1() { }

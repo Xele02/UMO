@@ -368,6 +368,8 @@ public static class CMMKCEPBIHI
 					skillId = skill.HEKHODDJHAO_P1;
 					effectInfo = KDDDDMMMBHE_GetEffectInfo(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill, skill.HEKHODDJHAO_P1, GJLFANGDGCL_SkillType);
 				}
+				else
+					continue;
 			}
 			if (effectInfo != null)
 			{
@@ -437,9 +439,9 @@ public static class CMMKCEPBIHI
 									if (GJLFANGDGCL_SkillType == JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill)
 									{
 										FLOHCPIIHEH_WorkStatus.Clear();
+										KDOFDLIMHJG_ApplySkill(ref FLOHCPIIHEH_WorkStatus, DGCJCAHIAPP_DivaInfo.JLJGCBOHJID_Status, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill, skillId, CHMOEPNAJOO_SkillInfo.CNLIAMIIJID_Level, MLAFAACKKBG_TeamInfo);
+										MEICPKJFJOA_SetMalusFlag(ref HBODCMLFDOB, FLOHCPIIHEH_WorkStatus);
 									}
-									KDOFDLIMHJG_ApplySkill(ref FLOHCPIIHEH_WorkStatus, DGCJCAHIAPP_DivaInfo.JLJGCBOHJID_Status, JNKEEAOKNCI_Skill.MKGJHBAKMBD_SkillType.AIFGINAKBMA_EnemySkill, skillId, CHMOEPNAJOO_SkillInfo.CNLIAMIIJID_Level, MLAFAACKKBG_TeamInfo);
-									MEICPKJFJOA_SetMalusFlag(ref HBODCMLFDOB, FLOHCPIIHEH_WorkStatus);
 								}
 							}
 						}

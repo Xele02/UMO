@@ -126,12 +126,12 @@ namespace XeApp.Game.Common
 				int score = 0;
 				for (int i = 1; i <= cnt; i++)
 				{
-					rateAttr[0] += l[0][i].Score;
-					hsRatingMusicData[i - 1, 0].FreeMusicId = l[0][i].FreeMusicId;
-					hsRatingMusicData[i - 1, 0].Difficulty = l[0][i].Difficulty;
-					hsRatingMusicData[i - 1, 0].Score = l[0][i].Score;
-					hsRatingMusicData[i - 1, 0].RawScore = l[0][i].RawScore;
-					hsRatingMusicData[i - 1, 0].isLine6 = l[0][i].isLine6;
+					rateAttr[0] += l[0][i - 1].Score;
+					hsRatingMusicData[i - 1, 0].FreeMusicId = l[0][i - 1].FreeMusicId;
+					hsRatingMusicData[i - 1, 0].Difficulty = l[0][i - 1].Difficulty;
+					hsRatingMusicData[i - 1, 0].Score = l[0][i - 1].Score;
+					hsRatingMusicData[i - 1, 0].RawScore = l[0][i - 1].RawScore;
+					hsRatingMusicData[i - 1, 0].isLine6 = l[0][i - 1].isLine6;
 					int rank = 0;
 					if(score < 1 || hsRatingMusicData[i - 1, 0].Score != score)
 					{

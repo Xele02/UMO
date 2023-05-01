@@ -33,8 +33,8 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_animeLayout; // 0x48
 		private bool IsOffer; // 0x4E
 
-		//public SnsNotificationButton Button { get; } 0x12D2144
-		//public SnsNotificationButton OfferButton { get; } 0x12D214C
+		public SnsNotificationButton Button { get { return m_button; } } //0x12D2144
+		public SnsNotificationButton OfferButton { get { return m_offerButton; } } //0x12D214C
 		public bool IsPushed { get; private set; } // 0x4C
 		public bool IsLoadedIcon { get; private set; } // 0x4D
 
@@ -63,37 +63,106 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D1598 Offset: 0x12D1598 VA: 0x12D1598
-		//public void SetFaceIcon(int charaId, bool IsOffer = False) { }
+		public void SetFaceIcon(int charaId, bool IsOffer = false)
+		{
+			IsLoadedIcon = false;
+			GameManager.Instance.SnsIconCache.CharIconLoad(charaId, (IiconTexture texture) =>
+			{
+				//0x12D2DB4
+				if(!IsOffer)
+				{
+					texture.Set(m_faceIcon);
+				}
+				else
+				{
+					texture.Set(m_offerFaceIcon);
+				}
+				IsLoadedIcon = true;
+			});
+		}
 
 		//// RVA: 0x12D1700 Offset: 0x12D1700 VA: 0x12D1700
-		//public void SetRoomName(string name) { }
+		public void SetRoomName(string name)
+		{
+			m_roomText.text = name;
+			m_OfferText.text = name;
+		}
 
 		//// RVA: 0x12D176C Offset: 0x12D176C VA: 0x12D176C
-		//public void SetMessage(string message) { }
+		public void SetMessage(string message)
+		{
+			m_messageText.text = message;
+		}
 
 		//// RVA: 0x12D1E88 Offset: 0x12D1E88 VA: 0x12D1E88
-		//public void Show(bool isEnableButton = True) { }
+		public void Show(bool isEnableButton = true)
+		{
+			m_layout.StartChildrenAnimGoStop("01");
+			IsPushed = false;
+			m_button.IsInputOff = !isEnableButton;
+			m_animeLayout.StartAnimGoStop("go_in", "st_in");
+			IsOffer = false;
+		}
 
 		//// RVA: 0x12D1D8C Offset: 0x12D1D8C VA: 0x12D1D8C
-		//public void ShowOffer(bool isEnableButton = True) { }
+		public void ShowOffer(bool isEnableButton = true)
+		{
+			m_layout.StartChildrenAnimGoStop("02");
+			IsPushed = false;
+			m_button.IsInputOff = !isEnableButton;
+			m_offeranimLayout.StartChildrenAnimGoStop("go_in", "st_in");
+			IsOffer = true;
+			SettingOfferNotifi();
+		}
 
 		//// RVA: 0x12D2AD8 Offset: 0x12D2AD8 VA: 0x12D2AD8
-		//private void SettingOfferNotifi() { }
+		private void SettingOfferNotifi()
+		{
+			TodoLogger.Log(0, "SettingOfferNotifi");
+		}
 
 		//// RVA: 0x12D2D0C Offset: 0x12D2D0C VA: 0x12D2D0C
 		//private bool IsBasara(int _divaId) { }
 
 		//// RVA: 0x12D1D34 Offset: 0x12D1D34 VA: 0x12D1D34
-		//public void ButtonDisable() { }
+		public void ButtonDisable()
+		{
+			m_button.IsInputOff = true;
+			m_offerButton.IsInputLock = true;
+		}
 
 		//// RVA: 0x12D20E4 Offset: 0x12D20E4 VA: 0x12D20E4
-		//public void ButtonEnable() { }
+		public void ButtonEnable()
+		{
+			m_button.IsInputOff = false;
+			m_offerButton.IsInputOff = false;
+		}
 
 		//// RVA: 0x12D2260 Offset: 0x12D2260 VA: 0x12D2260
-		//public void Close() { }
+		public void Close()
+		{
+			if(IsOffer)
+			{
+				m_offeranimLayout.StartChildrenAnimGoStop("go_out", "st_out");
+			}
+			else
+			{
+				m_animeLayout.StartAnimGoStop("go_out", "st_out");
+			}
+		}
 
 		//// RVA: 0x12D1F7C Offset: 0x12D1F7C VA: 0x12D1F7C
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			if(!IsOffer)
+			{
+				return m_animeLayout.IsPlaying();
+			}
+			else
+			{
+				return m_offeranimLayout.IsPlayingChildren();
+			}
+		}
 
 		//// RVA: 0x12D2D1C Offset: 0x12D2D1C VA: 0x12D2D1C
 		private void OnPushButton()

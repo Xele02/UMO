@@ -183,7 +183,7 @@ Shader "Unlit/RBreakPlateShader" {
 				#elif _FRONT1TEX_SCROLL
 					texCoord = TRANSFORM_TEX(v.texcoord0, _Front1Tex);
 					f = frac(_Time.x);
-					o.texcoord1.zw = float2(_Front1TexAnimeSpeed, _Front1TexAnimeSpeed2) * float2(f, f) + texCoord;
+					o.texcoord1.xy = float2(_Front1TexAnimeSpeed, _Front1TexAnimeSpeed2) * float2(f, f) + texCoord;
 				#endif
 
 				#if _FRONT2TEX_ROTATE
@@ -229,7 +229,7 @@ Shader "Unlit/RBreakPlateShader" {
 				#elif _BACK1TEX_SCROLL
 					texCoord = TRANSFORM_TEX(v.texcoord0, _Back1Tex);
 					f = frac(_Time.x);
-					o.texcoord1.zw = float2(_Back1TexAnimeSpeed, _Back1TexAnimeSpeed2) * float2(f, f) + texCoord;
+					o.texcoord2.xy = float2(_Back1TexAnimeSpeed, _Back1TexAnimeSpeed2) * float2(f, f) + texCoord;
 				#endif
 				#if _BACK2TEX_ROTATE
 					f = _Time.x * _Back2TexAnimeSpeed;
@@ -248,7 +248,7 @@ Shader "Unlit/RBreakPlateShader" {
 				#elif _BACK2TEX_SCROLL
 					texCoord = TRANSFORM_TEX(v.texcoord0, _Back2Tex);
 					f = frac(_Time.x);
-					o.texcoord1.zw = float2(_Back2TexAnimeSpeed, _Back2TexAnimeSpeed2) * float2(f, f) + texCoord;
+					o.texcoord2.zw = float2(_Back2TexAnimeSpeed, _Back2TexAnimeSpeed2) * float2(f, f) + texCoord;
 				#endif
 
 				//Keywords { "_BACK1TEX_POLAR" "_BACK2TEX_POLAR" "_DISTOTIONTEX_SCROLL" "_FRONT1TEX_POLAR" "_FRONT2TEX_ROTATE" }

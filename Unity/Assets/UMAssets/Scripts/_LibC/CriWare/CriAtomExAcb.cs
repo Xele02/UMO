@@ -59,7 +59,7 @@ namespace ExternLib
 			if (cueRecord == null)
 				return false;
 			info.length = cueRecord.LengthMilli;
-			TodoLogger.Log(0, "finish criAtomExAcb_GetCueInfoByIndex");
+			TodoLogger.Log(TodoLogger.CriAtomExLib, "finish criAtomExAcb_GetCueInfoByIndex");
 			return true;
 		}
 

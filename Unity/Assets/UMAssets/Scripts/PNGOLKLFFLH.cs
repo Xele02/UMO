@@ -92,11 +92,11 @@ public class PNGOLKLFFLH
 			OIGEIIGKMNH_Valkyrie.HLNPGNNPCGO_ValkyrieInfo valkSave = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JJFFBDLIOCF_Valkyrie.CNGNBKNBKGI_ValkList[i];
 			if (!valkDb.IPJMPBANBPP_IsEnabled)
 				continue;
-			if(OJEBNBLHPNP || 
-				(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.HFAMPKLFFEJ_FindEpisodeForReward(valkDb.GPPEFLKGGGJ_Id) == 0
-				 && valkSave.FJODMPGPDDD) ||
-				 (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.HFAMPKLFFEJ_FindEpisodeForReward(valkDb.GPPEFLKGGGJ_Id) - 1].BEBJKJKBOGH_Date != 0)
-				 || RuntimeSettings.CurrentSettings.ForceValkyrieUnlock)
+			int epId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.HFAMPKLFFEJ_FindEpisodeForReward(valkDb.GPPEFLKGGGJ_Id);
+			if(OJEBNBLHPNP
+				|| (epId == 0 && valkSave.FJODMPGPDDD)
+				|| (epId != 0 && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[epId - 1].BEBJKJKBOGH_Date != 0)
+				|| RuntimeSettings.CurrentSettings.ForceValkyrieUnlock)
 			{
 				PNGOLKLFFLH data = new PNGOLKLFFLH();
 				data.KHEKNNFCAOI_Init(valkDb.GPPEFLKGGGJ_Id, 0, valkSave.BEBJKJKBOGH_Date);

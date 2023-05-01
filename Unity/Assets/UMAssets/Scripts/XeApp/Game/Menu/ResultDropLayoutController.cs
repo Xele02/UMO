@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using mcrs;
 using UnityEngine;
+using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
 using XeSys;
@@ -181,24 +182,41 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD01CA0 Offset: 0xD01CA0 VA: 0xD01CA0
 		private IEnumerator ShowUnlockPopup()
 		{
-			TodoLogger.Log(0, "ShowUnlockPopup");
-			yield return null;
+			//0xD034F4
+			yield return this.StartCoroutineWatched(PopupUnlock.Show(PopupUnlock.eSceneType.DropResult, null, false, null));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7216F4 Offset: 0x7216F4 VA: 0x7216F4
 		// // RVA: 0xD01D4C Offset: 0xD01D4C VA: 0xD01D4C
 		private IEnumerator ShowReviewPopup()
 		{
-			TodoLogger.Log(0, "ShowReviewPopup");
-			yield return null;
+			//0xD032A8
+			bool isEnded = false;
+			PopupWindowManager.ReviewStarPopupShow(this, () =>
+			{
+				//0xD02318
+				isEnded = true;
+			}, 1, 0);
+			yield return new WaitUntil(() =>
+			{
+				//0xD02324
+				return isEnded;
+			});
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72176C Offset: 0x72176C VA: 0x72176C
 		// // RVA: 0xD01DF8 Offset: 0xD01DF8 VA: 0xD01DF8
 		private IEnumerator ShowFoldRadarAnim()
 		{
-			TodoLogger.Log(0, "ShowFoldRadarAnim");
-			yield return null;
+			NKOBMDPHNGP_EventRaidLobby lobbyController; // 0x18
+			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x1C
+			FontInfo fontInfo; // 0x20
+
+			//0xD02B88
+			lobbyController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+			if(lobbyController == null)
+				yield break;
+			TodoLogger.Log(0, "ShowFoldRadarAnim Event");
 		}
 
 		// // RVA: 0xD01EA4 Offset: 0xD01EA4 VA: 0xD01EA4
