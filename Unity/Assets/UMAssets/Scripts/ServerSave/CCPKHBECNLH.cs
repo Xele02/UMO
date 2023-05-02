@@ -25,13 +25,13 @@ public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x190A380 Offset: 0x190A380 VA: 0x190A380 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.Log(TodoLogger.Event, "TODO");
 	}
 
 	// // RVA: 0x190A470 Offset: 0x190A470 VA: 0x190A470 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "OKJPIBHMKMJ");
+		TodoLogger.Log(TodoLogger.Event, "OKJPIBHMKMJ");
 	}
 
 	// // RVA: 0x190C288 Offset: 0x190C288 VA: 0x190C288 Slot: 6

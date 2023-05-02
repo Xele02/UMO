@@ -3,23 +3,23 @@
 public class GGHPEFNADEN { }
 public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 {
-	// private const int ECFEMKGFDCE = 2;
-	// public const int ECDKBNNCHJB = 7;
-	// public string LJNAKDMILMC = ""; // 0x24
-	// public int INLNJOGHLJE; // 0x28
-	// public int CDMGDFLPPHN; // 0x2C
-	// public int LNACKEBEMOB; // 0x30
-	// public string AJFDNKLNKDP; // 0x34
-	// public string OGMOHJIEDEA; // 0x38
-	// public string KKJKOGHFGLB; // 0x3C
-	// public int CBPJHNHBLNN; // 0x40
-	// public int BKIIKBEACDN; // 0x44
-	// public int OKKAFCJGCJL; // 0x48
+	private const int ECFEMKGFDCE = 2;
+	public const int ECDKBNNCHJB = 7;
+	public string LJNAKDMILMC = ""; // 0x24
+	public int INLNJOGHLJE; // 0x28
+	public int CDMGDFLPPHN; // 0x2C
+	public int LNACKEBEMOB; // 0x30
+	public string AJFDNKLNKDP; // 0x34
+	public string OGMOHJIEDEA; // 0x38
+	public string KKJKOGHFGLB; // 0x3C
+	public int CBPJHNHBLNN; // 0x40
+	public int BKIIKBEACDN; // 0x44
+	public int OKKAFCJGCJL; // 0x48
 
-	// public string EBAMGNMELPO { get; set; } NLLPAPKGDJM 0xAA1300 GDOPHGNBAGO 0xAA1308
-	// public string HBODCMLFDOB { get; set; } MDOIHMLLDEC 0xAA1348 DNGOCLOHDPE 0xAA1350
-	// public string OEDIICBDNKG { get; set; } GNOMCGBDNDA 0xAA1390 MFIEGCGDLFH 0xAA1398
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0xAA2A6C NFKFOODCJJB
+	public string EBAMGNMELPO { get { return AJFDNKLNKDP; } set { AJFDNKLNKDP = value; OKKAFCJGCJL = value.GetHashCode(); } } //NLLPAPKGDJM 0xAA1300 GDOPHGNBAGO 0xAA1308
+	public string HBODCMLFDOB { get { return OGMOHJIEDEA; } set { OGMOHJIEDEA = value; BKIIKBEACDN = value.GetHashCode(); } } //MDOIHMLLDEC 0xAA1348 DNGOCLOHDPE 0xAA1350
+	public string OEDIICBDNKG { get { return KKJKOGHFGLB; } set { KKJKOGHFGLB = value; CBPJHNHBLNN = value.GetHashCode(); } } //GNOMCGBDNDA 0xAA1390 MFIEGCGDLFH 0xAA1398
+	public override bool DMICHEJIAJL { get { return false; } } // 0xAA2A6C NFKFOODCJJB
 
 	// // RVA: 0xAA13D8 Offset: 0xAA13D8 VA: 0xAA13D8
 	// public List<string> HOFACDIBDLM() { }
@@ -33,7 +33,13 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xAA15BC Offset: 0xAA15BC VA: 0xAA15BC Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(0, "TODO");
+		EBAMGNMELPO = "";
+		LJNAKDMILMC = "";
+		INLNJOGHLJE = 0;
+		CDMGDFLPPHN = 0;
+		LNACKEBEMOB = 0;
+		HBODCMLFDOB = "";
+		OEDIICBDNKG = "";
 	}
 
 	// // RVA: 0xAA16D0 Offset: 0xAA16D0 VA: 0xAA16D0 Slot: 5

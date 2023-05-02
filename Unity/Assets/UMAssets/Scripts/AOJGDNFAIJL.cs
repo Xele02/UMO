@@ -119,7 +119,7 @@ public class AOJGDNFAIJL_PrismData
                     DJCCKIAJFGH_SelectedCostumeColorIds[1] = OOEPMEDAJNJ_TeamSave.DFHNEEBKEIC_SelectedCostumeColor1Id;
                     DJCCKIAJFGH_SelectedCostumeColorIds[2] = OOEPMEDAJNJ_TeamSave.BFMDCDFAJKE_SelectedCostumeColor2Id;
                     DJCCKIAJFGH_SelectedCostumeColorIds[3] = OOEPMEDAJNJ_TeamSave.OHCNKIKIGHM_SelectedCostumeColor3Id;
-                    DJCCKIAJFGH_SelectedCostumeColorIds[4] = OOEPMEDAJNJ_TeamSave.HDKHGAACNFG_SelectedCostumecolor4Id;
+                    DJCCKIAJFGH_SelectedCostumeColorIds[4] = OOEPMEDAJNJ_TeamSave.HDKHGAACNFG_SelectedCostumeColor4Id;
 
                     AGBLOHKHHAB_SelectedValkyrieId = OOEPMEDAJNJ_TeamSave.PIJEEAOMMGA_SelectedValkyrie;
                     DisplayDivaId = OPICBODCKGG_None;
@@ -280,7 +280,7 @@ public class AOJGDNFAIJL_PrismData
             }
             foreach(DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo a in LDEGEHAEALK_Save.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList)
             {
-                if(RuntimeSettings.CurrentSettings.ForceDivaUnlock || a.CPGFPEDMDEH == 1)
+                if(/*RuntimeSettings.CurrentSettings.ForceDivaUnlock || */a.CPGFPEDMDEH == 1)
                 {
                     AOJGDNFAIJL_PrismData.LLHDHKLACJA_SelectDivaInfo data2 = new AOJGDNFAIJL_PrismData.LLHDHKLACJA_SelectDivaInfo();
                     data2.PPFNGGCBJKC_Id = a.DIPKCALNIII_DivaId;
@@ -583,7 +583,7 @@ public class AOJGDNFAIJL_PrismData
 				OOEPMEDAJNJ_TeamSave.DFHNEEBKEIC_SelectedCostumeColor1Id = DJCCKIAJFGH_SelectedCostumeColorIds[1];
 				OOEPMEDAJNJ_TeamSave.BFMDCDFAJKE_SelectedCostumeColor2Id = DJCCKIAJFGH_SelectedCostumeColorIds[2];
 				OOEPMEDAJNJ_TeamSave.OHCNKIKIGHM_SelectedCostumeColor3Id = DJCCKIAJFGH_SelectedCostumeColorIds[3];
-				OOEPMEDAJNJ_TeamSave.HDKHGAACNFG_SelectedCostumecolor4Id = DJCCKIAJFGH_SelectedCostumeColorIds[4];
+				OOEPMEDAJNJ_TeamSave.HDKHGAACNFG_SelectedCostumeColor4Id = DJCCKIAJFGH_SelectedCostumeColorIds[4];
 
 				OOEPMEDAJNJ_TeamSave.PIJEEAOMMGA_SelectedValkyrie = AGBLOHKHHAB_SelectedValkyrieId;
 			}

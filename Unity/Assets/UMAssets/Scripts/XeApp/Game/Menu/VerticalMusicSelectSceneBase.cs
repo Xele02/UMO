@@ -654,7 +654,7 @@ namespace XeApp.Game.Menu
 					GotoRegularMusicSelect();
 					return;
 				}
-				if(!openSimulationLive && isSimulation && !RuntimeSettings.CurrentSettings.ForceSimulationOpen)
+				if(!openSimulationLive && isSimulation/* && !RuntimeSettings.CurrentSettings.ForceSimulationOpen*/)
 				{
 					OpenLockSimulationLiveWindow();
 					return;
@@ -836,8 +836,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACF30C Offset: 0xACF30C VA: 0xACF30C
 		protected int GetLastStoryFreeMusicId()
 		{
-			if (RuntimeSettings.CurrentSettings.ForceAllStoryMusicUnlock)
-				return 9999;
+			//if (RuntimeSettings.CurrentSettings.ForceAllStoryMusicUnlock)
+			//	return 9999;
 			List<LAEGMENIEDB_Story.ALGOILKGAAH> storyList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA;
 			int a = LIEJFHMGNIA.PJIJLMFBBCJ();
 			List<LIEJFHMGNIA> list = LIEJFHMGNIA.FKDIMODKKJD(a - 1, true, true, false);

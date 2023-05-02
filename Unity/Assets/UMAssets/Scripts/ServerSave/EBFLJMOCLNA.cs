@@ -84,8 +84,8 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 		// // RVA: 0x14F7038 Offset: 0x14F7038 VA: 0x14F7038
 		public bool CGKAEMGLHNK_Possessed()
 		{
-			if (RuntimeSettings.CurrentSettings.ForceCostumeUnlock)
-				return true;
+			//if (RuntimeSettings.CurrentSettings.ForceCostumeUnlock)
+			//	return true;
 			return BEBJKJKBOGH_Date != 0;
 		}
 

@@ -334,7 +334,14 @@ public class PKECIDPBEFL
     }
 
 	// // RVA: 0x93E0BC Offset: 0x93E0BC VA: 0x93E0BC
-	// public static void GDELLNOBNDM() { }
+	public static void GDELLNOBNDM_DeleteCache()
+	{
+		StringBuilder str = new StringBuilder();
+		str.Append(Application.persistentDataPath);
+		str.Append("/61");
+		if (Directory.Exists(str.ToString()))
+			Directory.Delete(str.ToString(), true);
+	}
 
 	// // RVA: 0x93E26C Offset: 0x93E26C VA: 0x93E26C
 	// public static void KCCCOEMPPEA() { }

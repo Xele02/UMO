@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use AHHPBMBBCFM_DecoPrivateSet", true)]
 public class AHHPBMBBCFM { }
@@ -12,7 +13,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	private int ENOBDCFHELD; // 0x28
 	private int FCEJCHGLFGN; // 0x2C
 
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x15C8378 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x15C8378 NFKFOODCJJB
 
 	// // RVA: 0x15C6EF8 Offset: 0x15C6EF8 VA: 0x15C6EF8
 	public AHHPBMBBCFM_DecoPrivateSet()
@@ -23,7 +24,13 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x15C6F90 Offset: 0x15C6F90 VA: 0x15C6F90 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(0, "TODO");
+		ENOBDCFHELD = (int)(Utility.GetCurrentUnixTime() ^ 0x401d3c7);
+		FCEJCHGLFGN = (int)(Utility.GetCurrentUnixTime() ^ 0x8f5f2da);
+		JBJHCJFOICD.Clear();
+		for(int i = 0; i < 5; i++)
+		{
+			JBJHCJFOICD.Add(new DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN());
+		}
 	}
 
 	// // RVA: 0x15C70C0 Offset: 0x15C70C0 VA: 0x15C70C0 Slot: 5

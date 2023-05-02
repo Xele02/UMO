@@ -67,5 +67,10 @@ public class EFLBHNFNFHA
 	}
 
 	//// RVA: 0x1C4CC58 Offset: 0x1C4CC58 VA: 0x1C4CC58
-	//public static void KEIPMGOEKFL() { }
+	public static void KEIPMGOEKFL_DeleteCache()
+	{
+		string path = Application.persistentDataPath + "/50";
+		if (Directory.Exists(path))
+			Directory.Delete(path, true);
+	}
 }

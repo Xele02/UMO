@@ -895,7 +895,7 @@ namespace XeApp.Game.Menu
 							state = VerticalMusicSelctSimulationButton.ButtonState.Lock;
 						}
 					}
-					else if(openSimulationLive || RuntimeSettings.CurrentSettings.ForceSimulationOpen)
+					else if(openSimulationLive/* || RuntimeSettings.CurrentSettings.ForceSimulationOpen*/)
 					{
 						state = VerticalMusicSelctSimulationButton.ButtonState.Open;
 					}

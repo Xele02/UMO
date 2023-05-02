@@ -67,15 +67,15 @@ class RuntimeSettings : ScriptableObject
 	}
 
 	[Header("Profile")]
-	public bool ForceDivaUnlock = true;
-	public bool ForceCostumeUnlock = true;
-	public bool ForceSongUnlock = true;
-	public bool ForceCardsUnlock = true;
-	public bool ForceValkyrieUnlock = true;
-	public bool ForceSimulationOpen = true;
+	//public bool ForceDivaUnlock = true;
+	//public bool ForceCostumeUnlock = true;
+	//public bool ForceSongUnlock = true;
+	//public bool ForceCardsUnlock = true;
+	//public bool ForceValkyrieUnlock = true;
+	//public bool ForceSimulationOpen = true;
 	public bool ForceTutoSkip = true;
-	public bool ForceAllStoryMusicUnlock = true;
-	public int ForcePlayerLevel = 90;
+	//public bool ForceAllStoryMusicUnlock = true;
+	//public int ForcePlayerLevel = 90;
 	public bool IsInvincibleCheat = true;
 
 	[Header("Live")]
@@ -83,7 +83,7 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceLiveDivaMode = false;
 	public bool ForceLiveAwakenDivaMode = true;
 
-	public bool AddBigScore = false;
+	//public bool AddBigScore = false;
 
 	public KeyCode Lane1Touch = KeyCode.S;
 	public KeyCode Lane2Touch = KeyCode.D;
@@ -94,9 +94,10 @@ class RuntimeSettings : ScriptableObject
 	public KeyCode ActiveSkillTouch = KeyCode.Space;
 
 	[Header("S-Live")]
-	public bool ForceCutin = true;
+	//public bool ForceCutin = true;
 	public bool DisableNoteSound = false;
 	public bool DisableWatermark = false;
+	public bool DisableMovies = false;
 
 	[Header("Local directory where the android directory with asset bundle is. Accept crypted and decrypted bundle.")]
 	public string DataDirectory;
@@ -108,8 +109,6 @@ class RuntimeSettings : ScriptableObject
 
 	public bool SLiveViewerRequest { get; set; }
 	public bool SLiveViewer { get; set; }
-
-	public bool DisableMovies = false;
 
 	[Header("Debug")]
 

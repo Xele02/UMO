@@ -27,7 +27,12 @@ public class BIFNGFAIEIL
 	}
 
 	//// RVA: 0xC801A4 Offset: 0xC801A4 VA: 0xC801A4
-	//public static void BLICHJOLKAO() { }
+	public static void BLICHJOLKAO_DeleteCache()
+	{
+		string path = Application.persistentDataPath + "/SaveData" + "/snscache.bin";
+		if (File.Exists(path))
+			File.Delete(path);
+	}
 
 	//// RVA: 0xC802E0 Offset: 0xC802E0 VA: 0xC802E0
 	public void DNKCCHCEPBH(bool GFPBKOPKNCB = false)

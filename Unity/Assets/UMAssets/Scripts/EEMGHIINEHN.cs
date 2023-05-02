@@ -58,7 +58,7 @@ public class EEMGHIINEHN
 			if(saveAssistPlate.JOHLGBDOLNO_DataList[i].PPFNGGCBJKC_Id > 0)
 			{
 				MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = LDEGEHAEALK.PNLOINMCCKH_Scene.OPIBAPEGCLA[saveAssistPlate.JOHLGBDOLNO_DataList[i].PPFNGGCBJKC_Id - 1];
-				data.JOHLGBDOLNO_AssistScenes[i].KHEKNNFCAOI(saveScene.PPFNGGCBJKC_Id, saveScene.PDNIFBEGMHC_Mb, saveScene.EMOJHJGHJLN, saveScene.JPIPENJGGDD_Mlt, 1, saveScene.MJBODMOLOBC_Luck, saveScene.LHMOAJAIJCO_New, saveScene.DMNIMMGGJJJ_Leaf);
+				data.JOHLGBDOLNO_AssistScenes[i].KHEKNNFCAOI(saveScene.PPFNGGCBJKC_Id, saveScene.PDNIFBEGMHC_Mb, saveScene.EMOJHJGHJLN_Sb, saveScene.JPIPENJGGDD_Mlt, 1, saveScene.MJBODMOLOBC_Luck, saveScene.LHMOAJAIJCO_New, saveScene.DMNIMMGGJJJ_Leaf);
 			}
 		}
 		data.JCJNKBKMJFK_Name = saveAssistPlate.JCJNKBKMJFK_Name;

@@ -355,8 +355,8 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	public long FOKNAMPDPFP_StaminaSaveTime { get { return DABADKNMNCA_StaminaSaveTimeCrypted ^ FBGGEFFJJHB; } set { BCKIGFDMGBO_StaminaSaveTimeCheck = value; DABADKNMNCA_StaminaSaveTimeCrypted = value ^ FBGGEFFJJHB; }  } //EMONLIDLFEC 0x1C5132C  AICIKGMHEBE 0x1C51340
 	public int NFHLDFJIBKI_HaveUc { get { return MDJGIOGOGAO_HaveUcCrypted ^ FBGGEFFJJHB; } set { HIGJEJKADDP_HaveUcCheck = value; MDJGIOGOGAO_HaveUcCrypted = value ^ FBGGEFFJJHB; } } //DDLMHIAOLMM 0x1C51360 MJBPIJKNPHD 0x1C51370
 	public int KIECDDFNCAN_Level { get {
-			if (RuntimeSettings.CurrentSettings.ForcePlayerLevel > -1)
-				return RuntimeSettings.CurrentSettings.ForcePlayerLevel;
+			//if (RuntimeSettings.CurrentSettings.ForcePlayerLevel > -1)
+			//	return RuntimeSettings.CurrentSettings.ForcePlayerLevel;
 			return (int)(HMJBBNEACOA_LevelCrypted ^ FBGGEFFJJHB);
 	} set {
 		FEDJFDMAPMA_LevelCheck = value;

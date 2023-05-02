@@ -157,7 +157,7 @@ namespace XeApp.Game.Menu
 						m_valkyrie_now++;
 						if(valkSkill != null)
 						{
-							if (valkSkill.DOOGFEGEKLG <= saveValk.CIEOBFIIPLD_FPt)
+							if (valkSkill.DOOGFEGEKLG <= saveValk.CIEOBFIIPLD_Level)
 								m_valkyrie_upgrade_now++;
 						}
 					}

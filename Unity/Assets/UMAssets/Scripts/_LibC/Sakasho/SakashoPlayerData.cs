@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using XeSys;
 
 namespace ExternLib
@@ -11,10 +12,57 @@ namespace ExternLib
             EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
             EDOHBJAPLPF_JsonData names = jsonData["names"];
 
-            string account_info = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath+"/../../Data/RequestPlayerAccount.json"));
+			/*string account_info = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath+"/../../Data/RequestPlayerAccount.json"));
             EDOHBJAPLPF_JsonData jsonRes = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(account_info);
 
             jsonRes["common"]["mv_ticket"] = 999;
+			*/
+			EDOHBJAPLPF_JsonData jsonRes = playerAccount.serverData;
+			List<string> missingBlock = new List<string>();
+			if(jsonRes != null)
+			{
+				for (int i = 0; i < names.HNBFOAJIIAL_Count; i++)
+				{
+					string str = (string)names[i];
+					if (!jsonRes.BBAJPINMOEP_Contains(str))
+					{
+						UnityEngine.Debug.LogError("Server data missing block "+str);
+						missingBlock.Add(str);
+					}
+				}
+			}
+
+			if(jsonRes == null || missingBlock.Count > 0)
+			{
+				// Init default profile data
+				BBHNACPENDM_ServerSaveData newData = new BBHNACPENDM_ServerSaveData();
+				newData.KHEKNNFCAOI_Init(0xFFFFFFFFFFFFFF);
+				bool allBlock = jsonRes == null;
+				if (jsonRes == null)
+				{
+					UnityEngine.Debug.LogError("Create new server data");
+					jsonRes = new EDOHBJAPLPF_JsonData();
+					playerAccount.serverData = jsonRes;
+				}
+				for (int i = 0; i < newData.MGJKEJHEBPO_Blocks.Count; i++)
+				{
+					if(allBlock || missingBlock.Contains(newData.MGJKEJHEBPO_Blocks[i].JIKKNHIAEKG_BlockName))
+						newData.MGJKEJHEBPO_Blocks[i].OKJPIBHMKMJ(jsonRes, newData.MGJKEJHEBPO_Blocks[i].FJMOAAPNCJI_SaveId);
+				}
+				SaveAccountServerData();
+
+				// Debug, reload and compare
+				BBHNACPENDM_ServerSaveData newData_ = new BBHNACPENDM_ServerSaveData();
+				newData_.KHEKNNFCAOI_Init(0xFFFFFFFFFFFFFF);
+				newData_.IIEMACPEEBJ_Load(newData.KPIDBPEKMFD_GetBlockList(), jsonRes);
+				for (int i = 0; i < newData.MGJKEJHEBPO_Blocks.Count; i++)
+				{
+					if(!newData.MGJKEJHEBPO_Blocks[i].AGBOGBEOFME(newData_.LBDOLHGDIEB_GetBlock(newData.MGJKEJHEBPO_Blocks[i].JIKKNHIAEKG_BlockName)))
+					{
+						UnityEngine.Debug.LogError("Block diff : "+ newData.MGJKEJHEBPO_Blocks[i].JIKKNHIAEKG_BlockName);
+					}
+				}
+			}
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["created_at"] = 1501751856;
@@ -254,6 +302,7 @@ namespace ExternLib
 
 		public static int SakashoPlayerDataSavePlayerData(int callbackId, string json)
 		{
+			TodoLogger.Log(0, "Save player data");
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["created_at"] = 1501751856;
 			res["data_status"] = 1;

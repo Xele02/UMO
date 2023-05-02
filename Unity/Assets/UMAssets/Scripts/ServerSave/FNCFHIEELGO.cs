@@ -56,7 +56,45 @@ public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x13E4C6C Offset: 0x13E4C6C VA: 0x13E4C6C Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "OKJPIBHMKMJ");
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		data["visit_acquired_at"] = LIDCDBKAAFL_VisitAcquiredAt;
+		data["visited_at"] = KAIOEKJJAKH_VisitedAt;
+		data["visit_prev_cnt_friend"] = HFJADCMLFAN_VisitPrevCntFriend;
+		data["visit_prev_cnt_fan"] = FBINJFGCIOI_VisitPrevCntFan;
+		data["visit_prev_cnt_other"] = IAOOCOKEECB_VisitPrevCntOther;
+		data["present_acquired_at"] = EILGNIEGDOI_PresentAcquiredAt;
+		data["present_prev_cnt"] = GHEBKKHAAPM_PresentPrevCnt;
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			data2.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			for(int i = 0; i < MPPKMEIEGFE_VisitList.Count; i++)
+			{
+				data2.Add(MPPKMEIEGFE_VisitList[i].NANNGLGOFKH);
+			}
+			data["visit_list"] = data2;
+		}
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			data2.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			for (int i = 0; i < MHPDCGNOBHH_PresentSentList.Count; i++)
+			{
+				data2.Add(MHPDCGNOBHH_PresentSentList[i].NANNGLGOFKH);
+			}
+			data["present_sent_list"] = data2;
+		}
+		if(!EMBGIDLFKGM)
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			data2[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
+			data2[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 1;
+			data2[JIKKNHIAEKG_BlockName] = data;
+			data = data2;
+		}
+		else
+		{
+			OILEIIEIBHP = OILEIIEIBHP[AFEHLCGHAEE_Strings.JCIBKDHKNFH_alldata];
+		}
+		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 	}
 
 	// // RVA: 0x13E53F4 Offset: 0x13E53F4 VA: 0x13E53F4 Slot: 6

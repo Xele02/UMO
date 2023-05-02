@@ -271,10 +271,10 @@ namespace XeApp.Game.Menu
 							break;
 						}
 					}
-					if(RuntimeSettings.CurrentSettings.ForceCostumeUnlock)
+					/*if(RuntimeSettings.CurrentSettings.ForceCostumeUnlock)
 					{
 						dataCol.m_is_have = true;
-					}
+					}*/
 					if(!dataCol.m_is_set)
 					{
 						if(!dataCol.m_is_have)

@@ -375,7 +375,7 @@ public class JKNGJFOBADP
 					FIGHNFKAMGI.Add(data);
 					saveScene.JPIPENJGGDD_Mlt++;
 					saveScene.BEBJKJKBOGH_Date = time;
-					dbScene.AGOEDLNOHND(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board, saveScene.EMOJHJGHJLN, saveScene.JPIPENJGGDD_Mlt, mlt);
+					dbScene.AGOEDLNOHND(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board, saveScene.EMOJHJGHJLN_Sb, saveScene.JPIPENJGGDD_Mlt, mlt);
 					PJBJCBEMEEC = saveScene.JPIPENJGGDD_Mlt;
 					IKBLCEFCGDE = saveScene.MJBODMOLOBC_Luck;
 					//joined_r0x0146b3fc

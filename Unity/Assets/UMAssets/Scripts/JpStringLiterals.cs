@@ -19,6 +19,7 @@ class JpStringLiterals
 	public const string StringLiteral_9798 = "AP回復"; // 0x03bb23d0
 	public const string StringLiteral_9806 = "プレイヤー"; // 0x03bb23f0
 	public const string StringLiteral_9807 = "よろしくおねがいします"; // 0x03bb23f4
+	public const string StringLiteral_9829 = "デコルーム"; // 0x03bb244c
 	public const string StringLiteral_9874 = "未取得"; // 0x03bb2500
 	public const string StringLiteral_10040 = "お気に入り1"; // 0x03bb2798
 	public const string StringLiteral_10041 = "お気に入り2"; // 0x03bb279c
@@ -167,6 +168,7 @@ class JpStringLiterals
 	public const string StringLiteral_12541 = "ログアウトされた"; // 0x03bb4eac
 	public const string StringLiteral_12573 = "GPGSログイン成功"; // 0x03bb4f2c
 	public const string StringLiteral_12574 = "GPGSログイン失敗"; // 0x03bb4f30
+	public const string StringLiteral_12640 = "<color=cyan>ローカルセーブデータ再作成</color>"; // 0x03bb5038
 	public const string StringLiteral_12692 = "エナジー全回復"; // 0x03bb5108
 	public const string StringLiteral_12693 = "お知らせ"; // 0x03bb510c
 	public const string StringLiteral_12695 = "デコルチャーモード"; // 0x03bb5114

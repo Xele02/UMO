@@ -63,7 +63,7 @@ public class PNGOLKLFFLH
 			if (lvl_max < AKDKFIPNAOL)
 				AKDKFIPNAOL = lvl_max;
 		}
-		CNLIAMIIJID_AbilityLevel = saveValk.CIEOBFIIPLD_FPt;
+		CNLIAMIIJID_AbilityLevel = saveValk.CIEOBFIIPLD_Level;
 		if (AKDKFIPNAOL < CNLIAMIIJID_AbilityLevel)
 			CNLIAMIIJID_AbilityLevel = AKDKFIPNAOL;
 	}
@@ -96,7 +96,7 @@ public class PNGOLKLFFLH
 			if(OJEBNBLHPNP
 				|| (epId == 0 && valkSave.FJODMPGPDDD)
 				|| (epId != 0 && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[epId - 1].BEBJKJKBOGH_Date != 0)
-				|| RuntimeSettings.CurrentSettings.ForceValkyrieUnlock)
+				/*|| RuntimeSettings.CurrentSettings.ForceValkyrieUnlock*/)
 			{
 				PNGOLKLFFLH data = new PNGOLKLFFLH();
 				data.KHEKNNFCAOI_Init(valkDb.GPPEFLKGGGJ_Id, 0, valkSave.BEBJKJKBOGH_Date);

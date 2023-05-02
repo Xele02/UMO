@@ -11,6 +11,8 @@ using System.IO;
 using System;
 using CriWare;
 using XeApp.Game.Menu;
+using XeApp.Game;
+using XeApp.Core;
 
 public class NKGJPJPHLIF
 {
@@ -335,6 +337,7 @@ public class NKGJPJPHLIF
 			//goto LAB_00c1b8f8;
 			if(JGKOLBLPMPG_OnFail != null)
 				JGKOLBLPMPG_OnFail();
+			yield break;
 		}
 		//L177
 		int playerId = 0;
@@ -350,11 +353,26 @@ public class NKGJPJPHLIF
 		{
 			//L214
 			FFEEIONIBFF_Request = null;
-			TodoLogger.Log(0,  "CreatePlayer");
-			/*PKNOGNLPHAE CNEMMHHJKNG = IBLPICFDGOF.IFFNCAFNEAG_AddRequest<PKNOGNLPHAE>(new PKNOGNLPHAE());
-			yield return CNEMMHHJKNG.GDPDELLNOBO(N.a);*/
+			PKNOGNLPHAE_CreatePlayer CNEMMHHJKNG = IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new PKNOGNLPHAE_CreatePlayer());
+			yield return CNEMMHHJKNG.GDPDELLNOBO_WaitDone(N.a);
 			//2
-			
+			if (!CNEMMHHJKNG.NPNNPNAIONN_IsError)
+			{
+				if(!CNEMMHHJKNG.PDAPLCPOCMA)
+				{
+					playerId = CNEMMHHJKNG.NFEAMMJIMPG.EHGBICNIBKE_PlayerId;
+					LFGOHEKCDFN(playerId);
+					accountStatus = CNEMMHHJKNG.NFEAMMJIMPG.JFMEKPDHJPP_PlayerAccountStatus;
+					CNEMMHHJKNG = null;
+				}
+				else
+				{
+					if (JGKOLBLPMPG_OnFail != null)
+						JGKOLBLPMPG_OnFail();
+					yield break;
+				}
+			}
+
 		}
 		//LAB_00c1b9d8
 		object[] args = new object[4];
@@ -373,7 +391,39 @@ public class NKGJPJPHLIF
 	}
 
 	// // RVA: 0xC1662C Offset: 0xC1662C VA: 0xC1662C
-	// public void LFGOHEKCDFN(int MLPEHNBNOGD) { }
+	public void LFGOHEKCDFN(int MLPEHNBNOGD)
+	{
+		if (MLPEHNBNOGD == 0)
+			return;
+		GameManager.Instance.localSave.LHPDDGIJKNB_Reset();
+		GameManager.Instance.localSave.PCODDPDFLHK_Load();
+		BIFNGFAIEIL.BLICHJOLKAO_DeleteCache();
+		EFLBHNFNFHA.KEIPMGOEKFL_DeleteCache();
+		FPNBCFJHENI.JHPGCAHIDIO_DeleteCache();
+		if(AppQualitySetting.spec < AppQualitySetting.DeviceSpec.High)
+		{
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DDHCLNFPNGK_RenderQuality = 1;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.DDHCLNFPNGK_RenderQuality = 0;
+		}
+		else
+		{
+			if(AppQualitySetting.spec != AppQualitySetting.DeviceSpec.High)
+			{
+				;
+			}
+			else
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DDHCLNFPNGK_RenderQuality = 0;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DDHCLNFPNGK_RenderQuality = 0;
+			}
+		}
+		GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GEPLOFLHAOL_NeedInitRenderQuality = 1;
+		GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+		Debug.Log(JpStringLiterals.StringLiteral_12640);
+		PlayerPrefs.SetInt("cpid", MLPEHNBNOGD);
+		PlayerPrefs.Save();
+		PKECIDPBEFL.GDELLNOBNDM_DeleteCache();
+	}
 
 	// // RVA: 0xC1813C Offset: 0xC1813C VA: 0xC1813C
 	// public void CCMPLEKABLF(bool ILMANDAFLDL, IMCBBOAFION KLMFJJCNBIP, DJBHIFLHJLK JGKOLBLPMPG) { }

@@ -362,7 +362,12 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 	// public bool FMGPOKFKPIJ(OKGLGHCBCJP NDFIEMPPMLF, int GLCLFMGPMAN) { }
 
 	// // RVA: 0x1ADE668 Offset: 0x1ADE668 VA: 0x1ADE668
-	// public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }
+	public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH)
+	{
+		if (!FJOEBCMGDMI_StringArray.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		return FJOEBCMGDMI_StringArray[LJNAKDMILMC].DNJEJEANJGL_Value;
+	}
 
 	// // RVA: 0x1ADE74C Offset: 0x1ADE74C VA: 0x1ADE74C
 	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)

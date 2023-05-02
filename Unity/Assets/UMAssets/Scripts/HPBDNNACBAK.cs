@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using XeApp.Game.Gacha;
 
@@ -466,7 +467,12 @@ public class HPBDNNACBAK
 	// public void DKHDHGAFPGC() { }
 
 	// // RVA: 0x1604A54 Offset: 0x1604A54 VA: 0x1604A54
-	// public void JHPGCAHIDIO() { }
+	public void JHPGCAHIDIO_DeleteCache()
+	{
+		string path = JHJMNLMNPGO + "/gach";
+		if (File.Exists(path))
+			File.Delete(path);
+	}
 
 	// // RVA: 0x1604ADC Offset: 0x1604ADC VA: 0x1604ADC
 	public void KCILENCPNHD()

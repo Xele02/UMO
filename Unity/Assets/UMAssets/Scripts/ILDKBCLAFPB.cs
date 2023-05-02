@@ -4626,7 +4626,11 @@ public class ILDKBCLAFPB
 	// public void OEGPHLDDFDF() { }
 
 	// // RVA: 0x201A184 Offset: 0x201A184 VA: 0x201A184
-	// public void LHPDDGIJKNB_Reset() { }
+	public void LHPDDGIJKNB_Reset()
+	{
+		GLANNFOPMDO_Save = new IPHAEFKCNMN();
+		CGFIFBHIBCF_SavedCache = new IPHAEFKCNMN();
+	}
 
 	// // RVA: 0x201A204 Offset: 0x201A204 VA: 0x201A204
 	public bool HJMKBCFJOOH_TrySave()

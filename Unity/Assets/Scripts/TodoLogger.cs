@@ -41,6 +41,7 @@ public static class TodoLogger
 	public static int DbIntegrityCheck = _Todo;
 	public static int Xedec = _Todo;
 	public static int UI = _Todo;
+	public static int Event = _Todo;
 
 	public static int Popup = 0;
 	public static int Database = 0;

@@ -109,7 +109,24 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xF148A8 Offset: 0xF148A8 VA: 0xF148A8 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "OKJPIBHMKMJ");
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		data["show_addunitlive_dio"] = CEDHHAGBIBA.EHNMFLADJKG_ByteArrayToString(BJFCIFJLJJI_ShowAddUnitLiveDio);
+		data["show_addunitlive_trio"] = CEDHHAGBIBA.EHNMFLADJKG_ByteArrayToString(IEGFCNMOCNE_ShowAddUnitLiveTrio);
+		data["show_addunitlive_quartet"] = CEDHHAGBIBA.EHNMFLADJKG_ByteArrayToString(FALFJCGGDHB_ShowAddUnitLiveQuartet);
+		data["show_addunitlive_quintet"] = CEDHHAGBIBA.EHNMFLADJKG_ByteArrayToString(KKPKAMANKOH_ShowAddUnitLiveQuintet);
+		if(!EMBGIDLFKGM)
+		{
+			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
+			data2[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
+			data2[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 1;
+			data2[JIKKNHIAEKG_BlockName] = data;
+			data = data2;
+		}
+		else
+		{
+			OILEIIEIBHP = OILEIIEIBHP[AFEHLCGHAEE_Strings.JCIBKDHKNFH_alldata];
+		}
+		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 	}
 
 	// // RVA: 0xF14CD0 Offset: 0xF14CD0 VA: 0xF14CD0 Slot: 6
