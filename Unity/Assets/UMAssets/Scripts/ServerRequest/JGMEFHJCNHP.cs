@@ -378,7 +378,10 @@ public class PNFCNPCGKDM
 	public long EGBOHDFBAPB; // 0x20
 
 	// RVA: 0xFF1614 Offset: 0xFF1614 VA: 0xFF1614
-	//public void KHEKNNFCAOI(EDOHBJAPLPF IDLHJIOMJBK) { }
+	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+	{
+		TodoLogger.Log(0, "PNFCNPCGKDM KHEKNNFCAOI");
+	}
 }
 
 public class IGPDIKDNFKD
@@ -386,7 +389,17 @@ public class IGPDIKDNFKD
 	public List<PNFCNPCGKDM> CEDLLCCONJP; // 0x8
 
 	// RVA: 0x11F702C Offset: 0x11F702C VA: 0x11F702C
-	//public void KHEKNNFCAOI(EDOHBJAPLPF IDLHJIOMJBK) { }
+	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+	{
+		EDOHBJAPLPF_JsonData prizes = IDLHJIOMJBK[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes];
+		CEDLLCCONJP = new List<PNFCNPCGKDM>();
+		for(int i = 0; i < prizes.HNBFOAJIIAL_Count; i++)
+		{
+			PNFCNPCGKDM data = new PNFCNPCGKDM();
+			data.KHEKNNFCAOI(prizes[i]);
+			CEDLLCCONJP.Add(data);
+		}
+	}
 }
 
 [System.Obsolete("Use JGMEFHJCNHP_GetAchievementRecords", true)]
@@ -401,12 +414,18 @@ public class JGMEFHJCNHP_GetAchievementRecords : CACGCMBKHDI_Request
 	// RVA: 0xB1B3EC Offset: 0xB1B3EC VA: 0xB1B3EC Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		TodoLogger.Log(0, "JGMEFHJCNHP_GetAchievementRecords.DHLDNIEELHO()");
+		if (!KMOBDLBKAAA)
+			EBGACDGNCAA_CallContext = SakashoAchievement.GetAchievementRecords(MIDAMHNABAJ.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+		else
+			EBGACDGNCAA_CallContext = SakashoRepeatedAchievement.GetAchievementRecords(MIDAMHNABAJ.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0xB1B510 Offset: 0xB1B510 VA: 0xB1B510 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
 	{
-		TodoLogger.Log(0, "JGMEFHJCNHP_GetAchievementRecords.MGFNKDPHFGI()");
+		NFEAMMJIMPG = new IGPDIKDNFKD();
+		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
+		CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN.ECFNAOCFKKN_Date = 0;
+		NKGJPJPHLIF.HHCJCDFCLOB.OLDKENOLHLL = 0;
 	}
 }

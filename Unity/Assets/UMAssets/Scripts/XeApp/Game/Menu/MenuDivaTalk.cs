@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -116,7 +118,23 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xECE310 Offset: 0xECE310 VA: 0xECE310
 		public void DoIntroTalk(bool resetTalkFlags = false)
 		{
-			TodoLogger.Log(0, "DoIntroTalk");
+			DateTime d1 = Utility.GetLocalDateTime(CIOECGOMILE.HHCJCDFCLOB.PKBOFLOJNIJ);
+			DateTime d2 = Utility.GetLocalDateTime(m_loginTime);
+			if(d1.DayOfYear != d2.DayOfYear || resetTalkFlags)
+			{
+				talkFlags.JCHLONCMPAJ_Clear();
+			}
+			if (CheckBirthdayTalk(false))
+				RequestBirthdayTalk();
+			else if (CheckLimitedTalk(false))
+				RequestLimitedTalk(-1);
+			else
+				RequestTimezoneTalk();
+			if(!m_divaControl.IsActionRequested)
+			{
+				DoAutoTalk();
+			}
+			saveManager.HJMKBCFJOOH_TrySave();
 		}
 
 		// // RVA: 0xECEF14 Offset: 0xECEF14 VA: 0xECEF14
@@ -175,22 +193,90 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECE9F8 Offset: 0xECE9F8 VA: 0xECE9F8
-		// private void RequestTimezoneTalk() { }
+		private void RequestTimezoneTalk()
+		{
+			bool isOverDay = false;
+			DivaTimezoneTalk.Type talkType = DivaTimezoneTalk.GetByUnixTime(m_loginTime, out isOverDay);
+			int idx = -1;
+			if (talkType <= DivaTimezoneTalk.Type.Midnight)
+			{
+				idx = 3;
+				switch (talkType)
+				{
+					case DivaTimezoneTalk.Type.Noon:
+						idx = 4;
+						break;
+					case DivaTimezoneTalk.Type.Evening:
+						idx = 5;
+						break;
+					case DivaTimezoneTalk.Type.Night:
+						idx = 6;
+						break;
+					case DivaTimezoneTalk.Type.Midnight:
+						idx = 8;
+						if (!isOverDay)
+							idx = 7;
+						break;
+				}
+			}
+			if(!talkFlags.ODKIHPBEOEC_IsTrue(idx))
+			{
+				if(m_divaControl.RequestTimezoneTalk((int)talkType, OnTalkActionEnd))
+				{
+					DivaTalk("talk_login_{0:D2}", (int)talkType + 1, null);
+					TimerStop();
+					talkFlags.EDEDFDDIOKO_SetTrue(idx);
+				}
+			}
+		}
 
 		// // RVA: 0xECFC70 Offset: 0xECFC70 VA: 0xECFC70
 		// private void RequestComebackTalk() { }
 
 		// // RVA: 0xECE7B4 Offset: 0xECE7B4 VA: 0xECE7B4
-		// private void RequestLimitedTalk(int index) { }
+		private void RequestLimitedTalk(int index)
+		{
+			if(index == -1)
+			{
+				long t = -1;
+				int fnd = -1;
+				for(int i = 0; i < m_limitedTalkData.Count; i++)
+				{
+					if(t < m_limitedTalkData[i].KJBGCLPMLCG_StartAt)
+					{
+						t = m_limitedTalkData[i].KJBGCLPMLCG_StartAt;
+						fnd = i;
+					}
+				}
+				index = fnd;
+				if (index < 1)
+					index = 0;
+			}
+			if(m_divaControl.RequestLimitedTalk(m_limitedTalkData[index].NKCNHKHGJHN_TalkType, OnTalkActionEnd))
+			{
+				DivaTalk("talk_event_{0:D2}", m_limitedTalkData[index].NKCNHKHGJHN_TalkType, null);
+				TimerStop();
+			}
+		}
 
 		// // RVA: 0xECE5C4 Offset: 0xECE5C4 VA: 0xECE5C4
-		// private void RequestBirthdayTalk() { }
+		private void RequestBirthdayTalk()
+		{
+			if(m_divaControl.RequestBirthdayTalk(OnTalkActionEnd))
+			{
+				DivaTalk("talk_birthday_{0:D2}", m_birthdayTalkData.NKCNHKHGJHN_TalkType, null);
+				TimerStop();
+			}
+		}
 
 		// // RVA: 0xECFB84 Offset: 0xECFB84 VA: 0xECFB84
 		// private void RequestAutoTalk(int talkType) { }
 
 		// // RVA: 0xECFD44 Offset: 0xECFD44 VA: 0xECFD44
-		// private void OnTalkActionEnd() { }
+		private void OnTalkActionEnd()
+		{
+			TimerRestart();
+		}
 
 		// // RVA: 0xECFD48 Offset: 0xECFD48 VA: 0xECFD48
 		// private bool CheckComebackTalk(DateTime loginDate, DateTime lastLoginDate) { }
@@ -226,9 +312,22 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECF6E0 Offset: 0xECF6E0 VA: 0xECF6E0
-		// private void DivaTalk(string label, MenuDivaTalk.OnChangedMessage a_callback) { }
+		private void DivaTalk(string label, OnChangedMessage a_callback)
+		{
+			if(a_callback == null)
+			{
+				a_callback = onChangedMessage;
+			}
+			if(a_callback != null)
+			{
+				a_callback(divaManager.GetMessageByLabel(label));
+			}
+		}
 
 		// // RVA: 0xECF644 Offset: 0xECF644 VA: 0xECF644
-		// private void DivaTalk(string labelFormat, int index, MenuDivaTalk.OnChangedMessage a_callback) { }
+		private void DivaTalk(string labelFormat, int index, OnChangedMessage a_callback)
+		{
+			DivaTalk(string.Format(labelFormat, index), a_callback);
+		}
 	}
 }

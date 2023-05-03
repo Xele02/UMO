@@ -828,7 +828,7 @@ public class NFMHCLHEMHB_Bingo : KLFDBFMNLBL_ServerSaveBlock
 					EDOHBJAPLPF_JsonData data5 = new EDOHBJAPLPF_JsonData();
 					for(int j = 0; j < 8; j++)
 					{
-						data5.Add(MPCJGPEBCCD[i].AHCFGOGCJKI_St.CPLKJBCBPNM(j));
+						data5.Add((int)MPCJGPEBCCD[i].AHCFGOGCJKI_St.CPLKJBCBPNM(j));
 					}
 					data3[AFEHLCGHAEE_Strings.NMHGCOLMPJA_ln] = data5;
 				}

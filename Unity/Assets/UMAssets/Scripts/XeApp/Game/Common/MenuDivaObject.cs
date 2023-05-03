@@ -263,7 +263,14 @@ namespace XeApp.Game.Common
 		//public float GetNormalizedTime() { }
 
 		//// RVA: 0x1111CE8 Offset: 0x1111CE8 VA: 0x1111CE8
-		//public void Talk(int type) { }
+		public void Talk(int type)
+		{
+			Anim_SetTrigger("menu_toTalk");
+			Anim_SetInteger("menu_talkType", type);
+			Anim_SetBool("menu_breakTalkLoop", false);
+			isStopFrame = true;
+			UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0x1111DB0 Offset: 0x1111DB0 VA: 0x1111DB0
 		//public void SimpleTalk(int type) { }
@@ -290,7 +297,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x111208C Offset: 0x111208C VA: 0x111208C
-		//public void TimezoneTalk(int type) { }
+		public void TimezoneTalk(int type)
+		{
+			Anim_SetTrigger("menu_toTimezone");
+			Anim_SetInteger("menu_timezoneId", type);
+			isStopFrame = true;
+			UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0x1112134 Offset: 0x1112134 VA: 0x1112134
 		//public void PlayAnimationPresent(int id) { }

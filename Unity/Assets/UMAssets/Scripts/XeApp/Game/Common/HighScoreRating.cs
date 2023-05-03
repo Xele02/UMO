@@ -343,8 +343,8 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA6414 Offset: 0xEA6414 VA: 0xEA6414
 		public static bool IsNotReceivedRewardUtaGrade()
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAFLCGCIOND_RetRewRecGra != 
-				GetUtaRate(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAFLCGCIOND_RetRewRecGra !=
+				(int)GetUtaGrade(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
 		}
 
 		//// RVA: 0xEA6544 Offset: 0xEA6544 VA: 0xEA6544
@@ -377,7 +377,7 @@ namespace XeApp.Game.Common
 			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 			{
 				List<HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO;
-				int a = AGLHPOOPOCG.HHCJCDFCLOB.EIFNIBPAGFF();
+				int a = AGLHPOOPOCG.HHCJCDFCLOB.EIFNIBPAGFF_GetTopPlayerUtaGrade();
 				int b = a;
 				if (a < (int)nowGrade)
 					b = (int)nowGrade;
@@ -391,7 +391,7 @@ namespace XeApp.Game.Common
 				else if (grade < 26)
 					grade = 25;
 				List<MFDJIFIIPJD> items = new List<MFDJIFIIPJD>();
-				for(int i = grade - 1; grade >= 0; grade--)
+				for(int i = grade - 1; i >= 1; i--)
 				{
 					HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE it = l[i];
 					if(it.HDOEJDHGFLH_ItemFullId > 0)
@@ -410,7 +410,7 @@ namespace XeApp.Game.Common
 						items.Add(data);
 					}
 					UtaGradeData utaData = new UtaGradeData();
-					utaData.Init(i + 1, it.ADKDHKMPMHP_Rate, it.JOPPFEHKNFO_Idx, items, grade + 1 == (int)nowGrade);
+					utaData.Init(i + 1, it.ADKDHKMPMHP_Rate, it.JOPPFEHKNFO_Idx, items, i + 1 == (int)nowGrade);
 					res.Add(utaData);
 					items.Clear();
 				}

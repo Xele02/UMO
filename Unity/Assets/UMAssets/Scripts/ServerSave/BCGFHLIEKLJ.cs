@@ -235,7 +235,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 					EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
 					data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = DJHBDDGEKGO_Bgs[i].PPFNGGCBJKC_Id;
 					data3[AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt] = DJHBDDGEKGO_Bgs[i].BFINGCJHOHI_Cnt;
-					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = DJHBDDGEKGO_Bgs[i].CADENLBDAEB_IsNew;
+					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = DJHBDDGEKGO_Bgs[i].CADENLBDAEB_IsNew ? 1 : 0;
 					data2["_" + (i + 1)] = data3;
 				}
 			}
@@ -251,7 +251,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 					EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
 					data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = KPMFLNOELIN_Objs[i].PPFNGGCBJKC_Id;
 					data3[AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt] = KPMFLNOELIN_Objs[i].BFINGCJHOHI_Cnt;
-					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = KPMFLNOELIN_Objs[i].CADENLBDAEB_IsNew;
+					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = KPMFLNOELIN_Objs[i].CADENLBDAEB_IsNew ? 1 : 0;
 					data2["_" + (i + 1)] = data3;
 				}
 			}
@@ -267,7 +267,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 					EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
 					data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = PEBDEIKBCCM_Chars[i].PPFNGGCBJKC_Id;
 					data3[AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt] = PEBDEIKBCCM_Chars[i].BFINGCJHOHI_Cnt;
-					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = PEBDEIKBCCM_Chars[i].CADENLBDAEB_IsNew;
+					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = PEBDEIKBCCM_Chars[i].CADENLBDAEB_IsNew ? 1 : 0;
 					data2["_" + (i + 1)] = data3;
 				}
 			}
@@ -289,7 +289,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 					data3[AFEHLCGHAEE_Strings.ANAJIAENLNB_lv] = NBKAMFFIOOG_Sp[i].ANAJIAENLNB_Level;
 					data3[AFEHLCGHAEE_Strings.MKHBDJBODON_c_tm] = NBKAMFFIOOG_Sp[i].FOONCJDLLIK_CTm;
 					data3[AFEHLCGHAEE_Strings.POBGGHEKLIB_c_tm_ofs] = NBKAMFFIOOG_Sp[i].EMHCHMHMFHJ_CTmOfs;
-					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = NBKAMFFIOOG_Sp[i].CADENLBDAEB_IsNew;
+					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = NBKAMFFIOOG_Sp[i].CADENLBDAEB_IsNew ? 1 : 0;
 					data2["_" + (i + 1)] = data3;
 				}
 			}
@@ -305,7 +305,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 					EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
 					data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = PFNNIMBMKDL_Posters[i].PPFNGGCBJKC_Id;
 					data3[AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt] = PFNNIMBMKDL_Posters[i].BFINGCJHOHI_Cnt;
-					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = PFNNIMBMKDL_Posters[i].CADENLBDAEB_IsNew;
+					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = PFNNIMBMKDL_Posters[i].CADENLBDAEB_IsNew ? 1 : 0;
 					data2["_" + (i + 1)] = data3;
 				}
 			}
@@ -321,7 +321,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 					EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
 					data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = NOAEDPJGBJK_Sets[i].PPFNGGCBJKC_Id;
 					data3[AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt] = NOAEDPJGBJK_Sets[i].BFINGCJHOHI_Cnt;
-					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = NOAEDPJGBJK_Sets[i].CADENLBDAEB_IsNew;
+					data3[AFEHLCGHAEE_Strings.LHMOAJAIJCO_is_new] = NOAEDPJGBJK_Sets[i].CADENLBDAEB_IsNew ? 1 : 0;
 					data2["_" + (i + 1)] = data3;
 				}
 			}

@@ -600,7 +600,19 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF6608 Offset: 0x1BF6608 VA: 0x1BF6608
-		//protected void Anim_SetTrigger(string name) { }
+		protected void Anim_SetTrigger(string name)
+		{
+			animator.SetTrigger(name);
+			facialBlendAnimMediator.selfAnimator.SetTrigger(name);
+			if (m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+			{
+				m_boneSpringAnim.animator.SetTrigger(name);
+			}
+			if (mikeStandObject != null)
+			{
+				mikeStandObject.animator.SetTrigger(name);
+			}
+		}
 
 		//// RVA: 0x1BF6834 Offset: 0x1BF6834 VA: 0x1BF6834
 		//protected void Anim_ResetTrigger(string name) { }

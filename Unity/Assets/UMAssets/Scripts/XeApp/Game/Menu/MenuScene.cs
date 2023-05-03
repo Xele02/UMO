@@ -1199,7 +1199,7 @@ namespace XeApp.Game.Menu
 			//0xB419F0
 			if (!HighScoreRating.IsNotReceivedRewardUtaGrade())
 				yield break;
-			grade = (HighScoreRatingRank.Type)HighScoreRating.GetUtaRate(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
+			grade = HighScoreRating.GetUtaGrade(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
 			HighScoreRating hs = new HighScoreRating();
 			hs.Init();
 			rewardList = hs.GetUtaGradeList(grade);

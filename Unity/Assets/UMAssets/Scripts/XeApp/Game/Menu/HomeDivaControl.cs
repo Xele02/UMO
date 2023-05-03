@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -82,13 +83,47 @@ namespace XeApp.Game.Menu
 		//public bool RequestAutoTalk(int talkType, Action onActionEndCallback) { }
 
 		//// RVA: 0x9614A8 Offset: 0x9614A8 VA: 0x9614A8
-		//public bool RequestTimezoneTalk(int talkType, Action onActionEndCallback) { }
+		public bool RequestTimezoneTalk(int talkType, Action onActionEndCallback)
+		{
+			if (!IsAnimatorRequested && m_runningCoroutine == null)
+			{
+				bool b = false;
+				OnLoginTalkStart(talkType, out b);
+				OnActionEndCallback = onActionEndCallback;
+				IsAnimatorRequested = true;
+				if(!b)
+				{
+					StartRunningCoroutine(Coroutine_TimezoneTalkWait(), true);
+				}
+				else
+				{
+					StartRunningCoroutine(Coroutine_TalkVoiceWait(), true);
+				}
+				return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x961738 Offset: 0x961738 VA: 0x961738
 		//public bool RequestComebackTalk(Action onActionEndCallback) { }
 
 		//// RVA: 0x9618BC Offset: 0x9618BC VA: 0x9618BC
-		//public bool RequestLimitedTalk(int talkType, Action onActionEndCallback) { }
+		public bool RequestLimitedTalk(int talkType, Action onActionEndCallback)
+		{
+			if (!IsAnimatorRequested && m_runningCoroutine == null)
+			{
+				IsAnimatorRequested = true;
+				StartRunningCoroutine(Co_ChangeCueSheetProcess(talkType, () =>
+				{
+					//0x9627CC
+					OnEventTalkStart(talkType);
+					OnActionEndCallback = onActionEndCallback;
+					StartRunningCoroutine(Coroutine_TalkVoiceWait(), false);
+				}), true);
+				return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x961AA4 Offset: 0x961AA4 VA: 0x961AA4
 		//public int RandomPresentReaction() { }
@@ -104,10 +139,37 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C64D0 Offset: 0x6C64D0 VA: 0x6C64D0
 		//// RVA: 0x9619FC Offset: 0x9619FC VA: 0x9619FC
-		//private IEnumerator Co_ChangeCueSheetProcess(int talkType, Action onChangedCallback) { }
+		private IEnumerator Co_ChangeCueSheetProcess(int talkType, Action onChangedCallback)
+		{
+			//0x962884
+			bool isEndedChangeCueSheet = false;
+			SoundManager.Instance.voSeasonEvent.RequestChangeCueSheet(talkType, () =>
+			{
+				//0x96286C
+				isEndedChangeCueSheet = true;
+			});
+			yield return new WaitUntil(() =>
+			{
+				//0x962878
+				return isEndedChangeCueSheet;
+			});
+			if (onChangedCallback != null)
+				onChangedCallback();
+		}
 
 		//// RVA: 0x961ED4 Offset: 0x961ED4 VA: 0x961ED4
-		//public bool RequestBirthdayTalk(Action onActionEndCallback) { }
+		public bool RequestBirthdayTalk(Action onActionEndCallback)
+		{
+			if(!IsAnimatorRequested && m_runningCoroutine == null)
+			{
+				OnBirthdayTalkStart();
+				OnActionEndCallback = onActionEndCallback;
+				IsAnimatorRequested = true;
+				StartRunningCoroutine(Coroutine_TalkVoiceWait(), true);
+				return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x962058 Offset: 0x962058 VA: 0x962058
 		public void CancelRequest()
@@ -167,11 +229,28 @@ namespace XeApp.Game.Menu
 		//private void RequestUpdate() { }
 
 		//// RVA: 0x961458 Offset: 0x961458 VA: 0x961458
-		//private bool StartRunningCoroutine(IEnumerator a_co, bool a_check_null = True) { }
+		private bool StartRunningCoroutine(IEnumerator a_co, bool a_check_null = true)
+		{
+			if(m_runningCoroutine == null || !a_check_null)
+			{
+				m_runningCoroutine = StartCoroutine(a_co);
+				StartCoroutine(Coroutine_RunningCoroutineEndCheck());
+				return true;
+			}
+			return false;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6620 Offset: 0x6C6620 VA: 0x6C6620
 		//// RVA: 0x9622B0 Offset: 0x9622B0 VA: 0x9622B0
-		//private IEnumerator Coroutine_RunningCoroutineEndCheck() { }
+		private IEnumerator Coroutine_RunningCoroutineEndCheck()
+		{
+			//0x963280
+			yield return null;
+			while (m_runningCoroutine == null)
+				yield return null;
+			yield return null;
+			m_runningCoroutine = null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6698 Offset: 0x6C6698 VA: 0x6C6698
 		//// RVA: 0x96235C Offset: 0x96235C VA: 0x96235C
@@ -179,11 +258,36 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6710 Offset: 0x6C6710 VA: 0x6C6710
 		//// RVA: 0x9613CC Offset: 0x9613CC VA: 0x9613CC
-		//private IEnumerator Coroutine_TalkVoiceWait() { }
+		private IEnumerator Coroutine_TalkVoiceWait()
+		{
+			float loopKeepTime; // 0x14
+			DivaVoicePlayer voDiva; // 0x18
+			DivaCosVoicePlayer voDivaCos; // 0x1C
+			SeasonEventVoicePlayer voSeasonEvent; // 0x20
+
+			//0x9633BC
+			yield return null;
+			loopKeepTime = TimeWrapper.timeSinceLevelLoad + 0.2f;
+			while (TimeWrapper.timeSinceLevelLoad < loopKeepTime)
+				yield return null;
+			voDiva = SoundManager.Instance.voDiva;
+			voDivaCos = SoundManager.Instance.voDivaCos;
+			voSeasonEvent = SoundManager.Instance.voSeasonEvent;
+			while (voDiva.isPlaying || voDivaCos.isPlaying || voSeasonEvent.isPlaying)
+				yield return null;
+			DivaObject.TalkLoopBreak();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6788 Offset: 0x6C6788 VA: 0x6C6788
 		//// RVA: 0x9616AC Offset: 0x9616AC VA: 0x9616AC
-		//private IEnumerator Coroutine_TimezoneTalkWait() { }
+		private IEnumerator Coroutine_TimezoneTalkWait()
+		{
+			//0x963688
+			yield return null;
+			while (!DivaObject.IsIdleAnim)
+				yield return null;
+			IsAnimatorRequested = false;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6800 Offset: 0x6C6800 VA: 0x6C6800
 		//// RVA: 0x962448 Offset: 0x962448 VA: 0x962448
@@ -199,16 +303,41 @@ namespace XeApp.Game.Menu
 		//private void OnTimeTalkStart(int talkType) { }
 
 		//// RVA: 0x961540 Offset: 0x961540 VA: 0x961540
-		//private void OnLoginTalkStart(int talkType, out bool useTalkMotion) { }
+		private void OnLoginTalkStart(int talkType, out bool useTalkMotion)
+		{
+			DivaManager.DivaTransformReset();
+			SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Home, VoiceTable.GetLoginTalk((DivaTimezoneTalk.Type)talkType).VoiceId);
+			DivaMenuMotion.Type motion = VoiceTable.GetLoginTalk((DivaTimezoneTalk.Type)talkType).MotionType;
+			if (!DivaMenuMotion.IsTimezoneTalk(motion))
+			{
+				DivaObject.Talk(DivaMenuMotion.ToMotionId(motion));
+				useTalkMotion = true;
+			}
+			else
+			{
+				DivaObject.TimezoneTalk(DivaMenuMotion.ToMotionId(motion));
+				useTalkMotion = false;
+			}
+		}
 
 		//// RVA: 0x961798 Offset: 0x961798 VA: 0x961798
 		//private void OnComebackTalkStart() { }
 
 		//// RVA: 0x962660 Offset: 0x962660 VA: 0x962660
-		//private void OnEventTalkStart(int talkType) { }
+		private void OnEventTalkStart(int talkType)
+		{
+			DivaManager.DivaTransformReset();
+			SoundManager.Instance.voSeasonEvent.Play(DivaManager.DivaId, VoiceTable.GetEventTalk((DivaSeasonTalk.Type)(talkType - 1)).VoiceId);
+			DivaObject.Talk(DivaMenuMotion.ToMotionId(VoiceTable.GetEventTalk((DivaSeasonTalk.Type)(talkType - 1)).MotionType));
+		}
 
 		//// RVA: 0x961F34 Offset: 0x961F34 VA: 0x961F34
-		//private void OnBirthdayTalkStart() { }
+		private void OnBirthdayTalkStart()
+		{
+			DivaManager.DivaTransformReset();
+			SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Home, VoiceTable.GetBirthdayTalk().VoiceId);
+			DivaObject.Talk(DivaMenuMotion.ToMotionId(VoiceTable.GetBirthdayTalk().MotionType));
+		}
 
 		//[ConditionalAttribute] // RVA: 0x6C6878 Offset: 0x6C6878 VA: 0x6C6878
 		//// RVA: 0x9627C0 Offset: 0x9627C0 VA: 0x9627C0

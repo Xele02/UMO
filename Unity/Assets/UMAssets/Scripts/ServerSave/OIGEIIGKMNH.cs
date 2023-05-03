@@ -171,10 +171,10 @@ public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 			{
 				EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
 				data2[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = CNGNBKNBKGI_ValkList[i].FODKKJIDDKN_Id;
-				data2[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = CNGNBKNBKGI_ValkList[i].CADENLBDAEB_New;
+				data2[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = CNGNBKNBKGI_ValkList[i].CADENLBDAEB_New ? 1 : 0;
 				data2[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = CNGNBKNBKGI_ValkList[i].BEBJKJKBOGH_Date;
 				data2[AFEHLCGHAEE_Strings.ANAJIAENLNB_lv] = CNGNBKNBKGI_ValkList[i].CIEOBFIIPLD_Level;
-				data2[AFEHLCGHAEE_Strings.HMJPPJNLBCM_dvf_new] = CNGNBKNBKGI_ValkList[i].FJKIELICMAH_DvfNew;
+				data2[AFEHLCGHAEE_Strings.HMJPPJNLBCM_dvf_new] = CNGNBKNBKGI_ValkList[i].FJKIELICMAH_DvfNew ? 1 : 0;
 				data[POFDDFCGEGP + (i + 1)] = data2;
 			}
 		}

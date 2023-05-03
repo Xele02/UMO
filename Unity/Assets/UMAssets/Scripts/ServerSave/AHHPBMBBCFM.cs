@@ -36,7 +36,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x15C70C0 Offset: 0x15C70C0 VA: 0x15C70C0 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "OKJPIBHMKMJ");
+		TodoLogger.Log(TodoLogger.SaveLoad, "OKJPIBHMKMJ");
 	}
 
 	// // RVA: 0x15C7474 Offset: 0x15C7474 VA: 0x15C7474 Slot: 6

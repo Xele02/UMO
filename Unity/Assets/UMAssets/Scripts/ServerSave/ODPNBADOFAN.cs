@@ -91,7 +91,7 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 				data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = GPMKFMFEKLN_NormalQuests[i].PPFNGGCBJKC_Id;
 				data3[AFEHLCGHAEE_Strings.EALOBDHOCHP_stat] = GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat;
 				data3[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = GPMKFMFEKLN_NormalQuests[i].BEBJKJKBOGH_Date;
-				data3[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New;
+				data3[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New ? 1 : 0;
 				data2[POFDDFCGEGP + (i + 1)] = data3;
 			}
 			data[AFEHLCGHAEE_Strings.EJFAEKPGKNJ_daily] = data2;
@@ -105,7 +105,7 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 				data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = GPMKFMFEKLN_NormalQuests[i].PPFNGGCBJKC_Id;
 				data3[AFEHLCGHAEE_Strings.EALOBDHOCHP_stat] = GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat;
 				data3[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = GPMKFMFEKLN_NormalQuests[i].BEBJKJKBOGH_Date;
-				data3[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New;
+				data3[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New ? 1 : 0;
 				data2[POFDDFCGEGP + (i + 1)] = data3;
 			}
 			data[AFEHLCGHAEE_Strings.EGDEGGMPIGA_normal] = data2;

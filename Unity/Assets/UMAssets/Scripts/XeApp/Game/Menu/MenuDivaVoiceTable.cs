@@ -71,16 +71,25 @@ namespace XeApp.Game.Menu
 		// public MenuDivaVoiceTable.Data GetTimeTalk(int i) { }
 
 		// // RVA: 0xED08F0 Offset: 0xED08F0 VA: 0xED08F0
-		// public MenuDivaVoiceTable.Data GetLoginTalk(DivaTimezoneTalk.Type i) { }
+		public Data GetLoginTalk(DivaTimezoneTalk.Type i)
+		{
+			return m_loginTalk[(int)i];
+		}
 
 		// // RVA: 0xED0970 Offset: 0xED0970 VA: 0xED0970
-		// public MenuDivaVoiceTable.Data GetEventTalk(DivaSeasonTalk.Type i) { }
+		public Data GetEventTalk(DivaSeasonTalk.Type i)
+		{
+			return m_eventTalk[(int)i];
+		}
 
 		// // RVA: 0xED09F0 Offset: 0xED09F0 VA: 0xED09F0
 		// public MenuDivaVoiceTable.Data GetComeback() { }
 
 		// // RVA: 0xED09F8 Offset: 0xED09F8 VA: 0xED09F8
-		// public MenuDivaVoiceTable.Data GetBirthdayTalk() { }
+		public Data GetBirthdayTalk()
+		{
+			return m_birthdayTalk;
+		}
 
 		// // RVA: 0xED0A00 Offset: 0xED0A00 VA: 0xED0A00
 		// public MenuDivaVoiceTable.Data GetTouchReaction(DivaTouchReaction.Type i) { }

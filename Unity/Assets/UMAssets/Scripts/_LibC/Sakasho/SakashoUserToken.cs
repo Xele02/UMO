@@ -47,6 +47,7 @@ namespace ExternLib
 
 		public static void LoadAccountServerData()
 		{
+			return; // for now for a new profile to config the full unlock profile
 			if (playerAccount == null)
 				return;
 			string path = Application.persistentDataPath + "/Profiles/" + playerAccount.userId.ToString() + "/data.json";

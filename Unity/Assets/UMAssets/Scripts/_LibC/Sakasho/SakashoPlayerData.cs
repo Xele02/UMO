@@ -1,4 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using UnityEngine;
+using XeApp.Game.Common;
 using XeSys;
 
 namespace ExternLib
@@ -44,22 +49,56 @@ namespace ExternLib
 					jsonRes = new EDOHBJAPLPF_JsonData();
 					playerAccount.serverData = jsonRes;
 				}
+
+				// Config full unlocked profile
+				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).PBEKKMOPENN_AgreeTosVer = 1;
+				{
+					EGOLBAPFHHD_Common commonBlock = newData.LBDOLHGDIEB_GetBlock("common") as EGOLBAPFHHD_Common;
+					// set max level
+					commonBlock.KIECDDFNCAN_Level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.PIAMMJNADJH_PlayerMaxLevel;
+					// set max uta grade
+					commonBlock.EAHPKPADCPL_TotalUtaRate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Last().ADKDHKMPMHP_Rate;
+					// set uta reward all get
+					commonBlock.EAFLCGCIOND_RetRewRecGra = (int)HighScoreRating.GetUtaGrade(commonBlock.EAHPKPADCPL_TotalUtaRate);
+				}
+
+				// End all normal quest
+				ODPNBADOFAN_Quest saveQuests = newData.LBDOLHGDIEB_GetBlock("quest") as ODPNBADOFAN_Quest;
+				for (int i = 0; i < saveQuests.GPMKFMFEKLN_NormalQuests.Count; i++)
+				{
+					saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat = 3;
+					saveQuests.GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New = false;
+				}
+				//
+
+
 				for (int i = 0; i < newData.MGJKEJHEBPO_Blocks.Count; i++)
 				{
 					if(allBlock || missingBlock.Contains(newData.MGJKEJHEBPO_Blocks[i].JIKKNHIAEKG_BlockName))
 						newData.MGJKEJHEBPO_Blocks[i].OKJPIBHMKMJ(jsonRes, newData.MGJKEJHEBPO_Blocks[i].FJMOAAPNCJI_SaveId);
 				}
+
 				SaveAccountServerData();
 
 				// Debug, reload and compare
+				string path = Application.persistentDataPath + "/Profiles/" + playerAccount.userId.ToString() + "/data.json";
+				Dictionary<string, EDOHBJAPLPF_JsonData> blocks;
+				string fileJson = File.ReadAllText(path);
+				blocks = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject<Dictionary<string, EDOHBJAPLPF_JsonData>>(fileJson);
+				
 				BBHNACPENDM_ServerSaveData newData_ = new BBHNACPENDM_ServerSaveData();
 				newData_.KHEKNNFCAOI_Init(0xFFFFFFFFFFFFFF);
-				newData_.IIEMACPEEBJ_Load(newData.KPIDBPEKMFD_GetBlockList(), jsonRes);
-				for (int i = 0; i < newData.MGJKEJHEBPO_Blocks.Count; i++)
+				newData_.IIEMACPEEBJ_Load(blocks.Keys.ToList(), jsonRes); // Check reload direct for type error
+				newData_.IIEMACPEEBJ_Load(blocks.Keys.ToList(), IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(fileJson)); // Check reload from string json
+				foreach (var k in blocks.Keys)
 				{
-					if(!newData.MGJKEJHEBPO_Blocks[i].AGBOGBEOFME(newData_.LBDOLHGDIEB_GetBlock(newData.MGJKEJHEBPO_Blocks[i].JIKKNHIAEKG_BlockName)))
+					if(!newData.LBDOLHGDIEB_GetBlock(k).AGBOGBEOFME(newData_.LBDOLHGDIEB_GetBlock(k)))
 					{
-						UnityEngine.Debug.LogError("Block diff : "+ newData.MGJKEJHEBPO_Blocks[i].JIKKNHIAEKG_BlockName);
+						UnityEngine.Debug.LogError("Block diff : "+ k);
+					}
+					else
+					{
+						UnityEngine.Debug.LogError("Block ok : " + k);
 					}
 				}
 			}
@@ -299,10 +338,26 @@ namespace ExternLib
 			SendMessage(callbackId, result);
 			return 0;
 		}
-
+		static int saveCnt = 0;
 		public static int SakashoPlayerDataSavePlayerData(int callbackId, string json)
 		{
 			TodoLogger.Log(0, "Save player data");
+
+			KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
+			writer.GALFODHMEOL_PrettyPrint = true;
+			EDOHBJAPLPF_JsonData msgData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject((string)msgData["playerData"]).EJCOJCGIBNG_ToJson(writer);
+			string saveData = writer.ToString();
+
+			string path = Application.persistentDataPath + "/Profiles/" + playerAccount.userId.ToString();
+			if (!Directory.Exists(path))
+				Directory.CreateDirectory(path);
+
+			path += "/data_save_"+ saveCnt.ToString() + ".json";
+			File.WriteAllText(path, saveData);
+			UnityEngine.Debug.LogError("saved server tmp data " + path);
+
+
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["created_at"] = 1501751856;
 			res["data_status"] = 1;

@@ -342,7 +342,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEB470C Offset: 0xEB470C VA: 0xEB470C
-		//public string GetMessageByLabel(string label) { }
+		public string GetMessageByLabel(string label)
+		{
+			return messageBank.GetMessageByLabel(label);
+		}
 
 		//// RVA: 0xECB868 Offset: 0xECB868 VA: 0xECB868
 		//public string GetMessageByIndex(int index) { }
