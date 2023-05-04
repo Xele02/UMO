@@ -271,6 +271,7 @@ namespace XeApp.Game.Common
 					}
 					else if(commonData.eventTrack10[i].value == MusicScoreData.START_COMBO_RESULT)
 					{
+						rhythmGameResultStartMillisec = commonData.eventTrack10[i].time;
 					}
 					else if(commonData.eventTrack10[i].value == MusicScoreData.TUTORIAL_ONE_END_GAME)
 					{

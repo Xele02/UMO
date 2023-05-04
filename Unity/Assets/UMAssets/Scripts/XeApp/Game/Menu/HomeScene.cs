@@ -1241,18 +1241,38 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x978F94 Offset: 0x978F94 VA: 0x978F94
 		private void ShowNotice()
 		{
-			TodoLogger.Log(0, "ShowNotice");
+			this.StartCoroutineWatched(Co_ShowNotice());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E35AC Offset: 0x6E35AC VA: 0x6E35AC
 		// // RVA: 0x978FB8 Offset: 0x978FB8 VA: 0x978FB8
-		// private IEnumerator Co_ShowNotice() { }
+		private IEnumerator Co_ShowNotice()
+		{
+			//0x13D5880
+			for(int i = 0; i < NoticeActionList.Count; i++)
+			{
+				NoticeActionList[i]();
+				GameManager.Instance.snsNotification.DirtyClose = false;
+				while(GameManager.Instance.snsNotification.isActiveAndEnabled)
+					yield return null;
+				if (GameManager.Instance.snsNotification.DirtyClose)
+					break;
+			}
+			NoticeActionList.Clear();
+		}
 
 		// // RVA: 0x979040 Offset: 0x979040 VA: 0x979040
-		// private void EnterMessage() { }
+		private void EnterMessage()
+		{
+			m_divaBalloon.SetDiva(GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId);
+			m_divaBalloon.Enter(true);
+		}
 
 		// // RVA: 0x979140 Offset: 0x979140 VA: 0x979140
-		// private void ApplyMessageText(string msg) { }
+		private void ApplyMessageText(string msg)
+		{
+			m_divaBalloon.SetMessage(msg);
+		}
 
 		// // RVA: 0x9727C4 Offset: 0x9727C4 VA: 0x9727C4
 		private void LeaveMessage(bool force = false)
@@ -1301,7 +1321,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x979E58 Offset: 0x979E58 VA: 0x979E58
 		private void OnChangedDivaTalk(string msgLabel)
 		{
-			TodoLogger.LogNotImplemented("OnChangedDivaTalk");
+			ApplyMessageText(msgLabel);
+			EnterMessage();
 		}
 
 		// // RVA: 0x979E74 Offset: 0x979E74 VA: 0x979E74
@@ -2041,7 +2062,7 @@ namespace XeApp.Game.Menu
 
 		private void LoadSLiveWait()
 		{
-
+			return;
 		}
 
 		private IEnumerator LoadSLiveCoroutine()

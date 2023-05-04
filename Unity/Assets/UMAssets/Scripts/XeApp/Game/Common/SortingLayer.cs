@@ -2,9 +2,7 @@ using UnityEngine;
 
 namespace XeApp.Game.Common
 {
-	internal class SortingLayerAttribute : PropertyAttribute
-	{
-	}
+	internal class SortingLayerAttribute : PropertyAttribute { }
 
 	[RequireComponent(typeof(Renderer))] // RVA: 0x64E9E8 Offset: 0x64E9E8 VA: 0x64E9E8
 	[ExecuteInEditMode] // RVA: 0x64E9E8 Offset: 0x64E9E8 VA: 0x64E9E8

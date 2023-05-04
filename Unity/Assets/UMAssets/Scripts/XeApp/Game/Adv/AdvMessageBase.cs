@@ -171,6 +171,7 @@ namespace XeApp.Game.Adv
 			int i = index;
 			for (; message[index] != '>'; i++)
 			{
+				;
 			}
 			return i + 1;
 		}

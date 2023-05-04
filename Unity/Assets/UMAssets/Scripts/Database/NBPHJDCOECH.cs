@@ -189,7 +189,18 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17C8E30 Offset: 0x17C8E30 VA: 0x17C8E30 Slot: 8
-	protected override void KMBPACJNEOF() { }
+	protected override void KMBPACJNEOF()
+	{
+		KPEOJPKLJBH_Set.Clear();
+		FDCBLEDPHBM_Rate.Clear();
+		LMILCGIFPGC_RareSet.Clear();
+		ABNFGCEDJIM_RareRate.Clear();
+		BNFPHOEFKBA_GameDropRate.Clear();
+		CFECAEBGLIH_GameDropMaNe.Clear();
+		BFNDKINIEOE_GameDropMaEq.Clear();
+		ENLMDHJIPLA_GameDropEvCnt.Clear();
+		DGCBAFGBOCL_GameDropEvBns.Clear();
+	}
 
 	//// RVA: 0x17C9008 Offset: 0x17C9008 VA: 0x17C9008 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)

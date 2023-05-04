@@ -57,7 +57,12 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF693D4 Offset: 0xF693D4 VA: 0xF693D4 Slot: 5
-		//public override bool InDuration(BuffDurationCheckParameter checkParameter) { }
+		public override bool InDuration(BuffDurationCheckParameter checkParameter)
+		{
+			if (checkParameter.bitNoteResult != 0 && (checkParameter.bitNoteResult & m_duration_bit) == 0)
+				return false;
+			return true;
+		}
 
 		//// RVA: 0xF693F8 Offset: 0xF693F8 VA: 0xF693F8 Slot: 6
 		public override bool IsValue(RhythmGameConsts.NoteResult a_result)
@@ -70,6 +75,9 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF6941C Offset: 0xF6941C VA: 0xF6941C Slot: 7
-		//public override float GetEndMusicTime() { }
+		public override float GetEndMusicTime()
+		{
+			return -1;
+		}
 	}
 }

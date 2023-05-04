@@ -266,7 +266,7 @@ public class JLKEOGLJNOD_TeamInfo
 				GCIJNCFDNON_SceneInfo g = null;
 				if (a.EBDNICPAFLB_SSlot[0] == 0)
 				{
-
+					g = null;
 				}
 				else if(OPIBAPEGCLA == null)
 				{

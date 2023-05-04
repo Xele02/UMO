@@ -5,6 +5,7 @@ namespace XeApp.Game.Menu
 {
 	public class ValkyrieIconTexture : IconTexture
 	{
+		//
 	}
 
 	public class ValkyrieIconTextureCache : IconTextureCache

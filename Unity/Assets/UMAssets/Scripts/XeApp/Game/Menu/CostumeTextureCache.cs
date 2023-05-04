@@ -5,12 +5,14 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeIconTexture : IconTexture
 	{
+		//
 	}
 	public class CostumeTextureCache : IconTextureCache
 	{
 		// RVA: 0x16E8DA0 Offset: 0x16E8DA0 VA: 0x16E8DA0
 		public CostumeTextureCache() : base(0)
 		{
+			return;
 		}
 
 		// // RVA: 0x16E8DAC Offset: 0x16E8DAC VA: 0x16E8DAC Slot: 5

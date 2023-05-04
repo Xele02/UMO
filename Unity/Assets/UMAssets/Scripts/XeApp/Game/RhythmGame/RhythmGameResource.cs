@@ -879,11 +879,11 @@ namespace XeApp.Game.RhythmGame
 public class MusicVoiceChangerParamNotFoundException : Exception
 {
 	// RVA: 0x17BE9F0 Offset: 0x17BE9F0 VA: 0x17BE9F0
-	public MusicVoiceChangerParamNotFoundException() { }
+	public MusicVoiceChangerParamNotFoundException() { return; }
 
 	// RVA: 0x17BEA74 Offset: 0x17BEA74 VA: 0x17BEA74
-	public MusicVoiceChangerParamNotFoundException(string message) : base(message) { }
+	public MusicVoiceChangerParamNotFoundException(string message) : base(message) { return; }
 
 	// RVA: 0x17BEB00 Offset: 0x17BEB00 VA: 0x17BEB00
-	public MusicVoiceChangerParamNotFoundException(string message, Exception inner) : base(message, inner) { }
+	public MusicVoiceChangerParamNotFoundException(string message, Exception inner) : base(message, inner) { return; }
 }

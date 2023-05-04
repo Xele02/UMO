@@ -18,7 +18,7 @@ namespace XeApp.Game.Menu
 		public List<int> DivaIds { get; set; } // 0x38
 
 		// RVA: 0x169881C Offset: 0x169881C VA: 0x169881C
-		public void SetContent(GameObject obj) { }
+		//public void SetContent(GameObject obj) { }
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7307BC Offset: 0x7307BC VA: 0x7307BC
 		// RVA: 0x1698834 Offset: 0x1698834 VA: 0x1698834 Slot: 4

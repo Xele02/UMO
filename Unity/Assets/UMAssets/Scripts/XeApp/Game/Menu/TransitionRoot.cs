@@ -12,7 +12,9 @@ using XeApp.Game.Tutorial;
 namespace XeApp.Game.Menu
 {
 	public interface TransitionArgs
-	{}
+	{
+		//
+	}
 
 	public class TransitionRoot : MonoBehaviour
 	{

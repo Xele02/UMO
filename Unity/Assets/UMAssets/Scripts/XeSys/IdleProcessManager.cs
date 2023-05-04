@@ -88,13 +88,13 @@ namespace XeSys
 			processes[target].Priority = priority;
 			if(weight == 0)
 			{
-				
+				;
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("Check weight "+weight);
+				weight *= 10000000;
 			}
-			processes[target].Weight = (uint)(weight * 10000000);
+			processes[target].Weight = (uint)Mathf.RoundToInt(weight);
 			processes[target].Age = 0;
 			Link(ref registered, -1, registered, target);
 			return target;

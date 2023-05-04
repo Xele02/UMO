@@ -36,7 +36,10 @@ namespace XeApp.Game.Menu
 		public Action onHideClickButton { private get; set; } // 0x40
 
 		// RVA: 0x96C240 Offset: 0x96C240 VA: 0x96C240
-		private void Update() { }
+		private void Update()
+		{
+			return;
+		}
 
 		//// RVA: 0x96C244 Offset: 0x96C244 VA: 0x96C244
 		//public bool IsPlaying() { }

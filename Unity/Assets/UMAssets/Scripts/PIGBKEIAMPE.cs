@@ -7,13 +7,13 @@ using System.IO;
 public class SerchGuestNotFoundException : Exception
 {
 	// RVA: 0xDFF044 Offset: 0xDFF044 VA: 0xDFF044
-	public SerchGuestNotFoundException() : base() { }
+	public SerchGuestNotFoundException() : base() { return; }
 
 	// RVA: 0xDFF0C8 Offset: 0xDFF0C8 VA: 0xDFF0C8
-	public SerchGuestNotFoundException(string message) : base(message) { }
+	public SerchGuestNotFoundException(string message) : base(message) { return; }
 
 	// RVA: 0xDFF154 Offset: 0xDFF154 VA: 0xDFF154
-	public SerchGuestNotFoundException(string message, Exception inner) : base(message, inner) { }
+	public SerchGuestNotFoundException(string message, Exception inner) : base(message, inner) { return; }
 }
 
 [System.Obsolete("Use PIGBKEIAMPE_FriendManager", true)]

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -88,16 +89,29 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE66488 Offset: 0xE66488 VA: 0xE66488
-		//public void SetDiva(int divaId) { }
+		public void SetDiva(int divaId)
+		{
+			m_imageFrame.color = m_colorTable[divaId - 1];
+			m_textName.text = MessageManager.Instance.GetBank("master").GetMessageByLabel("diva_" + divaId.ToString("D2"));
+		}
 
 		//// RVA: 0xE662A8 Offset: 0xE662A8 VA: 0xE662A8
-		//public void SetMessage(string message) { }
+		public void SetMessage(string message)
+		{
+			m_textMessage.text = message;
+		}
 
 		//// RVA: 0xE6663C Offset: 0xE6663C VA: 0xE6663C
 		//public void SetActive(bool active) { }
 
 		//// RVA: 0xE66714 Offset: 0xE66714 VA: 0xE66714
-		//public void Enter(bool force = False) { }
+		public void Enter(bool force = false)
+		{
+			if (m_textMessage.text == "")
+				return;
+			m_inOutAnime.Enter(force, null);
+			m_intervalCloseWindow = 0;
+		}
 
 		//// RVA: 0xE667DC Offset: 0xE667DC VA: 0xE667DC
 		//public void Enter(float animTime, bool force = False) { }

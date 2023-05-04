@@ -413,7 +413,26 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xEB5530 Offset: 0xEB5530 VA: 0xEB5530 Slot: 15
-		protected override void OnDeleteCache() { }
+		protected override void OnDeleteCache()
+		{
+			if(m_layoutDivaSerifWindow != null)
+			{
+				Destroy(m_layoutDivaSerifWindow.gameObject);
+				m_layoutDivaSerifWindow = null;
+			}
+			if(m_layoutLoginbonusStanding != null)
+			{
+				Destroy(m_layoutLoginbonusStanding.gameObject);
+				m_layoutLoginbonusStanding = null;
+			}
+			if(m_layoutLoginbonusConditions != null)
+			{
+				Destroy(m_layoutLoginbonusConditions.gameObject);
+				m_layoutLoginbonusConditions = null;
+			}
+			m_itemPackTextureCache.Terminated();
+			m_itemPackTextureCache = null;
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6ECC74 Offset: 0x6ECC74 VA: 0x6ECC74
 		// // RVA: 0xEB583C Offset: 0xEB583C VA: 0xEB583C

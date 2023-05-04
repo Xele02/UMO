@@ -4,6 +4,7 @@ namespace XeApp.Game.Menu
 {
 	public class TipsTexture : IconTexture
 	{
+		//
 	}
 
 	public class TipsTextureCache : IconTextureCache

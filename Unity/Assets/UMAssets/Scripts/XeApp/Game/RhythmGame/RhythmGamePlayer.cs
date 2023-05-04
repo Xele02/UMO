@@ -1151,9 +1151,9 @@ namespace XeApp.Game.RhythmGame
 			if (resource.musicData.rhythmGameResultStartMillisec < 0)
 			{
 				resource.musicData.rhythmGameResultStartMillisec = musicMillisecLength - 5000;
+				TodoLogger.Log(0, "Shouldn't pass here");
 			}
-			//else
-			TodoLogger.Log(TodoLogger.ToCheck, "why else ?");
+			else
 			{
 				rhythmGameResultStartEvent.millisec = resource.musicData.rhythmGameResultStartMillisec;
 			}
@@ -3409,7 +3409,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9B2AC4 Offset: 0x9B2AC4 VA: 0x9B2AC4
-		// public static float ToSecTime(int millisec) { }
+		public static float ToSecTime(int millisec)
+		{
+			return millisec / 1000.0f;
+		}
 
 		// // RVA: 0x9CC3D4 Offset: 0x9CC3D4 VA: 0x9CC3D4
 		// public static int ToMillisecTime(float sec) { }

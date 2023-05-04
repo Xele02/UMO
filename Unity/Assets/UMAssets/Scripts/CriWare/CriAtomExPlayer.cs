@@ -72,33 +72,36 @@ namespace CriWare
 		// // RVA: 0x28A38E8 Offset: 0x28A38E8 VA: 0x28A38E8
 		public CriAtomExPlayer() : this(null, 0, 0, false, IntPtr.Zero)
 		{
+			return;
 		}
 		public CriAtomExPlayer(CriAtomSource source) : this(source, 0, 0, false, IntPtr.Zero)
 		{
+			return;
 		}
 
 		// // RVA: 0x28A3B08 Offset: 0x28A3B08 VA: 0x28A3B08
 		public CriAtomExPlayer(CriAtomSource source, int maxPath, int maxPathStrings) : this(source, maxPath, maxPathStrings, false, IntPtr.Zero)
 		{
+			return;
 		}
 
 		// // RVA: 0x28A3B80 Offset: 0x28A3B80 VA: 0x28A3B80
 		public CriAtomExPlayer(CriAtomSource source, bool enableAudioSyncedTimer) : this(source, 0, 0, enableAudioSyncedTimer, IntPtr.Zero)
 		{
-
+			return;
 		}
 
 		// // RVA: 0x28A3BF4 Offset: 0x28A3BF4 VA: 0x28A3BF4
 		public CriAtomExPlayer(CriAtomSource source, int maxPath, int maxPathStrings, bool enableAudioSyncedTimer)
 			 : this(source, maxPath, maxPathStrings, enableAudioSyncedTimer, IntPtr.Zero)
 		{
-
+			return;
 		}
 
 		// // RVA: 0x28A3C70 Offset: 0x28A3C70 VA: 0x28A3C70
 		public CriAtomExPlayer(CriAtomSource source, IntPtr existingNativeHandle) : this(source, 0, 0, false, existingNativeHandle)
 		{
-
+			return;
 		}
 
 		// // RVA: 0x28A3958 Offset: 0x28A3958 VA: 0x28A3958
@@ -861,7 +864,7 @@ namespace CriWare
 
 		// // RVA: 0x28A6A68 Offset: 0x28A6A68 VA: 0x28A6A68
 		#if UNITY_ANROID
-		private static extern void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType) { }
+		//private static extern void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType) { }
 		#else
 		private static void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType)
 		{

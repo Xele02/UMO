@@ -4,6 +4,7 @@ namespace XeApp.Game.Menu
 {
 	public class SNSIconTexture : IconTexture
 	{
+		//
 	}
 	public class SNSTextureCache : IconTextureCache
 	{

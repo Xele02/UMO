@@ -10,13 +10,15 @@ public class PFHMOOFJMIM : LBHFILLFAGA
     // RVA: 0x16C23AC Offset: 0x16C23AC VA: 0x16C23AC
     public PFHMOOFJMIM()
     {
+		return;
     }
 
     // RVA: 0x16C2430 Offset: 0x16C2430 VA: 0x16C2430
     public PFHMOOFJMIM(string CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
 		: base(CJEKGLGBIHF_path,BOPDLODALFD_withoutPlarformPath,OGLMMENAJFL_onSuccess,GOIHDOPGPCE_onFail,JBKMAPLCBMO_arg,HNKPENAFDKA_argValue,LAMFBMFNOFP_fi)
-    {
-    }
+	{
+		return;
+	}
 
     // RVA: 0x16C24F8 Offset: 0x16C24F8 VA: 0x16C24F8 Slot: 4
     public override void BDALHEMDIDC_DoStart()

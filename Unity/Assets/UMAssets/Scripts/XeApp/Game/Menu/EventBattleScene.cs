@@ -233,7 +233,7 @@ namespace XeApp.Game.Menu
 		// private void OnClickExBattleScore() { }
 
 		// // RVA: 0xF12C28 Offset: 0xF12C28 VA: 0xF12C28
-		private void OverrideEnemySkill() { }
+		// private void OverrideEnemySkill() { }
 
 		// // RVA: 0xF12C98 Offset: 0xF12C98 VA: 0xF12C98
 		// private void OnClickSelectClassButton() { }

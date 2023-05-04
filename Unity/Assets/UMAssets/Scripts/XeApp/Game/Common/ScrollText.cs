@@ -91,6 +91,7 @@ namespace XeApp.Game.Common
 					Vector2 pos = m_text.rectTransform.anchoredPosition;
 					if (!Single.IsNaN(m_text.rectTransform.anchoredPosition.x) && !Single.IsNaN(m_text.rectTransform.anchoredPosition.y))
 					{
+						;
 					}
 					else
 					{
@@ -125,6 +126,7 @@ namespace XeApp.Game.Common
 					Vector2 pos = m_text.rectTransform.anchoredPosition;
 					if (!Single.IsNaN(m_text.rectTransform.anchoredPosition.x) && !Single.IsNaN(m_text.rectTransform.anchoredPosition.y))
 					{
+						;
 					}
 					else
 					{

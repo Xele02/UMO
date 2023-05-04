@@ -13,19 +13,13 @@ namespace XeApp.Game.Menu
 	{
     public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[Serializable]
-		public class SortButtonEvent : UnityEvent<int>
-		{
-		}
+		public class SortButtonEvent : UnityEvent<int> { }
 
 		[Serializable]
-		public class FilterButtonEvent : UnityEvent<uint>
-		{
-		}
+		public class FilterButtonEvent : UnityEvent<uint> { }
 
 		[Serializable]
-		public class CompatibleDivaButtonEvent : UnityEvent<bool>
-		{
-		}
+		public class CompatibleDivaButtonEvent : UnityEvent<bool> { }
 
 		// Fields
 		[SerializeField]

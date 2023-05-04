@@ -123,7 +123,7 @@ namespace XeSys.Gfx
 		// RVA: 0x2049F94 Offset: 0x2049F94 VA: 0x2049F94
 		public Layout() : this(false)
 		{
-
+			return;
 		}
 
 		// RVA: 0x2049F9C Offset: 0x2049F9C VA: 0x2049F9C

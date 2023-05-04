@@ -169,6 +169,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				if(a_result_ex.m_result != RhythmGameConsts.NoteResult.Miss)
 				{
+					;
 				}
 				else
 				{
@@ -176,6 +177,7 @@ namespace XeApp.Game.RhythmGame
 					{
 						if(firstRNoteObject != noteObject || a_type == RhythmGameConsts.NoteJudgeType.EndedTouch)
 						{
+							;
 						}
 						else
 						{
@@ -205,6 +207,7 @@ namespace XeApp.Game.RhythmGame
 				{
 					if(a_result_ex.m_result != RhythmGameConsts.NoteResult.Miss)
 					{
+						;
 					}
 					else
 					{
@@ -224,6 +227,7 @@ namespace XeApp.Game.RhythmGame
 				}
 				else if(a_result_ex.m_result == RhythmGameConsts.NoteResult.None)
 				{
+					;
 				}
 				else
 				{

@@ -12,6 +12,7 @@ namespace XeApp.Core
 		// RVA: 0xE119D4 Offset: 0xE119D4 VA: 0xE119D4
 		public AssetBundleLoadUGUIOperation(string bundleName, string assetName) : base(bundleName, assetName)
 		{
+			return;
 		}
 
 		// RVA: 0xE119D8 Offset: 0xE119D8 VA: 0xE119D8 Slot: 7

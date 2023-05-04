@@ -239,6 +239,7 @@ namespace XeApp.Game.MusicSelect
 					string eventPeriodString = null;
 					if (eventController == null || !musicData.EHNGOGBJMGL)
 					{
+						;
 					}
 					else
 					{

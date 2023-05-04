@@ -29,7 +29,17 @@ namespace XeApp.Game.Common
 		public Action<int> onClickButton { private get; set; } // 0x28
 
 		// RVA: 0xEB0408 Offset: 0xEB0408 VA: 0xEB0408
-		private void Start() { }
+		private void Start()
+		{
+			m_buttonBanner.ClearOnClickCallback();
+			m_buttonBanner.AddOnClickCallback(() =>
+			{
+				//0xEB0D48
+				if (onClickButton != null)
+					onClickButton(pictId);
+			});
+			SetPeriod(period);
+		}
 
 		// // RVA: 0xEAEDF4 Offset: 0xEAEDF4 VA: 0xEAEDF4
 		// public void Setup(JBCAHMMCOKK view, HomePickupBannerContent.LoadBannerTextureDelegate loadBannerTexture) { }
@@ -47,10 +57,18 @@ namespace XeApp.Game.Common
 		// public void SetGachaTexture(int pictId, HomePickupBannerContent.LoadBannerTextureDelegate loadBannerTexture, Action callback) { }
 
 		// // RVA: 0xEB04DC Offset: 0xEB04DC VA: 0xEB04DC
-		// public void SetPeriod(string period) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73D8E4 Offset: 0x73D8E4 VA: 0x73D8E4
-		// // RVA: 0xEB0D48 Offset: 0xEB0D48 VA: 0xEB0D48
-		// private void <Start>b__19_0() { }
+		public void SetPeriod(string period)
+		{
+			this.period = period;
+			if(period != "")
+			{
+				m_textPeriod.text = period;
+				m_textPeriodSwitch.SetActive(true);
+			}
+			else
+			{
+				m_textPeriodSwitch.SetActive(false);
+			}
+		}
 	}
 }

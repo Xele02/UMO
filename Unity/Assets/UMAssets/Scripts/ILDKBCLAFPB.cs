@@ -2199,10 +2199,7 @@ public class ILDKBCLAFPB
 		// // RVA: 0x202593C Offset: 0x202593C VA: 0x202593C
 		public void ODDIHGPONFL_Copy(BKLCILHFCGB_Flags CHOFCBBPDCH)
 		{
-			if(KGMLFAFPOKP.Length == CHOFCBBPDCH.KGMLFAFPOKP.Length)
-			{
-			}
-			else
+			if(KGMLFAFPOKP.Length != CHOFCBBPDCH.KGMLFAFPOKP.Length)
 			{
 				KGMLFAFPOKP = new int[CHOFCBBPDCH.KGMLFAFPOKP.Length];
 			}

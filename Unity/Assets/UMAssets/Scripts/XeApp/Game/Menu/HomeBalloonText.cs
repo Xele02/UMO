@@ -63,13 +63,26 @@ namespace XeApp.Game.Menu
 		public bool isEntered { get { return m_inOutAnime.IsEnter; } } //0x956B24
 
 		// RVA: 0x956B50 Offset: 0x956B50 VA: 0x956B50
-		private void Start() { }
+		private void Start()
+		{
+			m_button.ClearOnClickCallback();
+			m_button.AddOnClickCallback(() =>
+			{
+				//0x957238
+				if (onClickButton != null)
+					onClickButton();
+			});
+			SetExistsItem(false);
+		}
 
 		// // RVA: 0x956C58 Offset: 0x956C58 VA: 0x956C58
 		// public void SetStyle(HomeBalloonText.Style style) { }
 
 		// // RVA: 0x956C24 Offset: 0x956C24 VA: 0x956C24
-		// public void SetExistsItem(bool existsItem) { }
+		public void SetExistsItem(bool existsItem)
+		{
+			m_iconOnOff.SetActive(existsItem);
+		}
 
 		// // RVA: 0x956D30 Offset: 0x956D30 VA: 0x956D30
 		// public void SetItemIcon(IiconTexture icon) { }
@@ -125,9 +138,5 @@ namespace XeApp.Game.Menu
 				return;
 			m_button.IsInputOff = true;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6E21AC Offset: 0x6E21AC VA: 0x6E21AC
-		// // RVA: 0x957238 Offset: 0x957238 VA: 0x957238
-		// private void <Start>b__19_0() { }
 	}
 }

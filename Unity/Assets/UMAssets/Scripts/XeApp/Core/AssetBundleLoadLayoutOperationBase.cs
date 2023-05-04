@@ -10,6 +10,7 @@ namespace XeApp.Core
         // RVA: 0xE0F9CC Offset: 0xE0F9CC VA: 0xE0F9CC
         public AssetBundleLoadLayoutOperationBase(string bundleName, string prefabName) : base (bundleName, prefabName, typeof(GameObject))
         {
+			return;
         }
 
         // RVA: -1 Offset: -1 Slot: 11

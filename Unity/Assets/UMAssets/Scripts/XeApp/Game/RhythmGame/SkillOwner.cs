@@ -5,9 +5,7 @@ using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
 {
-	public class SkillList : List<SkillBase>
-	{
-	}
+	public class SkillList : List<SkillBase> { }
 
 	public class SkillOwner
 	{

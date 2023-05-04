@@ -7,9 +7,7 @@ namespace XeApp.Game.Common
 	public class UGUIToggleButtonGroup : MonoBehaviour
 	{
 		[Serializable]
-		public class SelectButtonEvent : UnityEvent<int>
-		{
-		}
+		public class SelectButtonEvent : UnityEvent<int> { }
 
 		[SerializeField]
 		private short m_gropId; // 0xC

@@ -8,9 +8,7 @@ namespace XeApp.Game.Common
 {
 	public class SwapScrollList : LayoutUGUIScriptBase
 	{
-		public class SwapScrollUpdateItem : UnityEvent<int, SwapScrollListContent>
-		{
-		}
+		public class SwapScrollUpdateItem : UnityEvent<int, SwapScrollListContent> { }
 
 		[SerializeField]
 		private ScrollRect m_scrollRect; // 0x14

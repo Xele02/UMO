@@ -482,14 +482,6 @@ public class KDHGBOOECKC
 			for(int i = 0; i < JGPJCOCHJFJ.Count; i++)
 			{
 				TodoLogger.Log(0, "JPNPPIHOJFC");
-				/*OCMJNBIFJNM_Offer.JPOHOLBBFGP saveOffer = saveOffers[JGPJCOCHJFJ[i].OIPCCBHIKIA_Index];
-				if(saveOffer.EALOBDHOCHP_Stat == 2)
-				{
-					if (saveOffer.GBJFNGCDKPM_Type == 3)
-					{
-
-					}
-				}*/
 			}
 			BIFNGFAIEIL.HHCJCDFCLOB.DNKCCHCEPBH(false);
 		}

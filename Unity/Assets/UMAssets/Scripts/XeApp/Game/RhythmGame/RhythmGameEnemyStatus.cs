@@ -50,7 +50,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				return Mode.Goal;
 			}
-			return (currentValue < goalValue ? (subgoalValue <= currentValue ? Mode.Subgoal : Mode.Normal ) : Mode.Goal); } private set { } 
+			return (currentValue < goalValue ? (subgoalValue <= currentValue ? Mode.Subgoal : Mode.Normal ) : Mode.Goal); } private set { return; } 
 		} //0xDC3D04 0xDC3D2C
 
 		// RVA: 0xDC3D30 Offset: 0xDC3D30 VA: 0xDC3D30

@@ -12,13 +12,13 @@ using System.Text;
 public class GAMEENDEXCEPTION : Exception
 {
 	// RVA: 0x140098C Offset: 0x140098C VA: 0x140098C
-	public GAMEENDEXCEPTION() : base() { }
+	public GAMEENDEXCEPTION() : base() { return; }
 
 	// RVA: 0x1400A10 Offset: 0x1400A10 VA: 0x1400A10
-	public GAMEENDEXCEPTION(string message) : base(message) { }
+	public GAMEENDEXCEPTION(string message) : base(message) { return; }
 
 	// RVA: 0x1400A9C Offset: 0x1400A9C VA: 0x1400A9C
-	public GAMEENDEXCEPTION(string message, Exception inner) : base(message, inner) { }
+	public GAMEENDEXCEPTION(string message, Exception inner) : base(message, inner) { return; }
 }
 
 

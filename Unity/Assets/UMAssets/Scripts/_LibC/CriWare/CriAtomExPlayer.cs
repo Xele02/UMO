@@ -117,6 +117,7 @@ namespace ExternLib
         }
         public static void criAtomExPlayer_UpdateAll(IntPtr player)
         {
+			return;
         }
         public static void criAtomExPlayer_Set3dSourceHn(IntPtr player, IntPtr source)
         {
