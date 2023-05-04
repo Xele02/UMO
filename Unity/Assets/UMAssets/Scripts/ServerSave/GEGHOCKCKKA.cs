@@ -174,7 +174,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 			int a = limitedDb.OCMMLAOEPIG[PPFNGGCBJKC - 1].PENIOLJHIPK;
 			AIAPDPDOIKG data = ODHBHOGFNAA[a - 1];
 			int MinGet = int.MaxValue;
-			int MaxUid = int.MaxValue;
+			int MaxUid = int.MinValue;
 			int MinGetIdx = -1;
 			for(int i = 0; i < data.HFAHJPBLCHK; i++)
 			{

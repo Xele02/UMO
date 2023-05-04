@@ -183,16 +183,20 @@ public class CEDHHAGBIBA
 	}
 
 	// // RVA: 0x12B2994 Offset: 0x12B2994 VA: 0x12B2994
-	public static int OGPFNHOKONH(byte[] IFIKNDBPOKO)
+	public static int OGPFNHOKONH_GetNumBitActive(byte[] IFIKNDBPOKO)
 	{
 		int val = 0;
 		for(int i = 0; i < IFIKNDBPOKO.Length; i++)
 		{
-			int puVar1 = IFIKNDBPOKO[i];
-			int uVar3 = puVar1;
-			val = (int)((uVar3 & 1) + val + (uint)(puVar1 >> 7) - (uVar3 << 0x1e >> 0x1f) -
-				(uVar3 << 0x1d >> 0x1f) - (uVar3 << 0x1c >> 0x1f) -
-			  (uVar3 << 0x1b >> 0x1f) - (uVar3 << 0x1a >> 0x1f)) - (uVar3 << 0x19 >> 0x1f);
+			byte puVar1 = IFIKNDBPOKO[i];
+			val += (puVar1 >> 0 & 1)
+				+ ((puVar1 >> 1) & 1)
+				+ ((puVar1 >> 2) & 1)
+				+ ((puVar1 >> 3) & 1)
+				+ ((puVar1 >> 4) & 1)
+				+ ((puVar1 >> 5) & 1)
+				+ ((puVar1 >> 6) & 1)
+				+ ((puVar1 >> 7) & 1);
 		}
 		return val;
 	}

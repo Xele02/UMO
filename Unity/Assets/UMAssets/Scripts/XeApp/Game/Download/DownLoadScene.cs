@@ -72,7 +72,7 @@ namespace XeApp.Game.DownLoad
 				{
 					INAEAAJIJMF = 1;
 					DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo serverDiva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i];
-					if (serverDiva.CPGFPEDMDEH > 0)
+					if (serverDiva.CPGFPEDMDEH_Have > 0)
 					{
 						BJPLLEBHAGO_DivaInfo dbdiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[serverDiva.DIPKCALNIII_DivaId - 1];
 						freeMusicId = dbdiva.LIOGKHIGJKN_FreeMusicId;

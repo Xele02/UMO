@@ -459,7 +459,7 @@ public class GCIJNCFDNON_SceneInfo
 		MKHFCGPJPFI_LimitOverCount = BLHGJPIFKCL_Leaf;
 		MCOMAOELHOG_IsKira = 0;
 		JNNHIDMNBFG(OPFGFINHFCE_SceneName, BLHGJPIFKCL_Leaf);
-		CIEOBFIIPLD_SceneLevel = KBOLNIBLIND == null ? 1 : CEDHHAGBIBA.OGPFNHOKONH(KBOLNIBLIND);
+		CIEOBFIIPLD_SceneLevel = KBOLNIBLIND == null ? 1 : CEDHHAGBIBA.OGPFNHOKONH_GetNumBitActive(KBOLNIBLIND);
 		PFHJFIHGCKP_CenterSkillName1 = bank.GetMessageByLabel("c_nm_" + MEOOLHNNMHL_GetCenterSkillId(false, 0, 0).ToString("D4"));
 		EFELCLMJEOL_CenterSkillName2 = bank.GetMessageByLabel("c_nm_" + MEOOLHNNMHL_GetCenterSkillId(true, 0, 0).ToString("D4"));
 		ILCLGGPHHJO_ActiveSkillName = bank.GetMessageByLabel("a_nm_" + HGONFBDIBPM_ActiveSkillId.ToString("D4"));
@@ -598,7 +598,7 @@ public class GCIJNCFDNON_SceneInfo
 		}
 		else
 		{
-			CIEOBFIIPLD_SceneLevel = CEDHHAGBIBA.OGPFNHOKONH(KBOLNIBLIND) + 1;
+			CIEOBFIIPLD_SceneLevel = CEDHHAGBIBA.OGPFNHOKONH_GetNumBitActive(KBOLNIBLIND) + 1;
 			if (a != 0)
 			{
 				DDEDANKHHPN_SkillLevel = s.MGKDKGOACDB_GetSkillLevel(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board, KBOLNIBLIND);

@@ -866,7 +866,7 @@ public class BBHNACPENDM_ServerSaveData
 			for(int i = 0; i < DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
 			{
 				DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo dinfo = DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i];
-				if(dinfo.CPGFPEDMDEH != 0 && dinfo.KCCONFODCPN_IntimacyLevel == 40 && dinfo.BNDNNCHJGBB_IntimacyExp == 0)
+				if(dinfo.CPGFPEDMDEH_Have != 0 && dinfo.KCCONFODCPN_IntimacyLevel == 40 && dinfo.BNDNNCHJGBB_IntimacyExp == 0)
 				{
 					dinfo.BNDNNCHJGBB_IntimacyExp = exp;
 				}

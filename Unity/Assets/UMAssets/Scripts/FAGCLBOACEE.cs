@@ -64,7 +64,7 @@ public class FAGCLBOACEE
 	// public static List<FAGCLBOACEE> ECKKHOCALEE() { }
 
 	// // RVA: 0xFC2314 Offset: 0xFC2314 VA: 0xFC2314
-	public static List<FAGCLBOACEE> ICBFAFNOHIB(int IJEKNCDIIAE)
+	public static List<FAGCLBOACEE> ICBFAFNOHIB(int IJEKNCDIIAE_RegularMasterVersion)
 	{
 		List<FAGCLBOACEE> res = new List<FAGCLBOACEE>();
 		LPPGENBEECK_MusicMaster dbMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
@@ -78,7 +78,7 @@ public class FAGCLBOACEE
 				{
 					if(fData.IJEKNCDIIAE > 1)
 					{
-						if(IJEKNCDIIAE < fData.IJEKNCDIIAE)
+						if(IJEKNCDIIAE_RegularMasterVersion < fData.IJEKNCDIIAE)
 						{
 							int BPFBEOEFKMA = fData.GHBPLHBNMBK_FreeMusicId;
 							int idx = mList.FindIndex((LAEGMENIEDB_Story.ALGOILKGAAH GHPLINIACBB) =>

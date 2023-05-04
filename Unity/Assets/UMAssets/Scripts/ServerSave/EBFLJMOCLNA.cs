@@ -239,7 +239,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 				}
 				if(c.DAJGPBLEEOB_PrismCostumeModelId == 1)
 				{
-					if(DGCJCAHIAPP_SaveDiva.LGKFMLIOPKL_GetDivaInfo(c.AHHJLDLAPAN_PrismDivaId).CPGFPEDMDEH != 0)
+					if(DGCJCAHIAPP_SaveDiva.LGKFMLIOPKL_GetDivaInfo(c.AHHJLDLAPAN_PrismDivaId).CPGFPEDMDEH_Have != 0)
 					{
 						KBCBGIGOLHP(FABAGMLEKIB_List[i]);
 					}
@@ -444,7 +444,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 						DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo sDiva = sDivas.LGKFMLIOPKL_GetDivaInfo(MFPNGNMFEAL.EEOADCECNOM_GetCostumeInfo(PPFNGGCBJKC).AHHJLDLAPAN_PrismDivaId);
 						if (sDiva != null)
 						{
-							return sDiva.CPGFPEDMDEH == 1 ? 1 : 0;
+							return sDiva.CPGFPEDMDEH_Have == 1 ? 1 : 0;
 						}
 					}
 				}

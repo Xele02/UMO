@@ -10,7 +10,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 		private List<int> OJKHIMDICBI = new List<int>(CIEBPOLGCBC); // 0xC
 		private List<int> OGKFEBONAAP = new List<int>(CIEBPOLGCBC); // 0x10
 		private List<int> NBJLJHECGEF = new List<int>(NLKJKCPHOLP); // 0x14
-		public int CPGFPEDMDEH; // 0x30
+		public int CPGFPEDMDEH_Have; // 0x30
 		public int FBGGEFFJJHB = 0x8e; // 0x34
 		public int LFIEICOKCDE_IntimacyLevelCrypted; // 0x38
 		public int MJJEODANLKB_IntimacyExpCrypted; // 0x3C
@@ -81,7 +81,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 			AFNIOJHODAG_CostumeColorId = 0;
 			HPJMPINPKEP_HomeCostumeId = 0;
 			KKEPMONFGEI_HomeCostumeColorId = 0;
-			CPGFPEDMDEH = 0;
+			CPGFPEDMDEH_Have = 0;
 			FFMLBEEBHDD_EvChLevel = 0;
 			KCCONFODCPN_IntimacyLevel = 1;
 			BNDNNCHJGBB_IntimacyExp = 0;
@@ -120,7 +120,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 				AFNIOJHODAG_CostumeColorId != OIKJFMGEICL.AFNIOJHODAG_CostumeColorId ||
 				HPJMPINPKEP_HomeCostumeId != OIKJFMGEICL.HPJMPINPKEP_HomeCostumeId ||
 				KKEPMONFGEI_HomeCostumeColorId != OIKJFMGEICL.KKEPMONFGEI_HomeCostumeColorId ||
-				CPGFPEDMDEH != OIKJFMGEICL.CPGFPEDMDEH
+				CPGFPEDMDEH_Have != OIKJFMGEICL.CPGFPEDMDEH_Have
 				)
 				return false;
 			for(int i = 0; i < 300; i++)
@@ -150,7 +150,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 			AFNIOJHODAG_CostumeColorId = GPBJHKLFCEP.AFNIOJHODAG_CostumeColorId;
 			HPJMPINPKEP_HomeCostumeId = GPBJHKLFCEP.HPJMPINPKEP_HomeCostumeId;
 			KKEPMONFGEI_HomeCostumeColorId = GPBJHKLFCEP.KKEPMONFGEI_HomeCostumeColorId;
-			CPGFPEDMDEH = GPBJHKLFCEP.CPGFPEDMDEH;
+			CPGFPEDMDEH_Have = GPBJHKLFCEP.CPGFPEDMDEH_Have;
 			KCCONFODCPN_IntimacyLevel = GPBJHKLFCEP.KCCONFODCPN_IntimacyLevel;
 			BNDNNCHJGBB_IntimacyExp = GPBJHKLFCEP.BNDNNCHJGBB_IntimacyExp;
 			JLEPLIHFPKD_IntimacySkillLevel = GPBJHKLFCEP.JLEPLIHFPKD_IntimacySkillLevel;
@@ -292,7 +292,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 			data2["c_col"] = d.AFNIOJHODAG_CostumeColorId;
 			data2[AFEHLCGHAEE_Strings.JJLLJCEJENB_h_c_id] = d.HPJMPINPKEP_HomeCostumeId;
 			data2[AFEHLCGHAEE_Strings.FEDBLJNOCIH_h_c_col] = d.KKEPMONFGEI_HomeCostumeColorId;
-			data2[AFEHLCGHAEE_Strings.CPGFPEDMDEH_have] = d.CPGFPEDMDEH;
+			data2[AFEHLCGHAEE_Strings.CPGFPEDMDEH_have] = d.CPGFPEDMDEH_Have;
 			data2["intm_lv"] = d.KCCONFODCPN_IntimacyLevel;
 			data2["intm_exp"] = d.BNDNNCHJGBB_IntimacyExp;
 			data2["intm_skill_lv"] = d.JLEPLIHFPKD_IntimacySkillLevel;
@@ -377,6 +377,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 							info.KKEPMONFGEI_HomeCostumeColorId = 0;
 						}
 					}
+					info.CPGFPEDMDEH_Have = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.CPGFPEDMDEH_have, 0, ref isInvalid);
 					IBCGPBOGOGP_ReadIntArray(subData, AFEHLCGHAEE_Strings.ANAJIAENLNB_lv, 0, 300, (int OIPCCBHIKIA, int JBGEEPFKIGG) =>
 					{
 						//0x197B738

@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 					}
 					if(dbCostume.DAJGPBLEEOB_PrismCostumeModelId == 1 || saveCostume.CGKAEMGLHNK_Possessed())
 					{
-						if(a_player_data.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(dbCostume.AHHJLDLAPAN_PrismDivaId).CPGFPEDMDEH != 0)
+						if(a_player_data.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(dbCostume.AHHJLDLAPAN_PrismDivaId).CPGFPEDMDEH_Have != 0)
 						{
 							//LAB_00de38f4
 							m_costume_now_array[0]++;

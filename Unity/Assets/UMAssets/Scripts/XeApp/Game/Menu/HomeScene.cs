@@ -1226,12 +1226,16 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x978C38 Offset: 0x978C38 VA: 0x978C38
 		private void CheckSnsNotice()
 		{
+			if (!BIFNGFAIEIL.HHCJCDFCLOB.DNFPMBFNDCA())
+				return;
 			TodoLogger.Log(0, "CheckSnsNotice");
 		}
 
 		// // RVA: 0x978E2C Offset: 0x978E2C VA: 0x978E2C
 		private void CheckOfferNotice()
 		{
+			if (KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.OAFPGJLCNFM_Cond == 0)
+				return;
 			TodoLogger.Log(0, "CheckOfferNotice");
 		}
 

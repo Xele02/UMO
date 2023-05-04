@@ -113,11 +113,13 @@ public class JDDGPJDKHNE
 			LGCNNIKLFFN(KAPMOPMDHJE,JIBNPJCIALH);
 			return;
 		}
+		TodoLogger.Log(TodoLogger.UMOSkip, "Skip log event");
+		return;
 		GBAMMLEAIOF a = new GBAMMLEAIOF();
 		a.KHEKNNFCAOI_Init(KAPMOPMDHJE,JIBNPJCIALH, LAFGAPBDKML);
 		if(a.EJJEHEHFMGO.Length < 64001)
 		{
-			if(!FOIGCFNFPOB)
+			if (!FOIGCFNFPOB)
 			{
 				DAOEKHGKJOD_EventToSendQueue.Add(a);
 				return;

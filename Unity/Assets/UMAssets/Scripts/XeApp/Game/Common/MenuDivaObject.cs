@@ -38,7 +38,7 @@ namespace XeApp.Game.Common
 
 		//public MenuDivaGazeControl.Data GazeControlData { get; } 0x110F3C8
 		protected override bool useQualitySetting { get { return false; } } //0x110F3D0
-		public bool IsIdleAnim { get { return animator.GetCurrentAnimatorStateInfo(0).shortNameHash == IdleHash; } private set { return; } } //0x1112268 0x111237C
+		public bool IsIdleAnim { get { return animator.GetCurrentAnimatorStateInfo(0).fullPathHash == IdleHash; } private set { return; } } //0x1112268 0x111237C
 		//public bool IsFacialIdelAnim { get; private set; } 0x1112380 0x1112564
 		public bool IsInTransition { get { return animator.IsInTransition(0); } } //0x1112568
 		public bool IsInFacialTransition { get { return facialBlendAnimMediator.selfAnimator.IsInTransition(0) || facialBlendAnimMediator.selfAnimator.IsInTransition(1); } } //0x1112598

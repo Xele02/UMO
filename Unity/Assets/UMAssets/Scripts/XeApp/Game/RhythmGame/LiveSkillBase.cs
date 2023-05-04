@@ -12,9 +12,9 @@ namespace XeApp.Game.RhythmGame
 		public int skillType { get { return masterSkill.FLJHGGKIOJH_SkillType; } } //0xF76E68
 		public override SkillBuffEffect.Type buffEffectType { get { return (SkillBuffEffect.Type)masterSkill.EGLDFPILJLG_SkillBuffEffect[SkillIndex]; } } //0xF76E90  Slot: 4
 		public override int buffEffectValue { get { return CalcEffectValueUp(baseBuffEffectValue); } } //0xF76EF4  Slot: 5
-		public int baseBuffEffectValue { get { return masterSkill.NKGHBKFMFCI_BuffValueByIndexAndLevel[SkillIndex, skillLevelIndex]; } } //0xF76F18 
+		public int baseBuffEffectValue { get { return masterSkill.NKGHBKFMFCI_BuffValueByIndexAndLevel[skillLevelIndex, SkillIndex]; } } //0xF76F18 
 		public override SkillDuration.Type durationType { get { return (SkillDuration.Type)masterSkill.FPMFEKIPFPI_DurationType[SkillIndex]; } } //0xF76FB4 Slot: 6
-		public override int durationValue { get { return masterSkill.PHAGNOHBMCM_DurationByIndexAndLevel[SkillIndex, skillLevelIndex]; } } //0xF77018 Slot: 7
+		public override int durationValue { get { return masterSkill.PHAGNOHBMCM_DurationByIndexAndLevel[skillLevelIndex, SkillIndex]; } } //0xF77018 Slot: 7
 		public override int lineTarget { get { return masterSkill.JGDJACOPHJP_LineTarget; } } //0xF770B4 Slot: 8
 		public int targetSkillType { get { return masterSkill.DPGDCJFBFGK_TargetSkillType; } } //0xF770DC
 		public int targetSkillEffectId { get { return masterSkill.POMLAENHCHA_TargetSkillEffectId; } } //0xF76E1C

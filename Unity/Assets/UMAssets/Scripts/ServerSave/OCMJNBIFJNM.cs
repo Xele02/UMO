@@ -486,18 +486,18 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 						data.BDJMFDKLHPM_SId = FGCNMLBACGO_ReadString(b2, AFEHLCGHAEE_Strings.BDJMFDKLHPM_s_id, "", ref isInvalid);
 					}
 				}
-				LJPLPIOJCNK_LastShowAt = DKMPHAPBDLH_ReadLong(b, AFEHLCGHAEE_Strings.NAIMIHBNPPC_last_show_at, 0, ref isInvalid);
-				JKIFLFKFHPB_LastAddAt = DKMPHAPBDLH_ReadLong(b, AFEHLCGHAEE_Strings.LAKMJONILFH_last_add_at, 0, ref isInvalid);
-				KPAJEAHFPFH_FastCmp = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.JKPPLHLMPJC_fast_cmp, 0, ref isInvalid);
-				EAINJDPLIAG_FastCmpDt = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.AICBBOHEIMG_fast_cmp_dt, 0, ref isInvalid);
-				JLFONLABECA_ShowTuto = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.LKNKFAPHLOH_show_tuto, 0, ref isInvalid);
-				JNIGHEHKAHG_DvPow = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.GABEIDONLNE_dv_pow, 0, ref isInvalid);
-				DFCFJMOLIOC_Cat = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.DMEDKJPOLCH_cat, 0, ref isInvalid);
+				LJPLPIOJCNK_LastShowAt = DKMPHAPBDLH_ReadLong(block, AFEHLCGHAEE_Strings.NAIMIHBNPPC_last_show_at, 0, ref isInvalid);
+				JKIFLFKFHPB_LastAddAt = DKMPHAPBDLH_ReadLong(block, AFEHLCGHAEE_Strings.LAKMJONILFH_last_add_at, 0, ref isInvalid);
+				KPAJEAHFPFH_FastCmp = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.JKPPLHLMPJC_fast_cmp, 0, ref isInvalid);
+				EAINJDPLIAG_FastCmpDt = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.AICBBOHEIMG_fast_cmp_dt, 0, ref isInvalid);
+				JLFONLABECA_ShowTuto = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.LKNKFAPHLOH_show_tuto, 0, ref isInvalid);
+				JNIGHEHKAHG_DvPow = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.GABEIDONLNE_dv_pow, 0, ref isInvalid);
+				DFCFJMOLIOC_Cat = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.DMEDKJPOLCH_cat, 0, ref isInvalid);
 				for (int i = 0; i < NEGDGHKOFFF_VFp.Count; i++)
 				{
-					if (b.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.PMKIBGEHGON_vfp))
+					if (block.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.PMKIBGEHGON_vfp))
 					{
-						EDOHBJAPLPF_JsonData b2 = b[AFEHLCGHAEE_Strings.PMKIBGEHGON_vfp][i];
+						EDOHBJAPLPF_JsonData b2 = block[AFEHLCGHAEE_Strings.PMKIBGEHGON_vfp][i];
 						PMOECIDOLNA data = NEGDGHKOFFF_VFp[i];
 						LGHIPHEDCNC_Offer offerDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer;
 						string str = offerDb.EFEGBHACJAL("default_vf_platoon_name", JpStringLiterals.StringLiteral_12943);
@@ -508,14 +508,14 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 						}, ref isInvalid);
 					}
 				}
-				GHKKEFGDIBC_LastVfpUnlock = CJAENOMGPDA_ReadInt(b, "last_vfp_unlock", 0, ref isInvalid);
-				CHFMCFNEFEO_LastVopDailyLv = CJAENOMGPDA_ReadInt(b, "last_vop_daily_lv", 0, ref isInvalid);
-				IBCGPBOGOGP_ReadIntArray(b, "last_vop_diva_lv", 0, 10, (int OIPCCBHIKIA, int JBGEEPFKIGG) =>
+				GHKKEFGDIBC_LastVfpUnlock = CJAENOMGPDA_ReadInt(block, "last_vfp_unlock", 0, ref isInvalid);
+				CHFMCFNEFEO_LastVopDailyLv = CJAENOMGPDA_ReadInt(block, "last_vop_daily_lv", 0, ref isInvalid);
+				IBCGPBOGOGP_ReadIntArray(block, "last_vop_diva_lv", 0, 10, (int OIPCCBHIKIA, int JBGEEPFKIGG) =>
 				{
 					//0x1B373C8
 					ALANKFMEIPK(OIPCCBHIKIA, JBGEEPFKIGG);
 				}, ref isInvalid);
-				KNIKMMKNOFA_ARcv = CJAENOMGPDA_ReadInt(b, "a_rcv", 0, ref isInvalid);
+				KNIKMMKNOFA_ARcv = CJAENOMGPDA_ReadInt(block, "a_rcv", 0, ref isInvalid);
 			}
 			KFKDMBPNLJK_BlockInvalid = isInvalid;
 			return true;

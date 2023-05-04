@@ -517,11 +517,21 @@ namespace XeApp.Game.Menu
 			m_unitToggleButtonGroupObj.blocksRaycasts = true;
 			if (!musicData.DBIGDCOHOIC_IsMultiDanceUnlocked())
 			{
-				TodoLogger.Log(0, "ShowUnitDanceButton for locked");
+				m_unitToggleButtonGroupObj.alpha = musicData.HAMPEDFMIAD_HasOnlyMultiDivaMode() ? 1 : 0;
+				m_unitToggleButtonGroupObj.blocksRaycasts = false;
+				for(int i = 0; i < m_unitToggleButton.Length; i++)
+				{
+					m_unitToggleButton[i].SetOff();
+				}
 			}
 			else if (isMusicLock)
 			{
-				TodoLogger.Log(0, "ShowUnitDanceButton for isMusicLock");
+				m_unitToggleButtonGroupObj.alpha = 1;
+				m_unitToggleButtonGroupObj.blocksRaycasts = false;
+				for(int i = 0; i < m_unitToggleButton.Length; i++)
+				{
+					m_unitToggleButton[i].SetOff();
+				}
 			}
 			else
 			{

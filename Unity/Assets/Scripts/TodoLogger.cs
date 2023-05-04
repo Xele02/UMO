@@ -32,6 +32,7 @@ public static class TodoLogger
 	public static int Java = _NonVisible;
 	public static int WebRequest = _NonVisible;
 	public static int OptimizedSave = _NonVisible;
+	public static int UMOSkip = _NonVisible;
 
 	// Need to implement at some point
 	public static int _Todo = 99999999;

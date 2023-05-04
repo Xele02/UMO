@@ -44,7 +44,7 @@ public class CGFNKMNBNBN
 		List<DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo> listDiva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList;
 		for (int i = 0; i < listDiva.Count; i++)
 		{
-			if(listDiva[i].DIPKCALNIII_DivaId != HILIKOLBGEJ && listDiva[i].CPGFPEDMDEH == 1)
+			if(listDiva[i].DIPKCALNIII_DivaId != HILIKOLBGEJ && listDiva[i].CPGFPEDMDEH_Have == 1)
 			{
 				BJPLLEBHAGO_DivaInfo dbDiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[listDiva[i].DIPKCALNIII_DivaId - 1];
 				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.POCPLFJCHDD_HomeBg[dbDiva.CMBCBNEODPD_HomeBgId - 1].BEBJKJKBOGH_Date == 0)

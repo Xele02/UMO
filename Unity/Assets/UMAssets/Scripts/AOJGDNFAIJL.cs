@@ -280,7 +280,7 @@ public class AOJGDNFAIJL_PrismData
             }
             foreach(DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo a in LDEGEHAEALK_Save.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList)
             {
-                if(/*RuntimeSettings.CurrentSettings.ForceDivaUnlock || */a.CPGFPEDMDEH == 1)
+                if(/*RuntimeSettings.CurrentSettings.ForceDivaUnlock || */a.CPGFPEDMDEH_Have == 1)
                 {
                     AOJGDNFAIJL_PrismData.LLHDHKLACJA_SelectDivaInfo data2 = new AOJGDNFAIJL_PrismData.LLHDHKLACJA_SelectDivaInfo();
                     data2.PPFNGGCBJKC_Id = a.DIPKCALNIII_DivaId;

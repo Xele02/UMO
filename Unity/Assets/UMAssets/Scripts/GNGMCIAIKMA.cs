@@ -870,7 +870,7 @@ public class GNGMCIAIKMA
 						int res = 0;
 						for (int i = 0; i < LDEGEHAEALK.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
 						{
-							if (LDEGEHAEALK.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH != 0 &&
+							if (LDEGEHAEALK.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_Have != 0 &&
 								LDEGEHAEALK.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].HEBKEJBDCBH_DivaLevel > res)
 								res = LDEGEHAEALK.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].HEBKEJBDCBH_DivaLevel;
 						}
@@ -938,7 +938,7 @@ public class GNGMCIAIKMA
 					for(int i = 0; i < 10; i++)
 					{
 						DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo divaInfo = LDEGEHAEALK.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(i + 1);
-						if (divaInfo.CPGFPEDMDEH == 1 && divaInfo.KCCONFODCPN_IntimacyLevel > res)
+						if (divaInfo.CPGFPEDMDEH_Have == 1 && divaInfo.KCCONFODCPN_IntimacyLevel > res)
 							res = divaInfo.KCCONFODCPN_IntimacyLevel;
 					}
 					return res;
@@ -948,7 +948,7 @@ public class GNGMCIAIKMA
 					if(CHOFDPDFPDC < 11)
 					{
 						DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo divaInfo = LDEGEHAEALK.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(CHOFDPDFPDC);
-						if (divaInfo.CPGFPEDMDEH == 1)
+						if (divaInfo.CPGFPEDMDEH_Have == 1)
 							return divaInfo.KCCONFODCPN_IntimacyLevel;
 					}
 				}
@@ -984,7 +984,7 @@ public class GNGMCIAIKMA
 					List<DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo> l = LDEGEHAEALK.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.FindAll((DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo JPAEDJJFFOI) =>
 					{
 						//0x1E52FE4
-						return JPAEDJJFFOI.CPGFPEDMDEH == 1;
+						return JPAEDJJFFOI.CPGFPEDMDEH_Have == 1;
 					});
 					int c = 0;
 					if(b > 0)

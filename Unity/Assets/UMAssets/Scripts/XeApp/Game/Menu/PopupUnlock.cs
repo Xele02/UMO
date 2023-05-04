@@ -243,7 +243,7 @@ namespace XeApp.Game.Menu
 					return;
 				case eSceneType.FreeMusicSelect1:
 					{
-						int level = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+						int level = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.LCDLKPOLHHJ_GetAddRegularMusicVer();
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MMPPEHPKGLI_AddRegularMusicMVer = DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
 						SetViewData(eSceneType.FreeMusicSelect1, FAGCLBOACEE.ICBFAFNOHIB(level));
 						SetViewData(eSceneType.FreeMusicSelect1, FAGCLBOACEE.MLHMCCLKALG());
