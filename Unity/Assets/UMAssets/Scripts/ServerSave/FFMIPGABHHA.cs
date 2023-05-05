@@ -9,10 +9,10 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	public const long BBEGLBMOBOF = 0x77ccefaa9;
 	public static string POFDDFCGEGP = "_"; // 0x0
 	public string IOIMHJAOKOO_Hash; // 0x24
-	private long KLAPHOKNEDG_Time; // 0x28
+	private long KLAPHOKNEDG_TimeCrypted; // 0x28
 	public long AFNJCFEKFDD_Dirty; // 0x30
 
-	public long BEBJKJKBOGH_Time { get { return KLAPHOKNEDG_Time ^ BBEGLBMOBOF; } set { KLAPHOKNEDG_Time = value ^ BBEGLBMOBOF; } } //DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
+	public long BEBJKJKBOGH_Time { get { return KLAPHOKNEDG_TimeCrypted ^ BBEGLBMOBOF; } set { KLAPHOKNEDG_TimeCrypted = value ^ BBEGLBMOBOF; } } //DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
 	public override bool DMICHEJIAJL { get { return true; } } // 0x14E5A68 NFKFOODCJJB
 
 	// // RVA: 0x14E4BBC Offset: 0x14E4BBC VA: 0x14E4BBC
@@ -50,7 +50,7 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 		data[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
 		data[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 2;
 		data["hash"] = IOIMHJAOKOO_Hash;
-		data["date"] = KLAPHOKNEDG_Time;
+		data["date"] = BEBJKJKBOGH_Time;
 		data["dirty"] = AFNJCFEKFDD_Dirty;
 		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 	}

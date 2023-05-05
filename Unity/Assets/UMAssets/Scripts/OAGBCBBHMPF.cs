@@ -23,7 +23,7 @@ public class OAGBCBBHMPF
         HGOGFPOCKFA = 17,
         BBDKHAMANCB = 18,
         AMBIOHGPBNH = 19,
-        EEPIDKPPLJI = 20,
+        EEPIDKPPLJI_ValkyrieChange = 20,
         PNMJDKOLGEG = 21,
         EBLJKIOEELA = 22,
         PGHFPIMIOKE = 23,

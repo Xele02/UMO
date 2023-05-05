@@ -624,7 +624,30 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA7D9D0 Offset: 0xA7D9D0 VA: 0xA7D9D0
 		private void SetSubPlateParam()
 		{
-			TodoLogger.Log(0, "SetSubPlateParam");
+			string hexa = "#" + m_normalColorCode.HexStringRGBA();
+			int[] a = new int[4]
+			{
+				SubPlateResult.CMCKNKKCNDK.Total,
+				SubPlateResult.CMCKNKKCNDK.soul,
+				SubPlateResult.CMCKNKKCNDK.vocal,
+				SubPlateResult.CMCKNKKCNDK.charm
+			};
+			int d = 0;
+			for (int i = 1; i < 4; i++)
+			{
+				int c = SubPlateResult.KOGBMDOONFA[i - 1, 0].IKEJLHJEANO - 1;
+				d |= (c + 1);
+				m_subStatus[i].Set(Mathf.Min(a[i], 999999).ToString(), false, (c > 0 && c < 3) && (c & 1) == 0, (c > 0 && c < 3) && (((6 >> (c & 7)) & 1) != 0), hexa);
+			}
+			if(d < 1)
+			{
+				m_subStatus[0].Set(Mathf.Min(a[0], 999999).ToString(), false, false, false, hexa);
+			}
+			else
+			{
+				int c = d - 1;
+				m_subStatus[0].Set(Mathf.Min(a[0], 999999).ToString(), false, (c > 0 && c < 3) && (c & 1) == 0, (c > 0 && c < 3) && (((6 >> (c & 7)) & 1) != 0), hexa);
+			}
 		}
 
 		//// RVA: 0xA7D604 Offset: 0xA7D604 VA: 0xA7D604

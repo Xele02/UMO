@@ -1642,16 +1642,16 @@ namespace XeApp.Game.Menu
 						{
 							if ((data.AONOGHPAENH_filterMusicUnLock & 1) == 0 || (data.AONOGHPAENH_filterMusicUnLock & 2) == 0)
 								return false;
-							bool res = data.ALGFGPCPGFK_filterRange == 0 || ((int)musicListData.TimeType & data.ALGFGPCPGFK_filterRange) == 0;
-							if((data.ALGFGPCPGFK_filterRange & 2) != 0)
-							{
-								if (musicListData.TimeType == MusicSelectConsts.MusicTimeType.Short)
-									res = true;
-							}
-							return res;
 						}
+						bool res = data.ALGFGPCPGFK_filterRange == 0 || ((int)musicListData.TimeType & data.ALGFGPCPGFK_filterRange) == 0;
+						if ((data.ALGFGPCPGFK_filterRange & 2) != 0)
+						{
+							res |= musicListData.TimeType == MusicSelectConsts.MusicTimeType.Short;
+						}
+						return res;
 					}
 				}
+				return false;
 			}
 			return true;
 		}
@@ -1659,6 +1659,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEF1E8 Offset: 0xBEF1E8 VA: 0xBEF1E8
 		private bool CheckMusicFilter_Series(int series, IBJAKJJICBC musicData)
 		{
+			if (series == 0)
+				return true;
 			return musicData.AIHCEGFANAM_Serie == series;
 		}
 

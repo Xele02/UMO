@@ -347,11 +347,11 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 						{
 							EDOHBJAPLPF_JsonData b2 = b[j];
 							data.PJADHDHKOEJ[j].PGPGPJNBIOH_Uid = CJAENOMGPDA_ReadInt(b2, "uid", 0, ref isInvalid);
-							data.PJADHDHKOEJ[i].PPFNGGCBJKC_Id = CJAENOMGPDA_ReadInt(b2, "id", 0, ref isInvalid);
-							data.PJADHDHKOEJ[i].DIAPHCJBPFD_Get = CJAENOMGPDA_ReadInt(b2, "get", 0, ref isInvalid);
-							data.PJADHDHKOEJ[i].IOLJPHAOBOH_Use = CJAENOMGPDA_ReadInt(b2, "use", 0, ref isInvalid);
-							data.PJADHDHKOEJ[i].DOJDOLDDBPP_Hav = CJAENOMGPDA_ReadInt(b2, "hav", 0, ref isInvalid);
-							data.NPNNEDINOKC[i].ODDIHGPONFL(data.PJADHDHKOEJ[i]);
+							data.PJADHDHKOEJ[j].PPFNGGCBJKC_Id = CJAENOMGPDA_ReadInt(b2, "id", 0, ref isInvalid);
+							data.PJADHDHKOEJ[j].DIAPHCJBPFD_Get = CJAENOMGPDA_ReadInt(b2, "get", 0, ref isInvalid);
+							data.PJADHDHKOEJ[j].IOLJPHAOBOH_Use = CJAENOMGPDA_ReadInt(b2, "use", 0, ref isInvalid);
+							data.PJADHDHKOEJ[j].DOJDOLDDBPP_Hav = CJAENOMGPDA_ReadInt(b2, "hav", 0, ref isInvalid);
+							data.NPNNEDINOKC[j].ODDIHGPONFL(data.PJADHDHKOEJ[j]);
 						}
 					}
 				}

@@ -16,7 +16,14 @@ public struct CFHDKAFLNEP
 		public bool KPNDMALAOKC; // 0x1D
 		public bool OGHIOHAACIB; // 0x1E
 
-		//public int IKEJLHJEANO { get; } 0x7FC5B8
+		public int IKEJLHJEANO { get {
+				int res = 3;
+				if (!LHFPLDHBAAN)
+					res = 2;
+				if (!KPNDMALAOKC)
+					res = LHFPLDHBAAN ? 1 : 0;
+				return res;
+			} } //0x7FC5B8
 		//public bool CDOCOLOKCJK { get; } 0x7FC5D8
 		//public bool DFIGPDCBAPB { get; } 0x7FC5EC
 

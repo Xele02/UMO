@@ -88,10 +88,10 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 			for(int i = 0; i < BEGCHDHHEKC_DailyQuests.Count; i++)
 			{
 				EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
-				data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = GPMKFMFEKLN_NormalQuests[i].PPFNGGCBJKC_Id;
-				data3[AFEHLCGHAEE_Strings.EALOBDHOCHP_stat] = GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat;
-				data3[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = GPMKFMFEKLN_NormalQuests[i].BEBJKJKBOGH_Date;
-				data3[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New ? 1 : 0;
+				data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = BEGCHDHHEKC_DailyQuests[i].PPFNGGCBJKC_Id;
+				data3[AFEHLCGHAEE_Strings.EALOBDHOCHP_stat] = BEGCHDHHEKC_DailyQuests[i].EALOBDHOCHP_Stat;
+				data3[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = BEGCHDHHEKC_DailyQuests[i].BEBJKJKBOGH_Date;
+				data3[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = BEGCHDHHEKC_DailyQuests[i].CADENLBDAEB_New ? 1 : 0;
 				data2[POFDDFCGEGP + (i + 1)] = data3;
 			}
 			data[AFEHLCGHAEE_Strings.EJFAEKPGKNJ_daily] = data2;

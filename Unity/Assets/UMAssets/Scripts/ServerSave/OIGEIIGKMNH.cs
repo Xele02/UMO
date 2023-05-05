@@ -211,9 +211,9 @@ public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 				for(int i = 0; i < valkList.Count; i++)
 				{
 					string key = POFDDFCGEGP + (i + 1);
-					if (OILEIIEIBHP.BBAJPINMOEP_Contains(key))
+					if (data.BBAJPINMOEP_Contains(key))
 					{
-						EDOHBJAPLPF_JsonData info = OILEIIEIBHP[key];
+						EDOHBJAPLPF_JsonData info = data[key];
 						CNGNBKNBKGI_ValkList[i].FODKKJIDDKN_Id = i + 1;
 						CNGNBKNBKGI_ValkList[i].CADENLBDAEB_New = CJAENOMGPDA_ReadInt(info, AFEHLCGHAEE_Strings.KLJGEHBKMMG_new/*new*/, 0, ref isInvalid) != 0;
 						CNGNBKNBKGI_ValkList[i].BEBJKJKBOGH_Date = CJAENOMGPDA_ReadInt(info, AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date/*date*/, 0, ref isInvalid);

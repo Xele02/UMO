@@ -907,6 +907,7 @@ public static class CMMKCEPBIHI
 									int d = HDLKMMHKOKE[j].Invoke(st2);
 									e += d;
 									c |= d > 0;
+									TodoLogger.Log(TodoLogger.ToCheck, "Check val");
 									g |= d < 0; // ??
 								}
 							}

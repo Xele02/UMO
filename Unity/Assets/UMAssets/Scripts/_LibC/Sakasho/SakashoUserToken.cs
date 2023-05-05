@@ -22,32 +22,40 @@ namespace ExternLib
 
 		static AccountData playerAccount;
 
-		public static void SaveAccountServerData()
+		public static void SerializeServerSave(BBHNACPENDM_ServerSaveData serverData, EDOHBJAPLPF_JsonData jsonRes)
 		{
-			if (playerAccount == null)
-				return;
-			/*EDOHBJAPLPF_JsonData jsonData = new EDOHBJAPLPF_JsonData();
-			for (int i = 0; i < playerAccount.serverData.MGJKEJHEBPO_Blocks.Count; i++)
+			for (int i = 0; i < serverData.MGJKEJHEBPO_Blocks.Count; i++)
 			{
-				playerAccount.serverData.MGJKEJHEBPO_Blocks[i].OKJPIBHMKMJ(jsonData, playerAccount.serverData.MGJKEJHEBPO_Blocks[i].FJMOAAPNCJI_SaveId);
-			}*/
+				serverData.MGJKEJHEBPO_Blocks[i].OKJPIBHMKMJ(jsonRes, serverData.MGJKEJHEBPO_Blocks[i].FJMOAAPNCJI_SaveId);
+			}
+		}
+
+		public static void SaveAccountServerData(EDOHBJAPLPF_JsonData data, int userId, string fileName)
+		{
 			KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
 			writer.GALFODHMEOL_PrettyPrint = true;
-			playerAccount.serverData.EJCOJCGIBNG_ToJson(writer);
+			data.EJCOJCGIBNG_ToJson(writer);
 			string saveData = writer.ToString();
 
-			string path = Application.persistentDataPath + "/Profiles/" + playerAccount.userId.ToString();
-			if(!Directory.Exists(path))
+			string path = Application.persistentDataPath + "/Profiles/" + userId.ToString();
+			if (!Directory.Exists(path))
 				Directory.CreateDirectory(path);
 
-			path += "/data.json";
+			path += "/" + fileName;
 			File.WriteAllText(path, saveData);
 			UnityEngine.Debug.LogError("saved server data " + path);
 		}
 
+		public static void SaveAccountServerData()
+		{
+			if (playerAccount == null)
+				return;
+
+			SaveAccountServerData(playerAccount.serverData, playerAccount.userId, "data.json");
+		}
+
 		public static void LoadAccountServerData()
 		{
-			return; // for now for a new profile to config the full unlock profile
 			if (playerAccount == null)
 				return;
 			string path = Application.persistentDataPath + "/Profiles/" + playerAccount.userId.ToString() + "/data.json";

@@ -688,7 +688,11 @@ public class ILCCJNDFFOB
 	// // RVA: 0x9036DC Offset: 0x9036DC VA: 0x9036DC
 	public void EEPIDKPPLJI(int AFNCFEMDJNP, int FDMAECAPKDF)
 	{
-		TodoLogger.Log(0, "EEPIDKPPLJI");
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(data, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		data["bf_valkyrie"] = AFNCFEMDJNP;
+		data["af_valkyrie"] = FDMAECAPKDF;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.EEPIDKPPLJI_ValkyrieChange/*20*/, data, false);
 	}
 
 	// // RVA: 0x9039C4 Offset: 0x9039C4 VA: 0x9039C4
