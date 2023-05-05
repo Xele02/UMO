@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -33,6 +35,24 @@ namespace XeApp.Game.Menu
 		// public void Show(PopupFilterSortUGUI.Scene a_type, UnityAction<PopupFilterSortUGUI> okCallBack, Action endCallBack, bool a_is_save = True) { }
 
 		// // RVA: 0x179E654 Offset: 0x179E654 VA: 0x179E654
-		// public void Show(PopupFilterSortUGUIInitParam a_init_param, UnityAction<PopupFilterSortUGUI> okCallBack, Action endCallBack) { }
+		public void Show(PopupFilterSortUGUIInitParam a_init_param, UnityAction<PopupFilterSortUGUI> okCallBack, Action endCallBack)
+		{
+			m_settingUGUI.Initialize(a_init_param, "");
+			PopupWindowManager.Show(m_settingUGUI, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x179EA08
+				if(type == PopupButton.ButtonType.Positive)
+				{
+					PopupFilterSortUGUI c = control.Content as PopupFilterSortUGUI;
+					c.Fainalize();
+					if(m_settingUGUI.m_param.EnableSave)
+					{
+						GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					}
+					if (okCallBack != null)
+						okCallBack(c);
+				}
+			}, null, null, true, true, false, null, endCallBack);
+		}
 	}
 }

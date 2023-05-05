@@ -868,7 +868,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32208 Offset: 0xB32208 VA: 0xB32208
-		// public TransitionRoot GetCurrentTransitionRoot() { }
+		public TransitionRoot GetCurrentTransitionRoot()
+		{
+			return m_menuTransitionControl.GetCurrentTransitionRoot();
+		}
 
 		// // RVA: 0xB32234 Offset: 0xB32234 VA: 0xB32234
 		public TransitionInfo GetNextScene()
@@ -1025,7 +1028,10 @@ namespace XeApp.Game.Menu
 		// public void ShowSortWindow(PopupFilterSortUGUI.Scene a_type, UnityAction<PopupFilterSortUGUI> okCallBack, Action endCallBack, bool a_is_save = True) { }
 
 		// // RVA: 0xB32DC4 Offset: 0xB32DC4 VA: 0xB32DC4
-		// public void ShowSortWindow(PopupFilterSortUGUIInitParam a_init_param, UnityAction<PopupFilterSortUGUI> okCallBack, Action endCallBack) { }
+		public void ShowSortWindow(PopupFilterSortUGUIInitParam a_init_param, UnityAction<PopupFilterSortUGUI> okCallBack, Action endCallBack)
+		{
+			m_popupFilterSortWindowContrl.Show(a_init_param, okCallBack, endCallBack);
+		}
 
 		// // RVA: 0xB32E14 Offset: 0xB32E14 VA: 0xB32E14
 		// public void ShowItemListWindow(PopupItemList.ItemType type, bool isTab = False) { }

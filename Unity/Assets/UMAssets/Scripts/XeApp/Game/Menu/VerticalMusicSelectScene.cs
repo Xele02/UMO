@@ -295,7 +295,7 @@ namespace XeApp.Game.Menu
 			m_filterButton.OnClickButtonListener = () =>
 			{
 				//0xBF0390
-				TodoLogger.LogNotImplemented("m_filterButton OnClickButtonListener");
+				OnClickFilterButton();
 			};
 			m_seriesButtonGroup.OnButtonClickListener = (int index) =>
 			{
@@ -1624,7 +1624,19 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBEEC50 Offset: 0xBEEC50 VA: 0xBEEC50
-		// private void OnClickFilterButton() { }
+		private void OnClickFilterButton()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			GameManager.Instance.CloseSnsNotice();
+			GameManager.Instance.CloseOfferNotice();
+			PopupFilterSortUGUIInitParam p = new PopupFilterSortUGUIInitParam();
+			p.SetVerticalMusicSelectParam(series, true);
+			MenuScene.Instance.ShowSortWindow(p, (PopupFilterSortUGUI content) =>
+			{
+				//0xBF15D8
+				OnChangeFilter(content);
+			}, null);
+		}
 
 		// // RVA: 0xBEEE70 Offset: 0xBEEE70 VA: 0xBEEE70
 		private bool CheckMatchFilterFunc(VerticalMusicDataList.MusicListData musicListData, int series, long currentTime)
@@ -1794,9 +1806,5 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x6F64E4 Offset: 0x6F64E4 VA: 0x6F64E4
 		// // RVA: 0xBF152C Offset: 0xBF152C VA: 0xBF152C
 		// private void <OnClickJacketImageButton>b__122_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F64F4 Offset: 0x6F64F4 VA: 0x6F64F4
-		// // RVA: 0xBF15D8 Offset: 0xBF15D8 VA: 0xBF15D8
-		// private void <OnClickFilterButton>b__136_0(PopupFilterSortUGUI content) { }
 	}
 }

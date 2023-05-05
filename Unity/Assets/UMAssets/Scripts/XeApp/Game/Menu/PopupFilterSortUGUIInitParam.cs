@@ -53,7 +53,11 @@ namespace XeApp.Game.Menu
 		//public void SetMusicSelectParam(OHCAABOMEOF.KGOGMKMBCPP eventType, Difficulty.Type difficulty, bool isLine6Mode, bool enableSave = True) { }
 
 		//// RVA: 0x1C9E8F8 Offset: 0x1C9E8F8 VA: 0x1C9E8F8
-		//public void SetVerticalMusicSelectParam(MusicSelectConsts.SeriesType series, bool enableSave = True) { }
+		public void SetVerticalMusicSelectParam(MusicSelectConsts.SeriesType series, bool enableSave = true)
+		{
+			EnableSave = enableSave;
+			Scene = PopupFilterSortUGUI.Scene.VerticalMusicSelect;
+		}
 
 		//// RVA: 0x1C9E908 Offset: 0x1C9E908 VA: 0x1C9E908
 		//public void SetMissionMusicSelectParam(Difficulty.Type difficulty, bool isLine6Mode, bool enableSave = True) { }

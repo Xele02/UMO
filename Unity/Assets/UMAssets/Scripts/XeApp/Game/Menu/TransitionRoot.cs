@@ -573,7 +573,10 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA39A10 Offset: 0xA39A10 VA: 0xA39A10
-			// public TransitionRoot GetCurrentTransitionRoot() { }
+			public TransitionRoot GetCurrentTransitionRoot()
+			{
+				return m_currentRoot;
+			}
 
 			// // RVA: 0xA39A18 Offset: 0xA39A18 VA: 0xA39A18
 			// public bool OnPushReturnButton() { }
