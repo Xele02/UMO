@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Core;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 { 
@@ -63,21 +65,127 @@ namespace XeApp.Game.Menu
 		public override GameObject Content { get { return m_content; } } //0x179C5B8
 
 		//// RVA: 0x179BD8C Offset: 0x179BD8C VA: 0x179BD8C
-		//public void Initialize(PopupFilterSortUGUIInitParam a_param, string titleText = "") { }
+		public void Initialize(PopupFilterSortUGUIInitParam a_param, string titleText = "")
+		{
+			if(m_param != null)
+			{
+				if(m_param.Scene != a_param.Scene)
+					DestroyGameObject();
+			}
+			m_param = a_param;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			if(m_param.Scene == PopupFilterSortUGUI.Scene.UnitDispType)
+			{
+				WindowSize = SizeType.Large;
+				TitleText = bk.GetMessageByLabel("popup_sort_title_unit");
+			}
+			else if(m_param.Scene == PopupFilterSortUGUI.Scene.GoDivaMusicSelect)
+			{
+				WindowSize = SizeType.Large;
+				TitleText = bk.GetMessageByLabel("popup_godiva_filter_title");
+			}
+			else
+			{
+				WindowSize = SizeType.Large;
+				TitleText = bk.GetMessageByLabel("popup_sort_title");
+			}
+			Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+			};
+			if(titleText.Length > 0)
+				TitleText = titleText;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7085D4 Offset: 0x7085D4 VA: 0x7085D4
 		//// RVA: 0x179C320 Offset: 0x179C320 VA: 0x179C320 Slot: 4
 		public override IEnumerator LoadAssetBundlePrefab(Transform parent)
 		{
-			TodoLogger.Log(0, "LoadAssetBundlePrefab");
-			yield return null;
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0x179D4A0
+			yield return LoadAssetBundlePrefab_Parts(parent);
+			GameObject t_content = null;
+			m_parent = parent;
+			if(m_content == null)
+			{
+				operation = AssetBundleManager.LoadLayoutAsync(BundleName, AssetName);
+				yield return operation;
+				yield return operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+				{
+					//0x179D330
+					t_content = instance;
+				});
+				AssetBundleManager.UnloadAssetBundle(BundleName, false);
+				operation = null;
+			}
+			foreach(var k in m_list_parts)
+			{
+				k.m_base.transform.SetParent(t_content.transform, false);
+				k.m_base.Initialize();
+			}
+			foreach(var k in m_list_parts)
+			{
+				while(!k.m_base.IsReady)
+					yield return null;
+			}
+			t_content.transform.SetParent(m_parent, false);
+			t_content.gameObject.SetActive(false);
+			m_content = t_content;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70864C Offset: 0x70864C VA: 0x70864C
 		//// RVA: 0x179C3E8 Offset: 0x179C3E8 VA: 0x179C3E8
-		//public IEnumerator LoadAssetBundlePrefab_Parts(Transform parent) { }
+		public IEnumerator LoadAssetBundlePrefab_Parts(Transform parent)
+		{
+			PopupFilterSortUGUI.Parts[] t_table_parts;
+			int i;
+			AssetBundleLoadUGUIOperationBase operation;
+
+			//0x179DCA8
+			m_list_parts = new List<PartsInfo>();
+			AssetBundleManager.LoadUnionAssetBundle(BundleName);
+			t_table_parts = PopupFilterSortUGUI.GetPartsTable(m_param.Scene);
+			i = 0;
+			for(; i < t_table_parts.Length; i++)
+			{
+				PopupFilterSortUGUI.Parts t_parts_type = t_table_parts[i];
+				operation = AssetBundleManager.LoadUGUIAsync(BundleName, m_layout_info[(int)t_parts_type].m_prefab_name);
+				yield return operation;
+				yield return operation.InitializeUGUICoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+				{
+					//0x179D340
+					PopupFilterSortUGUIPartsBase p = instance.GetComponent<PopupFilterSortUGUIPartsBase>();
+					if(p == null)
+						return;
+					PartsInfo t = new PartsInfo();
+					t.m_parts = t_parts_type;
+					t.m_base = p;
+					m_list_parts.Add(t);
+				});
+				AssetBundleManager.UnloadAssetBundle(BundleName, false);
+			}
+			t_table_parts = null;
+			AssetBundleManager.UnloadAssetBundle(BundleName, false);
+		}
 
 		//// RVA: 0x179C154 Offset: 0x179C154 VA: 0x179C154
-		//private void DestroyGameObject() { }
+		private void DestroyGameObject()
+		{
+			if(m_content != null)
+			{
+				UnityEngine.Object.Destroy(m_content);
+				m_content = null;
+			}
+			if(m_list_parts != null)
+			{
+				for(int i = 0; i < m_list_parts.Count; i++)
+				{
+					UnityEngine.Object.Destroy(m_list_parts[i].m_base.gameObject);
+				}
+				m_list_parts = null;
+			}
+		}
 	}
 }

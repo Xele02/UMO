@@ -25,7 +25,10 @@ namespace XeApp.Game.Common.View
 		//public static void OBHMLEOHEFF(int DLAEJOBELBH, int OIPCCBHIKIA, bool MHBBJADMHPN) { }
 
 		//// RVA: 0xD311BC Offset: 0xD311BC VA: 0xD311BC
-		//public static string BDCDCCJHOCD(int OIPCCBHIKIA) { }
+		public static string BDCDCCJHOCD_GetBookmarkName(int OIPCCBHIKIA)
+		{
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.NPGGEAJMFCB_GetBookmarkName(OIPCCBHIKIA);
+		}
 
 		//// RVA: 0xD312A0 Offset: 0xD312A0 VA: 0xD312A0
 		//public static void GLMEPJIKBLP(int OIPCCBHIKIA, string OPFGFINHFCE) { }

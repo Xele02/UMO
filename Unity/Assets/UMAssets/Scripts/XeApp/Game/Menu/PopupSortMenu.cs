@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -184,11 +185,14 @@ namespace XeApp.Game.Menu
 		public static List<SortItem> UnitSortItem { get { return UnitSortItemList; } } //0x1149B24 
 		public static List<SortItem> UnitDivaSortItem { get { return UnitDivaSortItemList; } }  //0x1149BB0
 		public static List<SortItem> SceneSortItem { get { return SceneSortItemList; } } //0x1149C3C
-		//public static List<SortItem> MusicSelectSortItem { get; } 0x1149CC8
+		public static List<SortItem> MusicSelectSortItem { get { return MusicSelectSortList; } }//0x1149CC8
 		//public static List<SortItem> ShopSortItem { get; } 0x1149D54
 		
 		//// RVA: 0x1149DE0 Offset: 0x1149DE0 VA: 0x1149DE0
-		//public static string GetMsg_SortItem(SortItem a_item) { }
+		public static string GetMsg_SortItem(SortItem a_item)
+		{
+			return MessageManager.Instance.GetBank("menu").GetMessageByLabel(MsgTbl_SortItem[(int)a_item]);
+		}
 
 		//// RVA: 0x1149F0C Offset: 0x1149F0C VA: 0x1149F0C
 		//public uint GetRarityFilter() { }
@@ -299,7 +303,7 @@ namespace XeApp.Game.Menu
 		{
 			if(flags != 0)
 			{
-				return (flags & 1) << (rare - 1) != 0;
+				return (flags & (1 << (rare - 1))) != 0;
 			}
 			return true;
 		}
@@ -309,7 +313,7 @@ namespace XeApp.Game.Menu
 		{
 			if(flags != 0)
 			{
-				return (flags & 1) << (attr - 1) != 0;
+				return (flags & (1 << (attr - 1))) != 0;
 			}
 			return true;
 		}
@@ -319,7 +323,7 @@ namespace XeApp.Game.Menu
 		{
 			if(flags != 0)
 			{
-				return (flags & 1) << (seriase - 1) != 0;
+				return (flags & (1 << (seriase - 1))) != 0;
 			}
 			return true;
 		}
@@ -345,7 +349,7 @@ namespace XeApp.Game.Menu
 		{
 			if(flags != 0)
 			{
-				return ((flags & 1) << skillRank - 1) != 0 || ((flags & 1) << skillRank2 - 1) != 0;
+				return ((flags & (1 << skillRank - 1))) != 0 || ((flags & (1 << skillRank2 - 1))) != 0;
 			}
 			return true;
 		}

@@ -339,7 +339,7 @@ namespace XeApp.Game.Menu
 			m_orderButton.OnClickButtonListener = () =>
 			{
 				//0xBF0698
-				TodoLogger.LogNotImplemented("m_orderButton OnClickButtonListener");
+				OnClickSmallBigButton(sortOrder);
 			};
 			m_jacketScroll.OnClickJacketButtonListener = (int freeMusicId) =>
 			{
@@ -1436,7 +1436,12 @@ namespace XeApp.Game.Menu
 		// private void OnClickJacketImageButton(int freeMusicId) { }
 
 		// // RVA: 0xBEDC78 Offset: 0xBEDC78 VA: 0xBEDC78
-		// private void OnClickSmallBigButton(VerticalMusicSelectSortOrder.SortOrder sortOrder) { }
+		private void OnClickSmallBigButton(VerticalMusicSelectSortOrder.SortOrder sortOrder)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_musicSelectUISapporter.SetSmallBigOrder((sortOrder == VerticalMusicSelectSortOrder.SortOrder.Small) ? VerticalMusicSelectSortOrder.SortOrder.Big : VerticalMusicSelectSortOrder.SortOrder.Small);
+			OnChangeFilter();
+		}
 
 		// // RVA: 0xBEDD10 Offset: 0xBEDD10 VA: 0xBEDD10
 		private void SetSmallBigOrderButtonEnable()
@@ -1634,7 +1639,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.ShowSortWindow(p, (PopupFilterSortUGUI content) =>
 			{
 				//0xBF15D8
-				OnChangeFilter(content);
+				OnChangeFilter();
 			}, null);
 		}
 
@@ -1655,12 +1660,12 @@ namespace XeApp.Game.Menu
 							if ((data.AONOGHPAENH_filterMusicUnLock & 1) == 0 || (data.AONOGHPAENH_filterMusicUnLock & 2) == 0)
 								return false;
 						}
-						bool res = data.ALGFGPCPGFK_filterRange == 0 || ((int)musicListData.TimeType & data.ALGFGPCPGFK_filterRange) == 0;
-						if ((data.ALGFGPCPGFK_filterRange & 2) != 0)
+						if(data.ALGFGPCPGFK_filterRange != 0)
 						{
-							res |= musicListData.TimeType == MusicSelectConsts.MusicTimeType.Short;
+							if((data.ALGFGPCPGFK_filterRange & (1 << (int)musicListData.TimeType)) == 0)
+								return false;
 						}
-						return res;
+						return true;
 					}
 				}
 				return false;

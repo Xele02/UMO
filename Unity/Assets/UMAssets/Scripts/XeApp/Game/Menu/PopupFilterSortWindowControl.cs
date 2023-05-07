@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 					if (okCallBack != null)
 						okCallBack(c);
 				}
-			}, null, null, true, true, false, null, endCallBack);
+			}, null, null, null, true, true, false, null, endCallBack);
 		}
 	}
 }

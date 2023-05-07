@@ -861,7 +861,17 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// public void BAAGCGEGIMK(int MFCNKPHPJBH, string OPFGFINHFCE) { }
 
 	// // RVA: 0x1C53AB8 Offset: 0x1C53AB8 VA: 0x1C53AB8
-	// public string NPGGEAJMFCB(int MFCNKPHPJBH) { }
+	public string NPGGEAJMFCB_GetBookmarkName(int MFCNKPHPJBH)
+	{
+		if(MFCNKPHPJBH == 2)
+			return JMIHCFPDPFP_MusicBookmarkName3;
+		else if(MFCNKPHPJBH == 1)
+			return CHNPJHGCAOP_MusicBookmarkName2;
+		else if(MFCNKPHPJBH == 0)
+			return LKLIDCMCCCG_MusicBookmarkName1;
+		else
+			return "";
+	}
 
 	// // RVA: 0x1C53B48 Offset: 0x1C53B48 VA: 0x1C53B48
 	public bool ADKJDHPEAJH(GPFlagConstant.ID PPFNGGCBJKC)

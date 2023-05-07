@@ -69,6 +69,14 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1CDCEC4 Offset: 0x1CDCEC4 VA: 0x1CDCEC4
-		// public int GetSelectIndex() { }
+		public int GetSelectIndex()
+		{
+			for(int i = 0; i < m_toggleButtons.Length; i++)
+			{
+				if(m_toggleButtons[i].IsOn)
+					return i;
+			}
+			return 0;
+		}
 	}
 }
