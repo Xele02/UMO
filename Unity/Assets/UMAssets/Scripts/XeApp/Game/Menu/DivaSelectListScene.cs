@@ -355,7 +355,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17F03E0 Offset: 0x17F03E0 VA: 0x17F03E0
 		private void OnSort(SortItem item, ListSortButtonGroup.SortOrder order, bool isBonus)
 		{
-			TodoLogger.Log(0, "OnSort");
+			m_order = (byte)order;
+			m_sortType = item;
+			m_divaSortExecutor.Execute(m_divaSortIdList, item, (byte)order);
+			m_divaSelectList.UpdateContent(m_selectedDiva, m_divaSortIdList, m_selectedSlot, m_musicData);
+			m_divaSelectList.UpdateDecoration(m_selectedDiva, m_divaSortIdList, UnitWindowConstant.SortItemToDisplayType[(int)m_sortType]);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.ONPAMDMIEKM_divaSortItem = (int)m_sortType;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.HNGHNBNPCHO_divaSortOrder = (int)m_order;
 		}
 
 		//// RVA: 0x17F0670 Offset: 0x17F0670 VA: 0x17F0670

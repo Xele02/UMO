@@ -3125,7 +3125,7 @@ public class ILDKBCLAFPB
 		public MMALELPFEBH_UserList GDMIGCCMEEF_GuestSelect = new MMALELPFEBH_UserList(); // 0xD0
 		public MMALELPFEBH_UserList EJAJGGKHALM_SentRequestList = new MMALELPFEBH_UserList(); // 0xD4
 		public MMALELPFEBH_UserList DOKBEPGKNJK_PendingList = new MMALELPFEBH_UserList(); // 0xD8
-		//public ILDKBCLAFPB.IJDOCJCLAIL.MMALELPFEBH ACCNCHJBDHM = new MMALELPFEBH(); // 0xDC
+		public MMALELPFEBH_UserList ACCNCHJBDHM_UserList = new MMALELPFEBH_UserList(); // 0xDC
 		public BNIKLNDKMEO_EpisodeSelect CEJNPBFIIMJ_EpisodeSelect = new BNIKLNDKMEO_EpisodeSelect(); // 0xE0
 		public PFONKAHHKJK_Raid JGAFBCMOGLP_Raid = new PFONKAHHKJK_Raid(); // 0xE4
 		public LPNOICEBNEL_MusicSelect KGDILGLNKFM_MusicSelect = new LPNOICEBNEL_MusicSelect(); // 0xE8

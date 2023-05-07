@@ -66,7 +66,13 @@ namespace XeApp.Game.Menu
 		//public void SetGoDivaMusicSelectParam(Difficulty.Type difficulty, bool isLine6Mode, bool enableSave = True) { }
 
 		//// RVA: 0x1C9EA90 Offset: 0x1C9EA90 VA: 0x1C9EA90
-		//public void SetPlateSelectParam(int divaId, bool enableSave = True) { }
+		public void SetPlateSelectParam(int divaId, bool enableSave = true)
+		{
+			EnableSave = enableSave;
+			Scene = PopupFilterSortUGUI.Scene.PlateSelect;
+			PlateSelectParam = new PlateSelectParamClass();
+			PlateSelectParam.SelectedDivaId = divaId;
+		}
 
 		//// RVA: 0x1C9EB38 Offset: 0x1C9EB38 VA: 0x1C9EB38
 		//public void SetShopProductParam(int rarityMin, int rarityMax, bool enableSave = True) { }
