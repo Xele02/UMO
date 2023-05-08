@@ -26,10 +26,34 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x179E2FC Offset: 0x179E2FC VA: 0x179E2FC
-		// public void Show(PopupFilterSort.Scene a_type, UnityAction<PopupFilterSort> okCallBack, Action endCallBack, bool a_is_save = True) { }
+		public void Show(PopupFilterSort.Scene a_type, UnityAction<PopupFilterSort> okCallBack, Action endCallBack, bool a_is_save = true)
+		{
+			PopupFilterSortInitParam s = new PopupFilterSortInitParam();
+			s.Scene = a_type;
+			s.EnableSave = a_is_save;
+			Show(s, okCallBack, endCallBack);
+		}
 
 		// // RVA: 0x179E3E0 Offset: 0x179E3E0 VA: 0x179E3E0
-		// public void Show(PopupFilterSortInitParam a_init_param, UnityAction<PopupFilterSort> okCallBack, Action endCallBack) { }
+		public void Show(PopupFilterSortInitParam a_init_param, UnityAction<PopupFilterSort> okCallBack, Action endCallBack)
+		{
+			m_setting.Initialize(a_init_param);
+			PopupWindowManager.Show(m_setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x179E7F4
+				if(type == PopupButton.ButtonType.Positive)
+				{
+					PopupFilterSort c = control.Content as PopupFilterSort;
+					c.Fainalize();
+					if(m_setting.m_param.EnableSave)
+					{
+						GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					}
+					if (okCallBack != null)
+						okCallBack(c);
+				}
+			}, null, null, null, true, true, false, null, endCallBack);
+		}
 
 		// // RVA: 0x179E570 Offset: 0x179E570 VA: 0x179E570
 		// public void Show(PopupFilterSortUGUI.Scene a_type, UnityAction<PopupFilterSortUGUI> okCallBack, Action endCallBack, bool a_is_save = True) { }

@@ -157,6 +157,11 @@ namespace XeApp.Game.Menu
 					yield return null;
 				yield return this.StartCoroutineWatched(m_sceneSelectList.LoadScrollObjectCoroutine(TransitionName));
 			}
+
+			TodoLogger.Log(TodoLogger.ToCheck, "m_popupFilterSortScene init should not be here");
+			if(m_transitionName == TransitionList.Type.SCENE_SELECT)
+				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
+
 			IsReady = true;
 		}
 
@@ -944,7 +949,53 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1385DD0 Offset: 0x1385DD0 VA: 0x1385DD0
 		private void OnSortEvent(SortItem item, ListSortButtonGroup.SortOrder order, bool isBonus)
 		{
-			TodoLogger.LogNotImplemented("OnSortEvent");
+			m_selectedSceneId = 0;
+			m_sortType = item;
+			m_order = (uint)order;
+			m_isBonus = isBonus;
+			Sort(isBonus, false);
+			DisplayType dt = 0;
+			bool b = UnitWindowConstant.SortItemToDisplayType.TryGetValue((int)m_sortType, out dt);
+			CheckSkillIconType(PlayerData.DPLBHAIKPGL_GetTeam(), m_divaData);
+			m_sceneSelectList.UpdateContent(PlayerData, m_divaData, m_musicBaseData != null ? m_musicBaseData.DLAEJOBELBH_MusicId : 0, PlayerData.OPIBAPEGCLA_Scenes, m_sceneIndexList, m_selectedSceneId, dt, m_dispRowCount, m_transitionName, m_isGoDivaEvent);
+			if(m_musicBaseData != null)
+			{
+				CMMKCEPBIHI.EFCNOOFFMIL(PlayerData, m_friendPlayerData, m_musicBaseData, m_enemyData, m_difficulty, Database.Instance.gameSetup.musicInfo.IsLine6Mode, m_isGoDivaEvent);
+			}
+			m_sceneSelectList.UpdateScore(m_musicBaseData);
+			if(m_equipmentScene != null)
+			{
+				if(m_assistViewData == null)
+				{
+					if(!m_isHomeSceneBg)
+					{
+						m_equipmentScene.ChangeIcon(PlayerData, m_divaData, dt, m_selectedDivaSlotIndex == 0, m_isGoDivaEvent);
+					}
+				}
+				else
+				{
+					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex), dt, 0);
+				}
+			}
+			if(TransitionName == TransitionList.Type.SCENE_SELECT)
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.LNFFKCDNCPN_sceneSelectSortItem = (int)m_sortType;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CIDJJBFGHIE_sceneSelectSortOrder = (int)m_order;
+			}
+			else if(TransitionName == TransitionList.Type.ASSIST_SELECT)
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.NCDOLBOHGFN_sceneAssistSortItem = (int)m_sortType;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.OGFJPNKICGI_sceneAssistSortOrder = (int)m_order;
+			}
+			else if(TransitionName == TransitionList.Type.HOME_BG_SELECT)
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GIDCHFBCBML_SelectHomeBG.EILKGEADKGH_Order = (int)m_order;
+			}
+			else
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GEAECNMDMHH_sceneListSortItem = (int)m_sortType;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CLKCCJJJPLB_sceneListSortOrder = (int)m_order;
+			}
 		}
 
 		// // RVA: 0x1384A14 Offset: 0x1384A14 VA: 0x1384A14
@@ -1183,7 +1234,21 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1386670 Offset: 0x1386670 VA: 0x1386670
-		// private SceneIconScrollContent.SkillIconType CheckSkillIconType(JLKEOGLJNOD unitData, FFHPBEPOMAK diva) { }
+		private SceneIconScrollContent.SkillIconType CheckSkillIconType(JLKEOGLJNOD_TeamInfo unitData, FFHPBEPOMAK_DivaInfo diva)
+		{
+			if(diva != null)
+			{
+				if(unitData.BCJEAJPLGMB_MainDivas[0] != null)
+				{
+					if(unitData.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId != diva.AHHJLDLAPAN_DivaId)
+					{
+						return SceneIconScrollContent.SkillIconType.Live;
+					}
+					return SceneIconScrollContent.SkillIconType.Active;
+				}
+			}
+			return SceneIconScrollContent.SkillIconType.None;
+		}
 
 		// RVA: 0x1387780 Offset: 0x1387780 VA: 0x1387780 Slot: 28
 		protected override TransitionArgs GetCallArgsReturn()

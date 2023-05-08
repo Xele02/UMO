@@ -174,7 +174,16 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x154221C Offset: 0x154221C VA: 0x154221C
 		private void OnShowFilterSortPopup()
 		{
-			TodoLogger.LogNotImplemented("OnShowFilterSortPopup");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.ShowSortWindow(m_sceneType, (PopupFilterSort content) =>
+			{
+				//0x1543ED8
+				if(m_sceneType == PopupFilterSort.Scene.SelectHomeBg)
+					m_currentSortItem = SortItem.Rarity;
+				m_onListSortEvent.Invoke(m_currentSortItem, m_sortOrder, m_isBonus);
+				UpdateSortFont();
+				UpdateOrderFont();
+			}, null, true);
 		}
 
 		// // RVA: 0x154236C Offset: 0x154236C VA: 0x154236C
@@ -236,9 +245,5 @@ namespace XeApp.Game.Menu
 		{
 			m_updownText.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_texUvList.GetUVData(m_orderTextureUvNameTable[(int)m_sortOrder]));
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6E7D2C Offset: 0x6E7D2C VA: 0x6E7D2C
-		// // RVA: 0x1543ED8 Offset: 0x1543ED8 VA: 0x1543ED8
-		// private void <OnShowFilterSortPopup>b__49_0(PopupFilterSort content) { }
 	}
 }
