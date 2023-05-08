@@ -75,6 +75,8 @@ namespace ExternLib
 				commonBlock.MMPPEHPKGLI_AddRegularMusicMVer = DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
 				// give a lot of stamina
 				commonBlock.BCFPEJODJPP_Stamina = 9999;
+				// give a lot of mv ticket
+				commonBlock.GKKDNOFMJJN_NumTicket = 999;
 				// set all 6line & multi diva song shown
 				for (int i = 1; i < EGOLBAPFHHD_Common.HKJKONOKBLN_ShowLine6AddLength * 8; i++)
 				{

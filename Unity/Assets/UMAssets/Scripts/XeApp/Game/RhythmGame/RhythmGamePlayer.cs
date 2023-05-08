@@ -2352,14 +2352,11 @@ namespace XeApp.Game.RhythmGame
 						return;
 					}
 				}
-				else
-				{
-					PauseGame(true);
-					GameManager.Instance.SetTouchEffectVisible(true);
-					GameManager.Instance.SetTouchEffectMode(true);
-					uiController.failed.ShowBlackCurtainOnly();
-					uiController.ShowMvModePauseWindow(this.MvModePauseWindowCallBack);
-				}
+				PauseGame(true);
+				GameManager.Instance.SetTouchEffectVisible(true);
+				GameManager.Instance.SetTouchEffectMode(true);
+				uiController.failed.ShowBlackCurtainOnly();
+				uiController.ShowMvModePauseWindow(this.MvModePauseWindowCallBack);
 			}
 			else
 			{
