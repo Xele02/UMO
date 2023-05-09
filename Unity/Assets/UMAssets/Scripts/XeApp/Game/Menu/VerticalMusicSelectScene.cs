@@ -237,7 +237,7 @@ namespace XeApp.Game.Menu
 			m_musicList.MusicScrollView.CenterItem.OnMusicInfoButtonClickListener = () =>
 			{
 				//0xBF01A0
-				TodoLogger.LogNotImplemented("OnMusicInfoButtonClickListener");
+				OnClickDetailButton(selectMusicListData, diff);
 			};
 			m_musicList.MusicScrollView.CenterItem.OnEnemyInfoButtonClickListener = () =>
 			{

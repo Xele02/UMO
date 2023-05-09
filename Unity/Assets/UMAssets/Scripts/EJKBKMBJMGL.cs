@@ -19,7 +19,7 @@ public class EJKBKMBJMGL_EnemyData
 	public int DCOALMMJDJK; // 0x34
 	public int KKPLDFNDFDE; // 0x38
 
-	//public int LMJFFFOEPLE { get; } 0x12F3790 CGIJHCKFOKG
+	public int LMJFFFOEPLE { get { return KKPLDFNDFDE < 1 ? JMEGLFEKEBD_LiveSkill : KKPLDFNDFDE; } } //0x12F3790 CGIJHCKFOKG
 	public int PDHCABLLJPB_SkillId { get { return DCOALMMJDJK < 1 ? MOMCFBMJJKB_CS : DCOALMMJDJK; } } //0x12F37A4 LJKILMHFCCK
 	//public bool CDEFLIHHNAB { get; } 0x12F37B8 NKOCPFCGNOG
 

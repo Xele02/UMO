@@ -79,14 +79,14 @@ namespace XeApp.Game.Common
 		public void SetLabel(PopupTabButton.ButtonLabel label)
 		{
 			s_stringBuilder.Clear();
-			s_stringBuilder.AppendFormat("{0}{1:D2}", "cmn_pop01_fnt_02_b", label);
+			s_stringBuilder.AppendFormat("{0}{1:D2}", "cmn_pop01_fnt_02_b", (int)label);
 			TexUVData uvData = m_uvManager.GetUVData(s_stringBuilder.ToString());
 			for(int i = 0; i < m_blueLabel.Length; i++)
 			{
 				m_blueLabel[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(uvData);
 			}
 			s_stringBuilder.Clear();
-			s_stringBuilder.AppendFormat("{0}{1:D2}", "cmn_pop01_fnt_02_p", label);
+			s_stringBuilder.AppendFormat("{0}{1:D2}", "cmn_pop01_fnt_02_p", (int)label);
 			uvData = m_uvManager.GetUVData(s_stringBuilder.ToString());
 			m_pinkLabel.uvRect = LayoutUGUIUtility.MakeUnityUVRect(uvData);
 

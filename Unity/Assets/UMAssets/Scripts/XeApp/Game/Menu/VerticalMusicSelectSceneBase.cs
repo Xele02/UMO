@@ -83,13 +83,21 @@ namespace XeApp.Game.Menu
 		} } //0xAC8AD4
 		// protected bool listIsEmptyByFilter { get; } 0xAC8B48
 		// protected bool isExistSelectMusicData { get; } 0xAC8B50
-		// protected int musicId { get; } 0xAC8B58
+		protected int musicId { get {
+				if (listIsEmpty)
+					return 0;
+				return selectMusicData.DLAEJOBELBH_MusicId;
+			} } //0xAC8B58
 		protected int freeMusicId { get {
 			if(listIsEmpty)
 				return 0;
 			return selectMusicData.GHBPLHBNMBK_FreeMusicId;
 		} } //0xAC8BAC
-		// protected int gameEventType { get; } 0xAC8C00
+		protected int gameEventType { get {
+				if (listIsEmpty)
+					return 0;
+				return selectMusicData.MNNHHJBBICA_EventType;
+			} } //0xAC8C00
 		protected int m_eventTicketId { get; set; } // 0x9C
 		protected KGCNCBOKCBA.GNENJEHKMHD m_eventStatus { get; set; } // 0xA0
 		protected bool m_isEventTimeLimit { get; set; } // 0xA4
@@ -987,14 +995,24 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAD03FC Offset: 0xAD03FC VA: 0xAD03FC
 		protected void OnClickRewardButton(Action openRewardWindowFunc)
 		{
-			TodoLogger.LogNotImplemented("OnClickRewardButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			GameManager.Instance.CloseSnsNotice();
+			GameManager.Instance.CloseOfferNotice();
+			if (openRewardWindowFunc != null)
+				openRewardWindowFunc();
 		}
 
 		// // RVA: 0xAD0524 Offset: 0xAD0524 VA: 0xAD0524
 		// protected void OnClickEventRewardButton() { }
 
 		// // RVA: 0xAD07C8 Offset: 0xAD07C8 VA: 0xAD07C8
-		// protected void OnClickDetailButton(VerticalMusicDataList.MusicListData musicData, Difficulty.Type difficulty) { }
+		protected void OnClickDetailButton(VerticalMusicDataList.MusicListData musicData, Difficulty.Type difficulty)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			GameManager.Instance.CloseSnsNotice();
+			GameManager.Instance.CloseOfferNotice();
+			OpenMusicDetailWindow(musicData, difficulty);
+		}
 
 		// // RVA: 0xAD0AC0 Offset: 0xAD0AC0 VA: 0xAD0AC0
 		// protected void OnClickEnemyDetailButton(IBJAKJJICBC musicData, Difficulty.Type difficulty) { }
@@ -1075,11 +1093,29 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAD1F18 Offset: 0xAD1F18 VA: 0xAD1F18
 		protected void OpenRewardWindow()
 		{
-			TodoLogger.Log(0, "OpenRewardWindow");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_rewardPopupSetting.TitleText = bk.GetMessageByLabel("popup_music_select_02");
+			m_rewardPopupSetting.SetParent(transform);
+			m_rewardPopupSetting.WindowSize = SizeType.Large;
+			m_rewardPopupSetting.diff = diff;
+			m_rewardPopupSetting.mode = LayoutPopupAchieveReward.eMode.MusicSelect;
+			m_rewardPopupSetting.selectMusicId = musicId;
+			m_rewardPopupSetting.selectFreeMusicId = freeMusicId;
+			m_rewardPopupSetting.gameEventType = gameEventType;
+			m_rewardPopupSetting.isLine6Mode = isLine6Mode;
+			m_rewardPopupSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			PopupWindowManager.Show(m_rewardPopupSetting, null, null, null, null);
 		}
 
 		// // RVA: 0xAD08F4 Offset: 0xAD08F4 VA: 0xAD08F4
-		// protected void OpenMusicDetailWindow(VerticalMusicDataList.MusicListData musicData, Difficulty.Type difficulty) { }
+		protected void OpenMusicDetailWindow(VerticalMusicDataList.MusicListData musicData, Difficulty.Type difficulty)
+		{
+			MenuScene.Instance.MusicPopupWindowControl.Show(this, 0, musicData.ViewMusic.DLAEJOBELBH_MusicId,
+				musicData.ViewMusic.MGJKEJHEBPO_DiffInfos[(int)difficulty].HPBPDHPIBGN_EnemyData, null, musicData.IsSimulation);
+		}
 
 		// // RVA: 0xAD0BEC Offset: 0xAD0BEC VA: 0xAD0BEC
 		// protected void OpenEnemyDetailWindow(IBJAKJJICBC musicData, Difficulty.Type difficulty) { }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using XeApp.Game.Menu;
 using XeSys;
+using System.Collections;
 
 namespace XeApp.Game.Common
 {
@@ -323,10 +324,32 @@ namespace XeApp.Game.Common
 		// private static bool PlayReviewPopupButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type) { }
 
 		// // RVA: 0x1BC7674 Offset: 0x1BC7674 VA: 0x1BC7674
-		// public static PopupTabSetting CreateTabContents(Action<PopupTabContents> callback) { }
+		public static PopupTabSetting CreateTabContents(Action<PopupTabContents> callback)
+		{
+			PopupTabSetting res = new PopupTabSetting();
+			GameManager.Instance.StartCoroutineWatched(TabContentsLoader(res, callback));
+			return res;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73F684 Offset: 0x73F684 VA: 0x73F684
 		// // RVA: 0x1BC7778 Offset: 0x1BC7778 VA: 0x1BC7778
-		// private static IEnumerator TabContentsLoader(PopupTabSetting tabSetting, Action<PopupTabContents> callback) { }
+		private static IEnumerator TabContentsLoader(PopupTabSetting tabSetting, Action<PopupTabContents> callback)
+		{
+			//0x138A144
+			PopupTabContents tabContents = null;
+			bool isLoading = false;
+			ResourcesManager.Instance.Load(tabSetting.PrefabPath, (FileResultObject fro) =>
+			{
+				//0x13883F0
+				GameObject g = Instantiate(fro.unityObject) as GameObject;
+				tabSetting.SetContent(g);
+				tabContents = g.GetComponent<PopupTabContents>();
+				isLoading = true;
+				return true;
+			});
+			while (!isLoading)
+				yield return null;
+			callback(tabContents);
+		}
 	}
 }

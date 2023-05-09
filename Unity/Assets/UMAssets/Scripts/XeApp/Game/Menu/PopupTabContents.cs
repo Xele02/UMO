@@ -124,10 +124,23 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1153D34 Offset: 0x1153D34 VA: 0x1153D34
-		//public void AddContents(PopupTabContents.ContentsData data) { }
+		public void AddContents(ContentsData data)
+		{
+			if (m_contents.ContainsKey(data.type))
+				m_contents[data.type] = data;
+			else
+			{
+				m_contents.Add(data.type, data);
+				m_typeList.Add(data.type);
+			}
+		}
 
 		//// RVA: 0x1153E64 Offset: 0x1153E64 VA: 0x1153E64
-		//public void ClearContents() { }
+		public void ClearContents()
+		{
+			m_contents.Clear();
+			m_typeList.Clear();
+		}
 
 		//// RVA: 0x1153F08 Offset: 0x1153F08 VA: 0x1153F08
 		//public void ClearContentsAll() { }
