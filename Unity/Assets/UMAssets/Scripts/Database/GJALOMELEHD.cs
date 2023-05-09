@@ -219,10 +219,17 @@ public class GJALOMELEHD_Intimacy : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xAAA9C0 Offset: 0xAAA9C0 VA: 0xAAA9C0
-	// public int NPKHLGBNOKO() { }
+	public int NPKHLGBNOKO_GetMaxPresent()
+	{
+		return LPJLEHAJADA_GetValue("present_give_max", 3);
+	}
 
 	// // RVA: 0xAAAA28 Offset: 0xAAAA28 VA: 0xAAAA28
-	// public bool NJGEDPHNIKC() { }
+	public bool NJGEDPHNIKC_IsPresentLimitEnabled()
+	{
+		int a = LPJLEHAJADA_GetValue("present_diva_limit_enable_master_version", 0);
+		return 0 < a && a <= IEFOPDOOLOK_MasterVersion;
+	}
 
 	// // RVA: 0xAAAAF4 Offset: 0xAAAAF4 VA: 0xAAAAF4
 	// public int JBKMPBPGFHA(int CIEOBFIIPLD) { }
