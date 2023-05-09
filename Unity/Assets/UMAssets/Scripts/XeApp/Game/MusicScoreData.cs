@@ -400,7 +400,7 @@ namespace XeApp.Game
 		public int CalcComboLimit()
 		{
 			int res = 0;
-			for(int i = 0; i < inputNoteTrack.Count; i++)
+			for(int i = 1; i < inputNoteTrack.Count; i++)
 			{
 				if (inputNoteTrack[i].swipe != TouchState.SwipeStart)
 					res++;
