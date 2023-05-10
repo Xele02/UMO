@@ -990,7 +990,18 @@ namespace XeApp.Game.Menu
 		// protected void OnClickEventDetailButton() { }
 
 		// // RVA: 0xAD012C Offset: 0xAD012C VA: 0xAD012C
-		// protected void OnClickRankingButton(IBJAKJJICBC musicData) { }
+		protected void OnClickRankingButton(IBJAKJJICBC musicData)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(musicData.LEBDMNIGOJB)
+			{
+				OnClickEventRankingButton(musicData);
+			}
+			else
+			{
+				TodoLogger.LogNotImplemented("OnClickRankingButton");
+			}
+		}
 
 		// // RVA: 0xAD03FC Offset: 0xAD03FC VA: 0xAD03FC
 		protected void OnClickRewardButton(Action openRewardWindowFunc)
@@ -1015,10 +1026,19 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xAD0AC0 Offset: 0xAD0AC0 VA: 0xAD0AC0
-		// protected void OnClickEnemyDetailButton(IBJAKJJICBC musicData, Difficulty.Type difficulty) { }
+		protected void OnClickEnemyDetailButton(IBJAKJJICBC musicData, Difficulty.Type difficulty)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			GameManager.Instance.CloseSnsNotice();
+			GameManager.Instance.CloseOfferNotice();
+			OpenEnemyDetailWindow(musicData, difficulty);
+		}
 
 		// // RVA: 0xAD0290 Offset: 0xAD0290 VA: 0xAD0290
-		// private void OnClickEventRankingButton(IBJAKJJICBC musicData) { }
+		private void OnClickEventRankingButton(IBJAKJJICBC musicData)
+		{
+			TodoLogger.LogNotImplemented("OnClickEventRankingButton");
+		}
 
 		// // RVA: 0xAD0D34 Offset: 0xAD0D34 VA: 0xAD0D34
 		// protected void OnClickEventRankingButton(IBJAKJJICBC musicData, OHCAABOMEOF.KGOGMKMBCPP eventType, KGCNCBOKCBA.GNENJEHKMHD eventStatus, int eventId, IKDICBBFBMI eventCtrl, int selectDiva = 0) { }
@@ -1113,12 +1133,16 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAD08F4 Offset: 0xAD08F4 VA: 0xAD08F4
 		protected void OpenMusicDetailWindow(VerticalMusicDataList.MusicListData musicData, Difficulty.Type difficulty)
 		{
-			MenuScene.Instance.MusicPopupWindowControl.Show(this, 0, musicData.ViewMusic.DLAEJOBELBH_MusicId,
+			MenuScene.Instance.MusicPopupWindowControl.Show(this, MusicPopupWindowControl.CallType.MusicSelect, musicData.ViewMusic.DLAEJOBELBH_MusicId,
 				musicData.ViewMusic.MGJKEJHEBPO_DiffInfos[(int)difficulty].HPBPDHPIBGN_EnemyData, null, musicData.IsSimulation);
 		}
 
 		// // RVA: 0xAD0BEC Offset: 0xAD0BEC VA: 0xAD0BEC
-		// protected void OpenEnemyDetailWindow(IBJAKJJICBC musicData, Difficulty.Type difficulty) { }
+		protected void OpenEnemyDetailWindow(IBJAKJJICBC musicData, Difficulty.Type difficulty)
+		{
+			MenuScene.Instance.MusicPopupWindowControl.ShowEnemyInfo(this, MusicPopupWindowControl.CallType.MusicSelect, musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].HPBPDHPIBGN_EnemyData,
+				null);
+		}
 
 		// // RVA: 0xAC9928 Offset: 0xAC9928 VA: 0xAC9928
 		// protected void OpenWeekRecoveryWindow(Action<int> recoveryCallback, Action cancelCallback) { }

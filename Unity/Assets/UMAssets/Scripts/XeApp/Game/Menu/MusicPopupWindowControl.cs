@@ -72,7 +72,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x104C198 Offset: 0x104C198 VA: 0x104C198
-		// public void ShowEnemyInfo(MonoBehaviour mb, MusicPopupWindowControl.CallType type, EJKBKMBJMGL enemyData, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
+		public void ShowEnemyInfo(MonoBehaviour mb, CallType type, EJKBKMBJMGL_EnemyData enemyData, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
+		{
+			mb.StartCoroutineWatched(ShowEnemyInfoCoroutine(mb, type, enemyData, callback));
+		}
 
 		// // RVA: 0x104C2D4 Offset: 0x104C2D4 VA: 0x104C2D4
 		private MusicTextDatabase.TextInfo GetMusicTextInfo(int musicId)
@@ -165,10 +168,37 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C922C Offset: 0x6C922C VA: 0x6C922C
 		// // RVA: 0x104C1E4 Offset: 0x104C1E4 VA: 0x104C1E4
-		// private IEnumerator ShowEnemyInfoCoroutine(MonoBehaviour mb, MusicPopupWindowControl.CallType type, EJKBKMBJMGL enemyData, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callBack) { }
+		private IEnumerator ShowEnemyInfoCoroutine(MonoBehaviour mb, CallType type, EJKBKMBJMGL_EnemyData enemyData, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callBack)
+		{
+			//0x104E354
+			MenuScene.Instance.InputDisable();
+			if(!m_enemyInfoPopupSetting.ISLoaded())
+			{
+				mb.StartCoroutineWatched(m_enemyInfoPopupSetting.LoadAssetBundlePrefab(m_enemyInfoPopupSetting.m_parent));
+			}
+			while (!m_enemyInfoPopupSetting.ISLoaded())
+				yield return null;
+			m_enemyInfoPopupSetting.enemyData = enemyData;
+			m_enemyInfoPopupSetting.TitleText = MessageManager.Instance.GetMessage("menu", m_contensDataDic[7].popupTitleLabel);
+			m_enemyInfoPopupSetting.WindowSize = GetEnemyPopupWindowSize(enemyData);
+			m_enemyInfoPopupSetting.Buttons = m_popupButton[(int)type].ToArray();
+			MenuScene.Instance.InputEnable();
+			PopupWindowManager.Show(m_enemyInfoPopupSetting, callBack, null, null, null);
+		}
 
 		// // RVA: 0x104C468 Offset: 0x104C468 VA: 0x104C468
-		// private SizeType GetEnemyPopupWindowSize(EJKBKMBJMGL enemyData) { }
+		private SizeType GetEnemyPopupWindowSize(EJKBKMBJMGL_EnemyData enemyData)
+		{
+			if(enemyData.CDEFLIHHNAB)
+			{
+				if(enemyData.LMJFFFOEPLE > 0)
+				{
+					if (enemyData.PDHCABLLJPB_SkillId > 0)
+						return SizeType.Large;
+				}
+			}
+			return SizeType.Middle;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C92A4 Offset: 0x6C92A4 VA: 0x6C92A4
 		// // RVA: 0x104C4F4 Offset: 0x104C4F4 VA: 0x104C4F4

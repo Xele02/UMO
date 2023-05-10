@@ -599,5 +599,14 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1C2F164 Offset: 0x1C2F164 VA: 0x1C2F164
-	// public static void NPGCCNCHDLF(int FAENAMBEGMD, out bool GIKLNODJKFK, out int AKNELONELJK, out int OIPCCBHIKIA) { }
+	public static void NPGCCNCHDLF(int FAENAMBEGMD, out bool GIKLNODJKFK, out int AKNELONELJK, out int OIPCCBHIKIA)
+	{
+		GIKLNODJKFK = (FAENAMBEGMD & 0xffff0000U) == 0x10000;
+		AKNELONELJK = FAENAMBEGMD >> 8;
+		OIPCCBHIKIA = FAENAMBEGMD & 0xff;
+
+		// Debug
+		if (IEFAHENNHAH(GIKLNODJKFK, AKNELONELJK, OIPCCBHIKIA) != FAENAMBEGMD)
+			UnityEngine.Debug.LogError("Error converting music id");
+	}
 }

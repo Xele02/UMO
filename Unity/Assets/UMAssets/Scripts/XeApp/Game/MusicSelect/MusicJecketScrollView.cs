@@ -26,10 +26,26 @@ namespace XeApp.Game.MusicSelect
 		public Action<int> OnClickJacketButtonListener { get; set; } // 0x24
 
 		//// RVA: 0xC9B9D4 Offset: 0xC9B9D4 VA: 0xC9B9D4
-		//public void PerformClickClose() { }
+		public void PerformClickClose()
+		{
+			if (m_buttonClose.IsInputOff)
+				return;
+			m_buttonClose.PerformClick();
+		}
 
 		//// RVA: 0xC9BA2C Offset: 0xC9BA2C VA: 0xC9BA2C
-		//public void SetMusicList(List<VerticalMusicDataList.MusicListData> list) { }
+		public void SetMusicList(List<VerticalMusicDataList.MusicListData> list)
+		{
+			m_musicList = new List<VerticalMusicDataList.MusicListData>(list);
+			m_musicList.RemoveAll((VerticalMusicDataList.MusicListData x) =>
+			{
+				//0xC9C5EC
+				if (x.ViewMusic.AJGCPCMLGKO_IsEvent)
+					return true;
+				return x.ViewMusic.BNIAJAKIAJC_IsEventMinigame;
+			});
+			m_scrollList.SetItemCount(m_musicList.Count);
+		}
 
 		//// RVA: 0xC9BC10 Offset: 0xC9BC10 VA: 0xC9BC10
 		public VerticalMusicDataList.MusicListData GetMusicList(int index)
@@ -40,10 +56,33 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xC9BCCC Offset: 0xC9BCCC VA: 0xC9BCCC
-		//public void Enter(Action endCallback) { }
+		public void Enter(Action endCallback)
+		{
+			SetInputOff(true);
+			m_animeInOut.Enter(false, () =>
+			{
+				//0xC9C658
+				if (endCallback != null)
+					endCallback();
+				SetInputOff(false);
+				m_scrollList.ScrollRect.vertical = m_scrollList.ScrollRect.verticalScrollbar.gameObject.activeSelf;
+			});
+		}
 
 		//// RVA: 0xC9BFA0 Offset: 0xC9BFA0 VA: 0xC9BFA0
-		//public void Leave(Action endCallback) { }
+		public void Leave(Action endCallback)
+		{
+			SetInputOff(true);
+			m_animeInOut.Leave(false, () =>
+			{
+				//0xC9C754
+				if (endCallback != null)
+					endCallback();
+				SetInputOff(false);
+				m_scrollList.ScrollRect.vertical = true;
+				ResetIndex();
+			});
+		}
 
 		//// RVA: 0xC9C0B0 Offset: 0xC9C0B0 VA: 0xC9C0B0
 		public void Initialize()
@@ -68,9 +107,22 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xC9C310 Offset: 0xC9C310 VA: 0xC9C310
-		//public void ResetIndex() { }
+		public void ResetIndex()
+		{
+			for(int i = 0; i < m_scrollList.ScrollObjects.Count; i++)
+			{
+				(m_scrollList.ScrollObjects[i] as MusicJacketScrollItem).ResetIndex();
+			}
+		}
 
 		//// RVA: 0xC9BDDC Offset: 0xC9BDDC VA: 0xC9BDDC
-		//public void SetInputOff(bool inputOff) { }
+		public void SetInputOff(bool inputOff)
+		{
+			m_buttonClose.IsInputOff = inputOff;
+			for(int i = 0; i < m_scrollList.ScrollObjects.Count; i++)
+			{
+				(m_scrollList.ScrollObjects[i] as MusicJacketScrollItem).SetInputOff(inputOff);
+			}
+		}
 	}
 }

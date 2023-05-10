@@ -242,12 +242,13 @@ namespace XeApp.Game.Menu
 			m_musicList.MusicScrollView.CenterItem.OnEnemyInfoButtonClickListener = () =>
 			{
 				//0xBF01F0
-				TodoLogger.LogNotImplemented("OnEnemyInfoButtonClickListener");
+				OnClickEnemyDetailButton(selectMusicData, diff);
 			};
 			m_musicList.MusicScrollView.CenterItem.OnRankingButtonClickListener = () =>
 			{
 				//0xBF0240
-				TodoLogger.LogNotImplemented("OnRankingButtonClickListener");
+				m_musicList.MusicScrollView.SetPosition(list_no);
+				OnClickRankingButton(selectMusicData);
 			};
 			m_musicList.MusicScrollView.OnScrollStartEvent.RemoveAllListeners();
 			m_musicList.MusicScrollView.OnScrollStartEvent.AddListener(() =>
@@ -275,7 +276,7 @@ namespace XeApp.Game.Menu
 			m_musicDetail.OnJacketButtonClickListener = () =>
 			{
 				//0xBF036C
-				TodoLogger.LogNotImplemented("OnJacketButtonClickListener");
+				OnClickJacketButton();
 			};
 			m_musicDetail.OnEventDetailClickListener = () =>
 			{
@@ -344,18 +345,36 @@ namespace XeApp.Game.Menu
 			m_jacketScroll.OnClickJacketButtonListener = (int freeMusicId) =>
 			{
 				//0xBF06B8
-				TodoLogger.LogNotImplemented("m_jacketScroll OnClickJacketButtonListener");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				int idx = currentMusicList.FindIndex(freeMusicId, isLine6Mode, false);
+				list_no = idx;
+				m_musicList.SetMusicDataList(currentMusicList.GetList(isLine6Mode, false), list_no, (int)diff);
+				m_jacketScroll.Leave(() =>
+				{
+					//0xBF152C
+					m_jacketScroll.gameObject.SetActive(false);
+					m_jacketScroll.transform.SetParent(transform, false);
+				});
+				GameManager.Instance.RemovePushBackButtonHandler(m_jacketScroll.PerformClickClose);
 			};
 			m_jacketScroll.OnClickCloseButtonListener = () =>
 			{
 				//0xBF06BC
-				TodoLogger.LogNotImplemented("m_jacketScroll OnClickCloseButtonListener");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_002);
+				m_jacketScroll.Leave(() =>
+				{
+					//0xBF1480
+					m_jacketScroll.gameObject.SetActive(false);
+					m_jacketScroll.transform.SetParent(transform, false);
+				});
+				GameManager.Instance.RemovePushBackButtonHandler(m_jacketScroll.PerformClickClose);
 			};
 			m_jacketScroll.scrollList.OnUpdateItem.RemoveAllListeners();
 			m_jacketScroll.scrollList.OnUpdateItem.AddListener((int index, SwapScrollListContent content) =>
 			{
 				//0xBF06C0
-				TodoLogger.LogNotImplemented("m_jacketScroll scrollList OnUpdateItem");
+				(content as MusicJacketScrollItem).SetUpdateContent(index, m_jacketScroll.GetMusicList(index).ViewMusic.GHBPLHBNMBK_FreeMusicId == selectMusicData.GHBPLHBNMBK_FreeMusicId, m_jacketScroll.GetMusicList(index), m_musicTab == VerticalMusicSelecChoiceMusicListTab.MusicTab.Event);
+				
 			});
 			m_musicList.MusicScrollView.ScrollEnable(true);
 			ApplyCommonInfo();
@@ -1427,7 +1446,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBED3D0 Offset: 0xBED3D0 VA: 0xBED3D0
-		// private void OnClickJacketButton() { }
+		private void OnClickJacketButton()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_jacketScroll.gameObject.SetActive(true);
+			m_jacketScroll.transform.SetParent(transform.parent, false);
+			m_jacketScroll.transform.SetAsLastSibling();
+			int idx = currentMusicList.FindIndex(selectMusicData.GHBPLHBNMBK_FreeMusicId, m_musicSelectUISapporter.isLine6Mode, false);
+			int row = idx / m_jacketScroll.scrollList.ColumnCount;
+			m_jacketScroll.SetMusicList(currentMusicList.GetList(isLine6Mode, false));
+			m_jacketScroll.scrollList.SetPosition(row, 0, 0, false);
+			m_jacketScroll.scrollList.VisibleRegionUpdate();
+			m_jacketScroll.Enter(null);
+			GameManager.Instance.AddPushBackButtonHandler(m_jacketScroll.PerformClickClose);
+		}
 
 		// // RVA: 0xBED824 Offset: 0xBED824 VA: 0xBED824
 		// private void OnClickClozeJacketButton() { }
@@ -1796,20 +1828,8 @@ namespace XeApp.Game.Menu
 			return false;
 		}
 
-		// [CompilerGeneratedAttribute] // RVA: 0x6F61F4 Offset: 0x6F61F4 VA: 0x6F61F4
-		// // RVA: 0xBF00B8 Offset: 0xBF00B8 VA: 0xBF00B8
-		// private void <Co_OnPreSetCanvas>b__63_2() { }
-		
 		// [CompilerGeneratedAttribute] // RVA: 0x6F64C4 Offset: 0x6F64C4 VA: 0x6F64C4
 		// // RVA: 0xBF1454 Offset: 0xBF1454 VA: 0xBF1454
 		// private void <ApplyEventInfo>b__97_0(long current, long limit, long remain) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F64D4 Offset: 0x6F64D4 VA: 0x6F64D4
-		// // RVA: 0xBF1480 Offset: 0xBF1480 VA: 0xBF1480
-		// private void <OnClickClozeJacketButton>b__121_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F64E4 Offset: 0x6F64E4 VA: 0x6F64E4
-		// // RVA: 0xBF152C Offset: 0xBF152C VA: 0xBF152C
-		// private void <OnClickJacketImageButton>b__122_0() { }
 	}
 }

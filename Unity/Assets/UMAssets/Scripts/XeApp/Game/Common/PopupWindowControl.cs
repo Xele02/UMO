@@ -213,11 +213,13 @@ namespace XeApp.Game.Common
 			{
 				PopupTabButton button = m_tabButtons[i];
 				int count = m_tabButtons.Length;
+				int index = i;
 				m_tabButtons[i].AddOnClickCallback(() => {
 					// 0x1BBDFF0
 					for(int j = 0; j < count; j++)
 					{
-						m_tabButtons[j].SetOff();
+						if(j != index)
+							m_tabButtons[j].SetOff();
 					}
 					if(SoundManager.Instance.sePlayerBoot != null)
 					{

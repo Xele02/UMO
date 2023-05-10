@@ -44,7 +44,7 @@ namespace XeApp.Game.Common
 		public Vector2 ContentSize { get { return m_contentRect; } } //0x1CCB0C8
 		public int RowCount { get { return m_rowCount; } } //0x1CCB0DC
 		public int ColumnCount { get { return m_columnCount; } } //0x1CCB0E4
-		//public ScrollRect ScrollRect { get; } 0x1CCB0EC
+		public ScrollRect ScrollRect { get { return m_scrollRect; } } //0x1CCB0EC
 		//public float RelativePositon { get; } 0x1CCB0F4
 		//public bool Vertical { set; } 0x1CCB198
 		private RectTransform ScrollRectTransfom { get {

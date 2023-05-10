@@ -3471,13 +3471,21 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9CC4E8 Offset: 0x9CC4E8 VA: 0x9CC4E8
 		public void OnCallback_PlayVoice_GameClear_PerfectFullCombo()
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer OnCallback_PlayVoice_GameClear_PerfectFullCombo");
+			RhythmGameVoicePlayer.Result voice = voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.GameClear_PerfectFullCombo);
+			if(voice == RhythmGameVoicePlayer.Result.None)
+			{
+				SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.GameClear, 1);
+			}
 		}
 
 		// // RVA: 0x9CC570 Offset: 0x9CC570 VA: 0x9CC570
 		public void OnCallback_PlayVoice_GameClear_FullCombo()
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer OnCallback_PlayVoice_GameClear_FullCombo");
+			RhythmGameVoicePlayer.Result voice = voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.GameClear_FullCombo);
+			if (voice == RhythmGameVoicePlayer.Result.None)
+			{
+				SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.GameClear, 0);
+			}
 		}
 
 		// // RVA: 0x9CC5F8 Offset: 0x9CC5F8 VA: 0x9CC5F8

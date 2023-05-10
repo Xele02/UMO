@@ -21,7 +21,16 @@ public class EJKBKMBJMGL_EnemyData
 
 	public int LMJFFFOEPLE { get { return KKPLDFNDFDE < 1 ? JMEGLFEKEBD_LiveSkill : KKPLDFNDFDE; } } //0x12F3790 CGIJHCKFOKG
 	public int PDHCABLLJPB_SkillId { get { return DCOALMMJDJK < 1 ? MOMCFBMJJKB_CS : DCOALMMJDJK; } } //0x12F37A4 LJKILMHFCCK
-	//public bool CDEFLIHHNAB { get; } 0x12F37B8 NKOCPFCGNOG
+	public bool CDEFLIHHNAB { get {
+			int i = KKPLDFNDFDE;
+			if (i < 1)
+				i = JMEGLFEKEBD_LiveSkill;
+			if (i < 1)
+				i = DCOALMMJDJK;
+			if (i < 1)
+				i = MOMCFBMJJKB_CS;
+			return i > 0;
+		} } //0x12F37B8 NKOCPFCGNOG
 
 	//// RVA: 0x12F37F4 Offset: 0x12F37F4 VA: 0x12F37F4
 	public void KHEKNNFCAOI(int EJNIMIAPJFJ, int IHKNHNKMGAD)

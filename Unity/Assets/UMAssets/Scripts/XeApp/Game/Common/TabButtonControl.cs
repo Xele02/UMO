@@ -12,9 +12,16 @@ namespace XeApp.Game.Common
 			m_buttons = GetComponentsInChildren<ActionButton>(true);
 			for(int i = 0; i < m_buttons.Length; i++)
 			{
+				int index = i;
 				m_buttons[i].AddOnClickCallback(() => {
 					//0x1CCE56C
-					TodoLogger.LogNotImplemented("TabButtonControl.Button");
+					for(int j = 0; j < m_buttons.Length; j++)
+					{
+						if(j != index)
+						{
+							m_buttons[j].SetOff();
+						}
+					}
 				});
 			}
 		}
