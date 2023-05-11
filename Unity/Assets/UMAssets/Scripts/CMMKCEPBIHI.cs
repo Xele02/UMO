@@ -1062,7 +1062,7 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x108C2EC Offset: 0x108C2EC VA: 0x108C2EC
-	public static float GPCKPNJGANO(ResultScoreRank.Type FJOLNJLLJEJ)
+	public static float GPCKPNJGANO_GetRank(ResultScoreRank.Type FJOLNJLLJEJ)
 	{
 		return LKBGHCIKIOA_RankScore[(int)FJOLNJLLJEJ];
 	}
@@ -1530,9 +1530,9 @@ public static class CMMKCEPBIHI
 					KLJCBKMHKNK k = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.BBFNPHGDCOF(vals[(int)AKNELONELJK_Difficulty]);
 					EGLJKICMCPG e = k.GCINIJEMHFK(KLJCBKMHKNK.HHMPIIILOLD.CBHCEDGAGHL/*3*/);
 					int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GAHIBKLEDBF((int)AKNELONELJK_Difficulty, GBNOALJPOBM_IsLine6);
-					int b = (int)Mathf.Clamp(e.PHGLKBPLFDH_RMax / 100.0f * POMOLHBFAPM_Score.JJBOEMOJPEC, e.MPPANPOOIIB_NMin, e.GKPPCFMBANO_NMax);
+					int b = (int)Mathf.Clamp(e.PHGLKBPLFDH_RMax / 100.0f * POMOLHBFAPM_Score.JJBOEMOJPEC_DivaNote, e.MPPANPOOIIB_NMin, e.GKPPCFMBANO_NMax);
 					res = 0;
-					int c = POMOLHBFAPM_Score.JJBOEMOJPEC;
+					int c = POMOLHBFAPM_Score.JJBOEMOJPEC_DivaNote;
 					if (c < b)
 						b = c;
 					if(e.JNNKKPNGPAA(SpecialNoteAttribute.Type.HighScore) != 0)
@@ -1726,13 +1726,13 @@ public static class CMMKCEPBIHI
 		{
 			if(BAAFOOKFDLL == SkillTrigger.Type.AwakenDivaMode)
 			{
-				v = POMOLHBFAPM.JJBOEMOJPEC;
+				v = POMOLHBFAPM.JJBOEMOJPEC_DivaNote;
 				if (!HGEKDNNJAAC)
 					return 0;
 			}
 			else if(BAAFOOKFDLL == SkillTrigger.Type.DivaMode)
 			{
-				v = POMOLHBFAPM.JJBOEMOJPEC;
+				v = POMOLHBFAPM.JJBOEMOJPEC_DivaNote;
 				OHLCKPIMMFH = OOOGNIPJMDE;
 				if (!OHLCKPIMMFH)
 					return 0;
@@ -1801,7 +1801,7 @@ public static class CMMKCEPBIHI
 				HGEKDNNJAAC = true;
 			}
 			b = HGEKDNNJAAC;
-			a = cb - POMOLHBFAPM.JJBOEMOJPEC;
+			a = cb - POMOLHBFAPM.JJBOEMOJPEC_DivaNote;
 		}
 		int res = 0;
 		if(b && skill_combo_bonus_value0 <= cb)

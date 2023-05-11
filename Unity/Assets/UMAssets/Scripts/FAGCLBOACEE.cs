@@ -50,7 +50,7 @@ public class FAGCLBOACEE
                 TodoLogger.Log(0, "KHEKNNFCAOI 6");
                 break;
             case BEFPBAIONFK.KHBEKPMMALI/*7*/:
-                TodoLogger.Log(0, "KHEKNNFCAOI 7");
+				id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CIKALPJDGMF_ResolveMusicId(PPFNGGCBJKC, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(PPFNGGCBJKC).DLAEJOBELBH_MusicId);
                 break;
             default:
                 return;

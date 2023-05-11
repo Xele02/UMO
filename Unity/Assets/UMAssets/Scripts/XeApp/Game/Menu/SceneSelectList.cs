@@ -392,7 +392,7 @@ namespace XeApp.Game.Menu
 				}
 				for(int i = 0; i < 5; i++)
 				{
-					rankPosition[i] = CMMKCEPBIHI.GPCKPNJGANO((ResultScoreRank.Type)i);
+					rankPosition[i] = CMMKCEPBIHI.GPCKPNJGANO_GetRank((ResultScoreRank.Type)i);
 				}
 				m_scoreGaugeLayout.StartChildrenAnimGoStop("01");
 				float viewratio = m_scoreGauge.UpdateScoreGaugeRatio(m_gaugeRateText, m_scorePlusButton, m_scoreMinusButton);

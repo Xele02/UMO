@@ -120,7 +120,7 @@ namespace XeApp.Game.Menu
 		public ItemTextureCache ItemTextureCache { get { return GameManager.Instance.ItemTextureCache; } } //0xB2DECC
 		public MenuResidentTextureCache MenuResidentTextureCache { get { return GameManager.Instance.MenuResidentTextureCache; } } //0xB2DF68
 		public MusicJacketTextureCache MusicJacketTextureCache { get { return GameManager.Instance.MusicJacketTextureCache; } } //0xB2E004
-		// public UnitPopupWindowControl UnitSaveWindowControl { get; } 0xB2E0A0
+		public UnitPopupWindowControl UnitSaveWindowControl { get { return m_unitSaveWindowControl; } } //0xB2E0A0
 		public StatusWindowControl StatusWindowControl { get { return m_statusWindowControl; } } //0xB2E0A8
 		public MusicPopupWindowControl MusicPopupWindowControl { get { return m_musicPopupWindowControl; } } //0xB2E0B0
 		// public HelpPopupWindowControl HelpPopupWindowControl { get; } 0xB2E0B8

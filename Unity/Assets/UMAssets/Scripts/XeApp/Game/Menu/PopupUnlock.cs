@@ -532,6 +532,25 @@ namespace XeApp.Game.Menu
 						mdmsetting.UnlockInfo = m_unlockInfo;
 					}
 					break;
+				case eUnlockType.LiveSkip:
+					{
+						PopupUnlockDifficultySetting dsseting = new PopupUnlockDifficultySetting();
+						res = dsseting;
+						res.TitleText = "";
+						res.WindowSize = SizeType.Small;
+						res.Buttons = new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+						};
+						dsseting.UnlockInfo = m_unlockInfo;
+						res.IsCaption = false;
+						dsseting.closeAction = () =>
+						{
+							//0x115C3E8
+							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EMHMCOBNMLI();
+						};
+					}
+					break;
 				default:
 					TodoLogger.Log(0, "CreatePopupSetting " + unlockTYpe);
 					break;

@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 { 
 	public class PopupAutoSettingContentSetting : PopupSetting
 	{
-		//public PopupAutoSettingContent.Place Place { get; set; } // 0x34
+		public PopupAutoSettingContent.Place Place { get; set; } // 0x34
 		public DFKGGBMFFGB_PlayerInfo PlayerData { get; set; } // 0x38
 		public UnityAction<PopupAutoSettingContent> OkCallBack { get; set; } // 0x3C
 		public UnityAction ClearPlateCallBack { get; set; } // 0x40

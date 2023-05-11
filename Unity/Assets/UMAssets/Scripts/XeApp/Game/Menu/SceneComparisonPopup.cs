@@ -267,7 +267,7 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < 5; i++)
 			{
-				rank[i] = CMMKCEPBIHI.GPCKPNJGANO((ResultScoreRank.Type)i);
+				rank[i] = CMMKCEPBIHI.GPCKPNJGANO_GetRank((ResultScoreRank.Type)i);
 			}
 			m_scoreGauges[index].SetScore(CMMKCEPBIHI.KHCOOPDAGOE_ScoreRank, CMMKCEPBIHI.FDLECNKJCGG_GaugeRatio, rank, scores, 1);
 			return total;

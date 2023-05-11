@@ -264,6 +264,11 @@ namespace XeApp.Game.Menu
 		{
 			if (value == 1)
 			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				ProfilDateArgs arg = new ProfilDateArgs();
+				arg.data = m_guestInfoList[content.Index].friend;
+				arg.infoType = ProfilMenuLayout.InfoType.ASSIST;
+				//MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 				TodoLogger.LogNotImplemented("OnSelectListItem");
 			}
 			else if(value == 0)

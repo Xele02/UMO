@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -85,32 +86,123 @@ namespace XeApp.Game.Menu
 		// public void ShowSaveTextWindow(ConfirmType type, int slot, UnityAction okAction) { }
 
 		// // RVA: 0x1248344 Offset: 0x1248344 VA: 0x1248344
-		// public void ShowUnitAutoSettingWindow(DFKGGBMFFGB playerData, PopupAutoSettingContent.Place place, int musicAttribute, int musicSeries, int musicID, UnityAction<PopupAutoSettingContent> okCallBack, UnityAction clearPlateCallBack, Action openEnd, KLBKPANJCPL scoreInfo, bool isGoDiva) { }
+		public void ShowUnitAutoSettingWindow(DFKGGBMFFGB_PlayerInfo playerData, PopupAutoSettingContent.Place place, int musicAttribute, int musicSeries, int musicID, UnityAction<PopupAutoSettingContent> okCallBack, UnityAction clearPlateCallBack, Action openEnd, KLBKPANJCPL_Score scoreInfo, bool isGoDiva)
+		{
+			m_unitAutoSettingSetting.Place = place;
+			m_unitAutoSettingSetting.MusicAttribute = musicAttribute;
+			m_unitAutoSettingSetting.MusicSeries = musicSeries;
+			m_unitAutoSettingSetting.MusicID = musicID;
+			m_unitAutoSettingSetting.PlayerData = playerData;
+			m_unitAutoSettingSetting.OkCallBack = okCallBack;
+			m_unitAutoSettingSetting.ClearPlateCallBack = clearPlateCallBack;
+			m_unitAutoSettingSetting.IsGoDviva = isGoDiva;
+			m_unitAutoSettingSetting.ScoreInfo = scoreInfo;
+			ShowUnitAutoSettingWindow(openEnd);
+		}
 
 		// // RVA: 0x12484E8 Offset: 0x12484E8 VA: 0x12484E8
-		// private void ShowUnitAutoSettingWindow(Action openEnd) { }
+		private void ShowUnitAutoSettingWindow(Action openEnd)
+		{
+			m_unitAutoSettingSetting.Buttons = new ButtonInfo[3]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.PlateAllClear, Type = PopupButton.ButtonType.Other },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(m_unitAutoSettingSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1249480
+				if(label == PopupButton.ButtonLabel.PlateAllClear)
+				{
+					OnShowClearPlateConfirm();
+				}
+				else if(label == PopupButton.ButtonLabel.Ok)
+				{
+					ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD(JpStringLiterals.StringLiteral_20864, 0, true, m_unitAutoSettingSetting.IsGoDviva, m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(m_unitAutoSettingSetting.IsGoDviva).PDJEMLMOEPF_CenterDivaId);
+					m_unitAutoSettingSetting.OkCallBack.Invoke(control.Content as PopupAutoSettingContent);
+				}
+				m_unitAutoSettingSetting.PlayerData = null;
+				m_unitAutoSettingSetting.OkCallBack = null;
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x12496F8
+				m_unitAutoSettingSetting.TabCallBack.Invoke(label);
+			}, null, openEnd);
+			m_plateAllClearSetting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+		}
 
 		// // RVA: 0x12488A0 Offset: 0x12488A0 VA: 0x12488A0
 		// public void ShowSkillWindow(string name, string descript) { }
 
 		// // RVA: 0x12489B8 Offset: 0x12489B8 VA: 0x12489B8
-		// private void OnShowClearPlateConfirm() { }
+		private void OnShowClearPlateConfirm()
+		{
+			bool isGoDiva = m_unitAutoSettingSetting.IsGoDviva;
+			m_plateAllClearSetting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(m_plateAllClearSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1249968
+				if(label != PopupButton.ButtonLabel.Ok)
+				{
+					ShowUnitAutoSettingWindow(null);
+				}
+				else
+				{
+					if(isGoDiva)
+					{
+						ClearPlate();
+					}
+					else
+					{
+						GoDivaClearPlate();
+					}
+					m_unitAutoSettingSetting.ClearPlateCallBack.Invoke();
+					m_unitAutoSettingSetting.PlayerData = null;
+					m_unitAutoSettingSetting.OkCallBack = null;
+				}
+			}, null, null, null);
+		}
 
 		// // RVA: 0x1248C38 Offset: 0x1248C38 VA: 0x1248C38
-		// private void ClearPlate() { }
+		private void ClearPlate()
+		{
+			for(int i = 0; i < m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC.Count; i++)
+			{
+				m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC[i].MNBNLONEDPF(false);
+				m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC[i].BCEJOOCGBFG(0, false);
+				m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC[i].BCEJOOCGBFG(1, false);
+			}
+			m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(false).HCDGELDHFHB();
+		}
 
 		// // RVA: 0x1248ED4 Offset: 0x1248ED4 VA: 0x1248ED4
-		// private void GoDivaClearPlate() { }
+		private void GoDivaClearPlate()
+		{
+			for (int i = 0; i < m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(true).BCJEAJPLGMB_MainDivas.Count; i++)
+			{
+				FFHPBEPOMAK_DivaInfo f = m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(true).BCJEAJPLGMB_MainDivas[i];
+				f.CJBBDBGDFKJ(null, true);
+				for (int j = 0; j < f.DJICAKGOGFO_SubSceneIds.Count; j++)
+				{
+					f.GIGDKIHBDHB(null, j, true);
+				}
+			}
+			m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(true).HCDGELDHFHB();
+		}
 
 		// // RVA: 0x124912C Offset: 0x124912C VA: 0x124912C
 		// public void ShowSubPlateWindow(CFHDKAFLNEP result, Action openEnd, UnitWindowConstant.OperationMode opMode, Action endCallBack, Action closeCallBack, bool isReShow = False) { }
 
 		// // RVA: 0x12493B0 Offset: 0x12493B0 VA: 0x12493B0
 		// public void ShowSubPlateLockWindow(Action endCallBack) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x735A6C Offset: 0x735A6C VA: 0x735A6C
-		// // RVA: 0x1249480 Offset: 0x1249480 VA: 0x1249480
-		// private void <ShowUnitAutoSettingWindow>b__13_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x735A7C Offset: 0x735A7C VA: 0x735A7C
 		// // RVA: 0x12496F8 Offset: 0x12496F8 VA: 0x12496F8

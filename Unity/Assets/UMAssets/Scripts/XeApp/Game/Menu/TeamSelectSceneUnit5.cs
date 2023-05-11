@@ -905,7 +905,7 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < rank.Length; i++)
 			{
-				rank[i] = CMMKCEPBIHI.GPCKPNJGANO((ResultScoreRank.Type)i);
+				rank[i] = CMMKCEPBIHI.GPCKPNJGANO_GetRank((ResultScoreRank.Type)i);
 			}
 			m_musicInfo.ExpectedScoreGauge.Set(CMMKCEPBIHI.KHCOOPDAGOE_ScoreRank, CMMKCEPBIHI.FDLECNKJCGG_GaugeRatio, rank, score);
 		}
@@ -1577,18 +1577,54 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8F89C Offset: 0xA8F89C VA: 0xA8F89C
 		private void OnShowScoreInfoPopup()
 		{
-			TodoLogger.LogNotImplemented("OnShowScoreInfoPopup");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			SetDeckGaugePopupSetting setting = new SetDeckGaugePopupSetting();
+			setting.WindowSize = SizeType.Large;
+			setting.TitleText = bk.GetMessageByLabel("pop_score_detail_title");
+			setting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			PopupWindowManager.Show(setting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xA92584
+				m_musicInfo.ExpectedScoreGauge.UpdateScore();
+			}, null, null, null);
 		}
 
 		//// RVA: 0xA8FB84 Offset: 0xA8FB84 VA: 0xA8FB84
 		private void OnClickAutoSettingButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickAutoSettingButton");
+			OnClickAnyButtons();
+			KLBKPANJCPL_Score score = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.ALJFMLEJEHH_GetMusicScore(m_viewMusicData.KKPAHLMJKIH_WavId, m_viewMusicData.BKJGCEOEPFB_Variation, (int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_isOpenEndAutoSetting = false;
+			MenuScene.Instance.UnitSaveWindowControl.ShowUnitAutoSettingWindow(m_playerData, PopupAutoSettingContent.Place.UnitSelect, m_viewMusicData.FKDCCLPGKDK_JacketAttr, m_viewMusicData.AIHCEGFANAM_Serie, m_viewMusicData.DLAEJOBELBH_MusicId, (PopupAutoSettingContent content) =>
+			{
+				//0xA925D0
+				content.ApplyAutoSetting(m_playerData.DPLBHAIKPGL_GetTeam(m_isGoDivaEvent), m_playerData, m_isGoDivaEvent);
+				this.StartCoroutineWatched(Co_ApplyCurrentUnitContentForAutoSetting());
+			}, () =>
+			{
+				//0xA92688
+				this.StartCoroutineWatched(Co_ApplyCurrentUnitContentForAutoSetting());
+			}, () =>
+			{
+				//0xA926AC
+				m_isOpenEndAutoSetting = true;
+			}, score, m_isGoDivaEvent);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F604 Offset: 0x72F604 VA: 0x72F604
 		//// RVA: 0xA8FF98 Offset: 0xA8FF98 VA: 0xA8FF98
-		//private IEnumerator Co_ApplyCurrentUnitContentForAutoSetting() { }
+		private IEnumerator Co_ApplyCurrentUnitContentForAutoSetting()
+		{
+			//0xA937B4
+			TodoLogger.Log(0, "Co_ApplyCurrentUnitContentForAutoSetting");
+			yield return null;
+		}
 
 		//// RVA: 0xA90044 Offset: 0xA90044 VA: 0xA90044
 		private void OnClickUnitSetButton()
@@ -1836,10 +1872,6 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x72F8AC Offset: 0x72F8AC VA: 0x72F8AC
 		//// RVA: 0xA92578 Offset: 0xA92578 VA: 0xA92578
 		//private void <ShowSubPlateWindow>b__158_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F8BC Offset: 0x72F8BC VA: 0x72F8BC
-		//// RVA: 0xA92584 Offset: 0xA92584 VA: 0xA92584
-		//private void <OnShowScoreInfoPopup>b__165_0(PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 
 		//[CompilerGeneratedAttribute] // RVA: 0x72F8CC Offset: 0x72F8CC VA: 0x72F8CC
 		//// RVA: 0xA925D0 Offset: 0xA925D0 VA: 0xA925D0

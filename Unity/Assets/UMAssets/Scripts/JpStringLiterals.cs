@@ -309,5 +309,6 @@ class JpStringLiterals
 	public const string StringLiteral_20367 = "ー"; // 0x03bbc8f4
 	public const string StringLiteral_20369 = "±{0}"; // 0x03bbc8fc
 	public const string StringLiteral_20382 = "（2回使用可）"; // 0x03bbc930
+	public const string StringLiteral_20864 = "自動編成"; // 0x03bbd0b8
 	public const string StringLiteral_21607 = "???12"; //0x03bbdc54
 }
