@@ -1,13 +1,14 @@
 
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
 
 public class AEKDNMPPOJN
 {
 	public LimitOverStatusData CMCKNKKCNDK = new LimitOverStatusData(); // 0x8
-	public int OBMGLMLCGJC; // 0xC
-	public int NJGBLBNALKM; // 0x10
-	public int LAAPJKFEFHK; // 0x14
+	public int OBMGLMLCGJC_ExcellentRate; // 0xC
+	public int NJGBLBNALKM_ExcellentEffect; // 0x10
+	public int LAAPJKFEFHK_CenterLiveSkillRate; // 0x14
 	public string ABKCMICDHLN; // 0x18
 	public string JFNHGLGIEMF; // 0x1C
 	public string ACKDDGKFNIJ; // 0x20
@@ -28,7 +29,70 @@ public class AEKDNMPPOJN
 	// RVA: 0x15BB8C8 Offset: 0x15BB8C8 VA: 0x15BB8C8
 	public void KHEKNNFCAOI(int JKGFBFPIMGA, int DMNIMMGGJJJ, int MJBODMOLOBC)
 	{
-		TodoLogger.Log(0, "KHEKNNFCAOI");
+		EKLIPGELKCL = JKGFBFPIMGA;
+		DJEHLEJCPEL = DMNIMMGGJJJ;
+		LJHOOPJACPI = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.JNLLKKHJCAD(JKGFBFPIMGA, MJBODMOLOBC);
+		if(JKGFBFPIMGA < 4)
+		{
+			if(LJHOOPJACPI != 0)
+			{
+				Debug.LogError(JpStringLiterals.StringLiteral_8676);
+			}
+			LJHOOPJACPI = 0;
+		}
+		else
+		{
+			int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.ELFPIODODFF(JKGFBFPIMGA);
+			if (a <= LJHOOPJACPI)
+				LJHOOPJACPI = a;
+			IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.MNHPPJFNPCG(ref CMCKNKKCNDK, JKGFBFPIMGA, MJBODMOLOBC, DMNIMMGGJJJ);
+			OBMGLMLCGJC_ExcellentRate = CMCKNKKCNDK.excellentRate;
+			NJGBLBNALKM_ExcellentEffect = CMCKNKKCNDK.excellentEffect;
+			LAAPJKFEFHK_CenterLiveSkillRate = CMCKNKKCNDK.centerLiveSkillRate;
+			if(DMNIMMGGJJJ == a)
+			{
+				IJEOIMGILCK = 0;
+				GNKGDDMMJPF = 0;
+				MJNOAMAFNHA = 0;
+				EOBACDCDGOF = false;
+				JMHIDPKHELB = true;
+			}
+			else
+			{
+				int found = -1;
+				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.PIPHIPNEJCM.Count; i++)
+				{
+					LLKLAKGKNLD_LimitOver.ENKHACHPPFA item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.PIPHIPNEJCM[i];
+					if (item.EKLIPGELKCL == JKGFBFPIMGA && item.GNFJOONKCFH == DMNIMMGGJJJ + 1)
+					{
+						found = i;
+						break;
+					}
+				}
+				{
+					LLKLAKGKNLD_LimitOver.ENKHACHPPFA item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.PIPHIPNEJCM[found];
+					MJNOAMAFNHA = item.GLCLFMGPMAN;
+					IJEOIMGILCK = item.ADPPAIPFHML;
+					GNKGDDMMJPF = item.ACGLMKEBMDL;
+					EOBACDCDGOF = false;
+					JMHIDPKHELB = false;
+					JMHIDPKHELB = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.JNLLKKHJCAD(JKGFBFPIMGA, MJBODMOLOBC) < DJEHLEJCPEL + 1;
+					int c = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.BKCAECPCELG();
+					if (c > -1)
+					{
+						for(int i = 0; i < c; i++)
+						{
+							if(DJEHLEJCPEL + 1 <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.JNLLKKHJCAD(JKGFBFPIMGA, i))
+							{
+								DBKCPIPNKEP = i;
+								break;
+							}
+						}
+					}
+				}
+				PPIFEOJOEMO = true;
+			}
+		}
 	}
 
 	// RVA: 0x15BBE70 Offset: 0x15BBE70 VA: 0x15BBE70

@@ -125,7 +125,23 @@ public class GCIJNCFDNON_SceneInfo
 	}
 
 	// // RVA: 0x16AB880 Offset: 0x16AB880 VA: 0x16AB880
-	// public int EMPEHJLBIKC(JLKEOGLJNOD MLAFAACKKBG) { }
+	public int EMPEHJLBIKC(JLKEOGLJNOD_TeamInfo MLAFAACKKBG)
+	{
+		int r = 0;
+		foreach(var d in MLAFAACKKBG.BCJEAJPLGMB_MainDivas)
+		{
+			if(d != null)
+			{
+				r |= (1 << (d.AHHJLDLAPAN_DivaId - 1));
+			}
+		}
+		int res = 0;
+		for(r = r & AOLIJKMIJJE_DivaCompatible; r > 0; r &= (r - 1))
+		{
+			res++;
+		}
+		return res;
+	}
 
 	// // RVA: 0x16ABA20 Offset: 0x16ABA20 VA: 0x16ABA20
 	private JNKEEAOKNCI_Skill PJNDCOJNILE_GetSkillDb()

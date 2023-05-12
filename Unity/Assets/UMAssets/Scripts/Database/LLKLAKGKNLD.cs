@@ -84,7 +84,10 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x180E7A4 Offset: 0x180E7A4 VA: 0x180E7A4
-	//public int BKCAECPCELG() { }
+	public int BKCAECPCELG()
+	{
+		return LOCCHKJGJDJ.Count;
+	}
 
 	//// RVA: 0x180E82C Offset: 0x180E82C VA: 0x180E82C
 	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
