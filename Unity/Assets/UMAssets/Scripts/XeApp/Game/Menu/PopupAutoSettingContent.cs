@@ -1016,7 +1016,7 @@ namespace XeApp.Game.Menu
 							sp.total = sceneList[m_sortSceneList[i].sceneListIndex].CMCKNKKCNDK_Status.Total;
 							if (SelectMusicAttribute == sceneList[m_sortSceneList[i].sceneListIndex].JGJFIJOCPAG_SceneAttr)
 								sp.total = sp.total * 130 / 100;
-							m_sortSceneList.Add(sp);
+							m_sortSceneList[i] = sp;
 						}
 					}
 				}
