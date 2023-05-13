@@ -115,6 +115,7 @@ namespace XeApp.Game.Menu
 				if(label == PopupButton.ButtonLabel.PlateAllClear)
 				{
 					OnShowClearPlateConfirm();
+					return;
 				}
 				else if(label == PopupButton.ButtonLabel.Ok)
 				{
@@ -156,7 +157,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					if(isGoDiva)
+					if(!isGoDiva)
 					{
 						ClearPlate();
 					}

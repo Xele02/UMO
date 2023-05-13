@@ -1622,8 +1622,19 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_ApplyCurrentUnitContentForAutoSetting()
 		{
 			//0xA937B4
-			TodoLogger.Log(0, "Co_ApplyCurrentUnitContentForAutoSetting");
-			yield return null;
+			MenuScene.Instance.RaycastDisable();
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ECNAIALHHBO_UnitMenu.BLABFAMKLIN_UnitInfoDispType != 0)
+			{
+				yield return null;
+				m_unitInfo.AnimeControl.ChangeDispType(ChangeUnitInfoDispType());
+				while(m_unitInfo.AnimeControl.IsPlaying())
+					yield return  null;
+			}
+			//LAB_00a93a60
+			ApplyCurrentUnitContent(false);
+			while(IsApplyWait())
+				yield return null;
+			MenuScene.Instance.RaycastEnable();
 		}
 
 		//// RVA: 0xA90044 Offset: 0xA90044 VA: 0xA90044
