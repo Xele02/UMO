@@ -170,7 +170,91 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12E21FC Offset: 0x12E21FC VA: 0x12E21FC
 		public void ShowSceneStatusPopupWindow(GCIJNCFDNON_SceneInfo scene, DFKGGBMFFGB_PlayerInfo playerData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isFriend = false, bool isReward = false, SceneStatusParam.PageSave pageSave = SceneStatusParam.PageSave.Player, bool isDisableZoom = false)
 		{
-			TodoLogger.Log(0, "ShowSceneStatusPopupWindow");
+			if(isFriend || isReward)
+			{
+				m_sceneStatePopup.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+			}
+			else
+			{
+				if(scene.KELFCMEOPPM_EpisodeId < 1)
+				{
+					m_sceneStatePopup.Buttons = new ButtonInfo[2]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.SkillRelease, Type = PopupButton.ButtonType.Ability }
+					};
+				}
+				else
+				{
+					m_sceneStatePopup.Buttons = new ButtonInfo[3]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Episode, Type = PopupButton.ButtonType.Episode },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.SkillRelease, Type = PopupButton.ButtonType.Ability }
+					};
+				}
+			}
+			List<StatusPopupState> popupStateList = null;
+			if(transitionName != TransitionList.Type.UNDEFINED)
+			{
+				if(!m_popStateDict.TryGetValue((int)transitionName, out popupStateList))
+				{
+					popupStateList = new List<StatusPopupState>(8);
+					m_popStateDict[(int)transitionName] = popupStateList;
+				}
+				popupStateList.Add(new StatusPopupState() {
+					type = StatusPopupType.Scene,
+					id = scene.BCCHOBPJJKE_SceneId,
+					isCloseOnly = false,
+					isGoDiva = false
+				});
+			}
+			m_sceneStatePopup.Scene = scene;
+			m_sceneStatePopup.PlayerData = playerData;
+			m_sceneStatePopup.IsOpenAnimeMoment = isMoment;
+			m_sceneStatePopup.IsFriend = isFriend;
+			m_sceneStatePopup.PageSave = pageSave;
+			m_sceneStatePopup.IsDisableZoom = isDisableZoom;
+			m_sceneStatePopup.TitleText = GameMessageManager.GetSceneCardName(scene);
+			int counter = 0;
+			PopupWindowManager.Show(m_sceneStatePopup, (PopupWindowControl control, PopupButton.ButtonType label, PopupButton.ButtonLabel type) =>
+			{
+				//0x12E30C0
+				if(type == PopupButton.ButtonLabel.Episode)
+				{
+					PopupWindowManager.Close(control, null);
+					PIGBBNDPPJC p = new PIGBBNDPPJC();
+					p.KHEKNNFCAOI(scene.KELFCMEOPPM_EpisodeId);
+					EpisodeDetailArgs arg = new EpisodeDetailArgs();
+					arg.data = p;
+					//MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT_EPISODEDETAIL, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+					TodoLogger.LogNotImplemented("ShowSceneStatusPopupWindow");
+				}
+				else if(type == PopupButton.ButtonLabel.SkillRelease)
+				{
+					PopupWindowManager.Close(control, null);
+					SceneGrowthSceneArgs arg = new SceneGrowthSceneArgs(scene, false);
+					//MenuScene.Instance.Call(TransitionList.Type.SCENE_GROWTH, arg, true);
+					TodoLogger.LogNotImplemented("ShowSceneStatusPopupWindow");
+					return;
+				}
+				else
+				{
+					if(callBack != null)
+						callBack();
+				}
+				popupStateList.RemoveAt(popupStateList.Count - 1);
+			}, null, null, null, true, true, false, () =>
+			{
+				//0x12E3390
+				bool b = counter != 0;
+				if(!b)
+					counter = 1;
+				return b;
+			});
 		}
 
 		// // RVA: 0x12E2978 Offset: 0x12E2978 VA: 0x12E2978

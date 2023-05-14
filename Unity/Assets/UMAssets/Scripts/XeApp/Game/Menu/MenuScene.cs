@@ -996,7 +996,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB32938 Offset: 0xB32938 VA: 0xB32938
 		public void ShowSceneStatusPopupWindow(GCIJNCFDNON_SceneInfo scene, DFKGGBMFFGB_PlayerInfo playerData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isFriend = false, bool isReward = false, SceneStatusParam.PageSave pageSave = SceneStatusParam.PageSave.Player, bool isDisableZoom = false)
 		{
-			TodoLogger.LogNotImplemented("ShowSceneStatusPopupWindow");
+			if(!isFriend && !isReward)
+			{
+				scene.LEHDLBJJBNC_SetNotNew();
+				scene.CADENLBDAEB = false;
+			}
+			m_statusWindowControl.ShowSceneStatusPopupWindow(scene, playerData, isMoment, 
+			transitionName, callBack, isFriend, isReward, pageSave, isDisableZoom);
 		}
 
 		// // RVA: 0xB32A3C Offset: 0xB32A3C VA: 0xB32A3C

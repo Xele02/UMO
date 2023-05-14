@@ -177,7 +177,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BC1670 Offset: 0x1BC1670 VA: 0x1BC1670
-		// public static void Close(PopupWindowControl ignoreControl, Action endCallBack) { }
+		public static void Close(PopupWindowControl ignoreControl, Action endCallBack)
+		{
+			for(int i = s_popupIndexStack.Count - 1; i >= 0; i--)
+			{
+				if(ignoreControl != s_controls[s_popupIndexStack[i]])
+				{
+					s_controls[s_popupIndexStack[i]].Close(i == 0 ? endCallBack : null, null);
+				}
+			}
+		}
 
 		// // RVA: 0x1BC190C Offset: 0x1BC190C VA: 0x1BC190C
 		public static TextPopupSetting CreateMessageBankTextContent(string bankName, string titleLabel, string messageLabel, SizeType size, ButtonInfo[] buttons)

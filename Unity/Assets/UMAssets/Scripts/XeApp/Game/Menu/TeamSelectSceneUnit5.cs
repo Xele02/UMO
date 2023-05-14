@@ -1572,7 +1572,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8F5B4 Offset: 0xA8F5B4 VA: 0xA8F5B4
 		private void OnShowSceneStatus(int divaSlotNumber, int sceneSlotNumber, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON_SceneInfo sceneData)
 		{
-			TodoLogger.LogNotImplemented("OnShowSceneStatus");
+			if(sceneData != null)
+			{
+				OnClickAnyButtons();
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, m_playerData, false,
+					m_transitionName, UpdateContent, divaSlotNumber == -1, false, SceneStatusParam.PageSave.Player, false);
+			}
 		}
 
 		//// RVA: 0xA8F73C Offset: 0xA8F73C VA: 0xA8F73C
