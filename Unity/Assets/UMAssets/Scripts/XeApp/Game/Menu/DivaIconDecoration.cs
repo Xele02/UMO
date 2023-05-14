@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Game.Common;
 using XeSys.Gfx;
@@ -287,7 +288,18 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E2F34 Offset: 0x17E2F34 VA: 0x17E2F34
-		//public static int GetEquipmentLuck(List<GCIJNCFDNON> sceneList) { }
+		public static int GetEquipmentLuck(List<GCIJNCFDNON_SceneInfo> sceneList)
+		{
+			int res = 0;
+			for(int i = 0; i < sceneList.Count; i++)
+			{
+				if(sceneList[i] != null)
+				{
+					res += sceneList[i].MJBODMOLOBC_Luck;
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0x17D4F90 Offset: 0x17D4F90 VA: 0x17D4F90
 		public void SetActive(bool isActive)

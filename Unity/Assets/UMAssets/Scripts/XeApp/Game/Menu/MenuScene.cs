@@ -987,14 +987,17 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB327F0 Offset: 0xB327F0 VA: 0xB327F0
 		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK_DivaInfo diva, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isChangeScene = true, bool isCloseOnly = false, int divaSlotNumber = -1, bool isGoDiva = false)
 		{
-			TodoLogger.Log(0, "ShowDivaStatusPopupWindow");
+			m_statusWindowControl.ShowDivaStatusPopupWindow(diva, playerData, null, musicData, isMoment, transitionName, callBack, false, isChangeScene, isCloseOnly, divaSlotNumber, isGoDiva);
 		}
 
 		// // RVA: 0xB32898 Offset: 0xB32898 VA: 0xB32898
 		// public void ShowFriendDivaStatusPopupWindow(EAJCBFGKKFA friendData, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isChangeScene = False) { }
 
 		// // RVA: 0xB32938 Offset: 0xB32938 VA: 0xB32938
-		// public void ShowSceneStatusPopupWindow(GCIJNCFDNON scene, DFKGGBMFFGB playerData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isFriend = False, bool isReward = False, SceneStatusParam.PageSave pageSave = 1, bool isDisableZoom = False) { }
+		public void ShowSceneStatusPopupWindow(GCIJNCFDNON_SceneInfo scene, DFKGGBMFFGB_PlayerInfo playerData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isFriend = false, bool isReward = false, SceneStatusParam.PageSave pageSave = SceneStatusParam.PageSave.Player, bool isDisableZoom = false)
+		{
+			TodoLogger.LogNotImplemented("ShowSceneStatusPopupWindow");
+		}
 
 		// // RVA: 0xB32A3C Offset: 0xB32A3C VA: 0xB32A3C
 		public void TryShowPopupWindow(TransitionRoot root, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName, Action closeCallBack)

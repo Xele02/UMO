@@ -99,7 +99,8 @@ namespace XeApp.Game.Menu
 				});
 				m_divaButton.AddOnStayCallback(() => {
 					//0xA6BBD0
-					TodoLogger.Log(0, "stay on diva button");
+					if(OnStayDivaButton != null)
+						OnStayDivaButton();
 				});
 			}
 			if(m_costumeButton != null)

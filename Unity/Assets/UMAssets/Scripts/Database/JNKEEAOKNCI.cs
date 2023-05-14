@@ -614,10 +614,10 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 			{
 				if (((int)array[j].PFOIIAGCKON ^ array2[i].FLJHGGKIOJH_SkillType | array2[i].FLJHGGKIOJH_SkillType >> 0x1f) == 0) // ?? not sure if ((uVar8 ^ uVar5 | (int)uVar8 >> 0x1f) == 0) break;
 				{
-					array2[i].AOPELJFAMCL = (int)array[j].AOPELJFAMCL;
+					array2[i].AOPELJFAMCL_LiveSkillType = (int)array[j].AOPELJFAMCL;
 					break;
 				}
-				array2[i].AOPELJFAMCL = 0;
+				array2[i].AOPELJFAMCL_LiveSkillType = 0;
 			}
 		}
 		return true;
@@ -897,7 +897,7 @@ public class PPGHMBNIAEC
 	public int NFIBKOACELP_Attr; // 0x38
 	public int POMLAENHCHA_TargetSkillEffectId; // 0x3C
 	public int DPGDCJFBFGK_TargetSkillType; // 0x40
-	public int AOPELJFAMCL; // 0x44
+	public int AOPELJFAMCL_LiveSkillType; // 0x44
 
 	//// RVA: 0xDF6D74 Offset: 0xDF6D74 VA: 0xDF6D74
 	//public uint CAOGDCBPBAN() { }

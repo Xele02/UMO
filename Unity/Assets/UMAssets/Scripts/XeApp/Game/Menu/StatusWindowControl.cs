@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -56,8 +58,114 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12E1708 Offset: 0x12E1708 VA: 0x12E1708
 		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK_DivaInfo diva, DFKGGBMFFGB_PlayerInfo playerData, EAJCBFGKKFA_FriendInfo friendData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isFriend = false, bool isChangeScene = true, bool isCloseOnly = false, int divaSlotNumber = -1, bool isGoDiva = false)
 		{
-			TodoLogger.Log(0, "ShowDivaStatusPopupWindow");
-		}
+			if(!isGoDiva)
+			{
+				divaSlotNumber = -1;
+				JLKEOGLJNOD_TeamInfo team = playerData.DPLBHAIKPGL_GetTeam(false);
+				for(int i = 0; i < team.BCJEAJPLGMB_MainDivas.Count; i++)
+				{
+					if(team.BCJEAJPLGMB_MainDivas[i] != null)
+					{
+						if(team.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId == diva.AHHJLDLAPAN_DivaId)
+						{
+							divaSlotNumber = i;
+							break;
+						}
+					}
+				}
+				if(divaSlotNumber == -1)
+				{
+					for(int i = 0; i < team.CMOPCCAJAAO_AddDivas.Count; i++)
+					{
+						if(team.CMOPCCAJAAO_AddDivas[i] != null)
+						{
+							if(team.CMOPCCAJAAO_AddDivas[i].AHHJLDLAPAN_DivaId == diva.AHHJLDLAPAN_DivaId)
+							{
+								divaSlotNumber = i + team.BCJEAJPLGMB_MainDivas.Count;
+								break;
+							}
+						}
+					}
+				}
+			}
+			//LAB_012e1b30
+			if(!isFriend && !isCloseOnly)
+			{
+				m_divaStatePopup.Buttons = new ButtonInfo[3]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.GrowthConfirm, Type = PopupButton.ButtonType.Growth},
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.CostumeSelect, Type = PopupButton.ButtonType.Costume}
+				};
+			}
+			else
+			{
+				m_divaStatePopup.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+			}
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_divaStatePopup.TitleText = bk.GetMessageByLabel("popup_text_08");
+			m_divaStatePopup.Diva = diva;
+			m_divaStatePopup.DivaSlotIndex = divaSlotNumber;
+			m_divaStatePopup.PlayerData = playerData;
+			m_divaStatePopup.FriendData = friendData;
+			m_divaStatePopup.MusicData = musicData;
+			m_divaStatePopup.IsOpenAnimeMoment = isMoment;
+			m_divaStatePopup.IsFriend = isFriend;
+			m_divaStatePopup.IsChangeScene = isChangeScene;
+			m_divaStatePopup.IsGoDiva = isGoDiva;
+			List<StatusPopupState> popupStateList = null;
+			if(transitionName != TransitionList.Type.UNDEFINED)
+			{
+				if(!m_popStateDict.TryGetValue((int)transitionName, out popupStateList))
+				{
+					popupStateList = new List<StatusPopupState>(8);
+					m_popStateDict[(int)transitionName] = popupStateList;
+				}
+				popupStateList.Add(new StatusPopupState()
+				{
+					type = StatusPopupType.Diva,
+					id = diva.AHHJLDLAPAN_DivaId,
+					isCloseOnly = isCloseOnly,
+					isGoDiva = isGoDiva,
+					divaSlotNumber = divaSlotNumber
+				});
+			}
+			int counter = 0;
+			PopupWindowManager.Show(m_divaStatePopup, (PopupWindowControl control, PopupButton.ButtonType label, PopupButton.ButtonLabel type) =>
+			{
+				//0x12E2E6C
+				if(label == PopupButton.ButtonType.Costume)
+				{
+					CostumeChangeDivaArgs arg = new CostumeChangeDivaArgs();
+					arg.DivaId = diva.AHHJLDLAPAN_DivaId;
+					arg.is_godiva = isGoDiva;
+					MenuScene.Instance.Call(TransitionList.Type.COSTUME_SELECT, arg, true);
+				}
+				else if(label == PopupButton.ButtonType.Growth)
+				{
+					GrowthConfArgs arg = new GrowthConfArgs();
+					arg.DivaId = diva.AHHJLDLAPAN_DivaId;
+					TodoLogger.LogNotImplemented("ShowDivaStatusPopupWindow");
+					//MenuScene.Instance.Call(TransitionList.Type.DIVA_GROWTH_CONF, arg, true);
+				}
+				else
+				{
+					if(callBack != null)
+						callBack();
+					popupStateList.RemoveAt(popupStateList.Count - 1);
+				}
+			}, null, null, null, true, true, false, () =>
+			{
+				//0x12E30A0
+				bool a = counter != 0;
+				if(!a)
+					counter = 1;
+				return a;
+			});
+        }
 
 		// // RVA: 0x12E21FC Offset: 0x12E21FC VA: 0x12E21FC
 		public void ShowSceneStatusPopupWindow(GCIJNCFDNON_SceneInfo scene, DFKGGBMFFGB_PlayerInfo playerData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isFriend = false, bool isReward = false, SceneStatusParam.PageSave pageSave = SceneStatusParam.PageSave.Player, bool isDisableZoom = false)

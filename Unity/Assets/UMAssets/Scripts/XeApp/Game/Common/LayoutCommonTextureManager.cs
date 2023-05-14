@@ -9,6 +9,17 @@ using XeSys;
 
 namespace XeApp.Game.Common
 {
+	public class LiveSkillType
+	{
+		public enum Type
+		{
+			Short = 0,
+			Long = 1,
+			Num = 2,
+			Illegal = 3,
+		}
+	}
+
 	public class LayoutCommonTextureManager
 	{
 		public class CommonTexture
@@ -130,7 +141,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x11044A8 Offset: 0x11044A8 VA: 0x11044A8
-		// public Rect GetLiveSkillTypeUvRect(LiveSkillType.Type skillType) { }
+		public Rect GetLiveSkillTypeUvRect(LiveSkillType.Type skillType)
+		{
+			return m_liveSkillTypeRects[(int)skillType - 1];
+		}
 
 		// // RVA: 0x1104530 Offset: 0x1104530 VA: 0x1104530
 		public void SetImageSkillRank(RawImageEx image, SkillRank.Type rank)
@@ -139,7 +153,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1104580 Offset: 0x1104580 VA: 0x1104580
-		// public void SetImageLiveSkillType(RawImageEx image, LiveSkillType.Type skillType) { }
+		public void SetImageLiveSkillType(RawImageEx image, LiveSkillType.Type skillType)
+		{
+			image.uvRect = GetLiveSkillTypeUvRect(skillType);
+		}
 
 		// // RVA: 0x11045D0 Offset: 0x11045D0 VA: 0x11045D0
 		private TexUVData GetTexUvData(string key)

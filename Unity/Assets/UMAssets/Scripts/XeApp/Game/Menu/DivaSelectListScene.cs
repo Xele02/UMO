@@ -398,7 +398,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17F0A14 Offset: 0x17F0A14 VA: 0x17F0A14
 		private void OnShowDivaStatus(int sortListIndex)
 		{
-			TodoLogger.LogNotImplemented("OnShowDivaStatus");
+			if(!MenuScene.Instance.DirtyChangeScene)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				FFHPBEPOMAK_DivaInfo diva = m_selectedDiva;
+				if(sortListIndex >= 0)
+				{
+					diva = PlayerData.NBIGLBMHEDC[m_divaSortIdList[sortListIndex]];
+				}
+				if(diva != null)
+				{
+					MenuScene.Instance.ShowDivaStatusPopupWindow(diva, PlayerData, m_musicData, false, TransitionName, UpdateContent, true, false, -1, false);
+				}
+			}
 		}
 
 		//// RVA: 0x17F0C8C Offset: 0x17F0C8C VA: 0x17F0C8C
