@@ -1,8 +1,11 @@
+using mcrs;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using XeApp.Game.Common;
+using XeSys;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
@@ -80,29 +83,101 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1372C38 Offset: 0x1372C38 VA: 0x1372C38
 		private void Start()
 		{
-			TodoLogger.Log(0, "Start");
+			m_arrowButtonObject.Add(transform.GetChild(4).gameObject);
+			m_arrowButtonObject.Add(transform.GetChild(5).gameObject);
+			for(int i = 0; i < m_arrowButtonObject.Count; i++)
+			{
+				m_arrowButton.Add(m_arrowButtonObject[i].GetComponentInChildren<ActionButton>(true));
+			}
+			m_pageLamp = GetComponentInChildren<SceneViewerPageLamp>(true);
+			m_closeButtonObject = transform.GetChild(7).gameObject;
+			m_closeButton = m_closeButtonObject.GetComponentInChildren<ActionButton>(true);
+			m_arrowButton[0].AddOnClickCallback(PushLeftArrow);
+			m_arrowButton[1].AddOnClickCallback(PushRightArrow);
+			m_closeButton.AddOnClickCallback(OnPushClose);
+			m_swaipTouch.GetComponentInChildren<SwaipTouch>(true);
+			m_swaipTouch.SetMute(true);
+			m_touchButton = GetComponent<Button>();
+			m_touchButton.onClick.AddListener(OnUiToggle);
+			m_sceneImage = GetComponentInChildren<RawImageEx>(true);
+			m_frameRootObject = new GameObject("FrameRoot");
+			m_frameRootObject.AddComponent<RectTransform>();
+			m_frameRootObject.transform.SetParent(m_sceneImage.transform, false);
+			m_rectTransform = GetComponent<RectTransform>();
+			material = new Material(m_sceneImage.material);
+			material.SetFloat("_MipmapBias", -0.5f);
+			m_sceneImage.material = material;
+			m_sceneImage.MaterialMul = material;
 		}
 
 		// // RVA: 0x137334C Offset: 0x137334C VA: 0x137334C
 		// public void SetTexture(Texture2D texture) { }
 
 		// // RVA: 0x1373544 Offset: 0x1373544 VA: 0x1373544
-		// public void SetTexture(IiconTexture texture) { }
+		public void SetTexture(IiconTexture texture)
+		{
+			if(texture != null && texture is SceneCardTexture)
+			{
+				SceneCardTexture tex = texture as SceneCardTexture;
+				material.SetTexture("_MainTex", tex.BaseTexture);
+				material.SetTexture("_MaskTex", Texture2D.whiteTexture);
+				material.SetFloat("_MipmapBias", -0.5f);
+				m_sceneImage.texture = null;
+				m_sceneImage.material = tex.Material;
+				m_sceneImage.MaterialMul = tex.Material;
+				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EJPFDDOOKJI(SystemInfo.graphicsDeviceName))
+				{
+					material.EnableKeyword("FIXEDBIAS");
+				}
+				m_sceneImage.texture = tex.BaseTexture;
+			}
+			else
+			{
+				m_sceneImage.texture = null;
+				if(texture == null)
+				{
+					m_sceneImage.material = null;
+					m_sceneImage.MaterialMul = null;
+				}
+				else
+				{
+					m_sceneImage.material = texture.Material;
+					m_sceneImage.MaterialMul = texture.Material;
+				}
+			}
+		}
 
 		// // RVA: 0x1373BA8 Offset: 0x1373BA8 VA: 0x1373BA8
-		// private void OnLeftArrow() { }
+		private void OnLeftArrow()
+		{
+			if (onLeftArrow != null)
+				onLeftArrow(m_page);
+		}
 
 		// // RVA: 0x1373C18 Offset: 0x1373C18 VA: 0x1373C18
-		// private void OnRightArrow() { }
+		private void OnRightArrow()
+		{
+			if (onRightArrow != null)
+				onRightArrow(m_page);
+		}
 
 		// // RVA: 0x1373C88 Offset: 0x1373C88 VA: 0x1373C88
-		// private void PushLeftArrow() { }
+		private void PushLeftArrow()
+		{
+			TodoLogger.LogNotImplemented("PushLeftArrow");
+		}
 
 		// // RVA: 0x1373DA8 Offset: 0x1373DA8 VA: 0x1373DA8
-		// private void PushRightArrow() { }
+		private void PushRightArrow()
+		{
+			TodoLogger.LogNotImplemented("PushRightArrow");
+		}
 
 		// // RVA: 0x1373E20 Offset: 0x1373E20 VA: 0x1373E20
-		// private void OnPushClose() { }
+		private void OnPushClose()
+		{
+			TodoLogger.LogNotImplemented("OnPushClose");
+		}
 
 		// // RVA: 0x1373E4C Offset: 0x1373E4C VA: 0x1373E4C
 		// public void Initialize(bool isEvolv, int baseRare, bool isKira = False) { }
@@ -116,28 +191,145 @@ namespace XeApp.Game.Menu
 		// public IEnumerator Co_ReleaseRareFrame() { }
 
 		// // RVA: 0x13749A0 Offset: 0x13749A0 VA: 0x13749A0
-		// public void Show() { }
+		public void Show()
+		{
+			m_isToucheDisable = false;
+			m_closeButtonObject.SetActive(true);
+			m_pageLamp.Hide();
+			if(m_isEvolv || m_isKira)
+			{
+				m_pageLamp.Show();
+			}
+			UpdateArrow(m_pageLamp.Page);
+			m_isVisible = true;
+			InputEnable();
+			m_swaipTouch.ResetCanvas();
+			m_EndViewer = false;
+		}
 
 		// // RVA: 0x1374BD8 Offset: 0x1374BD8 VA: 0x1374BD8
-		// public void Close() { }
+		public void Close()
+		{
+			m_isToucheDisable = true;
+			for(int i = 0; i < m_arrowButton.Count; i++)
+			{
+				m_arrowButton[i].Hidden = true;
+			}
+			m_closeButtonObject.SetActive(false);
+			if (m_isEvolv || m_isKira)
+				m_pageLamp.Hide();
+			m_isVisible = false;
+		}
 
 		// // RVA: 0x1374D20 Offset: 0x1374D20 VA: 0x1374D20
-		// public void InputDisable() { }
+		public void InputDisable()
+		{
+			m_closeButton.IsInputOff = true;
+			m_arrowButton[0].IsInputOff = true;
+			m_arrowButton[1].IsInputOff = true;
+			m_isToucheDisable = true;
+			m_touchButton.interactable = false;
+		}
 
 		// // RVA: 0x1374A94 Offset: 0x1374A94 VA: 0x1374A94
-		// public void InputEnable() { }
+		public void InputEnable()
+		{
+			m_closeButton.IsInputOff = false;
+			m_arrowButton[0].IsInputOff = false;
+			m_arrowButton[1].IsInputOff = false;
+			m_isToucheDisable = false;
+			m_touchButton.interactable = true;
+		}
 
 		// // RVA: 0x13743A4 Offset: 0x13743A4 VA: 0x13743A4
-		// public void SetPage(int page) { }
+		public void SetPage(int page)
+		{
+			UpdateArrow(page);
+			m_pageLamp.SetPage(page);
+			ChangeEnableKiraEffect(page == 2);
+		}
 
 		// // RVA: 0x1374E64 Offset: 0x1374E64 VA: 0x1374E64
-		// private void ChangeEnableKiraEffect(bool _isKira) { }
+		private void ChangeEnableKiraEffect(bool _isKira)
+		{
+			if(m_kiraEffectImage != null)
+			{
+				m_kiraEffectImage.gameObject.SetActive(_isKira);
+			}
+			if(m_kiraOverlayEffectImage != null)
+			{
+				m_kiraOverlayEffectImage.gameObject.SetActive(_isKira);
+			}
+		}
 
 		// // RVA: 0x13744D4 Offset: 0x13744D4 VA: 0x13744D4
-		// private void UpdateArrow(int page) { }
+		private void UpdateArrow(int page)
+		{
+			if (!m_isKira)
+			{
+				if (!m_isEvolv)
+				{
+					m_arrowButton[0].Hidden = true;
+					m_arrowButton[1].Hidden = true;
+				}
+				else
+				{
+					m_arrowButton[0].Hidden = page != 1;
+					m_arrowButton[1].Hidden = page != 0;
+				}
+			}
+			else if(!m_isEvolv)
+			{
+				m_arrowButton[0].Hidden = page != 2;
+				m_arrowButton[1].Hidden = page != 1;
+			}
+			else
+			{
+				m_arrowButton[0].Hidden = page < 1 || page > 2;
+				m_arrowButton[1].Hidden = (page == 0) != (page != 1);
+			}
+			IsLArrowEnable = !m_arrowButton[0].Hidden;
+			IsRArrowEnable = !m_arrowButton[1].Hidden;
+			ArrowLayoutChange();
+		}
 
 		// // RVA: 0x137503C Offset: 0x137503C VA: 0x137503C
-		// private void OnUiToggle() { }
+		private void OnUiToggle()
+		{
+			if(!m_swaipTouch.IsStop())
+			{
+				if (m_swaipTouch.IsSwaiping())
+					return;
+				if(!m_swaipTouch.IsMoveFlickDistance() && !m_EndViewer)
+				{
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+					if(!m_isVisible)
+					{
+						Show();
+						m_touchButton.enabled = false;
+						this.StartCoroutineWatched(Co_ImageSizeChange(false, () =>
+						{
+							//0x1376030
+							m_frameRootObject.SetActive(true);
+							m_touchButton.enabled = true;
+							m_isToucheDisable = false;
+						}));
+					}
+					else
+					{
+						Close();
+						m_frameRootObject.SetActive(false);
+						m_touchButton.enabled = false;
+						this.StartCoroutineWatched(Co_ImageSizeChange(true, () =>
+						{
+							//0x1375FF8
+							m_isToucheDisable = true;
+							m_touchButton.enabled = true;
+						}));
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x1375338 Offset: 0x1375338 VA: 0x1375338
 		// public static Vector2 GetCardSize(float screenWidth) { }
@@ -153,17 +345,126 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70F77C Offset: 0x70F77C VA: 0x70F77C
 		// // RVA: 0x1375278 Offset: 0x1375278 VA: 0x1375278
-		// private IEnumerator Co_ImageSizeChange(bool isZoom, UnityAction endCb) { }
+		private IEnumerator Co_ImageSizeChange(bool isZoom, UnityAction endCb)
+		{
+			float startSize; // 0x1C
+			float endSize; // 0x20
+			Rect startUv; // 0x24
+			Rect endUv; // 0x34
+			bool isExecute; // 0x44
+			Vector2 cardSize; // 0x48
+			float time; // 0x50
+			float WaitTime; // 0x54
+
+			//0x1376170
+			isExecute = true;
+			endUv = Rect.zero;
+			startUv = Rect.zero;
+			startSize = 0;
+			endSize = 0;
+			if(IsZoomable)
+			{
+				cardSize = new Vector2(m_rectTransform.sizeDelta.x / 1184 * 1184, m_rectTransform.sizeDelta.x / 1184 * 666);
+				if(!isZoom)
+				{
+					startSize = m_sceneImage.rectTransform.sizeDelta.y;
+					endSize = cardSize.y;
+					startUv = m_sceneImage.uvRect;
+					endUv = m_cardUv;
+					isExecute = endSize - startSize < 0;
+				}
+				else
+				{
+					startSize = m_sceneImage.rectTransform.sizeDelta.y;
+					endSize = m_rectTransform.sizeDelta.y;
+					startUv = m_sceneImage.uvRect;
+					endUv = m_sceneImage.uvRect;
+					endUv.height = m_rectTransform.sizeDelta.y / m_rectTransform.sizeDelta.x;
+					endUv.y = ((m_rectTransform.sizeDelta.x - m_rectTransform.sizeDelta.y) * -0.5f / m_rectTransform.sizeDelta.x + 1) - endUv.height;
+					isExecute = endSize - startSize >= 0;
+				}
+				time = 0;
+				WaitTime = Mathf.Clamp(Mathf.Abs(endSize - startSize), 0.01f, 0.1f);
+				while(isExecute && time / WaitTime < 1)
+				{
+					float r = time / WaitTime;
+					m_sceneImage.rectTransform.sizeDelta = new Vector2(cardSize.x, Mathf.Lerp(startSize, endSize, r));
+					m_sceneImage.uvRect = new Rect(startUv.x, Mathf.Lerp(startUv.y, endUv.y, r), startUv.width, Mathf.Lerp(startUv.height, endUv.height, r));
+					m_kiraEffectImage.rectTransform.sizeDelta = m_sceneImage.rectTransform.sizeDelta;
+					m_kiraEffectImage.uvRect = m_sceneImage.uvRect;
+					m_kiraOverlayEffectImage.rectTransform.sizeDelta = m_sceneImage.rectTransform.sizeDelta;
+					m_kiraOverlayEffectImage.uvRect = m_sceneImage.uvRect;
+					yield return null;
+					time += TimeWrapper.deltaTime;
+				}
+				m_sceneImage.rectTransform.sizeDelta = new Vector2(cardSize.x, endSize);
+				m_sceneImage.uvRect = new Rect(startUv.x, endUv.y, startUv.width, endUv.height);
+				m_kiraEffectImage.rectTransform.sizeDelta = m_sceneImage.rectTransform.sizeDelta;
+				m_kiraEffectImage.uvRect = m_sceneImage.uvRect;
+				m_kiraOverlayEffectImage.rectTransform.sizeDelta = m_sceneImage.rectTransform.sizeDelta;
+				m_kiraOverlayEffectImage.uvRect = m_sceneImage.uvRect;
+			}
+			if (endCb != null)
+				endCb();
+		}
 
 		// RVA: 0x1375400 Offset: 0x1375400 VA: 0x1375400
 		private void Update()
 		{
-			TodoLogger.Log(0, "Update");
+			if (!m_isEvolv && !m_isKira)
+				return;
+			if (m_isToucheDisable)
+				return;
+			if(m_swaipTouch.IsSwaip(SwaipTouch.Direction.RIGHT) || !m_swaipTouch.IsFlickNoSwaip(SwaipTouch.Direction.RIGHT))
+			{
+				if(IsLArrowEnable)
+				{
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_004);
+					this.StartCoroutineWatched(Co_Scroll(1));
+				}
+			}
+			if (m_swaipTouch.IsSwaip(SwaipTouch.Direction.LEFT) || !m_swaipTouch.IsFlickNoSwaip(SwaipTouch.Direction.LEFT))
+			{
+				if (IsRArrowEnable)
+				{
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_004);
+					this.StartCoroutineWatched(Co_Scroll(-1));
+				}
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70F7F4 Offset: 0x70F7F4 VA: 0x70F7F4
 		// // RVA: 0x1373D00 Offset: 0x1373D00 VA: 0x1373D00
-		// private IEnumerator Co_Scroll(int dir) { }
+		private IEnumerator Co_Scroll(int dir)
+		{
+			//0x13782D8
+			m_isScroll = true;
+			m_arrowButton.ForEach((ActionButton x) =>
+			{
+				//0x137610C
+				x.enabled = false;
+			});
+			if(dir < 0)
+			{
+				m_page++;
+				OnRightArrow();
+				SetPage(m_page);
+			}
+			else if(dir > 0)
+			{
+				m_page--;
+				OnLeftArrow();
+				SetPage(m_page);
+			}
+			UpdateArrow(m_pageLamp.Page);
+			yield return null;
+			m_isScroll = false;
+			m_arrowButton.ForEach((ActionButton x) =>
+			{
+				//0x137613C
+				x.enabled = true;
+			});
+		}
 
 		// // RVA: 0x13755EC Offset: 0x13755EC VA: 0x13755EC
 		// private void ScrollRight() { }
@@ -172,20 +473,26 @@ namespace XeApp.Game.Menu
 		// private void ScrollLeft() { }
 
 		// // RVA: 0x1374FCC Offset: 0x1374FCC VA: 0x1374FCC
-		// private void ArrowLayoutChange() { }
+		private void ArrowLayoutChange()
+		{
+			leftArrow.ChangeArrowText(m_page != 2);
+			rightArrow.ChangeArrowText(m_page != 1);
+		}
 
 		// // RVA: 0x137564C Offset: 0x137564C VA: 0x137564C
-		// public void SetFrame(int baseRare, int attr, bool isRankUp) { }
+		public void SetFrame(int baseRare, int attr, bool isRankUp)
+		{
+			for(int i = 0; i < m_frameInstance.Length; i++)
+			{
+				m_frameInstance[i].gameObject.SetActive(false);
+			}
+			m_frameInstance[isRankUp ? 1 : 0].SetAttribute(attr);
+			m_frameInstance[isRankUp ? 1 : 0].SetRarity(baseRare, isRankUp);
+			m_frameInstance[isRankUp ? 1 : 0].gameObject.SetActive(true);
+			m_frameRootObject.transform.localScale = new Vector3(m_rectTransform.sizeDelta.x / 1184, m_rectTransform.sizeDelta.y / 1184, 1);
+		}
 
 		// // RVA: 0x1375904 Offset: 0x1375904 VA: 0x1375904
 		// public void PerformClick() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70F86C Offset: 0x70F86C VA: 0x70F86C
-		// // RVA: 0x1375FF8 Offset: 0x1375FF8 VA: 0x1375FF8
-		// private void <OnUiToggle>b__67_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70F87C Offset: 0x70F87C VA: 0x70F87C
-		// // RVA: 0x1376030 Offset: 0x1376030 VA: 0x1376030
-		// private void <OnUiToggle>b__67_1() { }
 	}
 }

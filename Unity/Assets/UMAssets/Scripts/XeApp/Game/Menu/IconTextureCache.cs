@@ -159,10 +159,26 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13DD214 Offset: 0x13DD214 VA: 0x13DD214
-		// protected void SetupForSplitTextureBias(IconTextureLodingInfo info, IiconTexture icon, float mipmapBias) { }
+		protected void SetupForSplitTextureBias(IconTextureLodingInfo info, IiconTexture icon, float mipmapBias)
+		{
+			string name = Path.GetFileNameWithoutExtension(info.Path);
+			icon.Material = new Material(Shader.Find("MCRS/SplitTexture_Bias"));
+			icon.Material.SetFloat("_MipmapBias", mipmapBias);
+			icon.BaseTexture = info.Operation.GetAsset<Texture2D>(name + "_base");
+			icon.MaskTexture = info.Operation.GetAsset<Texture2D>(name + "_mask");
+			icon.CreateCount = GetCreateCountAndIncrement();
+		}
 
 		// // RVA: 0x13DD70C Offset: 0x13DD70C VA: 0x13DD70C
-		// protected void SetupForSplitTextureBias(IconTextureLodingInfo info, IiconTexture icon, Texture2D maskTexture, float mipmapBias) { }
+		protected void SetupForSplitTextureBias(IconTextureLodingInfo info, IiconTexture icon, Texture2D maskTexture, float mipmapBias)
+		{
+			string name = Path.GetFileNameWithoutExtension(info.Path);
+			icon.Material = new Material(Shader.Find("MCRS/SplitTexture_Bias"));
+			icon.Material.SetFloat("_MipmapBias", mipmapBias);
+			icon.BaseTexture = info.Operation.GetAsset<Texture2D>(name);
+			icon.MaskTexture = maskTexture;
+			icon.CreateCount = GetCreateCountAndIncrement();
+		}
 
 		// // RVA: 0x13DDB7C Offset: 0x13DDB7C VA: 0x13DDB7C
 		protected void SetupForSingleTexture(IconTextureLodingInfo info, IiconTexture icon)

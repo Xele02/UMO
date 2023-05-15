@@ -287,6 +287,7 @@ class JpStringLiterals
 	public const string StringLiteral_13104 = "日前"; // 0x03bb5778
 	public const string StringLiteral_13105 = "365日以上"; // 0x03bb577c
 	public const string StringLiteral_13106 = "1時間前"; // 0x03bb5780
+	public const string StringLiteral_13238 = "<color=red>矢印のレイアウトがNULLです。</color>"; // 0x03bb5990
 	public const string StringLiteral_13316 = "ディフォルト3Dモードの設定 : "; //0x03bb5ac8
 	public const string StringLiteral_13620 = " - 対応していない型が渡されました\n   {0}"; // 0x03bb5f88
 	public const string StringLiteral_13959 = "★"; // 0x03bb64d4

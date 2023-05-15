@@ -216,7 +216,11 @@ namespace XeApp.Game.Menu
 		// public IEnumerator LoadKiraMaterial(Action LoadEndAction) { }
 
 		// // RVA: 0x1370DE8 Offset: 0x1370DE8 VA: 0x1370DE8
-		// public void ReleaseKiraMaterial() { }
+		public void ReleaseKiraMaterial()
+		{
+			m_kira2048Material = null;
+			m_kira2048HoloMaterial = null;
+		}
 
 		// // RVA: 0x136EBA4 Offset: 0x136EBA4 VA: 0x136EBA4
 		public void SetLoadingTexture(RawImageEx image)

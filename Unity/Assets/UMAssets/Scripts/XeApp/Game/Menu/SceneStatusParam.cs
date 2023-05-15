@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using mcrs;
 using XeSys;
+using System.Collections;
 
 namespace XeApp.Game.Menu
 {
@@ -65,7 +66,19 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA5F280 Offset: 0xA5F280 VA: 0xA5F280
-			// public void SetLeafNum(int num, int max) { }
+			public void SetLeafNum(int num, int max)
+			{
+				m_baseAbs.StartChildrenAnimGoStop(max.ToString("00"));
+				m_leafAbs.StartChildrenAnimGoStop(max.ToString("00"));
+				for(int i = 0; i < num; i++)
+				{
+					m_leaf[i].StartChildrenAnimGoStop("02");
+				}
+				for(int i = num; i < m_leaf.Length; i++)
+				{
+					m_leaf[i].StartChildrenAnimGoStop("01");
+				}
+			}
 		}
 
 		private class LimitBreakStatusLayout
@@ -110,7 +123,7 @@ namespace XeApp.Game.Menu
 						l.Add(Array.Find(texts, (Text x) =>
 						{
 							//0xA64AAC
-							return textParentNameTbl[i, j].Contains(x.transform.parent.name);
+							return x.transform.parent.name.Contains(textParentNameTbl[i, j]);
 						}));
 					}
 					m_effectText.Add(i, l);
@@ -118,10 +131,54 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA5F454 Offset: 0xA5F454 VA: 0xA5F454
-			// public void SetValue(LimitOverStatusData data) { }
+			public void SetValue(LimitOverStatusData data)
+			{
+				foreach(var k in m_abs)
+				{
+					if(k.Key == 0)
+					{
+						k.Value[0].StartAnimGoStop("01");
+						SetPanel(data.excellentRate, data.excellentRate_SameMusicAttr, data.excellentRate_SameSeriesAttr, k.Value, m_effectText[k.Key]);
+					}
+					else
+					{
+						k.Value[0].StartAnimGoStop(data.centerLiveSkillRate > 0 ? "01" : "05");
+						SetPanel(data.centerLiveSkillRate, data.centerLiveSkillRate_SameMusicAttr, data.centerLiveSkillRate_SameSeriesAttr, k.Value, m_effectText[k.Key]);
+					}
+				}
+			}
 
 			// // RVA: 0xA63F90 Offset: 0xA63F90 VA: 0xA63F90
-			// private void SetPanel(int overLimitValue, int attrBonus, int seriesBonus, List<AbsoluteLayout> layoutList, List<Text> textList) { }
+			private void SetPanel(int overLimitValue, int attrBonus, int seriesBonus, List<AbsoluteLayout> layoutList, List<Text> textList)
+			{
+				textList[0].text = string.Format("+<color={0}>{1}</color>%", overLimitValue < 1 ? SystemTextColor.NormalColor : SystemTextColor.ImportantColor, overLimitValue);
+				textList[1].text = string.Format("+<color={0}>{1}</color>%", attrBonus < 1 ? SystemTextColor.NormalColor : SystemTextColor.ImportantColor, attrBonus);
+				textList[2].text = string.Format("+<color={0}>{1}</color>%", seriesBonus < 1 ? SystemTextColor.NormalColor : SystemTextColor.ImportantColor, seriesBonus);
+				if (attrBonus < 1 || seriesBonus < 1)
+				{
+					if (attrBonus < 1)
+						layoutList[1].StartAnimGoStop("04");
+					else
+					{
+						layoutList[1].StartAnimGoStop("02");
+						layoutList[2].StartAnimGoStop("02");
+					}
+					if(seriesBonus < 1)
+					{
+						layoutList[2].StartAnimGoStop("04");
+					}
+					else
+					{
+						layoutList[1].StartAnimGoStop("03");
+						layoutList[2].StartAnimGoStop("03");
+					}
+				}
+				else
+				{
+					layoutList[1].StartAnimGoStop("01");
+					layoutList[2].StartAnimGoStop("01");
+				}
+			}
 		}
 
 		[Serializable]
@@ -219,8 +276,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA59AF8 Offset: 0xA59AF8 VA: 0xA59AF8
 		public bool IsLoading()
 		{
-			TodoLogger.Log(0, "IsLoading");
-			return false;
+			return m_loadingFlag != LoadingFlag.All;
 		}
 
 		// RVA: 0xA59B0C Offset: 0xA59B0C VA: 0xA59B0C Slot: 5
@@ -286,50 +342,332 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA5B3B0 Offset: 0xA5B3B0 VA: 0xA5B3B0
 		public void InitializeDecoration()
 		{
-			TodoLogger.Log(0, "InitializeDecoration");
+			m_sceneIconDeccoration.Initialize(m_sceneIconImage.gameObject, SceneIconDecoration.Size.M, null, null);
 		}
 
 		// // RVA: 0xA5B41C Offset: 0xA5B41C VA: 0xA5B41C
 		public void ReleaseDecoration()
 		{
-			TodoLogger.Log(0, "ReleaseDecoration");
+			m_sceneIconDeccoration.Release();
+			GameManager.Instance.SceneIconCache.ReleaseKiraMaterial();
+			if(m_pageSave == PageSave.Pickup)
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().LDNJHLLKEIG_StatusPopup.ILEFFJCOGOG_GachaStatusPage = m_statusDispIndex;
+			}
+			else if(m_pageSave == PageSave.Player)
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().LDNJHLLKEIG_StatusPopup.ICBNEOCAGKF_SceneStatusPage = m_statusDispIndex;
+			}
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 		}
 
 		// // RVA: 0xA5B624 Offset: 0xA5B624 VA: 0xA5B624
 		public void UpdateContent(GCIJNCFDNON_SceneInfo sceneData, DFKGGBMFFGB_PlayerInfo playerData, bool isFriend, bool isDisableZoom, bool isDisableLuckyLeaf, PageSave pageSave = PageSave.Player)
 		{
-			TodoLogger.Log(0, "UpdateContent");
+			if(m_rareChangeButton != null)
+			{
+				m_rareChangeButton.Hidden = true;
+			}
+			m_windowControl = GetComponentInParent<PopupWindowControl>();
+			m_pageSave = pageSave;
+			m_sceneData = sceneData;
+			m_limitOverData.KHEKNNFCAOI(sceneData.JKGFBFPIMGA_Rarity, sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MJBODMOLOBC_Luck);
+			m_sceneDetails.text = sceneData.BGJNIABLBDB_GetSceneDetail();
+			m_gachaInfoLayout.StartAnimGoStop(sceneData.IJIKIPDKCPP == 0 ? "02" : "01");
+			m_loadingFlag = 0;
+			GameManager.Instance.SceneIconCache.Load(sceneData.BCCHOBPJJKE_SceneId, sceneData.CGIELKDLHGE_GetEvolveId(), (IiconTexture texture) =>
+			{
+				//0xA6180C
+				texture.Set(m_sceneIconImage);
+				SceneIconTextureCache.ChangeKiraMaterial(m_sceneIconImage, texture as IconTexture, sceneData.MBMFJILMOBP_IsKira());
+				m_loadingFlag |= LoadingFlag.Scene;
+			});
+			GameManager.Instance.MenuResidentTextureCache.LoadLogo((int)sceneData.EMIKBGHIOMN_SerieLogo, (IiconTexture texture) =>
+			{
+				//0xA619C8
+				texture.Set(m_seriesIconImage);
+				m_loadingFlag |= LoadingFlag.Logo;
+			});
+			m_paramTexts[0].text = sceneData.CMCKNKKCNDK_Status.Total.ToString();
+			m_paramTexts[1].text = sceneData.CMCKNKKCNDK_Status.soul.ToString();
+			m_paramTexts[2].text = sceneData.CMCKNKKCNDK_Status.vocal.ToString();
+			m_paramTexts[3].text = sceneData.CMCKNKKCNDK_Status.charm.ToString();
+			m_paramTexts[4].text = sceneData.CMCKNKKCNDK_Status.life.ToString();
+			UnitWindowConstant.SetLuckText(m_paramTexts[5], sceneData.MJBODMOLOBC_Luck);
+			m_paramTexts[6].text = sceneData.CMCKNKKCNDK_Status.support.ToString();
+			m_paramTexts[7].text = sceneData.CMCKNKKCNDK_Status.fold.ToString();
+			for(int i = 0; i < sceneData.CMCKNKKCNDK_Status.spNoteExpected.Length - 1; i++)
+			{
+				if(sceneData.CMCKNKKCNDK_Status.spNoteExpected[i + 1] < 1)
+				{
+					m_nortsTexts[i].text = "0";
+					m_nortsLayout[i].StartChildrenAnimGoStop("02");
+				}
+				else
+				{
+					m_nortsTexts[i].text = sceneData.CMCKNKKCNDK_Status.spNoteExpected[i + 1].ToString();
+					m_nortsLayout[i].StartChildrenAnimGoStop("01");
+				}
+			}
+			m_skillDetailsButtons[0].ClearOnClickCallback();
+			m_skillDetailsButtons[1].ClearOnClickCallback();
+			m_centerSkillCrossFade.StartAllAnimLoop("st_wait");
+			int centerSkill1 = sceneData.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
+			int centerSkill2 = sceneData.MEOOLHNNMHL_GetCenterSkillId(true, 0, 0);
+			if(centerSkill1 < 1)
+			{
+				UnitWindowConstant.SetInvalidText(m_skillNameTexts[0], TextAnchor.MiddleCenter);
+				UnitWindowConstant.SetInvalidText(m_skillDescriptTexts[0], TextAnchor.MiddleCenter);
+				m_skillLevelTexts[0].text = "";
+				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankIconImages[0], 0);
+				m_skillDetailIconImages[0].enabled = false;
+			}
+			else
+			{
+				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankIconImages[0], (SkillRank.Type)sceneData.DHEFMEGKKDN_CenterSkillRank);
+				m_skillNameTexts[0].text = sceneData.PFHJFIHGCKP_CenterSkillName1;
+				m_skillNameTexts[0].alignment = TextAnchor.MiddleLeft;
+				m_skillDescriptTexts[0].alignment = TextAnchor.MiddleLeft;
+				m_skillLevelTexts[0].text = string.Format("Lv{0}", sceneData.DDEDANKHHPN_SkillLevel);
+				if (UnitWindowConstant.SetSkillDetails(m_skillDescriptTexts[0], sceneData.IHLINMFMCDN_GetCenterSkillDesc(false), 1))
+				{
+					m_skillDetailsButtons[0].AddOnClickCallback(OnShowCenterSkillDetails);
+					m_skillDetailIconImages[0].enabled = true;
+				}
+				else
+				{
+					m_skillDetailIconImages[0].enabled = false;
+
+				}
+				if (centerSkill1 != centerSkill2 && centerSkill2 > 0)
+				{
+					GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankIconImages[1], (SkillRank.Type)sceneData.FFDCGHDNDFJ_CenterSkillRank2);
+					m_skillNameTexts[1].text = sceneData.EFELCLMJEOL_CenterSkillName2;
+					m_skillNameTexts[1].alignment = TextAnchor.MiddleLeft;
+					m_skillDescriptTexts[1].alignment = TextAnchor.MiddleLeft;
+					m_skillLevelTexts[1].text = string.Format("Lv{0}", sceneData.DDEDANKHHPN_SkillLevel);
+					if (UnitWindowConstant.SetSkillDetails(m_skillDescriptTexts[1], sceneData.IHLINMFMCDN_GetCenterSkillDesc(true), 1))
+					{
+						m_skillDetailsButtons[1].AddOnClickCallback(OnShowCenterSkillDetails2);
+						m_skillDetailIconImages[1].enabled = true;
+					}
+					else
+					{
+						m_skillDetailIconImages[1].enabled = false;
+					}
+					m_centerSkillCrossFade.StartAllAnimLoop("logo_act");
+				}
+			}
+			m_skillDetailsButtons[2].ClearOnClickCallback();
+			if(sceneData.HGONFBDIBPM_ActiveSkillId < 1)
+			{
+				UnitWindowConstant.SetInvalidText(m_skillNameTexts[2], TextAnchor.MiddleCenter);
+				UnitWindowConstant.SetInvalidText(m_skillDescriptTexts[2], TextAnchor.MiddleCenter);
+				m_skillLevelTexts[2].text = "";
+				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankIconImages[2], 0);
+				m_skillDetailIconImages[2].enabled = false;
+			}
+			else
+			{
+				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankIconImages[2], (SkillRank.Type)sceneData.BEKGEAMJGEN_ActiveSkillRank);
+				m_skillNameTexts[2].text = sceneData.ILCLGGPHHJO_ActiveSkillName;
+				m_skillNameTexts[2].alignment = TextAnchor.MiddleLeft;
+				m_skillDescriptTexts[2].alignment = TextAnchor.MiddleLeft;
+				m_skillLevelTexts[2].text = string.Format("Lv{0}", sceneData.PNHJPCPFNFI_ActiveSkillLevel);
+				if (UnitWindowConstant.SetSkillDetails(m_skillDescriptTexts[2], sceneData.PCMEMHPDABG_GetActiveSkillDesc(), 1))
+				{
+					m_skillDetailsButtons[2].AddOnClickCallback(OnShowActiveSkillDetails);
+					m_skillDetailIconImages[2].enabled = true;
+				}
+				else
+				{
+					m_skillDetailIconImages[2].enabled = false;
+				}
+			}
+			m_skillDetailsButtons[3].ClearOnClickCallback();
+			int liveSkill1 = sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
+			int liveSkill2 = sceneData.FILPDDHMKEJ_GetLiveSkillId(true, 0, 0);
+			m_skillLayout.StartAllAnimGoStop("st_wait");
+			for(int i = 0; i < m_liveSkillTypeLayout.Length; i++)
+			{
+				m_liveSkillTypeLayout[i].StartChildrenAnimGoStop("01");
+			}
+			bool hasLiveSkill = false;
+			if(liveSkill1 > 0)
+			{
+				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankIconImages[3], (SkillRank.Type)sceneData.OAHMFMJIENM_LiveSkillRank);
+				m_skillNameTexts[3].text = sceneData.NDPPEMCHKHA_LiveSkillName1;
+				m_skillNameTexts[3].alignment = TextAnchor.MiddleLeft;
+				m_skillDescriptTexts[3].alignment = TextAnchor.MiddleLeft;
+				m_skillLevelTexts[3].text = string.Format("Lv{0}", sceneData.AADFFCIDJCB_LiveSkillLevel);
+				if (UnitWindowConstant.SetSkillDetails(m_skillDescriptTexts[3], sceneData.KDGACEJPGFG_GetLiveSkillDesc(false), 1))
+				{
+					m_skillDetailsButtons[3].AddOnClickCallback(OnShowLiveSkillDetail);
+					m_skillDetailIconImages[3].enabled = true;
+				}
+				else
+				{
+					m_skillDetailIconImages[3].enabled = false;
+				}
+				hasLiveSkill = true;
+				PPGHMBNIAEC liveSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill1 - 1];
+				if(liveSkill.AOPELJFAMCL_LiveSkillType != 0)
+				{
+					m_liveSkillTypeLayout[0].StartChildrenAnimGoStop("02");
+					GameManager.Instance.UnionTextureManager.SetImageLiveSkillType(m_liveSkillTypeImages[0], (LiveSkillType.Type) liveSkill.AOPELJFAMCL_LiveSkillType);
+				}
+			}
+			if(liveSkill2 > 0)
+			{
+				if(sceneData.BLPHPMBFIEI_LiveSkillHasSwitchPatternCond())
+				{
+					GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankIconImages[4], (SkillRank.Type)sceneData.ELNJADBILOM_LiveSkillRank2);
+					m_skillNameTexts[4].text = sceneData.LNLECENGMKK_LiveSkillName2;
+					m_skillNameTexts[4].alignment = TextAnchor.MiddleLeft;
+					m_skillDescriptTexts[4].alignment = TextAnchor.MiddleLeft;
+					m_skillLevelTexts[4].text = string.Format("Lv{0}", sceneData.AADFFCIDJCB_LiveSkillLevel);
+					if (UnitWindowConstant.SetSkillDetails(m_skillDescriptTexts[4], sceneData.KDGACEJPGFG_GetLiveSkillDesc(true), 1))
+					{
+						m_skillDetailsButtons[4].AddOnClickCallback(OnShowLiveSkillDetail2);
+						m_skillDetailIconImages[4].enabled = true;
+					}
+					else
+					{
+						m_skillDetailIconImages[4].enabled = false;
+					}
+					m_skillLayout.StartAnimLoop("logo_act");
+					PPGHMBNIAEC liveSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[liveSkill2 - 1];
+					if (liveSkill.AOPELJFAMCL_LiveSkillType != 0)
+					{
+						m_liveSkillTypeLayout[1].StartChildrenAnimGoStop("02");
+						GameManager.Instance.UnionTextureManager.SetImageLiveSkillType(m_liveSkillTypeImages[1], (LiveSkillType.Type)liveSkill.AOPELJFAMCL_LiveSkillType);
+					}
+				}
+			}
+			if(!hasLiveSkill)
+			{
+				UnitWindowConstant.SetInvalidText(m_skillNameTexts[3], TextAnchor.MiddleCenter);
+				UnitWindowConstant.SetInvalidText(m_skillDescriptTexts[3], TextAnchor.MiddleCenter);
+				m_skillLevelTexts[3].text = "";
+				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankIconImages[3], 0);
+				m_skillDetailIconImages[3].enabled = false;
+			}
+			int j = 0;
+			for (int i = 0; i < playerData.NBIGLBMHEDC.Count; i++)
+			{
+				if(playerData.NBIGLBMHEDC[i].IPJMPBANBPP)
+				{
+					m_strBuilder.Clear();
+					m_strBuilder.AppendFormat("cmn_chk_icon_{0:D2}", playerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId);
+					m_compatibleDivaIconImages[j].enabled = true;
+					m_compatibleDivaIconImages[j].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_strBuilder.ToString()));
+					m_compatibleMaskIconImages[j].enabled = !sceneData.DCLLIDMKNGO_IsDivaCompatible(playerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId);
+					j++;
+				}
+			}
+			for(; j < m_compatibleDivaIconImages.Length; j++)
+			{
+				m_compatibleDivaIconImages[j].enabled = false;
+				m_compatibleMaskIconImages[j].enabled = false;
+			}
+			m_sceneIconDeccoration.SetActive(true);
+			m_sceneIconDeccoration.Change(sceneData, DisplayType.Level);
+			m_regulationButtons[0].Setup(0, RegulationButton.Type.Live, m_sceneData);
+			m_regulationButtons[1].Setup(0, RegulationButton.Type.Center, m_sceneData);
+			if(m_sceneData.KELFCMEOPPM_EpisodeId < 1)
+			{
+				m_episodeName.text = TextConstant.InvalidText;
+				m_episodeButton.Hidden = true;
+			}
+			else
+			{
+				m_episodeData.KHEKNNFCAOI(sceneData.KELFCMEOPPM_EpisodeId);
+				m_episodeName.text = m_episodeData.OPFGFINHFCE_Name;
+				m_episodeButton.Hidden = false;
+			}
+			m_sceneButton.Disable = isFriend || isDisableZoom;
+			UpdateLimitBreak();
+			m_luckLeafButton.Disable = isFriend;
+			m_statusDispNum = GetStatusTableNum(sceneData, isDisableLuckyLeaf);
+			int a = 0;
+			if(pageSave == PageSave.Pickup)
+			{
+				a = GameManager.Instance.localSave.EPJOACOONAC_GetSave().LDNJHLLKEIG_StatusPopup.ILEFFJCOGOG_GachaStatusPage;
+			}
+			else if(pageSave == PageSave.Player)
+			{
+				a = GameManager.Instance.localSave.EPJOACOONAC_GetSave().LDNJHLLKEIG_StatusPopup.ICBNEOCAGKF_SceneStatusPage;
+			}
+			m_statusDispIndex = a;
+			if (m_statusDispIndex >= m_statusDispNum)
+				m_statusDispIndex = 0;
+			m_changeStatusButton.SetPage(a < m_statusDispNum ? a + 1 : 1, m_statusDispNum);
+			UpdateStatus();
+			m_viewer.gameObject.SetActive(false);
 		}
 
 		// // RVA: 0xA5EF68 Offset: 0xA5EF68 VA: 0xA5EF68
-		// private int GetStatusTableNum(GCIJNCFDNON sceneData, bool isDisableLuckyLeaf) { }
+		private int GetStatusTableNum(GCIJNCFDNON_SceneInfo sceneData, bool isDisableLuckyLeaf)
+		{
+			if(!isDisableLuckyLeaf)
+			{
+				m_limitOverData.KHEKNNFCAOI(sceneData.JKGFBFPIMGA_Rarity, sceneData.MKHFCGPJPFI_LimitOverCount, sceneData.MJBODMOLOBC_Luck);
+				if (m_limitOverData.LJHOOPJACPI_LeafMax != 0)
+				{
+					if(sceneData.MJBODMOLOBC_Luck > 0)
+					{
+						return m_statuChangeAnimeLabel.Length;
+					}
+				}
+			}
+			return m_statuChangeAnimeLabel.Length - 1;
+		}
 
 		// // RVA: 0xA5F194 Offset: 0xA5F194 VA: 0xA5F194
 		private void UpdateStatus()
 		{
-			TodoLogger.Log(0, "UpdateStatus");
+			m_statusChangeLayout.StartChildrenAnimGoStop(m_statuChangeAnimeLabel[m_statusDispIndex]);
 		}
 
 		// // RVA: 0xA5EEC4 Offset: 0xA5EEC4 VA: 0xA5EEC4
-		// public void UpdateLimitBreak() { }
+		public void UpdateLimitBreak()
+		{
+			m_luckyLeaf.SetLeafNum(m_limitOverData.DJEHLEJCPEL_LeafNum, m_limitOverData.LJHOOPJACPI_LeafMax);
+			m_limitBreak.SetValue(m_limitOverData.CMCKNKKCNDK);
+		}
 
 		// // RVA: 0xA5F8CC Offset: 0xA5F8CC VA: 0xA5F8CC
 		// private void OnPushAbilityButton() { }
 
 		// // RVA: 0xA5F960 Offset: 0xA5F960 VA: 0xA5F960
-		// private void OnShowCenterSkillDetails() { }
+		private void OnShowCenterSkillDetails()
+		{
+			TodoLogger.LogNotImplemented("OnShowCenterSkillDetails");
+		}
 
 		// // RVA: 0xA5FD4C Offset: 0xA5FD4C VA: 0xA5FD4C
-		// private void OnShowCenterSkillDetails2() { }
+		private void OnShowCenterSkillDetails2()
+		{
+			TodoLogger.LogNotImplemented("OnShowCenterSkillDetails2");
+		}
 
 		// // RVA: 0xA5FDB0 Offset: 0xA5FDB0 VA: 0xA5FDB0
-		// private void OnShowActiveSkillDetails() { }
+		private void OnShowActiveSkillDetails()
+		{
+			TodoLogger.LogNotImplemented("OnShowActiveSkillDetails");
+		}
 
 		// // RVA: 0xA5FE10 Offset: 0xA5FE10 VA: 0xA5FE10
-		// private void OnShowLiveSkillDetail() { }
+		private void OnShowLiveSkillDetail()
+		{
+			TodoLogger.LogNotImplemented("OnShowLiveSkillDetail");
+		}
 
 		// // RVA: 0xA5FE74 Offset: 0xA5FE74 VA: 0xA5FE74
-		// private void OnShowLiveSkillDetail2() { }
+		private void OnShowLiveSkillDetail2()
+		{
+			TodoLogger.LogNotImplemented("OnShowLiveSkillDetail2");
+		}
 
 		// // RVA: 0xA5F9C4 Offset: 0xA5F9C4 VA: 0xA5F9C4
 		// private void ShowSkillWindow(string name, string descript) { }
@@ -349,12 +687,35 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70FA44 Offset: 0x70FA44 VA: 0x70FA44
 		// // RVA: 0xA60024 Offset: 0xA60024 VA: 0xA60024
-		// private IEnumerator LoadTexture(int sceneId, int evolvId, UnityAction endAction) { }
+		private IEnumerator LoadTexture(int sceneId, int evolvId, UnityAction endAction)
+		{
+			//0xA624F8
+			bool isLoding = true;
+			m_sceneCardCache.Load(sceneId, evolvId, (IiconTexture texture) =>
+			{
+				//0xA61AF8
+				m_viewer.SetTexture(texture);
+				isLoding = false;
+			});
+			while (isLoding)
+				yield return null;
+			if (endAction != null)
+				endAction();
+		}
 
 		// // RVA: 0xA6011C Offset: 0xA6011C VA: 0xA6011C
 		private void ChangeEvolvImage(int page)
 		{
-			TodoLogger.Log(0, "ChangeEvolvImage");
+			int evolvId = 2;
+			if (page < 2)
+				evolvId = page + 1;
+			m_viewer.InputDisable();
+			this.StartCoroutineWatched(LoadTexture(m_sceneData.BCCHOBPJJKE_SceneId, evolvId, () =>
+			{
+				//0xA61B4C
+				m_viewer.SetFrame(m_sceneData.JKGFBFPIMGA_Rarity, m_sceneData.JGJFIJOCPAG_SceneAttr, evolvId > 1);
+				m_viewer.InputEnable();
+			}));
 		}
 
 		// RVA: 0xA60298 Offset: 0xA60298 VA: 0xA60298

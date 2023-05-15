@@ -59,7 +59,12 @@ namespace XeApp.Game.Menu
 		// public bool IsReady() { }
 
 		// // RVA: 0xF96508 Offset: 0xF96508 VA: 0xF96508
-		// public void ResetCanvas() { }
+		public void ResetCanvas()
+		{
+			if (GetCanvas() == null)
+				return;
+			uiCamera = GetCanvas().worldCamera;
+		}
 
 		// RVA: 0xF9668C Offset: 0xF9668C VA: 0xF9668C
 		private void Start()
@@ -147,7 +152,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF972D0 Offset: 0xF972D0 VA: 0xF972D0
-		// public void SetMute(bool isMute) { }
+		public void SetMute(bool isMute)
+		{
+			m_is_mute = isMute;
+		}
 
 		// // RVA: 0xF971D4 Offset: 0xF971D4 VA: 0xF971D4
 		// public bool IsMute() { }

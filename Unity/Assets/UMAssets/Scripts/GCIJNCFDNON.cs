@@ -19,7 +19,7 @@ public class GCIJNCFDNON_SceneInfo
 	public int HGONFBDIBPM_ActiveSkillId; // 0x1C
 	public int PLDALOJIFBE_LiveSkillId; // 0x20
 	public string OPFGFINHFCE_SceneName; // 0x24
-	private string PMKLGDOEFNM; // 0x28
+	private string PMKLGDOEFNM_Detail; // 0x28
 	public string PFHJFIHGCKP_CenterSkillName1; // 0x2C
 	public string EFELCLMJEOL_CenterSkillName2; // 0x30
 	public string ILCLGGPHHJO_ActiveSkillName; // 0x34
@@ -72,7 +72,14 @@ public class GCIJNCFDNON_SceneInfo
 	// public int NCAFLPPKLPK { get; set; }
 
 	// // RVA: 0x16AB3A4 Offset: 0x16AB3A4 VA: 0x16AB3A4
-	// public string BGJNIABLBDB() { }
+	public string BGJNIABLBDB_GetSceneDetail()
+	{
+		if(PMKLGDOEFNM_Detail == null)
+		{
+			PMKLGDOEFNM_Detail = MessageManager.Instance.GetMessage("master", "sn_dsc_" + BCCHOBPJJKE_SceneId.ToString("D4"));
+		}
+		return PMKLGDOEFNM_Detail;
+	}
 
 	// // RVA: 0x16AB494 Offset: 0x16AB494 VA: 0x16AB494
 	public bool MBMFJILMOBP_IsKira()
@@ -465,7 +472,7 @@ public class GCIJNCFDNON_SceneInfo
 		AOLIJKMIJJE_DivaCompatible = s.AOLIJKMIJJE_Dv;
 		OPFGFINHFCE_SceneName = bank.GetMessageByLabel("sn_"+BCCHOBPJJKE_SceneId.ToString("D4"));
 		this.NPHOIEOPIJO = NPHOIEOPIJO;
-		PMKLGDOEFNM = null;
+		PMKLGDOEFNM_Detail = null;
 		this.KBOLNIBLIND = KBOLNIBLIND;
 		this.ODKMKEHJOCK = ODKMKEHJOCK;
 		this.MJBODMOLOBC_Luck = MJBODMOLOBC;

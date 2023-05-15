@@ -263,7 +263,8 @@ namespace XeApp.Game.Menu
 			List<StatusPopupState> l;
 			if(m_popStateDict.TryGetValue((int)transitionName, out l))
 			{
-				while(l.Count > 0)
+				int c = l.Count;
+				for (int i = c; i > 0; i--)
 				{
 					StatusPopupState s = l[0];
 					l.RemoveAt(0);
