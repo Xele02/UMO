@@ -675,15 +675,128 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA5FED8 Offset: 0xA5FED8 VA: 0xA5FED8
 		private void OnSceneZoom()
 		{
-			TodoLogger.LogNotImplemented("OnSceneZoom");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(SceneZoomCoroutine());
 		}
 
 		// // RVA: 0xA5FFD8 Offset: 0xA5FFD8 VA: 0xA5FFD8
-		// private void OnBackButton() { }
+		private void OnBackButton()
+		{
+			m_viewer.PerformClick();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70F9CC Offset: 0x70F9CC VA: 0x70F9CC
 		// // RVA: 0xA5FF4C Offset: 0xA5FF4C VA: 0xA5FF4C
-		// private IEnumerator SceneZoomCoroutine() { }
+		private IEnumerator SceneZoomCoroutine()
+		{
+			int sceneId; // 0x14
+			int evolveId; // 0x18
+			sbyte attr; // 0x1C
+			byte baseRare; // 0x1D
+			float speed; // 0x20
+			float t; // 0x24
+			Vector2 startPosition; // 0x28
+			Vector3 startScale; // 0x30
+			Vector2 endPosition; // 0x3C
+			Vector3 endScale; // 0x44
+			bool isEvolve; // 0x50
+
+			//0xA62760
+			sceneId = m_sceneData.BCCHOBPJJKE_SceneId;
+			evolveId = m_sceneData.CGIELKDLHGE_GetEvolveId();
+			attr = m_sceneData.JGJFIJOCPAG_SceneAttr;
+			baseRare = m_sceneData.JKGFBFPIMGA_Rarity;
+			m_windowControl.InputDisable();
+			if(m_sceneCardCache == null)
+			{
+				m_sceneCardCache = new SceneCardTextureCache();
+				yield return Co.R(m_sceneCardCache.Initialize(false));
+			}
+			//LAB_00a62920
+			if(m_sceneData.JKGFBFPIMGA_Rarity < 4)
+			{
+				evolveId = 1;
+			}
+			yield return this.StartCoroutineWatched(LoadTexture(sceneId, evolveId, null));
+			yield return GameManager.Instance.SceneIconCache.LoadKiraMaterial(null);
+			if (m_backImage.canvas.GetComponent<RectTransform>().transform.Find("Root") == null)
+				yield break;
+			m_backImage.enabled = true;
+			m_backImage.rectTransform.sizeDelta = m_backImage.canvas.GetComponent<RectTransform>().sizeDelta;
+			m_backImage.rectTransform.anchoredPosition = PopupWindowControl.GetContentCenterOffset(SizeType.Large, true) * -1;
+			m_zoomSceneImage.gameObject.SetActive(true);
+			speed = 10;
+			t = 0;
+			startPosition = m_zoomSceneImage.rectTransform.anchoredPosition;
+			startScale = SceneImageViewer.GetStartScale(m_sceneData.JKGFBFPIMGA_Rarity, m_backImage.canvas.GetComponent<RectTransform>().sizeDelta.x);
+			endPosition = Vector2.zero;
+			endScale = Vector3.one;
+			isEvolve = false;
+			if (!m_sceneData.JOKJBMJBLBB_Single && evolveId > 1)
+				isEvolve = true;
+			m_zoomSceneImage.rectTransform.sizeDelta = SceneImageViewer.GetCardSize(m_backImage.canvas.GetComponent<RectTransform>().sizeDelta.x);
+			m_zoomSceneImage.uvRect = SceneImageViewer.GetCardUv(m_sceneData.JKGFBFPIMGA_Rarity);
+			m_KiraImage.rectTransform.sizeDelta = m_zoomSceneImage.rectTransform.sizeDelta;
+			m_KiraImage.uvRect = m_zoomSceneImage.uvRect;
+			m_KiraOverlayImage.rectTransform.sizeDelta = m_zoomSceneImage.rectTransform.sizeDelta;
+			m_KiraOverlayImage.uvRect = m_zoomSceneImage.uvRect;
+			yield return Co.R(m_viewer.Co_LoadRareFrame(m_sceneData.JKGFBFPIMGA_Rarity));
+			m_viewer.SetFrame(baseRare, attr, m_sceneData.JKGFBFPIMGA_Rarity != m_sceneData.EKLIPGELKCL_SceneRarity);
+			m_viewer.IsZoomable = baseRare > 3;
+			float s = SceneImageViewer.GetEndScale(m_sceneData.JKGFBFPIMGA_Rarity);
+			endScale = new Vector3(s, s, 1);
+			m_viewer.gameObject.SetActive(true);
+			m_viewer.gameObject.transform.SetAsLastSibling();
+			m_viewer.Initialize(isEvolve, m_sceneData.JKGFBFPIMGA_Rarity, m_sceneData.MCOMAOELHOG_IsKira == 1);
+			m_viewer.Show();
+			Vector2 pos = Vector2.Lerp(startPosition, endPosition, t);
+			Vector3 scale = Vector3.Lerp(startScale, endScale, t);
+			while(t <= 1)
+			{
+				t += Time.deltaTime * speed;
+				pos = Vector2.Lerp(startPosition, endPosition, t);
+				scale = Vector3.Lerp(startScale, endScale, t);
+				m_zoomSceneImage.rectTransform.anchoredPosition = pos;
+				m_zoomSceneImage.rectTransform.localScale = scale;
+				m_KiraImage.rectTransform.anchoredPosition = pos;
+				m_KiraImage.rectTransform.localScale = scale;
+				m_KiraOverlayImage.rectTransform.anchoredPosition = pos;
+				m_KiraOverlayImage.rectTransform.localScale = scale;
+				yield return null;
+			}
+			m_isEndView = false;
+			GameManager.Instance.AddPushBackButtonHandler(OnBackButton);
+			while (!m_isEndView)
+				yield return null;
+			GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);
+			m_viewer.Close();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			t = 0;
+			while(t <= 1)
+			{
+				t += Time.deltaTime * speed;
+				pos = Vector2.Lerp(endPosition, startPosition, t);
+				scale = Vector3.Lerp(endScale, startScale, t);
+				m_zoomSceneImage.rectTransform.anchoredPosition = pos;
+				m_zoomSceneImage.rectTransform.localScale = scale;
+				m_KiraImage.rectTransform.anchoredPosition = pos;
+				m_KiraImage.rectTransform.localScale = scale;
+				m_KiraOverlayImage.rectTransform.anchoredPosition = pos;
+				m_KiraOverlayImage.rectTransform.localScale = scale;
+				yield return null;
+			}
+			Resources.UnloadAsset(m_zoomSceneImage.texture);
+			m_viewer.gameObject.transform.SetAsFirstSibling();
+			m_sceneCardCache.Clear();
+			m_zoomSceneImage.texture = null;
+			m_zoomSceneImage.gameObject.SetActive(false);
+			m_backImage.enabled = false;
+			m_windowControl.InputEnable();
+			m_viewer.SetTexture(null);
+			yield return null;
+			yield return Co.R(m_viewer.Co_ReleaseRareFrame());
+			m_viewer.gameObject.SetActive(false);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70FA44 Offset: 0x70FA44 VA: 0x70FA44
 		// // RVA: 0xA60024 Offset: 0xA60024 VA: 0xA60024

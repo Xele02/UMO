@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.IO;
 using System.Text;
 using UnityEngine;
+using XeApp.Core;
 using XeSys;
 
 namespace XeApp.Game.Menu
@@ -39,7 +41,22 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6DCC6C Offset: 0x6DCC6C VA: 0x6DCC6C
 		// // RVA: 0x159F038 Offset: 0x159F038 VA: 0x159F038
-		// public IEnumerator Initialize(bool needAlphaTex = False) { }
+		public IEnumerator Initialize(bool needAlphaTex = false)
+		{
+			AssetBundleLoadAllAssetOperationBase operation;
+
+			//0x159FA14
+			m_isInitialized = false;
+			if(needAlphaTex)
+			{
+				operation = AssetBundleManager.LoadAllAssetAsync("ct/sc/me/02/al.xab");
+				yield return operation;
+				SharedAlphaTexture = operation.GetAsset<Texture2D>("al");
+				AssetBundleManager.UnloadAssetBundle("ct/sc/me/02/al.xab", false);
+				operation = null;
+			}
+			m_isInitialized = true;
+		}
 
 		// // RVA: 0x159F100 Offset: 0x159F100 VA: 0x159F100
 		// public void SetMipmapBias(float bias) { }

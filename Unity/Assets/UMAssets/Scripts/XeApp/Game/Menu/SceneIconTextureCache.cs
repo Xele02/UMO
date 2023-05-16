@@ -213,7 +213,19 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C6328 Offset: 0x6C6328 VA: 0x6C6328
 		// // RVA: 0x1370D20 Offset: 0x1370D20 VA: 0x1370D20
-		// public IEnumerator LoadKiraMaterial(Action LoadEndAction) { }
+		public IEnumerator LoadKiraMaterial(Action LoadEndAction)
+		{
+			AssetBundleLoadAllAssetOperationBase operation;
+
+			//0x137233C
+			operation = AssetBundleManager.LoadAllAssetAsync("ct/sc/ef.xab");
+			yield return operation;
+			m_kira2048HoloMaterial = operation.GetAsset<Material>("holo_2048_a_mul");
+			m_kira2048Material = operation.GetAsset<Material>("eff_2048");
+			AssetBundleManager.UnloadAssetBundle("ct/sc/ef.xab", false);
+			if (LoadEndAction != null)
+				LoadEndAction();
+		}
 
 		// // RVA: 0x1370DE8 Offset: 0x1370DE8 VA: 0x1370DE8
 		public void ReleaseKiraMaterial()
@@ -313,10 +325,18 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1371820 Offset: 0x1371820 VA: 0x1371820
-		// public void ChangeKiraMaterial_2048(RawImageEx _image) { }
+		public void ChangeKiraMaterial_2048(RawImageEx _image)
+		{
+			_image.material = m_kira2048Material;
+			_image.MaterialMul = m_kira2048Material;
+		}
 
 		// // RVA: 0x1371884 Offset: 0x1371884 VA: 0x1371884
-		// public void ChangeKiraMaterial_holo(RawImageEx _image) { }
+		public void ChangeKiraMaterial_holo(RawImageEx _image)
+		{
+			_image.material = m_kira2048HoloMaterial;
+			_image.MaterialMul = m_kira2048HoloMaterial;
+		}
 
 		// // RVA: 0x13718E8 Offset: 0x13718E8 VA: 0x13718E8
 		public void TryInstall(DFKGGBMFFGB_PlayerInfo playerData)

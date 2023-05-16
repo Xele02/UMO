@@ -43,7 +43,22 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA65178 Offset: 0xA65178 VA: 0xA65178
-		//public void SetMaxPage(int maxPage, bool _isSixStar) { }
+		public void SetMaxPage(int maxPage, bool _isSixStar)
+		{
+			m_maxPage = maxPage + 1;
+			if(maxPage == 1)
+			{
+				m_ChengeIconNum.StartChildrenAnimGoStop("01");
+			}
+			else
+			{
+				m_ChengeIconNum.StartChildrenAnimGoStop(maxPage == 2 ? "02" : "01");
+			}
+			if(_isSixStar)
+			{
+				m_ChengeIconNum.StartChildrenAnimGoStop("03");
+			}
+		}
 
 		//// RVA: 0xA65288 Offset: 0xA65288 VA: 0xA65288
 		public void Show()
