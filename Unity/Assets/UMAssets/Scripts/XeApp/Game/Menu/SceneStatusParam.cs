@@ -642,35 +642,53 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA5F960 Offset: 0xA5F960 VA: 0xA5F960
 		private void OnShowCenterSkillDetails()
 		{
-			TodoLogger.LogNotImplemented("OnShowCenterSkillDetails");
+			ShowSkillWindow(m_sceneData.PFHJFIHGCKP_CenterSkillName1, m_sceneData.IHLINMFMCDN_GetCenterSkillDesc(false));
 		}
 
 		// // RVA: 0xA5FD4C Offset: 0xA5FD4C VA: 0xA5FD4C
 		private void OnShowCenterSkillDetails2()
 		{
-			TodoLogger.LogNotImplemented("OnShowCenterSkillDetails2");
+			ShowSkillWindow(m_sceneData.EFELCLMJEOL_CenterSkillName2, m_sceneData.IHLINMFMCDN_GetCenterSkillDesc(true));
 		}
 
 		// // RVA: 0xA5FDB0 Offset: 0xA5FDB0 VA: 0xA5FDB0
 		private void OnShowActiveSkillDetails()
 		{
-			TodoLogger.LogNotImplemented("OnShowActiveSkillDetails");
+			ShowSkillWindow(m_sceneData.ILCLGGPHHJO_ActiveSkillName, m_sceneData.PCMEMHPDABG_GetActiveSkillDesc());
 		}
 
 		// // RVA: 0xA5FE10 Offset: 0xA5FE10 VA: 0xA5FE10
 		private void OnShowLiveSkillDetail()
 		{
-			TodoLogger.LogNotImplemented("OnShowLiveSkillDetail");
+			ShowSkillWindow(m_sceneData.NDPPEMCHKHA_LiveSkillName1, m_sceneData.KDGACEJPGFG_GetLiveSkillDesc(false));
 		}
 
 		// // RVA: 0xA5FE74 Offset: 0xA5FE74 VA: 0xA5FE74
 		private void OnShowLiveSkillDetail2()
 		{
-			TodoLogger.LogNotImplemented("OnShowLiveSkillDetail2");
+			ShowSkillWindow(m_sceneData.LNLECENGMKK_LiveSkillName2, m_sceneData.KDGACEJPGFG_GetLiveSkillDesc(true));
 		}
 
 		// // RVA: 0xA5F9C4 Offset: 0xA5F9C4 VA: 0xA5F9C4
-		// private void ShowSkillWindow(string name, string descript) { }
+		private void ShowSkillWindow(string name, string descript)
+		{
+			if(MenuScene.Instance != null)
+			{
+				MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(name, descript);
+			}
+			else
+			{
+				TextPopupSetting s = new TextPopupSetting();
+				s.TitleText = MessageManager.Instance.GetMessage("menu", "popup_text_16");
+				s.WindowSize = SizeType.Middle;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				s.Text = name + JpStringLiterals.StringLiteral_5812 + descript;
+				PopupWindowManager.Show(s, null, null, null, null);
+			}
+		}
 
 		// // RVA: 0xA5FED8 Offset: 0xA5FED8 VA: 0xA5FED8
 		private void OnSceneZoom()
@@ -862,7 +880,22 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA60A64 Offset: 0xA60A64 VA: 0xA60A64
 		private void OnShowEpisodePopup()
 		{
-			TodoLogger.LogNotImplemented("OnShowEpisodePopup");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			PopupAddEpisodeContentSetting s = new PopupAddEpisodeContentSetting();
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			s.m_parent = transform;
+			s.IsCaption = false;
+			s.WindowSize = SizeType.Middle;
+			s.EpisodeId = m_sceneData.KELFCMEOPPM_EpisodeId;
+			s.Type = LayoutPopupAddEpisode.Type.ViewEpisode;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType buttonType, PopupButton.ButtonLabel buttonLabel) =>
+			{
+				//0xA61808
+				return;
+			}, null, null, null);
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x70FB74 Offset: 0x70FB74 VA: 0x70FB74

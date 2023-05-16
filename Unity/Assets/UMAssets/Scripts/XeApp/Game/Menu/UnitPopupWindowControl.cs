@@ -137,7 +137,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x12488A0 Offset: 0x12488A0 VA: 0x12488A0
-		// public void ShowSkillWindow(string name, string descript) { }
+		public void ShowSkillWindow(string name, string descript)
+		{
+			m_skillInfoContentSetting.Text = name + JpStringLiterals.StringLiteral_5812 + descript;
+			PopupWindowManager.Show(m_skillInfoContentSetting, null, null, null, null);
+		}
 
 		// // RVA: 0x12489B8 Offset: 0x12489B8 VA: 0x12489B8
 		private void OnShowClearPlateConfirm()

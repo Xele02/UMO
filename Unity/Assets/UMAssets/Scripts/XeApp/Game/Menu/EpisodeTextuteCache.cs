@@ -27,7 +27,7 @@ namespace XeApp.Game.Menu
 			new Rect(0.345703f, 0.21875f, 0.28125f, 0.716797f),
 		}; // 0x10
 
-		// public static Rect ImageUv { get; } 0xF09714
+		public static Rect ImageUv { get { return imageUv; } } //0xF09714
 
 		// RVA: 0xF097A8 Offset: 0xF097A8 VA: 0xF097A8 Slot: 5
 		public override void Terminated()
