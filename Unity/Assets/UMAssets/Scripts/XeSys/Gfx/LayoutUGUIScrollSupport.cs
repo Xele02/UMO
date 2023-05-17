@@ -78,7 +78,7 @@ namespace XeSys.Gfx
 			{
 				m_scrollRect.horizontalScrollbar.gameObject.SetActive(m_scrollRect.horizontal);
 				m_scrollRect.horizontalScrollbar.gameObject.GetComponent<Scrollbar>().enabled = m_scrollRect.horizontal;
-				float v = (m_scrollRect.horizontalScrollbar.transform as RectTransform).sizeDelta.x;
+				float v = (m_scrollRect.horizontalScrollbar.transform as RectTransform).sizeDelta.y;
 				h = (m_scrollRect.horizontalScrollbar.transform as RectTransform).sizeDelta.y;
 				(m_scrollRect.horizontalScrollbar.transform as RectTransform).sizeDelta = new Vector2(m_range.x, v);
 				if (m_scrollRect.horizontal && m_scrollRect.vertical)

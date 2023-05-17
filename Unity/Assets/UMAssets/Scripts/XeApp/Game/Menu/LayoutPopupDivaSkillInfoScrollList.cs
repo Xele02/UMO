@@ -240,6 +240,7 @@ namespace XeApp.Game.Menu
 			{
 				var item = m_freeLayout[0];
 				m_freeLayout.RemoveAt(0);
+				return item;
 			}
 			return null;
 		}
@@ -270,6 +271,7 @@ namespace XeApp.Game.Menu
 			if(m_scrollSupport != null)
 			{
 				m_contentsAreaSize = m_scrollSupport.scrollRect.GetComponent<RectTransform>().sizeDelta;
+				gameObject.GetComponent<RectTransform>().sizeDelta = m_contentsAreaSize;
 				m_contentsAreaSize.x = 759;
 			}
 			Loaded();
