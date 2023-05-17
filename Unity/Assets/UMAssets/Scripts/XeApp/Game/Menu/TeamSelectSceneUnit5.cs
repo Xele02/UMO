@@ -1475,7 +1475,17 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8E814 Offset: 0xA8E814 VA: 0xA8E814
 		private void OnStayValkyrieButton()
 		{
-			TodoLogger.LogNotImplemented("OnStayValkyrieButton");
+			OnClickAnyButtons();
+			if (m_dispType == DispType.CurrentUnit)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				if(m_viewUnitData.JOKFNBLEILN_Valkyrie != null)
+				{
+					m_valkyriePopupSetting.ViewValkyrieData = m_viewUnitData.JOKFNBLEILN_Valkyrie;
+					m_valkyriePopupSetting.ViewValkyrieAbilityData = m_paramCalculator.ValkyrieAbilityData;
+					PopupWindowManager.Show(m_valkyriePopupSetting, null, null, null, null);
+				}
+			}
 		}
 
 		//// RVA: 0xA8EA34 Offset: 0xA8EA34 VA: 0xA8EA34

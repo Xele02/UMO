@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		public StatusData BaseStatus { get { return m_baseStatus; } } //0xA6FFB4
 		public StatusData AddStatus { get { return m_addStatus; } } //0xA6FFBC
 		public LimitOverStatusData LimitOverStatus { get { return m_limitOverStatus; } } //0xA6FFC4
-		//public NHDJHOPLMDE ValkyrieAbilityData { get; } 0xA6FFCC
+		public NHDJHOPLMDE ValkyrieAbilityData { get { return m_viewValkyrieAbilityData; } } //0xA6FFCC
 		public JGEOBNENMAH.NEDILFPPCJF LogParams { get { return m_logParams; } } //0xA6FFD4
 		//public CFHDKAFLNEP SubPlateResult { get; } 0xA6FFDC
 		//public bool IsEnableEnemySkill { get; } 0xA6FFF0
