@@ -49,15 +49,15 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem)
 			{
-				TextGeneratorUtility.SetTextRectangleMessage(m_textName, string.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_emblemtitle"), EKLNMHFCAOI.INCKKODFJAP(m_itemId)), 1, JpStringLiterals.StringLiteral_12038);
+				TextGeneratorUtility.SetTextRectangleMessage(m_textName, string.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_emblemtitle"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(m_itemId)), 1, JpStringLiterals.StringLiteral_12038);
 			}
 			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
-				TextGeneratorUtility.SetTextRectangleMessage(m_textName, string.Format(bk.GetMessageByLabel("popup_event_reward_platetitle"), EKLNMHFCAOI.APDHLDGBENB(m_itemId), EKLNMHFCAOI.INCKKODFJAP(m_itemId)), 1, JpStringLiterals.StringLiteral_12038);
+				TextGeneratorUtility.SetTextRectangleMessage(m_textName, string.Format(bk.GetMessageByLabel("popup_event_reward_platetitle"), EKLNMHFCAOI.APDHLDGBENB(m_itemId), EKLNMHFCAOI.INCKKODFJAP_GetItemName(m_itemId)), 1, JpStringLiterals.StringLiteral_12038);
 			}
 			else
 			{
-				TextGeneratorUtility.SetTextRectangleMessage(m_textName, EKLNMHFCAOI.INCKKODFJAP(m_itemId), 1, JpStringLiterals.StringLiteral_12038);
+				TextGeneratorUtility.SetTextRectangleMessage(m_textName, EKLNMHFCAOI.INCKKODFJAP_GetItemName(m_itemId), 1, JpStringLiterals.StringLiteral_12038);
 			}
 			m_textNum.text = m_itemNum.ToString() + EKLNMHFCAOI.NDBLEADIDLA(cat, EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_itemId));
 			SetFrameUv(data.Pickup ? "pop_reward_ev_frg2_{0:D2}" : "pop_reward_ev_fr_{0:D2}");

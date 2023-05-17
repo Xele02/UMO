@@ -15,6 +15,7 @@ namespace XeApp.Game.Menu
 		{
 			PopupAddEpisodeContentSetting s = setting as PopupAddEpisodeContentSetting;
 			Parent = setting.m_parent;
+			transform.GetComponent<RectTransform>().sizeDelta = size;
 			transform.localPosition = Vector3.zero;
 			m_episode = GetComponent<LayoutPopupAddEpisode>();
 			if(m_episode != null)

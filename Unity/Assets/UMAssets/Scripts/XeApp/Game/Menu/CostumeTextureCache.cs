@@ -30,7 +30,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x16E8E3C Offset: 0x16E8E3C VA: 0x16E8E3C
-		// public void Load(int cosId, int colorId, Action<IiconTexture> callBack) { }
+		public void Load(int cosId, int colorId, Action<IiconTexture> callBack)
+		{
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo costume = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[cosId - 1];
+			Load(MakeCostumeTexturePath(costume.AHHJLDLAPAN_PrismDivaId, costume.DAJGPBLEEOB_PrismCostumeModelId, colorId), callBack);
+		}
 
 		// // RVA: 0x16E8948 Offset: 0x16E8948 VA: 0x16E8948
 		public void Load(int divaId, int modelId, int colorId, Action<IiconTexture> callBack)

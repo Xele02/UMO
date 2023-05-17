@@ -18,5 +18,21 @@ namespace ExternLib
 
 			return 0;
 		}
+
+		public static int SakashoAchievementClaimAchievementPrizesAndSaveSetInventoryClosedAt(int callbackId, string json)
+		{
+			UnityEngine.Debug.Log("SakashoAchievementClaimAchievementPrizesAndSaveSetInventoryClosedAt " + json);
+			// Hack directly send response
+
+			return SakashoPlayerDataSavePlayerData(callbackId, json);
+		}
+
+		public static int SakashoAchievementClaimAchievementPrizesAndSave(int callbackId, string json)
+		{
+			UnityEngine.Debug.Log("SakashoAchievementClaimAchievementPrizesAndSave " + json);
+			// Hack directly send response
+
+			return SakashoPlayerDataSavePlayerData(callbackId, json);
+		}
 	}
 }

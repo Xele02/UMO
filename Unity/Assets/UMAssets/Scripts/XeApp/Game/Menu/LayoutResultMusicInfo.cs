@@ -244,18 +244,18 @@ namespace XeApp.Game.Menu
 			//0x18E3A08
 			if(viewResultData.NOPDDMJIFFO_IsBetterUtaRate)
 			{
-				if(!isSkiped)
+				if (!isSkiped)
 				{
-					if(layoutRateText.IsVisible)
+					if (layoutRateText.IsVisible)
 					{
-						if(!viewResultData.CEEKHMOMKOK_IsBetterUtaRateTotal)
+						if (!viewResultData.CEEKHMOMKOK_IsBetterUtaRateTotal)
 						{
 							SoundManager.Instance.sePlayerResult.Play(40);
 						}
+						layoutRateText.StartChildrenAnimGoStop("go_up", "st_up");
+						while (layoutRateText.IsPlayingChildren() && !isSkiped)
+							yield return null;
 					}
-					layoutRateText.StartChildrenAnimGoStop("go_up", "st_up");
-					while (layoutRateText.IsPlayingChildren() && !isSkiped)
-						yield return null;
 				}
 				layoutRateText.StartChildrenAnimLoop("logo_act", "loen_act");
 			}

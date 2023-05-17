@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 			m_textNumLabel.text = bk.GetMessageByLabel("popup_get_liveskip_ticket_count");
 			m_textReject.text = bk.GetMessageByLabel("popup_get_liveskip_ticket_checkbox");
 			m_textTitle.text = bk.GetMessageByLabel("popup_get_liveskip_ticket_title");
-			m_textDesc1.text = string.Format("{0} {1}{2}", EKLNMHFCAOI.INCKKODFJAP(typeItemId), getCount, EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId)));
+			m_textDesc1.text = string.Format("{0} {1}{2}", EKLNMHFCAOI.INCKKODFJAP_GetItemName(typeItemId), getCount, EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId)));
 			m_textDesc2.text = string.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_desc"), getCount);
 			m_textNumCount.text = string.Format("{0}/{1}", CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GJCOJBDOOJG_LimitedCompoItem.HPPKOGKNKMH(1, time), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GJCOJBDOOJG_LimitedCompoItem.OPCIHPEIFFE(1));
 		}
@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
 				TextPopupSetting setting = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_get_liveskip_ticket_confirm_title"),
-					SizeType.Middle, string.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_confirm_desc"), EKLNMHFCAOI.INCKKODFJAP(m_typeItemId)), new ButtonInfo[2]
+					SizeType.Middle, string.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_confirm_desc"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(m_typeItemId)), new ButtonInfo[2]
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
