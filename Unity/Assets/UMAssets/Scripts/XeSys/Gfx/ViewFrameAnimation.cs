@@ -31,7 +31,7 @@ namespace XeSys.Gfx
 		private float m_BaseY; // 0x38
 
 		public bool IsAnimEnd { get { return m_IsAnimEnd; } set { m_IsAnimEnd = value; } } //0x1EE7058 0x1EE7010
-		// public float AnimCount { get; set; } 0x1EE958C 0x1EE9594
+		public float AnimCount { get { return m_AnimCount; } set { m_AnimCount = value; } } //0x1EE958C 0x1EE9594
 		// public float TimeScale { get; set; } 0x1EE5EA4 0x1EE5EF8
 		// public float FrameSec { get; set; } 0x1EE959C 0x1EE95A4
 		public int FrameCount { get { return Mathf.RoundToInt(m_AnimCount / m_FrameSec); } private set { return; } } //0x1EE95AC 0x1EE95C4
