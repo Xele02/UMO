@@ -1434,12 +1434,35 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8E110 Offset: 0xA8E110 VA: 0xA8E110
 		private void OnShowStatusWindow()
 		{
-			TodoLogger.LogNotImplemented("OnShowStatusWindow");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(Co_ShowStatusWindow(!m_statusWindow.InOut.IsEnter));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F58C Offset: 0x72F58C VA: 0x72F58C
 		//// RVA: 0xA8E1CC Offset: 0xA8E1CC VA: 0xA8E1CC
-		//private IEnumerator Co_ShowStatusWindow(bool isShow) { }
+		private IEnumerator Co_ShowStatusWindow(bool isShow)
+		{
+			//0xA95A90
+			MenuScene.Instance.RaycastDisable();
+			m_unitStatus.SetCheckStatusButtonState(isShow ? SetDeckUnitStatus.CheckStatusButtonState.Display : SetDeckUnitStatus.CheckStatusButtonState.Normal);
+			if(!isShow)
+			{
+				m_statusWindow.InOut.Leave(false, null);
+			}
+			else
+			{
+				m_statusWindow.gameObject.SetActive(true);
+				m_statusWindow.InOut.Enter(false, null);
+			}
+			while (m_statusWindow.InOut.IsPlaying())
+				yield return null;
+			if(!isShow)
+			{
+				m_statusWindow.gameObject.SetActive(false);
+			}
+			MenuScene.Instance.RaycastEnable();
+		}
 
 		//// RVA: 0xA8E294 Offset: 0xA8E294 VA: 0xA8E294
 		private void OnShowChangeStatusButton()

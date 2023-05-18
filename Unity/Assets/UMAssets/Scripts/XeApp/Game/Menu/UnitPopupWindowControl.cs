@@ -204,10 +204,27 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x124912C Offset: 0x124912C VA: 0x124912C
-		// public void ShowSubPlateWindow(CFHDKAFLNEP result, Action openEnd, UnitWindowConstant.OperationMode opMode, Action endCallBack, Action closeCallBack, bool isReShow = False) { }
+		public void ShowSubPlateWindow(CFHDKAFLNEP result, Action openEnd, UnitWindowConstant.OperationMode opMode, Action endCallBack, Action closeCallBack, bool isReShow = false)
+		{
+			m_subPlateSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			m_subPlateSetting.SubPlateResult = result;
+			m_subPlateSetting.IsReShowSceneDetail = isReShow;
+			m_subPlateSetting.OperationMode = opMode;
+			PopupWindowManager.Show(m_subPlateSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1249A98
+				closeCallBack();
+			}, null, null, null, true, true, false, null, endCallBack);
+		}
 
 		// // RVA: 0x12493B0 Offset: 0x12493B0 VA: 0x12493B0
-		// public void ShowSubPlateLockWindow(Action endCallBack) { }
+		public void ShowSubPlateLockWindow(Action endCallBack)
+		{
+			PopupWindowManager.Show(m_subPlateLockSetting, null, null, null, null, true, true, false, null, endCallBack);
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x735A7C Offset: 0x735A7C VA: 0x735A7C
 		// // RVA: 0x12496F8 Offset: 0x12496F8 VA: 0x12496F8
