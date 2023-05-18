@@ -157,7 +157,7 @@ namespace XeApp.Game.Menu
 			CalcScrollVisibleRange(m_scrollSupport, out top, out bottom);
 			for(int i = 0; i < m_paramList.Count; i++)
 			{
-				if(top < m_paramList[i].pos.y || m_paramList[i].pos.y + m_paramList[i].size.y < bottom)
+				if(bottom < m_paramList[i].pos.y || m_paramList[i].pos.y + m_paramList[i].size.y < top)
 				{
 					if(m_paramList[i].item != null)
 					{

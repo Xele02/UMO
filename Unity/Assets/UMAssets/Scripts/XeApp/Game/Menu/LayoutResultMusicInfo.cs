@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 			"cmn_music_diff_06", "cmn_music_diff_07", "cmn_music_diff_08"
 		}; // 0x4
 
-		private bool isInTutorial { get { return !Database.Instance.gameSetup.musicInfo.isTutorialOne && !Database.Instance.gameSetup.musicInfo.isTutorialTwo; } } //0x18E0140
+		private bool isInTutorial { get { return Database.Instance.gameSetup.musicInfo.isTutorialOne || Database.Instance.gameSetup.musicInfo.isTutorialTwo; } } //0x18E0140
 
 		// RVA: 0x18E0218 Offset: 0x18E0218 VA: 0x18E0218 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

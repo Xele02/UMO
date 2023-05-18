@@ -258,11 +258,11 @@ namespace XeApp.Game.Menu
 			Layout layout = null;
 			TexUVListManager uvMan = null;
 
-			itemSetOp.CreateLayoutCoroutine(prefab.GetComponent<LayoutUGUIRuntime>(), GameManager.Instance.GetSystemFont(), (Layout loadLayout, TexUVListManager loadUvMan) => {
+			yield return Co.R(itemSetOp.CreateLayoutCoroutine(prefab.GetComponent<LayoutUGUIRuntime>(), GameManager.Instance.GetSystemFont(), (Layout loadLayout, TexUVListManager loadUvMan) => {
 				//0xB57B54
 				layout = loadLayout;
 				uvMan = loadUvMan;
-			});
+			}));
 			int num = dropLayoutInitParam.viewDropResultData.HBHMAKNGKFK.Count;
 			dropLayoutInitParam.layoutItemList = new List<LayoutResultDropItem>(num);
 			for(int i = 0; i < num; i++)

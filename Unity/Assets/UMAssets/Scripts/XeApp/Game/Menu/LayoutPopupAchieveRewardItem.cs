@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 		public void SetPosition(int x, int y)
 		{
 			if (m_rtTransform != null)
-				m_rtTransform.anchoredPosition = new Vector2(x, y);
+				m_rtTransform.anchoredPosition = new Vector2(x, -y);
 		}
 	}
 }

@@ -148,6 +148,8 @@ namespace XeApp.Game.Menu
 					instance.transform.SetAsLastSibling();
 				});
 			}
+			if (callback != null)
+				callback();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7043A4 Offset: 0x7043A4 VA: 0x7043A4

@@ -81,7 +81,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1109550 Offset: 0x1109550 VA: 0x1109550
 		private void SetLimitAttribute(GameAttribute.Type attr, int index)
 		{
-			m_skilllimitAttributeImages[index].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(string.Format("cmn_zok_{0:D2}", attr)));
+			m_skilllimitAttributeImages[index].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(string.Format("cmn_zok_{0:D2}", (int)attr)));
 		}
 
 		//// RVA: 0x1108B64 Offset: 0x1108B64 VA: 0x1108B64
