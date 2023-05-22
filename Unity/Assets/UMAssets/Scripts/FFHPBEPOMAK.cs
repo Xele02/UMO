@@ -471,7 +471,33 @@ public class FFHPBEPOMAK_DivaInfo
 	}
 
 	// // RVA: 0x14E168C Offset: 0x14E168C VA: 0x14E168C
-	// public void GFHOGBPOJDN(int PIHCLIPPNPB, int GFBJMMNGHAA, int FKCLAAAECLO, KDMCFCBMAOI BBEBHGEHMMI) { }
+	public void GFHOGBPOJDN(int PIHCLIPPNPB, int GFBJMMNGHAA, int FKCLAAAECLO, KDMCFCBMAOI BBEBHGEHMMI)
+	{
+		if(PIHCLIPPNPB == 0)
+		{
+			MNBNLONEDPF(false);
+		}
+		else
+		{
+			OKDIEDCGODF(PIHCLIPPNPB, false, BBEBHGEHMMI, null);
+		}
+		if(GFBJMMNGHAA == 0)
+		{
+			BCEJOOCGBFG(0, false);
+		}
+		else
+		{
+			IFFMDJHENHB(0, GFBJMMNGHAA, false, BBEBHGEHMMI, null);
+		}
+		if (FKCLAAAECLO == 0)
+		{
+			BCEJOOCGBFG(1, false);
+		}
+		else
+		{
+			IFFMDJHENHB(1, FKCLAAAECLO, false, BBEBHGEHMMI, null);
+		}
+	}
 
 	// // RVA: 0x14E1758 Offset: 0x14E1758 VA: 0x14E1758
 	public void HOOJOFACOEK_SetCostume(int PDEEMMEHDPK, int HEHKNMCDBJJ, bool MNGIDJDFBFD = false, bool OJEBNBLHPNP = false)

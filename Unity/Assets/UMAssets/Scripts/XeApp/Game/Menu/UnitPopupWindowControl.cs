@@ -80,10 +80,65 @@ namespace XeApp.Game.Menu
 		// public void ShowUnitList(bool isResetPosition, UnityAction callBack, UnityAction<int> unitDatailEvent, EEDKAACNBBG musicData, EJKBKMBJMGL enemyData, EAJCBFGKKFA friendData, DFKGGBMFFGB playerData, bool isGoDiva) { }
 
 		// // RVA: 0x1247A00 Offset: 0x1247A00 VA: 0x1247A00
-		// public void ShowConfirmWindow(ConfirmType type, DFKGGBMFFGB playerData, int targetUnitId, EEDKAACNBBG musicData, EJKBKMBJMGL enemyData, EAJCBFGKKFA friendData, UnityAction onDecide, UnityAction okAction, Action onEnd, bool isGoDiva = False) { }
+		public void ShowConfirmWindow(ConfirmType type, DFKGGBMFFGB_PlayerInfo playerData, int targetUnitId, EEDKAACNBBG_MusicData musicData, EJKBKMBJMGL_EnemyData enemyData, EAJCBFGKKFA_FriendInfo friendData, UnityAction onDecide, UnityAction okAction, Action onEnd, bool isGoDiva = false)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_unitSaveConfirmSetting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+			};
+			m_unitSaveConfirmSetting.PlayerData = playerData;
+			m_unitSaveConfirmSetting.TargetUnitId = targetUnitId;
+			m_unitSaveConfirmSetting.MusicData = musicData;
+			m_unitSaveConfirmSetting.EnemyData = enemyData;
+			m_unitSaveConfirmSetting.FriendData = friendData;
+			m_unitSaveConfirmSetting.IsGoDiva = isGoDiva;
+			m_unitSaveConfirmSetting.ConfirmType = type;
+			m_unitSaveConfirmSetting.WindowSize = SizeType.Large;
+			if (type == ConfirmType.Save)
+			{
+				if (playerData.EHGGOAGEGIM_UnitsNormal[targetUnitId - 1].EIGKIHENKNC_HasDivaSet)
+					m_unitSaveConfirmSetting.TitleText = bk.GetMessageByLabel("unit_popup_title_01");
+				else
+					m_unitSaveConfirmSetting.TitleText = bk.GetMessageByLabel("unit_popup_title_02");
+			}
+			else
+				m_unitSaveConfirmSetting.TitleText = bk.GetMessageByLabel("unit_popup_title_03");
+			PopupWindowManager.Show(m_unitSaveConfirmSetting, (PopupWindowControl control, PopupButton.ButtonType btype, PopupButton.ButtonLabel blabel) =>
+			{
+				//0x1249818
+				if (btype != PopupButton.ButtonType.Positive)
+					return;
+				onDecide();
+				MenuScene.Save(() =>
+				{
+					//0x1249914
+					ShowSaveTextWindow(type, targetUnitId, okAction);
+				}, null);
+			}, null, null, null, true, true, false, null, onEnd);
+		}
 
 		// // RVA: 0x1247F64 Offset: 0x1247F64 VA: 0x1247F64
-		// public void ShowSaveTextWindow(ConfirmType type, int slot, UnityAction okAction) { }
+		public void ShowSaveTextWindow(ConfirmType type, int slot, UnityAction okAction)
+		{
+			m_textContentSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_textContentSetting.Text = string.Format(type == ConfirmType.Save ? bk.GetMessageByLabel("unit_save_text") : bk.GetMessageByLabel("unit_load_text"), slot);
+			PopupWindowManager.Show(m_textContentSetting, (PopupWindowControl content, PopupButton.ButtonType btnType, PopupButton.ButtonLabel btnLabel) =>
+			{
+				//0x1249814
+				return;
+			}, null, null, null, true, true, false, null, () =>
+			{
+				//0x1249954
+				if (okAction != null)
+					okAction();
+			});
+		}
 
 		// // RVA: 0x1248344 Offset: 0x1248344 VA: 0x1248344
 		public void ShowUnitAutoSettingWindow(DFKGGBMFFGB_PlayerInfo playerData, PopupAutoSettingContent.Place place, int musicAttribute, int musicSeries, int musicID, UnityAction<PopupAutoSettingContent> okCallBack, UnityAction clearPlateCallBack, Action openEnd, KLBKPANJCPL_Score scoreInfo, bool isGoDiva)

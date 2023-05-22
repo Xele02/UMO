@@ -308,6 +308,7 @@ class JpStringLiterals
 	public const string StringLiteral_17788 = "(UCアイテムは {0}UC に変換されました)"; // 0x03bba0a8
 	public const string StringLiteral_19017 = "誕生日"; // 0x03bbb3dc
 	public const string StringLiteral_19018 = "{0}/{1}/{2}　{3}"; // 0x03bbb3e0
+	public const string StringLiteral_19612 = "ユニットセット"; // 0x03bbbd28
 	public const string StringLiteral_20290 = "l×{0}"; // 0x03bbc7c0
 	public const string StringLiteral_20367 = "ー"; // 0x03bbc8f4
 	public const string StringLiteral_20369 = "±{0}"; // 0x03bbc8fc

@@ -656,8 +656,41 @@ public class AOJGDNFAIJL_PrismData
 			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_vk_hit", -1);
 		}
 
-        // // RVA: 0xD5E488 Offset: 0xD5E488 VA: 0xD5E488
-        // public void EKACMEKEJLP(AOJGDNFAIJL.AMIECPBIALP CJODFDGPKIA, int AHHJLDLAPAN, int IOPHIHFOOEP) { }
+		// // RVA: 0xD5E488 Offset: 0xD5E488 VA: 0xD5E488
+		public void EKACMEKEJLP(AMIECPBIALP CJODFDGPKIA, int AHHJLDLAPAN, int IOPHIHFOOEP)
+		{
+			if(IOPHIHFOOEP < 5)
+			{
+				for(int i = 0; i < CJODFDGPKIA.ENCKALOAAMB_SelectedDivaIds.Length; i++)
+				{
+					if(CJODFDGPKIA.ENCKALOAAMB_SelectedDivaIds[i] == AHHJLDLAPAN)
+					{
+						ENCKALOAAMB_SelectedDivaIds[IOPHIHFOOEP] = CJODFDGPKIA.ENCKALOAAMB_SelectedDivaIds[i];
+						LGPBDFHDMNA_SelectedCostumeIds[IOPHIHFOOEP] = CJODFDGPKIA.LGPBDFHDMNA_SelectedCostumeIds[i];
+						DJCCKIAJFGH_SelectedCostumeColorIds[IOPHIHFOOEP] = CJODFDGPKIA.DJCCKIAJFGH_SelectedCostumeColorIds[i];
+						OMNDNNFANCK_PrismDivaIds[IOPHIHFOOEP] = CJODFDGPKIA.OMNDNNFANCK_PrismDivaIds[i];
+						DLPIKHDNIIE_PrismCostumeIds[IOPHIHFOOEP] = CJODFDGPKIA.DLPIKHDNIIE_PrismCostumeIds[i];
+						PBHPPCPKHDL_PrismCostumeColorIds[IOPHIHFOOEP] = CJODFDGPKIA.PBHPPCPKHDL_PrismCostumeColorIds[i];
+						return;
+					}
+				}
+				ENCKALOAAMB_SelectedDivaIds[IOPHIHFOOEP] = AHHJLDLAPAN;
+				if(AHHJLDLAPAN == 0)
+				{
+					DLPIKHDNIIE_PrismCostumeIds[IOPHIHFOOEP] = OPICBODCKGG_None;
+					PBHPPCPKHDL_PrismCostumeColorIds[IOPHIHFOOEP] = OPICBODCKGG_None;
+				}
+				else
+				{
+					LGPBDFHDMNA_SelectedCostumeIds[IOPHIHFOOEP] = DKNAIAKHHDC_Invalid;
+					DJCCKIAJFGH_SelectedCostumeColorIds[IOPHIHFOOEP] = DKNAIAKHHDC_Invalid;
+					ADPFDMPMILA_FindCostume(AHHJLDLAPAN, ref CLDDCHNMLLM_DefaultCostumeId, ref CCEMMCJOPIO_DefaultColorId);
+					DLPIKHDNIIE_PrismCostumeIds[IOPHIHFOOEP] = CLDDCHNMLLM_DefaultCostumeId;
+					PBHPPCPKHDL_PrismCostumeColorIds[IOPHIHFOOEP] = CCEMMCJOPIO_DefaultColorId;
+				}
+				OMNDNNFANCK_PrismDivaIds[IOPHIHFOOEP] = AHHJLDLAPAN;
+			}
+		}
 
         // // RVA: 0xD5E944 Offset: 0xD5E944 VA: 0xD5E944
         public AOJCMPIBFHD OOKAOFJBCFD()

@@ -1467,11 +1467,35 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8E294 Offset: 0xA8E294 VA: 0xA8E294
 		private void OnShowChangeStatusButton()
 		{
-			TodoLogger.LogNotImplemented("OnShowChangeStatusButton");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.ShowSortWindow(m_dispTypePopupParam, (PopupFilterSortUGUI content) =>
+			{
+				//0xA922A0
+				int divaSortItem = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.BICLOMKLAOF_unitWindowDivaDispItem;
+				int sceneSortItem = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.LEAPMNHODPJ_unitWindowDispItem;
+				m_divaDispTypeIndex = PopupSortMenu.UnitDivaSortItem.FindIndex((SortItem x) =>
+				{
+					//0xA93668
+					return divaSortItem == (int)x;
+				});
+				m_sceneDispTypeIndex = PopupSortMenu.UnitSortItem.FindIndex((SortItem x) =>
+				{
+					//0xA9367C
+					return sceneSortItem == (int)x;
+				});
+				ApplyStatusDisplayType();
+			}, null);
 		}
 
 		//// RVA: 0xA8E3E8 Offset: 0xA8E3E8 VA: 0xA8E3E8
-		//private void ApplyStatusDisplayType() { }
+		private void ApplyStatusDisplayType()
+		{
+			SortItem divaItem = PopupSortMenu.UnitDivaSortItem[m_divaDispTypeIndex];
+			SortItem sceneItem = PopupSortMenu.UnitSortItem[m_sceneDispTypeIndex];
+			m_unitInfo.SetStatusDisplayType(divaItem, sceneItem);
+			m_unitSetInfo.SetStatusDisplayType(divaItem, sceneItem);
+		}
 
 		//// RVA: 0xA8E530 Offset: 0xA8E530 VA: 0xA8E530
 		private void OnClickValkyrieButton()
@@ -1686,8 +1710,6 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA90044 Offset: 0xA90044 VA: 0xA90044
 		private void OnClickUnitSetButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickUnitSetButton");
-			return;
 			OnClickAnyButtons();
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			this.StartCoroutineWatched(Co_EnterUnitSet());
@@ -1782,63 +1804,162 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA90668 Offset: 0xA90668 VA: 0xA90668
 		private void OnChangeUnitSetSelect(int unitSetIndex, JLKEOGLJNOD_TeamInfo unitData)
 		{
-			TodoLogger.LogNotImplemented("OnChangeUnitSetSelect");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			UnitSetIndex = unitSetIndex;
+			this.StartCoroutineWatched(Co_ApplyUnitSetContent(true));
 		}
 
 		//// RVA: 0xA9079C Offset: 0xA9079C VA: 0xA9079C
 		private void OnStartChangeUnitSetPage()
 		{
-			TodoLogger.LogNotImplemented("OnStartChangeUnitSetPage");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.RaycastDisable();
 		}
 
 		//// RVA: 0xA90890 Offset: 0xA90890 VA: 0xA90890
 		private void OnEndChangeUnitSetPage()
 		{
-			TodoLogger.LogNotImplemented("OnEndChangeUnitSetPage");
+			MenuScene.Instance.RaycastEnable();
 		}
 
 		//// RVA: 0xA9092C Offset: 0xA9092C VA: 0xA9092C
 		private void OnClickUnitSetCloseButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickUnitSetCloseButton");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_000);
+			this.StartCoroutineWatched(Co_SwitchContents(DispType.CurrentUnit));
 		}
 
 		//// RVA: 0xA909A8 Offset: 0xA909A8 VA: 0xA909A8
 		private void OnClickUnitSetSelectButton(int tick)
 		{
-			TodoLogger.LogNotImplemented("OnClickUnitSetSelectButton");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(Co_OnClickUnitSetSelect(tick));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F76C Offset: 0x72F76C VA: 0x72F76C
 		//// RVA: 0xA90A28 Offset: 0xA90A28 VA: 0xA90A28
-		//private IEnumerator Co_OnClickUnitSetSelect(int tick) { }
+		private IEnumerator Co_OnClickUnitSetSelect(int tick)
+		{
+			//0xA95118
+			MenuScene.Instance.RaycastDisable();
+			int cnt = tick + UnitSetIndex;
+			for (; cnt < 0; )
+			{
+				cnt += m_unitSetListButtons.UnitCount;
+			}
+			for(; cnt >= m_unitSetListButtons.UnitCount; cnt -= m_unitSetListButtons.UnitCount)
+			{
+			}
+			UnitSetIndex = cnt;
+			yield return Co.R(Co_ApplyUnitSetContent(false));
+			bool isWait = true;
+			m_unitSetListButtons.ChangeSelect(UnitSetIndex, () =>
+			{
+				//0xA93698
+				isWait = false;
+			});
+			while (isWait)
+				yield return null;
+			MenuScene.Instance.RaycastEnable();
+		}
 
 		//// RVA: 0xA90AF0 Offset: 0xA90AF0 VA: 0xA90AF0
 		private void OnUnitSetLoad()
 		{
-			TodoLogger.LogNotImplemented("OnUnitSetLoad");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			MenuScene.Instance.UnitSaveWindowControl.ShowConfirmWindow(ConfirmType.Load, m_playerData, m_playerData.JKIJFGGMNAN_GetUnit(UnitSetIndex, m_isGoDivaEvent).CDPKOIDDKIJ, m_viewMusicData, m_viewEnemyData, m_viewFriendPlayerData, () =>
+			{
+				//0xA926B8
+				MenuScene.Instance.RaycastDisable();
+				LoadUnitSetForCurrentUnit(UnitSetIndex);
+			}, () =>
+			{
+				//0xA9276C
+				MenuScene.Instance.RaycastEnable();
+				this.StartCoroutineWatched(Co_SwitchContents(DispType.CurrentUnit));
+			}, null, m_isGoDivaEvent);
 		}
 
 		//// RVA: 0xA90D30 Offset: 0xA90D30 VA: 0xA90D30
 		private void OnUnitSetSave()
 		{
-			TodoLogger.LogNotImplemented("OnUnitSetSave");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			MenuScene.Instance.UnitSaveWindowControl.ShowConfirmWindow(ConfirmType.Save, m_playerData, m_playerData.JKIJFGGMNAN_GetUnit(UnitSetIndex, m_isGoDivaEvent).CDPKOIDDKIJ, m_viewMusicData, m_viewEnemyData, m_viewFriendPlayerData, () =>
+			{
+				//0xA92828
+				MenuScene.Instance.RaycastDisable();
+				SaveUnitSetByCurrentUnit(UnitSetIndex);
+				ApplyUnitSetContent(UnitSetIndex);
+				m_unitSetListButtons.UpdateContent(m_playerData, m_isGoDivaEvent);
+				m_unitSetInfo.MessageControl.Leave();
+			}, () =>
+			{
+				//0xA92AA0
+				MenuScene.Instance.RaycastEnable();
+			}, null, m_isGoDivaEvent);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F7E4 Offset: 0x72F7E4 VA: 0x72F7E4
 		//// RVA: 0xA906F4 Offset: 0xA906F4 VA: 0xA906F4
-		//private IEnumerator Co_ApplyUnitSetContent(bool isApplyUnitSetList = True) { }
+		private IEnumerator Co_ApplyUnitSetContent(bool isApplyUnitSetList = true)
+		{
+			//0xA93BB4
+			MenuScene.Instance.RaycastDisable();
+			ApplyUnitSetContent(UnitSetIndex);
+			if(isApplyUnitSetList)
+			{
+				m_unitSetListButtons.UpdateContent(m_playerData, m_isGoDivaEvent);
+			}
+			while (IsApplyWait())
+				yield return null;
+			MenuScene.Instance.RaycastEnable();
+		}
 
 		//// RVA: 0xA91058 Offset: 0xA91058 VA: 0xA91058
-		//private void SaveUnitSetByCurrentUnit(int unitSetIndex) { }
+		private void SaveUnitSetByCurrentUnit(int unitSetIndex)
+		{
+			if(!m_isGoDivaEvent)
+			{
+				m_playerData.JKIJFGGMNAN_GetUnit(unitSetIndex, m_isGoDivaEvent).KMLFHLOBPNH(m_playerData.OPIBAPEGCLA_Scenes);
+			}
+			else
+			{
+				m_playerData.JKIJFGGMNAN_GetUnit(unitSetIndex, m_isGoDivaEvent).MLNLDMABAEA(m_playerData.DPLBHAIKPGL_GetTeam(true).PDJEMLMOEPF_CenterDivaId, m_playerData.OPIBAPEGCLA_Scenes);
+			}
+		}
 
 		//// RVA: 0xA9117C Offset: 0xA9117C VA: 0xA9117C
-		//private void LoadUnitSetForCurrentUnit(int unitSetIndex) { }
+		private void LoadUnitSetForCurrentUnit(int unitSetIndex)
+		{
+			if(!m_isGoDivaEvent)
+			{
+				m_playerData.LCCKKHFEIGH(unitSetIndex);
+				ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD(JpStringLiterals.StringLiteral_19612, unitSetIndex + 1, true, m_isGoDivaEvent, 1);
+			}
+			else
+			{
+				m_playerData.JHDADIMLHII(m_playerData.DPLBHAIKPGL_GetTeam(true).PDJEMLMOEPF_CenterDivaId, unitSetIndex);
+				ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD(JpStringLiterals.StringLiteral_19612, unitSetIndex + 1, true, m_isGoDivaEvent, m_playerData.DPLBHAIKPGL_GetTeam(true).PDJEMLMOEPF_CenterDivaId);
+			}
+		}
 
 		//// RVA: 0xA912FC Offset: 0xA912FC VA: 0xA912FC
 		private void OnClickOriginalSetting()
 		{
-			TodoLogger.LogNotImplemented("OnClickOriginalSetting");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			UpdatePrismData(m_viewMusicData.DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo);
+			ShowOriginalPrismSettingPopup(m_viewMusicData != null ? m_viewMusicData.DLAEJOBELBH_MusicId : 0, Database.Instance.gameSetup.musicInfo, false, () =>
+			{
+				//0xA92974
+				ApplyPrismUnitContent();
+			});
 		}
 
 		//// RVA: 0xA914E0 Offset: 0xA914E0 VA: 0xA914E0
@@ -1921,10 +2042,6 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x72F87C Offset: 0x72F87C VA: 0x72F87C
 		//// RVA: 0xA920FC Offset: 0xA920FC VA: 0xA920FC
 		//private void <OnChangeUnitName>b__147_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F88C Offset: 0x72F88C VA: 0x72F88C
-		//// RVA: 0xA922A0 Offset: 0xA922A0 VA: 0xA922A0
-		//private void <OnShowChangeStatusButton>b__151_0(PopupFilterSortUGUI content) { }
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x72F8AC Offset: 0x72F8AC VA: 0x72F8AC
 		//// RVA: 0xA92578 Offset: 0xA92578 VA: 0xA92578
@@ -1941,21 +2058,5 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x72F8EC Offset: 0x72F8EC VA: 0x72F8EC
 		//// RVA: 0xA926AC Offset: 0xA926AC VA: 0xA926AC
 		//private void <OnClickAutoSettingButton>b__166_2() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F8FC Offset: 0x72F8FC VA: 0x72F8FC
-		//// RVA: 0xA926B8 Offset: 0xA926B8 VA: 0xA926B8
-		//private void <OnUnitSetLoad>b__180_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F90C Offset: 0x72F90C VA: 0x72F90C
-		//// RVA: 0xA9276C Offset: 0xA9276C VA: 0xA9276C
-		//private void <OnUnitSetLoad>b__180_1() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F91C Offset: 0x72F91C VA: 0x72F91C
-		//// RVA: 0xA92828 Offset: 0xA92828 VA: 0xA92828
-		//private void <OnUnitSetSave>b__181_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F92C Offset: 0x72F92C VA: 0x72F92C
-		//// RVA: 0xA92974 Offset: 0xA92974 VA: 0xA92974
-		//private void <OnClickOriginalSetting>b__185_0() { }
 	}
 }

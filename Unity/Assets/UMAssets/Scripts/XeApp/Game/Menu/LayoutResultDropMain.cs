@@ -199,8 +199,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D95910 Offset: 0x1D95910 VA: 0x1D95910
 		private IEnumerator Co_PlayingEventRareItemDropNumAnim()
 		{
-			TodoLogger.Log(0, "Co_PlayingEventRareItemDropNumAnim");
-
 			//0x1D97710
 			EnterMainStep(MainAnimStep.EVENT_RARE_DROP);
 			yield return null;

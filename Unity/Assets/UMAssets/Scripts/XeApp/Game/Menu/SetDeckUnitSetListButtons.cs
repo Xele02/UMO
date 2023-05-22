@@ -4,6 +4,7 @@ using XeApp.Game.Common;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using XeSys;
+using System.Collections;
 
 namespace XeApp.Game.Menu
 {
@@ -69,7 +70,7 @@ namespace XeApp.Game.Menu
 		public InOutAnime InOut { get { return m_inOut; } } //0xC38020
 		//public int CurrentIndex { get; } 0xC38028
 		//public JLKEOGLJNOD CurrentUnitData { get; } 0xC38030
-		//public int UnitCount { get; } 0xC380E0
+		public int UnitCount { get { return m_unitCount; } } //0xC380E0
 		//public bool IsPageSwitching { get; } 0xC380E8
 		private int UnitButtonCount { get { return m_unitButtons.Count; } } //0xC380F0
 
@@ -111,10 +112,30 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC38970 Offset: 0xC38970 VA: 0xC38970
-		//public void UpdateContent(DFKGGBMFFGB viewPlayerData, bool isGoDiva) { }
+		public void UpdateContent(DFKGGBMFFGB_PlayerInfo viewPlayerData, bool isGoDiva)
+		{
+			UpdateContent(viewPlayerData, isGoDiva, m_unitIndex);
+		}
 
 		//// RVA: 0xC3898C Offset: 0xC3898C VA: 0xC3898C
-		//public void ChangeSelect(int selectIndex, Action onEnd) { }
+		public void ChangeSelect(int selectIndex, Action onEnd)
+		{
+			if(selectIndex >= 0 && selectIndex < m_unitCount)
+			{
+				m_unitIndex = selectIndex;
+				int next = selectIndex / UnitButtonCount;
+				if(m_pageNo == next)
+				{
+					ApplyUnitButtonSelect(m_unitButtons, m_pageNo, selectIndex);
+					if (onEnd != null)
+						onEnd();
+				}
+				else
+				{
+					SwitchPage(m_pageNo, next, onEnd);
+				}
+			}
+		}
 
 		//// RVA: 0xC38A98 Offset: 0xC38A98 VA: 0xC38A98
 		public void ResetUnitNameScroll()
@@ -136,24 +157,80 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC38E68 Offset: 0xC38E68 VA: 0xC38E68
 		private void OnClickPageButtonFunc()
 		{
-			TodoLogger.LogNotImplemented("OnClickPageButtonFunc");
+			if(!m_isPageSwitching)
+			{
+				if (OnStartChangePage != null)
+					OnStartChangePage();
+				SwitchPage(m_pageNo, (m_pageNo + 1) / m_pageCount, () =>
+				{
+					//0xC39780
+					if (OnEndChangePage != null)
+						OnEndChangePage();
+				});
+			}
 		}
 
 		//// RVA: 0xC38A24 Offset: 0xC38A24 VA: 0xC38A24
-		//private void SwitchPage(int prevPageNo, int nextPageNo, Action onEnd) { }
+		private void SwitchPage(int prevPageNo, int nextPageNo, Action onEnd)
+		{
+			m_pageNo = nextPageNo;
+			ApplyPageButton(nextPageNo, m_pageCount);
+			if (m_pageSwitchCoroutine != null)
+				this.StopCoroutineWatched(m_pageSwitchCoroutine);
+			m_pageSwitchCoroutine = this.StartCoroutineWatched(Co_PageSwitchAnime(prevPageNo, nextPageNo, onEnd));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x730E84 Offset: 0x730E84 VA: 0x730E84
 		//// RVA: 0xC38F3C Offset: 0xC38F3C VA: 0xC38F3C
-		//private IEnumerator Co_PageSwitchAnime(int prevPageNo, int nextPageNo, Action onEnd) { }
+		private IEnumerator Co_PageSwitchAnime(int prevPageNo, int nextPageNo, Action onEnd)
+		{
+			//0xC397C8
+			m_isPageSwitching = true;
+			ApplyUnitButtonStatus(m_switchUnitButtonsBefore, prevPageNo);
+			ApplyUnitButtonSelect(m_switchUnitButtonsBefore, prevPageNo, m_unitIndex);
+			ApplyUnitButtonStatus(m_switchUnitButtonsAfter, nextPageNo);
+			ApplyUnitButtonSelect(m_switchUnitButtonsAfter, nextPageNo, m_unitIndex);
+			yield return null;
+			m_unitSetButtonsAnimator.CrossFade("Switch", 0);
+			yield return null;
+			while (m_unitSetButtonsAnimator.IsInTransition(0))
+				yield return null;
+			while (m_unitSetButtonsAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+				yield return null;
+			ApplyUnitButtonStatus(nextPageNo);
+			ApplyUnitButtonSelect(m_unitButtons, m_pageNo, m_unitIndex);
+			yield return null;
+			m_unitSetButtonsAnimator.CrossFade("Idle", 0);
+			yield return null;
+			m_isPageSwitching = false;
+			if (onEnd != null)
+				onEnd();
+		}
 
 		//// RVA: 0xC39034 Offset: 0xC39034 VA: 0xC39034
 		private void OnClickUnitButtonFunc(int buttonNo)
 		{
-			TodoLogger.LogNotImplemented("OnClickUnitButtonFunc");
+			int num = m_pageNo * UnitButtonCount + buttonNo;
+			if(OnClickUnitButton != null)
+			{
+				OnClickUnitButton(buttonNo, GetUnitData(num));
+			}
+			if(!m_isPageSwitching && m_unitIndex != num)
+			{
+				m_unitIndex = num;
+				ApplyUnitButtonSelect(m_unitButtons, m_pageNo, num);
+				CallOnChangeUnit();
+			}
 		}
 
 		//// RVA: 0xC3917C Offset: 0xC3917C VA: 0xC3917C
-		//private void CallOnChangeUnit() { }
+		private void CallOnChangeUnit()
+		{
+			if(OnChangeUnit != null)
+			{
+				OnChangeUnit(m_unitIndex, GetUnitData(m_unitIndex));
+			}
+		}
 
 		//// RVA: 0xC38564 Offset: 0xC38564 VA: 0xC38564
 		private void ApplyPageButton(int pageNo, int pageCount)
@@ -204,7 +281,21 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC39474 Offset: 0xC39474 VA: 0xC39474
-		//private void ApplyUnitButtonStatus(List<SetDeckUnitSetListButtons.UnitButtonElement> buttons, int pageNo) { }
+		private void ApplyUnitButtonStatus(List<UnitButtonElement> buttons, int pageNo)
+		{
+			for(int i = 0; i < UnitButtonCount; i++)
+			{
+				JLKEOGLJNOD_TeamInfo data = GetUnitData(UnitButtonCount * pageNo + i);
+				if (!data.EIGKIHENKNC_HasDivaSet)
+				{
+					buttons[i].m_nameText.text = data.BHKALCOAHHO_Name;
+				}
+				else
+				{
+					buttons[i].m_nameText.text = string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_unitset_dummy_name"), i + UnitButtonCount * pageNo + 1);
+				}
+			}
+		}
 
 		//// RVA: 0xC3911C Offset: 0xC3911C VA: 0xC3911C
 		//private int CalcUnitIndex(int buttonNo, int pageNo) { }
@@ -223,9 +314,5 @@ namespace XeApp.Game.Menu
 		{
 			return m_viewPlayerData.JKIJFGGMNAN_GetUnit(unitIndex, m_isGoDiva);
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x730F0C Offset: 0x730F0C VA: 0x730F0C
-		//// RVA: 0xC39780 Offset: 0xC39780 VA: 0xC39780
-		//private void <OnClickPageButtonFunc>b__39_0() { }
 	}
 }

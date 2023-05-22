@@ -19,7 +19,7 @@ namespace XeApp.Game.Menu
 		}
 
 		protected bool m_isGotoGame; // 0x45
-		private static readonly LiveBeforeSceneBaseUnit5.PrefabCacheParam[] m_prefabCacheParams = new LiveBeforeSceneBaseUnit5.PrefabCacheParam[15] {
+		private static readonly PrefabCacheParam[] m_prefabCacheParams = new PrefabCacheParam[15] {
 			new PrefabCacheParam() { prefabName="SetDeckHeadButtons", count=1 },
 			new PrefabCacheParam() { prefabName="SetDeckUnitStatus", count=1 },
 			new PrefabCacheParam() { prefabName="SetDeckValkyrieButton", count=1 },
@@ -274,13 +274,65 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x15490A0 Offset: 0x15490A0 VA: 0x15490A0
-		// protected bool OriginalPrizmApply(int musicId, GameSetupData.MusicInfo musicInfo) { }
+		protected bool OriginalPrizmApply(int musicId, GameSetupData.MusicInfo musicInfo)
+		{
+			m_prismOriginalData.OBKGEDCKHHE(musicId, 1 < musicInfo.onStageDivaNum);
+			AOJCMPIBFHD originalPrism = m_prismOriginalData.OOKAOFJBCFD();
+			m_lackDivaIds.Clear();
+			bool res = false;
+			for(int i = 0; i < originalPrism.OFGIOBGAJPA; i++)
+			{
+				FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC.Find((FFHPBEPOMAK_DivaInfo x) =>
+				{
+					//0x154B72C
+					return x.AHHJLDLAPAN_DivaId == originalPrism.AHHJLDLAPAN[i];
+				});
+				int id = 0;
+				if(f == null || !f.FJODMPGPDDD)
+				{
+					m_lackDivaIds.Add(originalPrism.AHHJLDLAPAN[i]);
+					res = true;
+				}
+				else
+				{
+					id = f.AHHJLDLAPAN_DivaId;
+				}
+				m_prismOriginalData.EKACMEKEJLP(m_prismData, id, i);
+			}
+			m_prismOriginalData.LMAAILCIFLF_ApplyInSave();
+			return res;
+		}
 
 		// // RVA: 0x15494A0 Offset: 0x15494A0 VA: 0x15494A0
-		// private void ShowOriginalPrismSettingFailurePopup(List<int> divaIds) { }
+		private void ShowOriginalPrismSettingFailurePopup(List<int> divaIds)
+		{
+			m_lackDivaSetting.DivaIds = divaIds;
+			PopupWindowManager.Show(m_lackDivaSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x154A5F8
+				return;
+			}, null, null, null);
+		}
 
 		// // RVA: 0x1549668 Offset: 0x1549668 VA: 0x1549668
-		// protected void ShowOriginalPrismSettingPopup(int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation, Action okCallBack) { }
+		protected void ShowOriginalPrismSettingPopup(int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation, Action okCallBack)
+		{
+			PopupWindowManager.Show(m_textSetPrizmPopup, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x154B7C4
+				if (type == PopupButton.ButtonType.Positive && okCallBack != null)
+				{
+					bool b = OriginalPrizmApply(musicId, musicInfo);
+					SendPrismChangeLog(musicId, musicInfo, isSimulation);
+					UpdatePrismData(musicId, musicInfo);
+					okCallBack();
+					if(b)
+					{
+						ShowOriginalPrismSettingFailurePopup(m_lackDivaIds);
+					}
+				}
+			}, null, null, null);
+		}
 
 		// // RVA: 0x1549810 Offset: 0x1549810 VA: 0x1549810
 		protected static bool CheckExistOriginalSetting(AOJGDNFAIJL_PrismData.AMIECPBIALP prismData)

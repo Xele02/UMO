@@ -549,13 +549,36 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1C92FD8 Offset: 0x1C92FD8 VA: 0x1C92FD8
 		private void InitializeUnitDispType()
 		{
-			TodoLogger.Log(0, "InitializeUnitDispType");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			{
+				PopupFilterSortUGUIParts_Title_H1 p = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_Title_H1;
+				p.SetTitle(bk.GetMessageByLabel("popup_unit_disp_type_scene"));
+				p.EnableButton(false);
+			}
+			{
+				PopupFilterSortUGUIParts_Sort p = m_setting.m_list_parts[1].m_base as PopupFilterSortUGUIParts_Sort;
+				p.SetupItem(PopupSortMenu.UnitSortItem.ToArray());
+				p.SetSortItem((SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.LEAPMNHODPJ_unitWindowDispItem);
+			}
+			{
+				PopupFilterSortUGUIParts_Title_H1 p = m_setting.m_list_parts[2].m_base as PopupFilterSortUGUIParts_Title_H1;
+				p.SetTitle(bk.GetMessageByLabel("popup_unit_disp_type_diva"));
+				p.EnableButton(false);
+			}
+			{
+				PopupFilterSortUGUIParts_Sort p = m_setting.m_list_parts[3].m_base as PopupFilterSortUGUIParts_Sort;
+				p.SetupItem(PopupSortMenu.UnitDivaSortItem.ToArray());
+				p.SetSortItem((SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.BICLOMKLAOF_unitWindowDivaDispItem);
+			}
 		}
 
 		//// RVA: 0x1C97830 Offset: 0x1C97830 VA: 0x1C97830
 		private void FinalizeUnitDispType()
 		{
-			TodoLogger.Log(0, "FinalizeUnitDispType");
+			if (!m_setting.m_param.EnableSave)
+				return;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.LEAPMNHODPJ_unitWindowDispItem = (int)(m_setting.m_list_parts[1].m_base as PopupFilterSortUGUIParts_Sort).GetSortItem();
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.BICLOMKLAOF_unitWindowDivaDispItem = (int)(m_setting.m_list_parts[3].m_base as PopupFilterSortUGUIParts_Sort).GetSortItem();
 		}
 
 		//// RVA: 0x1C94D6C Offset: 0x1C94D6C VA: 0x1C94D6C
