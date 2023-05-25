@@ -1412,7 +1412,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB35118 Offset: 0xB35118 VA: 0xB35118
-		// public void ChangeRhythmAdjustScene() { }
+		public void ChangeRhythmAdjustScene()
+		{
+			TodoLogger.LogNotImplemented("ChangeRhythmAdjustScene");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C8284 Offset: 0x6C8284 VA: 0x6C8284
 		// // RVA: 0xB3526C Offset: 0xB3526C VA: 0xB3526C

@@ -22,7 +22,7 @@ namespace XeApp.Game.Menu
 		private CFHDKAFLNEP m_subPlate; // 0x64
 		private JGEOBNENMAH.NEDILFPPCJF m_logParams = new JGEOBNENMAH.NEDILFPPCJF(); // 0x6C
 
-		public bool IsEmptyUnit { get { return m_viewUnitData != null && m_viewUnitData.EIGKIHENKNC_HasDivaSet; } } //0xA6FF7C
+		public bool IsEmptyUnit { get { return m_viewUnitData != null && m_viewUnitData.EIGKIHENKNC_HasNoDivaSet; } } //0xA6FF7C
 		public AEGLGBOGDHH SkillCalcResult { get {
 				return m_unitSkillCalcResult;
 			} } //0xA6FF94
@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 			result.GEEDEOHGMOM(ref addStatus);
 			subPlate = result.CLCIOEHGFNI;
 			m_tmpStatus.Clear();
-			if(viewUnitData.EIGKIHENKNC_HasDivaSet)
+			if(viewUnitData.EIGKIHENKNC_HasNoDivaSet)
 			{
 				CMMKCEPBIHI.BKBMHJBFDOG_Reset();
 			}

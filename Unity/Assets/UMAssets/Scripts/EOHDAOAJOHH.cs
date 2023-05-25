@@ -166,7 +166,16 @@ public class EOHDAOAJOHH
 	// public void GCKBFMOMFCG(NDBFKHKMMCE.ANMODBDBNPK.BIKFCCKCHHC NKCAKHIJEHF, long PEJIPAFKHKM, string ADCMNODJBGJ, string LJGOOOMOMMA, int EAHPLCJMPHD) { }
 
 	// // RVA: 0xFBD53C Offset: 0xFBD53C VA: 0xFBD53C
-	// public void NINPDKEKNEG() { }
+	public void NINPDKEKNEG()
+	{
+		if (KGCCNEBMHMM == null)
+			return;
+		for(int i = 0; i < 2; i++)
+		{
+			if (KGCCNEBMHMM != null)
+				KGCCNEBMHMM.JCHLONCMPAJ(i + 0x9c41);
+		}
+	}
 
 	// // RVA: 0xFBD588 Offset: 0xFBD588 VA: 0xFBD588
 	// public void NINPDKEKNEG(NDBFKHKMMCE.ANMODBDBNPK.BIKFCCKCHHC NKCAKHIJEHF) { }

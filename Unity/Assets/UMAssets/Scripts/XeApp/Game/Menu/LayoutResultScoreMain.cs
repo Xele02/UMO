@@ -516,7 +516,7 @@ namespace XeApp.Game.Menu
 			countUpSEPlayback.Stop();
 			if(!viewData.PMCGHPOGLGM_EnableLiveSkip)
 			{
-				if(viewData.GCAPLLEIAAI_HighScore < viewData.HMDHDKLDPFK_PrevScore)
+				if(viewData.GCAPLLEIAAI_HighScore > viewData.HMDHDKLDPFK_PrevScore)
 				{
 					numberHighScore.SetNumber(viewData.GCAPLLEIAAI_HighScore, 0);
 				}

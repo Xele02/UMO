@@ -2,11 +2,30 @@ using XeSys;
 using System;
 using UnityEngine;
 using XeApp.Game.Common;
+using System.Collections;
 
 namespace XeApp.Game.Menu
 {
 	public class ConfigManager : Singleton<ConfigManager>, IDisposable
 	{
+		public enum eRotationType
+		{
+			AUTO = 0,
+			RIGHT_UP = 1,
+			LEFT_UP = 2,
+		}
+
+		public enum eParamDefaultType
+		{
+			MenuVolume = 1,
+			RhythmVolume = 2,
+			SLiveVolume = 3,
+			Timing = 4,
+			NotesSpeed = 5,
+			Dimmer2D = 6,
+			Dimmer3D = 7,
+		}
+
 		public const float MAX_VOLUME_VALUE = 20;
 		public const int RHYTHM_MIN_VALUE = -75;
 		public const int RHYTHM_MAX_VALUE = 75;
@@ -128,7 +147,36 @@ namespace XeApp.Game.Menu
 		// public void SetNotesSpeedValue(float value) { }
 
 		// // RVA: 0x1B57F14 Offset: 0x1B57F14 VA: 0x1B57F14
-		// private void SetNotesSpeedInner(float value) { }
+		private void SetNotesSpeedInner(float value)
+		{
+			switch(GetNotesSpeedCurrentDiff())
+			{
+				case Difficulty.Type.Easy:
+					Option.DCHMOFLEFMI_NotesSpeedEasy = Mathf.RoundToInt(value);
+					break;
+				case Difficulty.Type.Normal:
+					Option.MBOEPFLNDOD_NotesSpeedNormal = Mathf.RoundToInt(value);
+					break;
+				case Difficulty.Type.Hard:
+					if(!IsNotesSpeedCurrentLine6Mode())
+						Option.MGOOLKHAPAF_NotesSpeedHard = Mathf.RoundToInt(value);
+					else
+						Option.LIPAPGABJOA_NotesSpeedHardPlus = Mathf.RoundToInt(value);
+					break;
+				case Difficulty.Type.VeryHard:
+					if (!IsNotesSpeedCurrentLine6Mode())
+						Option.AIKDLBAANLG_NotesSpeedVeryHard = Mathf.RoundToInt(value);
+					else
+						Option.JDJBFBPBLDC_NotesSpeedVeryHardPlus = Mathf.RoundToInt(value);
+					break;
+				case Difficulty.Type.Extreme:
+					if (!IsNotesSpeedCurrentLine6Mode())
+						Option.KOKDGGOFPPI_NotesSpeedExtreme = Mathf.RoundToInt(value);
+					else
+						Option.FJKNAHGFAPP_NotesSpeedExtremePlus = Mathf.RoundToInt(value);
+					break;
+			}
+		}
 
 		// // RVA: 0x1B57D58 Offset: 0x1B57D58 VA: 0x1B57D58
 		public Difficulty.Type GetNotesSpeedCurrentDiff()
@@ -157,28 +205,114 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B5803C Offset: 0x1B5803C VA: 0x1B5803C
-		// public void NotesSpeedDiffToLeft() { }
+		public void NotesSpeedDiffToLeft()
+		{
+			Option.LHJHOFNIJJF_NotesSpeedSelectDiff--;
+			if(IBJAKJJICBC.KGJJCAKCMLO())
+			{
+				if(!Option.ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode)
+				{
+					if(Option.LHJHOFNIJJF_NotesSpeedSelectDiff < 0)
+					{
+						Option.LHJHOFNIJJF_NotesSpeedSelectDiff = 4;
+						Option.ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode = true;
+						return;
+					}
+				}
+				else if(Option.LHJHOFNIJJF_NotesSpeedSelectDiff < 2)
+				{
+					Option.LHJHOFNIJJF_NotesSpeedSelectDiff = 4;
+					Option.ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode = false;
+					return;
+				}
+			}
+			else
+			{
+				Option.ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode = false;
+				if (Option.LHJHOFNIJJF_NotesSpeedSelectDiff > -1)
+					return;
+				Option.LHJHOFNIJJF_NotesSpeedSelectDiff = 4;
+			}
+		}
 
 		// // RVA: 0x1B58198 Offset: 0x1B58198 VA: 0x1B58198
-		// public void NotesSpeedDiffToRight() { }
+		public void NotesSpeedDiffToRight()
+		{
+			Option.LHJHOFNIJJF_NotesSpeedSelectDiff++;
+			if (IBJAKJJICBC.KGJJCAKCMLO())
+			{
+				if (!Option.ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode)
+				{
+					if (Option.LHJHOFNIJJF_NotesSpeedSelectDiff > 4)
+					{
+						Option.LHJHOFNIJJF_NotesSpeedSelectDiff = 2;
+						Option.ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode = true;
+						return;
+					}
+				}
+				else if (Option.LHJHOFNIJJF_NotesSpeedSelectDiff > 4)
+				{
+					Option.LHJHOFNIJJF_NotesSpeedSelectDiff = 0;
+					Option.ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode = false;
+					return;
+				}
+			}
+			else
+			{
+				Option.ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode = false;
+				if (Option.LHJHOFNIJJF_NotesSpeedSelectDiff < 5)
+					return;
+				Option.LHJHOFNIJJF_NotesSpeedSelectDiff = 0;
+			}
+		}
 
 		// // RVA: 0x1B582F0 Offset: 0x1B582F0 VA: 0x1B582F0
 		// private void SetNotesSpeedToAll(float value) { }
 
 		// // RVA: 0x1B583D8 Offset: 0x1B583D8 VA: 0x1B583D8
-		// private void SetNotesSpeedToDefault() { }
+		private void SetNotesSpeedToDefault()
+		{
+			Option.DCHMOFLEFMI_NotesSpeedEasy = 30;
+			Option.MBOEPFLNDOD_NotesSpeedNormal = 40;
+			Option.MGOOLKHAPAF_NotesSpeedHard = 60;
+			Option.AIKDLBAANLG_NotesSpeedVeryHard = 70;
+			Option.KOKDGGOFPPI_NotesSpeedExtreme = 80;
+			Option.LIPAPGABJOA_NotesSpeedHardPlus = 70;
+			Option.JDJBFBPBLDC_NotesSpeedVeryHardPlus = 70;
+			Option.FJKNAHGFAPP_NotesSpeedExtremePlus = 80;
+		}
 
 		// // RVA: 0x1B584C4 Offset: 0x1B584C4 VA: 0x1B584C4
-		// public float NotesSpeedPlus1() { }
+		public float NotesSpeedPlus1()
+		{
+			float val = Mathf.Clamp(GetNotesSpeedInner() + 10, 10, 100);
+			SetNotesSpeedInner(val);
+			return val / 10.0f;
+		}
 
 		// // RVA: 0x1B58594 Offset: 0x1B58594 VA: 0x1B58594
-		// public float NotesSpeedMinus1() { }
+		public float NotesSpeedMinus1()
+		{
+			float val = Mathf.Clamp(GetNotesSpeedInner() - 10, 10, 100);
+			SetNotesSpeedInner(val);
+			return val / 10.0f;
+		}
 
 		// // RVA: 0x1B58668 Offset: 0x1B58668 VA: 0x1B58668
-		// public float NotesSpeedPlus() { }
+		public float NotesSpeedPlus()
+		{
+			float val = Mathf.Clamp(GetNotesSpeedInner() + 1, 10, 100);
+			SetNotesSpeedInner(val);
+			return val / 10.0f;
+		}
 
 		// // RVA: 0x1B5873C Offset: 0x1B5873C VA: 0x1B5873C
-		// public float NotesSpeedMinus() { }
+		public float NotesSpeedMinus()
+		{
+			float val = Mathf.Clamp(GetNotesSpeedInner() - 1, 10, 100);
+			SetNotesSpeedInner(val);
+			return val / 10.0f;
+		}
 
 		// // RVA: 0x1B58810 Offset: 0x1B58810 VA: 0x1B58810
 		public bool GetNotesSpeedAllApply()
@@ -187,7 +321,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B5883C Offset: 0x1B5883C VA: 0x1B5883C
-		// public void SetNotesSpeedAllApply(bool allApply) { }
+		public void SetNotesSpeedAllApply(bool allApply)
+		{
+			Option.LBIKGDHCICB_NotesSpeedAllApply = allApply ? 1 : 0;
+		}
 
 		// // RVA: 0x1B58864 Offset: 0x1B58864 VA: 0x1B58864
 		public bool GetNotesSpeedAutoRejected()
@@ -199,58 +336,152 @@ namespace XeApp.Game.Menu
 		// public void SetNotesSpeedAutoRejected(bool reject) { }
 
 		// // RVA: 0x1B588B8 Offset: 0x1B588B8 VA: 0x1B588B8
-		// public void SetNotesOffsetValue(float value) { }
+		public void SetNotesOffsetValue(float value)
+		{
+			Option.OJAJHIMOIEC_NoteOffset = Mathf.RoundToInt(value);
+		}
 
 		// // RVA: 0x1B588EC Offset: 0x1B588EC VA: 0x1B588EC
-		// public int NotesPlus() { }
+		public int NotesPlus()
+		{
+			Option.OJAJHIMOIEC_NoteOffset = Mathf.Clamp(Option.OJAJHIMOIEC_NoteOffset + 1, -75, 75);
+			return Option.OJAJHIMOIEC_NoteOffset;
+		}
 
 		// // RVA: 0x1B589C4 Offset: 0x1B589C4 VA: 0x1B589C4
-		// public int NotesMinus() { }
+		public int NotesMinus()
+		{
+			Option.OJAJHIMOIEC_NoteOffset = Mathf.Clamp(Option.OJAJHIMOIEC_NoteOffset - 1, -75, 75);
+			return Option.OJAJHIMOIEC_NoteOffset;
+		}
 
 		// // RVA: 0x1B58A9C Offset: 0x1B58A9C VA: 0x1B58A9C
-		// public void SetDimmer2dValue(float value) { }
+		public void SetDimmer2dValue(float value)
+		{
+			Option.FPFAMFOPJDJ_Dimmer2d = Mathf.RoundToInt(value);
+		}
 
 		// // RVA: 0x1B58AD0 Offset: 0x1B58AD0 VA: 0x1B58AD0
-		// public int Dimmer2dPlus() { }
+		public int Dimmer2dPlus()
+		{
+			Option.FPFAMFOPJDJ_Dimmer2d = Mathf.Clamp(Option.FPFAMFOPJDJ_Dimmer2d + 1, 0, 10);
+			return Option.FPFAMFOPJDJ_Dimmer2d;
+		}
 
 		// // RVA: 0x1B58BA8 Offset: 0x1B58BA8 VA: 0x1B58BA8
-		// public int Dimmer2dMinus() { }
+		public int Dimmer2dMinus()
+		{
+			Option.FPFAMFOPJDJ_Dimmer2d = Mathf.Clamp(Option.FPFAMFOPJDJ_Dimmer2d - 1, 0, 10);
+			return Option.FPFAMFOPJDJ_Dimmer2d;
+		}
 
 		// // RVA: 0x1B58C80 Offset: 0x1B58C80 VA: 0x1B58C80
-		// public void SetDimmer3dValue(float value) { }
+		public void SetDimmer3dValue(float value)
+		{
+			Option.OLALFDCEHKJ_Dimmer3d = Mathf.RoundToInt(value);
+		}
 
 		// // RVA: 0x1B58CB4 Offset: 0x1B58CB4 VA: 0x1B58CB4
-		// public int Dimmer3dPlus() { }
+		public int Dimmer3dPlus()
+		{
+			Option.OLALFDCEHKJ_Dimmer3d = Mathf.Clamp(Option.OLALFDCEHKJ_Dimmer3d + 1, 0, 10);
+			return Option.OLALFDCEHKJ_Dimmer3d;
+		}
 
 		// // RVA: 0x1B58D8C Offset: 0x1B58D8C VA: 0x1B58D8C
-		// public int Dimmer3dMinus() { }
+		public int Dimmer3dMinus()
+		{
+			Option.OLALFDCEHKJ_Dimmer3d = Mathf.Clamp(Option.OLALFDCEHKJ_Dimmer3d - 1, 0, 10);
+			return Option.OLALFDCEHKJ_Dimmer3d;
+		}
 
 		// // RVA: 0x1B58E64 Offset: 0x1B58E64 VA: 0x1B58E64
-		// public void SetSkillCutinValue(int value) { }
+		public void SetSkillCutinValue(int value)
+		{
+			Option.NAGJLEIPAAC_Cutin = value;
+		}
 
 		// // RVA: 0x1B58E8C Offset: 0x1B58E8C VA: 0x1B58E8C
-		// public void SetEffectCutinValue(int value, bool simulation = False) { }
+		public void SetEffectCutinValue(int value, bool simulation = false)
+		{
+			if(simulation)
+			{
+				OptionSLive.DADIPGPHLDD_EffectCutin = value;
+			}
+			else
+			{
+				Option.DADIPGPHLDD_EffectCutin = value;
+			}
+		}
 
 		// // RVA: 0x1B58EDC Offset: 0x1B58EDC VA: 0x1B58EDC
-		// public void SetNotesRouteValue(int value) { }
+		public void SetNotesRouteValue(int value)
+		{
+			Option.NFMEIILKACN_NotesRoute = value;
+		}
 
 		// // RVA: 0x1B58F04 Offset: 0x1B58F04 VA: 0x1B58F04
-		// public void SetExcellentValue(int value) { }
+		public void SetExcellentValue(int value)
+		{
+			Option.EDDMJEMOAGM_IsNotExcellentDisplaySetting = value == 0;
+		}
 
 		// // RVA: 0x1B58F38 Offset: 0x1B58F38 VA: 0x1B58F38
-		// public void SetSlideNoteValue(int value) { }
+		public void SetSlideNoteValue(int value)
+		{
+			Option.MJHEPGIEDDL_IsSlideNoteEffect = value == 0;
+		}
 
 		// // RVA: 0x1B58F6C Offset: 0x1B58F6C VA: 0x1B58F6C
-		// public void SetNotesTypeValue(int value) { }
+		public void SetNotesTypeValue(int value)
+		{
+			Option.GMHKLEMBLOF(value, Option.KDNKCOAJGCM_NotesType % 2);
+		}
 
 		// // RVA: 0x1B58FE4 Offset: 0x1B58FE4 VA: 0x1B58FE4
-		// public void SetNotesColorValue(int value) { }
+		public void SetNotesColorValue(int value)
+		{
+			Option.GMHKLEMBLOF(Option.KDNKCOAJGCM_NotesType / 2, value);
+		}
 
 		// // RVA: 0x1B59054 Offset: 0x1B59054 VA: 0x1B59054
-		// public void SetQualityValue(int value, bool simulation = False) { }
+		public void SetQualityValue(int value, bool simulation = false)
+		{
+			if(!simulation)
+			{
+				Option.DDHCLNFPNGK_RenderQuality = s_QualityValueTbl[0, value];
+			}
+			else
+			{
+				OptionSLive.DDHCLNFPNGK_RenderQuality = s_QualityValueTbl[1, value];
+			}
+		}
 
 		// // RVA: 0x1B59148 Offset: 0x1B59148 VA: 0x1B59148
-		// public int GetQualityValue(bool simulation = False) { }
+		public int GetQualityValue(bool simulation = false)
+		{
+			if(!simulation)
+			{
+				if (s_QualityValueTbl.GetLength(1) < 1)
+					return 0;
+				for(int i = 0; i < s_QualityValueTbl.GetLength(1); i++)
+				{
+					if (Option.DDHCLNFPNGK_RenderQuality == s_QualityValueTbl[0, i])
+						return i;
+				}
+			}
+			else
+			{
+				if (s_QualityValueTbl.GetLength(1) < 1)
+					return 0;
+				for (int i = 0; i < s_QualityValueTbl.GetLength(1); i++)
+				{
+					if (OptionSLive.DDHCLNFPNGK_RenderQuality == s_QualityValueTbl[1, i])
+						return i;
+				}
+			}
+			return 0;
+		}
 
 		// // RVA: 0x1B592C8 Offset: 0x1B592C8 VA: 0x1B592C8
 		// public void SetQualityCustomDiva3DValue(int value, bool simulation = False) { }
@@ -262,19 +493,34 @@ namespace XeApp.Game.Menu
 		// public void SetQualityCustom2DValue(int value) { }
 
 		// // RVA: 0x1B59390 Offset: 0x1B59390 VA: 0x1B59390
-		// public void SetVideoVisibleValue(int value) { }
+		public void SetVideoVisibleValue(int value)
+		{
+			Option.PMGMMMGCEEI_Video = value;
+		}
 
 		// // RVA: 0x1B593B8 Offset: 0x1B593B8 VA: 0x1B593B8
-		// public void SetDivaVisibleValue(bool value) { }
+		public void SetDivaVisibleValue(bool value)
+		{
+			Option.CJKKALFPMLA_IsNotDivaModeDivaVisible = value;
+		}
 
 		// // RVA: 0x1B593E0 Offset: 0x1B593E0 VA: 0x1B593E0
-		// public void SetVideoModeValue(int value) { }
+		public void SetVideoModeValue(int value)
+		{
+			Option.IHEPCAHBECA_VideoMode = value;
+		}
 
 		// // RVA: 0x1B59408 Offset: 0x1B59408 VA: 0x1B59408
-		// public void SetBackKeyValue(int value) { }
+		public void SetBackKeyValue(int value)
+		{
+			Option.OAKOJGPBAJF_BackKey = value;
+		}
 
 		// // RVA: 0x1B59430 Offset: 0x1B59430 VA: 0x1B59430
-		// public void SetValkyrieModeValue(int value) { }
+		public void SetValkyrieModeValue(int value)
+		{
+			Option.CDGKHMEOEMP_ValkyrieMode = value;
+		}
 
 		// // RVA: 0x1B59458 Offset: 0x1B59458 VA: 0x1B59458
 		// public void SetHomeDiva(int value) { }
@@ -292,13 +538,63 @@ namespace XeApp.Game.Menu
 		// public void SetDivaEffect(int value) { }
 
 		// // RVA: 0x1B59500 Offset: 0x1B59500 VA: 0x1B59500
-		// private float ChangeVolume(SoundManager.CategoryId category, int num, bool simulation = False) { }
+		private float ChangeVolume(SoundManager.CategoryId category, int num, bool simulation = false)
+		{
+			float val = 0;
+			switch (category)
+			{
+				case SoundManager.CategoryId.MENU_SE:
+					val = Mathf.Clamp(Option.BGLLCLEDHKK_VolSe + num, 0, 20);
+					break;
+				case SoundManager.CategoryId.MENU_VOICE:
+					val = Mathf.Clamp(Option.CNCIMBGLKOB_VolVoice + num, 0, 20);
+					break;
+				case SoundManager.CategoryId.MENU_BGM:
+					val = Mathf.Clamp(Option.HOMPENLIHCK_VolBgm + num, 0, 20);
+					break;
+				case SoundManager.CategoryId.GAME_SE:
+					if(!simulation)
+						val = Mathf.Clamp(Option.LMDACNNJDOE_VolSeRhythm + num, 0, 20);
+					else
+						val = Mathf.Clamp(OptionSLive.LMDACNNJDOE_VolSeRhythm + num, 0, 20);
+					break;
+				case SoundManager.CategoryId.GAME_VOICE:
+					if (!simulation)
+						val = Mathf.Clamp(Option.FCKEDCKCEFC_VolVoiceRhythm + num, 0, 20);
+					else
+						val = Mathf.Clamp(OptionSLive.FCKEDCKCEFC_VolVoiceRhythm + num, 0, 20);
+					break;
+				case SoundManager.CategoryId.GAME_BGM:
+					if (!simulation)
+						val = Mathf.Clamp(Option.ICGAOAFIHFD_VolBgmRhythm + num, 0, 20);
+					else
+						val = Mathf.Clamp(OptionSLive.ICGAOAFIHFD_VolBgmRhythm + num, 0, 20);
+					break;
+				case SoundManager.CategoryId.GAME_NOTES:
+					if (!simulation)
+						val = Mathf.Clamp(Option.IBEINHHMHAC_VolNotesRhythm + num, 0, 20);
+					else
+						val = Mathf.Clamp(OptionSLive.IBEINHHMHAC_VolNotesRhythm + num, 0, 20);
+					break;
+				default:
+					val = 0;
+					break;
+			}
+			SetVolume(category, val, simulation);
+			return val;
+		}
 
 		// // RVA: 0x1B59994 Offset: 0x1B59994 VA: 0x1B59994
-		// public float VolumePlus(SoundManager.CategoryId category, bool simulation = False) { }
+		public float VolumePlus(SoundManager.CategoryId category, bool simulation = false)
+		{
+			return ChangeVolume(category, 1, simulation);
+		}
 
 		// // RVA: 0x1B599B4 Offset: 0x1B599B4 VA: 0x1B599B4
-		// public float VolumeMinus(SoundManager.CategoryId category, bool simulation = False) { }
+		public float VolumeMinus(SoundManager.CategoryId category, bool simulation = false)
+		{
+			return ChangeVolume(category, -1, simulation);
+		}
 
 		// // RVA: 0x1B597E4 Offset: 0x1B597E4 VA: 0x1B597E4
 		public void SetVolume(SoundManager.CategoryId category, float value, bool simulation = false)
@@ -356,19 +652,31 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B59AF8 Offset: 0x1B59AF8 VA: 0x1B59AF8
-		// public bool IsChangeVideo() { }
+		public bool IsChangeVideo()
+		{
+			return GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.IHEPCAHBECA_VideoMode != Option.IHEPCAHBECA_VideoMode;
+		}
 
 		// // RVA: 0x1B59C08 Offset: 0x1B59C08 VA: 0x1B59C08
-		// public void UndoVideo() { }
+		public void UndoVideo()
+		{
+			Option.IHEPCAHBECA_VideoMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.IHEPCAHBECA_VideoMode;
+		}
 
 		// // RVA: 0x1B59D0C Offset: 0x1B59D0C VA: 0x1B59D0C
 		// public bool IsChangeWideScreen() { }
 
 		// // RVA: 0x1B59E1C Offset: 0x1B59E1C VA: 0x1B59E1C
-		// public bool IsChangeNotification() { }
+		public bool IsChangeNotification()
+		{
+			return GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification.ILNIHDCCOEO_EventReceive != Notification.ILNIHDCCOEO_EventReceive;
+		}
 
 		// // RVA: 0x1B59F2C Offset: 0x1B59F2C VA: 0x1B59F2C
-		// public bool IsChangeDecoNotification() { }
+		public bool IsChangeDecoNotification()
+		{
+			return GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification.PIPOIELPKBP_DecoReceive != Notification.PIPOIELPKBP_DecoReceive;
+		}
 
 		// // RVA: 0x1B5A03C Offset: 0x1B5A03C VA: 0x1B5A03C
 		public bool IsChangeAllNotification()
@@ -377,14 +685,52 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B5A120 Offset: 0x1B5A120 VA: 0x1B5A120
-		// public void ApplyNotification() { }
+		public void ApplyNotification()
+		{
+			GameManager.Instance.StartCoroutineWatched(Co_ApplyNotification(Notification.ILNIHDCCOEO_EventReceive == 1));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x700A84 Offset: 0x700A84 VA: 0x700A84
 		// // RVA: 0x1B5A1F0 Offset: 0x1B5A1F0 VA: 0x1B5A1F0
-		// private IEnumerator Co_ApplyNotification(bool enable) { }
+		private IEnumerator Co_ApplyNotification(bool enable)
+		{
+			//0x1B5D598
+			if(GameManager.Instance.transmissionIcon != null)
+			{
+				GameManager.Instance.transmissionIcon.SetActive(true);
+			}
+			bool finishWait = true;
+			if(!enable)
+			{
+				NMFABEKNBKJ.HHCJCDFCLOB.MDJNLBOLPNJ_BlockFCM(() =>
+				{
+					//0x1B5D420
+					finishWait = false;
+				});
+			}
+			else
+			{
+				NMFABEKNBKJ.HHCJCDFCLOB.FCDDHHKAGEP_AcceptFCM(() =>
+				{
+					//0x1B5D414
+					finishWait = false;
+				});
+			}
+			while (finishWait)
+				yield return null;
+			if (GameManager.Instance.transmissionIcon != null)
+			{
+				GameManager.Instance.transmissionIcon.SetActive(false);
+			}
+		}
 
 		// // RVA: 0x1B5A29C Offset: 0x1B5A29C VA: 0x1B5A29C
-		// public void ApplyDecoNotification() { }
+		public void ApplyDecoNotification()
+		{
+			if (Notification.PIPOIELPKBP_DecoReceive == 1)
+				return;
+			EOHDAOAJOHH.HHCJCDFCLOB.NINPDKEKNEG();
+		}
 
 		// // RVA: 0x1B5A35C Offset: 0x1B5A35C VA: 0x1B5A35C
 		public void ApplyValue(bool isSave = true, Action callback = null)
@@ -549,6 +895,42 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B5D114 Offset: 0x1B5D114 VA: 0x1B5D114
-		// public float ParamDefault(ConfigManager.eParamDefaultType type) { }
+		public float ParamDefault(eParamDefaultType type)
+		{
+			switch(type)
+			{
+				case eParamDefaultType.MenuVolume:
+					Option.HOMPENLIHCK_VolBgm = 15;
+					Option.BGLLCLEDHKK_VolSe = 15;
+					Option.CNCIMBGLKOB_VolVoice = 15;
+					return 15;
+				case eParamDefaultType.RhythmVolume:
+					Option.ICGAOAFIHFD_VolBgmRhythm = 15;
+					Option.LMDACNNJDOE_VolSeRhythm = 15;
+					Option.FCKEDCKCEFC_VolVoiceRhythm = 15;
+					Option.IBEINHHMHAC_VolNotesRhythm = 11;
+					return 15;
+				case eParamDefaultType.SLiveVolume:
+					OptionSLive.ICGAOAFIHFD_VolBgmRhythm = 15;
+					OptionSLive.LMDACNNJDOE_VolSeRhythm = 15;
+					OptionSLive.FCKEDCKCEFC_VolVoiceRhythm = 15;
+					OptionSLive.IBEINHHMHAC_VolNotesRhythm = 8;
+					return 15;
+				case eParamDefaultType.Timing:
+					Option.OJAJHIMOIEC_NoteOffset = 0;
+					return 0;
+				case eParamDefaultType.NotesSpeed:
+					SetNotesSpeedToDefault();
+					Option.LBIKGDHCICB_NotesSpeedAllApply = 0;
+					return GetNotesSpeedInner() / 10;
+				case eParamDefaultType.Dimmer2D:
+					Option.FPFAMFOPJDJ_Dimmer2d = 4;
+					return 4;
+				case eParamDefaultType.Dimmer3D:
+					Option.OLALFDCEHKJ_Dimmer3d = 10;
+					return 10;
+			}
+			return 0;
+		}
 	}
 }

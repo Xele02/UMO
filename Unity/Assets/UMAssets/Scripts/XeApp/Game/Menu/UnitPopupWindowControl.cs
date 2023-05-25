@@ -98,7 +98,7 @@ namespace XeApp.Game.Menu
 			m_unitSaveConfirmSetting.WindowSize = SizeType.Large;
 			if (type == ConfirmType.Save)
 			{
-				if (playerData.EHGGOAGEGIM_UnitsNormal[targetUnitId - 1].EIGKIHENKNC_HasDivaSet)
+				if (playerData.EHGGOAGEGIM_UnitsNormal[targetUnitId - 1].EIGKIHENKNC_HasNoDivaSet)
 					m_unitSaveConfirmSetting.TitleText = bk.GetMessageByLabel("unit_popup_title_01");
 				else
 					m_unitSaveConfirmSetting.TitleText = bk.GetMessageByLabel("unit_popup_title_02");

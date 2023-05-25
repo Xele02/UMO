@@ -269,7 +269,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < UnitButtonCount; i++)
 			{
 				JLKEOGLJNOD_TeamInfo unit = GetUnitData(UnitButtonCount * pageNo + i);
-				if(unit.EIGKIHENKNC_HasDivaSet)
+				if(!unit.EIGKIHENKNC_HasNoDivaSet)
 				{
 					m_unitButtons[i].m_nameText.text = unit.BHKALCOAHHO_Name;
 				}
@@ -286,7 +286,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < UnitButtonCount; i++)
 			{
 				JLKEOGLJNOD_TeamInfo data = GetUnitData(UnitButtonCount * pageNo + i);
-				if (!data.EIGKIHENKNC_HasDivaSet)
+				if (!data.EIGKIHENKNC_HasNoDivaSet)
 				{
 					buttons[i].m_nameText.text = data.BHKALCOAHHO_Name;
 				}

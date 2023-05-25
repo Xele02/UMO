@@ -334,7 +334,7 @@ namespace XeSys.Gfx
 			{
 				m_mask = rt.gameObject.GetComponent<Mask>();
 				m_maskGraphic = rt.gameObject.GetComponent<Graphic>();
-				m_child = rt as RectTransform;
+				m_child = rt.GetChild(0) as RectTransform;
 				m_rectTrans.gameObject.SetActive(true);
 			}
 

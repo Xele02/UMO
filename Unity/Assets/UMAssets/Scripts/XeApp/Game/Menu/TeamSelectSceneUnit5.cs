@@ -882,7 +882,7 @@ namespace XeApp.Game.Menu
 			m_unitSetInfo.SetStatusDisplayType(PopupSortMenu.UnitDivaSortItem[m_divaDispTypeIndex], PopupSortMenu.UnitSortItem[m_sceneDispTypeIndex]);
 			SetExpectedScoreGauge();
 			m_statusWindow.UpdateContent(m_playerData, viewUnitData, m_viewMusicData, m_viewEnemyData, m_viewFriendPlayerData, 0, m_isGoDivaEvent);
-			m_loadSaveButtons.SetType(viewUnitData.EIGKIHENKNC_HasDivaSet ? SetDeckLoadSaveButtons.ModeType.Overwrite : SetDeckLoadSaveButtons.ModeType.NewSave);
+			m_loadSaveButtons.SetType(!viewUnitData.EIGKIHENKNC_HasNoDivaSet ? SetDeckLoadSaveButtons.ModeType.Overwrite : SetDeckLoadSaveButtons.ModeType.NewSave);
 			m_musicInfo.ReStartMusicAttrAnime();
 		}
 
@@ -1723,7 +1723,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.RaycastDisable();
 			yield return Co.R(Co_DownloadUnitSetResources());
 			yield return Co.R(Co_SwitchContents(DispType.UnitSet));
-			m_unitSetInfo.MessageControl.Enter(m_playerData.JKIJFGGMNAN_GetUnit(UnitSetIndex, m_isGoDivaEvent).EIGKIHENKNC_HasDivaSet ? SetDeckUnitInfoMessageControl.DispType.Keep : SetDeckUnitInfoMessageControl.DispType.OneShot);
+			m_unitSetInfo.MessageControl.Enter(m_playerData.JKIJFGGMNAN_GetUnit(UnitSetIndex, m_isGoDivaEvent).EIGKIHENKNC_HasNoDivaSet ? SetDeckUnitInfoMessageControl.DispType.Keep : SetDeckUnitInfoMessageControl.DispType.OneShot);
 			MenuScene.Instance.RaycastEnable();
 		}
 
@@ -1798,7 +1798,9 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA905E0 Offset: 0xA905E0 VA: 0xA905E0
 		private void OnClickGameSettingButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickGameSettingButton");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_gameSettingMenu.ShowPopupRhythm(null, null);
 		}
 
 		//// RVA: 0xA90668 Offset: 0xA90668 VA: 0xA90668

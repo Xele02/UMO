@@ -273,19 +273,19 @@ namespace XeApp.Game.Menu
 			}
 			if(!AddItem() && viewDrop.HBHMAKNGKFK[currentItemIndex].PHJHJGDLPED_IsRareItem)
 			{
-				onFinished = StartNextRareItemAnim;
+				item.onFinished = StartNextRareItemAnim;
 			}
 			else
 			{
-				onFinished = StartNormalItemDropNumAnim;
+				item.onFinished = StartNormalItemDropNumAnim;
 			}
 			if(currentItemIndex < 7)
 			{
-				StartBeginAnim();
+				item.StartBeginAnim();
 			}
 			else
 			{
-				this.StartCoroutineWatched(Co_AutoScrolling(1, nextItemMoveSec, StartBeginAnim));
+				this.StartCoroutineWatched(Co_AutoScrolling(1, nextItemMoveSec, item.StartBeginAnim));
 			}
 		}
 

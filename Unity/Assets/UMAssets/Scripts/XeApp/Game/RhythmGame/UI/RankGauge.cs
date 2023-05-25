@@ -27,7 +27,7 @@ namespace XeApp.Game.RhythmGame.UI
 		{
 			m_rootInstance = RhythmGameHUD.RhythmGameInstantiatePrefab(m_gaugeMeshPrefab);
 			m_meshCircle = m_rootInstance.GetComponentsInChildren<MeshCircle>(true)[0];
-			m_effectAnime = m_rootInstance.GetComponent<Animator>();
+			m_effectAnime = m_meshCircle.GetComponent<Animator>();
 			m_rootInstance.transform.SetParent(m_parentObject.transform, false);
 			int[] vals = new int[5];
 			vals[0] = Animator.StringToHash("runk_C");

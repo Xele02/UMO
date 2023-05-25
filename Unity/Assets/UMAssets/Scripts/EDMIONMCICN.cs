@@ -96,5 +96,13 @@ public struct EDMIONMCICN
 	}
 
 	//// RVA: 0x7FC91C Offset: 0x7FC91C VA: 0x7FC91C
-	//public int JGBCNKPOOFO() { }
+	public int JGBCNKPOOFO()
+	{
+		int res = 0;
+		for(int i = 0; i < MCBLDOECHEK_MatchMusicAttrStatus.Length; i++)
+		{
+			res += MCBLDOECHEK_MatchMusicAttrStatus[i].PJCKMKEJCEL_Total();
+		}
+		return res;
+	}
 }

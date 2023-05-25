@@ -17,7 +17,7 @@ public class JLKEOGLJNOD_TeamInfo
 	public CIFHILOJJFC DJPFJGKGOOF_ScoreTeam { get { return NGHKJOEDLIP_ScoreTeam; } } // JFBNIMDHEJO 0x14760D4
 	public string BHKALCOAHHO_Name { get { return NGHKJOEDLIP_ScoreTeam.OPFGFINHFCE_Name; } set { NGHKJOEDLIP_ScoreTeam.OPFGFINHFCE_Name = value; } } // NGMLFAGNJEA 0x14760DC FCOONLGMNCI 0x1476100
 	public int CDPKOIDDKIJ { get { return NGHKJOEDLIP_ScoreTeam.GIDKKHFHALL; } } // PFDFNJHFIIJ 0x1476128
-	public bool EIGKIHENKNC_HasDivaSet { get {
+	public bool EIGKIHENKNC_HasNoDivaSet { get {
 			for(int i = 0; i < NGHKJOEDLIP_ScoreTeam.FDBOPFEOENF_MainDivas.Count; i++)
 			{
 				if (NGHKJOEDLIP_ScoreTeam.FDBOPFEOENF_MainDivas[i].DIPKCALNIII_Id != 0)

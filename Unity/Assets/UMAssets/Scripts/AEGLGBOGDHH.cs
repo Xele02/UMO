@@ -77,7 +77,15 @@ public struct AEGLGBOGDHH
 	}
 
 	//// RVA: 0x7FCFE4 Offset: 0x7FCFE4 VA: 0x7FCFE4
-	//public int COCIPAJKDAF() { }
+	public int COCIPAJKDAF()
+	{
+		int res = 0;
+		for(int i = 0; i < GJLJJDIDODK.Length; i++)
+		{
+			res += GJLJJDIDODK[i].JGBCNKPOOFO();
+		}
+		return res + JPMGNPAHGIB.MCBLDOECHEK_MatchMusicAttrStatus[0].PJCKMKEJCEL_Total();
+	}
 
 	//// RVA: 0x7FCFEC Offset: 0x7FCFEC VA: 0x7FCFEC
 	public void DIJOPLHIMBO(JGEOBNENMAH.NEDILFPPCJF BGDCOKFCCBO, StatusData HFEMKGEOHJL, StatusData PDIPANKOKOL, int IFCPCIHJANL, int LCIPPBOFPOB)

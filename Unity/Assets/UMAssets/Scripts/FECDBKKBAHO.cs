@@ -1,6 +1,9 @@
 using System.IO;
 using System;
 using System.Collections.Generic;
+using XeApp.Game;
+using System.Text.RegularExpressions;
+using UnityEngine;
 
 public class FECDBKKBAHO
 {
@@ -19,9 +22,9 @@ public class FECDBKKBAHO
 	private Dictionary<int, FHOPNIJCFKA_FileInfo> MLHACNBJAGM_FilesInfoByHash = new Dictionary<int, FHOPNIJCFKA_FileInfo>(); // 0x8
 	private string JHJMNLMNPGO_PersistentDirSys; // 0xC
 	public bool GCKONHLCMFL; // 0x10
-	private int IHEPCAHBECA = -1; // 0x14
-	// private Regex OOLIMFMEJGP; // 0x18
-	private string KDFJMKLNOJH; // 0x1C
+	private int IHEPCAHBECA_VideoMode = -1; // 0x14
+	private Regex OOLIMFMEJGP_CleanRegex; // 0x18
+	private string KDFJMKLNOJH_CleanPath; // 0x1C
 	private string HKHMCIEINKB_BgmDir; // 0x20
 	private string OGCDNCDMLCA_PersistentDataPath; // 0x24
 	private long JHNMKKNEENE_Time; // 0x28
@@ -175,10 +178,25 @@ public class FECDBKKBAHO
 	}
 
 	// // RVA: 0xFD0724 Offset: 0xFD0724 VA: 0xFD0724
-	// public void IKOFAKDLDJE() { }
+	public void IKOFAKDLDJE_CleanupVideo()
+	{
+		if (GCKONHLCMFL)
+			return;
+		GCKONHLCMFL = true;
+		IHEPCAHBECA_VideoMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.IHEPCAHBECA_VideoMode;
+		KDFJMKLNOJH_CleanPath = KEHOJEJMGLJ.CGAHFOBGHIM_PersistentPlatformDataPath + "/mov";
+		OOLIMFMEJGP_CleanRegex = new Regex(IHEPCAHBECA_VideoMode == 0 ? ".+_q1.usm$" : ".+_q2.usm$");
+		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(BNPFBOIFDAG);
+	}
 
 	// // RVA: 0xFD099C Offset: 0xFD099C VA: 0xFD099C
-	// private void BNPFBOIFDAG() { }
+	private void BNPFBOIFDAG()
+	{
+		PMHECMICPGN_CleanupDir(KDFJMKLNOJH_CleanPath);
+		OOLIMFMEJGP_CleanRegex = null;
+		KDFJMKLNOJH_CleanPath = null;
+		GCKONHLCMFL = true;
+	}
 
 	// // RVA: 0xFD0C1C Offset: 0xFD0C1C VA: 0xFD0C1C
 	public void EBCAKALIAHH_RemoveExpiredSongs()
@@ -194,7 +212,27 @@ public class FECDBKKBAHO
     }
 
 	// // RVA: 0xFD09C8 Offset: 0xFD09C8 VA: 0xFD09C8
-	// private void PMHECMICPGN(string CJJJPKJHOGM) { }
+	private void PMHECMICPGN_CleanupDir(string CJJJPKJHOGM)
+	{
+		if(Directory.Exists(CJJJPKJHOGM))
+		{
+			string[] files = Directory.GetFiles(CJJJPKJHOGM);
+			for(int i = 0; i < files.Length; i++)
+			{
+				string fName = Path.GetFileName(files[i]);
+				if(OOLIMFMEJGP_CleanRegex.Match(fName).Success)
+				{
+					//File.Delete(files[i]);
+					Debug.Log("delete " + files[i]);
+				}
+			}
+			string[] dirs = Directory.GetDirectories(CJJJPKJHOGM);
+			for(int i = 0; i < dirs.Length; i++)
+			{
+				PMHECMICPGN_CleanupDir(dirs[i]);
+			}
+		}
+	}
 
 	// // RVA: 0xFD0D84 Offset: 0xFD0D84 VA: 0xFD0D84
 	private void PJNOMDMINDA_RemoveExpiredFiles(string CJJJPKJHOGM)

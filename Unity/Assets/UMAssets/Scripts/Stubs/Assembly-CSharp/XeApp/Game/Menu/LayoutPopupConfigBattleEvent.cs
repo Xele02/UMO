@@ -10,6 +10,19 @@ namespace XeApp.Game.Menu
 		{
 			TodoLogger.Log(0, "Implement monobehaviour");
 		}
+
+		public override int GetContentsHeight()
+		{
+			TodoLogger.Log(0, "Implement monobehaviour");
+			return 0;
+		}
+
+		public override bool IsShow()
+		{
+			TodoLogger.Log(0, "Implement monobehaviour");
+			return false;
+		}
+
 		[SerializeField]
 		private Text m_classDesc;
 		[SerializeField]
