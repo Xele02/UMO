@@ -1422,7 +1422,34 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8D67C Offset: 0xA8D67C VA: 0xA8D67C
 		private void OnChangeUnitName()
 		{
-			TodoLogger.LogNotImplemented("OnChangeUnitName");
+			OnClickAnyButtons();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			InputPopupSetting s = new InputPopupSetting();
+			s.TitleText = bk.GetMessageByLabel("popup_title_01");
+			s.Description = PopupWindowManager.FormatTextBank(bk, "popup_text_00", new object[] { 15 });
+			s.InputText = m_viewUnitData.BHKALCOAHHO_Name;
+			s.Notes = PopupWindowManager.FormatTextBank(bk, "popup_text_01", new object[] { 15 });
+			s.CharacterLimit = 15;
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xA920FC
+				if(type == PopupButton.ButtonType.Positive)
+				{
+					InputContent c = control.Content as InputContent;
+					m_viewUnitData.BHKALCOAHHO_Name = c.Text;
+					m_unitStatus.SetUnitName(c.Text);
+				}
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0xA92A94
+				return;
+			}, null, null);
 		}
 
 		//// RVA: 0xA8DCDC Offset: 0xA8DCDC VA: 0xA8DCDC
@@ -2040,10 +2067,6 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x72F85C Offset: 0x72F85C VA: 0x72F85C
 		//// RVA: 0xA9203C Offset: 0xA9203C VA: 0xA9203C
 		//private bool <Co_ShowHelp>b__101_0() { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x72F87C Offset: 0x72F87C VA: 0x72F87C
-		//// RVA: 0xA920FC Offset: 0xA920FC VA: 0xA920FC
-		//private void <OnChangeUnitName>b__147_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x72F8AC Offset: 0x72F8AC VA: 0x72F8AC
 		//// RVA: 0xA92578 Offset: 0xA92578 VA: 0xA92578

@@ -833,7 +833,43 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// public void CCAMHFBFEBB(bool OAFPGJLCNFM) { }
 
 	// // RVA: 0x1C53858 Offset: 0x1C53858 VA: 0x1C53858
-	// public void DOGPMKIKKDA(int KLMIFEKNBLL, int MFCNKPHPJBH, bool JKDJCFEBDHC) { }
+	public void DOGPMKIKKDA_SetBookmark(int KLMIFEKNBLL, int MFCNKPHPJBH, bool JKDJCFEBDHC)
+	{
+		int idx = KLMIFEKNBLL - 1;
+		if (idx / 2 < 75)
+		{
+			if(JKDJCFEBDHC)
+			{
+				if (MFCNKPHPJBH == 2)
+				{
+					JNPCHIGAIAF_MusicBookmark3[idx >> 3] |= (byte)(1 << (idx & 7));
+				}
+				else if (MFCNKPHPJBH == 1)
+				{
+					DEOHDPMNFEF_MusicBookmark2[idx >> 3] |= (byte)(1 << (idx & 7));
+				}
+				else if (MFCNKPHPJBH == 0)
+				{
+					JKFFMINPPNN_MusicBookmark1[idx >> 3] |= (byte)(1 << (idx & 7));
+				}
+			}
+			else
+			{
+				if (MFCNKPHPJBH == 2)
+				{
+					JNPCHIGAIAF_MusicBookmark3[idx >> 3] &= (byte)(~(1 << (idx & 7)));
+				}
+				else if (MFCNKPHPJBH == 1)
+				{
+					DEOHDPMNFEF_MusicBookmark2[idx >> 3] &= (byte)(~(1 << (idx & 7)));
+				}
+				else if (MFCNKPHPJBH == 0)
+				{
+					JKFFMINPPNN_MusicBookmark1[idx >> 3] &= (byte)(~(1 << (idx & 7)));
+				}
+			}
+		}
+	}
 
 	// // RVA: 0x1C539A8 Offset: 0x1C539A8 VA: 0x1C539A8
 	public bool KNKGEALPDGF_GetBookmark(int KLMIFEKNBLL, int MFCNKPHPJBH)
@@ -858,7 +894,15 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1C53A8C Offset: 0x1C53A8C VA: 0x1C53A8C
-	// public void BAAGCGEGIMK(int MFCNKPHPJBH, string OPFGFINHFCE) { }
+	public void BAAGCGEGIMK_SetBookmarkName(int MFCNKPHPJBH, string OPFGFINHFCE)
+	{
+		if (MFCNKPHPJBH == 2)
+			JMIHCFPDPFP_MusicBookmarkName3 = OPFGFINHFCE;
+		else if (MFCNKPHPJBH == 1)
+			CHNPJHGCAOP_MusicBookmarkName2 = OPFGFINHFCE;
+		else if (MFCNKPHPJBH == 0)
+			LKLIDCMCCCG_MusicBookmarkName1 = OPFGFINHFCE;
+	}
 
 	// // RVA: 0x1C53AB8 Offset: 0x1C53AB8 VA: 0x1C53AB8
 	public string NPGGEAJMFCB_GetBookmarkName(int MFCNKPHPJBH)

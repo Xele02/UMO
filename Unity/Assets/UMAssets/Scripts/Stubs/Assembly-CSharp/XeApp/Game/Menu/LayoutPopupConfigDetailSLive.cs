@@ -10,6 +10,37 @@ namespace XeApp.Game.Menu
 		{
 			TodoLogger.Log(0, "Implement monobehaviour");
 		}
+
+		public override void SetStatus()
+		{
+			TodoLogger.Log(0, "Implement monobehaviour");
+		}
+
+		public override void SetTextTitle(string text)
+		{
+			TodoLogger.Log(0, "Implement monobehaviour");
+		}
+
+		public override void SetTextOher3D(string text)
+		{
+			TodoLogger.Log(0, "Implement monobehaviour");
+		}
+
+		public override void SetToggleButtonOher3DEnable(int index)
+		{
+			TodoLogger.Log(0, "Implement monobehaviour");
+		}
+
+		public override void SetTextDescDiva3D(string text)
+		{
+			TodoLogger.Log(0, "Implement monobehaviour");
+		}
+
+		public override void SetToggleButtonDiva3DEnable(int index)
+		{
+			TodoLogger.Log(0, "Implement monobehaviour");
+		}
+
 		[SerializeField]
 		private Text m_title;
 		[SerializeField]

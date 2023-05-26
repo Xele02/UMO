@@ -165,6 +165,8 @@ namespace XeApp.Game.Menu
 				ConfigUtility.DimmerDefaultPopup((bool isDefault) =>
 				{
 					//0x1ED47BC
+					if (!isDefault)
+						return;
 					float val1 = ConfigManager.Instance.ParamDefault(ConfigManager.eParamDefaultType.Dimmer2D);
 					float val2 = ConfigManager.Instance.ParamDefault(ConfigManager.eParamDefaultType.Dimmer3D);
 					m_changeSliderSePlay = false;

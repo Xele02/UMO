@@ -296,6 +296,7 @@ class JpStringLiterals
 	public const string StringLiteral_13976 = ",EXスコア効果="; // 0x03bb6518
 	public const string StringLiteral_13977 = ",CLスキル="; // 0x03bb651c
 	public const string StringLiteral_14007 = "×{0}"; // 0x03bb6594
+	public const string StringLiteral_14024 = "\r"; //0x03bb65d8
 	public const string StringLiteral_14032 = "アニメーションテーブル数以上のキーフレーム番号が指定されました。"; // 0x03bb65f8
 	public const string StringLiteral_14529 = "ーーー"; // 0x03bb6dbc
 	public const string StringLiteral_14832 = "ふた"; // 0x03bb7278

@@ -2,6 +2,7 @@
 using mcrs;
 using System;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -29,33 +30,89 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1B64C44 Offset: 0x1B64C44 VA: 0x1B64C44
 		public static void VolumeDefaultPopup(Action<bool> callback)
 		{
-			TodoLogger.LogNotImplemented("VolumeDefaultPopup");
-			if (callback != null)
-				callback(true);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("config_text_22"), SizeType.Small, bk.GetMessageByLabel("config_text_23"), new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x1B65924
+					if (type == PopupButton.ButtonType.Negative)
+					{
+						if (callback != null)
+							callback(false);
+					}
+					else if (type == PopupButton.ButtonType.Positive)
+					{
+						if (callback != null)
+							callback(true);
+					}
+				}, null, null, null);
 		}
 
 		//// RVA: 0x1B64F58 Offset: 0x1B64F58 VA: 0x1B64F58
 		public static void TimingDefaultPopup(Action<bool> callback)
 		{
-			TodoLogger.LogNotImplemented("TimingDefaultPopup");
-			if (callback != null)
-				callback(true);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("config_text_22"), SizeType.Small, bk.GetMessageByLabel("config_text_51"), new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x1B659D4
+					if (type == PopupButton.ButtonType.Negative)
+					{
+						if (callback != null)
+							callback(false);
+					}
+					else if (type == PopupButton.ButtonType.Positive)
+					{
+						if (callback != null)
+							callback(true);
+					}
+				}, null, null, null);
 		}
 
 		//// RVA: 0x1B6526C Offset: 0x1B6526C VA: 0x1B6526C
 		public static void NotesSpeedDefaultPopup(Action<bool> callback)
 		{
-			TodoLogger.LogNotImplemented("NotesSpeedDefaultPopup");
-			if (callback != null)
-				callback(true);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("config_text_61"), SizeType.Small, bk.GetMessageByLabel("config_text_62"), new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x1B65A84
+					if (callback != null)
+						callback(type == PopupButton.ButtonType.Negative);
+				}, null, null, null);
 		}
 
 		//// RVA: 0x1B65580 Offset: 0x1B65580 VA: 0x1B65580
 		public static void DimmerDefaultPopup(Action<bool> callback)
 		{
-			TodoLogger.LogNotImplemented("DimmerDefaultPopup");
-			if (callback != null)
-				callback(true);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("config_text_22"), SizeType.Small, bk.GetMessageByLabel("config_text_56"), new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x1B65B00
+					if(type == PopupButton.ButtonType.Negative)
+					{
+						if (callback != null)
+							callback(false);
+					}
+					else if(type == PopupButton.ButtonType.Positive)
+					{
+						if (callback != null)
+							callback(true);
+					}
+				}, null, null, null);
 		}
 
 		//// RVA: 0x1B60B24 Offset: 0x1B60B24 VA: 0x1B60B24

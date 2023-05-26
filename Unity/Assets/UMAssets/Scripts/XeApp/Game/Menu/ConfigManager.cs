@@ -484,13 +484,36 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B592C8 Offset: 0x1B592C8 VA: 0x1B592C8
-		// public void SetQualityCustomDiva3DValue(int value, bool simulation = False) { }
+		public void SetQualityCustomDiva3DValue(int value, bool simulation = false)
+		{
+			if(simulation)
+			{
+				OptionSLive.HHMCIGLCBNG_QualityCustomDiva3D = value;
+			}
+			else
+			{
+				Option.HHMCIGLCBNG_QualityCustomDiva3D = value;
+			}
+		}
 
 		// // RVA: 0x1B59318 Offset: 0x1B59318 VA: 0x1B59318
-		// public void SetQualityCustomOther3DValue(int value, bool simulation = False) { }
+		public void SetQualityCustomOther3DValue(int value, bool simulation = false)
+		{
+			if (simulation)
+			{
+				OptionSLive.AHLFOHJMGAI_QualityCustomOther3D = value;
+			}
+			else
+			{
+				Option.AHLFOHJMGAI_QualityCustomOther3D = value;
+			}
+		}
 
 		// // RVA: 0x1B59368 Offset: 0x1B59368 VA: 0x1B59368
-		// public void SetQualityCustom2DValue(int value) { }
+		public void SetQualityCustom2DValue(int value)
+		{
+			Option.FPJHOLMLDGC_QualityCustom2D = value;
+		}
 
 		// // RVA: 0x1B59390 Offset: 0x1B59390 VA: 0x1B59390
 		public void SetVideoVisibleValue(int value)

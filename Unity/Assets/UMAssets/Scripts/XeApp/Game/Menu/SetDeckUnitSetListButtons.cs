@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 			{
 				if (OnStartChangePage != null)
 					OnStartChangePage();
-				SwitchPage(m_pageNo, (m_pageNo + 1) / m_pageCount, () =>
+				SwitchPage(m_pageNo, (m_pageNo + 1) % m_pageCount, () =>
 				{
 					//0xC39780
 					if (OnEndChangePage != null)

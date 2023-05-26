@@ -714,7 +714,14 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BAC4B4 Offset: 0x1BAC4B4 VA: 0x1BAC4B4
-		// public PopupButton FindButton(PopupButton.ButtonLabel label) { }
+		public PopupButton FindButton(PopupButton.ButtonLabel label)
+		{
+			return Array.Find(m_buttons, (PopupButton button) =>
+			{
+				//0x1BBDB84
+				return label == button.Label;
+			});
+		}
 
 		// // RVA: 0x1BBC144 Offset: 0x1BBC144 VA: 0x1BBC144
 		// public PopupButton FindButton(PopupButton.ButtonType type) { }

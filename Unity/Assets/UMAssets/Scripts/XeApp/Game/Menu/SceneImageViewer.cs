@@ -606,7 +606,7 @@ namespace XeApp.Game.Menu
 			m_frameInstance[isRankUp ? 1 : 0].SetAttribute(attr);
 			m_frameInstance[isRankUp ? 1 : 0].SetRarity(baseRare, isRankUp);
 			m_frameInstance[isRankUp ? 1 : 0].gameObject.SetActive(true);
-			m_frameRootObject.transform.localScale = new Vector3(m_rectTransform.sizeDelta.x / 1184, m_rectTransform.sizeDelta.y / 1184, 1);
+			m_frameRootObject.transform.localScale = new Vector3(m_rectTransform.sizeDelta.x / 1184, m_rectTransform.sizeDelta.x / 1184, 1);
 		}
 
 		// // RVA: 0x1375904 Offset: 0x1375904 VA: 0x1375904

@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 		private MusicDecideInfo m_musicDecideInfo = MusicDecideInfo.Empty; // 0x68
 		private PopupAchieveRewardSetting m_rewardPopupSetting = new PopupAchieveRewardSetting(); // 0x88
 		private PopupUnitDanceWarning m_popupUnitDanceWarning = new PopupUnitDanceWarning(); // 0x8C
-		// private PopupMusicBookMarkSetting m_musicBookMarkSetting = new PopupMusicBookMarkSetting(); // 0x90
+		private PopupMusicBookMarkSetting m_musicBookMarkSetting = new PopupMusicBookMarkSetting(); // 0x90
 		private bool m_isConfirmedUnitDance; // 0x94
 		private TeamSlectSceneArgs m_teamSelectSceneArgs = new TeamSlectSceneArgs(); // 0x98
 		private const float BGM_FADE_OUT_SEC = 0.3f;
@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 		protected abstract bool isLine6Mode { get; } // Slot: 35
 		protected abstract int musicListCount { get; } // Slot: 36
 		protected abstract VerticalMusicDataList currentMusicList { get; } //  Slot: 38
-		// protected abstract List<VerticalMusicDataList> originalMusicList { get; } //  Slot: 39
+		protected abstract List<VerticalMusicDataList> originalMusicList { get; } //  Slot: 39
 		protected IKDICBBFBMI_EventBase m_eventCtrl { get; set; } // 0x4C
 		protected int m_eventId { get; set; } // 0x54
 		protected MMOLNAHHDOM m_unitLiveLocalSaveData { get; private set; } // 0x58
@@ -1056,7 +1056,13 @@ namespace XeApp.Game.Menu
 		// protected void OnClickMusicRate() { }
 
 		// // RVA: 0xAD158C Offset: 0xAD158C VA: 0xAD158C
-		// protected void OnClickMusicBookMark(Action okCallBack) { }
+		protected void OnClickMusicBookMark(Action okCallBack)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			GameManager.Instance.CloseSnsNotice();
+			GameManager.Instance.CloseOfferNotice();
+			OpenMusicBookMarkWindow(okCallBack, true);
+		}
 
 		// // RVA: 0xAD1ABC Offset: 0xAD1ABC VA: 0xAD1ABC
 		// protected void OnClickEventDetailButton(IKDICBBFBMI scoreEventCtrl) { }
@@ -1183,7 +1189,60 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xAD16B4 Offset: 0xAD16B4 VA: 0xAD16B4
-		// protected void OpenMusicBookMarkWindow(Action okCallBack, bool initialze) { }
+		protected void OpenMusicBookMarkWindow(Action okCallBack, bool initialze)
+		{
+			MessageBank msgBank = MessageManager.Instance.GetBank("menu");
+			m_musicBookMarkSetting.WindowSize = SizeType.Middle;
+			m_musicBookMarkSetting.SetParent(transform);
+			m_musicBookMarkSetting.TitleText = msgBank.GetMessageByLabel("popup_music_bookmark_title");
+			m_musicBookMarkSetting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			m_musicBookMarkSetting.SelectMusicData = selectMusicData;
+			m_musicBookMarkSetting.VerticalMusicDataList = originalMusicList;
+			m_musicBookMarkSetting.Initialize = initialze;
+			PopupWindowManager.Show(m_musicBookMarkSetting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xAD407C
+				if(label == PopupButton.ButtonLabel.Cancel)
+				{
+					if(m_musicBookMarkSetting.IsChangeBookMark())
+					{
+						TextPopupSetting s = new TextPopupSetting();
+						s.TitleText = msgBank.GetMessageByLabel("popup_music_input_bookmarkname_deletecheck_title");
+						s.Text = msgBank.GetMessageByLabel("popup_music_input_bookmarkname_deletecheck_text_01");
+						s.Buttons = new ButtonInfo[2]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+						};
+						PopupWindowManager.Show(s, (PopupWindowControl c, PopupButton.ButtonType t, PopupButton.ButtonLabel l) =>
+						{
+							//0xAD4580
+							if (l != PopupButton.ButtonLabel.Cancel)
+								return;
+							OpenMusicBookMarkWindow(okCallBack, false);
+						}, null, null, null);
+					}
+				}
+				else if(label == PopupButton.ButtonLabel.Ok)
+				{
+					m_musicBookMarkSetting.SelectMusicSetMusicBookMark();
+					CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+					{
+						//0xAD456C
+						if (okCallBack != null)
+							okCallBack();
+					}, () =>
+					{
+						//0xAD359C
+						MenuScene.Instance.GotoTitle();
+					}, null);
+				}
+			}, null, null, null);
+		}
 
 		// // RVA: 0xACD354 Offset: 0xACD354 VA: 0xACD354
 		private void GotoRegularMusicSelect()

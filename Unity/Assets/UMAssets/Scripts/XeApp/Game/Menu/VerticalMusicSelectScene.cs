@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 				return m_filterMusicDataList;
 			return m_filterMusicEventDataList;
 		} } //0xBE5D14
-		// protected override List<VerticalMusicDataList> originalMusicList { get; } 0xBE5D2C
+		protected override List<VerticalMusicDataList> originalMusicList { get { return m_originalEventMusicDataList; } } //0xBE5D2C
 		protected override bool isLine6Mode { get { return m_musicSelectUISapporter.isLine6Mode; } } //0xBE5D34
 		private bool m_isLine6Mode { get { return m_musicSelectUISapporter.isLine6Mode;  } set { m_musicSelectUISapporter.isLine6Mode = value; } } //0xBE5D7C 0xBE5D58
 		// private List<VerticalMusicDataList> currentOriginalMusicDataList { get; } 0xBE5DA4
@@ -271,7 +271,7 @@ namespace XeApp.Game.Menu
 			m_musicDetail.OnMusicBookMarkButtonClickListener = () =>
 			{
 				//0xBF02D0
-				TodoLogger.LogNotImplemented("OnMusicBookMarkButtonClickListener");
+				OnClickMusicBookMark(ApplyMusicInfo);
 			};
 			m_musicDetail.OnJacketButtonClickListener = () =>
 			{
